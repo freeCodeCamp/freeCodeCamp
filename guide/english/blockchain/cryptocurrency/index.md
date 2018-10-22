@@ -12,10 +12,12 @@ Cryptocurrency is a subset of digital currency, which acts as a medium of exchan
 Cryptocurrency can be exchanged as fractions not possible with traditional currency. For example, transactions can amount to 0.00007 BTC or even lower.
 
 If you want to earn bitcoins through mining, it can be done through solving mathematical proof-of-work problems that validate transactions. Blockchain uses the concept of irreversible cryptographic hash function which consists of guessing a random number (usually less than a certain value) to solve the problem for transaction validation. You will require machines with high processing power to be able to solve these problems (for example Fast-Hash One or CoinTerra TerraMiner IV). Computer's with a high end Graphics Card installed (such as the Nivida GTX 1080) are also able to solve these hashes effectively. 
+Following video will clear your basic understanding of Crypto Technology and how are Cryptocurrency mined in detail.  [Proof-of-Work Explained](https://www.youtube.com/watch?v=EWfGzeF3Xmw)
 
 Some people invest in cryptocurrency on exchanges such as Binance, Bitrex, or Coinbase. The market peeked in January of 2018. 
 
 #### More Information:
 [Cryptocurrency](https://en.wikipedia.org/wiki/Cryptocurrency)    
 [Ultimate Guide to Cryptocurrency](https://blockgeeks.com/guides/what-is-cryptocurrency)
-[Bitcoin](https://en.wikipedia.org/wiki/Bitcoin)
+[Bitcoin](https://en.wikipedia.org/wiki/Bitcoin)  
+[Cryptocurrency Crash Course](https://www.youtube.com/watch?v=XBhxwV5iZkY&list=PLCFoyrjDuFqQVb2TFeJmUE282nBSQiWs2)
