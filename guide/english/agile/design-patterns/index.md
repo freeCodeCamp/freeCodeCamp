@@ -27,4 +27,5 @@ Patterns can be used for multiple objectives  (learning, communication, improvin
 - [Object Oriented Design](http://www.oodesign.com/)
 - [A Beginner’s Guide to Design Patterns](https://code.tutsplus.com/articles/a-beginners-guide-to-design-patterns--net-12752)
 - [From design patterns to category theory](http://blog.ploeh.dk/2017/10/04/from-design-patterns-to-category-theory/)
+- [Software Design Pattern](https://www.geeksforgeeks.org/software-design-patterns/)
 
