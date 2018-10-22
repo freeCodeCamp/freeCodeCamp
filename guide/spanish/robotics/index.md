@@ -4,7 +4,7 @@ localeTitle: Robótica
 ---
 ## Robótica
 
-La robótica es sobre los sistemas que componen los robots. No hay una definición de robot aplicable universalmente. Una definición generalmente aceptada es: _Un robot es una máquina física programable que sigue el paradigma de pensar, pensar y actuar_ . Más específicamente, un robot necesita detectar su entorno, utilizar esa información como una entrada para tomar decisiones y luego actuar en consecuencia. Cada sistema en este paradigma es a menudo un estudio en sí mismo. Hay una multitud de variedades de tipos de robots y sistemas de componentes. Cada robot usualmente se dedica a un conjunto de procesos con objetivos claros.
+La robótica una disciplina que aborda y estudia los sistemas que componen los robots. No hay una definición de robot aplicable universalmente. Una definición generalmente aceptada es: _Un robot es una máquina física programable que sigue el paradigma de pensar, pensar y actuar_ . Más específicamente, un robot necesita detectar su entorno, utilizar esa información como una entrada para tomar decisiones y luego actuar en consecuencia. Cada sistema en este paradigma es a menudo un estudio en sí mismo. Hay una multitud de variedades de tipos de robots y sistemas de componentes. Cada robot usualmente se dedica a un conjunto de procesos con objetivos claros.
 
 ### Sentido
 
