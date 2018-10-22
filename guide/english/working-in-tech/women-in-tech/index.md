@@ -25,6 +25,7 @@ The worst thing you can do is to sell yourself short if you want something take 
 
 - [Why are there so few women in tech? The truth behind the Google memo](https://www.theguardian.com/lifeandstyle/2017/aug/08/why-are-there-so-few-women-in-tech-the-truth-behind-the-google-memo)
 - [Ellen Pao: Has Anything Really Changed for Women in Tech?](https://www.nytimes.com/2017/09/16/opinion/sunday/ellen-pao-sexism-tech.html)
+- [2017 Statistics on Women in Tech](https://www.ncwit.org/sites/default/files/resources/btn_04042018_web.pdf)
 
 ### A non-exhaustive list of global women in tech initiatives:
 
@@ -35,4 +36,5 @@ The worst thing you can do is to sell yourself short if you want something take 
 - [Girls Who Code](https://girlswhocode.com/)
 - [1 Million Women To Tech](https://1millionwomentotech.com/)
 - [Women Who Code](https://www.womenwhocode.com/)
+- [National Center for Women & Information Technology](https://www.ncwit.org/)
 
