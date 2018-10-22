@@ -117,7 +117,7 @@ export class Block extends Component {
         completedId => id === completedId
       );
       if (isCompleted) {
-        completedCount ++;
+        completedCount++;
       }
       return { ...challenge, isCompleted };
     });
@@ -126,9 +126,11 @@ export class Block extends Component {
         <div className='map-title' onClick={this.handleBlockClick}>
           <Caret />
           <h5>{blockName}</h5>
-          <div className="map-title-completed">
-            <span className="map-title-checkmark">
-              {this.renderCheckMark(completedCount===challengesWithCompleted.length)}
+          <div className='map-title-completed'>
+            <span className='map-title-checkmark'>
+              {this.renderCheckMark(
+                completedCount === challengesWithCompleted.length
+              )}
             </span>
             <span>{`${completedCount}/${challengesWithCompleted.length}`}</span>
           </div>
@@ -146,4 +148,7 @@ export class Block extends Component {
 Block.displayName = 'Block';
 Block.propTypes = propTypes;
 
-export default connect(mapStateToProps, mapDispatchToProps)(Block);
+export default connect(
+  mapStateToProps,
+  mapDispatchToProps
+)(Block);

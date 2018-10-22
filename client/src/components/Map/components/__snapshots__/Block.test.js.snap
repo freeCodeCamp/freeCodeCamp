@@ -12,6 +12,26 @@ exports[`<Block /> not expanded snapshot: block-not-expanded 1`] = `
     <h5>
       Block A
     </h5>
+    <div
+      className="map-title-completed"
+    >
+      <span
+        className="map-title-checkmark"
+      >
+        <GreenNotCompleted
+          style={
+            Object {
+              "height": "15px",
+              "marginRight": "10px",
+              "width": "15px",
+            }
+          }
+        />
+      </span>
+      <span>
+        2/4
+      </span>
+    </div>
   </div>
   <ul />
 </li>
@@ -29,6 +49,26 @@ exports[`<Block expanded snapshot: block-expanded 1`] = `
     <h5>
       Block A
     </h5>
+    <div
+      className="map-title-completed"
+    >
+      <span
+        className="map-title-checkmark"
+      >
+        <GreenNotCompleted
+          style={
+            Object {
+              "height": "15px",
+              "marginRight": "10px",
+              "width": "15px",
+            }
+          }
+        />
+      </span>
+      <span>
+        2/4
+      </span>
+    </div>
   </div>
   <ul>
     <li
