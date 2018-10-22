@@ -14,6 +14,10 @@ You can build some pretty amazing things in CSS alone, such as this pure-CSS [Mi
 
 ![](https://cdn-images-1.medium.com/max/800/1*GFcKk9KxqHAnWa1ECcKDOQ.png)
 
+<a href="http://www.youtube.com/watch?feature=player_embedded&v=https://www.youtube.com/watch?v=r1xBCi5SOjw
+" target="_blank"><img src="http://img.youtube.com/vi/https://www.youtube.com/watch?v=r1xBCi5SOjw/0.jpg" 
+alt="CSS Crash Course Tutorial" width="240" height="180" border="10" /></a>
+
 #### Suggested Reading:
 A good start is the freeCodeCamp curriculum [Introduction to Basic CSS](https://learn.freecodecamp.org/responsive-web-design/basic-css).
 
