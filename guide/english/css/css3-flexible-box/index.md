@@ -23,6 +23,8 @@ Let's break down this example. First we set the display property to "flex" so we
 
 Now lets have a short look at "justify-content". This property declares how elements are distributed inside the parent element. We chose the "center" value. This means all elements inside this element will be centered.
 
+Note that when you apply a display "flex" on the parent container, it will only affect direct children properties. You can nest flexboxes as well. 
+
 #### More Information:
 To get a complete understanding of Flexbox, read <a href="https://medium.freecodecamp.org/understanding-flexbox-everything-you-need-to-know-b4013d4dc9af" target='_blank' rel="nofollow">Understanding Flexbox Everything you need to know</a> on the FreeCodeCamp Medium page.
 
