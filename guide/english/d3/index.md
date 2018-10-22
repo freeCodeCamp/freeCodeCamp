@@ -46,6 +46,11 @@ There are over 20,000+ **D3.js** examples you could learn from, but you never kn
 
 ![](https://i1.wp.com/pbiswas101.files.wordpress.com/2018/07/force.gif?w=400&h=100)
 
+- **d3-collapsibletree**
+
+![](https://bl.ocks.org/d3noob/raw/43a860bc0024792f8803bba8ca0d5ecd/)
+
+
  So, with just some basic knowledge of latest HTML5 features such as SVG, Canvas you can dive into a world where library like **D3.js** bring data to life!
  ###### Contribution
 
