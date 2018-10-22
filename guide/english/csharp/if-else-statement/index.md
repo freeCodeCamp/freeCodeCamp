@@ -38,3 +38,8 @@ Since we already declared our int Price to be 30, this will be the expected outp
 ```
 Price is equal to 30.
 ```
+
+Another important option to consider when using short If/Else statements is the ternary operator.
+ ~~~~
+  string output=(price == 30 ? "price is equal to 30" : "price is not equal to 30")
+~~~~
