@@ -8,8 +8,11 @@ Joomla! is a free and open-source content management system (CMS) built on a mod
 
 Joomla! is written in object-oriented programming (OOP) PHP. It can store data in MySQL, PostgreSQL or MS SQL database. Features include page caching, RSS feeds, printable versions of pages, news flashes, blogs, search, and support for language internationalization.
 
+Joomla! extensions extend the functionality of Joomla! websites. Eight types of extensions may be distinguished: components, modules, plugins, templates, languages, libraries, files and packages. Each of these extensions handles a specific function. Many of the extensions built by the Joomla! Community are not free but require a payment for download.
+
 ### More Information
 
 [Joomla Documentation: online collaborative community manual](https://docs.joomla.org/)
 
 [Joomla! Developers Portal](https://docs.joomla.org/Portal:Developers)
+
