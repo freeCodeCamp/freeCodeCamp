@@ -4,7 +4,7 @@
         <!-- Do not translate this table -->
         <td> يمكنك قراءة هذه التعليمات الاسترشادية باللغات التالية :  </td>
         <td><a href="/CONTRIBUTING.md"> الإنجليزية </a></td>
-        <td><a href="/docs/arabic/README.md"> عربى </a></td>
+        <td><a href="/docs/arabic/README.md"> العربية </a></td>
         <td><a href="/docs/chinese/README.md"> الصينية </a></td>
         <td><a href="/docs/russian/README.md"> الروسية </a></td>
         <td><a href="/docs/portuguese/README.md"> البرتغالية </a></td>
@@ -27,7 +27,7 @@ freecodecamp.org
 
 ---
 
-## مقالات مرجعية ختصرة
+## مقالات مرجعية مختصرة
 
 1. [كيفية العمل على المقالات الاسترشادية.](how-to-work-on-guide-articles.md)
 2. [كيفية العمل على التحديات البرمجية.](how-to-work-on-coding-challenges.md)
