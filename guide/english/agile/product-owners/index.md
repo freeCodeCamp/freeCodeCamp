@@ -3,7 +3,7 @@ title: Product Owners
 ---
 ## Product Owners
 
-Product Owners lead the product vision and release planning. They are in charge of defining the features, the release date, and the content that makes up a shippable product. The goal of a Product Owner is to build the right thing quickly and correctly.
+Product Owners lead the product vision and release planning. They are in charge of defining the features, the release date, and the content that makes up a shippable product. The goal of a Product Owner is to build the right thing quickly and correctly. In organizations that have both a product manager as well as a product owner, the product owner works more closely with the development teams while the product manager works as the voice of the customer.
 
 At a high-level, the Product Owner is responsible for the following:
 
