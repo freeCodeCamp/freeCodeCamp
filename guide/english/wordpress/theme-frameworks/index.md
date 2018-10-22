@@ -24,7 +24,7 @@ The Thesis Framework by DIY Themes has been around a very long time and is one o
 Official Site: [http://diythemes.com/](http://diythemes.com/)
 Cost: $87
 
-## Free Frameworks
+## Free & Open Source Frameworks
 
 ### Cherry Framework
 
