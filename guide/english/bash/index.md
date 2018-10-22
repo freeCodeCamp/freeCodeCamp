@@ -4,54 +4,52 @@ title: Bash
 
 ## What is Bash?
 
-<a>Bash</a> (short for Bourne Again SHell) is a Unix shell, and a command language interpreter. A shell is simply a macro processor that executes commands. It's the most widely used shell packaged by default for most Linux distributions, and a successor for the Korn shell (ksh) and the C shell (csh).
+Bourne Again SHell or, <a>Bash</a> for short, is a Unix shell and command language interpreter.  A shell is simply a macro processor that executes commands and Bourne Again Shell (bash) is the most widely used shell packaged with most Linux distributions.  Bash is a successor to the Korn shell (ksh) and the C shell (csh).
 
-Many things that can be done Linux operating system can be done via command line. Some examples are...
+Many common operations can be done using the command line in Linux operating systems. The following are some examples of those operations.
 * Editing files
 * Adjusting the volume of the operating system
 * Fetching web pages from the internet
 * Automating work you do every day
 
-You can read more about bash <a href="https://www.gnu.org/software/bash/">here</a>, via the <a href="https://www.gnu.org/software/bash/manual/html_node/index.html#SEC_Contents">GNU Documentation</a>, and via the <a href="http://tldp.org/HOWTO/Bash-Prog-Intro-HOWTO.html#toc10">tldp guide</a>.
+Learn more about bash <a href="https://www.gnu.org/software/bash/">in the official GNU/Linux documentation</a>, the official <a href="https://www.gnu.org/software/bash/manual/html_node/index.html#SEC_Contents">GNU Bash Manual</a>, and <a href="http://tldp.org/HOWTO/Bash-Prog-Intro-HOWTO.html#toc10">The Linux Documentation Project (tldp) guide</a>.
 
 
 ## Using bash on the command line (Linux, OS X)
 
-You can start using bash on most Linux and OS X operating systems by opening up a terminal.  Let's consider a simple hello world example. Open up your terminal, and write the following line (everything after the $ sign):
+The Terminal application in most Linux and OS X operating systems provides direct access to bash.  Let's consider a simple "hello world" example. Open the terminal application, and type <strong>echo "Hello world!"</strong> immediately following line the $ sign prompt, as below.
 
 ```
 zach@marigold:~$ echo "Hello world!"
 Hello world!
 ```
 
-As you can see, we used the echo command to print the string "Hello world!" to the terminal.  
+The echo command prints the characters "Hello world!" to the Terminal window.  
 
 
 ## Writing a bash script 
 
-You can also put all of your bash commands into a .sh file, and run them from the command line. Say you had a bash script with the following contents:
+A bash script is a series of bash commands executed in sequence.  The bash commands are placed in a special <strong>.sh</strong> file and the .sh file can be executed from the command line. A bash script take the form as shown below.
 
 ```
 #!/bin/bash
 echo "Hello world!"
 ```
-It's worth noting that first line of the script starts with `#!`. It is a special directive which Unix treats differently. 
+The above script has only two lines. The first line indicates what interpreter should use to run the file (in this case, bash). The second line is the command we want to execute, <strong>echo</strong>, followed by the desired text to print, in this case "Hello World".  The first line of a bash script starts with the two characters <strong>#!</strong> and is called a shebang. Unix treats treats the shebang differently. 
 
-#### Why did we use #!/bin/bash at the beginning of the script file? 
-That is because it is a convention to let the interactive shell know what kind of interpreter to run for the program that follows. The first line tells Unix that the file is to be executed by /bin/bash. This is the standard location of the Bourne shell on just about every Unix system. Adding #!/bin/bash as the first line of your script, tells the OS to invoke the specified shell to execute the commands that follow in the script.
-`#!` is often referred to as a "hash-bang", "she-bang" or "sha-bang".
-Though it is only executed if you run your script as an executable. For example, when you type `./scriptname.extension`, it will look at the top line to find out the interpreter, whereas, running the script as `bash scriptname.sh`, first line is ignored. 
+#### Why do we write #!/bin/bash at the beginning of the script file? 
+The interative shell determines the type of interpreter to run for the program that follows by the first line.  <strong>#!/bin/bash</strong> instructs the operating system (e.g. GNU/Linus/OSX) to execute the instructions in the script with /bin/bash.  In most instances, bash is found in the /bin directory of Unix systems as it is a standard installation location.   
 
-Then you could run the script like so:
-For make file executable you should call this command under sudo chmod +x "filename".
+The interpreter may or may not read the first line of the script depending upon how the script is presented to the interpreter.  Simply entering the filename and extension (e.g. `./scriptname.extension`) will force the interpreter to read the first line of the script, while the first line is ignored when entering `bash scriptname.sh`. 
+
+The command <strong> sudo chmod +x "filename" </strong> will make a file executable.
+
 ```
 zach@marigold:~$ ./myBashScript.sh
 Hello world!
 ```
 
-The script only has two lines. The first indicates what interpreter to use to run the file (in this case, bash). The second line is the command we want to use, echo, followed by what we want to print which is "Hello World".
-
-Sometimes the script won't be executed, and the above command will return an error. It is due to the permissions set on the file. To avoid that use:
+Scripts can executed by users with the appropriate permissions.  In cases where scripts will not execute and an error appears,  the permissions assigned to the file or the user could be the source of the error.  Script execution errors can be circumvented in some cases through the use of the commands below.
 ```
 zach@marigold:~$ chmod u+x myBashScript.sh
 ````
@@ -59,10 +57,10 @@ or
 ```
 zach@marigold:~$ chmod 744 myBashScript.sh
 ````
-And then execute the script.
+
 ### More Information:
 
 * [Wikipedia - Bash](https://en.wikipedia.org/wiki/Bash_(Unix_shell))
-* [tldp.org - Guide to Bash](http://tldp.org/HOWTO/Bash-Prog-Intro-HOWTO.html#toc2)
+* [The Linux Documentation Project (tldp.org) - Guide to Bash](http://tldp.org/HOWTO/Bash-Prog-Intro-HOWTO.html#toc2)
 * [gnu.org - Bash manual](https://www.gnu.org/software/bash/manual/html_node/index.html#SEC_Contents)
 * [Shell scripting tutorial](https://www.shellscript.sh/)
