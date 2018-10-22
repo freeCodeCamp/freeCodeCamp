@@ -49,7 +49,7 @@ This video introduces algorithms and briefly discusses some high profile uses of
 
 [15 Sorting Algorithms in 6 Minutes | Timo Bingmann](https://www.youtube.com/watch?v=kPRA0W1kECg)
 
-This video visually demonstrates some popular sorting algorithms that are commonly taught in programming and Computer Science courses.
+This video demonstrates some popular sorting algorithms that are commonly taught in programming and Computer Science courses.
 
 [Algorithm Visualizer](http://algo-visualizer.jasonpark.me)
 
