@@ -20,8 +20,8 @@ Add <code>["Paul",35]</code> to the beginning of the <code>myArray</code> variab
 
 ```yml
 tests:
-  - text: '<code>myArray</code> should now have [["Paul", 35], ["dog", 3]].'
-    testString: 'assert((function(d){if(typeof d[0] === "object" && d[0][0] == "Paul" && d[0][1] === 35 && d[1][0] != undefined && d[1][0] == "dog" && d[1][1] != undefined && d[1][1] == 3){return true;}else{return false;}})(myArray), "<code>myArray</code> should now have [["Paul", 35], ["dog", 3]].");'
+  - text: <code>myArray</code> should now have [["Paul", 35], ["dog", 3]].
+    testString: assert((function(d){if(typeof d[0] === "object" && d[0][0] == 'Paul' && d[0][1] === 35 && d[1][0] != undefined && d[1][0] == 'dog' && d[1][1] != undefined && d[1][1] == 3){return true;}else{return false;}})(myArray), '<code>myArray</code> should now have [["Paul", 35], ["dog", 3]].');
 
 ```
 
@@ -55,7 +55,7 @@ myArray.shift();
 <div id='js-teardown'>
 
 ```js
-console.info('after the test');
+(function(y, z){return 'myArray = ' + JSON.stringify(y);})(myArray);
 ```
 
 </div>

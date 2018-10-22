@@ -24,9 +24,9 @@ Add the <code>style()</code> method to the code in the editor to make all the di
 ```yml
 tests:
   - text: Your <code>h2</code> elements should have a <code>font-family</code> of verdana.
-    testString: 'assert($("h2").css("font-family") == "verdana", "Your <code>h2</code> elements should have a <code>font-family</code> of verdana.");'
+    testString: assert($('h2').css('font-family') == 'verdana', 'Your <code>h2</code> elements should have a <code>font-family</code> of verdana.');
   - text: Your code should use the <code>style()</code> method.
-    testString: 'assert(code.match(/\.style/g), "Your code should use the <code>style()</code> method.");'
+    testString: assert(code.match(/\.style/g), 'Your code should use the <code>style()</code> method.');
 
 ```
 

@@ -22,19 +22,19 @@ Task:
 ```yml
 tests:
   - text: <code>entropy</code> is a function.
-    testString: 'assert(typeof entropy === "function", "<code>entropy</code> is a function.");'
+    testString: assert(typeof entropy === 'function', '<code>entropy</code> is a function.');
   - text: <code>entropy("0")</code> should return <code>0</code>
-    testString: 'assert.equal(entropy("0"), 0, "<code>entropy("0")</code> should return <code>0</code>");'
+    testString: assert.equal(entropy('0'), 0, '<code>entropy("0")</code> should return <code>0</code>');
   - text: <code>entropy("01")</code> should return <code>1</code>
-    testString: 'assert.equal(entropy("01"), 1, "<code>entropy("01")</code> should return <code>1</code>");'
+    testString: assert.equal(entropy('01'), 1, '<code>entropy("01")</code> should return <code>1</code>');
   - text: <code>entropy("0123")</code> should return <code>2</code>
-    testString: 'assert.equal(entropy("0123"), 2, "<code>entropy("0123")</code> should return <code>2</code>");'
+    testString: assert.equal(entropy('0123'), 2, '<code>entropy("0123")</code> should return <code>2</code>');
   - text: <code>entropy("01234567")</code> should return <code>3</code>
-    testString: 'assert.equal(entropy("01234567"), 3, "<code>entropy("01234567")</code> should return <code>3</code>");'
+    testString: assert.equal(entropy('01234567'), 3, '<code>entropy("01234567")</code> should return <code>3</code>');
   - text: <code>entropy("0123456789abcdef")</code> should return <code>4</code>
-    testString: 'assert.equal(entropy("0123456789abcdef"), 4, "<code>entropy("0123456789abcdef")</code> should return <code>4</code>");'
+    testString: assert.equal(entropy('0123456789abcdef'), 4, '<code>entropy("0123456789abcdef")</code> should return <code>4</code>');
   - text: <code>entropy("1223334444")</code> should return <code>1.8464393446710154</code>
-    testString: 'assert.equal(entropy("1223334444"), 1.8464393446710154, "<code>entropy("1223334444")</code> should return <code>1.8464393446710154</code>");'
+    testString: assert.equal(entropy('1223334444'), 1.8464393446710154, '<code>entropy("1223334444")</code> should return <code>1.8464393446710154</code>');
 
 ```
 

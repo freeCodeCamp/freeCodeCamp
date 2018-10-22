@@ -20,12 +20,12 @@ Write a regex and use the appropriate string methods to remove whitespace at the
 
 ```yml
 tests:
-  - text: '<code>result</code> should equal to <code>"Hello, World!"</code>'
-    testString: 'assert(result == "Hello, World!", "<code>result</code> should equal to <code>"Hello, World!"</code>");'
+  - text: <code>result</code> should equal to <code>"Hello, World!"</code>
+    testString: assert(result == "Hello, World!", '<code>result</code> should equal to <code>"Hello, World!"</code>');
   - text: You should not use the <code>.trim()</code> method.
-    testString: 'assert(!code.match(/\.trim\(.*?\)/), "You should not use the <code>.trim()</code> method.");'
+    testString: assert(!code.match(/\.trim\(.*?\)/), 'You should not use the <code>.trim()</code> method.');
   - text: The <code>result</code> variable should not be set equal to a string.
-    testString: 'assert(!code.match(/result\s*=\s*".*?"/), "The <code>result</code> variable should not be set equal to a string.");'
+    testString: assert(!code.match(/result\s*=\s*".*?"/), 'The <code>result</code> variable should not be set equal to a string.');
 
 ```
 
