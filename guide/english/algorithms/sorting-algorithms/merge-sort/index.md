@@ -179,33 +179,92 @@ int main()
 ```
 ### Implementation in C++
  
-Let us consider array A = {2,5,7,8,9,12,13}
-and array B = {3,5,6,9,15} and we want array C to be in ascending order as well.
+We accept the array size and the array entries from the user as command line arguments and sort the array and output it.
 
-```c++
-void mergesort(int A[],int size_a,int B[],int size_b,int C[])
-{
-     int token_a,token_b,token_c;
-     for(token_a=0, token_b=0, token_c=0; token_a<size_a && token_b<size_b; )
-     {
-          if(A[token_a]<=B[token_b])
-               C[token_c++]=A[token_a++];
-          else
-               C[token_c++]=B[token_b++];
-      }
-      
-      if(token_a<size_a)
-      {
-          while(token_a<size_a)
-               C[token_c++]=A[token_a++];
-      }
-      else
-      {
-          while(token_b<size_b)
-               C[token_c++]=B[token_b++];
-      }
+```#include <bits/stdc++.h>
+using namespace std;
+// example of merge sort in C++
+// merge function take two intervals
+// one from start to mid
+// second from mid+1, to end
+// and merge them in sorted order
+
+void merge(int *Arr, int start, int mid, int end) {
+	// create a temp array
+	int temp[end - start + 1];
+
+	// crawlers for both intervals and for temp
+	int i = start, j = mid+1, k = 0;
+
+	// traverse both arrays and in each iteration add smaller of both elements in temp 
+	while(i <= mid && j <= end) {
+		if(Arr[i] <= Arr[j]) {
+			temp[k] = Arr[i];
+			k += 1; i += 1;
+		}
+		else {
+			temp[k] = Arr[j];
+			k += 1; j += 1;
+		}
+	}
+
+	// add elements left in the first interval 
+	while(i <= mid) {
+		temp[k] = Arr[i];
+		k += 1; i += 1;
+	}
+
+	// add elements left in the second interval 
+	while(j <= end) {
+		temp[k] = Arr[j];
+		k += 1; j += 1;
+	}
+
+	// copy temp to original interval
+	for(i = start; i <= end; i += 1) {
+		Arr[i] = temp[i - start];
+	}
+}
+
+// Arr is an array of integer type
+// start and end are the starting and ending index of current interval of Arr
+
+void mergeSort(int *Arr, int start, int end) {
+
+	if(start < end) {
+		int mid = (start + end) / 2;
+		mergeSort(Arr, start, mid);
+		mergeSort(Arr, mid+1, end);
+		merge(Arr, start, mid, end);
+	}
+}
+void printArray(int *Arr,int l){
+
+	for (int j = 0; j < l; ++j)
+	{
+		cout << Arr[j] << "\t";
+	}
+	cout << endl;
 
 }
+int main(int argc, char const *argv[])
+{
+	int l = atoi(argv[1]);
+	int *Arr = new int[l];
+
+	for (int i = 0; i < l; ++i)
+	{
+		Arr[i] = atoi(argv[i+2]);           //argv[0] = ./a.out  argv[1] = length  and the rest are array entries
+	}
+	mergeSort(Arr,0,l-1);
+	cout << endl;
+
+	printArray(Arr,l);
+	delete[] Arr;
+	
+	return 0;
+}
+
 ```
 
 ### Implementation in Python
