@@ -16,7 +16,7 @@ Here's an example:
 
 ## Instructions
 <section id='instructions'>
-Time to take a break from Camper Cat and meet fellow camper Zersiax (@zersiax), a champion of accessibility and a screen reader user. To hear a clip of his screen reader in action, add an <code>audio</code> element after the <code>p</code>. Include the <code>controls</code> attribute. Then place a <code>source</code> tag inside the <code>audio</code> tags with the <code>src</code> attribute set to "https://s3.amazonaws.com/freecodecamp/screen-reader.mp3" and <code>type</code> attribute set to "audio/mpeg".
+Time to take a break from Camper Cat and meet fellow camper Zersiax (@zersiax), a champion of accessibility and a screen reader user. To hear a clip of his screen reader in action, add an <code>audio</code> element after the <code>p</code>. Include the <code>controls</code> attribute. Then place a <code>source</code> tag inside the <code>audio</code> tags with the <code>src</code> attribute set to "https://s3.amazonaws.com/freecodecamp/screen-reader.mp3" and <code>type</code> attribute set to "audio/mpeg".<br>
 <strong>Note</strong><br>The audio clip may sound fast and be difficult to understand, but that is a normal speed for screen reader users.
 </section>
 
