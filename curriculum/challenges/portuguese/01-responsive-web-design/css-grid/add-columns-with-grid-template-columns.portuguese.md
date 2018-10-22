@@ -3,14 +3,14 @@ id: 5a9036d038fddaf9a66b5d32
 title: Add Columns with grid-template-columns
 challengeType: 0
 videoUrl: ''
-localeTitle: Adicionar colunas com colunas de modelo de grade
+localeTitle: Adicionar Colunas com colunas do modelo de grelha
 ---
 
 ## Description
-<section id="description"> Simplesmente criar um elemento de grade não te leva muito longe. Você precisa definir a estrutura da grade também. Para adicionar algumas colunas à grade, use a propriedade <code>grid-template-columns</code> em um contêiner de grade, conforme demonstrado abaixo: <blockquote> .container { <br> display: grade; <br> grid-template-columns: 50px 50px; <br> } </blockquote> Isso dará à sua grade duas colunas com 50 pixels de largura cada. O número de parâmetros fornecidos para a propriedade <code>grid-template-columns</code> indica o número de colunas na grade e o valor de cada parâmetro indica a largura de cada coluna. </section>
+<section id="description"> Simplesmente criar um elemento de grelha não te vai levar muito longe. Você precisa definir a estrutura da grelha também. Para adicionar algumas colunas à grelha, use a propriedade <code>grid-template-columns</code> em um container de grelha, conforme demonstrado abaixo: <blockquote> .container { <br> display: grelha; <br> grid-template-columns: 50px 50px; <br> } </blockquote> Isso dará à sua grelha duas colunas com 50 pixels de largura cada. O número de parâmetros fornecidos para a propriedade <code>grid-template-columns</code> indica o número de colunas na grelha e o valor de cada parâmetro indica a largura de cada coluna. </section>
 
 ## Instructions
-<section id="instructions"> Dê ao contêiner de grade três colunas com <code>100px</code> largura cada. </section>
+<section id="instructions"> Dê ao container de grelha três colunas com <code>100px</code> largura cada. </section>
 
 ## Tests
 <section id='tests'>
