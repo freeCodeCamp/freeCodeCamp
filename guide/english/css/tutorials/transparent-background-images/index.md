@@ -3,13 +3,37 @@ title: Transparent Background Images
 ---
 ## Transparent Background Images
 
-This is a stub. <a href='https://github.com/freecodecamp/guides/tree/master/src/pages/css/tutorials/transparent-background-images/index.md' target='_blank' rel='nofollow'>Help our community expand it</a>.
+You have to add :before to the element which you want to add the transparent background image
 
-<a href='https://github.com/freecodecamp/guides/blob/master/README.md' target='_blank' rel='nofollow'>This quick style guide will help ensure your pull request gets accepted</a>.
+HTML code:
 
-<!-- The article goes here, in GitHub-flavored Markdown. Feel free to add YouTube videos, images, and CodePen/JSBin embeds  -->
+```html
+<div>
+  lorem ipsum dolor sit amet
+</div>
+```
 
-#### More Information:
-<!-- Please add any articles you think might be helpful to read before writing the article -->
+CSS code:
 
+```css
+div {
+  width: 100px;
+  height: 100px;
+  display: block;
+  margin: auto;
+}
 
+div:before {
+  background: url(image.jpg);
+  opacity: 0.5;
+  width: 100px;
+  height: 100px;
+  top: 0;
+  left: 0;
+  position: absolute;
+  z-index: -10;
+  content: "";
+}
+```
+
+You must have same width and height for div and div:before
