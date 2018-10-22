@@ -1,3 +1,6 @@
+---
+title: Flex Direction
+---
 # Flex Direction
 ```flex-direction:``` of a container determines how flex items will be aligned in the viewport.
 
