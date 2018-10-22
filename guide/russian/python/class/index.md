@@ -61,7 +61,7 @@ When a class defines an `__init__()` method, class instantiation automatically i
 питон x = MyClass ()
 ```
 Of course, the `__init__()` method may have arguments for greater flexibility. 
- In that case, arguments given to the class instantiation operator are passed on to `__init__()`. For example, 
+ В таком случае, аргементы переданные при инициализации экземпляра класса передаются в метод `__init__()`. На пример, 
 ```
 
 питон класс: def **init** (self, realpart, imagpart): self.r = фактическая часть self.i = imagpart ...
