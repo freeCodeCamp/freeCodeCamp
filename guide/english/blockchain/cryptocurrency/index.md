@@ -15,6 +15,10 @@ If you want to earn bitcoins through mining, it can be done through solving math
 
 Some people invest in cryptocurrency on exchanges such as Binance, Bitrex, or Coinbase. The market peeked in January of 2018. 
 
+### Types of Cryptocurrency mining
+* Solo Mining
+* Pool Mining
+
 #### More Information:
 [Cryptocurrency](https://en.wikipedia.org/wiki/Cryptocurrency)    
 [Ultimate Guide to Cryptocurrency](https://blockgeeks.com/guides/what-is-cryptocurrency)
