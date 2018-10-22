@@ -16,6 +16,8 @@ Great for static content.
 
 [Figma](https://www.figma.com) - [Guide](https://github.com/freeCodeCamp/guides/blob/master/src/pages/designer-tools/Figma/index.md)
 
+[Color Picker](http://hslpicker.com/)
+
 ### Interaction
 Better for complicated interactions.
 
