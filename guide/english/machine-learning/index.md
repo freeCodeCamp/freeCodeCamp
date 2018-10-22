@@ -15,6 +15,20 @@ Machine learning is exactly like how a human being learns. For example if a huma
 
 In general, machine learning problems can be classified into supervised learning, and unsupervised learning. In supervised learning, you have the input and the labeled output, and you suspect that a relationship exists between the input and the labeled output. When you know neither what the labeled output is nor if a relationship exists, unsupervised learning will help you find structure in your data if there is one.
 
+### Data preprocessing techniques in machine learning
+Given below is a list of data preprocessing techniques in machinelearning
+1. Data transformation
+2. Feature scaling by using mean and standard deviation.
+3. Feature optimization
+4. Normalization of features
+5. Eliminating feature redundancy
+6. Avoiding suspicious coincidence 
+7. Data reduction
+8. Data transformation
+9. Data aggregation, Data sampling
+10. Mining models:
+
+
 We've covered two main categories of machine learning, but there are four broad categories of machine learning:
 
 1. Supervised learning
