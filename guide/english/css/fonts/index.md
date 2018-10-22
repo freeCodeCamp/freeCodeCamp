@@ -112,6 +112,8 @@ p {
 }
 ```
 
+**my-notes: you can use google fonts online from this website: https://fonts.google.com/?selection.family=Orbitron
+
 #### More Information:
 - [MND - CSS Font](https://developer.mozilla.org/en-US/docs/Web/CSS/font)
 - [W3 Schools - CSS Font](https://www.w3schools.com/css/css_font.asp)
