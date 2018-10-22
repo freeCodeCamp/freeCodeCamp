@@ -59,10 +59,10 @@ tests:
 
 </section>
 
-## Solution
+## Solution (Решение)
 <section id='solution'>
 
 ```js
-// solution required
+// здесь должно быть ваше решение
 ```
 </section>
