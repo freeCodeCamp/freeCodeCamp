@@ -6,7 +6,7 @@ title: Border Property
 CSS Border
 ----
 
-Our personal favorite CSS attribute, allow you to completely customize the borders that appear around HTML elements. With HTML, it used to be impossible to place a border around an element, except for the table. CSS Borders let you create crisp, customized border styles with very little work, compared to the antiquated methods of HTML.
+CSS allows you to completely customize the borders that appear around HTML elements. With HTML alone, borders can only be used with tables. Using CSS you can create a border around any HTML element with customized style, width, and color. 
 
 The `border` shorthand property sets all the border properties in one declaration. 
 ```css 
@@ -83,7 +83,7 @@ p {
 
 ### Border Color
 
-Now for the creative aspect of CSS Borders! With the use of the border-color attribute, you will be able to create customized borders to fit the flow and layout
+Now for the creative aspect of CSS Borders! With the use of the border-color attribute, you can create customized borders to fit the flow and layout
 of your website. Border colors can be any color defined by RGB, hexadecimal, or key terms. Below is an example of each of these types.
 
 Example:
@@ -107,19 +107,18 @@ p {
 ```
 
 ### Border-Radius
-The `border-radius` property allows the corners of a border to be rounded. This is done by providing a size for
-how much the border is to be rounded. Size can be in px or %.
+The `border-radius` property allows the corners of a border to be rounded. Specifying one value will create the same border radius on each corner. Size can be in px or %.
 ```css 
   border-radius: 25px;
 ```
-Each corner of `border-radius` can be adjusted. The order is top, bottom, left, right.
+Each corner of `border-radius` can be adjusted separately by specifying two, three, or four values. If two values are set, the first value applies to the top-left and bottom-right corners, while the second value applies to the top-right and bottom-left corners. If four values are set, the top-left, rop-right, bottom-right, and bottom-left corners will be specified in that order. If three values are set, the second value applies to the top-right and bottom-left corner. 
 ```css 
   border-radius: 15% 10px 30% 5px;
 ```
 
 ### Border: All in One
 
-While it is nice that CSS allows a web developer to be very specific in creating a customized border, sometimes it is just easier and less of a headache to create a uniform border, all in single line of CSS code.
+You can also create a uniform border using CSS border shorthand to specify all border properties in a single line of CSS code.
 
 Example:
 ```css
@@ -136,7 +135,6 @@ h5 { border: dotted; }
 - [CSS3 Border Radius](https://guide.freecodecamp.org/css/css3-borders-rounded-corners)
 
 ### Other Border Attributes
-- 'border-radius' - This can set radius of the border. 
 - 'border-spacing' - This can set spacing between the text and border. 
 - 'border-image' - This sets an image as border. 
 
