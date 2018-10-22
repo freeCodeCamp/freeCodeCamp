@@ -32,7 +32,7 @@ An example of this behavior can be seen below:
 
 ```
 <?php
-    $j = 0
+    $j = 0;
 
     switch ($i) {
         case '2':
