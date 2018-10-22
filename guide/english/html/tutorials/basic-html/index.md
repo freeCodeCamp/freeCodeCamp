@@ -3,12 +3,11 @@ title: Basic HTML
 ---
 ## Basic HTML
 
-This is a stub. <a href='https://github.com/freecodecamp/guides/tree/master/src/pages/html/tutorials/basic-html/index.md' target='_blank' rel='nofollow'>Help our community expand it</a>.
+All html files must start with ```<!DOCTYPE html>```
 
-<a href='https://github.com/freecodecamp/guides/blob/master/README.md' target='_blank' rel='nofollow'>This quick style guide will help ensure your pull request gets accepted</a>.
+Every html element is inside ```<html></html>```
 
-<!-- The article goes here, in GitHub-flavored Markdown. Feel free to add YouTube videos, images, and CodePen/JSBin embeds  -->
-Structure of a basic HTML file:
+Many html structure is inside ```<body></body>```
 
 ```html
 <!doctype html>
@@ -22,7 +21,50 @@ Structure of a basic HTML file:
   </body>
 </html>  
 ```
-#### More Information:
-<!-- Please add any articles you think might be helpful to read before writing the article -->
+###Headings
 
+With the tags <h1></h1>, <h2></h2>, <h3></h3>,..., <h6></h6> we define the headlines of our webpage. For example
 
+```html
+<!DOCTYPE html>
+<html>
+	<body>
+
+		<h1>Very important</h1>
+		<h2>Important</h2>
+		<h3>Mmmmm...</h3>
+
+	</body>
+</html>
+
+###Paragraph
+
+With the tag <p></p> we define a new paragraph
+
+```html
+<!DOCTYPE html>
+<html>
+	<body>
+
+		<p> I am nice.</p>
+
+	</body>
+</html>
+```
+
+###Images
+
+With the tag <img> we define a new image
+
+```html
+<!DOCTYPE html>
+<html>
+	<body>
+
+		<img src = "image.jpg" alt = "Ooo">
+
+	</body>
+</html>
+```
+
+In the above element the we define some attributes, such as src (source of the image) and alt (The text which will be displayed if the image does't load properly)
