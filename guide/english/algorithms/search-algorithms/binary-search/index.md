@@ -4,7 +4,7 @@ title: Binary Search
 
 ## Binary Search
 
-A binary search locates an item in a sorted array by repeatedly dividing the search interval in half.
+A binary search finds an item in a sorted array by repeatedly dividing the search interval in half.
 
 How do you search a name in a telephone directory?
 
