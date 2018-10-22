@@ -132,6 +132,12 @@ h5 { border: dotted; }
 
 ### More Information:
 
+
+<style>
+        h2.inset {border-style: inset;}
+</style>   
+<h2>Border style properties</h2>
+<h2 class="inset">An inset border.</h2>
 - [MDN Documentation](https://developer.mozilla.org/en-US/docs/Web/CSS/border)
 - [CSS3 Border Radius](https://guide.freecodecamp.org/css/css3-borders-rounded-corners)
 
