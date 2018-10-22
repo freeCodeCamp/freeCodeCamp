@@ -5,7 +5,7 @@ title: What is an API
 ## What is an API?
 
 
-API stands for Application Programming Interface. APIs hide complexity from developers, extend systems to partners, organize code, and make components reusable. Don’t worry about the AP, just focus on the I. An API is an interface. You use interfaces all the time. A computer operating system is an interface. Buttons in an elevator are an interface. A gas pedal in a car is an interface.
+API stands for Application Programming Interface.API is the way for an application to interact with certain system/application/library/etc. APIs hide complexity from developers, extend systems to partners, organize code, and make components reusable. Don’t worry about the AP, just focus on the I. An API is an interface. You use interfaces all the time. A computer operating system is an interface. Buttons in an elevator are an interface. A gas pedal in a car is an interface.
 
 An interface sits on top of a complicated system and simplifies certain tasks, a middleman that saves you from needing to know all the details of what’s happening under the hood. A web API is the same sort of thing. It sits on top of a web service, like Twitter or YouTube, and simplifies certain tasks for you. It translates your actions into the technical details for the computer system on the other end.
 
