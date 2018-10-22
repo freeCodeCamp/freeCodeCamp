@@ -141,6 +141,32 @@ title: Books to Read for Programmers
 - [Amazon Smile](https://smile.amazon.com/Core-Python-Applications-Programming-3rd/dp/0132678209)
 - ISBN-13: 978-0132678209
 
+*Learn Python 3 the Hard Way* by Zed A. Shaw
+- [Amazon](https://www.amazon.com/Learn-Python-Hard-Way-Introduction/dp/0134692888)
+- ISBN-13: 978-0134692883
+
+*Learn More Python 3 the Hard Way* by Zed A. Shaw
+- [Amazon](https://www.amazon.com/dp/0134123484)
+- ISBN-13: 978-0134123486
+
+## Computer Vision
+
+*Computer Vision: Algorithms and Applications* by Richard Szeliski 
+- [Amazon](https://www.amazon.com/Computer-Vision-Algorithms-Applications-Science/dp/1848829345)
+- ISBN-13: 978-1848829343
+
+*Learning OpenCV 3: Computer Vision in C++ with the OpenCV Library* by Adrian Kaehler and Gary Bradski 
+- [Amazon](https://www.amazon.com/Learning-OpenCV-Computer-Vision-Library/dp/1491937998/)
+- ISBN-13: 978-1491937990
+
+*Programming Computer Vision with Python: Tools and algorithms for analyzing images* by Jan Erik Solem
+- [Amazon](https://www.amazon.com/Programming-Computer-Vision-Python-algorithms/dp/1449316549)
+- ISBN-13: 978-1449316549
+
+*Digital Image Processing* by Rafael C. Gonzalez and Richard E. Woods
+- [Amazon](https://www.amazon.com/Digital-Image-Processing-Rafael-Gonzalez/dp/0133356728)
+- ISBN-13: 978-0133356724
+
 ## Soft Skills
 
 *Soft Skills: The software developer's life manual*
