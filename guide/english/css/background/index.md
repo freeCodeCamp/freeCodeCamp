@@ -152,6 +152,14 @@ background-position
 You can refer to the following link to W3 schools to know more about background and related stuffs in CSS.
 <a href = "https://www.w3schools.com/css/css_background.asp">Background reference to W3</a>
 
+#### More Information:
+
+Documentation: <a href='https://developer.mozilla.org/en-US/docs/Web/CSS/background' target='_blank' rel='nofollow'>MDN</a>
+
+CSS-Tricks: <a href='https://css-tricks.com/almanac/properties/b/background/' target='_blank' rel='nofollow'>background</a>
+
+Browser Support: <a href='http://caniuse.com/#search=background' target='_blank' rel='nofollow'>caniuse</a>
+
 ### Other Resources
 * <a href='http://cloford.com/resources/colours/500col.htm' target='_blank' rel='nofollow'>List of color values</a>
 * <a href='http://colrd.com/create/palette/' target='_blank' rel='nofollow'>Color Picker Tool</a>
