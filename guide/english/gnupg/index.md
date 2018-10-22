@@ -1,6 +1,7 @@
 ---
-GnuPG
+title: GnuPG
 ---
+
 __Gnu Privacy Guard (GnuPG)__ is a free software implementation of the [OpenPGP Standard](https://www.openpgp.org/about/standard/). Most people use GnuPG or GPG to encrypt and sign files and messages while some also use it for Secure Shell (SSH) authentication and signing their Git commits and tags.
 
 ## Installation
