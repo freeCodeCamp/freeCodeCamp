@@ -66,14 +66,14 @@ The opacity property value must be a number between 0.0 (fully transparent) and 
 ```html
 <html>
   <body>
-    <p>Hello Moto</p>
+    <p>Hello buddy</p>
   </body>
 </html>
 ```
 
 ```css
 body {
-  background-color: green;
+  background-color: red;
   color: white;
 }
 ```
