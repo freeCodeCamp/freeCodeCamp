@@ -24,6 +24,8 @@ In August 2014, the bitcoin blockchain file size, containing records of all tran
 
 The words block and chain were used separately in Satoshi Nakamoto's original paper, but were eventually popularized as a single word, blockchain, by 2016. The term blockchain 2.0 refers to new applications of the distributed blockchain database, first emerging in 2014. The Economist described one implementation of this second-generation programmable blockchain as coming with "a programming language that allows users to write more sophisticated smart contracts, thus creating invoices that pay themselves when a shipment arrives or share certificates which automatically send their owners dividends if profits reach a certain level."
 
+<img src="https://i.kym-cdn.com/photos/images/original/000/156/045/haha_blastoise_troll_gif_by_kirbyonfire-d3b334y.gif">
+
 As of 2016, blockchain 2.0 implementations continue to require an off-chain oracle to access any "external data or events based on time or market conditions to interact with the blockchain."
 
 #### Sources
