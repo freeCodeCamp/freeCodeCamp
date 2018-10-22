@@ -55,8 +55,9 @@ Unity Web Player was a browser plugin that was supported in Windows and OS X onl
 
 Unity is the engine used by Rust, Kerbal Space Program, Cup Head, and Hollow Knight.
 
-#### More Information: 
+#### Additional Resources: 
 
-[Unity's Official Website](https://unity3d.com/)
-[Wikipedia](https://en.wikipedia.org/wiki/Unity_(game_engine))
-[Official Unity Tutorials](https://unity3d.com/learn)
+[Unity's Official Website](https://unity3d.com/)<br>
+[Official Unity Tutorials](https://unity3d.com/learn)<br>
+[Official Unity Documentation](https://docs.unity3d.com/Manual/index.html)<br>
+[Wikipedia](https://en.wikipedia.org/wiki/Unity_(game_engine))<br>
