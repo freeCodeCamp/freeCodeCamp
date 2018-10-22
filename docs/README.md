@@ -23,10 +23,10 @@ This directory contains all of the documentation on contributing to freeCodeCamp
 
 ## Quick references articles
 
-1. How to work on Guide articles.
-2. How to work on Coding Challenges.
-3. How to setup freeCodeCamp locally.
-4. How to catch outgoing emails locally.
+1. [How to work on Guide articles.](https://github.com/gfunk81/freeCodeCamp/blob/master/docs/how-to-work-on-guide-articles.md)
+2. [How to work on Coding Challenges.](https://github.com/gfunk81/freeCodeCamp/blob/master/docs/how-to-work-on-coding-challenges.md)
+3. [How to setup freeCodeCamp locally.](https://github.com/gfunk81/freeCodeCamp/blob/master/docs/how-to-setup-freecodecamp-locally.md)
+4. [How to catch outgoing emails locally.](https://github.com/gfunk81/freeCodeCamp/blob/master/docs/how-to-catch-outgoing-emails-locally.md)
 
 ## Style guides
 
