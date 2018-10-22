@@ -3,6 +3,11 @@ title: Books on JavaScript
 ---
  ### List of Books
 
+### Head First JavaScript Programming: A Brain-Friendly Guide 1st Edition
+This book makes learning JavaScript more fun, as you are sort of playing games as you go through it. It is very useful.
+It can be very useful for beginners even in web development.
+- [Amazon](https://www.amazon.com/Head-First-JavaScript-Programming-Brain-Friendly/dp/144934013X)
+
 #### Eloquent JavaScript
 
 One of the best books on JavaScript. A must for both, beginners and intermediate programmers, who code in JavaScript. The best part is that the e-book is available for free.
@@ -33,3 +38,5 @@ A collection of articles covering the basics (core language and working with a b
 #### Other Resources
 
 - A selection of online free resources; including e-books for JavaScript are available at [JS Books](https://jsbooks.revolunet.com/)
+
+
