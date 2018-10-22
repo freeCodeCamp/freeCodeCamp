@@ -47,5 +47,9 @@ Here is a program to illustrate instanecof operator:
                            
        
  ```
- 
+ Working of Bitwise OR operator is as follows:
+ ```Java
+ int n1=12;
+ int n2=25;
+ int result = n1 | n2;  //result will be equal to 29, as 12 = 00001100 and 25 = 00011001 
 
