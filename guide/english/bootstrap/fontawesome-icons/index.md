@@ -42,3 +42,13 @@ _Note: Do not include the dot in the HTML Class Attribute, referring to the clas
 #### More Information:
 [Fontawesome Cheatsheet](http://fontawesome.io/cheatsheet/)
 
+## Font Awesome Free CDN for version 5.4
+
+Version 5.4 extends the free icons to 1388.
+
+```html
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.4.1/css/all.css" integrity="sha384-5sAR7xN1Nv6T6+dT2mhtzEpVJvfS3NScPQTrOxhwjIuvcA67KV2R5Jz6kr4abQsz" crossorigin="anonymous">
+```
+
+#### Font Awesome Free Icons for version 5.4:
+List of v5.4 free icons is available [here](https://fontawesome.com/icons?d=gallery&m=free)
