@@ -69,3 +69,11 @@ else {
     return "Invalid number";
 }
 ```
+
+A more advanced and shorter version of the classical `if...else` statement is using the Ternary operator (? and :)
+
+Whatever comes after`?` is the result for when the condition of the`if`statement is true and whatever comes after`:` is the result for when the condition of the`if`statement is false.
+
+Example:
+
+if (x == 5) ? z = 7; q = 42; : z = 19;
