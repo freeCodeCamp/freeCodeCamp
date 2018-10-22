@@ -30,3 +30,11 @@ HTML:
 ```html
 <script src="/bower_components/angular/angular.js"></script>
 ```
+
+## Design Goals
+1. Decoupling
+  * Removing dependency of the DOM Manipulation from logic in the application
+  * Removing dependency between client and server side of application. This allows paralell development
+2. Providing structure for the journey of building an application. This journey involves Designing the User INterface, writing the business logic, testing the application, deploying application.
+
+
