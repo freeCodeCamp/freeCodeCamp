@@ -1,3 +1,7 @@
+---
+title: Basic HTML
+---
+
 ## Basic HTML
 
 ## Basic Page Structure:
