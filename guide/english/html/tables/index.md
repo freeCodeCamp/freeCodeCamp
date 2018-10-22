@@ -91,8 +91,31 @@ Result:
 	    </tr>
 	  </tbody>
 	</table>
-
-
+ <div class="tables">
+        <p>You can also save time when doing a table in html.Let's see:</p>
+        <table>
+                <tr>
+                        <th></th>
+                        <th scope="col">09:00</th>
+                        <th scope="col">10:00</th>
+                        <th scope="col">11:00</th>
+                </tr>
+                <tr>
+                        <th scope="row">Monday</th>
+                        <td colspan="2">Geography</td>
+                        <td>History</td>
+                </tr>
+                <tr>
+                        <th scope="row">Tuesday</th>
+                        <td rowspan="2">English</td>
+                        <td>Science</td>
+                        <td>Music</td>
+                </tr>
+                <tr>
+                        <th scope="row">Wednesday</th>
+                        <td>Norwegian</td>
+                        <td>Gym</td>
+                        
 #### More Information:
 
 <a href='https://developer.mozilla.org/en-US/docs/Web/HTML/Element/table' target='_blank' rel='nofollow'>MDN Article on the HTML <table> tag</a>
