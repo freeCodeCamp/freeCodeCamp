@@ -141,6 +141,10 @@ title: Books to Read for Programmers
 - [Amazon Smile](https://smile.amazon.com/Core-Python-Applications-Programming-3rd/dp/0132678209)
 - ISBN-13: 978-0132678209
 
+*Head-First Python (2nd Edition) by Paul Barry*
+- [Amazon Smile](https://www.amazon.in/dp/1491919531/?tag=n)
+- ISBN-13: 978-1491919538
+
 ## Soft Skills
 
 *Soft Skills: The software developer's life manual*
