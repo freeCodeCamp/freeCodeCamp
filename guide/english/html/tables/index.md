@@ -115,6 +115,8 @@ Result:
                         <th scope="row">Wednesday</th>
                         <td>Norwegian</td>
                         <td>Gym</td>
+                </tr>
+        </table>
                         
 #### More Information:
 
