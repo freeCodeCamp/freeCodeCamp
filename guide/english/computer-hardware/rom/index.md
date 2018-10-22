@@ -5,6 +5,10 @@ title: ROM
 
 Read-only Memory (ROM) is a self descriptive type of memory that references the idea that a computer and its appliations can only read data from it. This is in direct contrast to other memory types, where it is possibe to read and write data and store it in memory.
 
+### Speed
+
+Although the relative speed of RAM vs. ROM has varied over time, as of 2007 large RAM chips can be read faster than most ROMs. For this reason (and to allow uniform access), ROM content is sometimes copied to RAM or shadowed before its first use, and subsequently read from RAM.
+
 ### Examples of ROM 
 
 #### BIOS ROM
