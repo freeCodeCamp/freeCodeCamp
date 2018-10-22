@@ -4,18 +4,18 @@ title: JavaScript Algorithms and Data Structures Certificate
 challengeType: 7
 isPrivate: true
 videoUrl: ''
-localeTitle: Certificado de algoritmos JavaScript y estructuras de datos
+localeTitle: Certificado de algoritmos en JavaScript y estructura de datos
 ---
 
-## Description
+## Descripción
 <section id="description">
 </section>
 
-## Instructions
+## Instrucciones
 <section id="instructions">
 </section>
 
-## Tests
+## Pruebas
 <section id='tests'>
 
 ```yml
@@ -35,15 +35,15 @@ tests:
 
 </section>
 
-## Challenge Seed
+## Sección de ejercicios
 <section id='challengeSeed'>
 
 </section>
 
-## Solution
+## Solución
 <section id='solution'>
 
 ```js
-// solution required
+// Solución requerida
 ```
 </section>
