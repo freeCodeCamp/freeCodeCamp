@@ -172,4 +172,4 @@ class Svm (object):
 #### More Information:
 <!-- Please add any articles you think might be helpful to read before writing the article -->
 <a href='http://scikit-learn.org/stable/modules/svm.html' target='_blank' rel='nofollow'>Scikit-learn SVM</a>
-
+<a href='https://towardsdatascience.com/https-medium-com-pupalerushikesh-svm-f4b42800e989' target='_blank' rel='nofollow'>Brief introduction to SVM</a>
