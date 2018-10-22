@@ -82,6 +82,10 @@ title: Books to Read for Programmers
 - [Amazon](https://www.amazon.com/Book-Programming-4th-Al-Kelley/dp/0201183994/ref=cm_cr_arp_d_bdcrb_top?ie=UTF8)
 - ISBN-13: 978-0201183993
 
+*Head First C: A Brain-Friendly Guide*
+- [Amazon Smile](https://smile.amazon.com/Head-First-C-Brain-Friendly-Guide/dp/1449399916/ref=sr_1_2?ie=UTF8&qid=1538665818&sr=8-2&keywords=head+first+c&dpID=51StqzL2dWL&preST=_SX218_BO1,204,203,200_QL40_&dpSrc=srch)
+- ISBN-13: 978-1449399917
+
 ## C#
 
 *C# 6.0 in a Nutshell: The Definitive Reference 6th Edition* by Joseph Albahari  (Author), Ben Albahari (Author)
@@ -131,6 +135,11 @@ title: Books to Read for Programmers
 - [Amazon Smile](https://smile.amazon.com/JavaScript-JQuery-Interactive-Front-End-Development/dp/1118531647/?pldnSite=1)
 - ISBN-13: 978-1118531648 
 
+## PHP
+
+*Pro PHP Programming - Peter MacIntyre*
+[Amazon]https://www.amazon.com/Pro-PHP-Programming-Peter-MacIntyre-ebook/dp/B005PZ09AG
+
 ## Python
 
 *Automate the Boring Stuff With Python*
@@ -140,6 +149,10 @@ title: Books to Read for Programmers
 *Core Python Applications Programming (3rd Edition) by Wesley J Chun*
 - [Amazon Smile](https://smile.amazon.com/Core-Python-Applications-Programming-3rd/dp/0132678209)
 - ISBN-13: 978-0132678209
+
+*Python Crash Course: A Hands-On, Project-Based Introduction to Programming*
+- [Amazon Smile](https://smile.amazon.com/Python-Crash-Course-Hands-Project-Based/dp/1593276036)
+- ISBN-13: 978-1593276034
 
 ## Soft Skills
 
@@ -165,10 +178,6 @@ title: Books to Read for Programmers
 - [Amazon Smile](https://smile.amazon.com/Think-Python-Like-Computer-Scientist/dp/1491939362)
 - ISBN-13: 978-1491939369
 
-*Python Crash Course: A Hands-On, Project-Based Introduction to Programming*
-- [Amazon Smile](https://smile.amazon.com/Python-Crash-Course-Hands-Project-Based/dp/1593276036)
-- ISBN-13: 978-1593276034
-
 *Computer Science Distilled: Learn the art of solving computaitonal problems by Wladston Ferreira Filho*
 - [Amazon Smile](https://smile.amazon.com/Computer-Science-Distilled-Computational-Problems/dp/0997316020)
 - ISBN-13: 978-0-9773160-2-5
@@ -184,10 +193,6 @@ title: Books to Read for Programmers
 *The Shellcoder's Handbook: Discovering and Exploiting Security Holes*
 - [Amazon Smile](https://smile.amazon.com/Shellcoders-Handbook-Discovering-Exploiting-Security/dp/047008023X/ref=sr_1_1?ie=UTF8&qid=1538665772&sr=8-1&keywords=shellcoders+handbook+3rd+edition&dpID=41xfa6zpuPL&preST=_SX218_BO1,204,203,200_QL40_&dpSrc=srch)
 - ISBN-13: 978-0470080238
-
-*Head First C: A Brain-Friendly Guide*
-- [Amazon Smile](https://smile.amazon.com/Head-First-C-Brain-Friendly-Guide/dp/1449399916/ref=sr_1_2?ie=UTF8&qid=1538665818&sr=8-2&keywords=head+first+c&dpID=51StqzL2dWL&preST=_SX218_BO1,204,203,200_QL40_&dpSrc=srch)
-- ISBN-13: 978-1449399917
 
 *Practical Object-Oriented Design in Ruby*
 - [Amazon Smile](https://smile.amazon.com/Practical-Object-Oriented-Design-Ruby-Addison-Wesley/dp/0321721330)
@@ -232,11 +237,9 @@ title: Books to Read for Programmers
 *Deep Learning by Ian Goodfellow, Yoshua Bengio, Aaron Courville*
 - [Amazon](https://www.amazon.com/Deep-Learning-Adaptive-Computation-Machine/dp/0262035618)
 - ISBN: 978-0262035613
+
 *Oracle® Database Notes for Professionals*
 https://books.goalkicker.com/OracleDatabaseBook/
-
-*Pro PHP Programming - Peter MacIntyre*
-[Amazon]https://www.amazon.com/Pro-PHP-Programming-Peter-MacIntyre-ebook/dp/B005PZ09AG
 
 *Mastering Linux Shell Scripting by Andrew Mallett*
 - [Amazon](https://www.amazon.com/Mastering-Linux-Scripting-Andrew-Mallett/dp/1784396974/)
