@@ -30,6 +30,12 @@ A collection of articles covering the basics (core language and working with a b
 - [Online](https://javascript.info/)
 - [E-book](https://javascript.info/ebook)
 
+#### Mastering JavaScript Functional Programming: In-depth guide for writing robust and maintainable JavaScript code in ES8 and beyond
+
+Master Functional Programming techniques with this comprehensive guide for writing cleaner, safer, high-performing JavaScript codes.
+
+- [Amazon](https://www.amazon.com/Mastering-JavaScript-Functional-Programming-depth/dp/1787287440/ref=sr_1_13_sspa?s=books&ie=UTF8&qid=1540246020&sr=1-13-spons&keywords=javascript&psc=1)
+
 #### Other Resources
 
 - A selection of online free resources; including e-books for JavaScript are available at [JS Books](https://jsbooks.revolunet.com/)
