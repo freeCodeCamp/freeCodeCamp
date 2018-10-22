@@ -1,4 +1,5 @@
-  title: SQL Min Function
+---
+title: SQL Min Function
 ---
 ## SQL Minimum (MIN) Function
 
