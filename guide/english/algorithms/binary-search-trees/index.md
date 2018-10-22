@@ -281,3 +281,13 @@ Complete Binary Tree: A Binary Tree is complete Binary Tree if all levels are co
       40    50    100   40
      /  \   /
     8   7  9 
+
+Perfect Binary Tree A Binary tree is Perfect Binary Tree in which all internal nodes have two children and all leaves are at the same level.
+               18
+           /       \  
+         15         30  
+        /  \        /  \
+      40    50    100   40
+
+
+           
