@@ -99,3 +99,4 @@ Semantic UI has thorough and very well organized documentation, that will gets y
 * [Getting Started with Semantic UI](https://semantic-ui.com/introduction/getting-started.html)
 * [Sample Semantic UI Templates](https://semantic-ui.com/usage/layout.html#pages)
 * [Customizing and Creating Semantic UI Themes](http://learnsemantic.com/)
+* [Semantic UI - A Complete Beginners Guide](https://www.udemy.com/semantic-ui-for-beginners/)
