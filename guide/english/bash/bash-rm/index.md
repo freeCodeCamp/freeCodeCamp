@@ -8,6 +8,7 @@ title: Bash rm
 
 There are few commonly used arguments:
 
+- `i` , will prompt before every removal (Highly recommended).
 - `r` , means to recursively delete all the folders inside a directory.
 - `f` , means to forcefully delete anything folder or file.
 
