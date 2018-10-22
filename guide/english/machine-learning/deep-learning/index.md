@@ -15,6 +15,8 @@ Deep Learning helps tackle this problem of figuring out the set of rules that ca
 
 Turns out that there are a lot of problems out there which are not image-related (like voice recognition), where finding the set of rules is very tricky. Deep Learning can help with that provided there is lot of labelled data already present.
 
+ It is worthy to note that the the machine learning algorithm of Google has attained 95% success for Enlish language.
+ 
 ### How to train a deep learning model?
 Training a deep neural network (a.k.a. our stack of mathematical functions arranged in some architecture) is basically an art with lot of hyper-parameters. Hyper-parameters are basically things such as which mathematical function to use, or which architecture to use, that you need to manually figure until your network is able to successfully classify cats and dogs. In order to train, you need lots of labelled data (in this case lots of images already classified as cats or dogs) and lots computing power and patience!
 
