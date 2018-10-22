@@ -61,6 +61,11 @@ You'll learn many of the first princliples for data science tools and how algori
 - ISBN-10: 1593276036
 - ISBN-13: 978-1593276034
 
+*Python3 101 MCQ - Multiple Choice Questions Answers for Jobs, Tests and Quizzes: Python3 Programming QA (Python 3 Beginners Guide Book 1)* 
+- Kindle version is free.
+- [Amazon](https://www.amazon.com/Python3-101-MCQ-Questions-Programming-ebook/dp/B01BCP6IVQ/ref=sr_1_3?s=books&ie=UTF8&qid=1540165500&sr=1-3&keywords=python)
+- ASIN: B01BCP6IVQ
+
 #### Other Resources
 
 - [Functional Programming in Python by David Mertz [OREILLY] [FREE]](https://www.oreilly.com/programming/free/files/functional-programming-python.pdf)
