@@ -25,8 +25,11 @@ x = 'string';
 console.log(typeof x) // string
 x = { key: 'value' };
 console.log(typeof x) // object
+x = true;
+console.log(type of x) // boolean
 ```
 
+From the last example above, The `typeof` operator returns a boolean that represents the current type of a variable; x which is of value `true`.
 This can be useful for checking the type of a variable in a function and continuing as appropriate.
 
 Here's an example of a function that can take a variable that is a string or a number:
