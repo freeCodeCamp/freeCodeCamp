@@ -24,3 +24,6 @@ team members.
 
 * [GitHub Documentation](https://github.com/features/code-review) : Learn how to write better code and document your changes with version control
 * [How to Do Code Reviews Like a Human (Part One)](https://mtlynch.io/human-code-reviews-1/)
+* [Code Review Guidelines](https://blog.philipphauer.de/code-review-guidelines/)
+* [Code Review Best Practices](https://medium.com/palantir/code-review-best-practices-19e02780015f)
+* [How to Conduct Effective Code Reviews](https://blog.digitalocean.com/how-to-conduct-effective-code-reviews/)
