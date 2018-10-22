@@ -18,7 +18,7 @@ El evento `onload` se utiliza para ejecutar una función de JavaScript inmediata
  </script> 
 ```
 
-En el ejemplo anterior, tan pronto como la página web se haya cargado, se `myFunction` función `myFunction` , que muestra la alerta de `Page finished loading` la `Page finished loading` para el usuario.
+En el ejemplo anterior, tan pronto como la página web se haya cargado, se ejecuta la función `myFunction` , que muestra la alerta de `Page finished loading` para el usuario.
 
 El evento `onload` se usa con más frecuencia dentro del elemento `<body>` para ejecutar el script. Si se adjunta al `<body>` , el script se ejecutará una vez que la página web haya cargado completamente todo el contenido (imágenes, archivos de script, archivos CSS, etc.).
 
