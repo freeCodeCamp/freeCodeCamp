@@ -52,7 +52,7 @@ To access the value of a key in this object, you will use `collection[id][prop]`
 **Solution ahead!**
 
 ## ![:beginner:](https://forum.freecodecamp.com/images/emoji/emoji_one/beginner.png?v=3 ":beginner:") Basic Code Solution:
-
+```js
     function updateRecords(id, prop, value) {
       if (prop === "tracks" && value !== "") {
        if(collection[id][prop]) {
@@ -69,7 +69,7 @@ To access the value of a key in this object, you will use `collection[id][prop]`
 
       return collection;
     }
-
+```
 ![:rocket:](https://forum.freecodecamp.com/images/emoji/emoji_one/rocket.png?v=3 ":rocket:") <a href='https://repl.it/C2AZ/0' target='_blank' rel='nofollow'>Run Code</a>
 
 ### Code Explanation:
@@ -85,6 +85,24 @@ To access the value of a key in this object, you will use `collection[id][prop]`
 *   **value** is not a blank string, so the second part of the else if statement passes.
 *   `artist: "ABBA"` is added to the `5439` `id`.
 
+## ![:sunflower:](https://forum.freecodecamp.com/images/emoji/emoji_one/sunflower.png?v=3 ":sunflower:") Intermediate Code Solution:
+
+(Using Multiple Conditional (Ternary) Operators)
+
+```js
+   function updateRecords(id, prop, value) {
+       if (prop === "tracks" && value !=="") {
+         (collection[id][prop]) ? collection[id][prop].push(value) :
+         collection[id][prop] = [value];     
+       }
+         else {
+           (value !== "") ? collection[id][prop] = value :
+         delete collection[id][prop];
+         }
+     return collection;
+   }
+```
+![:rocket:](https://forum.freecodecamp.com/images/emoji/emoji_one/rocket.png?v=3 ":rocket:") <a href='https://repl.it/@greggubarev/Record-Collection' target='_blank' rel='nofollow'>Run Code</a>
 
 ### Resources:
 
@@ -94,3 +112,4 @@ To access the value of a key in this object, you will use `collection[id][prop]`
 *   [fCC's challenge: Accessing Nested Objects](https://learn.freecodecamp.org/javascript-algorithms-and-data-structures/basic-javascript/accessing-nested-objects/)
 *  ["Array.prototype.push()" - *MDN JavaScript reference*](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/push)
 *  ["delete operator" - *MDN JavaScript reference*](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/delete)
+* <a href='https://learn.freecodecamp.org/javascript-algorithms-and-data-structures/basic-javascript/use-multiple-conditional-ternary-operators/' target='_blank' rel='nofollow'>Use Multiple Conditional (Ternary) Operators</a>
