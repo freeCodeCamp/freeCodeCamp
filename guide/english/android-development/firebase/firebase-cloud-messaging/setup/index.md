@@ -1,4 +1,6 @@
-
+---
+title: Firebase Cloud Messaging
+--- 
 # Firebase Cloud Messaging
 Firebase Cloud Messaging is a free service to send Notifications to your app. Firebase Cloud Messaging or **FCM** is used to send notifications to your app from either the Firebase Console or using your own server.
 
