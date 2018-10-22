@@ -8,7 +8,7 @@ videoUrl: 'https://scrimba.com/p/pByETK/cmzdycW'
 ## Description
 <section id='description'>
 The repeat function comes with an option called <dfn>auto-fill</dfn>. This allows you to automatically insert as many rows or columns of your desired size as possible depending on the size of the container. You can create flexible layouts when combining <code>auto-fill</code> with <code>minmax</code>.
-In the preview, <code>grid-template-columns</code> is set to
+In the preview, <code>grid-template-columns</code> for <code>.container2</code> is set to
 <blockquote>repeat(auto-fill, minmax(60px, 1fr));</blockquote>
 When the container changes size, this setup keeps inserting 60px columns and stretching them until it can insert another one.
 <strong>Note</strong><br>If your container can't fit all your items on one row, it will move them down to a new one.
@@ -65,7 +65,7 @@ tests:
     width: 100%;
     background: Silver;
     display: grid;
-    grid-template-columns: repeat(3, minmax(60px, 1fr));
+    grid-template-columns: repeat(auto-fill, minmax(60px, 1fr));
     grid-template-rows: 1fr 1fr 1fr;
     grid-gap: 10px;
   }
