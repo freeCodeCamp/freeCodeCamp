@@ -83,3 +83,7 @@ themes that build on the Bootstrap framework to provide a more customized and st
 [HTML linter for projects using Bootstrap](https://github.com/twbs/bootlint)
 [Design elements and code snippets for Bootstrap](https://bootsnipp.com/)
 [Code, theme, and add-on resources for Bootstrap](http://expo.getbootstrap.com/resources/)
+
+My Changes.
+
+Bootstrap is designed to be mobile first, meaning that the classes are designed such that we can begin by targeting mobile device screens first and then work upwards to larger screen sizes. 
