@@ -109,3 +109,15 @@ Output:
 ```shell
 > feCdCm
 ```
+
+
+#### Example application problem
+Take any ten digit number and remove a set digit from it. Ex: 3145159265 becomes 3141926 when all 5s are removed.
+
+Solution:
+ten_digit_num = 3145159265
+digit = 5
+for i in range(len(ten_digit_num)):
+    if ten_digit_num[i] == digit:
+        ten_digit_num = ten_digit_num[i] + ten_digit_num[i+1:]
+print(ten_digit_num)
