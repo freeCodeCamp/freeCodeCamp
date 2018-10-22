@@ -12,7 +12,7 @@ This section will focus on various aspects of working in tech. We will discuss t
 The field of computer security is growing at a rapid rate every year, in a report done recently it is estimated that by 2021 their will be 3.5 million jobs unfilled. The demand is due to the increase in cyber attacks and with how much data is being created everyday, data is so valuable nowadays and it needs to be kept secure and safe.
 
 ### Examples of Tech related jobs
-- Software Developer
+- Software Developer (Front-end and Back-end)
 - Computer Systems Analyst
 - Web Developer
 - IT Manager
@@ -20,6 +20,7 @@ The field of computer security is growing at a rapid rate every year, in a repor
 - Network Administrator
 - Support Desk Engineer
 - Security Engineer
+- Data Scientist
 
 ### Books
 
@@ -50,3 +51,5 @@ To see the full list, visit: https://talkpython.fm/episodes/show/130/10-books-py
 
 ### Podcasts
 [10 Books Python Developers should be reading - talkpython.fm](https://talkpython.fm/episodes/show/130/10-books-python-developers-should-be-reading)
+
+[WorkingTech: Talent, Tech, and Innovation](http://workingtech.co/podcast/)
