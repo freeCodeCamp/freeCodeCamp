@@ -4,6 +4,16 @@ title: Books on Python Programming Language
  
  ### List of Books
  
+ #### Completely New To Python
+ 
+ Always a great place to start, would be from the source. Evrythong from downloading the software to running your first "Hello World"
+ 
+ -[Complete Beginner](https://wiki.python.org/moin/BeginnersGuide/NonProgrammers)
+ -[Website](https://www.python.org/about/gettingstarted/)
+ -[Download](https://wiki.python.org/moin/BeginnersGuide/Download)
+ -[Examples](https://wiki.python.org/moin/BeginnersGuide/Examples)
+ 
+ 
  #### Think Python 2e
  
  A free (E-book) which covers the basics of Python. It's beginner friendly and a must for people who are new to programming!
