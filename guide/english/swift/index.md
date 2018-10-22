@@ -64,4 +64,4 @@ project or application, no matter how small!
 ### Sources
 
 1. "Swift 4 - The powerful programming language that is also easy to learn." Apple, [developer.apple.com/swift](https://developer.apple.com/swift/), Accessed 31 Oct. 2017.
-
+But don't start your programming courier with this.
