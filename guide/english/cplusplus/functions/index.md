@@ -45,10 +45,33 @@ int max(int num1, int num2)
  
    return result; 
 }
+
+int sum(int a, int b)
+{
+
+	int total;
+	total=a+b;
+	return total;
+}
+
 ## calling a function:
 
 int res;
 res=max(5,10);
+
+int main()
+{
+	int x,y,s;
+	cout<<"Enter first number : ";
+	cin>>x;
+	cout<<"Enter second number : ";
+	cin>>y;
+	s=sum(x,y);
+	cout<<"The sum is : "<<s;
+
+	
+	return 0;
+}
 
 // if the function returns a value, assign it to that variable, else just call it like function(arg1,arg2);
 ```
