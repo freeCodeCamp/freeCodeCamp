@@ -36,3 +36,8 @@ The worst thing you can do is to sell yourself short if you want something take 
 - [1 Million Women To Tech](https://1millionwomentotech.com/)
 - [Women Who Code](https://www.womenwhocode.com/)
 
+### Some Popular Conferences and Summits for Women in Technology:
+-[GHC Women in Computing](https://ghc.anitab.org/)
+-[The Women in Tech Summit](https://womenintechsummit.net/)
+-[Wonder Women Tech National Conference](https://wonderwomentech.com/)
+-[WITI Women in Technology Summit](https://www.witi.com/conferences/2018/summit/)
