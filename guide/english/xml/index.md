@@ -54,7 +54,11 @@ The following are areas that can be simiplified with XML:
 
 And it's main achievement was that it became a W3C Recommendation as early as in February 1998.
 
+### XML Parsers
+XML parser is a software library or a package that provides interface for client applications to work with XML documents. It checks for proper format of the XML document and may also validate the XML documents. Modern day browsers have built-in XML parsers.
+
 ### More information
 
 * [XML Introduction](https://developer.mozilla.org/en-US/docs/XML_introduction)
 * [Introduction to XML](https://www.w3schools.com/xml/xml_whatis.asp)
+* [XML Parser](https://www.tutorialspoint.com/xml/xml_parsers.htm)
