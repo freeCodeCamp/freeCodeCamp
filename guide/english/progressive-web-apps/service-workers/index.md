@@ -3,7 +3,7 @@ title: Service Workers
 ---
 ## Service Workers
 
-Service Worker is a script that works on browser background without user interaction independently. Also, It resembles a proxy that works on the user side. With this script, you can track network traffic of the page, manage push notifications and develop “offline first” web applications with Cache API.
+Service Worker is a script that works on browser background without user interaction independently. Also, It resembles a proxy that works on the user side. With this script, you can track network traffic of the page, manage push notifications and develop “offline first” web applications with Cache API. With service worker you can intercept network requests and handle them as you see fit.
 
 ### What can we do with Service Worker?
 
@@ -23,10 +23,12 @@ Service Worker is a script that works on browser background without user interac
     But, you can communicate to the window through postMessage and manage processes that you want.
     You can’t work it on 80 Port!
     Service Worker just can work on HTTPS protocol. But you can work on localhost during development.
+    You cannot work with local storage (because service worker is designed to be fully asynchronous).
     
 ### Service Worker Lifecycle
 
-Service Worker lifecycle has 3 step; Registration, Installation, and Activation.
+Service Worker lifecycle has 3 steps: Registration, Installation, and Activation.
+Installation and activation of service worker happens asynchronously. Idle service workers will be occasionally terminated to save memory.
 
 ### Registering a Service Worker
 
@@ -43,7 +45,9 @@ This method takes two parameters:
 
     The name of the javascript file, relative to the root of your domain
     (Optional) The scope to give a specific perimeter where your ServiceWorker has power to work. Basically it is the folder where it has control for assets, the default value is the root of the domain.
-    
+
+If your site has multiple pages, remember to write registration code for each one: users won't always start from your main page.
+
 ### Installing, and using a Service Worker
 
 Now that we registered a Service Worker from ‘serviceWorker.js’, lets fill this file so your website about political article can have its article read offline if you user has already visited the needed article before.
@@ -77,8 +81,35 @@ We have 3 interesting methods here! Lets take a quick look to all of them:
 
 So with this code, your Service Worker is now registered, installed, and active. If you go to the home page of your website, and reload it while being in offline mode, you should be able to see your page just as before!
 
+You can make the Service Worker to fit needs of your particular website: it can be cache falling back to network (offline first), network falling back to cache, or a variation of showing cache and updating from network when possible.
+
+If you want to load a page bypassing the Service Worker hit `Shift+Refresh`. When you're developing your site use developer tools for clearing page cache and updating your Service Worker (it will not update on simple reload).
+
+
+### Background Sync basics
+
+BackgroundSync is useful for the scenario when the user wants to send data to the server, but becomes disconnected in the process - for example if they are filling the form and trying to submit it.
+After Service Worker is registered we register our synchronizaion event:
+```javascript
+navigator.serviceWorker.ready.then(function(swRegistration) {
+  return swRegistration.sync.register('mySyncEvent');
+});
+```
+Then in Service Worker itself we can listen for this event and run some callback code once the user is online again:
+```javascript
+self.addEventListener('sync', function(event) {
+  if (event.tag == 'mySyncEvent') {
+    event.waitUntil(sendData());
+  }
+});
+```
+That callback can take data from temporary storage (for example, IndexedDB) and send it to the remote server, thus saving the user from having to fill same form over and over again if their Internet connection is unreliable.
+BackgroundSync is not fully supported yet. 
+
 #### More Information
 
 [A beginner’s guide to Service Workers](https://medium.com/samsung-internet-dev/a-beginners-guide-to-service-workers-f76abf1960f6)
 [Service Workers in JS and offline reading](https://medium.com/quick-code/service-workers-in-js-and-offline-reading-7bac9d4980ea)
 [What is service worker?](https://medium.com/commencis/what-is-service-worker-4f8dc478f0b9)
+[Introduction to service worker](https://developers.google.com/web/ilt/pwa/introduction-to-service-worker)
+[Service worker primer](https://developers.google.com/web/fundamentals/primers/service-workers/)
