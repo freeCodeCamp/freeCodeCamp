@@ -1,5 +1,5 @@
 ---
-title: Arrays
+Title: Arrays
 ---
 
 # Array
@@ -38,6 +38,9 @@ Note: The style `double list[]` is not preferred as it comes from the C/C++ lang
 ```java
 dataType[] arrayName = new dataType[arraySize];
 ```
+## Example:
+int[] Array = new int[5];
+
 
 ## Code snippets of the above syntax:
 
