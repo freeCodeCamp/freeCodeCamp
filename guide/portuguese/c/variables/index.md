@@ -43,6 +43,8 @@ Depois que as variáveis ​​são criadas, nós começamos a usá-las:
 
 Este é o mesmo printf () que você usou anteriormente, mas agora ele tem alguns recursos diferentes. Primeiro, observe que agora existem duas coisas dentro dos parênteses: o texto a ser impresso na tela e a variável. Observe também o `%i` e o `%f` . Isso é chamado de _especificador de formato_ e é usado para especificar em qual formato algo deve ser impresso. Sempre que printf () se deparar com um desses, ele tentará inserir a variável fornecida nesse ponto.
 
+  <dt>Exibição</dt>
+
 Como os tipos de dados de nossas variáveis ​​são representados em um computador de várias maneiras diferentes, existem várias maneiras diferentes para que C os exiba:
 
 Tipo de dados | Especificador de formato ---------------- | ------------------ char | % c, ou% hhi para imprimir como um número quando assinado,% hhu para imprimir como um número quando não assinado curto | % hi ou% hu quando não assinados int | % i,% d também pode ser usado longo | % li ou% lu quando não assinados muito tempo | % lli ou% llu quando não assinados flutuador | % f duplo | % f longa dupla | % Lf int não assinado | %Lu
