@@ -1,5 +1,5 @@
 ---
-title: Methods
+Title: Methods
 ---
 # Methods
 The most recognizable method in Java is probably `public static void main(String[]args)` where `public` means that users have access to the method, `static` means that the method is based on a "class" rather than an "instance," `void` means that nothing will be returned from the method to another (higher level) method, and `main` which is the name of this particular method.
