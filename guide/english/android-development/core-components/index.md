@@ -46,6 +46,9 @@ An _activity_ is a component that has a user interface and represents a single s
 > The final call you receive before your activity is destroyed. This can happen either because the activity is finishing (someone called finish() on it, or because the system is temporarily destroying this instance of the activity to save space. You can distinguish between> these two scenarios with the isFinishing() method.
 
 #### Sample code to understand Activity Lifecycle
+
+You can print in log console using Log.d() method.
+
 ``` java
 import android.app.Activity;
 import android.os.Bundle;
