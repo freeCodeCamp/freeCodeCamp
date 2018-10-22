@@ -13,5 +13,5 @@ In this section, we'll have guides to a wide variety of logical puzzles that are
 
 ## Free Courses to Improve Logic 
 [Logic and Computational Thinking](https://www.edx.org/course/logic-and-computational-thinking-1)
-
+[Logical and Critical Thinking - Online Course](https://www.futurelearn.com/courses/logical-and-critical-thinking)
 [Introduction to Mathematical Thinking](https://www.coursera.org/learn/mathematical-thinking)
