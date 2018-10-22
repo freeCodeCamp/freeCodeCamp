@@ -134,6 +134,7 @@ To animate a button on click use 'button:active':
 ```
 
 #### More Information:
-* https://www.w3schools.com/css/css3_buttons.asp
-* https://www.w3schools.com/howto/howto_css_animate_buttons.asp
+[W3 Schools - CSS Buttons](https://www.w3schools.com/css/css3_buttons.asp)
+
+[W3 Schools - CSS Buttons Animate](https://www.w3schools.com/howto/howto_css_animate_buttons.asp)
 
