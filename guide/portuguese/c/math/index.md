@@ -22,7 +22,7 @@ No exemplo acima, o `result` da variável será igual a + b.
 
 #### Subtração: `-`
 
-A adição é executada com um `-` assim:
+A subtração é executada com um `-` assim:
 
 ```C
 result = a - b; 
@@ -38,7 +38,7 @@ A multiplicação é realizada com um `*` , assim:
 result = a * b; 
 ```
 
-No exemplo acima, o `result` da variável será igual a um multiplicado por b.
+No exemplo acima, o `result` da variável será igual a * b (a multiplicado por b).
 
 #### Divisão: `/`
 
@@ -48,7 +48,7 @@ Divisão é realizada com um `/` , assim:
 result = a / b; 
 ```
 
-No exemplo acima, o `result` da variável será igual a a dividido por b. Isso nem sempre é uma fração de over-b, no entanto. Ao lidar com inteiros, as coisas ficam um pouco diferentes - mais sobre isso depois.
+No exemplo acima, o `result` da variável será igual a a/b (a dividido por b). Isso nem sempre é uma fração de over-b, no entanto. Ao lidar com inteiros, as coisas ficam um pouco diferentes - mais sobre isso depois.
 
 # O material não tão básico
 
