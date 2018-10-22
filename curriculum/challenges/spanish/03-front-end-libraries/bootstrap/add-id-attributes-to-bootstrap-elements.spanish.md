@@ -18,9 +18,9 @@ localeTitle: Añadir atributos de ID a los elementos Bootstrap
 
 ```yml
 tests:
-  - text: Darle a su izquierda <code>well</code> el id de <code>left-well</code> .
+  - text: Darle a su <code>pozo</code> izquierdo el id de <code>left-well</code> .
     testString: 'assert($(".col-xs-6").children("#left-well") && $(".col-xs-6").children("#left-well").length > 0, "Give your left <code>well</code> the id of <code>left-well</code>.");'
-  - text: Dar a su derecha <code>well</code> el id de <code>right-well</code> .
+  - text: Dar a su <code>pozo</code> derecho el id de <code>right-well</code> .
     testString: 'assert($(".col-xs-6").children("#right-well") && $(".col-xs-6").children("#right-well").length > 0, "Give your right <code>well</code> the id of <code>right-well</code>.");'
 
 ```
