@@ -131,6 +131,11 @@ title: Books to Read for Programmers
 - [Amazon Smile](https://smile.amazon.com/JavaScript-JQuery-Interactive-Front-End-Development/dp/1118531647/?pldnSite=1)
 - ISBN-13: 978-1118531648 
 
+## PHP
+
+*Pro PHP Programming - Peter MacIntyre*
+[Amazon]https://www.amazon.com/Pro-PHP-Programming-Peter-MacIntyre-ebook/dp/B005PZ09AG
+
 ## Python
 
 *Automate the Boring Stuff With Python*
@@ -140,6 +145,18 @@ title: Books to Read for Programmers
 *Core Python Applications Programming (3rd Edition) by Wesley J Chun*
 - [Amazon Smile](https://smile.amazon.com/Core-Python-Applications-Programming-3rd/dp/0132678209)
 - ISBN-13: 978-0132678209
+
+*Violent Python: A Cookbook for Hackers, Forensic Analysts, Penetration Testers and Security Engineers*
+- [Amazon Smile](https://smile.amazon.com/Violent-Python-Cookbook-Penetration-Engineers/dp/1597499579/ref=sr_1_2?ie=UTF8&qid=1538665634&sr=8-2&keywords=violent+python)
+- ISBN-13: 978-1597499576
+
+*Python Crash Course: A Hands-On, Project-Based Introduction to Programming*
+- [Amazon Smile](https://smile.amazon.com/Python-Crash-Course-Hands-Project-Based/dp/1593276036)
+- ISBN-13: 978-1593276034
+
+*Think Python: How to Think Like a Computer Scientist*
+- [Amazon Smile](https://smile.amazon.com/Think-Python-Like-Computer-Scientist/dp/1491939362)
+- ISBN-13: 978-1491939369
 
 ## Soft Skills
 
@@ -161,14 +178,6 @@ title: Books to Read for Programmers
 - [Amazon Smile](https://smile.amazon.com/Data-Structures-Algorithms-Made-Easy/dp/819324527X)
 - ISBN-13: 978-8193245279
 
-*Think Python: How to Think Like a Computer Scientist*
-- [Amazon Smile](https://smile.amazon.com/Think-Python-Like-Computer-Scientist/dp/1491939362)
-- ISBN-13: 978-1491939369
-
-*Python Crash Course: A Hands-On, Project-Based Introduction to Programming*
-- [Amazon Smile](https://smile.amazon.com/Python-Crash-Course-Hands-Project-Based/dp/1593276036)
-- ISBN-13: 978-1593276034
-
 *Computer Science Distilled: Learn the art of solving computaitonal problems by Wladston Ferreira Filho*
 - [Amazon Smile](https://smile.amazon.com/Computer-Science-Distilled-Computational-Problems/dp/0997316020)
 - ISBN-13: 978-0-9773160-2-5
@@ -176,10 +185,6 @@ title: Books to Read for Programmers
 *Algorithms Unlocked by Thomas H. Cormen*
 - [Amazon Smile](https://smile.amazon.com/Algorithms-Unlocked-Press-Thomas-Cormen/dp/0262518805)
 - ISBN-13: 978-0262518802
-
-*Violent Python: A Cookbook for Hackers, Forensic Analysts, Penetration Testers and Security Engineers*
-- [Amazon Smile](https://smile.amazon.com/Violent-Python-Cookbook-Penetration-Engineers/dp/1597499579/ref=sr_1_2?ie=UTF8&qid=1538665634&sr=8-2&keywords=violent+python)
-- ISBN-13: 978-1597499576
 
 *The Shellcoder's Handbook: Discovering and Exploiting Security Holes*
 - [Amazon Smile](https://smile.amazon.com/Shellcoders-Handbook-Discovering-Exploiting-Security/dp/047008023X/ref=sr_1_1?ie=UTF8&qid=1538665772&sr=8-1&keywords=shellcoders+handbook+3rd+edition&dpID=41xfa6zpuPL&preST=_SX218_BO1,204,203,200_QL40_&dpSrc=srch)
@@ -234,9 +239,6 @@ title: Books to Read for Programmers
 - ISBN: 978-0262035613
 *Oracle® Database Notes for Professionals*
 https://books.goalkicker.com/OracleDatabaseBook/
-
-*Pro PHP Programming - Peter MacIntyre*
-[Amazon]https://www.amazon.com/Pro-PHP-Programming-Peter-MacIntyre-ebook/dp/B005PZ09AG
 
 *Mastering Linux Shell Scripting by Andrew Mallett*
 - [Amazon](https://www.amazon.com/Mastering-Linux-Scripting-Andrew-Mallett/dp/1784396974/)
