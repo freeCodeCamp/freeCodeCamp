@@ -49,7 +49,7 @@ Then in your css file:
 ```
 
 **Note:** Class names are traditionally all lowercase, with each word in a multi-word class name separated by hyphens (e.g. "super-man").
-
+**my-notes** It is better use hyphens to seperate html classes, and use capital letter after the first word when you write JS code so you can see when it is html and when it is java script.
 You can also combine classes in the same line:
 ```css
 .superMan .spiderMan {
