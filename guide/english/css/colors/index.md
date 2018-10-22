@@ -45,7 +45,7 @@ Example colors:
   CMYK Blue: cmyk(100%, 100%, 0%, 0%)
 
 ### Hexcodes
-Hexcode, short for hexadecimal code, is a way to express a color value to your computer. It is named this way because 16 unique symbols can be used as values. In this case, the numbers 0 to 9 and letters a to f are used.
+Hexcode, short for hexadecimal code, is a way to express a color value to your computer. It is named this way because 16 unique symbols can be used as values. In this case, the numbers 0 to 9 and letters a to f are used.Each place is 16 * Previous.
 
 Hex codes are expressed in this format: #000000, which would be the color black in this instance. Six characters are used in each hexcode, using any of the 16 characters mentioned previously. These six characters are divided into three pairs of two.
 
