@@ -131,7 +131,7 @@ Please don't create GitHub issues for security issues. Instead, please send an e
 ### Contributing
 
 #### [Please follow these steps to contribute.](CONTRIBUTING.md)
-
+u don't have mentioned the steps
 ### License
 
 Copyright © 2018 freeCodeCamp.org
