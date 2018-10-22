@@ -10,6 +10,8 @@ videoUrl: 'https://scrimba.com/p/pzrPu4/crzN7T8'
 Instead of using <code>em</code> or <code>px</code> to size text, you can use viewport units for responsive typography. Viewport units, like percentages, are relative units, but they are based off different items. Viewport units are relative to the viewport dimensions (width or height) of a device, and percentages are relative to the size of the parent container element.
 The four different viewport units are:
 <ul><li><code>vw: 10vw</code> would be 10% of the viewport's width.</li><li><code>vh: 3vh</code> would be 3% of the viewport's height.</li><li><code>vmin: 70vmin</code> would be 70% of the viewport's smaller dimension (height vs. width).</li><li><code>vmax: 100vmax</code> would be 100% of the viewport's bigger dimension (height vs. width).</li></ul>
+Here is an example that sets a body tag to 30% of the viewport's width.
+<code>body { width: 30vw; }</code>
 </section>
 
 ## Instructions
