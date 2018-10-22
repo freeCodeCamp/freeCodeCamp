@@ -61,6 +61,12 @@ You'll learn many of the first princliples for data science tools and how algori
 - ISBN-10: 1593276036
 - ISBN-13: 978-1593276034
 
+*Python Crash Course: A Hands-On, Project-Based Introduction to Programming 1st Edition* 
+- by Eric Matthes
+- [Amazon](https://www.amazon.com/Python-Crash-Course-Hands-Project-Based/dp/1593276036/ref=sr_1_4?s=books&ie=UTF8&qid=1540244956&sr=1-4&keywords=python+3)
+- ISBN-10: 1593276036
+- ISBN-13: 978-1593276034
+
 #### Other Resources
 
 - [Functional Programming in Python by David Mertz [OREILLY] [FREE]](https://www.oreilly.com/programming/free/files/functional-programming-python.pdf)
