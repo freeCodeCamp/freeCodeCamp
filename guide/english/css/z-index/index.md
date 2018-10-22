@@ -87,6 +87,7 @@ Use Z Index if you need to put a background element below a container. You can e
   z-index: -1;
 }
 ```
+**my-notes: usually when the z-index is a heigher number it will be in the front, when it is a lower number it will be in the back.
 
 #### More Information:
 <!-- Please add any articles you think might be helpful to read before writing the article -->
