@@ -53,5 +53,19 @@ more command allows quickly view file and shows details in percentage. You can p
 10. `cp` Command
 Copy file from source to destination preserving same mode.
 
+***********
+
+Some important commands for file manipulation are:
+
+1. mv [source] [destination] - Moves a file or a folder from source to destination you can also rename a file with these command
+
+2. rm [file name1], [file name2]... - Removes a file and rm -r [dir name] removes a folder
+
+3. mkdir [dir name1], [dir name2] ... - Creates a directory
+
+4. cp [source] [destination] - Copy file from source to destination
+
+5. touch [file name] - Creates an empty file
+
 Here are the list of commands frequently used by adiminstrator.
 This is not a complete but it’s a compact list of commands to refer when needed. 
