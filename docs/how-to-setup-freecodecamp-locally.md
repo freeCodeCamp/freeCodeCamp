@@ -449,7 +449,7 @@ If the app launches but you are encountering errors with the UI itself, for exam
 
 ```shell
 # Remove all installed node modules
-rm -rf node_modules ./**/node_modules
+rm -rf node_modules .//node_modules
 
 # Reinstall npm packages
 npm install
