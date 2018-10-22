@@ -11,7 +11,7 @@ Some of the contribution workflows like previewing pages for the guide or the co
 This is essential, because this way you are able to work on your copy of freeCodeCamp on GitHub, or download it for working locally. Later, you will be able to request changes to be pulled into the main repository via a pull request.
 
 > **ProTip:**
-> The main repository at `https://github.com/freeCodeCamp/freeCodeCamp` is often referred to as `upstream` repository.
+> the main repository at `https://github.com/freeCodeCamp/freeCodeCamp` is often referred to as `upstream` repository.
 > Your fork at `https://github.com/YOUR_USER_NAME/freeCodeCamp` is often referred to as `origin` repository.
 
 **Follow these steps to fork the `https://github.com/freeCodeCamp/freeCodeCamp` repository:**
@@ -160,7 +160,7 @@ cp sample.env .env
 copy sample.env .env
 ```
 
-The keys are not required to be changed, to run the app locally. You can leave the default values from the `sample.env` as it is.
+The keys are not required to be changed, to run the app locally. You can leave the default Values from the `sample.env` as it is.
 
 `MONGOHQ_URL` is the most important one. Unless you have MongoDB running in a setup different than the defaults, the URL in the `sample.env` should work fine.
 
