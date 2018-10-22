@@ -19,15 +19,15 @@ The direct children of ordered and unordered lists must be list items. Each list
 An ordered list is written as
 ```HTML
 <ol>
-  <li>January</li>
-  <li>February</li>
-  <li>March</li>
+  <li>Addis Ababa, Ethiopia</li>
+  <li>Tokyo, Japan</li>
+  <li>Paris, France</li>
 </ol>
 ```
 and is displayed as:
-1. January
-1. February
-1. March
+1. Addis Ababa, Ethiopia
+1. Tokyo, Japan
+1. Paris, France
 
 An unordered list is written as
 
