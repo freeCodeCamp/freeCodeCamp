@@ -1,0 +1,8 @@
+In real life, a program consists of thousands lines of codes and dozens of classes so it is necessary and helpful to be able to draw a map
+that connects the files and classes together. 
+
+There are few types of representations of a program structure that can be drawn including a call graph, a type hierarchy, a sequence graph,
+and a class diagram.
+
+In this section, we will discuss about how to draw a type hiearchy that is correct and intuitive. 
+
