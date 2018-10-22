@@ -16,7 +16,7 @@ The style tag is used sort of like a css file except inside of an HTML, like so:
     </head>
 ```
 
-That would make the paragraph tag's color red. It is kind of useful if you just want to put a little bit of code, but if you want a really long stylesheet, then I recommend just using `<link />`.
+The paragraph font color would change to red as a result. It is unpopular to use the style tag over a CSS document, because the more code on one docuement the more challenging it can be to read and edit. It is usually preferred to just use `<link />` and link to a CSS document.
 
 #### More Information:
 <!-- Please add any articles you think might be helpful to read before writing the article -->
