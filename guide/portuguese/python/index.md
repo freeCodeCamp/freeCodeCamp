@@ -149,8 +149,8 @@ As funções integradas estão listadas em ordem alfabética. O nome é seguido 
 
 A função de [`print`](https://docs.python.org/3/library/functions.html#print) no Python 3 substitui a instrução [`print`](https://docs.python.org/2/reference/simple_stmts.html#print) no Python 2.
 ```
->>> print("Olá Mundo!") 
- Olá Mundo! 
+>>> print("Hello World!") 
+ Hello World! 
 ```
 
 Uma função é chamada quando o nome da função é seguido por `()` . Para o mundo Hello! Por exemplo, a função de impressão é chamada com uma string como um argumento para o primeiro parâmetro. Para o restante dos parâmetros, os padrões são usados.
