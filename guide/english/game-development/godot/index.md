@@ -10,4 +10,6 @@ This is a stub. <a href='https://github.com/freecodecamp/guides/tree/master/src/
 <!-- The article goes here, in GitHub-flavored Markdown. Feel free to add YouTube videos, images, and CodePen/JSBin embeds  -->
 
 #### More Information:
-<!-- Please add any articles you think might be helpful to read before writing the article -->
+* https://en.wikipedia.org/wiki/Godot_(game_engine)
+* http://docs.godotengine.org/en/3.0/
+* https://github.com/godotengine
