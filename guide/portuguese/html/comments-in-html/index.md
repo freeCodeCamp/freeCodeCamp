@@ -4,7 +4,7 @@ localeTitle: Comentários em HTML
 ---
 ## Comentários em HTML
 
-A tag de comentário é um elemento usado para deixar notas, principalmente relacionadas ao projeto ou ao site. Essa tag é freqüentemente usada para explicar algo no código ou deixar algumas recomendações sobre o projeto. A tag de comentário também torna mais fácil para o desenvolvedor voltar e entender o código que ele escreveu em um estágio posterior. Os comentários também podem ser usados ​​para comentar linhas de código para fins de depuração.
+A tag de comentário é um elemento usado para deixar notas, principalmente relacionadas ao projeto ou ao site. Essa tag é frequentemente usada para explicar algo no código ou deixar algumas recomendações sobre o projeto. A tag de comentário também torna mais fácil para o desenvolvedor voltar e entender o código que ele escreveu em um estágio posterior. Os comentários também podem ser usados ​​para comentar linhas de código para fins de depuração.
 
 É recomendável adicionar comentários ao seu código, especialmente ao trabalhar com uma equipe ou empresa.
 
@@ -33,7 +33,7 @@ Os comentários são iniciados com `<!--` e terminados com `-->` e podem abrange
 
 ## Comentários condicionais
 
-Os Comentários condicionais definem algumas tags HTML a serem emitidas quando uma determinada codificação é preenchida.
+Os comentários condicionais definem algumas tags HTML a serem emitidas quando uma determinada codificação é preenchida.
 
 Os comentários condicionais são reconhecidos apenas pela versão 5 do Internet Explorer até a versão 9 - IE5 - IE9.
 
