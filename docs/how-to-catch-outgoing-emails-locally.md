@@ -13,6 +13,7 @@ How you install and run MailHog is dependent upon your OS
 - [Installing MailHog on macOS](#installing-mailhog-on-macos)
 - [Installing MailHog on Windows](#installing-mailhog-on-windows)
 - [Installing MailHog on Linux](#installing-mailhog-on-linux)
+- [Installing MailHog with Docker](#installing-mailhog-with-docker)
 
 ### Installing MailHog on macOS
 
@@ -76,6 +77,20 @@ mailhog
 ```
 
 Next, you can go to [using MailHog](#using-mailhog).
+
+### Installing MailHog with Docker
+
+You can use Docker to run MailHog on your local machine.
+For instructions on how to install Docker on your local computer, see the instructions for your operating system:
+- [Windows](https://docs.docker.com/docker-for-windows/install/)
+- [MacOS](https://docs.docker.com/docker-for-mac/install/)
+- [Linux](https://docs.docker.com/install/linux/docker-ce/ubuntu/)
+
+Next open an terminal on your local computer. First we must pull the Docker image of MailHog. Use this command `docker pull mailhog/mailhog`. This command pulled the current image of MailHog.
+
+The last task is to run MailHog as a Docker container. Use the following command `docker run -d -p 1025:1025 -p 8025:8025 mailhog/mailhog`. This command runs MailHog as a container in the background. You must start it after each reboot.
+
+See the [Dockerhub page](https://hub.docker.com/r/mailhog/mailhog/) for more informations.
 
 ## Using MailHog
 
