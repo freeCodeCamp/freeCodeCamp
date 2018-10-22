@@ -45,7 +45,7 @@ Then `MyClass.i` and `MyClass.f` are valid attribute references, returning an in
 
 питон x = MyClass ()
 ```
-Creates a new instance of the class and assigns this object to the local variable x. 
+Создаёт новый экземпляр класса и присваетвает его переменной x. 
  
  The instantiation operation (“calling” a class object) creates an empty object. 
  Many classes like to create objects with instances customized to a specific initial state. 
