@@ -11,7 +11,7 @@ this feature with Components.
 
 Suppose you're developing a landing page for your company's product and you need
 to display the 4 main features of it following the same structure of a card-like
-object, with a icon, a title and a short description.
+object, with an icon, a title and a short description.
 
 ```javascript
 Vue.component('feature-card', {
