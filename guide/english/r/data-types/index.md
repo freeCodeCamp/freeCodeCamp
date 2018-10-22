@@ -94,8 +94,7 @@ title: Data Types in R
 	[1] 21.3
 	[[3]]
 	function (x)  .Primitive("sin")
-
-
+ A list is the most useful data type we have in r.
 ## Reference:
 <a href='https://cran.r-project.org/manuals.html' target='_blank' rel='nofollow'>Official Docs</a>
 <a href='https://www.r-bloggers.com/classes-and-objects-in-r/' target='_blank' rel='nofollow'>Data Types in R by r-bloggers</a>
