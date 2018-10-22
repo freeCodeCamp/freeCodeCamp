@@ -60,7 +60,7 @@ When a class defines an `__init__()` method, class instantiation automatically i
 
 питон x = MyClass ()
 ```
-Of course, the `__init__()` method may have arguments for greater flexibility. 
+Конечно метод `__init__()` для большей гибкости может принимать аргументы. 
  In that case, arguments given to the class instantiation operator are passed on to `__init__()`. For example, 
 ```
 
