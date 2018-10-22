@@ -1,4 +1,5 @@
-  title: SQL Min Function
+---
+title: SQL Min Function
 ---
 ## SQL Maximum (MIN) Function
  SQL MAX Function is used to get the maximum value of a column in a table. 
