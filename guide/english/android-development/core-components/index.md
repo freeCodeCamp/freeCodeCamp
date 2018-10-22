@@ -111,3 +111,6 @@ For detailed information about the topic, see the official [Android fundamentals
 ## Advanced Android Development  
 To learn advanced Android programming concepts, see Google's [Advanced Android Development](https://developers.google.com/training/courses/android-advanced) course.
 
+## Learn More About Android Components
+https://www.tutorialspoint.com/android/android_application_components.htm
+
