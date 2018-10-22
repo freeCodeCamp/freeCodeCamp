@@ -63,3 +63,5 @@ Since the early days of the web, there have been many versions of HTML
 - [HTML Elements](https://guide.freecodecamp.org/html/elements)
 - [Semantic HTML](https://guide.freecodecamp.org/html/html5-semantic-elements)
 - [HTML Attributes](https://guide.freecodecamp.org/html/attributes)
+- "The Missing Link" Textbook: Chapters 7-14, for more better understanding of concepts.
+You can download the book here -> https://drive.google.com/file/d/1R8NW-QTrp2xh048ckWTtdtqC5JdNnyZe/view?usp=sharing
