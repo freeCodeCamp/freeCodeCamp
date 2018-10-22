@@ -18,7 +18,7 @@ public class Counter {
   }
 }
 ```
-The `COUNT` variable will be shared by all objects of that class. When we create objects of our Counter class in main, and access the static variable.
+The `COUNT` variable will be shared by all objects of that class. When we create objects of our Counter class in main, and access the static variable. In other words, static variables do not have one unique version for each object and instead have one copy for the entire class.
 ```java
 public class MyClass {
   public static void main(String[] args) {
@@ -114,4 +114,7 @@ public class Main {
   }
 }
 ```
+
+
+
 One of the use case of static nested classes in [Builder Pattern](https://en.wikipedia.org/wiki/Builder_pattern#Java) popularly used in java.
