@@ -41,8 +41,8 @@ The `for...of` statement creates a loop iterating over iterable objects (includi
     }
 
     // Output:
-    // 1,black
-    // 2,red
+    // [1, "black"]
+    // [2, "red"]
 ```
 
 ### Set
