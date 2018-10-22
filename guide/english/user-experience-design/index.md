@@ -41,3 +41,9 @@ Interaction Design: beyond human computer interaction 4th edition -> (Amazon)[ht
 
 [UX Design for Mobile Developers
 by Google](https://www.udacity.com/course/ux-design-for-mobile-developers--ud849)
+
+[Principles of UX Design (E-book)](https://www.invisionapp.com/ecourses/principles-of-ux-design)
+
+[HackDesign: Weekly UX Lessons Delivered to Your Inbox](https://hackdesign.org/)
+
+[Future Learn: Digital Skills: User Experience](https://www.futurelearn.com/courses/digital-skills-user-experience)
