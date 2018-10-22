@@ -107,3 +107,5 @@ PHP is [well documented](http://php.net/docs.php). The [official docs](http://ph
 - [Tizag.com PHP Tutorial](http://www.tizag.com/phpT/): still-relevant tutorials for getting started with PHP
 - [Awesome PHP](https://github.com/ziadoz/awesome-php): a curated list of PHP libraries, resources, and "shiny things"
 - [Laracasts.com](https://laracasts.com/): a membership website to learn web application development with PHP
+- "The Missing Link" Textbook Chapters: 23, 24, 25, 26, 27, 28, 31 are very useful for starting off with PHP
+You can download the book here -> https://drive.google.com/file/d/1R8NW-QTrp2xh048ckWTtdtqC5JdNnyZe/view?usp=sharing
