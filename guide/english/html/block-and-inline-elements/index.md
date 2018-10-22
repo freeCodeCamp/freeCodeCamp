@@ -34,4 +34,5 @@ While an understanding of block and inline elements is still relevant, you shoul
 
 #### More Information:
 Please refer <a href='https://developer.mozilla.org/en-US/docs/Web/HTML/Block-level_elements#Block-level_vs._inline' target='_blank' rel='nofollow'>Mozilla Docs</a>
+Also <a href ='https://www.w3schools.com/html/html_blocks.asp'> W3 Schools</a> provides great tutorials for Block and Inline Elements as well.
 
