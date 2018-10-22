@@ -47,10 +47,11 @@ This will show the last 5 rows of the data frame.
 ## Subsetting: Getting a column by name
 A data frame can be subset in many ways. One of the simplest is getting a single column. For instance, if the data frame `df` contains a column named `age`, we can extract it as follows:
 ```python
-ages=df["age"]
+ages = df["age"]
 ```
 
 #### More Information:
 1. [pandas](http://pandas.pydata.org/)
 2. [read_csv](http://pandas.pydata.org/pandas-docs/stable/generated/pandas.read_csv.html?highlight=read_csv#pandas.read_csv)
 3. [head](http://pandas.pydata.org/pandas-docs/stable/generated/pandas.DataFrame.head.html?highlight=head#pandas.DataFrame.head)
+4. [Introduction to Pandas](https://youtu.be/lkLl_QKLgcA)
