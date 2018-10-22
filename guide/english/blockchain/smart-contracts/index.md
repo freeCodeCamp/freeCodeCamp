@@ -3,6 +3,8 @@ title: Smart Contracts
 ---
 ## Smart Contracts
 
+Smart contracts are self-executing contracts with the terms of the agreement between both parties being directly written into the code. Smart contracts make transactions traceable, transparent, and irreversible.
+
 Transactions in a blockchain are a very basic contract - One party sends resources to another.
 In the Ethereum blockchain, transactions can support any kind of logic. They have the expressive
 power of a Turing-Complete machine - meaning they can be steps for a task that a computer can do.
