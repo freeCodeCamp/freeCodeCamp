@@ -113,3 +113,36 @@ fr1 = Friend("Nilesh","Bharti","Bihar")
 fr1.show()
 ```
 
+## Class inheritance
+
+With inheritance we can create a new class using an old class related to the new one. For example:
+```python
+class Dog:
+	def __init__(self, name, bark):
+		self.name = name
+		self.bark = bark
+
+	def sizeD(self, size):
+		self.size = size
+
+#Put in () the inherated class
+class Canines(Dog):
+	def __init__(self, name, bark):
+		Dog.__init__(name, "Woof")
+
+	def sizeD(self, size):
+		Dog.size(size)
+
+	#New class only in canines
+	def amISmall(self):
+		if self.size < 10:
+			print("You are small")
+		else:
+			print("You are big")
+
+if "__name__" == "main":
+
+	can = canines()
+	can.size(10)
+	can.amISmall()
+```
