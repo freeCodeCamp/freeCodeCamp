@@ -51,6 +51,7 @@ You'll learn many of the first princliples for data science tools and how algori
 
 *Automate The Boring Stuff With Python*
 - Great book for beginners. Has interesting projects to practice Python.
+- [Read It Here](https://automatetheboringstuff.com/)
 - [Amazon](https://www.amazon.com/gp/product/1593275994/)
 - ISBN-10: 1593275994
 - ISBN-13: 978-1593275990
