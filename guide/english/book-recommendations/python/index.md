@@ -61,6 +61,14 @@ You'll learn many of the first princliples for data science tools and how algori
 - ISBN-10: 1593276036
 - ISBN-13: 978-1593276034
 
+#### Python Pocket Reference: Python In Your Pocket
+
+This book is great for when you're on the job or working on a project, and you need quick and concise information for scripting with Python. It is a convenient guide on Python principles such as built-in object types, statements, syntax, functions and modules, and special operator overloading techniques.
+
+- [Amazon](https://www.amazon.com/Python-Pocket-Reference-Your-OReilly/dp/1449357016)
+- ISBN-10: 1449357016 
+- ISBN-13: 978-1449357016 
+
 #### Other Resources
 
 - [Functional Programming in Python by David Mertz [OREILLY] [FREE]](https://www.oreilly.com/programming/free/files/functional-programming-python.pdf)
