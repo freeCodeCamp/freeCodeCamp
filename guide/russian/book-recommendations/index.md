@@ -26,7 +26,7 @@ _КОД: Скрытый язык компьютерного оборудован
 *   [Amazon Smile](https://smile.amazon.com/Code-Language-Computer-Hardware-Software/dp/0735611319/ref=sr_1_1?s=books&ie=UTF8&qid=1508780869&sr=1-1&keywords=code)
 *   ISBN-13: 978-0735611313
 
-_Не заставляйте меня думать, Revisited: подход Common Sense к удобству использования веб-сайтов Стивем Кругом_
+_Не заставляйте меня думать, Revisited: подход Common Sense к удобству использования веб-сайтов Стива Круга_
 
 *   [Amazon Smile](https://smile.amazon.com/Dont-Make-Think-Revisited-Usability/dp/0321965515/ref=sr_1_1?ie=UTF8&qid=1538370339&sr=8-1&keywords=dont+make+me+think)
 *   ISBN-13: 978-0321965516
