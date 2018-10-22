@@ -18,7 +18,7 @@ A graphics processing unit (GPU) is a specialized electronic circuit designed to
 ![Nvidia Titan XP](https://cdn.arstechnica.net/wp-content/uploads/2017/04/nvidia-titan-x.jpg)  
   
 ### Storage (SSD or HDD)
-The Solid State Drive (SSD) or Hard Disk Drive (HDD) are used to store information on the computer. It retains the memory even after loss of power.
+The Solid State Drive (SSD) or Hard Disk Drive (HDD) are used to store information on the computer. The drive retains the memory even after loss of power. A Hard Disk Drive uses a spinning disk to store memory, while a Solid State Drive has no moving mechanical components. 
   
 ![SSD](https://images10.newegg.com/NeweggImage/ProductImage/20-147-373-09.jpg)  
   
