@@ -8,7 +8,7 @@ En esta sección tendremos guías sobre una amplia variedad de conceptos de *Vis
 
 Se pueden emplear varias metodologías de diseño para poner un ejemplo de *Visual Design*. Algunas empresas tienen sus propios lenguajes de diseño en un sentido amplio: es el caso de Google, un gran promotor del [Material Design](https://material.io/), donde los elementos del diseño imitan materiales reales y sus efectos de movimiento o sombras.
 
-El *Visual Design* trabaja en el aspecto que tendrán las aplicaciones para el usuario. Se puede entender como el equivalente digital del diseño gráfico y, como tal, el *Visual Design* también debe esforzarse en seguir los conocidos principios del buen diseño de Dieter Rams.
+El *Visual Design* trabaja en el aspecto que tendrán las aplicaciones para el usuario. Se puede entender como el equivalente digital del diseño gráfico y, como tal, también debe esforzarse en seguir los conocidos principios del buen diseño de Dieter Rams.
 
 ### 10 principios del buen diseño
 
