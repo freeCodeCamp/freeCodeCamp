@@ -53,25 +53,25 @@ function getTimeString(pubDate) {
   if (dayDiff < 365) {
     return format(pubDate, 'MMM D');
   }
-
   return format(pubDate, 'MMM D YYYY');
 }
 
 function ArticleMeta({
   article: { viewCount, author, meta, firstPublishedDate }
 }) {
-  return (
-    <div className='meta-wrapper'>
-      <Helmet>
-        <style>{styles}</style>
-      </Helmet>
-      <div className='meta-item-wrapper'>
-        <span className='meta-item'>By {author.name}</span>
-        <span className='meta-item'>
-          <FontAwesomeIcon icon={faCalendarAlt} />{' '}
+ return (
+   <div className='meta-wrapper'>
+     <Helmet>
+       <style>{styles}</style>
+     </Helmet>
+     <div className='meta-item-wrapper'>
+       <span className='meta-item'>By {author.name}</span>
+       <span className='meta-item'>          <FontAwesomeIcon icon={faCalendarAlt} />{' '}
           {getTimeString(firstPublishedDate)}
         </span>
-        <span className='meta-item'>
+        
+
+<span className='meta-item'>
           <FontAwesomeIcon icon={faClock} /> {`${meta.readTime} minute read`}
         </span>
         {viewCount >= 100 ? (
