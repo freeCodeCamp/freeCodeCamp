@@ -8,6 +8,7 @@ An Array is a collection of values (or objects) of similar datatypes (primitive 
 An Array is used to store a collection of similar data types. 
 Arrays always start with the index of 0 and are instantiated to a set number of indexes. 
 All the variables in the array must be of the same type, declared at instantiation.
+They can be imagined as a chain of boxes that store something.
 
 **Syntax:**
 
