@@ -42,3 +42,4 @@ PlayStation Portable and Raspberry Pi support was demonstrated but not released.
 * [Wikipedia] https://en.wikipedia.org/wiki/GameMaker_Studio<br>
 * [YoYo Games (publisher)] https://www.yoyogames.com/gamemaker<br>
 * [GameMaker: Studio | Documentation] https://docs.yoyogames.com/<br>
+* [GameMake: Studio | Download] https://www.yoyogames.com/get<br>
