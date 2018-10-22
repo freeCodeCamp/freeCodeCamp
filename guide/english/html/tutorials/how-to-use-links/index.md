@@ -3,7 +3,7 @@ title: How to Use Links
 ---
 ## How to Use Links
 
-In HTML you can use the `<a>` tag to create a link. For example you can write `<a href="https://www.freecodecamp.org/">freeCodeCamp</a>` to create a link to freeCodeCamp's website.
+In HTML you can use the `<a>` tag to create a link. For example, you can write `<a href="https://www.freecodecamp.org/">freeCodeCamp</a>` to create a link to freeCodeCamp's website.
 
 Links are found in nearly all web pages. Links allow users to click their way from page to page.
 
