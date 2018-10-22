@@ -11,11 +11,14 @@ WordPress powers over 30% of all websites and is by far the most used CMS on the
 Wordpress offers an easy-to-use solution for both web developers and non-web developers alike to create a site.
 
 Just a few advantages of WordPress:
+* WordPress themes make it possible for non-designers to create a customized website  
 * Users are able to manage their Wordpress webpage from any computer
 * Has a blog built-in and ready to go whenever applicable. 
 * Has plugins, which extend functionality to WordPress sites. 
 
-Whether its page transitions or a customized contact form, WordPress users are only a few clicks away from success and a beautiful website.
+While free themes offer a range of beautiful designs, WordPress premium themes for web projects beyond the basics may cost between $10 to $200 with an average around $59. Also, most plugins are available in free or premium versions.
+
+Whether it's page transitions or a customized contact form, WordPress users are only a few clicks away from success and a beautiful website.
 
 
 ### More Information
