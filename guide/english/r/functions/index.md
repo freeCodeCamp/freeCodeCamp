@@ -4,7 +4,8 @@ title: Functions in R
 
 A function allows you to define a reusable block of code that can be executed many times within your program. 
 
-Functions can be named and called repeatedly or can be run anonymously in place (similar to lambda functions in python).
+Functions can be named and called repeatedly or can be run anonymously in place (similar to lambda functions in python). This gives us the advantage of not having to write the code again and again.
+
 
 Developing full understanding of R functions requires understanding of environments. 
 Environments are simply a way to manage objects. An example of environments in action is that you can use a redundant variable
