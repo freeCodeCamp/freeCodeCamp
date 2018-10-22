@@ -5,7 +5,7 @@ title: Abstract Classes in Java
 Lets discuss abstract classes. Before diving into this tutorial it is better that you have understood concepts of classes
 and inheritance.
 
-Abstract classes are classes that can be subclassed (i.e. extended) but cannot be instantiated. You can think of them as a **class version** of interfaces, or as an interface with actual code attached to the methods. 
+Abstract classes are classes that can be subclassed (i.e. extended) but cannot be instantiated. You can think of them as a **class version** of interfaces, or as an interface with actual code attached to the methods. Abstract classes can be declared but cannot be used as the actual type. These classes can also contain constructors. To add on, they can contain variables aside from public, static, and final.
 
 Consider the following example to understand abstract classes:
 You have a class Vehicle which defines certain basic functionality (methods) and certain components (object variables) that a machinery should have, to be classified as a vehicle. You cannot create an object of Vehicle because a vehicle in itself is an abstract concept. You can however extend the functionality of the vehicle class to create a Car or a Motorcycle.
