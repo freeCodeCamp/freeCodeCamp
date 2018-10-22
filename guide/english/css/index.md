@@ -22,3 +22,7 @@ Another suggestion for beginners is W3C's [Starting with HTML + CSS](https://www
 The site [CSS Zen Garden](http://www.csszengarden.com/) is a great example how the same html can be styled to look totally unique.
 
 For a demonstration of the power of CSS, check out [Species In Pieces](http://species-in-pieces.com/#).
+
+"The Missing Link" Textbook Chapters: 19-22 for more better understanding of the concepts
+
+You can download the book here -> https://drive.google.com/file/d/1R8NW-QTrp2xh048ckWTtdtqC5JdNnyZe/view?usp=sharing
