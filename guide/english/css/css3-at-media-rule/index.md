@@ -17,7 +17,7 @@ There are currently four possible Media Types:
 * screen (Used for computers, phones, tablets, etc.)
 * speech (Used for accessibility devices such as screenreader that narate the contents of a webpage)
 
-Media queries are used for all sorts of purporses as they allow many differnet media features. One of the most common uses of a Media query is to make a web page responsive; meaning it will behave differently based on the screen size.
+Media queries are used for all sorts of purposes as they allow many differnet media features. One of the most common uses of a Media query is to make a web page responsive; meaning it will behave differently based on the screen size.
 
 An example media query is as follows:
 
