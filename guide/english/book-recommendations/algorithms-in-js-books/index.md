@@ -1,6 +1,8 @@
 ---
-# Algorithms in JavaScript books
+title: Algorithms in JavaScript books
 ---
+
+# Algorithms in JavaScript books
 
 ### List of Books
 ________
