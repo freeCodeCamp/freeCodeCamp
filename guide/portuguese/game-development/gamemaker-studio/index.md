@@ -4,11 +4,11 @@ localeTitle: GameMaker Studio
 ---
 ## GameMaker Studio
 
-O GameMaker Studio, anteriormente conhecido como GameMaker, é um software de desenvolvimento de jogos multi-plataforma focado principalmente na criação de jogos 2D usando seqüências de ação de arrastar e soltar ou uma linguagem de script conhecida como GML (Game Maker Language).
+O GameMaker Studio, anteriormente conhecido como GameMaker, é um software de desenvolvimento de jogos multi-plataforma focado principalmente na criação de jogos 2D usando seqüências de ação de arrastar e soltar, também conhecidos como blocos, ou uma linguagem de script conhecida como GML (Game Maker Language).
 
 ### Visão geral:
 
-O GameMaker permite que os usuários criem e prototipem jogos rapidamente, sem a necessidade de aprender uma linguagem de programação. Jogos de GameMaker geralmente consiste em pelo menos 3 coisas: sprites (imagens e animações), objetos (lógica e interatividade) e salas (telas e níveis). Cada jogo precisa de pelo menos uma sala que seja usada para ambos os menus e níveis, e a transição entre cada um.
+O GameMaker permite que os usuários criem e prototipem jogos rapidamente, sem a necessidade de aprender uma linguagem de programação. Jogos de GameMaker geralmente consiste em pelo menos 3 elementos: sprites (imagens e animações), objetos (lógica e interatividade) e salas (telas e níveis). Cada jogo precisa de pelo menos uma sala que seja usada para ambos os menus e níveis, e a transição entre cada um.
 
 O GameMaker Studio 2 foi lançado em 2 de novembro de 2016.
 
