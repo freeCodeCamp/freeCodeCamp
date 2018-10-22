@@ -82,6 +82,10 @@ title: Books to Read for Programmers
 - [Amazon](https://www.amazon.com/Book-Programming-4th-Al-Kelley/dp/0201183994/ref=cm_cr_arp_d_bdcrb_top?ie=UTF8)
 - ISBN-13: 978-0201183993
 
+*Let us C:*
+- [Amazon](https://www.amazon.com/Let-Us-C-Computer-Science/dp/1934015253)
+- ISBN-13: 978-1934015254
+
 ## C#
 
 *C# 6.0 in a Nutshell: The Definitive Reference 6th Edition* by Joseph Albahari  (Author), Ben Albahari (Author)
