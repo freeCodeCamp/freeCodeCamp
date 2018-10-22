@@ -1,6 +1,6 @@
 ---
 id: 587d78aa367417b2b2512aed
-title: Declare the Doctype of an HTML Document
+title: Basic HTML and HTML5: Declare the DOCTYPE of an HTML Document
 challengeType: 0
 videoUrl: 'https://scrimba.com/p/pVMPUv/cra98AJ'
 ---
