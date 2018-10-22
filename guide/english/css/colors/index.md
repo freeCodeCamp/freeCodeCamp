@@ -108,4 +108,5 @@ To get custom colors to use in CSS, you might find a color picker helpful. Some 
 <a href="https://chrome.google.com/webstore/detail/colorpick-eyedropper/ohcpnigalekghcmgcdcenkpelffpdolg?hl=en" target="_blank">ColorPick Eyedropper on Chrome Web Store</a><br>
 <a href="https://addons.mozilla.org/en-US/firefox/addon/colorzilla/" target="_blank">ColorZilla add-on for Firefox</a><br>
 <a href="http://www.colorhexa.com/" target="_blank">Explore different Hex colors</a><br>
-<a href="https://webaim.org/resources/contrastchecker/" target="_blank">WebAIM Color Contrast Checker</a>
+<a href="https://webaim.org/resources/contrastchecker/" target="_blank">WebAIM Color Contrast Checker</a><br>
+<a href="https://coolors.co/" target="_blank">Coolors.co - Color Schemes Generator</a>
