@@ -14,6 +14,7 @@ Python does not include a formal way to write multiline comments. Each line of a
 ```python
     # This is the first line of a multiline comment.
     # This is the second line.
+    # This is the third line.
 ```
 Another type of comment is the **docstring**, documented in <a href='https://www.python.org/dev/peps/pep-0257/' target='_blank' rel='nofollow'>`PEP 257`</a>. Docstrings are a specific type of comment that becomes the `__doc__` attribute.
 
