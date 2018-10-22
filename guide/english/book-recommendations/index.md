@@ -242,6 +242,10 @@ https://books.goalkicker.com/OracleDatabaseBook/
 - [Amazon](https://www.amazon.com/Mastering-Linux-Scripting-Andrew-Mallett/dp/1784396974/)
 - ISBN-13: 978-1784396978
 
+*Think Like a Programmer: An Introduction to Creative Problem Solving by V. Anton Spraul*
+- [Amazon](https://www.amazon.com/Think-Like-Programmer-Introduction-Creative/dp/1593274246/)
+- ISBN-13: 978-1593274245
+
 This list was compiled from multiple suggestion threads on Reddit and Stackoverflow. 
 
 Please feel free to add more that you have found useful!
