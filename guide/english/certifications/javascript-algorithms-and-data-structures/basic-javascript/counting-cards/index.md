@@ -126,9 +126,29 @@ function cc(card) {
 · The variable `regex` is a [regular expression](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/RegExp) representing values (letters) for the higher cards.
 · The `else` statement checks those values with the `|| (logical OR)` operator; first for `10` and then for any string that matches the regular expression using [String.match()](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/match).
 
+## ![:sunflower:](https://forum.freecodecamp.com/images/emoji/emoji_one/sunflower.png?v=3 ":sunflower:") Additional code solution #2:
+
+(Using Multiple Conditional (Ternary) Operators)
+
+```javascript
+var count = 0;
+function cc(card) {
+  // Only change code below this line
+  var regex = /[JQKA]/;
+  if (card > 1 && card < 7){count++;}
+  else if (card === 10 || String(card).match(regex)){count--;}
+
+return (count > 0) ? count+" Bet" : count+" Hold";
+
+  // Only change code above this line
+}
+```
+![:rocket:](https://forum.freecodecamp.com/images/emoji/emoji_one/rocket.png?v=3 ":rocket:") <a href='https://repl.it/@greggubarev/Basic-JS-Counting-cards' target='_blank' rel='nofollow'>Run Code</a>
+
 #### Resources
 
 *   <a href='https://en.wikipedia.org/wiki/Card_counting' target='_blank' rel='nofollow'>Card counting at Wikipedia</a>
 *   <a href='http://www.freecodecamp.com/challenges/selecting-from-many-options-with-switch-statements' target='_blank' rel='nofollow'>Challenge: Selecting from many options with Switch Statements</a>
 *   <a href='http://www.freecodecamp.com/challenges/chaining-if-else-statements' target='_blank' rel='nofollow'>Challenge: Chaining If Else Statements</a>
 *   <a href='http://www.freecodecamp.com/challenges/increment-a-number-with-javascript' target='_blank' rel='nofollow'>Challenge: Increment a Number with Javascript</a>
+* <a href='https://learn.freecodecamp.org/javascript-algorithms-and-data-structures/basic-javascript/use-multiple-conditional-ternary-operators/' target='_blank' rel='nofollow'>Use Multiple Conditional (Ternary) Operators</a>
