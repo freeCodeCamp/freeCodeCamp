@@ -29,3 +29,7 @@ It takes different strokes to move the world, and according to Crystal, it takes
 <!-- Please add any articles you think might be helpful to read before writing the article -->
 
 [Wikiversity Article] https://en.wikiversity.org/wiki/Crystal_Methods
+
+Lovely Article, chaps!
+
+<img src="https://media1.tenor.com/images/f6ac293f7d3cd6214bf263fea667c293/tenor.gif?itemid=8789131">
