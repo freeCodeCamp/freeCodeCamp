@@ -10,12 +10,16 @@ Object-oriented design patterns typically show relationships and interactions be
 
 Design patterns may be viewed as a structured approach to computer programming intermediate between the levels of a programming paradigm and a concrete algorithm.
 
+Designing is an art and it comes with the experience. But there are some set of solutions already written by some of the advanced
+and experienced developers while facing and solving similar designing problems. These solutions are known as Design Patterns.
+
 The book that popularised the field is Gang of Four's (GoF) **Design Patterns: Elements of Reusable Object-Oriented Software** (1994). It present a series (23) of patterns for an conventional (C++) OO language classified in three types:
 * **Creational** (to create objects): abstract factory, builder, factory method, prototype, singleton.
 * **Structural** (to compose objects): adapter, bridge, composite, decorator, facade, flyweight, proxy.
 * **Behavioral** (to communicate between objects): chain of responsibility, command, interpreter, iterator, mediator, memmento, observer, state, strategy, template method, visitor.
 
 Patterns can be used for multiple objectives  (learning, communication, improving your tooling) but in agile they should be refactored from code with technical debt and not just added at the start (emergent design/architecture) as initially you don't have enough knowledge about the (future) system that is going to evolve. Note that what requires a pattern in a language or tool may not be needed or already be part of another language or tool. A framework is a set of cooperating classes that make up a reusable design for a specific type of software and are typically pattern-heavy.
+
 
 
 #### More Information:
