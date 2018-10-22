@@ -89,6 +89,18 @@ It doesn't matter if one property is missing, as long as you respect the order:
 This will work even if the color and the attachment are missing.
 
 
+### Multiple Backgrounds
+
+You can pass in multple background images and set their properties simultaneously.
+
+```css
+   background-image: url("firstimage.jpg"), url("secondimage.jpg");
+   background-repeat: no-repeat, repeat;
+   background-position: left bottom, right bottom;
+```
+
+You can add individual properties to individual images in their respective order.
+
 #### More Information:
 <!-- Please add any articles you think might be helpful to read before writing the article -->
 <a href='https://developer.mozilla.org/en-US/docs/Web/CSS/background' target='_blank' rel='nofollow'>MDN</a>
