@@ -10,13 +10,13 @@ There is a special <code>constructor</code> property located on the object insta
 <blockquote>let duck = new Bird();<br>let beagle = new Dog();<br><br>console.log(duck.constructor === Bird);  //prints true<br>console.log(beagle.constructor === Dog);  //prints true</blockquote>
 Note that the <code>constructor</code> property is a reference to the constructor function that created the instance.
 The advantage of the <code>constructor</code> property is that it's possible to check for this property to find out what kind of object it is. Here's an example of how this could be used:
-<blockquote>function joinBirdFraternity(candidate) {<br>&nbsp;&nbsp;if (candidate.constructor === Bird) {<br>&nbsp;&nbsp;&nbsp;&nbsp;return true;<br>&nbsp;&nbsp;} else {<br>&nbsp;&nbsp;&nbsp;&nbsp;return false;<br>&nbsp;&nbsp;}<br>}</blockquote>
+<blockquote>function joinBirdFraternity(candidate) {<br>&nbsp;&nbsp;if (candidate.constructor === Bird) {<br>&nbsp;&nbsp;&nbsp;&nbsp;return 'is a bird';<br>&nbsp;&nbsp;} else {<br>&nbsp;&nbsp;&nbsp;&nbsp;return 'is not a bird';<br>&nbsp;&nbsp;}<br>}</blockquote>
 <strong>Note</strong><br>Since the <code>constructor</code> property can be overwritten (which will be covered in the next two challenges) it’s generally better to use the <code>instanceof</code> method to check the type of an object.
 </section>
 
 ## Instructions
 <section id='instructions'>
-Write a <code>joinDogFraternity</code> function that takes a <code>candidate</code> parameter and, using the <code>constructor</code> property, return <code>true</code> if the candidate is a <code>Dog</code>, otherwise return <code>false</code>.
+Write a <code>joinDogFraternity</code> function that takes a <code>candidate</code> parameter and, using the <code>constructor</code> property, return <code>'Can join'</code> if the candidate is a <code>Dog</code>, otherwise return <code>'Can not join'</code>.
 </section>
 
 ## Tests
@@ -26,8 +26,8 @@ Write a <code>joinDogFraternity</code> function that takes a <code>candidate</co
 tests:
   - text: <code>joinDogFraternity</code> should be defined as a function.
     testString: assert(typeof(joinDogFraternity) === 'function', '<code>joinDogFraternity</code> should be defined as a function.');
-  - text: <code>joinDogFraternity</code> should return true if<code>candidate</code> is an instance of <code>Dog</code>.
-    testString: assert(joinDogFraternity(new Dog("")) === true, '<code>joinDogFraternity</code> should return true if<code>candidate</code> is an instance of <code>Dog</code>.');
+  - text: <code>joinDogFraternity</code> should return 'Can join' if<code>candidate</code> is an instance of <code>Dog</code>.
+    testString: assert(joinDogFraternity(new Dog("")) === 'Can join', '<code>joinDogFraternity</code> should return 'can join' if<code>candidate</code> is an instance of <code>Dog</code>.');
   - text: <code>joinDogFraternity</code> should use the <code>constructor</code> property.
     testString: assert(/\.constructor/.test(code) && !/instanceof/.test(code), '<code>joinDogFraternity</code> should use the <code>constructor</code> property.');
 
@@ -67,7 +67,11 @@ function Dog(name) {
   this.name = name;
 }
 function joinDogFraternity(candidate) {
-  return candidate.constructor === Dog;
+  if (candidate.constructor === Dog) {
+    return 'Can join';
+  } else {
+    return 'Can not join';
+   }
 }
 ```
 
