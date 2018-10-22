@@ -47,6 +47,7 @@ title: Operators
      int b = a--; // postfix operator; a = 6, b = 7
      int c = --a; // prefix operator; a = 5, c = 5
      ```
+- `--` Unary operands like ++ and -- can be pre or post, which means if you use pre-decrement i.e. ++a, the value of a variable will be incremented then used in statement or w/e, while if you use post decrement, i.e. a++, the a variable will be used in given statement and only after that will its value be incremented. Same goes for decrement. 
 // C Program to demonstrate the working of arithmetic operators
 #include <stdio.h>
 int main()
