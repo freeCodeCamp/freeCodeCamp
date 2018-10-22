@@ -3,7 +3,7 @@ title: Factorial Function
 ---
 ## Factorial Function
 
-In mathematics, the __factorial__ of a __non-negative integer__ _n_, denoted by _n!_, is the product of __all positive integers less than or equal to *n*__<sup></sup>. Here are for example the calculations of the factorial of the first six natural numbers.
+In mathematics, the __factorial__ of a __non-negative integer__ _n_, denoted by _n!_, is the product of __all positive integers less than or equal to *n*__<sup>1</sup>. Here are for example the calculations of the factorial of the first six natural numbers.
 
 ### Example
 
