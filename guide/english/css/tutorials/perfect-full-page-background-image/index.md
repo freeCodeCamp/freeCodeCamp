@@ -1,3 +1,7 @@
+---
+title: Perfect Full Page Background Image
+---
+
 ## Perfect Full Page Background Image
 
 Creating a full page background image can be created in these 4 different, easy ways.
