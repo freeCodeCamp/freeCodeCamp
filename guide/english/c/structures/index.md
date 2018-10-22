@@ -28,6 +28,16 @@ typedef struct StudentRecord
   char Address[30];
   char Phone[10];
 }Record;
+
+// OR
+
+typedef struct
+{
+  char Name[20];
+  int Class;
+  char Address[30];
+  char Phone[10];
+}Record;
 ```
 In `main()`, the user-defined data-type **StudentRecord** is defined as:
 ```C
