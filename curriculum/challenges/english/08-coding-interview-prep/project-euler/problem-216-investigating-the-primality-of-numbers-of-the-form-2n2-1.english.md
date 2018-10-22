@@ -25,7 +25,7 @@ How many numbers t(n) are prime for n ≤ 50,000,000 ?
 ```yml
 tests:
   - text: <code>euler216()</code> should return 5437849.
-    testString: 'assert.strictEqual(euler216(), 5437849, "<code>euler216()</code> should return 5437849.");'
+    testString: assert.strictEqual(euler216(), 5437849, '<code>euler216()</code> should return 5437849.');
 
 ```
 

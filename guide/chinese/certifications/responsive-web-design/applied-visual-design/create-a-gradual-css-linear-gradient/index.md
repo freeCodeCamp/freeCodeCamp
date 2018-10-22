@@ -1,6 +1,6 @@
- ---
- title: Create a Gradual CSS Linear Gradient
- localeTitle: 创建渐进的CSS线性渐变
+---
+title: Create a Gradual CSS Linear Gradient
+localeTitle: 创建渐进的CSS线性渐变
 ---
 ##创建渐进式CSS线性渐变
 
@@ -8,7 +8,7 @@
 
 语法总是：
 ```
-background-image: linear-gradient(angle, color-stop1, color-stop2); 
+background-image: linear-gradient(angle, color-stop1, color-stop2);
 ```
 
 颜色可以以hex（）和rgb（）格式使用。尝试一下，你会明白使用它是多么容易和美丽。

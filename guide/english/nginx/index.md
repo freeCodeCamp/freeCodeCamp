@@ -1,4 +1,9 @@
-Installation of Nginx in Ubuntu
+---
+title: Installation of Nginx in Ubuntu
+---
+
+## Installation of Nginx in Ubuntu
+
 Step 1: Update Apt-Get
 
 As always, we update and upgrade our package manager.

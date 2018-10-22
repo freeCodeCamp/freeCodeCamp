@@ -27,7 +27,7 @@ What is C(30) mod 108 ?
 ```yml
 tests:
   - text: <code>euler270()</code> should return 82282080.
-    testString: 'assert.strictEqual(euler270(), 82282080, "<code>euler270()</code> should return 82282080.");'
+    testString: assert.strictEqual(euler270(), 82282080, '<code>euler270()</code> should return 82282080.');
 
 ```
 
