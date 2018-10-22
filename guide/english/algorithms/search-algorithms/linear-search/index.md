@@ -85,7 +85,17 @@ int linear_search(int arr[],int n,int num)
    return -1; 
 }
 ```
-
+### Example in C
+```c
+int linear_search(int arr[],int n,int num)
+{
+	int i; 
+    for (i = 0; i < n; i++) 
+        if (arr[i] == num) 
+         return i; 
+    return -1; 
+}
+```
 ### Example in Python
 ```python
 def linear_search(array, num):
