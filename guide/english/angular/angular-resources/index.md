@@ -25,6 +25,7 @@ A collection of helpful Angular resources
 
 *   <a href='https://angular.io/' target='_blank' rel='nofollow'>Angular</a> - The Angular Homepage
 *   <a href='https://angular.io/guide/styleguide' target='_blank' rel='nofollow'>Angular Style Guide</a> - Detailed best practices for Angular Development
+*   <a href='https://angular-2-training-book.rangle.io/' target='_blank' rel='nofollow'>Rangle's Angular 2 Training Book</a> - Online version of Rangle's excellent Angular book
 
 ### Specific-topic Pages
 
