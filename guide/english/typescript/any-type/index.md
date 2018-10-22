@@ -10,4 +10,5 @@ The Any type instructs Typescript to suspend type checking for the specified var
   let notSure: any = 4;
   notSure = "maybe a string instead";
   notSure = false;
+  this.function(<any>value);
 ```
