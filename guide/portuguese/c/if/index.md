@@ -14,7 +14,7 @@ if (condition) {
  } 
 ```
 
-Quando a `condition` é verdadeira, o código dentro da seção `if` executado, caso `else` executado. Às vezes você precisaria adicionar uma segunda condição. Para facilitar a leitura, você deve usar uma instrução `else if` vez de aninhar `if` .
+Quando a `condition` é verdadeira, o código dentro da seção `if` é executado, caso não seja verdadeira `else` será executado. Às vezes você precisaria adicionar uma segunda condição. Para facilitar a leitura, você deve usar uma instrução `else if` vez de aninhar `if` chamamos isso de decisão encadeada.
 ```
 if (condition) { 
     // Do something if `condition` is true 
