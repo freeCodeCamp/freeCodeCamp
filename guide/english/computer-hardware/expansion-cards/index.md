@@ -9,8 +9,8 @@ In the case of expansion of on-board capability, a motherboard may provide a sin
 
 ### Modern example use cases for Expansion Cards
 * Graphics Card - (mentioned above) provides additonal graphics capabilities for programs that utilize graphics intensive workloads such as 3D rendered games and business applications.  Note that many modern graphics cards support running in tandem with other graphics cards in the same machine, enabling significant gains in graphics performance.
-* USB Card - provides additional USB ports of varying connector type sizes and versions (USB2.0. USB3.0, USB-C) to accomodate plug in peripherals and devices to a computer
-* RAID Controller Card - provides the ability to utilize RAID configurations with your hard drives, enabling complex disk configurations to meet specific user needs (RAID-1 for redundancy for example)
+* USB Card - provides additional USB ports of varying connector type sizes and versions (USB2.0. USB3.0, USB-C) to accomodate plug in peripherals and devices to a computer.
+* RAID Controller Card - provides the ability to utilize RAID configurations with your hard drives, enabling complex disk configurations to meet specific user needs (RAID-1 for redundancy for example).
 * Sound Card - if the motherboard doesn't include basic sound capabilities (less common), a sound card can be purchased to add audio capabilities.  Another reason for using a Sound Card are more audio input options (SPDIF & Multichannel Connectors) or additional audio fidelity options that go above and beyond what basic sound capabiitlies are provided by the motherboard.
 
 #### More Information:
