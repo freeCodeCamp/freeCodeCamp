@@ -6,6 +6,13 @@ Because C is such a low-level language, there are a lot of terms that come up th
 
 ## Compilation
 The compilation is the process of taking the human-readable code and turning it into machine-readable code. This process is performed by a compiler.
+But under compilation, there are 4 operations or processus that C code goes through. They are:
+- Preprocessing : Meaning, include all the librareis machine-readable code or files start with '#' before proceeding
+- Compiling: It takes your source code (human-readable code) and translate it to Assembly code.
+- Assembling: It takes the assemby code and translate it to machine-readable code (0s and 1s).
+- Linking: Its the last stage where it tooks the libraries code and combine them with your code to produce result.
+Note that all this steps happen so fast that you can not even notice it.
+
 
 ## Compiler
 A compiler is a program that compiles code, meaning it changes it from something human-readable into something machine-readable.
@@ -39,6 +46,7 @@ A low-level programming language contains binary or assembly code which has litt
 
 ## Machine Code
 Machine code is the code that the machine can understand. Remember that computers use numbers, not English, to run.
+And that machine code is 0 and 1 or binary.
 
 ## Newline
 A newline is what gets printed when you hit Enter, and is an example of a whitespace character. You can also add a newline to the output of your program by including '\n' in your print statement.
