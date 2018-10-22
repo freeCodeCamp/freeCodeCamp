@@ -34,12 +34,12 @@ As a programmer, you want to believe in doing your best work, and you never want
 
 You don't want to allow code that is defective to accumulate in your system. You may not be able to prevent it from getting into your system (ex. a release emergency), but you won't allow it to commute to accumulate. 
 
-Notice that in the promise, there is an aspect of both "behavior" and "structure" in the oath.  Something that is defective in behavior is <b>clearly a problem,</b> but code defective in structure will drive the productivity of your team members down, untill you can barely get anything done.
+Notice that in the promise, there is an aspect of both "behavior" and "structure" in the oath.  Something that is defective in behavior is <b>clearly a problem,</b> but code defective in structure will drive the productivity of your team members down, until you can barely get anything done.
 
 ### Promise 3
 >3. I will produce, with each release, a quick, sure, and repeatable proof that every element of the code works as it should.
 
-Customers, users, and even buisnesses would expect that we would be able to undemand prove that our code works as it is supposed to. Notice that in the oath there are words like quick, sure, and repeatable. You want to be able to prove on a moment's notice that code still works as it is supposed to.
+Customers, users, and even businesses would expect that we would be able to undemand prove that our code works as it is supposed to. Notice that in the oath there are words like quick, sure, and repeatable. You want to be able to prove on a moment's notice that code still works as it is supposed to.
 
 If you add a new feature, that doesn't break anything older, or fix a new structure that doesn't break anything that used to be there, you want to be able to show that quickly and easily, that the code still does what it's intended to do. 
 
@@ -61,9 +61,9 @@ We are humans, we make things better. That's what humans do, or at least what we
 ### Promise 6
 > 6. I will do all that I can to keep the productivity of myself, and others, as high as possible. I will do nothing that decreases that productivity.
 
-This is all about thinking about your teammates and associates. The people who work with you, and the people that rely on your code. For example, don't do anything that slows anyone else down. Don't write a function with too many arguments, or make a mess in someone else's code. Don't do this to code that other people depend upon, because it is just going to <b>slow them down</b>.
+This is all about thinking about your teammates and associates. The people who work with you, and the people that rely on your code. For example, don't do anything that slows anyone else down. Don't write a function with too many arguments or make a mess in someone else's code. Don't do this to code that other people depend upon, because it is just going to <b>slow them down</b>.
 
-Don't put long running tests into the test-suite. Keep those tests running fast. Consider your teammates at all times. Consider the enviorment at all times. Keep everything going quickly. Don't impede their productivity.
+Don't put long running tests into the test-suite. Keep those tests running fast. Be considerate of your teammates and the environment at all times. Keep everything going quickly. Don't impede their productivity.
 
 ### Promise 7
 >7. I will continuously ensure that others can cover for me, and that I can cover for them.
@@ -79,16 +79,16 @@ One way to do that is through pair-programming. Make sure that you can cover for
 ### Promise 8
 > 8. I will produce estimates that are honest both in magnitude and precision. I will not make promises without certainty.
 
-One of the biggest problems programmers have, is that they make estimates that are considered to be promises. When you make an estimate, you need to make it very clear that it's a guess, and not a very good guess. I would make sure that when you do estimates, you make them in three numbers: best case, worst case, and nominal case. Make sure that everybody knows that the worse case could happen.
+One of the biggest problems programmers have, is that they make estimates that are considered to be promises. When you make an estimate, you need to make it very clear that it's a guess, and not a very good guess. You should make sure that when you do estimates, you make them in three numbers: best case, worst case, and nominal case. Make sure that everybody knows that the worse case could happen.
 
-Don't make promises that you aren't certain that you can complete. If you make a promise, you have to keep it.
+Don't make promises that you aren't certain that you can complete. If you make a promise, you must keep it.
 
-When someone says to you "I need this done by Tuesday," and your not sure if you can get it done by Tuesday, then you don't promise. You say "<b>no</b>, I'm not sure I can get this done by Tuesday." Watch out very carefully, because someone might say for you to <b>try</b>, and your answer to that would be, "I am already trying."  You are already trying your hardest, so never let anyone convince you to try harder.
+When someone says to you "I need this done by Tuesday," and you are not sure if you can get it done by Tuesday, then don't promise. You say "<b>No</b>, I'm not sure I can get this done by Tuesday." Watch out very carefully, because someone might say to you to <b>try</b>, and your answer to that would be, "I am already trying."  You are already trying your hardest, so never let anyone convince you to try harder.
 
 ### Promise 9
 > 9. I will never stop learning and improving my craft.
 
-This doesn't need much explanation. You should always try to learn new languages, new frameworks, new techniques, new disiplines, new processes. You need to apply what you learn then, to constantly impove your craft. 
+This doesn't need much explanation. You should always try to learn new languages, new frameworks, new techniques, new processes. You need to apply what you learn to constantly improve your craft.
 
 ### Promise 10
 >10. I will only produce code which conforms to ethics.
@@ -96,5 +96,5 @@ This doesn't need much explanation. You should always try to learn new languages
 Programmers should work to develop computer systems that can reduce negative consequences to society, such as threats to safety and health, and that can make everyday activities and work easier. It is “an obligation to develop to high standards".
 
 ### <b>In conclusion:</b>
-Perhaps there ought to be more promises that we should make, in fact, many of these promises <b>might not be even practical</b>. However, all these promises feel to be important somehow, and reasonable as an oath that a professional programmer would take.
+Perhaps there ought to be more promises that we should make, in fact, many of these promises <b>might not be even practical</b>. However, all these promises somehow feel to be important and reasonable as an oath that a professional programmer would take.
 
