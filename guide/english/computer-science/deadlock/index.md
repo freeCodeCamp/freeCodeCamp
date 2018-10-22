@@ -40,7 +40,22 @@ Deadlock can arise if four conditions hold simultaneously.
  
 - **Circular Wait** – It imposes a total ordering of all resource types, and require that each process requests resources in an increasing order of enumeration.
 
-
+### Deadlock Avoidance
+- The system should remain in safe state.
+- The maximum requirements of each process(including future) should be available.
+- **Safe State** - It is a state, where there is atleast 1 safe sequence. 
+                 - Safe sequence is a sequence where all the processes can complete their execution. 
+                 - Available resources should be sufficient for ith process and after completion of ith process, available resources and resources released by ith process should be sufficent for next process and so on.
+- **Banker's Algorithm**
+  - Get the needs of each process.
+  - Assume that to start with the system is in safe state.
+  - Every time a request for resource comes from a process, do :
+    - Pretend to grant the resource.
+    - Check if the resulting state is safe state.
+    - If yes, finalise the changes.
+    - If no, revert back the changes and deny the request. Let the process wait.
+  - Then the system will always be in safe state.
+  
 #### More information :
 - [Deadlock](https://en.wikipedia.org/wiki/Deadlock)
 - [Operating System | Process Management | Deadlock Introduction](https://www.geeksforgeeks.org/operating-system-process-management-deadlock-introduction/)
