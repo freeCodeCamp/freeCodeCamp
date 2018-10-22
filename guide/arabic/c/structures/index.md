@@ -68,6 +68,27 @@ localeTitle: الهياكل
  } 
 ` 
 
-### معلومات اكثر
+
+## الوصول الى اعضاء الهيكل
+
+للوصول الى اي عضو من اعضاء الهيكل ‘ نستخدم عامل وصول العضو (.). عامل وصول العضو يكتب بين اسم المتغير (اولاً) و عضو الهيكلة. كما في المثال التالي :
+
+`int main(void)
+{
+ //Defining the structure.
+ typedef struct _car
+ {
+  int year;
+  char modelClass;
+  int modelNumber;
+ }car;
+ //Declaring a variable struct.
+ car Mercedes;
+ Mercedes.year = 2012;
+ Mercedes.modelClass = 'E';
+ Mercedes.modelNumber = 200;
+}`
+
+### لمعلومات اكثر
 
 https://www.tutorialspoint.com/cprogramming/c\_structures.htm
