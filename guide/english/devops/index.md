@@ -26,4 +26,4 @@ This section contains links to learning DevOps through a MOOC experience. Course
 ### Book recommendations
 This section lists books that are useful to gain understanding of the DevOps concepts
 
-* [The Phoenix Project: A Novel about It, DevOps, and Helping Your Business Win] (http://a.co/d/awtKmRr)
+* [The Phoenix Project: A Novel about It, DevOps, and Helping Your Business Win](http://a.co/d/awtKmRr)
