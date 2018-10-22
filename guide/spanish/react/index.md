@@ -16,7 +16,8 @@ React se utiliza para crear interfaces de usuario, lo que el usuario ve en su pa
 
 ## ¿Por qué aprender React?
 
-1.  React implica una composición que es un montón de componentes que envuelven las funcionalidades en un contenedor encapsulado. Muchos sitios web populares utilizan React implementando el patrón arquitectónico MVC. Facebook (Parcialmente), Instagram (Completamente), Khan Academy (Parcialmente), Codecademy (Parcialmente), New York Times (Parcialmente), Yahoo Mail (Completamente), la nueva aplicación de galería de fotos y videos de Dropbox (completamente) son los sitios web populares más conocidos que utilizan React. ¿Cómo se construyen estas grandes aplicaciones utilizando React? La respuesta simple es construir pequeñas aplicaciones o componentes. Ejemplo:
+1.  React implica una composición que es un montón de componentes que envuelven las funcionalidades en un contenedor encapsulado. Muchos sitios web populares utilizan React implementando el patrón arquitectónico MVC. Facebook (Parcialmente), Instagram (Completamente), Khan Academy (Parcialmente), Codecademy (Parcialmente), New York Times (Parcialmente), Yahoo Mail (Completamente), la nueva aplicación de galería de fotos y videos de Dropbox (completamente) son los sitios web más populares  que utilizan React. ¿Cómo se construyen estas grandes aplicaciones utilizando React?. La respuesta es simple, construir pequeñas aplicaciones o componentes.
+Ejemplo:
 
 ```jsx
 const Component2 = () => { 
@@ -44,7 +45,7 @@ const Component2 = () => {
  ); 
 ```
 
-2.  React es declarativo en su mayor parte en lo que nos interesa más qué hacer que cómo realizar una tarea específica. La programación declarativa es un paradigma de programación que expresa la lógica de una computación sin describir su flujo de control. La programación declarativa viene con ciertas ventajas, como la reducción de los efectos secundarios (se produce cuando modificamos cualquier estado o mutamos algo o hacemos una solicitud de API), minimizamos la mutabilidad (ya que se abstraen muchos), mejor legibilidad, menos errores.
+2.  React es declarativo, en su mayor parte en lo que nos interesa, más qué hacer que en cómo realizar una tarea específica. La programación declarativa es un paradigma de programación que expresa la lógica de una computación sin describir su flujo de control. La programación declarativa viene con ciertas ventajas, como la reducción de los efectos secundarios (se produce cuando modificamos cualquier estado o mutamos algo o hacemos una solicitud de API), minimizamos la mutabilidad (ya que se abstraen muchos), mejor legibilidad, menos errores.
     
 3.  Flujo de datos unidireccional. La interfaz de usuario en React es en realidad la función del estado que significa que a medida que el estado se actualiza, también actualiza la interfaz de usuario. Así que nuestra interfaz de usuario avanza a medida que cambia el estado.
     
@@ -53,8 +54,8 @@ const Component2 = () => {
 
 Algunas razones para usar React son:
 
-1.  Rápido. Las aplicaciones creadas en React pueden manejar actualizaciones complejas y sentirse rápidas y receptivas.
-2.  Modular. En lugar de escribir archivos de código grandes y densos, puede escribir muchos archivos más pequeños y reutilizables. La modularidad de React puede ser una solución hermosa para los [problemas de mantenimiento](https://en.wikipedia.org/wiki/Spaghetti_code) de JavaScript.
+1.  Rápido. Las aplicaciones creadas en React pueden realizar actualizaciones complejas, ser rápidas y receptivas.
+2.  Modular. En lugar de escribir archivos de código grandes y densos, puede escribir más cantidad de archivos pequeños y reutilizables. La modularidad de React puede ser una solución atractiva para los [problemas de mantenimiento](https://en.wikipedia.org/wiki/Spaghetti_code) de JavaScript.
 3.  Escalable Los programas grandes que muestran una gran cantidad de datos cambiantes es donde React se desempeña mejor.
 4.  Flexible. Puede usar React para proyectos interesantes que no tienen nada que ver con hacer una aplicación web. La gente todavía está descubriendo el potencial de React. [Hay espacio para explorar](https://medium.mybridge.co/22-amazing-open-source-react-projects-cb8230ec719f) .
 
@@ -74,9 +75,9 @@ React le indicará al navegador que actualice solo la diferencia computada y no 
 
 ## React desde cero
 
-¿Le gustaría comenzar a aprender lo básico de reaccionar sin atascarse creando un entorno de desarrollo? Lo más probable es que si eres nuevo en el desarrollo web, configurar un entorno de desarrollo puede hacer que te sientas un poco intimidado cuando solo estás tratando de aprender React o simplemente aprender sobre Reaccionar por primera vez.
+¿Le gustaría comenzar a aprender lo básico de React sin atascarse creando un entorno de desarrollo?. Lo más probable es que si eres nuevo en el desarrollo web, configurar un entorno de desarrollo puede hacer que te sientas un poco intimidado cuando solo estás tratando de aprender React o simplemente aprender sobre React por primera vez.
 
-En este artículo vamos a ver cómo podemos empezar a utilizar React utilizando solo un editor de texto y un navegador, y nada más.
+En este artículo vamos a ver cómo podemos empezar a utilizar React utilizando tan solo un editor de texto y un navegador.
 
 [!["Ver](http://img.youtube.com/vi/YOUTUBE_VIDEO_ID_HERE/0.jpg)](http://www.youtube.com/watch?feature=player_embedded&v=100pKUE3OPI)
 
@@ -107,11 +108,11 @@ Esto resultará en el siguiente código:
 
 Podemos rellenar el título de "¡Hora de React!".
 
-Este contenido no aparecerá en su página web. Cualquier cosa en la sección principal del archivo HTML serán metadatos que nuestro navegador usará para interpretar nuestro código en la sección del cuerpo. Este título será lo que aparece en la pestaña de nuestra página, no en realidad en la página.
+Este contenido no aparecerá en su página web. Cualquier cosa en la sección principal del archivo HTML serán metadatos que nuestro navegador usará para interpretar nuestro código en la sección del cuerpo. Este título será lo que aparece en la pestaña de nuestra página, no en la página.
 
 ### 2 - Obtenga etiquetas de script para aprovechar el poder de React y las bibliotecas de Babel
 
-Ok, el punto uno está marcado en nuestra lista. Veamos el artículo dos. Vamos a configurar nuestro entorno de desarrollador utilizando etiquetas de script para traer a React y Babel. Este no es un entorno de desarrollador de la vida real. Eso sería una configuración bastante elaborada. También nos dejaría con una gran cantidad de códigos de calderas y bibliotecas que nos sacarían del tema de aprender lo básico de React. El objetivo de esta serie es repasar la sintaxis básica de React y comenzar a codificar. Vamos a utilizar etiquetas `<script>` para traer la biblioteca React, la biblioteca React DOM (por qué) y la biblioteca Babel.
+Ok, el punto uno está marcado en nuestra lista. Veamos el artículo dos. Vamos a configurar nuestro entorno de desarrollo utilizando etiquetas de script para llamar a React y Babel. Este no es un entorno de desarrollo de la vida real. Eso sería una configuración bastante elaborada. También nos dejaría con una gran cantidad de códigos de calderas y bibliotecas que nos sacarían del tema de aprender lo básico de React. El objetivo es repasar la sintaxis básica de React y comenzar a codificar. Vamos a utilizar etiquetas `<script>` para llamar la biblioteca React, la biblioteca ReactDOM (por qué) y la biblioteca Babel.
 
 ```javascript
 <head> 
@@ -129,11 +130,11 @@ Ok, el punto uno está marcado en nuestra lista. Veamos el artículo dos. Vamos 
 
 Usted es libre de usar versiones más actualizadas de estas bibliotecas a medida que salen. No deben crear ningún cambio importante en el contenido que cubrimos.
 
-¿Qué estamos haciendo aquí? El elemento: HTML `<script>` se utiliza para incrustar o hacer referencia a un script ejecutable. El atributo "src" apunta a los archivos de script externos para la biblioteca React, la biblioteca ReactDOM y la biblioteca Babel. Esto es como si tuvieras una máquina de afeitar eléctrica. Literalmente, no es bueno para usted, no importa cuán elegante sea la afeitadora eléctrica, a menos que pueda enchufarla a la pared y tener acceso a la electricidad. Nuestro código React que escribiremos no nos servirá si nuestro navegador no puede conectarse a estas bibliotecas para comprender e interpretar lo que estamos haciendo. Así es como nuestra aplicación va a ganar el poder de React, será cómo insertamos React en el Dom. La razón por la que tenemos React y ReactDOM como dos bibliotecas diferentes es porque hay casos de uso como React Native, donde no se necesita la representación al DOM para el desarrollo móvil, por lo que la biblioteca se dividió para que las personas tomen la decisión de lo que necesitan, dependiendo de En el proyecto en el que están trabajando. Como necesitaremos nuestro React para llegar al DOM, usaremos ambos scripts. Babel es la forma en que aprovechamos el script ECMA más allá de ES5 y tratamos algo llamado JSX (JavaScript como XML) que usaremos en React. Vamos a echar un vistazo más profundo a la magia de Babel en una próxima lección :) Muy bien, hemos completado los pasos 1 y 2. Hemos configurado nuestro código de placa de caldera y nuestro entorno de desarrollador.
+¿Qué estamos haciendo aquí? El elemento: HTML `<script>` se utiliza para incrustar o hacer referencia a un script ejecutable. El atributo "src" apunta a los archivos de script externos para la biblioteca React, la biblioteca ReactDOM y la biblioteca Babel. Esto es como si tuvieras una máquina de afeitar eléctrica. Literalmente, no es bueno para usted, no importa cuán elegante sea la afeitadora eléctrica, a menos que pueda enchufarla a la pared y tener acceso a la electricidad. Nuestro código React que escribiremos no nos servirá si nuestro navegador no puede conectarse a estas bibliotecas para comprender e interpretar lo que estamos haciendo. Así es como nuestra aplicación va a ganar el poder de React, será cómo si insertáramos React en el Dom. La razón por la que tenemos React y ReactDOM como dos bibliotecas diferentes es porque hay casos de uso como React Native, donde no se necesita la representación al DOM para el desarrollo móvil, por lo que la biblioteca se dividió para que las personas tomen la decisión de lo que necesitan, dependiendo de En el proyecto en el que están trabajando. Como necesitaremos nuestro React para llegar al DOM, usaremos ambos scripts. Babel es la forma en que aprovechamos el script ECMA más allá de ES5 y tratamos algo llamado JSX (JavaScript como XML) que usaremos en React. Vamos a echar un vistazo más profundo a la magia de Babel en una próxima lección :) Muy bien, hemos completado los pasos 1 y 2. Hemos configurado nuestro código de placa de caldera y nuestro entorno de desarrollo.
 
 ### 3 - Renderizar React al DOM
 
-Nuestros próximos dos pasos serán elegir nuestra ubicación dentro de DOM a la que queramos procesar nuestro contenido React. Y usando otra etiqueta de script para nuestro contenido React dentro del cuerpo. En general, como buena práctica de separación de inquietudes, esto estaría en su propio archivo y luego se vincularía a este documento html. Lo haremos más tarde en las próximas lecciones. Por ahora, dejaremos que esto permanezca dentro del cuerpo del documento html en el que estamos actualmente. Ahora vamos a ver lo sencillo que es elegir un lugar en el DOM para representar nuestro contenido React. Iremos dentro del cuerpo. Y la mejor práctica no es solo lanzar React en la etiqueta del cuerpo que se mostrará, sino también crear un elemento separado, a menudo un div, que pueda tratar como un elemento raíz para insertar su contenido de React.
+Nuestros próximos dos pasos serán elegir nuestra ubicación dentro de DOM a la que queramos procesar nuestro contenido React. Y usando otra etiqueta de script para nuestro contenido React dentro del cuerpo. En general, como buena práctica de separación de inquietudes, esto estaría en su propio archivo y luego se vincularía a este documento html. Lo haremos más tarde en las próximas lecciones. Por ahora, dejaremos que esto permanezca dentro del cuerpo del documento html en el que estamos actualmente. Ahora vamos a ver lo sencillo que es elegir un lugar en el DOM para representar nuestro contenido React. Iremos dentro del cuerpo. Y la mejor práctica no es solo lanzar React en la etiqueta del cuerpo que se mostrará, sino también crear un elemento separado, a menudo un `<div>`, que pueda tratar como un elemento raíz para insertar su contenido de React.
 
 ```javascript
 <body> 
@@ -141,7 +142,7 @@ Nuestros próximos dos pasos serán elegir nuestra ubicación dentro de DOM a la
  </body> 
 ```
 
-Crearemos un elemento `<div>` simple y le daremos un id de "aplicación". Podremos apuntar a esta ubicación para insertar nuestro contenido de React de la misma manera que podría usar CSS para apuntar a una ID para el estilo que elija. Cualquier contenido de reacción se representará dentro de las etiquetas div con el ID de la aplicación. Mientras tanto, dejaremos un texto que diga que "React no se ha procesado todavía". Si vemos esto cuando obtenemos una vista previa de nuestra página, significa que en algún lugar nos perdimos la representación de React. Ahora, vamos a seguir adelante y crear una etiqueta de script dentro de nuestro cuerpo donde crearemos con reaccionar por primera vez. La sintaxis que vamos a necesitar para nuestra etiqueta de script es agregar un atributo de "tipo". Esto especifica el tipo de medio de la secuencia de comandos. Anteriormente, en nuestra cabeza utilizamos un atributo src que apuntaba a los archivos de script externos para la biblioteca React, la biblioteca ReactDOM y la biblioteca Babel.
+Crearemos un elemento `<div>` simple y le daremos un ID de "aplicación". Podremos apuntar a esta ubicación para insertar nuestro contenido de React de la misma manera que podría usar CSS para apuntar a una ID para el estilo que elija. Cualquier contenido de reacción se representará dentro de las etiquetas div con el ID de la aplicación. Mientras tanto, dejaremos un texto que diga que "React no se ha procesado todavía". Si vemos esto cuando obtenemos una vista previa de nuestra página, significa que en algún lugar nos perdimos la representación de React. Ahora, vamos a seguir adelante y crear una etiqueta de script dentro de nuestro cuerpo donde crearemos con React por primera vez. La sintaxis que vamos a necesitar para nuestra etiqueta de script es agregar un atributo de "tipo". Esto especifica el tipo de medio de la secuencia de comandos. Anteriormente, en nuestra cabeza utilizamos un atributo src que apuntaba a los archivos de script externos para la biblioteca React, la biblioteca ReactDOM y la biblioteca Babel.
 
 ```javascript
 <body> 
