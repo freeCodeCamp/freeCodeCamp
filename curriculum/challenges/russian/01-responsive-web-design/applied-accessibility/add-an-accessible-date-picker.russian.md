@@ -3,7 +3,7 @@ id: 587d778b367417b2b2512aa8
 title: Add an Accessible Date Picker
 challengeType: 0
 videoUrl: ''
-localeTitle: Добавить доступную дату выбора
+localeTitle: Добавить возможность выбора даты
 ---
 
 <<<<<<< HEAD
@@ -11,12 +11,6 @@ localeTitle: Добавить доступную дату выбора
 <section id="description"> Формы часто включают поле <code>input</code> . Это поле может использоваться для создания различных элементов управления формой. Атрибут <code>type</code> в этом элементе указывает, какой тип информации может быть введен. Возможно, вы уже встречали в предыдущих задачах типы ввода <code>text</code> и <code>submit</code> . В HTML5 появилась возможность указать поле <code>date</code> . В зависимости от поддержки браузера в поле <code>input</code> появляется окно выбора даты, что облегчает заполнение формы для всех пользователей. Для более старых браузеров будет по умолчанию использоваться тип <code>text</code> , он также помогает показывать пользователям ожидаемый формат даты, но в текстовом виде. Например: <blockquote> &lt;label for = &quot;input1&quot;&gt; Введите дату: &lt;/ label&gt; <br> &lt;input type = &quot;date&quot; id = &quot;input1&quot; name = &quot;input1&quot;&gt; <br></blockquote></section>
 
 ## Instructions (Задание)
-=======
-## Description
-<section id="description"> Формы часто включают поле <code>input</code> . Это поле может использоваться для создания различных элементов управления формой. Атрибут <code>type</code> в этом элементе указывает, какой тип ввода информации будет создан. Возможно, вы уже встречали в предыдущих задачах типы ввода <code>text</code> и <code>submit</code> . В HTML5 появилась возможность указать поле <code>date</code> . В зависимости от поддержки браузера в поле <code>input</code> появляется окно выбора даты, что облегчает заполнение формы для всех пользователей. Для более старых браузеров будет по умолчанию использоваться тип <code>text</code> , он также помогает показывать пользователям ожидаемый формат даты. Например: <blockquote> &lt;label for = &quot;input1&quot;&gt; Введите дату: &lt;/ label&gt; <br> &lt;input type = &quot;date&quot; id = &quot;input1&quot; name = &quot;input1&quot;&gt; <br></blockquote></section>
-
-## Instructions
->>>>>>> ef4a952a84493ae622f402df486e01f9551b6fbc
 <section id="instructions"> Camper Cat решил организовать турнир по Mortal Kombat и хочет попросить будущих участников определить, какая дата для проведения лучше всего подойдет. Добавьте <code>input</code> тег с <code>type</code> атрибутом «дата», с <code>id</code> атрибутом «pickdate», и <code>name</code> атрибутом «дата». </section>
 
 ## Tests (Тесты)
