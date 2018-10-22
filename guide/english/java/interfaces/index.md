@@ -262,3 +262,17 @@ public class SmartPhone implements MusicPlayer {
 Whoops, did I forget `next()` ? See, since it was a `default` method, I didn't had to provide an implementation at all. (Won't work for JDK < 8)
 
 So, now you have a good grasp of Interfaces! Go learn about Abstract Classes to know how Java gives you yet another way to define contracts.
+
+
+
+Java 9 Interface changes
+
+Since Java 9 Interfaces can have private methods and private static methods.
+
+These interface private methods are useful or accessible only within that interface. 
+We cannot access or inherit private methods from an interface to another interface or class
+
+Advantages :
+
+1. No need to write duplicate code, hence more code reusability.
+2. We got the choice to expose only our intended methods implementations to clients.
