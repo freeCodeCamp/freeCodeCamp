@@ -8,7 +8,7 @@ JavaScript é a linguagem de script mais usada na Terra. E tem o maior ecossiste
 
 JavaScript é a principal linguagem da web e a única linguagem de programação que pode ser executada em todos os principais navegadores da web.
 
-Notavelmente, o JavaScript não tem relação com o Java. [JavaScript: a linguagem de programação mais incompreendida do mundo](http://www.crockford.com/javascript/javascript.html)
+Muitas pessoas confundem JavaScript com Java. Embora as duas sejam linguagens de programação, JavaScript não tem relação com o Java. [JavaScript: a linguagem de programação mais incompreendida do mundo](http://www.crockford.com/javascript/javascript.html)
 
 O nome oficial do JavaScript é ECMAScript definido sob o padrão [ECMA-262](https://www.ecma-international.org/publications/standards/Ecma-262.htm)
 
