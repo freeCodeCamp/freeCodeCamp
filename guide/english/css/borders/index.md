@@ -6,7 +6,7 @@ title: Border Property
 CSS Border
 ----
 
-Our personal favorite CSS attribute, allow you to completely customize the borders that appear around HTML elements. With HTML, it used to be impossible to place a border around an element, except for the table. CSS Borders let you create crisp, customized border styles with very little work, compared to the antiquated methods of HTML.
+Our personal favorite CSS property, `border` allows you to completely customize the borders that appear around HTML elements. With HTML, it used to be impossible to place a border around an element, except for tables. CSS Borders let you create crisp, customized border styles with very little work, compared to the antiquated methods of HTML.
 
 The `border` shorthand property sets all the border properties in one declaration. 
 ```css 
@@ -59,8 +59,8 @@ As shown, the border property allows you to select different sections of it. [to
 
 ### Border Width
 
-To alter the thickness of your border use the border-width attribute. You may use key terms or exact values to define the border width. Note: You must
-define a border-style for the border to show up. The width can be set as a specific size (in px, pt, cm, em, etc) or by using one of the three pre-defined
+To alter the thickness of your border use the `border-width` property. You may use key terms or exact values to define the border width. _Note: You must
+define a border-style for the border to show up._ The width can be set as a specific size (in px, pt, em, rem etc) or by using one of the three pre-defined
 values: thin, medium, or thick.
 
 Example:
@@ -83,7 +83,7 @@ p {
 
 ### Border Color
 
-Now for the creative aspect of CSS Borders! With the use of the border-color attribute, you will be able to create customized borders to fit the flow and layout
+Now for the creative aspect of CSS Borders! With the use of the `border-color` property, you will be able to create customized borders to fit the flow and layout
 of your website. Border colors can be any color defined by RGB, hexadecimal, or key terms. Below is an example of each of these types.
 
 Example:
@@ -135,9 +135,8 @@ h5 { border: dotted; }
 - [MDN Documentation](https://developer.mozilla.org/en-US/docs/Web/CSS/border)
 - [CSS3 Border Radius](https://guide.freecodecamp.org/css/css3-borders-rounded-corners)
 
-### Other Border Attributes
-- 'border-radius' - This can set radius of the border. 
-- 'border-spacing' - This can set spacing between the text and border. 
-- 'border-image' - This sets an image as border. 
+### Other Border Properties
+- `border-spacing` - This sets spacing between the text and border. 
+- `border-image` - This sets an image as border. 
 
 Browser Support: IE6+
