@@ -46,11 +46,11 @@ There is a main thing between XML and HTML which makes them different from each 
 
 Also XML does not uses a predefined tags as used by HTML. It uses user defined tags.
 
-Following are the simplicity caused by XML : 
-1. It simplifies data sharing
-2. It simplifies data transport
-3. It simplifies platform changes
-4. It simplifies data availability
+The following are areas that can be simiplified with XML: 
+1. data sharing
+2. data transport
+3. platform changes
+4. data availability
 
 And it's main achievement was that it became a W3C Recommendation as early as in February 1998.
 
