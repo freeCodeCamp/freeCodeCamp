@@ -1,5 +1,5 @@
 ---
-# Books on Swift
+title: Books on Swift
 ---
 
  ### List of Books
