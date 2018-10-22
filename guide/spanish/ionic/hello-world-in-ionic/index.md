@@ -1,10 +1,10 @@
 ---
 title: Hello World In Ionic 
-localeTitle: Hola mundo en jónico
+localeTitle: Hola mundo en Ionic
 ---
-# Hola mundo en jónico !!
+# Hola mundo en Ionic !!
 
-### Este es el editorial que lo revisará para hacer un simple programa Hello World en Ionic.
+### Este es el tutorial que lo guiará para hacer un simple programa Hello World en Ionic.
 
 ### Pasos
 
@@ -36,11 +36,11 @@ No entre en pánico, estos archivos se generan automáticamente por npm para ust
 
 #### 5\. Formato de archivo básico
 ```
-`home.html` is the html page where you can write html syntax.<br/> 
+`home.html` es la página html donde puede escribir sintaxis de html.<br/> 
  
- `home.scss` is the css page to write css syntax.<br/> 
+ `home.scss` es la página de css donde puede escribir código con sintaxis de css.<br/> 
  
- `home.ts` is the typescript page to write typescript code. 
+ `home.ts` es la página typescript para escribir código typescript. 
 ```
 
 #### 6\. Elimine la plantilla y agregue la sintaxis html como se muestra en la imagen.
@@ -50,20 +50,21 @@ No entre en pánico, estos archivos se generan automáticamente por npm para ust
  <ion-header> 
   <ion-navbar> 
     <ion-title> 
-      Ionic Project 
+      Proyecto de Ionic 
     </ion-title> 
    </ion-navbar> 
   </ion-header> 
  
   <ion-content padding> 
-   <h2>Hello World </h2> 
+   <h2>Hola Mundo</h2> 
   </ion-content> 
  ``` 
  
  
- #### 7. Save the code and run 
+ #### 7. Guardar el código y ejecutar
 ```
 
-cáscara servicio iónico \`\` \`
+ionic serve
+```
 
-#### 8\. Para ver su código ejecutándose, vaya al navegador y abra localhost: 8100 en la url.
+ #### 8\. Para ver su código ejecutándose, vaya al navegador y abra localhost: 8100 en la url.
