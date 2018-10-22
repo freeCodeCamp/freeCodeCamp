@@ -117,6 +117,15 @@ Each corner of `border-radius` can be adjusted. The order is top, bottom, left, 
   border-radius: 15% 10px 30% 5px;
 ```
 
+- [CSS3 Border Radius](https://guide.freecodecamp.org/css/css3-borders-rounded-corners)
+
+### Other Border Attributes
+- 'border-radius' - This can set radius of the border. 
+- 'border-spacing' - This can set spacing between the text and border. 
+- 'border-image' - This sets an image as border. 
+
+Browser Support: IE6+
+
 ### Border: All in One
 
 While it is nice that CSS allows a web developer to be very specific in creating a customized border, sometimes it is just easier and less of a headache to create a uniform border, all in single line of CSS code.
@@ -130,14 +139,12 @@ h5 { border: dotted; }
 </style>
 ```
 
-### More Information:
+#### More Information:
 
-- [MDN Documentation](https://developer.mozilla.org/en-US/docs/Web/CSS/border)
-- [CSS3 Border Radius](https://guide.freecodecamp.org/css/css3-borders-rounded-corners)
+Documentation: <a href='https://developer.mozilla.org/en-US/docs/Web/CSS/border' target='_blank' rel='nofollow'>MDN</a>
 
-### Other Border Attributes
-- 'border-radius' - This can set radius of the border. 
-- 'border-spacing' - This can set spacing between the text and border. 
-- 'border-image' - This sets an image as border. 
+CSS-Tricks: <a href='https://css-tricks.com/almanac/properties/b/border/' target='_blank' rel='nofollow'>background-size</a>
 
-Browser Support: IE6+
+Browser Support: <a href='https://caniuse.com/#search=border' target='_blank' rel='nofollow'>caniuse</a>
+
+
