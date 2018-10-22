@@ -11,6 +11,7 @@ As a piece of code that sits on the blockchain, a smart contract can automate ta
 When an account receives money it can automatically distribute it to others.
 This is entirely transparent so all the nodes(miners) can see what logic is being executed.
 
+Deployed contracts can be viewed on platforms such as [Etherscan ](www.etherscan.io)
 
 ## Blockchain Technologies
 
