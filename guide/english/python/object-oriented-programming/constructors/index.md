@@ -3,9 +3,41 @@ title: Constructors
 ---
 ## Constructors
 
-This is a stub. <a href='https://github.com/freecodecamp/guides/tree/master/src/pages/mathematics/area-of-a-parallelogram/index.md' target='_blank' rel='nofollow'>Help our community expand it</a>.
+A constructor is a special method (function) definition within a class, the constructor method is executed when an object is created, that is if the class has a constructor, if an constructor is not defined it is automatically defined to be an empty function. In python it is only possible to have one constructor, it is named by the special name __init__(self) and is defined under class variables in the class defenition, in python we are only allowed to have one constructor since function overloading is not used in the language.
 
-<a href='https://github.com/freecodecamp/guides/blob/master/README.md' target='_blank' rel='nofollow'>This quick style guide will help ensure your pull request gets accepted</a>.
+## Constructor example
+
+Let us define a cat class, which has a tail. The number of legs, fur color and a race are added when the object is created.
+
+class Cat:
+  tail = true
+
+  __init__(self, numLegs, colFur, race):
+    self.numberOfLegs = numLegs
+    self.colorOfFur = colFur
+    self.race = race
+    
+In this example we are forcing the user to enter information into the class by defining __init__ to expect 3 parameters.
+
+bob = Cat(4, "gray", "siamese") //Works
+
+bob = Cat() //Does not work
+
+Let us define the cat class in a different way to not recieve initial information.
+
+class Cat:
+  tail = true
+
+  __init__(self):
+    self.numberOfLegs = 4
+    self.colorOfFur = "gray"
+    self.race = "siamese"
+
+Now the constructor is empty and no parameters are needed, the self parameter is always defined since that makes a reference to the object.
+
+bob = Cat() // Works now!
+
+bob = Cat(4, "gray", "siamese") //Does not work now!
 
 <!-- The article goes here, in GitHub-flavored Markdown. Feel free to add YouTube videos, images, and CodePen/JSBin embeds  -->
 
