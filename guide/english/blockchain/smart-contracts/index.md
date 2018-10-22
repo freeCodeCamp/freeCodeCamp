@@ -12,9 +12,8 @@ When an account receives money it can automatically distribute it to others.
 This is entirely transparent so all the nodes(miners) can see what logic is being executed.
 
 
-## Blockchain Technologies
+## Blockchain frameworks supporting smart contracts
 
-Two of the most common technologies used are :
-- Ethereum
-- Hyperledger
-
+Two of the most common frameworks supporting smart contracts are :
+- Ethereum (Solidity)
+- Hyperledger (Go, Java, NodeJS)
