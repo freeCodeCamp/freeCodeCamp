@@ -4,6 +4,20 @@ title: Constructors
 
 If an object copies from a class, the what's the point? I should be able to store data in it right?
 
+NOTE: a constructor needs the to have the same as the class 
+
+```
+public class School {
+    private String name;
+    private String location;
+    
+    public class School (String name, String location){  //Constructor with same name as the class 
+    this.name = name;
+    this.location = location;
+    }
+}
+```
+
 That's when we use either **getter** (e.g., getName()) / **setter** (e.g., setName()) methods, or in this case constructors, to initialize a class. Basically, every Java Class has a constructor which is the method called first when any object of the class is initialized. Think of it as a bit of starter code.
 
 When you write a class without any constructor, the Java compiler creates a default constructor :
