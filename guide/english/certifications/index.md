@@ -16,6 +16,14 @@ There are six freeCodeCamp certificates:
 
 Each certificate curriculum should take approximately 300 hours to complete and includes 5 required projects, while other challenges are optional.
 
+300 hours seem enermous right? Let us break it down, let us see how many hours you spend per day to finish the course assuming that a month is 30 days
+ I hour a day = 300 days = 10 months
+ 2 hours a day = 150 days = 5 months
+ 3 hours a day = 100 days = 3 months + 10 days
+ 4 hours a day = 75 days = 2 months + 15 days
+ 5 hours a day = 60 days = 2 months
+ so as you see, depending on your schedules, just deliberately make out the time you give to your courses each day, and before you know it you are done. 300 hours is not as enermous you think
+
 ### The Full Stack Development Certificate
 
 Upon completion of all six certificates, the freeCodeCamp [Full Stack Development Program Certificate](https://guide.freecodecamp.org/meta/free-code-camp-full-stack-development-certification/) will be issued. This final distinction signifies completion of approximately 1,800 hours of coding with exposure to a wide range of web development tools.
