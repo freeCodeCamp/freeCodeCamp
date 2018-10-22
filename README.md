@@ -11,7 +11,7 @@ freeCodeCamp.org is a friendly community where you can learn to code for free. I
 
 Our full stack web development curriculum is completely free and self-paced. We have thousands of interactive coding challenges to help you expand your skills.
 
-## Table of Contents
+## Table of Contents:
 
 * [Certifications](#certifications)
 * [The Learning Platform](#the-learning-platform)
@@ -21,7 +21,7 @@ Our full stack web development curriculum is completely free and self-paced. We 
 * [License](#license)
 
 
-### Certifications
+### Certifications:
 
 freeCodeCamp.org offers several free developer certifications. Each of these certifications involves building 5 required web app projects, along with hundreds of optional coding challenges to help you prepare for those projects. We estimate that each certification will take a beginning programmer around 300 hours to earn.
 
@@ -35,7 +35,7 @@ The one exception to this is in the event that we discover violations of our [Ac
 
 Here are our six core certifications:
 
-#### 1. Responsive Web Design Certification
+#### 1. Responsive Web Design Certification:
 
 - Basic HTML and HTML5
 - Basic CSS
@@ -47,7 +47,7 @@ Here are our six core certifications:
   <br />
   **Projects**: Tribute Page, Survey Form, Product Landing Page, Technical Documentation Page, Personal Portfolio Webpage
 
-#### 2. JavaScript Algorithms and Data Structures Certification
+#### 2. JavaScript Algorithms and Data Structures Certification:
 
 - Basic JavaScript
 - ES6
@@ -60,7 +60,7 @@ Here are our six core certifications:
   <br />
   **Projects**: Palindrome Checker, Roman Numeral Converter, Caesars Cipher, Telephone Number Validator, Cash Register
 
-#### 3. Front End Libraries Certification
+#### 3. Front End Libraries Certification:
 
 - Bootstrap
 - jQuery
@@ -71,14 +71,14 @@ Here are our six core certifications:
   <br />
   **Projects**: Random Quote Machine, Markdown Previewer, Drum Machine, JavaScript Calculator, Pomodoro Clock
 
-#### 4. Data Visualization Certification
+#### 4. Data Visualization Certification:
 
 - Data Visualization with D3
 - JSON APIs and Ajax <br />
   <br />
   **Projects**: Bar Chart, Scatterplot Graph, Heat Map, Choropleth Map, Treemap Diagram
 
-#### 5. APIs and Microservices Certification
+#### 5. APIs and Microservices Certification:
 
 - Managing Packages with Npm
 - Basic Node and Express
@@ -86,7 +86,7 @@ Here are our six core certifications:
   <br />
   **Projects**: Timestamp Microservice, Request Header Parser, URL Shortener, Exercise Tracker, File Metadata Microservice
 
-#### 6. Information Security and Quality Assurance Certification
+#### 6. Information Security and Quality Assurance Certification:
 
 - Information Security with HelmetJS
 - Quality Assurance and Testing with Chai
@@ -94,11 +94,11 @@ Here are our six core certifications:
   <br />
   **Projects**: Metric-Imperial Converter, Issue Tracker, Personal Library, Stock Price Checker, Anonymous Message Board
 
-#### Full Stack Development Certification
+#### Full Stack Development Certification:
 
 Once you earn all 6 of these certifications, you'll be able to claim your freeCodeCamp.org Full Stack Development Certification. This final distinction signifies that you’ve completed around 1,800 hours of coding with a wide range of web development tools.
 
-#### Legacy Certifications
+#### Legacy Certifications:
 
 We also have 3 legacy certifications from our 2015 curriculum, which are still available. All of the required projects for these legacy certifications will remain available on freeCodeCamp.org.
 
@@ -106,9 +106,9 @@ We also have 3 legacy certifications from our 2015 curriculum, which are still a
 - Legacy Data Visualization Certification
 - Legacy Back End Development Certification
 
-### The Learning Platform
+### The Learning Platform:
 
-This code is running live at [freeCodeCamp.org](https://www.freecodecamp.org).
+This code is running live at [freeCodeCamp.org](https://www.freecodecamp.org)
 
 Our community also has:
 
@@ -118,7 +118,7 @@ Our community also has:
 - A popular [YouTube channel](https://youtube.com/freecodecamp)
 - A comprehensive [guide to thousands of programming topics](https://guide.freecodecamp.org/)
 
-### [Join our community here](https://www.freecodecamp.org/signin).
+### [Join our community here](https://www.freecodecamp.org/signin)
 
 ### Found a bug?
 
@@ -128,11 +128,11 @@ If you think you've found a bug, first read the [Help I've Found a Bug](https://
 
 Please don't create GitHub issues for security issues. Instead, please send an email to `security@freecodecamp.org` and we'll look into it immediately.
 
-### Contributing
+### Contributing:
 
 #### [Please follow these steps to contribute.](CONTRIBUTING.md)
 
-### License
+### License:
 
 Copyright © 2018 freeCodeCamp.org
 
