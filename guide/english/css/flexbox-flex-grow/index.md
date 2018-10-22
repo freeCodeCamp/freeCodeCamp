@@ -1,3 +1,6 @@
+---
+title: Flex Grow
+---
 # Flex-grow
 
 A flex item can be set to ‘grow’ along the main axis. What this means is that the item will occupy any total available space inside the flex container, making it wider or taller depending on the ```flex-direction``` of the flex container. When there are multiple flex items in a container, the available space is shared among them to provided proportions. ```flex-grow:``` has no effect with static dimensions; use ```min-width:```, ```min-height:``` or ```flex-basis:```.
