@@ -1,6 +1,9 @@
 ---
-# Books on Haskell
+title: Books on Haskell
 ---
+
+# Books on Haskell
+
 ### List of Books
  ![Learn You a Haskell for Great Good!: A Beginner's Guide](https://images-na.ssl-images-amazon.com/images/I/41OnGOPKW3L._SX376_BO1,204,203,200_.jpg)
 #### Learn You a Haskell for Great Good!: A Beginner's Guide
