@@ -2,7 +2,9 @@
 title: WordPress
 ---
 
-# WordPress
+<html>
+  <img src="http://www.softaculous.com/blog/wp-content/uploads/2013/02/wordpress-logo-hoz-rgb.jpg" alt="WordPress logo" </img>
+</html>
 
 WordPress is a free and open-source content management system based on PHP and MySQL. Features include a plugin architecture and a template system. It is most associated with blogging but supports other types of web content including more traditional mailing lists and forums, media galleries, and online stores.
 
