@@ -115,6 +115,22 @@ golfScore(5, 4);
  ## Code explanation
 Since we already have an array defined in the variable `names` we can take advantage of it and use it for our return statements using indexes (eg: `names[0] is the first one`). That way, if you ever need to change a specific result you wouldn't need to look for it inside the function, it'd be at the beginning, in your array.
 
+## ![:sunflower:](https://forum.freecodecamp.com/images/emoji/emoji_one/sunflower.png?v=3 ":sunflower:") Intermediate Code Solution:
+(Using Multiple Conditional (Ternary) Operators)
+```js
+    function golfScore(par, strokes) {
+      return (strokes == 1) ? names[0] : 
+      (strokes <= par - 2) ? names[1] : 
+      (strokes == par - 1) ? names[2] : 
+      (strokes == par) ? names[3] : 
+      (strokes == par + 1) ? names[4] : 
+      (strokes == par + 2) ? names[5] : 
+      (strokes >= par + 3) ? names[6] : 
+      "Change Me";
+    }
+```
+![:rocket:](https://forum.freecodecamp.com/images/emoji/emoji_one/rocket.png?v=3 ":rocket:") <a href='https://repl.it/@greggubarev/Basic-JS-Golf-code1' target='_blank' rel='nofollow'>Run Code</a>
+
 ### Resources
 
 *   <a href='https://en.wikipedia.org/wiki/Golf' target='_blank' rel='nofollow'>Golf</a>
@@ -122,3 +138,4 @@ Since we already have an array defined in the variable `names` we can take advan
 *   <a href='http://www.freecodecamp.com/challenges/comparison-with-the-greater-than-equal-to-operator' target='_blank' rel='nofollow'>Challenge: Comparison with the Greater Than Equal To Operator</a>
 *   <a href='http://www.freecodecamp.com/challenges/comparison-with-the-less-than-equal-to-operator' target='_blank' rel='nofollow'>Challenge: Comparison with the Less Than Equal To Operator</a>
 * ["Array" - *MDN JavaScript reference*](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array)
+* <a href='https://learn.freecodecamp.org/javascript-algorithms-and-data-structures/basic-javascript/use-multiple-conditional-ternary-operators/' target='_blank' rel='nofollow'>Use Multiple Conditional (Ternary) Operators</a>
