@@ -35,23 +35,27 @@ This is a list of the CSS classes that bootstrap provides for buttons.
 
 <button type="button" class="btn btn-default">Default</button>
 
-`.btn-primary` This is bootstrap's primary button.
+`.btn-primary` This is bootstrap's primary button. Default color displays #007bff. 
 
 <button type="button" class="btn btn-primary">Primary</button>
 
-`.btn-success` This is bootstrap's success button.
+`.btn-secondary` This is bootstrap's secondary button. Default color displays #6c757d. 
+
+<button type="button" class="btn btn-secondary">Secondary</button>
+
+`.btn-success` This is bootstrap's success button. Default color displays #28a745.
 
 <button type="button" class="btn btn-success">Success</button>
 
-`.btn-info` This is bootstrap's info button.
+`.btn-info` This is bootstrap's info button. Default color displays #17a2b8.
 
 <button type="button" class="btn btn-info">Info</button>
 
-`.btn-warning` This is bootstrap's warning button.
+`.btn-warning` This is bootstrap's warning button. Default color displays #ffc107.
 
 <button type="button" class="btn btn-warning">Warning</button>
 
-`.btn-danger` This is bootstrap's danger button.
+`.btn-danger` This is bootstrap's danger button. Default color displays #dc3545.
 
 <button type="button" class="btn btn-danger">Danger</button>
 
