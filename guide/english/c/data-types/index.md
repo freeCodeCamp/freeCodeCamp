@@ -117,3 +117,6 @@ A pointer of type void * represents the address of an object, but not its type. 
  * double takes double the memory and gives 15 decimal places
  * long double takes even more memory and gives 19 decimal places
 * Picking the right data type is important and gives the programmer a lot of control over the program at a low level.
+*There are also preprocessor directives in c which can be used to ease our task as the compiler do not pose any checking on them.
+eg #define square x*x
+*mere using square in our program it will return back squrae value
