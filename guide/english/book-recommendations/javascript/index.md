@@ -30,6 +30,12 @@ A collection of articles covering the basics (core language and working with a b
 - [Online](https://javascript.info/)
 - [E-book](https://javascript.info/ebook)
 
+#### JavaScript Patterns
+
+Written by Stoyan Stefanov. This book talks about the different problems that a programmer might encounter when working with the JavaScript language, and it proposes patterns that might act as solutions to these problems. 
+
+- [E-Book](https://play.google.com/store/books/details?id=WTZqecc9olUC&rdid=book-WTZqecc9olUC&rdot=1&source=gbs_vpt_read&pcampaignid=books_booksearch_viewport)
+
 #### Other Resources
 
 - A selection of online free resources; including e-books for JavaScript are available at [JS Books](https://jsbooks.revolunet.com/)
