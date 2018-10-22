@@ -7,13 +7,13 @@ videoUrl: ''
 localeTitle: Agregar un botón de envío a un formulario
 ---
 
-## Description
+## Descripción
 <section id="description"> Agreguemos un botón de <code>submit</code> a su formulario. Al hacer clic en este botón, los datos de su formulario se enviarán a la URL que especificó con el atributo de <code>action</code> su formulario. Aquí hay un ejemplo de botón de envío: <code>&lt;button type=&quot;submit&quot;&gt;this button submits the form&lt;/button&gt;</code> </section>
 
-## Instructions
+## Instrucciones
 <section id="instructions"> Agregue un botón como el último elemento de su elemento de <code>form</code> con un tipo de <code>submit</code> y &quot;Enviar&quot; como texto. </section>
 
-## Tests
+## Casos de prueba (tests)
 <section id='tests'>
 
 ```yml
@@ -31,7 +31,7 @@ tests:
 
 </section>
 
-## Challenge Seed
+## Sección del reto
 <section id='challengeSeed'>
 
 <div id='html-seed'>
@@ -68,7 +68,7 @@ tests:
 
 </section>
 
-## Solution
+## Solución
 <section id='solution'>
 
 ```js
