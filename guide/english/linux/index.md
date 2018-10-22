@@ -46,4 +46,4 @@ Linux distributions also come in all shapes and size and most if not all offer t
 as a 'Live CD' environment or even directly via USB if your motherboard supports booting from USB.
 
 For more facts about Linux, read Quincy Larson's article [Linux is 25. Yay! Let’s celebrate with 25 stunning facts about Linux](https://medium.freecodecamp.org/linux-is-25-yay-lets-celebrate-with-25-rad-facts-about-linux-c8d8ac30076d).
-
+Start programming in this only.
