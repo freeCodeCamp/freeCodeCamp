@@ -6,7 +6,7 @@ localeTitle: boleano
 
 Os booleanos são um tipo de dados primitivo comumente usado em linguagens de programação de computadores. Por definição, um booleano tem dois valores possíveis: `true` ou `false` .
 
-Em Javascript, há frequentemente coerção de tipo implícito para booleano. Se, por exemplo, você tiver uma instrução if que verifica uma determinada expressão, essa expressão será forçada para um valor booleano:
+Em Javascript, há frequentemente uma interpretação implicita de valores booleano. Se, por exemplo, você tiver uma instrução if que verifica uma determinada expressão, essa expressão será forçada para um valor booleano:
 
 ```javascript
 var a = 'a string'; 
@@ -15,18 +15,18 @@ var a = 'a string';
  } 
 ```
 
-Existem apenas alguns valores que serão coagidos a falsos:
+Existem apenas alguns valores que serão interpretados como falsos:
 
-*   falso (não realmente coagido como já é falso)
-*   nulo
-*   Indefinido
+*   false (não realmente interpretado uma vez que já é o próprio false)
+*   null
+*   undefined
 *   NaN
 *   0
-*   '' (corda vazia)
+*   '' (string vazia)
 
-Todos os outros valores serão coagidos para verdadeiro. Quando um valor é coagido para um valor booleano, também chamamos isso de 'falso' ou 'truthy'.
+Todos os outros valores serão equivalentes a verdadeiro(true). Quando um valor é interpretado como um valor booleano, também chamamos isso de 'falso' ou 'truthy'.
 
-Uma maneira que o tipo de coerção é usado é com o uso dos operadores ou ( `||` ) `&&` ( `&&` ):
+Uma maneira que o tipo de interpretação é usado é com o uso dos operadores ou ( `||` ) `&&` ( `&&` ):
 
 ```javascript
 var a = 'word'; 
@@ -48,9 +48,9 @@ var a = 'word';
  console.log(c && a); // 'word' 
 ```
 
-Como você pode ver, o operador _ou_ verifica o primeiro operando. Se isso for verdade ou verdadeiro, ele retorna imediatamente (e é por isso que obtemos 'word' no primeiro caso e true no segundo caso). Se não for verdade ou verdadeiro, devolve o segundo operando (e é por isso que obtemos 'palavra' no terceiro caso).
+Como você pode ver, o operador _ou_ verifica o primeiro operando. Se isso for verdade ou verdadeiro, ele retorna imediatamente (e é por isso que obtemos 'word' no primeiro caso e true no segundo caso). Se não for verdade ou verdadeiro, devolve o segundo operando (e é por isso que obtemos 'word' no terceiro caso).
 
-Com o operador e ele funciona de maneira semelhante, mas para 'e' para ser verdade, ambos os operandos precisam ser verdadeiros. Por isso, sempre retornará o segundo operando se ambos forem verdadeiros / verdadeiros, caso contrário, retornará false. É por isso que no quarto caso nos tornamos verdade e no último caso obtemos "palavra".
+O operador 'e' funciona de maneira semelhante, mas para a condição 'e' ser verdadedeira, ambos os operandos precisam ser verdadeiros. Por isso, sempre retornará o segundo operando se ambos forem verdadeiros / verdadeiros, caso contrário, retornará false. É por isso que no quarto caso nos tornamos true e no último caso obtemos "word".
 
 ## O objeto booleano
 
