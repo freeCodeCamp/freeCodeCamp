@@ -2,7 +2,7 @@
 title: Accessibility
 ---
 ## Accessibility
-<strong>Web accessibility means that people with disabilities can use the Web</strong>.
+<strong>Web accessibility means that people with disabilities can use the Web</strong>. Removing a barriers that prevent interaction with, or access to websites by people with all kinds of disabilities.
 
 More specifically, Web accessibility means that people with disabilities can perceive, understand, navigate, and interact with the Web, and that they can
 contribute to the Web. Web accessibility also benefits others, including [older people](https://www.w3.org/WAI/bcase/soc.html#of) with changing abilities
