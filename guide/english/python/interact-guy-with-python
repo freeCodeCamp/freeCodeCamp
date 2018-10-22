@@ -1,0 +1,87 @@
+## Using Interact
+ The interact function (ipywidgets.interact) automatically creates user interface for exploring code and data inertactively.
+It is one of the easiest way to start the iPython's widgets.
+   >>> #Starting with the some imports:
+  
+  from __future__ import print_function
+  from ipywidgets import interact, interactive, fixed
+  import ipywidgets as widgets
+  
+ ### #Basic Interact
+ At the basic level, <b> interact </b> auto-generates UI controls for function arguments, and then
+calls the function with those arguments when we manipulate the controls ineractively.
+To use the function <b> interact </b>, we need to define a function that we want to explare. Here is a
+function that prints its only argument <b> x </b>.
+     >>> Basic function
+    def f(x):
+        return x
+        
+When we pass the function as the first argument to <b> interact </b> along with an integer keyword argument(x=10),
+a slider is generated and bound to the function parameter.
+     >>> #Generating a slider to interact with
+    interact(f, x=10,);
+    -8
+ When we move the slider, the function is called, which will print the current value of <b> x</b>/
+If we pass<b> True</b> or <b>False</b>, interact will generate a check box:
+     >>> Booleans generate check-boxes
+    interact(f,x=True);
+ If we pass a string, <b>interact</b> will generate a text area.
+     >>> #Strings generate text areas
+    interact(f,x='Hi There!');
+    
+<b>interact</b> can also be used as a decorator. This allows us to define a function and interact with it
+in a single shot.
+Following example shows that <b>interact</b> also works with function that have multiple arguments.
+     >>> #Using a decorator:
+    @interact(x=True, y=1,0)
+    def g(x,y):
+        return (x,y)
+ ## Fixing arguments using fixed
+There are times when we may want to explore a function using <b>interact</b>, but fix one or more of its 
+arguments to specific values. This can be accomplished by wrapping values with the <b>fixed</b> function.
+     >>> #Again, a simple function
+    def h(p,q):
+        return (p,q)
+When we call <b>interact</b>, we pass <b>fixed(20)</b> for q to hold it fixed at a value of 20.
+     >>> interact(h,p=5, q=fixed(20));
+    (13,20)
+A slider is only produced for p when the value of q is fixed.
+ ## Widget abbreviations
+ When you pass an integer-valued keyword argument of 10 (x=10) to interact, it generates an integer-valued 
+slider control with a range of [−10,+3×10].
+In this case, 10 is an abbreviation for an actual slider widget:
+    IntSlider(min=-10, max=30, step=1,value=10)
+We can get the same result if we pass this <b>IntSlider</b> as the keyword argument for x:
+    >>> #We can call the IntSlider to get more specific
+    interact(f, x=widgets.IntSlider(min=-10, max=30, step=1, value=10));
+    
+This examples clarifies how <b>interact</b> process its keyword arguments:
+1. If the keyword argument is a Widget instance with a value attribute, that widget is used. Any widget with 
+a value attribute can be used, even custom ones.
+2. Otherwise, the value is treated as a widget abbreviation that is converted to a widger before it is used.
+ ## Using functions annotations with interact
+ We will define a function with a checkbox widget abbrevation for the argument <b>x</b>.
+     >>> def f(x:True):
+        return x
+ Then, becaue the widget abbreviation has already been defined, we can call interact with a single argument.
+    >>> interact(f);
+    
+### Interactive
+In addition to interact, IPython provides another function, interactive, that is useful when we want to reuse 
+the widgets that are produced or access the data that is bound to the UI controls.
+ Here is a function that returns sum of its two arguments.
+    >>> def f(a,b):
+        return a+b
+ Unlike <b>interact</b>, <b>interactive</b> return a <b>widget</b> instance rather than immediately displaying the widget.
+     >>> w = interactive(f,a=10,b=20)
+The widget is a <b>Box</b>, which is a container for other widgets.
+ To actually display the widgets, we can use the iPython's <b>display</b> function.
+     >>> from IPython.display import display
+    display(w)
+    
+At this point, the UI controls work just like they would if <b>interact</b> had been used. We can manipulate them interactively and the function will be called. However, the widget instance returned by <b>interactive</b> also give us access to the current keyword arguments and return value of the underlying Python function.
+ Here are the current keyword arguments. If you return this cell after manipulating the sliders, the values will have changed.
+    >>> w.kwargs
+    
+Here is the current return value of the function.
+    >>> w.result
