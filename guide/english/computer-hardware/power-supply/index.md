@@ -3,7 +3,7 @@ title: Power Supply
 ---
 ## Power Supply
 
-A Power Supply Unit (PSU) supplies power to a computer. It converts AC power into steady low-voltage DC power for the internal components. 
+A Power Supply Unit (PSU) supplies power to a computer. It converts AC power into steady low-voltage DC power for the internal components. In general a regular computer power supply is a metal box where bunch of wires come out from one end. 
 
 
 A PSU is usually not user serviceable. For your safety, it is wise to never open a power supply unit.
