@@ -34,6 +34,7 @@ The `<a href>` attribute is supported by all browsers.
 <a href="#">This is a dead link</a>
 <a href="https://www.freecodecamp.org">This is a live link to freeCodeCamp</a>
 <a href="https://html.com/attributes/a-href/">more with a href attribute</a>
+<a href="javascript:alert('freecodecamp is very helpful');">can also be used for scripts</a>
 
 ```
 ### In-page anchors
