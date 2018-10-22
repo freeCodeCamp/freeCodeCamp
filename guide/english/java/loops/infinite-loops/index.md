@@ -53,7 +53,7 @@ for(int i=0;i<=10;i--)
     System.out.println(i);
 ```
 
-Here, in the above example we can see that initially the value of i is 0, when initial condition ends, we decrement the value of i by 1, so i will now be -1. So, this way, i will never be 10. Hence the loop will be infinite.
+Here, in the above example we can see that initially the value of i is 0, when initial condition ends, we decrement the value of i by 1, so i will now be -1.Hence, the loop will be infinite.
 Similarly, an infinite while loop example can be seen below:
 
 ```java
@@ -65,7 +65,7 @@ while(i>=1)
 }
 ```
 
-Here, i will always be greater than 1, so the program will be in infinite loop as i is always incremented, not decremented
+Here, i will always be greater than 1, so the program will be in infinite loop.
 
 To prevent the error, programmers use a break statement to break out of the loop. The break executes only under a particular condition. Use of a selection statement like if-else ensures the same.
 
