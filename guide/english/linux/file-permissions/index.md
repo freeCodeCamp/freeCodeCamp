@@ -1,3 +1,7 @@
+---
+title: File Permissions
+---
+
 # File Permissions
 
 * In Linux each file and directory has three user based permission groups:
