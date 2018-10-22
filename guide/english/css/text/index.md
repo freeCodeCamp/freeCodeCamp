@@ -44,7 +44,7 @@ p {
 
 The `text-decoration` property is used to set or remove decorations from text. The value `text-decoration: none;` is often used to remove underlines from links. Other `text-decorations` include `overline`,`line-through`,and `underline` ([example](https://www.w3schools.com/css/tryit.asp?filename=trycss_text-decoration)).
   
-#### Text Tranformation
+#### Text Transformation
 
 ``` css
 p {
