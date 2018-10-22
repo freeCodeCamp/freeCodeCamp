@@ -31,6 +31,16 @@ The link text is the visible part (Visit our site for tutorials).
 
 Clicking on the link text will send you to the specified address.
 
+Using Target Attribute
+
+The target attribute specifies where to open the linked document."_blank" on target attribute mean opens the linked document in a new window or tab. This example will open the linked document in a new browser window/tab.
+
+Example
+
+```html
+<a href="https://www.freecodecamp.org/" target="_blank">Visit our site for tutorials</a>
+```
+
 #### More Information:
 <!-- Please add any articles you think might be helpful to read before writing the article -->
 * [MDN - HTML <a> Reference](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/a)
