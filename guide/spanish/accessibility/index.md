@@ -6,7 +6,7 @@ localeTitle: Accesibilidad
 
 **La accesibilidad web significa que las personas con discapacidades pueden usar la web** .
 
-Más específicamente, la accesibilidad a la Web significa que las personas con discapacidades pueden percibir, comprender, navegar e interactuar con la Web, y que pueden Contribuye a la web. La accesibilidad web también beneficia a otros, incluidas [las personas mayores](https://www.w3.org/WAI/bcase/soc.html#of) con habilidades cambiantes Debido al envejecimiento.
+Más específicamente, la accesibilidad a la Web significa que las personas con discapacidades pueden percibir, comprender, navegar e interactuar con la Web, y que pueden contribuir a la web. La accesibilidad web también beneficia a otros, incluidas [las personas mayores](https://www.w3.org/WAI/bcase/soc.html#of) con habilidades afectadas por el envejecimiento.
 
 La accesibilidad a la Web abarca todas las discapacidades que afectan el acceso a la Web, incluyendo visual, auditiva, física, del habla, cognitiva y neurológica. discapacidades El documento [Cómo las personas con discapacidades usan la web](http://www.w3.org/WAI/intro/people-use-web/Overview.html) describe cómo diferentes las discapacidades afectan el uso de la Web e incluyen escenarios de personas con discapacidades que utilizan la Web.
 
