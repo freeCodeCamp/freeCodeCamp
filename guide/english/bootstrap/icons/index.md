@@ -61,7 +61,7 @@ _Note: Do not include the dot in the HTML Class Attribute, referring to the clas
   <span class="glyphicon glyphicon-align-left" aria-hidden="true"></span>
 </button>
 
-_Note: Bootstrap's Glyphicons icon is not avalable on bootstrap V4_
+_Note: Bootstrap's Glyphicons icon is not available on bootstrap V4_
 
 ### More Information:
 
