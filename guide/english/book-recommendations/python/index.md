@@ -12,7 +12,21 @@ title: Books on Python Programming Language
 - [E-book](http://greenteapress.com/thinkpython2/html/index.html)(free)
 - [Amazon](https://www.amazon.com/gp/product/1491939362)
 - ISBN-13: 978-1491939369
- 
+
+
+#### PYTHON: THE BLUEPRINT TO PYTHON PROGRAMMING: A Beginners Guide: Everything You Need to Know to Get Started
+
+The Blueprint to Python Programming: A Beginners Guide to Everything You Need to Know to Get Started is the perfect book for you to get started with this programming language and delivers everything you’ll need to get you started. 
+
+-Getting to know the Python program
+-Basic commands you need to know
+-Working with loops
+-Handling exceptions in your code
+-Conditional statements
+And more…
+
+<a href="https://www.amazon.com/PYTHON-BLUEPRINT-PROGRAMMING-Beginners-Everything-ebook/dp/B06XFMQTJ8" >amazon</a>
+
 #### Learn Python 3 the Hard Way
 
 Paid (Free ebook available) book which covers the basics of python. It's designed to get you started with python language and become familiar with its syntax and workings by the time you complete the book. 
