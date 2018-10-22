@@ -18,11 +18,11 @@ Comments can also be used to make code inactive without having to delete it enti
 
 ```html
 <!--
-<h1>Hello Campers</h1>
+<h3>Hello Campers</h3>
 -->
 <h2>Hello Friends</h2>
 <!--
-<p>Hello Paragraph</p>
+<p> Hello Para </p>
 -->
 ```
 
