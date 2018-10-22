@@ -38,13 +38,20 @@ In picture above, you will notice five section:
 5) Section 5. <b>Inspector</b>: This panel will display different attibutes and properties of selected Game Objects. Depending on the selection, the appropriate attributes and components will be listed.
 
 ##  Noteworthy Games: 
+* Angry Birds II
 * Assassin’s Creed: Identity
-* Temple Run Trilogy
 * Battlestar Galactica Online
+* Beat Saber
+* Cuphead
+* Dragon Quest VIII (iOS and Android versions)
 * Hearthstone: Heroes of Warcraft
 * Inside
-* Cuphead
-     
+* Pillars of Eternity I & II
+* Torment: Tides of Numenera
+* Temple Run Trilogy
+* Tesla Effect: A Tex Murphy Adventure
+* Wasteland 2
+
 ## History
 
 Two other programming languages were supported: Boo, which was deprecated with the release of Unity 5 and UnityScript which was deprecated in August 2017 after the release of Unity 2017.1.
