@@ -160,7 +160,7 @@ World
 ```
 We can also split the string by specifing the start and end index of the characters in the string. We will do this using the Java function called ```.substring()```.
 
-The ```.substring()``` method can be used in two ways. One with only the starting index and one with both the start and end index. Take note that the index starts from 0.
+The ```.substring()``` method can be used in two ways. One with only the starting index (start index inclusive) and one with both the start and end index (start index inclusive and end ). Take note that the index starts from 0.
 Example:
 ```java
 String text = "Hello,My name is Bob";
