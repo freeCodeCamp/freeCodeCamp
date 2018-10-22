@@ -91,7 +91,9 @@ For instance:
 ## Ternary Operators
 
 Another important option to consider when using short If/Else statements is the ternary operator.
-
+~~~~
+  $statement=(condition1 ? "condition1 is true" : "condition1 is false")
+~~~~
 Also there is an alternative syntax for control structures
 ~~~~
   if (condition1):
