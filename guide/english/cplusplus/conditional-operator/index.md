@@ -54,6 +54,11 @@ int maximum,x=5,y=6; // variable to store maximum of two numbers
 maximum=(x>y)?x:y; // directly using conditional operator
 maximum=big(x,y); // using the #define preprocessor defined above as big
 ```
+one liner conditional statement (condition)?result1:result2;
+in the above statement if the condition is met then answer will be result1 otherwise it will be result2
+eg:
+  (11>12)?11:12;
+  answer will be 12
  **Good Luck to all of you** 
 
  **Happy Coding ! :)**
