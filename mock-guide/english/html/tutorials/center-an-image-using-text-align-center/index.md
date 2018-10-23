@@ -18,7 +18,7 @@ Since the `text-align` property only applies to block-level elements, you place 
     <title>Center an Image using text align center</title>
     <style>
       .img-container {
-        text-align: center;
+      text-align: center;
       }
     </style>
   </head>
