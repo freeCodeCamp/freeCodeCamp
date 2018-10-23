@@ -7,7 +7,7 @@ title: DNS
 
 - The basic functionality of **DNS** is *associating a domain name with an IP address.* 
 
-This is a stub. <a href='https://github.com/freecodecamp/guides/tree/master/src/pages/DNS/index.md' target='_blank' rel='nofollow'>Help our community expand it</a>.
+This is a stub. <a href='https://github.com/freecodecamp/guides/tree/master/src/pages/dns/index.md' target='_blank' rel='nofollow'>Help our community expand it</a>.
 
 <a href='https://github.com/freecodecamp/guides/blob/master/README.md' target='_blank' rel='nofollow'>This quick style guide will help ensure your pull request gets accepted</a>.
 
