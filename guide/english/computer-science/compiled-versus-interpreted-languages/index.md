@@ -63,3 +63,9 @@ An Interpreted language gives implementations some additional flexibility over c
 <a href='https://en.wikipedia.org/wiki/Interpreted_language' target='_blank' rel='nofollow'>Wikipedia - Interpreted language</a>
 
 <a href='http://www.programmerinterview.com/index.php/general-miscellaneous/whats-the-difference-between-a-compiled-and-an-interpreted-language/' target='_blank' rel='nofollow'>programmerinterview.com article - What’s the difference between a compiled and interpreted language?</a>
+
+<!---Meme Goes Here-->
+Here is a funny meme! (hover to see the title text):
+Meme: 
+![alt text](http://i.qkme.me/3u48x0.jpg "Version Control Management")
+
