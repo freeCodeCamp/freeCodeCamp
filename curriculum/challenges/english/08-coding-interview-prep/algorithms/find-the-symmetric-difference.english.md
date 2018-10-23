@@ -25,6 +25,10 @@ tests:
     testString: assert.sameMembers(sym([1, 2, 3], [5, 2, 1, 4]), [3, 4, 5], '<code>sym([1, 2, 3], [5, 2, 1, 4])</code> should return <code>[3, 4, 5]</code>.');
   - text: <code>sym([1, 2, 3], [5, 2, 1, 4])</code> should contain only three elements.
     testString: assert.equal(sym([1, 2, 3], [5, 2, 1, 4]).length, 3, '<code>sym([1, 2, 3], [5, 2, 1, 4])</code> should contain only three elements.');
+  - text: <code>sym([1, 1, 2, 2], [3, 3, 4, 4])</code> should return <code>[1, 2, 3, 4]</code>.
+    testString: assert.sameMembers(sym([1, 1, 2, 2], [3, 3, 4, 4]), [1, 2, 3, 4], '<code>sym([1, 1, 2, 2], [3, 3, 4, 4])</code> should return <code>[1, 2, 3, 4]</code>.');
+  - text: <code>sym([1, 1, 2, 2], [3, 3, 4, 4])</code> should contain only four elements.
+    testString: assert.equal(sym([[1, 1, 2, 2], [3, 3, 4, 4]).length, 4, '<code>sym([1, 1, 2, 2], [3, 3, 4, 4])</code> should contain only four elements.');
   - text: <code>sym([1, 2, 3, 3], [5, 2, 1, 4])</code> should return <code>[3, 4, 5]</code>.
     testString: assert.sameMembers(sym([1, 2, 3, 3], [5, 2, 1, 4]), [3, 4, 5], '<code>sym([1, 2, 3, 3], [5, 2, 1, 4])</code> should return <code>[3, 4, 5]</code>.');
   - text: <code>sym([1, 2, 3, 3], [5, 2, 1, 4])</code> should contain only three elements.
@@ -49,7 +53,8 @@ tests:
     testString: assert.sameMembers(sym([3, 3, 3, 2, 5], [2, 1, 5, 7], [3, 4, 6, 6], [1, 2, 3], [5, 3, 9, 8], [1]), [1, 2, 4, 5, 6, 7, 8, 9], '<code>sym([3, 3, 3, 2, 5], [2, 1, 5, 7], [3, 4, 6, 6], [1, 2, 3], [5, 3, 9, 8], [1])</code> should return <code>[1, 2, 4, 5, 6, 7, 8, 9]</code>.');
   - text: <code>sym([3, 3, 3, 2, 5], [2, 1, 5, 7], [3, 4, 6, 6], [1, 2, 3], [5, 3, 9, 8], [1])</code> should contain only eight elements.
     testString: assert.equal(sym([3, 3, 3, 2, 5], [2, 1, 5, 7], [3, 4, 6, 6], [1, 2, 3], [5, 3, 9, 8], [1]).length, 8, '<code>sym([3, 3, 3, 2, 5], [2, 1, 5, 7], [3, 4, 6, 6], [1, 2, 3], [5, 3, 9, 8], [1])</code> should contain only eight elements.');
-
+  
+    
 ```
 
 </section>
