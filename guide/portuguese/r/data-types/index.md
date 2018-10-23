@@ -1,7 +1,8 @@
 ---
 title: Data Types in R
 localeTitle: Tipos de dados em R
---- ## Escalas
+--- 
+## Escalas
 
 Escalar refere-se a uma quantidade atômica que pode conter apenas um valor por vez. Escalares são os tipos de dados mais básicos. Alguns tipos comuns de escalares:
 
