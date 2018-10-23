@@ -3,7 +3,7 @@ title: Grid System
 ---
 ## Grid System
 
-In a nutshell Bootstrap grid system helps you create responsive layouts, it comprises of a system of rows and columns that helps you structure your content. 
+In a nutshell Bootstrap grid system helps you create responsive layouts, it comprises of a system of rows and columns that helps you structure your content, similar to css flexbox and the css-grid system. 
 
 Rows are horizontal groups of columns, with a maximum of 12 columns per row. Within each row, the content is placed inside the columns and it can span anywhere between 1 to 12 columns.
 
