@@ -58,5 +58,4 @@ The example above sets the background to be black with 50% opacity. The last val
 #### More Information:
 For more information visit [MDN](https://developer.mozilla.org/en-US/docs/Web/CSS/opacity)
 [Opacity CSS property at CSS-Tricks](https://css-tricks.com/almanac/properties/o/opacity/)
-
-Browser support: <a href= 'https://caniuse.com/#search=opacity' target= '_blank' rel= 'nofollow'>caniuse</a>
+[Browser support check](https://caniuse.com/#search=opacity)
