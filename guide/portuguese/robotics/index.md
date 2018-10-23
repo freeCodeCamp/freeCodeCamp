@@ -4,7 +4,7 @@ localeTitle: Robótica
 ---
 ## Robótica
 
-Robótica é sobre os sistemas que compõem os robôs. Não há deificação universal de um robô. Uma definição geralmente aceita é: _Um robô é uma máquina física programável que segue o paradigma do sentido, pensamento e ação_ . Mais especificamente, um robô precisa sentir seu ambiente, usar essa informação como uma entrada para tomar decisões e agir de acordo. Cada sistema neste paradigma é frequentemente um estudo em si. Há uma infinidade de variedades de tipos de robôs e sistemas de componentes. Cada robô geralmente é dedicado a um conjunto de processos com objetivos claros.
+Robótica é sobre os sistemas que compõem os robôs. Não há definição universal de um robô. Uma definição geralmente aceita é: _Um robô é uma máquina física programável que segue o paradigma do sentido, pensamento e ação. Mais especificamente, um robô precisa sentir seu ambiente, usar essa informação como uma entrada para tomar decisões e agir de acordo. Cada sistema neste paradigma é frequentemente um estudo em si. Há uma infinidade de variedades de tipos de robôs e sistemas de componentes. Cada robô geralmente é dedicado a um conjunto de processos com objetivos claros.
 
 ### Sentido
 
