@@ -244,7 +244,7 @@ println(9 + 10)
 Output:
 
 ```shell
-"910"
+910 // Here 910 is a string value. 
 19
 ```
 
