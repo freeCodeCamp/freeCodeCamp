@@ -5,6 +5,126 @@ title: Quick Sort
 
 Quick sort is an efficient divide and conquer sorting algorithm. Average case time complexity of Quick Sort is O(nlog(n)) with worst case time complexity being O(n^2).
 
+Recurrence equation of quick sort is:
+T(N) = T(i) + T(N - i -1) + cN
+
+The time to sort the file is equal to
+
+the time to sort the left partition with i elements, plus
+the time to sort the right partition with N-i-1 elements, plus
+the time to build the partitions
+1. Worst case analysis
+
+The pivot is the smallest element
+
+T(N) = T(N-1) + cN, N > 1
+
+Telescoping:
+
+T(N-1) = T(N-2) + c(N-1)
+
+T(N-2) = T(N-3) + c(N-2)
+
+T(N-3) = T(N-4) + c(N-3)
+
+T(2) = T(1) + c.2
+
+Add all equations:
+
+T(N) + T(N-1) + T(N-2) + … + T(2) =
+
+= T(N-1) + T(N-2) + … + T(2) + T(1) + c(N) + c(N-1) + c(N-2) + … + c.2
+
+T(N) = T(1) + c(2 + 3 + … + N)
+
+T(N) = 1 + c(N(N+1)/2 -1)
+
+Therefore T(N) = O(N2)
+2. Best-case analysis:
+
+The pivot is in the middle
+
+T(N) = 2T(N/2) + cN
+
+Divide by N:
+
+T(N) / N = T(N/2) / (N/2) + c
+
+Telescoping:
+
+T(N/2) / (N/2) = T(N/4) / (N/4) + c
+
+T(N/4) / (N/4) = T(N/8) / (N/8) + c
+
+……
+
+T(2) / 2 = T(1) / (1) + c
+
+Add all equations:
+
+T(N) / N + T(N/2) / (N/2) + T(N/4) / (N/4) + …. + T(2) / 2 =
+
+= (N/2) / (N/2) + T(N/4) / (N/4) + … + T(1) / (1) + c.logN
+
+After crossing the equal terms:
+
+T(N)/N = T(1) + cLogN = 1 + cLogN
+
+T(N) = N + NcLogN
+
+Therefore T(N) = O(NlogN)
+3. Average case analysis
+
+Similar computations, resulting in T(N) = O(NlogN)
+
+The average value of T(i) is 1/N times the sum of T(0) through T(N-1)
+
+1/N S T(j), j = 0 thru N-1
+
+T(N) = 2/N (S T(j)) + cN
+
+Multiply by N
+
+NT(N) = 2(S T(j)) + cN*N
+
+To remove the summation, we rewrite the equation for N-1:
+
+(N-1)T(N-1) = 2(S T(j)) + c(N-1)2, j = 0 thru N-2
+
+and subtract:
+
+NT(N) - (N-1)T(N-1) = 2T(N-1) + 2cN -c
+
+Prepare for telescoping. Rearrange terms, drop the insignificant c:
+
+NT(N) = (N+1)T(N-1) + 2cN
+
+Divide by N(N+1):
+
+T(N)/(N+1) = T(N-1)/N + 2c/(N+1)
+
+Telescope:
+
+T(N)/(N+1) = T(N-1)/N + 2c/(N+1)
+
+T(N-1)/(N) = T(N-2)/(N-1)+ 2c/(N)
+
+T(N-2)/(N-1) = T(N-3)/(N-2) + 2c/(N-1)
+
+….
+
+T(2)/3 = T(1)/2 + 2c /3
+
+Add the equations and cross equal terms:
+
+T(N)/(N+1) = T(1)/2 +2c S (1/j), j = 3 to N+1
+
+T(N) = (N+1)(1/2 + 2c S(1/j))
+The sum S (1/j), j =3 to N-1, is about LogN
+
+Thus T(N) = O(NlogN)
+
+
 The steps involved in Quick Sort are:
 - Choose an element to serve as a pivot, in this case, the last element of the array is the pivot.
 - Partitioning: Sort the array in such a manner that all elements less than the pivot are to the left, and all elements greater than the pivot are to the right.
@@ -141,4 +261,7 @@ The space complexity of quick sort is O(n). This is an improvement over other di
 - <a href='https://www.youtube.com/watch?v=SLauY6PpjW4' target='_blank' rel='nofollow'>Youtube: Gayle Laakmann McDowell (author of Cracking The Coding Interview) explains the basics of quicksort and show some implementations</a>
 
 - <a href='https://www.youtube.com/watch?v=COk73cpQbFQ' target='_blank' rel='nofollow'>Quick Sort - MyCodeSchool</a>
+
+
+* [QuickSort] - (http://faculty.simpson.edu/lydia.sinapova/www/cmsc250/LN250_Weiss/L16-QuickSort.htm)
 
