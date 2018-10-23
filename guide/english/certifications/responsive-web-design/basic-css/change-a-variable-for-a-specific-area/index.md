@@ -26,8 +26,16 @@ var(--custom-name)
 We need to reassign the ```--penguin-belly``` variable to ```white``` in the ```penguin``` class:
 
 ```css
-    :root {
+  .penguin {
+    /* add code below */
     --penguin-belly: white;
+    /* add code above */
+    position: relative;
+    margin: auto;
+    display: block;
+    margin-top: 5%;
+    width: 300px;
+    height: 300px;
   }
 ```
 
