@@ -3,7 +3,7 @@ title: Containers
 ---
 ## Containers
 
-Containers are a solution to the problem of how to get software to run reliably when moved from one computing environment to another.This could be from a developer's laptop to a test environment, from a staging environment into production, and perhaps from a physical machine in a Data Center to a Virtual machine in a Private or Public cloud.
+Containers are a solution to the problem of how to get software to run reliably when moved from one computing environment to another. This could be from a developer's laptop to a test environment, from a staging environment into production, and perhaps from a physical machine in a Data Center to a Virtual machine in a Private or Public cloud.
 
 In other words, a Container consists of an entire runtime environment: an application, plus all its dependencies, libraries and other binaries, and configuration files needed to run it, bundled into one package. By containerizing the application platform and its dependencies, differences in OS distributions and underlying infrastructure are abstracted away.
 
@@ -39,11 +39,11 @@ The one big difference between containers and VMs is that containers *share* the
 
 ## Orchestration
 
-There are several container orchestration frameworks leveraged in production: docker-swarm and kubernetes
+There are several container orchestration frameworks leveraged in production: docker-swarm and kubernetes.
 
 ## List of container providers
 
-Bellow is a small list of the most used containers vendors that can be used.
+Bellow is a small list of containers vendors that can be used.
 
 - [Docker](https://www.docker.com/)
 - [Kubernetes](https://kubernetes.io/)
