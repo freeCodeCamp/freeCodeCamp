@@ -61,6 +61,30 @@ Having specific functions to perform specific tasks removes confusion and shorte
 
 The function also performs reusability of code. So the next time you have to calculate the maximum of two different numbers again and again in the same program, you do not need to copy and paste your code. You just have to call the function and it does rest of the work.
 
+## Recursive functions
+   It is a function that calls itslef during the function call.
+   example: This is program to calculate factorial of a number using recursion.
+   #include <iostream>
+using namespace std;
+//Factorial function
+int f(int n){
+   /* This is called the base condition, it is
+    * very important to specify the base condition
+    * in recursion, otherwise your program will throw
+    * stack overflow error.
+    */
+   if (n <= 1)
+        return 1;
+   else 
+       return n*f(n-1);
+}
+int main(){
+   int num;
+   cout<<"Enter a number: ";
+   cin>>num;
+   cout<<"Factorial of entered number: "<<f(num);
+   return 0;
+}
 ## More Information
 
 * [TutorialsPoint](https://www.tutorialspoint.com/cplusplus/cpp_functions.htm)
