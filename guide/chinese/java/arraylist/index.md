@@ -21,3 +21,7 @@ ArrayList是动态的，这意味着它会在需要时增大，如果从中删�
 ArrayList允许我们随机访问元素。 ArrayList在很多方面类似于_Vector_ 。但它比矢量更快。需要注意的主要事项是 - 矢量比数组快，但ArrayLists不是。
 
 因此，当选择两者之间时 - 如果速度至关重要，则应考虑Vector，否则ArrayLists在存储大量元素和有效访问时更好。
+
+```java
+可以使用以下语法创建Vector： `java List<Integer> students = new Vector<>();`
+```
