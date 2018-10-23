@@ -43,8 +43,16 @@ That is because it is a convention to let the interactive shell know what kind o
 Though it is only executed if you run your script as an executable. For example, when you type `./scriptname.extension`, it will look at the top line to find out the interpreter, whereas, running the script as `bash scriptname.sh`, first line is ignored. 
 
 Then you could run the script like so:
+By default, the file "myBashScript.sh" can not be executed because it does not have permission to execute, it only has read and write permission.
+```
+zach@marigold:~$ ls -l myBashScript.sh
+-rw-rw-r-- 1 zach zach 32 Oct 23 16:36 myBashScript.sh
+```
 For make file executable you should call this command under sudo chmod +x "filename".
 ```
+zach@marigold:~$ chmod +x myBashScript.sh
+zach@marigold:~$ ls -l myBashScript.sh
+-rwxrwxr-x 1 zach zach 32 Oct 23 16:36 myBashScript.sh
 zach@marigold:~$ ./myBashScript.sh
 Hello world!
 ```
@@ -54,15 +62,20 @@ The script only has two lines. The first indicates what interpreter to use to ru
 Sometimes the script won't be executed, and the above command will return an error. It is due to the permissions set on the file. To avoid that use:
 ```
 zach@marigold:~$ chmod u+x myBashScript.sh
+zach@marigold:~$ ls -l myBashScript.sh
+-rwxrwxr-x 1 zach zach 32 Oct 23 16:36 myBashScript.sh
 ````
 or
 ```
 zach@marigold:~$ chmod 744 myBashScript.sh
+zach@marigold:~$ ls -l myBashScript.sh
+-rwxr--r-- 1 zach zach 32 Oct 23 16:36 myBashScript.sh
 ````
 And then execute the script.
 ### More Information:
 
 * [Wikipedia - Bash](https://en.wikipedia.org/wiki/Bash_(Unix_shell))
+* [Wikipedia - File system permissions](https://en.wikipedia.org/wiki/File_system_permissions)
 * [tldp.org - Guide to Bash](http://tldp.org/HOWTO/Bash-Prog-Intro-HOWTO.html#toc2)
 * [gnu.org - Bash manual](https://www.gnu.org/software/bash/manual/html_node/index.html#SEC_Contents)
 * [Shell scripting tutorial](https://www.shellscript.sh/)
