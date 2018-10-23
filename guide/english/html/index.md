@@ -35,7 +35,7 @@ HTML5 Introduces a host of semantic elements. Though we discussed HTML helped to
 
 html: The root element of an HTML page
 
-head: The element contains meta information about the document
+head: The element contains meta information about the document and non-visual elements that help make the page work
 
 title: The element specifies a title for the document
 
