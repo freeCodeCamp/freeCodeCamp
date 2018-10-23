@@ -133,11 +133,12 @@ This is used for storing logical values. A boolean type can have a value of eith
 
     Wrapper Class: Boolean
 
-    This data type is used for simple flags that track true/false conditions.
+    This data type is used for simple flags that track true/false conditions mainly when using loops.
 
     Default value is false.
 
     Example: boolean b = true, boolean b1 = 1(this is not possible in java and give incompatible type error), boolean b2;
+    
 
 ## Reference Data Types:
 
