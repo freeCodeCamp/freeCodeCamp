@@ -57,6 +57,7 @@ localeTitle: Разработка Android
 ### Курсы
 
 [Программа Udacity для Android Nanodegree](https://udacity.com/course/android-developer-nanodegree-by-google--nd801)
+[Udemy The Complete Android Kotlin Developer Course](https://www.udemy.com/the-complete-kotlin-developer-course/)
 
 ### Разработка приложений для Android
 
