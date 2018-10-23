@@ -6,7 +6,8 @@ GET VS POST
 
 One can get form inputs with global variables $_POST and $_GET.
 ```
-$_POST["firstname"] or $_GET['lastname']
+$_POST['username'] or $_GET['username'] or $_REQUEST['username']
+
 ```
 
 
