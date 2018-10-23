@@ -225,6 +225,7 @@ Consider the following examples,
     <td>a <<= 3 is equivalent to a = a << 3</td>
   </tr>
 </table>
+<b>#Note: x,y = y,x can be used to swap the values of varaibles x and y.<b> Generally, we would have done it by using a temporary variable to temporarily hold the value of x. We would have then put the value of y in x and later temporary in y. But this is more pythonic way of doing the above swapping operation.  
 
 #### Logical Operators
 
