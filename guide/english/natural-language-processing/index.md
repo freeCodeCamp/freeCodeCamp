@@ -35,4 +35,6 @@ The field of NLP is huge. If you have read this far and have implemented the abo
 
 * [LSTM networks](http://colah.github.io/posts/2015-08-Understanding-LSTMs/)
 * [Attention](https://distill.pub/2016/augmented-rnns/)
+* [Natural Language Processing Fundamentals in Python](https://www.datacamp.com/courses/natural-language-processing-fundamentals-in-python)
+- very easy to follow and describe things in very intutive way
 
