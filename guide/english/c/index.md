@@ -2,14 +2,6 @@
 title: C
 ---
 
-# Hello World! - Your first C Program
-
-## Getting the most out of this course
-Make sure that you're comfortable with all of the concepts in this part of the guide before moving on. Getting your first program running is important because it will allow you to follow along with the examples, which is another good thing to do- practice makes perfect! Concepts that might be confusing will have an annotation that links to an appendix. If you don't understand a concept, make sure that you consult the appendix for more information.
-
-## Course Goal
-The goals of this course are to teach the C language to beginners. Ideally, someone who has never touched a computer language before will be able to know C by following these guides. However, they will still be useful to more experienced programmers by including a summary at the end of each article. Although the content taught here is transferable to microcontrollers like the Arduino, it is not the focus of this guide.
-
 ## What is C?
 
 C is a general purpose programming language invented by Dennis Ritchie between 1969 and 1973 at Bell Labs. Since then, it has been used to create things like the Linux Kernel, which allows software to interact with hardware on Linux-based operating systems. It can do this, and other low-level operations, because it was designed to be very close to machine code while still being human-readable. Because of this, it provides direct access to computer memory and hardware. This makes it very useful in hardware and robotics applications where having access to those features quickly is important. 
@@ -121,6 +113,16 @@ Make a new program with `file` -> `new` -> `Source File`, then copy over the hel
  * Stuff within that main function which will get executed, including a return statement that closes the program and gives a value to the program that called it.
 * C needs to be compiled in order to run.
 * C can be used to access specific hardware addresses and to perform type punning to match externally imposed interface requirements, with a low run-time demand on system resources.
+
+
+# Hello World! - Your first C Program
+
+## Getting the most out of this course
+Make sure that you're comfortable with all of the concepts in this part of the guide before moving on. Getting your first program running is important because it will allow you to follow along with the examples, which is another good thing to do- practice makes perfect! Concepts that might be confusing will have an annotation that links to an appendix. If you don't understand a concept, make sure that you consult the appendix for more information.
+
+## Course Goal
+The goals of this course are to teach the C language to beginners. Ideally, someone who has never touched a computer language before will be able to know C by following these guides. However, they will still be useful to more experienced programmers by including a summary at the end of each article. Although the content taught here is transferable to microcontrollers like the Arduino, it is not the focus of this guide.
+
 #### More information:
 
 * [C Programming Tutorials.](https://www.tutorialspoint.com/cprogramming/)
