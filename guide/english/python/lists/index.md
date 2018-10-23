@@ -111,6 +111,38 @@ Also, we can do this:
 
 `lists` are mutable containers. Mutable containers are containers that allow changes to which objects are contained by the container. **TODO: ADD MORE?**
 
+**Aliasing and Cloning in lists:**
+
+_Aliasing_ is when two or more names refer to the same object. Consider the following:
+```shell
+>>> marvel = ['Iron Man', 'Wolverine', 'Captain America']
+>>> mcu = marvel
+>>> print(mcu)
+['Iron Man', 'Wolverine', 'Captain America']
+>>> mcu[1] = 'Doctor Strange'
+>>>
+>>> print(mcu)
+['Iron Man', 'Doctor Strange', 'Captain America']
+>>>
+>>> print(marvel)
+['Iron Man', 'Doctor Strange', 'Captain America']
+```
+Since both `marvel` and `mcu` point to the same list object(evident from the assignment `mcu = marvel`), changing one of them automatically changes the other. We say that `marvel` and `mcu` are _aliases_.
+
+_Cloning_ of a list creates a fresh new copy, keeping the original as it is. Let's look at an example:
+```shell
+>>> avatar = ['air', 'water', 'earth', 'fire']
+>>> shinobi = avatar[:]
+>>> shinobi[0] = 'wind'
+>>>
+>>> print(shinobi)
+['wind', 'water', 'earth', 'fire']
+>>>
+>>> print(avatar)
+['air', 'water', 'earth', 'fire']
+```
+In the code above, the assignment `shinobi = avatar[:]` creates a copy/clone of the original list and binds it to `shinobi`. Now, the two names `avatar` and `shinobi` point to two different list objects that happen to have the same contents. Hence, when we modify one of them, the other one stays the same.
+
 _Re-arranging elements in a list_
 
 Elements from a `list` may be extracted and re-arranged using another `list` as index.
