@@ -61,3 +61,5 @@ Como Kotlin genera el código de bytes de Java, puede usar sus marcos y bibliote
 ### Desarrollando aplicaciones de Android
 
 La mejor parte del aprendizaje de Android es que los cursos y el material disponible en línea son gratuitos. El enlace al curso está aquí: [Desarrollo de aplicaciones Android](https://udacity.com/course/new-android-fundamentals--ud851) .
+
+Gracias.
