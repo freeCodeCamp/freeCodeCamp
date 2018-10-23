@@ -28,5 +28,32 @@ eg.
       int i = (int)l;	//explicit type casting required
 ```
 
+### Common Errors
+The two most common errors encountered when casting in Java are LOP (Loss of Precision) errors and "incompatible types" errors.
+
+***1. LOP (Loss of Precision)***
+This mainly occurs when a programmer attempts to perform mathematical operations with an integer or data type that does not accept irrational decimals. Some compilers will still run the code but others will not. Attempt to avoid LOP errors when attempting to find an exact answer.
+eg.
+```java
+      public class UseMath{
+public static void main(String[]args){
+  int x = Math.pow (2,4);     
+
+ }
+}
+```
+This code would most likely not run because Math.pow in java outputs a double value and here it is being assigned to an integer, causing a LOP error.
+You can correct this by either casting Math.pow as an int, or declaring the variable as a double instead.
+
+***2. Incompatible Types***
+This occurs when a programmer attempts to convert one data type into another that cannot work; which can be implied from the name of the error.
+eg.
+```java
+      int y;
+      y = (int)true;
+```
+This code would not run, as a boolean cannot be converted to an int, or vice versa.
+
 #### More Information:
 - [Oracle Java Docs :Typecasting](https://docs.oracle.com/javase/specs/jls/se7/html/jls-5.html)
+- [Possible Loss of Precision Error Example](https://stackoverflow.com/questions/15122617/possible-loss-of-precision)
