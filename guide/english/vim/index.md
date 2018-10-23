@@ -27,3 +27,4 @@ For more information head to <a href='https://vim.sourceforge.io' target='_blank
 * [Vim.org](https://www.vim.org/) is an online resource with downloadable binaries for most operating systems. 
 * [Open Vim](http://www.openvim.com/) is an online, interactive Vim tutorial you can do right in your browser. 
 * [Vim Adventures](https://vim-adventures.com) is an online game based on VIM's keyboard shortcuts. It's the "Zelda meets text editing" game.
+* [Vim 101](https://www.linux.com/learn/vim-101-beginners-guide-vim)is a beginners guide to vim
