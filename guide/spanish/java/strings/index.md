@@ -1,8 +1,8 @@
 ---
 title: Strings
-localeTitle: Instrumentos de cuerda
+localeTitle: Strings (Secuencias de caracteres)
 ---
-# Cadenas
+# Strings (Secuencias de caracteres)
 
 Las cadenas son secuencias de caracteres. En Java, una `String` es un `Object` . Las cadenas no deben confundirse con `char` ya que los caracteres son literalmente 1 valor en lugar de una secuencia de caracteres. Aún puede usar 1 valor dentro de una cadena, sin embargo, es preferible usar `char` cuando está verificando 1 carácter.
 
@@ -139,5 +139,5 @@ String a = "Sam";
 
 ```
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMzA1OTE5OTIxXX0=
+eyJoaXN0b3J5IjpbMTY4OTU0MjU2NF19
 -->
