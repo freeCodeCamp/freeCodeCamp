@@ -37,6 +37,7 @@ Do not forget that when we truncate the word, we also must count the length adde
 
 ## ![:beginner:](https://forum.freecodecamp.com/images/emoji/emoji_one/beginner.png?v=3 ":beginner:") Basic Code Solution:
 
+```js
     function truncateString(str, num) {
       // Clear out that junk in your trunk
       if (str.length > num && num > 3) {
@@ -48,6 +49,7 @@ Do not forget that when we truncate the word, we also must count the length adde
       }
 
     }
+```
 
 ![:rocket:](https://forum.freecodecamp.com/images/emoji/emoji_one/rocket.png?v=3 ":rocket:") <a href='https://repl.it/CLjU/55' target='_blank' rel='nofollow'>Run Code</a>
 
@@ -60,6 +62,7 @@ Do not forget that when we truncate the word, we also must count the length adde
 
 ## ![:rotating_light:](https://forum.freecodecamp.com/images/emoji/emoji_one/rotating_light.png?v=3 ":rotating_light:") Advanced Code Solution:
 
+```js
     function truncateString(str, num) {
       if (str.length <= num) {
         return str;
@@ -67,6 +70,7 @@ Do not forget that when we truncate the word, we also must count the length adde
         return str.slice(0, num > 3 ? num - 3 : num) + '...';
       }
     }
+```
 
 ![:rocket:](https://forum.freecodecamp.com/images/emoji/emoji_one/rocket.png?v=3 ":rocket:") <a href='https://repl.it/CLjU/54' target='_blank' rel='nofollow'>Run Code</a>
 
@@ -74,16 +78,32 @@ Do not forget that when we truncate the word, we also must count the length adde
 
 *   First we need an if-statement to test if the length of the full string passed in as the first argument already fits within the size limit passed in as the second argument. If so we can just return the string that was passed in.
 
+```js
     if (str.length <= num)
       return str;
-
+```
 *   If our `if` statement above fails, we move to the `else`, where we are going to return a "slice" of the string. The slice method extracts a section of a string and returns a new string. Here we pass 0 as the starting point for our slice. To determine the endpoint, we use a ternary operator: `num > 3 ? num - 3 : num`. In our ternary, if `num` is larger than 3, we must factor in the three dots to our total length, and thus we end our slice at `num-3`. If num is less than or equal to 3, our slice gets an end variable of just `num`. Finally, the `'...'` is appended to the end of our new string and is returned.
 
+```js
     } else {
         return str.slice(0, num > 3 ? num - 3 : num) + '...';
       }
-
+```
 *   **NOTE** In order to understand the above code, you need to understand how a Ternary Operator works. The Ternary Operator is frequently used as a shortcut for the `if` statement and follows this format: `condition ? expr1 : expr2`. If the `condition` evaluates to true, the operator returns the value of `expr1`. Otherwise, it returns the value of `expr2`.
+
+## ![:rotating_light:](https://forum.freecodecamp.com/images/emoji/emoji_one/rotating_light.png?v=3 ":rotating_light:") Advanced Code Solution #2:
+
+```js
+function truncateString(str, num) {
+  return (num < str.length) ? (str.slice(0, num) + "...") : str.slice(0, num);
+}
+```
+
+![:rocket:](https://forum.freecodecamp.com/images/emoji/emoji_one/rocket.png?v=3 ":rocket:") <a href='https://repl.it/@greggubarev/Truncate-a-String' target='_blank' rel='nofollow'>Run Code</a>
+
+### Code Explanation:
+
+*   Improved using Ternary Operator from last solution
 
 #### Relevant Links
 
