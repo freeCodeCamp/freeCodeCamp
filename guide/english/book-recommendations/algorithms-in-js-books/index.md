@@ -23,5 +23,11 @@ title: Algorithms in JavaScript books
 - Data structures and algorithms are the base of every solution to any programming problem. Learn to write complex and powerful code using the latest ES 2017 features
 - [Amazon](https://https://www.amazon.com/Learning-JavaScript-Data-Structures-Algorithms/dp/1788623878/)
 - ISBN-13: 978-1788623872
+
+*Algorithms in a Nutshell: A Practical Guide - Second edition*
+- published 22 mar 2016, by by George T. Heineman, Gary Pollice, Stanley Selkow
+- Describes a large number of existing algorithms for solving a variety of problems, and helps you select and implement the right algorithm for your needs—with just enough math to let you understand and analyze algorithm performance.
+- [Amazon](https://www.amazon.com/Algorithms-Nutshell-Practical-George-Heineman-dp-1491948922/)
+-ISBN-13: 978-1491948927
  
 Please feel free to add more that you have found useful!
