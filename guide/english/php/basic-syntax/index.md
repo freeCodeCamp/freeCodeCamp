@@ -86,6 +86,8 @@ EcHo "Hello World!<br>";
 
 In the example below, only the first statement will display the value of the $color variable (this is because $color, $COLOR, and $coLOR are treated as three different variables):
 
+# "." periods are use to concatenate(linking) strings in php as shown in code below.
+
 ````
 <!DOCTYPE html>
 <html>
