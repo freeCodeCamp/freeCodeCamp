@@ -38,7 +38,7 @@ Output:
 
 **Remember**: The condition of a `do-while` loop is checked after the code body is executed once.
 
-![:rocket:](//forum.freecodecamp.com/images/emoji/emoji_one/rocket.png?v=2 ":rocket:") <a href='https://repl.it/CJYl/0' target='_blank' rel='nofollow'>Run Code</a>
+![:rocket:](https://forum.freecodecamp.org/images/emoji/emoji_one/rocket.png?v=2 ":rocket:") <a href='https://repl.it/CJYl/0' target='_blank' rel='nofollow'>Run Code</a>
 
 ## Exercise
 Can you guess the output of the following code snippet?
