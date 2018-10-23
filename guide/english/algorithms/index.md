@@ -58,3 +58,5 @@ This is also a really good open source project that helps you visualize algorith
 [Infographic on how Machine Learning Algorithms Work](https://www.boozallen.com/content/dam/boozallen_site/sig/pdf/infographic/how-do-machines-learn.pdf)
 
 This infographic shows you how unsupervised and supervised machine learning algorithms work..
+####[Algorithms| coursera](https://www.coursera.org/specializations/algorithms)
+- This specialization is an introduction to algorithms for learners with at least a little programming experience. The specialization is  - rigorous but emphasizes the big picture and conceptual understanding over low-level implementation and mathematical details. After -completing this specialization, you will be well-positioned to ace your technical interviews and speak fluently about algorithms with other - programmers and computer scientists.
