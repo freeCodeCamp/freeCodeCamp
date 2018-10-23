@@ -1,0 +1,81 @@
+Sublist Search (Search a linked list in another list)
+Given two linked lists, the task is to check whether the first list is present in 2nd list or not.
+
+Input  : list1 =  10->20
+         list2  = 5->10->20
+Output : LIST FOUND
+
+Input  : list1 =  1->2->3->4
+         list2  = 1->2->1->2->3->4
+Output : LIST FOUND
+
+Input  : list1 =  1->2->3->4
+         list2  = 1->2->2->1->2->3
+Output : LIST NOT FOUND
+
+Algorithm:
+1- Take first node of second list.
+2- Start matching the first list from this first node.
+3- If whole lists match return true.
+4- Else break and take first list to the first node again.
+5- And take second list to its second node.
+6- Repeat these steps until any of linked lists becomes empty.
+7- If first list becomes empty then list found else not.
+
+
+C++ IMPLEMENTATION
+bool findList(Node* first, Node* second) 
+{ 
+    Node* ptr1 = first, *ptr2 = second; 
+  
+    // If both linked lists are empty, return true 
+    if (first == NULL && second == NULL) 
+        return true; 
+  
+    // Else If one is empty and other is not return 
+    // false 
+    if ( first == NULL || 
+        (first != NULL && second == NULL)) 
+        return false; 
+  
+    // Traverse the second list by picking nodes 
+    // one by one 
+    while (second != NULL) 
+    { 
+        // Initialize ptr2 with current node of second 
+        ptr2 = second; 
+  
+        // Start matching first list with second list 
+        while (ptr1 != NULL) 
+        { 
+            // If second list becomes empty and first 
+            // not then return false 
+            if (ptr2 == NULL) 
+                return false; 
+  
+            // If data part is same, go to next 
+            // of both lists 
+            else if (ptr1->data == ptr2->data) 
+            { 
+                ptr1 = ptr1->next; 
+                ptr2 = ptr2->next; 
+            } 
+  
+            // If not equal then  break the loop 
+            else break; 
+        } 
+  
+        // Return true if first list gets traversed 
+        // completely that means it is matched. 
+        if (ptr1 == NULL) 
+            return true; 
+  
+        // Initialize ptr1 with first again 
+        ptr1 = first; 
+  
+        // And go to next node of second list 
+        second = second->next; 
+    } 
+  
+    return false; 
+} 
