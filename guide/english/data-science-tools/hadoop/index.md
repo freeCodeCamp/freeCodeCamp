@@ -30,7 +30,12 @@ At the time of its release, Hadoop was capable of processing data on a larger sc
 
 Data is stored in the Hadoop Distributed File System (HDFS). Using map reduce, Hadoop processes data in parallel chunks (processing several parts at the same time) rather than in a single queue. This reduces the time needed to process large data sets.
 
-HDFS works by storing large files divided into chunks, and replicating them across many servers. Having multiple copies of files creates redundancy, which protects against data loss.
+HDFS works by storing large files divided into chunks (also known as blocks) , and replicating them across many servers. Having multiple copies of files creates redundancy, which protects against data loss.
+
+MapReduce is a parallel processing framework which utilizes three operations in essence:
+- Map : Each datanode processes the data locally  and spits it out to a temporary location.
+- Shuffle : The datanode shuffles(redistributes) the data based on an output key , thus ensuring that each datanode has data related to a single key.
+- Reduce : Now the only task left for each data is to group data per key . This task is independent across datanodes and is processesed parallely.
 
 ### Hadoop Ecosystem
 

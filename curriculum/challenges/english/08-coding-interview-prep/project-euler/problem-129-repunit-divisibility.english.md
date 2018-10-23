@@ -23,7 +23,7 @@ Find the least value of n for which A(n) first exceeds one-million.
 ```yml
 tests:
   - text: <code>euler129()</code> should return 1000023.
-    testString: 'assert.strictEqual(euler129(), 1000023, "<code>euler129()</code> should return 1000023.");'
+    testString: assert.strictEqual(euler129(), 1000023, '<code>euler129()</code> should return 1000023.');
 
 ```
 
