@@ -29,6 +29,7 @@ for (int iter_For = 0; iter_For < 10; iter_For++)
 {
     System.out.print(iter_For + " ");
     // Iterated 10 times, iter_For 0,1,2...9
+    //once 10 the program run the instruction below the loop
 }
 
 System.out.println("iter_For Value: " + iter_For);
@@ -41,6 +42,7 @@ for (int iter_For = 0; iter_For < 10; iter_For++)
     System.out.print (iter_For + " ");
     // Iterated 10 times, iter_For 0,1,2...9
 }
+// iter_For=10
 ```
 
 Output:
