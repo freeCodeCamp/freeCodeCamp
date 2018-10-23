@@ -17,6 +17,9 @@ But, how would you write the code for finding the index of the second smallest v
 
 * An easy way is to notice that the smallest value has already been swapped into index 0, so the problem reduces to finding the smallest element in the array starting at index 1.
 
+The best-case time complexity is O(n^2). 
+The average-case time complexity is O(n^2).
+The worst-case time complexity is O(n^2).
 
 ### Implementation in C/C++
 
@@ -94,3 +97,5 @@ def seletion_sort(arr):
 * [Wikipedia](https://en.wikipedia.org/wiki/Selection_sort)
 * [KhanAcademy](https://www.khanacademy.org/computing/computer-science/algorithms#sorting-algorithms)
 * [MyCodeSchool](https://www.youtube.com/watch?v=GUDLRan2DWM)
+
+* [GeeksforGeeks](https://www.geeksforgeeks.org/time-complexities-of-all-sorting-algorithms/)
