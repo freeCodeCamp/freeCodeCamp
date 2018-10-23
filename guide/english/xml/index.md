@@ -21,10 +21,10 @@ Above syntax shows the root element which is necessary while creating an XML cod
 ```
 <?xml version="1.0" encoding="UTF-8"?>
 <note>
-  <to>Tove</to>
-  <from>Jani</from>
-  <heading>Reminder</heading>
-  <body>Don't forget me this weekend!</body>
+  <to>Tove</to> <!-- Sender -->
+  <from>Jani</from> <!-- Receiver -->
+  <heading>Reminder</heading> <!-- Heading of the note -->
+  <body>Don't forget me this weekend!</body> <!-- body of the note -->
 </note>
 ```
 In this example 'note' is the root element.
@@ -56,5 +56,5 @@ And it's main achievement was that it became a W3C Recommendation as early as in
 
 ### More information
 
-* [XML Introduction](https://developer.mozilla.org/en-US/docs/XML_introduction)
-* [Introduction to XML](https://www.w3schools.com/xml/xml_whatis.asp)
+* [XML Introduction](https://developer.mozilla.org/en-US/docs/XML_introduction) <!-- link-->
+* [Introduction to XML](https://www.w3schools.com/xml/xml_whatis.asp) <!-- link -->
