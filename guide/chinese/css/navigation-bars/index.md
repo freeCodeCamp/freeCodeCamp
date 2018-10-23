@@ -32,30 +32,52 @@ localeTitle: 导航栏
 ```
 
 ```css
-/* Define the main Navigation block */ 
+body {
+  margin:0;
+}
+
+/* 將你的主导航栏設為 BLOCK */ 
  .myNav { 
     display: block; 
+    width: 100vw;
     height: 50px; 
-    line-height: 50px; 
     background-color: #333; 
+    margin: 0;
+    padding: 0;
  } 
- /* Remove bullets, margin and padding */ 
+ /* 
+去除不需要的编目設定： list-style
+去除不需要的位置： MARGIN & PADDING 
+*/ 
  .myNav ul { 
     list-style: none; 
     padding: 0; 
     margin: 0; 
  } 
+ /* 將编目下的项目排成一行 */ 
  .myNav li { 
-    float: left; 
-    /* Or you can use display: inline; */ 
+   display: inline
  } 
- /* Define the block styling for the links */ 
+
+ /* 將你的子项目 li 設為 inline-block */ 
  .myNav li a { 
     display: inline-block; 
     text-align: center; 
     padding: 14px 16px; 
+    color: #fff;
+ /*  去除默认的子项目风格： list-style */
+    text-decoration: none;
  } 
- /* This is optional, however if you want to display the active link differently apply a background to it */ 
+
+/* 當你滑到子项目時的顯示 */
+.myNav li a:hover {
+  background-color: rgba(165, 165, 165, .5)
+}
+
+ /* 
+如果你想顯示當時的子项目
+你可以將這個 active class 放在你的HTML
+*/ 
  .myNav li a.active { 
     background-color: #3786E1; 
  } 
