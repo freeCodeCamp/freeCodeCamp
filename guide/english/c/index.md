@@ -33,17 +33,16 @@ int main(void)
 
 Let's break this program down step-by-step.
 
-First is the `#include`:
-```C
+First is the 
 #include <stdio.h> // This is called preprocessor directives
-```
-This is an instruction to the compiler to find and include a set of header files. Header files contain additional code that we can use. In this case, the compiler has been instructed to include `<stdio.h>`, which contains all kinds of useful functions like `printf()`. We can also write it as `#include"stdio.h"`. We'll get into detail about what functions are later, but for now just remember that a function is a collection of code that we can use.
 
-```C
+This is an instruction to the compiler to find and include a set of header files. Header files contain additional code that we can use. In this case, the compiler has been instructed to include `<stdio.h>`, which contains all kinds of useful functions like `printf()`, 'scanf'. We can also write it as `#include"stdio.h"`. We'll get into detail about what functions are later, but for now just remember that a function is a collection of code that we can use.
+
+
 int main(void)
 {
 }
-```
+
 This code declares the main function. The main function is special- it will always get called and is always the 'main' part of your program. If this isn't in your program, your program can't run and won't compile.
 
 Starting the function declaration with `int` means that this function will give an `int` value when it's done running through its code- it's this function's output. `int` is the 'integer' data type, and integers are whole numbers like -3, 0, or 18. So we know that this code will run, and when it's done, it will give us back an integer. By convention, this integer is 0.
