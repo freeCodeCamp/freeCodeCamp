@@ -38,7 +38,7 @@ Na foto acima, você notará cinco seções: 1) Seção 1. **Scene View** : Isto
 *   Trilogia de Temple Run
 *   Battlestar Galactica Online
 *   Hearthstone: Heróis de Warcraft
-*   Dentro
+*   Inside
 *   Cuphead
 
 ## História
