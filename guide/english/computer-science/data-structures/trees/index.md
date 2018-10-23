@@ -3,7 +3,7 @@ title: Trees
 ---
 # Trees
 
-A tree data structure can be defined recursively (locally) as a collection of nodes (starting at a root node), where each node is a data structure consisting of a value, together with a list of references to nodes (the "children"), with the constraints that no reference is duplicated, and none points to the root. A tree with no nodes is called a null or empty tree.
+A tree data structure can be defined recursively (locally) as a collection of nodes (starting at a root node), where each node is a data structure consisting of a value, together with a list of references to nodes (the "children"), with the constraints that no reference is duplicated, and none points to the root. A tree with no nodes is called a null or empty tree. A tree can be considered as a special kind of graph.
 
 A binary tree is a non linear data structure consisting nodes, where each node has the following 3 components:
 
