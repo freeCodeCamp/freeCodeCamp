@@ -4,9 +4,9 @@ localeTitle: Trabalhando em Tecnologia
 ---
 ## Trabalhando em Tecnologia
 
-Uma ampla variedade de campos relacionados à tecnologia, como desenvolvimento da Web, design, ciência de dados e gerenciamento de produtos, é geralmente incluída no termo "técnico".
+Uma ampla variedade de campos relacionados à tecnologia, como desenvolvimento da Web, design, ciência de dados e gerenciamento de produtos, é geralmente incluída no termo "tech".
 
-Esta seção irá se concentrar em vários aspectos do trabalho em tecnologia. Discutiremos os desafios adicionais de carreira que as minorias sub-representadas e as pessoas de origens de educação não tradicionais enfrentam. Isso inclui questões como o sexismo e o preconceito que foram particularmente prevalentes em certos setores e organizações.
+Esta seção irá se concentrar em vários aspectos do trabalho na área de tecnologia. Discutiremos os desafios adicionais de carreira que as minorias sub-representadas e as pessoas de origens de educação não tradicionais enfrentam. Isso inclui questões como o machismo e a discriminação por faixa etária que foram particularmente prevalentes em certos setores e organizações.
 
 ### Segurança informática
 
