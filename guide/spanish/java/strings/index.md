@@ -19,12 +19,12 @@ Salida:
 Puede crear un objeto String de las siguientes maneras:
 
 1.  `String str = "Yo soy una Cadena"; //como una cadena literal`
-2.  `String str = "Yo soy una " + "Cadena"; //como una expresion de constantes`
+2.  `String str = "Yo soy una " + "Cadena"; //como una expresion constante`
 3.  `String str = new String("I am a String"); //como un objeto String usando el constructor`
 
 Usted podría estar pensando: ¿Cuál es la diferencia entre los tres?
 
-Bueno, usar la pa `new` palabra clave garantiza que se creará un nuevo objeto `String` y se asignará una nueva ubicación de memoria en el `Heap` memoria [(haga clic aquí para obtener más información)](https://docs.oracle.com/cd/E13150_01/jrockit_jvm/jrockit/geninfo/diagnos/garbage_collect.html) . Cuerda Los literales y las expresiones de cadena constantes se almacenan en caché en tiempo de compilación. El compilador los coloca en el String Literal Pool para evitar duplicados. y mejorar el consumo de memoria. La asignación de objetos es costosa y este truco aumenta el rendimiento al crear cadenas. Si utiliza el mismo literal de nuevo, la JVM usa el mismo objeto. Usar el contructor como el de arriba es casi siempre una opción peor.
+Bueno, usar la palabra reservada `new` garantiza que se creará un nuevo objeto `String` y se asignará una nueva ubicación de memoria en el `Heap` de memoria [(haga clic aquí para obtener más información)](https://docs.oracle.com/cd/E13150_01/jrockit_jvm/jrockit/geninfo/diagnos/garbage_collect.html) . Los literales de String y las expresiones de cadena constantes se almacenan en caché en tiempo de compilación. El compilador los coloca en el String Literal Pool para evitar duplicados. y mejorar el consumo de memoria. La asignación de objetos es costosa y este truco aumenta el rendimiento al crear cadenas. Si utiliza el mismo literal de nuevo, la JVM usa el mismo objeto. Usar el contructor como el de arriba es casi siempre una opción peor.
 
 En este fragmento de código, ¿cuántos objetos de cadena se crean?
 
@@ -139,5 +139,5 @@ String a = "Sam";
 
 ```
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTE0NTM4MjAyNzMsMTkzNjc1MTgxMF19
+eyJoaXN0b3J5IjpbODQ4OTU3NDE1LDE5MzY3NTE4MTBdfQ==
 -->
