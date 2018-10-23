@@ -71,6 +71,22 @@ Virtual box supports a wide variety of Operating systems:
    - OS/2
    - OpenBSD
  
+ # Feature Set:
+    64-bit guests (hardware virtualization support is required)
+    Snapshots
+    Seamless mode – the ability to run virtualized applications side by side with normal desktop applications
+    Shared clipboard
+    Shared folders
+    Special drivers and utilities to facilitate switching between systems
+    Command line interaction (in addition to the GUI)
+    Public API (Java, Python, SOAP, XPCOM) to control VM configuration and execution[38]
+    Nested paging for AMD-V and Intel VT (only for processors supporting SLAT and with SLAT enabled)
+    Limited support for 3D graphics acceleration (including OpenGL up to (but not including) 3.0 and Direct3D 9.0c via Wine's Direct3D to OpenGL translation)
+    SMP support (up to 32 virtual CPUs per virtual machine), since version 3.0
+    Teleportation (aka Live Migration)
+    2D video output acceleration (not to be mistaken with video decoding acceleration), since version 3.1
+    EFI has been supported since version 3.1
+ 
 
 
 #### More Information:
