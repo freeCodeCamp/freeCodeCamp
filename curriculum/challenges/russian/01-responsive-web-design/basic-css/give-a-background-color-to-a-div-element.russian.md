@@ -7,7 +7,7 @@ localeTitle: Дайте цвет фона элементу div
 ---
 
 ## Description
-<section id="description"> Вы можете установить цвет фона элемента с свойством <code>background-color</code> . Например, если вы хотите, чтобы цвет фона элемента был <code>green</code> , вы должны поместить его в свой элемент <code>style</code> : <blockquote> .green-background { <br> фон-цвет: зеленый; <br> } </blockquote></section>
+<section id="description"> Вы можете установить цвет фона элемента с свойством <code>background-color</code> . Например, если вы хотите, чтобы цвет фона какого-либо элемента был <code>green</code> , вы должны поместить его в свой элемент <code>style</code> : <blockquote> .green-background { <br> фон-цвет: зеленый; <br> } </blockquote></section>
 
 ## Instructions
 <section id="instructions"> Создайте класс под названием <code>silver-background</code> с <code>background-color</code> серебра. Назначьте этот класс вашему элементу <code>div</code> . </section>
