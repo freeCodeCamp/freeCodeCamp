@@ -3,6 +3,8 @@ title: Canvas Tag
 ---
 ## Canvas Tag
 
+Canvas Tag basically lets you draw in a container with the help of scripting (typically JavaScript).
+
 This is a stub. <a href='https://github.com/freecodecamp/guides/tree/master/src/pages/html/elements/canvas-tag/index.md' target='_blank' rel='nofollow'>Help our community expand it</a>.
 
 <a href='https://github.com/freecodecamp/guides/blob/master/README.md' target='_blank' rel='nofollow'>This quick style guide will help ensure your pull request gets accepted</a>.
