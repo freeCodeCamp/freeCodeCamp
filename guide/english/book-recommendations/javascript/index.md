@@ -5,7 +5,7 @@ title: Books on JavaScript
 
 #### Eloquent JavaScript
 
-One of the best books on JavaScript. A must for both, beginners and intermediate programmers, who code in JavaScript. The best part is that the e-book is available for free.
+One of the best books on JavaScript. A must for both beginners and intermediate programmers who code in JavaScript. The best part is that the e-book is available for free.
 
 - [E-book](https://eloquentjavascript.net/)(free)
 - [Amazon](https://www.amazon.com/gp/product/1593275846/ref=as_li_qf_sp_asin_il_tl?ie=UTF8&camp=1789&creative=9325&creativeASIN=1593275846&linkCode=as2&tag=marijhaver-20&linkId=VPXXXSRYC5COG5R5)
@@ -25,11 +25,11 @@ Book by the "grandfather" of JavaScript, Douglas Crockford. He discusses both th
 
 #### JavaScript: Info
 
-A collection of articles covering the basics (core language and working with a browser) as well as advanced topics with concise explanations. Available as an e-book with pay and also as an online tutorial.
+A collection of articles covering the basics (core language and working with a browser) as well as advanced topics with concise explanations. Available as an e-book for a fee and also as an online tutorial.
 
 - [Online](https://javascript.info/)
 - [E-book](https://javascript.info/ebook)
 
 #### Other Resources
 
-- A selection of online free resources; including e-books for JavaScript are available at [JS Books](https://jsbooks.revolunet.com/)
+- A selection of online free resources including e-books for JavaScript are available at [JS Books](https://jsbooks.revolunet.com/)
