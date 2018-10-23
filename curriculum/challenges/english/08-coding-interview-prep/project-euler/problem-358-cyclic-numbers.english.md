@@ -48,7 +48,7 @@ There is only one cyclic number for which, the eleven leftmost digits are 000000
 ```yml
 tests:
   - text: <code>euler358()</code> should return 3284144505.
-    testString: 'assert.strictEqual(euler358(), 3284144505, "<code>euler358()</code> should return 3284144505.");'
+    testString: assert.strictEqual(euler358(), 3284144505, '<code>euler358()</code> should return 3284144505.');
 
 ```
 

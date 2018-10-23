@@ -1,5 +1,5 @@
 ---
-  title : Types of Blockchain
+title: Types of Blockchain
 localeTitle: أنواع blockchain
 ---
 ![Blockchain](https://github.com/Vagisha16/Hw3/blob/master/blockchain-what-and-why-19-638.jpg?raw=true)

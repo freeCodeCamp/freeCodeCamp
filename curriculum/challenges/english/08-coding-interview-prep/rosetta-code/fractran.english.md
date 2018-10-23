@@ -26,19 +26,19 @@ challengeType: 3
 ```yml
 tests:
   - text: <code>fractran</code> should be a function.
-    testString: 'assert(typeof fractran=="function","<code>fractran</code> should be a function.");'
-  - text: '<code>fractran(""+tests[0]+"")</code> should return an array.'
-    testString: 'assert(Array.isArray(fractran(tests[0])),"<code>fractran(""+tests[0]+"")</code> should return an array.");'
-  - text: '<code>fractran(""+tests[0]+"")</code> should return <code>"+JSON.stringify(results[0])+"</code>.'
-    testString: 'assert.deepEqual(fractran(tests[0]),results[0],"<code>fractran(""+tests[0]+"")</code> should return <code>"+JSON.stringify(results[0])+"</code>.");'
-  - text: '<code>fractran(""+tests[1]+"")</code> should return <code>"+JSON.stringify(results[1])+"</code>.'
-    testString: 'assert.deepEqual(fractran(tests[1]),results[1],"<code>fractran(""+tests[1]+"")</code> should return <code>"+JSON.stringify(results[1])+"</code>.");'
-  - text: '<code>fractran(""+tests[2]+"")</code> should return <code>"+JSON.stringify(results[2])+"</code>.'
-    testString: 'assert.deepEqual(fractran(tests[2]),results[2],"<code>fractran(""+tests[2]+"")</code> should return <code>"+JSON.stringify(results[2])+"</code>.");'
-  - text: '<code>fractran(""+tests[3]+"")</code> should return <code>"+JSON.stringify(results[3])+"</code>.'
-    testString: 'assert.deepEqual(fractran(tests[3]),results[3],"<code>fractran(""+tests[3]+"")</code> should return <code>"+JSON.stringify(results[3])+"</code>.");'
-  - text: '<code>fractran(""+tests[4]+"")</code> should return <code>"+JSON.stringify(results[4])+"</code>.'
-    testString: 'assert.deepEqual(fractran(tests[4]),results[4],"<code>fractran(""+tests[4]+"")</code> should return <code>"+JSON.stringify(results[4])+"</code>.");'
+    testString: assert(typeof fractran=='function','<code>fractran</code> should be a function.');
+  - text: <code>fractran("3/2, 1/3")</code> should return an array.
+    testString: assert(Array.isArray(fractran('3/2, 1/3')),'<code>fractran("3/2, 1/3")</code> should return an array.');
+  - text: <code>fractran("3/2, 1/3")</code> should return <code>[ 2, 3, 1 ]</code>.
+    testString: assert.deepEqual(fractran('3/2, 1/3'), [ 2, 3, 1 ],'<code>fractran("3/2, 1/3")</code> should return <code>[ 2, 3, 1 ]</code>.');
+  - text: <code>fractran("3/2, 5/3, 1/5")</code> should return <code>[ 2, 3, 5, 1 ]</code>.
+    testString: assert.deepEqual(fractran('3/2, 5/3, 1/5'), [ 2, 3, 5, 1 ],'<code>fractran("3/2, 5/3, 1/5")</code> should return <code>[ 2, 3, 5, 1 ]</code>.');
+  - text: <code>fractran("3/2, 6/3")</code> should return <code>[ 2, 3, 6, 9, 18, 27, 54, 81, 162, 243 ]</code>.
+    testString: assert.deepEqual(fractran('3/2, 6/3'), [ 2, 3, 6, 9, 18, 27, 54, 81, 162, 243 ],'<code>fractran("3/2, 6/3")</code> should return <code>[ 2, 3, 6, 9, 18, 27, 54, 81, 162, 243 ]</code>.');
+  - text: <code>fractran("2/7, 7/2")</code> should return <code>[ 2, 7, 2, 7, 2, 7, 2, 7, 2, 7 ]</code>.
+    testString: assert.deepEqual(fractran('2/7, 7/2'), [ 2, 7, 2, 7, 2, 7, 2, 7, 2, 7 ],'<code>fractran("2/7, 7/2")</code> should return <code>[ 2, 7, 2, 7, 2, 7, 2, 7, 2, 7 ]</code>.');
+  - text: <code>fractran("17/91, 78/85, 19/51, 23/38, 29/33, 77/29, 95/23, 77/19, 1/17, 11/13, 13/11, 15/14, 15/2, 55/1")</code> should return <code>[ 2, 15, 825, 725, 1925, 2275, 425, 390, 330, 290 ]</code>.
+    testString: assert.deepEqual(fractran('17/91, 78/85, 19/51, 23/38, 29/33, 77/29, 95/23, 77/19, 1/17, 11/13, 13/11, 15/14, 15/2, 55/1'), [ 2, 15, 825, 725, 1925, 2275, 425, 390, 330, 290 ],'<code>fractran("17/91, 78/85, 19/51, 23/38, 29/33, 77/29, 95/23, 77/19, 1/17, 11/13, 13/11, 15/14, 15/2, 55/1")</code> should return <code>[ 2, 15, 825, 725, 1925, 2275, 425, 390, 330, 290 ]</code>.');
 
 ```
 
@@ -53,16 +53,6 @@ tests:
 function fractran (progStr) {
   // Good luck!
 }
-```
-
-</div>
-
-
-### After Test
-<div id='js-teardown'>
-
-```js
-console.info('after the test');
 ```
 
 </div>

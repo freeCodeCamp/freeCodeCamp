@@ -24,13 +24,13 @@ Add a button as the last element of your <code>form</code> element with a type o
 ```yml
 tests:
   - text: Your form should have a button inside it.
-    testString: 'assert($("form").children("button").length > 0, "Your form should have a button inside it.");'
+    testString: assert($("form").children("button").length > 0, 'Your form should have a button inside it.');
   - text: Your submit button should have the attribute <code>type</code> set to <code>submit</code>.
-    testString: 'assert($("button").attr("type") === "submit", "Your submit button should have the attribute <code>type</code> set to <code>submit</code>.");'
+    testString: assert($("button").attr("type") === "submit", 'Your submit button should have the attribute <code>type</code> set to <code>submit</code>.');
   - text: Your submit button should only have the text "Submit".
-    testString: 'assert($("button").text().match(/^\s*submit\s*$/gi), "Your submit button should only have the text "Submit".");'
+    testString: assert($("button").text().match(/^\s*submit\s*$/gi), 'Your submit button should only have the text "Submit".');
   - text: Make sure your <code>button</code> element has a closing tag.
-    testString: 'assert(code.match(/<\/button>/g) && code.match(/<button/g) && code.match(/<\/button>/g).length === code.match(/<button/g).length, "Make sure your <code>button</code> element has a closing tag.");'
+    testString: assert(code.match(/<\/button>/g) && code.match(/<button/g) && code.match(/<\/button>/g).length === code.match(/<button/g).length, 'Make sure your <code>button</code> element has a closing tag.');
 
 ```
 

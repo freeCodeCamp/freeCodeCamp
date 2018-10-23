@@ -28,11 +28,11 @@ Copy all contents of <code>arr1</code> into another array <code>arr2</code> usin
 ```yml
 tests:
   - text: <code>arr2</code> is correct copy of <code>arr1</code>.
-    testString: 'assert(arr2.every((v, i) => v === arr1[i]), "<code>arr2</code> is correct copy of <code>arr1</code>.");'
+    testString: assert(arr2.every((v, i) => v === arr1[i]), '<code>arr2</code> is correct copy of <code>arr1</code>.');
   - text: <code>...</code> spread operator was used to duplicate <code>arr1</code>.
-    testString: 'getUserInput => assert(getUserInput("index").match(/\[\s*...arr1\s*\]/g),"<code>...</code> spread operator was used to duplicate <code>arr1</code>.");'
+    testString: getUserInput => assert(getUserInput('index').match(/\[\s*...arr1\s*\]/g),'<code>...</code> spread operator was used to duplicate <code>arr1</code>.');
   - text: <code>arr2</code> remains unchanged when <code>arr1</code> is changed.
-    testString: 'assert((arr1, arr2) => {arr1.push("JUN"); return arr2.length < arr1.length},"<code>arr2</code> remains unchanged when <code>arr1</code> is changed.");'
+    testString: assert((arr1, arr2) => {arr1.push('JUN'); return arr2.length < arr1.length},'<code>arr2</code> remains unchanged when <code>arr1</code> is changed.');
 
 ```
 
