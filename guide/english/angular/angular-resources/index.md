@@ -30,7 +30,9 @@ A collection of helpful Angular resources
 
 *   <a href='http://www.sitepoint.com/practical-guide-angularjs-directives/' target='_blank' rel='nofollow'>Directives</a> - Excellent guide going into detail on Angular Directives (Part 1)
 
+### Videos
 
+* <a href='https://www.youtube.com/watch?v=f6SrTZwZi70&list=PLillGF-RfqbYmJsLiPDVoDea3lfy7-E8O' target='_blank' rel='nofollow'>Build an angular Spotify App</a>
 
 ### Courses
 
@@ -39,7 +41,11 @@ A collection of helpful Angular resources
 *	<a href='https://ultimateangular.com/' target='_blank' rel='nofollow'>Ultimate Angular - Todd Motto</a>
 * <a href='https://www.udemy.com/the-complete-guide-to-angular-2/' target='_blank' rel='nofollow'>Angular 6 (formerly Angular 2) - The Complete Guide($)  Maximilian Schwarzmüller </a>
 
-## Blogs
+### Books
+
+* <a href='https://books.goalkicker.com/Angular2Book/' target='_blank' rel='nofollow'>Angular2+ Book GoalKicker</a>
+
+### Blogs
 
 * <a href='https://alligator.io/angular/' target='_blank' rel='nofollow'>Alligator.io</a>
 * <a href='https://blog.angularindepth.com/tagged/angular' target='_blank' rel='nofollow'>Angular In Depth</a>
