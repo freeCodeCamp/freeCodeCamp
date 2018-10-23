@@ -126,3 +126,6 @@ int main()
 #### More Information:
 
 - <a href='https://en.wikipedia.org/wiki/Quicksort' target='_blank' rel='nofollow'>Wikipedia</a>
+
+More information on heap sort along with video tutorial can be gained from
+GeeksforGeeks -> https://www.geeksforgeeks.org/heap-sort/
