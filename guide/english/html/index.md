@@ -58,6 +58,17 @@ Since the early days of the web, there have been many versions of HTML
 |XHTML|2000|
 |HTML5|2014|
 
+### HTML Tags
+
+HTML tagsare element names surrounded by angle brackets:
+
+```html
+<tagname>content...</tagname>
+```
+ - HTML tags normanlly come in pairs like <h1> and </h1>
+ - The first tag in a pair is the start tag (opening tag), the second tag is the end tag (closing tag)
+ - The end tag is written like the start tag, but with a forward slash inserted before the tag name
+
 #### Other Resources
 
 - [HTML Elements](https://guide.freecodecamp.org/html/elements)
