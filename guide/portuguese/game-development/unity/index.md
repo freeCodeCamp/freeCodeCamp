@@ -49,7 +49,7 @@ Anteriormente, o Unity suportava sete outras plataformas, incluindo seu próprio
 
 O Unity Web Player era um plug-in de navegador que era suportado apenas no Windows e no OS X, que foi substituído em favor do WebGL.
 
-Unity é o mecanismo usado pelo Rust, Kerbal Space Program e Cup Head.
+Unity é o mecanismo usado pelo Rust, Kerbal Space Program e Cuphead.
 
 #### Mais Informações:
 
