@@ -40,7 +40,9 @@ switch( <integer / String / Enum > ){
 }
 ```
 
-Note: The program flow `falls through` the next `case` if the `break` statement is missing. e.g. Let's say you say the standard 'Hello' to everyone at office, but you are extra nice to the girl who sits next to you and sound grumpy to your boss. The way to represent would be something like:
+Note: The program flow `falls through` the next `case` if the `break` statement is missing. e.g. Let's say you say the standard 'Hello'
+to everyone at office, but you are extra nice to the girl who sits next to you and sound grumpy to your boss. The way to represent would
+be something like:
 ```java
 switch(person){
     case 'boss': 
@@ -57,7 +59,10 @@ switch(person){
 }
 ```
 
-    Note: The `default` case runs when none of the `case` matches. Remember that when a case has no `break` statement, it `falls through` to the next case and will continue to the subsequent `cases` till a `break` is encountered. Because of this, make sure that each case has a `break` statement. The `default` case does not require a `break` statement. 
+    Note: The `default` case runs when none of the `case` matches. Remember that when a case has no `break` statement, it `falls 
+    through` to the next case and will continue to the subsequent `cases` till a `break` is encountered. Because of this, make sure that 
+    each case has a `break` statement. The `default` case does not require a `break` statement. 
+
 
 *   `nested statements`
 
