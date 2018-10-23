@@ -147,7 +147,7 @@ int[][][] a=new int[a][b][c];
 In a similar manner, one can an array of as many dimensions as he/she wishes to but visualizing an array of more than 3 dimensions is difficult to visualize in a particular way.
 
 ### Jagged Arrays
-Jagged arrays are multi-dimensional arrays that have a set number of rows but a varying number of columns. Jagged arrays are used to conserve memory use of the array. Here is a code example:
+Jagged arrays are multi-dimensional arrays that have a set number of rows but a varying number of columns. Jagged arrays are used to conserve memory use of the array.It can be thought as arrays which holds array. Here is a code example:
 
 
 ```java
@@ -157,6 +157,7 @@ array[1] = new int[2]; //creates 2 columns for second row
 array[2] = new int[5]; //creates 5 columns for third row
 array[3] = new int[5]; //creates 5 columns for fourth row
 array[4] = new int[5]; //creates 5 columns for fifth row
+
 ```	
 
 Output: 
