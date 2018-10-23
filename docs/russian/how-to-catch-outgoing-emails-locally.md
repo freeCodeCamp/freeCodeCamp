@@ -9,6 +9,7 @@
         <td><a href="/docs/portuguese/CONTRIBUTING.md"> Português </a></td>
     </tr>
 </table>
+thanks
 
 # Contribution Guidelines
 
