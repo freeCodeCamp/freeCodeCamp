@@ -99,5 +99,6 @@ Do not use a Boolean object in place of a Boolean primitive.
 
 - <a href='https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Boolean' target='_blank' rel='nofollow'>Boolean Object</a>
 - <a href='https://docs.oracle.com/javase/7/docs/api/java/lang/Boolean.html' target='_blank' rel='nofollow'>Boolean Object</a>
+- <a href='https://www.w3schools.com/js/js_booleans.asp' target='_blank' rel='nofollow'>Boolean Object</a> 
 
 
