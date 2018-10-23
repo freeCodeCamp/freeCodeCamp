@@ -13,7 +13,7 @@ A quadratic equation generally takes the form: <em>ax<sup>2</sup> + bx + c</em> 
 <pre><em>ax<sup>2</sup> + bx = -c</em></pre>
 
 2. Make the coefficient of x<sup>2</sup> equal to 1 by dividing both sides of the equation by <em>a</em> so that we now have: <br> 
-<pre>x<sup>2</sup> + (<sup>b</sup>/<sub>a</sub>)x = - (<sup>c</sup>/<sub>a</sub>)</pre>
+<pre>x<sup>2</sup> + (<sup>b</sup>/<sub>a</sub>)x = -(<sup>c</sup>/<sub>a</sub>)</pre>
 
 3. Next, add the square of half of the coefficient of the <em>x</em>-term to both sides of the equation: <br> 
 <pre>x<sup>2</sup> + (<sup>b</sup>/<sub>a</sub>)x  + (<sup>b</sup>/<sub>2a</sub>)<sup>2</sup> = (<sup>b</sup>/<sub>2a</sub>)<sup>2</sup> - (<sup>c</sup>/<sub>a</sub>)</pre>
@@ -21,14 +21,14 @@ A quadratic equation generally takes the form: <em>ax<sup>2</sup> + bx + c</em> 
 4. Completing the square on the Left Hand Side and simplifying the Right Hand Side of the above equation, we have:
 <pre>(x<sup></sup> + <sup>b</sup>/<sub>2a</sub>)<sup>2</sup> = (<sup>b<sup>2</sup></sup>/<sub>4a<sup>2</sup></sub>) - (<sup>c</sup>/<sub>a</sub>)</pre>
 
-5. Further simplpfying the Right Hand Side, 
-<pre>(x<sup></sup> + <sup>b</sup>/<sub>2a</sub>)<sup>2</sup> = (b<sup>2</sup> - 4ac)/4a<sup>2</sup> </pre>
+5. Further simplifying the Right Hand Side, 
+<pre>(x<sup></sup> + <sup>b</sup>/<sub>2a</sub>)<sup>2</sup> = (b<sup>2</sup> - 4ac) &divide; 4a<sup>2</sup> </pre>
 
 6. Finding the square root of both sides of the equation, 
-<pre>x<sup></sup> + <sup>b</sup>/<sub>2a</sub> = &radic;(b<sup>2</sup> - 4ac) &divide; 2a </pre>
+<pre>x<sup></sup> + <sup>b</sup>/<sub>2a</sub> = &pm;((b<sup>2</sup> - 4ac)<sup>&half;</sup> &divide; 2a) </pre>
 
 7. By making x the subject of our formula, we are able to solve for its value completely:
-<pre>x<sup></sup> = -b &#177; &radic;(b<sup>2</sup> - 4ac) &divide; 2a </pre>
+<pre>x<sup></sup> = (-b &pm; (b<sup>2</sup> - 4ac)<sup>&half;</sup>) &divide; 2a </pre>
 
 #### More Information:
 <!-- Please add any articles you think might be helpful to read before writing the article -->
