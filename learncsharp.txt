@@ -1,0 +1,21 @@
+C# is a simple, modern, general-purpose, object-oriented programming language developed by Microsoft within its .NET initiative.
+
+Run Simple Hello  World program
+
+Open Visual Studio:
+create New Project
+ Paste this code:
+ using System;
+
+namespace HelloWorldApplication {
+   class HelloWorld {
+      static void Main(string[] args) {
+         /* my first program in C# */
+         Console.WriteLine("Hello World");
+         Console.ReadKey();
+      }
+   }
+}
+
+Run this code.
+Welcome you run your first C# code
