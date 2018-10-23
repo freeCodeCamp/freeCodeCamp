@@ -20,7 +20,18 @@ To create a single line comment just add two `//` forward slashes before the tex
 // This is how single line comment looks like
 ```
 
-#### 2. Multi Line Comment
+#### 2. In Line Comments
+
+You can add in like comments using `/*` and `*/` or `//`.
+``java
+int i = 0; //You can use them like this
+for (int i = 0; /* Comment *\ i <= 10 i++)
+{
+    System.out.println(i);
+}
+``
+
+#### 3. Multi Line Comment
 
 To Create a Multi line comment wrap the lines in between `/*` line goes here `*/`
 
