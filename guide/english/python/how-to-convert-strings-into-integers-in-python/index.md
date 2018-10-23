@@ -9,7 +9,7 @@ Just like the `str()` built-in, Python also offers a handy built-in which takes 
 
 ```py
 # Here age is a string object
-age = "18"
+age = "20"
 print(age)
 # Converting string to integer
 int_age = int(age)
@@ -17,13 +17,13 @@ print(int_age)
 ```
 Output
 ```py
-18
-18
+20
+20
 ```
 Here although the output is visually similar but you should keep in mind that the first line prints a string object while the line next to it prints a integer object which is further illustrated in the next example:
 
 ```py
-age = "18"
+age = "20"
 print(age+2)
 ```
 Output:
@@ -35,13 +35,13 @@ TypeError: cannot concatenate 'str' and 'int' objects
 The error should make it clear to you that you need to convert the `age` object to an integer before adding something to it.
 
 ```py
-age = "18"
+age = "20"
 age_int = int(age)
 print(age_int+2)
 ```
 Output:
 ```py
-20
+22
 ```
 
 But you should keep in mind some special cases:
