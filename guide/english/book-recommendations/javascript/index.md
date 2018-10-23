@@ -21,6 +21,7 @@ Six book series by Kyle Simpson. In-depth series on every aspect of JavaScript.
 
 Book by the "grandfather" of JavaScript, Douglas Crockford. He discusses both the "good" and "bad" aspects of JavaScript.
 
+- [GitBook](https://legacy.gitbook.com/book/celerycup/javascript-the-good-parts/details) 
 - [Amazon](https://www.amazon.com/JavaScript-Good-Parts-Douglas-Crockford/dp/0596517742)
 
 #### JavaScript: Info
