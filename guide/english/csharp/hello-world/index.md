@@ -18,6 +18,7 @@ namespace HelloWorld
         {
             // Write "Hello World!" on console
             Console.WriteLine("Hello World!");
+            Console.WriteLine("Welcome to Hactober!!");
 
             // Keep the console window open in debug mode.
             Console.WriteLine("Press any key to exit.");
