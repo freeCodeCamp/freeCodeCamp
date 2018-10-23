@@ -2,7 +2,7 @@
 title: Greedy Algorithms
 ---
 ## What is a Greedy Algorithm
-You must have heard about a lot of algorithmic design techniques while sifting through some of the articles here. Some of them are :
+You must have heard about a lot of algorithmic design techniques while sifting through some of the articles here. Some of them are:
 * Brute Force
 * Divide and Conquer
 * Greedy Programming
@@ -26,7 +26,7 @@ Analyzing the run time for greedy algorithms will generally be much easier than 
 
 ## Interval Scheduling Problem
 
-Let's dive into an interesting problem that you can encounter in almost any industry or any walk of life. Some instances of the problem are as follows :
+Let's dive into an interesting problem that you can encounter in almost any industry or any walk of life. Some instances of the problem are as follows:
 
 * You are given a set of N schedules of lectures for a single day at a university. The schedule for a specific lecture is of the form (s_time, f_time) where s_time represents the start time for that lecture and similarly the f_time represents the finishing time. Given a list of N lecture schedules, we need to select maximum set of lectures to be held out during the day such that **none of the lectures overlap with one another i.e. if lecture Li and Lj are included in our selection then the start time of j >= finish time of i or vice versa**.
 
