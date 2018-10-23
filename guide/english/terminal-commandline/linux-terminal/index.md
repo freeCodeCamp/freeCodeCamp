@@ -33,6 +33,12 @@ cat | to display the content of file
 
 Some of the aforementioned commands aren't clear without examples. Below are a few usage examples to help provide you with some context. 
 
+#### To switch to a directory
+
+```cd <directory>```
+
+Typing only `cd` will move to the home directory works same as `cd ~`
+
 #### Making a Directory
 
 ```mkdir #YOUR-NEW-FOLDER-NAME```
