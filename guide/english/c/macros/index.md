@@ -44,7 +44,7 @@ Now calling:
 ```C
 hello("World");
 ```
-You get the equivallent of:
+You get the equivalent of:
 ```C
 printf("Hello World!");
 ```
