@@ -55,6 +55,8 @@ Hex codes are case insensitive, meaning that #FFFFFF and #ffffff would be the sa
 
 Additionally, there are 16,777,216 possible color combinations using hexcode.
 
+You can reference <a href="https://www.w3schools.com/colors/colors_picker.asp">this</a> website to help find specific hexcodes.
+
 ### Opacity
 
 The CSS3 opacity property sets the opacity for the whole element (both background color and text will be opaque/transparent). Unlike alpha values specified with rgba and hsla, opacity is inherited by child elements.
