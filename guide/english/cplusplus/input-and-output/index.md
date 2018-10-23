@@ -11,7 +11,7 @@ To print things to the console, or read from it, you use `cout` and `cin`, which
 The "Hello World" program uses `cout` to print "Hello World!" to the console:
 
 ```C++
-#include<iostream>
+#include<iostream.h>
 using namespace std; 
 
 int main()
@@ -97,10 +97,12 @@ int main()
   cin >> b;
 
   cout << "The sum of your numbers is: " << a + b << endl;
+  
+  return 0;
 }
 ```
 
-`cin` stands for "Console Input" and is an _input stream_ that represents input from the console. In the expression `cin >> a;`, data is read from `cin` and saved into the variable `a`, using the operator `>>`, the _extraction operator_<sup>2</sup>. The extraction operator reads exactly as much data as required to write into the variable we specify, and skips any whitespace, so if the user types "       6" that will just be read as the value `6`.
+`cin` stands for "Console Input" and is an _input stream_ that represents input from the console. In the expression `cin >> a;`, data is read from `cin` and saved into the variable `a`, using the operator `>>`, the _extraction operator_<sup>2</sup>. The extraction operator reads exactly as much data as required to write into the variable we specify, and skips any whitespace, so if the user types "6" that will just be read as the value `6`.
 
 It's worth noting that `cin` will stop the whole program to wait for the user to type in their value. The program will not continue until the user has pressed enter, and there is some data to be written into the variable. If the user just presses enter without typing anything, `cin` will keep waiting for a value.
 
@@ -121,9 +123,6 @@ int main()
 When chained, the extraction operator will first read data from `cin` to fill `a`, and then read data to fill `b`.
 
 
-C's standard printf and scanf statements can also be used with c++ by importing '<cstdio>' header file.
+C's standard printf and scanf statements can also be used with c++ by importing '<stdio.h>' header file.
 
 
-## Sources
-1. http://www.cplusplus.com/reference/ostream/ostream/operator%3C%3C/
-2. http://www.cplusplus.com/reference/istream/istream/operator%3E%3E/
