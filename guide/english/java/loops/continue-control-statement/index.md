@@ -44,6 +44,6 @@ for (int i = 0; i < max; i++)
 System.out.println("numPs = " + numPs);
 ```
 
-![:rocket:](//forum.freecodecamp.com/images/emoji/emoji_one/rocket.png?v=2 ":rocket:") <a href='https://repl.it/CJZH/0' target='_blank' rel='nofollow'>Run Code</a>
+![:rocket:](https://forum.freecodecamp.org/images/emoji/emoji_one/rocket.png?v=2 ":rocket:") <a href='https://repl.it/CJZH/0' target='_blank' rel='nofollow'>Run Code</a>
 
 Additionally, you can use labels to choose a specific loop out of a nested set to skip to the next iteration. 
