@@ -4,7 +4,7 @@ localeTitle: términos comunes que todo usuario de Linux debería saber.
 ---
 # Términos comunes que todo usuario de Linux debería saber.
 
-*   **Distro:** es una palabra abreviada para 'distribución'; y una distribución es una marca particular de sistema operativo GNU / Linux, como Redhat, Fedora, Ubuntu y Debian.
+*   **Distro:** es una palabra abreviada de 'distribución'; y una distribución es una marca particular de sistema operativo GNU / Linux, como Redhat, Fedora, Ubuntu y Debian.
     
 *   **Shell:** este es el programa que lee la entrada del comando y ejecuta los comandos especificados. El signo de dólar (\`$ ') que precede al cursor se denomina indicador de shell; le indica que el sistema está listo y esperando entradas en forma de comandos.
     
@@ -16,9 +16,9 @@ localeTitle: términos comunes que todo usuario de Linux debería saber.
     
 *   **Kernel:** este es el núcleo del sistema Linux, lo que podríamos llamar un "cerebro". El kernel controla los recursos de una computadora y determina cómo se usan al interactuar directamente con el hardware de la computadora.
     
-*   **Tux:** es la mascota oficial de Linux. Ese es el pingüino que generalmente se asocia con Linux: si has visto el pingüino amarillo y negro en línea, entonces has visto tux.
+*   **Tux:** es la mascota oficial de Linux. Ese es el pingüino que generalmente se asocia con Linux: si has visto el pingüino amarillo y negro en línea, entonces has visto a Tux.
     
-*   **Raíz:** también conocido como superusuario, es el nombre de usuario "predeterminado" para el administrador de una máquina Linux. Usualmente se representa en el terminal de Linux con el símbolo **"#"** .
+*   **Root:** también conocido como superusuario, es el nombre de usuario "predeterminado" para el administrador de una máquina Linux. Usualmente se representa en el terminal de Linux con el símbolo **"#"** .
     
 *   **Comandos:** son entradas de texto o instrucciones dadas a la máquina de linux (escribiéndolas en el terminal) para decirle qué hacer (es decir, para un resultado requerido).
     
