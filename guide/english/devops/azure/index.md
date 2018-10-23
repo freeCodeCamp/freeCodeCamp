@@ -16,5 +16,7 @@ In addition, the Azure DevOps ecosystem provides support for adding extensions, 
 
 Choose Azure DevOps Services when you want quick setup, maintenance-free operations, easy collaboration across domains, elastic scale, and rock-solid security. You'll also have access to cloud load testing, cloud build servers, and application insights.
 
+![Azure Devops](https://azurecomcdn.azureedge.net/cvt-cc7cfb2db134841032aa0a589fb58090be0b25d70fb9a887f22a0d84adf021a9/mediahandler/files/videofiles/thumbnails/azure-devops-solutions/azure-devops-solutions-thumbnail.png)
+
 ### Resources
 * [Microsoft Azure - Azure DevOps](https://azure.microsoft.com/services/devops)
