@@ -79,6 +79,21 @@ echo $x + $y;
 ?>
 ````
 
+The following example will show output saying welcome to employee name with id :
+-----------------
+<?php
+ $employeeName = "James";
+ $employeeId = 230154;
+ $starting = "...Welcome,";
+ $sayId = "Your Id Is :- ";
+ echo $starting . $employeeName . "_____" .  $sayId . $employeeId;
+ ?>
+ 
+ ### Output will be like :-
+ ...Welcome,James_____Your Id Is :- 230154
+ 
+ ---------------------------
+
 # PHP is a Loosely Typed Language
 
 In the example above, notice that we did not have to tell PHP which data type the variable is.
