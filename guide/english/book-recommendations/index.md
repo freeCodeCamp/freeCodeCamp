@@ -249,3 +249,7 @@ https://books.goalkicker.com/OracleDatabaseBook/
 This list was compiled from multiple suggestion threads on Reddit and Stackoverflow. 
 
 Please feel free to add more that you have found useful!
+*Pattern Recognition and Machine Learning (Information Science and Statistics)
+-[Amazon](https://www.amazon.in/Pattern-Recognition-Learning-Information-Statistics/dp/0387310738/ref=sr_1_13?s=books&ie=UTF8&qid=1540286717&sr=1-13&keywords=machine+learning)
+- ISBN-10: 9780387310732
+- ISBN-13: 978-0387310732
