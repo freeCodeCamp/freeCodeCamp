@@ -22,4 +22,4 @@ Upon completion of all six certificates, the freeCodeCamp [Full Stack Developmen
 
 For more information about freeCodeCamp, visit [about.freecodecamp.org](https://about.freecodecamp.org/).
 
-For more information about the new certification program, see the forum post [here](https://www.freecodecamp.org/forum/t/freecodecamps-new-certificates-heres-how-were-rolling-them-out/141618).
+For more information about the new certification program, see [this forum post](https://www.freecodecamp.org/forum/t/freecodecamps-new-certificates-heres-how-were-rolling-them-out/141618).
