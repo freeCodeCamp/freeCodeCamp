@@ -31,6 +31,14 @@ Only one form element in a document can have the **autofocus** attribute. It can
 
 This is an HTML5 attribute.
 
+### Browser Support
+
+The autofocus attribute has the following browser support for each element:
+| Element | Chrome | Internet Explorer/Edge | Firefox | Safari | Opera |
+| form | 5.0 | 10.0 | 4.0 | 5.0 | 9.6 |
+| input | 5.0 | 10.0 | 4.0 | 5.0 | 9.6 |
+| textarea | Yes | 10.0 | 4.0 | Yes | Yes |
+
 #### More Information:
 
 [HTML autofocus Attribute](https://www.w3schools.com/tags/att_autofocus.asp) on w3schools.com
