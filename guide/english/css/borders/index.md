@@ -43,7 +43,7 @@ The various values are:
 - `hidden` - Sets a hidden border.
 
 Based on the property you choose, these styles can be mismatched. 
-You can style each side seperately:
+You can style each side separately:
 ```css
   border-top-style: solid;
   border-left-style: dotted;
