@@ -12,7 +12,7 @@ To get a taste of what is possible, Socket.io provides two demos to show it's po
 
 ### Get Started 
 
-Since Socket.io is a Node.js library you have to make sure that Node.js is installed. 
+Since Socket.io is a Node.js library, you have to make sure that Node.js is installed on your computer. 
 If it's not set up yet get the latest version at [Nodejs.org](https://nodejs.org/)
 
 #### macOS
