@@ -41,3 +41,5 @@ echo "My first PHP script!";
 </body>
 </html>
 ```
+
+My changes for Hacktoberfest 2018
