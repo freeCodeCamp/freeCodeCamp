@@ -246,6 +246,10 @@ https://books.goalkicker.com/OracleDatabaseBook/
 - [Amazon](https://www.amazon.com/Mastering-Linux-Scripting-Andrew-Mallett/dp/1784396974/)
 - ISBN-13: 978-1784396978
 
+*Discrete Mathematics and Its Applications Seventh Edition
+[Amazon Smile](https://www.amazon.com/Discrete-Mathematics-Its-Applications-Seventh/dp/0073383090/ref=sr_1_2?s=books&ie=UTF8&qid=1540276848&sr=1-2&refinements=p_27%3AKenneth+Rosen&dpID=51nSnO5i7eL&preST=_SX218_BO1,204,203,200_QL40_&dpSrc=srch
+ISBN-13: 978-0073383095
+
 This list was compiled from multiple suggestion threads on Reddit and Stackoverflow. 
 
 Please feel free to add more that you have found useful!
