@@ -159,6 +159,26 @@ def swap( A, x, y ):
   tmp = A[x]
   A[x] = A[y]
   A[y] = tmp
+  
+  
+  ### Example in MATLAB
+  function [sorted] = bubbleSort(unsorted)
+    len = length(unsorted);
+    for j = 1:1:len 
+        swapCount = 0;
+        for i = 1:1:len-1
+           if unsorted(i) > unsorted(i+1)
+               unsorted([i i+1]) = unsorted([i+1 i]);       % swapping
+               swapCount =+ 1;
+           end
+        end
+        if (swapCount == 0)
+            sorted = unsorted;
+            break;
+        end
+    end
+
+end
 
 ```
 ### More Information
