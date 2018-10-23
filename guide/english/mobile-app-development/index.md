@@ -23,7 +23,7 @@ Hybrid App Definition
 
 Development Cost and Time
 
-Hybrid apps take least amount of time & money to develop compared to native app. 
+Hybrid apps take the least amount of time & money to develop compared to native app. 
 One code for both platforms.
 
 User Experience
