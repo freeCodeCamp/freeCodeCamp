@@ -62,6 +62,8 @@ window.exports = function(){};
 <section id='solution'>
 
 ```js
-// solution required
+"use strict";
+export const foo = "bar";
+export const bar = "foo";
 ```
 </section>
