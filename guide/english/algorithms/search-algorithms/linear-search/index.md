@@ -38,6 +38,11 @@ But in the worst case, you would have to look at each and every item before you 
 The complexity therefore of the linear search is: O(n).
 
 If the element to be searched presides on the the first memory block then the complexity would be: O(1).
+ Recursive Equation of recursive linear search
+T(n) = T(n-1) + 1
+T(0) = 1
+
+That is, the time for searching an array of size n is the time to search an array of size n-1 plus the cost of searching (checking or comparing) the first element which is constant. The cost for searching an empty array is constant as well.
 
 The code for a linear search function in JavaScript is shown below. This function returns the position of the item we are looking for in the array. If the item is not present in the array, the function would return null.
 
@@ -84,6 +89,23 @@ int linear_search(int arr[],int n,int num)
    // Item not found in the array
    return -1; 
 }
+```
+
+### Example in C++ using Recurssion
+
+```c++
+int recSearch(int arr[], int l,  
+              int r, int x) 
+{ 
+    if (r < l) 
+        return -1; 
+    if (arr[l] == x) 
+        return l; 
+    if (arr[r] == x) 
+        return r; 
+    return recSearch(arr, l + 1,  
+                          r - 1, x); 
+} 
 ```
 
 ### Example in Python
@@ -160,3 +182,5 @@ There is no doubt that linear search is simple but because it compares each elem
 #### Other Resources
 <!-- Please add any articles you think might be helpful to read before writing the article -->
 <a href='https://www.youtube.com/watch?v=vZWfKBdSgXI' target='_blank' rel='nofollow'>Linear Search - CS50</a>
+
+* [Recursive program to linearly search an element in a given array - GeeksforGeeks](https://www.geeksforgeeks.org/recursive-c-program-linearly-search-element-given-array/)
