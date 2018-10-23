@@ -8,22 +8,23 @@ Gatsby is a static site generator for [React](https://guide.freecodecamp.org/rea
 
 The Gatsby environment provides several "starters" to help configure static sites quickly. Starters can be found here: [Starter Library](https://www.gatsbyjs.org/starters/).
 
-## How Gatsby works
-Gatsby build blazing fast site with the data provided by developer regardless of the source. 
+### How Gatsby works
+Gatsby builds sites with the data provided by developer, regardless of the source.
 
-### Data sources
-1- CMSs: Wordpress, Contenful, Drupal etc
-2- Markdown: Documentation, posts etc
-3- Data: APIs, Databasses, JSON, CSV etc
+#### Data sources
+Gatsby accepts the data behind the site in various formats, such as:
 
-### Build 
-Gatsby build powered by GraphQL and render it through HTML, CSS, React
+1- CMSs: Wordpress, Contenful, Drupal, etc.
+2- Markdown: Documentation, posts, etc.
+3- Data: APIs, Databasses, JSON, CSV, etc.
 
-### Deploy 
-It then deploys it on static web host Amazon S3, Netlify, Github Pages, Surge.sh and many more.
+#### Build 
+Gatsby's build is powered by GraphQL and rendered through HTML, CSS, and React.
+
+#### Deploy 
+Gatsby deploys the site on a static web host such as Amazon S3, Netlify, Github Pages, Surge.sh and many more.
 
 ### Installation and using the Gatsby CLI
-
 * Node: `npm install --global gatsby-cli`
 * Get started with the official Gatsby starter: `gatsby new gatsby-site https://github.com/gatsbyjs/gatsby-starter-default`
 * After that change to the newly created directory `cd gatsby-site`
@@ -31,5 +32,5 @@ It then deploys it on static web host Amazon S3, Netlify, Github Pages, Surge.sh
 * To generate the static HTML pages use `gatsby build`
 * `gatsby serve` will start a local server that will present your built site.
 
-#### More Information:
+### More Information:
 For tutorials and more information check out the Gatsby.js official site: [Gatsby.js official site](https://www.gatsbyjs.org/tutorial/)
