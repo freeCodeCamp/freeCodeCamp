@@ -66,7 +66,7 @@ For example, if we have a file, _'test.txt'_ that is stored in our _/Desktop_ di
 
 Use the following syntax to delete a file 
 
-**rm _#PATH_TO_FILE_**
+```rm PATH-TO-FILE```
 
 #### Detect which process is using the port you want to use
 ``` lsof -i :<PORT> ```
