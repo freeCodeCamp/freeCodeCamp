@@ -108,3 +108,6 @@ Ordering this data set in a descending (DESC) order places the candidates with t
 
 *As with all of these SQL things there is MUCH MORE to them than what's in this introductory guide. I hope this at least gives you enough to get started. Please see the manual for your database manager and have fun trying different options yourself.*
 
+## More Information
+- [SQL Syntax](https://www.w3schools.com/sql/sql_syntax.asp)
+
