@@ -1,12 +1,12 @@
 ---
 title: Bash
-localeTitle: Bater
+localeTitle: Bash
 ---
 ## O que é o Bash?
 
 Bash (abreviação de Bourne Again SHell) é um shell Unix e um interpretador de linguagem de comando. Um shell é simplesmente um processador de macros que executa comandos. É o shell mais usado empacotado por padrão para a maioria das distribuições do Linux, e um sucessor para o shell Korn (ksh) e o shell C (csh).
 
-Muitas coisas que podem ser feitas sistema operacional Linux pode ser feito via linha de comando. Alguns exemplos são…
+Muitas coisas que podem ser feitas no sistema operacional Linux pode ser feito via linha de comando. Alguns exemplos são…
 
 *   Editando arquivos
 *   Ajustando o volume do sistema operacional
@@ -35,11 +35,11 @@ Você também pode colocar todos os seus comandos bash em um arquivo .sh e execu
 
 Vale a pena notar que a primeira linha do script começa com `#!` . É uma diretiva especial que o Unix trata de maneira diferente.
 
-#### Por que usamos o #! / Bin / bas no início do arquivo de script?
+#### Por que usamos #!/bin/bash no início do arquivo de script?
 
-Isso é porque é uma convenção deixar o shell interativo saber que tipo de interpretador executar para o programa que segue. A primeira linha diz ao Unix que o arquivo deve ser executado por / bin / bash. Esta é a localização padrão do shell Bourne em praticamente todos os sistemas Unix. Adicionando #! / Bin / bash como a primeira linha do seu script, o sistema operacional invoca o shell especificado para executar os comandos que seguem o script. `#!` é frequentemente referido como "hash-bang", "she-bang" ou "sha-bang". Embora seja executado somente se você executar seu script como um executável. Por exemplo, quando você digita `./scriptname.extension` , ele examinará a linha superior para descobrir o interpretador, enquanto, executando o script como `bash scriptname.sh` , a primeira linha será ignorada.
+Isso é porque é uma convenção deixar o shell interativo saber que tipo de interpretador executar para o programa que segue. A primeira linha diz ao Unix que o arquivo deve ser executado por /bin/bash. Esta é a localização padrão do shell Bourne em praticamente todos os sistemas Unix. Adicionando #!/bin/bash como a primeira linha do seu script, o sistema operacional invoca o shell especificado para executar os comandos que seguem o script. `#!` é frequentemente referido como "hash-bang", "she-bang" ou "sha-bang". Embora seja executado somente se você executar seu script como um executável. Por exemplo, quando você digita `./scriptname.extension`, ele examinará a linha superior para descobrir o interpretador, enquanto, executando o script como `bash scriptname.sh`, a primeira linha será ignorada.
 
-Então você poderia executar o script da seguinte forma: Para tornar o arquivo executável você deve chamar este comando sob sudo chmod + x "filename".
+Então você poderia executar o script da seguinte forma: Para tornar o arquivo executável você deve chamar este comando sob sudo chmod +x "filename".
 ```
 zach@marigold:~$ ./myBashScript.sh 
  Hello world! 
@@ -47,7 +47,7 @@ zach@marigold:~$ ./myBashScript.sh
 
 O script tem apenas duas linhas. O primeiro indica qual interpretador usar para executar o arquivo (neste caso, bash). A segunda linha é o comando que queremos usar, echo, seguido do que queremos imprimir, que é "Hello World".
 
-Às vezes, o script não será executado e o comando acima retornará um erro. É devido às permissões definidas no arquivo. Para evitar esse uso:
+Pode acontecer de o script não ser executado e o comando acima retornar um erro. É devido às permissões definidas no arquivo. Para evitar isto, use:
 ```
 zach@marigold:~$ chmod u+x myBashScript.sh 
 ```
