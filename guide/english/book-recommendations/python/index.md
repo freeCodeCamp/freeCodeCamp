@@ -61,6 +61,12 @@ You'll learn many of the first princliples for data science tools and how algori
 - ISBN-10: 1593276036
 - ISBN-13: 978-1593276034
 
+*The Quick Python Book, Third Edition*
+- Paid book which provides a good level of information for those starting Python and as a reference for the Python language
+- [Manning]https://www.manning.com/books/the-quick-python-book-third-edition
+- ISBN-10: 1617294039
+- ISBN-13: 978-1617294037
+
 #### Other Resources
 
 - [Functional Programming in Python by David Mertz [OREILLY] [FREE]](https://www.oreilly.com/programming/free/files/functional-programming-python.pdf)
