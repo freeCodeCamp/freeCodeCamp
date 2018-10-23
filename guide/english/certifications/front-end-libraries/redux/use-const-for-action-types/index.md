@@ -39,7 +39,7 @@ const authReducer = (state = defaultState, action) => {
 };
 ```
 
-By using a const for the Action Type, it won't matter if your string is mispelled because both the reducer's switch statment and the Action Type are referencing the same `const`. Using a `const` may also lead your code editor to suggesting the `const` as you are typing it, thus reducing the chance of mispelling the `const`. 
+By using a const for the Action Type, it won't matter if your string is mispelled because both the reducer's switch statement and the Action Type are referencing the same `const`. Using a `const` may also lead your code editor to suggesting the `const` as you are typing it, thus reducing the chance of mispelling the `const`. 
 
 The code shown below will work. 
 
