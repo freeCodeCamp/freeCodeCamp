@@ -3,7 +3,7 @@ title: Dark Patterns
 ---
 ## Dark Patterns
 
-Dark Patterns are common patterns used to deceive the users of a website or web application.
+Dark Patterns are common patterns used to deceive the users of a website or web application. These should not be used in web development, because it tricks/decieves the users, and prevents them from having a good user experience.
 
 Examples include:
 
