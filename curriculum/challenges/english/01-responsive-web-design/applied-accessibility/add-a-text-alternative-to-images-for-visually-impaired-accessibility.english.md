@@ -6,7 +6,7 @@ videoUrl: 'https://scrimba.com/c/cPp7VfD'
 guideUrl: 'https://www.freecodecamp.org/guide/certificates/add-alt-text-to-an-image-for-accessibility'
 ---
 
-## Description
+# Description
 <section id='description'>
 It's likely you've seen an <code>alt</code> attribute on an <code>img</code> tag in other challenges. <code>Alt</code> text describes the content of the image and provides a text-alternative. This helps in case the image fails to load or can't be seen by a user. It's also used by search engines to understand what an image contains to include it in search results. Here's an example:
 <code>&lt;img src=&quot;importantLogo.jpeg&quot; alt=&quot;Company logo&quot;&gt;</code>
@@ -14,12 +14,12 @@ People with visual impairments rely on screen readers to convert web content to 
 Good <code>alt</code> text is short but descriptive, and meant to briefly convey the meaning of the image. You should always include an <code>alt</code> attribute on your image. Per HTML5 specification, this is now considered mandatory.
 </section>
 
-## Instructions
+# Instructions
 <section id='instructions'>
 Camper Cat happens to be both a coding ninja and an actual ninja, and is building a website to share his knowledge. The profile picture he wants to use shows his skills, and should be appreciated by all site visitors. Add an <code>alt</code> attribute in the <code>img</code> tag, that explains Camper Cat is doing karate. (The image <code>src</code> doesn't link to an actual file, so you should see the <code>alt</code> text in the display.)
 </section>
 
-## Tests
+# Tests
 <section id='tests'>
 
 ```yml
