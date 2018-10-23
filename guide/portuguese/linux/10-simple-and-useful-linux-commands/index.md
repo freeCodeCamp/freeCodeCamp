@@ -44,5 +44,6 @@ Além disso, os comandos importantes usados ​​pelos administradores do siste
     
 10.  Comando `cp` Copie o arquivo da origem para o destino preservando o mesmo modo.
     
+12. Comando `mv` Move o arquivo da origem para sem alteração no mesmo.
 
 Aqui está a lista de comandos freqüentemente usados ​​pelo editor. Isto não é completo, mas é uma lista compacta de comandos para se referir quando necessário.
