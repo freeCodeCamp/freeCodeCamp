@@ -1,8 +1,8 @@
 ---
 title: React
-localeTitle: Reaccionar
+localeTitle: React
 ---
-# Reaccionar
+# React
 
 React es una librería de JavaScript para construir interfaces de usuario. Fue votado como el más querido en la categoría "_Frameworks_, librerías y otras tecnologías" de la Encuesta de desarrolladores 2017 de Stack Overflow. 1
 
@@ -15,7 +15,6 @@ React es utilizado para crear interfaces de usuario. Una interfaz de usuario es 
 *   Es flexible: React trabaja bien con la mayoría de las librerías y _frameworks_ más populares.
 
 ## ¿Por qué aprender React?
-
 1.  React utiliza Composición que no es más que un montón de componentes que envuelven sus funcionalidades en un contenedor encapsulado. Muchos sitios web populares utilizan React implementando el patrón arquitectónico MVC. Facebook (Parcialmente), Instagram (Completamente), Khan Academy (Parcialmente), Codecademy (Parcialmente), New York Times (Parcialmente), Yahoo Mail (Completamente), la nueva aplicación de galería de fotos y videos de Dropbox (completamente) son los sitios web populares conocidos que utilizan React. ¿Cómo se construyen estas grandes aplicaciones utilizando React? La respuesta simple es construir pequeñas aplicaciones o componentes. Ejemplo:
 
 ```jsx

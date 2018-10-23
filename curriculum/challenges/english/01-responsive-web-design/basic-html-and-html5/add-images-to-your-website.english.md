@@ -34,11 +34,11 @@ Finally don't forget to give your image an <code>alt</code> text.
 ```yml
 tests:
   - text: Your page should have an image element.
-    testString: 'assert($("img").length > 0, "Your page should have an image element.");'
+    testString: assert($("img").length > 0, 'Your page should have an image element.');
   - text: Your image should have a <code>src</code> attribute that points to the kitten image.
-    testString: 'assert(new RegExp("\/\/bit.ly\/fcc-relaxing-cat|\/\/s3.amazonaws.com\/freecodecamp\/relaxing-cat.jpg", "gi").test($("img").attr("src")), "Your image should have a <code>src</code> attribute that points to the kitten image.");'
+    testString: assert(new RegExp("\/\/bit.ly\/fcc-relaxing-cat|\/\/s3.amazonaws.com\/freecodecamp\/relaxing-cat.jpg", "gi").test($("img").attr("src")), 'Your image should have a <code>src</code> attribute that points to the kitten image.');
   - text: Your image element <strong>must</strong> have an <code>alt</code> attribute.
-    testString: 'assert(code.match(/alt\s*?=\s*?(\"|\").*(\"|\")/), "Your image element <strong>must</strong> have an <code>alt</code> attribute.");'
+    testString: assert(code.match(/alt\s*?=\s*?(\"|\').*(\"|\')/), 'Your image element <strong>must</strong> have an <code>alt</code> attribute.');
 
 ```
 
