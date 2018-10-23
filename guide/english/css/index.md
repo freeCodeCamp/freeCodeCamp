@@ -8,6 +8,8 @@ CSS is an acronym for Cascading Style Sheets. It was first invented in 1996, and
 
 CSS allows for developers to control how web pages look by "styling" the HTML structure of that page.
 
+CSS allows web pages to display predictively on different media devices.
+
 CSS specifications are maintained by the [World Wide Web Consortium (W3C)](https://www.w3.org/).
 
 You can build some pretty amazing things in CSS alone, such as this pure-CSS [Minesweeper game](https://codepen.io/bali_balo/pen/BLJONk) (which uses no JavaScript).
