@@ -42,10 +42,11 @@ index 2417dd9..b2c9092 100644
 ```
 
 ### Retrieve Stashed Changes
-To retrieve changes out of the stash and apply them to the current branch you're on, you have two options:
+To retrieve changes out of the stash and apply them to the current branch you're on, you have two-ish options:
 
 1. `git stash apply STASH-NAME` applies the changes and leaves a copy in the stash
 2. `git stash pop STASH-NAME` applies the changes and removes the files from the stash
+2.1 `git stash pop` if you have only one stash, you don't need to specify the name of the stash
 
 There may be conflicts when you apply changes. You can resolve the conflicts similar to a merge (<a href='https://guide.freecodecamp.org/git/git-merge/' target='_blank' rel='nofollow'>see Git merge for details</a>).
 
