@@ -94,6 +94,20 @@ which would end up looking like:
   <dd>An awesome non-profit organization teaching people how to code.</dd>
 </dl>
 
+These lists can also be nested one into another 
+Example:
+```HTML
+<ul>
+  <li>London</li>
+  <li>Paris
+    <ul>
+      <li>Eiffel Tower</li>
+      <li>Louvre Museum</li>
+    </ul>
+  </li>
+  <li>Amsterdam</li>
+</ul>
+```
 
 ## More Information:
 
