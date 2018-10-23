@@ -31,3 +31,8 @@ Otros parámetros son opcionales y se pueden combinar de cualquier manera que en
 *   El parámetro nombre le permite especificar lo que desea buscar por nombre, ya sea con una cadena literal ('nombre\_archivo.txt') o usando comodines ('archivo?. \*').
 
 `man find` te mostrará muchos más parámetros, y vale la pena revisarlos. Find puede ubicar archivos por nombre, usuario, fecha de creación, tamaño y mucho más. La próxima vez que estés buscando algo, ¡encuéntralo!
+
+## Más información
+Explicación sobre comando `find` (con ejemplos)
+<br>
+<a href="http://www.youtube.com/watch?feature=player_embedded&v=MDtdl9YfIPs" target="_blank"><img src="http://img.youtube.com/vi/MDtdl9YfIPs/0.jpg" alt="Video sobre comando find" width="240" height="180" border="10" /></a>
