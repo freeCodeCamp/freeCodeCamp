@@ -9,9 +9,9 @@ Popular choices for Public Cloud providers are Amazon Web Services, Microsoft Az
 
 Many modern websites and big data efforts are said to be developed in the Cloud, meaning they are operating in some of these massive shared datacenters.
 
-#### More Information:
 
+#### More Information:
 [Getting Started with AWS](https://aws.amazon.com/getting-started/)
-[Google Cloud Documentation](https://cloud.google.com/docs/)
-[Getting Started with Microsoft Azure](https://docs.microsoft.com/en-us/azure/guides/developer/azure-developer-guide)
-[Firebase Documentation](https://firebase.google.com/docs/)
+<BR />[Google Cloud Documentation](https://cloud.google.com/docs/)
+<BR />[Getting Started with Microsoft Azure](https://docs.microsoft.com/en-us/azure/guides/developer/azure-developer-guide)
+<BR />[Firebase Documentation](https://firebase.google.com/docs/)
