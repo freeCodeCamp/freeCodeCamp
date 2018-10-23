@@ -38,4 +38,4 @@ Computer science is categorized into several fields. The following are among the
 * [Khan Academy](https://www.khanacademy.org/computing/computer-science) : A deep dive into algorithms, cryptography, introductory computing, and much more.
 * [CS50](https://cs50.harvard.edu) : A free, introduction to computer science course, taught by David J. Malan and staff at Harvard & Yale Universities.
 * [Visualization of Data Structures](http://www.cs.usfca.edu/~galles/JavascriptVisual/Algorithms.html)
-
+* [Computer Science 101: Master the Theory Behind Programming](https://www.udemy.com/computer-science-101-master-the-theory-behind-programming/)
