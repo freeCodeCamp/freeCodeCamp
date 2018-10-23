@@ -22,6 +22,7 @@ title: JavaScript Tutorials and Other Resources
 *   <a href='http://overapi.com/javascript' target='_blank' rel='nofollow'>OverAPI JavaScript Cheat Sheet</a>
 *   <a href='http://www.ecma-international.org/publications/standards/Ecma-262.htm' target='_blank' rel='nofollow'>ECMA-262</a>
 *   <a href='https://developer.mozilla.org/en-US/docs/Web/JavaScript' target='_blank' rel='nofollow'>Mozilla Developer Network (MDN)</a>
+*   <a href='https://www.reddit.com/r/javascript/' target='_blank' rel='nofollow'>/r/JavaScript on Reddit</a>
 
 Find javascript libraries at <a href='http://jster.net' target='_blank' rel='nofollow'>http://jster.net</a>
 
