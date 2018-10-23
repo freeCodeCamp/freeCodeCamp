@@ -46,6 +46,7 @@ Java is trademarked and licensed by Oracle. Most of the following are un-officia
 * [Java Ranch](http://www.javaranch.com/)
 * [Java Code Geeks](https://www.javacodegeeks.com/)
 * [Java 8 API Search](http://javasearch.org)
+* [/r/JavaHelp] (https://www.reddit.com/r/javahelp/)
 
 ## Book Recommendations
 
