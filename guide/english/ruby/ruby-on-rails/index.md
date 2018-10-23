@@ -103,3 +103,7 @@ Controller (Action controller) interacts with the views and model to direct the 
 ## Ruby on Rails is open source 
 Not only is it free to use, you can also help make it better. More than 4,500 people have already contributed code to [Rails](https://github.com/rails/rails). It’s easier than you think to become one of them.
 
+## Installing On Mac 
+<a href="https://www.youtube.com/watch?v=3Lp5XP8pWkU
+" target="_blank"><img src="img.https://www.youtube.com/watch?v=3Lp5XP8pWkU" 
+alt="IMAGE ALT TEXT HERE" width="240" height="180" border="10" /></a>
