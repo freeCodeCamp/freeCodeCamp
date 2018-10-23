@@ -24,7 +24,7 @@ Puede crear un objeto String de las siguientes maneras:
 
 Usted podría estar pensando: ¿Cuál es la diferencia entre los tres?
 
-Bueno, usar la palabra reservada `new` garantiza que se creará un nuevo objeto `String` y se asignará una nueva ubicación de memoria en el `Heap` de memoria [(haga clic aquí para obtener más información)](https://docs.oracle.com/cd/E13150_01/jrockit_jvm/jrockit/geninfo/diagnos/garbage_collect.html) . Los literales de String y las expresiones de cadena constantes se almacenan en caché en tiempo de compilación. El compilador los coloca en el String Literal Pool para evitar duplicados. y mejorar el consumo de memoria. La asignación de objetos es costosa y este truco aumenta el rendimiento al crear cadenas. Si utiliza el mismo literal de nuevo, la JVM usa el mismo objeto. Usar el contructor como arriba es casi siempre la peor opción.
+Bueno, usar la palabra reservada `new` garantiza que se creará un nuevo objeto `String` y se asignará una nueva ubicación de memoria en el `Heap` de memoria [(haga clic aquí para obtener más información)](https://docs.oracle.com/cd/E13150_01/jrockit_jvm/jrockit/geninfo/diagnos/garbage_collect.html) . Los literales de String y las expresiones de cadena constantes se almacenan en caché en tiempo de compilación. El compilador los coloca en el String Literal Pool (Reserva de literales de String) para evitar duplicados. y mejorar el consumo de memoria. La asignación de objetos es costosa y este truco aumenta el rendimiento al crear cadenas. Si utiliza el mismo literal de nuevo, la JVM usa el mismo objeto. Usar el contructor como arriba es casi siempre la peor opción.
 
 En este fragmento de código, ¿cuántos objetos de cadena se crean?
 
@@ -139,6 +139,6 @@ String a = "Sam";
 
 ```
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTIxNDY3MDE3MzcsLTY2ODY3MDU0OSwxMD
+eyJoaXN0b3J5IjpbLTE4OTIwNzUxNzQsLTY2ODY3MDU0OSwxMD
 UwMDg4MDY5LDg0ODk1NzQxNSwxOTM2NzUxODEwXX0=
 -->
