@@ -1,0 +1,2 @@
+# Gulp.js
+Gulp is a tool to automate many of your painful or time-consuming tasks, in your development stack. It could be tasks such as transpiling newer versions of JavaScript to older version to make sure that older browsers can read it. It could be compiling `LESS`or `SASS` to CSS to make it readable to the browser. Almost whatever your heart desires.
