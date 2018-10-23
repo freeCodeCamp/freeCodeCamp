@@ -64,7 +64,19 @@ It's easy to add key-value pairs to an existing dictionary:
     >>> club_names = list(teams.values())    
     >>> club_names
     [1910, 1875]
-```  
+```
+**`get`** is a built-in *method* that can be used to get values from a dictionary by providing the key. The get method is very useful if you need to check existance of values for a particular key. we can also use to return default values in case a key-value pair is missing in the dictionary. 
+Usage:
+```python
+    >>> players = {'ronaldo': 'portugal', 'kaka': 'brazil', 'messi': 'argentina'}
+    >>> players.get('ronaldo')
+    portugal
+    >>> players.get('joe')
+    None
+    >>> players.get('joe', 'Missing Key')
+    Missing Key
+```
+
 Yet another way of creating dictionary is using the **`dict()`** method:
 ```python
     >>> players = dict( [('messi','argentina'), ('ronaldo','portugal'), ('kaka','brazil')] ) # sequence of key-value pair is passed  
@@ -76,6 +88,7 @@ Yet another way of creating dictionary is using the **`dict()`** method:
     >>> dict( totti = 38, zidane = 43 )
     {'zidane': 43, 'totti': 38}
 ``` 
+
 Dict comprehensions can be used as well to create dictionaries from arbitrary key and value expressions:  
 ```python
     >>> {x: x**2 for x in (2, 4, 6)}
@@ -103,7 +116,7 @@ For Python 2.x:
     2
     3
 ```
-Use **`items()`** for Python 3.x:  
+Use **`items()`** for Python 2.x and Python 3.x:
 ```python
     >>> for key, item in d.items():
     ...     print(key, items)
@@ -112,3 +125,4 @@ Use **`items()`** for Python 3.x:
     y 2
     z 3
 ```
+
