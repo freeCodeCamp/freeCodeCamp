@@ -24,6 +24,13 @@ Paid (Free ebook available) book which covers the basics of python. It's designe
 - ISBN-10: 0134692888
 
 
+#### Python Tricks: A Buffet of Awesome Python Features
+
+Paid book which covers Python's best practices and helps you create cleaner and more Pythonic code with a step-by-step narrative delivered in bite sized chunks.
+
+- [Website](https://dbader.org/products/python-tricks-book/)
+- [Amazon](https://www.amazon.com/Python-Tricks-Buffet-Awesome-Features-ebook/dp/B0785Q7GSY)
+
 #### Black Hat Python: Python Programming for Hackers and Pentesters
 
 Explore the darker side of Python and discover how to write network sniffers, manipulate packets, infect virtual machines and more.
