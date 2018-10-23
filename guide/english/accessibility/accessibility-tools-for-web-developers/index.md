@@ -24,6 +24,10 @@ There are many tools and online resources that can help you to ensure that your 
 - **<a href='https://www.accesslint.com' target='_blank' rel='nofollow'>AccessLint</a>**
 
    A GitHub app that checks your pull requests for accessibility issues.
+   
+- **<a href='http://wave.webaim.org/' target='_blank' rel='nofollow'>WAVE Web Accessibility Tool</a>**
+
+   Online web accessibility evaluation tool (also available as extension for Firefox & Chrome)
 
 
 ### Color Contrast
