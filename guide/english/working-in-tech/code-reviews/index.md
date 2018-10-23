@@ -12,6 +12,8 @@ grow as a developer. Even if a review is just an explanation of the code to anot
 the feeling that your code is going to be read/ inspected by another programmer as well makes you write better code in many ways
 (smaller methods, comments and no ["magic numbers"](https://en.wikipedia.org/wiki/Magic_number_(programming))).
 
+Code reviews are also a way for the new-comers in any team to learn about the best practices used by their particular team. If it's entirely a new team,it could also be a way to align all the programmers in the team to follow certain coding practices while writing their code.
+
 As to what is reviewed and when, well there is no clear answer.
 Many teams have rules that every piece of code that checks-in in the version control system has to be reviewed by another programmer,
 while other teams have whole days when they dedicate to code reviews across the team.
