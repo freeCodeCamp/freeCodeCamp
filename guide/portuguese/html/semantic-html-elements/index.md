@@ -1,10 +1,10 @@
 ---
 title: Semantic HTML Elements
-localeTitle: Elementos HTML semântico
+localeTitle: Elementos Semaânticos em HTML
 ---
-## Elementos HTML semântico
+## Elementos Semaânticos em HTML
 
-O elemento `<em>` marca o texto como sendo enfatizado acima do texto ao redor dele. Normalmente, o navegador processa isso em _itálico_ , mas você pode adicionar outros estilos usando CSS.
+O elemento `<em>` marca o texto dentro dele como sendo enfatizado. Normalmente, o navegador processa isso em _itálico_ , mas você pode adicionar outros estilos usando CSS.
 
 Elementos HTML semânticos fornecem significado a navegadores, desenvolvedores e usuários de um site. Em contraste com elementos como `<div>` ou `<span>` , elementos semânticos como `<header>` e `<footer>` explicam mais claramente o propósito de cada seção de um website.
 
@@ -12,10 +12,10 @@ Elementos HTML semânticos fornecem significado a navegadores, desenvolvedores e
 
 Os desenvolvedores usam elementos semânticos para aprimorar o seguinte:
 
-*   acessibilidade: ajude as tecnologias assistenciais a ler e interpretar sua página da web
-*   capacidade de pesquisa: ajude os computadores a entender seu conteúdo
+*   acessibilidade: ajuda as tecnologias assistenciais a ler e interpretar sua página web
+*   capacidade de pesquisa: ajuda os computadores a entender seu conteúdo
 *   internacionalização: apenas 13% do mundo são falantes nativos de inglês
-*   interoperabilidade: ajudar outros programadores a entender a estrutura da sua página web 1
+*   interoperabilidade: ajuda outros programadores a entender a estrutura da sua página web
 
 ### Elementos semânticos úteis
 
@@ -25,16 +25,16 @@ Os desenvolvedores usam elementos semânticos para aprimorar o seguinte:
 *   `<main>` define o conteúdo principal de um documento
 *   `<section>` define uma seção no documento - a especificação define isso como "um agrupamento temático de conteúdo, normalmente com um cabeçalho", para que você possa considerá-lo como um capítulo
 *   `<article>` define um artigo no documento
-*   `<aside>` define conteúdo além do conteúdo da página
+*   `<aside>` define conteúdo ao lado do conteúdo da página
 *   `<address>` define as informações de contato do autor / proprietário de um documento ou artigo
 *   `<figure>` define o conteúdo auto-suficiente, como ilustrações, diagramas, fotos, blocos de código, etc. 2
 
 ### Elementos semânticos menos conhecidos
 
-*   `<bdi>` define uma seção de texto que pode ser formatada em uma direção diferente de outro texto (por exemplo, uma citação em hebraico ou árabe em um outro artigo em inglês)
+*   `<bdi>` define uma seção de texto que pode ser formatada em uma direção diferente de outro texto (por exemplo, uma citação em hebraico ou árabe em um artigo em inglês)
 *   `<details>` define detalhes adicionais que as pessoas podem ver ou ocultar (como uma dica de ferramenta)
 *   `<dialog>` define uma caixa de diálogo ou janela
-*   `<figcaption>` define a legenda para um `<figure>`
+*   `<figcaption>` define a legenda para uma `<figure>`
 *   `<mark>` define o texto marcado ou realçado
 *   `<menuitem>` define um item de comando / menu que o usuário pode selecionar em um menu pop-up
 *   `<meter>` define uma medida escalar dentro de um intervalo conhecido (um medidor)
