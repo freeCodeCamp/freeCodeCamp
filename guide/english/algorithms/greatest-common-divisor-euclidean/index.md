@@ -64,6 +64,24 @@ function gcd(a, b) {
     return gcd(b, (a % b));
 }
 ```
+C code to perform GCD using recursion 
+int gcd(int a, int b) 
+{ 
+    // Everything divides 0  
+    if (a == 0) 
+       return b; 
+    if (b == 0) 
+       return a; 
+  
+    // base case 
+    if (a == b) 
+        return a; 
+  
+    // a is greater 
+    if (a > b) 
+        return gcd(a-b, b); 
+    return gcd(a, b-a); 
+}
 
 You can also use the Euclidean Algorithm to find GCD of more than two numbers.
 Since, GCD is associative, the following operation is valid- `GCD(a,b,c) == GCD(GCD(a,b), c)`
