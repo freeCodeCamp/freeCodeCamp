@@ -14,7 +14,7 @@ title: Algorithms in JavaScript books
 - ISBN-13: 978-1785285493
 
 *Data Structures and Algorithms with JavaScript: Bringing classic computing approaches to the Web*
-- Covers recursion, sorting and searching algorithms, linked lists and binary search trees.
+- Covers recursion, sorting and searching algorithms, linked lists and binary search trees
 - [Amazon](https://www.amazon.com/Data-Structures-Algorithms-JavaScript-approaches/dp/1449364934)
 - ISBN-13: 978-1449364939
 
