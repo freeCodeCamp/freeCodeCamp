@@ -1,7 +1,8 @@
 ---
 title: Typecasting
 localeTitle: 铸字
----## 铸字
+---
+## 铸字
 
 将一种数据类型转换为另一种数据类型称为类型转换。以来 Java是一种面向对象的编程语言，支持**继承**和**多态** ，超类引用变量很容易指向subClass对象。
 
@@ -11,14 +12,14 @@ localeTitle: 铸字
 
 Java，类型转换分为两种类型。
 
-**_1.隐式类型转换_** 这里，当两种类型兼容时，会发生自动类型转换 目标类型大于源类型。 例如。 \`\`\`java int i = 100; 长l = i; //不需要显式类型转换 float f = l; //不需要显式类型转换
+**_1.隐式类型转换_** 这里，当两种类型兼容时，会发生自动类型转换 目标类型大于源类型。 例如。 \`\`\`java int i = 100; long l = i; //不需要显式类型转换 float f = l; //不需要显式类型转换
 ```
 ***2.  Explicit Typecasting*** 
  When we assign a larger type value to a variable of smaller type, then we need to perform explicit type casting. 
  eg. 
 ```
 
-java的 双d = 100.04; long l =（long）d; //需要显式类型转换 int i =（int）l; //需要显式类型转换 \`\`\`
+java的 double d = 100.04; long l =（long）d; //需要显式类型转换 int i =（int）l; //需要显式类型转换 \`\`\`
 
 #### 更多信息：
 
