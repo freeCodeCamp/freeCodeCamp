@@ -25,3 +25,5 @@ With Share you get an URL where the code you just wrote is saved. Useful when as
 <!-- Please add any articles you think might be helpful to read before writing the article -->
 * [The Go Playground](https://play.golang.org/)
 * [A Tour of Go](https://tour.golang.org/welcome/4)
+
+# :)
