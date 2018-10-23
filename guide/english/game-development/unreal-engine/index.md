@@ -36,3 +36,7 @@ Unreal has gone through 4 major revisions. Although some code is common between 
 
 <a href='https://www.unrealengine.com/' target='_blank' rel='nofollow'>www.UnrealEngine.com</a>  
 <a href='https://github.com/EpicGames' target='_blank' rel='nofollow'>www.EpicGames.com</a>
+
+### For Awesome and Interactive Learning:
+
+<a href='https://www.youtube.com/playlist?list=PLL0cLF8gjBpqDdMoeid6Vl5roMl6xJQGC' target='_blank' rel='nofollow'>Unreal Tutorial For Beginners...</a>
