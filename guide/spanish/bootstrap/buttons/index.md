@@ -94,4 +94,4 @@ _Nota: No incluya el punto en el atributo de clase HTML, ya que las clases con u
 
 *   [Documentación de Bootstrap Buttons](https://getbootstrap.com/docs/4.0/components/buttons/)
 *   [Documentación de Bootstrap Button Group](http://getbootstrap.com/docs/4.0/components/button-group/)
-*   [Bootstrap Empezar](/articles/bootstrap/bootstrap-get-started)
+*   [Empezar con Bootstrap](https://getbootstrap.com/docs/4.0/getting-started/introduction/)
