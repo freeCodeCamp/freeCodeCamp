@@ -14,6 +14,9 @@ Swing GUI consists of two main pillars:-components and containers.The following 
 ### Components
 An Component is simply an independent visual control.Swing components are derived from JComponent class. Further JComponent inherits all its characteristics from AWT Containers and Components.For more information, please go through the hierarchy of [JComponent](https://docs.oracle.com/javase/tutorial/uiswing/components/jcomponent.html) class.
 
+### Text Components
+Swing text components can be used to display or edit text. One example of this is JTextField, which can be used to enter a small amount of text from the user.
+
 ### Containers
 All containers are also components. Containers may comprise of one or more components. Swing defines two types of containers
 - inherits from JComponent- e.g. JFrame, JWindow, JApplet, JDialog
