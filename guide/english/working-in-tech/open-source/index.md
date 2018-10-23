@@ -22,7 +22,8 @@ Open source software allows developers to view the source code of any software w
 
 There are different websites where people can find the open source projects, such as:
 1. https://github.com
-2. https://opensource.google.com/
+2. https://about.gitlab.com/
+3. https://opensource.google.com/
 
 One of the biggest Open Source projects is Linux.
 
