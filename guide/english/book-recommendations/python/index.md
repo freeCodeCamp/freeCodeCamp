@@ -75,3 +75,21 @@ You'll learn many of the first princliples for data science tools and how algori
 - [A Byte of Python[FREE]](https://python.swaroopch.com)
 
 Please feel free to add more that you have found useful!
+#### More Books
+*20 Python Libraries You Aren't Using (But Should)*
+- by Caleb Hattingh
+- Publisher: O'Reilly Media, Inc.
+- Release Date: August 2016
+- ISBN: 9781492037866
+- [https://www.oreilly.com/library/view/20-python-libraries/9781492037866/#toc-start]
+- paid book:
+"This report examines:
+
+Little-known standard library modules: collections, contextlib, concurrent.futures, logging, and sched
+Flit for simplifying the process of submitting a Python package to the Python Package Index (PyPI)
+Colorama and begins for making your command-line applications friendlier for users
+Pyqtgraph and pywebview for creating graphical user interfaces (GUIs)
+Watchdog, psutil, and ptpython for working closely with the operating system
+Hug for exposing APIs for other users' programs to consume
+Arrow and parsedatetime for working with dates and times
+Third-party general-purpose libraries: Boltons, Cython, and the awesome-python curated list"
