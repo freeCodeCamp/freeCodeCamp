@@ -3,7 +3,7 @@ title: Canvas Dimensions
 ---
 ## Canvas Dimensions
 
-The `width` and `height` attributes will control the size of the canvas. These attributes control the size of the drawing canvas, not the actual rendered size.
+The `width` and `height` attributes will control the size of the canvas. These attributes control the size of the drawing canvas, not the actual rendered size. By default, a canvas has no border and no content.
 
 <p data-height="265" data-theme-id="0" data-slug-hash="jLWMmM" data-default-tab="js,result" data-user="alanluo" data-embed-version="2" data-pen-title="Canvas dimensions demo" class="codepen">See the Pen <a href="https://codepen.io/alanluo/pen/jLWMmM/">Canvas dimensions demo</a> by Alan Luo (<a href="https://codepen.io/alanluo">@alanluo</a>) on <a href="https://codepen.io">CodePen</a>.</p>
 <script async src="https://production-assets.codepen.io/assets/embed/ei.js"></script>
