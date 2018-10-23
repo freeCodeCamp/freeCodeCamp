@@ -17,7 +17,7 @@ Each 'iteration' (of executing the block of statements) is preceeded by the eval
 **Note**: For the `while` loop to start executing, you'd require the condition to be `true` initially. However, to exit the loop, you must do something within the block of statements to eventually reach an iteration when the condition evaluates to `false` (as done below). Otherwise the loop will execute forever. (In practice, it will run until the <a href='https://guide.freecodecamp.org/java/the-java-virtual-machine-jvm' target='_blank' rel='nofollow'>JVM</a> runs out of memory.)
 
 ## Example
-In the following example, the `expression` is given by `iter_While < 10`. We increment `iter_While` by `1` each time the loop is executed. The `while`loop breaks when`iter_While`value reaches `10`.
+In the following example, the `expression` is given by `iter_While < 10`. We increment `iter_While` by `1` each time the loop is executed. The `while`loop breaks when`iter_While`value reaches `10`. Remember that you can always change the increment of `iter_While` as much as you want for example (iter_While+2,+3,+4).
 
 ```java
 int iter_While = 0;
@@ -36,5 +36,4 @@ Output:
 0 1 2 3 4 5 6 7 8 9
 iter_While Value: 10
 ```
-
 ![:rocket:](//forum.freecodecamp.com/images/emoji/emoji_one/rocket.png?v=2 ":rocket:") [Run Code](https://repl.it/CJYj/0)
