@@ -10,7 +10,9 @@ CSS allows for developers to control how web pages look by "styling" the HTML st
 
 CSS specifications are maintained by the [World Wide Web Consortium (W3C)](https://www.w3.org/).
 
-You can build some pretty amazing things in CSS alone, such as this pure-CSS [Minesweeper game](https://codepen.io/bali_balo/pen/BLJONk) (which uses no JavaScript).
+You can build some pretty amazing things in CSS alone, such as this pure-CSS [Minesweeper game](https://codepen.io/bali_balo/pen/BLJONk). 
+
+Note: This doesn't use any JavaScript. If you want it to be funner by adding some logic, i.e. with different levels, and placing the mines at random places each new game, your're going to need to use JavaScript. In addition to that, the game is using sass, which is a preprossessor scripting language that compiles CSS. To learn more about sass click [here](https://github.com/freeCodeCamp/freeCodeCamp/blob/master/guide/english/sass/index.md))
 
 ![](https://cdn-images-1.medium.com/max/800/1*GFcKk9KxqHAnWa1ECcKDOQ.png)
 
