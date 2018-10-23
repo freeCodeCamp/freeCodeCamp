@@ -13,7 +13,7 @@ const mapStateToProps = createSelector(userSelector, ({ picture }) => ({
 function SignedIn({ picture }) {
   return (
     <Link to='/settings'>
-      <img alt='your user image' height='38px' src={picture} />
+      <img alt='' height='38px' src={picture} />
     </Link>
   );
 }
