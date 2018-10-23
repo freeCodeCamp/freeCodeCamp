@@ -37,6 +37,16 @@ Complete list of icons provided by fontawesome is available [here](http://fontaw
 
 <span class="fa fa-heart" aria-hidden="true"></span>
 
+#### Fontawesome Icon List:
+You can resize your icons using the following classes:
+`.fa-lg`
+`.fa-2x`
+`.fa-3x`
+`.fa-4x`
+`.fa-5x`
+
+How to use - `.fa .fa-heart .fa-x2`
+
 _Note: Do not include the dot in the HTML Class Attribute, referring to the classes with a dot is only used when adjusting the classes in CSS._
 
 #### More Information:
