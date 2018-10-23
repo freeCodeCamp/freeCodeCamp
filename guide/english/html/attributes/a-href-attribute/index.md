@@ -24,6 +24,15 @@ For instance:
 ```
 The `<a href>` attribute is supported by all browsers.
 
+### Syntax
+<a href="URL">
+
+URL: The URL of the link.
+Possible values:
+  - An absolute URL - points to another web site (like <a href="https://www.freecodecamp.org">)
+  - A relative URL - points to a file within a web site (like href="index.html")
+  - Link to an element with a specified id within the page (like hred="#id-name")
+  
 #### More attributes:
  `hreflang` : Specifies the language of the linked resource.
  `target`   : Specifies the context in which the linked resource will open.
