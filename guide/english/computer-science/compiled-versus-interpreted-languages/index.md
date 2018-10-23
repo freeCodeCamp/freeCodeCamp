@@ -50,7 +50,8 @@ The most notable disadvantages are :-
 * Platform dependence of the generated binary code.
 
 #### Advantages of Interpreted Languages
-An Interpreted language gives implementations some additional flexibility over compiled implementations. Because interpreters execute the source program code themselves, the code itself is platform independent (Java's byte code, for example). Other features include dynamic typing, and smaller executable program size.
+An Interpreted language gives implementations some additional flexibility over compiled implementations. Because interpreters execute the source program code themselves, the code itself is platform independent (Java's byte code, for example). Other features include dynamic typing, and smaller executable program size.It has automatic memory management.
+
 
 #### Disadvantages of Interpreted Languages
 * The most notable disadvantage is typical execution speed compared to compiled languages.
