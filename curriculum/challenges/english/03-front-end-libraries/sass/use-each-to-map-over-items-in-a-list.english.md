@@ -31,13 +31,13 @@ Each class should set the <code>background-color</code> the respective color.
 ```yml
 tests:
   - text: Your code should use the <code>@each</code> directive.
-    testString: 'assert(code.match(/@each /g), "Your code should use the <code>@each</code> directive.");'
+    testString: assert(code.match(/@each /g), 'Your code should use the <code>@each</code> directive.');
   - text: Your <code>.blue-bg</code> class should have a <code>background-color</code> of blue.
-    testString: 'assert($(".blue-bg").css("background-color") == "rgb(0, 0, 255)", "Your <code>.blue-bg</code> class should have a <code>background-color</code> of blue.");'
+    testString: assert($('.blue-bg').css('background-color') == 'rgb(0, 0, 255)', 'Your <code>.blue-bg</code> class should have a <code>background-color</code> of blue.');
   - text: Your <code>.black-bg</code> class should have a <code>background-color</code> of black.
-    testString: 'assert($(".black-bg").css("background-color") == "rgb(0, 0, 0)", "Your <code>.black-bg</code> class should have a <code>background-color</code> of black.");'
+    testString: assert($('.black-bg').css('background-color') == 'rgb(0, 0, 0)', 'Your <code>.black-bg</code> class should have a <code>background-color</code> of black.');
   - text: Your <code>.red-bg</code> class should have a <code>background-color</code> of red.
-    testString: 'assert($(".red-bg").css("background-color") == "rgb(255, 0, 0)", "Your <code>.red-bg</code> class should have a <code>background-color</code> of red.");'
+    testString: assert($('.red-bg').css('background-color') == 'rgb(255, 0, 0)', 'Your <code>.red-bg</code> class should have a <code>background-color</code> of red.');
 
 ```
 
