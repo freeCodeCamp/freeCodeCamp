@@ -41,3 +41,11 @@ A color can also be specified using a 'hex code' or an 'rgb code', instead of us
   </body>
 </html>
 ```
+4. HSL attribute
+```html
+<html>
+  <body>
+    <font color="hsl(80, 90%, 75%)">Font color example using color attribute</font>
+  </body>
+</html>
+```
