@@ -23,15 +23,15 @@ This directory contains all of the documentation on contributing to freeCodeCamp
 
 ## Quick references articles
 
-<a href="docs/how-to-work-on-guide-articles.md">1. How to work on Guide articles.</a></br>
-<a href="docs/how-to-work-on-coding-challenges.md">2. How to work on Coding Challenges.</a></br>
-<a href="docs/how-to-setup-freecodecamp-locally.md">3. How to setup freeCodeCamp locally.</a></br>
-<a href="docs/how-to-catch-outgoing-emails-locally.md">4. How to catch outgoing emails locally.</a></br>
+1. <a href="/docs/how-to-work-on-guide-articles.md">How to work on Guide articles.</a></br>
+2. <a href="/docs/how-to-work-on-coding-challenges.md">How to work on Coding Challenges.</a></br>
+3. <a href="/docs/how-to-setup-freecodecamp-locally.md">How to setup freeCodeCamp locally.</a></br>
+4. <a href="/docs/how-to-catch-outgoing-emails-locally.md">How to catch outgoing emails locally.</a></br>
 
 ## Style guides
 
-<a href="docs/style-guide-for-guide-articles.md">1. Style guide for creating guide articles.</a></br>
-<a href="docs/style-guide-for-curriculum-challenges.md">2. Style guide for creating coding challenges.</a></br>
+1. <a href="/docs/style-guide-for-guide-articles.md">Style guide for creating guide articles.</a></br>
+2. <a href="/docs/style-guide-for-curriculum-challenges.md">Style guide for creating coding challenges.</a></br>
 
 ## Quick commands reference when working locally
 
