@@ -62,3 +62,4 @@ A segunda forma mais comum de redes neurais é a nueroevolução. Neste sistema,
 *   [3Blue1Brown, canal do Youtube com conteúdo de rede neural](https://youtu.be/aircAruvnKk)
 *   [Siraj Raval, canal do Youtube com conteúdo de rede neural](https://youtu.be/h3l4qz76JhQ)
 *   [Neuroevolução - Wikipedia](https://en.wikipedia.org/wiki/Neuroevolution)
+*   Livro guia explicativo: https://kupdf.net/download/make-your-own-neural-network-tariq-rashid-chb-books_598f6fe5dc0d60e932300d19_pdf
