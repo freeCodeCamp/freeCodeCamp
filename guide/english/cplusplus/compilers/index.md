@@ -84,7 +84,7 @@ You can also add flags to the compiler to your custom and favor. For example:
 `g++ -O2 helloWorld.cpp -o helloWorld`
 Some common flags is :
 1. -O2 : Optimize your code, so it may run faster
-2. -std=c++11 : use c++11 instead of c++98 which is defaulted.
+2. -std=c++11 : use c++11 instead of gnu++14 (the GNU implementation of the C++14 standard) which is defaulted.
 3. -Wall: prompt some warning about some common mistakes which can bug your program.
 4. -Wextra: prompt some extra warning.
 ____________
