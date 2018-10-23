@@ -16,14 +16,19 @@ function printUserInfo(user: User) {
     console.log(user.firstName);
 }
 
-let myObj = {firstName: 'John', lastName: 'Doe'}
-printUserInfo(myObj);
+const testUser: User = {firstName: 'John', lastName: 'Doe'};
+printUserInfo(testUser);
 ```
 
-Interfaces can contain optional parameters
+Interfaces can contain optional parameters:
 
 ```typescript
-interface User = {
+interface ExtendedUser = {
+    firstName: string;
+    lastName: string;
     email?: string;
 }
+
+const analogUser: ExtendedUser = {firstName: 'John', lastName: 'Doe'};
+const digitalUser: ExtendedUser = {firstName: 'John', lastName: 'Doe', email: 'jane.doe@gmail.com'};
 ```
