@@ -44,3 +44,4 @@ More great resources to help you know more about Imposter Syndrome and some tips
 * [FastCompany - Types of imposter syndrome and how to beat them](https://www.fastcompany.com/40421352/the-five-types-of-impostor-syndrome-and-how-to-beat-them)
 * [Startup Bros - 21 Proven Ways to Overcome Imposter Syndrom](https://startupbros.com/21-ways-overcome-impostor-syndrome/)
 * [NY Times - Learning How to Deal with the Imposter Syndrome](https://www.nytimes.com/2015/10/26/your-money/learning-to-deal-with-the-impostor-syndrome.html)
+* [The Every Girl - 5 Books to Read If You're Struggling With Imposter Syndrome](http://theeverygirl.com/5-books-read-youre-struggling-imposter-syndrome/)
