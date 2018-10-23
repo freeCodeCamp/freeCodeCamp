@@ -5,6 +5,7 @@ title: Higher Order Functions
 
 A Higher Order Function is any function that returns a function when executed, takes a function as one or more of its arguments, or both. If you have used any of the `Array` methods like `map` or `filter`, or passed a callback function to jQuery's `$.get`, you have already worked with Higher Order Functions.
 
+## Map
 When you use `Array.map`, you provide a function as its only argument, which it applies to every element contained in the array.
 
 ```javascript
@@ -35,7 +36,7 @@ const arrDoubled = arr.map(multiplyByTwo);
 console.log(arrDoubled); // [ 2, 4, 6 ]
 ```
 
-### Filter Method Example
+## Filter 
 
 One amazing example of higher order function is the filter function.
 
@@ -98,6 +99,34 @@ const isDog = function(animal) {
 
 const dogs = animals.filter(isDog)
 ```
+
+## Reduce
+The Reduce function takes an array and "reduces" to a single variable.
+
+An example most people use is summing the numbers in an array:
+
+```javascript
+const nums = [1,2,3];
+const sum = nums.reduce((acc,curr)=> acc+curr);
+console.log(sum) // 6
+```
+The Reduce function usually takes two parameters, an accumulator and the current value, you can also specify a starting 
+value: 
+```javascript
+nums.reduce((acc,curr)=> acc+curr, 1);
+//returns 7
+```
+Reduce is a very powerful function, a more advanced way to use it would be to take an array and return an object counting the occurances of each element:
+```javascript
+[1,2,3,4,true,2].reduce((a,b)=>{
+    a[b] = a[b] || 0;
+    a[b]++;
+    return a
+},{})
+//returns 
+{ '1': 1, '2': 2, '3': 1, '4': 1, true: 1 }
+```
+There are limitations to this for example, the int 3 and the string '3' will be counted as the same item due to JavaScripts typing system, but this is still a very useful function.
 
 #### More Information
 
