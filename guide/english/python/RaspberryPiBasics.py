@@ -10,7 +10,7 @@ while True:
 	time.sleep(1)
   
   
-  
+"""  
 # CODE FOR PWM CONTROL OF LED BRIGHNTESS
 import RPi.GPIO as GPIO    
 from time import sleep 
@@ -35,4 +35,5 @@ try:
 
 except KeyboardInterrupt:
         pwm.stop()      
-        GPIO.cleanup()  
+        GPIO.cleanup() 
+        """
