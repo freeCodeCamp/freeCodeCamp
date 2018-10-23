@@ -39,9 +39,9 @@ To insert an image you define the source and an alternative text wich is display
 <img src="URL of the Image" alt="Descriptive Title" style="width: 100px; height: 150px;"/>
 ```
 
-Here's an example to make a rounded image:
+Here's an example to make a curved image:
 ```html
-<img src="URL of the Image" alt="Descriptive Title" style="border-radius: 50%;"/>
+<img src="URL of the Image" alt="Descriptive Title" style="border-radius: 30%;"/>
 ```
 
 ### More Information
