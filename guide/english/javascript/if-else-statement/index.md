@@ -69,3 +69,5 @@ else {
     return "Invalid number";
 }
 ```
+
+Note: When you have a lot of if...else statements checking the same variable, you may want to use the [switch](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/switch) statement, which is a lot cleaner.
