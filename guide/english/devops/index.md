@@ -7,18 +7,23 @@ title: DevOps
 
 DevOps is the integration of work between Development and Operations functions. One approach in doing this is to automate how software is integrated and deployed as it migrates between development, testing, and production environments. This facilitates the installation processes for the software, thus ideally reducing the chance for error.
 
+DevOps is also a philsophy that aims to establish a collaborative culture. The idea is to bring all teams involved in the development process together so that they can effectively work towards their goals instead of against each other.
+
 Alternatively, software development can be done within silos. One silo is responsible for taking feature requests, then turning them into software components with any programming language, and basic testing is done in an environment with fictious data. When the local testing is completed, the work products are handled off to a separate operations team that is responsible for then reinstalling the software into a separate production environment that supports real user traffic.  Once the software is in this environment, the operations teams maintain responsibility for the code, including identifying any product defects. If these defects are found, they are shared back with the development team, who attempts to resolve, then hands off a new version of software to the operations teams.
+
 
 This section contains articles introducing technologies used in DevOps.
 
 ### More Information
 * [Read more about DevOps on Wikipedia](https://en.wikipedia.org/wiki/DevOps)
 * [See this Video that explains Devops](https://youtu.be/_I94-tJlovg)
+* [Hackernoon's 2018 Guide to DevOps](https://hackernoon.com/the-2018-devops-roadmap-31588d8670cb)
 
 ### Resources
 This section contains links to learning DevOps through a MOOC experience. Courses may be pay-only.
 
 * [edX course](https://www.edx.org/microsoft-professional-program-front-end-development)
+* [Linux Academy](https://linuxacademy.com/)
 
 ### Lab
 <a href="https://github.com/Microsoft/TechnicalCommunityContent/tree/master/DevOps">DevOps</a>
