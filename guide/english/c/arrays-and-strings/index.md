@@ -156,6 +156,8 @@ if(!strcmp(first, second)){
 ```
 Notice the `!`, which is needed because this function returns 0 if they are the same. Placing the exclamation point here will make that comparison return true.
 
+We also have stricmp and/or strcmpi which compares two strings without case sensitivity. Similar to strcmp, stricmp/strcmpi will return 0 if the strings are equivalent, negative if first string is smaller, and positive if first string is greater.
+
 #### Split a string: `strtok`
 `strtok` (from 'string token') breaks a string into a series of tokens using a  delimiter. In this example, strtok breaks  string str into a series of tokens using the delimiter delim:
 ```C
