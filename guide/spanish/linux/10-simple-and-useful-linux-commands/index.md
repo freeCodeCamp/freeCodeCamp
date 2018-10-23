@@ -8,11 +8,11 @@ Los comandos que se enumeran aquí son básicos y lo ayudarán a comenzar rápid
 
 1.  `echo` Esto toma el texto que le das y lo envía a algún lugar: para volver a la pantalla, a un archivo u otro comando. Ejemplo: `echo "hello!"`
 2.  `cat` Para mostrar el contenido de un archivo de texto, simplemente escriba `cat myfile` .
-3.  `find` hace lo que dice, y es bueno en eso. Úselo para localizar archivos por ruta, tamaño, fecha, propietario y un montón de otros filtros útiles. Ejemplo: `find . -type f -mtime -1h # List files in this directory modified in the past hour` .
-4.  `date` Simplemente escriba fecha cuando desee saber qué hora es. Ejemplo: `date "+It's %l:%m%p on %A"` . Úselo en un script para nombrar archivos de acuerdo con la fecha actual.
+3.  `find` hace lo que dice, y es bueno en eso. Úselo para localizar archivos por ruta, tamaño, fecha, propietario y un montón de otros filtros útiles. Ejemplo: `find . -type f -mtime -1h # Lista archivos modificados en este directorio en la ultima hora` .
+4.  `date` Simplemente escriba date cuando desee saber qué hora es. Ejemplo: `date "+It's %l:%m%p on %A"` . Úselo en un script para nombrar archivos de acuerdo con la fecha actual.
 5.  `ls` ¿Qué hay en este directorio? Combine `ls` con algunas marcas útiles para mostrar y ordenar los contenidos del directorio por fecha y tamaño. También te da muchas opciones para formatear la salida.
-6.  `pwd` donde estoy Linux puede ser implacable, especialmente cuando borras algo. Asegúrese de que sabe antes de emitir sus comandos.
-7.  El programa de `mail` Linux no es atractivo, pero puede ser realmente útil. Puede crear un mensaje y agregar texto, destinatarios y archivos adjuntos en un solo comando. Ejemplo: `echo "We're having a great time." | mail -s "Wish you were here!" -A postcard.png -t mom@example.com`
+6.  `pwd` "donde estoy" en Linux puede ser implacable, especialmente cuando borras algo. Asegúrese de que sabe antes de emitir sus comandos.
+7.  El programa de `mail` Linux no es atractivo, pero puede ser realmente útil. Puede crear un mensaje y agregar texto, destinatarios y archivos adjuntos en un solo comando. Ejemplo: `echo "Estamos pasando un lindo momento." | mail -s "Ojalá estuvieras aquí!" -A postcard.png -t mama@ejemplo.com`
 8.  `cut` Cuando tenga una cadena con separadores, use `cut` para filtrar ciertos campos. Ejemplo: `echo "this, that, and the other" | cut -d, -f2 # "that"`
 9.  `grep` Para encontrar líneas de texto que contengan una determinada cadena, usa grep. Ejemplo: `grep 'root' /etc/passwd # root:x:0:0:root:/root:/bin/bash`
 10.  `sed` Utilice sed para buscar y cambiar una subcadena en un texto. Ejemplo: `echo "this, that, and the other" | sed 's/that/those/' # "this, those, and the other"`
