@@ -33,7 +33,7 @@ Os termos-chave para cada um deles são bastante reveladores. Juntos, eles comp�
 
 #### ng novo
 
-`ng new` cria um _novo_ sistema de arquivos Angular. Este é um processo surreal. Por favor, navegue para um local de arquivo desejável para a _nova_ geração de aplicativos. Digite este comando da seguinte maneira, substituindo `[name-of-app]` pelo que você quiser: `ng new [name-of-app]` .
+`ng new` cria um _novo_ sistema de arquivos Angular. Este é um processo surreal. Por favor, navegue para um local de arquivo desejável para a _nova_ geração de aplicativos. Digite este comando da seguinte maneira, substituindo `[name-of-app]` pelo que você quiser: `ng new [name-of-app]` você ainda pode definir parametros para a geração de stilos rotas entre outras opções de geração como por exemplo `ng new [name-of-app] --[opção]`.
 
 Um sistema de arquivos sob a pasta `[name-of-app]` deve aparecer. Sinta-se livre para explorar o que está dentro. Tente não fazer alterações ainda. Tudo o que você precisa para executar seu primeiro aplicativo Angular vem empacotado juntos nesse sistema de arquivos gerado.
 
