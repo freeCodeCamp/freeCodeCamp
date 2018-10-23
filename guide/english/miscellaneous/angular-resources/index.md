@@ -7,6 +7,7 @@ A collection of helpful Angular resources
 
 *   <a href='https://angularjs.org/' target='_blank' rel='nofollow'>Angular JS</a> - The Angular JS Homepage
 *   <a href='https://github.com/johnpapa/angular-styleguide' target='_blank' rel='nofollow'>Angular Style Guide</a> - Detailed best practices for Angular Development
+*   <a href='https://angular-university.io/' target='_blank' rel='nofollow'>Angular University</a> - Learn and keep up with the Angular Ecosystem
 
 ## Specific-topic Pages
 
