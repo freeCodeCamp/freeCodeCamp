@@ -6,11 +6,11 @@ title: Game Development
 
 Game Development is the art of creating games and describes the design, development and release of a game. It may involve concept generation, design, build, test and release. While you create a game, it is important to think about the game mechanics, rewards, player engagement and level design.
 
-A game developer could be a programmer, a sound designer, an artist, a designer or many other roles available in the industry.
+A Game Developer could be a Programmer, a Sound Designer, an Artist, a Designer, a Level Designer or many other roles available in the industry.
 
 Game Development can be undertaken by a large Game Development Studio or by a single individual. It can be as small or large as you like. As long as it lets the player interact with content and is able to manipulate the game's elements, you can call it a 'game'.
 
-To get involved in the Game Development process, you do not need to write code. Artists may create and design assets, while a Developer might focus on programming a health bar. A Tester may get involved to see that the game works as expected.
+To get involved in the Game Development process, you do not need to write code. Artists may create and design assets, while a Developer might focus on programming a health bar. A Tester may get involved to see that the game works as expected. A Level Designer often uses software known as a Game Developemnt Engine to layout the game play.
 
 ![What first games looked like](https://i.ytimg.com/vi/ePc12V6F0ws/maxresdefault.jpg "What first games looked like")
 
@@ -26,9 +26,9 @@ In some cases, like Game Maker and Construct, the amount of pre-made functions a
 
 ![Unity development screen](http://paulbourke.net/stereographics/Unitystereo/textureplanes.jpg "Unity development screen")
 
-Many developers choose to develop a game using a Game Development Engine.
+Many Developers choose to develop a game using a Game Development Engine.
 
-Game Engines can make the process of creating a game much easier and enable developers to reuse lots of functionality. It also takes care of rendering for 2D and 3D Graphics, physics and collision detection, sound, scripting and much more.
+Game Engines can make the process of creating a game much easier and enable Developers to re-use lots of functionality. It also takes care of rendering for 2D and 3D Graphics, physics and collision detection, sound, scripting and much more.
 
 Some Game Engines have a very steep learning curve such as CryEngine or Unreal Engine. Yet, other tools are very accessible to beginners and some do not even need you to be able to write code to create your game, e.g. Construct 2.
 
