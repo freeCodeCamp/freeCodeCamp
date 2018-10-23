@@ -16,3 +16,7 @@ render(
   App,
   newsMountPoint
 );
+render(
+  App,
+  newsMountPoint
+);
