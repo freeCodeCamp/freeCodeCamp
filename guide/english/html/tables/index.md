@@ -21,14 +21,14 @@ A more complex HTML table may also include `<caption>`, `<col>`, `<colgroup>`, `
     <th>Age</th>
   </tr>
   <tr>
-    <td>Jill</td>
-    <td>Smith</td> 
-    <td>50</td>
+    <td>Adam</td>
+    <td>Matt</td> 
+    <td>23</td>
   </tr>
   <tr>
-    <td>Eve</td>
-    <td>Jackson</td> 
-    <td>94</td>
+    <td>Victorya</td>
+    <td>William</td> 
+    <td>36</td>
   </tr>
 </table>
 ```
