@@ -17,7 +17,7 @@ People have used this concept in a lot of interesting applications. Few of the e
 ## How Natural Language Processing works
 Earlier, NLP employed rule based approach, i.e. all the rules were hard coded(Eg writing grammar). However this wasn't very affective to the variations in the language models.
 Currently, NLP processes are carried on using Artificial Intelligence. They rely mainly on Deep Learning, an AI that determines patterns in the data and uses it to train the model. This method is better than the earlier methods used because when learning through the huge data present, the machine can focus on most common cases, which is not easy with hand-written rules because it is not ovious as to where the efforts are to be put. Also, these models become more reliable with the increase in data, but in earlier approaches it an only be made accurate by increasing the complexity of the rules, which is a more difficult task. 
-The model learns the rules of the language through the analysis of large corpora of typical real-world examples. This method requires enormous amount of labelled data , which is a big hurdle for NLP.
+The model learns the rules of the language through the analysis of large corpora of typical real-world examples. This method requires enormous amount of labelled data, which is a big hurdle for NLP.
 
 ## Language Modelling
 For those looking to get into this field, I intend to start you off with 2 concepts.
