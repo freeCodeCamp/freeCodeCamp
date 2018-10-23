@@ -1,5 +1,5 @@
 ---
-titile: Classes
+title: Classes
 ---
 
 # Classes
@@ -31,7 +31,7 @@ class Pet {
    } 
 }
 ```
-To access the attributes of class `Pet`, It needs to create an instance of the class like under the hood-
+To access the attributes of class `Pet`, It needs to create an instance of the class like under the hood -
 
 ```typescript
 let pet = new Pet('Bruno');
