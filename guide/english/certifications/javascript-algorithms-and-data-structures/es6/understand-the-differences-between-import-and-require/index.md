@@ -10,7 +10,7 @@ In this lesson, you are tasked at importing the function `capitalizeStrings()`, 
 
 ## Hint 1:
 
-Fill in the blanks: `import { function_name } from "file_name"`. Your function name is `capitalizeStrings`, and your file name is `"string-functions"`.
+Fill in the blanks: `import { function_name } from "file_name"`. Your function name is `capitalizeStrings`, and your file name is `"string_functions"`.
 
 ## Spoiler Alert - Solution Ahead!
 
@@ -18,6 +18,6 @@ Fill in the blanks: `import { function_name } from "file_name"`. Your function n
 
 ```javascript
 "use strict";
-import { capitalizeString } from "string-functions";
+import { capitalizeString } from "string_functions";
 capitalizeString("hello!");
 ```
