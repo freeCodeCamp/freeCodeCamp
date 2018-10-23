@@ -52,7 +52,7 @@ The following are areas that can be simiplified with XML:
 3. platform changes
 4. data availability
 
-And it's main achievement was that it became a W3C Recommendation as early as in February 1998.
+XML's main achievement was that it became a W3C Recommendation as early as in February 1998.
 
 ### More information
 
