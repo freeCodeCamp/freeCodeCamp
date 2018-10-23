@@ -71,8 +71,13 @@ Assume your server IP address is AAA.BBB.CCC.DDD. Then you should do the followi
 
 You can take the help from your system administrator to understand these points and configure your DNS and CDN appropriately. Finally, you will have the following configuration at your DNS.
 
+
+
+Fun Fact: GitHub survived the biggest DDos attack ever recorded... it was 1.35 teraboits per second of traffic. Read more about it at the link below!
+
 ### More Information
 
 * [Understanding Denial-of-Service Attacks](https://www.us-cert.gov/ncas/tips/ST04-015)
 * [Visualisation of DDoS Attacks Worldwide](http://www.digitalattackmap.com/#anim=1&color=0&country=ALL&list=0&time=17462&view=map "Visualisation of DDoS Attacks Worldwide")
 * [Kotaku Article about DDoS](https://kotaku.com/how-ddos-attacks-work-and-why-theyre-so-hard-to-stop-1676445620)
+* .[Github Survived the Biggest DDoS Attack Ever Recorded] (https://www.wired.com/story/github-ddos-memcached/)
