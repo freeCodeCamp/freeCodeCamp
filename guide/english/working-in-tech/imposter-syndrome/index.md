@@ -4,6 +4,8 @@ title: Imposter Syndrome
 
 ## Imposter Syndrome
 
+What is Imposter Syndrome?
+
 Imposter Syndrome is a feeling of _being a fraud_ or _not being good enough_ to get the job done. Common among software engineers, developers and designers working in tech companies, especially those not coming from a traditional tech background. People suffering from imposter syndrome have a sense of inadequacy and insecurity concerning their ability to make a contribution at the workplace. In reality, they may be perfectly capable of and do contribute successfully to their tasks.
 
 Imposter Syndrome is very common among software engineers or developers who are new to the role and lack the experience of some of their co-workers. Throughout various industries, imposter syndrome is very common with highly successful people. Studies have found the two out of five 'successful' people consider themselves frauds/imposters while other studies have shown that up to 70% of people experience imposter syndrome as one point in time or another.
@@ -25,6 +27,7 @@ These thoughts are fairly common if you struggle with imposter syndrome:
 
 Imposter Syndrome may prevent you from reaching out when you need help, thus slowing your progression. Please do reach out on the forum or the chatroom!
 
+
 #### Overcoming Imposter Syndrome
 
 The first step in overcoming imposter syndrome is to learn the difference between a growth mindset and a fixed mindset. People with a growth mindset believe that their skills and talents can be developed through hard work, practice, conversations with others, etc. Alternately, those with a fixed mindset tend to believe their talents are set abilities that they were born with.
@@ -35,6 +38,7 @@ When you change your outlook to a growth mindset, you allow yourself to take on 
 
 More great resources to help you know more about Imposter Syndrome and some tips to tackle it:
 
+* [What is imposter syndrome and how can you combat it? - Elizabeth Cox](https://www.youtube.com/watch?v=ZQUxL4Jm1Lo)
 * [American Psychological Association - Feel Like a Fraud?](http://www.apa.org/gradpsych/2013/11/fraud.aspx)
 * [TED Talks - Fighting Imposter Syndrome](https://www.ted.com/playlists/503/fighting_impostor_syndrome)
 * [Quartz - Is imposter syndrome a sign of greatness?](https://qz.com/606727/is-imposter-syndrome-a-sign-of-greatness/)
