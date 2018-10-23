@@ -1,16 +1,16 @@
 ---
 title: SQL Where Clause
-localeTitle: SQL onde cláusula
+localeTitle: Cláusula WHERE - SQL
 ---
-## SQL onde cláusula
+## Cláusula WHERE - SQL
 
-### `WHERE` cláusula (e / ou, `IN` , `BETWEEN` , e `LIKE` )
+### `WHERE` cláusula (e/ou, `IN`, `BETWEEN`, e `LIKE` )
 
 A cláusula `WHERE` é usada para limitar o número de linhas retornadas.
 
-Neste caso, todos os cinco destes serão usados ​​é uma cláusula `WHERE` ridícula.
+Neste caso, todos estes cinco serão usados em uma cláusula `WHERE` ridícula.
 
-Aqui está a lista atual de alunos completa para comparar com o conjunto de resultados da cláusula `WHERE` :
+Aqui está a lista atual de alunos completa para comparar com o conjunto de resultados da cláusula `WHERE`:
 
 ```sql
 select studentID, FullName, sat_score, rcd_updated from student; 
@@ -61,7 +61,7 @@ select  studentID, FullName, sat_score, recordUpdated
  5 rows in set (0.00 sec) 
 ```
 
-\* Como acontece com todas essas coisas SQL, MUITO MAIS para elas é o que está neste guia introdutório.
+\* Há muito mais coisas de SQL, além do que foi mostrado neste guia introdutório.
 
 Espero que pelo menos isso lhe dê o suficiente para começar.
 
