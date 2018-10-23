@@ -18,7 +18,7 @@ fun main(args : Array<String>) {
 }
 ```
 
-As you should expect, when you run this program the output should be "Hello, World!".
+As you should expect, when you run this program the output should be "Hello, World!" (Without quotes). 
 
 ## Syntax
 
