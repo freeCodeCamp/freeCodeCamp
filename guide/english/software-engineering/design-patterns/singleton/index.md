@@ -145,6 +145,8 @@ This simple code is all there to implement a singleton design pattern in iOS usi
 
 An important thing to note is that `static` properties and methods are lazy initialize by default meaning that it will not be instantiated until it is being called, therefore it provides some optimization.
 
+Also, Basic implementation of singleton is breakable by reflection, serialization and multithreading. So it needs extra care while implementing this pattern depending on the usecase. Here is [goodread](https://medium.com/exploring-code/how-to-make-the-perfect-singleton-de6b951dfdb0) about Singleton.
+
 ## More Information
 
 For more information, visit the following links:
