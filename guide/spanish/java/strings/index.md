@@ -38,10 +38,10 @@ La respuesta es: 2 objetos String son creados. `str` y `str2` refieren al mismo 
 
 Cuando creas un literal de cadena, la JVM lo verifica internamente, lo que se conoce como el `String pool` , para ver si puede encontrar un objeto String similar (ya contenido). Si lo encuentra, devuelve la misma referencia. De lo contrario, simplemente continúa y crea un nuevo objeto String en el pool para que la misma verificación se pueda realizar en el futuro.
 
-Puede comprobar esto usando la comparación rapida de Object `==` y los `equals()` implementados `equals()` .
+Puede comprobar esto usando la comparación rapida incluida de Object `==` y el método `equals()` implementado.
 
 ```java
- System.out.println(str == str2); // This prints 'true' 
+ System.out.println(str == str2); // Imprime 'true' 
  System.out.println(str == str3); // This prints 'false' 
  System.out.println(str.equals(str3)); // This prints 'true' 
 ```
@@ -139,7 +139,7 @@ String a = "Sam";
 
 ```
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbODE3OTUzNjMzLC0xODkyMDc1MTc0LC02Nj
-g2NzA1NDksMTA1MDA4ODA2OSw4NDg5NTc0MTUsMTkzNjc1MTgx
-MF19
+eyJoaXN0b3J5IjpbLTE0NjU1NTYyNDMsLTE4OTIwNzUxNzQsLT
+Y2ODY3MDU0OSwxMDUwMDg4MDY5LDg0ODk1NzQxNSwxOTM2NzUx
+ODEwXX0=
 -->
