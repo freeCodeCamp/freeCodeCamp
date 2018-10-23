@@ -1,8 +1,8 @@
 ---
 title: Window setTimeout Method
-localeTitle: Método setTimeout de ventana
+localeTitle: Método Window setTimeout
 ---
-## Método setTimeout de ventana
+## Método Window setTimeout
 
 El método `setTimeout()` llama a una función o evalúa una expresión después de un número específico de milisegundos.
 
@@ -36,7 +36,7 @@ console.log("A");
  // B 
 ```
 
-**¡No como se espera! Pero especificamos solo 0 segundos !!!** Para resolver este problema y asegurarnos de que nuestro código se ejecute de forma sincrónica, solo tenemos que anidar la última consola en la función
+**¡No es el resultado esperado! Pero especificamos solo 0 segundos !!!** Para resolver este problema y asegurarnos de que nuestro código se ejecute de forma sincrona, solo tenemos que anidar la última llamada a console.log en la función
 
 ```js
 console.log("A"); 
