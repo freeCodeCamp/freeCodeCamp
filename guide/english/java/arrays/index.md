@@ -108,6 +108,13 @@ for (int i = 0; i < a.length; i++){ // loop goes through each index
     System.out.println(a[i]); // prints the array
 }
 ```
+Though An Easier Way To Print Complete Array Is Using For Each Loop .
+```java
+int[] numberlist = {4, 5, 6, 7, 8}; // declare array
+for (int number : numberlist){ // loop Iterates Thorugh Complete Array.
+    System.out.println(number); // prints the array Printing One Element At A Time .
+}
+```
 
 Output:
 ```java
@@ -146,7 +153,7 @@ int[][][] a=new int[a][b][c];
 ```
 In a similar manner, one can an array of as many dimensions as he/she wishes to but visualizing an array of more than 3 dimensions is difficult to visualize in a particular way.
 
-### Jagged Arrays
+### Jagged Arrays(Ragged Arrays)
 Jagged arrays are multi-dimensional arrays that have a set number of rows but a varying number of columns. Jagged arrays are used to conserve memory use of the array. Here is a code example:
 
 
