@@ -76,8 +76,6 @@ tests:
 
 ## Solution
 <section id='solution'>
-The new class simples uses the ```@extend .info;``` class above and adds the ```background-color: magenta;```.
-
 
 ```js
 <style type='text/sass'>
