@@ -146,59 +146,82 @@ fclose (اف ب)؛ }
 
 # إذا أردت أيضًا كتابة التحية إلى ملف ، فيمكنك القيام بذلك باستخدام ">".
 
- ``### The Real Deal 
- The above methods only worked for the most basic of cases.  If you wanted to do bigger and better things, you will probably want to work with files from within C instead of through the shell. 
- To accomplish this, you will use a function called `fopen`.  This function takes two string parameters, the first being the file name and the second being the mode. 
- Mode is basically permissions, so `r` for read, `w` for write, `a` for append.  You can also combine them, so `rw` would mean you could read and write to the file.  There are more modes, but these are the most used. 
- 
- After you have a `FILE` pointer, you can use basically the same IO commands you would've used, except that you have to prefix them with `f` and the first argument will be the file pointer. 
- For example, `printf`'s file version is `fprintf`. 
- 
- Here's a program called `greetings` that reads a from a file containing a list of names and writes to another file the greetings. 
-`` 
+جميع ما ذكر أعلاه يعتبر طريقة فعالة لحالات بسطية فقط. للقيام بعمل أعمال أكبر و أكثر تعقيداً يجب علينا العمل مع المفات داخل اللغة (كتابة برنامج) وليس من خلال شاشة أوامر. للقيام بذلك عليك القيام بأستخدام دالّة فتح الملفات. هذه الدالّة تستقبل (كمدخل دالّة) مقدارين نصيين ‘ فيكون الأول اسم الملف المراد فتحه (العمل به) و الثاني يكون الوضع (صلاحيات) ‘ أشهرها:
 
-ج
+الوضع | الوظيفة
+:------:|:-------:
+`r` | للقراءه
+`w` | للكتابه
+`a` | للأضافه
+`rw` | للقراءه و الكتابه معاً
 
-# تتضمن
+تقوم دالّة فتح الملف بأرجاع مؤشر ملف. يتم استخدام نفس أوامر الأدخال و الأخراج التي قد تستخدمها ولكن يجب اضافة حرف `f` قبل الأمر.
+أشهرها:
 
-# تتضمن
+`fprintf`
+يكون هذا الأمر مشتق من الأمر المشابه `printf`.
 
-انت مين() { // إنشاء مؤشرات الملف. FILE \* names = fopen ("names.txt"، "r")؛ FILE \* greet = fopen ("greet.txt"، "w")؛
+فيما يلي برنامج يقوم بكتابة مقدار نصي في ملف
+`int main(void)
+{
+	FILE *fileptr = fopen("hello.txt", "w");
+    fprintf(fileptr, "Hello, World!");
+	fclose(fileptr);
+}ذ
+سينشأ البرنامج أعلاه ملف بالأسم المحدد و سيكون به المقدار النصي المحدد.
 
- `// Check that everything is OK. 
- if (!names || !greet) { 
-    fprintf(stderr, "File opening failed!\n"); 
-    return EXIT_FAILURE; 
- } 
- 
- // Greetings time! 
- char name[20]; 
- // Basically keep on reading untill there's nothing left. 
- while (fscanf(names, "%s\n", name) > 0) { 
-    fprintf(greet, "Hello, %s!\n", name); 
- } 
- 
- // When reached the end, print a message to the terminal to inform the user. 
- if (feof(names)) { 
-    printf("Greetings are done!\n"); 
- } 
- 
- return EXIT_SUCCESS; 
-` 
+فيما يلي برنامج أكثر تعقيدً يعمل على ألقاء التحية على عشرين أسماً موجودين في ملف الأسماء
+علماً أن
+names.txt:
+names.txt:
+`Josh
+George
+Logan
+Mike
+Peter
+Clive
+Jessica
+Meghan
+Monica
+Mohammad`
 
-}
+`int main (void)
+{
+	FILE *names = fopen ("names.txt", "r");
+	FILE *greet = fopen ("greet.txt", "w");
 
- ``Suppose `names.txt` contains the following: 
-`` 
+	// Check that everything is OK.
+	if (!names || !greet)
+	{
+	fprintf(stderr, "File opening failed!\n");
+	return 1;
+	}
 
-كامالا لوجان أغنية مرحة
+	// Greetings time!
+	char name[20];
+	// Basically keep on reading untill there's nothing left.
+	while (fscanf(names, "%s\n", name) > 0)
+	{
+	    fprintf(greet, "Hello, %s!\n", name);
+	}
 
- ``Then after running `greetings` the file `greet.txt` will contain: 
-`` 
+	// When reached the end, print a message to the terminal to inform the user.
+	if (feof(names))
+		printf("Greetings are done!\n");
+}`
 
-مرحبا يا كمالا! مرحبا ، لوغان! مرحبا يا كارول! \`\` \`
+greet.txt:
+`Hello, Josh!
+Hello, George!
+Hello, Logan!
+Hello, Mike!
+Hello, Peter!
+Hello, Clive!
+Hello, Jessica!
+Hello, Meghan!
+Hello, Monica!
+Hello, Mohammad!`
 
-سوبر رائع ، أليس كذلك! :ابتسامة:
 
 ### معلومات اكثر:
 
