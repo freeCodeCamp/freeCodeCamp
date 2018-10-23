@@ -53,7 +53,7 @@ Right shift assignment | x >>= y | x = x >> y
 Unsigned right shift assignment | x >>>= y | x = x >>> y  
 Bitwise AND assignment | x &= y | x = x & y  
 Bitwise XOR assignment | x ^= y | x = x ^ y  
-Bitwise OR assignment | x |= y | x = x | y
+Bitwise OR assignment | x \|= y | x = x \| y
 
 ### More Information:
 
