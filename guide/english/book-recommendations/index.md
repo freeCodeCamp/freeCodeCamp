@@ -54,6 +54,9 @@ title: Books to Read for Programmers
 - [Amazon Smile](https://smile.amazon.com/Soft-Skills-software-developers-manual/dp/1617292397?pldnSite=1)
 - ISBN-13: 9781617292392
 
+*Coding Bootcamp to Web Developer: How to land your first job after code school
+- [Amazon Smile](https://www.amazon.com/Coding-Bootcamp-Web-Developer-school-ebook/dp/B01N19VO51)
+
 ## Algorithms
 
 *Introduction to Algorithms, 3rd Edition (MIT Press)* by Thomas H. Cormen and Charles E. Leiserson
