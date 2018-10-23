@@ -1,5 +1,5 @@
 ---
-title: Information Security And Quality Assurance
+title: Information Security and Quality Assurance
 ---
 ## Information Security and Quality Assurance
 
