@@ -17,6 +17,8 @@ There are various forms of acceptance testing:
 > - Alpha Testing
 >
 > - Beta Testing
+>
+> - Gama Testing 
 
 ## Acceptance Criteria
 Acceptance criteria are defined on the basis of the following attributes
