@@ -26,6 +26,12 @@ Since ArrayList implements *List*, an ArrayList can be created using the followi
   List<Integer> students = new ArrayList<>();
   ```
   
+Elements can be easily added to an ArrayList:
+
+  ```java
+  variable_name.add(element);
+  ```
+  
   An ArrayList is dynamic, meaning it will grow in size if required and similarly shrink in size if elements are deleted from it. This is what makes it better to use than normal arrays.
   
 **Clear/Delete all elements from the list**
