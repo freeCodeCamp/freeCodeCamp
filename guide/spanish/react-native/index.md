@@ -1,8 +1,8 @@
 ---
 title: React Native
-localeTitle: Reaccionar nativo
+localeTitle: React Native
 ---
-## Reaccionar nativo
+## React Native
 
 React Native es un marco multiplataforma para crear aplicaciones móviles que pueden ejecutarse fuera del navegador, la mayoría de las aplicaciones iOS y Android.
 
