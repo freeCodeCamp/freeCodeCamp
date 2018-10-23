@@ -25,7 +25,7 @@ After you finish your project and are ready to deploy your App to production, yo
 `npm run build`
 to create an optimized build of your app in the `build`folder.
 
-#### Usefull links
+#### Useful links
 [Create React App repository](https://github.com/facebookincubator/create-react-app#create-react-app-)
 
 #### Sources
