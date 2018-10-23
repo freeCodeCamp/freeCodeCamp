@@ -1,7 +1,7 @@
 - Bash Command: bash
-+ ---
-+ title: Bash: bash command
-+ ---
-+ ## Bash Command: ifconfig
+ ---
+ title: Bash: bash command
+ ---
+ ## Bash Command: ifconfig
 
    `bash` - typing bash will open a new shell.
