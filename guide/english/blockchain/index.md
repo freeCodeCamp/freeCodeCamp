@@ -7,7 +7,7 @@ title: Blockchain
 >
 > --Bettina Warburg<sup>1</sup>
 
-Blockchain is often associated with Bitcoin and other cryptocurrencies, but they are not the same thing. Bitcoin was the first to implement the concept of the Blockchain. The structure of a blockchain, a growing list of records, can be applied to many other fields such as digital identity, supply chain and even [democracy](https://www.democracy.earth/).
+Blockchain is often associated with Bitcoin and other cryptocurrencies, but they are not the same thing. Bitcoin was the first to implement the concept of the Blockchain. The structure of a blockchain, a growing list of records, can be applied to many other fields such as digital identity, supply chain, and even [democracy](https://www.democracy.earth/).
 
 Even though blockchain can be applied to a big range of problems, it is not the solution to everything. This technology is usually used to solve problems where the parts don't trust each other.
 
