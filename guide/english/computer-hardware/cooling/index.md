@@ -17,12 +17,12 @@ Cooling devices are available for individual parts on the computer. The two most
 
 ## Environmental Considerations
 
-* Keep it clean - Dust can clog up fans, heat sinks and act an an insulating layer trapping heat. Use compressed air to keep the dust out of the internal cavity. Maintenance of liquid cooling systems should be considered as well. Many forms of liquid cooling require incremental flushings to keep the tubes clean.
-* Case Covers - Contrary to what you read on the internet, keeping the case covers on the computer aids cooling. Absence of the case covers disrupts air flow and can actually increase the heat inside the case.
+* Keep it clean - Dust can clog up fans, heat sinks and act an an insulating layer trapping heat. Use compressed air to clean dust from the internal components. Maintenance of liquid cooling systems should be considered as well. Many forms of liquid cooling require regular flushing to keep the tubes clean.
+* Case Covers - Contrary to what you read on the internet, keeping the case covers on the computer will aid cooling. Absence of the case covers disrupts air flow and can actually increase the heat inside the case.
 * Room ventilation - Place the computer in a neutral location away from the rooms environmental registers. Keep the computer away from room heaters or vents at all times.
-* Room placement - Keep the computer away from windows or areas of strong sunlight exposure. Placement in closets can also provide challenges to cooling. It is recommended to keep the computer away from any carpet-like material, which can easily bring dust into the computer.
+* Room placement - Keep the computer away from windows or areas of strong sunlight exposure. Placement in closets can also provide challenges to cooling. The case should be located in a way that allows good airflow. It is recommended to keep the computer away from any carpet-like material, which can easily bring dust into the computer.
 * Placement next to other computers - Locating the computer away from other equipment allows air to flow in and out of the computer. Placement close to other equipment can constrict air flow and increase heat.
-* Cable Management = Having a rat's nest of cables can block airflow and make your computer hotter. It is recommended to take some time to cable manage after building a computer, because it can increase the lifespan of your computer in the future.
+* Cable Management - Having a rat's nest of cables can disrupt airflow and make your computer run hotter. It is recommended to take some time to cable manage after building a computer, as it can increase the lifespan of your computer in the future.
 
 ## Thermal Paste
 Thermal paste is a thermally conductive compound which is used as an interface between the CPU and the heatsink itself. Thermal paste trys to eliminate the amount of air gapes or space inbetween the heatsink and CPU in order to maxamize the amount of heat transfer in between the two.
