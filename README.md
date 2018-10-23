@@ -37,60 +37,60 @@ Here are our six core certifications:
 
 #### 1. Responsive Web Design Certification
 
-- Basic HTML and HTML5
-- Basic CSS
-- Applied Visual Design
-- Applied Accessibility
-- Responsive Web Design Principles
-- CSS Flexbox
-- CSS Grid <br />
+. Basic HTML and HTML5
+. Basic CSS
+. Applied Visual Design
+. Applied Accessibility
+. Responsive Web Design Principles
+. CSS Flexbox
+. CSS Grid <br />
   <br />
   **Projects**: Tribute Page, Survey Form, Product Landing Page, Technical Documentation Page, Personal Portfolio Webpage
 
 #### 2. JavaScript Algorithms and Data Structures Certification
 
-- Basic JavaScript
-- ES6
-- Regular Expressions
-- Debugging
-- Basic Data Structures
-- Algorithm Scripting
-- Object Oriented Programming
-- Functional Programming <br />
+. Basic JavaScript
+. ES6
+. Regular Expressions
+. Debugging
+. Basic Data Structures
+. Algorithm Scripting
+. Object Oriented Programming
+. Functional Programming <br />
   <br />
   **Projects**: Palindrome Checker, Roman Numeral Converter, Caesars Cipher, Telephone Number Validator, Cash Register
 
 #### 3. Front End Libraries Certification
 
-- Bootstrap
-- jQuery
-- Sass
-- React
-- Redux
-- React and Redux <br />
+. Bootstrap
+. jQuery
+. Sass
+. React
+. Redux
+. React and Redux <br />
   <br />
   **Projects**: Random Quote Machine, Markdown Previewer, Drum Machine, JavaScript Calculator, Pomodoro Clock
 
 #### 4. Data Visualization Certification
 
-- Data Visualization with D3
-- JSON APIs and Ajax <br />
+. Data Visualization with D3
+. JSON APIs and Ajax <br />
   <br />
   **Projects**: Bar Chart, Scatterplot Graph, Heat Map, Choropleth Map, Treemap Diagram
-
+  <br />
 #### 5. APIs and Microservices Certification
 
-- Managing Packages with Npm
-- Basic Node and Express
-- MongoDB and Mongoose <br />
+. Managing Packages with Npm
+. Basic Node and Express
+. MongoDB and Mongoose <br />
   <br />
   **Projects**: Timestamp Microservice, Request Header Parser, URL Shortener, Exercise Tracker, File Metadata Microservice
 
 #### 6. Information Security and Quality Assurance Certification
 
-- Information Security with HelmetJS
-- Quality Assurance and Testing with Chai
-- Advanced Node and Express <br />
+. Information Security with HelmetJS
+. Quality Assurance and Testing with Chai
+. Advanced Node and Express <br />
   <br />
   **Projects**: Metric-Imperial Converter, Issue Tracker, Personal Library, Stock Price Checker, Anonymous Message Board
 
@@ -138,5 +138,5 @@ Copyright © 2018 freeCodeCamp.org
 
 The content of this repository bound by the following licenses:
 
-- The computer software is licensed under the [BSD-3-Clause](LICENSE.md) License.
-- The [curricular content](https://www.npmjs.com/package/@freecodecamp/curriculum) in the [`/curriculum`](/curriculum) folder and its subdirectories are licensed under the [CC-BY-SA-4.0](/curriculum/LICENSE.md) License.
+. The computer software is licensed under the [BSD-3-Clause](LICENSE.md) License.
+. The [curricular content](https://www.npmjs.com/package/@freecodecamp/curriculum) in the [`/curriculum`](/curriculum) folder and its subdirectories are licensed under the [CC-BY-SA-4.0](/curriculum/LICENSE.md) License.
