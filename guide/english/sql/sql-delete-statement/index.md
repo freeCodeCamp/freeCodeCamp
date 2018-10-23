@@ -31,5 +31,5 @@ Or depending on your RDBMS you could use the TRUNCATE TABLE statement which dele
 ```sql
 TRUNCATE TABLE Person;
 ```
-Resources
-https://www.w3schools.com/sql/sql_delete.asp
+#### More Information
+- [SQL Delete](https://www.w3schools.com/sql/sql_delete.asp)
