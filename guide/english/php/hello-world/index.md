@@ -7,9 +7,9 @@ PHP scripts are executed on the server.
 
 Before you continue you should have a basic understanding of the following:
 
-### HTML
-### CSS
-### JavaScript
+### HTML link here
+### CSS link here
+### JavaScript link here
 PHP files can contain Text, HTML, CSS, JavaScript, and PHP code.
 A PHP script is executed on the server, and the plain HTML result is sent back to the browser.
 
