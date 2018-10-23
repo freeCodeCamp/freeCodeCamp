@@ -249,3 +249,5 @@ https://books.goalkicker.com/OracleDatabaseBook/
 This list was compiled from multiple suggestion threads on Reddit and Stackoverflow. 
 
 Please feel free to add more that you have found useful!
+#### An Introduction to Statistical Learning: with Applications in R 
+-[Amazon](https://www.amazon.in/Introduction-Statistical-Learning-Applications-Statistics/dp/1461471370/ref=pd_sim_14_3?_encoding=UTF8&pd_rd_i=1461471370&pd_rd_r=e7dc2683-d6a6-11e8-8154-b98823ec2447&pd_rd_w=SlXwF&pd_rd_wg=Sz0Kd&pf_rd_i=desktop-dp-sims&pf_rd_m=A1VBAL9TL5WCBF&pf_rd_p=153bd337-ec7e-4eac-ad08-4a60709340fb&pf_rd_r=WM0RQGQ6KRFVB23HS2PN&pf_rd_s=desktop-dp-sims&pf_rd_t=40701&psc=1&refRID=WM0RQGQ6KRFVB23HS2PN)
