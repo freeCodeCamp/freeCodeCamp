@@ -6,7 +6,9 @@ Vamos discutir classes abstratas. Antes de mergulhar neste tutorial, é melhor q
 
 Classes abstratas são classes que podem ser subclassificadas (isto é, estendidas), mas não podem ser instanciadas. Você pode pensar neles como uma **versão** de **classe** de interfaces ou como uma interface com código real anexado aos métodos.
 
-Considere o seguinte exemplo para entender classes abstratas: Você tem uma classe Vehicle que define certas funcionalidades básicas (métodos) e certos componentes (variáveis ​​de objeto) que uma máquina deve ter, para ser classificada como veículo. Você não pode criar um objeto de Veículo porque um veículo em si é um conceito abstrato. No entanto, você pode estender a funcionalidade da classe de veículo para criar um carro ou uma motocicleta.
+Um exemplo em que eu utilizei uma classe abstrata, foi em um programa, que simulava batalhas entre heróis e vilões da terra média. E na interface de batalha do programa era basicamente sempre a mesma, o que mudava porém eram as imagens dos personagens, a vida, os nomes e os ataques. Pra não ter que ficar repetindo código eu fiz um classe abstrata em que estaria todo o set padrão da batalha lá, assim em cada novo herói que adicionava eu apensar precisava adicionar as suas caractersticas como nome, imagem, ataques e vida.
+
+Outro exemplo para entender classes abstratas: Você tem uma classe Vehicle que define certas funcionalidades básicas (métodos) e certos componentes (variáveis ​​de objeto) que uma máquina deve ter, para ser classificada como veículo. Você não pode criar um objeto de Veículo porque um veículo em si é um conceito abstrato. No entanto, você pode estender a funcionalidade da classe de veículo para criar um carro ou uma motocicleta.
 
 \`\` \`java classe abstrata Veículo { // variável usada para declarar o não. de rodas em um veículo rodas int privadas;
 
