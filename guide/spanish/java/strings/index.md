@@ -41,7 +41,7 @@ Cuando creas un literal de cadena, la JVM lo verifica internamente, lo que se co
 Puede probar esto usando la comparación de objetos rápida, tragar `==` y los `equals()` implementados `equals()` .
 
 ```java
-System.out.println(str == str2); // This prints 'true' 
+ System.out.println(str == str2); // This prints 'true' 
  System.out.println(str == str3); // This prints 'false' 
  System.out.println(str.equals(str3)); // This prints 'true' 
 ```
@@ -139,6 +139,6 @@ String a = "Sam";
 
 ```
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMTA1MDA4ODA2OSw4NDg5NTc0MTUsMTkzNj
-c1MTgxMF19
+eyJoaXN0b3J5IjpbLTY2ODY3MDU0OSwxMDUwMDg4MDY5LDg0OD
+k1NzQxNSwxOTM2NzUxODEwXX0=
 -->
