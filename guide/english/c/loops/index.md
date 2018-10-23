@@ -134,7 +134,7 @@ The next section is a boolean condition that will be checked for true or false, 
 The final section is referred to as the 'increment/decrement'. Its job is to perform some operation every loop - usually adding or subtracting from the initial variable - after the code within the brackets has been run through. In this case, it's just adding one to the count. This is the most common way for the increment to be used, because it lets you keep count of how many times you've run through a for loop.
 
 ### Syntax Comparison
-```
+```C
 
 int main()                            
 {                          
