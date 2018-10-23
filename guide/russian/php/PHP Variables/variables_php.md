@@ -55,4 +55,4 @@ localeTitle: Переменные PHP
   
   
   ### Дополнительная информация:
-*   [Переменные в PHP](http://php.net/manual/ru/language.variables.php)
+*   [Переменные в PHP](http://php.net/manual/ru/language.variables.php).
