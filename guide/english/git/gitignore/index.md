@@ -10,7 +10,7 @@ A local `.gitignore` file is usually placed in the root directory of a project. 
 To create a local `.gitignore` file, create a text file and name it `.gitignore` (remember to include the `.` at the beginning). Then edit this file as needed. Each new line should list an additional file or folder that you want Git to ignore.
 
 Note: While creating the `.gitignore` file from your Windows explorer, you might get an error like this:
-![gitignore file creation error in Windows](gitignore-file-creation-error-windows.png)
+![gitignore file creation error in Windows](https://i.imgur.com/hs2xw8o.png)
 
 One way to circumvent this issue is to create this `.gitignore` file using `notepad.exe`. Open Notepad and then select File -> Save As -> Write `.gitignore` and choose "All Files" as the type. Then it will create the `.gitignore` file for you.
 
