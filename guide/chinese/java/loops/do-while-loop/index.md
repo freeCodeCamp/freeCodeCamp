@@ -53,3 +53,8 @@ int i = 10;
  while (i >= 10); 
 
 ```
+
+输出：
+```
+    The value of i is 10
+```
