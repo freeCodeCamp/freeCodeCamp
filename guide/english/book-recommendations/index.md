@@ -106,6 +106,11 @@ title: Books to Read for Programmers
 - [Wiley](https://www.wiley.com/en-id/Programming+Interviews+Exposed:+Secrets+to+Landing+Your+Next+Job,+2nd+Edition-p-9780470121672)
 - ISBN: 978-0-470-12167-2
 
+## Design Patterns
+*Head First Design Patterns* by Eric Freeman and Elisabeth Robson
+- [Amazon Smile](https://smile.amazon.com/Head-First-Design-Patterns-Brain-Friendly/dp/0596007124)
+- ISBN-13: 978-0596007126
+
 ## Java
 
 *Head First Java* by Kathy Sierra and Bert Bates
