@@ -38,4 +38,4 @@ As of 2016, blockchain 2.0 implementations continue to require an off-chain orac
 * [Introduction to Bitcoin, Ethereum and Smart Contracts](https://github.com/WizardOfAus/WizardsEthereumWorkshop)
 * [Blockchain academic papers](https://github.com/decrypto-org/blockchain-papers)
 * [Blockchain Resources](https://github.com/BlockchainDevs/CryptocurrencyAwesome/blob/master/README.md)
-
+* [HTC launches its blockchain-focused phone, but you can only buy it in cryptocurrency](https://www.google.com/search?q=Blockchain&rlz=1C1VFKB_enUS725US725&oq=Blockchain&aqs=chrome..69i57j69i60l2.2554757j0j1&sourceid=chrome&ie=UTF-8)
