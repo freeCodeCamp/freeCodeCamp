@@ -84,3 +84,60 @@ When working with arrays, there are a few important things to keep in mind:
 2) Named keys must be escaped to be accessed (i.e. $bikes[not my favorite] would not work).
 
 For more information, please see [PHP: Arrays](http://php.net/manual/en/language.types.array.php)
+
+## Sorting an array
+
+An elements of an array can be sorted in alphabetical or numerical order with ascending and descending it with predefined sorting methods.
+
+### sort() Method
+
+Sorts an elements in an ascending order.
+
+```
+<?php 
+
+$myArray = ['Kivi','Lichi','Banana','Apple'];
+sort($myArray);
+$arrayLength = count($myArray);
+for($i = 0; $i < $arrayLength; $i++){
+    echo $myArray[$i];
+    echo '<br />';
+}
+?>
+```
+Would give sorted array in ascending order:
+
+```
+Apple
+Banana
+Kivi
+Lichi
+
+```
+
+## rsort() Method
+
+Sorts an elements in a descending order.
+
+```
+<?php 
+
+$myArray = ['Kivi','Apple','Banana','Lichi'];
+rsort($myArray);
+$arrayLength = count($myArray);
+for($i = 0; $i < $arrayLength; $i++){
+    echo $myArray[$i];
+    echo '<br />';
+}
+?>
+```
+Would give sorted array in descending order:
+
+```
+Lichi
+Kivi
+Banana
+Apple
+
+```
+There are more array sorting function.For more information, please visit [PHP: Arrays](http://php.net/manual/en/language.types.array.php)
