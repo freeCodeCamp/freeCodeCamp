@@ -51,3 +51,8 @@ dependencies automatically for you, and is useful when you `git clone` a reposit
 * A Beginner's Guide to npm: <a href='https://www.sitepoint.com/beginners-guide-node-package-manager/' target='_blank' rel='nofollow'>sitepoint</a>
 * If you want a comprehensive video series, check this out: <a href='https://youtu.be/6fj0cpmMiVg' target='_blank' rel='nofollow'>youtube</a>
 * And here's the official series from npm: <a href='https://youtu.be/pa4dc480Apo' target='_blank' rel='nofollow'>youtube</a>
+
+<!---Meme Goes Here-->
+Here is a funny meme! (hover to see the title text):
+Meme: 
+![alt text](https://i.redd.it/5f8ro53fg1211.png "Fork It, You Must ~ Yoda Quote Of the Day")
