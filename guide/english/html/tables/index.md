@@ -92,6 +92,12 @@ Result:
 	  </tbody>
 	</table>
 
+The table can also be applied a border with the css as follows
+```html
+table, th, td {
+    border: 1px solid black;
+}
+```
 
 #### More Information:
 
