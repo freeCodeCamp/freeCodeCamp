@@ -8,7 +8,7 @@ An HTML table is defined with the `<table>` tag.
 Each table row is defined with the `<tr>` tag. Inside a row there may be table headers or table data.
 
 * A table header is defined with the `<th>` tag. By default, table headings are bold and centered.
-* A table data/cell is defined with the `<td>` tag.
+* A table data/cell is defined with the `<td>` tag. The cells can contain all types of HTML elements such as text, images, lists, tables, etc.
 
 A more complex HTML table may also include `<caption>`, `<col>`, `<colgroup>`, `<thead>`, `<tfoot>`, and `<tbody>` elements in it.
 
@@ -95,4 +95,7 @@ Result:
 
 #### More Information:
 
-<a href='https://developer.mozilla.org/en-US/docs/Web/HTML/Element/table' target='_blank' rel='nofollow'>MDN Article on the HTML <table> tag</a>
++ [MDN Article on the HTML &lt;table&gt; tag](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/table)  
++ [HTML Tables at W3Schools](https://www.w3schools.com/html/html_tables.asp)  
++ [Tables with Multi-level Headers](https://www.w3.org/WAI/tutorials/tables/multi-level/)
+
