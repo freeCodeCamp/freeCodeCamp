@@ -51,6 +51,8 @@ int main()
 Note that now the program runs perfectly.
 The output will be : `I Love freeCodeCamp!`
 
+Tip: As you go on using different data structures like vectors, graphs etc you need to include respective libraries. It's an headache to remember all those libraries and involves too much confusion during implementation. I would recommend to use #include<bits/stdc++.h> in the beginning of learning c++. As you proceed, you'll come to know about different header files and their purposes. 
+
 ### Now , let's change the text to something else like this:
 
 ```cpp
