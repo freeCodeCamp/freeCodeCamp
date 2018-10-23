@@ -20,7 +20,7 @@ In my life as a user, and later a developer, who benefits from accessibility in 
 
 If you fall outside these rather broad categories, please let me know. I always like to hear from the people who read what I write about. Implementing accessibility impacts the entire team, from the colors chosen by the designer, the copy written by the copywriter, and to you, the developer.
 
-## So, what is accessibility anyway?
+### So, what is accessibility anyway?
 
 Accessibility in itself is a bit of a misleading term sometimes, especially if English is your second language. It is sometimes referred to as inclusive design.
 
@@ -41,7 +41,7 @@ You could ask yourself questions like the following ones:
 
 This is where accessibility comes into play. Accessibility basically entails making your content as friendly, as easy to 'access' as possible for the largest amount of people. This includes people who are deaf, low-vision, blind, dyslexic, mute, on a slow connection, colorblind, suffering from epilepsy, mental fatigue, age, physical limitations, etc.
 
-## Why implement accessibility?
+### Why implement accessibility?
 
 You may think that accessibility doesn't apply to you or to your users, so why implement it? What would a blind person do with a photo editing tool?
 
@@ -57,7 +57,7 @@ Last year, airline websites were included in this list which meant that even her
 
 There's variations on this legislation all over the world, some more severe and all-encompassing than others. Not knowing about that fact doesn't make the lawsuit go away, sadly.
 
-## Ok, so accessibility is a big deal. Now how do we implement it?
+### Ok, so accessibility is a big deal. Now how do we implement it?
 
 That question, sadly, is harder to answer than it may seem. The Harry Potter quote at the top is there for a reason, and its not my being an avid Fantasy reader.
 
