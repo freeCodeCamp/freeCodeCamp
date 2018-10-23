@@ -54,6 +54,10 @@ title: Books to Read for Programmers
 - [Amazon Smile](https://smile.amazon.com/Soft-Skills-software-developers-manual/dp/1617292397?pldnSite=1)
 - ISBN-13: 9781617292392
 
+*UX For Beginners: A Crash course in 100 Short Lessons* by Joel Marsh
+- [Amazon Smile](https://www.amazon.com/UX-Beginners-Crash-Course-Lessons/dp/1491912685)
+- ISBN-13: 978-1491912683
+
 ## Algorithms
 
 *Introduction to Algorithms, 3rd Edition (MIT Press)* by Thomas H. Cormen and Charles E. Leiserson
