@@ -43,7 +43,7 @@ The margin property in CSS defines the outermost portion of the box model, creat
 Vertical margins on different elements that touch each other (thus have no content, padding, or borders separating them) will collapse, forming a single margin that is equal to the greater of the adjoining margins. This does not happen on horizontal margins (left and right), only vertical (top and bottom).
 
 ## Browser Support
-It is effectively supported in all browsers (since IE6+, Firefox 2+, Chrome 1+ etc)
+It is effectively supported in all browsers (since IE6+, Firefox 2+, Chrome 1+, etc).
 
 ### More Information
 - <a href='https://www.w3.org/TR/css3-box/#the-margin' target='_blank' rel='nofollow'>W3C Working Draft</a>
