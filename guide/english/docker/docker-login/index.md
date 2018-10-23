@@ -12,7 +12,7 @@ The command should be run like this:
 docker login -u <username> <private registry url>  
 ```
 
-After this it will ask for the password for the `admin` user.
+After this it will ask for the password for the `<username>` user.
 
 #### More Information:
 - [Docker CLI docs: login](https://docs.docker.com/engine/reference/commandline/login/)
