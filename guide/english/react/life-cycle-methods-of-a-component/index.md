@@ -42,6 +42,22 @@ e. `componentDidUpdate()`
 
 a. `componentWillUnmount()`
 
+## Examples:
+
+componentDidMount() called after a component is mounted to the DOM. If there is any call for setState() then will trigger a re-rendering of a component to the DOM.
+
+```
+componentDidMount(){
+  setTimeout( () => {
+    this.setState({
+      value: 1
+    });
+  }, 2500);
+}
+
+```
+Would set the State value to 1 after 2.5 sec.
+
 ## Some interesting facts to notice:
 
 - `constructor`, `componentWillMount`, `componentDidMount` and `componentWillUnmount` will be called only once during the lifecycle of a component.
