@@ -169,3 +169,4 @@ Output:
 
 #### More Information:
 * Source: <a href='https://docs.oracle.com/javase/tutorial/java/nutsandbolts/arrays.html' target='_blank' rel='nofollow'>Java Arrays</a>
+* <a href='http://tutorials.jenkov.com/java/arrays.html' target'_blank' rel='nofollow'>More Java Arrays</a>
