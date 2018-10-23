@@ -1,10 +1,10 @@
 ---
 title: With
-localeTitle: Con
+localeTitle: With
 ---
-## Con
+## With
 
-La declaración de JavaScript `with` es una forma abreviada de editar varias propiedades en un objeto. La mayoría de los desarrolladores de desalentar el uso de `with` , y que son mejor no usar esta palabra clave.
+La declaración de JavaScript `with` es una forma abreviada de editar varias propiedades en un objeto. La mayoría de los desarrolladores desaconseja el uso de `with` , y la recomendacion es no usar esta palabra clave.
 
 **Nota** : `"strict mode"` prohíbe el uso de `with` .
 
@@ -17,7 +17,7 @@ with (expression)
 
 ### Ejemplo de uso
 
-En JavaScript, puedes modificar individualmente las propiedades de un objeto como a continuación:
+En JavaScript, se pueden modificar individualmente las propiedades de un objeto de la siguiente manera:
 
 ```javascript
 let earth = {}; 
@@ -25,7 +25,7 @@ let earth = {};
  earth.continents = 7; 
 ```
 
-`with` le da una taquigrafía para modificar las propiedades de un objeto:
+`with` proporciona una forma abreviada para modificar las propiedades de un objeto:
 
 ```javascript
 with (earth) { 
@@ -34,7 +34,7 @@ with (earth) {
  } 
 ```
 
-Si bien este ejemplo está diseñado, puede comprender los casos de uso `with` más si tiene objetos más grandes como el siguiente:
+Si bien este ejemplo está diseñado expresamente para demostrar el uso de `with`, se pueden comprender mejor los casos de uso de `with` si se tiene objetos más grandes como el siguiente:
 
 ```javascript
 earth.continents.australia.geography.ocean = "Pacific"; 
