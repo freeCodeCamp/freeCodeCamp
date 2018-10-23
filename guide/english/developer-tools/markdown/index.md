@@ -2,12 +2,14 @@
 title: Markdown
 ---
 ## Markdown
-Markdown is a lightweight markup language with plain text formatting syntax. It is designed so that it can be converted to HTML and many other formats using a tool by the same name. Markdown is often used to format README files, for writing messages in online discussion forums, and to create rich text using a plain text editor.  You can also write Markdown in your text editor (like Sublime Text or Visual Studio Code).
+Markdown is a lightweight markup language with plain text formatting syntax. It is designed so that it can be converted to HTML and many other formats using a tool by the same name. Markdown is often used to format README files, for writing messages in online discussion forums, and to create rich text using a plain text editor. You can also write Markdown in your text editor (like Sublime Text or Visual Studio Code). A good way that some developers use markdown is about taking notes, you can have a good looking result without the hustle of styling in your text editor manually. 
 Markdown is gaining in visibility and popularity through the emergence of streamlined, "distraction-free" text editors.
 
 
 ## More Information:
 A cheatsheet is one of the easiest way to learn Markdown. Check out <a href='https://github.com/adam-p/markdown-here/wiki/Markdown-Cheatsheet' target='_blank' rel='nofollow'>this popular cheatsheet</a>.
+
+This website is also great, with a simple cheatsheet and a little tutorial, really brief. <a href='https://commonmark.org/' target='_blank' rel='nofollow'>Cheetsheet with a tutorial</a>
 
 You can also check out this online tutorial: <a href='https://www.markdowntutorial.com' target='_blank' rel='nofollow'>Markdown Tutorial</a>
 
