@@ -1,12 +1,12 @@
 ---
 title: Electron
-localeTitle: Elétron
+localeTitle: Electron
 ---
-## Electron - Crie aplicativos de desktop Cross Platform com JavaScript, HTML e CSS
+## Electron - Crie aplicativos de desktop multiplataforma com JavaScript, HTML e CSS
 
-O Electron permite que você crie aplicativos de desktop multiplataforma usando a tecnologia da web. Você pode construir aplicativos de desktop para Windows, Mac e os mais comuns do Linux.
+O Electron permite que você crie aplicativos de desktop multiplataforma usando a tecnologia da web. Você pode construir aplicativos de desktop para Windows, Mac e as distribuições mais comuns do Linux.
 
-O Electron é construído no Chromium (a versão de código aberto do Google Chrome). Você Use tecnologias da Web como HTML, JavaScript e CSS para criar aplicativos eletrônicos. que significa que você pode usar a maioria das tecnologias da Web que você quiser para criar seu aplicativo de desktop nativo. Por exemplo, você pode usar o [React](https://medium.freecodecamp.org/building-an-electron-application-with-create-react-app-97945861647c) ou o [Angular](https://scotch.io/tutorials/creating-desktop-applications-with-angularjs-and-github-electron) para criar seu primeiro aplicativo de desktop.
+O Electron é construído no Chromium (a versão de código aberto do Google Chrome). Você usa tecnologias da Web como HTML, JavaScript e CSS para criar aplicativos Electron. O que significa que você pode usar a maioria das tecnologias da Web que você quiser para criar seu aplicativo de desktop nativo. Por exemplo, você pode usar o [React](https://medium.freecodecamp.org/building-an-electron-application-with-create-react-app-97945861647c) ou o [Angular](https://scotch.io/tutorials/creating-desktop-applications-with-angularjs-and-github-electron) para criar seu primeiro aplicativo de desktop.
 
 Além disso, o Electron vem com suporte para atualização automática, relatórios de falhas, e menus nativos.
 
@@ -15,11 +15,11 @@ Recursos principais podem ser explorados usando as [demos](https://github.com/el
 Alguns aplicativos criados usando o Electron incluem:
 
 *   [Atom](https://atom.io/) (editor de texto de código aberto do GitHub)
-*   [Código do Visual Studio](https://code.visualstudio.com) (editor de texto de código aberto da Microsoft)
+*   [Visual Studio Code](https://code.visualstudio.com) (editor de texto de código aberto da Microsoft)
 *   [Skype](https://www.skype.com/) (aplicativo popular de bate-papo por vídeo da Microsoft)
 *   [Slack](https://slack.com/) (um aplicativo de mensagens para equipes)
-*   [Discórdia](https://discordapp.com) (um aplicativo de mensagens popular para gamers)
-*   [Área de trabalho do Github](https://desktop.github.com/) (cliente de desktop oficial do Github)
+*   [Discord](https://discordapp.com) (um aplicativo de mensagens popular para gamers)
+*   [Github Desktop](https://desktop.github.com/) (cliente de desktop oficial do Github)
 
 ### Referências adicionais de informação
 
