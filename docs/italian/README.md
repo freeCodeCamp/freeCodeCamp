@@ -27,7 +27,7 @@ Questa cartella contiene tutta la documentazione sul come contribuire a freeCode
 
 1. Come lavorare negli articoli Guida.
 2. Come lavorare sulle Coding Challenges.
-3. Come far girare freeCodeCamp locally.
+3. Come far girare freeCodeCamp in locale.
 4. Come catturare le email locali in uscita.
 
 ## Guide di stile
