@@ -3,7 +3,7 @@ title: Sketch
 ---
 ## Sketch
 
-Sketch is a professional design application for the Mac that utilizes a vector-based workflow. The interface is clean and inviting for new users as well as being a familiar tool for users of Adobe Fireworks. Sketch has become a popular alternative tool to Photoshop for users who do not need an over abundance of options for interface designs.
+Sketch is a professional design application for the Mac that utilizes a vector-based workflow. The interface is clean and inviting for new users as well as being a familiar tool for users of Adobe Fireworks. Sketch has become a popular alternative tool to Adobe's Photoshop and Illustrator for users who do not need an over abundance of options for interface designs.
 
 ### Why Sketch?
 
@@ -11,7 +11,7 @@ Sketch is a professional design application for the Mac that utilizes a vector-b
 * Prototyping
 * Collaborate with others
 * Lots of plugins
-* Export files in multiple formats such as png, svg etc. Even 2x versions retina displays with ease
+* Export files in multiple formats such as png, svg etc. Even 2x versions for retina displays are easily exportable
 * Vast community
 * Easily copy CSS attributes from design elements
 * Exports style guide in easy to read HTML/CSS 
