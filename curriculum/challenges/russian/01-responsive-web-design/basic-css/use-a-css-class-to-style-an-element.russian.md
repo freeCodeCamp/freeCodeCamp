@@ -3,14 +3,14 @@ id: bad87fee1348bd9aecf08806
 title: Use a CSS Class to Style an Element
 challengeType: 0
 videoUrl: ''
-localeTitle: Используйте класс CSS для стилизации элемента
+localeTitle: Используйте класс CSS для улучшения элемента
 ---
 
 ## Description
-<section id="description"> Классы - многоразовые стили, которые можно добавить к элементам HTML. Вот пример объявления класса CSS: <blockquote> &lt;Стиль&gt; <br> .blue-text { <br> цвет синий; <br> } <br> &lt;/ Стиль&gt; </blockquote> Вы можете видеть, что мы создали класс CSS, называемый <code>blue-text</code> в <code>&lt;style&gt;</code> . Вы можете применить класс к HTML-элементу следующим образом: <code>&lt;h2 class=&quot;blue-text&quot;&gt;CatPhotoApp&lt;/h2&gt;</code> Обратите внимание, что в элементе <code>style</code> CSS имена классов начинаются с периода. В атрибуте класса HTML-элементов имя класса не включает период. </section>
+<section id="description"> Классы можно описать как заготовки для различных стилей, которые можно добавить к элементам HTML. Вот пример объявления класса CSS: <blockquote> &lt;style&gt; <br> .blue-text { <br> color: blue; <br> } <br> &lt;/ style&gt; </blockquote> Здесь показано как мы создали CSS класс, называемый <code>blue-text</code> в теге <code>&lt;style&gt;</code> . Вы можете применить класс к HTML-элементу следующим образом: <code>&lt;h2 class=&quot;blue-text&quot;&gt;CatPhotoApp&lt;/h2&gt;</code> Обратите внимание на то, что в элементе <code>style</code> CSS имена классов начинаются с точки, в то время как в атрибуте класса HTML-элемента имя класса не включает в себя точку. </section>
 
 ## Instructions
-<section id="instructions"> Внутри элемента <code>style</code> измените селектор <code>h2</code> на <code>.red-text</code> и обновите значение цвета от <code>blue</code> до <code>red</code> . Дайте вашему элементу <code>h2</code> атрибут <code>class</code> со значением <code>&#39;red-text&#39;</code> . </section>
+<section id="instructions"> Внутри элемента <code>style</code> измените имя CSS класса <code>h2</code> на <code>.red-text</code>, а так же, измените значение цвета с <code>blue</code> на <code>red</code> . Присвойте вашему элементу <code>h2</code> атрибут <code>class</code> со значением <code>&#39;red-text&#39;</code> . </section>
 
 ## Tests
 <section id='tests'>
@@ -19,9 +19,9 @@ localeTitle: Используйте класс CSS для стилизации �
 tests:
   - text: Ваш элемент <code>h2</code> должен быть красным.
     testString: 'assert($("h2").css("color") === "rgb(255, 0, 0)", "Your <code>h2</code> element should be red.");'
-  - text: Ваш элемент <code>h2</code> должен иметь <code>red-text</code> .
+  - text: Ваш элемент <code>h2</code> должен иметь атрибут <code>class</code> со значением <code>red-text</code> .
     testString: 'assert($("h2").hasClass("red-text"), "Your <code>h2</code> element should have the class <code>red-text</code>.");'
-  - text: В вашей таблице стилей должен быть объявлен класс <code>red-text</code> и его цвет будет красным.
+  - text: Имя вашего класса при его объявлении должно быть <code>red-text</code>, а так же, его цвет должен быть красным.
     testString: 'assert(code.match(/\.red-text\s*\{\s*color\s*:\s*red;\s*\}/g), "Your stylesheet should declare a <code>red-text</code> class and have its color set to red.");'
   - text: 'Не используйте встроенные объявления стиля, такие как <code>style=&quot;color: red&quot;</code> в вашем элементе <code>h2</code> .'
     testString: 'assert($("h2").attr("style") === undefined, "Do not use inline style declarations like <code>style="color&#58; red"</code> in your <code>h2</code> element.");'
