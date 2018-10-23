@@ -1,3 +1,8 @@
+---
+title: Annotations
+---
+
+## Annotations
 Hmm, what is an annotation??
 
 It is a form of metadata that provides information about the program that isn’t a part of the program itself. Some general uses of annotations are:
