@@ -3,7 +3,7 @@ title: Haskell
 ---
 
 ## What is Haskell?
-Haskell is a standardized, general-purpose, purely functional programming language with declarative and strong static typing.
+Haskell is a standardized, general-purpose, purely functional programming language with declarative, and strong static typing.
 
 Haskell has deep roots in mathematics, and you will soon learn to appreciate the implications of it.
 
