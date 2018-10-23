@@ -145,6 +145,10 @@ title: Books to Read for Programmers
 - [Amazon Smile](https://smile.amazon.com/Core-Python-Applications-Programming-3rd/dp/0132678209)
 - ISBN-13: 978-0132678209
 
+*Learn Python Programming: A beginner's guide to learning the fundamentals of Python language to write efficient, high-quality code, 2nd Edition
+- [Amazon Smile](https://www.amazon.com/Learn-Python-Programming-fundamentals-high-quality/dp/1788996666/ref=sr_1_1_sspa?ie=UTF8&qid=1540274967&sr=8-1-spons&keywords=python+programming&psc=1)
+- ISBN-13: 978-1788996662
+
 ## Soft Skills
 
 *Soft Skills: The software developer's life manual*
