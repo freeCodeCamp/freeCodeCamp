@@ -67,3 +67,4 @@ The `<a href="#">` may also be applied to images and other HTML elements.
 <base href="https://www.freecodecamp.org/a-href/">This gives a base url for all further urls on the page</a>
 <link href="style.css">This is a live link to an external stylesheet</a>
 ```
+#### For more information refer to the following link: <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/a">MDN</a>
