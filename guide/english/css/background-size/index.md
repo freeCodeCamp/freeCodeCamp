@@ -3,7 +3,7 @@ title: Background Size
 ---
 ## Background Size
 
-The background-size property specifies the size of the background images. You can set a length or a percentage, with the first value being the width and the second one being the height. You can also use one of the 5 keyword values:
+The `background-size` property specifies the size of the background images. You can set a length or a percentage, with the first value being the width and the second one being the height. You can also use one of the 5 keyword values:
 
 ```css
 /* Background size property values that can be used */
