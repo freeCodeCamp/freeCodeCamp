@@ -2,7 +2,7 @@
 title: Input
 ---
 ## Input
-The HTML `<input>` tag is used within a form to declare an input element.
+The HTML `<input>` tag is used within a form to declare an input element. A form does not enclose the input element.
 It allows the user to enter data.
 
 ## Example
