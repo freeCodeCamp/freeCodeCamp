@@ -77,7 +77,7 @@ button {
 
 ![Rounded Buttons](https://image.ibb.co/cfH00m/button_bradius.png "圆形按钮")
 
-### 可怜的按钮
+### 當滑鼠滑入的按钮
 
 要在将鼠标移到按钮上时更改按钮的样式，请使用：hover选择器：
 ```
@@ -90,6 +90,16 @@ button:hover {
 ![Hoverable Buttons](https://image.ibb.co/hxQnfm/button_hover.png "可怜的按钮")
 
 要确定悬停效果的速度，请使用属性`transition-duration` 。
+
+### 去除按钮的边界
+去除按钮的边界
+```
+button {
+  border: none; 
+  padding: 10px 15px;
+  background: tomato;
+}
+```
 
 ### 禁用按钮
 
