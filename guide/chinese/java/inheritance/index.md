@@ -1,8 +1,8 @@
 ---
 title: Inheritance
-localeTitle: 遗产
+localeTitle: 继承
 ---
-# 遗产
+# 继承
 
 Java继承是指Java类从其他类`inherit`属性的能力。可以把它想象成一个从父母那里继承属性的孩子，这个概念非常相似。在Java lingo中，它也被称为_扩展_类。一些简单的事情要记住：
 
