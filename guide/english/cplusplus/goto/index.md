@@ -21,6 +21,19 @@ goto <label>;
 
 goto is something that transcends all loops. To be clearer on this point, here is an example.
 
+GOTO AS A FOR LOOP
+goto command can be used as a for loop
+example: a program to add first n numbers
+    main()
+    {
+       int i=0,sum=0,n;
+       cin>>n;
+       l1: sum+=i;
+           i++;
+           if(i<=n)
+             goto l1;
+     }
+     
 https://code.sololearn.com/cI4qqQA8W2q3
 
 However, care must be taken to use goto very carefully, especially in the early days of coding as it can lead to crazy issues, if not understood well enough.
