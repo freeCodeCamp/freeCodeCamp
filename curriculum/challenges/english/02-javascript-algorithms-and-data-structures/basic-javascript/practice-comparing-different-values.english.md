@@ -49,7 +49,7 @@ function compareEquality(a, b) {
   return "Not Equal";
 }
 
-// Change this value to test
+// Change the function definition above to test
 compareEquality(10, "10");
 ```
 
