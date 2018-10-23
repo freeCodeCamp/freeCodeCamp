@@ -8,20 +8,20 @@ In this section, we'll have guides to a wide variety of tools used by designers.
 ### UI
 Great for static content. 
 
-[Sketch](https://www.sketchapp.com) - [Guide](https://github.com/freeCodeCamp/guides/blob/master/src/pages/designer-tools/sketch/index.md)
+[Sketch](https://www.sketchapp.com) - [Guide](https://guide.freecodecamp.org/designer-tools/sketch/)
 
-[Adobe Photoshop](http://adobe.com/Photoshop) - [Guide](https://github.com/freeCodeCamp/guides/blob/master/src/pages/designer-tools/photoshop/index.md)
+[Adobe Photoshop](http://adobe.com/Photoshop) - [Guide](https://guide.freecodecamp.org/designer-tools/photoshop/)
 
-[Adobe Illustrator](http://adobe.com/Illustrator) - [Guide](https://github.com/freeCodeCamp/guides/blob/master/src/pages/designer-tools/illustrator/index.md)
+[Adobe Illustrator](http://adobe.com/Illustrator) - [Guide](https://guide.freecodecamp.org/designer-tools/illustrator/)
 
-[Figma](https://www.figma.com) - [Guide](https://github.com/freeCodeCamp/guides/blob/master/src/pages/designer-tools/Figma/index.md)
+[Figma](https://www.figma.com) - [Guide](https://guide.freecodecamp.org/designer-tools/figma/)
 
 ### Interaction
 Better for complicated interactions.
 
-[Adobe Experience Design](www.adobe.com/products/experience-design.html) - [Guide](https://github.com/freeCodeCamp/guides/blob/master/src/pages/designer-tools/Experience-design/index.md)
+[Adobe Experience Design](www.adobe.com/products/experience-design.html) - [Guide](https://guide.freecodecamp.org/designer-tools/experience-design/)
 
-[Framer](https://framer.com) - [Guide](https://github.com/freeCodeCamp/guides/blob/master/src/pages/designer-tools/framer/index.md)
+[Framer](https://framer.com) - [Guide](https://guide.freecodecamp.org/designer-tools/framer/)
 
 ### Wireframes and prototyping
 Ideal for click-through prototypes.
