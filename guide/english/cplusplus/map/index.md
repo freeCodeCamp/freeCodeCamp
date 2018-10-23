@@ -121,6 +121,10 @@ for(it=first.begin(); it!=first.end(); ++it){
 }
 ```
 
+## The cout statement in the above syntax example can also be written as follows
+```c++
+cout << (*it).first << " => " << (*it).second << '\n';
+
 Here you can learn more about map: <a href="http://www.cplusplus.com/reference/map/map/map/" target="_blank">cpluspluc_map</a>
 
 N.B: All code in example are in C++11 version. You can learn more about C++ version <a href="http://en.cppreference.com/w/cpp/compiler_support" target="_blank">Here</a>
