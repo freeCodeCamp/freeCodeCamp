@@ -64,6 +64,10 @@ title: Books to Read for Programmers
 - [Amazon Smile](https://smile.amazon.com/Cracking-Coding-Interview-Programming-Questions/dp/098478280X)
 - ISBN-13: 978-0984782802
 
+*Algorithms Unlocked (The MIT Press)
+- [Amazon Smiles](https://www.amazon.com/Algorithms-Unlocked-Press-Thomas-Cormen/dp/0262518805)
+- ISBN-13: 978-0262518802
+
 ## BASH
 
 *The Linux Command Line: A Complete Introduction 1st Edition by William E. Shotts Jr*
