@@ -34,11 +34,11 @@ var(--custom-name)
 
 ### Solution
 
-In ```.penguin``` class we need to add ```:root``` and change the value of ```--penguin-belly``` to ```white```:
+In the ```:root``` selector we need to declare the ```--penguin-belly``` variable and give it the value of ```pink```:
 
 ```css 
   :root {
-    --penguin-belly: white;
+    --penguin-belly: pink;
   }
 ```
 
