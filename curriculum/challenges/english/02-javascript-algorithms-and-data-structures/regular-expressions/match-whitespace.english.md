@@ -57,6 +57,8 @@ let result = sample.match(countWhiteSpace);
 <section id='solution'>
 
 ```js
-// solution required
+let sample = "Whitespace is important in separating words";
+let countWhitespace = /\s/g;
+let result = sample.match(countWhiteSpace);
 ```
 </section>
