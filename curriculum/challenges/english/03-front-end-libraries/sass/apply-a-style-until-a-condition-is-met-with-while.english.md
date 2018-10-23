@@ -90,13 +90,7 @@ tests:
 
 ## Solution
 <section id='solution'>
-
-To use the while loop within SASS a boolean condition has to setup. For this challenge we can take advantage of a counter and use that as part of the loop. The counter ```x``` is set to 1 before the ```@while``` statement. The boolean condition we're checking is ```$x < 11``` (is the variable x less than 11). If the value of $x is less than 11 it will continue to loop. 
-
-Inside the loop we use the ```$x``` variable by appending it the ```.text-``` class name using ```#{variable}```, as well using it to assign the value by multiplying the counter by 5px.
-
 ```js
-// solution required
 <style type='text/sass'>
   $x: 1;
   @while $x < 11 {
