@@ -18,8 +18,8 @@ Salida:
 
 Puede crear un objeto String de las siguientes maneras:
 
-1.  `String str = "I am a String"; //as a String literal`
-2.  `String str = "I am a " + "String"; //as a constant expression`
+1.  `String str = "Yo soy una cadena"; //como una cadena literal`
+2.  `String str = "Yo I am a " + "String"; //as a constant expression`
 3.  `String str = new String("I am a String"); //as a String Object using the constructor`
 
 Usted podría estar pensando: ¿Cuál es la diferencia entre los tres?
@@ -139,5 +139,5 @@ String a = "Sam";
 
 ```
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTUyMDc4MzA4OSwxOTM2NzUxODEwXX0=
+eyJoaXN0b3J5IjpbLTE1MjMzNTM0NTcsMTkzNjc1MTgxMF19
 -->
