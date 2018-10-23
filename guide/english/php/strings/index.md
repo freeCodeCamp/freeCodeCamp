@@ -15,6 +15,8 @@ The example below returns the length of the string "Hello world!":
 echo strlen("Hello world!"); // outputs 12
 ?>
 ````
+A string is series of characters.
+PHP only supports a 256-character set and hence does not offer native Unicode support.
 
 ## Count The Number of Words in a String
 The PHP str_word_count() function counts the number of words in a string:
