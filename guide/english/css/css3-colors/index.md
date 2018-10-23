@@ -51,6 +51,19 @@ p {
 ```
 This rule again changes the font color of all p elements to green.
 
+You can also use a short-hand version of the hexadecimal values, using only 3 digits
+```css
+p {
+  color: #F0B;
+}
+```
+When using the shorthand version, you need to make sure the red, the green and the blue values are the same. `#F0B` becomes `#FF00BB`.
+
+Another example is a simple color, white `#fff`.
+
+This rule changes the font color of all p elements to magenta.
+
+
 ### HSL
 
 HSL has three values. <br>
