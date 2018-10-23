@@ -4,7 +4,7 @@ title: Numbers
 ## Numbers
 
 
-The implementation of JavaScript's `number`s is based on the `IEEE 754` standard, often called "floating-point." 
+The implementation of JavaScript's `numbers is based on the `IEEE 754` standard, often called "floating-point." 
 
 <a href='https://en.wikipedia.org/wiki/IEEE_754' target='_blank' rel='nofollow'>IEEE 754 Wikipedia Link</a>
 <br>
