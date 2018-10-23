@@ -1,3 +1,7 @@
+---
+title: Bash shutdown
+---
+
 Bash Command: shutdown
 
 `shutdown` - typing the shutdown command will schedule your system to be shutdown at a given point in time.
