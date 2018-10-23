@@ -175,9 +175,9 @@ O primeiro argumento é o "o quê" de React. O segundo argumento é o "onde" da 
  </script> 
  </body> 
 
-```](http://www.youtube.com/watch?feature=player_embedded&v=100pKUE3OPI) 
+```
 
-[O](http://www.youtube.com/watch?feature=player_embedded&v=100pKUE3OPI) [funcionário reage estado docs](https://reactjs.org/docs/introducing-jsx.html) : “Esta sintaxe de tag engraçada não é nem uma string nem um HTML. É chamado de JSX e é uma extensão de sintaxe para JavaScript. Recomendamos usá-lo com o React para descrever como deve ser a interface do usuário. O JSX pode lembrá-lo de uma linguagem de model, mas ela vem com todo o poder do JavaScript. O JSX produz "elements" do React ”.
+“Esta sintaxe de tag engraçada não é nem uma string nem um HTML. É chamado de JSX e é uma extensão de sintaxe para JavaScript. Recomendamos usá-lo com o React para descrever como deve ser a interface do usuário. O JSX pode lembrá-lo de uma linguagem de model, mas ela vem com todo o poder do JavaScript. O JSX produz "elements" do React ”.
 
 Muitas vezes, JSX enlouquece as pessoas que foram desenvolvedores por um tempo, porque parece HTML. Em uma idade muito precoce, os desenvolvedores aprendem a separação de interesses. O HTML tem o seu lugar, o CSS tem o seu lugar e o JavaScript tem o seu lugar. O JSX parece desfocar as linhas. Você está usando o que parece ser HTML, mas como o Facebook diz, vem com todo o poder do JavaScript.
 
@@ -211,13 +211,9 @@ ou
 
 [!["Assista](http://img.youtube.com/vi/YOUTUBE_VIDEO_ID_HERE/0.jpg)](http://www.youtube.com/watch?feature=player_embedded&v=100pKUE3OPI)
 
-[
-
 ### Recapitulando
 
 Então, vamos fazer uma rápida recapitulação. Na nossa tag head pegamos as tags de script para React, ReactDOM e Babel. Estas são as ferramentas que nosso navegador precisa em seus metadados para ler nosso código React e JSX em específico. Em seguida, localizamos a posição no DOM em que desejamos inserir nosso React, criando um elemento div com o ID de "app". Em seguida, criamos uma tag de script para inserir nosso código React. Usamos o método ReactDOM.render() que leva dois argumentos. O "o quê" do conteúdo do React, neste caso o nosso JSX, e o segundo argumento é o "onde" em que você deseja inserir o conteúdo do React no DOM. Neste caso, é o local com o id de "app".
-
-](http://www.youtube.com/watch?feature=player_embedded&v=100pKUE3OPI)
 
 [Como alternativa ao JSX, você pode usar o compilador ES6 e Javascript como o Babel.](http://www.youtube.com/watch?feature=player_embedded&v=100pKUE3OPI) [https://babeljs.io/](https://babeljs.io/)
 
