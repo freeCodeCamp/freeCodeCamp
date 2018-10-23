@@ -32,4 +32,4 @@ See the image below. It represents a blueprint of a class named car. An instance
 
 
 ## What next?
-Pick an OO language, and build a basic terminal based game to illustrate these concepts.
+Pick an OO language, such as C++ or Python, and build a basic terminal based game to illustrate these concepts.
