@@ -20,6 +20,10 @@ Sketch is a professional design application for the Mac that utilizes a vector-b
 
 Sketch is designed to build digital products rather than editing photos and print graphics. Sketch's clean interface helps keep you organized when mocking up or building out your UI/UX designs. The art boards that Sketch uses enforces a pixel grid for precise designs. Exporting designs is simple and supports different device resolutions.
 
+## I'm on Windows, what should I do ?
+
+Fortunately, there is alternative to Sketch. You can use [Figma](https://www.figma.com/), It's very used in the agency who are working on Windows. There is a lot of alternative, Figma is the more known today, but feel free to choose what you want to use.
+
 ### Useful Plugins for Sketch
 
 - [Zeplin - Generates and exports design assets and style guides](https://zeplin.io/)
