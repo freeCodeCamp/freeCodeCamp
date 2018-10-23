@@ -58,6 +58,8 @@ Since the early days of the web, there have been many versions of HTML
 |XHTML|2000|
 |HTML5|2014|
 
+There were other versions such as DHTML (Dynamic HTML) but these were not pure versions and included Stylesheet and JavaScript elements.
+
 #### Other Resources
 
 - [HTML Elements](https://guide.freecodecamp.org/html/elements)
