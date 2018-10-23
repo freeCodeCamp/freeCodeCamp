@@ -6,6 +6,7 @@ title: Bash touch
 
 **Change timestamps of files.**
 
+### Usage
 ```
 touch [options] filename
 ```
@@ -16,7 +17,7 @@ Commonly used options:
 - `-t` change timestamp to specific date ((YYYYMMDDHHMM.SS)) instead of current time.
 - `-r` use timestamp from first file to second file.
 
-Examples:
+### Example
 ```
 touch -t YYYYMMDDHHMM.SS filename
 touch -r file1 file2
