@@ -1,7 +1,7 @@
-Bash command: exit
 ---
 title: Bash Command exit
 ---
+
 ## Bash Command: exit
 
 `exit` - typing exit and pressing enter will close the current terminal window that you are working in.
