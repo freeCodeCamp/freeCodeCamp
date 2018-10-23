@@ -4,7 +4,7 @@ title: SQL Order By Keyword
 ## SQL Order By Keyword
 
 ### Order By (ASC, DESC)
-ORDER BY gives us a way to SORT the result set by one or more of the items in the SELECT section. Here is an SQL sorting the students by FullName in descending order. The default sort order is ascending (ASC) but to sort in the opposite order (descending) you use DESC.
+ORDER BY gives us a way to SORT the result set by one or more of the items in the SELECT section. Here is an SQL sorting the students by FullName in descending order. The default sort order is ascending using 'ASC' (sorts A-Z) but to sort in the opposite order (descending) you use 'DESC' (sorts Z-A).
 
 ```sql
 SELECT studentID, FullName, sat_score
