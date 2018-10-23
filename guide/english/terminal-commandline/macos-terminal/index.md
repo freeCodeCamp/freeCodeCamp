@@ -26,6 +26,10 @@ To switch to a new directory you use the command:
 
 which stands for change directory. 
 
+You can use ```cd <directory>``` to switch between directory
+
+Typing only `cd` will move to the home directory works same as `cd ~`
+
 Here is a list of common commands:
 
 Command | Usage
