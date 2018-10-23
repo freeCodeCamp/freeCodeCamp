@@ -35,27 +35,27 @@ Se estiver disponível e no caminho de busca do shell Unix tornar possível inic
 `hello_campers.py`
 
 ```python
-print('Hello campers!') 
+print('Hello campers!')
 ```
 
 Do terminal:
 ```
-$ python hello_campers.py 
- Hello campers! 
+$ python hello_campers.py
+Hello campers!
 ```
 
-"Quando várias versões do Python são instaladas, é possível chamá-las por versão, dependendo da configuração da instalação. No ambiente personalizado Cloud9 ide, elas podem ser chamadas como:
+Quando várias versões do Python são instaladas, é possível chamá-las por versão, dependendo da configuração da instalação. No ambiente personalizado Cloud9 ide, elas podem ser chamadas como:
 ```
-$ python --version 
- Python 2.7.6 
- $ python3 --version 
- Python 3.4.3 
- $ python3.5 --version 
- Python 3.5.1 
- $ python3.6 --version 
- Python 3.6.2 
- $ python3.7 --version 
- Python 3.7.1 
+$ python --version
+Python 2.7.6
+$ python3 --version
+Python 3.4.3
+$ python3.5 --version
+Python 3.5.1
+$ python3.6 --version
+Python 3.6.2
+$ python3.7 --version
+Python 3.7.1
 ```
 
 ## Modo Interativo Interpretador Python
@@ -64,44 +64,44 @@ O modo interativo pode ser iniciado chamando o interpretador Python com o sinali
 
 O modo interativo possui um prompt no qual os comandos do Python podem ser inseridos e executados:
 ```
-$ python3.5 
- Python 3.5.1 (default, Dec 18 2015, 00:00:00) 
- GCC 4.8.4 on linux 
- Type "help", "copyright", "credits" or "license" for more information. 
- >>> print("Hello campers!") 
- Hello campers! 
- >>> 1 + 2 
- 3 
- >>> exit() 
- $ 
+$ python3.5
+Python 3.5.1 (default, Dec 18 2015, 00:00:00)
+GCC 4.8.4 on linux
+Type "help", "copyright", "credits" or "license" for more information.
+>>> print("Hello campers!")
+Hello campers!
+>>> 1 + 2
+3
+>>> exit()
+$
 ```
 
 ## O Zen do Python
 
 Alguns dos princípios que influenciaram o design do Python estão incluídos como um ovo de Páscoa e podem ser lidos usando o comando dentro do modo interativo do interpretador Python:
 ```
->>> import this 
- The Zen of Python, by Tim Peters 
- 
- Beautiful is better than ugly. 
- Explicit is better than implicit. 
- Simple is better than complex. 
- Complex is better than complicated. 
- Flat is better than nested. 
- Sparse is better than dense. 
- Readability counts. 
- Special cases aren't special enough to break the rules. 
- Although practicality beats purity. 
- Errors should never pass silently. 
- Unless explicitly silenced. 
- In the face of ambiguity, refuse the temptation to guess. 
- There should be one-- and preferably only one --obvious way to do it. 
- Although that way may not be obvious at first unless you're Dutch. 
- Now is better than never. 
- Although never is often better than *right* now. 
- If the implementation is hard to explain, it's a bad idea. 
- If the implementation is easy to explain, it may be a good idea. 
- Namespaces are one honking great idea -- let's do more of those! 
+>>> import this
+The Zen of Python, by Tim Peters
+
+Beautiful is better than ugly.
+Explicit is better than implicit.
+Simple is better than complex.
+Complex is better than complicated.
+Flat is better than nested.
+Sparse is better than dense.
+Readability counts.
+Special cases aren't special enough to break the rules.
+Although practicality beats purity.
+Errors should never pass silently.
+Unless explicitly silenced.
+In the face of ambiguity, refuse the temptation to guess.
+There should be one-- and preferably only one --obvious way to do it.
+Although that way may not be obvious at first unless you're Dutch.
+Now is better than never.
+Although never is often better than *right* now.
+If the implementation is hard to explain, it's a bad idea.
+If the implementation is easy to explain, it may be a good idea.
+Namespaces are one honking great idea -- let's do more of those!
 ```
 
 ## Prós e contras do Python
@@ -142,15 +142,15 @@ Apenas observe que eles existem por enquanto.
 
 Voltando aos documentos, podemos ler sobre a função de [`print`](https://docs.python.org/3/library/functions.html#print) , uma [_função_](https://docs.python.org/3/library/functions.html) [interna da Biblioteca Padrão](https://docs.python.org/3/library/index.html) do [Python](https://docs.python.org/3/library/index.html) .
 ```
-print(*objects, sep=' ', end='\n', file=sys.stdout, flush=False) 
+print(*objects, sep=' ', end='\n', file=sys.stdout, flush=False)
 ```
 
 As funções integradas estão listadas em ordem alfabética. O nome é seguido por uma lista entre parênteses de parâmetros formais com valores padrão opcionais. Sob essa é uma breve descrição da função e seus parâmetros são dados e, ocasionalmente, um exemplo.
 
 A função de [`print`](https://docs.python.org/3/library/functions.html#print) no Python 3 substitui a instrução [`print`](https://docs.python.org/2/reference/simple_stmts.html#print) no Python 2.
 ```
->>> print("Hello world!") 
- Hello world! 
+>>> print("Hello world!")
+Hello world!
 ```
 
 Uma função é chamada quando o nome da função é seguido por `()` . Para o mundo Hello! Por exemplo, a função de impressão é chamada com uma string como um argumento para o primeiro parâmetro. Para o restante dos parâmetros, os padrões são usados.
@@ -163,13 +163,13 @@ O parâmetro `objects` é prefixado com um `*` que indica que a função terá u
 
 O Free Code Camp possui ótimos recursos. A web é um lugar grande, há muito mais para explorar:
 
-*   Livro de Práticas em Python: http://anandology.com/python-practice-book/index.html
-*   Pense no Python: http://greenteapress.com/thinkpython/html/index.html
-*   Python de Negócios Práticos: http://pbpython.com/
-*   Outro curso: https://realpython.com/?utm _source = fsp e utm_ medium = promo & utm\_campaign = bestresources
-*   Geral: https://www.fullstackpython.com/
-*   Aprenda o básico: https://www.codecademy.com/learn/learn-python
-*   Ciência da computação usando Python: https://www.edx.org/course/introduction-computer-science-mitx-6-00-1x-11?ref=hackernoon#!
-*   Lista de mais recursos para aprender python: https://github.com/vinta/awesome-python
-*   Python interativo: http://interactivepython.org/runestone/static/thinkcspy/index.html
-*   Guia do desenvolvedor para Python: https://devguide.python.org/
+* Livro de Práticas em Python: http://anandology.com/python-practice-book/index.html
+* Pense no Python: http://greenteapress.com/thinkpython/html/index.html
+* Python de Negócios Práticos: http://pbpython.com/
+* Outro curso: https://realpython.com/?utm _source = fsp e utm_ medium = promo & utm\_campaign = bestresources
+* Geral: https://www.fullstackpython.com/
+* Aprenda o básico: https://www.codecademy.com/learn/learn-python
+* Ciência da computação usando Python: https://www.edx.org/course/introduction-computer-science-mitx-6-00-1x-11?ref=hackernoon#!
+* Lista de mais recursos para aprender python: https://github.com/vinta/awesome-python
+* Python interativo: http://interactivepython.org/runestone/static/thinkcspy/index.html
+* Guia do desenvolvedor para Python: https://devguide.python.org/
