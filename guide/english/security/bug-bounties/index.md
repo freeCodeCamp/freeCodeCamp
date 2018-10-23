@@ -17,3 +17,6 @@ The companies that sponsor these programs gain several benefits:
 - Many eyes on their product are more likely to find more bugs than the typical QA team
 - Only have to pay for results, not for the time spent trying to find bugs
 - Encourages people who find vulnerabilties to turn them over to the company and not to the black market.
+
+### More Resources
+* [Bug Bounties - Wikipedia](https://en.wikipedia.org/wiki/Bug_bounty_program)
