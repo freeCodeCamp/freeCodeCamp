@@ -12,7 +12,7 @@ do
 	
 ```
 
-Note: Remember to use a semicolon ';' at the end of the condition.
+Note: Remember to use a semicolon ';' at the end of the condition or it may not compile correctly on some computers.
 
 ## Details about do-while loop
 
