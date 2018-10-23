@@ -11,3 +11,8 @@ This is a stub. <a href='https://github.com/freecodecamp/guides/tree/master/src/
 
 #### More Information:
 <!-- Please add any articles you think might be helpful to read before writing the article -->
+
+<!---Meme Goes Here-->
+Here is a funny meme! (hover to see the title text):
+Meme: 
+![alt text](http://www.columbia.edu/~zjn2101/intermediate-git/meme-merge.jpgE "Merge Conflict")
