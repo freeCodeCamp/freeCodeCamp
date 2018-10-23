@@ -1,5 +1,5 @@
 ---
-title: Behavioral patterns
+title: Behavioral Patterns
 ---
 
 ## Behavioral patterns
