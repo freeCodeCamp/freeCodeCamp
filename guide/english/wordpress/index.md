@@ -15,6 +15,11 @@ Just a few advantages of WordPress:
 * Has a blog built-in and ready to go whenever applicable. 
 * Has plugins, which extend functionality to WordPress sites. 
 
+Examples of Popular Drag and drop themes that makes WordPress website easy to build are:
+- Avada theme
+- Divi theme, and 
+- Elementor theme.
+
 Whether its page transitions or a customized contact form, WordPress users are only a few clicks away from success and a beautiful website.
 
 
