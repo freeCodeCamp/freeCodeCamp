@@ -33,6 +33,8 @@ Conditional Comments defines some HTML tags to be excuted when a certain coditio
 
 Conditional Comments are only recognised by Internet Explorer Version 5 through to Version 9 (IE5 - IE9).
 
+Older IE versions frequently need some extra CSS in order to show your pages right. 
+
 ### Example
 ```html
 <!DOCTYPE html>
