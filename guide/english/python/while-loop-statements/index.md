@@ -14,6 +14,7 @@ counter = 0
 while counter < 10:
    # Execute the block of code here as
    # long as counter is less than 10
+   counter += 1
 ```
 
 An example is shown below:
