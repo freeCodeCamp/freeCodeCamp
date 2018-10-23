@@ -10,7 +10,7 @@
     </tr>
 </table>
 
-# Como trabajar con correos salientes localmente (para flujos de trabajo de correo electrónico)
+# Como trabajar con correos enviados localmente (para flujos de trabajo de correo electrónico)
 
 > **Nota:** Este es un paso **Opcional** - Solo es requerido cuando trabajamos con flujos de trabajo de correo electrónico
 
