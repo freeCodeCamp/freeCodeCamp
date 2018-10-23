@@ -11,5 +11,5 @@ This is a stub. <a href='https://github.com/freecodecamp/guides/tree/master/src/
 
 #### More Information:
 <!-- Please add any articles you think might be helpful to read before writing the article -->
-
+For Comprehensive Reading: <a href='https://www.tutorialspoint.com/database_tutorials.htm' target='_blank' rel='nofollow'>Database Tutorial and Related Technologies</a> 
 
