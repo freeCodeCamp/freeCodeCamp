@@ -14,9 +14,9 @@ One tool in that toolbox should be accessibility. It is a tool that should ideal
 
 In my life as a user, and later a developer, who benefits from accessibility in any form of content, I have seen both ends of that spectrum. If you are reading this article, I am guessing you are in one of the following categories:
 
-*   You are a novice web developer and would like to know more about accessibility.
-*   You are a seasoned web developer and have lost your way (more on that later).
-*   You feel that there is a legal obligation from work, and need to learn more about it.
+1.  You are a novice web developer and would like to know more about accessibility.
+2.  You are a seasoned web developer and have lost your way (more on that later).
+3.   You feel that there is a legal obligation from work, and need to learn more about it.
 
 If you fall outside these rather broad categories, please let me know. I always like to hear from the people who read what I write about. Implementing accessibility impacts the entire team, from the colors chosen by the designer, the copy written by the copywriter, and to you, the developer.
 
@@ -30,14 +30,14 @@ But, is all content on your website actually readable, usable and understandable
 
 You could ask yourself questions like the following ones:
 
-*   If you add information that is only contained in an audio file, can a deaf person still get that information?
-*   If you denote an important part of your website with a certain color, will a colorblind person know about it?
-*   If you add images on your website that convey important information, how will a blind or low-vision person know about it?
-*   If you want to navigate the application with keyboard or mouth-stick, will it be possible and predictable?
-*   Does your application assume the orientation of the device, and what if the user can't physically change it?
-*   Are there forgiving timed aspects of your application for someone that might need more time to fill in a form?
-*   Does your application still work (progressive enhancement) assuming that JavaScript does not load in time?
-*   You can even go as far as saying, if your website is very resource-heavy, will someone on a slow or spotty connection be able to read your content?
+1.  If you add information that is only contained in an audio file, can a deaf person still get that information?
+2.  If you denote an important part of your website with a certain color, will a colorblind person know about it?
+3.  If you add images on your website that convey important information, how will a blind or low-vision person know about it?
+4.   If you want to navigate the application with keyboard or mouth-stick, will it be possible and predictable?
+5.   Does your application assume the orientation of the device, and what if the user can't physically change it?
+6.  Are there forgiving timed aspects of your application for someone that might need more time to fill in a form?
+7.   Does your application still work (progressive enhancement) assuming that JavaScript does not load in time?
+8.   You can even go as far as saying, if your website is very resource-heavy, will someone on a slow or spotty connection be able to read your content?
 
 This is where accessibility comes into play. Accessibility basically entails making your content as friendly, as easy to 'access' as possible for the largest amount of people. This includes people who are deaf, low-vision, blind, dyslexic, mute, on a slow connection, colorblind, suffering from epilepsy, mental fatigue, age, physical limitations, etc.
 
