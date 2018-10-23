@@ -93,7 +93,7 @@ title: Books to Read for Programmers
 - ISBN-13: 978-1491927069
 
 *Pro C# 7: With .NET and .NET Core Paperback – Nov 21 2017* by Andrew Troelsen (Author), Philip Japikse (Author)
-- https://www.amazon.com/Pro-NET-Core-Andrew-Troelsen/dp/1484230175/ref=sr_1_1?s=books&ie=UTF8&qid=1539643534&sr=1-1&keywords=Pro-NET-Core-Andrew-Troelsen
+- [Amazon Smile] https://smile.amazon.com/Pro-NET-Core-Andrew-Troelsen/dp/1484230175/ref=sr_1_1?s=books&ie=UTF8&qid=1539643534&sr=1-1&keywords=Pro-NET-Core-Andrew-Troelsen
 - ISBN-13: 978-1484230176
 
 ## Coding Interview
