@@ -36,7 +36,9 @@ In the above example, there are two input fields which ask the user to enter the
 
 
 ## Input
-The HTML `<input>` tag is of many types to enter data. Some of them are:
-Type:Text(This is the most common type which is used to create general textboxes)
-Type:Password(This type is used for creation of password feilds)
-Type:Hidden(This is a special type of Input that is not shown to the user but it is used for passing information from one page to another while using <a href> tag)
+The HTML `<input>` tag has many other types to enter data. Some of them are: <br />
+        &emsp;`text` (This is the most common type which is used to create general textboxes) <br />
+        &emsp;`password` (This type is used for creation of password fields) <br />
+        &emsp;`hidden` (This is a special type of Input that is not shown to the user but it is used for passing information from one page to another while using `<a href="">` tag) <br />
+        &emsp;`radio` (This is used to define radio buttons) <br />
+        &emsp;`checkbox` (This is used to create checkboxes in which a user can select more than one option) <br />
