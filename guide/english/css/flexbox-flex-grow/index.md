@@ -3,9 +3,9 @@ title: Flex Grow
 ---
 # Flex-grow
 
-A flex item can be set to ‘grow’ along the main axis. What this means is that the item will occupy any total available space inside the flex container, making it wider or taller depending on the ```flex-direction``` of the flex container. When there are multiple flex items in a container, the available space is shared among them to provided proportions. ```flex-grow:``` has no effect with static dimensions; use ```min-width:```, ```min-height:``` or ```flex-basis:```.
+A flex item can be set to ‘grow’ along the main axis. What this means is that the item will occupy any total available space inside the flex container, making it wider or taller depending on the <code>flex-direction</code> of the flex container. When there are multiple flex items in a container, the available space is shared among them to provided proportions. <code>flex-grow:</code> has no effect with static dimensions; use <code>min-width:</code>, <code>min-height:</code> or <code>flex-basis:</code>.
 
-Here’s an example with just one div in a flex container. Notice than ```min-``` is used with ```width``` and ```height``` to allow it to be affected. However, ```flex-grow:``` has not been applied in this instance.
+Here’s an example with just one div in a flex container. Notice than <code>min-</code> is used with <code>width</code> and <code>height</code> to allow it to be affected. However, <code>flex-grow:</code> has not been applied in this instance.
 
 ```css
 .container {
@@ -30,7 +30,7 @@ Here’s an example with just one div in a flex container. Notice than ```min-``
 ```
 ![alt text](https://raw.githubusercontent.com/leebut/Flexbox-Images/master/flex-grow-no-grow.png "flex-grow: not applied")
 
-The next example shows the div with ```flex-grow: 1;``` applied to the ```box``` class. With ```flex-grow:``` the div *grows* into the available space both sides of it.
+The next example shows the div with <code>flex-grow: 1;</code> applied to the <code>.box</code> class. With <code>flex-grow:</code> the div *grows* into the available space both sides of it.
 ```css
 .box {
   background-color: brown;
@@ -46,7 +46,7 @@ The next example shows the div with ```flex-grow: 1;``` applied to the ```box```
 
 The value of 1 could have been any number because it only becomes significant when multiple flex items are allocated different proportions of free space. It is similar to cutting a cake into pieces, one piece is the whole cake, but if there are two people, they get (as close to) one equal piece each. Let’s take a look at that now.
 
-In this example, the classes ```box``` and ```box2``` both receive 1 piece of the free space each (50%), an equal allocation. If the number were 15, they’d both receive 15 smaller pieces of the space.
+In this example, the classes <code>box</code> and <code>box2</code> both receive 1 piece of the free space each (50%), an equal allocation. If the number were 15, they’d both receive 15 smaller pieces of the space.
 ```css
 .box {
   background-color: brown;
@@ -75,7 +75,7 @@ In this example, the classes ```box``` and ```box2``` both receive 1 piece of th
 ```
 ![alt text](https://raw.githubusercontent.com/leebut/Flexbox-Images/master/flex-grow-two-items-grow-val-1.png "Two flex items receiving flex-grow: 1;")
 
-Let’s see what happens when ```box2``` is allocated ```flex-grow: 2;```.
+See what happens when Box 2 is allocated <code>flex-grow: 2;</code>.
 ```css
 .box2 {
   display: flex;
@@ -89,4 +89,4 @@ Let’s see what happens when ```box2``` is allocated ```flex-grow: 2;```.
 ```
 ![alt text](https://raw.githubusercontent.com/leebut/Flexbox-Images/master/flex-grow-two-items-grow-val-1%2B2.png "One item receives flex-grow: 1, the other receives flex-grow: 2")
 
-This time, ```box2``` receives twice as much free space as box. Remember, it does not make ```box2``` twice as wide. It is simply allocated twice as much free space. To use the cake analogy, class ```box``` receives one piece of cake, while ```box2``` receives two pieces.
+This time, Box 2 receives twice as much free space as Box 1. Remember, it does not make Box 2 twice as wide. It is simply allocated twice as much free space. To use the cake analogy, Box 1 receives one piece of cake, while Box 2 receives two pieces.
