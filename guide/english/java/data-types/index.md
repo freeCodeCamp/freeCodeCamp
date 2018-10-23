@@ -36,7 +36,7 @@ Byte data type is an 8-bit signed two's complement integer.
 
 ### short:
 
-Short data type is a 16-bit signed two's complement integer.
+Short data type is a 16-bit signed two's complement integer.It is also used to store the integer values.
 
     Wrapper Class: Short
 
