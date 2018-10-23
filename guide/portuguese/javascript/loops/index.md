@@ -7,6 +7,24 @@ Os loops são usados ​​em JavaScript para executar tarefas repetidas com bas
 Existem três tipos comuns de loops:
 
 *   [para](http://forum.freecodecamp.com/t/javascript-for-loop/14666)
+```javascript
+// Comando sem o for (para).
+console.log(1)
+console.log(2)
+console.log(3)
+```
+```javascript
+// Comando refatorado ultilizando for (para).
+for(let i = 1; i <= 3; i ++){
+  console.log(i)
+}
+```
+```javascript
+// Ambos terão o mesmo resultado, porem mais efetivo com for (para).
+1
+2
+3
+```
 *   [enquanto](http://forum.freecodecamp.com/t/javascript-while-loop/14668)
 *   [fazer enquanto](http://forum.freecodecamp.com/t/javascript-for-loop/14662)
 
