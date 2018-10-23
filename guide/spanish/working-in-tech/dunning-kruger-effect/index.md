@@ -1,7 +1,8 @@
 ---
 title: Dunning Kruger Effect
 localeTitle: Efecto Dunning Kruger
----## Efecto Dunning Kruger (DK)
+---
+## Efecto Dunning Kruger (DK)
 
 ### Definición de Wikipedia
 
@@ -11,9 +12,9 @@ En el campo de la psicología, el efecto **Dunning-Kruger** es un sesgo cognitiv
 
 El efecto DK es un aprendizaje importante para los desarrolladores de software. Se puede observar entre desarrolladores de todas las edades. Esto es más prominente entre los principiantes y los desarrolladores de nivel intermedio. Después de la lucha inicial, podrían sentirse más seguros de un idioma o de sus diseños. Esto los lleva a subestimar la complejidad de los requisitos del sistema o, lo que es peor, les impide crear mejores diseños de software. Para desarrolladores más experimentados, parece que han adquirido sabiduría a lo largo de los años. Son más humildes y mejores para juzgar la complejidad del sistema. (Esto podría no ser cierto para todos los desarrolladores senior).
 
-### ¡Tener cuidado!
+### ¡Cuidado!
 
-El efecto DK es exactamente opuesto al [síndrome](https://en.wikipedia.org/wiki/Impostor_syndrome) de [Imposter](https://en.wikipedia.org/wiki/Impostor_syndrome) . Debe encontrar el equilibrio perfecto entre ambos para su crecimiento profesional.
+El efecto DK es exactamente opuesto al [Síndrome del Impostor](https://es.wikipedia.org/wiki/S%C3%ADndrome_del_impostor). Debe encontrar el equilibrio perfecto entre ambos para su crecimiento profesional.
 
 ### ¿Cómo comprobar si sufro del efecto DK?
 
@@ -35,4 +36,4 @@ Lo siento, pero no hay una respuesta directa a esta pregunta. Puedes hacerte las
     
     Lecturas:
     
-*   [Wikipedia](https://en.wikipedia.org/wiki/Dunning%E2%80%93Kruger_effect)
+*   [Wikipedia](https://es.wikipedia.org/wiki/Efecto_Dunning-Kruger)
