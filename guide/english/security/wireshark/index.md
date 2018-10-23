@@ -12,7 +12,7 @@ Wireshark is a powerful tool, you might use it to:
 + Analyze traffic going through your network
 + Analyze the data your software is communicating to remote servers
 + Verify that data is being properly encrypted before being sent
-+ Development of networkcommunication protocols
++ Development of network communication protocols
 + Check for [Trojans](../trojans/) or other malicious software on your computer
 
 #### How do I get started?
