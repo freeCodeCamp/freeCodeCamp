@@ -5,6 +5,8 @@ title: PHP - Class
 ### Simple Class for Beginner!
 
 ```php
+<?php
+
 class Lab {
   private $name = '';
 
@@ -16,7 +18,7 @@ class Lab {
     return $this->name;
   }
 
-  public function say_my_name() {
+  public function sayMyName() {
     $name = $this->getName();
     return $name;
   }
@@ -25,5 +27,5 @@ class Lab {
 $breaking_bad = 'Heisenberg';
 $lab = new Lab();
 $lab->setName($breaking_bad);
-echo "My Name is " . $lab->say_my_name(). "!";
+echo "My Name is " . $lab->sayMyName(). "!";
 ```
