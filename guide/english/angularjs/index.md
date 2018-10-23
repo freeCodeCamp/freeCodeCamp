@@ -30,3 +30,26 @@ HTML:
 ```html
 <script src="/bower_components/angular/angular.js"></script>
 ```
+# Starting With Angularjs
+---
+## Defining angular app:
+
+```Script.js
+var myFirstApp = angular.module('My First App',[]);
+myFirstApp.controller('myFirstController',['$scope', function($scope){
+  console.log('This is my first angularjs app.');
+}]);
+
+```
+## Interpolation:
+
+```Script.js
+var myFirstApp = angular.module('My First App',[]);
+myFirstApp.controller('myFirstController',['$scope', function($scope){
+  $scope.name = 'John Doe';
+}]);
+
+HTML
+<h1>{{name}}</h1>
+
+```
