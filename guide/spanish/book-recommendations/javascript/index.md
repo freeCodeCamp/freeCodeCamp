@@ -11,7 +11,7 @@ Uno de los mejores libros en JavaScript. Una necesidad para los programadores pr
 *   [E-libro](https://eloquentjavascript.net/) (gratis)
 *   [Amazonas](https://www.amazon.com/gp/product/1593275846/ref=as_li_qf_sp_asin_il_tl?ie=UTF8&camp=1789&creative=9325&creativeASIN=1593275846&linkCode=as2&tag=marijhaver-20&linkId=VPXXXSRYC5COG5R5)
 
-_No sabes js_
+_No sabes JS_
 
 Seis series de libros de Kyle Simpson. Serie en profundidad sobre todos los aspectos de JavaScript.
 
