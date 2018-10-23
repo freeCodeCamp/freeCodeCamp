@@ -5,6 +5,7 @@ title: If Else Statement
 # If Else Statement
 
 The If-Else statement executes a block of code depending on whether your precondition is fullfilled or not.
+If the 'If' condition is not met then it performs the 'Else' block by default. 
 
 ## Example
 ```
