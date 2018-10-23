@@ -69,7 +69,7 @@ title: Data Types in R
 
 
 ## Data Frame
- It is more general than a matrix, in that different columns can have different basic data types. For example:
+ It is more general than a matrix, in that different columns can have different basic data types. Data frames are the most common way of storing datasets. For example:
 
 	> d <- c(1,2,3,4)
 	> e <- c("red", "white", "red", NA)
