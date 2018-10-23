@@ -20,30 +20,36 @@ HTML5 Introduces a host of semantic elements. Though we discussed HTML helped to
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Page Title</title>
+  <title>Title</title><! this is the title of the HTML page>
 </head>
 <body>
 
-  <h1>My First Heading</h1>
-  <p>My first paragraph.</p>
+  <h1>Hello World</h1> <This is the heading of the HTML page>
+  <p>We are humans.</p> <This is the paragraph of the HTML page>
 
 </body>
 </html>
 ```
 
-!DOCTYPE html: Defines this document to be HTML5
+!DOCTYPE html: This defines this document to be HTML5
 
-html: The root element of an HTML page
+html: This is the root element of an HTML page
 
-head: The element contains meta information about the document
+head: This element contains meta information about the document like description, etc.
 
-title: The element specifies a title for the document
+title: This element specifies the title for the document
 
-body: The element contains the visible page content
+body: This element contains the visible page content or the part which we mainly see.
 
-h1: The element defines a large heading
+h1-h6: These elements defines headings from large to small
 
-p: The element defines a paragraph
+p: This element defines a paragraph
+
+src: This element inserts a link into the html page
+
+img: This element inserts image(s) into the html page
+
+!: This element denotes comments used in the html
 
 ### HTML Versions
 
