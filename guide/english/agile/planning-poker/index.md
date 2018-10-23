@@ -32,3 +32,4 @@ Things worth mentioning:
 
 ### More Information:
 - Planning poker video: <a href='https://www.youtube.com/watch?v=MrIZMuvjTws' target='_blank' rel='nofollow'>YouTube</a>
+- A tool for "planning poker" done with remote teams: <a href='https://www.pointingpoker.com/' target='_blank' rel='nofollow'>Pointing Poker</a>
