@@ -4,7 +4,7 @@ title: Comments
 
 ## Comments
 
-Programmers use comments to add hints, notes, suggestions, or warnings to their source code; they have no effect on the actual output of the code. Comments can be very helpful in explaining the intent of what your code is or should be doing.
+Programmers use comments to add hints, notes, suggestions, or warnings to their source code; they have no effect on the actual output of the code. Comments can be very helpful in explaining the intent of what your code is or should be doing. Make sure that you write always clear and understandable comments.
 
 It is always best practice when starting out to comment more often than not, as it can help those reading your code to understand what exactly your code is intending to do.
 
