@@ -106,6 +106,10 @@ title: Books to Read for Programmers
 - [Wiley](https://www.wiley.com/en-id/Programming+Interviews+Exposed:+Secrets+to+Landing+Your+Next+Job,+2nd+Edition-p-9780470121672)
 - ISBN: 978-0-470-12167-2
 
+*Cracking the Coding Interview: 189 Programming Questions and Solutions 6th Edition
+- [Amazon Smile](https://www.amazon.com/Cracking-Coding-Interview-Programming-Questions/dp/0984782850)
+- ISBN-13:
+
 ## Java
 
 *Head First Java* by Kathy Sierra and Bert Bates
