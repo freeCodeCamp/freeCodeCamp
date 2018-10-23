@@ -170,3 +170,4 @@ def swap( A, x, y ):
 - [Algorithms: Bubble Sort - HackerRank (video)](https://www.youtube.com/watch?v=6Gv8vg0kcHc)
 - [Bubble Sort Algorithm - GeeksForGeeks (video)](https://www.youtube.com/watch?v=nmhjrI-aW5o)
 - [Bubble Sort Visualization](https://www.hackerearth.com/practice/algorithms/sorting/bubble-sort/visualize/)
+- [Bubble Sort Algorithm-SPOJ](https://www.spoj.com/problems/SBANK/)
