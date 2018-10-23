@@ -69,3 +69,8 @@ You'll learn many of the first princliples for data science tools and how algori
 - [A Byte of Python[FREE]](https://python.swaroopch.com)
 
 Please feel free to add more that you have found useful!
+#### Head First Python: A Brain-Friendly Guide
+Head First Python, you'll quickly grasp Python's fundamentals, working with the built-in data structures and functions. Then you'll move on to building your very own webapp, exploring database management, exception handling and data wrangling. If you're intrigued by what you can do with context managers, decorators, comprehensions and generators, it's all here. This second edition is a complete learning experience that will help you become a bonafide Python programmer in no time.
+- [amozon](https://www.amazon.in/Head-First-Python-Brain-Friendly-Guide/dp/9352134826/ref=sr_1_4?s=books&ie=UTF8&qid=1540285019&sr=1-4&keywords=python)
+- ISBN-10: 9789352134823
+- ISBN-13: 978-9352134823
