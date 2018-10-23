@@ -14,10 +14,15 @@ A collection of helpful Angular resources
 
 *   <a href='https://www.youtube.com/watch?v=5uhZCc0j9RY' target='_blank' rel='nofollow'>Routing in Angular JS</a> - Client Side Routing in 15 minutes
 *   <a href='https://www.youtube.com/watch?v=WuiHuZq_cg4' target='_blank' rel='nofollow'>Angular ToDo App</a> - An Angular ToDo app in 12 minutes
+*   <a href='https://www.youtube.com/watch?v=FlUCU13dJyo&list=PL4cUxeGkcC9gsJS5QgFT2IvWIX78dV3_v' target='_blank' rel='nofollow'>The Net  Ninja Course 25 videos</a>
 
 ### Courses
 
-*	<a href='https://egghead.io/browse/frameworks/angularjs' target='_blank' rel='nofollow'>Egghead.io AngularJS Courses ($)</a>
+* 	<a href='https://egghead.io/browse/frameworks/angularjs' target='_blank' rel='nofollow'>Egghead.io AngularJS Courses ($)</a>
+
+### Books
+
+*   <a href='https://books.goalkicker.com/AngularJSBook/' target='_blank' rel='nofollow'>AngularJS Book - goalkicker</a>
 
 ## Angular 2.x+
 
