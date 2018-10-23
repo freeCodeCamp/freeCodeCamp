@@ -17,7 +17,7 @@ Author: xyz
 Date: xx/xx/xxxx
 Purpose: abc
 -->
-Read more: https://html.com/tags/comment-tag/#ixzz4vtZHu5uR
+Read more: <a href="https://html.com/tags/comment-tag/#ixzz4vtZHu5uR" target="_blank">https://html.com/tags/comment-tag/#ixzz4vtZHu5uR</a>
 <!DOCTYPE html>
 <html>
 	<body>
