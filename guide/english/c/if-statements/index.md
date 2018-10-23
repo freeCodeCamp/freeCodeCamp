@@ -204,6 +204,10 @@ int main() {
     }
 }
 ```
+```
+output:
+NO! I am boss
+```
 
 What will be the the Output? "NO! I am boss"? if you are guessing this output then you are wrong.
 Why did this happen? because in the if statement you used "=" instead of "==" operator.
