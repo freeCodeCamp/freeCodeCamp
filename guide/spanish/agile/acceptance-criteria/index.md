@@ -19,3 +19,6 @@ Considere la siguiente situación: al aceptar la historia del usuario, el propie
 Nomad8 proporciona una [pregunta frecuente sobre los criterios de aceptación](https://nomad8.com/acceptance_criteria/)
 
 Agile líder en [criterios de aceptación](https://www.leadingagile.com/2014/09/acceptance-criteria/)
+
+
+hacktoberfest 
