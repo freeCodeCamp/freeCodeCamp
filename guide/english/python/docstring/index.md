@@ -57,6 +57,14 @@ def is_less_than_five(some_number):
   '''
   # Your code goes here
 ```
+### Note - Type Hints
+
+With the addition of type hints from Python 3.5.0, information about the type of inputs and outputs can be incorporated within the function definition itself. The advantage of including information about the type of inputs/outputs as type hints as opposed to including that information in docstrings is that IDEs cannot read/understand docstrings (They are like a comment to them) but can read type hints to give smarter and accurate suggestions. Type hints also allow IDEs to refactor the code easily and issue warnings if required. 
+Nonetheless, information which is supposed to be only human readable such as code usage, specifications, etc. would still need to be included in a docstring.
+
+To read more about type hints, visit:
+   * https://docs.python.org/3/library/typing.html
+   * https://stackoverflow.com/questions/32557920/what-are-type-hints-in-python-3-5
 
 ### Some useful links:
 Numpy and Google Docstrings are two commonly used approaches:
