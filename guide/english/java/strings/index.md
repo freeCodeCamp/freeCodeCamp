@@ -182,6 +182,16 @@ The result will be:
 ```
 My
 ```
+#### Converting Strings 
+
+To convert Strings to characters use toCharArray() method
+Example:
+```
+String text = "Hello World!";
+for(char c: text.toCharArray()) {
+   System.out.println(c)
+ }
+```
 
 **More Information:**
 - [String Documentation](https://docs.oracle.com/javase/7/docs/api/java/lang/String.html)
