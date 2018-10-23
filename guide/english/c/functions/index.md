@@ -84,8 +84,8 @@ This is pretty straightforward, because this is such a simple function. `a` is d
 So to recap what this function does- it gets two integers, divides them, and gives them back to whatever called it.
 
 ### Parameters of a function
-Parameters are used to pass arguements to the function.
-Their are two types of parameters:
+Parameters are used to pass arguments to the function.
+There are two types of parameters:
 1. Parameter Written In Function Definition is Called “Formal Parameter”.
 2. Parameter Written In Function Call is Called “Actual Parameter”. They are also known as arguments. They are passed to the function definition and a copy is created in the form of formal parameters.
 
