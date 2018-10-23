@@ -5,26 +5,11 @@ title: Linux Terminal
 
 # Using the Terminal in LINUX
 
-Most of the time users interact through a Graphical User Interface to interact with the computer. You use the mouse to point and click to open, move, or create new files or open applications. But, you can also use the Terminal Application to interact with your machine through written commands. When you use the terminal, it allows you to dig deeper and customize in a way not possible through the GUI. 
+Basically, a shell is a program that receives commands from the user and gives it to the OS to process, and it shows the output. Linux's shell is its main part. Its distros come in GUI (graphical user interface), but basically, Linux has a CLI (command line interface).
 
 ### Opening the Terminal and Navigating Directories
-Your terminal exists in the Applications directory. Open your Terminal app. You should see a prompt in the terminal window. it shoudl have the computer's name, followed by the User name (ABC), and then a '$.' If you are in the root directory, the last character will be a '#.'
+To open the terminal, press Ctrl+Alt+T in Ubuntu, or press Alt+F2, type in gnome-terminal, and press enter. OR Your terminal exists in the Applications directory. Open your Terminal app. You should see a prompt in the terminal window. it shoudl have the computer's name, followed by the User name (ABC), and then a '$.' If you are in the root directory, the last character will be a '#.'
 
-To see what directory you are working in, just type the command 
-
-```pwd```
-
-pwd stands for "Print Working Directory." Directory is another word for folder. 
-
-If you want to list the contents of your directory use the command: 
-
-```ls```
-
-To switch to a new directory you use the command: 
-
-```cd```
-
-which stands for change directory. 
 
 Here is a list of common commands:
 
@@ -38,9 +23,11 @@ mkdir | Create a new directory
 rmdir | remove a directory
 cp| Copy a file 
 rm | Remove a file 
+mv | move a file
 touch | to create a new file
 man | shows the manual pages of command
 --help | it show which ways the command can be used
+cat | to display the content of file
 
 ### Usage Examples
 
@@ -48,11 +35,11 @@ Some of the aforementioned commands aren't clear without examples. Below are a f
 
 #### Making a Directory
 
-```mkdir #YOUR-NEW-FOLDER-NAME-HERE```
+```mkdir #YOUR-NEW-FOLDER-NAME```
 
 #### Making a File 
 
-``` touch YOUR-FILE-NAME.TXT```
+``` touch FILE-NAME.TXT```
 
 You can make a file with any extension you choose. As long as it is in an a format accepted by the folder or machine.
 
