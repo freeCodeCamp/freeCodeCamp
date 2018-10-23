@@ -20,7 +20,7 @@ public class Example {
             this.mySecondVar = mySecondVar; // An instance variable must be initialized inside the constructor
 ```
 
-Think of a `Class` as a blueprint for creating something concrete. A `Class` tells you how the 'what' and 'how' an `object` of said Class will look once `instantiated`. In essence, it defines `properties` (say color, engine capacity) and `behavior` (stop, speed up, change gears, honk etc.) for a Car in the case below.
+Think of a `Class` as a blueprint for creating something concrete. A `Class` tells you how the 'what' and 'how' an `object` of said Class will look once `instantiated`. In essence, it defines `properties` (say color, engine capacity) and `behavior` (stop, speed up, change gears, honk etc.) for a Car in the case below.If You Define A Class As Static Or Any Member Variable As Static Then We Do Not Need To Create Object And Call The Function Or Variable Directly .
 
 Objects are _instances_ of a class. All objects are instances of a certain class. Imagine a class being a "template", from which every Object copies. When you create an Object, it basically creates a new object on the blueprint of a class. Now let's look at this in a little piece of code :
 
