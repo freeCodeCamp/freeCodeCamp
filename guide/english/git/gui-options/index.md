@@ -13,3 +13,5 @@ Most people prefer to use Git as a [CLI (command-line interface)](https://en.wik
 * [Git Tower](https://www.git-tower.com/mac/) is available for Mac and Windows.
 * [TortoiseGit](https://tortoisegit.org/) is a Windows Shell Interface to Git based on TortoiseSVN. It's open source and can be built with freely available software.
 * [SmartGit](https://www.syntevo.com/smartgit/) is a Git client free for a non-commercial use for Windows, Mac and Linux.
+* [GitEye](https://www.collab.net/downloads/giteye) is an Intuitive graphical Git client with the integration to the popular planning, tracking, code reviewing, and build tools. It is pre-integrated with CloudForge, TeamForge and GitHub, and works on most platforms.
+* [GITX-dev](https://github-windows.s3.amazonaws.com/GitHubSetup.exe) is a fork of GitX, a GUI for git revision-control system. GitX-dev has been especially developed for software developers for use in production environments.Is intended for MAC environment.
