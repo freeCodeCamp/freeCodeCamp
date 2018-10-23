@@ -20,6 +20,7 @@ The field of computer security is growing at a rapid rate every year, in a repor
 - Network Administrator
 - Support Desk Engineer
 - Security Engineer
+- Ethical hackers
 
 ### Books
 
@@ -37,7 +38,9 @@ The field of computer security is growing at a rapid rate every year, in a repor
 
 ["Lean In: Women, Work, and the Will to Lead" by Sheryl Sandberg](https://www.amazon.com/Lean-Women-Work-Will-Lead/dp/0385349947/)
 
-To see the full list, visit: https://talkpython.fm/episodes/show/130/10-books-python-developers-should-be-reading
+[Ethical Hacking and Penetration Testing Guide](https://www.amazon.in/Ethical-Hacking-Penetration-Testing-Guide/dp/1482231611)
+
+To know about more books, visit: https://talkpython.fm/episodes/show/130/10-books-python-developers-should-be-reading
 
 ### Articles
 
