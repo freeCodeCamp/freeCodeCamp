@@ -36,7 +36,7 @@ En este fragmento de código, ¿cuántos objetos de cadena se crean?
 
 La respuesta es: 2 objetos String son creados. `str` y `str2` refieren al mismo objeto. `str3` tiene el mismo contenido pero usando `new` se fuerza la creación de un nuevo objeto distinto.
 
-Cuando creas un literal de cadena, la JVM lo verifica internamente, lo que se conoce como el `String pool` , para ver si puede encontrar un objeto String similar (ya contenido). Si lo encuentra, devuelve la misma referencia. De lo contrario, simplemente continúa y crea un nuevo objeto String en el grupo para que El mismo control se puede realizar en el futuro.
+Cuando creas un literal de cadena, la JVM lo verifica internamente, lo que se conoce como el `String pool` , para ver si puede encontrar un objeto String similar (ya contenido). Si lo encuentra, devuelve la misma referencia. De lo contrario, simplemente continúa y crea un nuevo objeto String en el poo para que El mismo control se puede realizar en el futuro.
 
 Puede probar esto usando la comparación de objetos rápida, tragar `==` y los `equals()` implementados `equals()` .
 
@@ -139,6 +139,6 @@ String a = "Sam";
 
 ```
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTY2ODY3MDU0OSwxMDUwMDg4MDY5LDg0OD
-k1NzQxNSwxOTM2NzUxODEwXX0=
+eyJoaXN0b3J5IjpbLTI3NzM4NDA0NiwtNjY4NjcwNTQ5LDEwNT
+AwODgwNjksODQ4OTU3NDE1LDE5MzY3NTE4MTBdfQ==
 -->
