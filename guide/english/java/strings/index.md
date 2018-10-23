@@ -80,10 +80,10 @@ boolean equals(Object obj)
 It returns true if two objects are equal and false otherwise. 
 ```java
 String str = "Hello world";
-String str2 = "Hello world";
+String str2 = new String("Hello world");
 
 System.out.println(str == str2); // This prints false
-System.out.println(str.equals(str2); // This prints true
+System.out.println(str.equals(str2)); // This prints true
 ```
 The first comparison is false because "==" looks at the references and they aren't the same.
 
