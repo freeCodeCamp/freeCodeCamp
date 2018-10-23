@@ -18,11 +18,11 @@ The practices at the heart of **CD** will help you achieve a few very important 
 
 * **Low Risk releases.** The primary goal of continuous delivery is to make releases/deployments to production much painless, low-risk events that can be performed at any given time, on demand. By applying certain patterns, it is relatively straightforward to achieve zero-downtime deployments that are undetectable to users.
 
-* **Faster time to market.** When teams work togetherto automate the build and deployment. environment provisioning, and regression testign processes, developers can incorporate integration and regression testing into their daily work and completely remove these phases. Therefore, large amounts of re-work that plague the phased approach can be avoided.
+* **Faster time to market.** When teams work togetherto automate the build and deployment, environment provisioning, and regression testing processes, developers can incorporate integration and regression testing into their daily work and completely remove these phases. Therefore, large amounts of re-work that plague the phased approach can be avoided.
 
 * **Higher quality.** When developers have automated tools that discover regressions within minutes, teams are freed to focus their effort on user research and higher level testing activities such as exploratory testing, usability testing, and performance and security testing. These activities can be performed continuously throughout the delivery process, ensuring quality in to products and services from the beginning.
 
-* **Lower costs.** Anys successful software product or service will evolve significantly over the course of its lifetime. By investing in build, test, deployment and environment automation, the cost of making and delivering incremental changes to the software is substantially reduced, since the fixed costs associated with the release process are eliminated.
+* **Lower costs.** Any successful software product or service will evolve significantly over the course of its lifetime. By investing in build, test, deployment and environment automation, the cost of making and delivering incremental changes to the software is substantially reduced, since the fixed costs associated with the release process are eliminated.
 
 * **Better products.** CD makes it economic to work in small batches. This means the product gets feedback from users throughout the delivery lifecycle based on working software. The ideas for the software can be tested by users before building the whole features, thanks to certain techniques such as _A/B Testing_. This way, we can get features that don't bring any zero or negative value to the businesses.
 
