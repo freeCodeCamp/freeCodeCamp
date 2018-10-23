@@ -7,7 +7,7 @@ A constructor is a special method (function) definition within a class, the cons
 ```
 __init__(self)
 ```
-and is defined under class variables in the class defenition, in python we are only allowed to have one constructor since function overloading is not used in the language.
+and is defined under class variables in the class defenition, in python we are only allowed to have one constructor since function overloading is not used in the language. We can define a function with the same name multiple times but python will use the function which was defined last, we can see it as overriding the previous function.
 
 ## Constructor example
 
