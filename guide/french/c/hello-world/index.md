@@ -13,7 +13,7 @@ Pour écrire dans la console vous pouvez utiliser la fonction `printf()`, conten
  int main(void)
  {
 
-     printf("hello, world\n");  //lines starting with this are called comments..
+     printf("hello, world\n");  //Ceci est un commentaire.
 
      return 0;
  }
