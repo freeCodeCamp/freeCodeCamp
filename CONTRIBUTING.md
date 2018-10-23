@@ -21,7 +21,7 @@ We strictly enforce our ["Code of Conduct"](https://www.freecodecamp.org/code-of
 
 Happy contributing 🎉!
 
-## Here are some fun ways you can help
+#### Here are some fun ways you can help
 
 You can choose to contribute to any area that interests you:
 
@@ -31,7 +31,7 @@ You can choose to contribute to any area that interests you:
 
 3. Help us add subtitles to our [YouTube channel videos](https://www.youtube.com/channel/UC8butISFwT-Wl7EV0hUK0BQ/videos).
 
-## Contribute to this open source codebase
+#### Contribute to this open source codebase
 
 We have a huge open source codebase of the thousands of [coding challenges](https://learn.freecodecamp.org) and [guide articles](https://guide.freecodecamp.org).
 
