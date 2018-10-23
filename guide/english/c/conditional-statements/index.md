@@ -169,7 +169,7 @@ In the above pseudocode, suppose the value of n is equal to constant2. The compi
 The break statement is used to prevent the code running into the next case.
 
 ### Example:
-```
+```C
 // Program to create a simple calculator
 // Performs addition, subtraction, multiplication or division depending the input from user
 
@@ -202,6 +202,11 @@ int main()
             break;
 
         case '/':
+            if(secondNumber==0){
+                printf("division with zero is not allowed\n");
+                break;
+                //Avoid runtime error of division with zero
+            }
             printf("%.1lf / %.1lf = %.1lf",firstNumber, secondNumber, firstNumber/secondNumber);
             break;
 
