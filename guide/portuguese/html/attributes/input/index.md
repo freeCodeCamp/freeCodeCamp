@@ -32,11 +32,13 @@ A tag HTML `<input>` é usada em um formulário para declarar um elemento de ent
  </html> 
 ```
 
-No exemplo acima, existem dois campos de entrada que solicitam ao usuário que insira seus nomes e sobrenomes de acordo com as etiquetas especificadas. O envio `<button type="submit">` é outro tipo de entrada que é usado para levar os dados inseridos pelo usuário no formulário e enviá-los para algum outro local especificado no código.
+No exemplo acima, existem dois campos de entrada que solicitam ao usuário que insira seus nomes e sobrenomes de acordo com as tags especificadas. O envio `<button type="submit">` é outro tipo de entrada que é usado para levar os dados inseridos pelo usuário no formulário e enviá-los para algum outro local especificado no código.
 
 #### Mais Informações:
 
 [Youtube](https://www.youtube.com/watch?v=qJ9ZkxmVf5s)
+
+[Input W3C](https://www.w3schools.com/tags/tag_input.asp)
 
 ## Entrada
 
