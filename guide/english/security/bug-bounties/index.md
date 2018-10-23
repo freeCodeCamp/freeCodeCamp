@@ -17,3 +17,8 @@ The companies that sponsor these programs gain several benefits:
 - Many eyes on their product are more likely to find more bugs than the typical QA team
 - Only have to pay for results, not for the time spent trying to find bugs
 - Encourages people who find vulnerabilties to turn them over to the company and not to the black market.
+
+### More Information
+
+* One of the most popular Bug Bounties from Facebook: [Facebook Awards Server-Crushing Hacker With Its Biggest Ever Bounty on Forbes](http://fortune.com/2017/01/19/facebook-hacker-bug-bounty/)
+* Bug Bounties on Wikipedia: [Bug Bounties (Wiki)](https://en.wikipedia.org/wiki/Bug_bounty_program)
