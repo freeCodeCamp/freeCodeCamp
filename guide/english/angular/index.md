@@ -53,6 +53,27 @@ Then add a `<script>` to your `index.html`:
 
 For more information regarding the documentation, refer to the official site of [AngularJS](https://docs.angularjs.org/api) 
 
-You can install **Angular 2.x** and other versions by following the steps from the official documentation of [Angular](https://angular.io/guide/quickstart)
+**Angular 2.x and up**: 
+
+Install Angular CLI
+
+```shell
+npm install -g @angular/cli
+```
+
+Create a workspace and initial application
+
+```shell
+ng new my-app
+```
+
+Serve the application in browser
+
+```shell
+cd my-app
+ng serve --open
+```
+
+For more information regarding the documentation, refer to the official site of [Angular](https://angular.io/guide/quickstart)
 
 *Note : Please refer the Angular documentation for the updated information.*
