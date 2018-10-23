@@ -4,18 +4,16 @@ Joi.objectId = require('joi-objectid')(Joi);
 const schema = Joi.object().keys({
   block: Joi.string(),
   blockId: Joi.objectId(),
+  challengeOrder: Joi.number(),
   challengeType: Joi.number()
     .min(0)
     .max(9)
     .required(),
   checksum: Joi.number(),
   dashedName: Joi.string(),
-  description: Joi.array()
-    .items(Joi.string().allow(''))
-    .required(),
+  description: Joi.string().required(),
   fileName: Joi.string(),
-  files: Joi.object().pattern(
-    /(jsx?|html|css|sass)$/,
+  files: Joi.array().items(
     Joi.object().keys({
       key: Joi.string(),
       ext: Joi.string(),
@@ -32,6 +30,7 @@ const schema = Joi.object().keys({
   videoUrl: Joi.string().allow(''),
   helpRoom: Joi.string(),
   id: Joi.objectId().required(),
+  instructions: Joi.string().required(),
   isBeta: Joi.bool(),
   isComingSoon: Joi.bool(),
   isLocked: Joi.bool(),

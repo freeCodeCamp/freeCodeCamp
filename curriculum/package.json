@@ -21,17 +21,17 @@
     "prepare": "npm run build",
     "repack": "babel-node ./repack.js",
     "semantic-release": "semantic-release",
-    "test": "babel-node ./test-challenges.js | tap-spec",
+    "test": "node ./test-challenges.js | tap-spec",
     "unpack": "babel-node ./unpack.js"
   },
   "dependencies": {
-    "@freecodecamp/challenge-md-parser": "^1.0.0",
     "invariant": "^2.2.4"
   },
   "devDependencies": {
     "@commitlint/cli": "^7.0.0",
     "@commitlint/config-conventional": "^7.0.1",
     "@commitlint/travis-cli": "^7.0.0",
+    "@freecodecamp/challenge-md-parser": "^1.0.0",
     "@semantic-release/changelog": "^2.0.2",
     "@semantic-release/git": "^5.0.0",
     "babel-cli": "^6.3.17",
