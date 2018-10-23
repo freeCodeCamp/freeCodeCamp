@@ -85,6 +85,42 @@ In the example above, notice that we did not have to tell PHP which data type th
 PHP automatically converts the variable to the correct data type, depending on its value.
 In other languages such as C, C++, and Java, the programmer must declare the name and type of the variable before using it.
 
+# PHP Variables Scope
+
+In PHP, variables can be declared anywhere in the script.
+The scope of a variable is the part of the script where the variable can be referenced/used.
+PHP has three different variable scopes:
+ - local
+ - global
+ - static
+ 
+ A variable declared outside a function has a GLOBAL SCOPE and can only be accessed outside a function:
+ ````<?php
+$x = 5; // global scope
+
+function myTest() {
+    // using x inside this function will generate an error
+    echo "<p>Variable x inside function is: $x</p>";
+} 
+myTest();
+
+echo "<p>Variable x outside function is: $x</p>";
+?>
+````
+
+A variable declared within a function has a LOCAL SCOPE and can only be accessed within that function:
+````<?php
+function myTest() {
+    $x = 5; // local scope
+    echo "<p>Variable x inside function is: $x</p>";
+} 
+myTest();
+
+// using x outside the function will generate an error
+echo "<p>Variable x outside function is: $x</p>";
+?>
+````
+
 # Variable lifecycle
 
 In PHP variables have a default value. If a variable is not declared before you attempt to use it, its value will be NULL. It is unset. So you can't use it by writing "isset($variable)" before using it.
