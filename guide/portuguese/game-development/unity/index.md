@@ -1,6 +1,6 @@
 ---
 title: Unity
-localeTitle: Unidade
+localeTitle: Unity
 ---
 ## Desenvolvimento de Jogos com Unity
 
