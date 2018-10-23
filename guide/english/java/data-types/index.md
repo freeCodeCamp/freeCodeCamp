@@ -167,7 +167,7 @@ class demo{
 ```
 
 ## String:
-
+Strings are used when you wan to store a word or sentance.
 String is not a primitive data type, but it lets you store multiple character data types in an array and has many methods that can be used. It is used quite commonly when the user types in data and you have to manipulate it. 
 
 In the example below, we try to remove all of the letters from the string and output it:
