@@ -48,6 +48,7 @@ title: Operators
      int c = --a; // prefix operator; a = 5, c = 5
      ```
 // C Program to demonstrate the working of arithmetic operators
+```
 #include <stdio.h>
 int main()
 {
@@ -70,7 +71,7 @@ int main()
     
     return 0;
 }
-
+```
 ## 2. Relational Operators
 
 - `==` Equal - true when the two operands are equal
