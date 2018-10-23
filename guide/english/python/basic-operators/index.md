@@ -159,13 +159,13 @@ Consider a = 2 (in binary notation, 10) and b = 3 (in binary notation, 11) for t
 
 
 #### Assignment Operators
-An assignment operator is used to assign values to a variable. This is usually combined with other operators (like arithmetic, bitwise, etc.) where the operation is performed on the operands and the result is assigned to the left operand.
+An assignment operator is used to assign variable pointers to values stored on the heap. Python primarily works with pointers that are assigned addresses to data on the heap. This is usually combined with other operators (like arithmetic, bitwise, etc.) where the operation is performed on the operands and the result is pointed to by the variable it is assigned to.
 
 Consider the following examples,
 <br>
-<b>a = 18</b>. Here `=` is an assignment operator, and the result is stored in variable a.
+<b>a = 18</b>. Here `=` is an assignment operator, and the result is pointed to by the variable a.
 <br>
-<b>a += 10</b>. Here `+=` is an assignment operator, and the result is stored in variable a. This is same as a = a + 10.
+<b>a += 10</b>. Here `+=` is an assignment operator, and the result is pointed to by the variable a. This is not the same as a = a + 10. The operator += is an 'in place' compound operator. It modifies the original data 10 on the heap whereas a = a + 10 takes the value that was originally pointed to by a, 10, adds the numerical literal 10, takes that result 20 which is new data on the heap, and reassigns a to point to 20. This is true of all other compound operators.
 
 <table style="width:100%">
   <tr>
@@ -174,55 +174,55 @@ Consider the following examples,
   </tr>
   <tr>
     <td align="center">=</td>
-    <td>a = 5. The value 5 is assigned to the variable a</td>
+    <td>a = 5. The value 5 is pointed to by variable a.</td>
   </tr>
   <tr>
     <td align="center">+=</td>
-    <td>a += 5 is equivalent to a = a + 5</td>
+    <td>a += 5. The variable a is modified in place, so 5 is added to the original value a was pointed to.</td>
   </tr>
   <tr>
     <td align="center">-=</td>
-    <td>a -= 5 is equivalent to a = a - 5</td>
+    <td>a -= 5. The variable a is modified in place, so 5 is subtracted from the value a was pointing to.</td>
   </tr>
   <tr>
     <td align="center">*=</td>
-    <td>a *= 3 is equivalent to a = a * 3</td>
+    <td>a *= 3. The variable a is modified in place, so 3 is multiplied to from the value a was pointing to.</td>
   </tr>
   <tr>
     <td align="center">/=</td>
-    <td>a /= 3 is equivalent to a = a / 3</td>
+    <td>a /= 3. The variable a is modified in place, so 3 is dividing the value a was pointing to.</td>
   </tr>
   <tr>
     <td align="center">%=</td>
-    <td>a %= 3 is equivalent to a = a % 3</td>
+    <td>a %= 3. The operator mod % is being called on the variable a was pointing to. </td>
   </tr>
   <tr>
     <td align="center">**=</td>
-    <td>a **= 3 is equivalent to a = a ** 3</td>
+    <td>a **= 3. The operator ** is being called on the variable a was pointing to.</td>
   </tr>
   <tr>
     <td align="center">//=</td>
-    <td>a //= 3 is equivalent to a = a // 3</td>
+    <td>a //= 3. The operator // is  being called on the variable a was pointing to.</td>
   </tr>
   <tr>
     <td align="center">&=</td>
-    <td>a &= 3 is equivalent to a = a & 3</td>
+    <td>a &= 3. The operator & is  being called on the variable a was pointing to.</td>
   </tr>
   <tr>
     <td align="center">|=</td>
-    <td>a |= 3 is equivalent to a = a | 3</td>
+    <td>a |= 3. The operator | is  being called on the variable a was pointing to.</td>
   </tr>
   <tr>
     <td align="center">^=</td>
-    <td>a ^= 3 is equivalent to a = a ^ 3</td>
+    <td>a ^= 3. he operator ^ is  being called on the variable a was pointing to.</td>
   </tr>
   <tr>
     <td align="center">>>=</td>
-    <td>a >>= 3 is equivalent to a = a >> 3</td>
+    <td>a >>= 3. he operator >> is  being called on the variable a was pointing to.</td>
   </tr>
   <tr>
     <td align="center"><<=</td>
-    <td>a <<= 3 is equivalent to a = a << 3</td>
+    <td>a <<= 3. he operator << is  being called on the variable a was pointing to.</td>
   </tr>
 </table>
 
