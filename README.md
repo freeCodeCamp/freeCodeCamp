@@ -11,6 +11,7 @@ freeCodeCamp.org is a friendly community where you can learn to code for free. I
 
 Our full-stack web development curriculum is completely free and self-paced. We have thousands of interactive coding challenges to help you expand your skills.
 
+You can learn skills from here and can grow up.
 ## Table of Contents
 
 * [Certifications](#certifications)
