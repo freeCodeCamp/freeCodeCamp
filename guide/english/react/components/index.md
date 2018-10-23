@@ -84,4 +84,4 @@ const Cat = props =>
 
 ### More Information:
 
-[https://reactjs.org/docs/components-and-props.html](Components and Props)
+[Components and Props](https://reactjs.org/docs/components-and-props.html)
