@@ -43,3 +43,4 @@ A collection of helpful Angular resources
 
 * <a href='https://alligator.io/angular/' target='_blank' rel='nofollow'>Alligator.io</a>
 * <a href='https://blog.angularindepth.com/tagged/angular' target='_blank' rel='nofollow'>Angular In Depth</a>
+* <a href='https://blog.angular-university.io' target='_blank' rel='nofollow'>Angular University</a>
