@@ -43,3 +43,50 @@ int main () {
 > Item on index 3 is 4
 ```
 
+ # Break and Continue statements
+ * When "break" statement is executed, the loop stops executing all other statements in it and immediately comes out of the loop.
+ 
+ ```C
+#include <stdio.h>
+
+int main(void) {
+    int n = 5,i;
+   for(i=0;i<n;i++)
+   {
+   printf("%d\n",i);
+    if(n == 3) 
+        break;
+        }
+    return 0;
+}
+```
+```
+output:
+1
+2
+```
+
+* When "continue" statement is executed, the loop execution is skipped for that time and goes for incrementation/decrementation of the variable, validates the condition and continues the execution of the loop.
+
+```C
+#include <stdio.h>
+
+int main(void) {
+    int n = 5,i;
+   for(i=0;i<n;i++)
+   {
+   printf("%d\n",i);
+    if(n == 3) 
+        continue;
+        }
+    return 0;
+}
+```
+```
+output:
+1
+2
+4
+5
+```
+ 
