@@ -116,6 +116,20 @@ int linear_search(int arr[],int n,int num)
    return -1; 
 }
 ```
+### Example in C
+```
+int linearSearch(int arr[], int num)
+{
+        int len = (int)( sizeof(arr) / sizeof(arr[0]);
+        int *a = arr;
+        for(int i = 0; i < len; i++)
+        {
+                if(*(a+i) == num) return i;
+        }
+        return -1;
+}
+
+```
 
 ### Example in Python
 ```python
