@@ -32,11 +32,17 @@ Command | Usage
 ------------ | -------------
 pwd | Print Working Directory (Where Am I? )
 ls | List contents of current directory
+ls -a | List contents of current directory including hidden files
 mkdir | Create a new directory
 touch | Create a new file
 cp| Copy a file 
 rm | Remove a file 
 rm -rf | Remove a directory 
+sudo | Run command with the security privileges of the superuser
+clear | Clear the screen
+nano [file] | Opens the file using nano editor
+vim [file] | Opens the file using vim editor
+reset | resets the terminal display
 
 ### Usage Examples
 
@@ -73,6 +79,12 @@ Use the following syntax to delete a file
 
 #### Terminate the process which uses the port you want to use
 ``` kill <PID> ```
+
+#### Search you command history as you type
+
+```Ctrl+R```
+
+Hold down `Ctrl` and press `R` to invoke "reverse-i-search." Type a letter - like s - and you'll get a match for the most recent command in your history that starts with s. Keep typing to narrow your match. When you hit the jackpot, press Enter to execute the suggested command.
 
 # iTerm2
 
