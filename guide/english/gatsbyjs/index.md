@@ -34,3 +34,4 @@ Gatsby deploys the site on a static web host such as Amazon S3, Netlify, Github 
 
 ### More Information:
 For tutorials and more information check out the Gatsby.js official site: [Gatsby.js official site](https://www.gatsbyjs.org/tutorial/)
+Traversy Media has an awesome course about Gatsby.js and the best part is it's on his Youtube channel and it's free. [GatsbyJs Course]  https://www.youtube.com/watch?v=6YhqQ2ZW1sc
