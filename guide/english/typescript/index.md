@@ -23,6 +23,7 @@ In essence, TypeScript is trying to help JavaScript reach new heights and become
 - strict syntactical super-set of JavaScript that compiles to plain JavaScript
 - eases development of large scale applications written in JavaScript
 - extends JavaScript by adding static types, classes, modules, interfaces and generics
+- may be used to develop JavaScript applications for both client-side and server-side (Node.js) execution.
 
 **🎉 FUN FACT** TypeScript turned 5 years old on October 1st, 2017.
 
