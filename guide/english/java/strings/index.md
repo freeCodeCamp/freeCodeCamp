@@ -183,5 +183,42 @@ The result will be:
 My
 ```
 
+
+#### String UpperCase and LowerCase Conversion Functions
+
+1. toLowerCase()- This function will convert the whole string into lower case characters.
+   Example:
+   ```java
+   String text1="Welcome99";
+   String text2="WELCOME";
+   String text3="well";
+   System.out.println(text1.toLowerCase());
+   System.out.println(text2.toLowerCase());
+   System.out.println(text3.toLowerCase());
+   ```
+   The output will be:-
+   ```
+   welcome99
+   welcome
+   well
+   ```
+2. toUpperCase()- This function will convert the whole string into upper case characters.
+   Example:
+
+   ```java
+   String text1="Welcome99";
+   String text2="WELCOME";
+   String text3="well";
+   System.out.println(text1.toUpperCase());
+   System.out.println(text2.toUpperCase());
+   System.out.println(text3.toUpperCase());
+   ```
+   The output will be:-
+   ```
+   WELCOME99
+   WELCOME
+   WELL
+   ```
+
 **More Information:**
 - [String Documentation](https://docs.oracle.com/javase/7/docs/api/java/lang/String.html)
