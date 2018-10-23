@@ -1,8 +1,8 @@
 ---
-title: 10 Simple and Useful Linux Commands
-localeTitle: 10 comandos de Linux simples y útiles
+title: 13 Simple and Useful Linux Commands
+localeTitle: 13 comandos de Linux simples y útiles
 ---
-# 10 comandos de Linux simples y útiles
+# 13 comandos de Linux simples y útiles
 
 Los comandos que se enumeran aquí son básicos y lo ayudarán a comenzar rápidamente. Pero también son poderosos, y seguirán siendo útiles a medida que se expanda su experiencia en Linux.
 
@@ -17,6 +17,8 @@ Los comandos que se enumeran aquí son básicos y lo ayudarán a comenzar rápid
 9.  `grep` Para encontrar líneas de texto que contengan una determinada cadena, usa grep. Ejemplo: `grep 'root' /etc/passwd # root:x:0:0:root:/root:/bin/bash`
 10.  `sed` Utilice sed para buscar y cambiar una subcadena en un texto. Ejemplo: `echo "this, that, and the other" | sed 's/that/those/' # "this, those, and the other"`
 11.  `shutdown` uso apagar el sistema y apagar la alimentación. Ejemplo: `shutdown -h now` apaga el sistema inmediatamente. `shutdown -h +5` apaga el sistema después de cinco minutos.
+12. `pwd` Cuando se invoka este commando, la direccion de cuaderno donde el usuario se encuentra al momento de invocarlo sera presentado en la caja de commando.
+13. `ls -la` Similar a el commando `ls` cuando se adjunta con `-la` se presentara en la caja de commando una represetacion de todos los folders y files de una manera mas especifica.
 
 Utilice estos comandos en scripts y en la línea de comandos. Todos son comandos muy poderosos, y la página del manual de Linux tiene mucha más información sobre cada uno.
 
