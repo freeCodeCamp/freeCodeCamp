@@ -61,7 +61,7 @@ There's variations on this legislation all over the world, some more severe and 
 
 That question, sadly, is harder to answer than it may seem. The Harry Potter quote at the top is there for a reason, and it's not my being an avid Fantasy reader.
 
-As I stated above, accessibility is important for a large group of different people, each with their own needs. Making your website work for literally everyone is a large, on-going task.
+As stated above, accessibility is important for a large group of different people, each with their own needs. Making your website work for literally everyone is a large, on-going task.
 
 To bring a bit of a method to the madness, the Web Content Accessibility Guidelines or <a href='https://www.wuhcag.com/web-content-accessibility-guidelines/' target='_blank' rel='nofollow'>WCAG</a> were composed. This document contains a number of criteria you can use to check your website. For now, I will cover some of the most important basics here. I will point you at the low-hanging fruits, so to speak. In subsequent articles, I will discuss more advanced techniques like [WAI-ARIA] which is important for JavaScript-based apps.
 
