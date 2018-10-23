@@ -32,7 +32,8 @@ It allows the user to enter data.
 In the above example, there are two input fields which ask the user to enter their first and last names according to the labels specified. The submit `<button type="submit">` is another type of input which is used to take the data entered by the user into the form and send it to some other location specified in the code.
 
 #### More Information:
-<a href="https://www.youtube.com/watch?v=qJ9ZkxmVf5s">Youtube</a>
+<a href="https://www.youtube.com/watch?v=qJ9ZkxmVf5s">Youtube</a><br>
+<a href="https://guide.freecodecamp.org/html/elements/input-tag/">freeCodeCamp</a>
 
 
 ## Input
