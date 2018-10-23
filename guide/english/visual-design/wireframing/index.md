@@ -8,6 +8,7 @@ title: Wireframing
 <p>Find additional resources on Wireframing <a  href="http://www.experienceux.co.uk/faqs/what-is-wireframing/" target="blank">here</a></p>
 <br>
 <h2>Wireframing Tools</h2>
+<p>Here are some tools to design easily wireframes. These tools are built to simplify your process, but you also can use the classic tools like Photoshop, Sketch or Figma!</p>
 <hr>
 <ul>
   <li>
@@ -24,5 +25,8 @@ title: Wireframing
   </li>
   <li>
     <a href="http://pencil.evolus.vn/Default.html/" target="blank">Pencil</a>
+  </li>
+  <li>
+    <a href="https://wireframe.cc/">Wireframe.cc</a>  
   </li>
 </ul>
