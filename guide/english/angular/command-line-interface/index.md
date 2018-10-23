@@ -10,7 +10,7 @@ Angular is closely associated with its command-line interface (CLI). The CLI str
 
 #### Installation
 
-The Angular CLI requires [Node.js and Node Packet Manager (NPM)](https://nodejs.org/en/). You can check for these programs with the terminal command: `node -v; npm -v`. Once installed, open a terminal and install the Angular CLI with this command: `npm install -g @angular/cli` or `npm install -g @angular/cli@latest` to install the latest version of angular cli. This can be executed from anywhere on your system. The CLI is configured for global use with the `-g` flag.
+The Angular CLI requires [Node.js and Node Package Manager (NPM)](https://nodejs.org/en/). You can check for these programs with the terminal command: `node -v; npm -v`. Once installed, open a terminal and install the Angular CLI with this command: `npm install -g @angular/cli` or `npm install -g @angular/cli@latest` to install the latest version of angular cli. This can be executed from anywhere on your system. The CLI is configured for global use with the `-g` flag.
 
 Verify the CLI is there with the command: `ng -v`. This outputs several lines of information about the angular cli installed in your machine. One of these lines state the version of the installed CLI.
 
