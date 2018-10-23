@@ -53,3 +53,5 @@ tests:
 // solution required
 ```
 </section>
+
+My changes for Hacktoberfest 2018
