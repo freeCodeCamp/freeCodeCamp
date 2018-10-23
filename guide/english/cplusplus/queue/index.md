@@ -195,6 +195,32 @@ int main ()
     2
     2
     
+##circular queues
+Circular queue avoids the wastage of space in a regular queue implementation using arrays.
+
+How Circular Queue Works
+Circular Queue works by the process of circular increment i.e. when we try to increment any variable and we reach the end of queue, we start from the beginning of queue by modulo division with the queue size.
+here is a queue with 5 elements.
+
+https://cdn.programiz.com/sites/tutorial2program/files/circular-increment.jpg
+
+if REAR + 1 == 5 (overflow!), REAR = (REAR + 1)%5 = 0 (start of queue)
+circular increment in circular queue
+
+Queue operations work as follows:
+
+-Two pointers called FRONT and REAR are used to keep track of the first and last elements in the queue.
+-When initializing the queue, we set the value of FRONT and REAR to -1.
+-On enqueing an element, we circularly increase the value of REAR index and place the new element in the position pointed to by REAR.
+-On dequeueing an element, we return the value pointed to by FRONT and circularly increase the FRONT index.
+-Before enqueing, we check if queue is already full.
+-Before dequeuing, we check if queue is already empty.
+-When enqueing the first element, we set the value of FRONT to 0.
+-When dequeing the last element, we reset the values of FRONT and REAR to -1.
+-However, the check for full queue has a new additional case:
+
+Case 1: FRONT = 0 && REAR == SIZE - 1
+Case 2: FRONT = REAR + 1 
 
 ### For More Resources:
 http://www.cplusplus.com/reference/queue/queue/
