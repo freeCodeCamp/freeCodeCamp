@@ -69,3 +69,6 @@ You'll learn many of the first princliples for data science tools and how algori
 - [A Byte of Python[FREE]](https://python.swaroopch.com)
 
 Please feel free to add more that you have found useful!
+#### Python Machine Learning from Scratch
+- [Amazon](https://www.amazon.in/Python-Machine-Learning-Scratch-Hands-ebook/dp/B07GMVP3WP/ref=pd_rhf_dp_s_cp_0_1?_encoding=UTF8&pd_rd_i=B07GMVP3WP&pd_rd_r=e2ed1fa3-e40a-44b0-8931-35af4baeebbb&pd_rd_w=PI6n7&pd_rd_wg=ACSBD&psc=1&refRID=H30J01D3YPZBMAYNDPRF)
+- Hands-On Guide To Machine Learning for Absolute Beginners, Neural Networks, Scikit-Learn, Deep Learning, TensorFlow, Data Analytics, Python, Data Science
