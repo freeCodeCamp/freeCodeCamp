@@ -1,5 +1,5 @@
 ---
-title: Hello World C
+title: Hello World in C language
 ---
 
  ## Hello World
