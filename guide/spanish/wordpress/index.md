@@ -8,6 +8,9 @@ WordPress es un sistema de gestión de contenido gratuito y de código abierto b
 
 WordPress alimenta casi el 27% de todos los sitios web y actualmente domina la cuota de mercado de CMS. Respaldada por una gran comunidad, esta plataforma de código abierto impulsa una economía de miles de millones de dólares con temas / complementos y software personalizado.
 
+## Ventajas de WordPress 
++ usuarios debe administrar sitios y blogs de computadora de escritorio o de *android* o *iOS* [movil apps](https://apps.wordpress.com/mobile/ "Movil WordPress")
+
 ### Más información
 
 *   [WordPress Codex: el manual en línea](https://codex.wordpress.org/)
