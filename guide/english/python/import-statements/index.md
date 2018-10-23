@@ -97,3 +97,17 @@ Now we want to use the functions that we just created in `prime_functions.py` so
 Good practice is to sort `import` modules in three groups - standard library imports, related third-party imports, and local imports.  Within each group it is sensible to sort alphabetically by module name. You can find [more information in PEP8](https://www.python.org/dev/peps/pep-0008/?#imports).
 
 One of the most important thing for Python language is legibility, and alphabetically sorting modules are quicker to read and search. Also it is easier to verify that something is imported, and avoid duplicated imports.
+
+## Variations of Import statements
+
+A good practise is to import only those modules or submodules that are being directly used in our program. Also we can rename the modules imported for a better use in our program. (Actual name of the module isn't changed, just by which name it is being referenced in our program is changed.)
+
+1. **import my_module** - This imports the entire module as `my_module`. To use submodules, functions or classes of this module, we use the dot (associative) operator. For example - `a = my_module.my_sub_module.my_module_function()`
+
+2. **import my_module.my_sub_module** - This allows us to only import the sub module `my_sub_module` from `my_module`. To use submodules, functions or classes of this module, we use the dot (associative) operator. For example - `a = my_module.my_sub_module.my_module_function()`
+
+3. **from my_module import my_sub_module** - This allows us to only import the sub module `my_sub_module` from `my_module`. Rest sub modules aren't imported. To use functions or classes in this submodules or access its further sub module, we use the dot operator. Furthermore, this allows to access the sub module directly. This means that instead of `a = my_module.my_sub_module.my_module_function()`, we now use `a = my_sub_module.my_module_function()`
+
+4. **import my_module as m** - This imports the entire module but now we can reference it as `m`. This means that instead of `a = my_module.my_sub_module.my_module_function()`, we now use `a = m.my_sub_module.my_module_function()`
+
+5. **from my_module import my_sub_module as m** - This imports only the sub module which can be now referenced as `m`. This means that instead of `a = my_module.my_sub_module.my_module_function()`, we now use `a = m.my_module_function()`
