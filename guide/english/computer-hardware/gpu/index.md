@@ -13,7 +13,6 @@ The GPU was originally used mainly for 3D game rendering to improve your resolut
 
 There are two major brands producing GPUs: NVidia and AMD. They are often referred as the "green team" and "red team" which indicate the major color of their logo. 
 
-Notable makers of GPU's include: Nvidia and AMD/ATI.
 
 ## Origin of GPU
 

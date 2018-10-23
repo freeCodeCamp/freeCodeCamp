@@ -43,7 +43,7 @@ From terminal:
     $ python hello_campers.py
     Hello campers!
 
-"When multiple versions of Python are installed, calling them by version is possible depending on the install configuration. In the Cloud9 ide custom environment, they can be invoked like:
+When multiple versions of Python are installed, calling them by version is possible depending on the install configuration. In the Cloud9 IDE custom environment, they can be invoked like:
 
     $ python --version
     Python 2.7.6

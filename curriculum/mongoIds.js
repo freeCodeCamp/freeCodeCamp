@@ -1,5 +1,5 @@
-import _ from 'lodash';
-import { isMongoId } from 'validator';
+const _ = require('lodash');
+const { isMongoId } = require('validator');
 
 class MongoIds {
   constructor() {
@@ -21,4 +21,4 @@ class MongoIds {
   }
 }
 
-export default MongoIds;
+module.exports = MongoIds;

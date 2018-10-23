@@ -7,13 +7,13 @@ videoUrl: ''
 localeTitle: Conecta Redux a Reaccionar
 ---
 
-## Description
+## Descripción
 <section id="description"> Ahora que ha escrito las <code>mapStateToProps()</code> y <code>mapDispatchToProps()</code> , puede usarlas para mapear el <code>state</code> y <code>dispatch</code> a los <code>props</code> de uno de sus componentes React. El método de <code>connect</code> de React Redux puede manejar esta tarea. Este método toma dos argumentos opcionales, <code>mapStateToProps()</code> y <code>mapDispatchToProps()</code> . Son opcionales porque puede tener un componente que solo necesita acceso al <code>state</code> pero no necesita enviar ninguna acción, o viceversa. Para usar este método, pase las funciones como argumentos e inmediatamente llame al resultado con su componente. Esta sintaxis es un poco inusual y se parece a: <code>connect(mapStateToProps, mapDispatchToProps)(MyComponent)</code> <strong>Nota:</strong> Si desea omitir uno de los argumentos del método de <code>connect</code> , pase <code>null</code> en su lugar. </section>
 
-## Instructions
+## Instrucciones
 <section id="instructions"> El editor de código tiene las <code>mapStateToProps()</code> y <code>mapDispatchToProps()</code> y un nuevo componente React llamado <code>Presentational</code> . Conecte este componente para Redux con la <code>connect</code> método de la <code>ReactRedux</code> objeto global, y lo llaman inmediatamente en el <code>Presentational</code> componente. Asigne el resultado a una nueva <code>const</code> llamada <code>ConnectedComponent</code> que representa el componente conectado. Eso es todo, ahora estás conectado a Redux! Intente cambiar cualquiera de los argumentos de <code>connect</code> a <code>null</code> y observe los resultados de la prueba. </section>
 
-## Tests
+## Pruebas
 <section id='tests'>
 
 ```yml
@@ -73,6 +73,7 @@ const connect = ReactRedux.connect;
 </div>
 
 
+
 ### After Test
 <div id='jsx-teardown'>
 
@@ -84,10 +85,10 @@ console.info('after the test');
 
 </section>
 
-## Solution
+## Solución
 <section id='solution'>
 
 ```js
-// solution required
+// Solución requerida 
 ```
 </section>

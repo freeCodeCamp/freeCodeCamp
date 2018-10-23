@@ -30,9 +30,9 @@ Make a class <code>.info-important</code> that extends <code>.info</code> and al
 ```yml
 tests:
   - text: Your <code>info-important</code> class should have a <code>background-color</code> set to <code>magenta</code>.
-    testString: 'assert(code.match(/\.info-important\s*?{[\s\S]*background-color\s*?:\s*?magenta\s*?;[\s\S]*}/gi), "Your <code>info-important</code> class should have a <code>background-color</code> set to <code>magenta</code>.");'
+    testString: assert(code.match(/\.info-important\s*?{[\s\S]*background-color\s*?:\s*?magenta\s*?;[\s\S]*}/gi), 'Your <code>info-important</code> class should have a <code>background-color</code> set to <code>magenta</code>.');
   - text: Your <code>info-important</code> class should use <code>@extend</code> to inherit the styling from the <code>info</code> class.
-    testString: 'assert(code.match(/\.info-important\s*?{[\s\S]*@extend\s*?.info\s*?;[\s\S]*/gi), "Your <code>info-important</code> class should use <code>@extend</code> to inherit the styling from the <code>info</code> class.");'
+    testString: assert(code.match(/\.info-important\s*?{[\s\S]*@extend\s*?.info\s*?;[\s\S]*/gi), 'Your <code>info-important</code> class should use <code>@extend</code> to inherit the styling from the <code>info</code> class.');
 
 ```
 
