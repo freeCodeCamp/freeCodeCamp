@@ -3,31 +3,44 @@ title: Arrays
 ---
 ## Arrays
 
+Arrays are like regular variables, but hold multiple values in an ordered list. This can be useful if you have multiple values that are all related to each other, like a list of student names or a list of capital cities.
+
 ### Types Of Arrays
-In PHP there are three types of arrays: Indexed Arrays, Associative arrays, and Multidimensional arrays.
+In PHP, there are two types of arrays: Indexed arrays and Associative arrays. Each has their own use and we'll look at how to create these arrays.
 
 ### Indexed Array Example
-An indexed array accesses objects by index number.
+An indexed array is a list of ordered values. Each of these values in the array is assigned an index number. Indexes for arrays always start at `0` for the first value and then increase by one from there.
+
 ```PHP
 <?php
-$freecodecamp = array("free", "code", "camp");
+$shopping_list = array("eggs", "milk", "cheese");
 ```
-`$freecodecamp[0]` would return `"free"`, `$freecodecamp[1]` would return `"code"`, and `$freecodecamp[2]` would return `"camp"`.
+`$shopping_list[0]` would return `"eggs"`, `$shopping_list[1]` would return `"milk"`, and `$shopping_list[2]` would return `"cheese"`.
 
 ### Associative Array Example
-An associative array accesses objects by key name.
+An associative array is a list of values that are accessed via a key instead of index numbers. The key can be any value but it must be unique to the array. 
+
 ```PHP
 <?php
-$freecodecamp = array("free"=>"0","code"=>"1","camp"=>"2");
+$student_scores = array("Joe" => 83, "Frank" => "93", "Benji" => "90");
 ```
-`$freecodecamp['free']` would return "0", `$freecodecamp['code']` would return "1", `$freecodecamp['camp']` would return "2",
+`$student_scores['Joe']` would return `83`, `$student_scores['Frank']` would return `93`, `$student_scores['Benji']` would return `90`.
 
 ### Multidimensional Array Example
-A multidimensional array is an array that contains other arrays.
+A multidimensional array is an array that contains other arrays. This lets you create complex data structures that can model a very complex group of data.
 ```PHP
 <?php
-$freecodecamp = array(array("free"=>"0","code"=>"1","camp"=>"2"),array("free"=>"0","code"=>"1","camp"=>"2"),array("free"=>"0","code"=>"1","camp"=>"2"));
+$students = 
+  array(
+    array("first_name" => "Joe", "score" => 83, "last_name" => "Smith"),
+    array("first_name" => "Frank", "score" => 92, "last_name" => "Barbson"),
+    array("first_name" => "Benji", "score" => 90, "last_name" => "Warner")   
+  );
 ```
 
+Now you can get the first student's `first_name` with:
+```PHP
+$students[0]['first_name']
+```
 #### More Information:
 * <a href="https://secure.php.net/manual/en/language.types.array.php" rel="nofollow">php.net arrays manual</a>
