@@ -1,11 +1,19 @@
 ---
 title: Size Your Images
-localeTitle: حجم صورك
+localeTitle: غير حجم صورك
 ---
 ## حجم صورك
 
-لتحجيم صورك ، قم أولاً بإنشاء الفصل الدراسي في علامة النمط.
+**.لتغيير حجم صورك، قم بإنشاء الفئة في النمط**
 
-مثال: `<style> .fixed-image { width: 500px; height: auto; }`
+**: مثال**
 
-يمكنك بعد ذلك إضافة الفصل إلى صورتك: `<img class="fixed-image" src="http://www.example.com/picture"/>`
+![alt text][style]
+
+[style]: https://i.imgur.com/F7BXCGN.png "إنشاء الفئة في النمط"
+ 
+**: يمكنك بعد ذلك إضافة الفئة إلى صورتك**
+
+![alt text][class]
+
+[class]: https://i.imgur.com/xE5HkOv.png "إضافة الفئة إلى صورتك"
