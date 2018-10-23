@@ -217,3 +217,40 @@ with higher precedence will be evaluated first.
 - Conditional `?:`
 - Assignment `= += -= *= /= %= >>= <<= &= ^= |=`
 - Comma `,`
+
+
+---------------------------------------------------------------------------
+Example of arithmetic operator and relational operator:-
+---------------------------------------------------------
+
+#include<stdio.h>
+
+int main() {
+    int a=240;
+    int b=10;
+    
+    int addOne;
+    int subtrOne;
+    int multiOne;
+    int diviOne;
+    // Arithmatic Operators:
+    addOne= a+b;
+    printf("a + b = %d \n",addOne);
+    subtrOne=a-b;
+    printf("a - b = %d \n",subtrOne);
+    multiOne=a*b;
+    printf("a * b = %d \n",multiOne);
+    diviOne=a/b;
+    printf("a / b = %d \n",diviOne);
+    
+    //Relational Operator (equal too):
+    
+    if (addOne == subtrOne)
+     {
+          printf("Block 1");
+     }
+     else{
+         printf("Block 2");
+     }
+}
+
