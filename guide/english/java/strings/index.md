@@ -3,7 +3,7 @@ title: Strings
 ---
 # Strings
 
-Strings are sequences of characters. In Java, a `String` is an `Object`. Strings should not be confused with `char` as characters are literally 1 value rather than a sequence of characters. You can still use 1 value within a String, however it is preferred to use `char` when you are checking for 1 character.
+Strings are sequences of characters. In Java, a `String` is an `Object`. String Is 'Imutable' As It Is Created In Memory Heap ,So It Cannot Be Changed .All Methods Of String Do Not Change The String,Instead They Return New String,Only Way To Modify String Is To Use StringBuffer Class('More Efficient As This Will Save A Lot Of Space') Strings should not be confused with `char` as characters are literally 1 value rather than a sequence of characters. You can still use 1 value within a String, however it is preferred to use `char` when you are checking for 1 character.
 
 ```java
 String course = "FCC";
