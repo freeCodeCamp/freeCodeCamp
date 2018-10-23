@@ -98,5 +98,18 @@ div {
 
 You can combine the previous two pieces of box-shadows using a comma to get multiple box shadows on the same div
 
+#### Covered box shadow
+If you need a shadow that is you y+ axises and y- axises also your x+ and x- axises then you can use the following code.
+
+```css
+div{
+   width:200px;
+   height: 50px;
+   background-color:#fff;
+   box-shadow:0 0 8px 2px #ccc
+}
+```
+
+
 #### More Information
 * Docs: [MDN](https://developer.mozilla.org/en-US/docs/Web/CSS/box-shadow)
