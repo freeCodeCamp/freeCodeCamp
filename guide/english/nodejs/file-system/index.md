@@ -27,17 +27,25 @@ The ```fs.readFile()``` method is used to read file on your computer. It takes t
 
 Node.js code to read file from your computer and return the content to the console.
 
+**Asynchronous**
 ```javascript
 const fs = require('fs');
-fs.readFile('input.txt', 'utf-8', (err, data) => {
-    if (err) {
-        console.log(err);
-    }
-    else {
-        console.log("Content present in input.txt file : " + data.toString());
-    }
+fs.readFile('path/to/input.txt', 'utf-8', (err, data) => {
+    if (err) throw err;
+    console.log("Content present in input.txt file : " + data.toString());
 });
 ```
+**Synchronous**
+```javascript
+const fs = require('fs');
+try {
+    var data = fs.readFileSync('path/to/input.txt', 'utf-8');
+} catch (err){
+    console.log(err.message);
+}
+console.log("Content present in input.txt file: " + data.toString());
+```
+
 The above code reads a file *input.txt* from your computer and returns the content to the console.
 
 ### Steps for execution :
@@ -55,16 +63,25 @@ The ```fs.writeFile()``` method takes three arguments - filename, content and a 
 
 Node.js code to write content into file.
 
+**Asynchronous**
 ```javascript
 const fs = require('fs');
-fs.writeFile('output.txt', "New content added", (err, data) => {
-    if (err) {
-        console.log(err);
-    }
-    else {
-        console.log("The file is saved");
-    }
+fs.writeFile('path/to/output.txt', "New content added", (err) => {
+    if (err) throw err;
+    console.log("The file is saved");
 });
+```
+
+**Synchronous**
+```javascript
+const fs = require('fs');
+var data = "New Content Added"
+try {
+    fs.writeFileSync('path/to/output.txt', data, encoding='utf-8', flag='w')
+    console.log("The file us saved")
+} catch (err) {
+    console.log("The file could not be updated due to: " + err.message);
+}
 ```
 The above code creates a file *output.txt* and add content *New content added* to it.
 
