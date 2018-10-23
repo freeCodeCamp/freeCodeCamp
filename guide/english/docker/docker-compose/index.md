@@ -32,7 +32,7 @@ docker-compose -f docker-compose.yml up
 docker-compose -f docker-compose.yml up -d
 ```
 
-* command to run containers after building the images again(note: first time we run docker containers build will happen automatically)
+* command to run containers after building the images again (note: build is automatic the first time docker containers are run)
 
 ```
 docker-compose -f docker-compose.yml --build -d
