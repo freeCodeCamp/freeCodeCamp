@@ -36,7 +36,7 @@ Find S20(1014) and write the answer in scientific notation rounded to 10 signifi
 ```yml
 tests:
   - text: <code>euler444()</code> should return 1.200856722e+263.
-    testString: 'assert.strictEqual(euler444(), 1.200856722e+263, "<code>euler444()</code> should return 1.200856722e+263.");'
+    testString: assert.strictEqual(euler444(), 1.200856722e+263, '<code>euler444()</code> should return 1.200856722e+263.');
 
 ```
 

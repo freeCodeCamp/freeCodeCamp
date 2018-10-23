@@ -1,4 +1,8 @@
-# Knuth–Morris–Pratt Algorithm for Pattern Searching
+---
+title: Knuth–Morris–Pratt Algorithm for Pattern Searching
+---
+
+## Knuth–Morris–Pratt Algorithm for Pattern Searching
 Pattern searching is an important problem in computer science. When we do search for a string in notepad/word file or browser or database, pattern searching algorithms are used to show the search results.
 
 **Problem :**
@@ -21,18 +25,18 @@ The basic idea behind KMP’s algorithm is: whenever we detect a mismatch (after
 -   Name lps indicates **longest proper prefix** which is also suffix. A proper prefix is prefix with whole string  **not**  allowed. For example, prefixes of “ABC” are “”, “A”, “AB” and “ABC”. Proper prefixes are “”, “A” and “AB”. Suffixes of the string are “”, “C”, “BC” and “ABC”.
 -   We search for lps in sub-patterns. More clearly we focus on sub-strings of patterns that are either prefix and suffix.
 -   For each sub-pattern pat[0..i] where i = 0 to m-1, lps[i] stores length of the maximum matching proper prefix which is also a suffix of the sub-pattern pat[0..i].
-    
+
        `lps[i] = the longest proper prefix of pat[0..i]  which is also a suffix of pat[0..i]. `
-    
+
 
 **Note :**  lps[i] could also be defined as longest prefix which is also proper suffix. We need to use properly at one place to make sure that the whole substring is not considered.
 
 **Examples of lps[] construction :**
 ```
-For the pattern “ABCDE”, 
+For the pattern “ABCDE”,
 lps[] is [0, 0, 0, 0, 0]
 
-For the pattern “AABAACAABAA”, 
+For the pattern “AABAACAABAA”,
 lps[] is [0, 1, 0, 1, 2, 0, 1, 2, 3, 4, 5]
 ```
 

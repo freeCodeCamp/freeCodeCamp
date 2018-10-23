@@ -25,9 +25,9 @@ Create a variable called <code>myData</code> and set it to equal the first value
 ```yml
 tests:
   - text: The variable <code>myData</code> should equal the first value of <code>myArray</code>.
-    testString: 'assert((function(){if(typeof myArray !== "undefined" && typeof myData !== "undefined" && myArray[0] === myData){return true;}else{return false;}})(), "The variable <code>myData</code> should equal the first value of <code>myArray</code>.");'
+    testString: assert((function(){if(typeof myArray !== 'undefined' && typeof myData !== 'undefined' && myArray[0] === myData){return true;}else{return false;}})(), 'The variable <code>myData</code> should equal the first value of <code>myArray</code>.');
   - text: The data in variable <code>myArray</code> should be accessed using bracket notation.
-    testString: 'assert((function(){if(code.match(/\s*=\s*myArray\[0\]/g)){return true;}else{return false;}})(), "The data in variable <code>myArray</code> should be accessed using bracket notation.");'
+    testString: assert((function(){if(code.match(/\s*=\s*myArray\[0\]/g)){return true;}else{return false;}})(), 'The data in variable <code>myArray</code> should be accessed using bracket notation.');
 
 ```
 
@@ -57,7 +57,7 @@ var myArray = [50,60,70];
 <div id='js-teardown'>
 
 ```js
-console.info('after the test');
+if(typeof myArray !== "undefined" && typeof myData !== "undefined"){(function(y,z){return 'myArray = ' + JSON.stringify(y) + ', myData = ' + JSON.stringify(z);})(myArray, myData);}
 ```
 
 </div>

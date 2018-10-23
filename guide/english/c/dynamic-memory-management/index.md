@@ -2,7 +2,7 @@
 title: Dynamic Memory Management
 ---
 # Dynamic Memory Management
-Sometimes you will need to allocate memory spaces in the heap also known as the dynamic memory. This is particulary usefull when you do not know during compile time how large a data structure (like an array) will be. 
+Sometimes you will need to allocate memory spaces in the heap also known as the dynamic memory. This is particulary useful when you do not know during compile time how large a data structure (like an array) will be. 
 ## An Example
 Here's a simple example where we allocate an array asking the user to choose the dimension
 ```C
@@ -13,7 +13,8 @@ int main(void) {
     int arrayDimension,i;
     int* arrayPointer;
     
-    scanf("Please insert the array dimension:%d",arrayDimension);
+    printf("Please insert the array dimension:");
+    scanf("%d",&arrayDimension);
     arrayPointer = (int*)malloc(sizeof(int)*arrayDimension);
     
     if(arrayPointer == NULL){

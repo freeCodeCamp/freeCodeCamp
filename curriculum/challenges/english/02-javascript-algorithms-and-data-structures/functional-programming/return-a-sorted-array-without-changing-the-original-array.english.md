@@ -20,13 +20,13 @@ Use the <code>sort</code> method in the <code>nonMutatingSort</code> function to
 ```yml
 tests:
   - text: Your code should use the <code>sort</code> method.
-    testString: 'assert(code.match(/\.sort/g), "Your code should use the <code>sort</code> method.");'
+    testString: assert(code.match(/\.sort/g), 'Your code should use the <code>sort</code> method.');
   - text: Your code should use the <code>concat</code> method.
-    testString: 'assert(code.match(/\.concat/g), "Your code should use the <code>concat</code> method.");'
+    testString: assert(code.match(/\.concat/g), 'Your code should use the <code>concat</code> method.');
   - text: The <code>globalArray</code> variable should not change.
-    testString: 'assert(JSON.stringify(globalArray) === JSON.stringify([5, 6, 3, 2, 9]), "The <code>globalArray</code> variable should not change.");'
-  - text: '<code>nonMutatingSort(globalArray)</code> should return <code>[2, 3, 5, 6, 9]</code>.'
-    testString: 'assert(JSON.stringify(nonMutatingSort(globalArray)) === JSON.stringify([2, 3, 5, 6, 9]), "<code>nonMutatingSort(globalArray)</code> should return <code>[2, 3, 5, 6, 9]</code>.");'
+    testString: assert(JSON.stringify(globalArray) === JSON.stringify([5, 6, 3, 2, 9]), 'The <code>globalArray</code> variable should not change.');
+  - text: <code>nonMutatingSort(globalArray)</code> should return <code>[2, 3, 5, 6, 9]</code>.
+    testString: assert(JSON.stringify(nonMutatingSort(globalArray)) === JSON.stringify([2, 3, 5, 6, 9]), '<code>nonMutatingSort(globalArray)</code> should return <code>[2, 3, 5, 6, 9]</code>.');
 
 ```
 

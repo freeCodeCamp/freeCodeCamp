@@ -27,17 +27,17 @@ Then add an <code>id</code> attribute with a value of "footer" to the <code>&lt;
 ```yml
 tests:
   - text: There should be only one anchor tag on your page.
-    testString: 'assert($("a").length == 1, "There should be only one anchor tag on your page.");'
+    testString: assert($('a').length == 1, 'There should be only one anchor tag on your page.');
   - text: There should be only one <code>footer</code> tag on your page.
-    testString: 'assert($("footer").length == 1, "There should be only one <code>footer</code> tag on your page.");'
-  - text: 'The <code>a</code> tag should have an <code>href</code> attribute set to "#footer".'
-    testString: 'assert($("a").eq(0).attr("href") == "#footer", "The <code>a</code> tag should have an <code>href</code> attribute set to "#footer".");'
+    testString: assert($('footer').length == 1, 'There should be only one <code>footer</code> tag on your page.');
+  - text: The <code>a</code> tag should have an <code>href</code> attribute set to "#footer".
+    testString: assert($('a').eq(0).attr('href') == "#footer", 'The <code>a</code> tag should have an <code>href</code> attribute set to "#footer".');
   - text: The <code>a</code> tag should not have a <code>target</code> attribute
-    testString: 'assert(typeof $("a").eq(0).attr("target") == typeof undefined || $("a").eq(0).attr("target") == true, "The <code>a</code> tag should not have a <code>target</code> attribute");'
+    testString: assert(typeof $('a').eq(0).attr('target') == typeof undefined || $('a').eq(0).attr('target') == true, 'The <code>a</code> tag should not have a <code>target</code> attribute');
   - text: The <code>a</code> text should be "Jump to Bottom".
-    testString: 'assert($("a").eq(0).text().match(/Jump to Bottom/gi), "The <code>a</code> text should be "Jump to Bottom".");'
+    testString: assert($('a').eq(0).text().match(/Jump to Bottom/gi), 'The <code>a</code> text should be "Jump to Bottom".');
   - text: The <code>footer</code> tag should have an <code>id</code> attribute set to "footer".
-    testString: 'assert($("footer").eq(0).attr("id") == "footer", "The <code>footer</code> tag should have an <code>id</code> attribute set to "footer".");'
+    testString: assert($('footer').eq(0).attr('id') == "footer", 'The <code>footer</code> tag should have an <code>id</code> attribute set to "footer".');
 
 ```
 

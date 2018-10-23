@@ -6,11 +6,11 @@ localeTitle: Área de un rectángulo
 
 El área de un rectángulo se puede calcular multiplicando las longitudes de los dos lados perpendiculares entre sí.
 
-`Area = axb`
+`Area = a * b`
 
 **Por ejemplo** Para un rectángulo donde _a = 3_ y _b = 4_
 
-`Area = axb = 3 x 4 = 12`
+`Area = a * b = 3 x 4 = 12`
 
 #### Más información:
 

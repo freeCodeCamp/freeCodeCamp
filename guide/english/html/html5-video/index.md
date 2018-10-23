@@ -4,11 +4,11 @@ title: HTML5 Video
 ## HTML5 Video
 
 
-Before HTML5, in order to have a video play in a webpage you would need to use a plugin, like Adobe Flash Player. With the introduction of HTML5, you can now place it directly into the page itself.
+Before HTML5, in order to have a video play in a webpage, you would need to use a plugin, like Adobe Flash Player. With the introduction of HTML5, you can now place it directly into the page itself.
 The HTML <video> tag is used to embed video in web documents. It may contain one or more video sources, represented using the src attribute or the [source](<source>) element.
   
   
- To embed video file into web page, just add this code snippet and change the src of audio file.
+ To embed a video file into a web page, just add this code snippet and change the src of the audio file.
  
  ```html
  <video controls>
@@ -20,7 +20,7 @@ The HTML <video> tag is used to embed video in web documents. It may contain one
 
 The controls attribute includes video controls, similar to play, pause, and volume.
 
-This feature is supported by all modern/updated browsers. However, not all support the same video file format. My recommendation for a wide range of compatibilty is MP4, as it is the most widely accepted format. There are also two other formats (WebM and Ogg) that are supported in Chrome, Firefox, and Opera.
+This feature is supported by all modern/updated browsers. However, not all support the same video file format. My recommendation for a wide range of compatibility is MP4, as it is the most widely accepted format. There are also two other formats (WebM and Ogg) that are supported in Chrome, Firefox, and Opera.
 
 The <source> element enables you to indicate alternative video files which the browser may choose from. The browser will utilize the first recognized format.
 In HTML5, there are 3 supported video formats: MP4, WebM, and Ogg.
@@ -33,7 +33,7 @@ There are several different elements of the video tag, many of these explanation
 
 #### autoplay
 
-"autoplay" can be set to either true or false. You set it to true by adding it into the tag, if it is not present in the tag it is set to false. If set to true, the video will begin playing as soon as enough of the video has buffered for it to be able to play. Many people find autoplaying videos as disruptive or annoying so use this feature sparingly. Also note, that some mobile browsers, such as Safari for iOS, ignore this attribute.
+"autoplay" can be set to either true or false. You set it to true by adding it into the tag, if it is not present in the tag it is set to false. If set to true, the video will begin playing as soon as enough of the video has buffered for it to be able to play. Many people find autoplaying videos as disruptive or annoying. So use this feature sparingly. Also note, that some mobile browsers, such as Safari for iOS, ignore this attribute.
 
 ```html
     <video autoplay>
