@@ -17,8 +17,8 @@ Quer um rápido [Tour de Go?](https://tour.golang.org/welcome/1)
 #### Instale Golang com o Homebrew:
 
 ```bash
-$ brew update 
- $ brew install golang 
+$ brew update
+$ brew install golang
 ```
 
 #### Quando instalado, tente executar a versão go para ver a versão instalada do Go.
@@ -32,7 +32,7 @@ Primeiro, você precisará informar ao Go o local do seu espaço de trabalho.
 Vamos adicionar algumas variáveis ​​de ambiente na configuração do shell. Um dos arquivos localizados em seu diretório home bash\_profile, bashrc ou .zshrc (para Oh My Zsh Army)
 
 ```bash
-$ vi .bashrc 
+$ vi .bashrc
 ```
 
 \`
@@ -42,10 +42,10 @@ em seguida, adicione essas linhas para exportar as variáveis ​​necessárias
 #### Este é realmente o seu arquivo .bashrc
 
 ```bash
-export GOPATH=$HOME/go-workspace # don't forget to change your path correctly! 
- export GOROOT=/usr/local/opt/go/libexec 
- export PATH=$PATH:$GOPATH/bin 
- export PATH=$PATH:$GOROOT/bin 
+export GOPATH=$HOME/go-workspace # don't forget to change your path correctly!
+export GOROOT=/usr/local/opt/go/libexec
+export PATH=$PATH:$GOPATH/bin
+export PATH=$PATH:$GOROOT/bin
 ```
 
 ## \#### Crie seu espaço de trabalho:
@@ -53,10 +53,10 @@ export GOPATH=$HOME/go-workspace # don't forget to change your path correctly!
 ##### Crie a árvore de diretórios do espaço de trabalho:
 
 ```bash
-$ mkdir -p $GOPATH $GOPATH/src $GOPATH/pkg $GOPATH/bin 
- $GOPATH/src : Where your Go projects / programs are located 
- $GOPATH/pkg : contains every package objects 
- $GOPATH/bin : The compiled binaries home 
+$ mkdir -p $GOPATH $GOPATH/src $GOPATH/pkg $GOPATH/bin
+$GOPATH/src : Where your Go projects / programs are located
+$GOPATH/pkg : contains every package objects
+$GOPATH/bin : The compiled binaries home
 ```
 
 ### Começo rápido
@@ -65,20 +65,20 @@ Para um início rápido e clichê Ir projeto, tente [liga](https://www.growthmet
 
 1.  Repositório Clone Alloy
 ```
-git clone https://github.com/olliecoleman/alloy 
- cd alloy 
+git clone https://github.com/olliecoleman/alloy
+cd alloy
 ```
 
 2.  Instale as dependências
 ```
-glide install 
- npm install 
+glide install
+npm install
 ```
 
 3.  Inicie o servidor de desenvolvimento
 ```
-go install 
- alloy dev 
+go install
+alloy dev
 ```
 
 4.  Visite o site em `http://localhost:1212`
