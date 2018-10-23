@@ -8,7 +8,7 @@ Nesta seção, teremos guias para uma ampla variedade de ferramentas usadas pelo
 
 Estes são alguns deles:
 
-[Esboço](https://www.sketchapp.com) - [Guia](https://github.com/freeCodeCamp/guides/blob/master/src/pages/designer-tools/sketch/index.md)
+[Sketch](https://www.sketchapp.com) - [Guia](https://github.com/freeCodeCamp/guides/blob/master/src/pages/designer-tools/sketch/index.md)
 
 [Adobe Experience Design](www.adobe.com/products/experience-design.html) - [Guia](https://github.com/freeCodeCamp/guides/blob/master/src/pages/designer-tools/Experience-design/index.md)
 
