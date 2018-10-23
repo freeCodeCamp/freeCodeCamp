@@ -178,6 +178,7 @@ class Person {
 
 #### More Information:
 <!-- Please add any articles you think might be helpful to read before writing the article -->
+https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Classes
 
 
 
