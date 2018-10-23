@@ -178,7 +178,7 @@ Breakpoints that are based on content as opposed to device are less complicated.
 }
 ```
 
-You can also set a minimum and maximum width, which let's you experiments with differnt ranges. This one roughly triggers between smar-phone and larger desktop and monitor sizes
+You can also set a minimum and maximum width, which let's you experiments with different ranges. This one roughly triggers between smar-phone and larger desktop and monitor sizes
 
 ```code
 @media only screen and (min-width: 700px) and (max-width: 1500px) {
