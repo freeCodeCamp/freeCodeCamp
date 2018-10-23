@@ -27,7 +27,7 @@ Some companies also have a physical office where you can go to work if you'd lik
 
 ### Multiple Teams 
 
-Larger companies may have a different version of the "in-between", where they have a number of different teams working  onsite, but in multiple different locations. For example, a team working onsite in New York and another team working onsite in Chicago. You can hang out with other team members in an office, but you also use remote working techniques (Slack, Skype, etc) to stay in contact and in sync with the other teams. The teams may all be working on the same project, or developing something independently against the same application or platform.
+Larger companies may have a different version of the "in-between", where they have serveral different teams working onsite, but in multiple different locations. For example, a team working onsite in New York and another team working onsite in Chicago. You can hang out with other team members in an office, but you also use remote working techniques (Slack, Skype, etc.) to stay in contact and in sync with the other teams. The teams may all be working on the same project, or developing something independently against the same application or platform.
 
 ### More Information:
 
