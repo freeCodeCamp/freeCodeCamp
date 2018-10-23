@@ -44,6 +44,7 @@ If right > l:
 * Sorting In Place: No in a typical implementation
 * Stable: Yes
 * Parallelizable :yes (Several parallel variants are discussed in the third edition of Cormen, Leiserson, Rivest, and Stein's Introduction to Algorithms.)
+* This sorting algorithm is better for linked lists than arrays as merge operation can be done without allocating extra space in a list. Learn more about it [here](https://www.geeksforgeeks.org/why-quick-sort-preferred-for-arrays-and-merge-sort-for-linked-lists/ "Merge Sort vs Quick Sort").
 
 ### Visualization:
 * <a href='https://www.cs.usfca.edu/~galles/visualization/ComparisonSort.html'>USFCA</a>
