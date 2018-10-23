@@ -143,7 +143,7 @@ System.out.println(c.compareTo(a));       // -1 since (c<a)
 ```
 
 #### Splitting Strings  
-If you want to split a string into multiple parts it can easily be done through ```.split()``` this creates an array of the split up parts of the string.
+If you want to split a string into multiple parts it can easily be done through ```.split()``` this creates an array of the split up parts of the string.We can use those splitted substrings by using their index in array.
 
 Example of using a delimiter (",") to split a string
 ```java
