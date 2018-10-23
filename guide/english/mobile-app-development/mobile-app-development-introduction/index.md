@@ -15,7 +15,7 @@ The iOS platform powers apps built for iPhone and iPad. To develop an app for iP
 iOS is a mobile operating system developed and distributed by Apple Inc. It was originally released in 2007 for the iPhone, iPod Touch, and Apple TV. iOS is derived from OS X, with which it shares the Darwin foundation. iOS is Apple's mobile version of the OS X operating system used in Apple computers.
 
 #### Ionic
-Ionic is open source framework used for developing mobile applications. It provides tools and services for building Mobile UI with native look and feel. Ionic framework needs native wrapper to be able to run on mobile devices. This is an introductory tutorial, which covers the basics of the Ionic Open Source Framework and explains how to deal with its various components and sub-components.
+Ionic is open source framework used for developing mobile applications. It provides tools and services for building Mobile UI with native look and feel. Ionic framework needs native wrapper to be able to run on mobile devices. This is an introductory tutorial, which covers the basics of the Ionic Open Source Framework and explains how to deal with its various components and sub-components.The stable version of Ionic is versin 3 in 2018.
 
 #### Android
 Android is an open source and Linux-based operating system for mobile devices such as smartphones and tablet computers. Android was developed by the Open Handset Alliance, led by Google, and other companies. This tutorial will teach you basic Android programming and will also take you through some advance concepts related to Android application development.
