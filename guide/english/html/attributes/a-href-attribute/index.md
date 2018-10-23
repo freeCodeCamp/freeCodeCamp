@@ -14,7 +14,7 @@ For instance:
     <title>Href Attribute Example</title>
   </head>
   <body>
-    <h1>Href Attribute Example</h1>
+    <h1>href Attribute Example</h1>
       <p>
         <a href="https://www.freecodecamp.org/contribute/">The freeCodeCamp Contribution Page</a> shows you how and where you can contribute to freeCodeCamp's community and growth.
       </p>
@@ -33,12 +33,12 @@ The `<a href>` attribute is supported by all browsers.
 ```html
 <a href="#">This is a dead link</a>
 <a href="https://www.freecodecamp.org">This is a live link to freeCodeCamp</a>
-<a href="https://html.com/attributes/a-href/">more with a href attribute</a>
+<a href="https://html.com/attributes/a-href/">More with a href attribute</a>
 
 ```
 ### In-page anchors
 
-It's also possible to set an anchor to certain place of the page. To do this you should first place a tab at location on the page with tag <a> and necessary attribute "name" with any keyword description in it, like this:
+It is also possible to set an anchor to certain place of the page. To do this you should first place a tab at location on the page with tag <a> and necessary attribute "name" with any keyword description in it, like this:
 
 ```html
 <a name="top"></a>
