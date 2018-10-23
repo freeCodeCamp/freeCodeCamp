@@ -1,8 +1,8 @@
 ---
 title: Go
-localeTitle: Ir
+localeTitle: Go
 ---
-## Ir
+## Go
 
 ![Vai para-choque](https://golang.org/doc/gopher/bumper320x180.png)
 
@@ -12,7 +12,8 @@ Para mais informações, [acesse a página da Go](https://golang.org/)
 
 Quer um rápido [Tour de Go?](https://tour.golang.org/welcome/1)
 
-## \## Pré-instalações:
+## Pré-instalações:
+---------
 
 #### Instale Golang com o Homebrew:
 
@@ -23,7 +24,8 @@ $ brew install golang
 
 #### Quando instalado, tente executar a versão go para ver a versão instalada do Go.
 
-## \### Configure o espaço de trabalho:
+### Configure o espaço de trabalho:
+------
 
 ##### Adicionar variáveis ​​de ambiente:
 
@@ -48,7 +50,8 @@ export PATH=$PATH:$GOPATH/bin
 export PATH=$PATH:$GOROOT/bin
 ```
 
-## \#### Crie seu espaço de trabalho:
+#### Crie seu espaço de trabalho:
+--------
 
 ##### Crie a árvore de diretórios do espaço de trabalho:
 
@@ -83,7 +86,7 @@ alloy dev
 
 4.  Visite o site em `http://localhost:1212`
 
-_Alloy usa Node, NPM e Webpack_
+*Alloy usa Node, NPM e Webpack*
 
 ### Vá ao Playground
 
