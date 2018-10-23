@@ -8,7 +8,7 @@ Acceptance testing, a testing technique performed to determine whether or not th
 
 In software development, user acceptance testing (UAT) - also called beta testing, application testing, and end user testing - is a phase of software development in which the software is tested in the "real world" by the intended audience. In engineering and its various subdisciplines acceptance testing is a test conducted to determine if the requirements of a specification or contract are met. 
 
-There are various forms of acceptance testing:
+There are many forms of acceptance testing:
 
 > - User acceptance Testing
 >
@@ -95,7 +95,7 @@ The Acceptance test Report has the following attributes:
 >
 > - Approval Decision
 
-Acceptance Testing focuses on checking if the developed software meets all the requirements. Its main purpose is to check if the solution developed meets the user expectations.
+Acceptance Testing centers on checking if the developed software meets all the requirements. Its main purpose is to check if the solution developed meets the user expectations.
 
 Acceptance Testing is a well-established practice in software development. Acceptance Testing is a major part of Functional Testing of your code.
 
