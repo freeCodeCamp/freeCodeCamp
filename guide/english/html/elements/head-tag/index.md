@@ -20,5 +20,5 @@ The `<head>` element contains information about how a webpage should be displaye
 #### More Information:
 
 - [MDN](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/head)
-
+- [W3Schools](https://www.w3schools.com/tags/tag_head.asp)
 
