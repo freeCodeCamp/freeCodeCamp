@@ -4,7 +4,7 @@ title: Kotlin
 
 **What is Kotlin?**
 
-<a href='https://kotlinlang.org/'>Kotlin</a> is a programming language developed by <a href='https://www.jetbrains.com'>Jetbrains</a>, the company behind some of the world's most popular IDEs like IntelliJ and Pycharm.
+<a href='https://kotlinlang.org/'>Kotlin</a> is a <a href='https://en.wikipedia.org/wiki/Type_system#Static_type_checking'>statically typed</a> programming language developed by <a href='https://www.jetbrains.com'>Jetbrains</a>, the company behind some of the world's most popular IDEs like IntelliJ and Pycharm.
 
  It serves as a replacement for Java and runs on the JVM. It has been in development for close to 6 years and it hit 1.0 just a year ago. 
  
