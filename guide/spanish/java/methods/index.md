@@ -6,15 +6,14 @@ localeTitle: Métodos
 
 El método más reconocible en Java es probablemente `public static void main(String[]args)` donde `public` significa que los usuarios tienen acceso al método, `static` significa que el método se basa en una "clase" en lugar de una "instancia", `void` significa que nada se devolverá del método a otro método (nivel superior), y `main` que es el nombre de este método en particular.
 
-`getName()` y `getManufacturerName()` son dos métodos "Getter" que hemos utilizado aquí. Generalmente, los métodos en Java consisten en estas partes:
+`getName()` y `getManufacturerName()` son dos métodos "Getter" que hemos utilizado aquí. [Según la especificación de Java](https://docs.oracle.com/javase/specs/jls/se8/html/jls-8.html#jls-8.4), los métodos tienen estas partes:
 
-*   Modificador de acceso (opcional): `public` , `private` o `protected` . Por defecto, paquete privado si se omite
-*   Tipo de devolución: es obligatorio, indica el valor que devuelve el método o se `void` si no se devuelve nada
-*   Nombre del método: sigue la convención de camelCase
-*   Lista de parámetros: lista de parámetros con su nombre y tipo, vacía si no se aceptan parámetros
+*   Modificadores (opcional): los más habituales son de control de acceso: `public` , `private` o `protected` (por defecto, [`package-private` si se omite](https://docs.oracle.com/javase/tutorial/java/javaOO/accesscontrol.html)) o si están asociados a la clase en sí y no a una instancia usando `static`. Puedes ver todos en [las especificaciones](https://docs.oracle.com/javase/specs/jls/se8/html/jls-8.html#jls-8.4.3).
+*   Tipo de retorno: es obligatorio, indica el valor que devuelve el método o `void` si no se devuelve nada.
+*   Cabecera:
+    *   Identificador/Nombre del método: sigue la convención de lowerCamelCase.
+    *   Lista de parámetros: lista de parámetros con su nombre y tipo, vacía si no se aceptan parámetros.
 *   Cuerpo del método rodeado por `{ }`
-
-Los métodos también pueden tener opcionalmente la palabra clave `static` , lo que significa que está asociada con la clase en sí, en lugar de una instancia de la clase, ex - `public static void main()` .
 
 Aviso, a diferencia de JavaScript, **tenemos** que definir el tipo de retorno de cualquier método que escribimos, de lo contrario se producirá un error en tiempo de compilación. Si no desea que un método devuelva nada, use `void` return type.
 
