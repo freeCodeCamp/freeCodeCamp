@@ -8,15 +8,15 @@ Una variable asocia un nombre con un valor de un tipo particular. En Swift hay d
 
 El beneficio de tener dos formas de almacenar variables en Swift es evitar errores de cambio de variables que deberían ser constantes.
 
-\`\` \`Swift vamos daysInAWeek = 7 var amountOfMoney = 100
-
+```Swift 
+let daysInAWeek = 7 
+var amountOfMoney = 100
 amountOfMoney = 150 // amountOfMoney ahora es 150
-
 daysInAWeek = 10 // ¡Esto nos da un error!
 
-\`\` \`
+```
 
-En este caso la variable `daysInAWeek` debe ser una constante, porque sólo hay siete días en una semana, mientras que la variable `amountOfMoney` debe ser una var porque la cantidad de dinero en la cuenta los cambios.
+En este caso la variable `daysInAWeek` debe ser una constante, porque sólo hay siete días en una semana, mientras que la variable `amountOfMoney` debe ser una varariable mutable porque la cantidad de dinero en la cuenta cambio.
 
 Los nombres de variables y constantes pueden contener casi cualquier carácter, incluidos los caracteres Unicode:
 
@@ -32,7 +32,7 @@ Para probar si sus variables tienen el valor correcto, use `print()` .
   let money = 50 
  
   print(money) 
-  // This prints 50 
+  // Esto escribe 50 
 ```
 
 #### Más información:
