@@ -123,21 +123,28 @@ The useful **3xx**!
 - **304 - Not Modified**
   - Useful status code to tell you that the browser saw no change in delta from the file it just received and the one it had cached, so it used the cached version instead.
 
-The dangerous **5xx** resources!
-- **500** Internal Server Error
-- **501** Not implemented. Server lacks the ability to fulfil the request
-- **504** Gateway Timeout. Server didn't receive timely response
+The frustrating **4xx** resources!
+- **400** Bad Request. More on that below.
+- **403** Forbidden. Server has denied the credentials for your request.
+- **404** Not Found. The server either does not have the webpage, or you made a typo in the URL.
 
-Less known **4xx** suggests that you are passing wrong parameter. Can also pass information that is wrong.
+The lesser known **400** suggests that you are passing wrong parameter. The response can also pass information that describes what is wrong.
 
 Example:
 ```output
 DELETE /cars/MH09234
 ```
-returns `4xx` or message 
+returns `400` or message 
 ```output
 Expecting int car id /car/id got string car/MH09234
 ```
+
+The dangerous **5xx** resources!
+- **500** Internal Server Error
+- **501** Not Implemented. Server lacks the ability to fulfil the request
+- **504** Gateway Timeout. Server didn't receive timely response
+
+
 
 ### REST API Development Environment and Testing:
 
@@ -148,8 +155,6 @@ A detailed explanation has been given on Quick Code blog on how to use Postman f
 [Top Tutorials To Learn POSTMAN For REST API Testing](https://medium.com/quick-code/top-tutorials-to-learn-postman-for-rest-api-testing-3bdf9788e0ba)
 
 #### More Information
-
-
 * [How to Design Great APIs - Parse Developer Day 2013](https://www.youtube.com/watch?v=qCdpTji8nxo)
 * [The never-ending REST API design debate by Guillaume Laforge](https://www.youtube.com/watch?v=48azd2VqtP0)
 * [HTTP status codes](https://httpstatuses.com/)
