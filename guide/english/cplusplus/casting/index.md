@@ -70,13 +70,21 @@ void staticCastTest(float floatVal) {
     std::cout << intVal << std::endl;
 }
 
+//not recommended but important to recognize
+void cStyleCastTest(float floatVal) {
+    // Convert the float into a double.
+    auto doubleVal = (double)(floatVal);
+    std::cout << doubleVal << std::endl;
+}
+
 int main() {
     MyClassChild myClass;
     reinterpretCastTest(&myClass);
     constCastTest(myClass);
     dynamicCastTest(&myClass);
     staticCastTest(10.5);
-
+    cStyleCastTest(11.9);
+    
     return 0;
 }
 ```
