@@ -9,7 +9,7 @@ Some are more popular than others, but they all have similar editing capabilitie
 
 ### Web App Image Editors
 
-Web App Image Editors are available in-browser. In other words, you  do not need to leave your browser to work on an image. Example: the  ability to open images from a local folder/ url.
+Web App Image Editors are available in-browser. In other words, you  do not need to leave your browser to work on an image. Example: the  ability to open images from a local folder/ url. This solution can be limited, you can do basic things only.
 
 ### Open Source Editors
 
@@ -24,3 +24,4 @@ Paid Editors need either a one-time payment or are subscription-based. But, tria
 * <a href='https://www.gimp.org/' target='_blank' rel='nofollow'>Gimp</a> - Free | Download | Open-Source
 * <a href='https://www.adobe.com/products/photoshop.html' target='_blank' rel='nofollow'>Photoshop</a> - Free Trial | Paid
 * <a href='https://www.photoshop.com/products/photoshopexpress' target='_blank' rel='nofollow'>Photoshop Express</a> - Free | Mobile
+* <a href='https://affinity.serif.com' target='_blank' rel='nofollow'>Affinity</a> - Free Trial | Paid | Desktop - Ipad
