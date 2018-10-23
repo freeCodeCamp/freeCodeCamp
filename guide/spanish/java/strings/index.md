@@ -29,9 +29,9 @@ Bueno, usar la palabra reservada `new` garantiza que se creará un nuevo objeto 
 En este fragmento de código, ¿cuántos objetos de cadena se crean?
 
 ```java
- String str = "This is a string"; 
- String str2 = "This is a string"; 
- String str3 = new String("This is a string"); 
+ String str = "Esta es una cadena"; 
+ String str2 = "Esta es una cadena"; 
+ String str3 = new String("Esta es una cadena"); 
 ```
 
 La respuesta es: 2 objetos String son creados. `str` y `str2` refieren al mismo objeto. `str3` tiene el mismo contenido pero usando `new` forzados. La creación de un objeto nuevo, distinto.
@@ -139,6 +139,6 @@ String a = "Sam";
 
 ```
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTExMzc5MzU4NzIsODQ4OTU3NDE1LDE5Mz
-Y3NTE4MTBdfQ==
+eyJoaXN0b3J5IjpbLTIzMzU2MjA2Nyw4NDg5NTc0MTUsMTkzNj
+c1MTgxMF19
 -->
