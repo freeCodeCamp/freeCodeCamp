@@ -31,7 +31,7 @@ Find S(1012). Give your answer mod 108.
 ```yml
 tests:
   - text: <code>euler403()</code> should return 18224771.
-    testString: 'assert.strictEqual(euler403(), 18224771, "<code>euler403()</code> should return 18224771.");'
+    testString: assert.strictEqual(euler403(), 18224771, '<code>euler403()</code> should return 18224771.');
 
 ```
 

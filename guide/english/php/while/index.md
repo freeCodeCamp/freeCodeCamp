@@ -6,6 +6,7 @@ A `while` loop executes statements within the loop as long as the loops conditio
 
 ### Syntax:
 ```php
+<?php
 $x = 0;
 while ($x < 11) {
     statement1;

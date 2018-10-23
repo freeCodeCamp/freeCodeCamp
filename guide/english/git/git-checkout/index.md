@@ -23,7 +23,7 @@ git checkout BRANCH-NAME
 Generally, Git won't let you checkout another branch unless your working directory is clean, because you would lose any working directory changes that aren't committed. You have three options to handle your changes: 1) trash them, 2) <a href='https://guide.freecodecamp.org/git/git-commit/' target='_blank' rel='nofollow'>commit them</a>, or 3) <a href='https://guide.freecodecamp.org/git/git-stash/' target='_blank' rel='nofollow'>stash them</a>.
 
 ### Checkout a New Branch
-To create and checkout out a new branch with a single command, you can use:
+To create and checkout a new branch with a single command, you can use:
 ```shell
 git checkout -b NEW-BRANCH-NAME
 ```

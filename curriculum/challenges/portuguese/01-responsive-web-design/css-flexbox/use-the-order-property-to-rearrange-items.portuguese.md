@@ -10,7 +10,7 @@ localeTitle: ''
 <section id="description"> A propriedade <code>order</code> é usada para informar ao CSS a ordem de como os itens flexíveis aparecem no contêiner flexível. Por padrão, os itens aparecerão na mesma ordem em que aparecem no HTML de origem. A propriedade aceita números como valores e números negativos podem ser usados. </section>
 
 ## Instructions
-<section id="instructions"> Adicione o <code>order</code> propriedade CSS aos dois <code>#box-1</code> e <code>#box-2</code> . Dê <code>#box-1</code> um valor de 2 e dê <code>#box-2</code> um valor de 1. </section>
+<section id="instructions"> Adicione a propriedade CSS <code>order</code> a ambos <code>#box-1</code> e <code>#box-2</code> . Dê a <code>#box-1</code> um valor de 2 e dê a <code>#box-2</code> um valor de 1. </section>
 
 ## Tests
 <section id='tests'>

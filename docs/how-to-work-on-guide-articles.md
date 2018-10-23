@@ -25,7 +25,7 @@ Or just [create an issue](https://github.com/freeCodeCamp/freeCodeCamp/issues) -
 There are two ways you can propose a change to the repository, after you edit or add a Guide article:
 
 - [Using the GitHub Web Interface on your browser](#using-the-github-web-interface-on-your-browser).
-- [Working on your local machine](#working-on-your-local-machine) (_recommended_ for previewing changes).
+- [Working on your local machine (_recommended_ for previewing changes)](#working-on-your-local-machine-recommended-for-previewing-changes).
 
 #### Using the GitHub Web Interface on your browser
 
@@ -79,7 +79,7 @@ You are not required to work on your local machine, unless you would like to pre
 Here are a few guidelines the reviewers follow when reviewing PRs:
 
 - there is a relevant description and title
-- PR respects the [style guide](/docs/style-guide-for-guide-articles)
+- PR respects the [style guide](/docs/style-guide-for-guide-articles.md)
 - we follow general QA tips found in [Moderator guidelines](https://forum.freecodecamp.org/t/freecodecamp-moderator-guidelines/18295)
 - as long as a pull request improves or expands the guide, we accept it even if it contains imperfect English or partial content
 - older pull requests are reviewed first

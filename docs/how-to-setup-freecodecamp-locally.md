@@ -24,7 +24,7 @@ This is essential, because this way you are able to work on your copy of freeCod
 
 ## Preparing the development environment
 
-Once you have the prerequisites installed, you need to prepare you development environment. This is common for many development workflows, and you will need to do this only once.
+Once you have the prerequisites installed, you need to prepare your development environment. This is common for many development workflows, and you will need to do this only once.
 
 **Follow these steps to get your development environment ready:**
 
@@ -412,7 +412,7 @@ Follow these steps:
 
 2. By default, all pull requests should be against the freeCodeCamp main repo, `master` branch.
 
-    Make sure that your Base Fork is set to freeCodeCamp/freeCodeCamp when raising a Pull Request.**
+    Make sure that your Base Fork is set to freeCodeCamp/freeCodeCamp when raising a Pull Request.
 
     ![Image - Comparing forks when making a pull request](/docs/images/github/comparing-forks-for-pull-request.png)
 

@@ -23,7 +23,7 @@ Make all of your <code>p</code> elements use the <code>monospace</code> font.
 ```yml
 tests:
   - text: Your <code>p</code> elements should use the font <code>monospace</code>.
-    testString: 'assert($("p").not(".red-text").css("font-family").match(/monospace/i), "Your <code>p</code> elements should use the font <code>monospace</code>.");'
+    testString: assert($("p").not(".red-text").css("font-family").match(/monospace/i), 'Your <code>p</code> elements should use the font <code>monospace</code>.');
 
 ```
 

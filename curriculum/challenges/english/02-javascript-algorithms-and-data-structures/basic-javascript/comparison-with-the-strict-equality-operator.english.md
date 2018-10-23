@@ -24,13 +24,13 @@ Use the strict equality operator in the <code>if</code> statement so the functio
 ```yml
 tests:
   - text: <code>testStrict(10)</code> should return "Not Equal"
-    testString: 'assert(testStrict(10) === "Not Equal", "<code>testStrict(10)</code> should return "Not Equal"");'
+    testString: assert(testStrict(10) === "Not Equal", '<code>testStrict(10)</code> should return "Not Equal"');
   - text: <code>testStrict(7)</code> should return "Equal"
-    testString: 'assert(testStrict(7) === "Equal", "<code>testStrict(7)</code> should return "Equal"");'
+    testString: assert(testStrict(7) === "Equal", '<code>testStrict(7)</code> should return "Equal"');
   - text: <code>testStrict("7")</code> should return "Not Equal"
-    testString: 'assert(testStrict("7") === "Not Equal", "<code>testStrict("7")</code> should return "Not Equal"");'
+    testString: assert(testStrict("7") === "Not Equal", '<code>testStrict("7")</code> should return "Not Equal"');
   - text: You should use the <code>===</code> operator
-    testString: 'assert(code.match(/(val\s*===\s*\d+)|(\d+\s*===\s*val)/g).length > 0, "You should use the <code>===</code> operator");'
+    testString: assert(code.match(/(val\s*===\s*\d+)|(\d+\s*===\s*val)/g).length > 0, 'You should use the <code>===</code> operator');
 
 ```
 
