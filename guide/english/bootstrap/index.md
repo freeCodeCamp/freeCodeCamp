@@ -76,6 +76,11 @@ Bootstrap has thorough documentation with many <a href='https://getbootstrap.com
 In addition, you can find both <a href='https://bootswatch.com/' target='_blank' rel='nofollow'>free</a> and <a href='https://themes.getbootstrap.com/' target='_blank' rel='nofollow'>paid</a>
 themes that build on the Bootstrap framework to provide a more customized and stylish look.
 
+
+#### Why should i use bootstrap?
+Bootstrap provides an easy solution both for design and responsiveness, It is packed with beatiful elements that you can further style with your own css, a full grid system to keep your website responsive across all screens while using a clean and understandable syntax.
+You can build a professional looking website without any css or javascript and easily customize the elements if needed
+
 #### Bootstrap Resources: 
 [Bootstrap's offical blog](http://blog.getbootstrap.com/)
 [Bootstrap site inspiration](http://expo.getbootstrap.com/)
