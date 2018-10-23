@@ -3,27 +3,27 @@ id: 587d78a4367417b2b2512ad3
 title: Adjust the Color of Various Elements to Complementary Colors
 challengeType: 0
 videoUrl: ''
-localeTitle: Отрегулируйте цвет различных элементов для дополнительных цветов
+localeTitle: Отрегулируйте цвет разных элементов дополнительными цветами
 ---
 
 ## Description
 <section id="description"> Задача «Дополнительные цвета» показала, что противоположные цвета на цветовом круге могут сделать друг друга более яркими, когда они расположены бок о бок. Однако сильный визуальный контраст может быть резким, если он чрезмерно используется на веб-сайте и иногда может сделать текст более трудным для чтения, если он помещен на фоне дополнительного цвета. На практике один из цветов обычно доминирует, а дополнение используется для привлечения внимания к определенному контенту на странице. </section>
 
 ## Instructions
-<section id="instructions"> Эта страница будет использовать оттенок <code>#09A7A1</code> ( <code>#09A7A1</code> ) в качестве доминирующего цвета, а его оранжевый ( <code>#FF790E</code> ) дополняет визуально выделение кнопок регистрации. Измените <code>background-color</code> как <code>header</code> и <code>footer</code> от черного до цвета teal. Затем измените <code>color</code> текста <code>h2</code> на teal. Наконец, измените <code>background-color</code> <code>button</code> на оранжевый цвет. </section>
+<section id="instructions"> Эта страница будет использовать оттенок <code>#09A7A1</code> ( <code>#09A7A1</code> ) в качестве доминирующего цвета, а его оранжевый ( <code>#FF790E</code> ) дополняет визуальное выделение кнопок регистрации. Измените <code>background-color</code> <code>header</code> и <code>footer</code> с черного на цвет тика. Затем измените <code>color</code> текста <code>h2</code> на цвет тика. Наконец, измените <code>background-color</code> <code>button</code> на оранжевый цвет. </section>
 
 ## Tests
 <section id='tests'>
 
 ```yml
 tests:
-  - text: 'Элемент <code>header</code> должен иметь <code>background-color</code> # 09A7A1.'
+  - text: 'Элемент <code>header</code> должен иметь <code>background-color</code> #09A7A1.'
     testString: 'assert($("header").css("background-color") == "rgb(9, 167, 161)", "The <code>header</code> element should have a <code>background-color</code> of #09A7A1.");'
-  - text: 'Элемент нижнего <code>footer</code> должен иметь <code>background-color</code> # 09A7A1.'
+  - text: 'Элемент <code>footer</code> должен иметь <code>background-color</code> #09A7A1.'
     testString: 'assert($("footer").css("background-color") == "rgb(9, 167, 161)", "The <code>footer</code> element should have a <code>background-color</code> of #09A7A1.");'
-  - text: 'Элемент <code>h2</code> должен иметь <code>color</code> # 09A7A1.'
+  - text: 'Элемент <code>h2</code> должен иметь <code>color</code> #09A7A1.'
     testString: 'assert($("h2").css("color") == "rgb(9, 167, 161)", "The <code>h2</code> element should have a <code>color</code> of #09A7A1.");'
-  - text: 'Элемент <code>button</code> должен иметь <code>background-color</code> # FF790E.'
+  - text: 'Элемент <code>button</code> должен иметь <code>background-color</code> #FF790E.'
     testString: 'assert($("button").css("background-color") == "rgb(255, 121, 14)", "The <code>button</code> element should have a <code>background-color</code> of #FF790E.");'
 
 ```
