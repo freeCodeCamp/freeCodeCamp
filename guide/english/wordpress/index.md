@@ -29,6 +29,10 @@ As a CMS, WordPress allows you to control and manage content of your website wit
 
 Whether it is page transitions or a customized contact form, WordPress users are only a few clicks away from success and a beautiful website.
 
+### WordPress Community
+
+If you would like to meet new people who are interested in Wordpress there are many meetups around the world including huge events called WordCamp which can be a great place to network. 
+
 ### WordPress as Blogging Platform
 
 Blogging is a foundational feature of WordPress. One of the primary things it allows you to do is create individual "posts", and designate a main blog page that displays them in chronological order.
@@ -191,3 +195,4 @@ After confirming installation your will be on the WordPress Dashboard.
 - [Automattic - The Home of WordPress](https://automattic.com/)
 - [Advantages of WordPress](https://www.fastwebhost.com/blog/top-advantages-of-wordpress-in-2018/)
 - [WordPress Coding Standards](https://make.wordpress.org/core/handbook/best-practices/coding-standards/)
+- [WordPress WordCamp Central](https://central.wordcamp.org/)
