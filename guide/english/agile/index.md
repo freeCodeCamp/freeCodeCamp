@@ -24,3 +24,12 @@ There are many different flavors of agile, including Scrum and Extreme Programmi
 ### More information
 
 [Agile Alliance's Homepage](https://www.agilealliance.org/)
+
+
+## Quick Refrences and Sources for Reviewing Agile Methologies:
+
+1. https://www.dummies.com/careers/project-management/agile-project-management-for-dummies-cheat-sheet/
+2. https://www.altexsoft.com/whitepapers/agile-project-management-best-practices-and-methodologies/
+3. http://agilemethodology.org/
+
+
