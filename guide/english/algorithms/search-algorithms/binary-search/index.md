@@ -18,6 +18,12 @@ Because we know that names in the phonebook are sorted alphabetically, we could 
 4. Repeat until you find the name or there are no more pages left in the phonebook
 
 Time complexity: As we dispose off one part of the search case during every step of binary search, and perform the search operation on the other half, this results in a worst case time complexity of *O*(*log<sub>2</sub>N*).
+The time complexity of Binary Search can be written as
+
+T(n) = T(n/2) + c 
+The above recurrence can be solved either using Recurrence T ree method or Master method. It falls in case II of Master Method and solution of the recurrence is Theta(Logn).
+
+
 
 Space complexity: Binary search takes constant or *O*(*1*) space meaning that we don't do any input size related  variable defining.
 
@@ -289,3 +295,5 @@ int binarySearch(int[] arr, int start,int end , int element)
 * [Binary search (YouTube video)](https://youtu.be/P3YID7liBug)
 * [Binary Search - CS50](https://www.youtube.com/watch?v=5xlIPT1FRcA)
 * [Binary Search - MyCodeSchool](https://www.youtube.com/watch?v=j5uXyPJ0Pew&list=PL2_aWCzGMAwL3ldWlrii6YeLszojgH77j)
+
+* [Binary Search - GeeksforGeeks](https://www.geeksforgeeks.org/binary-search/)
