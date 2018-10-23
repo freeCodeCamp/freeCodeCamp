@@ -12,6 +12,8 @@ To insert an image you define the source and an alternative text wich is display
 
 `alt` - This attribute is used to overcome the problem of broken image or incapability of your browser to not being able to produce image on webpage. This attribute as name suggests provide "alternative" to image which is some text describing the image.
 
+The 'alt' - text is also use for screen reader applications used by visualy challenge persons to read the web page content. 
+
 
 ## Example
 
