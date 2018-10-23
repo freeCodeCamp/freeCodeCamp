@@ -19,7 +19,7 @@ Você pode escolher até que ponto deseja tornar o elemento transparente. Você 
   opacity:1; 
  } 
  
- OR 
+ OU
  
  .class-name { 
   opacity:1.0; 
@@ -32,7 +32,7 @@ Você pode escolher até que ponto deseja tornar o elemento transparente. Você 
 .class-name { 
   opacity:0.5; 
  } 
- Opacity value can be anything between 0 and 1; 
+ O valor aceito é de 0 até 1.
 ```
 
 **Transparente**
@@ -42,16 +42,22 @@ Você pode escolher até que ponto deseja tornar o elemento transparente. Você 
   opacity:0; 
  } 
  
- OR 
+ OU 
  
  .class-name { 
   opacity:0.0; 
  } 
 ```
 
-Alternativamente, você pode usar um valor rgba transparente como este: \`\` \`css
+De maneira alternativa, você pode controlar o canal Alfa utilizando valores RGB, ambos os métodos possuem o mesmo efeito, porém utilizando o RGB, você pode definir a cor de fundo.
 
-.nome da classe{ cor de fundo: rgba (0,0,0, 0,5); } \`\` \` O exemplo acima define o plano de fundo como preto com 50% de opacidade. O último valor de um valor rgba é o valor alfa. Um valor alfa de 1 é igual a 100% e 0,5 (0,5 para curto) é de 50%. Usamos esse método para adicionar transparência a um elemento sem afetar o conteúdo interno.
+```css
+.nome da classe{ 
+   background-color: rgba (0,0,0, 0,5); 
+ }  
+ ```
+
+O exemplo acima define o plano de fundo como preto com 50% de opacidade. O último valor de um valor rgba é o valor alfa. Um valor alfa de 1 é igual a 100% e 0,5 é de 50%. Usamos esse método para adicionar transparência a um elemento sem afetar o conteúdo interno.
 
 [Um exemplo codepen para mostrar intervalos de opacidade em segundo plano](https://codepen.io/lvcoulter/full/dVrwmK/)
 
