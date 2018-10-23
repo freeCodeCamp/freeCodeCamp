@@ -96,5 +96,5 @@ This doesn't need much explanation. You should always try to learn new languages
 Programmers should work to develop computer systems that can reduce negative consequences to society, such as threats to safety and health, and that can make everyday activities and work easier. It is “an obligation to develop to high standards".
 
 ### <b>In conclusion:</b>
-Perhaps there ought to be more promises that we should make, in fact, many of these promises <b>might not be even practical</b>. However, all these promises feel to be important somehow, and reasonable as an oath that a professional programmer would take.
+Perhaps there ought to be more promises that we should make, in fact, many of these promises <b>might not be even practical</b>. However, all these promises feel to be important somehow, and reasonable as an oath that a professional programmer would take. Another point we need to take into consideration is the ever changing cyber domain and cyber tools. The programmers oath should be under constant scrutinity in case there needs to be revisions made in order to keep up with technological cahanges.
 
