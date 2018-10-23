@@ -8,7 +8,7 @@ The `do while loop` is almost the same as the while loop. The `do while loop` ha
 do 
 {
   // do something;	
-} while(expression);
+} while(condition);
 	
 ```
 
@@ -21,7 +21,7 @@ The do-while loop is used whenever you are sure that a particular process(within
 Do something first and then test if we have to continue. The result is that the do block runs at least once. (Because the expression test comes afterward). Take a look at an example:
 
 ```cpp
-#include <iostream>
+#include <iostream.h>
 	using namespace std;
 
 	int main()
