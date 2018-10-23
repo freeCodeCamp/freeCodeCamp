@@ -25,3 +25,16 @@ When naming variables, you must follow these rules:
 - A variable name cannot start with a number or special characters (!@#%^&*, etc.)
 - A variable name can only contain alpha-numeric characters and underscores (A-z, 0-9, and _ )
 - Variable names are case-sensitive (num, NUM and Num are three different variables)
+
+
+
+
+----------------------------------------------------------------------------------------
+Example :- Two variables related employee is created,one having String and another having numbers as data;
+
+employeeName="Johnson"
+print(employeeName)
+
+employeeId=101234
+print(employeeId)
+
