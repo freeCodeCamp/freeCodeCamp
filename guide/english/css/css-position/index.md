@@ -12,6 +12,13 @@ The position property specifies the type of positioning method used for an eleme
 .fixed          { position: fixed; }
 .absolute       { position: absolute; }
 ```
+It’s often used alongside the 4 coordinates properties:
+
+left
+right
+top
+bottom
+
 
 ### More Information:
 
