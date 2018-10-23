@@ -4,7 +4,7 @@ localeTitle: Strings (Secuencias de caracteres)
 ---
 # Strings (Secuencias de caracteres)
 
-Los Strings son secuencias de caracteres. En Java, un `String` es un `Object` . Las cadenas no deben confundirse con `char` ya que los caracteres son literalmente 1 valor en lugar de una secuencia de caracteres. Aún puede usar 1 valor dentro de una cadena, sin embargo, es preferible usar `char` cuando está verificando 1 carácter.
+Los Strings son secuencias de caracteres. En Java, un `String` es un `Object`. Las cadenas no deben confundirse con `char` ya que los caracteres son literalmente 1 valor en lugar de una secuencia de caracteres. Aún puede usar 1 valor dentro de una cadena, sin embargo, es preferible usar `char` cuando está verificando 1 carácter.
 
 ```java
 String course = "FCC"; 
@@ -139,5 +139,5 @@ String a = "Sam";
 
 ```
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTEzODUwNjUxMTZdfQ==
+eyJoaXN0b3J5IjpbMTgyNTY2Njk3OF19
 -->
