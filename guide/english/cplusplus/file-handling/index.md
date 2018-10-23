@@ -73,6 +73,18 @@ Zara
 
 * the getline() function is used to read a line from the opened file
 * the ignore() function s used to ignore the extra characters left by previous read statement
+## append a file
+   generally when you write into a file the previous information is lost. To avoid this we use append mode in file, in this writes after the previous information.
+   example: this example shows how to use the append mode
+   #include <fstream>
+
+int main() {  
+  std::ofstream outfile;
+
+  outfile.open("test.txt", std::ios_base::app);
+  outfile << "Data"; 
+  return 0;
+}
 
 ## Sources
 1.Tutorialspoint
