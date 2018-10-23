@@ -21,8 +21,9 @@ Determine which directory you are in.
 
 ```bash
 $ pwd
-/home/me/projects
+/users/username
 ```
+It looks like we are in the home directory.
 
 #### More Information:
 
