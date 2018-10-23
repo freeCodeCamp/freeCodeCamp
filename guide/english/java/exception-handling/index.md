@@ -32,3 +32,44 @@ finally {
 // block of code to be executed after try block ends
 }
 ```
+change by infitake.
+
+# improving exception handling 
+ java SE add some new feature in java which can increase the mechanism of exception handling in java for better use by the programmer;
+ 
+ these are as follow:
+ 1: catching multiple exception in same catch block;
+ 2: the try-with-resource statement;
+ 
+1: //first we use that type of coding :
+ /*
+ 
+   try
+   {
+     //code that may throw exception.
+    }
+   catch(ExceptionType1 e)
+   {  
+     // ex_handle(e);
+   }
+   catch(ExceptionType2 e)
+   {  
+     // ex_handle(e);
+   }
+   */
+   
+   by these enhancements in exception handling:
+    this code should be written as:
+/*    try
+   {
+     //code that may throw exception.
+    }
+    catch(ExceptionType1 |ExceptionType2 e)
+   {  
+     // ex_handle(e);
+   }
+    */
+  2:using try-with-resources statement
+  it automatically close all the opened files and resources at the end of the try block, thus there is no need for explicit closure statement;
+  
+     
