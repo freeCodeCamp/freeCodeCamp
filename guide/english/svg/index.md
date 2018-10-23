@@ -132,6 +132,7 @@ This draws the following chart:
 ## Editors
 
 * [Vectr](https://vectr.com) - web and desktop tool for creating and editing SVG graphics, free of charge
+* [Boxy SVG](https://boxy-svg.com/) - "Boxy SVG project goal is to create the best SVG editor for non-technical users as well as for professional web designers and web developers."
 
 ## Tools to create SVG
 
@@ -151,3 +152,4 @@ As an XML format, it allows you to benefit from the full power of JavaScript and
 
 - <a href='https://www.w3.org/TR/SVG/' target='_blank' rel='nofollow'>W3C, Scalable Vector Graphics (SVG) 1.1 (Second Edition)</a>
 - <a href='https://developer.mozilla.org/en-US/docs/Web/SVG' target='_blank' rel='nofollow'>Mozilla Developer Network, SVG</a>
+ 
