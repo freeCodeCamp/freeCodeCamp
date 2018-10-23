@@ -15,6 +15,9 @@ Just a few advantages of WordPress:
 * Has a blog built-in and ready to go whenever applicable. 
 * Has plugins, which extend functionality to WordPress sites. 
 
+Disadvantages
+* Has a few security issues due to $GLOBAL variables
+
 Whether its page transitions or a customized contact form, WordPress users are only a few clicks away from success and a beautiful website.
 
 
