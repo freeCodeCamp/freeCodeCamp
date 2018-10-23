@@ -7,7 +7,7 @@
 
 ## Welcome to freeCodeCamp.org's open source codebase and curriculum!
 
-freeCodeCamp.org is a friendly community where you can learn to code for free. It is run by a [donor-supported 501(c)(3) nonprofit](https://donate.freecodecamp.org) with the goal of helping millions of busy adults transition into tech. Our community has already helped more than 10,000 people get their first developer job.
+[freeCodeCamp.org][1] is a friendly community where you can learn to code for free. It is run by a [donor-supported 501(c)(3) nonprofit](https://donate.freecodecamp.org) with the goal of helping millions of busy adults transition into tech. Our community has already helped more than 10,000 people get their first developer job.
 
 Our full stack web development curriculum is completely free and self-paced. We have thousands of interactive coding challenges to help you expand your skills.
 
@@ -23,9 +23,9 @@ Our full stack web development curriculum is completely free and self-paced. We 
 
 ### Certifications
 
-freeCodeCamp.org offers several free developer certifications. Each of these certifications involves building 5 required web app projects, along with hundreds of optional coding challenges to help you prepare for those projects. We estimate that each certification will take a beginning programmer around 300 hours to earn.
+[freeCodeCamp.org][1] offers several free developer certifications. Each of these certifications involves building 5 required web app projects, along with hundreds of optional coding challenges to help you prepare for those projects. We estimate that each certification will take a beginning programmer around 300 hours to earn.
 
-Each of these 30 projects in the freeCodeCamp.org curriculum has its own agile user stories and automated tests. These help you build up your project incrementally, and ensure you've fulfilled all the user stories before you submit it.
+Each of these 30 projects in the [freeCodeCamp.org][1] curriculum has its own agile user stories and automated tests. These help you build up your project incrementally, and ensure you've fulfilled all the user stories before you submit it.
 
 You can pull in these test suites through [freeCodeCamp's CDN](https://cdn.freecodecamp.org/testable-projects-fcc/v1/bundle.js). This means you can build these projects on websites like CodePen and Glitch - or even on your local computer's development environment.
 
@@ -96,11 +96,11 @@ Here are our six core certifications:
 
 #### Full Stack Development Certification
 
-Once you earn all 6 of these certifications, you'll be able to claim your freeCodeCamp.org Full Stack Development Certification. This final distinction signifies that you’ve completed around 1,800 hours of coding with a wide range of web development tools.
+Once you earn all 6 of these certifications, you'll be able to claim your [freeCodeCamp.org][1] Full Stack Development Certification. This final distinction signifies that you’ve completed around 1,800 hours of coding with a wide range of web development tools.
 
 #### Legacy Certifications
 
-We also have 3 legacy certifications from our 2015 curriculum, which are still available. All of the required projects for these legacy certifications will remain available on freeCodeCamp.org.
+We also have 3 legacy certifications from our 2015 curriculum, which are still available. All of the required projects for these legacy certifications will remain available on [freeCodeCamp.org][1].
 
 - Legacy Front End Development Certification
 - Legacy Data Visualization Certification
@@ -134,9 +134,11 @@ Please don't create GitHub issues for security issues. Instead, please send an e
 
 ### License
 
-Copyright © 2018 freeCodeCamp.org
+Copyright © 2018 [freeCodeCamp.org][1]
 
 The content of this repository bound by the following licenses:
 
 - The computer software is licensed under the [BSD-3-Clause](LICENSE.md) License.
 - The [curricular content](https://www.npmjs.com/package/@freecodecamp/curriculum) in the [`/curriculum`](/curriculum) folder and its subdirectories are licensed under the [CC-BY-SA-4.0](/curriculum/LICENSE.md) License.
+
+[1]: https://www.freeCodeCamp.org
