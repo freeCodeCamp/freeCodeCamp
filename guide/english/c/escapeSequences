@@ -1,0 +1,19 @@
+
+
+## Escape Sequences
+The comibination of a specific character and a backslash is called an # escape #sequence.These tells the compiler to escape from the way these characters would normally be interpreted.
+
+| Escape Sequence | Character Represented | Meaning | ASCII Code|
+| --- | --- | --- | --- |
+|\n | Newline | Move to new line | 00001010 |
+| \t | Horizontal tab | Move to next horizontal tab setting | 00001001 |
+| \v | Vertical tab | Move to next vertical tab setting | 00001011 |
+| \b | Backspace | Move back one space | 00001000 |
+| \r | Carriage return | Carriage return (moves the cursor to the start of the currentline-used for overprinting) | 00001101 |
+| \f | Form feed | Issue a form feed | 00001100 |
+| \a | Alert | Issue an alert(usually a bell sound) | 00000111 |
+| \\ | Backslash | Insert a backslash character | 01011100 |
+| \? | Question mark | Insert a question mark character | 00111111 |
+| \' | Single quotation mark | Insert a single quote character | 00100111 |
+| \" | Double quotation mark | Insert a double quote character | 00100010 |
+| \0 | Null character | Insert the null character, which is defined as having the value 0 | 00000000 |
