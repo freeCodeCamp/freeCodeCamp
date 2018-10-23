@@ -3,7 +3,7 @@ title: Linux Terminal
 ---
 
 
-# Using the Terminal in LINUX
+# Using LINUX Shell or Terminal
 
 Basically, a shell is a program that receives commands from the user and gives it to the OS to process, and it shows the output. Linux's shell is its main part. Its distros come in GUI (graphical user interface), but basically, Linux has a CLI (command line interface).
 
