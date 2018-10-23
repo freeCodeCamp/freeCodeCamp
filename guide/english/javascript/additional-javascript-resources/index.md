@@ -126,3 +126,7 @@ Find javascript libraries at <a href='http://jster.net' target='_blank' rel='nof
 *   <a href='https://github.com/getify/Functional-Light-JS' target='blank' rel='nofollow'>Functional Light JS</a>
 
     This book aims to be a useful companion for anyone wishing to (re)discover the many facets of JavaScript. From the very basics of programming up to front-end and back-end web development, a lot of topics are covered in a simple and accessible way. No prior knowledge needed!
+    
+*   <a href='http://shop.oreilly.com/product/9780596517748.do' target='blank' rel='nofollow'>JavaScript: The Good Parts</a>
+
+    Good entry-level JavaScript book. 
