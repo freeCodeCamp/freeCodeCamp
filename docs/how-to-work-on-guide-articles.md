@@ -31,9 +31,7 @@ There are two ways you can propose a change to the repository, after you edit or
 
 Watch the video demonstration or follow the steps below it:
 
-**[TODO]** Update the GIF recording.
-
-![GIF showing the GitHub interface steps](#)
+![GIF showing the GitHub interface steps](https://cdn-images-1.medium.com/max/1395/1*qnFS6ITMwcpsiZvF5b1pHw.gif)
 
 1. Go into the [**"guide"**](/guide) folder (located in freeCodeCamp repository), select the language you want to contribute to, and find the article stub you'd like to write or edit.
 
