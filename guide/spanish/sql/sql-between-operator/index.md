@@ -2,7 +2,7 @@
 title: SQL Between Operator
 localeTitle: SQL Entre Operador
 ---
-## SQL Entre Operador
+## SQL - Operador BETWEEN
 
 El operador BETWEEN es útil debido al optimizador de consultas SQL. Aunque BETWEEN es funcionalmente lo mismo que: x <= element <= y, el Optimizador de consultas SQL reconocerá este comando más rápido y tiene un código optimizado para ejecutarlo.
 
