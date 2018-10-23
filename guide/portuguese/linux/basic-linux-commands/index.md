@@ -49,3 +49,6 @@ Ao começar com o linux, existem alguns comandos básicos que todos devem conhec
 1.  **menos** - visualizar o conteúdo do arquivo
 
 *   Use `less filename.txt` para visualizar o conteúdo de um arquivo e navegar por eles. Por padrão, menos passará pela página do arquivo por página.
+
+1. **toque** - cria um novo arquivo
+*  Use `touch text.txt` para criar um arquivo no formato de texto.
