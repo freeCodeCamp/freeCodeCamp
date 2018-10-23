@@ -1,5 +1,5 @@
 ---
-title: Blender Water Shader effect
+title: Blender Water Shader Effect
 ---
 
 ## This is a simple scene to render polar waters.
