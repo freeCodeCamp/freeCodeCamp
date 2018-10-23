@@ -3,7 +3,9 @@ title: Social Engineering
 ---
 ## Social Engineering
 
-Social Engineering is the art of gaining access to a secured system or resource by exploiting human behavior. It involves tricking people into breaking normal security procedures. Most attack vectors rely heavily on leveraging technical skills to find gaps in the security system. Social Engineering relies heavily on having a good understanding of human psychology. Thoroughly researching the target before an attack makes social engineering a powerful tool in the hands of the attacker. 
+Social Engineering is the art of gaining access to a secured system or resource by exploiting human behavior. It involves tricking people into breaking normal security procedures. Most attack vectors rely heavily on leveraging technical skills to find gaps in the security system. Social Engineering relies heavily on having a good understanding of human psychology. Thoroughly researching the target before an attack makes social engineering a powerful tool in the hands of the attacker.
+
+Keep in mind that people are the highest risk to security breaches!
 
 #### Traits of a good Social Engineering Hacker
 
