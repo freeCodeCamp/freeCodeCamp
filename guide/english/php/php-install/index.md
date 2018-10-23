@@ -30,3 +30,9 @@ install a database, such as MySQ.
 ### More information
 The official PHP website (PHP.net) has installation instructions for PHP: http://php.net/manual/en/install.php
 To get both web server and databse in a single package use this link: https://www.mamp.info/en/
+
+### Local PHP Server (Made with only php)
+In CMD you can type this to create a local server with php only
+```
+php -S localhost:80 -t Folder Location
+```
