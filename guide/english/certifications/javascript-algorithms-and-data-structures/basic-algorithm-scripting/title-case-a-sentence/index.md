@@ -71,6 +71,27 @@ Split the string by white spaces, and create a variable to track the updated tit
 *   <a href='http://forum.freecodecamp.com/t/javascript-string-prototype-substr/15945' target='_blank' rel='nofollow'>JS String Prototype Substr</a>
 *   <a href='http://forum.freecodecamp.com/t/javascript-array-prototype-join/14292' target='_blank' rel='nofollow'>JS Array Prototype Join</a>
 
+
+## ![:beginner:](https://forum.freecodecamp.com/images/emoji/emoji_one/beginner.png?v=3 ":beginner:")Another Basic Code Solution:
+
+    function titleCase(str) {
+    var arr = str.toLowerCase().split(" ");
+    for(var i=0;i<arr.length;i++){
+        arr[i] = arr[i].charAt(0).toUpperCase() + arr[i].substring(1);
+    }
+    return arr.join(" ");
+    }
+
+    titleCase("I'm a little tea pot");
+
+![:rocket:](https://forum.freecodecamp.com/images/emoji/emoji_one/rocket.png?v=3 ":rocket:") <a href='https://repl.it/CLjU/8' target='_blank' rel='nofollow'>Run Code</a>
+
+### Code Explanation:
+
+First we are splitting the words with a space between them and storing them into an array. We are also converting each letter of the string to lower case.
+Then we are looping through the array which now consists of all the words seperatly, we are converting the first letter of each word to uppercase and adding them to substring of the rest of the word.
+Then we are joining the array again using .join() and returning it.
+
 ## ![:sunflower:](https://forum.freecodecamp.com/images/emoji/emoji_one/sunflower.png?v=3 ":sunflower:") Intermediate Code Solution:
 
     function titleCase(str) {
