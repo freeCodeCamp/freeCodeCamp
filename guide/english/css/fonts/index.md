@@ -17,6 +17,7 @@ p {
 In the above example, "Times New Roman" is the <family-name> of the font, while "serif" is the <generic-name>. Generic names are used as a fallback
 mechanism for preserving style if the family-name is unavailable. A generic name should always be the last item in the list of font family names. Generic
 family names are serif, sans-serif, monospace, cursive, fantasy, system-ui.
+<a href="https://www.w3schools.com/cssref/css_websafe_fonts.asp">Here</a> are some examples of websafe fonts to use.
 
 ### Font style
 The `font-style` property can be used to specify italic text.
