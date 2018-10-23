@@ -20,10 +20,10 @@ Modify the <code>welcomeToBooleans</code> function so that it returns <code>true
 
 ```yml
 tests:
-  - text: 'The <code>welcomeToBooleans()</code> function should return a boolean &#40;true/false&#41; value.'
-    testString: 'assert(typeof welcomeToBooleans() === "boolean", "The <code>welcomeToBooleans()</code> function should return a boolean &#40;true/false&#41; value.");'
+  - text: The <code>welcomeToBooleans()</code> function should return a boolean &#40;true/false&#41; value.
+    testString: assert(typeof welcomeToBooleans() === 'boolean', 'The <code>welcomeToBooleans()</code> function should return a boolean &#40;true/false&#41; value.');
   - text: <code>welcomeToBooleans()</code> should return true.
-    testString: 'assert(welcomeToBooleans() === true, "<code>welcomeToBooleans()</code> should return true.");'
+    testString: assert(welcomeToBooleans() === true, '<code>welcomeToBooleans()</code> should return true.');
 
 ```
 
@@ -52,7 +52,7 @@ return false; // Change this line
 <div id='js-teardown'>
 
 ```js
-console.info('after the test');
+welcomeToBooleans();
 ```
 
 </div>

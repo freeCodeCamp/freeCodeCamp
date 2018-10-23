@@ -28,13 +28,13 @@ Select the <code>body</code> node, then select all <code>h2</code> elements. Hav
 ```yml
 tests:
   - text: Your document should have 9 <code>h2</code> elements.
-    testString: 'assert($("h2").length == 9, "Your document should have 9 <code>h2</code> elements.");'
+    testString: assert($('h2').length == 9, 'Your document should have 9 <code>h2</code> elements.');
   - text: The text in the <code>h2</code> elements should say "New Title". The capitalization and spacing should match exactly.
-    testString: 'assert($("h2").text().match(/New Title/g).length == 9, "The text in the <code>h2</code> elements should say "New Title". The capitalization and spacing should match exactly.");'
+    testString: assert($('h2').text().match(/New Title/g).length == 9, 'The text in the <code>h2</code> elements should say "New Title". The capitalization and spacing should match exactly.');
   - text: Your code should use the <code>data()</code> method.
-    testString: 'assert(code.match(/\.data/g), "Your code should use the <code>data()</code> method.");'
+    testString: assert(code.match(/\.data/g), 'Your code should use the <code>data()</code> method.');
   - text: Your code should use the <code>enter()</code> method.
-    testString: 'assert(code.match(/\.enter/g), "Your code should use the <code>enter()</code> method.");'
+    testString: assert(code.match(/\.enter/g), 'Your code should use the <code>enter()</code> method.');
 
 ```
 

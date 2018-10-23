@@ -23,13 +23,13 @@ Evaluate the sum of all the amicable numbers under <var>n</var>.
 ```yml
 tests:
   - text: <code>sumAmicableNum(1000)</code> should return 504.
-    testString: 'assert.strictEqual(sumAmicableNum(1000), 504, "<code>sumAmicableNum(1000)</code> should return 504.");'
+    testString: assert.strictEqual(sumAmicableNum(1000), 504, '<code>sumAmicableNum(1000)</code> should return 504.');
   - text: <code>sumAmicableNum(2000)</code> should return 2898.
-    testString: 'assert.strictEqual(sumAmicableNum(2000), 2898, "<code>sumAmicableNum(2000)</code> should return 2898.");'
+    testString: assert.strictEqual(sumAmicableNum(2000), 2898, '<code>sumAmicableNum(2000)</code> should return 2898.');
   - text: <code>sumAmicableNum(5000)</code> should return 8442.
-    testString: 'assert.strictEqual(sumAmicableNum(5000), 8442, "<code>sumAmicableNum(5000)</code> should return 8442.");'
+    testString: assert.strictEqual(sumAmicableNum(5000), 8442, '<code>sumAmicableNum(5000)</code> should return 8442.');
   - text: <code>sumAmicableNum(10000)</code> should return 31626.
-    testString: 'assert.strictEqual(sumAmicableNum(10000), 31626, "<code>sumAmicableNum(10000)</code> should return 31626.");'
+    testString: assert.strictEqual(sumAmicableNum(10000), 31626, '<code>sumAmicableNum(10000)</code> should return 31626.');
 
 ```
 

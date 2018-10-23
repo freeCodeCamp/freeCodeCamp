@@ -21,7 +21,7 @@ Find the 150,000th such number.
 ```yml
 tests:
   - text: <code>euler248()</code> should return 23507044290.
-    testString: 'assert.strictEqual(euler248(), 23507044290, "<code>euler248()</code> should return 23507044290.");'
+    testString: assert.strictEqual(euler248(), 23507044290, '<code>euler248()</code> should return 23507044290.');
 
 ```
 

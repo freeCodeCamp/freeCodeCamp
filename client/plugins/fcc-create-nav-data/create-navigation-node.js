@@ -5,13 +5,20 @@ const commonREs = require('../../utils/regEx');
 const readDir = require('../../utils/readDir');
 
 const { isAStubRE } = commonREs;
-const pagesDir = path.resolve(__dirname, '../../../guide/english/');
+// default locale to english for testing
+const { NODE_ENV: env, LOCALE: locale = 'english' } = process.env;
+
+const guideDir = `../../../${
+  env === 'production' ? 'guide' : 'mock-guide'
+}/${locale}`;
+
+const pagesDir = path.resolve(__dirname, guideDir);
 
 function withGuidePrefix(str) {
   return `/guide${str}`;
 }
 
-exports.createNavigationNode = node => {
+exports.createNavigationNode = function createNavigationNode(node) {
   const {
     fileAbsolutePath,
     frontmatter: { title },
@@ -21,8 +28,9 @@ exports.createNavigationNode = node => {
 
   const nodeDir = fileAbsolutePath.replace(/\/index\.md$/, '');
   const dashedName = nodeDir.split('/').slice(-1)[0];
-  const [, path] = nodeDir.split(pagesDir);
-  const parentPath = path
+  const [, nodePath] = nodeDir.split(pagesDir);
+
+  const parentPath = nodePath
     .split('/')
     .slice(0, -1)
     .join('/');
@@ -33,7 +41,7 @@ exports.createNavigationNode = node => {
     hasChildren: !!categoryChildren.length,
     dashedName,
     isStubbed: isAStubRE.test(content),
-    path: withGuidePrefix(path),
+    path: withGuidePrefix(nodePath),
     parentPath: withGuidePrefix(parentPath),
     title
   };

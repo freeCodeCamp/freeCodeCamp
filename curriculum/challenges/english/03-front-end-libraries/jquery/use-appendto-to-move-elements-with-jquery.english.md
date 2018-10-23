@@ -24,11 +24,11 @@ Move your <code>target2</code> element from your <code>left-well</code> to your 
 ```yml
 tests:
   - text: Your <code>target2</code> element should not be inside your <code>left-well</code>.
-    testString: 'assert($("#left-well").children("#target2").length === 0, "Your <code>target2</code> element should not be inside your <code>left-well</code>.");'
+    testString: assert($("#left-well").children("#target2").length === 0, 'Your <code>target2</code> element should not be inside your <code>left-well</code>.');
   - text: Your <code>target2</code> element should be inside your <code>right-well</code>.
-    testString: 'assert($("#right-well").children("#target2").length > 0, "Your <code>target2</code> element should be inside your <code>right-well</code>.");'
+    testString: assert($("#right-well").children("#target2").length > 0, 'Your <code>target2</code> element should be inside your <code>right-well</code>.');
   - text: Only use jQuery to move these elements.
-    testString: 'assert(!code.match(/class.*animated/g), "Only use jQuery to move these elements.");'
+    testString: assert(!code.match(/class.*animated/g), 'Only use jQuery to move these elements.');
 
 ```
 
