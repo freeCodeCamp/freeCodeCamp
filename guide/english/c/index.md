@@ -125,5 +125,10 @@ Make a new program with `file` -> `new` -> `Source File`, then copy over the hel
 
 * [C Programming Tutorials.](https://www.tutorialspoint.com/cprogramming/)
 
+#### Books on C language:
+
+* [Practical C programming, 3rd Edition.](https://repo.zenk-security.com/Programmation/Practical%20C%20Programming_3rd_Ed.pdf)
+
+
 
 
