@@ -37,6 +37,23 @@ Initializing it with the same element:
 std::vector<int> a(100, -1); // a is a vector of 100 elements all set to -1
 ```
 
+Filling a vector from one position to another position. For example, filling with zeros when initiliazation:
+```cpp
+std::vector<int> a(100);
+std::fill(a.begin(), a.end(), 0);
+```
+
+Filling a vector taking into account size change:
+```cpp
+std::vector<int> a;
+a.assign(5, 0);  //defining size as 5
+for (for int x : a) {
+        std::cout << x << '\n';
+    } 
+ 
+OUTPUT: 0 0 0 0 0
+```
+
 ### Vector Iterators
 
 Iterators can be thought of as pointers specifically used for navigating containers 
@@ -210,6 +227,26 @@ int main()
     return 0;
 }
 ```
+For more complex lambda functions, you can seperate them into an independent function as such.
+```cpp11
+#include <vector>
+
+int main()
+{
+    vector<int > v {3, 1, 2};
+    sort(v.begin(), v.end(), sortVector);
+    cout << "Vector Contents Sorted In Ascending Order:\n";
+    for (int e : v)
+    cout << e << " ";
+    return 0;
+}
+
+bool sortVector(int i, int j)
+{
+    return i < j;
+}
+```
+
 ### Sorting Vector In Descending Order
 Sorting Vector in descending order can be done with the help of third argument namely greater<int>() in Sort() in C++.
 ``` cpp
