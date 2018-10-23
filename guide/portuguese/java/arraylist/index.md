@@ -21,3 +21,15 @@ Um ArrayList é dinâmico, o que significa que ele aumentará de tamanho se nece
 Um ArrayList nos permite acessar elementos aleatoriamente. ArrayList é semelhante ao _Vector de_ várias formas. Mas é mais rápido que Vetores. A principal coisa a notar é que - Os vetores são mais rápidos que os arrays, mas os ArrayLists não são.
 
 Então, quando se trata de escolher entre os dois - se a velocidade é crítica, então os vetores devem ser considerados, caso contrário, ArrayLists são melhores quando se trata de armazenar grande número de elementos e acessá-los de forma eficiente.
+
+Um exemplo de método chamados Built in, que são métodos exportados de bibliotecas é o método Sort de ordenação. Com ele você pode ordenar se for uma lista de palavras em ordem alfabética, ou se for uma lista de números em ordem crescente.
+Segue o código abaixo do exemplo com uma lista de números:
+
+		List<Integer> n = new ArrayList<Integer>();
+		n.add(6);
+		n.add(7);
+		n.add(4);
+		n.add(1);
+		n.add(11);
+		Collections.sort(n)
+		System.out.println(n);
