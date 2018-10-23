@@ -45,6 +45,9 @@ The usage of break and continue are practically the same. Use them in switches a
 
 ![img](https://imgs.xkcd.com/comics/goto.png)
 
+## Const Correctness of Getters of a Class
+Generally, class fields should be declared as private in order to protect and restrict access to important variables of the class. Therefore, getters that return the value of the fields should be marked const as they do not modify the fields. It is an important security measure for both class fields to be marked private and their getters to be marked const to ensure proper access to an objects fields.
+
 ## Avoid changing the control variable inside of a for loop
 
 Usually there are works around this that look clearer and less confusing, eg. while loops.
