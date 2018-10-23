@@ -12,7 +12,7 @@ In Ruby, a single line comment starts with the `#` character and extends to the 
 puts "Learning to code is fun!"
 
 # I am a single line comment.
-
+# im a single comment too
 puts "Ruby is a great language!" # Me too - I am a trailing comment.
 ```
 
