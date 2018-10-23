@@ -61,3 +61,5 @@ localeTitle: Разработка Android
 ### Разработка приложений для Android
 
 Лучшая часть обучения Android - это то, что курсы и материалы, доступные там онлайн, бесплатны. Ссылка на курс здесь - [Разработка приложений для Android](https://udacity.com/course/new-android-fundamentals--ud851) .
+
+Мой текст
