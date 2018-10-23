@@ -48,4 +48,5 @@ In the end, guidelines can only take you so far. Creativity and surprise are imp
 
 #### More Information:
 * [Smashing Magazine article - How to choose a typeface](https://www.smashingmagazine.com/2011/03/how-to-choose-a-typeface/)
-
+* [FontPair - Helps you pair Google Fonts together](https://fontpair.co/)
+* [Typ.io: Fonts that go together](https://typ.io/)
