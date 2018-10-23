@@ -12,6 +12,8 @@ CSS specifications are maintained by the [World Wide Web Consortium (W3C)](https
 
 You can build some pretty amazing things in CSS alone, such as this pure-CSS [Minesweeper game](https://codepen.io/bali_balo/pen/BLJONk) (which uses no JavaScript).
 
+The newest version of CSS is CSS3, which builds upon CSS2.1 and adds more visual functionalities, ready for the modern world.
+
 ![](https://cdn-images-1.medium.com/max/800/1*GFcKk9KxqHAnWa1ECcKDOQ.png)
 
 #### Suggested Reading:
