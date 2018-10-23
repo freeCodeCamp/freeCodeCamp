@@ -24,12 +24,12 @@ Puede crear un objeto String de las siguientes maneras:
 
 Usted podría estar pensando: ¿Cuál es la diferencia entre los tres?
 
-Bueno, usar la palabra reservada `new` garantiza que se creará un nuevo objeto `String` y se asignará una nueva ubicación de memoria en el `Heap` de memoria [(haga clic aquí para obtener más información)](https://docs.oracle.com/cd/E13150_01/jrockit_jvm/jrockit/geninfo/diagnos/garbage_collect.html) . Los literales de String y las expresiones de cadena constantes se almacenan en caché en tiempo de compilación. El compilador los coloca en el String Literal Pool para evitar duplicados. y mejorar el consumo de memoria. La asignación de objetos es costosa y este truco aumenta el rendimiento al crear cadenas. Si utiliza el mismo literal de nuevo, la JVM usa el mismo objeto. Usar el contructor como el de arriba es casi siempre una opción peor.
+Bueno, usar la palabra reservada `new` garantiza que se creará un nuevo objeto `String` y se asignará una nueva ubicación de memoria en el `Heap` de memoria [(haga clic aquí para obtener más información)](https://docs.oracle.com/cd/E13150_01/jrockit_jvm/jrockit/geninfo/diagnos/garbage_collect.html) . Los literales de String y las expresiones de cadena constantes se almacenan en caché en tiempo de compilación. El compilador los coloca en el String Literal Pool para evitar duplicados. y mejorar el consumo de memoria. La asignación de objetos es costosa y este truco aumenta el rendimiento al crear cadenas. Si utiliza el mismo literal de nuevo, la JVM usa el mismo objeto. Usar el contructor como arriba es casi siempre la peor opción.
 
 En este fragmento de código, ¿cuántos objetos de cadena se crean?
 
 ```java
-String str = "This is a string"; 
+ String str = "This is a string"; 
  String str2 = "This is a string"; 
  String str3 = new String("This is a string"); 
 ```
@@ -139,5 +139,6 @@ String a = "Sam";
 
 ```
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbODQ4OTU3NDE1LDE5MzY3NTE4MTBdfQ==
+eyJoaXN0b3J5IjpbLTExMzc5MzU4NzIsODQ4OTU3NDE1LDE5Mz
+Y3NTE4MTBdfQ==
 -->
