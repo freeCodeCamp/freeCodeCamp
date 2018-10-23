@@ -7,7 +7,7 @@ localeTitle: Etiqueta Bootstrap Wells
 ---
 
 ## Description
-<section id="description"> Para mayor claridad, etiquetemos nuestros pozos con sus identificadores. Por encima de su pozo izquierdo, dentro de su elemento <code>div</code> <code>col-xs-6</code> , agregue un elemento <code>h4</code> con el texto <code>#left-well</code> . Por encima de su derecha-bien, dentro de su elemento <code>div</code> <code>col-xs-6</code> , agregue un elemento <code>h4</code> con el texto <code>#right-well</code> . </section>
+<section id="description"> Para mayor claridad, etiquetemos nuestras cajas con sus identificadores. Por encima de la caja-izquierda (left-well), dentro de su elemento <code>div</code> <code>col-xs-6</code> , agregue un elemento <code>h4</code> con el texto <code>#left-well</code> . Por encima de su caja-derecha(right-well), dentro de su elemento <code>div</code> <code>col-xs-6</code> , agregue un elemento <code>h4</code> con el texto <code>#right-well</code> . </section>
 
 ## Instructions
 <section id="instructions">

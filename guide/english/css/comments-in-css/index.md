@@ -22,8 +22,8 @@ The comment syntax in CSS works for both single and multi-line comments. You can
 }
 ```
 
-By using CSS comments to make your stylesheets more readable, the CSS will be easier to maintain in the future for you or another developper.
-It’s good practice to use CSS comments to help identify parts of any stylesheet that might be difficult to understand for someone who didn't write the code.
+By using CSS comments to make your stylesheets more readable, the CSS will be easier to maintain in the future for you or another developer. 
+It’s good practice to use CSS comments to help identify parts of any stylesheet that might be difficult to understand for someone who didn't write the code. 
 
 You can also make your comments more readable by stylizing it.  
 
