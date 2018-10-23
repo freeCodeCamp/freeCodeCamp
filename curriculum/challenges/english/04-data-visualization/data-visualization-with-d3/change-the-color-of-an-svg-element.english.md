@@ -74,6 +74,11 @@ tests:
 <section id='solution'>
 
 ```js
-// solution required
+The attribute that is needed follows the same syntax as the others in this example.
+
+.attr( "attribute to be set" , "attribute value" )
+
+Solution: .attr("fill" , "navy")
+
 ```
 </section>
