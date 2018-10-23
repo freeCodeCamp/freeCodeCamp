@@ -15,3 +15,4 @@ Many modern websites and big data efforts are said to be developed in the Cloud,
 [Google Cloud Documentation](https://cloud.google.com/docs/)
 [Getting Started with Microsoft Azure](https://docs.microsoft.com/en-us/azure/guides/developer/azure-developer-guide)
 [Firebase Documentation](https://firebase.google.com/docs/)
+[cloud computing development for beginners](https://searchcloudcomputing.techtarget.com/tutorial/Cloud-computing-development-for-beginners)
