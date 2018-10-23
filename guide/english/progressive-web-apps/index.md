@@ -44,9 +44,9 @@ A great analogy from [Aaron Gustafson](http://alistapart.com/article/understandi
 
 This implies that depending on the browser, the experience can change.
 
-### Demo
+### Demo-Video
 
-<iframe width="560" height="315" src="https://www.youtube.com/embed/esfi7ZLibmk" frameborder="0" gesture="media" allow="encrypted-media" allowfullscreen></iframe>
+[![Demo on Progressive Web App](http://img.youtube.com/vi/esfi7ZLibmk/0.jpg)](http://img.youtube.com/vi/esfi7ZLibmk/0.jpg "Demo on Progressive Web App - Click to Watch!")
 
 ### References
 
