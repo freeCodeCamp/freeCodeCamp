@@ -9,3 +9,8 @@ title: Bash chmod
 
 ### More Information:
 * [Wikipedia](https://en.wikipedia.org/wiki/Chmod)
+
+<!---Meme Goes Here-->
+Here is a funny meme! (hover to see the title text):
+Meme: 
+![alt text](https://i.kym-cdn.com/photos/images/original/000/963/913/149.jpg "DDOS got him!")
