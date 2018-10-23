@@ -12,6 +12,7 @@ Social Engineering is the art of gaining access to a secured system or resource 
 * Charming and persuasive
 * Patient and observant
 * Adept at predicting human behavior based on exploiting the human need to be helpful, curious, greedy and vain
+* Extremely good acting skills
 
 #### Some examples of Social Engineering hacks
 
