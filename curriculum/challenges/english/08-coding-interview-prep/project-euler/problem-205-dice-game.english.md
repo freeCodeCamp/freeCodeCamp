@@ -25,7 +25,7 @@ What is the probability that Pyramidal Pete beats Cubic Colin? Give your answer 
 ```yml
 tests:
   - text: <code>euler205()</code> should return 0.5731441.
-    testString: 'assert.strictEqual(euler205(), 0.5731441, "<code>euler205()</code> should return 0.5731441.");'
+    testString: assert.strictEqual(euler205(), 0.5731441, '<code>euler205()</code> should return 0.5731441.');
 
 ```
 

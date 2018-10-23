@@ -80,4 +80,8 @@ System.out.println("Full Car Model X= " + modelX.getManufacturerName() + " : " +
 ![:rocket:](https://forum.freecodecamp.com/images/emoji/emoji_one/rocket.png?v=2 ":rocket:") <a href='https://repl.it/CJZP/0' target='_blank' rel='nofollow'>Run Code</a>
 
 So, `Car` is a class, which has the fields or properties `name` and `manufacturerName`. `modelS` is an object of `Car` class. So `modelS` also has the same properties and methods.
-It is pretty much standard to ensure the object's 'information', in this case, the `name` an `manufacturerName`  variables, to be private and only be accessed via these getters and setters. This prevents an issue with debugging code that involves an object's member variables. If the member variables were made public, and for whatever reason, the program crashes, you could get a rather complex stack trace that may be difficult to point out the error. Keeping the variables private, and only accessible via getters and setters will simplify this error message down.
+It is pretty much standard to ensure the object's 'information', in this case the `name` an `manufacturerName` variables, to be private and only be accessed via these getters and setters. This prevents an issue with debugging code that involves an object's member variables. If the member variables were made public, and for whatever reason the program crashes, you could get a rather complex stack trace that may be difficult to point out the error. Keeping the variables private, and only accessible via getters and setters, will simplify this error message down.
+
+### More Information:
+- [Oracle Java Docs :Classes](https://docs.oracle.com/javase/tutorial/java/javaOO/classes.html)
+- [Oracle Java Docs :Objects](https://docs.oracle.com/javase/tutorial/java/javaOO/objects.html)

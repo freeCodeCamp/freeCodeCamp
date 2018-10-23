@@ -7,7 +7,8 @@ Bootstrap is the most popular CSS framework for developing responsive, mobile fi
 
 ## Getting Started - Latest version: 4.1
 
-Here is a simple HTML template which includes the latest compiled and minified CSS and Javascript for the Bootstrap library. We have used a CDN in this example, but you can checkout <a href='https://getbootstrap.com/docs/4.1/getting-started/download/' target='_blank' rel='nofollow'>other ways of installing Bootstrap</a>.
+Below is a simple HTML template which includes the latest compiled and minified CSS and Javascript for the Bootstrap library. We have used a CDN in this example, please see <a href='https://getbootstrap.com/docs/4.1/getting-started/download/' target='_blank' rel='nofollow'>the official documentation</a> for other ways of installing the latest version of Bootstrap.
+
 ```html
     <!DOCTYPE html>
     <html lang="en">
@@ -17,7 +18,7 @@ Here is a simple HTML template which includes the latest compiled and minified C
         <title>Bootstrap</title>
           
         <!--Latest compiled and minified CSS-->
-  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css" integrity="sha384-9gVQ4dYFwwWSjIDZnLEWnxCjeSWFphJiwGPXr1jddIhOegiu1FwO5qRGvFXOdJZ4" crossorigin="anonymous">
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
       </head>
       <body>
         <!-- Add all HTML Code below -->
@@ -29,7 +30,7 @@ Here is a simple HTML template which includes the latest compiled and minified C
         <!-- popper.js -->
         <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
         <!-- Latest compiled bootstrap JavaScript -->
-        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js" integrity="sha384-smHYKdLADwkXOn1EmN1qk/HfnUcbVRZyYmZ4qpPea6sjB/pTJ0euyQp0Mk8ck+5T" crossorigin="anonymous"></script>   
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
       </body>
     </html>
 ```

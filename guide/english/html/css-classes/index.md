@@ -58,7 +58,7 @@ You can also combine classes in the same line:
 }
 ```
 
-You can see the result of the above code [here](https://codepen.io/Tlandis/pen/RLvomV').  Learn how to combine css classes using selectors [here](https://www.w3schools.com/css/css_combinators.asp'). 
+You can see the result of the above code [here](https://codepen.io/Tlandis/pen/RLvomV).  Learn how to combine css classes using selectors [here](https://www.w3schools.com/css/css_combinators.asp). 
 
 #### More Information:
 

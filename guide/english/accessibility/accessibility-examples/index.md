@@ -14,6 +14,7 @@ To allow non-sighted users to skip to the main content of a site and avoid tabbi
 <a tabindex="0" class="skip-link" href="#main-content">Skip to Main Content</a>
 ```
 <code>tabindex="0"</code> is added to ensure the link is keyboard focusable on all browsers. Further information about keyboard accessibility can be found at [webaim.org](https://webaim.org/techniques/keyboard/tabindex).
+
 2. The "skip navigation" link needs to be associated with the main html tag in your webpage document using the ID tag.
 ```html
 <main id="main-content">

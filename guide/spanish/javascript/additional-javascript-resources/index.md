@@ -60,9 +60,9 @@ Encuentra bibliotecas de javascript en [http://jster.net](http://jster.net)
 
 ## Editores
 
-*   [Código de Visual Studio](https://code.visualstudio.com/)
+*   [Visual Studio Code](https://code.visualstudio.com/)
     
-    El código de Visual Studio incluye soporte integrado para la finalización del código de IntelliSense, la comprensión y navegación de código semántico enriquecido y la refactorización de código. Viene con un depurador incorporado y soporte para git y tiene una gran cantidad de extensiones.
+    El Visual Studio Code (código de Visual Studio en español) incluye soporte integrado para la finalización del código de IntelliSense, la comprensión y navegación de código semántico enriquecido y la refactorización de código. Viene con un depurador incorporado y soporte para git y tiene una gran cantidad de extensiones.
     
 *   [Tormenta de web](https://www.jetbrains.com/webstorm/)
     
@@ -127,3 +127,5 @@ Encuentra bibliotecas de javascript en [http://jster.net](http://jster.net)
 *   [Luz funcional js](https://github.com/getify/Functional-Light-JS)
     
     Este libro pretende ser un compañero útil para cualquiera que desee (re) descubrir las múltiples facetas de JavaScript. Desde los conceptos básicos de la programación hasta el desarrollo web front-end y back-end, se cubren muchos temas de manera simple y accesible. No se necesitan conocimientos previos!
+    
+    
