@@ -28,3 +28,8 @@ Spark’s RDD (Resilient Distributed Dataset) abstraction resembles Crunch’s P
 #### More information
 * <a href='https://github.com/apache/spark' target='_blank' rel='nofollow'>Spark Github page</a>
 * <a href='https://en.wikipedia.org/wiki/Apache_Spark' target='_blank' rel='nofollow'>Wikipedia</a>
+
+<!---Meme Goes Here-->
+Here is a funny meme! (hover to see the title text):
+Meme: 
+![alt text](http://www.nikola-breznjak.com/blog/wp-content/uploads/2017/04/doesntSimply.jpg "Merge to Master")
