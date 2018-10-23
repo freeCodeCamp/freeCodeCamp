@@ -81,7 +81,7 @@ The first element breaks the so-called 'name, role, value'-criterium, which stat
 
 The second element looks like a heading visually after styling it with CSS, but semantically is a span. Therefore, assistive technologies won't know its a heading. A screen-reader will read this as regular text, instead of a heading. Screen-readers often have a hotkey to quickly jump to the nearest heading, this heading will not be included in that scope.
 
-The third element could for example be an element a user can click to change the language of the website. Maybe a fancy animated menu of languages will expand when it is clicked. However, this is also a span and does not expose its role (link, or button), making assistive technologies think this is just the word English with some styling.
+The third element could for example be an element a user can click to change the language of the website. Maybe a fancy animated menu of languages will expand when it is clicked. However, this is also a span and does not expose it's role (link, or button), making assistive technologies think this is just the word English with some styling.
 
 Spans and divs are non-elements. They are meant to contain other elements, not to be elements themselves. You can fix these in two ways:
 
