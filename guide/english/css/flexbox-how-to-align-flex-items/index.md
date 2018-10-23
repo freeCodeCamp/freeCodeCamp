@@ -94,7 +94,7 @@ baseline
 ## Code sample
 
 ### HTML
-```
+```html
 <div class="container">
     <div class="box">Box 1</div>
     <div class="box">Box 2</div>
@@ -104,7 +104,7 @@ baseline
 ```
   
 ### CSS
-```
+```css
 .container {
   display: flex;
   flex-direction: row;
