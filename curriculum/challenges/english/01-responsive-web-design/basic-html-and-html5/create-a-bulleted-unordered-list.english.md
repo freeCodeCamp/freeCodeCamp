@@ -25,13 +25,13 @@ Remove the last two <code>p</code> elements and create an unordered list of thre
 ```yml
 tests:
   - text: Create a <code>ul</code> element.
-    testString: 'assert($("ul").length > 0, "Create a <code>ul</code> element.");'
+    testString: assert($("ul").length > 0, 'Create a <code>ul</code> element.');
   - text: You should have three <code>li</code> elements within your <code>ul</code> element.
-    testString: 'assert($("ul li").length > 2, "You should have three <code>li</code> elements within your <code>ul</code> element.");'
+    testString: assert($("ul li").length > 2, 'You should have three <code>li</code> elements within your <code>ul</code> element.');
   - text: Make sure your <code>ul</code> element has a closing tag.
-    testString: 'assert(code.match(/<\/ul>/gi) && code.match(/<ul/gi) && code.match(/<\/ul>/gi).length === code.match(/<ul/gi).length, "Make sure your <code>ul</code> element has a closing tag.");'
+    testString: assert(code.match(/<\/ul>/gi) && code.match(/<ul/gi) && code.match(/<\/ul>/gi).length === code.match(/<ul/gi).length, 'Make sure your <code>ul</code> element has a closing tag.');
   - text: Make sure your <code>li</code> elements have closing tags.
-    testString: 'assert(code.match(/<\/li>/gi) && code.match(/<li[\s>]/gi) && code.match(/<\/li>/gi).length === code.match(/<li[\s>]/gi).length, "Make sure your <code>li</code> elements have closing tags.");'
+    testString: assert(code.match(/<\/li>/gi) && code.match(/<li[\s>]/gi) && code.match(/<\/li>/gi).length === code.match(/<li[\s>]/gi).length, 'Make sure your <code>li</code> elements have closing tags.');
 
 ```
 

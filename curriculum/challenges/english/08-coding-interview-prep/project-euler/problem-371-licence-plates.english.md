@@ -32,7 +32,7 @@ Note: We assume that each licence plate seen is equally likely to have any three
 ```yml
 tests:
   - text: <code>euler371()</code> should return 40.66368097.
-    testString: 'assert.strictEqual(euler371(), 40.66368097, "<code>euler371()</code> should return 40.66368097.");'
+    testString: assert.strictEqual(euler371(), 40.66368097, '<code>euler371()</code> should return 40.66368097.');
 
 ```
 

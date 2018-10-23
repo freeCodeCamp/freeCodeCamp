@@ -21,11 +21,11 @@ Wrap the <code>s</code> tag around "Google" inside the <code>h4</code> tag and t
 ```yml
 tests:
   - text: Your code should add one <code>s</code> tag to the markup.
-    testString: 'assert($("s").length == 1, "Your code should add one <code>s</code> tag to the markup.");'
+    testString: assert($('s').length == 1, 'Your code should add one <code>s</code> tag to the markup.');
   - text: A <code>s</code> tag should wrap around the Google text in the <code>h4</code> tag. It should not contain the word Alphabet.
-    testString: 'assert($("s").text().match(/Google/gi) && !$("s").text().match(/Alphabet/gi), "A <code>s</code> tag should wrap around the Google text in the <code>h4</code> tag. It should not contain the word Alphabet.");'
-  - text: 'Include the word Alphabet in the <code>h4</code> tag, without strikethrough formatting.'
-    testString: 'assert($("h4").html().match(/Alphabet/gi), "Include the word Alphabet in the <code>h4</code> tag, without strikethrough formatting.");'
+    testString: assert($('s').text().match(/Google/gi) && !$('s').text().match(/Alphabet/gi), 'A <code>s</code> tag should wrap around the Google text in the <code>h4</code> tag. It should not contain the word Alphabet.');
+  - text: Include the word Alphabet in the <code>h4</code> tag, without strikethrough formatting.
+    testString: assert($('h4').html().match(/Alphabet/gi), 'Include the word Alphabet in the <code>h4</code> tag, without strikethrough formatting.');
 
 ```
 

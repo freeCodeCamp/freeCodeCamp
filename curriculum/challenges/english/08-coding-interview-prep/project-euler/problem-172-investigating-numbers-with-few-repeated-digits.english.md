@@ -20,7 +20,7 @@ How many 18-digit numbers n (without leading zeros) are there such that no digit
 ```yml
 tests:
   - text: <code>euler172()</code> should return 227485267000992000.
-    testString: 'assert.strictEqual(euler172(), 227485267000992000, "<code>euler172()</code> should return 227485267000992000.");'
+    testString: assert.strictEqual(euler172(), 227485267000992000, '<code>euler172()</code> should return 227485267000992000.');
 
 ```
 
