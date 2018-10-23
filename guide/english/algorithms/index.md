@@ -26,6 +26,9 @@ Algorithms are most commonly judged by their efficiency and the amount of comput
 Sorting algorithms come in various flavors depending on your necessity.
 Some, very common and widely used are:
 
+#### Selection Sort
+It is one of the most basic sorting algorithm. For more details visit this link - [Selection Sort](https://www.geeksforgeeks.org/selection-sort/)
+
 #### Quick Sort
 
 There is no sorting discussion which can finish without quick sort. The basic concept is in the link below.
