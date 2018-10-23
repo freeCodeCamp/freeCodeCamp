@@ -237,10 +237,12 @@ scanf("%d",&a);
 printf("Enter the second number: \n");
 scanf("%d",&b);
 //comparing the numbers
-if(a>b){
-       printf("A is the Bigger number");
-       }
-else{
-    printf("B is the bigger number");
-    }
+if(a>b)
+{
+  printf("A is the Bigger number");
+}
+else
+{
+  printf("B is the bigger number");
+}
 ```
