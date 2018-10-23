@@ -12,7 +12,7 @@ Let's say you have a file named as `contents.js`. You would run the file using t
 node contents.js
 ```
 
-This much must be already known to you since you're writing Node.js code. Now any errors that pop up must be debugged. To run the file in debug mode append the keyword `inspect` while running the file.
+You should already know this much since you're writing Node.js code. Now any errors that pop up must be debugged. To run the file in debug mode append the keyword `inspect` while running the file.
 
 ```bash
 node inspect contents.js
