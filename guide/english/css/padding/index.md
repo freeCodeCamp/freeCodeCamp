@@ -34,6 +34,16 @@ padding: 1em 2em 2em;
 /* top | right | bottom | left */
 padding: 5px 1em 0 1em;
 ```
+Alternatively, you can style the sides by themselves
+```css
+padding-top: 1em;
+
+padding-right: 1em;
+
+padding-bottom: 1em;
+
+padding-left: 1em;
+```
 
 ## Where in box model
 The padding property in CSS defines the innermost portion of the box model, creating space around an element's content, inside of any defined margins and/or borders.
