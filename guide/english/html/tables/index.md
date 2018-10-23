@@ -95,4 +95,6 @@ Result:
 
 #### More Information:
 
-<a href='https://developer.mozilla.org/en-US/docs/Web/HTML/Element/table' target='_blank' rel='nofollow'>MDN Article on the HTML <table> tag</a>
+<a href='https://developer.mozilla.org/en-US/docs/Web/HTML/Element/table' target='_blank' rel='nofollow'>MDN Article on the HTML `<table>` tag</a>
+
+<a href="https://www.w3schools.com/html/html_tables.asp" target="_blank">W3C HTML Tables</a>
