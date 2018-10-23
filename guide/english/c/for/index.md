@@ -76,30 +76,37 @@ main ()
   return 0;
 }
 ```
-## Output:
+
+Output:
 ```shell 
      *
     ***
    *****
   *******
  ********* 
+```
 
-``
+## Syntax of For Infinite loop
 
+An infinite loop occurs when the condition will never be met, due to some inherent characteristic of the loop. An infinite loop also called an endless loop, and it is a piece of coding that lacks a functional exit so that it repeats indefinitely.
 
+### Examples:
 
-
-
-## Syntax of For infinite loop
-
-```c
+```C
 for ( ; ; ) {
    statement(s);
 }
 ```
 
-An infinite loop occurs when the condition will never be met, due to some inherent characteristic of the loop. An infinite loop also called an endless loop, and it is a piece of coding that lacks a functional exit so that it repeats indefinitely.
+```C
+#include <stdio.h>
 
+int main () {
+    for (int i = 0; i < 5; i--) {
+    	printf("%d \n", i);
+    }
+}
+```
 
 ### Warning!
 
