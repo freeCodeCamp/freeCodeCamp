@@ -4,8 +4,7 @@ title: Python
 
 ## What is Python?
 
-<a href='https://www.python.org' target='_blank' rel='nofollow'>Python</a> is a general purpose programming language which is dynamically typed, interpreted, and known for its easy readability with great design principles.
-
+<a href='https://www.python.org' target='_blank' rel='nofollow'>Python</a> is a general purpose programming language which is dynamically typed, interpreted, and known for its easy readability with great design principles. It was created by Guido van Rossum and released in 1991, since then, the language is exploded in popularity.
 To learn more about Python, check out these pages on python.org:
 
 <a href='https://www.python.org/doc/essays/blurb/' target='_blank' rel='nofollow'>What is Python?</a>
@@ -106,6 +105,7 @@ Some of the principles that influenced the design of Python are included as an E
 1. Interactive language with a module support for almost all functionality.
 2. Open Source: So, you can contribute to the community, the functions you have developed for future use and to help others
 3. A lot of good interpreters and notebooks available for better experience like jupyter notebook.
+4. There are multiple libraries available for python, like numpy, pandas, etc. 
 
 #### Cons
 1. Being open source, many different ways have developed over the year for same function. This sometimes, creates chaos for others to read someone else code.
