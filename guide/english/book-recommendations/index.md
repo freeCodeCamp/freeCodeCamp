@@ -67,7 +67,7 @@ title: Books to Read for Programmers
 ## BASH
 
 *The Linux Command Line: A Complete Introduction 1st Edition by William E. Shotts Jr*
-- [Amazon](https://www.amazon.com/The-Linux-Command-Line-Introduction/dp/1593273894)
+- [Amazon Smile](https://smile.amazon.com/The-Linux-Command-Line-Introduction/dp/1593273894)
 - ISBN-13: 978-1593273897
 
 *Learning the bash Shell: Unix Shell Programming by Cameron Newham*
