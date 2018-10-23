@@ -67,6 +67,34 @@ You'll learn many of the first princliples for data science tools and how algori
 - ISBN-10: 1617294039
 - ISBN-13: 978-1617294037
 
+#### Python Programming: An Introduction to Computer Science
+
+This book written by John Zelle offers fundamental concepts of computer science which is clear and easy to understand. It emphasizes problem solving, design and programming as core skills of computer science. This book is best for beginners and new python programmers.
+- [Amazon](https://www.amazon.com/Python-Programming-Introduction-Computer-Science/dp/1887902996)
+- ISBN-10: 1590280288
+- ISBN-13: 978-1887902991
+
+#### Violent Python: A Cookbook for Hackers, Forensic Analysts, Penetration Testers and Security Engineers
+
+This book written by TJ O'Connor is an introductory level book on Python Programming language that provides a clear cut understanding about the different areas of the language such as tools and concepts. Best suited for security and tool integration. It also demonstrates hacking processes which is made possible by python.
+- [Amazon](https://www.amazon.in/Violent-Python-Cookbook-Penetration-Engineers/dp/1597499579)
+- ISBN-10: 9781597499576
+- ISBN-13: 978-1597499576
+
+#### Python for Data Analysis
+
+This book written by Wes McKinney provides practical case studies and also provides practical, modern introduction to scientific computing in Python. It is ideal for analysts new to Python and for Python Programmers new to scientific programming.
+- [Amazon](https://www.amazon.com/Python-Data-Analysis-Wrangling-IPython/dp/1449319793)
+- ISBN-10: 1449319793
+- ISBN-13: 978-1449319793
+
+#### Python in a Nutshell
+
+This book written by Alex Martelli demonstrates the strength of Python as a web development tool and covers in-depth about the strength of Python's standard module library. It also describes the use of Python's third party extensions.
+- [Amazon](https://www.amazon.com/Python-Nutshell-Second-Alex-Martelli/dp/0596100469)
+- ISBN-10: 0596100469
+- ISBN-13: 978-0596100469
+
 #### Other Resources
 
 - [Functional Programming in Python by David Mertz [OREILLY] [FREE]](https://www.oreilly.com/programming/free/files/functional-programming-python.pdf)
