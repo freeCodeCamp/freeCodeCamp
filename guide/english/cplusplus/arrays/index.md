@@ -27,7 +27,7 @@ int numbers [] = {1, 2, 3, 4, 5};
 There are two types of array based on way, we declare it.
 
 **1**. Static array:
-Those arrays whose size is defined before compile time like in the examples above, are called static arrays. In these arrays we can't change their size, once they are declared.
+Those arrays whose size is defined before compile time like in the examples above, are called static arrays. In these arrays we can't change their size, once they are declared. Static arrays' lifetime is whole program.
 
 **2**. Dynamic array:
 Dynamic arrays are those arrays, whose size is not known at compile time and we can define their size at run time. These arrays are created by using **new** keyword and when done with that array we can delete that array by using the **delete** keyword.
