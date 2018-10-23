@@ -57,6 +57,8 @@ let result = twinkleStar; // Change this line
 <section id='solution'>
 
 ```js
-// solution required
+let twinkleStar = "Twinkle, twinkle, little star";
+let starRegex = /twinkle/gi;
+let result = twinkleStar.match(starRegex);
 ```
 </section>
