@@ -4,7 +4,7 @@ title: WordPress
 
 # WordPress
 
-WordPress is a free and open-source content management system (CMS) based on PHP and MySQL. Features include a plugin architecture and a template system. It is most associated with blogging but supports other types of web content including more traditional mailing lists and forums, media galleries, and online stores.
+WordPress is a free and open-source content management system (CMS) based on PHP and MySQL. Features include a plugin architecture and a template system. It is mostly associated with blogging but it also supports other types of web content including more traditional mailing lists and forums, media galleries, and online stores.
 
 As a CMS, WordPress allows you to control and manage content of your website with a very easy system such as the WordPress dashboard panel. A dashboard lets you to do work on your website without needing to program anything. You can add or delete images and edit text on your webpage fast and easily.
 
@@ -13,9 +13,9 @@ WordPress powers over 30% of all websites and is by far the most used CMS on the
 Wordpress offers an easy-to-use solution for both web developers and non-web developers alike to create a site.
 
 Just a few advantages of WordPress:
-* Users are able to manage their Wordpress webpage from any computer
-* There's a blog built-in and ready to go whenever applicable
-* It has plugins, which extend functionality to WordPress sites
+* Users are able to manage their Wordpress webpage from any computer.
+* There is a blog built-in and ready to go whenever applicable.
+* It has plugins, which extend functionality to WordPress sites.
 
 One of the main things that appeal to people about WordPress is the abudant themes and plugins. You can make your website look however you like, and with many plugins available you can do anything from having a plugin to handle contact forms, manage SEO (Search Engine Optimization), and many more.
 
