@@ -6,3 +6,23 @@ title: SQL
 SQL stands for Structured Query Language. It is the most common tool used to manipulate and manage data in a relational database (often referred to as a "SQL database").
 
 SQL is commonly pronounced "sequel." Its most popular variants are MySQL, PostgreSQL, and SQLite - a version of SQL which is commonly used for prototyping. It introduced the concept of accessing many records with one single command, using SQL Queries.
+
+
+### Syntax
+
+# The SQL language is subdivided into several language elements, including:
+
+* Clauses, which are constituent components of statements and queries. (In some cases, these are optional.)
+
+* Expressions, which can produce either scalar values, or tables consisting of columns and rows of data
+
+* Predicates, which specify conditions that can be evaluated to SQL three-valued logic (3VL) (true/false/unknown) or Boolean truth values   and are used to limit the effects of statements and queries, or to change program flow.
+
+* Queries, which retrieve the data based on specific criteria. This is an important element of SQL.
+
+* Statements, which may have a persistent effect on schemata and data, or may control transactions, program flow, connections, sessions,     or diagnostics.
+
+* SQL statements also include the semicolon (";") statement terminator. Though not required on every platform, it is defined as a standard   part of the SQL grammar.
+
+* Insignificant whitespace is generally ignored in SQL statements and queries, making it easier to format SQL code for readability.
+
