@@ -18,9 +18,9 @@ Salida:
 
 Puede crear un objeto String de las siguientes maneras:
 
-1.  `String str = "Yo soy una Cadena"; //como una cadena literal`
-2.  `String str = "Yo soy una " + "Cadena"; //como una expresion constante`
-3.  `String str = new String("I am a String"); //como un objeto String usando el constructor`
+1.  `String str = "Yo soy una Cadena"; // como una cadena literal`
+2.  `String str = "Yo soy una " + "Cadena"; // como una expresion constante`
+3.  `String str = new String("I am a String"); // como un objeto String usando el constructor`
 
 Usted podría estar pensando: ¿Cuál es la diferencia entre los tres?
 
@@ -139,7 +139,8 @@ La "longitud" de una cadena es solo el número de caracteres que contiene. Así 
 
 ```
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTYzMjEyMDM3OCwtMTQ4NzYxNDE0LDgyMD
-QzNDg3MCwtMTg5MjA3NTE3NCwtNjY4NjcwNTQ5LDEwNTAwODgw
-NjksODQ4OTU3NDE1LDE5MzY3NTE4MTBdfQ==
+eyJoaXN0b3J5IjpbLTE1ODg4OTQwMjQsLTYzMjEyMDM3OCwtMT
+Q4NzYxNDE0LDgyMDQzNDg3MCwtMTg5MjA3NTE3NCwtNjY4Njcw
+NTQ5LDEwNTAwODgwNjksODQ4OTU3NDE1LDE5MzY3NTE4MTBdfQ
+==
 -->
