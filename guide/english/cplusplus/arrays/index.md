@@ -36,7 +36,7 @@ Dynamic arrays are those arrays, whose size is not known at compile time and we 
 Elements from an array can be accessed via reference of their position in the array. (Start counting from 0).  
 Example:  
 ```C++
-x = numbers[0]; // = 1. [0] == first position
+int x = numbers[0]; // = 1. [0] == first position
 numbers[2] = 55; // Sets the third position (3) to the new number 55
 //numbers[] is now: {1, 2, 55, 4, 5}
 ```
