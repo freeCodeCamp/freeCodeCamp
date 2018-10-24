@@ -22,4 +22,5 @@ It is also important to keep in mind that with more participants, more issues wi
 #### Citations
 Martin, Bella, and Bruce M. Hanington. Universal methods of design 100 ways to research complex problems, develop innovative ideas, and design effective solutions. Rockport Publishers, 2012.
 
-
+### More information: 
+[Wikipedia](https://en.wikipedia.org/wiki/Usability_testing)
