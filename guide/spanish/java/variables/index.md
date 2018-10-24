@@ -10,9 +10,9 @@ En [Java](https://github.com/FreeCodeCamp/FreeCodeCamp/wiki/Java) , las variable
 
 *   Tipo primitivo: `int`, `short`, `char`, `long`, `boolean`, `byte`, `float`, `double`
 *   Tipo envoltorio: `Integer`, `Short`, `Char`, `Long`, `Boolean`, `Byte`, `Float`, `Double`
-*   Tipo de referencia: `String`, `StringBuilder`, `Calendar`, `ArrayList`, etc.
+*   Tipo referencia: `String`, `StringBuilder`, `Calendar`, `ArrayList`, etc.
 
-Es posible que haya notado que el **tipo envoltorio** consiste en tipos escritos exactamente como el **tipo primitivo**, excepto por la letra mayúscula del principio (como el **tipo de referencia** ). Esto se debe a que los Tipos Envoltorio son en realidad una parte de los Tipos de eferencia más generales, pero están _estrechamente relacionados_ con sus homólogos [primarios a](https://docs.oracle.com/javase/tutorial/java/data/autoboxing.html) través de [autoboxing y unboxing](https://docs.oracle.com/javase/tutorial/java/data/autoboxing.html) . Por ahora, solo necesita saber que existe tal 'tipo de envoltura'.
+Es posible que haya notado que el **Tipo Envoltorio** consiste en tipos escritos exactamente como el **Tipo Primitivo**, excepto por la letra mayúscula del principio (como el **Tipo Referencia** ). Esto se debe a que los Tipos Envoltorio son en realidad una parte de los Tipos de Referencia más generales, pero están _estrechamente relacionados_ con sus homólogos [primarios a](https://docs.oracle.com/javase/tutorial/java/data/autoboxing.html) través de [autoboxing y unboxing](https://docs.oracle.com/javase/tutorial/java/data/autoboxing.html) . Por ahora, solo necesita saber que existe tal 'tipo de envoltura'.
 
 Normalmente, puede _declarar_ (es decir, crear) variables según la siguiente sintaxis: < _tipo de datos_ > <nombre de _variable_ >;
 
@@ -54,7 +54,7 @@ Como se desprende del ejemplo anterior, las variables del tipo Primitivo se comp
 *   [Tipos de datos](https://guide.freecodecamp.org/java/data-types)
 *   [Clases y objetos](https://guide.freecodecamp.org/java/classes-and-objects)
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMTA2Mjg0MDI2NCwtMjM2MTI0ODQwLDE1Nz
+eyJoaXN0b3J5IjpbLTgyNjYwOTQ5NCwtMjM2MTI0ODQwLDE1Nz
 UwNTYyMzksNjI5MzM5NTIxLDE4ODYzMDMwMDcsLTg0OTg5MjI3
 MSwtMTA2MjgzNTUzMF19
 -->
