@@ -36,3 +36,4 @@ cat file1.txt file2.txt
 
 #### More Information:
 * Wikipedia: https://en.wikipedia.org/wiki/Cat_(Unix)
+* Linux Manual Page: http://man7.org/linux/man-pages/man1/cat.1.html
