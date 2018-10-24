@@ -47,14 +47,14 @@ Puede _asignar_ un valor a la variable de forma simultánea cuando la declara (l
  byte otroByte = (byte)0b00100001; 
 ```
 
-Como se desprende del ejemplo anterior, las variables del tipo Primitivo se comportan de manera ligeramente diferente a las variables del tipo Referencia (y Envoltorio); mientras que las variables Primitivas _almacenan_ el valor real, las variables de referencia se _refieren a_ un 'objeto' que contiene el valor real. Puede encontrar más información en las secciones vinculadas a continuación.
+Como se desprende del ejemplo anterior, las variables del tipo Primitivo se comportan de manera ligeramente diferente a las variables del tipo Referencia (y Envoltorio); mientras que las variables Primitivas _almacenan_ el valor real, las variables de Referencia hacen _referencia a_ un 'objeto' que contiene el valor real. Puede encontrar más información en las secciones vinculadas a continuación.
 
-# Otros recursos
+# Otros recursos (en Inglés)
 
 *   [Tipos de datos](https://guide.freecodecamp.org/java/data-types)
 *   [Clases y objetos](https://guide.freecodecamp.org/java/classes-and-objects)
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTMwNTYyNzk4OSwtMjM2MTI0ODQwLDE1Nz
+eyJoaXN0b3J5IjpbMjA3MzIyNzY5OCwtMjM2MTI0ODQwLDE1Nz
 UwNTYyMzksNjI5MzM5NTIxLDE4ODYzMDMwMDcsLTg0OTg5MjI3
 MSwtMTA2MjgzNTUzMF19
 -->
