@@ -194,9 +194,9 @@ def binary_search(arr, l, r, target):
 
 ### Example in C++
 
-Recursive approach!
 
-```C++ - Recursive approach
+```c++ -   
+// Recursive approach in C++
 int binarySearch(int arr[], int start, int end, int x) 
 { 
    if (end >= start) 
@@ -214,9 +214,8 @@ int binarySearch(int arr[], int start, int end, int x)
 }
 ```
 
-Iterative approach!
-
-```C++ - Iterative approach
+```c++ -  
+// Iterative approach in C++
 int binarySearch(int arr[], int start, int end, int x) 
 { 
     while (start <= end) 
