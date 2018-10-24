@@ -21,6 +21,8 @@ In a Women in Tech Round-up event presented by Google in Austin, the Women who s
 The Google VP who spoke at this event gave us all a piece of advice: that we should take any and every opportunity afford to us and risk  applying to jobs we are not qualified for. The worst that will happen is you’ll get rejected or you won’t get an interview. Men get tech positions not because they are more experienced or better than women but because they apply to positions that they often aren’t qualified for while women only apply for jobs that they think they are qualified for. 
 The worst thing you can do is to sell yourself short if you want something take that risk and achieve the impossible.
 
+Additionally, there are a variety tech of women in  groups that you can join no matter where you are in the world. Facebook groups such as [Ladies Storm Hackathons](https://www.facebook.com/groups/LadiesStormHackathons/) and [Women Who Reign: Advancing Women in STEM](https://www.facebook.com/groups/ReigningIt/) offer incredible support for women in tech from women in tech. Members offer advice, post useful links, and opportunities all the time! These groups are definitely great communities to join.
+
 ### More Information:
 
 - [Why are there so few women in tech? The truth behind the Google memo](https://www.theguardian.com/lifeandstyle/2017/aug/08/why-are-there-so-few-women-in-tech-the-truth-behind-the-google-memo)
