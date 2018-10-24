@@ -30,17 +30,17 @@ There are many tools and online resources that can help you to ensure that your 
 
 - **<a href='http://colorsafe.co' target='_blank' rel='nofollow'>Color Safe Palette Generator</a>**
 
-   This website can help you to create a color palette that is based on the WCAG guidelines for text and background contrast ratios.
+   This website helps you create a color palette that is based on the WCAG guidelines for text and background contrast ratios.
 
 
 - **<a href='http://www.checkmycolours.com' target='_blank' rel='nofollow'>Check My Colours</a>**
 
-   A website for checking if your existing website meets the accessibility requirements for color and contrast.
+   This website checks if your website meets the accessibility requirements for color and contrast.
 
 
 - **<a href='http://colororacle.org' target='_blank' rel='nofollow'>Color Oracle</a>**
 
-   An application that simulates color blindness. It is available on Windows, Mac and Linux.
+   This application simulates color blindness. It is available on Windows, Mac and Linux.
 
 
 - **<a href='https://toolness.github.io/accessible-color-matrix/' target='_blank' rel='nofollow'>Accessible Color Palette Builder</a>**
