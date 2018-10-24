@@ -16,7 +16,7 @@ Our full-stack web development curriculum is completely free and self-paced. We 
 * [Certifications](#certifications)
 * [The Learning Platform](#the-learning-platform)
 * [Found a Bug](#found-a-bug)
-* [Found a security issue](#found-a-security-issue)
+* [Found a Security Issue](#found-a-security-issue)
 * [Contributing](#contributing)
 * [License](#license)
 
@@ -136,7 +136,7 @@ Please don't create GitHub issues for security issues. Instead, please send an e
 
 Copyright © 2018 freeCodeCamp.org
 
-The content of this repository bound by the following licenses:
+The content of this repository is bound by the following licenses:
 
 - The computer software is licensed under the [BSD-3-Clause](LICENSE.md) License.
 - The [curricular content](https://www.npmjs.com/package/@freecodecamp/curriculum) in the [`/curriculum`](/curriculum) folder and its subdirectories are licensed under the [CC-BY-SA-4.0](/curriculum/LICENSE.md) License.
