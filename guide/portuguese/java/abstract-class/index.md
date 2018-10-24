@@ -6,21 +6,36 @@ Vamos discutir classes abstratas. Antes de mergulhar neste tutorial, é melhor q
 
 Classes abstratas são classes que podem ser subclassificadas (isto é, estendidas), mas não podem ser instanciadas. Você pode pensar neles como uma **versão** de **classe** de interfaces ou como uma interface com código real anexado aos métodos.
 
-Considere o seguinte exemplo para entender classes abstratas: Você tem uma classe Vehicle que define certas funcionalidades básicas (métodos) e certos componentes (variáveis ​​de objeto) que uma máquina deve ter, para ser classificada como veículo. Você não pode criar um objeto de Veículo porque um veículo em si é um conceito abstrato. No entanto, você pode estender a funcionalidade da classe de veículo para criar um carro ou uma motocicleta.
+Considere o seguinte exemplo para entender classes abstratas: Você tem uma classe Veiculo que define certas funcionalidades básicas (métodos) e certos componentes (variáveis ​​de objeto) que uma máquina deve ter, para ser classificada como veículo. Você não pode criar um objeto de Veiculo porque um veículo em si é um conceito abstrato. No entanto, você pode estender a funcionalidade da classe de veículo para criar um carro ou uma motocicleta.
 
-\`\` \`java classe abstrata Veículo { // variável usada para declarar o não. de rodas em um veículo rodas int privadas;
 
-// Variável para definir o tipo de motor usado Motor privado;
+public abstract class Veiculo { 
 
-// um método abstrato que apenas declara, mas não define o início // funcionalidade porque cada veículo usa um mecanismo de partida diferente Resumo void start (); }
+// variável usada para declarar o numero de rodas em um veículo 
+  private int rodas;
+// Variável usada para definir o tipo de motor usado 
+  private Motor motor;
 
-carro de classe pública estende veículo { … }
+// um método abstrato que apenas declara, mas não define, o início da funcionalidade
+  public abstract void start (); 
+ }
 
-classe pública motocicleta estende veículo { … }
+// Classe pública que extende a classe abstrata
+public class Carro extends Veiculo { … }
+
+// Outra classe pública que extende a classe abstrata
+public class Motocicleta extends Veiculo { … }
+
 ```
-You cannot create an object of Vehicle class anywhere in your program. You can however, extend the abstract vehicle class and create objects of the child classes; 
+Você não pode criar um objeto diretamente instanciando a classe Veiculo em seu programa. Você pode entretanto, criar um objeto do subtipo de Veiculo, que nesse caso pode ser: Carro ou Motocicleta.
 ```
 
-Java Veículo newVehicle = new Vehicle (); // Inválido Veículo car = new Car (); // válido Veículo mBike = new Motorcycle (); // válido
+Veiculo novoVeiculo = new Veiculo (); ``` Declaração inválida, vai gerar um erro de compilação ``` 
 
-Car carObj = carro novo (); // válido Motocicleta mBikeObj = nova motocicleta (); // válido \`\` \`
+Veiculo carro = new Carro (); ``` Declaração válida pois o objeto criado é do tipo Carro ```
+
+Veiculo moto = new Motocicleta (); ``` Declaração válida pois o objeto criado é do tipo Motocicleta ```
+
+Carro novoCarro = new Carro (); ``` Declaração válida ```
+
+Motocicleta novaMoto = new Motocicleta (); ``` Declaração válida ```
