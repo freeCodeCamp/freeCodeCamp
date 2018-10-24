@@ -27,6 +27,8 @@ The field of computer security is growing at a rapid rate every year, in a repor
 
 [Thinking in Systems: A Primer](https://amzn.to/2u6FbJF)
 
+[Clean Code](https://www.oreilly.com/library/view/clean-code/9780136083238/)
+
 [Thinking, Fast and Slow](https://amzn.to/2tnnlTN)
 
 [Learn You a Haskell for Great Good!](https://amzn.to/2veOjdv)
