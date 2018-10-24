@@ -49,5 +49,4 @@ This code runs and returns a value, in turn ending the process. All the services
 
 ### More Information:
 
--
--
+- [AWS Lambda Documentation](https://docs.aws.amazon.com/lambda/latest/dg/welcome.html)
