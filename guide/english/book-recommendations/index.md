@@ -34,10 +34,6 @@ title: Books to Read for Programmers
 - [Amazon Smile](https://smile.amazon.com/Programming-Pearls-2nd-Jon-Bentley/dp/0201657880)
 - ISBN-13: 978-0201657883
 
-*Structure and Interpretation of Computer Programs*
-- https://mitpress.mit.edu/sicp/
-- ISBN-13: 978-0262510875
-
 *The Pragmatic Programmer: From Journeyman to Master* by Andrew Hunt and David Thomas
 - [Amazon Smile](https://smile.amazon.com/Pragmatic-Programmer-Journeyman-Master/dp/020161622X?sa-no-redirect=1)
 - ISBN-13: 978-0201616224
