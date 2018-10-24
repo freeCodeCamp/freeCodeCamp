@@ -167,6 +167,22 @@ void insertionSort(int arr[], int n)
    } 
 } 
 ```
+### Example in MATLAB
+```MATLAB
+function [sorted] = insertionSort(unsorted)
+    len = length(unsorted);
+    for i = 2:1:len
+        key = unsorted(i);
+        j = i-1;    % previous element 
+       while j > 0 && (key < unsorted (j))
+           unsorted(j+1) = unsorted(j);
+           j = j-1;
+       end
+       unsorted(j+1) = key;
+    end
+    sorted = unsorted; 
+end
+```
 
 ### Properties:
 * Space Complexity: O(1)
