@@ -73,7 +73,11 @@ Another option for subsetting a dataframe is using the loc and iloc methods. The
 ```python
 ages = df.loc["age"]
 ```
-
+## Basic Statistics (Descriptive)
+The descriptive statists can be performed on each columns of a pandas dataframe. 
+```python
+df.mean()
+```
 #### More Information:
 1. [pandas](http://pandas.pydata.org/)
 2. [read_csv](http://pandas.pydata.org/pandas-docs/stable/generated/pandas.read_csv.html?highlight=read_csv#pandas.read_csv)
