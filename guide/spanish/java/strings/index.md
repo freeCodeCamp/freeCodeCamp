@@ -144,11 +144,12 @@ Si Usted quiere dividir una cadena en múltiples partes, puede hacerlo facilment
 
 Ejemplo del uso de un delimitador (",") para dividir una cadena
 
+```java
+ String texto = "Holla, Mundo";
+ String[] partesDeTexto = texto.split(",");
+ System.out.println(partesDeTexto[0]);
+ System.out.println(partesDeTexto[1]);
 ```
-String text = "Hello, World";
-String[] textParts = text.split(",");
-System.out.println(textParts[0]);
-System.out.println(textParts[1]);
 
 The result will be:
 
@@ -192,7 +193,7 @@ My
 
 -   [String Documentation](https://docs.oracle.com/javase/7/docs/api/java/lang/String.html)
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMTg2NDE3MDY2OSwtMTQ3ODY0MTEwLDEwOD
+eyJoaXN0b3J5IjpbLTYxNTg1MjQxNywtMTQ3ODY0MTEwLDEwOD
 kzNTUwMTYsLTE1ODg4OTQwMjQsLTYzMjEyMDM3OCwtMTQ4NzYx
 NDE0LDgyMDQzNDg3MCwtMTg5MjA3NTE3NCwtNjY4NjcwNTQ5LD
 EwNTAwODgwNjksODQ4OTU3NDE1LDE5MzY3NTE4MTBdfQ==
