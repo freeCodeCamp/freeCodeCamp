@@ -1,6 +1,6 @@
 ---
 title: Paper sheets of standard sizes - an expected-value problem
-localeTitle: Hojas de papel de tamaños estándar: un problema de valor esperado
+localeTitle: "Hojas de papel de tamaños estándar: un problema de valor esperado"
 ---
 ## Problema 151: Hojas de papel de tamaños estándar: un problema de valor esperado
 

@@ -22,13 +22,13 @@ The code editor has a JSX element similar to what you created in the last challe
 ```yml
 tests:
   - text: The constant <code>JSX</code> should return a <code>div</code> element.
-    testString: 'assert(JSX.type === "div", "The constant <code>JSX</code> should return a <code>div</code> element.");'
+    testString: assert(JSX.type === 'div', 'The constant <code>JSX</code> should return a <code>div</code> element.');
   - text: The <code>div</code> should contain an <code>h1</code> tag as the first element.
-    testString: 'assert(JSX.props.children[0].type === "h1", "The <code>div</code> should contain an <code>h1</code> tag as the first element.");'
+    testString: assert(JSX.props.children[0].type === 'h1', 'The <code>div</code> should contain an <code>h1</code> tag as the first element.');
   - text: The <code>div</code> should contain a <code>p</code> tag as the second element.
-    testString: 'assert(JSX.props.children[1].type === "p", "The <code>div</code> should contain a <code>p</code> tag as the second element.");'
+    testString: assert(JSX.props.children[1].type === 'p', 'The <code>div</code> should contain a <code>p</code> tag as the second element.');
   - text: The <code>JSX</code> should include a comment.
-    testString: 'getUserInput => assert(getUserInput("index").includes("/*") && getUserInput("index").includes("*/"), "The <code>JSX</code> should include a comment.");'
+    testString: getUserInput => assert(getUserInput('index').includes('/*') && getUserInput('index').includes('*/'), 'The <code>JSX</code> should include a comment.');
 
 ```
 
@@ -55,7 +55,7 @@ const JSX = (
 <div id='jsx-teardown'>
 
 ```js
-console.info('after the test');
+ReactDOM.render(JSX, document.getElementById('root'))
 ```
 
 </div>

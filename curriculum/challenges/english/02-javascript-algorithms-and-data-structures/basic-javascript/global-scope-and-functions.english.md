@@ -22,13 +22,13 @@ Inside function <code>fun1</code>, assign <code>5</code> to <code>oopsGlobal</co
 ```yml
 tests:
   - text: <code>myGlobal</code> should be defined
-    testString: 'assert(typeof myGlobal != "undefined", "<code>myGlobal</code> should be defined");'
+    testString: assert(typeof myGlobal != "undefined", '<code>myGlobal</code> should be defined');
   - text: <code>myGlobal</code> should have a value of <code>10</code>
-    testString: 'assert(myGlobal === 10, "<code>myGlobal</code> should have a value of <code>10</code>");'
+    testString: assert(myGlobal === 10, '<code>myGlobal</code> should have a value of <code>10</code>');
   - text: <code>myGlobal</code> should be declared using the <code>var</code> keyword
-    testString: 'assert(/var\s+myGlobal/.test(code), "<code>myGlobal</code> should be declared using the <code>var</code> keyword");'
+    testString: assert(/var\s+myGlobal/.test(code), '<code>myGlobal</code> should be declared using the <code>var</code> keyword');
   - text: <code>oopsGlobal</code> should be a global variable and have a value of <code>5</code>
-    testString: 'assert(typeof oopsGlobal != "undefined" && oopsGlobal === 5, "<code>oopsGlobal</code> should be a global variable and have a value of <code>5</code>");'
+    testString: assert(typeof oopsGlobal != "undefined" && oopsGlobal === 5, '<code>oopsGlobal</code> should be a global variable and have a value of <code>5</code>');
 
 ```
 
@@ -95,7 +95,10 @@ capture();
 <div id='js-teardown'>
 
 ```js
-console.info('after the test');
+fun1();
+fun2();
+uncapture();
+(function() { return logOutput || "console.log never called"; })();
 ```
 
 </div>

@@ -24,7 +24,7 @@ How many numbers below a googol (10100) are not bouncy?
 ```yml
 tests:
   - text: <code>euler113()</code> should return 51161058134250.
-    testString: 'assert.strictEqual(euler113(), 51161058134250, "<code>euler113()</code> should return 51161058134250.");'
+    testString: assert.strictEqual(euler113(), 51161058134250, '<code>euler113()</code> should return 51161058134250.');
 
 ```
 

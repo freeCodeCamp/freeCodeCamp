@@ -27,3 +27,12 @@ let regexStar = /wo*w/;
 regexPlus.test(phrase); // returns true
 regexStar.test(phrase); // returns true
 ```
+
+### Solution:
+
+```js
+let chewieQuote = "Aaaaaaaaaaaaaaaarrrgh!";
+let chewieRegex = /Aa*/; // Change this line
+let result = chewieQuote.match(chewieRegex);
+```
+
