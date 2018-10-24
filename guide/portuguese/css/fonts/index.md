@@ -103,9 +103,22 @@ p.small {
   font-variant: small-caps; 
  } 
 ```
+###adicionar fontes personalizadas
+adicionar fontes personalizadas pode ser um problema, pois não a garantia de que todos os usuários a tenham em seus respectivos computadores, existem 2 soluções para esse problema
+1° através do google fonts
+2° baixando a fonte no formato .woff e inserindo no seu código através do comando @font-face,
+exemplo:
+@font-face{
+	font-family: 'Lobster';
+    src: url
+        url('Lobster-Regular.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+    ...
 
 #### Mais Informações:
 
 *   [Escolas W3 - Fonte CSS](https://www.w3schools.com/css/css_font.asp)
 *   [MND - Fonte CSS](https://developer.mozilla.org/en-US/docs/Web/CSS/font)
 *   [CSSFontStack](https://www.cssfontstack.com/)
+
