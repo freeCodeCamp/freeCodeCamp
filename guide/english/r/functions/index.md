@@ -178,6 +178,6 @@ arguments with args.
 
 ## Resources
 
- * [Official Docs](https://cran.r-project.org/manuals.html' target='_blank)
+ * [Official Docs](https://cran.r-project.org/manuals.html)
  * [Quick-R](https://www.statmethods.net/management/functions.html)
  * [Advanced R: Functions](http://adv-r.had.co.nz/Functions.html)
