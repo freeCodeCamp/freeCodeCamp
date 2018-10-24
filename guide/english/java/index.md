@@ -100,8 +100,14 @@ Let's write a sample Hello World application. Open any editor / IDE of choice an
 Now open the terminal / Command Prompt. Change your current directory in the terminal / Command Prompt to the directory where your file is located. And compile the file :
 
     $ javac HelloWorld.java
+    
+If your file was compiled successfully, you would see that a new file named `HelloWorld.class` has been created in the same folder. This is the class file containing the bytecode which is runnable by java.
 
-Now run the file using `java` command!
+    $ ls
+    HelloWorld.java
+    HelloWorld.class 
+
+Now run the file using `java` command! Note that the `.class` extension is not used while running the class file.
 
     $ java HelloWorld
     Hello, World
