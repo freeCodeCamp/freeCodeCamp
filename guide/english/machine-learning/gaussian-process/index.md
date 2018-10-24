@@ -10,3 +10,4 @@ Viewed as a machine-learning algorithm, a Gaussian process uses lazy learning an
 #### More Information:
 
 - [Gaussian Processes for Dummies](http://katbailey.github.io/post/gaussian-processes-for-dummies/)
+-[ML Tutorial:Gaussian Procces] (https://www.youtube.com/watch?v=92-98SYOdlY)
