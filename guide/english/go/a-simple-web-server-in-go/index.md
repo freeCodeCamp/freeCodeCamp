@@ -1,7 +1,7 @@
 ---
 title: A simple web server in Go
 ---
-The Go programming language is well-known for having a built-in web server. In this article you will learn how you can easily make your own web server with Go. You won't need any other packages beside the ones that are already built in!
+The Go programming language is well-known for having a built-in web serve. This can be useful for many things, including not having to purchase your OWN webserver with your hard earned money!. In this article you will learn how you can easily make your own web server with Go. You won't need any other packages beside the ones that are already built in!
 
 First, hop in to your text editor. Then create a file called `webserver.go` and enter the following code:
 ```go
