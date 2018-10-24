@@ -56,3 +56,6 @@ Outside of the standard roles there are specialty certifications for Advanced ne
 <!-- Please add any articles you think might be helpful to read before writing the article -->
 * [AWS](https://aws.amazon.com/)
 * [certifications](https://aws.amazon.com/certification/)
+* [Pricing](https://aws.amazon.com/pricing/?nc2=h_ql_pr)
+* [Simple Monthly Cost Calculator](http://calculator.s3.amazonaws.com/index.html)
+* [TCO Calculator](https://aws.amazon.com/tco-calculator/)
