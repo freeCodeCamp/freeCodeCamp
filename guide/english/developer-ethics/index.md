@@ -31,7 +31,7 @@ To date, since most software developers do not belong to – and are not governe
 
 --
 
-#### More Information:
+## More Information:
 * [Computer and Information Ethics] (https://plato.stanford.edu/archives/win2014/entries/ethics-computer/) entry in the Stanford Encyclopedia of Philosophy.
 
 * [Computer Ethics] (https://en.wikipedia.org/wiki/Computer_ethics) entry in WikiPedia
