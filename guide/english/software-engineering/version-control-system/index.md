@@ -52,3 +52,8 @@ Eventually *SVN* was deprecated by the wide adoption of Distributed Version Cont
 
 <a href='https://en.wikipedia.org/wiki/Version_control' target='_blank'>Version Control on Wikipedia</a>
 
+###  Video Tutorial
+
+<a href='https://www.youtube.com/watch?v=SWYqp7iY_Tc' target='_blank'>Git and Github Crash Course for Beginners</a>
+
+<a href='https://www.youtube.com/watch?v=r63f51ce84A' target='_blank'>Video tutorial on Git</a>
