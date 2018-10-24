@@ -8,7 +8,9 @@ The dropdown is a button which toggles displaying a list of links.
 
 Bootstrap’s dropdowns are designed to be generic and applicable to a variety of situations. For instance, it is possible to create dropdowns that contain search fields or login forms.
 
-## Example
+## Examples
+
+### Single button
 
 ```html
 <div class="dropdown">
@@ -19,6 +21,26 @@ Bootstrap’s dropdowns are designed to be generic and applicable to a variety o
     <a class="dropdown-item" href="#">Action</a>
     <a class="dropdown-item" href="#">Another action</a>
     <a class="dropdown-item" href="#">Something else here</a>
+  </div>
+</div>
+```
+
+
+### Split button
+
+```html
+<!-- Example split danger button -->
+<div class="btn-group">
+  <button type="button" class="btn btn-danger">Action</button>
+  <button type="button" class="btn btn-danger dropdown-toggle dropdown-toggle-split" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+    <span class="sr-only">Toggle Dropdown</span>
+  </button>
+  <div class="dropdown-menu">
+    <a class="dropdown-item" href="#">Action</a>
+    <a class="dropdown-item" href="#">Another action</a>
+    <a class="dropdown-item" href="#">Something else here</a>
+    <div class="dropdown-divider"></div>
+    <a class="dropdown-item" href="#">Separated link</a>
   </div>
 </div>
 ```
