@@ -67,10 +67,10 @@ public class EjemploDeCadenas{
 
 #### Comparando Cadenas
 
-Si desea comparar el valor de dos variables String, no puede usar ==. Esto se debe a que comparará las referencias de las variables y no los valores que están vinculados a ellas. Para comparar los valores almacenados de las cadenas, se utiliza el método equals
+Si desea comparar el valor de dos variables String, no puede usar ==. Esto se debe a que comparará las referencias de las variables y no los valores que están vinculados a ellas. Para comparar los valores almacenados de las cadenas, se utiliza el método equals.
 
 ```java
-boolean equals(Object obj) 
+ boolean equals(Object obj)
 ```
 
 Este devuelve true si dos objetos son iguales y false si no los son.
@@ -191,9 +191,10 @@ El resultado sera:
 
 -   [String Documentation](https://docs.oracle.com/javase/7/docs/api/java/lang/String.html)
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbOTQ4MDUyNzU1LC0xODg4NjYwMzI4LDg3Mz
-A1OTE5NCwzMzU4MzQ3MjIsLTE0Nzg2NDExMCwxMDg5MzU1MDE2
-LC0xNTg4ODk0MDI0LC02MzIxMjAzNzgsLTE0ODc2MTQxNCw4Mj
-A0MzQ4NzAsLTE4OTIwNzUxNzQsLTY2ODY3MDU0OSwxMDUwMDg4
-MDY5LDg0ODk1NzQxNSwxOTM2NzUxODEwXX0=
+eyJoaXN0b3J5IjpbMTY2NzI2Njk0Myw5NDgwNTI3NTUsLTE4OD
+g2NjAzMjgsODczMDU5MTk0LDMzNTgzNDcyMiwtMTQ3ODY0MTEw
+LDEwODkzNTUwMTYsLTE1ODg4OTQwMjQsLTYzMjEyMDM3OCwtMT
+Q4NzYxNDE0LDgyMDQzNDg3MCwtMTg5MjA3NTE3NCwtNjY4Njcw
+NTQ5LDEwNTAwODgwNjksODQ4OTU3NDE1LDE5MzY3NTE4MTBdfQ
+==
 -->
