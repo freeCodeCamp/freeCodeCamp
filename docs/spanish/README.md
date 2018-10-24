@@ -1,4 +1,4 @@
-<table>
+﻿<table>
     <tr>
         <td> Read these guidelines in </td>
         <td><a href="/CONTRIBUTING.md"> English </a></td>
@@ -23,10 +23,10 @@ Este directorio contiene toda la documentación sobre cómo contribuir a freeCod
 
 ## Artículos de referencia rápida
 
-1. Cómo trabajar en las Guías
-2. Cómo trabajar en los Desafíos de programación.
-3. Cómo instalar freeCodeCamp en local.
-4. Cómo capturar los email salientes en local.
+1. [Cómo trabajar en las Guías.](how-to-work-on-guide-articles.md)
+2. [Cómo trabajar en los Desafíos de programación.](how-to-work-on-coding-challenges.md)
+3. [Cómo instalar freeCodeCamp en local.](how-to-setup-freecodecamp-locally.md)
+4. [Cómo capturar los email salientes en local.](how-to-catch-outgoing-emails-locally.md)
 
 ## Guías de estilo
 
