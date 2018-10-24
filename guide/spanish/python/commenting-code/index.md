@@ -7,15 +7,15 @@ Los comentarios se utilizan para anotar, describir o explicar códigos que son c
 **Los** comentarios **en** **bloque** y en **línea** comienzan con un `#` , seguido de un espacio antes del comentario:
 
 ```python
-    # This is a block comment. 
-    print('Hello world!') # This is an inline commment. 
+    # Este es un comentario en bloque. 
+    print('Hello world!') # Este es un comentario en línea. 
 ```
 
 Python no incluye una forma formal de escribir comentarios de varias líneas. Cada línea de un comentario que abarca varias líneas debe comenzar con `#` y un espacio:
 
 ```python
-    # This is the first line of a multiline comment. 
-    # This is the second line. 
+    # Esta es la primera línea de un comentario multilínea. 
+    # Esta es la segunda línea. 
 ```
 
 Otro tipo de comentario es el **docstring** , documentado en [`PEP 257`](https://www.python.org/dev/peps/pep-0257/) . Las cadenas de texto son un tipo específico de comentario que se convierte en el atributo `__doc__` .
@@ -24,14 +24,14 @@ Para que una cadena literal sea una cadena de documentación, debe comenzar y te
 
 ```python
     class SomeClass(): 
-        """Summary line for SomeClass. 
+        """Línea de resumen para SomeClass. 
  
-        More elaborate descriptions may require using a 
-        a multiline docstring. 
+        Descripciones más elaboradas pueden requerir el uso de 
+        una multilínea docstring. 
         """ 
  
         def method_a(self): 
-            """Single line summary of method_a.""" 
+            """Resumen de una sola línea de method_a.""" 
             pass 
 ```
 
