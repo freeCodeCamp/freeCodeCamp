@@ -21,7 +21,7 @@ exports.createNavigationNode = node => {
 
   const nodeDir = fileAbsolutePath.replace(/\/index\.md$/, '');
   const dashedName = nodeDir.split('/').slice(-1)[0];
-  const [, path] = nodeDir.split(pagesDir);
+  const [path] = nodeDir.split(pagesDir);
   const parentPath = path
     .split('/')
     .slice(0, -1)
