@@ -53,8 +53,8 @@ public class EjemploCadenas{
  
    public static void main(String args[]) { 
       String s1 = "java";  // creando un String para la cadena literal java 
-      char ch[] = {'s','t','r','i','n','g','s'}; 
-      String s2 = new String(ch);  // converting char array to string 
+      char ch[] = {'c','a','d','e','n','a'}; 
+      String s2 = new String(ch);  // convirtiendo un arrelgo de caracteres a una cadena 
       String s3 = new String("example");  // creating Java string by new keyword 
       System.out.println(s1); 
       System.out.println(s2); 
@@ -139,7 +139,7 @@ String a = "Sam";
 
 ```
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTEwNDUyODIzMzMsLTE4OTIwNzUxNzQsLT
-Y2ODY3MDU0OSwxMDUwMDg4MDY5LDg0ODk1NzQxNSwxOTM2NzUx
-ODEwXX0=
+eyJoaXN0b3J5IjpbNTMzNzkyMTQzLC0xODkyMDc1MTc0LC02Nj
+g2NzA1NDksMTA1MDA4ODA2OSw4NDg5NTc0MTUsMTkzNjc1MTgx
+MF19
 -->
