@@ -8,12 +8,11 @@ title: PHP
 
 PHP is a server-side scripting language created in 1995 by Rasmus Lerdorf. 
 
-PHP is a widely-used open source general-purpose scripting language that is especially suited for web development and can be embedded into HTML.
+PHP is a widely-used open-source general purpose scripting language that is specially suited for web development and can be embedded into HTML.
 
 ## What does the acronym PHP stand for?
 
-Originally PHP stood for 'Personal Home Page', as Rasmus Lerdorf created it for use on his own website. Then in 1997 more developers expanded the language and the
-acronym also changed to what it stands for today: 'PHP: Hypertext Preprocessor'. As the first 'P' in PHP also stands for 'PHP', it is known as a 'recursive acronym'.
+Originally, PHP stood for 'Personal Home Page', as Rasmus Lerdorf created it for use on his own website. Then in 1997 more developers expanded the language and the acronym also changed to what it stands for today: 'PHP: Hypertext Preprocessor'. As the first 'P' in PHP also stands for 'PHP', it is known as a 'recursive acronym'.
 
 ## What is PHP used for?
 
