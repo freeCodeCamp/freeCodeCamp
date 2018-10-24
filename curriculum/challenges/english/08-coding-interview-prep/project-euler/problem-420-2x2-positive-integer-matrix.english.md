@@ -32,7 +32,7 @@ Find F(107).
 ```yml
 tests:
   - text: <code>euler420()</code> should return 145159332.
-    testString: 'assert.strictEqual(euler420(), 145159332, "<code>euler420()</code> should return 145159332.");'
+    testString: assert.strictEqual(euler420(), 145159332, '<code>euler420()</code> should return 145159332.');
 
 ```
 

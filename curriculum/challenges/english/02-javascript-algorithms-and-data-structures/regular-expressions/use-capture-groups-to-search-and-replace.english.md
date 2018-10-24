@@ -24,11 +24,11 @@ Write a regex so that it will search for the string <code>"good"</code>. Then up
 ```yml
 tests:
   - text: You should use <code>.replace()</code> to search and replace.
-    testString: 'assert(code.match(/\.replace\(.*\)/), "You should use <code>.replace()</code> to search and replace.");'
+    testString: assert(code.match(/\.replace\(.*\)/), 'You should use <code>.replace()</code> to search and replace.');
   - text: Your regex should change <code>"This sandwich is good."</code> to <code>"This sandwich is okey-dokey."</code>
-    testString: 'assert(result == "This sandwich is okey-dokey." && replaceText === "okey-dokey", "Your regex should change <code>"This sandwich is good."</code> to <code>"This sandwich is okey-dokey."</code>");'
+    testString: assert(result == "This sandwich is okey-dokey." && replaceText === "okey-dokey", 'Your regex should change <code>"This sandwich is good."</code> to <code>"This sandwich is okey-dokey."</code>');
   - text: You should not change the last line.
-    testString: 'assert(code.match(/result\s*=\s*huhText\.replace\(.*?\)/), "You should not change the last line.");'
+    testString: assert(code.match(/result\s*=\s*huhText\.replace\(.*?\)/), 'You should not change the last line.');
 
 ```
 

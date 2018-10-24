@@ -40,13 +40,13 @@ Task:
 ```yml
 tests:
   - text: <code>combinations</code> should be a function.
-    testString: 'assert(typeof combinations === "function", "<code>combinations</code> should be a function.");'
-  - text: '<code>combinations([1, 2, 3], 6)</code> should return an Array.'
-    testString: 'assert(Array.isArray(combinations([1, 2, 3], 6)), "<code>combinations([1, 2, 3], 6)</code> should return an Array.");'
-  - text: '<code>combinations([1, 2, 3, 4, 5, 6, 7], 12)</code> should return an array of length 14.'
-    testString: 'assert(combinations(nums, total).length === len, "<code>combinations([1, 2, 3, 4, 5, 6, 7], 12)</code> should return an array of length 14.");'
-  - text: '<code>combinations([1, 2, 3, 4, 5, 6, 7], 12)</code> should return all valid combinations.'
-    testString: 'assert.deepEqual(combinations(nums, total), result, "<code>combinations([1, 2, 3, 4, 5, 6, 7], 12)</code> should return all valid combinations.");'
+    testString: assert(typeof combinations === 'function', '<code>combinations</code> should be a function.');
+  - text: <code>combinations([1, 2, 3], 6)</code> should return an Array.
+    testString: assert(Array.isArray(combinations([1, 2, 3], 6)), '<code>combinations([1, 2, 3], 6)</code> should return an Array.');
+  - text: <code>combinations([1, 2, 3, 4, 5, 6, 7], 12)</code> should return an array of length 14.
+    testString: assert(combinations(nums, total).length === len, '<code>combinations([1, 2, 3, 4, 5, 6, 7], 12)</code> should return an array of length 14.');
+  - text: <code>combinations([1, 2, 3, 4, 5, 6, 7], 12)</code> should return all valid combinations.
+    testString: assert.deepEqual(combinations(nums, total), result, '<code>combinations([1, 2, 3, 4, 5, 6, 7], 12)</code> should return all valid combinations.');
 
 ```
 
@@ -71,7 +71,25 @@ function combinations (possibleNumbers, total) {
 <div id='js-teardown'>
 
 ```js
-console.info('after the test');
+const nums = [1, 2, 3, 4, 5, 6, 7];
+const total = 12;
+const len = 14;
+const result = [
+  [2, 3, 7],
+  [2, 4, 6],
+  [2, 6, 4],
+  [2, 7, 3],
+  [4, 1, 7],
+  [4, 2, 6],
+  [4, 3, 5],
+  [4, 5, 3],
+  [4, 6, 2],
+  [4, 7, 1],
+  [6, 1, 5],
+  [6, 2, 4],
+  [6, 4, 2],
+  [6, 5, 1]
+];
 ```
 
 </div>

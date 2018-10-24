@@ -21,7 +21,7 @@ Find the smallest positive integer, x, such that 2x, 3x, 4x, 5x, and 6x, contain
 ```yml
 tests:
   - text: <code>permutedMultiples()</code> should return 142857.
-    testString: 'assert.strictEqual(permutedMultiples(), 142857, "<code>permutedMultiples()</code> should return 142857.");'
+    testString: assert.strictEqual(permutedMultiples(), 142857, '<code>permutedMultiples()</code> should return 142857.');
 
 ```
 
@@ -68,7 +68,7 @@ function permutedMultiples() {
         for (let i = start; i < start * 10 / 6; i++) {
             found = true;
             for (let j = 2; j <= 6; j++) {
-                if (!isPermutation(i + ", j * i + ")) {
+                if (!isPermutation(i + '', j * i + '')) {
                     found = false;
                     break;
                 }

@@ -1,6 +1,6 @@
- ---
- title: Create a Gradual CSS Linear Gradient
- localeTitle: Crear un gradiente lineal gradual de CSS
+---
+title: Create a Gradual CSS Linear Gradient
+localeTitle: Crear un gradiente lineal gradual de CSS
 ---
 \## Crear un gradiente lineal gradual de CSS
 
@@ -8,7 +8,7 @@ Para crear un degradado lineal, debe definir al menos dos paradas de color. Las 
 
 La sintaxis es siempre:
 ```
-background-image: linear-gradient(angle, color-stop1, color-stop2); 
+background-image: linear-gradient(angle, color-stop1, color-stop2);
 ```
 
 Los colores se pueden usar tanto en formato hexadecimal () como en rgb (). Experimenta un poco y entenderás lo fácil y hermoso que es usarlo.
