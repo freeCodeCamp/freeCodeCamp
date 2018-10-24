@@ -140,7 +140,7 @@ La "longitud" de una cadena es solo el número de caracteres que contiene. Así 
 ```
 #### Dividiendo Cadenas
 
-Si Usted quiere dividir una cadena en multiples partes, puede hacerlo con `.split()`, esta crea un arreglo con las par
+Si Usted quiere dividir una cadena en multiples partes, puede hacerlo facilmente con `.split()`, esta crea un arreglo de las partes divididas de la cadena.
 If you want to split a string into multiple parts it can easily be done through  `.split()`  this creates an array of the split up parts of the string.
 
 Example of using a delimiter (",") to split a string
@@ -192,7 +192,7 @@ My
 
 -   [String Documentation](https://docs.oracle.com/javase/7/docs/api/java/lang/String.html)
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMTgwODU5NDQyOSwtMTQ3ODY0MTEwLDEwOD
+eyJoaXN0b3J5IjpbMTM0OTk0NTU2OSwtMTQ3ODY0MTEwLDEwOD
 kzNTUwMTYsLTE1ODg4OTQwMjQsLTYzMjEyMDM3OCwtMTQ4NzYx
 NDE0LDgyMDQzNDg3MCwtMTg5MjA3NTE3NCwtNjY4NjcwNTQ5LD
 EwNTAwODgwNjksODQ4OTU3NDE1LDE5MzY3NTE4MTBdfQ==
