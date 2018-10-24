@@ -69,7 +69,7 @@ title: Data Types in R
 
 
 ## Data Frame
- It is more general than a matrix, in that different columns can have different basic data types. For example:
+ It is a two dimensional array-like structure but more general than matrix. Each columns of data frame can have different basic data types. For example:
 
 	> d <- c(1,2,3,4)
 	> e <- c("red", "white", "red", NA)
