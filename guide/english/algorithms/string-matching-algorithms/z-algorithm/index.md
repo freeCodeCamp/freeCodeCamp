@@ -1,4 +1,5 @@
-Z Algorithm 
+---
+title: Z algorithm
 ---
 
 **Z algorithm** is used to find all occurrence of a **pattern P** in a **string T** similar to KMP algorithm but this is easier to understand than others.
@@ -45,17 +46,16 @@ We have to maintain an interval [L, R] which is the interval with max R such tha
 
 Steps for maintaining this interval are as follows – 
 
-1) If i > R then there is no prefix substring that starts before i and ends after i, so we reset L and R and compute new [L,R] by comparing 
+- If i > R then there is no prefix substring that starts before i and ends after i, so we reset L and R and compute new [L,R] by comparing 
    S[0..] to str[i..] and get Z[i] (= R-L+1).
 
-2) If i <= R then let K = i-L,  now Z[i] >= min(Z[K], R-i+1)  because S[i..] matches with S[K..] for atleast R-i+1 characters (they are in
-   [L,R] interval which we know is a prefix substring).     
-   Now two sub cases arise – 
-      a) If Z[K] < R-i+1  then there is no prefix substring starting at  S[i] (otherwise Z[K] would be larger)  so  Z[i] = Z[K]  and 
+- If i <= R then let K = i-L,  now Z[i] >= min(Z[K], R-i+1)  because S[i..] matches with S[K..] for atleast R-i+1 characters (they are    in [L,R] interval which we know is a prefix substring).     
+   Now two sub cases arise:
+   
+    - If Z[K] < R-i+1  then there is no prefix substring starting at  S[i] (otherwise Z[K] would be larger)  so  Z[i] = Z[K]  and 
          interval [L,R] remains same.
-      b) If Z[K] >= R-i+1 then it is possible to extend the [L,R] interval
-         thus we will set L as i and start matching from S[R]  onwards  and
-         get new R then we will update interval [L,R] and calculate Z[i] (=R-L+1).
+         
+    - If Z[K] >= R-i+1 then it is possible to extend the [L,R] interval thus we will set L as i and start matching from S[R]  onwards   and get new R then we will update interval [L,R] and calculate Z[i] (=R-L+1).
          
  **Most of you might not understand this at first time**.
  
