@@ -98,7 +98,7 @@ public class DemoDeString {
  } 
 ```
 
-Esto resultará en - `String Length is : 17`
+Esto resultará en - `La longitud de la cadena es : 18`
 
 **La respuesta es: 2** objetos String son creados. **Notas**
 
@@ -139,7 +139,7 @@ String a = "Sam";
 
 ```
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbODIwNDM0ODcwLC0xODkyMDc1MTc0LC02Nj
-g2NzA1NDksMTA1MDA4ODA2OSw4NDg5NTc0MTUsMTkzNjc1MTgx
-MF19
+eyJoaXN0b3J5IjpbLTMwMjExNDkwNyw4MjA0MzQ4NzAsLTE4OT
+IwNzUxNzQsLTY2ODY3MDU0OSwxMDUwMDg4MDY5LDg0ODk1NzQx
+NSwxOTM2NzUxODEwXX0=
 -->
