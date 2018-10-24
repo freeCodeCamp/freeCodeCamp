@@ -8,6 +8,9 @@ title: jQuery
 
 jQuery is the most widely-used JavaScript library, and is used in more than half of all major websites. 
 
+its light weight when compared to other javascript frameworks.it has a wide range of plugins available for various specific needs.
+it is easier for a designer to learn jQuery as it uses familiar CSS syntax. jQuery is Javascript for Designers.
+
 jQuery makes web development easier to use by providing a number of 'helper' functions. These help developers to quickly write DOM (Document Object Model) interactions without needing to manually write as much JavaScript themselves.
 
 jQuery adds a global variable with all of the libraries methods attached. The naming convention is to have this global variable as <code>$</code>. by typing in <code>$.</code> you have all the jQuery methods at your disposal.
