@@ -13,3 +13,7 @@ To install scikit-learn with pip: `pip install scikit-learn`
 
 Scikit-learn main page: http://scikit-learn.org/stable/
 Tutorials: http://scikit-learn.org/stable/tutorial/index.html
+
+## More Information
+
+* <a href='https://en.wikipedia.org/wiki/Scikit-learn' target='_blank' rel='nofollow'>Scikit-Learn (Credit: Wikipedia Page)</a>
