@@ -95,6 +95,12 @@ tests:
 <section id='solution'>
 
 ```js
-// solution required
+       .attr("y", (d, i) => {
+         // Add your code below this line
+         
+         return h -3*d
+         
+         // Add your code above this line
+       })
 ```
 </section>
