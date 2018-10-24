@@ -46,6 +46,10 @@ def fib(n)
 ```
 Caching computed solutions in a lookup table, and query it before go recursion will let the program have a running time of O(N).
 
+#### Tabulation vs Memoization
+
+In addition to *memoization* (used in the previous example), there is also *tabulation*, which uses a bottom-up approach rather than memoization's top-down approach. Tabulation always tabulates every potential value, while memoization only calculates, or memoizes, the needed values. Tabulation avoids any recursion, however, so both are useful for different situations. Read more about tabulation vs. memoization [here](https://www.geeksforgeeks.org/tabulation-vs-memoizatation/).
+
 #### More Information:
 
 [What is dynamic programming on StackOverflow](https://stackoverflow.com/questions/1065433/what-is-dynamic-programming")
