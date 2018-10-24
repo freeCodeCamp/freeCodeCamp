@@ -52,7 +52,7 @@ Otros elementos que forman pueden contener:
 *   `select` etiqueta `select` - junto con la etiqueta `<option></option>` crea un menú de selección desplegable.
 *   `button` : el elemento botón se puede utilizar para definir un botón en el que se puede hacer clic.
 
-MÁS INFORMACIÓN SOBRE FORMAS HTML.
+## MÁS INFORMACIÓN SOBRE FORMAS HTML.
 
 Los formularios HTML son necesarios cuando desea recopilar algunos datos del visitante del sitio. Por ejemplo, durante el registro de un usuario, le gustaría recopilar información como nombre, dirección de correo electrónico, tarjeta de crédito, etc.
 
