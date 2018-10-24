@@ -422,3 +422,7 @@ int main()
 #### More Information:
 * <a href='http://www.geeksforgeeks.org/linked-list-set-1-introduction/' target='_blank' rel='nofollow'>Introduction to Linked Lists</a>
 * <a href='https://www.youtube.com/watch?v=njTh_OwMljA' target='_blank' rel='nofollow'>Linked Lists (YouTube video)</a>
+* <a href='https://en.wikipedia.org/wiki/Linked_list' target='_blank' rel='nofollow'>Linked Lists (Credit: Wikipedia Page)</a>
+* Linked List Example Figure Below (Credit OReilly.com )
+
+![alt text](https://www.oreilly.com/library/view/learning-javascript-data/9781783554874/graphics/4874OS_05_18.jpg "Linked List")
