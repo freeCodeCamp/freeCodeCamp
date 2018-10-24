@@ -176,5 +176,15 @@ In combination with Bootstrap's predefined grid classes to align labels and grou
   </div>
 </form>
 ```
-    
+
 ![Horizontal Form](https://github.com/TroyB12/Pictures/blob/master/Horizontal%20Form.PNG)
+
+##Sizing
+The Sizing of the form input box could be changed using simple bootstrap class those are `.form-control-lg` and `.form-control-sm`
+```html
+<form class="form-horizontal">
+  <input class="form-control form-control-lg" type="text" placeholder=".form-control-lg">
+<input class="form-control" type="text" placeholder="Default">
+<input class="form-control form-control-sm" type="text" placeholder=".form-control-sm">
+</form>
+```
