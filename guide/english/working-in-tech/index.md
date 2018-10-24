@@ -29,6 +29,8 @@ The field of computer security is growing at a rapid rate every year, in a repor
 
 [Thinking, Fast and Slow](https://amzn.to/2tnnlTN)
 
+[Clean Code](https://www.oreilly.com/library/view/clean-code/9780136083238/)
+
 [Learn You a Haskell for Great Good!](https://amzn.to/2veOjdv)
 
 [Think Like a Programmer](https://www.nostarch.com/thinklikeaprogrammer)
