@@ -48,6 +48,7 @@ There are different types of font size values:
 
 * `px` (pixels) - The default size of text being `16px`
 * `em` - `1em` = the current font size, so `1em` = `16px` (recommended by the W3C)
+* `rem` (root em) - The value of the font size of the root element `html`. Whereas `em` units are relative to the font size of their parent element, `rem` units are always relative to the document's root element.
 * `small`, `medium`, `large` - known as absolute size values
 * `%` - percentages
 
