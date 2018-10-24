@@ -30,6 +30,13 @@ A resnet-152 model looks like this (Don't worry if you don't understand it. It's
 
 Google had its own neural network architecture that won the Imagenet challenged in 2014. Which can be seen in a <a href="https://adeshpande3.github.io/assets/GoogleNet.gif">gif here in more detail</a>.
 
+### STEPS FOR CREATING A DEEP LEARNING MODEL
+1.	Research and gather the ingredients required for Deep Learning.
+2.	Train a deep neural network to correctly classify the input features it has never seen before.
+3.	Deploy deep neural networks into various applications.
+4.	Identify techniques for improving the performance and the result of deep learning applications.
+6.	Modify neural networks to  improve the performance of the model.
+
 
 ### How to implement your own?
 These days there are a variety of deep learning frameworks that allow you specify which mathematical function you want to use, which architecture for your functions, and which loss function to use for training. Since the training of such a model is very computationally intensive, most of these frameworks generate code optimized for whatever hardware you may have. Some of the famous frameworks are:
