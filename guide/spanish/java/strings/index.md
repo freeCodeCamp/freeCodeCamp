@@ -113,13 +113,13 @@ Longitud de la cuerda
 La "longitud" de una cadena es solo el número de caracteres que contiene. Así que "hi" es de  longitud 2 y "Hola" es la longitud 4. El método length() en una cadena devuelve su longitud, de esta manera:
 
 ```java
-String a = "Hello"; 
- int len = a.length();  // len is 5 
+ String a = "Hola"; 
+ int len = a.length();  // la longitud es 4 
 ```
 
 #### Otros métodos de comparación que también se pueden usar en la Cadena son:
 
-1.  equalsIgnoreCase (): compara la cadena sin tener en cuenta la sensibilidad del caso.
+1.  equalsIgnoreCase(): compara la cadena sin tener en cuenta la sensibilidad del caso.
 
 ```java
 String a = "HELLO"; 
@@ -139,7 +139,7 @@ String a = "Sam";
 
 ```
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbNDQzNjU0NjIsLTE0ODc2MTQxNCw4MjA0Mz
-Q4NzAsLTE4OTIwNzUxNzQsLTY2ODY3MDU0OSwxMDUwMDg4MDY5
-LDg0ODk1NzQxNSwxOTM2NzUxODEwXX0=
+eyJoaXN0b3J5IjpbNzg0NDkyMTk1LC0xNDg3NjE0MTQsODIwND
+M0ODcwLC0xODkyMDc1MTc0LC02Njg2NzA1NDksMTA1MDA4ODA2
+OSw4NDg5NTc0MTUsMTkzNjc1MTgxMF19
 -->
