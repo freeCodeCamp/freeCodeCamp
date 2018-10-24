@@ -55,10 +55,10 @@ This layout model is one-dimensional layout model, and as a method that could of
 
 The main axis is defined by `flex-direction`, which has four possible values:
 
-        *row
-        *row-reverse
-        *column
-        *column-reverse
+        * row
+        * row-reverse
+        * column
+        * column-reverse
 
 To start using the Flexbox model, you need to first define a `flex container`.
 The flex container becomes flexible by setting the display property to flex:
@@ -73,21 +73,21 @@ The flex container becomes flexible by setting the display property to flex:
 ```
 #### The flex container properties are:
 
-        *flex-direction
-        *flex-wrap
-        *flex-flow
-        *justify-content
-        *align-items
-        *align-content
+        * flex-direction
+        * flex-wrap
+        * flex-flow
+        * justify-content
+        * align-items
+        * align-content
 
 #### The flex item properties are:
 
-        *order
-        *flex-grow
-        *flex-shrink
-        *flex-basis
-        *flex
-        *align-self
+        * order
+        * flex-grow
+        * flex-shrink
+        * flex-basis
+        * flex
+        * align-self
 
 #### CSS Flexbox Properties
 
@@ -112,10 +112,10 @@ The following table lists the CSS properties used with flexbox:
 #### Shorthand values for the flex properties
 The predefined values are as follows:
 
-        *flex: initial
-        *flex: auto
-        *flex: none
-        *flex: <positive-number>
+        * flex: initial
+        * flex: auto
+        * flex: none
+        * flex: <positive-number>
 
 ### More Information:
 <!-- Please add any articles you think might be helpful to read before writing the article -->
