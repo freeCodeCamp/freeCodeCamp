@@ -24,10 +24,10 @@ Generalmente, puede _declarar_ (es decir, crear) variables según la siguiente s
  Float miFlotante; 
 ```
 
-Puede _asignar_ un valor a la variable de forma simultánea cuando lo declara (lo que se denomina _inicialización_ ), o en cualquier lugar del código después de haberlo declarado. El símbolo **\=** se utiliza para el mismo.
+Puede _asignar_ un valor a la variable de forma simultánea cuando la declara (lo que se denomina _inicialización_ ), o en cualquier lugar del código después de haberla declarado. El símbolo **\=** se utiliza para esto.
 
 ```java
-// Initialise the variable of Primitive Data Type 'int' to store the value 10 
+ // Inicia the variable of Primitive Data Type 'int' to store the value 10 
  int i = 10; 
  double amount = 10.0; 
  boolean isOpen = false; 
@@ -54,7 +54,7 @@ Como se desprende del ejemplo anterior, las variables del tipo Primitivo se comp
 *   [Tipos de datos](https://guide.freecodecamp.org/java/data-types)
 *   [Clases y objetos](https://guide.freecodecamp.org/java/classes-and-objects)
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTEzMDc5MDAwMDUsLTIzNjEyNDg0MCwxNT
-c1MDU2MjM5LDYyOTMzOTUyMSwxODg2MzAzMDA3LC04NDk4OTIy
-NzEsLTEwNjI4MzU1MzBdfQ==
+eyJoaXN0b3J5IjpbNTc2NjM4MjcwLC0yMzYxMjQ4NDAsMTU3NT
+A1NjIzOSw2MjkzMzk1MjEsMTg4NjMwMzAwNywtODQ5ODkyMjcx
+LC0xMDYyODM1NTMwXX0=
 -->
