@@ -53,6 +53,27 @@ Blockchains, ideally, are just very sophisticated linked lists where each block 
 
 Consensus Based is an approach to decision making. It is a creative and dynamic way of reaching agreement between all members of a group. A transaction on Blockchain can be executed only if all the parties on the network unanimously approve it. It is however, subjected to alterations to suit various circumstances.
 
+## Byzantine problem(Solution to blockchain basic problem)
+
+Imagine that the grand Eastern Roman empire aka Byzantine empire has decided to capture a city. Alas, there is fierce resistance from within the city. The Byzantine army has completely encircled the city. The army has many divisions and each division has a general. The generals communicate between each as well as between all lieutenants within their division only through messengers.
+
+All the generals or commanders have to agree upon one of the two plans of action. Exact time to attack all at once or if faced by fierce resistance then the time to retreat all at once. The army cannot hold on forever. If the attack or retreat is without full strength then it means only one thing — Unacceptable brutal defeat.
+
+If all generals and/or messengers were trustworthy then it is a very simple solution. However, some of the messengers and even a few generals/commanders are traitors. They are spies or even enemy soldiers. There is a very high chance that they will not follow orders or pass on the incorrect message. The level of trust in the army is very less
+1 commander and 2 Lieutenants and just 2 types of messages
+
+Consider just a case of 1 commander and 2 Lieutenants and just 2 types of messages- ‘Attack’ and ‘Retreat’.
+ The Lieutenant 2 is a traitor who purposely changes the message that is to be passed to Lieutenant 1. Now Lieutenant 1 has received 2 messages and does not know which one to follow. Assuming Lieutenant 1 follows the Commander because of strict hierarchy in the army. Still, 1/3rd of the army is weaker by force as Lieutenant 2 is a traitor and this creates a lot of confusion.
+
+However what if the Commander is a traitor . Now 2/3rd of the total army has followed the incorrect order and failure is certain.
+1 commander and 3 Lieutenants and just 3 types of messages
+ We have just added 1 more Lieutenant and 1 more type of message (Let’s say the 3rd message is ‘Not sure’). Immediately the complexity of finding a consensus between all the Lieutenants and the Commander is increased. Now imagine the exponential increase when there are hundreds of Lieutenants.
+
+This is BGP. It is applicable to every distributed network. In fact, in the Bitcoin network, it is even more complex as there is no true ‘General’ or server. All participants or nodes (‘Lieutenant’) are exactly of equal hierarchy.
+
+All participating nodes have to agree upon every message that is transmitted between the nodes. If a group of nodes is corrupt or the message that they transmit is corrupt then still the network as a whole should not be affected by it and should resist this ‘Attack’. In short, the network in its entirety has to agree upon every message transmitted in the network. This agreement is called as consensus.
+
+In future reading, we will see how Bitcoin algorithm gives a probabilistic solution to BGP.
 
 ### Sources
 
