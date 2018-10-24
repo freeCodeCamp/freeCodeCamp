@@ -128,6 +128,38 @@ int main()
     return 0; 
 } 
 ```
+
+### Implementation in MATLAB
+```MATLAB
+
+a = [9,4,7,3,8,5,1,6,2];
+
+sorted = quicksort(a,1,length(a));
+
+function [unsorted] =  quicksort(unsorted, low, high)
+    if low < high
+        [pInd, unsorted] = partition(unsorted, low, high);
+        unsorted = quicksort(unsorted, low, pInd-1);
+        unsorted = quicksort(unsorted, pInd+1, high);
+    end
+
+end
+
+function [pInd, unsorted] = partition(unsorted, low, high)
+    i = low-1;
+    for j = low:1:high-1
+        if unsorted(j) <= unsorted(high)
+            i = i+1;
+            unsorted([i,j]) = unsorted([j,i]);
+            
+        end
+    end
+    unsorted([i+1,high]) = unsorted([high,i+1]);
+    pInd = i+1;
+
+end
+
+```
 The space complexity of quick sort is O(n). This is an improvement over other divide and conquer sorting algorithms, which take O(nlong(n)) space. Quick sort achieves this by changing the order of elements within the given array. Compare this with the <a href='https://guide.freecodecamp.org/algorithms/sorting-algorithms/merge-sort' target='_blank' rel='nofollow'>merge sort</a> algorithm which creates 2 arrays, each length n/2, in each function call.
 
 #### More Information:
