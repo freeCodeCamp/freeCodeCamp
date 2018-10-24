@@ -13,24 +13,24 @@ JSX es una expresión que utiliza declaraciones HTML válidas dentro de JavaScri
 La expresión de una sola línea es fácil de usar.
 
 ```jsx
-const one = <h1>Hello World!</h1>; 
+const uno = <h1>Hola Mundo!</h1>;
 ```
 
 Cuando necesite usar varias líneas en una sola expresión JSX, escriba el código dentro de un solo paréntesis.
 
 ```jsx
-const two = ( 
-  <ul> 
-    <li>Once</li> 
-    <li>Twice</li> 
-  </ul> 
- ); 
+const dos = (
+  <ul>
+    <li>Una vez</li>
+    <li>Dos veces</li>
+  </ul>
+ );
 ```
 
 ### Usando solo etiquetas HTML
 
 ```jsx
-const greet = <h1>Hello World!</h1>; 
+const greet = <h1>Hola Mundo!</h1>;
 ```
 
 ### Combinando expresiones de JavaScript con etiquetas HTML
@@ -38,17 +38,17 @@ const greet = <h1>Hello World!</h1>;
 Podemos usar variables de JavaScript entre llaves.
 
 ```jsx
-const who = "Quincy Larson"; 
- const greet = <h1>Hello {who}!</h1>; 
+const who = "Quincy Larson";
+ const greet = <h1>Hola {who}!</h1>;
 ```
 
 También podemos llamar a otras funciones de JavaScript entre llaves.
 
 ```jsx
-function who() { 
-  return "World"; 
- } 
- const greet = <h1>Hello {who()}!</h1>; 
+function who() {
+  return "Mundo";
+ }
+ const greet = <h1>Hola {who()}!</h1>;
 ```
 
 ### Solo se permite una sola etiqueta principal
@@ -56,23 +56,23 @@ function who() {
 Una expresión JSX debe tener una sola etiqueta principal. Podemos agregar varias etiquetas anidadas solo en el elemento principal.
 
 ```jsx
-// This is valid. 
- const tags = ( 
-  <ul> 
-    <li>Once</li> 
-    <li>Twice</li> 
-  </ul> 
- ); 
- 
- // This is not valid. 
- const tags = ( 
-  <h1>Hello World!</h1> 
-  <h3>This is my special list:</h3> 
-  <ul> 
-    <li>Once</li> 
-    <li>Twice</li> 
-  </ul> 
- ); 
+// This is valid.
+ const tags = (
+  <ul>
+    <li>Una vez</li>
+    <li>Dos veces</li>
+  </ul>
+ );
+
+ // This is not valid.
+ const tags = (
+  <h1>Hola Mundo!</h1>
+  <h3>Esta es mi lista especial:</h3>
+  <ul>
+    <li>Una vez</li>
+    <li>Dos veces</li>
+  </ul>
+ );
 ```
 
 ### Más información

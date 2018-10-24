@@ -1,7 +1,8 @@
 ---
 title: Hello World
 localeTitle: Hola Mundo
----## Hola Mundo !!
+---
+## Hola Mundo !!
 
 Cada aprendizaje de idiomas comienza con el ejemplo de Hello World tradicional. Aquí, te presentamos a React con el mismo programa HelloWorld.
 
@@ -11,12 +12,12 @@ Pero antes de eso necesitamos asegurarnos de tener node.js y npm instalados en l
 
 Podemos instalarlo a través de los siguientes comandos.
 ```
-npm install -g create-react-app 
- 
- create-react-app my-app 
- 
- cd my-app 
- npm start 
+npm install -g create-react-app
+
+ create-react-app my-app
+
+ cd my-app
+ npm start
 ```
 
 La línea de comandos debe darle una salida donde puede encontrar la aplicación en el navegador. El valor predeterminado debe ser localhost: 8080. Si solo está utilizando IE o Edge en su máquina con Windows, le recomiendo que instale Chrome también para acceder al entorno de desarrollador y las herramientas de desarrollo React, que están disponibles como extensión de Chrome.
@@ -28,36 +29,36 @@ La línea de comandos debe darle una salida donde puede encontrar la aplicación
 Copie el código de abajo y péguelo en src / App.js
 
 ```javascript
-  import React from 'react'; 
- 
-  class App extends React.Component{ 
-    constructor(props) { 
-      super(props); 
-    } 
- 
-    render(){ 
-      return( 
-        <div> 
-          <p>Hello World !!</p> 
-        </div> 
-      ); 
-    } 
-  } 
- 
-  export default App; 
+  import React from 'react';
+
+  class App extends React.Component{
+    constructor(props) {
+      super(props);
+    }
+
+    render(){
+      return(
+        <div>
+          <p>Hola Mundo!</p>
+        </div>
+      );
+    }
+  }
+
+  export default App;
 ```
 
 Si revisamos el archivo index.js en la carpeta src, encontramos que el App.js anterior se llama a index.js y luego se procesa.
 
 ```javascript
-// Other code 
- import App from './App'; // The App component is imported 
- 
- // Other code 
- ReactDOM.render(<App />, 
- document.getElementById('root'));  //The <App /> is the way components are called in react after importing them 
- 
- // Other code 
+// Other code
+ import App from './App'; // The App component is imported
+
+ // Other code
+ ReactDOM.render(<App />,
+ document.getElementById('root'));  //The <App /> is the way components are called in react after importing them
+
+ // Other code
 ```
 
 En lo anterior, App.js se llama un componente. Normalmente, creamos varios componentes y los reunimos en App.js, que luego se procesarán en index.js, que luego se procesa en el div root que se encuentra en index.html.
