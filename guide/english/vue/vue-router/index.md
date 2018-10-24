@@ -1,1 +1,46 @@
+## Introduction
+Vue router is the official router for Vue.js. With it you can easily create your Single Page Apps.
 
+## Basics
+To use the power of Vue Router all you need to do is map Vue.js componenets with routes and specify where to render them.
+For example, your window may look like that:
+```javascript
+<template>
+  <div id="app">
+    <app-header></app-header>
+    <main>
+      <router-view />
+    </main>
+    <app-footer></app-footer>
+  </div>
+</template>
+```
+Then in `<router-view />` place it will render a component which is specified for this route. We map components to routes in router itself and this is also quite straitforward:
+```javascript
+import Vue from 'vue'
+import Router from 'vue-router'
+import Home from '@/components/Home'
+import Contacts from '@/components/Contacts'
+
+Vue.use(Router)
+
+export default new Router({
+  routes: [
+    {
+      path: '/',
+      name: 'Home',
+      component: Home
+    },
+    {
+      path: '/contacts',
+      name: 'Contacts',
+      component: Contacts
+    }
+  ]
+})
+```
+You can add as many routes as you need. It is also possible to use wildcards, aliases, redirects, dynamic routing
+
+## Read more
+- [Vue Router official docs](https://router.vuejs.org/)
+- [Vue Router's Github repository](https://github.com/vuejs/vue-router)
