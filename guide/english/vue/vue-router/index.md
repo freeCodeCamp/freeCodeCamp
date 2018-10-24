@@ -39,7 +39,7 @@ export default new Router({
   ]
 })
 ```
-You can add as many routes as you need. It is also possible to use wildcards, aliases, redirects, dynamic routing
+You can add as many routes as you need. It is also possible to use wildcards, aliases, redirects, dynamic route mapping, etc.
 
 ## Read more
 - [Vue Router official docs](https://router.vuejs.org/)
