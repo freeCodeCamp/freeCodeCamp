@@ -15,7 +15,7 @@ For example, your main template may look like that:
   </div>
 </template>
 ```
-Then in `<router-view />` place it will render a component which is specified for this route. We map components to routes in router itself and this is also quite straitforward:
+Then in `<router-view />` place it will render a component which is specified for this route. We map components to routes in router itself and this is also quite straigtforward:
 ```javascript
 import Vue from 'vue'
 import Router from 'vue-router'
