@@ -159,8 +159,8 @@ Podemos tambien dividir la cadena especificando el índice inicial y final de lo
 
 El método `.substring()` puede ser usado de dos modos. Uno con solo el índice inicial y otro con ambos, el índice incial y el índice final. Toma en cuenta que el indice comienza en 0. Ejemplo:
 ```java
- String texto = "Hola,Mi nombre es Bob";
- System.out.println(text.substring(6));
+ String texto = "Hola,Mi nombre es Roberto";
+ System.out.println(texto.substring(6));
 ```
 Will produce
 
@@ -189,8 +189,8 @@ My
 
 -   [String Documentation](https://docs.oracle.com/javase/7/docs/api/java/lang/String.html)
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMjI2NjQ5NTc3LC0xNDc4NjQxMTAsMTA4OT
-M1NTAxNiwtMTU4ODg5NDAyNCwtNjMyMTIwMzc4LC0xNDg3NjE0
-MTQsODIwNDM0ODcwLC0xODkyMDc1MTc0LC02Njg2NzA1NDksMT
-A1MDA4ODA2OSw4NDg5NTc0MTUsMTkzNjc1MTgxMF19
+eyJoaXN0b3J5IjpbMTQwNjI3ODI3OCwtMTQ3ODY0MTEwLDEwOD
+kzNTUwMTYsLTE1ODg4OTQwMjQsLTYzMjEyMDM3OCwtMTQ4NzYx
+NDE0LDgyMDQzNDg3MCwtMTg5MjA3NTE3NCwtNjY4NjcwNTQ5LD
+EwNTAwODgwNjksODQ4OTU3NDE1LDE5MzY3NTE4MTBdfQ==
 -->
