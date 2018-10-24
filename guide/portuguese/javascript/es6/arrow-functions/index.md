@@ -4,58 +4,57 @@ localeTitle: Funções de seta
 ---
 ## Funções de seta
 
-Funções no ES6 mudaram um pouco. Quero dizer a sintaxe.
+### Definição
+Funções de Seta (_Arrow Functions_) é uma nova sintaxe para se escrever funções ES6. A nova sintaxe economiza tempo e simplifica o escopo da função
 
 ```javascript
-// Old Syntax 
- function oldOne() { 
- console.log("Hello World..!"); 
- } 
- 
- // New Syntax 
- var newOne = () => { 
- console.log("Hello World..!"); 
- } 
+// ES5
+var multiply = function(x, y) {
+  return x * y;
+};
+
+// ES6 arrow function
+var multiply = (x, y) => { return x * y; };
+
+// ES6 mais simples
+var multiply = (x, y) => x * y;    
+
+// ES6 mais simples ainda
+var square = x => x * x
+
 ```
 
-A nova sintaxe pode ser um pouco confusa. Mas vou tentar explicar a sintaxe. Existem duas partes da sintaxe.
+Não é mais necessária a palavra `function` nem o `return` para funções mais simples.
 
-1.  var newOne = ()
-2.  \=> {}
-
-A primeira parte é apenas declarar uma variável e atribuir a função (ie) () a ela. Apenas diz que a variável é na verdade uma função.
-
-Então a segunda parte está declarando a parte do corpo da função. A parte da seta com as chaves indica a parte do corpo.
-
-Outro exemplo com parâmetros:
+### Contexto _this_ simplificado
+As funções no ES6 definem seu próprio contexto `this` de forma que são necessários artifícios para uso do contexto exterior à função:
 
 ```javascript
-let NewOneWithParameters = (a, b) => { 
- console.log(a+b); // 30 
- } 
- NewOneWithParameters(10, 20); 
+// ES5
+function Person() {
+  // `this` é atribuído à `self`
+  var self = this;
+  self.age = 0;
+
+  setInterval(function growUp() {
+    // `self` se refere ao contexto de `Person`
+    self.age++;
+  }, 1000);
+}
 ```
 
-Parênteses são opcionais quando há apenas um nome de parâmetro:
+Uma arrow function não redefine o `this`. Portanto o método acima pode ser reescrito como:
 
 ```javascript
-let newOneWithOneParam = a => { 
- console.log(a); 
- } 
+// ES5
+function Person(){
+  this.age = 0;
+
+  setInterval(() => {
+    // `this` se refere ao contexto de `Person`
+    this.age++;
+  }, 1000);
+}
 ```
 
-Uma vantagem incrível da função de setas é que você não pode religar uma função de seta. Sempre será chamado com o contexto em que foi definido. Apenas use uma função normal.
-
-```javascript
-// Old Syntax 
- axios.get(url).then(function(response) { 
-  this.data = response.data; 
- }).bind(this); 
- 
- // New Syntax 
- axios.get(url).then(response => { 
-  this.data = response.data; 
- }); 
-```
-
-Eu não acho que eu precise dar uma explicação para isso. É simples.
+**Mais informações**: [MDN - Arrow Functions](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Functions/Arrow_functions)
