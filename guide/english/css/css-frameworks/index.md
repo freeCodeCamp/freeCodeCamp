@@ -1,3 +1,7 @@
+---
+title: CSS Frameworks
+---
+
 CSS frameworks are designed to simplify the work of the typesetter, eliminate errors when creating a project, and get rid of the boring monotonous writing of the same code.
 
 

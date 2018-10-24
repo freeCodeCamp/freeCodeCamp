@@ -48,7 +48,7 @@ Give your answer rounded to 10 digits behind the decimal point in the form a.bcd
 ```yml
 tests:
   - text: <code>euler353()</code> should return 1.2759860331.
-    testString: 'assert.strictEqual(euler353(), 1.2759860331, "<code>euler353()</code> should return 1.2759860331.");'
+    testString: assert.strictEqual(euler353(), 1.2759860331, '<code>euler353()</code> should return 1.2759860331.');
 
 ```
 

@@ -31,17 +31,17 @@ An input of three or more words, e.g. ["ABC", "DEF", "G", "H"], produces the out
 ```yml
 tests:
   - text: <code>quibble</code> is a function.
-    testString: 'assert(typeof quibble === "function", "<code>quibble</code> is a function.");'
-  - text: '<code>quibble(["ABC"])</code> should return a string.'
-    testString: 'assert(typeof quibble(["ABC"]) === "string", "<code>quibble(["ABC"])</code> should return a string.");'
-  - text: '<code>quibble([])</code> should return "{}".'
-    testString: 'assert.equal(quibble(testCases[0]), results[0], "<code>quibble([])</code> should return "{}".");'
-  - text: '<code>quibble(["ABC"])</code> should return "{ABC}".'
-    testString: 'assert.equal(quibble(testCases[1]), results[1], "<code>quibble(["ABC"])</code> should return "{ABC}".");'
-  - text: '<code>quibble(["ABC", "DEF"])</code> should return "{ABC and DEF}".'
-    testString: 'assert.equal(quibble(testCases[2]), results[2], "<code>quibble(["ABC", "DEF"])</code> should return "{ABC and DEF}".");'
-  - text: '<code>quibble(["ABC", "DEF", "G", "H"])</code> should return "{ABC,DEF,G and H}".'
-    testString: 'assert.equal(quibble(testCases[3]), results[3], "<code>quibble(["ABC", "DEF", "G", "H"])</code> should return "{ABC,DEF,G and H}".");'
+    testString: assert(typeof quibble === 'function', '<code>quibble</code> is a function.');
+  - text: <code>quibble(["ABC"])</code> should return a string.
+    testString: assert(typeof quibble(["ABC"]) === 'string', '<code>quibble(["ABC"])</code> should return a string.');
+  - text: <code>quibble([])</code> should return "{}".
+    testString: assert.equal(quibble(testCases[0]), results[0], '<code>quibble([])</code> should return "{}".');
+  - text: <code>quibble(["ABC"])</code> should return "{ABC}".
+    testString: assert.equal(quibble(testCases[1]), results[1], '<code>quibble(["ABC"])</code> should return "{ABC}".');
+  - text: <code>quibble(["ABC", "DEF"])</code> should return "{ABC and DEF}".
+    testString: assert.equal(quibble(testCases[2]), results[2], '<code>quibble(["ABC", "DEF"])</code> should return "{ABC and DEF}".');
+  - text: <code>quibble(["ABC", "DEF", "G", "H"])</code> should return "{ABC,DEF,G and H}".
+    testString: assert.equal(quibble(testCases[3]), results[3], '<code>quibble(["ABC", "DEF", "G", "H"])</code> should return "{ABC,DEF,G and H}".');
 
 ```
 
@@ -66,7 +66,8 @@ function quibble (words) {
 <div id='js-teardown'>
 
 ```js
-console.info('after the test');
+const testCases = [[], ["ABC"], ["ABC", "DEF"], ["ABC", "DEF", "G", "H"]];
+const results = ["{}", "{ABC}", "{ABC and DEF}", "{ABC,DEF,G and H}"];
 ```
 
 </div>
@@ -82,7 +83,7 @@ function quibble (words) {
   return "{" +
     words.slice(0, words.length - 1).join(",") +
    (words.length > 1 ? " and " : "") +
-   (words[words.length - 1] || ") +
+   (words[words.length - 1] || '') +
   "}";
 }
 

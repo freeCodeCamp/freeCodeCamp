@@ -32,7 +32,7 @@ Find the sum of the first thirty golden nuggets.
 ```yml
 tests:
   - text: <code>euler140()</code> should return 5673835352990.
-    testString: 'assert.strictEqual(euler140(), 5673835352990, "<code>euler140()</code> should return 5673835352990.");'
+    testString: assert.strictEqual(euler140(), 5673835352990, '<code>euler140()</code> should return 5673835352990.');
 
 ```
 
