@@ -91,3 +91,4 @@ To install Jupyter notebooks with pip: `pip install jupyter notebook`
 * [What is Jupyter Notebook by codebasics, duration 8:24](https://www.youtube.com/watch?v=q_BzsPxwLOE)
 * [Jupyter Notebook Tutorial / Ipython Notebook Tutorial, by codebasics, duration 24:07](https://www.youtube.com/watch?v=EEEZX_0FMEc)
 * [More Information](https://www.datacamp.com/community/tutorials/tutorial-jupyter-notebook)
+* [Jupyter Notebooks for Beginners](https://www.dataquest.io/blog/jupyter-notebook-tutorial/)
