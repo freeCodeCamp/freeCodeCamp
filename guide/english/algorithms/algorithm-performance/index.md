@@ -24,7 +24,7 @@ The symbol of a claim like x = O(x^2) for all x > _n_ can be substituted with x 
 Effectively, we say that a function f(x) that is O(g(x)) grows slower than g(x) does.
 
 
-Comparitively, in computer science and software development we can use big-O notation in order to describe the efficiency of algorithms via its time and space complexity.
+Comparatively, in computer science and software development we can use big-O notation in order to describe the efficiency of algorithms via its time and space complexity.
 
 **Space Complexity** of an algorithm refers to its memory footprint with respect to the input size.
 
