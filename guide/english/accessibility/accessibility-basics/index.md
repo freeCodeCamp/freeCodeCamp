@@ -49,7 +49,7 @@ You may think that accessibility doesn’t apply to you or to your  users, so wh
 
 The truth is, you're right to a certain degree. If you have done meticulous user research and have excluded any chance of a certain group of people visiting your website, the priority for catering to that group diminishes quite a bit.
 
-However, doing this research is actually key in defending the need for accessibility. Did you know there are <a href='http://audiogames.net' target='_blank' rel='nofollow'>blind gamers?</a> Even <a href='http://peteeckert.com/' target='_blank' rel='nofollow'>blind photographers</a> and <a href='http://mentalfloss.com/article/25750/roll-over-beethoven-6-modern-deaf-musicians' target='_blank' rel='nofollow'>deaf musicians</a>?
+However, doing this research is actually key in defending the need for accessibility. Did you know there are [blind gamers](http://audiogames.net)? Or even [blind photographers](http://peteeckert.com/)? What about [deaf musicians](http://mentalfloss.com/article/25750/roll-over-beethoven-6-modern-deaf-musicians)?
 
 There is also legislation that actually forces you to make certain websites and web apps accessible. A prime example is the US-based <a href='http://jimthatcher.com/webcourse1.htm' target='_blank' rel='nofollow'>Section 508</a>. Right now, this law mainly refers to government organizations and public sector websites. However, laws can change.
 
@@ -68,7 +68,7 @@ The Web Content Accessibility Guidelines or <a href='https://www.wuhcag.com/web-
 
 ### Talk like the natives
 
-The HTML specification is a document that describes how the language should be used to build websites. Assistive technologies, like screen-readers, speech recognition programs etc. are aware of this document. Web developers, however, often are not, or at least not enough, and think something like this is ok:
+The HTML specification is a document that describes how the language should be used to build websites. Assistive technologies, like screen-readers, speech recognition programs, etc. are aware of this document. Web developers, however, often are not, or at least not enough, and think something like this is ok:
 ```html
     <div class="epic-button"></div>
 
