@@ -76,6 +76,7 @@ For now, use of the standard `rgba()` function is the recommended way to add an 
 * [How Do HEX Color Codes Work? (in 60 seconds)](https://www.youtube.com/watch?v=c56x1aj2CPA) - Good Video which also explains a little bit about Hexadecimal Numbers.
 * [Hex Codes & Color Theory](https://www.youtube.com/watch?v=xlRiLSDdqcY) - A Longer Video which delves into Color theory (Such as what are additive colors and what are subtractive colors etc.) and it also points to other resources for delving deeper into the topic. 
 * [Web Colors](https://en.wikipedia.org/wiki/Web_colors) - Wikipedia Article on how colors are used on the web.
+* [Chart from COMPINFOPRO](http://compinfopro.com/hex-binary-conversion/) - Has a chart converting hexadecimal to binary.
 * [Wikipedia article about Hexadecimal code](https://en.wikipedia.org/wiki/Hexadecimal)
 * [Wikipedia article about hexadecimal numeral system](https://wikipedia.org/wiki/Hexadecimal_numeral_system)  
 * [Wikipedia article about web colors](https://en.wikipedia.org/wiki/Web_colors)
