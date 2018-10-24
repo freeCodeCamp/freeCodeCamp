@@ -86,9 +86,9 @@ Use the following syntax to delete a file
 
 #### Search you command history as you type
 
-```Ctrl+R```
+```control+R```
 
-Hold down `Ctrl` and press `R` to invoke "reverse-i-search." Type a letter - like s - and you'll get a match for the most recent command in your history that starts with s. Keep typing to narrow your match. When you hit the jackpot, press Enter to execute the suggested command.
+Hold down `control` and press `R` to invoke "reverse-i-search." Type a letter - like s - and you'll get a match for the most recent command in your history that starts with s. Keep typing to narrow your match. When you hit the jackpot, press Enter to execute the suggested command.
 
 # iTerm2
 
