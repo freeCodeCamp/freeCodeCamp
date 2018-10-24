@@ -39,6 +39,22 @@ BlockTech uses the concepts like Proof of Work and Hash encryption to ensure sec
 
 ![Proof of Work](https://qph.fs.quoracdn.net/main-qimg-098a67b40e4d0f625cf2cbbda2c95df0)
 
+### _ *Block structure_
+A block is a container data structure. In the Bitcoin world, a block contains more than 500 transactions on average. The average size of a block seems to be 1MB (source). In Bitcoin Cash ( a hard fork from the Bitcoin blockchain ), the size of a block can go up to 8MB. This enables more transactions to be processed per second.
+Anyway, a block is composed of a header and a long list of transactions.
+
+### _ *Block Header_
+
+The header contains metadata about a block. There are three different sets of metadata:
+
+    The previous block hash. Remember that in a blockchain, every block is inherits from the previous block because we use the previous block's hash to create the new block's hash. For every block N, we feed it the hash of the block N-1.
+
+    Mining competition. For a block to be part of the blockchain, it needs to be given a valid hash. This contains the timestamp, the nonce and the difficulty. Mining is another crucial part of the blockchain technology, but it is outside the scope of this article.
+
+    The third part is a merkle tree root. This is a data structure to summarize the transactions in the block. And we will leave it at that for now. More on this later.
+
+![Block structure](https://goo.gl/images/QEsXnR)
+
 #### _* Mining_
 
 Torrent is a peer-to-peer decentralized network used to share files. Blockchain uses similar technology. What differentiates the two is that, in Torrent, the system relies on the honor code of the users to seed the files. Whereas, in blockchain, the users who are involved in the transaction have economic incentives. These users are called "Miners". The Miners spend their computing resources to solve the cryptographic hashes and ensure immutability and reliability of the transaction. Every successful solution (decryption) ensures some economic benefit - meaning the miner gets currency credited to their wallet.
