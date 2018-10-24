@@ -25,7 +25,7 @@ describe('fcc-create-nav-data', () => {
       },
       fileAbsolutePath: path.resolve(
         __dirname,
-        '../../../guide/english/php/functions/files/file-writing/index.md'
+        '../../../mock-guide/english/php/functions/files/file-writing/index.md'
       )
     };
 

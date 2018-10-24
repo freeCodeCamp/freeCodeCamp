@@ -61,9 +61,8 @@ Não entre em pânico, esses arquivos são gerados automaticamente pelo npm para
  ``` 
  
  
- #### 7. Save the code and run 
+ #### 7. Salve o projeto e rode no terminal de sua preferência 
+```shell
+$ ionic serve
 ```
-
-Concha saque iônico \`\` \`
-
 #### 8\. Para ver o seu código em execução, acesse o navegador e abra o host local: 8100 no URL.
