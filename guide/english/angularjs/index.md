@@ -30,3 +30,10 @@ HTML:
 ```html
 <script src="/bower_components/angular/angular.js"></script>
 ```
+
+
+### Site teach Angularjs
+
+https://www.pluralsight.com/
+
+https://www.w3schools.com/angular/
