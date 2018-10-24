@@ -17,11 +17,11 @@ Es posible que haya notado que el **Tipo Envoltorio** consiste en tipos escritos
 Generalmente, puede _declarar_ (es decir, crear) variables según la siguiente sintaxis: < _tipo de dato_ > < _nombre de variable_ >;
 
 ```java
-// Primitive Data Type 
+ // Tipo de Dato Primitivo 
  int i; 
  
- // Reference Data Type 
- Float myFloat; 
+ // Tipo de Dato Referencia 
+ Float miFlotante; 
 ```
 
 Puede _asignar_ un valor a la variable de forma simultánea cuando lo declara (lo que se denomina _inicialización_ ), o en cualquier lugar del código después de haberlo declarado. El símbolo **\=** se utiliza para el mismo.
@@ -54,7 +54,7 @@ Como se desprende del ejemplo anterior, las variables del tipo Primitivo se comp
 *   [Tipos de datos](https://guide.freecodecamp.org/java/data-types)
 *   [Clases y objetos](https://guide.freecodecamp.org/java/classes-and-objects)
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTcyNDYyNzY1LC0yMzYxMjQ4NDAsMTU3NT
-A1NjIzOSw2MjkzMzk1MjEsMTg4NjMwMzAwNywtODQ5ODkyMjcx
-LC0xMDYyODM1NTMwXX0=
+eyJoaXN0b3J5IjpbLTEzMDc5MDAwMDUsLTIzNjEyNDg0MCwxNT
+c1MDU2MjM5LDYyOTMzOTUyMSwxODg2MzAzMDA3LC04NDk4OTIy
+NzEsLTEwNjI4MzU1MzBdfQ==
 -->
