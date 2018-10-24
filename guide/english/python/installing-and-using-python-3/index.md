@@ -65,3 +65,6 @@ An alternative to using virtualenvwrapper is [Pipenv](https://docs.pipenv.org/).
 
 To get started with Pipenv, you can follow this very detailed [guide](https://docs.pipenv.org/install.html#installing-pipenv). Pipenv makes it easy to [specify which version of Python](https://docs.pipenv.org/basics.html#specifying-versions-of-python) you wish to use for each project, [import](https://docs.pipenv.org/basics.html#importing-from-requirements-txt) from an existing `requirements.txt` file and [graph](https://docs.pipenv.org/#pipenv-graph) your dependencies.
 
+<a href="https://www.youtube.com/watch?v=oHOiqFs_x8Y&feature=youtu.be
+" target="_blank"><img src="http://img.youtube.com/vi/oHOiqFs_x8Y/0.jpg" 
+alt="IMAGE ALT TEXT HERE" width="240" height="180" border="10" /></a>
