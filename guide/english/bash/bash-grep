@@ -1,0 +1,7 @@
+grep - search a File for a pattern
+You will appreciate the usefulness of this command when you have to search one or more files for pattern of characters.
+The basic command line format for using grep is
+                                $ grep (pattern file...)
+        If pattern is in fact contained in the files specified on the grep command line, the line of 
+        text containing that pattern is displayed on the standard output.
+        
