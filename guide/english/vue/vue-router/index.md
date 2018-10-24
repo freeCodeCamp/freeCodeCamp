@@ -2,7 +2,7 @@
 Vue router is the official router for Vue.js. With it you can easily create your Single Page Apps.
 
 ## Basics
-If you want to use Vue Router in your app, first you'll need to inject rounter in your root instance to make your whole application aware of the router.
+If you want to use Vue Router in your app, first you'll need to inject it in your root instance to make your whole application aware of the router.
 ```javascript
 new Vue({
   el: '#app',
@@ -21,7 +21,7 @@ For example, your main template may look like that:
   </div>
 </template>
 ```
-Then in `<router-view />` place it will render a component which is specified for this route. We map components to routes in router itself and this is also quite straigtforward:
+Then in `<router-view />` place it will render a component which is specified for this route. We map components to routes in router itself:
 ```javascript
 import Vue from 'vue'
 import Router from 'vue-router'
