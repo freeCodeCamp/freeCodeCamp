@@ -59,6 +59,12 @@ The grid system is a mobile-first flexbox system for quickly building layouts of
 
 Bootstrap comes with predefined grid classes for your use in markup. See more details and examples at https://getbootstrap.com/docs/4.1/layout/grid/
 
+### Bootstrap 3 vs. Bootstrap 4
+
+Bootstrap 4 is the newest version of Bootstrap; with new components, faster stylesheet and more responsiveness.
+
+Bootstrap 4 supports the latest, stable releases of all major browsers and platforms. However, Internet Explorer 9 and down is not supported.
+
 ### Boostrap Features
 
 - Bootstrap 3 supports the latest versions of the Google Chrome, Firefox, Internet Explorer, Opera, and Safari (except on Windows). It additionally supports back to IE8 and the latest Firefox Extended Support Release (ESR).[12]
@@ -83,3 +89,4 @@ themes that build on the Bootstrap framework to provide a more customized and st
 [HTML linter for projects using Bootstrap](https://github.com/twbs/bootlint)
 [Design elements and code snippets for Bootstrap](https://bootsnipp.com/)
 [Code, theme, and add-on resources for Bootstrap](http://expo.getbootstrap.com/resources/)
+[Bootstrap 4 W3Schools](https://www.w3schools.com/bootstrap4/bootstrap_get_started.asp)
