@@ -19,7 +19,9 @@ Just a few advantages of WordPress:
 
 One of the main things that appeal to people about WordPress is the abudant themes and plugins. You can make your website look however you like, and with many plugins available you can do anything from having a plugin to handle contact forms, manage SEO (Search Engine Optimization), and many more.
 
-Whether its page transitions or a customized contact form, WordPress users are only a few clicks away from building a website.
+"What You See Is What You Get" (WYSIWYG) editors for WordPress have increased in popularity over recent years. These visual builders provide user-friendly interfaces that allow users to customize all aspects of their site without a bit of code. Some of the most popular include [Divi](https://www.elegantthemes.com/gallery/divi/) and [Thrive](https://thrivethemes.com/architect/?idev_id=4971), which are both under $90, and [SiteOrigin](https://siteorigin.com/page-builder/), which is a free option. WordPress will be shipping its own visual editor, Gutenberg, as of version 5.0. You can learn more about it here: [Gutenberg](https://wordpress.org/gutenberg/).
+
+Whether it's page transitions or a customized contact form, WordPress users are only a few clicks away from building a website.
 
 ### More Information
 
