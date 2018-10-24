@@ -1,11 +1,12 @@
 <table>
     <tr>
         <td> Read these guidelines in </td>
-        <td><a href="/CONTRIBUTING.md"> English </a></td>
-        <td><a href="/docs/chinese/README.md"> 中文 </a></td>
+        <td><a href="/docs/README.md"> English </a></td>
+        <td><a href="README.md"> 中文 </a></td>
         <td><a href="/docs/russian/README.md"> русский </a></td>
         <td><a href="/docs/arabic/README.md"> عربى </a></td>
         <td><a href="/docs/spanish/README.md"> Español </a></td>
+        <td><a href="/docs/romanian/README.md"> Română </a></td>
         <td><a href="/docs/portuguese/README.md"> Português </a></td>
     </tr>
 </table>
@@ -17,7 +18,7 @@
 
 该目录包含有关贡献 freeCodeCamp.org 的所有文档
 
-## [如果您已经开始，请先阅读此内容。]（/ CONTRIBUTING.md）
+## [如果您已经开始，请先阅读此内容。]（CONTRIBUTING.md）
 ---
 
 ##快速参考文章
