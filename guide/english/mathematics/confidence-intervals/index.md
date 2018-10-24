@@ -11,5 +11,8 @@ This is a stub. <a href='https://github.com/freecodecamp/guides/tree/master/src/
 
 #### More Information:
 <!-- Please add any articles you think might be helpful to read before writing the article -->
+Resources for learning confidence intervals-
+*[Confidence Intervals](www.stat.yale.edu/Courses/1997-98/101/confint.htm)
+*[Confidence Intervals and margin of error] (https://www.khanacademy.org/math/ap-statistics/estimating-confidence-ap/introduction-confidence-intervals/v/confidence-intervals-and-margin-of-error) [Do watch this video on Khan Academy for a clear understanding of confidence intervals starting from scratch]
 
 
