@@ -25,7 +25,7 @@ There are many factors that can give you an unconcious bias, such as:
 - Our Listening Skills – how much we actively listen to what certain people say.
 - Our Micro-affirmations – how much or how little we comfort certain people in certain situations.
 
-It was also found in various studies that that even the order of questions in a test can lead to unconsious bias. There is a very good video on the topic [here](https://www.youtube.com/watch?v=75g4d5sF3xI").  
+It was also found in various studies that that even the order of questions in a test can lead to unconsious bias. There is a very good video on the topic [here](https://www.youtube.com/watch?v=75g4d5sF3xI").  Project Implicit also has online tests on this topic [here](https://implicit.harvard.edu/implicit/takeatest.html").
 
 Unconscious bias is far more prevalent than conscious prejudice and often incompatible with one’s conscious values. Certain scenarios can activate unconscious attitudes and beliefs. For example, biases may be more prevalent when multi-tasking or working under time pressure.  
   
