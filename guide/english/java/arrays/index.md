@@ -89,7 +89,10 @@ arrayName = new dataType[] {value1, value2, value3};
 ```
 
 ## Size of Arrays:
-It's possible to find the number of elements in an array using the "length attribute". It should be noticed here that ```java length``` is an **attribute** of every array i.e. a variable name storing the length of the variable. It must not be confused for a **method** of array since the name is same as the ```java length()``` method corresponding to String classes.
+It's possible to find the number of elements in an array using the "length attribute". It should be noticed here that ```java length``` is an **attribute** of every array i.e. a variable name storing the length of the variable. It must not be confused for a **method** of array since the name is same as the ```java length()``` method corresponding to String classes.\
+Array length can be calculated using this
+int[] arr = new int[10];
+int arrayLength = arr.length;
 ```java
 int[] a = {4, 5, 6, 7, 8}; // declare array
 System.out.println(a.length); //prints 5
