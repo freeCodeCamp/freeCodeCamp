@@ -11,9 +11,9 @@ int main(void) {
     scanf("%d", &a);
     scanf("%d", &b);
     ... 
-    printf("%d", k);
-    printf("%d", j);
-    printf("%d", i);
+    printf("%d", &k);
+    printf("%d", &j);
+    printf("%d", &i);
     ... //and so on..
 
     return 0;
@@ -56,6 +56,11 @@ You do not have to tell the dimension beforehand. Here an array of two will be c
 int crr[100] = {3};
 ```
 If you do this, then the first element is going to be `3`, but the rest of them is going to be `0`. 
+
+```C
+int drr[10] = {0};
+```
+If you want to create an array with all the elements as `0`.
 
 ```C
 int var = arr[0];
