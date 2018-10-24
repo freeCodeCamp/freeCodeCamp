@@ -119,12 +119,12 @@ La "longitud" de una cadena es solo el número de caracteres que contiene. Así 
 
 #### Otros métodos de comparación que también se pueden usar en la Cadena son:
 
-1.  equalsIgnoreCase(): compara la cadena sin tener en cuenta la sensibilidad del caso.
+1.  equalsIgnoreCase(): compara la cadena sin tener en cuenta mayúsculas o minúsculas.
 
 ```java
-String a = "HELLO"; 
- String b = "hello"; 
- System.out.println(a.equalsIgnoreCase(b));   // It will print true 
+ String a = "HOLA"; 
+ String b = "hola"; 
+ System.out.println(a.equalsIgnoreCase(b));   // Imprimira true 
 ```
 
 2.  compareTo: compara el valor lexicográficamente y devuelve un entero.
@@ -139,7 +139,7 @@ String a = "Sam";
 
 ```
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbNzg0NDkyMTk1LC0xNDg3NjE0MTQsODIwND
-M0ODcwLC0xODkyMDc1MTc0LC02Njg2NzA1NDksMTA1MDA4ODA2
-OSw4NDg5NTc0MTUsMTkzNjc1MTgxMF19
+eyJoaXN0b3J5IjpbLTEyNDgwOTgwOCwtMTQ4NzYxNDE0LDgyMD
+QzNDg3MCwtMTg5MjA3NTE3NCwtNjY4NjcwNTQ5LDEwNTAwODgw
+NjksODQ4OTU3NDE1LDE5MzY3NTE4MTBdfQ==
 -->
