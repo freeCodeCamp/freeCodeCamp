@@ -17,11 +17,11 @@ and inflexible. They created a new SQL interface, while keeping the same API as 
 many developers were able to use MySQL instead of the (proprietarily licensed) mSQL antecedent.[citation needed][dubious – discuss]
 
 ## MySQL GUI Tools
-1. MySQL Workbench
-2. HeidiSQL
-3. dbForge Studio for MySQL
-4. Navicat for MySQL
-5. SQLyog and others.
+- MySQL Workbench
+- HeidiSQL
+- dbForge Studio for MySQL
+- Navicat for MySQL
+- SQLyog and others.
 
 #### More Info(Reference)
 https://en.wikipedia.org/wiki/MySQL
