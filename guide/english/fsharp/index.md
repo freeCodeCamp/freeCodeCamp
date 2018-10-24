@@ -25,3 +25,5 @@ type People = {
 }
 </code>
 
+## Other Resources
+* [F# Tutorial](https://www.tutorialspoint.com/fsharp/)
