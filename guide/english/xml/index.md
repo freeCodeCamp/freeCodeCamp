@@ -30,13 +30,13 @@ Above syntax shows the root element which is necessary while creating an XML cod
 In this example 'note' is the root element.
  
   
-  * Advantages of using XML:
+  * ## Advantages of using XML:
     * Simplicity - XML documents are ordinary text files that can be created and edited with any text editor.
     * Vendor independence
     * Platform independence
     * Extensive infrastructure
   
- * Disadvantages of using XML:
+ * ## Disadvantages of using XML:
    * Verbose and cumbersome syntax
    * Highly inefficient storage  
 
@@ -46,7 +46,7 @@ There is a main thing between XML and HTML which makes them different from each 
 
 Also XML does not uses a predefined tags as used by HTML. It uses user defined tags.
 
-The following are areas that can be simiplified with XML: 
+## The following are areas that can be simiplified with XML: 
 1. data sharing
 2. data transport
 3. platform changes
