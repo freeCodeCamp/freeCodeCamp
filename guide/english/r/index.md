@@ -20,14 +20,18 @@ Now install it on your computer. For help in installation refer to reference sec
 
 ## Where to learn R for free
  * [R Studio](https://www.rstudio.com/online-learning/)
- * [Code school](http://tryr.codeschool.com/)
+ * [RSeek](http://rseek.org/)
+ 
+ ### Online courses
+  * [Code school](http://tryr.codeschool.com/)
  * [Coursera -allows to audit course for free but certification is paid.](https://www.coursera.org/learn/r-programming)
  * [DataCamp -allows to complete the introductory part for free.](https://www.datacamp.com)
- * [R for Data Science -is a book which is available free to read online.](http://r4ds.had.co.nz/)
- * [Mastering Software Development in R -is a free e-book addressing the Tidyverse among other topics](https://bookdown.org/rdpeng/RProgDA/)
  * [edX -allows to audit course for free but certification is paid.](https://www.edx.org/learn/r-programming)
- * [Advanced R](https://adv-r.hadley.nz/)
- * [RSeek](http://rseek.org/)
+ 
+ ### Books
+  * [R for Data Science -is a book which is available free to read online.](http://r4ds.had.co.nz/)
+ * [Mastering Software Development in R -is a free e-book addressing the Tidyverse among other topics](https://bookdown.org/rdpeng/RProgDA/)
+  * [Advanced R](https://adv-r.hadley.nz/)
  
  ## Reference
  * [Installing R on Windows](http://youtu.be/Ohnk9hcxf9M)
