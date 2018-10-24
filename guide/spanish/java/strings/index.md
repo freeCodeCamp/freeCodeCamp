@@ -138,10 +138,62 @@ La "longitud" de una cadena es solo el número de caracteres que contiene. Así 
  System.out.prinltn(a.compareTo(c));       // 1 ya que (a>b) 
  System.out.println(c.compareTo(a));       // -1 ya que (c<a) 
 ```
+#### Dividiendo Cadenas
 
+Si Usted 
+If you want to split a string into multiple parts it can easily be done through  `.split()`  this creates an array of the split up parts of the string.
+
+Example of using a delimiter (",") to split a string
+
+String text = "Hello, World";
+String[] textParts = text.split(",");
+System.out.println(textParts[0]);
+System.out.println(textParts[1]);
+
+The result will be:
+
+```
+Hello
+World
+
+```
+
+We can also split the string by specifing the start and end index of the characters in the string. We will do this using the Java function called  `.substring()`.
+
+The  `.substring()`  method can be used in two ways. One with only the starting index and one with both the start and end index. Take note that the index starts from 0. Example:
+
+String text = "Hello,My name is Bob";
+System.out.println(text.substring(6));
+
+Will produce
+
+```
+My Name is Bob
+
+```
+
+To use it with an ending index take note that the actual ending index is -1 of the value passed into the method. Now using  `.substring()`  with an ending index Example:
+
+```
+String text = "Hello,My name is Bob";
+System.out.println(text.substring(6,8));
+
+
+```
+
+The result will be:
+
+```
+My
+
+```
+
+**More Information:**
+
+-   [String Documentation](https://docs.oracle.com/javase/7/docs/api/java/lang/String.html)
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTE1OTczMjc1NCwtMTQ3ODY0MTEwLDEwOD
-kzNTUwMTYsLTE1ODg4OTQwMjQsLTYzMjEyMDM3OCwtMTQ4NzYx
-NDE0LDgyMDQzNDg3MCwtMTg5MjA3NTE3NCwtNjY4NjcwNTQ5LD
-EwNTAwODgwNjksODQ4OTU3NDE1LDE5MzY3NTE4MTBdfQ==
+eyJoaXN0b3J5IjpbLTEwNDc1MDI0ODIsLTE0Nzg2NDExMCwxMD
+g5MzU1MDE2LC0xNTg4ODk0MDI0LC02MzIxMjAzNzgsLTE0ODc2
+MTQxNCw4MjA0MzQ4NzAsLTE4OTIwNzUxNzQsLTY2ODY3MDU0OS
+wxMDUwMDg4MDY5LDg0ODk1NzQxNSwxOTM2NzUxODEwXX0=
 -->
