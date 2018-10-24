@@ -1,4 +1,4 @@
----
+﻿---
 title: Functions in R
 ---
 
@@ -6,7 +6,7 @@ A function allows you to define a reusable block of code that can be executed ma
 
 Functions can be named and called repeatedly or can be run anonymously in place (similar to lambda functions in python).
 
-Developing full understanding of R functions requires understanding of environments. 
+Developing a full understanding of R functions requires understanding of environments. 
 Environments are simply a way to manage objects. An example of environments in action is that you can use a redundant variable
 name within a function, that won't be affected if the larger runtime already has the same variable. Additionally, if a 
 function calls a variable not defined within the function it will check the higher level environment for that variable.
@@ -44,7 +44,7 @@ multiply = function(val1, val2){
 multiply(3, 5)  # prints 15 to the console
 ```
 
-Functions are blocks of code that can be reused simply by calling the function. This enables simple, elegent code reuse without explicitly re-writing sections of code. This makes code both more readable, makes for easier debugging, and limits typing errors. 
+Functions are blocks of code that can be reused simply by calling the function. This enables simple, elegant code reuse without explicitly re-writing sections of code. This makes code both more readable, makes for easier debugging, and limits typing errors. 
 
 Functions in R are created using the `function` keyword, along with a function name and function parameters inside parentheses.
 
@@ -169,7 +169,7 @@ its factorial with the `factorial()`.
 [1] 6
 ```
 - If you’re not sure which names to use with a function, you can look up the function’s
-arguments with args.
+arguments with `args()`. For example:
 
 ```r
 > args(round)
