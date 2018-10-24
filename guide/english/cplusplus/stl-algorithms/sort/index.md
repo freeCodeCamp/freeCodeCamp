@@ -22,7 +22,6 @@ vector<int> v = {10,4,45,1}; //creates a vector
 sort(v.begin(),v.begin()+2);  //Sorts only the first two elements {4,10,45,1}
 ```
 
-
 ### More Information:
 1. [WikiPedia - Introsort](https://en.wikipedia.org/wiki/Introsort)
 2. [CPP Reference](http://www.cplusplus.com/reference/algorithm/sort/)
