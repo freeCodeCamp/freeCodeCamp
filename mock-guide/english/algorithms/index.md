@@ -35,6 +35,9 @@ There is no sorting discussion which can finish without quick sort. The basic co
 It is the sorting algorithm which relies on the concept how to sorted arrays are merged to give one sorted arrays. Read more about it here-
 [Merge Sort](https://www.geeksforgeeks.org/merge-sort/)
 
+#### Insertion Sort
+Insertion sort is a comparison-based algorithm that builds a final sorted array one element at a time. Read more about it here - [Insertion Sort] (https://www.geeksforgeeks.org/insertion-sort/)
+
 freeCodeCamp's curriculum heavily emphasizes creating algorithms. This is because learning algorithms is a good way to practice programming skills. Interviewers most commonly test candidates on algorithms during developer job interviews.
 
 ### Further Resources
