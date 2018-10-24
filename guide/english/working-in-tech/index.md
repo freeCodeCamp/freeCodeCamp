@@ -15,11 +15,13 @@ The field of computer security is growing at a rapid rate every year, in a repor
 - Software Developer
 - Computer Systems Analyst
 - Web Developer
+- Software Engineer
 - IT Manager
 - Computer Systems Administrator
 - Network Administrator
 - Support Desk Engineer
 - Security Engineer
+
 
 ### Books
 
