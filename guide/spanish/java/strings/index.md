@@ -167,7 +167,8 @@ Producirá:
 ```java
  Mi nombre es Roberto
 ```
-Para usarlo con un índice final ten en cuenta que índice final real es -1  
+Para usarlo con un índice final ten en cuenta que índice final real es el valor pasado al método -1.
+Ahora un ejemplo usando `.substring()`
 To use it with an ending index take note that the actual ending index is -1 of the value passed into the method. Now using  `.substring()`  with an ending index Example:
 
 ```
@@ -188,7 +189,7 @@ My
 
 -   [String Documentation](https://docs.oracle.com/javase/7/docs/api/java/lang/String.html)
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMTEwNjk3NDA0NiwzMzU4MzQ3MjIsLTE0Nz
+eyJoaXN0b3J5IjpbMTM5MTQwNzI5NCwzMzU4MzQ3MjIsLTE0Nz
 g2NDExMCwxMDg5MzU1MDE2LC0xNTg4ODk0MDI0LC02MzIxMjAz
 NzgsLTE0ODc2MTQxNCw4MjA0MzQ4NzAsLTE4OTIwNzUxNzQsLT
 Y2ODY3MDU0OSwxMDUwMDg4MDY5LDg0ODk1NzQxNSwxOTM2NzUx
