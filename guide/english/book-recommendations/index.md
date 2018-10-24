@@ -18,6 +18,10 @@ title: Books to Read for Programmers
 - [Amazon Smile](https://smile.amazon.com/Clean-Code-Handbook-Software-Craftsmanship/dp/0132350882?sa-no-redirect=1)
 - ISBN-13: 978-0132350884
 
+*The Clean Coder: A Code of Conduct for Professional Programmers* by Robert C. Martin
+- [Amazon Smile](https://smile.amazon.com/dp/0137081073/ref=emc_b_5_i)
+- ISBN-13: 978-0137081073
+
 *CODE: The Hidden Language of Computer Hardware and Software* by Charles Petzold
 - [Amazon Smile](https://smile.amazon.com/Code-Language-Computer-Hardware-Software/dp/0735611319/ref=sr_1_1?s=books&ie=UTF8&qid=1508780869&sr=1-1&keywords=code)
 - ISBN-13: 978-0735611313
