@@ -29,7 +29,7 @@ The BST is built up on the idea of the <a href='https://guide.freecodecamp.org/a
 Initially an empty tree without any nodes is created. The variable/identifier which must point to the root node is initialized with a `NULL` value.
 
 #### Search
-You always start searching the tree at the root node and go down from there. You compare the data in each node with the one you are looking for. If the compared node doesn't match then you either proceed to the right child or the left child, which depends on the outcome of the following comparison: If the node that you are searching for is lower than the one you were comparing it with, you proceed to to the left child, otherwise (if it's larger) you go to the right child. Why? Because the BST is structured (as per its definition), that the right child is always larger than the parent and the left child is always lesser.
+You always start searching the tree at the root node and go down from there. You compare the data in each node with the one you are looking for. If the compared node doesn't match then you either proceed to the right child or the left child, which depends on the outcome of the following comparison: If the node that you are searching for is lower than the one you were comparing it with, you proceed to the left child, otherwise (if it's larger) you go to the right child. Why? Because the BST is structured (as per its definition), that the right child is always larger than the parent and the left child is always lesser.
 
 #### Insert
 It is very similar to the search function. You again start at the root of the tree and go down recursively, searching for the right place to insert our new node, in the same way as explained in the search function. If a node with the same value is already in the tree, you can choose to either insert the duplicate or not. Some trees allow duplicates, some don't. It depends on the certain implementation.
@@ -38,7 +38,7 @@ It is very similar to the search function. You again start at the root of the tr
 There are 3 cases that can happen when you are trying to delete a node. If it has,
 1. No subtree (no children): This one is the easiest one. You can simply just delete the node, without any additional actions required.
 2. One subtree (one child): You have to make sure that after the node is deleted, its child is then connected to the deleted node's parent.
-3. Two subtrees (two children): You have to find and replace the node you want to delete with its successor (the letfmost node in the right subtree).
+3. Two subtrees (two children): You have to find and replace the node you want to delete with its successor (the leftmost node in the right subtree).
 
 The time complexity for creating a tree is `O(1)`. The time complexity for searching, inserting or deleting a node depends on the height of the tree `h`, so the worst case is `O(h)`.
 
@@ -67,7 +67,7 @@ Where `n` is the number of nodes in the BST.
 
 ### Implementation of BST
 
-Here's a definiton for a BST node having some data, referencing to its left and right child nodes.
+Here's a definition for a BST node having some data, referencing to its left and right child nodes.
 
 ```c
 struct node {
