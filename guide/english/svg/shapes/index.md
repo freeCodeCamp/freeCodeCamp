@@ -1,7 +1,4 @@
----
-title: SVG Shapes
----
-## SVG Shapes
+# SVG Shapes
 
 Several shapes can be created using SVG drawing. An SVG drawing can use and combine seven shapes: Path, Rectangle, Circle, Ellipse, Line, Polyline, and Polygon.
 
@@ -17,7 +14,7 @@ The example `path` above will generate a "plus" symbole (+) when used inside an 
 
 ### Rectangle
 
-The rectangle element `rect` draws a rectangle on the screen, and it accepts six attributes.
+The rectangle element `rect` draws a rectangle on the screen. It accepts six attributes.
 
 ```svg
   <rect x="0" y="0" width="100" height="50" rx="10" ry="10" />
@@ -47,7 +44,7 @@ Again, `cx` and `cy` assign the position of the center of the ellipse, and now `
 
 ### Line
 
-The `line` element is simple, and accepts four attributes.
+The `line` element is simple and accepts four attributes.
 
 ```svg
   <line x1="0" x2="100" y1="50" y2="70" />
