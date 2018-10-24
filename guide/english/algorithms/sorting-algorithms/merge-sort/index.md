@@ -252,3 +252,49 @@ temp = [None for _ in range(len(arr))]
 merge_sort(arr, 0, len(arr) - 1)
 print(arr, inversions)
 ```
+
+### Implementaion in MATLAB
+```MATLAB
+
+a = [9,4,7,3,8,5,1,6,2];
+
+[sorted] = mergeSort(a);
+
+function [sorted] = mergeSort(unsorted)
+    len = length(unsorted);
+    if len == 1
+        sorted = unsorted;
+        return;
+    end
+    mid = ceil((len)/2);
+    left = mergeSort(unsorted(1:mid));
+    right = mergeSort(unsorted(mid+1:end));
+    
+    sorted = mergeLR(left, right);
+       
+end
+
+function [sorted] = mergeLR(left, right)
+    sorted = [left right];                              % add two splited array together
+    j = 1;                                              % index for 'sorted'
+    k = 1;                                              % index for 'left'
+    for i = 1:1:length(right)
+        % going through every element of the 'right'
+        if right(i) < left(k)
+            sorted(j) = right(i);                       % move the 'right' element before 
+            sorted(j+1:(j+length(left(k:end)))) = left(k:end);      % shift the left elemts 
+            j = j+1;
+        else
+            while (k <= length(left)) && (right(i) > left(k))
+                k = k+1;
+                j = j+1;
+            end
+            sorted(j) = right(i);
+            sorted(j+1:(j+length(left(k:end)))) = left(k:end);
+            j = j+1;
+        end
+    end
+
+end
+
+```
