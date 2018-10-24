@@ -24,7 +24,7 @@ for ( init; condition;) {
    increment;
 }
 ```
-It is also allowed to ignore the init variables. For example :
+It is also allowed to ignore the init variables. For example : a++ means that we add 1 to a after each loop, until we reach the limit which is 10
 ```
 int a = 1;
 for (; a <= 10 ;)
