@@ -49,10 +49,10 @@ Puede comprobar esto usando la comparación rapida de Object `==` y el método `
 Aquí hay otro ejemplo sobre cómo crear una cadena en Java usando los diferentes métodos:
 
 ```java
-public class StringExample{ 
+public class EjemploCadenas{ 
  
    public static void main(String args[]) { 
-      String s1 = "java";  // creating string by Java string literal 
+      String s1 = "java";  // creando un String para la cadena literal java 
       char ch[] = {'s','t','r','i','n','g','s'}; 
       String s2 = new String(ch);  // converting char array to string 
       String s3 = new String("example");  // creating Java string by new keyword 
@@ -139,7 +139,7 @@ String a = "Sam";
 
 ```
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMTM3NTY2MDc4OCwtMTg5MjA3NTE3NCwtNj
-Y4NjcwNTQ5LDEwNTAwODgwNjksODQ4OTU3NDE1LDE5MzY3NTE4
-MTBdfQ==
+eyJoaXN0b3J5IjpbLTEwNDUyODIzMzMsLTE4OTIwNzUxNzQsLT
+Y2ODY3MDU0OSwxMDUwMDg4MDY5LDg0ODk1NzQxNSwxOTM2NzUx
+ODEwXX0=
 -->
