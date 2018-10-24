@@ -30,6 +30,13 @@ A collection of articles covering the basics (core language and working with a b
 - [Online](https://javascript.info/)
 - [E-book](https://javascript.info/ebook)
 
+#### JavaScript for Kids: A Playful Introduction to Programming
+
+This book is a wonderful tool for the next generation of computer programmers. It uses simple language, vibrant illustrations and fun proect ideas to make programming more attractive to youngsters. The book is very user friendly, and while it is not made for adults, it would greatly benefit anyone who wants to begin coding.
+
+- [No Starch](https://nostarch.com/javascriptforkids)
+
+
 #### Other Resources
 
 - A selection of online free resources; including e-books for JavaScript are available at [JS Books](https://jsbooks.revolunet.com/)
