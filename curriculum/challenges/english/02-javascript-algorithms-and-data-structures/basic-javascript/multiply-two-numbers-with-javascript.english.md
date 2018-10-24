@@ -25,9 +25,9 @@ Change the <code>0</code> so that product will equal <code>80</code>.
 ```yml
 tests:
   - text: Make the variable <code>product</code> equal 80
-    testString: 'assert(product === 80,"Make the variable <code>product</code> equal 80");'
+    testString: assert(product === 80,'Make the variable <code>product</code> equal 80');
   - text: Use the <code>*</code> operator
-    testString: 'assert(/\*/.test(code), "Use the <code>*</code> operator");'
+    testString: assert(/\*/.test(code), 'Use the <code>*</code> operator');
 
 ```
 
@@ -51,7 +51,7 @@ var product = 8 * 0;
 <div id='js-teardown'>
 
 ```js
-console.info('after the test');
+(function(z){return 'product = '+z;})(product);
 ```
 
 </div>

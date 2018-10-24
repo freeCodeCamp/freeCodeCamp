@@ -32,6 +32,15 @@ Using the variable:
 var(--custom-name)
 ```
 
+### Solution
+
+In the ```:root``` selector we need to declare the ```--penguin-belly``` variable and give it the value of ```pink```:
+
+```css 
+  :root {
+    --penguin-belly: pink;
+  }
+```
 
 ### Sources
 

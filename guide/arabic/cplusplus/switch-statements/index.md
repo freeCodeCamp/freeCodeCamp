@@ -1,5 +1,5 @@
 ---
-title:Switch Statement
+title: Switch Statement
 localeTitle: undefined
 ---
 يسمح رمز التبديل باختبار متغير من أجل المساواة في قائمة القيم. تسمى كل قيمة بالحالة ، ويتم تحديد المتغير قيد التشغيل لكل حالة.

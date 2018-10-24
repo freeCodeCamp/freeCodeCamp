@@ -22,9 +22,9 @@ Create two new <code>string</code> variables: <code>myFirstName</code> and <code
 ```yml
 tests:
   - text: <code>myFirstName</code> should be a string with at least one character in it.
-    testString: 'assert((function(){if(typeof myFirstName !== "undefined" && typeof myFirstName === "string" && myFirstName.length > 0){return true;}else{return false;}})(), "<code>myFirstName</code> should be a string with at least one character in it.");'
+    testString: assert((function(){if(typeof myFirstName !== "undefined" && typeof myFirstName === "string" && myFirstName.length > 0){return true;}else{return false;}})(), '<code>myFirstName</code> should be a string with at least one character in it.');
   - text: <code>myLastName</code> should be a string with at least one character in it.
-    testString: 'assert((function(){if(typeof myLastName !== "undefined" && typeof myLastName === "string" && myLastName.length > 0){return true;}else{return false;}})(), "<code>myLastName</code> should be a string with at least one character in it.");'
+    testString: assert((function(){if(typeof myLastName !== "undefined" && typeof myLastName === "string" && myLastName.length > 0){return true;}else{return false;}})(), '<code>myLastName</code> should be a string with at least one character in it.');
 
 ```
 
@@ -52,7 +52,7 @@ var lastName = "Turing";
 <div id='js-teardown'>
 
 ```js
-console.info('after the test');
+if(typeof myFirstName !== "undefined" && typeof myLastName !== "undefined"){(function(){return myFirstName + ', ' + myLastName;})();}
 ```
 
 </div>
