@@ -27,10 +27,10 @@ Generalmente, puede _declarar_ (es decir, crear) variables según la siguiente s
 Puede _asignar_ un valor a la variable de forma simultánea cuando la declara (lo que se denomina _inicialización_ ), o en cualquier lugar del código después de haberla declarado. El símbolo **\=** se utiliza para esto.
 
 ```java
- // Inicia the variable of Primitive Data Type 'int' to store the value 10 
+ // Inicializa la variable de Tipo Primitivo 'int' para almacenar el valor 10 
  int i = 10; 
- double amount = 10.0; 
- boolean isOpen = false; 
+ double cantidad = 10.0; 
+ boolean estaAbierto = false; 
  char c = 'a'; // Note the single quotes 
  
  //Variables can also be declared in one statement, and assigned values later. 
@@ -54,7 +54,7 @@ Como se desprende del ejemplo anterior, las variables del tipo Primitivo se comp
 *   [Tipos de datos](https://guide.freecodecamp.org/java/data-types)
 *   [Clases y objetos](https://guide.freecodecamp.org/java/classes-and-objects)
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbNTc2NjM4MjcwLC0yMzYxMjQ4NDAsMTU3NT
+eyJoaXN0b3J5IjpbMzA1NDc4MzEyLC0yMzYxMjQ4NDAsMTU3NT
 A1NjIzOSw2MjkzMzk1MjEsMTg4NjMwMzAwNywtODQ5ODkyMjcx
 LC0xMDYyODM1NTMwXX0=
 -->
