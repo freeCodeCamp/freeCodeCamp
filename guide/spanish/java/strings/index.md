@@ -28,7 +28,7 @@ Usted podría estar pensando: ¿Cuál es la diferencia entre los tres?
 
 Bueno, usar la palabra reservada `new` garantiza que se creará un nuevo objeto `String` y se asignará una nueva ubicación de memoria en el `Heap` de memoria [(haga clic aquí para obtener más información)](https://docs.oracle.com/cd/E13150_01/jrockit_jvm/jrockit/geninfo/diagnos/garbage_collect.html) . Los literales de String y las expresiones de cadena constantes se almacenan en caché en tiempo de compilación. El compilador los coloca en el String Literal Pool (Reserva de literales de String) para evitar duplicados. y mejorar el consumo de memoria. La asignación de objetos es costosa y este truco aumenta el rendimiento al crear cadenas. Si utiliza el mismo literal de nuevo, la JVM usa el mismo objeto. Usar el constructor como arriba es casi siempre la peor opción.
 
-En este fragmento de código, ¿cuántos objetos de cadena se crean?
+En este fragmento de código, ¿Cuántos objetos de cadena se crean?
 
 ```java
  String str = "Esta es una cadena"; 
@@ -36,7 +36,7 @@ En este fragmento de código, ¿cuántos objetos de cadena se crean?
  String str3 = new String("Esta es una cadena"); 
 ```
 
-La respuesta es: 2 objetos String son creados. `str` y `str2` refieren al mismo objeto. `str3` tiene el mismo contenido pero usando `new` se fuerza la creación de un nuevo objeto distinto.
+La respuesta es: 2 objetos String son creados, `str` y `str2` refieren al mismo objeto. `str3` tiene el mismo contenido pero usando `new` se fuerza la creación de un nuevo objeto distinto.
 
 Cuando creas un literal de cadena, la JVM lo verifica internamente, lo que se conoce como el `String pool` , para ver si puede encontrar un objeto String similar (ya contenido). Si lo encuentra, devuelve la misma referencia. De lo contrario, simplemente continúa y crea un nuevo objeto String en el pool para que la misma verificación se pueda realizar en el futuro.
 
@@ -191,9 +191,9 @@ El resultado sera:
 
 -   [String Documentation](https://docs.oracle.com/javase/7/docs/api/java/lang/String.html)
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTYwNjgzOTA1MywtMTg4ODY2MDMyOCw4Nz
-MwNTkxOTQsMzM1ODM0NzIyLC0xNDc4NjQxMTAsMTA4OTM1NTAx
-NiwtMTU4ODg5NDAyNCwtNjMyMTIwMzc4LC0xNDg3NjE0MTQsOD
-IwNDM0ODcwLC0xODkyMDc1MTc0LC02Njg2NzA1NDksMTA1MDA4
-ODA2OSw4NDg5NTc0MTUsMTkzNjc1MTgxMF19
+eyJoaXN0b3J5IjpbLTExNDY3NjQ4NDMsLTE4ODg2NjAzMjgsOD
+czMDU5MTk0LDMzNTgzNDcyMiwtMTQ3ODY0MTEwLDEwODkzNTUw
+MTYsLTE1ODg4OTQwMjQsLTYzMjEyMDM3OCwtMTQ4NzYxNDE0LD
+gyMDQzNDg3MCwtMTg5MjA3NTE3NCwtNjY4NjcwNTQ5LDEwNTAw
+ODgwNjksODQ4OTU3NDE1LDE5MzY3NTE4MTBdfQ==
 -->
