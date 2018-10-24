@@ -111,7 +111,7 @@ Esto resultará en - `La longitud de la cadena es : 18`
 
 Longitud de la cadena
 
-La "longitud" de una cadena es solo el número de caracteres que contiene. Así que "hi" es de  longitud 2 y "Hola" es la longitud 4. El método length() en una cadena devuelve su longitud, de esta manera:
+La "longitud" de una cadena es solo el número de caracteres que contiene. Así que "hi" es de  longitud 2 y "Hola" es de longitud 4. El método length() en una cadena devuelve su longitud, de esta manera:
 
 ```java
  String a = "Hola"; 
@@ -162,13 +162,11 @@ El método `.substring()` puede ser usado de dos modos. Uno con solo el índice 
  String texto = "Hola,Mi nombre es Roberto";
  System.out.println(texto.substring(5));
 ```
-Will produce
+Producirá
 
+```java
+ Mi nombre es Roberto
 ```
-My Name is Bob
-
-```
-
 To use it with an ending index take note that the actual ending index is -1 of the value passed into the method. Now using  `.substring()`  with an ending index Example:
 
 ```
@@ -189,8 +187,8 @@ My
 
 -   [String Documentation](https://docs.oracle.com/javase/7/docs/api/java/lang/String.html)
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbNjU0OTY4MjYxLC0xNDc4NjQxMTAsMTA4OT
-M1NTAxNiwtMTU4ODg5NDAyNCwtNjMyMTIwMzc4LC0xNDg3NjE0
-MTQsODIwNDM0ODcwLC0xODkyMDc1MTc0LC02Njg2NzA1NDksMT
-A1MDA4ODA2OSw4NDg5NTc0MTUsMTkzNjc1MTgxMF19
+eyJoaXN0b3J5IjpbMTExODYzMTE5NiwtMTQ3ODY0MTEwLDEwOD
+kzNTUwMTYsLTE1ODg4OTQwMjQsLTYzMjEyMDM3OCwtMTQ4NzYx
+NDE0LDgyMDQzNDg3MCwtMTg5MjA3NTE3NCwtNjY4NjcwNTQ5LD
+EwNTAwODgwNjksODQ4OTU3NDE1LDE5MzY3NTE4MTBdfQ==
 -->
