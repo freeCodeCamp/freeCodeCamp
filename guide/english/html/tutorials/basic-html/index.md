@@ -15,6 +15,10 @@ Structure of a basic HTML file:
 <html>
 
   <head>
+  <meta charset="UTF-8">
+  <meta name="description" content="describe content">
+  <meta name="keywords" content="HTML">
+  <meta name="author" content="Name">
     <title></title>
   </head>
   
