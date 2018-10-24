@@ -115,3 +115,12 @@ Este artigo usa informações do livro [Pro Git](https://github.com/progit/progi
 
 *   Para downloads, documentação e um tutorial baseado em navegador: [Site oficial do Git](https://git-scm.com/)
 *   Comandos mais úteis quando você está em má situação GIT: [Oh merda, git!](http://ohshitgit.com/)
+
+## Pedindo Ajuda:
+
+* Se você precisar de ajuda para usar o Git, há três formas de acessar a página do manual de ajuda (manpage) para qualquer um dos comandos Git:
+
+$ git help <verb>
+$ git <verb> --help
+$ man git-<verb>
+ 
