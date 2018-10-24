@@ -1,5 +1,5 @@
 ---
-title: Imposter Syndrome
+# title: Imposter Syndrome
 ---
 
 ## Imposter Syndrome
