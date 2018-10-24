@@ -1,5 +1,5 @@
 ---
-title: Bellman-Ford Algorithm
+title: Bellman-Ford Algorithm 
 ---
 
 **Bellman-Ford** algorithm is used to find out single source shortest paths  i.e. there is a source node, from that node we have to find
