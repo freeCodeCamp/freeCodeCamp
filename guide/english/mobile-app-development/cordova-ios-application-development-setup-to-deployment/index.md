@@ -4,9 +4,9 @@ title: Cordova iOS Application Development Setup to Deployment
 # Cordova iOS Application Development Setup to Deployment
 <img src="https://image.ibb.co/iKCSuQ/Xz_J197k8_QI32.jpg" alt="iphone_1737513_1920" width="100%">
 
-Hybrid Application development for android is a breeze, be it for development or production configuration, however i personally find cordova iOS setup, development and deployment a bit complicated.
+Hybrid Application development for android is a breeze, be it for development or production configuration, however I personally find cordova iOS setup, development and deployment a bit complicated.
 
-Most of the Hybrid Application Developers who are in learning stage are not able to explore hybrid iOS app development process due to the simple reason that they dont own a mac, since developing iOS apps requires the iOS SDK and XCode unlike Android SDK which runs on any Desktop OS. Therefore the aim of this guide is to show the basic workflow of hybrid iOS app development on a mac, so that a developer even if he/she cannot develop iOS apps, is atleast familiar with how its done.
+Most of the Hybrid Application Developers who are in the learning stage are not able to explore hybrid iOS app development process due to the simple reason that they dont own a mac, since developing iOS apps requires the iOS SDK and XCode unlike Android SDK which runs on any Desktop OS. Therefore the aim of this guide is to show the basic workflow of hybrid iOS app development on a mac, so that a developer, even if he/she cannot develop iOS apps, is atleast familiar with how its done.
 
 
 ## Creating cordova project 
