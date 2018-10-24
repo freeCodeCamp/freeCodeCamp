@@ -21,3 +21,6 @@ sudo yum install httpd
 ```
 pacman -S apache
 ```
+
+### List of common modules
+[https://en.wikipedia.org/wiki/List_of_Apache_modules](https://en.wikipedia.org/wiki/List_of_Apache_modules)
