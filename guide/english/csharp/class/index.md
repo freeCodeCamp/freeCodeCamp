@@ -66,6 +66,39 @@ namespace CPrograms
 
 A class can inherit from one base class only. However, it can implement from more than one interface.
 
+An example of inheritance where class Animal is a base class and Dog is a class which inherits from Animal:
+
+```csharp
+ class Animal
+    {
+        protected string _name;
+
+        public Animal(string name)
+        {
+            this._name = name;
+
+        }
+    
+    }
+
+    class Dog : Animal
+    {
+
+        private string _name;
+        public Dog(string name):base(name)
+        {
+            
+            this._name = name;
+        }
+        public void PrintName()
+        {
+            Console.WriteLine($"Hi! My name is: {this._name}");
+        }
+    }
+```
+
+
+
 ## More Information
 Read more about classes [here](https://docs.microsoft.com/en-us/dotnet/csharp/language-reference/keywords/class)
 
