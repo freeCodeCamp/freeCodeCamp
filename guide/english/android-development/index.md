@@ -6,7 +6,7 @@ title: Android Development
 Android apps can be a great, fun way to get into the world of programming. Officially, programmers can use Java, Kotlin, or C++ to develop for Android, and though there may be API restrictions, using tools, developers can use a large number of languages, including JavaScript, C, or assembly, and the possibilities are endless.
 
 From simple games and utility apps to full-blown music players, there are many opportunities to create something meaningful with Android. The Android developer community is widespread, and the documentation and resources online are easy to find, so that you can tackle any issue you're facing.
-
+C++ is what you would need to know to make videogames, it can be fun and challenging but well worth it.
 There is definitely a learning curve to get used to the Android framework, however once you understand the core components that make up the app, the rest will come naturally.
 
 The learning curve involved in Android has a relatively smaller slope compared to learning other technologies such as NodeJS. It is also relatively easier to understand and make contributions towards AOSP hosted by Google. The project can be found [here](https://source.android.com/) 
