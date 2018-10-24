@@ -27,11 +27,14 @@ Computer science is categorized into several fields. The following are among the
 - <a href="https://en.wikipedia.org/wiki/Data_science">Data Sciences</a>
   - Big Data
 - <a href="https://en.wikipedia.org/wiki/Human%E2%80%93computer_interaction">Human Computer Interaction</a>
+  - Application User Interface / User Experience
   - Brain Computer Interface
 - Systems
   - Distributed Systems
   - Operating Systems
   - Database Systems
+- Emerging Systems
+  - [Quantum Computing](https://en.wikipedia.org/wiki/Quantum_computing) 
 
 ##More Information
 * [Visualization of Data Structures](http://www.cs.usfca.edu/~galles/JavascriptVisual/Algorithms.html)
