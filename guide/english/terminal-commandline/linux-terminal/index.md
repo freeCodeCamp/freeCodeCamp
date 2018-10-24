@@ -86,5 +86,5 @@ Typing ```cd --help``` will show in which ways the ```cd``` command can be used
 - Use `cd ..` to move to the previous parent directory
 - When you hit the up arrow key your previously entered command will appear and if you hit it repeatedly it will cycle through all of your previously entered commands 
 - If you are using terminal as a non-root user and want to use terminal as root you can enter `su root` It will ask for root password enter it and you will get root terminal
-- Search you command history as you type `Ctrl+R` hold down `Ctrl` and press `R` to invoke "reverse-i-search." Type a letter - like s - and you'll get a match for the most recent command in your history that starts with s. Keep typing to narrow your match. When you hit the jackpot, press Enter to execute the suggested command
+- Search your command history as you type `Ctrl+R` hold down `Ctrl` and press `R` to invoke "reverse-i-search." Type a letter - like s - and you'll get a match for the most recent command in your history that starts with s. Keep typing to narrow your match. When you hit the jackpot, press Enter to execute the suggested command
 - `!characters` will execute the last command that matches the specified characters. (So `!ssh` will run the last `ssh` you used.)
