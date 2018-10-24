@@ -55,7 +55,7 @@ public class EjemploCadenas{
       String s1 = "java";  // creando un String para la cadena literal java 
       char ch[] = {'c','a','d','e','n','a'}; 
       String s2 = new String(ch);  // convirtiendo un arrelgo de caracteres a una cadena 
-      String s3 = new String("ejemplo");  // creating un String de Java para la nueva palabra 
+      String s3 = new String("ejemplo");  // creating un String de Java con la palabra reservada new 
       System.out.println(s1); 
       System.out.println(s2); 
       System.out.println(s3); 
@@ -139,7 +139,7 @@ String a = "Sam";
 
 ```
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMjg0NTQ1MjYwLC0xODkyMDc1MTc0LC02Nj
-g2NzA1NDksMTA1MDA4ODA2OSw4NDg5NTc0MTUsMTkzNjc1MTgx
-MF19
+eyJoaXN0b3J5IjpbMTUwMTU5MjA1MiwtMTg5MjA3NTE3NCwtNj
+Y4NjcwNTQ5LDEwNTAwODgwNjksODQ4OTU3NDE1LDE5MzY3NTE4
+MTBdfQ==
 -->
