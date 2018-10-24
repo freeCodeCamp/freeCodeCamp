@@ -235,4 +235,4 @@ Output:
 
 - <a href='https://docs.python.org/3/tutorial/controlflow.html#for-statements' target='_blank' rel='nofollow'>Python3 for loop documentation</a>
 
-
+<a href=" https://www.youtube.com/watch?v=6iF8Xb7Z3wQ" target="_blank"><img src="https://goo.gl/images/XhyaVT.jpg" alt="for loop" width="240" height="180" border="10" /></a>
