@@ -260,7 +260,7 @@ You can always learn more by exploring the below links leading. Component carry 
 
 ## Resources
 
-- [Angular Documentation](https://angular.io/guide)
+- [Angular Documentation](https://angular.io/docs)
 - [Angular GitHub Repository](https://github.com/angular/angular)
 - [Intro to Components](https://angular.io/guide/architecture-components)
 - [Components in Depth](https://angular.io/guide/displaying-data)
