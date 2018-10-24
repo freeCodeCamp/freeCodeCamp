@@ -50,7 +50,7 @@ Output of the example should be:
 
 This looks pretty simple, right? Do note that `value_if_true` and `value_if_false` must have the same type, and they cannot be full statements but simply expressions.
 
-The ternary operator can be nested too same like nested if-else statements. Consider this nested if-else statement :
+The ternary operator can be nested similarly to nested if-else statements. Consider this nested if-else statement :
 ```c
 int a = 1, b = 2, ans;
 if (a == 1) {
@@ -65,7 +65,7 @@ if (a == 1) {
 printf ("%d\n", ans);
 ```
 
-Here's the above code re-written using nested ternary operator:
+Here's the above code re-written using nested ternary operators:
 
 ```c
 int a = 1, b = 2, ans;
