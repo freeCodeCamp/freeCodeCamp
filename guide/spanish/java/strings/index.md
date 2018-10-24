@@ -87,7 +87,7 @@ La primera comparación es falsa porque "==" compara las referencias y estas no 
 
 La segunda comparación es verdadera porque las variables almacenan los mismos valores. En este caso "Hola mundo".
 
-Tenemos varios métodos incorporados en String. El siguiente es un ejemplo del método lenght() de String.
+Tenemos varios métodos incorporados en String. El siguiente es un ejemplo del método `lenght()` de String.
 
 ```java
 public class DemoDeString { 
@@ -102,9 +102,9 @@ public class DemoDeString {
 
 Esto resultará en - `La longitud de la cadena es : 18`
 
-**La respuesta es: 2** objetos String son creados. **Notas**
+**Notas**
 
-1.  Los métodos de cadena utilizan índices basados ​​en cero, a excepción del segundo argumento de `substring()` .
+1.  Los métodos de String utilizan índices basados ​​en cero, a excepción del segundo argumento de `substring()`.
 2.  La clase String es final, y sus métodos no se pueden sobreescribir.
 3.  Cuando la JVM encuentra un literal de String, se agrega a la reserva de literal de String.
 4.  La clase String posee un método de nombre `length()` , mientras que los arreglos tienen un atributo llamado length.
@@ -191,10 +191,9 @@ El resultado sera:
 
 -   [String Documentation](https://docs.oracle.com/javase/7/docs/api/java/lang/String.html)
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMTY2NzI2Njk0Myw5NDgwNTI3NTUsLTE4OD
-g2NjAzMjgsODczMDU5MTk0LDMzNTgzNDcyMiwtMTQ3ODY0MTEw
-LDEwODkzNTUwMTYsLTE1ODg4OTQwMjQsLTYzMjEyMDM3OCwtMT
-Q4NzYxNDE0LDgyMDQzNDg3MCwtMTg5MjA3NTE3NCwtNjY4Njcw
-NTQ5LDEwNTAwODgwNjksODQ4OTU3NDE1LDE5MzY3NTE4MTBdfQ
-==
+eyJoaXN0b3J5IjpbNjM2MTAzMjgxLDk0ODA1Mjc1NSwtMTg4OD
+Y2MDMyOCw4NzMwNTkxOTQsMzM1ODM0NzIyLC0xNDc4NjQxMTAs
+MTA4OTM1NTAxNiwtMTU4ODg5NDAyNCwtNjMyMTIwMzc4LC0xND
+g3NjE0MTQsODIwNDM0ODcwLC0xODkyMDc1MTc0LC02Njg2NzA1
+NDksMTA1MDA4ODA2OSw4NDg5NTc0MTUsMTkzNjc1MTgxMF19
 -->
