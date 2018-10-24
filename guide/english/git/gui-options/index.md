@@ -13,3 +13,4 @@ Most people prefer to use Git as a [CLI (command-line interface)](https://en.wik
 * [Git Tower](https://www.git-tower.com/mac/) is available for Mac and Windows.
 * [TortoiseGit](https://tortoisegit.org/) is a Windows Shell Interface to Git based on TortoiseSVN. It's open source and can be built with freely available software.
 * [SmartGit](https://www.syntevo.com/smartgit/) is a Git client free for a non-commercial use for Windows, Mac and Linux.
+* [Sublime Merge]() is a Git client free for evaluation and available for Linux, Mac and Windows.
