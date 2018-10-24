@@ -106,8 +106,8 @@ Esto resultará en - `La longitud de la cadena es : 18`
 
 1.  Los métodos de String utilizan índices basados ​​en cero, a excepción del segundo argumento de `substring()`.
 2.  La clase String es final, y sus métodos no se pueden sobreescribir.
-3.  Cuando la JVM encuentra un literal de String, se agrega a la reserva de literal de String.
-4.  La clase String posee un método de nombre `length()` , mientras que los arreglos tienen un atributo llamado length.
+3.  Cuando la JVM encuentra un literal de String, se agrega a la reserva de literales de String.
+4.  La clase String posee un método de nombre `length()`, mientras que los arreglos tienen un atributo llamado length.
 5.  En java, los objetos String son inmutables. Inmutable simplemente significa inmodificable o inalterable. Una vez que se crea el objeto String, sus datos o estado no se pueden cambiar, si no que se crea un nuevo objeto String.
 
 Longitud de la cadena
@@ -191,9 +191,10 @@ El resultado sera:
 
 -   [String Documentation](https://docs.oracle.com/javase/7/docs/api/java/lang/String.html)
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbNjM2MTAzMjgxLDk0ODA1Mjc1NSwtMTg4OD
-Y2MDMyOCw4NzMwNTkxOTQsMzM1ODM0NzIyLC0xNDc4NjQxMTAs
-MTA4OTM1NTAxNiwtMTU4ODg5NDAyNCwtNjMyMTIwMzc4LC0xND
-g3NjE0MTQsODIwNDM0ODcwLC0xODkyMDc1MTc0LC02Njg2NzA1
-NDksMTA1MDA4ODA2OSw4NDg5NTc0MTUsMTkzNjc1MTgxMF19
+eyJoaXN0b3J5IjpbLTE1NzQ4Mzg2NTMsOTQ4MDUyNzU1LC0xOD
+g4NjYwMzI4LDg3MzA1OTE5NCwzMzU4MzQ3MjIsLTE0Nzg2NDEx
+MCwxMDg5MzU1MDE2LC0xNTg4ODk0MDI0LC02MzIxMjAzNzgsLT
+E0ODc2MTQxNCw4MjA0MzQ4NzAsLTE4OTIwNzUxNzQsLTY2ODY3
+MDU0OSwxMDUwMDg4MDY5LDg0ODk1NzQxNSwxOTM2NzUxODEwXX
+0=
 -->
