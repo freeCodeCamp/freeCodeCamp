@@ -131,6 +131,10 @@ title: Books to Read for Programmers
 - [Amazon Smile](https://smile.amazon.com/JavaScript-JQuery-Interactive-Front-End-Development/dp/1118531647/?pldnSite=1)
 - ISBN-13: 978-1118531648 
 
+*A Smarter Way to Learn JavaScript: The new tech-assisted approach that requires half the effort*
+- [Amazon](https://www.amazon.com/gp/product/1497408180/ref=as_li_tl?ie=UTF8&tag=coderseye-books-20&camp=1789&creative=9325&linkCode=as2&creativeASIN=1497408180&linkId=b821bf2e69c0a87b5f4cfa82c81bf572)
+- ISBN-13: 978-1497408180 
+
 ## Python
 
 *Automate the Boring Stuff With Python*
