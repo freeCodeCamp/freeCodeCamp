@@ -95,6 +95,31 @@ end
 
 ```
 
+### Implementation in PHP
+
+``` PHP 
+function selection_sort($A) {
+    $len = count($A);
+    for ($i = 0; $i < $len - 1; $i = $i + 1) {
+        $j_min = $i;
+        for ($j = $i + 1; $j < $len; $j = $j + 1) {
+            if ($A[$j] < $A[$j_min]) {
+                $j_min = $j;
+            }
+        }
+        if ($j_min !== $i) {
+            swap($A, $i, $j_min);
+        }
+    }
+}
+
+function swap($A, $x, $y) {
+    $temp = $A[$x];
+    $A[$x] = $A[$y];
+    $A[$y] = $temp;
+}
+```
+
 ### Properties
 
 * Space Complexity: <b>O(n)</b>
