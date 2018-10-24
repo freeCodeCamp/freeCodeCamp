@@ -4,7 +4,7 @@ title: Copy and Paste
 
 # Copying and Pasting in Vim
 
-In Vim, copying is commonly refered to as 'yanking', and pasting remains the same.
+In Vim, copying is commonly referred to as 'yanking', and pasting remains the same.
 
 ### Command Keys
 The keys used for yanking and pasting in Vim are:
@@ -24,7 +24,7 @@ To yank or cut, type `y` or `d`, followed by a 'text object'.  These describe ho
 
 A register is just another name for clipboard. But unlike other text editors, Vim has many of such "clipboards".
 
-To yank or delete to a register, type `"<register name><command>` (e.g.: `"ayw` to [y]ank [w]ord to register `a`). Register names can be only one character long for obvious reasons (`"m`,`"M`, `"3` are allowed, but `"mr`, `"MyReg`, `"MyRegisterName` are not).  The default register that is stored to when no register is specified is `"` and the system clipboard that can be accessed in other programs is `+`.  You can also use lower case characters to access registers and use upper case characters to append to registers.  For example `"dyy` copies the current line to the `d` register, typing `"D3yw` copies the next 3 words and adds them to what is already stored in `d`.
+To yank or delete to a register, type `"<register name><command>` (e.g.: `"ayw` to [y]ank [w]ord to register `a`). Register names can be only one character long for obvious reasons (`"m`,`"M`, `"3` are allowed, but `"mr`, `"MyReg`, `"MyRegisterName` are not).  The default register that is stored to when no register is specified is `"` and the system clipboard that can be accessed in other programs is `+`.  You can also use lower case characters to access registers and use uppercase characters to append to registers.  For example `"dyy` copies the current line to the `d` register, typing `"D3yw` copies the next 3 words and adds them to what is already stored in `d`.
 
 
 ### Pasting
