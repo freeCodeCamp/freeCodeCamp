@@ -85,14 +85,14 @@ La primera comparación es falsa porque "==" compara las referencias y estas no 
 
 La segunda comparación es verdadera porque las variables almacenan los mismos valores. En este caso "Hola mundo".
 
-Tenemos varios métodos incorporados en String. El siguiente es un ejemplo del método lenght String Length ().
+Tenemos varios métodos incorporados en String. El siguiente es un ejemplo del método lenght() de String.
 
 ```java
-public class StringDemo { 
+public class DemoDeString { 
  
    public static void main(String args[]) { 
-      String palindrome = "Dot saw I was Tod"; 
-      int len = palindrome.length(); 
+      String palindromo = "Anita lava la tina"; 
+      int l = palindromo.length(); 
       System.out.println( "String Length is : " + len ); 
    } 
  } 
@@ -139,7 +139,7 @@ String a = "Sam";
 
 ```
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTk4MjY0NjE1NywtMTg5MjA3NTE3NCwtNj
+eyJoaXN0b3J5IjpbMTI3MTcyMTcxNSwtMTg5MjA3NTE3NCwtNj
 Y4NjcwNTQ5LDEwNTAwODgwNjksODQ4OTU3NDE1LDE5MzY3NTE4
 MTBdfQ==
 -->
