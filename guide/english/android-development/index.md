@@ -60,6 +60,10 @@ Because Kotlin generates Java bytecode, you can use your favorite Java framework
 
 [Udemy The Complete Android Kotlin Developer Course](https://www.udemy.com/the-complete-kotlin-developer-course/)
 
+### Tutorials
+
+[Android Tutorials by TutorialsPoint](https://www.tutorialspoint.com/android/)
+
 ### Developing Android Apps
 
 The best part of learning Android is that many of the courses and material available out there online are free.
