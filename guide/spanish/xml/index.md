@@ -23,8 +23,8 @@ La sintaxis anterior muestra el elemento raíz que es necesario al crear un cód
  <note> 
   <to>Tove</to> 
   <from>Jani</from> 
-  <heading>Reminder</heading> 
-  <body>Don't forget me this weekend!</body> 
+  <heading>Recordatorio</heading> 
+  <body>No te olvides de mí este fin de semana!</body>
  </note> 
 ```
 
