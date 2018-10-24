@@ -74,14 +74,14 @@ boolean equals(Object obj)
 Este devuelve true si dos objetos son iguales y false si no los son.
 
 ```java
- String str = "Hola "; 
- String str2 = "Hello world"; 
+ String str = "Hola mundo"; 
+ String str2 = "Hola mundo"; 
  
- System.out.println(str == str2); // This prints false 
- System.out.println(str.equals(str2); // This prints true 
+ System.out.println(str == str2); // Imprime false 
+ System.out.println(str.equals(str2); // Imprime true 
 ```
 
-La primera comparación es falsa porque "==" mira las referencias y no son lo mismo.
+La primera comparación es falsa porque "==" compara las referencias y estas no son igu.
 
 La segunda comparación es verdadera porque las variables almacenan los mismos valores. En este caso "Hola mundo".
 
@@ -139,7 +139,7 @@ String a = "Sam";
 
 ```
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbNzQ1NTI2MzIxLC0xODkyMDc1MTc0LC02Nj
-g2NzA1NDksMTA1MDA4ODA2OSw4NDg5NTc0MTUsMTkzNjc1MTgx
-MF19
+eyJoaXN0b3J5IjpbLTI0NTg4OTYxMiwtMTg5MjA3NTE3NCwtNj
+Y4NjcwNTQ5LDEwNTAwODgwNjksODQ4OTU3NDE1LDE5MzY3NTE4
+MTBdfQ==
 -->
