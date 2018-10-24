@@ -1,7 +1,7 @@
 ---
-title: SQL Min Function
+title: SQL Max Function
 ---
-## SQL Maximum (MIN) Function
+## SQL Maximum (MAX) Function
  SQL MAX Function is used to get the maximum value of a column in a table. 
  Here is the syntax for using the function:
  ```sql
