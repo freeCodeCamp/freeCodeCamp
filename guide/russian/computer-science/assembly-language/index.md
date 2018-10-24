@@ -19,3 +19,4 @@ localeTitle: Язык ассемблера
 *   Реализация компилятора для языка более высокого уровня в новой ISA. ![Изображение уровней кода](https://raw.githubusercontent.com/colbybanbury/assemblyPicture/master/Screenshot%20from%202017-10-14%2014-03-06.png)
 
 #### Дополнительная информация:
+* Как для начала можно использовать сайт kipirvine.com
