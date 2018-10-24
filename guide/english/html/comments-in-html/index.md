@@ -29,7 +29,7 @@ Read more: https://html.com/tags/comment-tag/#ixzz4vtZHu5uR
 </html>
 ```
 ## Conditional Comments
-Conditional Comments defines some HTML tags to be excuted when a certain codition is fullfilled. 
+Conditional Comments defines some HTML tags to be excuted when a certain condition is fullfilled. 
 
 Conditional Comments are only recognised by Internet Explorer Version 5 through to Version 9 (IE5 - IE9).
 
