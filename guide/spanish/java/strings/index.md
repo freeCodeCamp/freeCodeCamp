@@ -155,8 +155,9 @@ El resultado sera:
  Hola
   Mundo
 ```
-Podems tambien dividir la cadena especificando el índice inicial y final de los caracteres en la cadena. Haremos esto usando la funcion de Java llamada `.substring()`.
+Podems tambien dividir la cadena especificando el índice inicial y final de los caracteres en la cadena. Haremos esto usando la función de Java llamada `.substring()`.
 
+El método `.substring()` puede ser usado de dos modos. Uno con 
 The  `.substring()`  method can be used in two ways. One with only the starting index and one with both the start and end index. Take note that the index starts from 0. Example:
 
 String text = "Hello,My name is Bob";
@@ -189,7 +190,7 @@ My
 
 -   [String Documentation](https://docs.oracle.com/javase/7/docs/api/java/lang/String.html)
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbOTQyNjEwNDUxLC0xNDc4NjQxMTAsMTA4OT
+eyJoaXN0b3J5IjpbNTIxMTU5NjI0LC0xNDc4NjQxMTAsMTA4OT
 M1NTAxNiwtMTU4ODg5NDAyNCwtNjMyMTIwMzc4LC0xNDg3NjE0
 MTQsODIwNDM0ODcwLC0xODkyMDc1MTc0LC02Njg2NzA1NDksMT
 A1MDA4ODA2OSw4NDg5NTc0MTUsMTkzNjc1MTgxMF19
