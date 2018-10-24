@@ -89,7 +89,7 @@ El código para la búsqueda binaria recursiva se muestra a continuación:
 
 ```javascript
 function binarySearch(arr, item, low, high) { 
-    if (low > high) { // No more elements in the array. 
+    if (low > high) { // No hay más elementos en la matriz.
         return null; 
     } 
  
