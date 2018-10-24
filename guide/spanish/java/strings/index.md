@@ -178,13 +178,13 @@ El resultado sera:
  Mi
 ```
 
-**Mas Información:**
+**Más Información (en Ingles):**
 
 -   [String Documentation](https://docs.oracle.com/javase/7/docs/api/java/lang/String.html)
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbODczMDU5MTk0LDMzNTgzNDcyMiwtMTQ3OD
-Y0MTEwLDEwODkzNTUwMTYsLTE1ODg4OTQwMjQsLTYzMjEyMDM3
-OCwtMTQ4NzYxNDE0LDgyMDQzNDg3MCwtMTg5MjA3NTE3NCwtNj
-Y4NjcwNTQ5LDEwNTAwODgwNjksODQ4OTU3NDE1LDE5MzY3NTE4
-MTBdfQ==
+eyJoaXN0b3J5IjpbLTE4ODg2NjAzMjgsODczMDU5MTk0LDMzNT
+gzNDcyMiwtMTQ3ODY0MTEwLDEwODkzNTUwMTYsLTE1ODg4OTQw
+MjQsLTYzMjEyMDM3OCwtMTQ4NzYxNDE0LDgyMDQzNDg3MCwtMT
+g5MjA3NTE3NCwtNjY4NjcwNTQ5LDEwNTAwODgwNjksODQ4OTU3
+NDE1LDE5MzY3NTE4MTBdfQ==
 -->
