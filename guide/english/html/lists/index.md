@@ -46,19 +46,26 @@ and is displayed as:
 
 ## Styling Lists
 
-Ordered and unordered lists can have different list item markers. The default numbering system in ordered list can be changed to lowercase or uppercase roman numerals, as well as lowercase or uppercase alphabetical.  The start of the list can be changed from the default value of 1. In an unordered list, different list markers can be used like the disc, circle, square etc. 
+Ordered and unordered lists can have different list item markers. The default numbering system in ordered list can be changed to lowercase or uppercase roman numerals, as well as lowercase or uppercase alphabetical.  The start of the list can be changed from the default value of 1. In an unordered list, different list markers can be used like the disc, circle, square etc.
 
-Styling Ordered List:
+An ordered list can also be programmed to display roman numerals or letters instead of numbers.
+
+Roman numerals:
 ```CSS
-ol {
-  list-style-type: upper-roman; 
-  }
+<ol type="I">
+  <li>Dogs</li>
+  <li>Cats</li>
+  <li>Birds</li>
+</ol>
 ```
-Styling Unordered List:
+
+Letters:
 ```CSS
-ul {
-  list-style-type: square; 
-  }
+<ol type="A">
+  <li>Dogs</li>
+  <li>Cats</li>
+  <li>Birds</li>
+</ol>
 ```
 
 ## Styling Bulletpoints
@@ -68,7 +75,7 @@ An ordered list can be used for a variety of functions and in a number of styles
 Remove bullets:
 ```CSS
 ul {
-  list-style: none; 
+  list-style: none;
   }
 ```
 
@@ -139,37 +146,6 @@ is displayed as:
   - Black tea
   - Green tea
 - Milk
-
-## Nested HTML Lists
-
-List can be nested (lists inside lists):
-
-##### Code:
-```html
-<ul>
-  <li>Coffee</li>
-  <li>Tea
-    <ul>
-      <li>Black tea</li>
-      <li>Green tea</li>
-    </ul>
-  </li>
-  <li>Milk</li>
-</ul>
-```
-
-##### Output:
-
-<ul>
-  <li>Coffee</li>
-  <li>Tea
-    <ul>
-      <li>Black tea</li>
-      <li>Green tea</li>
-    </ul>
-  </li>
-  <li>Milk</li>
-</ul>
 
 #### More Information:
 
