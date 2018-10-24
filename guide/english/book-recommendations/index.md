@@ -3,9 +3,10 @@ title: Books to Read for Programmers
 ---
 
 ### List of Books
+![alt text][picture]
 
+[picture]: https://1.bp.blogspot.com/-HXW_Lhr8VPY/VKZrZutA-yI/AAAAAAAADgU/_lMfEx2JDv0/s640/programming-books.png "picture Title Text 2"
 ## General
-
 *Automate the Boring Stuff With Python* by Al Sweigart
 - http://automatetheboringstuff.com/
 - ISBN-13: 978-1593275990
