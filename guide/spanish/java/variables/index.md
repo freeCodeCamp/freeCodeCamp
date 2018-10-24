@@ -53,3 +53,6 @@ Como se desprende del ejemplo anterior, las variables del tipo Primitivo se comp
 
 *   [Tipos de datos](https://guide.freecodecamp.org/java/data-types)
 *   [Clases y objetos](https://guide.freecodecamp.org/java/classes-and-objects)
+<!--stackedit_data:
+eyJoaXN0b3J5IjpbLTEwNjI4MzU1MzBdfQ==
+-->
