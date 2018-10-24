@@ -40,6 +40,23 @@ head: The element contains meta information about the document
 title: The element specifies a title for the document
 
 body: The element contains the visible page content
+Headers
+
+# H1
+## H2
+### H3
+#### H4
+##### H5
+###### H6
+
+Alternatively, for H1 and H2, an underline-ish style:
+
+Alt-H1
+======
+
+Alt-H2
+------
+
 
 h1: The element defines a large heading
 
