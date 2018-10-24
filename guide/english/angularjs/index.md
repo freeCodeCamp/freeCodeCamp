@@ -8,7 +8,7 @@ It reduces the repetitive use of HTML code. This repetition can be avoided by us
 much time and effort.
 
 **Install**:
-
+fırfır
 npm:
 
 ```shell 
