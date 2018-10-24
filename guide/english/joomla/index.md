@@ -8,6 +8,11 @@ Joomla! is a free and open-source content management system (CMS) built on a mod
 
 Joomla! is written in object-oriented programming (OOP) PHP. It can store data in MySQL, PostgreSQL or MS SQL database. Features include page caching, RSS feeds, printable versions of pages, news flashes, blogs, search, and support for language internationalization.
 
+Some advantages of using Joomla!:
+* Access to your website's dashboard from any computer
+* Lots of extensions avaliable
+* Lots of website templates avaliable
+
 ### More Information
 
 [Joomla Documentation: online collaborative community manual](https://docs.joomla.org/)
