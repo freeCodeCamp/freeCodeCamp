@@ -3,7 +3,7 @@ title: If-Else Statement
 ---
 ## Introduction
 
-The `if` statement executes a statement if a specified condition is `true`. If the condition is `false`, another statement can be executed using the `else` statement.
+The `if` statement executes a statement if a specified condition is `true`. If the condition is `false`, another statement can be executed using the `else` statement. The exception of this case is negating the condition in the brackets by using a 'not' operator (`!`). In this case a statement is executed when the condition is `false`.
 
 **Note:** The `else` statement is optional.
 
@@ -53,6 +53,12 @@ if (condition) {
       q = 42
     else
       z = 19;
+   // If X is not 5, set it to 5. Else, increase it by 1.
+   if (x != 5) {
+      x = 5;
+   } else {
+      x++;
+   }
 ```
 
 **Using** `else if`:
