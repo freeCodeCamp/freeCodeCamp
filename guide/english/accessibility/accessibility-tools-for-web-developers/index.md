@@ -5,15 +5,15 @@ title: Accessibility Tools for Web Developers
 
 There are many tools and online resources that can help you to ensure that your web application meets all of the accessibility requirements.
 
-### General 
+### General
 
 - **<a href='https://chrome.google.com/webstore/detail/accessibility-developer-t/fpkknkljclfencbdbgkenhalefipecmb?hl=en' target='_blank' rel='nofollow'>Accessibility Developer Tools</a>**
 
-   This is a Google Chrome extension that will add a new Accessibility sidebar pane in the Elements tab to the Chrome Developer tools. This new pane will display any properties that are relevant to the accessibility aspect of the element that you are currently inspecting. This extension also adds an accessibility audit that can be used to check whether the current web page violates any accessibility rules. 
+   This is a Google Chrome extension that will add a new Accessibility sidebar pane in the Elements tab to the Chrome Developer tools. This new pane will display any properties that are relevant to the accessibility aspect of the element that you are currently inspecting. This extension also adds an accessibility audit that can be used to check whether the current web page violates any accessibility rules.
 
 
 - **<a href='https://chrome.google.com/webstore/detail/axe/lhdoppojpmngadmnindnejefpokejbdd?hl=en-US' target='_blank' rel='nofollow'>aXe</a>**
-   
+
    This Google Chrome extension can find accessibility defects on your web page.
 
 - **<a href='http://khan.github.io/tota11y/' target='_blank' rel='nofollow'>tota11y</a>**
@@ -24,6 +24,11 @@ There are many tools and online resources that can help you to ensure that your 
 - **<a href='https://www.accesslint.com' target='_blank' rel='nofollow'>AccessLint</a>**
 
    A GitHub app that checks your pull requests for accessibility issues.
+
+
+- **<a href='https://chrome.google.com/webstore/detail/wave-evaluation-tool/jbbplnpkjmmeebjpijfedlgcdilocofh' target='_blank' rel='nofollow'>WAVE Evaluation Tool</a>**
+
+   WAVE is a web accessibility evaluation tool that provides visual feedback about the accessibility of your web content within the Chrome browser.
 
 
 ### Color Contrast
