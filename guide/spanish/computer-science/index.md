@@ -4,6 +4,10 @@ localeTitle: Ciencias de la Computación
 ---
 ## Ciencias de la Computación
 
+Las ciencias de la computación son a menudo difíciles de definir. Ésto probablemente se debe a la referencia indirecta de la palabra “”computadora” en el nombre de estas ciencias. Como quizás usted sepa, las ciencias de la computación no son simplemente el estudio de la computadoras. Sin embargo, las computadoras juegan un rol de soporte importante como una herramienta en la disciplina. Ellas son simplemente éso: herramientas.
+
+Las ciencias de la computación son el estudio de problemas, la solución de problemas y las soluciones que resultan del proceso de solución de problemas. Dado un problema, el objetivo de un científico de la computación es desarrollar un algoritmo, una lista paso a paso de las instrucciones para resolver cualquier caso del problema que pudiera surgir. Los algoritmos son procesos finitos que, si se siguen, resolverán el problema. Los algoritmos son soluciones.
+
 La informática es el estudio de las computadoras y los conceptos que hacen posible las computadoras.
 
 Gran parte de la informática fue pionera en la segunda mitad del siglo XX.
