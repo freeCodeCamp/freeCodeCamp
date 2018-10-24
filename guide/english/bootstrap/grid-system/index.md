@@ -3,7 +3,7 @@ title: Grid System
 ---
 ## Grid System
 
-In a nutshell Bootstrap grid system helps you create responsive layouts, it comprises of a system of rows and columns that helps you structure your content. 
+In a nutshell Bootstrap grid system helps you to create responsive layouts, it comprises of a system of rows and columns that helps you to build up a structure of your content. 
 
 Rows are horizontal groups of columns, with a maximum of 12 columns per row. Within each row, the content is placed inside the columns and it can span anywhere between 1 to 12 columns.
 
@@ -28,7 +28,7 @@ Use `row` to group your columns, this will keep everything lined up properly and
 ```
 
 ###### Columns
-Column classes indicate the number of columns you’d like to use out of the possible 12 per row. For example `col-sm-6` would mean your column would use up half the width of the `row` on a small screen, and `col-lg-4` would use up a third on a large screen.
+Column classes indicates the number of columns you’d like to use out of the possible 12 per row. For example `col-sm-6` would mean your column would use up half the width of the `row` on a small screen, and `col-lg-4` would use up a third on a large screen.
 
 Here is how you would define a class prefix to use up one column width on the various screen sizes:
 
