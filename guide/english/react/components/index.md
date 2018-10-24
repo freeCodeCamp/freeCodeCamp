@@ -3,7 +3,7 @@ title: Components
 ---
 ## Components
 
-Components are reusable in react.js. You can inject value into props as given below :
+Components are reusable pieces of code in react.js. You can inject value into props as given below :
 
 ```jsx
 
@@ -29,6 +29,7 @@ There are many ways to declare components when using React.js, but there are two
 
 #### Class Type Components
 
+Class type components, also known as stateful components, can be used to manage state and keep track of changing data.
 ```jsx
 
 class Cat extends React.Component {
@@ -56,6 +57,8 @@ class Cat extends React.Component {
 ### Stateless Components
 
 #### Functional Components (Arrow Function from ES6)
+
+Functional components, or stateless components, are generally used for presentation and do not maintain their own state. 
 
 ```jsx
 
