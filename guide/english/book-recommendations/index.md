@@ -92,6 +92,10 @@ title: Books to Read for Programmers
 - https://www.amazon.com/Pro-NET-Core-Andrew-Troelsen/dp/1484230175/ref=sr_1_1?s=books&ie=UTF8&qid=1539643534&sr=1-1&keywords=Pro-NET-Core-Andrew-Troelsen
 - ISBN-13: 978-1484230176
 
+*CLR via C# (4th Edition) by Jeffrey Richter*
+- [Amazon](https://www.amazon.com/CLR-via-4th-Developer-Reference/dp/0735667454)
+- ISBN-13: 978-0735667457
+
 ## Coding Interview
 
 *Cracking the Coding Interview: 150 Programming Questions and Solutions*
