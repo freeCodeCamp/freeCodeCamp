@@ -25,6 +25,18 @@ df = pd.read_csv(file_path)
 ```
 Here, `file_path` can be a local path to a csv file on you computer, or a url pointing to one. The column names may be included in the csv file, or the may be passed as an argument. For more on this, and much more, take a look at the [documentation](http://pandas.pydata.org/pandas-docs/stable/generated/pandas.read_csv.html?highlight=read_csv#pandas.read_csv).
 
+The read_csv function can be adapted to the available data via various parameters. The parameter parse_dates can be used, for example, to read data formats correctly (also via own functions) or the decimal character can be adapted.
+
+## Loading data from other sources
+
+Data can also be read from other sources into the pandas table format. For example, functions for reading JSON and HTML are available.
+With read_html, the HTML code is searched for table elements and the corresponding table is interpreted and read into a DataFrame.
+
+```python
+url = '"https://www.census.gov/data/tables/time-series/econ/mhs/latest-data.html"'
+pd.read_html(url)
+```
+
 ## Getting an overview of a data frame
 To show the first few rows of a data frame, the `head` method is useful (once more this should sound familiar to R programmers):
 ```python
