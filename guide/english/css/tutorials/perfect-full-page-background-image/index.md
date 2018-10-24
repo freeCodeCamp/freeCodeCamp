@@ -9,7 +9,25 @@ This is a stub. <a href='https://github.com/freecodecamp/guides/tree/master/src/
 
 <!-- The article goes here, in GitHub-flavored Markdown. Feel free to add YouTube videos, images, and CodePen/JSBin embeds  -->
 
+```CSS
+body, html {
+    height: 100%;
+}
+ .bg { 
+    /* The image used */
+    background-image: url("img.jpg");
+     /* Full height */
+    height: 100%; 
+     /* Center and scale the image nicely */
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+```
+
 #### More Information:
 <!-- Please add any articles you think might be helpful to read before writing the article -->
+* [W3Schools](https://www.w3schools.com/howto/howto_css_full_page.asp)
+
 
 
