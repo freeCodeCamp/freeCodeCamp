@@ -21,8 +21,18 @@ One of the main things that appeal to people about WordPress is the abudant them
 
 Whether its page transitions or a customized contact form, WordPress users are only a few clicks away from building a website.
 
+## Popular Plugins
+There are many popular WordPress plugins available, such as:
+1. Akismet Anti-spam: Filter spam comment
+2. Yoast SEO: Improve WordPress SEO
+3. WooCommerce: Create eCommerce using WordPress
+4. Elementor: Open source page builder
+5. WP Super Cache: Increase load speed for static website
+
 ### More Information
 
+- [WordPress.org](https://wordpress.org/)
+- [WordPress Plugins](https://wordpress.org/plugins/)
 - [WordPress Codex: the online manual](https://codex.wordpress.org/)
 - [WordPress Code Reference](https://developer.wordpress.org/reference/)
 - [WordPress Github Repository](https://github.com/WordPress/WordPress)
