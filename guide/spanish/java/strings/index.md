@@ -103,8 +103,8 @@ Esto resultará en - `La longitud de la cadena es : 18`
 **La respuesta es: 2** objetos String son creados. **Notas**
 
 1.  Los métodos de cadena utilizan índices basados ​​en cero, a excepción del segundo argumento de `substring()` .
-2.  La clase String es final, sus métodos no se pueden sobreescribir.
-3.  Cuando JVM encuentra el literal de cadena, se agrega a la agrupación de cadena literal.
+2.  La clase String es final, y sus métodos no se pueden sobreescribir.
+3.  Cuando la JVM encuentra un literal de String, se agrega a la reserva de literal de String.
 4.  La clase de cadena posee una `length()` nombre de método `length()` , mientras que las matrices tienen una longitud de nombre de atributo.
 5.  En java, los objetos de cadena son inmutables. Inmutable simplemente significa inmodificable o inmutable. Una vez que se crea el objeto de cadena, sus datos o estado no se pueden cambiar, pero se crea un nuevo objeto de cadena.
 
@@ -139,7 +139,7 @@ String a = "Sam";
 
 ```
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTE0ODc2MTQxNCw4MjA0MzQ4NzAsLTE4OT
-IwNzUxNzQsLTY2ODY3MDU0OSwxMDUwMDg4MDY5LDg0ODk1NzQx
-NSwxOTM2NzUxODEwXX0=
+eyJoaXN0b3J5IjpbNjg5NDM0OTU0LC0xNDg3NjE0MTQsODIwND
+M0ODcwLC0xODkyMDc1MTc0LC02Njg2NzA1NDksMTA1MDA4ODA2
+OSw4NDg5NTc0MTUsMTkzNjc1MTgxMF19
 -->
