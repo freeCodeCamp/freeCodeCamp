@@ -14,7 +14,7 @@ localeTitle: 验收标准
 
 请考虑以下情况：在接受用户故事时，产品负责人建议添加不在用户故事范围内的内容。在这种情况下，交付团队可以拒绝此请求（无论多么小），并要求产品所有者创建一个可以在另一个Sprint中处理的新用户故事。
 
-#### 更多信息：
+##### 更多信息：
 
 Nomad8提供了[关于验收标准](https://nomad8.com/acceptance_criteria/)的[常见问题解答](https://nomad8.com/acceptance_criteria/)
 
