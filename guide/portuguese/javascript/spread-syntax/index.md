@@ -2,9 +2,9 @@
 title: Spread syntax
 localeTitle: Espalhe a sintaxe
 ---
-## Spread Syntax
+## Operador Spread
 
-O conceito de spread é permitier que um iterável, como um array ou string seja expandida em locais onde zero ou mais argumentos (para chamadas de função) ou elementos (para arrays) sejam esperados ou uma expressão de objeto seja expandida em locais onde zero é esperado.
+O conceito de spread é permitir que um iterável, como um array ou string seja expandida em locais onde zero ou mais argumentos (para chamadas de função) ou elementos (para arrays) sejam esperados ou uma expressão de objeto seja expandida em locais onde zero é esperado.
 
 ### Sintaxe
 
@@ -31,14 +31,14 @@ function myFunction(x, y, z) { }
  myFunction.apply(null, args); 
 ```
 
-Com a sintaxe spread, o exemplo acima pode ser escrito como:
+Com a operador spread, o exemplo acima pode ser escrito como:
 ```js
 function myFunction(x, y, z) { } 
  var args = [0, 1, 2]; 
  myFunction(...args); 
 ```
 
-Qualquer argumento na lista de argumentos pode usar a sintaxe spread e pode ser usado várias vezes.
+Qualquer argumento na lista de argumentos pode usar a operador spread e pode ser usado várias vezes.
 ```js
 function myFunction(v, w, x, y, z) { } 
  var args = [0, 1]; 
@@ -47,13 +47,13 @@ function myFunction(v, w, x, y, z) { }
 
 ### Apply e New
 
-Ao chamar um construtor com `new` , não é possível usar **diretamente** um array e `apply` ( `apply` faz um `[[Call]]` e não um `[[Construct]]` ). No entanto, um array pode ser facilmente usado com `new` graças à sintaxe spread:
+Ao chamar um construtor com `new` , não é possível usar **diretamente** um array e `apply` ( `apply` faz um `[[Call]]` e não um `[[Construct]]` ). No entanto, um array pode ser facilmente usado com `new` graças à operador spread:
 ```js
 var dateFields = [1970, 0, 1];  // 1 Jan 1970 
  var d = new Date(...dateFields); 
 ```
 
-Para usar `new` com um array de parâmetros sem sintaxe spread, você teria que fazê-lo **indiretamente** através da aplicação parcial:
+Para usar `new` com um array de parâmetros sem operador spread, você teria que fazê-lo **indiretamente** através da aplicação parcial:
 ```js
 function applyAndNew(constructor, args) { 
    function partial () { 
@@ -105,7 +105,7 @@ var arr = [1, 2, 3];
  // arr remains unaffected 
 ```
 
-> **Nota** : A sintaxe spread atinge um nível de profundidade enquanto copia um array. Portanto, pode ser inadequado para copiar arrays multidimensionais como mostra o exemplo a seguir (é o mesmo com Object.assign () e sintaxe spread).
+> **Nota** : A operador spread atinge um nível de profundidade enquanto copia um array. Portanto, pode ser inadequado para copiar arrays multidimensionais como mostra o exemplo a seguir (é o mesmo com Object.assign () e operador spread).
 ```js
 var a = [[1], [2], [3]]; 
  var b = [...a]; 
@@ -115,7 +115,7 @@ var a = [[1], [2], [3]];
 
 ### Uma maneira melhor de concatenar arrays
 
-`Array.concat` é freqüentemente usado para concatenar um array ao final de um array existente. Sem a sintaxe spread, isso é feito como:
+`Array.concat` é freqüentemente usado para concatenar um array ao final de um array existente. Sem a operador spread, isso é feito como:
 ```js
 var arr1 = [0, 1, 2]; 
  var arr2 = [3, 4, 5]; 
@@ -123,14 +123,14 @@ var arr1 = [0, 1, 2];
  arr1 = arr1.concat(arr2); 
 ```
 
-Com a sintaxe spread, isso se torna:
+Com a operador spread, isso se torna:
 ```js
 var arr1 = [0, 1, 2]; 
 var arr2 = [3, 4, 5]; 
 arr1 = [...arr1, ...arr2]; 
 ```
 
-`Array.unshift` é frequentemente usado para inserir um array de valores no início de um array existente. Sem a sintaxe spread, isso é feito como:
+`Array.unshift` é frequentemente usado para inserir um array de valores no início de um array existente. Sem a operador spread, isso é feito como:
 ```js
 var arr1 = [0, 1, 2]; 
 var arr2 = [3, 4, 5]; 
@@ -138,7 +138,7 @@ var arr2 = [3, 4, 5];
 Array.prototype.unshift.apply(arr1, arr2) // arr1 is now [3, 4, 5, 0, 1, 2] 
 ```
 
-Com a sintaxe spread, isso se torna:
+Com a operador spread, isso se torna:
 ```js
 var arr1 = [0, 1, 2]; 
 var arr2 = [3, 4, 5]; 
