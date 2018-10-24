@@ -11,7 +11,7 @@ this feature with Components.
 
 Suppose you're developing a landing page for your company's product and you need
 to display the 4 main features of it following the same structure of a card-like
-object, with a icon, a title and a short description.
+object, with a icon, a title, and a short description.
 
 ```javascript
 Vue.component('feature-card', {
@@ -47,7 +47,7 @@ With this code, we did a lot of new things:
   list
 
 When we defined the name of the components, whenever we desire to reuse it, we
-can just reference it by using as a tag. In our example, we can use the tag
+can reference it by using a tag. In our example, we can use the tag,
 `<feature-card>`:
 
 ```html
@@ -62,8 +62,8 @@ can just reference it by using as a tag. In our example, we can use the tag
 ```
 
 In this case, we called the `<feature-card>` as it was an existing tag, as well
-as we setted `iconSrc` or `featureTitle` as they were valid attributes. And the
-purpose of Vue.js components is this: increment your toolbox with your own
+as set the `iconSrc` or `featureTitle` as they were valid attributes. The
+purpose of Vue.js components is to increment your toolbox with your own
 tools.
 
 ### Props
