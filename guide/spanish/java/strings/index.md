@@ -65,16 +65,16 @@ public class EjemploDeCadenas{
 
 #### Comparando Cadenas
 
-Si desea comparar el valor de dos variables String, no puede usar ==. Esto se debe a que comparará las referencias de las variables. Y no los valores que están vinculados a ellas. Para comparar los valores almacenados de las cadenas, se utiliza el método igual.
+Si desea comparar el valor de dos variables String, no puede usar ==. Esto se debe a que comparará las referencias de las variables y no los valores que están vinculados a ellas. Para comparar los valores almacenados de las cadenas, se utiliza el método equals
 
 ```java
 boolean equals(Object obj) 
 ```
 
-Devuelve true si dos objetos son iguales y false de lo contrario.
+Este devuelve true si dos objetos son iguales y false si no los son.
 
 ```java
-String str = "Hello world"; 
+ String str = "Hola "; 
  String str2 = "Hello world"; 
  
  System.out.println(str == str2); // This prints false 
@@ -139,7 +139,7 @@ String a = "Sam";
 
 ```
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTEyNDM2MTY2MTMsLTE4OTIwNzUxNzQsLT
-Y2ODY3MDU0OSwxMDUwMDg4MDY5LDg0ODk1NzQxNSwxOTM2NzUx
-ODEwXX0=
+eyJoaXN0b3J5IjpbNzQ1NTI2MzIxLC0xODkyMDc1MTc0LC02Nj
+g2NzA1NDksMTA1MDA4ODA2OSw4NDg5NTc0MTUsMTkzNjc1MTgx
+MF19
 -->
