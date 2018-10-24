@@ -4,7 +4,7 @@ title: Generics
 
 ## Generics
 
-Developers can use `Generics` to specify type constrains for classes, instance members, static members, and functions.
+Developers can use `Generics` to specify type constraints for classes, instance members, static members, and functions.
 
 ### What do Generics do?
 
@@ -21,12 +21,11 @@ function printMessage(arg: any): any {
   return arg;
 }
 
-// typescript won't complain because the argument type and return type aren't being typed properly
 const myMessage: string = printMessage(1);
-
+// TypeScript won't complain that the argument type and return type are different, because they aren't being typed properly
 ```
 
-As you can see from above, passing in `any` for the argument type in the function, as well as the return type, is not ideal as type information is lost in the process.
+As you can see above, passing in `any` for the argument type in the function, as well as the return type, is not ideal as type information is lost in the process.
 
 ```typescript
 // updated example
@@ -34,10 +33,10 @@ function printMessage<T>(arg: T): T {
   return arg;
 }
 
-// typescript complains because the variable type and the return type of the function don't match
 const myMessage: string = printMessage(1);
+// TypeScript complains because the variable type and the return type of the function don't match
 
-// resolve the issue by making sure both types match each other
+// resolve the issue by making sure both types match each other:
 const myMessage: number = printMessage(1);
 
 ```
