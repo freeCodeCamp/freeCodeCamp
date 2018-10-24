@@ -13,7 +13,7 @@ Break down MMF to its core components:
 
 **Marketable** - Selling the end user or organization that the feature has significant value.
 
-**Feature** - The percieved value by the end user. What does it give me? Brand recognition? More Revenue? Help cut costs? Does it give me a competative advantage? 
+**Feature** - The perceived value by the end user. What does it give me? Brand recognition? More Revenue? Help cut costs? Does it give me a competitive advantage? 
 
 <a href='https://github.com/freecodecamp/guides/blob/master/README.md' target='_blank' rel='nofollow'>This quick style guide will help ensure your pull request gets accepted</a>.
 
