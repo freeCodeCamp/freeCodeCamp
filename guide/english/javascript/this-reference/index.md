@@ -3,9 +3,10 @@ title: this reference
 ---
 ## `this` reference
 
-In JavaScript, every function has a `this` reference automatically created when you declare it. This reference is quite similar to `this` reference in other class-based languages such as Java or C# (JavaScript is a prototype-based language and no "class" concept): *It points to the which object is calling to the function* (this object sometimes called as *context*). In JavaScript, however, *the `this` reference inside functions can be bound to different objects depending on where the function is being called*. Here are 5 basic rules for `this` binding in JavaScript:
+In JavaScript, every function has a `this` reference automatically created when you declare it. The reference is similar to the `this` reference in other class-based languages such as Java or C#: *It points to which object is calling the function* (this object is sometimes called the *context*). In JavaScript, however, *the `this` reference inside functions can be bound to different objects depending on where the function is being called*. Here are 5 basic rules for `this` binding in JavaScript:
 
 ### Rule 1
+Global scope.
 
 When a function is called in the global scope, the `this` reference is by default bound to the **global object** (`window` in the browser, or `global` in Node.js). For example:
 
@@ -21,8 +22,9 @@ console.log(a); // 2
 Note: If you declare the `foo()` function above in strict mode, then you call this function in global scope, `this` will be `undefined` and assignment `this.a = 2` will throw `Uncaught TypeError` exception.
 
 ### Rule 2
+Implicit binding.
 
-Let's examine example below:
+Let's examine the example below:
 
 ```javascript
 function foo() {
@@ -37,11 +39,12 @@ obj.foo();
 console.log(obj.a); // 2
 ```
 
-Clearly, in the above snippet, the `foo()` function is being called with *context* is `obj` object and `this` reference now is bound to `obj`. So when a function is called with a context object, the `this` reference will be bound to this object.
+Clearly, in the above snippet, the `foo()` function is being called with a *context* of the `obj` object. In these cases where the object is specified using dot notation, the `this` reference is bound to `obj`. So when a function is called with an object context, the `this` reference will be bound to the object named before the dot.
 
 ### Rule 3
+Call, apply, and bind.
 
-`.call`, `.apply` and `.bind` can all be used at the call site to explicitly bind `this`. Using `.bind(this)` is something you may see in quite a lot of React components.
+`.call`, `.apply` and `.bind` can all be used at the call site to explicitly bind `this`. Using `.bind(this)` is something you may see in a lot of React components.
 
 ```javascript
 var foo = function() {
@@ -58,6 +61,7 @@ Here's a quick example of how each one is used to bind `this`:
 - `.bind()`: `const newFn = fn.bind(thisObj, fnParam1, fnParam2)`
 
 ### Rule 4
+Function used as a constructor with the `new` keyword.
 
 ```javascript
 function Point2D(x, y) {
@@ -69,12 +73,12 @@ var p1 = new Point2D(1, 2);
 console.log(p1.x); // 1
 console.log(p1.y); // 2
 ```
+The `Point2D` function is called with `new` keyword, so the `this` reference is bound to the `p1` object. When a function is called with the `new` keyword, it will create a new object and the `this` reference will be bound to this object.
 
-The thing you must notice that is the `Point2D` function called with `new` keyword, and `this` reference is bound to `p1` object. So when a function is called with `new` keyword, it will create a new object and `this` reference will be bound to this object.
-
-Note: As you call a function with `new` keyword, we also call it as *constructor function*.
+Note: When you call a function with `new` keyword, we also call the function a *constructor function*. It is good practice to always capitalize constructor functions so other developers know to always use it with the `new` keyword.
 
 ### Rule 5
+Implicitly bound function that loses its binding.
 
 JavaScript determines the value of `this` at runtime, based on the current context. So `this` can sometimes point to something other than what you expect. 
 

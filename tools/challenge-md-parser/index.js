@@ -10,6 +10,7 @@ const frontmatterToData = require('./frontmatter-to-data');
 const textToData = require('./text-to-data');
 const testsToData = require('./tests-to-data');
 const challengeSeedToData = require('./challengeSeed-to-data');
+const solutionsToData = require('./solution-to-data');
 
 const processor = unified()
   .use(markdown)
@@ -18,6 +19,7 @@ const processor = unified()
   .use(testsToData)
   .use(remark2rehype, { allowDangerousHTML: true })
   .use(raw)
+  .use(solutionsToData)
   .use(textToData, ['description', 'instructions'])
   .use(challengeSeedToData)
   // the plugins below are just to stop the processor from throwing
