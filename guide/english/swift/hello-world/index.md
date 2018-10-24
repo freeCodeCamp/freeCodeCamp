@@ -2,28 +2,23 @@
 title: Hello World Swift
 ---
 
- ## Hello World
+##Hello World
 
-Only we have to add the method `print("Hello World")` (from the library UIKit) to the function `viewDidLoad()` of the class `ViewController:
+We only need to add `print("Hello World")` (from the library UIKit) to the function `viewDidLoad()` of the class `ViewController`:
 
  ```Swift
  import UIKit
-
-class ViewController: UIViewController {
-
+ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
         
-        print("Hello World")
-        
+        print("Hello World")   
     }
-
-
-}
+ }
  ```
 
- ## Output:
+##Output:
  ```
- >Hello World
+ > Hello World
  ```
