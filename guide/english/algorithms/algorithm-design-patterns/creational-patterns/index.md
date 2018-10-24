@@ -16,6 +16,6 @@ Five well-known design patterns that are parts of creational patterns are:
 3. **Factory method pattern**, which allows a class to defer instantiation to subclasses.
 4. **Prototype pattern**, which specifies the kind of object to create using a prototypical instance, and creates new objects by cloning this prototype.
 5. **Singleton pattern**, which ensures that a class only has one instance, and provides a global point of access to it.
-
+Don't be afraid to have fun while you create your creational pattern!
 ### Sources 
 1. [Gamma, Erich; Helm, Richard; Johnson, Ralph; Vlissides, John (1995). Design Patterns. Massachusetts: Addison-Wesley. p. 81. ISBN 978-0-201-63361-0. Retrieved 2015-05-22.](http://www.pearsoned.co.uk/bookshop/detail.asp?item=171742)
