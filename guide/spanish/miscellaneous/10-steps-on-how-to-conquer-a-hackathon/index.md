@@ -4,17 +4,17 @@ localeTitle: 10 pasos para conquistar un hackathon
 ---
 ## 10 pasos para conquistar un hackathon
 
-1.  **Aplicar temprano**
+1.  **Apuntarse temprano**
 
-A veces, algunos de los hackathon envían aceptaciones en lotes. Si aplica solo unos días antes del hackathon, es posible que se quede fuera. La mayoría de los hackathons, especialmente aquellos dirigidos a estudiantes de pregrado y posgrado, son libres de asistir y muchos incluso ofrecen reembolsos de viaje para ayudar a subsidiar el costo del viaje para los participantes que viajan distancias más largas. Sin embargo, puede haber fondos limitados para reembolsos de viaje, así que solicite con anticipación para garantizar que reciba una de estas subvenciones.
+A veces, algunos de los hackathon envían aceptaciones en lotes. Si se inscribe solo unos días antes del hackathon, es posible que se quede fuera. La mayoría de los hackathons, especialmente aquellos dirigidos a estudiantes de pregrado y posgrado, son de asistencia gratuita y muchos incluso ofrecen reembolsos de viaje para ayudar a subsidiar el costo del viaje para los participantes que viajan distancias más largas. Sin embargo, puede haber fondos limitados para reembolsos de viaje, así que solicítelo con anticipación para garantizar que reciba una de estas subvenciones.
 
 2.  **No tengas miedo**
 
-Recientemente competí en mi primer hackathon, y estaba completamente asustada con un caso importante de [síndrome](https://guide.freecodecamp.org/working-in-tech/imposter-syndrome/) de [impostor](https://guide.freecodecamp.org/working-in-tech/imposter-syndrome/) . La clave para hackathons es conseguirlo sin ningún temor, de hecho eres un gran activo para un equipo.
+Recientemente competí en mi primer hackathon, y estaba completamente asustada con un caso importante de [síndrome del impostor](https://guide.freecodecamp.org/working-in-tech/imposter-syndrome/) . La clave para hackathons es conseguirlo sin ningún temor, de hecho eres un gran activo para un equipo.
 
-3.  **Sólo sigue empujando.**
+3.  **Sólo sigue presionando.**
 
-Si está en un hackathon y su proyecto se detiene, simplemente siga presionando, parte de un proyecto es mejor que ningún proyecto.
+Si está en un hackathon y su proyecto se estanca, simplemente siga presionando, parte de un proyecto es mejor que ningún proyecto.
 
 4.  **Disfruta de los regalos.**
 
@@ -30,11 +30,11 @@ Una de las mejores partes de un hackathon es aprender algunas cosas realmente in
 
 7.  **Red.**
 
-Proveniente de una formación no técnica, este fue uno de los aspectos más importantes y reveladores para mí en mi primer hackathon. A menudo, los reclutadores estarán allí, otros desarrolladores, VCs e incluso abogados que buscan representar la próxima gran innovación. Finalmente, puede hacer amigos de por vida con algunos de los otros asistentes, ya sea en su grupo o no.
+Proveniente de una formación no técnica, este fue uno de los aspectos más importantes y reveladores para mí en mi primer hackathon. A menudo, los reclutadores estarán allí, otros desarrolladores, VCs e incluso abogados que buscan representar la próxima gran innovación. Finalmente, puede hacer amigos para toda la vida con algunos de los otros asistentes, ya sea de su grupo o no.
 
 8.  **Ve a eso solo.**
 
-Esta, inicialmente fue una de mis mayores montañas de miedo para escalar. Realmente quería ir con algunas personas que conozco, pero si haces eso, se convierten en una muleta y te aferras a ellas. El objetivo es expandirse y hacer nuevos amigos y conocer gente nueva. Te alegrarás de haberlo hecho.
+Esto, inicialmente fue una de mis mayores escoyos a superar. Realmente quería ir con algunas personas que conozco, pero si haces eso, se convierten en una muleta y te aferras a ellas. El objetivo es expandirse y hacer nuevos amigos y conocer gente nueva. Te alegrarás de haberlo hecho.
 
 9.  **Abrazar la experiencia.**
 
