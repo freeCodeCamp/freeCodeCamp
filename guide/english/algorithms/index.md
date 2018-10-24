@@ -41,7 +41,11 @@ freeCodeCamp's curriculum heavily emphasizes creating algorithms. This is becaus
 
 [Intro to Algorithms | Crash Course: Computer Science](https://www.youtube.com/watch?v=rL8X2mlNHPM)
 
-This video gives an accessible and lively introduction to algorithms focusing on sorting and graph search algorithms. 
+This video gives an accessible and lively introduction to algorithms focusing on sorting and graph search algorithms.
+
+[What's an algorithm? - David J. Malan](https://www.youtube.com/watch?v=6hfOvs8pY1k&t=)
+
+This video briefly explains algorithms and how they can be helpful.
 
 [What is an Algorithm and Why Should you Care? | Khan Academy](https://www.youtube.com/watch?v=CvSOaYi89B4)
 
