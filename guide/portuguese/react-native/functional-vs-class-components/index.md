@@ -2,7 +2,7 @@
 title: Functional vs Class Components
 localeTitle: Componentes funcionais vs classe
 ---
-## Reagir Nativo - Componentes Funcionais vs Classe
+## React Native - Componentes Funcionais vs Classe
 
 No React Native, existem dois tipos principais de componentes que compõem um aplicativo - _componentes funcionais_ e _componentes de classe_ . Estes são estruturados da mesma forma que seriam em um aplicativo React regular para a web.
 
