@@ -23,6 +23,15 @@ Let's break down this example. First we set the display property to "flex" so we
 
 Now lets have a short look at "justify-content". This property declares how elements are distributed inside the parent element. We chose the "center" value. This means all elements inside this element will be centered.
 
+#### Center item Perfectly
+Set both the justify-content and align-items properties to center, and the flex item will be perfectly centered:
+
+``` css
+  align-items:center;
+  justify-content: center;
+}
+```
+
 #### More Information:
 To get a complete understanding of Flexbox, read <a href="https://medium.freecodecamp.org/understanding-flexbox-everything-you-need-to-know-b4013d4dc9af" target='_blank' rel="nofollow">Understanding Flexbox Everything you need to know</a> on the FreeCodeCamp Medium page.
 
