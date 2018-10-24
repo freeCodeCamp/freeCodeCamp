@@ -110,9 +110,9 @@ Esto resultará en - `La longitud de la cadena es : 18`
 4.  La clase String posee un método de nombre `length()`, mientras que los arreglos tienen un atributo llamado length.
 5.  En java, los objetos String son inmutables. Inmutable simplemente significa inmodificable o inalterable. Una vez que se crea el objeto String, sus datos o estado no se pueden cambiar, si no que se crea un nuevo objeto String.
 
-Longitud de la cadena
+#### Longitud de la cadena
 
-La "longitud" de una cadena es solo el número de caracteres que contiene. Así que "hi" es de  longitud 2 y "Hola" es de longitud 4. El método `length()` en una cadena devuelve su longitud, de esta manera:
+La "longitud" de una cadena es solo el número de caracteres que contiene. Así que "hi" es de longitud 2 y "Hola" es de longitud 4. El método `length()` en una cadena devuelve su longitud, de esta manera:
 
 ```java
  String a = "Hola"; 
@@ -191,10 +191,10 @@ El resultado sera:
 
 -   [String Documentation](https://docs.oracle.com/javase/7/docs/api/java/lang/String.html)
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTE1NzQ4Mzg2NTMsOTQ4MDUyNzU1LC0xOD
-g4NjYwMzI4LDg3MzA1OTE5NCwzMzU4MzQ3MjIsLTE0Nzg2NDEx
-MCwxMDg5MzU1MDE2LC0xNTg4ODk0MDI0LC02MzIxMjAzNzgsLT
-E0ODc2MTQxNCw4MjA0MzQ4NzAsLTE4OTIwNzUxNzQsLTY2ODY3
-MDU0OSwxMDUwMDg4MDY5LDg0ODk1NzQxNSwxOTM2NzUxODEwXX
-0=
+eyJoaXN0b3J5IjpbLTExNDk5NTIwNTUsLTE1NzQ4Mzg2NTMsOT
+Q4MDUyNzU1LC0xODg4NjYwMzI4LDg3MzA1OTE5NCwzMzU4MzQ3
+MjIsLTE0Nzg2NDExMCwxMDg5MzU1MDE2LC0xNTg4ODk0MDI0LC
+02MzIxMjAzNzgsLTE0ODc2MTQxNCw4MjA0MzQ4NzAsLTE4OTIw
+NzUxNzQsLTY2ODY3MDU0OSwxMDUwMDg4MDY5LDg0ODk1NzQxNS
+wxOTM2NzUxODEwXX0=
 -->
