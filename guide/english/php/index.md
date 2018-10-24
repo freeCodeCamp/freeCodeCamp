@@ -96,7 +96,13 @@ Since writing the whole code for a website is not really practical/feasible for 
  * [Laravel](https://laravel.com/)
  * [Symfony](https://symfony.com/)
  * [Zend](http://www.zend.com/)
+ * [CodeIgniter](https://codeigniter.com/)
  * [CakePHP](https://cakephp.org/)
+ * [FuelPHP](https://fuelphp.com/)
+ * [Yii](https://www.yiiframework.com/)
+ * [Phalcon](https://phalconphp.com/)
+ * [Slim](https://www.slimframework.com/)
+ * [PHPixie](https://phpixie.com/)
  
 ## Documentation
 
