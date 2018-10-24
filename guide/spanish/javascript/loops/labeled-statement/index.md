@@ -1,33 +1,79 @@
 ---
 title: Labeled Statement
-localeTitle: Declaración Etiquetada
+localeTitle: Declaración etiquetada
 ---
-## Declaración Etiquetada
+## Declaración etiquetada
 
-La **Declaración Etiquetada** se usa con las declaraciones de `break` y `continue` , y sirve para identificar la declaración a la que se aplican las declaraciones de `break` y `continue` .
+La **Declaración etiquetada** se usa con las declaraciones `break` y `continue`, y sirve para identificar la declaración a la que se aplican las declaraciones `break` y `continue`.
 
 ### Sintaxis
-
-\`\` \`javascript Nombre de etiqueta: declaraciones
+```javascript
+nombredelaetiqueta:
+  declaraciones
 ```
-### Usage 
- Without the use of a `labeled` statement the `break` statement can only break out of a loop or a `switch` statement. Using a `labeled` statement allows `break` to jump out of any code block. 
- #### Example 
+### Uso 
+Sin el uso de una declaración etiquetada, la declaración `break` solo podría salir de un bucle o de una declaración `switch`. Usar una declaración etiquetada permite al `break` saltar fuera de un bloque de código. 
+#### Example 
+```javascript
+foo: {
+  console.log ("Esto imprime:");
+  break foo;
+  console.log ("Esto nunca se imprimirá");
+}
+console.log ("¡Porque la ejecución salta aquí!") 
+/* output
+Esto imprime: ¡Porque la ejecución salta hasta aquí! */
 ```
+Cuando se usa con una declaración continue, la declaración etiquetada te permite omitir una iteración de bucle. La ventaja es ser capaz de saltar de un bucle interno a un bucle externo cuando tienes declaraciones de bucles anidados. Sin el uso de una declaración etiquetada, tu solo podrías saltar de la iteración de bucle existente a la `siguiente iteración del mismo bucle`.
+#### Example 
+```javascript
+// sin declaración etiquetada, cuando j == i el bucle interno salta a la siguiente iteración
+function test() {
+  for (var i = 0; i < 3; i++) {
+    console.log ("i=" + i);
+    for (var j = 0; j < 3; j++) {
+      if (j === i) {
+        continue;
+      }
+      console.log ("j=" + j);
+    }
+  }
+}
 
-javascript foo: { console.log ("Esto imprime:"); romper foo console.log ("Esto nunca se imprimirá"); } console.log ("¡Porque la ejecución salta a aquí!") / \* salida Esto imprime: ¡Porque la ejecución salta hasta aquí! \* /
+/* output
+i = 0 (observa que falta j = 0)
+j = 1
+j = 2
+i = 1
+j = 0 (observa que falta j = 1)
+j = 2
+i = 2
+j = 0
+j = 1 (observa que j = 2)
+*/
+
+// usando una declaración etiquetada, en cambio, podemos saltar al bucle externo (i)
+function test() {
+  exterior: for (var i = 0; i < 3; i++) {
+    console.log ("i=" + i);
+    for (var j = 0; j < 3; j++) {
+      if (j === i) {
+        continue exterior;
+      }
+      console.log ("j=" + j);
+    }
+  }
+}
+
+/*
+i = 0 (j solo se registra cuando es menor que i)
+i = 1
+j = 0
+i = 2
+j = 0
+j = 1
+*/
 ```
-When used with a `continue` statement the `labeled` statement allows you to skip a loop iteration, the advantage comes from being able to jump out from an inner loop to an outer one when you have nested loop statements. Without the use of a `labeled` statement you could only jump out of the existing loop iteration to the `next iteration of the same loop.` 
- #### Example 
-```
-
-javascript // sin declaración etiquetada, cuando j == i bucle interno salta a la siguiente iteración prueba de funcionamiento() { para (var i = 0; i <3; i ++) { console.log ("i =" + i); para (var j = 0; j <3; j ++) { si (j === i) { continuar; } console.log ("j =" + j); } } }
-
-/ \* salida i = 0 (nota j = 0 falta) j = 1 j = 2 i = 1 j = 0 (nota j = 1 falta) j = 2 i = 2 j = 0 j = 1 (nota j = 2 falta) \* /
-
-// usando una declaración etiquetada podemos saltar al bucle externo (i) en su lugar prueba de funcionamiento() { exterior: para (var i = 0; i <3; i ++) { console.log ("i =" + i); para (var j = 0; j <3; j ++) { si (j === i) { continúa exterior } console.log ("j =" + j); } } }
-
-/ \* i = 0 (j solo se registra cuando es menor que i) i = 1 j = 0 i = 2 j = 0 j = 1 \* / \`\` \`
 
 ### Más información:
 
