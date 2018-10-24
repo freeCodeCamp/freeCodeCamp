@@ -1,0 +1,2 @@
+pwd is a bash command for showing the current working directory
+eg; if the user is in the terminal and pwd is entered it will print - /home/<username>
