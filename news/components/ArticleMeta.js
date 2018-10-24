@@ -87,4 +87,4 @@ function ArticleMeta({
 ArticleMeta.displayName = 'ArticleMeta';
 ArticleMeta.propTypes = propTypes;
 
-export default ArticleMeta;
+export default ArticleMeta;;
