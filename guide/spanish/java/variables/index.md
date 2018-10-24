@@ -8,8 +8,8 @@ Las variables almacenan valores. Son la entidad más básica utilizada para alma
 
 En [Java](https://github.com/FreeCodeCamp/FreeCodeCamp/wiki/Java) , las variables son [fuertemente tipeadas](https://en.wikipedia.org/wiki/Strong_and_weak_typing#Definitions_of_.22strong.22_or_.22weak.22), lo que significa que debe definir el tipo para cada variable cada vez que la declare. De lo contrario, el compilador lanzará un error en el [tiempo de compilación](https://en.wikipedia.org/wiki/Compile_time). Por lo tanto, cada variable tiene un '[tipo de dato](https://guide.freecodecamp.org/java/data-types)' asociado de uno de los siguientes:
 
-*   Tipo primitivo: `int`, `short`, `char` , `long` , `boolean` , `byte` , `float` , `double`
-*   Tipo de envoltura: `Integer` , `Short` , `Char` , `Long` , `Boolean` , `Byte` , `Float` , `Double`
+*   Tipo primitivo: `int`, `short`, `char`, `long`, `boolean`, `byte`, `float`, `double`
+*   Tipo envuelto: `Integer`, `Short`, `Char` , `Long` , `Boolean` , `Byte` , `Float` , `Double`
 *   Tipo de referencia: `String` , `StringBuilder` , `Calendar` , `ArrayList` , etc.
 
 Es posible que haya notado que el **tipo de envoltorio** consiste en tipos escritos exactamente como el **tipo primitivo** , excepto el alfabeto en mayúscula al principio (como el **tipo de referencia** ). Esto se debe a que los tipos de envoltorio son en realidad una parte de los tipos de referencia más generales, pero están _estrechamente relacionados_ con sus homólogos [primarios a](https://docs.oracle.com/javase/tutorial/java/data/autoboxing.html) través de [autoboxing y unboxing](https://docs.oracle.com/javase/tutorial/java/data/autoboxing.html) . Por ahora, solo necesita saber que existe tal 'tipo de envoltura'.
@@ -54,6 +54,6 @@ Como se desprende del ejemplo anterior, las variables del tipo Primitivo se comp
 *   [Tipos de datos](https://guide.freecodecamp.org/java/data-types)
 *   [Clases y objetos](https://guide.freecodecamp.org/java/classes-and-objects)
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTIwODAwNDY1MTAsMTg4NjMwMzAwNywtOD
-Q5ODkyMjcxLC0xMDYyODM1NTMwXX0=
+eyJoaXN0b3J5IjpbLTQ5MjU5MDMxMywxODg2MzAzMDA3LC04ND
+k4OTIyNzEsLTEwNjI4MzU1MzBdfQ==
 -->
