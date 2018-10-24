@@ -74,6 +74,12 @@ if x %  2 == 0:  # this is how you create a comment and now, checking for even.
 else:
   print ("The number is not even. So point checking further.")
 ```
+
+Output
+
+```python
+This number is even and is greater than 10
+```
 This was just a simple example for nested if statement. Please feel free to explore more online.
 
 While the examples above are simple, you can create complex conditions using <a href='https://guide.freecodecamp.org/python/comparisons' target='_blank' rel='nofollow'>boolean comparisons</a> and <a href='https://guide.freecodecamp.org/python/boolean-operations' target='_blank' rel='nofollow'>boolean operators</a>.
@@ -92,7 +98,7 @@ print(is_greater)
 ```
 
 Output
-```
+```python
 >
 True
 >
