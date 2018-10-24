@@ -22,4 +22,5 @@ title: Chef
 - [Official Documentation](https://docs.chef.io/chef_overview.html)
 - [Chef Tutorial](http://gettingstartedwithchef.com/)
 
-    
+ <p>Chef is important!</p>
+  
