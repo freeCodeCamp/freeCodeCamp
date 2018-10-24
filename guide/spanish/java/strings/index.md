@@ -92,8 +92,8 @@ public class DemoDeString {
  
    public static void main(String args[]) { 
       String palindromo = "Anita lava la tina"; 
-      int l = palindromo.length(); 
-      System.out.println( "String Length is : " + len ); 
+      int longitud = palindromo.length(); 
+      System.out.println( "La longitud de la cadena es : " + longitud ); 
    } 
  } 
 ```
@@ -139,7 +139,7 @@ String a = "Sam";
 
 ```
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMTI3MTcyMTcxNSwtMTg5MjA3NTE3NCwtNj
-Y4NjcwNTQ5LDEwNTAwODgwNjksODQ4OTU3NDE1LDE5MzY3NTE4
-MTBdfQ==
+eyJoaXN0b3J5IjpbODIwNDM0ODcwLC0xODkyMDc1MTc0LC02Nj
+g2NzA1NDksMTA1MDA4ODA2OSw4NDg5NTc0MTUsMTkzNjc1MTgx
+MF19
 -->
