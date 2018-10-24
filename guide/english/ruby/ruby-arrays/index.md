@@ -38,7 +38,7 @@ mixed_array.first # 5
 
 You can check the last element of an array with the `last` method:
 ```ruby
-mixed_array.last # true
+mixed_array.last # [1,2,3]
 ```
 
 
