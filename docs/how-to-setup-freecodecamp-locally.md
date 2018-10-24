@@ -1,6 +1,6 @@
 # Set up freeCodeCamp locally
 
-Follow these guidelines for getting freeCodeCamp locally on your system. This is highly recommended if you want to be contributing regularly.
+Follow these guidelines for getting freeCodeCamp locally on your system. This is highly recommended if you want to contribute regularly.
 
 Some of the contribution workflows like previewing pages for the guide or the coding challenges, debugging and fixing bugs in codebase requires you to have freeCodeCamp running locally.
 
