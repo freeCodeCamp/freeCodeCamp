@@ -81,11 +81,11 @@ Este devuelve true si dos objetos son iguales y false si no los son.
  System.out.println(str.equals(str2); // Imprime true 
 ```
 
-La primera comparación es falsa porque "==" compara las referencias y estas no son igu.
+La primera comparación es falsa porque "==" compara las referencias y estas no son iguales.
 
 La segunda comparación es verdadera porque las variables almacenan los mismos valores. En este caso "Hola mundo".
 
-Tenemos varios métodos incorporados en String. El siguiente es un ejemplo del método String Length ().
+Tenemos varios métodos incorporados en String. El siguiente es un ejemplo del método lenght String Length ().
 
 ```java
 public class StringDemo { 
@@ -139,7 +139,7 @@ String a = "Sam";
 
 ```
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTI0NTg4OTYxMiwtMTg5MjA3NTE3NCwtNj
+eyJoaXN0b3J5IjpbLTk4MjY0NjE1NywtMTg5MjA3NTE3NCwtNj
 Y4NjcwNTQ5LDEwNTAwODgwNjksODQ4OTU3NDE1LDE5MzY3NTE4
 MTBdfQ==
 -->
