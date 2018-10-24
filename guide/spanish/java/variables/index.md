@@ -31,9 +31,9 @@ Puede _asignar_ un valor a la variable de forma simultánea cuando la declara (l
  int i = 10; 
  double cantidad = 10.0; 
  boolean estaAbierto = false; 
- char c = 'a'; // Note the single quotes 
+ char c = 'a'; // Observe las comillas simples
  
- //Variables can also be declared in one statement, and assigned values later. 
+ // Las variables tambien pueden ser declaradas en una sentencia, y asigna assigned values later. 
  int j; 
  j = 10; 
  
@@ -54,7 +54,7 @@ Como se desprende del ejemplo anterior, las variables del tipo Primitivo se comp
 *   [Tipos de datos](https://guide.freecodecamp.org/java/data-types)
 *   [Clases y objetos](https://guide.freecodecamp.org/java/classes-and-objects)
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMzA1NDc4MzEyLC0yMzYxMjQ4NDAsMTU3NT
+eyJoaXN0b3J5IjpbNTMyODU4NjQ2LC0yMzYxMjQ4NDAsMTU3NT
 A1NjIzOSw2MjkzMzk1MjEsMTg4NjMwMzAwNywtODQ5ODkyMjcx
 LC0xMDYyODM1NTMwXX0=
 -->
