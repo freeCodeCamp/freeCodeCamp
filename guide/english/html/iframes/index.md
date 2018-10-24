@@ -40,7 +40,7 @@ The content between the opening and closing `<iframe>` tags is used as alternati
 ```
 
 ### Targeting an Iframe in a Link
-Any `<a>` link can target the content of an `<iframe>` element. Rather than redirect the browser window to the linked webpage, it will redirect the `<iframe>`. For this to work, the `target` attribute of the `<a>` element must match the `name` attribute of the `<iframe>`.
+Any `<a>` link can target the content of an `<iframe>` element. Rather than redirecting the browser window to the linked webpage, it will redirect the `<iframe>`. For this to work, the `target` attribute of the `<a>` element must match the `name` attribute of the `<iframe>`.
 
 ```html
 <iframe width="560" height="315" src="about:blank" frameborder="0" name="iframe-redir"></iframe>
