@@ -13,3 +13,5 @@ Majorly, the data structures can be divided into two categories :-
 ## Reference:
 
 [Python Data Structures](https://docs.python.org/3.7/tutorial/datastructures.html)
+
+<a href="http://www.youtube.com/watch?feature=player_embedded&v=R-HLU9Fl5ug" target="_blank"><img src="http://img.youtube.com/vi/R-HLU9Fl5ug/0.jpg" alt="DATA STRUCTURES" width="240" height="180" border="10" /></a>
