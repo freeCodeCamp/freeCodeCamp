@@ -3,7 +3,7 @@ title: Paragraph Tag
 ---
 ## Paragraph
 
-The HTML <p> element represents a paragraph of text. <p> usually represents a block of text that it separated from other blocks by vertical blank space.
+The HTML element `<p>` represents a paragraph of text. <p> It usually represents a block of text that it separated from other blocks by vertical blank space.
 
 ### Example
 
