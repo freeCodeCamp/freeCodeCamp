@@ -72,6 +72,10 @@ This is a list of the CSS classes for different size of the buttons.
 
 `<button type="button" class="btn btn-xs">Extra Small</button>`
 
+`.btn-block` This is makes the button take up the full width of it's parent container.
+
+`<button type="button" class="btn btn-xs btn-block">Button Block</button>`
+
 #### Bootstrap Outlined Buttons:
 It is possible to also have outlined buttons rather than fully colored in ones. This is achieved by placing the mid fix `outline` between the button class you want. A sample usage would be as follows:
 
