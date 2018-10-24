@@ -4,7 +4,7 @@ localeTitle: Comentarios
 ---
 ## Comentarios
 
-Los comentarios le permiten documentar su código. Los comentarios son ignorados por el compilador Swift, y solo son útiles para las personas que leen tu base de código.
+Los comentarios le permiten documentar su código, estos son ignorados por el compilador Swift, y solo son útiles para las personas que leen tu base de código.
 
 Los comentarios de una sola línea comienzan con dos barras diagonales `//` .
 
