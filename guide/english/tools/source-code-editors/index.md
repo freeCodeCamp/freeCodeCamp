@@ -47,7 +47,7 @@ by <a href='https://github.com/' target='_blank' rel='nofollow'>GitHub</a>. Like
 It is very configurable ("hackable", as they say) but advanced features may  
 be overwhelming to new users. There is also plenty of <a href='http://readwrite.com/2014/05/20/github-atom-5-tips-getting-started-tutorial-corey-johnson/' target='_blank' rel='nofollow'>helpful</a> <a href='http://flight-manual.atom.io/' target='_blank' rel='nofollow'>documentation</a>  
 
-<a href='http://stackoverflow.com/search?q=atom' target='_blank' rel='nofollow'>availble</a> online.
+<a href='http://stackoverflow.com/search?q=atom' target='_blank' rel='nofollow'>available</a> online.
 
 
 ## <a href='https://code.visualstudio.com/' target='_blank' rel='nofollow'>Visual Studio Code</a> ![Visual Studio Code Icon](https://i.imgur.com/b4vFsKa.png)
