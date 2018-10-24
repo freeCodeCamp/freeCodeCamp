@@ -93,7 +93,7 @@ function binarySearch(arr, item, low, high) {
         return null; 
     } 
  
-    // Find the middle of the array. 
+    // Encuentra el centro de la matriz.
     var mid = Math.ceil((low + high) / 2); 
  
     if (arr[mid] === item) { // Found the item! 
