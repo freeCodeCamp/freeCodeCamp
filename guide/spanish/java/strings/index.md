@@ -119,7 +119,7 @@ La "longitud" de una cadena es solo el número de caracteres que contiene. Así 
  int len = a.length();  // la longitud es 4 
 ```
 
-#### Otros métodos de comparación que también se pueden usar en la Cadena son:
+#### Otros métodos de comparación que también se pueden usar en String son:
 
 1.  equalsIgnoreCase(): compara la cadena sin tener en cuenta mayúsculas o minúsculas.
 
@@ -191,10 +191,10 @@ El resultado sera:
 
 -   [String Documentation](https://docs.oracle.com/javase/7/docs/api/java/lang/String.html)
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTExNDk5NTIwNTUsLTE1NzQ4Mzg2NTMsOT
-Q4MDUyNzU1LC0xODg4NjYwMzI4LDg3MzA1OTE5NCwzMzU4MzQ3
-MjIsLTE0Nzg2NDExMCwxMDg5MzU1MDE2LC0xNTg4ODk0MDI0LC
-02MzIxMjAzNzgsLTE0ODc2MTQxNCw4MjA0MzQ4NzAsLTE4OTIw
-NzUxNzQsLTY2ODY3MDU0OSwxMDUwMDg4MDY5LDg0ODk1NzQxNS
-wxOTM2NzUxODEwXX0=
+eyJoaXN0b3J5IjpbMTQ0MjI0MDI2MSwtMTU3NDgzODY1Myw5ND
+gwNTI3NTUsLTE4ODg2NjAzMjgsODczMDU5MTk0LDMzNTgzNDcy
+MiwtMTQ3ODY0MTEwLDEwODkzNTUwMTYsLTE1ODg4OTQwMjQsLT
+YzMjEyMDM3OCwtMTQ4NzYxNDE0LDgyMDQzNDg3MCwtMTg5MjA3
+NTE3NCwtNjY4NjcwNTQ5LDEwNTAwODgwNjksODQ4OTU3NDE1LD
+E5MzY3NTE4MTBdfQ==
 -->
