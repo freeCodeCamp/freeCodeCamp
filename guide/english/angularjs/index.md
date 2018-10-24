@@ -30,3 +30,6 @@ HTML:
 ```html
 <script src="/bower_components/angular/angular.js"></script>
 ```
+## Other Resources
+
+[AngularJS Official Documentation](https://docs.angularjs.org/tutorial)
