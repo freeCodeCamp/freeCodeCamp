@@ -10,7 +10,7 @@ Fontawesome Icons provide you with over 675 icons and they come in font format.
 
 In the `<head>` of your html include a reference to Font Awesome. 
 ```html
-<link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.4.1/css/all.css" integrity="sha384-5sAR7xN1Nv6T6+dT2mhtzEpVJvfS3NScPQTrOxhwjIuvcA67KV2R5Jz6kr4abQsz" crossorigin="anonymous">
 ```
 Using fontawesome is same as using Glyphicon. 
 
@@ -18,24 +18,25 @@ Simply create `<i>` or `<span>` tag and apply the CSS Prefix `fa` and the icon's
 
 **Code Example:**
 
-`<i class="fa fa-twitter" aria-hidden="true"></i>`
+`<i class="fab fa-twitter" aria-hidden="true"></i>`
 
-<i class="fa fa-twitter" aria-hidden="true"></i>
+<i class="fab fa-twitter" aria-hidden="true"></i>
 
-`<span class="fa fa-freecodecamp" aria-hidden="true"></span>`
+`<span class="fab fa-free-code-camp" aria-hidden="true"></span>`
 
-<span class="fa fa-freecodecamp" aria-hidden="true"></span>
+<span class="fab fa-free-code-camp" aria-hidden="true">
+  Note* There is no compulsion to write aria-hidden attribute.
 
 #### Fontawesome Icon List:
 Complete list of icons provided by fontawesome is available [here](http://fontawesome.io/cheatsheet/)
 
-`.fa fa-align-left` This is fontawesome align left icon.
+`.fas fa-align-left` This is fontawesome align left icon.
 
-<span class="fa fa-align-left" aria-hidden="true"></span>
+<span class="fas fa-align-left" aria-hidden="true"></span>
 
-`.fa fa-heart` This is fontawesome heart icon.
+`.fas fa-heart` This is fontawesome heart icon.
 
-<span class="fa fa-heart" aria-hidden="true"></span>
+<span class="fas fa-heart" aria-hidden="true"></span>
 
 _Note: Do not include the dot in the HTML Class Attribute, referring to the classes with a dot is only used when adjusting the classes in CSS._
 
