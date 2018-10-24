@@ -92,5 +92,5 @@ public class Dijkstra {
 }
 ```
 
-## More Information:
+## More Information: 
 - [Priority Queue Documentation](https://docs.oracle.com/javase/7/docs/api/java/util/PriorityQueue.html)
