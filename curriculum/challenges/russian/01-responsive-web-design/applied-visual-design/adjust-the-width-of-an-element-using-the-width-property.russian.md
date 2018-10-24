@@ -3,21 +3,21 @@ id: 587d7791367417b2b2512ab4
 title: Adjust the Width of an Element Using the width Property
 challengeType: 0
 videoUrl: ''
-localeTitle: Настройка ширины элемента с использованием свойства width
+localeTitle: Настройка ширины элемента с помощью свойства width
 ---
 
 ## Description
-<section id="description"> Вы можете указать ширину элемента, используя свойство <code>width</code> в CSS. Значения могут быть указаны в единицах относительной длины (например, em), единицах абсолютной длины (например, px) или в процентах от содержащего его родительского элемента. Вот пример, который меняет ширину изображения на 220 пикселей: <blockquote> img { <br> ширина: 220 пикселей; <br> } </blockquote></section>
-
+<section id="description"> Вы можете указать ширину элемента, используя свойство <code>width</code> в CSS. Значения могут быть указаны в единицах относительной длины (например, em), единицах абсолютной длины (например, px) или в процентах от содержащего его родительского элемента. Вот пример, который задаёт ширину изображения равной 220 пикселям: <blockquote> img { <br> width: 220px; <br> } </blockquote></section>
+  
 ## Instructions
-<section id="instructions"> Добавьте свойство <code>width</code> ко всей карте и установите абсолютное значение 245px. Используйте класс <code>fullCard</code> для выбора элемента. </section>
+<section id="instructions"> Добавьте свойство <code>width</code> ко всей карточке и установите абсолютное значение 245px. Используйте класс <code>fullCard</code> чтобы выбрать элемент. </section>
 
 ## Tests
 <section id='tests'>
 
 ```yml
 tests:
-  - text: 'Ваш код должен изменить свойство <code>width</code> карты на 245 пикселей, используя <code>fullCard</code> класса <code>fullCard</code> .'
+  - text: 'Ваш код должен изменить свойство <code>width</code> карточки на 245 пикселей, используя селектор класса <code>fullCard</code> .'
     testString: 'assert(code.match(/.fullCard\s*{[\s\S][^}]*\n*^\s*width\s*:\s*245px\s*;/gm), "Your code should change the <code>width</code> property of the card to 245 pixels by using the <code>fullCard</code> class selector.");'
 
 ```
