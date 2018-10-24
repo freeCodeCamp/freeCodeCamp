@@ -30,7 +30,7 @@ Only if all of them are truth will we return true, so make sure all of them chec
 
 > _try to solve the problem now_
 
-You could use loops or callbacks functions, there are multiple ways to solve this problem.
+You could use loops or callback functions, there are multiple ways to solve this problem.
 
 ## Spoiler Alert!
 
