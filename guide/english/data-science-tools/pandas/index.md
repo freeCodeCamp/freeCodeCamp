@@ -44,6 +44,21 @@ df.tail()
 ```
 This will show the last 5 rows of the data frame.
 
+## Visualizing the data in the dataframe
+To visualize the data in the dataframe, we can use matplotlib library. Here's how to use it:
+The below code will setup matplotlib inline in your Jupyter notebook. set the style to be 'ggplot', one of the many styles available in matplotlib. and plot a histogram of a given ColumnName from the dataframe
+
+```python
+%matplotlib inline
+import matplotlib
+matplotlib.style.use('ggplot')
+df['ColumnName'].plot.hist()
+```
+
+df['ColumnName'].plot.hist()
+
+
+
 ## Subsetting: Getting a column by name
 A data frame can be subset in many ways. One of the simplest is getting a single column. For instance, if the data frame `df` contains a column named `age`, we can extract it as follows:
 ```python
