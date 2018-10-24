@@ -34,7 +34,7 @@ filetype plugin indent on
 ```
 
 This is a very basic example.
-At this moment, every plugins will be extracted to `~/.vim/bundle` and will be added to the _`runtimepath`_
+At this moment, every plugin will be extracted to `~/.vim/bundle` and will be added to the _`runtimepath`_
 
 ---
 
