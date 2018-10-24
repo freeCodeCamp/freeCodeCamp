@@ -89,3 +89,6 @@ Greedy Algorithms help us solve a lot of different kinds of problems. Stay tuned
 <a href="https://www.youtube.com/watch?v=poWB2UCuozA" target="_blank">
   <img src="http://img.youtube.com/vi/poWB2UCuozA/0.jpg" alt="Greedy Problems" width="240" height="180" border="10" />
 </a>
+<a href="https://www.youtube.com/channel/UClMOC44umedkaWqmgYE0feQ" target="_blank">
+  <img src="https://i.ytimg.com/an_webp/Y2dO11QJe4k/mqdefault_6s.webp?du=3000&sqp=CK7qv94F&rs=AOn4CLCdlQYhZNJ6ZXzFok7wqN5dKNR0Rg" alt="Greedy Problems" width="240" height="180" border="10" />
+</a>
