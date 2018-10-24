@@ -77,7 +77,7 @@ In addition, you can find both <a href='https://bootswatch.com/' target='_blank'
 themes that build on the Bootstrap framework to provide a more customized and stylish look.
 
 #### Bootstrap Resources: 
-[Bootstrap's offical blog](http://blog.getbootstrap.com/)
+[Bootstrap's official blog](http://blog.getbootstrap.com/)
 [Bootstrap site inspiration](http://expo.getbootstrap.com/)
 [Showcase of sites built using Bootstrap](http://builtwithbootstrap.com/)
 [HTML linter for projects using Bootstrap](https://github.com/twbs/bootlint)
