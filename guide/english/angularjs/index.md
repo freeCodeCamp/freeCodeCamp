@@ -9,23 +9,23 @@ much time and effort.
 
 **Install**:
 
-npm:
+***npm:***
 
 ```shell 
 npm install angular
 ```
-HTML:
+Then add a `<script>` to your `index.html`:
 
 ```html
 <script src="/node_modules/angular/angular.js"></script>
 ```
 
-bower:
+***bower:***
 
 ```shell
 bower install angular
 ```
-HTML:
+Then add a `<script>` to your `index.html`:
 
 ```html
 <script src="/bower_components/angular/angular.js"></script>
