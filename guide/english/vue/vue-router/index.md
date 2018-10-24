@@ -3,7 +3,7 @@ Vue router is the official router for Vue.js. With it you can easily create your
 
 ## Basics
 To use the power of Vue Router all you need to do is map Vue.js componenets with routes and specify where to render them.
-For example, your window may look like that:
+For example, your main template may look like that:
 ```javascript
 <template>
   <div id="app">
