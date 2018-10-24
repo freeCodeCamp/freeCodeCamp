@@ -170,10 +170,9 @@ Producirá:
 Para usarlo con un índice final ten en cuenta que índice final real es el valor pasado al método -1.
 Ahora un ejemplo usando `.substring()` con un índice final.
 ```java
-String text = "Hello,My name is Bob";
-System.out.println(text.substring(6,8));
+String texto = "Hola,Mi nombre es Roberto";
+System.out.println(texto.substring(5,7));
 ```
-
 The result will be:
 
 ```
@@ -185,9 +184,9 @@ My
 
 -   [String Documentation](https://docs.oracle.com/javase/7/docs/api/java/lang/String.html)
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbNTQxMzU0MzEsMzM1ODM0NzIyLC0xNDc4Nj
-QxMTAsMTA4OTM1NTAxNiwtMTU4ODg5NDAyNCwtNjMyMTIwMzc4
-LC0xNDg3NjE0MTQsODIwNDM0ODcwLC0xODkyMDc1MTc0LC02Nj
-g2NzA1NDksMTA1MDA4ODA2OSw4NDg5NTc0MTUsMTkzNjc1MTgx
-MF19
+eyJoaXN0b3J5IjpbLTM5MjgzMjg2NywzMzU4MzQ3MjIsLTE0Nz
+g2NDExMCwxMDg5MzU1MDE2LC0xNTg4ODk0MDI0LC02MzIxMjAz
+NzgsLTE0ODc2MTQxNCw4MjA0MzQ4NzAsLTE4OTIwNzUxNzQsLT
+Y2ODY3MDU0OSwxMDUwMDg4MDY5LDg0ODk1NzQxNSwxOTM2NzUx
+ODEwXX0=
 -->
