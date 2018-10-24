@@ -58,4 +58,5 @@ There are over 20,000+ **D3.js** examples you could learn from, but you never kn
 - http://blockbuilder.org/search
 - https://d3indepth.com/
 - https://davidwalsh.name/learning-d3
+- https://www.youtube.com/watch?v=4e3NF8ez95w&list=PL9yYRbwpkykvOXrZumtZWbuaXWHvjD8gi
  ------------
