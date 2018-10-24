@@ -58,8 +58,31 @@ Ex: Perimeter: 20
 5 x 5 = 25
 25 = 25²
 
+
 #### More Information:
 
 - <a href='https://en.wikipedia.org/wiki/Square#Perimeter_and_area' target='_blank' rel='nofollow'>Wikipedia: Square</a>
 - <a href='https://www.wikihow.com/Find-the-Area-of-a-Square' target='_blank' rel='nofollow'>More Illustrations</a>- 
 - <a href='https://sciencing.com/area-square-using-its-perimeter-7991359.html'>more</a>-
+
+
+SOLVED EXAMPLES
+
+Question 1: Find the area of the square of side 16 cm ?
+
+Solution:
+Side of the square = a = 16 cm
+Area of the square
+= a2
+= 162 cm2
+= 256 cm2
+
+Question 2: Find the length of the square whose area is 529 cm2?
+
+Solution:
+Area of the square = A = 529 cm2
+Side of the square = a = ?
+Area of the square = A = a2
+⇒ 529 cm2 = a2 
+⇒ a = 529−−−√
+⇒ a = 23 cm
