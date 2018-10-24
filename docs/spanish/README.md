@@ -18,7 +18,7 @@
 Este directorio contiene toda la documentación sobre cómo contribuir a freeCodeCamp.org
 
 
-## [Si estás empezando, comienza por leer esto primero.](/CONTRIBUTING.md)
+## [Si estás empezando, comienza por leer esto primero.](CONTRIBUTING.md)
 
 ---
 
