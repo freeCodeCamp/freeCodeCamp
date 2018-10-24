@@ -77,6 +77,24 @@ def seletion_sort(arr):
          arr[i], arr[min_i] = arr[min_i], arr[i]
 ```
 
+### Implementation in MATLAB
+```MATLAB
+function [sorted] = selectionSort(unsorted)
+    len = length(unsorted);
+    for i = 1:1:len
+        minInd = i;
+        for j = i+1:1:len
+           if unsorted(j) < unsorted(minInd) 
+               minInd = j;
+           end
+        end
+        unsorted([i minInd]) = unsorted([minInd i]);    
+    end
+    sorted = unsorted;
+end
+
+```
+
 ### Properties
 
 * Space Complexity: <b>O(n)</b>
