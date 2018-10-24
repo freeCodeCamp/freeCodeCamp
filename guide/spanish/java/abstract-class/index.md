@@ -8,19 +8,39 @@ Las clases abstractas son clases que pueden ser subclasificadas (es decir, exten
 
 Considere el siguiente ejemplo para entender las clases abstractas: Usted tiene una Clase de Vehículo que define ciertas funcionalidades básicas (métodos) y ciertos componentes (variables de objeto) que una maquinaria debe tener, para ser clasificada como un vehículo. No puede crear un objeto de Vehículo porque un vehículo en sí mismo es un concepto abstracto. Sin embargo, puede ampliar la funcionalidad de la clase de vehículo para crear un automóvil o una motocicleta.
 
-\`\` \`java clase abstracta vehículo { // variable que se utiliza para declarar el no. de ruedas en un vehículo ruedas int privadas;
+``` java
+abstract class Vehiculo
+{
+  //variable usada para declarar el número de ruedas de un vehiculo
+  private int ruedas;
+  
+  //Variable para definir el tipo de motor del vehiculo
+  private Motor motor;
+  
+  //un metodo abstracto que solo declara, pero no define la funcionalidad de encendido
+  //porque cada vehiculo tiene su mecanismo especifico de encendido
+  abstract void encender();
+}
 
-// Variable para definir el tipo de motor utilizado. Motor privado;
+public class Car extends Vehiculo
+{
+  ...
+}
 
-// un método abstracto que solo declara, pero no define el inicio // funcionalidad porque cada vehículo usa un mecanismo de arranque diferente inicio vacío abstracto (); }
-
-Vehículo público de clase amplía vehículo. { ... }
-
-Clase pública de motocicleta extiende vehículo { ... }
+public class Motorcycle extends Vehiculo
+{
+  ...
+}
 ```
-You cannot create an object of Vehicle class anywhere in your program. You can however, extend the abstract vehicle class and create objects of the child classes; 
+
+No puedes crear un objeto de la clase Vehiculo en cualquier sitio de la aplicación, Sin embargo, puedes extender la clase abstracta Vehiculo y crear objetos de la clase hijo.
+
+``` java
+Vehicle newVehicle = new Vehicle();    // Invalido
+Vehicle car = new Car();  // Valido
+Vehicle mBike = new Motorcycle();  // Valido
+
+Car carObj = new Car();  // Valido
+Motorcycle mBikeObj = new Motorcycle();  // Valido
 ```
-
-Java Vehículo newVehicle = new Vehicle (); // Invalido Vehículo de vehículo = Coche nuevo (); // válido Vehículo mBike = nueva motocicleta (); // válido
-
-Car carObj = nuevo Car (); // válido Motocicleta mBikeObj = nueva motocicleta (); // válido \`\` \`
+Si la clase hijo no implementa los metodos abstractos del padre, se convierte en clase abstracta.
