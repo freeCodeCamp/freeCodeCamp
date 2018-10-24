@@ -21,4 +21,4 @@ Ejemplo:
  </html> 
 ```
 
-Nota: `The size attribute of <font> is not supported in HTML5. Use CSS instead.`
+Nota: `El atributo de tamaño de fuente no está soportado en HTML5. Usa CSS en su lugar.`
