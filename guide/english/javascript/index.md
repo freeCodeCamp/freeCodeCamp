@@ -17,7 +17,7 @@ The official name of JavaScript is ECMAScript defined under Standard [ECMA-262](
 If you want to learn more about the JavaScript language, and why it's so widely used, read Quincy Larson's article - [Which programming language should I learn first?](https://medium.freecodecamp.org/what-programming-language-should-i-learn-first-%CA%87d%C4%B1%C9%B9%C9%94s%C9%90%CA%8C%C9%90%C9%BE-%C9%B9%C7%9D%CA%8Dsu%C9%90-19a33b0a467d) -
 or watch this [inspiring video from Preethi Kasireddy](https://www.youtube.com/watch?v=VqiEhZYmvKk).
 
-To understand JavaScript engines, go here to check out [A Guide to JavaScript Engines for Idiots](https://developer.telerik.com/featured/a-guide-to-javascript-engines-for-idiots/)
+To understand JavaScript engines, go here to check out Jen Loopers [A Guide to JavaScript Engines for Idiots](https://developer.telerik.com/featured/a-guide-to-javascript-engines-for-idiots/)
 
 ## Standalone JavaScript engines
 Mozilla's SpiderMonkey, the first JavaScript engine ever written, currently used in Mozilla Firefox.
