@@ -4,11 +4,11 @@ localeTitle: Hola mundo swift
 ---
 \## Hola Mundo
 
-Solo tenemos que agregar el método `print("Hello World")` (de la biblioteca UIKit) a la función `viewDidLoad()` de la clase \`ViewController:
+Para escribir el famoso `Hola Mundo` tenemos que agregar el método `print("Hello World")` (de la biblioteca UIKit) a la función `viewDidLoad()` de la clase \`ViewController:
 
-\`\` \`Swift importar UIKit
+\`\` \`Swift import UIKit
 
-clase ViewController: UIViewController {
+class ViewController: UIViewController {
 ```
 override func viewDidLoad() { 
     super.viewDidLoad() 
