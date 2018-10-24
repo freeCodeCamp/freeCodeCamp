@@ -6,10 +6,10 @@ title: Lists
 Lists are used to display items. There are 3 types of lists: _ordered lists_, _unordered lists_, and _description lists_.
 
 ## Ordered lists
-An _ordered list_ is used to describe an ordered collection of data. Browsers usually display an ordered list as a numbered list. Create an ordered list using the `<ol>` tag.
+An _ordered list_ is used to describe an ordered collection of data. Browsers usually display an ordered list as a numbered list. Create an ordered list using the `<ol></ol>` tag.
 
 ## Unordered lists
-An _unordered list_ is used to describe an unordered collection of data. Browsers usually display an unordered list as a bulleted list. Create an unordered list using the `<ul>` tag.
+An _unordered list_ is used to describe an unordered collection of data. Browsers usually display an unordered list as a bulleted list. Create an unordered list using the `<ul></ul>` tag.
 
 ## List items
 The direct children of ordered and unordered lists must be list items. Each list item is wrapped in an `<li>` tag. A list item tag can contain [flow content](https://developer.mozilla.org/en-US/docs/Web/Guide/HTML/Content_categories#Flow_content).
