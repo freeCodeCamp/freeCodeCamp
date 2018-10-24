@@ -55,3 +55,4 @@ rm /s name_of_directory_you_want_to_delete
 - If you know the path to a file or directory can type `cd PATH_TO_YOUR_DIRECTORY` instead of changing directories several times to get to a directory or file 
 - Use `cd ..` to move to the previous parent directory
 - When you hit the up arrow key your previously entered command will appear and if you hit it repeatedly it will cycle through all of your previously entered commands 
+- You can change the color of your terminal font and background. `color ?` will give you a list of these colors. 
