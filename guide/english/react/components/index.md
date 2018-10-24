@@ -19,11 +19,11 @@ ReactDOM.render(
 
 ```
 
-The value ```name="Faisal Arkan"``` will be assigned to ```{props.name}``` from ```function Welcome(props)``` and returns a component ```<h1>Hello, Faisal Arkan</h1>``` which is saved into the const variable ```element```. The component can then be rendered via ```ReactDOM.render(element, document.getElementById('root'));```. ```document.getElementById('root')``` in this case is the target location you would like the ```element``` component to be rendered.
+The value ```name="Faisal Arkan"``` will be assigned to ```{props.name}``` from ```function Welcome(props)``` and returns a jsx ```<h1>Hello, Faisal Arkan</h1>``` which is saved into the const variable ```element```. The component can then be rendered via ```ReactDOM.render(element, document.getElementById('root'));```. ```document.getElementById('root')``` in this case is the target location you would like the ```element``` component to be rendered.
 
 ### Other ways to declare components
 
-There are many ways to declare components when using React.js, but there are two kinds of components, ***stateless*** components and ***stateful*** components.
+There are many ways to declare components when using React.js, but there are two kinds of components, ***stateless(functional)*** components and ***stateful(class)*** components.
 
 ### Stateful
 
