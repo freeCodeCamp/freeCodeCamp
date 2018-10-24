@@ -20,7 +20,7 @@ where...
 - `[range]` indicates the lines to search (e.g. `1`: first line, `$`: last line, `%`: all lines).
 - `[pattern]` is the text pattern to be searched.
 - `[string]` is the string that will replace the text pattern.
-- `[flags]` turn on additional search and replace options (e.g. `c`: confirm substitution, `g`: replace all occurences in each line, `i`: ignore case).
+- `[flags]` turn on additional search and replace options (e.g. `c`: confirm substitution, `g`: replace all occurrences in each line, `i`: ignore case).
 - `[count]` replaces in `[count]` lines starting from the last line in `[range]` (or current line if `[range]` omitted).
 
 ### Common Examples
