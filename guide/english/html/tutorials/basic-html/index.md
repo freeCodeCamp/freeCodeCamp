@@ -1,7 +1,7 @@
 ---
 title: Basic HTML
 ---
-## Basic HTML
+## Basic HTML(Hypertext Markup Language)
 
 This is a stub. <a href='https://github.com/freecodecamp/guides/tree/master/src/pages/html/tutorials/basic-html/index.md' target='_blank' rel='nofollow'>Help our community expand it</a>.
 
@@ -24,5 +24,5 @@ Structure of a basic HTML file:
 ```
 #### More Information:
 <!-- Please add any articles you think might be helpful to read before writing the article -->
-
+(https://www.w3schools.com/html/html_basic.asp)
 
