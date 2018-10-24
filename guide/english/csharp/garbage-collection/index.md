@@ -34,3 +34,4 @@ If an object has no references (is no longer reachable) then it is eligible for 
 #### More Information:
  -<!-- Please add any articles you think might be helpful to read before writing the article -->
  +- https://docs.microsoft.com/en-us/dotnet/standard/garbage-collection/fundamentals - To know more about garbage Collection
+ + https://www.microsoftpressstore.com/store/clr-via-c-sharp-9780735667457 - CLR Via C# by Jeffrey Richter
