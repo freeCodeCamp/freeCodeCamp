@@ -1,0 +1,9 @@
+Bwlow is the command to kill a range of consecutive processes in Linux:
+
+Use the shell's brace expansion syntax:
+
+$kill {3457..3464}
+
+which expands to:
+$ kill 3457 3458 3459 3460 3461 3462 3463 3464
+
