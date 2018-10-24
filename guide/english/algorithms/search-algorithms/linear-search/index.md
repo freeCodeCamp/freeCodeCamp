@@ -122,9 +122,8 @@ int linearSearch(int[] arr, int element)
 ### Example in PHP
 
 ```PHP
-function linear_search($arr,$num)
+function linear_search($arr,$n,$num)
 {
-        $n = count($arr);
 	for( $i=0; $i<$n; $i++){
 		if($arr[$i] == $num)
 			return $i;
@@ -132,6 +131,7 @@ function linear_search($arr,$num)
    // Item not found in the array
    return -1; 
 }
+
 ```
 
 ## Global Linear Search
