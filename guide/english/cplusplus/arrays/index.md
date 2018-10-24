@@ -40,3 +40,14 @@ x = numbers[0]; // = 1. [0] == first position
 numbers[2] = 55; // Sets the third position (3) to the new number 55
 //numbers[] is now: {1, 2, 55, 4, 5}
 ```
+**TWO DIMENSION ARRAYS**
+  2-d array consists of two dimensions as opposed to single dimension array,i.e., column and row.
+  2d array is also known as matrix.
+  DEFINITION of 2d array:
+    //int arr[][]
+    //Instead of 1 parenthesis we use 2 brackets
+    First bracket denotes  number of rows and second bracket denote number of columns
+    example: int a[2][3];
+    **This creates a matrix with two rows and 3 columns.
+    To access an element in first row and second colums we write:**
+      a[0][1];
