@@ -39,6 +39,6 @@ Second, a name cannot use some special symbols, like  `^,  !,  $,  @,  +,  -,  /
 
 ## References
 
- * [Official Docs](https://cran.r-project.org/manuals.html' target='_blank)
+ * [Official Docs](https://cran.r-project.org/manuals.html)
  * [Objects in R by r-bloggers](https://www.r-bloggers.com/classes-and-objects-in-r/)
  * [CRAN](https://cran.r-project.org/doc/manuals/r-release/R-lang.html)
