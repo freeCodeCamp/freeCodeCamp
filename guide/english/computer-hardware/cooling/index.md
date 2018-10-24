@@ -23,3 +23,5 @@ Room ventilation - Locate the computer where it is neutral to the rooms environm
 * Cable Management = Having a rat's nest of cables can block airflow and make your computer hotter. It is reccomended to take some time to cable manage after building a computer, because it can increase the lifespan of your computer in the future.
 
 [Wikipedia - Article on computer cooling](https://en.wikipedia.org/wiki/Computer_cooling)
+
+My changes.
