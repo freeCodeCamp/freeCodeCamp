@@ -6,7 +6,7 @@ localeTitle: Introdução ao CSS
 
 ### O que é CSS?
 
-Cascading Style Sheets (CSS) descrevem como o html em uma página deve aparecer.
+Cascading Style Sheets (CSS) descrevem como o html de uma página web irá aparecer, sendo um mecanismo para adicionar estilo (cores, fontes, espaçamento, etc.).
 
 Antes que os desenvolvedores CSS aplicassem estilos usando atributos ou tags especiais em cada nó de uma página. Isso tornou a marcação repetitiva e propensa a erros.
 
@@ -53,3 +53,4 @@ body {
 *   [W3Schools](https://www.w3schools.com/css/css_intro.asp)
 *   [Almanaque CSS-Tricks](https://css-tricks.com/almanac/)
 *   [Sitepoint](https://www.sitepoint.com/html-css/?ref_source=github)
+*   [Wikipedia](https://pt.wikipedia.org/wiki/Cascading_Style_Sheets)
