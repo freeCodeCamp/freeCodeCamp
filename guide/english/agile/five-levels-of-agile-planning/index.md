@@ -14,15 +14,15 @@ Agile planning is always continuous and should be revised at least every three m
 
 ## Brief Synopsis of the Five Levels of Agile Planning
 
- - Product Vision: What (Summary of the major benefits & features the product will provide), Who (Stakeholders), Why (Need & Opportunity), When (Project scheduling & time expectations), Constraints and Assumptions (impacts risk & cost).
+ Product Vision: What (Summary of the major benefits & features the product will provide), Who (Stakeholders), Why (Need & Opportunity), When (Project scheduling & time expectations), Constraints and Assumptions (impacts risk & cost).
  
- - Product Roadmap: Releases - Date, Theme/Feature Set, Objective, Development Approach.
+ Product Roadmap: Releases - Date, Theme/Feature Set, Objective, Development Approach.
  
- - Release Planning: Iteration, Team Capacity, Stories, Priority, Size, Estimates, Definition of Done.
+ Release Planning: Iteration, Team Capacity, Stories, Priority, Size, Estimates, Definition of Done.
  
- - Sprint Planning: Stories - Tasks, Definition of Done, Level-of Effort, Commitment
+ Sprint Planning: Stories - Tasks, Definition of Done, Level-of Effort, Commitment
  
- - Daily Planning: What did I do yesterday? What will I do today? What is blocking me?
+ Daily Planning: What did I do yesterday? What will I do today? What is blocking me?
 
 ### Visual Representation
 
