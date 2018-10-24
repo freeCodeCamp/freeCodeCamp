@@ -36,7 +36,10 @@ mkdir | Create a new directory
 touch | Create a new file
 cp| Copy a file 
 rm | Remove a file 
-rm -rf | Remove a directory 
+rm -rf | Remove a directory recurcively
+cat | concatenate and print files
+ps | list all running processes
+find | find files and directories
 
 ### Usage Examples
 
@@ -60,7 +63,7 @@ Use the following syntax to copy a file from the terminal:
 
 For example, if we have a file, _'test.txt'_ that is stored in our _/Desktop_ directory and we want to copy it to the _/Documents_ folder, our command would look like this: 
 
-    cp ~/Desktop/test.txt ~/Documents
+```cp ~/Desktop/test.txt ~/Documents ```
 
 #### Deleting a File 
 
