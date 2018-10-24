@@ -20,7 +20,26 @@ Assignment operators, as the name suggests, assign (or re-assign) values to a va
 
     let newVar = 5;
     newVar = 6;   // Variable values can be modified using an assignment operator
+    
 ```
+
+## Value vs. Reference
+
+One potential source of headaches is that Javascript assigns primitives (strings and numbers) by *value*, but assigns Objects and Arrays by *reference*. What this means is that when you copy a variable containing a number, you are truly making a copy, and any manipulations you make on the new variable will not affect the original. When you copy and Array, on the other hand, you have a reference to the same Array in memory, and any changes made on the copy will affect the original. For example:
+```javascript
+    let x = 5;
+    let y = x;
+    y = y + 1;
+    console.log(y); // 6
+    console.log(x); // 5
+    
+    let x = [1, 2, 3];
+    let y = x;
+    y.push(4);
+    console.log(y); // [1, 2, 3, 4]
+    console.log(x); // [1, 2, 3, 4]
+  ```
+
 ## Variations
 
 The other assignment operators are usually shorthand methods for performing standard operations using the variable (indicated by x above) and value (indicated by y above) and then assigning the result to the variable itself.
