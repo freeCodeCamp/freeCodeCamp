@@ -105,7 +105,7 @@ Esto resultará en - `La longitud de la cadena es : 18`
 1.  Los métodos de cadena utilizan índices basados ​​en cero, a excepción del segundo argumento de `substring()` .
 2.  La clase String es final, y sus métodos no se pueden sobreescribir.
 3.  Cuando la JVM encuentra un literal de String, se agrega a la reserva de literal de String.
-4.  La clase String posee un método  `length()` , mientras que las matrices tienen una longitud de nombre de atributo.
+4.  La clase String posee un método de nombre `length()` , mientras que los arreglos tienen un atributo lenght de nombre de atributo.
 5.  En java, los objetos de cadena son inmutables. Inmutable simplemente significa inmodificable o inmutable. Una vez que se crea el objeto de cadena, sus datos o estado no se pueden cambiar, pero se crea un nuevo objeto de cadena.
 
 Longitud de la cuerda
@@ -139,7 +139,7 @@ String a = "Sam";
 
 ```
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMTU5MDIxNTM0LC0xNDg3NjE0MTQsODIwND
+eyJoaXN0b3J5IjpbNzkyOTkxMDA4LC0xNDg3NjE0MTQsODIwND
 M0ODcwLC0xODkyMDc1MTc0LC02Njg2NzA1NDksMTA1MDA4ODA2
 OSw4NDg5NTc0MTUsMTkzNjc1MTgxMF19
 -->
