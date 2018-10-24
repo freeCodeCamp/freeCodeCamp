@@ -3,13 +3,19 @@ title: Triangle
 ---
 ## Triangle
 
-This is a stub. <a href='https://github.com/freecodecamp/guides/tree/master/src/pages/mathematics/triangle/index.md' target='_blank' rel='nofollow'>Help our community expand it</a>.
+A triangle is a basic 2 dimensional geometric shape which is best described as a 3 sided polygon. The sum of it's internal angles is 180°.
 
-<a href='https://github.com/freecodecamp/guides/blob/master/README.md' target='_blank' rel='nofollow'>This quick style guide will help ensure your pull request gets accepted</a>.
+A triange comes in 3 basic layouts.
 
-<!-- The article goes here, in GitHub-flavored Markdown. Feel free to add YouTube videos, images, and CodePen/JSBin embeds  -->
+*Equilateral Triangle.
+This is defined by having sides which aer all the same length. It is a regular polygon with all angles measuring 60°.
 
-#### More Information:
-<!-- Please add any articles you think might be helpful to read before writing the article -->
+*Isosceles triangle 
+This has two sides of equal length and two internal angles of the same measure.
+
+*A scalene triangle 
+This triangle has all 3 sides of different lengths and all 3 angles of a different measure.
+
+
 
 
