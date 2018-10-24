@@ -106,11 +106,11 @@ Esto resultará en - `La longitud de la cadena es : 18`
 2.  La clase String es final, y sus métodos no se pueden sobreescribir.
 3.  Cuando la JVM encuentra un literal de String, se agrega a la reserva de literal de String.
 4.  La clase String posee un método de nombre `length()` , mientras que los arreglos tienen un atributo llamado length.
-5.  En java, los objetos String son inmutables. Inmutable simplemente significa inmodificable o inalterable. Una vez que se crea el objeto String, sus datos o estado no se pueden cambiar, ero se crea un nuevo objeto de cadena.
+5.  En java, los objetos String son inmutables. Inmutable simplemente significa inmodificable o inalterable. Una vez que se crea el objeto String, sus datos o estado no se pueden cambiar, si no que se crea un nuevo objeto String.
 
 Longitud de la cuerda
 
-La "longitud" de una cadena es solo el número de caracteres que contiene. Así que "hi" es la longitud 2 y "Hello" es la longitud 5. El método length () en una cadena devuelve su longitud, de esta manera:
+La "longitud" de una cadena es solo el número de caracteres que contiene. Así que "hi" es de  longitud 2 y "Hola" es la longitud 4. El método length() en una cadena devuelve su longitud, de esta manera:
 
 ```java
 String a = "Hello"; 
@@ -139,7 +139,7 @@ String a = "Sam";
 
 ```
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTE4NjEyOTQzNDksLTE0ODc2MTQxNCw4Mj
-A0MzQ4NzAsLTE4OTIwNzUxNzQsLTY2ODY3MDU0OSwxMDUwMDg4
-MDY5LDg0ODk1NzQxNSwxOTM2NzUxODEwXX0=
+eyJoaXN0b3J5IjpbNDQzNjU0NjIsLTE0ODc2MTQxNCw4MjA0Mz
+Q4NzAsLTE4OTIwNzUxNzQsLTY2ODY3MDU0OSwxMDUwMDg4MDY5
+LDg0ODk1NzQxNSwxOTM2NzUxODEwXX0=
 -->
