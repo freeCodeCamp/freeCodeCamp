@@ -17,23 +17,23 @@
 
 Salut 👋!
 
-freeCodeCamp.org este posibil datorită miilor de voluntari și tine . Suntem recunoscători pentru contribuțiile voastre și suntem încântați să vă întâmpinăm la bord.
+freeCodeCamp.org este posibil datorită miilor de voluntari ca și tine . Suntem recunoscători pentru contribuțiile voastre și suntem încântați să vă întâmpinăm la bord.
 
 Aplicăm cu strictețe ["Codul nostru de conduită"](https://www.freecodecamp.org/code-of-conduct). Ia-ți un moment să il citești. Sunt doar 196 de cuvinte de citit.
 
 Iți urăm contribuține plăcută 🎉!
 
-## Aici sunt câteva moduri plăcute în ne poți ajuta
+## Aici sunt câteva moduri plăcute în care ne poți ajuta
 
-Poți alege să contribuiești în orice arie/domeniu care te interesează:
+Poți alege să contribui în orice arie/domeniu care te interesează:
 
-1. [Contribuiește la codul open source al aceastei pagine.](#contribute-to-this-open-source-codebase). Ajutâ la editarea [articolelor de orientare](https://guide.freecodecamp.org/), la [provocările de codare](https://learn.freecodecamp.org/) sau la corectarea erorilor de pe platforma de învățare.
+1. [Contribuie la codul open source al aceastei pagini.](#contribute-to-this-open-source-codebase). Ajută la editarea [articolelor de orientare](https://guide.freecodecamp.org/), la [provocările de codare](https://learn.freecodecamp.org/) sau la corectarea erorilor de pe platforma de învățare.
 
-2. Ajută-i pe colegii de pe [forumul public](https://www.freecodecamp.org/forum/). [Răspunde la întrebările lor de codare](https://www.freecodecamp.org/forum/?max_posts=1) sau [oferăle feedback cu privire la proiectele lor de codare](https://www.freecodecamp.org/forum/c/project-feedback?max_posts=1)
+2. Ajută-i pe colegii de pe [forumul public](https://www.freecodecamp.org/forum/). [Răspunde la întrebările lor de codare](https://www.freecodecamp.org/forum/?max_posts=1) sau [oferă-le feedback cu privire la proiectele lor de codare](https://www.freecodecamp.org/forum/c/project-feedback?max_posts=1)
 
 3. Ajută-ne să adăugăm subtitrări în [videoclipurile canalului YouTube](https://www.youtube.com/channel/UC8butISFwT-Wl7EV0hUK0BQ/videos).
 
-## Contribuiește la codul open source al aceastei pagine
+## Contribuie la codul open source al aceastei pagini
 
 Avem o vastă bază de open source cu mii de [provocări de codare](https://learn.freecodecamp.org) și [articole de orientare](https://guide.freecodecamp.org).
 
@@ -61,15 +61,15 @@ Noi încurajăm ajutorul tău pentru a scrie aceste articole. Nu trebuie să fii
 
 Pentru a-ți fi de ajutor, găsește un "articol stub/trunchi" pe site-ul [Ghidul website-ului nostru](https://www.freecodecamp.org/guide), scrie articolul, apoi deschide o solicitare de integrare a modificărilor tale pentru a înlocui stubul cu articolul tău. O [solicitare de integrare a modificărilor] (https://help.github.com/articles/about-pull-requests/) este modul în care vei sugera modificările. Permite altora să știe despre modificările tale, să le revizuiască și să le adopte.
 
-Dacă nu poți găsi un articol stub/trunchi despre subiectul despee care dorești să scrii, poți deschide un PR care creează un stub și include schița articolul tău.
+Dacă nu poți găsi un articol stub/trunchi despre subiectul despre care dorești să scrii, poți deschide un PR care creează un stub și include schița articolul tău.
 
-Dacă dorești să contribuiești la îmbunătățirea articolelor de orientare, iată [cum să lucrezi cu articole de ghid](/docs/how-to-work-on-guide-articles.md).
+Dacă dorești să contribui la îmbunătățirea articolelor de orientare, iată [cum să lucrezi cu articole de ghid](/docs/how-to-work-on-guide-articles.md).
 
 ### Crează, Actualizează și Corectează erorile în provocările noastre de codare
 
 Toate provocările de codare sunt întreținute de comunitate, aducând cunoștințe de specialitate de la voluntari ca tine.
 
-Tu poți ajuta să le extinzi și să le clarifichezi formularea. Poți actualiza povestirile utilizatorilor pentru a explica mai bine conceptul și chiar a elimina pe cele care se repetă. De asemenea, poți îmbunătăți testele provocărilor pentru a le face mai corect când ceilalți testează codul.
+Tu poți ajuta să le extinzi și să le clarifici formularea. Poți actualiza povestirile utilizatorilor pentru a explica mai bine conceptul și chiar a elimina pe cele care se repetă. De asemenea, poți îmbunătăți testele provocărilor pentru a le face mai corect când ceilalți testează codul.
 
 Dacă ești interesat să îmbunătățești aceste provocări de codare, iată [cum să lucrezi la provocările de codare](/docs/how-to-work-on-coding-challenges.md).
 
@@ -96,13 +96,13 @@ In linii mari,
 - Un set de aplicații client bazate pe React.
 - Un script pe care îl folosim pentru a evalua proiectele noastre Frontend.
 
-Contribuind la acest lucru este nevoie de o înțelegere a API-urilor, sintaxei ES6 și o mulțime de curiozitate.
+Contribuind la acest lucru este nevoie de o înțelegere a API-urilor, sintaxei ES6 și o mare curiozitate.
 
-În esență, ne așteptăm la o anumită familiaritate de bază, cu unele dintre tehnologiile, instrumentele și bibliotecile menționate mai sus. Acestea fiind spuse, nu ți se cere să fii un expert la ele.
+În esență, ne așteptăm la o anumită familiaritate de bază, cu unele dintre tehnologiile, instrumentele și bibliotecile menționate mai sus. Acestea fiind spuse, nu ți se cere să fii un expert in ele.
 
-Simte-te liber să ne pui întrebări, cu privire la subiectele legate de acest subiect, și vom fi bucuroși să clarificăm. Când ai dubii, poți contacta pe Mrugesh Mohapatra Mrugesh Mohapatra [`@raisedadead`](https://github.com/raisedadead) sau Stuart Taylor [`@bouncey`](https://github.com/bouncey) de pe platforma noastră dev echipa pentru a te ajuta în acest sens.
+Simte-te liber să ne pui întrebări, cu privire la problemele legate de acest subiect, și vom fi bucuroși să le clarificăm. Când ai dubii, poți contacta pe Mrugesh Mohapatra [`@raisedadead`](https://github.com/raisedadead) sau Stuart Taylor [`@bouncey`](https://github.com/bouncey) din echipa de devi a platformei noastre pentru a te ajuta în acest sens.
 
-Dacă dorești să ne ajutați să îmbunătățim codul nostru, iată [cum să configurezi freeCodeCamp local](/docs/how-to-setup-freecodecamp-locally.md).
+Dacă dorești să ne ajuti să îmbunătățim codul nostru, iată [cum să configurezi freeCodeCamp local](/docs/how-to-setup-freecodecamp-locally.md).
 
 
 ## Întrebări frecvente
@@ -115,7 +115,7 @@ Dacă ești convins că este vorba despre un bug nou, continuă și crează o no
 
 Te rugăm să reții că orice problemă care solicită ajutor pentru codiul provocarii, va fi închisă. Problema tracker-ului este strict pentru problemele și discuțiile legate de codul de basă. Ar trebui să [solicitezi asistență pe forum](https://www.freecodecamp.org/forum) înainte de a raporta ori de câte ori ai îndoieli.
 
-**Cum pot raporta o problemă de securitate?**
+**Cum poate raporta o problemă de securitate?**
 
 Te rugăm să nu creezi probleme GitHub pentru probleme de securitate. În schimb, trimite un e-mail la adresa `security@freecodecamp.org`și o vom examina imediat.
 
