@@ -6,7 +6,9 @@ localeTitle: Rápido
 
 # ¿Qué es Swift?
 
-Swift es un lenguaje de programación de [código abierto](https://en.wikipedia.org/wiki/Open-source_software) y de propósito general desarrollado por Apple Inc. Lo describen como:
+Swift es un lenguaje de programación de [código abierto](https://en.wikipedia.org/wiki/Open-source_software) y de propósito general desarrollado por Apple Inc. 
+
+Apple describe Swift de la siguiente forma:
 
 > Swift es un lenguaje de programación potente e intuitivo para macOS, iOS, watchOS y tvOS. Escribir código Swift es interactivo y divertido, la sintaxis es concisa pero expresiva, y Swift incluye características modernas que encantan a los desarrolladores. El código Swift es seguro por diseño, pero también produce un software que funciona a la velocidad de la luz. 1
 
@@ -14,7 +16,9 @@ Swift es un lenguaje de programación de [código abierto](https://en.wikipedia.
 
 # Lo esencial
 
-Para declarar una variable en Swift, simplemente use var seguido del nombre de su variable.
+Una variable es una forma de representar datos, al igual que se usa X e Y en matemáticas, la principal característica de estas es que las variables las puedes cambiarlas de valor cuando lo necesites.
+
+Para declarar una variable en Swift, simplemente debes usar 'var' seguido del nombre de su variable.
 
 ```Swift
 var x = 6 
@@ -25,6 +29,7 @@ var x = 6
 ```
 
 Las constantes son similares a las variables, pero no pueden cambiar de valor después de la creación.
+Para crearlas debes usa 'let'.
 
 ```Swift
 let x = 6 
@@ -32,7 +37,9 @@ let x = 6
  let boole = true 
 ```
 
-Para imprimir cualquier cosa en la salida estándar, simplemente use print () y coloque su salida entre paréntesis.
+print() es la función encargada de imprimir cualquier elemento por la salida estándar, normalmente la salida estandar es el monitor del ordenador.
+
+Si quieres mostrar contenido de tu programa al usuario de este puedes usar print(), colocando lo que quieres mostrar entre los parentesis. 
 
 ```Swift
 let x = "World" 
@@ -56,7 +63,7 @@ Swift está muy documentado. Tenga en cuenta que la codificación de Swift no so
 *   [Guía de idiomas](https://developer.apple.com/library/content/documentation/Swift/Conceptual/Swift_Programming_Language/) : tiene una descripción general de casi todas las funciones de Swift. Si se confunde al leer el código de otra persona, este documento puede ayudarlo.
     
 
-# ¿Querer aprender más?
+# ¿Quieres aprender más?
 
 *   [RayWenderlich.com](https://www.raywenderlich.com/) : tiene muchos tutoriales excelentes para el desarrollo de Swift y iOS.
 *   [Hackear con Swift](https://www.hackingwithswift.com/read) : un tutorial completo de Swift, que te lleva de principiante a avanzado usando proyectos prácticos.
