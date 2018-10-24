@@ -54,7 +54,7 @@ namespace ErrorHandling
  * In the above program passing 0 as second parameter will throw DivideByZeroExceptions. 
  * This exception will handled by the catch block which has DivideByZeroException class. If any exceptions other than DivideByZeroExceptions occur, they will be handled by Exception catch block.
  
- Exception is the base class for all the exceptions classes available in C# library. Even if you want to write your own exception, you have to inherit the Exception base class into your program.
+ Exception is the base class for all the exceptions classes available in C# library. Even if you want to write your own exception, you have to inherit the Exception base class into your program. This should be same for C++.
 
 #### More Information:
 <!-- Please add any articles you think might be helpful to read before writing the article -->
