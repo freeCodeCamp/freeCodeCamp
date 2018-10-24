@@ -137,11 +137,11 @@ La "longitud" de una cadena es solo el número de caracteres que contiene. Así 
  System.out.println(a.compareTo(b));       // 0 
  System.out.prinltn(a.compareTo(c));       // 1 ya que (a>b) 
  System.out.println(c.compareTo(a));       // -1 ya que (c<a) 
-
 ```
+
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTE0Nzg2NDExMCwxMDg5MzU1MDE2LC0xNT
-g4ODk0MDI0LC02MzIxMjAzNzgsLTE0ODc2MTQxNCw4MjA0MzQ4
-NzAsLTE4OTIwNzUxNzQsLTY2ODY3MDU0OSwxMDUwMDg4MDY5LD
-g0ODk1NzQxNSwxOTM2NzUxODEwXX0=
+eyJoaXN0b3J5IjpbLTE1OTczMjc1NCwtMTQ3ODY0MTEwLDEwOD
+kzNTUwMTYsLTE1ODg4OTQwMjQsLTYzMjEyMDM3OCwtMTQ4NzYx
+NDE0LDgyMDQzNDg3MCwtMTg5MjA3NTE3NCwtNjY4NjcwNTQ5LD
+EwNTAwODgwNjksODQ4OTU3NDE1LDE5MzY3NTE4MTBdfQ==
 -->
