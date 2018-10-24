@@ -12,15 +12,16 @@ Los Strings son secuencias de caracteres. En Java, un `String` es un `Object`. L
 ```
 
 Salida:
-```
+```java
  true 
 ```
 
 Puede crear un objeto String de las siguientes maneras:
-
-1.  `String str = "Yo soy una Cadena"; // como una cadena literal`
+```java
+1.  String str = "Yo soy una Cadena"; // como una cadena literal`
 2.  `String str = "Yo soy una " + "Cadena"; // como una expresion constante`
-3.  `String str = new String("I am a String"); // como un objeto String usando el constructor`
+3.  `String str = new String("I am a String"); // como un objeto String usando el constructor
+4. ```
 
 Usted podría estar pensando: ¿Cuál es la diferencia entre los tres?
 
@@ -139,8 +140,8 @@ La "longitud" de una cadena es solo el número de caracteres que contiene. Así 
 
 ```
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTE1ODg4OTQwMjQsLTYzMjEyMDM3OCwtMT
-Q4NzYxNDE0LDgyMDQzNDg3MCwtMTg5MjA3NTE3NCwtNjY4Njcw
-NTQ5LDEwNTAwODgwNjksODQ4OTU3NDE1LDE5MzY3NTE4MTBdfQ
-==
+eyJoaXN0b3J5IjpbLTExOTIyNjkwLC0xNTg4ODk0MDI0LC02Mz
+IxMjAzNzgsLTE0ODc2MTQxNCw4MjA0MzQ4NzAsLTE4OTIwNzUx
+NzQsLTY2ODY3MDU0OSwxMDUwMDg4MDY5LDg0ODk1NzQxNSwxOT
+M2NzUxODEwXX0=
 -->
