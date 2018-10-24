@@ -8,6 +8,7 @@ Cloud development is the usage of software engineering practices on infrastructu
 Popular choices for Public Cloud providers are Amazon Web Services, Microsoft Azure, and Google Compute Engine. These providers operate clusters of massive datacenters whereby thousands of different individuals, companies, and organizations consume these resources. Operating the Cloud involves enabling the partitioning of these shared resources for the usage of these different users. The consumption of the resources is tracked (also referred to as metered) and then billed back to the user depending on the different financial scheme for the various compute, network, and storage resources consumed.
 
 Many modern websites and big data efforts are said to be developed in the Cloud, meaning they are operating in some of these massive shared datacenters.
+See some benefits of Cloud apps at (https://cdn.ttgtmedia.com/rms/onlineImages/cloud_apps-benefits_of_cloud_apps_desktop.jpg) .
 
 #### More Information:
 
