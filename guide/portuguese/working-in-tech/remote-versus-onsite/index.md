@@ -18,7 +18,7 @@ Como a comunicação em pessoa ocorre com menos freqüência (se é que acontece
 
 As equipes remotas podem hospedar retiros regulares da empresa para que os membros da equipe possam se encontrar e sair.
 
-### O "entre"
+### O "meio-termo"
 
 Algumas empresas estão 100% no local e algumas são 100% remotas. Mas não é incomum encontrar empresas ou equipes que permitem que você trabalhe remotamente um ou dois dias por semana. Isso permite que você experimente alguns dos benefícios do trabalho remoto, sem ser remoto o tempo todo.
 
@@ -32,4 +32,4 @@ As empresas maiores podem ter uma versão diferente do "intermediário", onde t�
 
 ### Mais Informações:
 
-Quincy Larson sobre a economia de trabalhar remotamente: [médio](https://medium.freecodecamp.org/the-economics-of-working-remotely-28d4173e16e2)
+Quincy Larson sobre a economia de trabalhar remotamente: [Medium](https://medium.freecodecamp.org/the-economics-of-working-remotely-28d4173e16e2)
