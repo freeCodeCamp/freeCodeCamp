@@ -19,5 +19,5 @@ This means that if two transactions execute at the same time, one transaction ca
 This means that once a transaction is complete, it will remain so, even in the event of a power loss or other errors. It guarantees that all of the changes are recorded to a non-volatile storage medium (such as a hard disk), and it makes a record of the completed transaction.
 
 ### More Information:
-- ACID article: <a href='https://en.wikipedia.org/wiki/ACID' target='_blank' rel='nofollow'>Wikipedia</a>
-- Video overview: <a href='https://www.youtube.com/watch?v=LSB4eceRsw8' target='_blank' rel='nofollow'>YouTube</a>
+- ACID article: <a href='https://en.wikipedia.org/wiki/ACID' target='_blank' rel='nofollow'><em>Wikipedia</em></a>
+- Video overview: <a href='https://www.youtube.com/watch?v=LSB4eceRsw8' target='_blank' rel='nofollow'><em>YouTube</em></a>
