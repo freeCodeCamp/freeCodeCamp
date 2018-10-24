@@ -1,10 +1,10 @@
 ---
 title: Add Elements within Your Bootstrap Wells
-localeTitle: Agrega elementos dentro de tus pozos de Bootstrap
+localeTitle: Agrega elementos dentro de tus cajas de Bootstrap
 ---
-## Agrega elementos dentro de tus pozos de Bootstrap
+## Agrega elementos dentro de tus cajas de Bootstrap
 
-En el último desafío, usted creó un div con la clase de pozo, este desafío ahora requiere que agregue 3 elementos de botón en cada uno de los pozos.
+En el último desafío, usted creó un div con la clase caja (well), este desafío ahora requiere que agregue 3 elementos de botón en cada uno de las cajas.
 
 ### Insinuación
 
@@ -17,7 +17,7 @@ Un botón se declara de la siguiente manera:
 
 ### Solución
 
-Como tenemos que declarar 3 botones en cada pozo, haríamos lo siguiente:
+Como tenemos que declarar 3 botones en cada caja, haríamos lo siguiente:
 
 ```html
 

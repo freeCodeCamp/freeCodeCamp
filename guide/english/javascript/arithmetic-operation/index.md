@@ -87,7 +87,7 @@ _Hint:_ There is a handy <a href='https://developer.mozilla.org/en-US/docs/Web/J
 
 **Syntax**
 
-`a++ or ++a`
+`a++, ++a or a+=`
 
 **Usage**
     
@@ -98,12 +98,17 @@ _Hint:_ There is a handy <a href='https://developer.mozilla.org/en-US/docs/Web/J
     // Prefix
     var a = 2;
     b = ++a; // a = 3, b = 3
+    
+    // Advanced
+    var a = 4;
+    var b = 5;
+    a += b; //a = 9, b = 5
 
 ## Decrement
 
 **Syntax**
 
-`a-- or --a`
+`a--, --a or a-=`
 
 **Usage**
     
@@ -114,6 +119,11 @@ _Hint:_ There is a handy <a href='https://developer.mozilla.org/en-US/docs/Web/J
     // Prefix
     var a = 2;
     b = --a; // a = 1, b = 1
+    
+    // Advanced
+    var a = 9;
+    var b = 4;
+    a -= b; //a = 5, b = 4
 _!Important!_ As you can see, you **cannot** perform any sort of operations on `Infinity`.
 
 Source: The amazing <a href='https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Arithmetic_Operators' target='_blank' rel='nofollow'>MDN</a>.

@@ -1,5 +1,5 @@
 const path = require('path');
-require('dotenv').config({ path: path.resolve(__dirname, '../../.env')});
+require('dotenv').config({ path: path.resolve(__dirname, '../../.env') });
 
 const _ = require('lodash');
 const Rx = require('rx');
@@ -17,7 +17,6 @@ log.enabled = true;
 
 Rx.config.longStackSupport = process.env.NODE_DEBUG !== 'production';
 const app = loopback();
-const isBeta = !!process.env.BETA;
 
 expressState.extend(app);
 app.set('state namespace', '__fcc__');
@@ -27,9 +26,25 @@ app.set('view engine', 'jade');
 app.use(loopback.token());
 app.disable('x-powered-by');
 
-boot(app, {
-  appRootDir: __dirname,
-  dev: process.env.NODE_ENV
+const createLogOnce = () => {
+  let called = false;
+  return str => {
+    if (called) {
+      return null;
+    }
+    called = true;
+    return log(str);
+  };
+};
+const logOnce = createLogOnce();
+
+boot(app, __dirname, err => {
+  if (err) {
+    // rethrowing the error here bacause any error thrown in the boot stage
+    // is silent
+    logOnce('The below error was thrown in the boot stage');
+    throw err;
+  }
 });
 
 setupPassport(app);
@@ -44,9 +59,6 @@ app.start = _.once(function() {
       app.get('port'),
       app.get('env')
     );
-    if (isBeta) {
-      log('freeCodeCamp is in beta mode');
-    }
     log(`connecting to db at ${db.settings.url}`);
   });
 

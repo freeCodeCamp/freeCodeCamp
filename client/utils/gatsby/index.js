@@ -71,10 +71,10 @@ exports.createChallengePages = createPage => ({ node }, index, thisArray) => {
     id
   } = node;
   if (challengeType === 7) {
-    return;
+    return null;
   }
 
-  createPage({
+  return createPage({
     path: slug,
     component: getTemplateComponent(challengeType),
     context: {
@@ -96,7 +96,7 @@ exports.createBlockIntroPages = createPage => edge => {
     frontmatter: { block }
   } = edge.node;
 
-  createPage({
+  return createPage({
     path: slug,
     component: intro,
     context: {
@@ -112,7 +112,7 @@ exports.createSuperBlockIntroPages = createPage => edge => {
     frontmatter: { superBlock }
   } = edge.node;
 
-  createPage({
+  return createPage({
     path: slug,
     component: superBlockIntro,
     context: {
@@ -143,8 +143,8 @@ exports.createGuideArticlePages = createPage => ({
     meta.description = description ? description.children[0].value : '';
   }
 
-  createPage({
-    path: slug,
+  return createPage({
+    path: `/guide${slug}`,
     component: guideArticle,
     context: {
       id,

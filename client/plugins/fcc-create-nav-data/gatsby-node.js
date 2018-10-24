@@ -1,13 +1,21 @@
 const { createNavigationNode } = require('./create-navigation-node');
 
-exports.onCreateNode = ({ actions, node }) => {
-  const { internal: {type, identity}} = node;
-  if (type === 'MarkdownRemark' && identity === 'guideMarkdown') {
+exports.onCreateNode = function createNavDataOnCreateNode({ actions, node }) {
+  const {
+    internal: { type },
+    fields
+  } = node;
+  if (
+    type === 'MarkdownRemark' &&
+    fields &&
+    fields.nodeIdentity === 'guideMarkdown'
+  ) {
     if (node.fileAbsolutePath.includes('LICENSE.md')) {
       return null;
     }
     const { createNode } = actions;
-    return Promise.resolve(createNavigationNode(node)).then(createNode);
+    const navNode = createNavigationNode(node);
+    return createNode(navNode);
   }
   return null;
 };
