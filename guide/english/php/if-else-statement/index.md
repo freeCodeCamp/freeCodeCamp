@@ -96,9 +96,9 @@ Also there is an alternative syntax for control structures
 ~~~~
   if (condition1):
     statement1;
-  endif;
-  else
+  else:
     statement5;
+  endif;
 ~~~~
 For more information check out the following link:
 <a href='http://php.net/manual/en/control-structures.alternative-syntax.php' target='_blank' rel='nofollow'>PHP Alternative syntax for control structures</a>
