@@ -17,7 +17,7 @@ Los comentarios de Java no son ejecutados por el compilador y el intérprete.
 Para crear un comentario de una sola línea, simplemente agregue dos `//` barras diagonales antes del texto.
 
 ```java
-// This is how single line comment looks like 
+// Así luce una sola línea de comentario
 ```
 
 #### 2\. Comentario multilínea
@@ -27,9 +27,9 @@ Para crear un comentario de línea múltiple, ajuste las líneas entre `/*` lín
 ```java
 public class MyFirstJava { 
     public static void main(String[] args) { 
-    /* This Java Code 
-       Prints out "Hello world" 
-       and you are looking at a multi line comment 
+    /* Este fragmento de código en Java 
+       imprime "Hola mundo"
+       y estas mirando a un comentario de línea múltiple 
     */ 
         System.out.println("Hello World"); 
     } 
@@ -42,8 +42,8 @@ La herramienta Javadoc utiliza el comentario de la documentación para crear la 
 
 ```java
 /** 
- * The Following Java program displays a random between 0 - 50 
- * Most Developer dont document simple program like this 
+ * Este siguiente programa en Java mostrará un número aleatorio entre 0 - 50 
+ * La mayoría de desarrolladores no documentan un programa así de simple 
  * 
  * @author      Quincy Larson 
  * @version     1.0 
