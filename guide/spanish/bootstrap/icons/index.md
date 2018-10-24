@@ -4,11 +4,11 @@ localeTitle: Iconos
 ---
 ## Iconos
 
-El marco de Bootstrap le proporciona Glyphicons para el icono. Bootstrap no incluye una biblioteca de iconos de forma predeterminada, pero tiene una serie de recomendaciones para que elijas. Si bien la mayoría de los conjuntos de iconos incluyen múltiples formatos de archivo, preferimos las implementaciones SVG por su mejor accesibilidad y compatibilidad con vectores.
+El framework Bootstrap le proporciona Glyphicons para el icono. Bootstrap no incluye una biblioteca de iconos de forma predeterminada, pero tiene una serie de recomendaciones para que elijas. Si bien la mayoría de los conjuntos de iconos incluyen múltiples formatos de archivo, se recomiendan las implementaciones SVG por su mejor accesibilidad y compatibilidad con vectores.
 
 ### Cómo utilizar
 
-Para usar el icono de Bootstrap, cree una etiqueta de intervalo con `glyphicon` clase base y una clase de icono individual. Úselo solo en elementos que no contengan contenido de texto y no tengan elementos secundarios.
+Para usar los iconos de Bootstrap, cree una etiqueta de `<span>` con con clase `glyphicon` y una clase de icono individual. Úselo solo en elementos que no contengan contenido de texto y no tengan elementos secundarios.
 
 **Ejemplo de código:**
 
@@ -16,7 +16,7 @@ Para usar el icono de Bootstrap, cree una etiqueta de intervalo con `glyphicon` 
 
 `<span class="glyphicon glyphicon-cog"></span>`
 
-El marco de Bootstrap le proporciona más de 250 iconos llamados glifos. Vienen en formato de fuente del conjunto Glyphicon Halflings.
+El framework Bootstrap le proporciona más de 250 iconos llamados glifos. Vienen en formato de fuente del conjunto Glyphicon Halflings.
 
 ### Cómo utilizar
 
