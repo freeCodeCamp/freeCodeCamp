@@ -15,16 +15,18 @@ const Babel = require('babel-standalone');
 const presetEnv = require('babel-preset-env');
 const presetReact = require('babel-preset-react');
 
+const rework = require('rework');
+const visit = require('rework-visit');
+
 const { getChallengesForLang } = require('./getChallenges');
 
 const MongoIds = require('./mongoIds');
 const ChallengeTitles = require('./challengeTitles');
 const addAssertsToTapTest = require('./addAssertsToTapTest');
 const { validateChallenge } = require('./schema/challengeSchema');
-
-const { LOCALE: lang } = process.env;
-
 const { challengeTypes } = require('../client/utils/challengeTypes');
+
+const { LOCALE: lang = 'english' } = process.env;
 
 let mongoIds = new MongoIds();
 let challengeTitles = new ChallengeTitles();
@@ -104,6 +106,45 @@ function transformSass(solution) {
   return solution;
 }
 
+const colors = {
+  red: 'rgb(255, 0, 0)',
+  green: 'rgb(0, 255, 0)',
+  blue: 'rgb(0, 0, 255)',
+  black: 'rgb(0, 0, 0)',
+  gray: 'rgb(128, 128, 128)',
+  yellow: 'rgb(255, 255, 0)'
+};
+
+function replaceColorNamesPlugin(style) {
+  visit(style, (declarations, node) => {
+    declarations
+      .filter(decl => decl.type === 'declaration')
+      .forEach(decl => {
+        if (colors[decl.value]) {
+          decl.value = colors[decl.value];
+        }
+      });
+  });
+}
+
+// JSDOM uses CSSStyleDeclaration, which does not convert color keywords
+// to 'rgb()' https://github.com/jsakas/CSSStyleDeclaration/issues/48.
+// It's a workaround.
+function replaceColorNames(solution) {
+  const fragment = JSDOM.fragment(`<div>${solution}</div>`);
+  const styleTags = fragment.querySelectorAll('style');
+  if (styleTags.length > 0) {
+    styleTags.forEach(styleTag => {
+      styleTag.innerHTML = rework(styleTag.innerHTML)
+        .use(replaceColorNamesPlugin)
+        .toString();
+    });
+    return fragment.children[0].innerHTML;
+  }
+  return solution;
+
+}
+
 async function evaluateHtmlTest(
   challengeType,
   solution,
@@ -147,6 +188,7 @@ A required file can not have both a src and a link: src = ${src}, link = ${link}
     `;
 
     solution = transformSass(solution);
+    solution = replaceColorNames(solution);
 
     const jsdom = new JSDOM(`
       <!doctype html>
@@ -429,7 +471,7 @@ function createTest({
     });
 }
 
-Observable.fromPromise(getChallengesForLang(lang || 'english'))
+Observable.fromPromise(getChallengesForLang(lang))
   .flatMap(curriculum => {
     const allChallenges = Object.keys(curriculum)
     .map(key => curriculum[key].blocks)
