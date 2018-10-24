@@ -7,8 +7,11 @@ videoUrl: ''
 localeTitle: ''
 ---
 
-## Description
-undefined
+## وصف
+أمن المعلومات وشهادة ضمان الجودة (300 ساعة) يحتوي
+    Information Security with HelmetJS
+    Quality Assurance and Testing with Chai
+    Advanced Node and Express
 
 ## Instructions
 undefined
