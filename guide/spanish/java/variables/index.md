@@ -14,7 +14,7 @@ En [Java](https://github.com/FreeCodeCamp/FreeCodeCamp/wiki/Java) , las variable
 
 Es posible que haya notado que el **Tipo Envoltorio** consiste en tipos escritos exactamente como el **Tipo Primitivo**, excepto por la letra mayúscula del principio (como el **Tipo Referencia** ). Esto se debe a que los Tipos Envoltorio son en realidad una parte de los Tipos Referencia más generales, pero están _estrechamente relacionados_ con sus homólogos primitivos a través de [autoboxing y unboxing](https://docs.oracle.com/javase/tutorial/java/data/autoboxing.html) . Por ahora, solo necesita saber que existe dicho 'Tipo Envoltorio'.
 
-Normalmente, puede _declarar_ (es decir, crear) variables según la siguiente sintaxis: < _tipo de datos_ > <nombre de _variable_ >;
+Generalmente, puede _declarar_ (es decir, crear) variables según la siguiente sintaxis: < _tipo de datos_ > <nombre de _variable_ >;
 
 ```java
 // Primitive Data Type 
@@ -54,7 +54,7 @@ Como se desprende del ejemplo anterior, las variables del tipo Primitivo se comp
 *   [Tipos de datos](https://guide.freecodecamp.org/java/data-types)
 *   [Clases y objetos](https://guide.freecodecamp.org/java/classes-and-objects)
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbNjAyOTU5NzE1LC0yMzYxMjQ4NDAsMTU3NT
-A1NjIzOSw2MjkzMzk1MjEsMTg4NjMwMzAwNywtODQ5ODkyMjcx
-LC0xMDYyODM1NTMwXX0=
+eyJoaXN0b3J5IjpbMTAwNjg5OTUyMiwtMjM2MTI0ODQwLDE1Nz
+UwNTYyMzksNjI5MzM5NTIxLDE4ODYzMDMwMDcsLTg0OTg5MjI3
+MSwtMTA2MjgzNTUzMF19
 -->
