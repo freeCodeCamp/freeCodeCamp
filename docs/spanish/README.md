@@ -2,7 +2,7 @@
     <tr>
         <!-- Do not translate this table -->
         <td> Read these guidelines in </td>
-        <td><a href="//README.md"> English </a></td>
+        <td><a href="docs/README.md"> English </a></td>
         <td><a href="/arabic/README.md"> عربى </a></td>
         <td><a href="/chinese/README.md"> 中文 </a></td>
         <td><a href="/portuguese/README.md"> Português </a></td>
