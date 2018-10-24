@@ -44,7 +44,7 @@ int variable = my_array[4];
 ```
 This will declare `variable` to be an integer equal to the value at position 4 of `my_array`. However, because `variable` is a single `int`, and not an array, this is **not** code that will have the right outcome:
 ```C
-// This code will NOT work properly!
+/* This code will NOT work properly!*/
 int variable = my_array;
 ```
 
