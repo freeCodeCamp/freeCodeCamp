@@ -28,7 +28,7 @@ You can also declare more than one class to your element, like:
 
 ```html
 
-<div class="ironMan alfred">
+<div class="iron-man alfred">
  We're going to save you.
 </div>
 
@@ -38,7 +38,7 @@ Then in your css file:
 
 ```css
 
-.ironMan{
+.iron-man{
   color:red;
 }
 
@@ -52,7 +52,7 @@ Then in your css file:
 
 You can also combine classes in the same line:
 ```css
-.superMan .spiderMan {
+.super-man .spider-man {
   color: red;
   background-color: blue;
 }
