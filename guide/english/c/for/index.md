@@ -3,7 +3,7 @@ title: For Loop
 ---
 
 # For Loop
-
+For Loop is one of entry Controlled Loop in which first the condition is tested after the initilization and if the condition hols true then the body of the loop i.e statements are executed.
 The `for` loop executes a block of code until a specified condition is false. Use `while` loops when the number of iterations are variable, otherwise use `for` loops. A common use of `for` loops are array iterations. 
 It is also known as an 'entry-controlled loop' since the condition is checked before the next iteration. Another example of an 'entry-controlled loop' is a while loop. 
 
@@ -43,3 +43,25 @@ int main () {
 > Item on index 3 is 4
 ```
 
+## Example 2 (for better understanding)
+//printing all numbers Within the Range Defined By user//
+#include <stdio.h>
+int main()
+{
+int i,n;  //'n' stores the upper range//
+printf("Enter Range\n");
+scanf("%d",&n); //Range Input//
+for (i=1;i<=n:i++);
+  {
+printf ("%d\n",i); //Printing all numbers within the given Range//
+  }
+}
+## Output for Example 2
+```shell
+> Enter Range
+>5
+1
+2
+3
+4
+5
