@@ -42,3 +42,9 @@ pwd (Print Working Directory) - This command lists the directory you are current
 ```unix
 pwd
 ```
+
+--help - Typing in the command name and the argument --help shows which ways the command can be used (e.g., cd –help).
+
+```unix
+--help
+```
