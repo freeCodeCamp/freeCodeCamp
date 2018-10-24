@@ -48,8 +48,31 @@ So the above code in Sass code will be:
 
 ## MIXINS
 
-Mixins are like functions for CSS.
-Example:
+Mixins are like functions for CSS. 
+To create a mixin, use the `@mixin` command followed by a space and the name of your mixin.
+
+For example:
+
+```
+@mixin box-shadow() {   
+  -webkit-box-shadow: 10px 10px 5px 0px;
+  -moz-box-shadow: 10px 10px 5px 0px;
+  -ms-box-shadow: 10px 10px 5px 0px;
+  box-shadow: 10px 10px 5px 0px;
+}
+```
+
+You can now use your mixin like this:
+
+```
+.mydiv{
+  @include box-shadow();
+}
+```
+
+Mixins can also take arguements.
+
+For example:
 ```
 @mixin box-shadow($x,$y,$blur,$c){
   -webkit-box-shadow: $x,$y,$blur,$c;
@@ -57,10 +80,15 @@ Example:
   -ms-box-shadow: $x,$y,$blur,$c;
    box-shadow: $x,$y,$blur,$c;
 }
+```
+
+You can now pass your arguements into your mixin like this:
+
+```
 .mydiv{
   @include box-shadow(0px,0px,5px,#fff);
 }
-
 ```
+
 #### More Information
 [Official Sass website](https://sass-lang.com/)
