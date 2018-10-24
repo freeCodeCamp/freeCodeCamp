@@ -34,3 +34,4 @@ If an object has no references (is no longer reachable) then it is eligible for 
 #### More Information:
  -<!-- Please add any articles you think might be helpful to read before writing the article -->
  +- https://docs.microsoft.com/en-us/dotnet/standard/garbage-collection/fundamentals - To know more about garbage Collection
+ +  http://www.cs.inf.ethz.ch/ssw/files/GC_in_NET.pdf An Excellent Article about Garbage Collection by Jeffery Richter MSDN Magazine ( November 2000 and December 2000) Printed File  - "Garbage Collection: Automatic Memory Management in the Microsoft .NET Framework" 
