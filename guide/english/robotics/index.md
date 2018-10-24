@@ -22,9 +22,9 @@ Once the robot makes its decision, it needs to act accordingly. For this purpose
 First, you need to have good amount of patience to ace in Robotics.
 
 1) Be good at any one programming language to have a good grip over code.
-2) Learn RaspberryPi or Arduino for the proper understanding of electronics and logic.
-  Now the difference between RaspberryPi and Arduino is:
-  RaspberryPi is a SBC(Single-Board-Computer) whereas  Arduino is only a Microcontroller.
+2) Learn Raspberry Pi or Arduino for the proper understanding of electronics and logic.
+  Now the difference between Raspberry Pi and Arduino is:
+  Raspberry Pi is a SBC(Single-Board-Computer) whereas  Arduino is only a Microcontroller.
   So the difference between the above stuff is quite important.
 3) Inverse Kinematics is very important for the designing part. 
   Here is a good resource to learn [Inverse kinematics](https://www.intechopen.com/books/industrial_robotics_theory_modelling_and_control/robot_kinematics__forward_and_inverse_kinematics).
