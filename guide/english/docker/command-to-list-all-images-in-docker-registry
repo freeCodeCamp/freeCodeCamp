@@ -1,0 +1,4 @@
+Below is the command to list all the images in docker registry:
+
+curl http://<IP/Hostname>:<Port>/V2/_catalog | python -mjson.tool
+
