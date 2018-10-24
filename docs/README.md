@@ -1,15 +1,8 @@
-﻿<table>
-    <tr>
-        <!-- Do not translate this table -->
-        <td> Read these guidelines in </td>
-        <td><a href="/CONTRIBUTING.md"> English </a></td>
-        <td><a href="/docs/arabic/README.md"> عربى </a></td>
-        <td><a href="/docs/chinese/README.md"> 中文 </a></td>
-        <td><a href="/docs/russian/README.md"> русский </a></td>
-        <td><a href="/docs/portuguese/README.md"> Português </a></td>
-        <td><a href="/docs/spanish/README.md"> Español </a></td>
-    </tr>
-</table>
+﻿        <!-- Do not translate the languages section -->
+Read these guidelines in: 
+|[ English ](/CONTRIBUTING.md)|[ عربى ](arabic/README.md)|[ 中文 ](chinese/README.md)|[ русский ](russian/README.md)|[ Português ](portuguese/README.md)|[ Español ](spanish/README.md)|
+
+
 
 # Documentation Quick Reference
 
