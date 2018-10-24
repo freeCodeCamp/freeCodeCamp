@@ -26,6 +26,8 @@ Most *nix based operating systems come with Python installed (usually Python 2, 
 
 Windows doesn't come with Python, the installer and instructions can be found <a href='https://docs.python.org/3/using/windows.html' target='_blank' rel='nofollow'>here</a>
 
+MacOS doesn't come with Python 3 (however Python 2.7 pre-installed by Apple), the installer and instructions can be found <a href='https://docs.python.org/3/using/mac.html' target='_blank' rel='nofollow'>here</a>
+
 ## Python Interpreter
 
 The Python interpreter is what is used to run Python scripts.
