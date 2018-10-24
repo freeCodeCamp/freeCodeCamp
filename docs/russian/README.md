@@ -1,7 +1,7 @@
 <table>
     <tr>
         <!-- Do not translate this table -->
-        <td> Read these guidelines in </td>
+        <td> Прочтите эти рекомендации на </td>
         <td><a href="/CONTRIBUTING.md"> English </a></td>
         <td><a href="/docs/chinese/README.md"> 中文 </a></td>
         <td><a href="/docs/russian/README.md"> русский </a></td>
@@ -13,39 +13,37 @@
 
 # Documentation Quick Reference
 
-Hello 👋 !
+Привет 👋 !
 
-These instructions have not been translated yet. Please check this issue for details: [`#18312`](https://github.com/freeCodeCamp/freeCodeCamp/issues/18312)
+Этот каталог содержит необходимую документацию для содействия freeCodecamp.org
 
-This directory contains all of the documentation on contributing to freeCodeCamp.org
-
-## [If you are getting started, start by reading this first.](/CONTRIBUTING.md)
+## [Если вы здесь впервые, прочтите это вначале.](/CONTRIBUTING.md)
 
 ---
 
-## Quick references articles
+## Краткие справочные статьи
 
-1. How to work on Guide articles.
-2. How to work on Coding Challenges.
-3. How to setup freeCodeCamp locally.
-4. How to catch outgoing emails locally.
+1. Как работать над Инструкциями.
+2. Как работать над Задачами по программированию.
+3. Как установить freeCodeCamp локально.
+4. Как получать исходящие письма локально.
 
-## Style guides
+## Руководства по оформлению
 
-1. Style guide for creating guide articles.
-2. Style guide for creating coding challenges.
+1. Руководство по оформлению Инструкций. 
+2. Руководство по оформлению Задач по программированию.
 
-## Quick commands reference when working locally
+## Краткий перечень команд при работе на локальной машине
 
-A quick reference to the commands that you will need, when working locally.
+Краткий перечень команд, которые вам потребуются при работе на локальной машине.
 
-| command | description |
+| команда | описание |
 | ------- | ----------- |
-| `npm run bootstrap` | Bootstraps the different services |
-| `npm run seed` | Parse all the challenge markdown files and inserts them into MongoDB. |
-| `npm run develop` | Starts the freeCodeCamp API Server and Client Apps |
-| `npm test` |  Run all JS tests in the system, including client, server, lint and challenge tests |
-| `npm run test:client` | Run the client test suite |
-| `npm run test:curriculum` | Run the curriculum test suite |
-| `npm run test:server` | Run the server test suite |
-| `npm run commit` | An interactive tool to help you build a good commit message |
+| `npm run bootstrap` | Начальная загрузка необходимых сервисов |
+| `npm run seed` | Разбивает markdown файлы, содержащие задачи по программированию, и вставляет их в MongoDB  |
+| `npm run develop` | Запускает freeCodeCamp API Сервер и клиентские приложения |
+| `npm test` |  Запускает все тесты в системе, включая на клиенте, сервере, lint и тесты по задачам |
+| `npm run test:client` | Запускает client набор тестов |
+| `npm run test:curriculum` | Запускает набор тестов по учебному плану |
+| `npm run test:server` | Запускает набор тестов по серверу |
+| `npm run commit` | Интерактивный инструмент, который помогает составить хороший текст для коммита |
