@@ -76,3 +76,4 @@ This is only one use of the Streams API used in Java 8. There are many other app
 - [Lambda Expressions](https://docs.oracle.com/javase/tutorial/java/javaOO/lambdaexpressions.html)
 - [Java 8 Stream API](https://docs.oracle.com/javase/8/docs/api/java/util/stream/package-summary.html)
 - [Java 8 Double Colon Operator](https://www.baeldung.com/java-8-double-colon-operator)
+- [Book - Java 8 Lambda by Richard Warburton](https://www.amazon.co.uk/Java-8-Lambdas-Richard-Warburton/dp/1449370772/ref=sr_1_3?ie=UTF8&qid=1540359292&sr=8-3&keywords=lambda+java+8)
