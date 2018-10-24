@@ -51,6 +51,9 @@ When the timer completes it's execution taking 5 seconds, it calls the function 
 2. Great supportive community and massive amount of modules (Express, Grunt, etc).
 3. Wide range of hosting options.
 
+- [Why Would I Use Node.js?](https://www.toptal.com/nodejs/why-the-hell-would-i-use-node-js)
+
+
 #### More information:
 - [Official NodeJS site](https://nodejs.org)
 - [Node Version Manager](https://github.com/creationix/nvm/blob/master/README.md)
