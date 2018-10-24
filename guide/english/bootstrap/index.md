@@ -69,6 +69,8 @@ Bootstrap comes with predefined grid classes for your use in markup. See more de
 
 - Version 4.0 added Sass and flexbox support
 
+- Version 4.1 Added new custom range form control.
+
 #### More Information:
 
 Bootstrap has thorough documentation with many <a href='https://getbootstrap.com/docs/4.0/examples/' target='_blank' rel='nofollow'>examples</a> and an <a href='https://getbootstrap.com/docs/4.0/getting-started/introduction/' target='_blank' rel='nofollow'>HTML template for getting started</a> (this template only has script included; it does not contain a set up of the grid system if that's what you're looking for). 
