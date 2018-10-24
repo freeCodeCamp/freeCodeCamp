@@ -155,8 +155,7 @@ El resultado sera:
  Hola
   Mundo
 ```
-Podems tamibien dividir la cadena especificando un indice inicial y final del  
-We can also split the string by specifing the start and end index of the characters in the string. We will do this using the Java function called  `.substring()`.
+Podems tambien dividir la cadena especificando el índice inicial y final de los caracteres en la cadena. Haremos esto usando la funcion de Java llamada `.substring()`.
 
 The  `.substring()`  method can be used in two ways. One with only the starting index and one with both the start and end index. Take note that the index starts from 0. Example:
 
@@ -190,8 +189,8 @@ My
 
 -   [String Documentation](https://docs.oracle.com/javase/7/docs/api/java/lang/String.html)
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMTY3NDM3MTg4MCwtMTQ3ODY0MTEwLDEwOD
-kzNTUwMTYsLTE1ODg4OTQwMjQsLTYzMjEyMDM3OCwtMTQ4NzYx
-NDE0LDgyMDQzNDg3MCwtMTg5MjA3NTE3NCwtNjY4NjcwNTQ5LD
-EwNTAwODgwNjksODQ4OTU3NDE1LDE5MzY3NTE4MTBdfQ==
+eyJoaXN0b3J5IjpbOTQyNjEwNDUxLC0xNDc4NjQxMTAsMTA4OT
+M1NTAxNiwtMTU4ODg5NDAyNCwtNjMyMTIwMzc4LC0xNDg3NjE0
+MTQsODIwNDM0ODcwLC0xODkyMDc1MTc0LC02Njg2NzA1NDksMT
+A1MDA4ODA2OSw4NDg5NTc0MTUsMTkzNjc1MTgxMF19
 -->
