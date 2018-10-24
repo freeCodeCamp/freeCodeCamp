@@ -1,14 +1,14 @@
 ---
 title: SQL Where Clause
-localeTitle: SQL onde cláusula
+localeTitle: Cláusula "Where"
 ---
-## SQL onde cláusula
+## SQL cláusula "Where"
 
 ### `WHERE` cláusula (e / ou, `IN` , `BETWEEN` , e `LIKE` )
 
 A cláusula `WHERE` é usada para limitar o número de linhas retornadas.
 
-Neste caso, todos os cinco destes serão usados ​​é uma cláusula `WHERE` ridícula.
+Com esta cláusula podemos filtrar um conjunto de dados ao colocar uma condição.
 
 Aqui está a lista atual de alunos completa para comparar com o conjunto de resultados da cláusula `WHERE` :
 
@@ -33,12 +33,13 @@ select studentID, FullName, sat_score, rcd_updated from student;
  9 rows in set (0.00 sec) 
 ```
 
-Linhas serão apresentadas que….
+No seguinte exemplo vão ser apresentados registos em que a pontuação "sat_score" que não esteja na seguinte lista: (1000, 1400). 
+Ou seja serão apresentados todos menos estes a pontuação 1000 e 1400.
+São aplicadas também mais duas condições, a primeira em que os "studentsID" estejam entre 1 e 5 ou que o "studentID" seja igual a 8.
 
 *   `WHERE` IDs dos alunos estão entre 1 e 5 (inclusive)
 *   `OR` studentID = 8
-
-Aqui está uma consulta atualizada, onde qualquer registro que tenha uma pontuação SAT que esteja nesta lista (1000, 1400) não será apresentado:
+*   `AND` sat_score NOT in (1000, 1400)
 
 ```sql
 select  studentID, FullName, sat_score, recordUpdated 
@@ -61,7 +62,7 @@ select  studentID, FullName, sat_score, recordUpdated
  5 rows in set (0.00 sec) 
 ```
 
-\* Como acontece com todas essas coisas SQL, MUITO MAIS para elas é o que está neste guia introdutório.
+\* 
 
 Espero que pelo menos isso lhe dê o suficiente para começar.
 
