@@ -3,7 +3,7 @@ title: CSS Pre-Processors
 ---
 ## CSS Pre-Processors
 
-Pre-processor is a software that allows to use extended CSS functionality with variables, functions, operators and many more useful assets that plain CSS is missing.
+CSS Pre-processors are in our development life for years. In their first implementations, they had few features. But nowadays, they are the key ingredients and must have tools for CSS development. Pre-processors extend CSS with variables, operators, interpolations, functions, mixins and many more other usable assets.
 
 ## Popular Pre-Processors
 
