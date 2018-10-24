@@ -7,6 +7,7 @@ This CSS property describes the horizontal alignment of inline content in its pa
 
 ### CSS Syntax
 `text-align: value;`
+
 value : `left|right|center|justify|initial|inherit`
 
 ### Values:
