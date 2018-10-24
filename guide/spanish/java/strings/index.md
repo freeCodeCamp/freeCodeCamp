@@ -145,20 +145,16 @@ Si Usted quiere dividir una cadena en múltiples partes, puede hacerlo facilment
 Ejemplo del uso de un delimitador (",") para dividir una cadena
 
 ```java
- String texto = "Holla, Mundo";
+ String texto = "Hola, Mundo";
  String[] partesDeTexto = texto.split(",");
  System.out.println(partesDeTexto[0]);
  System.out.println(partesDeTexto[1]);
 ```
-
-The result will be:
-
+El resultado sera:
+```java
+ Hola
+  Mundo
 ```
-Hello
-World
-
-```
-
 We can also split the string by specifing the start and end index of the characters in the string. We will do this using the Java function called  `.substring()`.
 
 The  `.substring()`  method can be used in two ways. One with only the starting index and one with both the start and end index. Take note that the index starts from 0. Example:
@@ -193,8 +189,8 @@ My
 
 -   [String Documentation](https://docs.oracle.com/javase/7/docs/api/java/lang/String.html)
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTYxNTg1MjQxNywtMTQ3ODY0MTEwLDEwOD
-kzNTUwMTYsLTE1ODg4OTQwMjQsLTYzMjEyMDM3OCwtMTQ4NzYx
-NDE0LDgyMDQzNDg3MCwtMTg5MjA3NTE3NCwtNjY4NjcwNTQ5LD
-EwNTAwODgwNjksODQ4OTU3NDE1LDE5MzY3NTE4MTBdfQ==
+eyJoaXN0b3J5IjpbLTIwNjYwODcwNTgsLTE0Nzg2NDExMCwxMD
+g5MzU1MDE2LC0xNTg4ODk0MDI0LC02MzIxMjAzNzgsLTE0ODc2
+MTQxNCw4MjA0MzQ4NzAsLTE4OTIwNzUxNzQsLTY2ODY3MDU0OS
+wxMDUwMDg4MDY5LDg0ODk1NzQxNSwxOTM2NzUxODEwXX0=
 -->
