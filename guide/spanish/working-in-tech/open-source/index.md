@@ -1,8 +1,8 @@
 ---
 title: Open Source
-localeTitle: Fuente abierta
+localeTitle: Código Abierto
 ---
-## Fuente abierta
+## Código Abierto
 
 El software de código abierto es cualquier tipo de software que esté disponible al público para usar, modificar o descargar de forma gratuita. Cualquiera es capaz de crear un proyecto de código abierto.
 
@@ -33,4 +33,4 @@ Uno de los mayores proyectos de código abierto es Linux.
 
 #### Más información:
 
-[Iniciativa de código abierto](https://opensource.org/) [Modelo de código abierto de Wikipedia](https://en.wikipedia.org/wiki/Open-source_model) [Software de código abierto de Wikipedia](https://en.wikipedia.org/wiki/Open-source_software)
+[Iniciativa de código abierto](https://opensource.org/) [Modelo de código abierto de Wikipedia](https://es.wikipedia.org/wiki/C%C3%B3digo_abierto) [Software de código abierto de Wikipedia](https://es.wikipedia.org/wiki/Software_de_c%C3%B3digo_abierto)
