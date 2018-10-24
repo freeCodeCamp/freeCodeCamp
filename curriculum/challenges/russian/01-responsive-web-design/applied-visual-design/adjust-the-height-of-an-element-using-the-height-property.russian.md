@@ -3,14 +3,14 @@ id: 587d7791367417b2b2512ab5
 title: Adjust the Height of an Element Using the height Property
 challengeType: 0
 videoUrl: ''
-localeTitle: Отрегулируйте высоту элемента с помощью свойства height
+localeTitle: Отрегулируйте высоту элемента используя свойство height
 ---
 
 ## Description
-<section id="description"> Вы можете указать высоту элемента, используя свойство <code>height</code> в CSS, подобное свойству <code>width</code> . Вот пример, который изменяет высоту изображения на 20 пикселей: <blockquote> img { <br> высота: 20 пикселей; <br> } </blockquote></section>
+<section id="description"> Вы можете указать высоту элемента, используя свойство <code>height</code> в CSS, так же как свойство <code>width</code> . Вот пример, который изменяет высоту изображения на 20 пикселей: <blockquote> img { <br> высота: 20 пикселей; <br> } </blockquote></section>
 
 ## Instructions
-<section id="instructions"> Добавьте свойство <code>height</code> в тег <code>h4</code> и установите его на 25 пикселей. </section>
+<section id="instructions"> Добавьте свойство <code>height</code> тегу <code>h4</code> и установите его равным 25 пикселям. </section>
 
 ## Tests
 <section id='tests'>
