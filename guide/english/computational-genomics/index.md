@@ -9,7 +9,7 @@ This section will focus on the various data structures and algorithms that are u
 
 
 ## Books to read
+A great starter book for beginners:
+[Introduction to Computational Genomics by Matthew W. Hahn](https://www.amazon.com/Introduction-Computational-Genomics-Studies-Approach/dp/0521671914)
 
-Introduction to Computational Genomics by Matthew W. Hahn
 
-A great starter book for beginners 
