@@ -7,9 +7,9 @@ title: TypeScript
 
 ![TypeScript](https://i.imgur.com/uRLunzU.png)
 
-So as you are most likely aware, JavaScript is expanding its footprint everyday and it is both overwhelming and amazing what you can do with the language nowadays.
+So, as you are most likely aware, JavaScript is expanding its footprint everyday. It is both overwhelming and amazing what you can do with the language nowadays.
 
-However, as more large-scale projects start to use JavaScript, the process of making the code easier to write and more maintainable becomes more and more difficult.
+However, as more large-scale projects start to use JavaScript, the process of making the code easier to write and more maintainable becomes increasingly difficult.
 
 This is a problem Microsoft recognized early on and they came up with the solution of TypeScript and released the first version approximately on October 1st, 2012.
 
@@ -17,7 +17,7 @@ You can learn more about the syntax differences at [`TypeScript`](./) > [`JavaSc
 
 ![Key Features](https://i.imgur.com/pZij95O.jpg)
 
-In essence, TypeScript is trying to help JavaScript reach new heights and become very scalable and can be highlighting by the following features:
+In essence, TypeScript is trying to help JavaScript reach new heights, become very scalable, and can be highlighted by the following features:
 
 - free and open-source programming language developed and maintained by Microsoft
 - strict syntactical super-set of JavaScript that compiles to plain JavaScript
