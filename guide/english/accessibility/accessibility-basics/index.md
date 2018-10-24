@@ -8,7 +8,7 @@ title: Accessibility Basics
 
 Accessibility's role in development is essentially understanding the user's perspective and needs, and knowing that the web, and applications are a solution for people with disabilities.
 
-In this day and age, more and more new technologies are invented to make the life of developers, as well as users, easier. To what degree this is a good thing is a debate for another time, for now it's enough to say the toolbox of a developer, especially a web developer, is as ever-changing as the so called "dark arts" are according to Professor Snape.
+In this day and age, more and more new technologies are invented to make the life of developers, as well as users, easier. To what degree this is a good thing is a debate for another time, for now it's enough to say the toolbox of a developer, especially a web developer, is as ever-changing as the so-called "dark arts" are according to Professor Snape.
 
 One tool in that toolbox should be accessibility. It is a tool that should ideally be used in one of the very first steps of writing any form of web content. However, this tool is often not all that well presented in the toolbox of most developers. This could be due to a simple case of not knowing it even exists to extreme cases like not caring about it.
 
@@ -24,7 +24,7 @@ If you fall outside these rather broad categories, please let me know. I always 
 
 Accessibility in itself is a bit of a misleading term sometimes, especially if English is your second language. It is sometimes referred to as inclusive design.
 
-If your site is on the Internet, reachable by anyone with a web browser, in one sense that website is accessible to everyone with a web browser.
+If your website is on the Internet, reachable by anyone with a web browser, in one sense that the website is accessible to everyone with a web browser.
 
 But, is all content on your website actually readable, usable and understandable for everyone? Are there no thresholds that bar certain people from 'accessing' all the information you are exposing?
 
@@ -55,7 +55,7 @@ The picture gets even more complicated when we look at legislation that actually
 
 Last year, airline websites were included in this list which meant that even here in Europe, airline website devs scrambled to make their content accessible. Not doing so can get your company a fine of literally tens of thousands of dollars for each day the problem isn't fixed.
 
-There's variations on this legislation all over the world, some more severe and all-encompassing than others. Not knowing about that fact doesn't make the lawsuit go away, sadly.
+There are variations on this legislation all over the world, some more severe and all-encompassing than others. Not knowing about that fact doesn't make the lawsuit go away, sadly.
 
 ## Ok, so accessibility is a big deal. Now how do we implement it?
 
@@ -67,7 +67,7 @@ To bring a bit of a method to the madness, the Web Content Accessibility Guideli
 
 ### Talk like the natives
 
-The HTML specification is a document that describes how the language should be used to build websites. Assistive technologies, like screen-readers, speech recognition programs etc. are aware of this document. Web developers however, often are not, or at least not enough, and think something like this is ok:
+The HTML specification is a document that describes how the language should be used to build websites. Assistive technologies, like screen-reader, speech-recognition programs etc. are aware of this document. Web developers however, often are not, or at least not enough, and think something like this is ok:
 ```html
     <div class="awesome-button"></div>
 
@@ -106,7 +106,7 @@ Also remember that headings are hierarchical. If you use an h2, make sure the h3
 
 Images on a website are great. They add a new layer to your content, can really make the experience your site visitors have way more immersive and generally just look good among all that text. A picture can say more than a thousand words, right?
 
-Certainly. That is, if you can see them. In the HTML5-specification, an img-attribute must always have an alt-attribute. This attribute is meant as an alternative to the image in case it can't be seen. This would be true for blind visitors to your website, but also when your image can't be loaded for some reason. Not adding an alt-tag to an img-attribute is therefore not only breaking accessibility, but going against the HTML5-spec.
+Certainly. That is, if you can see them. In the HTML5-specification, an `img` attribute must always have an alt-attribute. This attribute is meant as an alternative to the image in case it can't be seen. This would be true for blind visitors to your website, but also when your image can't be loaded for some reason. Not adding an `alt` tag to an `img` attribute is therefore not only breaking accessibility, but going against the HTML5-spec.
 
 I implore any web developer who catches themselves doing this to eat their programmer's hat and work on Windows 95 exclusively for a week. After the time is up, write an essay on what you have learned from this ordeal so I can have a laugh during my afternoon coffee.
 
@@ -124,9 +124,9 @@ The text should provide the context and information that is an alternative to se
 
 ### I can't read your scrawl, son
 
-Even people who don't wear glasses and have no problem with their eyesight at all benefit from an easy to read font and proper contrast. I'm sure you would cringe if you had to fill in a form where light yellow, hopelessly loopy letters are placed on a white background. For people who's eyesight is not as good, like your grandma, for example, this becomes hopelessly worse.
+Even people who don't wear glasses and have no problem with their eyesight at all benefit from an easy to read font and proper contrast. I'm sure you would cringe if you had to fill in a form where light yellow, hopelessly loopy letters are placed on a white background. For people whose eyesight is not as good, like your grandma, for example, this becomes hopelessly worse.
 
-The WCAG has contrast ratios for smaller and larger letters and there's plenty of tools out there to check if the contrast ratios are strong enough. The information and tooling is there, go use it.
+The WCAG has contrast ratios for smaller and larger letters and there's plenty of tools out there to check if the contrast ratios are strong enough. The information and tooling are there, go use it.
 
 A good place to start checking color contrast is by using the [WebAIM](https://webaim.org/resources/contrastchecker/) color contrast checker.
 
