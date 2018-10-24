@@ -173,20 +173,18 @@ Ahora un ejemplo usando `.substring()` con un índice final.
 String texto = "Hola,Mi nombre es Roberto";
 System.out.println(texto.substring(5,7));
 ```
-The result will be:
-
-```
-My
-
+El resultado sera:
+```java
+ Mi
 ```
 
-**More Information:**
+**Mas Información:**
 
 -   [String Documentation](https://docs.oracle.com/javase/7/docs/api/java/lang/String.html)
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTM5MjgzMjg2NywzMzU4MzQ3MjIsLTE0Nz
-g2NDExMCwxMDg5MzU1MDE2LC0xNTg4ODk0MDI0LC02MzIxMjAz
-NzgsLTE0ODc2MTQxNCw4MjA0MzQ4NzAsLTE4OTIwNzUxNzQsLT
-Y2ODY3MDU0OSwxMDUwMDg4MDY5LDg0ODk1NzQxNSwxOTM2NzUx
-ODEwXX0=
+eyJoaXN0b3J5IjpbODczMDU5MTk0LDMzNTgzNDcyMiwtMTQ3OD
+Y0MTEwLDEwODkzNTUwMTYsLTE1ODg4OTQwMjQsLTYzMjEyMDM3
+OCwtMTQ4NzYxNDE0LDgyMDQzNDg3MCwtMTg5MjA3NTE3NCwtNj
+Y4NjcwNTQ5LDEwNTAwODgwNjksODQ4OTU3NDE1LDE5MzY3NTE4
+MTBdfQ==
 -->
