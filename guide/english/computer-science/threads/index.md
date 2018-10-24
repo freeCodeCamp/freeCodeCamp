@@ -32,6 +32,35 @@ if __name__ == "__main__":
     for i in range(1, 11):
         threading.Thread(target=print_number, args=(i,)).start()
 ````
+Java Implementation
+````
+class print_thread implements Runnable
+{
+    int n=0;
+    public print_thread(int n) {
+        this.n=n;
+    }
+    
+    @Override
+    public void run() {
+        
+            System.out.println(n+" <-- From Thread number "+n);
+    }
+    
+}
+public class MainClass {
+    
+    public static void main(String[] args) {
+        for(int i=1;i<11;i++)
+        {
+            new Thread(new print_thread(i)).start();
+            
+        }
+        
+    }
+    
+}
+````
 
 #### More Information:
 <!-- Please add any articles you think might be helpful to read before writing the article -->
