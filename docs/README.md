@@ -2,12 +2,12 @@
     <tr>
         <!-- Do not translate this table -->
         <td> Read these guidelines in </td>
-        <td><a href="/CONTRIBUTING.md"> English </a></td>
-        <td><a href="arabic/CONTRIBUTING.md"> عربى </a></td>
-        <td><a href="chinese/CONTRIBUTING.md"> 中文 </a></td>
-        <td><a href="portuguese/CONTRIBUTING.md"> Português </a></td>
-        <td><a href="russian/CONTRIBUTING.md"> русский </a></td>
-        <td><a href="spanish/CONTRIBUTING.md"> Español </a></td>
+        <td><a href="README.md"> English </a></td>
+        <td><a href="arabic/README.md"> عربى </a></td>
+        <td><a href="chinese/README.md"> 中文 </a></td>
+        <td><a href="portuguese/README.md"> Português </a></td>
+        <td><a href="russian/README.md"> русский </a></td>
+        <td><a href="spanish/README.md"> Español </a></td>
     </tr>
 </table>
 
