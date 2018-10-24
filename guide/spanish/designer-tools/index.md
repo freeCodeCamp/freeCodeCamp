@@ -8,7 +8,15 @@ En esta sección, tendremos guías para una amplia variedad de herramientas util
 
 Estos son algunos de ellos:
 
-[Bosquejo](https://www.sketchapp.com) - [Guía](https://github.com/freeCodeCamp/guides/blob/master/src/pages/designer-tools/sketch/index.md)
+Open Source
+
+[Krita](https://krita.org/en/homepage/)
+
+
+
+Software Privativo
+
+[Sketch](https://www.sketchapp.com) - [Guía](https://github.com/freeCodeCamp/guides/blob/master/src/pages/designer-tools/sketch/index.md)
 
 [Adobe Experience Design](www.adobe.com/products/experience-design.html) - [Guía](https://github.com/freeCodeCamp/guides/blob/master/src/pages/designer-tools/Experience-design/index.md)
 
@@ -20,13 +28,11 @@ Estos son algunos de ellos:
 
 [Framer](https://framer.com) - [Guía](https://github.com/freeCodeCamp/guides/blob/master/src/pages/designer-tools/framer/index.md)
 
-[CLIP ESTUDIO DE PINTURA](https://www.clipstudio.net/en)
+[CLIP Studio Paint](https://www.clipstudio.net/en)
 
 [Moqups](https://moqups.com/)
 
-[Krita](https://krita.org/en/homepage/)
-
-[Pintura MediBang](https://medibangpaint.com/en/)
+[MediBang Paint](https://medibangpaint.com/en/)
 
 [Autodesk Sketchbook](https://www.sketchbook.com/)
 
