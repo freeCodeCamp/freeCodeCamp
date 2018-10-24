@@ -68,6 +68,11 @@ Most common operations available on List are,
 7. Size / Count - Returns the number of elements currently present in the List.
 8. IsEmpty - Check whether the List is empty or not.
 
+#### Doubly/Singly Linked List Time Complexity
+| **Access** | **Search** | **Insertion** | **Deletion** |   |
+|--------|--------|-----------|----------|---|
+| O(n)   | O(n)   | O(1)      | O(1)     | 
+
 #### Implementation of a Simple Linked List in C++
 ```cpp
 #include<iostream>
