@@ -63,3 +63,17 @@ Most of the built-in classes in Java, as well as classes provided by popular lib
 For example, the `java.util.Set` interface specifies that a `Set`'s `equals()` method will return true if "the specified object is also a set, the two sets have the same size, and every member of the specified set is contained in this set".
 
 However, if a class does not override the default `equals()` implementation, the default implementation will apply, which simply uses the `==` operator to compare the two objects.
+
+## The `.equalsIgnoreCase()` Method
+
+This built-in function in java is used to compare the equality of 2 strings return true or false depending on the match but this function does not see if the characters are in upper case or in lower case.
+Example:
+
+```java
+String s1="DEMO for Equality";
+String s2="Demo for equality";
+System.out.println(s1.equals(s2));      //false
+System.out.println(s1.equalsIgnoreCase(s2));    //true
+```
+
+The function compares the alphabet irrespective of whether it 
