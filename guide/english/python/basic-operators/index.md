@@ -261,7 +261,7 @@ A membership operator is used to identify membership in any sequence (e.g. lists
 <br>`in` and `not in` are membership operators
 
 <br>`in` returns True if the specified value is found in the sequence. Returns False otherwise.
-<br>`not in` returns True if the specified value is not found in the sequence. Returns False otherwise.
+<br>`not in` returns True if the specified value is not found in the sequence. Returns False otherwise. Use not only in 'not in' code, otherwise its usage will confuse people reading your code.
 
 ###### Example Usage
 
