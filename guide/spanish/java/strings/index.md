@@ -21,7 +21,7 @@ Puede crear un objeto String de las siguientes maneras:
 ```java
  String str = "Yo soy una Cadena"; // como una cadena literal
  String str = "Yo soy una " + "Cadena"; // como una expresion constante
- String str = new String("I am a String"); // como un objeto String usando el constructor
+ String str = new String("Yo soy una Cadena"); // como un objeto String usando el constructor
 ```
 
 Usted podría estar pensando: ¿Cuál es la diferencia entre los tres?
@@ -157,25 +157,32 @@ El resultado sera:
  Hola
   Mundo
 ```
+
 Podemos tambien dividir la cadena especificando el índice inicial y final de los caracteres en la cadena. Haremos esto usando la función de Java llamada `.substring()`.
 
 El método `.substring()` puede ser usado de dos modos. Uno con solo el índice inicial y otro con ambos, el índice incial y el índice final. Toma en cuenta que el indice comienza en 0. Ejemplo:
+
 ```java
  String texto = "Hola,Mi nombre es Roberto";
  System.out.println(texto.substring(5));
 ```
+
 Producirá:
 
 ```java
  Mi nombre es Roberto
 ```
+
 Para usarlo con un índice final ten en cuenta que índice final real es el valor pasado al método -1.
 Ahora un ejemplo usando `.substring()` con un índice final.
 ```java
+
 String texto = "Hola,Mi nombre es Roberto";
 System.out.println(texto.substring(5,7));
 ```
+
 El resultado sera:
+
 ```java
  Mi
 ```
@@ -184,7 +191,7 @@ El resultado sera:
 
 -   [String Documentation](https://docs.oracle.com/javase/7/docs/api/java/lang/String.html)
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTU0MTE5NjY0NCwtMTg4ODY2MDMyOCw4Nz
+eyJoaXN0b3J5IjpbLTg5NDg0MTI1MiwtMTg4ODY2MDMyOCw4Nz
 MwNTkxOTQsMzM1ODM0NzIyLC0xNDc4NjQxMTAsMTA4OTM1NTAx
 NiwtMTU4ODg5NDAyNCwtNjMyMTIwMzc4LC0xNDg3NjE0MTQsOD
 IwNDM0ODcwLC0xODkyMDc1MTc0LC02Njg2NzA1NDksMTA1MDA4
