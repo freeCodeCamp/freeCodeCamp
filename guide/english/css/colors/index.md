@@ -2,6 +2,16 @@
 title:  CSS3 Colors
 ---
 
+## Table of Contents
+
+* [Colors](#colors)
+* [RGBA](#rgba)
+* [HSLA](#hsla)
+* [CMYK](#cmyk)
+* [Hexcodes](#hexcodes)
+* [Opacity](#opacity)
+* [More Information](#more-information)
+
 ## Colors
 
 CSS Colors is a CSS module that deals with colors, color types, color blending, and opacity. Not all CSS properties that take a <color> as a value are part of this module, but they do depend upon it. In CSS, you can change the color of almost any element in your HTML page. Properties like `background-color`, `color`, and `border-color` set the color of those elements.
@@ -11,7 +21,7 @@ In addition to the introduction of the `opacity` declaration, colors in CSS3 can
 
 HTML supports 140 standard <a href='https://www.w3schools.com/colors/colors_names.asp' target='_blank' rel='nofollow'>color names</a>.
 
-### RGB(A)
+### RGBA
 
 RGB stands for "Red, Green, Blue".
 An RGB value is a combination of intensity values for red, green, and blue. Each is between 0 (black) and 255 (full intensity).
@@ -20,7 +30,7 @@ RGBA color values are an extension of RGB color values with an alpha channel - w
 An RGB color value is specified with: rgb(red, green, blue)
 An RGBA color value is similar, with the alpha value in last position: rgba(red, green, blue, alpha)
 
-### HSL(A)
+### HSLA
 
 HSL stands for "Hue, Saturation and Lightness".
 Hue is a degree on the color wheel (from 0 to 360):
