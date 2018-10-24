@@ -9,7 +9,7 @@ title: Map
 ## Benefits of using map
 * It stores only unique keys and that too in sorted order based on its assigned sorting criteria.
 * As keys are in sorted order therefore searching element in map through key is very fast i.e. it takes logarithmic time.
-* In `map` there will be only one value attached with the every key.
+* In `map` there will be only one value attached with every key.
 * `map` can be used as associative arrays.
 * It might be implemented using balanced binary trees.
 
@@ -67,8 +67,8 @@ size of map is 1
 Inserting data with insert member function.
 
 ```c++
-myMap.insert(make_pair("earth", 1));
-myMap.insert(make_pair("moon", 2));
+myMap.insert(pair<char, int> ("earth", 1));
+myMap.insert(pair<char, int> ("moon", 2));
 ```
 
 We can also insert data in std::map using operator [] i.e.
