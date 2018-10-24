@@ -183,6 +183,23 @@ The result will be:
 ```
 My
 ```
+**
+The print syntax it can use by
+```java
+System.out.print("hello world!");
+```
+but result will be not include begin with new line
+#### Example
+```java
+System.out.println("hello world!");
+System.out.print("hello world!\n");
+```
 
+The result will be:
+```
+hello world!
+hello world!
+<--- cursor here
+```
 **More Information:**
 - [String Documentation](https://docs.oracle.com/javase/7/docs/api/java/lang/String.html)
