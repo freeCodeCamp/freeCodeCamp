@@ -34,13 +34,12 @@ Puede _asignar_ un valor a la variable de forma simultánea cuando la declara (l
  char c = 'a'; // Observe las comillas simples
  
  // Las variables también pueden ser declaradas en una sentencia, y asignarles valores despues. 
- 
  int j; 
  j = 10; 
  
- // initiates an Float object with value 1.0 
- // variable myFloat now points to the object 
- Float myFloat = new Float(1.0); 
+ // Inicializa un objeto Float con el valor de 1.0 
+ // La variable miFlotante now points to the object 
+ Float miFlotante = new Float(1.0); 
  
  //Bytes are one of types in Java and can be 
  //represented with this code 
@@ -55,7 +54,7 @@ Como se desprende del ejemplo anterior, las variables del tipo Primitivo se comp
 *   [Tipos de datos](https://guide.freecodecamp.org/java/data-types)
 *   [Clases y objetos](https://guide.freecodecamp.org/java/classes-and-objects)
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbNDE3NDAyMjg3LC0yMzYxMjQ4NDAsMTU3NT
-A1NjIzOSw2MjkzMzk1MjEsMTg4NjMwMzAwNywtODQ5ODkyMjcx
-LC0xMDYyODM1NTMwXX0=
+eyJoaXN0b3J5IjpbMTE0MjM1MDM2NiwtMjM2MTI0ODQwLDE1Nz
+UwNTYyMzksNjI5MzM5NTIxLDE4ODYzMDMwMDcsLTg0OTg5MjI3
+MSwtMTA2MjgzNTUzMF19
 -->
