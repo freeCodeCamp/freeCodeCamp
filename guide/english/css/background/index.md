@@ -21,7 +21,7 @@ to purple and the rest of the page to blue.
 
 ```css
   body {
-    background-color: blue;
+    background-color: green;
   }
   h1 {
     background–color: purple;
