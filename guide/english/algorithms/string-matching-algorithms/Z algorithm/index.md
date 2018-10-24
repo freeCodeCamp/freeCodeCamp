@@ -1,4 +1,7 @@
-**Z algorithm** is used to find all occurrence of a pattern P in a string T similar to KMP algorithm but this is easier to understand than others.
+Z Algorithm 
+---
+
+**Z algorithm** is used to find all occurrence of a **pattern P** in a **string T** similar to KMP algorithm but this is easier to understand than others.
 This is a linear time string matching algorithm which runs in **O(m+n)~O(n)** complexity, where m and n are lengths of the string T and 
 the pattern stirng P respectively.
  
@@ -58,12 +61,13 @@ Steps for maintaining this interval are as follows –
  
 Following link is of a video which will make you clear of everything. It's worth to watch this video and read this once for better 
 understanding.
-https://www.youtube.com/watch?v=CpZh4eF8QBw
+
+ [Tushar-Roy Z algorithm - Easily Understandable](https://www.youtube.com/watch?v=CpZh4eF8QBw)
     
     
  Following is the **C++ implementation** of the Z algorithm finding the number of occurrences of patter P in string S
  
-
+```cpp
 #include<bits/stdc++.h>
 using namespace std;
 
@@ -125,15 +129,15 @@ int main(){
     return 0;
 }
     
-    
+ ```  
    
  **References** :
  
- https://www.hackerearth.com/practice/algorithms/string-algorithm/z-algorithm/tutorial/
+ [hackerearth](https://www.hackerearth.com/practice/algorithms/string-algorithm/z-algorithm/tutorial/)
  
- https://www.geeksforgeeks.org/z-algorithm-linear-time-pattern-searching-algorithm/
+ [Geeksforgeeks](https://www.geeksforgeeks.org/z-algorithm-linear-time-pattern-searching-algorithm)
  
- https://www.youtube.com/watch?v=CpZh4eF8QBw
+ [Tushar-Roy Z algorithm - Easily Understandable](https://www.youtube.com/watch?v=CpZh4eF8QBw)
  
  
  
