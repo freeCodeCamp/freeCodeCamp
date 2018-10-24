@@ -22,7 +22,7 @@ There are various forms of acceptance testing:
 Acceptance criteria are defined on the basis of the following attributes
 
 > - Functional Correctness and Completeness
->
+>:
 > - Data Integrity
 >
 > - Data Conversion
@@ -72,7 +72,7 @@ The Acceptance test plan has the following attributes:
 >
 > - Resources
 
-The acceptance test activities are designed to reach at one of the conclusions:
+## The acceptance test activities are designed to reach at one of the conclusions:
 
 - Accept the system as delivered
 
