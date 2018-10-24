@@ -11,7 +11,7 @@ A robot has to sense its environment. For this, it uses different types of senso
 
 ### Think
 
-A robot has to make decisions based on the input it receives from the environment and the way it is programmed. Autonomous functions are those which can be performed by a robot without any human input. Robots usually have a mixture of autonomous and controlled functions (fully autonomous robots are getting common these days). They have an onboard computer that facilitates the computation needed for the decision making process of a robot. For example, commercial consumer [quadcopters](https://en.wikipedia.org/wiki/Quadcopter) are offering a feature where the copter can be asked to follow a moving object. It uses the input from the camera, performs [image processing](https://en.wikipedia.org/wiki/Digital_image_processing) to distinguish the object from the environment and uses [controlled systems](https://en.wikipedia.org/wiki/Control_system) to follow the object. And all of this is done without any human input (ie after the copter is programmed).
+A robot has to make decisions based on the input it receives from the environment and the way it is programmed. Autonomous functions are those which can be performed by a robot without any human input. Robots usually have a mixture of autonomous and controlled functions (fully autonomous robots are getting common these days). They have an onboard computer that facilitates the computation needed for the decision making process of a robot. For example, commercial consumer [quadcopters](https://en.wikipedia.org/wiki/Quadcopter) are offering a feature where the copter can be asked to follow a moving object. It uses the input from the camera, performs [image processing](https://en.wikipedia.org/wiki/Digital_image_processing) to distinguish the object from the environment and uses [controlled systems](https://en.wikipedia.org/wiki/Control_system) to follow the object. And all of this is done without any human input (i.e. after the copter is programmed).
 
 ### Act
 
@@ -22,10 +22,10 @@ Once the robot makes its decision, it needs to act accordingly. For this purpose
 First, you need to have good amount of patience to ace in Robotics.
 
 1) Be good at any one programming language to have a good grip over code.
-2) Learn RaspberryPi or Arduino for the proper understanding of electronics and logic.
-  Now the difference between RaspberryPi and Arduino is:
-  RaspberryPi is a SBC(Single-Board-Computer) whereas  Arduino is only a Microcontroller.
-  So the difference between the above stuff is quite important.
+2) Learn Raspberry Pi or Arduino for the proper understanding of electronics and logic - these are often used for introductory robotics projects.
+  What is the difference between Raspberry Pi and Arduino? 
+  [Raspberry Pi](https://www.raspberrypi.org/) is a SBC(Single-Board-Computer) whereas  [Arduino](https://www.arduino.cc/) is a Microcontroller.
+  The difference between the above hardware is quite important.
 3) Inverse Kinematics is very important for the designing part. 
   Here is a good resource to learn [Inverse kinematics](https://www.intechopen.com/books/industrial_robotics_theory_modelling_and_control/robot_kinematics__forward_and_inverse_kinematics).
   
