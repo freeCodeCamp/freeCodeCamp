@@ -31,3 +31,5 @@ cannot concatenate 'str' and 'int' objects
 More Information:
 
 Errors and Exceptions <a href='https://docs.python.org/2/tutorial/errors.html' target='_blank' rel='nofollow'>documentation</a>.
+
+<a href="http://www.youtube.com/watch?feature=player_embedded&v=NIWwJbo-9_8" target="_blank"><img src="http://img.youtube.com/vi/NIWwJbo-9_8/0.jpg" alt="TRY/EXCEPTION HANDLING" width="240" height="180" border="10" /></a>
