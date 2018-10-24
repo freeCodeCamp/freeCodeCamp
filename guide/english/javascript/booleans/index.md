@@ -57,6 +57,8 @@ There is also a native JavaScript object that wraps around a value. The value pa
 
 Do not confuse the primitive Boolean values true and false with the true and false values of the Boolean object.
 
+Any object of which the value is not undefined or null, including a Boolean object whose value is false, evaluates to true when passed to a conditional statement. For example, the condition in the following if statement evaluates to true.
+
 ## More Details
 
 Any object whose value is not undefined or null, including a Boolean object whose value is false, evaluates to true when passed to a conditional statement. If true, this will execute the function. For example, the condition in the following if statement evaluates to true:
