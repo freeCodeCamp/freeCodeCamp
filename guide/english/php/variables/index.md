@@ -78,6 +78,8 @@ $y = 4;
 echo $x + $y;
 ?>
 ````
+Note: The _print_ statement is also used for output. Though _print_ and _echo_ are basically interchangable, each has additional, but different, functionality.
+See <a href="http://php.net/manual/en/function.print.php" target="_blank">print</a> and <a href="http://php.net/manual/en/function.echo.php" target="_blank">echo</a> for more.
 
 # PHP is a Loosely Typed Language
 
