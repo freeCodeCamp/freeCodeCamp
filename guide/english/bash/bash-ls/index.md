@@ -38,3 +38,4 @@ assets             gatsby-ssr.js      translations
 #### More Information:
 
 * [Wikipedia](https://en.wikipedia.org/wiki/Ls)
+* [Shapeshed](https://shapeshed.com/unix-ls/)

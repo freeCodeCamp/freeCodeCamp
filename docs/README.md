@@ -23,10 +23,10 @@ This directory contains all of the documentation on contributing to freeCodeCamp
 
 ## Quick references articles
 
-1. How to work on Guide articles.
-2. How to work on Coding Challenges.
-3. How to setup freeCodeCamp locally.
-4. How to catch outgoing emails locally.
+<a href="/how-to-work-on-guide-articles.md">1. How to work on Guide articles.</a>
+<a href="/how-to-work-on-coding-challenges.md">2. How to work on Coding Challenges.</a>
+<a href="/how-to-setup-freecodecamp-locally.md">3. How to setup freeCodeCamp locally.</a>
+<a href="/how-to-catch-outgoing-emails-locally.md">4. How to catch outgoing emails locally.</a>
 
 ## Style guides
 
@@ -39,11 +39,11 @@ A quick reference to the commands that you will need, when working locally.
 
 | command | description |
 | ------- | ----------- |
-| `npm run bootstrap` | Bootstraps the different services |
+| `npm run bootstrap` | Bootstraps the different services. |
 | `npm run seed` | Parse all the challenge markdown files and inserts them into MongoDB. |
-| `npm run develop` | Starts the freeCodeCamp API Server and Client Apps |
-| `npm test` |  Run all JS tests in the system, including client, server, lint and challenge tests |
-| `npm run test:client` | Run the client test suite |
-| `npm run test:curriculum` | Run the curriculum test suite |
-| `npm run test:server` | Run the server test suite |
-| `npm run commit` | An interactive tool to help you build a good commit message |
+| `npm run develop` | Starts the freeCodeCamp API Server and Client Applications. |
+| `npm test` |  Run all JS tests in the system, including client, server, lint and challenge tests. |
+| `npm run test:client` | Run the client test suite. |
+| `npm run test:curriculum` | Run the curriculum test suite. |
+| `npm run test:server` | Run the server test suite. |
+| `npm run commit` | An interactive tool to help you build a good commit message. |

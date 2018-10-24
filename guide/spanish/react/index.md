@@ -1,8 +1,8 @@
 ---
 title: React
-localeTitle: Reaccionar
+localeTitle: React
 ---
-# Reaccionar
+# React
 
 React es una biblioteca de JavaScript para construir interfaces de usuario. Fue votado como el más querido en la categoría "Marcos, bibliotecas y otras tecnologías" de la Encuesta de desarrolladores 2017 de Stack Overflow. 1
 
@@ -14,9 +14,9 @@ React se utiliza para crear interfaces de usuario, lo que el usuario ve en su pa
 *   Es eficiente: React calcula el conjunto mínimo de cambios necesarios para mantener actualizado su DOM.
 *   Y es flexible: React trabaja con las bibliotecas y los marcos que ya conoce.
 
-## ¿Por qué aprender reaccionar?
+## ¿Por qué aprender React?
 
-1.  React implica una composición que es un montón de componentes que envuelven las funcionalidades en un contenedor encapsulado. Muchos sitios web populares utilizan React implementando el patrón arquitectónico MVC. Facebook (Parcialmente), Instagram (Completamente), Khan Academy (Parcialmente), Codecademy (Parcialmente), New York Times (Parcialmente), Yahoo Mail (Completamente), la nueva aplicación de galería de fotos y videos de Dropbox (completamente) son los sitios web populares conocidos utilizar React. ¿Cómo se construyen estas grandes aplicaciones utilizando React? La respuesta simple es construir pequeñas aplicaciones o componentes. Ejemplo:
+1.  React implica una composición que es un montón de componentes que envuelven las funcionalidades en un contenedor encapsulado. Muchos sitios web populares utilizan React implementando el patrón arquitectónico MVC. Facebook (Parcialmente), Instagram (Completamente), Khan Academy (Parcialmente), Codecademy (Parcialmente), New York Times (Parcialmente), Yahoo Mail (Completamente), la nueva aplicación de galería de fotos y videos de Dropbox (completamente) son los sitios web populares más conocidos que utilizan React. ¿Cómo se construyen estas grandes aplicaciones utilizando React? La respuesta simple es construir pequeñas aplicaciones o componentes. Ejemplo:
 
 ```jsx
 const Component2 = () => { 
@@ -49,7 +49,7 @@ const Component2 = () => {
 3.  Flujo de datos unidireccional. La interfaz de usuario en React es en realidad la función del estado que significa que a medida que el estado se actualiza, también actualiza la interfaz de usuario. Así que nuestra interfaz de usuario avanza a medida que cambia el estado.
     
 
-## Ventajas de reaccionar
+## Ventajas de React
 
 Algunas razones para usar React son:
 
@@ -72,7 +72,7 @@ Al usar el DOM virtual, React mantiene la última versión de DOM en la memoria 
 
 React le indicará al navegador que actualice solo la diferencia computada y no todo el nodo DOM. No importa cuántas veces regeneremos nuestra interfaz, React llevará al navegador solo las nuevas actualizaciones "parciales".
 
-## Reaccionar desde cero
+## React desde cero
 
 ¿Le gustaría comenzar a aprender lo básico de reaccionar sin atascarse creando un entorno de desarrollo? Lo más probable es que si eres nuevo en el desarrollo web, configurar un entorno de desarrollo puede hacer que te sientas un poco intimidado cuando solo estás tratando de aprender React o simplemente aprender sobre Reaccionar por primera vez.
 
@@ -105,7 +105,7 @@ Esto resultará en el siguiente código:
  </html> 
 ```
 
-Podemos rellenar el título de "¡Hora de reaccionar!".
+Podemos rellenar el título de "¡Hora de React!".
 
 Este contenido no aparecerá en su página web. Cualquier cosa en la sección principal del archivo HTML serán metadatos que nuestro navegador usará para interpretar nuestro código en la sección del cuerpo. Este título será lo que aparece en la pestaña de nuestra página, no en realidad en la página.
 
@@ -131,7 +131,7 @@ Usted es libre de usar versiones más actualizadas de estas bibliotecas a medida
 
 ¿Qué estamos haciendo aquí? El elemento: HTML `<script>` se utiliza para incrustar o hacer referencia a un script ejecutable. El atributo "src" apunta a los archivos de script externos para la biblioteca React, la biblioteca ReactDOM y la biblioteca Babel. Esto es como si tuvieras una máquina de afeitar eléctrica. Literalmente, no es bueno para usted, no importa cuán elegante sea la afeitadora eléctrica, a menos que pueda enchufarla a la pared y tener acceso a la electricidad. Nuestro código React que escribiremos no nos servirá si nuestro navegador no puede conectarse a estas bibliotecas para comprender e interpretar lo que estamos haciendo. Así es como nuestra aplicación va a ganar el poder de React, será cómo insertamos React en el Dom. La razón por la que tenemos React y ReactDOM como dos bibliotecas diferentes es porque hay casos de uso como React Native, donde no se necesita la representación al DOM para el desarrollo móvil, por lo que la biblioteca se dividió para que las personas tomen la decisión de lo que necesitan, dependiendo de En el proyecto en el que están trabajando. Como necesitaremos nuestro React para llegar al DOM, usaremos ambos scripts. Babel es la forma en que aprovechamos el script ECMA más allá de ES5 y tratamos algo llamado JSX (JavaScript como XML) que usaremos en React. Vamos a echar un vistazo más profundo a la magia de Babel en una próxima lección :) Muy bien, hemos completado los pasos 1 y 2. Hemos configurado nuestro código de placa de caldera y nuestro entorno de desarrollador.
 
-### 3 - Render Reaccionar al DOM
+### 3 - Renderizar React al DOM
 
 Nuestros próximos dos pasos serán elegir nuestra ubicación dentro de DOM a la que queramos procesar nuestro contenido React. Y usando otra etiqueta de script para nuestro contenido React dentro del cuerpo. En general, como buena práctica de separación de inquietudes, esto estaría en su propio archivo y luego se vincularía a este documento html. Lo haremos más tarde en las próximas lecciones. Por ahora, dejaremos que esto permanezca dentro del cuerpo del documento html en el que estamos actualmente. Ahora vamos a ver lo sencillo que es elegir un lugar en el DOM para representar nuestro contenido React. Iremos dentro del cuerpo. Y la mejor práctica no es solo lanzar React en la etiqueta del cuerpo que se mostrará, sino también crear un elemento separado, a menudo un div, que pueda tratar como un elemento raíz para insertar su contenido de React.
 
@@ -162,7 +162,7 @@ El "tipo" de script que estamos usando se ajustará entre comillas y lo establec
  </body> 
 ```
 
-El primer argumento es el "qué" de reaccionar. El segundo argumento es el "dónde" de la ubicación donde desea que se coloque en el DOM. Comencemos por llamar a nuestro método ReactDOM.render (). Nuestro primer argumento será nuestro JSX.
+El primer argumento es el "qué" de React. El segundo argumento es el "dónde" de la ubicación donde desea que se coloque en el DOM. Comencemos por llamar a nuestro método ReactDOM.render (). Nuestro primer argumento será nuestro JSX.
 
 ```javascript
 <body> 
