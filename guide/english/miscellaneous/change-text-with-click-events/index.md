@@ -1,5 +1,5 @@
 ---
-title: Change Text with Click Events
+title: Different Ways of Handling Click Events
 ---
 ## Different Ways of Handling Click Events
 > Coders often face a variety of options when confronting a challenge. One of these is their problem solving strategy. A simple example is letting the user interact with a website in the most basic of ways, a click. Let's take a look at a few different strategies: 
