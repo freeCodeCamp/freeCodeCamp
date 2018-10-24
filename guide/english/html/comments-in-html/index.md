@@ -23,6 +23,9 @@ Read more: https://html.com/tags/comment-tag/#ixzz4vtZHu5uR
 	<body>
 		<h1>FreeCodeCamp web</h1>
 		<!-- Leave some space between the h1 and the p in order to understand what are we talking about-->
+                
+                <!--- the computer can still read the code without spaces but it is best to add spaces for human eyes to understand and                       make out what you're trying to do -->
+                
 		<p>FreeCodeCamp is an open-source project that needs your help</p>
 	        <!-- For readability of code use proper indentation -->
 	</body>
