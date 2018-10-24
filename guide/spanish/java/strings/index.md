@@ -167,6 +167,7 @@ Producirá:
 ```java
  Mi nombre es Roberto
 ```
+P
 To use it with an ending index take note that the actual ending index is -1 of the value passed into the method. Now using  `.substring()`  with an ending index Example:
 
 ```
@@ -187,7 +188,7 @@ My
 
 -   [String Documentation](https://docs.oracle.com/javase/7/docs/api/java/lang/String.html)
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbNjcwMDM4OTAwLC0xNDc4NjQxMTAsMTA4OT
+eyJoaXN0b3J5IjpbMzM1ODM0NzIyLC0xNDc4NjQxMTAsMTA4OT
 M1NTAxNiwtMTU4ODg5NDAyNCwtNjMyMTIwMzc4LC0xNDg3NjE0
 MTQsODIwNDM0ODcwLC0xODkyMDc1MTc0LC02Njg2NzA1NDksMT
 A1MDA4ODA2OSw4NDg5NTc0MTUsMTkzNjc1MTgxMF19
