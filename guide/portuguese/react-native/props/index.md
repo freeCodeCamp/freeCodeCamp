@@ -1,12 +1,12 @@
 ---
 title: Props
-localeTitle: Adereços
+localeTitle: Propriedades
 ---
-## Reagir Nativo - Adereços
+## React Native - Propriedades
 
-O termo props, abreviação de 'properties', significa algum tipo de dado que é passado de um componente para outro. Adereços sempre fluem para baixo a partir do componente pai para o filho.
+O termo props, abreviação de 'properties', significa algum tipo de dado que é passado de um componente para outro. Propriedades sempre fluem para baixo a partir do componente pai para o filho.
 
-Em React, o componente filho tem acesso às informações de um pai por meio de adereços:
+Em React, o componente filho tem acesso às informações de um pai por meio do _props_:
 
 ```jsx
 // the child Header component receives the text prop and can access it via this.props.text 
