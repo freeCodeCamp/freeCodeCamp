@@ -1,13 +1,14 @@
 // Checking Weather a Number given as an Input From the user Is Even Or Odd//
 
 #include <stdio.h> // Importing Standard Input/Ouput From Library //
-main()
+int main()
 {
 int n;
-printf("Enter a Number");
+printf("Enter a Number\n");
 scanf("%d",&n);  //Taking Input From The User//
   if (n%2!=0)    // Condition to check Even/odd //
      printf("Given Number is an Odd Number");
   else
      printf("Given Number is an Even Number");
+return 0;
 }
