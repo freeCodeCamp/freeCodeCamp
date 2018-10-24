@@ -38,6 +38,10 @@ The one caviat to these is that they usually have a lower amount of full writes 
 ## Solid State Hard Drives (SSHD) a.k.a Hybrid Drives
 Solid State Hard Drives fill a specific gap inbetween Solid State Drives and traditional hard drives.  It combines the relative affordable cost of cheap magnetic storage in traditional drives and pairs it with a smaller capacity Solid State Drive with the intent of using the SSD portion to cache frequently used data to increase performance over a plain traditional hard drive at a marginal cost. Hence the combination of the two technologies creates a "hybrid device" that is cost effectively but still is able to benenfit from the high performance of SSD drives primarily for low intensity workloads that mostly utilize read requests from the drive.
 
+## Advantages of SSD over HDD
+The standard hard disk drive (HDD) has been the predominant storage device for computers (both desktops and laptops) for a long time. The main draw is the high storage capacity and low cost.
+The solid-state drive (SSD) is another storage solution and is slowly replacing the majority of hard disk drives. As you'll learn by reading the following comparison table, the SSD is a clear winner. However, due to its price per unit of memory, it doesn't make sense to use SSDs in all instances. For most computer users, we recommend using an SSD as the primary drive for your operating system, as well as the programs you access most frequently. Then, we suggest purchasing a large HDD (either internal or external) for storing documents, pictures, and music.
+
 #### More Information:
 
 * [Wikipedia - Hard Disk Drive](https://en.wikipedia.org/wiki/Hard_disk_drive)
@@ -46,3 +50,4 @@ Solid State Hard Drives fill a specific gap inbetween Solid State Drives and tra
 * [PCMag - SSD vs. HDD: What's the Difference?](https://www.pcmag.com/article2/0,2817,2404258,00.asp)
 * [Digital Trends - SSD vs. HDD](https://www.digitaltrends.com/computing/solid-state-drives-vs-hard-disk-drives)
 * [IOMeter Project](http://www.iometer.org)
+* [Computer Hope - Hard Drive](https://www.computerhope.com/jargon/h/harddriv.htm)
