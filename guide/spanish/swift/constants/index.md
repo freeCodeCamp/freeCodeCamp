@@ -4,7 +4,7 @@ localeTitle: Constantes
 ---
 ## Constantes
 
-Una constante asocia un nombre con un valor de un tipo particular.
+Una constante asocia un valor con un nombre, de esta forma podrás usar el nombre, en vez de la constante en el código.
 
 #### Ejemplo:
 
@@ -16,7 +16,7 @@ Se declara constantes con el `let` palabra clave luego darle un nombre de `name`
 
 Una vez que haya declarado una constante que no es necesario utilizar el `let` palabra clave ya que acaba de llamar por su nombre.
 
-El valor de una constante no se puede cambiar una vez que se establece.
+El valor de una constante no se puede cambiar en el resto del código una vez que se establece.
 
 #### Más información:
 
