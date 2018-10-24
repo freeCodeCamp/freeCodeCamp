@@ -22,7 +22,7 @@ As stressful as hacking away at something you're creating can be, there is a lot
 
 5.  **Enjoy the free food.** 
 
-Another awesome aspect of hackathons is free food, since you're there for minimum of 12 hours up to 4 or 5 days (extreme cases), they provide free meals for the participants, YUM!
+Another awesome aspect of hackathons is free food(free tastes better anyway), since you're there for minimum of 12 hours up to 4 or 5 days (extreme cases), they provide free meals for the participants, YUM!
 
 6.  **Learn as much as you can.** 
 
