@@ -20,8 +20,12 @@ The field of computer security is growing at a rapid rate every year, in a repor
 - Network Administrator
 - Support Desk Engineer
 - Security Engineer
+- Data Analyst
+- Data Engineer
 
 ### Books
+
+[The Four: The Hidden DNA of Amazon, Apple, Facebook, and Google](https://www.amazon.com/gp/product/0735213658/ref=as_li_qf_sp_asin_il_tl?ie=UTF8&tag=mestll-20&camp=1789&creative=9325&linkCode=as2&creativeASIN=0735213658&linkId=ca4679038f80f2e03585a04e83b3477b)
 
 [About Face: The Essentials of Interaction Design](https://amzn.to/2uwtugk)
 
