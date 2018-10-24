@@ -79,6 +79,17 @@ It is possible to also have outlined buttons rather than fully colored in ones. 
 
 Outlined buttons are a part of Bootstrap since version 4, please be sure that you are using the right version if you are unable to get them work.
 
+#### Bootstrap Grouping of Buttons
+It is possible to group more than 1 buttons mainly can be used in paginations or how so ever you want to use it.
+It can be done by making a parent div to all the buttons you want to group. And wrap all the buttons to be combined in that div.
+use class `.btn-group` as the div's class
+Here is an Example
+`<div class="btn-group" role="group" aria-label="Basic example">
+  <button type="button" class="btn btn-secondary">Left</button>
+  <button type="button" class="btn btn-secondary">Middle</button>
+  <button type="button" class="btn btn-secondary">Right</button>
+</div>`
+
 _Note: Do not include the dot in the HTML Class Attribute, referring to the classes with a dot is only used when adjusting the classes in CSS._
 
 #### More Information: 
