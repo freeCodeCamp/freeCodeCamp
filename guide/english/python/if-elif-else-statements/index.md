@@ -64,8 +64,7 @@ else:
 We can also create nested if statements for decision making. Before preceding please refer to the <a href='https://guide.freecodecamp.org/python/code-blocks-and-indentation' target='_blank' rel='nofollow'>indentation guide once</a> before preceding. 
 
 Let's take an example of finding a number which is even and also greater than '10':
-```
-python 
+```python 
 x = 34
 if x %  2 == 0:  # this is how you create a comment and now, checking for even.
   if x > 10:
@@ -85,8 +84,7 @@ While the examples above are simple, you can create complex conditions using <a 
 We can also use if-else statements with inline python functions
 The following example should check if the number is greater or equal than 50, if yes return True:
 
-```
-python 
+```python 
 x = 89
 is_greater = True if x >= 50 else False
 
