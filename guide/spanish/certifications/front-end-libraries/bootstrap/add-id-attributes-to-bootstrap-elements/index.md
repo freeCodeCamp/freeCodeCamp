@@ -21,15 +21,15 @@ Editar las etiquetas div que tienen la clase bien
 
 ### Sugerencia 3
 
-Utilice diferentes ID para ambos pozos.
+Utilice diferentes ID para ambas cajas.
 
 ### Sugerencia 4
 
-Dale al pozo de la izquierda la identificación de `left-well` y al pozo de la derecha la identificación de `right-well` .
+Dale a la caja de la izquierda la identificación de `left-well` y a la caja de la derecha la identificación de `right-well` .
 
 ### Solución
 
-Dado que tiene que agregar ID (s) a ambos pozos y tener ambos con un ID único, la siguiente es la solución:
+Dado que tiene que agregar ID (s) a ambas cajas y tener ambos con un ID único, la siguiente es la solución:
 
 ```html
 

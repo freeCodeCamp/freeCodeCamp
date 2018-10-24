@@ -14,14 +14,14 @@ A palavra-chave RIGHT JOIN retorna todos os registros da tabela à direita (tabe
 
 ```sql
 SELECT * 
- FROM table1 
- RIGHT JOIN table2 
- ON table1.column_name = table2.column_name; 
+FROM table1 
+RIGHT JOIN table2 
+ON table1.column_name = table2.column_name; 
 ```
 
 ### Lista completa de tabelas para referência
 
-comida ou dados da tabela LEFT
+"foods" ou dados da tabela LEFT
 
 ```text
 +---------+--------------+-----------+------------+ 
@@ -35,26 +35,44 @@ comida ou dados da tabela LEFT
  | 5       | Jaffa Cakes  | Pcs       | 18         | 
  | 7       | Salt n Shake | Pcs       |            | 
  +---------+--------------+-----------+------------+ 
+ ```
  
  
- 
- company or RIGHT table data 
+ "company" ou dados da tabela RIGHT
+``` text
++------------+---------------+--------------+
+| COMPANY_ID | COMPANY_NAME  | COMPANY_CITY |
++------------+---------------+--------------+
+| 18         | Order All     | Boston       |
+| 15         | Jack Hill Ltd | London       |
+| 16         | Akas Foods    | Delhi        |
+| 17         | Foodies.      | London       |
+| 19         | sip-n-Bite.   | New York     |
++------------+---------------+--------------+
 ```
 
-texto + ------------ + --------------- + -------------- + | _ID_ DA EMPRESA _|_ NOME _DA EMPRESA_ | COMPANY\_CITY | + ------------ + --------------- + -------------- + | 18 | Encomendar tudo | Boston | | 15 | Jack Hill Ltd | Londres | | 16 | Akas Foods | Deli | | 17 | Gastrônomos. | Londres | | 19 | sip-n-mordida. | Nova York | + ------------ + --------------- + -------------- +
+
+Para retornar nome da companhia da tabela "company" e os colunos ID da companhia, nome do item da tabela "foods", a SQL seguinte pode ser usado: 
+
+```sql
+SELECT company.company_id,company.company_name,
+company.company_city,foods.company_id,foods.item_name
+FROM   company
+RIGHT JOIN foods
+ON company.company_id = foods.company_id;
 ```
-To get company name from company table and company ID, item name columns from foods table, the following SQL statement can be used: 
+RESULTADOS 
+
+```text
++------------+---------------+--------------+------------+--------------+
+| COMPANY_ID | COMPANY_NAME  | COMPANY_CITY | COMPANY_ID | ITEM_NAME    |
++------------+---------------+--------------+------------+--------------+
+| 18         | Order All     | Boston       | 18         | Jaffa Cakes  |
+| 15         | Jack Hill Ltd | London       | 15         | Pot Rice     |
+| 15         | Jack Hill Ltd | London       | 15         | BN Biscuit   |
+| 15         | Jack Hill Ltd | London       | 15         | Cheez-It     |
+| 16         | Akas Foods    | Delhi        | 16         | Chex Mix     |
+| 17         | Foodies.      | London       | 17         | Mighty Munch |
+| NULL       | NULL          | NULL         | NULL       | Salt n Shake |
++------------+---------------+--------------+------------+--------------+
 ```
-
-sql SELECT company.company _id, company.company_ name, company.company _city, foods.company_ id, foods.item _name DA empresa DIREITO JOIN alimentos ON company.company_ id = foods.company\_id;
-```
-OUTPUT 
-```
-
-texto NOME DA _EMPRESA_ NOME DA EMPRESA _CIDADE DA_ EMPRESA _EMPRESA_ ID ITEM\_NAME
-
-* * *
-
-18 Peça Todos Boston 18 Jaffa Cakes 15 Jack Hill Ltd London 15 Arroz de Panela 15 Jack Hill Ltd Londres 15 BN Biscoito 15 Jack Hill Ltd Londres 15 Cheez-It 16 Akas Foods Delhi 16 Chex Mix 17 Foodies. Londres 17 poderoso Munch NULL NULL NULL NULL Salt n Agitar
-
-\`\` \`

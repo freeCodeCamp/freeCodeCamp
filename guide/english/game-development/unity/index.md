@@ -9,7 +9,7 @@ First announced only for OS X, at Apple's Worldwide Developers Conference in 200
 ## Overview
 Unity is an all purpose game engine that supports 2D and 3D graphics, drag and drop functionality and scripting through [C#](https://guide.freecodecamp.org/csharp).
 
-Unity is particularly popular for mobile game development and much of their focus is on mobile platforms. Unity3D's 2D pipeline is a more recent addition to the engine, and is less mature than the 3D pipeline. Despite this Unity is an adaquate platform for developing 2D games even when compared to other dedicated 2D engines, particularly if you plan to release the game across multiple mobile devices.
+Unity is particularly popular for mobile game development and much of their focus is on mobile platforms. Unity3D's 2D pipeline is a more recent addition to the engine, and is less mature than the 3D pipeline. Despite this Unity is an adaquate platform for developing 2D games even when compared to other dedicated 2D engines, particularly if you plan to release the game across multiple mobile devices due to its ease of access of building for different platforms.
 
 Unity is also a good choice for VR development, although VR is a very small market at the moment. The mobile and PSVR markets are the largest in VR, and Unity is already well positioned to port games to many platforms such as PS4 and PC, or many different mobile markets. 
 
@@ -35,7 +35,7 @@ In picture above, you will notice five section:
 2) Section 2. <b>Game View</b>: This is where you will see your results, how your level or scene looks like. You need to have a Camera on the scene to see how it looks like. Sometimes its called Camera View.
 3) Section 3. <b>Hierarchy</b>: This window will display all Game Objects placed directly on the scene. Basically everything that you see in Game View, needs to be listed here. This will include non-visual and visual game objects.
 4) Section 4. <b>Project</b>: This is your project window. Basically it show whats inside Assets folder on your disk. Everything from Game Objects, Scripts, Textures, Folders, Models, Audio, Video and etc... will be accessible from this window.
-5) Section 5. <b>Inspector</b>: This panel will display different attibutes and properties of selected Game Objects. Depending on the selection, the appropriate attributes and components will be listed.
+5) Section 5. <b>Inspector</b>: This panel will display different attributes and properties of selected Game Objects. Depending on the selection, the appropriate attributes and components will be listed.
 
 ##  Noteworthy Games: 
 * Assassin’s Creed: Identity
@@ -44,6 +44,7 @@ In picture above, you will notice five section:
 * Hearthstone: Heroes of Warcraft
 * Inside
 * Cuphead
+* Club Penguin Island
      
 ## History
 
