@@ -4,7 +4,7 @@ title: What Is Python Used for
 
 ## What Is Python Used for
 
-Python can easily be used for small, large, online and offline projects. The best options for utilizing Python are web development, simple scripting and data analysis.
+Python is great for small, large, online and offline projects. The best options for utilizing Python are web development, simple scripting and data analysis.
 Below are a few examples of what Python will let you do:
 
 ##### Web Development:
@@ -46,6 +46,9 @@ You can use Python and some Python-libraries for developing <a href='https://git
 
 #### Data Gathering by crawling and scraping
 Python could also be used by parse pages source codes and retrieve its data. Using some python modules, such as: Scrapy and also (for some reasons and pages which uses javascript) Selenium, should do the trick!
+
+### Data analysis
+In very recent year's python has been used for data analysis more and more and more R and SATA user's love it for the beauty and flexibility of it.
 
 #### More Information:
 Here's a <a href='https://www.python.org/about/apps/' target='_blank' rel='nofollow'>link</a> to a section of the official Python website describing its various applications.
