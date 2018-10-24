@@ -41,7 +41,7 @@ Puede _asignar_ un valor a la variable de forma simultánea cuando la declara (l
  // La variable miFlotante ahora apunta al objeto 
  Float miFlotante = new Float(1.0); 
  
- // Los Bytes son uno de los Tipos en Java y pueden ser  
+ // Los bytes son uno de los Tipos en Java y pueden ser  
  // representados cone este codigo
  int valorDelByte = 0B101; 
  byte otroByte = (byte)0b00100001; 
@@ -54,7 +54,7 @@ Como se desprende del ejemplo anterior, las variables del tipo Primitivo se comp
 *   [Tipos de datos](https://guide.freecodecamp.org/java/data-types)
 *   [Clases y objetos](https://guide.freecodecamp.org/java/classes-and-objects)
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTcxMzQ0Mjg2MywyMDczMjI3Njk4LC0yMz
-YxMjQ4NDAsMTU3NTA1NjIzOSw2MjkzMzk1MjEsMTg4NjMwMzAw
-NywtODQ5ODkyMjcxLC0xMDYyODM1NTMwXX0=
+eyJoaXN0b3J5IjpbLTIwNDc2ODYxNTksMjA3MzIyNzY5OCwtMj
+M2MTI0ODQwLDE1NzUwNTYyMzksNjI5MzM5NTIxLDE4ODYzMDMw
+MDcsLTg0OTg5MjI3MSwtMTA2MjgzNTUzMF19
 -->
