@@ -33,3 +33,4 @@ $ docker image ls
 
 ## Further reading
 * [Docker Documentation](https://docs.docker.com)
+* [Docker info](https://en.wikipedia.org/wiki/Docker_(software))
