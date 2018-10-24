@@ -112,10 +112,10 @@ The following table lists the CSS properties used with flexbox:
 #### Shorthand values for the flex properties
 The predefined values are as follows:
 
-        * flex: initial
-        * flex: auto
-        * flex: none
-        * flex: <positive-number>
+        - flex: initial
+        - flex: auto
+        - flex: none
+        - flex: <positive-number>
 
 ### More Information:
 <!-- Please add any articles you think might be helpful to read before writing the article -->
