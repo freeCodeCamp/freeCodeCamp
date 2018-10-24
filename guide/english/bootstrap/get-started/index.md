@@ -1,6 +1,14 @@
 ---
 title: Get Started
 ---
+
+## Table of Contents
+
+* [Get Started](#get-started)
+* [What is a responsive website](#what-is-a-responsive-website)
+* [How do I add Bootstrap to my page](#how-do-i-add-bootstrap-to-my-page)
+* [More Information](#more-information)
+
 ## Get Started
 Bootstrap is a free and open source framework developed by Twitter that provides a variety of templates for use with front-end web development. Using Bootstrap makes it easy to design a fully responsive website and is a framework worth learning.
 
