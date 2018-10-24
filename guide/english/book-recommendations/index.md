@@ -50,6 +50,10 @@ title: Books to Read for Programmers
 - [Amazon Smile](https://smile.amazon.com/Soft-Skills-software-developers-manual/dp/1617292397?pldnSite=1)
 - ISBN-13: 9781617292392
 
+*Accelerate: The Science of Lean Software and DevOps: Building and Scaling High Performing Technology Organizations* - Nicole Forsgren PhD, Jez Humble, and Gene Kim
+- [Amazon Smile](https://smile.amazon.com/Accelerate-Software-Performing-Technology-Organizations/dp/1942788339/)
+- ISBN-13: 9781942788331
+
 ## Algorithms
 
 *Introduction to Algorithms, 3rd Edition (MIT Press)* by Thomas H. Cormen and Charles E. Leiserson
