@@ -7,7 +7,7 @@ Code documentation is a way developers write their code to create the best versi
 
 For example, if you happen to pass along your code to an absolute beginner, they should be able to follow along through comments, appropriate variable names and that means structuring the code in a spaced, readable manner. 
 
-It may become an extremely important idea to make a habit out of commenting your functions, loops, and declarations and treating comments as part of the source code, just as regular code should be.
+It may become an extremely important idea to make a habit out of commenting your functions, loops, and declarations and treating comments as part of the source code, just as regular code should be. These comments may also be quite helpful to you as well, given that over time you might forget why you wrote your own code a specific way!
 
 ![An example of commenting in the real world](https://cdn-images-1.medium.com/max/1620/1*Pyxsc7Uixbitv5myywaA_Q.jpeg)
 
