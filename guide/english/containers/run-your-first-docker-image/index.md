@@ -27,3 +27,5 @@ $ docker image ls
 #### More Information:
 
 Docker installation <a href='https://docs.docker.com/get-started/#test-docker-installation' target='_blank' rel='nofollow'>documentation</a>.
+
+Docker images.
