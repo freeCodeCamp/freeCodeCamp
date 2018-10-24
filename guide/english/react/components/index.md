@@ -82,6 +82,9 @@ const Cat = props =>
 
 ```
 
-### More Information:
+##### Important note:
+User defined components (stateful or stateless) must always start with a capital letter as React considers components starting with lowercase letters as DOM tags. For example, ```<Foo />``` will be considered a user defined component but ```<foo />``` will be considered DOM tags similar to  ```<div />```, ```<span />``` or ```<p />``` tags. This is explaned in detail [here](https://reactjs.org/docs/jsx-in-depth.html#user-defined-components-must-be-capitalized)
 
-[https://reactjs.org/docs/components-and-props.html](Components and Props)
+
+### More Information:
+[Components and Props](https://reactjs.org/docs/components-and-props.html)
