@@ -33,6 +33,8 @@ Mozilla also offers Rhino, an implementation of JavaScript built in Java, typica
 
 WebKit (except for the Chromium project) implements the JavaScriptCore engine.
 
+GLUEscript - A standalone JavaScript shell for writing cross-platform JavaScript applications.  It can use wxWidgets for GUI apps and was formerly called wxJavaScript.
+
 ## JavaScript Frameworks
 Most frequently used JavaScript Frameworks are React JS, Angular JS, Create JS, jQuery, nodeJS etc. 
 For details follow this [link](https://javascriptreport.com/the-ultimate-guide-to-javascript-frameworks/).
