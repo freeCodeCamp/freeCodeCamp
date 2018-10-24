@@ -6,13 +6,13 @@ videoUrl: ''
 localeTitle: Iterar através das chaves de um objeto com um para ... em declaração
 ---
 
-## Description
+## Descrição
 <section id="description"> Às vezes, você pode precisar iterar por todas as chaves de um objeto. Isso requer uma sintaxe específica em JavaScript chamada uma instrução <dfn>for ... in</dfn> . Para o nosso objeto de <code>users</code> , isso poderia parecer com: <blockquote> para (deixar usuário nos usuários) { <br> console.log (usuário); <br> }; <br><br> // logs: <br> Alan <br> Jeff <br> Sarah <br> Ryan </blockquote> Nesta declaração, definimos um <code>user</code> variável e, como você pode ver, essa variável foi redefinida durante cada iteração para cada uma das chaves do objeto à medida que a instrução passava pelo objeto, resultando na impressão do nome de cada usuário no console. <strong>NOTA:</strong> <br> Objetos não mantêm uma ordenação para chaves armazenadas como as matrizes fazem; assim, a posição das teclas em um objeto, ou a ordem relativa em que ele aparece, é irrelevante ao referenciar ou acessar essa chave. </section>
 
-## Instructions
+## Instruções
 <section id="instructions"> Nós definimos uma função, <code>countOnline</code> ; use uma instrução <dfn>for ... in</dfn> dentro dessa função para percorrer os usuários no objeto <code>users</code> e retornar o número de usuários cuja propriedade <code>online</code> está configurada como <code>true</code> . </section>
 
-## Tests
+## Testes
 <section id='tests'>
 
 ```yml
@@ -26,7 +26,7 @@ tests:
 
 </section>
 
-## Challenge Seed
+## Código Inicial
 <section id='challengeSeed'>
 
 <div id='js-seed'>
@@ -67,7 +67,7 @@ console.log(countOnline(users));
 
 </section>
 
-## Solution
+## Solução
 <section id='solution'>
 
 ```js
