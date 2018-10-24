@@ -28,15 +28,15 @@ $$A(m, n) =
 ```yml
 tests:
   - text: <code>ack</code> is a function.
-    testString: 'assert(typeof ack === "function", "<code>ack</code> is a function.");'
-  - text: '<code>ack(0, 0)</code> should return 1.'
-    testString: 'assert(ack(0, 0) === 1, "<code>ack(0, 0)</code> should return 1.");'
-  - text: '<code>ack(1, 1)</code> should return 3.'
-    testString: 'assert(ack(1, 1) === 3, "<code>ack(1, 1)</code> should return 3.");'
-  - text: '<code>ack(2, 5)</code> should return 13.'
-    testString: 'assert(ack(2, 5) === 13, "<code>ack(2, 5)</code> should return 13.");'
-  - text: '<code>ack(3, 3)</code> should return 61.'
-    testString: 'assert(ack(3, 3) === 61, "<code>ack(3, 3)</code> should return 61.");'
+    testString: assert(typeof ack === 'function', '<code>ack</code> is a function.');
+  - text: <code>ack(0, 0)</code> should return 1.
+    testString: assert(ack(0, 0) === 1, '<code>ack(0, 0)</code> should return 1.');
+  - text: <code>ack(1, 1)</code> should return 3.
+    testString: assert(ack(1, 1) === 3, '<code>ack(1, 1)</code> should return 3.');
+  - text: <code>ack(2, 5)</code> should return 13.
+    testString: assert(ack(2, 5) === 13, '<code>ack(2, 5)</code> should return 13.');
+  - text: <code>ack(3, 3)</code> should return 61.
+    testString: assert(ack(3, 3) === 61, '<code>ack(3, 3)</code> should return 61.');
 
 ```
 

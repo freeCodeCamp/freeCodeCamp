@@ -28,7 +28,7 @@ In the first one-thousand expansions, how many fractions contain a numerator wit
 ```yml
 tests:
   - text: <code>euler57()</code> should return 153.
-    testString: 'assert.strictEqual(euler57(), 153, "<code>euler57()</code> should return 153.");'
+    testString: assert.strictEqual(euler57(), 153, '<code>euler57()</code> should return 153.');
 
 ```
 

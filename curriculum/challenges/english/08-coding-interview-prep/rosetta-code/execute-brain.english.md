@@ -43,15 +43,15 @@ challengeType: 5
 ```yml
 tests:
   - text: <code>brain(bye)</code> should retuen a string
-    testString: 'assert(typeof brain(bye) === "string", "<code>brain(bye)</code> should return a string");'
-  - text: '<code>brain("++++++[>++++++++++<-]>+++++.")</code should return "A"'
-    testString: 'assert.equal(brain("++++++[>++++++++++<-]>+++++."),"A", "<code>brain("++++++[>++++++++++<-]>+++++.")</code should return "A"");'
-  - text: '<code>brain(bye)</code> should return <code>Goodbye, World!\\r\\n</code>'
-    testString: 'assert.equal(brain(bye), "Goodbye, World!\r\n", "<code>brain(bye)</code> should return <code>Goodbye, World!\\r\\n</code>");'
+    testString: assert(typeof brain(bye) === 'string', '<code>brain(bye)</code> should return a string');
+  - text: <code>brain("++++++[>++++++++++<-]>+++++.")</code should return "A"
+    testString: assert.equal(brain("++++++[>++++++++++<-]>+++++."),"A", '<code>brain("++++++[>++++++++++<-]>+++++.")</code should return "A"');
+  - text: <code>brain(bye)</code> should return <code>Goodbye, World!\\r\\n</code>
+    testString: assert.equal(brain(bye), 'Goodbye, World!\r\n', '<code>brain(bye)</code> should return <code>Goodbye, World!\\r\\n</code>');
   - text: <code>brain(hello)</code> should return <code>Hello World!\\n</code>'
-    testString: 'assert.equal(brain(hello), "Hello World!\n", "<code>brain(hello)</code> should return <code>Hello World!\\n</code>");'
-  - text: '<code>brain(fib)</code> should return <code>1, 1, 2, 3, 5, 8, 13, 21, 34, 55, 89</code>'
-    testString: 'assert.equal(brain(fib), "1, 1, 2, 3, 5, 8, 13, 21, 34, 55, 89", "<code>brain(fib)</code> should return <code>1, 1, 2, 3, 5, 8, 13, 21, 34, 55, 89</code>");'
+    testString: assert.equal(brain(hello), "Hello World!\n", '<code>brain(hello)</code> should return <code>Hello World!\\n</code>');
+  - text: <code>brain(fib)</code> should return <code>1, 1, 2, 3, 5, 8, 13, 21, 34, 55, 89</code>
+    testString: assert.equal(brain(fib), "1, 1, 2, 3, 5, 8, 13, 21, 34, 55, 89", '<code>brain(fib)</code> should return <code>1, 1, 2, 3, 5, 8, 13, 21, 34, 55, 89</code>');
 
 ```
 

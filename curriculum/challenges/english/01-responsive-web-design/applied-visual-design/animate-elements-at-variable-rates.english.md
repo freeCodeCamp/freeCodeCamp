@@ -22,7 +22,7 @@ Alter the animation rate for the element with the class name of <code>star-1</co
 ```yml
 tests:
   - text: The <code>@keyframes</code> rule for the <code>star-1</code> class should be 50%.
-    testString: 'assert(code.match(/twinkle-1\s*?{\s*?50%/g), "The <code>@keyframes</code> rule for the <code>star-1</code> class should be 50%.");'
+    testString: assert(code.match(/twinkle-1\s*?{\s*?50%/g), 'The <code>@keyframes</code> rule for the <code>star-1</code> class should be 50%.');
 
 ```
 

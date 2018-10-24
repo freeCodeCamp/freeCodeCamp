@@ -40,7 +40,7 @@ Another useful method to using a Ternary operator would be to envoke it to condi
 
 ## Running functions with ternary operator
 
-It's also possible to run functions using ternary operator, which sometimes can be useful and more readable. However, use it carefully, because then code is harder to debug.
+It's also possible to run functions using the ternary operator, which sometimes can be useful and more readable. However, use it carefully, because then code is harder to debug.
 
 ```javascript
     const runFirst = true;

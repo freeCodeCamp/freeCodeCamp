@@ -2,8 +2,13 @@ import { call, put, takeEvery } from 'redux-saga/effects';
 
 import { fetchUserComplete, fetchUserError } from './';
 import { getSessionUser } from '../utils/ajax';
+import { jwt } from './cookieValues';
 
 function* fetchSessionUser() {
+  if (!jwt) {
+    yield put(fetchUserComplete({ user: {}, username: '' }));
+    return;
+  }
   try {
     const {
       data: { user = {}, result = '' }
