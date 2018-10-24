@@ -12,13 +12,16 @@ Visual Design deals with how applications looks to the user as well as how it fe
 
 
 ### 10 Principles of Good Design
-1. Good design is innovative
-2. Good design makes a product useful
-3. Good design is aesthetic
-4. Good design makes a product understandable
-5. Good design is unobtrusive
-6. Good design is honest
-7. Good design is long-lasting
-8. Good design is thorough down to the last detail
-9. Good design is environmentally friendly
-10. Good design involves as little design as possible
+Good design:
+<ol>
+  <li>Should be innovative</li>
+  <li>Should make a product useful</li>
+  <li>Should be aesthetic</li>
+  <li>Should make a product understandable</li>
+  <li>Should be unobtrusive</li>
+  <li>Should be honest</li>
+  <li>Should be long-lasting</li>
+  <li>Should be thorough down to the last detail</li>
+  <li>Should be environmentally friendly</li>
+  <li>Should involve as little design as possible</li>
+<ol>
