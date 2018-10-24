@@ -50,6 +50,26 @@ h1.test, h2.test {
 }
 ```
 **Tips: No space between multiple classes.**
+
+
+#### Aplication of multiple classes
+In most cases you name your class based on what you want the class to do. Let's say you have the shadow class and the border class.
+
+**you can apply them in `HTML` like this but note you have to give space to the `class names`**
+
+```html
+<p>Hello World 1</p>
+<p class="shadow border">Freecodecamp</p>
+```
+```css
+.shadow{
+    box-shadow: 2px 3px 4px #ccc; 
+}
+
+.border{
+    border:2px solid red;
+}
+```
 #### More Information:
 CSS Syntax and Selectors: <a href='https://www.w3schools.com/css/css_syntax.asp' target='_blank' rel='nofollow'>w3schools</a>
 
