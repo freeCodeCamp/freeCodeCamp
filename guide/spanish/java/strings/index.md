@@ -49,7 +49,7 @@ Puede comprobar esto usando la comparación rapida de Object `==` y el método `
 Aquí hay otro ejemplo sobre cómo crear una cadena en Java usando los diferentes métodos:
 
 ```java
-public class EjemploCadenas{ 
+public class EjemploDeCadenas{ 
  
    public static void main(String args[]) { 
       String s1 = "java";  // creando un String para la cadena literal java 
@@ -63,9 +63,9 @@ public class EjemploCadenas{
  } 
 ```
 
-#### Comparando cuerdas
+#### Comparando Cadenas
 
-Si desea comparar el valor de dos variables de cadena, no puede usar ==. Esto se debe a que comparará las referencias de las variables. Y no los valores que están vinculados a ellos. Para comparar los valores almacenados de las cadenas, se utiliza el método igual.
+Si desea comparar el valor de dos variables String, no puede usar ==. Esto se debe a que comparará las referencias de las variables. Y no los valores que están vinculados a ellas. Para comparar los valores almacenados de las cadenas, se utiliza el método igual.
 
 ```java
 boolean equals(Object obj) 
@@ -139,7 +139,7 @@ String a = "Sam";
 
 ```
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMTUwMTU5MjA1MiwtMTg5MjA3NTE3NCwtNj
-Y4NjcwNTQ5LDEwNTAwODgwNjksODQ4OTU3NDE1LDE5MzY3NTE4
-MTBdfQ==
+eyJoaXN0b3J5IjpbLTEyNDM2MTY2MTMsLTE4OTIwNzUxNzQsLT
+Y2ODY3MDU0OSwxMDUwMDg4MDY5LDg0ODk1NzQxNSwxOTM2NzUx
+ODEwXX0=
 -->
