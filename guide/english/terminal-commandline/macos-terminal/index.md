@@ -84,7 +84,7 @@ Use the following syntax to delete a file
 #### Terminate the process which uses the port you want to use
 ``` kill <PID> ```
 
-#### Search you command history as you type
+#### Search your command history as you type
 
 ```control+R```
 
