@@ -98,7 +98,7 @@ end
 ### Implementation in PHP
 
 ``` PHP 
-function selection_sort($A) {
+function selection_sort($A=[]) {
     $len = count($A);
     for ($i = 0; $i < $len - 1; $i = $i + 1) {
         $j_min = $i;
