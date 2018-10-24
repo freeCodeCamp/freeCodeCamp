@@ -29,10 +29,15 @@ to purple and the rest of the page to blue.
 ```
 ![twobackground](https://user-images.githubusercontent.com/26467304/31036152-0607936a-a539-11e7-9e9f-a5e60ade042d.png)
 
-In CSS color can be defined in three ways:
-* A valid color name such as `blue`
-* A HEX value such as `#FFFFF` (This is the hex value for white.)
-* An RGB value such as `rgb(76,175,80)` (This is the RGB value for light green.)
+In CSS color can be defined in the following  ways:
+* A valid "color keyword" name such as `blue`
+* Numerical color values
+  + A HEX value such as `#FFFFF` (This is the hex value for white.)
+  + An RGB value such as `rgb(76,175,80)` (This is the RGB value for light green.)
+  + RGBA value (RGB + "alpha" for contolling opacity)
+  + HSL (Hue, Saturation, Lightness)
+  + HSLA (HSL + "alpha")
+
 
 ### Background Images
 You can use the background image property to set an image as a background for an element. 
