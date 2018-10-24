@@ -21,6 +21,7 @@ Most used options:
 * `-l`, List in long format
 * `-G`, enable colorized output.
 * `-s`, List File Size.
+* `-t`, sort the list of files by modification time.
 
 ### Example:
 
