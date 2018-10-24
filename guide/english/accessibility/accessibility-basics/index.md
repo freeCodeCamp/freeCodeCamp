@@ -6,9 +6,9 @@ title: Accessibility Basics
 > --Professor Severus Snape, Harry Potter Series
 
 
-Accessibility's role in development is essentially understanding the user's perspective and needs, and knowing that the web, and applications are a solution for people with disabilities.
+Accessibility's role in development is essentially understanding the user's perspective and needs, and knowing that the web and applications are a solution for people with disabilities.
 
-In this day and age, more and more new technologies are invented to make the life of developers, as well as users, easier. To what degree this is a good thing is a debate for another time, for now it's enough to say the toolbox of a developer, especially a web developer, is as ever-changing as the so-called "dark arts" are according to Professor Snape.
+In this day and age, more and more new technologies are invented to make the life of developers, as well as users, easier. To what degree this is a good thing is a debate for another time. For now, it's enough to say the toolbox of a developer, especially a web developer, is as ever-changing as the so-called "dark arts" are according to Professor Snape.
 
 One tool in that toolbox should be accessibility. It is a tool that should ideally be used in one of the very first steps of writing any form of web content. However, this tool is often not all that well presented in the toolbox of most developers. This could be due to a simple case of not knowing it even exists to extreme cases like not caring about it.
 
@@ -37,7 +37,7 @@ You could ask yourself questions like the following ones:
 *   Does your application assume the orientation of the device, and what if the user can't physically change it?
 *   Are there forgiving timed aspects of your application for someone that might need more time to fill in a form?
 *   Does your application still work (progressive enhancement) assuming that JavaScript does not load in time?
-*   You can even go as far as saying, if your website is very resource-heavy, will someone on a slow or spotty connection be able to read your content?
+*   You can even go as far as saying if your website is very resource-heavy, will someone on a slow or spotty connection be able to read your content?
 
 This is where accessibility comes into play. Accessibility basically entails making your content as friendly, as easy to 'access' as possible for the largest amount of people. This includes people who are deaf, low-vision, blind, dyslexic, mute, on a slow connection, colorblind, suffering from epilepsy, mental fatigue, age, physical limitations, etc.
 
@@ -67,7 +67,7 @@ To bring a bit of a method to the madness, the Web Content Accessibility Guideli
 
 ### Talk like the natives
 
-The HTML specification is a document that describes how the language should be used to build websites. Assistive technologies, like screen-reader, speech-recognition programs etc. are aware of this document. Web developers however, often are not, or at least not enough, and think something like this is ok:
+The HTML specification is a document that describes how the language should be used to build websites. Assistive technologies, like screen-reader, speech-recognition programs etc. are aware of this document. Web developers, however, often are not, or at least not enough, and think something like this is ok:
 ```html
     <div class="awesome-button"></div>
 
@@ -79,9 +79,9 @@ Guess what? All three of these elements break several criteria of WCAG and there
 
 The first element breaks the so-called 'name, role, value'-criterium, which states that all elements on a web page should expose their name, their role (like button) and their value (like the contents of an edit field) to assistive technologies. This div actually doesn't provide any of the three, rendering it invisible to screen-readers.
 
-The second element looks like a heading visually after styling it with CSS, but semantically is a span. Therefore, assistive technologies won't know its a heading. A screen-reader will read this as regular text, instead of a heading. Screen-readers often have a hotkey to quickly jump to the nearest heading, this heading will not be included in that scope.
+The second element looks like a heading visually after styling it with CSS but semantically is a span. Therefore, assistive technologies won't know its a heading. A screen-reader will read this as regular text, instead of a heading. Screen-readers often have a hotkey to quickly jump to the nearest heading, this heading will not be included in that scope.
 
-The third element could for example be an element a user can click to change the language of the website. Maybe a fancy animated menu of languages will expand when it is clicked. However, this is also a span and does not expose its role (link, or button), making assistive technologies think this is just the word English with some styling.
+The third element could be an element a user can click to change the language of the website. Maybe a fancy animated menu of languages will expand when it is clicked. However, this is also a span and does not expose its role (link, or button), making assistive technologies think this is just the word English with some styling.
 
 Spans and divs are non-elements. They are meant to contain other elements, not to be elements themselves. You can fix these in two ways:
 
@@ -100,19 +100,19 @@ Boom. Suddenly, all these elements are now perfectly accessible, just by using n
 
 A bit earlier, I touched upon a screen-reader's hotkeys to jump from heading to heading. There are in fact many hotkeys like this to quickly jump to the nearest table, form field, link etc. Making sure these headings are actually in logical places is therefore a good practice and really decreases your assistive technology users' stress levels, which is good if you want visitors to keep coming back to your website.
 
-Also remember that headings are hierarchical. If you use an h2, make sure the h3's that follow it actually have something to do with that h2\. Don't put an h3 for contact details under your h2 for recent blog posts. A good analogy here is a book with chapters, that have subsections. You wouldn't put a section on baking cookies in the middle of a chapter on preparing vegetables ...or ...you wouldn't... right?
+Also, remember that headings are hierarchical. If you use an h2, make sure the h3's that follow it actually have something to do with that h2\. Don't put an h3 for contact details under your h2 for recent blog posts. A good analogy here is a book with chapters, that have subsections. You wouldn't put a section on baking cookies in the middle of a chapter on preparing vegetables ...or ...you wouldn't... right?
 
 ### What's the alternative?
 
 Images on a website are great. They add a new layer to your content, can really make the experience your site visitors have way more immersive and generally just look good among all that text. A picture can say more than a thousand words, right?
 
-Certainly. That is, if you can see them. In the HTML5-specification, an `img` attribute must always have an alt-attribute. This attribute is meant as an alternative to the image in case it can't be seen. This would be true for blind visitors to your website, but also when your image can't be loaded for some reason. Not adding an `alt` tag to an `img` attribute is therefore not only breaking accessibility, but going against the HTML5-spec.
+Certainly. That is if you can see them. In the HTML5-specification, an `img` attribute must always have an alt-attribute. This attribute is meant as an alternative to the image in case it can't be seen. This would be true for blind visitors to your website, but also when your image can't be loaded for some reason. Not adding an `alt` tag to an `img` attribute is therefore not only breaking accessibility but going against the HTML5-spec.
 
 I implore any web developer who catches themselves doing this to eat their programmer's hat and work on Windows 95 exclusively for a week. After the time is up, write an essay on what you have learned from this ordeal so I can have a laugh during my afternoon coffee.
 
 Now, there is one caveat here. Alt-attributes are mandatory according to the HTML5-spec, but it's not mandatory to actually fill them in. `<img src="awesome-image.jpg", alt="">` is therefore legal HTML5 code.
 
-Should you therefore fill in alt-tags for all images? It depends on the image, really. For background images, the answer is usually no, but you should use CSS for those anyway.
+Should you, therefore fill in alt-tags for all images? It depends on the image, really. For background images, the answer is usually no, but you should use CSS for those anyway.
 
 For purely decorative images that have no information in them at all, you're basically free to choose. Either put in something useful and descriptive or nothing at all.
 
