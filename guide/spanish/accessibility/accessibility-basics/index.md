@@ -3,14 +3,14 @@ title: Accessibility Basics
 localeTitle: Conceptos básicos de accesibilidad
 ---
 > "Las Artes Oscuras son muchas, variadas, siempre cambiantes y eternas. Luchar contra ellas es como luchar contra un monstruo con muchas cabezas, que, cada vez que se corta un cuello, brota una cabeza aún más feroz e inteligente que antes. Estás luchando contra eso. el cual es fijo, mutante, indestructible ".
-> 
+>
 > \--Profesor Severus Snape, Harry Potter Series
 
-El rol de la accesibilidad en el desarrollo es esencialmente entender la perspectiva y las necesidades del usuario, y saber que la web y las aplicaciones son una solución para las personas con discapacidades.
+El rol de la accesibilidad en el desarrollo es esencialmente entender la perspectiva y las necesidades del usuario, y saber que la web es para todos; los websitios y las applicaciones necesitan ser facile y intuitivo de usar para las personas con discapacidades.
 
-En esta época, se inventan cada vez más nuevas tecnologías para facilitar la vida de los desarrolladores, así como de los usuarios. Hasta qué punto esto es bueno, es un debate para otro momento, por ahora basta con decir que la caja de herramientas de un desarrollador, especialmente un desarrollador web, está tan cambiante como las llamadas "artes oscuras" según nuestro amigo. Snape.
+En esta época, se inventan cada vez más nuevas tecnologías para facilitar la vida de los desarrolladores, así como de los usuarios. Hasta qué punto esto es bueno, es un debate para otro momento. Por ahora basta con decir que la caja de herramientas de un desarrollador, especialmente un desarrollador web, está tan cambiante como las llamadas "artes oscuras" según nuestro amigo. Snape.
 
-Una herramienta en esa caja de herramientas debe ser la accesibilidad. Es una herramienta que, idealmente, debería usarse en uno de los primeros pasos para escribir cualquier forma de contenido web. Sin embargo, esta herramienta a menudo no está tan bien presentada en la caja de herramientas de la mayoría de los desarrolladores. Esto podría deberse a un simple caso de no saber que existe incluso en casos extremos, como no preocuparse por ello.
+Una herramienta en esa caja de herramientas debe ser la accesibilidad. Es una herramienta que, idealmente, debería usarse en uno de los primeros pasos para escribir cualquier forma de contenido web. Sin embargo, esta herramienta a menudo no es tan utilizada en la caja de herramientas de la mayoría de los desarrolladores. Esto podría deberse a un simple caso de no saber que existe incluso en casos extremos, como no preocuparse por ello.
 
 En mi vida como usuario, y más tarde como desarrollador, que se beneficia de la accesibilidad en cualquier forma de contenido, he visto ambos extremos de ese espectro. Si estás leyendo este artículo, supongo que estás en una de las siguientes categorías:
 
@@ -22,7 +22,7 @@ Si cae fuera de estas categorías bastante amplias, por favor hágamelo saber. S
 
 ## Entonces, ¿qué es la accesibilidad de todos modos?
 
-La accesibilidad en sí misma es un término un tanto engañoso a veces, especialmente si el inglés es su segundo idioma. A veces se le conoce como diseño inclusivo.
+La accesibilidad en sí misma es un término un tanto engañoso a veces, especialmente si el inglés es su segundo idioma. A veces se le conoce como Diseño Inclusivo.
 
 Si su sitio está en Internet, accesible a cualquier persona con un navegador web, en un sentido, ese sitio web es accesible para todos con un navegador web.
 
@@ -47,7 +47,7 @@ Puede pensar que la accesibilidad no se aplica a usted ni a sus usuarios, ¿por 
 
 La verdad es que tienes razón hasta cierto punto. Si ha investigado meticulosamente a los usuarios y ha excluido cualquier posibilidad de que cierto grupo de personas visite su sitio web, la prioridad para atender a ese grupo de personas disminuye bastante.
 
-Sin embargo, hacer esta investigación es clave para defender realmente dicha declaración. ¿Sabías que había [jugadores ciegos?](http://audiogames.net) e incluso [los fotógrafos ciegos?](http://peteeckert.com/) . ¿Quizás sabías que los [músicos pueden ser sordos](http://mentalfloss.com/article/25750/roll-over-beethoven-6-modern-deaf-musicians) ?
+Sin embargo, hacer esta investigación es clave para defender realmente dicha declaración. ¿Sabías que hay [jugadores ciegos?](http://audiogames.net) e incluso [los fotógrafos ciegos?](http://peteeckert.com/) . ¿Quizás sabías que los [músicos pueden ser sordos](http://mentalfloss.com/article/25750/roll-over-beethoven-6-modern-deaf-musicians) ?
 
 Si lo hiciste, bien por ti. Si no, supongo que esto lleva a mi punto de partida más a casa.
 
@@ -59,7 +59,7 @@ Hay variaciones en esta legislación en todo el mundo, algunas más severas y ab
 
 ## Ok, entonces la accesibilidad es un gran problema. Ahora, ¿cómo lo implementamos?
 
-Esa pregunta, lamentablemente, es más difícil de responder de lo que parece. La cita de Harry Potter en la parte superior está ahí por una razón, y no es que yo sea un ávido lector de Fantasía.
+Esa pregunta es más difícil de responder de lo que parece. La cita de Harry Potter en la parte superior está ahí por una razón, y no es que yo sea un ávido lector de Fantasía.
 
 Como dije anteriormente, la accesibilidad es importante para un grupo grande de personas diferentes, cada una con sus propias necesidades. Hacer que su sitio web funcione para todos, literalmente, es una tarea grande y continua.
 
@@ -71,11 +71,11 @@ La especificación HTML es un documento que describe cómo se debe usar el lengu
 
 ```html
 
-    <div class="awesome-button"></div> 
- 
-    <span><strong>Huge heading I will style with CSS later</strong></span> 
- 
-    <span class="clickable-with-JavaScript">English</span> 
+    <div class="awesome-button"></div>
+
+    <span><strong>Huge heading I will style with CSS later</strong></span>
+
+    <span class="clickable-with-JavaScript">English</span>
 ```
 
 ¿Adivina qué? Los tres de estos elementos rompen varios criterios de WCAG y, por lo tanto, no son accesibles en absoluto.
@@ -93,11 +93,11 @@ Spans y divs no son elementos. Están destinados a contener otros elementos, no 
 
 ```html
 
-    <button>This is a button</button> 
- 
-    <h2>Here's a heading level two</h2> 
- 
-    <a href="JavascriptThing">English</a> 
+    <button>This is a button</button>
+
+    <h2>Here's a heading level two</h2>
+
+    <a href="JavascriptThing">English</a>
 ```
 
 Auge. De repente, todos estos elementos ahora son perfectamente accesibles, solo mediante el uso de HTML nativo. HTML de la forma en que estaba destinado a ser utilizado, en otras palabras.
@@ -146,9 +146,9 @@ Supongo que la mejor manera de ilustrar esto es dando un ejemplo:
 
 ```html
 
-    <label for='username'> 
- 
-    <input type='text' id='username'> 
+    <label for='username'>
+
+    <input type='text' id='username'>
 ```
 
 Esto hará que, por ejemplo, un lector de pantalla diga "nombre de usuario, campo de edición de texto", en lugar de solo informar el "campo de edición de texto" y requiera que el usuario busque una etiqueta. Esto también ayuda realmente a las personas que usan software de reconocimiento de voz.
@@ -189,7 +189,7 @@ Le he contado sobre la accesibilidad, qué es, qué no es y por qué es importan
 
 También te he dado lo básico, lo más básico, de hacer que la accesibilidad sea correcta. Sin embargo, estos elementos básicos son muy poderosos y pueden hacer su vida mucho más fácil al codificar la accesibilidad.
 
-Si hablamos en términos de la FCC, debe tener esto en cuenta al realizar el plan de estudios HTML / CSS, así como el plan de estudios de JavaScript.  
+Si hablamos en términos de la FCC, debe tener esto en cuenta al realizar el plan de estudios HTML / CSS, así como el plan de estudios de JavaScript.
 En los artículos posteriores, abordaré varios temas más de primera clase. Una serie de preguntas que voy a responder son:
 
 *   Agregar encabezados estructurados suena como una buena idea, pero no encajan en mi diseño. ¿Qué debo hacer?
