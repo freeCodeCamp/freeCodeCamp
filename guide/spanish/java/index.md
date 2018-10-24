@@ -6,6 +6,8 @@ localeTitle: Java
 
 [Java](https://www.oracle.com/java/index.html) es un lenguaje de programación desarrollado por [Sun Microsystems](https://en.wikipedia.org/wiki/Sun_Microsystems) en 1995, que más tarde fue adquirido por [Oracle](http://www.oracle.com/index.html) . Ahora es una plataforma completa con muchas API estándar, API de código abierto, herramientas, gran comunidad de desarrolladores y se utiliza para crear las soluciones empresariales más confiables por parte de grandes y pequeñas empresas por igual. [El](https://www.android.com/) desarrollo de aplicaciones para [Android](https://www.android.com/) se realiza completamente con Java y su ecosistema. Para saber más sobre Java, lee [esto](https://java.com/en/download/faq/whatis_java.xml) y [esto](http://tutorials.jenkov.com/java/what-is-java.html) .
 
+Java produce applets (programas ejecutados por el navegador), que facilitan la interfaz gráfica de usuario (GUI) y la interacción de objetos por parte de los usuarios de Internet. Antes de los applets de Java, las páginas web eran típicamente estáticas y no interactivas. Los applets de Java han disminuido en popularidad con el lanzamiento de productos de la competencia, como Adobe Flash y Microsoft Silverlight.
+
 ## Versión
 
 La última versión es [Java 11](http://www.oracle.com/technetwork/java/javase/overview) , que fue lanzada en 2018 con [varias mejoras](https://www.oracle.com/technetwork/java/javase/11-relnote-issues-5012449.html) respecto a la versión anterior, Java 10. Pero para todos los propósitos, usaremos Java 8 en este wiki para todos los tutoriales.
