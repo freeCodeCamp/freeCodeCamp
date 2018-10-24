@@ -36,7 +36,7 @@ Tenga en cuenta que las `else` y " `else if` no son necesarias, mientras que `if
  int main () { 
  
    // Local variable definition 
-   int a = 10; 
+   int a = 100; 
  
    // Check the boolean condition 
    if(a < 5) { 
