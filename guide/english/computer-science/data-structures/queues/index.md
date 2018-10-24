@@ -78,4 +78,23 @@ console.log(queue.remove()); // exception
 * <a href='http://www.geeksforgeeks.org/queue-data-structure/' target='_blank' rel='nofollow'>More Info on Queues - GeeksForGeeks</a>  
 * <a href='https://www.hackerrank.com/domains/data-structures/queues' target='_blank' rel='nofollow'>Solve Challenges using Queues - Hackerrank</a>
 * <a href="https://www.youtube.com/watch?v=wjI1WNcIntg" target ="_blank" rel="nofollow">HackerRank Stacks and Queues Video</a>
+* <a href='https://en.wikipedia.org/wiki/Queue_(abstract_data_type)' target='_blank' rel='nofollow'>Queue - Data Structure (Credit: Wikipedia Page)</a>
 
+* Queue - Enqueue Example Figure Below (Credit: tutorialspoint.com)
+	* Step 1 - Check if the queue is full
+	* Step 2 - If the queue is full, produce overflow error and exit
+	* Step 3 - If the queue is not full, increment rear pointer to point the next empty space
+	* Step 4 - Add data element to the queue location, where the rear is pointing
+	* Step 5 - Return success
+ 
+![alt text](https://www.tutorialspoint.com/data_structures_algorithms/images/queue_enqueue_diagram.jpg "Enqueue Operation")
+
+
+* Queue - Dequeue Example Figure Below (Credit: tutorialspoint.com)
+	* Step 1 - Check if the queue is empty
+	* Step 2 - If the queue is empty, produce underflow error and exit
+	* Step 3 - If the queue is not empty, access the data where front is pointing
+	* Step 4 - Increment front pointer to point to the next available data element
+	* Step 5 - Return success
+ 
+![alt text](https://www.tutorialspoint.com/data_structures_algorithms/images/queue_dequeue_diagram.jpg "Dequeue Operation")
