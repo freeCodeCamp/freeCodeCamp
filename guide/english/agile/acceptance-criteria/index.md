@@ -3,7 +3,7 @@ title: Acceptance Criteria
 ---
 ## Acceptance Criteria
 
-The User Story, as an item in your backlog, is a placeholder for a conversation. In this conversation,
+The User Story, as an item in your product backlog, is a placeholder for a conversation. In this conversation,
 the Product Owner and the Delivery Team reach an understanding on the desired outcome.
 
 The Acceptance Criteria tells the Delivery Team how the code should behave. Avoid writing the **"How"** of the User Story; keep to the **"What"**.
