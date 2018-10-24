@@ -16,3 +16,4 @@ ASP.NET offers different frameworks for creating web applications: For e.g Web F
 - [ASP .NET Site](https://www.asp.net/)
 - [ASP .NET Microsoft Documentation](https://docs.microsoft.com/en-us/aspnet/#pivot=aspnet/)
 - [ASP .NET Forum](https://forums.asp.net/)
+- [ASP .NET vs ASP .NET Core](https://docs.microsoft.com/en-us/aspnet/core/fundamentals/choose-aspnet-framework?view=aspnetcore-2.1)
