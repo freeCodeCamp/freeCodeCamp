@@ -15,17 +15,17 @@ public interface Collection<E> extends Iterable<E>
 Alguns dos métodos mais comuns fornecidos por essa interface são:
 
 ```java
-boolean add(E e) // Adds the specified element to the collection if not present and returns true if this collection changed. 
+boolean add(E e) // Adiciona elementos específicos do tipo <E>. Retorna true se a coleção foi modificada. 
  
- void clear() // Removes all the elements from the collection. 
+void clear() // Remove todos os elementos da coleção. 
  
- boolean contains(Object o) // Returns true if the specified element is in the collection else false 
+boolean contains(Object o) // Retorna true se o elemento estiver na coleção e false caso não esteja. Esse método leva em consideração os métodos equals e hashcode, portanto, esses precisam ser sobrescritos.
  
- boolean isEmpty() // Returns true if the collection is empty else false 
+boolean isEmpty() // Retorna true se a coleção estiver vazia e false caso não esteja.
  
- boolean remove(Object o) // Removes the specifies element and return true on successful removal else false. 
+boolean remove(Object o) // Remove o elemento espefícifo e retorna true, caso não exista o elemento na coleção o método retorna false.
  
- int size() // Returns number of items in the collection. 
+int size() // Retorna o número de itens contidos na coleção.
 ```
 
 Estes e vários outros métodos devem ser implementados por qualquer classe que implemente a interface Collection.
@@ -49,7 +49,7 @@ LinkedList é uma das classes de coleção mais importantes que fornece uma impl
 **Crie um LinkedList**
 
 ```java
-LinkedList<Integer> intList = new LinkedList<Integer>(); // Creates a new list of Integer objects. 
+LinkedList<Integer> intList = new LinkedList<Integer>(); // Cria um novo objeto LinkedList que aceitará apenas elementos do tipo Integer. 
 ```
 
 Você também pode criar uma lista de qualquer outro tipo de objeto. Por exemplo
@@ -57,7 +57,7 @@ Você também pode criar uma lista de qualquer outro tipo de objeto. Por exemplo
 ```java
 LinkedList<String> stringList = new LinkedList(); 
  
- LinkedList<LinkedList<Integer>> listOfList = new LinkedList(); 
+LinkedList<LinkedList<Integer>> listOfList = new LinkedList(); 
 ```
 
 Nota: Todas as coleções em Java foram convertidas em tipos genéricos desde o JDK 1.5
@@ -65,15 +65,15 @@ Nota: Todas as coleções em Java foram convertidas em tipos genéricos desde o 
 **Adicionar elementos à lista**
 
 ```java
-intList.add(new Integer(1)); // Add 1 to the end. 
+intList.add(new Integer(1)); // Adiciona na lista um objeto Integer cujo valor é 1.
  
- intList.add(2); // This works as Java provides autoboxing and unboxing of primitive datatypes and their respective wrapper classes 
+intList.add(2); // Também adiciona na lista um objeto Integer cujo valor é 2, porém vai obrigar o compilador a fazer um autoboxing do tipo primitivo int para o objeto do tipo Integer. 
  
- intList.addFirst(3); // Add to the beginning of the list 
+ intList.addFirst(3); // Adiciona o elemento ao início da lista. 
  
- intList.addLast(2); // Add to the end of the list 
+ intList.addLast(2); // Adiciona o elemento ao final da lista.
  
- intList.add(2, 5); // Add element 5 at index 2 
+ intList.add(2, 5); // Adiciona o elemento 5 no índice 2
 ```
 
 Deixe-nos imprimir a lista
@@ -87,15 +87,15 @@ Saída: \[3, 1, 5, 2, 2\]
 **Recuperar elementos da lista**
 
 ```java
-intList.get(3); // Returns element at index 3 ie 2 
+intList.get(3); // Retorna o elemento cujo conteúdo seja 3. 
  
- intList.getFirst(); // Get the first element ie 3 
+intList.getFirst(); // Retorna o primeiro elemento da lista.
  
- intList.getLast(); // Returns last element ie 2 
+intList.getLast(); // Retorna o último elemento da lista.
  
- intList.indexOf(2); // Returns first occured index of 2 ie 3 
+intList.indexOf(2); //Retorna o elemento que está no índice 2 
  
- intList.lastIndexOf(2); // Returns last occured index of 2 ie 4 
+intList.lastIndexOf(2); // Retorna o índice do elemento cujo valor seja 2.
 ```
 
 **LinkedList como uma pilha**
@@ -103,19 +103,19 @@ intList.get(3); // Returns element at index 3 ie 2
 Como o Java não fornece um
 
 ```java
-intList.push(5); // Add element to the end of list. Works same as addLast() 
+intList.push(5); // Adiciona o elemento ao final da lista, funciona como o addLast().
  
- intList.pop(); // Removes and returns the last element of the list. 
+intList.pop(); // Remove e retorna o último elemento da lista.
 ```
 
 **Remover elementos da lista**
 
 ```java
-intList.remove(3); // Removes the element at index 3 of the list 
+intList.remove(3); // Remove o elemento que está no índice 3 da lista. 
  
- intList.removeFirst(); // Removes first element of the list 
+intList.removeFirst(); // Remove e retorna o primeiro elemento da lista. 
  
- intList.removeLast(); // Removes last element of the list 
+intList.removeLast(); // Remove e retorna o último elemento da lista. 
 ```
 
 Nota: Todos os métodos acima mencionados para remover e buscar um elemento retornam NoSuchElementException em uma lista vazia.
