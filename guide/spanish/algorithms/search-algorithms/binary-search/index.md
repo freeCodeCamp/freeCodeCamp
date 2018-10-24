@@ -257,7 +257,7 @@ volver a mediados
 
 } devuelve -1; }
 ```
-Iterative approach! 
+¡Enfoque iterativo!
 ```
 
 C ++ - enfoque iterativo int binarySearch (int arr \[\], int start, int end, int x) { while (inicio <= fin) { int mid = start + (end - start) / 2; if (arr \[mid\] == x) volver a mediados if (arr \[mid\] <x) inicio = medio + 1; más end = mid - 1; } devuelve -1; } \`\` \`
