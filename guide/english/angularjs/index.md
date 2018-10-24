@@ -30,3 +30,11 @@ HTML:
 ```html
 <script src="/bower_components/angular/angular.js"></script>
 ```
+
+### What knowledge should we require?
+
+Before studying and using AngularJS, You only should have basic knowledge in:
+
+- HTML
+- CSS
+- Javascipt
