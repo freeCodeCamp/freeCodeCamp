@@ -116,6 +116,10 @@ title: Books to Read for Programmers
 - [Amazon Smile](https://smile.amazon.com/Effective-Java-3rd-Joshua-Bloch/dp/0134685997)
 - ISBN-13: 978-0134685991
 
+*Object-Oriented Programming with Java: An Introduction 1st Edition* by  David Barnes
+- [Amazon](https://www.amazon.com/Object-Oriented-Programming-Java-David-Barnes/dp/0130869007)
+- ISBN-13:  978-0130869005
+
 ## JavaScript
 
 *You Don't Know JS (book series)*
