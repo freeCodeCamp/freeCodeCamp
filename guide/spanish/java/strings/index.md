@@ -36,7 +36,7 @@ En este fragmento de código, ¿Cuántos objetos de cadena se crean?
  String str3 = new String("Esta es una cadena"); 
 ```
 
-La respuesta es: 2 objetos String son creados, `str` y `str2` refieren al mismo objeto. `str3` tiene el mismo contenido pero usando `new` se fuerza la creación de un nuevo objeto distinto.
+La respuesta es: 2 objetos String son creados. `str` y `str2` refieren al mismo objeto. `str3` tiene el mismo contenido pero usando `new` se fuerza la creación de un nuevo objeto distinto.
 
 Cuando creas un literal de cadena, la JVM lo verifica internamente, lo que se conoce como el `String pool` , para ver si puede encontrar un objeto String similar (ya contenido). Si lo encuentra, devuelve la misma referencia. De lo contrario, simplemente continúa y crea un nuevo objeto String en el pool para que la misma verificación se pueda realizar en el futuro.
 
@@ -191,9 +191,9 @@ El resultado sera:
 
 -   [String Documentation](https://docs.oracle.com/javase/7/docs/api/java/lang/String.html)
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTExNDY3NjQ4NDMsLTE4ODg2NjAzMjgsOD
-czMDU5MTk0LDMzNTgzNDcyMiwtMTQ3ODY0MTEwLDEwODkzNTUw
-MTYsLTE1ODg4OTQwMjQsLTYzMjEyMDM3OCwtMTQ4NzYxNDE0LD
-gyMDQzNDg3MCwtMTg5MjA3NTE3NCwtNjY4NjcwNTQ5LDEwNTAw
-ODgwNjksODQ4OTU3NDE1LDE5MzY3NTE4MTBdfQ==
+eyJoaXN0b3J5IjpbOTQ4MDUyNzU1LC0xODg4NjYwMzI4LDg3Mz
+A1OTE5NCwzMzU4MzQ3MjIsLTE0Nzg2NDExMCwxMDg5MzU1MDE2
+LC0xNTg4ODk0MDI0LC02MzIxMjAzNzgsLTE0ODc2MTQxNCw4Mj
+A0MzQ4NzAsLTE4OTIwNzUxNzQsLTY2ODY3MDU0OSwxMDUwMDg4
+MDY5LDg0ODk1NzQxNSwxOTM2NzUxODEwXX0=
 -->
