@@ -1,18 +1,17 @@
 ---
 title: Bootstrap
-localeTitle: Oreja
+localeTitle: Bootstrap
 ---
-## Oreja
-
+## Bootstrap
 Bootstrap es un framework de front-end popular para el desarrollo web. Contiene componentes pre-construidos y elementos de diseño para estilizar el contenido HTML. Los navegadores modernos como Chrome, Firefox, Opera, Safari e Internet Explorer son compatibles con Bootstrap.
 
 Bootstrap incluye un sistema de cuadrícula sensible para diferentes diseños. Es un excelente punto de partida para crear un sitio web compatible con dispositivos móviles. También incluye funcionalidad de JavaScript opcional como contenido plegable, carruseles y modales.
 
 #### Historial de versiones
 
-Twitter originalmente desarrolló el marco de Bootstrap como una herramienta interna. Lo lanzaron como un proyecto de código abierto en agosto de 2011.
+Twitter originalmente desarrolló el framework Bootstrap como una herramienta interna. Lo lanzaron como un proyecto de código abierto en agosto de 2011 y lanzaron la version 2 en enero de 2012.
 
-Bootstrap 2 se lanzó en enero de 2012. Una de las características principales fue la introducción del sistema de cuadrícula sensible de 12 columnas. Bootstrap 3 apareció en agosto de 2013, cambiando a un diseño plano y un enfoque móvil. Bootstrap 4 está disponible en versión beta a partir de agosto de 2017, y ahora incluye Sass y Flexbox.
+Una de las características principales fue la introducción del sistema de cuadrícula sensible de 12 columnas. Bootstrap 3 apareció en agosto de 2013, cambiando a un diseño plano y un enfoque móvil. Bootstrap 4 está disponible en versión beta a partir de agosto de 2017, y ahora incluye Sass y Flexbox.
 
 Bootstrap 4 estuvo en desarrollo durante dos años antes de lanzar algunas versiones beta durante 2017, mientras que la primera versión estable salió en enero de 2018. Algunos cambios notables incluyen:
 
