@@ -7,7 +7,7 @@ Understanding the CSS Box Model is crucial to being able to correctly layout a w
 
 When a browser renders (draws) a web page each element, for example, a piece of text or an image, is drawn as a rectangular box following the rules of the CSS Box Model.
 
-At the center of the box is the content itself, which takes up a certain height and width. This region is known as the **Content Area**. The size of the content area can be automatically determined, or you can explicitly set the size of height and width. (see note below regarding `box-sizing`)
+At the center of the box is the content itself, which takes up a certain height and width. This region is known as the **Content Area**. The size of the content area can be automatically determined, or you can explicitly set the size of height and width (see note below regarding `box-sizing`).
 
 ![Content Area Image](https://raw.githubusercontent.com/johnkennedy9147/Resources/master/CSS%20Box%20Model%20Images/content%20area.jpg)
 
