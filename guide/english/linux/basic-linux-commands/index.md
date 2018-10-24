@@ -49,6 +49,10 @@ When starting out with linux, there are some basic commands everyone should know
  14. **cp** - copy files and directories
 - Use 'cp' to copy a file or a direcotry with files inside it to another location using command 'cp CURRENT_FILE-LOCATION DESTINATION_FOLDER'. Add '-r' flag to copy a directory that is not empty. 
 
+ 15. **locate** - locates a file in a Linux system
+- Use 'locate' to locate a file in Linux system. Using the -i argument with the command helps to ignore the case. For example, if you type “locate -i hello” it gives the list of all the files in your Linux system containing the word "hello".
+
+
 ### Useful Resources for Practice:
 - [JSLinux](https://bellard.org/jslinux/vm.html?url=https://bellard.org/jslinux/buildroot-x86.cfg): Run the terminal inside your browser. Great for practice.
 - [LearnShell](https://www.learnshell.org/): Interactive Linux shell (terminal) tutorials.
