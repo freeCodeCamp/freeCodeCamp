@@ -9,7 +9,7 @@ When we start working with React components, we frequently hear two terms. They 
 
 * State is something that a component owns. It belongs to that particular component where it is defined.
 For example, A person's age is a state of that person.
-* State is mutable. But it can be changed by only by that component that owns it. As I only can change my age, not anyone else.
+* State is mutable. But it can only be changed by the component that owns it. As I only can change my age, not anyone else.
 * You can change a state by using `this.setState()`
 
 See the below example to get an idea of state:
