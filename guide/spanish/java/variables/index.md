@@ -33,7 +33,7 @@ Puede _asignar_ un valor a la variable de forma simultánea cuando la declara (l
  boolean estaAbierto = false; 
  char c = 'a'; // Observe las comillas simples
  
- // Las variables también pueden ser declaradas en una sentencia, y asignarles valores despues. 
+ // Las variables también pueden ser declaradas en una sentencia, y despues asignarles valores. 
  int j; 
  j = 10; 
  
@@ -54,7 +54,7 @@ Como se desprende del ejemplo anterior, las variables del tipo Primitivo se comp
 *   [Tipos de datos](https://guide.freecodecamp.org/java/data-types)
 *   [Clases y objetos](https://guide.freecodecamp.org/java/classes-and-objects)
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMTc4NDQyNTg5NSwyMDczMjI3Njk4LC0yMz
+eyJoaXN0b3J5IjpbLTcxMzQ0Mjg2MywyMDczMjI3Njk4LC0yMz
 YxMjQ4NDAsMTU3NTA1NjIzOSw2MjkzMzk1MjEsMTg4NjMwMzAw
 NywtODQ5ODkyMjcxLC0xMDYyODM1NTMwXX0=
 -->
