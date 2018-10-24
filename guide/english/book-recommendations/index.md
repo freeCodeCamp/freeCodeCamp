@@ -102,6 +102,10 @@ title: Books to Read for Programmers
 - [Wiley](https://www.wiley.com/en-id/Programming+Interviews+Exposed:+Secrets+to+Landing+Your+Next+Job,+2nd+Edition-p-9780470121672)
 - ISBN: 978-0-470-12167-2
 
+*Elements of Programming Interviews in Java: The Insiders' Guide* by Adnan Aziz
+- [Amazon Smile](https://smile.amazon.com/Elements-Programming-Interviews-Java-Insiders/dp/1517671272/ref=sr_1_5?ie=UTF8&qid=1535203348&sr=8-5&keywords=java+interview+questions)
+- ISBN: 978-1517671273
+
 ## Java
 
 *Head First Java* by Kathy Sierra and Bert Bates
