@@ -2,6 +2,7 @@
 id: 5a2efd662fb457916e1fe604
 title: Iterate with JavaScript Do...While Loops
 challengeType: 1
+guideUrl: https://guide.freecodecamp.org/certifications/javascript-algorithms-and-data-structures/basic-javascript/iterate-with-javascript-do...while-loops/
 ---
 
 ## Description

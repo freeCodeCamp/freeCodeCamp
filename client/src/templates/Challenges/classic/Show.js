@@ -178,7 +178,8 @@ class ShowClassic extends Component {
           title,
           description,
           instructions,
-          videoUrl
+          videoUrl,
+          guideUrl
         }
       },
       files,
@@ -227,7 +228,7 @@ class ShowClassic extends Component {
             <SidePanel
               className='full-height'
               description={description}
-              guideUrl={createGuideUrl(slug)}
+              guideUrl={guideUrl? guideUrl : createGuideUrl(slug)}
               instructions={instructions}
               section={dasherize(blockName)}
               title={blockNameTitle}
@@ -276,6 +277,7 @@ export const query = graphql`
       instructions
       challengeType
       videoUrl
+      guideUrl
       fields {
         slug
         blockName
