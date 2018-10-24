@@ -63,6 +63,11 @@ The "controls" attribute can be set to true or false and will handle whether con
 
 There are many more attributes that can be added that are optional to customize the videoplayer in the page. To learn more, click on the links below.
 
+You can also get a direct link from YouTube in the following way:
+1. Open the youtube video you want to include in your html.
+2. Click the share buttton.
+3. Choose "Embed" 
+4. Now, you can paste it into your html page!!
 ## More Information:
 
 - <a href="https://www.w3schools.com/html/html5_video.asp">W3Schools - HTML5 Video</a> 
