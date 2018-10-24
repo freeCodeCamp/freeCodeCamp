@@ -130,16 +130,16 @@ La "longitud" de una cadena es solo el número de caracteres que contiene. Así 
 2.  compareTo: compara el valor lexicográficamente y devuelve un entero.
 
 ```java
-String a = "Sam"; 
+ String a = "Sam"; 
  String b = "Sam"; 
  String c = "Ram"; 
  System.out.println(a.compareTo(b));       // 0 
- System.out.prinltn(a.compareTo(c));       // 1 since (a>b) 
- System.out.println(c.compareTo(a));       // -1 since (c<a) 
+ System.out.prinltn(a.compareTo(c));       // 1 ya que (a>b) 
+ System.out.println(c.compareTo(a));       // -1 ya que (c<a) 
 
 ```
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTEyNDgwOTgwOCwtMTQ4NzYxNDE0LDgyMD
+eyJoaXN0b3J5IjpbLTYzMjEyMDM3OCwtMTQ4NzYxNDE0LDgyMD
 QzNDg3MCwtMTg5MjA3NTE3NCwtNjY4NjcwNTQ5LDEwNTAwODgw
 NjksODQ4OTU3NDE1LDE5MzY3NTE4MTBdfQ==
 -->
