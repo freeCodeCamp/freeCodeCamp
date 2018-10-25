@@ -1,0 +1,7 @@
+Android Architecture is also called as software stack.
+The Android Architecture contains five layers
+1. Linux kernel
+2. Libraries
+3. Android Runtime
+4. Application Framework
+5. Applications
