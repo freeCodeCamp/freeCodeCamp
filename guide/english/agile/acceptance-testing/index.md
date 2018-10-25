@@ -31,7 +31,7 @@ Acceptance criteria are defined on the basis of the following attributes
 >
 > - Performance
 >
-> - Timeliness
+> - Timelines
 >
 > - Confidentiality and Availability
 >
@@ -101,7 +101,7 @@ Acceptance Testing is a well-established practice in software development. Accep
 
 An Acceptance Test tests that the code performs as expected i.e. produces the expected output, given the expected inputs.
 
-An Acceptance Test are used to test relatively bigger functional blocks of software aka Features.
+An Acceptance Test is used to test relatively bigger functional blocks of software aka Features.
 
 ### Example
 You have created a page that requires the user to first enter their name in a dialog box before they can see the content. You have a list of invited users, so any other users will be returned an error.
