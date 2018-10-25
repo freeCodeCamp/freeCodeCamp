@@ -9,7 +9,7 @@ contribute to the Web. Web accessibility also benefits others, including [older 
 due to aging.
 
 Web accessibility encompasses all disabilities that  affect access to the Web, including visual, auditory, physical, speech, cognitive, and neurological
-disabilities. The document [How People with Disabilities Use the Web](http://www.w3.org/WAI/intro/people-use-web/Overview.html) describes how different
+disabilities. The document [How People with Disabilities Use the Web](https://www.w3.org/WAI/intro/people-use-web/Overview.html) describes how different
 disabilities affect Web use and includes scenarios of people with disabilities using the Web.
 
 Web accessibility also **benefits** people *without* disabilities. For example, a key  principle of Web accessibility is designing Web sites and software
