@@ -26,8 +26,7 @@ In this exercise we will pass an array and a value to the checkSet() function. Y
 ```yml
 tests:
   - text: <code>checkSet([4, 5, 6], 3)</code> should return [ false, 3 ]
-    testString: 'assert((function(){var test = checkSet([4,5,6], 3); test === [ false, 3 ]})(), "<code>checkSet([4, 5, 6], 3)</code> should return [ false, 3 ]");'
-
+    testString: 'assert(function(){var test = checkSet([4,5,6], 3); test === [ false, 3 ]}, "<code>checkSet([4, 5, 6], 3)</code> should return [ false, 3 ]");'
 ```
 
 </section>
