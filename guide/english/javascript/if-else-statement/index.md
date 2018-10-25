@@ -47,12 +47,12 @@ if (condition) {
 
 **Using** `if...else`:
 ```javascript
-    // If x=5 z=7 and q=42. If x is not 5 then z=19.
-    if (x == 5) {
-      z = 7;
-      q = 42
-    else
-      z = 19;
+// If x=5 z=7 and q=42. If x is not 5 then z=19.
+if (x == 5) {
+  z = 7;
+  q = 42
+else
+  z = 19;
 ```
 
 **Using** `else if`:
