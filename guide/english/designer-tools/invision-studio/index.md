@@ -12,7 +12,10 @@ title: InVision Studio
 * Create adaptive layouts for faster responsive design
 * Integrates with other software such as Dropbox, Slack, Jira and Trello
 * Seamlessly communicate with team members working on the same InVision Studio project
- #### More Information
- InVision Studio - <a href='https://www.invisionapp.com/studio' target='_blank' rel='nofollow'>InVision Studio</a>
- Will InVision Studio streamline your product design process? - <a href='https://medium.com/@buditanrim/will-invision-studio-streamlined-your-product-design-process-8dc653bb03c8' target='_blank' rel='nofollow'>Budi Harto Tanrim</a>
- Want to see more? Check out the official video series by InVision: <a href='PLeWHfyz6lrQWT3HSzOBZMxta_4FcgogZB' target='_blank' rel='nofollow'>Youtube</a>
+
+### Helpful Links
+Get InVision Studio - <a href='https://www.invisionapp.com/studio' target='_blank' rel='nofollow'>InVision Studio</a>
+
+InVision Studio Tutorials - <a href='https://www.invisionapp.com/studio/learn' target='_blank' rel='nofollow'>Tutorials</a>
+
+Inspiration - <a href='https://www.youtube.com/watch?v=nAfxPMEiwno&list=PLeWHfyz6lrQWT3HSzOBZMxta_4FcgogZB' target='_blank' rel='nofollow'>Inspiration</a>
