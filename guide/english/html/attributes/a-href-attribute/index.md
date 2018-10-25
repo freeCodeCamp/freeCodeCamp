@@ -4,7 +4,7 @@ title: A Href Attribute
 
 ## A Href Attribute
 
-The `<a href>` attribute refers to a destination provided by a link. The `a` (anchor) tag is dead without the `<href>` attribute. Sometimes in your workflow, you don't want a live link or you won't know the link destination yet. In this case, it's useful to set the `href` attribute to `"#"` to create a dead link. The `href` attribute can be used to link to local files or files on the internet.
+The `<a href>` attribute refers to a destination provided by a link. The `a` (anchor) tag is dead without the `<href>` attribute. Sometimes in your workflow, you don't want a live link or you won't know the link destination yet. In cases like these, it's useful to set the `href` attribute to `"#"` to create a dead link. The `href` attribute can be used to link to local files or files on the internet.
 
 For instance:
 
