@@ -2,11 +2,11 @@
 title: PHP Syntax Overview
 localeTitle: Resumen de la sintaxis de PHP
 ---
-Este capítulo le dará una idea de la sintaxis muy básica de PHP y muy importante para fortalecer su base de PHP.
+Este capítulo le dará una idea muy básica de la sintaxis de PHP, y muy importante para fortalecer su conocimiento base del lenguaje.
 
 ### Escapando a PHP
 
-El motor de análisis de PHP necesita una forma de diferenciar el código PHP de otros elementos en la página. El mecanismo para hacerlo se conoce como 'escapar a PHP'. Hay cuatro maneras de hacer esto:
+El motor de análisis de PHP necesita una forma de diferenciar el código PHP de otros elementos en la página. El mecanismo para hacerlo se conoce como 'escapar (o salir) a PHP'. Hay cuatro maneras de hacer esto:
 
 #### Etiquetas PHP canónicas
 
@@ -26,9 +26,9 @@ Las etiquetas cortas o abiertas se ven así:
 
 Las etiquetas cortas son, como uno podría esperar, la opción más corta. Debe hacer una de dos cosas para permitir que PHP reconozca las etiquetas:
 
-Elija la opción de configuración --enable-short-tags cuando esté compilando PHP.
+Elejir la opción de configuración --enable-short-tags cuando se esté compilando PHP.
 
-Establezca la configuración de etiqueta _abierta_ corta en su archivo php.ini en activado. Esta opción debe estar deshabilitada para analizar XML con PHP porque la misma sintaxis se usa para las etiquetas XML.
+Cambiar a activada la configuración de `short_open_tag` en su archivo php.ini. Esta opción debe estar deshabilitada para analizar XML con PHP porque la misma sintaxis se usa para las etiquetas XML.
 
 #### Etiquetas de estilo ASP
 
@@ -53,28 +53,35 @@ Un comentario es la parte de un programa que existe solo para el lector humano y
 #### Comentarios de una sola línea -
 
 Generalmente se utilizan para explicaciones breves o notas relevantes para el código local. Aquí están los ejemplos de comentarios de una sola línea.
-
-\`\` \` <? # Esto es un comentario, y # Esta es la segunda línea del comentario.
-
-// Esto también es un comentario. Cada estilo comenta solo imprimir "Un ejemplo con comentarios de una sola línea"; ?>
 ```
-#### Multi-lines printing − 
- Here are the examples to print multiple lines in a single print statement − 
- 
- ``` 
+
+<?
+  # Esto es un comentario, y
+  # Esta es la segunda línea del comentario.
+
+  // Esto también es un comentario. Cada estilo comenta solo 
+  print "Un ejemplo con comentarios de una sola línea";
+?>
+```
+
+
+#### Impresión de líneas múltiples − 
+ Estos son los ejemplos para mostrar varias líneas con una sola instrucción de impresión (print) − 
+
+```
  <? 
-   # First Example 
+   # Primer ejemplo 
    print <<<END 
-   This uses the "here document" syntax to output 
-   multiple lines with $variable interpolation. Note 
-   that the here document terminator must appear on a 
-   line with just a semicolon no extra whitespace! 
-   END; 
+   Esto utiliza la sintáxis de "documento aquí" (here document)para mostrar
+   líneas múltiples de text con interpolación de $variable
+   Tenga en cuenta que la terminación de "documento aquí" debe aparecer
+   en una línea con solo un punto y coma y sin espacio extra.
+END; // <-- ¡Atención! Debe estar bien contra el margen.
  
-   # Second Example 
-   print "This spans 
-   multiple lines. The newlines will be 
-   output as well"; 
+   # Segundo Ejemplo 
+   print "Esto ocupa 
+   líneas múltiples. Los saltos de línea
+   también serán impresos"; 
  ?> 
 ```
 
@@ -83,26 +90,26 @@ Generalmente se utilizan para explicaciones breves o notas relevantes para el c�
 Generalmente se utilizan para proporcionar algoritmos de pseudocódigo y explicaciones más detalladas cuando sea necesario. El estilo multilínea de comentar es el mismo que en C. A continuación se muestra el ejemplo de los comentarios multilínea.
 ```
 <? 
-   /* This is a comment with multiline 
-      Author : Mohammad Mohtashim 
-      Purpose: Multiline Comments Demo 
-      Subject: PHP 
+   /* Esto es un comentario de líneas múltiples 
+      Autor : Mohammad Mohtashim 
+      Propósito: Multiline Comments Demo 
+      Tema: PHP 
    */ 
  
-   print "An example with multi line comments"; 
+   print "Un ejemplo con comentarios de líneas múltiples"; 
  ?> 
 ```
 
 ### PHP es insensible al espacio en blanco
 
-Los espacios en blanco son las cosas que escribe que generalmente son invisibles en la pantalla, incluidos los espacios, las pestañas y los retornos de carro (caracteres de fin de línea).
+Los espacios en blanco son las cosas que escribe que generalmente son invisibles en la pantalla, que aparte de los espacios, incluye las tabulaciones y los retornos de carro, también conocidos como saltos de línea(caracteres de fin de línea).
 
-PHP insensible al espacio en blanco significa que casi nunca importa la cantidad de caracteres de espacio en blanco que tenga en una fila. Un carácter de espacio en blanco es igual a muchos de esos caracteres.
+Que PHP sea insensible al espacio en blanco significa que casi nunca importa la cantidad de caracteres de espacio en blanco que tenga en una línea. Un carácter de espacio en blanco es igual a muchos de esos caracteres.
 
 Por ejemplo, cada una de las siguientes declaraciones de PHP que asigna la suma de 2 + 2 a la variable $ cuatro es equivalente:
 ```
 $four = 2 + 2; // single spaces 
- $four <tab>=<tab2<tab>+<tab>2 ; // spaces and tabs 
+ $four <tab>=<tab>2<tab>+<tab>2 ; // spaces and tabs 
  $four = 
  2+ 
  2; // multiple lines 
@@ -117,8 +124,8 @@ Sí, es cierto que PHP es un lenguaje sensible a mayúsculas y minúsculas. Prue
  
       <?php 
          $capital = 67; 
-         print("Variable capital is $capital<br>"); 
-         print("Variable CaPiTaL is $CaPiTaL<br>"); 
+         print("La variable capital es $capital<br>"); 
+         print("La variable CaPiTaL es $CaPiTaL<br>"); 
       ?> 
  
    </body> 
@@ -127,42 +134,42 @@ Sí, es cierto que PHP es un lenguaje sensible a mayúsculas y minúsculas. Prue
 
 Esto producirá el siguiente resultado:
 ```
-Variable capital is 67 
- Variable CaPiTaL is 
+La variable capital es 67 
+La variable CaPiTaL 
 ```
 
 ### Las declaraciones son expresiones terminadas por punto y coma.
 
 Una declaración en PHP es cualquier expresión seguida de un punto y coma (;). Cualquier secuencia de declaraciones PHP válidas que esté incluida en las etiquetas PHP es un programa PHP válido. Aquí hay una declaración típica en PHP, que en este caso asigna una cadena de caracteres a una variable llamada $ saludo -
 ```
-$greeting = "Welcome to PHP!"; 
+$greeting = "Bienvenido a PHP!"; 
 ```
 
 ### Las expresiones son combinaciones de fichas.
 
-Los bloques de construcción más pequeños de PHP son los tokens indivisibles, como números (3.14159), cadenas (.two.), Variables ($ dos), constantes (TRUE) y las palabras especiales que conforman la sintaxis de PHP como si , si no, mientras, para y así sucesivamente
+Los bloques de construcción más pequeños de PHP son los tokens indivisibles, como números (`3.14159`), cadenas (`'dos'`), variables (`$dos`), constantes (`TRUE`) y las palabras especiales que conforman la sintaxis de PHP como if , else, while, for y así sucesivamente
 
-### Los frenos hacen bloques
+### Las llaves {} hacen bloques
 
 Aunque las declaraciones no se pueden combinar como expresiones, siempre se puede colocar una secuencia de declaraciones en cualquier lugar en que una declaración pueda ir encerrándolas entre un conjunto de llaves.
 
 Aquí ambas declaraciones son equivalentes.
 ```
 if (3 == 2 + 1) 
-   print("Good - I haven't totally lost my mind.<br>"); 
+   print("Bien - No he perdido completamente la cabeza.<br>"); 
  
  if (3 == 2 + 1) { 
-   print("Good - I haven't totally"); 
-   print("lost my mind.<br>"); 
+   print("Bien - No he perdido completamente"); 
+   print(" la cabeza.<br>"); 
  } 
 ```
 
 ### Ejecución de secuencias de comandos PHP desde el símbolo del sistema
 
-Sí, puede ejecutar su script PHP en su línea de comandos. Suponiendo que tiene el siguiente contenido en el archivo test.php
+Se puede ejecutar su código PHP desde la línea de comandos. Suponiendo que tiene el siguiente contenido en el archivo test.php
 ```
 <?php 
-   echo "Hello PHP!!!!!"; 
+   echo "¡¡¡Hola PHP!!!!!"; 
  ?> 
 ```
 
@@ -173,7 +180,7 @@ $ php test.php
 
 Producirá el siguiente resultado:
 ```
-Hello PHP!!!!! 
+¡¡¡Hola PHP!!!!! 
 ```
 
-Espero que ahora tienes conocimientos básicos de sintaxis de PHP.
+Espero que ahora tenga conocimientos básicos de sintaxis de PHP.
