@@ -30,7 +30,7 @@ Some of the **inline elements** are `<a>`,`<span>`,`<img>`,`<code>`,`<cite>`,`<b
 
 #### Changes In HTML5
 
-While an understanding of block and inline elements is still relevant, you should be aware that these terms were defined in prior versions of the HTML specification. In HTML5, a more complex set of "content categories" replaces block-level and inline elements. Block-level elements are largely placed in the "flow content" category in HTML5, while inline elements correspond to the "phrasing content" catagory. For more information on the new content categories in HTML5, including flow content and phrasing content, refer to the <a href = "https://developer.mozilla.org/en-US/docs/Web/Guide/HTML/Content_categories">Content categories page on the Mozilla Developer Network.</a>
+While an understanding of block and inline elements is still relevant, you should be aware that these terms were defined in prior versions of the HTML specification. In HTML5, a more complex set of "content categories" replaces block-level and inline elements. Block-level elements are largely placed in the "flow content" category in HTML5, while inline elements correspond to the "phrasing content" category. For more information on the new content categories in HTML5, including flow content and phrasing content, refer to the <a href = "https://developer.mozilla.org/en-US/docs/Web/Guide/HTML/Content_categories">Content categories page on the Mozilla Developer Network.</a>
 
 #### More Information:
 Please refer <a href='https://developer.mozilla.org/en-US/docs/Web/HTML/Block-level_elements#Block-level_vs._inline' target='_blank' rel='nofollow'>Mozilla Docs</a>
