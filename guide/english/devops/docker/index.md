@@ -185,10 +185,10 @@ CMD ["npm", "start"]
 
 ### Docker detached
 
-Docker detahced is where you can run a docker container in the background.  If you run a docker container in detached mode you can later view the logs and attach to it and run input and recieve output.
+Docker detached is where you can run a docker container in the background.  If you run a docker container in detached mode you can later view the logs and attach to it and run input and recieve output.
 
 ```
-To run docker detahced 
+To run docker detached 
 
 docker run -d IMAGE
 
