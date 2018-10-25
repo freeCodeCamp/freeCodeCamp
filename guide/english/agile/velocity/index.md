@@ -9,3 +9,5 @@ Having a predictable, consistent velocity allows your team to plan your iteratio
 
 #### More Information:
 The Scrum Alliance on <a href='https://www.scrumalliance.org/community/articles/2014/february/velocity' target='_blank' rel='nofollow'>Velocity</a>
+
+General Scrum Alliance at <a href='https://www.scrumalliance.org/' target='_blank' rel='nofoloow'>Velocity</a>
