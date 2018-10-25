@@ -2,7 +2,7 @@
 title: Deep Learning
 ---
 ## Deep Learning
-Deep Learning refers to a technique in Machine Learning where you have a lots of artificial neural networks stacked together in some architecture.
+Deep Learning refers to a technique in Machine Learning where you have a lots of artificial neural networks stacked together (hence the name deep) in some architecture.
 
 To the uninitiated, an artificial neuron is basically a mathematical function of some sort. And neural nets are neurons conected to each other.  So in deep learning, you have lots of mathematical functions stacked on top (or on the side) of each other in some architecture. Each of the mathematical functions may have its own parameters (for an instance, an equation of a line `y = mx + c` has 2 parameters `m` and `c`) which need to be learned (during training). Once learned for a given task (say for classifying cats and dogs), this stack of mathematical functions (neurons) is ready to do its work of classifying images of cats and dogs.
 
