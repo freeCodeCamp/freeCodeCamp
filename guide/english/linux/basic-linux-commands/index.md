@@ -48,6 +48,9 @@ When starting out with linux, there are some basic commands everyone should know
 
  14. **cp** - copy files and directories
 - Use 'cp' to copy a file or a direcotry with files inside it to another location using command 'cp CURRENT_FILE-LOCATION DESTINATION_FOLDER'. Add '-r' flag to copy a directory that is not empty. 
+ 
+ 15. **whoami** - display current user
+ - Use this command to print (display) the username of the current user to the console.
 
 ### Useful Resources for Practice:
 - [JSLinux](https://bellard.org/jslinux/vm.html?url=https://bellard.org/jslinux/buildroot-x86.cfg): Run the terminal inside your browser. Great for practice.
