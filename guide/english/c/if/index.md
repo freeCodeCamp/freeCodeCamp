@@ -8,10 +8,10 @@ The if statement executes different blocks of code based on conditions.
 
 ```
 if (condition) {
-	// Do something when `condition` is true
+	// Do something when `condition` is true or 1
 }
 else {
-	// Do something when `condition` is false
+	// Do something when `condition` is false or 0
 }
 ```
 
@@ -19,13 +19,13 @@ When `condition` is true, code inside the `if` section executes, otherwise `else
 
 ```
 if (condition) {
-	// Do something if `condition` is true
+	// Do something if `condition` is true or 1
 }
 else if (anotherCondition) {
-	// Do something if `anotherCondition` is ture
+	// Do something if `anotherCondition` is true or 1
 }
 else {
-	// Do something if `condition` AND `anotherCondition` is false
+	// Do something if `condition` AND `anotherCondition` is false or 0
 }
 ```
 
@@ -62,3 +62,25 @@ int main () {
 -> a is not less than 5!
 -> Value of a is : 100
 ```
+## Example 2
+        #include<stdio.h>
+
+        int main()
+        {
+            int i=1,j=0;
+            if(i)
+            {
+                printf("this will work\n");
+            }
+            if(j)
+            {
+                printf("this will not work\n");
+            }
+            if(j==0)
+            {
+                printf("this will work again\n");
+            }
+            return 0;
+         }  
+            
+        
