@@ -26,3 +26,4 @@ $(document).ready(function(){
 
 #### More Information
 * [jQuery Home Page](https://jquery.com/)
+* [jQAPI - Alternative jQuery Documentation Browser](http://jqapi.com/)
