@@ -41,7 +41,7 @@ Watch the video demonstration or follow the steps below it:
 
 2. Click the <kbd>Edit this file</kbd> pencil icon and make your changes to the file in GitHub-flavored Markdown.
 
-    > If the icon is greyed out and giving you the warning "You must be on a branch to make or propose changes to this file", then you are likely on another person's tree. At the top left of the page, there is a drop down box which says "Tree: #######". Click on the drop down and change the branch to "master". The pencil icon should now be clickable.
+    > If the icon is grayed out and giving you the warning "You must be on a branch to make or propose changes to this file", then you are likely on another person's tree. At the top left of the page, there is a drop down box which says "Tree: #######". Click on the drop down and change the branch to "master". The pencil icon should now be clickable.
 
 3. Scroll to the bottom of the screen and add a commit message explaining your changes.
 
@@ -161,7 +161,7 @@ Stay active in the [contributors chat room](https://gitter.im/freecodecamp/contr
 
 ---
 
-## Steps for revewing pull requests for Guide Articles
+## Steps for reviewing pull requests for Guide Articles
 
 > This section is targeted at reviewers of this repo.
 
