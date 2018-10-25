@@ -7,6 +7,13 @@ The area of a rectangle can be calculated by multiplying the lengths of the two 
 
 `Area = a x b`
 
+## Proprties of a Rectangle
+
+1. Each of the interior angles of a rectangle is 90.
+2. The diagonals of a rectangle bisect each other.
+3. The opposite sides of a rectangle are parallel.
+4. The opposite sides of a rectangle are equal.
+
 **For Example**
 For a rectangle where *a = 3* and *b = 4*
 
