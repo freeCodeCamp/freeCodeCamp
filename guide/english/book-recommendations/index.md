@@ -232,6 +232,7 @@ title: Books to Read for Programmers
 *Deep Learning by Ian Goodfellow, Yoshua Bengio, Aaron Courville*
 - [Amazon](https://www.amazon.com/Deep-Learning-Adaptive-Computation-Machine/dp/0262035618)
 - ISBN: 978-0262035613
+
 *Oracle® Database Notes for Professionals*
 https://books.goalkicker.com/OracleDatabaseBook/
 
@@ -241,6 +242,10 @@ https://books.goalkicker.com/OracleDatabaseBook/
 *Mastering Linux Shell Scripting by Andrew Mallett*
 - [Amazon](https://www.amazon.com/Mastering-Linux-Scripting-Andrew-Mallett/dp/1784396974/)
 - ISBN-13: 978-1784396978
+
+*The Object-Oriented Thought Process(5th Edition)(Developer's Library)
+- [Amazon](https://www.amazon.com/Object-Oriented-Thought-Process-Developers-Library/dp/0135181968/ref=sr_1_2?s=books&ie=UTF8&qid=1540445438&sr=1-2&keywords=object+oriented+thought+process)
+- ISBN-13: 978-0135181966
 
 This list was compiled from multiple suggestion threads on Reddit and Stackoverflow. 
 
