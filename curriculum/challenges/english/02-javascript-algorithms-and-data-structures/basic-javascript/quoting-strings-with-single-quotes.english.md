@@ -28,9 +28,9 @@ Right now, the <code>&#60;a&#62;</code> tag in the string uses double quotes eve
 ```yml
 tests:
   - text: Remove all the <code>backslashes</code> (<code>\</code>)
-    testString: 'assert(!/\\/g.test(code) && myStr.match("\\s*<a href\\s*=\\s*"http://www.example.com"\\s*target\\s*=\\s*"_blank">\\s*Link\\s*</a>\\s*"), "Remove all the <code>backslashes</code> (<code>\</code>)");'
-  - text: 'You should have two single quotes <code>&#39;</code> and four double quotes <code>&quot;</code>'
-    testString: 'assert(code.match(/"/g).length === 4 && code.match(/"/g).length === 2, "You should have two single quotes <code>&#39;</code> and four double quotes <code>&quot;</code>");'
+    testString: assert(!/\\/g.test(code) && myStr.match('\\s*<a href\\s*=\\s*"http://www.example.com"\\s*target\\s*=\\s*"_blank">\\s*Link\\s*</a>\\s*'), 'Remove all the <code>backslashes</code> (<code>\</code>)');
+  - text: You should have two single quotes <code>&#39;</code> and four double quotes <code>&quot;</code>
+    testString: assert(code.match(/"/g).length === 4 && code.match(/'/g).length === 2, 'You should have two single quotes <code>&#39;</code> and four double quotes <code>&quot;</code>');
 
 ```
 
@@ -54,7 +54,7 @@ var myStr = "<a href=\"http://www.example.com\" target=\"_blank\">Link</a>";
 <div id='js-teardown'>
 
 ```js
-console.info('after the test');
+(function() { return "myStr = " + myStr; })();
 ```
 
 </div>

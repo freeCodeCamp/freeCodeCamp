@@ -43,7 +43,7 @@ From terminal:
     $ python hello_campers.py
     Hello campers!
 
-"When multiple versions of Python are installed, calling them by version is possible depending on the install configuration. In the Cloud9 ide custom environment, they can be invoked like:
+When multiple versions of Python are installed, calling them by version is possible depending on the install configuration. In the Cloud9 IDE custom environment, they can be invoked like:
 
     $ python --version
     Python 2.7.6
@@ -106,6 +106,7 @@ Some of the principles that influenced the design of Python are included as an E
 1. Interactive language with a module support for almost all functionality.
 2. Open Source: So, you can contribute to the community, the functions you have developed for future use and to help others
 3. A lot of good interpreters and notebooks available for better experience like jupyter notebook.
+4. It is a very easy language to learn and debug too. To check if a small bit of code works or not, you can just open up the interpreter and test
 
 #### Cons
 1. Being open source, many different ways have developed over the year for same function. This sometimes, creates chaos for others to read someone else code.
