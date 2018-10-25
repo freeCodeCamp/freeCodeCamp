@@ -80,7 +80,7 @@ func duplicate(s string) (first, second string) {
 }
 
 func main() {
-	fmt.Println(split("Hello world!")) // ("Hello world!", "Hello world!")
+  fmt.Println(split("Hello world!")) // ("Hello world!", "Hello world!")
 }
 ```
 
