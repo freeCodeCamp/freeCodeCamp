@@ -20,7 +20,7 @@ JavaScript为用户提供了五个算术运算符： `+` ， `-` ， `*` ， `/`
  "foo" + "bar"  // concatenates the strings and returns "foobar" 
 ```
 
-_提示：_有一个方便的[增量](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Arithmetic_Operators#Increment_()运算符，当你将数字加1时，这是一个很好的快捷方式。
+_提示：_有一个方便的 <a href='https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Arithmetic_Operators#Increment' target='_blank' rel='nofollow'>[增量]</a>(++)运算符，当你将数字加1时，这是一个很好的快捷方式。
 
 ## 减法
 
@@ -37,7 +37,7 @@ _提示：_有一个方便的[增量](https://developer.mozilla.org/en-US/docs/W
  5 + "foo"  // returns NaN (Not a Number) 
 ```
 
-_提示：_有一个方便的[减量](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Arithmetic_Operators#Decrement_(--)运算符，当你用1减去数字时，这是一个很好的捷径。
+_提示：_有一个方便的 <a href='https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Arithmetic_Operators#Decrement' target='_blank' rel='nofollow'>[减量]</a>(--)运算符，当你用1减去数字时，这是一个很好的捷径。
 
 ## 乘法
 
@@ -125,4 +125,4 @@ _提示：_有一个方便的[减量](https://developer.mozilla.org/en-US/docs/W
 
 _！重要！_如您所见，您**无法**对`Infinity`执行任何操作。
 
-资料来源：令人惊叹的[MDN](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Arithmetic_Operators) 。
+资料来源：令人惊叹的<a href='https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Arithmetic_Operators' target='_blank' rel='nofollow'>[MDN]</a>。
