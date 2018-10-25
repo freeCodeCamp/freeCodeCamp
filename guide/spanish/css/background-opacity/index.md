@@ -49,9 +49,13 @@ Puede elegir hasta qué punto desea que el elemento sea transparente. Tienes que
  } 
 ```
 
-Alternativamente, puedes usar un valor rgba transparente como este: \`\` \`css
+Alternativamente, puedes usar un valor rgba transparente como este: 
 
-.nombre de la clase{ color de fondo: rgba (0,0,0, .5); } \`\` \` El ejemplo anterior establece que el fondo es negro con un 50% de opacidad. El último valor de un valor rgba es el valor alfa. Un valor alfa de 1 es igual a 100%, y 0.5 (.5 para corto) quals 50%. Usamos este método para agregar transparencia a un elemento sin afectar el contenido del interior.
+\`\` \`css
+
+ background: rgba(76, 175, 80, 0.3) \`\` \` 
+
+El ejemplo anterior establece que el fondo es negro con un 50% de opacidad. El último valor de un valor rgba es el valor alfa. Un valor alfa de 1 es igual a 100%, y 0.5 (.5 para corto) quals 50%. Usamos este método para agregar transparencia a un elemento sin afectar el contenido del interior.
 
 [Un ejemplo de código para mostrar los rangos de opacidad de fondo.](https://codepen.io/lvcoulter/full/dVrwmK/)
 
