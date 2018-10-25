@@ -35,9 +35,10 @@ tests:
 <div id='js-seed'>
 
 ```js
+// Example: 
 var ourDecimal = 5.7;
 
-// Only change code below this line
+// Add your code below this line
 
 
 ```
