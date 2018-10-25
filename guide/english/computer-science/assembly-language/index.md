@@ -24,4 +24,4 @@ Assembly language is primarily used in the following situations:
 
 #### More Information:
 <!-- Please add any articles you think might be helpful to read before writing the article -->
-
+[Assembly's Importance](https://www.techopedia.com/why-is-learning-assembly-language-still-important/7/32268)
