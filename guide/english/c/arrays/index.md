@@ -168,3 +168,6 @@ The reason for C not checking the indexing bound is simple: C is an efficient la
 
 - When you try to access the last element of the array. Suppose the length of the array A be 4 and while accessing the last element as
 A[4] will return an error, as the the indexing starts from 0.
+
+
+## At the place of array we can use a link list because in link list there is no limitation of size according to our requirement we can create a node and use it,but in array we can't do like that because in array we need to specify the size of array first,
