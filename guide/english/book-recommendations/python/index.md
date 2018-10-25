@@ -67,6 +67,12 @@ You'll learn many of the first princliples for data science tools and how algori
 - ISBN-10: 1617294039
 - ISBN-13: 978-1617294037
 
+*Elements of Programming Interviews in Python: The Insiders' Guide*
+- Paid book which elaborates interview questions in Python.
+- [Amazon](https://www.amazon.com/Elements-Programming-Interviews-Python-Insiders/dp/1537713949/ref=sr_1_3?ie=UTF8&qid=1540502275&sr=8-3&keywords=python+interview)
+- ISBN-10: 1537713949
+- ISBN-13: 978-1537713946
+
 #### Other Resources
 
 - [Functional Programming in Python by David Mertz [OREILLY] [FREE]](https://www.oreilly.com/programming/free/files/functional-programming-python.pdf)
