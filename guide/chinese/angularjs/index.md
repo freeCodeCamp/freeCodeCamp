@@ -17,7 +17,7 @@ HTML:
 
 HTML
 ```
-bower: 
+bower: bower install angularjs
 ```
 
 贝壳 凉亭安装角度
