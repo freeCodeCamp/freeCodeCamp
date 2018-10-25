@@ -29,7 +29,7 @@ You can also declare more than one class to your element, like:
 ```html
 
 <div class="iron-man alfred">
- We're going to save you.
+  <p>We're going to save you.</p>
 </div>
 
 ```
