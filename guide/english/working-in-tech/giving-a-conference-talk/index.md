@@ -25,7 +25,7 @@ You can find conferences on websites such as [**PaperCall**](https://papercall.i
 
 Most of the time, you can submit a proposal to multiple conferences or you can submit multiple proposals to the same conference. If you do either, you increase your chance of being accepted. You should pay attention to what the conference organizers are looking for in submittals and edit your submittal to match. 
 
-Many conferences do an initial blind review, meaning that your identity is not revealed to the reviewers. When submitting to a conference with that practice, do not include any identifiable information in your submittal. Sometimes conferences will ask whether or not you are a first time speaker, because they want to see new people at the podium. 
+Many conferences do an initial blind review, meaning that your identity is not revealed to the reviewers. When submitting to a conference with that practice, do not include any identifiable information in your submittal. Sometimes conferences will ask whether you are a first-time speaker, because they want to see new people at the podium. 
 
 It is not uncommon for a conference to have an acceptance rate around 20%. Do not be discouraged if you don't get accepted the first time you submit a proposal. You can edit it and submit it to another conference. 
 
@@ -33,14 +33,14 @@ It is not uncommon for a conference to have an acceptance rate around 20%. Do no
 
 When you are accepted to speak at a conference, it is time to finish writing your talk. Take your outline and fill in the gaps. 
 
-Create your slide deck and add speaker notes so you know what you are going to say for each slide. Be aware of any slide guidelines that the conference might have (aspect ratio, acceptable colors, font, font size, etc) and stick to them. 
+Create your slide deck and add speaker notes so you know what you are going to say for each slide. Be aware of any slide guidelines that the conference might have (aspect ratio, acceptable colors, font, font size, etc.) and stick to them. 
 
 ## Practice
 
-Practice as much as you need to feel relaxed. You should time yourself giving the presentation a few different occassions to make sure that you are well within the time limit—you don't want to be cut off because your talk goes over time. Try your best to not be dependent on your notes/slides so that you can engage the audience by making eye contact as much as possible. 
+Practice as much as you need to feel relaxed. You should time yourself giving the presentation a few different occasions to make sure that you are well within the time limit—you don't want to be cut off because your talk goes over time. Try your best to not be dependent on your notes/slides so that you can engage the audience by making eye contact as much as possible. 
 
 ## Enjoy the Conference
 
 You may be nervous (that's okay!) but try to enjoy the other talks and events that the conference has to offer. 
 
-Give yourself plenty of time to be at your speaking location beforehand and bring a friend to see your talk if possible. Be aware that many conferences now record talks and prepare for this ahead of time. Take several deep breaths before you go on and try to have a nice time. If people can see that you are happy to be there, they will most likely be happy to hear what you have to say. 
+Give yourself plenty of time to be at your speaking location beforehand and bring a friend to see your talk if possible. Be aware that many conferences now record talks and prepare for this ahead of time. Take several deep breaths before you go on and try to have a nice time. If people can see that you are happy to be there, they will most likely be happy to hear what you have to say.
