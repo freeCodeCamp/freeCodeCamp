@@ -17,7 +17,7 @@ Node.js es un tiempo de ejecución de JavaScript creado en el motor de JavaScrip
 
 Supongamos que una tarea de E / S en particular tarda 5 segundos en ejecutarse. Y queremos realizar esta E / S dos veces en nuestro código.
 
-**Pitón**
+**Python**
 
 ```python
 import time 
