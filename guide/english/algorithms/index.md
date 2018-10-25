@@ -58,3 +58,6 @@ This is also a really good open source project that helps you visualize algorith
 [Infographic on how Machine Learning Algorithms Work](https://www.boozallen.com/content/dam/boozallen_site/sig/pdf/infographic/how-do-machines-learn.pdf)
 
 This infographic shows you how unsupervised and supervised machine learning algorithms work..
+
+[Khan Academy Introduction to Algorithms and Data Structures](https://www.khanacademy.org/computing/computer-science/algorithms)
+This is an introductory computer science algorithms, including searching, sorting, recursion, and graph theory. Learn with a combination of articles, visualizations, quizzes, and coding challenges
