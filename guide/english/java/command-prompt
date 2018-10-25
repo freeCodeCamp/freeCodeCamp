@@ -1,0 +1,13 @@
+---
+title: Command Prompt Compilation and Execution
+---
+# Using the Command Prompt
+
+Java files can be compiled and ran straight from the command prompt (or terminal on a Mac.)  
+First, Java will need to be downloaded and the path must be set. 
+Then, To run your program:
+
+- open the command prompt
+- navigate to the directory containing your file (cd JavaFiles)
+- compile the program (javac HelloWorld.java)
+- execute the program (java HelloWorld)
