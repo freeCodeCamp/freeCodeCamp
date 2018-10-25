@@ -147,3 +147,7 @@ Some frequently used options are:
 - [Bootstrap Carousel](https://getbootstrap.com/docs/4.0/components/carousel/)
 
 
+## Video Tutorials
+ - [Bootstrap Tutorial for Beginners - Carousel](https://www.youtube.com/watch?v=z5qJm6O0Pek)
+ 
+ - [Bootstrap Carousel/Slider Example](https://www.youtube.com/watch?v=gOD13Vr0Y-4)
