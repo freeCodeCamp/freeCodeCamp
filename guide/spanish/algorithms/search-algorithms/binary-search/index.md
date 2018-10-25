@@ -8,7 +8,7 @@ Una búsqueda binaria localiza un elemento en una matriz ordenada dividiendo rep
 
 ¿Cómo buscar un nombre en un directorio telefónico?
 
-Una forma sería comenzar desde la primera página y ver cada nombre en la agenda hasta que encontremos lo que estamos buscando. Pero esa sería una forma extremadamente laboriosa e ineficiente de buscar.
+Una forma sería comenzar desde la primera página y ver cada nombre en la agenda hasta que encontremos lo que estamos buscando. Pero esa sería una forma extremadamente laboriosa e ineficiente de buscar. Otra forma de verlo es como buscamos en un diccionario, abrimos el diccionario y dependiendo de la letra en la que lo abrimos, decidimos hacia dónde movernos para continuar la búsqueda.
 
 Como sabemos que los nombres en la agenda están ordenados alfabéticamente, probablemente podríamos trabajar en los siguientes pasos:
 
