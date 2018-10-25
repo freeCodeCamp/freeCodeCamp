@@ -7,7 +7,7 @@ title: Vim
 
 Vim (Vi IMproved) is a highly configurable text editor built to make creating and changing any kind of text very efficient. It is included as "vi" with most UNIX systems, which also includes Apple's macOS. Vim is a major improvement over its predecessor *vi*, which was developed over 40 years ago, and it is still being used.
 
-Vim is rock stable and boasts many features including:
+Vim is rock stable and boasts many features including:-
 - persistent, multi-level undo tree
 - extensive plugin system
 - support for hundreds of programming languages and file formats
