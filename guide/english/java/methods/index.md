@@ -106,3 +106,31 @@ public class Car {
 ```
 
 The `Car` class and the `Car(String model, int numberOfWheels)` method have to have the same name in order for java to know that it is the constructor. Now anytime you instantiate a new `Car` instance with the `new` keyword you will need to call this constructor and pass in the needed data.
+
+# Method Overloading
+ 
+Method overloading occurs when two methods have the same name, but different parameters.  For example, the code below shows three different methods titled "max".  This is allowed because the methods have either a different number of parameters (two vs three) or different type of parameters (int vs double.)
+
+```
+public static int max(int num1, int num2){
+    if(num1 > num2)
+        return num1;
+    else
+        return num2;
+}
+
+public static int max(int num1, int num2, int num3){
+    return max(max(num1, num2), num3);
+}
+
+public static double max(double num1, double num2){
+    if(num1 > num2)
+        return num1;
+    else
+        return num2;
+}
+```
+The correct method is executed based on the number of arguments passed to the method.  
+
+Method overloading is used frequently in the Math class: https://docs.oracle.com/javase/8/docs/api/java/lang/Math.html
+For more information: https://docs.oracle.com/javase/tutorial/java/javaOO/methods.html
