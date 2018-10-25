@@ -114,6 +114,11 @@ Here is the syntax and options can be used with `ng update`.
 `--registry`
 
   The NPM registry to use.
+  
+- style
+`--style`
+
+  The file extension to be used for style files. (Ex. ng new app --style=scss)
 
 #### Conclusion
 
