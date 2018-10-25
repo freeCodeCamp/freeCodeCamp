@@ -71,3 +71,12 @@ We can further refactor this function to only use one if statement. Check it out
 
       return true;
     }
+    
+### Bonus: Ternary Operator
+
+The function can be even further refactored to use a single line of code by using a ternary operator:
+
+    function willItBlend(someObject) {
+      return typeof someObject !== 'object' || someObject.blendable !== 'It will blend' ? false : true;
+    }
+    
