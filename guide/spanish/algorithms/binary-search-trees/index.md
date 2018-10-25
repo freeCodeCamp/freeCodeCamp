@@ -46,7 +46,7 @@ Hay 3 casos que pueden ocurrir cuando intenta eliminar un nodo. Si tiene
 
 1.  Sin subárbol (sin hijos): Este es el más fácil. Simplemente puede eliminar el nodo, sin que se requiera ninguna acción adicional.
 2.  Un subárbol (un hijo): debe asegurarse de que, después de que se elimine el nodo, su hijo se conecte al padre del nodo eliminado.
-3.  Dos subárboles (dos hijos): debe buscar y reemplazar el nodo que desea eliminar con su sucesor (el nodo más pequeño en el subárbol derecho).
+3.  Dos subárboles (dos hijos): debe buscar y reemplazar el nodo que desea eliminar con su sucesor (el nodo más pequeño en el subárbol derecho o el nodo más grande en el subárbol izquierdo).
 
 La complejidad del tiempo para crear un árbol es `O(1)` . La complejidad del tiempo para buscar, insertar o eliminar un nodo depende de la altura del árbol `h` , por lo que el peor de los casos es `O(h)` .
 
