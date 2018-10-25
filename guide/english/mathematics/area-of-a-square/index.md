@@ -22,6 +22,13 @@ The relationship between side *a* and diagonal *d* is:
 
 ![Diagonal](https://github.com/viso-gio/HostedImages/blob/master/DiagonalSquare.png?raw=true)
 
+### Properties Of Square
+
+1. Each of the interior angles of a square is 90.
+2. The diagonals of a square bisect each other.
+3. The opposite sides of a square are parallel.
+4. The diagonals of a square are equal. 
+
 ### Terminology
 
 Diagonal - the distance from opposite corners of a square. The corners are 90-degrees.
