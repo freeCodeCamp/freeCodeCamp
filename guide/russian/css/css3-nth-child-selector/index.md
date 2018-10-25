@@ -21,14 +21,14 @@ localeTitle: CSS3 N-й детский селектор
  Odd returns all odd elements of a given type. 
 ```
 
-CSS a: nth-childe (нечетный) { / \* CSS идет здесь \* / }
+CSS a: nth-child (нечетный) { / \* CSS идет здесь \* / }
 ```
 ##### Even 
  
  Even returns all even elements of a given type. 
 ```
 
-CSS a: nth-childe (even) { / \* CSS идет здесь \* / }
+CSS a: nth-child (even) { / \* CSS идет здесь \* / }
 ```
 #### An+B 
  
@@ -37,7 +37,7 @@ CSS a: nth-childe (even) { / \* CSS идет здесь \* / }
  For example, the following will match every 3rd anchor element: 
 ```
 
-CSS a: nth-childe (3n) { / \* CSS идет здесь \* / } \`\` \`
+CSS a: nth-child (3n) { / \* CSS идет здесь \* / } \`\` \`
 
 ### Дополнительная информация:
 
