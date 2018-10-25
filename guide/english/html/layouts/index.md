@@ -45,6 +45,7 @@ HTML5 offers new semantic elements that define the different parts of a web page
 <footer> - Defines a footer for a document or a section
 <details> - Defines additional details
 <summary> - Defines a heading for the <details> element
+<Script> - Defines a client-side script 
 ```
 
 #### More Information:
