@@ -29,6 +29,7 @@ switch (n)
         // code to be executed if n doesn't match any constant
 }
 ```
+<li>Break statement is not compulsory.If no break statement is given all the cases below the case given will be run.</li>
 
 ## Example
 
