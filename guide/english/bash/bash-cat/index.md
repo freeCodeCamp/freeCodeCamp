@@ -36,3 +36,4 @@ cat file1.txt file2.txt
 
 #### More Information:
 * Wikipedia: https://en.wikipedia.org/wiki/Cat_(Unix)
+* Man Page: https://ss64.com/bash/cat.html
