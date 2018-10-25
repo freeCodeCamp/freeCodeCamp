@@ -35,7 +35,7 @@ Below, we have an example of a simple PHP file, with a PHP script that uses a bu
 <body>
 
 <?php
-echo "My first PHP script!";
+echo "Hello World!";
 ?>
 
 </body>
