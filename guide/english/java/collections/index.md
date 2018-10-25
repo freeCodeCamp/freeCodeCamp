@@ -127,3 +127,26 @@ Note: All the above mentioned methods for removing and fetching an element retur
 
 #### More Information
 - [Java Collection](https://docs.oracle.com/javase/8/docs/api/java/util/Collection.html)
+
+More about Collections: 
+
+Collection API defines several classes and Interfaces like LIST, SET, MAP, QUEUES and their implementations to deal with objects and represent them as a single unit. 
+
+LIST is a collection used to store objects. It works like a dynamic array. List can contain duplicate elements. 
+ArrayList is an implementation of List Interface. Array List doen't maintain any insertion order, where as Linked List maintains insertion order.
+
+The syntax to create an array list is -
+
+ArrayList<String> arrayList = new ArrayList<>(); // Crerates a dynamic array list that can store STring objects.
+        
+Set:
+
+Set is a collection, that doesn't allow duplicate. HashSet is an implementation of Set Interface. Linked Hashset maintains the insertion order of the elements. 
+
+Map:
+
+Map is an Interface and special part of the COllections. It stores elements in key value pairs.
+
+Refer to the image in this url for a better understanding: https://beginnersbook.com/java-collections-tutorials/ 
+
+
