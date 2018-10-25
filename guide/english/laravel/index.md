@@ -16,3 +16,6 @@ SSH, introduced in Laravel 4.1, allows programmatic execution of CLI commands on
 Scheduler, introduced in Laravel 5.0, is an addition to the Artisan command-line utility that allows programmatic scheduling of periodically executed tasks. Internally, Scheduler relies on the cron daemon to run a single Artisan job that, in turn, executes the configured tasks.
 Flysystem, introduced in Laravel 5.0, is a file system abstraction layer that allows local file systems and cloud-based storage services provided by Amazon S3 and Rackspace Cloud to be used transparently and in the same way.
 Socialite, introduced in Laravel 5.0 as an optional package, provides simplified mechanisms for authentication with different OAuth providers, including Facebook, Twitter, Google, GitHub and Bitbucket.:13
+
+##Get Laravel
+The latest release of Laravel is 5.7 and includes optional email verification in the authentication scaffolding. Laravel can be installed using [Composer](https://getcomposer.org/).
