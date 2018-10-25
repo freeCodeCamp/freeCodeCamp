@@ -3,11 +3,15 @@ id: 5664820f61c48e80c9fa476c
 title: Golf Code
 challengeType: 1
 videoUrl: ''
-localeTitle: ''
+localeTitle: 'قانون الجولف'
 ---
 
 ## Description
-undefined
+<section id="description">في لعبة الجولف كل حفرة لها قيمة <code>par</code> تعني متوسط عدد ضربات او <code>strokes</code> لاعب الجولف من المتوقع أن يضع الكرة في حفرة لاستكمال اللعب. اعتمادا علي الطريقة ضرب <code>strokes<code> إلى أي مدى اعلي أو أسفل من <code>par</code>, هناك اسم مستعار مختلف.
+
+سيتم تمرير <code>par</code> و <code>strokes</code>. قم بإرجاع السلسلة الصحيحة وفقًا لهذا الجدول الذي يسرد حدود الشكل بترتيب الأولوية؛ أعلى (أعلى) إلى أسفل (أدنى):
+
+</section>
 
 ## Instructions
 undefined
