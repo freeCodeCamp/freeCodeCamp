@@ -68,13 +68,17 @@ Encuentra bibliotecas de javascript en [http://jster.net](http://jster.net)
     
     Un IDE con todas las funciones para Javascript, que incluye la finalización de código y el soporte para la creación de líneas en vivo, el control de versiones y las pruebas. Hecho por Jet Brains y modelado a partir de su IDE IntelliJ Java.
     
-*   [Soportes](http://brackets.io)
+*   [Brackets](http://brackets.io)
+
+    Editor de texto de código abierto.
     
-*   [Átomo](http://atom.io)
+*   [Atom](http://atom.io)
     
     Editor de texto de código abierto hecho por GitHub.
     
-*   [Texto sublime](https://www.sublimetext.com/)
+*   [Sublime Text](https://www.sublimetext.com/)
+
+    Editor de texto multiplataforma (Linux, Windows y Mac OS).
     
 
 ## Blogs
@@ -127,5 +131,3 @@ Encuentra bibliotecas de javascript en [http://jster.net](http://jster.net)
 *   [Luz funcional js](https://github.com/getify/Functional-Light-JS)
     
     Este libro pretende ser un compañero útil para cualquiera que desee (re) descubrir las múltiples facetas de JavaScript. Desde los conceptos básicos de la programación hasta el desarrollo web front-end y back-end, se cubren muchos temas de manera simple y accesible. No se necesitan conocimientos previos!
-    
-    
