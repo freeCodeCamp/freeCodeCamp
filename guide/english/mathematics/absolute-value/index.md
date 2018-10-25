@@ -38,6 +38,9 @@ Here you can see that in the graph of y = |x|, if -2 is input in to the function
 * **Simplify |(-5)^3|**
 |-125| = 125
 
+* **Simplify -|(4)^2|**
+-|16| = -16
+
 #### More Information:
 <a href='http://www.purplemath.com/modules/absolute.htm "Absolute Value"' target='_blank' rel='nofollow'>Absolute Value</a>
 
