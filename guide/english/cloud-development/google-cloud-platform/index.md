@@ -18,9 +18,20 @@ Some famous web services include
 * Google Storage - IaaS providing RESTful online file and object storage.
 * Google Cloud Dataproc - Managed Apache Spark and Apache Hadoop service.
 
+## Google Cloud Certifications
+
+You can become Google Cloud Certified and show off your knowledge of this platform and demonstrate that you have the requistite knowledge to leverage Google Cloud technology.
+
+There are three certifications that Google offers:
+* Associate Cloud Engineer 
+* Professional Cloud Architect 
+* Professional Data Engineer
+
+In addition to the three certifications above, Google offers an entry-level G Suite certification that shows your expertise in their productivity and collaboration tools. 
+
 #### More Information:
 <!-- Please add any articles you think might be helpful to read before writing the article -->
-<!-- Please add any articles you think might be helpful to read before writing the article -->
+* <a href='https://cloud.google.com/certification/' target='_blank' rel='nofollow'>Google Cloud Certifications</a>
 * <a href='https://cloud.google.com/docs/' target='_blank' rel='nofollow'>Google Cloud Platform Documentation</a>
 * <a href='https://en.wikipedia.org/wiki/Google_Cloud_Platform' target='_blank' rel='nofollow'>Wikipedia</a>
 * <a href= 'https://landing.google.com/sre/book.html' target='_blank' rel='nofollow'>Google Site Reliability Engineering</a>
