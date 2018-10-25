@@ -9,7 +9,7 @@ Let's say you have the radical SQRT(363), and you need to simplify it into both 
 So, it's a fact that SQRT(x*y) = SQRT(x) + SQRT(y)
 and this fact allows us to seperate the SQRT(243) into pieces
 
-but first, we need to find a factor of 363, tha would allow us to pull a perfect square from it.
+but first, we need to find a factor of 363, they would allow us to pull a perfect square from it.
 Perfect squares include 1, 4, 9, 16, 25, 36, 49, 64, 81, 100, 121, 144... because each of them has a sqare root that is a whole number
 
 Now, factors of 363 are:
