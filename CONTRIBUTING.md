@@ -13,7 +13,7 @@
 
 # Contribution Guidelines
 
-Hello 👋!
+Hello there 👋!
 
 freeCodeCamp.org is possible thanks to thousands of kind volunteers like you. We are grateful for your contributions, and we are excited to welcome you aboard.
 
