@@ -316,3 +316,11 @@ Check out the below resources to dive deeper. There are links for each type of d
 - [Angular Attribute Directives](https://angular.io/guide/attribute-directives)
 
 - [Angular CLI](https://cli.angular.io)
+
+
+
+## Video Tutorials
+
+-[Angular Directors for Beginners](https://www.youtube.com/watch?v=0r5QvzjjKDc)
+
+- [Angular Directoce, angular 5](https://www.youtube.com/watch?v=PiJkT3VNTS8)
