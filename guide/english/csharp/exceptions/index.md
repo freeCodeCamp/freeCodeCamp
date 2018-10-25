@@ -8,7 +8,7 @@ An exception is an unexpected error that occurs while a program is running, such
 
 ## Example
 If we try to read the text of a file that does not exist:
-```
+```csharp
 using System.IO;
 
 string content = File.ReadAllText(@"C:\DoesNotExist.txt");
@@ -22,11 +22,31 @@ Some other common exceptions:
 * `NullReferenceException`: Attempted to use an unassigned reference variable.
 * `DivideByZeroException`: Attempted to divide by 0.
 
+## Get The Message Inside An Exception
+Whenever you use the generic `Exception` catch all handler, you can grab the message of what caused the error each time.  It is very simple to do so:
+
+```csharp
+    try 
+    {
+		string content = File.ReadAllText(@"C:\DoesNotExist.txt");
+	}
+	catch (Exception ex) 
+	{ 
+		string message = "";
+		if (ex.InnerException != null) {
+			message = ex.InnerException.Message;
+		}
+		else {
+			message = ex.Message;
+		}
+		Console.WriteLine(message);
+	}
+```
 
 ## Best Practices
 
 ### Use try/catch/finally Blocks
-```
+```csharp
 try
 {
    var client = new WebClient();
@@ -46,7 +66,7 @@ finally
 
 Instead of
 
-```
+```csharp
 try
 {
    conn.Close();
@@ -59,9 +79,11 @@ catch (Exception ex)
 
 Try this
 
-```
+```csharp
 if (conn.State != ConnectionState.Closed)
 {
     conn.Close();
 }
 ```
+
+
