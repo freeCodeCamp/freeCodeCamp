@@ -85,3 +85,10 @@ The structure of the card can be enhanced by the addition of a header and a foot
   </div>
 </div>
 <!--You must set the image height on all cards -->
+
+
+### Video Tutorials For Bootstrap Cards
+
+- [Bootstrap 4- Working with Cards](https://www.youtube.com/watch?v=Tg1IQfOIpuA)
+
+- [Bootstrap 4 Tutorial - Cards](https://www.youtube.com/watch?v=CysFkdY18MI)
