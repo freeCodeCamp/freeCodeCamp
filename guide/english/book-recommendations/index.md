@@ -22,6 +22,17 @@ title: Books to Read for Programmers
 - [Amazon Smile](https://smile.amazon.com/Code-Language-Computer-Hardware-Software/dp/0735611319/ref=sr_1_1?s=books&ie=UTF8&qid=1508780869&sr=1-1&keywords=code)
 - ISBN-13: 978-0735611313
 
+*Code Simplicity
+
+- [Amazon](https://www.amazon.com/Code-Simplicity-Fundamentals-Max-Kanat-Alexander/dp/1449313892/ref=sr_1_1?s=books&ie=UTF8&qid=1540368354&sr=1-1&keywords=code+)
+- ISBN: 978-1-449-31389-0
+
+
+*COMPUTER SCIENCE DISTILLED 
+
+-[Amazon](https://www.amazon.in/Computer-Science-Distilled-Computational-Problems-ebook/dp/B0731JG96F/ref=sr_1_1?s=digital-text&ie=UTF8&qid=1540369331&sr=1-1&keywords=computer+science+distilled)
+- ISBN: 978-0-9973160-0-1
+
 *DevOps Handbook:How to Create World-Class Agility, Reliability, and Security in Technology Organizations* by Gene Kim et al
 - [Amazon Smile](https://www.amazon.com/DevOps-Handbook-World-Class-Reliability-Organizations/dp/1942788002/ref=sr_1_4?s=books&ie=UTF8&qid=1539733859&sr=1-4&keywords=devops+handbook)
 - ISBN-13: 978-1942788003
