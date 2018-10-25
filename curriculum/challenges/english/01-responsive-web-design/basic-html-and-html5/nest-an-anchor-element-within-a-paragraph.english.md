@@ -20,7 +20,7 @@ The final output of the example will look like this:<br><p>Here's a <a target="_
 
 ## Instructions
 <section id='instructions'>
-Now nest your existing <code>a</code> element within a new <code>p</code> element (just after the existing <code>main</code> element). The new paragraph should have text that says "View more cat photos", where "cat photos" is a link to "http://freecatphotoapp.com", and the rest of the text is plain text.
+Now nest your existing <code>a</code> element within a new <code>p</code> element (just after the existing <code>main</code> element). The new paragraph should have text that says "View more cat photos", where "cat photos" is a link to <code>http://freecatphotoapp.com</code>, and the rest of the text is plain text.
 </section>
 
 ## Tests
