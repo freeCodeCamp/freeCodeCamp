@@ -58,6 +58,22 @@ def is_less_than_five(some_number):
   # Your code goes here
 ```
 
+## Example 2 
+```python 
+def multiple_of_five(aInteger):
+   '''(int) -> boolean
+   Returns True if the number is a multiple of 5, and returns False if not a multiple of 5. 
+   REQ: A integer 
+   >>> multiple_of_five(9)
+   False
+   >>> multiple_of_five(5)
+   True
+   >>> multiple_of_five(25)
+   True
+   '''
+   # Enter your code here
+```
+
 ### Some useful links:
 Numpy and Google Docstrings are two commonly used approaches:
    * Google: http://sphinxcontrib-napoleon.readthedocs.io/en/latest/example_google.html
