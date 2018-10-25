@@ -1,5 +1,5 @@
 ---
-Title: Introduction to CSS
+title: Introduction to CSS
 ---
 
 ## Table of Contents
