@@ -15,7 +15,7 @@ title: Books on Python Programming Language
  
 #### Learn Python 3 the Hard Way
 
-Paid (Free ebook available) book which covers the basics of python. It's designed to get you started with python language and become familiar with its syntax and workings by the time you complete the book. 
+Paid (Free ebook available) book which covers the basics of python. It's designed to get you started with python language and become familiar with its syntax and workings by the time you complete the book. You learn the advantages of python in the best possible way!  
 
 - [Website](https://learnpythonthehardway.org/) (Buy from the creator | Includes video lessons)
 - [E-book](https://learnpythonthehardway.org/python3/) (free)
@@ -26,7 +26,7 @@ Paid (Free ebook available) book which covers the basics of python. It's designe
 
 #### Black Hat Python: Python Programming for Hackers and Pentesters
 
-Explore the darker side of Python and discover how to write network sniffers, manipulate packets, infect virtual machines and more.
+Explore the darker side of Python and discover how to write network sniffers, manipulate packets, infect virtual machines and more.The book is intended only for those who have deep interest in exploring the assets of python at advance level!
 
 - [Amazon](https://www.amazon.co.uk/Black-Hat-Python-Programming-Pentesters/dp/1593275900)
 - ISBN-10: 1593275900
