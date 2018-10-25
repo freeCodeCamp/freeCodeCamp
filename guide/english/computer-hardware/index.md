@@ -43,7 +43,7 @@ Motherboard holds and allows communication between many of the crucial electroni
 ![Motherboard](https://fthmb.tqn.com/mmTUdCN6UBGIKlkEggGq4fpV-3k=/768x0/filters:no_upscale()/gig-57c732ed3df78c71b60e7aa5.jpg)  
   
 ### Input and Output devices (eg. Keyboard and Mouse)
-Input/Output device is any hardware used by a human operator or other systems to communicate with a computer.
+Input/Output device is any hardware used by a human operator or other systems to communicate with a computer. We feed instructions to the computer via input devices. Keyboard and mouse would be the most common example of input devices. 
 
 ![I/O Devices](https://www.clasohlson.com/medias/sys_master/9225929949214.jpg)
 
