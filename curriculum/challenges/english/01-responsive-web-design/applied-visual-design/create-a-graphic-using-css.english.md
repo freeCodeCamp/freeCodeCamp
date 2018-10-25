@@ -24,11 +24,11 @@ Manipulate the square element in the editor to create the moon shape. First, cha
 ```yml
 tests:
   - text: The value of the <code>background-color</code> property should be set to <code>transparent</code>.
-    testString: 'assert(code.match(/background-color:\s*?transparent;/gi), "The value of the <code>background-color</code> property should be set to <code>transparent</code>.");'
+    testString: assert(code.match(/background-color:\s*?transparent;/gi), 'The value of the <code>background-color</code> property should be set to <code>transparent</code>.');
   - text: The value of the <code>border-radius</code> property should be set to <code>50%</code>.
-    testString: 'assert(code.match(/border-radius:\s*?50%;/gi), "The value of the <code>border-radius</code> property should be set to <code>50%</code>.");'
-  - text: 'The value of the <code>box-shadow</code> property should be set to 25px for <code>offset-x</code>, 10px for <code>offset-y</code>, 0 for <code>blur-radius</code>, 0 for <code>spread-radius</code>, and finally blue for the color.'
-    testString: 'assert(code.match(/box-shadow:\s*?25px\s+?10px\s+?0(px)?\s+?0(px)?\s+?blue\s*?;/gi), "The value of the <code>box-shadow</code> property should be set to 25px for <code>offset-x</code>, 10px for <code>offset-y</code>, 0 for <code>blur-radius</code>, 0 for <code>spread-radius</code>, and finally blue for the color.");'
+    testString: assert(code.match(/border-radius:\s*?50%;/gi), 'The value of the <code>border-radius</code> property should be set to <code>50%</code>.');
+  - text: The value of the <code>box-shadow</code> property should be set to 25px for <code>offset-x</code>, 10px for <code>offset-y</code>, 0 for <code>blur-radius</code>, 0 for <code>spread-radius</code>, and finally blue for the color.
+    testString: assert(code.match(/box-shadow:\s*?25px\s+?10px\s+?0(px)?\s+?0(px)?\s+?blue\s*?;/gi), 'The value of the <code>box-shadow</code> property should be set to 25px for <code>offset-x</code>, 10px for <code>offset-y</code>, 0 for <code>blur-radius</code>, 0 for <code>spread-radius</code>, and finally blue for the color.');
 
 ```
 
