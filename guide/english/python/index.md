@@ -28,9 +28,9 @@ Windows doesn't come with Python, the installer and instructions can be found <a
 
 ## Python Interpreter
 
-The Python interpreter is what is used to run Python scripts.
+The Python interpreter is used to run Python scripts.
 
-If it is available and in Unix shell’s search path makes it possible to start it by typing the command `python` followed by the script name will invoke the interpreter and run the script.
+If it is available and in Unix shell’s search path, it is possible to start Python by typing the command `python` followed by the script name. This will invoke the interpreter and run the script.
 
 `hello_campers.py`
 
@@ -43,7 +43,7 @@ From terminal:
     $ python hello_campers.py
     Hello campers!
 
-When multiple versions of Python are installed, calling them by version is possible depending on the install configuration. In the Cloud9 IDE custom environment, they can be invoked like:
+When multiple versions of Python are installed, calling them by version may be possible depending on the install configuration. In the Cloud9 IDE custom environment, they can be invoked as shown below:
 
     $ python --version
     Python 2.7.6
@@ -110,7 +110,7 @@ Some of the principles that influenced the design of Python are included as an E
 
 #### Cons
 1. Being open source, many different ways have developed over the year for same function. This sometimes, creates chaos for others to read someone else code.
-2. It is a slow language. So, a very bad language to use for developing general algorithms.
+2. It is a slow language. So, it may be less preferred for developing general algorithms.
 
 ## Documentation
 
@@ -155,7 +155,7 @@ will do that itself based on the type of value assigned.
 The `objects` parameter is prefixed with a `*` which indicates that the function will take an arbitrary number of arguments for that parameter.
 
 ## Things you can do with python
-As stated python is a general purpose language. You can use it to do anything you like but one of the major uses of python is in machine learning and artificial intelligence. It is also a popular language in web development with some amazing frameworks like [Django](https://www.djangoproject.com/) and [flask](http://flask.pocoo.org/). It is also a popular scripting language. With its easy to read syntax it is becoming one the most popular programming languages growing rapidly in different fields.
+As stated, python is a general purpose language. You can use it to do anything you like but one of the major uses of python is in machine learning and artificial intelligence. It is also a popular language in web development with some amazing frameworks like [Django](https://www.djangoproject.com/) and [flask](http://flask.pocoo.org/). It is also a popular scripting language. With its easy to read syntax it is becoming one the most popular programming languages growing rapidly in different fields.
 
 ## Want to learn more?
 
