@@ -29,7 +29,9 @@ Use the following format for initialising an array. This method also declares th
 
 You can assign a value into an element directly by using the format below:
 
-`nameOfArray[2] = 50;`
+```csharp
+nameOfArray[2] = 50;
+```
 
 The will assign the value of 50 directly into element [2]
 
@@ -46,8 +48,65 @@ You can declare, initilise and assign values in the array all at once by using t
 
 You can store an array directly into another array by using the format below:
 
-`int [] nameOfArray = new nameOfArray[4] {2,9,56,1280};`
-`int [] nameOfSecondArray = nameOfArray;`
+```csharp
+int [] nameOfArray = new nameOfArray[4] {2,9,56,1280};
+int [] nameOfSecondArray = nameOfArray;
+```
+
+## Sorting Values in Arrays
+
+You can sort values in arrays by using the `Array.Sort` method.  `Array.Sort` sorts an array **by reference** so there is no need to assign the array to the output of the `Array.Sort` method.
+
+There are a number of different ways to use `Array.Sort`, but for a vast majority of use cases, the following few ways should do the trick.
+
+#### Sorting Implicitly (Ascending only)
+
+The easiest, but arguably least efficient, way to use `Array.Sort` is to simply call `Array.Sort` and pass in the array to sort.  Keep in mind that only passing in the array this way will only sort an array in ascending order, which is why it is an implicit sort of sorting, as it is assumed that you want to sort this array in ascending order.  Integers are always sorted in numerical order from least to greatest. 
+
+For Example:
+
+```csharp
+int [] myIntArray = { 7, 4, 1, 9, 8 };
+Array.Sort(myIntArray);
+//sorts myIntArray in Ascending order
+//produces: { 1, 4, 7, 8, 9 } stored back into myIntArray
+```
+
+Strings are sorted going from left to right, with the lowest alphabetical representation from left to right being sent to the beginning and the highest being sent to the end.
+
+For Example:
+
+[Run the following code here at Repl.it](https://repl.it/@heyitsmarcus/SimpleArraySortingImplicit?language=csharp)
+```csharp
+string [] myStringArray = { "Hi", "Hello", "Konichiwa", "Hola", "Hallo" };
+Array.Sort(myStringArray);
+Console.WriteLine(String.Join(",", myStringArray));
+//sorts myStringArray in Ascending order
+//produces { "Hallo", "Hello", "Hi", "Hola", "Konichiwa" } back into myStringArray
+```
+
+#### Sorting Explicitly (Ascending/Descending/Any Order You Wish)
+
+One way to sort an array is to **explicitly** set your sorting method within the `Array.Sort` method, which will allow you to sort in any order you choose including preferring certain array items over others in their order.
+
+Using the `myStringArray` from above, you can sort it Ascending **explicitly** by passing in an anonymous method using delegate. 
+
+For example:
+
+[Run the following code here at Repl.it](https://repl.it/@heyitsmarcus/SortArrayExplicitly?language=csharp)
+```csharp
+string[] myStringArray = { "Hi", "Hello", "Konichiwa", "Hola", "Hallo" };
+
+Array.Sort(myStringArray, delegate (string strPrev, string strNext) {
+	//use a return statement here 
+    //strPrev represents the previous string in the array (also the starting element)
+    //strNext represents the next string in the array up to the very end of the array
+    return strPrev.CompareTo(strNext);
+});
+Console.WriteLine(String.Join(",", myStringArray));
+```
+You can use this override to sort a vast array of arrays, no pun intended! There are several more overrides for `Array.Sort` but you can get by, in most cases, by an implicit sort or an explicit sort like above.  
+
 
 ## Advantages
 
