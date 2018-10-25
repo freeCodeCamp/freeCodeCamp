@@ -1,7 +1,7 @@
 ---
-title: HTML Dom Innerhtml Property
+title: HTML DOM innerHTML Property
 ---
-## HTML Dom Innerhtml Property
+## HTML DOM innerHTML Property
 The `innerHTML` prop return the HTML content inside a selected element and also let you define a new HTML content.
 
 ***GET ELEMENT CONTENT***
