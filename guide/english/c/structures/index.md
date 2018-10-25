@@ -14,7 +14,7 @@ title: Structures
 struct StudentRecord
 {
   char Name[20];
-  int Class;
+  int Class;        //We can't initialise  data types in the structure declaration in C language for example int Class=10
   char Address[30];
   char Phone[10];
 };
