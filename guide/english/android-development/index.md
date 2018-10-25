@@ -39,7 +39,7 @@ Lastly, learn to integrate 3rd party libraries and Firebase services to add func
 
 ### Official Documentation
 
-[Google Developers Guide for Android](https://developer.android.com/training/index.html)
+[Google Developer's Guide for Android](https://developer.android.com/training/index.html)
 
 #### Java vs Kotlin
 
