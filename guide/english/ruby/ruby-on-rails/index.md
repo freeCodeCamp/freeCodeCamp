@@ -3,7 +3,7 @@ title: Ruby on Rails
 ---
 
 # Ruby on Rails
-[Ruby on Rails](http://rubyonrails.org/) is a server-side framework (gem) built on the Ruby language to make websites. Rails makes web development faster, easier and more fun. It includes everything you need to build fantastic applications and has a big community. Rails was created by David Heinemeir Hansson and is currently on it's 5th version. Rails emphasizes the use of other well-known software engineering patterns and paradigms, including [convention over configuration (CoC)](https://en.wikipedia.org/wiki/Convention_over_configuration), [don't repeat yourself (DRY)](https://en.wikipedia.org/wiki/Don%27t_repeat_yourself), and the active record pattern. Rails is a [model–view–controller (MVC)](https://en.wikipedia.org/wiki/Model%E2%80%93view%E2%80%93controller) framework, providing default structures for a database, a web service, and web pages. Lately, Rails has integrated an API module to make the creation of web-services faster and easier.
+[Ruby on Rails](http://rubyonrails.org/) is a server-side framework (gem) built on the Ruby language to create websites. Rails makes web development faster, easier and more fun. It includes everything you need to build fantastic applications and has a big open source community backing it. Rails was created by David Heinemeir Hansson and is currently on it's 5th version. Rails emphasizes the use of other well-known software engineering patterns and paradigms, including [convention over configuration (CoC)](https://en.wikipedia.org/wiki/Convention_over_configuration), [don't repeat yourself (DRY)](https://en.wikipedia.org/wiki/Don%27t_repeat_yourself), and the active record pattern. Rails is a [model–view–controller (MVC)](https://en.wikipedia.org/wiki/Model%E2%80%93view%E2%80%93controller) framework, providing default structures for a database, a web service, and web pages. Lately, Rails has integrated an API module to make the creation of web-services faster and easier.
 
 ## Installing Rails
 Rails is downloaded in the same way as any other Ruby gem: with the `gem install` command. Before we download it, we'll need to <a href='https://www.ruby-lang.org' target='_blank' rel='nofollow'>download Ruby</a>. Afterwards we're only 3 words away from starting with Ruby on Rails:
@@ -12,7 +12,8 @@ Rails is downloaded in the same way as any other Ruby gem: with the `gem install
 $ gem install rails
 ```
 ## Setting Up database
-Rails ships with sqlite3 as the default database, which is a simple file on disk. You need to install MySQL or PostgreSQL if you want to use something more robust.
+Rails ships with sqlite3 as the default database, which is a simple file on disk. You need to install MySQL or PostgreSQL if you want to use something more robust. 
+Disclaimer : If you wish to deploy your website to Heroku, you will have to use PostgreSQL as sqlite3 is not supported.
 
 ## Creating a Rails application
 
