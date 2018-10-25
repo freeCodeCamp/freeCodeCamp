@@ -93,6 +93,7 @@ Encontre bibliotecas javascript em [http://jster.net](http://jster.net)
 
 *   [Aprenda JS em um vídeo de Derek Banas](https://www.youtube.com/watch?v=fju9ii8YsGs)
 *   [JavaScript orientado a objeto de Derek Banas](https://www.youtube.com/watch?v=O8wwnhdkPE4)
+*   [JavaScript de Codigo Facilito](https://www.youtube.com/playlist?list=PLpOqH6AE0tNhQ3KW1DPc18xZfLfjX5Xuz)
 
 ## Livros
 
