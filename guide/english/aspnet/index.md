@@ -19,3 +19,13 @@ ASP.NET offers different frameworks for creating web applications: For e.g Web F
 ASP.Net development is now available on Mac and Linux, Checkout more here:
 - [ASP .NET Core](https://docs.microsoft.com/en-us/aspnet/core/tutorials/first-mvc-app-xplat/start-mvc?view=aspnetcore-2.1)
 
+Prerequisites for developing ASP.net Core App on MacOs:
+
+Install the .NET Core SDK. The .NET Core SDK includes the latest release of the .NET Core framework and runtime.
+- [.NET COre SDK](https://www.microsoft.com/net/learn/dotnet/hello-world-tutorial)
+
+Install Visual Studio Code.You may also need to install Visual Studio Code extensions that improve the .NET Core development experience.
+- [Visual Studio Code](https://code.visualstudio.com/)
+
+
+
