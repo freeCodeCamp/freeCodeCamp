@@ -55,6 +55,7 @@ data consist of a set of training examples. In supervised learning, each example
 3. If you want a brief introduction of machine learning, and you prefer videos, try this <a href='https://youtu.be/cKxRvEZd3Mw' target='_blank' rel='nofollow'>machine learning introduction video</a>
 4. If you want to know how to proceed with learning machine learning, take a look at this <a href='https://youtu.be/nKW8Ndu7Mjw' target='_blank' rel='nofollow'> video</a>
 5.<a href='https://www.datacamp.com/courses/supervised-learning-with-scikit-learn' target='_blank' rel='nofollow'>Supervised Learning on Data camp</a>
+6.If you want to research on machine learning without any environment settings, try out <a href='https://colab.research.google.com/' target='_blank' rel='nofollow'>Google Colaboratory</a>. Jupyter notebook environment that requires no setup to use. 
 
 ## Lab
 
