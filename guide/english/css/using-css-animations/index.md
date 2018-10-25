@@ -3,10 +3,9 @@ title: Using CSS Animations
 ---
 ## Using CSS Animations
 
-CSS animations add beauty to the Webpages.<br>
-CSS animations make transitions from one CSS style to the other beautiful.
+CSS animations are a way to transition from one style configuration to another. There are two components to a CSS animation: an HTML element, and `keyframes`, which create a timeline of how the animation should look from beginning to end.
 
-To create a CSS animation sequence, we have different sub-properties in the `animation` property in CSS :
+The `animation` property has the following sub-properties:
 - `animation-delay`
 - `animation-direction`
 - `animation-duration`
@@ -16,16 +15,16 @@ To create a CSS animation sequence, we have different sub-properties in the `ani
 - `animation-timing-function`
 - `animation-fill-mode`
 
-### Sample CSS animation sequence for move text across the screen
+### Example
 
-In the HTML part we will have a `div` with class `container` and a `h3` with the text `Hello World`:
+HTML:
 
 ```html
 <div class="container">
     <h3> Hello World ! </h3>
 </div>
 ```
-For the CSS part :
+CSS:
 
 ```css
 .container {
