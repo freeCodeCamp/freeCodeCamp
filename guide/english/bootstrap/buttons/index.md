@@ -81,7 +81,14 @@ Outlined buttons are a part of Bootstrap since version 4, please be sure that yo
 
 _Note: Do not include the dot in the HTML Class Attribute, referring to the classes with a dot is only used when adjusting the classes in CSS._
 
-#### More Information: 
+#### More Inhttps://www.youtube.com/watch?v=CJrPkKOsVbMformation: 
+
+
 * <a href='https://getbootstrap.com/docs/4.0/components/buttons/' target='_blank' rel='nofollow'>Bootstrap Buttons documentation</a>
 * <a href='http://getbootstrap.com/docs/4.0/components/button-group/' target='_blank' rel='nofollow'>Bootstrap Button Group documentation</a>
 * [Bootstrap Get Started](/articles/bootstrap/bootstrap-get-started)
+
+### Video Tutorials
+- [Bootstrap Tutorial - Button Styles](https://www.youtube.com/watch?v=CJrPkKOsVbM)
+
+- [Bootstrap Button Classes](https://www.youtube.com/watch?v=klFyW05p7EY)
