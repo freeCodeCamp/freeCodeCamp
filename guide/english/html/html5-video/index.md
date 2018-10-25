@@ -17,7 +17,12 @@ The HTML <video> tag is used to embed video in web documents. It may contain one
   Your browser does not support the video element. Kindly,update it to latest version.
   </video >
 ```
-
+<video controls>
+   <source src="www.youtube.com/" type="video /ogg">
+   <source src="www.youtube.com/" type="video /mpeg">
+ Your browser does not support the video element. Kindly,update it to latest version.
+ </video >
+ 
 The controls attribute includes video controls, similar to play, pause, and volume.
 
 This feature is supported by all modern/updated browsers. However, not all support the same video file format. My recommendation for a wide range of compatibility is MP4, as it is the most widely accepted format. There are also two other formats (WebM and Ogg) that are supported in Chrome, Firefox, and Opera.
