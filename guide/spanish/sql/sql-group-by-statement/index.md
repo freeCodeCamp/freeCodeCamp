@@ -2,7 +2,7 @@
 title: SQL Group By Statement
 localeTitle: Grupo SQL por declaración
 ---
-## Grupo SQL por Statemet
+## Sentencia SQL GROUP BY
 
 ### Ejemplo de uso
 
