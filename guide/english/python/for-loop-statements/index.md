@@ -3,7 +3,7 @@ title: For Loop Statements
 ---
 ## For Loop Statements
 
-Python utilizes a for loop to iterate over a list of elements. Unlike C or Java, which use the for loop to change a value in steps and access something such as an array using that value.
+Python utilizes a for loop to iterate over a list of elements. This is different to C or Java, which use the for loop to change a value in steps and access something such as an array using that value.
 
 For loops iterate over collection based data structures like lists, tuples, and dictionaries.
 
@@ -28,7 +28,6 @@ Output:
 a: 1 b: 2
 a: 3 b: 4
 ```
-
 
 On the other hand, you can loop over anything that is iterable. You can call a function or use a list literal.
 
@@ -62,7 +61,7 @@ for i in range(10):
     print(i)
 ```
 Rather than being a function, range is actually an immutable sequence type.
-The output will contain results from lower bound i.e 0 to the upper bound i.e 10 but excluding 10.By default the lower bound or the starting index is set to zero.
+The output will contain results from lower bound i.e 0 to the upper bound i.e 10 but excluding 10. By default, the lower bound or the starting index is set to zero.
 
 Output:
 
