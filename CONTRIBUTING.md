@@ -55,7 +55,7 @@ You can find an [example article about HTML Anchor Elements here](https://github
 
 **What can I write an article about?**
 
-We welcome your help in writing these articles. You don't have to be an expert in a topic to write about it—this entire Guide is open source, so even if you make a mistake, another contributor will eventually correct it.
+We welcome your help in writing these articles. You don't have to be an expert in a topic to write about it. This entire Guide is open source, so even if you make a mistake, another contributor will eventually correct it.
 
 To help, find a `stub article` on our [Guide website](https://guide.freecodecamp.org), write the article, then open a pull request to replace the stub with your article. A [pull request](https://help.github.com/articles/about-pull-requests/) is how you'll suggest changes. It lets others know about, review, and eventually adopt your changes.
 
@@ -67,7 +67,7 @@ If you would like to help improve guide articles, here's [how to work on guide a
 
 All our Coding challenges are curated by the community, bringing in expert knowledge from volunteers like you.
 
-You can help expand them and make their wording more clear. You can update the user stories to explain the concept better and even remove redundant ones. You can also improve the challenge tests to make them more accurately test people's code.
+You can help expand them and make their wording clearer. You can update the user stories to explain the concept better. you can remove redundant stories too. You can also improve the challenge tests to make them more accurately test people's code.
 
 If you're interested in improving these coding challenges, here's [how to work on coding challenges](/docs/how-to-work-on-coding-challenges.md).
 
