@@ -8,12 +8,14 @@ To write on console you can use the function `printf()` contained in the library
 
  ```C
  #include <stdio.h>
-
+ 
+ /* Any text in between these two characters is a block comment.
+    Block comments, unlike inline comments, can span multiple lines.
+    Comments are ignored by the compiler and will not be executed.
+  */
  int main(void)
  {
-
-     printf("hello, world\n");  //lines starting with this are called comments..
-
+     printf("hello, world\n");  // lines starting with double forward-slash are called inline comments..
      return 0;
  }
  ```
