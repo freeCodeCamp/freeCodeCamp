@@ -121,16 +121,21 @@ int linearSearch(int[] arr, int element)
 
 ### Example in PHP
 
-```PHP
-function linear_search($arr,$n,$num)
+```php
+function linear_search($arr=[],$num=0)
 {
-	for( $i=0; $i<$n; $i++){
-		if($arr[$i] == $num)
-			return $i;
-   }
-   // Item not found in the array
-   return -1; 
+     $n = count($arr);   
+     for( $i=0; $i<$n; $i++){
+           if($arr[$i] == $num)
+                return $i;
+      }
+      // Item not found in the array
+      return -1; 
 }
+
+$arr = array(1,3,2,8,5,7,4,0);
+print("Linear search result for 2: ");
+echo linear_search($arr,2);
 
 ```
 
