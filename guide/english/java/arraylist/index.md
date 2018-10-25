@@ -44,8 +44,8 @@ Since ArrayList implements *List*, an ArrayList can be created using the followi
   ```
    
 **Modify/update element at specified index**
-   ```java
-   variable_name.set(index_number,element);
+  ```java
+  variable_name.set(index_number,element);
   ```
   
 **Reverse elements in list**  
@@ -55,14 +55,14 @@ Since ArrayList implements *List*, an ArrayList can be created using the followi
   ```
   
 **Sort elements in ascending order**
-```java
+  ```java
   Collections.sort(variable_name);
   ```
   
 **Sort elements in descending order**
-   ```java
+  ```java
   Collections.reverseOrder());
- ```
+  ```
   
   An ArrayList allows us to randomly access elements. ArrayList is similar to *Vector* in a lot of ways. But it is faster than Vectors. The main thing to note is that - Vectors are faster than arrays but ArrayLists are not. 
   
