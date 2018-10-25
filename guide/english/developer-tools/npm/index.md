@@ -5,7 +5,8 @@ title: npm
 
 npm is a package manager and is used to install and manage dependencies.
 
-npm is central to the vibrant JavaScript(and specifically the Node.js) community, by making module and code reusability across projects very simple.
+npm is central to the vibrant JavaScript (and specifically the Node.js) community, by making module and code reusability across projects very simple.
+
 Currently, npm has upwards of 500,000 available packages.
 
 npm is useful not only for server-side projects. Most popular front-end libraries like Bootstrap and Font Awesome are available too.
@@ -41,8 +42,8 @@ npm install
 ```
 
 Running npm install in a project's root directory without a specific package name, installs all the dependencies required for that project. Those are
-calculated according to the project's `package.json` file. This demonstrates the power of npm, where a single command can fetch tens or hundreds of
-dependencies automatically for you, and is useful when you `git clone` a repository, for example.
+calculated according to the project's `package.json` file, therefore it is necessary to make sure that the project's root folder contains it. This demonstrates the power of npm, where a single command can fetch tens or hundreds of
+dependencies automatically for you, and is useful when you `git clone` a repository, for example (also, due to this feature local repositories can sometimes take a lot of disk space).
 
 #### More Information:
 * Node.js website: <a href='https://nodejs.org' target='_blank' rel='nofollow'>nodejs</a>
