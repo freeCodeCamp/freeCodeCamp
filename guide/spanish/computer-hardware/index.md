@@ -32,7 +32,7 @@ La memoria de acceso aleatorio (RAM) es una forma de almacenamiento de datos de 
 
 ![RAM](https://images10.newegg.com/NeweggImage/ProductImage/20-232-476-S01.jpg)
 
-### Caso
+### Gabinete
 
 Se utiliza un estuche para alojar todos los componentes de una computadora.
 
@@ -44,7 +44,7 @@ Una fuente de alimentación es un dispositivo electrónico que suministra energ�
 
 ![Fuente de alimentación](https://upload.wikimedia.org/wikipedia/commons/thumb/b/b6/SFX_PC-PSU_Delta_IMG_9760.JPG/620px-SFX_PC-PSU_Delta_IMG_9760.JPG)
 
-### tarjeta madre
+### Tarjeta madre
 
 La placa base sostiene y permite la comunicación entre muchos de los componentes electrónicos cruciales de un sistema, como la unidad central de procesamiento (CPU) y la memoria, y proporciona conectores para otros periféricos.
 
