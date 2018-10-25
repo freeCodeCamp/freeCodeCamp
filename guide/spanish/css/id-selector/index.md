@@ -4,7 +4,7 @@ localeTitle: Selector de ID
 ---
 ## Selector de ID
 
-El selector de ID de CSS aplica estilos a un elemento html específico. El selector de ID de CSS debe coincidir con el atributo de ID de un elemento HTML. A diferencia de las clases, que se pueden aplicar a múltiples elementos en un sitio, una ID específica solo se puede aplicar a un único elemento en un sitio. El ID de CSS anulará las propiedades de la clase CSS. Para seleccionar un elemento con un ID específico, escriba un carácter de hash (#), seguido del ID del elemento.
+El selector de ID de CSS aplica estilos a un elemento html específico. El selector de ID de CSS debe coincidir con el atributo de ID de un elemento HTML. A diferencia de las clases, que se pueden aplicar a múltiples elementos en un sitio, una ID específica solo se puede aplicar a un único elemento en un sitio. El ID de CSS anulará las propiedades de la clase CSS. Para seleccionar un elemento con un ID específico, escriba un carácter de almohadilla (#), seguido del ID del elemento.
 
 ### Sintaxis
 
