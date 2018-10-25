@@ -8,40 +8,40 @@ XML significa eXtensible Markup Language. Es extensible, porque no usa un conjun
 
 \## Sintaxis de XML La sintaxis XML se refiere a las reglas que determinan cómo se puede escribir una aplicación XML. La sintaxis XML es muy sencilla, y esto hace que XML sea muy fácil de aprender. Los documentos XML deben contener un elemento raíz que sea el padre de todos los demás elementos:
 ```
-<root> 
-  <child> 
-    <subchild>.....</subchild> 
-  </child> 
- </root> 
+<root>
+  <child>
+    <subchild>.....</subchild>
+  </child>
+ </root>
 ```
 
 #### XML debe tener un elemento raíz
 
 La sintaxis anterior muestra el elemento raíz que es necesario al crear un código XML. Esto se puede ver en el ejemplo:
 ```
-<?xml version="1.0" encoding="UTF-8"?> 
- <note> 
-  <to>Tove</to> 
-  <from>Jani</from> 
-  <heading>Reminder</heading> 
-  <body>Don't forget me this weekend!</body> 
- </note> 
+<?xml version="1.0" encoding="UTF-8"?>
+ <note>
+  <to>Tove</to>
+  <from>Jani</from>
+  <heading>Recordatorio</heading>
+  <body>No te olvides de mí este fin de semana!</body>
+ </note>
 ```
 
 En este ejemplo, 'nota' es el elemento raíz.
 
 *   Ventajas de usar XML:
-    
+
     *   Simplicidad: los documentos XML son archivos de texto normales que se pueden crear y editar con cualquier editor de texto.
     *   Independencia del vendedor
     *   Independencia de la plataforma
     *   Amplia infraestructura
 *   Desventajas de usar XML:
-    
+
 *   Sintaxis verbosa y engorroso
-    
+
 *   Almacenamiento altamente ineficiente
-    
+
 
 En el lenguaje informático, el lenguaje de marcado extensible (XML) es el que define un conjunto o bloque de reglas que luego se utilizan para codificar documentos en un formato que es legible para máquinas y para humanos.
 
