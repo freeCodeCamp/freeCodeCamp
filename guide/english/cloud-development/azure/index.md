@@ -27,3 +27,9 @@ There are varying levels of machine 'sizes' to choose from, ranging from simple 
 * <a href='https://en.wikipedia.org/wiki/Microsoft_Azure' target='_blank' rel='nofollow'>Wikipedia</a>
 * <a href='https://azure.microsoft.com/en-us/' target='_blank' rel='nofollow'>Microsoft Azure</a>
 * <a href='https://docs.microsoft.com/en-us/learn/' target='_blank' rel='nofollow'>Microsoft Learn</a>
+
+
+### Video Tutorials
+- [Microsoft Azure Tutorials for Beginners](https://www.youtube.com/watch?v=0bPJPiX89K0)
+
+- [Cloud Computing for Beginners](https://www.youtube.com/watch?v=kQnNd-DyrpA)
