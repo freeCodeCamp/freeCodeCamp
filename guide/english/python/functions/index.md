@@ -21,6 +21,7 @@ In Python, a function definition has the following features:
 4. a colon ':'
 5. some block of code to execute (that must be indented relative to the definition statement)
 6. a return statement (optional)
+7. <a href='https://github.com/freeCodeCamp/freeCodeCamp/blob/master/guide/english/python/docstring/index.md' target='_blank' rel='nofollow'>docstring</a> (optional)
 
 ```python
 # a function with no parameters or returned values
@@ -39,7 +40,15 @@ helloWithName("Ada")  # calls the function, 'Hello Ada!' is printed to the conso
 def multiply(val1, val2):
   return val1 * val2
 
-multiply(3, 5)  # prints 15 to the console
+print(multiply(3, 5))  # prints 15 to the console
+
+# a function with a sample docstring, multiple parameters and a return statement
+def addValues(val1, val2): 
+  """ Returns the sum of two numbers """
+  return val1 + val2
+
+print(addValues(4, 7))  # prints 11 to the console
+  
 ```
 
 Functions are blocks of code that can be reused simply by calling the function. This enables simple, elegant code reuse without explicitly re-writing sections of code. This makes code both more readable, makes for easier debugging, and limits typing errors. 
@@ -129,3 +138,6 @@ result = s(1, 2)
 - Python interprets the function block only when the function is called and not when the function is defined.So even if the function definition block contains some sort of error,the python interpretar will point that out only when the function is called. 
 ### More Information:
 - <a href='https://docs.python.org/3/tutorial/controlflow.html#defining-functions' target='_blank' rel='nofollow'>Python 3 Docs: Defining Functions</a>
+- <a href='https://www.python.org/dev/peps/pep-0257/' target='_blank' rel='nofollow'>Python 3 Docs: Docstring Conventions</a>
+
+
