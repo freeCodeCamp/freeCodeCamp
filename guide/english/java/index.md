@@ -51,7 +51,7 @@ sudo apt-get install oracle-java8-installer`
 
 ### Mac
 
-*   Either download Mac OSX .dmg executable from Oracle Downloads
+*   Either download Mac OSX .dmg executable from Oracle Downloads <a href='https://www.java.com/en/download/' target='_blank' rel='nofollow'>Download Java here</a>
 *   Or use <a href='http://brew.sh/' target='_blank' rel='nofollow'>Homebrew</a> to <a href='http://stackoverflow.com/a/28635465/2861269' target='_blank' rel='nofollow'>install</a> :
 
 ```bash  
