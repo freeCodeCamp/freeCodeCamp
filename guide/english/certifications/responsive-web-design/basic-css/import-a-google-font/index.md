@@ -2,6 +2,10 @@
 title: Import a Google Font
 ---
 ## Import a Google Font
+The below example shows one of the ways in which you can import and use a Google Font.
+The example uses a link to the font's API, in the ```<head>``` of the HTML document rather than in the CSS.
+
+To browse through other fonts offered by Google, please check [Google Fonts](https://fonts.google.com "Google Fonts") 
 
 ### Solution
 
@@ -53,3 +57,10 @@ title: Import a Google Font
   </form>
 </main>
 ```
+#### More on this
+To look at what is going on behind a font, you can open the URL for the font.
+We have used the _Lobster_ font, [click here](https://fonts.googleapis.com/css?family=Lobster) to have a look at what's going on under-the-hood for the _Lobster_ font 
+
+[Another way of importing font: using @font-face](https://css-tricks.com/snippets/css/using-font-face/)
+
+[Don't just copy the fonts out of Google Fonts URLs](https://css-tricks.com/dont-just-copy-the-font-face-out-of-google-fonts-urls/)
