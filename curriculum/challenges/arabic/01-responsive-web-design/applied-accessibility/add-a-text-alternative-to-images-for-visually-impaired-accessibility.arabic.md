@@ -19,7 +19,7 @@ localeTitle: إضافة بديل نص إلى الصور لإعاقة الوصو�
 ```yml
 tests:
   - text: يجب أن تحتوي علامة <code>img</code> سمة <code>alt</code> ، ويجب ألا تكون فارغة.
-    testString: 'assert($("img").attr("alt"), "Your <code>img</code> tag should have an <code>alt</code> attribute, and it should not be empty.");'
+    testString: 'assert($("img").attr("alt") , "Your <code>img</code> tag should have an <code>alt</code> attribute, and it should not be empty.");'
 
 ```
 
