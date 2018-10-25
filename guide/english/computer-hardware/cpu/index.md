@@ -36,4 +36,5 @@ The improvements in microprocessor technology have also led to signficant techno
 
 #### More Information:
 <a href='https://en.wikipedia.org/wiki/Central_processing_unit' target='_blank' rel='nofollow'>Wikipedia</a>
+<a href='https://www.wikihow.com/Select-a-CPU' target='_blank' rel='nofollow'>what to look for when buying a CPU</a>
 
