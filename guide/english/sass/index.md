@@ -46,7 +46,7 @@ So the above code in Sass code will be:
 }
 ```
 
-## MIXINS
+## Mixins
 
 Mixins are like functions for CSS.
 Example:
@@ -62,5 +62,42 @@ Example:
 }
 
 ```
+
+## Functions
+Sass has built in functions which can be easily used to manipulate colors.
+
+### Darken + Lighten
+The first argument contains the color, the second the percentage adjusted.
+
+```
+$heading-color
+.nav-bar li {
+  &.active {
+    darken( $heading-color, 10% );
+  }
+  &:hover {
+    lighten( $heading-color, 10% );
+  }
+}
+
+```
+
+Sass also provides control directives such as @if, @for, @each and @while
+
+### @if
+```
+$boolean: true
+
+@if $boolean
+  .header {
+    display: block;
+  }
+@else
+  .header {
+    display: none;
+  }
+```
+
 #### More Information
 [Official Sass website](https://sass-lang.com/)
+[The Sass Way: Functions](http://thesassway.com/intermediate/if-for-each-while)
