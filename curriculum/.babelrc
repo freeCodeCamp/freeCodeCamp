@@ -1,8 +1,0 @@
-{
-  "presets": [ "env", "react", "stage-0" ],
-  "plugins": [
-    "transform-runtime",
-    "babel-plugin-add-module-exports",
-    "lodash"
-  ]
-}
