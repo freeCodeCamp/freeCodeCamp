@@ -58,8 +58,6 @@ The Doctype Declaration must be the very first line of code in an HTML document,
 
 While no longer in general use, there are several other doctype declaration types from previous versions of HTML. There are also specific versions for XML documents. To read more about these, and to see code examples for each, take a look at the [Wikipedia article](https://en.wikipedia.org/wiki/Document_type_declaration).
 
-[A note from the W3](https://www.w3.org/QA/Tips/Doctype)
-
 [MDN Glossary entry](https://developer.mozilla.org/en-US/docs/Glossary/Doctype)
 
 [W3Schools](https://www.w3schools.com/tags/tag_doctype.asp)
