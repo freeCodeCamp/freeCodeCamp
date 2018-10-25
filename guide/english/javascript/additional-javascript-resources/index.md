@@ -21,7 +21,10 @@ title: JavaScript Tutorials and Other Resources
 *   [Introduction to JavaScript: First Steps](https://www.educative.io/collection/5679346740101120/5720605454237696)
 *   [JavaScript for Cats](http://jsforcats.com/)
 *   [Javascript.com by Pluralsight](https://www.javascript.com/learn)
-
+*   [Udacity Intro to JavaScript](https://eu.udacity.com/course/intro-to-javascript--ud803)
+*   [Tutorial to React](https://reactjs.org/tutorial/tutorial.html)
+*   [Introduction to Babel](https://flaviocopes.com/babel/)
+*   [Khan Academy - Intro to JS](https://www.khanacademy.org/computing/computer-programming/programming)
 
 ## Video Tutorials
 
