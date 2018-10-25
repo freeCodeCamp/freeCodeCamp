@@ -28,6 +28,32 @@ else
     /* final statement */
 ```
 
+**Note:** If the conditional statements are not mutually exlusive then some of them will never execute. Ordering matters. For example: 
+
+```javascript
+if (x%3)
+    /* do something */
+else if (x%8)
+    /* do something else */
+else if (x%8 && x%3)
+    /* THIS WILL NEVER EXECUTE */
+else
+    /* final statement */
+```
+
+Instead you need:
+
+```javascript
+if (x%3 && x%8)
+    /* do something */
+else if (x%8)
+    /* do something else */
+else if (x%3)
+    /* do something else */
+else
+    /* final statement */
+```
+
 **Note:** If you want to execute more than one statement in the `if`, `else` or `else if` part, curly braces are required around the statements:
 
 ```javascript
