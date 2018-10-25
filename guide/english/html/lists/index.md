@@ -16,7 +16,7 @@ The direct children of ordered and unordered lists must be list items. Each list
 
 ## Examples
 
-An ordered list is written as
+An ordered list is written as:
 ```HTML
 <ol>
   <li>January</li>
@@ -29,7 +29,7 @@ and is displayed as:
 1. February
 1. March
 
-An unordered list is written as
+An unordered list is written as:
 
 
 ```HTML
