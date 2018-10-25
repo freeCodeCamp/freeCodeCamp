@@ -43,6 +43,8 @@ dataType[] arrayName = new dataType[arraySize];
 
 ```java
 double[] List = new double[10];
+String[] words = new String[20];
+int[] numbers = new int[100];
 ```
 
 ## Another way to create an Array:
@@ -60,6 +62,11 @@ The code above is equivalent to:
 double[] list = new double[4];
 *IMPORTANT NOTE: Please note the difference between the types of brackets
 that are used to represent arrays in two different ways.
+
+String[] rainbow = {"red", "orange", "yellow", "green", "blue", "purple"};
+
+The code above is equivalent to:
+String[] rainbow = new String[6];
 ```
 
 ## Accessing Arrays:
@@ -79,6 +86,8 @@ Output:
 ## Modifying Arrays:
 ```java
 arrayName[index] = value; 
+
+rainbow[0] = "red";
 ```
 
 Note: You cannot change the size or type of an array after initialising it.
