@@ -4,7 +4,7 @@ localeTitle: Botones
 ---
 ## Botones
 
-El marco de Bootstrap le proporciona varias opciones de estilo para los botones. Estos estilos le ayudan a proporcionar una representación visual al usuario de lo que puede hacer el botón.
+El marco de Bootstrap proporciona varias opciones de estilo para los botones. Estos estilos ayudan a proporcionar una representación visual al usuario de lo que puede hacer el botón.
 
 #### Cómo utilizar:
 
