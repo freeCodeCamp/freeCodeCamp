@@ -16,10 +16,11 @@ Just a few advantages of WordPress:
 * Users are able to manage their Wordpress webpage from any computer
 * There's a blog built-in and ready to go whenever applicable
 * It has plugins, which extend functionality to WordPress sites
+* Thousands of free themes are available to customize
 
 One of the main things that appeal to people about WordPress is the abudant themes and plugins. You can make your website look however you like, and with many plugins available you can do anything from having a plugin to handle contact forms, manage SEO (Search Engine Optimization), and many more.
 
-Whether its page transitions or a customized contact form, WordPress users are only a few clicks away from building a website.
+Whether it's page transitions or a customized contact form, WordPress users are only a few clicks away from building a website.
 
 ### More Information
 
