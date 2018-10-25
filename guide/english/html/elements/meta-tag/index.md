@@ -23,8 +23,10 @@ The metadata is assigned to the <head></head> of the HTML document:
 ```
 #### More Information:
 For additional information on the <meta> tag, please visit the following:
-(https://www.w3schools.com/TAgs/tag_meta.asp "w3schools.com <meta> tag")
-(https://developer.mozilla.org/en-US/docs/Web/HTML/Element/meta "MDN <meta> tag")
+<a href="https://www.w3schools.com/TAgs/tag_meta.asp">W3Schools</a>
+<a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/meta">MDN</a>
+
+
 
 
 
