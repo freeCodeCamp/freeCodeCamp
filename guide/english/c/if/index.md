@@ -22,15 +22,14 @@ if (condition) {
 	// Do something if `condition` is true
 }
 else if (anotherCondition) {
-	// Do something if `anotherCondition` is ture
+	// Do something if `anotherCondition` is true
 }
 else {
 	// Do something if `condition` AND `anotherCondition` is false
 }
 ```
 
-Note that the `else` and `else if` sections are not required, while `if` is mandatory.
-
+Note: `else` and `else if` sections are not required, while `if` is mandatory. Furthermore, `else` and `else if` can only be used following an `if` statement. In the instance when one `if` statement is executed, the following `else if` and `else` statements are ignored.
 
 ## Example
 ```
