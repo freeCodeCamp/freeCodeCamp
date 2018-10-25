@@ -17,6 +17,20 @@ int main(void) {
     return 0;
 }
 ```
+## Constants, Variables and Keywords
+The alphabets, numbers and special symbols when properly combined form constants, variables and keywords. Let us see what
+are ‘constants’ and ‘variables’ in C. A constant is an entity that doesn’t change whereas a variable is an entity that may change. In any program we typically do lots of calculations. The results of these calculations are stored in computers memory. Like human memory the computer memory also consists of millions of cells.
+The calculated values are stored in these memory cells. To make the retrieval and usage of these values easy these memory cells (also called memory locations) are given names. Since the value stored in each location may change the names given to these locations are called VARIABLE names.
+
+## Rules for Constructing Variable Names
+(a) A variable name is any combination of 1 to 31 alphabets,digits or underscores. Some compilers allow variable names
+whose length could be up to 247 characters. Still, it would be safer to stick to the rule of 31 characters.
+(b) The first character in the variable name must be an alphabet or underscore.
+(c) No commas or blanks are allowed within a variable name.
+(d) No special symbol other than an underscore (as in gross_sal) can be used in a variable name.
+Ex.: si_int
+m_hra
+pop_e_89
 
 There's a lot of new things to take a look at here! You've already seen the `#include` and `int main(void)`, so that's not worth dwelling on. What is new is `int my_first_variable = 12;`.
 
