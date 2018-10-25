@@ -43,13 +43,10 @@ tests:
 ```js
 // Example
 function ourReusableFunction() {
-  console.log("Heyya, World");
+  // Function code goes here
 }
 
 ourReusableFunction();
-
-// Only change code below this line
-
 ```
 
 </div>
