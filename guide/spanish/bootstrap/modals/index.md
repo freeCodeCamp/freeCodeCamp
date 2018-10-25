@@ -86,4 +86,4 @@ j) `.modal-footer` clase de `.modal-footer` el pie de página del modal.
 
 [Bootstrap Modal](https://bootstrapbay.com/blog/working-bootstrap-modal/)
 
-Si desea explorar **__Bootstrap 4.0 Latest (versión Alpha)__** : [Bootstrap Modal v4.0](https://getbootstrap.com/docs/4.0/components/modal/)
+Si desea explorar **__Bootstrap 4.1 Latest__** : [Bootstrap Modal v4.1](https://getbootstrap.com/docs/4.1/components/modal/)
