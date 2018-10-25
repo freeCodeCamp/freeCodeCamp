@@ -5,9 +5,9 @@ title: Completing the Square
 
 <!-- The article goes here, in GitHub-flavored Markdown. Feel free to add YouTube videos, images, and CodePen/JSBin embeds  -->
 
-The completing the square method is one of the many methods for solving a <a href='https://guide.freecodecamp.org/mathematics/quadratic-equations' target='_blank'>quadratic eduation</a>. It involves changing the form of the equation so that the left side becomes a perfect square.
+The completing the square method is one of the many methods for solving a <a href='https://guide.freecodecamp.org/mathematics/quadratic-equations' target='_blank'>quadratic equation</a>. It involves changing the form of the equation so that the left side becomes a perfect square.
 
-A quadratic equation generally takes the form: <em>ax<sup>2</sup> + bx + c</em> = 0. In solving the above, follow the following steps: 
+A quadratic equation generally takes the form: <em>ax<sup>2</sup> + bx + c</em> = 0. To solve the above, follow these steps: 
 
 1. Move the constant value to the Right Hand Side of the equation so it becomes: <br> 
 <pre><em>ax<sup>2</sup> + bx = -c</em></pre>
