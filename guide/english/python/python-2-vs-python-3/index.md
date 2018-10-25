@@ -53,9 +53,10 @@ So, the only question you need to concern yourself with right now; is which one 
 
 While Python 2 is well-supported and popular, most common libraries and frameworks in Python prefer Python 3\. Django officially <a href='https://docs.djangoproject.com/en/1.9/faq/install/#faq-python-version-support' target='_blank' rel='nofollow'>recommends</a> Python 3\. Flask and all its dependencies are also <a href='http://flask.pocoo.org/docs/0.10/python3/#python3-support' target='_blank' rel='nofollow'>supported</a> on Python 3.
 
-Both Python 2 and Python 3 are great. Most Linux and macOS distributions come pre-installed with Python 2 as the default version of Python. And Python 3 was born out of the insatiable quest for more readable and more beautiful language constructs.
+Both Python 2 and Python 3 are great. Most Linux and macOS distributions come pre-installed with Python 2 as the default version of Python. Most Solaris 11 distrubutions come with Python 2.7 pre-installed. And Python 3 was born out of the insatiable quest for more readable and more beautiful language constructs. 
 
 This article uses Python 3 to set up the web-frameworks in your development environment. But before that, you need to ensure you have Python 3 and know how to use it!
+
 
 #### More Information:
 - <a href='https://wiki.python.org/moin/Python2orPython3' target='_blank' rel='nofollow'>Python 2 or 3 Article</a>
