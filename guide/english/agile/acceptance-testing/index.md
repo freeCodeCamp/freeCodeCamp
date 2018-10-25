@@ -10,6 +10,8 @@ In software development, user acceptance testing (UAT) - also called beta testin
 
 There are various forms of acceptance testing:
 
+My changes.
+
 > - User acceptance Testing
 >
 > - Business acceptance Testing
