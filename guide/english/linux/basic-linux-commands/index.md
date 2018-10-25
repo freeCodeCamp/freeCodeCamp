@@ -48,6 +48,9 @@ When starting out with linux, there are some basic commands everyone should know
 
  14. **cp** - copy files and directories
 - Use 'cp' to copy a file or a direcotry with files inside it to another location using command 'cp CURRENT_FILE-LOCATION DESTINATION_FOLDER'. Add '-r' flag to copy a directory that is not empty. 
+ 
+15. **find** - search for files in a directory hierarchy
+- find searches the directory tree rooted at each given file name by evaluating the given expression from left to right, according to the rules of precedence, until the outcome is known (the left hand side is false for and operations, true for or), at which point find moves on to the next file name.
 
 ### Useful Resources for Practice:
 - [JSLinux](https://bellard.org/jslinux/vm.html?url=https://bellard.org/jslinux/buildroot-x86.cfg): Run the terminal inside your browser. Great for practice.
