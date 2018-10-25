@@ -29,3 +29,4 @@ Ejemplos de este tipo de patrón de diseño incluyen:
 ### Fuentes
 
 [https://en.wikipedia.org/wiki/Behavioral\_pattern](https://en.wikipedia.org/wiki/Behavioral_pattern)
+[http://wiki.c2.com/?ProtocolStack] (http://wiki.c2.com/?ProtocolStack)
