@@ -5,11 +5,11 @@ title: Working in Tech
 
 A wide variety of technology-related fields such as web development, design, data science, and product management are often lumped into the catch-all term "tech."
 
-This section will focus on various aspects of working in tech. We will discuss the additional career challenges that under-represented minorities and people from non-traditional education backgrounds face. This includes issues such as sexism and ageism that have been particularly prevalent in certain industries and organizations. 
+This section will focus on various aspects of working in tech. We will discuss the additional career challenges that under-represented minorities and people from non-traditional education backgrounds face, including issues such as sexism and ageism which have been particularly prevalent in certain industries and organizations. 
 
 ### Computer Security
 
-The field of computer security is growing at a rapid rate every year, in a report done recently it is estimated that by 2021 their will be 3.5 million jobs unfilled. The demand is due to the increase in cyber attacks and with how much data is being created everyday, data is so valuable nowadays and it needs to be kept secure and safe.
+The field of computer security is growing at a rapid rate every year.  As more people continue to store information electronically, the need for individuals to protect that information will increase proportionally. If these roles continue to be filled at the current rate, a recent study has estimated that this critical field will have a job shortage of 3.5 million people by 2021. 
 
 ### Examples of Tech related jobs
 - Software Developer
