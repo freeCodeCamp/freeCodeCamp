@@ -36,11 +36,11 @@ Dieses Verzeichnis enthält die Dokumentation, die benötigt wird um Code zu fre
 
 ## Kurzübersicht über die Kommandos bei lokaler Bearbeitung
 
-Kurzübersich über die Kommandos, die benötigt werden, um das Projekt lokal zu bearbeiten
+Kurzübersicht über die Kommandos, die benötigt werden, um das Projekt lokal zu bearbeiten
 
 | Kommando | Beschreibung |
 | -------- | ------------ |
-| `npm run bootstrap` | Läd die verschiedenen Dienste |
+| `npm run bootstrap` | Lädt die verschiedenen Dienste |
 | `npm run seed` | Liest alle Challenge-Markdown-Dateien ein, und trägt diese in die MongoDB ein. |
 | `npm run develop` | Startet den freeCodeCamp API-Server und die Client Apps |
 | `npm test` | Lässt alle JS-Tests im System laufen, inklusive Client-, Server-, Lint- und Challenge-Tests |
