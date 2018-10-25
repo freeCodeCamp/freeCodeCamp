@@ -7,7 +7,7 @@ videoUrl: 'https://scrimba.com/p/pVaDAv/c43gnHm'
 
 ## Description
 <section id='description'>
-Sometimes the flex items within a flex container do not fill all the space in the container. It is common to want to tell CSS how to align and space out the flex items a certain way. Fortunately, the <code>justify-content</code> property has several options to do this. But first, there is some important terminology to understand before reviewing those options.
+Sometimes the flex items within a flex container do not fill the entire space of the container. It is common to want to tell CSS to align and space out the flex items a certain way. Fortunately, the <code>justify-content</code> property has several options to do this. But first, there is some important terminology to understand before reviewing those options.
 <a href="https://www.w3.org/TR/css-flexbox-1/images/flex-direction-terms.svg" target="_blank">Here is a useful image showing a row to illustrate the concepts below.</a>
 Recall that setting a flex container as a row places the flex items side-by-side from left-to-right. A flex container set as a column places the flex items in a vertical stack from top-to-bottom. For each, the direction the flex items are arranged is called the <strong>main axis</strong>. For a row, this is a horizontal line that cuts through each item. And for a column, the main axis is a vertical line through the items.
 There are several options for how to space the flex items along the line that is the main axis. One of the most commonly used is <code>justify-content: center;</code>, which aligns all the flex items to the center inside the flex container. Others options include:
