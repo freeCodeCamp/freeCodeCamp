@@ -7,7 +7,7 @@ Many Fitness and Health related websites often miss this point about research th
 
 Informal definition of Correlation goes as - when event A happens, event B also tends to happen and vice-versa. Or people that wake up early tend to be towards the lower end of the weight spectrum. Both events tend to happen together. But it is not necessary that one event caused the other. 
 
-Causality means that event A 'caused' or lead to the happening of event B. For eg. if I stand in the sun, I would get tanned. Here then second event occurs because of the first.
+Causality means that event A 'caused' or lead to the happening of event B. For eg. if I stand in the sun, I would get tanned. Here, the second event occurs because of the first.
 
 In statistics, there is a lot of talk about **correlated variables**. A correlation is a relationship between two variables. **Causation** refers to a relationship where a change in one variable **is responsible for** the change of another variable. This is also known as a **causal relationship**.
 
