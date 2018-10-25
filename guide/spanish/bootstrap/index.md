@@ -77,7 +77,7 @@ Bootstrap tiene una documentación exhaustiva con muchos [ejemplos](https://getb
 
 Además, puedes encontrar tanto [gratuitos](https://bootswatch.com/) como de [pago.](https://themes.getbootstrap.com/) Temas que se basan en el marco de Bootstrap para proporcionar un aspecto más personalizado y elegante.
 
-#### Recursos Bootstrap:
+#### Recursos Bootstrap (Importante):
 
 - [Blog oficial de Bootstrap](http://blog.getbootstrap.com/)
 - [Inspiración del sitio Bootstrap](http://expo.getbootstrap.com/)
