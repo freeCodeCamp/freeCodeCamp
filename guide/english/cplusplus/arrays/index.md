@@ -40,3 +40,10 @@ x = numbers[0]; // = 1. [0] == first position
 numbers[2] = 55; // Sets the third position (3) to the new number 55
 //numbers[] is now: {1, 2, 55, 4, 5}
 ```
+
+###sort an array
+```C++
+int arr[n];
+for(int i = 0 ; i<n;i++) cin >> a[i] ;
+sort(a,a+n) // this function will sort the array from begining to end(a+n point at the end of the array)
+```
