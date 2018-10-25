@@ -2,7 +2,12 @@
 title: Functions
 ---
 # Functions in C
-Sometimes you have a chunk of code that you need to use over and over, but at different times and places in your code. You could copy and paste it over and over, but that's not a great solution- your file size ends up being bigger, your code is harder to debug, and your code is harder to read. Instead, use a function: functions are like mini-programs that exist within your code. You can pass them variables to use, and they can give back data.
+Sometimes you have a chunk of code that you need to use over and over, but at different times and places in your code. You could copy and paste it over and over, but that's not a great solution- your file size ends up being bigger, your code is harder to debug, and your code is harder to read. Instead, use a function: functions are like mini-programs that exist within your code. You can pass them variables to use, and they can give back data.Depending upon passing of arguments and returning of any value their are four types of functions as follows:
+1.No pass no return:nothing is passed as argument and function does nort return any value.
+2.No pass but return:arguments are not passed but function returns some value as answer which can be stored in temporary variable during                      runtime.
+3.Pass but no return:arguments are passed but function does not return anything.
+4.Pass and return:arguments are passed and function also returns a value.
+
 ## An Example
 Here's a simple example of a function that divides two numbers. It's not very useful since we have `/`, but it shows the different parts of a function.
 ```C
@@ -111,6 +116,7 @@ To prevent infinite recursion, an if...else statement or similar approach can be
 
 Recursion makes program more elegant and clean. All algorithms can be defined recursively, which makes it easier to visualize and prove. 
 If the speed of the program is important then you may not want to use recursion as it uses more memory and can slow the program down.
+In recursion technique at every calling point the function operation goes (pushed)inside system stack and when at top function returns the value it is returned to the nearest calling in system stack and so on till we get final answer.and finally the final answer is poped out of the system stack and returned by function .
 
 
 # Before you go on...
