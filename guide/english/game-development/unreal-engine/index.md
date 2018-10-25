@@ -31,6 +31,7 @@ Unreal has gone through 4 major revisions. Although some code is common between 
 - Bioshock
 - Borderlands
 - Gears of War
+- Darksiders III
 
 #### More Information:
 
