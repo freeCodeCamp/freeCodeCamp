@@ -23,3 +23,5 @@ Las herramientas se pueden utilizar para administrar ALM; Algunas de las opcione
 #### Más información:
 
 InfoQ - Gartner y Software Advice examinan las [herramientas de gestión de ciclo de vida ágil](http://www.infoq.com/news/2015/02/agile-management-tools/)
+
+Mis cambios
