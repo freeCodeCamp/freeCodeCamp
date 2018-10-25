@@ -42,6 +42,10 @@ title: Books to Read for Programmers
 - [Amazon Smile](https://smile.amazon.com/Self-Taught-Programmer-Definitive-Programming-Professionally-ebook/dp/B01M01YDQA?sa-no-redirect=1)
 - ISBN-13: 978-1520288178
 
+*Think Like a Programmer: An Introduction to Creative Problem Solving* by V. Anton Spraul
+- [Amazon Smile](https://smile.amazon.com/Think-Like-Programmer-Introduction-Creative/dp/1593274246/)
+- ISBN-13: 978-1593274245
+
 *You Don't Know JS (book series)* by Kyle Simpson
 - https://github.com/getify/You-Dont-Know-JS
 - ISBN-13: 9781491924464
