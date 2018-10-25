@@ -29,6 +29,6 @@ It's probably worth mentioning that you can chain as many commands as you want t
 
 ```cat textfile.txt | sort | uniq | wc```
 
-this will `cat` (concatinate) the file, to `sort` which will sort it, then `uniq` will remove duplicates, and then `wc` (word count) will count the characters, words, and lines of the unique output.
+this will `cat` (concatenate) the file, to `sort` which will sort it, then `uniq` will remove duplicates, and then `wc` (word count) will count the characters, words, and lines of the unique output.
 
 This is only scratching the surface of the massive power of pipes though.
