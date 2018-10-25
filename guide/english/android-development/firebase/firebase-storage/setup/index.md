@@ -17,7 +17,7 @@ the Firebase Storage. There are following documentation about this:
 
 * [Firebase](https://firebase.google.com/docs/storage/android/start)
 
-There may be chance of confusion in that documentation or if you are new to firebase then you may face little bit hard to understand it. 
+There may be chances of confusion in that documentation or if you are new to firebase then you may find it a little bit hard to understand it. 
 So follow the belows steps carefully:
 
 
