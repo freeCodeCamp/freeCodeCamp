@@ -41,7 +41,7 @@ Lastly, learn to integrate 3rd party libraries and Firebase services to add func
 
 [Google Developers Guide for Android](https://developer.android.com/training/index.html)
 
-#### Java vs Kotlin
+#### Java vs Kotlin ??
 
 Ever since Google announced Kotlin as the official language for Android development at Google IO in 2017, programmers who want to become Android developers are in a dilemma. The big question in front of them is whether they should learn Kotlin or Java.
 
