@@ -57,6 +57,10 @@ This is a list of the CSS classes that bootstrap provides for buttons.
 
 `<button type="button" class="btn btn-light">Light</button>`
 
+`.btn-dark` Bootstrap's dark button.
+
+`<button type="button" class="btn btn-dark">Dark</button>`
+
 #### Bootstrap Button Sizes:
 This is a list of the CSS classes for different size of the buttons.
 
