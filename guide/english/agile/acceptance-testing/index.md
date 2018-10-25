@@ -1,5 +1,5 @@
 ---
-title: Acceptance Testing
+Title: Acceptance Testing
 ---
 
 ## Acceptance Testing
@@ -134,3 +134,4 @@ You can write Acceptance Tests for each of these sub-features of the bigger dial
 
 #### More Information:
 - [International Software Testing Qualifications Board](http://www.istqb.org/)
+
