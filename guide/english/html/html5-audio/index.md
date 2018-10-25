@@ -22,6 +22,8 @@ Your browser does not support the audio element.
 <audio src="https://s3.amazonaws.com/freecodecamp/simonSound1.mp3" controls loop autoplay> 
 </audio>
 ```
+<audio src="https://s3.amazonaws.com/freecodecamp/simonSound1.mp3" loop autoplay> 
+</audio>
 
 The `controls` attribute includes audio controls like play, pause, and volume. If you don't use this attribute, then no controls will be shown.
 
