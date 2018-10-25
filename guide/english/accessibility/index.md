@@ -13,14 +13,14 @@ disabilities. The document [How People with Disabilities Use the Web](http://www
 disabilities affect Web use and includes scenarios of people with disabilities using the Web.
 
 Web accessibility also **benefits** people *without* disabilities. For example, a key  principle of Web accessibility is designing Web sites and software
-that are flexible to meet different user needs, preferences, and situations. This **flexibility** also benefits people *without* disabilities in certain
+that are flexible to meet different user needs, preferences, and situations. This **flexibility** also benefits people **without** disabilities in certain
 situations, such as people using a slow Internet connection, people with "temporary disabilities" such as a broken arm, and people with changing abilities
 due to aging. The document [Developing a Web Accessibility Business Case for Your Organization](https://www.w3.org/WAI/bcase/Overview) describes many
 different benefits of Web accessibility, including **benefits for organizations**.
 
 Web accessibility should also include the people who don't have access to the internet or to computers.
 
-A prominent guideline for web development was introduced by the [World Wide Web Consortium (W3C)](https://www.w3.org/), the [Web Accessibility Initiative](https://www.w3.org/WAI/)
+A prominent guideline for web development was introduced by the [World Wide Web Consortium (W3C)](https://www.w3.org/), the [Web Accessibility Initiative](https://www.w3.org/WAI)
 from which we get the [WAI-ARIA](https://developer.mozilla.org/en-US/docs/Learn/Accessibility/WAI-ARIA_basics), the Accessible Rich Internet Applications Suite.
 Where WAI tackles the semantics of html to more easily nagivate the DOM Tree, ARIA attempts to make web apps, especially those developed with javascript and
 AJAX, more accessible. 
@@ -30,7 +30,7 @@ using these visual elements. When used correctly, visual elements can convey the
 to do so. In order to use these elements appropriately, web designers must use alt text to communicate the message of these elements to those who cannot see
 them. Alt text should be short and to the point--generally [no more than five to 15 words](https://www.thoughtco.com/writing-great-alt-text-3466185). If a
 graphic is used to convey information that exceeds the limitations of alt text, that information should also exist as web text in order to be read by screen
-readers. [Learn more about alt text](https://webaim.org/techniques/alttext/).
+readers. [Learn more about alt text](https://webaim.org/techniques/alttext).
 
 Just like Alt text is for people who are visually impaired, transcripts of the audio are for the people who cannot listen. Providing a written document or a transcript of what is being spoken helps make the audio accessible to people who are hard of hearing.
 
@@ -39,6 +39,6 @@ Copyright &copy; 2005 <a href="http://www.w3.org" shape="rect">World Wide Web Co
 ### More Information:
 <a href='https://www.w3.org/WAI/intro/accessibility.php' target='_blank' rel='nofollow'>w3.org introduction to accessibility.</a>
 
-<a href='http://a11yproject.com/' target='_blank' rel='nofollow'>The A11Y Project</a>
+<a href='http://a11yproject.com' target='_blank' rel='nofollow'>The A11Y Project</a>
 
-<a href='https://webaim.org/intro/' target='_blank' rel='nofollow'>WebAIM: Introduction to Web Accessibility</a>
+<a href='https://webaim.org/intro' target='_blank' rel='nofollow'>WebAIM: Introduction to Web Accessibility</a>
