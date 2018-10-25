@@ -35,14 +35,14 @@ for (; a <= 10 ;)
 ```
 Though you can't ignore the condition, because empty condition is defaulted as false, so the for-loop won't run at all.
 
-### init
+### Init
 This step allows you to declare and initialize any loop control variables. This step is performed first and only once.  
 Note that the variables declared in init can only be used inside the brackets of the for loop.
 
-### condition
+### Condition
 Next the condition is evaluated. If it holds true, the body of the loop is executed. If it holds false, the body of the loop does not execute and flow of control jumps to the next iteration(repetition of a process).
 
-### update
+### Update
 The update statement is used to alter the loop variable by using simple operations like addition,subtraction,multiplication or division.
 The update statement executes after the execution of the body of the loop.
 
@@ -71,9 +71,9 @@ value of a: 16
 value of a: 17
 value of a: 18
 value of a: 19
-
+```
 ##Single lined loop
-The body of the for loop need not be enclosed in braces if the loop iterates over only one satatement.
+The body of the for loop doesn't need to be enclosed in braces if the loop iterates over only one satatement.
 ##Example
 ```c++
    #include<iostream.h>
@@ -87,10 +87,11 @@ The body of the for loop need not be enclosed in braces if the loop iterates ove
 
    return 0;
 }```
-
+```
 This would generate the same output as the previous program.
 i.e 
 Output:
+```
 value of a: 10
 value of a: 11
 value of a: 12
@@ -105,7 +106,7 @@ value of a: 19
 ```
 
 ## Explanation
-Here's the initialization condition is first set to a=10. The loop first checks for this condition. It then checks for the condition expression i.e a<20 which holds true as 10<20(for the first case). Now the body of the loop is executed and we get the output "Value of a: 10". Then the update expression is executed which adds the number 1 to 'a' and the value of 'a' gets updated to 11 and the same steps are followed (as above) until the value of v reaches less than 20 i.e 19.
+Here's the initialization condition which is first set to a=10. The loop first checks for this condition. It then checks for the condition expression i.e a<20 which holds true as 10<20(for the first case). Now the body of the loop is executed and we get the output "Value of a: 10". Then the update expression is executed which adds 1 to 'a' and the value of 'a' gets updated to 11 and the loop restarts with the same steps written above until the value of 'a' reaches less than 20 i.e 19.
 
 # Range-based for-loop
 C++ also has what we call range-based for loops which iterates through all the elements of a container(e.g. array).
