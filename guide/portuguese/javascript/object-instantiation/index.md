@@ -66,6 +66,25 @@ O método Object.create () (primeiro definido no ECMAScript 5.1) permite criar o
  
  console.log(newKitten.name) // Will output "Fluff" 
 ```
+#### "this" keyword
+The this Keyword
+
+Ao definir uma função,"this" refere se ao "dono" da função.
+no exemplo abaixo, "this" é igual a "person" objeto dono da função fullName.
+In other words, this.firstName means the firstName property of this object.
+em outras palavras, this.person significa propriedade firstName desse projeto.
+Exemplo:
+var person = {
+    firstName: "John",
+    lastName : "Doe",
+    id       : 5566,
+    fullName : function() {
+        return this.firstName + " " + this.lastName;
+    }
+};
+......
+
+
 
 #### Mais Informações
 
