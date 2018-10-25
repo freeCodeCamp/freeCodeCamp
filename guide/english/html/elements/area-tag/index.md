@@ -2,6 +2,7 @@
 title: Area Tag
 ---
 ## Area Tag
+The <area> tag is used to define a region on an image. It may also be associated with a hyperlink.
 
 This is a stub. <a href='https://github.com/freecodecamp/guides/tree/master/src/pages/html/elements/area-tag/index.md' target='_blank' rel='nofollow'>Help our community expand it</a>.
 
