@@ -3,14 +3,16 @@ title: Accessibility Basics
 ---
 > "The Dark Arts are many, varied, ever-changing, and eternal. Fighting them is like fighting a many-headed monster, which, each time a neck is severed, sprouts a head even fiercer and cleverer than before. You are fighting that which is unfixed, mutating, indestructible."
 >
-> --Professor Severus Snape, Harry Potter Series
+> --Professor Severus Snape, J.K. Rowling's _Harry Potter and the Half-Blood Prince_
 
 
 Accessibility's role in development is essentially understanding the user's perspective and needs, and knowing that the web, and applications are a solution for people with disabilities.
 
-In this day and age, more and more new technologies are invented to make the life of developers, as well as users, easier. To what degree this is a good thing is a debate for another time, for now it's enough to say the toolbox of a developer, especially a web developer, is as ever-changing as the so called "dark arts" are according to our friend Snape.
+In this day and age, more and more new technologies are invented to make the life of developers, as well as users, easier. To what degree this is a good thing is a debate for another time, for now it's enough to say the toolbox of a developer, especially a web developer, is as ever-changing as the so-called "dark arts" are according to our friend Snape.
 
-One tool in that toolbox should be accessibility. It is a tool that should ideally be used in one of the very first steps of writing any form of web content. However, this tool is often not all that well presented in the toolbox of most developers. This could be due to a simple case of not knowing it even exists to extreme cases like not caring about it.
+Those tools, like a wizard's wand, can be used to help or to harm. Accessibility is one of the ways you can decide whether you will use those powerful tools for good or evil. Imagine a door that only opens if you wave your magic wand and say "Alohomora!" It doesn't have a lock with a normal key, or even a door handle. That's no problem if you're a witch or wizard with a wand. But what if you don't have magic powers? Or your wand is broken? Or you have a different style of magic and use different spells? 
+
+Accessibility is designing a doorway that any of these people can walk through. More than just a tool, it is an important part of your main objective: making a site that people can use. However, this goal is often not made clear to most developers. This could be a simple case of not knowing, or forgetting, that accessibility exists, to extreme cases like actively wanting to exclude some users -- like a wizard not including doorknobs so that only his fellow magic users can enter the room.
 
 In my life as a user, and later a developer, who benefits from accessibility in any form of content, I have seen both ends of that spectrum. If you are reading this article, I am guessing you are in one of the following categories:
 
@@ -18,7 +20,7 @@ In my life as a user, and later a developer, who benefits from accessibility in 
 *   You are a seasoned web developer and have lost your way (more on that later).
 *   You feel that there is a legal obligation from work, and need to learn more about it.
 
-If you fall outside these rather broad categories, please let me know. I always like to hear from the people who read what I write about. Implementing accessibility impacts the entire team, from the colors chosen by the designer, the copy written by the copywriter, and to you, the developer.
+If you fall outside these rather broad categories, please let me know. I always like to hear from the people who read what I write about. Implementing accessibility impacts the entire team, from the colors chosen by the designer, the copy written by the copywriter, to you, the developer.
 
 ## So, what is accessibility anyway?
 
@@ -34,12 +36,18 @@ You could ask yourself questions like the following ones:
 *   If you denote an important part of your website with a certain color, will a colorblind person know about it?
 *   If you add images on your website that convey important information, how will a blind or low-vision person know about it?
 *   If you want to navigate the application with keyboard or mouth-stick, will it be possible and predictable?
-*   Does your application assume the orientation of the device, and what if the user can't physically change it?
+*   Does your application assume the orientation of the device, and if so, what if the user can't physically change it?
 *   Are there forgiving timed aspects of your application for someone that might need more time to fill in a form?
 *   Does your application still work (progressive enhancement) assuming that JavaScript does not load in time?
 *   You can even go as far as saying, if your website is very resource-heavy, will someone on a slow or spotty connection be able to read your content?
 
 This is where accessibility comes into play. Accessibility basically entails making your content as friendly, as easy to 'access' as possible for the largest amount of people. This includes people who are deaf, low-vision, blind, dyslexic, mute, on a slow connection, colorblind, suffering from epilepsy, mental fatigue, age, physical limitations, etc.
+
+Read that last paragraph again. You have just learned a central truth about accessibility that many people don't understand. They think that accessible design is about adding a feature as an afterthought to make the site usable for a small, perhaps unimportant group of people, or to satisfy picky regulators. But you know now that accessibility means making your content *as easy to access as possible for the largest amount of people*.
+
+According to the World Health Organization, about one in ten people is moderately or severely disabled. That's a very large number of people. Do you want to lose one in ten of your users? Not all of those disabilities affect someone's ability to access a webpage, but not all disabilities are moderate or severe either, so I think my point still stands.
+
+Not to scare you, but accessibility is so important that some people have literally died from inaccessible webpages. Content that flashes can trigger seizures in people with epilepsy and other seizure disorders, and yes, that can be fatal! Here's an explanation from the W3C <a href='https://www.w3.org/WAI/GL/UNDERSTANDING-WCAG20/seizure.html'>on how to make your site safe for people with epilepsy</a>.
 
 ## Why implement accessibility?
 
@@ -61,9 +69,9 @@ There's variations on this legislation all over the world, some more severe and 
 
 That question, sadly, is harder to answer than it may seem. The Harry Potter quote at the top is there for a reason, and it's not my being an avid Fantasy reader.
 
-As I stated above, accessibility is important for a large group of different people, each with their own needs. Making your website work for literally everyone is a large, on-going task.
+As I stated above, accessibility is important for a large group of different people, each with their own needs. Making your website work for literally everyone is a large, on-going task, and one that changes as the web itself changes.
 
-To bring a bit of a method to the madness, the Web Content Accessibility Guidelines or <a href='https://www.wuhcag.com/web-content-accessibility-guidelines/' target='_blank' rel='nofollow'>WCAG</a> were composed. This document contains a number of criteria you can use to check your website. For now, I will cover some of the most important basics here. I will point you at the low-hanging fruits, so to speak. In subsequent articles, I will discuss more advanced techniques like [WAI-ARIA] which is important for JavaScript-based apps.
+To bring a bit of a method to the madness, the Web Content Accessibility Guidelines or <a href='https://www.wuhcag.com/web-content-accessibility-guidelines/' target='_blank' rel='nofollow'>WCAG</a> were composed. This document contains a number of criteria you can use to check your website. For now, I will cover some of the most important basics here. I will point you at the low-hanging fruits, so to speak. In subsequent articles, I will discuss more advanced techniques like [WAI-ARIA], which is important for JavaScript-based apps.
 
 ### Talk like the natives
 
@@ -79,7 +87,7 @@ Guess what? All three of these elements break several criteria of WCAG and there
 
 The first element breaks the so-called 'name, role, value'-criterium, which states that all elements on a web page should expose their name, their role (like button) and their value (like the contents of an edit field) to assistive technologies. This div actually doesn't provide any of the three, rendering it invisible to screen-readers.
 
-The second element looks like a heading visually after styling it with CSS, but semantically is a span. Therefore, assistive technologies won't know its a heading. A screen-reader will read this as regular text, instead of a heading. Screen-readers often have a hotkey to quickly jump to the nearest heading, this heading will not be included in that scope.
+The second element looks like a heading visually after styling it with CSS, but semantically is a span. Therefore, assistive technologies won't know it's a heading. A screen-reader will read this as regular text, instead of a heading. Screen-readers often have a hotkey to quickly jump to the nearest heading, this heading will not be included in that scope.
 
 The third element could for example be an element a user can click to change the language of the website. Maybe a fancy animated menu of languages will expand when it is clicked. However, this is also a span and does not expose its role (link, or button), making assistive technologies think this is just the word English with some styling.
 
@@ -142,7 +150,7 @@ I guess the best way to illustrate this is by giving an example:
     <input type='text' id='username'>
 ```
 
-This will make for example a screen-reader say "username, text edit field", instead of just reporting' text edit field' and requiring the user to go look for a label. This also really helps people who use speech recognition software.
+This will make for example a screen-reader say "username, text edit field", instead of just reporting 'text edit field' and requiring the user to go look for a label. This also really helps people who use speech recognition software.
 
 ### That's a tall order
 
@@ -179,7 +187,7 @@ I have told you about accessibility, what it is, what it's not and why it's impo
 I have also given you the basics, the very basics, of getting accessibility right. These basics are however very powerful and can make your life a lot easier when coding for accessibility.  
 
 If we talk in FCC terms, you should keep these in mind while doing the HTML/CSS curriculum as well as the JavaScript curriculum.  
-In subsequent articles, I will touch on a number of more notch topics. A number of questions I will answer are:
+In subsequent articles, I will touch on a number of more niche topics. A number of questions I will answer are:
 
 *   Adding structured headings sounds like a good idea, but they don't fit in my design. What do I do?
 *   Is there a way for me to write content only screen-readers and other assistive technologies see?
