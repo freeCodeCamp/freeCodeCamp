@@ -1,0 +1,31 @@
+##Loop Statements
+
+There may be a situation when you need to execute a block of code several number of times. In general, statements are executed sequentially.
+*Repeat Loop*
+
+The Repeat loop executes the same code again and again until a stop condition is met.
+
+repeat {
+commands
+if(condition) {
+break
+}
+}
+
+*While Loop*
+
+The While loop executes the same code again and again until a stop condition is met.
+while (test_expression) {
+statement
+}
+
+*For Loop*
+
+A For loop is a repetition control structure that allows you to efficiently write a loop that needs to execute a specific number
+of times.
+for (value in vector) {
+statements
+}
+Eg : v <- LETTERS[1:4]
+for ( i in v) {
+print(i)
