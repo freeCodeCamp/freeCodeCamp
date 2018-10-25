@@ -14,8 +14,8 @@ Gatsby builds sites with the data provided by developer, regardless of the sourc
 #### Data sources
 Gatsby accepts the data behind the site in various formats, such as:
 
-1- CMSs: Wordpress, Contenful, Drupal, etc.
-2- Markdown: Documentation, posts, etc.
+1- CMSs: Wordpress, Contenful, Drupal, etc.<br>
+2- Markdown: Documentation, posts, etc.<br>
 3- Data: APIs, Databasses, JSON, CSV, etc.
 
 #### Build 
