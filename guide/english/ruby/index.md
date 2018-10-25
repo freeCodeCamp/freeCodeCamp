@@ -117,7 +117,7 @@ Ruby has several frameworks(gems) for quickly scaffolding applications. The most
 To write cross-platform native apps in Ruby, RUBY MOTION is used to develop cross-platform native apps for iOS, Android and OS X using the Ruby programming langauge.
 More resources here: http://www.rubymotion.com/
 
-## What after learning Ruby?
+## After learning Ruby
 
 With a good grasp on Ruby you can contribute to open source projects, or apply to some big companies! Many sites you may know are built on Ruby: Basecamp, Airbnb, Bleacher Report, Fab.com, Scribd, Groupon, Gumroad, Hulu, Kickstarter, Pitchfork, Sendgrid, SoundCloud, Square, Yammer, Crunchbase, SlideShare, Funny or Die, Zendesk, Github, and Shopify, just to name a few. Needless to say, there are plenty of options!
 
