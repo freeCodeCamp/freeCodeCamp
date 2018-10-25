@@ -3,7 +3,7 @@ title: Function Invocation
 ---
 ## Function Invocation
 The code inside a function is executed when the function is invoked. It is common to use the term "call a function" instead of "invoke a function".
-
+A Function that has been called will run through only once, but can invoked as many times as necessary.
 Functions must be in scope when they are called. The scope of a function is the function in which it is declared, or the entire program if it is declared at the top level.
 
 ```javascript
