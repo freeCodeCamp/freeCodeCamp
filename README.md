@@ -23,7 +23,7 @@ Our full stack web development curriculum is completely free and self-paced. We 
 
 ### Certifications
 
-freeCodeCamp.org offers several free developer certifications. Each of these certifications involves building 5 required web app projects, along with hundreds of optional coding challenges to help you prepare for those projects. We estimate that each certification will take a beginning programmer around 300 hours to earn.
+[freeCodeCamp.org](https://freeCodeCamp.org) offers several free developer certifications. Each of these certifications involves building 5 required web app projects, along with hundreds of optional coding challenges to help you prepare for those projects. We estimate that each certification will take a beginning programmer around 300 hours to earn.
 
 Each of these 30 projects in the freeCodeCamp.org curriculum has its own agile user stories and automated tests. These help you build up your project incrementally, and ensure you've fulfilled all the user stories before you submit it.
 
@@ -106,8 +106,8 @@ This code is running live at [freeCodeCamp.org](https://www.freecodecamp.org).
 
 Our community also has:
 
-- a super active [forum](https://www.freecodecamp.org/forum)
-- thousands of [local study groups](https://study-group-directory.freecodecamp.org/) around the world, where you can code together in person
+- A super active [forum](https://www.freecodecamp.org/forum)
+- Thousands of [local study groups](https://study-group-directory.freecodecamp.org/) around the world, where you can code together in person
 - Medium's [largest technical publication](https://medium.freecodecamp.org)
 - A popular [YouTube channel](https://youtube.com/freecodecamp)
 - and a comprehensive [guide to thousands of programming topics](https://guide.freecodecamp.org/)
