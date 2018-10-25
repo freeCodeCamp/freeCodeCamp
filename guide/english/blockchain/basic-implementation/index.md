@@ -1,3 +1,7 @@
+---
+title: Basic blockchain implementation
+---
+
 # Basic blockchain implementation using ArrayList of Java
 
 > This's a very basic implementation to get knowledge about blockchain.
