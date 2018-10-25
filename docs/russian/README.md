@@ -13,11 +13,11 @@
 
 # Documentation Quick Reference
 
-Hello 👋 !
+Привет 👋 !
 
-These instructions have not been translated yet. Please check this issue for details: [`#18312`](https://github.com/freeCodeCamp/freeCodeCamp/issues/18312)
+Эти инструкции еще не переведны полностью. Пожалуйста проверь этот проблему в топике: [`#18312`](https://github.com/freeCodeCamp/freeCodeCamp/issues/18312)
 
-This directory contains all of the documentation on contributing to freeCodeCamp.org
+Эта директория содержит вся документацию о вкладе в freeCodeCamp.org
 
 ## [If you are getting started, start by reading this first.](/CONTRIBUTING.md)
 
@@ -25,10 +25,10 @@ This directory contains all of the documentation on contributing to freeCodeCamp
 
 ## Quick references articles
 
-1. How to work on Guide articles.
-2. How to work on Coding Challenges.
-3. How to setup freeCodeCamp locally.
-4. How to catch outgoing emails locally.
+1. Как работать над Guide articles.
+2. Как работать над Coding Challenges.
+3. Как установить freeCodeCamp локально.
+4. Как поймать исходящую почту локально.
 
 ## Style guides
 
@@ -37,9 +37,9 @@ This directory contains all of the documentation on contributing to freeCodeCamp
 
 ## Quick commands reference when working locally
 
-A quick reference to the commands that you will need, when working locally.
+Краткое описание команд которые будут нужны, при работе локальным образом.
 
-| command | description |
+| команда | описание |
 | ------- | ----------- |
 | `npm run bootstrap` | Bootstraps the different services |
 | `npm run seed` | Parse all the challenge markdown files and inserts them into MongoDB. |
