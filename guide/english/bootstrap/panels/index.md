@@ -57,4 +57,4 @@ This is a set of examples that shows each type of panel. The CSS Class is displa
 
 ### More Information
 
-- [Bootstrap dropdown documentation](https://getbootstrap.com/docs/4.0/components/dropdowns/)
+- [Bootstrap panel documentation](https://www.w3schools.com/bootstrap/bootstrap_panels.asp)
