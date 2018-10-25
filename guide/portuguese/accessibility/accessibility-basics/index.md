@@ -196,3 +196,10 @@ Nos artigos subseqüentes, abordarei vários tópicos mais importantes. Várias 
 *   Existe uma maneira para eu escrever conteúdo apenas leitores de tela e outras tecnologias assistivas vêem?
 *   Como posso tornar os componentes JavaScript personalizados acessíveis?
 *   Quais ferramentas existem, além de testes de usuário inclusivos, que podem ser usadas para desenvolver a experiência mais robusta e acessível para o maior grupo de usuários?
+
+
+#### More information:
+
+É crucial que umas dessas ferramentas seja a acessibilidade. Tal ferramenta tem que ser considerada como parte dos primeiros passos na criação de conteúdo web.
+No entanto, a acessibilidade como ferramenta, muitas das vezes, nem faz parte do repertório da maioria dos desenvolvedores. Isso pode ser devido à várias razões que vão desde o desconhecimento sobre accessiblidade até o extremo, onde desenvolvedores ignoram tal necessidade da parte de usuários deficientes.
+
