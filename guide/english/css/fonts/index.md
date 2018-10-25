@@ -17,6 +17,22 @@ p {
 In the above example, "Times New Roman" is the <family-name> of the font, while "serif" is the <generic-name>. Generic names are used as a fallback
 mechanism for preserving style if the family-name is unavailable. A generic name should always be the last item in the list of font family names. Generic
 family names are serif, sans-serif, monospace, cursive, fantasy, system-ui.
+    
+It is also possible to use your own font wich is probably not installed on the system of the user.
+To import this font, use the following code:
+
+```
+@font-face {
+    font-family: 'ludger_duvernayregular';
+    src: url('your-font.eot');
+    src: url(your-font.eot?#iefix') format('embedded-opentype'),
+         url('your-font.woff') format('woff'),
+         url('your-font.ttf') format('truetype'),
+         url('your-font.svg#your-font') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+```
 
 ### Font style
 The `font-style` property can be used to specify italic text.
@@ -115,4 +131,5 @@ p {
 #### More Information:
 - [MND - CSS Font](https://developer.mozilla.org/en-US/docs/Web/CSS/font)
 - [W3 Schools - CSS Font](https://www.w3schools.com/css/css_font.asp)
+- [W3 Schools - @font-face Rule](https://www.w3schools.com/cssref/css3_pr_font-face_rule.asp)
 - [CSSFontStack](https://www.cssfontstack.com/)
