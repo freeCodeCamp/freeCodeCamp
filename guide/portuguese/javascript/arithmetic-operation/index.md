@@ -123,6 +123,25 @@ _Dica:_ Há um [decremento](https://developer.mozilla.org/en-US/docs/Web/JavaScr
  b = --a; // a = 1, b = 1 
 ```
 
+Data types no Java script
+
+JavaScript avalia as  expressões da esquerda para a direita. Diferentes  sequencias podem causar diferentes resultados:
+exemplo 1:
+var a=10+5+"abacate";
+
+resultado:
+15abacate
+
+exemplo 2:
+var a = "abacate"+10+5;
+resultado:
+abacate105
+
+No primeiro exemplo JavaScript tratou 10 e 5 como numeros, até alcanaçar "abacate".
+No segundo exemplo,JS tratou 10 e 5 como strings, quando o primeiro operando é uma string todos os operandos seguintes serão tratados como string.
+...
+
+
 _!Importante!_ Como você pode ver, **não** é **possível** executar qualquer tipo de operação no `Infinity` .
 
 Fonte: O incrível [MDN](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Arithmetic_Operators) .
