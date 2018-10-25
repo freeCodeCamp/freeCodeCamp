@@ -7,7 +7,7 @@ Brand identity is the face of a brand. As discussed in a previous section, a bra
 
 Brand identity includes logos, typography, colors, packaging, and messaging, and it complements and reinforces the existing reputation of a brand. Brand identity attracts new customers to a brand while making existing customers feel at home. It’s both outward- and inward-facing.
 
-It's vital that brand identity be consistent. Because it's representing and reinforcing the emotions of a brand, the message portrayed by brand identity components needs to be clear, and it needs to be the same no matter where it's displayed.
+It's vital that brand identity be consistent. Because it's representing and reinforcing the emotions of a brand, the message portrayed by brand identity components needs to be clear. The message needs to communicate the same information no matter where it's displayed.
 
 #### More Information:
 
