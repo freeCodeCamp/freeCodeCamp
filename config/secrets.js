@@ -88,3 +88,5 @@ module.exports = {
     secret: STRIPE_SECRET
   }
 };
+
+my changes.
