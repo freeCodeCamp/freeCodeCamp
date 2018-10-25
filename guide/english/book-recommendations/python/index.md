@@ -23,6 +23,14 @@ Paid (Free ebook available) book which covers the basics of python. It's designe
 - ISBN-13: 978-0134692883
 - ISBN-10: 0134692888
 
+#### Learn More Python 3 the Hard Way
+
+This book is the successor of "Learn Python 3 the Hard Way". It is full of exercises and study drills that help you to memorize the concepts of the language. The learning style is based on repetition.
+
+- [Website](https://learncodethehardway.org/more-python/)
+- [Amazon](https://www.amazon.com/Learn-More-Python-Hard-Way/dp/0134123484)
+- ISBN-13: 978-0134123486
+- ISBN-10: 9780134123486
 
 #### Black Hat Python: Python Programming for Hackers and Pentesters
 
