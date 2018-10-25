@@ -2,6 +2,8 @@
 title: Cascading Style Sheets (CSS)
 ---
 
+![alt text](https://cdn.pixabay.com/photo/2017/08/05/11/16/logo-2582747__340.png "CSS logo")
+
 ### Cascading Style Sheets (CSS)
 
 CSS is an acronym for Cascading Style Sheets. It was first invented in 1996, and is now a standard feature of all major web browsers.
