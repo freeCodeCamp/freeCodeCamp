@@ -18,4 +18,5 @@ The HTML <p> element represents a paragraph of text. <p> usually represents a bl
 
 #### More Information:
 <!-- Please add any articles you think might be helpful to read before writing the article -->
-https://developer.mozilla.org/en-US/docs/Web/HTML/Element/p
+<a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/p">MDN</a>
+
