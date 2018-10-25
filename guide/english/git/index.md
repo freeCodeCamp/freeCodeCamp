@@ -132,3 +132,4 @@ This article uses information from the <a href='https://github.com/progit/progit
 - For downloads, documentation, and a browser-based tutorial: <a href='https://git-scm.com/' target='_blank' rel='nofollow'>Git official website</a>
 - Most useful commands when you're in bad GIT situation: <a href='http://ohshitgit.com/' target='_blank' rel='nofollow'>Oh shit, git!</a>
 - [Resources to learn Git](https://try.github.io/) 
+- For coders who prefer the Sublime Text editor, git commits can be easily made using [Sublime Merge](https://www.sublimemerge.com/)
