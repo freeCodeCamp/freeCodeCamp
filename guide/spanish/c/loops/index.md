@@ -4,7 +4,7 @@ localeTitle: Bucles de todo tipo.
 ---
 # Bucles de todo tipo en C
 
-Los bucles son lo que usas cuando tienes un código que quieres hacer en bucle, lo que significa que después de que se ejecute, es posible que desees que se enrute al principio y se ejecute nuevamente. Hay algunos de estos en C.
+Los bucles son lo que usas cuando tienes un código que quieres hacer en bucle, lo que significa que después de que se ejecute, es posible que desees que se enrute al principio y se ejecute nuevamente. Hay algunos de estos en C. Son de gran utilidad cuando deseas realizar una acción numerosas ocasiones.
 
 ## Mientras bucles
 
