@@ -6,7 +6,7 @@ localeTitle: R
 
 R es un lenguaje de programación de código abierto y un entorno de software para computación estadística y gráficos. Es uno de los idiomas principales utilizados por los científicos de datos y estadísticos por igual. Es compatible con la R Foundation for Statistical Computing y una gran comunidad de desarrolladores de código abierto. Dado que R utilizó una interfaz de línea de comandos, puede haber una curva de aprendizaje pronunciada para algunas personas que están acostumbradas a usar programas centrados en GUI como SPSS y SAS, por lo que las extensiones a R como RStudio pueden ser muy beneficiosas. Dado que R es un programa de código abierto y está disponible gratuitamente, puede haber una gran atracción para académicos cuyo acceso a programas estadísticos está regulado a través de su asociación a varios colegios o universidades.
 
-## Instalaciones
+## Instalación
 
 Lo primero que debe comenzar con R es descargarlo de su [sitio oficial de](https://www.r-project.org/) acuerdo con su sistema operativo. Ahora instálalo en tu computadora. Para obtener ayuda sobre la instalación, consulte la sección de referencia a continuación.
 
