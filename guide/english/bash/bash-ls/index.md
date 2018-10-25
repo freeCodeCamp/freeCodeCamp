@@ -21,6 +21,7 @@ Most used options:
 * `-l`, List in long format
 * `-G`, enable colorized output.
 * `-s`, List File Size.
+* `-R`, displays the contents of the directory, and its subdirectories.
 
 ### Example:
 
