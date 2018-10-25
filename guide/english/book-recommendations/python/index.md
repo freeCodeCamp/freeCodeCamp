@@ -51,6 +51,7 @@ You'll learn many of the first princliples for data science tools and how algori
 
 *Automate The Boring Stuff With Python*
 - Great book for beginners. Has interesting projects to practice Python.
+- [FREE](https://automatetheboringstuff.com/) under [Creative Commons license](https://creativecommons.org/licenses/by-nc-sa/3.0/)
 - [Amazon](https://www.amazon.com/gp/product/1593275994/)
 - ISBN-10: 1593275994
 - ISBN-13: 978-1593275990
@@ -73,5 +74,6 @@ You'll learn many of the first princliples for data science tools and how algori
 - [Python in Education by Nicholas H. Tollervey[OREILLY] [FREE]](https://www.oreilly.com/programming/free/files/python-in-education.pdf)
 - [How to think like a Computer Scientist by Allen Downey[V 2.0.17] [FREE]](http://greenteapress.com/thinkpython/thinkpython.pdf)
 - [A Byte of Python[FREE]](https://python.swaroopch.com)
+- [Programming books by Al Sweigart [FREE]](https://inventwithpython.com/) 
 
 Please feel free to add more that you have found useful!
