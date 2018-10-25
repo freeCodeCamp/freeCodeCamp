@@ -82,6 +82,22 @@ title: Books to Read for Programmers
 - [Amazon](https://www.amazon.com/Book-Programming-4th-Al-Kelley/dp/0201183994/ref=cm_cr_arp_d_bdcrb_top?ie=UTF8)
 - ISBN-13: 978-0201183993
 
+## C++
+
+*Data Structures and Algorithms in C++
+- [Amazon](https://www.amazon.com/Data-Structures-Algorithms-C-Drozdek/dp/8131521265/ref=sr_1_1?s=books&ie=UTF8&qid=1540368860&sr=1-1&keywords=Adam+Drozdek)
+- ISBN-13: 978-8131521267
+
+*C++ Primer Plus
+- [Amazon](https://www.amazon.com/C-Primer-Plus-Stephen-Prata/dp/9332546185/ref=sr_1_4?s=books&ie=UTF8&qid=1540369019&sr=1-4&keywords=stephen+prata)
+ISBN-13: 978-9332546189
+
+*Data Structures and Algorithms Using Python and C++
+- [Amazon](https://www.amazon.com/Data-Structures-Algorithms-Using-Python/dp/1590282337/ref=sr_1_1?s=books&ie=UTF8&qid=1540369159&sr=1-1&keywords=Data+Structures+and+Algorithms+Using+Python+and+C%2B%2B)
+- ISBN-13:  978-1-59028-233-5
+
+
+
 ## C#
 
 *C# 6.0 in a Nutshell: The Definitive Reference 6th Edition* by Joseph Albahari  (Author), Ben Albahari (Author)
