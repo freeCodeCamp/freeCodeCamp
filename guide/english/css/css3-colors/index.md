@@ -37,7 +37,7 @@ This rule changes the font color of all p elements to green, just like above.
 
 Hexadecimal values are yet another way to define colors in CSS and they work quite similarly to RGB values.<br>
 
-A random hex code would like this: `#29432b`, where the first two characters after the hash stand for the amount of RED in the mix, the second two stand for the amount of Green and the last two stand for the amount of Blue.<br> 
+A random hex code would look like this: `#29432b`, where the first two characters after the hash stand for the amount of RED in the mix, the second two stand for the amount of Green and the last two stand for the amount of Blue.<br> 
 
 The values of `#000000` and `#ffffff` stand for black and white respectively.<br>
 You can find the specific Hexadecimal colors you require by using the same tools mentioned for the RGB values.
