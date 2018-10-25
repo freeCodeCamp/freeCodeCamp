@@ -15,6 +15,10 @@ Initializiation:
 //Initialization with entries:
 int numbers [5] = {1, 2, 3, 4, 5};
 
+//Initialization with variables:
+int a=5;
+int numbers [a];
+
 //Initialization with no values:
 int numbers [5] = {};
 
