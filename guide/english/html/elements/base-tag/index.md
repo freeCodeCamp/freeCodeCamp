@@ -2,6 +2,7 @@
 title: Base Tag
 ---
 ## Base Tag
+The <base> tag is used to define teh base URI or URL for all link in a HTML document.
 
 This is a stub. <a href='https://github.com/freecodecamp/guides/tree/master/src/pages/html/elements/base-tag/index.md' target='_blank' rel='nofollow'>Help our community expand it</a>.
 
