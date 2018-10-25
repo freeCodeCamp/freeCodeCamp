@@ -234,5 +234,5 @@ localeTitle: كيفية إنشاء قائمة منسدلة باستخدام CSS 
 ## معلومات اكثر
 
 *   [مقدمة ES6](https://guide.freecodecamp.org/javascript/es6)
-*   [وظائف السهم](https://guide.freecodecamp.org/javascript/es6/arrow_functions/)
-*   [واسمحوا Const](https://guide.freecodecamp.org/javascript/es6/let_and_const/)
+*   [وظائف السهم](https://guide.freecodecamp.org/javascript/es6/arrow-functions/)
+*   [واسمحوا Const](https://guide.freecodecamp.org/javascript/es6/let-and-const/)

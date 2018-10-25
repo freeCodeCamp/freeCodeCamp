@@ -241,5 +241,5 @@ O código completo e a demonstração deste aplicativo podem ser encontrados [aq
 ## Mais Informações
 
 *   [Introdução ao ES6](https://guide.freecodecamp.org/javascript/es6)
-*   [Funções de seta](https://guide.freecodecamp.org/javascript/es6/arrow_functions/)
-*   [Deixe e Const](https://guide.freecodecamp.org/javascript/es6/let_and_const/)
+*   [Funções de seta](https://guide.freecodecamp.org/javascript/es6/arrow-functions/)
+*   [Deixe e Const](https://guide.freecodecamp.org/javascript/es6/let-and-const/)
