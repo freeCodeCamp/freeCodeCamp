@@ -1,10 +1,10 @@
 ---
-title: Color and Culture in Visual Design
+Title: Color and Culture in Visual Design
 ---
 ## Color and Culture in Visual Design
 
 
-Color contributes to and affects context.
+Color contributes to interpretation and affects context.
 Feng shui accepts this principle, whether a contemporary home decor strategy of the West, or as part of a traditional Chinese practice.
 From this, who could disagree with the premise that culture and psychology affect how colors are interpreted in context of information?
 Specific combinations of colors may also represent symbols, as in colors of a national flag, a favorite sports team, school or institution for example.
