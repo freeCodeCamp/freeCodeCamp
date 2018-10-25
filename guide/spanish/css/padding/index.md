@@ -42,7 +42,7 @@ Esta propiedad se puede especificar utilizando uno, dos, tres o cuatro valores.
 
 La propiedad de relleno en CSS define la parte más interna del modelo de caja, creando espacio alrededor del contenido de un elemento, dentro de los márgenes y / o bordes definidos.
 
-![El modelo de caja CSS](https://www.w3.org/TR/css3-box/box.png)
+![El modelo de caja CSS](https://www.w3.org/TR/css-box-3/images/box.png)
 
 ## Soporte del navegador
 
