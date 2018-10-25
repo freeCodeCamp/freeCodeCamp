@@ -12,7 +12,7 @@ For example, an anchor (`<a>`) element in an HTML document creates links to othe
 Here's an example of a link that sends users to freeCodeCamp's home page:
 
 ```html
-<a href="www.freecodecamp.org">Click here to go to freeCodeCamp!</a>
+<a href="https://www.freecodecamp.org">Click here to go to freeCodeCamp!</a>
 ```
 
 Notice that the attribute name (`href`) and value ("www.freeCodeCamp.org") are separated with an equals sign, and quotes surround the value.
