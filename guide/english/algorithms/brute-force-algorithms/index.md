@@ -11,6 +11,8 @@ Another example: 5 digit password, in the worst case scenario would take 10<sup>
 
 The time complexity of brute force is <b> O(n*m) </b>. So, if we were to search for a string of 'n' characters in a string of 'm' characters using brute force, it would take us n * m tries.
 
+Another example: The knapsack problem - One of the common analogies for this problem is the calls the tale of three thieves who break into a room filled with Bars of Gold, Silver and Copper, they each have a bag that can take at most a combined weight of 20kg. A bar of gold weighs 15kg and is worth $5,000 per kilogram, Silver weighs 10kg and is worth $3,000 per kilogram, and each bar of copper is weighed at 8kg costing $2,000 per kilogram. The problem is: What combination of gold, silver and copper will give the individual thieves the highest amount of worth in the bag.
+
 #### More Information:
 
 <a href="https://en.wikipedia.org/wiki/Brute-force_search"> Wikipedia </a>
