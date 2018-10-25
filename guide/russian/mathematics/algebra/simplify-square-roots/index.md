@@ -1,7 +1,6 @@
-
 ---
 title: Simplify Square Roots
-localeTitle: undefined
+localeTitle: Упростить квадратные корни
 ---
 ## Упростить квадратные корни
 

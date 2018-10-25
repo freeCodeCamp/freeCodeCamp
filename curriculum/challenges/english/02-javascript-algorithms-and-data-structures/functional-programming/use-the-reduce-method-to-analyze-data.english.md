@@ -23,13 +23,13 @@ The variable <code>watchList</code> holds an array of objects with information o
 ```yml
 tests:
   - text: The <code>watchList</code> variable should not change.
-    testString: 'assert(watchList[0].Title === "Inception" && watchList[4].Director == "James Cameron", "The <code>watchList</code> variable should not change.");'
+    testString: assert(watchList[0].Title === "Inception" && watchList[4].Director == "James Cameron", 'The <code>watchList</code> variable should not change.');
   - text: Your code should use the <code>reduce</code> method.
-    testString: 'assert(code.match(/\.reduce/g), "Your code should use the <code>reduce</code> method.");'
+    testString: assert(code.match(/\.reduce/g), 'Your code should use the <code>reduce</code> method.');
   - text: The <code>averageRating</code> should equal 8.675.
-    testString: 'assert(averageRating == 8.675, "The <code>averageRating</code> should equal 8.675.");'
+    testString: assert(averageRating == 8.675, 'The <code>averageRating</code> should equal 8.675.');
   - text: Your code should not use a <code>for</code> loop.
-    testString: 'assert(!code.match(/for\s*?\(.*\)/g), "Your code should not use a <code>for</code> loop.");'
+    testString: assert(!code.match(/for\s*?\(.*\)/g), 'Your code should not use a <code>for</code> loop.');
 
 ```
 

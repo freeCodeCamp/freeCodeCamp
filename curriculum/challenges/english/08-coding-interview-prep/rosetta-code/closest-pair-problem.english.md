@@ -80,15 +80,15 @@ References and further readings:
 ```yml
 tests:
   - text: <code>getClosestPair</code> is a function.
-    testString: 'assert(typeof getClosestPair === "function", "<code>getClosestPair</code> is a function.");'
+    testString: assert(typeof getClosestPair === 'function', '<code>getClosestPair</code> is a function.');
   - text: Distance should be the following.
-    testString: 'assert.equal(getClosestPair(points1).distance, answer1.distance, "Distance should be the following.");'
+    testString: assert.equal(getClosestPair(points1).distance, answer1.distance, 'Distance should be the following.');
   - text: Points should be the following.
-    testString: 'assert.deepEqual(JSON.parse(JSON.stringify(getClosestPair(points1))).pair, answer1.pair, "Points should be the following.");'
+    testString: assert.deepEqual(JSON.parse(JSON.stringify(getClosestPair(points1))).pair, answer1.pair, 'Points should be the following.');
   - text: Distance should be the following.
-    testString: 'assert.equal(getClosestPair(points2).distance, answer2.distance, "Distance should be the following.");'
+    testString: assert.equal(getClosestPair(points2).distance, answer2.distance, 'Distance should be the following.');
   - text: Points should be the following.
-    testString: 'assert.deepEqual(JSON.parse(JSON.stringify(getClosestPair(points2))).pair, answer2.pair, "Points should be the following.");'
+    testString: assert.deepEqual(JSON.parse(JSON.stringify(getClosestPair(points2))).pair, answer2.pair, 'Points should be the following.');
 
 ```
 
@@ -124,7 +124,107 @@ function getClosestPair (pointsArr) {
 <div id='js-teardown'>
 
 ```js
-console.info('after the test');
+const points1 = [
+	new Point(0.748501, 4.09624),
+	new Point(3.00302, 5.26164),
+	new Point(3.61878,  9.52232),
+	new Point(7.46911,  4.71611),
+	new Point(5.7819,   2.69367),
+	new Point(2.34709,  8.74782),
+	new Point(2.87169,  5.97774),
+	new Point(6.33101,  0.463131),
+	new Point(7.46489,  4.6268),
+	new Point(1.45428,  0.087596)
+];
+
+const points2 = [
+  new Point(37100, 13118),
+  new Point(37134, 1963),
+  new Point(37181, 2008),
+  new Point(37276, 21611),
+  new Point(37307, 9320)
+];
+
+const answer1 = {
+  distance: 0.0894096443343775,
+  pair: [
+    {
+      x: 7.46489,
+      y: 4.6268
+    },
+    {
+      x: 7.46911,
+      y: 4.71611
+    }
+  ]
+};
+
+const answer2 = {
+  distance: 65.06919393998976,
+  pair: [
+    {
+      x: 37134,
+      y: 1963
+    },
+    {
+      x: 37181,
+      y: 2008
+    }
+  ]
+};
+
+const benchmarkPoints = [
+  new Point(16909, 54699),
+  new Point(14773, 61107),
+  new Point(95547, 45344),
+  new Point(95951, 17573),
+  new Point(5824, 41072),
+  new Point(8769, 52562),
+  new Point(21182, 41881),
+  new Point(53226, 45749),
+  new Point(68180, 887),
+  new Point(29322, 44017),
+  new Point(46817, 64975),
+  new Point(10501, 483),
+  new Point(57094, 60703),
+  new Point(23318, 35472),
+  new Point(72452, 88070),
+  new Point(67775, 28659),
+  new Point(19450, 20518),
+  new Point(17314, 26927),
+  new Point(98088, 11164),
+  new Point(25050, 56835),
+  new Point(8364, 6892),
+  new Point(37868, 18382),
+  new Point(23723, 7701),
+  new Point(55767, 11569),
+  new Point(70721, 66707),
+  new Point(31863, 9837),
+  new Point(49358, 30795),
+  new Point(13041, 39745),
+  new Point(59635, 26523),
+  new Point(25859, 1292),
+  new Point(1551, 53890),
+  new Point(70316, 94479),
+  new Point(48549, 86338),
+  new Point(46413, 92747),
+  new Point(27186, 50426),
+  new Point(27591, 22655),
+  new Point(10905, 46153),
+  new Point(40408, 84202),
+  new Point(52821, 73520),
+  new Point(84865, 77388),
+  new Point(99819, 32527),
+  new Point(34404, 75657),
+  new Point(78457, 96615),
+  new Point(42140, 5564),
+  new Point(62175, 92342),
+  new Point(54958, 67112),
+  new Point(4092, 19709),
+  new Point(99415, 60298),
+  new Point(51090, 52158),
+  new Point(48953, 58567)
+];
 ```
 
 </div>

@@ -24,15 +24,15 @@ Write both dispatches in the <code>handleAsync()</code> action creator. Dispatch
 ```yml
 tests:
   - text: The <code>requestingData</code> action creator should return an object of type equal to the value of <code>REQUESTING_DATA</code>.
-    testString: 'assert(requestingData().type === REQUESTING_DATA, "The <code>requestingData</code> action creator should return an object of type equal to the value of <code>REQUESTING_DATA</code>.");'
+    testString: assert(requestingData().type === REQUESTING_DATA, 'The <code>requestingData</code> action creator should return an object of type equal to the value of <code>REQUESTING_DATA</code>.');
   - text: The <code>receivedData</code> action creator should return an object of type equal to the value of <code>RECEIVED_DATA</code>.
-    testString: 'assert(receivedData("data").type === RECEIVED_DATA, "The <code>receivedData</code> action creator should return an object of type equal to the value of <code>RECEIVED_DATA</code>.");'
+    testString: assert(receivedData('data').type === RECEIVED_DATA, 'The <code>receivedData</code> action creator should return an object of type equal to the value of <code>RECEIVED_DATA</code>.');
   - text: <code>asyncDataReducer</code> should be a function.
-    testString: 'assert(typeof asyncDataReducer === "function", "<code>asyncDataReducer</code> should be a function.");'
+    testString: assert(typeof asyncDataReducer === 'function', '<code>asyncDataReducer</code> should be a function.');
   - text: Dispatching the requestingData action creator should update the store <code>state</code> property of fetching to <code>true</code>.
-    testString: 'assert((function() { const initialState = store.getState(); store.dispatch(requestingData()); const reqState = store.getState(); return initialState.fetching === false && reqState.fetching === true })(), "Dispatching the requestingData action creator should update the store <code>state</code> property of fetching to <code>true</code>.");'
+    testString: assert((function() { const initialState = store.getState(); store.dispatch(requestingData()); const reqState = store.getState(); return initialState.fetching === false && reqState.fetching === true })(), 'Dispatching the requestingData action creator should update the store <code>state</code> property of fetching to <code>true</code>.');
   - text: Dispatching <code>handleAsync</code> should dispatch the data request action and then dispatch the received data action after a delay.
-    testString: 'assert((function() { const noWhiteSpace = handleAsync.toString().replace(/\s/g,""); return noWhiteSpace.includes("dispatch(requestingData())") === true && noWhiteSpace.includes("dispatch(receivedData(data))") === true })(), "Dispatching <code>handleAsync</code> should dispatch the data request action and then dispatch the received data action after a delay.");'
+    testString: assert((function() { const noWhiteSpace = handleAsync.toString().replace(/\s/g,''); return noWhiteSpace.includes('dispatch(requestingData())') === true && noWhiteSpace.includes('dispatch(receivedData(data))') === true })(), 'Dispatching <code>handleAsync</code> should dispatch the data request action and then dispatch the received data action after a delay.');
 
 ```
 
