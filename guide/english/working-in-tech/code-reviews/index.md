@@ -3,8 +3,8 @@ title: Code Reviews
 ---
 ## Code Reviews
 
-Code Reviews exist in order to improve the quality of the code in a software project and are common practice for many software development teams.
-Code reviews involve team members looking into each others' code submissions to check for bugs, incorrect logic or 
+Code Reviews exist in order to improve the quality of the code in a software project and are common practice for many software development teams. They should be used as an opportunity for the team to learn and grow.
+Code reviews involve team members looking into each others' code submissions to check for bugs, incorrect logic or to suggest
 potential improvements. A code review can be done amongst developers of the project under review, as well as developers from other teams in the same company.
 To those who have not experienced the code review process before, 
 it can be intimidating. However, it is an invaluable process to help you 
@@ -13,10 +13,10 @@ the feeling that your code is going to be read/ inspected by another programmer 
 (smaller methods, comments and no ["magic numbers"](https://en.wikipedia.org/wiki/Magic_number_(programming))).
 
 As to what is reviewed and when, well there is no clear answer.
-Many teams have rules that every piece of code that checks-in in the version control system has to be reviewed by another programmer,
-while other teams have whole days when they dedicate to code reviews across the team.
+Many teams have rules that every piece of code that is checked into the version control system has to be reviewed by another programmer,
+while other teams dedicate whole days to code reviews across the team.
 
-It is important to be humble throughout the code review process. Accept your mistakes, 
+It is important to be humble throughout the code review process. This applies to both giving and receiving suggestions. Accept your mistakes, 
 and be professional when pointing out improvements or errors in the code of your fellow
 team members.
 
