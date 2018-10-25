@@ -45,6 +45,6 @@ Una referencia rápida de los comandos que necesitarás cuando trabajes en local
 | `npm run develop` | Arranca el Servidor de la API freeCodeCamp y las Aplicaciones Cliente |
 | `npm test` |  Ejecuta todo los test JS en el sistema, incluyendo los tests de cliente, servidor, lint y desafíos |
 | `npm run test:client` | Ejecuta los tests del cliente |
-| `npm run test:curriculum` | Ejecuta los tests del curriculum |
+| `npm run test:curriculum` | Ejecuta los tests del currículo |
 | `npm run test:server` | Ejecuta los tests del servidor |
 | `npm run commit` | Herramienta interactiva que ayuda a crear un buen mensaje para el commit |
