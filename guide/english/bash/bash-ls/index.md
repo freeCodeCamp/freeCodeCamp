@@ -22,6 +22,7 @@ Most used options:
 * `-G`, enable colorized output.
 * `-s`, List File Size.
 * `-R`, displays the contents of the directory, and its subdirectories.
+*  -d , list directories themselves and not contents of directories
 
 ### Example:
 
