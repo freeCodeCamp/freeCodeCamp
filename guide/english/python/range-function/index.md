@@ -39,3 +39,17 @@ for i in range(3, 12, 2):
 9
 11
  ```
+
+ #### Changes in Python 3
+In Python 3, by default the range function will not generate a list of integers when assigned to a variable. Instead, the user must manually convert it to a list.
+
+#### Example usage in Python 3
+ ```py
+numbers = list(range(1, 10))
+print(numbers)
+ ```
+ 
+#### Output
+ ```
+[1, 2, 3, 4, 5, 6, 7, 8, 9]
+ ```
