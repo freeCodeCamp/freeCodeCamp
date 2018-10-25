@@ -15,8 +15,14 @@ Consider a paralleogram as shown in the figure.
 
 Therefore, Area = 6 * 2.5 = 15 (m)^2
 
+## Properties of a Parallelogram
 
-
+1. Opposite sides are congruent (AB = DC).
+2. Opposite angels are congruent (D = B).
+3. Consecutive angles are supplementary (A + D = 180°).
+4. If one angle is right, then all angles are right.
+5. The diagonals of a parallelogram bisect each other.
+6. Each diagonal of a parallelogram separates it into two congruent triangles.
 
 #### More Information:
 
