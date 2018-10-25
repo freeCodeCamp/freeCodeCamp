@@ -3,6 +3,13 @@ title: Books on JavaScript
 ---
  ### List of Books
 
+#### Javascript & Jquery: 
+###interactive front end web development
+##by Jon Duckett
+A must have book for beginners and an indespensible handbooks for experienced coders. Recommened by professionals throughout the industry. Includes link to sample code.
+-[Homepage of author] (http://javascriptbook.com/) (includes extras link with sample code)
+
+
 #### Eloquent JavaScript
 
 One of the best books on JavaScript. A must for both, beginners and intermediate programmers, who code in JavaScript. The best part is that the e-book is available for free.
