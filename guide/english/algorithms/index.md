@@ -37,6 +37,14 @@ It is the sorting algorithm which relies on the concept how to sorted arrays are
 
 freeCodeCamp's curriculum heavily emphasizes creating algorithms. This is because learning algorithms is a good way to practice programming skills. Interviewers most commonly test candidates on algorithms during developer job interviews.
 
+### Is it that important?
+YES!!! Learning algorithms is so important because it helps you master your problem soliving ability which is very important as a programmer. When you learn how to write good algorithms, it doesn't really matter when you're required to learn a new language for a particular project. You just need to learn the syntax of that language and a few other things, and you're good to go! The ability to solve a problem before writing any code, is a good skill that every programmer should strive to have up their sleeve.
+
+### Some resources to practice your problem-solving skill
+[Algorithms | HackerEarth] (https://www.hackerearth.com/practice/)
+
+[Problem Solving | Hackerrank] (https://www.hackerrank.com/domains/algorithms)
+
 ### Further Resources
 
 [Intro to Algorithms | Crash Course: Computer Science](https://www.youtube.com/watch?v=rL8X2mlNHPM)
