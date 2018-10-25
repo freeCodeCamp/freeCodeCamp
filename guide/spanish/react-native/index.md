@@ -18,7 +18,7 @@ También se puede utilizar para crear aplicaciones en dispositivos Windows, sist
 
 React Native se encuentra entre aplicaciones nativas e híbridas en el espectro de aplicaciones móviles. La interfaz de usuario que crea es completamente nativa y el rendimiento general de la aplicación es casi tan bueno como escribir una aplicación nativa. También le brinda la flexibilidad de integrar vistas web (páginas web) o código nativo (Java / Kotlin para Android, Objective C / Swift para iOS) dentro de sus aplicaciones donde lo desee.
 
-Sigue el mismo patrón que Reacción en el que las vistas (lo que ve en la pantalla) se representan desde los archivos JavaScript. La diferencia es que proporciona su propia API para manejar vistas móviles nativas frente al DOM en la web. Si estás confundido acerca de cómo funciona esto, sigue esta guía en freeCodeCamp y te llevará paso a paso a través de estos conceptos.
+Sigue el mismo patrón que React en el que las vistas (lo que ve en la pantalla) se representan desde los archivos JavaScript. La diferencia es que proporciona su propia API para manejar vistas móviles nativas frente al DOM en la web. Si deseas conocer más acerca de cómo funciona esto, sigue esta guía en freeCodeCamp y te llevará paso a paso a través de estos conceptos.
 
 ### Razones para elegir React Native
 
