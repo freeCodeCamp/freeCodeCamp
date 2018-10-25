@@ -22,7 +22,7 @@ Web accessibility should also include the people who don't have access to the in
 
 A prominent guideline for web development was introduced by the [World Wide Web Consortium (W3C)](https://www.w3.org/), the [Web Accessibility Initiative](https://www.w3.org/WAI/)
 from which we get the [WAI-ARIA](https://developer.mozilla.org/en-US/docs/Learn/Accessibility/WAI-ARIA_basics), the Accessible Rich Internet Applications Suite.
-Where WAI tackles the semantics of html to more easily nagivate the DOM Tree, ARIA attempts to make web apps, especially those developed with javascript and
+Where WAI tackles the semantics of html to more easily navigate the DOM Tree, ARIA attempts to make web apps, especially those developed with javascript and
 AJAX, more accessible. 
 
 The use of images and graphics on websites can decrease accessibility for those with visual impairments. However, this doesn't mean designers should avoid
