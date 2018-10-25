@@ -25,4 +25,4 @@ Underlining text with the `<span>` tag:
 
 ### More Information:
 [MDN](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/u)
-
+[HTML](https://html.com/tags/u/)
