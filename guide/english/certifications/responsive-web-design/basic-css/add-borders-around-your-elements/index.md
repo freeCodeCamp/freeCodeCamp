@@ -17,7 +17,7 @@ We add between ```<style>``` and ```</style>``` new class ```thick-green-border`
     border-style: solid;
   }
 ```
-Also, we can add properties this way:
+Also, there's a (preferred) shorthand way to concisely write all the border properties (border width, style & color) this way:
 
 ```js
   .thick-green-border {
