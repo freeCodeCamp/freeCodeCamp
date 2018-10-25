@@ -106,6 +106,8 @@ Some of the principles that influenced the design of Python are included as an E
 1. Interactive language with a module support for almost all functionality.
 2. Open Source: So, you can contribute to the community, the functions you have developed for future use and to help others
 3. A lot of good interpreters and notebooks available for better experience like jupyter notebook.
+4. In python we don't have to worry about range of data types.
+   for instance in c language we have to specify its data type like int,long int,long long int and many more these problems is         eliminated in python.
 
 #### Cons
 1. Being open source, many different ways have developed over the year for same function. This sometimes, creates chaos for others to read someone else code.
