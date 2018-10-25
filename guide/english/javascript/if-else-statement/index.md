@@ -15,7 +15,7 @@ else
 ```
 
 
-Multiple `if...else` statements can be chained to create an `else if` clause. This specifies a new condition to test and can be repeated to test multiple conditions, checking until a true statement is presented to execute.
+Multiple `if...else` statements can be chained to create an `else if` clause. This specifies a new condition to test and can be repeated to test multiple conditions, checking until a true statement is presented to execute. Once a condition is met, no other if-else statement in the chain will be executed.
 
 ```javascript
 if (condition1)
