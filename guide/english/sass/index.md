@@ -62,5 +62,42 @@ Example:
 }
 
 ```
+
+## Extend/ Inheritance
+
+Reuse CSS properties across multiple selectors to avoid repetition by using @extend.
+
+Example:
+```
+%success {
+  background-color:green;
+  color:white;
+}
+
+#myDiv {
+  @extend %success;
+  font-size:10px;
+}
+
+#myOtherDiv {
+  @extend %success;
+  font-size:20px;
+}
+
+```
+Both selectors will inherit properties from %success, while maintaining their own unique properties.
+
+## Operators
+
+Sass adds mathematical operators, such as +, -, *, / and % to CSS.
+
+Example:
+
+```
+#myDiv {
+  height: 1920px / 480px;
+  width: 1080px * 2;
+}
+```
 #### More Information
 [Official Sass website](https://sass-lang.com/)
