@@ -1,6 +1,21 @@
 ---
 title: Android Development
 ---
+
+## Table of Contents
+
+* [Android Development](#android-development)
+* [Getting started](#getting-started)
+* [Setting Up and Getting Started with Android Studio](#setting-up-and-getting-started-with-android-studio)
+* [Official Documentation](#official-documentation)
+* [Java vs Kotlin](#java-vs-kotlin)
+* [Beginners in Android Development Should Start With Java](#beginners-in-android-development-should-start-with-java)
+* [Java Programmers Should Learn Kotlin](#java-programmers-should-learn-kotlin)
+* [Practice](#practice)
+* [Google Developer Console](#google-developer-console)
+* [Courses](#courses)
+* [Developing Android Apps](#developing-android-apps)
+
 # Android Development
 
 Android apps can be a great, fun way to get into the world of programming. Officially, programmers can use Java, Kotlin, or C++ to develop for Android, and though there may be API restrictions, using tools, developers can use a large number of languages, including JavaScript, C, or assembly, and the possibilities are endless.
@@ -26,7 +41,7 @@ Lastly, learn to integrate 3rd party libraries and Firebase services to add func
 
 [Google Developers Guide for Android](https://developer.android.com/training/index.html)
 
-#### Java vs. Kotlin
+#### Java vs Kotlin
 
 Ever since Google announced Kotlin as the official language for Android development at Google IO in 2017, programmers who want to become Android developers are in a dilemma. The big question in front of them is whether they should learn Kotlin or Java.
 
