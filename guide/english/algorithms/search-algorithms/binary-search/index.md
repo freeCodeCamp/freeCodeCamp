@@ -96,18 +96,18 @@ function binarySearch(arr, item, low, high) {
     if (low > high) { // No more elements in the array.
         return null;
     }
-    
+
     // Find the middle of the array.
     var mid = Math.ceil((low + high) / 2);
 
     if (arr[mid] === item) { // Found the item!
         return mid;
     }
-    
+
     if (item < arr[mid]) { // Item is in the half from low to mid-1.
         return binarySearch(arr, item, low, mid-1);
     }
-    
+
     else { // Item is in the half from mid+1 to high.
         return binarySearch(arr, item, mid+1, high);
     }
@@ -126,9 +126,9 @@ function binary_search(a, v) {
             return a[low] === v;
         } else {
             var mid = math_floor((low + high) / 2);
-            return (v === a[mid]) 
+            return (v === a[mid])
                    ||
-                   (v < a[mid]) 
+                   (v < a[mid])
                    ? search(low, mid - 1)
                    : search(mid + 1, high);
         }
@@ -163,17 +163,17 @@ end
 ### Example in C
 
 ```C
-int binarySearch(int a[], int l, int r, int x) { 
-   if (r >= l){ 
-        int mid = (l + (r - l))/2; 
-        if (a[mid] == x)   
-            return mid; 
-        if (arr[mid] > x)  
-            return binarySearch(arr, l, mid-1, x); 
-        return binarySearch(arr, mid+1, r, x); 
-   } 
-   return -1; 
-} 
+int binarySearch(int a[], int l, int r, int x) {
+   if (r >= l){
+        int mid = (l + (r - l))/2;
+        if (a[mid] == x)
+            return mid;
+        if (arr[mid] > x)
+            return binarySearch(arr, l, mid-1, x);
+        return binarySearch(arr, mid+1, r, x);
+   }
+   return -1;
+}
 ```
 
 ### Python implementation
@@ -186,49 +186,52 @@ def binary_search(arr, l, r, target):
             return mid
         elif arr[mid] > target:
             return binary_search(arr, l, mid-1, target)
-        else: 
+        else:
             return binary_search(arr, mid+1, r, target)
-    else: 
+    else:
         return -1
 ```
 
+
 ### Example in C++
 
+Recursive approach!
 
-```c++ -   
+```C++ -
 // Recursive approach in C++
-int binarySearch(int arr[], int start, int end, int x) 
-{ 
-   if (end >= start) 
-   { 
-        int mid = (start + (end - start))/2; 
-        if (arr[mid] == x)   
-            return mid; 
+int binarySearch(int arr[], int start, int end, int x)
+{
+   if (end >= start)
+   {
+        int mid = (start + (end - start))/2;
+        if (arr[mid] == x)
+            return mid;
 
-        if (arr[mid] > x)  
-            return binarySearch(arr, start, mid-1, x); 
-  
-        return binarySearch(arr, mid+1, end, x); 
-   } 
-   return -1; 
+        if (arr[mid] > x)
+            return binarySearch(arr, start, mid-1, x);
+
+        return binarySearch(arr, mid+1, end, x);
+   }
+   return -1;
 }
 ```
 
-```c++ -  
-// Iterative approach in C++
-int binarySearch(int arr[], int start, int end, int x) 
-{ 
-    while (start <= end) 
-    { 
-        int mid = (start + (end - start))/2; 
-        if (arr[mid] == x) 
-            return mid; 
-        if (arr[mid] < x) 
-            start = mid + 1; 
+Iterative approach!
+
+```C++
+int binarySearch(int arr[], int start, int end, int x)
+{
+    while (start <= end)
+    {
+        int mid = (start + (end - start))/2;
+        if (arr[mid] == x)
+            return mid;
+        if (arr[mid] < x)
+            start = mid + 1;
         else
-            end = mid - 1; 
-    } 
-    return -1; 
+            end = mid - 1;
+    }
+    return -1;
 }
 ```
 
@@ -250,8 +253,8 @@ func binarySearch(for number: Int, in numbers: [Int]) -> Int? {
     return nil // the given number was not found
 }
 ```
-### Example in Java 
-```Java 
+### Example in Java
+```Java
 // Iterative Approach in Java
 int binarySearch(int[] arr, int start, int end, int element)
 {
@@ -268,7 +271,7 @@ int binarySearch(int[] arr, int start, int end, int element)
    return -1;
 }
 ```
-```Java 
+```Java
 // Recursive Approach in Java
 int binarySearch(int[] arr, int start,int end , int element)
 {

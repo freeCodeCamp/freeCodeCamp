@@ -1,6 +1,6 @@
 ---
 title: "Use display: flex to Position Two Boxes"
-localeTitle: "استخدم العرض
+localeTitle: استخدم العرض
 ---
 ## استخدام العرض: فليكس لوضع صناديق اثنين
 
@@ -10,7 +10,7 @@ localeTitle: "استخدم العرض
 
 مثال:
 
- `#main-container { 
-    display: flex; 
- } 
+ `#main-container {
+    display: flex;
+ }
 `
