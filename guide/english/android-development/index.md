@@ -18,7 +18,7 @@ title: Android Development
 
 # Android Development
 
-Android apps can be a great, fun way to get into the world of programming. Officially, programmers can use Java, Kotlin, or C++ to develop for Android, and though there may be API restrictions, using tools, developers can use a large number of languages, including JavaScript, C, or assembly, and the possibilities are endless.
+Android apps can be a great, fun way to get into the world of programming. Officially, programmers can use Java, Kotlin, or C++ to develop for Android. Though there may be API restrictions using tools, developers can use a large number of languages, including JavaScript, C, or assembly, and the possibilities are endless.
 
 From simple games and utility apps to full-blown music players, there are many opportunities to create something meaningful with Android. The Android developer community is widespread, and the documentation and resources online are easy to find, so that you can tackle any issue you're facing.
 
@@ -32,7 +32,7 @@ Check out the guides in this folder to learn about the 4 [core components](core-
 ### Setting Up and Getting Started with Android Studio
 Go to this [link](https://www.oracle.com/technetwork/java/javase/downloads/index.html) and install the latest JDK.
 Now download the Android Studio and SDK tools bundle from [here](https://developer.android.com/studio/).
-Install the Android Studio and SDK following the set up. Keep note of the SDK location.
+Install the Android Studio and SDK following the set up. Keep note of the SDK location, sometimes you may need to find it later.
 If you face any error go to settings later to solve it.
 
 Lastly, learn to integrate 3rd party libraries and Firebase services to add functionality to your app. It would be helpful if you go through the official documentation for each component.
