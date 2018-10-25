@@ -46,17 +46,8 @@ Perimeter - the sum of the length of four sides in a square. The four sides are 
 
    Area = (20 / 4)<sup>2</sup> = 25  units<sup>2</sup>
    
-  
-  
-Find the area of a square given the perimeter:
+   To find the area of a square given the perimeter, start by dividing the given perimeter by 4. This will give the length of each side of the square. Next, multiply the length by itself to obtain the area. Remember to use squared units(by adding a ² at the end of the unit).
 
-To find the area of a square given the perimeter, simply start by dividing the given perimeter by 4. Why 4? Because a square has four (4) sides. Dividing it by 4 would give you the length of one side. Now square the known side. To square, multiply it by itself once. Once you get the result, convert it to squared units; by adding a ² to the answer.
-
-Ex: Perimeter: 20
-
-20 / 4 = 5
-5 x 5 = 25
-25 = 25²
 
 #### More Information:
 
