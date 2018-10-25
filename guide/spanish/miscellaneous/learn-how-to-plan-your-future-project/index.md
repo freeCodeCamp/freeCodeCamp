@@ -4,9 +4,9 @@ localeTitle: Aprenda cómo planificar su futuro proyecto
 ---
 Una onza de preparación vale una libra de cura. Eso es cierto en medicina, y eso es definitivamente cierto en el desarrollo de software.
 
-Aquí hay un flujo de trabajo estructurado de 10 pasos que lo guiará a través del proceso de planificación de la aplicación, con el objetivo de evitar que escriba muchos códigos innecesarios.
+Aquí hay un flujo de trabajo estructurado de 10 pasos que lo guiará a través del proceso de planificación de la aplicación, con el objetivo de evitar escribir código innecesario.
 
-Juntos, planearemos una aplicación web de una sola página "para hacer" simple. También planearemos un backend API para una futura aplicación móvil.
+Juntos, planearemos una aplicación web de una sola página "para hacerlo" simple. También planearemos una API de backend para una futura aplicación móvil.
 
 ## 1) Crea nuestro tablero Trello.
 
@@ -26,8 +26,8 @@ Aquí hay algunos ejemplos de historias de usuarios. Esto guiará cómo pensamos
 
 *   Como usuario registrado, puedo ver la lista de mis tareas pendientes.
 *   Como usuario registrado, puedo agregar una nueva tarea pendiente.
-*   como usuario registrado, puedo eliminar una tarea pendiente (solo la de mis tareas pendientes, no la de otros usuarios).
-*   como usuario registrado, puedo completar una tarea pendiente (solo la de mis tareas pendientes, no la de otros usuarios).
+*   como usuario registrado, puedo eliminar una tarea pendiente (solo de mis tareas pendientes, no de otros usuarios).
+*   como usuario registrado, puedo completar una tarea pendiente (solo de mis tareas pendientes, no de otros usuarios).
 *   Como usuario anónimo, puedo registrarme para una nueva cuenta, recuperar mi contraseña o iniciar sesión en la aplicación con una cuenta existente.
 
 ## 3) Crea nuestro modelo de caso de uso.
@@ -52,7 +52,7 @@ Un usuario accede a nuestra aplicación de tareas pendientes.
     
 *   Si tiene una cuenta, pero olvidó su contraseña, puede recuperarla.
     
-*   Si ella no tiene una cuenta, puede crear una.
+*   Si no tiene una cuenta, puede crear una.
     
 *   Tanto "crear una cuenta" como "recuperar mi contraseña" requerirán la validación del correo electrónico. Un usuario puede iniciar sesión en nuestra aplicación solo después de que haya confirmado su dirección de correo electrónico.
     
