@@ -116,19 +116,20 @@ This step is always printed
 If we have to make decisions based on more than one conditions using if else. We use else if condition as follows -
 ```cpp
 #include<iostream>
+using namespace std;
 int main()
 {
     int score;
-    std::cout<<"Enter your score: \n";
-    std::cin>>score;
+    cout<<"Enter your score: \n";
+    cin>>score;
     if(score>=90)
-        std::cout<<"Top performance.";
+        cout<<"Top performance.";
     else if(score<90 && score>=70)
-        std::cout<<"Good performance";
+        cout<<"Good performance";
     else if(score<70 && score>=45)
-        std::cout<<"Average performance";
+        cout<<"Average performance";
     else if(score<45 && score>=30)
-        std::cout<<"You can improve it.";
+        cout<<"You can improve it.";
    return 0;
 }
 ```
