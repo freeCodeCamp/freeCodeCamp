@@ -23,6 +23,71 @@ Most common operations available on queue are,
 
 Implementation of a queue is possible using either arrays or linked lists. The following is a simple array implementation of the queue data structure with its most common operations.
 
+### Example in C
+```C
+#include <stdio.h>
+
+#define MAX 5
+
+int front = -1, back = -1;
+int queue[MAX];
+
+int isEmpty() {
+    if(front == -1) {
+        return 1;
+    }
+    return 0;
+}
+
+void add(int elem) {
+    if (back == MAX-1) {
+        printf("Queue overflow!\n");
+    } else {
+        if(front == -1) {
+            front++;
+        }
+        queue[++back] = elem;
+    }
+}
+
+void delete() {
+    if (front == -1) {
+        printf("Queue underflow!\n");
+    } else if (front == back) {
+        front = back = -1;
+    } else {
+        queue[front++];
+    }
+}
+
+int peek() {
+    if (!isEmpty()) {
+        printf("%d\n", queue[front]);
+    }
+}
+
+void display() {
+    if (!isEmpty()) {
+        for(int i = front; i <= back; i++) {
+            printf("%d\t", queue[i]);
+        }
+        printf("\n");
+    }
+}
+
+int main() {
+    add(10);
+    display(); // 10
+    add(5);
+    display(); // 10 5
+    peek(); // 10
+    delete();
+    display(); // 5
+    return 0;
+}
+```
+
+### Example in JavaScript
 ```JavaScript  
 var Queue = function() {
     var queue = [];
