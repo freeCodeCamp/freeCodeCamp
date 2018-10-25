@@ -21,7 +21,7 @@ We strictly enforce our ["Code of Conduct"](https://www.freecodecamp.org/code-of
 
 Happy contributing 🎉!
 
-## Here are some fun ways that you can help
+### Here are some fun ways that you can help
 
 You can choose to contribute to any area that interests you:
 
@@ -136,6 +136,6 @@ You should go through **`Help Wanted`** or **`first timers welcome`** issues for
 
 If these issues lack clarity on what needs to be done, feel free to ask questions in the comments.
 
-**I found a typo, should I report an issue before I can make a pull request?**
+**I found a typo, should i report an issue before I can make a pull request?**
 
 For typos and other wording changes, you can directly open pull requests without first creating an issue. Issues are more for discussing larger problems associated with code or structural aspects of the curriculum.
