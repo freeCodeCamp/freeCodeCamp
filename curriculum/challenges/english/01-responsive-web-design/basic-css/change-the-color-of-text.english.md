@@ -83,6 +83,6 @@ tests:
 <section id='solution'>
 
 ```js
-// solution required
+<h2 style="color: red;">CatPhotoApp</h2>
 ```
 </section>
