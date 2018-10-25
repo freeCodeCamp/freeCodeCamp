@@ -5,11 +5,11 @@ title: Python Abs Function
 
 ## Argument
 
-It takes one argument `x` - an integer, or decimal, or a complex number.
+It takes one argument `x` - an integer, decimal, or complex number.
 
 ## Return Value
 
-The return value would be a positive number. Even if complex number is passed, it would return its magnitude, computed as per complex number algebra.
+Return value is a positive number. Even if a complex number is passed, it returns its magnitude, computed as per complex number algebra.
 
 ## Code Sample
 ```python
