@@ -8,9 +8,9 @@ This is a stub. <a href='https://github.com/freecodecamp/guides/tree/master/src/
 <a href='https://github.com/freecodecamp/guides/blob/master/README.md' target='_blank' rel='nofollow'>This quick style guide will help ensure your pull request gets accepted</a>.
 
 <!-- The article goes here, in GitHub-flavored Markdown. Feel free to add YouTube videos, images, and CodePen/JSBin embeds  -->
-Links are used everywhere on the web, with the purpose if directing users to various content items. They're usually indicated by your cursor turning into a hand icon. Links can be text, images or other elements contained within your HTML or webpage. 
+Links are used everywhere on the web, with the purpose if directing users to various content items. They're usually indicated by your cursor turns into a hand icon. Links can be text, images or other elements contained within your HTML or webpage. 
 
-You use an ```code <a>``` tag or anchor element to define your link, which also also needs a destination address that you'll access with the ```code href``` attribute. Here's a snippet that makes the phrase 'the freeCodeCamp Guide' a link:
+You use a ```code <a>``` tag or anchor element to define your link, which also needs a destination address that you'll access with the ```code href``` attribute. Here's a snippet that makes the phrase 'the freeCodeCamp Guide' a link:
 
 ```html
 <a href="https://guide.freecodecamp.org">the freeCodeCamp Guide</a>
@@ -28,7 +28,7 @@ When you need to guide users to a specific part of your webpage, let's assume th
 <a href="#footer>More about us<a/>
 ```
 
-you'll then need to use an ```code id``` attribute in the element you want to direct your user to - in this case the ```code <footer>``` at the bottom of the webpage. 
+you'll then need to use a ```code id``` attribute in the element you want to direct your user to - in this case the ```code <footer>``` at the bottom of the webpage. 
 
 ```html
 <footer id="footer">Powered by freeCodeCamp</footer>
