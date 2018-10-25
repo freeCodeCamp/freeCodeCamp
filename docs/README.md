@@ -48,3 +48,4 @@ A quick reference to the commands that you will need, when working locally.
 | `npm run test:curriculum` | Run the curriculum test suite. |
 | `npm run test:server` | Run the server test suite. |
 | `npm run commit` | An interactive tool to help you build a good commit message. |
+some change
