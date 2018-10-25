@@ -105,3 +105,4 @@ The problem is quite easy, but here are some hints:
 
     1. Use the flood-fill algorithm whenever you encounter a new island.
     2. As opposed to the sample code, you should go through the area of the island and not on the ocean (0 tiles).
+## flood fill algorithm
