@@ -4,7 +4,7 @@ title: Adobe Experience Design
 
 ## Adobe Experience Design
 
-Adobe Experience Design, also known as Adobe XD, is a prototyping tool for UX designers. It's a tool that is specifically built for interface design and user experience, unlike other Adobe products like Photoshop and Illustrator which were meant for photo editing and graphic design. Adobe XD is available for both Windows and macOS, unlike Sketch which is exclusive to macOS. 
+Adobe Experience Design, also known as Adobe XD, is a prototyping tool for UX designers. It's a tool that is specifically built for interface design and user experience, unlike other Adobe products like Photoshop and Illustrator which were meant for photo editing and graphic design, respectively. Adobe XD is available for both Windows and macOS, unlike Sketch which is exclusive to macOS. 
 
 ### Advantages: 
 
