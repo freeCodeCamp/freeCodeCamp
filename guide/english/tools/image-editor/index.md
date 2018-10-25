@@ -24,3 +24,5 @@ Paid Editors need either a one-time payment or are subscription-based. But, tria
 * <a href='https://www.gimp.org/' target='_blank' rel='nofollow'>Gimp</a> - Free | Download | Open-Source
 * <a href='https://www.adobe.com/products/photoshop.html' target='_blank' rel='nofollow'>Photoshop</a> - Free Trial | Paid
 * <a href='https://www.photoshop.com/products/photoshopexpress' target='_blank' rel='nofollow'>Photoshop Express</a> - Free | Mobile
+* <a href='https://inkscape.org' target='_blank' rel='nofollow'>Inkscape</a> - Free | Browser
+* <a href='https://www.pixelmator.com/pro/' target='_blank' rel='nofollow'>Pixelmator Pro</a> - Free Trial | Paid
