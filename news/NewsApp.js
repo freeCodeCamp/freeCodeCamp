@@ -30,7 +30,7 @@ const styles = `
  }
 
 .app-layout h1 {
-  font-size: 42px;
+  font-size: 41px;
 }
 
 .app-layout h2 {
