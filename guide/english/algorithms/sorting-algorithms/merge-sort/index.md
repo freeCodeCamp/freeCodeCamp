@@ -9,7 +9,7 @@ Since this is a recursion based algorithm, we have a recurrence relation for it.
 
 ``` T(n) = 2 * T(n / 2) + O(n) ```
 
-Putting it in plain english, we break down the subproblem into two parts at every step and we have some linear amount of work that we have to do for merging the two sorted halves together at each step. 
+Putting it in plain english, we break down the subproblem into two parts at every step, and we have some linear amount of work that we have to do for merging the two sorted halves together at each step. 
 
 ```
 T(n) = 2T(n/2) + n
@@ -21,7 +21,7 @@ T(n) = 2T(n/2) + n
      = n + n + ... + n + n + n
 ```
      
-Counting the number of repetitions of n in the sum at the end, we see that there are lg n + 1 of them.  Thus the running time is n(lg n + 1) = n lg n + n. We observe that n lg n + n < n lg n + n lg n = 2n lg n for n>0, so the running time is O(n lg n).     
+Counting the number of repetitions of n in the sum at the end, we see that there are lg n + 1 of them.  Thus, the running time is n(lg n + 1) = n lg n + n. We observe that n lg n + n < n lg n + n lg n = 2n lg n for n>0, so the running time is O(n lg n).     
 
 ```Algorithm
 MergeSort(arr[], left,  right):
