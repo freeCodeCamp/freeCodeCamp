@@ -11,6 +11,7 @@ title: Chef
 <p>There is a Chef server which stores each of these cookbooks and as a new chef client node checks in with the server, recipes are sent to tell the node how to configure itself.</p>
 
 <p>The client will then check in every now and again to make sure that no changes have occurred, and nothing needs to change. If it does, then the client deals with it. Patches and updates can be rolled out over your entire infrastructure by changing the recipe. No need to interact with each machine individually.</p>
+<p>Clients should be able to quickly find recipes of their desire by using Tags(for example, a beef wellington may have tags such as 'beef', puff pastry', 'steak') this may help the client find not only the recipe he wants, but other similar recipes that might pique his intrest, or suit his cooking style.</p> 
 
 #### Chef Configuration
 ![Image Title](https://regmedia.co.uk/2015/10/07/chef_configuration_management.jpg)
