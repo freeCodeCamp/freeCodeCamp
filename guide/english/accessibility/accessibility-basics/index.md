@@ -22,7 +22,7 @@ If you fall outside these rather broad categories, please let me know. I always 
 
 ## So, what is accessibility anyway?
 
-Accessibility in itself is a bit of a misleading term sometimes, especially if English is your second language. It is sometimes referred to as inclusive design.
+Accessibility can be a bit of a misleading term sometimes, especially if English is your second language. Another way to describe accessibility is by using the term "inclusive design".
 
 If your site is on the Internet, reachable by anyone with a web browser, in one sense that website is accessible to everyone with a web browser.
 
