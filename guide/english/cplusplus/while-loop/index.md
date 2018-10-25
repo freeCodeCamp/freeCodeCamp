@@ -9,7 +9,7 @@ while(condition) {
    statement(s);
 }
 
-A key point of the while loop is that the loop might not ever run.
+A key point of the while loop is that the loop might not even run.
 When the condition is tested and the result is false, the loop body will be skipped and the first statement after the while loop will be executed.
 
 
@@ -48,6 +48,29 @@ value of a: 18
 value of a: 19
 ```
 
+
+Example of Skipped Loop Body:
+```C++
+#include<iostream>
+using namespace std;
+
+int main(){
+   //Local variable declaration
+   int age=10;
+   
+   //while loop execution
+   while(age>21) {
+   cout<<"The citizen is an adult."<<endl;
+   }
+   
+   return 0;
+}
+```
+
+Output:
+
+```
+```
 
 ###Sources
 www.tutorialspoint.com
