@@ -1,7 +1,7 @@
 ---
 title: Arguments
 ---
-The arguments object is an **array-like object** _(in that the structure of the object is similar to that of an array however it should not be considered an array as it has all the functionality of an object)_ that stores all of the arguments that you passed to a function and is proprietary to that function in particular. If you were to pass 3 arguments to a function, say `storeNames()`, those 3 arguments would be stored inside an object called **arguments** and it would look like this when we pass the arguments `storeNames("Mulder", "Scully", "Alex Krycek")` to our function:
+The arguments object is an **array-like object** _(in that the structure of the object is similar to that of an array however it should not be considered an array as it has all the functionality of an object)_ that stores all of the arguments that you passed to a function and, is proprietary to that function in particular. If you were to pass 3 arguments to a function, say `storeNames()`, those 3 arguments would be stored inside an object called **arguments** and it would look like this when we pass the arguments `storeNames("Mulder", "Scully", "Alex Krycek")` to our function:
 
 *   First, we declare a function and make it return the arguments object.
 
@@ -9,7 +9,7 @@ The arguments object is an **array-like object** _(in that the structure of the 
 function storeNames() { return arguments; }
 ```
 
-*   Then, when we execute that function with **n arguments**, 3 in this case, it will return the object to us and it will **look like** an array. We can convert it to an array, but more on that later...
+*   Then, when we execute that function with **n arguments**, 3 in this case, it will return the object to us, and it will **look like** an array. We can convert it to an array, but more on that later...
 
 ```javascript
 // If we execute the following line in the console:
@@ -21,7 +21,7 @@ If you want to know more about this, such as converting it to an array or the op
 
 ## Treat it as an array
 
-You can invoke arguments by using `arguments[n]` (where _n_ is the index of the argument in the array-like object) but if you want to use it as an array for iteration purposes or applying array methods to it, you need to _convert it to an array_ by declaring a variable and using the Array.prototype.slice.call method (because _arguments_ is not an array):
+You can invoke arguments by using `arguments[n]` (where _n_ is the index of the argument in the array-like object), but if you want to use it as an array for iteration purposes or applying array methods to it, you need to _convert it to an array_ by declaring a variable and using the Array.prototype.slice.call method (because _arguments_ is not an array):
 
 ```javascript
 var args = Array.prototype.slice.call(arguments);
