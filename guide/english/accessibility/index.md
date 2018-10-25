@@ -34,6 +34,8 @@ readers. [Learn more about alt text](https://webaim.org/techniques/alttext/).
 
 Just like Alt text is for people who are visually impaired, transcripts of the audio are for the people who cannot listen. Providing a written document or a transcript of what is being spoken helps make the audio accessible to people who are hard of hearing.
 
+A high level test of a websites accessibilty can be conducted through several online tools.  One is a popular Chrome Browswer extension known as <a href="http://wave.webaim.org/">WAVE</a>.  This will provide you with areas to focus on to present a usable experience for all visitors to the site.
+
 Copyright &copy; 2005 <a href="http://www.w3.org" shape="rect">World Wide Web Consortium</a>, (<a href="http://www.csail.mit.edu/" shape="rect">MIT</a>, <a href="http://www.ercim.org" shape="rect">ERCIM</a>, <a href="http://www.keio.ac.jp" shape="rect">Keio</a>,<a href="http://ev.buaa.edu.cn" shape="rect">Beihang</a>). http://www.w3.org/Consortium/Legal/2015/doc-license
 
 ### More Information:
