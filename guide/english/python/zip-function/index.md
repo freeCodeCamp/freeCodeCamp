@@ -17,6 +17,10 @@ A list of tuple of nth element from all sequences
     print(*nums) # prints 1 2 3 4
     numsAndNames = zip([1,2,3],['one','two','three'])
     print(*numsAndNames) # prints (1,'one') (2,'two') (3,'three')
+    intsAndFloats = [[1, 2.0], [2, 3.0], [4, 5.0]]
+    ints, floats = zip(*intsAndFloats
+    print(ints)
+    print(floats)
 
 ![:rocket:](//forum.freecodecamp.com/images/emoji/emoji_one/rocket.png?v=2 ":rocket:") <a href='https://repl.it/@StuffsExplained/pythonZipFunction' target='_blank' rel='nofollow'>Run Code</a>
 
