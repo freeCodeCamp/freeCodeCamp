@@ -5,6 +5,8 @@ title: Background Opacity
 
 The opacity property specifies the opacity/transparency of an element, that is, the degree to which the content behind the element is visible.
 
+opacity applies to the element as a whole, including its contents, even though the value is not inherited by child elements. Thus, the element and its children all have the same opacity relative to the element's background, even if they have different opacities relative to one another.
+
 The opacity property can take a value from 0.0 - 1.0. The lower value, the more transparent:
 
 Find more details <a href='https://www.w3schools.com/css/css_image_transparency.asp' target='_blank' rel='nofollow'>here</a>
