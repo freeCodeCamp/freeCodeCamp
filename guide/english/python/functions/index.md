@@ -93,6 +93,15 @@ result = s(1, 2)
 # result = 3
 ```
 
+Functions can also return boolean values to make it easy for you to determine whether a condition is true.
+
+```python
+def checkStatus():
+  if(!loggedIn):
+    return False
+  else:
+    return True
+```
 ### Notes
 
 - If a function definition includes parameters, you must provide the same number of parameters when you call the function.
