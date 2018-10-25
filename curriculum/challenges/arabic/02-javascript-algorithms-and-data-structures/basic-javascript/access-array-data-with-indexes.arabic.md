@@ -4,11 +4,11 @@ title: Access Array Data with Indexes
 challengeType: 1
 guideUrl: 'https://arabic.freecodecamp.org/guide/certificates/access-array-data-with-indexes'
 videoUrl: ''
-localeTitle: ''
+localeTitle: 'الوصول إلى مجموعة البيانات مع الانديكس'
 ---
 
 ## Description
-undefined
+
 
 ## Instructions
 undefined
