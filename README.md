@@ -16,7 +16,7 @@ Our full-stack web development curriculum is completely free and self-paced. We 
 * [Certifications](#certifications)
 * [The Learning Platform](#the-learning-platform)
 * [Found a Bug](#found-a-bug)
-* [Found a security issue](#found-a-security-issue)
+* [Found a Security Issue](#found-a-security-issue)
 * [Contributing](#contributing)
 * [License](#license)
 
