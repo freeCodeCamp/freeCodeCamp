@@ -40,5 +40,18 @@ _Black Hat Python: Programação em Python para Hackers e Pentesters_
 *   [Sorriso da Amazônia](https://smile.amazon.com/Black-Hat-Python-Programming-Pentesters/dp/1593275900/)
     
 *   ISBN-10: 1593275900
+
+_Python Crash Course: A Hands-On, Project-Based Introduction to Programming
+by Eric Matthes_
+
+* título em português: Curso Intensivo de Python - Uma Introdução Prática e Baseada Em Projetos À Programação
+
+* Livro iniciante para a linguagem python, com linguagem amigável, baseado em 3 projetos diferentes que o livro faz passo a passo e ainda dá dicas de como melhorá-los. Possui também uma introdução ao Git.
+
+* [Website](https://nostarch.com/pythoncrashcourse)
+
+* [Versão em português na Saraiva](https://www.saraiva.com.br/curso-intensivo-de-python-uma-introducao-pratica-e-baseada-em-projetos-a-programacao-9354958.html)
+
+* ISBN-13: 978-1-59327-603-4
     
     Por favor, sinta-se livre para adicionar mais que você achou útil!
