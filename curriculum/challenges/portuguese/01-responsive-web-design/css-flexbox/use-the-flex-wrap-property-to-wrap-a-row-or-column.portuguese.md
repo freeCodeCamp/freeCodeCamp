@@ -7,10 +7,12 @@ localeTitle: Use a propriedade flex-wrap para agrupar uma linha ou coluna
 ---
 
 ## Description
-<section id="description"> Flexbox CSS tem um recurso para dividir um item flexível em várias linhas (ou colunas). Por padrão, um contêiner flexível acomodará todos os itens flexíveis juntos. Por exemplo, uma linha estará toda em uma linha. No entanto, usando a propriedade <code>flex-wrap</code> , ele diz ao CSS para agrupar itens. Isso significa que itens extras são movidos para uma nova linha ou coluna. O ponto de quebra de onde o acondicionamento acontece depende do tamanho dos itens e do tamanho do contêiner. CSS também tem opções para a direção do envoltório: <ul><li> <code>nowrap</code> : esta é a configuração padrão e não envolve itens. </li><li> <code>wrap</code> : envolve os itens da esquerda para a direita, se estiverem em uma linha ou de cima para baixo, se estiverem em uma coluna. </li><li> <code>wrap-reverse</code> : envolve itens de baixo para cima, se estiverem em uma linha, ou da direita para a esquerda, se estiverem em uma coluna. </li></ul></section>
+<section id="description"> Flexbox CSS tem um recurso para dividir itens flexíveis em várias linhas (ou colunas). Por padrão, um contêiner flexível acomodará todos os itens flexíveis juntos. Por exemplo, uma <code>row</code> (linha) estará toda em uma linha.
+No entanto, usando a propriedade <code>flex-wrap</code> , faz com que o CSS agrupe os itens. Isso significa que itens extras são movidos para uma nova linha ou coluna. O ponto onde haverá a quebra depende do tamanho dos itens e do tamanho do contêiner.
+CSS também tem opções para a direção do agrupamento: <ul><li> <code>nowrap</code> : esta é a configuração padrão e não agrupa os itens. </li><li> <code>wrap</code> : agrupa os itens da esquerda para a direita, se estiverem em uma linha ou de cima para baixo, se estiverem em uma coluna. </li><li> <code>wrap-reverse</code> : agrupa os itens de baixo para cima, se estiverem em uma linha, ou da direita para a esquerda, se estiverem em uma coluna. </li></ul></section>
 
 ## Instructions
-<section id="instructions"> O layout atual tem muitas caixas para uma linha. Adicione a propriedade CSS <code>flex-wrap</code> ao elemento <code>#box-container</code> e atribua a ela um valor de wrap. </section>
+<section id="instructions"> O layout atual tem muitas caixas para uma só linha. Adicione a propriedade CSS <code>flex-wrap</code> ao elemento <code>#box-container</code> e atribua a ela um valor de <code>wrap</code>. </section>
 
 ## Tests
 <section id='tests'>

@@ -8,7 +8,7 @@ Article titles should be as short, concise, and to-the-point as possible.
 
 We want campers to quickly find the information they're looking for, and the title should reflect the main theme of the article.
 
-Folder name is used in the URL, so only use dashes -, numbers 0-9, and lowercase letters a-z for it.
+Folder name is used in the URL, so only use dashes (-), numbers (0-9), and lowercase letters (a-z) for it.
 
 However, you can include special characters in the article title.
 
@@ -120,6 +120,17 @@ Use Markdown style links in your articles to link to other websites.
 > `https://example.com/a-long/url/to-a-webpage/?queryParam=something&queryParam=somethingelse`
 > becomes
 > `https://example.com/a-long/url/to-a-webpage/`
+
+## List
+
+You can make an unordered list by preceding one or more lines of text with - or *
+To order your list, precede each line with a number.
+
+```markdown
+    - Hello user!
+    * Hey there!
+
+```
 
 ## Images
 

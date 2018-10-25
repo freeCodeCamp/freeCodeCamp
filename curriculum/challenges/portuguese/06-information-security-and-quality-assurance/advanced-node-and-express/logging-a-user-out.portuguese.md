@@ -7,11 +7,11 @@ localeTitle: Como desconectar um usuário
 ---
 
 ## Description
-<section id="description"> Como lembrete, este projeto está sendo construído sobre o seguinte projeto inicial no <a href="https://glitch.com/#!/import/github/freeCodeCamp/boilerplate-advancednode/">Glitch</a> , ou clonado a partir do <a href="https://github.com/freeCodeCamp/boilerplate-advancednode/">GitHub</a> . Criando a lógica de logout é fácil. A rota deve apenas não autenticar o usuário e redirecionar para a home page, em vez de renderizar qualquer visualização. No passaporte, não autenticar um usuário é tão fácil quanto apenas chamar <code>req.logout();</code> antes de redirecionar. <pre> app.route (&#39;/ logout&#39;)
+<section id="description"> Como lembrete, este projeto está sendo construído sobre o seguinte projeto inicial no <a href="https://glitch.com/#!/import/github/freeCodeCamp/boilerplate-advancednode/">Glitch</a> , ou clonado a partir do <a href="https://github.com/freeCodeCamp/boilerplate-advancednode/">GitHub</a> . Criar a lógica de logout é fácil. A rota deve apenas não autenticar o usuário e redirecionar para a home page, em vez de renderizar qualquer visualização. No passaporte, não autenticar um usuário é tão fácil quanto apenas chamar <code>req.logout();</code> antes de redirecionar. <pre> app.route (&#39;/ logout&#39;)
   .get ((req, res) =&gt; {
       req.logout ();
       res.redirect (&#39;/&#39;);
-  }); </pre> Você deve ter notado que também não estamos lidando com páginas ausentes (404), a maneira comum de lidar com isso no Node é com o seguinte middleware. Vá em frente e adicione isso depois de todas as outras rotas: <pre> app.use ((req, res, next) =&gt; {
+  }); </pre> Você deve ter notado que também não estamos lidando com páginas ausentes (404), a maneira mais comum de lidar com isso no Node é com o seguinte middleware. Vá em frente e adicione isso depois de todas as outras rotas: <pre> app.use ((req, res, next) =&gt; {
   res.status (404)
     .type (&#39;text&#39;)
     .send (&#39;Não encontrado&#39;);

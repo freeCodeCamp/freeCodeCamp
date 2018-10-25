@@ -12,7 +12,7 @@ You can:
 1. 🍴 [Fork this repo](https://github.com/freeCodeCamp/freeCodeCamp#fork-destination-box)
 2. 👀️ Follow the contributing guidelines outlined below.
 3. 🔧 Make some awesome changes!
-4. 📖 Read this [style guide for best practices](/docs/style-guide-for-guide-articles).
+4. 📖 Read this [style guide for best practices](/docs/style-guide-for-guide-articles.md).
 5. 👉 [Make a pull request](https://github.com/freeCodeCamp/freeCodeCamp/compare)
 6. 🎉 Get your pull request approved - success!
 
@@ -25,7 +25,7 @@ Or just [create an issue](https://github.com/freeCodeCamp/freeCodeCamp/issues) -
 There are two ways you can propose a change to the repository, after you edit or add a Guide article:
 
 - [Using the GitHub Web Interface on your browser](#using-the-github-web-interface-on-your-browser).
-- [Working on your local machine](#working-on-your-local-machine) (_recommended_ for previewing changes).
+- [Working on your local machine (_recommended_ for previewing changes)](#working-on-your-local-machine-recommended-for-previewing-changes).
 
 #### Using the GitHub Web Interface on your browser
 
@@ -35,7 +35,7 @@ Watch the video demonstration or follow the steps below it:
 
 ![GIF showing the GitHub interface steps](#)
 
-1. Go into the **"pages"** folder (located in [`client/src/pages/guide`](/client/src/pages/guide)) and find the article stub you'd like to write or edit.
+1. Go into the **"pages"** folder (located in [`guide`](/guide)) and find the article stub you'd like to write or edit.
 
     > All stubs will be in an index.md file
 
@@ -60,7 +60,7 @@ Watch the video demonstration or follow the steps below it:
 
     This does not take any additional time than a unconventional message like 'update file' or 'add index.md'
 
-    You can learn more at about [why your should these here](https://www.conventionalcommits.org/en/v1.0.0-beta.2/#why-use-conventional-commits).
+    You can learn more at about [why you should use these here](https://www.conventionalcommits.org/en/v1.0.0-beta.2/#why-use-conventional-commits).
 
 4. Then select the radio button option for **"Create a new branch for this commit and start a pull request"** and click <kbd>Propose file changes</kbd>.
 
@@ -79,7 +79,7 @@ You are not required to work on your local machine, unless you would like to pre
 Here are a few guidelines the reviewers follow when reviewing PRs:
 
 - there is a relevant description and title
-- PR respects the [style guide](/docs/style-guide-for-guide-articles)
+- PR respects the [style guide](/docs/style-guide-for-guide-articles.md)
 - we follow general QA tips found in [Moderator guidelines](https://forum.freecodecamp.org/t/freecodecamp-moderator-guidelines/18295)
 - as long as a pull request improves or expands the guide, we accept it even if it contains imperfect English or partial content
 - older pull requests are reviewed first
