@@ -4,7 +4,7 @@ title: Box Shadow
 
 ## Box Shadow
 
-The `box-shadow` property attaches one or more shadows around the frame of an element (can be inside). It's an option that give you the power to easily design wonderful shadow effects. Box shadows are a great way to elevate the visuals of your web page.
+The box-shadow CSS property adds shadow effects around an element's frame. You can set multiple effects separated by commas. A box shadow is described by X and Y offsets relative to the element, blur and spread radii, and color.
 
 A box shadow can be described with several properties including:
 * X and Y offset from the element
