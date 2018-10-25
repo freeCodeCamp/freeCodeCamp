@@ -96,3 +96,7 @@ Using the returned value, without checking if the allocation is successful, invo
 Failure to deallocate memory using `free` leads to buildup of non-reusable memory, which is no longer used by the program.
 * Logical errors
 All allocations must follow the same pattern: allocation using `malloc`, usage to store data, deallocation using `free`. If you not follow this pattern usually segmentation fault errore will be given and the program will crash. These errors can be transient and hard to debug – for example, freed memory is usually not immediately reclaimed by the system, and dangling pointers may persist for a while and appear to work.
+
+##Dynamic Memory Management Using Linked List
+Linked list is type of data structure where we can allocate memory to each new node individually during runtime .Each node in the linked list consist of memory address of next as well as previous node and data field.In case of linked list we dont need to declare or allocate memory previously so there is no question of wastage of memory .Inserting a new node as well as deletion of any node is easier as we dont need to move other elements it is done with just by changing links.And there is no question of ArrayOutOfBound Exception.
+Use of linked list instead of array for big data and consisting more than 2 data fields is more profitable and makes code more efficient.
