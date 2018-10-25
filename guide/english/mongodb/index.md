@@ -34,7 +34,8 @@ MongoDB is a distributed database at its core, so high availability, horizontal 
 4. High Availability
 5. Horizontal Scalability
 
-
+### Installation Guide
+[Install MongoDB](https://docs.mongodb.com/manual/installation/)
 ### More Information
 [What is Mongo DB?](https://www.mongodb.com/what-is-mongodb)
 
