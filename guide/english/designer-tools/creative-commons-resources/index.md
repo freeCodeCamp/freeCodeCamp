@@ -33,6 +33,11 @@ All of the following resources should [be licensed under Creative Commons](https
 - [New Old Stock](http://nos.twnsnd.co/)
 - [Public Domain Archive](http://publicdomainarchive.com/)
 - [Wikimedia Creative Commons](https://commons.wikimedia.org/wiki/Main_Page)
+- [Let's CC](http://eng.letscc.net/)
+- [LibreShot](https://libreshot.com/)
+- [Free Nature Stock](http://freenaturestock.com/)
+- [Free Vintage Illustrations](https://freevintageillustrations.com/)
+- [Splashbase CC](http://www.splashbase.co/images?images=true)
 
 This is by no means an exhaustive list, but if you need some seriously high-resolution images to freely use - consider checking some of them out. 
 
