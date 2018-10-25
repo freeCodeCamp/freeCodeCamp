@@ -71,7 +71,7 @@ function hello() {
  hello(); 
 ```
 
-```
+```javascript
 function hello() { 
   // The statements below are not going to get executed 
   /* 
