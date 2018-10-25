@@ -21,7 +21,7 @@ localeTitle: إمكانية الوصول
 تمامًا مثل النص البديل للأشخاص الذين يعانون من ضعف البصر ، فإن نصوص الصوت مخصصة للأشخاص الذين لا يمكنهم الاستماع. تقديم وثيقة مكتوبة أو نسخة من ما يتم التحدث به للأشخاص الذين يعانون من صعوبة في السمع.
 
 حقوق النشر © 2005 [اتحاد شبكة الويب العالمية](http://www.w3.org) ( [MIT](http://www.csail.mit.edu/) ، [ERCIM](http://www.ercim.org) ، [Keio](http://www.keio.ac.jp) ، [Beihang](http://ev.buaa.edu.cn) ). http://www.w3.org/Consortium/Legal/2015/doc-license
-
+my text
 ### معلومات اكثر:
 
 [مقدمة w3.org لإمكانية الوصول.](https://www.w3.org/WAI/intro/accessibility.php) [مشروع A11Y](http://a11yproject.com/)
