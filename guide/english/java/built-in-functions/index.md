@@ -11,3 +11,6 @@ import java.io.*;
 ```
 
 These comprise functions which make an otherwise long and hard task easier to do.
+
+Some of the commonly used function classes are found in ```java.lang.util``` and ```java.lang.Math```.
+When in doubt, look to the Java docs to see if you can leverage an existing built in function.
