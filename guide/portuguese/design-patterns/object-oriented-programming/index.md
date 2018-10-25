@@ -4,7 +4,7 @@ localeTitle: Programação Orientada a Objetos (OOP)
 ---
 ## Esboço
 
-*   Porquê orientado a objeto (doravante abreviado como OOP)?
+*   Por que orientado a objeto (doravante abreviado como OOP)?
 *   Conceitos OOP
 *   Qual o próximo?
 
