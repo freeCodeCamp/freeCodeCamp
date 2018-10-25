@@ -42,6 +42,6 @@ canvas = document.getElementById("canvas");
 
 Para ver este concepto en acción, vea la página ' [Simulador de partículas](/articles/canvas/particle-sim) '.
 
-#### Más información:
+#### Para Más información:
 
 *   [API MDN Canvas](https://developer.mozilla.org/en-US/docs/Web/API/Canvas_API)
