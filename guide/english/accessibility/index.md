@@ -27,6 +27,8 @@ them. Alt text should be short and to the point--generally [no more than five to
 
 Just like alt text is for people who are visually impaired, transcripts of the audio are for the people who cannot listen. Videos should always be captioned. Providing a written document or a transcript of what is being spoken makes this content accessible to people who are Deaf or hard of hearing, with speech-processing disabilities, those using devices without sound capability, and people on slow or data-limited devices that make loading videos cumbersome or impossible.
 
+The W3's WCAG (Web Content Accessibility Guidelines) also recommend a certain level of colour contrast for text, stating that the foreground and background should be clearly separate. Because larger text is already easier to read than smaller text, the colour contrast requirements are lower. [Learn more about the W3's colour contrast guidelines](https://www.w3.org/TR/UNDERSTANDING-WCAG20/visual-audio-contrast-contrast.html).
+
 Copyright &copy; 2005 <a href="http://www.w3.org" shape="rect">World Wide Web Consortium</a>, (<a href="http://www.csail.mit.edu/" shape="rect">MIT</a>, <a href="http://www.ercim.org" shape="rect">ERCIM</a>, <a href="http://www.keio.ac.jp" shape="rect">Keio</a>,<a href="http://ev.buaa.edu.cn" shape="rect">Beihang</a>). http://www.w3.org/Consortium/Legal/2015/doc-license
 
 ### More Information:
