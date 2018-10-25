@@ -94,11 +94,13 @@ Another important option to consider when using short If/Else statements is the 
 
 Also there is an alternative syntax for control structures
 ~~~~
+<?php
   if (condition1):
     statement1;
   endif;
   else
     statement5;
+?>
 ~~~~
 For more information check out the following link:
 <a href='http://php.net/manual/en/control-structures.alternative-syntax.php' target='_blank' rel='nofollow'>PHP Alternative syntax for control structures</a>
