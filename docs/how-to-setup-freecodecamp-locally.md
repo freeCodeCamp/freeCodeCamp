@@ -261,7 +261,7 @@ Follow these steps:
 
 2. Next, you would want to `rebase` from the `upstream`.
 
-    This step **will sync the lastest changes** from the main repository of freeCodeCamp. Its important that you rebase as often as possible, to avoid conflicts later.
+    This step **will sync the latest changes** from the main repository of freeCodeCamp. It's important that you rebase as often as possible, to avoid conflicts later.
 
     ```shell
     git pull --rebase upstream master
@@ -299,7 +299,7 @@ Follow these steps:
 
 5. Once you are happy with the changes you should optionally run freeCodeCamp locally to preview the changes.
 
-6. Make sure you fix any errors, and check the formating of your changes. We have style guide for the Guide articles and Coding challenges.
+6. Make sure you fix any errors, and check the formatting of your changes. We have style guide for the Guide articles and Coding challenges.
 
 7. Next, check and confirm the files you are updating
 
@@ -386,7 +386,7 @@ Follow these steps:
 
     Keep these short, not more than 50 characters. You can always add additional information in the description of the commit message.
 
-    This does not take any additional time than a unconventional message like 'update file' or 'add index.md'
+    This does not take any additional time than an unconventional message like 'update file' or 'add index.md'
 
     You can learn more about why you should use conventional commits [here](https://www.conventionalcommits.org/en/v1.0.0-beta.2/#why-use-conventional-commits).
 
