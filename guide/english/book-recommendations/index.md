@@ -141,6 +141,16 @@ title: Books to Read for Programmers
 - [Amazon Smile](https://smile.amazon.com/Core-Python-Applications-Programming-3rd/dp/0132678209)
 - ISBN-13: 978-0132678209
 
+## Ruby
+
+*Programming Ruby 1.9 & 2.0: The Pragmatic Programmers' Guide (The Facets of Ruby) 4th Edition
+- https://www.amazon.com/Programming-Ruby-1-9-2-0-Programmers/dp/1937785491
+- ISBN-13: 978-1937785499
+
+*The Well Grounded Rubyist (3rd Edition)
+- https://www.amazon.com/Well-Grounded-Rubyist-David-Black/dp/1617295213
+- ISBN-13: 978-1617295218
+
 ## Soft Skills
 
 *Soft Skills: The software developer's life manual*
