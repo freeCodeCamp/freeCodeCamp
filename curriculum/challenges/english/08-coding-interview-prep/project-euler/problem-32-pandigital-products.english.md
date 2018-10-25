@@ -26,9 +26,9 @@ HINT: Some products can be obtained in more than one way so be sure to only incl
 ```yml
 tests:
   - text: <code>pandigitalProducts()</code> is a function.
-    testString: 'assert(typeof pandigitalProducts === "function", "<code>pandigitalProducts()</code> is a function.");'
+    testString: assert(typeof pandigitalProducts === 'function', '<code>pandigitalProducts()</code> is a function.');
   - text: <code>pandigitalProducts()</code> should return 45228.
-    testString: 'assert.strictEqual(pandigitalProducts(), 45228, "<code>pandigitalProducts()</code> should return 45228.");'
+    testString: assert.strictEqual(pandigitalProducts(), 45228, '<code>pandigitalProducts()</code> should return 45228.');
 
 ```
 
@@ -75,7 +75,7 @@ function pandigitalProducts() {
     return true;
   }
   function concatenateNums(...numbers) {
-    let digitStr = ";
+    let digitStr = '';
     for (let i = 0; i < numbers.length; i++) {
       digitStr += numbers[i].toString();
     }

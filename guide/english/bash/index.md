@@ -55,10 +55,14 @@ Sometimes the script won't be executed, and the above command will return an err
 ```
 zach@marigold:~$ chmod u+x myBashScript.sh
 ````
+or
+```
+zach@marigold:~$ chmod 744 myBashScript.sh
+````
 And then execute the script.
 ### More Information:
 
-* Wikipedia: https://en.wikipedia.org/wiki/Bash_(Unix_shell)
-* tldp.org Guide to Bash: http://tldp.org/HOWTO/Bash-Prog-Intro-HOWTO.html#toc2
-* gnu.org Bash manual: https://www.gnu.org/software/bash/manual/html_node/index.html#SEC_Contents
-* Shell scripting tutorial to get started: https://www.shellscript.sh/
+* [Wikipedia - Bash](https://en.wikipedia.org/wiki/Bash_(Unix_shell))
+* [tldp.org - Guide to Bash](http://tldp.org/HOWTO/Bash-Prog-Intro-HOWTO.html#toc2)
+* [gnu.org - Bash manual](https://www.gnu.org/software/bash/manual/html_node/index.html#SEC_Contents)
+* [Shell scripting tutorial](https://www.shellscript.sh/)
