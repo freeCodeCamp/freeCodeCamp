@@ -32,3 +32,22 @@ finally {
 // block of code to be executed after try block ends
 }
 ```
+
+## Example
+Here is a practical example.  Suppose you are using a Scanner object to input an integer.  If the user enters a decimal instead of an integer, an error would normally occur, causing the program to end. However, if you add an exception clause as shown below, the error can be caught and allow your program to continue running. 
+
+```
+Scanner input = new Scanner(System.in);
+try
+{
+    System.out.print("Enter an integer: ");
+    int num1 = input.nextInt(); 
+    System.out.printf("You entered the number %d%n", num1); 
+}
+catch(InputMismatchException e)  
+{
+    System.out.println("Must enter a valid integer.");
+    input.nextLine(); //clear the input line of previous input
+}   
+```
+If an integer is entered, the "try" code block will execute successfully.  If something other than an integer is entered, the "catch" code block will execute.
