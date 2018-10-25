@@ -1,23 +1,27 @@
 // Searching Linearly And Printing The Position Of the Element//
-
-#include <stdio.h> //Taking Standard Input-Output//
-main()
+ #include <stdio.h> //Taking Standard Input-Output//
+int main()
 {
 int a[20],n,i,j,s; // Taking maximum Size of Array as 20 elements //
 printf("Enter Size of Array (less than 20)\n");
 scanf("%d",&n); //Taking Size Of Array From the user
-printf("Enter value of Elements of Array\n);
-for (i=0;i<n;i++);
+printf("Enter value of Elements of Array\n");
+for (i=0;i<n;i++)
 {                      // Taking Value For Each Element //
 scanf("%d",&a[i]);
 }
-printf("Enter Value To be Searched");
+printf("Enter Value To be Searched\n");
 scanf("%d",&s);        //Asking For Values To be Searched//
-for (i=0;i<=n;i++);
+for (i=0;i<n;i++)
 {
-if (s==a[i])           // Applying Search Condition//
-printf("Match Found!! Its Position is",i+1);
+if (a[i]==s)           // Applying Search Condition//
+{
+	printf("Match Found!! Its Position is %d",i+1);
+
+break;
 }
-if(i==n);
+}
+if(i==n)
 printf("Match Not Found");
+
 }
