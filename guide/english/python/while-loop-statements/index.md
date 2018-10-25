@@ -50,17 +50,17 @@ Line-by-Line Explanation of the above CODE:
 
 ## Infinite Loops:
 
-As previously noted, a 'while' loop will run until the conditional logic is false. Because of this, it is important to  set a "false" condition within the executable code. If no false is included, the while loop will run infinitely. Use caution when setting logic parameters to prevent the infinite loop unless that is the desired output.
-A simple example of this would be as follows:
-Let's say we wish to print out the first N natural numbers on the screen.
+As previously noted, a 'while' loop will run until the conditional logic is false. Because of this, it is important to  set a "false" condition within the executable code. If no false is included, the while loop will run infinitely. Use caution when setting logic parameters to prevent the infinite loop unless that is the desired output.  
+A simple example of this would be as follows:  
+Let's say we wish to print out the first N natural numbers on the screen.  
 ```python
 N = int(input('Enter a number: '))
 i = 1
 while i <= N:
    print(i)
 ```
-If we try running this code, we'll encounter an infinite loop. That's because we skipped an important task in our code. Can you guess what? We forgot to update the value of i after each iteration, which means that 'i' never exceeds the value of 'N'.
-*Note:* If you find yourself in an infinite loop and can't figure out how to end the nightmare, don't worry. Just hit `ctrl+c` on your keyboard.
+If we try running this code, we'll encounter an infinite loop. That's because we skipped an important task in our code. Can you guess what? We forgot to update the value of i after each iteration, which means that 'i' never exceeds the value of 'N'.  
+*Note:* If you find yourself in an infinite loop and can't figure out how to end the nightmare, don't worry. Just hit `ctrl+c` on your keyboard.  
 Now let's fix our program with a simple line.
 ```python
 N = int(input('Enter a number: '))
