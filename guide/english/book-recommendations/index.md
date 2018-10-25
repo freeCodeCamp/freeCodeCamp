@@ -102,6 +102,13 @@ title: Books to Read for Programmers
 - [Wiley](https://www.wiley.com/en-id/Programming+Interviews+Exposed:+Secrets+to+Landing+Your+Next+Job,+2nd+Edition-p-9780470121672)
 - ISBN: 978-0-470-12167-2
 
+## HTML & CSS
+
+*HTML & CSS - design and build websites* by Jon Duckett
+- [Wiley](https://www.wiley.com/en-us/Web+Design+with+HTML%2C+CSS%2C+JavaScript+and+jQuery+Set-p-9781119038634)
+- ISBN: 978-1-118-00818-8
+
+
 ## Java
 
 *Head First Java* by Kathy Sierra and Bert Bates
@@ -127,7 +134,7 @@ title: Books to Read for Programmers
 - [Amazon Smile](https://smile.amazon.com/JavaScript-Good-Parts-Douglas-Crockford/dp/0596517742)
 - ISBN-13: 978-0596517748
 
-*JavaScript and JQuery: Interactive Front-End Web Development*
+*JavaScript and JQuery: Interactive Front-End Web Development* by Jon Duckett
 - [Amazon Smile](https://smile.amazon.com/JavaScript-JQuery-Interactive-Front-End-Development/dp/1118531647/?pldnSite=1)
 - ISBN-13: 978-1118531648 
 
