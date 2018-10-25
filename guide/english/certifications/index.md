@@ -5,7 +5,7 @@ title: Certifications
 
 ### Overview
 
-There are six freeCodeCamp certificates:
+There are six freeCodeCamp certificates:-
 
 - Responsive Web Design
 - Algorithms and Data Structures
