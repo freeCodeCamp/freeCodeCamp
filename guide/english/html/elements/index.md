@@ -7,7 +7,7 @@ Elements are the building blocks of HTML that describe the structure and content
 
 HTML syntax uses the angle brackets ("&lt;" and "&gt;") to hold the name of an HTML element. Elements usually have an opening tag and a closing tag, and give information about the content they contain. The difference between the two is that the closing tag has a forward slash.
 
-Here's an example using the [p element](#) (`<p>`) to tell the browser that a group of text is a paragraph:
+Here's an example using the [p element](#) (`<p>`) to tell the browser that a group of text is a paragraph. Notice the forward slash in the closing tag:
 
 ```html
 <p>This is a paragraph.</p>
@@ -71,7 +71,7 @@ Here's an example of a page with a [head element](#the-head-element), a [body el
 
 ## The HEAD Element
 
-This is the container for processing information and metadata for an HTML document.
+This is the container for processing information and metadata for an HTML document. It is also the container where you put scripts that need to run on the website with the <script></script> tags
 
 ```html
 <head>
@@ -105,10 +105,11 @@ Creates a hyperlink to direct visitors to another page or resource.
 
 ## Other Resources
 
-- [HTML Paragraphs](#)
-- [HTML br](#)
-- [HTML Links](#)
-- [HTML Images](#)
-- [HTML Head](#)
-- [HTML Body](#)
-- [HTML DOCTYPE](#)
+- [Complete HTML tag reference](https://www.w3schools.com/tags/default.asp)
+- [HTML Paragraphs](https://www.w3schools.com/tags/tag_p.asp)
+- [HTML br](https://www.w3schools.com/tags/tag_br.asp)
+- [HTML a (Links)](https://www.w3schools.com/tags/tag_a.asp)
+- [HTML Images](https://www.w3schools.com/tags/tag_img.asp)
+- [HTML Head](https://www.w3schools.com/tags/tag_head.asp)
+- [HTML Body](https://www.w3schools.com/tags/tag_body.asp)
+- [HTML DOCTYPE](https://www.w3schools.com/tags/tag_doctype.asp)
