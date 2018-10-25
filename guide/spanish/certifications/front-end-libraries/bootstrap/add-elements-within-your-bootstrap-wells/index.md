@@ -42,3 +42,5 @@ Como tenemos que declarar 3 botones en cada caja, haríamos lo siguiente:
  </div> 
 
 ```
+
+Es muy important que sigas las instrucciones para completar la tarea.
