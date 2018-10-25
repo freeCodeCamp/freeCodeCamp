@@ -2,7 +2,7 @@
 title: Deep Learning
 ---
 ## Deep Learning
-Deep Learning refers to a technique in Machine Learning where you have a lots of artificial neural networks stacked together in some architecture.
+Deep Learning refers to a technique in Machine Learning where you have lots of artificial neural networks stacked together in some architecture.
 
 To the uninitiated, an artificial neuron is basically a mathematical function of some sort. And neural nets are neurons conected to each other.  So in deep learning, you have lots of mathematical functions stacked on top (or on the side) of each other in some architecture. Each of the mathematical functions may have its own parameters (for an instance, an equation of a line `y = mx + c` has 2 parameters `m` and `c`) which need to be learned (during training). Once learned for a given task (say for classifying cats and dogs), this stack of mathematical functions (neurons) is ready to do its work of classifying images of cats and dogs.
 
@@ -13,15 +13,15 @@ Coming up with set of rules manually for some of the tasks can very tricky (thou
 
 Deep Learning helps tackle this problem of figuring out the set of rules that can classify an image as that of a cat or a dog, automatically! All it needs is bunch of images that are already correctly classified as that of a cat or a dog and it'll be able to learn the required set of rules. Magic!
 
-Turns out that there are a lot of problems out there which are not image-related (like voice recognition), where finding the set of rules is very tricky. Deep Learning can help with that provided there is lot of labelled data already present.
+Turns out that there are a lot of problems out there which are not image-related (like voice recognition), where finding the set of rules is very tricky. Deep Learning can help with that provided there is lot of labeled data already present.
 
 ### How to train a deep learning model?
-Training a deep neural network (a.k.a. our stack of mathematical functions arranged in some architecture) is basically an art with lot of hyper-parameters. Hyper-parameters are basically things such as which mathematical function to use, or which architecture to use, that you need to manually figure until your network is able to successfully classify cats and dogs. In order to train, you need lots of labelled data (in this case lots of images already classified as cats or dogs) and lots computing power and patience!
+Training a deep neural network (a.k.a. our stack of mathematical functions arranged in some architecture) is basically an artform with lot of hyper-parameters. Hyper-parameters are things such as which mathematical function to use, or which architecture to use, that you need to manually configure until your network is able to successfully classify cats and dogs. In order to train, you need lots of labeled data (in this case lots of images already classified as cats or dogs), lots of computing power, and patience!
 
 In order to train, you provide a neural network with a loss function which basically says how different are the results of the neural network vs the correct answers. Depending on the value of the loss function, you change the parameters of the mathematical function in such a way that the next time your network tries to classify the same image, the value of loss function is lower. You keep on finding the value of the loss function and updating the parameters again and again across the entire training data set until the loss function values are within reasonable margins. Your massive neural network is now ready!
 
 ### Some standard Neural Network architectures
-Over the past few years, some of the models (i.e. the combination of the mathematical functions, the architecture, and the parameters) have become standard for certain tasks. For instance, a model called Resnet-152 won the Imagenet Challenge in 2015 which involves trying to classify images into 1000 categories (cats and dogs included). If you are planning to do similar tasks, then the recommendation is to start with such standard models and tweak them if they don't meet your requirements.
+Over the past few years, some of the models (i.e. the combination of mathematical functions, architecture, and parameters) have become standard for certain tasks. For instance, a model called Resnet-152 won the Imagenet Challenge in 2015 which involves trying to classify images into 1000 categories (cats and dogs included). If you are planning to do similar tasks, then the recommendation is to start with such standard models and tweak them if they don't meet your requirements.
 
 A resnet-152 model looks like this (Don't worry if you don't understand it. It's just bunch of mathematical functions stacked on top of each other in some interesting fashion):
 
