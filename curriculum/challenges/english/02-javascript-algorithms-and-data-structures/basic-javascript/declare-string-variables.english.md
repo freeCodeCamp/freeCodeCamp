@@ -40,7 +40,7 @@ tests:
 var firstName = "Alan";
 var lastName = "Turing";
 
-// Only change code below this line
+// Add your code below this line
 
 
 ```
@@ -64,8 +64,8 @@ if(typeof myFirstName !== "undefined" && typeof myLastName !== "undefined"){(fun
 
 
 ```js
-var myFirstName = "Alan";
-var myLastName = "Turing";
+var myFirstName = "Student";
+var myLastName = "Name";
 ```
 
 </section>
