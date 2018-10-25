@@ -6,7 +6,7 @@ title: Data Binding
 
 #### Motivation
 
-Data often defines the look of an application. Interpreting that data into the user interface involves class logic  (`.component.html`)  and a template view  (`.component.ts`) . Angular connects them through data binding. Think of data binding as a tool for component interaction.
+Data often defines the look of an application. Interpreting that data into the user interface involves class logic  (`*.component.ts`)  and a template view  (`*.component.html`) . Angular connects them through data binding. Think of data binding as a tool for component interaction.
 
 #### Component and Template
 
