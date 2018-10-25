@@ -9,23 +9,23 @@ much time and effort.
 
 **Install**:
 
-npm:
+#### npm:
 
 ```shell 
 npm install angular
 ```
-HTML:
+#### HTML:
 
 ```html
 <script src="/node_modules/angular/angular.js"></script>
 ```
 
-bower:
+#### bower:
 
 ```shell
 bower install angular
 ```
-HTML:
+#### HTML:
 
 ```html
 <script src="/bower_components/angular/angular.js"></script>
