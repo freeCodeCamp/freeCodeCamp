@@ -12,6 +12,10 @@ Find more details <a href='https://www.w3schools.com/css/css_image_transparency.
 You can choose up to what extent you want to make the element transparent.
 You have to add the following CSS property to achieve the transparency levels.
 
+**Syntax**
+
+A number in the range 0.0 to 1.0, inclusive, representing the opacity of the channel (that is, the value of its alpha channel). Any value outside the interval, though valid, is clamped to the nearest limit in the range.
+  
 **Fully Opaque**
 ```css
 .class-name {
