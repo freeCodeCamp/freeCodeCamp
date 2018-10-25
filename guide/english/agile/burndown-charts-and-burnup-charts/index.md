@@ -21,3 +21,4 @@ Burnup charts are very similar, but they show the work that has been completed v
 <a href='https://www.linkedin.com/pulse/burn-up-vs-down-chart-alaa-el-beheri-cisa-rmp-pmp-bcp-itil/' target='_blank' rel='nofollow'>Burn up vs burn down chart- LinkedIn</a>
 
 
+### get information
