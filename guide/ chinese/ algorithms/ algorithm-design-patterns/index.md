@@ -23,5 +23,5 @@ localeTitle: 算法设计模式
 这些是识别对象之间的通用通信模式并实现这些模式的设计模式。通过这样做，这些模式增加了进行该通信的灵活性。
 
 #### 更多信息：
-
+my changes.
 [设计模式 - 维基百科](https://en.wikipedia.org/wiki/Design_Patterns)
