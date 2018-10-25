@@ -15,9 +15,8 @@ With PHP there are many features built into the core functionality of the langua
 database simple and easy.
 
 Some Examples from Mysqli are-
+
 ```
-<?php
 $con=mysqli_connect("localhost","root","","db_name") or die("Invalid User or Password...cannot connect");
-?>
 ```
 here we are connecting to a database on the phpmyadmin structure with no password and database name-db_name
