@@ -21,7 +21,7 @@
     "prepare": "npm run build",
     "repack": "babel-node ./repack.js",
     "semantic-release": "semantic-release",
-    "test": "node ./test-challenges.js | tap-spec",
+    "test": "mocha --delay --reporter progress",
     "unpack": "babel-node ./unpack.js"
   },
   "dependencies": {
@@ -45,6 +45,7 @@
     "babel-preset-stage-3": "^6.24.1",
     "babel-standalone": "^6.26.0",
     "browserify": "^16.2.2",
+    "chai": "4.2.0",
     "enzyme": "^3.7.0",
     "enzyme-adapter-react-16": "^1.6.0",
     "eslint": "^4.19.1",
@@ -61,6 +62,7 @@
     "jsdom": "^12.2.0",
     "lint-staged": "^7.2.0",
     "lodash": "^4.17.10",
+    "mocha": "5.2.0",
     "node-sass": "4.9.4",
     "prettier": "^1.13.5",
     "prettier-package-json": "^1.6.0",
@@ -74,8 +76,6 @@
     "rework-visit":"1.0.0",
     "rx": "^4.1.0",
     "semantic-release": "^15.6.0",
-    "tap-spec": "^5.0.0",
-    "tape": "^4.9.1",
     "validator": "^10.4.0"
   },
   "keywords": [
