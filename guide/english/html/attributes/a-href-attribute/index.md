@@ -4,7 +4,7 @@ title: A Href Attribute
 
 ## A Href Attribute
 
-The `<a href>` attribute refers to a destination provided by a link. The `a` (anchor) tag is dead without the `<href>` attribute. Sometimes in your workflow, you don't want a live link or you won't know the link destination yet. In this case, it's useful to set the `href` attribute to `"#"` to create a dead link. The `href` attribute can be used to link to local files or files on the internet.
+The `<a href>` attribute refers to a destination provided by a link. The `a` (anchor) tag is dead without the `<href>` attribute. Sometimes during the workflow, a live link is not needed yet, or the link destination is unknown. In this case, it's useful to set the `href` attribute to `"#"` to create a dead link. The `href` attribute can be used to link to local files or files on the internet.
 
 For instance:
 
@@ -38,13 +38,13 @@ The `<a href>` attribute is supported by all browsers.
 ```
 ### In-page anchors
 
-It's also possible to set an anchor to certain place of the page. To do this you should first place a tab at location on the page with tag <a> and necessary attribute "name" with any keyword description in it, like this:
+It's also possible to set an anchor to link to a specific place on the page. To do this, first place a tab at the link location on the page, using the <a> tag and the attribute, "name", with the keyword description in it, as so:
 
 ```html
 <a name="top"></a>
 ```
 
-Any description between tags is not required. After that you can place a link leading to this anchor at any place on the same page. To do this you should use tag <a> with necessary attribute "href" with symbol # (sharp) and key-word description of the anchor, like this:
+A description between the tags is not required, but the "name" attribute is necessary. Then, place a link leading to this anchor at any place on the same page. To do this, use the <a> tag with necessary attribute "href" with the pound/hash symbol # and the keyword description of the anchor, as so:
 
 ```html
 <a href="#top">Go to Top</a>
@@ -52,7 +52,7 @@ Any description between tags is not required. After that you can place a link le
 
 ### Image Links
 
-The `<a href="#">` may also be applied to images and other HTML elements.
+The `<a href="#">` may also be wrapped around images and other HTML elements.
 
 ### Example
 
