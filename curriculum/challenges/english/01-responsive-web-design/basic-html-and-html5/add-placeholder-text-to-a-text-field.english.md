@@ -10,7 +10,9 @@ videoUrl: 'https://scrimba.com/p/pVMPUv/cKdJDhg'
 <section id='description'>
 Placeholder text is what is displayed in your <code>input</code> element before your user has inputted anything.
 You can create placeholder text like so:
-<code>&#60;input type="text" placeholder="this is placeholder text"&#62;</code>
+<code>&#60;input type="text" placeholder="this is placeholder text"&#62;</code><br>
+<strong>Note</strong><br>
+Remember that <code>input</code> elements are self-closing.
 </section>
 
 ## Instructions
@@ -27,7 +29,7 @@ tests:
     testString: assert($("input[placeholder]").length > 0, 'Add a <code>placeholder</code> attribute to the existing text <code>input</code> element.');
   - text: Set the value of your placeholder attribute to "cat photo URL".
     testString: assert($("input") && $("input").attr("placeholder") && $("input").attr("placeholder").match(/cat\s+photo\s+URL/gi), 'Set the value of your placeholder attribute to "cat photo URL".');
-  - text: The finished <code>input</code> element should have valid syntax. Remember that <code>input</code> elements are self-closing.
+  - text: The finished <code>input</code> element should have valid syntax.
     testString: assert($("input[type=text]").length > 0 && code.match(/<input((\s+\w+(\s*=\s*(?:".*?"|'.*?'|[\^'">\s]+))?)+\s*|\s*)\/?>/gi), 'The finished <code>input</code> element should have valid syntax.');
 
 ```
