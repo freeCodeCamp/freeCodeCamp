@@ -1,7 +1,7 @@
 ---
 title: Agile
 ---
-## Agile
+## Agile is the ability to create and respond to change in order to succeed in an uncertain and turbulent environment.
 
 Agile software development is a collection of methodologies used to manage teams of developers. It advocates adaptive planning, evolutionary development, early delivery, and continuous improvement, and it encourages rapid and flexible response to change. People and communication are considered more important than tools and processes.
 
@@ -24,3 +24,4 @@ There are many different flavors of agile, including Scrum and Extreme Programmi
 ### More information
 
 [Agile Alliance's Homepage](https://www.agilealliance.org/)
+
