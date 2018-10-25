@@ -7,7 +7,7 @@ videoUrl: 'https://scrimba.com/c/cyLZZhZ'
 
 ## Description
 <section id='description'>
-When you create a variable, it becomes available for you to use inside the element in which you create it. It also becomes available within any elements nested within it. This effect is known as <dfn>cascading</dfn>.
+When you create a variable, it is available for you to use inside the element in which you create it. It also is available for any elements nested within it. This effect is known as <dfn>cascading</dfn>.
 Because of cascading, CSS variables are often defined in the <dfn>:root</dfn> element.
 <code>:root</code> is a <dfn>pseudo-class</dfn> selector that matches the root element of the document, usually the <code><html></code> element. By creating your variables in <code>:root</code>, they will be available globally and can be accessed from any other selector later in the style sheet.
 </section>
