@@ -17,5 +17,5 @@ Here you have to look for two numbers that multiply to 1 and add to 2. Those two
 #### Example 2:<br>
 x<sup>2</sup> + 7x + 12<br>
 Here you have to look for two numbers that multiply to 12 and add to 7. Those two numbers are 3 and 4. Then you put those numbers into the factored form like this:<br>
-(x + 7)(x + 4).
+(x + 3)(x + 4).
 
