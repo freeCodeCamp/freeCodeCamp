@@ -19,7 +19,7 @@ Some common types of algorithms include sorting algorithms, search algorithms, a
 
 ### Efficiency
 
-Algorithms are most commonly judged by their efficiency and the amount of computing resources they require to complete their task. A common way to evaluate an algorithm is to look at its time complexity. This shows how the running time of the algorithm grows as the input size grows. Since the algorithms today, have to be operate on large data inputs, it is essential for our algorithms to have a reasonably fast running time .
+Algorithms are most commonly judged by their efficiency and the amount of computing resources they require to complete their task. A common way to evaluate an algorithm is to look at its time complexity. This shows how the running time of the algorithm grows as the input size grows. Since the algorithms today, have to operate on large data inputs, it is essential for our algorithms to have a reasonably fast running time.
 
 ### Sorting Algorithms
 
@@ -32,7 +32,7 @@ There is no sorting discussion which can finish without quick sort. The basic co
 [Quick Sort](http://me.dt.in.th/page/Quicksort/)
 
 #### Merge Sort
-It is the sorting algorithm which relies on the concept how to sorted arrays are merged to give one sorted arrays. Read more about it here-
+It is the sorting algorithm which relies on the concept how two sorted arrays are merged to give one sorted array. Read more about it here-
 [Merge Sort](https://www.geeksforgeeks.org/merge-sort/)
 
 freeCodeCamp's curriculum heavily emphasizes creating algorithms. This is because learning algorithms is a good way to practice programming skills. Interviewers most commonly test candidates on algorithms during developer job interviews.
