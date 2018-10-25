@@ -37,7 +37,7 @@ También es posible determinar el objetivo de la etiqueta `<a>` . Esto se hace u
   <a href= "https://guide.freecodecamp.org/" target="_blank">freeCodeCamp</a> 
 ```
 
-[freeCodeCamp](https://guide.freecodecamp.org/) Este enlace se crea de la misma manera que sugiere el bloque de código de ejemplo. Haz clic para ver cómo funciona.
+[freeCodeCamp](https://guide.freecodecamp.org/) Este enlace se crea de la misma manera que sugiere el bloque de código de el ejemplo. Haz clic para ver cómo funciona.
 
 #### Más información:
 
