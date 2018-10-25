@@ -24,7 +24,7 @@ A prominent guideline for web development was introduced by the [World Wide Web 
 from which we get the [WAI-ARIA](https://developer.mozilla.org/en-US/docs/Learn/Accessibility/WAI-ARIA_basics), the Accessible Rich Internet Applications Suite.
 Where WAI tackles the semantics of html to more easily nagivate the DOM Tree, ARIA attempts to make web apps, especially those developed with javascript and
 AJAX, more accessible. 
-
+my text
 The use of images and graphics on websites can decrease accessibility for those with visual impairments. However, this doesn't mean designers should avoid
 using these visual elements. When used correctly, visual elements can convey the appropriate look and feel to users without disabilities and should be used
 to do so. In order to use these elements appropriately, web designers must use alt text to communicate the message of these elements to those who cannot see
