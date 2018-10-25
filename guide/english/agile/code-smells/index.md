@@ -13,6 +13,7 @@ It is important to understand that smelly code works, but is not of good quality
 3. [Magic numbers](https://en.wikipedia.org/wiki/Magic_number_(programming)) - Variables (or `if` statements) scattered in the code that hold numeric values with no apparent meaning. 
 4. Many-parameter methods - Methods that take more that 2 or 3 parameters usually indicate that the method does more than one thing and should be broken down to multiple methods.
 5. Unclear method or variable naming - A programmer should be able to understand what a method does without looking at the method's body. If the name or the parameter naming is vague, it is an indicator that the method should be refactored to reveal its purpose in the code.
+6. Also an case-statement could become a code smell. Think about the Open-Close-Principle from the SOLID-Principles. There you are asked to think about a solution that is open for extension and closed for modification. So you run less to never into any automated test-fails.
 
 #### More Information:
 * _Refactoring: Improving the Design of Existing Code - Kent Beck, Martin Fowler_
