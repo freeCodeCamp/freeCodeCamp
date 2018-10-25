@@ -82,6 +82,10 @@ title: Books to Read for Programmers
 - [Amazon](https://www.amazon.com/Book-Programming-4th-Al-Kelley/dp/0201183994/ref=cm_cr_arp_d_bdcrb_top?ie=UTF8)
 - ISBN-13: 978-0201183993
 
+*Starting Out With C++: Early Objects by Tony Gladdis and Judy Walters
+-[Amazon] (https://www.amazon.com/Starting-Out-Early-Objects-9th/dp/0134400240/ref=sr_1_2?s=books&ie=UTF8&qid=1540436241&sr=1-2&keywords=starting+out+with+c%2B%2B&dpID=41M%252BlSUXBFL&preST=_SX218_BO1,204,203,200_QL40_&dpSrc=srch)
+- ISBN-13: 978-0134400242
+
 ## C#
 
 *C# 6.0 in a Nutshell: The Definitive Reference 6th Edition* by Joseph Albahari  (Author), Ben Albahari (Author)
