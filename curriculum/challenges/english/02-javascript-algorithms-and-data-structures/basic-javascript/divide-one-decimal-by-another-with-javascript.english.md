@@ -37,8 +37,6 @@ tests:
 
 ```js
 var quotient = 0.0 / 2.0; // Fix this line
-
-
 ```
 
 </div>
@@ -60,5 +58,6 @@ var quotient = 0.0 / 2.0; // Fix this line
 
 ```js
 // solution required
+var quotient = 4.4 / 2.0;
 ```
 </section>
