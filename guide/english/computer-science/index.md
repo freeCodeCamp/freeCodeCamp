@@ -9,6 +9,8 @@ Much of computer science was pioneered in the latter half of the 20th century.
 
 Today, if you attend an undergraduate computer science course, you will learn about both hardware and software. You'll learn how computers work at a low level of abstraction (machine language) and at a high level of abstraction (modern scripting langauges like JavaScript).
 
+In 21st century, computer science has become a backbone for every technological leap we take forward.
+
 # Computer Science Fields
 Computer science is categorized into several fields. The following are among the current established and well-studied fields. Most of the fields are further categorized into subfields.
 - <a href="https://en.wikipedia.org/wiki/Theory_of_computation">Theory of Computing</a>
