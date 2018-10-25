@@ -42,4 +42,6 @@ Some apps built using Electron include:
 - [Electron and React](https://medium.freecodecamp.org/building-an-electron-application-with-create-react-app-97945861647c)
 - [Electron and Vue](https://medium.com/@kswanie21/electron-vue-js-f6c40abeb625)
 - [Electron and Angular](https://scotch.io/tutorials/creating-desktop-applications-with-angularjs-and-github-electron)
+- [Chromium] (https://www.chromium.org/Home)
+- [Node] (https://nodejs.org/)
 
