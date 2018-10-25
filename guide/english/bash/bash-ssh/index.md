@@ -4,6 +4,8 @@ title: Bash ssh
 
 ## Bash command: ssh
 
+SSH is a replacement for Telnet as well as any remote shell program that predates it. The main benefit it offers over other remote shells is that it is cryptographically secured by default, a now necessary feature as systems are more often than not connected via untrusted networks.
+
 **Used to connect to a remote computer** ,for example `ssh 123.456.789.012` will try to establish a connection with that host. The
 address of the remote computer can be provided using an IP address or, if provided, an identifier.
 
