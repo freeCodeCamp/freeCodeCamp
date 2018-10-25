@@ -11,6 +11,12 @@ Alternatively, software development can be done within silos. One silo is respon
 
 This section contains articles introducing technologies used in DevOps.
 
+Do you know, Devops is also possible in Legacy Mainframes?
+
+Tool like Endevor/Change management are available which can allow to move legacy applications to agile by putting Devops into picture.
+
+- [Endevor](https://en.wikipedia.org/wiki/Endevor)
+
 ### More Information
 * [Read more about DevOps on Wikipedia](https://en.wikipedia.org/wiki/DevOps)
 * [See this Video that explains Devops](https://youtu.be/_I94-tJlovg)
