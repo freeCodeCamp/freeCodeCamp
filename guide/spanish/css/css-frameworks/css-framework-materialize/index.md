@@ -4,11 +4,11 @@ localeTitle: CSS Framework Materialize
 ---
 # CSS Framework Materialize
 
-Materialise es un marco de CSS Responsive basado en el [Material Design](https://design.google.com/spec/) Language de Google.
+Materialize es un marco de CSS Responsive basado en el [Material Design](https://design.google.com/spec/) Language de Google.
 
 ## Empezando
 
-Aquí hay una plantilla HTML simple que incluye lo último en CSS y Javascript compilados y minificados para la biblioteca Materialise.
+Aquí hay una plantilla HTML simple que incluye lo último en CSS y Javascript compilados y minificados para la biblioteca Materialize.
 
 ```html
 
@@ -37,6 +37,6 @@ Hemos utilizado un CDN en este ejemplo, pero puede consultar otras formas de ins
 
 ## Recursos de aprendizaje
 
-*   La documentación oficial de Materialise está disponible [aquí](www.materializecss.com/) .
+*   La documentación oficial de Materialize está disponible [aquí](www.materializecss.com/) .
 *   Ver el repositorio de GitHub de código abierto de Materialize [aquí](https://github.com/Dogfalo/materialize) .
-*   [Aquí](https://scotch.io/tutorials/make-material-design-websites-with-the-materialize-css-framework) hay un tutorial útil sobre el uso de Materialise.
+*   [Aquí](https://scotch.io/tutorials/make-material-design-websites-with-the-materialize-css-framework) hay un tutorial útil sobre el uso de Materialize.
