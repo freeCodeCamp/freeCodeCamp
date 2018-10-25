@@ -3,13 +3,13 @@ title: Background Opacity
 ---
 ## Background Opacity
 
-The opacity property specifies the opacity/transparency of an element, that is, the degree to which the content behind the element is visible.
+The opacity property specifies the opacity/transparency of an element, or more specifically, the degree to which the content behind the element is visible.
 
-The opacity property can take a value from 0.0 - 1.0. The lower value, the more transparent:
+The opacity property can take a value ranging from 0.0 - 1.0. A lower value will return a more transparent background color:
 
 Find more details <a href='https://www.w3schools.com/css/css_image_transparency.asp' target='_blank' rel='nofollow'>here</a>
 
-You can choose up to what extent you want to make the element transparent.
+Using opacity you can choose the extent you want to make the element transparent.
 You have to add the following CSS property to achieve the transparency levels.
 
 **Fully Opaque**
@@ -29,7 +29,7 @@ OR
 .class-name {
   opacity:0.5;
 }
-Opacity value can be anything between 0 and 1;
+Opacity value range falls between 0 and 1;
 ```
 **Transparent**
 ```css
@@ -50,7 +50,7 @@ Alternatively you can use a transparent rgba value like this:
   background-color: rgba(0,0,0,.5);
   }
  ```
-The example above sets the background to be black with 50% opacity. The last value of an rgba value is the alpha value. An alpha value of 1 equals 100%, and 0.5 (.5 for short) quals 50%. We use this method to add transparency to an element without affecting the content inside.
+The example above sets the background to be black with 50% opacity. The last value of an rgba value is the alpha value. An alpha value of 1 equals 100%, and 0.5 (.5 for short) equals 50%. We use this method to add transparency to an element without affecting the content inside.
 
 [A codepen example to show background opacity ranges](https://codepen.io/lvcoulter/full/dVrwmK/)
 
