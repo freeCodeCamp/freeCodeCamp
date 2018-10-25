@@ -8,7 +8,7 @@
 ## Welcome to freeCodeCamp.org's open source codebase and curriculum!
 
 freeCodeCamp.org is a friendly community where you can learn to code for free. It is run by a [donor-supported 501(c)(3) nonprofit](https://donate.freecodecamp.org) with the goal of helping millions of busy adults transition into tech. Our community has already helped more than 10,000 people get their first developer job.
-
+We do not need you to have any sort of prerequisite knowledge of code.You might as well be touching a keyboard for the first time. Don't worry. We got you covered. 
 Our full-stack web development curriculum is completely free and self-paced. We have thousands of interactive coding challenges to help you expand your skills.
 
 ## Table of Contents
