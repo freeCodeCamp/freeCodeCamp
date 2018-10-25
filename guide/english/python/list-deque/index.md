@@ -12,7 +12,7 @@ To implement a queue, use collections.deque which was designed to have fast appe
 #### Example Usage
 ```py
 
-from collections import deque
+from collections import deque # deque is a short form of double ended queue
 queue = deque(["January", "February", "March", "April"] )
 
 queue.append("May")
