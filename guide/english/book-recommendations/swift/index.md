@@ -11,6 +11,6 @@ title: Books on Swift
  -Where? Free Download on iBooks. Search "Swift"
  -(https://itunes.apple.com/us/book/app-development-with-swift/id1219117996?mt=11)
  
- ####More Information:
+ #### More Information:
  <--! Add some awesome books you think will be helpful to others -->
  
