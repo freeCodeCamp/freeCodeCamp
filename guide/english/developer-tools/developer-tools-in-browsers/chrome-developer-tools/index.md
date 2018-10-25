@@ -12,6 +12,7 @@ Chrome and Firefox Developer tools assist web developers in analyzing the HTML, 
 * **JavaScript Debugger:**  View and modify JavaScript running on a page
 * **Network Monitor:**  See network requests made when pages are loaded
 * **Performance Tools:**  Analyze computer resources used by the site
+* **Audits:**  Identify and fix common problems that affect your site's performance, accessibility and user experience
 
 ### Accessing the development tools
 
