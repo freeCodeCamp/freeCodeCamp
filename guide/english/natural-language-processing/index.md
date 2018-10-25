@@ -28,6 +28,13 @@ Here the task sounds simple. Given a corpus (a dataset of sentences), generate i
 #### n-gram models
 Next task is to build a language model. Here we consider an assumption that the nth word depends only on the previous n-1 words. 2-gram and 3-gram models are most commonly used. To build a 3-gram model, just group 3 tokens together and count their frequency in the corpus. You are now ready to predict the probability of a group of 3 words!
 
+## Core Components for Learning NLP
+#### Sentence Detection
+#### Tokenization
+#### POS Tagging
+#### Chunking
+#### Parsing
+
 ## Further readings
 The field of NLP is huge. If you have read this far and have implemented the above, you have certainly loved this. Go ahead and read Jurafsky's book to learn some more new concepts. Remember, it's important to implement them as well.
 
