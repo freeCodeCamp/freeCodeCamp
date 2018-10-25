@@ -11,10 +11,10 @@ One common mistake you might make is to determine layout based on what you think
 
 Standard Conventions is a term used to describe a process or application of a technique that has industry-wide approval and general cultural acceptance amongst users.
 Examples of these conventions as it relates to layout are listed below:
-*	Placement of heading text above the paragraph it’s meaning to describe.
-*	Placement of a navigation bar at the top of the page.
-*	Use of whitespace to separate different sections and types of content.
-*	Lack of whitespace to bring together sections and types of content.
+*	Placement of heading text above the paragraph it’s meaning to describe
+*	Placement of a navigation bar at the top of the page
+*	Use of whitespace to separate different sections and types of content
+*	Lack of whitespace to bring together sections and types of content
 * Ensuring elements are neat and organized (i.e two buttons aligning to be visually acceptable)
 * Simplicity of the layout such that it is easy to follow and flows nicely
 * Use of visual hierarchy to help keep the layout visually flowing (Size, color, positioning, etc)
