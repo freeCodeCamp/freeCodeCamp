@@ -40,7 +40,10 @@ Common CSS framework. Along with other main elements includes several HTML templ
 
 Support for Firefox, Chrome, Safari, Internet Explorer, Android 4, Blackberry10. Contains a large number of components: icons, images, labels, menus and other standard components. It supports the latest versions of HTML and CSS and has a good selection of script modules and APIs. Uses Less. On applicability competes with bootstrap.
 
+## W3.css
+W3.CSS is a modern CSS framework with built-in responsiveness. It supports responsive mobile first design by default, and it is smaller and faster than similar CSS frameworks.
 
-
+## MATERIAL-UI
+React components that implement Google's Material Design.
 
 Each task has its own tool. A good step would be to try the framework and understand “your” it or not. You can use the skeletons of the code presented in the frameworks as a cheat sheet and just take solutions and code from there.
