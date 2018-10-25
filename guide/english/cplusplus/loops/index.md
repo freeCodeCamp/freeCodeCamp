@@ -19,15 +19,15 @@ cout << 4 << endl;
 cout << 1000 << endl;
 
 ```
-But the problem with this approach is that you have to write the same line again and again. And if suppose you have to print 
-prime numbers from 1 to 1000 then this will be more hectic.
-Therefore, in order to solve such problems loops are introduced.
+But the problem with this approach is that you have to write the same line again and again. And suppose if you have to print 
+prime numbers from 1 to 1000 then this will be even more hectic.
+Therefore, in order to solve such problems, loops are introduced.
 
 There are different types of loop functions:
 ### While and do while loops
 
 While and do while loops allow you to run the loop until a condition finishes.
-The difference between While and Do while is that Do while loop always executes atleast once.
+The difference between While and Do while is that Do while loop always executes atleast once whereas the while loop can even be skipped if the starting condition is false.
 The very use of Do while loop can be seen in the scenarios when the number of times that the loop will run depends upon the first iteration of the loop.
 Here you can see an example:
 ``` c++
@@ -78,13 +78,12 @@ Now lets discuss how the for loop works.
  * If there is only one statement inside the loop then the curly bracket is optional but its better to write loop code 
    within brackets so that you don't get confused.
     ``` c++
-    for(int i=0;i<=1000;i++)
+        for(int i=0;i<=1000;i++)
     	{
+         cout<<i<<endl;
         }
      ```
- * Then inside the loop you write what do you want to do. In the above program we output the value of i.
- 
- So, in this way the for loop works
+ * Then inside the loop you the code that needs to be exectued. In the program above we output the value of i.
  
  If you want to print even numbers from 1 to 1000 then your program will look like this
  
@@ -96,20 +95,6 @@ for (int i = 0;i<=1000;i=i+2)
 }
 
 ```
-* The difference in first program and second is the increment part. Rest of code is same. This program will print 0 and
-   then add 2 to it and print 2 on console and so on upto value of i becomes equal to 1000.
+* The difference between the first program and the second one is the increment part.
+While in the first program we incremented the variable i by 1, in the second one we incremented it by 2.
    
-   Our final program to print even numbers from 0 to 1000 will look like this.
-   
- ``` c++
- #include<iostream>
-using namespace std;
-int main()
-{
-	for (int i = 0;i<=1000;i=i+2)
-	{
-	  cout << i << endl;
-	}
-	return 0;
-}
- ```
