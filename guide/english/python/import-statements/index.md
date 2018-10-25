@@ -92,6 +92,18 @@ Now we want to use the functions that we just created in `prime_functions.py` so
     import prime_functions
     print(prime_functions.isPrime(29)) # returns True
     
+## Making the Program Easier to Write
+
+Often, the name of a module is too long to continuously type over and over in the program.
+
+```python
+import supercalifragilisticexpialidocious as scfed
+
+scfed.example_function()
+```
+
+You may shorten the name by importing "as".
+    
 ## Sorting Imports
 
 Good practice is to sort `import` modules in three groups - standard library imports, related third-party imports, and local imports.  Within each group it is sensible to sort alphabetically by module name. You can find [more information in PEP8](https://www.python.org/dev/peps/pep-0008/?#imports).
