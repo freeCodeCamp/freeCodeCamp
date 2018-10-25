@@ -11,6 +11,7 @@ As a piece of code that sits on the blockchain, a smart contract can automate ta
 When an account receives money it can automatically distribute it to others.
 This is entirely transparent so all the nodes(miners) can see what logic is being executed.
 
+Smart contracts are written by smart contract developers and have their own syntax. For example in Ethreum smart contract is written with solidity.
 
 ## Blockchain Technologies
 
