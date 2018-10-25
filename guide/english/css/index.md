@@ -22,3 +22,6 @@ Another suggestion for beginners is W3C's [Starting with HTML + CSS](https://www
 The site [CSS Zen Garden](http://www.csszengarden.com/) is a great example how the same html can be styled to look totally unique.
 
 For a demonstration of the power of CSS, check out [Species In Pieces](http://species-in-pieces.com/#).
+
+#### Suggested Books to Read
+The first book I ever read on HTML and CSS. Coincidently is titled HTML & CSS by Jon Duckett(http://www.htmlandcssbook.com/) Give it a read it is a great starting point for beginners.
