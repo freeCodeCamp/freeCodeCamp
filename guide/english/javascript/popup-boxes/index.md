@@ -40,7 +40,7 @@ The <a href='https://developer.mozilla.org/en-US/docs/Web/API/Window/prompt' tar
 ![MDN Prompt Example](https://mdn.mozillademos.org/files/11303/prompt.png)
 
 ### Other Design Options:
-If you are unhappy with the default JavaScript popups, you can substitute in various UI libraries.  For example, SweetAlert provides a nice replacement for standard JavaScript modals.  You can include it in your HTML via a CDN (content delivery network) and begin use.
+If you are unhappy with the default JavaScript popups, you can substitute in various UI libraries.  For example, <a href='https://sweetalert.js.org/' target='_blank'>SweetAlert</a> provides a nice replacement for standard JavaScript modals.  You can include it in your HTML via a CDN (content delivery network) and begin use.
 ```HTML
 <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
 ```
