@@ -17,7 +17,7 @@ HTML:
 
 HTML
 ```
-bower: 
+bower: bower install angular#1.5.5 --save
 ```
 
 贝壳 凉亭安装角度
