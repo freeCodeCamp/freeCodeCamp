@@ -19,7 +19,7 @@ words = ["I", "love", "Python"]
 ["I", "love", "Python", "very much"] 
 ```
 
-Como você deve ter notado, o elemento `"very much"` é anexado à lista.
+Como você deve ter notado, o elemento `"very much"` é anexado à lista, como último elemento. Você também pode usar a função append para adicionar uma variável a uma lista.
 
 #### Mais Informações:
 
