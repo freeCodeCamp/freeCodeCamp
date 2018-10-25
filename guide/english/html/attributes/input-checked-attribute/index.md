@@ -20,4 +20,4 @@ The checked attribute can also be set after the page load, through JavaScript.
 </form>
 ```
 
-In the example above when the web page is loaded by default the first checkbox will come automatically selected due to the checked attribute.
+In the example above when the web page is loaded by default,vvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvv the first checkbox will come automatically selected due to the checked attribute.
