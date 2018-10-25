@@ -82,6 +82,16 @@ title: Books to Read for Programmers
 - [Amazon](https://www.amazon.com/Book-Programming-4th-Al-Kelley/dp/0201183994/ref=cm_cr_arp_d_bdcrb_top?ie=UTF8)
 - ISBN-13: 978-0201183993
 
+
+*Handbook of Algorithms and Data Structures in Pascal and C
+- [Amazon](https://www.amazon.com/Handbook-Algorithms-Data-Structures-Pascal/dp/0201416077/ref=sr_1_1?s=books&ie=UTF8&qid=1540369397&sr=1-1&keywords=Handbook+of+algorithms+and+data+structures+in+pascal+and+c)
+- ISBN-13: 978-0201416077
+
+*Fundamentals of Data Structures in C
+- [Amazon](https://www.amazon.com/Fundamentals-Data-Structures-Ellis-Horowitz/dp/0929306406/ref=sr_1_3?s=books&ie=UTF8&qid=1540368111&sr=1-3&keywords=Fundamentals+of+Data+Structures)
+- ISBN: 978-0929306407
+
+
 ## C#
 
 *C# 6.0 in a Nutshell: The Definitive Reference 6th Edition* by Joseph Albahari  (Author), Ben Albahari (Author)
