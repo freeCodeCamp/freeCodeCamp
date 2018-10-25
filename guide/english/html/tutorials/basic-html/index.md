@@ -24,5 +24,5 @@ Structure of a basic HTML file:
 ```
 #### More Information:
 <!-- Please add any articles you think might be helpful to read before writing the article -->
-
+[W3Schools Online Web Tutorials](https://www.w3schools.com/)
 
