@@ -28,7 +28,7 @@ Modify the code to show the correct prototype chain.
 ```yml
 tests:
   - text: Your code should show that <code>Object.prototype</code> is the prototype of <code>Dog.prototype</code>")
-    testString: 'assert(/Object\.prototype\.isPrototypeOf/.test(code), "Your code should show that <code>Object.prototype</code> is the prototype of <code>Dog.prototype</code>");'
+    testString: assert(/Object\.prototype\.isPrototypeOf/.test(code), "Your code should show that <code>Object.prototype</code> is the prototype of <code>Dog.prototype</code>");
 
 ```
 

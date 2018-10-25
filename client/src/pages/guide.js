@@ -47,7 +47,7 @@ function Index() {
       <p>
         {'This site and the articles on it are '}
         <a
-          href='https://github.com/freeCodeCamp/guides'
+          href='https://github.com/freeCodeCamp/freeCodeCamp'
           rel='noopener noreferrer'
           target='_blank'
           >

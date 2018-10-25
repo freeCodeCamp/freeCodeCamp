@@ -22,12 +22,12 @@ We have defined a function, <code>mixedNumbers</code>, which we are passing an a
 
 ```yml
 tests:
-  - text: '<code>mixedNumbers(["IV", 5, "six"])</code> should now return <code>["I", 2, "three", "IV", 5, "six", 7, "VIII", 9]</code>'
-    testString: 'assert.deepEqual(mixedNumbers(["IV", 5, "six"]), ["I", 2, "three", "IV", 5, "six", 7, "VIII", 9], "<code>mixedNumbers(["IV", 5, "six"])</code> should now return <code>["I", 2, "three", "IV", 5, "six", 7, "VIII", 9]</code>");'
+  - text: <code>mixedNumbers(["IV", 5, "six"])</code> should now return <code>["I", 2, "three", "IV", 5, "six", 7, "VIII", 9]</code>
+    testString: assert.deepEqual(mixedNumbers(['IV', 5, 'six']), ['I', 2, 'three', 'IV', 5, 'six', 7, 'VIII', 9], '<code>mixedNumbers(["IV", 5, "six"])</code> should now return <code>["I", 2, "three", "IV", 5, "six", 7, "VIII", 9]</code>');
   - text: The <code>mixedNumbers</code> function should utilize the <code>push()</code> method
-    testString: 'assert.notStrictEqual(mixedNumbers.toString().search(/\.push\(/), -1, "The <code>mixedNumbers</code> function should utilize the <code>push()</code> method");'
+    testString: assert.notStrictEqual(mixedNumbers.toString().search(/\.push\(/), -1, 'The <code>mixedNumbers</code> function should utilize the <code>push()</code> method');
   - text: The <code>mixedNumbers</code> function should utilize the <code>unshift()</code> method
-    testString: 'assert.notStrictEqual(mixedNumbers.toString().search(/\.unshift\(/), -1, "The <code>mixedNumbers</code> function should utilize the <code>unshift()</code> method");'
+    testString: assert.notStrictEqual(mixedNumbers.toString().search(/\.unshift\(/), -1, 'The <code>mixedNumbers</code> function should utilize the <code>unshift()</code> method');
 
 ```
 
