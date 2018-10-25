@@ -78,10 +78,10 @@ const jQueryScript = fs.readFileSync(
           return;
         }
 
-        let { tests } = challenge;
+        let { tests = [] } = challenge;
         tests = tests.filter(test => !!test.testString);
         if (tests.length === 0) {
-          it.skip('Check tests syntax. No tests.');
+          it('Check tests. No tests.');
           return;
         }
 
@@ -95,26 +95,16 @@ const jQueryScript = fs.readFileSync(
           });
         });
 
-        let { solutions } = challenge;
-        const noSolution = new RegExp('// solution required');
-        solutions = solutions.filter(solution => (
-          !!solution && !noSolution.test(solution)
-        ));
-
-        if (solutions.length === 0) {
-          it.skip('Check tests against solutions. No solutions');
-          return;
-        }
-
-        const { files, required } = challenge;
+        const { files = [], required = [] } = challenge;
         const exts = Array.from(new Set(files.map(({ ext }) => ext)));
         const groupedFiles = exts.reduce((result, ext) => {
           const file = files.filter(file => file.ext === ext ).reduce(
             (result, file) => ({
               head: result.head + '\n' + file.head,
+              contents: result.contents + '\n' + file.contents,
               tail: result.tail + '\n' + file.tail
             }),
-            { head: '', tail: '' }
+            { head: '', contents: '', tail: '' }
           );
           return {
             ...result,
@@ -131,7 +121,36 @@ const jQueryScript = fs.readFileSync(
         } else if (groupedFiles.js) {
           evaluateTest = evaluateJsTest;
         } else {
-          it.skip('Check tests against solutions. Unknown file type.');
+          it('Check tests. Unknown file type.');
+          return;
+        }
+
+        it('Test suite must fail on the initial contents', async function() {
+          let fails = (
+          await Promise.all(tests.map(async function(test) {
+            try {
+              await evaluateTest({
+                challengeType,
+                required,
+                files: groupedFiles,
+                test
+              });
+              return false;
+            } catch (e) {
+              return true;
+            }
+          }))).some(v => v);
+          assert(fails, 'Test suit does not fail on the initial contents');
+        });
+
+        let { solutions = [] } = challenge;
+        const noSolution = new RegExp('// solution required');
+        solutions = solutions.filter(solution => (
+          !!solution && !noSolution.test(solution)
+        ));
+
+        if (solutions.length === 0) {
+          it('Check tests. No solutions');
           return;
         }
 
@@ -242,13 +261,16 @@ function replaceColorNames(solution) {
 async function evaluateHtmlTest({
   challengeType,
   solution,
-  required = [],
+  required,
   files,
   test
 }) {
 
+  const { head = '', contents = '', tail = '' } = files.html;
+  if (!solution) {
+    solution = contents;
+  }
   const code = solution;
-  const { head = '', tail = '' } = files.html;
 
   const options = {
     resources: 'usable',
@@ -298,7 +320,7 @@ A required file can not have both a src and a link: src = ${src}, link = ${link}
   }
 
   dom.window.code = code;
-  runTestInJsdom(dom, test.testString);
+  await runTestInJsdom(dom, test.testString);
 }
 
 async function evaluateJsTest({
@@ -309,10 +331,23 @@ async function evaluateJsTest({
 
   const virtualConsole = new jsdom.VirtualConsole();
   const dom = new JSDOM('', { runScripts: 'dangerously', virtualConsole });
-  dom.window.code = solution;
 
-  const { head = '', tail = '' } = files.js;
-  const scriptString = head + '\n' + solution + '\n' + tail + '\n';
+  const { head = '', contents = '', tail = '' } = files.js;
+  let scriptString = '';
+  if (!solution) {
+    solution = contents;
+    scriptString = head + '\n' + contents + '\n' + tail + '\n';
+    try {
+      // eslint-disable-next-line
+      new vm.Script(scriptString);
+    } catch (e) {
+      scriptString = '';
+    }
+  } else {
+    scriptString = head + '\n' + solution + '\n' + tail + '\n';
+  }
+
+  dom.window.code = solution;
 
   await runTestInJsdom(dom, test.testString, scriptString);
 }
@@ -323,25 +358,40 @@ async function evaluateReactReduxTest({
   test
 }) {
 
-  const code = solution;
-  /* Transpile ALL the code
-  * (we may use JSX in head or tail or tests, too): */
-  solution = Babel.transform(solution, babelOptions).code;
-  const testString = Babel.transform(test.testString, babelOptions).code;
-
   let head = '', tail = '';
   if (files.js) {
     const { head: headJs = '', tail: tailJs = '' } = files.js;
-    head += Babel.transform(headJs, babelOptions).code + '\n';
-    tail += Babel.transform(tailJs, babelOptions).code + '\n';
+    head += headJs + '\n';
+    tail += tailJs + '\n';
   }
   if (files.jsx) {
     const { head: headJsx = '', tail: tailJsx = '' } = files.jsx;
-    head += Babel.transform(headJsx, babelOptions).code + '\n';
-    tail += Babel.transform(tailJsx, babelOptions).code + '\n';
+    head += headJsx + '\n';
+    tail += tailJsx + '\n';
   }
 
-  const scriptString = head + '\n' + solution + '\n' + tail + '\n';
+  /* Transpile ALL the code
+  * (we may use JSX in head or tail or tests, too): */
+
+  let scriptString = '';
+  if (!solution) {
+    const contents = (files.js ? files.js.contents || '' : '') +
+      (files.jsx ? files.jsx.contents || '' : '');
+    solution = contents;
+    scriptString = head + '\n' + contents + '\n' + tail + '\n';
+    try {
+      scriptString = Babel.transform(scriptString, babelOptions).code;
+    } catch (e) {
+      scriptString = '';
+    }
+  } else {
+    scriptString = head + '\n' + solution + '\n' + tail + '\n';
+    scriptString = Babel.transform(scriptString, babelOptions).code;
+  }
+
+  const code = solution;
+
+  const testString = Babel.transform(test.testString, babelOptions).code;
 
   const virtualConsole = new jsdom.VirtualConsole();
   // Mock DOM document for ReactDOM.render method
@@ -402,6 +452,7 @@ async function runTestInJsdom(dom, testString, scriptString = '') {
 
   dom.window.__test = testString;
   scriptString += `;
+  window.__result =
   (async () => {
     try {
       const testResult = eval(__test);
@@ -417,6 +468,7 @@ async function runTestInJsdom(dom, testString, scriptString = '') {
   })();`;
   const script = new vm.Script(scriptString);
   dom.runVMScript(script);
+  await dom.window.__result;
   if (dom.window.__error) {
     throw dom.window.__error;
   }
