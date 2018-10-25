@@ -55,6 +55,9 @@ When starting out with linux, there are some basic commands everyone should know
 16. **find** -search for files in a directory hierarchy
 -find searches the directory tree rooted at each given file name by evaluating the given expression from left to right, according to the rules of precedence, until the outcome is known (the left hand side is false for and operations, true for or), at which point find moves on to the next file name.
 
+17. **grep** -print lines matching a pattern
+-grep searches for PATTERN in each FILE.  A FILE of “-” stands for standard input.If no FILE is given, recursive searches examine the working directory, and nonrecursive searches read standard input.By default, grep prints the matching lines.
+
 ### Useful Resources for Practice:
 - [JSLinux](https://bellard.org/jslinux/vm.html?url=https://bellard.org/jslinux/buildroot-x86.cfg): Run the terminal inside your browser. Great for practice.
 - [LearnShell](https://www.learnshell.org/): Interactive Linux shell (terminal) tutorials.
