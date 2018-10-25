@@ -4,7 +4,7 @@ title: Check if an Object has a Property
 ## Check if an Object has a Property
 
 Method:
-- The simplest way to complete this challenge is to create an `ìf-statement` to check wether or not the object contains all useres, then to return a true or false statement. The first solution does just this. 
+- The simplest way to complete this challenge is to create an `ìf-statement` to check wether or not the object contains all users, then to return a true or false statement. The first solution does just this. 
 - The second solution works in exactly the same way, only it uses 1 line of code - `Conditional(ternary)-Operator` - within the function.
 
 [developer.mozilla.org](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Conditional_Operator) provides a more in depth analysis of the ternary operator.
