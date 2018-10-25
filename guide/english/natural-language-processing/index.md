@@ -36,3 +36,9 @@ The field of NLP is huge. If you have read this far and have implemented the abo
 * [LSTM networks](http://colah.github.io/posts/2015-08-Understanding-LSTMs/)
 * [Attention](https://distill.pub/2016/augmented-rnns/)
 
+#### Some popular Open Source Tool-kits
+* [CMUSphinx](https://cmusphinx.github.io/)
+* [Kaldi](https://github.com/kaldi-asr/kaldi)
+* [DeepSpeech](https://github.com/mozilla/DeepSpeech)
+
+
