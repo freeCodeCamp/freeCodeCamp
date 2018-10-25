@@ -131,6 +131,11 @@ title: Books to Read for Programmers
 - [Amazon Smile](https://smile.amazon.com/JavaScript-JQuery-Interactive-Front-End-Development/dp/1118531647/?pldnSite=1)
 - ISBN-13: 978-1118531648 
 
+##HTML
+*HTML & CSS: design and build websites*
+- http://www.htmlandcssbook.com/
+-ISBN 978-1-118-00818-8
+
 ## Python
 
 *Automate the Boring Stuff With Python*
