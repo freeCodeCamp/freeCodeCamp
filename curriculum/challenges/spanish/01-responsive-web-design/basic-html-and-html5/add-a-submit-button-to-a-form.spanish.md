@@ -8,17 +8,17 @@ localeTitle: Agregar un botón de envío a un formulario
 ---
 
 ## Description
-<section id="description"> Agreguemos un botón de <code>submit</code> a su formulario. Al hacer clic en este botón, los datos de su formulario se enviarán a la URL que especificó con el atributo de <code>action</code> su formulario. Aquí hay un ejemplo de botón de envío: <code>&lt;button type=&quot;submit&quot;&gt;this button submits the form&lt;/button&gt;</code> </section>
+<section id="description"> Agreguemos un botón de <code>submit</code> a su formulario. Al hacer clic en este botón, los datos de su formulario se estaran enviando a la dirección Web-URL que se ha especificado con el atributo de <code>action</code> su formulario. Aquí hay un ejemplo de botón de envío: <code>&lt;button type=&quot;submit&quot;&gt;this button submits the form&lt;/button&gt;</code> </section>
 
 ## Instructions
-<section id="instructions"> Agregue un botón como el último elemento de su elemento de <code>form</code> con un tipo de <code>submit</code> y &quot;Enviar&quot; como texto. </section>
+<section id="instructions"> Agregue un botón como el ejemplo anterior elemento de su elemento de <code>form</code> con un tipo de <code>submit</code> y &quot;Enviar&quot; como texto. </section>
 
 ## Tests
 <section id='tests'>
 
 ```yml
 tests:
-  - text: Su formulario debe tener un botón en su interior.
+  - text: Su formulario debe tener un botón en el interior.
     testString: 'assert($("form").children("button").length > 0, "Your form should have a button inside it.");'
   - text: Su botón de envío debe tener el <code>type</code> atributo establecido para <code>submit</code> .
     testString: 'assert($("button").attr("type") === "submit", "Your submit button should have the attribute <code>type</code> set to <code>submit</code>.");'
