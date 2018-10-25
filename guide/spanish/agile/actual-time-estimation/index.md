@@ -51,3 +51,5 @@ O…
 *   [Restricciones ágiles](http://www.brighthubpm.com/agile/50212-the-agile-triangle-value-quality-and-constraints/)
     
 *   [¿Cómo estimas en un proyecto ágil?](http://info.thoughtworks.com/rs/thoughtworks2/images/twebook-perspectives-estimation_1.pdf)
+
+Mis cambios
