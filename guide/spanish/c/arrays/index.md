@@ -1,6 +1,6 @@
 ---
 title: Arrays
-localeTitle: Arrays
+localeTitle: Arreglos
 ---
 # Arreglos en C
 
@@ -18,7 +18,7 @@ Antes de intentar explicar qué son las matrices, veamos el código donde querem
     printf("%d", k); 
     printf("%d", j); 
     printf("%d", i); 
-    ... //and so on.. 
+    ... //y así.. 
  
     return 0; 
  } 
@@ -49,10 +49,10 @@ Y ahora vamos a romper la sintaxis un poco:
 int arr[4] = {1, 2, 3, 88}; 
 ```
 
-Aquí ha creado una `array` de `ints` (enteros), llamada `arr` . Esta matriz tiene 4 elementos: `1` , `2` , `3` , `88` . Tenga en cuenta la sintaxis!
+Aquí ha creado una `matriz` de `ints` (enteros), llamada `arr` . Esta matriz tiene 4 elementos: `1` , `2` , `3` , `88` . Tenga en cuenta la sintaxis!
 
 ```C
-datatype name[number of elements] 
+tipo_de_datos nombre[número de elementos] 
 ```
 
 El primer elemento de esta matriz es `1` , el segundo es `2` etc.
@@ -87,7 +87,7 @@ Aquí se crea un int llamado `var` , y se inicializa en el elemento 0 de arr. **
 C también soporta matrices multidimensionales.
 
 ```C
-datatype name[size1][size2]...[sizeN] 
+tipo_de_datos nombre[talla1][talla2]...[tallaN] 
 ```
 
 Los arreglos bidimensionales son comunes y pueden inicializarse usando la siguiente sintaxis. Lógicamente, uno puede pensar en el primer índice como filas y el segundo índice como columnas. Este ejemplo tiene 2 filas y 5 columnas.
@@ -112,16 +112,16 @@ Se pueden utilizar dos bucles anidados para imprimir el contenido de una matriz 
  
  
  int main() { 
-    const int rows = 2, cols = 5; 
+    const int filas = 2, cols = 5; 
  
-    int arr[rows][cols] = { 
+    int arr[filas][cols] = { 
             {0, 1, 2, 3, 4}, 
             {5, 6, 7, 8, 9} 
     }; 
  
-    for (int row = 0; row < rows; row++) { 
+    for (int fila = 0; fila < filas; fila++) { 
         for (int col = 0; col < cols; col++) { 
-            printf("%5d", arr[row][col]); 
+            printf("%5d", arr[fila][col]); 
         } 
         puts(""); 
     } 
@@ -137,27 +137,27 @@ Se pueden utilizar dos bucles anidados para imprimir el contenido de una matriz 
 
 ## Instrumentos de cuerda
 
-Para almacenar cadenas / múltiples caracteres, usamos `char arrays` en C, porque el idioma no tiene un tipo especial incorporado. Una cosa a tener en cuenta es que se agrega automáticamente una terminación nula al final, lo que indica que es el final de la cuerda. Sin embargo, también puede inicializar una cadena con llaves `{}` también, pero debe agregar manualmente el nulo de terminación.
+Para almacenar cadenas / múltiples caracteres, usamos `char matrices` en C, porque el idioma no tiene un tipo especial incorporado. Una cosa a tener en cuenta es que se agrega automáticamente una terminación nula al final, lo que indica que es el final de la cuerda. Sin embargo, también puede inicializar una cadena con llaves `{}` también, pero debe agregar manualmente el nulo de terminación.
 
 Al igual que:
 
 ```C
-char string[6] = "Hello"; //here you get Hello\0, which is why we need an array with the length of 6 
+char cadena[5] = "Hola"; //aqui tienes Hola\0, Es por eso que necesitamos una matriz con la longitud de 5 
 ```
 
 Al igual que con las matrices int en el ejemplo anterior, hay varias formas de asignar valores a las matrices char:
 
 ```C
-char string[] = "I do not want to count the chars in this."; 
- char string2[] = {'C','h','a','r',' ','b','y',' ','c','h','a','r','\0'}; 
- char string3[] = "This is a string" 
-                 "with two lines"; 
+char cadena[] = "No quiero contar los caracteres en esto."; 
+ char cadena2[] = {'C','h','a','r',' ','b','y',' ','c','h','a','r','\0'}; 
+ char cadena3[] = "Esta es una cadena" 
+                 "con dos lineas"; 
 ```
 
 Equivalente al enfoque anterior, también puede crear un puntero a una matriz de caracteres:
 
 ```C
-char* string = "I do not want to count the chars in this."; 
+char* cadena = "No quiero contar los caracteres en esto."; 
 ```
 
 ## Errores típicos, consejos.
@@ -165,9 +165,9 @@ char* string = "I do not want to count the chars in this.";
 *   Cuando tiene una matriz llena de valores y desea crear otra matriz que sea exactamente igual a la primera, nunca haga esto:
 
 ```C
-double first[] = {2,3,7}; 
- double second[] = first; 
- //Or this: 
+double primero[] = {2,3,7}; 
+ double segundo[] = primero; 
+ //O esto: 
  double a[5], b[5] 
  a = b; 
 ```
@@ -187,11 +187,11 @@ La computadora debe saber qué tan grande es el almacenamiento que se debe crear
 *   Cuando indexas fuera de la matriz, el compilador no siempre te va a dar un error. Esto se denomina comportamiento indefinido, simplemente no sabemos qué va a pasar. Podría hacer que tu programa se bloquee, simplemente ralentizando, cualquier cosa.
 
 ```C
-int test[6]; 
- int a = test[-2]; 
- int b = test[89]; 
+int prueba[6]; 
+ int a = prueba[-2]; 
+ int b = prueba[89]; 
 ```
 
 La razón por la que C no verifica el límite de indexación es simple: C es un lenguaje eficiente. Fue creado, por lo que su programa es el más rápido: se comunica bien con el hardware, etc. Un código C bien escrito no contiene errores de indexación, ¿por qué C querría verificarlo mientras se ejecuta?
 
-*   Cuando intentas acceder al último elemento de la matriz. Supongamos que la longitud de la matriz A sea 4 y al acceder al último elemento como A \[4\] devolverá un error, ya que la indexación comienza desde 0.
+*   Cuando intentas acceder al último elemento de la matriz. Supongamos que la longitud de la matriz A sea 4 y al acceder al último elemento como A\[4\] devolverá un error, ya que la indexación comienza desde 0.
