@@ -22,7 +22,13 @@ print(84357.435)
 ```
 *   complex numbers
     *   <a href='https://docs.python.org/3/library/functions.html#complex' target='_blank' rel='nofollow'>constructor</a>
+#### Examples:
 
+```python
+print(3 + 4j)
+print(5 + 6j)
+print(2j + 1)
+```
 The standard library adds numeric types for
 
 *   <a href='https://docs.python.org/3/library/fractions.html#module-fractions' target='_blank' rel='nofollow'>fractions</a>
