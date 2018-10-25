@@ -112,7 +112,7 @@ function convertHTML(str) {
 ```javascript
     function convertHTML(str) { 
       // Use Object Lookup to declare as many HTML entities as needed. 
-      let htmlEntities={ 
+      const htmlEntities={ 
         '&':'&amp;', 
         '<':'&lt;', 
         '>':'&gt;', 
