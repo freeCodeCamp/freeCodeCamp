@@ -196,3 +196,10 @@ Nos artigos subseqüentes, abordarei vários tópicos mais importantes. Várias 
 *   Existe uma maneira para eu escrever conteúdo apenas leitores de tela e outras tecnologias assistivas vêem?
 *   Como posso tornar os componentes JavaScript personalizados acessíveis?
 *   Quais ferramentas existem, além de testes de usuário inclusivos, que podem ser usadas para desenvolver a experiência mais robusta e acessível para o maior grupo de usuários?
+
+#### More information:
+
+No ramo de desenvolvimento web, a função da acessibilidade é facilitar a interação entre humanos e computadores.
+Além do mais, a acessibilidade tem como premissa principal, entender as necessidades de usuários desde da perspectiva de usuários com deficiências, independente da gravidade de suas deficiências.
+
+Hoje em dia, mais e mais tecnologias são inventadas para facilitar a vida dos desenvolvedores, assim como dos usuários. Até que ponto esse fenômeno vem à beneficiar usuários seria uma conversa para outra ocasião, por enquanto basta dizer que a caixa de ferramentas de um desenvolvedor, especialmente um desenvolvedor web, está em constante mudança bem como as chamadas "artes das trevas", como ilustrou nosso amigo. Snape
