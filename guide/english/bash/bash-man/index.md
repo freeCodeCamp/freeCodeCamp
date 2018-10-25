@@ -6,7 +6,7 @@ title: Bash Man
 
 Man, the abbreviation of **man**ual, is a bash command used to display on-line reference manuals of the given command.
 
-Man displays the reletive man page (short for **man**ual **page**) of the given command.
+Man displays the relative man page (short for **man**ual **page**) of the given command.
 
 ### Usage
 
