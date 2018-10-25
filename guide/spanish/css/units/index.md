@@ -25,21 +25,21 @@ Hay dos tipos generales de unidades utilizadas para la longitud y el tamaño en 
 
 Las unidades relativas cambian en relación con el tamaño de fuente actual del elemento u otras configuraciones. Algunas unidades relativas son
 
-*   `em`
+####  `em`
 *   el ancho de una letra mayúscula M del `font-size` de `font-size` del elemento actual.
 *   Los tamaños de fuente se heredan de los elementos principales.
 *   Ejemplo: `html div { font-size: 16px; } div h3 { font-size: 2rem; }` Aquí, `<h3>` será igual a `32px` ya que el `font-size` de `font-size` del elemento actual o principal es `16px` .
-*   `rem`
+####  `rem`
 *   root `em` , o el ancho de una letra mayúscula M del `font-size` base predeterminado.
 *   Los tamaños de fuente padre no tendrán efecto.
 *   Ejemplo: `html body { font-size: 16px; } p { font-size: 1.5rem; }` Aquí, `<p>` será igual a `24px` ya que el `font-size` base predeterminado es `16px` .
-*   `%`
+####  `%`
 *   el porcentaje de tamaño relativo al tamaño de un padre.
 *   Ejemplo: `html div { width: 400px; } div p { width: 75%; }` Dado que el ancho de los padres es de `400px` , el ancho del diagrama interno sería de `300px` o el 75% de `400px` .
-*   `vw`
+###  `vw`
 *   ancho de la vista, o 1/100 del ancho de la ventana gráfica
 *   Ejemplo: `html body { width: 100vw; }` El `body` rellena el ancho de la ventana gráfica, ya sea 417px, 690px o cualquier ancho.
-*   `vh`
+####  `vh`
 *   altura de la vista, o 1/100 de la altura de la ventana gráfica
 *   Ejemplo: `html div { height: 50vh; }` Este `div` llenará la mitad de la altura de la ventana gráfica, ya sea 1080px, 1300px o cualquier altura.
 
@@ -47,13 +47,13 @@ Las unidades relativas cambian en relación con el tamaño de fuente actual del 
 
 Las unidades absolutas serán las mismas independientemente del tamaño de la pantalla u otras configuraciones. Algunas unidades absolutas son
 
-*   `px`
+#### `px`
 *   píxel
 *   los conteos de píxeles son relativos a la calidad de la pantalla del dispositivo de visualización
-*   `in` , `cm` , `mm`
+#### `in` , `cm` , `mm`
 *   pulgada, centímetro, milímetro
 *   Una pulgada es una pulgada en una pantalla pequeña o una pantalla grande
-*   `pt` , `pc`
+#### `pt` , `pc`
 *   Puntos (1/72 de pulgada) y picas (12 puntos)
 
 Ejemplo
