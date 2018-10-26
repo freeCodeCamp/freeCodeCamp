@@ -23,7 +23,7 @@ Use <code>isPrototypeOf</code> to check the <code>prototype</code> of <code>beag
 ```yml
 tests:
   - text: Show that <code>Dog.prototype</code> is the <code>prototype</code> of <code>beagle</code>
-    testString: 'assert(/Dog\.prototype\.isPrototypeOf\(beagle\)/.test(code), "Show that <code>Dog.prototype</code> is the <code>prototype</code> of <code>beagle</code>");'
+    testString: assert(/Dog\.prototype\.isPrototypeOf\(beagle\)/.test(code), 'Show that <code>Dog.prototype</code> is the <code>prototype</code> of <code>beagle</code>');
 
 ```
 

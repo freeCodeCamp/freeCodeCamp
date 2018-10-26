@@ -19,17 +19,17 @@ if (!variable) {
 ## General Examples
 
 ```javascript
-var string = ""; // <-- falsy
+const string = ""; // <-- falsy
 
-var filledString = "some string in here"; // <-- truthy
+const filledString = "some string in here"; // <-- truthy
 
-var zero = 0; // <-- falsy
+const zero = 0; // <-- falsy
 
-var numberGreaterThanZero; // <-- falsy
+const numberGreaterThanZero; // <-- falsy
 
-var emptyArray = []; // <-- truthy, we'll explore more about this next
+const emptyArray = []; // <-- truthy, we'll explore more about this next
 
-var emptyObject = {}; // <-- truthy
+const emptyObject = {}; // <-- truthy
 ```
 
 ## Fun With Arrays

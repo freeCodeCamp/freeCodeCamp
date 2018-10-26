@@ -18,7 +18,7 @@ JavaScript provides the user with five arithmetic operators: `+`, `-`, `*`, `/` 
     5 + "foo"      // concatenates the string and the number and returns "5foo"
     "foo" + "bar"  // concatenates the strings and returns "foobar"
 
-_Hint:_ There is a handy <a href='https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Arithmetic_Operators#Increment_(' target='_blank' rel='nofollow'>increment</a>) operator that is a great shortcut when you're adding numbers by 1.
+_Hint:_ There is a handy <a href='https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Arithmetic_Operators#Increment' target='_blank' rel='nofollow'>increment</a>(++) operator that is a great shortcut when you're adding numbers by 1.
 
 ## Subtraction
 
@@ -34,7 +34,7 @@ _Hint:_ There is a handy <a href='https://developer.mozilla.org/en-US/docs/Web/J
     true - 3   // interprets true as 1 and returns -2
     5 - "foo"  // returns NaN (Not a Number)
 
-_Hint:_ There is a handy <a href='https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Arithmetic_Operators#Decrement_(--' target='_blank' rel='nofollow'>decrement</a>) operator that is a great shortcut when you're subtracting numbers by 1.
+_Hint:_ There is a handy <a href='https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Arithmetic_Operators#Decrement_(--' target='_blank' rel='nofollow'>decrement</a>(--) operator that is a great shortcut when you're subtracting numbers by 1.
 
 ## Multiplication
 
@@ -61,7 +61,7 @@ _Hint:_ There is a handy <a href='https://developer.mozilla.org/en-US/docs/Web/J
 **Usage**
 
     3 / 2                // returns 1.5
-    3.0 / 2/0            // returns 1.5
+    3.0 / 2.0            // returns 1.5
     3 / 0                // returns Infinity
     3.0 / 0.0            // returns Infinity
     -3 / 0               // returns -Infinity
@@ -87,7 +87,7 @@ _Hint:_ There is a handy <a href='https://developer.mozilla.org/en-US/docs/Web/J
 
 **Syntax**
 
-`a++ or ++a`
+`a++, ++a or a+=`
 
 **Usage**
     
@@ -98,12 +98,17 @@ _Hint:_ There is a handy <a href='https://developer.mozilla.org/en-US/docs/Web/J
     // Prefix
     var a = 2;
     b = ++a; // a = 3, b = 3
+    
+    // Advanced
+    var a = 4;
+    var b = 5;
+    a += b; //a = 9, b = 5
 
 ## Decrement
 
 **Syntax**
 
-`a-- or --a`
+`a--, --a or a-=`
 
 **Usage**
     
@@ -114,6 +119,11 @@ _Hint:_ There is a handy <a href='https://developer.mozilla.org/en-US/docs/Web/J
     // Prefix
     var a = 2;
     b = --a; // a = 1, b = 1
+    
+    // Advanced
+    var a = 9;
+    var b = 4;
+    a -= b; //a = 5, b = 4
 _!Important!_ As you can see, you **cannot** perform any sort of operations on `Infinity`.
 
 Source: The amazing <a href='https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Arithmetic_Operators' target='_blank' rel='nofollow'>MDN</a>.

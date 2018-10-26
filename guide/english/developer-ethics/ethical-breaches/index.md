@@ -5,7 +5,7 @@ title: Ethical Breaches
 
 There have been a number of well publicized cases in which software was used to deceive users or even break the law. At the heart of these cases is a breach of ethics on the part of one or more developers. Such cases include:
 
-* <a href='http://www.businessinsider.com/uber-greyball-app-vtos-authorities-2017-3?op=1' target='_blank' rel='nofollow'>**Uber Greyball**</a> – a tool created by ride-sharing company Uber that collected data from Uber's app to identify and evade officials in multiple cities.
+* <a href='http://www.businessinsider.com/uber-greyball-app-vtos-authorities-2017-3?op=1' target='_blank' rel='nofollow'>**Uber Greyball**</a> – a tool created by ride-sharing company Uber that collected data from Uber's app to identify and evade regulators. The program used a combination of geofencing, mining credit card databases, identifying devices, social media searches, and eyeballing to flag users.   
 
 * <a href='https://en.wikipedia.org/wiki/Volkswagen_emissions_scandal' target='_blank' rel='nofollow'>**Volkswagon Emission Scandal**</a> – Volkswagen intentionally programmed turbocharged direct injection (TDI) diesel engines to activate some emissions controls only during laboratory emissions testing. The programming caused the vehicles' nitrogen oxide output to meet US standards during regulatory testing but emit up to 40 times more nitrogen oxide in real-world driving.
 
