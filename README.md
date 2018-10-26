@@ -106,7 +106,7 @@ We also have 3 legacy certifications from our 2015 curriculum, which are still a
 - Legacy Data Visualization Certification
 - Legacy Back End Development Certification
 
-### The Learning Platform
+### The Learning Platform of freeCodeCamp
 
 This code is running live at [freeCodeCamp.org](https://www.freecodecamp.org).
 
