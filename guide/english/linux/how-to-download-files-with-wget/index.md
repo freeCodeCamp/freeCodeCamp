@@ -35,4 +35,10 @@ wget ftp://ftp.gnu.org/gnu/wget/wget-1.10.1.tar.gz.sig
 ```
 wget --limit-rate=100k http://ftp.gnu.org/gnu/wget/wget-1.5.3.tar.gz
 ```
+
+### Download files in background
+```
+wget -b /wget/log.txt ftp://ftp.gnu.org/gnu/wget/wget-1.10.1.tar.gz.sig
+```
+
 You can play with remaining features of the ``wget`` utility
