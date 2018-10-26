@@ -128,7 +128,7 @@ You will need to fix the issue before we can merge your PR:
       - you named the new article file something other than `index.md`, or
       - you created both a new folder, then a sub-folder, you wrote the new article in the sub-folder but forget to put a stub `index.md` file in the new folder
 2. Your PR creates a new folder and the folder name isn't formatted correctly.
-    - Your folder name should be all lowercase and formated in kebab-case (i.e. my-new-folder).
+    - Your folder name should be all lowercase and formatted in kebab-case (i.e. my-new-folder).
 3. The article doesn't have a `title` field at the top.
     - Please refer to [Title](#title) section below under [Style guide for writing articles](/docs/style-guide-for-guide-articles.md).
 
@@ -161,7 +161,7 @@ Stay active in the [contributors chat room](https://gitter.im/freecodecamp/contr
 
 ---
 
-## Steps for revewing pull requests for Guide Articles
+## Steps for reviewing pull requests for Guide Articles
 
 > This section is targeted at reviewers of this repo.
 
