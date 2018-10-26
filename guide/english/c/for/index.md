@@ -34,7 +34,7 @@ int main () {
     }
 }
 ```
-
+(It should be noted that the value of 'i' is set to 0 because arrays are indexed from 0 to size-1, and we want to print the first value as well)
 ## Output:
 ```shell
 > Item on index 0 is 1
