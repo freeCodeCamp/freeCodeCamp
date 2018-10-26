@@ -19,6 +19,15 @@ Python allows `str` objects, or _strings_, to be expressed in a few different wa
         Traceback (most recent call last):
                 File "<stdin>", line 1, in <module>
         TypeError: 'str' object does not support item assignment
+*   Indexable: You can access any character of `str` object by specifying its index. And as it supports slicing like in `list` and `tuple` objects.
+    
+        >>> foo = "my string"
+        >>> foo[3]
+        's'
+        >>> foo[3:]
+        'string'
+        >>> foo[::-1]
+        'gnirts ym'
         
 
 ## Reference:
