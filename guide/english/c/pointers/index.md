@@ -283,3 +283,26 @@ Most of the time, pointer and array accesses can be treated as acting the same, 
     a++; /*illegal*/ 
 ```
 
+## fun program in pointers
+
+#include <stdio.h> 
+
+void fun(int a) 
+{ 
+    printf("Value of a is %d\n", a); 
+} 
+  
+int main() 
+{ 
+    
+    void (*fun_ptr)(int) = &fun; 
+  
+   
+   
+    (*fun_ptr)(10); 
+  
+    return 0; 
+} 
+
+
+
