@@ -6,9 +6,10 @@ title: State
 
 State is the place where the data comes from. 
 
-We should always try to make our state as simple as possible and minimize the number of stateful components. If we have, for example, ten components that need data from the state, we should create one container component that will keep the state for all of them.
+We should always try to make our state as simple as possible and minimize the number of stateful components. This helps contain your state management to a specific area of your application. If we have, for example, ten components that need data from the state, we should create one container component that will keep the state for all of them.
 
 State is basically like a global object that is available everywhere in a component.
+Note that if you make a component stateful, no other components are aware of its state. Its state is completely encapsulated, or local to that component, unless you pass state data to a child component as props. 
 
 Example of a Stateful Class Component:
 
