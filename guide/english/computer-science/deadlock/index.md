@@ -45,6 +45,23 @@ Deadlock can arise if four conditions hold simultaneously.
 
 - **Circular Wait** – It imposes a total ordering of all resource types, and require that each process requests resources in an increasing order of enumeration.
 
+## Deadlock Avoidance
+
+Deadlock avoidance can be done with Banker’s Algorithm.
+
+## Banker’s Algorithm:
+
+Bankers’s Algorithm is resource allocation and deadlock avoidance algorithm which test all the request made by processes for resources, it check for safe state, if after granting request system remains in the safe state it allows the request and if their is no safe state it don’t allow the request made by the process.
+
+Inputs to Banker’s Algorithm
+1. Max need of resources by each process.
+2. Currently allocated resources by each process.
+3. Max free available resources in the system.
+
+Request will only be granted under below condition.
+1. If request made by process is less than equal to max need to that process.
+
+2. If request made by process is less than equal to freely availbale resource in the system.
 
 #### More information :
 - [Deadlock](https://en.wikipedia.org/wiki/Deadlock)
