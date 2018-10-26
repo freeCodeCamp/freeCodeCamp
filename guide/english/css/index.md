@@ -23,4 +23,6 @@ The site [CSS Zen Garden](http://www.csszengarden.com/) is a great example how t
 
 For a demonstration of the power of CSS, check out [Species In Pieces](http://species-in-pieces.com/#).
 
-For more information refer [MDN Docs](https://developer.mozilla.org/en-US/docs/Web/CSS)
+## More Resources
+
+[MDN Docs](https://developer.mozilla.org/en-US/docs/Web/CSS)
