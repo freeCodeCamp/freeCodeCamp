@@ -18,7 +18,6 @@
     "@reach/router": "^1.1.1",
     "axios": "^0.18.0",
     "browser-cookies": "^1.2.0",
-    "chai": "^4.2.0",
     "enzyme": "^3.6.0",
     "enzyme-adapter-react-16": "^1.5.0",
     "fetchr": "^0.5.37",
@@ -80,6 +79,7 @@
   },
   "devDependencies": {
     "babel-plugin-transform-imports": "^1.5.0",
+    "chai": "^4.2.0",
     "eslint": "^5.5.0",
     "eslint-config-freecodecamp": "^1.1.1",
     "jest": "^23.6.0",
