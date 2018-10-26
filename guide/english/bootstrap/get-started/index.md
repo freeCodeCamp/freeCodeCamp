@@ -12,6 +12,16 @@ Adding bootstrap to your page is a fast process, just add the following to the `
 ```html
 <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
 ```
+#### Install Bootstrap with Bower and NPM
+You can also install and manage Bootstrap file using Bower and NPM .
+Use Bower :
+```html
+$ bower install bootstrap
+```
+Use NPM :
+```html
+$ npm install bootstrap@3
+```
 
 You will also need to add the following between the `body` tags in your code. With bootstrap you'll be using `<div>` tags when using many of Bootstrap's features, each tag will have it's own unique set of classes applied that allows the tag to perform it's task. Other sections of this Bootstrap guide will show more examples of how Bootstrap uses `<div>` tags. (`<div>` tags are not exclusive to Bootstrap however Bootstrap makes use of them.). Below is the code that would would add to the `body` tags in your code to finish getting started. Keep in mind that while this creates the container, the page will still remain blank until you add content to the container.
 ```html
