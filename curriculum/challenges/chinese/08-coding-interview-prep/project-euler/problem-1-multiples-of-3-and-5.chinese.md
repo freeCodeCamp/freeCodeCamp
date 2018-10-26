@@ -7,7 +7,14 @@ localeTitle: 问题1：3和5的倍数
 ---
 
 ## Description
-<section id="description">如果我们列出10以下是3或5的倍数的所有自然数，我们得到3,5,6和9.这些倍数的总和是23.求出所提供参数以下3或5的所有倍数的总和价值<code>number</code> 。 </section>
+<section id='description'>
+If we list all the natural numbers below 10 that are multiples of 3 or 5, we get 3, 5, 6 and 9. The sum of these multiples is 23.
+Find the sum of all the multiples of 3 or 5 below the provided parameter value <code>number</code>.
+</section>
+<section id="description">
+  如果我们列出所有10以下是3或5的倍数的自然数，我们会得到3，5，6和9。这些倍数的总和是23。
+  求出所有在<code>number</code>以下的3或5的倍数的总和。
+</section>
 
 ## Instructions
 <section id="instructions">
