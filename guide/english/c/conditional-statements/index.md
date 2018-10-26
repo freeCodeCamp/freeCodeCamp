@@ -234,3 +234,23 @@ printf("%.1lf / %.1lf = %.1lf",firstNumber, secondNumber, firstNumber/firstNumbe
 Finally, the break statement ends the switch statement.
 
 If break statement is not used, all cases after the correct case is executed. 
+
+## 6. Inline ? : Operator
+
+A unquie operator which C offers is the ? : statement, often called a ternary operator.  It is coposed of three parts: 
+
+### Syntax of ? : statement
+```
+<a true/false condition> ? <expression to do if condition is true> : <expression to do if condition is false>
+```
+This statement comes in handy for collapsing simple if...then  statements.
+
+#### Example
+```C
+int a = 1;
+(a != 0) ? printf("a is not 0") : printf("a is equal to 0");
+```
+### Output
+```
+a is not 0
+```
