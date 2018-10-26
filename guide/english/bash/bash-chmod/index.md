@@ -9,3 +9,5 @@ title: Bash chmod
 
 ### More Information:
 * [Wikipedia](https://en.wikipedia.org/wiki/Chmod)
+
+my changes
