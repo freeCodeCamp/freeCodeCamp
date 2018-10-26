@@ -5,6 +5,6 @@
     "curriculum",
     "tools/challenge-md-parser",
     "tools/scripts/seed"
-  ],
+  {
   "version": "independent"
 }
