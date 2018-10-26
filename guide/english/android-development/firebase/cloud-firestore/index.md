@@ -26,7 +26,7 @@ dependencies {
 }
 ```
 
-## Resources
+## Resources 
 
-* You can learn more from the [codelabs](https://codelabs.developers.google.com/codelabs/firestore-android/#0) offered by Google.
+* You can learn more from the [codelabs](https://codelabs.developers.google.com/codelabs/firestore-android/#0) offered by Google. [Full source code of the codebals](https://github.com/firebase/friendlyeats-android)
 * You can watch a video about it [here](https://www.youtube.com/watch?v=kDZYIhNkQoM).
