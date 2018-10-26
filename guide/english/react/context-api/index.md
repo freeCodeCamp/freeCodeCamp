@@ -4,14 +4,12 @@ title: Context API
 
 # Context API
 
-The Context API has been implemented in the 16.3 version of React.
+The Context API has been implemented in the 16.3 version of React, in previous versions it was still a beta feature.
 
-It existed before, but was in beta, and thus, unadvised to work with.
+The goal of the Context API is to allow developers to communicate easily between components, without needing them to be closely related (Parent/Children components).
+This also reduces the need for prop drilling (passing down the props through several components), which in turn makes for cleaner code that is easier to maintain and update.
 
-The goal of Context API is to allow developers to have an easy communication between components, without needing them to be closely related (Parent/Children components).
-This also reduce the need for prop drilling (passing down the props through several components), which allows for a cleaner code, easier to maintain and update.
-
-This get to its full potential when we want to share data that will be accessed by multiple components.
+This shows its full potential when we want to share data that will be accessed by multiple components.
 
 This is based around two things : a Provider and a Consumer.
 
@@ -46,7 +44,7 @@ class TimeProvider extends Component {
 
 export default TimeProvider;
 ```
-We need to tweak a bit the component that will call the child which needs to consume our context (<ShowTime /> in this case).
+We need to tweak the component that will call the child which needs to consume our context (<ShowTime /> in this case).
 
 ```javascript
 // index.js
@@ -71,7 +69,7 @@ ReactDOM.render(<App />, rootElement);
 ```
 
 ## Consumer
-In the ShowTime.js file, let's call the time value using the consumer :
+In the ShowTime.js file, let's call the time value using the consumer:
 
 ```javascript
 // on ShowTime.js
@@ -86,7 +84,7 @@ export default () => (
 );
 ```
 
-This should show :
+This should show:
 ```javascript
 <p> It’s 17:00 ! </p>
 ```
@@ -94,7 +92,7 @@ This should show :
 ### Modify the context dynamically
 In order to change the time that we’ll provide to the ShowTime component, we need to give our context a function, that can be used by the consumer to update a value.
 
-Let’s just add it to our Provider
+Let’s just add it to our Provider.
 ```javascript
 // utils.TimeProvider.js
 ...
@@ -123,7 +121,7 @@ class TimeProvider extends Component {
 export default TimeProvider;
 ```
 
-And back on our Consumer :
+And back on our Consumer:
 
 ```javascript
 // on ShowTime.js
@@ -141,10 +139,10 @@ export default () => (
 
 This will give us an input to modify the time that’ll be displayed.
 
-We need to remember using three things :
+We need to implement three things:
 - Create a Provider that will manage our data shared (also called a Store)
 - Create a Consumer that will communicate with the store
-- Surrounding our Consumer Component with the Provider created so it can use its data
+- Surround our Consumer Component with the Provider created so it can use its data
 
 ### More Information
 
