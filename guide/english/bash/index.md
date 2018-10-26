@@ -43,7 +43,6 @@ That is because it is a convention to let the interactive shell know what kind o
 Though it is only executed if you run your script as an executable. For example, when you type `./scriptname.extension`, it will look at the top line to find out the interpreter, whereas, running the script as `bash scriptname.sh`, first line is ignored. 
 
 Then you could run the script like so:
-For make file executable you should call this command under sudo chmod +x "filename".
 ```
 zach@marigold:~$ ./myBashScript.sh
 Hello world!
