@@ -41,3 +41,5 @@ Benefits
   AWS Cloud9 makes it easy for you to start new projects. Cloud9’s development environment comes prepackaged with tooling for over 40 programming languages, including Node.js, JavaScript, Python, PHP, Ruby, Go, and C++. 
   This enables you to start writing code for popular application stacks within minutes by eliminating the need to install or configure files, SDKs, and plug-ins for your development machine. 
   Because Cloud9 is cloud-based, you can easily maintain multiple development environments to isolate your project’s resources.
+  
+  Source: https://aws.amazon.com/cloud9/
