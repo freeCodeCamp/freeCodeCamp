@@ -19,4 +19,25 @@ This function returns a lowercase hexadecimal string prefixed with "0x".
 
 ![:rocket:](//forum.freecodecamp.com/images/emoji/emoji_one/rocket.png?v=2 ":rocket:") <a href='https://repl.it/CV0S' target='_blank' rel='nofollow'>Run Code</a>
 
+## Hexadecimal number to decimal number
+
+To change hexadecimal numbers to decimal numbers.
+
+```
+hex = "0xFA"
+hex2 = "-0x12a"
+hex3 = "0x21F"
+number = int(hex, 16)
+number2 = int(hex2, 16)
+number3 = int(hex3, 16)
+print(number)
+print(number2)
+print(number3)
+```
+Prints the result:
+```
+250
+-298
+543
+```
 <a href='https://docs.python.org/3/library/functions.html#hex' target='_blank' rel='nofollow'>Official Documentation</a>
