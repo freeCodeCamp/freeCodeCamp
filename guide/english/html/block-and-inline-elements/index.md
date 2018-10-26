@@ -19,7 +19,7 @@ Common **block-level elements** are `<div>`,`<p>`,`<article>`,`<section>`,`<figu
 
 
 #### Inline Element : 
-Inline as the name says "included as a part of the main text and not as a separate section". Inline elements occupy the space as needed within the space defined by the main element. Unlike block-level elements, they do not begin on new lines instead they begin from the line where it is specified. It does not break the flow of the content.
+Inline as the name says "included as a part of the main text and not as a separate section". Inline elements occupy the space as needed within the space defined by the main element. Unlike block-level elements, they do not begin on new lines.  Instead, they begin from the line where it is specified which does not break the flow of the content.
 
 Some of the **inline elements** are `<a>`,`<span>`,`<img>`,`<code>`,`<cite>`,`<button>`,`<input>` etc.
 
