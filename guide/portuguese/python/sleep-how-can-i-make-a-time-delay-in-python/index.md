@@ -1,6 +1,6 @@
 ---
 title: Sleep How Can I Make a Time Delay in Python
-localeTitle: "Sleep" como posso fazer um atraso de tempo em Python
+localeTitle: Sleep como posso fazer um atraso de tempo em Python
 ---
 ## "Sleep"; como posso fazer um atraso de tempo em Python
 
