@@ -3,13 +3,23 @@ title: A Tag
 ---
 ## A Tag
 
-The `<a>` tag or _anchor_ element creates a hyperlink to another page or file. In order to link to a different page or file the `<a>` tag must also contain a `href` attribute, which indicates the link's destination.
+The `<a>` tag or _anchor_ element creates a hyperlink to another page or another section within same page. In order to link to a different page or another section within same page, the `<a>` tag must also contain a `href` attribute, which indicates the link's destination.
 
 The text between the opening and closing `<a>` tags becomes the link.
 
-By default, a linked page is displayed in the current browser window unless another target is specified. 
+By default, a linked page is displayed in the current browser window unless another target is specified.
 
 #### Example:
+
+We can use `<a>` tag to link to a different section within same page as follows.
+
+```html
+  <a href= "#section1">freeCodeCamp</a>
+  
+  <div id="section1"> The above anchor element links to this div element.</div> 
+```
+We can also link to a different page.
+
 
 ```html
   <a href= "https://guide.freecodecamp.org/">freeCodeCamp</a>
