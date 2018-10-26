@@ -45,3 +45,16 @@ More great resources to help you know more about Imposter Syndrome and some tips
 * [Startup Bros - 21 Proven Ways to Overcome Imposter Syndrom](https://startupbros.com/21-ways-overcome-impostor-syndrome/)
 * [NY Times - Learning How to Deal with the Imposter Syndrome](https://www.nytimes.com/2015/10/26/your-money/learning-to-deal-with-the-impostor-syndrome.html)
 * [The Every Girl - 5 Books to Read If You're Struggling With Imposter Syndrome](http://theeverygirl.com/5-books-read-youre-struggling-imposter-syndrome/)
+
+Books that may contribute to solution of Imposter Syndrome problem:
+
+* [The Impostor Syndrome: Becoming an Authentic Leader](https://www.amazon.com/Impostor-Syndrome-Becoming-Authentic-Leader-ebook/dp/B00FKE3XZU)
+
+* [The Impostor Syndrome: How to Replace Self-Doubt with Self-Confidence and Train Your Brain for Success](https://amazon.com/Impostor-Syndrome-Replace-Self-Doubt-Self-Confidence-Success/dp/143635448X)
+
+* [The Self Confidence Workbook: A Guide to Overcoming Self-Doubt and Improving Self-Esteem](https://www.amazon.com/dp/1641521481?ref_=ams_ad_dp_ovrl)
+
+* [The Art of Extraordinary Confidence: Your Ultimate Path To Love, Wealth, and Freedom](https://www.amazon.com/dp/B01HFQD4SQ/ref=sspa_dk_detail_1?psc=1)
+
+* [The Imposter Syndrome Remedy: A 30-day Action Plan to Stop Feeling Like a Fraud: The PAME Code to end self sabotage, know your worth, and flourish with ... at work and in life](https://www.amazon.com/dp/B07CLBLKYB/ref=sspa_dk_detail_0?psc=1)
+
