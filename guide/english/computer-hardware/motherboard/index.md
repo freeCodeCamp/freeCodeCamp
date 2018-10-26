@@ -33,7 +33,25 @@ Additional slots to connect hardware in the form of Peripheral Component Interco
 
 Motherboards come in different sizes, known as form factors. The most common motherboard form factor is ATX. The different types of ATX are known as micro-ATX (sometimes shown as µATX, mini-ATX, FlexATX, EATX, WATX, nano-ATX, pico-ATX, and mobileATX).
 
+## Different types of motherboards:
+- AT Motherboards
+The oldest of the main boards, these motherboards were used in earlier 286/386 or 486 computers. The AT means the board consists of advanced technology(AT) power connectors. There are two power connectors of 6 pin each mounted on the AT motherboards. The AT motherboards were available in the early 80’s.
+
+![AT Motherboards](http://www.it4nextgen.com/wp-content/uploads/2016/08/motherboard-486.jpg)
+
+- ATX Motherboards
+The ATX motherboards started in 90’s and are still available. The ATX connector on the motherboard consists of a single connector. These boards are used for P2/P3 or P/4 processors.
+
+* Motherboard for P1/P2 processors:
+
+![Motherboard for P1/P2 processors](http://www.it4nextgen.com/wp-content/uploads/2016/08/motherboard-pentium2.jpg)
+
+* Pentium 4 motherboard
+
+![Pentium 4 motherboard](http://www.it4nextgen.com/wp-content/uploads/2016/08/main-board-p4.jpg)
+
 #### More Information:
 <!-- Please add any articles you think might be helpful to read before writing the article -->
 * <a href='https://www.computerhope.com/jargon/m/mothboar.htm' target='_blank' rel='nofollow'>Motherboard</a>
 * <a href='https://en.wikipedia.org/wiki/Chipset' target='_blank' rel='nofollow'>Chipset (wikipedia)</a>
+* <a href='http://www.it4nextgen.com/motherboard-components/'>Motherboard (IT4nextgen)</a>
