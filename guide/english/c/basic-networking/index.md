@@ -15,3 +15,26 @@ But, how will it arrive at the apartment? Every apartment has there own unique a
 ## Basics of Socket Programming
 
 Socket programming is a way of connecting two nodes on a network to communicate with each other. One socket(node) listens on a particular port at an IP, while other socket reaches out to the other to form a connection. Server forms the listener socket while client reaches out to the server.
+
+
+
+
+
+## additional things 
+
+
+1.      Struct sockaddr       {
+                                                    unsigned short sa_family;
+                                                    char sa_data[14];
+                                               }
+
+2.      Struct sockaddr_in {
+                                                  short sin_family;
+                                                  unsigned short sin_port; // Port Number
+                                                  struct in_addr sin_addr; // IP Address
+                                                  char sin_zero[8];
+                                              }
+
+3.      Struct in_addr         {
+                                                    unsigned long s_addr; // 4 bytes long
+                                               }
