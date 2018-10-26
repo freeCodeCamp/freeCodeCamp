@@ -196,3 +196,7 @@ Nos artigos subseqüentes, abordarei vários tópicos mais importantes. Várias 
 *   Existe uma maneira para eu escrever conteúdo apenas leitores de tela e outras tecnologias assistivas vêem?
 *   Como posso tornar os componentes JavaScript personalizados acessíveis?
 *   Quais ferramentas existem, além de testes de usuário inclusivos, que podem ser usadas para desenvolver a experiência mais robusta e acessível para o maior grupo de usuários?
+
+#### More information:
+Em caso você não se considere parte das categorias acima, por gentileza, compartilhe sua opinião pois sempre estou disposto à ouvir a opinião dos leitores interessados em crescer intelectualmente.
+A implementação da acccessabilidade vem à impactar toda uma equipe, desde as cores escolhidas pelo desenhista e estilista de produtos web, conteúdo escrito bem à você, o desenvolvedor.
