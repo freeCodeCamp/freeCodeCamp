@@ -107,6 +107,9 @@ A _broadcast receiver_ is another component without user interface (except an op
 ## [Content providers](https://developer.android.com/guide/topics/providers/content-providers)
 A _content provider_ is a component used to manage a set of app data to share with other applications. Each item saved in the content provider is identified by a URI scheme.
 
+## [Intents and Filters]
+An Android Intent is an abstract description of an operation to be performed. It can be used with startActivity to launch an Activity, broadcastIntent to send it to any interested BroadcastReceiver components, and startService(Intent) or bindService(Intent, ServiceConnection, int) to communicate with a background Service.
+
 For detailed information about the topic, see the official [Android fundamentals](https://developer.android.com/guide/components/fundamentals) documentation.
 
 ## Advanced Android Development  
