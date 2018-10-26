@@ -1,61 +1,63 @@
 ---
 title: Strings
-localeTitle: Instrumentos de cuerda
+localeTitle: Strings (Secuencias de caracteres)
 ---
-# Instrumentos de cuerda
+# Strings (Secuencias de caracteres)
 
-Las cadenas son secuencias de caracteres. En Java, una `String` es un `Object` . Las cadenas no deben confundirse con `char` ya que los caracteres son literalmente 1 valor en lugar de una secuencia de caracteres. Aún puede usar 1 valor dentro de una cadena, sin embargo, es preferible usar `char` cuando está verificando 1 carácter.
+Los Strings son secuencias de caracteres. En Java, un `String` es un `Object`. Las cadenas no deben confundirse con `char` ya que los caracteres son literalmente 1 valor en lugar de una secuencia de caracteres. Usted puede usar una cadena de 1 valor, sin embargo, es preferible usar `char` cuando necesita 1 carácter.
 
 ```java
-String course = "FCC"; 
- System.out.println(course instanceof Object); 
+ String curso = "FCC"; 
+ System.out.println(curso instanceof Object); 
 ```
 
 Salida:
-```
-true 
+```java
+ true 
 ```
 
-Puede crear un objeto de cadena de las siguientes maneras:
+Puede crear un objeto String de las siguientes maneras:
 
-1.  `String str = "I am a String"; //as a String literal`
-2.  `String str = "I am a " + "String"; //as a constant expression`
-3.  `String str = new String("I am a String"); //as a String Object using the constructor`
+```java
+ String str = "Yo soy una Cadena"; // como una cadena literal
+ String str = "Yo soy una " + "Cadena"; // como una expresion constante
+ String str = new String("Yo soy una Cadena"); // como un objeto String usando el constructor
+```
 
 Usted podría estar pensando: ¿Cuál es la diferencia entre los tres?
 
-Bueno, usar la `new` palabra clave garantiza que se creará un nuevo objeto `String` y se asignará una nueva ubicación de memoria en el `Heap` memoria [(haga clic aquí para obtener más información)](https://docs.oracle.com/cd/E13150_01/jrockit_jvm/jrockit/geninfo/diagnos/garbage_collect.html) . Cuerda Los literales y las expresiones de cadena constantes se almacenan en caché en tiempo de compilación. El compilador los coloca en el String Literal Pool para evitar duplicados. y mejorar el consumo de memoria. La asignación de objetos es costosa y este truco aumenta el rendimiento al crear cadenas. Si utiliza el mismo literal de nuevo, la JVM usa el mismo objeto. Usar el contructor como el de arriba es casi siempre una opción peor.
+Bueno, usar la palabra reservada `new` garantiza que se creará un nuevo objeto `String` y se asignará una nueva ubicación de memoria en el `Heap` de memoria [(haga clic aquí para obtener más información)](https://docs.oracle.com/cd/E13150_01/jrockit_jvm/jrockit/geninfo/diagnos/garbage_collect.html) . Los literales de String y las expresiones de cadena constantes se almacenan en caché en tiempo de compilación. El compilador los coloca en el String Literal Pool (Reserva de literales de String) para evitar duplicados. y mejorar el consumo de memoria. La asignación de objetos es costosa y este truco aumenta el rendimiento al crear cadenas. Si utiliza el mismo literal de nuevo, la JVM usa el mismo objeto. Usar el constructor como arriba es casi siempre la peor opción.
 
-En este fragmento de código, ¿cuántos objetos de cadena se crean?
+En este fragmento de código, ¿Cuántos objetos de cadena se crean?
 
 ```java
-String str = "This is a string"; 
- String str2 = "This is a string"; 
- String str3 = new String("This is a string"); 
+ String str = "Esta es una cadena"; 
+ String str2 = "Esta es una cadena"; 
+ String str3 = new String("Esta es una cadena"); 
 ```
 
-La respuesta es: 2 objetos String son creados. `str` y `str2` refieren al mismo objeto. `str3` tiene el mismo contenido pero usando `new` forzados. La creación de un objeto nuevo, distinto.
+La respuesta es: 2 objetos String son creados. `str` y `str2` refieren al mismo objeto. `str3` tiene el mismo contenido pero usando `new` se fuerza la creación de un nuevo objeto distinto.
 
-Cuando creas un literal de cadena, la JVM verifica internamente, lo que se conoce como el `String pool` , para ver si puede encontrar un similar (contenido) Objeto de cuerda. Si lo encuentra, devuelve la misma referencia. De lo contrario, simplemente continúa y crea un nuevo objeto String en el grupo para que El mismo control se puede realizar en el futuro.
+Cuando creas un literal de cadena, la JVM lo verifica internamente, lo que se conoce como el `String pool` , para ver si puede encontrar un objeto String similar (ya contenido). Si lo encuentra, devuelve la misma referencia. De lo contrario, simplemente continúa y crea un nuevo objeto String en el pool para que la misma verificación se pueda realizar en el futuro.
 
-Puede probar esto usando la comparación de objetos rápida, tragar `==` y los `equals()` implementados `equals()` .
+Puede comprobar esto usando la comparación rapida de Object `==` y el método `equals()` implementado.
 
 ```java
-System.out.println(str == str2); // This prints 'true' 
- System.out.println(str == str3); // This prints 'false' 
- System.out.println(str.equals(str3)); // This prints 'true' 
+ System.out.println(str == str2); // Imprime 'true' 
+ System.out.println(str == str3); // Imprime 'false' 
+ System.out.println(str.equals(str3)); // Imprime 'true' 
 ```
 
 Aquí hay otro ejemplo sobre cómo crear una cadena en Java usando los diferentes métodos:
 
 ```java
-public class StringExample{ 
+public class EjemploDeCadenas{ 
  
    public static void main(String args[]) { 
-      String s1 = "java";  // creating string by Java string literal 
-      char ch[] = {'s','t','r','i','n','g','s'}; 
-      String s2 = new String(ch);  // converting char array to string 
-      String s3 = new String("example");  // creating Java string by new keyword 
+      String s1 = "java";  // creando un String para la cadena literal java 
+      char ch[] = {'c','a','d','e','n','a'}; 
+      String s2 = new String(ch);  // convirtiendo un arrelgo de caracteres a una cadena 
+      String s3 = new String("ejemplo");  // creating un String de Java con la palabra reservada new 
       System.out.println(s1); 
       System.out.println(s2); 
       System.out.println(s3); 
@@ -63,78 +65,136 @@ public class StringExample{
  } 
 ```
 
-#### Comparando cuerdas
+#### Comparando Cadenas
 
-Si desea comparar el valor de dos variables de cadena, no puede usar ==. Esto se debe a que comparará las referencias de las variables. Y no los valores que están vinculados a ellos. Para comparar los valores almacenados de las cadenas, se utiliza el método igual.
+Si desea comparar el valor de dos variables String, no puede usar ==. Esto se debe a que comparará las referencias de las variables y no los valores que están vinculados a ellas. Para comparar los valores almacenados de las cadenas, se utiliza el método equals.
 
 ```java
-boolean equals(Object obj) 
+ boolean equals(Object obj)
 ```
 
-Devuelve true si dos objetos son iguales y false de lo contrario.
+Este devuelve true si dos objetos son iguales y false si no los son.
 
 ```java
-String str = "Hello world"; 
- String str2 = "Hello world"; 
+ String str = "Hola mundo"; 
+ String str2 = "Hola mundo"; 
  
- System.out.println(str == str2); // This prints false 
- System.out.println(str.equals(str2); // This prints true 
+ System.out.println(str == str2); // Imprime false 
+ System.out.println(str.equals(str2); // Imprime true 
 ```
 
-La primera comparación es falsa porque "==" mira las referencias y no son lo mismo.
+La primera comparación es falsa porque "==" compara las referencias y estas no son iguales.
 
 La segunda comparación es verdadera porque las variables almacenan los mismos valores. En este caso "Hola mundo".
 
-Tenemos varios métodos incorporados en String. El siguiente es un ejemplo del método String Length ().
+Tenemos varios métodos incorporados en String. El siguiente es un ejemplo del método `lenght()` de String.
 
 ```java
-public class StringDemo { 
+public class DemoDeString { 
  
    public static void main(String args[]) { 
-      String palindrome = "Dot saw I was Tod"; 
-      int len = palindrome.length(); 
-      System.out.println( "String Length is : " + len ); 
+      String palindromo = "Anita lava la tina"; 
+      int longitud = palindromo.length(); 
+      System.out.println( "La longitud de la cadena es : " + longitud ); 
    } 
  } 
 ```
 
-Esto resultará en - `String Length is : 17`
+Esto resultará en - `La longitud de la cadena es : 18`
 
-**La respuesta es: 2** objetos String son creados. **Notas**
+**Notas**
 
-1.  Los métodos de cadena utilizan índices basados ​​en cero, a excepción del segundo argumento de `substring()` .
-2.  La clase String es final, sus métodos no pueden ser anulados.
-3.  Cuando JVM encuentra el literal de cadena, se agrega a la agrupación de cadena literal.
-4.  La clase de cadena posee una `length()` nombre de método `length()` , mientras que las matrices tienen una longitud de nombre de atributo.
-5.  En java, los objetos de cadena son inmutables. Inmutable simplemente significa inmodificable o inmutable. Una vez que se crea el objeto de cadena, sus datos o estado no se pueden cambiar, pero se crea un nuevo objeto de cadena.
+1.  Los métodos de String utilizan índices basados ​​en cero, a excepción del segundo argumento de `substring()`.
+2.  La clase String es final, y sus métodos no se pueden sobreescribir.
+3.  Cuando la JVM encuentra un literal de String, se agrega a la reserva de literales de String.
+4.  La clase String posee un método de nombre `length()`, mientras que los arreglos tienen un atributo llamado length.
+5.  En java, los objetos String son inmutables. Inmutable simplemente significa inmodificable o inalterable. Una vez que se crea el objeto String, sus datos o estado no se pueden cambiar, si no que se crea un nuevo objeto String.
 
-Longitud de la cuerda
+#### Longitud de la cadena
 
-La "longitud" de una cadena es solo el número de caracteres que contiene. Así que "hi" es la longitud 2 y "Hello" es la longitud 5. El método length () en una cadena devuelve su longitud, de esta manera:
+La "longitud" de una cadena es solo el número de caracteres que contiene. Así que "hi" es de longitud 2 y "Hola" es de longitud 4. El método `length()` en una cadena devuelve su longitud, de esta manera:
 
 ```java
-String a = "Hello"; 
- int len = a.length();  // len is 5 
+ String a = "Hola"; 
+ int len = a.length();  // la longitud es 4 
 ```
 
-#### Otros métodos de comparación que también se pueden usar en la Cadena son:
+#### Otros métodos de comparación que también se pueden usar en String son:
 
-1.  equalsIgnoreCase (): compara la cadena sin tener en cuenta la sensibilidad del caso.
+1.  equalsIgnoreCase(): compara la cadena sin tener en cuenta mayúsculas o minúsculas.
 
 ```java
-String a = "HELLO"; 
- String b = "hello"; 
- System.out.println(a.equalsIgnoreCase(b));   // It will print true 
+ String a = "HOLA"; 
+ String b = "hola"; 
+ System.out.println(a.equalsIgnoreCase(b));   // Imprimira true 
 ```
 
 2.  compareTo: compara el valor lexicográficamente y devuelve un entero.
 
 ```java
-String a = "Sam"; 
+ String a = "Sam"; 
  String b = "Sam"; 
  String c = "Ram"; 
  System.out.println(a.compareTo(b));       // 0 
- System.out.prinltn(a.compareTo(c));       // 1 since (a>b) 
- System.out.println(c.compareTo(a));       // -1 since (c<a) 
-
+ System.out.prinltn(a.compareTo(c));       // 1 ya que (a>b) 
+ System.out.println(c.compareTo(a));       // -1 ya que (c<a) 
 ```
+
+#### Dividiendo Cadenas
+
+Si Usted quiere dividir una cadena en múltiples partes, puede hacerlo facilmente con `.split()`, esta crea un arreglo con las partes divididas de la cadena.
+
+Ejemplo del uso de un delimitador (",") para dividir una cadena
+
+```java
+ String texto = "Hola, Mundo";
+ String[] partesDeTexto = texto.split(",");
+ System.out.println(partesDeTexto[0]);
+ System.out.println(partesDeTexto[1]);
+```
+El resultado sera:
+```java
+ Hola
+  Mundo
+```
+
+Podemos tambien dividir la cadena especificando el índice inicial y final de los caracteres en la cadena. Haremos esto usando la función de Java llamada `.substring()`.
+
+El método `.substring()` puede ser usado de dos modos. Uno con solo el índice inicial y otro con ambos, el índice incial y el índice final. Toma en cuenta que el indice comienza en 0. Ejemplo:
+
+```java
+ String texto = "Hola,Mi nombre es Roberto";
+ System.out.println(texto.substring(5));
+```
+
+Producirá:
+
+```java
+ Mi nombre es Roberto
+```
+
+Para usarlo con un índice final ten en cuenta que índice final real es el valor pasado al método -1.
+Ahora un ejemplo usando `.substring()` con un índice final.
+```java
+
+String texto = "Hola,Mi nombre es Roberto";
+System.out.println(texto.substring(5,7));
+```
+
+El resultado sera:
+
+```java
+ Mi
+```
+
+**Más Información (en Inglés):**
+
+-   [String Documentation](https://docs.oracle.com/javase/7/docs/api/java/lang/String.html)
+<!--stackedit_data:
+eyJoaXN0b3J5IjpbLTc0MDc2MDgzMSwxNDQyMjQwMjYxLC0xNT
+c0ODM4NjUzLDk0ODA1Mjc1NSwtMTg4ODY2MDMyOCw4NzMwNTkx
+OTQsMzM1ODM0NzIyLC0xNDc4NjQxMTAsMTA4OTM1NTAxNiwtMT
+U4ODg5NDAyNCwtNjMyMTIwMzc4LC0xNDg3NjE0MTQsODIwNDM0
+ODcwLC0xODkyMDc1MTc0LC02Njg2NzA1NDksMTA1MDA4ODA2OS
+w4NDg5NTc0MTUsMTkzNjc1MTgxMF19
+-->
