@@ -3,10 +3,10 @@ title: Extensible Markup Language (XML)
 ---
 ## Extensible Markup Language (XML)
 
-  XML stands for eXtensible Markup Language. It is extensible, because it does not use a predefined set of tags for identifying structural components, instead, it provides a mechanism for defining such sets of tags. The main purpose of the language is to share the data. Unlike HTML, in XML there is no predefined set of tags and tags specify meaning, rather than the presentation.
+  XML stands for eXtensible Markup Language. It is extensible, because it does not use a predefined set of tags for identifying structural components, instead, it provides a mechanism for defining such sets of tags. The main purpose of the language is to share the data. Unlike HTML, in XML there is no predefined set of tags, and tags specify meaning, rather than the presentation.
   
  ## Syntax of XML
-  XML syntax refers to the rules that determine how an XML application can be written. The XML syntax is very straight forward, and this    makes XML very easy to learn.
+  XML syntax refers to the rules that determine how an XML application can be written. The XML syntax is very straightforward, and this    makes XML very easy to learn.
   XML documents must contain one root element that is the parent of all other elements:
   
 ```
@@ -17,7 +17,7 @@ title: Extensible Markup Language (XML)
 </root>
 ```  
 #### XML must have a root element 
-Above syntax shows the root element which is necessary while creating an XML code. This can be shown by the example:-
+The above syntax shows the root element which is necessary while creating an XML code. This can be shown by the example:-
 ```
 <?xml version="1.0" encoding="UTF-8"?>
 <note>
@@ -40,11 +40,11 @@ In this example 'note' is the root element.
    * Verbose and cumbersome syntax
    * Highly inefficient storage  
 
-In Computer Language, eXtensible Markup Language(XML) is that which defines a set or block of Rules which are later used for Encoding documents in such a Format which is both Machine and Human Readable.
+In Computer Language, eXtensible Markup Language(XML) is that which defines a set or a block of Rules which are later used for Encoding documents in such a Format which is both Machine and Human Readable.
 
-There is a main thing between XML and HTML which makes them different from each other. It is that XML was designed to carry a particular information and focuses on that informaion only. And HTML focuses on displaying that particular Information like design and all these stuff regarding the information.
+The main thing that makes XML and HTML different from each other, is that XML was designed to carry very specific information and focuses on that information only. Whereas HTML focuses on displaying that information like design and all the related stuff regarding that information.
 
-Also XML does not uses a predefined tags as used by HTML. It uses user defined tags.
+Also XML does not use predefined tags as are used by HTML. It uses user defined tags.
 
 The following are areas that can be simiplified with XML: 
 1. data sharing
