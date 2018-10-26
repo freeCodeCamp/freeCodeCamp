@@ -38,7 +38,7 @@ public class MyFirstJava {
 
 #### 3\. Documentação Comentário
 
-O comentário da documentação é usado pela ferramenta Javadoc para criar documentação para o código. Comentários de documentação são usados ​​pelos desenvolvedores para documentar códigos, como o que uma classe faz ou o que um método faz. Isso é usado por uma ferramenta javadoc que irá compilar um conjunto pré-formatado de arquivos html contendo todas as informações disponíveis no comentário.
+O comentário da documentação é usado pela ferramenta Javadoc para criar documentação para o código. Comentários de documentação são usados ​​pelos desenvolvedores para documentar códigos, como uma classe ou o que um método faz. Isso é usado por uma ferramenta javadoc que irá compilar um conjunto pré-formatado de arquivos html contendo todas as informações disponíveis no comentário.
 
 ```java
 /** 
