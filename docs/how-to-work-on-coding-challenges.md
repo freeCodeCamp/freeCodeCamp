@@ -16,7 +16,7 @@ Here is a template of what the challenge markdown files look like.
 
 ````md
 ---
-id: Unique identifier (alphanumerical, MongoDB _id)
+id: Unique identifier (alphanumerical, MongoDB_id)
 title: Challenge Title
 challengeType: 0
 guideUrl: 'url of guide article'
