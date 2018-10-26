@@ -31,7 +31,7 @@ In the above example, the variable `result` will be equal to a multiplied by b.
 #### Division: `/`
 Division is performed with a `/`, like so:
 ```C
-result = a / b;
+result = a / b;   // iff b is not equal to 0
 ```
 
 In the above example, the variable `result` will be equal to a divided by b. This is not always a fraction of a over b, however. When dealing with integers, things get a little different- more on that later.
