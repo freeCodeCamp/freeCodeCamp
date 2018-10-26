@@ -20,7 +20,7 @@ HTML5 Introduces a host of semantic elements. Though we discussed HTML helped to
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Page Title</title>
+  <title>Page Heading or Page Title</title>
 </head>
 <body>
 
