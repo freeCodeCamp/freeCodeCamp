@@ -4,7 +4,7 @@ We recommend the following guidelines to writing Guide articles to help you get 
 
 ## Title
 
-Article titles should be as short, concise, and to-the-point as possible.
+Article titles should be as short, concise, and as to-the-point as possible.
 
 We want campers to quickly find the information they're looking for, and the title should reflect the main theme of the article.
 
@@ -90,9 +90,9 @@ The following represents two other examples using JavaScript and CSS syntax high
 
 Please keep the following recommendations in mind:
 
-- To ensure correct rendering, each codeblock must have a language label. You can find a list of supported languages [here](http://prismjs.com/#languages-list ).
+- To ensure correct rendering, each code block must have a language label. You can find a list of supported languages [here](http://prismjs.com/#languages-list ).
 - For codeblocks with no appropriate language, use generic labels like ` ```text `, or ` ```code `.
-- You may know about markdown's four-space indentation syntax for writing codeblocks. However, this is currently __not__ supported by our rendering system.
+- You may know about markdown's four-space indentation syntax for writing code blocks. However, this is currently __not__ supported by our rendering system.
 
 Finally, here are some suggested formatting guidelines when writing code blocks:
 
@@ -185,13 +185,13 @@ And here is even more that should be cited from another source.<sup>2</sup>
 2. [Purdue OWL Staff. "MLA Works Cited: Electronic Sources." *Purdue Online Writing Lab.* October 12, 2017. Accessed: October 20, 2017.](https://owl.english.purdue.edu/owl/resource/747/08/)
 ```
 
-You can check out the Purdue link above to see how to properly cite web sources (they even show how to cite tweets!).
+You can check out the Purdue link above to see how to properly cite web sources (they even show how to cite Tweets!).
 
 Typically, an attribution has a structure like the following:
 
 > Author Last Name, Author First Name. "Article Title." *Publication.* Publisher. Date Published. Date Accessed.
 
-If you cannot find an author or published date, which is common, simply omit these.
+If you cannot find an author or a publication date, which is common, simply omit these.
 
 Use of proper citations will not only keep the guide reputable, but these citations and links will also provide valuable resources should the reader want to learn more about the topic.
 
