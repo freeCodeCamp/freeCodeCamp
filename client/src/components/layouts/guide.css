@@ -88,16 +88,17 @@
   width: 100%;
 }
 
-.fcc_searchBar .ais-Hits {
-  background-color: white;
-  width: 60%;
+.fcc_searchBar > div {
+  position: relative;
 }
 
+.fcc_searchBar .ais-Hits {
+  background-color: white;
+  width: 100%;
+}
 
-@media (max-width: 400px) {
-  .fcc_searchBar .ais-Hits {
-    width: 80%;
-  }
+.fcc_searchBar .fcc_suggestion_item {
+  padding: 0.5rem 1rem;
 }
 
 /* NavBar */
