@@ -35,4 +35,5 @@ The worst thing you can do is to sell yourself short if you want something take 
 - [Girls Who Code](https://girlswhocode.com/)
 - [1 Million Women To Tech](https://1millionwomentotech.com/)
 - [Women Who Code](https://www.womenwhocode.com/)
+- [Node Girls](https://nodegirls.com/)
 
