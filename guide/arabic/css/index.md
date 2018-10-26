@@ -23,3 +23,14 @@ CSS هو اختصار لـ Cascading Style Sheets. تم ابتكارها لأو�
 يعد موقع [CSS Zen Garden](http://www.csszengarden.com/) مثالًا رائعًا على كيفية تصميم نفس تنسيق html لتبدو فريدة تمامًا.
 
 لتوضيح قوة CSS ، تحقق من [الأنواع في القطع](http://species-in-pieces.com/#) .
+
+#### مثال:
+p {
+  font-size: 20px;
+  font-style: italic;
+  color: red;
+  text-align: center;
+  padding: 10px;
+  margin: 50px;
+  background-color: black;
+}
