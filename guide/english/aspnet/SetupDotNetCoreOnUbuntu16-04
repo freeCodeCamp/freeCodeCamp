@@ -1,0 +1,67 @@
+CẤU HÌNH ASP.NET CORE VERSION 2.0 trên ubuntu 16.04
+Cài đặt .net core version 2.0
+Đăng ký và lấy key 
+curl https://packages.microsoft.com/keys/microsoft.asc | gpg --dearmor > microsoft.gpg
+sudo mv microsoft.gpg /etc/apt/trusted.gpg.d/microsoft.gpg
+
+sudo sh -c 'echo "deb [arch=amd64] https://packages.microsoft.com/repos/microsoft-ubuntu-xenial-prod xenial main" > /etc/apt/sources.list.d/dotnetdev.list'
+
+Cài đặt .NET SDK
+sudo apt-get install apt-transport-https
+sudo apt-get update
+sudo apt-get install dotnet-sdk-2.1.4
+Kiểm tra đã cài đặt thành công chưa
+dotnet –info
+Tạo vùng chứa source Web ( bất kỳ đâu cũng được )
+sudo mkdir -r /var/website/tên-trang-web
+copy source vào nơi lưu trữ.
+Truy cập vào nới lưu trữ source web
+Cd /var/website/tên-trang-web
+Run dotnet với file có đuôi .dll
+Dotnet *.dll
+ 
+Cài đặt webserver ( Apache, Nginx )
+Install Nginx
+Sudo apt-get install nginx
+Khởi động Nginx
+Sudo service nginx start
+Kiểm tra trạng thái service nginx
+Sudo servce nginx status
+Cấu hình Webserver Nginx
+Cd /etc/nginx/sites-available
+Backup file default
+Sudo cp default default.backup
+Sửa file default
+Vi /etc/nginx/sites-available/default
+Xóa toàn bộ nội dung trong file default và copy nội dung dưới đây:
+Server {
+	Listen 80;
+	Location / {
+		Proxy_pass http://localhost:5000;
+		Proxy_http_version 1.1;
+		Proxy_set_header Upgrade $http_upgrade;
+		Proxy_set_header Connection keep-alive;
+		Proxy_set_header Host $host;
+		Proxy_cache_bypass $http_upgrade;
+	}
+}	
+Lưu lại file
+Esc gõ WQ!
+Kiểm tra service nginx và cập nhật file cấu hình
+Sudo nginx -t
+Sudo nginx -s reload
+
+Cấu hình autostart .NET
+Cài đặt supervisor
+Sudo apt-get install supervisor
+Cấu hình supervisor
+Cd /etc/supervisor/conf.d
+Tạo file tên trùng với tên website đã đặt phía trên
+Sudo vi /etc/supervisor/conf.d/cdn.conf (cdn là tên website đã đặt phía trên)
+Gõ nội dung theo hình dưới đây
+ 
+Lưu file và khởi động service supervisor
+Sudo service supervisor start
+Kiểm tra .NET core đã autostart chưa
+Sudo tail -f /var/log/tên-website.out.log
+ 
