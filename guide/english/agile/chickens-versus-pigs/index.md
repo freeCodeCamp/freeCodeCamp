@@ -1,7 +1,7 @@
 ---
 title: Chickens Versus Pigs
 ---
-## Chickens Versus Pigs
+### Chickens Versus Pigs
 
 "Chickens versus Pigs" refers to a story about a chicken and a pig, where the chicken proposes they open a restaurant called "Ham-n-Eggs".
 The pig refuses, because while the chicken just needs to lay eggs, the pig has more at stake.
@@ -17,7 +17,7 @@ have significantly less commitment to the project.
 You should strive to be a pig rather than a chicken. You can benefit from (but should not rely on) the chickens in order to minimize risk and
 guarantee the project is delivered as efficiently as possible.
 
-#### More Information:
+##### More Information:
 <!-- Please add any articles you think might be helpful to read before writing the article -->
 
 <a href='http://www.agilejedi.com/chickenandpig'>Agile Jedi: The Story of the Chicken and Pig</a>  
