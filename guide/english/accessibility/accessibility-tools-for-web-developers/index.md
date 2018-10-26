@@ -16,6 +16,10 @@ There are many tools and online resources that can help you to ensure that your 
    
    This Google Chrome extension can find accessibility defects on your web page.
 
+- **<a href='https://chrome.google.com/webstore/detail/wave-evaluation-tool/jbbplnpkjmmeebjpijfedlgcdilocofh' target='_blank' rel='nofollow'>WAVE Evaluation Tool</a>**
+
+   Another great Google Chrome accessibility extension that provides visual feedback via icons and indicators directly on your webpage.
+
 - **<a href='http://khan.github.io/tota11y/' target='_blank' rel='nofollow'>tota11y</a>**
 
    An accessibility visualization toolkit that checks how your website performs with assistive technologies.
