@@ -11,6 +11,7 @@
         <td><a href="/docs/spanish/CONTRIBUTING.md"> Español </a></td>
         <td><a href="/docs/romanian/CONTRIBUTING.md"> Română </a></td>
         <td><a href="/docs/german/README.md"> Deutsch </a></td>
+        <td><a href="/docs/thai/README.md"> ไทย </a></td>
     </tr>
 </table>
 

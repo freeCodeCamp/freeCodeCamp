@@ -8,6 +8,7 @@
         <td><a href="/docs/spanish/README.md"> Español </a></td>
         <td><a href="/docs/portuguese/README.md"> Português </a></td>
         <td><a href="/docs/german/README.md"> Deutsch </a></td>
+        <td><a href="/docs/thai/README.md"> ไทย </a></td>
     </tr>
 </table>
 
@@ -38,7 +39,7 @@
 在本地工作时快速参考您需要的命令。
 
 | 命令 | 描述 |
-| ------- | ----------- | 
+| ------- | ----------- |
 | `npm run bootstrap` | 引导不同的服务 |
 | `npm run seed` | 解析所有质询标记文件并将其插入MongoDB。 |
 | `npm run develop` | 启动freeCodeCamp API服务器和客户端应用程序 |

@@ -9,6 +9,7 @@
         <td><a href="/docs/spanish/README.md"> Español </a></td>
         <td><a href="/docs/portuguese/README.md"> Português </a></td>
         <td><a href="/docs/german/README.md"> Deutsch </a></td>
+        <td><a href="/docs/thai/README.md"> ไทย </a></td>
     </tr>
 </table>
 
@@ -43,7 +44,7 @@ freecodecamp.org
 
 ## مرجع مختصر للأوامر المستخدمة عند العمل على جهازك الخاص
 
-مجموعة من الأوامر اللتي ستحتاجها عند العمل على جهازك الخاص دون الاتصال بالانترنت 
+مجموعة من الأوامر اللتي ستحتاجها عند العمل على جهازك الخاص دون الاتصال بالانترنت
 
 
 
