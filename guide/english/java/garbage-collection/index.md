@@ -14,6 +14,12 @@ Java relieves the programmer from memory management task and itself reclaims the
          n = null;			                    //the Integer object is no longer accessible
 ```
 * Cyclic dependencies are not counted as reference so if Object X has reference of Object Y and Object Y has reference of Object X and they don’t have any other live reference then both Objects X and Y will be eligible for Garbage Collection.
+* An object is also eligible for garbage collection when its reference variable is re-assigned and that object no longer has any other reference to it. Look at the code snippet below:
+```java
+Integer i1 = new Integer(10); //new Integer object created
+Integer i2 = new Integer(20); //Another new Integer object created
+i1 = i2;//i1 now references to i2 (re-assigned), therefore 10 (object in the heap) becomes eligible for garbage collection since it no longer has any other reference to it
+```
 
 ## How to manually make an object eligible for Garbage Collection?
 * Even though it is not the task of the programmer to destroy the objects, it is a good programming practice to make an object unreachable(thus eligible for GC) after it is used.
