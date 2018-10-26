@@ -4,9 +4,9 @@ localeTitle: Desenvolvimento Android
 ---
 # Desenvolvimento Android
 
-Os aplicativos para Android podem ser uma ótima maneira divertida de entrar no mundo da programação. Oficialmente os programadores podem usar Java, Kotlin ou C ++ para desenvolver para Android, e embora possa haver restrições API, usando ferramentas, os desenvolvedores podem usar um grande número de idiomas, incluindo JavaScript, C ou assembly, e as possibilidades são infinitas.
+Os aplicativos para Android podem ser uma maneira muito divertida de entrar no mundo da programação. Oficialmente, os programadores podem usar Java, Kotlin ou C ++ para desenvolver para Android, e, embora possa haver restrições API, usando ferramentas, os desenvolvedores podem usar um grande número de linguagens, incluindo JavaScript, C ou assembly. As possibilidades são infinitas.
 
-Desde jogos simples e aplicativos de utilitários até players de música completos, há muitas oportunidades para criar algo significativo com o Android. A comunidade de desenvolvedores do Android é muito difundida, e a documentação e os recursos on-line são fáceis de encontrar, para que você possa enfrentar qualquer problema que esteja enfrentando.
+Desde jogos simples e aplicativos de utilitários, até players de música completos, há muitas oportunidades para criar algo significativo com o Android. A comunidade de desenvolvedores do Android é muito difundida, e a documentação e os recursos on-line são fáceis de encontrar. Tudo para que você possa enfrentar qualquer problema que possa surgir.
 
 Há definitivamente uma curva de aprendizado para se acostumar com o framework Android, no entanto, uma vez que você entenda os principais componentes que compõem o aplicativo, o resto virá naturalmente.
 
