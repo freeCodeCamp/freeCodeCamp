@@ -33,7 +33,24 @@ There are two primary manufacturers of computer microprocessors. Intel and Advan
 
 The improvements in microprocessor technology have also led to signficant technology advances in CPUs designed specifically for the mobile space. Processors based on designs from ARM, Qualcomm, and others have resulted in new mobile devices with capabilities that are unheard of in past generations. These modern mobile CPUs power popular consumer devices from the latest iteration of Apple iPhones and Android based Phones to IOT(Internet of Things), devices like Amazon Echo and Google Home, with capabilities such as HD Video recording/video conferencing, stereo audio, 3D gaming, and applications that are dependent on mobile CPU performance. This is one of the factors contributing to the growth and adoption of mobile devices which in turn has generated demand and provided opportunity for the creation of new applications with greater capabilities.
 
+## Types of Computer CPU
+
+The computer CPU (short for Central Processing Unit) is a vital component that handles all the instructions and calculations that are sent to it from other computer's components and peripherals. The speed at which software programs operate is also very dependent upon how powerful the CPU is, so it is important to have the right type for what you expect it to handle. The two leading CPU manufacturers are Intel and AMD, each with their own types of CPUs
+
+<b>Single Core CPUs</b>
+  
+Single core CPUs are the oldest type of computer CPU available and initially this was the only type of CPU that could be used in computers. Single core CPUs can only start one operation at a time, so they were not very good at multi-tasking. This meant that there were noticeable decreases in performance whenever more than one application was running. Although only one operation could be started at a time, another one could be activated before the first one was finished but with each new operation the computer would run more slowly. Performance on these types of CPUs were largely dependent on their clock speeds, which was a measurement of their power.
+
+<b>Dual Core CPUs</b>
+
+A dual core CPU is a single CPU that has two cores and thus functions like two CPUs in one. Unlike single core CPUS where the processor had to switch back and forth between different sets of data streams if more than one operation was running, dual core CPUs can handle multitasking much more efficiently. To make the most of a dual core CPU, both the operating system and the programs running on it must have special code called SMT (simultaneous multi-threading technology) written into it. Dual core CPUs are faster than single core ones but not as fast the quad core CPUs that have superseded them.A dual core CPU is a single CPU that has two cores and thus functions like two CPUs in one. Unlike single core CPUS where the processor had to switch back and forth between different sets of data streams if more than one operation was running, dual core CPUs can handle multitasking much more efficiently. To make the most of a dual core CPU, both the operating system and the programs running on it must have special code called SMT (simultaneous multi-threading technology) written into it. Dual core CPUs are faster than single core ones but not as fast the quad core CPUs that have superseded them.
+
+<b>Quad Core CPUs</b>
+
+Quad Core CPUs are a further refinement of the multi-core CPU design and features four cores on a single CPU. Just as dual core CPUs could split the workload between two cores, quad cores allows for even greater multitasking. This doesn't mean that a single operation will be four times faster however, and unless the programs and applications running on it has SMT code, the speed increase will not be so noticeable. These types of CPUs are useful for people that need to run a lot of different programs at the same time as well as gamers, as there are games like the Supreme Commander series that are optimized for multi-core CPUs.
 
 #### More Information:
 <a href='https://en.wikipedia.org/wiki/Central_processing_unit' target='_blank' rel='nofollow'>Wikipedia</a>
+<a href='https://www.techwalla.com/articles/types-of-computer-cpu' target='_blank' rel='nofollow'>Techwalla</a>
+
 
