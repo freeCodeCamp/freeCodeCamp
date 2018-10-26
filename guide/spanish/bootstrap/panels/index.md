@@ -24,39 +24,41 @@ Para usar Bootstrap Panels, agregue un `<div>` con una clase para su tipo de pan
 
 Este es un conjunto de ejemplos que muestra cada tipo de panel. La clase CSS se muestra sobre cada ejemplo.
 
-`panel panel-default`
+##### Panel predeterminado
 
-Panel por defecto
+`panel panel-default`
 
 Este es un panel con el estilo de panel predeterminado.
 
-`panel panel-primary`
+##### Panel primario
 
-Panel primario
+`panel panel-primary`
 
 Este es un panel con el estilo del panel primario.
 
-`panel panel-success`
+##### Panel de exito
 
-Panel de exito
+`panel panel-success`
 
 Este es un panel con el estilo de panel de éxito.
 
-`panel panel-info`
+##### Panel de información
 
-Información del panel
+`panel panel-info`
 
 Este es un panel con el estilo de panel de información.
 
-`panel panel-warning`
 
-Advertencia del panel
+##### Panel de advertencia
+
+`panel panel-warning`
 
 Este es un panel con el estilo de panel de advertencia.
 
-`panel panel-danger`
 
-Panel de peligro
+##### Panel de peligro
+
+`panel panel-danger`
 
 Este es un panel con el estilo de panel de peligro.
 
