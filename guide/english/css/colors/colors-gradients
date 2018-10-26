@@ -1,0 +1,44 @@
+---
+title: Grid System
+---
+## CSS Colors
+Colors are specified using predefined color names, or RGB, HEX, HSL, RGBA, HSLA values.
+#### Color Gradients
+CSS gradients let you display smooth transitions between two or more specified colors.
+
+CSS defines two types of gradients:
+
+Linear Gradients (goes down/up/left/right/diagonally)
+Radial Gradients (defined by their center)
+####CSS Linear Gradients
+To create a linear gradient you must define at least two color stops. Color stops are the colors you want to render smooth transitions among. 
+You can also set a starting point and a direction (or an angle) along with the gradient effect.
+
+Syntax:
+```
+background-image: linear-gradient(direction, color-stop1, color-stop2, ...);
+```
+Example:
+```
+#grad {
+    background-image: linear-gradient(red, yellow);
+}
+```
+#### CSS Radial Gradients
+A radial gradient is defined by its center.
+
+To create a radial gradient you must also define at least two color stops.
+Syntax:
+```
+background-image: radial-gradient(shape size at position, start-color, ..., last-color);
+```
+By default, shape is ellipse, size is farthest-corner, and position is center.
+Example:
+```
+#grad {
+  background-image: radial-gradient(red, yellow, green);
+}
+```
+
+#### More Information:
+https://www.w3schools.com/css/css3_gradients.asp
