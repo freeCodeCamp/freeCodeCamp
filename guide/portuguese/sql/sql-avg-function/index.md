@@ -6,7 +6,7 @@ localeTitle: Função média do SQL
 
 "Média" é uma função Agregada (Agrupar por). É usado para calcular a média de uma coluna numérica do conjunto de linhas retornadas por uma instrução SQL.
 
-Aqui está a sintaxe para usar a função:
+Aqui está um exemplo usando a função:
 
 ```sql
 select groupingField, avg(num_field) 
