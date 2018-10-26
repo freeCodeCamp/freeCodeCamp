@@ -16,7 +16,7 @@ One of the great advantages of using functions in your code is that it reduces t
 In Python, a function definition has the following features:
 
 1. The keyword `def`
-2. a function name
+2. a function name 
 3. paranthesis'()', and within paranthesis input parameters,although the input parameters are optional
 4. a colon ':'
 5. some block of code to execute (that must be indented relative to the definition statement)
@@ -48,7 +48,7 @@ Functions in Python are created using the `def` keyword, followed by a function 
 
 A function always returns a value,The `return` keyword is used by the function to return a value, if you don't want to return any value, the default value `None` will returned. 
 
-The function name is used to call the function, passing the needed parameters inside parentheses.
+The function name is used to call the function, passing the needed parameters inside parentheses. If you don't wanr to specify parameters, you can leave it empty.
 
 ```python
 # this is a basic sum function
@@ -106,6 +106,7 @@ result = s(1, 2)
   ```
 
 - The block of code that the function will run includes all statements indented within the function.
+- While similar to classes, functions are different.
 
   ```python
   def myFunc():
