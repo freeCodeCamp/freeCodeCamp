@@ -151,6 +151,20 @@ title: Books to Read for Programmers
 - [Amazon Smile](https://smile.amazon.com/Soft-Skills-software-developers-manual/dp/1617292397?pldnSite=1)
 - ISBN-13: 9781617292392 
 
+## Ethical Hacking (for italian speakers)
+
+*Hacklog Volume 1 Anonimato: Manuale sulla Sicurezza Informatica e Hacking Etico
+- [Amazon](https://www.amazon.it/dp/B06WRNRCTL/ref=dp-kindle-redirect?_encoding=UTF8&btkr=1) 
+- [free e-book] (http://hacklog.net/it/hacklog-volume-1-anonimato)
+- ISBN-13: 1520569912
+
+*Hacklog Volume 2 Web Hacking: Manuale sulla Sicurezza Informatica e Hacking Etico
+- [Amazon](https://www.amazon.it/Hacklog-Web-Hacking-Sicurezza-Informatica-ebook/dp/B07GLT2G54) 
+- [free e-book] (http://hacklog.net/it/hacklog-volume-2)
+- ASIN: B07GLT2G54
+
+
+
 ## Other
 
 *Hacking: Ultimate Hacking Guide: Hacking For Beginners And Tor Browser
@@ -245,6 +259,10 @@ https://books.goalkicker.com/OracleDatabaseBook/
 *Mastering Linux Shell Scripting by Andrew Mallett*
 - [Amazon](https://www.amazon.com/Mastering-Linux-Scripting-Andrew-Mallett/dp/1784396974/)
 - ISBN-13: 978-1784396978
+
+*Ghost in the Wires: My Adventures as the World's Most Wanted Hacker by Kevin Mitnick, introduction by Steve Wozniak 
+- [Amazon](https://www.amazon.it/Ghost-Wires-Adventures-Worlds-English-ebook/dp/B00FOQS8D6/ref=sr_1_1?s=digital-text&ie=UTF8&qid=1540572009&sr=1-1&keywords=il+fantasma+nella+rete)
+- ASIN: B00FOQS8D6
 
 This list was compiled from multiple suggestion threads on Reddit and Stackoverflow. 
 
