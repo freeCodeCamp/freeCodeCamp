@@ -6,13 +6,13 @@ videoUrl: ''
 localeTitle: Evitar problemas de daltonismo usando o contraste suficiente
 ---
 
-## Description
+## Descrição
 <section id="description"> A cor é uma grande parte do design visual, mas seu uso introduz dois problemas de acessibilidade. Primeiro, a cor sozinha não deve ser usada como a única maneira de transmitir informações importantes porque os usuários de leitores de tela não a verão. Segundo, as cores do primeiro plano e do plano de fundo precisam de contraste suficiente para que os usuários daltônicos possam distingui-las. Desafios anteriores cobertos com alternativas de texto para abordar a primeira questão. O último desafio introduziu ferramentas de verificação de contraste para ajudar no segundo. A taxa de contraste recomendada por WCAG de 4.5: 1 aplica-se ao uso de cores, bem como a combinações em escala de cinza. Usuários daltônicos têm dificuldade em distinguir algumas cores de outros - geralmente em matiz, mas às vezes leveza também. Você pode se lembrar que a taxa de contraste é calculada usando os valores relativos de luminância (ou luminosidade) das cores de primeiro plano e de fundo. Na prática, a proporção de 4,5: 1 pode ser alcançada escurecendo a cor mais escura e iluminando a mais clara com o auxílio de um verificador de contraste de cores. As cores mais escuras na roda de cores são consideradas azuis, violetas, magentas e vermelhas, enquanto as cores mais claras são laranjas, amarelos, verdes e azuis-verdes. </section>
 
-## Instructions
+## Instruções
 <section id="instructions"> Cat Camper está experimentando com o uso de cores para seu texto blog e fundo, mas sua combinação atual de um esverdeada <code>background-color</code> com texto marrom <code>color</code> tem um 2.5: 1 razão de contraste. Você pode ajustar facilmente a leveza das cores desde que ele as declarou usando a propriedade CSS <code>hsl()</code> (que significa matiz, saturação, luminosidade) alterando o terceiro argumento. Aumente o valor de luminosidade da <code>background-color</code> de 35% para 55% e diminua o valor de luminosidade de <code>color</code> de 20% para 15%. Isso melhora o contraste para 5.9: 1. </section>
 
-## Tests
+## Testes
 <section id='tests'>
 
 ```yml
@@ -59,7 +59,7 @@ tests:
 
 </section>
 
-## Solution
+## Solução
 <section id='solution'>
 
 ```js
