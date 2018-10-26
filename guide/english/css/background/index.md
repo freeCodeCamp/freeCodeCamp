@@ -77,7 +77,7 @@ You can also use the background-repeat property to set an image to not repeat.
 ```css
 body {
   background-image: url("barn.jpg");
-  background-repeat: no-repeat;
+  background-repeat: repeat-y;
 }
 ```
 ![norepeat](https://user-images.githubusercontent.com/26467304/31039801-c8761efc-a54e-11e7-8bb9-ec5b88885a50.PNG)
