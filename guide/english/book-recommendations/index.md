@@ -249,3 +249,26 @@ https://books.goalkicker.com/OracleDatabaseBook/
 This list was compiled from multiple suggestion threads on Reddit and Stackoverflow. 
 
 Please feel free to add more that you have found useful!
+
+My Changes
+
+Here are books to get kids coding
+*Python for Kids: A Playful Introduction to Programming by Jason Briggs* For Ages 10+
+-[Amazon]https://www.amazon.com/Python-Kids-Playful-Introduction-Programming-ebook/dp/B00ADX21Z6
+-ISBN-13: 978-1-59327-407-8
+
+*Trapped in a Video Game by Dustin Brady* For Ages 8 - 12
+-[Amazon]https://www.amazon.com/Trapped-Video-Game-Book-1/dp/1449494862/ref=zg_bs_2915_1/136-3066239-8788031?_encoding=UTF8&psc=1&refRID=QC36T3D6DKGFDGDW5DN1
+-ISBN: 978-1-4494-9486-5
+
+*Super Scratch Programming Adventure! by The Lead Project* For Ages 5+
+-[Amazon]https://www.amazon.com/gp/product/1593274092/?tag=fractuslearn-20
+-ISBN 978-988-18408-2-0
+
+*3D Game Programming for Kids: Create Interactive Worlds with JavaScript by Chris Strom* For Ages 10+
+-[Amazon]https://www.amazon.com/gp/product/1937785440/?tag=fractuslearn-20
+-ISBN-1 3: 978-1-937785-44-4 
+
+*Hello Ruby: Adventures in Coding by Linda Liukas* For Ages
+-[Amazon]https://www.amazon.com/Hello-Ruby-Adventures-Linda-Liukas/dp/1250065003
+-ISBN 978-1-250-06500-1
