@@ -50,7 +50,7 @@ In the above example,  `age` is the state of `Person` component.
 ## Props:
 
 * Props are similar to method arguments. They are passed to a component where that component is used.
-* Props is immutable. They are read-only.
+* Props are immutable. They are read-only.
 
 See the below example to get an idea of Props:
 
