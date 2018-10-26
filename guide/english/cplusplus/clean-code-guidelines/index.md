@@ -35,10 +35,10 @@ int cucumber; // global variable "cucumber"
 ## Using goto, continue, etc.
 
 This is an usual discussion among programmers, just like global variables, these types of statements are usually considered bad practice.
-They are considered bad because they lead to ["spaguetti code"](https://en.wikipedia.org/wiki/Spaghetti_code). When we program we want a
+They are considered bad because they lead to ["spaghetti code"](https://en.wikipedia.org/wiki/Spaghetti_code). When we program we want a
 linear flow, when using those statements the flow is modified and lead to a "twisted and tangled" flow.
 
-Goto was used in the past when while, for, if functions, however, witht the introduction of those structured programming was created.
+Goto was used in the past when while, for, if functions, however, with the introduction of those structured programming was created.
 In general avoid using goto unless you are sure it will make your code cleaner and easier to read. An example might be using it in nested loops.
 
 The usage of break and continue are practically the same. Use them in switches and try to make functions with an only purpose so you only have one exit point.
