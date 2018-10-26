@@ -10,7 +10,7 @@ The "dd" command can be used to create a file of a specific size. This is useful
 dd if=/dev/zero of=file_name.txt bs=1024k count=10
 ```
 
-This will create a file of 1MB called file_name.txt.
+This will create a file of 10MB called file_name.txt.
 
 bs is your byte size and count represent the number of blocks. An easy way to look at is 1024K X 10.
 
