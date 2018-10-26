@@ -3,10 +3,10 @@ title: Macros in C
 ---
 ## Macros in C
 
-A macro is a piece of code with a given name. When the name is used, it is replaced by the content of the macro.
+A macro is a piece of code with a given name. When the name is used, it is replaced by the content of the macro. This is handled by the C Preprocessor, before compilation.
 
 #### Defining macros
-The `#define` keyword is used to define new macros. It's followed by a name and a content. By convention, macro names are written in uppercase.
+The `#define` keyword is used to define new macros. It's followed by a name and the replacement code. By convention, macro names are written in uppercase.
 ```C
 #define PI 3.14
 ```
@@ -15,7 +15,7 @@ If you use the macro this way:
 ```C
 printf("Value of PI: %d", PI);
 ```
-Is the same as write this:
+Is the same as writing this:
 ```C
 printf("Value of PI: %d", 3.14);
 ```
@@ -24,13 +24,13 @@ printf("Value of PI: %d", 3.14);
 There are two type of macros. The `Object-like` macros, showed above, and the `Function-like` macros.
 
 #### Function-like Macros
-Function-like uses the same `#define` keyword. The difference is that you use a pair o parentheses after the function name.
+Function-like uses the same `#define` keyword. The difference is that you use a pair of parentheses after the function name.
 ```C
 #define hello_world() printf("Hello World!")
 ```
 So calling:
 ```C
-hello_world()
+hello_world();
 ```
 You get:
 ```C
@@ -44,7 +44,7 @@ Now calling:
 ```C
 hello("World");
 ```
-You get the equivallent of:
+You get the equivalent of:
 ```C
 printf("Hello World!");
 ```
