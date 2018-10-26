@@ -5,14 +5,14 @@ title: Books on JavaScript
 
 #### Eloquent JavaScript
 
-One of the best books on JavaScript. A must for both, beginners and intermediate programmers, who code in JavaScript. The best part is that the e-book is available for free.
+One of the best books on JavaScript, this concise and elegantly written text by Marijn Haverbeke is a must for both novice and intermediate JavaScript programmers. The best part is that the e-book is available for free.
 
 - [E-book](https://eloquentjavascript.net/)(free)
-- [Amazon](https://www.amazon.com/gp/product/1593275846/ref=as_li_qf_sp_asin_il_tl?ie=UTF8&camp=1789&creative=9325&creativeASIN=1593275846&linkCode=as2&tag=marijhaver-20&linkId=VPXXXSRYC5COG5R5)
+- [Amazon](https://www.amazon.com/gp/product/1593275846)
 
 #### You Don't Know JS
 
-Six book series by Kyle Simpson. In-depth series on every aspect of JavaScript. This is a must-read for every JS developer who wants to understand exactly how things like prototypes, closures, and the `this` keyword work.
+Six-book series by Kyle Simpson. In-depth treatment of every aspect of JavaScript. This is a must-read for every JS developer who wants to understand exactly how things like prototypes, closures, and the `this` keyword work.
 
 - [Github](https://github.com/getify/You-Dont-Know-JS)(free)
 - [Kindle Version, Amazon](https://www.amazon.com/You-Dont-Know-Js-Book/dp/B01AY9P0P6)
@@ -30,6 +30,12 @@ A collection of articles covering the basics (core language and working with a b
 - [Online](https://javascript.info/)
 - [E-book](https://javascript.info/ebook)
 
+#### Secrets of the JavaScript Ninja
+
+This book by John Resig, Bear Bibeault, and Josip Maras combines in-depth treatment of essential JavaScript fundamentals with practical advice for handling real-world coding challenges elegantly and resiliently.
+
+[Amazon](https://www.amazon.com/Secrets-JavaScript-Ninja-John-Resig/dp/1617292850)
+
 #### Other Resources
 
-- A selection of online free resources; including e-books for JavaScript are available at [JS Books](https://jsbooks.revolunet.com/)
+- A selection of free online JavaScript resources, including e-books, is available at [JS Books](https://jsbooks.revolunet.com/)
