@@ -18,6 +18,12 @@ title: Books to Read for Programmers
 - [Amazon Smile](https://smile.amazon.com/Clean-Code-Handbook-Software-Craftsmanship/dp/0132350882?sa-no-redirect=1)
 - ISBN-13: 978-0132350884
 
+*Head First Agile: A Brain-Friendly Guide to Agile Principles, Ideas, and Real-World Practices 1st Edition*
+- [Paperbook, Amazon](https://www.amazon.com/Art-Agile-Development-Pragmatic-Software/dp/0596527675)
+
+*The Art of Agile Development: Pragmatic Guide to Agile Software Development 1st Edition*
+- [Paperbook, Amazon](https://www.amazon.com/_/dp/1449343503)
+
 *CODE: The Hidden Language of Computer Hardware and Software* by Charles Petzold
 - [Amazon Smile](https://smile.amazon.com/Code-Language-Computer-Hardware-Software/dp/0735611319/ref=sr_1_1?s=books&ie=UTF8&qid=1508780869&sr=1-1&keywords=code)
 - ISBN-13: 978-0735611313
@@ -96,6 +102,10 @@ title: Books to Read for Programmers
 - https://www.amazon.com/Pro-NET-Core-Andrew-Troelsen/dp/1484230175/ref=sr_1_1?s=books&ie=UTF8&qid=1539643534&sr=1-1&keywords=Pro-NET-Core-Andrew-Troelsen
 - ISBN-13: 978-1484230176
 
+*Head First C#: A Learner's Guide to Real-World Programming with C#, XAML, and .NET Third Edition*
+- [Paperbook, Amazon](https://www.amazon.com/_/dp/1449343503)
+- ISBN-13: 978-1449343507
+
 ## Coding Interview
 
 *Cracking the Coding Interview: 150 Programming Questions and Solutions*
@@ -135,6 +145,14 @@ title: Books to Read for Programmers
 - [Amazon Smile](https://smile.amazon.com/JavaScript-JQuery-Interactive-Front-End-Development/dp/1118531647/?pldnSite=1)
 - ISBN-13: 978-1118531648 
 
+*JavaScript: Programming Basics for Absolute Beginners (Step-By-Step JavaScript Book 1)*
+- [Paperbook, Amazon](https://www.amazon.in/Javascript-Programming-Basics-Absolute-Beginners/dp/1974581217/)
+- [Kindle Book, Amazon](https://www.amazon.in/JavaScript-Programming-Beginners-Step-Step-ebook/dp/B074SZFS7D/)
+
+*JavaScript Patterns: Build Better Applications with Coding and Design Patterns*
+- [Paperbook, Amazon](https://www.amazon.com/JavaScript-Patterns-Better-Applications-Coding/dp/0596806752/)
+- [Kindle Book, Amazon](https://www.amazon.com/JavaScript-Patterns-Better-Applications-Coding-ebook/dp/B0046RERXE/)
+
 ## Python
 
 *Automate the Boring Stuff With Python*
@@ -144,6 +162,17 @@ title: Books to Read for Programmers
 *Core Python Applications Programming (3rd Edition) by Wesley J Chun*
 - [Amazon Smile](https://smile.amazon.com/Core-Python-Applications-Programming-3rd/dp/0132678209)
 - ISBN-13: 978-0132678209
+
+*Head First Python: A Brain-Friendly Guide 2nd Edition*
+- [Paperbook, Amazon](https://www.amazon.com/Head-First-Python-Brain-Friendly-Guide/dp/1491919531)
+
+## WordPress
+
+*WordPress All-in-One For Dummies*
+- [Paperbook, Amazon](https://www.amazon.com/WordPress-All-One-Dummies-Computers/dp/1119327776/)
+
+*WordPress for Beginners 2018: Subtitle What's this? A Visual Step-by-Step Guide to Mastering Wordpress*
+- [Paperbook, Amazon](https://www.amazon.com/WordPress-Beginners-2018-Step-Step/dp/1984220314)
 
 ## Soft Skills
 
