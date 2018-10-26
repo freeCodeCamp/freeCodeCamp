@@ -270,3 +270,4 @@ $(document).ready(function () {
       });
   });
 });
+// Shreya Thapa added a comment to calculator.js (HAcktoberfest 2018)
