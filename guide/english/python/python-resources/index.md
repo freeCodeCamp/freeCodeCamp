@@ -52,6 +52,7 @@ title: Python Resources
 *   <a href='https://codesignal.com/' target='_blank' rel='nofollow'>CodeSignal - Prepare for interviews & further your programming skills</a>
 *   <a href="https://www.codewars.com/" target='_blank' rel='nofollow'>CodeWars</a>
 *   <a href="https://www.codechef.com/" target='_blank' rel='nofollow'>CodeChef</a>
+*   <a href="https://www.w3schools.com/python/python_exercises.asp" target='_blank' rel='nofollow'>W3School- Python Exercise</a>
 
 ## Community
 
