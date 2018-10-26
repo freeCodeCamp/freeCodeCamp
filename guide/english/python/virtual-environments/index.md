@@ -12,7 +12,7 @@ Benefits:
 * You can have multiple environments, with multiple sets of packages, without conflicts among them. This way, different projects' requirements can be satisfied at the same time.
 * You can easily release your project with its own dependent modules.
 
-Here are two ways you can create Python virtual environments.
+Here are three ways you can create Python virtual environments.
 
 ## Virtualenv
 
@@ -140,6 +140,81 @@ source deactivate
 If you want to remove an environment from Conda use:
 ```
 conda remove --name my-env
+```
+
+## Pyenv
+
+[`Pyenv`](https://github.com/pyenv/pyenv) is a package that lets you manage multiple versions of Python.
+
+To use Pyenv to manage our virtual environments we are going to install two additional extensions below:
+
+```
+brew install pyenv
+brew install pyenv-virtualenv
+brew install pyenv-virtualenvwrapper
+```
+
+### Update .bashrc
+Add this command to your .bashrc file to make sure your virtual environment is initialized everytime you start a new terminal session. 
+
+For example using Vim I open up terminal and type:
+```
+vim ~/.bashrc
+```
+Then I add the below command to the file:
+
+```
+eval "$(pyenv init -)"
+```
+
+### Install Python versions
+It's usually good to have at least both a Python 2 and Python 3 environment
+
+```
+pyenv install 3.6.0
+pyenv install 2.7.13
+```
+
+### Create an Environment
+
+To create a virtual environment with Python 3 as the base with the name "my_cool_app":
+```
+pyenv virtualenv 3.6.0 my_cool_app
+```
+It's that easy. Another example using the Python 2.7.13 base that we created earlier:
+
+```
+pyenv virtualenv 2.7.13 my_cool_app
+```
+
+### Activate an Environment
+
+Before you can start using the environment you need to activate it:
+```
+pyenv activate my_cool_app
+```
+
+### Install Packages
+
+First activate your virtual environment and then use pip like normal
+
+```
+pyenv activate my_cool_app
+pip install requests
+```
+
+### Deactivate an Environment
+
+If you are done working with the virtual environment you can deactivate it with:
+```
+pyenv deactivate
+```
+
+### Remove an Environment
+
+If you want to remove the Python 2.7.13:
+```
+pyenv uninstall 2.7.13
 ```
 
 #### More Information:
