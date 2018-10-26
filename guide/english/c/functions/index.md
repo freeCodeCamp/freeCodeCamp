@@ -65,13 +65,11 @@ That one was a single line function. You'll see them when there's a pretty simpl
 That being said, most functions will not be a single line of code. Let's take a look at another, slightly more complex example that chooses the greater of two numbers.
 ```C
 int choose_bigger_int(int a, int b) {
-    if(a > b)
+    if(a >= b)
         return a;
 
     if(b > a)
         return b;
-
-    return a;
 }
 ```
 Just like before, the function is going to return an integer and takes two integers. Nothing new to see there.
