@@ -66,3 +66,5 @@ title: Python Resources
 ## Tools:
 
 *   <a href='https://www.jetbrains.com/pycharm-edu/' target='_blank' rel='nofollow'>PyCharm Edu</a> - a free educational version of PyCharm that comes with tutorials to teach you Python and the ability to download more.
+
+*   <a href='https://docs.python.org/3/contents.html' target='_blank' rel='nofollow'>Python Documentation 3.7</a> - reference document for Python 3.7 created by the Python Software Foundation, complete with new features in 3.7.
