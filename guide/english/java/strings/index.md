@@ -186,3 +186,40 @@ My
 
 **More Information:**
 - [String Documentation](https://docs.oracle.com/javase/7/docs/api/java/lang/String.html)
+
+MODIFYING STRINGS
+Because String objects are immutable, whenever you want to modify a String, you must either copy it into a StringBuffer 9-or StringBuilder, or use one of the following String methods, which will construct a new copy of the string with your modifications complete.
+substring()
+   >extracts a substring 
+   >Has 2 forms:
+               1) String substring(int startIndex)
+               2) String substring(int startIndex, int endIndex)
+    
+   // Substring replacement. 
+   class StringReplace { 
+   public static void main(String args[]) { 
+   String org = "This is a test. This is, too."; 
+   String search = "is"; 
+   String sub = "was"; 
+   String result = ""; 
+   int i;
+do { 
+// replace all matching substrings 
+System.out.println(org); 
+i = org.indexOf(search); 
+if(i != -1) { 
+result = org.substring(0, i);
+result = result + sub;
+result = result + org.substring(i + search.length());
+org = result;
+}
+} while(i != -1);
+}
+}
+
+output:
+This is a test. This is, too. 
+Thwas is a test. This is, too. 
+Thwas was a test. This is, too. 
+Thwas was a test. Thwas is, too.
+Thwas was a test. Thwas was, too. 
