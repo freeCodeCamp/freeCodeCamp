@@ -18,3 +18,5 @@ Two of the most common technologies used are :
 - Ethereum: generally made with Solidity
 - Hyperledger: generally made with Go, or Java
 
+### More Information
+BlockGeek's Beginner Guide to Smart Contracts: https://blockgeeks.com/guides/smart-contracts/
