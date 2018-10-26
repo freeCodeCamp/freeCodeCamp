@@ -1,8 +1,8 @@
 ---
 title: SQL or Operator
-localeTitle: SQL ou Operador
+localeTitle: SQL operador OU (OR)
 ---
-## SQL ou Operador
+## SQL Operador OU (OR)
 
 Você pode usar o operador `OR` na cláusula `WHERE` da `SELECT` . Você o usa quando deseja selecionar um registro que satisfaça pelo menos uma das condições em sua instrução `OR` .
 
