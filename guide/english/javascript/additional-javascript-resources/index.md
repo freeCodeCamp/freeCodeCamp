@@ -76,6 +76,8 @@ title: JavaScript Tutorials and Other Resources
 *   [Coderbyte](https://coderbyte.com)
 *   [Exercism](https://exercism.io)
 *   [JavaScript30](https://javascript30.com)
+*   [DevSkiller](https://devskiller.com/coding-tests-skill/angular/)
+
 
 
 ## Blogs
