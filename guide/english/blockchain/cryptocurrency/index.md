@@ -1,6 +1,8 @@
 ---
 title: Cryptocurrency
 ---
+
+[What is Blockchain? Blockgeeks.com](https://blockgeeks.com/guides/what-is-blockchain-technology/)
 ## Cryptocurrency
 
 >Announcing the first release of Bitcoin, a new electronic cash system that uses a peer-to-peer network to prevent double-spending. It’s completely decentralized with no server or central authority.  
