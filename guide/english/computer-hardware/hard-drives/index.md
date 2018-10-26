@@ -46,3 +46,12 @@ Solid State Hard Drives fill a specific gap inbetween Solid State Drives and tra
 * [PCMag - SSD vs. HDD: What's the Difference?](https://www.pcmag.com/article2/0,2817,2404258,00.asp)
 * [Digital Trends - SSD vs. HDD](https://www.digitaltrends.com/computing/solid-state-drives-vs-hard-disk-drives)
 * [IOMeter Project](http://www.iometer.org)
+
+
+#### Best 3 ranked external drives
+Best external backup drive
+
+    WD My Passport 4TB. Read PCWorld's review. $99.98. ...
+    Seagate Backup Plus Portable. Read PCWorld's review. ...
+    Samsung T5 SSD. Read PCWorld's review. ...
+    SanDisk Extreme Portable SSD (1TB) Read PCWorld's review
