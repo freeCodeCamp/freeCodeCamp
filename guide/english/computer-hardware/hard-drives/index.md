@@ -2,7 +2,7 @@
 title: Storage Drives
 ---
 
-## Hard Disk Drives (HDD)
+# Hard Disk Drives (HDD)
 
 Hard drives are permanent storage devices for computers. There are several types of hard drives: traditional magnetic disks, new-generation, solid-state disks or hybrid disks which contain both SSD and magnetic storage.
 
@@ -26,7 +26,7 @@ Computers store data and files on hard drives for later use. Because hard drives
 
 Data stored in RAM is said to be fleeting whereas data written out to a hard drive is persistent. Meaning if the power suddenly goes out, any data that was in RAM is lost and will not be there after power is restored and the computer is booted back up. However data that was written to the hard drive will be there when power is restored. For this reason, modern operating systems and applications will periodically write session and application related data that's currently in RAM out to the hard drive. This way if the power goes out, only 10 minutes of data entered in a newly created spreadsheet that was being worked on for 3 hours preceding the power outage and not yet saved to the hard drive will be lost. These files are usually denoted with a tilde, ~ , and can be found in a temporary or temp directory or possibly located in a 'blind directory' whose contents are referred to as hidden files.
 
-## Solid State Drives (SSD)
+# Solid State Drives (SSD)
 Solid State Drives uses integrated circuits to store data. Therefore, an SSD has no moving parts like the HDD. This makes them less prone to physical shocks, run silently, and have faster read/write times thanks to not needing to locate the data physically.
 
 SSDs are commonly used as boot drives or storage for the most used applications and files on a system. This is because even though prices have dropped in recent years, SSDs are still more expensive than a traditional hard drive when considering cost per unit of storage. Thus, HDDs are still used for bulk data such as entertainment media (pictures, videos, music) and in data centers or server farms. Though here it is common for the Hard Drives to be accelerated with an SSD.
@@ -35,10 +35,10 @@ While most Hard Drives use either a SATA or SAS connector Solid State Drives oft
 
 The one caviat to these is that they usually have a lower amount of full writes that the drives can do before starting to go bad.
 
-## Solid State Hard Drives (SSHD) a.k.a Hybrid Drives
+# Solid State Hard Drives (SSHD) a.k.a Hybrid Drives
 Solid State Hard Drives fill a specific gap inbetween Solid State Drives and traditional hard drives.  It combines the relative affordable cost of cheap magnetic storage in traditional drives and pairs it with a smaller capacity Solid State Drive with the intent of using the SSD portion to cache frequently used data to increase performance over a plain traditional hard drive at a marginal cost. Hence the combination of the two technologies creates a "hybrid device" that is cost effectively but still is able to benenfit from the high performance of SSD drives primarily for low intensity workloads that mostly utilize read requests from the drive.
 
-#### More Information:
+### More Information:
 
 * [Wikipedia - Hard Disk Drive](https://en.wikipedia.org/wiki/Hard_disk_drive)
 * [Wikipedia - Flying height](https://en.wikipedia.org/wiki/Flying_height)
