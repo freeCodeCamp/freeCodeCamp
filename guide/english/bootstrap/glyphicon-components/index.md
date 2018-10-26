@@ -24,3 +24,5 @@ Bootstrap 4 dropped Glyphicons. You can use <a href='http://fontawesome.io/icons
 
 
 
+### Note
+Bootstrap Includes over 250 glyphs in font format
