@@ -8,7 +8,7 @@ Some of the email workflows, like updating a user's email, requires the back-end
 
 ## Installing MailHog
 
-How you install and run MailHog is dependent upon your OS
+How you install and run MailHog is dependent upon your OS:
 
 - [Installing MailHog on macOS](#installing-mailhog-on-macos)
 - [Installing MailHog on Windows](#installing-mailhog-on-windows)
@@ -29,7 +29,7 @@ Next, you can go to [using MailHog](#using-mailhog).
 
 ### Installing MailHog on Windows
 
-Download the latest MailHog version from [MailHog's official repository](https://github.com/mailhog/MailHog/releases). Click on the link for your Windows version (32 or 64 bit) and .exe file will be downloaded to your computer.
+Download the latest MailHog version from [MailHog's official repository](https://github.com/mailhog/MailHog/releases). Click on the link for your Windows version (32 or 64 bit) and a .exe file will be downloaded to your computer.
 
 Once it finishes downloading, click on the file. You will probably get a Windows firewall notification where you will have to allow access to MailHog. Once you do, a standard Windows command line prompt will open with MailHog already running.
 
