@@ -12,7 +12,7 @@ Broadly, we can divide the life cycle methods into **3** categories.
 2. Updating
 3. Unmounting
 
-As life cycle methods are self explanatory, I'm just going to mention the method names. Please feel free to contribute to this article, if necessary.
+As lifecycle methods are self-explanatory, I'm just going to mention the method names. Please feel free to contribute to this article, if necessary.
 
 
 ## Mounting:
