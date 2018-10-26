@@ -49,5 +49,19 @@ value of a: 19
 ```
 
 
+Note that it is possible, and in some cases desirable, for the condition to always evaluate to true, creating an infinite loop. When such a loop is created intentionally, there is usually another control structure (such as a break statement) that controls termination of the loop. For example:
+```
+while (true) 
+{
+    //do complicated stuff
+    if (someCondition) break;
+    //more stuff
+}
+```
+
+
 ###Sources
 www.tutorialspoint.com
+
+More on While Loops (http://www.cplusplus.com/doc/tutorial/control/)
+And (https://en.wikipedia.org/wiki/While_loop)
