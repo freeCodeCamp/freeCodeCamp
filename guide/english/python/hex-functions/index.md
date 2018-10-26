@@ -34,7 +34,7 @@ print(number)
 print(number2)
 print(number3)
 ```
-Prints the result:
+Prints the results:
 ```
 250
 -298
