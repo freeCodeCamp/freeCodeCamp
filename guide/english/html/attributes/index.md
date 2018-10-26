@@ -36,8 +36,8 @@ Here are examples that do the same thing:
 
 ## Other Resources
 
-[HTML links](#)
-[Href Attribute](#)
-[Lang Attribute](#)
-[HTML Input Element](#)
-[Required Attribute](#)
+[HTML links](https://www.w3schools.com/html/html_links.asp)
+[Href Attribute](https://www.w3schools.com/tags/att_a_href.asp)
+[Lang Attribute](https://www.w3schools.com/tags/att_global_lang.asp)
+[HTML Input Element](https://www.w3schools.com/tags/tag_input.asp)
+[Required Attribute](https://www.w3schools.com/tags/att_required.asp)
