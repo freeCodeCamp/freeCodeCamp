@@ -37,6 +37,8 @@ export default App;
 
 Another example using class properties and ES6 destructring:
 
+#### Note: This example uses class fields which is a stage 3 proposal and is not a standard feature yet.
+
 ```javascript
 import React from 'react';
 class App extends React.Component {
