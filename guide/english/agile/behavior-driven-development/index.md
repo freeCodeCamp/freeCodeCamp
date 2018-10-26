@@ -46,7 +46,7 @@ When he returns the blue garment for a replacement in black
 Then I should have three blue garments in stock
 And two black garments in stock.
 ```
-Along with it are some Benefites:
+Along with it are some Benefits:
 
 1. All development work can be traced back directly to business objectives.
 2. Software development meets user need. Satisfied users = good business.
