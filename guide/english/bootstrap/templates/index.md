@@ -9,7 +9,7 @@ Templates are prebuilt toolkits that make spinning up a new web page a breeze. I
 
 ### Getting Started
 * Bootstraps official webpage offers "Themes" instead of templates. Themes are just fully built out starter projects, while a template describes just a prebuilt HTML frame. Themes cost money and perhaps help out the novice developer, while many templates are open source and only provide the preliminary layout elements needed.
-* Below is a list of layout templates, made specifically for for Bootstrap. Have Fun!
+* Below is a list of layout templates, made specifically for Bootstrap. Have Fun!
 
 ### Template Links
 
