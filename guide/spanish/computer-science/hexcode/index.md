@@ -4,11 +4,11 @@ localeTitle: Números hexadecimales
 ---
 ## El sistema numeral hexadecimal
 
-Números hexadecimales, a menudo reducidos a "números hexadecimales" o "hex", son números representados en la base 16 en oposición a la base 10 que usamos para el cálculo y la cuenta diarios.
+Números hexadecimales, a menudo reducidos a "hexadecimales" o "hex", son números representados en la base 16 en oposición a la base 10 que usamos para el cálculo y la cuenta diarios.
 
 En términos prácticos, esto significa que cada columna de un número escrito en hexadecimal puede representar hasta 16 valores.
 
-Los dígitos en hexadecimal utilizan los símbolos estándar 0, 1, 2, 3, 4, 5, 6, 7, 8 y 9 para representar el valor correspondiente, y use las primeras seis letras del alfabeto para representar los valores 10 a 15 (por ejemplo, A, B, C, D, E, F).
+Los dígitos en hexadecimal utilizan los símbolos estándar 0, 1, 2, 3, 4, 5, 6, 7, 8 y 9 para representar el valor correspondiente, y usa las primeras seis letras del alfabeto para representar los valores del 10 al 15 (por ejemplo, A, B, C, D, E, F).
 
 En programación, prefijamos constantes hexadecimales con `0x` , con algunas excepciones.
 
