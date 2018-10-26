@@ -25,9 +25,9 @@ Examples include:
 
 * [**ACM Code of Ethics**] (http://www.acm.org/about-acm/acm-code-of-ethics-and-professional-conduct)
 
-Common themes appearing throughout these examples include a commitment to honesty, integrity, and fairness.
+A common theme is appearing throughout these examples, and this is a commitment to honesty, integrity, and fairness.
 
-To date, since most software developers do not belong to – and are not governed by – any official order, guild, association, or society, no single, codified ethical standard has been widely adopted.
+To date however, since most software developers do not belong to – and are not governed by – any official order, guild, association, or society, no single, codified ethical standard has been widely adopted.
 
 --
 
