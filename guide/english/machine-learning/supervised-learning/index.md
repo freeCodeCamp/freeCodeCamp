@@ -36,3 +36,4 @@ Price as a function of size is a continuous output, so this is a regression prob
 
 - https://en.wikipedia.org/wiki/Supervised_learning
 - https://stackoverflow.com/a/1854449/6873133
+- https://www.kaggle.com/ndalziel/beginner-s-guide-to-image-classification-keras
