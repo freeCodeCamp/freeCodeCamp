@@ -43,3 +43,9 @@ To change the remote folder:
 ```unix
 cd <path/to/folder>
 ```
+
+### Quit sftp.
+Once done with file transfer you can exit SFTP prompt using `bye` command
+`sftp> bye`
+
+For more info on SFTP use 'man sftp' in linux terminal.
