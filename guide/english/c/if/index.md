@@ -62,3 +62,5 @@ int main () {
 -> a is not less than 5!
 -> Value of a is : 100
 ```
+
+Note that if statement executes only once for the given condition
