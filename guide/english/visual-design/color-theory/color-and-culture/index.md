@@ -1,5 +1,5 @@
 ---
-Title: Color and Culture in Visual Design
+title: Color and Culture in Visual Design
 ---
 ## Color and Culture in Visual Design
 
