@@ -28,6 +28,15 @@ Servers typically use ECC or Error-Correcting Code RAM. This RAM features a few 
 
 Not all motherboards or CPUs can handle ECC memory; however, it also is rarely a relevant feature to most consumers, instead being mostly used in servers, data centers, and high end business workstations where the added 'insurance' against any down time is worth the added cost.
 
+### HOW IMPORTANT IS RAM?
+
+RAM is very important in that your desktop needs it to run and tablets or smartphones without much of it tend to run very slowly indeed. However, will having tonnes of it or the highest MHz rating mean your system is super fast? Not necessarily.
+
+Having enough RAM matters and having RAM that isn’t bargain basement slow is a good idea, especially if you plan on doing complicated image or video editing tasks, or playing games that tend to be CPU limited. However, when it comes to improving your system’s overall performance, it’s important to weigh up the costs involved. A faster CPU or graphics card is almost always going to have a bigger impact on your systems’ overall speed than faster memory.
+
+Upgrading from a hard drive to an SSD is also a big step if you haven’t taken it yet, as that speeds up by far the slowest storage on your system by a huge margin and contributes massively to making it feel more snappy.
+
+As with any computing device, you are usually limited the most by your slowest component, so slow memory can hold you back if it’s the worst part of your configuration. Unless you’re doing anything particularly intensive though, just make sure you have a little more than what you need and that it’s not the worst available, then you’ll probably be fine. If you want something more powerful there are a wide array of configurations of speed, size and latency for you to choose from. Some even have RGB LED lighting too.
 
 #### More Information:
 
@@ -39,3 +48,4 @@ Not all motherboards or CPUs can handle ECC memory; however, it also is rarely a
 * [DDR4 SDRAM](https://en.wikipedia.org/wiki/DDR4_SDRAM)
 * [Types of RAM](http://www.computermemoryupgrade.net/types-of-computer-memory-common-uses.html)
 * [Laptop Memory Buyer's Guide](https://www.lifewire.com/laptop-memory-buyers-guide-833024)
+* [What is RAM](https://www.digitaltrends.com/computing/what-is-ram/)
