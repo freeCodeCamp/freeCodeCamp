@@ -74,8 +74,8 @@ Here are our six core certifications:
 #### 4. Data Visualization Certification
 
 - Data Visualization with D3
-- JSON APIs and Ajax <br />
-  <br />
+- <br>JSON APIs and Ajax <br/>
+  <br/>
   **Projects**: Bar Chart, Scatterplot Graph, Heat Map, Choropleth Map, Treemap Diagram
 
 #### 5. APIs and Microservices Certification
