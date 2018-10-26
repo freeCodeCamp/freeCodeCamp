@@ -10,7 +10,7 @@ The HREF attribute gets the exact meaning of a link depending on the element tha
 ### Examples:
 Link to Google's Homepage:
 
-  -> The text "Visit Google's Homepage acts like the link to the Homepage
+  -> The text "Visit Google's Homepage" acts like the link to the Homepage
   
 ```html
 <a href="https://www.google.com">Visit Google’s Homepage</a>
