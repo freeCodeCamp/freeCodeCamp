@@ -8,7 +8,7 @@ Loops are what you use when you have code that you want to loop, meaning that af
 They can be categorized as:
 
 (a) Entry controlled loops- Loops in which the condition is checked before every iteration. e.g. for loop, while loop
-(a) Exit controlled loop- Loops in which the execution takes place once even if the condition is false. e.g. for do-while loop
+(b) Exit controlled loop- Loops in which the execution takes place once even if the condition is false. e.g. for do-while loop
 
 
 ## While loops
