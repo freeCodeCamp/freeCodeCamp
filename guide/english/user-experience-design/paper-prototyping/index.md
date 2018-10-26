@@ -26,5 +26,6 @@ And of course, after you are done with one round of paper prototyping, take it f
 <p>Guide to paper prototyping <a href="https://blog.marvelapp.com/stop-talking-start-sketching-guide-paper-prototyping/" target="blank">here</a></p>
 <p>Guide to rapid mobile app prototyping <a href="https://blog.prototypr.io/rapid-prototyping-for-mobile-app-ab394c9086e2" target="blank">here</a></p>
 
+For an alternative and interesting look at prototyping, look for the book titled “$1 Prototype: A Modern Approach to Mobile UX Design and Rapid Innovation” by Greg Nudelman. This book and other articles and videos Greg published will give you another view of how to use rapid prototyping with paper to your advantage.
 
 
