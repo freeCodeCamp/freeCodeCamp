@@ -102,17 +102,16 @@ Printing strings is easy, but other operations are slightly more complex. Thankf
 strpy(first, second);
 ```
 Here is an example of how manual implementation of the strcpy function looks like: 
-
+```    
 void copy_string(char [] first_string, char [] second_string) 
 { 
     int i; 
-     
     for(i = 0; first_string[i] != '\0'; i++) 
     { 
         first_string[i] = second_string[i]; 
     } 
 } 
-
+```
 #### Concatenate: `strcat`
 `strcat` (from 'string concatenate') will concatenate a string, meaning it will take the contents of one string and place it on the end of another string. In this example, the contents of `second` will be concatenated onto `first`:
 ```C
