@@ -22,6 +22,26 @@ Structure of a basic HTML file:
   </body>
 </html>  
 ```
+
+### Introduction HTML5
+Structure of HTML 5 :
+
+```<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+<title>Title of the document</title>
+</head>
+
+<body>
+Content of the document......
+</body>
+
+</html>
+```
+
 #### More Information:
 <!-- Please add any articles you think might be helpful to read before writing the article -->
 
