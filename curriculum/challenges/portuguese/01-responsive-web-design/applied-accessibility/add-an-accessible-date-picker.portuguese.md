@@ -6,13 +6,13 @@ videoUrl: ''
 localeTitle: Adicionar um selecionador de data acessível
 ---
 
-## Description
+## Descrição
 <section id="description"> Os formulários geralmente incluem o campo de <code>input</code> , que pode ser usado para criar vários controles de formulários diferentes. O atributo <code>type</code> neste elemento indica que tipo de entrada será criada. Você deve ter notado os tipos de entrada <code>text</code> e <code>submit</code> nos desafios anteriores, e o HTML5 introduziu uma opção para especificar um campo do tipo <code>date</code> . Dependendo do suporte ao navegador, um seletor de data aparece no campo de <code>input</code> quando está em foco, o que facilita o preenchimento de um formulário para todos os usuários. Para navegadores mais antigos, o tipo será padronizado para <code>text</code> . Por isso, é útil mostrar aos usuários o formato de data esperado na label ou no campo de texto com um placeholder. Aqui está um exemplo: <blockquote> &lt;label for = &quot;input1&quot;&gt; Insira uma data: &lt;/ label&gt; <br> &lt;input type = &quot;date&quot; id = &quot;input1&quot; name = &quot;input1&quot;&gt; <br></blockquote></section>
 
-## Instructions
+## Instruções
 <section id="instructions"> O Camper Cat está organizando um torneio de Mortal Kombat e quer pedir a seus concorrentes para ver qual data funciona melhor. Adicione uma tag de <code>input</code> com um atributo <code>type</code> de &quot;date&quot;, um atributo <code>id</code> de &quot;pickdate&quot; e um atributo <code>name</code> de &quot;date&quot;. </section>
 
-## Tests
+## Testes
 <section id='tests'>
 
 ```yml
@@ -68,7 +68,7 @@ tests:
 
 </section>
 
-## Solution
+## Solução
 <section id='solution'>
 
 ```js
