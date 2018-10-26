@@ -3,25 +3,25 @@ id: bad87fee1348bd9aedf08804
 title: Comment out HTML
 challengeType: 0
 videoUrl: ''
-localeTitle: Комментарий HTML
+localeTitle: Закомментируйте HTML
 ---
 
 ## Description
 <section id="description"> Помните, что для того, чтобы начать комментарий, вам нужно использовать <code>&lt;!--</code> и для завершения комментария, вам нужно использовать <code>--&gt;</code> Здесь вам нужно будет закончить комментарий до того, как начнется ваш элемент <code>h2</code> . </section>
 
 ## Instructions
-<section id="instructions"> Комментируйте свой элемент <code>h1</code> и ваш элемент <code>p</code> , но не ваш элемент <code>h2</code> . </section>
+<section id="instructions"> Закомментируйте ваш элемент <code>h1</code> и ваш элемент <code>p</code> , но не ваш элемент <code>h2</code> . </section>
 
 ## Tests
 <section id='tests'>
 
 ```yml
 tests:
-  - text: Прокомментируйте свой элемент <code>h1</code> чтобы он не был виден на вашей странице.
+  - text: Закомментируйте свой элемент <code>h1</code> чтобы он не был виден на вашей странице.
     testString: 'assert(($("h1").length === 0), "Comment out your <code>h1</code> element so that it is not visible on your page.");'
   - text: 'Оставьте свой <code>h2</code> элемент раскомментированным, чтобы он был виден на вашей странице.'
     testString: 'assert(($("h2").length > 0), "Leave your <code>h2</code> element uncommented so that it is visible on your page.");'
-  - text: Прокомментируйте свой элемент <code>p</code> чтобы он не был виден на вашей странице.
+  - text: Закомментируйте свой элемент <code>p</code> чтобы он не был виден на вашей странице.
     testString: 'assert(($("p").length === 0), "Comment out your <code>p</code> element so that it is not visible on your page.");'
   - text: Не забудьте закрыть каждый из ваших комментариев с помощью <code>--&gt;</code> .
     testString: 'assert(code.match(/[^fc]-->/g).length > 1, "Be sure to close each of your comments with <code>--&#62;</code>.");'
