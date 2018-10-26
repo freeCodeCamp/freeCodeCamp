@@ -558,7 +558,7 @@
                 {
                   "type": "text",
                   "value":
-                    "tests:\n  - text: Your <code>h1</code> element should have the text \"Hello World\".\n    testString: assert.isTrue((/hello(\\s)+world/gi).test($('h1').text()), 'Your <code>h1</code> element should have the text \"Hello World\".');\n"
+                    "tests:\n  - text: Your <code>h1</code> element should have the text \"Hello World\".\n"    testString: assert.isTrue((/hello(\\s)+world/gi).test($('h1').text()), 'Your <code>h1</code> element should have the text \"Hello World\".');\n"
                 }
               ],
               "position": {
