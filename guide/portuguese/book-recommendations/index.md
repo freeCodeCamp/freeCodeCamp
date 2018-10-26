@@ -73,6 +73,14 @@ _Cracking the Coding Interview: 150 perguntas e soluções de programação_ por
 *   [Sorriso da Amazônia](https://smile.amazon.com/Cracking-Coding-Interview-Programming-Questions/dp/098478280X)
 *   ISBN-13: 978-0984782802
 
+_O Manual de Design de Algoritmo 2ª Edição_ por Steven S. Skiena
+*   [Sorriso da Amazônia](https://smile.amazon.com/Algorithm-Design-Manual-Steven-Skiena/dp/1849967202/)
+*   ISBN-13: 978-1849967204
+
+_Algoritmos 4ª Edição_ por Robert Sedgewick e Kevin Wayne
+*   [Sorriso da Amazônia](https://smile.amazon.com/Algorithms-4th-Robert-Sedgewick/dp/032157351X/)
+*   ISBN-13: 978-0321573513
+
 ## C-lang
 
 _A linguagem de programação C_ por Brian W. Kernighan e Dennis M. Ritchie
