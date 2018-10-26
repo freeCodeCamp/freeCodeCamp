@@ -10,3 +10,5 @@ YOLO is a combined classification and detection framework that is capable of mak
 - YOLO [paper](https://arxiv.org/abs/1506.02640)
 - Author [website](https://pjreddie.com/darknet/yolo/)
 - Demo [video](https://www.youtube.com/watch?v=VOC3huqHrss)
+- YOLO Object Detection (TensorFlow tutorial) [video](https://www.youtube.com/watch?v=4eIBisqx9_g)
+
