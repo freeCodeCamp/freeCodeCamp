@@ -250,8 +250,6 @@ This list was compiled from multiple suggestion threads on Reddit and Stackoverf
 
 Please feel free to add more that you have found useful!
 
-My Changes
-
 Here are books to get kids coding
 *Python for Kids: A Playful Introduction to Programming by Jason Briggs* For Ages 10+
 -[Amazon]https://www.amazon.com/Python-Kids-Playful-Introduction-Programming-ebook/dp/B00ADX21Z6
