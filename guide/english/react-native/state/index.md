@@ -35,8 +35,8 @@ class App extends Component {
 }
 ```
 
-State is similar to props, but it is private and fully controlled by the component. Here, the `constructor()` method is calling the parent class' constructor with `super();` - **`Component`** is the parent class of `App` because we are using the `extends` keyword. The `constructor()` method also initializes the component's state object:
-
+State is similar to props, but it is private and fully controlled by the component. Here, the `constructor()` method is calling the parent class' constructor with `super();` - **`Component`** is the parent class of `App` because we are using the `extends` keyword. The `constructor()` method also initializes the component's state object.
+A class method typically needs to use the this keyword so it can access properties on the class (such as state and props) inside the scope of the method:
 ```
 this.state = {
   counter: 0
