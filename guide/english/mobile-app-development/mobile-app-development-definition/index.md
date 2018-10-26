@@ -21,3 +21,11 @@ Mobile application development is not only the leading business of today, but it
 
 ### How can you start making apps?
 There are many tools at your disposal from which you can start making your own apps. The most popular is Android Studio which uses Java and XML. XCode lets you create apps for iOS. But these apps require good amount of programming knowledge. For all the beginners out there, MIT AppInventor 2 comes to the rescue. With simple block-based programming one can easily code and make there own apps very easily and publish it for the others.
+
+### Introduction to Xamarin:
+
+When considering how to build iOS and Android applications, many people think that the native languages, Objective-C, Swift, and Java, are the only choice. However, over the past few years, an entire new ecosystem of platforms for building mobile applications has emerged.
+
+Xamarin is unique in this space by offering a single language – C#, class library, and runtime that works across all three mobile platforms of iOS, Android, and Windows Phone (Windows Phone’s native language is already C#), while still compiling native (non-interpreted) applications that are performant enough even for demanding games.
+
+When Xamarin applications are compiled, the result is an Application Package, either an .app file in iOS, or .apk file in Android. These files are indistinguishable from application packages built with the platform's default IDEs and are deployable in the exact same way.
