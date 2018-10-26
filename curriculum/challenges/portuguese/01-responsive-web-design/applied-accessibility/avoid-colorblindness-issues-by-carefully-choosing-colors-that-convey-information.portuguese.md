@@ -6,13 +6,13 @@ videoUrl: ''
 localeTitle: Evite problemas de daltonismo escolhendo cuidadosamente as cores que transmitem informações
 ---
 
-## Description
+## Descriçào
 <section id="description"> Existem várias formas de daltonismo. Estes podem variar de uma sensibilidade reduzida a um determinado comprimento de onda da luz até a incapacidade de ver a cor. A forma mais comum é uma sensibilidade reduzida para detectar tons de verde. Por exemplo, se duas cores verde semelhantes forem a cor de primeiro e segundo plano de seu conteúdo, talvez um usuário daltônico não consiga distingui-las. As cores próximas podem ser vistas como vizinhas na roda de cores e essas combinações devem ser evitadas ao transmitir informações importantes. <strong>Nota</strong> <br> Algumas ferramentas de coleta de cores on-line incluem simulações visuais de como as cores aparecem para diferentes tipos de daltonismo. Estes são ótimos recursos, além de calculadoras de verificação de contraste on-line. </section>
 
-## Instructions
+## Instruções
 undefined
 
-## Tests
+## Testes
 <section id='tests'>
 
 ```yml
@@ -55,7 +55,7 @@ tests:
 
 </section>
 
-## Solution
+## Solução
 <section id='solution'>
 
 ```js
