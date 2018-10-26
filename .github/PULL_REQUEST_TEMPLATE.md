@@ -7,5 +7,5 @@
 - [ ] My article does not contain shortened URLs or affiliate links.
 
 If your pull request closes a GitHub issue, replace the XXXXX below with the issue number.
-
+today market demand is machine learning,artificial intelligence.
 Closes #XXXXX
