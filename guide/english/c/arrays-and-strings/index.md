@@ -103,7 +103,7 @@ strpy(first, second);
 ```
 Here is an example of how manual implementation of the strcpy function looks like: 
 ```C
-void copy_string(char [] first_string, char [] second_string) 
+void copy_string(char first_string [], char second_string []) 
 { 
     int i; 
      
@@ -120,7 +120,7 @@ strcat(first, second);
 ```
 Here is an example of manual implementation of function strcat:
 ```C
-void string_concatenate(char [] s1, char [] s2)
+void string_concatenate(char s1 [], char s2 [])
 {
     int i = strlen(s1), j;
     for(j = 0; s2[j]; j++, i += 1)
