@@ -3,7 +3,7 @@ title: For Loop Statements
 ---
 ## For Loop Statements
 
-Python utilizes a for loop to iterate over a list of elements. Unlike C or Java, which use the for loop to change a value in steps and access something such as an array using that value.
+Python utilizes a 'for' loop to iterate over a list of elements. Unlike C or Java, which use the for loop to change a value in steps and access something such as an array using that value.
 
 For loops iterate over collection based data structures like lists, tuples, and dictionaries.
 
