@@ -33,6 +33,12 @@ For example, `<img src="images/freeCodeCamp.jpeg>` would work if you had a folde
 
 `..files/images/freeCodeCamp.jpeg`
 
+alt
+  alt attribute contains small dscription about the image, which is used in with img attribute so that if due some reason browser fails to display image then user sees the desscription
+  
+ For example, `<img src="images/freeCodeCamp.jpeg alt="freecodecamp logo">`
+  
+
 
 ### More Information:
 
