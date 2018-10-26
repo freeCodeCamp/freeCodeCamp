@@ -3,24 +3,24 @@ id: bad87fee1348bd9aedf08815
 title: Make Circular Images with a border-radius
 challengeType: 0
 videoUrl: ''
-localeTitle: Сделать круговые изображения с радиусом границы
+localeTitle: Создание изображения формы - круг с помощью border-radius
 ---
 
 ## Description
-<section id="description"> В дополнение к пикселям вы также можете указать <code>border-radius</code> используя процент. </section>
+<section id="description">В дополнение к пикселям вы также можете задать <code>border-radius</code> в процентном соотношении. </section>
 
 ## Instructions
-<section id="instructions"> Дайте вашей фотографии кошки <code>border-radius</code> <code>50%</code> . </section>
+<section id="instructions"> Задайте вашей фотографии кошки <code>border-radius</code> <code>50%</code> . </section>
 
 ## Tests
 <section id='tests'>
 
 ```yml
 tests:
-  - text: 'Ваше изображение должно иметь радиус границы <code>50%</code> , что делает его идеально круговым.'
-    testString: 'assert(parseInt($("img").css("border-top-left-radius")) > 48, "Your image should have a border radius of <code>50%</code>, making it perfectly circular.");'
-  - text: Обязательно используйте процентное значение <code>50%</code> .
-    testString: 'assert(code.match(/50%/g), "Be sure to use a percentage value of <code>50%</code>.");'
+  - text: 'Ваше изображение должно иметь радиус границы <code>50%</code> , что делает его идеально круглым.'
+    testString: 'assert(parseInt($("img").css("border-top-left-radius")) > 48, "Ваше изображение должно иметь радиус границы <code>50%</code> , что делает его идеально круглым.");'
+  - text: 'Обязательно используйте процентное объявление <code>50%</code>.'
+    testString: 'assert(code.match(/50%/g), "Обязательно используйте процентное объявление <code>50%</code>.");'
 
 ```
 
