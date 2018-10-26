@@ -129,6 +129,9 @@ This draws the following chart:
 
 [Browser support for SVG](https://caniuse.com/#feat=svg) is available in all modern browsers. There are some issues with scaling in IE 9 through IE 11 however they can be overcome with the use of the `width`, `height`, `viewbox`, and CSS.
 
+### Responsive SVG
+SVGs will not always have a clearly defined aspect ratio. By default, SVGs will be drawn in accordance with the dimensions defined in the code. Typically, the height and width attributes can be removed from the code since the size of the SVG will be defined by the viewBox. The preserveAspectRatio attribute can be added to an SVG to dictate how the element will resize in a viewport with a different aspect ratio.
+
 ## Editors
 
 * [Vectr](https://vectr.com) - web and desktop tool for creating and editing SVG graphics, free of charge
@@ -151,3 +154,4 @@ As an XML format, it allows you to benefit from the full power of JavaScript and
 
 - <a href='https://www.w3.org/TR/SVG/' target='_blank' rel='nofollow'>W3C, Scalable Vector Graphics (SVG) 1.1 (Second Edition)</a>
 - <a href='https://developer.mozilla.org/en-US/docs/Web/SVG' target='_blank' rel='nofollow'>Mozilla Developer Network, SVG</a>
+- <a href='https://css-tricks.com/scale-svg' target='_blank' rel='nofollow'>How to Scale SVGs for Responsive Design</a>
