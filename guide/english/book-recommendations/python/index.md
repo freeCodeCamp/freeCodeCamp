@@ -63,9 +63,18 @@ You'll learn many of the first princliples for data science tools and how algori
 
 *The Quick Python Book, Third Edition*
 - Paid book which provides a good level of information for those starting Python and as a reference for the Python language
-- [Manning]https://www.manning.com/books/the-quick-python-book-third-edition
+- [Manning](https://www.manning.com/books/the-quick-python-book-third-edition)
 - ISBN-10: 1617294039
 - ISBN-13: 978-1617294037
+
+#### Head First Python 2nd Edition
+
+If you want to learn Python and have been wondering which book you can start with. Look no further, this book is amazing for beginners even intemediates that want to have a refresher at their Python skills and knowledge. It covers the very basics upto advanced. Give this book a try.
+
+- [Amazon](https://www.amazon.com/gp/product/1491919531/ref=dbs_a_def_rwt_bibl_vppi_i0)
+- [O'Reilly](https://www.oreilly.com/library/view/head-first-python/9781491919521/)
+- ISBN-13: 978-1491919538 
+- ISBN-10: 9781491919538 
 
 #### Other Resources
 
