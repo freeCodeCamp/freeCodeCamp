@@ -34,7 +34,7 @@ Another example with parameters:
 
 ```javascript
 let NewOneWithParameters = (a, b) => {
- console.log(a+b); // 30
+ console.log(a*b); // 300
 }
 NewOneWithParameters(10, 20);
 ```
