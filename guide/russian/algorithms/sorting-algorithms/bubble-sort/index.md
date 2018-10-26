@@ -1,12 +1,12 @@
 ---
 title: Bubble Sort
-localeTitle: Сортировка пузырьков
+localeTitle: Сортировка пузырьком
 ---
-## Сортировка пузырьков
+## Сортировка пузырьком
 
 Bubble Sort - это самый простой алгоритм сортировки, который работает путем многократной замены соседних элементов, если они находятся в неправильном порядке.
 
-Это очень медленный алгоритм сортировки по сравнению с такими алгоритмами, как quicksort, с наихудшей сложностью O (n ^ 2). Однако компромисс заключается в том, что сортировка пузырьков - один из самых простых алгоритмов сортировки для реализации с нуля.
+Это очень медленный алгоритм сортировки по сравнению с такими алгоритмами, как quicksort, с наихудшей сложностью O (n ^ 2). Однако компромисс заключается в том, что сортировка пузырьком - один из самых простых алгоритмов сортировки для реализации с нуля.
 
 ### Пример:
 
@@ -52,9 +52,9 @@ Bubble Sort - это самый простой алгоритм сортиров
 
 ### Объяснение видео
 
-[Пузырь сортировать легко](https://www.youtube.com/watch?v=Jdtq5uKz-w4)
+[Сортировка пузырьком легким способом](https://www.youtube.com/watch?v=Jdtq5uKz-w4)
 
-Этот код будет использовать сортировку пузырьков для сортировки массива.
+Этот код будет использовать сортировку пузырьком для сортировки массива.
 
 ```js
 let arr = [1, 4, 7, 45, 7,43, 44, 25, 6, 4, 6, 9]; 
@@ -75,7 +75,7 @@ let arr = [1, 4, 7, 45, 7,43, 44, 25, 6, 4, 6, 9];
 
 ### Свойства:
 
-*   Космическая сложность: O (1)
+*   Пространственная сложность: O (1)
 *   Сложность времени: O (n), O (n \* n), O (n \* n) для наилучших, средних и худших случаев соответственно.
 *   На месте: Да
 *   Стабильный: Да
@@ -126,10 +126,10 @@ public class bubble-sort {
 ```c++
 void bubblesort(int arr[], int n) 
  { 
-    if(n==1)    //Initial Case 
+    if(n==1)    //Исходный случай 
         return; 
  
-    for(int i=0;i<n-1;i++)  //After this pass the largest element will move to its desired location. 
+    for(int i=0;i<n-1;i++)  //После этого цикла самый большой элемент будет перемещен на желаемое месторасположение. 
     { 
         if(arr[i]>arr[i+1]) 
         { 
@@ -139,16 +139,16 @@ void bubblesort(int arr[], int n)
         } 
     } 
  
-    bubblesort(arr,n-1);    //Recursion for remaining array 
+    bubblesort(arr,n-1);    //Рекурсия для оставшегося массива
  } 
 ```
 
 ### Больше информации
 
 *   [Википедия](https://en.wikipedia.org/wiki/Bubble_sort)
-*   [Алгоритм сортировки пузырьков - CS50](https://youtu.be/Ui97-_n5xjo)
-*   [Алгоритм сортировки пузырьков - GeeksForGeeks (статья)](http://www.geeksforgeeks.org/bubble-sort)
-*   [Алгоритм сортировки пузырьков - MyCodeSchool (видео)](https://www.youtube.com/watch?v=Jdtq5uKz-w4)
+*   [Алгоритм сортировки пузырьком - CS50](https://youtu.be/Ui97-_n5xjo)
+*   [Алгоритм сортировки пузырьком - GeeksForGeeks (статья)](http://www.geeksforgeeks.org/bubble-sort)
+*   [Алгоритм сортировки пузырьком - MyCodeSchool (видео)](https://www.youtube.com/watch?v=Jdtq5uKz-w4)
 *   [Алгоритмы: Bubble Sort - HackerRank (видео)](https://www.youtube.com/watch?v=6Gv8vg0kcHc)
-*   [Алгоритм сортировки пузырьков - GeeksForGeeks (видео)](https://www.youtube.com/watch?v=nmhjrI-aW5o)
-*   [Визуализация сортировки пузырьков](https://www.hackerearth.com/practice/algorithms/sorting/bubble-sort/visualize/)
+*   [Алгоритм сортировки пузырьком - GeeksForGeeks (видео)](https://www.youtube.com/watch?v=nmhjrI-aW5o)
+*   [Визуализация сортировки пузырьком](https://www.hackerearth.com/practice/algorithms/sorting/bubble-sort/visualize/)
