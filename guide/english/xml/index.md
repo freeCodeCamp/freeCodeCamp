@@ -27,7 +27,7 @@ Above syntax shows the root element which is necessary while creating an XML cod
   <body>Don't forget me this weekend!</body>
 </note>
 ```
-In this example 'note' is the root element.
+In this example 'note' is the root element and 'to', 'from', 'heading', and 'body' are child elements.
  
   
   * Advantages of using XML:
@@ -40,13 +40,13 @@ In this example 'note' is the root element.
    * Verbose and cumbersome syntax
    * Highly inefficient storage  
 
-In Computer Language, eXtensible Markup Language(XML) is that which defines a set or block of Rules which are later used for Encoding documents in such a Format which is both Machine and Human Readable.
+The eXtensible Markup Language (XML) is a language that defines a set or block of rules, which is later used for encoding documents in a format that is machine- and human-readable.
 
-There is a main thing between XML and HTML which makes them different from each other. It is that XML was designed to carry a particular information and focuses on that informaion only. And HTML focuses on displaying that particular Information like design and all these stuff regarding the information.
+The main difference between XML and HTML is that XML was designed to carry a particular information. On the other side, HTML focuses on displaying the information.
 
-Also XML does not uses a predefined tags as used by HTML. It uses user defined tags.
+Also XML does not use predefined tags in contrary to HTML. It uses user defined tags.
 
-The following are areas that can be simiplified with XML: 
+The following areas can be simiplified with XML: 
 1. data sharing
 2. data transport
 3. platform changes
