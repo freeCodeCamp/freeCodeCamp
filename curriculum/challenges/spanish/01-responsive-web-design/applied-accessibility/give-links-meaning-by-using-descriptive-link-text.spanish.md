@@ -6,13 +6,13 @@ videoUrl: ''
 localeTitle: Dar el significado de enlaces mediante el uso de texto de enlace descriptivo
 ---
 
-## Description
+## Descripción
 <section id="description"> Los usuarios de lectores de pantalla tienen diferentes opciones para el tipo de contenido que lee su dispositivo. Esto incluye saltar a (o sobre) elementos de hito, saltar al contenido principal u obtener un resumen de la página de los encabezados. Otra opción es escuchar solo los enlaces disponibles en una página. Los lectores de pantalla hacen esto leyendo el texto del enlace, o lo que hay entre las etiquetas ancla ( <code>a</code> ). Tener una lista de enlaces &quot;haga clic aquí&quot; o &quot;leer más&quot; no es útil. En su lugar, debe utilizar el texto breve pero descriptiva dentro de las <code>a</code> etiquetas para proporcionar más significado para estos usuarios. </section>
 
-## Instructions
+## Instrucciones
 <section id="instructions"> El texto del enlace que está utilizando Camper Cat no es muy descriptivo sin el contexto que lo rodea. Mueva las etiquetas de anclaje ( <code>a</code> ) para que envuelvan el texto &quot;información sobre baterías&quot; en lugar de &quot;Haga clic aquí&quot;. </section>
 
-## Tests
+## Pruebas
 <section id='tests'>
 
 ```yml
@@ -50,7 +50,7 @@ tests:
 
 </section>
 
-## Solution
+## Solución
 <section id='solution'>
 
 ```js
