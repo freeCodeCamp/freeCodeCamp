@@ -32,3 +32,8 @@ For full usage of each command, including abbreviations, see
 ### Sources
 1. [Anaconda Documentation](https://docs.anaconda.com/)
 2. [Conda Documentation](https://conda.io/docs/)
+
+### Conda Upgrade All Packages 
+1. ``conda upgarde --all``
+### Conda Upgrade 
+1. ``conda upgrade package_name``
