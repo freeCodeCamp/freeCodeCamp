@@ -64,6 +64,12 @@ for (int i = 1; i <= addUntil; i++)
 System.out.println("The sum of the first 50 numbers is: " + 50);
 ```
 
+An infinite For Loop can be created by not putting a condition in the For loop.
+
+for(int i=0;;i++)
+{
+}
+
 ![:rocket:](https://forum.freecodecamp.org/images/emoji/emoji_one/rocket.png?v=2 ":rocket:") <a href='https://repl.it/CJYr/0' target='_blank' rel='nofollow'>Run Code</a>
 
 ### Extras
