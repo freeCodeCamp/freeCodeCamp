@@ -20,6 +20,8 @@ HTML5 Introduces a host of semantic elements. Though we discussed HTML helped to
 <!DOCTYPE html>
 <html>
 <head>
+ <style>StyleSheet</style>
+ <script>Javascript</script>
   <title>Page Title</title>
 </head>
 <body>
@@ -44,6 +46,10 @@ body: The element contains the visible page content
 h1: The element defines a large heading
 
 p: The element defines a paragraph
+
+style: The element contains stylesheet
+
+script: The element contains javascript
 
 ### HTML Versions
 
