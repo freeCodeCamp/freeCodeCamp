@@ -8,7 +8,7 @@ localeTitle: 'Бу, кто'
 ---
 
 ## Description
-<section id="description"> Проверьте, классифицировано ли значение как булевский примитив. Вернуть true или false. Булевы примитивы являются истинными и ложными. Не забудьте использовать <a href="http://forum.freecodecamp.org/t/how-to-get-help-when-you-are-stuck/19514" target="_blank">Read-Search-Ask,</a> если вы застряли. Попробуйте подключить программу. Напишите свой собственный код. </section>
+<section id="description"> Проверьте, является ли значение булевым примитивом. Верните true или false. Булевые примитивы бывают истинными и ложными. Не забудьте использовать <a href="http://forum.freecodecamp.org/t/how-to-get-help-when-you-are-stuck/19514" target="_blank">Read-Search-Ask,</a> если вы застряли. Попробуйте подключить программу. Напишите свой собственный код. </section>
 
 ## Instructions
 <section id="instructions">
