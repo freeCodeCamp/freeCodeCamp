@@ -30,3 +30,7 @@ man ls
 #### More information:
 
 * Wikipedia: https://en.wikipedia.org/wiki/Man_page
+
+Tip:
+I encourage you to use man as soon as you need help, because it's a fast way to solve a problem, and will be helpful later on.
+I often open multiple consoles, one of them is just for the mans I need.
