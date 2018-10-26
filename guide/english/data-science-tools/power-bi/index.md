@@ -18,3 +18,7 @@ While it is not as powerful for complex inference analysis or map reducing, it t
 ## Lab
 
 <a href="https://github.com/Microsoft/computerscience/blob/master/Labs/Big%20Data%20and%20Analytics/Power%20BI/Power%20BI.md">Using Microsoft Power BI to Explore and Visualize Data</a>
+
+## Link
+
+[Download Power BI](https://powerbi.microsoft.com/en-us/ "Power BI Homepage")
