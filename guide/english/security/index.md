@@ -11,7 +11,7 @@ Information security practitioners are often called "security researchers", thou
 
 There are "white hat hackers" (ethical hackers) who try to discover new vulnerabilities and bring them to the attention of the people maintaining those systems, which is called "ethical disclosure". They often do this for prestige in the field, or for "bug bounties" that companies have set aside to compensate people for helping them discover vulnerabilities. 
 
-In an interesting hack on Parity (on the Ethereum blockchain), "white hack hackers" exploited a vulnerability and drained all the wallets of money before a real hacker could exploit the same vulnerability (without returning funds): https://medium.freecodecamp.org/a-hacker-stole-31m-of-ether-how-it-happened-and-what-it-means-for-ethereum-9e5dc29e33ce. This led to a loss of $31 million, instead of a loss of over $180 million. 
+In an interesting hack on Parity (on the Ethereum blockchain), "white hat hackers" exploited a vulnerability and drained all the wallets of money before a real hacker could exploit the same vulnerability (without returning funds though): https://medium.freecodecamp.org/a-hacker-stole-31m-of-ether-how-it-happened-and-what-it-means-for-ethereum-9e5dc29e33ce. This led to a loss of $31 million, instead of a loss of over $180 million. 
 
 There are also "black hat hackers" who do not disclose the vulnerabilities they discover, and instead use them to create exploits to attack people's systems, or sell the exploits to the highest bidder. They often do this to steal data that they can ransom off, or just release into the open to cause chaos.
 
