@@ -12,7 +12,7 @@ Every browser has a JavaSript engine built in it to process JavaScript files con
 This means that Node.js waits for certain events to take place. It then acts on those events. Events can be anything from a click to a HTTP request. We can also declare our own custom events and make node.js listen for those events.
 - Node.js uses a non-blocking I/O model.  
 We know that I/O tasks take much longer than processing tasks. Node.js uses callback functions to handle such requests.
-
+We know that I/O tasks take much longer than processing tasks Node.js uses callback functions to handle such requests on your computer. 
 Let us assume that a particular I/O task takes 5 secs to execute.
 And we want to perform this I/O twice in our code.
 
