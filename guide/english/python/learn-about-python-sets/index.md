@@ -1,7 +1,7 @@
 ---
 title: Learn About Python Sets
 ---
-`Set`s in Python are a type of mutable but unordered data structure, which can only contain *unique* elements. 
+`Set`s in Python are a type of mutable but unordered data structure, which can only contain *unique* elements. In other words, it is equivalent to sets in math. 
 
 **Creation:**
 
@@ -30,3 +30,11 @@ However, if elements are included within the curly brackets, then it would be ac
 >>> type(example_set_2)
 <class 'set'>
 ````
+
+If `set(...)` contains a list, a string, or a tuple as an element, it will return a set containing its' elements.
+
+```python
+>>> example_set_3 = set('some string')
+>>> example_set_3
+{' ', 't', 'g', 'o', 'r', 'i', 's', 'e', 'n', 'm'}
+```
