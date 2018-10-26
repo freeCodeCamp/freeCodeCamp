@@ -23,7 +23,7 @@ The Solid State Drive (SSD) or Hard Disk Drive (HDD) are used to store informati
 ![SSD](https://images10.newegg.com/NeweggImage/ProductImage/20-147-373-09.jpg)  
   
 ### Memory (RAM)
-Random-access memory (RAM) is a form of computer data storage which stores data and machine code currently being used. A random-access memory device allows data items to be read or written in almost the same amount of time irrespective of the physical location of data inside the memory.
+Random-access memory (RAM) is a form of computer data storage which stores data and machine code currently being used. A random-access memory device allows data items to be read or written in almost the same amount of time irrespective of the physical location of data inside the memory. It does not retain the data after loss of power.
   
 ![Ram](https://images10.newegg.com/NeweggImage/ProductImage/20-232-476-S01.jpg)  
 
@@ -42,7 +42,7 @@ Motherboard holds and allows communication between many of the crucial electroni
   
 ![Motherboard](https://fthmb.tqn.com/mmTUdCN6UBGIKlkEggGq4fpV-3k=/768x0/filters:no_upscale()/gig-57c732ed3df78c71b60e7aa5.jpg)  
   
-### Input and Output devices (eg. Keyboard and Mouse)
+### Input and Output devices (eg. Keyboard, Mouse and Monitor)
 Input/Output device is any hardware used by a human operator or other systems to communicate with a computer.
 
 ![I/O Devices](https://www.clasohlson.com/medias/sys_master/9225929949214.jpg)
