@@ -1,0 +1,22 @@
+---
+title: CSS Radial Gradients
+---
+## CSS Radial Gradients
+A radial gradient is defined by its center.
+
+To create a radial gradient you must also define at least two color stops.
+
+Syntax:
+```
+background-image: radial-gradient(shape size at position, start-color, ..., last-color);
+```
+By default, shape is ellipse, size is farthest-corner, and position is center.
+
+Example Syntax:
+```
+#grad {
+  background-image: radial-gradient(red, yellow, green);
+}
+```
+#### More Information:
+https://www.w3schools.com/css/css3_gradients.asp
