@@ -36,6 +36,21 @@ You can also give the ``<span>`` some inline-style properties, as shown below.
   
   ``<p>Hello my name is <span style="padding-left: 2px;"> James</p>``
   
+ ## Insert a non-breaking space
+ 
+ Whenever we require to put a space between words but there shouldn't line break than we can use ``&nbsp;``.
+ 
+ For example:
+ 
+ ``<p>Hello&nbsp;World</p>``
+ 
+ This will be displayed as Hello World and prevent line break.
+ 
+ ## Insert space of different widths
+ 
+ For two spaces we can use ``&ensp;`` and for four spaces we can use ``&emsp;``.
+ For Tab we can use ``&nbsp;&nbsp;&nbsp;&nbsp;`` since we don't expect line break in Tab.
+  
 ## More Information
 
 For more information on the <span> tag or on; How to Insert Spaces or Tabs in Text Using HTML and CSS, you can visit w3schools. https://www.w3schools.com/tags/tag_span.asp
