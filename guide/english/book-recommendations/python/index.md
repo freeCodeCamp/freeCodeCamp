@@ -1,5 +1,5 @@
 ---
-title: Books on Python Programming Language
+title: Books on Python
 ---
  
  ### List of Books
@@ -18,7 +18,6 @@ title: Books on Python Programming Language
 Paid (Free ebook available) book which covers the basics of python. It's designed to get you started with python language and become familiar with its syntax and workings by the time you complete the book. 
 
 - [Website](https://learnpythonthehardway.org/) (Buy from the creator | Includes video lessons)
-- [E-book](https://learnpythonthehardway.org/python3/) (free)
 - [Amazon](https://www.amazon.com/Learn-Python-Hard-Way-Introduction/dp/0134692888)
 - ISBN-13: 978-0134692883
 - ISBN-10: 0134692888
@@ -71,7 +70,6 @@ You'll learn many of the first princliples for data science tools and how algori
 
 - [Functional Programming in Python by David Mertz [OREILLY] [FREE]](https://www.oreilly.com/programming/free/files/functional-programming-python.pdf)
 - [Python in Education by Nicholas H. Tollervey[OREILLY] [FREE]](https://www.oreilly.com/programming/free/files/python-in-education.pdf)
-- [How to think like a Computer Scientist by Allen Downey[V 2.0.17] [FREE]](http://greenteapress.com/thinkpython/thinkpython.pdf)
 - [A Byte of Python[FREE]](https://python.swaroopch.com)
 
-Please feel free to add more that you have found useful!
+Please feel free to add more!
