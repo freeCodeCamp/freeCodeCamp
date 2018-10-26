@@ -58,6 +58,22 @@ Since the early days of the web, there have been many versions of HTML
 |XHTML|2000|
 |HTML5|2014|
 
+#### New APIs
+
+HTML5 related APIs
+In addition to specifying markup, HTML 5 specifies scripting application programming interfaces (APIs) that can be used with JavaScript. Existing Document Object Model (DOM) interfaces are extended and de facto features documented. There are also new APIs, such as:
+
+Canvas;
+Timed Media Playback;
+Offline;
+Editable content;
+Drag and drop;
+History;
+MIME type and protocol handler registration;
+Microdata;
+Web Messaging;
+Web Storage – a key-value pair storage framework that provides behaviour similar to cookies but with larger storage capacity and improved API.
+
 #### Other Resources
 
 - [HTML Elements](https://guide.freecodecamp.org/html/elements)
