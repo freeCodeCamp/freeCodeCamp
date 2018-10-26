@@ -7,6 +7,9 @@ Bootstrap is a free and open source framework developed by Twitter that provides
 #### What is a responsive website
 A responsive website is a website that resizes and rearranges items on the page depending on the size of your browser. With a responsive website, if you resize your browser you can see the changes occur in real time. Bootstrap makes your website responsive for you.
 
+#### Why use Bootstrap?
+Bootstrap is used by many website developers (beginners and professionals!) because it enables us to create aesthetically-pleasing websites quickly and with less CSS. Bootstrap comes with many pre-defined classes for useful components of a website such as nav bars, buttons and forms - this prevents you from having to write the same classes over and over again each time you're creating a website.
+
 #### How do I add Bootstrap to my page
 Adding bootstrap to your page is a fast process, just add the following to the `<head>` tags in your code.
 ```html
@@ -24,6 +27,7 @@ You will also need to add the following between the `body` tags in your code. Wi
     <strong>Congratulations!</strong>
     <p>Bootstrap is now working on this page</p>
 </div>
+
 
 #### More Information
 * [Bootstrap's official website](http://getbootstrap.com/getting-started/)
