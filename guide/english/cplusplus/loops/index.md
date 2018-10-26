@@ -38,6 +38,9 @@ do {
     // Will execute once and until the condition is false
 } while (condition);
 ```
+For more Info on the while loops_ (https://github.com/freeCodeCamp/freeCodeCamp/tree/master/guide/english/cplusplus/while-loop)
+For Info on Do-While loops_ (https://github.com/freeCodeCamp/freeCodeCamp/tree/master/guide/english/cplusplus/do-while-loop)
+
 ### For loops
 
 For loops are usually used when you know how many times the code will execute.
@@ -113,3 +116,5 @@ int main()
 	return 0;
 }
  ```
+For Info on for loops, visit (https://github.com/freeCodeCamp/freeCodeCamp/tree/master/guide/english/cplusplus/for-loop)
+Info on Loops (http://www.cplusplus.com/doc/tutorial/control/)
