@@ -23,3 +23,11 @@ Upon completion of all six certificates, the freeCodeCamp [Full Stack Developmen
 For more information about freeCodeCamp, visit [about.freecodecamp.org](https://about.freecodecamp.org/).
 
 For more information about the new certification program, see the forum post [here](https://www.freecodecamp.org/forum/t/freecodecamps-new-certificates-heres-how-were-rolling-them-out/141618).
+###We have thousands of coding lessons to help you improve your skills.
+
+You can earn each certification by completing its 5 final projects.
+
+And yes - all of this is 100% free, thanks to the thousands of campers who donate to our nonprofit.
+
+If you are new to coding, we recommend you start at the beginning.
+
