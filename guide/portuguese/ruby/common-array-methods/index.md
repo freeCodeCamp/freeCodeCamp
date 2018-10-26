@@ -103,7 +103,7 @@ rubi array = \[1, 2, 3, 4, 5, 6, 7, 8, 9, 10\] array.select {| number | número>
 
 rubi array = \[1, 2, 3, 4, 5\] => \[1, 2, 3, 4, 5\] array.include? (3) = verdadeiro
 
-#### .aplainar
+ruby array.flatten
 
 O método flatten pode ser usado para obter uma matriz que contém matrizes aninhadas e criar uma matriz unidimensional:
 
