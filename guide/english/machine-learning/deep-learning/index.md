@@ -50,3 +50,4 @@ These days there are a variety of deep learning frameworks that allow you specif
 * <a href="https://adeshpande3.github.io/adeshpande3.github.io/A-Beginner's-Guide-To-Understanding-Convolutional-Neural-Networks/">A Beginner's Guide To Understanding Convolutional Neural Networks</a>
 * <a href="https://www.youtube.com/playlist?list=PLjJh1vlSEYgvGod9wWiydumYl8hOXixNu">Deep Learning SIMPLIFIED - DeepLearning.TV</a>
 * <a href="http://neuralnetworksanddeeplearning.com"> Neural Networks and Deep Learning</a>
+* <a href="https://www.kaggle.com/learn/deep-learning">Kaggle Deep Learning Tutorial</a>
