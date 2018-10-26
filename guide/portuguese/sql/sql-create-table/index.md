@@ -2,7 +2,7 @@
 title: SQL Create Table
 localeTitle: SQL Create Table
 ---
-# SQL CREATE TABLE
+# SQL CREATE TABLE (Criação de tabela no SQL)
 
 ## Introdução
 
@@ -50,9 +50,9 @@ Nós vamos criar uma tabela de alunos.
 
 Os passos serão:
 
-1.  certifique-se de que não temos a mesa já
+1.  certifique-se de que não temos a tabela já criada
     
-2.  crie a mesa
+2.  crie a tabela
     
 3.  insira os dados de teste.
     
