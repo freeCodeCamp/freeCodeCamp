@@ -5,7 +5,7 @@
     "allowed": ["*"],
     "validate": false,
     "multiple": true
-  },
+  {
   "warnOnFail": false,
   "maxSubjectLength": 100,
   "subjectPattern": ".+",
