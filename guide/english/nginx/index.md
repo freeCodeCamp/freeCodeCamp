@@ -1,6 +1,12 @@
 ---
-title: Installation of Nginx in Ubuntu
+title: Nginx Web Server
 ---
+Nginx is an open-source web server and reverse proxy. It is considered a high-performance and stable web server.
+
+- <a href='https://www.nginx.com/' target='_blank' rel='nofollow'>Nginx Website</a>
+- <a href='https://medium.freecodecamp.org/an-introduction-to-nginx-for-developers-62179b6a458f' target='_blank' rel='nofollow'>Free Code Camp article</a>
+
+
 
 ## Installation of Nginx in Ubuntu
 
