@@ -14,6 +14,7 @@
     "clean:root-deps": "shx rm -rf node_modules",
     "clean:packages": "lerna clean -y",
     "clean:gatsby-site": "cd ./client && npm run clean",
+    "commit": "git-cz",
     "develop": "npm-run-all ensure-env -p develop:*",
     "develop:client": "cd ./client && npm run develop",
     "develop:server": "cd ./api-server && npm run develop",
@@ -53,6 +54,7 @@
   "devDependencies": {
     "@freecodecamp/eslint-config": "^2.0.2",
     "babel-eslint": "^10.0.2",
+    "commitizen": "^4.0.3",
     "cross-env": "^5.2.0",
     "debug": "^4.1.1",
     "dotenv": "^6.2.0",
@@ -84,6 +86,11 @@
     "sinon": "^7.4.1",
     "sinon-express-mock": "^2.2.0",
     "slugg": "^1.2.1"
+  },
+  "config": {
+    "commitizen": {
+      "path": "./node_modules/cz-conventional-changelog"
+    }
   },
   "lint-staged": {
     "linters": {
