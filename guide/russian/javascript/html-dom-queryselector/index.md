@@ -2,7 +2,7 @@
 title: HTML DOM querySelector()
 localeTitle: HTML DOM querySelector ()
 ---
-Метод метода `querySelector()` возвращает `first` элемент в документе, который соответствует указанному селектору или группе селекторов. Если совпадений не найдено, возвращается null.
+Метод объекта Document `querySelector()` возвращает `первый` элемент в документе, который соответствует указанному селектору или группе селекторов. Если совпадений не найдено, возвращается null.
 
 **Содержание HTML:**
 
@@ -16,12 +16,12 @@ localeTitle: HTML DOM querySelector ()
 **Содержание JavaScript:**
 
 ```javascript
-document.querySelector("#id-example"); // Returns the element with id "id-example" 
- document.querySelector(".class-example"); // Returns the element with class "class-example" 
- document.querySelector("a"); // Returns the "a" element 
+document.querySelector("#id-example"); // Возвращает элемент с id "id-example" 
+ document.querySelector(".class-example"); // Возвращает элемент с классом "class-example" 
+ document.querySelector("a"); // Возвращает элемент "a" 
 ```
 
-Примечание `querySelector()` возвращает первый соответствующий элемент, чтобы вернуть все совпадения, вместо этого используйте метод querySelectorAll ().
+Заметим, что `querySelector()` возвращает первый соответствующий элемент, чтобы вернуть все совпадения, используйте метод querySelectorAll ().
 
 ```html
 
@@ -30,7 +30,7 @@ document.querySelector("#id-example"); // Returns the element with id "id-exampl
 ```
 
 ```javascript
-document.querySelector("#example"); // Returns only the element containing 'First' 
+document.querySelector("#example"); // Возвращает только элемент с содержанием 'First' 
 ```
 
 #### Дополнительная информация:
