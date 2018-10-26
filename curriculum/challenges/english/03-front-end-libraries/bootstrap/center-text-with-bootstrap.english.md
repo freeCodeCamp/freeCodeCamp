@@ -64,7 +64,7 @@ tests:
 </style>
 
 <div class="container-fluid">
-  <h2 class="red-text">CatPhotoApp</h2>
+  <h2 class="red-text text-center">CatPhotoApp</h2>
 
   <p>Click here for <a href="#">cat photos</a>.</p>
 
