@@ -16,7 +16,6 @@ If/Else is a conditional statement where depending on the truthiness of a condit
     statement2;
   }
 ```
-> **Note:** The `else` statement is optional.
 ## If/Else Statement
 
 ```
@@ -30,7 +29,7 @@ If/Else is a conditional statement where depending on the truthiness of a condit
     statement4;
   }
 ```
-> **Note:** `elseif` should always be written as one word.
+> **Note:** The `else` statement is optional.
 ## If/Elseif/Else Statement
 
 ```
@@ -46,6 +45,7 @@ If/Else is a conditional statement where depending on the truthiness of a condit
     statement5;
   }
 ```
+> **Note:** `elseif` should always be written as one word.
 ## Nested If/Else Statement
 
 ```
