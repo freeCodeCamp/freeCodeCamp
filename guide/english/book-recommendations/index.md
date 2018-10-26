@@ -246,6 +246,10 @@ https://books.goalkicker.com/OracleDatabaseBook/
 - [Amazon](https://www.amazon.com/Mastering-Linux-Scripting-Andrew-Mallett/dp/1784396974/)
 - ISBN-13: 978-1784396978
 
+*Smashing Book 5: Real-Life Responsive Web Design*
+- [Amazon](https://www.amazon.com/Smashing-Book-Real-Life-Responsive-Design/dp/3945749212/)
+- ISBN-13: 78-3945749210
+
 This list was compiled from multiple suggestion threads on Reddit and Stackoverflow. 
 
 Please feel free to add more that you have found useful!
