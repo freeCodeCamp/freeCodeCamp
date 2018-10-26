@@ -1,0 +1,11 @@
+---
+title: Amazon S3
+---
+
+## Amazon S3
+
+S3 is an object based storage based inside AWS. Files are stored in containers called 'Buckets'. 
+Buckets can hold an unlimitemd amount of data. The odject size restriction is 5TB per item.
+
+Buckets serve several purpoises. They organise data storage into seperate buckts, allowing for data to be stored in a relivent way.
+Bucket names must be uniquie as they use DNS in the AWS namespace for referencing, which means they can be accessed from multiple regions in the ASW network. 
