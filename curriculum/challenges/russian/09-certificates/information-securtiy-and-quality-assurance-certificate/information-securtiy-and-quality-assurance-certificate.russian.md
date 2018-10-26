@@ -4,18 +4,18 @@ title: 'Information, Securtiy and Quality Assurance Certificate'
 challengeType: 7
 isPrivate: true
 videoUrl: ''
-localeTitle: 'Информация, Securtiy и сертификат обеспечения качества'
+localeTitle: 'Информация, Безопасность и обеспечения качества сертификат'
 ---
 
-## Description
+## Описание
 <section id="description">
 </section>
 
-## Instructions
+## Инструкции
 <section id="instructions">
 </section>
 
-## Tests
+## Тесты
 <section id='tests'>
 
 ```yml
@@ -35,15 +35,15 @@ tests:
 
 </section>
 
-## Challenge Seed
+## Задача
 <section id='challengeSeed'>
 
 </section>
 
-## Solution
+## Решение
 <section id='solution'>
 
 ```js
-// solution required
+// требуемое решение
 ```
 </section>
