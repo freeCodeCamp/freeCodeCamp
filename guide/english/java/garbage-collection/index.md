@@ -86,6 +86,12 @@ Note :
 2. Object class finalize() method has empty implementation, thus it is recommended to override finalize() method to dispose of system resources or to perform other cleanup.
 3. The finalize() method is never invoked more than once for any given object.
 4. If an uncaught exception is thrown by the finalize() method, the exception is ignored and finalization of that object terminates.
+5. There are four (4) types of garbage collectors in Java: 
+        * Parallel Garbage Collecto, 
+        * Serial Garbage Collector, 
+        * CMS Garbage Collector, 
+        * G1 Garbage Collector
+
 ### SOURCES 
 1. [geeksforgeeks.](http://www.geeksforgeeks.org/garbage-collection-java/)Accessed: October 24,2017.
 
