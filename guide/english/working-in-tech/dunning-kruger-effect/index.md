@@ -10,12 +10,12 @@ In the field of psychology, the **Dunning–Kruger** effect is a cognitive bias 
 ### Why does it matter in Software Development?
 
 
-DK effect is an important learning for software developers. It can be observed among developers of all age. This is more prominent among beginners and intermediate level developers. After the initial struggle they might get over confident about a language or their designs. This leads them to underestimate the complexity of system requirements or, worse, hampers them coming up with better software designs. For more experienced developers, they seem to have gained wisdom over the years. They are more humble and better at judging the system complexity. (This might not be true to all senior developers though.)
+The DK effect is an important learning for software developers. It can be observed among developers of all ages. This is more prominent among beginners and intermediate level developers. After the initial struggle they might get over confident about a language or their designs. This leads them to underestimate the complexity of system requirements or, even worse, prevent them from coming up with better software designs. For more experienced developers gained wisdom over the years. Therefore, they are more humble and better at judging the system complexity. (This might not be true for all senior developers though.)
 
 ### Beware!
-DK Effect is exactly opposite of [Imposter Syndrome](https://en.wikipedia.org/wiki/Impostor_syndrome). You need to strike the perfect balance between both of these for your professional growth. 
+The DK Effect is the exact opposite of the [Imposter Syndrome](https://en.wikipedia.org/wiki/Impostor_syndrome). You need to strike the perfect balance between both of these for your professional growth. 
 
-### How to check if I suffer from DK effect?
+### How to check if I suffer from the DK effect?
 *You can't!* 
 
 Sorry, but there isn't a straight answer to this question. You can ask following questions to yourself:
