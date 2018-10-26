@@ -2,14 +2,77 @@
 title: Roman Numerals
 ---
 ## Roman Numerals
+  
+I = 1 <br>
+V = 5 <br>
+X = 10 <br>
+L = 50 <br>
+C = 100 <br>
+D = 500 <br>
+M = 1000 <br>
 
-This is a stub. <a href='https://github.com/freecodecamp/guides/tree/master/src/pages/mathematics/roman-numerals/index.md' target='_blank' rel='nofollow'>Help our community expand it</a>.
+How to Remember:<br>
+"M e D i C a L X a V I e r".<br>
+It has the roman numerals in descending order from 1000 to 1.
 
-<a href='https://github.com/freecodecamp/guides/blob/master/README.md' target='_blank' rel='nofollow'>This quick style guide will help ensure your pull request gets accepted</a>.
+When a symbol appears after a larger (or equal) symbol, it is added:
+<pre>
+<b>Example:</b>
+II = 2, (1 + 1 = 2)
+VI = 6, (5 + 1 = 6)
+XI = 11, (10 + 1 = 11)
+</pre>
+
+But if a symbol appears before a larger symbol, it is subtracted:
+<pre>
+<b>Example:</b>
+IV = 4, (5 - 1 = 4)
+IX = 9, (10 - 1 = 9)
+</pre>
+
+Don't use the same symbol more than three times in a row:
+<pre>
+<b>Example:</b>
+III = 3
+VIII = 8
+XXX = 30
+LXXX = 80
+CCC = 300
+DCCC = 800
+MMM = 3000
+</pre>
 
 <!-- The article goes here, in GitHub-flavored Markdown. Feel free to add YouTube videos, images, and CodePen/JSBin embeds  -->
 
 #### More Information:
 <!-- Please add any articles you think might be helpful to read before writing the article -->
-
+<table>
+  <tr>
+    <td>1</td>
+    <td>I</td>
+  </tr>
+  <tr>
+    <td>5</td>
+    <td>V</td>
+  </tr>
+  <tr>
+    <td>10</td>
+    <td>X</td>
+  </tr>
+  <tr>
+    <td>50</td>
+    <td>L</td>
+  </tr>
+  <tr>
+    <td>100</td>
+    <td>C</td>
+  </tr>
+  <tr>
+    <td>500</td>
+    <td>D</td>
+  </tr>
+  <tr>
+    <td>1000</td>
+    <td>M</td>
+  </tr>
 
