@@ -53,7 +53,7 @@ With the and operator it works in a similar way, but for 'and' to be true, both 
 
 ## The Boolean Object
 
-There is also a native JavaScript object that wraps around a value. The value passed as the first parameter is converted to a boolean value, if necessary. If value is omitted, 0, -0, null, false, NaN, undefined, or the empty string (""), the object has an initial value of false. All other values, including any object or the string "false", create an object with an initial value of true.
+There is also a native JavaScript object that wraps around a value. The value passed as the first parameter is converted to a boolean value, if necessary. If a value is omitted, 0, -0, null, false, NaN, undefined, or the empty string (""), the object has an initial value of false. All other values, including any object or the string "false", create an object with an initial value of true.
 
 Do not confuse the primitive Boolean values true and false with the true and false values of the Boolean object.
 
