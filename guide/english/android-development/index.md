@@ -18,7 +18,7 @@ title: Android Development
 
 # Android Development
 
-Android apps can be a great, fun way to get into the world of programming. Officially, programmers can use Java, Kotlin, or C++ to develop for Android, and though there may be API restrictions, using tools, developers can use a large number of languages, including JavaScript, C, or assembly, and the possibilities are endless.
+Android apps can be a great, fun way to get into the world of programming. Officially, programmers can use Java, Kotlin, or C++ to develop for Android, and though there may be API restrictions, using tools, developers can use a large number of languages, including JavaScript, C, or assembly, the possibilities are endless.
 
 From simple games and utility apps to full-blown music players, there are many opportunities to create something meaningful with Android. The Android developer community is widespread, and the documentation and resources online are easy to find, so that you can tackle any issue you're facing.
 
@@ -49,11 +49,11 @@ Ever since Google announced Kotlin as the official language for Android developm
 
 First and foremost is that Android development is not everything; as a programmer, you may be starting your career with Android development, but if you start with a well-established language like Java, you become a part of the bigger Java community and market, which directly means more job opportunities.
 
-The second, and more important thing, is that there is a huge community of Java programmers, which means you can find answers when you are stuck. This is very important because, as a beginner, you will face a lot of technical problems and you might not know where to head when you are stuck. When you search Google with a Java problem, you are bound to get answers; the same cannot be said for Kotlin, which is still a new programming language.
+The second, and more important thing, is that there is a huge community of Java programmers, which means you can find answers when you are stuck. This is very important because, as a beginner, you will face a lot of technical problems and you might not know where to look when you are stuck. When you search Google with a Java problem, you are bound to get answers; but the same cannot be said for Kotlin, which is still a new programming language.
 
 ###### Java Programmers Should Learn Kotlin
 
-Now, coming back to the second set of programmers who wants to learn Android development: our fellow Java developers. For them, I think its best to learn Kotlin because it really improves productivity.
+Now, coming back to the second set of programmers' who want to learn Android development: our fellow Java developers. For them, it's best to learn Kotlin because it can really improve productivity.
 
 A class which takes 50 lines of code in Java can really be written in just one line in Kotlin. It can help you avoid all boiler-plate code, e.g. you don't need to specify getters and setters, equals(), hashCode() or toString() methods. Kotlin can generate all that by itself.
 
