@@ -71,3 +71,21 @@ System.out.println("The sum of the first 50 numbers is: " + 50);
 You cannot use a number (old C-style language construct) or anything that does not evaluate to a boolean value as a condition for an if statement or looping construct. You can't, for example, say if(x), unless x is a boolean variable.
 
 Also, it is important to keep in mind that the boolean expression must, at some point, evaluate to true. Otherwise, your program will be stuck in an infinite loop.
+
+// Shreya Thapa's contribution to Hacktoberfest 2018
+// You can also nest loops inside of loops
+
+for (int i = 1; i <= 5; i++)
+{
+    for (int j = 1; j <= 5; j++)
+    {
+        system.out.print(1);
+    }
+}
+
+//The output for the above nested for loop would look like this
+//1 1 1 1 1
+//1 1 1 1 1
+//1 1 1 1 1
+//1 1 1 1 1
+//1 1 1 1 1
