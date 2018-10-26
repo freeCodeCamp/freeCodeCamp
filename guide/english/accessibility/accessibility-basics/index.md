@@ -55,7 +55,7 @@ The picture gets even more complicated when we look at legislation that actually
 
 Last year, airline websites were included in this list which meant that even here in Europe, airline website devs scrambled to make their content accessible. Not doing so can get your company a fine of literally tens of thousands of dollars for each day the problem isn't fixed.
 
-There's variations on this legislation all over the world, some more severe and all-encompassing than others. Not knowing about that fact doesn't make the lawsuit go away, sadly.
+There are variations on this legislation all over the world, some more severe and all-encompassing than others. Not knowing about that fact doesn't make the lawsuit go away, sadly.
 
 ## Ok, so accessibility is a big deal. Now how do we implement it?
 
@@ -112,7 +112,7 @@ I implore any web developer who catches themselves doing this to eat their progr
 
 Now, there is one caveat here. Alt-attributes are mandatory according to the HTML5-spec, but it's not mandatory to actually fill them in. `<img src="awesome-image.jpg", alt="">` is therefore legal HTML5 code.
 
-Should you therefore fill in alt-tags for all images? It depends on the image, really. For background images, the answer is usually no, but you should use CSS for those anyway.
+Should you, therefore, fill in alt-tags for all images? It depends on the image, really. For background images, the answer is usually no, but you should use CSS for those anyway.
 
 For purely decorative images that have no information in them at all, you're basically free to choose. Either put in something useful and descriptive or nothing at all.
 
@@ -124,9 +124,9 @@ The text should provide the context and information that is an alternative to se
 
 ### I can't read your scrawl, son
 
-Even people who don't wear glasses and have no problem with their eyesight at all benefit from an easy to read font and proper contrast. I'm sure you would cringe if you had to fill in a form where light yellow, hopelessly loopy letters are placed on a white background. For people who's eyesight is not as good, like your grandma, for example, this becomes hopelessly worse.
+Even people who don't wear glasses and have no problem with their eyesight at all benefit from an easy to read font and proper contrast. I'm sure you would cringe if you had to fill in a form where light yellow, hopelessly loopy letters are placed on a white background. For people whose eyesight is not as good, like your grandma, for example, this becomes hopelessly worse.
 
-The WCAG has contrast ratios for smaller and larger letters and there's plenty of tools out there to check if the contrast ratios are strong enough. The information and tooling is there, go use it.
+The WCAG has contrast ratios for smaller and larger letters and there's plenty of tools out there to check if the contrast ratios are strong enough. The information and tooling are there, go use it.
 
 A good place to start checking color contrast is by using the [WebAIM](https://webaim.org/resources/contrastchecker/) color contrast checker.
 
