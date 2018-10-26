@@ -40,7 +40,7 @@ Tanto a concatenação quanto a multiplicação podem ser executadas em strings.
 
 ## Comparação:
 
-*   Seqüências de caracteres podem ser comparadas, retornam -1, 0, +1 ou zero dependendo se string é menor que, igual a ou maior que other\_string.
+*   Seqüências de caracteres podem ser comparadas, retornam -1, 0, +1 dependendo se string é menor que, igual a ou maior que outra string.
 
 ```ruby
 "abcdef" <=> "abcde"     #=> 1 
