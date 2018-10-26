@@ -16,7 +16,7 @@ Vim-Plug minimalist Vim plugin manager.
 - Post-update hooks.
 - Support for externally managed plugins.
 
-You can find the installation guide <a href='https://github.com/junegunn/vim-plug#installation' target='_blank' rel='nofollow'>here </a>.
+You can read the installation guide <a href='https://github.com/junegunn/vim-plug#installation' target='_blank' rel='nofollow'>here </a>, else you can watch the video <a href='https://www.youtube.com/watch?v=-uyFC5ixUQw' target='_blank' rel='nofollow'>here </a>.
 
 Some useful plugins to get you started are :
 - <a href='https://github.com/scrooloose/nerdtree' target='_blank' rel='nofollow'>nerdtree</a> - A file system explorer for the Vim.
