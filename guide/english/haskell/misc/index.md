@@ -14,8 +14,14 @@ To install hoogle with stack:
 ```
 
 ## lambda bot
+An irc bot written in haskell, which can evaluate Haskell and install plugins.
+[Homepage](https://wiki.haskell.org/Lambdabot)
 
+If you're using GHC 6.10.x you can install the bot using:
 
+```shell
+cabal install lambdabot
+```
 
 
 
