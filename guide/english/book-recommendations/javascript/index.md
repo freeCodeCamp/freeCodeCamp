@@ -30,6 +30,15 @@ A collection of articles covering the basics (core language and working with a b
 - [Online](https://javascript.info/)
 - [E-book](https://javascript.info/ebook)
 
+
+#### Head First JavaScript Programming Brain Friendly
+
+A very wonderful and good book for learning JavaScript, even though it was written in 2014. This book is still good for beginners.
+Just like other books from the Head First series, this one is also easy on the mind and takes you through the basics at a good pace.
+
+- [Amazon](https://www.amazon.com/Head-First-JavaScript-Programming-Brain-Friendly/dp/144934013X/ref=sr_1_1?ie=UTF8&qid=1540554939&sr=8-1&keywords=head+first+javascript&dpID=51qQTSKL2nL&preST=_SX218_BO1,204,203,200_QL40_&dpSrc=srch)
+- [O'Reilley](http://shop.oreilly.com/product/0636920027065.do)
+
 #### Other Resources
 
 - A selection of online free resources; including e-books for JavaScript are available at [JS Books](https://jsbooks.revolunet.com/)
