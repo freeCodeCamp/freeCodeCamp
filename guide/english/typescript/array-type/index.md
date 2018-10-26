@@ -37,10 +37,10 @@ Adds one or more element to the end of the array and returns with the new length
 ```typescript
 var length = names.push('Tobias');
 // names[] = ['Javier', 'Emma', 'John', 'Sophia', 'Emma', 'Tobias']
-// lenght = 6
+// length = 6
 var length2 = names.push('Jack','Lily');
 // names[] = ['Javier', 'Emma', 'John', 'Sophia', 'Emma', 'Tobias','Jack','Lily']
-// lenght2 = 8
+// length2 = 8
 ```
 
 ### reverse()
