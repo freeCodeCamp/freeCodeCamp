@@ -54,6 +54,10 @@ ul {
   list-style: none; 
   }
 ```
+Above example will be displayed as:
+  Macintosh
+  Fuji
+  Gala
 
 Insert your own:
 ```CSS
