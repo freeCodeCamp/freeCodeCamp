@@ -1,7 +1,8 @@
 ---
 title: Chef
 ---
-## Chef
+[![IMAGE ALT TEXT HERE](https://www.chef.io/wp-content/themes/chef.io_2018/images/nav/chef-logo.svg?v=1)](https://www.chef.io/)
+
 <!-- The article goes here, in GitHub-flavored Markdown. Feel free to add YouTube videos, images, and CodePen/JSBin embeds  -->
 <p>Chef is a powerful automation platform that transforms infrastructure into code. Whether you’re operating in the cloud, on-premises, or in a hybrid environment, Chef automates how infrastructure is configured, deployed, and managed across your network, no matter its size.</p>
 
@@ -11,6 +12,8 @@ title: Chef
 <p>There is a Chef server which stores each of these cookbooks and as a new chef client node checks in with the server, recipes are sent to tell the node how to configure itself.</p>
 
 <p>The client will then check in every now and again to make sure that no changes have occurred, and nothing needs to change. If it does, then the client deals with it. Patches and updates can be rolled out over your entire infrastructure by changing the recipe. No need to interact with each machine individually.</p>
+
+[Getting security, ops, and devs collaborating with Michael Hedgpeth, NCR](https://www.youtube.com/watch?time_continue=12&v=K5_YKI7wuLs)
 
 #### Chef Configuration
 ![Image Title](https://regmedia.co.uk/2015/10/07/chef_configuration_management.jpg)
