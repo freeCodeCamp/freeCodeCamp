@@ -41,6 +41,24 @@ Allow only numeric input. You can also specify the min and max value allowed. Th
     </form>
 ```
 
+### date
+Create input fields that let the user enter a date , either using a text box that automatically validates the content, or using a special date picker interface .
+```html
+    <form>
+      <label for="date">Date:</label>
+      <input type="date" name="date">
+    </form>
+```
+
+### file
+let the user choose one or more files from their device storage. Once chosen, the files can be uploaded to a server using form submission
+```html
+    <form>
+      <label for="photo">Profile Pictures</label>
+      <input type="file" name="photo">
+    </form>
+```
+
 ### radio
 Only one option can be selected by the user. The group of radio buttons needs to have the same name attribute. You can select automatically one option by using `checked` property (in the example below the value Blue is selected).
 ```html
