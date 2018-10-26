@@ -102,9 +102,9 @@ Agrega menús desplegables a tus pestañas de navegación.
 
 ## ![Pestañas con desplegables](https://github.com/TroyB12/Pictures/blob/master/Bootstrap%20Tabs%20Dropdown.PNG)
 
-#### Pestañas con desplegables
+### Pestañas con desplegables
 
-Agregue menús desplegables a sus píldoras de navegación.
+Agregue menús desplegables a tus píldoras de navegación.
 
 ```html
 
