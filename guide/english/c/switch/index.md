@@ -78,6 +78,53 @@ int main() {
 -> 32.5 - 12.4 = 20.1
 ```
 
+## Switch-Case Fall Through Fun
+
+As was previously mentioned, switch statement's use of case allows for fall though.  This fall through possibility can add to the readability of your code and allows for simplified logic. 
+
+```c
+# include <stdio.h>
+
+int main() {
+
+    char* valueString;
+    
+    printf("Animals of Alaska\n");
+    valueString = "Kodiak";
+    
+    printf("A %s is a type of ", valueString);    
+    
+    switch (valueString) {
+        case "Black Bear":
+        case "Kodiak":
+        case "Brown Bear":
+            printf("bear!\n");
+            break;
+        case "Salmon":
+        case "King Salmon":
+        case "Halbut":
+            printf("fish!\n");
+            break;
+        case "Qalupalik":
+        case "Tornit":
+        case "Tizheruk":
+            printf("mythical Alaskan creature! Watch out!\n");
+        // valueString doesn't match our list of animals
+        default:
+            printf("Error! This animal is not known!\n");
+    }
+
+    return 0;
+}
+```
+
+## Output:
+```c
+-> Animals of Alaska
+-> A Kodiak is a type of bear!
+->
+```
+
 ## Review : Switch vs if else
 * Check the Testing Expression: An if-then-else statement can test expressions based on ranges of values or conditions, whereas a switch statement tests expressions based only on a single integer, enumerated value, or String object.
 * Switch better for Multi way branching: When compiler compiles a switch statement, it will inspect each of the case constants and create a “jump table” that it will use for selecting the path of execution depending on the value of the expression. Therefore, if we need to select among a large group of values, a switch statement will run much faster than the equivalent logic coded using a sequence of if-elses. The compiler can do this because it knows that the case constants are all the same type and simply must be compared for equality with the switch expression, while in case of if expressions, the compiler has no such knowledge.
