@@ -6,7 +6,7 @@ By now you should be aware that C is a low-level language, and nothing shows tha
 
 #
 ```
-type *var-name;
+type *var_name;
 ```
 
 ## Making and Using a Pointer
