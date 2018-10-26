@@ -19,3 +19,4 @@ ASP.NET offers different frameworks for creating web applications: For e.g Web F
 ASP.Net development is now available on Mac and Linux, Checkout more here:
 - [ASP .NET Core](https://docs.microsoft.com/en-us/aspnet/core/tutorials/first-mvc-app-xplat/start-mvc?view=aspnetcore-2.1)
 
+With ASP.Net Core, you will have less code than older version.
