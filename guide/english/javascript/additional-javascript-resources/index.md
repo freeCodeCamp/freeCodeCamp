@@ -119,5 +119,5 @@ title: JavaScript Tutorials and Other Resources
 *   [Modern JS Cheatsheet](https://mbeaudru.github.io/modern-js-cheatsheet)
 *   [Speaking Javascript](http://speakingjs.com/es5)
 *   [Exploring ES6](http://exploringjs.com/es6)
-
+*   [JavaScript for Sheridan students](http://profsamscott.com/javascript/)
 
