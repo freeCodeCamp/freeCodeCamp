@@ -3,7 +3,7 @@ title: Logical Operators and If Statements
 ---
 
 # If Statements in C
-The ability to change the behavior of a piece of code which is based on certain information in the environment is known as conditional code flow.Sometimes you want your code to run according to certain conditions. In such situation we can use If statements. It is also known as decision making statement as it makes the decision on the basis of given expression(or on given condition).If the expression evaluates to true, then the block of code inside the 'if' statement will be executed. If the expression evaluates to false, then the first set of code after the end of the 'if' statement (after the closing curly brace) will be executed.A expression is an expression that has relational and/or logical operators operating on boolean variables. A expression evaluates to either true or false.
+The ability to change the behavior of a piece of code which is based on certain information in the environment is known as conditional code flow. Sometimes you want your code to run according to certain conditions. In such situation we can use If statements. It is also known as decision-making statement as it makes the decision on the basis of given expression (or on given condition). If the expression evaluates to true, then the block of code inside the 'if' statement will be executed. If the expression evaluates to false, then the first set of code after the end of the 'if' statement (after the closing curly brace) will be executed. An expression is that has relational and/or logical operators operating on boolean variables. An expression evaluates to either true or false.
 
 ## Syntax of *if statement*
 ```
@@ -206,10 +206,8 @@ int main() {
 ```
 
 What will be the the Output? "NO! I am boss"? if you are guessing this output then you are wrong.
-Why did this happen? because in the if statement you used "=" instead of "==" operator.
-"==" is comparator . 
-
-It will compare between two variables but "=' is assignment operator 
+Why did this happen? because in the if statement you used "=" instead of "==" operator. "==" is comparator.
+It will compare between two variables but "=" is assignment operator 
 when we said i=4, we simply assigning value 4 to the integer i, and since in "C" every NON-ZERO value is true so
 if(i=4) is true statement and instructions under this will executed
 
