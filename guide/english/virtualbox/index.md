@@ -77,3 +77,6 @@ Virtual box supports a wide variety of Operating systems:
 
 * [virtualbox.org](https://www.virtualbox.org)
 * [How to setup a local linux environement with vagrant](https://medium.com/@JohnFoderaro/how-to-set-up-a-local-linux-environment-with-vagrant-163f0ba4da77)
+### Compactibility in windows
+with keen notice to windows update, the lates version of windows does not support virtualbox by default. you will run into errors and something virtual computers wont run becuase of Hyper-V
+Microsoft has mad Hyper-V a default enabled which makes it not comaparting with other virtualization platforms
