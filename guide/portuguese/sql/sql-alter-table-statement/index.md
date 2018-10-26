@@ -23,7 +23,7 @@ Vamos usar as tabelas criadas no guia “CREATE TABLE”. Sinta-se à vontade pa
 
 A maior parte disso será feita usando instruções SQL na ferramenta de script do MySQL workbench, mas também revisaremos como alterar uma tabela usando a interface do ambiente de trabalho em vez de com instruções SQL.
 
-## A mesa antes de alterações:
+## A tabela antes de alterações:
 
 ![image-1](https://github.com/SteveChevalier/guide-images/blob/master/alter_table01a.JPG?raw=true)
 
