@@ -64,4 +64,6 @@ Since the early days of the web, there have been many versions of HTML
 - [Semantic HTML](https://guide.freecodecamp.org/html/html5-semantic-elements)
 - [HTML Attributes](https://guide.freecodecamp.org/html/attributes)
 
-Read more from [MDN docs](https://developer.mozilla.org/en-US/docs/Web/HTML)
+## More Resourses
+
+[MDN docs](https://developer.mozilla.org/en-US/docs/Web/HTML)
