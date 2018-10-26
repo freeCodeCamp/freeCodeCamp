@@ -11,6 +11,14 @@ title: Introduction to NLP
 ## Motivation
 It has always been our dream to make machines understand our language. Ever since Chomsky came up with Context free grammars, linguists have been wanting to come up with solutions to understand context dependent grammars. It is therefore only natural that an academic disciple had evolved around this topic.
 
+Process involved in NLP
+
+*MORPHOLOGICAL ANALYSIS: Individual words are analysed into their components, and nonword tokens, such as punctuation are separated from the words.
+*SYNTATIC ANALYSIS: Linear sequence of words are transformed into structures and show how the words relate to each other.
+*SEMANTIC ANALYSIS:A mapping is made between syntatic structures and  objects in task domain
+*DISCOURSE INTEGRATION: Meaning of a sentence may depend on the sentence that precede it and may influence the meaning of the sentence that follow it.
+*PRAGMATIC ANALYSIS: The structure representing what was said is reinterpreted to determine what was actually meant.
+
 ## Use cases
 People have used this concept in a lot of interesting applications. Few of the exciting ones include Google Translate, Siri, or Gmail auto reply suggestions. People are however working on ways to improve these predictions, and state of the art research is being done on how to make machines answer questions more reliably. 
 
@@ -35,4 +43,3 @@ The field of NLP is huge. If you have read this far and have implemented the abo
 
 * [LSTM networks](http://colah.github.io/posts/2015-08-Understanding-LSTMs/)
 * [Attention](https://distill.pub/2016/augmented-rnns/)
-
