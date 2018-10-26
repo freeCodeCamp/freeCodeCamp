@@ -22,3 +22,5 @@ Another suggestion for beginners is W3C's [Starting with HTML + CSS](https://www
 The site [CSS Zen Garden](http://www.csszengarden.com/) is a great example how the same html can be styled to look totally unique.
 
 For a demonstration of the power of CSS, check out [Species In Pieces](http://species-in-pieces.com/#).
+
+MDN web docs from Mozilla (the people behind Mozilla Firefox) also have great CSS resources, including their [CSS: Cascading Style Sheets](https://developer.mozilla.org/en-US/docs/Web/CSS) documentation for all of your CSS needs.
