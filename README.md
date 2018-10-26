@@ -45,7 +45,7 @@ Here are our six core certifications:
 - CSS Flexbox
 - CSS Grid <br />
   <br />
-  **Projects**: Tribute Page, Survey Form, Product Landing Page, Technical Documentation Page, Personal Portfolio Webpage
+  **Projects**: Tribute Page, Survey Form, Product Landing Page, Technical Documentation Page and Personal Portfolio Webpage
 
 #### 2. JavaScript Algorithms and Data Structures Certification
 
@@ -58,7 +58,7 @@ Here are our six core certifications:
 - Object Oriented Programming
 - Functional Programming <br />
   <br />
-  **Projects**: Palindrome Checker, Roman Numeral Converter, Caesars Cipher, Telephone Number Validator, Cash Register
+  **Projects**: Palindrome Checker, Roman Numeral Converter, Caesars Cipher, Telephone Number Validator and Cash Register
 
 #### 3. Front End Libraries Certification
 
@@ -69,7 +69,7 @@ Here are our six core certifications:
 - Redux
 - React and Redux <br />
   <br />
-  **Projects**: Random Quote Machine, Markdown Previewer, Drum Machine, JavaScript Calculator, Pomodoro Clock
+  **Projects**: Random Quote Machine, Markdown Previewer, Drum Machine, JavaScript Calculator and Pomodoro Clock
 
 #### 4. Data Visualization Certification
 
@@ -84,7 +84,7 @@ Here are our six core certifications:
 - Basic Node and Express
 - MongoDB and Mongoose <br />
   <br />
-  **Projects**: Timestamp Microservice, Request Header Parser, URL Shortener, Exercise Tracker, File Metadata Microservice
+  **Projects**: Timestamp Microservice, Request Header Parser, URL Shortener, Exercise Tracker and File Metadata Microservice
 
 #### 6. Information Security and Quality Assurance Certification
 
@@ -92,7 +92,7 @@ Here are our six core certifications:
 - Quality Assurance and Testing with Chai
 - Advanced Node and Express <br />
   <br />
-  **Projects**: Metric-Imperial Converter, Issue Tracker, Personal Library, Stock Price Checker, Anonymous Message Board
+  **Projects**: Metric-Imperial Converter, Issue Tracker, Personal Library, Stock Price Checker and Anonymous Message Board
 
 #### Full Stack Development Certification
 
