@@ -21,9 +21,9 @@ Notice that in this example, we didn't bother specifying a number in the square 
 
 When initializing an array, you can provide fewer values than array elements. For example, the
 following statement initializes only the first two elements of my_array:
-
+```C
 float my_array[5] = {5.0, 2.5};
-
+```
 If you partially initialize an array, the compiler sets the remaining elements to zero.
 
 Now that the array has been declared with 5 values, it has 5 memory locations. Consider this table for a visual example of that:
@@ -102,7 +102,7 @@ Printing strings is easy, but other operations are slightly more complex. Thankf
 strpy(first, second);
 ```
 Here is an example of how manual implementation of the strcpy function looks like: 
-
+```C
 void copy_string(char [] first_string, char [] second_string) 
 { 
     int i; 
@@ -112,14 +112,14 @@ void copy_string(char [] first_string, char [] second_string)
         first_string[i] = second_string[i]; 
     } 
 } 
-
+```
 #### Concatenate: `strcat`
 `strcat` (from 'string concatenate') will concatenate a string, meaning it will take the contents of one string and place it on the end of another string. In this example, the contents of `second` will be concatenated onto `first`:
 ```C
 strcat(first, second);
 ```
 Here is an example of manual implementation of function strcat:
-
+```C
 void string_concatenate(char [] s1, char [] s2)
 {
     int i = strlen(s1), j;
@@ -128,14 +128,14 @@ void string_concatenate(char [] s1, char [] s2)
         s1[i] = s2[j];
     }
 }
-
+```
 #### Get length: `strlen`
 `strlen` (from 'string length') will return an integer value corresponding to the length of the string. In this example, an integer called `string_length` will be assigned the length of `my_string`:
 ```C
 string_length = strlen(my_string);
 ```
 Here is an manual implementation of fuction strlen:
-
+```C
 int string_length(char [] string)
 {
     int i;
@@ -144,7 +144,7 @@ int string_length(char [] string)
     
     return i;
 }
-
+```
 #### Compare: `strcmp`
 `strcmp` (from 'string compare') compares two strings. The integer value it returns is 0 if they are the same, but it will also return negative if the value of the first (by adding up characters) is less than the value of the second, and positive if the first is greater than the second. Take a look at an example of how this might be used:
 ```C
