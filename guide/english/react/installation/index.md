@@ -25,6 +25,14 @@ After you finish your project and are ready to deploy your App to production, yo
 `npm run build`
 to create an optimized build of your app in the `build`folder.
 
+### Boilerplate Projects
+There are many well maintained and powerfula React boilerplate starter projects in the open source ecosystem. If CRA doesn't quite fit your needs but you don't want to learn all the intricacies of webpack before starting a React project, these can be a big help. 
+
+*Some popular boilerplates:*
+- [React Boilerplate](https://www.reactboilerplate.com/). Includes support for i18n, styled components, dynamic reducers and testing. The powerhouse of the boilerplate world.
+- [React-Starter-Kit](https://github.com/kriasoft/react-starter-kit). Graphql, Node, express and more. 
+- [React Redux Universal Hot Example](https://github.com/erikras/react-redux-universal-hot-example). Redux-form and mocha are some of the highlights of this one. 
+
 #### Usefull links
 [Create React App repository](https://github.com/facebookincubator/create-react-app#create-react-app-)
 
