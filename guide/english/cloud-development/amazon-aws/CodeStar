@@ -1,0 +1,42 @@
+----
+title: AWS CodeStar
+----
+
+## AWS Codestar
+
+AWS CodeStar enables you to quickly develop, build, and deploy applications on AWS. 
+AWS CodeStar provides a unified user interface, enabling you to easily manage your software development activities in one place. 
+With AWS CodeStar, you can set up your entire continuous delivery toolchain in minutes, allowing you to start releasing code faster. 
+AWS CodeStar makes it easy for your whole team to work together securely, allowing you to easily manage access and add owners, contributors, and viewers to your projects. 
+Each AWS CodeStar project comes with a project management dashboard, including an integrated issue tracking capability powered by Atlassian JIRA Software. 
+With the AWS CodeStar project dashboard, you can easily track progress across your entire software development process, from your backlog of work items to teams’ recent code deployments. 
+
+There is no additional charge for using AWS CodeStar. 
+You only pay for the AWS resources that you provision for developing and running your application (for example, Amazon EC2 instances).
+
+Benefits
+
+* Start developing on AWS in minutes
+
+  AWS CodeStar makes it easy for you to set up your entire development and continuous delivery toolchain for coding, building, testing, and deploying your application code.
+  To start a project, you can choose from a variety of AWS CodeStar templates for Amazon EC2, AWS Lambda, and AWS Elastic Beanstalk. 
+  You have the option to choose AWS CodeCommit or GitHub to use as your project’s source control. You also have the option to edit your source code using one of several options including AWS Cloud9, Microsoft Visual Studio, or Eclipse. 
+  After you make your selections the underlying AWS services are provisioned in minutes, allowing you to quickly start coding and deploying your applications.
+
+* Manage software delivery in one place
+
+  AWS CodeStar provides an easy way to coordinate your day-to-day development activities through a unified user interface, reducing the need to switch between various service consoles. AWS CodeStar’s project dashboard lets you monitor application activity, and track progress across all stages of your software development process, including code commits, builds, tests, and deployments, from a central place. 
+  AWS CodeStar integrates Atlassian JIRA Software, a third-party issue tracking and project management tool, allowing you to easily manage JIRA issues directly in the AWS CodeStar dashboard.
+  
+* Work across your team securely
+
+  AWS CodeStar enables you to collaborate on projects across your team in a secure manner. 
+  You can easily manage access for project owners, contributors, and viewers without needing to manually configure your own policy for each service. 
+  AWS CodeStar simplifies the process of setting up project access for teams by providing built-in role-based policies that follow AWS Identity and Access Management best practices.
+  
+* Choose from a variety of project templates
+
+ With AWS CodeStar project templates, you can easily develop a variety of applications such as websites, web applications, web services, and Alexa skills. 
+ AWS CodeStar project templates include the code for getting started on supported programming languages including Java, JavaScript, PHP, Ruby, C#, and Python. 
+ 
+ Source: https://aws.amazon.com/codestar/
