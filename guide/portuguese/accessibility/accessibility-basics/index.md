@@ -6,16 +6,16 @@ localeTitle: Noções básicas de acessibilidade
 > 
 > \- Professor Severo Snape, Série Harry Potter
 
-O papel da acessibilidade no desenvolvimento é essencialmente entender a perspectiva e as necessidades do usuário e saber que a Web e os aplicativos são uma solução para pessoas com deficiências.
+O papel da acessibilidade no desenvolvimento é essencialmente entender a perspectiva e as necessidades do utilizador e saber que a Web e os aplicativos são uma solução para pessoas com deficiências.
 
-Hoje em dia, mais e mais novas tecnologias são inventadas para tornar a vida dos desenvolvedores, assim como dos usuários, mais fácil. Até que ponto isso é uma coisa boa é um debate para outro momento, por enquanto é o suficiente para dizer que a caixa de ferramentas de um desenvolvedor, especialmente um desenvolvedor web, está tão em constante mudança quanto as chamadas "artes das trevas" estão de acordo com nosso amigo. Snape
+Hoje em dia, mais e mais novas tecnologias são inventadas para tornar a vida dos desenvolvedores, assim como dos utilizadores, mais fácil. Até que ponto isso é uma coisa boa é um debate para outro momento, por enquanto é o suficiente para dizer que a caixa de ferramentas de um desenvolvedor, especialmente um desenvolvedor web, está tão em constante mudança quanto as chamadas "artes das trevas" estão de acordo com nosso amigo. Snape
 
 Uma ferramenta nessa caixa de ferramentas deve ser acessibilidade. É uma ferramenta que deve idealmente ser usada em um dos primeiros passos de escrever qualquer forma de conteúdo da web. No entanto, esta ferramenta muitas vezes não é tão bem apresentada na caixa de ferramentas da maioria dos desenvolvedores. Isso pode ser devido a um simples caso de não saber que existe até casos extremos, como não se importar com isso.
 
-Na minha vida como usuário e, mais tarde, como desenvolvedor, que se beneficia da acessibilidade em qualquer forma de conteúdo, eu vi os dois lados desse espectro. Se você estiver lendo este artigo, acredito que esteja em uma das seguintes categorias:
+Na minha vida como utilizador e, mais tarde, como desenvolvedor, que se beneficia da acessibilidade em qualquer forma de conteúdo, eu vi os dois lados desse espectro. Se você estiver lendo este artigo, acredito que esteja em uma das seguintes categorias:
 
 *   Você é um desenvolvedor web iniciante e gostaria de saber mais sobre acessibilidade
-*   Você é um desenvolvedor web experiente e perdeu o seu caminho (mais sobre isso mais tarde)
+*   Você é um desenvolvedor web experiente e perdeu o seu caminho (falaremos sobre isso mais tarde)
 *   Você sente que existe uma obrigação legal do trabalho e precisa aprender mais sobre isso.
 
 Se você ficar fora dessas categorias bastante amplas, por favor me avise. Eu sempre gosto de ouvir as pessoas que lêem o que eu escrevo. A implementação da acessibilidade afeta toda a equipe, desde as cores escolhidas pelo designer, a cópia escrita pelo redator e até você, o desenvolvedor.
@@ -31,10 +31,10 @@ Mas todo o conteúdo do seu website é realmente legível, utilizável e compree
 Você poderia se fazer perguntas como as seguintes:
 
 *   Se você adicionar informações que só estão contidas em um arquivo de áudio, uma pessoa surda pode obter essa informação?
-*   Se você denotar uma parte importante do seu site com uma determinada cor, uma pessoa daltônica saberá disso?
+*   Se você realçar uma parte importante do seu site com uma determinada cor, uma pessoa daltônica saberá disso?
 *   Se você adicionar imagens em seu site que transmitam informações importantes, como uma pessoa cega ou com deficiência visual saberá?
 *   Se você quiser navegar pelo aplicativo com teclado ou boca-de-pau, será possível e previsível?
-*   Seu aplicativo assume a orientação do dispositivo e se o usuário não puder alterá-lo fisicamente?
+*   Seu aplicativo assume a orientação do dispositivo e se o utilizador não puder alterá-lo fisicamente?
 *   Há algum perdão dos aspectos cronometrados de sua inscrição para alguém que pode precisar de mais tempo para preencher um formulário?
 *   Seu aplicativo ainda funciona (aprimoramento progressivo) supondo que o JavaScript não carrega no tempo?
 *   Você pode até mesmo dizer que, se o seu site é muito pesado, alguém em uma conexão lenta ou irregular poderá ler seu conteúdo?
@@ -110,7 +110,7 @@ Lembre-se também que os títulos são hierárquicos. Se você usa um h2, certif
 
 ### Qual a alternativa?
 
-Imagens em um site são ótimas. Eles adicionam uma nova camada ao seu conteúdo, podem realmente tornar a experiência que os visitantes do seu site têm de maneira mais imersiva e, em geral, ficam bem em meio a todo esse texto. Uma imagem pode dizer mais que mil palavras, certo?
+Imagens em um site são ótimas. Eles adicionam uma nova camada ao seu conteúdo, podem realmente tornar a experiência que os visitantes do seu site têm mais imersiva e, em geral, ficam bem no meio de todo esse texto. Uma imagem pode dizer mais que mil palavras, certo?
 
 Certamente. Isto é, se você puder vê-los. Na especificação HTML5, um atributo img deve sempre ter um atributo alt. Este atributo é uma alternativa para a imagem no caso de não poder ser visto. Isso seria verdadeiro para visitantes cegos do seu site, mas também quando a imagem não puder ser carregada por algum motivo. Portanto, não adicionar uma tag alt a um atributo img não apenas quebra a acessibilidade, mas também vai contra a especificação HTML5.
 
