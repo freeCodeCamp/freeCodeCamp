@@ -5,6 +5,8 @@ A data structure is a particular way of organizing data in a computer so that it
 * Lists  
 * Tuples  
 * Dictionaries  
+* Sets
+* Strings
 
 Majorly, the data structures can be divided into two categories :-  
 * Mutable :- A mutable data structure is a structure whose state can  be modified after it is created. Python Lists and Dictionaries are mutable.  
