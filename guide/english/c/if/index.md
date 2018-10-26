@@ -4,6 +4,9 @@ title: If
 
 # If
 
+The if statement is most famous conditional part in all over programming languages. It has two major parts:
+        1)Condition
+        2) Declaration
 The if statement executes different blocks of code based on conditions.
 
 ```
@@ -50,7 +53,7 @@ int main () {
       // If condition is false then print the following
       printf("a is not less than 5!\n" );
    }
-
+   
    printf("Value of a is : %d\n", a);
 
    return 0;
@@ -60,5 +63,27 @@ int main () {
 ## Output
 ```
 -> a is not less than 5!
--> Value of a is : 100
+-> Value of a is : 10
 ```
+##Example 2
+int main () {
+
+   // Local variable definition
+   int x = 10;
+   int y = 15;
+
+   // Check the boolean condition
+   if(x==20 && y==15) {
+      // If condition is true then print the following
+      printf("x is %d and y is $d\n", &x,&y );
+   }
+   else if(x==10 || y==10) {
+      // If If condition is false and else if condition is true then print the following
+      printf("value of x or y is %d and y is $d\n", &x );
+   }
+   else{
+    // If both condition are false then print the following
+      printf("Try again...!\n" );
+   }
+ return 0;
+ }
