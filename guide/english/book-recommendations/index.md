@@ -246,6 +246,10 @@ https://books.goalkicker.com/OracleDatabaseBook/
 - [Amazon](https://www.amazon.com/Mastering-Linux-Scripting-Andrew-Mallett/dp/1784396974/)
 - ISBN-13: 978-1784396978
 
+*Engineering: A Compiler by Keith Cooper and Linda Torczon*
+- [Amazon](https://smile.amazon.com/Engineering-Compiler-Keith-Cooper/dp/012088478X/)
+- ISBN-13: 978-0120884780
+
 This list was compiled from multiple suggestion threads on Reddit and Stackoverflow. 
 
 Please feel free to add more that you have found useful!
