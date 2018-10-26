@@ -38,7 +38,7 @@ public class MyFirstJava {
 
 #### 3. Documentation Comment
 
-Documentation comment is used by Javadoc tool to create documentation for the code. Documentation Comment is used by developers to document code, like what a class does or what a method does. This is used by a javadoc tool which will compile a preformatted set of html files containing all the information available in the comment. 
+Documentation comment is used by Javadoc tool to create documentation for the code. Documentation Comment is used by developers to document code, like what a class does or what a method does. This is used by a javadoc tool which will compile a preformatted set of html files containing all the information available in the comment. It's always a good practice to write the java doc before actually writing the function or method block of code. It helps in focusing on the purpose of method/class and creating moudular code.
 ```java
 /**
  * The Following Java program displays a random between 0 - 50
