@@ -158,10 +158,18 @@ Notice the `!`, which is needed because this function returns 0 if they are the 
 
 #### Split a string: `strtok`
 `strtok` (from 'string token') breaks a string into a series of tokens using a  delimiter. In this example, strtok breaks  string str into a series of tokens using the delimiter delim:
-```C
-char *strtok(char *str, const char *delim);
-```
 
+char *strtok(char *str, const char *delim);
+
+```C
+char str[]="Hello,How are you";
+char * token;
+token = strtok(str,",");
+while(token != NULL){
+	printf("%s\n", token);
+	token = strtok(NULL, ",");
+}
+```
 # Before you go on...
 ## A Review
 * Arrays are collections of variables.
