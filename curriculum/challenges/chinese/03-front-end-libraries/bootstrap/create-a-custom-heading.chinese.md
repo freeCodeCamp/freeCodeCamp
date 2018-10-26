@@ -7,7 +7,8 @@ localeTitle: 创建自定义标题
 ---
 
 ## Description
-<section id="description">我们将通过将标题和放松的猫图像放在同一行中，为我们的Cat Photo App制作一个简单的标题。请记住，Bootstrap使用响应式网格系统，可以轻松地将元素放入行中并指定每个元素的相对宽度。 Bootstrap的大多数类都可以应用于<code>div</code>元素。将第一个图像和<code>h2</code>元素嵌套在一个<code>&lt;div class=&quot;row&quot;&gt;</code>元素中。将您的<code>h2</code>元素嵌套在<code>&lt;div class=&quot;col-xs-8&quot;&gt;</code>并将您的图像<code>&lt;div class=&quot;col-xs-4&quot;&gt;</code>以便它们位于同一行。请注意图像现在的大小是否适合文本？ </section>
+We will make a simple heading for our Cat Photo App by putting the title and relaxing cat image in the same row. Remember, Bootstrap uses a responsive grid system, which makes it easy to put elements into rows and specify each element's relative width. Most of Bootstrap's classes can be applied to a div element. Nest your first image and your h2 element within a single <div class="row"> element. Nest your h2 element within a <div class="col-xs-8"> and your image in a <div class="col-xs-4"> so that they are on the same line. Notice how the image is now just the right size to fit along the text?
+<section id="description">通过在一行中放入标题文本和放松的猫图像，我们将为我们的Cat Photo App制作一个简单的标题。请记住，Bootstrap使用响应式网格系统，可以轻松地将元素放入行中并指定每个元素的相对宽度。 Bootstrap的大多数类都可以应用于<code>div</code>元素。将第一个图像和<code>h2</code>元素嵌套在一个<code>&lt;div class=&quot;row&quot;&gt;</code>元素中。将您的<code>h2</code>元素嵌套在<code>&lt;div class=&quot;col-xs-8&quot;&gt;</code>并将您的图像<code>&lt;div class=&quot;col-xs-4&quot;&gt;</code>以便它们位于同一行。请注意图像现在的大小是否适合文本？ </section>
 
 ## Instructions
 <section id="instructions">
@@ -20,9 +21,9 @@ localeTitle: 创建自定义标题
 tests:
   - text: 你的<code>h2</code>元素和最顶层的<code>img</code>元素都应该在带有类<code>row</code>的<code>div</code>元素中嵌套在一起。
     testString: 'assert($("div.row:has(h2)").length > 0 && $("div.row:has(img)").length > 0, "Your <code>h2</code> element and topmost <code>img</code> element should both be nested together within a <code>div</code> element with the class <code>row</code>.");'
-  - text: 使用类<code>col-xs-4</code>将最顶层的<code>img</code>元素嵌套在<code>div</code> 。
+  - text: 使用类<code>col-xs-4</code>将最顶层的<code>img</code>元素嵌套在<code>div</code>中。
     testString: 'assert($("div.col-xs-4:has(img)").length > 0 && $("div.col-xs-4:has(div)").length === 0, "Nest your topmost <code>img</code> element within a <code>div</code> with the class <code>col-xs-4</code>.");'
-  - text: 使用类<code>col-xs-8</code>将<code>h2</code>元素嵌套在<code>div</code> 。
+  - text: 使用类<code>col-xs-8</code>将<code>h2</code>元素嵌套在<code>div</code>中。
     testString: 'assert($("div.col-xs-8:has(h2)").length > 0 && $("div.col-xs-8:has(div)").length === 0, "Nest your <code>h2</code> element within a <code>div</code> with the class <code>col-xs-8</code>.");'
   - text: 确保每个<code>div</code>元素都有一个结束标记。
     testString: 'assert(code.match(/<\/div>/g) && code.match(/<div/g) && code.match(/<\/div>/g).length === code.match(/<div/g).length, "Make sure each of your <code>div</code> elements has a closing tag.");'
