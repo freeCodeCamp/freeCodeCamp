@@ -44,6 +44,7 @@ An _activity_ is a component that has a user interface and represents a single s
 * onDestroy():
 
 > The final call you receive before your activity is destroyed. This can happen either because the activity is finishing (someone called finish() on it, or because the system is temporarily destroying this instance of the activity to save space. You can distinguish between> these two scenarios with the isFinishing() method.
+Interestingly, when app display changes orientation (eg from landscape to portrait or other way around), onDestroy() and onCreate() are called. This means that the Activity is recreated. This comes in handy in applications with different defined rules for landscape and portrait modes, or with different views defined for tablets and phones in these modes.
 
 #### Sample code to understand Activity Lifecycle
 ``` java
