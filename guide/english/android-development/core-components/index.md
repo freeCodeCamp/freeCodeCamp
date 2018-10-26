@@ -107,6 +107,26 @@ A _broadcast receiver_ is another component without user interface (except an op
 ## [Content providers](https://developer.android.com/guide/topics/providers/content-providers)
 A _content provider_ is a component used to manage a set of app data to share with other applications. Each item saved in the content provider is identified by a URI scheme.
 
+## [Intents and Filters]
+An Android Intent is an abstract description of an operation to be performed. It can be used with startActivity to launch an Activity, broadcastIntent to send it to any interested BroadcastReceiver components, and startService(Intent) or bindService(Intent, ServiceConnection, int) to communicate with a background Service.
+
+## [Fragments]
+Following are important points about fragment −
+
+A fragment has its own layout and its own behaviour with its own life cycle callbacks.
+
+You can add or remove fragments in an activity while the activity is running.
+
+You can combine multiple fragments in a single activity to build a multi-pane UI.
+
+A fragment can be used in multiple activities.
+
+Fragment life cycle is closely related to the life cycle of its host activity which means when the activity is paused, all the fragments available in the activity will also be stopped.
+
+A fragment can implement a behaviour that has no user interface component.
+
+Fragments were added to the Android API in Honeycomb version of Android which API version 11.
+
 For detailed information about the topic, see the official [Android fundamentals](https://developer.android.com/guide/components/fundamentals) documentation.
 
 ## Advanced Android Development  
