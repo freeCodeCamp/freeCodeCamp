@@ -1,6 +1,4 @@
----
-title: Python
----
+# Python
 
 ## What is Python?
 
