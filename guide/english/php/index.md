@@ -103,7 +103,7 @@ Since writing the whole code for a website is not really practical/feasible for 
 PHP is [well documented](http://php.net/docs.php). The [official docs](http://php.net/manual/en/) include examples on almost every function reference guide, as well as user comments.
 
 ## Other Resources
-
+- [PHP The Right Way](https://phptherightway.com/): good practices and quality information for PHP developers
 - [Tizag.com PHP Tutorial](http://www.tizag.com/phpT/): still-relevant tutorials for getting started with PHP
 - [Awesome PHP](https://github.com/ziadoz/awesome-php): a curated list of PHP libraries, resources, and "shiny things"
 - [Laracasts.com](https://laracasts.com/): a membership website to learn web application development with PHP
