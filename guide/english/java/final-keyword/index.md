@@ -3,7 +3,9 @@ title: Final
 ---
 
 ## final
-You use the `final` keyword to mark a variable constant, so that it can be assigned only once. So you must initialize a final variable with a value. If its not initialized (when declared, inside Constructor or inside static blocks), compile time error will occur.
+You use the `final` keyword to mark a variable constant, so that it can be assigned only once.
+This means that once assigned, it will always contain the same value .
+So you must initialize a final variable with a value. If its not initialized (when declared, inside Constructor or inside static blocks), compile time error will occur.
 
 ***Example:***
 ```java
@@ -56,3 +58,6 @@ class Honda1 extends Bike{
 
 Output will be-
  Output:Compile Time Error
+
+However , you can create an intermediate class called Wrapper class.
+It creates an instance of th original class and you can modify its objects according to what you had initially intended to do . 
