@@ -4,7 +4,7 @@ localeTitle: Para loop
 ---
 # Para loop
 
-O loop `for` executa um bloco de código até que uma condição especificada seja falsa. Embora um `for` circuito parece um [`while` ciclo](https://guide.freecodecamp.org/csharp/while-loop) , os desenvolvedores devem usá-los **corretamente.** Use `while` laços quando o número de iterações são variáveis, de outro modo utilizar `for` lacetes. Um uso comum de loops `for` são iterações de array. 1
+O loop `for` executa um bloco de código até que uma condição especificada seja falsa. Embora um circuito `for` pareça um [`while` ciclo](https://guide.freecodecamp.org/csharp/while-loop) , os desenvolvedores devem usá-los **corretamente.** Use laços `while` quando o número de iterações forem variáveis. Um uso comum de loops `for` são iterações de array. 1
 
 ## Sintaxe
 
