@@ -49,19 +49,19 @@ You'll learn many of the first princliples for data science tools and how algori
 - ISBN-10: 149190142X
 - ISBN-13: 978-1491901427
 
-*Automate The Boring Stuff With Python*
+#### Automate The Boring Stuff With Python*
 - Great book for beginners. Has interesting projects to practice Python.
 - [Amazon](https://www.amazon.com/gp/product/1593275994/)
 - ISBN-10: 1593275994
 - ISBN-13: 978-1593275990
 
-*Python crash course 2e* (note that 3e is going to be published on April 2019)
+#### Python crash course 2e* (note that 3e is going to be published on April 2019)
 - Paid book which gives concrete introduction to both programming and Python by the creation of projects.
 - [Amazon](https://www.amazon.fr/Python-Crash-Course-Hands-Project-Based/dp/1593276036/ref=sr_1_1?ie=UTF8&qid=1539459730&sr=8-1&keywords=python+crash+course)
 - ISBN-10: 1593276036
 - ISBN-13: 978-1593276034
 
-*The Quick Python Book, Third Edition*
+#### The Quick Python Book, Third Edition*
 - Paid book which provides a good level of information for those starting Python and as a reference for the Python language
 - [Manning]https://www.manning.com/books/the-quick-python-book-third-edition
 - ISBN-10: 1617294039
