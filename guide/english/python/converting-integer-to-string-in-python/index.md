@@ -61,9 +61,9 @@ print(result)
 4. so range(1,11) is going to generate a list of numbers from 1 to 10.
 5. On each for loop iteration this 'i' variable is going to take up values from 1 to 10.
 6. On first iteration when the variable i=1,then the variable [result=result+str(i)+"(space character)"],str(i) converts the 'i' which is an integer value to a string value.
-7. Since i=1, on the first iteration finally result=1.
-8. And the same process goes on until i=10 and finally after the last iteration result=1 2 3 4 5 6 7 8 9 10.
-9. Therefore when we finally print the result after the for loop the output on the console is '1 2 3 4 5 6 7 8 9 10'.
+7. Since i=1, on the first iteration finally result=1 .
+8. And the same process goes on until i=10 and finally after the last iteration result=1 2 3 4 5 6 7 8 9 10 .
+9. Therefore when we finally print the result after the for loop the output on the console is '1 2 3 4 5 6 7 8 9 10 '.
 
 
 #### More Information:
