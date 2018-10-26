@@ -3,7 +3,7 @@ title: Coding Interview Prep
 ---
 ## Coding Interview Prep
 
-This is a stub. <a href='https://github.com/freecodecamp/guides/tree/master/src/pages/mathematics/quadratic-equations/index.md' target='_blank' rel='nofollow'>Help our community expand it</a>.
+First of all, we can start with the premise and the fact that almost all companies leave to the applicant's choice to choose his preferable programming language for interview. Since we have this advantage, we should pick the most familiar programming language for us. If you are a rookie in this domain and you want to apply for your first job, it's recommended to start with the program language which seems to you more interesting and makes you comfortable when you write code.
 
 <a href='https://github.com/freecodecamp/guides/blob/master/README.md' target='_blank' rel='nofollow'>This quick style guide will help ensure your pull request gets accepted</a>.
 
