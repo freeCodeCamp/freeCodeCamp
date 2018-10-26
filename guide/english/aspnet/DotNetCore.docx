@@ -1,0 +1,57 @@
+Install Entity Framework
+To use EF Core, install the package for the database provider(s) you want to target. This walkthrough uses SQL Server. For a list of available providers see Database Providers.4
+•	Tools > NuGet Package Manager > Package Manager Console
+•	Run Install-Package Microsoft.EntityFrameworkCore.SqlServer
+2
+We will be using some Entity Framework Tools to create a model from the database. So we will install the tools package as well:
+•	Run Install-Package Microsoft.EntityFrameworkCore.Tools
+We will be using some ASP.NET Core Scaffolding tools to create controllers and views later on. So we will install this design package as well:
+•	Run Install-Package Microsoft.VisualStudio.Web.CodeGeneration.Design
+Reverse engineer your model
+Now it's time to create the EF model based on your existing database.
+•	Tools –> NuGet Package Manager –> Package Manager Console
+•	Run the following command to create a model from the existing database:
+
+Scaffold-DbContext "Server=192.168.1.2;Database=Medihub4rumDemo;persist security info=True;user id=sa;password=Medihub!@#456" Microsoft.EntityFrameworkCore.SqlServer -OutputDir Models
+
+
+Update lại dB
+Scaffold-DbContext "Server=VANTHIN-PC\SQLEXPRESS;Database=MediHubCS;persist security info=True;user id=sa;password=Admin123" Microsoft.EntityFrameworkCore.SqlServer -OutputDir Entities -context MediHubCSContext -force
+
+public MediHubCSContext(DbContextOptions<MediHubCSContext> options)
+            : base(options)
+        { }
+
+
+
+Excute Store Procedure
+Trong dB context tạo Table Fake
+   public virtual DbSet<AirContentSearch> AirContentSearch { get; set; }
+var rs= _context.Set<AirContentSearch>().FromSql("GetContentAired_2");
+with parameter
+
+
+  var airContentSearches = _context.Set<AirContentSearch>().FromSql(" GetContentAired @Speciality={0},@StartDate={1},@EndDate={2}", "Đa khoa",startDate,endDate).ToList();
+
+
+
+
+
+  public virtual DbSet<AirContentSearch> AirContentSearch { get; set; }
+
+
+
+  public MediHub4rumContext(DbContextOptions<MediHub4rumContext> options)
+            : base(options)
+        {
+        }
+
+
+Htttp delete
+<system.webServer>
+  <modules runAllManagedModulesForAllRequests="false">
+    <remove name="WebDAVModule" />
+  </modules>
+</system.webServer>
+
+         
