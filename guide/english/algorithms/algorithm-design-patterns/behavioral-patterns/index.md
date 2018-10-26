@@ -28,3 +28,5 @@ Examples of this type of design pattern include:
 
 ### Sources
 [Behavioral patterns - Wikipedia](https://en.wikipedia.org/wiki/Behavioral_pattern)
+
+My changes.
