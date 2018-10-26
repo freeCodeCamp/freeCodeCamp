@@ -36,8 +36,15 @@ Popular AWS services include:
 * Mobile development tools and platforms
 * Amazon Alexa development area
 
+For programming & code deployment, Amazon ffer the following services to help cde develpment and deployment easy:
+
+* Cloud9 (Cloud IDE)
+* CodeBuild - Build and test code with elastic scaling
+* CodePipeline - Continous delivery service of code. 
+
 #### AWS Certifications 
 AWS offers many different certifications for it's practitioners. There are different tiers to AWS certs as well as role-based certifications. 
+
 The tiers are:
 * Foundational
 * Associate
