@@ -1,0 +1,219 @@
+#include<iostream>
+using namespace std;
+int count=0;
+struct info{
+	int roll;
+	float cgpa;
+	string name;
+    info *next;
+};
+void inserthead(struct info **head){
+	int roll;
+	float cgpa;
+	string name;
+	cout<<"enter the name roll no and cgpa"<<"\n";
+	cin>>name>>roll>>cgpa;
+	info *temp=new info;
+		temp->name=name;
+		temp->roll=roll;
+		temp->cgpa=cgpa;
+		temp->next=*head;
+		*head=temp;
+
+}
+void insertend(struct info **head){
+int roll;
+float cgpa;
+	string name;
+	cout<<"enter the name roll no and cgpa"<<"\n";
+	cin>>name>>roll>>cgpa;
+	info *temp=new info,*temp2=*head;
+		temp->name=name;
+		temp->roll=roll;
+		temp->cgpa=cgpa;
+	    temp->next=NULL;
+	    while(temp2->next!=NULL){
+	    	temp2=temp2->next;
+		}
+		temp2->next=temp;
+}
+void insertmid(struct info **head){
+int roll,rollno;
+float cgpa;
+	string name;
+	cout<<"enter the roll no after which u want to add data"<<"\n";
+	cin>>rollno;
+	cout<<"enter the name roll no and cgpa"<<"\n";
+	cin>>name>>roll>>cgpa;
+	info *temp=new info,*temp2=*head,*temp3;
+		temp->name=name;
+		temp->roll=roll;
+		temp->cgpa=cgpa;
+	    while(temp2->roll!=rollno){
+	    	temp2=temp2->next;
+		}
+	   temp3=temp2->next;
+	   temp->next=temp3;
+	   temp2->next=temp;
+}
+void insert(struct info **head){
+	string name;
+	char ch;
+	int roll;
+	float cgpa;
+	count++;
+	if(*head==NULL){
+		cout<<"enter your name roll no and cgpa"<<"\n";
+		cin>>name>>roll>>cgpa;
+		info *temp=new info;
+		temp->name=name;
+		temp->roll=roll;
+		temp->cgpa=cgpa;
+		temp->next=*head;
+		*head=temp;
+	}
+	else{
+		cout<<"At which position do you want to insert data"<<"\n";
+		cout<<"Enter A to insert before head node, B to insert at the end or C to insert in between"<<"\n";
+		cin>>ch;
+		switch(ch){
+			case 'A':
+				inserthead(&(*head));
+				break;
+				case 'B':
+					insertend(&(*head));
+					break;
+					case 'C':
+					insertmid(&(*head));
+					break;
+		}
+
+	}
+}
+void headdel(struct info **head){
+info *temp=*head;
+temp=temp->next;
+*head=temp;
+}
+void lastdel(struct info **head){
+info *prev=*head,*temp=prev->next;
+while(temp!=NULL){
+    temp=temp->next;
+}
+prev->next=NULL;
+}
+void betdel(struct info **head){
+    int roll;
+    count--;
+cout<<"Enter the roll no of which you want to delete the data"<<"\n";
+cin>>roll; 
+info *prev=*head,*temp=prev->next;
+if(prev->next==NULL){
+    prev=NULL;
+}
+else{
+while(temp->roll!=roll){
+    temp=temp->next;
+}
+}
+prev->next=temp->next;
+}
+void del(struct info **head){
+    char ch;
+    cout<<"Enter the position from where u want to delete"<<"\n";
+    cout<<"A to delete head node data B to delete last node data or C to delete from any position"<<"\n";
+    cin>>ch;
+    switch(ch){
+case 'A':
+    headdel(&(*head));
+    break;
+case 'B':
+    lastdel(&(*head));
+    break;
+case 'C':
+    betdel(&(*head));
+    break;
+    }
+}
+void search(struct info **head){
+int rollno;
+cout<<"Enter the roll no u want to search the data of"<<"\n";
+cin>>rollno;
+info *temp=*head;
+while(temp!=NULL){
+	if(temp->roll==rollno){
+	cout<<"Name is "<<temp->name<<"\n"<<"roll no is "<<temp->roll<<"\n"<<"cgpa is "<<temp->cgpa<<"\n";
+	return;
+	}
+    temp=temp->next;
+}
+cout<<"Info of the roll no entered is not present"<<"\n";
+}
+ 
+void sortlist(struct info**head){
+	info *temp=*head,*temp4,*temp5=*head;
+	int count=0,i;
+	while(temp!=NULL){
+		count++;
+    temp=temp->next;
+	}  
+	temp=temp5->next;
+	    for(i=0;i<count;i++){
+		     while(temp!=NULL){
+			     if((temp->roll)<(temp5->roll)){
+					         temp4->roll=temp->roll;
+	                          temp->roll=temp5->roll;
+                 	          temp5->roll=temp4->roll;  
+							 
+							 temp4->name=temp->name;
+                	         temp->name=temp5->name;
+                   	         temp5->name=temp4->name; 
+		
+	                          temp4->cgpa=temp->cgpa;
+	                          temp->cgpa=temp5->cgpa;
+	                          temp5->cgpa=temp4->cgpa;   
+					    }   
+    	             temp=temp->next;
+                    } 
+				 temp5=temp5->next;
+              temp=temp5->next;
+       }	
+
+}
+	
+void display(struct info **head){
+	info *temp5=*head;
+while(temp5!=NULL){
+	cout<<"Name is "<<temp5->name<<"\n"<<"roll no is "<<temp5->roll<<"\n"<<"cgpa is "<<temp5->cgpa<<"\n"<<"\n";
+	temp5=temp5->next;
+}
+}
+
+int main(){
+	int choice;
+	string str;
+	struct info *head=NULL;
+	start:
+	cout<<"Enter The choice"<<"\n";
+	cout<<"1 to insert data"<<"\n";
+	cout<<"2 to delete data"<<"\n";
+	cout<<"3 to search info"<<"\n";
+	cout<<"4 to display the list"<<"\n";
+	cin>>choice;
+	switch(choice){
+		case 1: insert(&head);
+		break;
+		case 2: del(&head);
+		break;
+		case 3: search(&head);
+		break;
+		case 4:{sortlist(&head);
+		 display(&head);
+	      }
+		break;
+	}
+	cout<<"Do you want to perform any further operation (y/n)"<<"\n";
+	cin>>str;
+	if(str=="y")
+	goto start;
+}
