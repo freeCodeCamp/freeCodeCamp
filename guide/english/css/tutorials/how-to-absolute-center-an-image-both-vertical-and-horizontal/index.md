@@ -11,5 +11,6 @@ This is a stub. <a href='https://github.com/freecodecamp/guides/tree/master/src/
 
 #### More Information:
 <!-- Please add any articles you think might be helpful to read before writing the article -->
+<a href='https://css-tricks.com/snippets/css/absolute-center-vertical-horizontal-an-image/' target='_blank' rel='nofollow'>Absolute Center (Vertical & Horizontal) an Image</a>.
 
 
