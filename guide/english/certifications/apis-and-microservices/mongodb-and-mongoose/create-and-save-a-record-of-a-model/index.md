@@ -3,8 +3,22 @@ title: Create and Save a Record of a Model
 ---
 ## Create and Save a Record of a Model
 
-This is a stub. <a href='https://github.com/freecodecamp/guides/tree/master/src/pages/certifications/apis-and-microservices/mongodb-and-mongoose/create-and-save-a-record-of-a-model/index.md' target='_blank' rel='nofollow'>Help our community expand it</a>.
+The stub is already provided in the function: createAndSavePerson.
 
-<a href='https://github.com/freecodecamp/guides/blob/master/README.md' target='_blank' rel='nofollow'>This quick style guide will help ensure your pull request gets accepted</a>.
+Now you have model so you create the object of person from Person.
 
+If you have worked with MVC before in any other framework then you already know that saving a model object saves an entry for you in the database (in MongoDB case the document will be inserted).
+
+Make sure to call save() as in the example.
+person.save(function(err,data){
+  if (err)
+  {
+  //your code
+  }
+  else
+  {
+  //your code on success
+  }
+
+});
 <!-- The article goes here, in GitHub-flavored Markdown. Feel free to add YouTube videos, images, and CodePen/JSBin embeds  -->
