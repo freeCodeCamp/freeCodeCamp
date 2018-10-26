@@ -39,6 +39,9 @@ Here are our six core certifications:
 
 - Basic HTML and HTML5
 - Basic CSS
+- VIsual Basic
+- HTML
+- MDos
 - Applied Visual Design
 - Applied Accessibility
 - Responsive Web Design Principles
@@ -133,6 +136,8 @@ Please don't create GitHub issues for security issues. Instead, please send an e
 #### [Please follow these steps to contribute.](CONTRIBUTING.md)
 
 ### License
+
+Copyrighted
 
 Copyright © 2018 freeCodeCamp.org
 
