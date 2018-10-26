@@ -136,11 +136,11 @@ string_length = strlen(my_string);
 ```
 Here is an manual implementation of fuction strlen:
 ```C
-int string_length(char [] string)
+int string_length(char string[])
 {
     int i;
     
-    for(i = 0; string[i]; i++);
+    for(i = 0; string[i] != '\0'; i++);
     
     return i;
 }
