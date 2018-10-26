@@ -155,3 +155,5 @@ You can refer to the following link to W3 schools to know more about background 
 ### Other Resources
 * <a href='http://cloford.com/resources/colours/500col.htm' target='_blank' rel='nofollow'>List of color values</a>
 * <a href='http://colrd.com/create/palette/' target='_blank' rel='nofollow'>Color Picker Tool</a>
+## Default Background
+by default, when a background color or a backgroung image is not set, the browser pick the white color as the background color
