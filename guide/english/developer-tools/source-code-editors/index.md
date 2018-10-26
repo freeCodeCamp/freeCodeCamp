@@ -63,7 +63,7 @@ Visual Studio Code (a.k.a vsc or vscode) is a very popular, open source editor, 
 
 <a href='https://code.visualstudio.com/' target='_blank' rel='nofollow'>code.visualstudio.com</a>
 
-&bnsp;
+&nbsp;
 
 ### Notepad++
 
