@@ -30,6 +30,18 @@ A collection of articles covering the basics (core language and working with a b
 - [Online](https://javascript.info/)
 - [E-book](https://javascript.info/ebook)
 
+#### JavaScript: The Definitive Guide
+- [Paperbook, Amazon](https://www.amazon.com/JavaScript-Definitive-Guide-Activate-Guides/dp/0596805527/)
+- [Kindle Book, Amazon](https://www.amazon.com/JavaScript-Definitive-Guide-Activate-Guides-ebook/dp/B004XQX4K0/)
+
+#### JavaScript: Programming Basics for Absolute Beginners (Step-By-Step JavaScript Book 1) 
+- [Paperbook, Amazon](https://www.amazon.in/Javascript-Programming-Basics-Absolute-Beginners/dp/1974581217/)
+- [Kindle Book, Amazon](https://www.amazon.in/JavaScript-Programming-Beginners-Step-Step-ebook/dp/B074SZFS7D/)
+
+#### JavaScript Patterns: Build Better Applications with Coding and Design Patterns
+- [Paperbook, Amazon](https://www.amazon.com/JavaScript-Patterns-Better-Applications-Coding/dp/0596806752/)
+- [Kindle Book, Amazon](https://www.amazon.com/JavaScript-Patterns-Better-Applications-Coding-ebook/dp/B0046RERXE/)
+
 #### Other Resources
 
 - A selection of online free resources; including e-books for JavaScript are available at [JS Books](https://jsbooks.revolunet.com/)
