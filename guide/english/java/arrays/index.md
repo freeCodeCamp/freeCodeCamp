@@ -50,9 +50,6 @@ double[] List = new double[10];
 ```java
 dataType[] arrayName = {value_0, value_1, ..., value_k};
 ```
-```java
-dataType[] arrayName = new dataType[] {value_0, value_1, ..., value_k};
-```
 
 ## Code snippets of above syntax:
 
@@ -64,11 +61,18 @@ double[] list = new double[4];
 *IMPORTANT NOTE: Please note the difference between the types of brackets
 that are used to represent arrays in two different ways.
 ```
-```
-int[] numbers = new int[] {1,5,8,9};
+
+## Declaring array literal
+
+```java
+dataType[] arrayName = new dataType[] {value_0, value_1, ..., value_k};
 ```
 
+## Code snippets of above syntax:
 
+```java
+int[] intArray = new int[]{ 1,2,3,4,5,6,7,8,9,10 }; 
+```
 
 ## Accessing Arrays:
 ```java
