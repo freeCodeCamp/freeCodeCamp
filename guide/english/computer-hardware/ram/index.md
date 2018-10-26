@@ -28,6 +28,8 @@ Servers typically use ECC or Error-Correcting Code RAM. This RAM features a few 
 
 Not all motherboards or CPUs can handle ECC memory; however, it also is rarely a relevant feature to most consumers, instead being mostly used in servers, data centers, and high end business workstations where the added 'insurance' against any down time is worth the added cost.
 
+### Graphics Card Ram or vRAM
+Graphics Card Ram holds texture and frames that the graphics card will work on.
 
 #### More Information:
 
