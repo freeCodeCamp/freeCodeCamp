@@ -36,3 +36,6 @@ cat file1.txt file2.txt
 
 #### More Information:
 * Wikipedia: https://en.wikipedia.org/wiki/Cat_(Unix)
+
+Tip:
+Using cat on a directory will cause error, so make sure it's a readable file.
