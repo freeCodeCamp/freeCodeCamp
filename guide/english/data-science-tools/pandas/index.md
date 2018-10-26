@@ -49,6 +49,40 @@ A data frame can be subset in many ways. One of the simplest is getting a single
 ```python
 ages=df["age"]
 ```
+## Concatenation
+
+Concatenation basically glues together DataFrames. Keep in mind that dimensions should match along the axis you are concatenating on. You can use **pd.concat** and pass in a list of DataFrames to concatenate together:
+
+
+```python
+pd.concat([df1,df2,df3])
+```
+## Merging
+
+The **merge** function allows you to merge DataFrames together using a similar logic as merging SQL Tables together. For example:
+
+
+```python
+pd.merge(left,right,how='inner',on='key')
+```
+## Joining
+Joining is a convenient method for combining the columns of two potentially differently-indexed DataFrames into a single result DataFrame.
+
+
+```python
+left = pd.DataFrame({'A': ['A0', 'A1', 'A2'],
+                     'B': ['B0', 'B1', 'B2']},
+                      index=['K0', 'K1', 'K2']) 
+
+right = pd.DataFrame({'C': ['C0', 'C2', 'C3'],
+                    'D': ['D0', 'D2', 'D3']},
+                      index=['K0', 'K2', 'K3'])
+```
+
+
+```python
+left.join(right)
+```
 
 #### More Information:
 1. [pandas](http://pandas.pydata.org/)
