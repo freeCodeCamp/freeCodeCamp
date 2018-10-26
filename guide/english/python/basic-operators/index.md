@@ -69,7 +69,7 @@ Consider the expression, <b>“a = 2 + 3”</b>. Here, `2` and `3` are the <i>op
   </tr>
 </table>
 
-Note: To get the result as floating type, one of the operands must also be of float type.
+Note: To get the result as a floating type, one of the operands must also be of float type.
 
 #### Comparison (Relational) Operators
 
