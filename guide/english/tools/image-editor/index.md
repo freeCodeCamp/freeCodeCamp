@@ -11,6 +11,13 @@ Some are more popular than others, but they all have similar editing capabilitie
 
 Web App Image Editors are available in-browser. In other words, you  do not need to leave your browser to work on an image. Example: the  ability to open images from a local folder/ url.
 
+Here are some examples of online image editors:
+
+* [Canva Photo Editor](https://www.canva.com/photo-editor/)
+* [PicMonkey](https://www.picmonkey.com/photo-editor)
+* [piZap](https://www.pizap.com/photo_editor)
+* [fotor](https://www.fotor.com/)
+
 ### Open Source Editors
 
 Available as free downloads and open to user contributions to the software's development.
