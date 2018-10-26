@@ -3,7 +3,7 @@ title: Case Studies
 ---
 ## Case Studies
 
-The Software Engineering Ethics Research Institute of the Department of Computer and Information Sciences at East Tenesee State University published a series of  Case Studies to help sensitize practicing software developers and students to the various types of ethical dilemmas they may face. [The International Standard for Professional Software 
+The Software Engineering Ethics Research Institute of the Department of Computer and Information Sciences at East Tennessee  State University published a series of  Case Studies to help sensitize practicing software developers and students to the various types of ethical dilemmas they may face. [The International Standard for Professional Software 
 Development and Ethical Responsibility](http://seeri.etsu.edu/TheSECode.htm) forms the basis for much of the analysis in each case.
 
 Cases:
