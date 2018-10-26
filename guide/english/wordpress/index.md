@@ -17,13 +17,18 @@ Just a few advantages of WordPress:
 * There's a blog built-in and ready to go whenever applicable
 * It has plugins, which extend functionality to WordPress sites
 * Thousands of free themes are available to customize
+* Low barrier to entry, making it beginner friendly
 
 One of the main things that appeal to people about WordPress is the abudant themes and plugins. You can make your website look however you like, and with many plugins available you can do anything from having a plugin to handle contact forms, manage SEO (Search Engine Optimization), and many more.
 
 Whether it's page transitions or a customized contact form, WordPress users are only a few clicks away from building a website.
+
+### Gutenberg WordPress editor
+In early 2017 WordPress announced that they had been working on the new Gutenberg WordPress editor. The Gutenberg editor is a page builder being developed to integrate with WordPress core. It aims to add flexibility to the content editing experience through the use of content blocks, which can be styled and moved individually. Although it has not yet been officially released, the editor is available for early testing and feedback. WordPress hope to merge the Gutenberg editor into WordPress 5.0.
 
 ### More Information
 
 - [WordPress Codex: the online manual](https://codex.wordpress.org/)
 - [WordPress Code Reference](https://developer.wordpress.org/reference/)
 - [WordPress Github Repository](https://github.com/WordPress/WordPress)
+- [WordPress Installation Instructions](https://codex.wordpress.org/Installing_WordPress)
