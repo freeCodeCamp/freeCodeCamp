@@ -1,10 +1,10 @@
 ---
 title: array
----
+title: Array
 
 ## Introduction to PHP Array
 
-An array can be thought of as a collection of items.
+An array can be thought of you as a collection of items (values or variables). It is probably used by every program because it is one of the oldest and important data structure.
 
 ## Syntax
 
