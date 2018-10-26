@@ -12,10 +12,10 @@ The most approached implementation of the algorithm is a stack-based recursive f
 The problem is pretty simple and usually follows these steps:
 
 1. Take the position of the starting point and the boundary color.
-2. Decide wether you want to go in 4 directions (N, S, W, E) or 8 directions (N, S, W, E, NW, NE, SW, SE).
+2. Decide whether you want to go in 4 directions (N, S, W, E) or 8 directions (N, S, W, E, NW, NE, SW, SE).
 3. Choose a fill color.
 4. Travel in those directions.
-5. If the pixel you land on is not the fill color or the boundary color , replace it with the fill color.
+5. If the pixel you land on is not the fill color or the boundary color, replace it with the fill color.
 6. Repeat 4 and 5 until you've been everywhere within the boundaries.
 ### Certain Restrictions:
 - The boundary color should be the same for all the edges of the polygon.
@@ -35,5 +35,4 @@ void boundary_fill(int pos_x, int pos_y, int boundary_color, int fill_color)
     }
 }
 ```
-From the given code you can see that for any pixel that you land on, you first check whether it can be changed to the fill_color and then you do so 
-for its neighbours till all the pixels within the boundary have been checked.
+From the given code you can see that for any pixel that you land on, you first check whether it can be changed to the fill_color and then you do so for its neighbours till all the pixels within the boundary have been checked.
