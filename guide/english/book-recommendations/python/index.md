@@ -12,6 +12,14 @@ title: Books on Python Programming Language
 - [E-book](http://greenteapress.com/thinkpython2/html/index.html)(free)
 - [Amazon](https://www.amazon.com/gp/product/1491939362)
 - ISBN-13: 978-1491939369
+
+ #### Python essential reference
+ 
+ Although paid book, its a single comprehensive book that is suggested for anybody starting to get their hands dirty on python programming. 
+ 
+- [Amazon](https://www.amazon.com/Python-Essential-Reference-David-Beazley/dp/0672329786)
+- Kindle edition also available.
+- ISBN-13: 978-0672329784
  
 #### Learn Python 3 the Hard Way
 
@@ -66,6 +74,16 @@ You'll learn many of the first princliples for data science tools and how algori
 - [Manning]https://www.manning.com/books/the-quick-python-book-third-edition
 - ISBN-10: 1617294039
 - ISBN-13: 978-1617294037
+
+#### Effective Python
+
+[Effective Python](https://effectivepython.com) provides insight into the Pythonic way of writing programs: the best way to use Python. It builds on a fundamental understanding of the language that I assume you already have. Novice programmers will learn the best practices of Python’s capabilities. Experienced programmers will learn how to embrace the strangeness of a new tool with confidence.
+
+- Buy the book [here](https://effectivepython.com)
+- [Amazon](https://www.amazon.com.au/Effective-Python-Specific-Write-Better/dp/0134034287/ref=sr_1_1?ie=UTF8&qid=1540550217&sr=8-1&keywords=Effective+Python+book)
+- Kindle version available
+- ISBN-13: 978-0134034287
+- ISBN-10: 9780134034287
 
 #### Other Resources
 
