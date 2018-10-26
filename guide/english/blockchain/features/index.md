@@ -31,6 +31,7 @@ When applied in a decentralized system like Blockchain, each user has a copy of 
 #### _* Secure Ecosystem (Cryptographic Hash)_
 
 BlockTech uses the concepts like Proof of Work and Hash encryption to ensure security and immutability. Proof of work involves several people around the world using computational algorithm to try and find the appropriate hash value that satisfies a predefined condition regarding the hash value.
+Some newer blockchain projects are implementing a different cryptographic encryption system called Proof of Stake. Proof of Stake is different to Proof of Work because it chooses a block creator based on their 'stake' (the amount of coins they own) rather than choosing who can perform complex mathematical equations. The advantage of this system is a cheaper and more environmentally-friendly blockchain, since we don't have to create large, energy-eating mining rigs. 
 
 ![Hashing](https://raw.githubusercontent.com/Vagisha16/Hw3/master/Hash.png)
 
