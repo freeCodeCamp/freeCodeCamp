@@ -53,3 +53,4 @@ Any comparison based sorting algorithm must make at least nLog2n comparisons to 
 
 ### Algorithmic Paradigm
 Merge Sort and Quick Sort are based on Divide and Conquer Algorithm
+### a sorted array is an array that is in a particular order. For example,[a,b,c,d] is sorted alphabetically,[1,2,3,4,5] is a list of integers sorted in increasing order, and[5,4,3,2,1] is a list of integers sorted in decreasing order.
