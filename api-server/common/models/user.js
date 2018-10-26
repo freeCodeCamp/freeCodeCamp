@@ -275,7 +275,7 @@ module.exports = function(User) {
       // is update or save user
       .filter(Boolean)
       .do(user => {
-        // Some old accounts will not have emails associated with theme
+        // Some old accounts will not have emails associated with them
         // we verify only if the email field is populated
         if (user.email && !isEmail(user.email)) {
           throw createEmailError();
@@ -704,7 +704,7 @@ module.exports = function(User) {
       });
 
     } else {
-      return 'Something unexpected happened whilst updating your email.';
+      return 'Something unexpected happened while updating your email.';
     }
   };
 
@@ -989,7 +989,7 @@ module.exports = function(User) {
         })
         // filter out non objects
         .filter((timestamp) => !!timestamp || typeof timestamp === 'object')
-        // filterout timestamps older then an hour
+        // filter out timestamps older than one hour
         .filter(({ timestamp = 0 }) => {
           return timestamp >= browniePoints;
         })
