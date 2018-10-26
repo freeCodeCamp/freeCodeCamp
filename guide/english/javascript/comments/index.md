@@ -10,7 +10,7 @@ It is always best practice when starting out to comment more often than not, as 
 
 JavaScript has two ways of assigning comments in its code.
 
-The first way is the `//` comment; all text following `//` on the same line is  considered as a comment. For example:
+The first way is the single-line comment, which is denoted by `//` ; all the text following `//` on the same line is considered as a comment. For example:
 
 ```javascript
 function hello() {
@@ -55,9 +55,9 @@ hello();
   <li>Windows: Push Control & "/"</li>
   <li>You can also uncomment code by doing the same steps</li>
 </ol>
-A shortcut to comment out a section of javascript in many code editors is to highlight the lines of code you want to comment out, then press `Cmd/Ctrl + /`.
+A shortcut to comment out a section of javascript in many code editors is to highlight the lines of code you want to comment out, then press `Cmd + /` for mac and `Ctrl + /` for windows users.
 
-Comments are also very helpful for code testing as you can prevent a certain code-line/block from running
+Comments are also very helpful for code testing as you can prevent a certain code-line/block from getting executed.
 
 ```javascript
 function hello() {
