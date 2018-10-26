@@ -6,11 +6,11 @@ localeTitle: Uso básico
 
 ### Abrir documento
 
-*   Ejecute vim o vi y abra el nombre de archivo dado.
+*   Ejecuta vim o vi y abre el nombre de archivo dado.
 
 ### Modo de inserción
 
-*   Una vez que abra la página, ingrese I y verá el texto "Modo de inserción" en la parte inferior de la pantalla. Desde aquí puede realizar los cambios que desee en el texto de su archivo.
+*   Una vez que abras la página, ingresa I y verás el texto "Modo de inserción" en la parte inferior de la pantalla. Desde aquí puedes realizar los cambios que desee en el texto de su archivo.
 
 ### Guardar el archivo
 
@@ -38,10 +38,10 @@ localeTitle: Uso básico
 
 *   : set nonu
 
-### Agregue color de sintaxis en función del lenguaje de programación utilizado.
+### Agrega color de sintaxis en función del lenguaje de programación utilizado.
 
 *   : sintaxis en
 
 ## Acerca de Vim
 
-Vim es el editor de texto que se usa básicamente en el modo CLI. Pero ahora el editor también está disponible en varias versiones. Allí tienen También GVIM que es la versión gráfica de VIM. vi fue el editor principal, luego se mejoró y lo llamó VI mejorado Vim.
+Vim es el editor de texto que se usa en el modo CLI. Pero ahora el editor también está disponible en varias versiones. También está disponible GVIM que es la versión gráfica de VIM. vi fue el primer editor, luego se mejoró y lo llamó VI mejorado Vim.
