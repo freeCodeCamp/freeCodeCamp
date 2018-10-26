@@ -8,7 +8,7 @@ Los comandos que se enumeran aquí son básicos y lo ayudarán a comenzar rápid
 
 1.  `echo` Esto toma el texto que le das y lo envía a algún lugar: de vuelta a la pantalla, a un archivo u otro comando. Ejemplo: `echo "hello!"`
 2.  `cat` Para mostrar el contenido de un archivo de texto, simplemente escriba `cat myfile` .
-3.  `find` hace lo que dice, y es bueno en eso. Úselo para localizar archivos por ruta, tamaño, fecha, propietario y un montón de otros filtros útiles. Ejemplo: `find . -type f -mtime -1h # Lista de archivos en este directorio modificado en la última hora` .
+3.  `find` hace lo que dice, y es bueno en eso. Úselo para localizar archivos por ruta, tamaño, fecha, propietario y un montón de otros filtros útiles. Ejemplo: `find . -type f -mtime -1h # La lista de archivos de este directorio se han modificado en la última hora` .
 4.  `date` Simplemente escriba fecha cuando desee saber qué hora es. Ejemplo: `date "+It's %l:%m%p on %A"` . Úselo en un script para nombrar archivos de acuerdo con la fecha actual.
 5.  `ls` ¿Qué hay en este directorio? Combine `ls` con algunas marcas útiles para mostrar y ordenar los contenidos del directorio por fecha y tamaño. También te da muchas opciones para formatear la salida.
 6.  `pwd` donde estoy? Linux puede ser implacable, especialmente cuando borras algo. Asegúrese de que sabe antes de emitir sus comandos.
