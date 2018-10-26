@@ -11,3 +11,9 @@ This is a stub. <a href='https://github.com/freecodecamp/guides/tree/master/src/
 
 #### More Information:
 <!-- Please add any articles you think might be helpful to read before writing the article -->
+What is Data Mining?
+  - The practice of examining large databases in order to generate new information. (Dictionary Definition)
+  - is the process of finding anomalies, patterns and correlations within large data sets to predict outcomes (SAS Definition)
+  
+Data Mining Websites:
+    -[SAS]  - (https://www.sas.com/en_us/insights/analytics/data-mining.html)
