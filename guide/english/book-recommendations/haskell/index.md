@@ -37,3 +37,9 @@ Available to buy or download for free (e-book)! This book is broken down into tw
 This book introduces you to the Haskell language without drowning you in academic jargon or heavy programming theory. It's great for beginners. It is written by Will Kurt. It is packed with focused topics, short code examples and short programs, plus numerous exercises to help stretch and strengthen your new knowledge.
 
 - [Amazon](https://www.amazon.com/Get-Programming-Haskell-Will-Kurt/dp/1617293768)
+
+#### Real world Haskell
+
+The important thing that you can learn from this book is how to think like a functional programmer by building Haskell applications.It is written by Bryan O'Sullivan, John Goerzen, and Don Stewart. It is an amazing book to learn network coding and web/desktop app development.
+
+- [Amazon](https://www.amazon.com/Real-World-Haskell-Bryan-OSullivan/dp/0596514980)
