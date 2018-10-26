@@ -11,7 +11,7 @@ CSS describes how HTML elements are to be displayed on screen or in other media.
 CSS allows for developers to control how web pages look by "styling" the HTML structure of that page.
 
 We can use CSS as in three mothods:
- 1) In1ternal CSS
+ 1) Internal CSS
  2) External CSS
  3) Inline CSS
  
@@ -23,11 +23,11 @@ You can build some pretty amazing things in CSS alone, such as this pure-CSS [Mi
 
 ![](https://cdn-images-1.medium.com/max/800/1*GFcKk9KxqHAnWa1ECcKDOQ.png)
 
-body { background-color:yellow;} this is the syntex of a CSS. In here,
+body { background-color:Yellow;} this is the Syntax of a CSS. In here,
 Body is Selector
 background-color:yellow; is declaration part.
 
-Declaration part has two values. One is Property part and other is value part. in here background-color is property part and yello is value.
+Declaration part has two values. One is Property part and other is value part. in here background-color is property part and Yellow part is value.
 
 #### Suggested Reading:
 A good start is the freeCodeCamp curriculum [Introduction to Basic CSS](https://learn.freecodecamp.org/responsive-web-design/basic-css).
@@ -45,7 +45,7 @@ For a demonstration of the power of CSS, check out [Species In Pieces](http://sp
 	<title> CSS </title>
 	<style type="text/css">
 		body {
-			background-color: yellow;
+			background-color: Yellow;
 		}
 		p {
 			font-size: 18px;
