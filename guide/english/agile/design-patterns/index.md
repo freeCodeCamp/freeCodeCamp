@@ -10,7 +10,7 @@ Object-oriented design patterns typically show relationships and interactions be
 
 Design patterns may be viewed as a structured approach to computer programming intermediate between the levels of a programming paradigm and a concrete algorithm.
 
-The book that popularised the field is Gang of Four's (GoF) **Design Patterns: Elements of Reusable Object-Oriented Software** (1994). It present a series (23) of patterns for an conventional (C++) OO language classified in three types:
+The book that has popularised the field is Gang of Four's (GoF) **Design Patterns: Elements of Reusable Object-Oriented Software** (1994). It present a series (23) of patterns for an conventional (C++) OO language classified in three types:
 * **Creational** (to create objects): abstract factory, builder, factory method, prototype, singleton.
 * **Structural** (to compose objects): adapter, bridge, composite, decorator, facade, flyweight, proxy.
 * **Behavioral** (to communicate between objects): chain of responsibility, command, interpreter, iterator, mediator, memmento, observer, state, strategy, template method, visitor.
