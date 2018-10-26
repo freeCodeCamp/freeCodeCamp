@@ -80,6 +80,6 @@ It gives output as "I am a good person", in fact I am.
 
 There is lot more to learn on State and Props. Many things can be learnt by actually diving into coding. So get your hands dirty by coding.
 
-Reach me out on [twitter](https://twitter.com/getifyJr) if needed.
+Reach me out on [twitter](https://twitter.com/_sudo_user) if needed.
 
 Happy Coding !!!
