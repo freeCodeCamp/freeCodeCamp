@@ -12,6 +12,7 @@ In the case of expansion of on-board capability, a motherboard may provide a sin
 * USB Card - provides additional USB ports of varying connector type sizes and versions (USB2.0. USB3.0, USB-C) to accomodate plug in peripherals and devices to a computer
 * RAID Controller Card - provides the ability to utilize RAID configurations with your hard drives, enabling complex disk configurations to meet specific user needs (RAID-1 for redundancy for example)
 * Sound Card - if the motherboard doesn't include basic sound capabilities (less common), a sound card can be purchased to add audio capabilities.  Another reason for using a Sound Card are more audio input options (SPDIF & Multichannel Connectors) or additional audio fidelity options that go above and beyond what basic sound capabiitlies are provided by the motherboard.
+* Network Interface Card - provides additional dedicated network ports of various versions, commonly ethernet or wifi.
 
 #### More Information:
 <!-- Please add any articles you think might be helpful to read before writing the article -->
