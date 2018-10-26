@@ -10,6 +10,10 @@ Server-side programming languages like C# and VB .NET may be used to code the ba
 
 ASP.NET offers different frameworks for creating web applications: For e.g Web Forms and ASP.NET MVC.
 
+Below is shown what architecture of ASP.NET Core archtecture looks like (the last version of framework).
+
+![alt text](https://msdnshared.blob.core.windows.net/media/2017/06/062217_2209_ThenewNETAp12.png "ASP.NET Core architecture")
+
 
 #### More Information:
 - [ASP .NET Tutorials](https://www.tutorialspoint.com/asp.net/)
