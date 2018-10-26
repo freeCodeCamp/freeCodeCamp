@@ -77,6 +77,12 @@ function Person(){
 
 var p = new Person();
 ```
+### Arrow Function have a number of advantages over other ways of declaring functions:
+- They are much less verbose than normal function declaration.
+- Single parameters don't need putting into parentheses.
+- The body of the function doesn't need placing inside a block if it's only one line.
+- The return keyword isn't required if the return statement is the only statement in the body of the function.
+- They don't bind their own value of 'this' to the function.
 
 #### Further Reading
 
