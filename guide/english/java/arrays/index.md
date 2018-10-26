@@ -4,9 +4,9 @@ title: Arrays
 
 # Array
 
-An Array is a collection of values (or objects) of similar datatypes (primitive and reference both form of datatypes are allowed) held in sequencial memory addresses.
-An Array is used to store a collection of similar data types. 
-Arrays always start with the index of 0 and are instantiated to a set number of indexes. 
+An Array is a collection of values (or objects) of similar datatypes (both primitive and reference datatypes are allowed) held in sequential memory addresses.
+An Array is a simple data structure used to store a collection of similar data types. 
+Arrays always start with an index of 0 and are instantiated to a set number of elements. 
 All the variables in the array must be of the same type, declared at instantiation.
 
 **Syntax:**
