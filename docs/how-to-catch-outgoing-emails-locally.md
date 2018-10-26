@@ -31,7 +31,7 @@ Next, you can go to [using MailHog](#using-mailhog).
 
 Download the latest MailHog version from [MailHog's official repository](https://github.com/mailhog/MailHog/releases). Click on the link for your Windows version (32 or 64 bit) and .exe file will be downloaded to your computer.
 
-Once it finishes downloading, click on the file. You will probably get a Windows firewall notification where you will have to allow access to MailHog. Once you do, a standard Windows command line prompt will open with MailHog already running.
+Once it finishes downloading, click on the file. You will probably get a Windows firewall notification where you will have to allow access to MailHog. Once you do that, a standard Windows command line prompt will open with MailHog already running.
 
 To close MailHog, close the command prompt. To run it again, click on the same .exe file. You don't need to download a new one.
 
