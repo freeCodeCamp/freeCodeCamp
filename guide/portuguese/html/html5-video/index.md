@@ -4,7 +4,7 @@ localeTitle: Vídeo em HTML5
 ---
 ## Vídeo em HTML5
 
-Antes do HTML5, para que um vídeo fosse reproduzido em uma página da Web, você precisaria usar um plug-in, como o Adobe Flash Player. Com a introdução do HTML5, você pode agora colocá-lo diretamente na própria página. O HTML tag é usada para incorporar vídeo em documentos da web. Pode conter uma ou mais origens de vídeo, representadas usando o atributo src ou o elemento de [origem](source) .
+Antes do HTML5, para que um vídeo fosse reproduzido em uma página da Web, você precisava utilizar um plug-in, como o Adobe Flash Player. Com a introdução do HTML5, você pode agora colocá-lo diretamente na própria página. O HTML tag é usado para incorporar um vídeo em documentos da web. Pode conter uma ou mais origens de vídeo, utlizando o atributo src ou o elemento de [origem](source) .
 
 Para incorporar o arquivo de vídeo à página da Web, basta adicionar este snippet de código e alterar o src do arquivo de áudio.
 
