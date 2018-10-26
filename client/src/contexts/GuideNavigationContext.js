@@ -1,6 +1,5 @@
 import React, { PureComponent, createContext } from 'react';
 import PropTypes from 'prop-types';
-import Media from 'react-media';
 
 const noop = () => {};
 

@@ -1,5 +1,5 @@
 ---
-title:Switch Statement
+title: Switch Statement
 localeTitle: undefined
 ---
 switch语句允许测试变量与值列表的相等性。每个值都称为一个案例，并且针对每种情况检查要打开的变量。

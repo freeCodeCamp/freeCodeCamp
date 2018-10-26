@@ -18,6 +18,25 @@ const arr_2 = [5, 6, 7, 8]
 const arr_final = [...arr_1, ...arr_2]
 // arr_final = [1, 2, 3, 4, 5, 6, 7, 8]
 ```
+
+The spread operator can also copy enumerable properties from one or more objects onto a new object:
+```javascript
+const obj1 = {
+  a: 1,
+  b: 2,
+  c: 3
+};
+
+const obj2 = {
+  d: 4,  
+  e: 5,
+  f: 6
+};
+
+const newObj = {...obj1, ...obj2);
+
+// newObj = { a: 1, b: 2, c: 3, d: 4, e: 5, f: 6 }
+```
 ### More Information:
 
 - [MDN - Spread Syntax](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Spread_syntax)
