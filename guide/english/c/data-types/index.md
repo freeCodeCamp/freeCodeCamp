@@ -42,7 +42,7 @@ The `long long` data type is overkill for just about every application, but C wi
 
 #### Getting a wider range of doubles: `long double`
 `long double` takes at least 80 bits. As a result, we can get 19 decimal places from 3.4E-4932 to 1.1E+4932.
-
+my changes
 ## Picking the right data type
 C makes pick the data type, and makes us be very specific and intentional about the way that we do this. This gives you a lot of power over your code, but it's important to pick the right one.
 
