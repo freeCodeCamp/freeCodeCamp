@@ -45,3 +45,5 @@ The arguments used to call a function cannot be reassigned by the function, but 
     >>> fn(a)
     >>> a
     [1, 2, 3, 1]
+    
+Functions are a great tool to reuse your code that needs to be executed frequently. It helps shorten your code to make it look cleaner, and easy to navigate. For example, a calculator requires functions to add, subtract, multipy, and divide, which need to be executed many time. So we just write a function for each of the four tasks, and simply call them whenever needed.
