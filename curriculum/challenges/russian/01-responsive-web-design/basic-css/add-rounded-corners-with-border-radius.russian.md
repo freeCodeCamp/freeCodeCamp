@@ -4,24 +4,24 @@ title: Add Rounded Corners with border-radius
 challengeType: 0
 guideUrl: 'https://russian.freecodecamp.org/guide/certificates/add-rounded-corners-a-border-radius'
 videoUrl: ''
-localeTitle: Добавить закругленные углы с граничным радиусом
+localeTitle: Скругление углов с помощью свойства border-radius.
 ---
 
 ## Description
-<section id="description"> Ваша фотография кошки в настоящее время имеет острые углы. Мы можем округлить эти углы с помощью CSS-свойства, называемого <code>border-radius</code> . </section>
+<section id="description"> Ваша фотография кошки в настоящее время имеет острые углы. Мы можем округлить эти углы с помощью CSS-свойства - <code>border-radius</code> . </section>
 
 ## Instructions
-<section id="instructions"> Вы можете указать <code>border-radius</code> с пикселями. Дайте вашей фотографии кошки <code>border-radius</code> <code>10px</code> . Примечание: эта задача позволяет использовать несколько возможных решений. Например, вы можете добавить <code>border-radius</code> для <code>.thick-green-border</code> или класса <code>.smaller-image</code> . </section>
+<section id="instructions"> Вы можете указать <code>border-radius</code> в пикселях. Добавьте к вашей фотографии кошки свойство <code>border-radius:</code> <code>10px</code> . Примечание: эта задача позволяет использовать несколько возможных решений. Например, вы можете добавить <code>border-radius</code> для класса<code>.thick-green-border</code> или класса<code>.smaller-image</code> . </section>
 
 ## Tests
 <section id='tests'>
 
 ```yml
 tests:
-  - text: Элемент изображения должен иметь класс «толсто-зеленая граница».
-    testString: 'assert($("img").hasClass("thick-green-border"), "Your image element should have the class "thick-green-border".");'
+  - text: Ваше изображение должно иметь класс «thick-green-border».
+    testString: 'assert($("img").hasClass("thick-green-border"), "Ваше изображение должно иметь класс «thick-green-border»");'
   - text: Ваше изображение должно иметь радиус границы <code>10px</code>
-    testString: 'assert(parseInt($("img").css("border-top-left-radius")) > 8, "Your image should have a border radius of <code>10px</code>");'
+    testString: 'assert(parseInt($("img").css("border-top-left-radius")) > 8, "Ваше изображение должно иметь радиус границы <code>10px</code>");'
 
 ```
 
