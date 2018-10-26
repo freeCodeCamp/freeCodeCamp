@@ -13,8 +13,8 @@ O SQL é um padrão internacional (ISO), mas você encontrará muitas diferença
 ### O que vamos cobrir
 
 *   Use (define qual banco de dados a instrução usará)
-*   Selecionar e cláusulas
-*   Onde Cláusula (e / ou, IN, Entre, LIKE)
+*   Select e cláusulas
+*   Cláusula Where (e / ou, IN, Entre, LIKE)
 *   Ordenar por (ASC, DESC)
 *   Agrupar por e tendo
 
@@ -26,7 +26,7 @@ Isso é usado para selecionar o banco de dados que contém as tabelas para suas 
 use fcc_sql_guides_database; -- select the guide sample database 
 ```
 
-### Selecionar e cláusulas
+### Cláusulas Selecionar (select)
 
 A parte Select é normalmente usada para determinar quais colunas dos dados você deseja mostrar nos resultados. Há também opções que você pode usar para mostrar dados que não são uma coluna da tabela.
 
@@ -39,7 +39,7 @@ Este exemplo mostra duas colunas selecionadas da tabela "student" e duas colunas
 
 ![image-1](https://github.com/SteveChevalier/guide-images/blob/master/syntax01.JPG)
 
-### Onde Cláusula (e / ou, IN, Entre e LIKE)
+### Cláusula Onde (e / ou, IN, Entre e LIKE)
 
 A cláusula WHERE é usada para limitar o número de linhas retornadas.
 
@@ -84,7 +84,7 @@ Order By nos dá uma maneira de classificar o conjunto de resultados por um ou m
 
 ![image-1](https://github.com/SteveChevalier/guide-images/blob/master/syntax03.JPG)
 
-### Agrupar por e ter
+### Agrupamaneto (Group By)
 
 O Group By nos dá uma maneira de combinar linhas e agregar dados. A cláusula Having é como a cláusula Where acima, exceto que ela age nos dados agrupados.
 
