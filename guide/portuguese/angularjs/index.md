@@ -11,21 +11,22 @@ Ele reduz o uso repetitivo de código HTML. Esta repetição pode ser evitada us
 
 npm:
 
-\`\` \`shell npm instalar angular
+```shell 
+npm install angular
 ```
-HTML: 
+HTML:
+
+```html
+<script src="/node_modules/angular/angular.js"></script>
 ```
 
-html
-```
-bower: 
-```
+bower:
 
-Concha bower instalar angular
+```shell
+bower install angular
 ```
-HTML: 
+HTML:
+
+```html
+<script src="/bower_components/angular/angular.js"></script>
 ```
-
-html
-
-\`\` \`
