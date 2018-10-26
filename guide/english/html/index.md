@@ -4,9 +4,13 @@ title: HTML
 
 # HTML
 
-HyperText Markup Language (HTML) is a markup language used to construct online documents and is the foundation of most websites today. A markup language like HTML allows us to 1) create links to other documents, 2) structure the content in our document, and 3) ascribe context and meaning to the content of our document.
+HyperText Markup Language (HTML) is a markup language used to construct online documents and is the foundation of most websites today. A markup language like HTML allows us to do so many things, like these:
+
+1) Create links to other documents 
+2) Structure the content in our document 
+3) Ascribe context and meaning to the content of our document.
  
-An HTML document has two aspects to it. It contains structured information (Markup), and text-links (HyperText) to other documents. We structure our pages using [HTML elements](#). They are constructs of the language providing [structure](#) and [meaning](#) in our document for the browser and the [<anchor>](#) element links to other documents across the internet.
+An HTML document has two aspects to it. It contains structured information (Markup), and text-links (HyperText) to other documents. We structure our pages using [HTML elements](#). They are constructs of the language providing [structure](#) and [meaning](#) in our document for the browser. The [<anchor>](#) element links to other documents across the internet and is also one of those constructs.
  
 The internet was originally created to store and present static (unchanging) documents. The aspects of HTML discussed above were seen perfectly in these documents which lacked all design and styling. They presented structured information that contained links to other documents.
  
@@ -17,7 +21,7 @@ HTML5 Introduces a host of semantic elements. Though we discussed HTML helped to
 ## A simple example of HTML Document
 
 ```html
-<!DOCTYPE html>
+<!DOCTYPE HTML>
 <html>
 <head>
   <title>Page Title</title>
@@ -31,9 +35,9 @@ HTML5 Introduces a host of semantic elements. Though we discussed HTML helped to
 </html>
 ```
 
-!DOCTYPE html: Defines this document to be HTML5
+!DOCTYPE HTML: Defines this document to be HTML5
 
-html: The root element of an HTML page
+HTML: The root element of an HTML page
 
 head: The element contains meta information about the document
 
