@@ -196,3 +196,13 @@ Nos artigos subseqüentes, abordarei vários tópicos mais importantes. Várias 
 *   Existe uma maneira para eu escrever conteúdo apenas leitores de tela e outras tecnologias assistivas vêem?
 *   Como posso tornar os componentes JavaScript personalizados acessíveis?
 *   Quais ferramentas existem, além de testes de usuário inclusivos, que podem ser usadas para desenvolver a experiência mais robusta e acessível para o maior grupo de usuários?
+
+#### More information:
+
+Na minha experiencia, primeiro como usuário e ultimamente como desenvolvedor, tenho beneficiado da accessibilidade à medida que consumo uma variedade de conteúdos em vários formatos. Eu vejo o tema da accessibilidade das duas perspectivas.
+Imagino que você esteja em uma das 3 categorias abaixo:
+
+Você se considera um desenvolvedor web principiante e gostaria de saber mais sobre acessibilidade
+Você se considera um desenvolvedor web experiente que precisa de esclarecimento sobre o propósito e uso da acessibilidade (Voltamos à este tema mais tarde)
+Você imagina que existe uma obrigação implícita no ambiente trabalhista e almeja aprender mais sobre o tema da acessibilidade.
+
