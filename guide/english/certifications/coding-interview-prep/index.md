@@ -1,7 +1,7 @@
 ---
-title: Coding Interview Prep
+title: Coding Interview Preparation
 ---
-## Coding Interview Prep
+## Coding Interview Preparation
 
 This is a stub. <a href='https://github.com/freecodecamp/guides/tree/master/src/pages/mathematics/quadratic-equations/index.md' target='_blank' rel='nofollow'>Help our community expand it</a>.
 
