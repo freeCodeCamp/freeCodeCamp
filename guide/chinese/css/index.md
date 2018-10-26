@@ -10,6 +10,8 @@ CSS允许开发人员通过“设计”该页面的HTML结构来控制网页的�
 
 CSS规范由[万维网联盟（W3C）](https://www.w3.org/)维护。
 
+目前CSS3已被大部分现代浏览器支持，而下一版的CSS4仍在开发中。
+
 你可以在CSS中构建一些非常神奇的东西，例如这个纯CSS [扫雷游戏](https://codepen.io/bali_balo/pen/BLJONk) （它不使用JavaScript）。
 
 ![](https://cdn-images-1.medium.com/max/800/1*GFcKk9KxqHAnWa1ECcKDOQ.png)
