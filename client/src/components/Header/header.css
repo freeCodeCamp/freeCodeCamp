@@ -17,12 +17,6 @@ header {
   padding: 0 30px 0 15px;
 }
 
-@media screen, (max-width: 630px) {
-  #top-nav {
-    padding: 0;
-  }
-}
-
 #top-nav .home-link {
   display: flex;
   align-items: center;
@@ -92,4 +86,22 @@ header {
 }
 .ais-Hits {
   background-color: #fff;
+}
+
+@media (max-width: 630px) {
+  header {
+    height: 73px;
+    background-color: #87b787;
+  }
+
+  .fcc_searchBar {
+    padding: 3px 45px 0 15px;
+    position: absolute;
+    top: 36px;
+    width: 100%;
+  }
+
+  .app-wrapper {
+    margin-top: 73px;
+  }
 }
