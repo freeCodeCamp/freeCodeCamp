@@ -42,6 +42,8 @@ tesla.start();
 tesla.stop();
 ```
 
+Note that all Java classes inherit from the java Object class (no need to explicitly declare "extends Object").
+
 ![:rocket:](//forum.freecodecamp.com/images/emoji/emoji_one/rocket.png?v=2 ":rocket:") <a href='https://repl.it/CJXz/0' target='_blank' rel='nofollow'>Run Code</a>
 
 But, does the parent class have the methods of the child? No, it doesn't.
