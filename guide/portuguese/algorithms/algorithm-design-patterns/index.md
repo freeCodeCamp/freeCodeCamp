@@ -24,4 +24,4 @@ Estes são padrões de design que identificam padrões comuns de comunicação e
 
 #### Mais Informações:
 
-[Padrões de design - Wikipedia](https://en.wikipedia.org/wiki/Design_Patterns)
+[Padrões de design - Wikipedia](https://en.wikipedia.org/wiki/Design_Patterns);
