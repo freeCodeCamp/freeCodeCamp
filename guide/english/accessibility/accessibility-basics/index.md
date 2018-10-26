@@ -47,7 +47,7 @@ You may think that accessibility doesn't apply to you or to your users, so why i
 
 The truth is, you're right to a certain degree. If you have done meticulous user research and have excluded any chance of a certain group of people visiting your website, the priority for catering to that group of people diminishes quite a bit.
 
-However, doing this research is key in actually defending such a statement. Did you know there were <a href='http://audiogames.net' target='_blank' rel='nofollow'>blind gamers?</a> and even <a href='http://peteeckert.com/' target='_blank' rel='nofollow'>blind photographers?</a>. Perhaps you knew <a href='http://mentalfloss.com/article/25750/roll-over-beethoven-6-modern-deaf-musicians' target='_blank' rel='nofollow'>musicians can be deaf</a>?
+However, doing this research is key in actually defending such a statement. Did you know there were <a href='http://audiogames.net' target='_blank' rel='nofollow'>blind gamers?</a> and even <a href='http://peteeckert.com/' target='_blank' rel='nofollow'>blind photographers?</a> Perhaps you knew <a href='http://mentalfloss.com/article/25750/roll-over-beethoven-6-modern-deaf-musicians' target='_blank' rel='nofollow'>musicians can be deaf</a>?
 
 If you did, good for you. If not, I guess this drives my point home all the more.
 
@@ -61,7 +61,7 @@ There's variations on this legislation all over the world, some more severe and 
 
 That question, sadly, is harder to answer than it may seem. The Harry Potter quote at the top is there for a reason, and it's not my being an avid Fantasy reader.
 
-As I stated above, accessibility is important for a large group of different people, each with their own needs. Making your website work for literally everyone is a large, on-going task.
+As I stated above, accessibility is important for a large group of different people, each with their own needs. Making your website work for literally everyone is a large, ongoing task.
 
 To bring a bit of a method to the madness, the Web Content Accessibility Guidelines or <a href='https://www.wuhcag.com/web-content-accessibility-guidelines/' target='_blank' rel='nofollow'>WCAG</a> were composed. This document contains a number of criteria you can use to check your website. For now, I will cover some of the most important basics here. I will point you at the low-hanging fruits, so to speak. In subsequent articles, I will discuss more advanced techniques like [WAI-ARIA] which is important for JavaScript-based apps.
 
@@ -75,7 +75,7 @@ The HTML specification is a document that describes how the language should be u
 
     <span class="clickable-with-JavaScript">English</span>
 ```
-Guess what? All three of these elements break several criteria of WCAG and therefore are not accessible at all.
+Guess what? All three of these elements break several criteria of WCAG and therefore are not accessible at all. These approaches are often referred to as "anti-patterns" [learn more here](https://medium.com/ft-product-technology/an-outbreak-of-accessibility-anti-patterns-e73577242ee8) when addressing accessibility. "An anti-pattern is “a common response to a recurring problem that is usually ineffective and risks being highly counterproductive” [Wikipedia](https://en.wikipedia.org/wiki/Anti-pattern).
 
 The first element breaks the so-called 'name, role, value'-criterium, which states that all elements on a web page should expose their name, their role (like button) and their value (like the contents of an edit field) to assistive technologies. This div actually doesn't provide any of the three, rendering it invisible to screen-readers.
 
