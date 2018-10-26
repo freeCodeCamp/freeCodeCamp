@@ -3,7 +3,7 @@ title: Passing pointers to funtions
 ---
 
 # Passing pointers to funtions
-C allows passing a pointer to a function. To achieve this, simply declare the parameters as pointer type.
+C allows the passing a pointer to a function. To achieve this, simply declare the parameters as pointer type.
 This way of passing references to functions is useful when you want to modify variables that are out of the scope of that function.
 
 ```C
@@ -40,4 +40,4 @@ int main(){
     printf("Value of var2: %d \n", var2); // prints 10
 }
 ```
-In the second code example you were able to change the values of the variables only because you were constantly de-referencing a pointer within the function instead of trying to change the values directly
+In the second code example, you were able to change the values of the variables only because you were constantly de-referencing a pointer within the function instead of trying to change the values directly.
