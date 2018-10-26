@@ -35,6 +35,6 @@ The `all()` operation is equivalent to (not internally implemented exactly like 
     print(all([9, 8, {}])) #=> False  # Because it has {}
     print(all([9, 8, {'engine': 'Gcloud'}])) #=> True
 
-![:rocket:](//forum.freecodecamp.com/images/emoji/emoji_one/rocket.png?v=2 ":rocket:") <a href='https://repl.it/CL9U/0' target='_blank' rel='nofollow'>Run Code</a>
+<a href='https://repl.it/CL9U/0' target='_blank' rel='nofollow'>:rocket: Run Code</a>
 
 <a href='https://docs.python.org/3/library/functions.html#all' target='_blank' rel='nofollow'>Official Docs</a>
