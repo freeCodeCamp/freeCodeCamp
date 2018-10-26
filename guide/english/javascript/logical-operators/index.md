@@ -4,7 +4,7 @@ title: Logical Operators
 
 # Logical Operators
 
-Logical operators compare Boolean values and return a Boolean response. There are two types of logical operators - Logical AND, and Logical OR. These operators are often written as && for AND, and || for OR.
+Logical operators compare Boolean values and return a Boolean response. There are two types of logical operators - Logical AND and Logical OR. These operators are often written as && for AND, and || for OR.
 
 #### Logical AND ( && )
 
@@ -24,7 +24,7 @@ undefined && 'abc' //returns the first value, undefined
 
 #### Logical OR ( || )
 
-The OR operator compares two expressions. If the first evaluates as "falsy", the statement will return the value of the second second expression. If the first evaluates as "truthy", the statement will return the value of the first expression.
+The OR operator compares two expressions. If the first evaluates as "falsy", the statement will return the value of the second expression. If the first evaluates as "truthy", the statement will return the value of the first expression.
 
 When only involving boolean values (either `true` or `false`), it returns true if either expression is true. Both expressions can be true, but only one is needed to get true as a result.
 ```js
