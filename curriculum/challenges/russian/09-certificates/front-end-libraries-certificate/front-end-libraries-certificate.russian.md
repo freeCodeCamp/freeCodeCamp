@@ -4,18 +4,18 @@ title: Front End Libraries Certificate
 challengeType: 7
 isPrivate: true
 videoUrl: ''
-localeTitle: Сертификат библиотек лицеев
+localeTitle: Сертификат Front-End
 ---
 
-## Description
+## Описание
 <section id="description">
 </section>
 
-## Instructions
+## Инструкции
 <section id="instructions">
 </section>
 
-## Tests
+## Тесты
 <section id='tests'>
 
 ```yml
@@ -35,15 +35,15 @@ tests:
 
 </section>
 
-## Challenge Seed
+## Задача
 <section id='challengeSeed'>
 
 </section>
 
-## Solution
+## Решение
 <section id='solution'>
 
 ```js
-// solution required
+// требуемое решение
 ```
 </section>
