@@ -13,3 +13,4 @@ Joomla! is written in object-oriented programming (OOP) PHP. It can store data i
 [Joomla Documentation: online collaborative community manual](https://docs.joomla.org/)
 
 [Joomla! Developers Portal](https://docs.joomla.org/Portal:Developers)
+My changes
