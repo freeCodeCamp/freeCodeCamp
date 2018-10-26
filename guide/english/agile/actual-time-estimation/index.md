@@ -35,6 +35,10 @@ Generally, these estimates are calculated using ideal engineering hours.
 
 Examples: 
 
+**This task will be complete in 4 hours.**
+
+Or… 
+
 **This task will be complete in 10 days.**
 
 Or… 
