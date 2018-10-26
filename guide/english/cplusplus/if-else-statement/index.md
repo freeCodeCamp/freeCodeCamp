@@ -185,8 +185,25 @@ Number 2 is greater.
 
 * The size of the if...else if...else ladder may vary depending on the problem the program is trying to solve and the number of conditions that need to be checked.
 
+* The same work can be done with the 'switch' command in cpp.
+
+
+To check multiple Statements Within the same 'if' command, following operators are used - 
+* && -And operator.
+* || -Or operator.
+
+For 'and' operator _ if(statement_1 && statement_2){expression_1;} - The sytem checks both conditions and executes exp_1 if both the conditions are met. 
+For 'Or' Operator _ if(statement_1 && statement_2){expression_2;} - The system checks both conditions and executes exp_2 if either of the conditions are fulfilled.
+
+Any number of conditions can be written using proper use of && and || operators.
+
+
+
 **Good Luck to all of you** 
 
 **Happy Coding ! :)**
 
+** To learn more about the switch command visit (http://www.cplusplus.com/doc/tutorial/control/)
+
  **Feel free to ask any queries on freeCodeCamp.org's GitHub page or [the freeCodeCamp.org Forum](https://forum.freecodecamp.org/)**.
+
