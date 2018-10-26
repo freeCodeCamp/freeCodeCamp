@@ -7,7 +7,7 @@ localeTitle: Добавить два номера с JavaScript
 ---
 
 ## Description
-<section id="description"> <code>Number</code> - это тип данных в JavaScript, который представляет числовые данные. Теперь попробуем добавить два числа, используя JavaScript. JavaScript использует символ <code>+</code> качестве операции добавления при размещении между двумя числами. <strong>пример</strong> <blockquote> myVar = 5 + 10; // присвоено 15 </blockquote></section>
+<section id="description"> <code>Number</code> - это тип данных в JavaScript, который представляет числовые данные. Теперь попробуем добавить два числа, используя JavaScript. JavaScript использует символ <code>+</code> качестве операции сложения при размещении между двумя числами. <strong>Пример</strong> <blockquote> myVar = 5 + 10; // переменной <code>myVar</code> присвоено число 15 </blockquote></section>
 
 ## Instructions
 <section id="instructions"> Измените <code>0</code> так, чтобы сумма равнялась <code>20</code> . </section>
@@ -43,7 +43,7 @@ var sum = 10 + 0;
 <div id='js-teardown'>
 
 ```js
-console.info('after the test');
+(function(z){return 'sum = '+z;})(sum);
 ```
 
 </div>
@@ -54,6 +54,6 @@ console.info('after the test');
 <section id='solution'>
 
 ```js
-// solution required
+var sum = 10 + 10;
 ```
 </section>
