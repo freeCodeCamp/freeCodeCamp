@@ -82,7 +82,7 @@ Since ArrayList implements *List*, an ArrayList can be created using the followi
   
   An ArrayList allows us to randomly access elements. ArrayList is similar to *Vector* in a lot of ways. But it is faster than Vectors. The main thing to note is that - Vectors are faster than arrays but ArrayLists are not. 
   
-  So when it comes down to choosing between the two - if speed is critical then Vectors should be considered, otherwise ArrayLists are better when it comes to storing large number of elements and accessing them efficiently.
+  So when it comes down to choosing between the two - if speed is critical then Vectors should be considered for a small set of items, otherwise ArrayLists are better when it comes to storing large number of elements and accessing them efficiently. Vectors are synchronized and arraylist are not, thats why choose vector for frequent update of elements otherwise Arraylist is efficient for traversing.
 
 ## More Information
 - [ArrayList Documentation](https://docs.oracle.com/javase/8/docs/api/java/util/ArrayList.html)
