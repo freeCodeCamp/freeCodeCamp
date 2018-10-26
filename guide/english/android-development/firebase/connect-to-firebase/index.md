@@ -3,12 +3,12 @@ title: connecting-to-firebase
 ---
 
 # Prerequisites
-1. The Latest Version of Android Studio
+The Latest Version of Android Studio
 
 <br>
 The easiest way to connect to firebase is to use the firebase assistant. 
 
-# 1. Connecting using Firebase Assistant
+# Connecting using Firebase Assistant
 
 1. Create an account in the [Firebase Console](https://console.firebase.google.com).
 Click add project to add your Android Studio project to it. 
