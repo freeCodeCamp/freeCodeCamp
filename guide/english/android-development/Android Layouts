@@ -1,0 +1,9 @@
+Android is proving diferent layouts like
+1. Linear Layout :
+- Linear Layout is a viewgroup which is arrange all the child elements in a single direction that is Vertically or Horizontally.
+- We can specify layout direction by using android:orientation attribute
+
+2. Relative Layout :
+- It is a viewgroup which displays the child elements in related postition. The position of each view can be specifies as relative to sibling 
+  elements such as left or below or right or above
+- It is a most flexible layout to arrange elements
