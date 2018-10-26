@@ -2,7 +2,7 @@
 title: Appendix
 ---
 # C: An Appendix
-Because C is such a low-level language, there are a lot of terms that come up that aren't found in a lot of other languages. Here's an appendix to making understanding them easier.
+Because C is such a low-level language(not lower than machine code), there are a lot of terms that come up that aren't found in a lot of other languages. Here's an appendix to making understanding them easier.
 
 ## Compilation
 The compilation is the process of taking the human-readable code and turning it into machine-readable code. This process is performed by a compiler.
