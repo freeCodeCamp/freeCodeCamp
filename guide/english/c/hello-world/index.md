@@ -29,3 +29,11 @@ To write on console you can use the function `printf()` contained in the library
  ```
  >hello, world
  ```
+## some fun simple programming code in c
+#include <stdio.h>
+
+int main()
+{
+printf("Cannot stop: Bad mood error.");
+return(0);
+}
