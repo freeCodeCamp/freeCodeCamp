@@ -3,14 +3,48 @@ id: 5690307fddb111c6084545d7
 title: Logical Order in If Else Statements
 challengeType: 1
 videoUrl: ''
-localeTitle: ''
+localeTitle: 'ترتيب منطقي في عبارات If Else'
 ---
 
 ## Description
-undefined
+<section id="description"> الترتيب مهم في عبارات <code>if</code>, <code>else if</code> 
+
+يتم تنفيذ الوظيفة من أعلى إلى أسفل لذا يجب أن تكون حذراً من العبارة التي تأتي أولاً.
+
+خذ هاتين الوظيفتين كمثال.
+
+ها هي الأولى:
+
+<code>function foo(x) {
+  if (x < 1) {
+    return "Less than one";
+  } else if (x < 2) {
+    return "Less than two";
+  } else {
+    return "Greater than or equal to two";
+  }
+}</code>
+
+والثاني يغير ترتيب العبارات:
+
+<code>function bar(x) {
+  if (x < 2) {
+    return "Less than two";
+  } else if (x < 1) {
+    return "Less than one";
+  } else {
+    return "Greater than or equal to two";
+  }
+}</code>
+
+في حين أن هاتين الوظيفتين تبدو متطابقة تقريبًا إذا وضعنا رقمًا لكليهما نحصل على نتائج مختلفة.
+
+<code>foo(0) // "Less than one"
+bar(0) // "Less than two"</code>
+</section>
 
 ## Instructions
-undefined
+<section id="instructions">قم بتغيير ترتيب المنطق في الوظيفة بحيث سيعود البيانات الصحيحة في جميع الحالات.</section>
 
 ## Tests
 <section id='tests'>
