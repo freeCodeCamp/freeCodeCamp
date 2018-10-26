@@ -7,18 +7,18 @@ localeTitle: Изменение размера шрифта элемента
 ---
 
 ## Description
-<section id="description"> Размер шрифта контролируется свойством CSS <code>font-size</code> , например: <blockquote> h1 { <br> размер шрифта: 30 пикселей; <br> } </blockquote></section>
+<section id="description"> Размер шрифта контролируется свойством CSS <code>font-size</code> , например: <blockquote> h1 { <br> font-size: 30px; <br> } </blockquote></section>
 
 ## Instructions
-<section id="instructions"> Внутри же <code>&lt;style&gt;</code> тег , который содержит ваш <code>red-text</code> класса, создать запись для <code>p</code> элементов и установить <code>font-size</code> 16 пикселей ( <code>16px</code> ). </section>
+<section id="instructions"> Внутри <code>&lt;style&gt;</code> после класса<code>red-text</code> добавьте запись для <code>p</code> элементов и установите <code>font-size</code> 16 пикселей ( <code>16px</code> ). </section>
 
 ## Tests
 <section id='tests'>
 
 ```yml
 tests:
-  - text: Между тегами <code>style</code> дайте <code>p</code> элементам <code>font-size</code> <code>16px</code> . Увеличение браузера и текста должно составлять 100%.
-    testString: 'assert(code.match(/p\s*{\s*font-size\s*:\s*16\s*px\s*;\s*}/i), "Between the <code>style</code> tags, give the <code>p</code> elements <code>font-size</code> of <code>16px</code>. Browser and Text zoom should be at 100%.");'
+  - text: Между тегами <code>style</code> добавьте <code>p</code> элементам <code>font-size</code> <code>16px</code> . Увеличение браузера и текста должно составлять 100%.
+    testString: 'assert(code.match(/p\s*{\s*font-size\s*:\s*16\s*px\s*;\s*}/i), "Между тегами <code>style</code> добавьте <code>p</code> элементам <code>font-size</code> <code>16px</code> . Увеличение браузера и текста должно составлять 100%.");'
 
 ```
 
