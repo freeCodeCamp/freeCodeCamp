@@ -4,9 +4,9 @@ localeTitle: Critérios de aceitação
 ---
 ## Critérios de aceitação
 
-A História do usuário, como um item em sua lista de pendências, é um marcador de posição para uma conversa. Nesta conversa, o Product Owner e a Delivery Team chegam a um entendimento sobre o resultado desejado.
+A História do usuário, como um item em sua lista de pendências, é um marcador de posição para uma conversa. Nesta conversa, o Product Owner (PO) e o time de desenvolvimento (Equipe de Entrega) chegam a um entendimento sobre o resultado desejado.
 
-Os Critérios de Aceitação informam à Equipe de Entrega como o código deve se comportar. Evite escrever o **"como"** da história do usuário; mantenha o **"o que"** . Se a equipe estiver seguindo o TDD (Test Driven Development), ela poderá fornecer a estrutura para os testes automatizados. Os Critérios de Aceitação serão o início do plano de teste para a equipe de QA.
+Os critérios de aceitação informam à equipe de entrega como o código deve se comportar. Evite escrever o **"como"** da história do usuário; mantenha o **"o que"** . Se a equipe estiver seguindo o TDD (Test Driven Development), ela poderá fornecer a estrutura para os testes automatizados. Os Critérios de Aceitação serão o início do plano de teste para a equipe de QA.
 
 Mais importante ainda, se a história não atender a cada um dos Critérios de aceitação, o Product Owner não deve aceitar a história no final da iteração.
 
