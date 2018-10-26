@@ -14,20 +14,20 @@ Each member offers an alternative perspective to the problem and potential solut
 
 ### Common Goal
 
-* Better for the team , better for the individual
+* Better for the team, better for the individual
 
-* improve co-ordination and integration
+* improve coordination and integration
 
 * work across organizational boundaries
 
-* improve efficiency of the team by increasing productivity
+* improve the efficiency of the team by increasing productivity
 
 * Achieve customer satisfaction by working toward the same goal
 
 Some researchers have viewed cross-functional interactions as cooperative or competitive in nature, while others have argued that organization’s functional areas are often forced to compete and cooperate simultaneously with one another (“coopetition”) and it is critical to understand how these complex relationships interplay and affect firm performance.
 
 ### Cross Functional Team Skill Composition
-One common challenge of composing Cross Functional Teams is the thought that every technical member on the team is required to have all the technical skills necessary to perform any of the work. It helps that team members can perform more than one technical skill but it is still okay to have specialists. It is just best when not all members of the team are specialists.   
+One common challenge of composing Cross-Functional Teams is the thought that every technical member on the team is required to have all the technical skills necessary to perform any of the work. It helps that team members can perform more than one technical skill but it is still okay to have specialists. It is just best when not all members of the team are specialists.   
 
 #### More Information:
 
