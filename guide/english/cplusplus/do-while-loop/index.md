@@ -39,3 +39,7 @@ Do something first and then test if we have to continue. The result is that the 
 		return 0;
 	}
 ```
+The DO-While loop is typically used when - 
+* We need input from the user. (When atleast one input is needed, and thereby running the loop according to the input).
+* Diplaying results of a match. (if the game is over then we need te output atleast once). 
+* Automated Algorithms for file checking and bug fixing.
