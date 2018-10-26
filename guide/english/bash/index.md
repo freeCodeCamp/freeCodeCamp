@@ -29,7 +29,9 @@ As you can see, we used the echo command to print the string "Hello world!" to t
 
 ## Writing a bash script 
 
-You can also put all of your bash commands into a .sh file, and run them from the command line. Say you had a bash script with the following contents:
+You can also put all of your bash commands into a .sh file, and run them from the command line. 
+(To do this, you can use the built-in editor command: mcedit <scriptname>.sh)
+Say you had a bash script with the following contents:
 
 ```
 #!/bin/bash
