@@ -33,5 +33,7 @@ When you divide 2 out of -10 you're left with -5.
 
 <img alt='x^6y^5 + xy = xy(x^5y^4 + 1)' src="https://github.com/codersc/freeCodeCamp-article-images/blob/master/art6img7.png?raw=true">
 
+NOT xy(x^5y^4) + 1  OR  xy(x^5y^4) 
+
 When factoring, often times you'll end up with a division that results in 1. Make sure to include it in
 the parentheses.
