@@ -39,3 +39,7 @@ Not all motherboards or CPUs can handle ECC memory; however, it also is rarely a
 * [DDR4 SDRAM](https://en.wikipedia.org/wiki/DDR4_SDRAM)
 * [Types of RAM](http://www.computermemoryupgrade.net/types-of-computer-memory-common-uses.html)
 * [Laptop Memory Buyer's Guide](https://www.lifewire.com/laptop-memory-buyers-guide-833024)
+
+What is the lates RAM?
+Recently people arugue about which RAM is the lates, but i think DDR4 is not only the lates but it is the most powerfull
+DDR4 RAM, which is short for "double data rate fourth generation random access memory", is the latest internal computing update engineered to boost performance. This memory upgrade promises faster, more efficient performance. DDR4 technology has two predecessors, DDR3 and DDR2.
