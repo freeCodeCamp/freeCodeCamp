@@ -74,8 +74,7 @@ Interactive mode has a prompt where Python commands can be entered and run:
     $
 
 ## The Zen of Python
-
-Some of the principles that influenced the design of Python are included as an Easter egg and can be read by using the command inside Python interpreter interactive mode:
+The principles that influenced the design of Python are included as an Easter egg, and can be read by using the command inside Python interpreter interactive mode:
 
     >>> import this
     The Zen of Python, by Tim Peters
@@ -157,19 +156,7 @@ The `objects` parameter is prefixed with a `*` which indicates that the function
 ## Things you can do with python
 As stated python is a general purpose language. You can use it to do anything you like but one of the major uses of python is in machine learning and artificial intelligence. It is also a popular language in web development with some amazing frameworks like [Django](https://www.djangoproject.com/) and [flask](http://flask.pocoo.org/). It is also a popular scripting language. With its easy to read syntax it is becoming one the most popular programming languages growing rapidly in different fields.
 
-## Want to learn more?
-
-Free Code Camp has some great resources. The web is a big place, there's plenty more to explore:
-* Python Practice Book: http://anandology.com/python-practice-book/index.html
-* Think Python: http://greenteapress.com/thinkpython/html/index.html
-* Practical Business Python: http://pbpython.com/
-* Another course: https://realpython.com/?utm_source=fsp&utm_medium=promo&utm_campaign=bestresources
-* General: https://www.fullstackpython.com/
-* Learn the Basics: https://www.codecademy.com/learn/learn-python
-* Computer science using Python: https://www.edx.org/course/introduction-computer-science-mitx-6-00-1x-11?ref=hackernoon#!
-* Another computer science course using Python: https://www.udacity.com/course/intro-to-computer-science--cs101
-* List of more resources for learning python: https://github.com/vinta/awesome-python
-* Interactive Python: http://interactivepython.org/runestone/static/thinkcspy/index.html
-* Developer's Guide to Python: https://devguide.python.org/
-* Learn Python the Hard Way book: https://learnpythonthehardway.org/python3/
-* Introduction to Python Programming: https://www.udacity.com/course/introduction-to-python--ud1110
+## Additional References
+* [Python2](https://docs.python.org/2/tutorial/)
+* [Python3](https://docs.python.org/3/tutorial/)
+* [Google's Python class](https://developers.google.com/edu/python/)
