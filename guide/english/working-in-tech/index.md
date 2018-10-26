@@ -13,6 +13,7 @@ The field of computer security is growing at a rapid rate every year, in a repor
 
 ### Examples of Tech related jobs
 - Software Developer
+- Data Engineer
 - Computer Systems Analyst
 - Web Developer
 - IT Manager
