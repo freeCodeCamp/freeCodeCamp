@@ -1,0 +1,27 @@
+---
+title: Grid System
+---
+## Bootstrap Jumbotron and Page Header
+Creating a Jumbotron
+A jumbotron indicates a big box for calling extra attention to some special content or information.
+
+A jumbotron is displayed as a grey box with rounded corners. It also enlarges the font sizes of the text inside it.
+
+Tip: Inside a jumbotron you can put nearly any valid HTML, including other Bootstrap elements/classes.
+#### Jumbotron Inside Container
+Place the jumbotron inside the <div class="container"> if you want the jumbotron to NOT extend to the edge of the screen:
+
+Example:
+```
+<div class="container">
+  <div class="jumbotron">
+    <h1>Bootstrap Tutorial</h1> 
+    <p>Bootstrap is the most popular HTML, CSS, and JS framework for developing
+    responsive, mobile-first projects on the web.</p> 
+  </div>
+  <p>This is some text.</p> 
+  <p>This is another text.</p> 
+</div>
+```
+#### More Information:
+https://www.w3schools.com/bootstrap/bootstrap_jumbotron_header.asp
