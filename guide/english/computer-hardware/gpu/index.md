@@ -11,14 +11,14 @@ GPUs can be used for computation as well as video rendering. Common ways to do t
 
 The GPU was originally used mainly for 3D game rendering to improve your resolution and framerate. But now these capabilities are being harnessed more broadly to improve computational workloads in many areas; for example financial modeling, cutting-edge scientific research and oil and gas exploration. GPU's are also used as a resource for bitcoin mining, since they are able to run repetitive tasks easily without straining the resources of the CPU, which allows you run an Operating System on the computer with a low end CPU while still being able to bitcoin mine using the GPU
 
-There are two major brands producing GPUs: NVidia and AMD. They are often referred as the "green team" and "red team" which indicate the major color of their logo. 
+There are two major brands producing GPUs: Nvidia and AMD. They are often referred as the "green team" and "red team" which indicate the major color of their logo. 
 
 
 ## Origin of GPU
 
 Most primitive background of GPU can be mapped to the era of VGA (Virtual Graphics Array) controllers. But these were not actually a whole processing unit, but acted as supporting units for display functions. A VGA controller is a simple memory controller connected to Dynamic RAM and a display generator. The main function of a VGA is to receive image data, arrange it properly, and send it to a video device, which was mainly a computer monitor or a TV screen connected to a gaming console for display.
 
-The first ever full-fledged processing unit for graphic acceleration was developed and marketed by NVIDIA in 1999, "GeForce 256". Older 3D accelerators had to rely on CPU to execute graphic calculations. With the new "GeForce 256" as a co-processor for CPU, improved frame rate by more than 50% and lowered the total cost, thereby expanding itself in the consumer market.
+The first ever full-fledged processing unit for graphic acceleration was developed and marketed by Nvidia in 1999, "GeForce 256". Older 3D accelerators had to rely on CPU to execute graphic calculations. With the new "GeForce 256" as a co-processor for CPU, improved frame rate by more than 50% and lowered the total cost, thereby expanding itself in the consumer market.
 
 
 ## GPU vs CPU
@@ -37,17 +37,17 @@ GPUs were originally modeled on the concept of graphics pipeline. Graphics pipel
 ### 1stGeneration
 The "3dfx Voodoo" (1996) evolved as one of the first true 3D-accelerator for games. It handled texture mapping, rasterization, and z-buffering but the CPU still had to do vertex transformations.
 ### 2ndGeneration
-This is the point when the first-ever true GPU, NVIDIA's "GeForce 256" was released in the common market. The GPUs of this generation's used Accelerated Graphics Port(AGP), offered new functions like multi-texturing, hardware geometry transform, light maps, and lighting. The traditional pipelines were known as a "fixed function" pipeline, because once the developer sent graphics data into the GPU's pipeline, the data could not be changed.
+This is the point when the first-ever true GPU, Nvidia's "GeForce 256" was released in the common market. The GPUs of this generation's used Accelerated Graphics Port(AGP), offered new functions like multi-texturing, hardware geometry transform, light maps, and lighting. The traditional pipelines were known as a "fixed function" pipeline, because once the developer sent graphics data into the GPU's pipeline, the data could not be changed.
 ### 3rd Generation
-With this generation of CPUs, programmable pipelining came into existence. Now the previously non-programmable parts could be programmed by programmers. In 2001, NVIDIA released the GeForce3.
+With this generation of CPUs, programmable pipelining came into existence. Now the previously non-programmable parts could be programmed by programmers. In 2001, Nvidia released the GeForce3.
 ### 4th Generation
-With the beginning of 21st century, the first "fully programmable graphics cards" had reached the consumers. NVIDIA GeForce FX, ATI Radeon 9700 were among the first. These GPUs could do per-pixel operations along with pixel shaders and programmable vertex. But, separate dedicated hardwares were needed for vertex shader and pixel shader processing.
+With the beginning of 21st century, the first "fully programmable graphics cards" had reached the consumers. Nvidia GeForce FX, ATI Radeon 9700 were among the first. These GPUs could do per-pixel operations along with pixel shaders and programmable vertex. But, separate dedicated hardwares were needed for vertex shader and pixel shader processing.
 ### 5th Generation
 GPUs were evolving and advancing at it's peak rate and this generation GPUs were the first to utilize PCI-express bus. Multiple rendering buffers, 64-bit support, texture access etc. were introduced, along with increase in GPU memory.
 ### 6th Generation
-In 2006, the release of NVIDIA's GeForce 8 series GPU revolutionized the GPU industry and reach, by introducing the GPU as massively parallel processors. It was the first to have "unified" and "programmable" shaders or, in other words, programmable unified processor. Unified means all the processes of graphics pipeline were executed on a single processor and no external unit is required for any stage. Basic Unified GPU architecture components are discussed below.
+In 2006, the release of Nvidia's GeForce 8 series GPU revolutionized the GPU industry and reach, by introducing the GPU as massively parallel processors. It was the first to have "unified" and "programmable" shaders or, in other words, programmable unified processor. Unified means all the processes of graphics pipeline were executed on a single processor and no external unit is required for any stage. Basic Unified GPU architecture components are discussed below.
 
-Since the release of the 9XX series NVidia GPUs, the performance increase between generations only got better. From the 980Ti to the 1080Ti and the newly launched 208Tis, performance has more than doubled. AMD also started to produce better GPUs like the RX 580 and Vega 64, although this is still nowhere near Nvidia's level.
+Since the release of the 9XX series Nvidia GPUs, the performance increase between generations only got better. From the 980Ti to the 1080Ti and the newly launched 208Tis, performance has more than doubled. AMD also started to produce better GPUs like the RX 580 and Vega 64, although this is still nowhere near Nvidia's level.
 Just recently, Nvidia launched a new line of GPUs titled RTX which includes the higher-end cards like 2080Ti, 2080, and 2070. RTX stands for "Ray Tracing", which is a rendering technique used in generating images though tracing the path of light in a scene. The more "Rays" or light created, the more accurate the graphic image quality will be, as it is more optimized to enhance lighting effects and shadows.
 
 
@@ -80,6 +80,6 @@ Some of the thread instructions are executed on SFUs simultaneously with other t
 - <a href='https://developer.nvidia.com/cuda-zone' target='_blank' rel='nofollow'>CUDA</a>
 - <a href='https://www.khronos.org/opencl/' target='_blank' rel='nofollow'>OpenCL</a>
 - <a href='https://www.opengl.org/' target='_blank' rel='nofollow'>OpenGL</a>
-- <a href='https://blogs.nvidia.com/blog/2009/12/16/whats-the-difference-between-a-cpu-and-a-gpu/' target='_blank' rel='nofollow'>nVidia Blog</a>
-- <a href='https://www.nvidia.com/' target='_blank' rel='nofollow'>NVidia</a>
+- <a href='https://blogs.nvidia.com/blog/2009/12/16/whats-the-difference-between-a-cpu-and-a-gpu/' target='_blank' rel='nofollow'>Nvidia Blog</a>
+- <a href='https://www.nvidia.com/' target='_blank' rel='nofollow'>Nvidia</a>
 - <a href='http://www.amd.com/en-us/products/graphics' target='_blank' rel='nofollow'>AMD</a>
