@@ -11,5 +11,5 @@ Stochastic processes are widely used as mathematical models of systems and pheno
 
 ### More Information:
 * <a href="https://en.wikipedia.org/wiki/Stochastic_process">Stochastic Process</a>
-
+* <a href="https://medium.com/neuralspace/kaggle-1-winning-approach-for-image-classification-challenge-9c1188157a86">t-Distributed Stochastic Neighbor Embedding (t-SNE)</a>
 
