@@ -195,19 +195,18 @@ int main(){
 ```
 In C++11, you can also sort with lambda function, which can be useful.
 ```cpp11
-#include<bits/stdc++.h>
+#include <bits/stdc++.h>
 using namespace std;
 
-int main()
-{
-    vector<int > v {3, 1, 2};
-    sort(v.begin(), v.end(), [] (int i, int j) -> bool {
-        return i < j;
-    } );
-    cout << "Vector Contents Sorted In Ascending Order:\n";
-    for (int e : v)
-    cout << e << " ";
-    return 0;
+int main(){
+  vector<int > v {3, 1, 2};
+  sort(v.begin(), v.end(), [] (int i, int j) -> bool {
+      return i < j;
+  } );
+  cout << "Vector Contents Sorted In Ascending Order:\n";
+  for (int e : v)
+  cout << e << " ";
+return 0;
 }
 ```
 ### Sorting Vector In Descending Order
