@@ -12,7 +12,7 @@ One of the best books on JavaScript. A must for both, beginners and intermediate
 
 #### You Don't Know JS
 
-Six book series by Kyle Simpson. In-depth series on every aspect of JavaScript. This is a must-read for every JS developer who wants to understand exactly how things like prototypes, closures, and the `this` keyword work.
+Six book series by Kyle Simpson. In-depth series on every aspect of JavaScript. This is a must-read for every JS developer who wants to understand exactly how things like prototypes, closures, and the keyword work.
 
 - [Github](https://github.com/getify/You-Dont-Know-JS)(free)
 - [Kindle Version, Amazon](https://www.amazon.com/You-Dont-Know-Js-Book/dp/B01AY9P0P6)
@@ -32,4 +32,4 @@ A collection of articles covering the basics (core language and working with a b
 
 #### Other Resources
 
-- A selection of online free resources; including e-books for JavaScript are available at [JS Books](https://jsbooks.revolunet.com/)
+- A selection of online free resources; including e-books for JavaScript is available at [JS Books](https://jsbooks.revolunet.com/)
