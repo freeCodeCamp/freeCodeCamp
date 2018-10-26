@@ -2,6 +2,11 @@
 title: Component State
 ---
 ## Component State
+In React we can specify:
+1)stateless functional component - any function you write which accepts props and returns JSX
+2)stateless component - class that extends React.Component, but does not use internal state
+3)stateful component - any component that does maintain its own internal state
+
 
 In `Class` components, there is a way to store and manage state built in to React Native.
 
