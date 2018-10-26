@@ -22,7 +22,7 @@ Este es un ejemplo de cómo configurar el color de fondo para una página web en
 
 ![fullbackground](https://user-images.githubusercontent.com/26467304/31036038-845567f2-a538-11e7-8e6c-8a52bb0d44b8.png)
 
-Aquí hay un ejemplo de configuración de los colores para dos elementos. Esto establecerá el fondo del encabezado. a morado y el resto de la página a azul.
+Aquí hay un ejemplo de configuración de los colores para dos elementos. Esto establecerá el fondo del encabezado a morado y el resto de la página a azul.
 
 ```css
   body { 
