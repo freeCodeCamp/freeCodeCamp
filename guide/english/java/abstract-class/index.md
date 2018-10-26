@@ -46,4 +46,4 @@ Car carObj = new Car();  // valid
 Motorcycle mBikeObj = new Motorcycle();  // valid
 ```
 
-If the child class doesn't implement the abstract methods of the father, it becomes an abstract class. 
+If the child class doesn't implement the abstract methods of the father, it becomes an abstract class. An abstract class can also contain constructors. A constructor of abstract class is called when an instance of a inherited class is created.
