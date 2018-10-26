@@ -5,7 +5,9 @@ title: Angular
 
 AngularJS (versions 1.x) is a JavaScript based open source Framework. It is cross platform and used to develop Single Page Web Application (SPWA). AngularJS implements the MVC pattern to separate the logic , presentation and data components. It also uses dependency injection to make use of server-side services in client side applications.
 
-Angular(versions 2.x and up) is a Typescript based open source framework to develop front-end Web application. Angular has following features like generics, static-typing and also some ES6 features.
+Angular(versions 2.x and up) is a Typescript based open source framework to develop front-end Web application. Angular has following features like generics, static-typing (typescript) and the latest ES6 features.
+
+Since the changes of version 2 is entirely different the version 1. Angular team decided to call Angular js version 1.X as `ANGULAR JS` and version greater than 2 ( i.e Angular 2.X and above) as Angular. So if you get heared as ANGULAR probably its version is 2 or above.
 
 ## Version History
 
@@ -28,6 +30,7 @@ AngularJS: We can add AngularJS(Angular 1.x versions) by referencing the Content
 Download/install: We can download the framework with npm, Bower or composer
 
 **Angular 1.x**:
+**NOTE: For this you need `Node JS` installed in your machine (you can donwload it from `https://nodejs.org`)
 
 npm
 
