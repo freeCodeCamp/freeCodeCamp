@@ -31,7 +31,7 @@ Puedes optar por contribuir a cualquier área de tu interés:
 
 2. Ayuda a los campistas en nuestro [foro público](https://www.freecodecamp.org/forum/):
 
-    - ❓ [Respondiendo a sus preguntas](https://www.freecodecamp.org/forum/?max_posts=1).
+    - ❓ [Aportando una retroalimentación](https://www.freecodecamp.org/forum/?max_posts=1).
     - 💬 [Aportando comentarios](https://www.freecodecamp.org/forum/c/project-feedback?max_posts=1) a sus proyectos.
 
 3. Ayúdanos a agregar subtítulos en nuestro [canal de YouTube](https://www.youtube.com/channel/UC8butISFwT-Wl7EV0hUK0BQ/videos).
@@ -90,7 +90,7 @@ Puedes ayudarnos a traducir nuestros artículos de Guía y desafíos de codifica
 - Español
 - Portugués (Português)
 
-La mayoría de estas versiones están traducidas automáticamente. Nos encantaría que ayudaras a mejorar la calidad de estas traducciones.
+La mayoría de estas versiones están traducidas automáticamente. Nos encantaria que pudieras ayudarnos a mejorar la calidad de estas traducciones.
 
 **Si deseas trabajar en ello, sigue estas pautas:**
 
@@ -112,7 +112,7 @@ Esencialmente, esperamos cierta familiaridad básica con algunas de las tecnolog
 
 No dudes en hacernos preguntas, en los hilos relacionados con problemas, y estaremos encantados de aclararlas. En caso de duda, puede comunicarse con Mrugesh Mohapatra [`@raisedadead`](https://github.com/raisedadead) o Stuart Taylor[`@bouncey`](https://github.com/bouncey) desde nuestro equipo de desarrollo de la plataforma para ayudarte con esto.
 
-**Si deseas trabajar en ello, siga estas pautas:**
+**Si deseas trabajar en ello, tú tendras que seguir con las siguientes pautas:**
 
 #### [Cómo configurar freeCodeCamp localmente.](/docs/how-to-setup-freecodecamp-locally.md)
 
@@ -128,7 +128,7 @@ Ten en cuenta que cualquier problema que busques ayuda de codificación en un de
 
 **¿Cómo puedo reportar un problema de seguridad?**
 
-Por favor, no crees Issues de GitHub para problemas de seguridad. En su lugar, envía un correo electrónico a `security@freecodecamp.org` y lo veremos de inmediato.
+Por favor, no crees Issues de GitHub para problemas de seguridad. En su lugar, envíe un correo electrónico a `security@freecodecamp.org` y lo veremos de inmediato.
 
 **Estoy atascado en algo que no está en esta documentación. ¿Cómo puedo obtener ayuda?**
 
