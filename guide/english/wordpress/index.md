@@ -27,3 +27,4 @@ Whether it's page transitions or a customized contact form, WordPress users are 
 - [WordPress Codex: the online manual](https://codex.wordpress.org/)
 - [WordPress Code Reference](https://developer.wordpress.org/reference/)
 - [WordPress Github Repository](https://github.com/WordPress/WordPress)
+- [WordPress for Beginners] (https://www.wpbeginner.com/)
