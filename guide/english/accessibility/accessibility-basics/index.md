@@ -10,25 +10,25 @@ title: Accessibility Basics
 
 Accessibility's role in development is essentially understanding the user's perspective and needs, and knowing that the web, and applications are a solution for people with disabilities.
 
-In this day and age, more and more new technologies are invented to make the life of developers, as well as users, easier. To what degree this is a good thing is a debate for another time, for now it's enough to say the toolbox of a developer, especially a web developer, is as ever-changing as the so called "dark arts" are according to our friend Snape.
+In this day and age, more and more new technologies are invented to make the lives of developers, as well as users, easier. To what degree this is a good thing is a debate for another time; for now, it's enough to say the toolbox of a developer, especially a web developer, is as ever-changing as the so-called "dark arts" are according to our friend Snape.
 
 One tool in that toolbox should be accessibility. It is a tool that should ideally be used in one of the very first steps of writing any form of web content. However, this tool is often not all that well presented in the toolbox of most developers. This could be due to a simple case of not knowing it even exists to extreme cases like not caring about it.
 
 In my life as a user, and later a developer, who benefits from accessibility in any form of content, I have seen both ends of that spectrum. If you are reading this article, I am guessing you are in one of the following categories:
 
 *   You are a novice web developer and would like to know more about accessibility.
-*   You are a seasoned web developer and have lost your way (more on that later).
-*   You feel that there is a legal obligation from work, and need to learn more about it.
+*   You are a seasoned web developer and have lost your way. (More on that later.)
+*   You feel that there is a legal obligation from your employer, and you need to learn more about it.
 
 If you fall outside these rather broad categories, please let me know. I always like to hear from the people who read what I write about. Implementing accessibility impacts the entire team, from the colors chosen by the designer, the copy written by the copywriter, and to you, the developer.
 
 ## So, what is accessibility anyway?
 
-Accessibility in itself is a bit of a misleading term sometimes, especially if English is your second language. It is sometimes referred to as inclusive design.
+Accessibility in itself is a bit of a misleading term sometimes, especially if English is your second language. It is sometimes referred to as "inclusive design."
 
 If your site is on the Internet, reachable by anyone with a web browser, in one sense that website is accessible to everyone with a web browser.
 
-But, is all content on your website actually readable, usable and understandable for everyone? Are there no thresholds that bar certain people from 'accessing' all the information you are exposing?
+But, is all content on your website actually readable, usable and understandable for everyone? Are there no thresholds that bar certain people from "accessing" all the information you are exposing?
 
 You could ask yourself questions like the following:
 
@@ -41,7 +41,7 @@ You could ask yourself questions like the following:
 *   Does your application still work (progressive enhancement) assuming that JavaScript does not load in time?
 *   If your website is very resource-heavy, will someone on an older device with a slow or spotty connection be able to access your content?
 
-This is where accessibility comes into play. Accessibility basically entails making your content as friendly, as easy to 'access' as possible for the largest amount of people. This includes people who are older, deaf, low-vision, blind, dyslexic, colorblind, have epilepsy, have mental fatigue, have physical limitations, cannot afford new devices or high-speed connections, etc.
+This is where accessibility comes into play. Accessibility basically entails making your content as friendly, as easy to "access" as possible for the largest amount of people. This includes people who are older, deaf, low-vision, blind, dyslexic, colorblind, have epilepsy, have mental fatigue, have physical limitations, cannot afford new devices or high-speed connections, etc.
 
 ## Why implement accessibility?
 
@@ -53,7 +53,7 @@ However, doing this research is key in actually defending such a statement. Did 
 
 If you did, good for you. If not, I guess this drives my point home all the more.
 
-The picture gets even more complicated when we look at legislation that actually forces you to make certain websites and web apps accessible. A prime example is the US-based <a href='http://jimthatcher.com/webcourse1.htm' target='_blank' rel='nofollow'>section 508</a>. Right now, this law mainly refers to government organizations, public sector websites etc. However, laws change.
+The picture gets even more complicated when we look at legislation that actually forces you to make certain websites and web apps accessible. A prime example is the US-based <a href='http://jimthatcher.com/webcourse1.htm' target='_blank' rel='nofollow'>Section 508</a>. Right now, this law mainly refers to government organizations, public sector websites, etc. However, laws change.
 
 Last year, airline websites were included in this list which meant that even here in Europe, airline website devs scrambled to make their content accessible. Not doing so can get your company a fine of literally tens of thousands of dollars for each day the problem isn't fixed.
 
@@ -61,7 +61,7 @@ There are variations on this legislation all over the world, some more severe an
 
 ## Ok, so accessibility is a big deal. Now how do we implement it?
 
-That question, sadly, is harder to answer than it may seem. The Harry Potter quote at the top is there for a reason, and it's not my being an avid Fantasy reader.
+That question, sadly, is harder to answer than it may seem. The Harry Potter quote at the top is there for a reason, and it's not my being an avid fantasy reader.
 
 As I stated above, accessibility is important for a large group of different people, each with their own needs. Making your website work for literally everyone is a large, on-going task.
 
@@ -79,7 +79,7 @@ The HTML specification is a document that describes how the language should be u
 ```
 Guess what? All three of these elements break several criteria of WCAG and therefore are not accessible at all.
 
-The first element breaks the so-called 'name, role, value'-criterium, which states that all elements on a web page should expose their name, their role (like button) and their value (like the contents of an edit field) to assistive technologies. This div actually doesn't provide any of the three, rendering it invisible to screen-readers.
+The first element breaks the so-called "name, role, value"-criterium, which states that all elements on a web page should expose their name, their role (like button) and their value (like the contents of an edit field) to assistive technologies. This div actually doesn't provide any of the three, rendering it invisible to screen-readers.
 
 The second element looks like a heading visually after styling it with CSS, but semantically is a span. Therefore, assistive technologies won't know it's a heading. A screen-reader will read this as regular text, instead of a heading. Screen-readers often have a hotkey to quickly jump to the nearest heading, this heading will not be included in that scope.
 
@@ -150,7 +150,7 @@ I guess the best way to illustrate this is by giving an example:
     <input type='text' id='username'>
 ```
 
-This will make for example a screen-reader say "username, text edit field", instead of just reporting' text edit field' and requiring the user to go look for a label. This also really helps people who use speech recognition software.
+This will make for example a screen-reader say "username, text edit field," instead of just reporting "text edit field" and requiring the user to go look for a label. This also really helps people who use speech recognition software.
 
 ### That's a tall order
 
