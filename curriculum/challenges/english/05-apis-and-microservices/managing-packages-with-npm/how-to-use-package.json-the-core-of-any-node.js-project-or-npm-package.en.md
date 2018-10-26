@@ -20,6 +20,17 @@ All fields must be separated with a comma (,)
 
 ## Instructions
 <section id='instructions'>
+Add your name to the author-field in the package.json of your Glitch project.
+
+Remember that you’re writing JSON.
+
+All field-names must use double-quotes ("), e.g. "author"
+
+All fields must be separated with a comma (,)
+___
+Caution:
+---
+Glitch has an issue where the boilerplate code written by FreeCodeCamp does not get properly imported, which causes the tests to fail. If you are failing the test repeatedly, try to create a new Glitch app using <a href='https://glitch.com/#!/import/github/freeCodeCamp/boilerplate-npm' target='_blank' rel='nofollow'>this link</a>, and complete the challenge again.
 
 </section>
 
