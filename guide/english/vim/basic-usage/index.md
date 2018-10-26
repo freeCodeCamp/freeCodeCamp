@@ -35,3 +35,8 @@ title: Basic Usage
 ## About Vim
 
 Vim is a text editor intended to be used in a CLI (command line interface) environment. It is highly configurable and built with efficiency in mind, without the need of a mouse or a graphical interface. It was built to be an improved version of the UNIX editor 'VI', or VI improved. That being said, VIM also has a GUI (Graphical User Interface) version named GVIM that shares the same core functionality as VIM but allows users additional feature such as additional menu and tool bars.
+
+### More Information:
+- <a href='https://www.vim.org/' target='_blank' rel='nofollow'>Official site</a> - of vim.org.
+- <a href='https://www.openvim.com/' target='_blank' rel='nofollow'>Interactive </a> - Vim tutorial.
+- <a href='https://vimawesome.com/' target='_blank' rel='nofollow'>Awesome </a> - Vim plugins.
