@@ -89,12 +89,16 @@ title: Books to Read for Programmers
 ## C#
 
 *C# 6.0 in a Nutshell: The Definitive Reference 6th Edition* by Joseph Albahari  (Author), Ben Albahari (Author)
-- https://www.amazon.com/C-6-0-Nutshell-Definitive-Reference/dp/1491927062/ref=sr_1_2?s=books&ie=UTF8&qid=1539643378&sr=1-2&keywords=C%23+6.0+in+a+nutshell
+- [Amazon](https://www.amazon.com/C-6-0-Nutshell-Definitive-Reference/dp/1491927062/ref=sr_1_2?s=books&ie=UTF8&qid=1539643378&sr=1-2&keywords=C%23+6.0+in+a+nutshell)
 - ISBN-13: 978-1491927069
 
 *Pro C# 7: With .NET and .NET Core Paperback – Nov 21 2017* by Andrew Troelsen (Author), Philip Japikse (Author)
-- https://www.amazon.com/Pro-NET-Core-Andrew-Troelsen/dp/1484230175/ref=sr_1_1?s=books&ie=UTF8&qid=1539643534&sr=1-1&keywords=Pro-NET-Core-Andrew-Troelsen
+- [Amazon](https://www.amazon.com/Pro-NET-Core-Andrew-Troelsen/dp/1484230175/ref=sr_1_1?s=books&ie=UTF8&qid=1539643534&sr=1-1&keywords=Pro-NET-Core-Andrew-Troelsen)
 - ISBN-13: 978-1484230176
+
+*Microsoft Visual C# Step by Step (Developer Reference) 9th Edition* by John Sharp
+- [Amazon](https://www.amazon.com/gp/product/1509307761/ref=dbs_a_def_rwt_bibl_vppi_i0)
+- ISBN-13: 978-1509307760
 
 ## Coding Interview
 
