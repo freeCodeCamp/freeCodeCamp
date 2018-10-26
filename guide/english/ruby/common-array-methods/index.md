@@ -123,21 +123,23 @@ array.delete_at(0)
 ```
 
 #### .reverse
-The .reverse method reverses the array but does not mutate it (the original array stays as is):
+The .reverse method returns a new array that includes the elements of the original array but in reverse order:
 
 ``` ruby
 array.reverse
 => [4, 3, 2, 1, 0]
+array
+=> [0, 1, 2, 3, 4]
 ```
 #### .select
-The .select method iterates over an array and returns a new array that includes any items that return true to the expression provided.
+The .select method iterates over an array and returns a new array that includes any items that return true to the expression provided:
 
 ``` ruby
 array = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
 array.select { |number| number > 4 }
 => [5, 6, 7, 8, 9, 10]
 array
-=> [5, 6, 7, 8, 9, 10]
+=> [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
 ```
 
 #### .include?
@@ -151,7 +153,7 @@ array.include?(3)
 ```
 
 #### .flatten
-The flatten method can be used to take an array that contains nested arrays and create a one-dimensional array:
+The .flatten method can be used to take an array that contains nested arrays and create a one-dimensional array:
 
 ``` ruby
 array = [1, 2, [3, 4, 5], [6, 7]]
@@ -160,22 +162,20 @@ array.flatten
 ```
 
 #### .join
-The .join method returns a string of all the elements of the array separated by a separator parameter. If the separator parameter is nil, the method uses an empty string as a separator between strings.
+The .join method returns a string of all the elements of the array separated by a separator parameter. If the separator parameter is nil, the method uses an empty string as a separator between strings:
 
 ``` ruby
 array.join
-=> "1234"
+=> "01234"
 array.join("*")
-=> "1*2*3*4"
+=> "0*1*2*3*4"
 ```
 
 #### .each
-The .each method iterates over each element of the array, allowing you to perform actions on them.
+The .each method iterates over each element of the array, allowing you to perform actions on them:
 
 ``` ruby
-array.each do |element|
-  puts element
-end
+array.each { |element| puts element }
 => 
 0
 1
@@ -185,22 +185,15 @@ end
 ```
 
 #### .map
-The .map method is the same as the .collect method. The .map and .collect methods iterate over each element of the array, allowing you to perform actions on them. The .map and .collect methods differ from the .each method in that they return an array containing the transformed elements.
+The .map method is the same as the .collect method. The .map and .collect methods iterate over each element of the array, allowing you to perform actions on them. The .map and .collect methods differ from the .each method in that they return an array containing the transformed elements:
 
 ``` ruby
 array.map { |element| element * 2 }
-  puts element
-end
-=> 
-0
-2
-4
-6
-8
+=> [0, 2, 4, 6, 8]
 ```
 
 #### .uniq
-The .uniq method takes in an array containing duplicate elements, and returns a copy of the array containing only unique elements--any duplicate elements are removed from the array.
+The .uniq method takes in an array containing duplicate elements, and returns a copy of the array containing only unique elements--any duplicate elements are removed from the array:
 
 ``` ruby
 array = [1, 1, 2, 2, 3, 3, 3, 4, 4, 4, 4, 5, 6, 7, 8]
@@ -209,7 +202,8 @@ array.uniq
 ```
 
 #### .concat
-The .concat method appends the elements from an array to the original array. The .concat method can take in multiple arrays as an argument, which will in turn append multiple arrays to the original array.
+The .concat method appends the elements from an array to the original array. The .concat method can take in multiple arrays as an argument, which will in turn append multiple arrays to the original array:
+
 ``` ruby
 array = [0, 1, 2, 3, 4]
 array.concat([5, 6, 7], [8, 9, 10])
