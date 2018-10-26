@@ -1,0 +1,62 @@
+
+SHELL SORT : 
+
+Shell sort is an improved version of insertion sort in which diminishing parts are used to sort the data.
+It compares elements that are at a specific distance part rather than comparing each and every element in the list.
+
+###PROCEDURE
+
+1.If there are n elements , we find the gap i.e. equal to Math.floor(n/2).
+
+2.gap=(int)n/2
+
+3.At each pass , we keep reducing the value of the gaptill we reach the last pass where the gap is equal to 1.
+
+4.In the last pass, Shell sort behaves like insertion sort. 
+
+->Function : IN C++
+
+void shellsort(int A[],int n)
+{
+int temp, gap,i;
+gap=n/2;
+do
+{
+int swapped=0;
+for(i=0;i<n-gap;i++)
+{
+if(a[i]>a[i+gap])
+{
+temp = A[i];
+A[i]=a[i+gap];
+a[i+gap]=temp;
+swapped=1;
+}
+}
+while(swapped==1);
+}
+while((gap==gap/2)>=1);
+}
+//top
+
+###EXAMPLE :
+PASS 1:
+77 62 14 9 30 21 80 25 70 55
+
+Gap= 10/2 = 5
+
+PASS 2:
+21 62 14 9 30 77 80 25 70 55
+
+Gap= 5/2 = 2
+
+PASS 3:
+14 9 21 25 30 55 70 62 80 77
+
+Gap = 2/2 =1
+
+Now, the sort will behave like insertion sort.
+
+Final : 9 14 21 25 30 55 62 70 77 80
+
+
