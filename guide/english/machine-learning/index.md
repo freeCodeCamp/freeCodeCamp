@@ -41,6 +41,13 @@ data consist of a set of training examples. In supervised learning, each example
 4. <a href='http://ciml.info/' target='_blank' rel='nofollow'>Machine Learning</a>
 5. <a href='https://www.edx.org/course/the-analytics-edge' target='_blank' rel='nofollow'>The Analytics Edge - Taught by: MIT</a>
 
+#### Books:
+1. <a href='http://www.mlyearning.org/' target='_blank' rel='nofollow'>Machine Learning Yearning</a>
+2. <a href='https://www.amazon.in/Programming-Collective-Intelligence-Segaran/dp/8184043708/ref=as_li_ss_tl?s=books&ie=UTF8&qid=1483608623&sr=1-1&keywords=Programming+Collective+Intelligence&linkCode=sl1&tag=analyvidhy-21&linkId=2a33af9df134576d7cffb3af304efd33' target='_blank' rel='nofollow'Programming Collective Intelligence</a>
+3. <a href='https://www.amazon.in/Machine-Learning-Hackers-Conway/dp/9350236745/ref=as_li_ss_tl?s=books&ie=UTF8&qid=1483608652&sr=1-1&keywords=Machine+Learning+for+Hackers&linkCode=sl1&tag=analyvidhy-21&linkId=aa17e72e798105d1043d53decfd915ae' target='_blank' rel='nofollow'>Machine Learning for Hackers</a>
+4. <a href='http://www-stat.stanford.edu/~tibs/ElemStatLearn/printings/ESLII_print10.pdf' target='_blank' rel='nofollow'>The Elements of Statistical Learning</a>
+
+
 #### Video Resources:
 
 1. <a href="https://www.youtube.com/channel/UCWN3xxRkmTPmbKwht9FuE5A" target="_blank">Siraj Raval's Youtube channel</a>
