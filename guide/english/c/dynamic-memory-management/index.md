@@ -31,7 +31,7 @@ int main(void) {
     return 0;
 }
 ```
-
+my changes
 As you can see in order to allocate a space in the dynamic memory you need to know how pointers work in C.
 The magic function here is the `malloc` which will return as output a void pointer (it is a pointer to a region of unknown data type) to the new memory space we've just allocated.
 Let's see how to use this function step by step: 
