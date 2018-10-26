@@ -11,3 +11,7 @@ Pode tornar-se uma ideia extremamente importante criar o hábito de comentar sua
 ![Um exemplo de comentar no mundo real](https://cdn-images-1.medium.com/max/1620/1*Pyxsc7Uixbitv5myywaA_Q.jpeg)
 
 #### Mais Informações:
+*   [Artigo sobre Documentação de Código (Medium)](https://medium.com/@andrewgoldis/how-to-document-source-code-responsibly-2b2f303aa525)
+*   [As 15 melhores práticas de documentação (Code Tuts)](https://code.tutsplus.com/tutorials/top-15-best-practices-for-writing-super-readable-code--net-8118)
+*   [Artigo sobre comentários no código: "O bom, o mau, o feio" (Medium)](https://medium.freecodecamp.org/code-comments-the-good-the-bad-and-the-ugly-be9cc65fbf83)
+*   [Artigo sobre como documentar o código fonte (Medium)](https://medium.com/@andrewgoldis/how-to-document-source-code-responsibly-2b2f303aa525)
