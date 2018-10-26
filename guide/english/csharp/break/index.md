@@ -8,7 +8,7 @@ The `break` statement terminates the enclosing loop or switch statement in which
 
 In the first example, when the value of i is 3, the break statement is executed, which causes the execution of the loop to be terminated.
 
-## Example
+## Example 1
 ```
 int[] array = { 1, 2, 3, 4, 5 };
 for (int i = 0; i < array.Length; i++)
@@ -29,7 +29,7 @@ for (int i = 0; i < array.Length; i++)
 ```
 In the second example, a break statement is included at the end of each case. This executes the statements in the case without continuing to the next case. Without the break statement, the program would continue to execute the next case and would not function as intended.
 
-## Example
+## Example 2
 ```
 switch (exampleVariable)
 {
@@ -63,4 +63,38 @@ switch (exampleVariable)
 > default
 > This only shows in the Default Example
 >
+```
+In the third example, we make use of an infinite `while` loop, which prompts the user for the best song of all time. When the user finally enters "Ocean Man", a `break` statement is used, and the infinite `while` loop is exited.
+
+## Example 3
+```
+while (true)
+{
+    Console.WriteLine("What is the greatest song of all time? Be honest--I can wait all day!");
+    string response = Console.ReadLine();
+    if (response == "Ocean Man")
+    {
+        Console.WriteLine("Good, I agree!");
+        break;
+    }
+    else Console.WriteLine("That's not the greatest song! Try again!");
+}
+
+```
+
+## Output (if the user enters "Ocean Man" right away):
+```
+> What is the greatest song of all time? Be honest--I can wait all day!
+Ocean Man
+> Good, I agree!
+```
+
+## Output (if the user enters "Darude Sandstorm" the first time, then "Ocean Man"):
+```
+> What is the greatest song of all time? Be honest--I can wait all day!
+Darude Sandstorm
+> That's not the greatest song! Try again!
+> What is the greatest song of all time? Be honest--I can wait all day!
+Ocean Man
+> Good, I agree!
 ```
