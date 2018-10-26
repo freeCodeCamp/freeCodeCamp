@@ -33,6 +33,6 @@ tests: []
 <section id='solution'>
 
 ```js
-// solution required
+// 显示结果
 ```
 </section>
