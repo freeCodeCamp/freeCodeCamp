@@ -62,3 +62,34 @@ int main () {
 -> a is not less than 5!
 -> Value of a is : 100
 ```
+# Note:
+If there is no curly braces just after the if statement then by default the next immediate line will be considered inside the if block. So if there is only one line of code is required inside the if statement then we don't need to give a curly braces.
+
+## Example
+```
+#include <stdio.h>
+
+int main () {
+
+   int a;
+   
+   scanf("%d",&a);
+   
+   if(a==2)
+      printf("a is equal to 2!\n" );   //this line will execute only when a is equal to 2
+      printf("Value of a is : %d\n", a);   // this line will execute every time the code runs
+
+   return 0;
+}
+```
+
+## Output
+```
+-> 8
+-> Value of a is : 8
+```
+```
+-> 2
+-> a is equal to 2!
+-> Value of a is : 2
+```
