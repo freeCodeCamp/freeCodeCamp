@@ -19,3 +19,5 @@ In Computer memory i.e RAM, different data structures are created like stack, qu
 * [Geek for Geek](http://www.geeksforgeeks.org/data-structures/)
 * [Tutorials Point](https://www.tutorialspoint.com/data_structures_algorithms/data_structure_overview.htm)
 * [Data Structures](http://www.studytonight.com/data-structures/introduction-to-data-structures)
+
+##in computer science, a data structure is a data organization, management and storage format that enables efficient access and modification.[1][2][3] More precisely, a data structure is a collection of data values, the relationships among them, and the functions or operations that can be applied to the data.[4]
