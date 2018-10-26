@@ -2,6 +2,7 @@
 title: Data Types in C
 ---
 # Data Types in C
+Data Types are used to tell the compiler About the input of the data that is being given.
 There are several different ways to store data in C, and they are all unique from each other. The types of data that information can be stored as are called data types. C is much less forgiving about data types than other languages. As a result, it's important to make sure that you understand the existing data types, their abilities, and their limitations.
 
 One quirk of C's data types is that they depend entirely on the hardware that you're running your code on. An `int` on your laptop will be smaller than an `int` on a supercomputer, so knowing the limitations of the hardware you're working on is important. This is also why the data types are defined as being minimums- an `int` value, as you will learn, is at minimum -32767 to 32767: on certain machines, it will be able to store even more values that this.
