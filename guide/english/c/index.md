@@ -35,7 +35,7 @@ Let's break this program down step-by-step.
 
 First is the `#include`:
 ```C
-#include <stdio.h> // This is called preprocessor directives
+#include <stdio.h> // This is called preprocessor directive
 ```
 This is an instruction to the compiler to find and include a set of header files. Header files contain additional code that we can use. In this case, the compiler has been instructed to include `<stdio.h>`, which contains all kinds of useful functions like `printf()`. We can also write it as `#include"stdio.h"`. We'll get into detail about what functions are later, but for now just remember that a function is a collection of code that we can use.
 
@@ -86,7 +86,7 @@ In order to run your C program, it needs to be compiled. In order to compile fro
 ```shell
 gcc -o helloworld ./helloworld.c
 ```
-`gcc` is the Gnu C Compiler, and it will compile the C file we give it into a program that can be run by your computer.
+`gcc` is the GNU C Compiler, and it will compile the C file we give it into a program that can be run by your computer.
 
 `-o helloworld` tells GCC that you want the compiled file (the output of gcc) to be a file called "helloworld". The final part of the command tells GCC where the C file to be compiled can be found. If you aren't comfortable with navigating from the command line, this step will be hard, but that's okay- it's easy to learn and come back, or you can try from an IDE.
 
