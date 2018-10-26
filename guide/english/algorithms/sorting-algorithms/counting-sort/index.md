@@ -29,7 +29,7 @@ the output sequence.
   next data 1 at an index 1 smaller than this index.
   
 ```
-### Implementation
+### Implementation in JavaScript
 ```js
 let numbers = [1, 4, 1, 2, 7, 5, 2];
 let count = [];
