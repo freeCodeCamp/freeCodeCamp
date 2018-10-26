@@ -95,6 +95,7 @@ public class MainActivity extends Activity {
 
 ## [Services](https://developer.android.com/guide/components/services)
 A _service_ is a component without user interface to perform long-running operations in the background.
+The services have seperate lifecycle than the activity or component that initiates it. This unique autonomy of seperate lifecycle allows the service to run in thee background even if the activity that initiated it is stopped.
 There are three kinds of services:
 
 - _foreground_ services: they are strictly related to user's interaction (for example music playback), so it's harder for the system to kill them.
@@ -103,9 +104,11 @@ There are three kinds of services:
 
 ## [Broadcast receivers](https://developer.android.com/guide/components/broadcasts)
 A _broadcast receiver_ is another component without user interface (except an optional status bar notification) that lets the system to deliver events from/to the app, even when the latter hasn't been previously launched.
+These receivers respond to broadcast messages from the system of other application. These messages are known as events or intents.
 
 ## [Content providers](https://developer.android.com/guide/topics/providers/content-providers)
-A _content provider_ is a component used to manage a set of app data to share with other applications. Each item saved in the content provider is identified by a URI scheme.
+A _content provider_ is a component used to manage a set of app data to share with other applications. Each item saved in the content provider is identified by a URI scheme.These provide access to central repository of data by applications.This data can be storedby the accessing application or by other applications.
+
 
 For detailed information about the topic, see the official [Android fundamentals](https://developer.android.com/guide/components/fundamentals) documentation.
 
