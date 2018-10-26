@@ -7,13 +7,15 @@ title: Cryptocurrency
 >
 > – Satoshi Nakamoto, 09 January 2009, announcing Bitcoin on SourceForge.
 
-Cryptocurrency is a subset of digital currency, which acts as a medium of exchange amongst two parties. It is known as crypto-currency because of the utilization of cryptography in securing its transactions. Some examples of cryptocurrencies include Bitcoin, LiteCoin, Dash, Ethereum, and Ripple. Bitcoin is currently the most popular. With cryptocurriencies trustless and anonymous transactions become possible since it does not involve any third party - there is no central bank. 
+A cryptocurrency is a form of digital currency, which acts as a medium for exchanging value between two parties, just like real currency. It is known as crypto-currency because strong cryptography is used to secure financial transactions, and to verify transfer of value. Some examples of cryptocurrencies include Bitcoin, LiteCoin, Dash, Ethereum, and Ripple. Bitcoin is the most popular of all. 
 
-Cryptocurrency can be exchanged as fractions not possible with traditional currency. For example, transactions can amount to 0.00007 BTC or even lower.
+Crypto-currencies make use of distributed ledger in the shape of the blockchain. This distributed ledger enable trustless and anonymous transactions because no trusted intermediary (e.g. a bank) is required to settle the transactions. 
 
-If you want to earn bitcoins through mining, it can be done through solving mathematical proof-of-work problems that validate transactions. Blockchain uses the concept of irreversible cryptographic hash function which consists of guessing a random number (usually less than a certain value) to solve the problem for transaction validation. You will require machines with high processing power to be able to solve these problems (for example Fast-Hash One or CoinTerra TerraMiner IV). Computer's with a high end Graphics Card installed (such as the Nivida GTX 1080) are also able to solve these hashes effectively. 
+Cryptocurrency can be exchanged in tiny fractions which is not possible with traditional currency. For example, transactions can amount to 0.00007 BTC or even lower.
 
-Some people invest in cryptocurrency on exchanges such as Binance, Bitrex, or Coinbase. The market peeked in January of 2018. 
+Mining is a process by which transactions are verified and added to the blockchain. Miners are awarded crypto-coins for their efforts. For example, in Bitcoin, bitcoins can be earned by solving mathematical proof-of-work problems that validate transactions. Blockchain uses the concept of an irreversible cryptographic hash function which consists of guessing a random number (usually less than a certain value) to solve the problem for transaction validation. You will require machines with high processing power to be able to solve these problems (for example Fast-Hash One or CoinTerra TerraMiner IV). Computer's with a high-end Graphics Card installed (such as the Nivida GTX 1080) are also able to solve these hashes effectively. 
+
+Some people invest in cryptocurrency on exchanges such as Binance, Bitrex, or Coinbase. The market peaked in January of 2018. 
 
 #### More Information:
 [Cryptocurrency](https://en.wikipedia.org/wiki/Cryptocurrency)    
