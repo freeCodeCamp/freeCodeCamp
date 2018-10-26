@@ -48,7 +48,7 @@ Then in your css file:
 
 ```
 
-**Note:** Class names are traditionally all lowercase, with each word in a multi-word class name separated by hyphens (e.g. "super-man").
+**Note:** Class names are traditionally all lowercase, with each word in a multi-word class name separated by hyphens (e.g. "super-man")(also known as kebab-case).
 
 You can also combine classes in the same line:
 ```css
