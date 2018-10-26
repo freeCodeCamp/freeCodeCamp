@@ -34,9 +34,9 @@ El atributo `<a href>` es compatible con todos los navegadores.
 
 ```html
 
-<a href="#">This is a dead link</a> 
- <a href="https://www.freecodecamp.org">This is a live link to freeCodeCamp</a> 
- <a href="https://html.com/attributes/a-href/">more with a href attribute</a> 
+<a href="#">es un enlace muerto</a> 
+ <a href="https://www.freecodecamp.org">es un enlace en vivo a freeCodeCamp</a> 
+ <a href="https://html.com/attributes/a-href/">mas con atributos href</a> 
 ```
 
 ### Anclajes en página
