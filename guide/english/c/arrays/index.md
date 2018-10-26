@@ -107,7 +107,7 @@ int main() {
         for (int col = 0; col < cols; col++) {
             printf("%5d", arr[row][col]);
         }
-        puts("");
+        printf("\n");
     }
 
     return 0;
