@@ -16,6 +16,7 @@ If/Else is a conditional statement where depending on the truthiness of a condit
     statement2;
   }
 ```
+> **Note:** You can nest as many statements in an "if" block as you'd like; you are not limited to the amount in the examples.
 ## If/Else Statement
 
 ```
@@ -87,6 +88,7 @@ For instance:
     echo 'One condition is true, and one condition is false!';
   }
 ```
+> **Note:** It's a good practice to wrap individual conditions in parens when you have more than one (it can improve readability).
 
 ## Ternary Operators
 
@@ -100,6 +102,8 @@ Also there is an alternative syntax for control structures
   else
     statement5;
 ~~~~
+> **Note:** This style draws some similarity to <a href='http://interactivepython.org/runestone/static/pythonds/Introduction/ControlStructures.html' target='_blank' rel='nofollow'>Python's control structure syntax</a>. Use whichever style you're more familiar with!
+
 For more information check out the following link:
 <a href='http://php.net/manual/en/control-structures.alternative-syntax.php' target='_blank' rel='nofollow'>PHP Alternative syntax for control structures</a>
 
