@@ -4,7 +4,7 @@ title: Rest API Design
 
 
 ### History
-REST stands for **Re**presentational **S**tate **T**ransfer protocol. Roy Fielding defined REST in his Phd dissertation in year 2000.
+REST stands for **Re**presentational **S**tate **T**ransfer **P**rotocol. Roy Fielding defined REST in his [Phd dissertation in year 2000](https://www.ics.uci.edu/~fielding/pubs/dissertation/fielding_dissertation.pdf).
  
 ### What is it?
 REST was developed to provide a uniform interface for
