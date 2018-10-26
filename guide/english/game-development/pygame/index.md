@@ -13,3 +13,10 @@ The project started in the year 2000 as a result of the death of PySDL. The Pyga
 released after six months development in April of 2001.
 
 * [Pygame Official Website](https://www.pygame.org)
+
+
+### Pygame Youtube Tutorial Videos
+
+Here is a list of great YouTuber channels that teach Pygame Tutorials
+[Tech With Tim] - (https://www.youtube.com/channel/UC4JX40jDee_tINbkjycV4Sg)
+[sentdex]       - (https://www.youtube.com/channel/UCfzlCWGWYyIQ0aLC5w48gBQ)
