@@ -165,3 +165,7 @@ The following code and image shows what is possible using different column width
 
 #### More Information:
 https://getbootstrap.com/docs/4.0/layout/grid/
+
+
+### Enhanced
+bootstrap grid has come to enhanced web developement in a modern way 
