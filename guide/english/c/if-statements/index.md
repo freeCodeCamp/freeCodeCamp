@@ -61,7 +61,17 @@ int main(void) {
 output:
 Statement is False!
 ```
-
+```c
+#include<stdio.h>
+void main {
+char strc[] = { "abc", "def", "abc" }
+if(strc[0]==strc[2]) {
+printf("strings match!\n);
+}
+else {
+printf("strings mismatch!);
+}
+```
 There are a few important things that are different here. First, `stdbool.h` hasn't been included. That's okay, because `true` and `false` aren't being used. In C, we have statements that are treated as true and false even though the words true or false aren't involved in the operation.
 
 Within the parenthesis of the if statement is something new, too: `n == 3`. This is a comparison between `n` and the number 3. `==` is the comparison operator, and is one of several comparison opertations in C.
