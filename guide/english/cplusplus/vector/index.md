@@ -110,7 +110,7 @@ HERE. WE. GO!
 ```cpp
 std::vector<std::string> a{"test", "element", "access"};
 for(auto it = v.begin(); it != v.end(); it++) { //notice use of auto keyword
-    cout<<*it<<endl; //Will print out string that the iterator is currently ppointing to
+    cout<<*it<<endl; //Will print out string that the iterator is currently pointing to
 }
 ```
 From here, you can do all sorts of cool stuff, like manipulating the vector or mess around with it's order as you please!
