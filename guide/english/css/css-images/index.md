@@ -17,9 +17,10 @@ This helps in adding an image to a website.
 The `img` element will be rendered by default in most browsers to be displayed as an inline-block display type unless specified otherwise.
 
 ```
-img {
+img
+{
      display: inline-block;
-     }
+}
 ```
 
 #### More Information:
