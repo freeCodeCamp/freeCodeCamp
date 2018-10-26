@@ -5,7 +5,9 @@ title: Lambda Expressions
 
 Lambda expressions were introduced in Java 8 and it marks Java's foray to the functional programming paradigm. It helps produce readable and concise code and can tremendously simplify your Java applications.
 
-Lambda functions are essentially functions — independent units of code that you can use anywhere you would normally use an object, like passing an argument to a method. In this case, instead of creating a class and then creating an object from the class, or directly using an anonymous class, you write your lambda expression and just pass it to the method instead of a class object.
+Lambda expressions are a simple way to wrap a function — independent unit of code that you can use anywhere you would normally use an object, like passing an argument to a method. 
+
+A lambda expression is an object, an instance of a functional interface (interface that has exactly one abstract method). It lets you implement this method focusing only on its body, without having to create an anonymous class.
 
 A lambda expression is composed of three parts — function parameters, the `->` symbol, and a function body.
 
