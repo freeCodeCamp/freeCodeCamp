@@ -6,8 +6,8 @@ title: Special Pythagorean triplet
 ### Method:
 - In this challenge we need to find the pythagorean triple.
 - We have the following information - `a < b < c`
-- Based on this, we can make a loop starting from `a = 0` and and `b = a` since `a < b` always.
-- We also know that `a + b + c = n` and `a^2 + b^2 = c^2`, since we have a, b and n. We can find c and see if it satisfies the triplet theorem.
+- Based on this, we can make a loop starting from `a = 0` and `b = a` since `a < b` always.
+- We also know that `a + b + c = n` and `a^2 + b^2 = c^2`, since we have `a`, `b` and `n`. We can find `c` and see if it satisfies the triplet theorem.
 
 ### Solution:
 ```js
