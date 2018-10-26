@@ -5,8 +5,8 @@ title: C++
 
 ## What is C++?
 
-* C++ is a general purpose programming language which has been used since the 1990's
-* It was designed by Bjarne Stroustrup under with the name "C with classes".
+* C++ is a general purpose programming language which has been used since the 1990's.
+* It was designed by Bjarne Stroustrup under the name "C with classes".
 * It is a version of C that includes Object-Oriented elements, including classes and functions.
 
 * It is considered one of the biggest programming languages, as you can see in the following image:
@@ -87,8 +87,6 @@ Programmers use a Hello World program (like this one) as a ritual on using a new
 _You have finished coding your first C++ program and have understood most of the code you have written/typed. CONGRATULATIONS!_
  
  **Good Luck to all of you and happy coding! :)**
- 
- **Happy Coding ! :)**
  
  **Feel free to ask any questions on FreeCodeCamp's GitHub page or [FreeCodeCamp's Forum.](https://forum.freecodecamp.org/)**
 
