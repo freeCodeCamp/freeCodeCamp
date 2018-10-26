@@ -54,7 +54,15 @@ namespace ErrorHandling
  * In the above program passing 0 as second parameter will throw DivideByZeroExceptions. 
  * This exception will handled by the catch block which has DivideByZeroException class. If any exceptions other than DivideByZeroExceptions occur, they will be handled by Exception catch block.
  
+ 
  Exception is the base class for all the exceptions classes available in C# library. Even if you want to write your own exception, you have to inherit the Exception base class into your program.
+
+#### Error handling in SQL Server
+ Error handling in SQL Server give us control over Transact-SQL code. For example when things go wrong we get a chance to do something about it and possibly make it right again. SQL Server error handling can be as simple as just logging that something happened or it could be us trying to fix an error. It can even be translating the error in SQL language because we all know how technical SQL Server error messages could get making no sense and hard to understand. Luckily we have a chance to translate those messages into something more meaningful to pass on to the users, developers, etc.
+
+In this article, we’ll take a closer look at the TRY…CATCH statement: the syntax, how it looks, how it works and what can be done when an error occurs. Furthermore, the method will be explained in a SQL Server case using a group of T-SQL statements/blocks which is basically SQL Server way of handling errors. This is a very simple, yet structured way of doing it and once you get the hang of it, can be quite helpful in many cases.
+
+On top of that, there is a RAISERROR function that can be used to generate our own custom error messages which is a great way to translate confusing error messages into something a little bit more meaningful that people would understand.
 
 #### More Information:
 <!-- Please add any articles you think might be helpful to read before writing the article -->
