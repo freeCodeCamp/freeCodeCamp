@@ -197,7 +197,7 @@ for index, item in enumerate(shopping_basket):
   print("Item", index, "is a", item)
 ```
 **for/else statements**
-Pyhton permits you to use else with for loops, the else case is executed when none of the conditions with in the loop body was satisfied. To use the else we have to make use of `break` statement so that we can break out of the loop on a satsfied condition.If we do not break out then the else part will be executed.
+Python permits you to use else with for loops, the else case is executed when none of the conditions within the loop body was satisfied. To use the else we have to make use of the `break` statement so that we can break out of the loop on a satsfied condition. If we do not break out then the else part will be executed.
 
 ```python
 week_days = ['Monday','Tuesday','Wednesday','Thursday','Friday']
