@@ -176,5 +176,69 @@ class Complex {
 ```
 [run the full code](https://repl.it/MwnJ)
 
-
 //## Constructor Chaining
+
+## Important things to note about Constructors in Java
+* It is not always necessary to have a constructor in Java. Java automatically make an empty constructor for you,
+BUT it is the case when you do not have a parameterized constructor. <br /> 
+* If you have a parameterized constructor and you want to
+make an object with empty constructor (without any parameters) then it is not possible without creating an empty constructor
+yourself. <br /><br /> Lets look at this with an example:
+
+```java
+public class Test
+{
+
+}
+
+public static void main(String[] args) 
+{
+    Test b = new Test();    // Its ok, because we don not have a parametrized constructor
+}
+
+```
+
+But if there is a parametrized constructor and we wanted to make an object of that class without parametrized constructor, program will 
+not compile
+
+```java
+public class Test
+{
+    Test(int a)     // Parametrized Constructor
+    {
+    }
+}
+
+public static void main(String[] args) 
+{
+    // There will be an error on line below because we have a parametrized constructor and have not made an empty constructor ourselves 
+    Test b = new Test();   
+}
+
+```
+
+So, the above code should be changed to following in order to compile properly:
+```java
+public class Test
+{
+    Test()      // Empty Constructor
+    {
+    } 
+    
+    Test(int a)     // Parametrized Constructor
+    {
+    }
+}
+
+public static void main(String[] args) 
+{
+    // Now this will compile properly 
+    Test b = new Test();   
+}
+
+```
+
+
+
+
+
