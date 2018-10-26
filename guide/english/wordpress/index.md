@@ -22,6 +22,10 @@ One of the main things that appeal to people about WordPress is the abudant them
 
 Whether it's page transitions or a customized contact form, WordPress users are only a few clicks away from building a website.
 
+### How to get started with Wordpress
+To make your own site, simply visit https://wordpress.com/start/user?ref=homepage and register. 
+You site be live on the Internet with minutes for the whole world to see. Go get creating!
+
 ### More Information
 
 - [WordPress Codex: the online manual](https://codex.wordpress.org/)
