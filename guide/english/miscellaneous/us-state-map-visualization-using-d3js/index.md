@@ -57,3 +57,4 @@ For example, `uStates.draw("#statesvg", sampleData, tooltipFunc);`
 2.  <a href='https://github.com/NPashaP' target='_blank' rel='nofollow'>**NPashaP GitHub**</a>
 3.  <a href='https://intridea.github.io/stately/' target='_blank' rel='nofollow'>**Stately**</a>
 4.  <a href='http://freehtml5maps.com' target='_blank' rel='nofollow'>**FreeHTML5Maps**</a>
+5.  <a href='https://python-graph-gallery.com/292-choropleth-map-with-folium/' target='_blank' rel='nofollow'>**Related example using Python**</a>
