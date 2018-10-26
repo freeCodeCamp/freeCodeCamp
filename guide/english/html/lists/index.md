@@ -3,7 +3,7 @@ title: Lists
 ---
 
 # Lists
-Lists are used to display items. There are 3 types of lists: _ordered lists_, _unordered lists_, and _description lists_.
+Lists are used to display data items. There are 3 types of lists: _ordered lists_, _unordered lists_, and _description lists_.
 
 ## Ordered lists
 An _ordered list_ is used to describe an ordered collection of data. Browsers usually display an ordered list as a numbered list. Create an ordered list using the `<ol>` tag.
