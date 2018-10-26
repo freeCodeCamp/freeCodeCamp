@@ -22,6 +22,14 @@ Your browser does not support the audio element.
 <audio src="https://s3.amazonaws.com/freecodecamp/simonSound1.mp3" controls loop autoplay> 
 </audio>
 ```
+#### Example 3
+//A song 8 Letters By Album: Why don't we
+
+<audio controls>
+  <source src="01 - 8 Letters.ogg" type="audio/ogg">
+  <source src="01 - 8 Letters.mp3" type="audio/mpeg">
+Your browser does not support the audio element.
+</audio>
 
 The `controls` attribute includes audio controls like play, pause, and volume. If you don't use this attribute, then no controls will be shown.
 
