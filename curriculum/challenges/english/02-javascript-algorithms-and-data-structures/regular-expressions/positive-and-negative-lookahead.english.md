@@ -27,21 +27,21 @@ Use <code>lookaheads</code> in the <code>pwRegex</code> to match passwords that 
 ```yml
 tests:
   - text: Your regex should use two positive <code>lookaheads</code>.
-    testString: 'assert(pwRegex.source.match(/\(\?=.*?\)\(\?=.*?\)/) !== null, "Your regex should use two positive <code>lookaheads</code>.");'
+    testString: assert(pwRegex.source.match(/\(\?=.*?\)\(\?=.*?\)/) !== null, 'Your regex should use two positive <code>lookaheads</code>.');
   - text: Your regex should not match <code>"astronaut"</code>
-    testString: 'assert(!pwRegex.test("astronaut"), "Your regex should not match <code>"astronaut"</code>");'
+    testString: assert(!pwRegex.test("astronaut"), 'Your regex should not match <code>"astronaut"</code>');
   - text: Your regex should not match <code>"airplanes"</code>
-    testString: 'assert(!pwRegex.test("airplanes"), "Your regex should not match <code>"airplanes"</code>");'
+    testString: assert(!pwRegex.test("airplanes"), 'Your regex should not match <code>"airplanes"</code>');
   - text: Your regex should not match <code>"banan1"</code>
-    testString: 'assert(!pwRegex.test("banan1"), "Your regex should not match <code>"banan1"</code>");'
+    testString: assert(!pwRegex.test("banan1"), 'Your regex should not match <code>"banan1"</code>');
   - text: Your regex should match <code>"bana12"</code>
-    testString: 'assert(pwRegex.test("bana12"), "Your regex should match <code>"bana12"</code>");'
+    testString: assert(pwRegex.test("bana12"), 'Your regex should match <code>"bana12"</code>');
   - text: Your regex should match <code>"abc123"</code>
-    testString: 'assert(pwRegex.test("abc123"), "Your regex should match <code>"abc123"</code>");'
+    testString: assert(pwRegex.test("abc123"), 'Your regex should match <code>"abc123"</code>');
   - text: Your regex should not match <code>"123"</code>
-    testString: 'assert(!pwRegex.test("123"), "Your regex should not match <code>"123"</code>");'
+    testString: assert(!pwRegex.test("123"), 'Your regex should not match <code>"123"</code>');
   - text: Your regex should not match <code>"1234"</code>
-    testString: 'assert(!pwRegex.test("1234"), "Your regex should not match <code>"1234"</code>");'
+    testString: assert(!pwRegex.test("1234"), 'Your regex should not match <code>"1234"</code>');
 
 ```
 

@@ -26,15 +26,15 @@ Using the same syntax, we can also <em><strong>add new</strong></em> key-value p
 ```yml
 tests:
   - text: <code>foods</code> is an object
-    testString: 'assert(typeof foods === "object", "<code>foods</code> is an object");'
+    testString: assert(typeof foods === 'object', '<code>foods</code> is an object');
   - text: The <code>foods</code> object has a key <code>"bananas"</code> with a value of <code>13</code>
-    testString: 'assert(foods.bananas === 13, "The <code>foods</code> object has a key <code>"bananas"</code> with a value of <code>13</code>");'
+    testString: assert(foods.bananas === 13, 'The <code>foods</code> object has a key <code>"bananas"</code> with a value of <code>13</code>');
   - text: The <code>foods</code> object has a key <code>"grapes"</code> with a value of <code>35</code>
-    testString: 'assert(foods.grapes === 35, "The <code>foods</code> object has a key <code>"grapes"</code> with a value of <code>35</code>");'
+    testString: assert(foods.grapes === 35, 'The <code>foods</code> object has a key <code>"grapes"</code> with a value of <code>35</code>');
   - text: The <code>foods</code> object has a key <code>"strawberries"</code> with a value of <code>27</code>
-    testString: 'assert(foods.strawberries === 27, "The <code>foods</code> object has a key <code>"strawberries"</code> with a value of <code>27</code>");'
+    testString: assert(foods.strawberries === 27, 'The <code>foods</code> object has a key <code>"strawberries"</code> with a value of <code>27</code>');
   - text: The key-value pairs should be set using dot or bracket notation
-    testString: 'assert(code.search(/bananas:/) === -1 && code.search(/grapes:/) === -1 && code.search(/strawberries:/) === -1, "The key-value pairs should be set using dot or bracket notation");'
+    testString: assert(code.search(/bananas:/) === -1 && code.search(/grapes:/) === -1 && code.search(/strawberries:/) === -1, 'The key-value pairs should be set using dot or bracket notation');
 
 ```
 
