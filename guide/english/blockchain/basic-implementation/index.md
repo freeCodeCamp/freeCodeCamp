@@ -33,23 +33,23 @@ public class Sha
 {
   public static String hash256(String data) //throws NoSuchAlgorithmException 
   {
-  try
-  {
-    MessageDigest md = MessageDigest.getInstance("SHA-256");
-  	md.update(data.getBytes());
-  	return bytesToHex(md.digest());
-  }
-  catch(Exception e)
-  {
-    System.out.println(e.toString());
-  }
+    try
+    {
+      MessageDigest md = MessageDigest.getInstance("SHA-256");
+      md.update(data.getBytes());
+      return bytesToHex(md.digest());
+    }
+    catch(Exception e)
+    {
+      System.out.println(e.toString());
+    }
     return "ERROR";
   }
   public static String bytesToHex(byte[] bytes) 
   {
-  	StringBuffer result = new StringBuffer();
-  	for (byte byt : bytes) result.append(Integer.toString((byt & 0xff) + 0x100, 16).substring(1));
-  	return result.toString();
+    StringBuffer result = new StringBuffer();
+    for (byte byt : bytes) result.append(Integer.toString((byt & 0xff) + 0x100, 16).substring(1));
+    return result.toString();
   }
 }
 ```
@@ -68,16 +68,16 @@ public class Block
   public String data;
   public Block(String _data, String _previousHash)
   {
-  	this.data = _data;
-  	this.previousHash = _previousHash;
+    this.data = _data;
+    this.previousHash = _previousHash;
   }
   public String getHash()
   {
-  	return Sha.hash256(this.previousHash + this.data);
+    return Sha.hash256(this.previousHash + this.data);
   }
   public String toString()
   {
-  	return String.format(" dataValue:\t %s\n previousHash:\t %s\n currrentHash:\t %s\n", this.data, this.previousHash, this.getHash());
+    return String.format(" dataValue:\t %s\n previousHash:\t %s\n currrentHash:\t %s\n", this.data, this.previousHash, this.getHash());
   }
 }
 
@@ -92,13 +92,13 @@ public class Blockchain
   public List<Block> blocks;
   public void add(String _data)
   {
-  	Block previousBlock = this.blocks.get(this.blocks.size()-1);
-  	this.blocks.add(new Block(_data, previousBlock.getHash()));
+    Block previousBlock = this.blocks.get(this.blocks.size()-1);
+    this.blocks.add(new Block(_data, previousBlock.getHash()));
   }
   public Blockchain()
   {
-  	this.blocks = new ArrayList<Block>();
-  	this.blocks.add(new Block("GENESIS", Sha.hash256("GENESIS")));
+    this.blocks = new ArrayList<Block>();
+    this.blocks.add(new Block("GENESIS", Sha.hash256("GENESIS")));
   }
 }
 ```
@@ -112,21 +112,21 @@ public class BlockchainDemo
   public static void main(String args[])
   {
   
-  	//Generate datas
+    //Generate datas
   
-  	List<String> datas = new ArrayList<String>();
-  	for(int i=0; i<=10; i++)
-  	{
-  	  datas.add(Integer.toString(i));
-  	}
+    List<String> datas = new ArrayList<String>();
+    for(int i=0; i<=10; i++)
+    {
+      datas.add(Integer.toString(i));
+    }
   
-  	//Add blocks in to blockchain with the created datas
+    //Add blocks in to blockchain with the created datas
   
-  	Blockchain blockchain = new Blockchain();
+    Blockchain blockchain = new Blockchain();
   
-  	datas.forEach(_data -> blockchain.add(_data));
+    datas.forEach(_data -> blockchain.add(_data));
   
-  	blockchain.blocks.forEach(_block -> System.out.println(_block.toString()));
+    blockchain.blocks.forEach(_block -> System.out.println(_block.toString()));
   }
 }
 ```
@@ -143,16 +143,16 @@ public static boolean verify(Blockchain _blockchain)
   boolean res = true;
   for(int i = 1; i < _blockchain.blocks.size(); i++)
   {
-  	Blockchain.Block currentBlock = _blockchain.blocks.get(i);
-  	if ( !previousBlock.getHash().equals(currentBlock.previousHash) )
-  	{
-  	  System.out.println("\t\tBROKEN");
-  	  res = false;
-  	}
+    Blockchain.Block currentBlock = _blockchain.blocks.get(i);
+    if ( !previousBlock.getHash().equals(currentBlock.previousHash) )
+    {
+      System.out.println("\t\tBROKEN");
+      res = false;
+    }
   
-  	System.out.println(currentBlock.toString());
+    System.out.println(currentBlock.toString());
   
-  	previousBlock = _blockchain.blocks.get(i);
+    previousBlock = _blockchain.blocks.get(i);
   }
   return res;
 }
