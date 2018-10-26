@@ -3,7 +3,7 @@ title: Simple and Useful Linux Commands for Daily use and Operations
 ---
 # Simple and Useful Linux Commands
 The commands listed here are basic, and will help you get started quickly. But they’re also powerful, and they’ll continue to be useful as your Linux expertise expands.
-1. `echo` This takes the text you give it and sends it somewhere—back to the screen, to a file, or to another command. By default it echoes back to the screen, unless used with redirection `>` 
+1. `echo` This takes the text you give it and sends it somewhere — back to the screen, to a file, or to another command. By default it echoes back to the screen, unless used with redirection `>` 
 Example: `echo "hello!"`
 Example 2: `echo "Hello world" > hello.txt`
 2. `cat` To display the contents of a text file, just type `cat myfile`.
