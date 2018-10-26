@@ -122,3 +122,14 @@ So when it comes down to choosing between the two - if speed is critical then Ve
 
 #### More Information
 - [ArrayList Documentation](https://docs.oracle.com/javase/8/docs/api/java/util/ArrayList.html)
+
+## ArrayLists and primitives
+As mentioned before, ArrayLists cannot hold primitive types, and one has to use their corresponding wrapper classes.
+However it comes with a cost: every time you put a primitive value in the list, or every time you get a wrapped value from the list and put it into a primitive variable, the value is automatically converted from the wrapper objet to the primitive value or the other way around. This is called boxing and unboxing. To avoid these additionnal (useless) conversions, there is the FastUtil library (available here: http://fastutil.di.unimi.it ). They have specialkinds of lists that use directly the primitive types.
+Here are a few examples:
+- IntList (and its implementation IntArrayList)
+- BooleanList (and its implementation BooleanArrayList)
+- DoubleList (and its implementation DoubleArrayList)
+- and so on with all 8 primitive java types
+
+Of course they implement the java.util List interface, so they can be used exactly like usual ArrayLists.
