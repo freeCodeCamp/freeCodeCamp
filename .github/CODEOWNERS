@@ -19,6 +19,7 @@
 # -------------------------------------------------
 
 /* @freecodecamp/dev-team
+*.md
 
 # -------------------------------------------------
 # All markdown files in the root are owned 
