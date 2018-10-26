@@ -92,6 +92,31 @@ Result:
 	  </tbody>
 	</table>
 
+### HTML Table Tags
+
+The following table tags used to design table in HTML document:
+
+| Tag             | Description                                                                      |
+| -------------   | -------------------------------------------------------------------------------- |
+| &lt;table&gt;   | Defines a table                                                                  |
+| &lt;th&gt;      | Defines a header cell in a table                                                 |   
+| &lt;tr&gt;      | Defines a row in a table                                                         |      
+| &lt;td&gt;      | Defines a cell in a table                                                        | 
+| &lt;caption&gt; | Defines a table caption                                                          |      
+| &lt;colgroup&gt;| Specifies a group of one or more columns in a table for formatting               |
+| &lt;col&gt;     | Specifies column properties for each column within a &lt;colgroup&gt; element    |      
+| &lt;thead&gt;   | Groups the header content in a table                                             |
+| &lt;tbody&gt;   | Groups the body content in a table                                               |
+| &lt;tfoot&gt;   | Groups the footer content in a table                                             |    
+
+
+
+
+
+
+
+
+
 
 #### More Information:
 
