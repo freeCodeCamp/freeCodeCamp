@@ -32,7 +32,9 @@ public class Car implements Vehicle {
 
 ![:rocket:](//forum.freecodecamp.com/images/emoji/emoji_one/rocket.png?v=2 ":rocket:") <a href='https://repl.it/CItd/0' target='_blank' rel='nofollow'>Run Code</a>
 
-Now, there is a **ground rule** : The Class must implement **all** of the methods in the Interface. The methods must have _the exact same_ signature (name, parameters and exceptions) as described in the interface. The class _does not_ need to declare the fields though, only the methods.
+Now, there is a **ground rule** : The Class must implement **all** of the methods in the Interface. The methods must have _the exact same_ signature (name, parameters) as described in the interface. However they do not necessary raise all exceptions declared in the interface, but they cannot raise exceptions that are not declared in the interface. The class _does not_ need to declare the fields though, only the methods.
+
+Java 8 also introduced functional interfaces, which are interfaces that have exactly 1 abstract method. Although any interface having only 1 abstract method is a functional interface, one can add the @FunctionalInterface annotation to it to specify the client code that it is intended to be one. Instances of functional interfaces can be created with lambda expressions, method references or constructor references.
 
 ## Instances of an Interface
 
