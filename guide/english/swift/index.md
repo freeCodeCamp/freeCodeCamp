@@ -42,7 +42,7 @@ print(x)
 
 # Version
 
-The latest version is [Swift 4.2](https://developer.apple.com/library/content/documentation/Swift/Conceptual/Swift_Programming_Language/RevisionHistory.html), released Sept. 17, 2018. Swift is constantly evolving, and you can expect more changes in the future. It is recommended you use the latest version of Swift when starting a new project.
+The latest version is [Swift 4.2](https://developer.apple.com/library/content/documentation/Swift/Conceptual/Swift_Programming_Language/RevisionHistory.html), released Sept. 17, 2018. Swift is constantly evolving, and you can expect more changes in the future. It is recommended you use the latest version of Swift when starting a new project.You can use Xcode 10.0 to build targets that are written in either Swift 4 or Swift 3.
 
 # Documentation
 
