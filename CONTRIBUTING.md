@@ -13,13 +13,13 @@
 
 # Contribution Guidelines
 
-Hello 👋!
+Hello! 👋
 
 freeCodeCamp.org is possible thanks to thousands of kind volunteers like you. We are grateful for your contributions, and we are excited to welcome you aboard.
 
-We strictly enforce our ["Code of Conduct"](https://www.freecodecamp.org/code-of-conduct). Take a moment to read it. It's only 196 words long.
+We strictly enforce our ["Code of Conduct"](https://www.freecodecamp.org/code-of-conduct). Take a moment to read it, it's only 196 words long.
 
-Happy contributing 🎉!
+Happy contributing! 🎉
 
 ## Here are some fun ways that you can help
 
@@ -73,7 +73,7 @@ If you're interested in improving these coding challenges, here's [how to work o
 
 ### Translate guide articles and coding challenges
 
-You can help us to translate our Guide articles and Coding challenges into a language that you speak. Currently we have translated versions in:
+You can help us to translate our Guide articles and Coding challenges into a language that you speak. Currently, we have translated versions in:
 
 - [Chinese (中文)](https://github.com/freeCodeCamp/freeCodeCamp/tree/master/curriculum/challenges/chinese)
 - [Russian (русский)](https://github.com/freeCodeCamp/freeCodeCamp/tree/master/curriculum/challenges/russian)
