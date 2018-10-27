@@ -13,26 +13,26 @@ The `#define` keyword is used to define new macros. It's followed by a name and 
 
 If you use the macro this way:
 ```C
-printf("Value of PI: %d", PI);
+printf("Value of PI: %f", PI);
 ```
-Is the same as write this:
+Is the same as writing this:
 ```C
-printf("Value of PI: %d", 3.14);
+printf("Value of PI: %f", 3.14);
 ```
 
 #### Types of macros
 There are two type of macros. The `Object-like` macros, showed above, and the `Function-like` macros.
 
 #### Function-like Macros
-Function-like uses the same `#define` keyword. The difference is that you use a pair o parentheses after the function name.
+Function-like uses the same `#define` keyword. The difference is that you use a pair of parentheses after the function name.
 ```C
 #define hello_world() printf("Hello World!")
 ```
-So calling:
+So coding:
 ```C
-hello_world()
+hello_world();
 ```
-You get:
+The preprocessor would replace it as:
 ```C
 printf("Hello World!");
 ```
@@ -40,11 +40,11 @@ You can set parameters too:
 ```C
 #define hello(X) printf("Hello " X "!")
 ```
-Now calling:
+Now coding:
 ```C
 hello("World");
 ```
-You get the equivallent of:
+The preprocessor would replace it as:
 ```C
 printf("Hello World!");
 ```
