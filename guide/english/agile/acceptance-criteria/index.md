@@ -23,4 +23,4 @@ Nomad8 provides an [FAQ on Acceptance Criteria](https://nomad8.com/acceptance_cr
 
 Leading Agile on [Acceptance Criteria](https://www.leadingagile.com/2014/09/acceptance-criteria/)
 
-"The Acceptance Criteria for Writing Acceptance Criteria" by Elijah Valenciano  (https://medium.freecodecamp.org/the-acceptance-criteria-for-writing-acceptance-criteria-6eae9d497814)
+Elijah Valenciano [The Acceptance Criteria for Writing Acceptance Criteria](https://medium.freecodecamp.org/the-acceptance-criteria-for-writing-acceptance-criteria-6eae9d497814)
