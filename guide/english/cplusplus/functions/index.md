@@ -30,7 +30,7 @@ A parameter is like a placeholder. When a function is invoked, you pass a value 
 ### Function body:
 The function body contains a collection of statements that define what the function does.
 
-##Example:
+## Example:
 
 ```cpp
 int max(int num1, int num2)
@@ -45,8 +45,9 @@ int max(int num1, int num2)
  
    return result; 
 }
-## calling a function:
-
+```
+## Calling a function:
+```
 int res;
 res=max(5,10);
 
