@@ -6,7 +6,7 @@ In Python version 3.6, a new method of formatting strings was implemented. The n
 
 The use of f-string allows the programmer to dynamically insert a variable into a string in a clean and concise manner. In addition to inserting variables into a string this feature also also provides the ability for a programmer to evaluate expressions, join the contents of collection, and even invoke functions within the f-string.
 
-To perform these dynamic behaviours within an f-string we wrap them inside curly brackets within the string, and prepend a lower case f to the beginning of the string (before the opening quote.
+To perform these dynamic behaviours within an f-string we wrap them inside curly brackets within the string, and prepend a lower case f to the beginning of the string (before the opening quote).
 
 ## Examples
 ### Dynamically inserting a variable into a string at runtime:
@@ -73,6 +73,20 @@ print(list_str)
 #### Output
 ```
 List of fruits: Apple, Banana, Pear
+```
+### Convert an integer to 8-bit binary
+
+### Input
+
+```python
+num = 42
+
+print(f'The binary of {num} is {num:08b}')
+```
+
+### Output
+```
+The binary of 42 is 00101010
 ```
 
 ### Sources

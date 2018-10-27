@@ -24,7 +24,7 @@ Find the sum of the terms in the prime factorisation of 20000000C15000000.
 ```yml
 tests:
   - text: <code>euler231()</code> should return 7526965179680.
-    testString: 'assert.strictEqual(euler231(), 7526965179680, "<code>euler231()</code> should return 7526965179680.");'
+    testString: assert.strictEqual(euler231(), 7526965179680, '<code>euler231()</code> should return 7526965179680.');
 
 ```
 
