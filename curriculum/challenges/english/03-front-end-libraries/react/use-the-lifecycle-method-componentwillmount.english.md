@@ -17,7 +17,7 @@ React components have several special methods that provide opportunities to perf
 <code>componentWillUnmount()</code>
 The next several lessons will cover some of the basic use cases for these lifecycle methods.
   
-##### Note: The ``` componentWillMount ``` Lifecycle method has been deprecated as of version 17, and does not work on later versions. [(Source)](https://reactjs.org/docs/react-component.html)
+##### Note: The ``` componentWillMount ``` Lifecycle method will be deprecated in a future version of 16.X and removed in version 17. [(Source)](https://reactjs.org/blog/2018/03/27/update-on-async-rendering.html)
 </section>
 
 ## Instructions
