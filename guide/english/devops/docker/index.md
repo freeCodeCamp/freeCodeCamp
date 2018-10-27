@@ -182,6 +182,18 @@ ENTRYPOINT ["/entrypoint.sh"]
 CMD ["npm", "start"]
 
 ```
+## Why We Build in Docker Containers ?
+Docker is now being used as a virtualization technology for CI/CD pipelines.
+There are three main reasons:-
+
+## Image Repository
+Docker enables image sharing through its public repository at hub.docker.com. This means that after I prepare a working environment for my application, I make an image out of it and push it to the hub. Anyone can use my custom Docker image with pre-installed tools and packages.
+
+## Versioning
+Every change to a Docker image has its own version (hash) and it’s possible to track changes. It is also possible to roll back to any particular change. With this feature, users are able to control their build configurations with much better precision.
+
+## Application-Centric
+Docker is application-centric. This means that when we start a container, we start an application. With other virtualization technologies, when you get a virtual machine, you get a fully functional Unix environment, where you can login through SSH and do whatever you want.
 
 #### More Information:
 
