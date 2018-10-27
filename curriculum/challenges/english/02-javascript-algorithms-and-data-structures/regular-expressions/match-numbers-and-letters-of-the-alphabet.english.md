@@ -14,7 +14,7 @@ Also, it is possible to combine a range of letters and numbers in a single chara
 
 ## Instructions
 <section id='instructions'>
-Create a single regex that matches a range of letters between <code>h</code> and <code>s</code>, and a range of numbers between <code>2</code> and <code>6</code>. Remember to include the appropriate flags in the regex.
+Create a single regex that matches a range of letters from <code>h</code> and through <code>s</code>, and a range of numbers from <code>2</code> and through <code>6</code>. Remember to include the appropriate flags in the regex.
 </section>
 
 ## Tests
