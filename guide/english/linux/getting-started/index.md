@@ -12,7 +12,9 @@ Trisquel - A distribution  derived from Ubuntu that focuses on only utilizing fu
 
 Most Linux distributions are extremely easy to install, all information is show between each step of the installation.
 
-One important step to look out for is when deciding where to install your new Linux distro. For first users it's better to choose the "Guided" option as it will do all the work for you.
+One important step to look out for is when deciding where to install your new Linux distro. For first users it's better to choose the "Guided" option as it will do all the work for you. 
+
+If you are trying to install a more complicated distrubution, like Arch Linux for example. I recommend you follow guides in the [wiki]https://wiki.archlinux.org/ Not only does the wiki contain great guides about Arch Linux, but also guides for many different Linux applications.
 
 Remember to read all the steps carefully and leave some space in your HDD for the new distro, i would say about 30Gb minimum is a nice to have.
 
