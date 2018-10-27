@@ -22,3 +22,17 @@ Some people invest in cryptocurrency on exchanges such as Binance, Bitrex, or Co
 
 ### Background History on origins of cryptocurrency:
 [Blockchain History](https://www.activism.net/cypherpunk/manifesto.html)
+
+
+### Earlier Attempts:
+
+Bitcoin uses blockchain to distribute copies of ledger among the network participants, although this concept was relatively new but Bitcoin wasn't the first attempt to distribute the ledger. Bitcoin was built upon earlier attempts to decentralize and distribute the ledger in order to eliminate trust on a central authority. The concepts which led to the creation of Bitcoin were derived from the following attempts on making decentralized digital currency:
+
+1. B-Money by Wei Dei
+2. BitGold by Nick Szabo
+3. Reusable Proof-of-Work (RPOW) by Hal Finney
+
+#### More Information:
+[B-Money](http://www.weidai.com/bmoney.txt)
+[BitGold](http://unenumerated.blogspot.com/2005/12/bit-gold.html)
+[Reusable Proof-of-Work](https://nakamotoinstitute.org/finney/rpow/index.html)
