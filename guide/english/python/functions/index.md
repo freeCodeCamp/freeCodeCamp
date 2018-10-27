@@ -129,3 +129,19 @@ result = s(1, 2)
 - Python interprets the function block only when the function is called and not when the function is defined.So even if the function definition block contains some sort of error,the python interpretar will point that out only when the function is called. 
 ### More Information:
 - <a href='https://docs.python.org/3/tutorial/controlflow.html#defining-functions' target='_blank' rel='nofollow'>Python 3 Docs: Defining Functions</a>
+
+
+# Example to print every string of a list in reverse order
+
+example =['Python','is','awesome']
+def func1():
+    for i in example:
+        print(i[-1::-1])
+func1()
+
+'''Here we have defined a list and ued indexing to print every string in a reverse order.
+The output will be
+nohtyP
+si
+emosewa '''
+
