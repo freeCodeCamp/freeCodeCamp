@@ -3,7 +3,7 @@ title: CSS Classes
 ---
 ## CSS Classes
 
-Classes are an efficient way of grouping HTML elements so that they can share the same styles. CSS (Cascading Style Sheets) classes can be used to arrange and decorate web page elements.
+Classes are an efficient way of grouping HTML elements so they can share the same styles. CSS (Cascading Style Sheets) classes can be used to arrange and decorate web page elements.
 
 When writing HTML, you can add classes to an element. Just add the attribute `class="myclass"` to the element. Multiple elements can have the same class, and one element can have multiple classes. You can assign multiple classes to an element by adding all the desired class names separated by a space to the `class` attribute in HTML.
 
@@ -12,7 +12,7 @@ When writing HTML, you can add classes to an element. Just add the attribute `cl
 <p>is a popular catchphrase that <span class="super-man">Super Man</span> often said.</p>
 ```
 
-You can then style these elements with CSS. Classes are referenced with period (.) before them in CSS, but you should not put periods in your HTML.
+You can then style these elements with CSS. Classes are referenced with period (.) before them in CSS, but you should not put periods in your HTML. `<div class="super-man">` notice how in the HTML the class name does not take a dot, or period.
 
 ```css
 .super-man {
@@ -50,7 +50,7 @@ Then in your css file:
 
 **Note:** Class names are traditionally all lowercase, with each word in a multi-word class name separated by hyphens (e.g. "super-man").
 
-You can also combine classes in the same line:
+You can also combine classes on the same line:
 ```css
 .super-man .spider-man {
   color: red;
