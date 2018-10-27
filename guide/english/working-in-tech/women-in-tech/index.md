@@ -32,7 +32,10 @@ The worst thing you can do is to sell yourself short if you want something take 
 - [R-Ladies](https://rladies.org/)
 - [Django Girls](https://djangogirls.org/)
 - [Rails Girls](http://railsgirls.com/)
+- [Girls in Tech](http://girlsintech.org/)
 - [Girls Who Code](https://girlswhocode.com/)
 - [1 Million Women To Tech](https://1millionwomentotech.com/)
 - [Women Who Code](https://www.womenwhocode.com/)
+- [Women Techmakers](https://www.womentechmakers.com/)
+- [Women in Technology](https://www.womenintechnology.org/)
 
