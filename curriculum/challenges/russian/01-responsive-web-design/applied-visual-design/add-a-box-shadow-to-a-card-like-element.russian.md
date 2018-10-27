@@ -47,7 +47,7 @@ tests:
     color: black;
   }
 
-
+ 
 
   .fullCard {
     width: 245px;
