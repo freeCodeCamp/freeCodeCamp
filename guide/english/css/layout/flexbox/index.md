@@ -11,7 +11,8 @@ There are 3 simple steps to use flexbox.
 3. Adjust individual items by using properties like justify-content, align-items etc.
 
 The Flexbox Layout aims at providing a more efficient way to lay out, align and distribute space among items in a container, even when their size is unknown and/or dynamic (thus the word "flex").The main idea behind the flex layout is to give the container the ability to alter its items' width/height (and order) to best fill the available space.<br><br>
-<img src="https://cdn.css-tricks.com/wp-content/uploads/2011/08/flexbox.png" width="80%" height="auto" alt="flexUsage"><br><br>
+<img src="https://i.imgur.com/FDUyrHZ.png" alt="flexUsage"><br><br>
+
 <ul>
   <li><b>main-axis</b>: The main axis of a flex container is the primary axis along which flex items are laid out. Beware, it is not necessarily horizontal; it depends on the flex-direction property (see below).</li>
   <li><b>main-start | main-end</b>The flex items are placed within the container starting from main-start and going to main-end.</li>: 
