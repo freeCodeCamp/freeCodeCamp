@@ -83,6 +83,8 @@ tests:
 <section id='solution'>
 
 ```js
-// solution required
+ p {
+    font-size: 16px;
+  }
 ```
 </section>
