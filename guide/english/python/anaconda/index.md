@@ -32,3 +32,6 @@ For full usage of each command, including abbreviations, see
 ### Sources
 1. [Anaconda Documentation](https://docs.anaconda.com/)
 2. [Conda Documentation](https://conda.io/docs/)
+
+### Virtual environment in Conda 
+1. ``conda create -n VIRTUAL_ENV_NAME `` 
