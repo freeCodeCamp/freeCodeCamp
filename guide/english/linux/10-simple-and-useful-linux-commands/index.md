@@ -18,7 +18,15 @@ Example 2: `echo "Hello world" > hello.txt`
 11. `shutdown` use shut down the system and turn off the power. Example: `shutdown -h now`shuts down system immediately. `shutdown -h +5` shuts down system after five minutes. You can also reboot the system immediately by issuing the command `shutdown -r now`.
 
 
-Use these commands in scripts and at the command line. They're all very powerful commands, and Linux's man page has a lot more information about each one.
+Use these commands in scripts and at the command line. They're all very powerful commands, and Linux's man page has a lot more information about each one (see below).
+
+You can get easily **help about the commands** in two ways:
+
+1. Using `man` to access the manual pages (man pages). This command is a builtin help inside Linux. It takes as argument another command name and returns a complete tutorial about the argument, including main options of use, sintax details and another related commands. You can search a text accross all man pages database.
+Example: `man ls`
+Example 2: `man -k "list open files"`
+2. Using command `--help` to see quick options to use in command line.
+Example: `grep --help`
 
 ***********
 
