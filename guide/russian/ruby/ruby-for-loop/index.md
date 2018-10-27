@@ -8,22 +8,22 @@ localeTitle: Ruby For Loops
 
 Для циклов это всего лишь один пример цикла или итерации по элементам. Ниже приведен пример цикла for:
 ```
-for element in array do 
-  puts element 
- end 
+for element in array do
+  puts element
+ end
 ```
 
 Существует много разных способов, которыми вы можете выполнить цикл for или loop в Ruby, другим примером может быть:
 ```
-element.each do |element| 
-  puts element 
- end 
+array.each do |element|
+  puts element
+ end
 ```
 
 Это позволило бы достичь тех же результатов, что и вышеупомянутый цикл, но более аккуратный и более эффективный, поскольку он использует встроенные методы Array.
 
 Чтобы сделать еще один шаг, мы можем написать вышеприведенный цикл следующим образом:
 ```
-element.each do { |element| puts element } 
+array.each do { |element| puts element }
 
 ```
