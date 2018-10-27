@@ -3,7 +3,7 @@ title: All Factors of a Number
 ---
 ## All Factors of a Number
 
-You can think of factors as the whole numbers that you multiply to get another whole number. Factorizing is only applicable for the whole numbers.
+You can think of factors as the whole numbers that you multiply to get another whole number. Factorizing is only applicable for the whole numbers. Whole numbers that cannot be further broken down are called Prime numbers. You can think of prime numbers as blocks that can be combined together to create other numbers. 
 
 <img src="https://upload.wikimedia.org/wikipedia/commons/e/e8/Factor_Tree_of_42.png" width="90">
 
@@ -56,7 +56,7 @@ Since there are no whole numbers between 6 and 7, all of the positive factors ha
 ## Confirm number of factors is correct
 We can quickly confirm that we have identified all positive factors with the following steps:
 
-1. Take the prime factorization (provided by tree above)
+1. Take the prime factorization (write the number as a product of prime factors) (provided by tree above)
 
 2<sup>1</sup> * 3<sup>1</sup> * 7*<sup>1</sup>
 
@@ -72,7 +72,7 @@ We can quickly confirm that we have identified all positive factors with the fol
 
 2 * 2 * 2 = 8
 
-
+(To get more insight into why we performed steps 2 and 3, [read this](http://doubleroot.in/lessons/permutations-combinations/number-of-divisors/)
 4. Confirm that 42 has 8 factors: 
 
 1 | 2 | 3 | 6 | ... | 7 | 14 | 21 | 42
