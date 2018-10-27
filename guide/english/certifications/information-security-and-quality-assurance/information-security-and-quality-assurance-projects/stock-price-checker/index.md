@@ -8,3 +8,7 @@ This is a stub. <a href='https://github.com/freecodecamp/guides/tree/master/src/
 <a href='https://github.com/freecodecamp/guides/blob/master/README.md' target='_blank' rel='nofollow'>This quick style guide will help ensure your pull request gets accepted</a>.
 
 <!-- The article goes here, in GitHub-flavored Markdown. Feel free to add YouTube videos, images, and CodePen/JSBin embeds  -->
+##Tips
+
+You can use [IEX](https://iextrading.com/developer/) API service to retrieve stock data. It free to use as long as you properly cite IEX using the following text and link:
+>Data provided for free by IEX. [View IEX’s Terms of Use](https://iextrading.com/api-exhibit-a/).
