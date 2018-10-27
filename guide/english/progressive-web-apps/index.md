@@ -4,9 +4,9 @@ title: Progressive Web Apps
 
 ## Progressive Web Apps
 
-Progressive Web Apps or "PWAs" appear to be more than just a fad, but a fundamentally different way of approaching what a website can and should be on whatever platform you are viewing it from.
+Progressive Web Apps or "PWAs" appear to be more than just a fad but a fundamentally different way of approaching what a website can and should be regardless of the platform from which you are viewing it.
 
-PWAs can install portions of themselves onto devices for offline viewing, use service workers to deliver content as needed when a connection is available and best of all standardize certain functionality between mobile and desktop devices.
+PWAs can install portions of themselves onto devices for offline viewing, use service workers to deliver content as needed when a connection is available and, best of all, standardize certain functionality between mobile and desktop devices.
 
 ### Features
 
@@ -17,7 +17,7 @@ Specific features of PWAs include:
 * **Offline Capabilities**
   * progressively-enhanced with Service Workers to let them work offline
 * **Native App Feel**
-  * adopts a Shell & Content application model to create app navigation & interactions
+  * adopts a Shell and Content application model to create app navigation and interactions
 * **Fresh**
   * always up-to-date thanks to service workers
 * **Safe**
@@ -27,22 +27,22 @@ Specific features of PWAs include:
 * **Engaging**
   * can access the re-engagement UIs of the OS through Push Notifications
 * **Easy Installation**
-  * can be added to the home screen through browser-provided prompts, allowing users to "keep" apps they find most useful without the hassle of an app store
+  * can be added to the home screen through browser-provided prompts allowing users to "keep" apps they find most useful without the hassle of an app store
 * **Linkable**
-  * meaning they're zero-friction, zero-install, and easy to share
+  * meaning they are zero-friction, zero-install, and easy to share
   * the social power of URLs matters
 
 > These apps aren’t packaged and deployed through stores, they’re just websites that took all the right vitamins.<sup>1</sup>
 
 ### Progressive Enhancement
 
-Progressive enhancement means that everyone can access the basic content and functionality of a page in any browser, and those without certain browser features may receive a reduced but still functional experience. [- Lighthouse](https://medium.com/@addyosmani/progressive-web-apps-with-react-js-part-4-site-is-progressively-enhanced-b5ad7cf7a447)<sup>2</sup>
+Progressive enhancement means that everyone can access the basic content and functionality of a page in any browser and those without certain browser features may receive a reduced but still functional experience. [- Lighthouse](https://medium.com/@addyosmani/progressive-web-apps-with-react-js-part-4-site-is-progressively-enhanced-b5ad7cf7a447)<sup>2</sup>
 
 A great analogy from [Aaron Gustafson](http://alistapart.com/article/understandingprogressiveenhancement) is that progressive enhancement (PE) is like a peanut M&M.
 
 > "The Peanut is your content, the chocolate coating is your presentation layer and your JavaScript is the hard candy shell."
 
-This implies that depending on the browser, the experience can change.
+This implies that depending on the browser the experience can change.
 
 ### Demo
 
