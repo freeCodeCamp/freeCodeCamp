@@ -130,3 +130,14 @@ title: Partitions
  
  - Shows inode number. 
    - ls -il 
+   
+   
+   
+   creating partitions with gparted
+   //installing gparted
+   sudo apt-get install gparted
+   
+   //for gpt 128 partitions are posible but in mbr there can be only 4 primary partitions possible however there can be multiple logical partitions. Gparted is great tool for handling all kind of operation regarding partitions.
+  //in any case for some reason gparted doesn't work then mkfs command might work.
+   
+ 
