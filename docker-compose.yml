@@ -10,7 +10,7 @@
 version: "3"
 services:
     freecodecamp:
-        image: node:8.10
+        image: node:8.12
         depends_on:
             - db
             - mailhog
