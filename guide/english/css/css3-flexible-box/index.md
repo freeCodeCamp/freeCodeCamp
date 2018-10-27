@@ -25,7 +25,7 @@ Now lets have a short look at "justify-content". This property declares how elem
 
 There are three slightly more interesting options for `justify-content` you might want to try out. "space-between" will evenly space the children out across the available space, pushing the outermost children to the edges. "space-evenly" ensures the same amount of space between the items; this can look a little more centralized. "space-around" gives them equal space all around themselves, a little like a margin - two adjacent children will have double the space where they touch, and only a single amount where they're alongside the border.
 
-`justify-content` defines the behaviozr of child elements on the main axis. What about vertical? This is where you'll need `align-items`, which defines how items lie on the cross-axis. Keep in mind that whether you're in a row or a column will determine what your main and your cross axis is.
+`justify-content` defines the behavior of child elements on the main axis. What about vertical? This is where you'll need `align-items`, which defines how items lie on the cross-axis. Keep in mind that whether you're in a row or a column will determine what your main and your cross axis is.
 
 `flex-start`, `center` and `flex-end` behave as before - left, center and right have become top, center and bottom. Other options are `baseline`, whereby all children will centralize themselves down a single baseline, and `stretch`, whereby they will stretch to fill the container.
 
@@ -37,7 +37,7 @@ For an interactive guide go through <a href="https://medium.freecodecamp.org/the
 
 Both of these are great resources by Ohans Emmanuel.
 
-Yet another great visual guide that is in-depth but easy to follow can be found in <a href="https://css-tricks.com/snippets/css/a-guide-to-flexbox/" target="_blank" rel="nofolow"> A Guide to Flexbox</a> by <a href="https://css-tricks.com" target="_blank" rel="nofolow">CSS-Tricks</a>
+Yet another great visual guide that is in-depth but easy to follow can be found in <a href="https://css-tricks.com/snippets/css/a-guide-to-flexbox/" target="_blank" rel="nofollow"> A Guide to Flexbox</a> by <a href="https://css-tricks.com" target="_blank" rel="nofolow">CSS-Tricks</a>
 
 ### Sources
 
