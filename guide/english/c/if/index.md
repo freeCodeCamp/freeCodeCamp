@@ -4,28 +4,35 @@ title: If
 
 # If
 
-The if statement executes different blocks of code based on conditions.
+The `if` statement executes a block of code conditionally.
 
-```
+```C
 if (condition) {
-	// Do something when `condition` is true
+        // Execute this only when `condition` is true
+}
+```
+
+The `else` statement executes a block of code when the `if` condition is false.
+
+```C
+if (condition) {
+	// Execute this when `condition` is true
 }
 else {
-	// Do something when `condition` is false
+	// Execute this when `condition` is false
 }
 ```
+If you need to add subsequent conditions. For readability, you should use `else if` rather than nesting `if` statements.
 
-When `condition` is true, code inside the `if` section executes, otherwise `else` executes. Sometimes you would need to add a second condition. For readability, you should use a `else if` rather than nesting `if` statements.
-
-```
+```C
 if (condition) {
-	// Do something if `condition` is true
+	// Execute this when `condition` is true
 }
-else if (anotherCondition) {
-	// Do something if `anotherCondition` is ture
+else if (differentCondition) {
+	// Execute this when the first `condition` is false but `differntCondition` is true
 }
 else {
-	// Do something if `condition` AND `anotherCondition` is false
+	// Execute this when `condition` AND `anotherCondition` are both false
 }
 ```
 
@@ -33,16 +40,16 @@ Note that the `else` and `else if` sections are not required, while `if` is mand
 
 
 ## Example
-```
+```C
 #include <stdio.h>
 
-int main () {
+int main() {
 
    // Local variable definition
    int a = 10;
 
    // Check the boolean condition
-   if(a < 5) {
+   if (a < 5) {
       // If condition is true then print the following
       printf("a is less than 5!\n" );
    }
@@ -60,5 +67,5 @@ int main () {
 ## Output
 ```
 -> a is not less than 5!
--> Value of a is : 100
+-> Value of a is : 10
 ```
