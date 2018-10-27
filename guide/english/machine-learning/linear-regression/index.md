@@ -42,6 +42,7 @@ It is important to note that not all linear regression is done with gradient des
 
 In Python:
 Apply directly by using scikit library, thus making linear regression easy to use even on large datasets.
+my changes
 ```py
 import pandas as pd
 from sklearn.cross_validation import train_test_split
