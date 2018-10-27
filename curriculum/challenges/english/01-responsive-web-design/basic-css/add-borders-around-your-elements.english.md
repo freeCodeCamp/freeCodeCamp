@@ -107,8 +107,19 @@ tests:
 
 ## Solution
 <section id='solution'>
-
+There are two ways to add border property in css.
 ```js
-// solution required
+.smaller-image {
+  border: 10px solid green; \\border : (border-width) (border-style) (border-color);
+ }
+```
+In border property we define all three properties at a time 
+and another way is to write all properties separately
+```
+  .smaller-image {
+    border-width: 10px;
+    border-style: solid;
+    border-color: green;
+  }
 ```
 </section>
