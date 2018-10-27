@@ -99,6 +99,17 @@ Use the **.radio-inline** class if you want the checkboxes to appear on the same
 <label class="radio-inline"><input type="radio" name="optradio">Option 3</label>
 ```
 
+#Group checkboxes or radios on the same horizontal row by adding .form-check-inline to any .form-check.
+
+<div class="form-check form-check-inline">
+  <input class="form-check-input" type="checkbox" id="inlineCheckbox1" value="option1">
+  <label class="form-check-label" for="inlineCheckbox1">1</label>
+</div>
+<div class="form-check form-check-inline">
+  <input class="form-check-input" type="checkbox" id="inlineCheckbox2" value="option2">
+  <label class="form-check-label" for="inlineCheckbox2">2</label>
+</div>
+
 #### 5. Select (List)
 
 Select lists are used if you want to allow the user to pick from multiple options.
