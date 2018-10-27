@@ -58,3 +58,7 @@ This is also a really good open source project that helps you visualize algorith
 [Infographic on how Machine Learning Algorithms Work](https://www.boozallen.com/content/dam/boozallen_site/sig/pdf/infographic/how-do-machines-learn.pdf)
 
 This infographic shows you how unsupervised and supervised machine learning algorithms work.
+
+### If the array has [2,3,6,], the resultant array should be [2,3,7] as 236 + 1 = 237 . Solution:- 
+
+https://practice.geeksforgeeks.org/viewSol.php?subId=1227849&pid=107&user=RAHUL_NITD
