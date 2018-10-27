@@ -4,7 +4,6 @@ title: Vue
 ## Introduction
 
 Vue.js is a progressive framework for building user interfaces.
-
 Its core is focused on only the "view" layer and can be easily integrated with existing libraries and projects.
 But on the other hand, Vue.js can also be leveraged to create powerful single page applications by integrating with extensions
 such as `vue-router` for page routing and `vuex` for state management.
