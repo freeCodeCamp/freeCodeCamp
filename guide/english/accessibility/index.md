@@ -7,6 +7,8 @@ title: Accessibility
 More specifically, Web accessibility means that people with disabilities can perceive, understand, navigate, and interact with the Web, and that they can
 contribute to the Web. Web accessibility also benefits others, including [older people](https://www.w3.org/WAI/bcase/soc.html#of) with changing abilities
 due to aging.
+Web accessibility is the best and also benifits others
+
 
 Web accessibility encompasses all disabilities that  affect access to the Web, including visual, auditory, physical, speech, cognitive, and neurological
 disabilities. The document [How People with Disabilities Use the Web](http://www.w3.org/WAI/intro/people-use-web/Overview.html) describes how different
@@ -31,6 +33,7 @@ to do so. In order to use these elements appropriately, web designers must use a
 them. Alt text should be short and to the point--generally [no more than five to 15 words](https://www.thoughtco.com/writing-great-alt-text-3466185). If a
 graphic is used to convey information that exceeds the limitations of alt text, that information should also exist as web text in order to be read by screen
 readers. [Learn more about alt text](https://webaim.org/techniques/alttext/).
+yes
 
 Just like Alt text is for people who are visually impaired, transcripts of the audio are for the people who cannot listen. Providing a written document or a transcript of what is being spoken helps make the audio accessible to people who are hard of hearing.
 
