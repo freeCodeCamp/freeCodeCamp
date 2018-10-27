@@ -3,7 +3,7 @@ id: bad87fee1348bd9aedd08835
 title: Check Radio Buttons and Checkboxes by Default
 challengeType: 0
 videoUrl: ''
-localeTitle: Проверьте радио кнопки и флажки по умолчанию
+localeTitle: Отметьте радио кнопки и флажки по умолчанию
 ---
 
 ## Description
