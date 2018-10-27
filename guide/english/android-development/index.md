@@ -85,5 +85,7 @@ The link to the advanced course is here - [Advanced Android App Development](htt
 
 [Android Studio](https://developer.android.com/studio/)  
 [Installing Android Studio](https://developer.android.com/studio/install)  
+[Write your App](https://developer.android.com/studio/intro/)
 [Running Apps in an Emulator](https://developer.android.com/studio/run/emulator)
+[What's New ?](https://developer.android.com/studio/features/)
 
