@@ -92,6 +92,7 @@ title: JavaScript Tutorials and Other Resources
 ## Podcasts
 
 *   [JavaScript Jabber](https://devchat.tv/js-jabber)
+*   [Syntax](https://syntax.fm/)
 
 
 ## Free JavaScript Books
