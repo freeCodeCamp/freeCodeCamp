@@ -1,73 +1,73 @@
 ---
 title: Getters & Setters
-localeTitle: Hechiceros y Setters
+localeTitle: Métodos Get y Set (Getters & Setters)
 ---
-# Hechiceros y Setters
 
-Getters y Setters se utilizan para proteger eficazmente sus datos, especialmente al crear clases. Para cada variable de instancia, un método getter devuelve su valor mientras que un método setter establece o actualiza su valor. Getters y setters también se conocen como accessors y mutators, respectivamente.
+# Métodos ``get`` y ``set`` (Getters & Setters)
 
-Por convención, los captadores comienzan con get, seguido del nombre de la variable, con la primera letra del nombre de la variable en mayúscula. Los establecedores comienzan con set, seguido del nombre de la variable, con la primera letra del nombre de la variable en mayúscula.
+Los métodos ``get`` y ``set`` se utilizan para proteger eficazmente sus datos, en particular al crear clases. Para cada variable de instancia, un método ``get`` devuelve su valor mientras que un método ``set`` establece o actualiza su valor. Los métodos ``get`` y ``set`` también se conocen como accesores y mutadores, respectivamente.
+
+Por convención, los métodos ``get`` comienzan con get seguidos del nombre de la variable, la primera letra del nombre de la variable se escribe en mayúsculas. Los métodos ``set``  comienzan con set, seguidos del nombre de la variable, la primera letra del nombre de la variable se escribe en mayúsculas.
 
 **_Ejemplo:_**
 
 ```java
-public class Vehicle { 
-  private String color; 
+ public class Vehiculo { 
+    private String color; 
  
-  // Getter 
-  public String getColor() { 
-  return color; 
-  } 
+    // Método get 
+    public String getColor() { 
+       return color; 
+    } 
  
-  // Setter 
-  public void setColor(String c) { 
-  this.color = c; 
-  } 
+    // Método set 
+    public void setColor(String c) { 
+       this.color = c; 
+    } 
  } 
 ```
 
-El método getter devuelve el valor del atributo. El método de establecimiento toma un parámetro y lo asigna al atributo.
+El método ``get`` devuelve el valor del atributo. El método ``set`` recibe un parámetro y lo asigna al atributo.
 
-Una vez que el captador y el definidor se han definido, lo usamos en nuestro principal:
+Una vez que los métodos ``get`` y ``set`` se han definido, los usamos en nuestro método  principal:
 
 ```java
-public stativ void main(String[] args) { 
-  Vehicle v1 = new Vehicle(); 
-  v1.setColor("Red"); 
-  System.out.println(v1.getColor()); 
+ public static void main(String[] args) { 
+    Vehiculo v1 = new Vehiculo(); 
+    v1.setColor("Rojo"); 
+    System.out.println(v1.getColor()); 
  } 
- 
- // Outputs "Red" 
+
+ // Salida: "Rojo" 
 ```
 
 * * *
 
-Getters y setters permiten el control sobre los valores. Puede validar el valor dado en el setter antes de configurar el valor.
+Los métodos ``get`` y ``set`` permiten el control sobre los valores. Usted puede validar el parametro recibido por el método ``set`` antes de asignarlo al atributo.
 
-## ¿Por qué getter y setter?
+## ¿Por qué ``get`` y ``set``?
 
-Al utilizar getter y setter, el programador puede controlar cómo se accede y actualiza sus variables importantes, como cambiar el valor de una variable dentro de un rango específico. Considere el siguiente código de un método setter:
+Al utilizar ``get`` y ``set``, el programador puede controlar cómo se acceden y actualizan sus variables importantes, como cuando se actualiza el valor de una variable dentro de un rango específico. Considere el siguiente código de un método ``set``:
 
 ```java
-public void setNumber(int num) { 
+ public void setNumero(int num) { 
     if (num < 10 || num > 100) { 
-        throw new IllegalArgumentException(); 
+       throw new IllegalArgumentException(); 
     } 
-    this.number = num; 
+    this.numero = num; 
  } 
 ```
 
-Esto garantiza que el valor del número siempre se establezca entre 10 y 100. Si el programador permite que el número de la variable se actualice directamente, la persona que llama puede establecer cualquier valor arbitrario:
+Esto garantiza que el valor de ``numero`` siempre se establezca entre 10 y 100. Si el programador permite que la variable ``numero`` se actualice directamente, la persona que llame el método podria establecer cualquier valor arbitrario:
 
 ```java
-obj.number = 3; 
+ obj.numero = 3; 
 ```
 
-Esto viola la restricción para valores que van desde 10 a 100 para esa variable. Como no esperamos que eso suceda, ocultar el número de variable como privado y usar un configurador lo evita. Por otro lado, un método getter es la única forma en que el mundo exterior puede leer el valor de la variable:
+Esto viola la restricción del rango de valores de 10 a 100 para esa variable. Ya que no esperamos que eso suceda, ocultar la variable ``numero`` como ``private`` y usar un método ``set`` lo evitaria. Por otro lado, un método ``get`` es la única forma en que el mundo exterior puede leer el valor de la variable:
 
 ```java
-public int getNumber() { 
-    return this.number; 
+ public int getNumero() { 
+    return this.numero; 
  } 
-
 ```
