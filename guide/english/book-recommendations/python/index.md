@@ -67,6 +67,12 @@ You'll learn many of the first princliples for data science tools and how algori
 - ISBN-10: 1617294039
 - ISBN-13: 978-1617294037
 
+*Python for Data Analysis: Data Wrangling with Pandas, NumPy, and IPython* by Wes McKinney
+- The book is concerned with the nuts and bolts of manipulating, processing, cleaning, and crunching data in Python. The goal of the author is to offer a guide to the parts of the Python programming language and its data-oriented library ecosystem and tools that will equip you to become an effective data analyst. 
+- [Amazon] https://www.amazon.com/_/dp/1491957662?tag=oreilly20-20
+- ISBN-10: 1491957662
+- ISBN-13: 978-1491957660
+
 #### Other Resources
 
 - [Functional Programming in Python by David Mertz [OREILLY] [FREE]](https://www.oreilly.com/programming/free/files/functional-programming-python.pdf)
