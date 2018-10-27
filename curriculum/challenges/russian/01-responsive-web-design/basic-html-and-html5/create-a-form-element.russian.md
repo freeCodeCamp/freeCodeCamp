@@ -3,14 +3,14 @@ id: bad87fee1348bd9aede08830
 title: Create a Form Element
 challengeType: 0
 videoUrl: ''
-localeTitle: Создание элемента формы
+localeTitle: Создайте элемент формы
 ---
 
 ## Description
 <section id="description"> Вы можете создавать веб-формы, которые фактически отправляют данные на сервер, используя не что иное, как чистый HTML. Вы можете сделать это, указав действие в элементе <code>form</code> . Например: <code>&lt;form action=&quot;/url-where-you-want-to-submit-form-data&quot;&gt;&lt;/form&gt;</code> </section>
 
 ## Instructions
-<section id="instructions"> Заглушите свое текстовое поле внутри элемента <code>form</code> и добавьте атрибут <code>action=&quot;/submit-cat-photo&quot;</code> в элемент формы. </section>
+<section id="instructions"> Добавьте input с типом text внутри элемента <code>form</code> и добавьте атрибут <code>action=&quot;/submit-cat-photo&quot;</code> в тег формы. </section>
 
 ## Tests
 <section id='tests'>
