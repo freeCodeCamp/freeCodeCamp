@@ -20,6 +20,12 @@ Now, high level languages aren't suitable for execution by computers. Hence, the
 
 #### [HUMANS] -> [Highlevel language programs] -> [Translator] -> [Machine Language] -> [Computer]
 
+#### [TRANSLATOR] consists of [Preprocessor], [Compiler], [Assembler], [Loader/Linker] 
+
+**Preprocessor** is responsible for Micro expansion, file inclusion.
+
+**Loader** is responsible for Allocation, Re-allocation, linking, Loading.
+
 A **compiler** is a type of translator program, that translates high level languages into binary code, which is nothing but 1s and 0s. When you run your source code, a compiler translates all the code first, then produces the binary code. Then the computer takes the binary code and runs it.
 
 If there are errors in your source code, the compiler detects and flags them. This stops the compilation process. Once all errors are fixed, the compiler converts the code and generates an executable program.
