@@ -54,15 +54,15 @@ Puedes ayudarnos con:
 
 **¿Qué son los artículos de Guía?**
 
-Los artículos de guía te ayudan a comprender rápidamente un concepto de tecnología. Estas son explicaciones breves y sencillas que puedes leer antes de ir a recursos más profundos.
+Los artículos de guía te ayudan a comprender rápidamente un concepto tecnológico. Se trata de explicaciones breves y sencillas que puedes leer antes de ir a recursos más profundos.
 
 Puedes encontrar un [artículo de ejemplo sobre elementos HTML aquí](./client/src/pages/html/elements/index.md).
 
 **¿Sobre qué puedo escribir un artículo?**
 
-Agradecemos tu ayuda al escribir estos artículos. No tienes que ser un experto en un tema para escribir sobre él; toda esta Guía es de código abierto, por lo que incluso si cometes un error, otro colaborador lo corregirá.
+Agradecemos tu ayuda para escribir estos artículos. No tienes que ser un experto en un tema para escribir sobre él; toda esta Guía es de código abierto, por lo que incluso si cometes un error, otro colaborador lo corregirá.
 
-Para obtener ayuda, busca un `esbozo de artículo` en nuestro [sitio web de la Guía](https://www.freecodecamp.org/guide), escribe el artículo y luego abre una solicitud para reemplazar el esbozo con tu artículo. Una solicitud o [pull request](https://help.github.com/articles/about-pull-requests/) es la forma en que sugerirán los cambios. Permite a otros conocer tus cambios, revisarlos y adóptarlos.
+Para obtener ayuda, busca un `esbozo de artículo` en nuestro [sitio web de la Guía](https://www.freecodecamp.org/guide), escribe el artículo y luego abre una solicitud para reemplazar el esbozo con tu artículo. Una solicitud o [pull request](https://help.github.com/articles/about-pull-requests/) es la forma en que sugerirán los cambios. Permite a otros conocer tus cambios, revisarlos y adoptarlos.
 
 Si no puedes encontrar un esbozo sobre el tema que deseas escribir, puedes abrir un PR (pull request) que crea el esbozo e incluye tu borrador del artículo.
 
@@ -110,7 +110,7 @@ Contribuir a esto requiere cierta comprensión de las API, la sintaxis de ES6 y 
 
 Esencialmente, esperamos cierta familiaridad básica con algunas de las tecnologías citadas, herramientas y bibliotecas mencionadas anteriormente. Dicho esto, no es necesario que seas un experto en ello.
 
-Siéntete libre de hacernos preguntas, en los hilos relacionados con problemas, y estaremos encantados de aclarar. En caso de duda, puede comunicarse con Mrugesh Mohapatra [`@raisedadead`](https://github.com/raisedadead) o Stuart Taylor[`@bouncey`](https://github.com/bouncey) desde nuestra equipo de desarrollo de la plataforma para ayudarte con esto.
+Siéntete libre de hacernos preguntas, en los hilos relacionados con problemas, y estaremos encantados de aclarar. En caso de duda, puedes comunicarte con Mrugesh Mohapatra [`@raisedadead`](https://github.com/raisedadead) o Stuart Taylor[`@bouncey`](https://github.com/bouncey) de nuestro equipo de desarrollo de la plataforma para ayudarte con ello.
 
 **Si deseas trabajar en ello, siga estas pautas:**
 
@@ -118,17 +118,17 @@ Siéntete libre de hacernos preguntas, en los hilos relacionados con problemas, 
 
 ## Preguntas frecuentes
 
-**¿Cómo puedo reportar un error, que no está a bordo?**
+**¿Cómo puedo reportar un error que aún no ha sido reportado?**
 
 Si crees que has encontrado un error, primero lee el artículo ["Ayuda, he encontrado un error"](https://forum.freecodecamp.org/t/how-to-report-a-bug/19543) y sigue sus instrucciones.
 
-Si estás seguro de que es un error nuevo, siga adelante y cree un nuevo problema o Issue en GitHub. Asegúrate de incluir la mayor cantidad de información posible para que podamos reproducir el error. Tenemos una plantilla de problemas predefinida para ayudarte a superar esto.
+Si estás seguro de que es un error nuevo, sigue adelante y crea un nuevo problema o Issue en GitHub. Asegúrate de incluir la mayor cantidad de información posible para que podamos reproducir el error. Tenemos una plantilla predefinida para ayudarte con esto.
 
-Ten en cuenta que cualquier problema que busques ayuda de codificación en un desafío se cerrará. El rastreador de problemas es estrictamente para los temas y discusiones relacionados con el código base. Deberías [buscar ayuda en el foro](https://www.freecodecamp.org/forum) antes de informar en caso de duda.
+Ten en cuenta que cualquier problema en que busques ayuda de codificación en un desafío se cerrará. El rastreador de problemas es estrictamente para los temas y discusiones relacionados con el código base. Deberías [buscar ayuda en el foro](https://www.freecodecamp.org/forum) antes de informar en caso de duda.
 
 **¿Cómo puedo reportar un problema de seguridad?**
 
-Por favor, no crees Issues de GitHub para problemas de seguridad. En su lugar, envíe un correo electrónico a `security@freecodecamp.org` y lo veremos de inmediato.
+Por favor, no crees Issues de GitHub para problemas de seguridad. En su lugar, envía un correo electrónico a `security@freecodecamp.org` y lo veremos de inmediato.
 
 **Estoy atascado en algo que no está en esta documentación. ¿Cómo puedo obtener ayuda?**
 
@@ -137,17 +137,17 @@ Siéntete libre de pedir ayuda en:
 - [La categoría "Colaboradores" en nuestro foro público](https://www.freecodecamp.org/forum/c/contributors).
 - [La sala de chat de nuestros colaboradores públicos en Gitter](https://gitter.im/FreeCodeCamp/Contributors).
 
-Nos emociona ayudarte a contribuir con cualquiera de los temas en los que le gustaría trabajar. Asegúrate de buscar tu consulta antes de publicar una nueva. Sé educado y paciente. Nuestros voluntarios y moderadores de la comunidad están siempre alrededor para guiarlo a través de sus consultas.
+Nos emociona ayudarte a contribuir con cualquiera de los temas en los que quieras trabajar. Asegúrate de buscar tu consulta antes de publicar una nueva. Sé educado y paciente. Nuestros voluntarios y moderadores de la comunidad están siempre pendientes para guiarte a través de tus consultas.
 
 **Soy nuevo en GitHub y Open Source en general:**
 
 Lee nuestra [Guía de cómo contribuir al Código Abierto](https://github.com/freeCodeCamp/how-to-contribute-to-open-source).
 
-**¿Qué significan estas diferentes etiquetas, que están etiquetadas en los problemas?**
+**¿Qué significan estas etiquetas con que están etiquetados los problemas?**
 
-Nuestros moderadores de nuestra comunidad [evalúan](https://en.wikipedia.org/wiki/Software_bug#Bug_management) problemas y solicitudes según su prioridad, gravedad y otros factores. Puedes [encontrar un glosario completo de sus significados aquí](https://github.com/freecodecamp/freecodecamp/labels).
+Los moderadores de nuestra comunidad [evalúan](https://en.wikipedia.org/wiki/Software_bug#Bug_management) problemas y solicitudes según su prioridad, gravedad y otros factores. Puedes [encontrar un glosario completo de sus significados aquí](https://github.com/freecodecamp/freecodecamp/labels).
 
-Debes revisar los problemas **`Help Wanted`** o **`first timers welcome`** para una búsqueda rápida de lo que está disponible para que trabajes. Estos están libres para todos y no necesita permisión antes de trabajar en ellos.
+Debes revisar los problemas **`Help Wanted`** o **`first timers welcome`** para una búsqueda rápida de lo que está disponible para que trabajes. Estos están libres para todos y no necesitas permiso para empezar a trabajar en ellos.
 
 Si estos temas carecen de claridad sobre lo que debe hacerse, siéntete libre de hacer preguntas en los comentarios.
 
