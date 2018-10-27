@@ -12,7 +12,7 @@ There are certain requirements that an algorithm must abide by:
 <ol>
   <li>Definiteness: Each step in the process is precisely stated.</li>
   <li>Effective Computability: Each step in the process can be carried out by a computer.</li>
-  <li>Finiteness: The program will eventually successfully terminate.</li>
+  <li>Finiteness: An algorithm must always terminate after a finite number of steps.</li>
 </ol>
 
 Some common types of algorithms include sorting algorithms, search algorithms, and compression algorithms. Classes of algorithms include Graph, Dynamic Programming, Sorting, Searching, Strings, Math, Computational Geometry, Optimization, and Miscellaneous. Although technically not a class of algorithms, Data Structures are often grouped with them. 
