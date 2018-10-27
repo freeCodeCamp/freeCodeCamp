@@ -34,3 +34,4 @@ We can also align in right if we want:
 
 #### More Information:
 <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/img" target="_blank">MDN article on the img tag and its attributes<a>
+<a href="https://www.w3schools.com/tags/att_img_align.asp" target="_blank">W3school examples on img tag</a>
