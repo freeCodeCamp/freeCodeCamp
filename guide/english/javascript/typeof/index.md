@@ -66,7 +66,7 @@ console.log(x * y); // NaN
 console.log(typeof (x * y)); // number
 ```  
 
-When checking for a number, it is not sufficient to check the output of `typeof` for a number, since `NaN` also  
+When checking for a number, it's not sufficient to check the output of `typeof` for a number, since `NaN` also  
 passes this test.  
 This function check for numbers, and also doesn't allow the `NaN` value to pass.
 ```javascript
