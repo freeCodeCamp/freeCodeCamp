@@ -10,6 +10,8 @@ It's a list of possibilities, with an action for each possibility, and an option
 
 We exit from the switch by `break`. If the `break` statement is not reached before the beginning of the next case, the execution will fall through and begin executing the code in the next case.
 
+Each case must be a digit or a character i.e.. a constant but not a variable.
+
 ## Syntax of switch...case
 
 ```c
