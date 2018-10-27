@@ -76,6 +76,11 @@ for (int i = 1; i <= 5; i++)
 
 They are usually declared after libraries, this makes them be toguether and easier to read.
 For local variables it happens the same, declare them at the top (Other people preffer it declaring them as later as possible in order to save memory see: [cplusplus.com](http://www.cplusplus.com/forum/general/33612/)
+Also , you can define variables globally in following way :- 
+```cpp
+#include<iostream>
+# define <variable name> <variable value>;
+```
 
 ## Use only one return function at the end
 
@@ -105,6 +110,8 @@ for (int i = 1; i <= 5; i++)
 * #### Use const, pass by value/reference when suitable. This will help with saving memory.
 
 * #### Write const in caps, datatypes starting with T and variables in lower case.
+
+* #### 'do while' is used for looping when atleast one iteration has to be done without checking the condition.
 
 ```cpp
 const int MAX= 100;             //Constant
