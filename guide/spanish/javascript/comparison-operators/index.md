@@ -25,7 +25,7 @@ JavaScript tiene comparaciones **estrictas** y **de conversión de tipos** .
     
 *   Una expresión que compara Objetos solo es verdadera si los operandos hacen referencia al mismo Objeto.
     
-*   Los tipos nulos e indefinidos son estrictamente iguales a sí mismos y abstractamente iguales entre sí.
+*   Los tipos nulos y indefinidos son estrictamente iguales a sí mismos y abstractamente iguales entre sí.
     
 
 ## Operadores de igualdad
@@ -41,14 +41,14 @@ El operador de igualdad convierte los operandos si no son **del mismo tipo** , l
 
 #### Ejemplos
 ```
- 1   ==  1        // true 
- "1"  ==  1        // true 
- 1   == '1'       // true 
- 0   == false     // true 
- 0   == null      // false 
+ 1   ==  1        // verdadero  
+ "1"  ==  1        // verdadero 
+ 1   == '1'       // verdadero  
+ 0   == false     // verdadero  
+ 0   == null      // falso 
  
-   0   == undefined   // false 
- null  == undefined   // true 
+   0   == undefined   // falso 
+ null  == undefined   // verdadero  
 ```
 
 ### Desigualdad (! =)
@@ -62,11 +62,11 @@ x != y
 
 #### Ejemplos
 ```
-1 !=   2     // true 
- 1 !=  "1"    // false 
- 1 !=  '1'    // false 
- 1 !=  true   // false 
- 0 !=  false  // false 
+1 !=   2     // verdadero  
+ 1 !=  "1"    // falso 
+ 1 !=  '1'    // falso 
+ 1 !=  true   // falso 
+ 0 !=  false  // falso 
 ```
 
 ### Identidad / igualdad estricta (===)
@@ -80,8 +80,8 @@ x === y
 
 #### Ejemplos
 ```
-3 === 3   // true 
- 3 === '3' // false 
+3 === 3   // verdadero  
+ 3 === '3' // falso 
 ```
 
 ### No identidad / desigualdad estricta (! ==)
@@ -95,8 +95,8 @@ x !== y
 
 #### Ejemplos
 ```
-3 !== '3' // true 
- 4 !== 3   // true 
+3 !== '3' // verdadero  
+ 4 !== 3   // verdadero  
 ```
 
 ## Operadores relacionales
@@ -112,7 +112,7 @@ x > y
 
 #### Ejemplos
 ```
-4 > 3 // true 
+4 > 3 // verdadero  
 ```
 
 ### Operador mayor o igual (> =)
@@ -126,8 +126,8 @@ x >= y
 
 #### Ejemplos
 ```
-4 >= 3 // true 
- 3 >= 3 // true 
+4 >= 3 // verdadero  
+ 3 >= 3 // verdadero  
 ```
 
 ### Menos que operador (<)
@@ -141,7 +141,7 @@ x < y
 
 #### Ejemplos
 ```
-3 < 4 // true 
+3 < 4 // verdadero  
 ```
 
 ### Operador menor o igual (<=)
@@ -155,20 +155,20 @@ x <= y
 
 #### Ejemplos
 ```
-3 <= 4 // true 
+3 <= 4 // verdadero 
 ```
 
 _Puedes encontrar más información en [MDN](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Comparison_Operators) ._
 
-## Comparando nulo e indefinido
+## Comparando nulo y indefinido
 
-Cuando comparamos nulo e indefinido vemos comportamientos diferentes. Permite comprobar diferentes escenarios a través de ejemplos.
+Cuando comparamos nulo y indefinido vemos comportamientos diferentes. Permite comprobar diferentes escenarios a través de ejemplos.
 
 #### Ejemplo: verificación de igualdad estricta (===)
 
 console.log (null === undefined); // O / P - falso
 
-Otuput es falso y eso es correcto porque sabemos que "null" y "indefinido" son tipos diferentes.
+Ouput es falso y eso es correcto porque sabemos que "null" y "indefinido" son tipos diferentes.
 
 #### Ejemplo: verificación de igualdad no estricta (==)
 
@@ -184,7 +184,7 @@ console.log (null> 0); // O / P - falso console.log (null> = 0); // O / P - verd
 
 ¿Extraño? Según la primera declaración, null no es mayor que 0 y de la segunda instrucción null es mayor o igual a 0. Entonces, si pensamos matemáticamente y comparamos ambas declaraciones, obtendremos el resultado de que null es igual a 0. Pero , según la tercera declaración no es cierto. ¿Por qué?
 
-La razón es que la "comparación" y la "verificación de igualdad" funcionan de manera diferente. En comparación, "null / undefined" se convierte primero en número, por lo que, en los dos primeros casos, "null" se convierte en 0 y, por lo tanto, case1) (null> 0) -> false and case2) (null> = 0) -> true. Pero, en la verificación de igualdad (==), "nulo / indefinido" funciona sin ninguna conversión y como se explicó anteriormente (regla especial), en la verificación de igualdad "nulo / indefinido" solo son iguales entre sí y no son iguales a ninguna otra cosa. Por lo tanto (nulo == 0) -> falso.
+La razón es que la "comparación" y la "verificación de igualdad" funcionan de manera diferente. En comparación, "nulo / indefinido" se convierte primero en número, por lo que, en los dos primeros casos, "null" se convierte en 0 y, por lo tanto, case1) (null> 0) -> falso and case2) (null> = 0) -> verdadero. Pero, en la verificación de igualdad (==), "nulo / indefinido" funciona sin ninguna conversión y como se explicó anteriormente (regla especial), en la verificación de igualdad "nulo / indefinido" solo son iguales entre sí y no son iguales a ninguna otra cosa. Por lo tanto (nulo == 0) -> falso.
 
 #### Ejemplo: comparar indefinido con 0 (cero)
 
@@ -192,4 +192,4 @@ console.log (undefined> 0); // O / P - falso console.log (undefined> = 0); // O 
 
 Aquí, probamos los mismos casos que hicimos para null, pero nuevamente el resultado es diferente. ¿Por qué?
 
-Las razones son las siguientes. En los dos primeros casos, estamos comparando indefinido con 0 y, como se mencionó anteriormente, en comparación, indefinido se convierte a NaN. NaN es un valor especial que siempre devuelve falso cuando se compara con cualquier número y es por eso que obtuvimos falso como resultado en los dos primeros casos. Para la tercera declaración, la razón es la misma que se menciona para "null". En la comprobación de igualdad, "nulo / indefinido" solo son iguales entre sí y no iguales a cualquier otra cosa. Por lo tanto (indefinido == 0) -> falso.
+Las razones son las siguientes. En los dos primeros casos, estamos comparando indefinido con 0 y, como se mencionó anteriormente, en comparación, indefinido se convierte a NaN. NaN es un valor especial que siempre devuelve falso cuando se compara con cualquier número y es por eso que obtuvimos falso como resultado en los dos primeros casos. Para la tercera declaración, la razón es la misma que se menciona para "nulo". En la comprobación de igualdad, "nulo / indefinido" solo son iguales entre sí y no iguales a cualquier otra cosa. Por lo tanto (indefinido == 0) -> falso.
