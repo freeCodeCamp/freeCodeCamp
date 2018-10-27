@@ -135,3 +135,4 @@ The following example shows a linear gradient that starts at top left (and goes 
 - [MDN Documentation](https://developer.mozilla.org/en-US/docs/Web/CSS/linear-gradient)
 - [W3Schools](https://www.w3schools.com/css/css3_gradients.asp)
 - [CSS Tricks](https://css-tricks.com/snippets/css/css-linear-gradient/)
+- [Developer Mozilla] (https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Images/Using_CSS_gradients)
