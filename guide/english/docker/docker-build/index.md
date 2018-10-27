@@ -10,7 +10,7 @@ A Dockerfile will install dependencies during the build command, from a specifie
 
 Your image is now stored in your machine’s local Docker image registry.
 
-When you have Docker containers built, you can then run your app using the appropriate run commands.
+When you have Docker containers built, then you can run your app using the appropriate run commands.
 
 #### More Information:
 - [Docker CLI docs: build](https://docs.docker.com/engine/reference/commandline/rm/)
