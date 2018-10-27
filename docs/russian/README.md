@@ -12,41 +12,39 @@
     </tr>
 </table>
 
-# Documentation Quick Reference
+# Краткая справка по документации
 
-Hello 👋 !
+Привет 👋 !
 
-These instructions have not been translated yet. Please check this issue for details: [`#18312`](https://github.com/freeCodeCamp/freeCodeCamp/issues/18312)
+Эта директория содержит полную документацию по содействию в разработке проекта freeCodeCamp.org
 
-This directory contains all of the documentation on contributing to freeCodeCamp.org
-
-## [If you are getting started, start by reading this first.](/CONTRIBUTING.md)
+## [Если ты новичок, рекомендуем сначала ознакомится с этой статьей.](/CONTRIBUTING.md)
 
 ---
 
-## Quick references articles
+## Краткие статьи 
 
-1. How to work on Guide articles.
-2. How to work on Coding Challenges.
-3. How to setup freeCodeCamp locally.
-4. How to catch outgoing emails locally.
+1. Как работать над руководствами.
+2. Как работать над задачами по разработке.
+3. Как работать с FreeCodeCamp локально.
+4. Как ловить исходящие электронные письма локально.
 
-## Style guides
+## Руководство по стилю написания кода
 
-1. Style guide for creating guide articles.
-2. Style guide for creating coding challenges.
+1. Соблюдение правил стиля при создании руководств.
+2. Соблюдение правил стиля при создании задач по разработке.
 
-## Quick commands reference when working locally
+## Список команд для локальной работы
 
-A quick reference to the commands that you will need, when working locally.
+Краткий список команд, которые могут потребоваться при локальной разработке.
 
-| command | description |
+| Команда | Описание |
 | ------- | ----------- |
-| `npm run bootstrap` | Bootstraps the different services |
-| `npm run seed` | Parse all the challenge markdown files and inserts them into MongoDB. |
-| `npm run develop` | Starts the freeCodeCamp API Server and Client Apps |
-| `npm test` |  Run all JS tests in the system, including client, server, lint and challenge tests |
-| `npm run test:client` | Run the client test suite |
-| `npm run test:curriculum` | Run the curriculum test suite |
-| `npm run test:server` | Run the server test suite |
-| `npm run commit` | An interactive tool to help you build a good commit message |
+| `npm run bootstrap` | Загружает различные сервисы. |
+| `npm run seed` | Парсит все файлы разметки с задачами и помещает их в MongoDB. |
+| `npm run develop` | Запускает freeCodeCamp API сервер и клиентское приложение. |
+| `npm test` | Запускает все JS тесты в системе, включая клиентские, серверные и тесты по стилю написания кода. |
+| `npm run test:client` | Запускает набор клиентских тестов. |
+| `npm run test:curriculum` | Запускает набор плановых тестов. |
+| `npm run test:server` | Запускает набор тестов на сервере. |
+| `npm run commit` | Интерактивный инструмент для помощи в написании "commit" сообщения. |
