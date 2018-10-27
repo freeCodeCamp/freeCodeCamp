@@ -33,6 +33,7 @@ data consist of a set of training examples. In supervised learning, each example
 3. Decide what you will be applying, regression or classifier
 4. Decide which algorithm will you be applying, SVM, deep net, etc
 5. Run the algorithm on training set and use the model for predictions
+my changes
 
 #### Courses:
 1. <a href='https://www.udacity.com/course/intro-to-machine-learning--ud120?autoenroll=true' target='_blank' rel='nofollow'>Intro to Machine Learning</a>
