@@ -626,3 +626,4 @@ int main()
     return 0;
 }
 ```
+## in while loop when value one pass then it will excute program infinty times
