@@ -8,11 +8,11 @@ title: Accessibility Basics
 
 Accessibility's role in development is essentially understanding the user's perspective and needs, and knowing that the web, and applications are a solution for people with disabilities.
 
-In this day and age, more and more new technologies are invented to make the life of developers, as well as users, easier. To what degree this is a good thing is a debate for another time, for now it's enough to say the toolbox of a developer, especially a web developer, is as ever-changing as the so called "dark arts" are according to our friend Snape.
+In this day and age, more and more technologies are being invented to make the life of developers as well as users, easier. To what degree is this a good thing, is a debate for another time. For now it's enough to say that the toolbox of a developer, especially a web developer, is as ever-changing as the so called "dark arts", according to our friend Snape.
 
-One tool in that toolbox should be accessibility. It is a tool that should ideally be used in one of the very first steps of writing any form of web content. However, this tool is often not all that well presented in the toolbox of most developers. This could be due to a simple case of not knowing it even exists to extreme cases like not caring about it.
+One tool in that toolbox should be accessibility. It is a tool that should ideally be used in one of the very first steps of writing any form of web content. However, this tool is often not that well presented in the toolbox of most developers. This could be due to a simple case of not knowing it even exists to extreme cases like not caring about it.
 
-In my life as a user, and later a developer, who benefits from accessibility in any form of content, I have seen both ends of that spectrum. If you are reading this article, I am guessing you are in one of the following categories:
+In my life as a user and later a developer, who benefits from accessibility in any form of content, I have seen both ends of that spectrum. If you are reading this article, I am guessing you are in one of the following categories:
 
 *   You are a novice web developer and would like to know more about accessibility.
 *   You are a seasoned web developer and have lost your way (more on that later).
@@ -24,9 +24,9 @@ If you fall outside these rather broad categories, please let me know. I always 
 
 Accessibility in itself is a bit of a misleading term sometimes, especially if English is your second language. It is sometimes referred to as inclusive design.
 
-If your site is on the Internet, reachable by anyone with a web browser, in one sense that website is accessible to everyone with a web browser.
+If your site is on the Internet, reachable by anyone with a web browser, so in one sense you can say that your website is accessible to everyone with a web browser.
 
-But, is all content on your website actually readable, usable and understandable for everyone? Are there no thresholds that bar certain people from 'accessing' all the information you are exposing?
+But, is all content on your website actually readable, usable and understandable by everyone? Are there no thresholds that bar certain people from 'accessing' all the information you are exposing?
 
 You could ask yourself questions like the following ones:
 
