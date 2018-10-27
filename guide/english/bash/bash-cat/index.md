@@ -28,7 +28,6 @@ Print in terminal the content of file.txt:
 ```bash
 cat file.txt
 ```
-
 Concatenate the content of the two files and display the result in terminal:
 ```bash
 cat file1.txt file2.txt
@@ -36,3 +35,4 @@ cat file1.txt file2.txt
 
 #### More Information:
 * Wikipedia: https://en.wikipedia.org/wiki/Cat_(Unix)
+
