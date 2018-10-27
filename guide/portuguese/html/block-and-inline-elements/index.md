@@ -12,15 +12,15 @@ Vamos entendê-los usando os exemplos abaixo:
 
 #### Elemento de nível de bloco:
 
-Um elemento de nível de bloco ocupa o espaço inteiro do pai (contêiner), como `<div>` e `<p>` no exemplo.
+Um elemento de nível de bloco ocupa o espaço inteiro do elemento pai (contêiner), como `<div>` e `<p>` no exemplo.
 
-Note que `<div>` e `<p>` começam de uma nova linha a cada vez, formando uma estrutura de **bloco** . Elementos de nível de bloco começam em novas linhas.
+Note que `<div>` e `<p>` começam sempre em uma nova linha, formando uma estrutura de nível de bloco **bloco** .
 
 **Elementos** comuns **de nível de bloco** são `<div>` , `<p>` , `<article>` , `<section>` , `<figure>` , `<footer>` etc.
 
 #### Elemento Inline:
 
-Inline como o nome diz "incluído como parte do texto principal e não como uma seção separada". Elementos inline ocupam o espaço conforme necessário dentro do espaço definido pelo elemento principal. Ao contrário dos elementos de nível de bloco, eles não iniciam em novas linhas.
+Elementos inline ocupam o espaço conforme necessário dentro do espaço definido pelo elemento principal. Ao contrário dos elementos de nível de bloco, eles não iniciam em novas linhas.
 
 Alguns dos **elementos inline** são `<a>` , `<span>` , `<img>` , `<code>` , `<cite>` , `<button>` , `<input>` etc.
 
@@ -28,7 +28,7 @@ Alguns dos **elementos inline** são `<a>` , `<span>` , `<img>` , `<code>` , `<c
 
 ![Saída Inline](https://user-images.githubusercontent.com/16048167/31069389-e1e3fc10-a779-11e7-86d2-6685e0061f52.png)
 
-**_Nota_** : Os elementos no nível do bloco podem conter outros elementos no nível do bloco ou elementos internos. Elementos in-line **não podem** conter elementos no nível do bloco.
+**_Nota_** : Os elementos no nível do bloco podem conter outros elementos no nível do bloco ou elementos inline. Elementos in-line **não podem** conter elementos no nível do bloco.
 
 #### Alterações no HTML5
 
