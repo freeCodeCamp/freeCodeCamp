@@ -27,7 +27,7 @@ Find Co(200000).
 ```yml
 tests:
   - text: <code>euler355()</code> should return 1726545007.
-    testString: 'assert.strictEqual(euler355(), 1726545007, "<code>euler355()</code> should return 1726545007.");'
+    testString: assert.strictEqual(euler355(), 1726545007, '<code>euler355()</code> should return 1726545007.');
 
 ```
 
