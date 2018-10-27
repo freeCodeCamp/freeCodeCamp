@@ -13,10 +13,10 @@ WordPress powers over 30% of all websites and is by far the most used CMS on the
 Wordpress offers an easy-to-use solution for both web developers and non-web developers alike to create a site.
 
 Just a few advantages of WordPress:
-* Users are able to manage their Wordpress webpage from any computer
-* There's a blog built-in and ready to go whenever applicable
-* It has plugins, which extend functionality to WordPress sites
-* Thousands of free themes are available to customize
+* Users are able to manage their Wordpress webpage from any computer;
+* There's a blog built-in and ready to go whenever applicable;
+* It has plugins, which extend functionality to WordPress sites;
+* Thousands of free themes are available to customize;
 
 One of the main things that appeal to people about WordPress is the abudant themes and plugins. You can make your website look however you like, and with many plugins available you can do anything from having a plugin to handle contact forms, manage SEO (Search Engine Optimization), and many more.
 
