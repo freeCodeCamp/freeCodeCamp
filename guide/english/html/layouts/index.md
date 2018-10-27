@@ -17,7 +17,7 @@ And the HTML layout techniques help us put the needed information into the neede
 ### Techniques to Implement Layouts 
 
 #### HTML Tables
-One the most basic tools to implement layouts in a webpage, these are provided by HTML. But as the layout gets complicated HTML tables quickly lose their ease, because of the increase in markup text.
+One of the most basic tools to implement layouts in a webpage, these are provided by HTML. But as the layout gets complicated, HTML tables quickly lose their ease because of the increase in markup text.
 
 <!-- Examples needed  -->
 
