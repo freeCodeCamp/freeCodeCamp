@@ -21,3 +21,4 @@ Like all computer languages, JavaScript has certain advantages and disadvantages
 
 *   **Client-Side Security**. Because the code executes on the users' computer, in some cases it can be exploited for malicious purposes. This is one reason some people choose to disable Javascript.
 *   **Browser Support**. JavaScript is sometimes interpreted differently by different browsers. Whereas server-side scripts will always produce the same output, client-side scripts can be a little unpredictable. Don't be overly concerned by this though - as long as you test your script in all the major browsers you should be safe. Also, there are services out there that will allow you to test your code automatically on check in of an update to make sure all browsers support your code.
+*   **Script Visibility**. JavaScript code is always visible to everyone.
