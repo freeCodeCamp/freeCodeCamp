@@ -24,4 +24,4 @@ Traverse:
 Traversal is also similar to Inorder traversal of Binary Tree. We start from the leftmost child, recursively print the leftmost child, then repeat the same process for remaining children and keys. In the end, recursively print the rightmost child.
 
 Insertion:
-Initially, we insert into the bottom of a B-tree, just as for binary search trees. We find an appropriate place at the bottom of the tree to insert a given key, and perform the insertion (also adding an additional empty child). If this makes the node too big (so that it has m keys and m + 1 (empty) children), we split the node. 
+We insert into the bottom of a B-tree, similar to binary search trees. First, find an appropriate place at the bottom of the tree to insert a given key, and perform the insertion (also adding an additional empty child). If the node is too big (it has m keys and m + 1 (empty) children), split the node. 
