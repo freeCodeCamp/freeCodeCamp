@@ -23,7 +23,7 @@ Algorithms are most commonly judged by their efficiency and the amount of comput
 
 ### Sorting Algorithms
 
-Sorting algorithms come in various flavors depending on your necessity.
+Sorting algorithms come in various flavors depending on your necessity. You can use any one of the following.
 Some, very common and widely used are:
 
 #### Quick Sort
