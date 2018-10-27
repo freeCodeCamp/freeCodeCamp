@@ -49,23 +49,40 @@ You'll learn many of the first princliples for data science tools and how algori
 - ISBN-10: 149190142X
 - ISBN-13: 978-1491901427
 
-*Automate The Boring Stuff With Python*
-- Great book for beginners. Has interesting projects to practice Python.
+#### Automate The Boring Stuff With Python*
+
+Great book for beginners. Has interesting projects to practice Python.
+
+- [Website](https://automatetheboringstuff.com/) (free)
 - [Amazon](https://www.amazon.com/gp/product/1593275994/)
-- ISBN-10: 1593275994
 - ISBN-13: 978-1593275990
+- ISBN-10: 1593275994
 
-*Python crash course 2e* (note that 3e is going to be published on April 2019)
-- Paid book which gives concrete introduction to both programming and Python by the creation of projects.
-- [Amazon](https://www.amazon.fr/Python-Crash-Course-Hands-Project-Based/dp/1593276036/ref=sr_1_1?ie=UTF8&qid=1539459730&sr=8-1&keywords=python+crash+course)
-- ISBN-10: 1593276036
+#### Python crash course 2e
+
+Paid book which gives concrete introduction to both programming and Python by the creation of projects. (Note: 3e is going to be published on April 2019).
+
+- [Print/E-book](https://nostarch.com/pythoncrashcourse)
+- [Amazon](https://www.amazon.com/Python-Crash-Course-Hands-Project-Based/dp/1593276036/)
 - ISBN-13: 978-1593276034
+- ISBN-10: 1593276036
 
-*The Quick Python Book, Third Edition*
-- Paid book which provides a good level of information for those starting Python and as a reference for the Python language
+#### The Quick Python Book 3e
+
+Paid book which provides a good level of information for those starting Python and as a reference for the Python language
+
 - [Manning]https://www.manning.com/books/the-quick-python-book-third-edition
-- ISBN-10: 1617294039
 - ISBN-13: 978-1617294037
+- ISBN-10: 1617294039
+
+#### Invent Your Own Computer Games with Python 4e
+
+Invent Your Own Computer Games with Python teaches you how to program in the Python language. Each chapter gives you the complete source code for a new game, and then teaches the programming concepts from the examples. Games include Guess the Number, Hangman, Tic Tac Toe, and Reversi. This book also has an introduction to making games with 2D graphics using the Pygame framework.
+
+- [Website](http://inventwithpython.com/invent4thed/)
+- [Print/E-book](https://nostarch.com/inventwithpython)
+- [Amazon](https://www.amazon.com/gp/product/1593277954/)
+- ISBN-13: 978-1593277956
 
 #### Other Resources
 
