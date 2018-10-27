@@ -240,7 +240,7 @@ title: Books to Read for Programmers
 https://books.goalkicker.com/OracleDatabaseBook/
 
 *Pro PHP Programming - Peter MacIntyre*
-[Amazon]https://www.amazon.com/Pro-PHP-Programming-Peter-MacIntyre-ebook/dp/B005PZ09AG
+- [Amazon](https://www.amazon.com/Pro-PHP-Programming-Peter-MacIntyre-ebook/dp/B005PZ09AG)
 
 *Mastering Linux Shell Scripting by Andrew Mallett*
 - [Amazon](https://www.amazon.com/Mastering-Linux-Scripting-Andrew-Mallett/dp/1784396974/)
