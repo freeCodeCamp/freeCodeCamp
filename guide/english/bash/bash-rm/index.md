@@ -18,6 +18,18 @@ rm <file name or file path>
 rm -R <folder name or folder path>
 ```
 
+**Delete Files of a certain type**
+
+```bash
+rm -R *file_extension
+```
+- `*` accounts for the part to ignore, `file_extension` is the type to remove
+Example:
+```bash
+rm -R *.txt
+```
+Removes all file ending with .txt
+
 There are few commonly used arguments:
 
 - `-r` , means to recursively delete all the folders inside a directory.
