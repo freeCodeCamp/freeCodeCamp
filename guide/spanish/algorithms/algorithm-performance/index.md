@@ -6,13 +6,7 @@ En matemáticas, la notación de gran O es un simbolismo utilizado para describi
 El comportamiento limitante de una función es cómo la función actúa cuando tiende hacia un valor particular y, en notación de gran O, es generalmente como tiende hacia el infinito.  
 En resumen, la notación de gran O se usa para describir el crecimiento o la disminución de una función, generalmente con respecto a otra función.
 
-en el diseño de algoritmos usualmente usamos la notación de gran O porque podemos ver qué tan bueno o malo funcionará un algoritmo en el peor modo. pero tenga en cuenta que no siempre es así porque el peor de los casos puede ser súper raro y en esos casos calculamos el caso promedio. Por ahora, no sea la notación big O de disscus.
-
-En matemáticas, la notación de gran O es un simbolismo utilizado para describir y comparar el _comportamiento limitante_ de una función.
-
-El comportamiento limitante de una función es cómo actúa la función a medida que evoluciona hacia un valor particular y, en notación de gran O, es usualmente como tendencia hacia el infinito.
-
-En resumen, la notación de gran O se usa para describir el crecimiento o la disminución de una función, generalmente con respecto a otra función.
+En el diseño de algoritmos usualmente usamos la notación de gran O porque podemos ver qué tan bueno o malo funcionará un algoritmo en el peor modo. Pero tenga en cuenta que no siempre es así porque el peor de los casos puede ser súper raro y en esos casos calculamos el caso promedio. Por ahora, no sera la notación gran O de discusión.
 
 NOTA: x ^ 2 es equivalente a x \* x o 'x cuadrado'\]
 
@@ -43,7 +37,7 @@ Las siguientes 3 notaciones se utilizan principalmente para representar la compl
     
     > Θ (g (n)) = {f (n): existen constantes positivas c1, c2 y n0 tales que 0 <= c1 _g (n) <= f (n) <= c2_ g (n) para todo n> = n0}
     
-2.  **Notación Big O** : la **notación** Big O define un límite superior de un algoritmo. Por ejemplo, la clasificación por inserción requiere tiempo lineal en el mejor de los casos y el tiempo cuadrático en el peor de los casos. Podemos decir con seguridad que la complejidad temporal de la ordenación de inserción es _O_ ( _n ^ 2_ ).
+2.  **Notación gran O** : la **notación** gran O define un límite superior de un algoritmo. Por ejemplo, la clasificación por inserción requiere tiempo lineal en el mejor de los casos y el tiempo cuadrático en el peor de los casos. Podemos decir con seguridad que la complejidad temporal de la ordenación de inserción es _O_ ( _n ^ 2_ ).
     
     > O (g (n)) = {f (n): existen constantes positivas c y n0 tales que 0 <= f (n) <= cg (n) para todos n> = n0}
     
