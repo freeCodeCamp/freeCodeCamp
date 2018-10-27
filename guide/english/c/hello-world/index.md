@@ -29,3 +29,17 @@ To write on console you can use the function `printf()` contained in the library
  ```
  >hello, world
  ```
+
+hello world without using main!
+
+Using a macro that defines main
+#include<stdio.h> 
+#define fun main 
+int fun(void) 
+{ 
+    printf("hello world"); 
+    return 0; 
+}
+
+
+Output: hello world
