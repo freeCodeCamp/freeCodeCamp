@@ -37,6 +37,8 @@ With the object model, JavaScript gets all the power it needs to create dynamic 
 * JavaScript can add new HTML elements and attributes
 * JavaScript can react to all existing HTML events in the page
 * JavaScript can create new HTML events in the page
+* JavaScript can add new CSS styles to the HTML elements in the page
+* JavaScript can remove CSS styles of the existing HTML elements in the page
 
 #### More Information:
 
