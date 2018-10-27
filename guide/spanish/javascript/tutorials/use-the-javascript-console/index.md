@@ -18,3 +18,10 @@ También puede imprimir un registro de errores en la consola con este código:
 console.error('I am an error!') 
 
 ```
+
+Cuando queremos imprimir un array u objectos en consola una manera mas estetica para mostrarla es mediante:
+
+```
+const array = [...];
+console.table(array)
+```
