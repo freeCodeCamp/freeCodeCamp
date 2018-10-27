@@ -7,7 +7,7 @@ localeTitle: Используйте переменные CSS для измене
 ---
 
 ## Description
-<section id="description"> <dfn>Переменные CSS</dfn> - это мощный способ изменить сразу несколько свойств стиля CSS, изменив только одно значение. Следуйте инструкциям ниже, чтобы увидеть, как изменение только трех значений может изменить стиль многих элементов. </section>
+<section id="description"> <dfn>Переменные CSS</dfn> - это мощный способ изменить сразу несколько свойств в стилях CSS, изменив только одно значение. Следуйте инструкциям ниже, чтобы увидеть, как изменение только трех значений может изменить стиль многих элементов. </section>
 
 ## Instructions
 <section id="instructions"> В классе <code>penguin</code> измените значение <code>black</code> на <code>gray</code> , значение <code>gray</code> на <code>white</code> , а <code>yellow</code> на <code>orange</code> . </section>
