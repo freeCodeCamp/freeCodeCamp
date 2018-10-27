@@ -23,11 +23,11 @@ There is a <code>store</code> and <code>reducer</code> in the code editor for ma
 ```yml
 tests:
   - text: The Redux store should exist and initialize with a state equal to the <code>todos</code> array in the code editor.
-    testString: 'assert((function() { const todos = [ "Go to the store", "Clean the house", "Cook dinner", "Learn to code" ]; const initialState = store.getState(); return Array.isArray(initialState) && initialState.join(",") === todos.join(","); })(), "The Redux store should exist and initialize with a state equal to the <code>todos</code> array in the code editor.");'
+    testString: assert((function() { const todos = [ 'Go to the store', 'Clean the house', 'Cook dinner', 'Learn to code' ]; const initialState = store.getState(); return Array.isArray(initialState) && initialState.join(',') === todos.join(','); })(), 'The Redux store should exist and initialize with a state equal to the <code>todos</code> array in the code editor.');
   - text: <code>addToDo</code> and <code>immutableReducer</code> both should be functions.
-    testString: 'assert(typeof addToDo === "function" && typeof immutableReducer === "function", "<code>addToDo</code> and <code>immutableReducer</code> both should be functions.");'
+    testString: assert(typeof addToDo === 'function' && typeof immutableReducer === 'function', '<code>addToDo</code> and <code>immutableReducer</code> both should be functions.');
   - text: Dispatching an action of type <code>ADD_TO_DO</code> on the Redux store should add a <code>todo</code> item and should NOT mutate state.
-    testString: 'assert((function() { const initialState = store.getState(); const isFrozen = DeepFreeze(initialState); store.dispatch(addToDo("__TEST__TO__DO__")); const finalState = store.getState(); const expectedState = [ "Go to the store", "Clean the house", "Cook dinner", "Learn to code", "__TEST__TO__DO__" ]; return( isFrozen && DeepEqual(finalState, expectedState)); })(), "Dispatching an action of type <code>ADD_TO_DO</code> on the Redux store should add a <code>todo</code> item and should NOT mutate state.");'
+    testString: assert((function() { const initialState = store.getState(); const isFrozen = DeepFreeze(initialState); store.dispatch(addToDo('__TEST__TO__DO__')); const finalState = store.getState(); const expectedState = [ 'Go to the store', 'Clean the house', 'Cook dinner', 'Learn to code', '__TEST__TO__DO__' ]; return( isFrozen && DeepEqual(finalState, expectedState)); })(), 'Dispatching an action of type <code>ADD_TO_DO</code> on the Redux store should add a <code>todo</code> item and should NOT mutate state.');
 
 ```
 
