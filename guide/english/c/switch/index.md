@@ -85,3 +85,62 @@ int main() {
 * Speed: A switch statement might prove to be faster than ifs provided number of cases are good. If there are only few cases, it might not effect the speed in any case. Prefer switch if the number of cases are more than 5 otherwise, you may use if-else too.
 * If a switch contains more than five items, it’s implemented using a lookup table or a hash list. This means that all items get the same access time, compared to a list of if:s where the last item takes much more time to reach as it has to evaluate every previous condition first.
 * Clarity in readability: A switch looks much cleaner when you have to combine cases. Ifs  are quite vulnerable to errors too. Missing an else statement can land you up in havoc. Adding/removing labels is also easier with a switch and makes your code significantly easier to change and maintain.
+
+Switch case statements are a substitute for long if statements that compare a variable to several integral values
+
+The switch statement is a multiway branch statement. It provides an easy way to dispatch execution to different parts of code based on the value of the expression.
+Switch is a control statement that allows a value to change control of execution.
+Syntax:
+
+switch (n)
+{
+    case 1: // code to be executed if n = 1;
+        break;
+    case 2: // code to be executed if n = 2;
+        break;
+    default: // code to be executed if n doesn't match any cases
+}
+
+
+The expression provided in the switch should result in a constant value otherwise it would not be valid.
+Valid expressions for switch:
+// Constant expressions allowed
+switch(1+2+23)
+switch(1*2+3%4)
+Invalid switch expressions for switch:
+
+// Variable expression not allowed
+switch(ab+cd)
+switch(a+b+c)
+Duplicate case values are not allowed.
+The default statement is optional.Even if the switch case statement do not have a default statement,
+it would run without any problem.
+The break statement is used inside the switch to terminate a statement sequence. When a break statement is reached, the switch terminates, and the flow of control jumps to the next line following the switch statement.
+The break statement is optional. If omitted, execution will continue on into the next case. The flow of control will fall through to subsequent cases until a break is reached.
+Nesting of switch statements are allowed, which means you can have switch statements inside another switch. However nested switch statements should be avoided as it makes program more complex and less readable.
+
+Example:
+
+// Following is a simple program to demonstrate  
+// syntax of switch. 
+#include <stdio.h> 
+int main() 
+{ 
+   int x = 2; 
+   switch (x) 
+   { 
+       case 1: printf("Choice is 1"); 
+               break; 
+       case 2: printf("Choice is 2"); 
+                break; 
+       case 3: printf("Choice is 3"); 
+               break; 
+       default: printf("Choice other than 1, 2 and 3"); 
+                break;   
+   } 
+   return 0; 
+}  
+
+Output:
+
+Choice is 2
