@@ -49,7 +49,7 @@ int main(void) {
 
     if(n == 3) { // comparing n with 3
         printf("Statement is True!\n");
-    } 
+    }
     else { // if first condition is not true, then comes to this block of code.
         printf("Statement is False!\n");
     }
@@ -64,10 +64,10 @@ Statement is False!
 
 There are a few important things that are different here. First, `stdbool.h` hasn't been included. That's okay, because `true` and `false` aren't being used. In C, we have statements that are treated as true and false even though the words true or false aren't involved in the operation.
 
-Within the parenthesis of the if statement is something new, too: `n == 3`. This is a comparison between `n` and the number 3. `==` is the comparison operator, and is one of several comparison opertations in C.
+Within the parenthesis of the if statement is something new, too: `n == 3`. This is a comparison between `n` and the number 3. `==` is the comparison operator, and is one of several comparison operations in C.
 
 ## Nested if-else
-The if-else statement allows a choice to be made between two possible alternatives. Sometimes a choice must be made between more than two possibilities. For example the sign function in mathematics returns -1 if the argument is less than zero, returns +1 if the argument is greater than zero and returns zero if the argument is zero. The following C++ statement implements this function:
+The if-else statement allows a choice to be made between two possible alternatives. Sometimes a choice must be made between more than two possibilities. For example the sign function in mathematics returns -1 if the argument is less than zero, returns +1 if the argument is greater than zero and returns zero if the argument is zero. The following C statement implements this function:
 
 ```C
 if (x < 0)
@@ -112,7 +112,7 @@ int main(void) {
 
     if(n == 5) {
         printf("n is equal to 5!\n");
-    } 
+    }
     else if (n > 5) {
         printf("n is greater than 5!\n");
     }
@@ -128,7 +128,7 @@ n is equal to 5!
 The if-else statement has an 'else if' attached to it. This code runs if the condition within the previous if was false, but adds a condition within its own parenthesis that must be true before the code is run.
 
 ## Logical Operators
-Of course, we might want something to happen if it is not true, or if it and something else are true. For that, we have logical operators: ! for not, && for and, and || for or. Let's take a look at this in action:
+Of course, we might want something to happen if it is not true, or if it and something else are true. For that, we have logical operators: ! for NOT, && for AND, and || for OR. Let's take a look at this in action:
 
 ```C
 #include <stdio.h>
@@ -139,10 +139,10 @@ int main(void) {
 
     if(n > m || n == 15) {
         printf("Either n is greater than m, or n is equal to 15\n");
-    } 
+    }
     else if( n == 5 && m == 10 ) {
         printf("n is equal to 5 and m is equal to 10!\n");
-    } 
+    }
     else if ( !(n == 6)) {
         printf("It is not true that n is equal to 6!\n");
     }
@@ -158,11 +158,11 @@ output:
 n is equal to 5 and m is equal to 10!
 ```
 
-Here's the first set of parenthesis: `n > m || n == 5`. This will be true if n is greater than m, or if n is equal to 5. n is not greater than m, but n is equal to 5. Because one of these things are true, and they are joined by an or, this statement will be true and the code within will be printed.
+Here's the first set of parenthesis: `n > m || n == 5`. This will be true if n is greater than m, or if n is equal to 5. n is not greater than m, but n is equal to 5. Because one of these things are true, and they are joined by an OR, this statement will be true and the code within will be printed.
 
-Because the previous code was executed, it won't check the other else statements- those only get checked if the ones previous don't get checked. Just for the sake of exercise, though, consider what the rest of the code would be checking. `n == 5 && m == 10` will be true if n is equal to 5 and m is equal to 10. This is true, but if n was 6 it would no longer be true and the code within that else would not be run.
+Because the previous code was executed, it won't check the other else statements - those only get checked if the previous ones don't get checked. Just for the sake of exercise, though, consider what the rest of the code would be checking. `n == 5 && m == 10` will be true if n is equal to 5 and m is equal to 10. This is true, but if n was 6 it would no longer be true and the code within that else would not be run.
 
-`!(n == 6)` uses parenthesis to make the operation more obvious. Just like in math, parenthesis can be used for order of operations: things within the parenthesis will be performed before things that are not within parenthesis. So in this case, `n == 6` will be evaluated, and is false. The `!`, 'not', flips this from false to true, so this operation returns true. Like before, however, it will not run only because one of the previous statements was true that this is attached to would have already run.
+`!(n == 6)` uses parenthesis to make the operation more obvious. Just like in math, parenthesis can be used for order of operations: things within the parenthesis will be performed before things that are not within parenthesis. So in this case, `n == 6` will be evaluated, and is false. The `!`, 'NOT', flips this from false to true, so this operation returns true. Like before, however, it will not run only because one of the previous statements was true that this is attached to would have already run.
 
 Finally, does `n > 5` evaluate to true? The answer is no, because n *is* 5, and so it is not greater than 5. As a result, this code will not evaluate to true. In order to make this evaluate to true, the `>=` operator should be used.
 
@@ -187,7 +187,7 @@ There's actually a bit more to it, but this is the part that does all the work.
 
 These two lines of code tell the compiler that the word 'false' should be replaced with '0', and the word 'true' should be replaced by '1'. `stdbool.h` also has some documentation and compiler instructions that will be discussed later, but those two lines are all there really is to it.
 
-# Tips and Tricks 
+# Tips and Tricks
 Consider the code below:
 
 ```C
@@ -195,7 +195,7 @@ Consider the code below:
 
 int main() {
     int i=3;
-    
+
     if(i=4) {
       printf("This block is executed");
     }
@@ -207,9 +207,9 @@ int main() {
 
 What will be the the Output? "NO! I am boss"? if you are guessing this output then you are wrong.
 Why did this happen? because in the if statement you used "=" instead of "==" operator.
-"==" is comparator . 
+"==" is comparator .
 
-It will compare between two variables but "=' is assignment operator 
+It will compare between two variables but "=' is assignment operator
 when we said i=4, we simply assigning value 4 to the integer i, and since in "C" every NON-ZERO value is true so
 if(i=4) is true statement and instructions under this will executed
 
@@ -227,6 +227,6 @@ if(i=4) is true statement and instructions under this will executed
  * \>= is less than or equal to
  * <= is less than or equal to
 * We also have some logical operators, which allow us to chain together logical operations:
- * ! is called NOT operator-It reverses the state of the operand
- * && is called AND operator-It returns true when both conditions are true
- * || is called OR operator-It returns true when at-least one of the condition is true
+ * ! is called NOT operator - It reverses the state of the operand
+ * && is called AND operator - It returns true when both conditions are true
+ * || is called OR operator - It returns true when at-least one of the condition is true
