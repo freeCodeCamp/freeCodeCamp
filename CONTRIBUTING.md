@@ -11,7 +11,7 @@
     </tr>
 </table>
 
-# Contribution Guidelines
+Alt Contribution Guidelines
 
 Hello 👋!
 
@@ -21,7 +21,7 @@ We strictly enforce our ["Code of Conduct"](https://www.freecodecamp.org/code-of
 
 Happy contributing 🎉!
 
-## Here are some fun ways that you can help
+Alt Here are some fun ways that you can help
 
 You can choose to contribute to any area that interests you:
 
@@ -31,7 +31,7 @@ You can choose to contribute to any area that interests you:
 
 3. Help us add subtitles to our [YouTube channel videos](https://www.youtube.com/channel/UC8butISFwT-Wl7EV0hUK0BQ/videos).
 
-## Contribute to this open source codebase
+Alt Contribute to this open source codebase
 
 We have a huge open source codebase consisting of thousands of [coding challenges](https://learn.freecodecamp.org) and [guide articles](https://guide.freecodecamp.org).
 
@@ -45,7 +45,7 @@ You can help us to:
 
 - [🛠 Fix bugs in freeCodeCamp.org's learning platform](#help-us-fix-bugs-in-freecodecamporgs-learning-platform)
 
-### Research, Write and Update our guide articles
+Alt Research, Write and Update our guide articles
 
 **What are Guide articles?**
 
@@ -63,7 +63,7 @@ If you can't find a stub about the topic you'd like to write about, you can open
 
 If you would like to help improve guide articles, here's [how to work on guide articles](/docs/how-to-work-on-guide-articles.md).
 
-### Create, Update and Fix Bugs in our coding challenges
+Alt Create, Update and Fix Bugs in our coding challenges
 
 All our Coding challenges are curated by the community, bringing in expert knowledge from volunteers like you.
 
@@ -71,7 +71,7 @@ You can help expand them and make their wording more clear. You can update the u
 
 If you're interested in improving these coding challenges, here's [how to work on coding challenges](/docs/how-to-work-on-coding-challenges.md).
 
-### Translate guide articles and coding challenges
+Alt Translate guide articles and coding challenges
 
 You can help us to translate our Guide articles and Coding challenges into a language that you speak. Currently we have translated versions in:
 
@@ -83,7 +83,7 @@ You can help us to translate our Guide articles and Coding challenges into a lan
 
 We would love your help in improving the quality of these translations. Millions of people use the English language version of freeCodeCamp.org, and we expect millions more to use these translated versions as well.
 
-### Help us fix bugs in freeCodeCamp.org's learning platform
+Alt Help us fix bugs in freeCodeCamp.org's learning platform
 
 Our learning platform runs on a modern JavaScript stack. It has various components, tools and libraries including but not limited to Node.js, MongoDB, LoopBack, OAuth 2.0, React, Gatsby, Webpack, and more.
 
@@ -101,7 +101,7 @@ Feel free to ask us questions on the related issue threads and we will be glad t
 
 If you want to help us improve our codebase, here's [how to setup freeCodeCamp locally](/docs/how-to-setup-freecodecamp-locally.md).
 
-## Frequently Asked Questions
+Alt Frequently Asked Questions
 
 **How can I report a bug that is not on board?**
 
