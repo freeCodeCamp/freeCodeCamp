@@ -17,3 +17,9 @@ Just one command to get started:
 ```terminal
 $ npm install bulma
 ```
+
+### Bulma Resources
+- [Extension](https://wikki.github.io)
+- [Free Template](https://dansup.github.io/bulma-templates/)
+- [Awesome Template](https://aldi.github.io/awesome-bulma-templates)
+- [Free Themes](https://jenil.github.io/bulmaswatch/)
