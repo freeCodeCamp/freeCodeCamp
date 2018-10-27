@@ -3,14 +3,14 @@ id: bad87fee1348bd9aedf08826
 title: Use Clockwise Notation to Specify the Padding of an Element
 challengeType: 0
 videoUrl: ''
-localeTitle: Использовать по часовой стрелке для указания заполнения элемента
+localeTitle: Используйте ностацию «по часовой стрелке» для указания значения внутренних отступов
 ---
 
 ## Description
-<section id="description"> Вместо того, чтобы отдельно указывать свойства <code>padding-top</code> , <code>padding-right</code> , <code>padding-bottom</code> и <code>padding-left</code> , вы можете указать их все в одной строке, например: <code>padding: 10px 20px 10px 20px;</code> Эти четыре значения работают как часы: верх, правый, нижний, левый и будут давать то же самое, что и при использовании спецификаций дополнений для конкретной стороны. </section>
+<section id="description"> Вместо того, чтобы отдельно указывать свойства <code>padding-top</code> , <code>padding-right</code> , <code>padding-bottom</code> и <code>padding-left</code> , вы можете указать их все в одной строке, например: <code>padding: 10px 20px 10px 20px;</code> Эти четыре значения работают как часы: верхний паддинг, правый паддинг, нижний паддинг, левый пуддинг - и будут давать тот же самый результат, что и при использовании значений для каждой отдельной стороны. </section>
 
 ## Instructions
-<section id="instructions"> Используйте «По часовой стрелке», чтобы присвоить классу «.blue-box» <code>padding</code> <code>40px</code> на верхней и левой стороне, но только 20 <code>20px</code> на нижней и правой стороне. </section>
+<section id="instructions"> Используйте нотацию «по часовой стрелке», чтобы присвоить классу «.blue-box» <code>padding</code> <code>40px</code> на верхней и левой стороне, но только 20 <code>20px</code> на нижней и правой стороне. </section>
 
 ## Tests
 <section id='tests'>
