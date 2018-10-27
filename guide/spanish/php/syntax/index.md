@@ -9,14 +9,14 @@ PHP es un lenguaje que le permite incluir contenido dinámico en páginas web es
 ```PHP
 <!DOCTYPE html> 
  <html> 
- <head> 
- <title>PHP Example</title> 
- </head> 
+  <head> 
+   <title>PHP Example</title> 
+  </head> 
  <body> 
- <h1>PHP Example</h1> 
- <?php 
-  echo "Hello World from PHP!"; 
- ?> 
+  <h1>PHP Example</h1> 
+  <?php 
+   echo "Hello World from PHP!"; 
+  ?> 
  </body> 
  </html> 
 ```
