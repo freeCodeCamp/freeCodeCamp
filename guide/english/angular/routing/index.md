@@ -6,7 +6,7 @@ title: Routing
 
 #### Motivation
 
-Routing is essential. Many modern web applications host too much information for one page. Users should not have to scroll through an entire application’s worth of content either. An application needs to split itself into distinguishable sections.
+Routing is essential. Many modern web applications host too much information for one page. Users should not have to scroll through an entire application’s worth of content either. An application needs to split itself into distinguishable sections.An Angular best practice is to load and configure the router in a separate, top-level module that is dedicated to routing and imported by the root AppModule.
 
 Users prioritize necessary information. Routing helps them find the application section with such information. Any other information useful to other users may exist on an entirely separate route. With routing, both users can find what they need quickly. Irrelevant details stay obscured behind irrelevant routes.
 
