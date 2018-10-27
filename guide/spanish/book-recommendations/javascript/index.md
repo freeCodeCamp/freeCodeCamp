@@ -26,3 +26,10 @@ _JavaScript: Información_ Una colección de artículos que cubren los conceptos
 
 *   [En línea](https://javascript.info/)
 *   [Libro electronico](https://javascript.info/ebook)
+
+_Javascript and JQuery_
+
+Un libro de muy buena calidad en el cual se desarrollan aspectos básicos de forma detallada y se va profundizando con ejemplos prácticos que abarcan tópicos actuales, como la programación orientada a objetos.
+
+*   [En línea](https://javascriptbook.com/)
+
