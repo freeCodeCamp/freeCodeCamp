@@ -17,7 +17,7 @@ At runtime when the class is created enough memory is allocated onto the heap fo
 #### Creating Classes
 To create a class in C# we need to use the `class` keyword followed by a unique identifier.
 
-Like other languages, C# creates a default constructor that accepts no parameters. We can also specify our own constructor if we need to take in special parameters or have custom initlization steps in our constructor.
+Like other languages, C# creates a default constructor that accepts no parameters. We can also specify our own constructor if we need to take in special parameters or have custom initialization steps in our constructor.
 
 ```csharp
 public class NewClass
