@@ -14,6 +14,7 @@ counter = 0
 while counter < 10:
    # Execute the block of code here as
    # long as counter is less than 10
+   #This code will run into an infinite loop as there is not function being implemented upon the counter. To tackle this problem of running into an inifinite loop, we will read the code given below
 ```
 
 An example is shown below:
@@ -23,6 +24,7 @@ week = ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday', 'Sun
 while days < 7:
    print("Today is " + week[days])
    days += 1
+   # here we have initially set days=0 and then incrementing it till it reaches 6 and since we know that counter starts from 0 to n-1 where n is the upper limit, hence all the seven days are covered
 ```
 
 Output:
