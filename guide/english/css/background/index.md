@@ -155,3 +155,10 @@ You can refer to the following link to W3 schools to know more about background 
 ### Other Resources
 * <a href='http://cloford.com/resources/colours/500col.htm' target='_blank' rel='nofollow'>List of color values</a>
 * <a href='http://colrd.com/create/palette/' target='_blank' rel='nofollow'>Color Picker Tool</a>
+### Background Opacity
+Background opacity can also be done in two ways, for examples;
+* body{Background: rgba(200, 0, 250, 0.5);} 
+* bodybody { Background: rgb(200, 0, 250);
+             Opacity: 0.5;}
+             
+   <!--- Where r is for red, g is for green and b is for blue and a for the opacity--->
