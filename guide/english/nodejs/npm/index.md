@@ -14,7 +14,7 @@ To install `npm` we have to download Nodejs binaries in your local envrionment. 
 
 ```shell
 npm -v
-5.6.0
+6.4.1
 ```
 
 Node Package Manager (NPM) provides two main functionalities −
