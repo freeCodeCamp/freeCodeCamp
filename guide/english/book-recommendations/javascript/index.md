@@ -33,3 +33,9 @@ A collection of articles covering the basics (core language and working with a b
 #### Other Resources
 
 - A selection of online free resources; including e-books for JavaScript are available at [JS Books](https://jsbooks.revolunet.com/)
+
+#### Head First JavaScript Programming: A Brain-Friendly Guide
+
+A JavaScript book from publisher O'Reilly that is for beginners. This book covers JavaScript in a way that is easy for learners understand, by not just providing text, but giving readers a visual format as well. It starts the learner with JavaScript fundamentals and then moves onto more advanced topics such as functions and the DOM. This book does not only include reading but also includes games, puzzles and writing real code. 
+
+-[Amazon}(https://www.amazon.com/Head-First-JavaScript-Programming-Brain-Friendly-ebook/dp/B00J9TMSDU?crid=2A4A8Q7UCQTFH&keywords=head+first+javascript&qid=1540611363&sprefix=head+first+ja%2Caps%2C163&sr=8-1&ref=sr_1_1)
