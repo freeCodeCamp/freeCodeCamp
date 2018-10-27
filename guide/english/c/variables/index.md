@@ -2,6 +2,8 @@
 title: Variables in C
 ---
 # Using Variables in C
+Variables are simply name used to refer some location in memory- a location with value on which we are working.
+
 Now you know what your options with data types are. Let's apply it with a simple example here:
 
 ```C
