@@ -71,3 +71,7 @@ This is just a brief intro into relational-databases. Below links are provided t
 * Many-to-many on <a href='https://en.wikipedia.org/wiki/Many-to-many_(data_model' target='_blank' rel='nofollow'>wikipedia</a>)
 * One-to-one on <a href='https://en.wikipedia.org/wiki/One-to-one_(data_model' target='_blank' rel='nofollow'>wikipedia</a>)
 * Relationship model on <a href='https://en.wikipedia.org/wiki/Entity%E2%80%93relationship_model' target='_blank' rel='nofollow'>wikipedia</a>
+
+* Some examples of relational databases are as follows:
+  MySQL,SQL, Oracle and to find more information [https://en.wikipedia.org/wiki/SQL]
+  
