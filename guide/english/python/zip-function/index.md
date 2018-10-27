@@ -14,6 +14,7 @@ A list of tuple of nth element from all sequences
 ## Code Sample
 
     nums = [1,2,3,4]
+    # the * in *nums indicates that it is a tuple:
     print(*nums) # prints 1 2 3 4
     numsAndNames = zip([1,2,3],['one','two','three'])
     print(*numsAndNames) # prints (1,'one') (2,'two') (3,'three')
