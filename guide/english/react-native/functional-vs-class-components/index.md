@@ -63,4 +63,4 @@ Sometimes, a functional component may contain a lot of markup for its configurat
 
 ### Summary
 
-Class components are used as container components to handle state management and wrap child components. Functional components generally are just used for display purposes - these components call functions from parent components to handle user interactions or state updates.
+Class components are used as container components to handle state management, wrap child components, and lifecycle API such as componentWillMount, componentDidMount, componentWillUnmount and etc. Functional components generally are just used for display purposes - these components call functions from parent components to handle user interactions or state updates.
