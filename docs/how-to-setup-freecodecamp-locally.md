@@ -2,7 +2,7 @@
 
 Follow these guidelines for getting freeCodeCamp locally on your system. This is highly recommended if you want to be contributing regularly.
 
-Some of the contribution workflows such as previewing pages for the guide or coding challenges, debugging, and fixing bugs in the codebase requires you to have freeCodeCamp running locally.
+Some of the contribution workflows, like previewing pages for the guide or the coding challenges, debugging and fixing bugs in codebase, requires you to have freeCodeCamp running locally.
 
 ## Fork the repository on GitHub
 
@@ -162,6 +162,9 @@ npm install
 
 The keys are not required to be changed, to run the app locally. You can leave the default values from the `sample.env` as is.
 
+
+Next, let's bootstrap the various services, i.e. the api-server, the client UI application, etc. You can [learn more about these services in this guide](#).
+
 `MONGOHQ_URL` is the most important one. Unless you have MongoDB running in a setup different than the defaults, the URL in the `sample.env` should work fine.
 
 You can leave the other keys as they are. Keep in mind if you want to use more services you'll have to get your own API keys for those services and edit those entries accordingly in the `.env` file.
@@ -192,7 +195,7 @@ Start the MongoDB server in a separate terminal
 
 ### Seeding the database
 
-Next, lets seed the database. In this step, we run the below command that will fill the MongoDB server with some initial data-sets that is required by the other services. This include a few schemas, among other things.
+Next, let's seed the database. In this step, we run the below command that will fill the MongoDB server with some initial data-sets that is required by the other services. This include a few schemas, among other things.
 
 ```shell
 npm run seed
@@ -395,7 +398,7 @@ Follow these steps:
     git commit --amend
     ```
 
-    This will open up a default, text editor like `nano` or `vi` where you can edit the commit message title and add/edit description.
+    This will open up a default text editor like `nano` or `vi` where you can edit the commit message title and add/edit description.
 
 10. Next, you can push your changes to your fork.
 
