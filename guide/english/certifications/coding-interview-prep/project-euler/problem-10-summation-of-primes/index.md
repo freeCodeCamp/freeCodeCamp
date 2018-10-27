@@ -3,8 +3,50 @@ title: Summation of primes
 ---
 ## Problem 10: Summation of primes
 
-This is a stub. <a href='https://github.com/freecodecamp/guides/tree/master/src/pages/certifications/coding-interview-prep/project-euler/problem-10-summation-of-primes/index.md' target='_blank' rel='nofollow'>Help our community expand it</a>.
+### Method:
+- In this challenge we need to find sum of all prime numbers upto n.
+- Example:
+  - If n = 10 then prime numbers before it are 2, 3, 5, 7 and their sum is 17.
+- We've used Sieve of Eratosthenes algorithm to find prime numbers in the below solution.
+### Solution:
+```js
+function primeSummation(n) {
+  
+  // Initializing the array and sum which hold all prime number and the total sum respectively
+  let nums = [], sum = 0;
+  
+  // Upperbound of n
+  const upperBound = Math.ceil(Math.sqrt(n));
+  
+  // Making an array of n numbers
+  for (let i = 0; i < n; i++){
+    nums.push(i);   
+  }
+  nums[1] = 0;
+  
+  // Looping till the upperbound
+  for (let i = 2; i <= upperBound; i++){
+    
+    // Skipping if the number is already 0
+    if (nums[i] !== 0){
+    
+      // Explcitly makring all multiples of i to be 0 
+      for (let j = i*i; j < n; j += i){
+        if (nums[j] % i == 0) {
+          nums[j] = 0;
+        }
+      }
+    }
+  }
+  
+  // Getting rest of the array sum
+  for (let i = 0; i < n; i++){
+    sum += nums[i];
+  }
+  return sum;
+}
+```
+- [Run Code](https://repl.it/@ezioda004/Project-Euler-Problem-10-Summation-of-primes)
+### References:
 
-<a href='https://github.com/freecodecamp/guides/blob/master/README.md' target='_blank' rel='nofollow'>This quick style guide will help ensure your pull request gets accepted</a>.
-
-<!-- The article goes here, in GitHub-flavored Markdown. Feel free to add YouTube videos, images, and CodePen/JSBin embeds  -->
+- [Wikipedia](https://en.wikipedia.org/wiki/Sieve_of_Eratosthenes)
