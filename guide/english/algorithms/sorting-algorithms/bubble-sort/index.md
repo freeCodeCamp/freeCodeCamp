@@ -5,7 +5,7 @@ title: Bubble Sort
 
 Bubble Sort is the simplest sorting algorithm that works by repeatedly swapping the adjacent elements if they are in wrong order.
 
-This is a very slow sorting algorithm compared to algorithms like quicksort, with worst-case complexity O(n^2). However, the tradeoff is that bubble sort is one of the easiest sorting algorithms to implement from scratch.
+This is a very slow sorting algorithm compared to algorithms like quicksort, with worst-case complexity of O(n^2). However, the tradeoff is that bubble sort is one of the easiest sorting algorithms to implement from scratch.
 
 ### Example:
 
