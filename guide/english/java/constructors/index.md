@@ -178,3 +178,48 @@ class Complex {
 
 
 //## Constructor Chaining
+
+
+## Constructor Chaining
+
+1. The process of invoking one constructor from another constructor using this is called CONSTRUCTOR CHAINING.
+
+```java 
+public class Myclass{
+int a;
+Myclass(){
+System.out.println("DEfault constructor");
+}
+
+Myclass(int a){
+this();
+System.out.println("1-Arg constructor");
+this.a=a;
+}
+void show(){
+System.out.println(a);
+}
+}
+```
+2. call to constructor using this must be from constructor only,not from methods and blocks.
+
+```java 
+public class Myclass{
+Myclass(){
+System.out.println("DEfault constructor");
+}
+
+Myclass(int a){
+this();    //valid
+System.out.println("1-Arg constructor");
+}
+{
+this(); //Invalid
+}
+void show(){
+this(); //Invalid
+}
+}
+```
+
+3. call to this must be first statement in constructor.
