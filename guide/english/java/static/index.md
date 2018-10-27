@@ -1,5 +1,5 @@
 ---
-title: Static
+Title: Static
 ---
 
 # Static
