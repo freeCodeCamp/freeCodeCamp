@@ -98,3 +98,5 @@ finally
     initialValue = 12;
 }
 ```
+### More Information
+* [Microsoft Docs](https://docs.microsoft.com/en-us/dotnet/csharp/language-reference/keywords/try-catch-finally)
