@@ -10,9 +10,9 @@ Afortunadamente, la interfaz de línea de comandos (CLI) es el rey en el mundo d
 
 La línea de comandos sigue desempeñando roles muy importantes en la vida del usuario de Linux y de la suya también si decide usarla.
 
-En Linux, los comandos son dados (escritos) en el terminal. Aunque la aplicación de terminal puede tener nombres variados en diferentes distribuciones de linux (distribuciones), pero la mayoría de las veces se llama simplemente "terminal" o un término estrechamente relacionado.
+En Linux, los comandos son dados (escritos) en el terminal. Aunque la aplicación de terminal puede tener nombres variados en diferentes distribuciones de linux (distros), pero la mayoría de las veces se llama simplemente "terminal" o un término estrechamente relacionado.
 
-Para comenzar a usar abrir el terminal (para Ubuntu, simplemente mantenga presionado Ctrl + Alt + T) y será recibido por una serie de caracteres organizados en este formato;
+Para comenzar a usar abrir el terminal (para Ubuntu, simplemente presione Ctrl + Alt + T) y será recibido por una serie de caracteres organizados en este formato;
 
 ```linux
 user_name@machine_name:~$ 
