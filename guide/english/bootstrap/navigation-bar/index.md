@@ -52,6 +52,20 @@ You can add buttons on the navbar. The existing Bootstrap Button classes work ho
 <button class="btn navbar-btn">Button</button>
 ```
 
+#### Adding brand logo or name to the navbar
+The .navbar-brand can be applied to most elements, but an anchor works best as some elements might require utility classes or custom styles.
+
+<!-- As a link -->
+<nav class="navbar navbar-light bg-light">
+  <a class="navbar-brand" href="#">Navbar</a>
+</nav>
+
+<!-- As a heading -->
+<nav class="navbar navbar-light bg-light">
+  <span class="navbar-brand mb-0 h1">Navbar</span>
+</nav>
+
+
 #### Adding forms to the navbar
 You can also add forms to the navbar. This could be uses for tasks such as a search field, quick login field, etc.
 ```html
