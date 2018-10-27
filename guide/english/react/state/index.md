@@ -8,7 +8,7 @@ State is the place where the data comes from.
 
 We should always try to make our state as simple as possible and minimize the number of stateful components. If we have, for example, ten components that need data from the state, we should create one container component that will keep the state for all of them.
 
-State is basically like a global object that is available everywhere in a component.
+State is basically like a global object that is available everywhere in a component. It can also be thought of as a value-holder of the various attributes of a component. A component manages its own state and no other component can change another component's state. Hence, it can be said that states are private.
 
 Example of a Stateful Class Component:
 
