@@ -3,14 +3,14 @@ id: bad87fee1348bd9aedf08736
 title: Style the HTML Body Element
 challengeType: 0
 videoUrl: ''
-localeTitle: Стиль элемента тела HTML
+localeTitle: Стиль HTML-элемента body
 ---
 
 ## Description
-<section id="description"> Теперь давайте начнем свежими и поговорим о наследовании CSS. На каждой странице HTML есть элемент <code>body</code> . </section>
+<section id="description"> Теперь давайте поговорим о наследовании в CSS. На каждой странице HTML есть элемент <code>body</code> . </section>
 
 ## Instructions
-<section id="instructions"> Мы можем доказать, что элемент <code>body</code> существует здесь, задавая ему черный <code>background-color</code> . Мы можем сделать это, добавив следующее к нашему <code>style</code> : <blockquote> body { <br> background-color: black; <br> } </blockquote></section>
+<section id="instructions"> Мы можем доказать, что элемент <code>body</code> присутствует здесь, задавая ему черный <code>background-color</code> . Мы можем сделать это, добавив следующее к нашему <code>style</code> : <blockquote> body { <br> background-color: black; <br> } </blockquote></section>
 
 ## Tests
 <section id='tests'>
