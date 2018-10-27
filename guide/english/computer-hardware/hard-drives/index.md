@@ -46,3 +46,5 @@ Solid State Hard Drives fill a specific gap inbetween Solid State Drives and tra
 * [PCMag - SSD vs. HDD: What's the Difference?](https://www.pcmag.com/article2/0,2817,2404258,00.asp)
 * [Digital Trends - SSD vs. HDD](https://www.digitaltrends.com/computing/solid-state-drives-vs-hard-disk-drives)
 * [IOMeter Project](http://www.iometer.org)
+## How Does A HDD Works?
+A small hard drive typically has only one platter, but each side of it has a magnetic coating. Bigger drives have a series of platters stacked on a central spindle, with a small gap in between them. The platters rotate at up to 10,000 revolutions per minute (rpm) so the read-write heads can access any part of them.
