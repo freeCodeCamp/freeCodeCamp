@@ -49,4 +49,6 @@ Once that’s done, Let’s start off by generating a new project based on the �
   cd MyFirstApp 
   ionic serve
 ```
+## Other Resources
 
+[Official Documentation](https://ionicframework.com/docs/intro/tutorial/)
