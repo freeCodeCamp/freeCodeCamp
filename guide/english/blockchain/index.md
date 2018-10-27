@@ -26,6 +26,8 @@ The words block and chain were used separately in Satoshi Nakamoto's original pa
 
 As of 2016, blockchain 2.0 implementations continue to require an off-chain oracle to access any "external data or events based on time or market conditions to interact with the blockchain."
 
+<img src="https://steemitimages.com/DQmTGqoSkzkezm5CmUxJ8N1EAdcM4LnxyAucWr7MT4g34gX/blockchain.jpg">
+
 #### Sources
 1. [Bettina Warburg, "How the blockchain will radically transform the economy", *TED Talks*, December 8, 2016](https://youtu.be/RplnSVTzvnU?t=213)
 
