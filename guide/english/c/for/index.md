@@ -4,15 +4,15 @@ title: For Loop
 
 # For Loop
 
-The `for` loop executes a block of code until a specified condition is false. Use `while` loops when the number of iterations are variable, otherwise use `for` loops. A common use of `for` loops is array iterations. 
-It is also known as an 'entry-controlled loop' since the condition is checked before the next iteration. Another example of an 'entry-controlled loop' is a while loop. 
+The `for` loop executes a block of code until the specified condition is false. Use `while` loops when the number of iterations are not known or variable; otherwise, use `for` loops. A common use of `for` loops is array iterations. 
+It is also known as an 'entry-controlled loop' since the condition is checked before the next iteration. Another example of an 'entry-controlled loop' is a `while` loop. 
 The block of code around which the <b>for</b> loop iterates is packed inside the curly braces. A <b>for</b> loop is also acceptable without curly braces. The compiler assumes only the 1st statement to be under the <b>imaginary curly braces</b>.
 A variable declared inside the curly braces of a <b>for</b> loop is only valid inside that particular for loop. We cannot use a variable declared inside a <b>for</b> loop outside it.
 
 ## Syntax of For Loop
 
 ```c
-for ( init; condition; increment ) {
+for ( initialization; condition; update ) {
    statement(s);
 }
 ```
@@ -20,22 +20,21 @@ for ( init; condition; increment ) {
 The `for` loop consists of 3 sections:
    1. The initialization section (start value)
    2. Condition (stop value)
-   3. Test Expression (step value)
+   3. Update Expression (step value)
 
-The initialization statement is executed only once. Then, the test expression is evaluated. If the test expression is false (0), for loop is terminated. But if the test expression is true (nonzero), codes inside the body of for loop is executed and the update expression is updated. This process repeats until the test expression is false.
+The initialization statement is executed only once. Then, the condition is evaluated. If the condition is false (0), the `for` loop is terminated. But if the condition is true (nonzero), code inside the block of the `for` loop is executed. Finally, the update expression is executed. This process repeats until the condition is false.
 
-The for loop is commonly used when the number of iterations is known.
+The `for` loop is commonly used when the number of iterations is known.
 
 #### Example
 ```c
 #include <stdio.h>
 
-int main () {
-
+int main() {
     int array[] = {1, 2, 3, 4, 5};
 
-    for (int i = 0; i < 5; i++) {
-    	printf("Item on index %d is %d\n", i, array[i]);
+    for (int i = 0; i < 5; ++i) {
+        printf("Item on index %d is %d\n", i, array[i]);
     }
     
     return 0;
