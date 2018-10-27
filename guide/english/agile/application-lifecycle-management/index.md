@@ -23,4 +23,4 @@ Tools can be used to manage ALM; some of the more popular options include:
 <!-- Please add any articles you think might be helpful to read before writing the article -->
 InfoQ - Gartner and Software Advice examine [Agile Lifecycle Management Tools](http://www.infoq.com/news/2015/02/agile-management-tools/)
 
-
+My text in LifeCycle Management
