@@ -49,7 +49,7 @@ La verdad es que tienes razón hasta cierto punto. Si haz investigado meticulosa
 
 Sin embargo, hacer esta investigación es clave para defender realmente dicha declaración. ¿Sabías que hay [jugadores ciegos?](http://audiogames.net) e incluso [los fotógrafos ciegos?](http://peteeckert.com/) . ¿Quizás sabías que los [músicos pueden ser sordos](http://mentalfloss.com/article/25750/roll-over-beethoven-6-modern-deaf-musicians) ?
 
-Si lo hiciste, bien por ti. Si no, supongo que esto lleva a mi punto de partida más a casa.
+Si lo hiciste, bien por tí. Si no, supongo que esto lleva mi punto de partida más a casa.
 
 La imagen se complica aún más cuando observamos la legislación que realmente nos obliga a hacer que ciertos sitios web y aplicaciones web sean accesibles. Un buen ejemplo es la [sección 508](http://jimthatcher.com/webcourse1.htm) con sede en los Estados Unidos. En este momento, esta ley se refiere principalmente a organizaciones gubernamentales, sitios web del sector público, etc. Sin embargo, las leyes cambian.
 
@@ -88,8 +88,8 @@ El tercer elemento podría ser, por ejemplo, un elemento en el que un usuario pu
 
 Spans y divs no son elementos. Están destinados a contener otros elementos, no a ser elementos en sí mismos. Puedes arreglar esto de dos maneras:
 
-*   Puede agregar manualmente atributos ARIA a los elementos anteriores. Este es un tema avanzado y fuera del alcance de este artículo.
-*   O, simplemente puede hacer esto:
+*   Puedes agregar manualmente atributos ARIA a los elementos anteriores. Este es un tema avanzado y fuera del alcance de este artículo.
+*   O, simplemente puedes hacer esto:
 
 ```html
 
@@ -100,7 +100,7 @@ Spans y divs no son elementos. Están destinados a contener otros elementos, no 
     <a href="JavascriptThing">Ingles</a>
 ```
 
-Auge. De repente, todos estos elementos ahora son perfectamente accesibles, solo mediante el uso de HTML nativo. HTML de la forma en que estaba destinado a ser utilizado, en otras palabras.
+De repente, todos estos elementos ahora son perfectamente accesibles, solo mediante el uso de HTML nativo. HTML de la forma en que estaba destinado a ser utilizado, en otras palabras.
 
 ### Una fundación no puede soportar sin estructura.
 
@@ -112,7 +112,7 @@ También recuerda que los encabezados son jerárquicos. Si usas un h2, asegúrat
 
 Las imágenes en un sitio web son excelentes. Añaden una nueva capa a su contenido, realmente pueden hacer que la experiencia de los visitantes de su sitio sea mucho más inmersiva y, en general, se vea bien entre todo ese texto. Una imagen puede decir más que mil palabras, ¿verdad?
 
-Ciertamente. Es decir, si puedes verlos. En la especificación HTML5, un atributo img siempre debe tener un atributo alt. Este atributo está pensado como una alternativa a la imagen en caso de que no se pueda ver. Esto sería cierto para los visitantes ciegos de su sitio web, pero también cuando su imagen no se pueda cargar por algún motivo. Por lo tanto, no agregar una etiqueta alt a un atributo img no solo rompe la accesibilidad, sino que va en contra de la especificación HTML5.
+Ciertamente. Es decir, si puedes verlos. En la especificación HTML5, un atributo img siempre debe tener un atributo alt. Este atributo está pensado como una alternativa a la imagen en caso de que no se pueda ver. Esto sería cierto para los visitantes ciegos de tu sitio web, pero también cuando su imagen no se pueda cargar por algún motivo. Por lo tanto, no agregar una etiqueta alt a un atributo img no solo rompe la accesibilidad, sino que va en contra de la especificación HTML5.
 
 Imploro a cualquier desarrollador web que se sorprenda haciendo esto para comerse el sombrero de su programador y trabajar en Windows 95 exclusivamente durante una semana. Después de que se acabe el tiempo, escribe un ensayo sobre lo que has aprendido de esta prueba para que pueda reírme durante mi café de la tarde.
 
