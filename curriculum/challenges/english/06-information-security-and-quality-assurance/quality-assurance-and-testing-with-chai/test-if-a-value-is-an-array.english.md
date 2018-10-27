@@ -7,6 +7,8 @@ challengeType: 2
 ## Description
 <section id='description'>
 As a reminder, this project is being built upon the following starter project on <a href='https://glitch.com/#!/import/github/freeCodeCamp/boilerplate-mochachai/'>Glitch</a>, or cloned from <a href='https://github.com/freeCodeCamp/boilerplate-mochachai/'>GitHub</a>.
+.isArray(), .isNotArray()
+.isArray asserts that the value is an array
 </section>
 
 ## Instructions
