@@ -24,9 +24,9 @@ background: linear-gradient(direction, color-stop1, color-stop2, ...);
 
 ##### Линейный градиент - сверху вниз (по умолчанию)
 
-В следующем примере показан линейный градиент, который начинается сверху. Он начинает красный, переход на желтый: ![по умолчанию-линейный градиент-](https://i.imgur.com/2uGfleD.jpg)
+В следующем примере показан линейный градиент, который начинается сверху. Он начинается с красного и переходит в желтый: ![по умолчанию-линейный градиент-](https://i.imgur.com/2uGfleD.jpg)
 
-#### пример
+#### Пример
 ```
 <!DOCTYPE html> 
  <html> 
@@ -34,22 +34,22 @@ background: linear-gradient(direction, color-stop1, color-stop2, ...);
  <style> 
  #grad1 { 
     height: 200px; 
-    background: red; /* For browsers that do not support gradients */ 
-    background: -webkit-linear-gradient(red, green); /* For Safari 5.1 to 6.0 */ 
-    background: -o-linear-gradient(red, green); /* For Opera 11.1 to 12.0 */ 
-    background: -moz-linear-gradient(red, green); /* For Firefox 3.6 to 15 */ 
-    background: linear-gradient(red, green); /* Standard syntax (must be last) */ 
+    background: red; /* Для браузеров, не поддерживающих градиенты */ 
+    background: -webkit-linear-gradient(red, green); /* Для Safari 5.1 - 6.0 */ 
+    background: -o-linear-gradient(red, green); /* Для Opera 11.1 - 12.0 */ 
+    background: -moz-linear-gradient(red, green); /* Для Firefox 3.6 - 15 */ 
+    background: linear-gradient(red, green); /* Синтаксис по умолчанию (всегда ставится в конце) */ 
  } 
  </style> 
  </head> 
  <body> 
  
- <h3>Linear Gradient - Top to Bottom</h3> 
- <p>This linear gradient starts at the top. It starts red, transitioning to yellow:</p> 
+ <h3>Линейный градиент - Сверху вниз</h3> 
+ <p>Этот линейный градиент начинается сверху и опускается вниз. С красного он переходит в желтый:</p> 
  
  <div id="grad1"></div> 
  
- <p><strong>Note:</strong> Internet Explorer 9 and earlier versions do not support gradients.</p> 
+ <p><strong>На заметку:</strong> Internet Explorer 9 и ранее не поддерживает градиенты.</p> 
  
  </body> 
  </html> 
@@ -59,9 +59,9 @@ background: linear-gradient(direction, color-stop1, color-stop2, ...);
 
 ##### Линейный градиент - слева направо
 
-В следующем примере показан линейный градиент, начинающийся слева. Он начинает красный, переход на желтый: ![слева направо](https://i.imgur.com/e4dRvZR.jpg)
+В следующем примере показан линейный градиент, начинающийся слева. Он начинается с красного и переходит в желтый: ![слева направо](https://i.imgur.com/e4dRvZR.jpg)
 
-#### пример
+#### Пример
 ```
 <!DOCTYPE html> 
  <html> 
@@ -69,22 +69,22 @@ background: linear-gradient(direction, color-stop1, color-stop2, ...);
  <style> 
  #grad1 { 
     height: 200px; 
-    background: red; /* For browsers that do not support gradients */ 
-    background: -webkit-linear-gradient(left, red , green); /* For Safari 5.1 to 6.0 */ 
-    background: -o-linear-gradient(right, red, green); /* For Opera 11.1 to 12.0 */ 
-    background: -moz-linear-gradient(right, red, green); /* For Firefox 3.6 to 15 */ 
-    background: linear-gradient(to right, red , green); /* Standard syntax (must be last) */ 
+    background: red; /* Для браузеров, не поддерживающих градиенты */ 
+    background: -webkit-linear-gradient(left, red , green); /* Для Safari 5.1 - 6.0 */ 
+    background: -o-linear-gradient(right, red, green); /* Для Opera 11.1 - 12.0 */ 
+    background: -moz-linear-gradient(right, red, green); /* Для Firefox 3.6 - 15 */ 
+    background: linear-gradient(to right, red , green); /* Синтаксис по умолчанию (всегда ставится в конце) */ 
  } 
  </style> 
  </head> 
  <body> 
  
- <h3>Linear Gradient - Left to Right</h3> 
- <p>This linear gradient starts at the left. It starts red, transitioning to yellow:</p> 
+ <h3>Линейный градиент - Слева направо</h3> 
+ <p>Этот линейный градиент начинается слева. От красного он переходит в желтый:</p> 
  
  <div id="grad1"></div> 
  
- <p><strong>Note:</strong> Internet Explorer 9 and earlier versions do not support gradients.</p> 
+ <p><strong>На заметку:</strong> Internet Explorer 9 и ранее не поддерживает градиенты.</p> 
  
  </body> 
  </html> 
@@ -92,7 +92,7 @@ background: linear-gradient(direction, color-stop1, color-stop2, ...);
 
 ![слева направо](https://i.imgur.com/k4FSyXz.jpg)
 
-#### Линейный градиент - диагональ
+#### Линейный градиент - Диагональ
 
 Вы можете сделать градиент по диагонали, указав горизонтальные и вертикальные стартовые позиции.
 
@@ -100,7 +100,7 @@ background: linear-gradient(direction, color-stop1, color-stop2, ...);
 
 ![диагональ](https://i.imgur.com/YvtbUBH.jpg)
 
-#### пример
+#### Пример
 ```
 <!DOCTYPE html> 
  <html> 
@@ -108,22 +108,22 @@ background: linear-gradient(direction, color-stop1, color-stop2, ...);
  <style> 
  #grad1 { 
     height: 200px; 
-    background: red; /* For browsers that do not support gradients */ 
-    background: -webkit-linear-gradient(left top, red, green); /* For Safari 5.1 to 6.0 */ 
-    background: -o-linear-gradient(bottom right, red, green); /* For Opera 11.1 to 12.0 */ 
-    background: -moz-linear-gradient(bottom right, red, green); /* For Firefox 3.6 to 15 */ 
-    background: linear-gradient(to bottom right, red, green); /* Standard syntax (must be last) */ 
+    background: red; /* Для браузеров, не поддерживающих градиенты */ 
+    background: -webkit-linear-gradient(left top, red, green); /* Для Safari 5.1 - 6.0 */ 
+    background: -o-linear-gradient(bottom right, red, green); /* Для Opera 11.1 - 12.0 */ 
+    background: -moz-linear-gradient(bottom right, red, green); /* Для Firefox 3.6 - 15 */ 
+    background: linear-gradient(to bottom right, red, green); /* Синтаксис по умолчанию (всегда ставится в конце) */ 
  } 
  </style> 
  </head> 
  <body> 
  
- <h3>Linear Gradient - Diagonal</h3> 
- <p>This linear gradient starts at top left. It starts red, transitioning to yellow:</p> 
+ <h3>Линейный градиент - Диагональ</h3> 
+ <p>Этот линейный градиент начинается с левого верхнего угла. От красного он переходит в желтый:</p> 
  
  <div id="grad1"></div> 
  
- <p><strong>Note:</strong> Internet Explorer 9 and earlier versions do not support gradients.</p> 
+ <p><strong>На заметку:</strong> Internet Explorer 9 и ранее не поддерживает градиенты.</p> 
  
  </body> 
  </html> 

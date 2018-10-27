@@ -9,5 +9,5 @@ localeTitle: Предварительные процессоры CSS
 ## Популярные препроцессоры
 
 *   [SASS](http://sass-lang.com)
-*   [МЕНЬШЕ](http://lesscss.org)
-*   [стилус](http://stylus-lang.com)
+*   [LESS](http://lesscss.org)
+*   [Stylus](http://stylus-lang.com)

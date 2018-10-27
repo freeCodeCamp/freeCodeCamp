@@ -11,16 +11,16 @@ Z Index ( `z-index` ) - это свойство CSS, которое опреде
 #### Возможные значения
 
 ```css
-/* Default value if not specified */ 
+/* Значение по-умолчанию */ 
  z-index: auto; 
  
- /* Integer values */ 
+ /* Численное значение */ 
  z-index: 1; 
  z-index: 100; 
  z-index: 9999; 
  z-index: -1; 
  
- /* Global values */ 
+ /* Глобальное значение */ 
  z-index: inherit; 
  z-index: initial; 
  z-index: unset; 
