@@ -1,15 +1,15 @@
 ---
 title: Streams
-localeTitle: Corrientes
+localeTitle: Streams
 ---
-## Corrientes
+## Streams
 
-Las secuencias están disponibles en la API central de Node.js como objetos que permiten que los datos se lean o escriban de forma continua. Básicamente, una secuencia hace eso en trozos en comparación con el búfer que hace su bit a bit, por lo que es un proceso lento.
+Los Streams están disponibles en la API central de Node.js como objetos que permiten que los datos se lean o escriban de forma continua. Básicamente, una secuencia hace eso en trozos en comparación con el búfer que hace su bit a bit, por lo que es un proceso lento.
 
 Hay cuatro tipos de flujos disponibles:
 
 *   Legible (flujos desde los cuales se leen los datos)
-*   Escritable (flujos en los que se escriben los datos)
+*   Escribible (flujos en los que se escriben los datos)
 *   Dúplex (secuencias que se pueden leer y escribir)
 *   Transformar (transmisiones dúplex que pueden modificar datos a medida que se leen y escriben)
 
@@ -19,9 +19,9 @@ Cada tipo disponible tiene varios métodos asociados. Algunos de los más comune
 *   final (esto se activa cuando no hay datos para leer)
 *   error (esto se ejecuta cuando hay un error al recibir o escribir datos)
 
-### Tubo
+### Tuberías (Pipe)
 
-En programación, el concepto de `pipe` no es nuevo. Los sistemas basados ​​en Unix han estado usándolo pragmáticamente desde la década de 1970. ¿Qué hace un tubo? Una `pipe` generalmente conecta la fuente y el destino. Pasa la salida de una función como la entrada de otra función.
+En programación, el concepto de `pipe` no es nuevo. Los sistemas basados ​​en Unix han estado usándolo pragmáticamente desde la década de 1970. ¿Qué hace una tubería? Una `pipe` generalmente conecta la fuente y el destino. Pasa la salida de una función como la entrada de otra función.
 
 En Node.js, la `pipe` se usa de la misma manera, para emparejar entradas y salidas de diferentes operaciones. `pipe()` está disponible como una función que toma un flujo de origen legible y adjunta la salida a un flujo de destino. La sintaxis general se puede representar como:
 
@@ -34,13 +34,13 @@ Múltiples funciones `pipe()` también pueden ser encadenadas juntas.
 ```javascript
 a.pipe(b).pipe(c); 
  
- // which is equivalent to 
+ // lo cual es equivalente a
  
  a.pipe(b); 
  b.pipe(c); 
 ```
 
-### Corrientes legibles
+### Streams legibles
 
 Los flujos que producen datos que se pueden adjuntar como entrada a un flujo grabable se conocen como flujo legible. Para crear un flujo legible:
 
@@ -57,7 +57,7 @@ const { Readable } = require('stream');
  }); 
 ```
 
-### Secuencia de escritura
+### Streams de escritura
 
 Este es el tipo de flujo al que puede `pipe()` los datos desde una fuente legible. Para crear un flujo de escritura, tenemos un enfoque de constructor. Creamos un objeto a partir de él y pasamos una serie de opciones. El método toma tres argumentos:
 
