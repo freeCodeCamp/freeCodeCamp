@@ -1,5 +1,8 @@
-# localeTitle: undefined
-R适用于初学者的eact Router
+---
+title: React Router
+localeTitle: React Router
+---
+# R适用于初学者的 React Router
 
 # 安装
 
@@ -22,7 +25,7 @@ React Router已分为三个包： `react-router` ， `react-router-dom`和`react
 # 进口声明
 
 ```javascript
-import { BrowserRouter as Router, Switch, Route, Link } from 'react-router-dom'; 
+import { BrowserRouter as Router, Switch, Route, Link } from 'react-router-dom';
 ```
 
 ## IndexRoute和链接
@@ -36,11 +39,11 @@ import { BrowserRouter as Router, Switch, Route, Link } from 'react-router-dom';
 允许用户浏览应用程序的主要方法。 将使用正确的href呈现完全可访问的锚标记。 为此，我们首先创建一个Nav组件。我们的Nav组件将包含`<Link>`组件，如下所示：
 
 ```javascript
-const Nav = () => ( 
-  <div> 
-    <Link to='/'>Home</Link>&nbsp; 
-    <Link to='/address'>Address</Link> 
-  </div> 
- ) 
+const Nav = () => (
+  <div>
+    <Link to='/'>Home</Link>&nbsp;
+    <Link to='/address'>Address</Link>
+  </div>
+ )
 
 ```

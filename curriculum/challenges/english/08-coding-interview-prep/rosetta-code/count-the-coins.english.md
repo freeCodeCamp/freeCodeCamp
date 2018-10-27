@@ -35,9 +35,9 @@ Reference:
 ```yml
 tests:
   - text: <code>countCoins</code> is a function.
-    testString: 'assert(typeof countCoins === "function", "<code>countCoins</code> is a function.");'
+    testString: assert(typeof countCoins === 'function', '<code>countCoins</code> is a function.');
   - text: <code>countCoints()</code> should return 242.
-    testString: 'assert.equal(countCoins(), 242, "<code>countCoints()</code> should return 242.");'
+    testString: assert.equal(countCoins(), 242, '<code>countCoints()</code> should return 242.');
 
 ```
 

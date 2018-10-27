@@ -1,5 +1,8 @@
-##localeTitle: undefined
- 文件系统
+---
+title: File System
+localeTitle: 文件系统
+---
+## 文件系统
 
 Node.js文件系统模块允许您使用计算机上的文件系统。
 
@@ -8,7 +11,7 @@ Node.js有一组内置模块，无需进一步安装即可使用。类似地， 
 要包含模块，请使用`require()`函数和模块名称。
 
 ```javascript
-const fs = require('fs'); 
+const fs = require('fs');
 ```
 
 文件系统模块的常用用法：
@@ -26,15 +29,15 @@ const fs = require('fs');
 Node.js代码从您的计算机读取文件并将内容返回到控制台。
 
 ```javascript
-const fs = require('fs'); 
- fs.readFile('input.txt', 'utf-8', (err, data) => { 
-  if(err){ 
-  console.log(err); 
-  } 
-  else{ 
-  console.log("Content present in input.txt file : " + data.toString()); 
-  } 
- }); 
+const fs = require('fs');
+ fs.readFile('input.txt', 'utf-8', (err, data) => {
+  if(err){
+  console.log(err);
+  }
+  else{
+  console.log("Content present in input.txt file : " + data.toString());
+  }
+ });
 ```
 
 上面的代码从您的计算机读取文件_input.txt_并将内容返回到控制台。
@@ -55,15 +58,15 @@ _注意_ ：input.txt文件应该存在于Node.js代码文件所在的同一目�
 Node.js代码将内容写入文件。
 
 ```javascript
-const fs = require('fs'); 
- fs.writeFile('output.txt', "New content added", (err, data) => { 
-    if(err){ 
-        console.log(err); 
-    } 
-    else{ 
-        console.log("The file is saved"); 
-    } 
- }); 
+const fs = require('fs');
+ fs.writeFile('output.txt', "New content added", (err, data) => {
+    if(err){
+        console.log(err);
+    }
+    else{
+        console.log("The file is saved");
+    }
+ });
 ```
 
 上面的代码创建了一个文件_output.txt_并添加了_添加_到其中的_新内容_ 。
