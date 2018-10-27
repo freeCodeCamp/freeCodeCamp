@@ -30,6 +30,11 @@ switch (n)
 }
 ```
 
+### Break Statement
+
+The break statement is used to terminate the loop (for, while and do...while loop) immediately when it is encountered.
+
+ In Case of a Switch Case, if the break statement is not used after each case, the all the statement following the case that gets satisfied is executed till default is reached or till it encounters a break keyword. This is known as FALL THROUGH.
 ## Example
 
 Using a switch statement over multiple if/else statements can contribute to more speed and readability.
