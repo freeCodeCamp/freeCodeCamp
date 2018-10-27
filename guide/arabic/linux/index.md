@@ -1,6 +1,7 @@
 ---
 title: Linux
 localeTitle: لينكس
+نظام تشغيل
 ---
 ![](https://upload.wikimedia.org/wikipedia/commons/3/35/Tux.svg)
 
