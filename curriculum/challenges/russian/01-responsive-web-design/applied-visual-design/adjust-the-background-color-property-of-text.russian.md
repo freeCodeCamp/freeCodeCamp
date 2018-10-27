@@ -14,7 +14,7 @@ localeTitle: Отрегулируйте фоновый цвет свойства
 
 ## Tests
 <section id='tests'>
-
+ 
 ```yml
 tests:
   - text: 'Ваш код должен добавить свойство <code>background-color</code> к элементу <code>h4</code> установленному в <code>rgba(45, 45, 45, 0.1)</code> .'
