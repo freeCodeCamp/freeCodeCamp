@@ -3,14 +3,14 @@ id: bad87fee1348bd9aedd08835
 title: Check Radio Buttons and Checkboxes by Default
 challengeType: 0
 videoUrl: ''
-localeTitle: Проверьте радио кнопки и флажки по умолчанию
+localeTitle: Сделайте радиокнопки и чекбоксы включенными по умолчанию
 ---
 
 ## Description
-<section id="description"> Вы можете установить флажок или переключатель для проверки по умолчанию с помощью атрибута <code>checked</code> . Для этого просто добавьте слово «проверено» во внутреннюю часть элемента ввода. Например: <code>&lt;input type=&quot;radio&quot; name=&quot;test-name&quot; checked&gt;</code> </section>
+<section id="description"> Вы можете сделать чекбокс или радиокнопку включенными по умолчанию с помощью атрибута <code>checked</code>. Для этого просто добавьте слово «checked» во внутреннюю часть тега input. Например: <code>&lt;input type=&quot;radio&quot; name=&quot;test-name&quot; checked&gt;</code> </section>
 
 ## Instructions
-<section id="instructions"> Установите первый из ваших <code>radio buttons</code> и первый из ваших <code>checkboxes</code> чтобы оба были <code>checkboxes</code> по умолчанию. </section>
+<section id="instructions"> Установите первый из ваших <code>radio buttons</code> и первый из ваших <code>checkboxes</code> чтобы оба были <code>checked</code> по умолчанию. </section>
 
 ## Tests
 <section id='tests'>
