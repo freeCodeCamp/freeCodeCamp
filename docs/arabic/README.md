@@ -23,7 +23,7 @@
 freecodecamp.org
 
 
-## [إذا كنت مبتدأ, قم بقراءة هذا المستند أولا](/CONTRIBUTING.md)
+## [إذا كنت مبتدأ, قم بقراءة هذا المستند أولا](/docs/arabic/CONTRIBUTING.md)
 
 ---
 
