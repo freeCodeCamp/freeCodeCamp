@@ -1,7 +1,7 @@
 ## [3.2.1](https://github.com/freeCodeCamp/curriculum/compare/v3.2.0...v3.2.1) (2018-09-25)
 
 
-### Bug Fixes
+### Bug Fixes 
 
 * Add videoUrl field ([#298](https://github.com/freeCodeCamp/curriculum/issues/298)) ([ce3cc22](https://github.com/freeCodeCamp/curriculum/commit/ce3cc22))
 
@@ -14,7 +14,7 @@
 * **challenges:** add missing test to check for for css class ([6e42f53](https://github.com/freeCodeCamp/curriculum/commit/6e42f53)), closes [#254](https://github.com/freeCodeCamp/curriculum/issues/254)
 * **challenges:** add note at bottom of description in d3 challenge ([c60d332](https://github.com/freeCodeCamp/curriculum/commit/c60d332)), closes [#17767](https://github.com/freeCodeCamp/curriculum/issues/17767)
 * **challenges:** add solution, test to project euler problems ([f572324](https://github.com/freeCodeCamp/curriculum/commit/f572324))
-* **challenges:** add solutions to first 3 debugging challenges ([c2e5794](https://github.com/freeCodeCamp/curriculum/commit/c2e5794))
+* **challenges:** add solutions to first 3 debugging challenges and results ([c2e5794](https://github.com/freeCodeCamp/curriculum/commit/c2e5794))
 * **challenges:** add test to check user is using \W in Regex ([296cf44](https://github.com/freeCodeCamp/curriculum/commit/296cf44))
 * **challenges:** add test to lookahead regex challenge ([e044de4](https://github.com/freeCodeCamp/curriculum/commit/e044de4)), closes [#209](https://github.com/freeCodeCamp/curriculum/issues/209)
 * **challenges:** added code tags ([065036b](https://github.com/freeCodeCamp/curriculum/commit/065036b)), closes [#18054](https://github.com/freeCodeCamp/curriculum/issues/18054)
