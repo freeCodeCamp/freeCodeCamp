@@ -18,5 +18,4 @@ Cryptocurrency - это подмножество цифровой валюты, 
 
 [криптовалюта](https://en.wikipedia.org/wiki/Cryptocurrency)  
 [Окончательное руководство по криптовалютности](https://blockgeeks.com/guides/what-is-cryptocurrency)
-
-[Bitcoin](https://en.wikipedia.org/wiki/Bitcoin)
+[Рейтинги криптовалют](https://coinmarketcap.com/ru/)
