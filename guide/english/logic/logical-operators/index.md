@@ -74,6 +74,13 @@ You can easily see that the out output of the IFF operator in the truth table is
 |  t| t | t |t|t|
 |  t| f | f |t|f|
 
+**Condensed tables** </br>
+For binary operators, a condensed form of truth table is also used, where the row headings and the column headings specify the operands and the table cells specify the result. For example, the condensed table for AND operator (^ sign):</br>
+
+| ^ | f | t |
+|---|---|---|
+|  f| f | t |
+|  t| t | t |
 
 #### More Information:
 <!-- Please add any articles you think might be helpful to read before writing the article -->
@@ -81,3 +88,4 @@ You can easily see that the out output of the IFF operator in the truth table is
  +* [Logical Operators in Javascript](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Logical_Operators)
  +* [Logical Operators in PHP](http://php.net/manual/en/language.operators.logical.php)
  +* [Logical Operators in C++](http://en.cppreference.com/w/cpp/language/operator_logical)
+ +* [Wikipedia, Truth table](https://en.wikipedia.org/wiki/Truth_table)
