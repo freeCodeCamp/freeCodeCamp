@@ -25,6 +25,25 @@ print(greeting)
 Hello! Jon Snow
 ```
 
+### Will also work with capital letter F:
+
+#### Input
+
+```python
+author = 'George R. R. Martin'
+title = 'A Game of Thrones'
+book = F"'{book}' by {author}"
+print(book)
+```
+
+#### Output
+
+```
+'A Game of Thrones' by George R. R. Martin
+```
+
+
+
 ### Evaluate an expression in a string:
 
 #### Input
