@@ -9,7 +9,7 @@ In linear algebra, the determinant of a two-by-two matrix is a useful quantity. 
 Calculating the determinant of a square two-by-two matrix is simple, and is the basis of the [Laplace formula](https://en.wikipedia.org/wiki/Laplace_expansion) used for calculating determinants for larger square matrices.
 
 Given a matrix A, the determinant of A (written as |A|) is given by the following equation:
-
+my cahanges
 ## Properties of (2x2) determinants
 
 The rows and vectors of a 2 by 2 matrix can be associated with points on a cartesian plane, such that each row forms a 2D vector. These two vectors form a parallelogram, as shown in the image below.
