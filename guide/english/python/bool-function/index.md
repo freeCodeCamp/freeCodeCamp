@@ -24,6 +24,7 @@ If `x` is false or omitted, this returns `False`; otherwise it returns `True`.
     print(bool([1, 2, 3])) # Returns True as the list is a non-zero value
     print(bool((2,3,4))) # Returns True as tuple is a non-zero value
     print(bool([])) # Returns False as list is empty and equal to 0 according to truth value testing
+    print(bool(True==False) # This code will return False as the condition is false and boolean value is false
 
 ![:rocket:](//forum.freecodecamp.com/images/emoji/emoji_one/rocket.png?v=2 ":rocket:") <a href='https://repl.it/CVCS/2' target='_blank' rel='nofollow'>Run Code</a>
 
