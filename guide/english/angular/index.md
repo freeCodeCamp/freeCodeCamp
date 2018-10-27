@@ -32,11 +32,16 @@ AngularJS: We can add AngularJS(Angular 1.x versions) by referencing the Content
 Download/install: We can download the framework with npm, Bower or composer
 
 **Angular 1.x**:
-
+Using NPM is a best way to get latest changes on Angular Installations.
 npm
 
+For Global installation
 ```shell 
-npm install angular
+npm install -g @angular/cli
+```
+For Local Installation
+```shell
+npm install angular/cli
 ```
 Then add a `<script>` to your `index.html`:
 
@@ -58,5 +63,27 @@ Then add a `<script>` to your `index.html`:
 For more information regarding the documentation, refer to the official site of [AngularJS](https://docs.angularjs.org/api) 
 
 You can install **Angular 2.x** and other versions by following the steps from the official documentation of [Angular](https://angular.io/guide/quickstart)
+
+Creating your first app!
+
+Create a workspace and initial application
+
+You develop apps in the context of an Angular workspace. A workspace contains the files for one or more projects. A project is the set of files that comprise an app, a library, or end-to-end (e2e) tests.
+
+ ```
+ ng new my-app
+ ```
+ Serve the application
+ Angular includes a server, so that you can easily build and serve your app locally.
+  1. Go to the workspace folder (my-app).
+  2. Launch the server by using the CLI command ng serve, with the --open option.
+  
+  ```
+  cd my-app
+  ng serve --open
+  ```
+  
+  Hooray!!! you created your first angular app 
+
 
 *Note : Please refer the Angular documentation for the updated information.*
