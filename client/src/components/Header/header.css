@@ -94,8 +94,12 @@ header {
     background-color: #87b787;
   }
 
+  header .logo {
+    display: block;
+  }  
+
   .fcc_searchBar {
-    padding: 3px 45px 0 15px;
+    padding: 3px 53px 0 10px;
     position: absolute;
     top: 36px;
     width: 100%;
