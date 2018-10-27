@@ -38,3 +38,6 @@ if hasFreeSweet == true
 if hasFreeSweet == false
 > No free sweet.
 ```
+
+### More Information
+* [Microsoft Docs](https://docs.microsoft.com/en-us/dotnet/csharp/language-reference/operators/conditional-operator)
