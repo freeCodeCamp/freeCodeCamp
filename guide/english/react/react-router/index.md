@@ -45,3 +45,15 @@ const Nav = () => (
   </div>
 )
 ```
+In order for these links to actually be used by react Router, you must first create a route for them.
+
+```javascript
+
+const Routes = () => (
+  <div>
+    <Route exact path='/Home'/>
+    <Route exact path='/address'/>
+  </div>
+)
+```
+
