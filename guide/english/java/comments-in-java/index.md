@@ -3,11 +3,11 @@ title: Comments in Java
 ---
 ## Comments in Java
 
-Comments in java are like real life post-it notes used to display some information, which other programmers or developers can read and understand.
+Comments in java are like real life post-it notes used to display some information, which other programmers or developers can read and understand. Because they are intended for humans, Java comments are not executed by the compiler or interpreter.
 
-It is good practice to add comments to your code, especially when working with a team or at a company. This helps future developers or teammates to know what is going on more easily when they look at your code. Comments make your code more neat and organized.
+It is good practice to add meaningful comments to your code, especially when working with a team or at a company. This helps future developers or teammates to know what is going on more easily when they look at your code. Comments also make your code more neat and organized.
 
-Java comments are not executed by compiler and interpreter.
+Note above the phrase **meaningful** comments. As a general rule, good code should be readable without execessive comments. Another programmer should be able to review your code and understand *what* is happened, but good comments can help explain *why*. Comments should also be updated as code changes over time. In short, all comments in Java should be meaningful, relevant, and current.
 
 
 ### Types of Java Comments
@@ -56,8 +56,9 @@ public class RandomNumbers{
 }  
 ```
 
-
 #### More Information:
 * [Java Resources](http://guide.freecodecamp.org/java/resources/)
 
 * [Compiled Javadoc Example](https://docs.oracle.com/javase/8/docs/api/)
+
+* [Putting comments in code: the good, the bad, and the ugly.](https://medium.freecodecamp.org/code-comments-the-good-the-bad-and-the-ugly-be9cc65fbf83)
