@@ -283,3 +283,202 @@ Most of the time, pointer and array accesses can be treated as acting the same, 
     a++; /*illegal*/ 
 ```
 
+
+Pointers store address of variables or a memory location.
+
+// General syntax
+datatype *var_name; 
+
+// An example pointer "ptr" that holds
+// address of an integer variable or holds
+// address of a memory whose value(s) can
+// be accessed as integer values through "ptr"
+int *ptr;  
+Using a Pointer:
+To use pointers in C, we must understand below two operators.
+
+To access address of a variable to a pointer, we use the unary operator & (ampersand) that returns the address of that variable. For example &x gives us address of variable x.
+// The output of this program can be different 
+// in different runs. Note that the program 
+// prints address of a variable and a variable 
+// can be assigned different address in different 
+// runs. 
+#include <stdio.h> 
+  
+int main() 
+{ 
+    int x; 
+  
+    // Prints address of x 
+    printf("%p", &x); 
+  
+    return 0; 
+} 
+
+One more operator is unary * (Asterisk) which is used for two things :
+To declare a pointer variable: When a pointer variable is declared in C/C++, there must a * before its name.
+// C program to demonstrate declaration of 
+// pointer variables. 
+#include <stdio.h> 
+int main() 
+{ 
+    int x = 10; 
+  
+    // 1) Since there is * in declaration, ptr 
+    // becomes a pointer varaible (a variable 
+    // that stores address of another variable) 
+    // 2) Since there is int before *, ptr is 
+    // pointer to an integer type variable 
+    int *ptr; 
+  
+    // & operator before x is used to get address 
+    // of x. The address of x is assigned to ptr. 
+    ptr = &x; 
+  
+    return 0; 
+}
+
+
+
+
+ 
+
+To access the value stored in the address we use the unary operator (*) that returns the value of the variable located at the address specified by its operand.
+// C program to demonstrate use of * for pointers in C 
+#include <stdio.h> 
+  
+int main() 
+{ 
+    // A normal integer variable 
+    int Var = 10; 
+  
+    // A pointer variable that holds address of var. 
+    int *ptr = &Var; 
+  
+    // This line prints value at address stored in ptr. 
+    // Value stored is value of variable "var" 
+    printf("Value of Var = %d\n", *ptr); 
+  
+    // The output of this line may be different in different 
+    // runs even on same machine. 
+    printf("Address of Var = %p\n", ptr); 
+  
+    // We can also use ptr as lvalue (Left hand 
+    // side of assignment) 
+    *ptr = 20; // Value at address is now 20 
+  
+    // This prints 20 
+    printf("After doing *ptr = 20, *ptr is %d\n", *ptr); 
+  
+    return 0; 
+} 
+
+Output :
+
+Value of Var = 10
+Address of Var = 0x7fffa057dd4
+After doing *ptr = 20, *ptr is 20
+ 
+
+Pointer Expressions and Pointer Arithmetic
+A limited set of arithmetic operations can be performed on pointers. A pointer may be:
+
+incremented ( ++ )
+decremented ( — )
+an integer may be added to a pointer ( + or += )
+an integer may be subtracted from a pointer ( – or -= )
+Pointer arithmetic is meaningless unless performed on an array.
+Note : Pointers contain addresses. Adding two addresses makes no sense, because there is no idea what it would point to. Subtracting two addresses lets you compute the offset between these two addresses.
+
+// C++ program to illustrate Pointer Arithmetic 
+// in C/C++ 
+#include <bits/stdc++.h> 
+  
+// Driver program 
+int main() 
+{ 
+    // Declare an array 
+    int v[3] = {10, 100, 200}; 
+  
+    // Declare pointer variable 
+    int *ptr; 
+  
+    // Assign the address of v[0] to ptr 
+    ptr = v; 
+  
+    for (int i = 0; i < 3; i++) 
+    { 
+        printf("Value of *ptr = %d\n", *ptr); 
+        printf("Value of ptr = %p\n\n", ptr); 
+  
+        // Increment pointer ptr by 1 
+        ptr++; 
+    } 
+} 
+Copy CodeRun on IDE
+
+Output:Value of *ptr = 10
+Value of ptr = 0x7ffcae30c710
+
+Value of *ptr = 100
+Value of ptr = 0x7ffcae30c714
+
+Value of *ptr = 200
+Value of ptr = 0x7ffcae30c718
+Untitled presentation (3)
+
+ 
+
+Array Name as Pointers 
+An array name acts like a pointer constant. The value of this pointer constant is the address of the first element.
+For example, if we have an array named val then val and &val[0] can be used interchangeably.
+
+// C++ program to illustrate Array Name as Pointers in C++ 
+#include <bits/stdc++.h> 
+using namespace std; 
+  
+void geeks() 
+{ 
+    // Declare an array 
+    int val[3] = { 5, 10, 20 }; 
+  
+    // Declare pointer variable 
+    int *ptr; 
+  
+    // Assign address of val[0] to ptr. 
+    // We can use ptr=&val[0];(both are same) 
+    ptr = val ; 
+    cout << "Elements of the array are: "; 
+    cout << ptr[0] << " " << ptr[1] << " " << ptr[2]; 
+  
+    return; 
+} 
+  
+// Driver program 
+int main() 
+{ 
+    geeks(); 
+    return 0; 
+} 
+
+
+Output:
+Elements of the array are: 5 10 20
+Untitled presentation (2)
+Now if this ptr is sent to a function as an argument then the array val can be accessed in a similar fashion.
+
+ 
+
+Pointers and Multidimensional Arrays
+Consider pointer notation for the two-dimensional numeric arrays. consider the following declaration
+
+int nums[2][3]  =  { {16, 18, 20}, {25, 26, 27} };
+In general, nums[i][j] is equivalent to *(*(nums+i)+j)
+
+POINTER NOTATION	ARRAY NOTATION	VALUE
+*(*nums)	nums[0][0]	16
+*(*nums + 1)	nums[0][1]	18
+*(*nums + 2)	nums[0][2]	20
+*(*(nums + 1))	nums[1][0]	25
+*(*(nums + 1) + 1)	nums[1][1]	26
+*(*(nums + 1) + 2)	nums[1][2]	27
