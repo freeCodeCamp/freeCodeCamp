@@ -29,13 +29,7 @@ AVL trees have a worst case lookup, insert and delete time of O(log n).
 
 ### AVL Insertion Process
 
-You will do an insertion similar to a normal Binary Search Tree insertion. After inserting, you fix the AVL property using left or right rotations.
 
-  - If there is an imbalance in left child of right subtree, then you perform a left-right rotation.  
-  - If there is an imbalance in left child of left subtree, then you perform a right rotation.  
-  - If there is an imbalance in right child of right subtree, then you perform a left rotation.  
-  - If there is an imbalance in right child of left subtree, then you perform a right-left rotation.  
- 
 
 #### More Information:
 [YouTube - AVL Tree](https://www.youtube.com/watch?v=7m94k2Qhg68)
