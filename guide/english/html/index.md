@@ -60,6 +60,7 @@ Since the early days of the web, there have been many versions of HTML
 
 #### Other Resources
 
+- [HTML Intro](https://www.w3schools.com/html/html_intro.asp)
 - [HTML Elements](https://guide.freecodecamp.org/html/elements)
 - [Semantic HTML](https://guide.freecodecamp.org/html/html5-semantic-elements)
 - [HTML Attributes](https://guide.freecodecamp.org/html/attributes)
