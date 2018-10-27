@@ -26,6 +26,12 @@ Deadlock can arise if four conditions hold simultaneously.
 - **No preemption** : a resource can be released only voluntarily by the process holding it, after that process has completed its task.
 - **Circular wait** : there exists a set { P<sub>0</sub>, P<sub>1</sub>, …, P<sub>0</sub> } of waiting processes such that P<sub>0</sub> is waiting for a resource that is held by P<sub>1</sub>, P<sub>1</sub> is waiting for a resource that is held by P<sub>2</sub>, …, P<sub>n –1</sub> is waiting for a resource that is held by P<sub>n</sub>, and P<sub>0</sub> is waiting for a resource that is held by P<sub>0</sub>.
 
+### Resource Allocation Graphs
+Possible deadlocks can be discovered through the use of resource allocation graphs, which outline processes and the resources they require. If a cycle exists, so does a potential deadlock. 
+
+#### Resource Allocation Graph Example
+![resource allocation graph example](http://www.cs.fsu.edu/~baker/cop5611.S03/graphics/basicdeadlock2.gif)
+
 ### Methods for Handling Deadlocks
 - Ensure that the system will never enter a deadlock state.
 - Allow the system to enter a deadlock state and then recover.
@@ -49,3 +55,4 @@ Deadlock can arise if four conditions hold simultaneously.
 #### More information :
 - [Deadlock](https://en.wikipedia.org/wiki/Deadlock)
 - [Operating System | Process Management | Deadlock Introduction](https://www.geeksforgeeks.org/operating-system-process-management-deadlock-introduction/)
+- [Resource Allocation Graphs](https://www.geeksforgeeks.org/operating-system-resource-allocation-graph-rag/)
