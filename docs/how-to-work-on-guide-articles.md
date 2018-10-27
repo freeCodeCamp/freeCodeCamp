@@ -5,7 +5,7 @@ With your help, we can create a comprehensive reference tool that will help mill
 You can:
 
 - [Help us by Creating and Editing Guide Articles](#steps-for-creating-and-editing-guide-articles).
-- [Help us reviewing pull requests for Guide Articles]()
+- [Help us reviewing pull requests for Guide Articles](#steps-for-reviewing-pull-requests-for-guide-articles)
 
 ## Steps for Creating and Editing Guide Articles
 
@@ -161,7 +161,7 @@ Stay active in the [contributors chat room](https://gitter.im/freecodecamp/contr
 
 ---
 
-## Steps for revewing pull requests for Guide Articles
+## Steps for reviewing pull requests for Guide Articles
 
 > This section is targeted at reviewers of this repo.
 
