@@ -10,6 +10,10 @@ title: Books to Read for Programmers
 - http://automatetheboringstuff.com/
 - ISBN-13: 978-1593275990
 
+*Code Complete: A Practical Handbook of Software Construction, Second Edition* by Steve McConnell
+- https://www.amazon.com/Code-Complete-Practical-Handbook-Construction/dp/0735619670
+- ISBN-13: 978-0735619678
+
 *Structure and Interpretation of Computer Programs* by Harold Abelson, Gerald Jay Sussman, and Julie Sussman
 - https://mitpress.mit.edu/sicp/
 - ISBN-13: 978-0262510875
