@@ -3,12 +3,14 @@ title: Basic HTML
 ---
 ## Basic HTML
 
-This is a stub. <a href='https://github.com/freecodecamp/guides/tree/master/src/pages/html/tutorials/basic-html/index.md' target='_blank' rel='nofollow'>Help our community expand it</a>.
+**Intro:**
+A commonly held belief by non developers is that *HTML* is a programming language. It is actually a markup language that tells browsers how to display a page for a user. Used in conjunction with *CSS*, browsers are told exactly how a web page should look.
 
-<a href='https://github.com/freecodecamp/guides/blob/master/README.md' target='_blank' rel='nofollow'>This quick style guide will help ensure your pull request gets accepted</a>.
+There are certain tags that every HTML document should contain. Those tags are: `<!doctype>` which tells browsers what type of document the file is, `<html>` tags which contain the HTML, `<head>` tags which contain title, meta information, file imports, etc., and the `<body>` tag which is what displays on the web page.
 
-<!-- The article goes here, in GitHub-flavored Markdown. Feel free to add YouTube videos, images, and CodePen/JSBin embeds  -->
-Structure of a basic HTML file:
+By using the above tags, every webpage starts with a basic HTML structure.
+
+**Structure of a basic HTML file:**
 
 ```html
 <!doctype html>
