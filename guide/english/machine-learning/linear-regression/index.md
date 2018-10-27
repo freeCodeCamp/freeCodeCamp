@@ -63,3 +63,8 @@ print(model.intercept_)
 from sklearn import metrics
 print(metrics.accuracy_score(y_test, y_pred_class))
 ```
+
+More about [scikit learn](http://scikit-learn.org/stable/documentation.html)
+
+## Metrics  
+How would you know if your regression model is accurate or not? Well, one method is to calculate the R-squared score of your model. [R-squared score](http://blog.minitab.com/blog/adventures-in-statistics-2/regression-analysis-how-do-i-interpret-r-squared-and-assess-the-goodness-of-fit) (also known as coefficient of determination) is a statistical measure of how close the data are to the fitted regression line.
