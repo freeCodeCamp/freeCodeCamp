@@ -11,11 +11,11 @@ You can use a canvas to draw and animate graphics. The drawings are done with Ja
 ```
 Once you've made your canvas, you need to find it and make a drawing object. 
 ```javascript
-//Find canvas
+// Find canvas
 var canvas = document.getElementById("canvas");
-//Make drawing object
+// Make drawing object
 var drawOnCanvas = canvas.getContext("2d");
-//Draw a rectangle on the canvas!
+// Draw a rectangle on the canvas!
 drawOnCanvas.fillRect(50, 50, 150, 100);
 ```
 Now you can use this drawing object to draw on your canvas. There are several methods and attributes you can use for your drawing, including `rect()`, `fillStyle`, and many more. 
