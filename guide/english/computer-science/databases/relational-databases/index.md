@@ -3,7 +3,7 @@ title: Relational Databases
 ---
 
 
-As a database is a way to store data, relational-databases are a model for how the data is being stored. The data is organized into tables, also known as relations. The tables contain a record for each instance of the data, known as records or tuples. Unique identifiers identify each record to describe it across the database.
+A database is a way to store data and relational-databases are a model for how the data is being stored. The data is organized into tables, also known as relations. The tables contain a record for each instance of the data, known as records or tuples. Unique identifiers identify each record to describe it across the database.
 
 ## Tables
 
@@ -21,7 +21,7 @@ Figure 1 - Example of user table.
 
 ## Records
 
-A record is a single entity of data. As in the example above, it could be a user, an account, a device, or anything that data can represent. Records do need a unique identifier, sometimes referred to as a key. This key must be unique as it is used to describe relationships a record has with other records in other tables. In Figure 1, we could add keys to each row that identifies each user with a key and the table would now look like Figure 2.
+A record is a single row of data. As in the example above, it could be a user, an account, a device, or anything that data can represent. Records do need a unique identifier, sometimes referred to as a key. This key must be unique as it is used to describe relationships a record has with other records in other tables. In Figure 1, we could add keys to each row that identifies each user with a key and the table would now look like Figure 2.
 
 | KEY       | user       | email             | Telephone                           |
 |-----------|------------|------------------|--------------------------------------|
@@ -63,7 +63,7 @@ A one-to-many relationship is one record linked to many other records, the examp
 
 ## Conclusion
 
-This is just a brief intro into relational-databases. Below links are provided to resources that could help you further study the subject.
+This is just a brief intro intoduction to relational-databases. Tne links below are for resources that could help you further study the subject.
 
 #### More Information:
 * Relational databases on <a href='https://en.wikipedia.org/wiki/Relational_database' target='_blank' rel='nofollow'>wikipedia</a>
