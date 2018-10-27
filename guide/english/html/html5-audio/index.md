@@ -4,7 +4,7 @@ title: HTML5 Audio
 ## HTML5 Audio 
 
 Before HTML5, audio files had to be played in a browser using a plug-in like Adobe Flash.
-The HTML <audio> element is used to embed sound content in documents. It may contain one or more audio sources, represented using the src attribute or the [source](<source>) element
+The HTML <audio> element is used to embed sound content in documents. It may contain one or more audio sources, represented using the src attribute or the [source](<source>) element.
 
 The following code snippet adds an audio file with the filename `tutorial.ogg` or `tutorial.mp3`. The <source> element indicates alternative audio files which the browser may choose from. The browser will utilize the first recognized format. 
 
@@ -32,9 +32,10 @@ The autoplay attribute will automatically play your audio file in the background
 
 The preload attribute indicates what the browser should do if the player is not set to autoplay.
 
-The loop attribute will play your audio file in a continous loop if mentioned
+The loop attribute will play your audio file in a continous loop if mentioned.
 
-Since this is html5, some browser do not support it. You can check it at https://caniuse.com/#search=audio
+Refer to the following link to check if your browser supports the HTML5 audio tag.
+https://caniuse.com/#search=audio
 
 #### More Information:
 https://caniuse.com/#search=audio
