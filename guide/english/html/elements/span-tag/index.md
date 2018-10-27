@@ -30,3 +30,4 @@ The main difference is that `<span>` is an inline element, while `<div>` is a bl
 
 #### More Information:
 * [MDN HTML Element Reference](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/span)
+* [Free Code Camp Guide on div tag](https://github.com/freeCodeCamp/freeCodeCamp/blob/master/guide/english/html/elements/div-tag/index.md)
