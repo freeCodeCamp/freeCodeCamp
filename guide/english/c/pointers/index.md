@@ -283,3 +283,4 @@ Most of the time, pointer and array accesses can be treated as acting the same, 
     a++; /*illegal*/ 
 ```
 
+## pointers is a spacial variable which point to onther variable
