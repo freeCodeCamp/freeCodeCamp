@@ -1,6 +1,26 @@
 ---
 title: this reference
 ---
+## `this` Keyword Short and Sweet
+<h3>Define `this` Keyword in easy way</h3>
+    <p>In JavaScript `this` Keyword automatically created when you declare any FUNCTION or METHOOD.<br>
+      and `this` keyword point towards the object that contains the FUNCTION or METHOD. </p>
+    <p>As some of you know `this` Keyword behaves diffrently in FUNCTION and METHOD,<br>
+      <strong>Well, let me explain you how you can understand it in easy manners,</strong></p>
+  
+<h4>`this` in FUNCTIONS :</h4>
+    <p>When you call a Ragular Function, no matter where you create,</p>
+      <ul>
+        <li>It can be a function, in Global Scope,</li>
+        <li>It can be a function, inside function,</li>
+        <li>It can be a function, inside Method,</li>
+      </ul>
+    <p>As long as it is a Ragular Function, It always points towards the `Window` Object.</p>
+   
+<h4>`this` in METHODS :</h4>
+   <p>When you call a Method, `this` Keyword always points towards the Object that is calling a Method.<br>
+   <p><strong><em>It's That Simple..</strong></em></p>
+  
 ## `this` reference
 
 In JavaScript, every function has a `this` reference automatically created when you declare it. The reference is similar to the `this` reference in other class-based languages such as Java or C#: *It points to which object is calling the function* (this object is sometimes called the *context*). In JavaScript, however, *the `this` reference inside functions can be bound to different objects depending on where the function is being called*. Here are 5 basic rules for `this` binding in JavaScript:
