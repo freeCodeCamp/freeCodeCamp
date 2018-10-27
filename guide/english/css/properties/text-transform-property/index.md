@@ -31,5 +31,5 @@ The most commonly used values for this property are `lowercase`, `uppercase` and
 [MDN](https://developer.mozilla.org/en-US/docs/Web/CSS/text-transform)
 
 [CSS-tricks](https://css-tricks.com/almanac/properties/t/text-transform/)
-
+[W3S](https://www.w3schools.com/cssref/pr_text_text-transform.asp)
 
