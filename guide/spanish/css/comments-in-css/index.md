@@ -10,12 +10,12 @@ La sintaxis de comentarios en CSS funciona tanto para comentarios de una sola l�
 
 ```css
     /* 
-        This is 
-        a multi-line 
-        comment 
+        Este es
+        un comentario
+        multilínea.
     */ 
  
-    /* This is a single line comment*/ 
+    /* Este es un comentario de una sola línea. */ 
     .group:after { 
         content: ""; 
         display: table; 
@@ -30,21 +30,21 @@ También puede hacer que sus comentarios sean más legibles al estilizarlos.
 ```css
 /* 
  *** 
- * SECTION FOR H2 STYLE 
+ * SECCIÓN PARA EL ESTILO H2 
  *** 
- * A paragraph where I give informations 
- * about everything that someone who reads the code 
- * but didn't write it would need to know. 
- * The asterisk around the paragraph make it more readable. 
+ * Un párrafo donde doy informaciones. 
+ * Sobre todo lo que alguien que lee el código 
+ * pero si no lo escribiera tendría que saberlo. 
+ * El asterisco alrededor del párrafo lo hace más legible. 
  *** 
  */ 
  
- You can add as many comments to your stylesheet as you like. It's good practice to use CSS comments to help identify parts of any stylesheet that might be difficult to understand from a cursory glance. Comments are especially important when working in a team, when your code must be understood by others. By using CSS comments to make your stylesheets more readable, the CSS will be easier to maintain in the future. 
+ Puede agregar tantos comentarios a su hoja de estilos como desee. Es una buena práctica usar los comentarios de CSS para ayudar a identificar partes de cualquier hoja de estilo que puedan ser difíciles de entender a simple vista. Los comentarios son especialmente importantes cuando se trabaja en equipo, cuando los demás deben entender su código. Al utilizar los comentarios de CSS para que sus hojas de estilo sean más legibles, el CSS será más fácil de mantener en el futuro. 
  
- ## Comment Formats 
+ ## Formatos de comentarios 
  
- Comments should be used everyday in your CSS to keep in maintainable and readable by any dev who dives into said CSS. 
- Here are a few exmples to get you started of CSS comments you can use in your daily work to make your life that bit easier. 
+ Los comentarios se deben usar todos los días en su CSS para que todos los desarrolladores que se sumergen en dicho CSS puedan mantenerlos y leerlos.
+ Aquí hay algunos ejemplos para que pueda comenzar con los comentarios de CSS que puede usar en su trabajo diario para hacer su vida un poco más fácil. 
 ```
 
 css / \* +++++++++++++++++++++++++++++++++++++++++++++++++ +++++++++++++++++++++++++++ +++++++++++++++++++++++++++++++++++++++++++++++++++ +++++++++++++++++++++++++ CSS TABLA DE CONTENIDOS
@@ -64,10 +64,10 @@ css / \* +++++++++++++++++++++++++++++++++++++++++++++++++ +++++++++++++++++++++
 / 6.0 - Cuerpo \* /
 ```
 /************************************************************************ 
- 5.1 - Sliders */ 
+ 5.1 - Deslizadores */ 
  
  /************************************************************************ 
- 5.2 - Imagery */ 
+ 5.2 - Imágenes */ 
 ```
 
 / 7.0 - Pie de página \* / \`\` \`css
