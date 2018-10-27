@@ -49,7 +49,7 @@ Other elements that form can contain:
 - ```select``` - together with ```<option></option>``` tag creates drop-down select menu.
 - ```button``` - The button element can be used to define a clickable button.
 
-MORE INFORMATION ON HTML FORMS.
+Additional information on HTML forms.
 
 HTML Forms are required when you want to collect some data from the site visitor. For example, during user registration you would like to collect information such as name, email address, credit card, etc.
 
@@ -71,3 +71,9 @@ The form tag can also have an attribute named "target" which specifies where the
 
 The action attribute defines the action to be performed when the form is submitted.
 Normally, the form data is sent to a web page at the Script URL when the user clicks on the submit button. If the action attribute is omitted, the action is set to the current page.
+
+More Information:
+
+https://developer.mozilla.org/en-US/docs/Learn/HTML/Forms
+
+https://www.w3schools.com/html/html_forms.asp
