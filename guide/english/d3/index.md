@@ -13,7 +13,7 @@ title: D3
 
 ## Why, D3.js?
 
-*D3** does not introduce a new visual representation. Unlike **Processing**, **Raphaël**, or **Protovis**, *D3's* vocabulary of graphical marks comes directly from web standards: HTML, SVG, and CSS - https://d3js.org/
+**D3** does not introduce a new visual representation. Unlike **Processing**, **Raphaël**, or **Protovis**, *D3's* vocabulary of graphical marks comes directly from web standards: HTML, SVG, and CSS - https://d3js.org/
 
 ###### Get Started
 There are over 20,000+ **D3.js** examples you could learn from, but you never know how approachable any given one will be! So, the question is - how do you build up your visualization from first principles? As you've probably seen, D3's API is massive, so lets call out a few of the utilities that will be particularly helpful early on:
