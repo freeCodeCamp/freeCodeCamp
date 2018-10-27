@@ -1,6 +1,6 @@
 ## Given a sorted and rotated array A of N distinct elements which is rotated at some point, 
 ## and given an element K. The task is to find the index of the given element K in the array A
-
+## Solution Link :-  https://practice.geeksforgeeks.org/viewSol.php?subId=1663639&pid=146&user=RAHUL_NITD
 
 
 using namespace std;
