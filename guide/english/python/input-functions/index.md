@@ -58,3 +58,9 @@ As we know, the input are stored by default as a string, so we can use the map()
 NOTE: Inside the split() function, we can add the separator for the input, por example, if we want to separate each value by a comma, we should write input().split(",") and so on.
 
 <a href='https://docs.python.org/3/library/functions.html#input' target='_blank' rel='nofollow'>Official Docs</a>
+
+7\. Separating input of integers and store them in list:
+```
+l = list(map(int,input("Please provide input seperated by space : ").split()))
+```
+As we know, the input are stored by default as a string, so we can use the map() function, which basically map each value we get from the split with here in our case with int and convert them to int and at the same point of time each value that comes out of the map() get append to the list.
