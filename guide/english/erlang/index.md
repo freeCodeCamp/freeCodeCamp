@@ -90,3 +90,4 @@ If you'd like to install it on your (or a virtual) machine, you can find install
 * [Learn You Some Erlang for Great Good!](http://learnyousomeerlang.com/)
 * [Spawned Shelter!](http://spawnedshelter.com/) _(a collection of articles, videos and books for learning Erlang)_
 * [Erlang (programming language)](https://en.wikipedia.org/wiki/Erlang_(programming_language))
+* [Functional Programming with Erlang - University of Kent](https://www.youtube.com/watch?v=yZ-e6ZT4G6U&list=PLlML6SMLMRgAooeL26mW502jCgWikqx_n)
