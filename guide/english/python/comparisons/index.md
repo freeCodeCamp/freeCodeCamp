@@ -84,3 +84,8 @@ False # both lists have different reference
 To sum up:
 * An `is` expression outputs `True` if both variables are pointing to the same reference 
 * An `==` expression outputs `True` if both variables contain the same data
+
+# Example to illustrate different comparison operators:
+a=10
+b=20
+print(a!=b,a==b,a>b,a<b,a<=b, a>=b)
