@@ -22,7 +22,15 @@ int numbers [5] = {};
 int numbers [] = {1, 2, 3, 4, 5};
 //Note that here the number of values defines the size of the array.
 //In the examples above, the size was fixed beforehand
+
+//Dynamically fixing the arrays size
+int n;
+//Populate the n varible with the desired size of the array like n=5 to define numbers[5]
+int numbers[n];
+
 ```
+
+
 ## Types Of Arrays
 There are two types of array based on way, we declare it.
 
@@ -40,3 +48,4 @@ x = numbers[0]; // = 1. [0] == first position
 numbers[2] = 55; // Sets the third position (3) to the new number 55
 //numbers[] is now: {1, 2, 55, 4, 5}
 ```
+
