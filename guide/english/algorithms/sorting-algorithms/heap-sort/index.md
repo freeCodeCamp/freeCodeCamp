@@ -7,6 +7,8 @@ Heapsort is an efficient sorting algorithm based on the use of max/min heaps. A 
 
 The est worst and average case time complecity of Heapsort is O(nlogn). Although heapsort has a better worse-case complexity than quicksort, a well-implemented quicksort runs faster in practice. This is a comparison-based algorithm so it can be used for nonnumerical data sets insofar as some relation (heap property) can be defined over the elements.
 
+Heap Property: The label at any node in the tree is greater than or equal to the label of any child of that node.
+
 An implementation in Java is as shown below :
 
 ```java
