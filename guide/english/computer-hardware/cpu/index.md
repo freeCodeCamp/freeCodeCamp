@@ -9,13 +9,14 @@ CPUs are integrated circuits, which are complex circuits embedded on a single ch
 
 CPU speeds are measured in gigahertz (GHz). For every gigahertz of speed, a CPU can perform one billion instructions in a second. These instructions are very simple, such as "add two numbers" or "move this variable to this location." To see this in action, read about <a href='https://en.wikipedia.org/wiki/Assembly_language'>assembly language</a>.
 
-[Gigahertz](https://en.wikipedia.org/wiki/Hertz) is not the only determining factor in the actual speed of a processor, as different processors with the same gigahertz speed (also known as clock speed) may perform real-world tasks at different speeds due to using different sets of instructions to perform these tasks. These instruction sets are called CPU architectures.
+
+[Gigahertz](https://en.wikipedia.org/wiki/Hertz) is not the only determining factor in the actual speed of a processor, as different processors with the same gigahertz speed (also known as clock speed) may perform real-world tasks at different speeds due to using different sets of instructions to perform these tasks. Another metric to measure CPU speeds is Instruction Per Cycles(IPC) - the quantity of processed instructions per clock cycle is the main factor to evaluate CPUs performance. In additon, the IPC should be evaluated in the same conditions or instruction sets.These instruction sets are called CPU architectures.
 
 Most modern CPUs use a 64-bit architecture, which means they use 64-bit long memory adresses. Older CPUs used 32-bit, 16-bit, and even 8-bit architectures. The largest number a 64-bit CPU can store is 18,446,744,073,709,552,000. A CPU needs memory adresses to get specified values from the RAM. If we call the length of the memory adresses n, 2^n is the amount of memory cells a CPU can adress.
 
-An instruction cycle for a CPU is called the fetch-decode-execute cycle - where the computer retrieves a instruction from its memory, deetermines which instruction it fetched and what it does, and then carries out said instrucitons.
+An instruction cycle for a CPU is called the fetch-decode-execute cycle - where the computer retrieves a instruction from its memory, determines which instruction it fetched and what it does, and then carries out said instrucitons.
 
-Perhaps the most common issue affecting the CPU is inadequate cooling. CPUs are the main generators of heat in computer systems. Due to their nature, they are typically located under the computer fan. There are various ways of reducing heat in a computer with the two main systems being air fans or liquid cooling systems. Proper heat maintenance and additional hardware can allow a properly configured CPU to perform better than rated by the chip manufacturer (aka "Overclocking"). Note that chips must be unlocked in order to have the ablility to be overclocked.
+Perhaps the most common issue affecting the CPU is inadequate cooling. CPUs are the main generators of heat in computer systems. Due to their nature, they are typically located under the computer fan. There are various ways of reducing heat in a computer with the two main systems being air fans or liquid cooling systems. Proper heat maintenance and additional hardware can allow a properly configured CPU to perform better than rated by the chip manufacturer (aka "Overclocking"). Note that chips must be unlocked in order to have the ablility to be overclocked. Actually, CPU may be overclocked without unlocking by increasing Front Side Bus(FSB) causing the whole system is overclocked.
 
 <!-- The article goes here, in GitHub-flavored Markdown. Feel free to add YouTube videos, images, and CodePen/JSBin embeds  -->
 
@@ -26,7 +27,7 @@ A microprocessor is a silicon chip containing millions of microscopic transistor
 
 <b> Manufacturers of computer microprocessors </b>
   
-There are two primary manufacturers of computer microprocessors. Intel and Advanced Micro Devices (AMD) lead the market in terms of speed and quality. Intel's desktop CPUs include Celeron, Pentium and Core. AMD's desktop processors include Sempron, Athlon and Phenom. Intel makes Celeron M, Pentium M and Core mobile processors for notebooks. AMD makes mobile versions of its Sempron and Athlon, as well as the Turion mobile processor which comes in Ultra and Dual-Core versions. Both companies make both single-core and multi-core processors.
+There are two primary manufacturers of computer microprocessors. Intel and Advanced Micro Devices (AMD) lead the market in terms of speed and quality. Intel's desktop CPUs include Celeron, Pentium, Core and Xeon. AMD's desktop processors include Sempron, Athlon, Phenom, Ryzen and Threadripper. Intel makes Celeron M, Pentium M and Core mobile processors for notebooks. AMD makes mobile versions of its Sempron, Athlon and Ryzen, as well as the Turion mobile processor which comes in Ultra and Dual-Core versions. Both companies make both single-core and multi-core processors.
 
 
 <b> Manufacturers of mobile microprocessors </b>
@@ -36,4 +37,5 @@ The improvements in microprocessor technology have also led to signficant techno
 
 #### More Information:
 <a href='https://en.wikipedia.org/wiki/Central_processing_unit' target='_blank' rel='nofollow'>Wikipedia</a>
+<a href='https://en.wikipedia.org/wiki/Front-side_bus' target='_blank' rel='nofollow'>Front-side Bus</a>
 
