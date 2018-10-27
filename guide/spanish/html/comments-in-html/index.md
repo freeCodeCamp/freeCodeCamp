@@ -14,19 +14,19 @@ Los comentarios comienzan con `<!--` y finalizan con `-->` , y pueden abarcar va
 
 ```html
 
-<!-- You can comment out a large number of lines like this. 
- Author: xyz 
- Date: xx/xx/xxxx 
- Purpose: abc 
+<!-- Puedes comentar un gran número de líneas como esta. 
+ Autor: xyz 
+ Fecha: xx/xx/xxxx 
+ Asunto: abc 
  --> 
  Read more: https://html.com/tags/comment-tag/#ixzz4vtZHu5uR 
  <!DOCTYPE html> 
  <html> 
     <body> 
         <h1>FreeCodeCamp web</h1> 
-        <!-- Leave some space between the h1 and the p in order to understand what are we talking about--> 
+        <!-- Deje un espacio entre el h1 y el p para entender de qué estamos hablando. --> 
         <p>FreeCodeCamp is an open-source project that needs your help</p> 
-            <!-- For readability of code use proper indentation --> 
+            <!-- Para la legibilidad del código, use la sangría apropiada. --> 
     </body> 
  </html> 
 ```
@@ -45,8 +45,8 @@ Los comentarios condicionales solo son reconocidos por la versión 5 de Internet
  <html> 
     <body> 
         <!--[if IE 9]> 
-                <h1>FreeCodeCamp web</h1> 
-            <p>FreeCodeCamp is an open-source project that needs your help</p> 
+                <h1>FreeCodeCamp Web</h1> 
+            <p>FreeCodeCamp es un proyecto de código abierto que necesita tu ayuda</p> 
         <![endif]--> 
     </body> 
  </html> 
@@ -58,9 +58,9 @@ Estos comentarios solo están disponibles en Internet Explorer y pueden usarse h
 
 ```html
 
-<!--[if lt IE 9]> <p>Your browser is lower then IE9</p> <![endif]--> 
- <!--[if IE 9]> <p>Your browser is IE9</p> <![endif]--> 
- <!--[if gt IE 9]> <p>Your browser is greater then IE9</p> <![endif]--> 
+<!--[if lt IE 9]> <p>Su navegador es menor que IE9</p> <![endif]--> 
+ <!--[if IE 9]> <p>Su navegador es IE9</p> <![endif]--> 
+ <!--[if gt IE 9]> <p>Tu navegador es mayor que IE9</p> <![endif]--> 
 ```
 
 [Sobre los comentarios condicionales.](https://msdn.microsoft.com/en-us/library/ms537512(v=vs.85).aspx)
