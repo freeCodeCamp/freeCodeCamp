@@ -1,5 +1,6 @@
 ---
 title: Agile
+title: Agile
 localeTitle: 敏捷
 ---
 ## 敏捷
