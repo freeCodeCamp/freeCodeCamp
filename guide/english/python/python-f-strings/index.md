@@ -107,6 +107,29 @@ print(f'The binary of {num} is {num:08b}')
 ```
 The binary of 42 is 00101010
 ```
+# Using object with f-strings
+
+# Input
+
+```python
+class Book:
+    def __init__(self, title, author):
+        self.title = title
+        self.author = author
+
+    def __str__(self):
+        return f"{self.title} by {self.author}"
+
+
+book = Book("A Clash of Kings", "George R. R. Martin")
+
+print(f"{book}")
+```
+
+# Output
+```
+A Clash of Kings by George R. R. Martin
+```
 
 ### Sources
 https://www.python.org/dev/peps/pep-0498/
