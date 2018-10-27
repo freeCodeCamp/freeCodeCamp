@@ -4,7 +4,19 @@ title: Bash rm
 
 ## Bash command: rm
 
-**Delete a File/Directory** ,for example `rm hello`.
+### Usage
+
+**Delete a File**
+
+```bash
+rm <file name or file path>
+```
+
+**Delete a Directory**
+
+```bash
+rm -R <folder name or folder path>
+```
 
 There are few commonly used arguments:
 
