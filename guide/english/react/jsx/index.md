@@ -71,6 +71,22 @@ const tags = (
 );
 ```
 
+What you can do thhough is encompass the elements into a Fragment component from the React library, like so:
+
+```
+// This is not valid.
+const tags = (
+  <React.Fragment>
+    <h1>Hello World!</h1>
+    <h3>This is my special list:</h3>
+    <ul>
+      <li>Once</li>
+      <li>Twice</li>
+    </ul>
+  <React.Fragment>
+);
+```
+
 ### All Tags Must Be Closed
 
 In HTML, there are self-closing tags such as `img`, `br`, `input`, and `hr`. 
