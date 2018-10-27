@@ -5,43 +5,34 @@ localeTitle: Uso Básico
 ## Uso Básico do VIM
 
 ### Abrir arquivo
+* Execute vim ou vi e abra o arquivo desejado.
 
-*   Execute vim ou vi e abra o nome do arquivo fornecido.
-
-### Inserir modo
-
-*   Depois de abrir a página, insira I e você verá o texto "Insert Mode" na parte inferior da tela. A partir daqui, você pode fazer as alterações desejadas no texto do seu arquivo.
+### Modo de inserção
+*  Depois de abrir a página tecle "i" e você verá o texto "Insert Mode" na parte inferior da tela. A partir daqui você pode fazer as alterações desejadas no texto do seu arquivo.
 
 ### Salvar Arquivo
-
-*   :W
+* :w
 
 ### Salvar e sair
-
-*   : x
-*   SHIFT ZZ
-*   : wq
+* :x
+* SHIFT ZZ
+* : wq
 
 ### Sair do arquivo se nenhuma alteração for feita
-
-*   : q
+* :q
 
 ### Sair do arquivo e desfazer quaisquer alterações feitas
+* :q!
 
-*   : q!
+### Exibir numeração das linhas
+* :set nu
 
-### Exibir números de linha
+### Não exibir numeração das linhas
+* :set nonu
 
-*   : definir nu
-
-### Não exibir números de linha
-
-*   : definir nonu
-
-### Adicionar cor de sintaxe com base na linguagem prog usada
-
-*   : sintaxe on
+### Adicionar cor de sintaxe com base na linguagem de programação usada
+* :sintax on
 
 ## Sobre o Vim
 
-Vim é o editor de texto usado basicamente no modo CLI. Mas agora o editor também está disponível em várias versões. Há também GVIM que é a versão gráfica do VIM. vi foi o editor principal, em seguida, sua melhoria e nomeou VI melhorou Vim.
+O Vim é um editor de texto criado para ser usado em um ambiente CLI (interface de linha de comando). Sendo altamente configurável e construido com eficiencia em mente, sem a necessidade de um mouse ou uma interface gráfica. O mesmo foi criado para ser uma versão melhorada do editor UNIX 'VI', ou VI improved, i.e., VI melhorado. Além disto, o VIM possui ainda uma versão  GUI (interface gráfica do usuário) chamada GVIM que compartilha as mesmas funções básicas do VIM, além de apresentar recursos adicionais ao usuário, como um menu adicional e uma barra de tarefas.
