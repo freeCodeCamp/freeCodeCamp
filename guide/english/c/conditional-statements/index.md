@@ -30,16 +30,16 @@ if(a < 200)
 
 
 ## 2. if...else statement
-If the Boolean expression evaluates to **true**, then the if block will be executed, otherwise, the else block will be executed.
+If the Boolean expression evaluates to **true**, then the if block will be executed, otherwise, the else block will be executed. 'Switch case' statement is alternate for 'if-else' statement.
 #### Syntax
 ```C
 if(boolean_expression) 
 {
-    //Block of Statements executed when boolean_expression is true
+   Statement X; //Block of Statements executed when boolean_expression is true
 }
 else
 {
-    //Block of Statements executed when boolean_expression is false
+   Statement Y; //Block of Statements executed when boolean_expression is false
 }
 ```
 #### Example
