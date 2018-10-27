@@ -2,6 +2,7 @@
 title: File handling
 ---
 ## File Handling
+File represents storage medium for storing data or information. Streams refer to sequence of bytes. In Files we store data i.e. text or binary data permanently and use these data to read or write in the form of input output operations by transferring bytes of data. So we use the term File Streams/File handling. We use the header file <fstream>
 Uptill now we were using `cin` and `cout` for reading and writing data, but what if we wanna write a data into a file or pick up a data from a file? Here our `cin` and `cout` doesnot work so we use a standard c++ library called fstream. 
 
 ## Data types and description
@@ -73,6 +74,18 @@ Zara
 
 * the getline() function is used to read a line from the opened file
 * the ignore() function s used to ignore the extra characters left by previous read statement
+### NOTE
+Quite often we need to take input from a file until their is some data let unread , this can be done by using while loop as follows:-
+```cpp
+ int x;
+ // open a file in read mode.
+   ifstream infile; 
+   infile.open("file.dat");
+   while(cin >> x)
+   {
+     // processing data as wished
+   }
+ ```
 
 ## Sources
 1.Tutorialspoint
