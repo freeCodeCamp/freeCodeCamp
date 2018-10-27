@@ -53,4 +53,4 @@ Flutter is a cross platform mobile development framework from Google, i,e it can
 
 ### Xamarin
 
-Xamarin is a cross platform mobile development framework from Microsoft. It allows you to develop on a PC or a MAC using a C# codebase. You can create Natvie iOS Apps, Native Android Apps, and Native Windows Phone Apps. You can use either Visual Studio or Xamarin Studio as the IDE to develop using Xamarin. For more information pleasee see: https://docs.microsoft.com/en-us/xamarin/
+Xamarin is a cross platform mobile development framework from Microsoft. It allows you to develop on a PC or a MAC using a C# codebase. You can create Native iOS Apps, Native Android Apps, and Native Windows Phone Apps. You can use either Visual Studio or Xamarin Studio as the IDE to develop using Xamarin.
