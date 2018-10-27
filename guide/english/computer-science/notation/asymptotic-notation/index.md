@@ -5,7 +5,7 @@ title: Asymptotic Notation
 
 How do we measure the performance value of algorithms?
 
-Consider how time is one of our most valuable resources. In computing, we can measure performance with the amount of time a process takes to complete. If the data processed by two algorithms is the same, we can decide on the best implementation to solve a problem.
+In Compputer Science, time is one of our most valuable resources. In computing, we can measure performance with the amount of time a process takes to complete. Anthough the difference between the processing time of two algporithms might be extremely small, if the algorithm operates in a loop or has to be executed on a large set of data points, the small difference can become quite significant. If the data processed by two algorithms is the same, we can decide on the best implementation to solve a problem.
 
 We do this by defining the mathematical limits of an algorithm. These are the big-O, big-omega, and big-theta, or the asymptotic notations of an algorithm. On a graph the big-O would be the longest an algorithm could take for any given data set, or the "upper bound". Big-omega is like the opposite of big-O, the "lower bound". That's where the algorithm reaches its top-speed for any data set. Big theta is either the exact performance value of the algorithm, or a useful range between narrow upper and lower bounds.
 
