@@ -1,0 +1,15 @@
+## Map
+
+Cuando queremos crear un nuevo array modificando a uno ya existente podemos utilizar el map.
+
+```
+  const array = [2,3,4];
+  const nuevoArray = array.map((numero) => {
+    return numero + 10;
+  })
+  console.log(nuevoArray)`
+
+
+output:
+  [12, 13, 14]
+```
