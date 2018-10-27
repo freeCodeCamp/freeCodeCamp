@@ -1,0 +1,27 @@
+Given an unsorted array. Your task is to find the maximum difference between the successive elements in its sorted form.
+## My Solution Link :-  https://practice.geeksforgeeks.org/viewSol.php?subId=1663613&pid=130&user=
+
+
+using namespace std;
+int main()
+ {
+	//code
+        int  t;
+        cin>>t;
+        while(t--)
+       {
+           int n,d=0;
+           cin>>n;
+           int a[n];
+           for(int i=0;i<n;i++)
+            cin>>a[i];
+            sort(a,a+n);
+            for(int i=1;i<n;i++)
+            {
+             if(a[i]-a[i-1]>d)
+                d=a[i]-a[i-1];
+            }
+            cout<<d<<endl;
+       }
+       return 0;
+}
