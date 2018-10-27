@@ -26,6 +26,13 @@ Classical computers encode information in bits. Each bit can take the value of 1
 
 Quantum systems may untangle the complexity of molecular and chemical interactions leading to the discovery of new medicines and materials. They may enable ultra-efficient logistics and supply chains, such as optimizing fleet operations for deliveries during the holiday season. They may help us find new ways to model financial data and isolate key global risk factors to make better investments. And they may make facets of artificial intelligence such as machine learning much more powerful.
 
+### Facts about Quantum Computing
+
+1. Quantum computing requires extremely cold temperatures, as sub-atomic particles must be as close as possible to a stationary state to be measured. The cores of D-Wave quantum computers operate at -460 degrees f, or -273 degrees c, which is 0.02 degrees away from absolute zero.
+2. Quantum computing is often described as “natural”. This is because although we don’t completely understand them, the mechanisms underpinning the real world (which have evolved through nature) clearly operate at a sub-atomic level. By simulating this with computers, we come a huge step closer to being able to simulate the natural world.
+3. At a quantum level, science fiction appears to become reality. Particles can travel backward or forwards in time and teleport (quantum tunneling) between two positions.
+4. One possible explanation for why quantum computers work involves parallel universes. It has been theorized that qubits are able to exist in two states simultaneously because we are observing them in multiple universes simultaneously.
+
 ### Further Resources
 
 [Quantum Computers Explained – Limits of Human Technology | Kurzgesagt – In a Nutshell](https://www.youtube.com/watch?v=JhHMJCUmq28) 
