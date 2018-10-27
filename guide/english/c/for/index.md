@@ -43,3 +43,15 @@ int main () {
 > Item on index 3 is 4
 ```
 
+## Input an array using for loop in C
+
+```C
+
+int i;
+int arr[10];
+
+for(i = 0; i < 10; i++){
+   scanf("%d", &arr[i]);
+}
+
+```
