@@ -3,13 +3,10 @@ title: 401k Calculator
 ---
 ## 401k Calculator
 
-This is a stub. <a href='https://github.com/freecodecamp/guides/tree/master/src/pages/tools/calculators/401k-calculator/index.md' target='_blank' rel='nofollow'>Help our community expand it</a>.
-
-<a href='https://github.com/freecodecamp/guides/blob/master/README.md' target='_blank' rel='nofollow'>This quick style guide will help ensure your pull request gets accepted</a>.
-
-<!-- The article goes here, in GitHub-flavored Markdown. Feel free to add YouTube videos, images, and CodePen/JSBin embeds  -->
+A 401k calculator is used to calculate the 401k balance at retirement given a number of variables, including income, life expectancy, and expected inflation rate. Since many of these variables are uncertain, the end calculation will only be an estimate.
 
 #### More Information:
-<!-- Please add any articles you think might be helpful to read before writing the article -->
+
+* [An online 401k calculator](https://www.calculator.net/401k-calculator.html)
 
 
