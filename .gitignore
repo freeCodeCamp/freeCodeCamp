@@ -1,5 +1,7 @@
 node_modules
 
+/.idea
+
 .env
 
 *lib-cov

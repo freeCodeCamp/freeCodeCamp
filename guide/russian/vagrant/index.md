@@ -1,11 +1,10 @@
 ---
-title: Vagrant 
-localeTitle: бродяга
+title: Vagrant
 ---
-## бродяга
+## Vagrant
 
-Это заглушка. [Помогите нашему сообществу расширить его](https://github.com/freecodecamp/guides/tree/master/src/pages/mathematics/quadratic-equations/index.md) .
-
-[Это руководство по быстрому стилю поможет вам принять ваш запрос на тягу](https://github.com/freecodecamp/guides/blob/master/README.md) .
+Vagrant - это инструмент автоматизации, который помогает создавать и управлять виртуальными машинами, которые просты в использовании, и позволяет быстро настроить среду. Vagrantfile - точная установка и настройка среды, поделившись которым, вы можете быть уверены, что другие члены команды используют одну и ту же среду независимо от того, какой компьютер они используют.
 
 #### Дополнительная информация:
+- [Официальная документация](https://www.vagrantup.com/docs/index.html)
+- [С чего начать](https://www.vagrantup.com/intro/getting-started/index.html)
