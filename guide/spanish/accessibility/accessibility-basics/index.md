@@ -22,7 +22,7 @@ Si cae fuera de estas categorías bastante amplias, por favor hágamelo saber. S
 
 ## Entonces, ¿qué es la accesibilidad de todos modos?
 
-La accesibilidad en sí misma es un término un tanto engañoso a veces, especialmente si el inglés es su segundo idioma. A veces se le conoce como diseño inclusivo.
+La accesibilidad en sí misma es un término un poco engañoso a veces, especialmente si el inglés es su segundo idioma. A veces se conoce como diseño inclusivo.
 
 Si su sitio está en Internet, accesible a cualquier persona con un navegador web, en un sentido, ese sitio web es accesible para todos con un navegador web.
 
