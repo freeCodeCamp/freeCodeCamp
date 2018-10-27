@@ -8,7 +8,7 @@ Estou escrevendo este breve guia para fornecer exemplos práticos de como implem
 
 ### Ignorando a Navegação
 
-Para que os usuários não com visão tenham uma experiência agradável em seu website, eles precisam acessar o conteúdo de maneira rápida e eficiente. Se você nunca experimentou um site através de um leitor de tela, eu recomendo fazê-lo. É a melhor maneira de testar a facilidade com que um site pode ser navegado para usuários sem visão. O NVDA é um aplicativo de leitura de tela muito bom que é fornecido gratuitamente. Mas se você usar o leitor de tela e achar útil considerar fazer uma doação para a equipe de desenvolvimento. O leitor de tela pode ser baixado do [nvaccess.org](https://www.nvaccess.org/download/) .
+Para que os usuários com deficiência visual tenham uma experiência agradável em seu website, eles precisam acessar o conteúdo de maneira rápida e eficiente - se você nunca utilizou um site através de um leitor de tela, eu recomendo testar. O leitor de tela é a melhor maneira de testar a facilidade com que um site pode ser navegado para usuários com deficiência visual. O NVDA é um aplicativo de leitura de tela muito bom e completo que é fornecido gratuitamente (se você usar o leitor de tela útil, considere fazer uma doação para a equipe de desenvolvimento). O leitor de tela pode ser baixado do [nvaccess.org](https://www.nvaccess.org/download/).
 
 Para permitir que usuários sem visão pule para o conteúdo principal de um site e evite navegar por todos os links de navegação principais:
 
