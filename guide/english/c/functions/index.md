@@ -112,6 +112,30 @@ To prevent infinite recursion, an if...else statement or similar approach can be
 Recursion makes program more elegant and clean. All algorithms can be defined recursively, which makes it easier to visualize and prove. 
 If the speed of the program is important then you may not want to use recursion as it uses more memory and can slow the program down.
 
+A program having recursive function to print the numbers from 1 to the number entered by the user.
+
+```C
+#include<stdio.h>
+
+void printNumbersUptoN(int n)
+{
+	if(n == 0)
+		return;
+
+	printNumbersUptoN(n - 1);
+	printf("%d\n",n);
+}
+
+void main()
+{
+ int n;
+ 
+ printf("Enter a number greater than or equal to 1 : ");
+ scanf("%d",&n);
+
+ printNumbersUptoN(n);
+}
+```
 
 # Before you go on...
 ## A review
