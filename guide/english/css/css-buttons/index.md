@@ -132,6 +132,87 @@ To animate a button on click use 'button:active':
   transform: translateY(4px);
 }
 ```
+More Complex Animations can be achived
+
+GlowButton.html
+```
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Button Animation</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" media="screen" href="GB_1.css" />
+    <script src="main.js"></script>
+    <link href="https://fonts.googleapis.com/css?family=Niramit" rel="stylesheet">
+</head>
+<body>
+    <a>Button</a>
+</body>
+</html>
+
+```
+GlowButton.css
+```
+body{
+    margin: 0;
+    padding: 0;
+    background-color: #333333;
+    font-family: 'Niramit', sans-serif;
+}
+a{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 200px;
+    height: 60px;
+    text-align: center;
+    line-height: 60px;
+    color: #fff;
+    font-size: 24px;
+    text-transform: uppercase;
+    text-decoration: none;
+    font-family: sans-serif;
+    box-sizing: border-box;
+    background: linear-gradient(90deg, #FF3A84, #FFCD07, #08F1DA,#890CFD,#F43CA3);
+    background-size: 400%;
+    border-radius: 30px;
+    z-index: 1;
+   }
+a:hover{
+    animation: animate 10s linear infinite;
+}
+@keyframes animate{
+    0%{
+        background-position: 0%;
+    }
+    100%
+    {
+        background-position: 400%;
+    }
+}
+a:before{
+    content: '';
+    position: absolute;
+    top:-5px;
+    left: -5px;
+    right: -5px;
+    bottom: -5px;
+    z-index: -1;
+    background: linear-gradient(90deg, #FF3A84, #FFCD07, #08F1DA,#890CFD,#F43CA3);
+    border-radius: 50px;
+    background-size: 400%;
+    opacity: 0;
+    transition: 0.5s;
+}
+a:hover:before{
+    filter: blur(13px);
+    opacity: 1;
+    animation: animate 10s linear infinite;
+}
+```
 
 #### More Information:
 * https://www.w3schools.com/css/css3_buttons.asp
