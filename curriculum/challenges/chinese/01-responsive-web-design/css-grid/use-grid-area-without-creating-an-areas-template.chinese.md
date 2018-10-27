@@ -3,14 +3,14 @@ id: 5a94fe2669fb03452672e45e
 title: Use grid-area Without Creating an Areas Template
 challengeType: 0
 videoUrl: ''
-localeTitle: 使用网格区域而不创建区域模板
+localeTitle: 在不创建网格区域模板的情况下使用网格区域
 ---
 
 ## Description
-<section id="description">您在上一次挑战中学习的<code>grid-area</code>属性可以以其他方式使用。如果您的网格没有要引用的区域模板，您可以动态创建一个区域，以便放置项目，如下所示： <blockquote> item1 {grid-area：1/1/2/4; } </blockquote>这是使用您之前了解的行号来定义此项目的区域。上例中的数字代表以下值： <blockquote>网格区域：水平线开始于/垂直线开始于/水平线结束于/垂直线结束于; </blockquote>因此，示例中的项目将使用第1行和第2行之间的行以及第1行和第4行之间的行。 </section>
+<section id="description">您在上一次挑战中学习的<code>grid-area</code>属性可以以其他方式使用。如果您的网格没有可引用的网格区域模板，您可以当场创建一个网格区域来放置项目，例如： <blockquote> item1 {grid-area：1/1/2/4; } </blockquote>这个区域用了您之前刚学过的网格行号来定义项目的地点。上例中的数字的意思是： <blockquote>grid-area (网格区域)：水平线开始于/垂直线开始于/水平线结束于/垂直线结束于; </blockquote>因此，示例中的项目将使用第一个网格横线和第2个网格横线之间的网格行以及第一个网格纵线和第四个网格纵线之间的网格列。 </section>
 
 ## Instructions
-<section id="instructions">使用<code>grid-area</code>属性，将<code>item5</code>类的元素<code>item5</code>第三和第四条水平线之间以及第一条和第四条垂直线之间。 </section>
+<section id="instructions">使用<code>grid-area</code>属性，将带<code>item5</code>class的元素放置到第三和第四条网格横线之间以及第一条和第四条网格纵线之间。 </section>
 
 ## Tests
 <section id='tests'>
