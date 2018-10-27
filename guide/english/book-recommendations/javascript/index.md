@@ -30,6 +30,13 @@ A collection of articles covering the basics (core language and working with a b
 - [Online](https://javascript.info/)
 - [E-book](https://javascript.info/ebook)
 
+#### Effective JavaScript: 68 Specific Ways to Harness the Power of JavaScript (Effective Software Development Series) 
+
+In order to truly master JavaScript, you need to learn how to work effectively with the language’s flexible, expressive features and how to avoid its pitfalls. No matter how long you’ve been writing JavaScript code, Effective JavaScript will help deepen your understanding of this powerful language, so you can build more predictable, reliable, and maintainable programs.
+
+- [Amazon] (https://www.amazon.com/Effective-JavaScript-Specific-Software-Development/dp/0321812182)
+
+
 #### Other Resources
 
 - A selection of online free resources; including e-books for JavaScript are available at [JS Books](https://jsbooks.revolunet.com/)
