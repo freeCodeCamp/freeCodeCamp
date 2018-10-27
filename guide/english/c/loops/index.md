@@ -187,7 +187,7 @@ Terminates the <b>loop</b> or <b>switch</b> statement and transfers execution to
 Causes the loop to skip the remainder of its body and immediately retest its condition prior to reiterating.
 
 #### 3. Goto statement
-Transfers control to the labeled statement.
+Transfers control to the labeled statement. 'break' and 'return' are kinds of goto statements, however using 'goto' explicitly is considered bad practice.
 
 # Some Fun and Useful Quirks
 
@@ -214,7 +214,8 @@ Throughout this page, you've read that the code 'within the brackets' is what ge
 while(true)
     printf("hello, world! \n");
 ```
-In cases like this, C will treat the next line as the only content that needs to be looped. C ignores whitespace, so that indent is just there for clarity. Only that one line will be treated as though it is in the loop, and this is a property that if statements, for loops, and while loops all share. Because the whitespace is ignored, the placement doesn't matter: it could be on the same line, the next line, or 300 lines and two spaces down as long as there's no other lines of code in between. This feature can make your code look a bit cleaner when you only have one line of code to run in a statement.
+In cases like this, C will treat the next line as the only content that needs to be looped. C ignores whitespace, so that indent is just there for clarity. Only that one line will be treated as though it is in the loop, and this is a property that if statements, for loops, and while loops all share. Because the whitespace is ignored, the placement doesn't matter: it could be on the same line, the next line, or 300 lines and two spaces down as long as there's no other lines of code in between. This feature can make your code look a bit cleaner when you only have one line of code to run in a statement. 
+It's consider good practice to use brackets though - on a loop without brackets only the first line is executed,therefore if you have more lines to loop on (for example, you're adding debug prints) all the lines have to be within the same scope, which is defined by the brackets.
 
 ## Semicolons instead of brackets
 If there are no brackets, the compiler will look only at the next line and have that be the content of the loop. Semicolons tell the compiler that a line is over. With these things combined, we can have C wait until something becomes true. Let's say we have a method called `is_button_pressed` that returns false if a button is not pressed, and true if a button is pressed:
