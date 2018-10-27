@@ -18,6 +18,17 @@ A data frame consist of a number of rows and column. Each column represents a fe
 ## Series
 Series is the basic data-type in pandas.A Series is very similar to a array (NumPy array) (in fact it is built on top of the NumPy array object).A Series can have axis labels, as it can be indexed by a label with no number indexing for the location of data.  It can hold any valid Python Object like List,Dictionary etc.
 
+pd.Series([1,2,3])
+output:
+0    1
+1    2
+2    3
+dtype: int64
+
+np.array([1,2,3])
+output:
+array([1, 2, 3])
+
 ## Loading data from a csv file
 A `.csv` file is a *comma separated value* file. A very common way to store data. To load such data into a pandas data frame use the `read_csv` method:
 ```python
