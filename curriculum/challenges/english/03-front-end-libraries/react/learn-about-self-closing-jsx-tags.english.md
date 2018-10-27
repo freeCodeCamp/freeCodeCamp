@@ -9,9 +9,12 @@ isRequired: false
 <section id='description'>
 So far, you’ve seen how JSX differs from HTML in a key way with the use of <code>className</code> vs. <code>class</code> for defining HTML classes.
 Another important way in which JSX differs from HTML is in the idea of the self-closing tag.
-In HTML, almost all tags have both an opening and closing tag: <code>&lt;div&gt;&lt;/div&gt;</code>; the closing tag always has a forward slash before the tag name that you are closing. However, there are special instances in HTML called “self-closing tags”, or tags that don’t require both an opening and closing tag before another tag can start.
-For example the line-break tag can be written as <code>&lt;br&gt;</code> or as <code>&lt;br /&gt;</code>, but should never be written as <code>&lt;br&gt;&lt;/br&gt;</code>, since it doesn't contain any content.
-In JSX, the rules are a little different. Any JSX element can be written with a self-closing tag, and every element must be closed. The line-break tag, for example, must always be written as <code>&lt;br /&gt;</code> in order to be valid JSX that can be transpiled. A <code>&lt;div&gt;</code>, on the other hand, can be written as <code>&lt;div /&gt;</code> or <code>&lt;div&gt;&lt;/div&gt;</code>. The difference is that in the first syntax version there is no way to include anything in the <code>&lt;div /&gt;</code>. You will see in later challenges that this syntax is useful when rendering React components.
+
+In HTML, we have too main types of Tags : 
+1. Ordinary tags which needs always closing tag for good valid HMTL code like:Divs which can be written <code>&lt;div&gt;&lt;/div&gt;</code>; 
+2. Self-closing tags which doesn't need a closing tag like: the line-break tag which can be written as <code>&lt;br&gt;</code> or as <code>&lt;br /&gt;</code>, but should never be written as <code>&lt;br&gt;&lt;/br&gt;</code>, since it doesn't contain any content.
+
+In JSX, there is no defference between Ordianry tags from HTML syntax. But for Self-closing tags, you will always need to use this second syntax which is for the line-break as example is: <code>&lt;br /&gt;</code> in order to be complied. The difference is that in the first syntax version there is no way to include anything in the <code>&lt;div /&gt;</code>. You will see in later challenges that this syntax is useful when rendering React components.
 </section>
 
 ## Instructions
