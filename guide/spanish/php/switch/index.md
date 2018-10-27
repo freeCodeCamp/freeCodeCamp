@@ -1,8 +1,8 @@
 ---
 title: Switch
-localeTitle: Cambiar
+localeTitle: Switch-Case
 ---
-## Cambiar
+## Switch-Case
 
 En PHP, la sentencia `Switch` es muy similar a la sentencia Javascript `Switch` (consulte la [Guía de Javascript Switch](/javascript/switch-statements) para comparar y contrastar). Permite la prueba rápida de casos con muchas condiciones diferentes posibles, el código también es más legible.
 
@@ -26,7 +26,7 @@ En PHP, la sentencia `Switch` es muy similar a la sentencia Javascript `Switch` 
     } 
 ```
 
-### Descanso
+### Break
 
 El `break;` sentencia sale del conmutador y ejecuta el resto del código de la aplicación. Si no utilizas el `break;` declaración que puede terminar ejecutando múltiples casos y declaraciones, a veces esto puede ser deseable, en cuyo caso no debe incluir la `break;` declaración.
 
