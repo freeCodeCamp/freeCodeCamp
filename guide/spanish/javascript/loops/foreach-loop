@@ -1,0 +1,28 @@
+## ForEach Loop
+
+Podemos recorrer un array facilmente utilizando forEach.
+
+```
+const array = ['manzanas', 'peras', 'bananas'];
+array.forEach((fruta) => {
+  console.log(fruta);
+});
+
+output:
+  manzanas
+  peras
+  bananas
+```
+
+Podemos tambien obtener el index si es necesario agregandole el segundo parametro al forEach:
+
+const array = ['manzanas', 'peras', 'bananas'];
+array.forEach((fruta, index) => {
+  console.log(`${fruta} tiene el index: ${index}`);
+});
+
+output:
+  manzanas tiene el index: 0
+  peras tiene el index: 1
+  bananas tiene el index: 2
+```
