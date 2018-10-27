@@ -8,4 +8,4 @@ El flujo de trabajo de las contribuciones puede desear mostrar vistas previas de
 
 ['Forking'](https://help.github.com/articles/about-forks/) es un paso en donde obtienes tu propia copia de el repositorio principal de freeCodeCamp (también conocido como _repo_) en GitHub.
 
-Esto es eencial, por que de esta manera puedes trabajar en tu propia copia de freeCodeCamp en GitHub, o descargarla para trabajar con ella de manera local. Despues, podrias solicitar que cambios sean extraídos al repositorio principal al realizar un _pull request_ o solicitud de cambio.
+Esto es esencial, por que de esta manera puedes trabajar en tu propia copia de freeCodeCamp en GitHub, o descargarla para trabajar con ella de manera local. Después, podrías solicitar que cambios serán extraídos al repositorio principal al realizar un _pull request_ o solicitud de cambio.

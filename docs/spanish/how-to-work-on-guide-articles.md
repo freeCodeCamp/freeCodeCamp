@@ -10,22 +10,22 @@ Puedes:
 ## Pasos para crear y editar artículos de la Guía
 
 1. 🍴 [Fork este repositorio](https://github.com/freeCodeCamp/freeCodeCamp#fork-destination-box)
-2. 👀️ Sgiue las normas de controbución expuestas a continuación.
+2. 👀️ Sigue las normas de contribución expuestas a continuación.
 3. 🔧 Propón cambios asombrosos!
 4. 📖 Lee la [guía de buenas prácticas de estilo](/docs/style-guide-for-guide-articles).
-5. 👉 [Haz una Pull Request](https://github.com/freeCodeCamp/freeCodeCamp/compare)
+5. 👉 [Haz un Pull Request](https://github.com/freeCodeCamp/freeCodeCamp/compare)
 6. 🎉 Consigue que aprueben tu Pull request - Éxito!
 
-O siemplement [crea un tema](https://github.com/freeCodeCamp/freeCodeCamp/issues) - toda pequeña ayuda cuenta! 😊
+O simplemente [crea un tema](https://github.com/freeCodeCamp/freeCodeCamp/issues) - toda pequeña ayuda cuenta! 😊
 
 ### [Sigue estas recomendaciones de nuestra guía de estilo para crear un artículo atractivo](/docs/style-guide-for-guide-articles.md)
 
-### Crear Pull Request para propoenr cambios
+### Crear Pull Request para proponer cambios
 
 Hay dos formas de proponer cambios en el repositorio tras editar o añadir un articulo:
 
 - [Utilizando la interfaz de GitHub en tu navegador](#using-the-github-web-interface-on-your-browser).
-- [Trabajando en tu ordenador personal](#working-on-your-local-machine) (_recomendado_ para previsualiar cambios).
+- [Trabajando en tu ordenador personal](#working-on-your-local-machine) (_recomendado_ para previsualizar cambios).
 
 #### Utilizar la interaz web de GitHub
 
@@ -35,7 +35,7 @@ Mira este vídeo de demostración o sigue los siguientes pasos:
 
 ![GIF showing the GitHub interface steps](#)
 
-1. Ve a la carpets **"páginas"** (situado en [`guide`](/guide)) donde encontrarás el artículo raiz que quieras editar.
+1. Ve a la carpeta **"páginas"** (situada en [`guide`](/guide)) donde encontrarás el artículo raíz que quieras editar.
 
     > Todas las raíces estarán en un archivo index.md
 
@@ -45,14 +45,14 @@ Mira este vídeo de demostración o sigue los siguientes pasos:
 
 3. Desplázate a la parte de abajo de la pantalla y añade un mensaje explicando tus cambios.
 
-    (Opcional): Recomendamos haer un mensaje convencional. Esta es una buena práctica que verás en algunos de los repositorios Open Source más populares. Como desarrollador, deberías seguir las prácticas estándar.
+    (Opcional): Recomendamos hacer un mensaje convencional. Esta es una buena práctica que verás en algunos de los repositorios Open Source más populares. Como desarrollador, deberías seguir las prácticas estándar.
 
     Algunos ejemplos de mensajes convencionales serían:
 
     ```md
-    Solución: Actualizar articúlo de guía sobre HTML
+    Solución: Actualizar artículo de guía sobre HTML
     Solución: Actualizar scripts para Travis-CI
-    feat: Añadir articulo sobre JavaScript hoisting
+    feat: Añadir artículo sobre JavaScript hosting
     Documentos: Actualizadas recomendaciones de contribución
     ```
 
@@ -62,7 +62,7 @@ Mira este vídeo de demostración o sigue los siguientes pasos:
 
     Puedes aprender más sobre [por qué deberías seguir esta práctica aquí](https://www.conventionalcommits.org/en/v1.0.0-beta.2/#why-use-conventional-commits).
 
-4. Selecciona el botón con la opción **"Crear una nueva rama para esta propuesta y enviar"** and click <kbd>Proponer cambio en el archivo</kbd>.
+4. Selecciona el botón con la opción **"Crear una nueva rama para esta propuesta y enviar"** y pincha en <kbd>Proponer cambio en el archivo</kbd>.
 
 5. En la siguiente pantalla, puedes añadir más detalles sobre tu PR, luego pincha en <kbd>Crear pull request</kbd>.
 
@@ -76,7 +76,7 @@ No es obligatorio que trabajes en tu sistema personal, salvo que desees previsua
 
 ### Aceptación de la PR
 
-Estas son algunos criterios utilizados por los revisores cuando evalúan PRs:
+Estos son algunos de los criterios utilizados por los revisores cuando evalúan PRs:
 
 - Descripción y título relevantes
 - La PR respeta la [guía de estilo](/docs/style-guide-for-guide-articles)
@@ -118,13 +118,13 @@ Si la Pull Request no es perfect el revisor podría:
 
 Todas las PRs deben superar los test de Travis CI antes de poder ser integradas.
 
-Si una PR rompe la ejecución (un test de Travis CI falla y muestra una "X" roja) hay tres cauas probables y tendrás que resolver el problemas antes de que podamos integrar la PR:
+Si una PR rompe la ejecución (un test de Travis CI falla y muestra una "X" roja) hay tres causas probables y tendrás que resolver el problemas antes de que podamos integrar la PR:
 
 1. Tu PR crea un nueva artículo pero la falta un archivo `index.md` en algún lugar.
     - Cada directorio en `src/pages` necesita un archivo `index.md` en él (y debe llamarse `index.md`).
     - Dos escenarios muy probables son
       - llamaste al archivo de forma distinta a `index.md`, o
-      - creates un nuevo directorio y un subdirectorio, y escribiste el nuevo artículo en el subdirectorio pero olvidaste incluir un achivo raiz `index.md` en el nuevo directorio
+      - creaste un nuevo directorio y un subdirectorio, y escribiste el nuevo artículo en el subdirectorio pero olvidaste incluir un achivo raíz `index.md` en el nuevo directorio
 2. Tu PR crea un directorio nuevo y su nombre no tiene el formato correcto.
     - Tu directorio debería incluir solamente minúsculas y seguir el formato kebab-case (Ejemplo. mi-nuevo-directorio).
 3. El artículo no tiene un campo llamado `título` en la parte superior.
@@ -141,15 +141,15 @@ Cerramos Pull Requests
 - Si no respeta la [Política Académica de Honestidad](https://www.freecodecamp.org/academic-honesty)
 - Si está pasada (un cambio ha sido solicitado y no ha habiado respuesta en 2 semanas)
 
-Además, si estás trabajando a partir de un artículo raiz, tus cambios deben ser los suficiente notables como para sustituir al original.
+Además, si estás trabajando a partir de un artículo raíz, tus cambios deben ser los suficiente notables como para sustituir al original.
 
 No aceptaremos PRs que solamente incluyan links a la sección de "Más información:".
 
 El repositorio tiene un script `Normalise.js` que añade atributos a los link, pero también revisa si aparece el texto "This is a stub..." mediante RegEx.
 
-Si lo encuentra, revertirá todos los cambios al artículo raiz original eliminando todos tus cambios.
+Si lo encuentra, revertirá todos los cambios al artículo raíz original eliminando todos tus cambios.
 
-Esta funcionalidad es deliberada, nos permite actualizar todos los artículos raiz si hubiese algún cambio en la plantilla original.
+Esta funcionalidad es deliberada, nos permite actualizar todos los artículos raíz si hubiese algún cambio en la plantilla original.
 
 ### Solicita ayuda
 
@@ -165,13 +165,13 @@ Mantente activo en el [chat de Contribuidores](https://gitter.im/freecodecamp/co
 
 ## Aplastar e integrar
 
-Utilizamos la opción <kcd>Aplastar e integrar</kcd> al integrar una PR para mentener el historial de propuestas limpio.
+Utilizamos la opción <kcd>Aplastar e integrar</kcd> al integrar una PR para mantener el historial de propuestas limpio.
 
 ![GIF - Squash and merge](https://files.gitter.im/FreeCodeCamp/Contributors/56MQ/9cb8db153d7bb1b3576cd1ffc207e39d.gif)
 
 ### Filtrar PRs
 
-> PR, Obierta, Más Antiguas Primero, Travis CI Build correcta, nadie asignado, sin comentarios
+> PR, Abierta, Más Antiguas Primero, Travis CI Build correcta, nadie asignado, sin comentarios
 
 [`is:pr is:open sort:updated-asc status:success no:assignee comments:0`](https://github.com/freeCodeCamp/freeCodeCamp/pulls?utf8=%E2%9C%93&q=is%3Apr%20is%3Aopen%20sort%3Aupdated-asc%20status%3Asuccess%20no%3Aassignee%20comments%3A0)
 
@@ -206,7 +206,7 @@ Estamos encantados de aceptar estos cambios y esperamos tus futuras aportaciones
 ```markdown
 Hola @username
 
-Me encantaría integrar tus cambio pero para que hay un error con Travis CI build. ⚠️
+Me encantaría integrar tus cambios pero parece que hay un error con Travis CI build. ⚠️
 
 Una vez resuelvas el problema, podré revisar tu PR e integrarla. 😊
 
@@ -214,7 +214,7 @@ Una vez resuelvas el problema, podré revisar tu PR e integrarla. 😊
 
 > Puedes conseguir más información en la [Guía de estilo para escibir Artículos](https://github.com/freeCodeCamp/freeCodeCamp#article-title) sobre cómo formatear tus artículos para que superen los test de Travis CI. ✅
 >
-> Además, es una buena ráctica en GitHub escribir una decripción breve de tus cambios al crear una PR. 📝
+> Además, es una buena práctica en GitHub escribir una decripción breve de tus cambios al crear una PR. 📝
 ```
 
 #### Sincronización de Fork
@@ -252,7 +252,7 @@ Una vez sincronices tu fork y superes los test podré integrar tu PR. 😊
 
 > Puedes conseguir más información en e artículo [Sincronizando un Fork](https://help.github.com/articles/syncing-a-fork/) sobre cómo mantener al día tu fork con el repositorio principal. 🔄
 >
-> Además, es una buena ráctica en GitHub escribir una decripción breve de tus cambios al crear una PR. 📝
+> Además, es una buena práctica en GitHub escribir una decripción breve de tus cambios al crear una PR. 📝
 ``````
 
 #### Conflictos de integración
@@ -270,7 +270,7 @@ Una vez resuelvas estos conflictos, podré revisar tu PR e integrarla. 😊
 
 > Si no estás familiarizado con los conflictos de integración, por favor revisa la guía de GitHub ["Resolviendo conflictos de integración"](https://help.github.com/articles/resolving-a-merge-conflict-on-github/) para más información. 🔍️
 >
-> Además, es una buena ráctica en GitHub escribir una decripción breve de tus cambios al crear una PR. 📝
+> Además, es una buena práctica en GitHub escribir una decripción breve de tus cambios al crear una PR. 📝
 ```
 ¹ Si un contribuidor primerizo tiene conflictos de integración, los encargados de mantenimiento lo resolverán en su lugar.
 
@@ -299,7 +299,7 @@ Gracias de nuevo! 😊
 ```markdown
 Hola @username
 
-No has añadido ningún contenido real por invalidaré esta PR y la etiquetaré como `inválida`. 😓️
+No has añadido ningún contenido real por lo que invalidaré esta PR y la etiquetaré como `inválida`. 😓️
 
 En cualquier caso, no dudes en abrir otras PR! 👍
 ```
