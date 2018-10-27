@@ -157,7 +157,7 @@ Isso fará com que, por exemplo, um leitor de tela diga "nome de usuário, campo
 
 Vamos dar uma pequena pausa. Eu quero que você vá olhar para uma página da web muito bem projetada. Pode ser qualquer página. Vá em frente, vou esperar.
 
-Costas? OK ótimo. Agora, olhe a página novamente, mas desabilite todos os CSS. Ainda parece bom? O conteúdo da página ainda está em ordem lógica? Se assim for, ótimo. Você encontrou uma página com estrutura HTML decente. (Uma maneira de visualizar facilmente uma página sem CSS é carregar o site na [Ferramenta de Avaliação de Acessibilidade na Web WAVE](http://wave.webaim.org) do WebAIM. Em seguida, clique na guia "Sem Estilos" para vê-la sem estilos.)
+De volta? OK ótimo. Agora, olhe a página novamente, mas desabilite todos os CSS. Ainda parece bom? O conteúdo da página ainda está em ordem lógica? Se assim for, ótimo. Você encontrou uma página com estrutura HTML decente. (Uma maneira de visualizar facilmente uma página sem CSS é carregar o site na [Ferramenta de Avaliação de Acessibilidade na Web WAVE](http://wave.webaim.org) do WebAIM. Em seguida, clique na guia "Sem Estilos" para vê-la sem estilos.)
 
 Se não, ótimo. Agora você tem uma impressão do que eu tenho que lidar diariamente quando me deparo com um site mal estruturado.
 
