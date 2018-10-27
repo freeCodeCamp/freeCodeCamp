@@ -48,6 +48,9 @@ For steps to do so, refer to the official guide
 * Notebooks can be shared with others using email, Dropbox, GitHub, and the Jupyter Notebook Viewer.
 * Your code can produce rich, interactive output: HTML, images, videos, LaTeX, and custom MIME types.
 * Leverage big data tools, such as Apache Spark, Python, R, and Scala. Explore that same data with pandas, scikit-learn, ggplot2, or TensorFlow.
+* You can view all the functions inside the lib by pressing tab button.
+* Use "?" after a function name to get its defination.
+
 
 The Jupyter notebook combines two components:
 
