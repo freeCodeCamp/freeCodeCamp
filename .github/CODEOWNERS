@@ -1,6 +1,6 @@
 # -------------------------------------------------
 # CODEOWNERS - For automated review request for 
-# high impact files
+# high impact files.
 #
 # Important: The order in this file cascades.
 #
@@ -23,7 +23,7 @@
 # -------------------------------------------------
 # All markdown files in the root are owned 
 # by Quincy Larson. 
-# He oversees the README, LICENSE etc.
+# He oversees the README, LICENSE, etc.
 # -------------------------------------------------
 
 /*.md @QuincyLarson
