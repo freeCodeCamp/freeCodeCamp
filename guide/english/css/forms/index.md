@@ -50,6 +50,16 @@ It is the most important form element.  Different types of input element are:
 <input type="submit">
 ```
 
+### The Label Element
+The label element is used to add a label for an input element. The label element has a `for` attribute, whose value is set to be the same as the `id` attribute of the input element - doing this associates the label element with the input element.
+
+Here is an example of using the label element with an input element:
+
+```html
+<label for="firstName">First Name:</label>
+<input type="text" id="firstName">
+```
+
 ### The NAME attribute
 If you want to submit the form that the input fields must contain the name attribute,if it is not present,
 the data of that input field will not be sent at all.
