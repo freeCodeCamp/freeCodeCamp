@@ -8,21 +8,22 @@
 # -------------------------------------------------
 
 # -------------------------------------------------
-# All files except markdown is owned by dev team
+# All files except markdown are owned by dev team
 # -------------------------------------------------
 
 * @freecodecamp/dev-team
 *.md
 
 # -------------------------------------------------
-# All files in the root including markdown is owned 
-# by dev team
+# All files in the root are owned by dev team
 # -------------------------------------------------
 
 /* @freecodecamp/dev-team
 
 # -------------------------------------------------
-# All files in root of docs is owned by dev team
+# All markdown files in the root are owned 
+# by Quincy Larson. 
+# He oversees the README, LICENSE etc.
 # -------------------------------------------------
 
-/docs/* @freecodecamp/dev-team
+/*.md @QuincyLarson
