@@ -3,14 +3,14 @@ id: bad87fee1348bd9aedf08808
 title: Specify How Fonts Should Degrade
 challengeType: 0
 videoUrl: ''
-localeTitle: 'Укажите, как шрифты должны ухудшаться'
+localeTitle: 'Укажите какие шрифты должны использоваться'
 ---
 
 ## Description
-<section id="description"> Существует несколько стандартных шрифтов, доступных во всех браузерах. Эти типовые семейства шрифтов включают в себя <code>monospace</code> , <code>serif</code> и <code>sans-serif</code> Когда один шрифт недоступен, вы можете сказать браузеру «ухудшить» другой шрифт. Например, если вы хотите, чтобы элемент использовал шрифт <code>Helvetica</code> , но ухудшался до шрифта <code>sans-serif</code> когда <code>Helvetica</code> недоступен, вы укажете его следующим образом: <blockquote> п { <br> font-family: Helvetica, sans-serif; <br> } </blockquote> Имена общих имен шрифтов не чувствительны к регистру. Кроме того, им не нужны кавычки, потому что они являются ключевыми словами CSS. </section>
+<section id="description"> Существует несколько стандартных шрифтов, доступных во всех браузерах. Эти типовые семейства шрифтов включают в себя <code>monospace</code> , <code>serif</code> и <code>sans-serif</code> Когда один шрифт недоступен, вы можете сказать браузеру «использовать другой шрифт. Например, если вы хотите, чтобы элемент использовал шрифт <code>Helvetica</code> , но когда <code>Helvetica</code> недоступен использовался шрифт <code>sans-serif</code>, вы можете указать следующее: <blockquote> p { <br> font-family: Helvetica, sans-serif; <br> } </blockquote> Имена общих имен шрифтов не чувствительны к регистру. Кроме того, им не нужны кавычки, потому что они являются ключевыми словами CSS. </section>
 
 ## Instructions
-<section id="instructions"> Для начала примените <code>monospace</code> шрифт к элементу <code>h2</code> , так что теперь он имеет два шрифта - <code>Lobster</code> и <code>monospace</code> . В последнем вызове вы импортировали шрифт <code>Lobster</code> используя тег <code>link</code> . Теперь прокомментируйте, что импорт шрифта <code>Lobster</code> (используя HTML-комментарии, которые вы узнали ранее) из Google Fonts, чтобы он больше не был доступен. Обратите внимание, как ваш элемент <code>h2</code> ухудшается до <code>monospace</code> шрифта. <strong>Заметка</strong> <br> Если на вашем компьютере установлен шрифт Lobster, вы не увидите ухудшения, потому что ваш браузер сможет найти шрифт. </section>
+<section id="instructions"> Для начала примените <code>monospace</code> шрифт к элементу <code>h2</code> , так чтобы он имел два шрифта - <code>Lobster</code> и <code>monospace</code> . В последнем вызове вы импортировали шрифт <code>Lobster</code> используя тег <code>link</code> . Теперь закомментируйте импорт шрифта <code>Lobster</code> (используя HTML-комментарии, о которых вы узнали ранее) из Google Fonts, чтобы он больше не был доступен. Обратите внимание, как ваш элемент <code>h2</code> может заменяться  <code>monospace</code> шрифтом. <strong>Заметка</strong> <br> Если на вашем компьютере установлен шрифт Lobster, вы не увидите замены шрифта, потому что ваш браузер сможет найти этот шрифт. </section>
 
 ## Tests
 <section id='tests'>
