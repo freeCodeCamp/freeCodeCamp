@@ -12,12 +12,12 @@ La propiedad de tamaño de fondo especifica el tamaño de las imágenes de fondo
  .contain {background-size: contain;} 
  .initial {background-size: initial;} 
  .inherit {background-size: inherit;} 
- /* Percentage and pixel can also be used */ 
+ /* También se pueden utilizar porcentajes y píxeles*/ 
  .pixel {background-size: 50px 50px;} 
  .percentage {background-size: 50% 50%;} 
 ```
 
-Para establecer esta propiedad en varias imágenes de fondo, valores separados por comas:
+Para establecer esta propiedad en varias imágenes de fondo, valores son separados por comas:
 
 ```css
 .multiple { 
