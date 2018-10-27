@@ -45,7 +45,7 @@ Instructions about what exactly needs to be done.
 <div id='js-seed'>
 
 ```js
-Code desplayed in the editor by default.
+Code displayed in the editor by default.
 ```
 
 </div>
