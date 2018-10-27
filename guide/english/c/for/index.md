@@ -5,7 +5,7 @@ title: For Loop
 # For Loop
 
 The `for` loop executes a block of code until a specified condition is false. Use `while` loops when the number of iterations are variable, otherwise use `for` loops. A common use of `for` loops are array iterations. 
-It is also known as an 'entry-controlled loop' since the condition is checked before the next iteration. Another example of an 'entry-controlled loop' is a while loop. 
+It is also known as an 'entry-controlled loop' since the condition is checked before the next iteration ie. if the condition is true then only the block will execute. Another example of an 'entry-controlled loop' is a while loop. 
 
 ## Syntax of For Loop
 
@@ -41,5 +41,6 @@ int main () {
 > Item on index 1 is 2
 > Item on index 2 is 3
 > Item on index 3 is 4
+> Item on index 4 is 5
 ```
 
