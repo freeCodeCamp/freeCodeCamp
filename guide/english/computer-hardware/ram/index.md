@@ -39,3 +39,7 @@ Not all motherboards or CPUs can handle ECC memory; however, it also is rarely a
 * [DDR4 SDRAM](https://en.wikipedia.org/wiki/DDR4_SDRAM)
 * [Types of RAM](http://www.computermemoryupgrade.net/types-of-computer-memory-common-uses.html)
 * [Laptop Memory Buyer's Guide](https://www.lifewire.com/laptop-memory-buyers-guide-833024)
+## A Bit of History
+The earliest form of RAM goes back to the very first computers in the 1940s. Magnetic-core memory relied on an array of magnetized rings. Data could be stored by magnetizing each ring individually. Each ring was wired separately, which resulted in fairly large installations. A single ring could store a single bit of data and the direction of magnetization indicated zero or one.
+
+Technological advances resulted in smaller devices that could store more information but relied on the same principle. The memory unit in the photograph below is about 10 x 10 cm and can store 1,024 bits. That is very small by today's standards, but it was state-of-the-art in the 1960s.
