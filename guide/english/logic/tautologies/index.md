@@ -55,3 +55,4 @@ The arrow simply means "implies". p implies p OR q, it can also mean <i>if...the
 [Wikipedia Tautology (Logic)](https://en.wikipedia.org/wiki/Tautology_(logic))
 [Youtube Truth Tables](https://www.youtube.com/watch?v=O0KbymjE7xU)
 [Wikipedia Logic Symbols](https://en.wikipedia.org/wiki/List_of_logic_symbols)
+[Mathonline, Tautologies and Contradictions](http://mathonline.wikidot.com/tautologies-and-contradictions)
