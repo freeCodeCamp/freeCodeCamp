@@ -13,6 +13,12 @@ Software is only as good as the support its given. Imagine this: a piece of soft
 
 Linux's requirements for running on a system are much lower than that of Windows or Mac. With the right Linux distribution a user can have a modest setup and Linux will give the system value. Disk space and memory footprint can also be lower too. Some distributions are suitable for CPUs dating back to the Pentium family, others have a requirement of as little as 128MB of RAM and around the same amount for disk space!
 
+## Variety.
+
+With a vast number of linux distributions, you may very well find yourself having a favorite distro for every day of the week. No matter what you plan on using your machine for, there is a linux distro that has it covered. Want security? No problem, Tails OS has you covered (https://tails.boum.org/). Want something lightweight that you can run on your old Chromebook? Gallium OS has you covered. (https://galliumos.org/)
+
+The linux community is super active, and there are always new distros being released. Look around, and find something that will benefit you! Don't let the idea of linux scare you, try it out!
+
 ## Heavily documented for beginners and advanced users alike.
 
 Linux has an active community of those willing to share their knowledge and help (much like FreeCodeCamp!). There are command line utilities built into Linux that provide documentation on commands, libraries, standards, etc. (<a href='https://en.wikipedia.org/wiki/Man_page' target='_blank' rel='nofollow'>Man pages</a> and <a href='https://en.wikipedia.org/wiki/Info_(Unix' target='_blank' rel='nofollow'>Info pages</a>), and there is documentation available on the Internet in a variety of formats including <a href='http://www.tldp.org/' target='_blank' rel='nofollow'>The Linux Documentation Project</a>, <a href='http://www.linuxquestions.org/' target='_blank' rel='nofollow'>LinuxQuestions</a>, <a href='http://serverfault.com/' target='_blank' rel='nofollow'>ServerFault</a>, and <a href='https://wiki.archlinux.org/' target='_blank' rel='nofollow'>The Arch Wiki</a>. 
