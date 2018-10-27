@@ -1,13 +1,13 @@
 <table>
     <tr>
         <td> Read these guidelines in </td>
-        <td><a href="/CONTRIBUTING.md"> English </a></td>
-        <td><a href="/docs/chinese/README.md"> 中文 </a></td>
-        <td><a href="/docs/russian/README.md"> русский </a></td>
-        <td><a href="/docs/arabic/README.md"> عربى </a></td>
-        <td><a href="/docs/spanish/README.md"> Español </a></td>
-        <td><a href="/docs/portuguese/README.md"> Português </a></td>
-        <td><a href="/docs/german/README.md"> Deutsch </a></td>
+        <td><a href="/docs"> English </a></td>
+        <td><a href="/docs/chinese"> 中文 </a></td>
+        <td><a href="/docs/russian"> русский </a></td>
+        <td><a href="/docs/arabic"> عربى </a></td>
+        <td><a href="/docs/spanish"> Español </a></td>
+        <td><a href="/docs/portuguese"> Português </a></td>
+        <td><a href="/docs/german"> Deutsch </a></td>
     </tr>
 </table>
 
@@ -17,16 +17,16 @@ Olá 👋!
 
 Este directório contem toda a documentação sobre como contribuir para o freeCodeCamp.org
 
-## [Se estás agora a começar, lê isto primeiro.](/CONTRIBUTING.md)
+## [Se estás agora a começar, lê isto primeiro.](/docs/portuguese/CONTRIBUTING.md)
 
 ---
 
 ## Artigos de referência rápida
 
-1. Como trabalhar em Artigos Guia.
-2. Como trabalhar em Desafios de Código.
-3. Como configurar o freeCodeCamp localmente.
-4. Como apanhar emails enviados localmente.
+1. [Como trabalhar em Artigos Guia.](/docs/portuguese/how-to-work-on-guide-articles.md)
+2. [Como trabalhar em Desafios de Código.](/docs/portuguese/how-to-work-on-coding-challenges.md)
+3. [Como configurar o freeCodeCamp localmente.](/docs/portuguese/how-to-setup-freecodecamp-locally.md)
+4. [Como apanhar emails enviados localmente.](/docs/portuguese/how-to-catch-outgoing-emails-locally.md)
 
 ## Guias de estilo
 
