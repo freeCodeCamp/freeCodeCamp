@@ -19,6 +19,7 @@ Hello 👋 !
 These instructions have not been translated yet. Please check this issue for details: [`#18312`](https://github.com/freeCodeCamp/freeCodeCamp/issues/18312)
 
 This directory contains all of the documentation on contributing to freeCodeCamp.org
+В этой директории находиться вся информация по поводу помощи freeCodeCamp.org 
 
 ## [If you are getting started, start by reading this first.](/CONTRIBUTING.md)
 
