@@ -19,19 +19,29 @@ C allows us to choose between several different options with our data types beca
 
 The actual size, like all other data types in C, depends on the hardware you're working on. By minimum, it is at least 8 bits, so you will have at least 0 to 127. Alternatively, you can use `signed char` to get at least -128 to 127.
 
+The format Specifier for char is %c.
+
 #### Standard Integers: `int`
 The amount of memory that a single `int` takes depends on the hardware. However, you can expect an `int` to be at least 16 bits in size. This means that it can store values from -32,768 to 32,767, or more depending on hardware.
 
 Like all of these other data types, there is an `unsigned` variant that can be used. The `unsigned int` can be positive and zero but not negative, so it can store values from 0 to 65,535, or more depending on hardware.
 
+The format Specifier for int is %d.
+
 #### Short integers: `short`
 This doesn't get used often, but it's good to know that it exists. Like int, it can store -32768 to 32767. Unlike int, however, this is the extent of its ability. Anywhere you can use `short`, you can use `int`.
+
+The format Specifier for short is %hd.
 
 #### Longer integers: `long`
 The `long` data type stores integers like `int`, but gives a wider range of values at the cost of taking more memory. Long stores at least 32 bits, giving it a range of -2,147,483,648 to 2,147,483,647. Alternatively, use `unsigned long` for a range of 0 to 4,294,967,295.
 
+The format Specifier for long is %ld.
+
 #### Even longer integers: `long long`
 The `long long` data type is overkill for just about every application, but C will let you use it anyway. It's capable of storing at least −9,223,372,036,854,775,807 to 9,223,372,036,854,775,807. Alternatively, get even more overkill with `unsigned long long`, which will give you at least 0 to 18,446,744,073,709,551,615.
+
+The format Specifier for long long is %lld.
 
 ## Floating point number data types
 #### Basic Floating point numbers: `float`
