@@ -12,6 +12,9 @@ So, if k is O(n) ,CountSort becomes linear sorting, which is better than compari
 The idea is to extend the CountSort algorithm to get a better time complexity when k goes O(n2). 
 Here comes the idea of Radix Sort.
 
+LSD radix sort: First uses the least significant character to order all element, then the second-least significant element, and so on.
+MSD radix sort: First uses the most significant character to order all element, then the second-most significant element, and so on.
+
 Algorithm:
 
 For each digit i where i varies from the least significant digit to the most significant digit of a number
