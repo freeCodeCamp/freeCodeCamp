@@ -21,8 +21,9 @@ Start this project on Glitch using <a href='https://glitch.com/#!/import/github/
 <section id='tests'>
 
 ```yml
-- text: 'I can get the IP address, language and operating system for my browser.'
-  testString: ''
+tests:
+  - text: 'I can get the IP address, language and operating system for my browser.'
+    testString: ''
 
 ```
 
