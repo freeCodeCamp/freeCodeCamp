@@ -11,7 +11,7 @@ localeTitle: Añadir bordes alrededor de sus elementos
 <section id="description"> Los bordes CSS tienen propiedades como <code>style</code> , <code>color</code> y <code>width</code> Por ejemplo, si quisiéramos crear un borde rojo de 5 píxeles alrededor de un elemento HTML, podríamos usar esta clase: <blockquote> &lt;estilo&gt; <br> .thin-red-border { <br> color del borde: rojo; <br> ancho del borde: 5px; <br> estilo de borde: sólido; <br> } <br> &lt;/style&gt; </blockquote></section>
 
 ## Instructions
-<section id="instructions"> Crea una clase llamada <code>thick-green-border</code> . Esta clase debe agregar un borde verde sólido de 10 px alrededor de un elemento HTML. Aplica la clase a tu foto de gato. Recuerde que puede aplicar varias clases a un elemento utilizando su atributo de <code>class</code> , separando cada nombre de clase con un espacio. Por ejemplo: <code>&lt;img class=&quot;class1 class2&quot;&gt;</code> </section>
+<section id="instructions"> Crea una clase llamada <code>thick-green-border</code> . Esta clase debe agregar un borde sólido y verde de 10 px alrededor de un elemento HTML. Aplica la clase a la foto del gato. Recuerda que puedes aplicar varias clases a un elemento utilizando su atributo <code>class</code> , separando cada nombre de la clase con un espacio. Por ejemplo: <code>&lt;img class=&quot;class1 class2&quot;&gt;</code> </section>
 
 ## Tests
 <section id='tests'>
@@ -26,7 +26,7 @@ tests:
     testString: 'assert($("img").hasClass("thick-green-border") && parseInt($("img").css("border-top-width"), 10) >= 8 && parseInt($("img").css("border-top-width"), 10) <= 12, "Give your image a border width of <code>10px</code>.");'
   - text: Dale a tu imagen un estilo de borde <code>solid</code> .
     testString: 'assert($("img").css("border-right-style") === "solid", "Give your image a border style of <code>solid</code>.");'
-  - text: El borde alrededor de su elemento <code>img</code> debe ser verde.
+  - text: El borde que rodea su elemento <code>img</code> debe ser verde.
     testString: 'assert($("img").css("border-left-color") === "rgb(0, 128, 0)", "The border around your <code>img</code> element should be green.");'
 
 ```
