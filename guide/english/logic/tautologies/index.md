@@ -4,6 +4,8 @@ title: Tautologies
 ## Tautologies
 ### Definition
 In logic, a tautology is a statement that is true in every possible case. The opposite of a tautology is a contradiction, a statement being false in every possible cases.
+Also, a formula is said to be a contradiciotn if every truth assignment to its component statements results in the formula being false.
+
 ### Example
 <table>
   <tr>
