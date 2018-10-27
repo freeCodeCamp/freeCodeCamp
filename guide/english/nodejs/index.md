@@ -1,6 +1,10 @@
 ---
 title: Node.js
 ---
+
+<img src="https://nodejs.org/static/images/logos/nodejs-new-pantone-black.png" height="123" width="201">
+
+
 ## Node.js
 
 Node.js is a JavaScript runtime built on Chrome's V8 JavaScript engine. Node.js uses an event-driven, non-blocking I/O model that makes it lightweight and efficient. Node.js' package ecosystem, npm, is the largest ecosystem of open source libraries in the world.
