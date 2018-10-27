@@ -43,3 +43,19 @@ softFunc('one', 'two', 'three', 'infinity')
 
 # Conclusion softFunc is a more flexible/dynamic verson of a hardFunc
 ```
+
+``` Adding outputs:
+1) hard_one
+hard_two
+
+2) soft_one
+soft_two
+
+3) Runtime error
+
+4) one
+two
+
+5) one
+two
+```
