@@ -57,3 +57,22 @@ Copy file from source to destination preserving same mode.
 11. `systemctl` Command
 
 This is a command which allows operators to work with the Linux system services. The standard use of the command is `systemctl <OPTION> <SERVICE-NAME>` by providing an `OPTION` (e.g. `start`, `stop`, `status`) and than providing a specific Service Name to act on. You can use the command to get a general status of your Linux services (e.g `systemctl status`). Note that you will either need Administrator access or use `sudo` to elevate your rights to run the command successfully.
+
+
+commands to move files or folders
+
+mv [option] source destination
+for folder
+mv -r ./folder ./destination
+-r = recursive
+
+for file 
+mv ./file ./destination
+
+for all files
+mv ./* ./destination
+
+for selective files
+mv ./file1 ./file2 ./destination
+o
+
