@@ -8,6 +8,7 @@
         <td><a href="/docs/spanish/README.md"> Español </a></td>
         <td><a href="/docs/romanian/README.md"> Română </a></td>
         <td><a href="/docs/portuguese/README.md"> Português </a></td>
+        <td><a href="/docs/german/README.md"> Deutsch </a></td>
     </tr>
 </table>
 
@@ -56,5 +57,3 @@ freecodecamp.org
 | `npm run test:curriculum` | اجراء الاختبار الخاص بالمسار التعليمي |
 | `npm run test:server` | اجراء الاختبار الخاص بالخادم |
 | `npm run commit` | اداة تفاعلية تساعد على عمل رسالة commit  جيدة |
-
-

@@ -10,7 +10,7 @@ AngularJS (versiones 1.x) es un marco de JavaScript de front-end de código abie
 
 npm:
 
-\`\` \`shell npm instalar angular
+shell npm instalar angular
 ```
 HTML: 
 ```
@@ -26,5 +26,3 @@ HTML:
 ```
 
 html
-
-\`\` \`
