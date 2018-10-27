@@ -24,7 +24,7 @@ When Git is initialized in a project directory, it begins tracking file changes 
 - [More Information](#more-information)
 
 ### Understand the Three Sections of a Git Project <a name="understand-the-three-sections-of-a-git-project"></a>
-A Git project will have the following three main sections:
+A Git project has the following three main sections:
 1. Git directory
 2. Working directory (or working tree)
 3. Staging area
