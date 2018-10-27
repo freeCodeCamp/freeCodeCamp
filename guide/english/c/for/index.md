@@ -10,7 +10,18 @@ It is also known as an 'entry-controlled loop' since the condition is checked be
 ## Syntax of For Loop
 
 ```c
-for ( init; condition; increment ) {
+for ( init; condition; Update ) {
+   statement(s);
+}
+```
+In the syntax of for loop you can leave any of the three field blank. 
+If you leave intin blank, then there is no initialization plase.
+If you leave update blank, then there is no update phase.
+If we leave the condition blank, then practically it becomes an infinite loop unless youse break inside loop.
+
+## Example of Infinite Loop
+```c
+for ( int i=0; ; i++) {
    statement(s);
 }
 ```
