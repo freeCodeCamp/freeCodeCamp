@@ -28,7 +28,7 @@ print(words.index("am"))
 1
 0
 Traceback (most recent call last):
-  File "<stdin>", line 1, in <module>
+  File "<stdin>", line 7, in <module>
 ValueError: 'am' is not in list
 ```
 
