@@ -25,6 +25,19 @@ df = pd.read_csv(file_path)
 ```
 Here, `file_path` can be a local path to a csv file on you computer, or a url pointing to one. The column names may be included in the csv file, or the may be passed as an argument. For more on this, and much more, take a look at the [documentation](http://pandas.pydata.org/pandas-docs/stable/generated/pandas.read_csv.html?highlight=read_csv#pandas.read_csv).
 
+## Loading data from dictionary
+from dictionary
+rev=pd.Dataframe(dict)
+
+## Loading data from database
+from database[docs]
+from pandas.io import sql
+import sqlite3
+conm=sqlite3.connect(/Users/test/Dropbox/test.co)
+que="select * from towed where make='TOWER'"
+res=sql.read_sql(que,con=conm)
+res.head()
+
 ## Getting an overview of a data frame
 To show the first few rows of a data frame, the `head` method is useful (once more this should sound familiar to R programmers):
 ```python
