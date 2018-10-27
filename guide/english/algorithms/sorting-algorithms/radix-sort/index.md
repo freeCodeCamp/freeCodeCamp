@@ -112,6 +112,8 @@ void radixsort(ll arr[],int n,int maxx){            //maxx is the maximum elemen
 }
 ```
 
+Visual:
+![Heap Sort](https://gfycat.com/QuestionableHauntingFlatfish)
 
 ### More Information:
 
