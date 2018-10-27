@@ -1,0 +1,6 @@
+This command will shutdown as fast as possible
+
+halt -pf
+p = powerOff
+f = Force immediate halt
+this is the fastest way of turning off system in linux.
