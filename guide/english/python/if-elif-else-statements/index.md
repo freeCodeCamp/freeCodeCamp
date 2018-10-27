@@ -10,6 +10,9 @@ Note that parenthesis is not used before and after the condition check as in oth
 if True:
   print('If block will execute!')
 ```
+```output
+If block will execute!
+```
 
 ```python
 x = 5
@@ -17,6 +20,10 @@ x = 5
 if x > 4:
   print("The condition was true!") #this statement executes
 ```
+```output
+The condition was true!
+```
+
 > **Tips** : You can use **1** as alternative to **True** and **0** as an alternative to **False**
 
 _Example_:
@@ -24,6 +31,10 @@ _Example_:
 if 1:   # 1 evaluates to true
   print('If block will execute!')
  ```
+```output
+
+If block will execute!
+```
 
 You can optionally add an `else` response that will execute if the condition is `False`:
 ```python
@@ -31,6 +42,10 @@ if not True:
   print('If statement will execute!')
 else:
   print('Else statement will execute!')
+```
+```output
+
+Else statement will execute!
 ```
 Or you can also see this example
 ```python
@@ -41,7 +56,10 @@ if y > 4:
 else:
   print("The condition wasn't true!") #this statement executes
 ```
+```output
 
+The condition wasn't true!
+```
 *Note that there is no condition following the `else` keyword - it catches all situations where the condition was `False`*
 
 Multiple conditions can be checked by including one or more `elif` checks after your initial `if` statement but only one condition will execute:
@@ -58,7 +76,11 @@ elif z > 6:
 else:
   print("Neither will I!") #this statement does not execute
 ```
+```output
 
+I will!
+
+```
 *Note only the first condition that evaluates as `True` will execute. Even though `z > 6` is `True`, the `if/elif/else` block terminates after the first true condition. This means that an `else` will only execute if none of the conditions were `True`.*
 
 We can also create nested if statements for decision making. Before preceding please refer to the <a href='https://guide.freecodecamp.org/python/code-blocks-and-indentation' target='_blank' rel='nofollow'>indentation guide once</a> before preceding. 
@@ -75,6 +97,11 @@ if x %  2 == 0:  # this is how you create a comment and now, checking for even.
 else:
   print ("The number is not even. So point checking further.")
 ```
+```output
+
+This number is even and is greater than 10
+```
+
 This was just a simple example for nested if statement. Please feel free to explore more online.
 
 While the examples above are simple, you can create complex conditions using <a href='https://guide.freecodecamp.org/python/comparisons' target='_blank' rel='nofollow'>boolean comparisons</a> and <a href='https://guide.freecodecamp.org/python/boolean-operations' target='_blank' rel='nofollow'>boolean operators</a>.
