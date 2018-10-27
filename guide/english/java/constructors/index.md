@@ -66,7 +66,7 @@ public class Car {
 }
 ```
 
-![:rocket:](//forum.freecodecamp.com/images/emoji/emoji_one/rocket.png?v=2 ":rocket:") <a href='https://repl.it/CTJ4/1' target='_blank' rel='nofollow'>Run Code</a>
+![:rocket:](https://forum.freecodecamp.com/images/emoji/emoji_one/rocket.png?v=2 ":rocket:") <a href='https://repl.it/CTJ4/1' target='_blank' rel='nofollow'>Run Code</a>
 
 Notice that when we write a constructor in this way i.e., providing a parameter, we are controlling (point no. 3) the way an instance of `Car` is created. In short, we are saying in this example that **you MUST provide a model name in order to get an instance of Car class**.
 
@@ -91,7 +91,7 @@ public class Bank {
 }
 ```
 
-![:rocket:](//forum.freecodecamp.com/images/emoji/emoji_one/rocket.png?v=2 ":rocket:") <a href='https://repl.it/CTJz/0' target='_blank' rel='nofollow'>Run Code</a>
+![:rocket:](https://forum.freecodecamp.com/images/emoji/emoji_one/rocket.png?v=2 ":rocket:") <a href='https://repl.it/CTJz/0' target='_blank' rel='nofollow'>Run Code</a>
 
 Notice that the constructor is `private`. This enforces the fact that no one else is allowed to create an instance of the Bank.  
 In fact, if in another class, you try:
