@@ -14,7 +14,7 @@ A Block-level element occupies the entire space of the parent(container) such as
 Note that both `<div>` and `<p>` start from a new line each time, forming a **block-like** structure. Block-level elements begin on new lines.
 
 
-Common **block-level elements** are `<div>`,`<p>`,`<article>`,`<section>`,`<figure>`,`<footer>` etc.
+Common **block-level elements** are `<div>`,`<p>`,`<article>`,`<section>`,`<figure>`,`<footer>`,`<form>`,`<table>` etc.
 
 
 
