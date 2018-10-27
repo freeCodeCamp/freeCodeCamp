@@ -33,7 +33,7 @@ E.g. if the answer is 1234567891011 then the answer format would be 1.2346e12.
 ```yml
 tests:
   - text: <code>euler380()</code> should return Infinity.
-    testString: 'assert.strictEqual(euler380(), Infinity, "<code>euler380()</code> should return Infinity.");'
+    testString: assert.strictEqual(euler380(), Infinity, '<code>euler380()</code> should return Infinity.');
 
 ```
 

@@ -22,13 +22,13 @@ Here we will implement selection sort. Selection sort works by selecting the min
 ```yml
 tests:
   - text: <code>selectionSort</code> is a function.
-    testString: 'assert(typeof selectionSort == "function", "<code>selectionSort</code> is a function.");'
+    testString: assert(typeof selectionSort == 'function', '<code>selectionSort</code> is a function.');
   - text: <code>selectionSort</code> returns a sorted array (least to greatest).
-    testString: 'assert(isSorted(selectionSort([1,4,2,8,345,123,43,32,5643,63,123,43,2,55,1,234,92])), "<code>selectionSort</code> returns a sorted array (least to greatest).");'
+    testString: assert(isSorted(selectionSort([1,4,2,8,345,123,43,32,5643,63,123,43,2,55,1,234,92])), '<code>selectionSort</code> returns a sorted array (least to greatest).');
   - text: <code>selectionSort</code> returns an array that is unchanged except for order.
-    testString: 'assert.sameMembers(selectionSort([1,4,2,8,345,123,43,32,5643,63,123,43,2,55,1,234,92]), [1,4,2,8,345,123,43,32,5643,63,123,43,2,55,1,234,92], "<code>selectionSort</code> returns an array that is unchanged except for order.");'
+    testString: assert.sameMembers(selectionSort([1,4,2,8,345,123,43,32,5643,63,123,43,2,55,1,234,92]), [1,4,2,8,345,123,43,32,5643,63,123,43,2,55,1,234,92], '<code>selectionSort</code> returns an array that is unchanged except for order.');
   - text: <code>selectionSort</code> should not use the built-in <code>.sort()</code> method.
-    testString: 'assert.strictEqual(code.search(/\.sort\(/), -1, "<code>selectionSort</code> should not use the built-in <code>.sort()</code> method.");'
+    testString: assert.strictEqual(code.search(/\.sort\(/), -1, '<code>selectionSort</code> should not use the built-in <code>.sort()</code> method.');
 
 ```
 
@@ -58,7 +58,10 @@ function selectionSort(array) {
 <div id='js-teardown'>
 
 ```js
-console.info('after the test');
+function isSorted(arr) {
+  var check = (i) => (i == arr.length - 1) ? true : (arr[i] > arr[i + 1]) ? false : check(i + 1);
+  return check(0);
+};
 ```
 
 </div>

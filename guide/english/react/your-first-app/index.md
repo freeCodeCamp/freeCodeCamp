@@ -7,7 +7,7 @@ title: Your first React App
 As specified in the previous artice (Installation), run the `Create React App` tool. After everything has finished, `cd` into the folder of your application and run `npm start`.
 This will start a development server and you are all set to start developing your app!
 ```bash
-npm install -g react-create-app
+npm install -g create-react-app
 create-react-app my-first-app
 
 cd my-first-app
