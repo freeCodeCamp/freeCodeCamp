@@ -9,7 +9,7 @@
 
 freeCodeCamp.org is a friendly community where you can learn to code for free. It is run by a [donor-supported 501(c)(3) nonprofit](https://donate.freecodecamp.org) with the goal of helping millions of busy adults transition into tech. Our community has already helped more than 10,000 people get their first developer job.
 
-Our full stack web development curriculum is completely free and self-paced. We have thousands of interactive coding challenges to help you expand your skills.
+Our full-stack web development curriculum is completely free and self-paced. We have thousands of interactive coding challenges to help you expand your skills.
 
 ## Table of Contents
 
@@ -25,7 +25,7 @@ Our full stack web development curriculum is completely free and self-paced. We 
 
 freeCodeCamp.org offers several free developer certifications. Each of these certifications involves building 5 required web app projects, along with hundreds of optional coding challenges to help you prepare for those projects. We estimate that each certification will take a beginning programmer around 300 hours to earn.
 
-Each of these 30 projects in the freeCodeCamp.org curriculum has its own agile user stories and automated tests. These help you build up your project incrementally, and ensure you've fulfilled all the user stories before you submit it.
+Each of these 30 projects in the freeCodeCamp.org curriculum has its own agile user stories and automated tests. These help you build up your project incrementally and ensure you've fulfilled all the user stories before you submit it.
 
 You can pull in these test suites through [freeCodeCamp's CDN](https://cdn.freecodecamp.org/testable-projects-fcc/v1/bundle.js). This means you can build these projects on websites like CodePen and Glitch - or even on your local computer's development environment.
 

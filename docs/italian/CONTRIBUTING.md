@@ -52,13 +52,13 @@ Puoi aiutarci:
 
 Gli articoli guida ti aiutano a comprendere rapidamente il concetto di tecnologia. Queste sono brevi spiegazioni in un inglese semplice che è possibile leggere prima di passare a risorse più approfondite.
 
-Puoi trovare un [articolo di esempio sugli elementi HTML qui](./client/src/pages/html/elements/index.md).
+Puoi trovare un [articolo di esempio sull'elemento Ancora HTML qui](https://github.com/freeCodeCamp/freeCodeCamp/blob/master/guide/english/html/elements/a-tag/index.md). 
 
-**Di cosa posso scrivere in un articolo?**
+**Cosa posso scrivere in un articolo?**
 
-Accogliamo con piacere il tuo aiuto nello scrivere questi articoli. Non devi essere un esperto in un argomento per scriverne: questa intera guida è open source, quindi anche se commetti un errore, qualcun altro contribuirà per correggerlo.
+Ogni tuo aiuto nello scrivere questi articoli è ben accolto. Non devi essere un esperto in un argomento per scriverne: questa intera guida è open source, quindi anche se commetti un errore, qualcun altro contribuirà per correggerlo.
 
-Per aiutare, trova un "articolo di stub/tronco" sul nostro [sito web di guida](https://www.freecodecamp.org/guide), scrivi l'articolo, quindi apri una pull request delle modifiche per sostituire lo stub con il tuo articolo. Una [pull request](https://help.github.com/articles/about-pull-requests/) è il modo in cui suggerirai le modifiche. Permette agli altri di conoscere le tue modifiche, rivederle e adottarle.
+Per aiutare, trova un articolo abbozzato ("stub") sul nostro [sito web di guida](https://www.freecodecamp.org/guide), scrivi l'articolo, quindi apri una pull request delle modifiche per sostituire la bozza con il tuo articolo. Una [pull request](https://help.github.com/articles/about-pull-requests/) è il modo in cui suggerirai le modifiche. Permette agli altri di conoscere le tue modifiche, rivederle e adottarle.
 
 Se non riesci a trovare uno stub sull'argomento di cui vorresti scrivere, puoi aprire un PR che crea lo stub e include il tuo articolo di brutta copia.
 
@@ -134,7 +134,7 @@ Leggi la nostra [Guida su come contribuire all'open source](https://github.com/f
 
 I nostri moderatori della comunita' [smistano](https://en.wikipedia.org/wiki/Software_bug#Bug_management) i problemi e le pull request in base alla loro priorità, gravità e altri fattori. Puoi [trovare qui un glossario completo dei loro significati](https://github.com/freecodecamp/freecodecamp/labels).
 
-Dovresti esaminare gli issue **`Help Wanted`** oppure **`first timers welcome`** per una rapida ricerca di ciò che è disponibile e su cui puoi lavorare. Questi issue sono in ballo e non c'è bisogno di andare avanti prima di lavorare su questi.
+Dovresti esaminare gli argomenti **`Help Wanted`** oppure **`first timers welcome`** per una rapida ricerca di ciò che è disponibile e su cui puoi lavorare. Sono tutti problemi aperti e non c'è bisogno di chiedere il pemesso prima di lavorarci su.
 
 Se questi problemi mancano di chiarezza su ciò che deve essere fatto, sentiti libero di porre domande nei commenti.
 
