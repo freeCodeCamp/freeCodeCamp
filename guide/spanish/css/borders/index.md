@@ -125,7 +125,7 @@ Se puede ajustar cada esquina de `border-radius`. El orden es arriba, abajo, izq
 
 ### Borde: Todo en Uno 
  
- A pesar de que se agradece que CSS permita al desarrollador web ser muy específico a la hora de crear un borde personalizado, a veces es simplement más sencillo crear un border uniforme, todo en una sóla línea de código CSS.
+ A pesar de que se agradece que CSS permita al desarrollador web ser muy específico a la hora de crear un borde personalizado, a veces es simplemente más sencillo crear un border uniforme, todo en una sóla línea de código CSS.
 
  Ejemplo: 
  
