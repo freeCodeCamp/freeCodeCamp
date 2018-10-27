@@ -3,14 +3,14 @@ id: bad87fee1348bd9aedf08804
 title: Comment out HTML
 challengeType: 0
 videoUrl: ''
-localeTitle: Комментарий HTML
+localeTitle: Комментарии в HTML
 ---
 
 ## Description
-<section id="description"> Помните, что для того, чтобы начать комментарий, вам нужно использовать <code>&lt;!--</code> и для завершения комментария, вам нужно использовать <code>--&gt;</code> Здесь вам нужно будет закончить комментарий до того, как начнется ваш элемент <code>h2</code> . </section>
+<section id="description"> Помните, что для того, чтобы начать комментарий, вам нужно использовать <code>&lt;!--</code>, а для завершения комментария, вам нужно использовать <code>--&gt;</code>. В этом задании вам нужно будет закончить комментарий до того, как начнется ваш элемент <code>h2</code> . </section>
 
 ## Instructions
-<section id="instructions"> Комментируйте свой элемент <code>h1</code> и ваш элемент <code>p</code> , но не ваш элемент <code>h2</code> . </section>
+<section id="instructions"> Закомментируйте свой элемент <code>h1</code> и ваш элемент <code>p</code>, но не ваш элемент <code>h2</code> . </section>
 
 ## Tests
 <section id='tests'>
