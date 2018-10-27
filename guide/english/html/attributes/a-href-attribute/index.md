@@ -33,7 +33,7 @@ The `<a href>` attribute is supported by all browsers.
 ```html
 <a href="#">This is a dead link</a>
 <a href="https://www.freecodecamp.org">This is a live link to freeCodeCamp</a>
-<a href="https://html.com/attributes/a-href/">more with a href attribute</a>
+<a href="https://html.com/attributes/a-href/">More with a href attribute</a>
 
 ```
 ### In-page anchors
@@ -65,5 +65,5 @@ The `<a href="#">` may also be applied to images and other HTML elements.
 ### Some more examples of href
 ```html
 <base href="https://www.freecodecamp.org/a-href/">This gives a base url for all further urls on the page</a>
-<link href="style.css">This is a live link to an external stylesheet</a>
+<link href="style.css">This is a live link to an external stylesheet.</a>
 ```
