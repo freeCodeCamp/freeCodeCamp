@@ -7,8 +7,8 @@ An exception is an unwanted or unexpected event, which occurs during the executi
 
 ## Error vs Exception
 
-Error: An Error indicates serious problem that a reasonable application should not try to catch.
-Exception: Exception indicates conditions that a reasonable application might try to catch.
+Error - An Error indicates serious problem that a reasonable application should not try to catch.
+Exception - Exception indicates conditions that a reasonable application might try to catch.
 
 ## Exception Hierarchy
 
