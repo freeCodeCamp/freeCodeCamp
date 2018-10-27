@@ -12,7 +12,7 @@ A simple HTML Image element can be included in an HTML document like this:
 
 `alt` tags provide alternate text for an image. One use of the `alt` tag is for visually impaired people using a screen reader; they can be read the `alt` tag of the image in order to understand the image's meaning.
 
-Note that the path to the image file can be either relative or absolute. Also, remember that the `img` element is self-closing, meaning that it does not close with the `<img />` tag and instead closes with just a single `>`.
+Note that the path to the image file can be either relative or absolute. Also, remember that the `img` element is a self-closing element. It means that it does not close with the `<img />` tag and instead closes with just a single `>`.
 
 Example:
 
