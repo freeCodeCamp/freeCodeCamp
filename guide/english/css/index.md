@@ -3,7 +3,7 @@ title: Cascading Style Sheets (CSS)
 ---
 
 ### Cascading Style Sheets (CSS)
-
+Cascading Style Sheets is a style sheet language used for describing the presentation of a document written in a markup language like HTML. 
 CSS is an acronym for Cascading Style Sheets. It was first invented in 1996, and is now a standard feature of all major web browsers.
 
 CSS allows for developers to control how web pages look by "styling" the HTML structure of that page.
