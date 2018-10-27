@@ -1,0 +1,21 @@
+Suggested Reading Material
+
+https://www.geeksforgeeks.org/markov-decision-process/
+
+https://medium.com/machine-learning-bites/machine-learning-reinforcement-learning-markov-decision-processes-431762c7515b
+
+A Markov decision process is a discrete time stochastic control process. It provides a mathematical framework for modeling decision making in situations where outcomes are partly random and partly under the control of a decision maker.
+
+It is a mathematical framework which works on action,state and reawrd system.
+
+It can be used when you want your algorithm to learn with the passage of time and try to better its functionaities.
+
+Some of the good examples might be:
+
+Harvesting: how much members of a population have to be left for breeding.
+Agriculture: how much to plant based on weather and soil state.
+Water resources: keep the correct water level at reservoirs.
+Inspection, maintenance and repair: when to replace/inspect based on age, condition, etc.
+Purchase and production: how much to produce based on demand.
+Queues: reduce waiting time.
+
