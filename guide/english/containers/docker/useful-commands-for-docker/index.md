@@ -87,6 +87,11 @@ $ docker stop  $(docker ps -q)
 ### Remove containers while running (forcefully)
 `$ docker rm -f $(docker ps -a -q)`
 
+### Remove all unused data
+`$ docker system prune -a`
+ - This command will remove all unused containers, networks, images (both dangling and unreferenced), and optionally, volumes.
+ - Note that in older Docker versions (below Docker 17.06.1) this command will also remove all those volumes which are not being used by any container. In newer Docker versions use the command `$ docker system prune -a --volumes` to remove unused volumes as well.
+
 ### Giving docker OS a name when starting
 - By default, docker gives unique name to every container with a unique id.
 - We can also give a name to container using following command -
