@@ -14,6 +14,8 @@ JavaScript هي لغة البرمجة النصية الأكثر استخدامً
 
 إذا كنت تريد معرفة المزيد عن لغة جافا سكريبت ، ولماذا تستخدم على نطاق واسع ، اقرأ مقالة كوينسي لارسون - [أي لغة برمجة يجب أن أتعلمها أولاً؟](https://medium.freecodecamp.org/what-programming-language-should-i-learn-first-%CA%87d%C4%B1%C9%B9%C9%94s%C9%90%CA%8C%C9%90%C9%BE-%C9%B9%C7%9D%CA%8Dsu%C9%90-19a33b0a467d) - أو شاهد هذا [الفيديو الملهم من Preethi Kasireddy](https://www.youtube.com/watch?v=VqiEhZYmvKk) .
 
+الجافا بحاجة إلى التحويل إلى بايت كود Bytecode. بينما برامج الجافاسكريبت فيتم معالجتها كنص مصدري.
+
 ## محركات جافا سكريبت المستقلة
 
 Mozilla's SpiderMonkey ، أول محرك جافا سكريبت مكتوب على الإطلاق ، مستخدم حاليًا في Mozilla Firefox. V8 ، محرك جافا سكريبت من Google ، المستخدم في Google Chrome.
