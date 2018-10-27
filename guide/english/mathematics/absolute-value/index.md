@@ -40,5 +40,6 @@ Here you can see that in the graph of y = |x|, if -2 is input in to the function
 
 #### More Information:
 <a href='http://www.purplemath.com/modules/absolute.htm "Absolute Value"' target='_blank' rel='nofollow'>Absolute Value</a>
+<a href="http://mathworld.wolfram.com/AbsoluteValue.html" target='_blank' rel='nofollow'>Wolfram Math</a>
 
 
