@@ -321,3 +321,7 @@ b = [10,20,30]
 
 print a is b # prints False (since lists are mutable in Python)  
 ```
+print(str1[:4]) 
+# Above code gives the output as Free
+print(str[4:])
+# Above code gives the output as CodeCamp
