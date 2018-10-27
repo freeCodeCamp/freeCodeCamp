@@ -17,11 +17,11 @@ localeTitle: Comentar fuera de HTML
 
 ```yml
 tests:
-  - text: Comenta tu elemento <code>h1</code> para que no se vea en tu página.
+  - text: Comente su elemento <code>h1</code> para que no se vea en tu página.
     testString: 'assert(($("h1").length === 0), "Comment out your <code>h1</code> element so that it is not visible on your page.");'
   - text: Deje su elemento <code>h2</code> comentarios para que sea visible en su página.
     testString: 'assert(($("h2").length > 0), "Leave your <code>h2</code> element uncommented so that it is visible on your page.");'
-  - text: Comenta tu elemento <code>p</code> para que no se vea en tu página.
+  - text: Comente su elemento <code>p</code> para que no se vea en tu página.
     testString: 'assert(($("p").length === 0), "Comment out your <code>p</code> element so that it is not visible on your page.");'
   - text: Asegúrese de cerrar cada uno de sus comentarios con <code>--&gt;</code> .
     testString: 'assert(code.match(/[^fc]-->/g).length > 1, "Be sure to close each of your comments with <code>--&#62;</code>.");'
