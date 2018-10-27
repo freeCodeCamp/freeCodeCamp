@@ -36,3 +36,16 @@ Price as a function of size is a continuous output, so this is a regression prob
 
 - https://en.wikipedia.org/wiki/Supervised_learning
 - https://stackoverflow.com/a/1854449/6873133
+
+Some of the most famous machine learning algorithms are:-
+
+Decision Trees
+Naive Bayes Classification
+Support vector machines for classification problems
+Random forest for classification and regression problems
+Linear regression for regression problems
+Logistic Regression
+Ensemble Methods(like adaboost)
+
+https://medium.com/machine-learning-for-humans/why-machine-learning-matters-6164faf1df12 
+you can read this amazing article on medium for your kickstart in this field
