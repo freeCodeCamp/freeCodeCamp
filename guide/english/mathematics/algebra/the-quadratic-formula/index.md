@@ -101,5 +101,6 @@ Remember that "b^2" means "the square of ALL of b, including its sign", so don't
 [Wikipedia - Quadratic formula](https://en.wikipedia.org/wiki/Quadratic_formula/)
 
 [Purple Math](http://www.purplemath.com/modules/quadform.htm/)
+[Wolfram Math](http://mathworld.wolfram.com/QuadraticFormula.html)
 
 [Khan Academy](https://www.khanacademy.org/math/algebra/quadratics/solving-quadratics-using-the-quadratic-formula/a/quadratic-formula-explained-article/)
