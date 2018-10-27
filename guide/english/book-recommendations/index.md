@@ -54,6 +54,10 @@ title: Books to Read for Programmers
 - [Amazon Smile](https://smile.amazon.com/Soft-Skills-software-developers-manual/dp/1617292397?pldnSite=1)
 - ISBN-13: 9781617292392
 
+*The Complete Software Developer's Career Guide: How to learn programming languages quickly, ace your programming interview and land your software dream job
+- [Amazon Smile] (https://www.amazon.com/Complete-Software-Developers-Career-Guide/dp/0999081411?crid=2H6BX06MXBX1T&keywords=john+sonmez&qid=1540612414&sprefix=John+son%2Caps%2C172&sr=8-2&ref=sr_1_2)
+- ISBN-13: 978-0999081419
+
 ## Algorithms
 
 *Introduction to Algorithms, 3rd Edition (MIT Press)* by Thomas H. Cormen and Charles E. Leiserson
