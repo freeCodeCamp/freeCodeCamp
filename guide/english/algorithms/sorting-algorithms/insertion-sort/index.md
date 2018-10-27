@@ -173,6 +173,7 @@ void insertionSort(int arr[], int n)
 * Time Complexity: O(n), O(n* n), O(n* n) for Best, Average, Worst cases respectively
 * Sorting In Place: Yes
 * Stable: Yes
+* The more sorted an array is to begin with, the faster insertion sort runs
 
 #### Other Resources:
 - [Wikipedia](https://en.wikipedia.org/wiki/Insertion_sort)
