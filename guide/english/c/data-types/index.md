@@ -117,3 +117,8 @@ A pointer of type void * represents the address of an object, but not its type. 
  * double takes double the memory and gives 15 decimal places
  * long double takes even more memory and gives 19 decimal places
 * Picking the right data type is important and gives the programmer a lot of control over the program at a low level.
+
+## 
+data types has two format
+1=format data types
+2=unformat data types
