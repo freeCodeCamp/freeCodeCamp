@@ -105,6 +105,8 @@ tests:
 <section id='solution'>
 
 ```js
-// solution required
+ .smaller-image {
+    border-radius: 50%;
+  }
 ```
 </section>
