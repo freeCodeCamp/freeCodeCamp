@@ -1,6 +1,7 @@
 ---
 title: Algorithms
 ---
+![alt text](https://www.geeksforgeeks.org/wp-content/uploads/Competitive-Programming-1.jpg "Algorithms")
 
 ## Algorithms
 
