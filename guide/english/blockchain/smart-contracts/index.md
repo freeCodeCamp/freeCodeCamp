@@ -17,4 +17,5 @@ This is entirely transparent so all the nodes(miners) can see what logic is bein
 Two of the most common technologies used are :
 - Ethereum: generally made with Solidity
 - Hyperledger: generally made with Go, or Java
+- Corda: New Operating System for Financial Services
 
