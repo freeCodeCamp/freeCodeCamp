@@ -26,3 +26,4 @@ Mean is often confused with [median](https://en.wikipedia.org/wiki/Median), the 
 
 - <a href = "http://www.mathsisfun.com/definitions/mean.html">Definition of a Mean</a>
 - <a href = "http://www.mathsisfun.com/mean.html">How to calculate a Mean</a>
+- <a href = "https://en.wikipedia.org/wiki/Mean">Wikipedia Article</a>
