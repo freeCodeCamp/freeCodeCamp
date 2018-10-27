@@ -87,3 +87,12 @@ Here's a <a href='https://www.python.org/about/apps/' target='_blank' rel='nofol
 The official package index for python is <a href='https://pypi.python.org/pypi' target='_blank' rel='nofollow'>here</a>.
 
 [training and interacting with models]: https://stackoverflow.com/questions/35677724/tensorflow-why-was-python-the-chosen-language
+
+
+Python is also used in web scrapping and mostly automating various tasks.It can be used to design gui. It is not the most popular language for competitive programming because of its speed of execution over C++ or java
+
+Internally the reason that Python code executes more slowly is because code is interpreted at runtime instead of being compiled to native code at compile time.
+
+
+
+
