@@ -21,3 +21,6 @@ sudo yum install httpd
 ```
 pacman -S apache
 ```
+add instructions to configure document root directory in linux
+
+/etc/apache/apache2.conf
