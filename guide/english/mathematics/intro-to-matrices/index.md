@@ -17,6 +17,22 @@ Transpose is the operations of inver the rows and columns of a matrix.
 
 ![alt text](https://wikimedia.org/api/rest_v1/media/math/render/svg/51f6dba024e104b412ed0562163ca9a11fcb9463)
 
+
+#### Types of Matrices
+1. Square Matrix- A matrix with equal no. of rows and columns is called a square matrix.
+
+2. Diagonal Matrix- A square matrix with only diagonal elements as non-zero elements. For example: 
+  ![alt text](https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQQgGANz1Dgr3d4tzSkJjS4LMIeM3MGsC2LO6wcKMQXHHCg10ax)
+
+3. Scalar Matrix- A diagonal matrix is said to be scalar if all of its diagonal elements are the same.
+  ![alt text](https://qph.fs.quoracdn.net/main-qimg-1cbbbaac2443a2725acedfe63b95f2e5)
+  
+4. Identity Matrix- A diagonal matrix is said to be identity if all of its diagonal elements are equal to one, denoted by I.
+  ![alt text](https://qph.fs.quoracdn.net/main-qimg-6f2d174e18b8a327973289af2eca72ec)
+  
+5. Triangular Matrix: A square matrix is said to be triangular if all of its elements above the principal diagonal are zero (lower triangular matrix) or all of its elements below the principal diagonal are zero (upper triangular matrix).
+  ![alt text](https://3.bp.blogspot.com/-vR6xL2kgNIw/WK18Gw-xzwI/AAAAAAAAALA/g0ihK15Juug152JBZeZ31rb8Rx5tUsuQQCLcB/s1600/ltm.png)
+
 #### More Information:
 [Wikipedia](https://en.wikipedia.org/wiki/Matrix_(mathematics))
 
