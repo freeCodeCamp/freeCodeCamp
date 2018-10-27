@@ -3,7 +3,7 @@ title: Components
 ---
 ## Components
 
-Components are reusable in react.js. You can inject value into props as given below :
+Components are the building structure(core) of your React code and applications. As a React developer you are going to work with them on daily basis. You should try to make everything into a component, a button, text or even an icon. From the basic components you can make your more complex components. A good example of a complex component is everybodys belowed Card - it mostly consists of some sort of head with a heading and body with some text. Try to make your components as reusable as you can, because you are going to use e.g. Text component a huge load of times in your application with different font sizes, weights, colors, etc. That's whats great about components! You can change how they look, just by changing few props. You can inject value into props as given below :
 
 ```jsx
 
