@@ -49,6 +49,40 @@ A data frame can be subset in many ways. One of the simplest is getting a single
 ```python
 ages=df["age"]
 ```
+# Pandas Functions
+## Information on Unique Values
+```python
+df['col1'].unique()
+```
+```python
+df['col1'].nunique()
+```
+```python
+df['col1'].value_counts()
+```
+## Selecting Data
+```python
+newdf = df[(df['col1']>2) & (df['col2']==123)]
+```
+```python
+newdf
+```
+## Applying Functions
+```python
+def times2(x):
+    return x*2
+```
+```python
+df['col1'].apply(times2)
+```
+
+```python
+df['col1'].apply(len)
+```
+## Permanently removing a column
+```python
+del df['col1']
+```
 
 #### More Information:
 1. [pandas](http://pandas.pydata.org/)
