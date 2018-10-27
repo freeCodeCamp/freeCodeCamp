@@ -3,11 +3,11 @@ id: bad87fee1348bd9aedf08827
 title: Create a Bulleted Unordered List
 challengeType: 0
 videoUrl: ''
-localeTitle: Создать маркированный неупорядоченный список
+localeTitle: Создайте маркированный неупорядоченный список
 ---
 
 ## Description
-<section id="description"> HTML имеет специальный элемент для создания <code>unordered lists</code> или списков стилей в стиле пули. Неупорядоченные списки начинаются с элемента открытия <code>&lt;ul&gt;</code> , за которым следует любое количество элементов <code>&lt;li&gt;</code> . Наконец, неупорядоченные списки закрываются с помощью <code>&lt;/ul&gt;</code> Например: <blockquote> &lt;UL&gt; <br> &lt;Li&gt; молоко &lt;/ li&gt; <br> &lt;Li&gt; сыр &lt;/ li&gt; <br> &lt;/ UL&gt; </blockquote> создаст список стиля пули «молоко» и «сыр». </section>
+<section id="description"> HTML имеет специальный элемент для создания <code>unordered lists</code> (неупорядоченных списков) или списков в стиле пули. Неупорядоченные списки начинаются с элемента <code>&lt;ul&gt;</code> , за которым следует любое количество элементов <code>&lt;li&gt;</code>. Неупорядоченные списки закрываются с помощью <code>&lt;/ul&gt;</code> Например: <blockquote> &lt;ul&gt; <br> &lt;li&gt; молоко &lt;/li&gt; <br> &lt;li&gt; сыр &lt;/li&gt; <br> &lt;/ul&gt; </blockquote> В вышеприведенном примере создается список с элементами списка «молоко» и «сыр». </section>
 
 ## Instructions
 <section id="instructions"> Удалите последние два элемента <code>p</code> и создайте неупорядоченный список из трех вещей, которые любят кошки в нижней части страницы. </section>
