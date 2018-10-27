@@ -60,6 +60,7 @@ If you do this, then the first element is going to be `3`, but the rest of them 
 ```C
 int var = arr[0];
 ```
+##Note:a[i] is nothing but *(a+i)
 Here an int is created called `var`, and it is initialized to the 0th element of arr. **Very importart to note** that in C, indexes start at zero as opposed to 1. This means that to access the first element, the index (between the brackets) is 0, to access the second element, the index is 1 etc. 
 In this example `var` is going to store the value `1`.
 
@@ -81,6 +82,10 @@ Two-dimensional arrays are common and can be initialized using the following syn
 ```C
 int arr[2][5] = {0, 1, 2, 3, 4, 5, 6, 7, 8, 9};
 ```
+We can also declare the 2-D array without giving the no_of_rows but number_of_columns is must
+ex:A[][5]  //here no_of_rows are variable
+
+To access the element A[i][j] we can also denote it by *(A+i*n+j),where n is the no_of_columns
 
 It can be difficult to visualize a 2-dimensional array using the above syntax so developers often use optional, nested brackets to clarify the structure of the array. This is also a valid way to initialize a 2-dimensional array.
 ```C
