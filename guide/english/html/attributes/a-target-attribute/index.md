@@ -48,4 +48,6 @@ A target attribute with the value of _"framename"_ Opens the linked document in 
 
 #### More Information:
 
-Target Attribute: <a href="https://www.w3schools.com/tags/att_a_target.asp" target="_blank">w3schools</a>  
+Target Attribute: <a href="https://www.w3schools.com/tags/att_a_target.asp" target="_blank">w3schools</a> 
+<hr>
+More examples on Target Attribute: <a href="https://html.com/attributes/a-target/" target="_blank" >html.com</a>
