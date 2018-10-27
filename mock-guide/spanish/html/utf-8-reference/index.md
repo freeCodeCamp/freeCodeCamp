@@ -1,4 +1,4 @@
----
+﻿---
 title: UTF 8 Reference
 localeTitle: Referencia UTF 8
 ---
