@@ -1,0 +1,36 @@
+## Given a sorted and rotated array A of N distinct elements which is rotated at some point, 
+## and given an element K. The task is to find the index of the given element K in the array A
+
+
+
+using namespace std;
+int main()
+ {
+	//code
+        int  t;
+        cin>>t;
+        while(t--)
+       {
+           int n,k;
+           cin>>n;
+           int a[n];
+           for(int i=0;i<n;i++)
+            cin>>a[i];
+            cin>>k;
+            for(int i=0;i<n;i++)
+            {
+                if(a[i]==k)
+                {
+                    k=0;
+                    cout<<i<<endl;
+                    break;
+                }
+            }
+            if(k!=0)
+                cout<<"-1"<<endl;
+       }
+       return 0;
+}
+
+
+ 
