@@ -14,7 +14,7 @@ It is recommended that you do this so as to not be confused by partial instructi
 
 ## Setting it up with Android Studio
 
-Once you have added firebase to your project, you need to perfrom additional steps such as adding the relevant dependencies and so on. You can find out more information and sample code from the [documentation](https://firebase.google.com/docs/firestore/quickstart).
+Once you have added firebase to your project, you need to perform additional steps such as adding the relevant dependencies and so on. You can find out more information and sample code from the [documentation](https://firebase.google.com/docs/firestore/quickstart).
 
 **Add Gradle Dependencies**
 
