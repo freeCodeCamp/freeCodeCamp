@@ -15,7 +15,7 @@ For more info, there is a [complete article about Git itself](https://guide.free
 
 ### GitHub
 
-GitHub is a company that provides Git repository hosting. That means that they provide a turnkey solution to host Git repositories on their servers. That can be useful to keep a backup of your repository (Git only tracks the changes made to you files over time, the repo still needs to be backed up), and to have a centralized place to keep and share your code with others.
+GitHub is a company that provides Git repository hosting. That means that they provide a turnkey solution to host Git repositories on their servers. That can be useful to keep a backup of your repository (Git only tracks the changes made to your files over time, the repo still needs to be backed up), and to have a centralized place to keep and share your code with others.
 
 More than just a Git repository hosting service, GitHub is a [software forge](https://en.wikipedia.org/wiki/Forge_(software)). That means it also provides an [issue tracker](https://en.wikipedia.org/wiki/Issue_tracking_system), tools for [code review](https://en.wikipedia.org/wiki/Code_review), and other tools for collaborating with other people and creating software.
 
