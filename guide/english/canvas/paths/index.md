@@ -5,7 +5,7 @@ title: Paths
 
 Paths are the building block of drawing in Canvas. A path is just a shape. Then, the shape can be drawn on by either stroking it or filling it.
 
-We can create use paths with `beginPath`, `fill`, and `stroke`.
+We can create and use paths with `beginPath`, `fill`, and `stroke`.
 
 ```js
 ctx.beginPath();
@@ -57,8 +57,8 @@ The first example will draw two squares, while the second will only draw one sin
 This fact leads to a common mistake in making `canvas` animations.
 
 ```js
-var x = 0;
-var y = 0;
+const y = 0;
+let x = 0;
 function draw() {
   ctx.clearRect(0, 0, canvas.width, canvas.height);
 
