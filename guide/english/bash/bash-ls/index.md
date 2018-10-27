@@ -4,16 +4,14 @@ title: Bash ls
 
 ## Bash ls
 
-`ls` is a command on Unix-like operating systems to list contents of a directory, for example folder and file names.
+`ls` is a command on Unix-like operating systems to list contents of a directory such as folders and file names.
 
 
 ### Usage
 
 ```bash
-cat [options] [file_names]
+ls [options] [file_names]
 ```
-You can list the items in any directory without even entering the directory. Consider you are in a directory with folders- Test1,Test2. You're in the parent directory you can list all files in Test1 as follows-
-`ls Test1`
 
 Most used options:
 
@@ -22,6 +20,12 @@ Most used options:
 * `-G`, enable colorized output.
 * `-s`, List File Size.
 * `-R`, displays the contents of the directory, and its subdirectories.
+
+Items in a directory can also be listed without needing the enter the directory:
+
+```bash
+ls FolderName
+```
 
 ### Example:
 
