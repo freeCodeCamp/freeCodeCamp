@@ -126,3 +126,10 @@ Here you can learn more about map: <a href="http://www.cplusplus.com/reference/m
 N.B: All code in example are in C++11 version. You can learn more about C++ version <a href="http://en.cppreference.com/w/cpp/compiler_support" target="_blank">Here</a>
 
 
+##iterator
+example-
+map<int,string>::iterator it;
+for(m.begin();it!=m.end();it++)
+{
+   cout<<it->first<<it->second<<endl;
+   }
