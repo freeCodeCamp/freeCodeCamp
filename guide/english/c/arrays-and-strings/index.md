@@ -20,7 +20,7 @@ int my_array[] = {1, 5, 3, 6, 2};
 Notice that in this example, we didn't bother specifying a number in the square brackets. This is because the curly brackets have values in them that will be assigned to each position in the array. You could put a number in the brackets anyway, as long as you made sure to create enough memory locations to store the values you've passing in.
 
 When initializing an array, you can provide fewer values than array elements. For example, the
-following statement initializes only the first two elements of my_array:
+following statement initialize only the first two elements of my_array:
 
 float my_array[5] = {5.0, 2.5};
 
@@ -134,7 +134,7 @@ void string_concatenate(char [] s1, char [] s2)
 ```C
 string_length = strlen(my_string);
 ```
-Here is an manual implementation of fuction strlen:
+Here is an manual implementation of function strlen:
 
 int string_length(char [] string)
 {
