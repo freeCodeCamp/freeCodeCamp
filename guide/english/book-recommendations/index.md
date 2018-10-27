@@ -96,6 +96,10 @@ title: Books to Read for Programmers
 - https://www.amazon.com/Pro-NET-Core-Andrew-Troelsen/dp/1484230175/ref=sr_1_1?s=books&ie=UTF8&qid=1539643534&sr=1-1&keywords=Pro-NET-Core-Andrew-Troelsen
 - ISBN-13: 978-1484230176
 
+*Professional C# 7 and .NET Core 2.0, 7th Edition by Christian Nagel
+- [Amazon Smile](https://smile.amazon.com/Professional-NET-Core-Christian-Nagel/dp/1119449278?tag=uuid10-20)
+- ISBN-13: 978-1119449270
+
 ## Coding Interview
 
 *Cracking the Coding Interview: 150 Programming Questions and Solutions*
