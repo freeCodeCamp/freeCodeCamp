@@ -81,8 +81,8 @@ tests:
 
 ## Solution
 <section id='solution'>
-
 ```js
-// solution required
+<h2 style="color: green;">CatPhotoApp</h2>
 ```
+  This will turn the h2 text color to green 
 </section>
