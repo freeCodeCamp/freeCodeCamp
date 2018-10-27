@@ -98,5 +98,5 @@ which would end up looking like:
 ## More Information:
 
 <!-- Please add any articles you think might be helpful to read before writing the article -->
-* [HTML lists on w3schools](https://www.w3schools.com/html/html_lists.asp)
+* [HTML lists on w3schools.](https://www.w3schools.com/html/html_lists.asp)
 
