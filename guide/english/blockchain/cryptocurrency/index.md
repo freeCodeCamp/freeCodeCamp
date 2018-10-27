@@ -22,3 +22,5 @@ Some people invest in cryptocurrency on exchanges such as Binance, Bitrex, or Co
 
 ### Background History on origins of cryptocurrency:
 [Blockchain History](https://www.activism.net/cypherpunk/manifesto.html)
+[A brief history of cryptocurrency] (https://medium.com/koinex-crunch/a-brief-history-of-cryptocurrency-889fed168555)
+
