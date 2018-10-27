@@ -17,3 +17,9 @@ The companies that sponsor these programs gain several benefits:
 - Many eyes on their product are more likely to find more bugs than the typical QA team
 - Only have to pay for results, not for the time spent trying to find bugs
 - Encourages people who find vulnerabilties to turn them over to the company and not to the black market.
+
+### Links
+
+* [Bugcrowd bug bounty List](https://www.bugcrowd.com/bug-bounty-list/)
+* [Hackerone list of bug bounty programs](https://hackerone.com/bug-bounty-programs)
+* [github bug bounty](https://bounty.github.com/)
