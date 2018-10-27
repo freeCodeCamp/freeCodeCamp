@@ -111,6 +111,22 @@ p {
   font: italic small-caps 800 20px/1.5 Arial;
 }
 ```
+It is also possbible to import a new font:
+
+```html
+<link href="https://fonts.googleapis.com/css?family=Lobster" rel="stylesheet" type="text/css"> 
+```
+In this was we import the `lobster`
+
+the in the css we can use such font:
+```css
+  h2 {
+    font-family: Lobster, monospace;
+  }
+```
+In this way the font `Lobster` will be the first choice, but if it is not avaiable the `monospace` will replace it.
+
+
 
 #### More Information:
 - [MND - CSS Font](https://developer.mozilla.org/en-US/docs/Web/CSS/font)
