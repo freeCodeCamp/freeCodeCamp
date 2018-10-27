@@ -20,12 +20,25 @@ A PHP script starts with `<?php` and ends with `?>`:
 ?>
 ```
 or 
-you can also write A PHP script starts with `<?php` and ends without `?>`:
+you can also write A PHP script which starts with `<?php` and ends without `?>` when writing it in an external file i.e. "filename.php":
 ```php
 <?php
 // PHP code goes here
 ```
 
+The code can later be called using include:
+```php
+<?php
+include 'filename.php';
+?>
+```
+or
+using require
+```php
+<?php
+require 'filename.php';
+?>
+```
 
 Below, we have an example of a simple PHP file, with a PHP script that uses a built-in PHP function "echo" to output the text "Hello World!" on a web page:
 
