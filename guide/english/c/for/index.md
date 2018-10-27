@@ -10,7 +10,7 @@ It is also known as an 'entry-controlled loop' since the condition is checked be
 ## Syntax of For Loop
 
 ```c
-for ( init; condition; increment ) {
+for ( initial; condition; increment ) {
    statement(s);
 }
 ```
@@ -20,6 +20,8 @@ The `for` loop consists of 3 sections, the initialization section, a specific co
 The initialization statement is executed only once. Then, the test expression is evaluated. If the test expression is false (0), for loop is terminated. But if the test expression is true (nonzero), codes inside the body of for loop is executed and the update expression is updated. This process repeats until the test expression is false.
 
 The for loop is commonly used when the number of iterations is known.
+
+for(;;),for(i=0;i<n;) are examples of infinite loops which will not terminate
 
 ## Example
 ```c
