@@ -62,3 +62,29 @@ int main () {
 -> a is not less than 5!
 -> Value of a is : 100
 ```
+
+## Example
+```
+#include <stdio.h>
+
+int main () {
+
+   char ch = 'y';
+
+   if(ch == 'y') {
+      printf("Yes");
+   }
+   
+   else {
+      printf("No");
+   }
+   
+   return 0;
+}
+
+```
+
+## Output
+```
+Yes
+```
