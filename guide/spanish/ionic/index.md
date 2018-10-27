@@ -1,8 +1,8 @@
 ---
 title: Ionic
-localeTitle: Iónico
+localeTitle: Ionic
 ---
-## Marco jónico
+## Framework Ionic
 
 Ionic es un marco de desarrollo de aplicaciones móviles HTML5 destinado a crear aplicaciones móviles híbridas.
 
@@ -10,16 +10,16 @@ Las aplicaciones híbridas tienen muchos beneficios sobre las aplicaciones nativ
 
 ### Construyendo aplicaciones híbridas con Ionic
 
-Aquellos que estén familiarizados con el desarrollo web encontrarán la estructura de una aplicación jónica sencilla. En su esencia, es solo una página web que se ejecuta en un shell de aplicación nativa. Eso significa que podemos usar cualquier tipo de HTML, CSS y Javascript que queramos.
+Aquellos que estén familiarizados con el desarrollo web encontrarán la estructura de una aplicación Ionic sencilla. En esencia, es solo una página web que se ejecuta en un shell de aplicación nativa. Eso significa que podemos usar cualquier tipo de HTML, CSS y Javascript que queramos.
 
 La mayor parte de una aplicación Ionic se escribirá en HTML, Javascript y CSS. Ionic también utiliza AngularJS para una gran parte de la funcionalidad principal del marco.
 
 ### Antes de que podamos empezar a jugar con Ionic. Preparemos nuestro sistema primero:
 ```
-  nodeJS and npm 
+  nodeJS y npm 
   Ionic 2 
   Cordova 
-  Android Environment (or iOS if you're working on a MacOS) 
+  entorno Android (o iOS si está trabajando sobre MacOS) 
 ```
 
 ### Primero lo primero, necesitamos tener Node.js y npm.
@@ -30,16 +30,21 @@ La mayor parte de una aplicación Ionic se escribirá en HTML, Javascript y CSS.
 
 ### Gestor de paquetes Node.js (npm)
 
-\`\` \`  
-sudo apt-get install npm
-```
-### Ionic 2 and cordova 
+```  
+  sudo apt-get install npm
 ```
 
-sudo npm instalar -g ionic cordova
+### Ionic 2 y cordova 
+
 ```
-### Now sit back and relax, give it some time to finish, it can take several minutes depending on your internet connection. 
- Once that's done, Let's start off by generating a new project based on the “blank” template 
+  sudo npm install -g ionic cordova
 ```
 
-Inicio ionico MyFirstApp blank cd MyFirstApp servicio iónico \`\` \`
+### Ahora siéntese y relájese, está a punto de finalizar, puede llevar varios minutos dependiendo de su conexión a internet 
+ Una vez esté hecho, empezaremos generando un nuevo proyecto basado en una plantilla en blanco ("blank")
+
+```
+  ionic start MyFirstApp blank
+  cd MyFirstApp 
+  ionic serve
+```
