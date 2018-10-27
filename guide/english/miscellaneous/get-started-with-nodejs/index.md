@@ -23,7 +23,10 @@ Node.js has become a key part of 'JavaScript Everywhere', encouraging web applic
 
 *   <a href='http://node.codeschool.com/' target='_blank' rel='nofollow'>Real Time Web with Node.js</a>
 *   <a href='http://www.globalknowledge.co.uk/courses/it-subjects/application-development/' target='_blank' rel='nofollow'>Essential Node.js from DevelopMentor</a>
-*   <a href='https://www.edx.org/course/introduction-mongodb-using-mean-stack-mongodbx-m101x-0' target='_blank' rel='nofollow'>Introduction to MongoDB using the MEAN Stack</a>
+*   <a href='https://www.edx.org/course/introduction-to-nodejs-4' target='_blank' rel='nofollow'>Introduction to NodeJS (Free Course)</a>
+*   <a href='https://www.edx.org/course/building-functional-prototypes-using-nodejs-1' target='_blank' rel='nofollow'>Building Functional Prototypes using Node.js (Free Course)</a>
+*   <a href='https://www.coursera.org/learn/server-side-nodejs' target='_blank' rel='nofollow'>Server-side Development with NodeJS, Express and MongoDB</a>
+*   <a href='https://www.edx.org/course/introduction-mongodb-using-mean-stack-mongodbx-m101x-0' target='_blank' rel='nofollow'>Introduction to MongoDB using the MEAN Stack (Free Course)</a>
 *   <a href='https://www.udemy.com/the-complete-nodejs-developer-course-2/' target='_blank' rel='nofollow'>The Complete Node.js Developer Course (2nd Edition)</a>
 
 ## Blogs
