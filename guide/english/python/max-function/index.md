@@ -48,3 +48,16 @@ The largest item in the iterable is returned. If two or more positional argument
 ![:rocket:](//forum.freecodecamp.com/images/emoji/emoji_one/rocket.png?v=2 ":rocket:") <a href='https://repl.it/CVok' target='_blank' rel='nofollow'>Run Code</a>
 
 <a href='https://docs.python.org/3/library/functions.html#max' target='_blank' rel='nofollow'>Official Docs</a>
+
+# Program for len,min and max
+xyz = [4,5,86,95,45,66,32]
+print("Length of list is:",len(xyz))
+print("Maximum number is:",max(xyz))
+print("Minimum number is:",min(xyz))
+
+# The output of the code will be
+Length of list is: 7
+Maximum number is: 95
+Minimum number is: 4
+
+
