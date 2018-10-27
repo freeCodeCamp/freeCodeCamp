@@ -1,6 +1,6 @@
 ---
 title: Advantages of Linux
-localeTitle: Ventajas de linux
+localeTitle: Ventajas de Linux
 ---
 ## Mejoras constantes y eficientes.
 
@@ -16,7 +16,7 @@ Los requisitos de Linux para ejecutarse en un sistema son mucho más bajos que l
 
 ## Muy documentado tanto para principiantes como para usuarios avanzados.
 
-Linux tiene una comunidad activa de personas dispuestas a compartir sus conocimientos y ayuda (¡muy parecido a FreeCodeCamp!). Hay utilidades de línea de comandos integradas en Linux que proporcionan la documentación sobre los comandos, bibliotecas, normas, etc. ( [páginas Man](https://en.wikipedia.org/wiki/Man_page) y [páginas Info](https://en.wikipedia.org/wiki/Info_(Unix) ), y no hay documentación disponible en Internet en una variedad de formatos, incluyendo [el Proyecto de Documentación de Linux](http://www.tldp.org/) , [LinuxQuestions](http://www.linuxquestions.org/) , [ServerFault](http://serverfault.com/) , y [The Arch Wiki](https://wiki.archlinux.org/) .
+Linux tiene una comunidad activa de personas dispuestas a compartir sus conocimientos y ayuda (¡muy parecido a FreeCodeCamp!). Hay utilidades de línea de comandos integradas en Linux que proporcionan la documentación sobre los comandos, bibliotecas, normas, etc. ( [páginas Man](https://en.wikipedia.org/wiki/Man_page) y [páginas Info](https://en.wikipedia.org/wiki/Info_(Unix) ), y existe documentación disponible en Internet en una variedad de formatos, incluyendo [el Proyecto de Documentación de Linux](http://www.tldp.org/) , [LinuxQuestions](http://www.linuxquestions.org/) , [ServerFault](http://serverfault.com/) , y [The Arch Wiki](https://wiki.archlinux.org/) .
 
 Además de la documentación, hay muchas comunidades útiles y acogedoras para que los recién llegados hagan preguntas como [Pregunte a Ubuntu](https://askubuntu.com/) y [r / linuxquestions de Reddit](https://www.reddit.com/r/linuxquestions/) .
 
@@ -24,7 +24,7 @@ Se pueden tomar certificaciones a su propio ritmo que son reconocidas en la indu
 
 ## Soporte empresarial.
 
-El mundo depende de que Linux admita sistemas críticos, por lo que la demanda no desaparecerá. Esto es importante no solo para aquellos que ayudan a contribuir con Linux, sino también para aquellos que lo admiten (¡Trabajos!). El soporte de Linux se vuelve más crítico en TI, pero también tener ese conocimiento como desarrollador los hará más completos y útiles (es decir, [desarrolladores de pila completa](https://medium.com/chris-messina/the-full-stack-employee-ed0db089f0a1#.ubttrv255) ).
+El mundo depende de que Linux admita sistemas críticos, por lo que la demanda no desaparecerá. Esto es importante no solo para aquellos que ayudan a contribuir con Linux, sino también para aquellos que lo admiten (¡Empleos!). El soporte de Linux se vuelve más crítico en TI, pero también tener ese conocimiento como desarrollador los hará más completos y útiles (es decir, [desarrolladores de pila completa](https://medium.com/chris-messina/the-full-stack-employee-ed0db089f0a1#.ubttrv255) ).
 
 ## Interoperabilidad con otros sistemas operativos.
 
@@ -40,7 +40,7 @@ Linux tiene un amplio conjunto de aplicaciones que están disponibles. Tiene [ap
 
 ## Construido para el desarrollo.
 
-Como Linux fue creado originalmente para desarrolladores por desarrolladores, han dedicado mucho tiempo y esfuerzo a perfeccionar las herramientas que utilizarían. Tiene una [carcasa](https://en.wikipedia.org/wiki/Unix_shell) potente que se puede usar para una variedad de tareas de programación y administrativas ( [Bash](https://en.wikipedia.org/wiki/Bash_(Unix_shell) ) es la opción más popular y predeterminada para Linux). Si bien Linux tiene un "bloc de notas" equivalente en [gedit](https://en.wikipedia.org/wiki/Gedit) , también ofrece editores basados ​​en texto más potentes y personalizables como [Vim](https://en.wikipedia.org/wiki/Vim_(text_editor)) y [Emacs](https://en.wikipedia.org/wiki/Emacs) (se recomienda que los usuarios de Linux conozcan al menos uno de estos editores). También hay IDE disponibles para el desarrollo web como [Atom](https://atom.io/) , [Aptana](http://www.aptana.com/) / [Eclipse](https://eclipse.org/) , [Sublime](https://www.sublimetext.com/) , [KomodoIDE](http://komodoide.com/) , por nombrar algunos. Linux también puede utilizar software como [Apache](https://httpd.apache.org/) para configurar un servidor web local para pruebas, [Git](https://git-scm.com/) para el control de versiones y otras herramientas / idiomas como [Node.js](https://nodejs.org/en/) / [Ruby](https://www.ruby-lang.org/en/) / [SaSS](http://sass-lang.com/) / [Heroku,](https://www.heroku.com/) todos tienen soporte en Linux y tienen herramientas de línea de comandos que pueden ser utilizado en lugar de una GUI.
+Como Linux fue creado originalmente para desarrolladores por desarrolladores, han dedicado mucho tiempo y esfuerzo a perfeccionar las herramientas que utilizarían. Tiene un [intérprete de comandos](https://en.wikipedia.org/wiki/Unix_shell) potente que se puede usar para una variedad de tareas de programación y administrativas ( [Bash](https://en.wikipedia.org/wiki/Bash_(Unix_shell) ) es la opción más popular y predeterminada para Linux). Si bien Linux tiene un "bloc de notas" equivalente en [gedit](https://en.wikipedia.org/wiki/Gedit) , también ofrece editores basados ​​en texto más potentes y personalizables como [Vim](https://en.wikipedia.org/wiki/Vim_(text_editor)) y [Emacs](https://en.wikipedia.org/wiki/Emacs) (se recomienda que los usuarios de Linux conozcan al menos uno de estos editores). También hay IDE disponibles para el desarrollo web como [Atom](https://atom.io/) , [Aptana](http://www.aptana.com/) / [Eclipse](https://eclipse.org/) , [Sublime](https://www.sublimetext.com/) , [KomodoIDE](http://komodoide.com/) , por nombrar algunos. Linux también puede utilizar software como [Apache](https://httpd.apache.org/) para configurar un servidor web local para pruebas, [Git](https://git-scm.com/) para el control de versiones y otras herramientas / idiomas como [Node.js](https://nodejs.org/en/) / [Ruby](https://www.ruby-lang.org/en/) / [SaSS](http://sass-lang.com/) / [Heroku,](https://www.heroku.com/) todos tienen soporte en Linux y tienen herramientas de línea de comandos que pueden ser utilizado en lugar de una GUI.
 
 ## Personalizable
 
