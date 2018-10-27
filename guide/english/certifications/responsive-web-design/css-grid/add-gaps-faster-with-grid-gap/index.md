@@ -7,7 +7,7 @@ title: Add Gaps Faster with grid-gap
 We need to use ```grid-gap``` to introduce a ```10px``` gap between the rows and ```20px``` gap between the columns.
 
 ### Solution
-
+  
 In the class container we should add a ```grid-gap``` property. 
 First value - ```10px``` - introduce gap between rows, second value - ```20px``` introduce gap between columns:
 
