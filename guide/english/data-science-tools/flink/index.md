@@ -1,6 +1,8 @@
 ---
 title: Flink
 ---
+<img src="https://flink.apache.org/img/flink-header-logo.svg" width=80px height=80px>
+
 ## Flink
 
 Apache Flink is an open source stream processing framework with powerful stream- and batch-processing capabilities.
