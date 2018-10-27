@@ -29,6 +29,10 @@ Once you've logged in, go to the [settings page](https://www.twitch.tv/settings)
 
 On this page you can change your profile picture, email address and write a bio. Unfortunately, Twitch doesn't allow you to change your username once you've signed up. However, you can change the capitalization.
 
+### Sharing your own content
+
+If you want to use your new Twitch Account to share your own computer screen with the Internet, there is a few popular options. OBS Studio is used by many for its versatility, however it can be very complicated to get up and running for a new user. If you own a modern NVIDIA graphics card you can install the "NVIDIA Experience" software which includes the "NVIDIA Share" function. It can be set up in seconds (there's a lot of tutorials online e.g. on YouTube on how to do it). NVIDIA Share is great if you only want to show your screen and add audio from one microphone. There is other software on the market as well, however these are the most popular options and they are free as well.
+
 ## Following FreeCodeCamp
 
 ### We are currently moving away from using Twitch, we will update this page once details have been finalized.
