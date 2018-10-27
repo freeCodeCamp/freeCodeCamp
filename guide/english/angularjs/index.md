@@ -1,6 +1,9 @@
 ---
 title: AngularJS
 ---
+
+<img src="https://angular.io/assets/images/logos/angular/shield-large.svg" width=80px height=80px>
+
 ## AngularJS
 
 AngularJS (versions 1.x) is an open source front-end JavaScript framework. AngularJS extends HTML to develop rich and powerful front-ends. 
