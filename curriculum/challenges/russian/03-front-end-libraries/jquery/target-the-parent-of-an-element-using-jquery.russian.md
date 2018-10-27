@@ -3,7 +3,7 @@ id: bad87fee1348bd9aed308826
 title: Target the Parent of an Element Using jQuery
 challengeType: 6
 videoUrl: ''
-localeTitle: Задайте родительский элемент элемента с помощью jQuery
+localeTitle: Задайте родителя элемента с помощью jQuery
 ---
 
 ## Description
