@@ -26,11 +26,11 @@ Add an <code>svg</code> node to the <code>body</code> using <code>append()</code
 ```yml
 tests:
   - text: Your document should have 1 <code>svg</code> element.
-    testString: 'assert($("svg").length == 1, "Your document should have 1 <code>svg</code> element.");'
+    testString: assert($('svg').length == 1, 'Your document should have 1 <code>svg</code> element.');
   - text: The <code>svg</code> element should have a <code>width</code> attribute set to 500.
-    testString: 'assert($("svg").attr("width") == "500", "The <code>svg</code> element should have a <code>width</code> attribute set to 500.");'
+    testString: assert($('svg').attr('width') == '500', 'The <code>svg</code> element should have a <code>width</code> attribute set to 500.');
   - text: The <code>svg</code> element should have a <code>height</code> attribute set to 100.
-    testString: 'assert($("svg").attr("height") == "100", "The <code>svg</code> element should have a <code>height</code> attribute set to 100.");'
+    testString: assert($('svg').attr('height') == '100', 'The <code>svg</code> element should have a <code>height</code> attribute set to 100.');
 
 ```
 

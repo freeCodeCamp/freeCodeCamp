@@ -2,6 +2,7 @@
 title: Code Reviews
 ---
 ## Code Reviews
+
 Code Reviews exist in order to improve the quality of the code in a software project and are common practice for many software development teams.
 Code reviews involve team members looking into each others' code submissions to check for bugs, incorrect logic or 
 potential improvements. A code review can be done amongst developers of the project under review, as well as developers from other teams in the same company.
@@ -19,4 +20,7 @@ It is important to be humble throughout the code review process. Accept your mis
 and be professional when pointing out improvements or errors in the code of your fellow
 team members.
 
-[How to Do Code Reviews Like a Human (Part One)](https://mtlynch.io/human-code-reviews-1/)
+## Want to learn more?
+
+* [GitHub Documentation](https://github.com/features/code-review) : Learn how to write better code and document your changes with version control
+* [How to Do Code Reviews Like a Human (Part One)](https://mtlynch.io/human-code-reviews-1/)

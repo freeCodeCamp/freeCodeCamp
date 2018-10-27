@@ -8,7 +8,7 @@ R is an open source programming language and software environment for statistica
 R has multiple packages (which are similar to libraries used in languages like python) on repositories like CRAN and bioconductor, which can be utilized for various purposes.
 
 
-## Installations
+## Installation
  The first thing you need to get started with R is to download it from its <a href='https://www.r-project.org/' target='_blank' rel='nofollow'>Official Site</a> according to your operating system.
 Now install it on your computer. For help in installation refer to reference section below.
 
@@ -19,16 +19,20 @@ Now install it on your computer. For help in installation refer to reference sec
 * [data.table](https://github.com/Rdatatable/data.table/wiki) is an implementation of base `data.frame` focused on improved performance and terse, flexible syntax.
 * [Shiny](https://shiny.rstudio.com/) framework for building dashboard style web apps in R.
 
-
 ## Where to learn R for free
- * [R Studio](https://www.rstudio.com/online-learning/)
- * [Code school](http://tryr.codeschool.com/)
- * [Coursera -allows to audit course for free but certification is paid.](https://www.coursera.org/learn/r-programming)
- * [DataCamp -allows to complete the introductory part for free.](https://www.datacamp.com)
- * [R for Data Science -is a book which is available free to read online.](http://r4ds.had.co.nz/)
- * [edX -allows to audit course for free but certification is paid.](https://www.edx.org/learn/r-programming)
- * [Advanced R](https://adv-r.hadley.nz/)
- * [RSeek](http://rseek.org/)
+
+* [R Studio](https://www.rstudio.com/online-learning/)
+* [Code school](http://tryr.codeschool.com/)
+* [Coursera -allows to audit course for free but certification is paid.](https://www.coursera.org/learn/r-programming)
+* [DataCamp -allows to complete the introductory part for free.](https://www.datacamp.com)
+* [R for Data Science -is a book which is available free to read online.](http://r4ds.had.co.nz/)
+* [Mastering Software Development in R -is a free e-book addressing the Tidyverse among other topics](https://bookdown.org/rdpeng/RProgDA/)
+* [edX -allows to audit course for free but certification is paid.](https://www.edx.org/learn/r-programming)
+* [Advanced R](https://adv-r.hadley.nz/)
+* [RSeek](http://rseek.org/)
+* [Udemy](https://www.udemy.com/r-basics/)
+* [Quick R](https://www.statmethods.net)
+* [Swirl Courses](https://swirlstats.com)
  
  ## Reference
  * [Installing R on Windows](http://youtu.be/Ohnk9hcxf9M)

@@ -28,13 +28,13 @@ Find the product of the coefficients, $a$ and $b$, for the quadratic expression 
 ```yml
 tests:
   - text: <code>quadraticPrimes(200)</code> should return -4925.
-    testString: 'assert(quadraticPrimes(200) == -4925, "<code>quadraticPrimes(200)</code> should return -4925.");'
+    testString: assert(quadraticPrimes(200) == -4925, '<code>quadraticPrimes(200)</code> should return -4925.');
   - text: <code>quadraticPrimes(500)</code> should return -18901.
-    testString: 'assert(quadraticPrimes(500) == -18901, "<code>quadraticPrimes(500)</code> should return -18901.");'
+    testString: assert(quadraticPrimes(500) == -18901, '<code>quadraticPrimes(500)</code> should return -18901.');
   - text: <code>quadraticPrimes(800)</code> should return -43835.
-    testString: 'assert(quadraticPrimes(800) == -43835, "<code>quadraticPrimes(800)</code> should return -43835.");'
+    testString: assert(quadraticPrimes(800) == -43835, '<code>quadraticPrimes(800)</code> should return -43835.');
   - text: <code>quadraticPrimes(1000)</code> should return -59231.
-    testString: 'assert(quadraticPrimes(1000) == -59231, "<code>quadraticPrimes(1000)</code> should return -59231.");'
+    testString: assert(quadraticPrimes(1000) == -59231, '<code>quadraticPrimes(1000)</code> should return -59231.');
 
 ```
 

@@ -1,15 +1,17 @@
 ---
-title: String.prototype.trimright
+title: String.prototype.trimRight
 ---
-## String.prototype.trimright
+## String.prototype.trimRight
 
-This is a stub. <a href='https://github.com/freecodecamp/guides/tree/master/src/pages/javascript/standard-objects/string/string-prototype-trimright/index.md' target='_blank' rel='nofollow'>Help our community expand it</a>.
+The `trimRight()` function removes any whitespace characters from the end (the right side) of a given string. It returns a new string. It does not modify the original string.
 
-<a href='https://github.com/freecodecamp/guides/blob/master/README.md' target='_blank' rel='nofollow'>This quick style guide will help ensure your pull request gets accepted</a>.
+Examples:
+```js
+"  This string has two spaces at the beginning and a tab and two spaces at the end.	  ".trimRight();
+// output: "  This string has two spaces at the beginning and a tab and two spaces at the end."
+```
 
-<!-- The article goes here, in GitHub-flavored Markdown. Feel free to add YouTube videos, images, and CodePen/JSBin embeds  -->
+`trimRight()` removes any whitespace character, not just spaces or tabs.
 
 #### More Information:
-<!-- Please add any articles you think might be helpful to read before writing the article -->
-
-
+- [String.prototype.trimRight() on MDN](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/trimEnd)

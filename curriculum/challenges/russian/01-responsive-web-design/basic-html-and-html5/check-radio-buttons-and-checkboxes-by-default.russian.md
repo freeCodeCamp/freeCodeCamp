@@ -3,23 +3,23 @@ id: bad87fee1348bd9aedd08835
 title: Check Radio Buttons and Checkboxes by Default
 challengeType: 0
 videoUrl: ''
-localeTitle: Проверьте радио кнопки и флажки по умолчанию
+localeTitle: Отметьте радио кнопки и флажки по умолчанию
 ---
 
 ## Description
-<section id="description"> Вы можете установить флажок или переключатель для проверки по умолчанию с помощью атрибута <code>checked</code> . Для этого просто добавьте слово «проверено» во внутреннюю часть элемента ввода. Например: <code>&lt;input type=&quot;radio&quot; name=&quot;test-name&quot; checked&gt;</code> </section>
+<section id="description"> Вы можете установить флажок или переключатель отмеченным по умолчанию с помощью атрибута <code>checked</code> . Для этого просто добавьте слово «отмечено» во внутреннюю часть элемента ввода. Например: <code>&lt;input type=&quot;radio&quot; name=&quot;test-name&quot; checked&gt;</code> </section>
 
 ## Instructions
-<section id="instructions"> Установите первый из ваших <code>radio buttons</code> и первый из ваших <code>checkboxes</code> чтобы оба были <code>checkboxes</code> по умолчанию. </section>
+<section id="instructions"> Настройте первую из ваших <code>radio buttons</code> и первый из ваших <code>checkboxes</code> так чтобы они были отмеченны по умолчанию. </section>
 
 ## Tests
 <section id='tests'>
 
 ```yml
 tests:
-  - text: Ваш первый переключатель в вашей форме должен быть проверен по умолчанию.
+  - text: Ваш первый переключатель в вашей форме должен быть отмечен по умолчанию.
     testString: 'assert($("input[type="radio"]").prop("checked"), "Your first radio button on your form should be checked by default.");'
-  - text: Ваш первый флажок в вашей форме должен быть проверен по умолчанию.
+  - text: Ваш первый флажок в вашей форме должен быть отмечен по умолчанию.
     testString: 'assert($("input[type="checkbox"]").prop("checked"), "Your first checkbox on your form should be checked by default.");'
 
 ```
