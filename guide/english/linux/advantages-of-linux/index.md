@@ -54,3 +54,5 @@ Linux allows user to change desktop design and themes, add widgets and more. The
 ## It's Free.
 
 Hard to beat that!
+
+##Article on advantages of linux[https://blog.storagecraft.com/linux-advantages-disadvantages-open-source-technology/]
