@@ -12,7 +12,49 @@ Benefits:
 * You can have multiple environments, with multiple sets of packages, without conflicts among them. This way, different projects' requirements can be satisfied at the same time.
 * You can easily release your project with its own dependent modules.
 
-Here are two ways you can create Python virtual environments.
+Here are three ways you can create Python virtual environments.
+
+## venv
+
+From Python 3, [`venv`](https://docs.python.org/3/library/venv.html) is a standard module to create a virtual evironment. You do not need to install it. 
+
+### Create an Environemnt
+
+To create a new environment, use:
+```
+python -m venv path/to/env_name
+```
+This will create a directory `env_name` in the the corresponding path. The Python version of the virtual environment will be the same with the one that invokes this command. 
+
+### Activate an Environment
+
+Before using the environment, it must be activated as following:
+```
+source env_name/bin/activate
+```
+The activated environment names will be display at the beginning of the command prompt, such as:
+```
+(env_name) $
+```
+in Linux
+
+### Install Packages
+
+After activating the evironment, packages can be installed using built-in tools such as `pip` or `easy_install`. For example:
+```
+(env_name) $ pip install tensorflow
+```
+
+### Deactivate an Environment
+
+To stop using the evironment, you can deactivate it by this command
+```
+(env_name) $ deactivate
+```
+
+### Delete an Environment
+
+Delete the environment directory.
 
 ## Virtualenv
 
