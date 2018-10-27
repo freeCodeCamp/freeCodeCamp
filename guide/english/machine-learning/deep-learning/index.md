@@ -50,3 +50,7 @@ These days there are a variety of deep learning frameworks that allow you specif
 * <a href="https://adeshpande3.github.io/adeshpande3.github.io/A-Beginner's-Guide-To-Understanding-Convolutional-Neural-Networks/">A Beginner's Guide To Understanding Convolutional Neural Networks</a>
 * <a href="https://www.youtube.com/playlist?list=PLjJh1vlSEYgvGod9wWiydumYl8hOXixNu">Deep Learning SIMPLIFIED - DeepLearning.TV</a>
 * <a href="http://neuralnetworksanddeeplearning.com"> Neural Networks and Deep Learning</a>
+
+### Learning Resources for deep learning 
+* <a href="https://www.coursera.org/specializations/deep-learning">Deep Learning Speciliazation</a> 
+
