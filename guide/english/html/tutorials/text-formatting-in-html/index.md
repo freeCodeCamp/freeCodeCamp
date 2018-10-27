@@ -8,11 +8,13 @@ HTML provides you a lot of useful elements for text formatting. It allows to mak
 ### Bold and Strong
 You can easily change your text meaning by using HTML `<b>` element. It makes words bold, which function is singling out the fragment of sequence. For example: 
 
+
 ```
 The most important part of your code is <b>the end</b>, because if you <b>don't close</b> the element, it will affect to <b>everything</b>!
 ```
-
 You can also use `<strong>` as well - it adds also semantic "strong" importance. Your browser doesn't recognize a difference between those two elements, but it exists. 
+
+
 
 ### Italic and Emphasized
 Usually used when quote something or putting a translate of word in a lot of articles. It makes them italic - just imagine a little kicked in the right letters. For example: 
@@ -22,6 +24,11 @@ Theatre - <i>teatos</i>, <i>teates</i> and <i>teatron</i>.
 ```
 
 You can also use `<em>` as well - it adds also semantic "emphasized" importance. Your browser doesn't recognize a difference between those two elements, but it exists. 
+
+#### Please note
+In HTML5 it is recommended to use <em> and <strong> as they are more meaningful tags, and are better supported by screenreaders.
+Only use <b> and <i> when you cannot use <em> or <strong>
+
 
 ### Small 
 It makes your text smaller than normal size of used font. This element's meaning was changed in HTML5 - it represents side-comments and small print. 
