@@ -82,6 +82,45 @@ System.out.println("Full Car Model X= " + modelX.getManufacturerName() + " : " +
 So, `Car` is a class, which has the fields or properties `name` and `manufacturerName`. `modelS` is an object of `Car` class. So `modelS` also has the same properties and methods.
 It is pretty much standard to ensure the object's 'information', in this case the `name` an `manufacturerName` variables, to be private and only be accessed via these getters and setters. This prevents an issue with debugging code that involves an object's member variables. If the member variables were made public, and for whatever reason the program crashes, you could get a rather complex stack trace that may be difficult to point out the error. Keeping the variables private, and only accessible via getters and setters, will simplify this error message down.
 
+
+
+# Members of Class
+
+Following Members can be defined in class:
+1. Variables
+2. Blocks
+3. constructors
+4. Methods
+5. Inner classes
+
+Example 1:
+ ```java
+ public class Myclass{
+ int a;
+ a=10; //this line will give error because assignment statement is not allowed as a class member 
+ }
+ 
+ public class Test{
+ public static void main(String[] args){
+ Myclass myclass=new Myclass();
+ System.out.println(myclass.a);
+ }
+ }
+ ```
+Example 2:
+```java
+ public class Myclass{
+ public static void main(String[] args){
+ int a;
+ a=10;
+ System.out.println(a);
+ }
+ }
+ //this program will work fine.Output of this program is 10
+```
+Example 1  will show error because assignment statement is not allowed as a class member.Example 2 will not show any error because the assignment statement is inside the block and Block is a member of class.Given above 5members are only allowed in class directly.Except these 5members if we want to write anything in class directly it will show error.
+
+
 ### More Information:
 - [Oracle Java Docs :Classes](https://docs.oracle.com/javase/tutorial/java/javaOO/classes.html)
 - [Oracle Java Docs :Objects](https://docs.oracle.com/javase/tutorial/java/javaOO/objects.html)
