@@ -57,3 +57,5 @@ Desde los primeros días de la web, ha habido muchas versiones de HTML.
 *   [Elementos HTML](https://guide.freecodecamp.org/html/elements)
 *   [HTML semantico](https://guide.freecodecamp.org/html/html5-semantic-elements)
 *   [Atributos HTML](https://guide.freecodecamp.org/html/attributes)
+
+título and cuerpo should be title and body respectively
