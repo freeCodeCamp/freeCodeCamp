@@ -3,6 +3,12 @@ title: Defining the Problem
 ---
 ## Defining the Problem
 
+When defining a problem, do not try and solve more than one problem at a time.
+
+Do not assign a cause to the problem.  Do not assing blame and do not offer a solution.
+
+Drill down to the problem, and try to avoid identifying symptoms as problems.
+
 This is a stub. <a href='https://github.com/freecodecamp/guides/tree/master/src/pages/user-experience-research/defining-the-problem/index.md' target='_blank' rel='nofollow'>Help our community expand it</a>.
 
 <a href='https://github.com/freecodecamp/guides/blob/master/README.md' target='_blank' rel='nofollow'>This quick style guide will help ensure your pull request gets accepted</a>.
