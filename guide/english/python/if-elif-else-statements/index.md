@@ -23,6 +23,7 @@ _Example_:
 ```python
 if 1:   # 1 evaluates to true
   print('If block will execute!')
+#Any value except for 0 would be taken as True and if 0 is written then only it'll be taken as a false condition
  ```
 
 You can optionally add an `else` response that will execute if the condition is `False`:
@@ -31,6 +32,7 @@ if not True:
   print('If statement will execute!')
 else:
   print('Else statement will execute!')
+#not true statements are logically equivalent to being false.
 ```
 Or you can also see this example
 ```python
