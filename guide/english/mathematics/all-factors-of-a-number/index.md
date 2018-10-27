@@ -77,4 +77,9 @@ We can quickly confirm that we have identified all positive factors with the fol
 
 1 | 2 | 3 | 6 | ... | 7 | 14 | 21 | 42
  --- | --- | --- | --- | --- | --- | --- | --- | ---
+ 
+#### External Link
+[PaurpleMath](https://www.purplemath.com/modules/factnumb.htm)
+
+
 
