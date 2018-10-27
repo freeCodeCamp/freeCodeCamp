@@ -7,7 +7,7 @@ title: Bash touch
 **Change timestamps of files.**
 
 ```
-touch [options] filename
+touch [options] filename_1 filename_2 filename_3 ... filename_n 
 ```
 
 Creates empty file if not exists or modify times of existing files to current time.
@@ -22,6 +22,12 @@ Examples:
 touch -t YYYYMMDDHHMM.SS filename
 touch -r file1 file2
 touch -am file3
+```
+
+Creates multiple files if given multiple file arguments:
+Example:
+```
+touch a b c z y x
 ```
 
 ### More Information:
