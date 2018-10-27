@@ -5,6 +5,8 @@ title: Depth First Search (DFS)
 
 Depth First Search is one of the most simple graph algorithms. It traverses the graph by first checking the current node and then moving to one of its sucessors to repeat the process. If the current node has no sucessor to check, we move back to its predecessor and the process continues (by moving to another sucessor). If the solution is found the search stops.
 
+Implementation using recursion is the simplest way to code DFS.
+
 
 ### Visualisation
 
