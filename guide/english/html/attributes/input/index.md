@@ -33,6 +33,7 @@ In the above example, there are two input fields which ask the user to enter the
 
 #### More Information:
 <a href="https://www.youtube.com/watch?v=qJ9ZkxmVf5s">Youtube</a>
+<a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/input">MDN: The Input (Form Input) element</a>
 
 
 ## Input
@@ -40,3 +41,11 @@ The HTML `<input>` tag is of many types to enter data. Some of them are:
 Type:Text(This is the most common type which is used to create general textboxes)
 Type:Password(This type is used for creation of password feilds)
 Type:Hidden(This is a special type of Input that is not shown to the user but it is used for passing information from one page to another while using <a href> tag)
+
+Common input types are:
+* text
+* radio
+* checkbox
+* password
+* email
+* submit
