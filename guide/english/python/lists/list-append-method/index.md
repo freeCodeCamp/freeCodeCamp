@@ -15,7 +15,7 @@ print(words)
 ```
 #### Output
 ```
-["I", "love", "Python", "very much"]
+['I', 'love', 'Python', 'very much']
 ```
  As you might have noticed the element `"very much"` is appended to the list.
 
