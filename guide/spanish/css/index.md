@@ -23,3 +23,7 @@ Otra sugerencia para los principiantes es que W3C [Comenzando con HTML + CSS](ht
 El sitio [CSS Zen Garden](http://www.csszengarden.com/) es un gran ejemplo de cómo se puede diseñar el mismo html para que parezca totalmente único.
 
 Para una demostración del poder de CSS, echa un vistazo a [Species In Pieces](http://species-in-pieces.com/#) .
+
+Luego de lo basico pueden seguir con Flexbox y CSSgrid. La introduccion de cada uno se puede aprender con estos juegos: [FLEXBOX FROGGY
+](https://flexboxfroggy.com/#es) y [GRID GARDEN
+](http://cssgridgarden.com/#es).
