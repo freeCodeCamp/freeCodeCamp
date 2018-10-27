@@ -2,6 +2,8 @@
 title: Random Functions
 ---
 
+#Random Functions
+
 * Random numbers are a convenient way to introduce randomisation into your program. For example, if you want to run any simulations, or play games, delete random indices of an array etc, then random numbers is the way to go.     
 * The header file to include for using random numbers in c++ is ` cstdlib`.
 * *Pro tip:-*   	 You can use `cpp #include<bits/stdc++.h> ` to include all functions from all header files. 
