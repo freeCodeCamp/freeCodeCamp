@@ -8,6 +8,7 @@ which are automatically imported in editors like BlueJ or can be imported using 
 ```java
 import java.lang.*;
 import java.io.*;
+import java.util.*;
 ```
 
 These comprise functions which make an otherwise long and hard task easier to do.
