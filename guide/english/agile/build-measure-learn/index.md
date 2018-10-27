@@ -22,3 +22,5 @@ Next, using the data collected, a decision has to be made, whether or not your p
 #### More Information:
 [Why Build, Measure, Learn – isn’t just throwing things against the wall to see if they work – the Minimal Viable Product](https://steveblank.com/2015/05/06/build-measure-learn-throw-things-against-the-wall-and-see-if-they-work/)
 [The Build-Measure-Learn Feedback Loop](https://www.mindtools.com/pages/article/build-measure-learn.htm)
+
+Using the above mentioned methods, you can build the right product.
