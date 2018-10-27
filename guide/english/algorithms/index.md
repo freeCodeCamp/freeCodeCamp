@@ -52,6 +52,7 @@ This video introduces algorithms and briefly discusses some high profile uses of
 This video visually demonstrates some popular sorting algorithms that are commonly taught in programming and Computer Science courses.
 
 [Algorithm Visualizer](http://algo-visualizer.jasonpark.me)
+[Visual Algorithm](https://visualgo.net/en)
 
 This is also a really good open source project that helps you visualize algorithms. 
 
