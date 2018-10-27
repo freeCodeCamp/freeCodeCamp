@@ -29,7 +29,7 @@ If test expression is true :
 
 ```cpp
 
-int a=10;
+int a = 10;
 if (a < 20) // This expression is true, so...
 {
   //...the code in this block gets executed, and...
@@ -44,8 +44,8 @@ else
 If test expression is false :
 
 ```cpp
-int a=10;
-if (a>20) // This expression is false, so this time...
+int a = 10;
+if (a > 20) // This expression is false, so this time...
 {
   //...this code gets skipped...
 }
@@ -64,21 +64,21 @@ else
 using namespace std;
 int main()  
 {
-  int no;
+  int num;
   cout << "Enter a number: " << endl;
 
-  cin >> no;
+  cin >> num;
   
   // condition to check if number is positive or negative
-  if (no >= 0) // positive
+  if (num >= 0) // positive
   {
     // block if value is true
-    cout << "You entered a positive number: " << no << endl;
+    cout << "You entered a positive number: " << num << endl;
   }
   else         // negative
   {
     // block if value is false
-    cout << "You entered a negative number: " << no << endl;
+    cout << "You entered a negative number: " << num << endl;
   }
   
   // program continues
@@ -119,16 +119,16 @@ If we have to make decisions based on more than one conditions using if else. We
 int main()
 {
     int score;
-    std::cout<<"Enter your score: \n";
-    std::cin>>score;
-    if(score>=90)
-        std::cout<<"Top performance.";
-    else if(score<90 && score>=70)
-        std::cout<<"Good performance";
-    else if(score<70 && score>=45)
-        std::cout<<"Average performance";
-    else if(score<45 && score>=30)
-        std::cout<<"You can improve it.";
+    std::cout << "Enter your score: \n";
+    std::cin >> score;
+    if(score >= 90)
+        std::cout << "Top performance.";
+    else if(score < 90 && score >= 70)
+        std::cout << "Good performance";
+    else if(score < 70 && score >= 45)
+        std::cout << "Average performance";
+    else if(score < 45 && score >= 30)
+        std::cout << "You can improve it.";
    return 0;
 }
 ```
@@ -149,7 +149,7 @@ In this scinerio we will need an if...else if...else ladder statement. The progr
 using namespace std;
 int main()
 {
-	int number1,number2;
+	int number1, number2;
 	cout << "Enter first number: \n";
 	cin >> number1;
 	cout << "Enter second number: \n";
