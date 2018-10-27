@@ -58,3 +58,23 @@ This is also a really good open source project that helps you visualize algorith
 [Infographic on how Machine Learning Algorithms Work](https://www.boozallen.com/content/dam/boozallen_site/sig/pdf/infographic/how-do-machines-learn.pdf)
 
 This infographic shows you how unsupervised and supervised machine learning algorithms work..
+
+
+Algorithmic Analysis
+
+
+By analysis we mean that we are studying existing algos seeing their features applications, performance analysis, performance measurement, studying their complexity and improving them. Performance Analysis. Performance Measurement. Algorithms.
+
+
+
+The goal of algorithm analysis is to make meaningful comparisons between algorithms, but there are some problems:
+
+The relative performance of the algorithms might depend on characteristics of the hardware, so one algorithm might be faster on Machine A, another on Machine B. The general solution to this problem is to specify a machine model and analyze the number of steps, or operations, an algorithm requires under a given model.
+
+
+Relative performance might depend on the details of the dataset. For example, some sorting algorithms run faster if the data are already partially sorted; other algorithms run slower in this case. A common way to avoid this problem is to analyze the worst case scenario. It is sometimes useful to analyze average case performance, but that’s usually harder, and it might not be obvious what set of cases to average over.
+
+
+Relative performance also depends on the size of the problem. A sorting algorithm that is fast for small lists might be slow for long lists. The usual solution to this problem is to express run time (or number of operations) as a function of problem size, and to compare the functions asymptotically as the problem size increases.
+
+
