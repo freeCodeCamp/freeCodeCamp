@@ -9,6 +9,12 @@ Popular choices for Public Cloud providers are Amazon Web Services, Microsoft Az
 
 Many modern websites and big data efforts are said to be developed in the Cloud, meaning they are operating in some of these massive shared datacenters.
 
+#Cloud Computing
+ * Ability to run programs on servers not owned by the user.
+ * A framework that allows users to run their programs on, all the processing being done on a virtualized system of an array of servers      scattered around the globe.
+ * Salesforce is the biggest platform for cloud computing and we have to download the Force.com IDE plugins to provide an environment to      run application of the salesforce.
+ * Language used to code is APEX and to design databases used SOSL, SOQL.
+ 
 #### More Information:
 
 [Getting Started with AWS](https://aws.amazon.com/getting-started/)
