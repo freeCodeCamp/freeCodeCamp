@@ -33,7 +33,7 @@ a: 3 b: 4
 On the other hand, you can loop over anything that is iterable. You can call a function or use a list literal.
 
 ```python
-for person in load_persons():
+for person in load_persons():# load_persons() is not defined
   print("The name is:", person.name)
 ```
 
@@ -67,7 +67,7 @@ The output will contain results from lower bound i.e 0 to the upper bound i.e 10
 Output:
 
 ```
->
+
 0
 1
 2
@@ -78,7 +78,7 @@ Output:
 7
 8
 9
->
+
 ```
 Additionally, one can specify the lower bound of the sequence and even the step of the sequence by adding a second and a third parameter. 
 
@@ -89,11 +89,11 @@ for i in range(4,10,2): #From 4 to 9 using a step of two
 Output:
 
 ```
->
+
 4
 6
 8
->
+
 ```
 
 **xrange() function**
@@ -113,13 +113,13 @@ for value in A:
 Output:
 
 ```
->
+
 hello
 1
 65
 thank you
 [2, 3]
->
+
 ```
 
 **Iterate over keys in a dictionary (aka hashmap)**
@@ -136,11 +136,11 @@ for key in fruits_to_colors:
 Output:
 
 ```
->
+
 apple #ff0000
 lemon #ffff00
 orange #ffa500
->
+
 ```
 **Iterate over two lists of same size in a single loop with the zip() function**
 
@@ -155,11 +155,11 @@ for a, b in zip(A, B):
 
 Output:
 ```
->
-a a True
-b d False
-c e False
->
+File "<ipython-input-20-d972b7e5cf10>", line 5
+    print a, b, a == b
+          ^
+SyntaxError: Missing parentheses in call to 'print'
+
 ```
 
 
@@ -175,25 +175,26 @@ for index,word in enumerate(A):
 Output:
 
 ```
->
+
 0 this
 1 is
 2 something
 3 fun
->
+
 ```
 
 A common use case is iterating over a dictionary:
 
 ```python
-for name, phonenumber in contacts.items():
+for name, phonenumber in contacts.items(): #name 'contacts' is not defined
+
   print(name, "is reachable under", phonenumber)
 ```
 
 If you absolutely need to access the current index of your iteration, do **NOT** use `range(len(iterable))`! This is an extremely bad practice and will get you plenty of chuckles from senior Python developers. Use the built in function `enumerate()` instead:
 
 ```python
-for index, item in enumerate(shopping_basket):
+for index, item in enumerate(shopping_basket): # name 'shopping_basket' is not defined
   print("Item", index, "is a", item)
 ```
 **for/else statements**
@@ -203,11 +204,11 @@ Pyhton permits you to use else with for loops, the else case is executed when no
 week_days = ['Monday','Tuesday','Wednesday','Thursday','Friday']
 today = 'Saturday'
 for day in week_days:
-  if day == today:
+  if (day == today):
     print('today is a week day')
     break
-else:
-  print('today is not a week day')
+  else:
+    print('today is not a week day')
 ```
 In the above case the output will be `today is not a week day` since the break within the loop will never be executed.
 
@@ -224,9 +225,9 @@ print (UPPERCASE)
 
 Output:
 ```
->
+
 ['THIS', 'IS', 'AWESOME', 'SHINNING', 'STAR']
->
+
 ```
 
 #### More Information:
