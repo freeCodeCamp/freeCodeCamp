@@ -35,7 +35,7 @@ localeTitle: ياقوت
  # Output "Hello World!" 
  g.salute 
 ` 
-
+puts "turki"
 ## الإصدار
 
 الإصدار المستقر الحالي هو [2.5.1](https://www.ruby-lang.org/en/news/2018/03/28/ruby-2-5-1-released/) .
