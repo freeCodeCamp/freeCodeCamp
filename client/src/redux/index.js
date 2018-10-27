@@ -47,6 +47,7 @@ export const types = createTypes(
   [
     'appMount',
     'closeDonationModal',
+    'hardGoTo',
     'openDonationModal',
     'onlineStatusChange',
     'updateComplete',
@@ -80,6 +81,11 @@ export const closeDonationModal = createAction(types.closeDonationModal);
 export const openDonationModal = createAction(types.openDonationModal);
 
 export const onlineStatusChange = createAction(types.onlineStatusChange);
+
+// `hardGoTo` is used to hit the API server directly
+// without going through /internal
+// used for things like /signin and /signout
+export const hardGoTo = createAction(types.hardGoTo);
 
 export const updateComplete = createAction(types.updateComplete);
 export const updateFailed = createAction(types.updateFailed);

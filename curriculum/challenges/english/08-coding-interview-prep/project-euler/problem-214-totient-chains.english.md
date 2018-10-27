@@ -39,7 +39,7 @@ What is the sum of all primes less than 40000000 which generate a chain of lengt
 ```yml
 tests:
   - text: <code>euler214()</code> should return 1677366278943.
-    testString: 'assert.strictEqual(euler214(), 1677366278943, "<code>euler214()</code> should return 1677366278943.");'
+    testString: assert.strictEqual(euler214(), 1677366278943, '<code>euler214()</code> should return 1677366278943.');
 
 ```
 
