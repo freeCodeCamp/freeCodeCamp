@@ -17,8 +17,12 @@ Properties of B-Tree:
 7) B-Tree grows and shrinks from root which is unlike Binary Search Tree. Binary Search Trees grow downward and also shrink from downward.
 8) Like other balanced Binary Search Trees, time complexity to search, insert and delete is O(Logn).
 
-Search:
+### Search:
 Search is similar to search in Binary Search Tree. Let the key to be searched be k. We start from root and recursively traverse down. For every visited non-leaf node, if the node has key, we simply return the node. Otherwise we recur down to the appropriate child (The child which is just before the first greater key) of the node. If we reach a leaf node and don’t find k in the leaf node, we return NULL.
 
-Traverse:
+### Traverse:
 Traversal is also similar to Inorder traversal of Binary Tree. We start from the leftmost child, recursively print the leftmost child, then repeat the same process for remaining children and keys. In the end, recursively print the rightmost child.
+
+### Insert 
+First we search and find out to which node the key should belong to and we insert it into it. Afterwards we look for and fix these problems:
+1. if the number of keys is too high(greater than t - 1) then we move the middle key to the nodes parent. We do this recursively up until root. If the number of keys in the root is too high, then we make the middle key to be the new root of the whole tree and connect it to the node it was in before.
