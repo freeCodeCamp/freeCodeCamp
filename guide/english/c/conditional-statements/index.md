@@ -168,6 +168,14 @@ In the above pseudocode, suppose the value of n is equal to constant2. The compi
 
 The break statement is used to prevent the code running into the next case.
 
+### Break and Continue Statement
+It is sometimes desirable to skip some statements inside the loop or terminate the loop immediately without checking the test expression. In such cases Break and COntinue statement are used.
+The break statement terminates the loop (for, while and do...while loop) immediately when it is encountered.
+
+The continue statement skips some statements inside the loop. The continue statement is used with decision making statement such as if...else.
+
+In Case of a Switch Case, if the break statement is not used after each case, the all the statement following the case that gets satisfied is executed till default is reached or till it encounters a break keyword. This is known as FALL THROUGH.
+
 ### Example:
 ```C
 // Program to create a simple calculator
