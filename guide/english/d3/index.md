@@ -47,6 +47,27 @@ There are over 20,000+ **D3.js** examples you could learn from, but you never kn
 ![](https://i1.wp.com/pbiswas101.files.wordpress.com/2018/07/force.gif?w=400&h=100)
 
  So, with just some basic knowledge of latest HTML5 features such as SVG, Canvas you can dive into a world where library like **D3.js** bring data to life!
+ 
+ ## Installing
+
+If you use npm, `npm install d3`. Otherwise, download the [latest release](https://github.com/d3/d3/releases/latest). The released bundle supports anonymous AMD, CommonJS, and vanilla environments. You can load directly from [d3js.org](https://d3js.org), [CDNJS](https://cdnjs.com/libraries/d3), or [unpkg](https://unpkg.com/d3/). For example:
+
+```html
+<script src="https://d3js.org/d3.v5.js"></script>
+```
+
+For the minified version:
+
+```html
+<script src="https://d3js.org/d3.v5.min.js"></script>
+```
+
+You can also use the standalone D3 microlibraries. For example, [d3-selection](https://github.com/d3/d3-selection):
+
+```html
+<script src="https://d3js.org/d3-selection.v1.js"></script>
+```
+
  ###### Contribution
 
 -  https://github.com/d3/
