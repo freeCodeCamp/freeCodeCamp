@@ -37,6 +37,7 @@ Some apps built using Electron include:
 
 ### Additional info references
 - [Official site](https://electronjs.org/)
+- [Official Documentation](https://electronjs.org/docs/tutorial/quick-start)
 - [Video - What is Electron](https://www.youtube.com/watch?v=8YP_nOCO-4Q&feature=youtu.be)
 - [Popular Electron Modules](https://github.com/electron-userland)
 - [Electron and React](https://medium.freecodecamp.org/building-an-electron-application-with-create-react-app-97945861647c)
