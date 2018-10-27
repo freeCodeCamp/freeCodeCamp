@@ -3,15 +3,15 @@ title: A Guide to Class and Id Selectors
 ---
 ## A Guide to Class and Id Selectors
 
-This is an article based on CSS selectors. CSS is used for styling HTML elements and the webpage in general. For CSS to style an element on the page, it needs to select that element first.
+This is an article based on CSS selectors. CSS is used for styling HTML elements and the webpage in general. For CSS to style an element on the page, it needs to target that element first.
 
-Like how you need to select a file on your computer before deleting it. You need to tell your machine exactly which file you want to modify or delete. Similarly, you need to tell CSS which element to target when applying different styles and colors on it.
+Like how you need to select a file on your computer before deleting it. You need to tell your machine exactly which file you want to modify or delete. Similarly, you need to tell CSS which element to target when applying different styles to it.
 
-Although CSS can select elements very well, you can instruct it to select very specific elements. By the end of this article, you will walk away with the knowledge to select and style specific elements.
+By the end of this article, you will walk away with the knowledge to select and style specific elements.
 
-### What is class and ID?
+### What is Class and Id?
 
-Let's say you have 5 paragraph elements in your HTML code.
+Let's say you have 5 paragraph elements in your HTML document.
 
 ```html
 <p> First paragraph </p>
@@ -66,7 +66,7 @@ If you understood what `class` is, then ID will be easy to understand.
 
 From our previous example, a club identity card represents the club and all the members have it. However if you ask for their individual identity proof, a person will show a different identity card that only they have. Everyone has a different one and can be used to identify them individually.
 
-This is what ID is. Just like personal identity cards, only one HTML element can have a particular `id`. No two elements have the same `id`. 
+This is what ID is. Just like personal identity cards, only one HTML element can have a particular `id`. No two elements can have the same `id`. 
 
 ```html
 <p id="car"> Ferrari </p>
@@ -92,7 +92,7 @@ Similar to the `class` example, you can select a particular element and apply st
 
 It's easy to remember - use `.` before the name for *class* and a `#` before the name for *id*. 
 
-Both have their own uses.
+Both have their own uses. 
 
 >class is used when styles are to be applied on multiple elements and id is used when styles are to be applied on a particular element.
 
