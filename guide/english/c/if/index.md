@@ -15,8 +15,8 @@ else {
 }
 ```
 
-When `condition` is true, code inside the `if` section executes, otherwise `else` executes. Sometimes you would need to add a second condition. For readability, you should use a `else if` rather than nesting `if` statements.
-
+When `condition` is true, code inside the `if` section executes, otherwise `else` executes. Sometimes you would need to add a second condition. For readability, you should use a `else if` rather than nesting `if` statements. Instead of using 'if-else' statement user can use switch case statement also.
+.
 ```
 if (condition) {
 	// Do something if `condition` is true
@@ -38,7 +38,7 @@ Note that the `else` and `else if` sections are not required, while `if` is mand
 
 int main () {
 
-   // Local variable definition
+   // Local variable declaration
    int a = 100;
 
    // Check the boolean condition
