@@ -20,9 +20,9 @@ Na minha vida como usuário e, mais tarde, como desenvolvedor, que se beneficia 
 
 Se você ficar fora dessas categorias bastante amplas, por favor me avise. Eu sempre gosto de ouvir as pessoas que lêem o que eu escrevo. A implementação da acessibilidade afeta toda a equipe, desde as cores escolhidas pelo designer, a cópia escrita pelo redator e até você, o desenvolvedor.
 
-## Então, o que é acessibilidade de qualquer maneira?
+## Então, afinal, o que é acessibilidade?
 
-Acessibilidade em si é um pouco um termo enganador, às vezes, especialmente se o inglês é sua segunda língua. Às vezes é referido como design inclusivo.
+Acessibilidade em si é um termo um pouco enganador, às vezes, especialmente se o inglês é sua segunda língua. Às vezes é referido como design inclusivo.
 
 Se o seu site estiver na Internet, acessível por qualquer pessoa com um navegador da Web, em certo sentido, esse site estará acessível a todos com um navegador da web.
 
@@ -33,7 +33,7 @@ Você poderia se fazer perguntas como as seguintes:
 *   Se você adicionar informações que só estão contidas em um arquivo de áudio, uma pessoa surda pode obter essa informação?
 *   Se você denotar uma parte importante do seu site com uma determinada cor, uma pessoa daltônica saberá disso?
 *   Se você adicionar imagens em seu site que transmitam informações importantes, como uma pessoa cega ou com deficiência visual saberá?
-*   Se você quiser navegar pelo aplicativo com teclado ou boca-de-pau, será possível e previsível?
+*   Se você quiser navegar pelo aplicativo com teclado ou bastão de boca, será possível e previsível?
 *   Seu aplicativo assume a orientação do dispositivo e se o usuário não puder alterá-lo fisicamente?
 *   Há algum perdão dos aspectos cronometrados de sua inscrição para alguém que pode precisar de mais tempo para preencher um formulário?
 *   Seu aplicativo ainda funciona (aprimoramento progressivo) supondo que o JavaScript não carrega no tempo?
