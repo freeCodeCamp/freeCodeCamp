@@ -26,6 +26,8 @@ The AVL trees are more balanced compared to Red Black Trees, but they may cause 
 A left-leaning red–black (LLRB) tree is a type of self-balancing binary search tree. It is a variant of the red–black tree and guarantees the same asymptotic complexity for operations, but is designed to be easier to implement.
 
 ### Properties of Left Leaning Red-Black Trees
+General B-trees use nodes that are ordered arrays of keys. 
+
 All of the red-black tree algorithms that have been proposed are characterized by a worst-case search time bounded by a small constant multiple of log N in a tree of N keys, and the behavior observed in practice is typically that same multiple faster than the worst-case bound, close to the optimal log N nodes examined that would be observed in a perfectly balanced tree.
 
 Specifically, in a left-leaning red-black 2-3 tree built from N random keys:
