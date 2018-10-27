@@ -131,3 +131,14 @@ Output:
 4
 5
 ```
+## Input an array using for loop
+
+```cpp
+
+int arr[10];
+
+for(int i = 0; i < 10; i++){
+   cin>>arr[i];
+}
+
+```
