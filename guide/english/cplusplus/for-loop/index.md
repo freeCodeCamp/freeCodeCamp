@@ -46,7 +46,7 @@ Next the condition is evaluated. If it holds true, the body of the loop is execu
 The update statement is used to alter the loop variable by using simple operations like addition,subtraction,multiplication or division.
 The update statement executes after the execution of the body of the loop.
 
-## IMPLEMENTATION:
+## Implementation
 ```C++
 #include <iostream>
 using namespace std; // Here we use the scope resolution operator to define the scope of the standar functions as std::
@@ -58,9 +58,11 @@ int main () {
    }
 
    return 0;
-}```
+}
+```
 
-Output:
+Which would produce the following output:
+```
 value of a: 10
 value of a: 11
 value of a: 12
@@ -71,26 +73,25 @@ value of a: 16
 value of a: 17
 value of a: 18
 value of a: 19
+```
 
-##Single lined loop
-The body of the for loop need not be enclosed in braces if the loop iterates over only one satatement.
-##Example
-```c++
-   #include<iostream.h>
-   using namespace std;
+### Single lined loop
+The body of the for loop need not be enclosed in braces if the loop iterates over only one statement.
+```C++
+#include<iostream.h>
+using namespace std;
  
-   int main () {
+int main () {
    // Single line for loop
    for( int a = 10; a < 20; a = a + 1 ) 
       cout << "value of a: " << a << endl;
    
-
    return 0;
-}```
+}
+```
 
-This would generate the same output as the previous program.
-i.e 
-Output:
+This would generate the same output as the previous program, i.e:
+```
 value of a: 10
 value of a: 11
 value of a: 12
@@ -101,7 +102,6 @@ value of a: 16
 value of a: 17
 value of a: 18
 value of a: 19
-
 ```
 
 ## Explanation
