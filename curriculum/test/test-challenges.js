@@ -73,7 +73,8 @@ const jQueryScript = fs.readFileSync(
         if (challengeType !== challengeTypes.html &&
             challengeType !== challengeTypes.js &&
             challengeType !== challengeTypes.bonfire &&
-            challengeType !== challengeTypes.modern
+            challengeType !== challengeTypes.modern &&
+            challengeType !== challengeTypes.backend
         ) {
           return;
         }
