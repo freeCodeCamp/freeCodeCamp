@@ -21,6 +21,7 @@ These instructions have not been translated yet. Please check this issue for det
 This directory contains all of the documentation on contributing to freeCodeCamp.org
 
 ## [If you are getting started, start by reading this first.](/CONTRIBUTING.md)
+## [Прежде чем начать прочитите это.](/CONTRIBUTING.md)
 
 ---
 
