@@ -96,6 +96,12 @@ title: Books to Read for Programmers
 - https://www.amazon.com/Pro-NET-Core-Andrew-Troelsen/dp/1484230175/ref=sr_1_1?s=books&ie=UTF8&qid=1539643534&sr=1-1&keywords=Pro-NET-Core-Andrew-Troelsen
 - ISBN-13: 978-1484230176
 
+## C++
+
+*Starting Out with C++: Early Objects
+- [Amazon](https://www.amazon.com/Starting-Out-Early-Objects-9th/dp/0134400240/ref=sr_1_2?ie=UTF8&qid=1540660871&sr=8-2&keywords=c%2B%2B+starting+out+with)
+- ISBN-13: 978-0134400242
+
 ## Coding Interview
 
 *Cracking the Coding Interview: 150 Programming Questions and Solutions*
