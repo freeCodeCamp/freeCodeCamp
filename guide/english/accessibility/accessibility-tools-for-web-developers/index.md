@@ -50,5 +50,5 @@ There are many tools and online resources that can help you to ensure that your 
 
 ***
 
-#### More Reources
+#### More Resources
 You can find many more tools for accessible web design on <a href='http://www.d.umn.edu/itss/training/online/webdesign/tools.html' target='_blank' rel='nofollow'>this list</a> made by the University of Minnesota Duluth.
