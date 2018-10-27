@@ -3,7 +3,7 @@ id: bad87fee1348bd9acde08712
 title: Use Responsive Design with Bootstrap Fluid Containers
 challengeType: 0
 videoUrl: ''
-localeTitle: Используйте адаптивный дизайн с контейнерами для загрузочных жидкостей
+localeTitle: Используйте адаптивный дизайн с подвижными контейнерами Bootstrap
 ---
 
 ## Description
