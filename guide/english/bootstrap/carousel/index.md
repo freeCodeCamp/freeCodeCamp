@@ -1,6 +1,8 @@
 ---
 title: Carousel
 ---
+![alt text](https://camo.githubusercontent.com/4d0333c5852cb50f89df8f8e905ca40aa531bdb1/68747470733a2f2f71696974612d696d6167652d73746f72652e73332e616d617a6f6e6177732e636f6d2f302f31353434342f35656366613730382d656134302d353864652d323864652d3562396163356436616235352e676966 "Carousel GIF")
+
 ## Carousel
 
 Carousel is a slideshow component for cycling through elements like images or slides of text.
