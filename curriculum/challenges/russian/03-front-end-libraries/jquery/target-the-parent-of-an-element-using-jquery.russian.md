@@ -3,11 +3,19 @@ id: bad87fee1348bd9aed308826
 title: Target the Parent of an Element Using jQuery
 challengeType: 6
 videoUrl: ''
-localeTitle: Задайте родительский элемент элемента с помощью jQuery
+localeTitle: Задайте родителя элемента с помощью jQuery
 ---
 
 ## Description
-undefined
+Каждый HTML элемент имеет `родительский` элемент, от которого он `наследует` свойства. 
+
+Например, ваш элемент `jQuery Playground h3` имеет родительский элемент `<div class="container-fluid">`, который в свою очередь имеет в качестве родителя `body`.
+  
+В jQuery есть функция называющаяся `parent()`, которая позволяет вам получить доступ к родителю любого элемента, который вы выбрали.
+
+Вот пример того, как бы вы использовали функцию `parent()`, если бы вы захотели дать синий фон родительскому элементу элемента `left-well`. 
+  
+`$("#left-well").parent().css("background-color", "blue")`
 
 ## Instructions
 <section id="instructions">

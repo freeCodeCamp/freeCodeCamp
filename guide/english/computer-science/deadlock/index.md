@@ -33,6 +33,7 @@ Possible deadlocks can be discovered through the use of resource allocation grap
 ![resource allocation graph example](http://www.cs.fsu.edu/~baker/cop5611.S03/graphics/basicdeadlock2.gif)
 
 ### Methods for Handling Deadlocks
+- Put the system in a situation where the deadlock can be avoided, i.e. Deadlock Avoidance.
 - Ensure that the system will never enter a deadlock state.
 - Allow the system to enter a deadlock state and then recover.
 - Ignore the problem and pretend that deadlocks never occur in the system; **used by most operating systems, including UNIX**.
