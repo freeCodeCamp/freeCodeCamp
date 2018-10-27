@@ -33,6 +33,21 @@ Additional slots to connect hardware in the form of Peripheral Component Interco
 
 Motherboards come in different sizes, known as form factors. The most common motherboard form factor is ATX. The different types of ATX are known as micro-ATX (sometimes shown as µATX, mini-ATX, FlexATX, EATX, WATX, nano-ATX, pico-ATX, and mobileATX).
 
+##Troubleshooting for Faulty Motherboard
+
+ A]System doesn't power on
+  1.Swap battery with another known good battery.
+  2.Swap AC Adapter with another known good adapter.
+  3.Swap DC-IN jack with another KG DC-IN jack.
+ 
+ B]Doesn't Boot
+  1.Perform all steps mentioned above. 
+  2.Swap hard drive with KG hard drive(SSD).
+  3.Finally swap motherboard with another KG motherboard
+         
+ C]Blue Screen Of Death(BSOD)
+  Perform all above steps and you will get solution.
+
 #### More Information:
 <!-- Please add any articles you think might be helpful to read before writing the article -->
 * <a href='https://www.computerhope.com/jargon/m/mothboar.htm' target='_blank' rel='nofollow'>Motherboard</a>
