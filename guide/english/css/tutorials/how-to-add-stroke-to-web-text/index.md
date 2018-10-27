@@ -11,5 +11,4 @@ This is a stub. <a href='https://github.com/freecodecamp/guides/tree/master/src/
 
 #### More Information:
 <!-- Please add any articles you think might be helpful to read before writing the article -->
-
-
+[CSS-Tricks: Adding Stroke to Web Text](https://css-tricks.com/adding-stroke-to-web-text/)
