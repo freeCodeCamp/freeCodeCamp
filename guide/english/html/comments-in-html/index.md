@@ -57,3 +57,4 @@ These comments are only available in Internet Explorer and can be used up to IE9
 ```
 
 [About conditional comments](https://msdn.microsoft.com/en-us/library/ms537512(v=vs.85).aspx)
+(Additional reference: Jon Duccett HTML and CSS)
