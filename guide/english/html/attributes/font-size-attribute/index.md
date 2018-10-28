@@ -19,4 +19,8 @@ Example:
 </html>
 ```
 
-Note : `The size attribute of <font> is not supported in HTML5. Use CSS instead.`
+Note : The size attribute of `<font>` is not supported in HTML5. Use CSS instead.
+
+### More information:
+
+* [Try out coding the font size](https://www.w3schools.com/tags/tryit.asp?filename=tryhtml_font_size)
