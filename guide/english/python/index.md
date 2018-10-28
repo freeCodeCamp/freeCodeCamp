@@ -109,12 +109,12 @@ Some of the principles that influenced the design of Python are included as an E
 4. It is a very easy language to learn and debug too. To check if a small bit of code works or not, you can just open up the interpreter and test
 
 #### Cons
-1. Being open source, many different ways have developed over the year for same function. This sometimes, creates chaos for others to read someone else code.
-2. It is a slow language. So, a very bad language to use for developing general algorithms.
+1. Being open source, many different ways have developed over the years for the same function. This can sometimes creates chaos for others when reading someone else's code.
+2. Python is a high level language so it is not as fast as its peers like C and Java.
 
 ## Documentation
 
-<a href='https://docs.python.org/3/' target='_blank' rel='nofollow'>Python is well documented</a>. These docs include tutorials, guides, references and meta information for language.
+<a href='https://docs.python.org/3/' target='_blank' rel='nofollow'>Python is well documented</a>. These docs include tutorials, guides, references, and meta information for the language.
 
 Another important reference is the Python Enhancement Proposals (<a href='https://www.python.org/dev/peps/' target='_blank' rel='nofollow'>PEPs</a>). Included in the PEPs is a style guide for writing Python code, <a href='https://www.python.org/dev/peps/pep-0008/' target='_blank' rel='nofollow'>`PEP 8`</a>.
 
@@ -154,8 +154,8 @@ will do that itself based on the type of value assigned.
 
 The `objects` parameter is prefixed with a `*` which indicates that the function will take an arbitrary number of arguments for that parameter.
 
-## Things you can do with python
-As stated python is a general purpose language. You can use it to do anything you like but one of the major uses of python is in machine learning and artificial intelligence. It is also a popular language in web development with some amazing frameworks like [Django](https://www.djangoproject.com/) and [flask](http://flask.pocoo.org/). It is also a popular scripting language. With its easy to read syntax it is becoming one the most popular programming languages growing rapidly in different fields.
+## Things you can do with Python
+As stated Python is a general purpose language. You can use it to do anything you like but one of the major uses of Python is in machine learning and artificial intelligence. It is also a popular language in web development with some amazing frameworks like [Django](https://www.djangoproject.com/) and [flask](http://flask.pocoo.org/). It is also a popular scripting language. With its easy to read syntax it is becoming one the most popular programming languages — growing rapidly in different fields.
 
 ## Want to learn more?
 
