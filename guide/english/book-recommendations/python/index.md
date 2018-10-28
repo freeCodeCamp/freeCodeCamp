@@ -67,6 +67,16 @@ You'll learn many of the first princliples for data science tools and how algori
 - ISBN-10: 1617294039
 - ISBN-13: 978-1617294037
 
+#### Python for Informatics: Exploring Information(Python 2)
+- By Dr. Charles R Severance
+- This book is designed to introduce students to programming and computational thinking through the lens of exploring data.
+- This is the reference material for the fantastic course [Programming for Everybody(Getting started with Python)](https://www.coursera.org/learn/python#) on Coursera.
+- [Amazon](https://www.amazon.com/Python-Informatics-Dr-Charles-Severance/dp/1492339245/ref=as_li_ss_tl?_encoding=UTF8&qid=&sr=&linkCode=sl1&tag=drchu02-20&linkId=ab0b2523119f530d8a6abd47128bda84)
+- The ebook version is free: [PDF](https://d28rh4a8wq0iu5.cloudfront.net/pythonlearn/book/book_270.pdf?response-content-type=application%2Foctet-stream&a=1&response-content-disposition=attachment).
+- ISBN-10: 9781492339243
+- ISBN-13: 978-1492339243
+- The Python 3 version is Python for Everybody: Exploring Data in Python 3 and is available on [Amazon](https://www.amazon.in/Python-Everybody-Exploring-Data/dp/1530051126).
+
 #### Other Resources
 
 - [Functional Programming in Python by David Mertz [OREILLY] [FREE]](https://www.oreilly.com/programming/free/files/functional-programming-python.pdf)
