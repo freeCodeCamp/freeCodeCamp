@@ -33,6 +33,8 @@ As of 2016, blockchain 2.0 implementations continue to require an off-chain orac
 Bitcoin’s main problem to solve was to achieve distributed consensus while remaining a decentralized system. Distributed consensus is essentially the idea that all the nodes that make up the network must come to a collective agreement without the use of a centralized control. In Bitcoin, the nodes are agreeing on exactly which transactions present on the network are valid. This is difficult in many ways, one of which is the potential for n number of nodes to be malicious and not want to follow
 the consensus of the other nodes. Bitcoin has the benefit of being able to incentivize its nodes to “follow the rules” through rewards and transaction fees because it is a currency system.
 
+#It uses the safest technology
+
 #### Sources
 1. [Bettina Warburg, "How the blockchain will radically transform the economy", *TED Talks*, December 8, 2016](https://youtu.be/RplnSVTzvnU?t=213)
 2. [Depository Trust and Clearing Corporation, "Embracing Disruption: Tapping the Potential of Distributed Ledgers to Improve the Post-Trade Landscape", DTCC, 2016]
