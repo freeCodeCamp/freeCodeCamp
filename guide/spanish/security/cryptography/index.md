@@ -4,11 +4,11 @@ localeTitle: Criptografía
 ---
 ## Criptografía
 
-El objetivo básico de la criptografía es permitir que dos personas se comuniquen a través del canal no seguro de tal manera que una tercera persona no pueda entender lo que se dice. Este canal podría ser una línea telefónica o una red informática.
+El objetivo básico de la criptografía es permitir que dos personas se comuniquen a través de un canal no seguro de tal manera que una tercera persona no pueda entender lo que se dice. Este canal podría ser una línea telefónica o una red informática.
 
-Los romanos empezaron a usar la criptografía para hacer que los mensajes en la batalla sean ilegibles para el enemigo si se descifran.
+Los romanos empezaron a usar la criptografía para hacer que los mensajes en la batalla sean ilegibles para el enemigo si se vieran vieran comprometidos.
 
-La criptografía anterior a la era moderna era efectivamente sinónimo de encriptación, la conversión de información de un estado legible a un sin sentido aparente.
+La criptografía anterior a la era moderna era efectivamente sinónimo de encriptación, la conversión de información de un estado legible a uno sin sentido aparente.
 
 La criptografía moderna se usa en los datos para que solo una parte o solo las partes autorizadas tengan la capacidad de acceder a la información.
 
