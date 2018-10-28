@@ -13,6 +13,7 @@ There have been a number of well publicized cases in which software was used to 
 
 --
 #### More Information
+* <a href='https://en.wikipedia.org/wiki/Programming_ethics' target='_blank' rel='nofollow'>Programming ethics - Wikipedia</a>
 * <a href='https://medium.freecodecamp.org/dark-genius-how-programmers-at-uber-volkswagen-and-zenefits-helped-their-employers-break-the-law-b7a7939c6591' target='_blank' rel='nofollow'>What do Uber, Volkswagen and Zenefits have in common? They all used hidden code to break the law.</a>
 * <a href='http://www.techrepublic.com/blog/10-things/10-plus-things-you-can-do-to-avoid-ethical-breaches/' target='_blank' rel='nofollow'>10+ things you can do to avoid ethical breaches</a>
 * <a href='http://uk.businessinsider.com/programmers-confess-unethical-illegal-tasks-asked-of-them-2016-11?op=1' target='_blank' rel='nofollow'>Programmers are having a huge discussion about the unethical and illegal things they’ve been asked to do</a>
