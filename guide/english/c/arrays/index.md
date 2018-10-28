@@ -63,6 +63,20 @@ int var = arr[0];
 Here an int is created called `var`, and it is initialized to the 0th element of arr. **Very importart to note** that in C, indexes start at zero as opposed to 1. This means that to access the first element, the index (between the brackets) is 0, to access the second element, the index is 1 etc. 
 In this example `var` is going to store the value `1`.
 
+## Array stored in memory
+
+If you created an array locally by default it will stored in stack. Where the elements are stored depends on the storage specification. If you want to store many more elements like in millions or billion. Heap is expanded upto to the memory you have but stack only can store limited number of elements.
+
+An array declared globally or statically would have different storage specification from an array declared locally such as
+* An local array will be (usually)created on stack.
+* A global or static array will be (usually)created on bss/data segments.
+* A dynamically created array will be created on heap.
+For declaring an array in heap we use malloc function it comes under stdlib header file.
+Lets see its syntax
+If A be a name of int type array of size n.
+```C
+int*A=(int*)malloc(sizeof(int)*n);
+```
 ## Overview
 
 * A one-dimensional array is like a list; A two dimensional array is like a table;  The C language places no limits on the number of dimensions in an array, though specific implementations may.
