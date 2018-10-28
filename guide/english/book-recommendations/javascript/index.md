@@ -10,6 +10,12 @@ One of the best books on JavaScript. A must for both, beginners and intermediate
 - [E-book](https://eloquentjavascript.net/)(free)
 - [Amazon](https://www.amazon.com/gp/product/1593275846/ref=as_li_qf_sp_asin_il_tl?ie=UTF8&camp=1789&creative=9325&creativeASIN=1593275846&linkCode=as2&tag=marijhaver-20&linkId=VPXXXSRYC5COG5R5)
 
+#### Head First JavaScript Programming: A Brain-Friendly Guide
+
+This brain-friendly guide teaches you everything from JavaScript language fundamentals to advanced topics, including objects, functions, and the browser’s document object model. You won’t just be reading—you’ll be playing games, solving puzzles, pondering mysteries, and interacting with JavaScript in ways you never imagined. And you’ll write real code, lots of it, so you can start building your own web applications. Prepare to open your mind as you learn (and nail) key topics
+
+[Amazon](https://www.amazon.com/Head-First-JavaScript-Programming-Brain-Friendly/dp/144934013X)
+
 #### You Don't Know JS
 
 Six book series by Kyle Simpson. In-depth series on every aspect of JavaScript. This is a must-read for every JS developer who wants to understand exactly how things like prototypes, closures, and the `this` keyword work.
