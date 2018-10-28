@@ -34,6 +34,7 @@ $y = 10.5;
 * A variable name cannot start with a number
 * A variable name can only contain alpha-numeric characters and underscores (A-z, 0-9, and _ ) You cannot use characters like `+ , - , % , ( , ) . &` in its name.
 * Variable names are case-sensitive ($age and $AGE are two different variables)
+* A variable name cannot contain a space
 
 Some examples of allowed variable names:
 
