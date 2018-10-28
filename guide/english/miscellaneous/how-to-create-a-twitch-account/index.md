@@ -17,7 +17,7 @@ Creating an account with Twitch enables you to interact with chat, get alerts wh
 
 1.  Then submit your date of birth and your email address.
 
-> It's important that you provide a correct email address as you will need this later to verify your account and get alerts when someone goes live.
+> It's important that you provide a correct email address, as you will need this later to verify your account and get alerts when someone goes live.
 
 1.  Now all you need to do is complete the captcha and you're ready to rock!
 
