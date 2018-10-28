@@ -57,7 +57,8 @@ fun main(args : Array<String>): Unit {...}
 
 ### Print Statement
 
-The println function takes a string as an argument and prints it to the screen. In this case we are printing the string "Hello, World!". Note that string literals are declared using double quotes ```"String"```.
+The println function takes a string as an argument and prints it to the screen. In this case we are printing the string "Hello, World!". Note that string literals are declared using double quotes ```"String"```. 
+Printing in kotlin can be done in two ways; using "println" function and "print" function. The "println" function prints things on a new line whereas the "print" function prints things on the current line.
 
 
 If you'd like to know more about Kotlin Syntax and start writing awesome programs you should check the awesome Kotlin Official Documentation: https://kotlinlang.org/docs/reference/
