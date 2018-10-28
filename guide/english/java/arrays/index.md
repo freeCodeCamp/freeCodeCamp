@@ -62,6 +62,18 @@ double[] list = new double[4];
 that are used to represent arrays in two different ways.
 ```
 
+## Declaring array literal
+
+```java
+dataType[] arrayName = new dataType[] {value_0, value_1, ..., value_k};
+```
+
+## Code snippets of above syntax:
+
+```java
+int[] intArray = new int[]{ 1,2,3,4,5,6,7,8,9,10 }; 
+```
+
 ## Accessing Arrays:
 ```java
 arrayName[index]; // gives you the value at the specified index
