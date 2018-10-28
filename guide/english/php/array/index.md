@@ -76,6 +76,33 @@ Would produce the following output:
 I like BWM
 ```
 
+## Add Item
+
+Is possible to add any item to an existing array.
+
+An example of addition can be seen below:
+
+```
+<?php
+
+$bikes = array('Suzuki', 'BMW');
+
+$bikes[] = 'Yamaha';
+```
+
+Another example, using named keys can be seen below:
+
+```
+<?php
+
+$bikes = [
+    'favorite'        => 'Suzuki',
+    'second favorite' => 'BMW'
+];
+
+$bikes['not my favorite'] = 'Yamaha';
+```
+
 ## Pitfalls
 
 When working with arrays, there are a few important things to keep in mind:
