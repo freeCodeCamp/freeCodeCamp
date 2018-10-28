@@ -1,7 +1,8 @@
 ---
 title: Bash Cat
-localeTitle: 猛击猫
----## 猛击猫
+localeTitle: Cat
+---
+## Cat
 
 Cat是Unix操作系统中最常用的命令之一。
 
