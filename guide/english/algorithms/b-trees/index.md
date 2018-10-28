@@ -22,3 +22,14 @@ Search is similar to search in Binary Search Tree. Let the key to be searched be
 
 Traverse:
 Traversal is also similar to Inorder traversal of Binary Tree. We start from the leftmost child, recursively print the leftmost child, then repeat the same process for remaining children and keys. In the end, recursively print the rightmost child.
+
+Time Analysis for B-Tree:
+
+Suppose a B-tree has n elements and M is the maximum number of children a node can have. What is the maximum depth the tree could have? What is the minimum depth the tree could have?
+
+    The worst-case depth (maximum depth) of a B-tree is: logM/2 n.
+    The best-case depth (minimum depth) of a B-tree is: logM n.
+
+Worst-Case Times for B-Trees:
+
+    Adding or removing an element in a B-tree with n elements is O(log n).
