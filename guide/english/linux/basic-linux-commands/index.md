@@ -15,6 +15,7 @@ When starting out with linux, there are some basic commands everyone should know
 
  3. **man** - manual command
 - Shows you the manual for the following command. This is very helpful when trying to figure out how an unfamiliar command works. For example, type `man ls` for everything you need to know about the ls command. Type `q` to exit.
+- You can search a term or phrase on entire manual pages database to discover which pages match on them using the parameter `-k`. For example, `man -k "open files"` search the term "open files" on the synopsis of all man pages.
 
  4. **pwd** - path
 - Type `pwd` to display the path to your current directory.
