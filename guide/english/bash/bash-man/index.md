@@ -19,6 +19,9 @@ Most used options:
 * `-f`, print a short description of the given command
 * `-a`, display, in succession, all of the available intro manual pages contained within the manual
 
+Just hit /, and type your search pattern.
+Patterns can be regular expressions.
+
 ### Example
 
 Display the man page of ls:
