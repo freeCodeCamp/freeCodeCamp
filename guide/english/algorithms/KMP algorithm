@@ -1,0 +1,35 @@
+KMP Algorithm for Pattern Searching
+Given a text txt[0..n-1] and a pattern pat[0..m-1], write a function search(char pat[], char txt[]) that prints all occurrences of pat[] in txt[]. You may assume that n > m.
+Examples:
+
+Input:  txt[] = "THIS IS A TEST TEXT"
+        pat[] = "TEST"
+Output: Pattern found at index 10
+
+Input:  txt[] =  "AABAACAADAABAABA"
+        pat[] =  "AABA"
+Output: Pattern found at index 0
+        Pattern found at index 9
+        Pattern found at index 12
+pattern-searching
+
+Pattern searching is an important problem in computer science. When we do search for a string in notepad/word file or 
+browser or database, pattern searching algorithms are used to show the search results.
+The worst case complexity of the Naive algorithm is O(m(n-m+1)). The time complexity of KMP algorithm is O(n) in the 
+worst case.
+
+KMP (Knuth Morris Pratt) Pattern Searching
+The Naive pattern searching algorithm doesn’t work well in cases where we see many matching characters followed by a 
+mismatching character. Following are some examples.
+
+   txt[] = "AAAAAAAAAAAAAAAAAB"
+   pat[] = "AAAAB"
+
+   txt[] = "ABABABCABABABCABABABC"
+   pat[] =  "ABABAC" (not a worst case, but a bad case for Naive)
+The KMP matching algorithm uses degenerating property (pattern having same sub-patterns appearing more than once in the 
+pattern) of the pattern and improves the worst case complexity to O(n). The basic idea behind KMP’s algorithm is: whenever 
+we detect a mismatch (after some matches), we already know some of the characters in the text of the next window. 
+We take advantage of this information to avoid matching the characters that we know will anyway match. 
+
+Link-https://www.geeksforgeeks.org/kmp-algorithm-for-pattern-searching/
