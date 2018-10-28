@@ -31,4 +31,6 @@ That will set the content of all of the `<p>` elements to Hello World!
 
 ### More Information
 
-[W3Schools](https://www.w3schools.com/jquery/html_html.asp)
+* [W3Schools](https://www.w3schools.com/jquery/html_html.asp)
+* [official jQuery.html website](http://api.jquery.com/html/)
+
