@@ -20,11 +20,11 @@ In this exercises we are going to create a delete function for our set. The func
 ```yml
 tests:
   - text: Your <code>Set</code> class should have a <code>remove</code> method.
-    testString: 'assert((function(){var test = new Set(); return (typeof test.remove === "function")}()), "Your <code>Set</code> class should have a <code>remove</code> method.");'
+    testString: assert((function(){var test = new Set(); return (typeof test.remove === 'function')}()), 'Your <code>Set</code> class should have a <code>remove</code> method.');
   - text: Your <code>remove</code> method should only remove items that are present in the set.
-    testString: 'assert.deepEqual((function(){var test = new Set(); test.add("a");test.add("b");test.remove("c"); return test.values(); })(), ["a", "b"], "Your <code>remove</code> method should only remove items that are present in the set.");'
+    testString: assert.deepEqual((function(){var test = new Set(); test.add('a');test.add('b');test.remove('c'); return test.values(); })(), ['a', 'b'], 'Your <code>remove</code> method should only remove items that are present in the set.');
   - text: Your <code>remove</code> method should remove the given item from the set.
-    testString: 'assert((function(){var test = new Set(); test.add("a");test.add("b");test.remove("a"); var vals = test.values(); return (vals[0] === "b" && vals.length === 1)}()), "Your <code>remove</code> method should remove the given item from the set.");'
+    testString: assert((function(){var test = new Set(); test.add('a');test.add('b');test.remove('a'); var vals = test.values(); return (vals[0] === 'b' && vals.length === 1)}()), 'Your <code>remove</code> method should remove the given item from the set.');
 
 ```
 
