@@ -23,7 +23,13 @@ Any memory allocated during the program's execution will need to be freed before
 free( arrayPtr );
 ```
 This statement will deallocate the memory previously allocated. C does not come with a `garbage collector` like some other languages, such as Java. As a result, memory not properly freed will continue to be allocated after the program is closed.
+It is safer to use Sizeof(*pointer) because you don't have to mention the type name twice and don't have to build the proper spelling for "dereferenced" version of the type. For example, you don't have to "count the stars" in
 
+int *****p = malloc(100 * sizeof *p);
+Compare that to the type-based sizeof in
+
+int *****p = malloc(100 * sizeof(int ****));
+where you have too make sure you used the right number of * under sizeof.
 # Before you go on...
 ## A Review
 * Malloc is used for dynamic memory allocation and is useful when you don't know the amount of memory needed during compile time.
