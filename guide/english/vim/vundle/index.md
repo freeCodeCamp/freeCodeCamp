@@ -25,6 +25,7 @@ Some useful plugins to get you started are :
 - [delimitMate](https://github.com/Raimondi/delimitMate) - Insert mode auto-completion for quotes, parens, brackets, etc
 - [tcomment](https://github.com/tomtom/tcomment_vim) - Comment lines whatever the language
 - [and tons more!](https://vimawesome.com/)
+- [lightline](https://github.com/itchyny/lightline.vim) - A light and configurable statusline
 
 
 #### More Information:
