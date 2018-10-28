@@ -10,3 +10,4 @@ PHP only supports a 256-character set and hence does not offer native Unicode su
 
 #### More Information:
 <!-- Please add any articles you think might be helpful to read before writing the article -->
+http://php.net/manual/en/book.strings.php
