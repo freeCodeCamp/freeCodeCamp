@@ -19,6 +19,14 @@ Install packages with `composer install`. Composer will install the packages lis
     composer install 
 ```
 
+### Update Packages
+
+Update packages with `composer update`. Composer will update the packages listed in the `composer.json` file to the vendor/ folder.
+
+```shell
+    composer update
+```
+
 ### More Information:
 * The Composer website: <a href='https://getcomposer.org/' target='_blank' rel='nofollow'>getcomposer.org</a>
 * Composer's GitHub repo: <a href='https://github.com/composer/getcomposer.org' target='_blank' rel='nofollow'>composer/getcomposer</a>
