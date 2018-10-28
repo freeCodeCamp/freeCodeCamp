@@ -3,8 +3,6 @@ title: Bellman-Ford Algorithm
 ---
 # Bellman-Ford Algorithm
 
-Time complexity: O(VE)
-
 The Bellman-Ford algorithm solves the single-source-shortest path problem, in which edge weights can be negetive.
 Given a weigted directed graph **G**, with source **_s_** and weight function **_w_** , the Bellman-Ford algorithm tells
 whether or not there exists a negetive-weight cycle reachable from source **s**.
@@ -62,6 +60,7 @@ _d[v]_ and update the predecessor _p[v]_.
 
 >Note: in Dijkstra's Algorithm, each edge is relaxed once. In Bellman-Ford algorithm, each edge may be relaxed many times.
 
+## Evaluation
 The Bellman-Ford algorithm runs in time O(VE), since the **initialize-source()** procedure takes O(V) time, 
 each of the |V| - 1 passes over the edges in _loop-1_ takes O(E) time, and the _loop-2_ in the last, takes O(E) time.
 
