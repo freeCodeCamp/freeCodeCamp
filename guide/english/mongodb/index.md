@@ -3,7 +3,7 @@ title: MongoDB
 ---
 ## MongoDB
 
-MongoDB is an open-source non-relational Database that uses a JSON like structure to store data. 
+MongoDB is an open-source non-relational Database that uses a JSON-like structure to store data. 
 It uses a document model to store and retrieve the data instead of the table model used by sequential databases such as SQL or Oracle.
 MongoDB is a distributed database at its core, so high availability, horizontal scaling, and geographic distribution are built in and easy to use.
 
@@ -13,7 +13,7 @@ MongoDB is a distributed database at its core, so high availability, horizontal 
 | --- | --- |
 | Database | Database |
 | Collection | Table |
-| document | Row |
+| Document | Row |
 | Field | Column |
 | Index | Index |
 | Embedded Documents | Table Joins |
@@ -24,7 +24,7 @@ MongoDB is a distributed database at its core, so high availability, horizontal 
 2. No Joins
 3. Clustering
 4. Opensource
-5. Schema less
+5. Schema-Less
 6. No Relationships
 
 ### Features of MongoDB
@@ -43,3 +43,5 @@ MongoDB is a distributed database at its core, so high availability, horizontal 
 [SQL vs NoSQL](https://insights.dice.com/2012/07/16/sql-vs-nosql-which-is-better/)
 
 [Learn MongoDB from MongoDB](https://university.mongodb.com/)
+
+[Getting Started with MongoDB] (https://docs.mongodb.com/manual/tutorial/getting-started/)
