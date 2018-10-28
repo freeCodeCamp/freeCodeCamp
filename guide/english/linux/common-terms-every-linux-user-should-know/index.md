@@ -12,6 +12,8 @@ title: common terms every Linux user should know.
 
 * <strong>GUI:</strong>  stands for graphic user interface. It is the part of the Linux system that comprises windows, icon, pictures (graphics in general), that make point and click possible.
 
+* <strong>Flavors:</strong>  Unix has Flavours and linux is one of them, just like linux has a lot of distros which are maintained by different organisations.
+
 * <strong>Terminal:</strong>  is an application that is used to access the Linux shell.
 
 * <strong>Kernel:</strong>  this the core of the Linux system – what you could call a “brain”. The kernel controls the resources of a computer and determines how they are used by interacting directly with the computer hardware.
@@ -28,4 +30,3 @@ title: common terms every Linux user should know.
 * <strong>Package Manager:</strong>  is a software program that enables you to search, install, update, and remove apps and other application management functions. Every distro has graphic from end package managers (like the Ubuntu Software Centre) and command line package management tools like the “apt-get”.
 
 * <strong>Dependency:</strong>  a dependency is a software program that the program you want to install needs to run. When a program is being installed it gives a list of its dependencies to the default package manager to check if they are already installed, and download them from a repository if they’re not.
-
