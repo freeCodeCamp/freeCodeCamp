@@ -25,7 +25,7 @@ Give the last 9 digits of your answer.
 ```yml
 tests:
   - text: <code>euler432()</code> should return 754862080.
-    testString: 'assert.strictEqual(euler432(), 754862080, "<code>euler432()</code> should return 754862080.");'
+    testString: assert.strictEqual(euler432(), 754862080, '<code>euler432()</code> should return 754862080.');
 
 ```
 
