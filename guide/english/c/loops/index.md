@@ -187,7 +187,7 @@ Terminates the <b>loop</b> or <b>switch</b> statement and transfers execution to
 Causes the loop to skip the remainder of its body and immediately retest its condition prior to reiterating.
 
 #### 3. Goto statement
-Transfers control to the labeled statement.
+Transfers control to the labeled statement.ex:goto label_name;
 
 # Some Fun and Useful Quirks
 
@@ -269,7 +269,7 @@ int main()
 }
 ```
 
-#### Example 2: Program to print half pyramid a using numbers
+#### Example 2: Program to print half pyramid using numbers
 
 ```
 1
@@ -343,7 +343,7 @@ int main()
 
 Programs to print inverted half pyramid using * and numbers
 
-#### Example 4: Inverted half pyramid using *
+#### Example 4: Program to print Inverted half pyramid using *
 
 ```
 * * * * *
@@ -378,7 +378,7 @@ int main()
 }
 ```
 
-#### Example 5: Inverted half pyramid using numbers
+#### Example 5: C program to print Inverted half pyramid using numbers
 
 ```
 1 2 3 4 5
@@ -413,7 +413,7 @@ int main()
 }
 ```
 
-#### Example 6: Program to print full pyramid using *
+#### Example 6: C Program to print full pyramid using *
 
 ```
         *
@@ -455,7 +455,7 @@ int main()
 }
 ```
 
-#### Example 7: Program to print pyramid using numbers
+#### Example 7: Program to print full pyramid using numbers
 
 ```
         1
@@ -507,7 +507,7 @@ int main()
 }
 ```
 
-#### Example 8: Inverted full pyramid using *
+#### Example 8: Program to print Inverted full pyramid using *
 
 ```
 * * * * * * * * *
@@ -547,7 +547,7 @@ int main()
 }
 ```
 
-#### Example 9: Print Pascal's triangle
+#### Example 9: Program to Print Pascal's triangle
 
 ```
            1
@@ -591,7 +591,10 @@ int main()
 }
 ```
 
-#### Example 10: Print Floyd's Triangle.
+#### Example 10: C program to Print Floyd's Triangle.
+
+Note:Floyd's Triangle  is the natural numbers in a right angled triangle aligned to the left where the first row is 1 and the successive rows start from the left with the next number followed by successive natural numbers listing one more number than the line above it.
+
 
 ```
 1
