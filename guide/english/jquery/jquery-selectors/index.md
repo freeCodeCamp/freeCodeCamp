@@ -103,6 +103,11 @@ Similarly, the `:last` selector selects the element that is the last child of it
 
 `$("li:last").css("color", "yellow");`
 
+Selecting all elements of a certain type by `$(":text")` allows us to select all `<input type="text">` elements.
+
+
+same for `$(":button"), $(":checkbox"), $(":radio")` etc.
+
 **Note:** In the jQuery selector, `World` is in single-quotes because it is already inside a pair of double-quotes. Always use single-quotes inside double-quotes to avoid unintentionally ending a string.
 
 **Multiple Selectors**
