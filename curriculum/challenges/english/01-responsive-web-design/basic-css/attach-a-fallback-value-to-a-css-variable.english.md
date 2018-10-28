@@ -26,9 +26,9 @@ It looks there is a problem with the variables supplied to the <code>.penguin-to
 ```yml
 tests:
   - text: Apply the fallback value of <code>black</code> to the <code>background</code> property of the <code>penguin-top</code> class.
-    testString: 'assert(code.match(/.penguin-top\s*?{[\s\S]*background\s*?:\s*?var\(\s*?--pengiun-skin\s*?,\s*?black\s*?\)\s*?;[\s\S]*}[\s\S]*.penguin-bottom\s{/gi), "Apply the fallback value of <code>black</code> to the <code>background</code> property of the <code>penguin-top</code> class.");'
+    testString: assert(code.match(/.penguin-top\s*?{[\s\S]*background\s*?:\s*?var\(\s*?--pengiun-skin\s*?,\s*?black\s*?\)\s*?;[\s\S]*}[\s\S]*.penguin-bottom\s{/gi), 'Apply the fallback value of <code>black</code> to the <code>background</code> property of the <code>penguin-top</code> class.');
   - text: Apply the fallback value of <code>black</code> to the <code>background</code> property of the <code>penguin-bottom</code> class.
-    testString: 'assert(code.match(/.penguin-bottom\s*?{[\s\S]*background\s*?:\s*?var\(\s*?--pengiun-skin\s*?,\s*?black\s*?\)\s*?;[\s\S]*}/gi), "Apply the fallback value of <code>black</code> to the <code>background</code> property of the <code>penguin-bottom</code> class.");'
+    testString: assert(code.match(/.penguin-bottom\s*?{[\s\S]*background\s*?:\s*?var\(\s*?--pengiun-skin\s*?,\s*?black\s*?\)\s*?;[\s\S]*}/gi), 'Apply the fallback value of <code>black</code> to the <code>background</code> property of the <code>penguin-bottom</code> class.');
 
 ```
 
