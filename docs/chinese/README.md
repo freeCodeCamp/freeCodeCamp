@@ -10,7 +10,6 @@
         <td><a href="/docs/portuguese/README.md"> Português </a></td>
         <td><a href="/docs/italian/CONTRIBUTING.md"> Italiano </a></td>
         <td><a href="/docs/german/README.md"> Deutsch </a></td>
-
     </tr>
 </table>
 
