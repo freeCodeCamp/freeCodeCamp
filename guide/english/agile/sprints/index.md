@@ -7,7 +7,7 @@ In Scrum, the **Sprint** is a period of working time usually between one and fou
 
 ## Properties of a Sprint
 -Sprints should remain the same pretetermined length of time throughout the length of the project. 
--The team works to break up the User Stories to a size that can be completed within the duration of the Sprint without carrying over to the next. 
+-The team works to break up the User Stories, a non-technical description of what the user expects to see and/or do, to a size that can be completed within the duration of the Sprint without carrying over to the next. 
 -"Sprint" and "Iteration" are often used interchangeably.
 
 #### More Information:
