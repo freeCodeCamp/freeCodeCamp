@@ -95,6 +95,7 @@ We get `15.300000`. So, say we just want two places after the decimal to give us
   the underscore (_) character.
 * The first character in a name cannot be a numeric digit.
 * Uppercase characters are considered distinct from lowercase characters.
+* You can use a same word as different variables like: sum, Sum, SUM, SuM etc are counted as different variables.
 * You can’t use a C keyword for a name.
 
 # Before you go on...
