@@ -4,7 +4,7 @@ localeTitle: JavaScript
 ---
 ## JavaScript
 
-JavaScript является наиболее широко используемым языком сценариев на Земле. И он имеет самую большую библиотечную экосистему любого языка программирования.
+JavaScript является наиболее широко используемым языком скриптов на Земле. И он имеет самую большую экосистему библиотек, по сравнению с любым другим языком программирования.
 
 JavaScript является основным языком Интернета и единственным языком программирования, который может работать во всех основных веб-браузерах.
 
@@ -30,6 +30,6 @@ Mozilla также предлагает Rhino, реализацию JavaScript, 
 
 WebKit (кроме проекта Chromium) реализует механизм JavaScriptCore.
 
-## Рамки JavaScript
+## Фреймворки JavaScript
 
-Наиболее часто используемые рамки JavaScript - это React JS, Angular JS, Create JS, jQuery, nodeJS и т. Д. Подробнее см. По этой [ссылке](https://javascriptreport.com/the-ultimate-guide-to-javascript-frameworks/) .
+Наиболее часто используемые фреймворки JavaScript - это React JS, Angular JS, Create JS, jQuery, nodeJS и т.д. Подробнее см. По этой [ссылке](https://javascriptreport.com/the-ultimate-guide-to-javascript-frameworks/).
