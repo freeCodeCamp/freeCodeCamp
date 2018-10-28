@@ -157,6 +157,14 @@ The `objects` parameter is prefixed with a `*` which indicates that the function
 ## Things you can do with python
 As stated python is a general purpose language. You can use it to do anything you like but one of the major uses of python is in machine learning and artificial intelligence. It is also a popular language in web development with some amazing frameworks like [Django](https://www.djangoproject.com/) and [flask](http://flask.pocoo.org/). It is also a popular scripting language. With its easy to read syntax it is becoming one the most popular programming languages growing rapidly in different fields.
 
+For security professionals, Python can be used for but not limited to:
+- Penetration testing
+- Information gathering
+- Scripting tools
+- Automating stuff
+- Forensics
+
+
 ## Want to learn more?
 
 Free Code Camp has some great resources. The web is a big place, there's plenty more to explore:
