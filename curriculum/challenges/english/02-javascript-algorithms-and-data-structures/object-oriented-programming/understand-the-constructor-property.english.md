@@ -6,7 +6,7 @@ challengeType: 1
 
 ## Description
 <section id='description'>
-There is a special <code>constructor</code> property located on the object instances <code>duck</code> and <code>beagle</code> that were created in the previous challenges:
+There is a special <code>constructor</code> property located on the object instances <code>duck</code> and <code>beagle</code> that was created in the previous challenges:
 <blockquote>let duck = new Bird();<br>let beagle = new Dog();<br><br>console.log(duck.constructor === Bird);  //prints true<br>console.log(beagle.constructor === Dog);  //prints true</blockquote>
 Note that the <code>constructor</code> property is a reference to the constructor function that created the instance.
 The advantage of the <code>constructor</code> property is that it's possible to check for this property to find out what kind of object it is. Here's an example of how this could be used:
