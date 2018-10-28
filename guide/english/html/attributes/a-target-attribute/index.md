@@ -44,8 +44,14 @@ A target attribute with the value of _"framename"_ Opens the linked document in 
 ```html
 	<a href="https://www.freecodecamp.org" target="framename">freeCodeCamp</a>
 ```
+A target attribute with the value of _"url"_ images can improve the design and the appearance of a web page.
+
+```html
+	<img src="url">
+```
 
 
 #### More Information:
 
-Target Attribute: <a href="https://www.w3schools.com/tags/att_a_target.asp" target="_blank">w3schools</a>  
+Target Attribute: <a href="https://www.w3schools.com/tags/att_a_target.asp" target="_blank">w3schools</a> 
+
