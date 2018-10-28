@@ -127,6 +127,7 @@ std::vector.front(); // returns the first element of the vector.
 std::vector.back(); // returns the last element of the vector.
 std::vector.push_back(n); // inserts the element "n" to the end of the vector.
 std::vector.pop_back(n); // removes the last element of the vector
+std::vector.at(i); // returns a reference to the element at position i in the vector.
 ```
 
 ### Vector Iterator
