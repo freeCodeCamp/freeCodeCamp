@@ -38,7 +38,7 @@ This directory contains all of the documentation on contributing to freeCodeCamp
 
 A quick reference to the commands that you will need, when working locally.
 
-| command | description |
+| Command | Description |
 | ------- | ----------- |
 | `npm run bootstrap` | Bootstraps the different services. |
 | `npm run seed` | Parse all the challenge markdown files and inserts them into MongoDB. |
