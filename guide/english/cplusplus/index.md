@@ -5,7 +5,7 @@ title: C++
 
 ## What is C++?
 
-* C++ is a general purpose programming language which has been used since the 1990's
+* C++ is a general purpose programming language which has been used since the 1990's.
 * It was designed by Bjarne Stroustrup under with the name "C with classes".
 * It is a version of C that includes Object-Oriented elements, including classes and functions.
 
@@ -25,7 +25,7 @@ int main()
 }
 ```
 
-#### The Output of this program will simply be :
+#### The Output of this program will simply be:
 
 ```
 Hello World!
@@ -41,8 +41,8 @@ Now, let's break down the code:
 using namespace std;
 ```
 
-* The first line tells the computer to use the "iostream" header file for this specific program . A header file is a seperate file with prewritten C++ code. There are many other header files which are requireed for a specific program to run properly. Some of them are : math , vector and string. Header files are generally represented by a ".h" extension (you don't need to add .h when including C++ standard library files)
-* `iostream` stands for input-output stream . The "iostream" file contains code for allowing the computer to take input and generate an output, using the C++ language.
+* The first line tells the computer to use the "iostream" header file for this specific program. A header file is a seperate file with prewritten C++ code. There are many other header files which are requireed for a specific program to run properly. Some of them are: math, vector and string. Header files are generally represented by a ".h" extension (you don't need to add .h when including C++ standard library files)
+* `iostream` stands for input-output stream. The "iostream" file contains code for allowing the computer to take input and generate an output, using the C++ language.
 * The second line tells the computer to use the standard namespace which includes features of standard C++. You could write this program without this line, but you'd have to use `std::cout` instead of `cout` and `std::endl` instead of `endl` on line 4. It makes the code more readable and our lives as programmers easier.
 
 #### Line 3 and 4
@@ -52,8 +52,8 @@ int main()
 {
 ```
 
-* C++ starts execution of a program from the -main function- `int main()` . During execution , the computer starts running the code from every line from `{`(opening bracket) till `}`(closing bracket)
-  **NOTE : Every function starts with an opening curly brace "{" and ends with a closing curly brace "}".**
+* C++ starts execution of a program from the -main function- `int main()`. During execution, the computer starts running the code from every line from `{`(opening bracket) till `}`(closing bracket)
+  **NOTE: Every function starts with an opening curly brace "{" and ends with a closing curly brace "}".**
 * Line 4 indicates the start of the main() function. 
 
 #### Lines 5, 6 & 7
@@ -65,13 +65,13 @@ int main()
 ```
 
 * The word `cout` in C++ is used to output. 
-* It is followed by `<<` , the _insertion operator_ . 
+* It is followed by `<<` , the _insertion operator_. 
 * Whatever is in the double quotes `""` is printed . Certain special characters have a different syntax for print statements   
-* Now to print any other kind of data , you have to  add `<<` .
+* Now to print any other kind of data , you have to  add `<<`.
 
 ***Challenge: Try to change Hello World to any other sentence or word(s). What will be the output ?***
 
-* `endl` is a reserved word when using the C++ language to **end this line and go to the next line during output** .   - _cout stands for "console output"_
+* `endl` is a reserved word when using the C++ language to **end this line and go to the next line during output**.   - _cout stands for "console output"_
 * Finally, finish the command with a semicolon `;`.
 
 **NOTE : Every command except the main function definition and the #include directive needs to be ended by the semicolon. Without a ";" , you may encounter an error.**
@@ -94,7 +94,7 @@ _You have finished coding your first C++ program and have understood most of the
 
  [Try it yourself ! :)](https://repl.it/L4k3)
 
-**You may need some software to write and execute C++ code. I recommend using CodeBlocks. There's a download link below :**
+**You may need some software to write and execute C++ code. I recommend using CodeBlocks. There's a download link below:**
 
 Download Link : [Download Here](http://www.codeblocks.org/downloads/26)
 
