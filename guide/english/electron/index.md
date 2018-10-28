@@ -4,7 +4,7 @@ title: Electron
 ## Electron - Build Cross Platform Desktop Apps with JavaScript, HTML, and CSS
 
 Electron lets you build cross-platform desktop apps using web technology. You
-can build desktop apps for Windows, Mac, and most common flavors of Linux.
+can build desktop apps for Windows, Mac and most common flavors of Linux.
 
 ### What is Electron, exactly?
 
@@ -12,14 +12,14 @@ Electron is actually built on two technologies: Node.js (or simply Node) and Chr
 Thus, any web application you have written can run on Electron. Similarly, any Node application you have written
 can run on Electron. But the power of Electron is that you can use both solutions together. Note that this also means that any code Chrome can run, Electron can run, which reduces the cross-browser compatability issues which keep many a developer up at night.
 
-Additionally, Electron comes with support for auto-updating, crash reporting, and native menus.
+Additionally, Electron comes with support for auto-updating, crash reporting and native menus.
 
 Core features can be explored using the [Electron API demos](https://github.com/electron/electron-api-demos)
 
 ### Advantages of Electron
-Electron applications are similar to any other desktop applications as they are installed locally on users hard drive. They can be launched directly from the OSX Dock or Windows taskbar, and there is no need to launch a browser and navigate to some url to run your application. When you need to open or save a file, the dialogs are native in appearance and interaction. Electron application can support full drag-and-drop interaction with a local file system, or even associate itself with a file type, so when a user double-clicks the associated file, our app will open.
+Electron applications are similar to any other desktop applications as they are installed locally on users hard drive. They can be launched directly from the OSX Dock or Windows taskbar and there is no need to launch a browser and navigate to some url to run your application. When you need to open or save a file, the dialogs are native in appearance and interaction. Electron application can support full drag-and-drop interaction with a local file system or even associate itself with a file type, so when a user double-clicks the associated file, our app will open.
 
-Electron also gives us the ability to have custom application menus that conform to each platform’s user interface guidelines. Contextual menus are available that allow user to control-click or right-click to display custom menu. If we need to trigger a system-wide notification, we can leverage Chromium’s Notification API to do so. Electron will go even further than traditional window desktop applications, and create applications that only live in the menubar or system tray. In short Electron provides a solid framework that will allow you to develop first-class desktop applications.
+Electron also gives us the ability to have custom application menus that conform to each platform’s user interface guidelines. Contextual menus are available that allow user to control-click or right-click to display custom menu. If we need to trigger a system-wide notification, we can leverage Chromium’s Notification API to do so. Electron will go even further than traditional window desktop applications and create applications that only live in the menubar or system tray. In short Electron provides a solid framework that will allow you to develop first-class desktop applications.
 
 ### Disadvantages of Electron
 It essentially creates a full instance of Chrome, which can be quite a memory hog.
