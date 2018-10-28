@@ -4,7 +4,7 @@ localeTitle: Кнопки CSS
 ---
 ## Кнопки CSS
 
-*   Вы можете создать любую кнопку clickable (элемент HTML `<button>` )
+*   Вы можете создать любую кликабельную кнопку (элемент HTML `<button>` )
 
 `<button>Click Me</button>`
 
@@ -14,27 +14,22 @@ localeTitle: Кнопки CSS
 
 ## Стилизация кнопки
 
-Вы можете изменить несколько свойств кнопки, чтобы изменить ее внешний вид.
-
-Чтобы добавить тени к кнопке, используйте свойство `box-shadow` .
-
-Чтобы добавить прозрачность к кнопке для отключенного эффекта, используйте `opacity` свойства.
-
-Чтобы удалить поля и создать группу кнопок, добавьте свойство `float:left/right` .
-
-Чтобы создать группу кнопок, но с границами, используйте свойство `float` и добавьте `border property` .
-
-Для создания вертикальной группы кнопок используйте display: `block property` .
+Вы можете изменить несколько свойств кнопки, чтобы изменить ее внешний вид:
+- Чтобы добавить тени к кнопке, используйте свойство `box-shadow` .
+- Чтобы добавить прозрачность к кнопке для отключенного эффекта, используйте `opacity` свойства.
+- Чтобы удалить поля и создать группу кнопок, добавьте свойство `float:left/right`.
+- Чтобы создать группу кнопок, но с границами, используйте свойство `float` и добавьте свойство `border`.
+- Для создания вертикальной группы кнопок используйте свойтво `display: block`.
 
 ### Цвет кнопки
 
-Чтобы изменить цвет фона кнопки, используйте свойство background-color:
+Чтобы изменить цвет фона кнопки, используйте свойство `background-color`:
 
 `button {background-color: #6ba0f4;}`
 
 ![Button Background-Color](https://image.ibb.co/f5Xpt6/button_bg_blue.png "Цвет фона кнопки")
 
-Чтобы добавить цветную рамку к кнопке, используйте свойство border:
+Чтобы добавить цветную рамку к кнопке, используйте свойство `border`:
 ```
 button { 
   background-color: #FFF; 
@@ -43,27 +38,27 @@ button {
  } 
 ```
 
-![Button Border](https://image.ibb.co/kUqymR/button_border_blue.png "Пограничная кнопка")
+![Button Border](https://image.ibb.co/kUqymR/button_border_blue.png "Кнопка с рамкой")
 
 ### Размер текста кнопки
 
-Чтобы изменить размер шрифта текста на кнопке, используйте свойство font-size:
+Чтобы изменить размер шрифта текста на кнопке, используйте свойство `font-size`:
 
 `button {font-size: 20px;}`
 
 ![Button Text Size](https://image.ibb.co/gM9r6R/button_fontsize.png "Размер текста кнопки")
 
-### Пусковая площадка
+### Внутренние отступы
 
-Чтобы изменить прописку кнопки, используйте свойство padding:
+Чтобы изменить внутренние отступы кнопки, используйте свойство `padding`:
 
 `button {padding: 15px 30px;}`
 
-![Button Padding](https://image.ibb.co/fKer6R/button_padding.png "Пусковая площадка")
+![Button Padding](https://image.ibb.co/fKer6R/button_padding.png "Внутренние отступы")
 
 ### Ширина кнопки
 
-Чтобы изменить ширину кнопки, независимо от текстового содержимого, используйте свойство width:
+Чтобы изменить ширину кнопки, независимо от текстового содержимого, используйте свойство `width`:
 
 `button {width: 250px;}`
 
@@ -71,15 +66,15 @@ button {
 
 ### Закругленные кнопки
 
-Чтобы создать закругленные кнопки, используйте свойство border-radius:
+Чтобы создать закругленные кнопки, используйте свойство `border-radius`:
 
 `button {border-radius: 50%;}`
 
 ![Rounded Buttons](https://image.ibb.co/cfH00m/button_bradius.png "Закругленные кнопки")
 
-### Напольные кнопки
+### Изменение стиля при наведении мыши
 
-Чтобы изменить стиль кнопки при перемещении мыши над ней, используйте селектор: hover:
+Чтобы изменить стиль кнопки при наведении мыши на неё, используйте селектор `hover:`:
 ```
 button:hover { 
   background-color: #0E2C5B; 
@@ -87,13 +82,13 @@ button:hover {
  } 
 ```
 
-![Hoverable Buttons](https://image.ibb.co/hxQnfm/button_hover.png "Напольные кнопки")
+![Hoverable Buttons](https://image.ibb.co/hxQnfm/button_hover.png "Наведение курсора мыши")
 
 Чтобы определить скорость эффекта наведения, используйте `transition-duration` свойства.
 
-### Отключенные кнопки
+### Неактивные кнопки
 
-Чтобы отключить кнопку, используйте свойство cursor:
+Чтобы отключить кнопку, используйте свойство `cursor`:
 ```
 button { 
   cursor: not-allowed; 
@@ -101,6 +96,5 @@ button {
 ```
 
 #### Дополнительная информация:
-
-*   https://www.w3schools.com/css/css3\_buttons.asp
-*   https://www.w3schools.com/howto/howto _css_ animate\_buttons.asp
+* https://www.w3schools.com/css/css3_buttons.asp
+* https://www.w3schools.com/howto/howto_css_animate_buttons.asp
