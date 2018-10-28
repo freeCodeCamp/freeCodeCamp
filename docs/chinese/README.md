@@ -1,13 +1,16 @@
 <table>
     <tr>
         <td> Read these guidelines in </td>
-        <td><a href="/CONTRIBUTING.md"> English </a></td>
-        <td><a href="/docs/chinese/README.md"> 中文 </a></td>
+        <td><a href="/docs/README.md"> English </a></td>
+        <td><a href="README.md"> 中文 </a></td>
         <td><a href="/docs/russian/README.md"> русский </a></td>
         <td><a href="/docs/arabic/README.md"> عربى </a></td>
         <td><a href="/docs/spanish/README.md"> Español </a></td>
+        <td><a href="/docs/romanian/README.md"> Română </a></td>
         <td><a href="/docs/portuguese/README.md"> Português </a></td>
+        <td><a href="/docs/italian/CONTRIBUTING.md"> Italiano </a></td>
         <td><a href="/docs/german/README.md"> Deutsch </a></td>
+
     </tr>
 </table>
 
@@ -17,16 +20,19 @@
 
 该目录包含有关贡献 freeCodeCamp.org 的所有文档
 
-## [如果您已经开始，请先阅读此内容。](/docs/chinese/CONTRIBUTING.md)
+
+## [如果您已经开始，请先阅读此内容。](CONTRIBUTING.md)
 
 ---
 
 ## 快速参考文章
 
-1. 如何处理指南文章。
-2. 如何处理编码挑战。
-3. 如何在本地设置freeCodeCamp。
-4. 如何在本地捕获外发电子邮件.
+
+1. [如何处理指南文章。](how-to-work-on-guide-articles.md)
+2. [如何处理编码挑战。](how-to-work-on-coding-challenges.md)
+3. [如何在本地设置freeCodeCamp。](how-to-setup-freecodecamp-locally.md)
+4. [如何在本地捕获外发电子邮件.](how-to-catch-outgoing-emails-locally.md)
+
 
 ## 风格指南
 
