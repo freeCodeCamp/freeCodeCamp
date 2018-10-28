@@ -4,7 +4,7 @@ localeTitle: Opacidade de fundo
 ---
 ## Opacidade de fundo
 
-A propriedade opacidade especifica a opacidade / transparência de um elemento, ou seja, o grau em que o conteúdo por trás do elemento é visível.
+A propriedade opacity especifica a opacidade ou transparência de um elemento, ou seja, o grau em que o conteúdo por trás do elemento é visível.
 
 A propriedade de opacidade pode levar um valor de 0,0 a 1,0. Quanto menor o valor, mais transparente:
 
