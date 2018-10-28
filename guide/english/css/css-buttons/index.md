@@ -131,6 +131,7 @@ To animate a button on click use 'button:active':
   background-color: #ff6d00;
   transform: translateY(4px);
 }
+class="btn btn-primary" (bootstrap design)
 ```
 
 #### More Information:
