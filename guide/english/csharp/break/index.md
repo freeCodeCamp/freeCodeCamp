@@ -33,20 +33,22 @@ In the second example, a break statement is included at the end of each case. Th
 ```
 switch (exampleVariable)
 {
-    case 1:
+    case 1:{
         Console.WriteLine("case 1");
         Console.WriteLine("This only shows in example 1");
         break;
-    case 2:
+        }
+    case 2:{
         Console.WriteLine("case 2");
         Console.WriteLine("This only shows in example 2");
 	Console.WriteLine("This also only shows in example 2");
         break;
-	Console.WriteLine("This would not show anywhere, as it is after the break line and before the next case");
-    default:
+	}
+    default:{
         Console.WriteLine("default");
         Console.WriteLine("This only shows in the Default Example");
         break;
+        }
 }
 
 ```
