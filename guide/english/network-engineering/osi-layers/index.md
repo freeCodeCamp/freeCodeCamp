@@ -42,3 +42,8 @@ In the diagram above, to the extreme left is the unit of data that is used in ea
 * _**Layer 6 - Presentation Layer:**_ The presentation layer formats the data to be presented to the application layer. 
 
 * _**Layer 7 - Application Layer:**_ The application layer serves as the window for users and application processes to access network services.
+
+**Following are some of the links that can be followed for better indepth knowledge of this topic**
+https://en.wikipedia.org/wiki/OSI_model
+https://www.cisco.com/c/dam/global/fi_fi/assets/docs/SMB_University_120307_Networking_Fundamentals.pdf
+https://www.webopedia.com/quick_ref/OSI_Layers.asp
