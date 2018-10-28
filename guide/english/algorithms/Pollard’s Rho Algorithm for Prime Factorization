@@ -1,0 +1,55 @@
+Given a positive integer n, and that it is composite, find a divisor of it.
+
+Example:
+
+Input: n = 12;
+Output: 2 [OR 3 OR 4]
+
+Input: n = 187;
+Output: 11 [OR 17]
+Brute approach: Test all integers less than n until a divisor is found.
+Improvisation: Test all integers less than √n
+
+
+
+ 
+
+A large enough number will still mean a great deal of work. Pollard’s Rho is a prime factorization algorithm, particularly fast for a large composite number with small prime factors. The Rho algorithm’s most remarkable success was the factorization of eighth Fermat number: 1238926361552897 * 93461639715357977769163558199606896584051237541638188580280321.
+The Rho algorithm was a good choice because the first prime factor is much smaller than the other one.
+
+Concepts used in Pollard’s Rho Algorithm:
+
+Two numbers x and y are said to be congruent modulo n (x = y modulo n) if
+their absolute difference is an integer multiple of n, OR,
+each of them leaves the same remainder when divided by n.
+The Greatest Common Divisor is the largest number which divides evenly into each of the original numbers.
+Birthday Paradox: The probability of two persons having same birthday is unexpectedly high even for small set of people.
+Floyd’s cycle-finding algorithm: If tortoise and hare start at same point and move in a cycle such that speed of hare is twice the speed of tortoise, then they must meet at some point.
+Algorithm:
+
+Start with random x and c. Take y equal to x and f(x) = x2 + c.
+While a divisor isn’t obtained
+Update x to f(x) (modulo n) [Tortoise Move]
+Update y to f(f(y)) (modulo n) [Hare Move]
+Calculate GCD of |x-y| and n
+If GCD is not unity
+If GCD is n, repeat from step 2 with another set of x, y and c
+Else GCD is our answer
+Illustration:
+Let us suppose n = 187 and consider different cases for different random values.
+
+
+
+ 
+
+An Example of random values such that algorithm finds result:
+y = x = 2 and c = 1, Hence, our f(x) = x2 + 1.
+PollardRho1
+An Example of random values such that algorithm finds result faster:
+y = x = 110 and ‘c’ = 183. Hence, our f(x) = x2 + 183.
+table
+An Example of random values such that algorithm doesn’t find result:
+x = y = 147 and c = 67. Hence, our f(x) = x2 + 67.
+PollardRho3
+
+Link-https://www.geeksforgeeks.org/pollards-rho-algorithm-prime-factorization/
