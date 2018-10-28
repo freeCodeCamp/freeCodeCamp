@@ -101,3 +101,14 @@ Output for the above program
 ```
 4 + i3
 ```
+Overloadable  Operators
+Following is the list of operators which can be overloaded −
+
++	-	*	/	%	^
+&	|	~	!	,	=
+<	>	<=	>=	++	--
+<<	>>	==	!=	&&	||
++=	-=	/=	%=	^=	&=
+|=	*=	<<=	>>=	[]	()
+->	->*	new	new []	delete	delete []
+
