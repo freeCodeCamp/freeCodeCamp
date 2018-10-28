@@ -1,0 +1,40 @@
+Inductive Transfer
+In inductive transfer methods, the target-task inductive bias is chosen or adjusted
+based on the source-task knowledge (see Figure 4). The way this is done varies
+depending on which inductive learning algorithm is used to learn the source
+and target tasks. Some transfer methods narrow the hypothesis space, limiting
+the possible models, or remove search steps from consideration. Other methods
+broaden the space, allowing the search to discover more complex models, or add
+new search steps.
+Baxter [2] frames the transfer problem as that of choosing one hypothesis
+space from a family of spaces. By solving a set of related source tasks in each
+hypothesis space of the family and determining which one produces the best
+overall generalization error, he selects the most promising space in the family for
+a target task. Baxter’s work, unlike most in transfer learning, includes theoretical
+as well as experimental results. He derives bounds on the number of source
+tasks and examples needed to learn an inductive bias, and on the generalization
+capability of a target-task solution given the number of source tasks and
+examples in each task.
+Thrun and Mitchell [55] look at solving Boolean classification tasks in a
+lifelong-learning framework, where an agent encounters a collection of related
+problems over its lifetime. They learn each new task with a neural network, but
+they enhance the standard gradient-descent algorithm with slope information
+acquired from previous tasks. This speeds up the search for network parameters
+in a target task and biases it towards the parameters for previous tasks.
+Mihalkova and Mooney [27] perform transfer between Markov Logic Networks.
+Given a learned MLN for a source task, they learn an MLN for a related
+target task by starting with the source-task one and diagnosing each formula,
+adjusting ones that are too general or too specific in the target domain. The
+hypothesis space for the target task is therefore defined in relation to the sourcetask
+MLN by the operators that generalize or specify formulas.
+Hlynsson [17] phrases transfer learning in classification as a minimum description
+length problem given source-task hypotheses and target-task data. That is,
+the chosen hypothesis for a new task can use hypotheses for old tasks but stipulate
+exceptions for some data points in the new task. This method aims for a
+tradeoff between accuracy and compactness in the new hypothesis.
+Ben-David and Schuller [3] propose a transformation framework to determine
+how related two Boolean classification tasks are. They define two tasks as related
+with respect to a class of transformations if they are equivalent under that class;
+that is, if a series of transformations can make one task look exactly like the
+other. They provide conditions under which learning related tasks concurrently
+requires fewer examples than single-task learning
