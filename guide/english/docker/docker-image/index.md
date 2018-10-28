@@ -37,4 +37,4 @@ This will remove the named image.
 All removed images will have to pulled/built again prior to container redeployment.
 
 #### More Information:
-- [Docker CLI docs: load](https://docs.docker.com/engine/reference/commandline/image/)
+- [Docker CLI docs: image](https://docs.docker.com/engine/reference/commandline/image/)
