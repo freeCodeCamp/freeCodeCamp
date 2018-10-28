@@ -29,5 +29,15 @@ A multidimensional array is an array that contains other arrays.
 $freecodecamp = array(array("free"=>"0","code"=>"1","camp"=>"2"),array("free"=>"0","code"=>"1","camp"=>"2"),array("free"=>"0","code"=>"1","camp"=>"2"));
 ```
 
+### Get The Length of an Array - The count() Function
+The `"count()"` function is used to return the length (the number of elements) of an array:
+```PHP
+<?php
+<?php
+$cars = array("Volvo", "BMW", "Toyota");
+echo count($cars);
+?>
+```
+
 #### More Information:
 * <a href="https://secure.php.net/manual/en/language.types.array.php" rel="nofollow">php.net arrays manual</a>
