@@ -23,6 +23,7 @@ Here are some examples of big name brands using WordPress:
 * Sony Music
 * The New Yorker
 * MTV News
+* BBC America
 
 Whether its page transitions or a customized contact form, WordPress users are only a few clicks away from success and a beautiful website.
 One of the main things that appeal to people about WordPress is the abudant themes and plugins. You can make your website look however you like, and with many plugins available you can do anything from having a plugin to handle contact forms, manage SEO (Search Engine Optimization), and many more.
