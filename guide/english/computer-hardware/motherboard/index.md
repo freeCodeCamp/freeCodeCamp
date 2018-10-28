@@ -31,7 +31,7 @@ Additional slots to connect hardware in the form of Peripheral Component Interco
 
 ## Types of Motherboards
 
-Motherboards come in different sizes, known as form factors. The most common motherboard form factor is ATX. The different types of ATX are known as micro-ATX (sometimes shown as µATX, mini-ATX, FlexATX, EATX, WATX, nano-ATX, pico-ATX, and mobileATX).
+Motherboards come in different sizes, known as form factors. The most common motherboard form factor is ATX for desktop computers. A smaller variant of the ATX motherboard form factor  is konwn as micro-ATX (sometimes shown as µATX, mini-ATX, FlexATX, EATX, WATX, nano-ATX, pico-ATX, and mobileATX).  For laptops and portable computers, the ATX form factor may be modified to fit in a smaller and slimmer case, though a similar set of chips, ports and sockets may remain.  Additionally, many popular single board computers (SBCs) such as the Raspberry Pi have their own unique motherboard form factor not based on the ATX standard.
 
 #### More Information:
 <!-- Please add any articles you think might be helpful to read before writing the article -->
