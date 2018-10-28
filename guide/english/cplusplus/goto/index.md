@@ -12,15 +12,37 @@ It does exactly what it is named as. It goes to the mentioned occurence of the n
 	goto - The keyword used to go to the particular label.
 	label - this can be named anything.
 # syntax
+```C++
+goto label_name;
+```
 
-goto <label>;
+This takes the program to the next appearance of label. The label must be in the same scope (set of braces - {}).
 
-(without the <> );
+Labels are defined as a name, followed by a colon (**:**)
+```C++
+label_name:
+```
+### Example:
+```C++
+#include <iostream> 
 
-//This takes the exe to the next appearance of label.
+int main(){
+    goto x:
+    std::cout << "Hello World"; //no text is printed.
+    x:
+    return 0;
+}
+int someFunction(){
+    x: //the program does not jump to this label becaue it is in another scope.
+    return 0;
+}
+```
 
 goto is something that transcends all loops. To be clearer on this point, here is an example.
 
 https://code.sololearn.com/cI4qqQA8W2q3
 
-However, care must be taken to use goto very carefully, especially in the early days of coding as it can lead to crazy issues, if not understood well enough.
+However, care must be taken to use goto very carefully, especially in the early days of coding as it can lead to crazy issues, if not understood well enough. goto violates the standard flow of the program, and as C++ is an object oriented language, goto should **NEVER EVER, EVER** be used in a normal program, under **ANY CIRCUMSTANCES**. The same effect can usually be replicated by using functions or loops.
+
+#### The consequences of using goto are illustrated in this XKCD comic (#292)
+![](https://imgs.xkcd.com/comics/goto.png)
