@@ -84,3 +84,13 @@ When working with arrays, there are a few important things to keep in mind:
 2) Named keys must be escaped to be accessed (i.e. $bikes[not my favorite] would not work).
 
 For more information, please see [PHP: Arrays](http://php.net/manual/en/language.types.array.php)
+
+
+## Length of an Array
+
+The count() function is used to return the length (the number of elements) of an array:
+
+<?php
+    $cars = array("Volvo", "BMW", "Toyota");
+    echo count($cars);
+?>
