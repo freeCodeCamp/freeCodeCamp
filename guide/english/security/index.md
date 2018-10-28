@@ -17,5 +17,5 @@ There are also "black hat hackers" who do not disclose the vulnerabilities they 
 
 Security researchers use a wide variety of methods and tools, which are discussed in this section.
 
-Although hacking is a key threat to secure applications, it is not the only one.  Application developers need to balance user experience with security features.  Some cyber breches are self-infliced due to complex or hard to understadn security configurations.  What security features should be set by default?  What features should be seemless and which should require explict user consent? 
+Although hacking is a key threat to secure applications, it is not the only one.  Application developers need to balance user experience with security features.  Some cyber breaches are self-inflicted due to complex or hard to understand security configurations.  What security features should be set by default?  What features should be seemless and which should require explict user consent? 
 
