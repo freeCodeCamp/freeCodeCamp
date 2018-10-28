@@ -23,7 +23,26 @@ public:
 int main()
 {
    person p1; //p1 is an object 
-}
+   //We can give values to the object attributed(namely name and id)
+   cin>>p1.name;
+   cin>>p1.id;
+   cout<<p1.name<<" "<<p1.id<<"\n";
+   //If we want to create "n" objects of class "person" we can do it easily using the for loop
+   int n;
+   cin>>n; //Giving the value of how many objects we want to create
+   person p[n]; // Declaring a vector of objects
+   for(int i=0;i<n;i++)
+   {
+   cin>>p[i].name>>p[i].id;
+   }
+   //After this loop, we basically declared "n" objects and gave value to their attributes(name and id) one by one.
+   //Displaying the output:
+    for(int i=0;i<n;i++)
+   {
+   cout<<p[i].name<<" "<<p[i].id<<"\n";
+   }
+   
+   }
 ```
 Objects take up space in memory and have an associated address like a record in pascal or structure or union in C.
 
