@@ -100,6 +100,7 @@ There are three kinds of services:
 - _foreground_ services: they are strictly related to user's interaction (for example music playback), so it's harder for the system to kill them.
 - _background_ services: they are not directly related to user's activities, so they can be killed if more RAM is needed.
 - _bound_ services: they are  offers a client-server interface that allows components to interact with the service, send requests, receive results, and even do so across processes with interprocess communication (IPC).
+- _Intent_ services: An IntentService is meant to handle individual autonomous calls. Unlike a service, which can concurrently handle multiple calls, an IntentService is more like a work queue processor – work is queued up and an IntentService processes each job one at a time on a single worker thread. Typically, an IntentService is not bound to an Activity or a Fragment.
 
 ## [Broadcast receivers](https://developer.android.com/guide/components/broadcasts)
 A _broadcast receiver_ is another component without user interface (except an optional status bar notification) that lets the system to deliver events from/to the app, even when the latter hasn't been previously launched.
