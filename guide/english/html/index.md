@@ -143,3 +143,33 @@ There are many possible ways a user can give input/s like:
 ```
 
 Comments can help in the understanding of the markup and do not display in the webpage.
+
+
+# HTML Attributes
+
+An attribute gives more information about an element. Attibutes always come inside an opening tag.
+
+**Format of an attribute**
+
+Name = “value”
+Alt = “alternate text”. The alt attribute provides an alternative information about an image that is not displaying. It is good practice to use the alt attribute on all images for the sake of users who cannot view it to help screen readers access the alternate text of the image. An alt text should be a text that describes what the image is about. The alternative text is inserted into the 'alt' within the `<img />` tag
+
+An example of `alt` attribute used in an `<img />` is this:
+
+```html
+<img src ="https://s3.amazonaws.com/freecodecamp/freecodecamp_logo.svg" alt="FreeCodeCamp Logo" />
+```
+
+**Empty alt text**
+An alt tag can be blank only when the image is used for decorative purposes. When an alt tag is empty, screen readers will ignore them. Decorative images do not add information to the content of the page. A blank alt tag is written without a text in the quotes `alt=""` or `alt = " " `.You might think that because the images is for decorative purposes, why not leave out the option of using `alt` attribute. When you leave out the `alt` attribute, screen readers would read out the file name instead. So, it is always best to include the `alt` attribute.
+
+```
+<img src="examples/topinfo_bg.png" alt="" />
+```
+
+
+# Resources
+
+- [Image ALT Tag Tips for HTML](http://accessibility.psu.edu/images/imageshtml/)
+- [Decorative Images](https://www.w3.org/WAI/tutorials/images/decorative/)
+
