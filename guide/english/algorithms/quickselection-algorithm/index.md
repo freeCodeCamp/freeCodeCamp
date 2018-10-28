@@ -85,3 +85,10 @@ algorithm Hoare(A, lo, hi) is
 ## Time complexity
 
 Like quicksort, the quickselect has good average performance, but is sensitive to the pivot that is chosen. If good pivots are chosen, meaning ones that consistently decrease the search set by a given fraction, then the search set decreases in size exponentially and by induction (or summing the geometric series) one sees that performance is linear, as each step is linear and the overall time is a constant times this (depending on how quickly the search set reduces). However, if bad pivots are consistently chosen, such as decreasing by only a single element each time, then worst-case performance is quadratic: O(n^2). This occurs for example in searching for the maximum element of a set, using the first element as the pivot, and having sorted data.
+
+Key Imformation in Quick Selection Algorithm: 
+Class:	Selection algorithm
+Data structure:	Array
+Worst-case performance:	О(n2)
+Best-case performance:	О(n)
+Average performance:	O(n)
