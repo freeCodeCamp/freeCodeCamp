@@ -82,5 +82,8 @@ git commit --amend --author="John Doe <johndoe@email.com>"
 #### The -v or --verbose Option
 The `-v` or `--verbose` option is used without the `-m` option. The `-v` option can be useful when you wish to edit a Git commit message in your default editor while being able to see the changes you made for the commit. The command opens your default text editor with a commit message template *as well as* a copy of the changes you made for this commit. The changes, or diff, will not be included in the commit message, but they provide a nice way to reference your changes when you're describing them in your commit message.
 
+- commit is last operartion before pushing your project/files into the github.
+
+
 ### More Information:
 - Git documentation: [commit](https://git-scm.com/docs/git-commit)
