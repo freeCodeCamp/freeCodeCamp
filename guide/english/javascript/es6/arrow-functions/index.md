@@ -57,6 +57,6 @@ axios.get(url).then(function(response) {
 // New Syntax
 axios.get(url).then(response => {
   this.data = response.data;
-});
-
+})
+We can mention the following arrow functions : map(), filter(),reduce().These functions make it easiet to manipulate data stuctures such as arrays.Each one provides a specific application.
 ```
