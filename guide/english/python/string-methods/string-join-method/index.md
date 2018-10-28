@@ -12,7 +12,7 @@ If the iterable contains any non-string values, it raises a TypeError exception.
 
 1) Join a ist of strings with `":"`
 ```python
-print ":".join(["freeCodeCamp", "is", "fun"])
+print( ":".join(["freeCodeCamp", "is", "fun"]))
 ```
 Output
 ```shell
@@ -21,7 +21,7 @@ freeCodeCamp:is:fun
 
 2) Join a tuple of strings with `" and "`
 ```python
-print " and ".join(["A", "B", "C"])
+print(" and ".join(("A", "B", "C")))
 ```
 Output
 ```shell
@@ -30,7 +30,7 @@ A and B and C
 
 3) Insert a `" "` after every character in a string
 ```python
-print " ".join("freeCodeCamp")
+print(" ".join("freeCodeCamp"))
 ```
 Output:
 ```shell
