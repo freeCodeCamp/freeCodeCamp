@@ -42,4 +42,46 @@ int main () {
 > Item on index 2 is 3
 > Item on index 3 is 4
 ```
+## Example for printing star pattern for pyramid 
+```c
+
+#include<stdio.h>
+int
+main ()
+{
+  int i, j;
+  for (i = 1; i <= 5; i++)
+    {
+
+      for (j = i; j < 5; j++)
+	{
+	  printf (" ");
+	}
+
+
+      for (j = 1; j <= (2 * i - 1); j++)
+	{
+	  printf ("*");
+	}
+
+
+      printf ("\n");
+    }
+
+  return 0;
+}
+```
+## Output:
+```shell 
+     *
+    ***
+   *****
+  *******
+ ********* 
+
+``
+
+
+
+
 
