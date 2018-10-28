@@ -63,3 +63,59 @@ Most of the built-in classes in Java, as well as classes provided by popular lib
 For example, the `java.util.Set` interface specifies that a `Set`'s `equals()` method will return true if "the specified object is also a set, the two sets have the same size, and every member of the specified set is contained in this set".
 
 However, if a class does not override the default `equals()` implementation, the default implementation will apply, which simply uses the `==` operator to compare the two objects.
+
+
+## Object Equality
+
+The java Object class provides two methods for comparing objects which are `equals(Object obj)` and `hashcode()`. 
+
+As discussed above `equals(Object obj)` method indicates the object passed in argument is equal to the current instance. The default implementation of this method interprets that two objects are equal if and only if the memory address of the objects are same.
+
+The `hashCode()` method returns an integer that represents the memory location of the object and this will be unique for each and every new instance.
+
+However, the default implementation of the methods will have limitations as we cannot compare the custom objects on our own attributes.
+
+Consider the following example for the limitation.
+
+``` java
+    
+    public static void main (String[]args) {
+        Employee emp1 = new Employee(1,"foo");
+        Employee emp2 = new Employee(1,"foo");
+        System.out.println(emp1.equals(emp2)); //output :- false        
+    }
+```
+The example prints `false` because both the employee objects (though they have same attribute id which is `1`) are stored in different memory locations. Hence, they are not considered to be equal.
+
+The above limitation can be resolved by overriding the equals method of Employee object.
+
+``` java
+@Override
+public boolean equals(Object obj) {
+    
+    // If the object is null return false.
+    if (obj == null) return false;
+    
+    // If the object is not an instance of Employee object return false.
+    if (!(obj instanceof Employee))
+        return false;
+    
+    // If the objects are stored in same memory address return true.
+    if (obj == this)
+        return true;
+    
+    // If the objects have same employee Id return true. 
+    return this.getId() == ((Employee) obj).getId();
+}
+```
+
+Now, the following example will print true as we are comparing the objects on the attribute `id` of the Employee object.
+
+``` java
+    
+    public static void main (String[]args) {
+        Employee emp1 = new Employee(1,"foo");
+        Employee emp2 = new Employee(1,"foo");
+        System.out.println(emp1.equals(emp2)); //output :- true        
+    }
+```
