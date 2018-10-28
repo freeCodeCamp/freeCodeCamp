@@ -103,3 +103,25 @@ _CONGRATULATIONS . This is the end of the article on the IF statement_
  **Happy Coding ! :)**
  
  **Feel free to ask any queries on FreeCodeCamp's GitHub page or [FreeCodeCamp's Forum .](https://forum.freecodecamp.org/)**
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ More Examples
+  
+  
+```  
+ a=5;
+ c=10;
+ if(a>c)
+ cout << " a is greater";
+ else if(a==c)
+ cout << "they are equal";
+ else
+ cout << "c is greater";
+ ```
+ 
+ 
