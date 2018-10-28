@@ -62,4 +62,6 @@ print(model.intercept_)
 # calculate accuracy
 from sklearn import metrics
 print(metrics.accuracy_score(y_test, y_pred_class))
+
 ```
+Octave is also oe of the est platforms for doig simple machie learig o datasets
