@@ -47,7 +47,17 @@ When starting out with linux, there are some basic commands everyone should know
 - Use `clear` to simply clear all output from your terminal.
 
  14. **cp** - copy files and directories
-- Use 'cp' to copy a file or a direcotry with files inside it to another location using command 'cp CURRENT_FILE-LOCATION DESTINATION_FOLDER'. Add '-r' flag to copy a directory that is not empty. 
+- Use `cp` to copy a file or a direcotry with files inside it to another location using command 'cp CURRENT_FILE-LOCATION DESTINATION_FOLDER'. Add '-r' flag to copy a directory that is not empty. 
+
+15. **grep** -  The grep searches any given input files, selecting lines that match one or more patterns.
+- use `grep` to find a file, a directory, some text in the file/directory.  
+**Example:**
+```sh
+ $ ps ax | grep -w login
+ 25291 s000  Ss     0:00.11 login -pf <user>
+ 25467 s000  R+     0:00.00 grep -w login
+ 25409 s004  Ss     0:00.04 login -pf <user>
+```
 
  15. **df -h** Checks disk space in human readable form
 - Shows the size, amount used, amount available and capacity percentage of mounted drives/partitions.
