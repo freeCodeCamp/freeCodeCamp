@@ -64,7 +64,7 @@ Pentru a-ți fi de ajutor, găsește un "articol stub/trunchi" pe site-ul [Ghidu
 
 Dacă nu poți găsi un articol stub/trunchi despre subiectul despee care dorești să scrii, poți deschide un PR care creează un stub și include schița articolul tău.
 
-Dacă dorești să contribuiești la îmbunătățirea articolelor de orientare, iată [cum să lucrezi cu articole de ghid](/docs/how-to-work-on-guide-articles.md).
+Dacă dorești să contribui la îmbunătățirea articolelor de orientare, iată [cum să lucrezi cu articole de ghid](/docs/how-to-work-on-guide-articles.md).
 
 ### Crează, Actualizează și Corectează erorile în provocările noastre de codare
 
