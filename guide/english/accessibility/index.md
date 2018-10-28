@@ -20,7 +20,7 @@ different benefits of Web accessibility, including **benefits for organizations*
 
 Web accessibility should also include the people who don't have access to the internet or to computers.
 
-A prominent guideline for web development was introduced by the [World Wide Web Consortium (W3C)](https://www.w3.org/), the [Web Accessibility Initiative](https://www.w3.org/WAI/)
+While moddern web development technologies such as AJAX and the pervasive use of javscript have allowed for immersive and unique web experiences, these technologies often make the web inaccessibible to users with different abilities.  A prominent guideline for web development was introduced by the [World Wide Web Consortium (W3C)](https://www.w3.org/), the [Web Accessibility Initiative](https://www.w3.org/WAI/)
 from which we get the [WAI-ARIA](https://developer.mozilla.org/en-US/docs/Learn/Accessibility/WAI-ARIA_basics), the Accessible Rich Internet Applications Suite.
 Where WAI tackles the semantics of html to more easily nagivate the DOM Tree, ARIA attempts to make web apps, especially those developed with javascript and
 AJAX, more accessible. 
