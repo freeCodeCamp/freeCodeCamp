@@ -168,6 +168,12 @@ void insertionSort(int arr[], int n)
 } 
 ```
 
+### Advantages of Insertion Sorting:
+* It is easy to implement
+* It is efficient to use if data set is small and if the array is partially sorted
+* It is better than bubble sort and selection sort
+* It requires less memory space
+
 ### Properties:
 * Space Complexity: O(1)
 * Time Complexity: O(n), O(n* n), O(n* n) for Best, Average, Worst cases respectively
