@@ -103,6 +103,7 @@ _Hint:_ There is a handy <a href='https://developer.mozilla.org/en-US/docs/Web/J
     var a = 4;
     var b = 5;
     a += b; //a = 9, b = 5
+    a +=b is same as a = a + b
 
 ## Decrement
 
