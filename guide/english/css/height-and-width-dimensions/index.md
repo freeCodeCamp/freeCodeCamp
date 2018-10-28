@@ -67,7 +67,7 @@ p {
 
 #### Width:
 
-The CSS width property explanations are exactly the same as the height properties' except they alter the width of an element. Therefore, I will only show a few examples of the usage of these properties below.
+The CSS width property shares exactly the same values as the height property, except they alter the width of an element. Therefore, I will only show a few examples of the usage of these properties below.
 
 **Example:**
 ```css
