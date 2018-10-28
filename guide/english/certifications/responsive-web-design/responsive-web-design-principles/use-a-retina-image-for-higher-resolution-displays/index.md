@@ -7,7 +7,7 @@ Following the instructions:
 
 Set the width and height of the img tag to half of their original values. In this case, both the original height and the original width are 200px.
 
-the style 4 becomes:
+the style becomes:
 
 ```css
   <style>
