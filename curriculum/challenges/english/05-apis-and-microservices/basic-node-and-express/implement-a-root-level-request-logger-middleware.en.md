@@ -24,8 +24,9 @@ Hint: Express evaluates functions in the order they appear in the code. This is 
 <section id='tests'>
 
 ```yml
-- text: Root level logger middleware should be active
-  testString: 'getUserInput => $.get(getUserInput(''url'') + ''/_api/root-middleware-logger'').then(data => { assert.isTrue(data.passed, ''root-level logger is not working as expected''); }, xhr => { throw new Error(xhr.responseText); })'
+tests:
+  - text: Root level logger middleware should be active
+    testString: 'getUserInput => $.get(getUserInput(''url'') + ''/_api/root-middleware-logger'').then(data => { assert.isTrue(data.passed, ''root-level logger is not working as expected''); }, xhr => { throw new Error(xhr.responseText); })'
 
 ```
 
