@@ -129,6 +129,11 @@ This draws the following chart:
 
 [Browser support for SVG](https://caniuse.com/#feat=svg) is available in all modern browsers. There are some issues with scaling in IE 9 through IE 11 however they can be overcome with the use of the `width`, `height`, `viewbox`, and CSS.
 
+For a full list of which browsers are compatible with svg files, see
+<a href='https://caniuse.com/#feat=svg' target='_blank' rel='nofollow'>this compatibility chart.</a>
+
+
+
 ## Editors
 
 * [Vectr](https://vectr.com) - web and desktop tool for creating and editing SVG graphics, free of charge
