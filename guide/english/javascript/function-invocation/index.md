@@ -66,6 +66,20 @@ function addStuff(args) {
 
 This shorthand version of the arrow function has an implicit return so you don't specify a return statement.
 
+### The Global Object
+When a function is called without an owner object, the value of this becomes the global object.
+In a web browser the global object is the browser window.
+This example returns the window object as the value of <b>this</b>:
+
+```javascript
+
+var x = myFunction();            // x will be the window object
+
+function myFunction() {
+   return this;
+}
+```
+
 ### More Information:
 - Function documentation: <a href='https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Functions' target='_blank' rel='nofollow'>MDN</a>
 
