@@ -12,15 +12,15 @@ master
 #### Syntax of Lambda Function
 `lambda arguments: expression`
 
-Lambda functions can have any number of arguments but only one expression
+Lambda functions can have any number of arguments but only one expression.
 
 #### Example code
 ```py
-# Lambda function to calculate square of a number
+# Lambda function to calculate square of a number.
 square = lambda x: x ** 2
 print(square(3)) # Output: 9
 
-# Traditional function to calculate square of a number
+# Traditional function to calculate square of a number.
 def square1(num):
   return num ** 2
 print(square(5)) # Output: 25
@@ -33,7 +33,7 @@ So, we associated the function object with `square` and hence from now on we can
 
 ### Beginner
 ```py
-lambda_func = lambda x: x**2 # Function that takes an integer and returns its square
+lambda_func = lambda x: x**2 # Function that takes an integer and returns its square.
 lambda_func(3) # Returns 9
 ```
 ### Intermediate
@@ -59,11 +59,11 @@ for num in my_list:
      if num % 2 != 0:
          filtered.append(num)
 
-print(filtered)      # Python 2: print filtered
+print(filtered)      # Python 2: print filtered.
 # [1, 3, 5, 7, 9]
  ```
 
-You could write this as a one liner with list-comprehensions
+You could write this as a one liner with list-comprehensions.
 
 ```python
 filtered = [x for x in [1, 2, 3, 4, 5, 6, 7, 8, 9, 10] if x % 2 != 0]
