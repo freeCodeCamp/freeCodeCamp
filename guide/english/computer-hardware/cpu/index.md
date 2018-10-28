@@ -37,3 +37,9 @@ The improvements in microprocessor technology have also led to signficant techno
 #### More Information:
 <a href='https://en.wikipedia.org/wiki/Central_processing_unit' target='_blank' rel='nofollow'>Wikipedia</a>
 
+##ABOUT INTEL CPU OS
+One of the world's lesser-known operating systems may actually be the most used OS in the world, according to new revelations made by Google's Linux experts.
+
+The culprit is MINIX 3, an open-source and highly modular UNIX-like operating system that was designed to work on microkernel architectures.
+
+The OS was launched in 1987 as an educational project by Dutch professor Andrew S. Tanenbaum, who wanted to show students that they don't need to write millions of lines of code to create a basic, functional operating system.
