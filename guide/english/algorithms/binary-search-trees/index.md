@@ -281,3 +281,13 @@ Complete Binary Tree: A Binary Tree is complete Binary Tree if all levels are co
       40    50    100   40
      /  \   /
     8   7  9 
+    
+Time Analysis for BST: 
+
+Suppose a BST has n elements. What is the maximum depth the tree could have?
+
+    A BST with n elements could have a depth as big as n-1.
+
+Worst-Case Times for BSTs:
+
+    Adding an element, removing an element, or searching for an element in a BST with n elements is O(n).
