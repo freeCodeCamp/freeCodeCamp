@@ -18,17 +18,17 @@
 
 Salut 👋!
 
-freeCodeCamp.org este posibil datorită miilor de voluntari și tine . Suntem recunoscători pentru contribuțiile voastre și suntem încântați să vă întâmpinăm la bord.
+freeCodeCamp.org este posibil datorită miilor de voluntari ca tine . Suntem recunoscători pentru contribuțiile voastre și suntem încântați să vă întâmpinăm la bord.
 
 Aplicăm cu strictețe ["Codul nostru de conduită"](https://www.freecodecamp.org/code-of-conduct). Ia-ți un moment să il citești. Sunt doar 196 de cuvinte de citit.
 
-Iți urăm contribuține plăcută 🎉!
+Iți urăm contribuție plăcută 🎉!
 
 ## Aici sunt câteva moduri plăcute în ne poți ajuta
 
 Poți alege să contribuiești în orice arie/domeniu care te interesează:
 
-1. [Contribuiește la codul open source al aceastei pagine.](#contribute-to-this-open-source-codebase). Ajutâ la editarea [articolelor de orientare](https://guide.freecodecamp.org/), la [provocările de codare](https://learn.freecodecamp.org/) sau la corectarea erorilor de pe platforma de învățare.
+1. [Contribuie la codul open source al aceastei pagine.](#contribute-to-this-open-source-codebase). Ajutâ la editarea [articolelor de orientare](https://guide.freecodecamp.org/), la [provocările de codare](https://learn.freecodecamp.org/) sau la corectarea erorilor de pe platforma de învățare.
 
 2. Ajută-i pe colegii de pe [forumul public](https://www.freecodecamp.org/forum/). [Răspunde la întrebările lor de codare](https://www.freecodecamp.org/forum/?max_posts=1) sau [oferăle feedback cu privire la proiectele lor de codare](https://www.freecodecamp.org/forum/c/project-feedback?max_posts=1)
 
@@ -131,7 +131,7 @@ Suntem bucuroși să te ajutăm să contribuiești la oricare dintre subiectele 
 
 **Sunt nou în GitHub și în Open Source în general:**
 
-Citește [Cum să contribuești la Ghidul Open Source](https://github.com/freeCodeCamp/how-to-contribute-to-open-source).
+Citește [Cum să contribui la Ghidul Open Source](https://github.com/freeCodeCamp/how-to-contribute-to-open-source).
 
 **Ce înseamnă aceste etichete diferite, care sunt atașate/anexate pe probleme?**
 
