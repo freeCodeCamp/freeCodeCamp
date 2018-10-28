@@ -3,7 +3,7 @@ title: Fontawesome Icons For Bootstrap
 ---
 ## Fontawesome Icons For Bootstrap
 
-Bootstrap (from version 4 onwards) have dropped Glyphicon icons font in their latest release. 
+Bootstrap (from version 4 onwards) has dropped Glyphicon icons font in their latest release. 
 Fontawesome Icons provide you with over 675 icons and they come in font format.
 
 #### How To Use:
@@ -12,9 +12,9 @@ In the `<head>` of your html include a reference to Font Awesome.
 ```html
 <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
 ```
-Using fontawesome is same as using Glyphicon. 
+Using fontawesome is same as using [Glyphicon](https://www.glyphicons.com/). 
 
-Simply create `<i>` or `<span>` tag and apply the CSS Prefix `fa` and the icon's name.  A code example has been provided below.
+Simply create a `<i>` or `<span>` tag and apply the CSS Prefix `fa` and the icon's name.  A code example has been provided below.
 
 **Code Example:**
 
@@ -27,13 +27,13 @@ Simply create `<i>` or `<span>` tag and apply the CSS Prefix `fa` and the icon's
 <span class="fa fa-freecodecamp" aria-hidden="true"></span>
 
 #### Fontawesome Icon List:
-Complete list of icons provided by fontawesome is available [here](http://fontawesome.io/cheatsheet/)
+A complete list of icons provided by fontawesome is available [here](http://fontawesome.io/cheatsheet/)
 
-`.fa fa-align-left` This is fontawesome align left icon.
+`.fa fa-align-left` This is the fontawesome align left icon.
 
 <span class="fa fa-align-left" aria-hidden="true"></span>
 
-`.fa fa-heart` This is fontawesome heart icon.
+`.fa fa-heart` This is the fontawesome heart icon.
 
 <span class="fa fa-heart" aria-hidden="true"></span>
 
