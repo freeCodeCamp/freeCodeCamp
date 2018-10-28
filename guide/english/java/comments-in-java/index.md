@@ -22,6 +22,8 @@ To create a single line comment just add two `//` forward slashes before the tex
 
 #### 2. Multi Line Comment
 
+To describe the code, single line comments can be difficult to write since we have to give ‘//’ at every line. So to overcome this problem multi line comments can be used.
+
 To Create a Multi line comment wrap the lines in between `/*` line goes here `*/`
 
 ```java
