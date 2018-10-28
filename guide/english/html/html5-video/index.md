@@ -31,9 +31,9 @@ Since this is html5, some browsers do not support it. You can check the support 
 
 There are several different elements of the video tag, many of these explanations are based on Mozilla's web docs (linked below). There are even more if you click the link at the bottom. 
 
-#### autoplay
+#### Autoplay
 
-"autoplay" can be set to either true or false. You set it to true by adding it into the tag, if it is not present in the tag it is set to false. If set to true, the video will begin playing as soon as enough of the video has buffered for it to be able to play. Many people find autoplaying videos as disruptive or annoying. So use this feature sparingly. Also note, that some mobile browsers, such as Safari for iOS, ignore this attribute.
+"Autoplay" can be set to either true or false. You set it to true by adding it into the tag, if it is not present in the tag it is set to false. If set to true, the video will begin playing as soon as enough of the video has buffered for it to be able to play. Many people find autoplaying videos as disruptive or annoying. So use this feature sparingly. Also note, that some mobile browsers, such as Safari for iOS, ignore this attribute.
 
 ```html
     <video autoplay>
@@ -41,7 +41,7 @@ There are several different elements of the video tag, many of these explanation
     </video>
 ```
 
-#### poster
+#### Poster
 
 The "poster" attribute is the image that shows on the video until the user clicks to play it.
 
@@ -51,7 +51,7 @@ The "poster" attribute is the image that shows on the video until the user click
     </video>
 ```
 
-#### controls
+#### Controls
 
 The "controls" attribute can be set to true or false and will handle whether controls such as the play/pause button or volume slider appear. You set it to true by adding it into the tag, if it is not present in the tag it is set to false. 
 
