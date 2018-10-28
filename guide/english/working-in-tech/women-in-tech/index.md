@@ -36,4 +36,10 @@ The worst thing you can do is to sell yourself short if you want something take 
 - [1 Million Women To Tech](https://1millionwomentotech.com/)
 - [Women Techmakers](https://www.womentechmakers.com/)  
 - [Women Who Code](https://www.womenwhocode.com/)
+- [Learn IT Girl](https://www.learnitgirl.com/)
+- [Outreachy](https://www.outreachy.org/)
+
+
+
+
 
