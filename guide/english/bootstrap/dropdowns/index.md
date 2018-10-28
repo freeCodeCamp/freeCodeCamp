@@ -6,7 +6,7 @@ title: Dropdowns
 Bootstrap provides Dropdowns as a plugin for displaying lists of links.
 A dropdown is a button which toggles displaying a list of links.
 
-Bootstrap’s dropdowns are designed to be generic and applicable to a variety of situations. For instance, it is possible to create dropdowns that contain search fields or login forms.
+Bootstrap’s dropdowns are designed to be generic and applicable to a variety of situations. For instance, it is possible to create dropdowns that contain search fields or login forms. Dropdowns can be triggered from <a> or <button> elements.
 
 ## Example
 
