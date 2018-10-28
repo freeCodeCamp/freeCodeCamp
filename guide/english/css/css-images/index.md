@@ -41,3 +41,16 @@ img {
 ##### Datatypes
 <a title="The <image> CSS data type represents a 2D image. There are two kinds of images: plain images, typically referenced using a URL, and dynamically-generated images, like those generated with <gradient> or element(). Images can be used with numerous CSS properties, such as background-image, border-image, content, list-style-image, and cursor." href="/en-US/docs/Web/CSS/image"><code>&lt;image&gt;</code></a>
 <a title="The documentation about this has not yet been written; please consider contributing!" href="/en-US/docs/Web/CSS/uri"><code>&lt;uri&gt;</code></a>
+     
+##### Image Sprites
+An image sprite is a collection of images put into a single image.
+A web page with many images can take a long time to load and generates multiple server requests.
+Using image sprites will reduce the number of server requests and save bandwidth.
+
+```
+#home {
+    width: 46px;
+    height: 44px;
+    background: url(img_navsprites.gif) 0 0;
+}
+```
