@@ -73,9 +73,9 @@ La especificación HTML es un documento que describe cómo se debe usar el lengu
 
     <div class="awesome-button"></div> 
  
-    <span><strong>Huge heading I will style with CSS later</strong></span> 
+    <span><strong>Enorme cabecera a la cual pondre css más tarde</strong></span> 
  
-    <span class="clickable-with-JavaScript">English</span> 
+    <span class="clickable-with-JavaScript">Ingles</span> 
 ```
 
 ¿Adivina qué? Los tres de estos elementos rompen varios criterios de WCAG y, por lo tanto, no son accesibles en absoluto.
@@ -93,11 +93,11 @@ Spans y divs no son elementos. Están destinados a contener otros elementos, no 
 
 ```html
 
-    <button>This is a button</button> 
+    <button>Este es un botón</button> 
  
-    <h2>Here's a heading level two</h2> 
+    <h2>Aquí hay una cabecera de nivel 2</h2> 
  
-    <a href="JavascriptThing">English</a> 
+    <a href="JavascriptThing">Ingles</a> 
 ```
 
 Auge. De repente, todos estos elementos ahora son perfectamente accesibles, solo mediante el uso de HTML nativo. HTML de la forma en que estaba destinado a ser utilizado, en otras palabras.

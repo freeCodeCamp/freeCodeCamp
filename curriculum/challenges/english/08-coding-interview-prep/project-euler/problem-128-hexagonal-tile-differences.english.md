@@ -29,7 +29,7 @@ Find the 2000th tile in this sequence.
 ```yml
 tests:
   - text: <code>euler128()</code> should return 14516824220.
-    testString: 'assert.strictEqual(euler128(), 14516824220, "<code>euler128()</code> should return 14516824220.");'
+    testString: assert.strictEqual(euler128(), 14516824220, '<code>euler128()</code> should return 14516824220.');
 
 ```
 
