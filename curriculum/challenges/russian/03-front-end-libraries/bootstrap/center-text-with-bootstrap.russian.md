@@ -3,11 +3,11 @@ id: bad87fee1348bd8acde08812
 title: Center Text with Bootstrap
 challengeType: 0
 videoUrl: ''
-localeTitle: Текст центра с бутстрапом
+localeTitle: Центрирование текста с помощью Bootstrap
 ---
 
 ## Description
-<section id="description"> Теперь, когда мы используем Bootstrap, мы можем сосредоточить наш элемент заголовка, чтобы он выглядел лучше. Все, что нам нужно сделать, это добавить <code>text-center</code> класса к нашему элементу <code>h2</code> . Помните, что вы можете добавить несколько классов в один и тот же элемент, разделив каждое из них на пробел, например: <code>&lt;h2 class=&quot;red-text text-center&quot;&gt;your text&lt;/h2&gt;</code> </section>
+<section id="description"> Используя Bootstrap, мы можем центрировать наш элемент заголовка, чтобы он выглядел лучше. Все, что нам нужно сделать, это добавить класс <code>text-center</code> к нашему элементу <code>h2</code> . Помните, что вы можете добавить несколько классов в один и тот же элемент, разделив их пробелом, например: <code>&lt;h2 class=&quot;red-text text-center&quot;&gt;your text&lt;/h2&gt;</code> </section>
 
 ## Instructions
 <section id="instructions">
@@ -18,7 +18,7 @@ localeTitle: Текст центра с бутстрапом
 
 ```yml
 tests:
-  - text: 'Ваш элемент <code>h2</code> должен быть центрирован, применяя <code>text-center</code> класса'
+  - text: 'Ваш элемент <code>h2</code> должен быть центрирован, применяя класс <code>text-center</code>'
     testString: 'assert($("h2").hasClass("text-center"), "Your <code>h2</code> element should be centered by applying the class <code>text-center</code>");'
   - text: Ваш элемент <code>h2</code> должен по-прежнему иметь класс <code>red-text</code>
     testString: 'assert($("h2").hasClass("red-text"), "Your <code>h2</code> element should still have the class <code>red-text</code>");'
