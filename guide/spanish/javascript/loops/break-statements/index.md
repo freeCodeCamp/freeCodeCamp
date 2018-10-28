@@ -16,7 +16,7 @@ break labelName;
 
 ## Ejemplos
 
-La siguiente función tiene una sentencia **break** que termina el `while` de bucle cuando **i** es 3, y luego devuelve el valor **3 \* x.**
+La siguiente función tiene una sentencia **break** que termina el `while` de bucle cuando **i** es igual a 3, y luego devuelve el valor **3 \* x.**
 ```
 function testBreak(x) { 
   var i = 0; 
