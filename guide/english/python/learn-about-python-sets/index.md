@@ -29,4 +29,16 @@ However, if elements are included within the curly brackets, then it would be ac
 >>> example_set_2 = {1, 2, 3}
 >>> type(example_set_2)
 <class 'set'>
-````
+```
+
+**Application**
+
+`set()` can be used to remove duplicates from a list.
+
+
+```python
+>>> example_list=[1,1,2,3,3,4,4]
+>>> example_new_list= list(set(example_list))
+>>> print(example_new_list)
+[1,2,3,4]
+```
