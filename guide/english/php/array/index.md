@@ -8,14 +8,14 @@ An array can be thought of as a collection of items.
 
 ## Syntax
 
-An array is defined by array(), or [].
+An array is defined by `array()`, or `[]`.
 
 An example of an array in each style can be seen below:
 
 ```
 <?php
 
-$bikes = array('Suzuki','BMW','Yamaha');
+$bikes = array('Suzuki', 'BMW', 'Yamaha');
 ```
 ```
 <?php
