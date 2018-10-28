@@ -21,4 +21,5 @@ Some people invest in cryptocurrency on exchanges such as Binance, Bitrex, or Co
 [Bitcoin](https://en.wikipedia.org/wiki/Bitcoin)
 
 ### Background History on origins of cryptocurrency:
-[Blockchain History](https://www.activism.net/cypherpunk/manifesto.html)
+[Blockchain origins story](https://www.activism.net/cypherpunk/manifesto.html)
+Cypherpunks, crypoanarchists, and libertarians paved the way for the right to privacy and deregulating the government's control and diminishing individual citizen's autonomy.
