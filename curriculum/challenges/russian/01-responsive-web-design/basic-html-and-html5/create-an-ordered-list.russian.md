@@ -7,17 +7,17 @@ localeTitle: Создание упорядоченного списка
 ---
 
 ## Description
-<section id="description"> HTML имеет еще один специальный элемент для создания <code>ordered lists</code> или нумерованных списков. Упорядоченные списки начинаются с элемента <code>&lt;ol&gt;</code> , за которым следует любое количество элементов <code>&lt;li&gt;</code> . Наконец, упорядоченные списки закрываются с помощью <code>&lt;/ol&gt;</code> Например: <blockquote> &lt;Ол&gt; <br> &lt;Li&gt; Гарфилд &lt;/ li&gt; <br> &lt;Li&gt; Сильвестр &lt;/ li&gt; <br> &lt;/ Ол&gt; </blockquote> создаст нумерованный список «Гарфилд» и «Сильвестр». </section>
+<section id="description"> HTML имеет еще один специальный элемент для создания <code>ordered lists</code> или нумерованных списков. Упорядоченные списки начинаются с элемента <code>&lt;ol&gt;</code> , за которым следует любое количество элементов <code>&lt;li&gt;</code> . Упорядоченные списки закрываются с помощью <code>&lt;/ol&gt;</code> Например: <blockquote> &lt;Ол&gt; <br> &lt;Li&gt; Гарфилд &lt;/ li&gt; <br> &lt;Li&gt; Сильвестр &lt;/ li&gt; <br> &lt;/ Ол&gt; </blockquote> создаст нумерованный список «Гарфилд» и «Сильвестр». </section>
 
 ## Instructions
-<section id="instructions"> Создайте упорядоченный список из 3 лучших вещей, которые кошки ненавидят больше всего. </section>
+<section id="instructions"> Создайте упорядоченный список состоящий из трех вещей, которые кошки ненавидят больше всего. </section>
 
 ## Tests
 <section id='tests'>
 
 ```yml
 tests:
-  - text: 'У вас должен быть упорядоченный список для «Топ-3 вещей, которые ненавижу кошки:»'
+  - text: 'У вас должен быть упорядоченный список для «Топ-3 вещей, которые ненавидят кошки:»'
     testString: 'assert((/Top 3 things cats hate:/i).test($("ol").prev().text()), "You should have an ordered list for "Top 3 things cats hate:"");'
   - text: 'У вас должен быть неупорядоченный список «Вещи, которые любят кошки»:'
     testString: 'assert((/Things cats love:/i).test($("ul").prev().text()), "You should have an unordered list for "Things cats love:"");'
