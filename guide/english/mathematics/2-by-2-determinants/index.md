@@ -1,5 +1,5 @@
 ---
-title: 2 by 2 Determinants
+Title: 2 by 2 Determinants
 ---
 
 ## 2 by 2 Determinants
@@ -24,11 +24,39 @@ The absolute value of the determinant is equal to the area of the parallelogram.
 
 <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/a/ad/Area_parallellogram_as_determinant.svg/1044px-Area_parallellogram_as_determinant.svg.png" width="300"> <a href="https://i.stack.imgur.com/gCaz3.png">Here</a> is an interesting visual proof of this property.
 
-Note: If the determinant equals zero, there are no solutions (intersections) to the system (aka the lines are parallel). 
+The Formula is as follow
+<div>
+  <img src="https://ncalculators.com/images/formulas/2x2-matrix-determinant.jpg" alt="formula">
+</div>
+Note: If the determinant equals zero, there are no solutions (intersections) to the system (aka the lines are parallel).
+
+## Example of (2x2) determinants
+Example 1
+Solve the following 2x2 determinants
+<div>
+<img src="https://www.purplemath.com/modules/matrices/determ05.gif" alt="question1" style="width:48px;height:48px;">
+</div>
+Method: Multiple the diagonals and subtract
+<div>
+<img src="https://www.purplemath.com/modules/matrices/determ06.gif" alt="work1" style="width:48px;height:48px;">
+</div>
+
+Example 2
+Solve the following 2x2 determinants
+<div>
+<img src="https://www.purplemath.com/modules/matrices/determ07.gif" alt="question2" style="width:48px;height:48px;">
+  </div>
+Method: Multiple the diagonals and subtract
+<div>
+<img src="https://www.purplemath.com/modules/matrices/determ08.gif" alt="question2" style="width:48px;height:48px;">
+</div>
+
+
 
 #### More Information:
 - [Determinant of a Matrix](https://github.com/freeCodeCamp/guides/blob/master/src/pages/mathematics/determinant-of-a-matrix/index.md "Determinant of a Matrix")
 - [Wikipedia: 2x2 Determinant](https://en.wikipedia.org/wiki/Determinant#2_.C3.97_2_matrices)
+- [Purplemath: 2x2 Determinant] (https://www.purplemath.com/modules/determs2.htm)
 
 
-![img](https://ncalculators.com/images/formulas/2x2-matrix-determinant.jpg)
+
