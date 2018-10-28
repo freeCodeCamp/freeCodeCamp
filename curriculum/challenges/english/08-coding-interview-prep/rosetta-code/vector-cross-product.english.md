@@ -28,11 +28,11 @@ invalid inputs (ie vectors of different lengths).
 ```yml
 tests:
   - text: dotProduct must be a function
-    testString: 'assert.equal(typeof crossProduct, "function", "dotProduct must be a function");'
+    testString: assert.equal(typeof crossProduct, 'function', 'dotProduct must be a function');
   - text: dotProduct() must return null
-    testString: 'assert.equal(crossProduct(), null, "dotProduct() must return null");'
-  - text: 'crossProduct([1, 2, 3], [4, 5, 6]) must return [-3, 6, -3].'
-    testString: 'assert.deepEqual(res12, exp12, "crossProduct([1, 2, 3], [4, 5, 6]) must return [-3, 6, -3].");'
+    testString: assert.equal(crossProduct(), null, 'dotProduct() must return null');
+  - text: crossProduct([1, 2, 3], [4, 5, 6]) must return [-3, 6, -3].
+    testString: assert.deepEqual(res12, exp12, 'crossProduct([1, 2, 3], [4, 5, 6]) must return [-3, 6, -3].');
 
 ```
 
@@ -56,7 +56,10 @@ function crossProduct() {
 <div id='js-teardown'>
 
 ```js
-console.info('after the test');
+const tv1 = [1, 2, 3];
+const tv2 = [4, 5, 6];
+const res12 = crossProduct(tv1, tv2);
+const exp12 = [-3, 6, -3];
 ```
 
 </div>

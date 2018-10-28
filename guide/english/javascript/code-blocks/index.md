@@ -29,3 +29,11 @@ The **block** statement is commonly used with control flow statements (e.g. `if.
       sum = num1 + num2;
       return sum;
     }
+
+#### Nested Blocks
+
+    for(var i = 0; i < 10; i++){
+        for(var j = 0; j < 10; j++){
+            console.log(i + ", " + j);
+        }    
+    }
