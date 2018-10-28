@@ -96,7 +96,7 @@ We get `15.300000`. So, say we just want two places after the decimal to give us
 * The first character in a name cannot be a numeric digit.
 * Uppercase characters are considered distinct from lowercase characters.
 * You can’t use a C keyword for a name.
-
+#A variable stores a data value
 # Before you go on...
 ## A review
 * Variables need to be created before they are used.
