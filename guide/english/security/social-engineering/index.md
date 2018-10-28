@@ -24,6 +24,8 @@ See "More Information" for a link to test your phishing knowledge and see if you
 
 * Infiltrating: impersonating someone legitimate in order to gain physical access to a building/office etc., e.g. the coffee machine repair person
 
+* Tailgating: Also called piggybacking and relating closely to Infiltrating, tailgating describes the act of following someone else - often people or group of people with access cards - into a building or secure area with or without their consent.
+
 #### Prevention and Security
 
 Because Social Engineering requires little computer experience, it is a readily-available tool for individuals who wish to access sensitive data.
