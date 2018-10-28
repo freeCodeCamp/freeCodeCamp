@@ -143,3 +143,4 @@ There are many possible ways a user can give input/s like:
 ```
 
 Comments can help in the understanding of the markup and do not display in the webpage.
+#Html is the foundation
