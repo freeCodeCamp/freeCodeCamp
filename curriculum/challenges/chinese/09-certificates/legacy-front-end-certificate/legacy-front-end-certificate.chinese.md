@@ -7,15 +7,15 @@ videoUrl: ''
 localeTitle: 传统前端证书
 ---
 
-## Description
+##  Description
 <section id="description">
 </section>
 
-## Instructions
+##  Instructions
 <section id="instructions">
 </section>
 
-## Tests
+##  Tests
 <section id='tests'>
 
 ```yml
@@ -45,12 +45,12 @@ tests:
 
 </section>
 
-## Challenge Seed
+##  Challenge Seed
 <section id='challengeSeed'>
 
 </section>
 
-## Solution
+##  Solution
 <section id='solution'>
 
 ```js
