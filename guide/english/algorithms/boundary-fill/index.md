@@ -3,7 +3,7 @@ title: Boundary Fill
 ---
 
 ## Boundary Fill
-Boundary fill is the algorithm used frequently in computer graphics to fill a desired color inside a closed polygon having the same boundary 
+Boundary fill is the algorithm used frequently in computer graphics to fill the desired color inside a closed polygon having the same boundary 
 color for all of its sides.
 
 The most approached implementation of the algorithm is a stack-based recursive function.
@@ -12,10 +12,10 @@ The most approached implementation of the algorithm is a stack-based recursive f
 The problem is pretty simple and usually follows these steps:
 
 1. Take the position of the starting point and the boundary color.
-2. Decide wether you want to go in 4 directions (N, S, W, E) or 8 directions (N, S, W, E, NW, NE, SW, SE).
+2. Decide whether you want to go in 4 directions (N, S, W, E) or 8 directions (N, S, W, E, NW, NE, SW, SE).
 3. Choose a fill color.
 4. Travel in those directions.
-5. If the pixel you land on is not the fill color or the boundary color , replace it with the fill color.
+5. If the pixel you land on is not the fill color or the boundary color, replace it with the fill color.
 6. Repeat 4 and 5 until you've been everywhere within the boundaries.
 ### Certain Restrictions:
 - The boundary color should be the same for all the edges of the polygon.
