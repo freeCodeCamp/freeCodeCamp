@@ -19,3 +19,11 @@ Security researchers use a wide variety of methods and tools, which are discusse
 
 Although hacking is a key threat to secure applications, it is not the only one.  Application developers need to balance user experience with security features.  Some cyber breches are self-infliced due to complex or hard to understadn security configurations.  What security features should be set by default?  What features should be seemless and which should require explict user consent? 
 
+## Vulnerabilities and Attacks
+
+A vulnerability is a weakness in design, implementation, operation or internal control. Most of the vulnerabilities that have been discovered are documented in the Common Vulnerabilities and Exposures (CVE) database.
+
+An exploitable vulnerability is one for which at least one working attack or "exploit" exists.[4] Vulnerabilities are often hunted or exploited with the aid of automated tools or manually using customized scripts.
+
+To secure a computer system, it is important to understand the attacks that can be made against it, and these threats can typically be classified into one of these categories below:
+
