@@ -15,5 +15,4 @@ Just to a few advantages of Drupal:
 
 ### More Information
 
-- [Drupal Training](http://drupalize.me/)
 - [Drupal.org](https://www.drupal.org/)
