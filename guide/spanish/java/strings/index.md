@@ -1,10 +1,10 @@
 ---
 title: Strings
-localeTitle: Instrumentos de cuerda
+localeTitle: Cadenas
 ---
-# Instrumentos de cuerda
+# Cadenas
 
-Las cadenas son secuencias de caracteres. En Java, una `String` es un `Object` . Las cadenas no deben confundirse con `char` ya que los caracteres son literalmente 1 valor en lugar de una secuencia de caracteres. Aún puede usar 1 valor dentro de una cadena, sin embargo, es preferible usar `char` cuando está verificando 1 carácter.
+Las cadenas son secuencias de caracteres. En Java, un `String` es un `Object` . Las cadenas no deben confundirse con `char` ya que los caracteres son literalmente 1 valor en lugar de una secuencia de caracteres. Aún puede usar 1 valor dentro de una cadena, sin embargo, es preferible usar `char` cuando está verificando 1 carácter.
 
 ```java
 String course = "FCC"; 
