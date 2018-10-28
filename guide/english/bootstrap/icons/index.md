@@ -11,7 +11,7 @@ Bootstrap doesn’t include an icon library by default, but it has a handful of 
 
 ### How to use
 
-To use Bootstrap icon create a span tag with base class `glyphicon` and  individual icon class.
+To use a Bootstrap icon, create a span tag with base class `glyphicon` and  individual icon class.
 Use it only on elements that contain no text content and have no child elements.
 
 **Code Example:**
@@ -24,7 +24,7 @@ Use it only on elements that contain no text content and have no child elements.
 
 <span class="glyphicon glyphicon-cog"></span>
 
-The Bootstrap framework provides you with over 250 icons called glyphs. They come in font format from the Glyphicon Halflings set.
+The Bootstrap framework provides you with over 250 icons called glyphs. They come in font format from the Glyphicon Halflings set. Glyphicons Halflings are normally not available for free, but their creator has made them available for Bootstrap free of cost. As a thank you, they only ask that you include a link back to Glyphicons whenever possible.
 
 ### How To Use
 
@@ -47,6 +47,10 @@ This is an example of the CSS classes that bootstrap provides for glyphicons. Mo
 `.glyphicon glyphicon-trash` This is bootstrap's trash/delete icon.
 
 <span class="glyphicon glyphicon-trash" aria-hidden="true"></span>
+
+`.glyphicon glyphicon-search` This is bootstrap's search/magnify icon.
+
+<span class="glyphicon glyphicon-search" aria-hidden="true"></span>
 
 _Note: Do not include the dot in the HTML Class Attribute, referring to the classes with a dot is only used when adjusting the classes in CSS._
 
