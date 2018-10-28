@@ -21,10 +21,15 @@ Notice that in this example, we didn't bother specifying a number in the square 
 
 When initializing an array, you can provide fewer values than array elements. For example, the
 following statement initializes only the first two elements of my_array:
-
+```C
 float my_array[5] = {5.0, 2.5};
-
+```
 If you partially initialize an array, the compiler sets the remaining elements to zero.
+
+You can also initialize all elements of an array of a known size to zero using empty curly braces. For example:
+```C
+float my_array[5] = {};
+```
 
 Now that the array has been declared with 5 values, it has 5 memory locations. Consider this table for a visual example of that:
 
