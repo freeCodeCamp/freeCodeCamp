@@ -7,11 +7,11 @@ title: Books to Read for Programmers
 ## General
 
 *Automate the Boring Stuff With Python* by Al Sweigart
-- http://automatetheboringstuff.com/
+- [Website](http://automatetheboringstuff.com/)
 - ISBN-13: 978-1593275990
 
 *Structure and Interpretation of Computer Programs* by Harold Abelson, Gerald Jay Sussman, and Julie Sussman
-- https://mitpress.mit.edu/sicp/
+- [Website](https://mitpress.mit.edu/sicp/)
 - ISBN-13: 978-0262510875
 
 *Clean Code: A Handbook of Agile Software Crafstmanship* by Robert C. Martin
