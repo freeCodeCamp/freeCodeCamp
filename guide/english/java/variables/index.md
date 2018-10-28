@@ -48,6 +48,25 @@ byte anotherByte = (byte)0b00100001;
 ```
 
 As evident from the above example, variables of Primitive type behave slightly differently from variables of Reference (& Wrapper) type - while Primitive variables <i>store</i> the actual value, Reference variables <i>refer to</i> an 'object' containing the actual value.
+
+Variables can be **cast** from one type to another. The syntax for casting is: (<*data type to be cast to*>) <*variable name*>
+This type of casting is called **explicit casting**.
+
+```java
+int n = 0;
+String s = n; //Does not compile, as int is not compatable with String
+String s = (String) n; //Compiles, as the int is forcefully (explicitly) cast to a String
+```
+If a cast cannot result in loss of accuracy, then the compiler allows it without needing it to be explicitly declared. This type of casting is known as **implicit casting**.
+
+```java
+int n = 0;
+long l = n; //All int values can be casted to a long without any loss of data, so the compiler automaticly does the conversion.
+```
+Implicit type casting can only be done from a smaller data type to a larger data type. The hierarchy is as follows:
+byte -> short -> int -> long -> float -> double
+All Objects and characters can be explictly cast to Strings.
+
 You can find out more in the sections linked below.
 
 # Other Resources
