@@ -60,6 +60,7 @@ Swift está muy documentado. Tenga en cuenta que la codificación de Swift no so
 
 *   [RayWenderlich.com](https://www.raywenderlich.com/) : tiene muchos tutoriales excelentes para el desarrollo de Swift y iOS.
 *   [Hackear con Swift](https://www.hackingwithswift.com/read) : un tutorial completo de Swift, que te lleva de principiante a avanzado usando proyectos prácticos.
+*   [Playgrounds](https://www.apple.com/es/swift/playgrounds/) Un app disponible en el App Store para aprender Swift de una manera juego para jovenes y adolecentes
 
 ### Fuentes
 
