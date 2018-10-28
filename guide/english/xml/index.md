@@ -54,6 +54,16 @@ The following are areas that can be simiplified with XML:
 
 And it's main achievement was that it became a W3C Recommendation as early as in February 1998.
 
+### Applications of XML
+
+The essence of why extensible markup languages are necessary is explained at Markup language (for example, see Markup language § XML) and at Standard Generalized Markup Language.
+
+Hundreds of document formats using XML syntax have been developed, including RSS, Atom, SOAP, SVG, and XHTML. XML-based formats have become the default for many office-productivity tools, including Microsoft Office (Office Open XML), OpenOffice.org and LibreOffice (OpenDocument), and Apple's iWork{citation needed}. XML has also provided the base language for communication protocols such as XMPP. Applications for the Microsoft .NET Framework use XML files for configuration. Apple has an implementation of a registry based on XML.[8]
+
+Many industry data standards, e.g. HL7, OTA, FpML, MISMO, NIEM, etc. are based on XML and the rich features of the XML schema specification. Many of these standards are quite complex and it is not uncommon for a specification to comprise several thousand pages.
+
+In publishing, DITA is an XML industry data standard. XML is used extensively to underpin various publishing formats.
+
 ### More information
 
 * [XML Introduction](https://developer.mozilla.org/en-US/docs/XML_introduction)
