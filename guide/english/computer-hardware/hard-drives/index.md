@@ -46,3 +46,5 @@ Solid State Hard Drives fill a specific gap inbetween Solid State Drives and tra
 * [PCMag - SSD vs. HDD: What's the Difference?](https://www.pcmag.com/article2/0,2817,2404258,00.asp)
 * [Digital Trends - SSD vs. HDD](https://www.digitaltrends.com/computing/solid-state-drives-vs-hard-disk-drives)
 * [IOMeter Project](http://www.iometer.org)
+##SWAP MEMORY
+ Somepart of harddrive memory is used to create swap memory which is used as virtual ram.
