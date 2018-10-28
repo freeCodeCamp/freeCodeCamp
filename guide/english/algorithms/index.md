@@ -58,3 +58,7 @@ This is also a really good open source project that helps you visualize algorith
 [Infographic on how Machine Learning Algorithms Work](https://www.boozallen.com/content/dam/boozallen_site/sig/pdf/infographic/how-do-machines-learn.pdf)
 
 This infographic shows you how unsupervised and supervised machine learning algorithms work.
+
+[What's an algorithm? - David J. Malan](https://www.youtube.com/watch?v=6hfOvs8pY1k)
+
+ David J. Malan explains how algorithms can be used in seemingly simple situations and also complex ones.
