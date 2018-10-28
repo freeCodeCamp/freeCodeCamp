@@ -4,7 +4,7 @@ title: Algorithms in JavaScript books
 
 ### List of Books
 
-*Data Structures in JavaScript*
+*Data Structures in JavaScript* -outdated link-
 - Free book which covers Data Structures in JavaScript
 - [GitBook](https://www.gitbook.com/book/pmary/data-structure-in-javascript/details)
 
@@ -21,7 +21,7 @@ title: Algorithms in JavaScript books
 *Learning JavaScript Data Structures and Algorithms: Write complex and powerful JavaScript code using the latest ECMAScript*
 - published 30 Apr 2018, by Loiane Groner
 - Data structures and algorithms are the base of every solution to any programming problem. Learn to write complex and powerful code using the latest ES 2017 features
-- [Amazon](https://https://www.amazon.com/Learning-JavaScript-Data-Structures-Algorithms/dp/1788623878/)
+- [Amazon](https://www.amazon.com/Learning-JavaScript-Data-Structures-Algorithms-ebook/dp/B077NB5H6Y?keywords=Learning+JavaScript+Data+Structures+and+Algorithms%3A+Write+complex+and+powerful+JavaScript+code+using+the+latest+ECMAScript&qid=1540713326&sr=8-1-fkmrnull&ref=sr_1_fkmrnull_1)
 - ISBN-13: 978-1788623872
  
 Please feel free to add more that you have found useful!
