@@ -142,6 +142,28 @@ lemon #ffff00
 orange #ffa500
 >
 ```
+
+**for loop used for a string**
+
+```python
+for i in "python":
+    print(i)
+```
+For loop will move character by character in string and print it.
+
+Output:
+
+```
+>
+p
+y
+t
+h
+o
+n
+>
+```
+
 **Iterate over two lists of same size in a single loop with the zip() function**
 
 ```python 
