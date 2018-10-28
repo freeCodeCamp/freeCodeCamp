@@ -31,6 +31,16 @@ The link text is the visible part (Visit our site for tutorials).
 
 Clicking on the link text will send you to the specified address.
 
+You can also have the link open in a new tab using the `target="_blank"` attribute in the anchor tag.
+
+There are more ways to use the `target` attribute, but it's common to want to open the link in a new tab in case the user doesn't want to leave the current page.
+
+Example
+
+```html
+<a href="https://www.freecodecamp.org/" target="_blank">Visit our site for tutorials</a>
+```
+
 #### More Information:
 <!-- Please add any articles you think might be helpful to read before writing the article -->
 * [MDN - HTML <a> Reference](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/a)
