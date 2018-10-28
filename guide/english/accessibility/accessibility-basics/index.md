@@ -8,9 +8,9 @@ title: Accessibility Basics
 >
 > --Professor Severus Snape, Harry Potter Series
 
-Accessibility's role in development is essentially understanding the user's perspective and needs, and knowing that the web, and applications are a solution for people with disabilities.
+Accessibility's role in development is essentially understanding the user's perspective and needs, and knowing that the web and applications are solutions for people with disabilities.
 
-In this day and age, more and more new technologies are invented to make the life of developers, as well as users, easier. To what degree this is a good thing is a debate for another time, for now it's enough to say the toolbox of a developer, especially a web developer, is as ever-changing as the so called "dark arts" are according to our friend Snape.
+In this day and age, more and more new technologies are invented to make the life of developers, as well as users, easier. To what degree this is a good thing is a debate for another time; for now, it's enough to say the toolbox of a developer, especially a web developer, is as ever-changing as the so-called "dark arts", according to our friend Snape.
 
 One tool in that toolbox should be accessibility. It is a tool that should ideally be used in one of the very first steps of writing any form of web content. However, this tool is often not all that well presented in the toolbox of most developers. This could be due to a simple case of not knowing it even exists to extreme cases like not caring about it.
 
@@ -24,13 +24,13 @@ If you fall outside these rather broad categories, please let me know. I always 
 
 ## So, what is accessibility anyway?
 
-Accessibility in itself is a bit of a misleading term sometimes, especially if English is your second language. It is sometimes referred to as inclusive design.
+"Accessibility" can be a misleading term sometimes, especially for those who do not speak English natively. It is sometimes referred to as "inclusive design".
 
 If your site is on the Internet, reachable by anyone with a web browser, in one sense that website is accessible to everyone with a web browser.
 
-But, is all content on your website actually readable, usable and understandable for everyone? Are there no thresholds that bar certain people from 'accessing' all the information you are exposing?
+But, is all content on your website actually readable, usable, and understandable for everyone? Are there no thresholds that bar certain people from 'accessing' all the information you are exposing?
 
-You could ask yourself questions like the following ones:
+You could ask yourself the following questions:
 
 *   If you add information that is only contained in an audio file, can a deaf person still get that information?
 *   If you denote an important part of your website with a certain color, will a colorblind person know about it?
@@ -39,9 +39,9 @@ You could ask yourself questions like the following ones:
 *   Does your application assume the orientation of the device, and what if the user can't physically change it?
 *   Are there forgiving timed aspects of your application for someone that might need more time to fill in a form?
 *   Does your application still work (progressive enhancement) assuming that JavaScript does not load in time?
-*   You can even go as far as saying, if your website is very resource-heavy, will someone on a slow or spotty connection be able to read your content?
+*   If your website is very resource-heavy, will someone on a slow or spotty connection be able to read your content?
 
-This is where accessibility comes into play. Accessibility basically entails making your content as friendly, as easy to 'access' as possible for the largest amount of people. This includes people who are deaf, low-vision, blind, dyslexic, mute, on a slow connection, colorblind, suffering from epilepsy, mental fatigue, age, physical limitations, etc.
+This is where accessibility comes into play. Accessibility entails making your content as friendly, as easy to 'access' as possible for the largest amount of people. This includes people who are deaf, low-vision, blind, dyslexic, mute, on a slow connection, colorblind, suffering from epilepsy, mental fatigue, age, physical limitations, etc.
 
 ## Why implement accessibility?
 
@@ -55,13 +55,13 @@ If you did, good for you. If not, I guess this drives my point home all the more
 
 The picture gets even more complicated when we look at legislation that actually forces you to make certain websites and web apps accessible. A prime example is the US-based <a href='http://jimthatcher.com/webcourse1.htm' target='_blank' rel='nofollow'>section 508</a>. Right now, this law mainly refers to government organizations, public sector websites etc. However, laws change.
 
-Last year, airline websites were included in this list which meant that even here in Europe, airline website devs scrambled to make their content accessible. Not doing so can get your company a fine of literally tens of thousands of dollars for each day the problem isn't fixed.
+Last year, in the United States, airline websites were included in this list which meant that even in Europe, airline website devs scrambled to make their content accessible. Not doing so can get your company a fine of literally tens of thousands of dollars for each day the problem isn't fixed.
 
-There's variations on this legislation all over the world, some more severe and all-encompassing than others. Not knowing about that fact doesn't make the lawsuit go away, sadly.
+There's variations on this type of legislation all over the world, some more severe and all-encompassing than others. Not knowing about that fact doesn't make the lawsuit go away, sadly.
 
 ## Ok, so accessibility is a big deal. Now how do we implement it?
 
-That question, sadly, is harder to answer than it may seem. The Harry Potter quote at the top is there for a reason, and it's not my being an avid Fantasy reader.
+That question, unfortunately, is harder to answer than it may seem. The Harry Potter quote at the top is there for a reason, and it's not my being an avid Fantasy reader.
 
 As I stated above, accessibility is important for a large group of different people, each with their own needs. Making your website work for literally everyone is a large, on-going task.
 
