@@ -8,11 +8,16 @@ This command is used **to connect to a remote computer**, for example `ssh 123.4
 
 If the remote computer requires the user to login, they can use the form `ssh username@remote_address`, which will then prompt them for the user password on a successful connection.
 
-It also has command line options which can be found on the SSH website.
-
-One thing to note, if the server is configured to listen to any port other than `22`, then you have to use `-p` option to specify the port. For example: `ssh -p 2024 123.456.789.012`.
-
 If the remote computer requires user login, the form `ssh username@remote_address` can be used, which will then prompt for the user password on successful connection.
+
+### Usage
+```
+ssh [options] destination [command]
+```
+ 
+Commonly used options:
+* `-p` (port) - Used to specify the port to use when connecting to a remote computer.
+* `-i` (identity_file) - Used to specify a file from which the identity (private key) for public key authentication is read.  
 
 ### More Information:
 * [Wikipedia](https://en.wikipedia.org/wiki/Secure_Shell)
