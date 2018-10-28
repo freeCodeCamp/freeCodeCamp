@@ -1,0 +1,10 @@
+# On python we can use another library such us numpy
+There is many ways to import library on python
+
+```
+import numpy
+
+import numpy as np
+
+from numpy import arange
+```
