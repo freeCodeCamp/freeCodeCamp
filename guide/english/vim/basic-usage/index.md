@@ -7,7 +7,7 @@ title: Basic Usage
 - Run vim or vi and open the given filename.
 
 ### Insert Mode
-- Once opening the page enter I and you will see the text "Insert Mode" at the bottom of your screen. From here you can make any changes you want to the text of your file.
+- Once opening the page enter I or A and you will see the text "Insert Mode" at the bottom of your screen. From here you can make any changes you want to the text of your file.
 
 ### Save File
 - :w
