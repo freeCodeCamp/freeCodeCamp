@@ -12,7 +12,7 @@ Each table row is defined with the `<tr>` tag. Inside a row there may be table h
 
 A more complex HTML table may also include `<caption>`, `<col>`, `<colgroup>`, `<thead>`, `<tfoot>`, and `<tbody>` elements in it.
 
-### Simple Table Example
+### Simple Table Example.
 ```html
 <table style="width:100%">
   <tr>
@@ -34,7 +34,7 @@ A more complex HTML table may also include `<caption>`, `<col>`, `<colgroup>`, `
 ```
 <a href='https://www.w3schools.com/html/tryit.asp?filename=tryhtml_table'> DEMO </a>
 
-### Table Example with more semantic information
+### Table Example with more semantic information.
 ```html
 <!DOCTYPE html>
     <html>
