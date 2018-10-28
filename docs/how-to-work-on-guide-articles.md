@@ -128,7 +128,7 @@ You will need to fix the issue before we can merge your PR:
 2. Your PR creates a new folder and the folder name isn't formatted correctly.
     - Your folder name should be all lowercase and formatted in kebab-case (i.e. my-new-folder).
 3. The article doesn't have a `title` field at the top.
-    - Please refer to [Title](#title) section below under [Style guide for writing articles](/docs/style-guide-for-guide-articles.md).
+    - Please refer to section in the [Style guide for writing articles](/docs/style-guide-for-guide-articles.md).
 
 ### When do we close pull requests
 

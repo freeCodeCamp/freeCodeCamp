@@ -1,18 +1,22 @@
-
 <table>
     <tr>
-        <!-- Do not translate this table -->
         <td> Read these guidelines in </td>
-        <td><a href="/CONTRIBUTING.md"> English </a></td>
-        <td><a href="/docs/arabic/CONTRIBUTING.md"> عربى </a></td>
-        <td><a href="/docs/chinese/CONTRIBUTING.md"> 中文 </a></td>
-        <td><a href="/docs/portuguese/CONTRIBUTING.md"> Português </a></td>
-        <td><a href="/docs/russian/CONTRIBUTING.md"> русский </a></td>
-        <td><a href="/docs/spanish/CONTRIBUTING.md"> Español </a></td>
-        <td><a href="/docs/romanian/CONTRIBUTING.md"> Română </a></td>
+        <td><a href="/docs/README.md"> English </a></td>
+        <td><a href="/docs/chinese/README.md"> 中文 </a></td>
+        <td><a href="/docs/russian/README.md"> русский </a></td>
+        <td><a href="/docs/arabic/README.md"> عربى </a></td>
+        <td><a href="/docs/spanish/README.md"> Español </a></td>
+        <td><a href="README.md"> Română </a></td>
+        <td><a href="/docs/portuguese/README.md"> Português </a></td>
+        <td><a href="/docs/italian/CONTRIBUTING.md"> Italiano </a></td>
         <td><a href="/docs/german/README.md"> Deutsch </a></td>
+
     </tr>
 </table>
+
+
+
+
 
 # Reguli privind contribuțiile
 

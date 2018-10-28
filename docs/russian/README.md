@@ -1,14 +1,16 @@
 <table>
     <tr>
-        <!-- Do not translate this table -->
         <td> Read these guidelines in </td>
-        <td><a href="/CONTRIBUTING.md"> English </a></td>
+        <td><a href="/docs/README.md"> English </a></td>
         <td><a href="/docs/chinese/README.md"> 中文 </a></td>
-        <td><a href="/docs/russian/README.md"> русский </a></td>
+        <td><a href="README.md"> русский </a></td>
         <td><a href="/docs/arabic/README.md"> عربى </a></td>
         <td><a href="/docs/spanish/README.md"> Español </a></td>
+        <td><a href="/docs/romanian/README.md"> Română </a></td>
         <td><a href="/docs/portuguese/README.md"> Português </a></td>
+        <td><a href="/docs/italian/CONTRIBUTING.md"> Italiano </a></td>
         <td><a href="/docs/german/README.md"> Deutsch </a></td>
+
     </tr>
 </table>
 
@@ -20,16 +22,16 @@ These instructions have not been translated yet. Please check this issue for det
 
 This directory contains all of the documentation on contributing to freeCodeCamp.org
 
-## [If you are getting started, start by reading this first.](/CONTRIBUTING.md)
+## [If you are getting started, start by reading this first.](CONTRIBUTING.md)
 
 ---
 
 ## Quick references articles
 
-1. How to work on Guide articles.
-2. How to work on Coding Challenges.
-3. How to setup freeCodeCamp locally.
-4. How to catch outgoing emails locally.
+1. [How to work on Guide articles.](how-to-work-on-guide-articles.md)
+2. [How to work on Coding Challenges.](how-to-work-on-coding-challenges.md)
+3. [How to setup freeCodeCamp locally.](how-to-setup-freecodecamp-locally.md)
+4. [How to catch outgoing emails locally.](how-to-catch-outgoing-emails-locally.md)
 
 ## Style guides
 

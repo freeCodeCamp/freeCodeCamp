@@ -1,16 +1,18 @@
 <table>
     <tr>
-        <!-- Do not translate this table -->
         <td> Read these guidelines in </td>
-        <td><a href="/CONTRIBUTING.md"> English </a></td>
-        <td><a href="/docs/arabic/README.md"> عربى </a></td>
-        <td><a href="/docs/chinese/README.md"> 中文 </a></td>
-        <td><a href="/docs/russian/README.md"> русский </a></td>
-        <td><a href="/docs/portuguese/README.md"> Português </a></td>
-        <td><a href="/docs/spanish/README.md"> Español </a></td>
-        <td><a href="/docs/german/README.md"> Deutsch </a></td>
+        <td><a href="README.md"> English </a></td>
+        <td><a href="chinese/README.md"> 中文 </a></td>
+        <td><a href="russian/README.md"> русский </a></td>
+        <td><a href="arabic/README.md"> عربى </a></td>
+        <td><a href="spanish/README.md"> Español </a></td>
+        <td><a href="romanian/README.md"> Română </a></td>
+        <td><a href="portuguese/README.md"> Português </a></td>
+        <td><a href="italian/CONTRIBUTING.md"> Italiano </a></td>
+        <td><a href="german/README.md"> Deutsch </a></td>
     </tr>
 </table>
+
 
 # Documentation Quick Reference
 
@@ -24,15 +26,15 @@ This directory contains all of the documentation on contributing to freeCodeCamp
 
 ## Quick references articles
 
-<a href="/how-to-work-on-guide-articles.md">1. How to work on Guide articles.</a>
-<a href="/how-to-work-on-coding-challenges.md">2. How to work on Coding Challenges.</a>
-<a href="/how-to-setup-freecodecamp-locally.md">3. How to setup freeCodeCamp locally.</a>
-<a href="/how-to-catch-outgoing-emails-locally.md">4. How to catch outgoing emails locally.</a>
+1. [How to work on Guide articles.](how-to-work-on-guide-articles.md)
+2. [How to work on Coding Challenges.](how-to-work-on-coding-challenges.md)
+3. [How to setup freeCodeCamp locally.](how-to-setup-freecodecamp-locally.md)
+4. [How to catch outgoing emails locally.](how-to-catch-outgoing-emails-locally.md)
 
 ## Style guides
 
-1. Style guide for creating guide articles.
-2. Style guide for creating coding challenges.
+1. [Style guide for creating guide articles.](style-guide-for-guide-articles.md)
+2. [Style guide for creating coding challenges.](style-guide-for-curriculum-challenges.md)
 
 ## Quick commands reference when working locally
 
