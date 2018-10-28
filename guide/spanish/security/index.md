@@ -8,7 +8,7 @@ La seguridad de la información (también llamada "infosec" o simplemente "segur
 
 Este es un espacio particularmente importante en este momento, después de incumplimientos importantes como el [incumplimiento de Equifax 2017](https://medium.freecodecamp.org/the-equifax-hack-and-how-to-protect-your-family-all-explained-in-5-minutes-a2b5187cb6c0) .
 
-A los profesionales de la seguridad de la información a menudo se les llama "investigadores de seguridad", aunque también se les conoce como "piratas informáticos" por piratear sistemas.
+A los profesionales de la seguridad de la información a menudo se les llama "investigadores de seguridad" o "pentesters", aunque también se les conoce como "piratas informáticos" por piratear sistemas.
 
 Hay "hackers de sombrero blanco" (hackers éticos) que intentan descubrir nuevas vulnerabilidades y llamar la atención de las personas que mantienen esos sistemas, lo que se denomina "divulgación ética". A menudo lo hacen por prestigio en el campo, o por las "recompensas de errores" que las empresas han reservado para compensar a las personas por ayudarlas a descubrir vulnerabilidades.
 
