@@ -81,8 +81,7 @@ Note that the letter `T` is a placeholder, you could make that anything you like
 throughout the class.
 
 
-
-Type Erasure in Java Generics
+## Type Erasure in Java Generics
 
 One of the downsides to introducing generics in Java 1.5 was how to ensure backward compatibility (ie) to make sure existing programs continue to work 
 and all existing libraries must be able to use generic types.
@@ -136,3 +135,26 @@ public class GenericsErasure
 When you compile some code against a generic type or method, the compiler works out what you really mean (i.e. what the type argument for T is) 
 and verifies at compile time that you're doing the right thing, but the emitted code again just talks in terms of java.lang.Object - the compiler generates extra casts where necessary. 
 At execution time, a List<String> and a List<Date> are exactly the same the extra type information has been erased by the compiler.
+  
+
+## The Diamond Operator (<>)
+
+Type variables need to be typed twice: once while declaring the data type, and once while calling the constructor. This can get quite unsightly, and a better way was introduced in Java SE 7 - the diamond operator (<>). The diamond operator replaces the repetiton in type variables while calling the constructor by replacing them with <>, and the compiler infers the type from the type of the variable the object is being assigned to.
+
+Something like 
+```java
+ArrayList<Integer> a = new ArrayList<Integer>();
+HashMap<Integer, String> hm = new HashMap<Integer, String>(); 
+```
+
+Can be replaced with
+```java
+ArrayList<Integer> a = new ArrayList<>();
+HashMap<Integer, String> hm = new HashMap<>(); 
+```
+
+Or even further, with abstract classes
+```java
+List<Integer> a = new ArrayList<>();
+Map<Integer, String> hm = new HashMap<>();
+```
