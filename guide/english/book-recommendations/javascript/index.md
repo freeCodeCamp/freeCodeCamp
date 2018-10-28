@@ -33,7 +33,7 @@ A collection of articles covering the basics (core language and working with a b
 #### Javascript and Jquery: Interactive Front End Web Development
 This full-color book will show you how to make your websites more interactive and your interfaces more interesting and intuitive. Author is Jon Duckett who also penned HTML & CSS: Design and Build Websites. *Does not cover ES6*
 
--[Amazon](https://www.amazon.com/JavaScript-JQuery-Interactive-Front-End-Development/dp/1118531647)
+- [Amazon](https://www.amazon.com/JavaScript-JQuery-Interactive-Front-End-Development/dp/1118531647)
 
 
 #### Other Resources
