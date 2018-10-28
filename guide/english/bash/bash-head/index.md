@@ -23,6 +23,7 @@ Most used options:
 * `-n N`, prints out the first N lines of the file(s)
 * `-q`, doesn't print out the file headers
 * `-v`, always prints out the file headers
+* `-z`, --zero-terminated | line delimiter is NUL, not newline
 
 ### Example
 
