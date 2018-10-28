@@ -35,6 +35,8 @@ Si desea conectarse a firebase manualmente, las instrucciones detalladas están 
 2.  vaya al producto deseado en la **Descripción del proyecto** en la consola y haga clic en **Comenzar**
 3.  [Vaya a los documentos de Firebase](https://www.firebase.com/docs/android/quickstart.html) para ver cómo configurar productos individuales en su proyecto
 
+Firebase le va ha dar un archivo que tiene extension .json y eso lo pone en el app nivel de su proyecto.
+
 Leer una combinación de los tres le permitirá configurar el producto, que incluye agregar dependencias adecuadas a su archivo build.gradle.
 
 **Si te encuentras Gradle Sync** Intente cambiar la versión de Firebase-core o la versión de Firebase-database
