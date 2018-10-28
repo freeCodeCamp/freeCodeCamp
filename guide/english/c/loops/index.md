@@ -235,7 +235,7 @@ This has the effect of putting a pause in your code. In this case, the code reac
  
  
 ## Using loops for designing patterns.
-#### Example 1: Program to print half pyramid using *
+#### Example 1: Program to print half pyramid using * (stars)
 
 ```
 *
@@ -269,7 +269,7 @@ int main()
 }
 ```
 
-#### Example 2: Program to print half pyramid a using numbers
+#### Example 2: Program to print half pyramid using numbers
 
 ```
 1
@@ -341,9 +341,9 @@ int main()
 }
 ```
 
-Programs to print inverted half pyramid using * and numbers
+Programs to print inverted half pyramid using * (stars) and numbers
 
-#### Example 4: Inverted half pyramid using *
+#### Example 4: Inverted half pyramid using * (stars)
 
 ```
 * * * * *
@@ -413,7 +413,7 @@ int main()
 }
 ```
 
-#### Example 6: Program to print full pyramid using *
+#### Example 6: Program to print full pyramid using * (stars)
 
 ```
         *
@@ -507,7 +507,7 @@ int main()
 }
 ```
 
-#### Example 8: Inverted full pyramid using *
+#### Example 8: Inverted full pyramid using * (stars)
 
 ```
 * * * * * * * * *
