@@ -3,8 +3,16 @@ title: Make Typography Responsive
 ---
 ## Make Typography Responsive
 
-This is a stub. <a href='https://github.com/freecodecamp/guides/tree/master/src/pages/certifications/responsive-web-design/responsive-web-design-principles/make-typography-responsive/index.md' target='_blank' rel='nofollow'>Help our community expand it</a>.
+Following the instructions:
 
-<a href='https://github.com/freecodecamp/guides/blob/master/README.md' target='_blank' rel='nofollow'>This quick style guide will help ensure your pull request gets accepted</a>.
+Set the width of the h2 tag to 80% of the viewport's width and the width of the paragraph as 75% of the viewport's smaller dimension.
 
-<!-- The article goes here, in GitHub-flavored Markdown. Feel free to add YouTube videos, images, and CodePen/JSBin embeds  -->
+the style becomes:
+
+```css
+  <style>
+    h2 { width: 80vw; }
+    p { width: 75vmin; }
+  </style>
+```
+note that **vw** unit is viewport's width, and **vmin** unit is viewport's smaller dimension (height vs. width)
