@@ -58,5 +58,6 @@ This article should only be understood in the greater contexts of neural network
 * [Article on computation graphs](http://colah.github.io/posts/2015-08-Backprop/)
 * [A Step by Step Backpropagation Example](https://mattmazur.com/2015/03/17/a-step-by-step-backpropagation-example/)
 * [Andrew Ng's ML Course](https://www.coursera.org/learn/machine-learning/)
+* [Intuition behind Backpropagation](https://medium.com/spidernitt/breaking-down-neural-networks-an-intuitive-approach-to-backpropagation-3b2ff958794c)
 
 If you'd like to learn how to implement a full-blown single (hidden) layer neural network in Python, whilst learning more about the math behind the algorithms used, you can register for [Andrew Ng's Deep Learning Specialization] (https://www.coursera.org/specializations/deep-learning)
