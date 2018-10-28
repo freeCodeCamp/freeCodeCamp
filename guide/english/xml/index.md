@@ -54,6 +54,16 @@ The following are areas that can be simiplified with XML:
 
 And it's main achievement was that it became a W3C Recommendation as early as in February 1998.
 
+### More Applications
+
+XML is widely used in a Services Oriented Architecture (SOA). Disparate systems communicate with each other by exchanging XML messages. The message exchange format is standardised as an XML schema (XSD). This is also referred to as the canonical schema.
+
+XML has come into common use for the interchange of data over the Internet. IETF RFC:3023, now superseded by RFC:7303, gave rules for the construction of Internet Media Types for use when sending XML. It also defines the media types application/xml and text/xml, which say only that the data is in XML, and nothing about its semantics.
+
+RFC 7303 also recommends that XML-based languages be given media types ending in +xml; for example image/svg+xml for SVG.
+
+Further guidelines for the use of XML in a networked context appear in RFC 3470, also known as IETF BCP 70, a document covering many aspects of designing and deploying an XML-based language.
+
 ### More information
 
 * [XML Introduction](https://developer.mozilla.org/en-US/docs/XML_introduction)
