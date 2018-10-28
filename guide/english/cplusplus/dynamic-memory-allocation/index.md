@@ -9,6 +9,7 @@ title: Dynamic Memory Allocation
 * This memory comes from **heap**, whereas _non-static_ variables and _local_ variables get memory from **stack**.
 * In C++, the programmer can perform memory allocations manually, and is called as **_dynamic memory allocation_**.
 * It was possible in C to do dynamic memory allocation, by using _calloc_ and _malloc_ functions to allocate memory and using _free_ function to de-allocate the dynamic memory.
+* The malloc function in C is used to declare variable without initialization whereas calloc initializes the value of declared variable to 0.
 * In C++, in addition to above, there are two functions, _new_ and _delete_ for performing dynamic memory allocation and de-allocation.
 
 ### NEW operator
