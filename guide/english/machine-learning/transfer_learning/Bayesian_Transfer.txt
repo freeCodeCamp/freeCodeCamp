@@ -1,0 +1,24 @@
+Bayesian Transfer
+
+Credits to Lisa Torrey and Jude Shavlik for this beauty.
+
+One area of inductive transfer applies specifically to Bayesian learning methods.
+Bayesian learning involves modeling probability distributions and taking
+advantage of conditional independence among variables to simplify the model.
+An additional aspect that Bayesian models often have is a prior distribution,
+which describes the assumptions one can make about a domain before seeing
+any training data. Given the data, a Bayesian model makes predictions by combining
+it with the prior distribution to produce a posterior distribution. A strong
+prior can significantly affect these results (see Figure 5). This serves as a natural
+way for Bayesian learning methods to incorporate prior knowledge – in the case
+of transfer learning, source-task knowledge.
+Marx et al. [24] use a Bayesian transfer method for tasks solved by a logistic
+regression classifier. The usual prior for this classifier is a Gaussian distribution
+with a mean and variance set through cross-validation. To perform transfer, they
+instead estimate the mean and variance by averaging over several source tasks.
+Raina et al. [33] use a similar approach for multi-class classification by learning
+a multivariate Gaussian prior from several source tasks.
+Dai et al. [7] apply a Bayesian transfer method to a Naive Bayes classifier.
+They set the initial probability parameters based on a single source task, and
+revise them using target-task data. They also provide some theoretical bounds
+on the prediction error and convergence rate of their algorithm.
