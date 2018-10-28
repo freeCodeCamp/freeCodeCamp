@@ -23,7 +23,12 @@ But the problem with this approach is that you have to write the same line again
 prime numbers from 1 to 1000 then this will be more hectic.
 Therefore, in order to solve such problems loops are introduced.
 
-There are different types of loop functions:
+There are mainly two types of loops:
+
+Entry Controlled loops: Here, the test condition is tested before entering the loop body. Examples: For and while loop.
+Exit Controlled Loops: Here, the test condition is tested at the end of loop body. Example: do-while loop.
+
+
 ### While and do while loops
 
 While and do while loops allow you to run the loop until a condition finishes.
