@@ -22,6 +22,10 @@ title: Books to Read for Programmers
 - [Amazon Smile](https://smile.amazon.com/Code-Language-Computer-Hardware-Software/dp/0735611319/ref=sr_1_1?s=books&ie=UTF8&qid=1508780869&sr=1-1&keywords=code)
 - ISBN-13: 978-0735611313
 
+*Coders at Work: Reflections on the Craft of Programming* by P. Seibel
+- [Amazon Smile](https://smile.amazon.com/Coders-Work-Reflections-Craft-Programming/dp/1430219483)
+- ISBN-13: 978-1430219484
+
 *DevOps Handbook:How to Create World-Class Agility, Reliability, and Security in Technology Organizations* by Gene Kim et al
 - [Amazon Smile](https://www.amazon.com/DevOps-Handbook-World-Class-Reliability-Organizations/dp/1942788002/ref=sr_1_4?s=books&ie=UTF8&qid=1539733859&sr=1-4&keywords=devops+handbook)
 - ISBN-13: 978-1942788003
@@ -33,10 +37,6 @@ title: Books to Read for Programmers
 *Programming Pearls (2nd Edition) by Jon Bentley*
 - [Amazon Smile](https://smile.amazon.com/Programming-Pearls-2nd-Jon-Bentley/dp/0201657880)
 - ISBN-13: 978-0201657883
-
-*Structure and Interpretation of Computer Programs*
-- https://mitpress.mit.edu/sicp/
-- ISBN-13: 978-0262510875
 
 *The Pragmatic Programmer: From Journeyman to Master* by Andrew Hunt and David Thomas
 - [Amazon Smile](https://smile.amazon.com/Pragmatic-Programmer-Journeyman-Master/dp/020161622X?sa-no-redirect=1)
