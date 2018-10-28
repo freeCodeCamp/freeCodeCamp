@@ -18,16 +18,16 @@ localeTitle: Adereços de acesso usando this.props
 
 ```yml
 tests:
-  - text: O componente <code>ResetPassword</code> deve retornar um único elemento <code>div</code> .
-    testString: 'assert((function() { const mockedComponent = Enzyme.mount(React.createElement(ResetPassword)); return mockedComponent.children().type() === "div"; })(), "The <code>ResetPassword</code> component should return a single <code>div</code> element.");'
-  - text: O quarto filho de <code>ResetPassword</code> deve ser o componente <code>ReturnTempPassword</code> .
-    testString: 'assert((function() { const mockedComponent = Enzyme.mount(React.createElement(ResetPassword)); return mockedComponent.children().childAt(3).name() === "ReturnTempPassword"; })(), "The fourth child of <code>ResetPassword</code> should be the <code>ReturnTempPassword</code> component.");'
-  - text: O componente <code>ReturnTempPassword</code> deve ter um prop chamado <code>tempPassword</code> .
-    testString: 'assert((function() { const mockedComponent = Enzyme.mount(React.createElement(ResetPassword)); return mockedComponent.find("ReturnTempPassword").props().tempPassword; })(), "The <code>ReturnTempPassword</code> component should have a prop called <code>tempPassword</code>.");'
+  - text: O componente <code>ResetPassword</code> deve retornar um único elemento <code>div</code>.
+    testString: assert((function() { const mockedComponent = Enzyme.mount(React.createElement(ResetPassword)); return mockedComponent.children().type() === "div"; })(), "O componente <code>ResetPassword</code> deve retornar um único elemento <code>div</code>.");
+  - text: O quarto filho de <code>ResetPassword</code> deve ser o componente <code>ReturnTempPassword</code>.
+    testString: assert((function() { const mockedComponent = Enzyme.mount(React.createElement(ResetPassword)); return mockedComponent.children().childAt(3).name() === "ReturnTempPassword"; })(), "O quarto filho de <code>ResetPassword</code> deve ser o componente <code>ReturnTempPassword</code>.");
+  - text: O componente <code>ReturnTempPassword</code> deve ter um prop chamado <code>tempPassword</code>.
+    testString: assert((function() { const mockedComponent = Enzyme.mount(React.createElement(ResetPassword)); return mockedComponent.find("ReturnTempPassword").props().tempPassword; })(), "O componente <code>ReturnTempPassword</code> deve ter um prop chamado <code>tempPassword</code>.");
   - text: O prop <code>tempPassword</code> de <code>ReturnTempPassword</code> deve ser igual a uma string de pelo menos <code>8</code> caracteres.
-    testString: 'assert((function() { const mockedComponent = Enzyme.mount(React.createElement(ResetPassword)); const temp = mockedComponent.find("ReturnTempPassword").props().tempPassword; return typeof temp === "string" && temp.length >= 8; })(), "The <code>tempPassword</code> prop of <code>ReturnTempPassword</code> should be equal to a string of at least <code>8</code> characters.");'
-  - text: O componente <code>ReturnTempPassword</code> deve exibir a senha criada como o <code>tempPassword</code> dentro de tags <code>strong</code> .
-    testString: 'assert((function() { const mockedComponent = Enzyme.mount(React.createElement(ResetPassword)); return mockedComponent.find("strong").text() === mockedComponent.find("ReturnTempPassword").props().tempPassword; })(), "The <code>ReturnTempPassword</code> component should display the password you create as the <code>tempPassword</code> prop within <code>strong</code> tags.");'
+    testString: assert((function() { const mockedComponent = Enzyme.mount(React.createElement(ResetPassword)); const temp = mockedComponent.find("ReturnTempPassword").props().tempPassword; return typeof temp === "string" && temp.length >= 8; })(), "O prop <code>tempPassword</code> de <code>ReturnTempPassword</code> deve ser igual a uma string de pelo menos <code>8</code> caracteres.");
+  - text: O componente <code>ReturnTempPassword</code> deve exibir a senha criada como o <code>tempPassword</code> dentro de tags <code>strong</code>.
+    testString: assert((function() { const mockedComponent = Enzyme.mount(React.createElement(ResetPassword)); return mockedComponent.find("strong").text() === mockedComponent.find("ReturnTempPassword").props().tempPassword; })(), "O componente <code>ReturnTempPassword</code> deve exibir a senha criada como o <code>tempPassword</code> dentro de tags <code>strong</code>.");
 
 ```
 
@@ -47,9 +47,9 @@ class ReturnTempPassword extends React.Component {
   render() {
     return (
         <div>
-            { /* change code below this line */ }
-            <p>Your temporary password is: <strong></strong></p>
-            { /* change code above this line */ }
+            { /* altere o código abaixo desta linha */ }
+            <p>Sua senha temporária: <strong></strong></p>
+            { /* altere o código acima desta linha */ }
         </div>
     );
   }
@@ -63,12 +63,12 @@ class ResetPassword extends React.Component {
   render() {
     return (
         <div>
-          <h2>Reset Password</h2>
-          <h3>We've generated a new temporary password for you.</h3>
-          <h3>Please reset this password from your account settings ASAP.</h3>
-          { /* change code below this line */ }
+          <h2>Redefinir Senha</h2>
+          <h3>Nós geramos um senha temporária para você.</h3>
+          <h3>Favor redefina sua senha nas configurações o quanto antes.</h3>
+          { /* altere o código abaixo desta linha */ }
 
-          { /* change code above this line */ }
+          { /* altere o código acima desta linha */ }
         </div>
     );
   }
@@ -93,7 +93,38 @@ console.info('after the test');
 ## Solution
 <section id='solution'>
 
+
 ```js
-// solution required
+class ReturnTempPassword extends React.Component {
+  constructor(props) {
+    super(props);
+
+  }
+  render() {
+    return (
+        <div>
+            <p>Sua senha temporária: <strong>{this.props.tempPassword}</strong></p>
+        </div>
+    );
+  }
+};
+
+class ResetPassword extends React.Component {
+  constructor(props) {
+    super(props);
+
+  }
+  render() {
+    return (
+        <div>
+          <h2>Redefinir Senha</h2>
+          <h3>Nós geramos um senha temporária para você.</h3>
+          <h3>Favor redefina sua senha nas configurações o quanto antes.</h3>
+          <ReturnTempPassword tempPassword="serrPbqrPnzc" />
+        </div>
+    );
+  }
+};
 ```
+
 </section>
