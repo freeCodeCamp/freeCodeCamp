@@ -1,0 +1,41 @@
+CodeIgniter- an Application Framework
+
+A software library which provides a central structure to upkeep the development of applications for an explicit environment is an application framework. It acts as the skeletal support to build an application.
+Codeigniter (CI) is an application framework toolkit for PHP developers.
+
+Its aim is to facilitate developers that instead of writing code from scratch, the rich set of libraries for common tasks are provided. As well as the logical structure and simple interface are provided to access these libraries that increase the speed to develop the projects. It minimizes the amount of code needed for a given task and let the developer be creative. CodeIgniter is also free.
+
+CI has an extensive range of libraries for common web development tasks like manipulating images, sending email, maintaining sessions, working with XML-RPC data, accessing a database, validating form data and much more. CodeIgniter is Extensible.
+
+CodeIgniter-Small FootPrint
+
+It is lightweight. The core system of CI entails only a few small libraries. In comparison to other frameworks, CI requires significantly fewer resources. The base system is very lean and quite fast so additional libraries can be loaded dynamically upon request based upon project needs.
+
+CodeIgniter = M-V-C
+
+CI uses the Model-View-Controller pattern. MVC allows separation from logic to presentation. This is good for large projects in which template files are required so the code can be minimized. In practice, it permits your web pages to contain minimal scripting since the presentation is separate from the PHP scripting.
+
+CodeIgniter work without Template Engine
+
+Although CI does come with a simple template parser and can be optionally used, but it does not force you to use one. There are two codes, one with this block of PHP code:
+
+<ul>
+<?php foreach ($phonedirectory as $number):?>
+        <li><?=$number?></li>
+<?php endforeach; ?>
+</ul>
+and second with template engine
+
+<ul>
+{foreach from=$phonedirectory item="number"}
+        <li>{$number}</li>
+{/foreach}
+</ul>
+Although its cleaner but the main focus is performance and in the template engine, code must be converted back into PHP to run. So, its better not to opt template engines.
+
+CodeIgniter is Thoroughly Documented
+
+Codeigniter Documentation is quite easy to understand. It is self-explanatory with examples. Programmers hate documentation but since documentation is as important as the code itself. Their source code is extremely clean and well commented as well.
+
+More Information
+https://www.codeigniter.com/user_guide/tutorial/index.html
