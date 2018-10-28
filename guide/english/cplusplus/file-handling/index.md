@@ -76,3 +76,5 @@ Zara
 
 ## Sources
 1.Tutorialspoint
+### Details: ofstream is used to make and do some changes or add informattion in some file , ifstream is used to take input from file to your file.
+if
