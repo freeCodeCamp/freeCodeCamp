@@ -9,4 +9,4 @@ Here is an example:
     
 the 'product' would have the value '80' after this line.
 
-When making calculations it is possible to use parentheses to prioritise which numbers should be multiplied together.
+When making calculations it is possible to use parentheses "()" to prioritise which numbers should be multiplied together.
