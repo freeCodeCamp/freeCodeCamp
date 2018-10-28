@@ -13,7 +13,7 @@ The easiest way to connect to firebase is to use the firebase assistant.
 1. Create an account in the [Firebase Console](https://console.firebase.google.com).
 Click add project to add your Android Studio project to it. 
 
-2. Install Google Repository
+2. Install Google Repository.
 You can do this by adding the dependency into your project-level build.gradle file like this:
 
 ```java
@@ -29,6 +29,7 @@ allprojects{
 Alternatively, you could do that [using the GUI](https://developer.android.com/studio/write/firebase). 
 
 3. Go to Tools > Firebase and select Connect to Firebase
+There are options for connecting to the realtime database, cloud messaginf, authentication etc.
 
 If you wish to connect to firebase manually, detailed instructions are available [here](https://firebase.google.com/docs/android/setup). 
 <br>
