@@ -20,5 +20,10 @@ This section contains links to learning DevOps through a MOOC experience. Course
 
 * [edX course](https://www.edx.org/microsoft-professional-program-front-end-development)
 
+### Book
+This section contains links to books.
+
+* [Effective DevOps](http://shop.oreilly.com/product/0636920039846.do)
+
 ### Lab
 <a href="https://github.com/Microsoft/TechnicalCommunityContent/tree/master/DevOps">DevOps</a>
