@@ -60,7 +60,7 @@ project or application, no matter how small!
 
 * [RayWenderlich.com](https://www.raywenderlich.com/) : Has many great tutorials for Swift and iOS development.
 * [Hacking with Swift](https://www.hackingwithswift.com/read) : A complete Swift tutorial, taking you from a beginner to advanced using hands-on projects.
-
+* [Swift Playgrounds] (https://www.apple.com/swift/playgrounds/) is a good app available in the App Store for iPad for kids and adults to learn Swift from zero to hero.
 ### Sources
 
 1. "Swift 4 - The powerful programming language that is also easy to learn." Apple, [developer.apple.com/swift](https://developer.apple.com/swift/), Accessed 31 Oct. 2017.
