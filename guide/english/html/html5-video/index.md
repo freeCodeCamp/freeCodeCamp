@@ -71,3 +71,5 @@ There are many more attributes that can be added that are optional to customize 
 - <a href="https://www.html5rocks.com/en/tutorials/video/basics/">HTML5 Rocks - HTML5 Video</a>
 - [Can I use video?](https://caniuse.com/#search=video)
 - [How to use HTML5 to play video files on your webpage](https://docs.microsoft.com/en-us/previous-versions/windows/internet-explorer/ie-developer/samples/hh924821(v=vs.85))
+
+Thanks for reading!
