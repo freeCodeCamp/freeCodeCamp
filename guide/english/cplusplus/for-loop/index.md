@@ -131,3 +131,4 @@ Output:
 4
 5
 ```
+### details: it is used to execute a statement multiple no. of times.
