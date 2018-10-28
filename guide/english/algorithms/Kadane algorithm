@@ -1,0 +1,8 @@
+Largest Sum Contiguous Subarray
+Simple idea of the Kadane’s algorithm is to look for all positive contiguous segments of the array (max_ending_here is used for this). 
+And keep track of maximum sum contiguous segment among all positive segments (max_so_far is used for this). 
+Each time we get a positive sum compare it with max_so_far and update max_so_far if it is greater than max_so_far
+
+Links
+https://www.geeksforgeeks.org/largest-sum-contiguous-subarray/
+https://www.youtube.com/watch?v=OexQs_cYgAQ#action=share
