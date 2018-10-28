@@ -1,6 +1,8 @@
 ---
 title: TensorFlow
 ---
+<img src="https://www.tensorflow.org/images/tf_logo_transp.png">
+
 ## Tensor Flow
 
 <a href='https://www.tensorflow.org/' target='_blank' rel='nofollow'>TensorFlow</a> is an open source software library for Machine Intelligence.
