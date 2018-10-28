@@ -259,15 +259,27 @@ Follow these steps:
     git checkout master
     ```
 
-2. Next, you would want to `rebase` from the `upstream`.
+2. Next, you would want to **sync the lastest changes** from the main repository of freeCodeCamp.
 
-    This step **will sync the lastest changes** from the main repository of freeCodeCamp. Its important that you rebase as often as possible, to avoid conflicts later.
+    Its important that you do this as often as possible, to avoid conflicts later:
 
     ```shell
-    git pull --rebase upstream master
+    git fetch upstream
     ```
 
-    You can optionally push this branch back to your origin, to have a clean history on your fork on GitHub.
+    Now, you want to do a hard reset with the copy on the freeCodeCamp master:
+
+    ```shell
+    git reset --hard upstream/master
+    ```
+
+    **Important:**
+
+    If you have any outstanding PRs that you made from the `master` branch, you will lose them.
+
+    Get them, merged by a moderator, in such a case. And to avoid this, you should always work on a branch.
+
+    Push this branch back to your origin, to have a clean history on your fork on GitHub:
 
     ```shell
     git push origin master --force
@@ -390,7 +402,7 @@ Follow these steps:
 
     You can learn more about why you should use conventional commits [here](https://www.conventionalcommits.org/en/v1.0.0-beta.2/#why-use-conventional-commits).
 
-9. If you realise that you need to edit a file or, update the commit message after making a commit you can do so after editing the files with:
+9.  If you realise that you need to edit a file or, update the commit message after making a commit you can do so after editing the files with:
 
     ```shell
     git commit --amend
