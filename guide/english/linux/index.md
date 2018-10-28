@@ -46,4 +46,7 @@ Linux distributions also come in all shapes and size and most if not all offer t
 as a 'Live CD' environment or even directly via USB if your motherboard supports booting from USB.
 
 For more facts about Linux, read Quincy Larson's article [Linux is 25. Yay! Let’s celebrate with 25 stunning facts about Linux](https://medium.freecodecamp.org/linux-is-25-yay-lets-celebrate-with-25-rad-facts-about-linux-c8d8ac30076d).
+## User interface
+The user interface, also known as the shell, is either a command-line interface (CLI), a graphical user interface (GUI), or through controls attached to the associated hardware, which is common for embedded systems. For desktop systems, the default mode is usually a graphical user interface, although the CLI is commonly available through terminal emulator windows or on a separate virtual console.
 
+CLI shells are text-based user interfaces, which use text for both input and output. The dominant shell used in Linux is the Bourne-Again Shell (bash), originally developed for the GNU project. Most low-level Linux components, including various parts of the userland, use the CLI exclusively. The CLI is particularly suited for automation of repetitive or delayed tasks, and provides very simple inter-process communication.
