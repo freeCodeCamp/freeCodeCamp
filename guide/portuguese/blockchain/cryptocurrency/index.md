@@ -20,3 +20,4 @@ Se você quiser ganhar bitcoins por meio da mineração, isso pode ser feito res
 [Guia final para Cryptocurrency](https://blockgeeks.com/guides/what-is-cryptocurrency)
 
 [Bitcoin](https://en.wikipedia.org/wiki/Bitcoin)
+[Acompanhe precos em dollar](https://coinmarketcap.com/pt-br/all/views/all/)
