@@ -66,3 +66,6 @@ each of the |V| - 1 passes over the edges in _loop-1_ takes O(E) time, and the _
 
 ## More Information:
 - [Bellman-Ford Algorithm](https://www.geeksforgeeks.org/bellman-ford-algorithm-dp-23/)
+
+## Reference:
+- Introduction To Algorithms ISBN-978-81-203-2141-0
