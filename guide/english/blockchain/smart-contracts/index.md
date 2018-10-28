@@ -15,6 +15,6 @@ This is entirely transparent so all the nodes(miners) can see what logic is bein
 ## Blockchain Technologies
 
 Two of the most common technologies used are :
-- Ethereum: generally made with Solidity
+- Ethereum: generally made with Solidity and Go
 - Hyperledger: generally made with Go, or Java
 
