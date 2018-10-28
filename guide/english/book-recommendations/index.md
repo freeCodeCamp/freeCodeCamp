@@ -143,11 +143,11 @@ title: Books to Read for Programmers
 
 ## Go 
 *Introducing Go: Build Reliable, Scalable Programs by Caleb Doxsey*
-- [Amazon Smile](https://www.amazon.com/Introducing-Go-Reliable-Scalable-Programs/dp/1491941952)
+- [Amazon Smile](https://smile.amazon.com/Introducing-Go-Reliable-Scalable-Programs/dp/1491941952)
 - ISBN-13: 978-1491941959
 
 *Go in Practice: Includes 70 Techniques 1st Edition by Matt Butcher, Matt Farina*
-- [Amazon Smile](https://www.amazon.com/Go-Practice-Techniques-Matt-Butcher/dp/1633430073)
+- [Amazon Smile](https://smile.amazon.com/Go-Practice-Techniques-Matt-Butcher/dp/1633430073)
 - ISBN-13: 978-1633430075
 
 
