@@ -75,6 +75,8 @@ Because Kotlin generates Java bytecode, you can use your favorite Java framework
 
 [Udemy The Complete Android Kotlin Developer Course](https://www.udemy.com/the-complete-kotlin-developer-course/)
 
+[The Complete Android N Developer Course](https://www.udemy.com/complete-android-n-developer-course/)
+
 ### Developing Android Apps
 
 The best part of learning Android is that many of the courses and material available out there online are free.
