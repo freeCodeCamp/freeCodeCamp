@@ -60,38 +60,24 @@ primeSummation(2000000);
 ```js
 //noprotect
 function primeSummation(n) {
-  // Initialise an array containing only prime numbers
-  let primes = [2];
-  let result = 2;
-
-  function isPrime(y, primes) {
-    // Find sqrt(y)
-    const sqrt = Math.floor(Math.sqrt(y));
-
-    // Divide y by each applicable prime, return false if any of them divide y
-    for (let i = 0; i < primes.length && primes[i] <= sqrt; i++) {
-      if (y % primes[i] === 0) {
-        return false;
-      }
-    }
-
-    // At this point x must be prime
-    return true;
+  let nums = [], sum = 0;
+  for (let i = 0; i < n; i++){
+    nums.push(i);   
   }
-
-  // For every odd integer, add it to the array if it is prime
-  for (let x = 3; x < n; x += 2) {
-    if (isPrime(x, primes)) {
-      if (x > n) {
-        return result;
-      } else {
-        result += x;
-        primes.push(x);
+  nums[1] = 0;
+  const upperBound = Math.ceil(Math.sqrt(n));
+  for (let i = 2; i <= upperBound; i++){
+    if (nums[i] !== 0){
+      sum += nums[i];
+      for (let j = i*i; j < n; j += i){
+        nums[j] = 0;
       }
     }
   }
-
-  return result;
+  for (let i = upperBound + 1; i < n; i++){
+    sum += nums[i];
+  }
+  return sum;
 }
 ```
 
