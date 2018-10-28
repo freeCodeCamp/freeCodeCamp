@@ -24,7 +24,7 @@ for ( init; condition;) {
    increment;
 }
 ```
-It is also allowed to ignore the init variables. For example :
+It is also allowed to ignore the init variables. For example:
 ```
 int a = 1;
 for (; a <= 10 ;)
@@ -43,7 +43,7 @@ Note that the variables declared in init can only be used inside the brackets of
 Next the condition is evaluated. If it holds true, the body of the loop is executed. If it holds false, the body of the loop does not execute and flow of control jumps to the next iteration(repetition of a process).
 
 ### update
-The update statement is used to alter the loop variable by using simple operations like addition,subtraction,multiplication or division.
+The update statement is used to alter the loop variable by using simple operations like addition, subtraction, multiplication or division.
 The update statement executes after the execution of the body of the loop.
 
 ## IMPLEMENTATION:
