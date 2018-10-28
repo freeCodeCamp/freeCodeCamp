@@ -8,7 +8,7 @@ A Code Smell in computer programming is a surface indication that there might be
 It is important to understand that smelly code works, but is not of good quality.
 
 #### Examples
-1. Duplicated code - Blocks of code that have been replicated across the code base. This may indicate that you need to generalize the code into a function and call it in two places, or it may be that the way the code works in one place is completely unrelated to the way it works in another place, despite having been copied.
+1. Duplicated code - Blocks of code that have been replicated across the code base. This may indicate that you need to generalize the code into a function and call it in two places, or it may be that the way the code works in one place is completely unrelated to the way it works in another place, despite having been copied. Typically, having code blocks duplicated in 3 or more places in a code base is a strong indicator of Code Smell.
 2. Large classes - Classes having too many lines of code. This may indicate that the class is trying to do too many things, and needs to be broken up into smaller classes.
 3. [Magic numbers](https://en.wikipedia.org/wiki/Magic_number_(programming)) - Variables (or `if` statements) scattered in the code that hold numeric values with no apparent meaning. 
 4. Many-parameter methods - Methods that take more that 2 or 3 parameters usually indicate that the method does more than one thing and should be broken down to multiple methods.
