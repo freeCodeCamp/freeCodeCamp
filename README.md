@@ -46,7 +46,7 @@ Here are our six core certifications:
 - CSS Grid <br />
   <br />
   **Projects**: Tribute Page, Survey Form, Product Landing Page, Technical Documentation Page, Personal Portfolio Webpage
-
+  <hr>
 #### 2. JavaScript Algorithms and Data Structures Certification
 
 - Basic JavaScript
@@ -59,7 +59,7 @@ Here are our six core certifications:
 - Functional Programming <br />
   <br />
   **Projects**: Palindrome Checker, Roman Numeral Converter, Caesars Cipher, Telephone Number Validator, Cash Register
-
+  <hr>
 #### 3. Front End Libraries Certification
 
 - Bootstrap
@@ -70,7 +70,7 @@ Here are our six core certifications:
 - React and Redux <br />
   <br />
   **Projects**: Random Quote Machine, Markdown Previewer, Drum Machine, JavaScript Calculator, Pomodoro Clock
-
+  <hr>
 #### 4. Data Visualization Certification
 
 - Data Visualization with D3
@@ -85,7 +85,7 @@ Here are our six core certifications:
 - MongoDB and Mongoose <br />
   <br />
   **Projects**: Timestamp Microservice, Request Header Parser, URL Shortener, Exercise Tracker, File Metadata Microservice
-
+  <hr>
 #### 6. Information Security and Quality Assurance Certification
 
 - Information Security with HelmetJS
@@ -93,7 +93,7 @@ Here are our six core certifications:
 - Advanced Node and Express <br />
   <br />
   **Projects**: Metric-Imperial Converter, Issue Tracker, Personal Library, Stock Price Checker, Anonymous Message Board
-
+  <hr>
 #### Full Stack Development Certification
 
 Once you earn all 6 of these certifications, you'll be able to claim your freeCodeCamp.org Full Stack Development Certification. This final distinction signifies that you’ve completed around 1,800 hours of coding with a wide range of web development tools.
