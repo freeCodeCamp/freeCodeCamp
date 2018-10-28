@@ -61,6 +61,12 @@ You'll learn many of the first princliples for data science tools and how algori
 - ISBN-10: 1593276036
 - ISBN-13: 978-1593276034
 
+*Python Playground*
+- Simple introduction to the language, makes a great companion to other No Starch python books.
+- [Amazon](https://www.amazon.com/Python-Playground-Projects-Curious-Programmer/dp/1593276044/)
+- ISBN-10: 9781593276041
+- ISBN-13: 978-1593276041
+
 *The Quick Python Book, Third Edition*
 - Paid book which provides a good level of information for those starting Python and as a reference for the Python language
 - [Manning]https://www.manning.com/books/the-quick-python-book-third-edition
