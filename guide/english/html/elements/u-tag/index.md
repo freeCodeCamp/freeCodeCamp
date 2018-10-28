@@ -13,6 +13,7 @@ Instead, to underline text, it is recommended that the `<span>` tag is used in p
 ``` html
 <html>
 <body>
+  // the 'underline' below is between <u> and </u> and you will notice the change here
 <p>This parragraph has a <u>underline</u>.</p>
 </body>
 </html>
