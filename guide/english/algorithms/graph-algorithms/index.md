@@ -16,7 +16,7 @@ Some of the most common graph algorithms are:
 
 <a href='https://github.com/freecodecamp/guides/computer-science/data-structures/graphs/index.md' target='_blank' rel='nofollow'>Graphs</a>
 
-<a href='https://github.com/freecodecamp/guides/tree/master/src/pages/algorithms/graph-algorithms/bellman-ford/index.md' target='_blank' rel='nofollow'>Bellman-Ford Algorithm</a>
+<a href='https://github.com/freeCodeCamp/guide/english/algorithms/graph-algorithms/bellman-ford algorithm/index.md' target='_blank' rel='nofollow'>Bellman-Ford Algorithm</a>
 
 <a href='https://github.com/freecodecamp/guides/tree/master/src/pages/algorithms/graph-algorithms/breadth-first-search/index.md' target='_blank' rel='nofollow'>Breadth First Search (BFS)</a>
 
