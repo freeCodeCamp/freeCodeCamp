@@ -181,3 +181,22 @@ Output:
 
 #### More Information:
 * Source: <a href='https://docs.oracle.com/javase/tutorial/java/nutsandbolts/arrays.html' target='_blank' rel='nofollow'>Java Arrays</a>
+## Class Objects for Arrays
+Every array has an associated Class object, shared with all other arrays with the same component type.
+
+// Java program to demonstrate  
+// Class Objects for Arrays 
+  
+
+        int intArray[] = new int[3]; 
+        byte byteArray[] = new byte[3]; 
+        short shortsArray[] = new short[3]; 
+          
+        // array of Strings 
+        String[] strArray = new String[3]; 
+          
+        System.out.println(intArray.getClass()); 
+        System.out.println(intArray.getClass().getSuperclass()); 
+        System.out.println(byteArray.getClass()); 
+        System.out.println(shortsArray.getClass()); 
+        System.out.println(strArray.getClass());  
