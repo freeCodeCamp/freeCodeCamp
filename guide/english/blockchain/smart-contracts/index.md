@@ -11,6 +11,10 @@ As a piece of code that sits on the blockchain, a smart contract can automate ta
 When an account receives money it can automatically distribute it to others.
 This is entirely transparent so all the nodes(miners) can see what logic is being executed.
 
+Smart contracts can be used to create Decentralized Apps or Dapps that live on a host blockchain.
+The most famous Dapp is perhaps the game CryptoKitties which exploded in popularity towards the end of 2017. 
+The network that CryptoKitties lives on, Ethereum, faced heavy congestion as a result. 
+
 
 ## Blockchain Technologies
 
