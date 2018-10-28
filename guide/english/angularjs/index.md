@@ -30,3 +30,8 @@ HTML:
 ```html
 <script src="/bower_components/angular/angular.js"></script>
 ```
+We can add AngularJS(Angular 1.x versions) by referencing the Content Delivery Network from Google.
+
+```html
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular.min.js"></script> 
+```
