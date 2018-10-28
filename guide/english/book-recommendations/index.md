@@ -197,6 +197,12 @@ title: Books to Read for Programmers
 - [Amazon Smile](https://smile.amazon.com/Practical-Object-Oriented-Design-Ruby-Addison-Wesley/dp/0321721330)
 - ISBN-13: 978-0321721334
 
+*Learn Ruby the Hard Way*
+- (Free Online) https://learnrubythehardway.org/book/
+- [Amazon] (https://www.amazon.com/gp/product/032188499X/ref=as_li_qf_sp_asin_il_tl?ie=UTF8&tag=lepythhawa-20&camp=1789&creative=9325&linkCode=as2&creativeASIN=032188499X&linkId=749c050dcfc6e80b914b9496524cce32)
+- ISBN-13: 978-0321884992
+- ISBN-10: 032188499X
+
 *Thinking in C++ by Bruce Eckel*
 - [Amazon Smile](https://smile.amazon.com/Thinking-C-Bruce-Eckel/dp/0139177094)
 - ISBN-13: 978-0139177095
