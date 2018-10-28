@@ -29,5 +29,5 @@ Spring months in the list:  deque(['March', 'April', 'May'])
 ```
 
 #### More Information:
-The official documentation for `collections.deque` can be found <a href='https://docs.python.org/3/library/collections.html#collections.deque' target='_blank' rel='nofollow'>here</a>
+The official documentation for `collections.deque` can be found <a href='https://docs.python.org/3/library/collections.html#collections.deque' target='_blank' rel='nofollow'>here</a>.
 
