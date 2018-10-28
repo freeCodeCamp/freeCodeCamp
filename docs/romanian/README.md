@@ -131,7 +131,7 @@ Suntem bucuroși să te ajutăm să contribuiești la oricare dintre subiectele 
 
 **Sunt nou în GitHub și în Open Source în general:**
 
-Citește [Cum să contribuești la Ghidul Open Source](https://github.com/freeCodeCamp/how-to-contribute-to-open-source).
+Citește [Cum să contribui la Ghidul Open Source](https://github.com/freeCodeCamp/how-to-contribute-to-open-source).
 
 **Ce înseamnă aceste etichete diferite, care sunt atașate/anexate pe probleme?**
 
