@@ -18,3 +18,11 @@ echo "Last statement";
 
 // the script ends here with no PHP closing tag
 ```
+
+## Types of Tags
+There are four different pairs of opening and closing tags which can be used in php. Here is the list of tags.
+
+Default syntax    starts with "<? php" and ends with "?>".
+Short open Tags   starts with "<?" and ends with "?>".
+HTML Script Tags  starts with <script language="php"> and ends with </script>.
+ASP Style Tags    start with "<%" and ends with "%>".
