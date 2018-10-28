@@ -33,6 +33,7 @@ l   moves one character right
 w   moves to the beginning of the next word
 b   moves to the beginning of the previous word
 e   moves to the end of the current word
+n   moves to the hilighted words
 
 0   moves to the beginning of the current line
 $   moves to the end of the current line
