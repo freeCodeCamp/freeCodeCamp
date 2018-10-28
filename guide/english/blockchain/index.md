@@ -48,3 +48,5 @@ the consensus of the other nodes. Bitcoin has the benefit of being able to incen
 * [Blockchain academic papers](https://github.com/decrypto-org/blockchain-papers)
 * [Blockchain Resources](https://github.com/BlockchainDevs/CryptocurrencyAwesome/blob/master/README.md)
 * [Blockchain Wikipedia](https://en.wikipedia.org/wiki/Blockchain)
+##Uses
+Blockchain technology can be used to create a permanent, public, transparent ledger system for compiling data on sales, tracking digital use and payments to content creators, such as wireless users  or musicians. In 2017, IBM partnered with ASCAP and PRS for Music to adopt blockchain technology in music distribution. Imogen Heap's Mycelia service has also been proposed as blockchain-based alternative "that gives artists more control over how their songs and associated data circulate among fans and other musicians."Everledger is one of the inaugural clients of IBM's blockchain-based tracking service
