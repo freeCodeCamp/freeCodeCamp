@@ -131,3 +131,16 @@ Output:
 4
 5
 ```
+More Examples
+```
+for(i=10;i>=0;i--)
+Cout << i ;
+
+```
+Output
+10
+8
+6
+4
+2
+0
