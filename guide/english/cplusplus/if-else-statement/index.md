@@ -190,3 +190,6 @@ Number 2 is greater.
 **Happy Coding ! :)**
 
  **Feel free to ask any queries on freeCodeCamp.org's GitHub page or [the freeCodeCamp.org Forum](https://forum.freecodecamp.org/)**.
+ ### syntax:if(condition){ statements; } else { Statements; }
+ 
+ else
