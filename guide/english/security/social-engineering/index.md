@@ -17,12 +17,11 @@ Social Engineering is the art of gaining access to a secured system or resource 
 
 * Baiting: Leaving a malware infected USB at a coffee shop in the hope that someone is curious enough to plug it in and check it out. Once the person plugs the USB in, malware is installed on their computer. See "More Information" for a Black Hat talk about leaving infected USB drives behind for potential targets and the results of such attacks.
 
-* Pretexting: Telling lies to gain access to private information. An example would be impersonating a bank officer and asking people for personal information to 'confirm their account'. See "More Inforamtion" for a Pre-texting example where a social engineer makes changes to a target's cell phone account with very little known information. 
+* Pretexting: Telling lies to gain access to private information. An example would be impersonating a bank officer and asking people for personal information to 'confirm their account'. See "More Information" for a Pre-texting example where a social engineer makes changes to a target's cell phone account with very little known information. 
 
-* Phishing: Sending an email which looks like it is from a trusted source to bait the user into clicking a link (to install malware) or replying with private information. 
-See "More Information" for a link to test your phishing knowledge and see if you can tell the differece between a real e-mail and a phishing e-mail.
+* Phishing: Sending an email which looks like it is from a trusted source to bait the user into clicking a link (to install malware) or replying with private information. See "More Information" for a link to test your phishing knowledge and see if you can tell the difference between a real e-mail and a phishing e-mail.
 
-* Infiltrating: impersonating someone legitimate in order to gain physical access to a building/office etc., e.g. the coffee machine repair person
+* Infiltrating: Impersonating someone legitimate in order to gain physical access to a building/office etc., e.g. the coffee machine repair person. This can also include techniques like tailgating, for example, following someone who has used a badge to gain entry to a secure area and going in based on their entry swipe. 
 
 #### Prevention and Security
 
