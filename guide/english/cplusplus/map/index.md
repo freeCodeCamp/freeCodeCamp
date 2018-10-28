@@ -124,5 +124,6 @@ for(it=first.begin(); it!=first.end(); ++it){
 Here you can learn more about map: <a href="http://www.cplusplus.com/reference/map/map/map/" target="_blank">cpluspluc_map</a>
 
 N.B: All code in example are in C++11 version. You can learn more about C++ version <a href="http://en.cppreference.com/w/cpp/compiler_support" target="_blank">Here</a>
-
+##MAP UNIQUENESS
+IT accepts only unique key if we enter similar elements with diffrent values it overwrite the value before.
 
