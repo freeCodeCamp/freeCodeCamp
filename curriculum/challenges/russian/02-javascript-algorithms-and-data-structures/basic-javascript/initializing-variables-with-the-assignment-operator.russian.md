@@ -7,10 +7,10 @@ localeTitle: Инициализация переменных с помощью �
 ---
 
 ## Description
-<section id="description"> Обычно <dfn>инициализировать</dfn> переменную до начального значения в той же строке, что и объявлено. <code>var myVar = 0;</code> Создает новую переменную <code>myVar</code> и присваивает ей начальное значение <code>0</code> . </section>
+<section id="description"> Хорошей практикой является объявление переменной вместе с инициализацией её начальным значением. Код <code>var myVar = 0;</code> создает новую переменную <code>myVar</code> и присваивает ей начальное значение <code>0</code> . </section>
 
 ## Instructions
-<section id="instructions"> Определите переменную <code>a</code> с <code>var</code> и инициализируйте ее значением <code>9</code> . </section>
+<section id="instructions"> Определите переменную <code>a</code> с помощью ключевого слова <code>var</code> и инициализируйте ее значением <code>9</code> . </section>
 
 ## Tests
 <section id='tests'>
@@ -30,10 +30,10 @@ tests:
 <div id='js-seed'>
 
 ```js
-// Example
+// Пример
 var ourVar = 19;
 
-// Only change code below this line
+// Изменяйте код ниже этой строки
 
 ```
 
@@ -44,7 +44,7 @@ var ourVar = 19;
 <div id='js-teardown'>
 
 ```js
-console.info('after the test');
+if(typeof a !== 'undefined') {(function(a){return "a = " + a;})(a);} else { (function() {return 'a is undefined';})(); }
 ```
 
 </div>
@@ -55,6 +55,6 @@ console.info('after the test');
 <section id='solution'>
 
 ```js
-// solution required
+var a = 9;
 ```
 </section>
