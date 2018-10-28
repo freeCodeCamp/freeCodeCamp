@@ -25,13 +25,13 @@ Camper Cat is setting up a Mortal Kombat tournament and wants to ask his competi
 ```yml
 tests:
   - text: Your code should add one <code>input</code> tag for the date selector field.
-    testString: 'assert($("input").length == 2, "Your code should add one <code>input</code> tag for the date selector field.");'
+    testString: assert($('input').length == 2, 'Your code should add one <code>input</code> tag for the date selector field.');
   - text: Your <code>input</code> tag should have a <code>type</code> attribute with a value of date.
-    testString: 'assert($("input").attr("type") == "date", "Your <code>input</code> tag should have a <code>type</code> attribute with a value of date.");'
+    testString: assert($('input').attr('type') == 'date', 'Your <code>input</code> tag should have a <code>type</code> attribute with a value of date.');
   - text: Your <code>input</code> tag should have an <code>id</code> attribute with a value of pickdate.
-    testString: 'assert($("input").attr("id") == "pickdate", "Your <code>input</code> tag should have an <code>id</code> attribute with a value of pickdate.");'
+    testString: assert($('input').attr('id') == 'pickdate', 'Your <code>input</code> tag should have an <code>id</code> attribute with a value of pickdate.');
   - text: Your <code>input</code> tag should have a <code>name</code> attribute with a value of date.
-    testString: 'assert($("input").attr("name") == "date", "Your <code>input</code> tag should have a <code>name</code> attribute with a value of date.");'
+    testString: assert($('input').attr('name') == 'date', 'Your <code>input</code> tag should have a <code>name</code> attribute with a value of date.');
 
 ```
 
