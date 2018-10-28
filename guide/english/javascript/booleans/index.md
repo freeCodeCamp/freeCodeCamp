@@ -6,6 +6,10 @@ title: Boolean
 
 Booleans are a primitive datatype commonly used in computer programming languages. By definition, a boolean has two possible values: `true` or `false`.
 
+Boolean is a primitive data type in JavaScript. Boolean can have only two values, true or false.
+
+source : http://www.tutorialsteacher.com/javascript/javascript-boolean
+
 In Javascript, there is often implicit type coercion to boolean. If, for example, you have an if statement which checks a certain expression, that expression will be coerced to a boolean: 
 
 ```javascript
