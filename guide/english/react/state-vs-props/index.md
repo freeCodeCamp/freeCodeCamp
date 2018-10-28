@@ -11,6 +11,7 @@ When we start working with React components, we frequently hear two terms. They 
 For example, A person's age is a state of that person.
 * State is mutable. But it can be changed by only by that component that owns it. As I only can change my age, not anyone else.
 * You can change a state by using `this.setState()`
+* You should create a class to maintain state
 
 See the below example to get an idea of state:
 
@@ -51,7 +52,7 @@ In the above example,  `age` is the state of `Person` component.
 
 * Props are similar to method arguments. They are passed to a component where that component is used.
 * Props is immutable. They are read-only.
-
+* You can use arrow function to handle props & render as a different component.
 See the below example to get an idea of Props:
 
 #### Person.js
