@@ -24,7 +24,7 @@ From simple games and utility apps to full-blown music players, there are many o
 
 There is definitely a learning curve to get used to the Android framework, however once you understand the core components that make up the app, the rest will come naturally.
 
-The learning curve involved in Android has a relatively smaller slope compared to learning other technologies such as NodeJS. It is also relatively easier to understand and make contributions towards AOSP hosted by Google. The project can be found [here].(https://source.android.com/) 
+The learning curve involved in Android has a relatively smaller slope compared to learning other technologies such as NodeJS. It is also relatively easier to understand and make contributions towards AOSP hosted by Google. The project can be found [here](https://source.android.com/). 
 
 ## Getting started
 Check out the guides in this folder to learn about the 4 [core components](core-components/index.md) that make up an Android app and how you can get started with a sample app, and then delve into the more advanced topics such as fragments and the Gradle build system. Then check out the material design specifications guide as well to learn how to make your apps beautiful and user friendly.
