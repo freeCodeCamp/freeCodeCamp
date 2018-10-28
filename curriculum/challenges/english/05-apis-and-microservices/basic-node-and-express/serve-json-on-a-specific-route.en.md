@@ -20,8 +20,9 @@ Serve the object <code>{"message": "Hello json"}</code> as a response in JSON fo
 <section id='tests'>
 
 ```yml
-- text: 'The endpoint <code>/json</code> should serve the json object <code>{"message": "Hello json"}</code>'
-  testString: 'getUserInput => $.get(getUserInput(''url'') + ''/json'').then(data => { assert.equal(data.message, ''Hello json'', ''The \''/json\'' endpoint does not serve the right data''); }, xhr => { throw new Error(xhr.responseText); })'
+tests:
+  - text: 'The endpoint <code>/json</code> should serve the json object <code>{"message": "Hello json"}</code>'
+    testString: 'getUserInput => $.get(getUserInput(''url'') + ''/json'').then(data => { assert.equal(data.message, ''Hello json'', ''The \''/json\'' endpoint does not serve the right data''); }, xhr => { throw new Error(xhr.responseText); })'
 
 ```
 
