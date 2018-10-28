@@ -4,13 +4,13 @@ localeTitle: Frangos Versus Porcos
 ---
 ## Frangos Versus Porcos
 
-"Galinhas versus Porcos" refere-se a uma história sobre uma galinha e um porco, onde o frango propõe que eles abram um restaurante chamado "Ham-n-Eggs". O porco se recusa, porque enquanto o frango só precisa colocar ovos, o porco tem mais em jogo.
+"Galinhas versus Porcos" refere-se a história de um frango que propõe a um porco que eles abram um restaurante chamado "Ham-n-Eggs" ("Presunto e Ovos"). O porco se recusa a fazê-lo, porque enquanto o frango só precisa colocar ovos, o porco teria que oferecer muito mais de si.
 
-Em um projeto de desenvolvimento de software ágil, o desenvolvedor de software é o porco. Se você não conseguir concluir o trabalho ou não o fizer bem, você tem muito em jogo. Essa pode ser sua reputação ou talvez até sua posição. Outros membros da equipe também podem ser considerados porcos, dependendo de quanto eles têm em jogo.
+Em um projeto ágil de desenvolvimento de software, o desenvolvedor pode ser visto como o porco, pois há muito mais fatores em jogo para ele. Sua reputação e seu cargo podem ser negativamente afetados se seu trabalho não for bem feito ou se não for concluido. Ressalta-se que dependendo de seu envolvimento no projeto, outros membros da equipe podem ter o papel de porcos.
 
-Por outro lado, muitos membros da equipe são frangos. Por exemplo, o cliente ou um gerente de projeto de alto nível não seria realmente afetado pelo fracasso do projeto. Eles estão interessados ​​em seu sucesso e podem fazer contribuições, mas têm apostas menores e, portanto, têm significativamente menos compromisso com o projeto.
+Em contrapartida, há membros da equipe ágil assumem o papel do frango, como clientes da área de negócios ou um gerente de projeto de alto nível. Ainda que eles estejam interessados no sucesso do projeto e sejam bastante ativos em suas contribuições, há um menor compromisso de suas partes, de modo que o fracasso do projeto não lhes custará tanto quanto a um desenvolvedor.
 
-Você deve se esforçar para ser um porco e não um frango. Você pode se beneficiar de (mas não confiar) nas aves para minimizar o risco e garantir que o projeto seja entregue da maneira mais eficiente possível.
+Por fim, o papel de porco demanda muito mais esforço do que o do frango. Você pode se beneficiar com o que o frango oferece (mas não deve confiar nele), a fim de minimizar riscos e garantir que o projeto seja entregue da maneira mais eficiente possível.
 
 #### Mais Informações:
 
