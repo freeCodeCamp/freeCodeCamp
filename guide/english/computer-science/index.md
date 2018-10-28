@@ -36,6 +36,8 @@ Computer science is categorized into several fields. The following are among the
   - Primitive Data Structures
   - Abstract Data Structures
   - Algorithm: Space Complexity & Time Complexity
+- <a href="https://courses.edx.org/courses/course-v1:MITx+6.00.1x+2T2018/course"> Introduction to Computer Science and Programming Using     Python</a>
+
 
 ## More Information
 * [Visualization of Data Structures](http://www.cs.usfca.edu/~galles/JavascriptVisual/Algorithms.html)
