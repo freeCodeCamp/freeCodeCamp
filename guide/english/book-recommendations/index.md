@@ -136,7 +136,9 @@ title: Books to Read for Programmers
 - ISBN-13: 978-1118531648 
 
 ## Python
-
+*Python Playground: Geeky Projects for the Curious Programmer*
+-https://www.amazon.com/Python-Playground-Projects-Curious-Programmer/dp/1593276044
+-ISBN-10: 9781593276041
 *Automate the Boring Stuff With Python*
 - http://automatetheboringstuff.com/
 - ISBN-13: 978-1593275990
