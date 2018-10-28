@@ -111,7 +111,7 @@ So how does this relate to `helloworld` and file IO?
 
 When you call `printf`, you are really just writing to a special file called `stdout`, short for __standard output__.
 `stdout` represents, well, the standard output as decided by your shell, which is usually the terminal.
-This explains why it printed to your screen.stdout is stream used by Os to display the output on the monitor or particularly in your terminal.
+This explains why it printed to your screen. `stdout` is stream used by O's to display the output on the monitor or particularly in your terminal.
 
 There are two other streams (i.e. files) that are available to you with effort, `stdin` and `stderr`.
 `stdin` represents the __standard input__, which your shell usually attaches to the keyboard in terms via keyboard service to console.
