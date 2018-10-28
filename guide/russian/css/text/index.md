@@ -8,59 +8,71 @@ CSS предоставляет несколько свойств, чтобы и�
 
 #### Цвет текста
 
-\`\` \`html
-
-Это пример свойства текста CSS.
+```html
+<html>
+  <body>
+    <p>This is an example of CSS text property.</p>
+  </body>
+</html>
 ```
-``` css 
- p { 
-    color:red; 
- } 
+```css
+p {
+    color:red;
+ }
 ```
 
 В приведенном выше примере `color` текста элемента `<p>` изменяется на красный. Вы также можете указать цвет как значения RGB, значения HLS и шестнадцатеричные коды (для получения дополнительной информации о цветах щелкните [здесь](https://guide.freecodecamp.org/css/colors) ).
 
 #### Выравнивание текста
 
-Свойство `text-align` используется для установки горизонтального выравнивания текста. Он может принимать значения `left` , `right` , в `center` и `justify` . \`\` \`css п { text-align: center; }
+Свойство `text-align` используется для установки горизонтального выравнивания текста. Он может принимать значения `left` , `right` , в `center` и `justify` .
+```css
+p {
+    text-align: center;
+ }
 ```
-Here the text is aligned to the `center` ([example](https://www.w3schools.com/css/tryit.asp?filename=trycss_text-align)).When `text-align` is set to `justify`,each line is stretched so that every line has equal width, and the left and right margins are straight ([example](https://www.w3schools.com/css/tryit.asp?filename=trycss_text-align_all)). 
+Здесь текст выровнен по центру (`center`) ([пример](https://www.w3schools.com/css/tryit.asp?filename=trycss_text-align)).Когда свойство `text-align` имеет значение `justify`, все строки растягиваются чтобы иметь одинаковую ширину и внешние отступы ([пример](https://www.w3schools.com/css/tryit.asp?filename=trycss_text-align_all)). 
  
- #### Text Decoration 
+ #### Стилизация текста
+``` css
+p {
+    text-decoration: underline;
+}
 ```
-
-CSS п { text-decoration: подчеркивание; }
-```
-The `text-decoration` property is used to set or remove decorations from text. The value `text-decoration: none;` is often used to remove underlines from links. Other `text-decorations` include `overline`,`line-through`,and `underline` ([example](https://www.w3schools.com/css/tryit.asp?filename=trycss_text-decoration)). 
+Свойства `text-decoration` используется для добавления или удаление стилизации текста. Значение `text-decoration: none;` часто используется, чтобы убрать подчеркивание у ссылок. Другие значения `text-decorations` включают в себя: `overline`,`line-through`,и `underline` ([пример](https://www.w3schools.com/css/tryit.asp?filename=trycss_text-decoration)). 
  
- #### Text Tranformation 
+ #### Преобразование текста
+``` css
+p {
+    text-transform: capitalize;
+}
 ```
-
-CSS п { text-transform: капитализировать; }
-```
-The `text-transform` property is used to convert the entire text to `uppercase`,`lowercase` or to `capitilize` each word([example](https://www.w3schools.com/css/tryit.asp?filename=trycss_text-transform)). 
+Свойство `text-transform` используется для преобразования всего текста в верхний или нижний регстр ([пример](https://www.w3schools.com/css/tryit.asp?filename=trycss_text-transform)). 
  
- #### Letter Spacing 
+ #### Расстояние между буквами
  
- The `letter-spacing` property sets the space between characters in a text. 
+ Свойство `letter-spacing` позволяет задавать расстояние между буквами.
+``` css
+p {
+    letter-spacing: 5px;
+}
 ```
-
-CSS п { расстояние между буквами: 5 пикселей; }
-```
-#### Line Height 
+#### Высота строки
  
- The `line-height` property sets the space between two lines of text. 
+ Свойство `line-height` позволяет задать значение высоты одной строки текста
+``` css
+p {
+    line-height: 5px;
+}
 ```
-
-CSS п { line-height: 5px; }
-```
-#### Word Spacing 
+#### Расстояние между словами
  
- The `word-spacing` sets the space between words in a text. 
+ Свойство `word-spacing` позволяет указать расстояние между словами.
+``` css
+p {
+    word-spacing: 5px;
+}
 ```
-
-CSS п { слово-интервал: 5 пикселей; } \`\` \`
 
 #### Дополнительная информация:
-
 [Текст CSS W3Schools](https://w3schools.com/css/css_text.asp)
