@@ -14,16 +14,16 @@ This function returns the number of elements in the argument which is passed to 
 ## Code Sample
 
     list1 = [123, 'xyz', 'zara'] # list
-    print(len(list1)) # prints 3 as there are 3 elements in the list1
+    print(len(list1)) # prints 3 as there are 3 elements in the list1.
 
     str1 = 'basketball' # string
-    print(len(str1)) # prints 10 as the str1 is made of 10 characters
+    print(len(str1)) # prints 10 as the str1 is made of 10 characters.
 
     tuple1 = (2, 3, 4, 5) # tuple 
-    print(len(tuple1)) # prints 4 as there are 4 elements in the tuple1
+    print(len(tuple1)) # prints 4 as there are 4 elements in the tuple1.
 
-    dict1 = {'name': 'John', 'age': 4, 'score': 45} # dictionary
-    print(len(dict1)) # prints 3 as there are 3 key and value pairs in the dict1
+    dict1 = {'name': 'John', 'age': 4, 'score': 45} # dictionary.
+    print(len(dict1)) # prints 3 as there are 3 key and value pairs in the dict1.
 
 ![:rocket:](//forum.freecodecamp.com/images/emoji/emoji_one/rocket.png?v=2 ":rocket:") <a href='https://repl.it/CUmt/15' target='_blank' rel='nofollow'>Run Code</a>
 
