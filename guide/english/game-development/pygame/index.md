@@ -13,3 +13,5 @@ The project started in the year 2000 as a result of the death of PySDL. The Pyga
 released after six months development in April of 2001.
 
 * [Pygame Official Website](https://www.pygame.org)
+
+![alt text](https://i.ytimg.com/vi/vYD1ervKByU/maxresdefault.jpg "PyGames Potential")
