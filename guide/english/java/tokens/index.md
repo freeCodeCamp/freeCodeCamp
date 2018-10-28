@@ -6,8 +6,10 @@ These are the fundamental building blocks of a program or the smallest unit of a
 Java supports five types of tokens:
 ## 1. Keywords 
 These are the words which have their predefined definitions in the compiler and cannot be used as the names of the identifiers.There are 51 keywords and 2 reserved words in Java.
+Examples: for, int, else
 ## 2. Identifiers
 These are the various names given to different components of the program. These includes the names of variables, methods, class, etc. They must not begin with a digit but can contain digits, letters, underscore, currency symbols.
+Examples: myVariable, hello_world
 ## 3. Literals
 These provide a way to express specific values in a program.These are of following types:
 ### Numeric Literals
