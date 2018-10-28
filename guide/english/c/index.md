@@ -26,7 +26,7 @@ Now that you have that background, let's start with our 'Hello, World' program. 
 
 int main(void)
 {
-    printf("hello, world\n");
+    printf("Hello, World!\n");
     return 0;
 }
 ```
