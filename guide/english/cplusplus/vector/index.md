@@ -127,6 +127,10 @@ std::vector.front(); // returns the first element of the vector.
 std::vector.back(); // returns the last element of the vector.
 std::vector.push_back(n); // inserts the element "n" to the end of the vector.
 std::vector.pop_back(n); // removes the last element of the vector
+std::vector.max_size(); //  Returns the maximum number of elements that the vector can hold
+std::vector.empty(); // Returns whether the vector is empty (i.e. whether its size is 0)
+std::vector.resize(n); // Change size of vector to n
+std::vector.capacity(); // returns capacity of vector
 ```
 
 ### Vector Iterator
