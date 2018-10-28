@@ -26,6 +26,10 @@ title: Books to Read for Programmers
 - [Amazon Smile](https://smile.amazon.com/Coders-Work-Reflections-Craft-Programming/dp/1430219483)
 - ISBN-13: 978-1430219484
 
+*Cracking the Tech Career* by Gayle Laakmann McDowell
+- [Amazon](https://www.amazon.com/Cracking-Tech-Career-Insider-Microsoft/dp/1118968085)
+- ISBN-13: 978-1118968086
+
 *DevOps Handbook:How to Create World-Class Agility, Reliability, and Security in Technology Organizations* by Gene Kim et al
 - [Amazon Smile](https://www.amazon.com/DevOps-Handbook-World-Class-Reliability-Organizations/dp/1942788002/ref=sr_1_4?s=books&ie=UTF8&qid=1539733859&sr=1-4&keywords=devops+handbook)
 - ISBN-13: 978-1942788003
@@ -63,6 +67,11 @@ title: Books to Read for Programmers
 *Cracking the Coding Interview: 150 Programming Questions and Solutions* by Gayle Laakmann McDowell 
 - [Amazon Smile](https://smile.amazon.com/Cracking-Coding-Interview-Programming-Questions/dp/098478280X)
 - ISBN-13: 978-0984782802
+
+*grokking Algorithms by Aditya Bhargava
+- [Amazon](https://www.amazon.com/Grokking-Algorithms-illustrated-programmers-curious/dp/1617292230)
+- [Official Website](https://www.manning.com/books/grokking-algorithms)
+- ISBN-13: 978-1617292231
 
 ## BASH
 
@@ -102,6 +111,11 @@ title: Books to Read for Programmers
 - [Amazon Smile](https://smile.amazon.com/Cracking-Coding-Interview-Programming-Questions/dp/098478280X)
 - ISBN-13: 978-0984782802
 
+*Elements of Programming Interviews in Python*
+- [Amazon](https://www.amazon.com/Elements-Programming-Interviews-Python-Insiders/dp/1537713949)
+- [Official Website](https://elementsofprogramminginterviews.com/)
+- ISBN-13: 978-1537713946
+
 *Programming Interviews Exposed: Secrets to Landing Your Next Job, 2nd Edition*
 - [Wiley](https://www.wiley.com/en-id/Programming+Interviews+Exposed:+Secrets+to+Landing+Your+Next+Job,+2nd+Edition-p-9780470121672)
 - ISBN: 978-0-470-12167-2
@@ -140,6 +154,11 @@ title: Books to Read for Programmers
 *Automate the Boring Stuff With Python*
 - http://automatetheboringstuff.com/
 - ISBN-13: 978-1593275990
+
+*Elements of Programming Interviews in Python*
+- [Amazon](https://www.amazon.com/Elements-Programming-Interviews-Python-Insiders/dp/1537713949)
+- [Official Website](https://elementsofprogramminginterviews.com/)
+- ISBN-13: 978-1537713946
 
 *Core Python Applications Programming (3rd Edition) by Wesley J Chun*
 - [Amazon Smile](https://smile.amazon.com/Core-Python-Applications-Programming-3rd/dp/0132678209)
