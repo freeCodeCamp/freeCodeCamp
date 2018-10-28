@@ -19,7 +19,7 @@ The benefit of having two ways to store variables in Swift is to prevent errors 
 
  ```
 
-In this case the variable `daysInAWeek` should be a constant because there are only seven days in a week, while the variable `amountOfMoney` should be a var because the amount of money in ones account changes.
+In this case the variable `daysInAWeek` should be a constant because there are only seven days in a week, while the variable `amountOfMoney` should be a var because the amount of money in one's account changes.
 
 Constant and variable names can contain almost any character, including Unicode characters:
 
