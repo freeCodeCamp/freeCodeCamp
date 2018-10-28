@@ -365,7 +365,7 @@ app.use(logger('common'));
 #### dotenv
 
 The dotenv middleware loads environmental variables from a `.env` file into `process.env`.  An `.env` file can be used to store sensitive information such as API keys and database credentials.  `dotenv` allows for a zero-configuration way to access the information stored in `.env`.  
-Note: You should NEVER include your `.env` file in your public repo.  Be sure to add `.env` to your `.gitignore` file.
+**Note:** You should NEVER include your `.env` file in your public repo.  Be sure to add `.env` to your `.gitignore` file.
 
 ```shell
 npm install --save dotenv
@@ -380,12 +380,12 @@ DB_PASS=s1mpl3
 ```js
 /* index.js file */
 require('dotenv').config();
-const db = require('db')
+const db = require('db');
 db.connect({
   host: process.env.DB_HOST,
   username: process.env.DB_USER,
   password: process.env.DB_PASS
-})
+});
 ```
 
 A list of most used middleware functions is available at this [link](https://expressjs.com/en/resources/middleware.html).
