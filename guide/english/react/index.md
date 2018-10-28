@@ -232,6 +232,26 @@ or
 <a href="http://www.youtube.com/watch?feature=player_embedded&v=100pKUE3OPI" target="_blank"><img src="http://img.youtube.com/vi/YOUTUBE_VIDEO_ID_HERE/0.jpg" 
 alt="Watch Video Here" width="240" height="180" border="10" /></a>
 
+
+### React using JSX
+
+JSX stands for Javascript Expression which includes both HTML & javascript. We can use react without JSX as shown above but JSX makes React more elegant & performant. Just like HTML or XML it has tags which has name, attributes & children. As React is known for componentization JSX makes the code structural & modular. Conside the example below:
+
+```
+const element = <h1>Hello world!</h1>;
+```
+
+Here the element is javascript object which has XML value.
+We can render the element onto the DOM using:
+
+```
+ReactDOM.render(
+  element,
+  document.getElementById('root')
+);
+```
+where root is the main DOM element.
+
 ### Recap
 
 So let’s do a quick recap. In our head tag we grabbed the script tags for React, ReactDOM and Babel. These are the tools our browser needs in its meta data to read our React code and JSX in specific.
