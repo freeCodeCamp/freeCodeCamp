@@ -18,6 +18,7 @@ Now install it on your computer. For help in installation refer to reference sec
 * [Tidyverse](https://www.tidyverse.org/) is an opinionated collection of R packages designed for data science like ggplot2, dplyr, readr, tidyr, purr, tibble.
 * [data.table](https://github.com/Rdatatable/data.table/wiki) is an implementation of base `data.frame` focused on improved performance and terse, flexible syntax.
 * [Shiny](https://shiny.rstudio.com/) framework for building dashboard style web apps in R.
+* [Rattle](https://rattle.togaware.com/) data mining GUI.
 
 ## Where to learn R for free
 
