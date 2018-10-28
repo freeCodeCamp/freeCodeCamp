@@ -54,13 +54,14 @@ A sequence of nodes and edges connecting a node with a descendant.
 The level of a node is defined by 1 + (the number of connections between the node and the root). 
 
 **Height of tree**:
-The height of a tree is the height of its root node.
+The height of a tree is the height of its root node. (Height of a tree with a root node is one)
 
 **Depth**:
 The depth of a node is the number of edges from the tree's root node to the node.
 
 **Forest**:
 A forest is a set of n ≥ 0 disjoint trees. 
+
 
 ### Some Popular Types of Trees:
 
@@ -71,6 +72,7 @@ A forest is a set of n ≥ 0 disjoint trees.
 * Splay Tree
 * Huffmann Tree
 * M-Way Search Tree (used for huge amounts of data)
+* Ternary tree
 
 ### Common uses
 
