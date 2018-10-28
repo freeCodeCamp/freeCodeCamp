@@ -165,7 +165,7 @@ The ```.substring()``` method can be used in two ways. One with only the startin
 Example:
 ```java
 String text = "Hello,My name is Bob";
-System.out.println(text.substring(6));
+System.out.println(text.substring(6)); //prints from index 6 to the end of the string 
 ```
 Will produce
 ```
@@ -176,7 +176,7 @@ Now using ```.substring()``` with an ending index
 Example:
 ```
 String text = "Hello,My name is Bob";
-System.out.println(text.substring(6,8));
+System.out.println(text.substring(6,8)); //prints from index 6 to index 7 of the string
 
 ```
 The result will be:
