@@ -4,8 +4,11 @@ localeTitle: Valor do negócio
 ---
 ## Valor do negócio
 
-O valor comercial é o foco da entrega ágil. A equipe ágil é encarregada de avaliar o valor comercial de todo o trabalho.
+O foco das entregas num projeto ágil é atender um valor para o negócio, que refere-se às expectativas do cliente sobre o que foi implementado. Assim, a equipe ágil deve se encarregar de identificar e avaliar se essas entregas estão alinhadas com os valores esperados.
 
-O valor comercial descreve o que o cliente receberá por um trabalho específico.
+O valor para o negócio pode ser descoberto por meio de conversas com o cliente e da análise de suas necessidades. Ressalta-se que as necessidades de um cliente são as atividades e contextos que serão automatizados na solução proposta pela equipe ágil. Além disso, os clientes e demais stakeholders (interessados) do negócio podem ainda oferecer métricas que ajudem a quantificar e monitorar o valor de um determinado recurso que foi solicitado.
 
-Este valor é descoberto através de conversas com o cliente e análise do trabalho envolvido. Os participantes do negócio podem ter dados que quantificam o valor de um determinado recurso que foi solicitado. O proprietário de um produto usará as várias fontes de informação disponíveis e dedicará um tempo significativo para entender, avaliar e priorizar o valor que o cliente receberá por determinado trabalho.
+O Product Owner (Proprietário do Produto) deve usar várias fontes de informação e dedicar um tempo significativo para entender, avaliar e priorizar os recursos de cada entrega a fim de garantir que o cliente receberá o valor de negócio correspondente às suas expectativas.
+
+Mais informações:
+Dez dicas para Product Owners em Valor de Negócios: https://www.scrum.org/resources/blog/10-tips-product-owners-business-value
