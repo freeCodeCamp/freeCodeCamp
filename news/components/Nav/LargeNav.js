@@ -4,9 +4,7 @@ import { Col, Navbar, Row } from 'react-bootstrap';
 import FCCSearchBar from 'react-freecodecamp-search';
 import NavLogo from './components/NavLogo';
 import NavLinks from './components/NavLinks';
-
 import propTypes from './navPropTypes';
-
 function LargeNav({ clickOnLogo }) {
   return (
     <Media
