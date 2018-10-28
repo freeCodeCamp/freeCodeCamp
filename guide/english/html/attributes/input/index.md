@@ -2,10 +2,10 @@
 title: Input
 ---
 
-# Input
+## Input
 The HTML `<input>` tag is used to create an element which allows a user to input data. Typically this would be within a `<form>` element, although it's not required.
 
-## Example
+### Example
 ```html
 <!DOCTYPE html>
 <html>
@@ -32,11 +32,11 @@ The HTML `<input>` tag is used to create an element which allows a user to input
 
 In the above example, there is a form with two text fields which ask the user to enter their first and last names according to the labels specified. `<input type="submit">` is another type of input which is used to submit the form's data to the URL defined in the form's `action` attribute.
 
-## Types
+### Types
 There are many types of `<input>` tags which can be specified with the input's `type` attribute. A few common types are:
 - **Text** - Creates a simple text box
 - **Password** - Creates a text field but masks the characters typed into the input
-- **Checkbox**
-- **Radio**
+- **Checkbox** - Creates a checkbox field that allows the user to select multiple options
+- **Radio** - Creates a field that allows a user to select only one option
 - **Submit** - Displays a button that submits the form when clicked
 - **Hidden** - This is a special type that doesn't render on the page. It's typically used to pass additional data along with a form.
