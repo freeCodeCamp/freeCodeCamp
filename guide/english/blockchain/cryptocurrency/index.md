@@ -15,6 +15,22 @@ If you want to earn bitcoins through mining, it can be done through solving math
 
 Some people invest in cryptocurrency on exchanges such as Binance, Bitrex, or Coinbase. The market peeked in January of 2018. 
 
+### Real World Application of Cryptocurrencies
+
+### Real estate:
+Buying a house with your own cryptocurrency is now made possible. The world’s first international real estate agency that accepts cryptocurrency as payment Propy.com. Propy enables you to buy property with the Blockchain technology.
+MyCOINrealty.com also makes it possible to advertise homes you can purchase with Bitcoin. A few examples of already made transactions are: A purchase of a spectacular villa in Indonesia worth 1000 BTC in 2014 and 157,000 BTC home in Vegas.
+
+### Charities:
+Corruption keeps a lot of well-wishers from participating. This keeps the money away from people who genuinely need those funds and will continue suffering.
+Blockchain and Cryptocurrency can be used to help solve this problem and deter corruption and fund leaks. The World Food Program (WFP) is already using Blockchain to carefully distribute cash assistance to the hungry. 
+
+### Buying and Selling content:
+Artist have to deal through intermediaries to get your work sold. This can be solved by selling your work on websites like Bitpremier.com which provides a market platform for you to sell or buy luxury goods. A great example of a user who benefited from this platform is artist named “Reinier van Schoonderwoerd den Bezemer” a artist based in Amsterdam who sold his piece “Collaboration” at a whopping 10.000 euro
+
+There are many more ways that cryptocurrency is changing aspects of our lives; ranging from economic to social. As crypto gains popularity more and more uses will come into the world of Cryptocurrency. 
+
+
 #### More Information:
 [Cryptocurrency](https://en.wikipedia.org/wiki/Cryptocurrency)    
 [Ultimate Guide to Cryptocurrency](https://blockgeeks.com/guides/what-is-cryptocurrency)
