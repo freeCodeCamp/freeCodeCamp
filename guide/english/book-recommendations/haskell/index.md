@@ -32,6 +32,12 @@ Available to buy or download for free (e-book)! This book is broken down into tw
 - [Website](http://haskellbook.com/index.html)
 - [Gumroad](https://gumroad.com/l/haskellbook)
 
+#### Haskell: The Craft of Functional Programming (3rd Edition) (International Computer Science Series)
+Introducing functional programming in the Haskell language, this book is written for students and programmers with little or no experience.  It emphasises the process of crafting programmes, problem solving and avoiding common programming pitfalls. Covering basic functional programming, through abstraction to larger scale programming, students are lead step by step through the basics, before being introduced to more advanced topics. This edition includes new material on testing and domain-specific languages and a variety of new examples and case studies, including simple games. 
+
+- [Amazon] (https://www.amazon.com/Haskell-Functional-Programming-International-Computer/dp/0201882957)
+
+
 #### Get Programming with Haskell
 
 This book introduces you to the Haskell language without drowning you in academic jargon or heavy programming theory. It's great for beginners. It is written by Will Kurt. It is packed with focused topics, short code examples and short programs, plus numerous exercises to help stretch and strengthen your new knowledge.
