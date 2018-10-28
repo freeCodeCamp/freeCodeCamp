@@ -11,7 +11,7 @@ title: Books to Read for Programmers
 - ISBN-13: 978-1593275990
 
 *Structure and Interpretation of Computer Programs* by Harold Abelson, Gerald Jay Sussman, and Julie Sussman
-- https://mitpress.mit.edu/sicp/
+- [MIT Press] (https://mitpress.mit.edu/sicp/)
 - ISBN-13: 978-0262510875
 
 *Clean Code: A Handbook of Agile Software Crafstmanship* by Robert C. Martin
@@ -47,10 +47,10 @@ title: Books to Read for Programmers
 - ISBN-13: 978-1520288178
 
 *You Don't Know JS (book series)* by Kyle Simpson
-- https://github.com/getify/You-Dont-Know-JS
+- [You Dont Know JS] (https://github.com/getify/You-Dont-Know-JS)
 - ISBN-13: 9781491924464
 
-*Soft Skills: The software developer's life manual* - John Sonmez
+*So Skills: The software developer's life manual* - John Sonmez
 - [Amazon Smile](https://smile.amazon.com/Soft-Skills-software-developers-manual/dp/1617292397?pldnSite=1)
 - ISBN-13: 9781617292392
 
@@ -76,7 +76,7 @@ title: Books to Read for Programmers
 
 ## C-lang
 *C Notes for Professionals book
--https://books.goalkicker.com/CBook/
+-[CBook] (https://books.goalkicker.com/CBook/)
 
 *The C Programming Language* by Brian W. Kernighan and Dennis M. Ritchie
 - [Amazon Smile](https://smile.amazon.com/Programming-Language-2nd-Brian-Kernighan/dp/0131103628/)
@@ -89,7 +89,7 @@ title: Books to Read for Programmers
 ## C#
 
 *C# 6.0 in a Nutshell: The Definitive Reference 6th Edition* by Joseph Albahari  (Author), Ben Albahari (Author)
-- https://www.amazon.com/C-6-0-Nutshell-Definitive-Reference/dp/1491927062/ref=sr_1_2?s=books&ie=UTF8&qid=1539643378&sr=1-2&keywords=C%23+6.0+in+a+nutshell
+- [Amazon] (https://www.amazon.com/C-6-0-Nutshell-Definitive-Reference/dp/1491927062/ref=sr_1_2?s=books&ie=UTF8&qid=1539643378&sr=1-2&keywords=C%23+6.0+in+a+nutshell)
 - ISBN-13: 978-1491927069
 
 *Pro C# 7: With .NET and .NET Core Paperback – Nov 21 2017* by Andrew Troelsen (Author), Philip Japikse (Author)
@@ -119,7 +119,7 @@ title: Books to Read for Programmers
 ## JavaScript
 
 *You Don't Know JS (book series)*
-- https://github.com/getify/You-Dont-Know-JS
+- [You Don't Know JS] (https://github.com/getify/You-Dont-Know-JS)
 - ISBN-13: 9781491924464 
 
 *Eloquent JavaScript: A Modern Introduction to Programming by Marijn Haverbeke*
@@ -236,6 +236,7 @@ title: Books to Read for Programmers
 *Deep Learning by Ian Goodfellow, Yoshua Bengio, Aaron Courville*
 - [Amazon](https://www.amazon.com/Deep-Learning-Adaptive-Computation-Machine/dp/0262035618)
 - ISBN: 978-0262035613
+
 *Oracle® Database Notes for Professionals*
 https://books.goalkicker.com/OracleDatabaseBook/
 
