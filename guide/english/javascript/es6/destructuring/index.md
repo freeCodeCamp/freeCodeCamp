@@ -90,18 +90,16 @@ const {first: firstName, last: lastName} = fullName;
 console.log(firstName, lastName); // John Smith
 ```
 
-You can also use Destructuring on nested objects.
-
+A variable can be assigned a default, in the case that the value unpacked from the object is undefined.
 ```js
-const person = {firstName: "John", lastName: "Smith", address: {city: "Istanbul", country: "Turkey"}};
-const {address: {city, country}} = person;
+const person = {
+  age: 22
+};
 
-console.log(city, country); // Istanbul Turkey
+const {name: firstName = 'Anonymous', age} = person;
 ```
 
-**Array Destructuring with rest**
-
-When destructuring an array, you can unpack and assign the remaining part of it to a variable using the rest pattern:
+Destructuring an array with rest, you can unpack and assign the remaining part of it to a variable using the rest pattern:
 ```js
 const [a, ...b] = [1, 2, 3];
 console.log(a); // 1
