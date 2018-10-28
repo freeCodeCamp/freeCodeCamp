@@ -197,3 +197,4 @@ Output:
 ```
 10198442
 ```
+![:rocket:](https://forum.freecodecamp.com/images/emoji/emoji_one/rocket.png?v=2 ":rocket:") <a href='https://repl.it/@PrincessAllura/StringExample' target='_blank' rel='nofollow'>Run Code</a>
