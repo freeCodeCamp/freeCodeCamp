@@ -1,22 +1,22 @@
 # Cómo trabajar en artículo de la Guía
 
-Con tu yuda, podemos crear un herramienta de referencia accesible que ayudará a millones de personas que están aprendiendo a programar en los próximos años. 💛
+Con tu ayuda, podemos crear un herramienta de referencia accesible que ayudará a millones de personas que están aprendiendo a programar en los próximos años. 💛
 
 Puedes:
 
-- [Ayudarnos creando y editando artúclos de la Guía](#steps-for-creating-and-editing-guide-articles).
+- [Ayudarnos creando y editando artículos de la Guía](#steps-for-creating-and-editing-guide-articles).
 - [Ayudarnos a revisar Pull Requests para artículos de la guía]()
 
 ## Pasos para crear y editar artículos de la Guía
 
 1. 🍴 [Fork este repositorio](https://github.com/freeCodeCamp/freeCodeCamp#fork-destination-box)
-2. 👀️ Sgiue las normas de controbución expuestas a continuación.
+2. 👀️ Sigue las normas de contribución expuestas a continuación.
 3. 🔧 Propón cambios asombrosos!
 4. 📖 Lee la [guía de buenas prácticas de estilo](/docs/style-guide-for-guide-articles).
 5. 👉 [Haz una Pull Request](https://github.com/freeCodeCamp/freeCodeCamp/compare)
 6. 🎉 Consigue que aprueben tu Pull request - Éxito!
 
-O siemplement [crea un tema](https://github.com/freeCodeCamp/freeCodeCamp/issues) - toda pequeña ayuda cuenta! 😊
+O simplemente [crea un tema](https://github.com/freeCodeCamp/freeCodeCamp/issues) - toda pequeña ayuda cuenta! 😊
 
 ### [Sigue estas recomendaciones de nuestra guía de estilo para crear un artículo atractivo](/docs/style-guide-for-guide-articles.md)
 
@@ -35,7 +35,7 @@ Mira este vídeo de demostración o sigue los siguientes pasos:
 
 ![GIF showing the GitHub interface steps](#)
 
-1. Ve a la carpets **"páginas"** (situado en [`guide`](/guide)) donde encontrarás el artículo raiz que quieras editar.
+1. Ve a la carpeta **"páginas"** (situado en [`guide`](/guide)) donde encontrarás el artículo raiz que quieras editar.
 
     > Todas las raíces estarán en un archivo index.md
 
@@ -45,7 +45,7 @@ Mira este vídeo de demostración o sigue los siguientes pasos:
 
 3. Desplázate a la parte de abajo de la pantalla y añade un mensaje explicando tus cambios.
 
-    (Opcional): Recomendamos haer un mensaje convencional. Esta es una buena práctica que verás en algunos de los repositorios Open Source más populares. Como desarrollador, deberías seguir las prácticas estándar.
+    (Opcional): Recomendamos hacer un mensaje convencional. Esta es una buena práctica que verás en algunos de los repositorios Open Source más populares. Como desarrollador, deberías seguir las prácticas estándar.
 
     Algunos ejemplos de mensajes convencionales serían:
 
@@ -58,7 +58,7 @@ Mira este vídeo de demostración o sigue los siguientes pasos:
 
     Se breve, no más de 50 caracteres. Puedes añadir información extra en la descripción del mensaje.
 
-    esto no supone ningún esfuerzo adicional respecto a mensajes como 'update file' o 'add index.md'
+    Esto no supone ningún esfuerzo adicional respecto a mensajes como 'update file' o 'add index.md'
 
     Puedes aprender más sobre [por qué deberías seguir esta práctica aquí](https://www.conventionalcommits.org/en/v1.0.0-beta.2/#why-use-conventional-commits).
 
@@ -76,7 +76,7 @@ No es obligatorio que trabajes en tu sistema personal, salvo que desees previsua
 
 ### Aceptación de la PR
 
-Estas son algunos criterios utilizados por los revisores cuando evalúan PRs:
+Estos son algunos criterios utilizados por los revisores cuando evalúan PRs:
 
 - Descripción y título relevantes
 - La PR respeta la [guía de estilo](/docs/style-guide-for-guide-articles)
@@ -86,10 +86,10 @@ Estas son algunos criterios utilizados por los revisores cuando evalúan PRs:
 
 #### Etiquetas
 
-- **contenido** es para Pull Requests que modifican el contenido de artículos en la guía (añaden un nuevo artículo o actualizan uno existente)
-- **duplicada** es para Pull Request que contienen el mismo contenido que otra PR abierta
-- **cambios solicitados** es para Pull Requests que necesitan algún cambio antes de ser integradas
-- **pasada** es para Pull Requests que con etiqueta _"changes requested"_ que no han tenido actividad durante al menos 2 semanas y serán por tanto cerradas
+- **contenido** (content) es para Pull Requests que modifican el contenido de artículos en la guía (añaden un nuevo artículo o actualizan uno existente)
+- **duplicada** (duplicate) es para Pull Request que contienen el mismo contenido que otra PR abierta
+- **cambios solicitados** (changes requested) es para Pull Requests que necesitan algún cambio antes de ser integradas
+- **pasada** (stale) es para Pull Requests que con etiqueta _"changes requested"_ que no han tenido actividad durante al menos 2 semanas y serán por tanto cerradas
   - Una  pull request _pasada_ debe cerrarse.
   - Este es [un ejemplo](https://github.com/freeCodeCamp/freeCodeCamp/pull/235).
 
@@ -109,7 +109,7 @@ Los revisores harán todos los esfuerzos posibles para resolver estos conflictos
 
 #### Solicitar cambios
 
-Si la Pull Request no es perfect el revisor podría:
+Si la Pull Request no es perfecta el revisor podría:
 
 - solicitar cambios al contribuidor y añadir la etiqueta *cambios solicitados*
 - solucionar errores menores y hacer un envío encima de la PR
@@ -120,11 +120,11 @@ Todas las PRs deben superar los test de Travis CI antes de poder ser integradas.
 
 Si una PR rompe la ejecución (un test de Travis CI falla y muestra una "X" roja) hay tres cauas probables y tendrás que resolver el problemas antes de que podamos integrar la PR:
 
-1. Tu PR crea un nueva artículo pero la falta un archivo `index.md` en algún lugar.
+1. Tu PR crea un nueva artículo pero le falta un archivo `index.md` en algún lugar.
     - Cada directorio en `src/pages` necesita un archivo `index.md` en él (y debe llamarse `index.md`).
     - Dos escenarios muy probables son
       - llamaste al archivo de forma distinta a `index.md`, o
-      - creates un nuevo directorio y un subdirectorio, y escribiste el nuevo artículo en el subdirectorio pero olvidaste incluir un achivo raiz `index.md` en el nuevo directorio
+      - creaste un nuevo directorio y un subdirectorio, y escribiste el nuevo artículo en el subdirectorio pero olvidaste incluir un achivo raiz `index.md` en el nuevo directorio
 2. Tu PR crea un directorio nuevo y su nombre no tiene el formato correcto.
     - Tu directorio debería incluir solamente minúsculas y seguir el formato kebab-case (Ejemplo. mi-nuevo-directorio).
 3. El artículo no tiene un campo llamado `título` en la parte superior.
@@ -139,7 +139,7 @@ Cerramos Pull Requests
 - Si incluye contenido copiado de fuentes con Copyright - ver [Citas](https://github.com/freeCodeCamp/freeCodeCamp/issues/2503)
 - Si no respeta la [Guía de estilo para escribir articulos](/docs/style-guide-for-guide-articles.md)
 - Si no respeta la [Política Académica de Honestidad](https://www.freecodecamp.org/academic-honesty)
-- Si está pasada (un cambio ha sido solicitado y no ha habiado respuesta en 2 semanas)
+- Si está pasada (un cambio ha sido solicitado y no ha habido respuesta en 2 semanas)
 
 Además, si estás trabajando a partir de un artículo raiz, tus cambios deben ser los suficiente notables como para sustituir al original.
 
@@ -171,7 +171,7 @@ Utilizamos la opción <kcd>Aplastar e integrar</kcd> al integrar una PR para men
 
 ### Filtrar PRs
 
-> PR, Obierta, Más Antiguas Primero, Travis CI Build correcta, nadie asignado, sin comentarios
+> PR, abierta, Más Antiguas Primero, Travis CI Build correcta, nadie asignado, sin comentarios
 
 [`is:pr is:open sort:updated-asc status:success no:assignee comments:0`](https://github.com/freeCodeCamp/freeCodeCamp/pulls?utf8=%E2%9C%93&q=is%3Apr%20is%3Aopen%20sort%3Aupdated-asc%20status%3Asuccess%20no%3Aassignee%20comments%3A0)
 
@@ -224,7 +224,7 @@ Una vez resuelvas el problema, podré revisar tu PR e integrarla. 😊
 ``````markdown
 Hola @username
 
-Me enctaría poder integrar tus cambios pero parece que hay un error con los test de Travis CI build. ⚠️
+Me encantaría poder integrar tus cambios pero parece que hay un error con los test de Travis CI build. ⚠️
 
 ```bash
 Error: ENOTDIR: not a directory, open 'src/pages/java/data-abstraction/index.md'
@@ -250,9 +250,9 @@ Una vez sincronices tu fork y superes los test podré integrar tu PR. 😊
 
 ---
 
-> Puedes conseguir más información en e artículo [Sincronizando un Fork](https://help.github.com/articles/syncing-a-fork/) sobre cómo mantener al día tu fork con el repositorio principal. 🔄
+> Puedes conseguir más información en el artículo [Sincronizando un Fork](https://help.github.com/articles/syncing-a-fork/) sobre cómo mantener al día tu fork con el repositorio principal. 🔄
 >
-> Además, es una buena ráctica en GitHub escribir una decripción breve de tus cambios al crear una PR. 📝
+> Además, es una buena práctica en GitHub escribir una descripción breve de tus cambios al crear una PR. 📝
 ``````
 
 #### Conflictos de integración
@@ -262,7 +262,7 @@ Una vez sincronices tu fork y superes los test podré integrar tu PR. 😊
 ```markdown
 Hola @username
 
-Me encantaría poder integrar tus cambios para parece que tienes conflictos de integración. ⚠️
+Me encantaría poder integrar tus cambios pera parece que tienes conflictos de integración. ⚠️
 
 Una vez resuelvas estos conflictos, podré revisar tu PR e integrarla. 😊
 
@@ -270,7 +270,7 @@ Una vez resuelvas estos conflictos, podré revisar tu PR e integrarla. 😊
 
 > Si no estás familiarizado con los conflictos de integración, por favor revisa la guía de GitHub ["Resolviendo conflictos de integración"](https://help.github.com/articles/resolving-a-merge-conflict-on-github/) para más información. 🔍️
 >
-> Además, es una buena ráctica en GitHub escribir una decripción breve de tus cambios al crear una PR. 📝
+> Además, es una buena práctica en GitHub escribir una descripción breve de tus cambios al crear una PR. 📝
 ```
 ¹ Si un contribuidor primerizo tiene conflictos de integración, los encargados de mantenimiento lo resolverán en su lugar.
 
@@ -299,7 +299,7 @@ Gracias de nuevo! 😊
 ```markdown
 Hola @username
 
-No has añadido ningún contenido real por invalidaré esta PR y la etiquetaré como `inválida`. 😓️
+No has añadido ningún contenido real asi que invalidaré esta PR y la etiquetaré como `inválida`. 😓️
 
 En cualquier caso, no dudes en abrir otras PR! 👍
 ```
