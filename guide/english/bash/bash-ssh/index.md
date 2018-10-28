@@ -14,6 +14,8 @@ One thing to note, if the server is configured to listen to any port other than 
 
 If the remote computer requires user login, the form `ssh username@remote_address` can be used, which will then prompt for the user password on successful connection.
 
+In general if you use `ssh username@remote_address` and your access credentials are accepted you will receive a Linux command prompt. However, you can execute execute remote commands directly using the syntax `ssh username@remote_address command` where `command` will be executed omn remote host. In other words, your remote session is opened only to execute `command`.
+
 ### More Information:
 * [Wikipedia](https://en.wikipedia.org/wiki/Secure_Shell)
 * [SSH](https://www.ssh.com/ssh/command)
