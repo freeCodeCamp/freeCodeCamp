@@ -16,30 +16,30 @@ One of the great advantages of using functions in your code is that it reduces t
 In Python, a function definition has the following features:
 
 1. The keyword `def`
-2. a function name
-3. paranthesis'()', and within paranthesis input parameters,although the input parameters are optional
+2. a function name.
+3. paranthesis'()', and within paranthesis input parameters,although the input parameters are optional.
 4. a colon ':'
-5. some block of code to execute (that must be indented relative to the definition statement)
-6. a return statement (optional)
+5. some block of code to execute (that must be indented relative to the definition statement).
+6. a return statement (optional).
 
 ```python
-# a function with no parameters or returned values
+# a function with no parameters or returned values.
 def sayHello():
   print("Hello!")
 
-sayHello()  # calls the function, 'Hello!' is printed to the console
+sayHello()  # calls the function, 'Hello!' is printed to the console.
 
-# a function with a parameter
+# a function with a parameter.
 def helloWithName(name):
   print("Hello " + name + "!")
 
-helloWithName("Ada")  # calls the function, 'Hello Ada!' is printed to the console
+helloWithName("Ada")  # calls the function, 'Hello Ada!' is printed to the console.
 
-# a function with multiple parameters with a return statement
+# a function with multiple parameters with a return statement.
 def multiply(val1, val2):
   return val1 * val2
 
-multiply(3, 5)  # prints 15 to the console
+multiply(3, 5)  # prints 15 to the console.
 ```
 
 Functions are blocks of code that can be reused simply by calling the function. This enables simple, elegant code reuse without explicitly re-writing sections of code. This makes code both more readable, makes for easier debugging, and limits typing errors. 
@@ -51,7 +51,7 @@ A function always returns a value,The `return` keyword is used by the function t
 The function name is used to call the function, passing the needed parameters inside parentheses.
 
 ```python
-# this is a basic sum function
+# this is a basic sum function.
 def sum(a, b):
   return a + b
 
@@ -76,7 +76,7 @@ result = sum(b=2, a=2)
 # result = 4
 ```
 
-However, it is not possible to pass a keyword argument before a non-keyword one
+However, it is not possible to pass a keyword argument before a non-keyword one.
 
 ```Python
 result = sum(3, b=2)
@@ -98,11 +98,11 @@ result = s(1, 2)
 - If a function definition includes parameters, you must provide the same number of parameters when you call the function.
 
   ```python
-  print(multiply(3))  # TypeError: multiply() takes exactly 2 arguments (0 given)
+  print(multiply(3))  # TypeError: multiply() takes exactly 2 arguments (0 given).
 
-  print(multiply('a', 5))  # 'aaaaa' printed to the console
+  print(multiply('a', 5))  # 'aaaaa' printed to the console.
 
-  print(multiply('a', 'b'))  # TypeError: Python can't multiply two strings
+  print(multiply('a', 'b'))  # TypeError: Python can't multiply two strings.
   ```
 
 - The block of code that the function will run includes all statements indented within the function.
@@ -113,7 +113,7 @@ result = s(1, 2)
     print('so will this')
 
   x = 7
-  # the assignment of x is not a part of the function since it is not indented
+  # the assignment of x is not a part of the function since it is not indented.
   ```
 
 - Variables defined within a function only exist within the scope of that function.
