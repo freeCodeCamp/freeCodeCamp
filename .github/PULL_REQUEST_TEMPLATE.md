@@ -9,3 +9,5 @@
 If your pull request closes a GitHub issue, replace the XXXXX below with the issue number.
 
 Closes #XXXXX
+
+fix: update HTML guide article.
