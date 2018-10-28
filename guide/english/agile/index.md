@@ -24,3 +24,4 @@ There are many different flavors of agile, including Scrum and Extreme Programmi
 ### More information
 
 [Agile Alliance's Homepage](https://www.agilealliance.org/)
+[Agile Estimating and Planning](https://www.amazon.com/gp/product/0131479415/ref=as_li_qf_sp_asin_il_tl?ie=UTF8&camp=1789&creative=9325&creativeASIN=0131479415&linkCode=as2&tag=softwarete00f-20)
