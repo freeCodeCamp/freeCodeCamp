@@ -93,3 +93,5 @@ Contents of the modified set:		30	65
   
   ### Sources
  1. [Geeks for Geeks](https://www.geeksforgeeks.org/set-in-cpp-stl/) 
+ ##SIMILARITY
+ it is similar to map just value is missing in set and the rest work like map.
