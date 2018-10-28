@@ -6,3 +6,4 @@ Hibernate ORM, commonly known as Hibernate is an object-relational mapping tool 
 
 #### More Information:
 For documentation and downloads, visit [Hibernate's Official Site](https://hibernate.org)
+<!--[Hibernate's Official Site](https://hibernate.org) - For documentation and downloads-->
