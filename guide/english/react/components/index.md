@@ -82,6 +82,10 @@ const Cat = props =>
 
 ```
 
+### Stateful Vs Stateless
+
+Stateful components hold a state object which is mutable. React provides a unique way of conditional rendering using state changes. The construction of stateful component is always heavy as it should instantiate class with a constructor, maintain state object & re-render DOM tree on changes. Whereas stateless gets everything as props & hence can be directly used instead of maintaining states. There is functional logic in stateful component whereas in stateless component most of the time it is a dumb/presentational component.
+
 ### More Information:
 
 [https://reactjs.org/docs/components-and-props.html](Components and Props)
