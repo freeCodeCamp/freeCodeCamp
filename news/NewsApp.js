@@ -44,7 +44,7 @@ const styles = `
 /* eslint-enable max-len */
 function NewsApp() {
   return (
-    <div>
+    <React.Fragment>
       <Helmet>
         <style>{styles}</style>
       </Helmet>
@@ -52,7 +52,7 @@ function NewsApp() {
       <Grid fluid={true}>
         <SlimWidthRow className='app-layout'>{routes}</SlimWidthRow>
       </Grid>
-    </div>
+    </React.Fragment>
   );
 }
 
