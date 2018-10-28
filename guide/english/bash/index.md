@@ -66,3 +66,4 @@ And then execute the script.
 * [tldp.org - Guide to Bash](http://tldp.org/HOWTO/Bash-Prog-Intro-HOWTO.html#toc2)
 * [gnu.org - Bash manual](https://www.gnu.org/software/bash/manual/html_node/index.html#SEC_Contents)
 * [Shell scripting tutorial](https://www.shellscript.sh/)
+* [Bash scripting tutorial](https://ryanstutorials.net/bash-scripting-tutorial/)
