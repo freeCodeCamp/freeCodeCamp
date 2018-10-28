@@ -15,11 +15,14 @@ Some port numbers are used by convention to identify specific services, such as:
 * 25 - SMTP
 * 42 - nameserver
 * 53 - Domain Name System (DNS)
+* 69 - Trivial File Transfer Protocol (TFTP)
 * 80 - http
+* 88 - kerberos
 * 110 - pop3
 * 143 - imap
 * 194 - irc
-* 443 - https
+* 443 - https or http over SSL
+* 3389 - Remote Desktop Protocol (RDP)
 
 <!-- The article goes here, in GitHub-flavored Markdown. Feel free to add YouTube videos, images, and CodePen/JSBin embeds  -->
 
