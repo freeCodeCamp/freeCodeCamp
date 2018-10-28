@@ -8,18 +8,21 @@
         <td><a href="/docs/portuguese/CONTRIBUTING.md"> Português </a></td>
         <td><a href="/docs/russian/CONTRIBUTING.md"> русский </a></td>
         <td><a href="/docs/spanish/CONTRIBUTING.md"> Español </a></td>
+        <td><a href="/docs/greek/CONTRIBUTING.md"> Ελληνικά </a></td>
     </tr>
 </table>
 
-# Contribution Guidelines
+# Οδηγίες για συνεισφορά
 
-Hello 👋!
+Γειά χαρά 👋!
 
-freeCodeCamp.org is possible thanks to thousands of kind volunteers like you. We are grateful for your contributions, and we are excited to welcome you aboard.
+Το freeCodeCamp.org υπάρχει χάρη σε χιλιάδες εθελοντές σαν και εσένα. Είμαστε ευγνώμονες για τις συνεισφορές σου και 
 
-We strictly enforce our ["Code of Conduct"](https://www.freecodecamp.org/code-of-conduct). Take a moment to read it. It's only 196 words long.
+is possible thanks to thousands of kind volunteers like you. We are grateful for your contributions, και είμαστε ενθουσιασμένοι που σας καλωσορίζουμε μαζί μας.
 
-Happy contributing 🎉!
+Επιβάλουμε αυστηρά τον ["Κώδικα δεοντολογίας"](https://www.freecodecamp.org/code-of-conduct). Διαβάστε τον εύκολα σε ένα λεπτό. Είναι μόνο 196 λέξεις.
+
+Καλή συνεισφορά 🎉!
 
 ## Here are some fun ways that you can help
 
