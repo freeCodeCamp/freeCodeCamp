@@ -4,7 +4,7 @@ title: Bash mkdir
 
 ## Bash command: mkdir
 
-**Creates a directory**
+**Creates a directory(ies), if they do not already exist.**
 
 ```
 mkdir [options] directory_name
