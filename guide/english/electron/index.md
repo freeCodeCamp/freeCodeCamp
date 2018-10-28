@@ -12,7 +12,7 @@ Electron is actually built on two technologies: Node.js (or simply Node) and Chr
 Thus, any web application you have written can run on Electron. Similarly, any Node application you have written
 can run on Electron. But the power of Electron is that you can use both solutions together. Note that this also means that any code Chrome can run, Electron can run, which reduces the cross-browser compatability issues which keep many a developer up at night.
 
-Additionally, Electron comes with support for auto-updating, crash reporting, and native menus.
+Additionally, Electron comes with support for auto-updating, crash reporting and native menus.
 
 Core features can be explored using the [Electron API demos](https://github.com/electron/electron-api-demos)
 
