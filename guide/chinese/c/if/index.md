@@ -36,7 +36,7 @@ if (condition) {
  int main () { 
  
    // Local variable definition 
-   int a = 10; 
+   int a = 100; 
  
    // Check the boolean condition 
    if(a < 5) { 
