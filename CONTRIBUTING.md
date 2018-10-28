@@ -83,7 +83,7 @@ You can help us to translate our Guide articles and Coding challenges into a lan
 
 We would love your help in improving the quality of these translations. Millions of people use the English language version of freeCodeCamp.org, and we expect millions more to use these translated versions as well.
 
-### Help us fix bugs in freeCodeCamp.org's learning platform
+### Help us fix bugs in freeCodeCamp.org's learning platform -
 
 Our learning platform runs on a modern JavaScript stack. It has various components, tools and libraries including but not limited to Node.js, MongoDB, LoopBack, OAuth 2.0, React, Gatsby, Webpack, and more.
 
