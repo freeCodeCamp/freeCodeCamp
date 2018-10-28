@@ -34,3 +34,4 @@ impaired) tags such as `<header>` `<footer>`. So it is advisable to use these ta
 
 #### More Information:
 [HTML: Introduction](https://www.w3schools.com/html/html_intro.asp)
+[HTML5: Introduction](https://www.w3schools.com/html/html5_intro.asp)
