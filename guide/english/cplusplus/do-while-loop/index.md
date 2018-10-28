@@ -39,3 +39,4 @@ Do something first and then test if we have to continue. The result is that the 
 		return 0;
 	}
 ```
+### examples: do while loop is an exit controlled loop, one time the loop runs and after that the condition is checked.
