@@ -22,7 +22,7 @@ Ionic - это платформа разработки мобильных при
   Android Environment (or iOS if you're working on a MacOS) 
 ```
 
-### Во-первых, нам нужно иметь Node.js и npm.
+### Во-первых, нам нужно установить Node.js и npm.
 ```
   sudo apt-get update 
   sudo apt-get install nodejs 
@@ -30,16 +30,17 @@ Ionic - это платформа разработки мобильных при
 
 ### Менеджер пакетов Node.js (npm)
 
-\`\` \`  
+```  
 sudo apt-get install npm
 ```
-### Ionic 2 and cordova 
+### Ionic 2 и cordova 
 ```
-
 sudo npm install -g ionic cordova
 ```
-### Now sit back and relax, give it some time to finish, it can take several minutes depending on your internet connection. 
- Once that's done, Let's start off by generating a new project based on the “blank” template 
+### А теперь присаживайтесь и отдохните, подождите пока всё не установится - может потребоваться несколько минут в зависимости от скорости вашего интернет соединения.
+Как только установка завершится, давайте начнём с создания нового проекта на базе темплейта “blank”
 ```
-
-ионный запуск MyFirstApp blank cd MyFirstApp ионная подача \`\` \`
+ionic start MyFirstApp blank
+  cd MyFirstApp 
+  ionic serve
+  ```
