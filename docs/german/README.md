@@ -14,9 +14,9 @@
 
 # Kurzübersicht der Dokumentation
 
-Hallo 👋!
+Halo 👋!
 
-Dieses Verzeichnis enthält die Dokumentation, die benötigt wird um Code zu freeCodeCamp.org beizutragen.
+Dieses Verzeichnis enthält die Dokumentation, die Benötigt wird um Code zu freeCodeCamp.org beizutragen.
 
 ## [Lies dir dieses Dokument durch, bevor du startest.](/CONTRIBUTING.md)
 
