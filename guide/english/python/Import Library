@@ -1,0 +1,15 @@
+---
+title: Using Library On Python
+---
+
+# On python we can use another library such us numpy, Math 
+
+There is many ways to import library on python, for example:
+
+``` python
+import numpy
+
+import numpy as np
+
+from numpy import arange
+```
