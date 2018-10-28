@@ -6,6 +6,7 @@ title: Books on Python Programming Language
  
  #### Think Python 2e
  ![alt text](http://greenteapress.com/thinkpython2/think_python2_medium.jpg "Think Python 2e")
+ 
  A free (E-book) which covers the basics of Python. It's beginner friendly and a must for people who are new to programming!
  
 - [Website](http://greenteapress.com/wp/think-python-2e/)
@@ -15,6 +16,7 @@ title: Books on Python Programming Language
  
 #### Learn Python 3 the Hard Way
 ![alt text](http://www.informit.com/ShowCover.aspx?isbn=9780134692883&type=f "Learn Python 3 the Hard Way")
+
 Paid (Free ebook available) book which covers the basics of python. It's designed to get you started with python language and become familiar with its syntax and workings by the time you complete the book. 
 
 - [Website](https://learnpythonthehardway.org/) (Buy from the creator | Includes video lessons)
@@ -26,6 +28,7 @@ Paid (Free ebook available) book which covers the basics of python. It's designe
 
 #### Black Hat Python: Python Programming for Hackers and Pentesters
 ![alt text](https://images-na.ssl-images-amazon.com/images/I/51O-GzoZi5L._SL200_.jpg "Black hat Python")
+
 Explore the darker side of Python and discover how to write network sniffers, manipulate packets, infect virtual machines and more.
 
 - [Amazon](https://www.amazon.co.uk/Black-Hat-Python-Programming-Pentesters/dp/1593275900)
@@ -33,6 +36,7 @@ Explore the darker side of Python and discover how to write network sniffers, ma
 
 #### Programming Python
 ![alt text](https://covers.oreillystatic.com/images/9780596158118/cat.gif "Programming Python: Fourth Edition")
+
 So you've covered the basics of Python?  You're now ready to discover the in-depth tutorials which cover the advanced programming aspects of Python. These include system administration, GUIs and the web.  Understand how Python is used in databases, networking, front-end scripting layers and more.
 
 - [Amazon](https://www.amazon.com/Programming-Python-Powerful-Object-Oriented/dp/0596158106)
@@ -42,6 +46,7 @@ So you've covered the basics of Python?  You're now ready to discover the in-dep
 
 #### Data Science from Scratch: First Principles with Python
 ![alt text](https://covers.oreillystatic.com/images/0636920033400/cat.gif "Data Science From Scratch")
+
 You'll learn many of the first princliples for data science tools and how algorithms work by implementing these from scratch.  If you have an aptitude for maths and some coding skills, you'll have a crash course in Python that includes the basics of algebra, statistics, and probability.  You'll learn how to implement models such as k-nearest Neighbors, Naive Bayes, linear and logistic regression, decision trees, neural networks and clustering. Discover recommender systems, natural lanuage processing, network analysis, MapReduce and databases.
 
 - [O'Reilly](http://shop.oreilly.com/product/0636920033400.do)
@@ -51,6 +56,7 @@ You'll learn many of the first princliples for data science tools and how algori
 
 #### Automate The Boring Stuff With Python
 ![alt text](https://images-na.ssl-images-amazon.com/images/I/517XL4pO6jL._SL200_.jpg "Automate the boring stuff with Python")
+
 - Great book for beginners. Has interesting projects to practice Python.
 - [Amazon](https://www.amazon.com/gp/product/1593275994/)
 - ISBN-10: 1593275994
