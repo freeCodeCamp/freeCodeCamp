@@ -18,6 +18,12 @@ Worse Case Time Complexity: O(n)
 
 Breadth First Search is complete on a finite set of nodes and optimal if the cost of moving from one node to another is constant.
 
+### Application 
+
+1. To find all connected components in a given graph
+2. To find the shortest path between two nodes of any weighted or unweighted graph
+3. To find all nodes within an individual connected components
+
 ### C++ code for BFS implementation
 
 ```cpp
