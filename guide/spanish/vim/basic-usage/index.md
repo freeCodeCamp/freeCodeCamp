@@ -34,6 +34,9 @@ localeTitle: Uso básico
 
 *   : set nu
 
+### Ir a la linia x
+*   : :x
+
 ### No mostrar números de línea
 
 *   : set nonu
@@ -41,6 +44,12 @@ localeTitle: Uso básico
 ### Agregue color de sintaxis en función del lenguaje de programación utilizado.
 
 *   : sintaxis en
+
+### Ir al final de la linia
+*   : $
+
+### Ir al principio de la linia
+*   : 0
 
 ## Acerca de Vim
 
