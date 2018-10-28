@@ -20,6 +20,7 @@ Form contains control elements which are wrapped around ```<form></form>``` tags
 - ```week```
 - ```color```
 - ```datalist```
+- ```number```
 
 Code example:
 ```html
