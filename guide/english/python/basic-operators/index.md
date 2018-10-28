@@ -29,22 +29,22 @@ Consider the expression, <b>“a = 2 + 3”</b>. Here, `2` and `3` are the <i>op
   </tr>
   <tr>
     <td align="center">+</td>
-    <td>Performs Addition on the operands</td> 
+    <td>Performs Addition on the operands.</td> 
     <td>12 + 3 = 15</td>
   </tr>
   <tr>
     <td align="center">-</td>
-    <td>Performs Subtraction on the operands. <br>Subtracts the right operand from the left operand</td> 
+    <td>Performs Subtraction on the operands. <br>Subtracts the right operand from the left operand.</td> 
     <td>12 - 3 = 9</td>
   </tr>
   <tr>
     <td align="center">*</td>
-    <td>Performs Multiplication on the operands</td> 
+    <td>Performs Multiplication on the operands.</td> 
     <td>12 * 3 = 36</td>
   </tr>
   <tr>
     <td align="center">/</td>
-    <td>Performs Division on the operands. <br>Divides the left operand by the right operand</td> 
+    <td>Performs Division on the operands. <br>Divides the left operand by the right operand.</td> 
     <td>12 / 3 = 4</td>
   </tr>
   <tr>
@@ -54,17 +54,17 @@ Consider the expression, <b>“a = 2 + 3”</b>. Here, `2` and `3` are the <i>op
   </tr>
   <tr>
     <td align="center">%</td>
-    <td>Performs a Modulus on the operands. <br>Returns the remainder obtained while dividing the left operand by the right operand</td> 
+    <td>Performs a Modulus on the operands. <br>Returns the remainder obtained while dividing the left operand by the right operand.</td> 
     <td>16 % 3 = 1</td>
   </tr>
   <tr>
     <td align="center">**</td>
-    <td>Performs an Exponentiation operation. <br>The left operand is raised to the power of right operand</td> 
+    <td>Performs an Exponentiation operation. <br>The left operand is raised to the power of right operand.</td> 
     <td>12 ** 3 = 1728</td>
   </tr>
   <tr>
     <td align="center">//</td>
-    <td>Performs a Floor Division operation. <br>Returns the integral part of the quotient obtained after diving the left operand by the right operand</td> 
+    <td>Performs a Floor Division operation. <br>Returns the integral part of the quotient obtained after diving the left operand by the right operand.</td> 
     <td>18 // 5 = 3</td>
   </tr>
 </table>
