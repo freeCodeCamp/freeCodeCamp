@@ -62,6 +62,7 @@ function mergeSort(array) {
 <div id='js-teardown'>
 
 ```js
+//function to check if the array is sorted
 function isSorted(arr) {
   var check = (i) => (i == arr.length - 1) ? true : (arr[i] > arr[i + 1]) ? false : check(i + 1);
   return check(0);
