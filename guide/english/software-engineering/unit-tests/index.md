@@ -47,3 +47,4 @@ Robert Martin aka "Dr. Bob" on TDD: <a href='http://www.butunclebob.com/ArticleS
 
 Eric Elliot on Unit tests and TDD: <a href='https://medium.com/javascript-scene/5-common-misconceptions-about-tdd-unit-tests-863d5beb3ce9' target='_blank' rel='nofollow'>Medium</a>
 
+Thanks for reading!
