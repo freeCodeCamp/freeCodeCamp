@@ -4,6 +4,12 @@ title: Books on Swift
 
  ### List of Books
  
+ *Learning Swift: Building Apps for macOS, iOS, and Beyond*
+ 
+ -For Who? Begginers and Intermediates
+ -Covers: Swift 4, downloading and setting up Xcode.
+ -Where? Available on Amazon.com and as an Ebook for the Kindle
+ 
  *App Development with Swift - Swift 4 Edition*
  
  -For Who? Beginners, Intermediates
