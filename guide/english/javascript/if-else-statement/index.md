@@ -69,3 +69,32 @@ else {
     return "Invalid number";
 }
 ```
+
+# My New Changes...
+var years = [2001, 1985, 1994, 2014, 1973];
+var ages = [];
+
+for (var i = 0; i < years.length; i++) {
+  ages[i] = 2016 - years[i];
+}
+
+for (i = 0; i < ages.length; i++) {
+  if (ages[i] >= 18) {
+    console.log(
+      "Person  " +
+        (i + 1) +
+        " is " +
+        ages[i] +
+        " years old, and is of full age."
+    );
+  } else {
+    console.log(
+      "Person " +
+        (i + 1) +
+        " is " +
+        ages[i] +
+        " years old, and is Not of full age."
+    );
+  }
+}
+
