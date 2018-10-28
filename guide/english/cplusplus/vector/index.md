@@ -233,3 +233,5 @@ int main(){
 ```
 
 You can also sort in descending using lamda like the one above.
+##ABOUT VECTOR USING
+Much better than arrays and also have many functions predefined such as sort,swap,assign,push_back. 
