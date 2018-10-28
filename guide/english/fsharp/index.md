@@ -9,7 +9,7 @@ It is compatible with visual studio and is officialy supported by Microsoft.
 
 #### Immutability
 
-Variables in F# are by default immutable. That means that their values can't be changed after initialization. Mutability can be forced by the keyword "mut". One of the F# best practices is to just make a copy of the variable you want and change the values you need at the initialization of the newly created variable
+Variables in F# are by default immutable. That means that their values can't be changed after initialization. Mutability can be forced by the keyword "mut". One of the F# best practices is to just make a copy of the variable you want and change the values you need at the initialization of the newly created variable.
 
 #### Records
 
