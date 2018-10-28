@@ -1,10 +1,10 @@
 ---
 title: Quality Assurance
-localeTitle: Seguro de calidad
+localeTitle: Control de Calidad
 ---
-## Seguro de calidad
+## Control de Calidad
 
-El control de calidad (comúnmente conocido como control de calidad) es el medio por el cual se verifica un producto en desarrollo para asegurarse de que funciona como se supone. Los métodos reales utilizados en los procesos de control de calidad varían enormemente según el tamaño y la naturaleza del producto.
+El control de calidad es el medio por el cual se verifica un producto en desarrollo para asegurarse de que funciona como se supone. Los métodos reales utilizados en los procesos de control de calidad varían enormemente según el tamaño y la naturaleza del producto.
 
 Para un proyecto personal, es probable que solo realice la prueba a medida que avanza, y pida a otros que proporcionen comentarios en las etapas apropiadas. Por el contrario, una aplicación bancaria debe tener todos los aspectos de cada característica verificada y documentada exhaustivamente para garantizar que sea funcional y segura.
 
@@ -14,7 +14,7 @@ Independientemente de lo formal o detallado que sea un proceso de control de cal
 
 #### Ágil
 
-En un enfoque ágil para el desarrollo, el objetivo es que cada ciclo de trabajo ('sprint') produzca un software de trabajo que se pueda agregar y mejorar iterativamente. Esto hace que los procesos de control de calidad sean una parte intrínseca del ciclo de desarrollo. Al probar los componentes de software en cada etapa de su producción, se reduce el riesgo de que se presenten errores en el lanzamiento.
+En un enfoque ágil para el desarrollo, el objetivo es que cada ciclo de trabajo "sprint" produzca un software de trabajo que se pueda agregar y mejorar iterativamente. Esto hace que los procesos de control de calidad sean una parte intrínseca del ciclo de desarrollo. Al probar los componentes de software en cada etapa de su producción, se reduce el riesgo de que se presenten errores en el lanzamiento.
 
 ### Terminología
 
