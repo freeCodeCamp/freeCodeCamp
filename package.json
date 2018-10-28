@@ -2,6 +2,7 @@
   "name": "@freecodecamp/freecodecamp",
   "version": "0.0.1",
   "scripts": {
+    "postinstall": "npm run bootstrap",
     "prebootstrap": "npm run ensure-env",
     "bootstrap": "lerna bootstrap && lerna run build --scope @freecodecamp/curriculum",
     "develop": "npm-run-all -s ensure-env start-develop",
