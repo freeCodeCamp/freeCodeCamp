@@ -108,4 +108,11 @@ A comaprison of complexities can be found on this [chart](https://cdn-images-1.m
 - <a href='https://www.youtube.com/watch?v=jVXsjswWo44' target='_blank' rel='nofollow'>Youtube: A Visual Explanation of Quicksort</a>
 
 #### Credits:
-[Python Implementation](https://hackernoon.com/timsort-the-fastest-sorting-algorithm-youve-never-heard-of-36b28417f399)
+[Python Implementation](https://hackernoon.com/timsort-the-fastest-sorting-algorithm-youve-never-heard-of-36b28417f399)Class	Sorting algorithm
+
+Time Analy:sis of Tim Sort:
+Data structure	Array
+Worst-case performance	{\displaystyle O(n\log n)} O(n\log n)[1][2]
+Best-case performance	{\displaystyle O(n)} O(n)[3]
+Average performance	{\displaystyle O(n\log n)} O(n\log n)
+Worst-case space complexity	{\displaystyle O(n)} O(n)
