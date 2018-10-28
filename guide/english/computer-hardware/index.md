@@ -13,7 +13,7 @@ A Central Processing Unit (CPU) is the electronic circuitry within a computer th
 ![Intel Core i5 - Front](https://upload.wikimedia.org/wikipedia/commons/thumb/8/83/Intel_i5-2500.jpg/247px-Intel_i5-2500.jpg) ![Intel Core i5 - Back](https://upload.wikimedia.org/wikipedia/commons/thumb/9/95/Intel_i5-3330%2C_bottom.jpg/240px-Intel_i5-3330%2C_bottom.jpg)
 
 ### Expansion Cards (eg. GPU)
-An expansion card is an embedded circuit card that can be added to the motherboard to augument a computer's capability. It can either add capabilities, ex allow for a new type of I/O port, or upgrade existing ones, ex. faster ethernet connection. The most common type of expansion card is a GPU, or a graphical processing unit.
+An expansion card is an embedded circuit card that can be added to the motherboard to augument a computer's capability. It can either add capabilities, like allowing for a new type of I/O port, or upgrade existing ones, such as increasing audio quality via sound cards or increasing ethernet speed through a network card. The most common type of expansion card is a GPU, or a graphical processing unit. Expansion cards are typically added to the computer by putting them in to the motherboard's available PCI-Express slots.
   
 ![Nvidia Titan XP](https://cdn.arstechnica.net/wp-content/uploads/2017/04/nvidia-titan-x.jpg)  
   
@@ -23,7 +23,7 @@ The Solid State Drive (SSD) or Hard Disk Drive (HDD) are used to store informati
 ![SSD](https://images10.newegg.com/NeweggImage/ProductImage/20-147-373-09.jpg)  
   
 ### Memory (RAM)
-Random-access memory (RAM) is a form of computer data storage which stores data and machine code currently being used. A random-access memory device allows data items to be read or written in almost the same amount of time irrespective of the physical location of data inside the memory.
+Random-access memory (RAM) is a form of computer data storage which stores data and machine code currently being used. A random-access memory device allows data items to be read or written in almost the same amount of time irrespective of the physical location of data inside the memory. RAM as opposed to storage like a hard drive or solid state drive is volatile; meaning that data stored on the RAM is only temporary and will not be retained after power loss.
   
 ![Ram](https://images10.newegg.com/NeweggImage/ProductImage/20-232-476-S01.jpg)  
 
