@@ -61,10 +61,13 @@ When starting out with linux, there are some basic commands everyone should know
  25409 s004  Ss     0:00.04 login -pf <user>
 ```
 
- 15. **df -h** Checks disk space in human readable form
+ 16. **df -h** Checks disk space in human readable form
 - Shows the size, amount used, amount available and capacity percentage of mounted drives/partitions.
 
+ 17. **locate** - locate a file in a Linux system
+- Use this command to locate a file in a Linux system, This command is iseful when you don't know where a file is saved or the actual name of the file is. Add -i to ignore the case (It doesn't matter if it is uppercase of lowercase)
 
+ 
 ### Useful Resources for Practice:
 - [JSLinux](https://bellard.org/jslinux/vm.html?url=https://bellard.org/jslinux/buildroot-x86.cfg): Run the terminal inside your browser. Great for practice.
 - [LearnShell](https://www.learnshell.org/): Interactive Linux shell (terminal) tutorials.
