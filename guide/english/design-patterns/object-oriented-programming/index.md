@@ -8,7 +8,7 @@ title: Object Oriented Programming (OOP)
 * What next?
 
 ## Why OO?
-In this paradigm, entities are represented as real world data. For instance, we want to represent a dog. In OO paradigm, we simply create a class named "dog", and give it attributes (colour, age, sex, etc) and behaviour (bark, run, eat, etc). Behaviour is changed through "methods" (functions in simple words) that make changes to attributes.
+In this paradigm, entities are represented as real world data. For instance, we want to represent a dog. In OO paradigm, we simply create a class named "dog", <!-- please put comma before the end quotation mark in dog ( "dog,")--> and give it attributes (colour, age, sex, etc) and behaviour (bark, run, eat, etc). Behaviour is changed through "methods" (functions in simple words) that make changes to attributes.
 
 ## OO concepts
 What makes OO programming powerful is its ability to do the following:
