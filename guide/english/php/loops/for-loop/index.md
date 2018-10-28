@@ -74,3 +74,4 @@ for ($i = 0, $size = count($arr); $i < $size; ++$i) {
 ### More Information
 
 - <a href='https://secure.php.net/manual/en/control-structures.for.php' target='_blank' rel='nofollow'>PHP.net - Control Structures</a> 
+https://www.w3schools.com/php/php_looping_for.asp
