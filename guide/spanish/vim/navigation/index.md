@@ -20,10 +20,10 @@ Hay muchas formas de mover el cursor en Vim, pero estos movimientos básicos per
 En resumen:
 
 ```vim
-h   moves one character left 
- j   moves one row down 
- k   moves one row up 
- l   moves one character right 
+ h   se mueve para la izquierda 
+ j   mueve para bajo
+ k   mueve para hariba 
+ l   mueve para la derecha 
  
  w   moves to the beginning of the next word 
  b   moves to the beginning of the previous word 
