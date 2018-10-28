@@ -84,6 +84,14 @@ Note: Max could have estimated the area by:
 2. Taking 80% of that (estimates a circle): 80% × 0.16 m2 = 0.128 m2
 3. And the volume of a 1 m deep hole is: 0.128 m3
 
+#### Something more about circle
+ * ARC- An arc is part of the circumference of a circle.
+ * CHORD- Chord is a straight line joining two points on a circle, the diameter is an example of a chord (and the longest possible chord of circle).
+ * SEGMENT- A segment is the region between a chord and the arc it joins.
+ * SECTOR- A sector is the region between an arc and two radii.
+
+![alt](http://www.kidsmathgamesonline.com/images/facts/circlesector220.jpg)
+
 #### More Information
 
 More information with illustrations can be found [WikiHow](https://www.wikihow.com/Calculate-the-Area-of-a-Circle)
