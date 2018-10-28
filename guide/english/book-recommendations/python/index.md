@@ -67,6 +67,14 @@ You'll learn many of the first princliples for data science tools and how algori
 - ISBN-10: 1617294039
 - ISBN-13: 978-1617294037
 
+#### Python for Everybody
+- Paid (Free e-book) book with edited material from Think Python 2e, with more general examples and a focus towards data analysis. Has complementary video content. 
+- [Website](https://www.py4e.com/book.php)
+- [Amazon](https://www.amazon.com/Python-Everybody-Exploring-Data/dp/1530051126)
+- [Amazon Video](https://www.amazon.com/1-1-Why-Program/dp/B06XPGNZ3T)
+- ISBN-10: 9781530051120
+- ISBN-13: 978-1530051120
+
 #### Other Resources
 
 - [Functional Programming in Python by David Mertz [OREILLY] [FREE]](https://www.oreilly.com/programming/free/files/functional-programming-python.pdf)
