@@ -75,7 +75,7 @@ If `arrayPointer` value was equal to `NULL` you could have expirencied some kind
 ## Other functions similar to malloc
 Sometimes you need to not only reserve a new area of memory for your operations, you might also need to initialize all bytes to zero.
 This is what `calloc` is used for.
-In other cases you wish to resize the amount of memory a pointer points to. For example, if you have a pointer acting as an array of size `n` and you want to change it to an array of size `m`, you can use `realloc`.
+In other cases you wish to resize the amount of memory a pointer points to. For example, if you have a pointer acting as an array of size `n` and you want to change it to an array of size `m`, you can use `realloc`. When you call `realloc`, a new block of memory is allocated, and the contents of the previous block of memory is copied into this new block. The previous block of memory is then deallocated.
 
 ```C
   int *arr = malloc(2 * sizeof(int));
