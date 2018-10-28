@@ -16,5 +16,6 @@ while ($x < 11) {
 
 **Note:** The block code must have a statement that changes or increments the condition.  Otherwise an infinite loop could result.  
 
-### More Information:
-<a href='http://php.net/manual/en/control-structures.while.php' target='_blank' rel='nofollow'>PHP While Loop</a> 
+### For Even More Information See:
+http://php.net/manual/en/control-structures.while.php
+https://www.w3schools.com/php/php_looping.asp
