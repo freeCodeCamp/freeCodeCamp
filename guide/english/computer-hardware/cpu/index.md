@@ -26,7 +26,7 @@ A microprocessor is a silicon chip containing millions of microscopic transistor
 
 <b> Manufacturers of computer microprocessors </b>
   
-There are two primary manufacturers of computer microprocessors. Intel and Advanced Micro Devices (AMD) lead the market in terms of speed and quality. Intel's desktop CPUs include Celeron, Pentium and Core. AMD's desktop processors include Sempron, Athlon and Phenom. Intel makes Celeron M, Pentium M and Core mobile processors for notebooks. AMD makes mobile versions of its Sempron and Athlon, as well as the Turion mobile processor which comes in Ultra and Dual-Core versions. Both companies make both single-core and multi-core processors.
+There are two primary manufacturers of computer microprocessors for desktop computers, laptop computers and servers. Intel and Advanced Micro Devices (AMD) lead the market in terms of speed and quality. Intel's desktop CPUs include Celeron, Pentium and Core. AMD's desktop processors include Sempron, Athlon, Phenom and Ryzen. In servers, Intel makes its Xeon and Itanium line of processors while AMD competes with its Operon and EPYC processor models.  For portable computers such as laptops/notebooks and netbooks, Intel makes Celeron M, Pentium M and Core mobile processors while AMD makes mobile versions of its Sempron, Athalon and Ryzen. Both companies make both single-core and multi-core processors.
 
 
 <b> Manufacturers of mobile microprocessors </b>
