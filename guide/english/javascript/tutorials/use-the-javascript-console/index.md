@@ -14,3 +14,14 @@ This is how you print to the console:
 Also You can print an error log in the console with this code:
 
     console.error('I am an error!')
+    
+It's simple to clear the current logs in the console:
+
+    console.clear();
+    
+There are more ways to clear logs:
+
+In Firefox: trash can symbol
+
+In Chrome: Ctrl + L or the circle-backslash symbol
+    
