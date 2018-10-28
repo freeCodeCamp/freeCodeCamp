@@ -168,3 +168,12 @@ The reason for C not checking the indexing bound is simple: C is an efficient la
 
 - When you try to access the last element of the array. Suppose the length of the array A be 4 and while accessing the last element as
 A[4] will return an error, as the the indexing starts from 0.
+-Tip: Use #define to Specify Array Size
+#include<stdio.h>
+#define MAX 5
+void main()
+{
+int a[MAX];
+printf("%d",a[2]);
+}
+As MAX is replaced by 5 for every Occurrence , So In due Course of time if you want to increase or decrease Size of array then change should be made in
