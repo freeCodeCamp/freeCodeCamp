@@ -42,11 +42,11 @@ Poți să ne ajuți în felul următor:
 
 - [📝 Caută, Scrie și Actualizează Ghidul articolelor](#research-write-and-update-our-guide-articles)
 
-- [💻 Crează, Actualizează și Corectează erorile în provocările noastre de codare](#create-update-and-fix-bugs-in-our-coding-challenges)
+- [💻 Creează, Actualizează și Corectează erorile în provocările noastre de codare](#create-update-and-fix-bugs-in-our-coding-challenges)
 
 - [🌐 Tradu Ghidul articolelor și provocările de codare](#translate-guide-articles-and-coding-challenges)
 
-- [🛠 Ajută-ne să Corectăm bug-urile în platforma de învățare a freeCodeCamp.org](#help-us-fix-bugs-in-freecodecamporgs-learning-platform)
+- [🛠 Ajută-ne să corectăm bug-urile în platforma de învățare a freeCodeCamp.org](#help-us-fix-bugs-in-freecodecamporgs-learning-platform)
 
 ### Caută, Scrie și Actualizează Ghidul articolelor
 
