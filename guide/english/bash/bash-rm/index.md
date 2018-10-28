@@ -3,6 +3,8 @@ title: Bash rm
 ---
 
 ## Bash command: rm
+ `rm` attempts to remove non-directory type files specified. 
+ If permissions do not allow writing the user is prompted for confirmation.
 
 ### Usage
 
