@@ -148,7 +148,7 @@ Example :
 ```java
 public class Box{
 
-    int length, breadth, height;
+    int length, breadth, height; // declaring three variables: length, breadth, height
 
     public Box(){
         length=5;
@@ -174,8 +174,8 @@ In the example below, we try to remove all of the letters from the string and ou
 
 ```java
 
-String input = "My birthday is 10 January 1984 and my favorite number is 42";
-String output = "";
+String input = "My birthday is 10 January 1984 and my favorite number is 42"; // declaring a string called "input"
+String output = ""; // declaring an empty string called "output"
 
 for(int i=0;i<input.length();i++){
 
