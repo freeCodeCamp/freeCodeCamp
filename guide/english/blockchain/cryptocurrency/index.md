@@ -11,7 +11,18 @@ Cryptocurrency is a subset of digital currency, which acts as a medium of exchan
 
 Cryptocurrency can be exchanged as fractions not possible with traditional currency. For example, transactions can amount to 0.00007 BTC or even lower.
 
+
 If you want to earn bitcoins through mining, it can be done through solving mathematical proof-of-work problems that validate transactions. Blockchain uses the concept of irreversible cryptographic hash function which consists of guessing a random number (usually less than a certain value) to solve the problem for transaction validation. You will require machines with high processing power to be able to solve these problems (for example Fast-Hash One or CoinTerra TerraMiner IV). Computer's with a high end Graphics Card installed (such as the Nivida GTX 1080) are also able to solve these hashes effectively. 
+
+
+### Consensus Protocols:
+
+#### Proof of Work:
+In this more well-known protocol, miners compete with each other to solve a math problem first and to be rewarded with a cryptocurrency reward for their work in securing the network. When a math problem is solved, a new block full of transactions gets added onto the blockchain. Bitcoin operates on a proof-of-work algorithm.
+
+
+#### Proof of Stake:
+In proof of stake, the network is secured via network participants staking or wagering their coins. If network participants misbehave, they will lose the coins that they staked. As a reward for properly securing the network, stakers will periodically receive a small amount of coins relative to how many coins they put up for staking. Instead of competing to solve a difficult math problem to validate blocks, block validators under proof of stake are randomly chosen. Proof of stake is typically significantly less energy-intensive than proof of work.
 
 Some people invest in cryptocurrency on exchanges such as Binance, Bitrex, or Coinbase. The market peeked in January of 2018. 
 
