@@ -62,5 +62,28 @@ Example:
 }
 
 ```
+
+## Extends
+
+Sass has a feature called extend that makes it easy to borrow the CSS rules from one element and build upon them in another. The *@extend* directive has been called one of Sass' most powerful features. 
+
+For example, you want to add some styles from *.box* class to *.big-box* class.
+Example:
+```
+//box class
+.box{
+  background-color: blue;
+  height: 70px;
+  border: 2px solid green;
+}
+```
+```
+//big-box class
+.big-box{
+  @extend .box;
+  width: 300px;
+  font-size: 2em;
+}
+```
 #### More Information
 [Official Sass website](https://sass-lang.com/)
