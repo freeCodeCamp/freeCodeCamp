@@ -4,7 +4,7 @@ localeTitle: Esteganografia
 ---
 ## Esteganografia
 
-La esteganografía es el concepto de conceling de texto, imágenes, archivos o videos dentro de otro texto, imágenes, archivos o videos. Un ejemplo fuera de línea de esto es usar "tinta invisible" para ocultar un mensaje entre las líneas de una letra. El jugo de limón es un candidato popular para la tinta invisible: [tinta invisible jugo de limón](https://www.youtube.com/embed/poCnU_crpjQ)
+La esteganografía es el concepto de ocultar texto, imágenes, archivos o videos dentro de otro texto, imágenes, archivos o videos. Un ejemplo fuera de línea de esto es usar "tinta invisible" para ocultar un mensaje entre las líneas de una letra. El jugo de limón es un candidato popular para la tinta invisible: [tinta invisible jugo de limón](https://www.youtube.com/embed/poCnU_crpjQ)
 
 La siguiente fórmula proporciona una descripción muy genérica de las piezas del proceso esteganográfico:
 
