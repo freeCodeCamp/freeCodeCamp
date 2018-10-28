@@ -49,20 +49,29 @@ You'll learn many of the first princliples for data science tools and how algori
 - ISBN-10: 149190142X
 - ISBN-13: 978-1491901427
 
-*Automate The Boring Stuff With Python*
+#### Head First Python: A Brain-Friendly Guide
+Head First Python is a complete learning experience for Python that helps you learn the language through a unique method that goes beyond syntax and how-to manuals, helping you understand how to be a great Python programmer. You'll quickly learn the language's fundamentals, then move onto persistence, exception handling, web development, SQLite, data wrangling, and Google App Engine. You'll also learn how to write mobile apps for Android, all thanks to the power that Python gives you.
+
+- [Amazon](https://www.amazon.com/Head-First-Python-Brain-Friendly-Guide/dp/1449382673)
+- ISBN-10: 1449382673
+- ISBN-13: 978-1449382674
+
+#### Automate The Boring Stuff With Python
 - Great book for beginners. Has interesting projects to practice Python.
 - [Amazon](https://www.amazon.com/gp/product/1593275994/)
 - ISBN-10: 1593275994
 - ISBN-13: 978-1593275990
 
-*Python crash course 2e* (note that 3e is going to be published on April 2019)
-- Paid book which gives concrete introduction to both programming and Python by the creation of projects.
+#### Python crash course 2e (note that 3e is going to be published on April 2019)
+Paid book which gives concrete introduction to both programming and Python by the creation of projects.
+
 - [Amazon](https://www.amazon.fr/Python-Crash-Course-Hands-Project-Based/dp/1593276036/ref=sr_1_1?ie=UTF8&qid=1539459730&sr=8-1&keywords=python+crash+course)
 - ISBN-10: 1593276036
 - ISBN-13: 978-1593276034
 
-*The Quick Python Book, Third Edition*
-- Paid book which provides a good level of information for those starting Python and as a reference for the Python language
+#### The Quick Python Book, Third Edition
+Paid book which provides a good level of information for those starting Python and as a reference for the Python language
+
 - [Manning]https://www.manning.com/books/the-quick-python-book-third-edition
 - ISBN-10: 1617294039
 - ISBN-13: 978-1617294037
