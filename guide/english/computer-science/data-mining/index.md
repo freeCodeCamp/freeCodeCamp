@@ -3,13 +3,13 @@ title: Computor Science > Data Mining
 author: binarygalwalkin
 description: The definition of, and links to resources on Data Mining.
 fcc.custom: Free Code Camp Guides
-fcc.author: Amber Pasquali
+fcc.author: Amber P.
 fcc.date: 10/25/18
 
 ---
 # Data Mining 
 
-A subfield of Computor Science where the main goal is to extract patterns and information (using intelligent methodolgy) from a larger data set and transform the information collected into a simpler, more useable form, for later use.
+A subfield of Computor Science where the main goal is to extract patterns and information (using intelligent methods) from a larger data set and transform the information collected into a simpler, more useable form, for later use.
 
 
 
@@ -25,7 +25,7 @@ Data Mining is the **analysis**, or **4th step** of KKD.
 | 4  Data mining |Identifying the key values from the extracted data set.|
 | 5 Evaluation| Interpreting and reporting the results. |
 
-![Data Mining process in KDD](https://image2.slideserve.com/3841931/data-mining-a-kdd-process-l.jpg)
+![Data Mining process in KDD](http://doi.ieeecomputersociety.org/cms/Computer.org/dl/trans/tk/2009/06/figures/ttk20090607732.gif)
 
 
 
@@ -40,7 +40,7 @@ There are many variations of this, such as the Cross Industry Standard Process f
 | 5 |Deployment|
 
 ## The Task of Data Mining
-Occuring semi-automatically or automatically, is the analysis of large quantities of data, to extract previously unknown information, in the form of interesting patterns. 
+The analysis of large quantities of data, to extract previously unknown information, in the form of interesting patterns. 
 
 |  Groups of Patterns        | Analysis Type  |
 | ------------- | :-----|
@@ -58,20 +58,20 @@ These examples usually involve using specific database techniques. The data patt
 
 ## Related Terms of Data Mining
 
-data dredging, data fishing and data snooping are all methods to sample parts of a larger population data set that are too small for reliable statistical forcasting to be applied to the patterns discovered from the data sets. 
+**data dredging**, **data fishing** and **data snooping** are all methods to sample parts of a larger population data set that are too small for reliable statistical forcasting to be applied to the patterns discovered from the data sets. 
 
 The same methods can be used though, for crreating hypotheses to test against larger populations.
 
 
 ## Standards
-Efforts to define standards for the data mining process.
+Efforts to provide standards for the data mining process have happened over time.
 
 | Standard       | Year Inacted  |
 | ------------- | :-----|
 |  Cross Industry Standard Process for Data Mining (CRISP-DM 1.0)   |1999 European |
 |  Java Data Mining standard (JDM 1.0).  |2004|
 
-Further development of these standards have produced (CRISP-DM 2.0 and JDM 2.0), these are not currently being developed further.
+Further development of these standards have produced (CRISP-DM 2.0 and JDM 2.0), these are not currently being developed any further.
 
 ## Exchanging Extracted Models, Standard
 
@@ -79,7 +79,7 @@ Further development of these standards have produced (CRISP-DM 2.0 and JDM 2.0),
 | ------------- | :-----|
 |  Predictive Model Markup (PMML)   | Predictive Analytics |
 
-This is an XML-based language developed by the Data Mining Group(DMG)and is supported as an exchange format by many data mining applications. It is obly used for Predictive Analytics, a data mining task of high importance to business applications.
+This is an XML-based language developed by the Data Mining Group(DMG)and is supported as an exchange format by many data mining applications. It is only used for Predictive Analytics, a data mining task of high importance to business applications.
 
 ## Books
 
@@ -91,31 +91,26 @@ Imprint: Morgan Kaufmann
 Published Date: 17th November 2016
 Page Count: 654
 
-## Pdfs
-
-[Weka: Practical Machine Learning Tools and Techniques with Java Implementations](/aspnet/core/test/troubleshoot?view=aspnetcore-2.1)  
-Introduction The Waikato Environment for Knowledge Analysis (Weka) is a comprehensive suite of Java class libraries that implement many state-of-the-art machine learning and data mining algorithms. 
-
-Weka is freely available on the World-Wide Web and accompanies a new text on data mining [1] which documents and fully explains all the algorithms it contains.
-
-
 
 ## Computor Science Conferences on Data Mining
 
 
-[CIKM Conference – ACM Conference on Information and Knowledge Management](https://en.wikipedia.org/wiki/Conference_on_Information_and_Knowledge_Management)  
+[CIKM Conference – ACM Conference on Information and Knowledge Management](http://www.cikmconference.org/)  
 Circa 1992. Research conference dedicated to information management(IM) and knowledge management(KM).
 
-[European Conference on Machine Learning and Principles and Practice of Knowledge Discovery in Databases](https://en.wikipedia.org/wiki/European_Conference_on_Machine_Learning_and_Principles_and_Practice_of_Knowledge_Discovery_in_Databases)  
+[SIGIR onference - Special Interest Group on Information Retrieval](http://sigir.org/)The annual international SIGIR conference, which began in 1978, is considered the most important in the field of information retrieval.
+
+[ECML PKDD - European Conference on Machine Learning and Principles and Practice of Knowledge Discovery in Databases](http://ecmlpkdd2019.org/)  
 The leading academic conference on Machine Learning(ML). Held in Europe every year.
 
-[KDD Conference – ACM SIGKDD Conference on Knowledge Discovery and Data Mining](https://docs.microsoft.com/en-us/aspnet/core/test/razor-pages-tests?view=aspnetcore-2.1)  
+[KDD Conference – ACM SIGKDD Conference on Knowledge Discovery and Data Mining](https://www.kdd.org/)  
 Association for Computing Machinery's(ACM) Special Interest Group(SIG) on Knowledge Discovery and Data Mining. (It became an official SIG in 1998.)
 
 ### Sources
 
 1. [ Günnemann, Stephan; Kremer, Hardy; Seidl, Thomas (2011). "An extension of the PMML standard to subspace clustering models". Proceedings of the 2011 workshop on Predictive markup language modeling - PMML '11. p. 48. doi:10.1145/2023598.2023605. ISBN 978-1-4503-0837-3.](#)
-2. [Data Mining: A KDD Process - PowerPoint PPT Presentation by Tuan, accessed 2018-10-25](https://www.slideserve.com/tuan/data-mining-a-kdd-process)
+2. [V. Fuccella, G. Costagliola, G. Polese and M. Giordano, "Monitoring Online Tests through Data Visualization," in IEEE Transactions on Knowledge & Data Engineering, vol. 21, no. , pp. 773-784, 2008. doi:10.1109/TKDE.2008.133](https://www.computer.org/csdl/trans/tk/2009/06/ttk2009060773-abs.html)Retrieved 2018-10-28.
 3. Clifton, Christopher (2010). "Encyclopædia Britannica: Definition of Data Mining". Retrieved 2018-10-25.
-4.["Data Mining", Wikipedia accessed 2018-10-25](https://en.wikipedia.org/wiki/Data_mining)
+
+4.["Data Mining", Wikipedia accessed 2018-10-25](https://en.wikipedia.org/wiki/Data_mining)Retrieved 2018-10-28.
 
