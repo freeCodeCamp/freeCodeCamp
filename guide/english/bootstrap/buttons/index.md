@@ -72,6 +72,13 @@ This is a list of the CSS classes for different size of the buttons.
 
 `<button type="button" class="btn btn-xs">Extra Small</button>`
 
+#### Bootstrap Button Examples:
+
+Button Examples: 
+![alt text][logo]
+
+[logo]: https://bridge.net/wp-content/uploads/bootstrap-buttons-img-01.png "Bootstrap button examples"
+
 #### Bootstrap Outlined Buttons:
 It is possible to also have outlined buttons rather than fully colored in ones. This is achieved by placing the mid fix `outline` between the button class you want. A sample usage would be as follows:
 
