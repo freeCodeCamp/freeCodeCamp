@@ -19,6 +19,20 @@ $(".awesome-animation").animate({
 }, 1000, function() {
 	$(".different-element").hide();
 });
+
+```
+### Manipulate Multiple Properties
+Notice that multiple properties can be animated at the same time:
+### Example
+```javascript
+$("button").click(function(){
+    $("div").animate({
+        left: '250px',
+        opacity: '0.5',
+        height: '150px',
+        width: '150px'
+    });
+});
 ```
 
 #### More Information:
