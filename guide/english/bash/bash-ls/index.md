@@ -15,6 +15,8 @@ ls [options] [folder_path]
 You can list the items in any directory without even entering the directory. Consider you are in a directory with folders- Test1,Test2. You're in the parent directory you can list all files in Test1 as follows-
 `ls Test1`
 
+Can be helpful to find files
+
 Most used options:
 
 * `-a`, all files and folders, including ones that are hidden and start with a `.`
