@@ -9,6 +9,10 @@ It is good practice to add comments to your code, especially when working with a
 
 Comments are started with `<!--` and ended with `-->`, and can span multiple lines. They can contain code or text, and won't appear on the front-end of the website when a user visits a page. You can view comments through the Inspector Console, or by viewing Page Source.
 
+If the comment fits in one line, '//' can be used. 
+Example: 
+// this is a comment
+
 ### Example
 ```html
 
