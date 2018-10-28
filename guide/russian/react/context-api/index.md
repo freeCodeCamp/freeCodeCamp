@@ -1,3 +1,7 @@
+---
+title: Context API
+---
+
 # Context API
 
 Новый Context API был реализован в версии React 16.3. 
