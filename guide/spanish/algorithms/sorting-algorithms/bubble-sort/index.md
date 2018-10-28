@@ -6,7 +6,7 @@ localeTitle: Ordenamiento de burbuja
 
 Bubble Sort es el algoritmo de clasificación más simple que funciona intercambiando repetidamente los elementos adyacentes si están en el orden incorrecto.
 
-Este es un algoritmo de clasificación muy lento en comparación con algoritmos como quicksort, con la peor complejidad O (n ^ 2). Sin embargo, la desventaja es que la clasificación por burbuja es uno de los algoritmos de clasificación más fáciles de implementar desde cero.
+Este es un algoritmo de clasificación muy lento en comparación con algoritmos como quicksort, con la peor complejidad O (n ^ 2). Sin embargo, la ventaja es que la clasificación por burbuja es uno de los algoritmos de clasificación más fáciles de implementar desde cero.
 
 ### Ejemplo:
 
