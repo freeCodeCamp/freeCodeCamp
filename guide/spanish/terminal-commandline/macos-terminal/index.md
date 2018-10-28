@@ -59,4 +59,11 @@ cp ~/Desktop/test.txt ~/Documents
 
 Usa la siguiente sintaxis para borrar un archivo
 
-**rm _#PATH_ TO _FILE_**
+**rm _destino de_ _origen_**
+
+
+#### Ir a root
+`cd ~/`
+
+# iTerm2
+iTerm2 es una applicacion alternativa a Terminal que es otra buena opcion.
