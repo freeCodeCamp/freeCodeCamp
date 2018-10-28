@@ -147,6 +147,16 @@ title: Books to Read for Programmers
 - [Amazon Smile](https://smile.amazon.com/JavaScript-JQuery-Interactive-Front-End-Development/dp/1118531647/?pldnSite=1)
 - ISBN-13: 978-1118531648 
 
+## PHP
+
+*Programming PHP (3rd Edition) by Rasmus Lerdorf, Kevin Tatroe, Peter MacIntyre*
+- [Amazon Smile](https://smile.amazon.com/Programming-PHP-Creating-Dynamic-Pages/dp/1449392776/?pldnSite=1)
+- ISBN-13: 978-1449392772
+
+*PHP Advanced and Object-Oriented Programming: Visual QuickPro Guide (3rd Edition) by Larry Ullman*
+- [Amazon Smile](https://www.amazon.com/PHP-Advanced-Object-Oriented-Programming-QuickPro/dp/0321832183/pldnSite=1?pldnSite=1)
+- ISBN-13: 978-0321832184
+
 ## Python
 
 *Automate the Boring Stuff With Python*
