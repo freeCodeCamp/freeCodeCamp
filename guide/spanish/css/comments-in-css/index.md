@@ -39,17 +39,25 @@ También puede hacer que sus comentarios sean más legibles al estilizarlos.
  *** 
  */ 
  
+```
  You can add as many comments to your stylesheet as you like. It's good practice to use CSS comments to help identify parts of any stylesheet that might be difficult to understand from a cursory glance. Comments are especially important when working in a team, when your code must be understood by others. By using CSS comments to make your stylesheets more readable, the CSS will be easier to maintain in the future. 
  
  ## Comment Formats 
  
  Comments should be used everyday in your CSS to keep in maintainable and readable by any dev who dives into said CSS. 
  Here are a few exmples to get you started of CSS comments you can use in your daily work to make your life that bit easier. 
-```
 
-css / \* +++++++++++++++++++++++++++++++++++++++++++++++++ +++++++++++++++++++++++++++ +++++++++++++++++++++++++++++++++++++++++++++++++++ +++++++++++++++++++++++++ CSS TABLA DE CONTENIDOS
+\* +++++++++++++++++++++++++++++++++++++++++++++++++ +++++++++++++++++++++++++++ +++++++++++++++++++++++++++++++++++++++++++++++++++ +++++++++++++++++++++++++ CSS TABLA DE CONTENIDOS
 
-1.0 - Restablecer 2.0 - Fuentes 3.0 - Globales 4.0 - Paleta de colores 5.0 - Encabezado 6.0 - Cuerpo 6.1 - Deslizadores 6.2 - Imágenes 7.0 - Pie de página +++++++++++++++++++++++++++++++++++++++++++++++++++ +++++++++++++++++++++++++ +++++++++++++++++++++++++++++++++++++++++++++++++++ +++++++++++++++++++++++++ \* /
+1.0 - Restablecer 
+2.0 - Fuentes 
+3.0 - Globales 
+4.0 - Paleta de colores 
+5.0 - Encabezado 
+6.0 - Cuerpo 
+6.1 - Deslizadores 
+6.2 - Imágenes 
+7.0 - Pie de página +++++++++++++++++++++++++++++++++++++++++++++++++++ +++++++++++++++++++++++++ +++++++++++++++++++++++++++++++++++++++++++++++++++ +++++++++++++++++++++++++ \* /
 
 / 1.0 - Restablecer \* /
 
@@ -69,11 +77,10 @@ css / \* +++++++++++++++++++++++++++++++++++++++++++++++++ +++++++++++++++++++++
  /************************************************************************ 
  5.2 - Imagery */ 
 ```
-
-/ 7.0 - Pie de página \* / \`\` \`css
-
-h2 { tamaño de letra: 1.2em; font-family: "Ubuntu", serif; transformación de texto: mayúsculas; } \`\` \`
-
+/ 7.0 - Pie de página \* / 
+```css
+h2 { tamaño de letra: 1.2em; font-family: "Ubuntu", serif; transformación de texto: mayúsculas; }
+```
 ### Más información:
 
 *   [Documentación de MDN](https://developer.mozilla.org/en-US/docs/Web/CSS/Comments)
