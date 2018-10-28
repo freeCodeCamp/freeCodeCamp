@@ -7,7 +7,10 @@ Free Code Camp will help you prepare for a coding job.
 
 ## Here are the facts:
 
-*   There are hundreds of thousands of unfilled coding jobs.
+*   90% of parents want their children to study coding.
+*   Only 40% of schools are actually teaching coding.
+*   Coding jobs are the #1 source of new wages in the US.
+*   There are currently 500,000 unfilled coding jobs.
 *   Employers and the US government have joined together to promote nontraditional coding programs like Free Code Camp.
 *   Full stack JavaScript and Swift are two of the best paying skill sets, and have a ton of job openings.
 *   The best proof that you're an employable developer is a portfolio filled with real apps that real people are using.
