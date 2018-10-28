@@ -17,7 +17,8 @@ Author: xyz
 Date: xx/xx/xxxx
 Purpose: abc
 -->
-Read more: https://html.com/tags/comment-tag/#ixzz4vtZHu5uR
+See the resources below to find out more.
+
 <!DOCTYPE html>
 <html>
 	<body>
@@ -55,5 +56,7 @@ These comments are only available in Internet Explorer and can be used up to IE9
 <!--[if IE 9]> <p>Your browser is IE9</p> <![endif]-->
 <!--[if gt IE 9]> <p>Your browser is greater then IE9</p> <![endif]-->
 ```
+## Resources
+- [About comment tag](https://html.com/tags/comment-tag/#ixzz4vtZHu5uR)
+- [About conditional comments](https://msdn.microsoft.com/en-us/library/ms537512(v=vs.85).aspx)
 
-[About conditional comments](https://msdn.microsoft.com/en-us/library/ms537512(v=vs.85).aspx)
