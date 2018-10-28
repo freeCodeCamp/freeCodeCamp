@@ -21,3 +21,15 @@ sudo yum install httpd
 ```
 pacman -S apache
 ```
+
+##### Start Apache
+```
+
+sudo systemctl start httpd
+```
+
+#### Run on Computer Startup
+```
+
+sudo systemctl enable httpd
+```
