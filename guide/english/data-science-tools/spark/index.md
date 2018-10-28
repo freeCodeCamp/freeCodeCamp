@@ -1,6 +1,7 @@
 ---
 title: Spark
 ---
+<img src="http://spark.apache.org/images/spark-logo-trademark.png">
 
 ## Spark
 
