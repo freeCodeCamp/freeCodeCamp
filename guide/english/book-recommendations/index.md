@@ -145,6 +145,10 @@ title: Books to Read for Programmers
 - [Amazon Smile](https://smile.amazon.com/Core-Python-Applications-Programming-3rd/dp/0132678209)
 - ISBN-13: 978-0132678209
 
+*Python for Data Analysis, 2e*
+- http://amzn.eu/d/95heOzD
+- ISBN-13: 978-1491957660
+
 ## Soft Skills
 
 *Soft Skills: The software developer's life manual*
