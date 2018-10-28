@@ -7,25 +7,25 @@ Conditionals in PHP are written using the `if`, `elseif`, `else` syntax. Using c
 ### If
 ```PHP
 <?php
-if ($_GET['name'] = "freecodecamp"){
+if ($_GET['name'] == "freecodecamp"){
   echo "You viewed the freeCodeCamp Page!";
 }
 ```
 ### Elseif
 ```PHP
 <?php
-if ($_GET['name'] = "freecodecamp"){
+if ($_GET['name'] == "freecodecamp"){
   echo "You viewed the freeCodeCamp Page!";
-} elseif ($_GET['name'] = "freecodecampguide"){
+} elseif ($_GET['name'] == "freecodecampguide"){
   echo "You viewed the freeCodeCamp Guide Page!";
 }
 ```
 ### Else
 ```PHP
 <?php
-if ($_GET['name'] = "freecodecamp"){
+if ($_GET['name'] == "freecodecamp"){
   echo "You viewed the freeCodeCamp Page!";
-} elseif ($_GET['name'] = "freecodecampguide"){
+} elseif ($_GET['name'] == "freecodecampguide"){
   echo "You viewed the freeCodeCamp Guide Page!";
 } else {
   echo "You viewed a page that does not exist yet!";
