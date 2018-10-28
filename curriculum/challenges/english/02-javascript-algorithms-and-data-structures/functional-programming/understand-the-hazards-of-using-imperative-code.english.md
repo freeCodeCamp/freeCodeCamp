@@ -30,7 +30,7 @@ Work through the code and see if you can figure out the problem, then advance to
 ```yml
 tests:
   - text: Move ahead to understand the error.
-    testString: assert(true, 'Move ahead to understand the error.');
+    testString: '' # assert(true, 'Move ahead to understand the error.');
 
 ```
 

@@ -25,7 +25,7 @@ Now, create a set with the integers 1, 2, 3, 4, & 5.
 ```yml
 tests:
   - text: Your Set should contain the values 1, 3, & 4
-    testString: assert(function(){var test = checkSet(); return test.has(1) && test.has(3) && test.has(4) && test.size === 3}, 'Your Set should contain the values 1, 3, & 4');
+    testString: assert((function(){var test = checkSet(); return test.has(1) && test.has(3) && test.has(4) && test.size === 3;})(), 'Your Set should contain the values 1, 3, & 4');
 
 ```
 

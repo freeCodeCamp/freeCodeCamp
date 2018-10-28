@@ -4,11 +4,16 @@ title: Bash mv
 
 ## Bash command: mv
 
-**Moves files and folders.**
+**Rename file.**
 
 ```
-mv source target
-mv source ... directory
+mv <source> <target>
+```
+
+
+**Moves files and folders.**
+```
+mv <source> <path + filename>
 ```
 
 The first argument is the file you want to move, and the second is the location to move it to. It can also be used to rename a file, by inputting 2 file names as parameters, like so: `mv originalFilename.txt newFilename.txt`

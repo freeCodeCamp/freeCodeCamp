@@ -8,8 +8,8 @@
         <td><a href="/docs/russian/README.md"> русский </a></td>
         <td><a href="/docs/portuguese/README.md"> Português </a></td>
         <td><a href="/docs/spanish/README.md"> Español </a></td>
-         <td><a href="/docs/greek/README.md"> Ελληνικά </a></td>
-
+        <td><a href="/docs/german/README.md"> Deutsch </a></td>
+        <td><a href="/docs/greek/README.md"> Ελληνικά </a></td>
     </tr>
 </table>
 
@@ -49,3 +49,4 @@ A quick reference to the commands that you will need, when working locally.
 | `npm run test:curriculum` | Run the curriculum test suite. |
 | `npm run test:server` | Run the server test suite. |
 | `npm run commit` | An interactive tool to help you build a good commit message. |
+
