@@ -2,20 +2,20 @@
 title: Hello World C
 localeTitle: Hello World C
 ---
-＃＃ 你好，世界
+## Hello，world
 
 要在控制台上编写，您可以使用库中`include <stdio.h>`的函数`printf()` `include <stdio.h>`
 
-\`\`\`C ＃包括
-
+``` 
+#include<stdio.h>
 int main（void） {
-```
  printf("hello, world\n");  //lines starting with this are called comments.. 
  
  return 0; 
-```
 
-} \`\`\` ##解释
+} 
+``` 
+## 解释
 
 *   #include 是一个预处理器命令。该命令告诉编译器在程序中包含stdio.h（标准输入和输出）文件的内容。
     
@@ -31,7 +31,7 @@ int main（void） {
     
     ## 输出：
     
-    \`\`\`
+```
     
-
-> 你好，世界 \`\`\`
+> 你好，世界 
+```
