@@ -3,11 +3,29 @@ title: File Writing
 ---
 ## File Writing
 
-This is a stub. <a href='https://github.com/freecodecamp/guides/tree/master/src/pages/php/functions/files/writing/index.md' target='_blank' rel='nofollow'>Help our community expand it</a>.
+Write data into existing file can be done by two functions.
 
-<a href='https://github.com/freecodecamp/guides/blob/master/README.md' target='_blank' rel='nofollow'>This quick style guide will help ensure your pull request gets accepted</a>.
+### fwrite
 
-<!-- The article goes here, in GitHub-flavored Markdown. Feel free to add YouTube videos, images, and CodePen/JSBin embeds  -->
+You first open the file on writing mode (w) and write content into file handler.
 
-#### More Information:
-<!-- Please add any articles you think might be helpful to read before writing the article -->
+```php
+<?php
+
+$file = fopen('file.txt', 'w');
+$content = 'Foo';
+fwrite($file, $content);
+fclose($file);
+```
+
+### file_put_contents
+
+Call this function is identical to apply the previous method. It calls `fopen()`, `fwrite()` and `fclose()` successively to write data to a file.
+
+```php
+<?php
+
+$file = 'file.txt';
+$content = 'Foo';
+file_put_contents($file, $content);
+```
