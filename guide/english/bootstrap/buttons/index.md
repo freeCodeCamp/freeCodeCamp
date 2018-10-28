@@ -57,6 +57,10 @@ This is a list of the CSS classes that bootstrap provides for buttons.
 
 `<button type="button" class="btn btn-light">Light</button>`
 
+`.btn-dark` Bootstrap's dark button.
+
+`<button type="button" class="btn btn-dark">Dark</button>`
+
 #### Bootstrap Button Sizes:
 This is a list of the CSS classes for different size of the buttons.
 
@@ -68,9 +72,9 @@ This is a list of the CSS classes for different size of the buttons.
 
 `<button type="button" class="btn btn-sm">Small</button>`
 
-`.btn-xs` This is bootstrap's extra small button.
+`.btn-block` Bootstrap's block button (spans the full width of it's parent).
 
-`<button type="button" class="btn btn-xs">Extra Small</button>`
+`<button type="button" class="btn btn-block">Block level button</button>`
 
 #### Bootstrap Outlined Buttons:
 It is possible to also have outlined buttons rather than fully colored in ones. This is achieved by placing the mid fix `outline` between the button class you want. A sample usage would be as follows:
