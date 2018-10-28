@@ -16,13 +16,13 @@ Una Unidad de Procesamiento Central (CPU) es el circuito electrónico dentro de 
 
 ### Tarjetas de expansión (por ejemplo, GPU)
 
-Una unidad de procesamiento de gráficos (GPU) es un circuito electrónico especializado diseñado para manipular y alterar rápidamente la memoria para acelerar la creación de imágenes en un búfer de cuadros destinado a la salida a un dispositivo de visualización.
+Una unidad de procesamiento de gráficos (GPU) es un circuito electrónico especializado, diseñado para manipular y alterar rápidamente la memoria para acelerar la creación de imágenes en un búfer de cuadros destinado a la salida a un dispositivo de visualización.
 
 ![Nvidia Titan XP](https://cdn.arstechnica.net/wp-content/uploads/2017/04/nvidia-titan-x.jpg)
 
 ### Almacenamiento (SSD o HDD)
 
-La unidad de estado sólido (SSD) o la unidad de disco duro (HDD) se utilizan para almacenar información en la computadora. Retiene la memoria incluso después de la pérdida de energía.
+La unidad de estado sólido (SSD) o la unidad de disco duro (HDD), se utilizan para almacenar información en la computadora. Retiene la memoria incluso después de la pérdida de energía.
 
 ![SSD](https://images10.newegg.com/NeweggImage/ProductImage/20-147-373-09.jpg)
 
@@ -32,9 +32,9 @@ La memoria de acceso aleatorio (RAM) es una forma de almacenamiento de datos de 
 
 ![RAM](https://images10.newegg.com/NeweggImage/ProductImage/20-232-476-S01.jpg)
 
-### Caso
+### Case
 
-Se utiliza un estuche para alojar todos los componentes de una computadora.
+Se utiliza un Case o Gabinete para alojar todos los componentes de una computadora.
 
 ![Caso](https://images-na.ssl-images-amazon.com/images/I/41Wq97Jk20L._SL500_AC_SS350_.jpg)
 
