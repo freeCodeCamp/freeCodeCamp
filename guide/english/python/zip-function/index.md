@@ -17,6 +17,26 @@ A list of tuple of nth element from all sequences
     print(*nums) # prints 1 2 3 4
     numsAndNames = zip([1,2,3],['one','two','three'])
     print(*numsAndNames) # prints (1,'one') (2,'two') (3,'three')
+    
+##  Unzipping 
+Unzipping means converting the zipped values back to the individual self as they were.This is done with the help of "*" operator.
+
+##  Code Sample
+    mapped=[('Manjeet', 4, 40), ('Nikhil', 1, 50), ('Shambhavi', 3, 60), ('Astha', 2, 70)]
+    namez, roll_noz,marksz= zip(*mapped)
+
+    print ("The unzipped result is: ",end="")
+
+    #printing initial lists
+    print ("the name list is: ",end="")
+    print (namez) #('Manjeet', 'Nikhil', 'Shambhavi', 'Astha')
+
+    print ("the roll_no list is: ",end="")
+    print (roll_noz) #(4, 1, 3, 2)
+
+    print ("the marks list is: ",end="")
+    print (marksz)  #(40, 50, 60, 70)
+
 
 ![:rocket:](//forum.freecodecamp.com/images/emoji/emoji_one/rocket.png?v=2 ":rocket:") <a href='https://repl.it/@StuffsExplained/pythonZipFunction' target='_blank' rel='nofollow'>Run Code</a>
 
