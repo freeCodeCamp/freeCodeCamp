@@ -24,7 +24,7 @@ img {
 
 #### More Information:
 <!-- Please add any articles you think might be helpful to read before writing the article -->
-It is advised to change anyone parameter, either height or width to get a proportionate image. Changing both dimensions results in forced scaling and is not advisable.
+It is advised to change any one parameter, either height or width, to get a proportionate image. Changing both dimensions results in forced scaling and is not advisable.
 
 ##### Properties
 <a title="The image-orientation CSS property describes how to correct the default orientation of an image." href="/en-US/docs/Web/CSS/image-orientation"><code>image-orientation</code></a>
