@@ -165,3 +165,10 @@ foreach ($array as $name)
 > Hi, my name is Cecily.
 > "Hello, Cecily!"
 ```
+
+## For More Information:
+http://php.net/manual/en/control-structures.for.php
+https://www.w3schools.com/php/php_looping_for.asp
+
+## For More PHP Looping Options:
+https://www.w3schools.com/php/php_looping.asp
