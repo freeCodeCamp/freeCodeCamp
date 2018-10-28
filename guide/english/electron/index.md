@@ -4,7 +4,7 @@ title: Electron
 ## Electron - Build Cross Platform Desktop Apps with JavaScript, HTML, and CSS
 
 Electron lets you build cross-platform desktop apps using web technology. You
-can build desktop apps for Windows, Mac, and most common flavors of Linux.
+can build desktop apps for Windows, Mac and most common flavors of Linux.
 
 ### What is Electron, exactly?
 
