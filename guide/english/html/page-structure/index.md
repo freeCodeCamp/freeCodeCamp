@@ -37,3 +37,4 @@ Non-semantic tags are tags that convey nothing about what they contain. Examples
 
 #### More Information:
 [HTML: Introduction](https://www.w3schools.com/html/html_intro.asp)
+[HTML: Introduction](https://www.w3.org/TR/html401/struct/global.html)
