@@ -40,3 +40,5 @@ x = numbers[0]; // = 1. [0] == first position
 numbers[2] = 55; // Sets the third position (3) to the new number 55
 //numbers[] is now: {1, 2, 55, 4, 5}
 ```
+### Examples: {2,4,6,8,10,11} is an Static array.
+### Examples: {{"aman",55},{"rahul",10},{"thomas",100}} is a Dynamic Array in which we can declare our own index.
