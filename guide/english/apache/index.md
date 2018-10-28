@@ -20,4 +20,22 @@ sudo yum install httpd
 #### On Arch
 ```
 pacman -S apache
+
 ```
+### Apache "Directives"
+``` 
+The configuration files of Apache software are modified to configure it . These files contain instructions created in a format named as "directives".
+Directives typically look like this:
+          ``` 
+          ServerRoot /usr/local/lib/apache
+          ```
+ or this
+          ```
+          <Directory /usr/local/lib/apache/htdocs/Dir/Java>
+                Order allow,deny
+                Allow from all
+                Deny from badusers.com
+          </Directory>
+          ```
+  Directives are used in all configuration files.
+
