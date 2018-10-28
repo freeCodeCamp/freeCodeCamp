@@ -9,7 +9,7 @@ title: Books on Python Programming Language
  A free (E-book) which covers the basics of Python. It's beginner friendly and a must for people who are new to programming!
  
 - [Website](http://greenteapress.com/wp/think-python-2e/)
-- [E-book](http://greenteapress.com/thinkpython2/html/index.html)(free)
+- [E-book](http://greenteapress.com/thinkpython2/html/index.html) (Free)
 - [Amazon](https://www.amazon.com/gp/product/1491939362)
 - ISBN-13: 978-1491939369
  
@@ -18,7 +18,7 @@ title: Books on Python Programming Language
 Paid (Free ebook available) book which covers the basics of python. It's designed to get you started with python language and become familiar with its syntax and workings by the time you complete the book. 
 
 - [Website](https://learnpythonthehardway.org/) (Buy from the creator | Includes video lessons)
-- [E-book](https://learnpythonthehardway.org/python3/) (free)
+- [E-book](https://learnpythonthehardway.org/python3/) (Free)
 - [Amazon](https://www.amazon.com/Learn-Python-Hard-Way-Introduction/dp/0134692888)
 - ISBN-13: 978-0134692883
 - ISBN-10: 0134692888
@@ -42,7 +42,7 @@ So you've covered the basics of Python?  You're now ready to discover the in-dep
 
 #### Data Science from Scratch: First Principles with Python
 
-You'll learn many of the first princliples for data science tools and how algorithms work by implementing these from scratch.  If you have an aptitude for maths and some coding skills, you'll have a crash course in Python that includes the basics of algebra, statistics, and probability.  You'll learn how to implement models such as k-nearest Neighbors, Naive Bayes, linear and logistic regression, decision trees, neural networks and clustering. Discover recommender systems, natural lanuage processing, network analysis, MapReduce and databases.
+You'll learn many of the first principles for data science tools and how algorithms work by implementing these from scratch.  If you have an aptitude for maths and some coding skills, you'll have a crash course in Python that includes the basics of algebra, statistics, and probability.  You'll learn how to implement models such as k-nearest Neighbors, Naive Bayes, linear and logistic regression, decision trees, neural networks and clustering. Discover recommender systems, natural lanuage processing, network analysis, MapReduce and databases.
 
 - [O'Reilly](http://shop.oreilly.com/product/0636920033400.do)
 - [Amazon](https://www.amazon.com/Data-Science-Scratch-Principles-Python/dp/149190142X)
@@ -51,11 +51,12 @@ You'll learn many of the first princliples for data science tools and how algori
 
 *Automate The Boring Stuff With Python*
 - Great book for beginners. Has interesting projects to practice Python.
+- [E-book](http://b-ok.cc/book/2575633/f6d2c0/) (Free)
 - [Amazon](https://www.amazon.com/gp/product/1593275994/)
 - ISBN-10: 1593275994
 - ISBN-13: 978-1593275990
 
-*Python crash course 2e* (note that 3e is going to be published on April 2019)
+*Python crash course 2e* (Note that 3e is going to be published on April 2019)
 - Paid book which gives concrete introduction to both programming and Python by the creation of projects.
 - [Amazon](https://www.amazon.fr/Python-Crash-Course-Hands-Project-Based/dp/1593276036/ref=sr_1_1?ie=UTF8&qid=1539459730&sr=8-1&keywords=python+crash+course)
 - ISBN-10: 1593276036
