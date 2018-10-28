@@ -3,18 +3,13 @@ title: Smart Contracts
 ---
 ## Smart Contracts
 
-Transactions in a blockchain are a very basic contract - One party sends resources to another.
-In the Ethereum blockchain, transactions can support any kind of logic. They have the expressive
-power of a Turing-Complete machine - meaning they can be steps for a task that a computer can do.
+First conceived in  [1994](http://www.fon.hum.uva.nl/rob/Courses/InformationInSpeech/CDROM/Literature/LOTwinterschool2006/szabo.best.vwh.net/smart.contracts.html), the idea was originally described by computer scientist and cryptographer Nick Szabo as a computerized transaction protocol that executes the terms of a contract. The general objectives of smart contract design are to satisfy common contractual conditions (such as payment terms, liens, confidentiality, and even enforcement), minimize exceptions both malicious and accidental, and minimize the need for trusted intermediaries. Related economic goals include lowering fraud loss, arbitration and enforcement costs, and other transaction costs.
 
-As a piece of code that sits on the blockchain, a smart contract can automate tasks.
-When an account receives money it can automatically distribute it to others.
-This is entirely transparent so all the nodes(miners) can see what logic is being executed.
-
+A smart contract is a computer code running on top of a blockchain containing a set of rules under which the parties to that smart contract agree to interact with each other. If and when the pre-defined rules are met, the agreement is automatically enforced. The smart contract code facilitates, verifies, and enforces the negotiation or performance of an agreement or transaction. It is the simplest form of decentralized automation.
 
 ## Blockchain Technologies
 
 Two of the most common technologies used are :
 - Ethereum: generally made with Solidity
-- Hyperledger: generally made with Go, or Java
+- Hyperledger Fabric: Has support to write smart contracts in GoLang, NodeJS and Java (v1.3)
 
