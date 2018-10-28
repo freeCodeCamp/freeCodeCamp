@@ -51,3 +51,26 @@ value of a: 19
 
 ###Sources
 www.tutorialspoint.com
+
+
+More examples
+```
+a=40;
+while(a>=0)
+{
+cout << a*2 <<"\";
+}
+
+```
+Output
+80
+70
+60
+50
+40
+30
+20
+10
+0
+
+
