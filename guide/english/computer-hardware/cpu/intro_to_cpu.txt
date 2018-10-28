@@ -1,0 +1,27 @@
+What is CPU: It's meaning is Central Processing Unit.  Sometimes referred to simply as the central processor or Nerve Centre or heart, but more commonly called processor, the CPU is where most calculations take place. The CPU is the brains of the computer.
+
+CPU Definition
+Central processing unit (CPU) is the central component of the Computer System. Sometimes it is called as microprocessor or processor. It is the brain that runs the show inside the Computer. All functions and processes that is done on a computer is performed directly or indirectly by the processor. Obviously, computer processor is one of the most important element of the Computer system. CPU is consist of transistors,that receives inputs and produces output.Transistors perform logical operations which is called processing. It is also, scientifically, not only one of the most amazing parts of the PC, but one of the most amazing devices in the world of technology.
+
+Central processing unit
+
+In terms of computing power, the computer processor is the most important element of a computer system. It add and compare its data in cpu chip. A CPU of all computers, whether micro, mini or mainframe must have three parts.
+
+Parts of CPU
+Arithmetic Logic Unit (ALU): It is the part of computer processor (CPU) can be used to perform arithmetic and logic operations. An arithmetic-logic unit (ALU) is further divided into two parts, (AU) arithmetic unit  and a (LU) logic unit.
+
+Control Unit (CU): Decodes the program instruction. CPU chip used in a computer is partially made out of Silica. on other words silicon chip used for data processing are called Micro Processor. 
+
+Registers: It is temporary storage areas of the computer processor. It is managed by control unit(CU).Registers holding data,instruction and address that are needed by program while running.
+
+The processor plays a significant role in the following important aspects of your computer system; 
+
+Performance: The processor is probably the most important single determinant of system performance in the Pc. While other components also playa key role in determining performance, the processor's capabilities dictate the maximum performance of a system. The other devices only allow the processor to reach its full potential.  
+
+Software Support: Newer, faster processors enable the use of the latest software. In addition, new processors such as the Pentium with MMX Technology, enable the use of specialized software not usable on earlier machines.
+
+Reliability and Stability: The quality of the processor is one factor that determines how reliably your system will run. While most processors are very dependable, some are not. This also depends to some extent on the age of the processor and how much energy it consumes. 
+
+Energy Consumption and Cooling: Originally processors consumed relatively little power compared to other system devices. Newer processors can consume a great deal of power. Power consumption has an impact on everything from cooling method selection to overall system reliability.
+
+Motherboard Support: The processor that decides to use in your system will be a major determining factor in what sort of chipset we must use, and hence what motherboard you buy. The motherboard in turn dictates many facets of. The system's capabilities and performance. 
