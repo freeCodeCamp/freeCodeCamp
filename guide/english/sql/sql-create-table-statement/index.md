@@ -27,6 +27,7 @@ CREATE TABLE Person(
 In the example above, each Person has a Name, a Date of Birth and a Gender. The Id column is the key that identifies one person in the table. You use the keyword `PRIMARY KEY` to configure one or more columns as a primary key.
 
 A column can be `not null` or `null` indicating whether it is mandatory or not.
+It can be `null` by default.
 
 
 #### More Information:
