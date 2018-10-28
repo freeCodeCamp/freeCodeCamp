@@ -86,6 +86,10 @@ title: Books to Read for Programmers
 - [Amazon](https://www.amazon.com/Book-Programming-4th-Al-Kelley/dp/0201183994/ref=cm_cr_arp_d_bdcrb_top?ie=UTF8)
 - ISBN-13: 978-0201183993
 
+*C Programming Absolute Beginner's Guide (3rd Edition)* by Greg Perry and Dean Miller
+- [Amazon](https://www.amazon.com/Programming-Absolute-Beginners-Guide-3rd/dp/0789751984)
+- ISBN-13: 978-0789751980
+
 ## C#
 
 *C# 6.0 in a Nutshell: The Definitive Reference 6th Edition* by Joseph Albahari  (Author), Ben Albahari (Author)
