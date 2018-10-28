@@ -168,6 +168,45 @@ Promise.all([promise1, promise2, promise3]).then(function(values) {
 
 ```
 
+### Sample Promise API call
+
+Consider the below example for an API call. `getData` takes 2 arguments which are :
+
+method: This is usually any HTTP verb `GET,POST`.
+url: This is the endpoint of the API call.
+
+``` javascript
+getData("GET","https://jsonplaceholder.typicode.com/todos/1")
+
+const getData = (method,url)=>{
+    return new Promise(function (resolve, reject) {
+        let xhr = new XMLHttpRequest();
+        xhr.open(method, url);
+        xhr.onload = function () {
+            if (this.status == 200) {
+                // resolve the promise if the HTTP response status code=200.
+                resolve(xhr.responseText);
+            } else {
+               // reject the promise if the HTTP response status code!=200.
+                reject({
+                    status: this.status,
+                    statusText: xhr.statusText
+                })
+            }
+        };
+        xhr.onerror = function () {
+            // reject the promise if the API call fails.
+            reject({
+                status: this.status,
+                statusText: xhr.statusText
+            });
+        };
+        // send method takes an argument which is usually request body.
+        // HTTP POST takes request body. For a GET API call this can be null.
+        xhr.send(null);
+    });
+}
+```
 
 ### More Information
 For more information on promises: <a href='https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise' target='_blank' rel='nofollow'>Promises</a>
