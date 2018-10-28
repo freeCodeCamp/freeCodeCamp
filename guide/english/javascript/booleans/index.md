@@ -4,7 +4,7 @@ title: Boolean
 
 ## Boolean
 
-Booleans are a primitive datatype commonly used in computer programming languages. By definition, a boolean has two possible values: `true` or `false`.
+Booleans are a primitive datatype commonly used in computer programming languages. By definition, a boolean has two possible values: `true` or `false`. Sometimes these are also referred to as 1 (for true) or 0 (for false).
 
 In Javascript, there is often implicit type coercion to boolean. If, for example, you have an if statement which checks a certain expression, that expression will be coerced to a boolean: 
 
