@@ -112,7 +112,7 @@ Esencialmente, esperamos cierta familiaridad básica con algunas de las tecnolog
 
 No dudes en hacernos preguntas, en los hilos relacionados con problemas, y estaremos encantados de aclararlas. En caso de duda, puede comunicarse con Mrugesh Mohapatra [`@raisedadead`](https://github.com/raisedadead) o Stuart Taylor[`@bouncey`](https://github.com/bouncey) desde nuestro equipo de desarrollo de la plataforma para ayudarte con esto.
 
-**Si deseas trabajar en ello, tú tendras que seguir con las siguientes pautas:**
+**Si deseas trabajar en ello, tendrás que seguir las siguientes pautas:**
 
 #### [Cómo configurar freeCodeCamp localmente.](/docs/how-to-setup-freecodecamp-locally.md)
 
@@ -124,7 +124,7 @@ Si crees que has encontrado un error, primero lee el artículo ["Ayuda, he encon
 
 Si estás seguro de que es un error nuevo, sigue adelante y crea un nuevo problema o Issue en GitHub. Asegúrate de incluir la mayor cantidad de información posible para que podamos reproducir el error. Tenemos una plantilla de problemas predefinida para ayudarte con esto.
 
-Ten en cuenta que cualquier problema que busques ayuda de codificación en un desafío se cerrará. El rastreador de problemas es estrictamente para los temas y discusiones relacionados con el código base. En caso de duda, deberías [buscar ayuda en el foro](https://www.freecodecamp.org/forum) antes de hacer un informe.
+Ten en cuenta que cualquier problema en el que busques ayuda de codificación para un desafío se cerrará. El rastreador de problemas es estrictamente para los temas y discusiones relacionados con el código base. En caso de duda, deberías [buscar ayuda en el foro](https://www.freecodecamp.org/forum) antes de hacer un informe.
 
 **¿Cómo puedo reportar un problema de seguridad?**
 
@@ -137,7 +137,7 @@ No dudes en pedir ayuda en:
 - [La categoría "Colaboradores" en nuestro foro público](https://www.freecodecamp.org/forum/c/contributors).
 - [La sala de chat de nuestros colaboradores públicos en Gitter](https://gitter.im/FreeCodeCamp/Contributors).
 
-Nos emociona ayudarte a contribuir con cualquiera de los temas en los que te gustaría trabajar. Asegúrate de buscar tu consulta antes de publicar una nueva. Sé educado y paciente. Nuestros voluntarios y moderadores de la comunidad están siempre alrededor para guiarlo a través de sus consultas.
+Nos emociona ayudarte a contribuir con cualquiera de los temas en los que te gustaría trabajar. Asegúrate de buscar tu consulta antes de publicar una nueva. Sé educado y paciente. Nuestros voluntarios y moderadores de la comunidad están siempre alrededor para guiarte a través de tus consultas.
 
 **Soy nuevo en GitHub y Open Source en general:**
 
@@ -145,9 +145,9 @@ Lee nuestra [Guía de cómo contribuir al Código Abierto](https://github.com/fr
 
 **¿Qué significan estas diferentes etiquetas, que están etiquetadas en los problemas?**
 
-Nuestros moderadores de nuestra comunidad [evalúan](https://en.wikipedia.org/wiki/Software_bug#Bug_management) problemas y solicitudes según su prioridad, gravedad y otros factores. Puedes [encontrar un glosario completo de sus significados aquí](https://github.com/freecodecamp/freecodecamp/labels).
+Los moderadores de nuestra comunidad [evalúan](https://en.wikipedia.org/wiki/Software_bug#Bug_management) problemas y solicitudes y los etiquetan según su prioridad, gravedad y otros factores. Puedes [encontrar un glosario completo de sus significados aquí](https://github.com/freecodecamp/freecodecamp/labels).
 
-Debes revisar los problemas **`Help Wanted`** o **`first timers welcome`** para una búsqueda rápida de lo que está disponible para que trabajes. Estos están libres para todos y no necesita permiso antes de trabajar en ellos.
+Debes revisar los problemas **`Help Wanted`** o **`first timers welcome`** para una búsqueda rápida de lo que está disponible para que trabajes. Estos están libres para todos y no necesitas permiso para trabajar en ellos.
 
 Si estos temas carecen de claridad sobre lo que debe hacerse, no dudes en hacer preguntas en los comentarios.
 
