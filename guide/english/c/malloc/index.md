@@ -6,8 +6,13 @@ malloc() is a library function that allows C to allocate memory dynamically from
 
 malloc() is part of stdlib.h and to be able to use it you need to use `#include <stdlib.h>`.
 
+Following is the declaration for malloc() function.
+
+ ```void *malloc(size_t size)```
+
 ## Using Malloc
 malloc() allocates memory of a requested size and returns a pointer to the beginning of the allocated block. To hold this returned pointer, we must create a variable.
+
 Here we'll make a pointer to a soon-to-be array of ints
 ```C
 int* arrayPtr;
@@ -29,4 +34,3 @@ This statement will deallocate the memory previously allocated. C does not come 
 * Malloc is used for dynamic memory allocation and is useful when you don't know the amount of memory needed during compile time.
 * Allocating memory allows objects to exist beyond the scope of the current block.
 * C passes by value instead of reference. Using malloc to assign memory, and then pass the pointer to another function, is more efficient than having the function recreate the structure.
-
