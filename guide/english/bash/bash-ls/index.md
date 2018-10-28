@@ -10,7 +10,7 @@ title: Bash ls
 ### Usage
 
 ```bash
-cat [options] [file_names]
+ls [options] [folder_path]
 ```
 You can list the items in any directory without even entering the directory. Consider you are in a directory with folders- Test1,Test2. You're in the parent directory you can list all files in Test1 as follows-
 `ls Test1`
@@ -21,6 +21,7 @@ Most used options:
 * `-l`, List in long format
 * `-G`, enable colorized output.
 * `-s`, List File Size.
+* `-R`, displays the contents of the directory, and its subdirectories.
 
 ### Example:
 
@@ -38,3 +39,4 @@ assets             gatsby-ssr.js      translations
 #### More Information:
 
 * [Wikipedia](https://en.wikipedia.org/wiki/Ls)
+* [Shapeshed](https://shapeshed.com/unix-ls/)

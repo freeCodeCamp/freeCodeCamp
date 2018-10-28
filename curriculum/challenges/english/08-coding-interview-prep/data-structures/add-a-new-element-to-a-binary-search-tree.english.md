@@ -22,13 +22,13 @@ Hint: trees are naturally recursive data structures!
 ```yml
 tests:
   - text: The <code>BinarySearchTree</code> data structure exists.
-    testString: 'assert((function() { var test = false; if (typeof BinarySearchTree !== "undefined") { test = new BinarySearchTree() }; return (typeof test == "object")})(), "The <code>BinarySearchTree</code> data structure exists.");'
+    testString: assert((function() { var test = false; if (typeof BinarySearchTree !== 'undefined') { test = new BinarySearchTree() }; return (typeof test == 'object')})(), 'The <code>BinarySearchTree</code> data structure exists.');
   - text: The binary search tree has a method called <code>add</code>.
-    testString: 'assert((function() { var test = false; if (typeof BinarySearchTree !== "undefined") { test = new BinarySearchTree() } else { return false; }; return (typeof test.add == "function")})(), "The binary search tree has a method called <code>add</code>.");'
+    testString: assert((function() { var test = false; if (typeof BinarySearchTree !== 'undefined') { test = new BinarySearchTree() } else { return false; }; return (typeof test.add == 'function')})(), 'The binary search tree has a method called <code>add</code>.');
   - text: The add method adds elements according to the binary search tree rules.
-    testString: 'assert((function() { var test = false; if (typeof BinarySearchTree !== "undefined") { test = new BinarySearchTree() } else { return false; }; if (typeof test.add !== "function") { return false; }; test.add(4); test.add(1); test.add(7); test.add(87); test.add(34); test.add(45); test.add(73); test.add(8); const expectedResult = [ 1, 4, 7, 8, 34, 45, 73, 87 ]; const result = test.inOrder(); return (expectedResult.toString() === result.toString()); })(), "The add method adds elements according to the binary search tree rules.");'
+    testString: assert((function() { var test = false; if (typeof BinarySearchTree !== 'undefined') { test = new BinarySearchTree() } else { return false; }; if (typeof test.add !== 'function') { return false; }; test.add(4); test.add(1); test.add(7); test.add(87); test.add(34); test.add(45); test.add(73); test.add(8); const expectedResult = [ 1, 4, 7, 8, 34, 45, 73, 87 ]; const result = test.inOrder(); return (expectedResult.toString() === result.toString()); })(), 'The add method adds elements according to the binary search tree rules.');
   - text: Adding an element that already exists returns <code>null</code>
-    testString: 'assert((function() { var test = false; if (typeof BinarySearchTree !== "undefined") { test = new BinarySearchTree() } else { return false; }; if (typeof test.add !== "function") { return false; }; test.add(4); return test.add(4) == null; })(), "Adding an element that already exists returns <code>null</code>");'
+    testString: assert((function() { var test = false; if (typeof BinarySearchTree !== 'undefined') { test = new BinarySearchTree() } else { return false; }; if (typeof test.add !== 'function') { return false; }; test.add(4); return test.add(4) == null; })(), 'Adding an element that already exists returns <code>null</code>');
 
 ```
 
@@ -60,7 +60,48 @@ function BinarySearchTree() {
 <div id='js-teardown'>
 
 ```js
-console.info('after the test');
+BinarySearchTree.prototype = {
+    isBinarySearchTree() {
+        if (this.root == null) {
+            return null;
+        } else {
+            var check = true;
+            function checkTree(node) {
+                if (node.left != null) {
+                    var left = node.left;
+                    if (left.value > node.value) {
+                        check = false;
+                    } else {
+                        checkTree(left);
+                    }
+                }
+                if (node.right != null) {
+                    var right = node.right;
+                    if (right.value < node.value) {
+                        check = false;
+                    } else {
+                        checkTree(right);
+                    };
+                };
+            };
+            checkTree(this.root);
+            return check;
+        };
+    }
+};
+BinarySearchTree.prototype = {
+    inOrder() {
+        if (!this.root) { return null; }
+        var result = new Array();
+        function traverseInOrder(node) {
+             node.left && traverseInOrder(node.left);
+             result.push(node.value);
+             node.right && traverseInOrder(node.right);
+        }
+        traverseInOrder(this.root);
+        return result;
+    }
+};
 ```
 
 </div>
