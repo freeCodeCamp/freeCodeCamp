@@ -7,6 +7,7 @@ The User Story, as an item in your backlog, is a placeholder for a conversation.
 the Product Owner and the Delivery Team reach an understanding on the desired outcome.
 
 The Acceptance Criteria tells the Delivery Team how the code should behave. Avoid writing the **"How"** of the User Story; keep to the **"What"**.
+
 If the team is following Test Driven Development (TDD), it may provide the framework for the automated tests.
 The Acceptance Criteria will be the beginnings of the test plan for the QA team.
 
@@ -24,3 +25,4 @@ Nomad8 provides an [FAQ on Acceptance Criteria](https://nomad8.com/acceptance_cr
 Leading Agile on [Acceptance Criteria](https://www.leadingagile.com/2014/09/acceptance-criteria/)
 
 Elijah Valenciano [The Acceptance Criteria for Writing Acceptance Criteria](https://medium.freecodecamp.org/the-acceptance-criteria-for-writing-acceptance-criteria-6eae9d497814)
+make changes.
