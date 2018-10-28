@@ -1,6 +1,6 @@
-
-title: Converse Inverse Contrapositive 
-
+---
+title: Converse Inverse Contrapositive
+---
 
 In Discrete Mathematics, given a conditional statement ”if a,then b”, we
 can have 3 related statements:<br>
