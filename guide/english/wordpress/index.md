@@ -18,6 +18,7 @@ Just a few advantages of WordPress:
 * There's a blog built-in and ready to go whenever applicable
 * It has plugins, which extend functionality to WordPress sites
 * Thousands of free themes are available to customize
+* Build and audience for free through your blog
 
 Here are some examples of big name brands using WordPress: 
 * Sony Music
