@@ -8,7 +8,7 @@ Listas são usadas para exibir itens. Existem 3 tipos de listas.
 
 ## Listas ordenadas
 
-Uma _lista ordenada_ é usada para descrever uma coleta ordenada de dados. Os navegadores geralmente exibem uma lista ordenada como uma lista numerada. Crie uma lista ordenada usando a tag `<ol>` .
+Uma _lista ordenada_ é usada para descrever uma coleção ordenada de dados. Os navegadores geralmente exibem uma lista ordenada como uma lista numerada. Crie uma lista ordenada usando a tag `<ol>` .
 
 ## Listas não ordenadas
 
