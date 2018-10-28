@@ -14,6 +14,8 @@ Java comments are not executed by compiler and interpreter.
 
 #### 1. Single Line Comment
 
+Single Line comments are short comments written in one or two lines. They are the most used type of comments.
+
 To create a single line comment just add two `//` forward slashes before the text.
 
 ```java
