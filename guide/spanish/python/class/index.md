@@ -6,7 +6,7 @@ localeTitle: Clase
 
 Las clases proporcionan un medio de agrupar datos y funcionalidad. La creación de una nueva clase crea un nuevo tipo de objeto, lo que permite crear nuevas instancias de ese tipo. Cada instancia de clase puede tener atributos adjuntos para mantener su estado. Las instancias de clase también pueden tener métodos (definidos por su clase) para modificar su estado.
 
-En comparación con otros lenguajes de programación, el mecanismo de clase de Python agrega clases con un mínimo de Nueva sintaxis y semántica. Es una mezcla de los mecanismos de clase encontrados en C ++. Las clases de Python proporcionan todas las características estándar de la programación orientada a objetos: el mecanismo de herencia de clases permite múltiples clases base, una clase derivada puede anular cualquier método de su clase o clases base, y un método puede llamar al método de una clase base con el mismo nombre. Los objetos pueden contener cantidades arbitrarias y tipos de datos. Como es cierto para los módulos, las clases participan de la naturaleza dinámica de Python: Se crean en tiempo de ejecución y pueden modificarse aún más después de la creación.
+En comparación con otros lenguajes de programación, el mecanismo de clase de Python agrega clases con un mínimo de nueva sintaxis y semántica. Es una mezcla de los mecanismos de clase encontrados en C ++. Las clases de Python proporcionan todas las características estándar de la programación orientada a objetos: el mecanismo de herencia de clases permite múltiples clases base, una clase derivada puede anular cualquier método de su clase o clases base, y un método puede llamar al método de una clase base con el mismo nombre. Los objetos pueden contener cantidades arbitrarias y tipos de datos. Como es cierto para los módulos, las clases participan de la naturaleza dinámica de Python: Se crean en tiempo de ejecución y pueden modificarse aún más después de la creación.
 
 #### Sintaxis de definición de clase:
 
@@ -21,13 +21,13 @@ class ClassName:
     <statement-N> 
  ``` 
  
- #### Class Objects: 
+ #### Objetos Clase: 
  
- Class objects support two kinds of operations: attribute references and instantiation. 
+ Los Objetos Clase permiten dos tips de operaciones: referencias de atributo e instanciación. 
  
- Attribute references use the standard syntax used for all attribute references in Python: `obj.name`. 
- Valid attribute names are all the names that were in the class's namespace when the class object was created. 
- So, if the class definition looked like this: 
+ Las referencias de atributo usan la sintaxis estándar usadas para todas las referencias de atributo en Python: `obj.name`. 
+ Nombres válidos de atributos qhe se encontraran en el area de nombre cuando el objeto clase fue creado. 
+ Entonces, la definición de clase se veía de esta manera: 
 ```
 
 pitón clase MyClass: "" "Una clase de ejemplo simple" "" i = 12345
