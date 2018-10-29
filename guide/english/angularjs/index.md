@@ -30,3 +30,4 @@ HTML:
 ```html
 <script src="/bower_components/angular/angular.js"></script>
 ```
+It is recommended to have a fully updated version of java available
