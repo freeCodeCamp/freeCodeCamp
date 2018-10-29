@@ -3,7 +3,10 @@ title: Getters & Setters
 ---
 
 # Getters & Setters
-Getters and Setters are used to implement the principle of encapsulation and so the instance variable can be accessed only by its getter and setter methods. For each instance variable, a getter method returns its value while a setter method sets or updates its value. Getters and setters are also known as accessors and mutators, respectively.
+
+Getter is a method for getting data from the user on the output screen and assigning it to a variable , eg- 'getText()'. Setter method is used to set a specific value to a variable and can be changed only by changing the value in the the code eg- 'setText()'.
+
+Getters and Setters are used to effectively protect your data, particularly when creating classes. For each instance variable, a getter method returns its value while a setter method sets or updates its value. Getters and setters are also known as accessors and mutators, respectively.
 
 By convention, getters start with `get`, followed by the variable name, with the first letter of the variable name capitalized. Setters start with `set`, followed by the variable name, with the first letter of the variable name capitalized.
 
