@@ -3,7 +3,7 @@ title: TensorFlow
 ---
 ## Tensor Flow
 
-<a href='https://www.tensorflow.org/' target='_blank' rel='nofollow'>TensorFlow</a> is an open source software library for Machine Intelligence.
+<a href='https://www.tensorflow.org/' target='_blank' rel='nofollow'>TensorFlow</a> is an open source software library for Machine learning and deep learning.
 
 With the aim of conducting research in these fascinating areas, the Google team developed TensorFlow.
 
@@ -15,7 +15,7 @@ allows you to deploy computation to one or more CPUs or GPUs in a desktop, serve
 device with a single API. TensorFlow was originally developed by researchers and engineers 
 working on the Google Brain Team within Google's Machine Intelligence research organization 
 for the purposes of conducting machine learning and deep neural networks research, but the 
-system is general enough to be applicable in a wide variety of other domains as well.
+system is general enough to be applicable in a wide variety of other domains as well.Tensorflow has many machine learning and deep learning methods and architectures built in so that anyone can get started easily. Also many state-of-the-art pre trained models are bundled in for users for deployment for their application.
 
 For more information, visit the <a href='https://github.com/tensorflow' target='_blank' rel='nofollow'>TensorFlow Github page</a>
 
