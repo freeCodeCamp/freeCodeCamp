@@ -21,7 +21,7 @@ Perimeter - 2(a+b)
 
 ### Square
 Number of sides - 4
-Special Info- 
+Special Info- Squares are special rectangles 
 Has four sides, with opposite sides parallel and all sides of same length (a)
 All internal angles are 90 degrees
 Sum of all internal angles in 360 degrees
