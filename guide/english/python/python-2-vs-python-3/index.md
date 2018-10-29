@@ -57,5 +57,7 @@ Both Python 2 and Python 3 are great. Most Linux and macOS distributions come pr
 
 This article uses Python 3 to set up the web-frameworks in your development environment. But before that, you need to ensure you have Python 3 and know how to use it!
 
+In python 2 we use __unicode__() for string representation of object whereas in python 3 __str__() use for same.
+
 #### More Information:
 - <a href='https://wiki.python.org/moin/Python2orPython3' target='_blank' rel='nofollow'>Python 2 or 3 Article</a>
