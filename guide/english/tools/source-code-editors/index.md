@@ -62,3 +62,5 @@ Its main features are:
 *   Build-in Git - Review diffs, stage files, make commits, push and pull, all available in the editor.
 *   Extensions - Install extensions to add new languages, themes, debuggers, and connect additional services.
 
+Atom, and Visual Studio Code are being developed based on Electron. 
+See more about electron:  <a href='https://electronjs.org/' target='_blank' rel='nofollow'>Electron</a> 
