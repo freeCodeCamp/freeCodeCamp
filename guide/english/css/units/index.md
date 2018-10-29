@@ -91,7 +91,7 @@ Relative units change relative to the element's current font-size or other setti
 Absolute units  will be the same regardless of screen size or other settings. Some absolute units are 
 - ```px```
   - pixel
-  - pixel counts are relative to the quality of the viewing device's screen
+  - [pixel do not necessarily map to "physical" device pixels](https://webplatform.github.io/docs/tutorials/understanding-css-units/#On-CSS-pixels,-physical-units-and-scalability) (1px = 1/96 of an inch).
 - ```in```, ```cm```, ```mm```
   - inch, centimeter, millimeter
   - An inch is an inch on a small screen or a big screen
