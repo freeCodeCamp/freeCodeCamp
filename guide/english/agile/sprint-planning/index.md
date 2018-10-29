@@ -15,4 +15,4 @@ Sprint Planning is time-boxed to a maximum of eight hours for a one-month Sprint
 
 #### More Information:
 * https://www.mountaingoatsoftware.com/agile/scrum/meetings/sprint-planning-meeting
-* [Scrum Guide](http://www.scrumguides.org/scrum-guide.html)
+* [Scrum Guide](https://www.scrumguides.org/scrum-guide.html#events-planning)
