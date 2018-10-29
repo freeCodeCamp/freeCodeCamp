@@ -17,7 +17,7 @@ Examples include:
 
 * [**Hidden Costs**](https://darkpatterns.org/types-of-dark-pattern/hidden-costs) – At the last step of a checkout process, only to discover some unexpected charges appear, e.g. delivery charges, tax, etc. that were not disclosed prior to processing the user's payment.
 
-* [**Misdirection**](https://darkpatterns.org/types-of-dark-pattern/misdirection) – The design purposefully focuses a users' attention on one thing in order to distract their attention from another.
+* [**Misdirection**](https://darkpatterns.org/types-of-dark-pattern/misdirection) – The design purposefully focuses a user's attention on one thing in order to distract their attention from another.
 
 * [**Price Comparison Prevention**](https://darkpatterns.org/types-of-dark-pattern/price-comparison-prevention) – An online retailer makes it hard for visitor's to compare the price of an item with another item, so they cannot make an informed decision.
 
