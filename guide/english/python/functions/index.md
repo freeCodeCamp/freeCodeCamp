@@ -16,11 +16,11 @@ One of the great advantages of using functions in your code is that it reduces t
 In Python, a function definition has the following features:
 
 1. The keyword `def`
-2. a function name
-3. paranthesis'()', and within paranthesis input parameters,although the input parameters are optional
-4. a colon ':'
-5. some block of code to execute (that must be indented relative to the definition statement)
-6. a return statement (optional)
+2. A function name
+3. Paranthesis'()', and within paranthesis input parameters,although the input parameters are optional
+4. A colon ':'
+5. Some block of code to execute (that must be indented relative to the definition statement)
+6. A return statement (optional)
 
 ```python
 # a function with no parameters or returned values
