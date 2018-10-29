@@ -20,7 +20,7 @@ h1{
 
 ## Nest CSS within SASS:
 
-On normal CSS codes we have to write each elements css seperate like:
+On normal CSS codes we have to write each element's css separate like:
 ```
 .nav-bar{
   background-color: green;
