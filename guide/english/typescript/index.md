@@ -56,3 +56,4 @@ In case you need just a type checker and don't want to compile your programm, re
 - <a href='http://www.typescriptlang.org/docs/home.html' target='_blank' rel='nofollow'>Documentation</a>
 - <a href='https://github.com/Microsoft/TypeScript' target='_blank' rel='nofollow'>Source Code</a>
 - <a href="https://www.tutorialspoint.com/typescript/" target="_blank">TutorialsPoint</a>
+- <a href="https://scrimba.com/g/gintrototypescript" target="_blank">Free Interactive Screencast</a>
