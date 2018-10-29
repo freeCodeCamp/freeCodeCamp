@@ -12,5 +12,7 @@ title: Books on Swift
  -(https://itunes.apple.com/us/book/app-development-with-swift/id1219117996?mt=11)
  
  ####More Information:
- <--! Add some awesome books you think will be helpful to others -->
- 
+* Learning Swift: Building Apps for macOS, iOS, and Beyond
+ [Amazon](https://www.amazon.com/Learning-Swift-Building-macOS-Beyond/dp/149198757X)
+* Classic Computer Science Problems in Swift: Essential Techniques for Practicing Programmers
+ [Amazon](https://www.amazon.com/Classic-Computer-Science-Problems-Swift/dp/1617294896)
