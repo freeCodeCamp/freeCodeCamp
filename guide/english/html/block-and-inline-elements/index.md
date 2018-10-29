@@ -35,3 +35,16 @@ While an understanding of block and inline elements is still relevant, you shoul
 #### More Information:
 Please refer <a href='https://developer.mozilla.org/en-US/docs/Web/HTML/Block-level_elements#Block-level_vs._inline' target='_blank' rel='nofollow'>Mozilla Docs</a>
 
+You can also use raw HTML in your Markdown, and it'll mostly work pretty well.
+
+<dl>
+  <dt>Definition list</dt>
+  <dd>Is something people use sometimes.</dd>
+
+  <dt>Markdown in HTML</dt>
+  <dd>Does *not* work **very** well. Use HTML <em>tags</em>.</dd>
+</dl>
+Definition list
+Is something people use sometimes.
+Markdown in HTML
+Does *not* work **very** well. Use HTML tags.
