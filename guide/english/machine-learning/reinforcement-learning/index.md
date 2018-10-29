@@ -28,4 +28,5 @@ Some applications of the reinforcement learning algorithms are computer played b
 
 ## More information:
 * [David Silver's RL course](http://www0.cs.ucl.ac.uk/staff/d.silver/web/Teaching.html)
+* [RL demystified](https://medium.com/@m.alzantot/deep-reinforcement-learning-demystified-episode-0-2198c05a6124)
 
