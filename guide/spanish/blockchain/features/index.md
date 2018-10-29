@@ -1,4 +1,3 @@
-
 ---
 title: Features of BlockTech
 localeTitle: Características de BlockTech
