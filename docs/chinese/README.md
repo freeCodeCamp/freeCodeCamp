@@ -10,6 +10,20 @@
         <td><a href="/docs/german/README.md"> Deutsch </a></td>
     </tr>
 </table>
+<table>
+    <tr>
+        <td> Read these guidelines in </td>
+        <td><a href="/docs/README.md"> English </a></td>
+        <td><a href="README.md"> 中文 </a></td>
+        <td><a href="/docs/russian/README.md"> русский </a></td>
+        <td><a href="/docs/arabic/README.md"> عربى </a></td>
+        <td><a href="/docs/spanish/README.md"> Español </a></td>
+        <td><a href="/docs/romanian/README.md"> Română </a></td>
+        <td><a href="/docs/portuguese/README.md"> Português </a></td>
+        <td><a href="/docs/italian/CONTRIBUTING.md"> Italiano </a></td>
+        <td><a href="/docs/german/README.md"> Deutsch </a></td>
+    </tr>
+</table>
 
 # Documentation快速参考
 
