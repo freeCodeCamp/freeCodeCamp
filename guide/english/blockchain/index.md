@@ -48,3 +48,7 @@ the consensus of the other nodes. Bitcoin has the benefit of being able to incen
 * [Blockchain academic papers](https://github.com/decrypto-org/blockchain-papers)
 * [Blockchain Resources](https://github.com/BlockchainDevs/CryptocurrencyAwesome/blob/master/README.md)
 * [Blockchain Wikipedia](https://en.wikipedia.org/wiki/Blockchain)
+## Structure:
+A blockchain is a decentralized, distributed and public digital ledger that is used to record transactions across many computers so that the record cannot be altered retroactively without the alteration of all subsequent blocks and the consensus of the network. This allows the participants to verify and audit transactions inexpensively. A blockchain database is managed autonomously using a peer-to-peer network and a distributed timestamping server. They are authenticated by mass collaboration powered by collective self-interests. The result is a robust workflow where participants' uncertainty regarding data security is marginal. The use of a blockchain removes the characteristic of infinite reproducibility from a digital asset. It confirms that each unit of value was transferred only once, solving the long-standing problem of double spending. Blockchains have been described as a value-exchange protocol. This blockchain-based exchange of value can be completed quicker, safer and cheaper than with traditional systems. A blockchain can assign title rights because, when properly set up to detail the exchange agreement, it provides a record that compels offer and acceptance.
+
+
