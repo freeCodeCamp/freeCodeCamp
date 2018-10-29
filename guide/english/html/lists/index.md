@@ -12,7 +12,7 @@ An _ordered list_ is used to describe an ordered collection of data. Browsers us
 An _unordered list_ is used to describe an unordered collection of data. Browsers usually display an unordered list as a bulleted list. Create an unordered list using the `<ul>` tag.
 
 ## List items
-The direct children of ordered and unordered lists must be list items. Each list item is wrapped in an `<li>` tag. A list item tag can contain [flow content](https://developer.mozilla.org/en-US/docs/Web/Guide/HTML/Content_categories#Flow_content).
+The direct children of ordered and unordered lists must be list items. Each list item is wrapped in an `<li>` tag. The <li> element does not technically need a closing </li> tag in HTML5, but is commonly used as good practice, and to stay XHTML compliant. A list item tag can contain [flow content](https://developer.mozilla.org/en-US/docs/Web/Guide/HTML/Content_categories#Flow_content). 
 
 ## Examples
 
