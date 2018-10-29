@@ -56,8 +56,8 @@ Here are our six core certifications:
 - Basic Data Structures
 - Algorithm Scripting
 - Object Oriented Programming
-- Functional Programming <br />
-  <br />
+- Functional Programming <br/>
+<br/>
   **Projects**: Palindrome Checker, Roman Numeral Converter, Caesars Cipher, Telephone Number Validator, Cash Register
 
 #### 3. Front End Libraries Certification
@@ -67,31 +67,31 @@ Here are our six core certifications:
 - Sass
 - React
 - Redux
-- React and Redux <br />
-  <br />
+- React and Redux <br/>
+  <br/>
   **Projects**: Random Quote Machine, Markdown Previewer, Drum Machine, JavaScript Calculator, Pomodoro Clock
 
 #### 4. Data Visualization Certification
 
 - Data Visualization with D3
-- JSON APIs and Ajax <br />
-  <br />
+- JSON APIs and Ajax <br/>
+  <br/>
   **Projects**: Bar Chart, Scatterplot Graph, Heat Map, Choropleth Map, Treemap Diagram
 
 #### 5. APIs and Microservices Certification
 
 - Managing Packages with Npm
 - Basic Node and Express
-- MongoDB and Mongoose <br />
-  <br />
+- MongoDB and Mongoose <br/>
+  <br/>
   **Projects**: Timestamp Microservice, Request Header Parser, URL Shortener, Exercise Tracker, File Metadata Microservice
 
 #### 6. Information Security and Quality Assurance Certification
 
 - Information Security with HelmetJS
 - Quality Assurance and Testing with Chai
-- Advanced Node and Express <br />
-  <br />
+- Advanced Node and Express <br/>
+  <br/>
   **Projects**: Metric-Imperial Converter, Issue Tracker, Personal Library, Stock Price Checker, Anonymous Message Board
 
 #### Full Stack Development Certification
