@@ -71,3 +71,13 @@ There are many more attributes that can be added that are optional to customize 
 - <a href="https://www.html5rocks.com/en/tutorials/video/basics/">HTML5 Rocks - HTML5 Video</a>
 - [Can I use video?](https://caniuse.com/#search=video)
 - [How to use HTML5 to play video files on your webpage](https://docs.microsoft.com/en-us/previous-versions/windows/internet-explorer/ie-developer/samples/hh924821(v=vs.85))
+
+
+They can't be added directly but you can add an image with a link to the video like this:
+
+<a href="http://www.youtube.com/watch?feature=player_embedded&v=YOUTUBE_VIDEO_ID_HERE
+" target="_blank"><img src="http://img.youtube.com/vi/YOUTUBE_VIDEO_ID_HERE/0.jpg" 
+alt="IMAGE ALT TEXT HERE" width="240" height="180" border="10" /></a>
+Or, in pure Markdown, but losing the image sizing and border:
+
+[![IMAGE ALT TEXT HERE](http://img.youtube.com/vi/YOUTUBE_VIDEO_ID_HERE/0.jpg)](http://www.youtube.com/watch?v=YOUTUBE_VIDEO_ID_HERE)
