@@ -73,7 +73,7 @@ _Cracking the Coding Interview: 150 Preguntas y soluciones de programación_ por
 *   [Sonrisa de amazon](https://smile.amazon.com/Cracking-Coding-Interview-Programming-Questions/dp/098478280X)
 *   ISBN-13: 978-0984782802
 
-## Sonido metálico
+## C
 
 _El lenguaje de programación C_ por Brian W. Kernighan y Dennis M. Ritchie
 
@@ -85,7 +85,7 @@ _Un libro sobre C: Programación en C_
 *   [Amazonas](https://www.amazon.com/Book-Programming-4th-Al-Kelley/dp/0201183994/ref=cm_cr_arp_d_bdcrb_top?ie=UTF8)
 *   ISBN-13: 978-0201183993
 
-## Entrevista de codificación
+## Entrevista de programación
 
 _Cracking the Coding Interview: 150 Preguntas y soluciones de programación_
 
@@ -131,7 +131,7 @@ _JavaScript y JQuery: desarrollo web front-end interactivo_
 *   [Sonrisa de amazon](https://smile.amazon.com/JavaScript-JQuery-Interactive-Front-End-Development/dp/1118531647/?pldnSite=1)
 *   ISBN-13: 978-1118531648
 
-## Pitón
+## Python
 
 _Automatiza las cosas aburridas con Python_
 
