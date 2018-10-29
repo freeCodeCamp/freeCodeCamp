@@ -25,6 +25,12 @@ Here are some examples of big name brands using WordPress:
 
 Whether it's page transitions or a customized contact form, WordPress users are only a few clicks away from building a website.
 
+### Popular Wordpress Frameworks
+
+- [Divi by Elegant Themes](https://www.elegantthemes.com/)
+- [Genesis Framework](https://my.studiopress.com/themes/genesis/)
+- [Elementor](https://elementor.com/)
+
 ### More Information
 
 - [WordPress Codex: the online manual](https://codex.wordpress.org/)
