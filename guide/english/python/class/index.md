@@ -1,115 +1,106 @@
----
-title: Class
----
-## Class
+Python Classes/Objects
+Python is an object oriented programming language.
 
-Classes provide a means of bundling data and functionality together.
-Creating a new class creates a new type of object, allowing new instances of that type to be made.
-Each class instance can have attributes attached to it for maintaining its state.
-Class instances can also have methods (defined by its class) for modifying its state.
+Almost everything in Python is an object, with its properties and methods.
 
-Compared with other programming languages, Python’s class mechanism adds classes with a minimum of
-new syntax and semantics. It is a mixture of the class mechanisms found in C++.
-Python classes provide all the standard features of Object Oriented Programming:
-the class inheritance mechanism allows multiple base classes,
-a derived class can override any methods of its base class or classes,
-and a method can call the method of a base class with the same name.
-Objects can contain arbitrary amounts and kinds of data.
-As is true for modules, classes partake of the dynamic nature of Python:
-they are created at runtime, and can be modified further after creation.
+A Class is like an object constructor, or a "blueprint" for creating objects.
 
-#### Class Definition Syntax :
+Create a Class
+To create a class, use the keyword class:
 
-The simplest form of class definition looks like this:
-```python
-class ClassName:
-    <statement-1>
-        ...
-        ...
-        ...
-    <statement-N>
- ```
+Example
+Create a class named MyClass, with a property named x:
 
-#### Class Objects:
-
-Class objects support two kinds of operations: attribute references and instantiation.
-
-Attribute references use the standard syntax used for all attribute references in Python: `obj.name`.
-Valid attribute names are all the names that were in the class’s namespace when the class object was created.
-So, if the class definition looked like this:
-```python
 class MyClass:
-    """ A simple example class """
-    i = 12345
+  x = 5
+Create Object
+Now we can use the class named myClass to create objects:
 
-    def f(self):
-        return 'hello world'
-```
-Then `MyClass.i` and `MyClass.f` are valid attribute references, returning an integer and a function object, respectively.
-Class attributes can also be assigned to, so you can change the value of `MyClass.i` by assignment. `__doc__` is also a valid attribute, returning the docstring belonging to the class: `"A simple example class"`.
+Example
+Create an object named p1, and print the value of x:
 
-Class instantiation uses function notation. Just pretend that the class object is a parameterless function that returns a new instance of the class. For example (assuming the above class):
-```python
-x = MyClass()
-```
-Creates a new instance of the class and assigns this object to the local variable x.
+p1 = MyClass()
+print(p1.x)
+The __init__() Function
+The examples above are classes and objects in their simplest form, and are not really useful in real life applications.
 
-The instantiation operation (“calling” a class object) creates an empty object.
-Many classes like to create objects with instances customized to a specific initial state.
-Therefore a class may define a special method named __init__(), like this:
+To understand the meaning of classes we have to understand the built-in __init__() function.
 
-```python
-def __init__(self):
-    self.data = []
-```
-When a class defines an `__init__()` method, class instantiation automatically invokes `__init__()` for the newly-created class instance.
-So in this example, a new, initialized instance can be obtained by:
-```python
-x = MyClass()
-```
-Of course, the `__init__()` method may have arguments for greater flexibility.
-In that case, arguments given to the class instantiation operator are passed on to `__init__()`. For example,
-```python
-class Complex:
-    def __init__(self, realpart, imagpart):
-        self.r = realpart
-        self.i = imagpart
-              ...
+All classes have a function called __init__(), which is always executed when the class is being initiated.
 
-x = Complex(3.0, -4.5)
->>> x.r, x.i
-(3.0, -4.5)
-```
+Use the __init__() function to assign values to object properties, or other operations that are necessary to do when the object is being created:
 
-#### Private Variables in Class:
+Example
+Create a class named Person, use the __init__() function to assign values for name and age:
 
-Every programming language which follows OOPs (Object Oriented Programming) concept has some mechanism of data hiding.In python if some variable needs to be hidden from the outside world we use the concept of private variables by using `__` before he variable name.
+class Person:
+  def __init__(self, name, age):
+    self.name = name
+    self.age = age
 
-for example:
-```
-class Foo:
-    def __init__(self):
-        self.__privatenum = 3011
- 
+p1 = Person("John", 36)
 
-Now if we try to access __privatenum outside the class we will get error:
-x = Foo()
-x.__privatenum  # gives following error : 'Foo' object has no attribute '__privatenum'
- 
-```
+print(p1.name)
+print(p1.age)
+Note: The __init__() function is called automatically every time the class is being used to create a new object.
 
-## Simple class and Object Implementation
-```python
-class Friend:
-    def __init__(self,first,last,state):
-        self.fname = first
-        self.lname = last
-        self.state = state
-        self.email = first+"."+state+"@nith.com"
-    def show(self):
-        return '{} {} {} {}'.format(self.fname,self.lname,self.state,self.email)
 
-fr1 = Friend("Nilesh","Bharti","Bihar")
-fr1.show()
-```
+Object Methods
+Objects can also contain methods. Methods in objects are functions that belongs to the object.
 
+Let us create a method in the Person class:
+
+Example
+Insert a function that prints a greeting, and execute it on the p1 object:
+
+class Person:
+  def __init__(self, name, age):
+    self.name = name
+    self.age = age
+
+  def myfunc(self):
+    print("Hello my name is " + self.name)
+
+p1 = Person("John", 36)
+p1.myfunc()
+Note: The self parameter is a reference to the class instance itself, and is used to access variables that belongs to the class.
+
+The self Parameter
+The self parameter is a reference to the class itself, and is used to access variables that belongs to the class.
+
+It does not have to be named self , you can call it whatever you like, but it has to be the first parameter of any function in the class:
+
+Example
+Use the words mysillyobject and abc instead of self:
+
+class Person:
+  def __init__(mysillyobject, name, age):
+    mysillyobject.name = name
+    mysillyobject.age = age
+
+  def myfunc(abc):
+    print("Hello my name is " + abc.name)
+
+p1 = Person("John", 36)
+p1.myfunc()
+Modify Object Properties
+You can modify properties on objects like this:
+
+Example
+Set the age of p1 to 40:
+
+p1.age = 40
+Delete Object Properties
+You can delete properties on objects by using the del keyword:
+
+Example
+Delete the age property from the p1 object:
+
+del p1.age
+Delete Objects
+You can delete objects by using the del keyword:
+
+Example
+Delete the p1 object:
+
+del p1
