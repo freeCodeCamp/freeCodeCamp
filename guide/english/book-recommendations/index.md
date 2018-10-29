@@ -158,7 +158,7 @@ title: Books to Read for Programmers
 - ISBN-13 978-1494295509
 
 *Blue Team Field Manual (BTFM)
-- [Amazon Smile](https://www.amazon.com/Blue-Team-Field-Manual-BTFM-ebook/dp/B077WF4WYV)
+- [Amazon Smile](https://smile.amazon.com/Blue-Team-Field-Manual-BTFM-ebook/dp/B077WF4WYV)
 - ISBN 154101636X
 
 *Code: The Hidden Language of Computer Hardware and Software (Developer Best Practices) *
