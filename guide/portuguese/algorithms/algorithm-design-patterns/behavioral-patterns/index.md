@@ -4,7 +4,7 @@ localeTitle: Padrões comportamentais
 ---
 ## Padrões comportamentais
 
-Padrões de design comportamental são padrões de design que identificam problemas comuns de comunicação entre objetos e realizam esses padrões. Ao fazer isso, esses padrões aumentam a flexibilidade na execução dessa comunicação, tornando o software mais confiável e fácil de manter.
+Padrões de design comportamentais são padrões de design que identificam problemas comuns de comunicação entre objetos e realizam esses padrões. Ao fazer isso, esses padrões aumentam a flexibilidade na execução dessa comunicação, tornando o software mais confiável e fácil de manter.
 
 Exemplos desse tipo de padrão de design incluem:
 
