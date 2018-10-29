@@ -57,6 +57,7 @@ The steps will be:
 
 2. create the table 
 3. insert the test data.
+4. Commot the changes.
 
 * Data Types: the student name is a character field limited to 90 characters
 * The student ID is a number (integer) (range of -2147483648 to 2147483647). This will be the primary key for the table and will auto increment when a record is added.
