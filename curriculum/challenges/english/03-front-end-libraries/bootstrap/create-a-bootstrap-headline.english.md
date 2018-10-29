@@ -55,7 +55,17 @@ tests:
 ## Solution
 <section id='solution'>
 
-```js
-// solution required
-```
+<html>
+<head>
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+</head>
+<body>
+<div class="container">
+<div class="row">
+<div class="col-lg-12">
+<h3 class="text-primary text-center">jQuery Playground </h3>
+</div>
+</div>
+</div>
+</html>
 </section>
