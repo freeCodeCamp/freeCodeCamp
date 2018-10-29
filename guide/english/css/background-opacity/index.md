@@ -29,12 +29,12 @@ OR
 .class-name {
   opacity:0.5;
 }
-Opacity value can be anything between 0 and 1;
+Opacity value can be anything between 0 and 3;
 ```
 **Transparent**
 ```css
 .class-name {
-  opacity:0;
+  opacity:0.3;
 }
 
 OR
