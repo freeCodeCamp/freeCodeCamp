@@ -28,7 +28,7 @@ SELECT studentID, FullName, sat_score, programOfStudy, rcd_Created, rcd_Updated 
 9 rows in set (0.00 sec)
 ```
 
-### Get list of fields of study
+### Get list of Unique fields of study
 ```sql
 SELECT DISTINCT programOfStudy FROM student;
 ```
