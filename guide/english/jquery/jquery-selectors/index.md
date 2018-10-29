@@ -7,6 +7,7 @@ title: jQuery Selectors
 jQuery uses CSS-style selectors to select parts, or elements, of an HTML page. It then lets you do something with the elements using jQuery methods, or functions.
 
 To use one of these selectors, type a dollar sign and parentheses after it: `$()`. This is shorthand for the `jQuery()` function. Inside the parentheses, add the element you want to select. You can use either single- or double-quotes. After this, add a dot after the parentheses and the method you want to use.
+> **Note** Wordpress, among others, reserve the `$()` function for other uses. in these cases, your initial jQuery function must start with `jQuery()`.
 
 In jQuery, the class and ID selectors are like those in CSS.
 
