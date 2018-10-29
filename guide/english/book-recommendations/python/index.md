@@ -49,23 +49,25 @@ You'll learn many of the first princliples for data science tools and how algori
 - ISBN-10: 149190142X
 - ISBN-13: 978-1491901427
 
-*Automate The Boring Stuff With Python*
+#### Automate The Boring Stuff With Python
 - Great book for beginners. Has interesting projects to practice Python.
 - [Amazon](https://www.amazon.com/gp/product/1593275994/)
 - ISBN-10: 1593275994
 - ISBN-13: 978-1593275990
 
-*Python crash course 2e* (note that 3e is going to be published on April 2019)
+#### Python crash course 2e (note that 3e is going to be published on April 2019)
 - Paid book which gives concrete introduction to both programming and Python by the creation of projects.
 - [Amazon](https://www.amazon.fr/Python-Crash-Course-Hands-Project-Based/dp/1593276036/ref=sr_1_1?ie=UTF8&qid=1539459730&sr=8-1&keywords=python+crash+course)
 - ISBN-10: 1593276036
 - ISBN-13: 978-1593276034
 
-*The Quick Python Book, Third Edition*
+#### The Quick Python Book, Third Edition
 - Paid book which provides a good level of information for those starting Python and as a reference for the Python language
 - [Manning]https://www.manning.com/books/the-quick-python-book-third-edition
 - ISBN-10: 1617294039
 - ISBN-13: 978-1617294037
+
+
 
 #### Other Resources
 
@@ -73,5 +75,8 @@ You'll learn many of the first princliples for data science tools and how algori
 - [Python in Education by Nicholas H. Tollervey[OREILLY] [FREE]](https://www.oreilly.com/programming/free/files/python-in-education.pdf)
 - [How to think like a Computer Scientist by Allen Downey[V 2.0.17] [FREE]](http://greenteapress.com/thinkpython/thinkpython.pdf)
 - [A Byte of Python[FREE]](https://python.swaroopch.com)
+
+- [Python for Everyone ](http://mundogeek.net/tutorial-python/)
+      *   [Direct PDF Link \[FREE\]](https://launchpadlibrarian.net/18980633/Python%20para%20todos.pdf) 
 
 Please feel free to add more that you have found useful!
