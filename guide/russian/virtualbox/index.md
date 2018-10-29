@@ -6,7 +6,7 @@ localeTitle: VirtualBox
 
 ![](https://upload.wikimedia.org/wikipedia/commons/d/d5/Virtualbox_logo.png)
 
-VirtualBox - это программа с открытым исходным кодом для виртаулизации от Oracle. Она позволяет устанавливать разные операционные системы на виртуальные диски, включая Windows, BSD, Linux, Solaris и т. Д.
+VirtualBox - это программа с открытым исходным кодом для виртаулизации от Oracle. Она позволяет устанавливать разные операционные системы на виртуальные диски, включая Windows, BSD, Linux, андроид, Solaris и т. Д.
 
 # Установка
 
