@@ -69,5 +69,5 @@ Now lets run our code. Go to the directory in which you saved your file and run 
 From the output you can see that the server starts and is ready to accept connection. When the client starts it first establishes a connection with the server, then sends a message and listens for an incoming message from server. Once the connection is established between server and client, `ws.send()` is fired and messages are exchanged between both of them, and due to the asynchronous nature of `node.js`, both of them at the same time, are listening also.
  
  ## Reference
- 1. [Wiki page](https://en.wikipedia.org/wiki/WebSocket)
+ - [Wiki page](https://en.wikipedia.org/wiki/WebSocket)
  - [Linode guide](https://www.linode.com/docs/development/introduction-to-websockets/)
