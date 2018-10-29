@@ -35,6 +35,11 @@ This full-color book will show you how to make your websites more interactive an
 
 - [Amazon](https://www.amazon.com/JavaScript-JQuery-Interactive-Front-End-Development/dp/1118531647)
 
+#### Professional JavaScript for Web Developers, 3rd edition
+This book provides a developer-level introduction along with more advanced and useful features of JavaScript. 
+-[Amazon] (https://www.amazon.com/Professional-JavaScript-Developers-Nicholas-Zakas/dp/1118026691)
+-[PDF] (https://files.cnblogs.com/files/coolicer/JavaScript%E9%AB%98%E7%BA%A7%E7%A8%8B%E5%BA%8F%E8%AE%BE%E8%AE%A1%E7%AC%AC%E4%BA%8C%E7%89%88.pdf)
+
 
 #### Other Resources
 
