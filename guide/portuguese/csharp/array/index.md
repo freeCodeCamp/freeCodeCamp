@@ -4,7 +4,7 @@ localeTitle: Matrizes
 ---
 # Matrizes
 
-Uma matriz é usada para armazenar uma coleção de dados do mesmo tipo. Isso pode ser usado como uma única variável que contém vários valores ou uma coleção de variáveis.
+Uma matriz é usada para armazenar uma coleção de dados do mesmo tipo. Pode ser usada como uma única variável que contém vários valores ou uma coleção de variáveis.
 
 # Regras de Matrizes
 
@@ -30,13 +30,13 @@ Você pode atribuir um valor diretamente a um elemento usando o formato abaixo:
 
 `nameOfArray[2] = 50;`
 
-O vai atribuir o valor de 50 diretamente ao elemento \[2\]
+O código acima vai atribuir o valor de 50 diretamente ao elemento \[2\]
 
 Você pode atribuir vários valores de uma vez ao declarar o array usando o formato abaixo:
 
 `dataType [] nameOfArray = {5,17,19,92};`
 
-A vontade atribuirá o valor de 5 no elemento \[0\], 17 no elemento \[1\], 19 no elemento \[2\] e 92 no elemento \[3\].
+A código acima atribuirá os valores nos elementos \[0\], 17 no elemento \[1\], 19 no elemento \[2\] e 92 no elemento \[3\].
 
 Você pode declarar, iniciar e atribuir valores na matriz de uma só vez usando o formato abaixo:
 
