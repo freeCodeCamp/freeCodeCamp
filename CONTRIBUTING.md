@@ -27,7 +27,7 @@ You can choose to contribute to any area that interests you:
 
 1. [Contribute to this open source codebase](#contribute-to-this-open-source-codebase). Help to edit [guide articles](https://guide.freecodecamp.org/), [coding challenges](https://learn.freecodecamp.org/), or fix bugs on the learning platform.
 
-2. Help campers on our [public forum](https://www.freecodecamp.org/forum/). [Answer their coding questions](https://www.freecodecamp.org/forum/?max_posts=1) or [give them feedback on their coding projects](https://www.freecodecamp.org/forum/c/project-feedback?max_posts=1)
+2. Help campers on our [public forum](https://www.freecodecamp.org/forum/). [Answer their coding questions](https://www.freecodecamp.org/forum/?max_posts=1) or [give them feedback on their coding projects](https://www.freecodecamp.org/forum/c/project-feedback?max_posts=1).
 
 3. Help us add subtitles to our [YouTube channel videos](https://www.youtube.com/channel/UC8butISFwT-Wl7EV0hUK0BQ/videos).
 
