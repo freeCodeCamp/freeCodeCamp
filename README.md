@@ -56,6 +56,7 @@ Here are our six core certifications:
 - Basic Data Structures
 - Algorithm Scripting
 - Object Oriented Programming
+- Data Analysis
 - Functional Programming <br />
   <br />
   **Projects**: Palindrome Checker, Roman Numeral Converter, Caesars Cipher, Telephone Number Validator, Cash Register
