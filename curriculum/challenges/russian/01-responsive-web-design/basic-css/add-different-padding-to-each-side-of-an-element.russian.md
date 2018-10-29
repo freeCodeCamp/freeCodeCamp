@@ -18,13 +18,13 @@ localeTitle: Добавьте разные внутренние отступы �
 
 ```yml
 tests:
-  - text: Ваш <code>blue-box</code> класс должен дать верхнюю часть элементов <code>40px</code> из <code>padding</code> .
+  - text: Ваш класс <code>blue-box</code> должен содержать <code>padding</code> сверху <code>40px</code>.
     testString: 'assert($(".blue-box").css("padding-top") === "40px", "Your <code>blue-box</code> class should give the top of the elements <code>40px</code> of <code>padding</code>.");'
-  - text: Ваш класс с <code>blue-box</code> должен давать право на элементы <code>20px</code> <code>padding</code> .
+  - text: Ваш класс <code>blue-box</code> должен содержать <code>padding</code> справа <code>20px</code>.
     testString: 'assert($(".blue-box").css("padding-right") === "20px", "Your <code>blue-box</code> class should give the right of the elements <code>20px</code> of <code>padding</code>.");'
-  - text: Ваш класс <code>blue-box</code> должен дать основание элементов <code>20px</code> <code>padding</code> .
+  - text: Ваш класс <code>blue-box</code> должен содержать <code>padding</code> снизу <code>20px</code>.
     testString: 'assert($(".blue-box").css("padding-bottom") === "20px", "Your <code>blue-box</code> class should give the bottom of the elements <code>20px</code> of <code>padding</code>.");'
-  - text: Ваш <code>blue-box</code> класс должен дать слева от элементов <code>40px</code> из <code>padding</code> .
+  - text: Ваш класс <code>blue-box</code> должен содержать <code>padding</code> слева <code>40px</code>.
     testString: 'assert($(".blue-box").css("padding-left") === "40px", "Your <code>blue-box</code> class should give the left of the elements <code>40px</code> of <code>padding</code>.");'
 
 ```
