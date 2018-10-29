@@ -11,6 +11,7 @@ Apache runs on 67% of all webservers in the world. It is fast, reliable, and sec
 
 #### On Ubuntu
 ```
+sudo apt-get update
 sudo apt install apache2
 ```
 #### On Centos
