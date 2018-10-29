@@ -3,7 +3,7 @@ title: Arrays
 ---
 # Arrays in C
 ## Problems
-Before trying to explain what arrays are, let's look at the code where we want to print 10 numbers given by the user in reverse order.
+Before trying to understand what arrays are, let's look at the code where we want to print 10 numbers given by the user in reverse order.
 ```C
 #include <stdio.h>
 int main(void) {
@@ -19,8 +19,7 @@ int main(void) {
     return 0;
 }
 ```
-So, this looks a bit tedious.<br>Up until now every variable created had some special role. But right now, it would be great if we could just store multiple values in one place and get access to the values with their place in the line maybe (first value, second etc.). Another way to look at this is, suppose you want to store a set of names, you need not create different variables for each name, instead you can create an array of names where each name has its unique identity or *index*. Also, we could use loops on them, which are things you will learn about later, but basically they do the same thing over and over again.
-eg. reading from the user, or printing out values. 
+This is a inefficient method. We are declaring unecessary amount of variables which are hogging the memory and in turn making the program slower.<br>Right now, it would be great if we could just store multiple values in one place/memory address and get access to each value. An array is a series of objects all of which are the same size and type. Each object in an array is called an array element. You could have an array of integers or an array of characters or an array of anything that has a defined data type.For example, to store a number of names i.e. strings, creating an array to store names is more efficient than storing them in different strings.
 
 ## Arrays in C
 Arrays are containers with a given size. They contain variables of the **same type**. You can access a variable stored in the array with its *index*.
@@ -149,14 +148,13 @@ double second[] = first;
 double a[5], b[5]
 a = b;
 ```
-You can **only** deal with the values in an array one by one. You **cannot assign all at once**, when you learn about pointers later, the reasons will be clear. 
->(Basically, the first element of an array points to a memory address, and the elements after that are the "houses" next to that first one. So technically an array is just it's first element's memory address. When you want to assign the second array the first array, you run into error due to differing types, or you are trying to change the second memory address of the first element in the second array.)
+You can **only** assign or delete a single value in an array at one time. You **cannot assign all at once**. Each array element has its own memory location.
 
 - When you want to create an array, you have to either tell its size, or assign values to it. Do not do this:
 ```C
 int arr[];
 ```
-The computer has to know how big of a storage to create for the array. Later on, you will learn about ways to create containers whose size are defined later. (Again, pointers.)
+The computer has to know how big of a storage to create for the array.
 
 - When you index out of the array, the compiler is not always going to give you an error. This is called undefined behaviour, we just do not know what is going to happen. It could lead to your program crashing, simply slowing down, anything. 
 ```C
