@@ -24,6 +24,10 @@ There are few commonly used arguments:
 - `-f` , means to forcefully delete anything folder or file.
 - `-rf` , means that both arguments will be used together.
 
+### Warning
+
+This command is capable of deleting many files at once with ease.  This can be beneficial, but also dangerous. Use at your own risk
+
 ### More Information:
 * [Wikipedia](https://en.wikipedia.org/wiki/Rm_(Unix))
 * [Linux](https://linux.die.net/man/1/rm)
