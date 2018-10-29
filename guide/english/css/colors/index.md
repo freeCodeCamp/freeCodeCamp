@@ -84,6 +84,7 @@ You can use named colors, like `green`, `blue`, `yellow`, `red`, `purple`, and m
 ```css
 p {
   color: rgba(244, 145, 14, 0.80); // bright orange
+  color: red;
 }
 
 h2 {
