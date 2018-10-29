@@ -11,3 +11,6 @@ This is a stub. <a href='https://github.com/freecodecamp/guides/tree/master/src/
 
 #### More Information:
 <!-- Please add any articles you think might be helpful to read before writing the article -->
+
+what is classification in data mining?
+<https://docs.oracle.com/cd/B28359_01/datamine.111/b28129/classify.htm#DMCON004>
