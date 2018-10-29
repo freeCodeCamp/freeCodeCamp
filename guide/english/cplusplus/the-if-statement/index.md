@@ -95,7 +95,7 @@ This is the output when the number entered is negative.
 
 <a href='https://repl.it/Mg9X' target='_blank' rel='nofollow'>Try the code yourself ! :) </a>
 
-
+_Your almost done just review the article again to solidify into memory
 _CONGRATULATIONS . This is the end of the article on the IF statement_ 
  
  **Good Luck to all of you** 
