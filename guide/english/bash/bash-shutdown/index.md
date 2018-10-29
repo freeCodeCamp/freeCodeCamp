@@ -8,6 +8,8 @@ Bash Command: shutdown
 
 Options:
 
+now , triggers an immediate orderly shutdown (still displays any message specified)
+
 +m  , will specify the minutes until shutdown.
 
 -h  , will specify the hours until shutdown.
