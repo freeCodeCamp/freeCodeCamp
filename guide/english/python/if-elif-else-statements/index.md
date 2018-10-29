@@ -100,7 +100,7 @@ True
 >
 ```
 ## Rock-Paper-Scissors Game using if-elif in Python
-I have implement a simple game called rock paper scissors using if eli statement in pyhton
+
 ```python
 #importing random library
 import random
