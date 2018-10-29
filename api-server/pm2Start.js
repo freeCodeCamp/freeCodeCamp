@@ -10,8 +10,8 @@ pm2.connect(function() {
     name: serverName,
     script: 'server/production-start.js',
     exec_mode: 'cluster',
-    instances: instances,
-    max_memory_restart: maxMemory,
+    instances: 'instances',
+    max_memory_restart: 'maxMemory',
     NODE_ENV: 'production'
   }, function() {
     console.log(
