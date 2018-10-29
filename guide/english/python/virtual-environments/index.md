@@ -50,10 +50,16 @@ lsvirtualenv
 ```
 
 ### Activate an Environment
+For Mac users
 
 Before you can start using the environment you need to activate it:
 ```
 source my-env/bin/activate
+```
+
+For window users
+```
+source my-env/Scripts/activate
 ```
 
 This ensures that only packages under `my-env/` are used.
