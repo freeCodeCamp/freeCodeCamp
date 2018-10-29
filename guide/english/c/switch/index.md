@@ -85,3 +85,84 @@ int main() {
 * Speed: A switch statement might prove to be faster than ifs provided number of cases are good. If there are only few cases, it might not effect the speed in any case. Prefer switch if the number of cases are more than 5 otherwise, you may use if-else too.
 * If a switch contains more than five items, it’s implemented using a lookup table or a hash list. This means that all items get the same access time, compared to a list of if:s where the last item takes much more time to reach as it has to evaluate every previous condition first.
 * Clarity in readability: A switch looks much cleaner when you have to combine cases. Ifs  are quite vulnerable to errors too. Missing an else statement can land you up in havoc. Adding/removing labels is also easier with a switch and makes your code significantly easier to change and maintain.
+
+## MENU DRIVEN PROGRAM USING SWITCH CASE
+Problem Statement:
+Write a menu-driven program using Switch case to calculate the following:
+1. Area of circle
+2. Area of square
+3. Area of sphere
+
+Also use functions input() and output() to input and display respective values.
+```
+
+// C program to illustrate 
+// Menu-Driven program 
+// using Switch-case 
+  
+#include <stdio.h> 
+int input(); 
+void output(float); 
+int main() 
+{ 
+    float result; 
+    int choice, num; 
+    printf("Press 1 to calculate area of circle\n"); 
+    printf("Press 2 to calculate area of square\n"); 
+    printf("Press 3 to calculate area of sphere\n"); 
+    printf("Enter your choice:\n"); 
+    choice = input(); 
+      
+    switch (choice) { 
+    case 1: { 
+        printf("Enter radius:\n"); 
+        num = input(); 
+        result = 3.14 * num * num; 
+        printf("Area of sphere="); 
+        output(result); 
+        break; 
+    } 
+    case 2: { 
+        printf("Enter side of square:\n"); 
+        num = input(); 
+        result = num * num; 
+        printf("Area of square="); 
+        output(result); 
+        break; 
+    } 
+    case 3: { 
+        printf("Enter radius:\n"); 
+        num = input(); 
+        result = 4 * (3.14 * num * num); 
+        printf("Area of sphere="); 
+        output(result); 
+        break; 
+    } 
+    default: 
+        printf("wrong Input\n"); 
+    } 
+    return 0; 
+} 
+int input() 
+{ 
+    int number; 
+    scanf("%d", &number); 
+    return (number); 
+} 
+  
+void output(float number) 
+{ 
+    printf("%f", number); 
+} 
+```
+### OUTPUT
+```
+Press 1 to calculate area of circle
+Press 2 to calculate area of square
+Press 3 to calculate area of sphere
+Enter your choice:
+1
+Enter radius:
+5
+Area of circle=78.5
+```
