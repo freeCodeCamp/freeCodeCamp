@@ -123,3 +123,40 @@ which would end up looking like:
 <!-- Please add any articles you think might be helpful to read before writing the article -->
 * [HTML lists on w3schools](https://www.w3schools.com/html/html_lists.asp)
 * [HTML lists on WebPlatform](https://webplatform.github.io/docs/guides/html_lists/)
+
+(In this example, leading and trailing spaces are shown with with dots: ⋅)
+
+1. First ordered list item
+2. Another item
+⋅⋅* Unordered sub-list. 
+1. Actual numbers don't matter, just that it's a number
+⋅⋅1. Ordered sub-list
+4. And another item.
+
+⋅⋅⋅You can have properly indented paragraphs within list items. Notice the blank line above, and the leading spaces (at least one, but we'll use three here to also align the raw Markdown).
+
+⋅⋅⋅To have a line break without a paragraph, you will need to use two trailing spaces.⋅⋅
+⋅⋅⋅Note that this line is separate, but within the same paragraph.⋅⋅
+⋅⋅⋅(This is contrary to the typical GFM line break behaviour, where trailing spaces are not required.)
+
+* Unordered list can use asterisks
+- Or minuses
++ Or pluses
+First ordered list item
+Another item
+Unordered sub-list.
+Actual numbers don't matter, just that it's a number
+
+Ordered sub-list
+
+And another item.
+
+You can have properly indented paragraphs within list items. Notice the blank line above, and the leading spaces (at least one, but we'll use three here to also align the raw Markdown).
+
+To have a line break without a paragraph, you will need to use two trailing spaces.
+Note that this line is separate, but within the same paragraph.
+(This is contrary to the typical GFM line break behaviour, where trailing spaces are not required.)
+
+Unordered list can use asterisks
+Or minuses
+Or pluses
