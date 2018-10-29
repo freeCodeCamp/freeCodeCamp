@@ -39,6 +39,7 @@ A collection of helpful Angular resources
 *	<a href='https://frontendmasters.com/courses/building-apps-angular' target='_blank' rel='nofollow'>FrontendMasters - Building Awesomer Apps with Angular</a>
 *	<a href='https://ultimateangular.com/' target='_blank' rel='nofollow'>Ultimate Angular - Todd Motto</a>
 * <a href='https://www.udemy.com/the-complete-guide-to-angular-2/' target='_blank' rel='nofollow'>Angular 6 (formerly Angular 2) - The Complete Guide($)  Maximilian Schwarzmüller </a>
+* <a href="https://medium.com/@hamedbaatour/build-a-real-world-beautiful-web-app-with-angular-6-a-to-z-ultimate-guide-2018-part-i-e121dd1d55e" target='_blank' rel='nofollow'>Real World App Tutorial</a> - A tutorial to build a full Angular app, start to finish
 
 ## Blogs
 
