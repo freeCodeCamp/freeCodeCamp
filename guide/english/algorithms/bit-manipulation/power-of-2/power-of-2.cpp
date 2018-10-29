@@ -3,7 +3,6 @@
 using namespace std;
 int isPowerOfTwo (int x) {
     /**
-     * Function to check if a given number is a power of 2 
      *      x              : checks if x == 0 and 
      *      !(x & (x - 1)) : checks if x is a power of 2 
      */
