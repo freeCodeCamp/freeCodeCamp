@@ -67,6 +67,10 @@ You'll learn many of the first princliples for data science tools and how algori
 - ISBN-10: 1617294039
 - ISBN-13: 978-1617294037
 
+#### Learn Python Programming the Easy and Fun Way
+This book is written with the intention to let readers understand and learn Python programming in a fun and easy way. Basically everybody finds it hard to understand programming language. However with the right techniques and programming logics, anyone can learn Python programming easily.
+-[Amazon] (https://www.amazon.com/Learn-Python-Programming-Easy-Fun-ebook/dp/B0779J317M)
+
 #### Other Resources
 
 - [Functional Programming in Python by David Mertz [OREILLY] [FREE]](https://www.oreilly.com/programming/free/files/functional-programming-python.pdf)
