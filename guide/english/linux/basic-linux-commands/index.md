@@ -25,8 +25,10 @@ When starting out with linux, there are some basic commands everyone should know
  6. **rmdir** - remove directory   
 - Removes the directory that follows the command. `rmdir folder1` will delete the directory named folder1 if it exists.
 
+
  7. **rm** - remove   
 - This command removes files, not directories. `rm file.txt` will remove the file named file.txt as long as it exists and is in the current directory.
+- Use the Code `rm -rf directory` to delete directories even if not empty.
 - **Warning, this command is capable of destroying entire systems, use with caution**
 
  8. **touch** - creates file   
@@ -41,9 +43,10 @@ When starting out with linux, there are some basic commands everyone should know
 
  11. **less** - view file content  
 - Use `less filename.txt` to view contents of a file and navigate through them. By default, less will go through the file page by page.
-
+ 
  12. **cat** - display file's textual contents  
 - Use this command to display text from within a given file on your terminal. Entering `cat myFile.txt` in your terminal will display the contents of the file `myFile.txt` on screen. The `cat` command can be a very handy tool when used with the terminal _pipes_.
+- Use it to merge two or more files by using command `cat file1.txt file2.txt  new.txt`
 
  13. **clear** - clear terminal
 - Use `clear` to simply clear all output from your terminal.
@@ -61,9 +64,11 @@ When starting out with linux, there are some basic commands everyone should know
  25409 s004  Ss     0:00.04 login -pf <user>
 ```
 
- 15. **df -h** Checks disk space in human readable form
+ 16. **df -h** Checks disk space in human readable form
 - Shows the size, amount used, amount available and capacity percentage of mounted drives/partitions.
 
+ 17. **more** Display output one screen at a time, less provides more emulation and extensive enhancements.
+ - Use Command `more -d filenane` to display information page by page
 
 ### Useful Resources for Practice:
 - [JSLinux](https://bellard.org/jslinux/vm.html?url=https://bellard.org/jslinux/buildroot-x86.cfg): Run the terminal inside your browser. Great for practice.
