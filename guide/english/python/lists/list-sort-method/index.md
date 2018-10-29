@@ -114,3 +114,14 @@ More information about ```sort()``` can be found <a href='https://docs.python.or
 More information about sort() and sorted() can be found <a href='https://docs.python.org/3.6/tutorial/datastructures.html' target='_blank' rel='nofollow'>here</a>.
 
 More information about sort() and sorted() can be found <a href='https://docs.python.org/3.6/tutorial/datastructures.html' target='_blank' rel='nofollow'>here</a>. 
+
+
+#### When to use sort() vs sorted()
+
+list.sort() is used when you want to mutate the list, sorted() when you want a new sorted object back. Use sorted() when you want to sort something that is an iterable, not a list yet.
+### Performance
+
+For lists, list.sort() is faster than sorted() because it doesn't have to create a copy. For any other iterable, you have no choice.
+
+You cannot retrieve the original positions. Once you called list.sort() the original order is gone.
+
