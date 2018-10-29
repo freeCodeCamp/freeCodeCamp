@@ -14,7 +14,7 @@ Benefits:
 
 Here are two ways you can create Python virtual environments.
 
-## Virtualenv
+## 1. Virtualenv
 
 [`virtualenv`](https://virtualenv.pypa.io/en/stable/) is a tool used to create isolated Python environments. It creates a folder which contains all the necessary executables to use the packages that a Python project would need.
 
@@ -90,7 +90,7 @@ This puts you back to the system’s default Python interpreter with all its ins
 Simply delete the environment folder.
 
 
-## Conda
+## 2. Conda
 
 [`Conda`](https://conda.io/docs/index.html) is a package, dependency and environment management for many languages, including Python.
 
