@@ -3,8 +3,22 @@ title: Match Non-Whitespace Characters
 ---
 ## Match Non-Whitespace Characters
 
-This is a stub. <a href='https://github.com/freecodecamp/guides/tree/master/src/pages/certifications/javascript-algorithms-and-data-structures/regular-expressions/match-non-whitespace-characters/index.md' target='_blank' rel='nofollow'>Help our community expand it</a>.
+To finish this challenge, it's necessary to use the __/S__ character class in your regexp pattern.
 
-<a href='https://github.com/freecodecamp/guides/blob/master/README.md' target='_blank' rel='nofollow'>This quick style guide will help ensure your pull request gets accepted</a>.
+__\S__ matches a single character other than white space.
 
-<!-- The article goes here, in GitHub-flavored Markdown. Feel free to add YouTube videos, images, and CodePen/JSBin embeds  -->
+For example: 
+```javascript
+/\S\w*/ 
+// matches "foo" in "foo bar".
+```
+
+__important:__ Characters are case sensitive in regexp. 
+
+
+### Spoiiler Alert: Solution ahead
+```javascript
+let sample = "Whitespace is important in separating words";
+let countNonWhiteSpace = /\S/g; // Change this line
+let result = sample.match(countNonWhiteSpace);
+```
