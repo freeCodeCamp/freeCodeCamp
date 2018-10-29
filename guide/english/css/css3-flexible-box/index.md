@@ -8,7 +8,7 @@ The most important idea behind the Flexbox model is that the parent container ca
 
 
 <!-- The article goes here, in GitHub-flavored Markdown. Feel free to add YouTube videos, images, and CodePen/JSBin embeds  -->
-#### Basic usage
+#### Basic usage for horizontial centering
 Flexbox can be used to center any amount of given elements inside one element. A basic example of this is the following code:
 
 ``` css
@@ -23,6 +23,16 @@ Let's break down this example. First we set the display property to "flex" so we
 
 Now lets have a short look at "justify-content". This property declares how elements are distributed inside the parent element. We chose the "center" value. This means all elements inside this element will be centered.
 
+#### Basic usage for vertical centering
+This is another basic example of vertical centering:
+
+``` css
+.center-elements-inside {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+```
 #### More Information:
 To get a complete understanding of Flexbox, read <a href="https://medium.freecodecamp.org/understanding-flexbox-everything-you-need-to-know-b4013d4dc9af" target='_blank' rel="nofollow">Understanding Flexbox Everything you need to know</a> on the FreeCodeCamp Medium page.
 
