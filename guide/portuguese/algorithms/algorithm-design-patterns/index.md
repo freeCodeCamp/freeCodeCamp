@@ -12,7 +12,7 @@ Esses padrões são divididos em três categorias principais:
 
 ### Padrões Criacionais
 
-São padrões de design que lidam com mecanismos de criação de objetos, tentando criar objetos de maneira adequada à situação. A forma básica de criação de objetos pode resultar em problemas de design ou em complexidade adicional ao design. Padrões de design criativos resolvem esse problema controlando de alguma forma a criação desse objeto.
+São padrões de design que lidam com mecanismos de criação de objetos, tentando criar objetos de maneira adequada à situação. A forma básica de criação de objetos pode resultar em problemas de design ou em complexidade adicional ao design. Padrões de design criacionais resolvem esse problema controlando de alguma forma a criação desse objeto.
 
 ### Padrões Estruturais
 
