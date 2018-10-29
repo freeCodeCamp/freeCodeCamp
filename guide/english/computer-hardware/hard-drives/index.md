@@ -33,6 +33,8 @@ SSDs are commonly used as boot drives or storage for the most used applications 
 
 While most Hard Drives use either a SATA or SAS connector Solid State Drives often use other connections that can handle higher bandwidth and lower latencies, with the most notable being PCI Express (PCI-e) where form factors such as M.2 or U.2 dominate. Though other form factors are available, such as Intel's 'Yard stick' form factor or PCI-e cards that look quite similar to a low end graphics card.
 
+The one caviat to these is that they usually have a lower amount of full writes that the drives can do before starting to go bad.
+
 ## Solid State Hard Drives (SSHD) a.k.a Hybrid Drives
 Solid State Hard Drives fill a specific gap inbetween Solid State Drives and traditional hard drives.  It combines the relative affordable cost of cheap magnetic storage in traditional drives and pairs it with a smaller capacity Solid State Drive with the intent of using the SSD portion to cache frequently used data to increase performance over a plain traditional hard drive at a marginal cost. Hence the combination of the two technologies creates a "hybrid device" that is cost effectively but still is able to benenfit from the high performance of SSD drives primarily for low intensity workloads that mostly utilize read requests from the drive.
 

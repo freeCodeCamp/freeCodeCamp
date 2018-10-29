@@ -22,6 +22,10 @@ title: Books to Read for Programmers
 - [Amazon Smile](https://smile.amazon.com/Code-Language-Computer-Hardware-Software/dp/0735611319/ref=sr_1_1?s=books&ie=UTF8&qid=1508780869&sr=1-1&keywords=code)
 - ISBN-13: 978-0735611313
 
+*Coders at Work: Reflections on the Craft of Programming* by P. Seibel
+- [Amazon Smile](https://smile.amazon.com/Coders-Work-Reflections-Craft-Programming/dp/1430219483)
+- ISBN-13: 978-1430219484
+
 *DevOps Handbook:How to Create World-Class Agility, Reliability, and Security in Technology Organizations* by Gene Kim et al
 - [Amazon Smile](https://www.amazon.com/DevOps-Handbook-World-Class-Reliability-Organizations/dp/1942788002/ref=sr_1_4?s=books&ie=UTF8&qid=1539733859&sr=1-4&keywords=devops+handbook)
 - ISBN-13: 978-1942788003
@@ -33,10 +37,6 @@ title: Books to Read for Programmers
 *Programming Pearls (2nd Edition) by Jon Bentley*
 - [Amazon Smile](https://smile.amazon.com/Programming-Pearls-2nd-Jon-Bentley/dp/0201657880)
 - ISBN-13: 978-0201657883
-
-*Structure and Interpretation of Computer Programs*
-- https://mitpress.mit.edu/sicp/
-- ISBN-13: 978-0262510875
 
 *The Pragmatic Programmer: From Journeyman to Master* by Andrew Hunt and David Thomas
 - [Amazon Smile](https://smile.amazon.com/Pragmatic-Programmer-Journeyman-Master/dp/020161622X?sa-no-redirect=1)
@@ -96,6 +96,10 @@ title: Books to Read for Programmers
 - https://www.amazon.com/Pro-NET-Core-Andrew-Troelsen/dp/1484230175/ref=sr_1_1?s=books&ie=UTF8&qid=1539643534&sr=1-1&keywords=Pro-NET-Core-Andrew-Troelsen
 - ISBN-13: 978-1484230176
 
+*Murach's C# 2015 by Joel Murach (Author), Anne Boehm (Author)
+- https://www.amazon.com/Murachs-C-2015-Anne-Boehm/dp/1890774944
+- ISBN-13: 978-1890774943
+
 ## Coding Interview
 
 *Cracking the Coding Interview: 150 Programming Questions and Solutions*
@@ -106,6 +110,11 @@ title: Books to Read for Programmers
 - [Wiley](https://www.wiley.com/en-id/Programming+Interviews+Exposed:+Secrets+to+Landing+Your+Next+Job,+2nd+Edition-p-9780470121672)
 - ISBN: 978-0-470-12167-2
 
+## Database
+
+*Database Systems: Design, Implementation, & Management 12th Edition*
+- [Amazon Smile](https://smile.amazon.com/Database-Systems-Design-Implementation-Management/dp/1305627482/ref=sr_1_1?s=books&ie=UTF8&qid=1539892264&sr=1-1&keywords=database+systems+design%2C+implementation%2C+%26+management)
+
 ## Java
 
 *Head First Java* by Kathy Sierra and Bert Bates
@@ -115,6 +124,9 @@ title: Books to Read for Programmers
 *Effective Java by Joshua Bloch*
 - [Amazon Smile](https://smile.amazon.com/Effective-Java-3rd-Joshua-Bloch/dp/0134685997)
 - ISBN-13: 978-0134685991
+
+*Introduction to Java Programming and Data Structures by Y. Daniel Liang
+- [Amazon Smile](https://smile.amazon.com/Introduction-Programming-Structures-Comprehensive-Version/dp/0134670949/ref=sr_1_3?s=books&ie=UTF8&qid=1539892132&sr=1-3&keywords=introduction+to+java+programming+daniel+liang+11th+edition&pldnSite=1)
 
 ## JavaScript
 
@@ -144,6 +156,10 @@ title: Books to Read for Programmers
 *Core Python Applications Programming (3rd Edition) by Wesley J Chun*
 - [Amazon Smile](https://smile.amazon.com/Core-Python-Applications-Programming-3rd/dp/0132678209)
 - ISBN-13: 978-0132678209
+
+*Python Tricks: A Buffet of Awesome Python Features by Dan Bader*
+- [Amazon Smile](https://smile.amazon.com/Python-Tricks-Buffet-Awesome-Features-ebook/dp/B0785Q7GSY)
+- ISBN-13: 978-1775093305
 
 ## Soft Skills
 
@@ -245,6 +261,10 @@ https://books.goalkicker.com/OracleDatabaseBook/
 *Mastering Linux Shell Scripting by Andrew Mallett*
 - [Amazon](https://www.amazon.com/Mastering-Linux-Scripting-Andrew-Mallett/dp/1784396974/)
 - ISBN-13: 978-1784396978
+
+*The Innovator's Delimma*
+- [Amazon] (https://www.amazon.com/Innovators-Dilemma-Technologies-Management-Innovation-ebook/dp/B00E257S86_
+- ASIN: B00E257S86
 
 This list was compiled from multiple suggestion threads on Reddit and Stackoverflow. 
 

@@ -3,7 +3,7 @@ title: Strings
 ---
 # Strings
 
-Strings are sequences of characters. In Java, a `String` is an `Object`. Strings should not be confused with `char` as characters are literally 1 value rather than a sequence of characters. You can still use 1 value within a String, however it is preferred to use `char` when you are checking for 1 character.
+Strings are sequences of characters. In Java, a `String` is an `Object`. Strings should not be confused with `char` as characters are literally a single value rather than a sequence of characters. You can still use a single value within a String, however, it is preferred to use `char` when you are checking for a single character.
 
 ```java
 String course = "FCC";
@@ -37,7 +37,7 @@ String str2 = "This is a string";
 String str3 = new String("This is a string");
 ```
 
-The answer is: 2 String objects are created. `str` and `str2` both refer to the same object. `str3` has the same content but using `new` forced
+The answer is: **2** String objects are created. `str` and `str2` both refer to the same object. `str3` has the same content but using `new` forced
 the creation of a new, distinct, object.
 
 When you create a String literal, the JVM internally checks, what is known as the `String pool`, to see if it can find a similar (content wise)
@@ -62,16 +62,16 @@ public class StringExample{
       char ch[] = {'s','t','r','i','n','g','s'};  
       String s2 = new String(ch);  // converting char array to string  
       String s3 = new String("example");  // creating Java string by new keyword  
-      System.out.println(s1);  
-      System.out.println(s2);  
-      System.out.println(s3);  
+      System.out.println(s1); // prints "java" 
+      System.out.println(s2); // prints "strings"
+      System.out.println(s3); // prints "example"
    }
 }
 ```
 
 #### Comparing Strings 
-If you want to compare the value of two String variables, you can't use ==. This is due to the fact that this will compare the references of the variables
-and not the values that are linked to them. To compare the stored values of the Strings you use the method equals.
+If you want to compare the value of two String variables, you can't use `==`. This is due to the fact that this will compare the references of the variables
+and not the values that are linked to them. To compare the stored values of the Strings you use the `.equals()` method.
 
 ```java
 boolean equals(Object obj)
@@ -82,12 +82,13 @@ It returns true if two objects are equal and false otherwise.
 String str = "Hello world";
 String str2 = "Hello world";
 
-System.out.println(str == str2); // This prints false
-System.out.println(str.equals(str2); // This prints true
+System.out.println(str == str2); // This prints true
+System.out.println(str.equals(str2)); // This prints true
 ```
-The first comparison is false because "==" looks at the references and they aren't the same.
+The first comparison is true because "==" looks at the references and they are the same, because the JVM simply returns a reference
+to the same `"Hello world"` object created in the String Pool the first time.
 
-The second comparison is true because the variables store the same values. In this case "Hello world".
+The second comparison is true because the variables store the same values. In this case - `"Hello world"`.
 
 We have several inbuilt methods in String. The following is an example of the String Length() method .
 
