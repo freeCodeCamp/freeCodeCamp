@@ -43,11 +43,11 @@ You can help us to:
 
 - [🌐 Translate guide articles and coding challenges](#translate-guide-articles-and-coding-challenges)
 
-- [🛠 Fix bugs in freeCodeCamp.org's learning platform](#help-us-fix-bugs-in-freecodecamporgs-learning-platform)
+- [🛠 Fix bugs in freeCodeCamp.org's learning platform](#help-us-fix-bugs-in-freeCodeCamporgs-learning-platform)
 
-### Research, Write and Update our guide articles
+### Research, Write and Update our Guide Articles
 
-**What are Guide articles?**
+**What are Guide Articles?**
 
 Guide articles help you to get a quick understanding of a technology concept. These are short, plain-English explanations that you can read before going on to more in-depth resources.
 
@@ -67,7 +67,7 @@ If you would like to help improve guide articles, here's [how to work on guide a
 
 All our Coding challenges are curated by the community, bringing in expert knowledge from volunteers like you.
 
-You can help expand them and make their wording more clear. You can update the user stories to explain the concept better and even remove redundant ones. You can also improve the challenge tests to make them more accurately test people's code.
+You can help expand them and make their wording more clear. You can update the user stories to explain the concept better and even remove redundant ones. You can also improve the challenge tests so that testing of codes become more accurate and efficient.
 
 If you're interested in improving these coding challenges, here's [how to work on coding challenges](/docs/how-to-work-on-coding-challenges.md).
 
@@ -81,7 +81,7 @@ You can help us to translate our Guide articles and Coding challenges into a lan
 - [Spanish (Español)](https://github.com/freeCodeCamp/freeCodeCamp/tree/master/curriculum/challenges/spanish)
 - [Portuguese (Português)](https://github.com/freeCodeCamp/freeCodeCamp/tree/master/curriculum/challenges/portuguese)
 
-We would love your help in improving the quality of these translations. Millions of people use the English language version of freeCodeCamp.org, and we expect millions more to use these translated versions as well.
+We would love your help in improving the quality of these translations. Millions of people in the world use the English language version of freeCodeCamp.org, and we expect millions more to use these translated versions as well.
 
 ### Help us fix bugs in freeCodeCamp.org's learning platform
 
@@ -105,9 +105,9 @@ If you want to help us improve our codebase, here's [how to setup freeCodeCamp l
 
 **How can I report a bug that is not on board?**
 
-If you think you've found a bug, first read the ["Help I've Found a Bug"](https://forum.freecodecamp.org/t/how-to-report-a-bug/19543) article and follow its instructions.
+If you think you've found a bug, first read the ["Help I've Found a Bug"](https://forum.freecodecamp.org/t/how-to-report-a-bug/19543) article and follow its instructions carefully.
 
-If you're confident it's a new bug, go ahead and create a new GitHub issue. Be sure to include as much information as possible so that we can reproduce the bug. We have a pre-defined issue template to help you through this.
+If you're confident it's a new bug, go ahead and create a new GitHub issue. Be sure to include as much information as possible so that we can reproduce the bug. We have a pre-defined issue template to help you through this. Make sure your issue is not security related. For that there is another protocol to be followed as described elow.
 
 Please note that any issues that seek coding help on a challenge will be closed. The issue tracker is strictly for codebase related issues and discussions. Whenever in doubt, you should [seek assistance on the forum](https://www.freecodecamp.org/forum) before making a report.
 
@@ -138,4 +138,4 @@ If these issues lack clarity on what needs to be done, feel free to ask question
 
 **I found a typo, should I report an issue before I can make a pull request?**
 
-For typos and other wording changes, you can directly open pull requests without first creating an issue. Issues are more for discussing larger problems associated with code or structural aspects of the curriculum.
+For typos and other wording changes, you can directly open pull requests without creating an issue. Issues are meant for discussing larger problems associated with codes or structural aspects of the curriculum.
