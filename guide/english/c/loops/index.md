@@ -626,3 +626,44 @@ int main()
     return 0;
 }
 ```
+#### WAP to check whether a number is perfect or not.
+
+```
+#include <stdio.h>
+
+int main()
+{
+    int i, num, sum = 0;
+
+    /* Input a number from user */
+    printf("Enter any number to check perfect number: ");
+    scanf("%d", &num);
+
+    /* Calculate sum of all proper divisors */
+    for(i=1; i<num; i++)
+    {
+        /* If i is a divisor of num */
+        if(num%i == 0)
+        {
+            sum += i;
+        }
+    }
+
+    /* Check whether the sum of proper divisors is equal to num */
+    if(sum == num)
+    {
+        printf("%d is PERFECT NUMBER", num);
+    }
+    else
+    {
+        printf("%d is NOT PERFECT NUMBER", num);
+    }
+
+    return 0;
+}
+```
+OUTPUT
+```
+Enter any number to check perfect number: 6
+6 is PERFECT NUMBER
+```
