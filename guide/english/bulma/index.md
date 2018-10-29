@@ -9,7 +9,7 @@ Why Bulma?
 * Modular.
 * Modern.
 * Free (Source code on Github).
-* growing community.
+* Growing community.
 * Easy to learn.
 * Quick Customization.
 
