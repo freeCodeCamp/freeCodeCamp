@@ -1,14 +1,14 @@
 ---
 title: Strings
-localeTitle: Cordas
+localeTitle: Strings
 ---
-# Cordas
+# Strings
 
 Strings são seqüências de caracteres. Em Java, uma `String` é um `Object` . As strings não devem ser confundidas com `char` pois os caracteres são literalmente 1 valor em vez de uma sequência de caracteres. Você ainda pode usar 1 valor dentro de uma String, no entanto, é preferível usar `char` quando você está verificando 1 caractere.
 
 ```java
-String course = "FCC"; 
- System.out.println(course instanceof Object); 
+String curso = "Java básico"; 
+ System.out.println(curso instanceof Object); 
 ```
 
 Saída:
@@ -18,32 +18,32 @@ true
 
 Você pode criar um objeto String das seguintes maneiras:
 
-1.  `String str = "I am a String"; //as a String literal`
-2.  `String str = "I am a " + "String"; //as a constant expression`
-3.  `String str = new String("I am a String"); //as a String Object using the constructor`
+1.  `String str = "Essa é uma String"; //um objeto String`
+2.  `String str = "Eu sou uma " + "String"; //pode criar com concatenação`
+3.  `String str = new String("Essa é outra String"); //fazendo uma chamada ao construtor da classe String`
 
 Você pode estar pensando: qual é a diferença entre os três?
 
-Bem, o uso da `new` palavra-chave garante que um novo objeto `String` será criado e um novo local de memória será alocado no `Heap` memória [(clique aqui para saber mais)](https://docs.oracle.com/cd/E13150_01/jrockit_jvm/jrockit/geninfo/diagnos/garbage_collect.html) . Corda literais e constantes As expressões String são armazenadas em cache no momento da compilação. O compilador coloca-os no conjunto literal de cadeias para evitar duplicatas e melhorar o consumo de memória. A alocação de objetos é cara e esse truque aumenta o desempenho enquanto instancia Strings. Se você usar o mesmo literal novamente, a JVM usa o mesmo objeto. Usar o contructor como acima é quase sempre uma escolha pior.
+Bem, o uso da `new` palavra-chave garante que um novo objeto `String` será criado e um novo local de memória será alocado no `Heap` memória [(clique aqui para saber mais)](https://docs.oracle.com/cd/E13150_01/jrockit_jvm/jrockit/geninfo/diagnos/garbage_collect.html) . Strings literais e constantes As expressões String são armazenadas em cache no momento da compilação. O compilador coloca-os no conjunto literal de cadeias para evitar duplicatas e melhorar o consumo de memória. A alocação de objetos é cara e esse truque aumenta o desempenho enquanto instancia Strings. Se você usar o mesmo literal novamente, a JVM usa o mesmo objeto. Usar o contructor como acima é quase sempre uma escolha pior.
 
 Nesse trecho de código, quantos objetos String são criados?
 
 ```java
 String str = "This is a string"; 
- String str2 = "This is a string"; 
- String str3 = new String("This is a string"); 
+String str2 = "This is a string"; 
+String str3 = new String("This is a string"); 
 ```
 
 A resposta é: 2 objetos String são criados. `str` e `str2` referem-se ao mesmo objeto. `str3` tem o mesmo conteúdo, mas usando `new` forçadas a criação de um novo objeto distinto.
 
-Quando você cria um literal String, a JVM verifica internamente, o que é conhecido como o `String pool` , para ver se ele pode encontrar um semelhante (conteúdo sábio) Objeto String. Se encontrar, retorna a mesma referência. Caso contrário, basta ir em frente e cria um novo objeto String no pool para que a mesma verificação pode ser realizada no futuro.
+Quando você cria um literal String, a JVM verifica internamente, o que é conhecido como o `string pool` , para ver se ele pode encontrar um semelhante Objeto String. Se encontrar, retorna a mesma referência. Caso contrário, basta ir em frente e cria um novo objeto String no pool para que a mesma verificação pode ser realizada no futuro.
 
-Você pode testar isso usando a andorinha, a comparação rápida de objetos `==` e os `equals()` implementados.
+Você pode testar isso usando a comparação de objetos com `==` e o `equals()`.
 
 ```java
-System.out.println(str == str2); // This prints 'true' 
- System.out.println(str == str3); // This prints 'false' 
- System.out.println(str.equals(str3)); // This prints 'true' 
+System.out.println(str == str2); // Vai imprimir 'true' 
+System.out.println(str == str3); // Vai imprimir 'false' 
+System.out.println(str.equals(str3)); // Vai imprimir 'true' 
 ```
 
 Aqui está outro exemplo de como criar uma string em Java usando os diferentes métodos:
@@ -52,10 +52,10 @@ Aqui está outro exemplo de como criar uma string em Java usando os diferentes m
 public class StringExample{ 
  
    public static void main(String args[]) { 
-      String s1 = "java";  // creating string by Java string literal 
+      String s1 = "java";  // criando um objeto string literal 
       char ch[] = {'s','t','r','i','n','g','s'}; 
-      String s2 = new String(ch);  // converting char array to string 
-      String s3 = new String("example");  // creating Java string by new keyword 
+      String s2 = new String(ch);  // convertendo o array de char em string
+      String s3 = new String("example");  // fazendo uma chamada ao construtor da classe String
       System.out.println(s1); 
       System.out.println(s2); 
       System.out.println(s3); 
@@ -63,9 +63,9 @@ public class StringExample{
  } 
 ```
 
-#### Comparando Cordas
+#### Comparando Strings
 
-Se você quiser comparar o valor de duas variáveis ​​String, não será possível usar ==. Isso se deve ao fato de que isso vai comparar as referências das variáveis e não os valores que estão ligados a eles. Para comparar os valores armazenados das Strings, você usa o método igual a.
+Se você quiser comparar o valor de duas variáveis ​​String, não será possível usar ==. Isso se deve ao fato de que isso vai comparar as referências das variáveis e não os valores que estão ligados a eles. Para comparar os valores armazenados das Strings, você usa o método equals.
 
 ```java
 boolean equals(Object obj) 
@@ -75,15 +75,15 @@ Retorna true se dois objetos são iguais e false caso contrário.
 
 ```java
 String str = "Hello world"; 
- String str2 = "Hello world"; 
+String str2 = "Hello world"; 
  
- System.out.println(str == str2); // This prints false 
- System.out.println(str.equals(str2); // This prints true 
+System.out.println(str == str2); // Vai imprimir false 
+System.out.println(str.equals(str2); // Vai imprimir true 
 ```
 
 A primeira comparação é falsa porque "==" analisa as referências e elas não são as mesmas.
 
-A segunda comparação é verdadeira porque as variáveis ​​armazenam os mesmos valores. Neste caso, "Olá mundo".
+A segunda comparação é verdadeira porque as variáveis ​​armazenam os mesmos valores. Neste caso, "Hello world".
 
 Temos vários métodos internos em String. A seguir, um exemplo do método String Length ().
 
@@ -108,7 +108,7 @@ Isto irá resultar em - `String Length is : 17`
 4.  A classe string possui um `length()` nome de método `length()` , enquanto matrizes têm um comprimento de nomenclatura de atributo.
 5.  Em java, objetos string são imutáveis. Imutável significa simplesmente inalterável ou imutável. Uma vez criado o objeto string, seus dados ou estados não podem ser alterados, mas um novo objeto string é criado.
 
-Comprimento da corda
+Comprimento da string
 
 O "comprimento" de uma string é apenas o número de caracteres nela. Então, "hi" é length 2 e "Hello" é length 5. O método length () em uma string retorna seu tamanho, assim:
 
@@ -124,7 +124,7 @@ String a = "Hello";
 ```java
 String a = "HELLO"; 
  String b = "hello"; 
- System.out.println(a.equalsIgnoreCase(b));   // It will print true 
+ System.out.println(a.equalsIgnoreCase(b));   // Vai imprimir true 
 ```
 
 2.  compareTo: - compara o valor lexicograficamente e retorna um inteiro.
