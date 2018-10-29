@@ -54,6 +54,10 @@ title: Books to Read for Programmers
 - [Amazon Smile](https://smile.amazon.com/Soft-Skills-software-developers-manual/dp/1617292397?pldnSite=1)
 - ISBN-13: 9781617292392
 
+*Starting Out With Programming Logic and Design (3rd Edition)* - Tony Gaddis
+- [Amazon](https://www.amazon.com/Starting-Out-Programming-Logic-Design/dp/0132805456/ref=pd_lpo_sbs_14_t_1/142-7610291-8628546?_encoding=UTF8&psc=1&refRID=Y9WHSADEYRHTAJD4HXP0)
+- ISBN-13: 978-0132805452
+
 ## Algorithms
 
 *Introduction to Algorithms, 3rd Edition (MIT Press)* by Thomas H. Cormen and Charles E. Leiserson
