@@ -14,7 +14,7 @@ To learn more about Python, check out these pages on python.org:
 
 ## Python 2 or Python 3
 
-*   The two versions are similar, with knowledge of one switching to writing code for the other is easy.
+*   The two versions are similar. If you're know the version 2, switching to version 3 will be easy.
 *   <a href='https://wiki.python.org/moin/Python2orPython3' target='_blank' rel='nofollow'>Python 2 or Python 3</a>
     *   <a href='https://www.python.org/dev/peps/pep-0373/' target='_blank' rel='nofollow'>Python 2.x will not be maintained past 2020.</a> 
     * 3.x is under active development. This means that all recent standard library improvements, for example, are only available by default in Python 3.x.
