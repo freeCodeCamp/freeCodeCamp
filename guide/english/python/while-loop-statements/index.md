@@ -5,7 +5,7 @@ title: While Loop Statements
 
 <!-- Please add any articles you think might be helpful to read before writing the article -->
 
-Python utilizes the `while` loop similarly to other popular languages.  The `while` loop evaluates a condition then executes a block of code if the condition is true. The block of code executes repeatedly until the condition becomes false.
+Python utilizes the `while` loop similarly to other popular languages.  The `while` loop evaluates a condition then executes a block of code if the condition is true. The block of code executes repeatedly until the condition becomes false. These `while` loops are to prefer in situations where the condition for it to work is known. In other cases where you might want to get input from a user for instance, it is better to use a `for` loop.
 
 The basic syntax is:
 
