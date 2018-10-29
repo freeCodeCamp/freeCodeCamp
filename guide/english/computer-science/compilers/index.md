@@ -57,3 +57,4 @@ All compilers need to perform these steps. Most modern compilers also carry out 
 
 #### More Information:
 <a href='https://medium.freecodecamp.org/a-gentler-introduction-to-programming-707453a79ee8' target='_blank' rel='nofollow'>Matt Adesanya's "A Gentler Introduction to Programming"</a> covers compilers vs. interpreters, along with other basic programming concepts.
+## Backus Naur form:(BNF) describes the syntax of "sentences" of a language and was used for the syntax of Algol 60 by John Backus.[4] The ideas derive from the context-free grammar concepts by Noam Chomsky, a linguist.[5] "BNF and its extensions have become standard tools for describing the syntax of programming notations, and in many cases parts of compilers are generated automatically from a BNF description.
