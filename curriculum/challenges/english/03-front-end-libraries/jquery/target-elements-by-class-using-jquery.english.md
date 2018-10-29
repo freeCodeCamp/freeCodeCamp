@@ -27,10 +27,10 @@ For example, you could make all the elements with the class <code>text-primary</
 
 ```yml
 tests:
-  - text: 'Use the jQuery <code>addClass&#40&#41</code> function to give the classes <code>animated</code> and <code>shake</code> to all your elements with the class <code>well</code>.'
-    testString: 'assert($(".well").hasClass("animated") && $(".well").hasClass("shake"), "Use the jQuery <code>addClass&#40&#41</code> function to give the classes <code>animated</code> and <code>shake</code> to all your elements with the class <code>well</code>.");'
+  - text: Use the jQuery <code>addClass&#40&#41</code> function to give the classes <code>animated</code> and <code>shake</code> to all your elements with the class <code>well</code>.
+    testString: assert($(".well").hasClass("animated") && $(".well").hasClass("shake"), 'Use the jQuery <code>addClass&#40&#41</code> function to give the classes <code>animated</code> and <code>shake</code> to all your elements with the class <code>well</code>.');
   - text: Only use jQuery to add these classes to the element.
-    testString: 'assert(!code.match(/class\.\*animated/g), "Only use jQuery to add these classes to the element.");'
+    testString: assert(!code.match(/class\.\*animated/g), 'Only use jQuery to add these classes to the element.');
 
 ```
 

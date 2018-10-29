@@ -92,7 +92,83 @@ Result:
 	  </tbody>
 	</table>
 
+## Adding/Removing table border
+The table border width can be increased/decreased using the table border attribute.
+
+### Table Border Example
+```html
+<table border = "1">
+  <tr>
+    <th>Fruits</th>
+    <th>Quantity</th> 
+  </tr>
+  <tr>
+    <td>Apple</td>
+    <td>2</td> 
+  </tr>
+</table>
+```
+Result:
+<table border = "1">
+  <tr>
+    <th>Fruits</th>
+    <th>Quantity</th> 
+  </tr>
+  <tr>
+    <td>Apple</td>
+    <td>2</td> 
+  </tr>
+</table>
+
+```html
+<table border = "0">
+  <tr>
+    <th>Fruits</th>
+    <th>Quantity</th> 
+  </tr>
+  <tr>
+    <td>Apple</td>
+    <td>2</td> 
+  </tr>
+</table>
+```
+Result:
+<table border = "0">
+  <tr>
+    <th>Fruits</th>
+    <th>Quantity</th> 
+  </tr>
+  <tr>
+    <td>Apple</td>
+    <td>2</td> 
+  </tr>
+</table>
+
+```html
+<table border = "2">
+  <tr>
+    <th>Fruits</th>
+    <th>Quantity</th> 
+  </tr>
+  <tr>
+    <td>Apple</td>
+    <td>2</td> 
+  </tr>
+</table>
+```
+Result:
+<table border = "2">
+  <tr>
+    <th>Fruits</th>
+    <th>Quantity</th> 
+  </tr>
+  <tr>
+    <td>Apple</td>
+    <td>2</td> 
+  </tr>
+</table>
+
+
 
 #### More Information:
-
 <a href='https://developer.mozilla.org/en-US/docs/Web/HTML/Element/table' target='_blank' rel='nofollow'>MDN Article on the HTML <table> tag</a>
