@@ -8,7 +8,7 @@ export default function extendEmail(app) {
   );
   AccessToken.prototype.validate$ = Observable.fromNodeCallback(
     AccessToken.prototype.validate
-  );
+  (:
   AccessToken.prototype.destroy$ = Observable.fromNodeCallback(
     AccessToken.prototype.destroy
   );
