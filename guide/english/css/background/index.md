@@ -12,6 +12,7 @@ Here is an example of setting the background color for a web page to green.
 ```css
   body {
     background-color: green;
+    background-color: blue;
   }
 ```
 ![fullbackground](https://user-images.githubusercontent.com/26467304/31036038-845567f2-a538-11e7-8e6c-8a52bb0d44b8.png)
