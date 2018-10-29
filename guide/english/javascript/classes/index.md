@@ -178,6 +178,6 @@ class Person {
 
 #### More Information:
 <!-- Please add any articles you think might be helpful to read before writing the article -->
-* `class` keyword <a href='https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Classes' target='_blank' rel='nofollow'>MDN Docs</a>
+* [MDN Docs](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Classes)
 
 
