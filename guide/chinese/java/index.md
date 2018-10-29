@@ -1,6 +1,6 @@
 ---
 title: Java
-localeTitle: Java的
+localeTitle: Java
 ---
 **什么是Java？**
 
@@ -110,10 +110,10 @@ Java有大量[文档记录](https://docs.oracle.com/javase/8/docs/) ，因为它
 
 此外，这里是Java编码的免费IDE列表：
 
-*   [NetBeans的](https://netbeans.org/)
+*   [NetBeans](https://netbeans.org/)
 *   [日食](https://eclipse.org/)
 *   [IntelliJ IDEA](https://www.jetbrains.com/idea/features/)
 *   [Android Studio](https://developer.android.com/studio/index.html)
-*   [BlueJ的](https://www.bluej.org/)
-*   [jEdit的](http://www.jedit.org/)
+*   [BlueJ](https://www.bluej.org/)
+*   [jEdit](http://www.jedit.org/)
 *   [Oracle JDeveloper](http://www.oracle.com/technetwork/developer-tools/jdev/overview/index-094652.html)

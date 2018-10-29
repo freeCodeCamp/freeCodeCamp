@@ -26,7 +26,7 @@ Find S(13082761331670030).
 ```yml
 tests:
   - text: <code>euler271()</code> should return 4617456485273130000.
-    testString: 'assert.strictEqual(euler271(), 4617456485273130000, "<code>euler271()</code> should return 4617456485273130000.");'
+    testString: assert.strictEqual(euler271(), 4617456485273130000, '<code>euler271()</code> should return 4617456485273130000.');
 
 ```
 

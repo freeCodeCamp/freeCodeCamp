@@ -1,10 +1,12 @@
 ---
 title: Accessibility Basics
 ---
+
+## Accessibility Basics
+
 > "The Dark Arts are many, varied, ever-changing, and eternal. Fighting them is like fighting a many-headed monster, which, each time a neck is severed, sprouts a head even fiercer and cleverer than before. You are fighting that which is unfixed, mutating, indestructible."
 >
 > --Professor Severus Snape, Harry Potter Series
-
 
 Accessibility's role in development is essentially understanding the user's perspective and needs, and knowing that the web, and applications are a solution for people with disabilities.
 
@@ -59,7 +61,7 @@ There's variations on this legislation all over the world, some more severe and 
 
 ## Ok, so accessibility is a big deal. Now how do we implement it?
 
-That question, sadly, is harder to answer than it may seem. The Harry Potter quote at the top is there for a reason, and its not my being an avid Fantasy reader.
+That question, sadly, is harder to answer than it may seem. The Harry Potter quote at the top is there for a reason, and it's not my being an avid Fantasy reader.
 
 As I stated above, accessibility is important for a large group of different people, each with their own needs. Making your website work for literally everyone is a large, on-going task.
 
