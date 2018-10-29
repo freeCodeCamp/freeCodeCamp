@@ -7,7 +7,7 @@ localeTitle: Libros en lenguaje de programación Python
 _Piense Python 2e_
 
 *   Gratis (libro electrónico) que cubre los conceptos básicos de Python. Es amigable para los principiantes y es una necesidad para las personas que son nuevas en la programación.
-*   [Amazon](https://www.amazon.com/gp/product/1491939362/ref=as_li_qf_sp_asin_il_tl?ie=UTF8&camp=1789&creative=9325&creativeASIN=1491939362&linkCode=as2&tag=greenteapre01-20&linkId=XCU5FNNNMXRHDD7X)
+*   [Amazon](https://www.smile.amazon.com/gp/product/1491939362/ref=as_li_qf_sp_asin_il_tl?ie=UTF8&camp=1789&creative=9325&creativeASIN=1491939362&linkCode=as2&tag=greenteapre01-20&linkId=XCU5FNNNMXRHDD7X)
 *   ISBN-13: 978-1491939369
 *   [Sitio web](http://greenteapress.com/wp/think-python-2e/)
 *   [E-libro](http://greenteapress.com/thinkpython2/html/index.html) (gratis)
@@ -16,7 +16,7 @@ _Aprende Python 3 de la manera difícil_
 
 *   Libro pagado (libro electrónico gratuito disponible) que cubre los conceptos básicos de python. Está diseñado para que comiences con el lenguaje Python y te familiarices con su sintaxis y funcionamiento al momento de completar el libro.
     
-*   [Amazon](https://www.amazon.com/Learn-Python-Hard-Way-Introduction/dp/0134692888)
+*   [Amazon](https://www.smile.amazon.com/Learn-Python-Hard-Way-Introduction/dp/0134692888)
     
 *   ISBN-13: 978-0134692883
     
