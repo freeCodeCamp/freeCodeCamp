@@ -2,6 +2,8 @@
 title: IPv4 Header 
 localeTitle: Encabezado IPv4
 ---
+La traduccion de este articulo fue basado en la version igles, escrito por cmccormack, disponible aqui, https://github.com/freeCodeCamp/freeCodeCamp/blob/master/guide/english/network-engineering/ipv4-header/index.md
+
 ## Formato de encabezado IPv4
 
 El imagen del formato del encabezado IPv4 segun [RFC791](https://tools.ietf.org/html/rfc791):
