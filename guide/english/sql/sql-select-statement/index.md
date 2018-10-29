@@ -32,6 +32,12 @@ from student;
 9 rows in set (0.00 sec)
 ```
 
+If you wish to view all the columns of a table, you can use the `*` wildcard value in your SELECT statement. For example:
+```sql
+select *
+from student;
+```
+
 *As with all of these SQL things there is MUCH MORE to them than what's in this introductory guide.  
 
 I hope this at least gives you enough to get started.  
