@@ -1,0 +1,92 @@
+# Kod meydan okumaları nasıl yapılır
+
+### Github üzerinde değiştirme
+
+Her bir meydan okuma kendi dosyasında saklanır. Bu Github içerisinden meydan okumaları düzenlemeyi kolay yapar.
+Kendi yerel sisteminde çalışan bir şey olmaksızın bir değişiklik yapabilirsin.
+
+Değişiklik etmek istediğin dosyayı Github arayüzünde bulduktan sonra, dosyayı düzenlemeye başlamak için kalem ikonuna tıkla. Eğer halihazırda bu projeye sahip değilsen, bu otomatik olarak projenin çatallamasını oluşturacaktır.
+
+Ayrıca projeyi kolanlayabilir ve yerelde kendi bilgisayarında düzenleyebilirsin. Bununla ilgili yardım için, Ana dosyayı oku [contributing guide](/CONTRIBUTING.md).
+
+### Meydan okuma teması
+
+Meydan okuma dosyası bu şekilde gözükmelidir.
+
+````md
+---
+id: Unique identifier (alphanumerical, MongoDB _id)
+title: Challenge Title
+challengeType: 0
+guideUrl: 'url of guide article'
+videoUrl: 'url of video explaination'
+---
+
+## Tanım
+<section id='description'>
+Meydan okumanın bir tanımı ve bunu geçirmek için ne gerekli olduğu.
+</section>
+
+## Yönergeler
+<section id='instructions'>
+Ne edilmesi gerektiğiyle ilgili yönergeler.
+</section>
+## Tests
+<section id='tests'>
+
+``` yml
+- text: Should return "foo".
+  testString: 'A stringified function using Chai asserts'
+```
+
+</section>
+
+<div id='js-seed'>
+
+```js
+Code desplayed in the editor by default.
+```
+
+</div>
+
+### Before Test
+<div id='js-setup'>
+
+```js
+Test setup code.
+```
+
+</div>
+
+</section>
+
+### After Test
+<div id='js-teardown'>
+
+```js
+Test tear down code.
+```
+
+</div>
+
+</section>
+
+## Solution
+<section id='solution'>
+
+```js
+Challenge solution code.
+```
+
+</section>
+````
+
+### Faydalı linkler
+
+Oluşturma ve düzenleme meydan okumaları:
+
+1. [Challenge Style Guide](style-guide-for-curriculum-challenges.md) - how to create and format challenges
+
+2. [Challenge types](https://github.com/freeCodeCamp/learn/blob/a5cb25704168aa37f59a582f0bb5a19b7bd89b46/utils/challengeTypes.js) - what the numeric challenge type values mean (enum).
+
+3. [Contributing to FreeCodeCamp - Writing ES6 Challenge Tests ](https://www.youtube.com/watch?v=iOdD84OSfAE#t=2h49m55s) - a video following [Ethan Arrowood](https://twitter.com/ArrowoodTech) as he contributes to the old version of the curriculum
