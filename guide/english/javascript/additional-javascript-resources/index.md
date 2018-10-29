@@ -64,8 +64,12 @@ title: JavaScript Tutorials and Other Resources
     Open source text editor made by GitHub.
     
 *   [Brackets](http://brackets.io)
+
+    Lightweight text editor featuring inline editors, live previews, and allows you to quick edit and live highlight with your LESS and SCSS files.
+    
 *   [Sublime Text](https://www.sublimetext.com)
 
+    A cross-platform editor with a Python API. It features many shortcuts, key bindings and visual customization.
   
 ## Online Editors
 
