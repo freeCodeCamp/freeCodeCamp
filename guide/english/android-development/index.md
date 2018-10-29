@@ -87,3 +87,10 @@ The link to the advanced course is here - [Advanced Android App Development](htt
 [Installing Android Studio](https://developer.android.com/studio/install)  
 [Running Apps in an Emulator](https://developer.android.com/studio/run/emulator)
 
+### Useful Libraries
+ [Retrofit](https://square.github.io/retrofit/) - HTTP Requests made easy.
+ 
+ [Room Persistence Library](https://developer.android.com/topic/libraries/architecture/room) - Google's database wrapper to make storing local data easier.
+ 
+ [LiveData](https://developer.android.com/topic/libraries/architecture/livedata) - Google's lifecycle aware library for making your UI react to data.
+ 
