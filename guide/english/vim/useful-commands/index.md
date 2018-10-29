@@ -135,3 +135,4 @@ Read the rest of our Vim Guides to get a better understanding of this powerful e
 - [Vim Golf](https://vimgolf.com/) - A good way to learn from doing vim challenges to get the lowest amount of keystrokes. You can see solutions submitted by others if you can't figure the challenge out.
 - [Vim Adventures](https://vim-adventures.com/) - A fun and gamified approach to learn Vim where you lern the different key strokes with every new level in the game.
 - <a href='http://www.openvim.com/' target='_blank' rel='nofollow'>Open Vim</a> - An interactive vim tutorial that teaches basic commands
+- [Vim Casts](http://vimcasts.org/) - A place to see other people show tips and tricks through screen casts.
