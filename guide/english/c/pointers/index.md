@@ -282,4 +282,5 @@ Most of the time, pointer and array accesses can be treated as acting the same, 
     p++; /*Legal*/
     a++; /*illegal*/ 
 ```
+6) Pointer arithmetic is meaningless unless performed on an array
 
