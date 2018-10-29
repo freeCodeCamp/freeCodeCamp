@@ -30,3 +30,4 @@ Often their role is to: guide the sprint planning, monitor daily standup, conduc
 
 - <a href="https://www.scrum.org/resources/what-is-a-scrum-master" target="_blank" rel="nofollow">What is a Scrum Master</a>
 - <a href="https://www.scrum.org/resources/scrum-guide" rel="nofollow">Scrum Guide</a> 
+- <a href="https://www.scrumguides.org/scrum-guide.html#team-sm" rel="nofollow">The Scrum Master role</a> 
