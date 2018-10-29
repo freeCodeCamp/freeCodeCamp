@@ -35,7 +35,7 @@ This full-color book will show you how to make your websites more interactive an
 
 - [Amazon](https://www.amazon.com/JavaScript-JQuery-Interactive-Front-End-Development/dp/1118531647)
 
-
+Picccckkllllllle Rickkkkkkkkkkkkkkk
 #### Other Resources
 
 - A selection of online free resources; including e-books for JavaScript are available at [JS Books](https://jsbooks.revolunet.com/)
