@@ -29,3 +29,5 @@ The site [CSS Zen Garden](http://www.csszengarden.com/) is a great example how t
 For a demonstration of the power of CSS, check out [Species In Pieces](http://species-in-pieces.com/#).
 
 To find some awesome articles and summaries of Front End Development related ideas visit [CSS-Tricks](https://css-tricks.com)
+
+For a complete visual guide to CSS check out [Visual CSS Reference](https://cssreference.io/)
