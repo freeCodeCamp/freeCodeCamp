@@ -52,7 +52,7 @@ Mira este video de demostración o sigue los siguientes pasos:
     ```md
     Solución: Actualizar articúlo de guía sobre HTML
     Solución: Actualizar scripts para Travis-CI
-    feat: Añadir articulo sobre JavaScript hosting
+    feat: Añadir articulo sobre JavaScript hoisting
     Documentos: Actualizadas recomendaciones de contribución
     ```
 
