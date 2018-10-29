@@ -10,8 +10,8 @@ Las condiciones generalmente devuelven `true` o `false` cuando se analizan.
 
 Un bucle continuará ejecutándose hasta que la condición definida devuelva `false` .
 
-Puede escribir `php for` , `php while` o `php do while` obtiene más información sobre cualquiera de estos.
+Puede escribir `php for` , `php while` o `php do while` para obtener más información sobre cualquiera de estos.
 
 ### Más información
 
-*   [PHP.net - Para Loops](https://secure.php.net/manual/control-structures.for.php)
+*   [PHP.net - For Loops](https://secure.php.net/manual/control-structures.for.php)
