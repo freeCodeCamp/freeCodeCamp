@@ -26,7 +26,7 @@ iex> tuple
 ## Pattern Matching
 
 The most common use of tuples in Elixir is as a return for a function. For example: `{:ok, "Hello World\n"}`
-This is a very helpful, as it enables the use of Pattern Matching to handle these returns.
+This is very helpful, as it enables the use of Pattern Matching to handle these returns.
 
 #### More Information:
 * [elixir-lang.org | recursion](https://elixir-lang.org/getting-started/basic-types.html#tuples)
