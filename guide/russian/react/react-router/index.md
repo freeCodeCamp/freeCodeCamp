@@ -1,3 +1,9 @@
+
+---
+title: React Router
+localeTitle: React Router
+---
+
 # React Router для начинающих
 
 # Установка
@@ -21,7 +27,7 @@ React Router был разбит на три пакета: `react-router` , `rea
 # Импортирование
 
 ```javascript
-import { BrowserRouter as Router, Switch, Route, Link } from 'react-router-dom'; 
+import { BrowserRouter as Router, Switch, Route, Link } from 'react-router-dom';
 ```
 
 ## Компонент Links
@@ -35,11 +41,11 @@ import { BrowserRouter as Router, Switch, Route, Link } from 'react-router-dom';
 Основной способ разрешить пользователям перемещаться по вашему приложению. `<Link>` сделает полностью доступный тег ссылки с соответствующим адресом href. Для начала создадим компонент Nav. Наш компонент Nav будет содержать компоненты `<Link>` и будет выглядеть следующим образом:
 
 ```javascript
-const Nav = () => ( 
-  <div> 
-    <Link to='/'>Home</Link>&nbsp; 
-    <Link to='/address'>Address</Link> 
-  </div> 
- ) 
+const Nav = () => (
+  <div>
+    <Link to='/'>Home</Link>&nbsp;
+    <Link to='/address'>Address</Link>
+  </div>
+ )
 
 ```

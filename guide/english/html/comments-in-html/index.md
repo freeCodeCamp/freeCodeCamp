@@ -3,7 +3,7 @@ title: Comments in HTML
 ---
 ## Comments in HTML
 
-The comment tag is an element used to leave notes, mostly related to the project or the website. This tag is frequently used to explain something in the code or leave some recommendations about the project. The comment tag also makes it easier for the developer to come back and understand the code he's written at a later stage. Comments can also used for commenting out lines of code for debugging purposes.
+The comment tag is an element used to leave notes, mostly related to the project or the website. This tag is frequently used to explain something in the code or leave some recommendations about the project. The comment tag also makes it easier for the developer to come back and understand the code he's written at a later stage. Comments can also be used for commenting out lines of code for debugging purposes.
 
 It is good practice to add comments to your code, especially when working with a team or at a company.  
 
@@ -29,9 +29,9 @@ Read more: https://html.com/tags/comment-tag/#ixzz4vtZHu5uR
 </html>
 ```
 ## Conditional Comments
-Conditional Comments defines some HTML tags to be excuted when a certain codition is fullfilled. 
+Conditional Comments defines some HTML tags to be executed when a certain condition is fulfilled. 
 
-Conditional Comments are only recognised by Internet Explorer Version 5 through to Version 9 (IE5 - IE9).
+Conditional Comments are only recognized by Internet Explorer Version 5 through to Version 9 (IE5 - IE9).
 
 ### Example
 ```html
@@ -48,7 +48,7 @@ Conditional Comments are only recognised by Internet Explorer Version 5 through 
 
 ### IE Conditional Comments
 
-These comments are only available in Internet Explorer and can be used up to IE9. In the current times, there is a good change you will never see them, but it is good to know about their existance. Conditional Comments are a way to serve a different experience for different client browsers. For example:
+These comments are only available in Internet Explorer and can be used up to IE9. There is a chance you will never see them, but it is good to know about their existance as they do exist on some older sites. Conditional Comments are a way to serve a different and/or optimal experience for different client browsers. For example:
 
 ```html
 <!--[if lt IE 9]> <p>Your browser is lower then IE9</p> <![endif]-->     
