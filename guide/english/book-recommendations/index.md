@@ -56,6 +56,11 @@ title: Books to Read for Programmers
 - [Amazon Smile](https://smile.amazon.com/Data-Structures-Algorithms-Made-Easy/dp/819324527X)
 - ISBN-13: 978-8193245279
 
+*Grokking Algorithms: An illustrated guide for programmers and other curious people* by Aditya Bhargava
+- [Amazon Smile](https://smile.amazon.com/Grokking-Algorithms-illustrated-programmers-curious/dp/1617292230/)
+- ISBN-13: 978-1617292231
+
+
 ## BASH
 
 *The Linux Command Line: A Complete Introduction 1st Edition by William E. Shotts Jr*
@@ -72,8 +77,8 @@ title: Books to Read for Programmers
 - [Amazon Smile](https://smile.amazon.com/Book-Programming-4th-Al-Kelley/dp/0201183994)
 - ISBN-13: 978-0201183993
 
-*C Notes for Professionals book
--https://books.goalkicker.com/CBook/
+*C Notes for Professionals book*
+- https://books.goalkicker.com/CBook/
 
 *Head First C: A Brain-Friendly Guide*
 - [Amazon Smile](https://smile.amazon.com/Head-First-C-Brain-Friendly-Guide/dp/1449399916)
@@ -133,6 +138,7 @@ title: Books to Read for Programmers
 
 *Eloquent JavaScript: A Modern Introduction to Programming by Marijn Haverbeke*
 - [Read it online here](https://eloquentjavascript.net)
+
 - [Amazon Smile](https://smile.amazon.com/gp/product/1593275846)
 -ISBN-13: 978-1593275846
 
@@ -194,11 +200,12 @@ title: Books to Read for Programmers
 
 ## Other
 
+
 *Bitcoin and Cryptocurrency Technologies: A Comprehensive Introduction*
 - [Amazon Smile] (https://smile.amazon.com/Bitcoin-Cryptocurrency-Technologies-Comprehensive-Introduction/dp/0691171696)
 - ISBN-13: 978-0691171692
 
-*Code: The Hidden Language of Computer Hardware and Software (Developer Best Practices) *
+*Code: The Hidden Language of Computer Hardware and Software (Developer Best Practices)*
 - [Amazon Smile](https://smile.amazon.com/Code-Language-Computer-Hardware-Software/dp/0735611319)
 - ISBN-13: 978-0735611313
 
@@ -217,6 +224,10 @@ title: Books to Read for Programmers
 *Deep Learning by Ian Goodfellow, Yoshua Bengio, Aaron Courville*
 - [Amazon Smile](https://smile.amazon.com/Deep-Learning-Adaptive-Computation-Machine/dp/0262035618)
 - ISBN: 978-0262035613
+
+*Facts and Fallacies of Software Engineering*
+- [Amazon Smile](https://smile.amazon.com/Facts-Fallacies-Software-Engineering-Robert/dp/0321117425/)
+- ISBN-13: 978-0321117427
 
 *GATE 2019 Computer Science and Information Technology*
 - [Amazon Smile](https://smile.amazon.com/GATE-Computer-Science-Information-Technology/dp/194658178X)
@@ -243,10 +254,19 @@ title: Books to Read for Programmers
 
 *Pro PHP Programming - Peter MacIntyre*
 - [Amazon Smile](https://smile.amazon.com/Pro-PHP-Programming-Peter-MacIntyre-ebook/dp/B005PZ09AG)
+- ISBN-13: 978-1430235606
 
 *The Art of Computer Programming by Donald E. Knuth*
 - https://www-cs-faculty.stanford.edu/~knuth/taocp.html
 - ISBN-13: 978-0321751041
+
+*The Innovator's Delimma*
+- [Amazon Smile](https://smile.amazon.com/Innovators-Dilemma-Technologies-Management-Innovation-ebook/dp/B00E257S86)
+- ASIN: B00E257S86
+
+*The Mythical Man-Month: Essays on Software Engineering*
+- [Amazon Smile](https://www.amazon.com/Mythical-Man-Month-Software-Engineering-Anniversary/dp/0201835959)
+- ISBN-13: 978-0201835953
 
 *The Shellcoder's Handbook: Discovering and Exploiting Security Holes*
 - [Amazon Smile](https://smile.amazon.com/Shellcoders-Handbook-Discovering-Exploiting-Security/dp/047008023X)
@@ -260,9 +280,6 @@ title: Books to Read for Programmers
 - [Amazon Smile](https://smile.amazon.com/Violent-Python-Cookbook-Penetration-Engineers/dp/1597499579)
 - ISBN-13: 978-1597499576
 
-*The Innovator's Delimma*
-- [Amazon Smile](https://smile.amazon.com/Innovators-Dilemma-Technologies-Management-Innovation-ebook/dp/B00E257S86)
-- ASIN: B00E257S86
 
 This list was compiled from multiple suggestion threads on Reddit and Stackoverflow. 
 
