@@ -23,7 +23,7 @@ To allow non-sighted users to skip to the main content of a site and avoid tabbi
 ```
 3. Hide the "skip navigation" link by default.
 This ensures that the link is only visible to sighted users when the link is in focus.
-- Create a class for the link that can be styled with CSS. In my example I have added the class <code>skip-link</code>.
+- Create a class for the link that can be styled with CSS. In my example, I have added the class <code>skip-link</code>.
 ```css
 .skip-link {
   position: absolute;
