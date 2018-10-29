@@ -77,6 +77,9 @@ Unity Web Player was a browser plugin that was supported in Windows and OS X onl
 
 Unity is the engine used by Rust, Kerbal Space Program, and Cuphead.
 
+## Marketing
+On December 16, 2013, Unity Technologies Japan revealed new screenshots for an official mascot character named Unity-chan (ユニティちゃん Yuniti-chan), real name Kohaku Ōtori (大鳥 こはく Ōtori Kohaku) (voiced by Asuka Kakumoto), with exhibit of the character in Comic Market 85 event in the Tokyo Big Sight between December 29 to the 31st, where themed goods would be distributed and her voice actress would be present at the event. The character's associated game data were to be released in spring 2014.[26][27][28] The character was designed by Unity Technologies Japan designer "ntny" as an open-source heroine character.[29] The company allows the use of Unity-chan and related characters in secondary projects under certain licenses.[30] For example, Unity-chan appears as a playable character in Runbow.[31] The popularity of the character also led to her appearance in VOCALOID adaptions, including her own sound library for VOCALOID4 and a special adaption of VOCALOID designed to work with the Unity Engine 5.0 version called Unity with VOCALOID.
+
 #### More Information: 
 
 * [Unity's Official Website](https://unity3d.com/)
