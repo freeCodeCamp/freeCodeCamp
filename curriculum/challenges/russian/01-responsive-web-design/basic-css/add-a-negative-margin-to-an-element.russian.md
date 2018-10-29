@@ -4,16 +4,16 @@ title: Add a Negative Margin to an Element
 challengeType: 0
 guideUrl: 'https://russian.freecodecamp.org/guide/certificates/add-a-negative-margin-to-an-element'
 videoUrl: ''
-localeTitle: Добавить отрицательную маржу к элементу
+localeTitle: Добавить отрицательные поля к элементу
 ---
 
-## Description
-<section id="description"> Элемент по <code>margin</code> контролирует объем пространства между элементом в <code>border</code> и окружающих элементами. Если вы установите элемент <code>margin</code> отрицательного значение, то элемент будет расти больше. </section>
+## Описание
+<section id="description">Значение <code>margin</code> (поле) элемента контролирует объем пространства между значением <code>border</code> (границей) элемента и окружающими элементами. Если вы установите значение <code>margin</code> отрицательным, то размер элемента увеличится. </section>
 
-## Instructions
-<section id="instructions"> Попытайтесь установить <code>margin</code> на отрицательное значение, подобное значению для красного квадрата. Измените <code>margin</code> синего <code>-15px</code> на <code>-15px</code> , чтобы он заполнил всю горизонтальную ширину желтой рамки вокруг него. </section>
+## Инструкции
+<section id="instructions"> Попытайтесь установить значение <code>margin</code> отрицательным, как у красного окна. Установите <code>margin</code> синего окна равным <code>-15px</code>, чтобы он заполнил всю горизонтальную ширину желтой рамки вокруг него. </section>
 
-## Tests
+## Пример
 <section id='tests'>
 
 ```yml
@@ -25,7 +25,7 @@ tests:
 
 </section>
 
-## Challenge Seed
+## Исходной код
 <section id='challengeSeed'>
 
 <div id='html-seed'>
@@ -77,7 +77,7 @@ tests:
 
 </section>
 
-## Solution
+## Решение
 <section id='solution'>
 
 ```js
