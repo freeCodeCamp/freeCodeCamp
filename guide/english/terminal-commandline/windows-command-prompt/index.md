@@ -18,7 +18,11 @@ To go back one directory type and enter `cd..`. Your current working directory s
 ```
 C:\Users\YourUserName>
 ```
-With the `cd` and `cd ..` commands you can move back and forth through directories. This might seem very basic at first but as you learn more commands the command prompt will become a very useful and efficient tool.
+To go to root directory type and enter `cd\` Your current working directory will be:
+```
+C:\>
+```
+With the `cd`, `cd ..` and `cd\` commands you can move back and forth through directories or even to root. This might seem very basic at first but as you learn more commands the command prompt will become a very useful and efficient tool.
 
 ## Here is a list of common commands:
 | Command | Description  |
@@ -36,6 +40,14 @@ With the `cd` and `cd ..` commands you can move back and forth through directori
 #### Making a Directory
 ```
 mkdir name_of_the_directory_you_want_to_make
+
+or
+
+md name_of_the_directory_you_want_to_make
+``` 
+#### Renaming A File Or Directory
+```
+ren old_name new_name
 ```
 #### Getting Info on a Command
 ```
@@ -47,9 +59,12 @@ rm /s name_of_directory_you_want_to_delete
 ```
 
 ## Useful tips:
--	The command `Ipconfig` shows your computer's ip address 
+-	The command `ipconfig` shows your computer's ip address 
 - The command `getmac` shows your computer's physical address
--	If you type part of a directory's name and hit the `tab` key the command prompt will autocomplete it and if you hit the `tab` key repeatedly it will cycle through directories that start with the same letter 
+- If any parameter you provide contains spaces then enclose them within `quotes (' ')`
+- You can type all the commands in a file and save with a `.bat` extension and all the commands will be executed when you run the batch file.
+- Some command might need to be executed in administrator mode to work properly.
+-	If you type part of a directory's name and hit the `tab` key the command prompt will autocomplete it and if you hit the `tab` key repeatedly it will cycle through directories and files that start with the same letter 
 -	You can use other shells or tools such as git bash or cmder to add more commands and functionality to your command prompt 
 - Some tasks require you to run the command prompt as an administrator you clicking the windows button and typing `cmd admin` and hit the `enter` key
 - If you know the path to a file or directory can type `cd PATH_TO_YOUR_DIRECTORY` instead of changing directories several times to get to a directory or file 
