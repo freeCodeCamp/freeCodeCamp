@@ -45,3 +45,5 @@ not x | if x is false, then True, else False | (3)
     False
     >>> not False
     True
+    >>> not (not True)
+    True
