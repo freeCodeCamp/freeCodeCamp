@@ -14,13 +14,13 @@ For the sake of clarity, let us assume that we want to create a class which can 
 
 ```javascript
 var p = new Person('James','Bond'); // create a new instance of Person class
-	p.log() // Output: 'I am James Bond' // Accessing a function in the class
-	// Using setters and getters 
-	p.profession = 'spy'
-	p.profession // output: James bond is a spy
+p.log() // Output: 'I am James Bond' // Accessing a function in the class
+// Using setters and getters 
+p.profession = 'spy'
+p.profession // output: James bond is a spy
 ```
 
-### Using the class keyword
+### Using the `class` keyword
 
 Like in any other programming language, you can now use the `class` keyword to create a class.
 
@@ -45,12 +45,9 @@ class Person {
     get profession() {
         console.log(this._firstName, this._lastName, 'is a', this._profession);
     }
-
 }
 
 ```
-<br />
-<br />
 
 `class` is just a syntactic substitute for JavaScript's existing prototype-based inheritance model.
 
