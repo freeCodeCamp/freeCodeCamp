@@ -33,7 +33,7 @@ As the requirements of the project change over time, you can update the estimate
 
 Generally, these estimates are calculated using ideal engineering hours.
 
-Examples: 
+Examples: https://geekprank.com/hacker/
 
 **This task will be complete in 10 days.**
 
