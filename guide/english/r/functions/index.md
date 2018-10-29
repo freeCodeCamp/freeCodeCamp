@@ -6,9 +6,9 @@ A function allows you to define a reusable block of code that can be executed ma
 
 Functions can be named and called repeatedly or can be run anonymously in place (similar to lambda functions in python).
 
-Developing full understanding of R functions requires understanding of environments. 
+Developing full understanding of R functions requires the understanding of environments. 
 Environments are simply a way to manage objects. An example of environments in action is that you can use a redundant variable
-name within a function, that won't be affected if the larger runtime already has the same variable. Additionally, if a 
+name within a function, and that variable won't be affected if the larger runtime already has the same variable. Additionally, if a 
 function calls a variable not defined within the function it will check the higher level environment for that variable.
 
 ### Syntax
@@ -44,7 +44,7 @@ multiply = function(val1, val2){
 multiply(3, 5)  # prints 15 to the console
 ```
 
-Functions are blocks of code that can be reused simply by calling the function. This enables simple, elegent code reuse without explicitly re-writing sections of code. This makes code both more readable, makes for easier debugging, and limits typing errors. 
+Functions are blocks of code that can be reused simply by calling the function. This enables simple, elegant code reuse without explicitly re-writing sections of code. This makes code more readable, makes debugging easier, and limits typing errors. 
 
 Functions in R are created using the `function` keyword, along with a function name and function parameters inside parentheses.
 
@@ -118,7 +118,7 @@ sapply(1:3,
   sum(b = 2) # Error in sum(b = 2) : argument "a" is missing, with no default
   ```
 
-- Variables defined within a function only exist within the scope of that function, but will check larger environment if variable not specified
+- Variables defined within a function only exist within the scope of that function, but will check the larger environment if the variable is not specified
 
   ```{r}
   double = function(a){
@@ -155,7 +155,7 @@ its factorial with the `factorial()`.
 
 - The data that you pass into the function is called the function’s argument.
 
-- You can simulate a roll of the die with R’s  `sample()`function. The `sample()` function takes two arguments:a vector named  x and a number named  size. For example:
+- You can simulate a roll of the die with R’s  `sample()`function. The `sample()` function takes two arguments: a vector named  x and a number named  size. For example:
 
 ```r
 > sample(x = 1:4, size = 2)
