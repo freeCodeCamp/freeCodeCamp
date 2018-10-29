@@ -1,4 +1,33 @@
 ---
+What is Docker and How can I use it for Software Development?
+
+What is Docker?
+Docker is an open-source suite of software that enables containerization of applications.
+
+How can it be used?
+- You can utilize Docker on Development, Testing, and Production.
+
+The benefits of utilizing Docker on Development are:
+- Docker allows Developers to all use the same Development environment.
+- Docker ensures that if the code works in Development, it should work in Production.
+- Docker is faster than a virtual machine.
+
+The benefits of utilizing Docker on Testing are:
+- Docker allows the Testing environment to use the exact environment that Development and Production uses.
+- Testing inside Docker stacks is faster and uses fewer resources than physical or virtual machines.
+- Docker can be seamlessly integrated into Jenkins Pipelines.
+
+The benefits of utilizing Docker on Production are:
+- Isolated environments for each individual software being utilized, with that software being used as a Service (SaaS).
+- SaaS permitting individual updates to have no impact on other running services, once Testing has been completed.
+- SaaS allows source code to be pulled from Source Control, with only a disposable copy exposed to the outside.
+- SaaS allows containers to be killed and created quickly and independently.
+- Docker-Machine/Kubernetes allows each software instance to be replicated with ease.
+- Docker-Machine/Kubernetes allows multiple servers to be utilized to balance the stack.
+- Docker-Machine/Kubernetes automates load balancing.
+
+
+---
 title: Run Your First Docker Image
 ---
 ## Run Your First Docker Image
