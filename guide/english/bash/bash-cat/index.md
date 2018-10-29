@@ -33,6 +33,14 @@ Concatenate the content of the two files and display the result in terminal:
 ```bash
 cat file1.txt file2.txt
 ```
+Using wildcard to display contents of all text files:
+```bash
+cat *.txt
+```
+Merge two or more files to a single file:
+```bash
+cat file1.txt file2.txt>newfile.txt
+```
 
 Concatenate the content of two files and store it in a new file:
 ```bash
