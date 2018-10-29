@@ -5,7 +5,7 @@ title: Background Opacity
 
 The opacity property specifies the opacity/transparency of an element, that is, the degree to which the content behind the element is visible.
 
-The opacity property can take a value from 0.0 - 1.0. The lower value, the more transparent:
+The opacity property can take a value from 0.0 - 1.0. The lower the value, the more transparent:
 
 Find more details <a href='https://www.w3schools.com/css/css_image_transparency.asp' target='_blank' rel='nofollow'>here</a>
 
@@ -56,7 +56,7 @@ The example above sets the background to be black with 50% opacity. The last val
 
 
 #### More Information:
-For more information visit [MDN](https://developer.mozilla.org/en-US/docs/Web/CSS/opacity)
+For more information visit [MDN](https://developer.mozilla.org/en-US/docs/Web/CSS/opacity) and/or
 [Opacity CSS property at CSS-Tricks](https://css-tricks.com/almanac/properties/o/opacity/)
 
 Browser support: <a href= 'https://caniuse.com/#search=opacity' target= '_blank' rel= 'nofollow'>caniuse</a>
