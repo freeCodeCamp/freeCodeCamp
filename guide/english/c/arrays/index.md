@@ -23,7 +23,7 @@ So, this looks a bit tedious.<br>Up until now every variable created had some sp
 eg. reading from the user, or printing out values. 
 
 ## Arrays in C
-Arrays are containers with a given size. They contain variables of the **same type**. You can access a variable stored in the array with its *index*.
+Array is a kind of data structure that can store a fixed size sequential collection of elements of same type. An array is used to store a collection of data but it is often more useful to think of an array as a collection of variable of same type.
 Let's look at some code:
 ```C
 #include <stdio.h>
