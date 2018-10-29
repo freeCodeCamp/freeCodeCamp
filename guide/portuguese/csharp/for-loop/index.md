@@ -1,7 +1,8 @@
 ---
 title: For Loop
 localeTitle: Para loop
----# Para loop
+---
+# Loop: For
 
 O loop for executa um bloco de código repetidamente até que uma expressão condicional especificada seja avaliada como falsa.
 
@@ -9,13 +10,13 @@ Anatomia do loop for:
 ```
 for (initialization; condition; iterator) 
  { 
-    body 
+    //code 
  } 
 ```
 
-*   initialization - A instrução de inicialização define a condição inicial e é executada apenas uma vez antes de você entrar no corpo do loop.
-*   condição - Expressão booleana que determina se o corpo do loop deve ser executado novamente ou se o loop deve sair.
-*   iterator - Executa após cada iteração do corpo do loop.
+*   initialization - A instrução de inicialização define o valor inicial da variável e é executada apenas uma vez antes de você entrar no corpo do loop.
+*   condição - Expressão booleana que determina se o código do loop deve ser executado novamente ou se o loop deve parar.
+*   iterator - Executa após cada iteração no código do loop.
 
 ### Exemplo 1
 ```
@@ -27,7 +28,7 @@ for (int i = 0; i < 5; i++)
 
 ### Saída:
 ```
-> Number 0 
+ > Number 0 
  > Number 1 
  > Number 2 
  > Number 3 
@@ -42,11 +43,11 @@ int j = 0;
     Console.WriteLine("Numbers {0} {1}", i, j); 
     j++; 
  } 
-```
+``` 
 
 ### Saída:
 ```
-> Numbers 0 0 
+ > Numbers 0 0 
  > Numbers 1 1 
  > Numbers 2 2 
  > Numbers 3 3 
@@ -63,7 +64,7 @@ for (int i = 0, j = 0; i < 5 && j < 5; i++, j++)
 
 ### Saída:
 ```
-> Numbers 0 0 
+ > Numbers 0 0 
  > Numbers 1 1 
  > Numbers 2 2 
  > Numbers 3 3 
@@ -80,7 +81,7 @@ for (int i = 5; i > 0; i--)
 
 ### Saída:
 ```
-> Number 5 
+ > Number 5 
  > Number 4 
  > Number 3 
  > Number 2 
@@ -101,7 +102,7 @@ for (int i = 5; i > 0; i--)
 
 ### Saída:
 ```
-> The universe is infinite 
+ > The universe is infinite 
  > The universe is infinite 
  > The universe is infinite 
  > .... 
