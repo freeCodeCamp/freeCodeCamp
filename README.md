@@ -9,7 +9,7 @@
 
 freeCodeCamp.org is a friendly community where you can learn to code for free. It is run by a [donor-supported 501(c)(3) nonprofit](https://donate.freecodecamp.org) with the goal of helping millions of busy adults transition into tech. Our community has already helped more than 10,000 people get their first developer job.
 
-Our full stack web development curriculum is completely free and self-paced. We have thousands of interactive coding challenges to help you expand your skills.
+Our full-stack web development curriculum is completely free and self-paced. We have thousands of interactive coding challenges to help you expand your skills.
 
 ## Table of Contents
 
@@ -25,7 +25,7 @@ Our full stack web development curriculum is completely free and self-paced. We 
 
 freeCodeCamp.org offers several free developer certifications. Each of these certifications involves building 5 required web app projects, along with hundreds of optional coding challenges to help you prepare for those projects. We estimate that each certification will take a beginning programmer around 300 hours to earn.
 
-Each of these 30 projects in the freeCodeCamp.org curriculum has its own agile user stories and automated tests. These help you build up your project incrementally, and ensure you've fulfilled all the user stories before you submit it.
+Each of these 30 projects in the freeCodeCamp.org curriculum has its own agile user stories and automated tests. These help you build up your project incrementally and ensure you've fulfilled all the user stories before you submit it.
 
 You can pull in these test suites through [freeCodeCamp's CDN](https://cdn.freecodecamp.org/testable-projects-fcc/v1/bundle.js). This means you can build these projects on websites like CodePen and Glitch - or even on your local computer's development environment.
 
@@ -44,6 +44,7 @@ Here are our six core certifications:
 - Responsive Web Design Principles
 - CSS Flexbox
 - CSS Grid <br />
+  <br />
   **Projects**: Tribute Page, Survey Form, Product Landing Page, Technical Documentation Page, Personal Portfolio Webpage
 
 #### 2. JavaScript Algorithms and Data Structures Certification
@@ -56,6 +57,7 @@ Here are our six core certifications:
 - Algorithm Scripting
 - Object Oriented Programming
 - Functional Programming <br />
+  <br />
   **Projects**: Palindrome Checker, Roman Numeral Converter, Caesars Cipher, Telephone Number Validator, Cash Register
 
 #### 3. Front End Libraries Certification
@@ -66,12 +68,14 @@ Here are our six core certifications:
 - React
 - Redux
 - React and Redux <br />
+  <br />
   **Projects**: Random Quote Machine, Markdown Previewer, Drum Machine, JavaScript Calculator, Pomodoro Clock
 
 #### 4. Data Visualization Certification
 
 - Data Visualization with D3
 - JSON APIs and Ajax <br />
+  <br />
   **Projects**: Bar Chart, Scatterplot Graph, Heat Map, Choropleth Map, Treemap Diagram
 
 #### 5. APIs and Microservices Certification
@@ -79,6 +83,7 @@ Here are our six core certifications:
 - Managing Packages with Npm
 - Basic Node and Express
 - MongoDB and Mongoose <br />
+  <br />
   **Projects**: Timestamp Microservice, Request Header Parser, URL Shortener, Exercise Tracker, File Metadata Microservice
 
 #### 6. Information Security and Quality Assurance Certification
@@ -86,6 +91,7 @@ Here are our six core certifications:
 - Information Security with HelmetJS
 - Quality Assurance and Testing with Chai
 - Advanced Node and Express <br />
+  <br />
   **Projects**: Metric-Imperial Converter, Issue Tracker, Personal Library, Stock Price Checker, Anonymous Message Board
 
 #### Full Stack Development Certification
@@ -106,11 +112,11 @@ This code is running live at [freeCodeCamp.org](https://www.freecodecamp.org).
 
 Our community also has:
 
-- a super active [forum](https://www.freecodecamp.org/forum)
-- thousands of [local study groups](https://study-group-directory.freecodecamp.org/) around the world, where you can code together in person
+- A super active [forum](https://www.freecodecamp.org/forum)
+- Thousands of [local study groups](https://study-group-directory.freecodecamp.org/) around the world, where you can code together in person
 - Medium's [largest technical publication](https://medium.freecodecamp.org)
 - A popular [YouTube channel](https://youtube.com/freecodecamp)
-- and a comprehensive [guide to thousands of programming topics](https://guide.freecodecamp.org/)
+- A comprehensive [guide to thousands of programming topics](https://guide.freecodecamp.org/)
 
 ### [Join our community here](https://www.freecodecamp.org/signin).
 
@@ -128,7 +134,7 @@ Please don't create GitHub issues for security issues. Instead, please send an e
 
 ### License
 
-Copyright (c) 2018 freeCodeCamp.org
+Copyright © 2018 freeCodeCamp.org
 
 The content of this repository bound by the following licenses:
 

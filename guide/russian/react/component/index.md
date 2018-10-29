@@ -1,10 +1,13 @@
 ---
 title: React - Components
-localeTitle: Реакт - Компоненты
+
+localeTitle: React - Компоненты
 ---
-## Реакция - Компоненты
+## React - Компоненты
+
 
 В библиотеке react.js создаваемые компоненты могут быть использованы повторно. Вы можете передавать различные значения в компоненты с помощью свойств - props, как приведено ниже:
+
 
 ```jsx
 function Welcome(props) { 
@@ -27,6 +30,7 @@ function Welcome(props) {
 ### Компоненты с состоянием
 
 #### Компоненты с использованием классов
+
 
 ```jsx
 class Cat extends React.Component { 

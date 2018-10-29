@@ -7,10 +7,11 @@ localeTitle: Use a propriedade flex-grow para expandir itens
 ---
 
 ## Description
-<section id="description"> O oposto de <code>flex-shrink</code> é a propriedade <code>flex-grow</code> . Lembre-se de que o <code>flex-shrink</code> controla o tamanho dos itens quando o contêiner encolhe. A propriedade <code>flex-grow</code> controla o tamanho dos itens quando o contêiner pai se expande. Usando um exemplo semelhante do último desafio, se um item tiver um valor de <code>flex-grow</code> de 1 e o outro tiver um valor de <code>flex-grow</code> de 3, aquele com o valor de 3 crescerá três vezes mais que o outro. </section>
+<section id="description"> O oposto de <code>flex-shrink</code> é a propriedade <code>flex-grow</code> . Lembre-se de que <code>flex-shrink</code> controla o tamanho dos itens quando o contêiner encolhe. A propriedade <code>flex-grow</code> controla o tamanho dos itens quando o contêiner pai se expande.
+Usando um exemplo semelhante do último desafio, se um item tiver um valor de <code>flex-grow</code> igual a 1 e o outro tiver um valor de <code>flex-grow</code> igual a 3, aquele com o valor de 3 crescerá três vezes mais que o outro. </section>
 
 ## Instructions
-<section id="instructions"> Adicione o <code>flex-grow</code> propriedade CSS a <code>#box-1</code> e <code>#box-2</code> . Dê <code>#box-1</code> um valor de 1 e <code>#box-2</code> um valor de 2. </section>
+<section id="instructions"> Adicione a propriedade CSS <code>flex-grow</code> a ambos <code>#box-1</code> e <code>#box-2</code> . Dê a <code>#box-1</code> um valor de 1 e a <code>#box-2</code> um valor de 2. </section>
 
 ## Tests
 <section id='tests'>

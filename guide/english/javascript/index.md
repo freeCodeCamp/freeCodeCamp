@@ -5,6 +5,9 @@ title: JavaScript
 ## JavaScript
 JavaScript is the most widely used scripting language on Earth. And it has the largest library ecosystem of any programming language.
 
+By definition, Javascript is an high-level iterpreted language. Meaning its higher abstracted from the computer, easy to use, and you
+don't need to compile in order to execute but its interpreted at the runtime.
+
 JavaScript is the core language of the web, and the only programming language that can run in all major web browsers.
 
 Notably, JavaScript has no relation to Java. [JavaScript: The World's Most Misunderstood Programming Language](http://www.crockford.com/javascript/javascript.html)
