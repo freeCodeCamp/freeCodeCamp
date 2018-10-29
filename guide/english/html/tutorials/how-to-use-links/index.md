@@ -31,6 +31,23 @@ The link text is the visible part (Visit our site for tutorials).
 
 Clicking on the link text will send you to the specified address.
 
+## HTML Links - Target Attribute
+
+The link target attribute refers to WHERE to open the link. There can be various values, which will be listed below:
+
+ "_blank" - This opens the link in a brand new window (or tab)
+ "_top" - This opens the link in the full body of the window
+ "_parent" - This opens the link in the parent frame
+ "_self" - This opens the link in the same window in which it was clicked
+ "_framename" - This opens the link in a named frame, if you are using frames
+ 
+ Example
+
+```html
+<a href="https://www.freecodecamp.org/" target="_blank">Visit our site for tutorials in a new tab or page</a>
+```
+
+
 #### More Information:
 <!-- Please add any articles you think might be helpful to read before writing the article -->
 * [MDN - HTML <a> Reference](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/a)
