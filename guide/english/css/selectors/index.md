@@ -48,7 +48,7 @@ You can learn more about selectors on these resources:
 * [Official CSS3 Selectors specification](https://www.w3.org/TR/css3-selectors)
 * [Selectors page on Mozilla Developer Network](https://developer.mozilla.org/en-US/docs/Learn/CSS/Introduction_to_CSS/Selectors)
 * [CSS Selectors Cheat Sheet on FreeCodeCamp Guides](https://guide.freecodecamp.org/css/tutorials/css-selectors-cheat-sheet)
-
+* [CSS Almanac with selectors and features- CSS Tricks](https://css-tricks.com/almanac/)
 
 Selectors in CSS (cascading style sheets) are determined based on *specificity*, with this we are able to be more specific on our style rules and override other rules that may be targeting the same element but is not as specific. The way this specificty hierarchy works is based on weight, meaning a element Selector has a weight of 1 (one), a class selector has a weight of 10 (ten) and a id selector has a weight of One Hundred (100). We are able to combine different selectors together be more specific on the element we whant to change. 
 
