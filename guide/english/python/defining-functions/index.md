@@ -19,6 +19,6 @@ We can create a function that writes the Fibonacci series to an arbitrary bounda
 
 The [`def`](https://docs.python.org/3/reference/compound_stmts.html#def) keyword introduces a function definition. It must be followed by the function name and the parenthesized list of formal parameters, followed by a colon. The statements that form the body of the function start at the next line and must be indented.
 
-The first statement of the function body can optionally be a string literal; this string literal is the function's documentation string, or [docstring](https://www.python.org/dev/peps/pep-0257/) (More about docstrings can be found in the section Documentation Strings). Some tools use docstrings to automatically produce online or printed documentation or to let the user interactively browse through code. It's good practice to include docstrings in code that you write, so try to make a habit of it.
+The first statement of the function body can optionally be a string literal; this string literal is the function's documentation string, or [docstring](https://www.python.org/dev/peps/pep-0257/) (more about docstrings can be found in the section Documentation Strings). Some tools use docstrings to automatically produce online or printed documentation or to let the user interactively browse through code. It's good practice to include docstrings in code that you write, so try to make a habit of it.
 
-No closing statement is required for the function (eg something similar to Ruby's END), all code that is indented following the opening definition is within scope of the function.
+No closing statement is required for the function (e.g. something similar to Ruby's END), all code that is indented following the opening definition is within scope of the function.
