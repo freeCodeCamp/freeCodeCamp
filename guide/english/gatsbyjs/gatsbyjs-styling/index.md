@@ -71,4 +71,4 @@ In nearly every site, there will be some global styles, such as a reset or typog
 PostCSS transforms extended syntaxes and features into modern, browser-friendly CSS. Checkout guide will [show you how to get started with Gatsby and PostCSS](https://www.gatsbyjs.org/docs/post-css/).
 
 ### More Information:
-Check out the Gatsby.js official docs for styling at [Gatsby Plugins](https://www.gatsbyjs.org/docs/styling/). For more information and learn more, visit: [Gatsby.js official site](https://www.gatsbyjs.org/tutorial/)
+Check out the Gatsby.js official docs for styling at [Gatsby Styling](https://www.gatsbyjs.org/docs/styling/). For more information and learn more, visit: [Gatsby.js official site](https://www.gatsbyjs.org/tutorial/)
