@@ -22,7 +22,7 @@ These are of four types: `byte`, `short`, `int`, `long`. It is important to note
 
 ### byte:
 
-Byte data type is an 8-bit signed two's complement integer.
+Byte data type is an 8-bit signed two's complement integer. Abyte is made of 8 bits, e.g. (0,1,2,3,4,5,6,7).
 
     Wrapper Class: Byte
 
