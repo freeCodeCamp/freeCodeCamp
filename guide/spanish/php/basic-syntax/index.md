@@ -8,38 +8,54 @@ Un script PHP se puede colocar en cualquier parte del documento.
 
 Un script PHP comienza con `<?php` y termina con `?>`
 
-A continuación, tenemos un ejemplo de un archivo PHP simple, con un script PHP que utiliza una función de PHP "echo" para generar el texto "Hello World!" en una página web
+A continuación, tenemos un ejemplo de un archivo PHP simple, con un script PHP que utiliza una función de PHP "echo" para generar el texto "Hola Mundo!" en una página web
 
-\`\` \`\`
 
 # Mi primera página PHP
 ```
-The output of that would be : 
+La ejecución del script muestra: 
 ```
 
 Mi primera página PHP
 
 Hola Mundo!
 ```
-#### Note: PHP statements end with a semicolon (;). 
+#### Nota: Las instrucciones de PHP terminan con punto y coma (;). 
  
- # Comments in PHP 
+ # Comentarios en PHP
  
- PHP supports several ways of commenting: 
+ PHP soporta varia sintaxis de comentarios: 
+ 
+ // Este es un ejemplo de comentario en línea
+ 
+ #  Este es otro ejemplo de comentario en línea
+ 
+ /* Este es un ejemplo
+    de comentario
+    en varias líneas */
 ```
 
 ```
-# PHP Case Sensitivity 
+# Sensibilidad a mayúsculas/minúsculas en PHP
  
- In PHP, all keywords (eg if, else, while, echo, etc.), classes, functions, and user-defined functions are NOT case-sensitive. 
+ En PHP, todas las palabras clave (p.ej. if, else, while, echo, etc.), clases, funciones, y funciones definidas por el usuario NO son sensibles a mayúsculas o minúsculas. 
  
- In the example below, all three echo statements below are legal (and equal): 
+ En el ejemplo de abajo, las tres ejecuciones de echo son válidas:
+ 
+ echo "Hola mundo!"; // Hola mundo!
+ eCHo "Hola mundo!"; // Hola mundo!
+ ECHO "Hola mundo!"; // Hola mundo!
 ```
 
 ```
-### However; all variable names are case-sensitive. 
- 
- In the example below, only the first statement will display the value of the $color variable (this is because $color, $COLOR, and $coLOR are treated as three different variables): 
-```
+### Sin embargo; los nombres de variables sí son sensibles. 
 
-\`\` \`\`
+ En el ejemplo de abajo, solamente la primera línea mostrará el valor de la variable $color (porque $color, $COLOR y $coLOR se tratan como tres variables diferentes):
+ 
+ $color = "rojo";
+ 
+ echo $color; // rojo
+ echo $COLOR; // Notice: Undefined variable: COLOR
+ echo $coLOR; // Notice: Undefined variable: coLOR
+ 
+```
