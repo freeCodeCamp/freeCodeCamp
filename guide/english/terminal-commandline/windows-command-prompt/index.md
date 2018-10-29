@@ -5,7 +5,7 @@ title: Windows Command Prompt
 Windows, MacOS and Linux have command line interfaces. Windows' default command line is the command prompt. The command prompt allows users to use their computer without pointing and clicking with a mouse. The command prompt is a black screen where users type commands to use their computer. The same tasks that can be done by pointing and clicking with a mouse can also be done with the command prompt. The difference is that many tasks such as creating folders and deleting files can be done faster in the command prompt. Also, it allows users to configure their computer and run programs that they otherwise could not do by pointing and clicking.
 
 ## Opening the Command Prompt 
-To access the command prompt, click the windows start menu on the Desktop tool bar (you can also press the windows button on your keyboard) and type `cmd` and hit `enter`. The command prompt will appear, it will display some text like to following below:
+To access the command prompt, click the windows start menu on the Desktop tool bar (you can also press and hold down the windows button on your keyboard while simultaneously pressing the 'r' key, then releasing both keys - WinKey+R) and type `cmd` and hit `enter`. The command prompt will appear, it will display some text like to following below:
 ``` 
 C:\Users\YourUserName>
 ```
