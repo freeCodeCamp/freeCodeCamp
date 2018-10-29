@@ -6,20 +6,20 @@ title: Partitions
  
  - Without creating partitions in hard-disk, we can’t create folder. 
  
- - Partitions in Linux- 
+ - Partitions in Linux
     - **df**
 	- **df -h** (human readable)  
 
- - Shows size in MiB, GiB 	
+ - Shows size in MiB, GiB	
    - **lvdisplay**
  
- - Shows information about partition of disk - 
+ - Shows information about partition of disk
    - **fdisk -l**
    - **fdisk -l /dev/sda** (sda is the name of hard-disk) 
  
  - For practicing partition, insert virtual hard-disk in Linux using virtual-box. 
  
- - Some points to remember
+ - Some points to remember:
    - Hard-disk doesn’t understand GB or MB, it’s unit is sector.</br>
      1 sector = 512 bytes.</br>
 	 To find actual size of hard-disk, find number of sectors * 512.</br>
@@ -30,14 +30,14 @@ title: Partitions
  
 ## MAKING PARTITIONS IN HARD-DISK 
  
- 1. Opens hard-disk prompt. 
+ 1. Opens hard-disk prompt.
     - **fdisk /dev/sdb**
- 2. Print partitions information of hard-disk. 
+ 2. Print partitions information of hard-disk.
     - **p**
- 3. Create a new partition. 
+ 3. Create a new partition.
     - **n**
  4. Choose primary partition.
- 5. Press 1 (1st partition)  
+ 5. Press 1 (1st partition).
  6. Initial some sectors (0-2047 = 2048 sectors = 1 MB) are reserved in hard-disk.
  7. Actual space starts with 2048th sector.
  8. **+1G**
@@ -53,7 +53,7 @@ title: Partitions
    
 </br>
    
-## WHY THERE IS LIMIT OF 4 ? 
+## WHY THERE IS LIMIT OF 4? 
 - Because where we store the information of partitions, metadata of partitions, is fixed and of 64 bytes. This information is stored in partition table. 
 - 1 partition required 16 bytes so only 4 partitions can be created. 
 - In 1 MB (2048 sectors) reserved in hard-disk, 64 bytes are reserved for storing this information.
