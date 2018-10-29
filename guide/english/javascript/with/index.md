@@ -5,7 +5,7 @@ title: With
 
 JavaScript's `with` statement is a shorthand way for editing several properties on one object. Most developers discourage usage of `with`, and you are best not using this keyword.
 
-**Note**: `"strict mode"` forbids usage of `with`.
+**Note**: `"strict mode"` in ECMAScript 5 forbids usage of `with`.
 
 
 ### Syntax
