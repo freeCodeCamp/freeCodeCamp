@@ -24,3 +24,14 @@ El vicepresidente de Google que habló en este evento nos dio un consejo: que de
 
 *   [¿Por qué hay tan pocas mujeres en la tecnología? La verdad detrás del memo de Google](https://www.theguardian.com/lifeandstyle/2017/aug/08/why-are-there-so-few-women-in-tech-the-truth-behind-the-google-memo)
 *   [Ellen Pao: ¿Algo ha cambiado realmente para las mujeres en la tecnología?](https://www.nytimes.com/2017/09/16/opinion/sunday/ellen-pao-sexism-tech.html)
+
+### Una lista no exhaustiva de mujeres globales en iniciativas tecnológicas:
+
+- [PyLadies](https://www.pyladies.com/)
+- [R-Ladies](https://rladies.org/)
+- [Chicas Django](https://djangogirls.org/)
+- [Rails Girls](http://railsgirls.com/)
+- [Chicas que codifican](https://girlswhocode.com/)
+- [1 millón de mujeres para tecnología](https://1millionwomentotech.com/)
+- [Mujeres tecnólogas](https://www.womentechmakers.com/)  
+- [Mujeres que codifican](https://www.womenwhocode.com/)
