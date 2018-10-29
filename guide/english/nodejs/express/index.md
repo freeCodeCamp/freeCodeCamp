@@ -338,7 +338,7 @@ $ npm install --save session
 ```javascript
 app.use(
   session({
-    secret: 'arbitary-string',
+    secret: 'arbitary-string', // ideally stored in environment variables
     resave: false,
     saveUninitialized: true,
     cookie: { secure: true }
