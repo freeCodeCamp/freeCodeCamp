@@ -6,7 +6,7 @@ title: Buttons
 The Bootstrap framework provides you with various styling options for buttons. These styles help you provide a visual representation to the user of what the button may do.
 
 #### How To Use:
-To use bootstrap buttons you follow the same steps that you would to create a button in HTML except you also apply the applicable CSS class to the button. A code example has been provided below.
+To use bootstrap buttons, you follow the same steps that you would to create a button in HTML except you also apply the applicable CSS class to the button. A code example has been provided below.
 
 **Code Example:**
 
@@ -77,11 +77,10 @@ It is possible to also have outlined buttons rather than fully colored in ones. 
 
 `<button type="button" class="btn btn-outline-primary">Primary</button>`
 
-Outlined buttons are a part of Bootstrap since version 4, please be sure that you are using the right version if you are unable to get them to work.
+Outlined buttons are a part of Bootstrap since version 4 so please be sure that you are using the right version if you are unable to get them to work.
 
 _Note: Do not include the dot in the HTML Class Attribute, referring to the classes with a dot is only used when adjusting the classes in CSS._
 
 #### More Information: 
 * <a href='https://getbootstrap.com/docs/4.0/components/buttons/' target='_blank' rel='nofollow'>Bootstrap Buttons documentation</a>
 * <a href='http://getbootstrap.com/docs/4.0/components/button-group/' target='_blank' rel='nofollow'>Bootstrap Button Group documentation</a>
-* [Bootstrap Get Started](/articles/bootstrap/bootstrap-get-started)
