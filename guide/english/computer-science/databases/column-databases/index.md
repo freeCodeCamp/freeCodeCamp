@@ -8,3 +8,4 @@ Column oriented databases are designed to efficiently return data for a limited 
 <!-- Please add any articles you think might be helpful to read before writing the article -->
 Please visit the <a href="https://en.wikipedia.org/wiki/Column-oriented_DBMS">Column-oriented DBMS</a> Wikipedia page for more information.
 
+<a href="https://searchdatamanagement.techtarget.com/definition/columnar-database">Column Database Examples</a> - good examples of column databases and how they are stored.
