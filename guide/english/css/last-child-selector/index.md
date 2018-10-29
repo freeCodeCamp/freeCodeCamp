@@ -1,5 +1,5 @@
 ---
-title: CSS3 Last Child Selector
+title: CSS Last Child Selector
 ---
 ## CSS Last Child Selector
 
