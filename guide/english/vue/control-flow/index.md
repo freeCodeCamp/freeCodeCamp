@@ -70,6 +70,11 @@ message shown.
 
 Vue.js also has the `v-else-if` directive.
 
+When `v-if` is false, the target element is completely removed from the page and DOM.
+If you want the element to stay in the DOM but just be invisible, you can use the
+`v-show` directive, which will only apply the `display: none` CSS property when the 
+expression is false.
+
 
 ### Loops
 
