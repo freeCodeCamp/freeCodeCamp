@@ -89,3 +89,4 @@ console.log(typeof null)  // object
 
 ### More Information:
 <a href='https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/typeof' target='_blank' rel='nofollow'>MDN Documentation for typeof</a>
+the typeof function will help determine the type of data used which can be one of the following : undefined, null, boolean, string, symbol, number, object.
