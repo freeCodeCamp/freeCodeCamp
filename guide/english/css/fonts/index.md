@@ -118,3 +118,4 @@ p {
 - [W3 Schools - CSS Font](https://www.w3schools.com/css/css_font.asp)
 - [CSSFontStack](https://www.cssfontstack.com/)
 - [Google Fonts](https://fonts.google.com/)
+- [Fonts.com](https://www.fonts.com/)
