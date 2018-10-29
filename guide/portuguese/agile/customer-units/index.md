@@ -1,15 +1,15 @@
 ---
 title: Customer Units
-localeTitle: Unidades do cliente
+localeTitle: Unidades Cliente
 ---
-## Unidades do cliente
+## Unidades Cliente
 
-No Agile, as unidades do Cliente são um povo e um papel que representam a voz, a expectativa dos clientes / mercado visados ​​por um produto.
+Sob o contexto da metodologia ágil, as Unidades Cliente referem-se à todas as pessoas e papéis que terão informações que ajudem os desenvolvedores a compreender o software em desenvolvimento. Algumas dessas informações são as expectativas do cliente para com o produto e características do mercado em que esse será lançado.
 
-Unidades do cliente responsáveis ​​pelo produto da experiência do usuário, uma visão de um produto, roteiro do produto, criação e manutenção do backlog do produto e qualquer coisa.
+Normalmente a unidade cliente é responsável por definir a visão do produto, as características e roteiro do projeto. Tal unidade deve criar e manter o backlog de requisitos e prioridades para o produto, definir os critérios de aceitação das entregas e se comunicar com os desenvolvedores.
 
-Exemplo de Pessoa / Funções: -> Gerentes de Produto -> Vendas -> Marketing -> Usuário final
+Usuários finais do software, gestores, vendedores e analistas de marketing são alguns dos exemplos de unidades cliente.
 
 #### Mais Informações:
 
-Unidade de Clientes: [Soluções](https://www.solutionsiq.com/agile-glossary/customer-unit/)
+Unidades Cliente: [Soluções](https://www.solutionsiq.com/agile-glossary/customer-unit/)
