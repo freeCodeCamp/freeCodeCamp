@@ -2,6 +2,9 @@
 title: Logistic Regression
 ---
 ## Logistic Regression
+**Definition**
+> Logistic regression is a method for fitting a regression curve, y = f(x), when y is a categorical variable. The typical use of this model is predicting y given a set of predictors x. The predictors can be continuous, categorical or a mix of both.
+
 ![Logistic Function](https://qph.fs.quoracdn.net/main-qimg-7c9b7670c90b286160a88cb599d1b733)<br>
 Logistic regression is very similar to linear regression As in both algorithms ,models are  trained to find a regression line to define function for futher prediction.Therefore, It's a form of supervised learning, which tries to predict the responses of unlabeled, unseen data by first training with labeled data,on a set of observations which consists of both independent (X) and dependent (Y) variables. But while <a href='https://guide.freecodecamp.org/machine-learning/linear-regression' target='_blank'>Linear Regression</a> assumes that the response variable (Y) is quantitative or continuous, Logistic Regression is used specifically when the response variable is qualititative,or discrete.<br>
 ![Linear vs Logistic](http://www.saedsayad.com/images/LogReg_1.png)
