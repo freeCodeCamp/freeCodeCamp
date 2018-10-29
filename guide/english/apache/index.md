@@ -13,6 +13,10 @@ Apache runs on 67% of all webservers in the world. It is fast, reliable, and sec
 ```
 sudo apt install apache2
 ```
+#### On Linux Mint
+```
+sudo apt-get install apache2
+```
 #### On Centos
 ```
 sudo yum install httpd
