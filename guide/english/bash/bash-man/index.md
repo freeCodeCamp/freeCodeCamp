@@ -18,6 +18,7 @@ Most used options:
 
 * `-f`, print a short description of the given command
 * `-a`, display, in succession, all of the available intro manual pages contained within the manual
+* `-l`, enabling case sensitivity
 
 ### Example
 
