@@ -9,6 +9,8 @@ You must have heard about a lot of algorithmic design techniques while sifting t
 * Dynamic Programming
 to name a few. In this article, you will learn about what a greedy algorithm is and how you can use this technique to solve a lot of programming problems that otherwise do not seem trivial.
 
+This algorithm basically chooses the path which is most beneficial for the user.
+
 Imagine you are going for hiking and your goal is to reach the highest peak possible. You already have the map before you start, but there are thousands of possible paths shown on the map. You are too lazy and simply don’t have the time to evaluate each of them. Screw the map! You started hiking with a simple strategy – be greedy and short-sighted. Just take paths that slope upwards the most. This seems like a good strategy for hiking. But is it always the best ?
 
 After the trip ended and your whole body is sore and tired, you look at the hiking map for the first time. Oh my god! There’s a muddy river that I should’ve crossed, instead of keep walking upwards. This means that a greedy algorithm picks the best immediate choice and never reconsiders its choices. In terms of optimizing a solution, this simply means that the greedy solution will try and find local optimum solutions - which can be many - and might miss out on a global optimum solution.
