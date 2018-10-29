@@ -4,21 +4,21 @@ localeTitle: Установка и использование Python 3
 ---
 ## Установка Python 3
 
-Вы можете скачать Python из этой официальной [ссылки](https://www.python.org/downloads/) . На основе вашей ОС (Windows или Linux или OSX) вы можете установить Python 3 в соответствии с [этими инструкциями](http://docs.python-guide.org/en/latest/starting/installation/) .
+Вы можете скачать Python по этой [ссылке](https://www.python.org/downloads/) . Установить Python 3 на вашей ОС (Windows или Linux или OSX) вы можете в соответствии с [этими инструкциями](http://docs.python-guide.org/en/latest/starting/installation/) .
 
 ## Использование виртуальных сред
 
-Это всегда отличная идея, чтобы [изолировать](https://en.wikipedia.org/wiki/Sandbox_(computer_security)) вашу установку Python; и держать его отдельно от вашего _системного Python_ . _System Python_ - это путь к интерпретатору Python, который используется другими модулями, установленными вместе с вашей ОС.
+Всегда лучше [изолировать](https://en.wikipedia.org/wiki/Sandbox_(computer_security)) вашу установку Python и держать его отдельно от вашего _системного_ Python . _System Python_ - это путь к интерпретатору Python, который используется другими модулями, установленными вместе с вашей ОС.
 
-**Нельзя** устанавливать Python Web-фреймворки или библиотеки напрямую с помощью _System Python_ . Вместо этого вы можете использовать [Virtualenv](https://virtualenv.readthedocs.org/en/latest/) для создания и создания отдельного процесса Python при разработке приложений Python.
+**Нельзя** устанавливать web-фреймворки Python или библиотеки напрямую с помощью _System Python_ . Вместо этого вы можете использовать [Virtualenv](https://virtualenv.readthedocs.org/en/latest) для создания и создания отдельного процесса Python при разработке приложений Python.
 
 ### Virtualenvwrapper
 
-Модуль [Virtualenvwrapper](https://virtualenvwrapper.readthedocs.org/en/latest/) упрощает управление и изолировать изолированную среду Python в изолированной среде на одной машине; без искажения любых модулей или служб, написанных на Python и используемых вашей машиной.
+Модуль [Virtualenvwrapper](https://virtualenvwrapper.readthedocs.org/en/latest) упрощает управление и изолировать изолированную среду Python в изолированной среде на одной машине; без искажения любых модулей или служб, написанных на Python и используемых вашей машиной.
 
-Конечно, большинство облачных сред разработки, таких как [Nitrous](https://www.nitrous.io/) или [Cloud9,](https://c9.io/) также поставляются с предустановленной и готовой для вас кодировкой! Вы можете быстро выбрать окно из панели управления и начать кодирование после активации среды Python 3.
+Конечно, большинство облачных сред разработки, таких как [Nitrous](https://www.nitrous.io) или [Cloud9](https://c9.io), также поставляются с предустановленной и готовой для вас кодировкой! Вы можете быстро выбрать окно из панели управления и начать кодирование после активации среды Python 3.
 
-В [Cloud9](https://c9.io/) вам нужно выбрать поле Django при создании новой среды разработки.
+В [Cloud9](https://c9.io) вам нужно выбрать поле Django при создании новой среды разработки.
 
 Приведем несколько примеров команд оболочки. Если вы хотите скопировать-вставить, обратите внимание, что знак `$` является сокращением для подсказки терминала, это не является частью команды. Моя подсказка терминала выглядит примерно так:
 ```
@@ -72,6 +72,6 @@ $ deactivate
 
 ### Pipenv
 
-Альтернативой использованию virtualenvwrapper является [Pipenv](https://docs.pipenv.org/) . Он автоматически создает виртуальные среды для ваших проектов и поддерживает `Pipfile` который содержит зависимости. Использование Pipenv означает, что вам больше не нужно использовать pip и virtualenv отдельно или управлять собственным файлом `requirements.txt` . Txt. Для тех, кто знаком с JavaScript, Pipenv похож на использование упаковочного инструмента, такого как `npm` .
+Альтернативой использованию virtualenvwrapper является [Pipenv](https://docs.pipenv.org/). Он автоматически создает виртуальные среды для ваших проектов и поддерживает `Pipfile` который содержит зависимости. Использование Pipenv означает, что вам больше не нужно использовать pip и virtualenv отдельно или управлять собственным файлом `requirements.txt`. Txt. Для тех, кто знаком с JavaScript, Pipenv похож на использование упаковочного инструмента, такого как `npm`.
 
-Чтобы начать работу с Pipenv, вы можете следовать этому очень подробному [руководству](https://docs.pipenv.org/install.html#installing-pipenv) . Pipenv позволяет легко [указать, какую версию Python](https://docs.pipenv.org/basics.html#specifying-versions-of-python) вы хотите использовать для каждого проекта, [импортировать](https://docs.pipenv.org/basics.html#importing-from-requirements-txt) из существующего файла `requirements.txt` и [отобразить](https://docs.pipenv.org/#pipenv-graph) зависимости.
+Чтобы начать работу с Pipenv, вы можете следовать этому очень подробному [руководству](https://docs.pipenv.org/install.html#installing-pipenv). Pipenv позволяет легко [указать, какую версию Python](https://docs.pipenv.org/basics.html#specifying-versions-of-python) вы хотите использовать для каждого проекта, [импортировать](https://docs.pipenv.org/basics.html#importing-from-requirements-txt) из существующего файла `requirements.txt` и [отобразить](https://docs.pipenv.org/#pipenv-graph) зависимости.
