@@ -4,16 +4,16 @@ title: List Append Method
 ## List Append Method
 
 There are many methods for lists, you can explore all of them by typing `help(list)` in your python console.
-One of them is the append function which, as the name says appends the argument given list.
+One of them is the append function which, as the name says, appends the argument to the given list.
 
-#### Example Usage
+#### Example Usage:
 
 ```py
 words = ["I", "love", "Python"]
 words.append("very much")
 print(words)
 ```
-#### Output
+#### Output:
 ```
 ["I", "love", "Python", "very much"]
 ```
