@@ -32,7 +32,7 @@ localeTitle: Непрозрачность фона
 .class-name { 
   opacity:0.5; 
  } 
- Opacity value can be anything between 0 and 1; 
+ Opacity value can be anything between 0 and 3; 
 ```
 
 **прозрачный**
