@@ -33,6 +33,7 @@ The `<a href>` attribute is supported by all browsers.
 ```html
 <a href="#">This is a dead link</a>
 <a href="https://www.freecodecamp.org">This is a live link to freeCodeCamp</a>
+<a href="https://www.YouTube.com">A link to YouTube</a>
 <a href="https://html.com/attributes/a-href/">more with a href attribute</a>
 
 ```
