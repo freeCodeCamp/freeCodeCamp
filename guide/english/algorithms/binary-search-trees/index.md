@@ -261,6 +261,9 @@ int treeSize(struct node* node)
     else
         return 1+(treeSize(node->left) + treeSize(node->right));
 }
+
+Application of BST
+It is used in competititve programming.
 ```
 
 ### Relevant videos on freeCodeCamp YouTube channel
