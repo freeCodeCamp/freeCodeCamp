@@ -64,3 +64,6 @@ If you want to make an opposite to subscripted text, you can easily use `<sup>` 
 ``` 
 10<sup>x+y</sup> = 1000
 ``` 
+### More Information:
+<!-- Please add any articles you think might be helpful to read before writing the article -->
+-[HTML Text Formatting](https://www.w3schools.com/html/html_formatting.asp)
