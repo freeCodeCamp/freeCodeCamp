@@ -26,7 +26,7 @@ Angular animations declare within the `@Component` metadata. `@Component` decora
 
 Animations are exclusive to their host component via the decorator's metadata. Animations can only be used in the host component’s template. Animations do not inherit to the component's children. There is an easy work-around for this.
 
-You could always create a separate file that exports an array. Any component class can import that array from the top of its host file. The imported array token then goes into the animations metadata of the component. Repeat this process for any other components requiring the same array in their animations metadata.
+You can always create a separate file that exports an array. Any component class can import that array from the top of its host file. The imported array token then goes into the animations metadata of the component. Repeat this process for any other components requiring the same array in their animations metadata.
 
 Content projection lets you apply animations to component A's content DOM (Document Object Model). Component B wrapping this content DOM can project the contents into its own template. Once it does, the animations of component A do not negate. Component B incorporates A's animations through content projection.
 
