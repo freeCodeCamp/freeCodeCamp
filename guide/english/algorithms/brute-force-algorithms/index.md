@@ -10,6 +10,7 @@ A classic example is the traveling salesman problem (TSP). Suppose a salesman ne
 Another example: 5 digit password, in the worst case scenario would take 10<sup>5</sup> tries to crack.
 
 The time complexity of brute force is <b> O(n*m) </b>. So, if we were to search for a string of 'n' characters in a string of 'm' characters using brute force, it would take us n * m tries.
+Brute Force Algorithms basically depend upon the logic of the problem.
 
 #### More Information:
 
