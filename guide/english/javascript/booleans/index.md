@@ -49,7 +49,7 @@ console.log(c && a); // 'word'
 ```
 As you can see, the *or* operator checks the first operand. If this is true or truthy, it returns it immediately (which is why we get 'word' in the first case & true in the second case). If it is not true or truthy, it returns the second operand (which is why we get 'word' in the third case). 
 
-With the and operator it works in a similar way, but for 'and' to be true, both operands need to be truthy. So it will always return the second operand if both are true/truthy, otherwise it will return false. That is why in the fourth case we get true and in the last case we get 'word'. 
+The *and* operator works in a similar way, but for 'and' to be true, both operands need to be truthy. So it will always return the second operand if both are true/truthy, otherwise it will return false. That is why in the fourth case we get true and in the last case we get 'word'. 
 
 ## The Boolean Object
 
