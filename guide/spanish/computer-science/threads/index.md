@@ -1,8 +1,8 @@
 ---
 title: Threads
-localeTitle: Trapos
+localeTitle: Hilos
 ---
-## Trapos
+## Hilos
 
 Una secuencia de instrucciones del programa dada al sistema operativo para ejecutar. Es la secuencia síncrona más pequeña que se puede ejecutar. Al ser sincrónicas, las instrucciones en un hilo son lineales y se ejecutan una tras otra. Si un programa tiene varios subprocesos, el programa en su conjunto puede ser asíncrono, ya que estos subprocesos ejecutan sus propias instrucciones de forma independiente entre sí (simultáneamente).
 
