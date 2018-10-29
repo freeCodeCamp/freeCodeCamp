@@ -123,3 +123,30 @@ which would end up looking like:
 <!-- Please add any articles you think might be helpful to read before writing the article -->
 * [HTML lists on w3schools](https://www.w3schools.com/html/html_lists.asp)
 * [HTML lists on WebPlatform](https://webplatform.github.io/docs/guides/html_lists/)
+
+1. First ordered list item
+2. Another item
+  * Unordered sub-list. 
+1. Actual numbers don't matter, just that it's a number
+  1. Ordered sub-list
+4. And another item.  
+   
+   Some text that should be aligned with the above item.
+
+* Unordered list can use asterisks
+- Or minuses
++ Or pluses
+First ordered list item
+Another item
+Unordered sub-list.
+Actual numbers don't matter, just that it's a number
+
+Ordered sub-list
+
+And another item.
+
+Some text that should be aligned with the above item.
+
+Unordered list can use asterisks
+Or minuses
+Or pluses
