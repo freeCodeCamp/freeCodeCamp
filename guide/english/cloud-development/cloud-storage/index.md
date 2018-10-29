@@ -24,3 +24,4 @@ There are mainly two types of storage
     - Block storage service of AWS – EBS (Elastic Block Storage) 
     - Cloud provides facility of scaling storage that’s the elastic property of cloud.
     - Block storage of OpenStack – Cinder
+    ## Advantages: Companies need only pay for the storage they actually use, typically an average of consumption during a month.[10] This does not mean that cloud storage is less expensive, only that it incurs operating expenses rather than capital expenses.
