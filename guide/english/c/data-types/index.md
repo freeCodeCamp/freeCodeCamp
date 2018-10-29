@@ -117,3 +117,13 @@ A pointer of type void * represents the address of an object, but not its type. 
  * double takes double the memory and gives 15 decimal places
  * long double takes even more memory and gives 19 decimal places
 * Picking the right data type is important and gives the programmer a lot of control over the program at a low level.
+
+User Defined Data Types:
+    1.Structure
+    2.Union
+    3.Enumeration
+    
+There are also other data types such as STACK,QUEUE,LINKEDLISTS,TREES,GRAPHS etc,.
+the above data types can be implemented by using arrays,and other common data types
+       
+    
