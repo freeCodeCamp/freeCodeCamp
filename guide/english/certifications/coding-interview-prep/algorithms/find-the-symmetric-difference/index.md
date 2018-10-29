@@ -47,9 +47,9 @@ In the event of *odd number of sets* the symmetric difference will include ident
 
 > _try to solve the problem now_
 
-## Spoiler Alert! ##
+## Spoiler Alert! 
 
-![:warning:](//discourse-user-assets.s3.amazonaws.com/original/2X/2/2d6c412a50797771301e7ceabd554cef4edcd74d.gif ":warning:")
+# ![:warning:](https://forum.freecodecamp.com/images/emoji/emoji_one/warning.png?v=3 ":warning:")
 
 **Solution Ahead!**
 
