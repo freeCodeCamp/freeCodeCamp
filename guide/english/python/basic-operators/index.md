@@ -69,8 +69,9 @@ Consider the expression, <b>“a = 2 + 3”</b>. Here, `2` and `3` are the <i>op
   </tr>
 </table>
 
-Note: To get the result in floating type, one of the operands must also be of float type.
-Additional note: Python arithmetic operations follow the PEMDAS order of precedence.
+Notes: 
+- To get the result in floating type, one of the operands must also be of float type.
+- Python arithmetic operations follow the PEMDAS order of precedence.
 
 #### Comparison (Relational) Operators
 
