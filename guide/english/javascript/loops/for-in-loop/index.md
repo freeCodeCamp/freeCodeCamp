@@ -66,6 +66,17 @@ The `for...in` statement iterates over the enumerable properties of an object, i
     //   b
     //   c
 
+*Note:* When using For...in loop to iterate over exisiting object properties, it's considered a good practice to have a `hasOwnProperty` check. Otherwise, it will loop through every property on the prototype chain.
+
+```javascript
+for(const key in someObj){
+    if(someObj.hasOwnProperty(key)){
+        // do something with someObj[key]
+        // other logic
+    }
+}
+```
+
 # Ohter Resources:
 * [MDN link](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/for...in)
 * [MSDN link](https://msdn.microsoft.com/library/55wb2d34.aspx)
