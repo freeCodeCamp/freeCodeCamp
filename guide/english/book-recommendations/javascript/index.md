@@ -8,7 +8,7 @@ title: Books on JavaScript
 One of the best books on JavaScript. A must for both, beginners and intermediate programmers, who code in JavaScript. The best part is that the e-book is available for free.
 
 - [E-book](https://eloquentjavascript.net/)(free)
-- [Amazon](https://www.amazon.co.uk/Eloquent-JavaScript-3rd-Introduction-Programming-ebook/dp/B07C96Q217/ref=as_li_ss_tl?ie=UTF8&qid=1540797706&sr=8-6&keywords=javascript&linkCode=ll1&tag=tabletnewsonl-21&linkId=7dc0f1173cacdc211da612b52777576d&language=en_GB)(3rd edition released November 13 2018)
+- [Amazon](https://www.amazon.com/Eloquent-JavaScript-3rd-Introduction-Programming/dp/1593279507/ref=nav_ya_signin?)(3rd edition released November 13 2018)
 
 #### You Don't Know JS
 
