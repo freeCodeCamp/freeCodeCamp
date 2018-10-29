@@ -8,46 +8,48 @@ title: Accessibility Basics
 >
 > --Professor Severus Snape, Harry Potter Series
 
-Accessibility's role in development is essentially understanding the user's perspective and needs, and knowing that the web, and applications are a solution for people with disabilities.
+Accessibility's role in development is understanding the user's perspective and needs, and knowing that the web, and applications are a solution for people with disabilities.
 
-In this day and age, more and more new technologies are invented to make the life of developers, as well as users, easier. To what degree this is a good thing is a debate for another time, for now it's enough to say the toolbox of a developer, especially a web developer, is as ever-changing as the so called "dark arts" are according to our friend Snape.
+In this day and age, more and more new technologies are invented to make the life of developers - and users - easier. It's enough to say the toolbox of a developer, especially a web developer, is as ever-changing as the so called "dark arts" are according to our friend Snape.
 
 One tool in that toolbox should be accessibility. It is a tool that should ideally be used in one of the very first steps of writing any form of web content. However, this tool is often not all that well presented in the toolbox of most developers. This could be due to a simple case of not knowing it even exists to extreme cases like not caring about it.
 
-In my life as a user, and later a developer, who benefits from accessibility in any form of content, I have seen both ends of that spectrum. If you are reading this article, I am guessing you are in one of the following categories:
+In my life as a user who benefits from accessibility in any form of content, I have seen both ends of that spectrum. If you are reading this article, I am guessing you are in one of the following categories:
 
 *   You are a novice web developer and would like to know more about accessibility.
-*   You are a seasoned web developer and have lost your way (more on that later).
+*   You are a seasoned web developer and have lost your way.
 *   You feel that there is a legal obligation from work, and need to learn more about it.
 
-If you fall outside these rather broad categories, please let me know. I always like to hear from the people who read what I write about. Implementing accessibility impacts the entire team, from the colors chosen by the designer, the copy written by the copywriter, and to you, the developer.
+If you fall outside these categories, please let me know. I always like to hear from the people who read what I write about. 
 
-## So, what is accessibility anyway?
+Implementing accessibility impacts the entire team from the colors chosen by the designer, the copy written by the copywriter, and you, the developer.
 
-Accessibility in itself is a bit of a misleading term sometimes, especially if English is your second language. It is sometimes referred to as inclusive design.
+## What is Accessibility?
+
+Accessibility is sometimes referred to as "inclusive design". Inclusive design is about creating something accessible to all people, regardless of disability. 
 
 If your site is on the Internet, reachable by anyone with a web browser, in one sense that website is accessible to everyone with a web browser.
 
-But, is all content on your website actually readable, usable and understandable for everyone? Are there no thresholds that bar certain people from 'accessing' all the information you are exposing?
+But is all content on your website actually readable, usable, and understandable for everyone?
 
 You could ask yourself questions like the following ones:
 
-*   If you add information that is only contained in an audio file, can a deaf person still get that information?
-*   If you denote an important part of your website with a certain color, will a colorblind person know about it?
-*   If you add images on your website that convey important information, how will a blind or low-vision person know about it?
-*   If you want to navigate the application with keyboard or mouth-stick, will it be possible and predictable?
-*   Does your application assume the orientation of the device, and what if the user can't physically change it?
-*   Are there forgiving timed aspects of your application for someone that might need more time to fill in a form?
+*   If you add information only contained in an audio file, can a deaf person still access that information?
+*   If you denote an important part of your website with a certain color, can a colorblind person intereact with it?
+*   If you add images on your website that convey information, how will a blind or low-vision person use the information?
+*   If you want to navigate the application with a keyboard or mouth-stick, will it be possible and predictable?
+*   Does your application assume the orientation of the device; what if the user can't physically change it?
+*   Are there timed aspects of your application that may prevent someone that might need more time to fill in a form?
 *   Does your application still work (progressive enhancement) assuming that JavaScript does not load in time?
-*   You can even go as far as saying, if your website is very resource-heavy, will someone on a slow or spotty connection be able to read your content?
+*   If your website is very resource-heavy, will someone on a slow or spotty connection be able to read your content?
 
-This is where accessibility comes into play. Accessibility basically entails making your content as friendly, as easy to 'access' as possible for the largest amount of people. This includes people who are deaf, low-vision, blind, dyslexic, mute, on a slow connection, colorblind, suffering from epilepsy, mental fatigue, age, physical limitations, etc.
+This is where accessibility comes into play. Accessibility entails making your product as easy to 'access' as possible for the largest amount of people. This includes people who are deaf, low-vision, blind, dyslexic, mute, colorblind, epileptic, mentally ill, age, physical limitations, etc. As well as people on slow connections and older devices.
 
-## Why implement accessibility?
+## Why Implement Accessibility?
 
-You may think that accessibility doesn't apply to you or to your users, so why implement it? What would a blind person do with a photo editing tool?
+You may think that accessibility doesn't apply to you or to your users, so why implement it? 
 
-The truth is, you're right to a certain degree. If you have done meticulous user research and have excluded any chance of a certain group of people visiting your website, the priority for catering to that group of people diminishes quite a bit.
+The truth is, you're right to a certain degree. If you have done meticulous user research and know that there is no chance of a certain group of people visiting your website, the priority for catering to that group of people diminishes.
 
 However, doing this research is key in actually defending such a statement. Did you know there were <a href='http://audiogames.net' target='_blank' rel='nofollow'>blind gamers?</a> and even <a href='http://peteeckert.com/' target='_blank' rel='nofollow'>blind photographers?</a>. Perhaps you knew <a href='http://mentalfloss.com/article/25750/roll-over-beethoven-6-modern-deaf-musicians' target='_blank' rel='nofollow'>musicians can be deaf</a>?
 
@@ -59,7 +61,7 @@ Last year, airline websites were included in this list which meant that even her
 
 There's variations on this legislation all over the world, some more severe and all-encompassing than others. Not knowing about that fact doesn't make the lawsuit go away, sadly.
 
-## Ok, so accessibility is a big deal. Now how do we implement it?
+## How Do You Implement It?
 
 That question, sadly, is harder to answer than it may seem. The Harry Potter quote at the top is there for a reason, and it's not my being an avid Fantasy reader.
 
@@ -67,7 +69,7 @@ As I stated above, accessibility is important for a large group of different peo
 
 To bring a bit of a method to the madness, the Web Content Accessibility Guidelines or <a href='https://www.wuhcag.com/web-content-accessibility-guidelines/' target='_blank' rel='nofollow'>WCAG</a> were composed. This document contains a number of criteria you can use to check your website. For now, I will cover some of the most important basics here. I will point you at the low-hanging fruits, so to speak. In subsequent articles, I will discuss more advanced techniques like [WAI-ARIA] which is important for JavaScript-based apps.
 
-### Talk like the natives
+### Talk the Talk
 
 The HTML specification is a document that describes how the language should be used to build websites. Assistive technologies, like screen-readers, speech recognition programs etc. are aware of this document. Web developers however, often are not, or at least not enough, and think something like this is ok:
 ```html
@@ -98,13 +100,13 @@ Spans and divs are non-elements. They are meant to contain other elements, not t
 ```
 Boom. Suddenly, all these elements are now perfectly accessible, just by using native HTML. HTML the way it was meant to be used, in other words.
 
-### A foundation cannot stand without structure
+### 1. Foundation
 
 A bit earlier, I touched upon a screen-reader's hotkeys to jump from heading to heading. There are in fact many hotkeys like this to quickly jump to the nearest table, form field, link etc. Making sure these headings are actually in logical places is therefore a good practice and really decreases your assistive technology users' stress levels, which is good if you want visitors to keep coming back to your website.
 
 Also remember that headings are hierarchical. If you use an h2, make sure the h3's that follow it actually have something to do with that h2\. Don't put an h3 for contact details under your h2 for recent blog posts. A good analogy here is a book with chapters, that have subsections. You wouldn't put a section on baking cookies in the middle of a chapter on preparing vegetables ...or ...you wouldn't... right?
 
-### What's the alternative?
+### 2. Alternatives
 
 Images on a website are great. They add a new layer to your content, can really make the experience your site visitors have way more immersive and generally just look good among all that text. A picture can say more than a thousand words, right?
 
@@ -124,7 +126,7 @@ For images of text, the text can either be included in the alt-attribute or offe
 
 The text should provide the context and information that is an alternative to seeing the image. It is simply not enough to write "image of hot air balloons" - why are the balloon pictures there? If the image is stylized or conveys an emotional meaning, this can be included.
 
-### I can't read your scrawl, son
+### 3. Aesthetic
 
 Even people who don't wear glasses and have no problem with their eyesight at all benefit from an easy to read font and proper contrast. I'm sure you would cringe if you had to fill in a form where light yellow, hopelessly loopy letters are placed on a white background. For people who's eyesight is not as good, like your grandma, for example, this becomes hopelessly worse.
 
@@ -132,7 +134,9 @@ The WCAG has contrast ratios for smaller and larger letters and there's plenty o
 
 A good place to start checking color contrast is by using the [WebAIM](https://webaim.org/resources/contrastchecker/) color contrast checker.
 
-### What does this button do?
+Color contrast should be a minimum of 4.5:1 for normal text and 3:1 for large text. “Large text” is defined as text that is at least 18 point (24px) or 14 point (18.66px) and bold. [Contrast Checker](https://webaim.org/resources/contrastchecker/)
+
+### 4. Labeles
 While we are on the topic of forms, let's quickly glance at the <code>input</code> tag. This little guy is kinda important.  
 
 When you put some input fields on a web page, you can use labels to ...well ...label them. However, putting them next to each other is not quite enough. The attribute you want is the for-attribute, which takes the ID of a subsequent input field. This way, assistive technologies know what label to associate with what form field.  
@@ -146,7 +150,7 @@ I guess the best way to illustrate this is by giving an example:
 
 This will make for example a screen-reader say "username, text edit field", instead of just reporting' text edit field' and requiring the user to go look for a label. This also really helps people who use speech recognition software.
 
-### That's a tall order
+### Your Turn
 
 Let's take a small break. I want you to go look at a really well-designed web page. It can be any page. Go on, I'll wait.
 
@@ -172,8 +176,6 @@ Oh ... it doesn't? In that case ..you might one day hear a muffled curse carried
 
 In that case I really only have two words for you. Often have I heard those same two words directed at me when I wrote some bad code and it is with great pleasure that I tell you: "go fix!"
 
-### Color Contrast
-Color contrast should be a minimum of 4.5:1 for normal text and 3:1 for large text. “Large text” is defined as text that is at least 18 point (24px) or 14 point (18.66px) and bold. [Contrast Checker](https://webaim.org/resources/contrastchecker/)
 
 ## Conclusion
 I have told you about accessibility, what it is, what it's not and why it's important.  
