@@ -40,7 +40,7 @@ To add a colored border to a button, use the border property:
 ```
 button {
   background-color: #FFF;
-  color: #FFF;
+  color: pink;
   border: 2px solid #6ba0f4;
 }
 ```
