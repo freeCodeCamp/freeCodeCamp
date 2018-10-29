@@ -46,4 +46,25 @@ Car carObj = new Car();  // valid
 Motorcycle mBikeObj = new Motorcycle();  // valid
 ```
 
-If the child class doesn't implement the abstract methods of the father, it becomes an abstract class. 
+If the child class doesn't implement the abstract methods of the father, it becomes an abstract class.
+
+## Comparison with interfaces
+When first encountering both abstract classes and interfaces, one might wonder "What is the difference?". The main difference between interfaces and abstract is that abstract classes are able to include implementation details:
+
+``` java
+abstract class Vehicle
+{
+  private int wheels; //abstract classes can have variables
+  
+  private Motor motor;
+  
+  // while this method is abstract and has to be implemented in a subclass ....
+  abstract void start();
+  
+  // ... we can implement this method (at least as a default) for this method
+  int getWheels() {
+    return this.wheels;
+   }
+}
+
+```
