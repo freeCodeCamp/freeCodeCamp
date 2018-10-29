@@ -10,6 +10,7 @@ This kind of algorithm looks at the problem of re-arranging an array of items in
 In the following links you can also find more information about:
 * <a href="">Binary</a> Search
 * <a href="">Linear</a> Search
+* <a href="">Dynamic</a> Search
 * Searching <a href="">linked lists vs arrays</a>
 
 #### More Information:
