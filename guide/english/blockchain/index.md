@@ -7,13 +7,13 @@ title: Blockchain
 >
 > --Bettina Warburg<sup>1</sup>
 
-Blockchain is often associated with Bitcoin and other cryptocurrencies, but they are not the same thing. Bitcoin was the first to implement the concept of the Blockchain. The structure of a blockchain, a growing list of records, can be applied to many other fields such as digital identity, supply chain and even [democracy](https://www.democracy.earth/).
+Blockchains are often associated with Bitcoin and other cryptocurrencies, but they are not the same thing. Bitcoin was the first to implement the concept of a blockchain. The structure of a blockchain, a growing list of records, can be applied to many other fields such as digital identity, supply chain and even [democracy](https://www.democracy.earth/).
 
 A blockchain is built out of a combination of two different “hash-based data structures” (Narayanan, Bonneau, Felten, Miller, & Goldfeder, 2016, p. 64), a hash chain of blocks and a Merkle tree. “In short, the blockchain is a network and a database; it has rules and built-in security; and it maintains internal integrity and its own history” (Depository Trust and Clearing Corporation, 2016, p. 7). In the chain, each block has a pointer to the previous block as well as a pointer to its Merkle tree of transactions. A Merkle tree, sometimes called a hash tree, is a type of tree where each node that has at least one child is marked with a hash of its own children.
 
-Even though blockchain can be applied to a big range of problems, it is not the solution to everything. This technology is usually used to solve problems where the parties don't trust each other.
+Even though blockchain technology can be applied to a big range of problems, it is not the solution to everything. This technology is usually used to solve problems where the parties don't trust each other.
 
-A third party is usually needed to validate trust relationships. In the most common example, which is the banking system, a trusted authority is needed, such as a bank, to intermediate transactions, manage accounts, verify balances, and validate transfers. Blockchain then, comes in this case to replace the regulatory authority. In the case of cryptocurrencies, it replaces the figure of the bank, doing all the validations and guaranteeing the security and veracity in the transactions.
+A third party is usually needed to validate trust relationships. In the most common example, which is the banking system, a trusted authority is needed, such as a bank, to intermediate transactions, manage accounts, verify balances, and validate transfers. Blockchains then serve to replace the regulatory authority. In the case of cryptocurrencies, it replaces the figure of the bank, doing all the validations and guaranteeing the security and veracity in the transactions.
 
 For this reason Blockchain is also known as **"The Trust Protocol"**.
 
