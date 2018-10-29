@@ -24,7 +24,7 @@ To set this property on multiple background images separate values by comma:
 ```css
 .multiple {
     background-image: url(1.png), url(2.png);
-    background-size: 3px 3px, cover;
+    background-size: 5px 3px, cover;
 }
 ```
 
