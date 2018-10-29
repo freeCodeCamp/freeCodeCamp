@@ -1,5 +1,5 @@
 ---
-title: Layouts
+title: HTML Layout Elements
 ---
 ## Layouts
 
@@ -14,7 +14,13 @@ Almost every web page we see can be divided into boxes, that can be arranged int
 And the HTML layout techniques help us put the needed information into the needed order or design.
 
 
-### Techniques to Implement Layouts 
+### HTML Layout Techniques
+
+HTML tables (not recommended)
+CSS float property
+CSS flexbox
+CSS framework
+CSS grid
 
 #### HTML Tables
 One the most basic tools to implement layouts in a webpage, these are provided by HTML. But as the layout gets complicated HTML tables quickly lose their ease, because of the increase in markup text.
