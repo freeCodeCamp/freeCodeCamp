@@ -22,17 +22,17 @@ Android apps can be a great, fun way to get into the world of programming. Offic
 
 From simple games and utility apps to full-blown music players, there are many opportunities to create something meaningful with Android. The Android developer community is widespread, and the documentation and resources online are easy to find, so that you can tackle any issue you're facing.
 
-There is definitely a learning curve to get used to the Android framework, however once you understand the core components that make up the app, the rest will come naturally.
+There is definitely a learning curve to get used to the Android framework, however, once you understand the core components that make up the app, the rest will come naturally.
 
 The learning curve involved in Android has a relatively smaller slope compared to learning other technologies such as NodeJS. It is also relatively easier to understand and make contributions towards AOSP hosted by Google. The project can be found [here](https://source.android.com/) 
 
 ## Getting started
-Check out the guides in this folder to learn about the 4 [core components](core-components/index.md) that make up an Android app and how you can get started with a sample app, and then delve into the more advanced topics such as fragments and the Gradle build system. Then check out the material design specifications guide as well to learn how to make your apps beautiful and user friendly.
+Check out the guides in this folder to learn about the 4 [core components](core-components/index.md) that make up an Android app and how you can get started with a sample app, and then delve into the more advanced topics such as fragments and the Gradle build system. Then check out the material design specifications guide as well to learn how to make your apps beautiful and user-friendly.
 
 ### Setting Up and Getting Started with Android Studio
 Go to this [link](https://www.oracle.com/technetwork/java/javase/downloads/index.html) and install the latest JDK.
 Now download the Android Studio and SDK tools bundle from [here](https://developer.android.com/studio/).
-Install the Android Studio and SDK following the set up. Keep note of the SDK location.
+Install the Android Studio and SDK following the setup. Keep note of the SDK location.
 If you face any error go to settings later to solve it.
 
 Lastly, learn to integrate 3rd party libraries and Firebase services to add functionality to your app. It would be helpful if you go through the official documentation for each component.
@@ -49,7 +49,7 @@ Ever since Google announced Kotlin as the official language for Android developm
 
 First and foremost is that Android development is not everything; as a programmer, you may be starting your career with Android development, but if you start with a well-established language like Java, you become a part of the bigger Java community and market, which directly means more job opportunities.
 
-The second, and more important thing, is that there is a huge community of Java programmers, which means you can find answers when you are stuck. This is very important because, as a beginner, you will face a lot of technical problems and you might not know where to head when you are stuck. When you search Google with a Java problem, you are bound to get answers; the same cannot be said for Kotlin, which is still a new programming language.
+The second, and more important thing is that there is a huge community of Java programmers, which means you can find answers when you are stuck. This is very important because, as a beginner, you will face a lot of technical problems and you might not know where to head when you are stuck. When you search Google with a Java problem, you are bound to get answers; the same cannot be said for Kotlin, which is still a new programming language.
 
 ###### Java Programmers Should Learn Kotlin
 
