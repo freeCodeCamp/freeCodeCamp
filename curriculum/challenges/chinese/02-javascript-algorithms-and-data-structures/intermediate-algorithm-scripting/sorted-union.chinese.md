@@ -21,8 +21,6 @@ localeTitle: 排序联盟
 tests:
   - text: '<code>uniteUnique([1, 3, 2], [5, 2, 1, 4], [2, 1])</code>应该返回<code>[1, 3, 2, 5, 4]</code> <code>uniteUnique([1, 3, 2], [5, 2, 1, 4], [2, 1])</code> <code>[1, 3, 2, 5, 4]</code> 。'
     testString: 'assert.deepEqual(uniteUnique([1, 3, 2], [5, 2, 1, 4], [2, 1]), [1, 3, 2, 5, 4], "<code>uniteUnique([1, 3, 2], [5, 2, 1, 4], [2, 1])</code> should return <code>[1, 3, 2, 5, 4]</code>.");'
-  - text: '<code>uniteUnique([1, 3, 2], [1, [5]], [2, [4]])</code>应该返回<code>[1, 3, 2, [5], [4]]</code> <code>uniteUnique([1, 3, 2], [1, [5]], [2, [4]])</code> <code>[1, 3, 2, [5], [4]]</code> 。'
-    testString: 'assert.deepEqual(uniteUnique([1, 3, 2], [1, [5]], [2, [4]]), [1, 3, 2, [5], [4]], "<code>uniteUnique([1, 3, 2], [1, [5]], [2, [4]])</code> should return <code>[1, 3, 2, [5], [4]]</code>.");'
   - text: '<code>uniteUnique([1, 2, 3], [5, 2, 1])</code>应该返回<code>[1, 2, 3, 5]</code> <code>uniteUnique([1, 2, 3], [5, 2, 1])</code> <code>[1, 2, 3, 5]</code> 。'
     testString: 'assert.deepEqual(uniteUnique([1, 2, 3], [5, 2, 1]), [1, 2, 3, 5], "<code>uniteUnique([1, 2, 3], [5, 2, 1])</code> should return <code>[1, 2, 3, 5]</code>.");'
   - text: '<code>uniteUnique([1, 2, 3], [5, 2, 1, 4], [2, 1], [6, 7, 8])</code>应该返回<code>[1, 2, 3, 5, 4, 6, 7, 8]</code> <code>uniteUnique([1, 2, 3], [5, 2, 1, 4], [2, 1], [6, 7, 8])</code> <code>[1, 2, 3, 5, 4, 6, 7, 8]</code> 。'

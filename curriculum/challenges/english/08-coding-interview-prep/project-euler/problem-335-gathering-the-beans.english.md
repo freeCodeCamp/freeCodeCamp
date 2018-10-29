@@ -28,7 +28,7 @@ Find M(2k+1). Give your answer modulo 79.
 ```yml
 tests:
   - text: <code>euler335()</code> should return 5032316.
-    testString: 'assert.strictEqual(euler335(), 5032316, "<code>euler335()</code> should return 5032316.");'
+    testString: assert.strictEqual(euler335(), 5032316, '<code>euler335()</code> should return 5032316.');
 
 ```
 

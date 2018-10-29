@@ -35,7 +35,7 @@ Mira este vídeo de demostración o sigue los siguientes pasos:
 
 ![GIF showing the GitHub interface steps](#)
 
-1. Ve a la carpets **"páginas"** (situado en [`client/src/pages/guide`](/client/src/pages/guide)) donde encontrarás el artículo raiz que quieras editar.
+1. Ve a la carpets **"páginas"** (situado en [`guide`](/guide)) donde encontrarás el artículo raiz que quieras editar.
 
     > Todas las raíces estarán en un archivo index.md
 
