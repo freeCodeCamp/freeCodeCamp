@@ -1,6 +1,6 @@
 {
   "name": "@freecodecamp/freecodecamp",
-  "version": "0.0.1",
+  "version": "0.0.0.1",
   "scripts": {
     "prebootstrap": "npm run ensure-env",
     "bootstrap": "lerna bootstrap && lerna run build --scope @freecodecamp/curriculum",
