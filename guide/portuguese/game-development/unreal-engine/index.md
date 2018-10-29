@@ -6,7 +6,9 @@ localeTitle: Motor Unreal
 
 Unreal Engine é um motor de jogo multi-plataforma desenvolvido pela Epic Games. O Unreal Engine foi inicialmente desenvolvido para o título Unreal de 1998, mas foi posteriormente usado para muitos milhares de títulos comerciais e não comerciais. A versão mais recente do mecanismo, Unreal Engine 4, tem como alvo PC, PlayStation 4, Xbox One, Mac OS X, iOS, Android, muitos sistemas VR, Linux, SteamOS e HTML5, e o editor pode ser executado no Windows, OS X e Linux.
 
-UsScript é a linguagem de script nativa do mecanismo, usada para criar códigos de jogo e eventos de jogo antes do lançamento do Unreal Engine 4, e foi projetada para programação de alto nível. O roteiro foi escrito e programado por Tim Sweeney, também criador de outra linguagem de script, ZZT-oop.
+UnrealScript é a linguagem de script nativa do mecanismo, usada para criar códigos de jogo e eventos de jogo antes do lançamento do Unreal Engine 4, e foi projetada para programação de alto nível. O interpretador do UnrealScript foi escrito e programado por Tim Sweeney, também criador de outra linguagem de script, ZZT-oop.
+
+No Game Developers Conference em 2012, a Epic anunciou que o UnrealScript seria removido do Unreal Engine 4 em favor do C++, a programação visual será suportada pelo sistema de Blueprints Visual Scripting, uma substituição do anterior Kismet para programação visual.
 
 Desde 2015, o Unreal Engine está livre para usar, com a Epic cobrando royalties de 5% sobre as vendas de títulos produzidos usando o mecanismo. A Epic disponibiliza a maioria de sua base de códigos livremente através de seu Github, embora a fonte para plataformas fechadas, como o Playstation 4 e o Xbox One, esteja disponível apenas para desenvolvedores de plataformas registradas.
 
@@ -25,11 +27,12 @@ O Unreal passou por quatro grandes revisões. Embora algum código seja comum en
 
 ### Jogos populares feitos em Unreal
 
-*   cidade de Arkham do Batman
-*   Efeito em massa
+*   Batman Arkham City
+*   Mass Effect
 *   Bioshock
 *   Borderlands
-*   Engrenagens da guerra
+*   Gears of War
+*   Fortnite
 
 #### Mais Informações:
 

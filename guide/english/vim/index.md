@@ -24,5 +24,6 @@ The modal part of Vim is what makes it really powerful. For a interactive tutori
 
 For more information head to <a href='https://vim.sourceforge.io' target='_blank' rel='nofollow'>Vim's homepage</a>
 
-* [Open Vim](http://www.openvim.com/) is an online, interactive Vim tutorial you can do right in your browser
+* [Vim.org](https://www.vim.org/) is an online resource with downloadable binaries for most operating systems. 
+* [Open Vim](http://www.openvim.com/) is an online, interactive Vim tutorial you can do right in your browser. 
 * [Vim Adventures](https://vim-adventures.com) is an online game based on VIM's keyboard shortcuts. It's the "Zelda meets text editing" game.

@@ -28,7 +28,7 @@ Find u + v.
 ```yml
 tests:
   - text: <code>euler180()</code> should return 285196020571078980.
-    testString: 'assert.strictEqual(euler180(), 285196020571078980, "<code>euler180()</code> should return 285196020571078980.");'
+    testString: assert.strictEqual(euler180(), 285196020571078980, '<code>euler180()</code> should return 285196020571078980.');
 
 ```
 
