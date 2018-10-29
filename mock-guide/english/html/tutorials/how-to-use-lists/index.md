@@ -74,5 +74,6 @@ You can also control the style of the list. You can use `list-style` property of
 `list-style` property is a shorthand for `list-style-type`, `list-style-position`, `list-style-image`.
 
 #### More Information:
-[HTML lists · WebPlatform Docs](https://webplatform.github.io/docs/guides/html_lists/
-)
+[HTML lists · WebPlatform Docs](https://webplatform.github.io/docs/guides/html_lists/)
+
+[HTML lists · w3schools](https://www.w3schools.com/html/html_lists.asp)
