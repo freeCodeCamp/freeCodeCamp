@@ -2,11 +2,11 @@
 title: Template Literals
 ---
 
-Template Literals are an ES6 feature utilizing the backtick charater to define a string value
+Template Literals are an ES6 feature utilizing the backtick character to define a string value
 
 ### The basic syntax
 
-Below is a basic example of an template literal:
+Below is a basic example of a template literal:
 
 ```javascript
 // ES5 syntax
