@@ -3,7 +3,7 @@ title: Monad
 ---
 
 # Monad Laws
-There are 3 laws which must be satisfied by a data type to be considered as monad
+There are 3 laws which must be satisfied by a data type for it to be considered as monad.
 
 ## Left Identity
 `return a >>= f` must equal `f a`
@@ -14,7 +14,7 @@ function to the original value.
 
 ## Right Identity
 `m >>= return` must equal `m`
-This states that if we use `>>=` to feed a monadic value into return, we
+This states that if we use `>>=` to feed a monadic value into `return`, we
 get back our original monadic value.
 
 ## Associativity
@@ -28,8 +28,8 @@ associative law is required for this behavior
 # But what about `>>=` and `return`?
 Simple:
 
-`>>=`, or 'bind' takes a monad and a function that takes a value and returns a
-monad, and applies the function to a monad. This essentially allows us to
+`>>=`, or 'bind' takes a monad and a function which _takes a value and returns a
+monad_, and applies the function to a monad. This essentially allows us to
 manipulate data within monads, which can't be accessed by non-monadic functions.
 
 `return`, on the other hand, takes a value and returns a monad containing
@@ -53,12 +53,12 @@ justHead = do
 
 
 
-return is same as pure of applicative
+`return` is same as pure of applicative.
 
-
+```haskell
 instance Monad [] where  
     return x = [x]  
     xs >>= f = concat (map f xs)  
     fail _ = []  
-
+```
 
