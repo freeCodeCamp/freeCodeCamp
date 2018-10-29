@@ -24,7 +24,7 @@ Ethics is highly influenced by office culture, so lead by example. Be that perso
 
 4. Don't give up
 
-It can be easy to become dishartened when a new ethical breach happens - but don't. Creating an ethical future for developers will take all of us. 
+It can be easy to become dishartened when a new ethical breach happens but don't. Creating an ethical future for developers will take all of us. 
 
 5. Know your "why"
 
