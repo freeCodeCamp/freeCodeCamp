@@ -2,8 +2,7 @@
 title: Pointers
 ---
 # Pointers in C
-By now you should be aware that C is a low-level language, and nothing shows that better than pointers. Pointers are variables that get you the variable value by "pointing" to a memory location rather than storing the value of the variable itself. This allows for some handy tricks, and is also what gives us access to arrays and file handling, among other things.
-
+pointers are powerful features of c and (C++) programming that differentiates it from other popular programming languages like: java and python.These are used in C program to acess the memory and manipulate the address.
 #
 ```
 type *var-name;
