@@ -1,0 +1,50 @@
+{
+  "name": "Managing Packages with npm",
+  "dashedName": "managing-packages-with-npm",
+  "order": 1,
+  "time": "5 hours",
+  "superBlock": "apis-and-microservices",
+  "superOrder": 5,
+  "challengeOrder": [
+    [
+      "587d7fb3367417b2b2512bfb",
+      "How to Use package.json, the Core of Any Node.js Project or npm Package"
+    ],
+    [
+      "587d7fb3367417b2b2512bfc",
+      "Add a Description to Your package.json"
+    ],
+    [
+      "587d7fb4367417b2b2512bfd",
+      "Add Keywords to Your package.json"
+    ],
+    [
+      "587d7fb4367417b2b2512bfe",
+      "Add a License to Your package.json"
+    ],
+    [
+      "587d7fb4367417b2b2512bff",
+      "Add a Version to Your package.json"
+    ],
+    [
+      "587d7fb4367417b2b2512c00",
+      "Expand Your Project with External Packages from npm"
+    ],
+    [
+      "587d7fb5367417b2b2512c01",
+      "Manage npm Dependencies By Understanding Semantic Versioning"
+    ],
+    [
+      "587d7fb5367417b2b2512c02",
+      "Use the Tilde-Character to Always Use the Latest Patch Version of a Dependency"
+    ],
+    [
+      "587d7fb5367417b2b2512c03",
+      "Use the Caret-Character to Use the Latest Minor Version of a Dependency"
+    ],
+    [
+      "587d7fb5367417b2b2512c04",
+      "Remove a Package from Your Dependencies"
+    ]
+  ]
+}
