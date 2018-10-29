@@ -90,7 +90,7 @@ LEFT JOIN `student-contact-info` AS b ON a.studentID = b.studentID;
 ```
 
 ### Full (Outer) Join
-In this type, basically we're gonna try to return everything from both tables. If there is no match, we'll get NULL(empty) at that place.
+In this type, we're going to try to return everything from both tables. If there is no match, we'll get NULL(empty) at that place.
 
 ```sql
 SELECT a.studentID, a.FullName, a.sat_score
