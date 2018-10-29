@@ -11,6 +11,9 @@ Like Greedy and Dynamic Programming, Divide and Conquer is an algorithmic paradi
 2. Conquer: Recursively solve these subproblems.
 3. Combine: Appropriately combine the answers.
 
+This method usually allows us to reduce the time complexity by a large extent.
+For eg - Bubble Sort uses a complexity of O(n^2) whereas quicksort (An  Application Of Divide And Conquer) reduces the time complexity to O(nlog(n)). Linear Search has time complexity O(n) whereas Binary Search (An  Application Of Divide And Conquer) reduces time complexity to O(log(n)).
+
 Following are some standard algorithms that are Divide and Conquer algorithms.
 
 1) Binary Search is a searching algorithm. In each step, the algorithm compares the input element x with the value of the middle element in array. If the values match, return the index of middle. Otherwise, if x is less than the middle element, then the algorithm recurs for left side of middle element, else recurs for right side of middle element.
