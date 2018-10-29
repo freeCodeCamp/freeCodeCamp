@@ -67,6 +67,14 @@ You'll learn many of the first princliples for data science tools and how algori
 - ISBN-10: 1617294039
 - ISBN-13: 978-1617294037
 
+*Head First Python, Second Edition*
+ - Paid book: a great beginner's book; part of the Head First series which uses cognitive science approach to way people learn.
+by Paul Barry
+Publisher: O'Reilly Media, Inc.
+Release Date: November 2016
+ISBN: 9781491919521
+Table of Contents [https://www.oreilly.com/library/view/head-first-python/9781491919521/#toc-start]
+
 #### Other Resources
 
 - [Functional Programming in Python by David Mertz [OREILLY] [FREE]](https://www.oreilly.com/programming/free/files/functional-programming-python.pdf)
