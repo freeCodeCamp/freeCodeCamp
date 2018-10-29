@@ -16,7 +16,7 @@ Span Tags ``<span>`` are self closing tags meaning they do not need a ``/>``.
 
 An example of how a ``<span>`` tag inserts a space between text can be seen below.
   
-  ``<p>Hello may name is <span> James</p>``
+  ``<p>Hello my name is <span> James</p>``
 
 If you assign a class to your ``<span>`` then you could add some css to it.
   Like so,
