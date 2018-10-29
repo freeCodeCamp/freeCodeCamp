@@ -3,7 +3,7 @@ title: Designer Tools
 ---
 ## Designer Tools
 
-In this section, we'll have guides to a wide variety of tools used by designers.
+In this section, we have guides to a wide variety of tools that are used by designers.
 
 ### UI
 Great for static content. 
