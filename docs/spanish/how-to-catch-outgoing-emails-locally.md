@@ -94,7 +94,7 @@ Siguiente, puedes ir a [usando MailHog](#usando-mailhog).
 
 ## Usando MailHog
 
-Una vez que hayas instalado MailHog y lo hayas iniciado, debes abrir tu bandeja de entrada de MailHog en tu navegador, abriendo una nueva pestaña o ventana y navegar a [http://localhost:8025] (http://localhost:8025). Ahora deberías ver una pantalla como la siguiente:
+Una vez que hayas instalado MailHog y lo hayas iniciado, debes abrir tu bandeja de entrada de MailHog en tu navegador, abriendo una nueva pestaña o ventana y navegar a [http://localhost:8025](http://localhost:8025). Ahora deberías ver una pantalla como la siguiente:
 
 ![Captura de pantalla MailHog 1](../images/mailhog/1.jpg)
 
