@@ -67,4 +67,4 @@ npm install -g @angular/cli@latest
 
 You can create **Angular 2.x** and other version projects by following the steps from the official documentation of [Angular](https://angular.io/guide/quickstart)
 
-*Note : Please refer the Angular documentation for the updated information.*
+*Note : Please refer to the Angular documentation for the updated information.*
