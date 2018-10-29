@@ -23,5 +23,5 @@ When |a| > 1 the parabola becomes narrower.
  
 <img src="https://github.com/codersc/freeCodeCamp-article-images/blob/master/art3img6.png?raw=true" alt="Narrower version of a parabola (u-shaped graph)">
 
-
+In standard form ax+bx+c |c| represents the y intercep
 
