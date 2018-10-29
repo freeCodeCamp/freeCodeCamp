@@ -7,10 +7,10 @@ localeTitle: Aplicar a propriedade flex-direction para criar linhas no Tweet Inc
 ---
 
 ## Description
-<section id="description"> O <code>header</code> e o <code>footer</code> do exemplo de incorporação de tweets possuem itens-filhos que podem ser organizados como linhas usando a propriedade <code>flex-direction</code> . Isso informa ao CSS para alinhar os filhos horizontalmente. </section>
+<section id="description"> O <code>header</code> e o <code>footer</code> do exemplo de incorporação de tweets possuem itens-filhos que poderiam ser organizados como linhas usando a propriedade <code>flex-direction</code> . Isso informa ao CSS que alinhe os filhos horizontalmente. </section>
 
 ## Instructions
-<section id="instructions"> Adicione a propriedade CSS <code>flex-direction</code> ao <code>header</code> e ao <code>footer</code> e defina o valor como row. </section>
+<section id="instructions"> Adicione a propriedade CSS <code>flex-direction</code> ao <code>header</code> e ao <code>footer</code> e defina o valor como *row*. </section>
 
 ## Tests
 <section id='tests'>

@@ -31,11 +31,11 @@ This exercise is designed to illustrate the difference between how <code>var</co
 ```yml
 tests:
   - text: <code>var</code> does not exist in code.
-    testString: 'getUserInput => assert(!getUserInput("index").match(/var/g),"<code>var</code> does not exist in code.");'
+    testString: getUserInput => assert(!getUserInput('index').match(/var/g),'<code>var</code> does not exist in code.');
   - text: The variable <code>i</code> declared in the if statement should equal "block scope".
-    testString: 'getUserInput => assert(getUserInput("index").match(/(i\s*=\s*).*\s*.*\s*.*\1("|")block\s*scope\2/g), "The variable <code>i</code> declared in the if statement should equal "block scope".");'
+    testString: getUserInput => assert(getUserInput('index').match(/(i\s*=\s*).*\s*.*\s*.*\1('|")block\s*scope\2/g), 'The variable <code>i</code> declared in the if statement should equal "block scope".');
   - text: <code>checkScope()</code> should return "function scope"
-    testString: 'assert(checkScope() === "function scope", "<code>checkScope()</code> should return "function scope"");'
+    testString: assert(checkScope() === "function scope", '<code>checkScope()</code> should return "function scope"');
 
 ```
 
@@ -48,13 +48,13 @@ tests:
 
 ```js
 function checkScope() {
-"use strict";
-  var i = "function scope";
+  'use strict';
+  var i = 'function scope';
   if (true) {
-    i = "block scope";
-    console.log("Block scope i is: ", i);
+    i = 'block scope';
+    console.log('Block scope i is: ', i);
   }
-  console.log("Function scope i is: ", i);
+  console.log('Function scope i is: ', i);
   return i;
 }
 ```
@@ -69,6 +69,16 @@ function checkScope() {
 <section id='solution'>
 
 ```js
-// solution required
+function checkScope() {
+  'use strict';
+  let i = 'function scope';
+  if (true) {
+    let i = 'block scope';
+    console.log('Block scope i is: ', i);
+  }
+ 
+  console.log('Function scope i is: ', i);
+  return i;
+}
 ```
 </section>
