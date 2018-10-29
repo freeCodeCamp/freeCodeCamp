@@ -53,3 +53,9 @@ As previously noted, a 'while' loop will run until the conditional logic is fals
 #### More Information:
 
 - <a href='https://docs.python.org/3/reference/compound_stmts.html#the-while-statement' target='_blank' rel='nofollow'>Python `while` statement documentation</a>
+
+### Comparison with for loop
+
+While loop is slower than for loop.</br>
+ref: https://stackoverflow.com/questions/869229/why-is-looping-over-range-in-python-faster-than-using-a-while-loop
+
