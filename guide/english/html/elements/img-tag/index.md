@@ -1,36 +1,22 @@
 ---
 title: Img Tag
 ---
-## Img Tag
+
+# Img Tag
 
 <!-- The article goes here, in GitHub-flavored Markdown. Feel free to add YouTube videos, images, and CodePen/JSBin embeds  -->
-A simple HTML Image element can be included in an HTML document like this:
+The _image tag_ is used to include images in an HTML document.
 
 ```html
 <img src="path/to/image/file" alt="this is a cool picture">
 ```
 
-`alt` tags provide alternate text for an image. One use of the `alt` tag is for visually impaired people using a screen reader; they can be read the `alt` tag of the image in order to understand the image's meaning.
+The `img` tag is self-closing. The `src` attribute provides a reference for the image to be displayed. This reference can be either an absolute path or a relative path to the image file.
 
-Note that the path to the image file can be either relative or absolute. Also, remember that the `img` element is self-closing, meaning that it does not close with the `<img />` tag and instead closes with just a single `>`.
+The `alt` attribute provides alternate text for an image. Screen readers, often used by people who are visually impaired, read the value of the `alt` attribute inplace of displaying the image.
 
-Example:
-
-```html
-<img src="https://example.com/image.png" alt="my picture">
-```
-
-(This is assuming that the html file is at https://example.com/index.html, so it's in the same folder as the image file)
-
-is the same as:
-
-```html
-<img src="image.png" alt="my picture">
-```
-
-
-#### More Information:
+## More Information
 <!-- Please add any articles you think might be helpful to read before writing the article -->
 
-<a href='https://developer.mozilla.org/en-US/docs/Web/HTML/Element/img' target='_blank' rel='nofollow'>MDN</a>
-<a href="https://www.w3schools.com/TAGs/tag_img.asp">W3Schools</a>
+- [MDN image tag documentation](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/img)
+- [W3 Schools image tag documentation](https://www.w3schools.com/TAGs/tag_img.asp)
