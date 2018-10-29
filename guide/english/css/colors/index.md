@@ -14,6 +14,7 @@ HTML supports 140 standard <a href='https://www.w3schools.com/colors/colors_name
 ### RGB(A)
 
 RGB stands for "Red, Green, Blue".
+The RGBa is the same as the standard RGB but also with the alpha/opacity.
 An RGB value is a combination of intensity values for red, green, and blue. Each is between 0 (black) and 255 (full intensity).
 RGBA color values are an extension of RGB color values with an alpha channel - which specifies the opacity for a color. The alpha parameter is a number between 0.0 (fully transparent) and 1.0 (fully opaque).
 
