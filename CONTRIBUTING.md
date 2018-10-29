@@ -85,7 +85,7 @@ We would love your help in improving the quality of these translations. Millions
 
 ### Help us fix bugs in freeCodeCamp.org's learning platform
 
-Our learning platform runs on a modern JavaScript stack. It has various components, tools and libraries including but not limited to Node.js, MongoDB, LoopBack, OAuth 2.0, React, Gatsby, Webpack, and more.
+Our learning platform runs on a modern JavaScript stack. It has various components, tools and libraries, including, but not limited to, Node.js, MongoDB, LoopBack, OAuth 2.0, React, Gatsby, Webpack, and more.
 
 Broadly,
 
