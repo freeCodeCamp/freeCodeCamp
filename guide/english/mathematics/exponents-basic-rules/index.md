@@ -3,11 +3,30 @@ title: Exponents Basic Rules
 ---
 ## Exponents Basic Rules
 
-This is a stub. <a href='https://github.com/freecodecamp/guides/tree/master/src/pages/mathematics/exponents-basic-rules/index.md' target='_blank' rel='nofollow'>Help our community expand it</a>.
+Exponents are simply how many times a base number is multiplying by itself.
 
-<a href='https://github.com/freecodecamp/guides/blob/master/README.md' target='_blank' rel='nofollow'>This quick style guide will help ensure your pull request gets accepted</a>.
+For example,
 
-<!-- The article goes here, in GitHub-flavored Markdown. Feel free to add YouTube videos, images, and CodePen/JSBin embeds  -->
+2^3 = 2 * 2 * 2
+
+So, there are basic properties of exponents that occur when we mathematically manipulate them.
+
+For example,
+
+let's take some real number, x and raise to a power of 1.
+
+x^1 = x
+
+if we raise x to the 0 power, we have 1.
+
+x^0 = 1.
+
+This is because when we reduce the power of a number, we are effectively dividing x^n by x to get to x^(n-1).
+
+Hence, with the same logic we can find x^-n, which is 
+
+x^-n = 1/x^n.
+
 
 #### More Information:
 <!-- Please add any articles you think might be helpful to read before writing the article -->
