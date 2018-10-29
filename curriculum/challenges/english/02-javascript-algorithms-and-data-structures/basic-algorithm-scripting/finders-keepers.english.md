@@ -21,10 +21,10 @@ Remember to use <a href='http://forum.freecodecamp.org/t/how-to-get-help-when-yo
 
 ```yml
 tests:
-  - text: '<code>findElement([1, 3, 5, 8, 9, 10], function(num) { return num % 2 === 0; })</code> should return 8.'
-    testString: 'assert.strictEqual(findElement([1, 3, 5, 8, 9, 10], function(num) { return num % 2 === 0; }), 8, "<code>findElement([1, 3, 5, 8, 9, 10], function(num) { return num % 2 === 0; })</code> should return 8.");'
-  - text: '<code>findElement([1, 3, 5, 9], function(num) { return num % 2 === 0; })</code> should return undefined.'
-    testString: 'assert.strictEqual(findElement([1, 3, 5, 9], function(num) { return num % 2 === 0; }), undefined, "<code>findElement([1, 3, 5, 9], function(num) { return num % 2 === 0; })</code> should return undefined.");'
+  - text: <code>findElement([1, 3, 5, 8, 9, 10], function(num) { return num % 2 === 0; })</code> should return 8.
+    testString: assert.strictEqual(findElement([1, 3, 5, 8, 9, 10], function(num) { return num % 2 === 0; }), 8, '<code>findElement([1, 3, 5, 8, 9, 10], function(num) { return num % 2 === 0; })</code> should return 8.');
+  - text: <code>findElement([1, 3, 5, 9], function(num) { return num % 2 === 0; })</code> should return undefined.
+    testString: assert.strictEqual(findElement([1, 3, 5, 9], function(num) { return num % 2 === 0; }), undefined, '<code>findElement([1, 3, 5, 9], function(num) { return num % 2 === 0; })</code> should return undefined.');
 
 ```
 

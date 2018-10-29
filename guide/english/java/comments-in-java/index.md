@@ -20,6 +20,8 @@ To create a single line comment just add two `//` forward slashes before the tex
 // This is how single line comment looks like
 ```
 
+In some editors you can comment out multiple lines or a large portion of code with single line comments by selecting the code, holding the `command` key, and then pressing the `/` forward slash key.
+
 #### 2. Multi Line Comment
 
 To Create a Multi line comment wrap the lines in between `/*` line goes here `*/`

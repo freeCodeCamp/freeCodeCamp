@@ -65,7 +65,7 @@ echo $x;
 
 In PHP, all keywords (e.g. if, else, while, echo, etc.), classes, functions, and user-defined functions are NOT case-sensitive.
 
-In the example below, all three echo statements below are legal (and equal):
+In the example below, all three echo statements are legal (and equal):
 
 ````
 <!DOCTYPE html>
