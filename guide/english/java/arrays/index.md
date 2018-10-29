@@ -28,7 +28,8 @@ Above code snippet instantiates 2 arrays of double type named list1 and list2.
 ```java
 double list1[], list2; // works but not preferred way
 ```
-Above code snippet an array of datatype double named list1 and a simple variable of datatype double named list2 (Don't be confused by the name **list2**. Variables names have nothing to do with the type of variable).
+
+Above code snippet an array of datatype double named list1 and a simple variable of datatype double named list2 (Don't be confused by the name **list2**. Variable names have nothing to do with the type of variable).
 
 Note: The style `double list[]` is not preferred as it comes from the C/C++ language and was adopted in Java to accommodate C/C++ programmers. Additionally it's more readable to use the style `double[] list`: you can easily read that it's a "double array named list" other than "a double called list that is an array."
 
