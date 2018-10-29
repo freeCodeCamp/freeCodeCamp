@@ -4,7 +4,7 @@ title: Mailto Links
 
 ## Mailto Links
 
-A mailto link is a kind of hyperlink (`<a href=""></a>`) with special parameters that lets you specify additional recipients, a subject line, and/or a body text.
+The mailto tag is a kind of hyperlink (`<a href=""></a>`) with special parameters that lets you specify additional recipients, a subject line, and/or a body text.
 
 ### The basic syntax with a recipient is:
 
