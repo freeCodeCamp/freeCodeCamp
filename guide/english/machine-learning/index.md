@@ -11,7 +11,7 @@ A more formal definition of Machine Learning is provided by Prof Tom Mitchell of
 
 Consider the example of a Machine Learning algorithm that plays chess. In this example, `E` refers to the experience of playing chess, `T` is the task of playing chess, and `P` denotes the probability that the program will win the next game of chess.
 
-Machine learning is exactly like how a human being learns. For example if a human wants to learn how to play poker, it will firstly learn the rules. Then it will try to get experience by playing the game. This experience is nothing but a huge data set for a machine by using which it can make intelligent decisions reagrding the proposed problem.
+Machine learning is exactly like how a human being learns. For example if a human wants to learn how to play poker, it will firstly learn the rules. Then it will try to get experience by playing the game. This experience is nothing but a huge data set for a machine, by using which, it can make intelligent decisions reagrding the proposed problem.
 
 In general, machine learning problems can be classified into supervised learning, and unsupervised learning. In supervised learning, you have the input and the labeled output, and you suspect that a relationship exists between the input and the labeled output. When you know neither what the labeled output is nor if a relationship exists, unsupervised learning will help you find structure in your data if there is one.
 
