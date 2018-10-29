@@ -14,7 +14,7 @@ To learn more about Python, check out these pages on python.org:
 
 ## Python 2 or Python 3
 
-*   The two versions are similar, with knowledge of one switching to writing code for the other is easy.
+*   The two versions are similar. With knowledge of one, switching to writing code for the other is easy.
 *   <a href='https://wiki.python.org/moin/Python2orPython3' target='_blank' rel='nofollow'>Python 2 or Python 3</a>
     *   <a href='https://www.python.org/dev/peps/pep-0373/' target='_blank' rel='nofollow'>Python 2.x will not be maintained past 2020.</a> 
     * 3.x is under active development. This means that all recent standard library improvements, for example, are only available by default in Python 3.x.
@@ -109,7 +109,7 @@ Some of the principles that influenced the design of Python are included as an E
 4. It is a very easy language to learn and debug too. To check if a small bit of code works or not, you can just open up the interpreter and test
 
 #### Cons
-1. Being open source, many different ways have developed over the year for same function. This sometimes, creates chaos for others to read someone else code.
+1. Being open source, many different ways have developed over the year for same function. This sometimes creates chaos for others to read someone else's code.
 2. It is a slow language. So, a very bad language to use for developing general algorithms.
 
 ## Documentation
@@ -149,13 +149,13 @@ The <a href='https://docs.python.org/3/library/functions.html#print' target='_bl
 A function is called when the name of the function is followed by `()`. For the Hello world! example, the print function is called with a string as an argument for the first parameter. For the rest of the parameters the defaults are used.
 
 The argument that we called the `print` function with is a `str` object or _string_, one of Python's <a href='https://docs.python.org/3/library/stdtypes.html#text-sequence-type-str' target='_blank' rel='nofollow'>_built-in types_</a>.
-Also the most important thing about python is that you don't have to specify the data type while declaring a variable, python's compiler
+Also, the most important thing about python is that you don't have to specify the data type while declaring a variable. Python's compiler
 will do that itself based on the type of value assigned.
 
 The `objects` parameter is prefixed with a `*` which indicates that the function will take an arbitrary number of arguments for that parameter.
 
 ## Things you can do with python
-As stated python is a general purpose language. You can use it to do anything you like but one of the major uses of python is in machine learning and artificial intelligence. It is also a popular language in web development with some amazing frameworks like [Django](https://www.djangoproject.com/) and [flask](http://flask.pocoo.org/). It is also a popular scripting language. With its easy to read syntax it is becoming one the most popular programming languages growing rapidly in different fields.
+As stated, python is a general purpose language. You can use it to do anything you like, but one of the major uses of python is in machine learning and artificial intelligence. It is also a popular language in web development, with some amazing frameworks like [Django](https://www.djangoproject.com/) and [flask](http://flask.pocoo.org/). It is also a popular scripting language. With its easy to read syntax, it is becoming one the most popular programming languages, growing rapidly in different fields.
 
 ## Want to learn more?
 
