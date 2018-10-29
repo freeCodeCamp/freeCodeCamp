@@ -11,13 +11,17 @@ It may become an extremely important idea to make a habit out of commenting your
 
 Many developers have probably learned that it is much harder to go back through your code and comment it after you finish. It's always a good idea to label and comment your code as you go, so that you don't forget or mix up what certain variables or functions do.
 
+Here's an example of code documentation when commenting html code:
+
+<span style="color:green">&lt;!--This is a comment. Comments are not displayed in the browser--&gt;</span>
+
 ![An example of commenting in the real world](https://cdn-images-1.medium.com/max/1620/1*Pyxsc7Uixbitv5myywaA_Q.jpeg)
 
 <!-- The article goes here, in GitHub-flavored Markdown. Feel free to add YouTube videos, images, and CodePen/JSBin embeds  -->
 
 #### More Information:
 <!-- Please add any articles you think might be helpful to read before writing the article -->
-
+*[HTML comment tag guide](https://html.com/tags/comment-tag/)
 
 *[Medium Article about Code Documentation](https://medium.com/@andrewgoldis/how-to-document-source-code-responsibly-2b2f303aa525)
 
