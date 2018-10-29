@@ -1,170 +1,84 @@
----
-title: Arrays
----
-# Arrays in C
-## Problems
-Before trying to explain what arrays are, let's look at the code where we want to print 10 numbers given by the user in reverse order.
-```C
+Arrays a kind of data structure that can store a fixed-size sequential collection of elements of the same type. An array is used to store a collection of data, but it is often more useful to think of an array as a collection of variables of the same type.
+
+Instead of declaring individual variables, such as number0, number1, ..., and number99, you declare one array variable such as numbers and use numbers[0], numbers[1], and ..., numbers[99] to represent individual variables. A specific element in an array is accessed by an index.
+
+All arrays consist of contiguous memory locations. The lowest address corresponds to the first element and the highest address to the last element.
+
+Arrays in C
+Declaring Arrays
+To declare an array in C, a programmer specifies the type of the elements and the number of elements required by an array as follows −
+
+type arrayName [ arraySize ];
+This is called a single-dimensional array. The arraySize must be an integer constant greater than zero and type can be any valid C data type. For example, to declare a 10-element array called balance of type double, use this statement −
+
+double balance[10];
+Here balance is a variable array which is sufficient to hold up to 10 double numbers.
+
+Initializing Arrays
+You can initialize an array in C either one by one or using a single statement as follows −
+
+double balance[5] = {1000.0, 2.0, 3.4, 7.0, 50.0};
+The number of values between braces { } cannot be larger than the number of elements that we declare for the array between square brackets [ ].
+
+If you omit the size of the array, an array just big enough to hold the initialization is created. Therefore, if you write −
+
+double balance[] = {1000.0, 2.0, 3.4, 7.0, 50.0};
+You will create exactly the same array as you did in the previous example. Following is an example to assign a single element of the array −
+
+balance[4] = 50.0;
+The above statement assigns the 5th element in the array with a value of 50.0. All arrays have 0 as the index of their first element which is also called the base index and the last index of an array will be total size of the array minus 1. Shown below is the pictorial representation of the array we discussed above −
+
+Array Presentation
+Accessing Array Elements
+An element is accessed by indexing the array name. This is done by placing the index of the element within square brackets after the name of the array. For example −
+
+double salary = balance[9];
+The above statement will take the 10th element from the array and assign the value to salary variable. The following example Shows how to use all the three above mentioned concepts viz. declaration, assignment, and accessing arrays −
+
+ Live Demo
 #include <stdio.h>
-int main(void) {
-    int a, b, c, d, e, f, g, i, j, k;
-    scanf("%d", &a);
-    scanf("%d", &b);
-    ... 
-    printf("%d", k);
-    printf("%d", j);
-    printf("%d", i);
-    ... //and so on..
+ 
+int main () {
 
-    return 0;
+   int n[ 10 ]; /* n is an array of 10 integers */
+   int i,j;
+ 
+   /* initialize elements of array n to 0 */         
+   for ( i = 0; i < 10; i++ ) {
+      n[ i ] = i + 100; /* set element at location i to i + 100 */
+   }
+   
+   /* output each array element's value */
+   for (j = 0; j < 10; j++ ) {
+      printf("Element[%d] = %d\n", j, n[j] );
+   }
+ 
+   return 0;
 }
-```
-So, this looks a bit tedious.<br>Up until now every variable created had some special role. But right now, it would be great if we could just store multiple values in one place and get access to the values with their place in the line maybe (first value, second etc.). Another way to look at this is, suppose you want to store a set of names, you need not create different variables for each name, instead you can create an array of names where each name has its unique identity or *index*. Also, we could use loops on them, which are things you will learn about later, but basically they do the same thing over and over again.
-eg. reading from the user, or printing out values. 
+When the above code is compiled and executed, it produces the following result −
 
-## Arrays in C
-Arrays are containers with a given size. They contain variables of the **same type**. You can access a variable stored in the array with its *index*.
-Let's look at some code:
-```C
-#include <stdio.h>
-int main(void) {
-    int arr[4] = {1, 2, 3, 88};
-    int brr[] = {78, 65};
-    int crr[100] = {3};
+Element[0] = 100
+Element[1] = 101
+Element[2] = 102
+Element[3] = 103
+Element[4] = 104
+Element[5] = 105
+Element[6] = 106
+Element[7] = 107
+Element[8] = 108
+Element[9] = 109
+Arrays in Detail
+Arrays are important to C and should need a lot more attention. The following important concepts related to array should be clear to a C programmer −
 
-    int var = arr[0];
+Sr.No.	Concept & Description
+1	Multi-dimensional arrays
+C supports multidimensional arrays. The simplest form of the multidimensional array is the two-dimensional array.
 
-    return 0;
-}
-```
-And now let's break the syntax down a bit: 
-```C
-int arr[4] = {1, 2, 3, 88};
-```
-Here you have created an `array` of `ints`(Integers), called `arr`. This array has 4 elements: `1`, `2`, `3`, `88`. Note the syntax!
-```C
-datatype name[number of elements] 
-```
-The first element of this array is `1`, the second is `2` etc.
+2	Passing arrays to functions
+You can pass to the function a pointer to an array by specifying the array's name without an index.
 
-```C
-int brr[] = {78, 65};
-```
-You do not have to tell the dimension beforehand. Here an array of two will be created with the elements between the curly brackets.
+3	Return array from a function
+C allows a function to return an array.
 
-```C
-int crr[100] = {3};
-```
-If you do this, then the first element is going to be `3`, but the rest of them is going to be `0`. 
-
-```C
-int var = arr[0];
-```
-Here an int is created called `var`, and it is initialized to the 0th element of arr. **Very importart to note** that in C, indexes start at zero as opposed to 1. This means that to access the first element, the index (between the brackets) is 0, to access the second element, the index is 1 etc. 
-In this example `var` is going to store the value `1`.
-
-## Overview
-
-* A one-dimensional array is like a list; A two dimensional array is like a table;  The C language places no limits on the number of dimensions in an array, though specific implementations may.
-
-* Some texts refer to one-dimensional arrays as vectors, two-dimensional arrays as matrices, and use the general term arrays when the number of dimensions is unspecified or unimportant.
-
-
-## Multi-dimensional Arrays in C
-
-C also supports multi-dimensional arrays.
-```C
-datatype name[size1][size2]...[sizeN] 
-```
-
-Two-dimensional arrays are common and can be initialized using the following syntax. One can logically think of the first index as rows and the second index as columns. This example has 2 rows and 5 columns.
-```C
-int arr[2][5] = {0, 1, 2, 3, 4, 5, 6, 7, 8, 9};
-```
-
-It can be difficult to visualize a 2-dimensional array using the above syntax so developers often use optional, nested brackets to clarify the structure of the array. This is also a valid way to initialize a 2-dimensional array.
-```C
-int arr[2][5] = {
-    {0, 1, 2, 3, 4},
-    {5, 6, 7, 8, 9}
-};
-```
-
-Two nested for loops can be used to print the contents of a 2-dimensional array in tabular format.
-```C
-#include <stdio.h>
-
-
-int main() {
-    const int rows = 2, cols = 5;
-
-    int arr[rows][cols] = {
-            {0, 1, 2, 3, 4},
-            {5, 6, 7, 8, 9}
-    };
-
-    for (int row = 0; row < rows; row++) {
-        for (int col = 0; col < cols; col++) {
-            printf("%5d", arr[row][col]);
-        }
-        puts("");
-    }
-
-    return 0;
-}
-```
-
-```C
-    0    1    2    3    4
-    5    6    7    8    9
-```
-
-## Strings
-
-To store strings/multiple characters, we use `char arrays` in C, because the language has no special type built in. One thing to be aware of, is that a terminating null is automatically added to the end, signaling that it is the end of the string. However, you may also initialze a string with curly braces `{}` as well, but you have to manually add the terminating null. 
-
-Like so:
-```C
-char string[6] = "Hello"; //here you get Hello\0, which is why we need an array with the length of 6
-```
-Just like with the int arrays in the example above, there are several ways to assign values to char arrays:
-```C
-char string[] = "I do not want to count the chars in this.";
-char string2[] = {'C','h','a','r',' ','b','y',' ','c','h','a','r','\0'};
-char string3[] = "This is a string"
-                 "with two lines";
-```
-Equivalent to the approach above, you can also create a pointer to a char array:
-```C
-char* string = "I do not want to count the chars in this.";
-```
-
-## Typical mistakes, tips
-
-- When you have an array filled with values and you want to make an another array that is exactly the same as the first, never ever do this:
-```C
-double first[] = {2,3,7};
-double second[] = first;
-//Or this:
-double a[5], b[5]
-a = b;
-```
-You can **only** deal with the values in an array one by one. You **cannot assign all at once**, when you learn about pointers later, the reasons will be clear. 
->(Basically, the first element of an array points to a memory address, and the elements after that are the "houses" next to that first one. So technically an array is just it's first element's memory address. When you want to assign the second array the first array, you run into error due to differing types, or you are trying to change the second memory address of the first element in the second array.)
-
-- When you want to create an array, you have to either tell its size, or assign values to it. Do not do this:
-```C
-int arr[];
-```
-The computer has to know how big of a storage to create for the array. Later on, you will learn about ways to create containers whose size are defined later. (Again, pointers.)
-
-- When you index out of the array, the compiler is not always going to give you an error. This is called undefined behaviour, we just do not know what is going to happen. It could lead to your program crashing, simply slowing down, anything. 
-```C
-int test[6];
-int a = test[-2];
-int b = test[89];
-```
-The reason for C not checking the indexing bound is simple: C is an efficient language. It was made, so your program is the fastest: communicates nicely with hardware etc. A nicely written C code does not contain indexing errors, so why would C want to check while running? 
-
-- When you try to access the last element of the array. Suppose the length of the array A be 4 and while accessing the last element as
-A[4] will return an error, as the the indexing starts from 0.
+4	Pointer to an array
+You can generate a pointer to the first element of an array by simply specifying the array name, without any index.
