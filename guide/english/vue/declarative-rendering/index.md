@@ -2,7 +2,7 @@
 title: Declarative Rendering
 ---
 
-## Instalation
+## Installation
 
 Before we get started, there are a couple of ways to use Vue.js, namely via CDN and via
 installation. For a first experience, it's easier to use the CDN.
