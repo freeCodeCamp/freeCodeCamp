@@ -80,3 +80,6 @@ hello();
 
 #### More Information:
 * <a href='https://www.digitalocean.com/community/tutorials/how-to-write-comments-in-javascript' target='_blank' rel='nofollow'>How To Write Comments in JavaScript</a>
+
+
+##### Note: The way comments are expressed in javascript is different from the way, its being expressed in HTML and CSS
