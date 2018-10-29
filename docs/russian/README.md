@@ -14,9 +14,9 @@
 
 # Documentation Quick Reference
 
-Hello 👋 !
+Всем привет 👋 !
 
-These instructions have not been translated yet. Please check this issue for details: [`#18312`](https://github.com/freeCodeCamp/freeCodeCamp/issues/18312)
+Эти инструкции еще не переведены. Пожалуйста проверьте эту проблему под номером: [`#18312`](https://github.com/freeCodeCamp/freeCodeCamp/issues/18312)
 
 This directory contains all of the documentation on contributing to freeCodeCamp.org
 
