@@ -2,31 +2,31 @@
 title: Dynamic Memory Management
 ---
 # Dynamic Memory Management
-Sometimes you will need to allocate memory spaces in the heap also known as the dynamic memory. This is particulary useful when you do not know during compile time how large a data structure (like an array) will be. 
+Sometimes you will need to allocate memory spaces in the heap also known as the dynamic memory. This is particularly useful when you do not know during compile time how large a data structure (like an array) will be.
 ## An Example
-Here's a simple example where we allocate an array asking the user to choose the dimension
+Here's a simple example where we allocate an array asking the user to choose the size of the array
 ```C
 #include <stdio.h>
 #include <stdlib.h>
 
 int main(void) {
-    int arrayDimension,i;
+    int arraySize,i;
     int* arrayPointer;
-    
-    printf("Please insert the array dimension:");
-    scanf("%d",&arrayDimension);
-    arrayPointer = (int*)malloc(sizeof(int)*arrayDimension);
-    
+
+    printf("Please insert the array size:");
+    scanf("%d",&arraySize);
+    arrayPointer = (int*)malloc(sizeof(int)*arraySize);
+
     if(arrayPointer == NULL){
       printf("Error allocating memory!");
       return -1;
      }
-     
-     for(i=0;i<arrayDimension;i++){
+
+     for(i=0;i<arraySize;i++){
         printf("Insert the %d value of the array:",i+1);
         scanf("%d\n",arrayPointer[i]);
      }
-    
+
     free(arrayPointer);
     return 0;
 }
@@ -34,7 +34,7 @@ int main(void) {
 
 As you can see in order to allocate a space in the dynamic memory you need to know how pointers work in C.
 The magic function here is the `malloc` which will return as output a void pointer (it is a pointer to a region of unknown data type) to the new memory space we've just allocated.
-Let's see how to use this function step by step: 
+Let's see how to use this function step by step:
 
 ## Allocating an array during runtime
 
@@ -46,9 +46,9 @@ It is generally not safe to assume the size of any datatype. For example, even t
 `sizeof` as it's name suggests generates the size of a variable or datatype.
 
 ```C
-arrayPointer = (int*) malloc(sizeof(int) * arrayDimension);
+arrayPointer = (int*) malloc(sizeof(int) * arraySize);
 ```
-In this example, malloc allocates memory and returns a pointer to the memory block. The size of the block allocated is equal to the number of bytes for a single object of type int multiplied by `arrayDimension`, providing the system has enough space available.
+In this example, malloc allocates memory and returns a pointer to the memory block. The size of the block allocated is equal to the number of bytes for a single object of type int multiplied by `arraySize`, providing the system has enough space available.
 But what if you do not have enough space or `malloc` can not allocate it for some other reasons?
 
 ## Checking the malloc output
@@ -58,7 +58,7 @@ This do not happens commonly but it is a very good practice to check the value o
     if(arrayPointer == NULL)
       printf("Error allocating memory!");
 ```
-This will also be very usefull during your debug phase and will prevent some possible errors using the last function used in the example.
+This will also be very useful during your debug phase and will prevent some possible errors using the last function used in the example.
 
 ## A word on free()
 Usually variables are automatically de-allocated when their scope is destroyed, freeing the memory they were using.
@@ -70,7 +70,7 @@ To prevent memory leaks in more complex programs and in order to not create garb
 ```
 
 In the end you will understand for sure that checking `arrayPointer` value was necessary to prevent an error using the `free` function.
-If `arrayPointer` value was equal to `NULL` you could have expirencied some kind of bug.
+If `arrayPointer` value was equal to `NULL` you could have experienced some kind of bug.
 
 ## Other functions similar to malloc
 Sometimes you need to not only reserve a new area of memory for your operations, you might also need to initialize all bytes to zero.
@@ -85,14 +85,14 @@ In other cases you wish to resize the amount of memory a pointer points to. For 
   arr[2] = 3;
 ```
 
-## Common errors 
+## Common errors
 The improper use of dynamic memory allocation can frequently be a source of bugs as you have seen before.
 Most common errors are:
 
 * Not checking for allocation failures
-Memory allocation is not guaranteed to succeed, and may instead return a null pointer. 
+Memory allocation is not guaranteed to succeed, and may instead return a null pointer.
 Using the returned value, without checking if the allocation is successful, invokes undefined behavior. This usually leads to crash (due to the resulting segmentation fault on the null pointer dereference), but there is no guarantee that a crash will happen so relying on that can also lead to problems.
 * Memory leaks
 Failure to deallocate memory using `free` leads to buildup of non-reusable memory, which is no longer used by the program.
 * Logical errors
-All allocations must follow the same pattern: allocation using `malloc`, usage to store data, deallocation using `free`. If you not follow this pattern usually segmentation fault errore will be given and the program will crash. These errors can be transient and hard to debug – for example, freed memory is usually not immediately reclaimed by the system, and dangling pointers may persist for a while and appear to work.
+All allocations must follow the same pattern: allocation using `malloc`, usage to store data, deallocation using `free`. If you not follow this pattern usually segmentation fault errors will be given and the program will crash. These errors can be transient and hard to debug – for example, freed memory is usually not immediately reclaimed by the system, and dangling pointers may persist for a while and appear to work.
