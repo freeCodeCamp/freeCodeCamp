@@ -2,7 +2,7 @@
 title: How to Horizontally Center a Div Tag in Another Div Tag
 localeTitle: Como centralizar horizontalmente uma tag Div em outra tag Div
 ---
-## Como centralizar horizontalmente uma tag Div em outra tag Div
+## Como Centralizar Horizontalmente uma Tag Div em Outra Tag Div
 
 Centrar horizontalmente um `<div>` dentro de outro `<div>` é bem fácil.
 
@@ -26,11 +26,11 @@ Vamos começar criando duas tags div com as classes "parent" e "child". O pai se
  </html> 
 ```
 
-Existem algumas maneiras de lidar com isso, mas para este tutorial vamos nos concentrar em dois. No primeiro vamos centralizar nosso filho `<div>` usando `margin` e no segundo usaremos o `flexbox` .
+Existem algumas maneiras de lidar com isso, mas para este tutorial vamos nos concentrar em dois. No primeiro vamos centralizar nosso `<div>` filho usando `margin` e no segundo usaremos o `flexbox` .
 
-### Exemplo de centralização de uma tag Div com margens
+### Exemplo de Centralização de uma Tag Div com Margens
 
-Se você especificar uma `width` em seu filho div, você pode usar `margin: auto` . Isso centralizará seu filho `<div>` distribuindo uniformemente suas margens esquerda e direita.
+Se você especificar uma `width` em seu div filho, você pode usar `margin: auto`. Isso centralizará seu `<div>` filho distribuindo uniformemente suas margens esquerda e direita.
 
 ```css
 .parent { 
@@ -44,11 +44,11 @@ Se você especificar uma `width` em seu filho div, você pode usar `margin: auto
  } 
 ```
 
-### Exemplo de centralização de uma tag Div com o Flexbox
+### Exemplo de Centralização de uma Tag Div com o Flexbox
 
-Usar o flexbox para centralizar um `<div>` é um pouco diferente. Primeiro, não requer que você especifique a `width` do seu filho `<div>` . Segundo, você realmente centraliza o filho `<div>` aplicando propriedades css no pai `<div>` .
+Usar o flexbox para centralizar um `<div>` é um pouco diferente. Primeiro, não requer que você especifique a `width` do seu `<div>` filho. Segundo, você realmente centraliza o `<div>` filho aplicando propriedades css no `<div>` pai.
 
-Para centralizar um filho `<div>` usando o flexbox, é necessário usar `display: flex` junto com `justify-content: center` no pai `<div>` .
+Para centralizar um `<div>` filho usando o flexbox, é necessário usar `display: flex` junto com `justify-content: center` no `<div>` pai.
 
 ```css
 .parent { 
