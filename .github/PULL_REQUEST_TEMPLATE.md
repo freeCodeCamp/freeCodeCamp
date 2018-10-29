@@ -9,3 +9,6 @@
 If your pull request closes a GitHub issue, replace the XXXXX below with the issue number.
 
 Closes #XXXXX
+
+Inline-style: 
+![alt text](https://github.com/adam-p/markdown-here/raw/master/src/common/images/icon48.png "Logo Title Text 1")
