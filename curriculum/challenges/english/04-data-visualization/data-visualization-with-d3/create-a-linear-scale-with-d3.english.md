@@ -28,11 +28,11 @@ Change the <code>scale</code> variable to create a linear scale. Then set the <c
 ```yml
 tests:
   - text: The text in the <code>h2</code> should be 50.
-    testString: 'assert($("h2").text() == "50", "The text in the <code>h2</code> should be 50.");'
+    testString: assert($('h2').text() == '50', 'The text in the <code>h2</code> should be 50.');
   - text: Your code should use the <code>scaleLinear()</code> method.
-    testString: 'assert(code.match(/\.scaleLinear/g), "Your code should use the <code>scaleLinear()</code> method.");'
+    testString: assert(code.match(/\.scaleLinear/g), 'Your code should use the <code>scaleLinear()</code> method.');
   - text: The <code>output</code> variable should call <code>scale</code> with an argument of 50.
-    testString: 'assert(output == 50 && code.match(/scale\(\s*?50\s*?\)/g), "The <code>output</code> variable should call <code>scale</code> with an argument of 50.");'
+    testString: assert(output == 50 && code.match(/scale\(\s*?50\s*?\)/g), 'The <code>output</code> variable should call <code>scale</code> with an argument of 50.');
 
 ```
 

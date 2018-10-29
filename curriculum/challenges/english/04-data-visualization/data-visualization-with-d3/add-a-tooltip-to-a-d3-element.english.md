@@ -23,25 +23,25 @@ Append a <code>title</code> element under each <code>rect</code> node. Then call
 ```yml
 tests:
   - text: Your code should have 9 <code>title</code> elements.
-    testString: 'assert($("title").length == 9, "Your code should have 9 <code>title</code> elements.");'
+    testString: assert($('title').length == 9, 'Your code should have 9 <code>title</code> elements.');
   - text: The first <code>title</code> element should have tooltip text of 12.
-    testString: 'assert($("title").eq(0).text() == "12", "The first <code>title</code> element should have tooltip text of 12.");'
+    testString: assert($('title').eq(0).text() == '12', 'The first <code>title</code> element should have tooltip text of 12.');
   - text: The second <code>title</code> element should have tooltip text of 31.
-    testString: 'assert($("title").eq(1).text() == "31", "The second <code>title</code> element should have tooltip text of 31.");'
+    testString: assert($('title').eq(1).text() == '31', 'The second <code>title</code> element should have tooltip text of 31.');
   - text: The third <code>title</code> element should have tooltip text of 22.
-    testString: 'assert($("title").eq(2).text() == "22", "The third <code>title</code> element should have tooltip text of 22.");'
+    testString: assert($('title').eq(2).text() == '22', 'The third <code>title</code> element should have tooltip text of 22.');
   - text: The fourth <code>title</code> element should have tooltip text of 17.
-    testString: 'assert($("title").eq(3).text() == "17", "The fourth <code>title</code> element should have tooltip text of 17.");'
+    testString: assert($('title').eq(3).text() == '17', 'The fourth <code>title</code> element should have tooltip text of 17.');
   - text: The fifth <code>title</code> element should have tooltip text of 25.
-    testString: 'assert($("title").eq(4).text() == "25", "The fifth <code>title</code> element should have tooltip text of 25.");'
+    testString: assert($('title').eq(4).text() == '25', 'The fifth <code>title</code> element should have tooltip text of 25.');
   - text: The sixth <code>title</code> element should have tooltip text of 18.
-    testString: 'assert($("title").eq(5).text() == "18", "The sixth <code>title</code> element should have tooltip text of 18.");'
+    testString: assert($('title').eq(5).text() == '18', 'The sixth <code>title</code> element should have tooltip text of 18.');
   - text: The seventh <code>title</code> element should have tooltip text of 29.
-    testString: 'assert($("title").eq(6).text() == "29", "The seventh <code>title</code> element should have tooltip text of 29.");'
+    testString: assert($('title').eq(6).text() == '29', 'The seventh <code>title</code> element should have tooltip text of 29.');
   - text: The eighth <code>title</code> element should have tooltip text of 14.
-    testString: 'assert($("title").eq(7).text() == "14", "The eighth <code>title</code> element should have tooltip text of 14.");'
+    testString: assert($('title').eq(7).text() == '14', 'The eighth <code>title</code> element should have tooltip text of 14.');
   - text: The ninth <code>title</code> element should have tooltip text of 9.
-    testString: 'assert($("title").eq(8).text() == "9", "The ninth <code>title</code> element should have tooltip text of 9.");'
+    testString: assert($('title').eq(8).text() == '9', 'The ninth <code>title</code> element should have tooltip text of 9.');
 
 ```
 
