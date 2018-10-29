@@ -30,7 +30,7 @@ a: 3 b: 4
 ```
 
 
-On the other hand, you can loop over anything that is iterable. You can call a function or use a list literal.
+On the other hand, you can loop over anything that is iterable. You can call a function or use a list literal. This method, using for loops, is to prefer over while loops if it is clear how many times you want to loop over something. If you want to go through a sequence or know in what range to loop, use this method!
 
 ```python
 for person in load_persons():
@@ -61,7 +61,7 @@ Some ways in which For loops are used:
 for i in range(10):
     print(i)
 ```
-Rather than being a function, range is actually an immutable sequence type.
+Rather than being a function, range is actually an immutable sequence type. 
 The output will contain results from lower bound i.e 0 to the upper bound i.e 10 but excluding 10.By default the lower bound or the starting index is set to zero.
 
 Output:
