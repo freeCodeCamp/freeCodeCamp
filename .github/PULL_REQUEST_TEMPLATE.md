@@ -5,7 +5,7 @@
 - [ ] My pull request targets the `master` branch of freeCodeCamp.
 - [ ] None of my changes are plagiarized from another source without proper attribution.
 - [ ] My article does not contain shortened URLs or affiliate links.
-
+- [ ] My article does not contain ofensive materials that would lead to this gettig denied .
 If your pull request closes a GitHub issue, replace the XXXXX below with the issue number.
 
 Closes #XXXXX
