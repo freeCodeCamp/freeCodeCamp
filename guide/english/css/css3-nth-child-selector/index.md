@@ -49,7 +49,39 @@ For example, the following will match every 3rd anchor element:
     /* CSS goes here */
   }
 ```
+#### Selecting element with n
+The nth child selector saves you from adding class to everything in your website. You can access each element with n being the number of the position of the element.
+```html
+  	<ul class="parent">
+      <li>First<li>
+      <li>Second</li>
+     <li>Third</li>
+      <li>Fourth</li>
+      <li>Five</li>
+  </ul>
+```
 
+```css
+  .parent li:nth-child(1){
+    color:red;
+  }
+  
+    .parent li:nth-child(2){
+      color:blue;
+  }
+  
+    .parent li:nth-child(3){
+    color:green;
+  }
+  
+    .parent li:nth-child(4){
+    color:black;
+  }
+  
+  .parent li:nth-child(5){
+  color:brown;
+  }
+```
 ### More Information:
 
 <a href='https://developer.mozilla.org/en-US/docs/Web/CSS/%3Anth-child' target='_blank' rel='nofollow'>MDN Documentation</a>
