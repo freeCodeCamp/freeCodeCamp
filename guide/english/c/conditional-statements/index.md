@@ -234,3 +234,22 @@ printf("%.1lf / %.1lf = %.1lf",firstNumber, secondNumber, firstNumber/firstNumbe
 Finally, the break statement ends the switch statement.
 
 If break statement is not used, all cases after the correct case is executed. 
+
+
+
+```c
+Example program for using conditional statemets:
+#include<stdio.h>
+int main(void)
+{
+    int num;
+    printf("Enter How many times you have taken bath:");
+    scanf("%d",&num);
+    if(num < 0)
+    printf("You are unhealthy");
+    else if(num > 0 && num < 3)
+    printf("You are Healthy and You are saving water for further generations!KeepItUp!!!");
+    else
+    printf("You're a Burden to earth!");
+}
+```
