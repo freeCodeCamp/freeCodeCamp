@@ -36,3 +36,9 @@ ls (List) - This command list the content in the current directory. It can be al
 ls
 ```
 Now we can see our directories in our home.
+
+pwd (Print Working Directory) - This command lists the directory you are currently in.
+
+```unix
+pwd
+```

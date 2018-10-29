@@ -28,13 +28,13 @@ challengeType: 5
 ```yml
 tests:
   - text: <code>getDPA</code> is a function.
-    testString: 'assert(typeof getDPA === "function", "<code>getDPA</code> is a function.");'
+    testString: assert(typeof getDPA === 'function', '<code>getDPA</code> is a function.');
   - text: <code>getDPA</code> should return an array.
-    testString: 'assert(Array.isArray(getDPA(100)), "<code>getDPA</code> should return an array.");'
+    testString: assert(Array.isArray(getDPA(100)), '<code>getDPA</code> should return an array.');
   - text: <code>getDPA</code> return value should have a length of 3.
-    testString: 'assert(getDPA(100).length === 3, "<code>getDPA</code> return value should have a length of 3.");'
-  - text: '<code>getDPA(20000)</code> should equal [15043, 4, 4953]'
-    testString: 'assert.deepEqual(getDPA(20000), solution, "<code>getDPA(20000)</code> should equal [15043, 4, 4953]");'
+    testString: assert(getDPA(100).length === 3, '<code>getDPA</code> return value should have a length of 3.');
+  - text: <code>getDPA(20000)</code> should equal [15043, 4, 4953]
+    testString: assert.deepEqual(getDPA(20000), solution, '<code>getDPA(20000)</code> should equal [15043, 4, 4953]');
 
 ```
 
@@ -58,7 +58,7 @@ function getDPA (num) {
 <div id='js-teardown'>
 
 ```js
-console.info('after the test');
+const solution = [15043, 4, 4953];
 ```
 
 </div>

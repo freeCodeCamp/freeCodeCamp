@@ -1,5 +1,5 @@
 ---
-  title: Rackspace Cloud
+title: Rackspace Cloud
 localeTitle: Rackspace الغيمة
 ---
 \## Rackspace Cloud

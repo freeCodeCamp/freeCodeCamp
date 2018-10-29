@@ -34,7 +34,7 @@ How many perfect right-angled triangles with c≤1016 exist that are not super-p
 ```yml
 tests:
   - text: <code>euler218()</code> should return 0.
-    testString: 'assert.strictEqual(euler218(), 0, "<code>euler218()</code> should return 0.");'
+    testString: assert.strictEqual(euler218(), 0, '<code>euler218()</code> should return 0.');
 
 ```
 

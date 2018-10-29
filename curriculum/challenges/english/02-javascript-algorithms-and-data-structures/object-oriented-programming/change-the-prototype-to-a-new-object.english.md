@@ -25,13 +25,13 @@ Add the property <code>numLegs</code> and the two methods <code>eat()</code> and
 ```yml
 tests:
   - text: <code>Dog.prototype</code> should be set to a new object.
-    testString: 'assert((/Dog\.prototype\s*?=\s*?{/).test(code), "<code>Dog.prototype</code> should be set to a new object.");'
+    testString: assert((/Dog\.prototype\s*?=\s*?{/).test(code), '<code>Dog.prototype</code> should be set to a new object.');
   - text: <code>Dog.prototype</code> should have the property <code>numLegs</code>.
-    testString: 'assert(Dog.prototype.numLegs !== undefined, "<code>Dog.prototype</code> should have the property <code>numLegs</code>.");'
+    testString: assert(Dog.prototype.numLegs !== undefined, '<code>Dog.prototype</code> should have the property <code>numLegs</code>.');
   - text: <code>Dog.prototype</code> should have the method <code>eat()</code>.
-    testString: 'assert(typeof Dog.prototype.eat === "function", "<code>Dog.prototype</code> should have the method <code>eat()</code>."); '
+    testString: assert(typeof Dog.prototype.eat === 'function', '<code>Dog.prototype</code> should have the method <code>eat()</code>.');
   - text: <code>Dog.prototype</code> should have the method <code>describe()</code>.
-    testString: 'assert(typeof Dog.prototype.describe === "function", "<code>Dog.prototype</code> should have the method <code>describe()</code>."); '
+    testString: assert(typeof Dog.prototype.describe === 'function', '<code>Dog.prototype</code> should have the method <code>describe()</code>.');
 
 ```
 
