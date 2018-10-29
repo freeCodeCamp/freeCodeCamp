@@ -63,3 +63,6 @@ public int getNumber() {
     return this.number;
 }
 ```
+## Note
+In some editors you can generate getter and setter methods by using keyboard shortcuts, this helps saving time in writing all the getter/setter functions by yourself.  
+NetBeans - ```Alt+Ins``` or ```Ctrl+Alt+Shift+E```
