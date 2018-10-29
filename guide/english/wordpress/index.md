@@ -8,7 +8,7 @@ title: WordPress
 
 ## WordPress
 
-WordPress is a free and open-source [content management](https://en.wikipedia.org/wiki/Content_management_system) system based on **PHP** and **MySQL**. Its features include robust user management, an extensible theming and plugin architecture, and a flexible template system. It is most often associated with blogging but supports other types of web content including forums, media galleries, and online stores.
+WordPress is a free and open-source [content management](https://en.wikipedia.org/wiki/Content_management_system) system based on **PHP** and **MySQL**. It is maintained by [Automattic](https://automattic.com) and an international community of developers. Its features include robust user management, an extensible theming and plugin architecture, and a flexible template system. It is most often associated with blogging but supports other types of web content including forums, media galleries, and online stores.
 
 WordPress was first launched in 2003 and now powers over 30% of all websites. It is by far the most used CMS on the planet. Backed by a huge community, this open source platform powers not only countless sites but a multi-billion dollar economy with themes, plugins, and custom software.
 
@@ -82,6 +82,8 @@ Examples of Popular Drag and drop themes that makes a WordPress website easy to 
 
 #### Gutenberg WordPress editor
 In early 2017 WordPress announced that they had been working on the new Gutenberg WordPress editor. The Gutenberg editor is a page builder being developed to integrate with WordPress core. It aims to add flexibility to the content editing experience through the use of content blocks, which can be styled and moved individually. Although it has not yet been officially released, the editor is available for early testing and feedback. WordPress hope to merge the Gutenberg editor into WordPress 5.0.
+- [Project Gutenberg](https://wordpress.org/plugins/gutenberg/)
+
 
 ### From Blogging Platform to CMS
 
