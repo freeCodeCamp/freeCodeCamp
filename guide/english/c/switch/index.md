@@ -16,11 +16,11 @@ We exit from the switch by `break`. If the `break` statement is not reached befo
 switch (n)
 {
     case constant1:
-        // code to be executed if n is equal to constant1;
+        // code to be executed if n is equal to constant1
         break;
 
     case constant2:
-        // code to be executed if n is equal to constant2;
+        // code to be executed if n is equal to constant2
         break;
         .
         .
