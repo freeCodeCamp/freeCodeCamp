@@ -2,11 +2,9 @@
 title: For Loop
 ---
 
-A For Loop is a repetitive statement that is used to check for some condition and then based upon the condition a block of code is executed repeatedly until the specified condition is satisfied.
+A For Loop is used to repeat statement/s for a specific number of times i.e. until a condition is satisfied.
+The for loop can be distinguished from other loop statements by its 'loop counter'. To declare a for loop, 3 things need to be done: Initialization of counter variable/ initializing statement, adding a test expression which checks the condition which needs to be checked, and post loop execution chnage in counter - increment/decrement.  
 
-The for loop is distinguished from other looping statements through an explicit loop counter or loop variable which allows the body of the loop to know the exact sequencing of each iteration.
-
-Hence a for loop is a repetition control structure that allows you to efficiently write a loop that needs to execute a specific number of times.
 
 ## Syntax
 
@@ -16,7 +14,7 @@ for ( init; condition; increment ) {
 }
 ```
 
-It is allowed to place the increment inside the for loop like in a while loop. Meaning a syntax like this can also work.
+The increment can also placed inside the for loop i.e. in its body- 
 
 ```
 for ( init; condition;) {
@@ -24,7 +22,7 @@ for ( init; condition;) {
    increment;
 }
 ```
-It is also allowed to ignore the init variables. For example :
+It is also allowed to ignore the init variables if and only if they are declared beforehand. For example :
 ```
 int a = 1;
 for (; a <= 10 ;)
@@ -33,14 +31,14 @@ for (; a <= 10 ;)
     a++;
 }
 ```
-Though you can't ignore the condition, because empty condition is defaulted as false, so the for-loop won't run at all.
+But the condition must be declared inside the () in the for loop, as empty condition is always return false, so the for-loop won't run at all.
 
 ### init
 This step allows you to declare and initialize any loop control variables. This step is performed first and only once.  
 Note that the variables declared in init can only be used inside the brackets of the for loop.
 
 ### condition
-Next the condition is evaluated. If it holds true, the body of the loop is executed. If it holds false, the body of the loop does not execute and flow of control jumps to the next iteration(repetition of a process).
+Next the condition is evaluated. If it holds true, the body of the loop is executed. If it holds false, the body of the loop does not execute and flow of control jumps to the next block of code outside the loop.
 
 ### update
 The update statement is used to alter the loop variable by using simple operations like addition,subtraction,multiplication or division.
