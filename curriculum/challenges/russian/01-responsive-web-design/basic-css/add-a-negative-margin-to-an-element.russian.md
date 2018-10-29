@@ -18,7 +18,7 @@ localeTitle: Добавить к элементу свойство margin с о�
 
 ```yml
 tests:
-  - text: Ваш класс <code>blue-box</code> должен давать элементы <code>-15px</code> от <code>margin</code> .
+  - text: Ваш класс <code>blue-box</code> должен содержать <code>margin</code>, которому присвоено значение <code>-15px</code>.
     testString: 'assert($(".blue-box").css("margin-top") === "-15px", "Your <code>blue-box</code> class should give elements <code>-15px</code> of <code>margin</code>.");'
 
 ```
