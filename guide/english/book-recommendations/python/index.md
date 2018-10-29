@@ -66,7 +66,11 @@ You'll learn many of the first princliples for data science tools and how algori
 - [Manning]https://www.manning.com/books/the-quick-python-book-third-edition
 - ISBN-10: 1617294039
 - ISBN-13: 978-1617294037
-
+#### Think Python: How to Think Like a Computer Scientist -3e
+If you want to learn the basics of python clearly and rigorously ,this is the book to go with. It starts with the bare minimum and upon finishing , you will have a concrete knowledge of python.
+- [Amazon](https://www.amazon.com/gp/product/1491939362/ref=as_li_tl?ie=UTF8&camp=1789&creative=9325&creativeASIN=1491939362&linkCode=as2&tag=greenteapre01-20&linkId=ZZ454DLQ3IXDHNHX)
+-ISBN-10: 1491939362
+-ISBN-13: 978-1491939369
 #### Other Resources
 
 - [Functional Programming in Python by David Mertz [OREILLY] [FREE]](https://www.oreilly.com/programming/free/files/functional-programming-python.pdf)
