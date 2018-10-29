@@ -109,6 +109,9 @@ class Editor extends PureComponent {
   };
 
   focusEditor = e => {
+    if (document.activeElement.className === 'input') {
+      return;
+    }
     // e key to focus editor
     if (e.keyCode === 69) {
       this._editor.focus();
