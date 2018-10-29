@@ -63,3 +63,83 @@ print(model.intercept_)
 from sklearn import metrics
 print(metrics.accuracy_score(y_test, y_pred_class))
 ```
+
+
+---
+title: Polynomial Regression
+---
+## Polynomial Regression
+
+In statistics, polynomial regression is a form of regression analysis in which the relationship between the independent variable x and the dependent variable y is modelled as an nth degree polynomial in x.
+
+<math xmlns="http://www.w3.org/1998/Math/MathML" display="block">
+  <mi>Y</mi>
+  <mo>=</mo>
+  <msub>
+    <mi>&#x03B2;<!-- β --></mi>
+    <mrow class="MJX-TeXAtom-ORD">
+      <mn>0</mn>
+    </mrow>
+  </msub>
+  <mo>+</mo>
+  <msub>
+    <mi>&#x03B2;<!-- β --></mi>
+    <mrow class="MJX-TeXAtom-ORD">
+      <mn>1</mn>
+    </mrow>
+  </msub>
+  <mi>X</mi>
+  <mo>+</mo>
+  <msub>
+    <mi>&#x03B2;<!-- β --></mi>
+    <mrow class="MJX-TeXAtom-ORD">
+      <mn>2</mn>
+    </mrow>
+  </msub>
+  <msup>
+    <mi>X</mi>
+    <mrow class="MJX-TeXAtom-ORD">
+      <mn>2</mn>
+    </mrow>
+  </msup>
+  <mo>+</mo>
+  <mo>&#x2026;<!-- … --></mo>
+  <mo>+</mo>
+  <msub>
+    <mi>&#x03B2;<!-- β --></mi>
+    <mrow class="MJX-TeXAtom-ORD">
+      <mi>h</mi>
+    </mrow>
+  </msub>
+  <msup>
+    <mi>X</mi>
+    <mrow class="MJX-TeXAtom-ORD">
+      <mi>h</mi>
+    </mrow>
+  </msup>
+  <mo>+</mo>
+  <mi>&#x03F5;<!-- ϵ --></mi>
+  <mo>,</mo>
+</math>
+
+--https://onlinecourses.science.psu.edu/stat501/node/324/
+
+
+*Practice with scikit-learn*
+
+```py
+from sklearn.preprocessing import PolynomialFeatures
+from sklearn import linear_model
+
+X = [[0.44, 0.68], [0.99, 0.23]]
+vector = [109.85, 155.72]
+predict= [0.49, 0.18]
+
+poly = PolynomialFeatures(degree=2)
+X_ = poly.fit_transform(X)
+predict_ = poly.fit_transform(predict)
+
+clf = linear_model.LinearRegression()
+clf.fit(X_, vector)
+print clf.predict(predict_)
+```
