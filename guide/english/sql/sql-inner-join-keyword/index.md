@@ -45,7 +45,7 @@ SELECT a.studentID, a.FullName, sat_score, a.programOfStudy, schoolEmailAdr
 FROM student AS a;
 ```
 
-student or LEFT table-
+student or LEFT table
 ```text
 +-----------+------------------------+-----------+------------------+------------------------+
 | studentID | FullName               | sat_score | programOfStudy   | schoolEmailAdr         |
