@@ -2,7 +2,7 @@
 title: Functions
 ---
 # Functions in C
-Sometimes you have a chunk of code that you need to use over and over, but at different times and places in your code. You could copy and paste it over and over, but that's not a great solution- your file size ends up being bigger, your code is harder to debug, and your code is harder to read. Instead, use a function: functions are like mini-programs that exist within your code. You can pass them variables to use, and they can give back data.
+Sometimes you have a chunk of code that you need to use over and over, but at different times and places in your code. You could copy and paste it over and over, but that's not a great solution- your file size ends up being bigger, your code is harder to debug, and your code is harder to read. Instead, use a function: functions are like mini-programs that exist within your code. You can pass them variables to use, and they can give back data.It is a group of statements that together perform a task.Every C program has atleast one function,which is main() and all the most trivial programs can define additionl functions.
 ## An Example
 Here's a simple example of a function that divides two numbers. It's not very useful since we have `/`, but it shows the different parts of a function.
 ```C
