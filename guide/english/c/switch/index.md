@@ -17,7 +17,7 @@ switch (n)
 {
     case constant1:
         // code to be executed if n is equal to constant1;
-        break;
+        
 
     case constant2:
         // code to be executed if n is equal to constant2;
@@ -27,6 +27,32 @@ switch (n)
         .
     default:
         // code to be executed if n doesn't match any constant
+}
+```
+
+## Allow fall through
+Note: Sometime, you may write a programme that falls thtough the cases, in that point it is important to determine it by a comment to help another programmer after you.
+
+```c
+switch (n)
+{
+    case constant1:
+        /* 
+         code to be executed if n is equal to constant1;
+        */
+        // allow fall through
+
+    case constant2:
+         /* 
+         code to be executed if n is equal to constant1;
+        */
+        // allow fall through
+        .
+        .
+        .
+    default:
+        // code to be executed if n doesn't match any constant
+        break; // even if its the default case, always put the `break`.
 }
 ```
 
