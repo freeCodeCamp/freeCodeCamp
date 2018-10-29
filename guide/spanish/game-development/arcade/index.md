@@ -1,8 +1,8 @@
 ---
 title: Arcade
-localeTitle: Arcada
+localeTitle: Arcade
 ---
-## Arcada
+## Arcade
 
 ### Desarrollo de videojuegos con arcade.
 
