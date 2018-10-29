@@ -25,3 +25,5 @@ Assembly language is primarily used in the following situations:
 #### More Information:
 <!-- Please add any articles you think might be helpful to read before writing the article -->
 
+## Little Man Computer
+One helpful way to learn, or try, Assembly language, with a only a handful of instructions is<a href="https://en.wikipedia.org/wiki/Little_man_computer">Little Man Computer</a>. 
