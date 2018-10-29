@@ -20,7 +20,7 @@ In Python, a function definition has the following features:
 3. paranthesis'()', and within paranthesis input parameters,although the input parameters are optional
 4. a colon ':'
 5. some block of code to execute (that must be indented relative to the definition statement)
-6. a return statement (optional)
+6. a return statement (optional if function is void)
 
 ```python
 # a function with no parameters or returned values
