@@ -18,3 +18,10 @@ Examples of these conventions as it relates to layout are listed below:
 * Ensuring elements are neat and organized (i.e two buttons aligning to be visually acceptable)
 * Simplicity of the layout such that it is easy to follow and flows nicely
 * Use of visual hierarchy to help keep the layout visually flowing (Size, color, positioning, etc)
+
+
+## Resources
+* Layout Essentials: 100 Design Principles for Using Grids
+[Amazon](https://www.amazon.com/Layout-Essentials-Design-Principles-Using/dp/1592537073)
+* Layout Workbook: A Real World Guide to Building Pages in Graphic Design
+[Amazon](https://www.amazon.com/Layout-Workbook-Real-World-Building-Graphic/dp/1592533523)
