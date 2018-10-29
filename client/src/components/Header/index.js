@@ -8,7 +8,7 @@ import UserState from './components/UserState';
 
 import './header.css';
 
-function Header({ disableSettings }) {
+const Header = ({ disableSettings }) => {
   return (
     <header>
       <nav id='top-nav'>
