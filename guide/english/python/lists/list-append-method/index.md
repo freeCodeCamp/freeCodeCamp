@@ -23,4 +23,8 @@ print(words)
 
 The official documentation for `append()` can be found <a href='https://docs.python.org/3.6/tutorial/datastructures.html' target='_blank' rel='nofollow'>here</a>
 
+##### list.append() vs list.extend()
 
+Append has constant time complexity, O(1).
+
+Extend has time complexity, O(k).  Thus list.append() is faster than list.extend()
