@@ -43,7 +43,7 @@ Note: The symbols ⌊x⌋ and ⌈x⌉ represent the floor function and ceiling f
 ```yml
 tests:
   - text: <code>euler255()</code> should return 4.447401118.
-    testString: 'assert.strictEqual(euler255(), 4.447401118, "<code>euler255()</code> should return 4.447401118.");'
+    testString: assert.strictEqual(euler255(), 4.447401118, '<code>euler255()</code> should return 4.447401118.');
 
 ```
 

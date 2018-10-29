@@ -10,7 +10,7 @@ func sum(parameter1 int64, parameter2 int64) int64 {
   return parameter1+parameter2
 }
 ```
-Here, the name of the function is `add`. It takes to parameters, `parameter1` and `parameter2` of type `int64`
+Here, the name of the function is `sum`. It takes to parameters, `parameter1` and `parameter2` of type `int64`
 and returns another int64, the sum of the two parameters. 
 
 ### Return

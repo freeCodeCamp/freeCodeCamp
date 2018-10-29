@@ -2,7 +2,7 @@
 title: Arrays and Strings
 ---
 # Arrays in C
-Arrays allow for a set of variables to be grouped together as one variable. This is useful in its own right, but also because strings fall into this category. Strings, which are how we represent words and sentences in computer languages, are just collections of character variables. Therefore, we represent strings using arrays in C.
+Arrays allow for a set of variables of the same type to be grouped together as one variable. This is useful in its own right, but also because strings fall into this category. Strings, which are how we represent words and sentences in computer languages, are just collections of character variables. Therefore, we represent strings using arrays in C.
 
 ## Making an Array
 A normal integer variable would be declared like so:
@@ -65,7 +65,7 @@ int main(void) {
 ```
 
 ## Strings
-Arrays are sets of variables, and strings are sets of characters. As a result, we can represent strings with an array. You _can_ declare something in the same way as before, but you'll need to place '\0' as one of your values (more on that in a minute!):
+Arrays are sets of variables of the same data type, and strings are sets of characters. As a result, we can represent strings with an array. You _can_ declare something in the same way as before, but you'll need to place '\0' as one of your values (more on that in a minute!):
 ```C
 char hello_world[] = {'H', 'e', 'l', 'l', 'o', ' ', 'w', 'o', 'r', 'l', 'd', '!', '\0'};
 ```
@@ -118,12 +118,12 @@ void copy_string(char [] first_string, char [] second_string)
 ```C
 strcat(first, second);
 ```
-Here is an example of manual implementation of fuction strcat:
+Here is an example of manual implementation of function strcat:
 
 void string_concatenate(char [] s1, char [] s2)
 {
     int i = strlen(s1), j;
-    for(int j = 0; s2[j]; j++, i += 1)
+    for(j = 0; s2[j]; j++, i += 1)
     {
         s1[i] = s2[j];
     }
@@ -140,7 +140,7 @@ int string_length(char [] string)
 {
     int i;
     
-    for(int i = 0; string[i]; i++);
+    for(i = 0; string[i]; i++);
     
     return i;
 }

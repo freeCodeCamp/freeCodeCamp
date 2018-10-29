@@ -8,7 +8,7 @@ videoUrl: 'https://scrimba.com/c/c2MvnHZ'
 
 ## Description
 <section id='description'>
-CSS borders have properties like <code>style</code>, <code>color</code> and <code>width</code>
+CSS borders have properties like <code>style</code>, <code>color</code> and <code>width</code>.
 For example, if we wanted to create a red, 5 pixel border around an HTML element, we could use this class:
 <blockquote>&#60;style&#62;<br>&nbsp;&nbsp;.thin-red-border {<br>&nbsp;&nbsp;&nbsp;&nbsp;border-color: red;<br>&nbsp;&nbsp;&nbsp;&nbsp;border-width: 5px;<br>&nbsp;&nbsp;&nbsp;&nbsp;border-style: solid;<br>&nbsp;&nbsp;}<br>&#60;/style&#62;</blockquote>
 </section>
@@ -26,15 +26,15 @@ Remember that you can apply multiple classes to an element using its <code>class
 ```yml
 tests:
   - text: Your <code>img</code> element should have the class <code>smaller-image</code>.
-    testString: 'assert($("img").hasClass("smaller-image"), "Your <code>img</code> element should have the class <code>smaller-image</code>.");'
+    testString: assert($("img").hasClass("smaller-image"), 'Your <code>img</code> element should have the class <code>smaller-image</code>.');
   - text: Your <code>img</code> element should have the class <code>thick-green-border</code>.
-    testString: 'assert($("img").hasClass("thick-green-border"), "Your <code>img</code> element should have the class <code>thick-green-border</code>.");'
+    testString: assert($("img").hasClass("thick-green-border"), 'Your <code>img</code> element should have the class <code>thick-green-border</code>.');
   - text: Give your image a border width of <code>10px</code>.
-    testString: 'assert($("img").hasClass("thick-green-border") && parseInt($("img").css("border-top-width"), 10) >= 8 && parseInt($("img").css("border-top-width"), 10) <= 12, "Give your image a border width of <code>10px</code>.");'
+    testString: assert($("img").hasClass("thick-green-border") && parseInt($("img").css("border-top-width"), 10) >= 8 && parseInt($("img").css("border-top-width"), 10) <= 12, 'Give your image a border width of <code>10px</code>.');
   - text: Give your image a border style of <code>solid</code>.
-    testString: 'assert($("img").css("border-right-style") === "solid", "Give your image a border style of <code>solid</code>.");'
+    testString: assert($("img").css("border-right-style") === "solid", 'Give your image a border style of <code>solid</code>.');
   - text: The border around your <code>img</code> element should be green.
-    testString: 'assert($("img").css("border-left-color") === "rgb(0, 128, 0)", "The border around your <code>img</code> element should be green.");'
+    testString: assert($("img").css("border-left-color") === "rgb(0, 128, 0)", 'The border around your <code>img</code> element should be green.');
 
 ```
 
