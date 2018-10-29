@@ -2,7 +2,7 @@
 title: If Elif Else Statements
 localeTitle: Если Elif Else Statementments
 ---
-## Если Elif Else Statementments
+## IF Elif Else Statementments
 
 Структура `if` / `elif` / `else` - это общий способ управления потоком программы, позволяющий выполнять определенные блоки кода в зависимости от значения некоторых данных. Если условие, следующее за ключевым словом `if` оценивается как `true` , блок кода будет выполняться: Обратите внимание, что скобки не используются до и после проверки условий, как на других языках.
 
@@ -14,16 +14,16 @@ if True:
 ```python
 x = 5 
  
- if x > 4: 
+if x > 4: 
   print("The condition was true!") #this statement executes 
 ```
 
-Вы можете дополнительно добавить ответ `else` который будет выполняться, если условие `false` :
+Вы можете дополнительно добавить условие внутри `else` которое будет выполняться, если условие внутри `if` будет `false`:
 
 ```python
 if not True: 
   print('If statement will execute!') 
- else: 
+else: 
   print('Else statement will execute!') 
 ```
 
@@ -32,10 +32,10 @@ if not True:
 ```python
 y = 3 
  
- if y > 4: 
-  print("I won't print!") #this statement does not execute 
- else: 
-  print("The condition wasn't true!") #this statement executes 
+if y > 4: 
+  print("I won't print!") # this statement does not execute 
+else: 
+  print("The condition wasn't true!") # this statement executes 
 ```
 
 _Обратите внимание, что нет никакого условия, следуя ключевому слову `else` - он ловит все ситуации, когда условие было `false`_
@@ -87,10 +87,7 @@ python
  print(is_greater) 
 ```
 
-Вывод
+Результат:
 ```
-> 
  True 
- > 
-
 ```
