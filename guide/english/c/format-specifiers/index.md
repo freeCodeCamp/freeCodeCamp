@@ -136,6 +136,20 @@ int main()
 Output:
 0.000000
 
+The number of decimal places can be specified : %.2f ( the value will only display 2 decimal places )
+
+#include <stdio.h> 
+int main() 
+{ 
+    float a; 
+    scanf("%f", &a); // input is 10.245
+    printf("%f\n", a); 
+    return 0; 
+}
+
+Output: 
+10.25
+
 String input : %s
 
 #include <stdio.h> 
