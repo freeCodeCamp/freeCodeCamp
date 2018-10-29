@@ -3,13 +3,13 @@ title: Code documentation
 ---
 ## Code Documentation
 
-Code documentation is a way developers write their code to create the best versions of their functions possible. Code Documentation lets the newbie to get comfortable with the customs of the particular module, functions etc for a particular programming language. It is always recommended to go with the documentation before debugging your code, this helps you to debug effectively.
+Code documentation is a way developers write their code to create the best versions of their functions possible. Code Documentation lets the newbie get comfortable with the customs of the particular module, functions etc for a particular programming language. It is always recommended to go with the documentation before debugging your code, this helps you to debug effectively.
 
 For example, if you happen to pass along your code to an absolute beginner, they should be able to follow along through comments, appropriate variable names and that means structuring the code in a spaced, readable manner. 
 
 It may become an extremely important idea to make a habit out of commenting your functions, loops, and declarations and treating comments as part of the source code, just as regular code should be.
 
-Many developers have probably learned that it is much harder to go back through your code and comment it after you finish. It's always a good idea to label and comment your code as you go, so that you don't forget or mix up what certain variables or functions do.
+Many developers have probably learned that it is much harder to go back through your code and comment it after you finish. It's always a good idea to label and comment your code as you go so that you don't forget or mix up what certain variables or functions do.
 
 ![An example of commenting in the real world](https://cdn-images-1.medium.com/max/1620/1*Pyxsc7Uixbitv5myywaA_Q.jpeg)
 
