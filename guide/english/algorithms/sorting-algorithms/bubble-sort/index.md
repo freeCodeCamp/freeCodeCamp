@@ -115,7 +115,7 @@ void bubblesort(int arr[], int n)
 	if(n==1)	//Initial Case
 		return;
 	bool swap_flag = false;
-	for(int i=0;i<n-1;i++)	//After this pass the largest element will move to its desired location.
+	for(int i=0;i<n-1;i++)	//After this pass the largest element will move to its desired location, the nubmer of passes is one                                    // less than the number of elements in the array.
 	{
 		if(arr[i]>arr[i+1])
 		{
