@@ -48,7 +48,7 @@ Puedes ayudarnos con:
 
 - [🌐 Traducir artículos de guía y desafíos de codificación.](#traducir-artículos-de-guía-y-desafíos-de-codificación)
 
-- [🛠 Ayúdanos a corregir errores en la plataforma de aprendizaje de freeCodeCamp.org.](#ayúdenos-a-corregir-errores-en-la-plataforma-de-aprendizaje-de-freeCodeCamp.org)
+- [🛠 Ayúdanos a corregir errores en la plataforma de aprendizaje de freeCodeCamp.org.](#ayúdanos-a-corregir-errores-en-la-plataforma-de-aprendizaje-de-freecodecamporg)
 
 ### Investiga, escribe y actualiza nuestros artículos de guía
 
@@ -56,7 +56,7 @@ Puedes ayudarnos con:
 
 Los artículos de guía te ayudan a comprender rápidamente un concepto de tecnología. Estas son explicaciones breves y sencillas que puedes leer antes de ir a recursos más profundos.
 
-Puedes encontrar un [artículo de ejemplo sobre elementos HTML aquí](./client/src/pages/html/elements/index.md).
+Puedes encontrar un [artículo de ejemplo sobre elementos HTML aquí](../../guide/spanish/html/elements/a-tag/index.md).
 
 **¿Sobre qué puedo escribir un artículo?**
 
@@ -78,17 +78,17 @@ Puedes ayudar a expandirlos y hacer que su redacción sea más clara. Puedes act
 
 **Si deseas trabajar en ello, sigue estas pautas:**
 
-#### [Cómo trabajar en desafíos de codificación.](/docs/how-to-work-on-coding-challenges.md)
+#### [Cómo trabajar en desafíos de codificación.](/docs/spanish/how-to-work-on-coding-challenges.md)
 
 ### Traducir artículos de guía y desafíos de codificación
 
 Puedes ayudarnos a traducir nuestros artículos de Guía y desafíos de codificación para un idioma que hables. Actualmente tenemos versiones traducidas en:
 
-- Chino (中文)
-- Ruso (русский)
-- Árabe (عربى)
-- Español
-- Portugués (Português)
+- [Chino (中文)](https://github.com/freeCodeCamp/freeCodeCamp/tree/master/curriculum/challenges/chinese)
+- [Ruso (русский)](https://github.com/freeCodeCamp/freeCodeCamp/tree/master/curriculum/challenges/russian)
+- [Árabe (عربى)](https://github.com/freeCodeCamp/freeCodeCamp/tree/master/curriculum/challenges/arabic)
+- [Español](https://github.com/freeCodeCamp/freeCodeCamp/tree/master/curriculum/challenges/spanish)
+- [Portugués (Português)](https://github.com/freeCodeCamp/freeCodeCamp/tree/master/curriculum/challenges/portuguese)
 
 La mayoría de estas versiones están traducidas automáticamente. Nos encantaría tu ayuda para mejorar la calidad de estas traducciones.
 
@@ -114,7 +114,7 @@ Siéntete libre de hacernos preguntas, en los hilos relacionados con problemas, 
 
 **Si deseas trabajar en ello, siga estas pautas:**
 
-#### [Cómo configurar freeCodeCamp localmente.](/docs/how-to-setup-freecodecamp-locally.md)
+#### [Cómo configurar freeCodeCamp localmente.](/docs/spanish/how-to-setup-freecodecamp-locally.md)
 
 ## Preguntas frecuentes
 
