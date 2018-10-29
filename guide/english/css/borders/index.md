@@ -130,6 +130,7 @@ h5 { border: dotted; }
 </style>
 ```
 
+---
 ### More Information:
 
 - [MDN Documentation](https://developer.mozilla.org/en-US/docs/Web/CSS/border)
