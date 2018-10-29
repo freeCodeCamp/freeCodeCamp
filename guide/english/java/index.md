@@ -15,7 +15,7 @@ The latest version is <a href='http://www.oracle.com/technetwork/java/javase/ove
 
 Java is also divided into several "Editions" :
 
-*   <a href='http://www.oracle.com/technetwork/java/javase/overview/index.html' target='_blank' rel='nofollow'>SE</a> - Standard Edition - for desktop and standalone server applications
+*   <a href='http://www.oracle.com/technetwork/java/javase/overview/index.html' target='_blank' rel='nofollow'>SE</a> - Standard Edition - for desktop and standalone server applications, also used to develop applets, which are programs that run in web browsers.
 *   <a href='http://www.oracle.com/technetwork/java/javaee/overview/index.html' target='_blank' rel='nofollow'>EE</a> - Enterprise Edition - for developing and executing Java components that run embedded in a Java server
 *   <a href='http://www.oracle.com/technetwork/java/embedded/javame/overview/index.html' target='_blank' rel='nofollow'>ME</a> - Micro Edition - for developing and executing Java applications on mobile phones and embedded devices
 
