@@ -177,7 +177,7 @@ Color contrast should be a minimum of 4.5:1 for normal text and 3:1 for large te
 
 ## Conclusion
 I have told you about accessibility, what it is, what it's not and why it's important.  
-
+Accesibility is not being able to access something
 I have also given you the basics, the very basics, of getting accessibility right. These basics are however very powerful and can make your life a lot easier when coding for accessibility.  
 
 If we talk in FCC terms, you should keep these in mind while doing the HTML/CSS curriculum as well as the JavaScript curriculum.  
