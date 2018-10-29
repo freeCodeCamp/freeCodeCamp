@@ -10,7 +10,7 @@ It is always best practice when starting out to comment more often than not, as 
 
 JavaScript has two ways of assigning comments in its code.
 
-The first way is the `//` comment; all text following `//` on the same line into a comment. For example:
+The first way is the `//` comment; all text following `//` on the same line is  considered as a comment. For example:
 
 ```javascript
 function hello() {

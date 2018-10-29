@@ -23,7 +23,7 @@ What is the sum of all positive integers N ≤ 1011 such that f(N) = 420
 ```yml
 tests:
   - text: <code>euler233()</code> should return 271204031455541300.
-    testString: 'assert.strictEqual(euler233(), 271204031455541300, "<code>euler233()</code> should return 271204031455541300.");'
+    testString: assert.strictEqual(euler233(), 271204031455541300, '<code>euler233()</code> should return 271204031455541300.');
 
 ```
 

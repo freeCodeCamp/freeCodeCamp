@@ -12,7 +12,12 @@ CSS specifications are maintained by the [World Wide Web Consortium (W3C)](https
 
 You can build some pretty amazing things in CSS alone, such as this pure-CSS [Minesweeper game](https://codepen.io/bali_balo/pen/BLJONk) (which uses no JavaScript).
 
-![](https://cdn-images-1.medium.com/max/800/1*GFcKk9KxqHAnWa1ECcKDOQ.png)
+![Minesweeper clone in CSS](https://cdn-images-1.medium.com/max/800/1*GFcKk9KxqHAnWa1ECcKDOQ.png)
+
+### Popular CSS Frameworks 2018
+Frameworks exist to make the more complex parts of css easier and more efficient for developers to build out websites.
+Some of the most popular CSS Frameworks are:
+Bootstrap, Foundation, Bulma, uikit, Semantic UI, mini.css, Materialize, Material Design Lite, Spectre and Kube
 
 #### Suggested Reading:
 A good start is the freeCodeCamp curriculum [Introduction to Basic CSS](https://learn.freecodecamp.org/responsive-web-design/basic-css).
@@ -23,5 +28,6 @@ The site [CSS Zen Garden](http://www.csszengarden.com/) is a great example how t
 
 For a demonstration of the power of CSS, check out [Species In Pieces](http://species-in-pieces.com/#).
 
-A guide to some important CSS selectors, check out [The 30 CSS Selectors You Must Memorize](https://code.tutsplus.com/tutorials/the-30-css-selectors-you-must-memorize--net-16048)
+To find some awesome articles and summaries of Front End Development related ideas visit [CSS-Tricks](https://css-tricks.com)
 
+A guide to some important CSS selectors, check out [The 30 CSS Selectors You Must Memorize](https://code.tutsplus.com/tutorials/the-30-css-selectors-you-must-memorize--net-16048)
