@@ -10,8 +10,9 @@ Syntax:
 max(iterable, *iterables[,key, default])
 max(arg1, arg2, *args[, key])
 
-Valid Arguments:  
 
+Valid Arguments:  
+    arguments passing to function must be of one type and charaters are treated by their ASCII Value
     max(2, 3)
     max([1, 2, 3])
     max('a', 'b', 'c')
