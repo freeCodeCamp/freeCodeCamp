@@ -12,6 +12,8 @@ Web accessibility encompasses all disabilities that  affect access to the Web, i
 disabilities. The document [How People with Disabilities Use the Web](http://www.w3.org/WAI/intro/people-use-web/Overview.html) describes how different
 disabilities affect Web use and includes scenarios of people with disabilities using the Web.
 
+An example of some of the considerations a developer would have to take into account when developing to meet accessibility standards is the use of colours in his/her UI. The colours would have to be selected on the basis that someone who is colour-blind can still read the screen - this is done by selecting colours that pair well or contrast well together. There are tools to help developers in this goal, for example <a href="https://chrome.google.com/webstore/detail/spectrum/ofclemegkcmilinpcimpjkfhjfgmhieb?hl=en">**Spectrum**<a/> which allows you to test your web page with various levels to colour deficiency.
+
 Web accessibility also **benefits** people *without* disabilities. For example, a key  principle of Web accessibility is designing Web sites and software
 that are flexible to meet different user needs, preferences, and situations. This **flexibility** also benefits people *without* disabilities in certain
 situations, such as people using a slow Internet connection, people with "temporary disabilities" such as a broken arm, and people with changing abilities
