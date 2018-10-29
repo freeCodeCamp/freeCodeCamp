@@ -18,8 +18,9 @@ while other teams have whole days when they dedicate to code reviews across the 
 
 It is important to be humble throughout the code review process. Accept your mistakes, and be professional when pointing out improvements or errors in the code of your fellow team members.
 
-## Want to learn more?
+#### More Information:
 
-* [GitHub Documentation](https://github.com/features/code-review) : Learn how to write better code and document your changes with version control
 * [How to Do Code Reviews Like a Human (Part One)](https://mtlynch.io/human-code-reviews-1/)
+
+* [How to Do Code Reviews Like a Human (Part Two)](https://mtlynch.io/human-code-reviews-2/)
 

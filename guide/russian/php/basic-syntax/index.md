@@ -8,38 +8,92 @@ localeTitle: Основной синтаксис
 
 Сценарий PHP начинается с `<?php` и заканчивается на `?>`
 
-Ниже приведен пример простого PHP-файла с PHP-скриптом, который использует встроенную функцию PHP «echo» для вывода текста «Hello World!». на веб-странице
+Ниже приведен пример простого PHP-файла с PHP-скриптом, который использует встроенную функцию PHP «echo» для вывода текста «Привет мир!» на веб-странице
 
-\`\` \`\` \`
-
-# Моя первая страница PHP
 ```
-The output of that would be : 
+<html>
+<body>
+
+<h1>Моя первая страница PHP</h1>
+
+<?php echo "Привет мир!"; ?>
+
+</body>
+</html> 
 ```
 
+Будет выведено: 
+
+```
 Моя первая страница PHP
 
 Привет, мир!
 ```
-#### Note: PHP statements end with a semicolon (;). 
+
+#### Заметка: PHP требует окончания инструкций точкой запятой (;). 
  
- # Comments in PHP 
+# Комментарии в PHP 
  
- PHP supports several ways of commenting: 
+PHP поддерживает несколько способов комментирования: 
+```
+<!DOCTYPE html>
+<html>
+<body>
+
+<?php
+// Это однострочный комментарий
+
+# Это так же однострочный комментарий
+
+/*
+Это многострочный комментарий
+еще одна строка комментария
+*/
+
+// С их помощью вы можете комметировать код
+$x = 5 /* + 15 */ + 5;
+echo $x;
+?>
+
+</body>
+</html>
 ```
 
+# PHP Регистр символов 
+
+Управляющие конструкции (if, else, while, итп), классы функции и пользовательские функции регистро НЕ зависимы.
+
+В примере ниже, все три инструкции эквиваленты:
 ```
-# PHP Case Sensitivity 
- 
- In PHP, all keywords (eg if, else, while, echo, etc.), classes, functions, and user-defined functions are NOT case-sensitive. 
- 
- In the example below, all three echo statements below are legal (and equal): 
+<!DOCTYPE html>
+<html>
+<body>
+
+<?php
+ECHO "Привет мир!<br>";
+echo "Привет мир!<br>";
+EcHo "Привет мир!<br>";
+?>
+
+</body>
+</html>
 ```
 
-```
-### However; all variable names are case-sensitive. 
- 
- In the example below, only the first statement will display the value of the $color variable (this is because $color, $COLOR, and $coLOR are treated as three different variables): 
-```
+### Имена переменных чувствительны к регистру символов. 
 
-\`\` \`\` \`
+В примере ниже отобразиться только значение переменной $color (так как $color, $COLOR и $coLOR это разные переменные) 
+```
+<!DOCTYPE html>
+<html>
+<body>
+
+<?php
+$color = "красный";
+echo "Мой портфель " . $color . "<br>";
+echo "Мой дом " . $COLOR . "<br>";
+echo "Мой телефон " . $coLOR . "<br>";
+?>
+
+</body>
+</html>
+```
