@@ -9,6 +9,9 @@ In Scrum, the **Sprint** is a period of working time usually between one and fou
 - A sprint should not be terminated prematurely if at all possible. If the stories within the sprint become obsolete, the team may decide to close them and pull new stories off of the product backlog. 
 - The team works to break up the User Stories to a size that can be completed within the duration of the Sprint without carrying over to the next. 
 - "Sprint" and "Iteration" are often used interchangeably.
+- Each story in sprint has a defined definition of done.
+- Each sprint has demonstrable work.  
+- Product Owner determines whether or not Sprint met "done" objectives at end of sprint.
 
 #### More Information:
 <!-- Please add any articles you think might be helpful to read before writing the article -->
