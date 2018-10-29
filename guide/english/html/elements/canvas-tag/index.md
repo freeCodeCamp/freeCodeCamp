@@ -4,7 +4,7 @@ title: Canvas Tag
 ## Canvas Tag
 
 <!-- The article goes here, in GitHub-flavored Markdown. Feel free to add YouTube videos, images, and CodePen/JSBin embeds  -->
-You can use a canvas to draw and animate graphics. The drawings are done with JavaScript, so you will want to have an id in order to select the canvas. 
+You can use a canvas to draw and animate graphics. The drawings are done with JavaScript, so you will want to have an id in order to select the canvas. It is recommended to added alternative text/information between the opening & closing tags to provide explination to users with unsupported browsers. 
 ```html
 <canvas id="canvas" width="200px" height="200px">
 </canvas>
