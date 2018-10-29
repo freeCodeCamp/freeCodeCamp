@@ -3,7 +3,7 @@ title: Intro to Inverse Functions
 ---
 ## Intro to Inverse Functions
 
-Say you were trying to reflect y=3x over the line y=x. What would be the equation of the line? As you can see in the image below, it would be y=1/3x. But why is that so? If you swap x and y with each other and solve for y, you can find that the equation would be the same. This is what would be called a inverse function.
+Say you were trying to reflect y=3x over the line y=x. What would be the equation of the line? As you can see in the image below, it would be y=1/3x. But why is that so? If you swap x and y with each other and solve for y, you can find that the equation would be the same. This is what would be called an inverse function.
 
 <img src="http://d2r5da613aq50s.cloudfront.net/wp-content/uploads/369430.image1.jpg" />
 
