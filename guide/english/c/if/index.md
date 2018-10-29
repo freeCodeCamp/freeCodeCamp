@@ -4,6 +4,8 @@ title: If
 
 # If
 
+IF statement checks some specific conditions and perform certain blocks of codes accordingly. 
+
 The if statement executes different blocks of code based on conditions.
 
 ```
