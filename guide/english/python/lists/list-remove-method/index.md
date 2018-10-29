@@ -18,7 +18,7 @@ print(words)
 ["love","Python"]
 ```
 
-Note that it returns an error if the element to be removed is not found in the list as illustrated in the example below.
+Note that it returns an error if the element to be removed is not found in the list as illustrated in the example below:
 
 ```py
 kiss = ["keep", "it", "simple", "stupid"]
@@ -33,6 +33,6 @@ Traceback (most recent call last):
 ValueError: list.remove(x): x not in list
 ```
 #### More Information:
-More information about `remove()` can be found <a href='https://docs.python.org/3.6/tutorial/datastructures.html' target='_blank' rel='nofollow'>here</a>
+More information about `remove()` can be found <a href='https://docs.python.org/3.6/tutorial/datastructures.html' target='_blank' rel='nofollow'>here.</a>
 
 
