@@ -42,7 +42,7 @@ Area - 1/2(base * height)
 
 ### Circle
 Number of sides - Infinite (A polygon with infinite number of sides is a circle)
-Special Info- 
+Special Info- Diameter is always twice the radius
 Angle through center in 360
 Always defined from a point known as center of circle
 Perpendicular distance from the center to a point on periphery is called the radius(r)
