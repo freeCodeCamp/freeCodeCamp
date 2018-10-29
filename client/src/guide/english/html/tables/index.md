@@ -19,16 +19,19 @@ A more complex HTML table may also include `<caption>`, `<col>`, `<colgroup>`, `
     <th>Firstname</th>
     <th>Lastname</th> 
     <th>Age</th>
+		<th>Qualification</th>
   </tr>
   <tr>
     <td>Jill</td>
     <td>Smith</td> 
     <td>50</td>
+		<td>Matric</td>
   </tr>
   <tr>
     <td>Eve</td>
     <td>Jackson</td> 
     <td>94</td>
+		<td>Middle</td>
   </tr>
 </table>
 ```
