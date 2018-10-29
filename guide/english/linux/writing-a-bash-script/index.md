@@ -49,7 +49,9 @@ Linux relies extensively on file permissions. They determine a lot about how you
 permissions, but for now we only need to know this: you can't run your script until you give yourself execute permissions. To 
 do that, type:
 
-`chmod +x my script.sh`
+`chmod +x my_script.sh`
+Remember to use quotes if filename has spaces in it ,like
+`chmod +x "my script.sh"`
 
 **Second, run it.** We execute the script from the command line just like any other command like `ls` or `date`. The script 
 name is the command, and you need to precede it with a './' when you call it:
@@ -94,6 +96,33 @@ The output of this version of myscript.sh will look like this:
 "8 is 10 or less"
 "9 is 10 or less"
 "10 is 10 or less"
+```
+## Case Conditional
+The CASE statement is the simplest form of the IF-THEN-ELSE statement in BASH.
+
+You may use the CASE statement if you need the IF-THEN-ELSE statement with many ELIF elements.
+
+With the BASH CASE statement you take some value once and then test it multiple times.
+
+Syntax:
+```bash
+case $variable in
+     pattern-1)      
+          commands
+          ;;
+     pattern-2)      
+          commands
+          ;;
+     pattern-3|pattern-4|pattern-5)
+          commands
+          ;; 
+     pattern-N)
+          commands
+          ;;
+     *)
+          commands
+          ;;
+esac
 ```
 ## Real World Scripts
 These examples aren't terribly useful, but the principles are. Using `while`, `if`, and any command you might otherwise type 
