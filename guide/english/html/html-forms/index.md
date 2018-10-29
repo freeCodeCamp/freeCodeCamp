@@ -49,7 +49,7 @@ Other elements that form can contain:
 - ```select``` - together with ```<option></option>``` tag creates drop-down select menu.
 - ```button``` - The button element can be used to define a clickable button.
 - ```fieldset```- It groups related elements in a form.
--```legend```- It defines a caption for a <fieldset> element.
+- ```legend```- It defines a caption for a <fieldset> element.
 
 MORE INFORMATION ON HTML FORMS.
 
