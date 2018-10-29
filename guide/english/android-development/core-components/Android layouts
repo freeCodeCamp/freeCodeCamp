@@ -1,0 +1,47 @@
+VIEWS 
+
+>Anything which occupies a rectangular area on the screen and is responsible for drawing and event handling
+>Thus every UI element is subclass of View (android.view.View).
+>Android SDK provides a set of pre-built views that can be used to construct a user interface 
+  Eg: buttons , Checkbox, EditText
+
+WIDGETS
+
+>Widgets can be thought of as a " pre-buit control" through which the user interacts with ur application.
+>There is nothing such as widgets class in andriod. It simply means that the class is in andriod.widgets package in andriod.
+
+VIEW GROUPS
+
+>This is the subclass of View and provides invisible container that hold other Views or other ViewGroups and define their layout properties.
+>Thus all Layouts and Containers inherit from ViewGroup.
+>The ViewGroup is the base class for Layouts and Views container.
+>Android containes commonly used ViewGroup subclasses:
+  Linear Layout 
+  Relative Layout 
+  ListView 
+  GridView
+  
+
+LAYOUTS
+
+>Layouts are the subclasses of ViewGroup which specifies how a view should be arranged inside the viewGroups.
+>It defines the visual structure for a user interface.
+
+2 ways to create layouts:
+1) declare UI elements in XML
+2) Instantiate layout elements at runtime.
+
+>> STANDARD LAYOUTS:
+
+LinearLayout :
+  A layout that arranges its children in a single column or a single row.
+  The direction of the row can be set by calling setOrientation()
+  
+RelativeLayout :
+  A layout where the positions of the children can be described in relation to each other or to the parent.
+  
+FrameLayout :
+  FrameLayout is designed to block out an area on the screen to display a single item.
+  
+TableLayout:
+  A Layout that arranges its children into rows and columns.
