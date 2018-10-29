@@ -128,6 +128,37 @@ int main()
     return 0; 
 } 
 ```
+
+A quick sort implementation in Java
+```Java
+public void quickSort(int[] array, int l, int r) {
+	if(l < r) {
+		int p = partition(array, l, r);
+		quickSort(array, l, p - 1);
+		quickSort(array, p + 1, r);
+	}
+}
+	
+public int partition(int[] array, int l, int r) {
+	int x = array[r];
+	int i = l - 1;
+	for(int j = l; j <= r-1; j++) {
+		if(array[j] <= x) {
+			swap(array, j, i + 1);	
+			i++;
+		}
+	}
+	swap(array, r, i + 1);	
+	return i + 1;
+}
+
+public void swap(int[] array, int j, int i) {
+	int temp = array[j];
+	array[j] = array[i];
+	array[i] = temp;
+}
+```
+
 The space complexity of quick sort is O(n). This is an improvement over other divide and conquer sorting algorithms, which take O(nlong(n)) space. Quick sort achieves this by changing the order of elements within the given array. Compare this with the <a href='https://guide.freecodecamp.org/algorithms/sorting-algorithms/merge-sort' target='_blank' rel='nofollow'>merge sort</a> algorithm which creates 2 arrays, each length n/2, in each function call.
 
 #### More Information:
