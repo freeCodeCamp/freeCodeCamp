@@ -1,48 +1,48 @@
 ---
 title: Ruby Comments
-localeTitle: Rubí Comentarios
+localeTitle: Ruby Comentarios
 ---
-# Rubí Comentarios
+# Ruby Comentarios
 
 Los comentarios son líneas de anotación dentro del código que se ignoran en tiempo de ejecución (lo que significa que son visibles dentro del código fuente pero no se imprimen cuando ejecuta el programa).
 
 En Ruby, un comentario de una sola línea comienza con el carácter `#` y se extiende hasta el final de la línea. El comentario puede estar en su propia línea o siguiendo el código.
 
 ```Ruby
-puts "Learning to code is fun!" 
+puts "¡Aprender a escribir código es divertido!" 
  
- # I am a single line comment. 
+ # Soy un comentario de una sola línea. 
  
- puts "Ruby is a great language!" # Me too - I am a trailing comment. 
+ puts "¡Ruby es un gran lenguaje!" # Yo también - Soy un código de una línea. 
 ```
 
 Cuando se ejecuta, el programa anterior produce lo siguiente:
 ```
-Learning to code is fun! 
- Ruby is a great language! 
+¡Aprender a escribir código es divertido! 
+¡Ruby es un gran lenguaje! 
 ```
 
 Puede hacer comentarios de varias líneas colocando los comentarios entre `=begin` y `=end` . `=begin` y `=end` deben comenzar al principio de la línea y `=end` debe estar en una línea propia.
 
 ```ruby
 =begin 
- I am a multi-line comment 
- and I can be as long as I please. 
- See, still going! 
+ Soy un comentario multi línea 
+ y puedo ser tan largo como se me plazca. 
+ ¡Ves, todavía sigo! 
  =end 
  
- puts "Hello World!" 
+ puts "¡Hola mundo!" 
  
- =begin It's ok to start the comment on the same 
- line as "=begin" (though it's more readable if 
- you don't) but you can't put a space or any 
- text before "=begin" or "=end" and you can't put 
- anything on the same line after "=end". 
+ =begin Está bien empezar el comentario en la misma 
+ línea que "=begin" (aunque es más comprensible si 
+ no lo haces) pero no puedes poner un espacio o  
+ texto antes que "=begin" o "=end" y no puedes poner 
+ nada nada en la misma línea después de "=end". 
  =end 
 ```
 
 Cuando se ejecuta, el programa anterior produce lo siguiente:
 ```
-Hello World! 
+¡Hola mundo! 
 
 ```
