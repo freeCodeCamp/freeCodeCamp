@@ -17,12 +17,18 @@ rm <file name or file path>
 ```bash
 rm -R <folder name or folder path>
 ```
+**Interactive Deletion of Deletion**
+
+```bash
+rm -i <folder name or folder path>
+```
 
 There are few commonly used arguments:
 
 - `-r` , means to recursively delete all the folders inside a directory.
 - `-f` , means to forcefully delete anything folder or file.
 - `-rf` , means that both arguments will be used together.
+- `-i` . , means for interactive deletion.
 
 ### Warning
 
