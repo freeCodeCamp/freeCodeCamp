@@ -19,7 +19,7 @@ if x > 4:
 ```
 > **Tips** : You can use **1** as alternative to **True** and **0** as an alternative to **False**
 
-_Example_:
+## _Example_:
 ```python
 if 1:   # 1 evaluates to true
   print('If block will execute!')
@@ -32,7 +32,7 @@ if not True:
 else:
   print('Else statement will execute!')
 ```
-Or you can also see this example
+Or you can also see this example:
 ```python
 y = 3
 
