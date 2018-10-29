@@ -3,16 +3,17 @@ title: Derivative
 ---
 ## Derivative
 
-**Definition** : The derivative of function f(x) with respect to x, represented by f'(x) is defined as:<br/>
+**Definition** : The derivative of a function f(x) with respect to x, represented by f'(x) is defined as:<br/>
       ![Limit formula for derivative](http://tutorial.math.lamar.edu/Classes/CalcI/DefnOfDerivative_files/eq0006M.gif)<br/><br/>
 
-where h is a infinitely small change in the value of input, represented by the limit function (h is approaching to zero)<br/>
+where h is a infinitely small change in the value of the input, represented by the limit function (as h is approaches zero)<br/>
 
 In the above formula, we notice that derivative is just the slope of a tangent of a graph of x at any input value.<br/>
 
 **Important property of function and it's derivative:** <br/>
 A function f(x) is differentiable at x = a, if and only if, the function is continuous at f(x=a). <br/>
 Conversely, if a derivative of a function exists at a point a, then the function must be continous at f(x=a).
+Note: Differentiability implies continutity BUT continuity DOES NOT imply differentiability.
 
 ## Properties of Derivatives
 
