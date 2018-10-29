@@ -24,8 +24,9 @@ Remember to use double-quotes for field-names (") and commas (,) to separate fie
 <section id='tests'>
 
 ```yml
-- text: package.json should have a valid "description" key
-  testString: 'getUserInput => $.get(getUserInput(''url'') + ''/_api/package.json'').then(data => { var packJson = JSON.parse(data); assert(packJson.description, ''"description" is missing''); }, xhr => { throw new Error(xhr.responseText); })'
+tests:
+  - text: package.json should have a valid "description" key
+    testString: 'getUserInput => $.get(getUserInput(''url'') + ''/_api/package.json'').then(data => { var packJson = JSON.parse(data); assert(packJson.description, ''"description" is missing''); }, xhr => { throw new Error(xhr.responseText); })'
 
 ```
 
