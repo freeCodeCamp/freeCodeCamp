@@ -2,9 +2,9 @@
 title: Books on Python Programming Language
 localeTitle: Libros en lenguaje de programación Python
 ---
-\### Lista de libros
+### Lista de libros
 
-_Piense Python 2e_
+#### _Piense Python 2e_
 
 *   Gratis (libro electrónico) que cubre los conceptos básicos de Python. Es amigable para los principiantes y es una necesidad para las personas que son nuevas en la programación.
 *   [Amazonas](https://www.amazon.com/gp/product/1491939362/ref=as_li_qf_sp_asin_il_tl?ie=UTF8&camp=1789&creative=9325&creativeASIN=1491939362&linkCode=as2&tag=greenteapre01-20&linkId=XCU5FNNNMXRHDD7X)
@@ -12,20 +12,46 @@ _Piense Python 2e_
 *   [Sitio web](http://greenteapress.com/wp/think-python-2e/)
 *   [E-libro](http://greenteapress.com/thinkpython2/html/index.html) (gratis)
 
-_Aprende Python 3 de la manera difícil_
+#### _Aprende Python 3 de la manera difícil_
 
 *   Libro pagado (libro electrónico gratuito disponible) que cubre los conceptos básicos de python. Está diseñado para que comiences con el lenguaje Python y te familiarices con su sintaxis y funcionamiento al momento de completar el libro.
-    
 *   [Amazonas](https://www.amazon.com/Learn-Python-Hard-Way-Introduction/dp/0134692888)
-    
 *   ISBN-13: 978-0134692883
-    
 *   ISBN-10: 0134692888
-    
 *   [Sitio web](https://learnpythonthehardway.org/) (Comprar al creador | Incluye lecciones en video)
-    
 *   [E-libro](https://learnpythonthehardway.org/python3/) (gratis)
     
+
+
+#### _Black Hat Python: Programación en Python para hackers y pentesters_
+
+*   [Sonrisa de amazon](https://smile.amazon.com/Black-Hat-Python-Programming-Pentesters/dp/1593275900/)
+*   ISBN-10: 1593275900
+
+
+#### _Python para Todos: Tutoriales y libro en PDF (2.x)_
+
+*   [Python para Todos](http://mundogeek.net/tutorial-python/)
+*   [Link diretor al PDF \[GRATIS\]](https://launchpadlibrarian.net/18980633/Python%20para%20todos.pdf) 
+
+
+#### _Programación Python_
+
+¿Así que has cubierto los conceptos básicos de Python? Ahora está listo para descubrir los tutoriales detallados que cubren los aspectos avanzados de programación de Python. Estos incluyen la administración del sistema, GUIs y la web. Comprenda cómo se usa Python en bases de datos, redes, capas de scripts front-end y más.
+
+- [Amazon](https://www.amazon.com/Programming-Python-Powerful-Object-Oriented/dp/0596158106)
+- [O'Reilly](http://shop.oreilly.com/product/9780596158118.do)
+- ISBN-10: 0596158106
+- ISBN-13: 978-0596158101
+
+#### El libro rápido de Python, tercera edición
+- Libro pagado que proporciona un buen nivel de información para aquellos que inician Python y como referencia para el idioma de Python
+- [Manning]https://www.manning.com/books/the-quick-python-book-third-edition
+- ISBN-10: 1617294039
+- ISBN-13: 978-1617294037
+
+#### _Otros Recusos_
+
 *   [Programación funcional en Python por David Mertz \[OREILLY\] \[GRATIS\]](https://www.oreilly.com/programming/free/files/functional-programming-python.pdf)
     
 *   [Python en la educación por Nicholas H. Tollervey \[OREILLY\] \[GRATIS\]](https://www.oreilly.com/programming/free/files/python-in-education.pdf)
@@ -35,16 +61,5 @@ _Aprende Python 3 de la manera difícil_
 *   [Un byte de Python \[GRATIS\]](https://python.swaroopch.com)
     
 
-_Black Hat Python: Programación en Python para hackers y pentesters_
-
-*   [Sonrisa de amazon](https://smile.amazon.com/Black-Hat-Python-Programming-Pentesters/dp/1593275900/)
-    
-*   ISBN-10: 1593275900
-
-_Python para Todos: Tutoriales y libro en PDF (2.x)_
-
-*   [Python para Todos](http://mundogeek.net/tutorial-python/)
-
-*   [Link diretor al PDF \[GRATIS\]](https://launchpadlibrarian.net/18980633/Python%20para%20todos.pdf) 
 
     Por favor, siéntase libre de agregar más que haya encontrado útil!
