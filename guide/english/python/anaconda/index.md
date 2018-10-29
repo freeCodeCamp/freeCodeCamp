@@ -29,6 +29,8 @@ letter of the option. So ``--name`` and ``-n`` are the same, and
 For full usage of each command, including abbreviations, see
 [Command reference](https://conda.io/docs/commands.html).
 
+Conda also has a graphical user interface (GUI), Anaconda Navigator,  that can be iused to set up environments. The navigator provides quick acces to tools such as Jupyter Notebook and rStudio.
+
 ### Sources
 1. [Anaconda Documentation](https://docs.anaconda.com/)
 2. [Conda Documentation](https://conda.io/docs/)
