@@ -4,15 +4,15 @@ localeTitle: JavaScript
 ---
 ## JavaScript
 
-JavaScript es el lenguaje de scripting más utilizado en la Tierra. Y tiene el ecosistema bibliotecario más grande de cualquier lenguaje de programación.
+JavaScript es el lenguaje [interpretado](https://blog.makeitreal.camp/lenguajes-compilados-e-interpretados/) más utilizado y con el mayor número de librerías frente a cualquier otro lenguaje de programación.
 
-JavaScript es el lenguaje central de la web y el único lenguaje de programación que puede ejecutarse en todos los principales navegadores web.
+Se trata de un pilar fundamental para construir y entender actualmente la web, así como el único lenguaje de programación que puede ejecutarse en todos los principales navegadores.
 
-Cabe destacar que JavaScript no tiene relación con Java. [JavaScript: el lenguaje de programación más incomprendido del mundo](http://www.crockford.com/javascript/javascript.html)
+Cabe destacar que, a pesar de su nombre, JavaScript no tiene relación con Java. Fue creado a finales de los años '90 por [Brendan Eich](https://en.wikipedia.org/wiki/Brendan_Eich), de la empresa Netscape y aunque su nombre de lanzamiento iba a ser 'LiveScript', dada la influencia que había tenido Java en su sintaxis y la popularidad que había alcanzado en aquella época, se optó finalmente por llamarlo JavaScript. Pero el parecido entre ambos lenguajes termina en esa similitud estética.
 
-El nombre oficial de JavaScript es ECMAScript definido en la Norma [ECMA-262](https://www.ecma-international.org/publications/standards/Ecma-262.htm)
+El nombre oficial de JavaScript es ECMAScript definido en la Norma [ECMA-262](https://es.wikipedia.org/wiki/ECMAScript)
 
-Si desea obtener más información sobre el lenguaje JavaScript y por qué se lo usa tanto, lea el artículo de Quincy Larson: [¿Qué lenguaje de programación debería aprender primero?](https://medium.freecodecamp.org/what-programming-language-should-i-learn-first-%CA%87d%C4%B1%C9%B9%C9%94s%C9%90%CA%8C%C9%90%C9%BE-%C9%B9%C7%9D%CA%8Dsu%C9%90-19a33b0a467d) - o mira este [video inspirador de Preethi Kasireddy](https://www.youtube.com/watch?v=VqiEhZYmvKk) .
+Si desea obtener más información sobre el lenguaje JavaScript y por qué se usa tanto, lea el artículo de Quincy Larson: [¿Qué lenguaje de programación debería aprender primero?](https://medium.freecodecamp.org/what-programming-language-should-i-learn-first-%CA%87d%C4%B1%C9%B9%C9%94s%C9%90%CA%8C%C9%90%C9%BE-%C9%B9%C7%9D%CA%8Dsu%C9%90-19a33b0a467d) - o mira este [video inspirador de Preethi Kasireddy](https://www.youtube.com/watch?v=VqiEhZYmvKk) .
 
 ## Motores de JavaScript independientes
 
