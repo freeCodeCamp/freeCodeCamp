@@ -2,14 +2,14 @@
 title: Angular Resources
 localeTitle: Recursos angulares
 ---
-Uma coleção de recursos angulares úteis
+Uma coleção de recursos úteis do Angular.
 
 ## Angular 1.x
 
 ### Páginas gerais
 
 *   [Angular JS](https://angularjs.org/) - The Angular JS Homepage
-*   [AngularJS Style Guide](https://github.com/johnpapa/angular-styleguide/tree/master/a1) - Boas Práticas Detalhadas para o Desenvolvimento Angular
+*   [AngularJS Style Guide](https://github.com/johnpapa/angular-styleguide/tree/master/a1) - Boas Práticas Detalhadas para o Desenvolvimento com Angular
 
 ### Vídeos
 
@@ -25,7 +25,7 @@ Uma coleção de recursos angulares úteis
 ### Páginas gerais
 
 *   [Angular](https://angular.io/) - a página inicial angular
-*   [Guia de Estilo Angular](https://angular.io/guide/styleguide) - Melhores Práticas Detalhadas para o Desenvolvimento Angular
+*   [Guia de Estilo Angular](https://angular.io/guide/styleguide) - Melhores Práticas Detalhadas para o desenvolvimento com Angular
 
 ### Páginas de tópicos específicos
 
