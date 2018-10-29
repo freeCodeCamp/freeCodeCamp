@@ -3,7 +3,7 @@ title: Certifications
 ---
 ## Certifications
 
-### Overview
+### Overview:
 
 There are six freeCodeCamp certificates:
 
