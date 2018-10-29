@@ -27,8 +27,8 @@ Use the <code>var</code> keyword to create a variable called <code>myName</code>
 
 ```yml
 tests:
-  - text: 'You should declare <code>myName</code> with the <code>var</code> keyword, ending with a semicolon'
-    testString: 'assert(/var\s+myName\s*;/.test(code), "You should declare <code>myName</code> with the <code>var</code> keyword, ending with a semicolon");'
+  - text: You should declare <code>myName</code> with the <code>var</code> keyword, ending with a semicolon
+    testString: assert(/var\s+myName\s*;/.test(code), 'You should declare <code>myName</code> with the <code>var</code> keyword, ending with a semicolon');
 
 ```
 
@@ -54,7 +54,7 @@ var ourName;
 <div id='js-teardown'>
 
 ```js
-console.info('after the test');
+if(typeof myName !== "undefined"){(function(v){return v;})(myName);}
 ```
 
 </div>

@@ -13,3 +13,8 @@ This section will focus on the various data structures and algorithms that are u
 Introduction to Computational Genomics by Matthew W. Hahn
 
 A great starter book for beginners 
+
+
+### Short reads
+
+Data Structures and Algorithms Underlying Genome Reconstruction from Short Reads by Bruce F. Cockburn
