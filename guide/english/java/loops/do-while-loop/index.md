@@ -3,7 +3,7 @@ title: Do...While Loop
 ---
 # Do...While Loop
 
-The `do while` is similar to the `while` loop, but the group of statements is guranteed to run at least once before checking for a given condition.
+The `do while` loop is similar to the `while` loop, but the all the statements in the loop will be executed first and then after the condition will be checked for further iterations.
 An important thing to note is 'while' loop is an exit control loop. while(it will not necessarily be executed), 'do while' is an entry controlled loop(it will be executed at least once , even if the conditon is not true).
 
 
