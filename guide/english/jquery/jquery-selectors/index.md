@@ -115,3 +115,4 @@ These are just a few of the selectors available for use in jQuery. See the More 
 
 #### More Information:
 * [Full list of jQuery selectors](http://api.jquery.com/category/selectors/)
+* [W3 Schools Page on jQuery Selectors](https://www.w3schools.com/jquery/jquery_selectors.asp)
