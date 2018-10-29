@@ -29,13 +29,13 @@ Use <code>Object.create</code> to make two instances of <code>Animal</code> name
 ```yml
 tests:
   - text: The <code>duck</code> variable should be defined.
-    testString: 'assert(typeof duck !== "undefined", "The <code>duck</code> variable should be defined.");'
+    testString: assert(typeof duck !== "undefined", 'The <code>duck</code> variable should be defined.');
   - text: The <code>beagle</code> variable should be defined.
-    testString: 'assert(typeof beagle !== "undefined", "The <code>beagle</code> variable should be defined.");'
+    testString: assert(typeof beagle !== "undefined", 'The <code>beagle</code> variable should be defined.');
   - text: <code>duck</code> should have a <code>prototype</code> of <code>Animal</code>.
-    testString: 'assert(duck instanceof Animal, "<code>duck</code> should have a <code>prototype</code> of <code>Animal</code>.");'
+    testString: assert(duck instanceof Animal, '<code>duck</code> should have a <code>prototype</code> of <code>Animal</code>.');
   - text: <code>beagle</code> should have a <code>prototype</code> of <code>Animal</code>.
-    testString: 'assert(beagle instanceof Animal, "<code>beagle</code> should have a <code>prototype</code> of <code>Animal</code>.");'
+    testString: assert(beagle instanceof Animal, '<code>beagle</code> should have a <code>prototype</code> of <code>Animal</code>.');
 
 ```
 
