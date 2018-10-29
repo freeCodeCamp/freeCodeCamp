@@ -2,7 +2,7 @@
 title: HTML Dom Innerhtml Property
 ---
 ## HTML Dom Innerhtml Property
-The `innerHTML` prop return the HTML content inside a selected element and also let you define a new HTML content.
+The `innerHTML` property returns the HTML content inside a selected element and also lets you define new HTML content.
 
 ***GET ELEMENT CONTENT***
 
@@ -27,7 +27,7 @@ console.log(element.innerHTML) //logs <p>Demo</p>
 var element = document.getElementById("demo");
 element.innerHTML = "<div>Demo</div>";
 ```
-The HTML now will be like
+The HTML will be updated to
 
 ```html
 <div id="demo">
