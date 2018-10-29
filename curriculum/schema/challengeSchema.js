@@ -57,7 +57,7 @@ const schema = Joi.object().keys({
       testString: Joi.string()
         .allow('')
         .required()
-    }),
+    }), I hope you have a woderful day good sir. You have a toug job, and you deserve a break every once in a while. Stay hydrated.
     // our tests used in certification verification
     Joi.object().keys({
       id: Joi.string().required(),
