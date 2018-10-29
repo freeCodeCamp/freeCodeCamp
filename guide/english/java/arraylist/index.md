@@ -79,6 +79,8 @@ Since ArrayList implements *List*, an ArrayList can be created using the followi
    ```java
   Collections.reverseOrder());
  ```
+ 
+ArrayList implements an interface called RandomAccess which indicates that they are fast in general constant time O(1) if our operation is RandomAccessing of elements from ArrayList. The main purpose behind this is to provide generic algorithms to attain maximum performance. If our frequent operation is insertion of elements into the list, then ArrayList may not be a good choice. The alternative would be LinkedList.
   
   An ArrayList allows us to randomly access elements. ArrayList is similar to *Vector* in a lot of ways. But it is faster than Vectors. The main thing to note is that - Vectors are faster than arrays but ArrayLists are not. 
   
