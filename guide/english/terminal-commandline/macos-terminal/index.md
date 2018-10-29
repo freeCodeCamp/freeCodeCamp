@@ -87,3 +87,7 @@ iTerm2 is an alternative to the legacy terminal in Mac OS. iTerm2 brings some ne
 * and many [more](https://www.iterm2.com/features.html)
 
 Just download iTerm2 from the official [website](https://www.iterm2.com/downloads.html). Additional documentation can be found [here](https://www.iterm2.com/documentation.html).
+
+# Terminal Fun
+
+Using this [website](http://overthewire.org/wargames/bandit/), you can learn to use the terminal while also sharpening your white-hat hacking skills. It's a great way to get familiar with the CLI (command line interface) and continually hone your skills.
