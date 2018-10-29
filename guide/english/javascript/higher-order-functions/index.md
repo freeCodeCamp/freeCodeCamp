@@ -37,7 +37,7 @@ console.log(arrDoubled); // [ 2, 4, 6 ]
 
 ### Filter Method Example
 
-One amazing example of higher order function is the filter function.
+One amazing example of higher order functions is the filter function.
 
 * Filter: It is the function on the array which loops through the array and filter out the value we are looking for.
 
@@ -71,11 +71,11 @@ const dogs = animals.filter(function(animal) {
 })
 ```
 
-So what is happening here is that filter function takes in an argument, which is another function. A function passed as an argument inside another function is called a callback function. Here `function animal()` is an callback function.
+So, what is happening here is that the filter function is taking another function as an argument. A function passed as an argument inside another function is called a callback function. Here `function animal()` is a callback function.
 
-As you can see, the higher-order function has lot less code as compared to the traditional for-loop code. It's not because the syntax is shorter, but because there is lot less logic involved. The only logic used in the filter function in the above example is `return animal.species === 'dog'` which determines which animal goes into the array.
+As you can see, the higher order function has a a lot less code as compared to the traditional for-loop code. It's not because the syntax is shorter, but because there is a lot less logic involved. The only logic used in the filter function in the above example is `return animal.species === 'dog'` which determines which animal goes into the array.
 
-Another reason there is a lot less code, is because this code below
+Another reason there is a lot less code, is because the code listed below
 
 ```javascript
 for(let i = 0; i < animals.length; i++) {
