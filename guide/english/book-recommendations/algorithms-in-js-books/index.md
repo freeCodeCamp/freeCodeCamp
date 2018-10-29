@@ -9,7 +9,7 @@ title: Algorithms in JavaScript books
 - [GitBook](https://www.gitbook.com/book/pmary/data-structure-in-javascript/details)
 
 *Learning JavaScript Data Structures and Algorithms - Second Edition*
-- Covers object oriented programming, prototypal inheritance, sorting & searching algorithms, quicksort, mergesort, binary search trees and advanced algorithm concepts
+- Covers object-oriented programming, prototypal inheritance, sorting & searching algorithms, quicksort, mergesort, binary search trees and advanced algorithm concepts
 - [Amazon](https://www.amazon.com/Learning-JavaScript-Data-Structures-Algorithms/dp/1785285491)
 - ISBN-13: 978-1785285493
 
