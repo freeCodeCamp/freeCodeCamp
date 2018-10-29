@@ -14,6 +14,8 @@ One thing to note, if the server is configured to listen to any port other than 
 
 If the remote computer requires user login, the form `ssh username@remote_address` can be used, which will then prompt for the user password on successful connection.
 
+If the remote user requires to reboot remote server. For example: `ssh root@remote_address 'reboot'`.
+
 ### More Information:
 * [Wikipedia](https://en.wikipedia.org/wiki/Secure_Shell)
 * [SSH](https://www.ssh.com/ssh/command)
