@@ -33,7 +33,7 @@ Perimeter - 4a
 
 ### Triangle
 Number of sides - 3
-Special Info- 
+Special Info- there are three special triangles equilateral isoseles and scalene
 Has a height which is the perpendicular distance from a vertex to the opposite side(base), can lie inside or outside the triangle
 Sum of all angles is 180 degrees
 
