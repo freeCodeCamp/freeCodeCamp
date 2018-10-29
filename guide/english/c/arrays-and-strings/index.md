@@ -2,7 +2,10 @@
 title: Arrays and Strings
 ---
 # Arrays in C
-Arrays allow for a set of variables of the same type to be grouped together as one variable. This is useful in its own right, but also because strings fall into this category. Strings, which are how we represent words and sentences in computer languages, are just collections of character variables. Therefore, we represent strings using arrays in C.
+Array is group of variable of same datatype allocated continous memory in the system.It have same variable name, organised with an index.
+
+## Why do we need arrays?
+We can use normal variables (v1, v2, v3,..) when we have small number of objects, but if we want to store large number of instances, it becomes difficult to manage them with normal variables. The idea of array is to represent many instances in one variable.
 
 ## Making an Array
 A normal integer variable would be declared like so:
@@ -13,14 +16,15 @@ To declare this as an array, and make it an array of 5 integers, it can be decla
 ```C
 int my_array[5];
 ```
-This will produce an array called `my_array` that can hold 5 integers. However, none of the positions in the array have been set (yet). You could declare the array, and have the values be set at the beginning:
+This will produce an array called `my_array` that can hold 5 integers having index from 0 to 4.
+
 ```C
 int my_array[] = {1, 5, 3, 6, 2};
 ```
-Notice that in this example, we didn't bother specifying a number in the square brackets. This is because the curly brackets have values in them that will be assigned to each position in the array. You could put a number in the brackets anyway, as long as you made sure to create enough memory locations to store the values you've passing in.
+In this example, a array with size 5 is initalised and declared at the same time. We didn't bother specifying a number in the square brackets. This is because the curly brackets have values in them that will be assigned to each position in the array. You could put a number in the brackets anyway.
 
 When initializing an array, you can provide fewer values than array elements. For example, the
-following statement initializes only the first two elements of my_array:
+following statement initializes only the first two elements of my_array rest of the spaces are not initiliased:
 
 float my_array[5] = {5.0, 2.5};
 
@@ -164,7 +168,7 @@ char *strtok(char *str, const char *delim);
 
 # Before you go on...
 ## A Review
-* Arrays are collections of variables.
-* Arrays have separate positions that can be declared with brackets, and accessed with square brackets.
-* Strings are arrays too, but we can treat them a little differently: they can be declared using double quotes, and printed using %s.
+* Arrays homogeneous group of variables of same datatype.
+* Arrays have separate positions that can be declared within brackets, and accessed with square brackets.
+* Strings are character array : they can be declared using double quotes, and printed using %s.
 * Strings have their own library, `string.h`, which has some handy functions to use.
