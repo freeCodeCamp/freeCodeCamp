@@ -20,7 +20,7 @@ Angular deve reconhecer componentes quando se deparar com eles. Para fazer isso,
 
 No caso de um componente, ele deve saber como interagir com seu injetor, conectar-se com um modelo, puxar de uma lista de estilos, encapsular seus estilos e assim por diante. Angular cuida da maioria dos requisitos de baixo nível. Os desenvolvedores ainda precisam configurar o comportamento de um componente, importar suas dependências e estender sua lógica.
 
-Para todas essas coisas, temos a classe do componente. A turma mantém tudo relativamente uniforme. Ele encapsula a lógica de negócios do componente.
+Para todas essas coisas, temos a classe do componente. A classe mantém tudo relativamente uniforme. Ele encapsula a lógica de negócios do componente.
 
 #### Classe de componente e metadados
 
@@ -52,7 +52,7 @@ Este é o esqueleto básico do qual todos os grandes componentes se originam. O 
 *   `styleUrls:` aceita uma matriz de locais de arquivo de folha de estilo (strings). Essas folhas de estilo têm como alvo o modelo atribuído ao componente.
     
 
-Pense nos metadados como uma grande bolha de configuração. O decorador faz isso para gerar os dados específicos do componente. O decorador _decora_ a classe subjacente com dados necessários para o comportamento de sua classe. Uma classe de _componente_ que é.
+Pense nos metadados como uma grande bolha de configuração. O decorador faz isso para gerar os dados específicos do componente. O decorador _decora_ a classe subjacente com dados necessários para o comportamento de sua classe. Ou seja, uma classe _componente_.
 
 A assinatura da classe exporta por padrão para que o componente possa ser importado. `ngOnInit` também é implementado. `implements` diz à classe para definir certos métodos de acordo com a definição da interface. `ngOnInit` é um gancho do ciclo de vida.
 
@@ -120,7 +120,7 @@ Os componentes geralmente inicializam um conjunto de membros (ou variáveis) que
 
 Observe as formas como o componente interage com seus dados. Primeiro, ele busca de `../../data/posts.data` antes de começar a encaminhá-lo ao modelo para exibição.
 
-Os dados aparecem em todo o modelo. Dentro das chaves duplas, o valor de uma variável é mapeado da classe do componente para as chaves. O `*ngFor` loop no array de classes `allPosts` . Clicar no botão remove um elemento específico de `allPosts` por seu índice. Você pode até mudar o `username` de `username` mais alto, digitando na caixa de entrada.
+Os dados aparecem em todo o modelo. Dentro das chaves duplas, o valor de uma variável é mapeado da classe do componente para as chaves. O `*ngFor` faz um loop através do array de classes `allPosts` . Clicar no botão remove um elemento específico de `allPosts` por seu índice. Você pode até mudar o `username` na parte mais alta, digitando na caixa de entrada.
 
 As interações acima alteram os dados da classe do componente, o que, por sua vez, atualiza o HTML do modelo do componente. Os componentes fornecem a lógica de backbone que facilita o fluxo de dados. O modelo HTML torna esses dados legíveis para o usuário.
 
