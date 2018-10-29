@@ -171,6 +171,32 @@ title: Books to Read for Programmers
 - [Amazon Smile](https://smile.amazon.com/Soft-Skills-software-developers-manual/dp/1617292397?pldnSite=1)
 - ISBN-13: 9781617292392 
 
+## Machine Learning
+
+*Think Stats : EDA*
+-https://www.amazon.com/Think-Stats-Exploratory-Data-Analysis/dp/1491907339/ref=sr_1_sc_1?ie=UTF8&qid=1540837908&sr=8-1-spell&keywords=think+stast
+ISBN-13: 978-1491907337
+
+*ML with scikit learn*
+-https://www.amazon.com/Hands-Machine-Learning-Scikit-Learn-TensorFlow/dp/1491962291/ref=sr_1_3?ie=UTF8&qid=1540837958&sr=8-3&keywords=machine+learning
+ISBN-13: 978-1491962299
+
+*Stats for ML*
+-https://www.amazon.com/dp/1788295757/ref=sspa_dk_detail_1?psc=1
+ISBN-13: 978-1788295758
+DOWNLOAD EBOOK -http://ebook-dl.com/book/68020
+
+*Real World Machin Learning With Python*
+-https://www.amazon.com/dp/1787123219/ref=sspa_dk_detail_0?psc=1
+ISBN-13: 978-1787123212
+
+*Intro to ML*
+-https://www.amazon.com/Introduction-Machine-Learning-Python-Scientists/dp/1449369413
+ISBN-13: 978-1449369415
+
+*Feature Engineering*
+-https://www.amazon.com/dp/1787287602/ref=sspa_dk_detail_1?psc=1
+ISBN-13: 978-1787287600
 ## Other
 
 *Hacking: Ultimate Hacking Guide: Hacking For Beginners And Tor Browser*
