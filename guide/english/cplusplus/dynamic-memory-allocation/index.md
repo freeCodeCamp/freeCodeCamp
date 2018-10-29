@@ -27,9 +27,15 @@ title: Dynamic Memory Allocation
  **delete** `pointer-type-variable;`  
  For example to free the memory allocated in example 1 above, we type:  
  `delete ptr;`  
- Similarly, for example 2, the memory can be freed by:  
- `delete ptr2`;
+ In example 2, memory for an array of integers was allocated. To free this memory alloted for an array, the `delete []` operator is used:
+ `delete [] ptr2`;
  
  ### Memory Leaks
  Leaks are caused when you fail to deallocate dynamic memory you allocated via `New` operator at the end of your program. If you do not deallocate it with the Delete operator, your computer will keep creating new memory in the heap every time the program runs. This causes your computer to slow down because memory is not deleted and your available memory decreases. Many computer programs cause memory leaks over time. However, when you reboot the machine, it will resolve the issue. This is because rebooting releases those spaces in heap memory that were causing memory leaks.
+ 
+ There are many various ways to check for memory leaks in your program. Valgrind is a common tool for doing this from a bash linux shell. Once valgrind is downloaded and the program is compiled, valgrind can be ran with certain flags for displaying different information about memory read and write errors and memory leaks. Here is an example of running valgrind with a compiled program 'a.out':
+ `valgrind ./a.out`
+ 
+ 
+ 
  
