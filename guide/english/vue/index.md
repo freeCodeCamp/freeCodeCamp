@@ -19,3 +19,4 @@ Its main attributes are the following:
 - [GitHub Repo](https://github.com/vuejs/vue/)
 - [Vue-Router](https://router.vuejs.org/)
 - [Vuex](https://vuex.vuejs.org/)
+- [Interactive Learn Vue.js Screencast](https://scrimba.com/g/glearnvue)
