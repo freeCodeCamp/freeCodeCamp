@@ -21,4 +21,5 @@ https://www.youtube.com/watch?v=_3VIC8u1UV8
 
 
 ### More Information:
-Stand-up meeting: <a href="https://en.wikipedia.org/wiki/Stand-up_meeting" target='_blank' rel='nofollow'>Wikipedia</a>
+Stand-up meeting: <a href="https://en.wikipedia.org/wiki/Stand-up_meeting" target='_blank' rel='nofollow'>Wikipedia</a><br>
+Tips for a Successful Stand-Up Meeting: <a href="https://www.blossom.co/blog/3-tips-for-quick-effective-stand-up-meetings" target='_blank' rel='nofollow'>Blossom.co</a>
