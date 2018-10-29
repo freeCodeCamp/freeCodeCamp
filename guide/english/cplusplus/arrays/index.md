@@ -10,7 +10,7 @@ For example, an array containing 5 integer values called numbers is declared lik
 int numbers [5];
 ```
 
-Initializiation:  
+Initialization:  
 ```C++
 //Initialization with entries:
 int numbers [5] = {1, 2, 3, 4, 5};
@@ -39,4 +39,23 @@ Example:
 x = numbers[0]; // = 1. [0] == first position
 numbers[2] = 55; // Sets the third position (3) to the new number 55
 //numbers[] is now: {1, 2, 55, 4, 5}
+```
+
+### Relationship to pointers
+
+An array's name functions as an immutable pointer to the array's first element. If we have:
+
+```C++
+int arr[3] = {10,45,3}
+int * ptrarr;
+ptrarr = arr;
+for(int i=0; i<3; i++)
+   cout << arr[i] << " from array, and " << *(ptrarr + i) << " from pointer\n";
+```
+we'll get the following output:
+
+```C++
+10 from array, and 10 from pointer
+45 from array, and 45 from pointer
+3 from array, and 3 from pointer
 ```
