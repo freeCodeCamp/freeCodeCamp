@@ -4,13 +4,13 @@ We recommend the following guidelines to writing Guide articles to help you get 
 
 ## Title
 
-Article titles should be as short, concise, and to-the-point as possible.
+Article titles should be as short, concise, and rprecise.
 
 We want campers to quickly find the information they're looking for, and the title should reflect the main theme of the article.
 
 Folder name is used in the URL, so only use dashes (-), numbers (0-9), and lowercase letters (a-z) for it.
 
-However, you can include special characters in the article title.
+However, you can include special characters in the article title. 
 
 Here are some examples of properly named titles:
 
