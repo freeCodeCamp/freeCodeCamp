@@ -91,7 +91,66 @@ Result:
 	    </tr>
 	  </tbody>
 	</table>
+        
+        
+### Adding a border to you table
+By defining your desired border inside the ```<table>``` tag, you can style your table.
 
+```html
+<table border="1">
+	  <thead>
+	    <tr>
+	      <th>Item</th>
+	      <th>Amount</th>
+	    </tr>
+	  </thead>
+	  <tfoot>
+	    <tr>
+	      <td>Apple</td>
+	      <td>10</td>
+	    </tr>
+	  </tfoot>
+	  <tbody>
+	    <tr>
+	      <td>Peach</td>
+	      <td>15</td>
+	    </tr>
+	    <tr>
+	      <td>Watermelon</td>
+	      <td>3</td>
+	    </tr>
+	  </tbody>
+	</table>
+        
+
+
+Result:
+
+<table border="1">
+         <thead>
+	    <tr>
+	      <th>Item</th>
+	      <th>Amount</th>
+	    </tr>
+	  </thead>
+	  <tfoot>
+	    <tr>
+	      <td>Apple</td>
+	      <td>10</td>
+	    </tr>
+	  </tfoot>
+	  <tbody>
+	    <tr>
+	      <td>Peach</td>
+	      <td>15</td>
+	    </tr>
+	    <tr>
+	      <td>Watermelon</td>
+	      <td>3</td>
+	    </tr>
+	  </tbody>
+	</table>
+        
 
 #### More Information:
 
