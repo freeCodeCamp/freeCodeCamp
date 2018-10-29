@@ -95,6 +95,25 @@ end
 
 ```
 
+### Implementation in Java
+```Java
+void selectionSort(int arr[]){
+    int len = arr.length;
+    for(int i = 0; i < len; i++){
+        int minIndex = i;
+        for(int j = i + 1; j < len; j++){
+            if(arr[j] < arr[minInd]){
+                minInd = j;
+            }
+        }
+        int temp = arr[minInd];
+        arr[minInd] = arr[i];
+        arr[i] = temp;
+    }
+}
+
+```
+
 ### Properties
 
 * Space Complexity: <b>O(n)</b>
