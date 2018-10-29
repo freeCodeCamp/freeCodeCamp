@@ -24,4 +24,6 @@ Assembly language is primarily used in the following situations:
 
 #### More Information:
 <!-- Please add any articles you think might be helpful to read before writing the article -->
+* [Assembly Language Wikipedia](https://en.wikipedia.org/wiki/Assembly_language)
+
 
