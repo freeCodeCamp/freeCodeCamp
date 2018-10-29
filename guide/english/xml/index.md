@@ -15,6 +15,22 @@ title: Extensible Markup Language (XML)
     <subchild>.....</subchild>
   </child>
 </root>
+```
+
+Another Example of XML in Android Development
+
+```
+<LinearLayout
+        android:layout_height="16dp"
+        android:layout_width="16dp"
+        android:orientation="vertical">
+        
+        <TextView
+              android:text="Hello World"
+              android:layout_height="wrap_content"
+              android:layout_width="wrap_content"/>
+              
+</LinearLayout>       
 ```  
 #### XML must have a root element 
 Above syntax shows the root element which is necessary while creating an XML code. This can be shown by the example:-
