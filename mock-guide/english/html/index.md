@@ -45,6 +45,8 @@ h1: The element defines a large heading
 
 p: The element defines a paragraph
 
+##### Note: Each of these elements contain an opening and closing tag.
+
 ### HTML Versions
 
 Since the early days of the web, there have been many versions of HTML
