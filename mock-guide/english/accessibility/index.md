@@ -4,19 +4,19 @@ title: Accessibility
 ## Accessibility
 <strong>Web accessibility means that people with disabilities can use the Web</strong>.
 
-More specifically, Web accessibility means that people with disabilities can perceive, understand, navigate, and interact with the Web, and that they can
-contribute to the Web. Web accessibility also benefits others, including [older people](https://www.w3.org/WAI/bcase/soc.html#of) with changing abilities
+More specifically, web accessibility means that people with disabilities can perceive, understand, navigate, as well as interact and
+contribute. Web accessibility also benefits others, including [older people](https://www.w3.org/WAI/bcase/soc.html#of) and their changing abilities
 due to aging.
 
-Web accessibility encompasses all disabilities that  affect access to the Web, including visual, auditory, physical, speech, cognitive, and neurological
+Web accessibility encompasses all disabilities that  affect access to the web including visual, auditory, physical, speech, cognitive, and neurological
 disabilities. The document [How People with Disabilities Use the Web](http://www.w3.org/WAI/intro/people-use-web/Overview.html) describes how different
-disabilities affect Web use and includes scenarios of people with disabilities using the Web.
+disabilities affect web use and includes scenarios of people with disabilities using the web.
 
-Web accessibility also **benefits** people *without* disabilities. For example, a key  principle of Web accessibility is designing Web sites and software
+Web accessibility also **benefits** people *without* disabilities. For example, a key  principle of web accessibility is designing web sites and software
 that are flexible to meet different user needs, preferences, and situations. This **flexibility** also benefits people *without* disabilities in certain
-situations, such as people using a slow Internet connection, people with "temporary disabilities" such as a broken arm, and people with changing abilities
+situations such as people using a slow internet connection, people with temporary disabilities such as a broken arm, and people with evolving abilities
 due to aging. The document [Developing a Web Accessibility Business Case for Your Organization](https://www.w3.org/WAI/bcase/Overview) describes many
-different benefits of Web accessibility, including **benefits for organizations**.
+different benefits of web accessibility, including **benefits for organizations**.
 
 Web accessibility should also include the people who don't have access to the internet or to computers.
 
@@ -32,7 +32,7 @@ them. Alt text should be short and to the point--generally [no more than five to
 graphic is used to convey information that exceeds the limitations of alt text, that information should also exist as web text in order to be read by screen
 readers. [Learn more about alt text](https://webaim.org/techniques/alttext/).
 
-Just like Alt text is for people who are visually impaired, transcripts of the audio are for the people who cannot listen. Providing a written document or a transcript of what is being spoken accessible to people who are hard of hearing.
+Just like Alt text is for people who are visually impaired, transcripts of the audio are for the people who cannot hear. Providing a written document, or a transcript, of what is being spoken gives access to people who are hard of hearing.
 
 Copyright &copy; 2005 <a href="http://www.w3.org" shape="rect">World Wide Web Consortium</a>, (<a href="http://www.csail.mit.edu/" shape="rect">MIT</a>, <a href="http://www.ercim.org" shape="rect">ERCIM</a>, <a href="http://www.keio.ac.jp" shape="rect">Keio</a>,<a href="http://ev.buaa.edu.cn" shape="rect">Beihang</a>). http://www.w3.org/Consortium/Legal/2015/doc-license
 
