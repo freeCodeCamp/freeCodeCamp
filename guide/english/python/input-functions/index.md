@@ -24,7 +24,7 @@ Many a time, in a program we need some input from the user. Taking inputs from t
 
 ![:rocket:](//forum.freecodecamp.com/images/emoji/emoji_one/rocket.png?v=2 ":rocket:") <a href='https://repl.it/CUqX/2' target='_blank' rel='nofollow'>Run Code</a>
 
-If you enter a non integer value then Python will throw an error `ValueError`. **So whenever you use this, please make sure that you catch it too.** Otherwise, your program will stop unexpectedly after the prompt.  
+If you enter a non integer value then Python will throw an error `ValueError`. **So whenever you use this, please make sure that you catch it too.** Otherwise, your program will stop unexpectedly after the prompt. Another option would be to make a while loop that continues to take input until the input is met with the right requirements. 
 
     number = int(input('Please enter a number: '))
     # Please enter a number: as
@@ -55,6 +55,6 @@ As we know, the input are stored by default as a string, so we can use the map()
  ![:rocket:](//forum.freecodecamp.com/images/emoji/emoji_one/rocket.png?v=2 ":cohete:") [Ejecutar código](https://repl.it/@Brian_RG/Intput)
  [Documentos oficiales](https://docs.python.org/3/library/functions.html#input)
 
-NOTE: Inside the split() function, we can add the separator for the input, por example, if we want to separate each value by a comma, we should write input().split(",") and so on.
+NOTE: Inside the split() function, we can add the separator for the input, for example, if we want to separate each value by a comma, we should write input().split(",") and so on.
 
 <a href='https://docs.python.org/3/library/functions.html#input' target='_blank' rel='nofollow'>Official Docs</a>
