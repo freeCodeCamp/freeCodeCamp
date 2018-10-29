@@ -1,4 +1,4 @@
-# How to catch outgoing emails locally (for email workflows)
+# How to catch outgoing emails locally and not mess up like that one time when your credit crd info was stolen by that one dude who's name you forgot. (for email workflows)
 
 > **Note:** This is an **optional** step - Only required when working with email workflows
 
