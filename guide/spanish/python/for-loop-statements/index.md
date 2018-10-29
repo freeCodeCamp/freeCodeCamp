@@ -11,29 +11,29 @@ Para los bucles, repita sobre las estructuras de datos basadas en recopilación,
 La sintaxis básica es:
 
 ```python
-for value in list_of_values: 
-  # use value inside this block 
+for valor in lista_de_valores: 
+  # use el valor en esta cuadra
 ```
 
 En general, puede usar cualquier cosa como el valor del iterador, donde se pueden asignar las entradas del iterable. Por ejemplo, puede desempaquetar tuplas de una lista de tuplas:
 
 ```python
-list_of_tuples = [(1,2), (3,4)] 
+lista_de_tuples = [(1,2), (3,4)] 
  
- for a, b in list_of_tuples: 
+ for a, b in lista_de_tuples: 
   print("a:", a, "b:", b) 
 ```
 
 Por otro lado, puedes hacer un bucle sobre cualquier cosa que sea iterable. Puedes llamar a una función o usar una lista literal.
 
 ```python
-for person in load_persons(): 
-  print("The name is:", person.name) 
+for persona in armar_personas(): 
+  print("Su nombre es:", persona.nombre) 
 ```
 
 ```python
-for character in ["P", "y", "t", "h", "o", "n"]: 
-  print("Give me a '{}'!".format(character)) 
+for letra in ["P", "y", "t", "h", "o", "n"]: 
+  print("Dame una '{}'!".format(letra)) 
 ```
 
 Algunas formas en que se utilizan los bucles For:
@@ -45,7 +45,9 @@ for i in range(10):
     print(i) 
 ```
 
-En lugar de ser una función, el rango es en realidad un tipo de secuencia inmutable. La salida contendrá los resultados del límite inferior, es decir, 0 al límite superior, es decir, 10, pero excluyendo 10. Por defecto, el límite inferior o el índice de inicio se establece en cero. Salida:
+En lugar de ser una función, el rango es en realidad un tipo de secuencia inmutable. La emisión contendrá los resultados del límite inferior, es decir, 0 al límite superior, es decir, 10, pero excluyendo 10. Por defecto, el límite inferior o el índice de inicio se establece en cero.
+
+Emisión:
 ```
 > 
  0 
@@ -68,7 +70,7 @@ for i in range(4,10,2): #From 4 to 9 using a step of two
     print(i) 
 ```
 
-Salida:
+Emisión:
 ```
 > 
  4 
@@ -87,11 +89,11 @@ Una cosa mas que agregar. En Python 3.x, la función xrange ya no existe. La fun
 
 ```python
 A = ["hello", 1, 65, "thank you", [2, 3]] 
- for value in A: 
-    print(value) 
+ for valor in A: 
+    print(valor) 
 ```
 
-Salida:
+Emisión:
 ```
 > 
  hello 
@@ -105,50 +107,60 @@ Salida:
 **Iterar sobre las claves en un diccionario (también conocido como hashmap)**
 
 ```python
-fruits_to_colors = {"apple": "#ff0000", 
-                    "lemon": "#ffff00", 
-                    "orange": "#ffa500"} 
+frutas_a_colores = {"manzana": "#ff0000", 
+                    "limon": "#ffff00", 
+                    "naranja": "#ffa500"} 
  
- for key in fruits_to_colors: 
-    print(key, fruits_to_colors[key]) 
+ for clave in frutas_a_colores: 
+    print(clave, frutas_a_colores[clave]) 
 ```
 
-Salida:
+Emisión:
 ```
 > 
- apple #ff0000 
- lemon #ffff00 
- orange #ffa500 
+ manzana #ff0000 
+ limon #ffff00 
+ naranja #ffa500 
  > 
 ```
 
 **Iterar sobre dos listas del mismo tamaño en un solo bucle con la función zip ()**
 
-\`\` \`pitón A = \["a", "b", "c"\] B = \["a", "d", "e"\]
+```pitón A = \["a", "b", "c"\] B = \["a", "d", "e"\]```
 
 para a, b en zip (A, B): imprimir a, b, a == b
+
 ```
-Output: 
+for a, b, en zip(A, B):
+  print('{}, {}, {}'.format(a, b, (a == b))
 ```
 
-\> aa cierto bd falso ce falso >
-```
-**Iterate over a list and get the corresponding index with the enumerate() function** 
-```
+Emisión: 
 
-pitón A = \["este", "es", "algo", "diversión"\]
+```
+>> a, a, True
+>> b, d, False
+>> c, e, False
+```
+**Iterar sobre una lista y obtener el índice correspondiente con la función enumerar()** 
 
-para índice, palabra en enumerar (A): imprimir (índice, palabra)
 ```
-Output: 
-```
+A = \["este", "es", "algo", "diversión"\]
 
-\> 0 esto 1 es 2 algo 3 diversión >
+for índice, palabra en enumerar(A):
+  print(índice, palabra)
 ```
-A common use case is iterating over a dictionary: 
+Emisión: 
 ```
-
-pitón Para el nombre, número de teléfono en contacts.items (): imprimir (nombre, "es accesible", número de teléfono)
+>> 0 esto
+>> 1 es
+>> 2 algo
+>> 3 diversión 
+```
+Un caso de uso común es iterar sobre un diccionario: 
+```
+for nombre, número de teléfono en contacts.items():
+  print(nombre, " es accesible ", número de teléfono)
 ```
 If you absolutely need to access the current index of your iteration, do **NOT** use `range(len(iterable))`! This is an extremely bad practice and will get you plenty of chuckles from senior Python developers. Use the built in function `enumerate()` instead: 
 ```
@@ -172,7 +184,7 @@ pitón A = \["this", "is", "awesome", "shinning", "star"\]
 
 MAYÚSCULAS = \[word.upper () para word en A\] imprimir (MAYÚSCULAS)
 ```
-Output: 
+Emisión:
 ```
 
 \> \['ESTE', 'ES', 'IMPRESIONANTE', 'SHINNING', 'ESTRELLA'\] > \`\` \`
