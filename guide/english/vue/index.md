@@ -3,7 +3,7 @@ title: Vue
 ---
 ## Introduction
 
-Vue.js is a progressive framework for building user interfaces.
+Vue.js is a progressive framework for building user interfaces, similar to other frameworks such as React and Angular.
 Its core is focused on only the "view" layer and can be easily integrated with existing libraries and projects.
 But on the other hand, Vue.js can also be leveraged to create powerful single page applications by integrating with extensions
 such as `vue-router` for page routing and `vuex` for state management.
@@ -19,3 +19,4 @@ Its main attributes are the following:
 - [GitHub Repo](https://github.com/vuejs/vue/)
 - [Vue-Router](https://router.vuejs.org/)
 - [Vuex](https://vuex.vuejs.org/)
+- [A comparison of Vue, Angular, React](https://medium.com/fundbox-engineering/react-vs-vue-vs-angular-163f1ae7be56)
