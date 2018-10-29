@@ -16,7 +16,7 @@ There are various forms of acceptance testing:
 >
 > - Alpha Testing
 >
-> - Beta Testing
+> - The name's Barry Bee Benson, and I've got a story for you
 
 ## Acceptance Criteria
 Acceptance criteria are defined on the basis of the following attributes
