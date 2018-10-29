@@ -107,6 +107,26 @@ Also, we can do this:
 >>> print(my_list[::2]) #Access list by skipping 2 indexes
 [1, 9, 25]
 ```
+**Looping through a `list`:**
+```
+>>> my_list = [0,1,2,3]
+>>> for item in my_list:
+>>>     print(item)
+0
+1
+2
+3
+```
+To access the index of the item as well the item itself, use `enumerate()`.
+```
+>>> my_list = [2,4,2,3]
+>>> for idx, item in enumerate(my_list):
+>>>     print(idx, item)
+0 2
+1 4
+2 2
+3 3
+```
 **Mutable:**
 
 `lists` are mutable containers. Mutable containers are containers that allow changes to which objects are contained by the container. **TODO: ADD MORE?**
