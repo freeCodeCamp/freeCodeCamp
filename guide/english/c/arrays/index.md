@@ -168,3 +168,12 @@ The reason for C not checking the indexing bound is simple: C is an efficient la
 
 - When you try to access the last element of the array. Suppose the length of the array A be 4 and while accessing the last element as
 A[4] will return an error, as the the indexing starts from 0.
+
+"/*
+My Views are:
+1.Passing a 1-D array as a function parameter:
+    ->int function(int array[]);
+Let the array initialised in the main function be a[100];
+2.calling the function:
+    ->function(a);
+"*/    
