@@ -626,3 +626,16 @@ int main()
     return 0;
 }
 ```
+```c
+For Loop Example to input array:
+#include<stdio.h>
+int main(void)
+{
+   int array[10],i;
+   printf("Enter Array Elements(10):");
+   for(i=0;i<10;i++)
+   scanf("%d",&array[i]);
+   printf("Array Entry Succesful");
+   return 0;
+ }
+ ```
