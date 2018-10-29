@@ -1,6 +1,11 @@
 ---
 title: Natural Language Processing
 ---
+## Installing the package nltk which can help in Natural Language Processing:
+
+    pip install --upgrade pip
+    pip install --upgrade nltk
+
 ## Natural Language Processing(NLP)
 
 As the Wikipedia says, "Natural language processing (NLP) is a subfield of computer science, information engineering, and artificial intelligence concerned with the interactions between computers and human (natural) languages, in particular how to program computers to process and analyze large amounts of natural language data."
