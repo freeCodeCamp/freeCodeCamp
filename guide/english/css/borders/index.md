@@ -1,143 +1,246 @@
----
-title: Border Property
----
-## Border Property
+The border-style property specifies what kind of border to display.
 
-CSS Border
-----
+The following values are allowed:
 
-Our personal favorite CSS attribute, allows you to completely customize the borders that appear around HTML elements. With HTML, it used to be impossible to place a border around an element, except for the table. CSS Borders lets you create crisp and customized border styles with very little work, compared to the antiquated methods of HTML.
+dotted - Defines a dotted border
+dashed - Defines a dashed border
+solid - Defines a solid border
+double - Defines a double border
+groove - Defines a 3D grooved border. The effect depends on the border-color value
+ridge - Defines a 3D ridged border. The effect depends on the border-color value
+inset - Defines a 3D inset border. The effect depends on the border-color value
+outset - Defines a 3D outset border. The effect depends on the border-color value
+none - Defines no border
+hidden - Defines a hidden border
+The border-style property can have from one to four values (for the top border, right border, bottom border, and the left border).
+p.dotted {border-style: dotted;}
+p.dashed {border-style: dashed;}
+p.solid {border-style: solid;}
+p.double {border-style: double;}
+p.groove {border-style: groove;}
+p.ridge {border-style: ridge;}
+p.inset {border-style: inset;}
+p.outset {border-style: outset;}
+p.none {border-style: none;}
+p.hidden {border-style: hidden;}
+p.mix {border-style: dotted dashed solid double;}
+Result:
 
-The `border` shorthand property sets all the border properties in one declaration. 
-```css 
-  border: 1px solid #000;
-```
+A dotted border.
 
-The properties that can be set, are (in order): 
-1. `border-style`
-2. `border-width`
-3. `border-color`
-4. `border-radius`
+A dashed border.
 
-It does not matter if one of the values above are missing, for example:
+A solid border.
 
-```css 
-  border: solid red;
-```
-The above code is also valid CSS.
+A double border.
 
-### Border Styles
+A groove border. The effect depends on the border-color value.
 
-The `border-style` property sets a wide range of different types of borders.
+A ridge border. The effect depends on the border-color value.
 
-The various values are:
-- `dotted` - Sets a dotted border.
-- `dashed` - Sets a dashed border.
-- `solid` - Sets a solid border.
-- `double` - Sets a double border.
-- `groove` - Sets a 3D grooved border. 
-- `ridge` - Sets a 3D ridged border. 
-- `inset` - Sets a 3D inset border. 
-- `outset` - Sets a 3D outset border.
-- `none` - Sets no border.
-- `hidden` - Sets a hidden border.
+An inset border. The effect depends on the border-color value.
 
-Based on the property you choose, these styles can be mismatched. 
-You can style each side seperately:
-```css
-  border-top-style: solid;
-  border-left-style: dotted;
-  border-right-style: dashed;
-  border-bottom-style: double;
-```
+An outset border. The effect depends on the border-color value.
 
-Or you can style them all at once:
-```css
-  border-style: solid dashed double dotted;
-```
-As shown, the border property allows you to select different sections of it. [top, bottom, left, right]
+No border.
 
-### Border Width
+A hidden border.
 
-To alter the thickness of your border use the border-width attribute. You may use key terms or exact values to define the border width. Note: You must
-define a border-style for the border to show up. The width can be set as a specific size (in px, pt, cm, em, etc) or by using one of the three pre-defined
-values: thin, medium, or thick.
+A mixed border.
 
-Example:
-```css
-<style type="text/css">
-table {
-	border-width: 7px;
-	border-style: outset;
+Note: None of the OTHER CSS border properties described below will have ANY effect unless the border-style property is set!
+
+
+Border Width
+The border-width property specifies the width of the four borders.
+
+The width can be set as a specific size (in px, pt, cm, em, etc) or by using one of the three pre-defined values: thin, medium, or thick.
+
+The border-width property can have from one to four values (for the top border, right border, bottom border, and the left border).
+
+5px border-width
+Example
+p.one {
+    border-style: solid;
+    border-width: 5px;
 }
-td {
-	border-width: medium;
-	border-style: outset;
+
+p.two {
+    border-style: solid;
+    border-width: medium;
 }
+
+p.three {
+    border-style: solid;
+    border-width: 2px 10px 4px 20px;
+}
+Border Color
+The border-color property is used to set the color of the four borders.
+
+The color can be set by:
+
+name - specify a color name, like "red"
+Hex - specify a hex value, like "#ff0000"
+RGB - specify a RGB value, like "rgb(255,0,0)"
+transparent
+The border-color property can have from one to four values (for the top border, right border, bottom border, and the left border). 
+
+If border-color is not set, it inherits the color of the element.
+
+Red border
+Example
+p.one {
+    border-style: solid;
+    border-color: red;
+}
+
+p.two {
+    border-style: solid;
+    border-color: green;
+}
+
+p.three {
+    border-style: solid;
+    border-color: red green blue yellow;
+}
+Border - Individual Sides
+From the examples above you have seen that it is possible to specify a different border for each side.
+
+In CSS, there are also properties for specifying each of the borders (top, right, bottom, and left):
+
+Different Border Styles
+Example
 p {
-	border-width: thick;
-	border-style: solid;
+    border-top-style: dotted;
+    border-right-style: solid;
+    border-bottom-style: dotted;
+    border-left-style: solid;
 }
-</style>
-```
+The example above gives the same result as this:
 
-### Border Color
-
-Now for the creative aspect of CSS Borders! With the use of the border-color attribute, you will be able to create customized borders to fit the flow and layout
-of your website. Border colors can be any color defined by RGB, hexadecimal, or key terms. Below is an example of each of these types.
-
-Example:
-```css
-<style type="text/css">
-table {
-	border-color: rgb( 100, 100, 255);
-	border-style: dashed;
-}
-
-td {
-	border-color: #FFBD32;
-	border-style: ridge;
-}
-
+Example
 p {
-	border-color: blue;
-	border-style: solid;
+    border-style: dotted solid;
 }
-</style>
-```
+So, here is how it works:
 
-### Border-Radius
-The `border-radius` property allows the corners of a border to be rounded. This is done by providing a size for
-how much the border is to be rounded. Size can be in px or %.
-```css 
-  border-radius: 25px;
-```
-Each corner of `border-radius` can be adjusted. The order is top, bottom, left, right.
-```css 
-  border-radius: 15% 10px 30% 5px;
-```
+If the border-style property has four values:
 
-### Border: All in One
+border-style: dotted solid double dashed;
+top border is dotted
+right border is solid
+bottom border is double
+left border is dashed
+If the border-style property has three values:
 
-While it is nice that CSS allows a web developer to be very specific in creating a customized border, sometimes it is just easier and less of a headache to create a uniform border, all in single line of CSS code.
+border-style: dotted solid double;
+top border is dotted
+right and left borders are solid
+bottom border is double
+If the border-style property has two values:
 
-Example:
-```css
-<style type="text/css">
-p { border: 20px outset blue; } 
-h4 { border: 5px solid; } 
-h5 { border: dotted; }
-</style>
-```
+border-style: dotted solid;
+top and bottom borders are dotted
+right and left borders are solid
+If the border-style property has one value:
 
-### More Information:
+border-style: dotted;
+all four borders are dotted
+The border-style property is used in the example above. However, it also works with border-width and border-color.
 
-- [MDN Documentation](https://developer.mozilla.org/en-US/docs/Web/CSS/border)
-- [CSS3 Border Radius](https://guide.freecodecamp.org/css/css3-borders-rounded-corners)
+Border - Shorthand Property
+As you can see from the examples above, there are many properties to consider when dealing with borders.
 
-### Other Border Attributes
-- 'border-radius' - This can set radius of the border. 
-- 'border-spacing' - This can set spacing between the text and border. 
-- 'border-image' - This sets an image as border. 
+To shorten the code, it is also possible to specify all the individual border properties in one property.
 
-Browser Support: IE6+
+The border property is a shorthand property for the following individual border properties:
+
+border-width
+border-style (required)
+border-color
+Example
+p {
+    border: 5px solid red;
+}
+Result:
+
+Some text
+
+You can also specify all the individual border properties for just one side:
+
+Left Border
+p {
+    border-left: 6px solid red;
+    background-color: lightgrey;
+}
+Result:
+
+Some text
+
+Bottom Border
+p {
+    border-bottom: 6px solid red;
+    background-color: lightgrey;
+}
+Result:
+
+Some text
+
+Rounded Borders
+The border-radius property is used to add rounded borders to an element:
+
+Normal border
+
+Round border
+
+Rounder border
+
+Roundest border
+
+Example
+p {
+    border: 2px solid red;
+    border-radius: 5px;
+}
+Note: The border-radius property is not supported in IE8 and earlier versions.
+
+More Examples
+All the top border properties in one declaration
+This example demonstrates a shorthand property for setting all of the properties for the top border in one declaration.
+
+Set the style of the bottom border
+This example demonstrates how to set the style of the bottom border.
+
+Set the width of the left border
+This example demonstrates how to set the width of the left border.
+
+Set the color of the four borders
+This example demonstrates how to set the color of the four borders. It can have from one to four colors.
+
+Set the color of the right border
+This example demonstrates how to set the color of the right border.
+
+Test Yourself with Exercises!
+All CSS Border Properties
+Property	Description
+border	Sets all the border properties in one declaration
+border-bottom	Sets all the bottom border properties in one declaration
+border-bottom-color	Sets the color of the bottom border
+border-bottom-style	Sets the style of the bottom border
+border-bottom-width	Sets the width of the bottom border
+border-color	Sets the color of the four borders
+border-left	Sets all the left border properties in one declaration
+border-left-color	Sets the color of the left border
+border-left-style	Sets the style of the left border
+border-left-width	Sets the width of the left border
+border-radius	Sets all the four border-*-radius properties for rounded corners
+border-right	Sets all the right border properties in one declaration
+border-right-color	Sets the color of the right border
+border-right-style	Sets the style of the right border
+border-right-width	Sets the width of the right border
+border-style	Sets the style of the four borders
+border-top	Sets all the top border properties in one declaration
+border-top-color	Sets the color of the top border
+border-top-style	Sets the style of the top border
+border-top-width	Sets the width of the top border
+border-width	Sets the width of the four borders
