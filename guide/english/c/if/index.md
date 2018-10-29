@@ -50,9 +50,7 @@ int main () {
       // If condition is false then print the following
       printf("a is not less than 5!\n" );
    }
-
    printf("Value of a is : %d\n", a);
-
    return 0;
 }
 ```
