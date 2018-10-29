@@ -9,9 +9,9 @@ The Context API has been implemented in the 16.3 version of React.
 It existed before, but was in beta, and thus, unadvised to work with.
 
 The goal of Context API is to allow developers to have an easy communication between components, without needing them to be closely related (Parent/Children components).
-This also reduce the need for prop drilling (passing down the props through several components), which allows for a cleaner code, easier to maintain and update.
+This also reduces the need for prop drilling (passing down the props through several components), which allows for a cleaner code, easier to maintain and update.
 
-This get to its full potential when we want to share data that will be accessed by multiple components.
+This gets to its full potential when we want to share data that will be accessed by multiple components.
 
 This is based around two things : a Provider and a Consumer.
 
@@ -46,7 +46,7 @@ class TimeProvider extends Component {
 
 export default TimeProvider;
 ```
-We need to tweak a bit the component that will call the child which needs to consume our context (<ShowTime /> in this case).
+We need to tweak the component a bit that will call the child which needs to consume our context (<ShowTime /> in this case).
 
 ```javascript
 // index.js
@@ -123,7 +123,7 @@ class TimeProvider extends Component {
 export default TimeProvider;
 ```
 
-And back on our Consumer :
+And back in our Consumer :
 
 ```javascript
 // on ShowTime.js
