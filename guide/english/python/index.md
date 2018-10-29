@@ -24,13 +24,13 @@ To learn more about Python, check out these pages on python.org:
 
 Most *nix based operating systems come with Python installed (usually Python 2, Python 3 in most recent ones). Replacing the system Python is not recommended and may cause problems. However, different versions of Python can be safely installed alongside the system Python. See <a href='https://docs.python.org/3/using/index.html' target='_blank' rel='nofollow'>Python Setup and Usage</a>.
 
-Windows doesn't come with Python, the installer and instructions can be found <a href='https://docs.python.org/3/using/windows.html' target='_blank' rel='nofollow'>here</a>
+Windows doesn't come with Python, the installer and instructions can be found <a href='https://docs.python.org/3/using/windows.html' target='_blank' rel='nofollow'>here</a>.
 
 ## Python Interpreter
 
-The Python interpreter is what is used to run Python scripts.
+The Python interpreter used to run Python scripts.
 
-If it is available and in Unix shell’s search path makes it possible to start it by typing the command `python` followed by the script name will invoke the interpreter and run the script.
+Type the command `python` followed by the script name to invoke the interpreter and run the script. This will determine whether the interpreter is available and in Unix shell’s search path.
 
 `hello_campers.py`
 
@@ -43,7 +43,7 @@ From terminal:
     $ python hello_campers.py
     Hello campers!
 
-When multiple versions of Python are installed, calling them by version is possible depending on the install configuration. In the Cloud9 IDE custom environment, they can be invoked like:
+When multiple versions of Python are installed, calling them by its version is possible depending on the install configuration. In the Cloud9 IDE custom environment, they can be invoked as:
 
     $ python --version
     Python 2.7.6
