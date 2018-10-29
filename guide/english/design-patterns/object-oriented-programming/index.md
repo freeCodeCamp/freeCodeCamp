@@ -23,7 +23,7 @@ Another extremely useful concept is that of inheritance. The idea is that a clas
 
 This helps in reusing code and making your code structure much more clean. Data hiding is another cool feature. In OO, we have the notion of private and public attributes. Private attributes can be accessed and modified only by methods of that particular class, while public data can be modified from anywhere in the program (within scope obviously).
 
-OO programming represents problem as a real-life statement and thus helps us solve those problems in an effective way. An object in OO programming represents a real-life entity. A class represents a blueprint of a number of objects. An object can be considered as a instance of a class.
+OO programming represents problem as a real-life statement and thus helps us solve those problems in an effective way. An object in OO programming represents a real-life entity. A class represents a blueprint of a number of objects. An object can be considered as a instance of a class. To create an object you would 'Instantiate' a class. The syntax used to do this depands on the language being utilised, for example in Java the 'new' keyword is a Java operator that creates the object.
 
 ### Example:
 See the image below. It represents a blueprint of a class named car. An instance of this class can be a real-life car that performs functionalities such as getFuel(), setSpeed(), drive(), etc.
