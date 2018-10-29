@@ -18,7 +18,7 @@ The `img` element will be rendered by default in most browsers to be displayed a
 
 ```
 img {
-     display: inline-block;
+     display: none;
      }
 ```
 
