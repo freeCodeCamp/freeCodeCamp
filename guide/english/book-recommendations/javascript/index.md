@@ -30,6 +30,12 @@ A collection of articles covering the basics (core language and working with a b
 - [Online](https://javascript.info/)
 - [E-book](https://javascript.info/ebook)
 
+#### JavaScript: The Definitive Guide - Stilson.net
+
+This book covers the JavaScript language and the JavaScript APIs implemented by web
+browsers
+- [E-book](https://eloquentjavascript.net/Eloquent_JavaScript.pdf)
+
 #### Javascript and Jquery: Interactive Front End Web Development
 This full-color book will show you how to make your websites more interactive and your interfaces more interesting and intuitive. Author is Jon Duckett who also penned HTML & CSS: Design and Build Websites. *Does not cover ES6*
 
