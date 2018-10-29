@@ -16,7 +16,7 @@ React is used for building user interfaces - what the user sees on their screen 
 
 ## Why learn React?
 
-1. React involves Composition that is lots of components wrapping up the functionalities into an encapsulated container.
+1. React involves Composition that is lots of components wrapping up it's functionalities into an encapsulated container.
 Many popular websites use React implementing the MVC architectural pattern. Facebook (Partially), Instagram (Completely), Khan Academy (Partially), Codecademy (Partially), New York Times (Partially), Yahoo Mail (Completely), Dropbox's new photo and video gallery app Carousel (Completely) are the popular websites known to be using React.
 How are these large applications built using React? The simple answer is by building small applications or components.
 Example:
