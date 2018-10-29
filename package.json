@@ -1,5 +1,5 @@
 {
-  "name": "@freecodecamp/freecodecamp",
+  "name": "@freeCodeCamp/freeCodeCamp",
   "version": "0.0.1",
   "scripts": {
     "prebootstrap": "npm run ensure-env",
