@@ -3,8 +3,20 @@ title: Match Everything But Letters and Numbers
 ---
 ## Match Everything But Letters and Numbers
 
-This is a stub. <a href='https://github.com/freecodecamp/guides/tree/master/src/pages/certifications/javascript-algorithms-and-data-structures/regular-expressions/match-everything-but-letters-and-numbers/index.md' target='_blank' rel='nofollow'>Help our community expand it</a>.
 
-<a href='https://github.com/freecodecamp/guides/blob/master/README.md' target='_blank' rel='nofollow'>This quick style guide will help ensure your pull request gets accepted</a>.
+To finish this challenge, it's necessary to use __character classes__. 
 
-<!-- The article goes here, in GitHub-flavored Markdown. Feel free to add YouTube videos, images, and CodePen/JSBin embeds  -->
+The __\W__ matches any character that is not a word character from the basic Latin alphabet. 
+__Equivalent to [^A-Za-z0-9_].__
+
+For example, /\W/ or /[^A-Za-z0-9_]/ matches "%" in "50%".
+
+
+
+
+### Spoiiler Alert: Solution ahead
+```javascript
+let quoteSample = "The five boxing wizards jump quickly.";
+let nonAlphabetRegex = /\W/g; // Change this line
+let result = quoteSample.match(nonAlphabetRegex).length;
+```
