@@ -9,7 +9,7 @@ list.sort(key=…,  reverse=[True/False])
 
 ### Parameters
 
-There are two optional parameters to this method
+There are two optional parameters to this method:
 <br><br>
 <i>key</i> - The input value for the key parameter should be a function that takes a single argument	and returns a value used for comparisons to sort the items in the list.
 <br><br>
