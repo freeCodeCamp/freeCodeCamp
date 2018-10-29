@@ -41,8 +41,8 @@ with the RegExp constructor or written as a literal value by enclosing the
 pattern in forward slash ( / ) characters.
 
 ```
-var re1 = new RegExp (" abc ") ;
-var re2 = / abc /;
+var re1 = new RegExp("abc") ;
+var re2 = /abc/;
 ```
 Both of these regular expression objects represent the same pattern: an
 a character followed by a b followed by a c.
@@ -53,9 +53,9 @@ a character followed by a b followed by a c.
 
 ### Testing for matches
 ```
-console . log (/ abc /. test (" abcde ") );
+console.log(/abc/.test(" abcde "));
 // → true
-console . log (/ abc /. test (" abxde ") );
+console.log(/ abc /.test(" abxde "));
 // → false
 ```
 

@@ -41,7 +41,7 @@ The current stable version is [2.5.1](https://www.ruby-lang.org/en/news/2018/03/
 
 ## Installation
 
-Mac OS X and many Linux distributions come pre-installed with Ruby. To check if ruby is pre-installed in your system, just run `ruby -v` on your shell. There are several ways to install Ruby:
+Mac OS X and many Linux distributions come pre-installed with Ruby. To check if Ruby is pre-installed in your system, just run `ruby -v` on your shell. There are several ways to install Ruby:
 
 *   When you are on a UNIX-like operating system, using your system’s package manager is the easiest way of getting started. However, the packaged Ruby version usually is not the newest one.
 *   Installers can be used to install a specific or multiple Ruby versions. There is also an installer for Windows.
