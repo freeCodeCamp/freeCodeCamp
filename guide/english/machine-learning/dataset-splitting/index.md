@@ -33,5 +33,6 @@ Your accuracy in predicting the test set is the accuracy of your ML algorithm.
  - [AWS ML Doc](http://docs.aws.amazon.com/machine-learning/latest/dg/splitting-the-data-into-training-and-evaluation-data.html)
  - [A good stackoverflow post](https://stackoverflow.com/questions/13610074/is-there-a-rule-of-thumb-for-how-to-divide-a-dataset-into-training-and-validatio)
  - [Academic Paper](https://www.mff.cuni.cz/veda/konference/wds/proc/pdf10/WDS10_105_i1_Reitermanova.pdf)
+ See train_test_split from sci-kitlearn for an example in python.
 
 
