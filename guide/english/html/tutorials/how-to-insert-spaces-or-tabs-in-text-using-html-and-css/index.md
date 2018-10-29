@@ -1,10 +1,10 @@
 ---
-title: How to Insert Spaces or Tabs in Text Using HTML and CSS
+title: How to Insert Spaces, Tabs, Or Line Breaks in Text Using HTML and CSS
 ---
-## How to Insert Spaces or Tabs in Text Using HTML and CSS
+## How to Insert Spaces, Tabs, Or Line Breaks in Text Using HTML and CSS
 
 There are a multitude of ways to insert spaces using html. For simplicity sake we will 
-go over one of these, which are by inserting a Span tag. 
+go over a couple of these. 
 
 ## Span Tag
 
@@ -35,6 +35,13 @@ For example
 You can also give the ``<span>`` some inline-style properties, as shown below.
   
   ``<p>Hello my name is <span style="padding-left: 2px;"> James</p>``
+  
+  ## Line Break Tag
+
+``<br>``
+
+Line Break Tags ``<br>`` are self closing tags meaning they do not need a ``/>``.
+A Line Break Tag is generally used when a Line Break without a new paragraph is needed.
   
 ## More Information
 
