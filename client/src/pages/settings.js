@@ -5,7 +5,7 @@ import RedirectHome from '../components/RedirectHome';
 import ShowSettings from '../client-only-routes/ShowSettings';
 
 function Settings() {
-  return (
+  return(
     <Router>
       <ShowSettings path='/settings' />
       <RedirectHome default={true} />
