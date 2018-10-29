@@ -4,6 +4,8 @@ title: If
 
 # If
 
+IF statement is used when we want to check specific conditions and perform task accordingly.
+
 The if statement executes different blocks of code based on conditions.
 
 ```
