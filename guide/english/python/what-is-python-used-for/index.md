@@ -55,17 +55,17 @@ Here's a <a href='https://www.python.org/about/apps/' target='_blank' rel='nofol
 * Web & Internet Development
 * Educational Advancment
 * Scientific Studies/Computing
-* Desktop development
+* Desktop Development
 * Numeric Computing
-* Software development
-* Business Application development
+* Software Development
+* Business Application Development
 * Machine Learning
 * IOT
 * Game Development
 * Rapid Prototyping
 * Browser Automation
-* Data analysis
-* Scraping data from websites
+* Data Analysis
+* Scraping Data from Websites
 * Image Processing
 ## Why python has got such a wide range of usage?
 * Python  has got many packages to work with, some ranging for aerospace research to mathematics. 
