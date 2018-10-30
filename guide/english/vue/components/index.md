@@ -5,13 +5,13 @@ title: Components
 ## Components
 
 A classic problem that web developers face when working is HTML duplication, not
-in a simple example such as a list, but sometimes all you want is a "import" to
+in a simple example such as a list, but sometimes all you want is an "import" to
 be able to use the same code in several different places. Well, Vue.js gives you
 this feature with Components.
 
 Suppose you're developing a landing page for your company's product and you need
 to display the 4 main features of it following the same structure of a card-like
-object, with a icon, a title and a short description.
+object, with an icon, a title and a short description.
 
 ```javascript
 Vue.component('feature-card', {
