@@ -42,7 +42,7 @@ You declare an optional by appending a question mark at the end of the type decl
 
 ### Unwrapping Optionals
 
-Optionals are considered a different type then its non-optional variant. For example in the above code "optionalFloat" and "normalFloat" are _not_ the same type. When you try to access an optional variable like you would a normal variable the value would be of Optional(StoredValue).
+Optionals are considered a different type then its non-optional variant. For example in the above code "optionalFloat" and "normalFloat" are _not_ the same type. When you try to access an optional variable like you would a normal variable the value would be of Optional(_SomeValue_).
 
 ```swift
     var optionalInt: Int? = 5
