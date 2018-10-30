@@ -54,6 +54,9 @@ The following are areas that can be simiplified with XML:
 
 And it's main achievement was that it became a W3C Recommendation as early as in February 1998.
 
+XML for Android:
+Actually many of the android beginners feel that it's compulsory to learn xml for android but it's not necessary to do so because the xml used in android is pretty simple.It is somewhat like a command line interface and if you still don't seem convinced just see some sample codes but I'm not telling you to leave it just learn some basics for a day or two and you're good to go.
+
 ### More information
 
 * [XML Introduction](https://developer.mozilla.org/en-US/docs/XML_introduction)
