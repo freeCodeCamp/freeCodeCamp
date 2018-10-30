@@ -63,9 +63,9 @@ Button button = (Button) findViewById(R.id.button);
 To connect an element of the layout file to the Activity we use the findViewById method. This method accepts the resource Id of a widget as an argument and returns a View object.
 
 # Más Información
-[Layouts](https://developer.android.com/guide/topics/ui/declaring-layout?hl=en-419).
-[Layout resource](https://developer.android.com/guide/topics/resources/layout-resource?hl=es-419).
+- [Layouts](https://developer.android.com/guide/topics/ui/declaring-layout?hl=en-419).
+- [Layout resource](https://developer.android.com/guide/topics/resources/layout-resource?hl=es-419).
 
 # Cursos
-[Material Design for Android Developers](https://www.udacity.com/course/material-design-for-android-developers--ud862).
-[CodeLabs](https://codelabs.developers.google.com/codelabs/material-design-style-sp/index.html#0).
+- [Material Design for Android Developers](https://www.udacity.com/course/material-design-for-android-developers--ud862).
+- [CodeLabs](https://codelabs.developers.google.com/codelabs/material-design-style-sp/index.html#0).
