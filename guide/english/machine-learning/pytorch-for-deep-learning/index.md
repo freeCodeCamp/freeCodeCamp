@@ -20,6 +20,6 @@ title: Deep Learning using PyTorch
 
 
 #### More Information:
-* [PyTorch official wensite](https://pytorch.org/)
+* [PyTorch official website](https://pytorch.org/)
 * [PyTorch GitHub Repository](https://github.com/pytorch/pytorch)
 * [Wikipedia—PyTorch](https://en.wikipedia.org/wiki/PyTorch)
