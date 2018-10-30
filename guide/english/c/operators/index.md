@@ -217,3 +217,11 @@ with higher precedence will be evaluated first.
 - Conditional `?:`
 - Assignment `= += -= *= /= %= >>= <<= &= ^= |=`
 - Comma `,`
+
+# Before you go on...
+1. The left shift and right shift operators should not be used for negative numbers. 
+2. Left shifting and right shifting a number by one basically equivalent to multiplication and division by 2 respectively.
+
+
+
+
