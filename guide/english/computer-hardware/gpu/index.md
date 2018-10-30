@@ -3,6 +3,8 @@ title: GPU
 ---
 ## GPU
 
+![alt text](https://upload.wikimedia.org/wikipedia/commons/thumb/c/cd/Generic_block_diagram_of_a_GPU.svg/650px-Generic_block_diagram_of_a_GPU.svg.png "By ScotXW - Own work, CC0, https://commons.wikimedia.org/w/index.php?curid=61055349")
+
 GPU stands for Graphics Processing Unit. The majority of computers use these to render videos or play video games.
 
 A GPU is like a CPU but has different strengths and weaknesses. CPUs are very good at running a couple of tasks very quickly. GPUs are much better at running many tasks at the same time, but slower. A typical GPU can have more than 10,000 tasks running, but to run so many tasks at the same time they must share memory and other resources. GPUs usually run very repetitive tasks over and over to save the CPU from wasting time. Some CPUs have built-in GPUs, but having a separate GPU is almost always more powerful.
