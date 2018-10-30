@@ -2,6 +2,11 @@
 title: Decrease the Opacity of an Element
 ---
 ## Decrease the Opacity of an Element
+## Hints
+
+To decrease the opacity of the anchor tags, paste the following code on the anchor tag style rule and add the value needed inside the parentheses. Note: No need to put parentheses, just the value needed.
+
+opacity: (add_value_here);
 
 This is a stub. <a href='https://github.com/freecodecamp/guides/tree/master/src/pages/certifications/responsive-web-design/applied-visual-design/decrease-the-opacity-of-an-element/index.md' target='_blank' rel='nofollow'>Help our community expand it</a>.
 
