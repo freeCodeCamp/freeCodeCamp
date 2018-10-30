@@ -198,6 +198,7 @@ int main ()
 
 ### For More Resources:
 http://www.cplusplus.com/reference/queue/queue/
+[Queue in Standard Template Library (STL)](https://www.geeksforgeeks.org/queue-cpp-stl/)
 
 ### Citations:
 Image Courtesy: https://en.wikipedia.org/wiki/FIFO_(computing_and_electronics) 
