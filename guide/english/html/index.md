@@ -21,6 +21,9 @@ HTML5 Introduces a host of semantic elements. Though we discussed HTML helped to
 <html>
 <head>
   <title>Page Title</title>
+ <style>
+   <!-- use style in here -->
+ </style
 </head>
 <body>
 
