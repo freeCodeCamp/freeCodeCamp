@@ -14,4 +14,4 @@ In this diagram, x_t is the input vector at "time" step t. U_x is the learned we
 #### More Information:
 - [Princeton Zhirong Wu, 2015 Slides](http://3dvision.princeton.edu/courses/COS598/2015sp/slides/RNN/RNN.pdf)
 - [Princeton COS 495, Instructor Yingyu Liang](https://www.cs.princeton.edu/courses/archive/spring16/cos495/slides/DL_lecture9_RNN.pdf)
-
+- [Edward Chen on LSTM](http://blog.echen.me/2017/05/30/exploring-lstms/)
