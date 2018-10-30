@@ -89,3 +89,5 @@ patch:
   'npm:tunnel-agent:20170305':
     - jsonlint-cli > omni-fetch > caw > tunnel-agent:
         patched: '2018-06-30T14:27:04.475Z'
+
+my changes
