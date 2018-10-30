@@ -4,9 +4,9 @@ title: SQL Data Types
 
 # SQL Data Types
 
-Each column in a table must have a data type. It indicates the type of value that the column stores.
+Each column in a table must have a data type. The data type indicates the type of value that is stored within the column.
 
-Each database can accept differents data types, but in general, the list of data types is:
+Each database can accept different data types, but in general, the list of data types are:
 
 ### Strings Types
 Data type | Description
