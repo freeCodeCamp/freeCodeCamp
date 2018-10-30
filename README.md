@@ -132,6 +132,10 @@ Please don't create GitHub issues for security issues. Instead, please send an e
 
 #### [Please follow these steps to contribute.](CONTRIBUTING.md)
 
+### Author
+
+[freeCodeCamp](freeCodeCamp.org)
+
 ### License
 
 Copyright © 2018 freeCodeCamp.org
