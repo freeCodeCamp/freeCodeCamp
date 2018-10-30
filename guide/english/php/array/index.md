@@ -73,7 +73,7 @@ echo 'I like '. $bikes['not my favorite'];
 Would produce the following output:
 
 ```
-I like BWM
+I like Yamaha
 ```
 
 ## Pitfalls
