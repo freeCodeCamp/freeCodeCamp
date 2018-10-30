@@ -44,5 +44,3 @@ You declare an optional by appending a question mark at the end of the type decl
 - <a href='https://docs.swift.org/swift-book/LanguageGuide/TheBasics.html#ID322' target='_blank' rel='nofollow'>Type-Safety and Type Inference</a>
 
 - <a href='https://docs.swift.org/swift-book/LanguageGuide/TheBasics.html#ID330' target='_blank' rel='nofollow'>Swift Optionals</a>
-
-
