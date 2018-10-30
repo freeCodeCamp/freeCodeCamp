@@ -32,3 +32,4 @@ Setting an element to `opacity: 0;` does not remove it from the page. The elemen
 #### More Information:
 * [MDN web docs](https://developer.mozilla.org/en-US/docs/Web/CSS/opacity)
 * [CSS Tricks Almanac](https://css-tricks.com/almanac/properties/o/opacity/)
+* [W3schools](https://www.w3schools.com/cssref/css3_pr_opacity.asp)
