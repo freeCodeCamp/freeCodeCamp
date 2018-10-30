@@ -7,6 +7,9 @@ The purpose of this article is to familiarize fresh Front-End Web Developers wit
 
 Without further ado, here are a few questions that you could encounter:
 
+### General Website / Internet
+1.  What happens when you type a URL into your browser?  
+
 ### HTML/CSS
 
 1.  In the context of CSS styling can you explain what does `display-style: inline-block` stand for?
@@ -17,6 +20,7 @@ Without further ado, here are a few questions that you could encounter:
 6.  Explain the notion of responsive design and how it works? Use an example if you like.
 7.  What is a DOM? What do you know about it?
 8.  What is SASS? What are the advantages of using it?
+9.  What is the difference between a static, relative, absolute, and fixed positioned element?
 
 ### JavaScript
 
@@ -32,6 +36,8 @@ Without further ado, here are a few questions that you could encounter:
 10.  What APIs have you worked with?
 11.  How would you send out/convert to JSON format?
 12.  What is the difference between `GET` and `POST` when specifying an AJAX request?
+13.  How would you explain event delegation?
+14.  Explain the concept of hoisting.
 
 ### Software/Tooling
 
@@ -45,3 +51,4 @@ Without further ado, here are a few questions that you could encounter:
 3.  What side projects have you been working on?
 4.  Are there any languages or frameworks that you would like to learn in the future? How would you go about teaching yourself? Why did you pick those languages/frameworks?
 5.  What are the most important skills and qualities that a junior front end developer should have?
+6.  What is a recent technical challenge you experienced and how did you solve it?
