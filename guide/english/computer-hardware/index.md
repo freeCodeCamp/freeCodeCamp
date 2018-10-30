@@ -15,7 +15,7 @@ A Central Processing Unit (CPU) is the electronic circuitry within a computer th
 ### Expansion Cards (eg. GPU)
 An expansion card is an embedded circuit card that can be added to the motherboard to augument a computer's capability. It can either add capabilities, ex allow for a new type of I/O port, or upgrade existing ones, ex. faster ethernet connection. The most common type of expansion card is a GPU, or a graphical processing unit.
   
-![Nvidia Titan XP](https://cdn.arstechnica.net/wp-content/uploads/2017/04/nvidia-titan-x.jpg)  
+![GPU](https://store.hp.com/app/assets/images/uploads/prod/what-is-a-gpu-hero1532381784549.png)  
   
 ### Storage (SSD or HDD)
 The Solid State Drive (SSD) or Hard Disk Drive (HDD) are used to store information on the computer. It retains the memory even after loss of power.
