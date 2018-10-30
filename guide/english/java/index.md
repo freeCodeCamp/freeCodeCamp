@@ -123,3 +123,4 @@ Also, here is a list of free IDEs for Java coding:
 * <a href='https://www.bluej.org/' target='_blank' rel='nofollow'>BlueJ</a>
 * <a href='http://www.jedit.org/' target='_blank' rel='nofollow'>jEdit</a>
 * <a href='http://www.oracle.com/technetwork/developer-tools/jdev/overview/index-094652.html' target='_blank' rel='nofollow'>Oracle JDeveloper</a>
+* <a href='https://ide.atom.io/' target='_blank' rel='nofollow'>Atom IDE</a>
