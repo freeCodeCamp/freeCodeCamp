@@ -23,7 +23,7 @@ NOTE: The first two lines in the file represent the numbers in the example given
 ```yml
 tests:
   - text: <code>euler99()</code> should return 709.
-    testString: 'assert.strictEqual(euler99(), 709, "<code>euler99()</code> should return 709.");'
+    testString: assert.strictEqual(euler99(), 709, '<code>euler99()</code> should return 709.');
 
 ```
 

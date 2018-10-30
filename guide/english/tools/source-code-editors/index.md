@@ -11,9 +11,9 @@ markup coloring, and tabs/panes for side-by-side editing. These features can
 be useful even to new users who don't know their way around all of the  
 advanced options.
 
-There are many, many editors availble to download or use  
+There are many, many editors available to download or use  
 online, both paid and free. They offer many of the same core-features, but  
-each have their own subtlties. Further research may help find the one that's  
+each have their own subtleties. Further research may help find the one that's  
 right for you. The following editors are all cross-platform and  
 free to use or evaluate.
 
@@ -62,3 +62,22 @@ Its main features are:
 *   Build-in Git - Review diffs, stage files, make commits, push and pull, all available in the editor.
 *   Extensions - Install extensions to add new languages, themes, debuggers, and connect additional services.
 
+## <a href='https://atom.io/' target='_blank' rel='nofollow'>WebStorm</a>
+
+DON'T COMPROMISE ON DEVELOPMENT EXPERIENCE
+The smartest editor
+Use the full power of the modern JavaScript ecosystem – WebStorm’s got you covered! Enjoy the intelligent code completion, on-the-fly error detection, powerful navigation and refactoring for JavaScript, TypeScript, stylesheet languages, and the most popular frameworks.
+
+Web
+* Angular
+* React
+* Vue.js
+Mobile
+* Ionic
+* Cordova
+* React Native
+Server
+* Node.js
+* Meteor
+Desktop
+* Electron

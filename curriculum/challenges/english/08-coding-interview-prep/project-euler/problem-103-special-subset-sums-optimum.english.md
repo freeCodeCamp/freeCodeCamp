@@ -28,7 +28,7 @@ NOTE: This problem is related to Problem 105 and Problem 106.
 ```yml
 tests:
   - text: <code>euler103()</code> should return 20313839404245.
-    testString: 'assert.strictEqual(euler103(), 20313839404245, "<code>euler103()</code> should return 20313839404245.");'
+    testString: assert.strictEqual(euler103(), 20313839404245, '<code>euler103()</code> should return 20313839404245.');
 
 ```
 

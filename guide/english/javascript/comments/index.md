@@ -10,7 +10,7 @@ It is always best practice when starting out to comment more often than not, as 
 
 JavaScript has two ways of assigning comments in its code.
 
-The first way is the `//` comment; all text following `//` on the same line into a comment. For example:
+The first way is the `//` comment; all text following `//` on the same line is  considered as a comment. For example:
 
 ```javascript
 function hello() {
@@ -38,6 +38,20 @@ function hello() {
 }
 hello();
 ```
+The third way is the `/** */` comment, a format popularly known as JSDoc, can be used to clearly describe functions, classes, methods, and variables in your codebase in a detailed way. For example: 
+
+```javascript
+/**
+ * Adds two numbers together
+ * 
+ * @param {number} num1 - first parameter
+ * @param {number} num2 - second parameter
+ * @returns {number}
+ */
+function addTwoNumbers(num1, num2) {
+  return num1 + num2;
+}
+console.log(addTwoNumbers(10,20)) // will print 30 in the console.
 
 You can also prevent execution of Javascript code just commenting the code lines like this:
 ```javascript

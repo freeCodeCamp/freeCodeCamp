@@ -39,3 +39,16 @@ Do something first and then test if we have to continue. The result is that the 
 		return 0;
 	}
 ```
+
+A common mistake with do-while loops is attempting to use a variable that is local to the loop in the conditional statement. This will result in a compilation error because the local variable is not in the correct scope for the conditional statement to use it. Be sure to declare any conditional variables outside of the do while loop.
+```cpp
+int main()
+{
+        do {    
+           // This will not compile because the counter is in the scope of the do, whereas the while conditional is outside.
+           int counter = 10;
+        } while (counter < 10);
+        return 0;
+}
+
+```
