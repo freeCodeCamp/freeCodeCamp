@@ -15,7 +15,7 @@ A&&B returns True if both A and B are True. If either A or B (or both) are False
 
 
 **OR (||)** </br>
-A||B returns True if A or B (or both A and B) is True. Only returns False if both A and B is False.
+A||B returns True if either A or B is True. A||B is sometimes called "inclusive OR" because it only returns False if both A and B are False.
 
 | A | B |OR(A,B)|
 |---|---|---|
@@ -25,7 +25,7 @@ A||B returns True if A or B (or both A and B) is True. Only returns False if bot
 |  t| f | t |
 
 **NOT (!)** </br>
-Returns the opposite value. Ex. if A is true, then !A is false, and if A is false, then !A is true. This is the only logical operator that works on only one input, which makes it a unary operator.
+Returns the opposite value. Ex. if A is True, then !A is False, and if A is False, then !A is True. This is the only logical operator that works on only one input, which makes it a unary operator.
 
 | A | B |NOT(A)| NOT(B)
 |---|---|---|---|
@@ -35,7 +35,7 @@ Returns the opposite value. Ex. if A is true, then !A is false, and if A is fals
 |  t| f | f |t|
 
 **XOR ("eXclusive or")** </br>
-Is known as **exclusive or**. Similar to OR, but returns False if both A and B are true. That is, XOR returns true if one and only one of A or B is True.
+Is known as **exclusive or**. Similar to OR (||), but it returns False if BOTH A and B are true. That is, XOR returns True if one and only one of A or B is True.
 
 | A | B |XOR(A,B)|
 |---|---|---|
@@ -51,7 +51,7 @@ Only returns False when A is True and B is False. Otherwise the implication is T
 
 Note: Implications are often used for direct mathematical proofs. A represents the hypothesis, while B is the conclusion.
 
-The only time the conditional is false is when a true value leads to a false value. 
+The only time the conditional is False is when a True value leads to a False value. 
 
 | A | B |IF(A,B)|
 |---|---|---|
@@ -65,7 +65,7 @@ The only time the conditional is false is when a true value leads to a false val
 "P if and only if Q" is the same as "P implies Q AND Q implies P". In other words, the truth tables for P and Q are identical for all truth values. 
 This is known as the biconditional. It is the equivalent of A -> B **AND** B->A. It means that both conditionals must be satisfied in order for the biconditional to be true.
 
-You can easily see that the out output of the IFF operator in the truth table is the same as the ANDing of columns 3 and 4.
+You can easily see that the output of the IFF operator in the truth table is the same as the ANDing of columns 3 and 4.
 
 | A | B |IF(A,B)| IF(B,A)| IFF(A,B)|
 |---|---|---|---|---|
