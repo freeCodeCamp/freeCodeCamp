@@ -3,7 +3,7 @@ title: Docker
 ---
 [logo]: https://www.docker.com/sites/default/files/Whale%20Logo332_5.png "Docker"
 
-Docker is an open-source software aimed at facilitating application deployment. It offers the possibility to build containers, including an operating system,
+Docker is an open-source software that aims to automate application deployment. It offers the possibility to build containers, including an operating system,
 libraries and all you need to run your application. Therefore, your application can then be deployed on any machine. Its lightweight structure enables you to
 run several containers on the same machine. A container image is a lightwieght, stand-alone, executable package of a piece of software that includes everything
 needed to run it.
