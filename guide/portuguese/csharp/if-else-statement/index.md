@@ -1,40 +1,40 @@
 ---
 title: If Else Statement
-localeTitle: Se mais declaração
+localeTitle: Declaração Se Senão
 ---
-# Se mais declaração
+# Declaração Se Senão
 
-A instrução If-Else executa um bloco de código, dependendo se sua pré-condição está preenchida ou não.
+A instrução If-Else executa um bloco de código, dependendo se a condição que o antecedeu foi ou não satisfeita.
 
 ## Exemplo
 ```
-if(boolean expression) 
+if(expressão booleana) 
  { 
- // execute this code block if expression evalutes to true 
+ // Execute esse bloco se a expressão for verdadeira.
  } 
  else 
  { 
- // always execute this code block when above if expression is false 
+ // Sempre execute esse bloco quando a condição acima for falsa.
  } 
  
  
- int Price = 30; 
+ int preco = 30; 
  
- If (Price = 30) 
+ If (preco = 30) 
  { 
-  Console.WriteLine("Price is equal to 30."); 
+  Console.WriteLine("Preço é igual a 30."); 
  } 
  
  Else 
  { 
-  Console.WriteLine("Price is not equal to 30."); 
+  Console.WriteLine("Preço não é igual a 30."); 
  } 
 ```
 
-Como já declaramos nosso preço int como 30, essa será a saída esperada.
+Como já declaramos nosso preço como 30, essa será a saída esperada: 
 
 ## Saída
 ```
-Price is equal to 30. 
+Preço é igual a 30. 
 
 ```
