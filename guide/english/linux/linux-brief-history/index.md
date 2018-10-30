@@ -14,6 +14,10 @@ As time passed by, he collaborated with other programmers in places like MIT and
 The earlier versions of Linux were not so user-friendly as they were in use by computer programmers and Linus Torvalds never had it in mind to commercialize his product. 
 This definitely curbed the Linux's popularity as other commercially oriented Operating System Windows got famous. Nonetheless, the open-source aspect of the Linux operating system made it more robust. 
 
+![Linus Torvalds and Richard Stallman](http://foro.ubuntu-guia.com/file/n3879119/rms-linus.jpg "Linus Torvalds and Richard Stallman")
+
+
+
 #### More Information:
 
 [Linux on Wikipedia](https://en.wikipedia.org/wiki/Linux)
