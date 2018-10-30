@@ -58,5 +58,6 @@ namespace ErrorHandling
 
 #### More Information:
 <!-- Please add any articles you think might be helpful to read before writing the article -->
-https://quizlet.com/135129010/computer-science-error-handling-flash-cards/
-https://en.wikipedia.org/wiki/Exception_handling
+* [Computer Science: Error Handling Flashcards](https://quizlet.com/135129010/computer-science-error-handling-flash-cards/)
+* [Exception Handling on Wikipedia](https://en.wikipedia.org/wiki/Exception_handling)
+* [Clean Code and The Art of Exception Handling](https://www.toptal.com/abap/clean-code-and-the-art-of-exception-handling)
