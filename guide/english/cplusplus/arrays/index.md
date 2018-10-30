@@ -46,7 +46,8 @@ numbers[2] = 55; // Sets the third position (3) to the new number 55
 
 How to insert and print array elements:
 ```C++
-int vnum[5] = {1, 2, 3, 4, 5}
+int vnum[5] = {1, 2, 3, 4, 5};
+
 
 // change 4th element to 9
 vnum[3] = 9;
@@ -54,11 +55,14 @@ vnum[3] = 9;
 // take input from the user and insert in third element
 cin >> vnum[2];
 
-// take input from the user and insert in (i+1)th element
-cin >> vnum[i];
-
 // print first element of the array
 cout << vnum[0];
+
+//initializing i
+int i;
+
+// take input from the user and insert in (i+1)th element
+cin >> vnum[i];
 
 // print (i)th element of the array
 cout >> vnum[i-1];
