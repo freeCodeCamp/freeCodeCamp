@@ -154,3 +154,12 @@ Se essas <i>issues</i> possuem falta de clareza do que deve ser feito, sinta-se 
 **Encontrei um erro de escrita, eu devo reportar antes de criar um <i>pull request</i>?**
 
 Você pode criar diretamente um <i>pull request</i> sem ter de reportar uma <i>issue</i> em casos de erros de escrita ou pequenas mudanças de palavreado. <i>Issues</i> são ferramentas para buscar confirmação em mudanças que você gostaria de propor por meio de um <i>pull request</i>.
+
+#### More information:
+Olá 👋!
+
+freeCodeCamp.org existe graças a milhares de voluntários generosos como você. Somos gratos por suas contribuições e estamos felizes em ter você como integrante da nossa comunidade.
+
+Nós seguimos as diretrizes do nosso ["Código de Conduta"](https://www.freecodecamp.org/code-of-conduct). Por gentileza examine e lêia esse documento com atenção. O documento é bem curto e leva menos de 2 minutos para ler.
+
+Divirta-se contribuindo 🎉!
