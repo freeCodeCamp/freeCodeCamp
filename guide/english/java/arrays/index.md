@@ -143,7 +143,7 @@ for(int i = 0; i < M; i++) {
     }
 }
 ```
-This loop will execute M ^ N times and will build this:
+This loop will execute M * N times and will build this:
 
 [ 0 | 1 | 2 | 3 | 4 ]  
 [ 0 | 1 | 2 | 3 | 4 ]  
