@@ -77,3 +77,11 @@ VIM is an advanced text editor open source tool which is also considered to be a
 
 <a href='https://www.vim.org/' target='_blank' rel='nofollow'>vim.org</a>
 
+### TextMate
+
+![TextMate Icon](https://upload.wikimedia.org/wikipedia/commons/a/a2/TextmateIcon.png)
+
+TextMate is a free, open source text editor favored by Ruby developers. Initially released in 2004 by Allan Odgaard. Although TextMate 2 was anounced as 90% complete in 2009, it has not yet been released. However, there is an active developer thread. TextMate features many optimizations (although now common in many text editors) that made Ruby and Ruby on Rails development easier.
+
+<a href='https://macromates.com/' target='_blank' rel='nofollow'>TextMate at MacroMates</a>
+
