@@ -3,6 +3,8 @@ title: HTML
 ---
 
 # HTML
+![html logo](https://www.w3.org/html/logo/badge/html5-badge-h-solo.png)
+
 
 HyperText Markup Language (HTML) is a markup language used to construct online documents and is the foundation of most websites today. A markup language like HTML allows us to 1) create links to other documents, 2) structure the content in our document, and 3) ascribe context and meaning to the content of our document.
  
