@@ -80,4 +80,4 @@ var p = new Person();
 
 #### Further Reading
 
-<a href='https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Functions/Arrow_functions' target='_blank' rel='nofollow'>MDN link</a>
+The documentation by Moz can be found <a href='https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Functions/Arrow_functions' target='_blank' rel='nofollow'>here</a>.
