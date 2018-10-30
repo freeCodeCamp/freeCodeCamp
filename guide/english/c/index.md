@@ -2,7 +2,7 @@
 title: C
 ---
 
-# Hello World! - Your first C Program
+## Hello World! - Your first C Program
 
 ## Getting the most out of this course
 Make sure that you're comfortable with all of the concepts in this part of the guide before moving on. Getting your first program running is important because it will allow you to follow along with the examples, which is another good thing to do- practice makes perfect! Concepts that might be confusing will have an annotation that links to an appendix. If you don't understand a concept, make sure that you consult the appendix for more information.
