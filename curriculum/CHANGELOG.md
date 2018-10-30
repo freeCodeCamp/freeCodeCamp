@@ -217,5 +217,5 @@
 
 
 ### Bug Fixes
-
+* new functions
 * remove extraneous build step ([20c0143](https://github.com/freeCodeCamp/curriculum/commit/20c0143))
