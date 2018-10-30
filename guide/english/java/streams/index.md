@@ -30,9 +30,12 @@ These operations receive the Stream Objects and end the Stream.
 - `Stream.collect(Collector<In,?,Out> collector)`: collect all Objects in Stream into Object
 - `Stream.forEach(Consumer<In> consumer)`: consume all Objects in Stream using the consumer function
 - `Stream.count()`: count all Objects in Stream
+- `Stream.min(Comparator<In> comparator)`: finds the smallest element with the given comparator
+- `Stream.max(Comparator<In> comparator)`: finds the biggest element with the given comparator
 - `Stream.findFirst()`: return the first Object of the Stream and stop
-- `Stream.anyMatch(Predicate<In> predicate)`: return true if any Object in the Stream tests true for the Predicate
-- `Stream.allMatch(Predicate<In> predicate)`: return true if all Object in the Stream test true for the Predicate
+- `Stream.anyMatch(Predicate<In> predicate)`: returns true if any Object in the Stream tests true for the Predicate
+- `Stream.allMatch(Predicate<In> predicate)`: returns true if all Object in the Stream test true for the Predicate
+- `Stream.noneMatch(Predicate<In> predicate)`: returns true if none of the Objects in the Stream test true for the Predicate
 
 ## Examples
 
