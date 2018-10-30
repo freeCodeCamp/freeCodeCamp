@@ -31,6 +31,24 @@ The link text is the visible part (Visit our site for tutorials).
 
 Clicking on the link text will send you to the specified address.
 
-#### More Information:
-<!-- Please add any articles you think might be helpful to read before writing the article -->
-* [MDN - HTML <a> Reference](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/a)
+
+## HTML Links - The target Attribute
+
+The ```target``` attribute specifies where to open the linked document.
+
+The target attribute can have one of the following values:
+
+_blank - Opens the linked document in a new window or tab<br>
+_self - Opens the linked document in the same window/tab as it was clicked (this is default)<br>
+_parent - Opens the linked document in the parent frame<br>
+_top - Opens the linked document in the full body of the window<br>
+framename - Opens the linked document in a named frame<br>
+This example will open the linked document in a new browser window/tab:<br>
+
+## Example:
+```<a href="https://github.com/" target="_blank">Visit GitHub</a>```<br>
+
+<b>Tip:</b> If your webpage is locked in a frame, you can use ```target="_top"``` to break out of the frame:<br>
+
+## Example:
+```<a href="https://www.github.com" target="_top">Html Links - Github!</a>```
