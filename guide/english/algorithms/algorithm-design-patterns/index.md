@@ -24,4 +24,7 @@ These are design patterns that identify common communication patterns between ob
 #### More Information:
 <!-- Please add any articles you think might be helpful to read before writing the article -->
 [Design patterns - Wikipedia](https://en.wikipedia.org/wiki/Design_Patterns)
+### Documentation
+
+The documentation for a design pattern describes the context in which the pattern is used, the forces within the context that the pattern seeks to resolve, and the suggested solution.There is no single, standard format for documenting design patterns. Rather, a variety of different formats have been used by different pattern authors. However, according to Martin Fowler, certain pattern forms have become more well-known than others, and consequently become common starting points for new pattern-writing efforts.
 
