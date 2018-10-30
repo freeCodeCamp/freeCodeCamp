@@ -7,11 +7,11 @@ A Class Selector is used in a CSS file to apply style to the HTML elements with 
 To select elements with a specific class, we use a (.) named as period character, with the name of the class.
 
 For example
-.center {
+```.center {
     text-align: center;
     color: red;
 }
-
+```
 Here, all HTML elements with `class="center"` will be red and center-aligned.
 
 Examples:
