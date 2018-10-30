@@ -7,6 +7,8 @@ When starting out with linux, there are some basic commands everyone should know
 
  1. **cd** - change directory 
 - cd followed by a directory or file path will take you inside that directory(folder).
+- If you're lost, `cd ~` takes you back to your home directory regardless of where you are in the system.
+- `cd ..` takes you one level higher in the directory tree. For example, if you're in /home/dev you'll go to /home.
 
  2. **ls** - list command
 - Type `ls` and the contents of the current directory will be displayed.
@@ -16,42 +18,47 @@ When starting out with linux, there are some basic commands everyone should know
  3. **man** - manual command
 - Shows you the manual for the following command. This is very helpful when trying to figure out how an unfamiliar command works. For example, type `man ls` for everything you need to know about the ls command. Type `q` to exit.
 
- 4. **pwd** - path
+ 4. **help** - help command
+- Similar to `man`, but only for bash commands.
+- Worth checking when `man *command*` doesn't return anything.
+
+ 5. **pwd** - path
 - Type `pwd` to display the path to your current directory.
 
- 5. **mkdir** - make directory 
+ 6. **mkdir** - make directory 
 - This command, followed by the name you wish to name your directory, creates a new directory. `mkdir folder1` will make a new directory called folder1.
 
- 6. **rmdir** - remove directory   
+ 7. **rmdir** - remove directory   
 - Removes the directory that follows the command. `rmdir folder1` will delete the directory named folder1 if it exists.
 
- 7. **rm** - remove   
+ 8. **rm** - remove   
 - This command removes files, not directories. `rm file.txt` will remove the file named file.txt as long as it exists and is in the current directory.
+- Command can be forced to recursively remove directories and all of their contents. Heed the warning.
 - **Warning, this command is capable of destroying entire systems, use with caution**
 
- 8. **touch** - creates file   
+ 9. **touch** - creates file   
 - The touch command is used to create a file. It can be anything, from an empty txt file to an empty zip file. 'touch new.txt' will create a new file with name new.
 
- 9. **mv** - move   
+ 10. **mv** - move   
 - Use the mv command to move files through the command line. We can also use the mv command to rename a file. For example, if we want to rename the file “text” to “new”, we can use 'mv text new'.
 - **Warning, this command is capable of destroying entire systems, use with caution**
 
- 10. **right-click** - copy and paste  
+ 11. **right-click** - copy and paste  
 - This one is less of a command and more of a how-to, however, it is very useful for doing almost anything in a terminal on linux. To begin, highlight text like normal and then "right-click" on your mouse to copy a selection. You should see the highlighted portion become un-highlighted, this means you copied the selection. Now "right-click" on where you want to paste the selection and you're done. 
 
- 11. **less** - view file content  
+ 12. **less** - view file content  
 - Use `less filename.txt` to view contents of a file and navigate through them. By default, less will go through the file page by page.
 
- 12. **cat** - display file's textual contents  
+ 13. **cat** - display file's textual contents  
 - Use this command to display text from within a given file on your terminal. Entering `cat myFile.txt` in your terminal will display the contents of the file `myFile.txt` on screen. The `cat` command can be a very handy tool when used with the terminal _pipes_.
 
- 13. **clear** - clear terminal
+ 14. **clear** - clear terminal
 - Use `clear` to simply clear all output from your terminal.
 
- 14. **cp** - copy files and directories
+ 15. **cp** - copy files and directories
 - Use `cp` to copy a file or a direcotry with files inside it to another location using command 'cp CURRENT_FILE-LOCATION DESTINATION_FOLDER'. Add '-r' flag to copy a directory that is not empty. 
 
-15. **grep** -  The grep searches any given input files, selecting lines that match one or more patterns.
+ 16. **grep** -  The grep searches any given input files, selecting lines that match one or more patterns.
 - use `grep` to find a file, a directory, some text in the file/directory.  
 **Example:**
 ```sh
@@ -61,7 +68,7 @@ When starting out with linux, there are some basic commands everyone should know
  25409 s004  Ss     0:00.04 login -pf <user>
 ```
 
- 15. **df -h** Checks disk space in human readable form
+ 17. **df -h** Checks disk space in human readable form
 - Shows the size, amount used, amount available and capacity percentage of mounted drives/partitions.
 
 
@@ -69,4 +76,3 @@ When starting out with linux, there are some basic commands everyone should know
 - [JSLinux](https://bellard.org/jslinux/vm.html?url=https://bellard.org/jslinux/buildroot-x86.cfg): Run the terminal inside your browser. Great for practice.
 - [LearnShell](https://www.learnshell.org/): Interactive Linux shell (terminal) tutorials.
 - [LinuxJourney](https://linuxjourney.com/lesson/the-shell): A collection of beginner-friendly terminal tutorials.
-
