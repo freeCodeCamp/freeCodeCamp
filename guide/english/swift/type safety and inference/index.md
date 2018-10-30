@@ -1,5 +1,5 @@
 ---
-title: Type Inference
+title: Type Safety, Inference, and Optionals
 ---
 ## Type Inference
 
@@ -41,4 +41,8 @@ You declare an optional by appending a question mark at the end of the type decl
 ``` 
 
 #### More Information:
-- <a href='https://docs.swift.org/swift-book/LanguageGuide/TheBasics.html#ID322' target='_blank' rel='nofollow'>The Swift Programming Language</a>
+- <a href='https://docs.swift.org/swift-book/LanguageGuide/TheBasics.html#ID322' target='_blank' rel='nofollow'>Type-Safety and Type Inference</a>
+
+- <a href='https://docs.swift.org/swift-book/LanguageGuide/TheBasics.html#ID330' target='_blank' rel='nofollow'>Swift Optionals</a>
+
+
