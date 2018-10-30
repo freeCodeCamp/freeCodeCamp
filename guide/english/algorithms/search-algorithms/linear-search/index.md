@@ -118,6 +118,19 @@ int linearSearch(int[] arr, int element)
 }
 
 ```
+### Example in C
+void linear_search(int fn_arr[], int element) {
+  int i;
+  for (i = 0; i < MAX_SIZE; i++) {
+    if (fn_arr[i] == element) {
+      printf("Linear Search : %d is Found at array : %d.\n", element, i + 1);
+      break;
+    }
+  }
+
+  if (i == MAX_SIZE)
+    printf("Not Found \n");
+}
         
 ## Global Linear Search
 
