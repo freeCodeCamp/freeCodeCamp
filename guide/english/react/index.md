@@ -2,6 +2,7 @@
 title: React
 ---
 # React
+[react logo](https://quintagroup.com/cms/js/js-image/react.js-logo.png)
 
 React is a JavaScript library for building user interfaces. It was voted the most loved in the "Frameworks, Libraries, and Other Technologies" category of Stack Overflow's 2017 Developer Survey.<sup>1</sup>
 
