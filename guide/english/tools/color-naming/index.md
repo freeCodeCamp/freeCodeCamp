@@ -9,6 +9,5 @@ Coming up with color names, can be really tricky. There is a great tool, that al
 
 ### More Information
 
-* <a href='http://chir.ag/projects/name-that-color' target='_blank' rel='nofollow'>Name that color</a>
-
-* <a href='https://www.npmjs.com/package/color-name-generator' target='_blank' rel='nofollow'>color-name-generator npm package</a>
+* [Name that color](http://chir.ag/projects/name-that-color)
+* [color-name-generator npm package](https://www.npmjs.com/package/color-name-generator)
