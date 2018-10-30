@@ -79,6 +79,14 @@ echo $x + $y;
 ?>
 ````
 
+The following example will output the operator sum of variables:
+````php
+<?php
+$x = 0;
+echo $x++;
+?>
+````
+
 # PHP is a Loosely Typed Language
 
 In the example above, notice that we did not have to tell PHP which data type the variable is.
