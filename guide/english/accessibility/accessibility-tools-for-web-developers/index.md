@@ -52,3 +52,7 @@ There are many tools and online resources that can help you to ensure that your 
 
 #### More Reources
 You can find many more tools for accessible web design on <a href='http://www.d.umn.edu/itss/training/online/webdesign/tools.html' target='_blank' rel='nofollow'>this list</a> made by the University of Minnesota Duluth.
+
+<a href='https://developers.google.com/web/fundamentals/accessibility/' target='_blank' rel='nofollow'> Web Fundamentals: Accessibility</a>
+
+<a href='https://www.udacity.com/course/web-accessibility--ud891' target='_blank' rel='nofollow'> Udacity: Web Accessibility by Google</a>
