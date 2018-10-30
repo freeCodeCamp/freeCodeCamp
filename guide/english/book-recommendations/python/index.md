@@ -62,13 +62,17 @@ You'll learn many of the first princliples for data science tools and how algori
 - ISBN-10: 1593275994
 - ISBN-13: 978-1593275990
 
-*Python crash course 2e* (note that 3e is going to be published on April 2019)
+#### Python crash course 2e (note that 3e is going to be published on April 2019)
+![alt text](https://images-na.ssl-images-amazon.com/images/I/51F48HFHq6L._AC_US327_QL65_.jpg "Python Crash Course")
+
 - Paid book which gives concrete introduction to both programming and Python by the creation of projects.
-- [Amazon](https://www.amazon.fr/Python-Crash-Course-Hands-Project-Based/dp/1593276036/ref=sr_1_1?ie=UTF8&qid=1539459730&sr=8-1&keywords=python+crash+course)
+- [Amazon](https://www.amazon.com/Python-Crash-Course-Hands-Project-Based/dp/1593276036/ref=sr_1_3?ie=UTF8&qid=1540875828&sr=8-3&keywords=python+crash+course&dpID=51F48HFHq6L&preST=_SX258_BO1,204,203,200_QL70_&dpSrc=srch)
 - ISBN-10: 1593276036
 - ISBN-13: 978-1593276034
 
-*The Quick Python Book, Third Edition*
+#### The Quick Python Book, Third Edition
+![alt text](https://images-na.ssl-images-amazon.com/images/I/513Y+AphqQL._AC_US327_QL65_.jpg "The Quick Python Book")
+
 - Paid book which provides a good level of information for those starting Python and as a reference for the Python language
 - [Manning]https://www.manning.com/books/the-quick-python-book-third-edition
 - ISBN-10: 1617294039
