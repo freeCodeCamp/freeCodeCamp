@@ -161,6 +161,14 @@ title: Books to Read for Programmers
 - [Amazon Smile](https://smile.amazon.com/Core-Python-Applications-Programming-3rd/dp/0132678209)
 - ISBN-13: 978-0132678209
 
+
+*Learn Python The Hard Way by Zed Shaw
+
+- [Amazon](https://www.amazon.com/Learn-Python-Hard-Way-Introduction/dp/0321884914)
+- [More Info](https://learnpythonthehardway.org/book/)
+- ISBN-13: 978-0321884916
+
+
 *Python Tricks: A Buffet of Awesome Python Features by Dan Bader*
 - [Amazon Smile](https://smile.amazon.com/Python-Tricks-Buffet-Awesome-Features-ebook/dp/B0785Q7GSY)
 - ISBN-13: 978-1775093305
