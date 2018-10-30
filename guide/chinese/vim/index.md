@@ -28,3 +28,5 @@ Vim的模态部分是它真正强大的部分。有关交互式教程，请访�
 
 *   [Open Vim](http://www.openvim.com/)是一个在线的互动Vim教程，您可以在浏览器中进行操作
 *   [Vim Adventures](https://vim-adventures.com)是一款基于VIM键盘快捷键的在线游戏。这是“塞尔达语与文本编辑”游戏。
+
+My changes.
