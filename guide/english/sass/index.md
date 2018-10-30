@@ -1,20 +1,20 @@
 ---
 title: Sass
 ---
-Sass is a preprossessor scripting language that compiles CSS. It essentially brings the power of a standard programming language (e.g. loops, variables, conditional statements, etc...) to your stylesheets.
+SASS (Syntactically Awesome Style Sheets) is a preprossessor scripting language that compiles CSS. It essentially brings the power of a standard programming language (e.g. loops, variables, functions, conditional statements, etc...) to your stylesheets.
 
-## Store data with Sass variables:
+## Store data with SASS variables:
 
-Variable starts with '$' followed by variable name
+In JavaScript, variables are defined using the let and const keywords. In Sass, variables start with a $ followed by the variable name.
 ```
 // Sass Code
 $main-fonts:Arial,sans-serif;
-$heading-color:green;
+$text-color:green;
 
-// Css Code
+// CSS Code
 h1{
   font-family: $main-fonts;
-  color: $heading-color;
+  color: $text-color;
 }
 ```
 
