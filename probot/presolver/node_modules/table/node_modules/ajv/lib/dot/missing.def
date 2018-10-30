@@ -1,0 +1,34 @@
+{{## def.checkMissingProperty:_properties:
+  {{~ _properties:_$property:$i }}
+    {{?$i}} || {{?}}
+    {{ var $prop = it.util.getProperty(_$property); }}
+    ( {{=$data}}{{=$prop}} === undefined && (missing{{=$lvl}} = {{= it.util.toQuotedString(it.opts.jsonPointers ? _$property : $prop) }}) )
+  {{~}}
+#}}
+
+
+{{## def.errorMissingProperty:_error:
+  {{
+    var $propertyPath = 'missing' + $lvl
+      , $missingProperty = '\' + ' + $propertyPath + ' + \'';
+    if (it.opts._errorDataPathProperty) {
+      it.errorPath = it.opts.jsonPointers
+                      ? it.util.getPathExpr($currentErrorPath,  $propertyPath, true)
+                      : $currentErrorPath + ' + ' + $propertyPath;
+    }
+  }}
+  {{# def.error:_error }}
+#}}
+
+{{## def.allErrorsMissingProperty:_error:
+  {{
+    var $prop = it.util.getProperty($reqProperty)
+      , $missingProperty = it.util.escapeQuotes($reqProperty);
+    if (it.opts._errorDataPathProperty) {
+      it.errorPath = it.util.getPath($currentErrorPath, $reqProperty, it.opts.jsonPointers);
+    }
+  }}
+  if ({{=$data}}{{=$prop}} === undefined) {
+    {{# def.addError:_error }}
+  }
+#}}

@@ -1,0 +1,11 @@
+{
+  "rules": {
+    "indent": [ 2, 2 ],
+    "padding-line-between-statements": "off",
+    "hapi/hapi-no-var": false
+  },
+  "extends": "hapi",
+  "env": {
+    "mocha": true
+  }
+}

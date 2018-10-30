@@ -1,0 +1,76 @@
+{
+  "_args": [
+    [
+      "minimist@1.2.0",
+      "/Users/eshanker/Code/fsevents"
+    ]
+  ],
+  "_from": "minimist@1.2.0",
+  "_id": "minimist@1.2.0",
+  "_inBundle": true,
+  "_integrity": "sha1-o1AIsg9BOD7sH7kU9M1d95omQoQ=",
+  "_location": "/fsevents/rc/minimist",
+  "_phantomChildren": {},
+  "_requested": {
+    "type": "version",
+    "registry": true,
+    "raw": "minimist@1.2.0",
+    "name": "minimist",
+    "escapedName": "minimist",
+    "rawSpec": "1.2.0",
+    "saveSpec": null,
+    "fetchSpec": "1.2.0"
+  },
+  "_requiredBy": [
+    "/fsevents/rc"
+  ],
+  "_resolved": "https://registry.npmjs.org/minimist/-/minimist-1.2.0.tgz",
+  "_spec": "1.2.0",
+  "_where": "/Users/eshanker/Code/fsevents",
+  "author": {
+    "name": "James Halliday",
+    "email": "mail@substack.net",
+    "url": "http://substack.net"
+  },
+  "bugs": {
+    "url": "https://github.com/substack/minimist/issues"
+  },
+  "description": "parse argument options",
+  "devDependencies": {
+    "covert": "^1.0.0",
+    "tap": "~0.4.0",
+    "tape": "^3.5.0"
+  },
+  "homepage": "https://github.com/substack/minimist",
+  "keywords": [
+    "argv",
+    "getopt",
+    "parser",
+    "optimist"
+  ],
+  "license": "MIT",
+  "main": "index.js",
+  "name": "minimist",
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/substack/minimist.git"
+  },
+  "scripts": {
+    "coverage": "covert test/*.js",
+    "test": "tap test/*.js"
+  },
+  "testling": {
+    "files": "test/*.js",
+    "browsers": [
+      "ie/6..latest",
+      "ff/5",
+      "firefox/latest",
+      "chrome/10",
+      "chrome/latest",
+      "safari/5.1",
+      "safari/latest",
+      "opera/12"
+    ]
+  },
+  "version": "1.2.0"
+}

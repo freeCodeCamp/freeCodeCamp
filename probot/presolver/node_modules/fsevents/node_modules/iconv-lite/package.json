@@ -1,0 +1,79 @@
+{
+  "_args": [
+    [
+      "iconv-lite@0.4.21",
+      "/Users/eshanker/Code/fsevents"
+    ]
+  ],
+  "_from": "iconv-lite@0.4.21",
+  "_id": "iconv-lite@0.4.21",
+  "_inBundle": true,
+  "_integrity": "sha512-En5V9za5mBt2oUA03WGD3TwDv0MKAruqsuxstbMUZaj9W9k/m1CV/9py3l0L5kw9Bln8fdHQmzHSYtvpvTLpKw==",
+  "_location": "/fsevents/iconv-lite",
+  "_phantomChildren": {},
+  "_requested": {
+    "type": "version",
+    "registry": true,
+    "raw": "iconv-lite@0.4.21",
+    "name": "iconv-lite",
+    "escapedName": "iconv-lite",
+    "rawSpec": "0.4.21",
+    "saveSpec": null,
+    "fetchSpec": "0.4.21"
+  },
+  "_requiredBy": [
+    "/fsevents/needle"
+  ],
+  "_resolved": "https://registry.npmjs.org/iconv-lite/-/iconv-lite-0.4.21.tgz",
+  "_spec": "0.4.21",
+  "_where": "/Users/eshanker/Code/fsevents",
+  "author": {
+    "name": "Alexander Shtuchkin",
+    "email": "ashtuchkin@gmail.com"
+  },
+  "browser": {
+    "./lib/extend-node": false,
+    "./lib/streams": false
+  },
+  "bugs": {
+    "url": "https://github.com/ashtuchkin/iconv-lite/issues"
+  },
+  "dependencies": {
+    "safer-buffer": "^2.1.0"
+  },
+  "description": "Convert character encodings in pure javascript.",
+  "devDependencies": {
+    "async": "*",
+    "errto": "*",
+    "iconv": "*",
+    "istanbul": "*",
+    "mocha": "^3.1.0",
+    "request": "~2.81.0",
+    "semver": "*",
+    "unorm": "*"
+  },
+  "engines": {
+    "node": ">=0.10.0"
+  },
+  "homepage": "https://github.com/ashtuchkin/iconv-lite",
+  "keywords": [
+    "iconv",
+    "convert",
+    "charset",
+    "icu"
+  ],
+  "license": "MIT",
+  "main": "./lib/index.js",
+  "name": "iconv-lite",
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/ashtuchkin/iconv-lite.git"
+  },
+  "scripts": {
+    "coverage": "istanbul cover _mocha -- --grep .",
+    "coverage-open": "open coverage/lcov-report/index.html",
+    "test": "mocha --reporter spec --grep ."
+  },
+  "typings": "./lib/index.d.ts",
+  "version": "0.4.21"
+}

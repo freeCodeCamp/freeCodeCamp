@@ -1,0 +1,6 @@
+sudo: false
+language: node_js
+node_js:
+  - "8.3"
+notifications:
+  disabled: true

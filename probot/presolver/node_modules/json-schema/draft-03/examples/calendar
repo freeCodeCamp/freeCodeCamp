@@ -1,0 +1,53 @@
+{
+	"description" : "A representation of an event",
+	"type" : "object",
+	"properties" : {
+		"dtstart" : {
+			"format" : "date-time",
+			"type" : "string",
+			"description" : "Event starting time",
+			"required":true
+		},
+		"summary" : {
+			"type":"string",
+			"required":true
+		},
+		"location" : { 
+			"type" : "string" 
+		},
+		"url" : {
+			"type" : "string", 
+			"format" : "url" 
+		},
+		"dtend" : {
+			"format" : "date-time",
+			"type" : "string",
+			"description" : "Event ending time"
+		},
+		"duration" : {
+			"format" : "date",
+			"type" : "string",
+			"description" : "Event duration"
+		},
+		"rdate" : {
+			"format" : "date-time",
+			"type" : "string",
+			"description" : "Recurrence date"
+		},
+		"rrule" : {
+			"type" : "string",
+			"description" : "Recurrence rule"
+		},
+		"category" : {
+			"type" : "string"
+		},
+		"description" : {
+			"type" : "string"
+		},
+		"geo" : { "$ref" : "http://json-schema.org/draft-03/geo" }
+	}
+}
+		
+			
+			
+

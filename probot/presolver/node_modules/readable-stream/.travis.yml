@@ -1,0 +1,55 @@
+sudo: false
+language: node_js
+before_install:
+  - npm install -g npm@2
+  - test $NPM_LEGACY && npm install -g npm@latest-3 || npm install npm -g
+notifications:
+  email: false
+matrix:
+  fast_finish: true
+  include:
+  - node_js: '0.8'
+    env:
+      - TASK=test
+      - NPM_LEGACY=true
+  - node_js: '0.10'
+    env:
+      - TASK=test
+      - NPM_LEGACY=true
+  - node_js: '0.11'
+    env:
+      - TASK=test
+      - NPM_LEGACY=true
+  - node_js: '0.12'
+    env:
+      - TASK=test
+      - NPM_LEGACY=true
+  - node_js: 1
+    env:
+      - TASK=test
+      - NPM_LEGACY=true
+  - node_js: 2
+    env:
+      - TASK=test
+      - NPM_LEGACY=true
+  - node_js: 3
+    env:
+      - TASK=test
+      - NPM_LEGACY=true
+  - node_js: 4
+    env: TASK=test
+  - node_js: 5
+    env: TASK=test
+  - node_js: 6
+    env: TASK=test
+  - node_js: 7
+    env: TASK=test
+  - node_js: 8
+    env: TASK=test
+  - node_js: 9
+    env: TASK=test
+script: "npm run $TASK"
+env:
+  global:
+  - secure: rE2Vvo7vnjabYNULNyLFxOyt98BoJexDqsiOnfiD6kLYYsiQGfr/sbZkPMOFm9qfQG7pjqx+zZWZjGSswhTt+626C0t/njXqug7Yps4c3dFblzGfreQHp7wNX5TFsvrxd6dAowVasMp61sJcRnB2w8cUzoe3RAYUDHyiHktwqMc=
+  - secure: g9YINaKAdMatsJ28G9jCGbSaguXCyxSTy+pBO6Ch0Cf57ZLOTka3HqDj8p3nV28LUIHZ3ut5WO43CeYKwt4AUtLpBS3a0dndHdY6D83uY6b2qh5hXlrcbeQTq2cvw2y95F7hm4D1kwrgZ7ViqaKggRcEupAL69YbJnxeUDKWEdI=

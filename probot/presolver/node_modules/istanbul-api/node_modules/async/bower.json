@@ -1,0 +1,17 @@
+{
+  "name": "async",
+  "main": "dist/async.js",
+  "ignore": [
+    "bower_components",
+    "lib",
+    "mocha_test",
+    "node_modules",
+    "perf",
+    "support",
+    "**/.*",
+    "*.config.js",
+    "*.json",
+    "index.js",
+    "Makefile"
+  ]
+}

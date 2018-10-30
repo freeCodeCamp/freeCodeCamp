@@ -1,0 +1,92 @@
+{
+  "_args": [
+    [
+      "string-width@1.0.2",
+      "/Users/eshanker/Code/fsevents"
+    ]
+  ],
+  "_from": "string-width@1.0.2",
+  "_id": "string-width@1.0.2",
+  "_inBundle": true,
+  "_integrity": "sha1-EYvfW4zcUaKn5w0hHgfisLmxB9M=",
+  "_location": "/fsevents/string-width",
+  "_phantomChildren": {},
+  "_requested": {
+    "type": "version",
+    "registry": true,
+    "raw": "string-width@1.0.2",
+    "name": "string-width",
+    "escapedName": "string-width",
+    "rawSpec": "1.0.2",
+    "saveSpec": null,
+    "fetchSpec": "1.0.2"
+  },
+  "_requiredBy": [
+    "/fsevents/gauge",
+    "/fsevents/wide-align"
+  ],
+  "_resolved": "https://registry.npmjs.org/string-width/-/string-width-1.0.2.tgz",
+  "_spec": "1.0.2",
+  "_where": "/Users/eshanker/Code/fsevents",
+  "author": {
+    "name": "Sindre Sorhus",
+    "email": "sindresorhus@gmail.com",
+    "url": "sindresorhus.com"
+  },
+  "bugs": {
+    "url": "https://github.com/sindresorhus/string-width/issues"
+  },
+  "dependencies": {
+    "code-point-at": "^1.0.0",
+    "is-fullwidth-code-point": "^1.0.0",
+    "strip-ansi": "^3.0.0"
+  },
+  "description": "Get the visual width of a string - the number of columns required to display it",
+  "devDependencies": {
+    "ava": "*",
+    "xo": "*"
+  },
+  "engines": {
+    "node": ">=0.10.0"
+  },
+  "files": [
+    "index.js"
+  ],
+  "homepage": "https://github.com/sindresorhus/string-width#readme",
+  "keywords": [
+    "string",
+    "str",
+    "character",
+    "char",
+    "unicode",
+    "width",
+    "visual",
+    "column",
+    "columns",
+    "fullwidth",
+    "full-width",
+    "full",
+    "ansi",
+    "escape",
+    "codes",
+    "cli",
+    "command-line",
+    "terminal",
+    "console",
+    "cjk",
+    "chinese",
+    "japanese",
+    "korean",
+    "fixed-width"
+  ],
+  "license": "MIT",
+  "name": "string-width",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/sindresorhus/string-width.git"
+  },
+  "scripts": {
+    "test": "xo && ava"
+  },
+  "version": "1.0.2"
+}

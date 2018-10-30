@@ -1,0 +1,12 @@
+language: node_js
+node_js:
+  - "7.6"
+  - "node"
+  - "8"
+deploy:
+  provider: npm
+  email: david@banham.id.au
+  api_key:
+    secure: f1Ctp5h3pQtuSQYPNhaIC0L1zhYSCxKing01DabWwFCi1p/Zco6WmcJdeXTFCZatlUWomip/fh5pozFcTqr4XWJX+dCZZwNZ0lTI9ag+IFPdLwW5nkbzd1AHFTx7gLkW9RZowkIxMvurIqv02b6PtNw/zYk4IXoxG6WSRtbm4K+k2Lfm2lXjmGkV6d/OZyQ+8tQIogoeKV54qBopsWIKB2bGxxwlm0evGE2MTkLoj3I2zmTRuq1uBuPYQJEvOgG9KvhgELuwjYH761OdFn0qynyCMpjcrxCDQ6B6AzG2UwdoTbVjyjk3D2ms7VaBw4fCX94SYJ1fqChX20cEbSi3SGMoPOG9rdIoilw6XENI+DMq+A0Vgi6IPpDqZ33uXjL+NHPmvcl8FNr3istvsmZxHwzhGEvTz7QFnthKVY6e/x3UsbV0YEXg7OKdY0x5aTz4Veztu/60HTi93V/KV7VsAFSe14Xv8PQSCqFX8HSFERyNXPcwzXZL/SQwCVI/OM+ZivBsz7rvauEhb3jfYj17v4xB2nQmPfwrDmS+5Kw1Ad4YuTN+rSGBsI+c0EBBkw50ad/IOkJF661gtecq141OUCjxmWCGpzYTHqEFShhM/NGAzimvn2EW54/wKlveQFPvJyDGutIiCa86dVZSMSwsRtWCpdRk725LnG+kk0h9J8k=
+  on:
+    tags: true

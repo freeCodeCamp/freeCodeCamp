@@ -1,0 +1,38 @@
+language: node_js
+node_js:
+- 'node'
+after_success:
+- npm run jsdoc
+- cat artifacts/coverage/lcov.info | node_modules/coveralls/bin/coveralls.js
+notifications:
+  slack:
+    secure: k4kpAZcA1Mu7LHs58m4JkMbGtpWPI8BPYqmqKVfHBE21daaqRYgpHOiLyWiFhv83xkiOWWfDAS2svvS2h2jDmaRzieVBlonQlhGgDEu123Mobvi8nUxeu6bNxoFSRwKXVx8uTCGKmzwqWz870Y6d7+TUQnMhhdl0GRB2tqAhY0A=
+deploy:
+- provider: s3
+  access_key_id:
+    secure: IQXPBnuNyREtmNN+W9bONLok5lFO9+JzQ3n5nK/uRHTuYDgS4ZbKJwaJ1dRNS6Zb8qAgVyIq8FBVa4olbvH6sfxGwVluwY0ujskvgA5hOMEpyjJ5zQx5+boWDTz9wNdMUe4ImygJjcpTjn33wMu9arFLMyIQdKysrlfU1HlRWB0=
+  secret_access_key:
+    secure: lIFQHzB5Sfzi0BmYM/b8PzEtdwOUQjtTPBGdTjX09b7OFVsb3M4FROaAsaTMrbZ+L6TyLD9fDBJMPHW7xZTnrZG1zcKIjZITT25Ec/2YQ9CCdAdbr+NobKrjaJ6dIcF2NKcUaRQQvRE9E8uC/KVveWGEC7ITtv0yssuADNSdcOU=
+  bucket: tsertkov-artifacts
+  local-dir: artifacts
+  upload-dir: exec-sh/master
+  acl: public_read
+  skip_cleanup: true
+  region: eu-central-1
+  endpoint: s3.eu-central-1.amazonaws.com
+  on:
+    branch: master
+- provider: s3
+  access_key_id:
+    secure: IQXPBnuNyREtmNN+W9bONLok5lFO9+JzQ3n5nK/uRHTuYDgS4ZbKJwaJ1dRNS6Zb8qAgVyIq8FBVa4olbvH6sfxGwVluwY0ujskvgA5hOMEpyjJ5zQx5+boWDTz9wNdMUe4ImygJjcpTjn33wMu9arFLMyIQdKysrlfU1HlRWB0=
+  secret_access_key:
+    secure: lIFQHzB5Sfzi0BmYM/b8PzEtdwOUQjtTPBGdTjX09b7OFVsb3M4FROaAsaTMrbZ+L6TyLD9fDBJMPHW7xZTnrZG1zcKIjZITT25Ec/2YQ9CCdAdbr+NobKrjaJ6dIcF2NKcUaRQQvRE9E8uC/KVveWGEC7ITtv0yssuADNSdcOU=
+  bucket: tsertkov-artifacts
+  local-dir: artifacts
+  upload-dir: exec-sh/develop
+  acl: public_read
+  skip_cleanup: true
+  region: eu-central-1
+  endpoint: s3.eu-central-1.amazonaws.com
+  on:
+    branch: develop

@@ -1,0 +1,10 @@
+language: node_js
+branches:
+  only:
+    - master
+dist: trusty
+node_js:
+- 8
+- 6
+- 4
+sudo: false

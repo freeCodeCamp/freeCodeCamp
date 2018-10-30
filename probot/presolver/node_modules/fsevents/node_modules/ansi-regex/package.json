@@ -1,0 +1,111 @@
+{
+  "_args": [
+    [
+      "ansi-regex@2.1.1",
+      "/Users/eshanker/Code/fsevents"
+    ]
+  ],
+  "_from": "ansi-regex@2.1.1",
+  "_id": "ansi-regex@2.1.1",
+  "_inBundle": true,
+  "_integrity": "sha1-w7M6te42DYbg5ijwRorn7yfWVN8=",
+  "_location": "/fsevents/ansi-regex",
+  "_phantomChildren": {},
+  "_requested": {
+    "type": "version",
+    "registry": true,
+    "raw": "ansi-regex@2.1.1",
+    "name": "ansi-regex",
+    "escapedName": "ansi-regex",
+    "rawSpec": "2.1.1",
+    "saveSpec": null,
+    "fetchSpec": "2.1.1"
+  },
+  "_requiredBy": [
+    "/fsevents/strip-ansi"
+  ],
+  "_resolved": "https://registry.npmjs.org/ansi-regex/-/ansi-regex-2.1.1.tgz",
+  "_spec": "2.1.1",
+  "_where": "/Users/eshanker/Code/fsevents",
+  "author": {
+    "name": "Sindre Sorhus",
+    "email": "sindresorhus@gmail.com",
+    "url": "sindresorhus.com"
+  },
+  "bugs": {
+    "url": "https://github.com/chalk/ansi-regex/issues"
+  },
+  "description": "Regular expression for matching ANSI escape codes",
+  "devDependencies": {
+    "ava": "0.17.0",
+    "xo": "0.16.0"
+  },
+  "engines": {
+    "node": ">=0.10.0"
+  },
+  "files": [
+    "index.js"
+  ],
+  "homepage": "https://github.com/chalk/ansi-regex#readme",
+  "keywords": [
+    "ansi",
+    "styles",
+    "color",
+    "colour",
+    "colors",
+    "terminal",
+    "console",
+    "cli",
+    "string",
+    "tty",
+    "escape",
+    "formatting",
+    "rgb",
+    "256",
+    "shell",
+    "xterm",
+    "command-line",
+    "text",
+    "regex",
+    "regexp",
+    "re",
+    "match",
+    "test",
+    "find",
+    "pattern"
+  ],
+  "license": "MIT",
+  "maintainers": [
+    {
+      "name": "Sindre Sorhus",
+      "email": "sindresorhus@gmail.com",
+      "url": "sindresorhus.com"
+    },
+    {
+      "name": "Joshua Appelman",
+      "email": "jappelman@xebia.com",
+      "url": "jbnicolai.com"
+    },
+    {
+      "name": "JD Ballard",
+      "email": "i.am.qix@gmail.com",
+      "url": "github.com/qix-"
+    }
+  ],
+  "name": "ansi-regex",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/chalk/ansi-regex.git"
+  },
+  "scripts": {
+    "test": "xo && ava --verbose",
+    "view-supported": "node fixtures/view-codes.js"
+  },
+  "version": "2.1.1",
+  "xo": {
+    "rules": {
+      "guard-for-in": 0,
+      "no-loop-func": 0
+    }
+  }
+}

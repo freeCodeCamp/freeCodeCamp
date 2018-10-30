@@ -1,0 +1,4 @@
+language: node_js
+node_js:
+  - "0.8"
+  - "0.10"

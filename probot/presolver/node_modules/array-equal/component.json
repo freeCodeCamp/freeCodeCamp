@@ -1,0 +1,10 @@
+{
+  "name": "array-equal",
+  "description": "check if two arrays are equal",
+  "version": "1.0.0",
+  "license": "MIT",
+  "repository": "component/array-equal",
+  "scripts": [
+    "index.js"
+  ]
+}

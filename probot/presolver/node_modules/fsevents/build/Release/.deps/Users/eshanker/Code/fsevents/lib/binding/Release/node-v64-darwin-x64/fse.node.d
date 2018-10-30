@@ -1,0 +1,1 @@
+cmd_/Users/eshanker/Code/fsevents/lib/binding/Release/node-v64-darwin-x64/fse.node := rm -rf "/Users/eshanker/Code/fsevents/lib/binding/Release/node-v64-darwin-x64/fse.node" && cp -af "Release/fse.node" "/Users/eshanker/Code/fsevents/lib/binding/Release/node-v64-darwin-x64/fse.node"

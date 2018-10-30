@@ -1,0 +1,17 @@
+language: node_js
+
+script:
+  - node_modules/.bin/istanbul cover node_modules/.bin/_mocha -- --compilers coffee:coffee-script/register
+  - cat coverage/lcov.info | node_modules/.bin/coveralls
+node_js:
+  - "0.10"
+  - "0.11"
+  - "0.12"
+  - "iojs"
+os:
+  - linux
+  - osx
+
+notifications:
+  slack:
+    secure: oOt8QGzdrPDsTMcyahtIq5Q+0U1iwfgJgFCxBLsomQ0bpIMn+y5m4viJydA2UinHPGc944HS3LMZS9iKQyv+DjTgbhUyNXqeVjtxCwRe37f5rKQlXVvdfmjHk2kln4H8DcK3r5Qd/+2hd9BeMsp2GImTrkRSud1CZQlhhe5IgZOboSoWpGVMMy1iazWT06tAtiB2LRVhmsdUaFZDWAhGZ+UAvCPf+mnBOAylIj+U0GDrofhfTi25RK0gddG2f/p2M1HCu49O6wECGWkt2hVei233DkNJyLLLJVcvmhf+aXkV5TjMyaoxh/HdcV4DrA7KvYuWmWWKsINa9hlwAsdd/FYmJ6PjRkKWas2JoQ1C+qOzDxyQvn3CaUZFKD99pdsq0rBBZujqXQKZZ/hWb/CE74BI6fKmqQkiEPaD/7uADj04FEg6HVBZaMCyauOaK5b3VC97twbALZ1qVxYV6mU+zSEvnUbpnjjvRO0fSl9ZHA+rzkW73kX3GmHY0wAozEZbSy7QLuZlQ2QtHmBLr+APaGMdL1sFF9qFfzqKy0WDbSE0WS6hpAEJpTsjYmeBrnI8UmK3m++iEgyQPvZoH9LhUT+ek7XIfHZMe04BmC6wuO24/RfpmR6bQK9VMarFCYlBiWxg/z30vkP0KTpUi3o/cqFm7/Noxc0i2LVqM3E0Sy4=

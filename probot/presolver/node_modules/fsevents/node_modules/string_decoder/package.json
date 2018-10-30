@@ -1,0 +1,62 @@
+{
+  "_args": [
+    [
+      "string_decoder@1.1.1",
+      "/Users/eshanker/Code/fsevents"
+    ]
+  ],
+  "_from": "string_decoder@1.1.1",
+  "_id": "string_decoder@1.1.1",
+  "_inBundle": true,
+  "_integrity": "sha512-n/ShnvDi6FHbbVfviro+WojiFzv+s8MPMHBczVePfUpDJLwoLT0ht1l4YwBCbi8pJAveEEdnkHyPyTP/mzRfwg==",
+  "_location": "/fsevents/string_decoder",
+  "_phantomChildren": {},
+  "_requested": {
+    "type": "version",
+    "registry": true,
+    "raw": "string_decoder@1.1.1",
+    "name": "string_decoder",
+    "escapedName": "string_decoder",
+    "rawSpec": "1.1.1",
+    "saveSpec": null,
+    "fetchSpec": "1.1.1"
+  },
+  "_requiredBy": [
+    "/fsevents/readable-stream"
+  ],
+  "_resolved": "https://registry.npmjs.org/string_decoder/-/string_decoder-1.1.1.tgz",
+  "_spec": "1.1.1",
+  "_where": "/Users/eshanker/Code/fsevents",
+  "bugs": {
+    "url": "https://github.com/nodejs/string_decoder/issues"
+  },
+  "dependencies": {
+    "safe-buffer": "~5.1.0"
+  },
+  "description": "The string_decoder module from Node core",
+  "devDependencies": {
+    "babel-polyfill": "^6.23.0",
+    "core-util-is": "^1.0.2",
+    "inherits": "^2.0.3",
+    "tap": "~0.4.8"
+  },
+  "homepage": "https://github.com/nodejs/string_decoder",
+  "keywords": [
+    "string",
+    "decoder",
+    "browser",
+    "browserify"
+  ],
+  "license": "MIT",
+  "main": "lib/string_decoder.js",
+  "name": "string_decoder",
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/nodejs/string_decoder.git"
+  },
+  "scripts": {
+    "ci": "tap test/parallel/*.js test/ours/*.js --tap | tee test.tap && node test/verify-dependencies.js",
+    "test": "tap test/parallel/*.js && node test/verify-dependencies"
+  },
+  "version": "1.1.1"
+}

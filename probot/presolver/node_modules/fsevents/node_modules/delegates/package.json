@@ -1,0 +1,51 @@
+{
+  "_args": [
+    [
+      "delegates@1.0.0",
+      "/Users/eshanker/Code/fsevents"
+    ]
+  ],
+  "_from": "delegates@1.0.0",
+  "_id": "delegates@1.0.0",
+  "_inBundle": true,
+  "_integrity": "sha1-hMbhWbgZBP3KWaDvRM2HDTElD5o=",
+  "_location": "/fsevents/delegates",
+  "_phantomChildren": {},
+  "_requested": {
+    "type": "version",
+    "registry": true,
+    "raw": "delegates@1.0.0",
+    "name": "delegates",
+    "escapedName": "delegates",
+    "rawSpec": "1.0.0",
+    "saveSpec": null,
+    "fetchSpec": "1.0.0"
+  },
+  "_requiredBy": [
+    "/fsevents/are-we-there-yet"
+  ],
+  "_resolved": "https://registry.npmjs.org/delegates/-/delegates-1.0.0.tgz",
+  "_spec": "1.0.0",
+  "_where": "/Users/eshanker/Code/fsevents",
+  "bugs": {
+    "url": "https://github.com/visionmedia/node-delegates/issues"
+  },
+  "dependencies": {},
+  "description": "delegate methods and accessors to another property",
+  "devDependencies": {
+    "mocha": "*",
+    "should": "*"
+  },
+  "homepage": "https://github.com/visionmedia/node-delegates#readme",
+  "keywords": [
+    "delegate",
+    "delegation"
+  ],
+  "license": "MIT",
+  "name": "delegates",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/visionmedia/node-delegates.git"
+  },
+  "version": "1.0.0"
+}

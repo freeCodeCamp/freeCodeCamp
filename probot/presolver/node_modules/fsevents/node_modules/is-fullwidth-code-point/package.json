@@ -1,0 +1,80 @@
+{
+  "_args": [
+    [
+      "is-fullwidth-code-point@1.0.0",
+      "/Users/eshanker/Code/fsevents"
+    ]
+  ],
+  "_from": "is-fullwidth-code-point@1.0.0",
+  "_id": "is-fullwidth-code-point@1.0.0",
+  "_inBundle": true,
+  "_integrity": "sha1-754xOG8DGn8NZDr4L95QxFfvAMs=",
+  "_location": "/fsevents/is-fullwidth-code-point",
+  "_phantomChildren": {},
+  "_requested": {
+    "type": "version",
+    "registry": true,
+    "raw": "is-fullwidth-code-point@1.0.0",
+    "name": "is-fullwidth-code-point",
+    "escapedName": "is-fullwidth-code-point",
+    "rawSpec": "1.0.0",
+    "saveSpec": null,
+    "fetchSpec": "1.0.0"
+  },
+  "_requiredBy": [
+    "/fsevents/string-width"
+  ],
+  "_resolved": "https://registry.npmjs.org/is-fullwidth-code-point/-/is-fullwidth-code-point-1.0.0.tgz",
+  "_spec": "1.0.0",
+  "_where": "/Users/eshanker/Code/fsevents",
+  "author": {
+    "name": "Sindre Sorhus",
+    "email": "sindresorhus@gmail.com",
+    "url": "sindresorhus.com"
+  },
+  "bugs": {
+    "url": "https://github.com/sindresorhus/is-fullwidth-code-point/issues"
+  },
+  "dependencies": {
+    "number-is-nan": "^1.0.0"
+  },
+  "description": "Check if the character represented by a given Unicode code point is fullwidth",
+  "devDependencies": {
+    "ava": "0.0.4",
+    "code-point-at": "^1.0.0"
+  },
+  "engines": {
+    "node": ">=0.10.0"
+  },
+  "files": [
+    "index.js"
+  ],
+  "homepage": "https://github.com/sindresorhus/is-fullwidth-code-point#readme",
+  "keywords": [
+    "fullwidth",
+    "full-width",
+    "full",
+    "width",
+    "unicode",
+    "character",
+    "char",
+    "string",
+    "str",
+    "codepoint",
+    "code",
+    "point",
+    "is",
+    "detect",
+    "check"
+  ],
+  "license": "MIT",
+  "name": "is-fullwidth-code-point",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/sindresorhus/is-fullwidth-code-point.git"
+  },
+  "scripts": {
+    "test": "node test.js"
+  },
+  "version": "1.0.0"
+}

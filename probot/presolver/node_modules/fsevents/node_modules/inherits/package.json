@@ -1,0 +1,65 @@
+{
+  "_args": [
+    [
+      "inherits@2.0.3",
+      "/Users/eshanker/Code/fsevents"
+    ]
+  ],
+  "_from": "inherits@2.0.3",
+  "_id": "inherits@2.0.3",
+  "_inBundle": true,
+  "_integrity": "sha1-Yzwsg+PaQqUC9SRmAiSA9CCCYd4=",
+  "_location": "/fsevents/inherits",
+  "_phantomChildren": {},
+  "_requested": {
+    "type": "version",
+    "registry": true,
+    "raw": "inherits@2.0.3",
+    "name": "inherits",
+    "escapedName": "inherits",
+    "rawSpec": "2.0.3",
+    "saveSpec": null,
+    "fetchSpec": "2.0.3"
+  },
+  "_requiredBy": [
+    "/fsevents/glob",
+    "/fsevents/readable-stream"
+  ],
+  "_resolved": "https://registry.npmjs.org/inherits/-/inherits-2.0.3.tgz",
+  "_spec": "2.0.3",
+  "_where": "/Users/eshanker/Code/fsevents",
+  "browser": "./inherits_browser.js",
+  "bugs": {
+    "url": "https://github.com/isaacs/inherits/issues"
+  },
+  "description": "Browser-friendly inheritance fully compatible with standard node.js inherits()",
+  "devDependencies": {
+    "tap": "^7.1.0"
+  },
+  "files": [
+    "inherits.js",
+    "inherits_browser.js"
+  ],
+  "homepage": "https://github.com/isaacs/inherits#readme",
+  "keywords": [
+    "inheritance",
+    "class",
+    "klass",
+    "oop",
+    "object-oriented",
+    "inherits",
+    "browser",
+    "browserify"
+  ],
+  "license": "ISC",
+  "main": "./inherits.js",
+  "name": "inherits",
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/isaacs/inherits.git"
+  },
+  "scripts": {
+    "test": "node test"
+  },
+  "version": "2.0.3"
+}

@@ -1,0 +1,64 @@
+{
+  "_args": [
+    [
+      "console-control-strings@1.1.0",
+      "/Users/eshanker/Code/fsevents"
+    ]
+  ],
+  "_from": "console-control-strings@1.1.0",
+  "_id": "console-control-strings@1.1.0",
+  "_inBundle": true,
+  "_integrity": "sha1-PXz0Rk22RG6mRL9LOVB/mFEAjo4=",
+  "_location": "/fsevents/console-control-strings",
+  "_phantomChildren": {},
+  "_requested": {
+    "type": "version",
+    "registry": true,
+    "raw": "console-control-strings@1.1.0",
+    "name": "console-control-strings",
+    "escapedName": "console-control-strings",
+    "rawSpec": "1.1.0",
+    "saveSpec": null,
+    "fetchSpec": "1.1.0"
+  },
+  "_requiredBy": [
+    "/fsevents/gauge",
+    "/fsevents/npmlog"
+  ],
+  "_resolved": "https://registry.npmjs.org/console-control-strings/-/console-control-strings-1.1.0.tgz",
+  "_spec": "1.1.0",
+  "_where": "/Users/eshanker/Code/fsevents",
+  "author": {
+    "name": "Rebecca Turner",
+    "email": "me@re-becca.org",
+    "url": "http://re-becca.org/"
+  },
+  "bugs": {
+    "url": "https://github.com/iarna/console-control-strings/issues"
+  },
+  "description": "A library of cross-platform tested terminal/console command strings for doing things like color and cursor positioning.  This is a subset of both ansi and vt100.  All control codes included work on both Windows & Unix-like OSes, except where noted.",
+  "devDependencies": {
+    "standard": "^7.1.2",
+    "tap": "^5.7.2"
+  },
+  "directories": {
+    "test": "test"
+  },
+  "files": [
+    "LICENSE",
+    "index.js"
+  ],
+  "homepage": "https://github.com/iarna/console-control-strings#readme",
+  "keywords": [],
+  "license": "ISC",
+  "main": "index.js",
+  "name": "console-control-strings",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/iarna/console-control-strings.git"
+  },
+  "scripts": {
+    "test": "standard && tap test/*.js"
+  },
+  "version": "1.1.0"
+}

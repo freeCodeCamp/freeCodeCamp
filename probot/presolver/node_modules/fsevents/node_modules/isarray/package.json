@@ -1,0 +1,76 @@
+{
+  "_args": [
+    [
+      "isarray@1.0.0",
+      "/Users/eshanker/Code/fsevents"
+    ]
+  ],
+  "_from": "isarray@1.0.0",
+  "_id": "isarray@1.0.0",
+  "_inBundle": true,
+  "_integrity": "sha1-u5NdSFgsuhaMBoNJV6VKPgcSTxE=",
+  "_location": "/fsevents/isarray",
+  "_phantomChildren": {},
+  "_requested": {
+    "type": "version",
+    "registry": true,
+    "raw": "isarray@1.0.0",
+    "name": "isarray",
+    "escapedName": "isarray",
+    "rawSpec": "1.0.0",
+    "saveSpec": null,
+    "fetchSpec": "1.0.0"
+  },
+  "_requiredBy": [
+    "/fsevents/readable-stream"
+  ],
+  "_resolved": "https://registry.npmjs.org/isarray/-/isarray-1.0.0.tgz",
+  "_spec": "1.0.0",
+  "_where": "/Users/eshanker/Code/fsevents",
+  "author": {
+    "name": "Julian Gruber",
+    "email": "mail@juliangruber.com",
+    "url": "http://juliangruber.com"
+  },
+  "bugs": {
+    "url": "https://github.com/juliangruber/isarray/issues"
+  },
+  "dependencies": {},
+  "description": "Array#isArray for older browsers",
+  "devDependencies": {
+    "tape": "~2.13.4"
+  },
+  "homepage": "https://github.com/juliangruber/isarray",
+  "keywords": [
+    "browser",
+    "isarray",
+    "array"
+  ],
+  "license": "MIT",
+  "main": "index.js",
+  "name": "isarray",
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/juliangruber/isarray.git"
+  },
+  "scripts": {
+    "test": "tape test.js"
+  },
+  "testling": {
+    "files": "test.js",
+    "browsers": [
+      "ie/8..latest",
+      "firefox/17..latest",
+      "firefox/nightly",
+      "chrome/22..latest",
+      "chrome/canary",
+      "opera/12..latest",
+      "opera/next",
+      "safari/5.1..latest",
+      "ipad/6.0..latest",
+      "iphone/6.0..latest",
+      "android-browser/4.2..latest"
+    ]
+  },
+  "version": "1.0.0"
+}

@@ -1,0 +1,3 @@
+rules:
+  no-console: "off"
+  strict: "off"

@@ -1,0 +1,93 @@
+{
+  "_from": "deep-extend@^0.5.1",
+  "_id": "deep-extend@0.5.1",
+  "_inBundle": true,
+  "_integrity": "sha512-N8vBdOa+DF7zkRrDCsaOXoCs/E2fJfx9B9MrKnnSiHNh4ws7eSys6YQE4KvT1cecKmOASYQBhbKjeuDD9lT81w==",
+  "_location": "/fsevents/deep-extend",
+  "_phantomChildren": {},
+  "_requested": {
+    "type": "range",
+    "registry": true,
+    "raw": "deep-extend@^0.5.1",
+    "name": "deep-extend",
+    "escapedName": "deep-extend",
+    "rawSpec": "^0.5.1",
+    "saveSpec": null,
+    "fetchSpec": "^0.5.1"
+  },
+  "_requiredBy": [
+    "/fsevents/rc"
+  ],
+  "_resolved": "https://registry.npmjs.org/deep-extend/-/deep-extend-0.5.1.tgz",
+  "_shasum": "b894a9dd90d3023fbf1c55a394fb858eb2066f1f",
+  "_spec": "deep-extend@^0.5.1",
+  "_where": "/Users/eshanker/Code/fsevents/node_modules/rc",
+  "author": {
+    "name": "Viacheslav Lotsmanov",
+    "email": "lotsmanov89@gmail.com"
+  },
+  "bugs": {
+    "url": "https://github.com/unclechu/node-deep-extend/issues"
+  },
+  "bundleDependencies": false,
+  "contributors": [
+    {
+      "name": "Romain Prieto",
+      "url": "https://github.com/rprieto"
+    },
+    {
+      "name": "Max Maximov",
+      "url": "https://github.com/maxmaximov"
+    },
+    {
+      "name": "Marshall Bowers",
+      "url": "https://github.com/maxdeviant"
+    },
+    {
+      "name": "Misha Wakerman",
+      "url": "https://github.com/mwakerman"
+    }
+  ],
+  "deprecated": false,
+  "description": "Recursive object extending",
+  "devDependencies": {
+    "mocha": "2.2.1",
+    "should": "5.2.0"
+  },
+  "engines": {
+    "iojs": ">=1.0.0",
+    "node": ">=0.10.0"
+  },
+  "files": [
+    "index.js",
+    "lib/"
+  ],
+  "homepage": "https://github.com/unclechu/node-deep-extend",
+  "keywords": [
+    "deep-extend",
+    "extend",
+    "deep",
+    "recursive",
+    "xtend",
+    "clone",
+    "merge",
+    "json"
+  ],
+  "license": "MIT",
+  "licenses": [
+    {
+      "type": "MIT",
+      "url": "https://raw.githubusercontent.com/unclechu/node-deep-extend/master/LICENSE"
+    }
+  ],
+  "main": "lib/deep-extend.js",
+  "name": "deep-extend",
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/unclechu/node-deep-extend.git"
+  },
+  "scripts": {
+    "test": "mocha"
+  },
+  "version": "0.5.1"
+}

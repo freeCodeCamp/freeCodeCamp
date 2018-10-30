@@ -1,0 +1,115 @@
+# watch -- Utilities for watching file trees in node.js
+
+## Install
+
+<pre>
+  npm install watch
+</pre>
+
+## Purpose
+
+The intention of this module is provide tools that make managing the watching of file & directory trees easier.
+
+#### watch.watchTree(root, [options,] callback)
+
+The first argument is the directory root you want to watch.
+
+The options object is passed to fs.watchFile but can also be used to provide two additional watchTree specific options:
+
+* `'ignoreDotFiles'` - When true this option means that when the file tree is walked it will ignore files that being with "."
+* `'filter'` - You can use this option to provide a function that returns true or false for each file and directory to decide whether or not that file/directory is included in the watcher.
+* `'interval' - Specifies the interval duration in milliseconds, the time period between polling for file changes.
+* `'ignoreUnreadableDir'` - When true, this options means that when a file can't be read, this file is silently skipped.
+* `'ignoreNotPermitted'` - When true, this options means that when a file can't be read due to permission issues, this file is silently skipped.
+* `'ignoreDirectoryPattern'` - When a regex pattern is set, e.g. /node_modules/, these directories are silently skipped.
+
+The callback takes 3 arguments. The first is the file that was modified. The second is the current stat object for that file and the third is the previous stat object.
+
+When a file is new the previous stat object is null.
+
+When watchTree is finished walking the tree and adding all the listeners it passes the file hash (keys are the file/directory names and the values are the current stat objects) as the first argument and null as both the previous and current stat object arguments.
+
+<pre>
+  watch.watchTree('/home/mikeal', function (f, curr, prev) {
+    if (typeof f == "object" && prev === null && curr === null) {
+      // Finished walking the tree
+    } else if (prev === null) {
+      // f is a new file
+    } else if (curr.nlink === 0) {
+      // f was removed
+    } else {
+      // f was changed
+    }
+  })
+</pre>
+
+### watch.unwatchTree(root)
+
+Unwatch a previously watched directory root using `watch.watchTree`.
+
+### watch.createMonitor(root, [options,] callback)
+
+This function creates an EventEmitter that gives notifications for different changes that happen to the file and directory tree under the given root argument.
+
+The options object is passed to watch.watchTree.
+
+The callback receives the monitor object.
+
+The monitor object contains a property, `files`, which is a hash of files and directories as keys with the current stat object as the value.
+
+The monitor has the following events.
+
+* `'created'` - New file has been created. Two arguments, the filename and the stat object.
+* `'removed'` - A file has been moved or deleted. Two arguments, the filename and the stat object for the fd.
+* `'changed'` - A file has been changed. Three arguments, the filename, the current stat object, and the previous stat object.
+
+The monitor can be stopped using `.stop` (calls `unwatchTree`).
+
+<pre>
+  var watch = require('watch')
+  watch.createMonitor('/home/mikeal', function (monitor) {
+    monitor.files['/home/mikeal/.zshrc'] // Stat object for my zshrc.
+    monitor.on("created", function (f, stat) {
+      // Handle new files
+    })
+    monitor.on("changed", function (f, curr, prev) {
+      // Handle file changes
+    })
+    monitor.on("removed", function (f, stat) {
+      // Handle removed files
+    })
+    monitor.stop(); // Stop watching
+  })
+</pre>
+
+### CLI
+
+This module includes a simple command line interface, which you can install with `npm install watch -g`.
+
+
+```
+Usage: watch <command> [...directory] [OPTIONS]
+
+OPTIONS:
+    --wait=<seconds>
+        Duration, in seconds, that watching will be disabled
+        after running <command>. Setting this option will
+        throttle calls to <command> for the specified duration.
+
+    --filter=<file>
+        Path to a require-able .js file that exports a filter
+        function to be passed to watchTreeOptions.filter.
+        Path is resolved relative to process.cwd().
+
+    --interval=<seconds>
+        Specifies the interval duration in seconds, the time period between polling for file changes.
+
+    --ignoreDotFiles, -d
+        Ignores dot or hidden files in the watch [directory].
+
+     --ignoreUnreadable, -u
+        Silently ignores files that cannot be read within the
+        watch [directory].
+```
+
+It will watch the given directories (defaults to the current working directory) with `watchTree` and run the given command every time a file changes.

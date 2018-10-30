@@ -1,0 +1,13 @@
+v1.0.0  --  2015.12.04
+- autoBind changes:
+  - replace `bindTo` argument with options and `resolveContext` option
+	- Add support `overwriteDefinition`
+- Introduce IE11 bug workaround in `lazy` handler
+
+v0.1.1  --  2014.04.24
+- Add `autoBind` and `lazy` utilities
+- Allow to pass other options to be merged onto created descriptor.
+  Useful when used with other custom utilties
+
+v0.1.0  --  2013.06.20
+Initial (derived from es5-ext project)

@@ -1,0 +1,68 @@
+{
+  "_args": [
+    [
+      "safe-buffer@5.1.1",
+      "/Users/eshanker/Code/fsevents"
+    ]
+  ],
+  "_from": "safe-buffer@5.1.1",
+  "_id": "safe-buffer@5.1.1",
+  "_inBundle": true,
+  "_integrity": "sha512-kKvNJn6Mm93gAczWVJg7wH+wGYWNrDHdWvpUmHyEsgCtIwwo3bqPtV4tR5tuPaUhTOo/kvhVwd8XwwOllGYkbg==",
+  "_location": "/fsevents/safe-buffer",
+  "_phantomChildren": {},
+  "_requested": {
+    "type": "version",
+    "registry": true,
+    "raw": "safe-buffer@5.1.1",
+    "name": "safe-buffer",
+    "escapedName": "safe-buffer",
+    "rawSpec": "5.1.1",
+    "saveSpec": null,
+    "fetchSpec": "5.1.1"
+  },
+  "_requiredBy": [
+    "/fsevents/minipass",
+    "/fsevents/readable-stream",
+    "/fsevents/string_decoder",
+    "/fsevents/tar"
+  ],
+  "_resolved": "https://registry.npmjs.org/safe-buffer/-/safe-buffer-5.1.1.tgz",
+  "_spec": "5.1.1",
+  "_where": "/Users/eshanker/Code/fsevents",
+  "author": {
+    "name": "Feross Aboukhadijeh",
+    "email": "feross@feross.org",
+    "url": "http://feross.org"
+  },
+  "bugs": {
+    "url": "https://github.com/feross/safe-buffer/issues"
+  },
+  "description": "Safer Node.js Buffer API",
+  "devDependencies": {
+    "standard": "*",
+    "tape": "^4.0.0",
+    "zuul": "^3.0.0"
+  },
+  "homepage": "https://github.com/feross/safe-buffer",
+  "keywords": [
+    "buffer",
+    "buffer allocate",
+    "node security",
+    "safe",
+    "safe-buffer",
+    "security",
+    "uninitialized"
+  ],
+  "license": "MIT",
+  "main": "index.js",
+  "name": "safe-buffer",
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/feross/safe-buffer.git"
+  },
+  "scripts": {
+    "test": "standard && tape test.js"
+  },
+  "version": "5.1.1"
+}

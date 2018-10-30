@@ -1,0 +1,78 @@
+{
+  "_args": [
+    [
+      "path-is-absolute@1.0.1",
+      "/Users/eshanker/Code/fsevents"
+    ]
+  ],
+  "_from": "path-is-absolute@1.0.1",
+  "_id": "path-is-absolute@1.0.1",
+  "_inBundle": true,
+  "_integrity": "sha1-F0uSaHNVNP+8es5r9TpanhtcX18=",
+  "_location": "/fsevents/path-is-absolute",
+  "_phantomChildren": {},
+  "_requested": {
+    "type": "version",
+    "registry": true,
+    "raw": "path-is-absolute@1.0.1",
+    "name": "path-is-absolute",
+    "escapedName": "path-is-absolute",
+    "rawSpec": "1.0.1",
+    "saveSpec": null,
+    "fetchSpec": "1.0.1"
+  },
+  "_requiredBy": [
+    "/fsevents/glob"
+  ],
+  "_resolved": "https://registry.npmjs.org/path-is-absolute/-/path-is-absolute-1.0.1.tgz",
+  "_spec": "1.0.1",
+  "_where": "/Users/eshanker/Code/fsevents",
+  "author": {
+    "name": "Sindre Sorhus",
+    "email": "sindresorhus@gmail.com",
+    "url": "sindresorhus.com"
+  },
+  "bugs": {
+    "url": "https://github.com/sindresorhus/path-is-absolute/issues"
+  },
+  "description": "Node.js 0.12 path.isAbsolute() ponyfill",
+  "devDependencies": {
+    "xo": "^0.16.0"
+  },
+  "engines": {
+    "node": ">=0.10.0"
+  },
+  "files": [
+    "index.js"
+  ],
+  "homepage": "https://github.com/sindresorhus/path-is-absolute#readme",
+  "keywords": [
+    "path",
+    "paths",
+    "file",
+    "dir",
+    "absolute",
+    "isabsolute",
+    "is-absolute",
+    "built-in",
+    "util",
+    "utils",
+    "core",
+    "ponyfill",
+    "polyfill",
+    "shim",
+    "is",
+    "detect",
+    "check"
+  ],
+  "license": "MIT",
+  "name": "path-is-absolute",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/sindresorhus/path-is-absolute.git"
+  },
+  "scripts": {
+    "test": "xo && node test.js"
+  },
+  "version": "1.0.1"
+}

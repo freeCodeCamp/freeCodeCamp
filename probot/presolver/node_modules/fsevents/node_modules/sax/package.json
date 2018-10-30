@@ -1,0 +1,64 @@
+{
+  "_args": [
+    [
+      "sax@1.2.4",
+      "/Users/eshanker/Code/fsevents"
+    ]
+  ],
+  "_from": "sax@1.2.4",
+  "_id": "sax@1.2.4",
+  "_inBundle": true,
+  "_integrity": "sha512-NqVDv9TpANUjFm0N8uM5GxL36UgKi9/atZw+x7YFnQ8ckwFGKrl4xX4yWtrey3UJm5nP1kUbnYgLopqWNSRhWw==",
+  "_location": "/fsevents/sax",
+  "_phantomChildren": {},
+  "_requested": {
+    "type": "version",
+    "registry": true,
+    "raw": "sax@1.2.4",
+    "name": "sax",
+    "escapedName": "sax",
+    "rawSpec": "1.2.4",
+    "saveSpec": null,
+    "fetchSpec": "1.2.4"
+  },
+  "_requiredBy": [
+    "/fsevents/needle"
+  ],
+  "_resolved": "https://registry.npmjs.org/sax/-/sax-1.2.4.tgz",
+  "_spec": "1.2.4",
+  "_where": "/Users/eshanker/Code/fsevents",
+  "author": {
+    "name": "Isaac Z. Schlueter",
+    "email": "i@izs.me",
+    "url": "http://blog.izs.me/"
+  },
+  "bugs": {
+    "url": "https://github.com/isaacs/sax-js/issues"
+  },
+  "description": "An evented streaming XML parser in JavaScript",
+  "devDependencies": {
+    "standard": "^8.6.0",
+    "tap": "^10.5.1"
+  },
+  "files": [
+    "lib/sax.js",
+    "LICENSE",
+    "README.md"
+  ],
+  "homepage": "https://github.com/isaacs/sax-js#readme",
+  "license": "ISC",
+  "main": "lib/sax.js",
+  "name": "sax",
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/isaacs/sax-js.git"
+  },
+  "scripts": {
+    "postpublish": "git push origin --all; git push origin --tags",
+    "posttest": "standard -F test/*.js lib/*.js",
+    "postversion": "npm publish",
+    "preversion": "npm test",
+    "test": "tap test/*.js --cov -j4"
+  },
+  "version": "1.2.4"
+}

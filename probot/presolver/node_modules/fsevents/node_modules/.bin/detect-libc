@@ -1,0 +1,1 @@
+../detect-libc/bin/detect-libc.js

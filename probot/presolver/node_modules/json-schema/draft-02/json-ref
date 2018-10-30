@@ -1,0 +1,26 @@
+{
+	"$schema" : "http://json-schema.org/draft-02/hyper-schema#",
+	"id" : "http://json-schema.org/draft-02/json-ref#",
+	
+	"items" : {"$ref" : "#"},
+	"additionalProperties" : {"$ref" : "#"},
+	
+	"links" : [
+		{
+			"href" : "{$ref}",
+			"rel" : "full"
+		},
+		
+		{
+			"href" : "{$schema}",
+			"rel" : "describedby"
+		},
+		
+		{
+			"href" : "{id}",
+			"rel" : "self"
+		}
+	],
+	
+	"fragmentResolution" : "dot-delimited"
+}

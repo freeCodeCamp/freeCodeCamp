@@ -1,0 +1,11 @@
+{
+	"rules": {
+		"id-length": 0,
+		"max-lines": 0,
+		"max-statements-per-line": [2, { "max": 3 }],
+		"max-nested-callbacks": [2, 3],
+		"max-statements": 0,
+		"no-implicit-coercion": [1],
+		"no-invalid-this": [1]
+	}
+}

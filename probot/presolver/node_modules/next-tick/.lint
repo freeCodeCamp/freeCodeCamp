@@ -1,0 +1,14 @@
+@root
+
+module
+es5
+
+indent 2
+maxlen 100
+tabs
+
+ass
+bitwise
+nomen
+plusplus
+predef+ process, setImmediate, setTimeout, clearTimeout, document, MutationObserver, WebKitMutationObserver

@@ -1,0 +1,3 @@
+[submodule "support/handlebars"]
+	path = support/handlebars
+	url = http://github.com/wycats/handlebars.js.git

@@ -1,0 +1,43 @@
+
+{
+  "Commands:": "Perintah:",
+  "Options:": "Pilihan:",
+  "Examples:": "Contoh:",
+  "boolean": "boolean",
+  "count": "jumlah",
+  "number": "nomor",
+  "string": "string",
+  "array": "larik",
+  "required": "diperlukan",
+  "default:": "bawaan:",
+  "aliases:": "istilah lain:",
+  "choices:": "pilihan:",
+  "generated-value": "nilai-yang-dihasilkan",
+  "Not enough non-option arguments: got %s, need at least %s": "Argumen wajib kurang: hanya %s, minimal %s",
+  "Too many non-option arguments: got %s, maximum of %s": "Terlalu banyak argumen wajib: ada %s, maksimal %s",
+  "Missing argument value: %s": {
+    "one": "Kurang argumen: %s",
+    "other": "Kurang argumen: %s"
+  },
+  "Missing required argument: %s": {
+    "one": "Kurang argumen wajib: %s",
+    "other": "Kurang argumen wajib: %s"
+  },
+  "Unknown argument: %s": {
+    "one": "Argumen tak diketahui: %s",
+    "other": "Argumen tak diketahui: %s"
+  },
+  "Invalid values:": "Nilai-nilai tidak valid:",
+  "Argument: %s, Given: %s, Choices: %s": "Argumen: %s, Diberikan: %s, Pilihan: %s",
+  "Argument check failed: %s": "Pemeriksaan argument gagal: %s",
+  "Implications failed:": "Implikasi gagal:",
+  "Not enough arguments following: %s": "Kurang argumen untuk: %s",
+  "Invalid JSON config file: %s": "Berkas konfigurasi JSON tidak valid: %s",
+  "Path to JSON config file": "Alamat berkas konfigurasi JSON",
+  "Show help": "Lihat bantuan",
+  "Show version number": "Lihat nomor versi",
+  "Did you mean %s?": "Maksud Anda: %s?",
+  "Arguments %s and %s are mutually exclusive" : "Argumen %s dan %s saling eksklusif",
+  "Positionals:": "Posisional-posisional:",
+  "command": "perintah"
+}

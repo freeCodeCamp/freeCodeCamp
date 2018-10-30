@@ -1,0 +1,22 @@
+{
+  "extends": "airbnb-base",
+  "globals": {
+    "describe": false,
+    "it": false,
+    "before": false,
+    "beforeEach": false,
+    "after": false,
+    "afterEach": false,
+    "expect": false
+  },
+  "rules": {
+    "no-underscore-dangle": "off",
+    "no-param-reassign": "off",
+    "no-unused-vars": [
+      "error",
+      {
+        "argsIgnorePattern": "next|res|req|err"
+      }
+    ]
+  }
+}

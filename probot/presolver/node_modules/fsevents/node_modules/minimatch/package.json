@@ -1,0 +1,67 @@
+{
+  "_args": [
+    [
+      "minimatch@3.0.4",
+      "/Users/eshanker/Code/fsevents"
+    ]
+  ],
+  "_from": "minimatch@3.0.4",
+  "_id": "minimatch@3.0.4",
+  "_inBundle": true,
+  "_integrity": "sha512-yJHVQEhyqPLUTgt9B83PXu6W3rx4MvvHvSUvToogpwoGDOUQ+yDrR0HRot+yOCdCO7u4hX3pWft6kWBBcqh0UA==",
+  "_location": "/fsevents/minimatch",
+  "_phantomChildren": {},
+  "_requested": {
+    "type": "version",
+    "registry": true,
+    "raw": "minimatch@3.0.4",
+    "name": "minimatch",
+    "escapedName": "minimatch",
+    "rawSpec": "3.0.4",
+    "saveSpec": null,
+    "fetchSpec": "3.0.4"
+  },
+  "_requiredBy": [
+    "/fsevents/glob",
+    "/fsevents/ignore-walk"
+  ],
+  "_resolved": "https://registry.npmjs.org/minimatch/-/minimatch-3.0.4.tgz",
+  "_spec": "3.0.4",
+  "_where": "/Users/eshanker/Code/fsevents",
+  "author": {
+    "name": "Isaac Z. Schlueter",
+    "email": "i@izs.me",
+    "url": "http://blog.izs.me"
+  },
+  "bugs": {
+    "url": "https://github.com/isaacs/minimatch/issues"
+  },
+  "dependencies": {
+    "brace-expansion": "^1.1.7"
+  },
+  "description": "a glob matcher in javascript",
+  "devDependencies": {
+    "tap": "^10.3.2"
+  },
+  "engines": {
+    "node": "*"
+  },
+  "files": [
+    "minimatch.js"
+  ],
+  "homepage": "https://github.com/isaacs/minimatch#readme",
+  "license": "ISC",
+  "main": "minimatch.js",
+  "name": "minimatch",
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/isaacs/minimatch.git"
+  },
+  "scripts": {
+    "postpublish": "git push origin --all; git push origin --tags",
+    "postversion": "npm publish",
+    "preversion": "npm test",
+    "test": "tap test/*.js --cov"
+  },
+  "version": "3.0.4"
+}

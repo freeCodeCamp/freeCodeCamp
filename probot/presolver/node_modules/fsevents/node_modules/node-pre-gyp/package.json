@@ -1,0 +1,87 @@
+{
+  "_from": "node-pre-gyp@^0.10.0",
+  "_id": "node-pre-gyp@0.10.0",
+  "_inBundle": true,
+  "_integrity": "sha512-G7kEonQLRbcA/mOoFoxvlMrw6Q6dPf92+t/l0DFSMuSlDoWaI9JWIyPwK0jyE1bph//CUEL65/Fz1m2vJbmjQQ==",
+  "_location": "/fsevents/node-pre-gyp",
+  "_phantomChildren": {},
+  "_requested": {
+    "type": "range",
+    "registry": true,
+    "raw": "node-pre-gyp@^0.10.0",
+    "name": "node-pre-gyp",
+    "escapedName": "node-pre-gyp",
+    "rawSpec": "^0.10.0",
+    "saveSpec": null,
+    "fetchSpec": "^0.10.0"
+  },
+  "_requiredBy": [
+    "/fsevents"
+  ],
+  "_resolved": "https://registry.npmjs.org/node-pre-gyp/-/node-pre-gyp-0.10.0.tgz",
+  "_shasum": "6e4ef5bb5c5203c6552448828c852c40111aac46",
+  "_spec": "node-pre-gyp@^0.10.0",
+  "_where": "/Users/eshanker/Code/fsevents",
+  "author": {
+    "name": "Dane Springmeyer",
+    "email": "dane@mapbox.com"
+  },
+  "bin": {
+    "node-pre-gyp": "./bin/node-pre-gyp"
+  },
+  "bugs": {
+    "url": "https://github.com/mapbox/node-pre-gyp/issues"
+  },
+  "bundleDependencies": false,
+  "dependencies": {
+    "detect-libc": "^1.0.2",
+    "mkdirp": "^0.5.1",
+    "needle": "^2.2.0",
+    "nopt": "^4.0.1",
+    "npm-packlist": "^1.1.6",
+    "npmlog": "^4.0.2",
+    "rc": "^1.1.7",
+    "rimraf": "^2.6.1",
+    "semver": "^5.3.0",
+    "tar": "^4"
+  },
+  "deprecated": false,
+  "description": "Node.js native addon binary install tool",
+  "devDependencies": {
+    "aws-sdk": "^2.28.0",
+    "jshint": "^2.9.5",
+    "nock": "^9.2.3",
+    "retire": "^1.2.12",
+    "tape": "^4.6.3"
+  },
+  "homepage": "https://github.com/mapbox/node-pre-gyp#readme",
+  "jshintConfig": {
+    "node": true,
+    "globalstrict": true,
+    "undef": true,
+    "unused": false,
+    "noarg": true
+  },
+  "keywords": [
+    "native",
+    "addon",
+    "module",
+    "c",
+    "c++",
+    "bindings",
+    "binary"
+  ],
+  "license": "BSD-3-Clause",
+  "main": "./lib/node-pre-gyp.js",
+  "name": "node-pre-gyp",
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/mapbox/node-pre-gyp.git"
+  },
+  "scripts": {
+    "pretest": "jshint test/build.test.js test/s3_setup.test.js test/versioning.test.js test/fetch.test.js lib lib/util scripts bin/node-pre-gyp",
+    "test": "jshint lib lib/util scripts bin/node-pre-gyp && tape test/*test.js",
+    "update-crosswalk": "node scripts/abi_crosswalk.js"
+  },
+  "version": "0.10.0"
+}

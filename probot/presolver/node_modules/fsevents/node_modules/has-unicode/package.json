@@ -1,0 +1,61 @@
+{
+  "_args": [
+    [
+      "has-unicode@2.0.1",
+      "/Users/eshanker/Code/fsevents"
+    ]
+  ],
+  "_from": "has-unicode@2.0.1",
+  "_id": "has-unicode@2.0.1",
+  "_inBundle": true,
+  "_integrity": "sha1-4Ob+aijPUROIVeCG0Wkedx3iqLk=",
+  "_location": "/fsevents/has-unicode",
+  "_phantomChildren": {},
+  "_requested": {
+    "type": "version",
+    "registry": true,
+    "raw": "has-unicode@2.0.1",
+    "name": "has-unicode",
+    "escapedName": "has-unicode",
+    "rawSpec": "2.0.1",
+    "saveSpec": null,
+    "fetchSpec": "2.0.1"
+  },
+  "_requiredBy": [
+    "/fsevents/gauge"
+  ],
+  "_resolved": "https://registry.npmjs.org/has-unicode/-/has-unicode-2.0.1.tgz",
+  "_spec": "2.0.1",
+  "_where": "/Users/eshanker/Code/fsevents",
+  "author": {
+    "name": "Rebecca Turner",
+    "email": "me@re-becca.org"
+  },
+  "bugs": {
+    "url": "https://github.com/iarna/has-unicode/issues"
+  },
+  "description": "Try to guess if your terminal supports unicode",
+  "devDependencies": {
+    "require-inject": "^1.3.0",
+    "tap": "^2.3.1"
+  },
+  "files": [
+    "index.js"
+  ],
+  "homepage": "https://github.com/iarna/has-unicode",
+  "keywords": [
+    "unicode",
+    "terminal"
+  ],
+  "license": "ISC",
+  "main": "index.js",
+  "name": "has-unicode",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/iarna/has-unicode.git"
+  },
+  "scripts": {
+    "test": "tap test/*.js"
+  },
+  "version": "2.0.1"
+}

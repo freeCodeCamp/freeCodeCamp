@@ -1,0 +1,1 @@
+../handlebars/bin/handlebars

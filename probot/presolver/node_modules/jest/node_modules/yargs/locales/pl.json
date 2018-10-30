@@ -1,0 +1,42 @@
+{
+  "Commands:": "Polecenia:",
+  "Options:": "Opcje:",
+  "Examples:": "Przykłady:",
+  "boolean": "boolean",
+  "count": "ilość",
+  "string": "ciąg znaków",
+  "number": "liczba",
+  "array": "tablica",
+  "required": "wymagany",
+  "default:": "domyślny:",
+  "choices:": "dostępne:",
+  "aliases:": "aliasy:",
+  "generated-value": "wygenerowana-wartość",
+  "Not enough non-option arguments: got %s, need at least %s": "Niewystarczająca ilość argumentów: otrzymano %s, wymagane co najmniej %s",
+  "Too many non-option arguments: got %s, maximum of %s": "Zbyt duża ilość argumentów: otrzymano %s, wymagane co najwyżej %s",
+  "Missing argument value: %s": {
+    "one": "Brak wartości dla argumentu: %s",
+    "other": "Brak wartości dla argumentów: %s"
+  },
+  "Missing required argument: %s": {
+    "one": "Brak wymaganego argumentu: %s",
+    "other": "Brak wymaganych argumentów: %s"
+  },
+  "Unknown argument: %s": {
+    "one": "Nieznany argument: %s",
+    "other": "Nieznane argumenty: %s"
+  },
+  "Invalid values:": "Nieprawidłowe wartości:",
+  "Argument: %s, Given: %s, Choices: %s": "Argument: %s, Otrzymano: %s, Dostępne: %s",
+  "Argument check failed: %s": "Weryfikacja argumentów nie powiodła się: %s",
+  "Implications failed:": "Założenia nie zostały spełnione:",
+  "Not enough arguments following: %s": "Niewystarczająca ilość argumentów następujących po: %s",
+  "Invalid JSON config file: %s": "Nieprawidłowy plik konfiguracyjny JSON: %s",
+  "Path to JSON config file": "Ścieżka do pliku konfiguracyjnego JSON",
+  "Show help": "Pokaż pomoc",
+  "Show version number": "Pokaż numer wersji",
+  "Did you mean %s?": "Czy chodziło Ci o %s?",
+  "Arguments %s and %s are mutually exclusive": "Argumenty %s i %s wzajemnie się wykluczają",
+  "Positionals:": "Pozycyjne:",
+  "command": "polecenie"
+}

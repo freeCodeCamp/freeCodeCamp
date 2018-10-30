@@ -1,0 +1,1 @@
+../uglify-js/bin/uglifyjs

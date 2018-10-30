@@ -1,0 +1,65 @@
+{
+  "_args": [
+    [
+      "fs-minipass@1.2.5",
+      "/Users/eshanker/Code/fsevents"
+    ]
+  ],
+  "_from": "fs-minipass@1.2.5",
+  "_id": "fs-minipass@1.2.5",
+  "_inBundle": true,
+  "_integrity": "sha512-JhBl0skXjUPCFH7x6x61gQxrKyXsxB5gcgePLZCwfyCGGsTISMoIeObbrvVeP6Xmyaudw4TT43qV2Gz+iyd2oQ==",
+  "_location": "/fsevents/fs-minipass",
+  "_phantomChildren": {},
+  "_requested": {
+    "type": "version",
+    "registry": true,
+    "raw": "fs-minipass@1.2.5",
+    "name": "fs-minipass",
+    "escapedName": "fs-minipass",
+    "rawSpec": "1.2.5",
+    "saveSpec": null,
+    "fetchSpec": "1.2.5"
+  },
+  "_requiredBy": [
+    "/fsevents/tar"
+  ],
+  "_resolved": "https://registry.npmjs.org/fs-minipass/-/fs-minipass-1.2.5.tgz",
+  "_spec": "1.2.5",
+  "_where": "/Users/eshanker/Code/fsevents",
+  "author": {
+    "name": "Isaac Z. Schlueter",
+    "email": "i@izs.me",
+    "url": "http://blog.izs.me/"
+  },
+  "bugs": {
+    "url": "https://github.com/npm/fs-minipass/issues"
+  },
+  "dependencies": {
+    "minipass": "^2.2.1"
+  },
+  "description": "fs read and write streams based on minipass",
+  "devDependencies": {
+    "mutate-fs": "^2.0.1",
+    "tap": "^10.7.2"
+  },
+  "files": [
+    "index.js"
+  ],
+  "homepage": "https://github.com/npm/fs-minipass#readme",
+  "keywords": [],
+  "license": "ISC",
+  "main": "index.js",
+  "name": "fs-minipass",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/npm/fs-minipass.git"
+  },
+  "scripts": {
+    "postpublish": "git push origin --all; git push origin --tags",
+    "postversion": "npm publish",
+    "preversion": "npm test",
+    "test": "tap test/*.js --100 -J"
+  },
+  "version": "1.2.5"
+}

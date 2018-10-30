@@ -1,0 +1,65 @@
+{
+  "_args": [
+    [
+      "aproba@1.2.0",
+      "/Users/eshanker/Code/fsevents"
+    ]
+  ],
+  "_from": "aproba@1.2.0",
+  "_id": "aproba@1.2.0",
+  "_inBundle": true,
+  "_integrity": "sha512-Y9J6ZjXtoYh8RnXVCMOU/ttDmk1aBjunq9vO0ta5x85WDQiQfUF9sIPBITdbiiIVcBo03Hi3jMxigBtsddlXRw==",
+  "_location": "/fsevents/aproba",
+  "_phantomChildren": {},
+  "_requested": {
+    "type": "version",
+    "registry": true,
+    "raw": "aproba@1.2.0",
+    "name": "aproba",
+    "escapedName": "aproba",
+    "rawSpec": "1.2.0",
+    "saveSpec": null,
+    "fetchSpec": "1.2.0"
+  },
+  "_requiredBy": [
+    "/fsevents/gauge"
+  ],
+  "_resolved": "https://registry.npmjs.org/aproba/-/aproba-1.2.0.tgz",
+  "_spec": "1.2.0",
+  "_where": "/Users/eshanker/Code/fsevents",
+  "author": {
+    "name": "Rebecca Turner",
+    "email": "me@re-becca.org"
+  },
+  "bugs": {
+    "url": "https://github.com/iarna/aproba/issues"
+  },
+  "dependencies": {},
+  "description": "A ridiculously light-weight argument validator (now browser friendly)",
+  "devDependencies": {
+    "standard": "^10.0.3",
+    "tap": "^10.0.2"
+  },
+  "directories": {
+    "test": "test"
+  },
+  "files": [
+    "index.js"
+  ],
+  "homepage": "https://github.com/iarna/aproba",
+  "keywords": [
+    "argument",
+    "validate"
+  ],
+  "license": "ISC",
+  "main": "index.js",
+  "name": "aproba",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/iarna/aproba.git"
+  },
+  "scripts": {
+    "test": "standard && tap -j3 test/*.js"
+  },
+  "version": "1.2.0"
+}

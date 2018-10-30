@@ -1,0 +1,69 @@
+{
+  "_args": [
+    [
+      "signal-exit@3.0.2",
+      "/Users/eshanker/Code/fsevents"
+    ]
+  ],
+  "_from": "signal-exit@3.0.2",
+  "_id": "signal-exit@3.0.2",
+  "_inBundle": true,
+  "_integrity": "sha1-tf3AjxKH6hF4Yo5BXiUTK3NkbG0=",
+  "_location": "/fsevents/signal-exit",
+  "_phantomChildren": {},
+  "_requested": {
+    "type": "version",
+    "registry": true,
+    "raw": "signal-exit@3.0.2",
+    "name": "signal-exit",
+    "escapedName": "signal-exit",
+    "rawSpec": "3.0.2",
+    "saveSpec": null,
+    "fetchSpec": "3.0.2"
+  },
+  "_requiredBy": [
+    "/fsevents/gauge"
+  ],
+  "_resolved": "https://registry.npmjs.org/signal-exit/-/signal-exit-3.0.2.tgz",
+  "_spec": "3.0.2",
+  "_where": "/Users/eshanker/Code/fsevents",
+  "author": {
+    "name": "Ben Coe",
+    "email": "ben@npmjs.com"
+  },
+  "bugs": {
+    "url": "https://github.com/tapjs/signal-exit/issues"
+  },
+  "description": "when you want to fire an event no matter how a process exits.",
+  "devDependencies": {
+    "chai": "^3.5.0",
+    "coveralls": "^2.11.10",
+    "nyc": "^8.1.0",
+    "standard": "^7.1.2",
+    "standard-version": "^2.3.0",
+    "tap": "^8.0.1"
+  },
+  "files": [
+    "index.js",
+    "signals.js"
+  ],
+  "homepage": "https://github.com/tapjs/signal-exit",
+  "keywords": [
+    "signal",
+    "exit"
+  ],
+  "license": "ISC",
+  "main": "index.js",
+  "name": "signal-exit",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/tapjs/signal-exit.git"
+  },
+  "scripts": {
+    "coverage": "nyc report --reporter=text-lcov | coveralls",
+    "pretest": "standard",
+    "release": "standard-version",
+    "test": "tap --timeout=240 ./test/*.js --cov"
+  },
+  "version": "3.0.2"
+}

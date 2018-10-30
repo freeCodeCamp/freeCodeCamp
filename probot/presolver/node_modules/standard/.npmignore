@@ -1,0 +1,10 @@
+test/
+docs/logos/
+tmp/
+bin/update-authors.sh
+.travis.yml
+badge.png
+badge.svg
+CONTRIBUTING.md
+sticker.png
+sticker.svg

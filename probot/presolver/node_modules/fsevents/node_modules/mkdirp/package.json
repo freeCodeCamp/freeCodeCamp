@@ -1,0 +1,66 @@
+{
+  "_args": [
+    [
+      "mkdirp@0.5.1",
+      "/Users/eshanker/Code/fsevents"
+    ]
+  ],
+  "_from": "mkdirp@0.5.1",
+  "_id": "mkdirp@0.5.1",
+  "_inBundle": true,
+  "_integrity": "sha1-MAV0OOrGz3+MR2fzhkjWaX11yQM=",
+  "_location": "/fsevents/mkdirp",
+  "_phantomChildren": {},
+  "_requested": {
+    "type": "version",
+    "registry": true,
+    "raw": "mkdirp@0.5.1",
+    "name": "mkdirp",
+    "escapedName": "mkdirp",
+    "rawSpec": "0.5.1",
+    "saveSpec": null,
+    "fetchSpec": "0.5.1"
+  },
+  "_requiredBy": [
+    "/fsevents/node-pre-gyp",
+    "/fsevents/tar"
+  ],
+  "_resolved": "https://registry.npmjs.org/mkdirp/-/mkdirp-0.5.1.tgz",
+  "_spec": "0.5.1",
+  "_where": "/Users/eshanker/Code/fsevents",
+  "author": {
+    "name": "James Halliday",
+    "email": "mail@substack.net",
+    "url": "http://substack.net"
+  },
+  "bin": {
+    "mkdirp": "bin/cmd.js"
+  },
+  "bugs": {
+    "url": "https://github.com/substack/node-mkdirp/issues"
+  },
+  "dependencies": {
+    "minimist": "0.0.8"
+  },
+  "description": "Recursively mkdir, like `mkdir -p`",
+  "devDependencies": {
+    "mock-fs": "2 >=2.7.0",
+    "tap": "1"
+  },
+  "homepage": "https://github.com/substack/node-mkdirp#readme",
+  "keywords": [
+    "mkdir",
+    "directory"
+  ],
+  "license": "MIT",
+  "main": "index.js",
+  "name": "mkdirp",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/substack/node-mkdirp.git"
+  },
+  "scripts": {
+    "test": "tap test/*.js"
+  },
+  "version": "0.5.1"
+}

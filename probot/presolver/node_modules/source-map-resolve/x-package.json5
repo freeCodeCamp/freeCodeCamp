@@ -1,0 +1,68 @@
+{
+  name: "source-map-resolve",
+  version: "0.5.2",
+  author: "Simon Lydell",
+  license: "MIT",
+  description: "Resolve the source map and/or sources for a generated file.",
+  keywords: [
+    "source map",
+    "sourcemap",
+    "source",
+    "map",
+    "sourceMappingURL",
+    "resolve",
+    "resolver",
+    "locate",
+    "locator",
+    "find",
+    "finder"
+  ],
+  overlay: {
+    npm: {
+      repository: "lydell/source-map-resolve",
+      main: "lib/source-map-resolve-node.js",
+      browser: "source-map-resolve.js",
+      scripts: {
+        lint: "jshint lib/ test/",
+        unit: "node test/source-map-resolve.js && node test/windows.js",
+        test: "npm run lint && npm run unit",
+        build: "node generate-source-map-resolve.js"
+      },
+      dependencies: {
+        "atob": "^2.1.1",
+        "decode-uri-component": "^0.2.0",
+        "resolve-url": "^0.2.1",
+        "source-map-url": "^0.4.0",
+        "urix": "^0.1.0"
+      },
+      devDependencies: {
+        "Base64": "1.0.1",
+        "jshint": "2.9.5",
+        "setimmediate": "1.0.5",
+        "simple-asyncify": "1.0.0",
+        "tape": "4.9.0"
+      }
+    },
+    component: {
+      repo: "lydell/source-map-resolve",
+      main: "source-map-resolve.js",
+      scripts: [
+        "source-map-resolve.js"
+      ],
+      dependencies: {
+        "lydell/source-map-url": "~0.4.0",
+        "lydell/resolve-url": "~0.2.1"
+      }
+    },
+    bower: {
+      authors: ["Simon Lydell"],
+      ignore: [
+        ".*"
+      ],
+      dependencies: {
+        "source-map-url": "^0.4.0",
+        "resolve-url": "^0.2.1"
+      }
+    }
+  }
+}

@@ -1,0 +1,70 @@
+{
+  "_args": [
+    [
+      "once@1.4.0",
+      "/Users/eshanker/Code/fsevents"
+    ]
+  ],
+  "_from": "once@1.4.0",
+  "_id": "once@1.4.0",
+  "_inBundle": true,
+  "_integrity": "sha1-WDsap3WWHUsROsF9nFC6753Xa9E=",
+  "_location": "/fsevents/once",
+  "_phantomChildren": {},
+  "_requested": {
+    "type": "version",
+    "registry": true,
+    "raw": "once@1.4.0",
+    "name": "once",
+    "escapedName": "once",
+    "rawSpec": "1.4.0",
+    "saveSpec": null,
+    "fetchSpec": "1.4.0"
+  },
+  "_requiredBy": [
+    "/fsevents/glob",
+    "/fsevents/inflight"
+  ],
+  "_resolved": "https://registry.npmjs.org/once/-/once-1.4.0.tgz",
+  "_spec": "1.4.0",
+  "_where": "/Users/eshanker/Code/fsevents",
+  "author": {
+    "name": "Isaac Z. Schlueter",
+    "email": "i@izs.me",
+    "url": "http://blog.izs.me/"
+  },
+  "bugs": {
+    "url": "https://github.com/isaacs/once/issues"
+  },
+  "dependencies": {
+    "wrappy": "1"
+  },
+  "description": "Run a function exactly one time",
+  "devDependencies": {
+    "tap": "^7.0.1"
+  },
+  "directories": {
+    "test": "test"
+  },
+  "files": [
+    "once.js"
+  ],
+  "homepage": "https://github.com/isaacs/once#readme",
+  "keywords": [
+    "once",
+    "function",
+    "one",
+    "single"
+  ],
+  "license": "ISC",
+  "main": "once.js",
+  "name": "once",
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/isaacs/once.git"
+  },
+  "scripts": {
+    "test": "tap test/*.js"
+  },
+  "version": "1.4.0"
+}

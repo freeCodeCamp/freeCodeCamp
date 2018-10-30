@@ -1,0 +1,7 @@
+language: node_js
+node_js:
+  - "0.10"
+  - "0.11"
+  - "0.12"
+  - "iojs"
+after_script: "NODE_ENV=test YOURPACKAGE_COVERAGE=1 ./node_modules/.bin/mocha --require patched-blanket --reporter mocha-lcov-reporter | ./node_modules/coveralls/bin/coveralls.js"

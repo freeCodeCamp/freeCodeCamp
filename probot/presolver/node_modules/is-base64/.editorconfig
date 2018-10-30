@@ -1,0 +1,23 @@
+# EditorConfig is awesome: http://EditorConfig.org
+
+# top-most EditorConfig file
+root = true
+
+[*]
+# use line feed
+end_of_line = lf
+
+# ensure file ends with a newline when saving
+insert_final_newline = true
+
+# soft tabs
+indent_style = space
+
+# number of columns used for each indentation level
+indent_size = 2
+
+# remove any whitespace characters preceding newline characters
+trim_trailing_whitespace = true
+
+# character set
+charset = utf-8

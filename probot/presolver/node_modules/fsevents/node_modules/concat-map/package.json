@@ -1,0 +1,91 @@
+{
+  "_args": [
+    [
+      "concat-map@0.0.1",
+      "/Users/eshanker/Code/fsevents"
+    ]
+  ],
+  "_from": "concat-map@0.0.1",
+  "_id": "concat-map@0.0.1",
+  "_inBundle": true,
+  "_integrity": "sha1-2Klr13/Wjfd5OnMDajug1UBdR3s=",
+  "_location": "/fsevents/concat-map",
+  "_phantomChildren": {},
+  "_requested": {
+    "type": "version",
+    "registry": true,
+    "raw": "concat-map@0.0.1",
+    "name": "concat-map",
+    "escapedName": "concat-map",
+    "rawSpec": "0.0.1",
+    "saveSpec": null,
+    "fetchSpec": "0.0.1"
+  },
+  "_requiredBy": [
+    "/fsevents/brace-expansion"
+  ],
+  "_resolved": "https://registry.npmjs.org/concat-map/-/concat-map-0.0.1.tgz",
+  "_spec": "0.0.1",
+  "_where": "/Users/eshanker/Code/fsevents",
+  "author": {
+    "name": "James Halliday",
+    "email": "mail@substack.net",
+    "url": "http://substack.net"
+  },
+  "bugs": {
+    "url": "https://github.com/substack/node-concat-map/issues"
+  },
+  "description": "concatenative mapdashery",
+  "devDependencies": {
+    "tape": "~2.4.0"
+  },
+  "directories": {
+    "example": "example",
+    "test": "test"
+  },
+  "homepage": "https://github.com/substack/node-concat-map#readme",
+  "keywords": [
+    "concat",
+    "concatMap",
+    "map",
+    "functional",
+    "higher-order"
+  ],
+  "license": "MIT",
+  "main": "index.js",
+  "name": "concat-map",
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/substack/node-concat-map.git"
+  },
+  "scripts": {
+    "test": "tape test/*.js"
+  },
+  "testling": {
+    "files": "test/*.js",
+    "browsers": {
+      "ie": [
+        6,
+        7,
+        8,
+        9
+      ],
+      "ff": [
+        3.5,
+        10,
+        15
+      ],
+      "chrome": [
+        10,
+        22
+      ],
+      "safari": [
+        5.1
+      ],
+      "opera": [
+        12
+      ]
+    }
+  },
+  "version": "0.0.1"
+}

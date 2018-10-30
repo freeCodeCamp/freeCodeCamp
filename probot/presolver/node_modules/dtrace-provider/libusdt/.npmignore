@@ -1,0 +1,10 @@
+*.o
+*.a
+*.gch
+*~
+*#
+.#*
+test_usdt
+test_usdt32
+test_usdt64
+test_mem_usage

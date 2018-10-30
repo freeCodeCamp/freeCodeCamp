@@ -1,0 +1,32 @@
+{{## def.assignDefault:
+  if ({{=$passData}} === undefined)
+    {{=$passData}} = {{? it.opts.useDefaults == 'shared' }}
+                       {{= it.useDefault($sch.default) }}
+                     {{??}}
+                       {{= JSON.stringify($sch.default) }}
+                     {{?}};
+#}}
+
+
+{{## def.defaultProperties:
+  {{
+    var $schema = it.schema.properties
+      , $schemaKeys = Object.keys($schema); }}
+  {{~ $schemaKeys:$propertyKey }}
+    {{ var $sch = $schema[$propertyKey]; }}
+    {{? $sch.default !== undefined }}
+      {{ var $passData = $data + it.util.getProperty($propertyKey); }}
+      {{# def.assignDefault }}
+    {{?}}
+  {{~}}
+#}}
+
+
+{{## def.defaultItems:
+  {{~ it.schema.items:$sch:$i }}
+    {{? $sch.default !== undefined }}
+      {{ var $passData = $data + '[' + $i + ']'; }}
+      {{# def.assignDefault }}
+    {{?}}
+  {{~}}
+#}}

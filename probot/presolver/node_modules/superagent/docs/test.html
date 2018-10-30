@@ -1,0 +1,2082 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>SuperAgent - Ajax with less suck</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="jquery.js"></script>
+    <script src="jquery-ui.min.js"></script>
+    <script src="highlight.js"></script>
+    <script src="jquery.tocify.min.js"></script>
+    <script>
+      $(function(){
+        $('#menu').tocify({
+          selectors: 'h2',
+          hashGenerator: 'pretty'
+        });
+      });
+    </script>
+  </head>
+  <body>
+    <ul id="menu"></ul>
+    <div id="content">    <section class="suite">
+      <h1>request</h1>
+      <dl>
+        <section class="suite">
+          <h1>with a callback</h1>
+          <dl>
+            <dt>should invoke .end()</dt>
+            <dd><pre><code>request
+.get(uri + '/login', function(err, res){
+  assert.equal(res.status, 200);
+  done();
+})</code></pre></dd>
+          </dl>
+        </section>
+        <section class="suite">
+          <h1>.end()</h1>
+          <dl>
+            <dt>should issue a request</dt>
+            <dd><pre><code>request
+.get(uri + '/login')
+.end(function(err, res){
+  assert.equal(res.status, 200);
+  done();
+});</code></pre></dd>
+          </dl>
+        </section>
+        <section class="suite">
+          <h1>res.error</h1>
+          <dl>
+            <dt>should should be an Error object</dt>
+            <dd><pre><code>request
+.get(uri + '/error')
+.end(function(err, res){
+  if (NODE) {
+    res.error.message.should.equal('cannot GET /error (500)');
+  }
+  else {
+    res.error.message.should.equal('cannot GET ' + uri + '/error (500)');
+  }
+  assert.strictEqual(res.error.status, 500);
+  assert(err, 'should have an error for 500');
+  assert.equal(err.message, 'Internal Server Error');
+  done();
+});</code></pre></dd>
+          </dl>
+        </section>
+        <section class="suite">
+          <h1>res.header</h1>
+          <dl>
+            <dt>should be an object</dt>
+            <dd><pre><code>request
+.get(uri + '/login')
+.end(function(err, res){
+  assert.equal('Express', res.header['x-powered-by']);
+  done();
+});</code></pre></dd>
+          </dl>
+        </section>
+        <section class="suite">
+          <h1>res.charset</h1>
+          <dl>
+            <dt>should be set when present</dt>
+            <dd><pre><code>request
+.get(uri + '/login')
+.end(function(err, res){
+  res.charset.should.equal('utf-8');
+  done();
+});</code></pre></dd>
+          </dl>
+        </section>
+        <section class="suite">
+          <h1>res.statusType</h1>
+          <dl>
+            <dt>should provide the first digit</dt>
+            <dd><pre><code>request
+.get(uri + '/login')
+.end(function(err, res){
+  assert(!err, 'should not have an error for success responses');
+  assert.equal(200, res.status);
+  assert.equal(2, res.statusType);
+  done();
+});</code></pre></dd>
+          </dl>
+        </section>
+        <section class="suite">
+          <h1>res.type</h1>
+          <dl>
+            <dt>should provide the mime-type void of params</dt>
+            <dd><pre><code>request
+.get(uri + '/login')
+.end(function(err, res){
+  res.type.should.equal('text/html');
+  res.charset.should.equal('utf-8');
+  done();
+});</code></pre></dd>
+          </dl>
+        </section>
+        <section class="suite">
+          <h1>req.set(field, val)</h1>
+          <dl>
+            <dt>should set the header field</dt>
+            <dd><pre><code>request
+.post(uri + '/echo')
+.set('X-Foo', 'bar')
+.set('X-Bar', 'baz')
+.end(function(err, res){
+  assert.equal('bar', res.header['x-foo']);
+  assert.equal('baz', res.header['x-bar']);
+  done();
+})</code></pre></dd>
+          </dl>
+        </section>
+        <section class="suite">
+          <h1>req.set(obj)</h1>
+          <dl>
+            <dt>should set the header fields</dt>
+            <dd><pre><code>request
+.post(uri + '/echo')
+.set({ 'X-Foo': 'bar', 'X-Bar': 'baz' })
+.end(function(err, res){
+  assert.equal('bar', res.header['x-foo']);
+  assert.equal('baz', res.header['x-bar']);
+  done();
+})</code></pre></dd>
+          </dl>
+        </section>
+        <section class="suite">
+          <h1>req.type(str)</h1>
+          <dl>
+            <dt>should set the Content-Type</dt>
+            <dd><pre><code>request
+.post(uri + '/echo')
+.type('text/x-foo')
+.end(function(err, res){
+  res.header['content-type'].should.equal('text/x-foo');
+  done();
+});</code></pre></dd>
+            <dt>should map &quot;json&quot;</dt>
+            <dd><pre><code>request
+.post(uri + '/echo')
+.type('json')
+.send('{&quot;a&quot;: 1}')
+.end(function(err, res){
+  res.should.be.json;
+  done();
+});</code></pre></dd>
+            <dt>should map &quot;html&quot;</dt>
+            <dd><pre><code>request
+.post(uri + '/echo')
+.type('html')
+.end(function(err, res){
+  res.header['content-type'].should.equal('text/html');
+  done();
+});</code></pre></dd>
+          </dl>
+        </section>
+        <section class="suite">
+          <h1>req.accept(str)</h1>
+          <dl>
+            <dt>should set Accept</dt>
+            <dd><pre><code>request
+.get(uri + '/echo')
+.accept('text/x-foo')
+.end(function(err, res){
+   res.header['accept'].should.equal('text/x-foo');
+   done();
+});</code></pre></dd>
+            <dt>should map &quot;json&quot;</dt>
+            <dd><pre><code>request
+.get(uri + '/echo')
+.accept('json')
+.end(function(err, res){
+  res.header['accept'].should.equal('application/json');
+  done();
+});</code></pre></dd>
+            <dt>should map &quot;xml&quot;</dt>
+            <dd><pre><code>request
+.get(uri + '/echo')
+.accept('xml')
+.end(function(err, res){
+  res.header['accept'].should.equal('application/xml');
+  done();
+});</code></pre></dd>
+            <dt>should map &quot;html&quot;</dt>
+            <dd><pre><code>request
+.get(uri + '/echo')
+.accept('html')
+.end(function(err, res){
+  res.header['accept'].should.equal('text/html');
+  done();
+});</code></pre></dd>
+          </dl>
+        </section>
+        <section class="suite">
+          <h1>req.send(str)</h1>
+          <dl>
+            <dt>should write the string</dt>
+            <dd><pre><code>request
+.post(uri + '/echo')
+.type('json')
+.send('{&quot;name&quot;:&quot;tobi&quot;}')
+.end(function(err, res){
+  res.text.should.equal('{&quot;name&quot;:&quot;tobi&quot;}');
+  done();
+});</code></pre></dd>
+          </dl>
+        </section>
+        <section class="suite">
+          <h1>req.send(Object)</h1>
+          <dl>
+            <dt>should default to json</dt>
+            <dd><pre><code>request
+.post(uri + '/echo')
+.send({ name: 'tobi' })
+.end(function(err, res){
+  res.should.be.json
+  res.text.should.equal('{&quot;name&quot;:&quot;tobi&quot;}');
+  done();
+});</code></pre></dd>
+            <section class="suite">
+              <h1>when called several times</h1>
+              <dl>
+                <dt>should merge the objects</dt>
+                <dd><pre><code>request
+.post(uri + '/echo')
+.send({ name: 'tobi' })
+.send({ age: 1 })
+.end(function(err, res){
+  res.should.be.json
+  if (NODE) {
+    res.buffered.should.be.true;
+  }
+  res.text.should.equal('{&quot;name&quot;:&quot;tobi&quot;,&quot;age&quot;:1}');
+  done();
+});</code></pre></dd>
+              </dl>
+            </section>
+          </dl>
+        </section>
+        <section class="suite">
+          <h1>.end(fn)</h1>
+          <dl>
+            <dt>should check arity</dt>
+            <dd><pre><code>request
+.post(uri + '/echo')
+.send({ name: 'tobi' })
+.end(function(err, res){
+  assert.equal(null, err);
+  res.text.should.equal('{&quot;name&quot;:&quot;tobi&quot;}');
+  done();
+});</code></pre></dd>
+            <dt>should emit request</dt>
+            <dd><pre><code>var req = request.post(uri + '/echo');
+req.on('request', function(request){
+  assert.equal(req, request);
+  done();
+});
+req.end();</code></pre></dd>
+            <dt>should emit response</dt>
+            <dd><pre><code>request
+.post(uri + '/echo')
+.send({ name: 'tobi' })
+.on('response', function(res){
+  res.text.should.equal('{&quot;name&quot;:&quot;tobi&quot;}');
+  done();
+})
+.end();</code></pre></dd>
+          </dl>
+        </section>
+        <section class="suite">
+          <h1>.then(fulfill, reject)</h1>
+          <dl>
+            <dt>should support successful fulfills with .then(fulfill)</dt>
+            <dd><pre><code>request
+.post(uri + '/echo')
+.send({ name: 'tobi' })
+.then(function(res) {
+  res.text.should.equal('{&quot;name&quot;:&quot;tobi&quot;}');
+  done();
+})</code></pre></dd>
+            <dt>should reject an error with .then(null, reject)</dt>
+            <dd><pre><code>request
+.get(uri + '/error')
+.then(null, function(err) {
+  assert.equal(err.status, 500);
+  assert.equal(err.response.text, 'boom');
+  done();
+})</code></pre></dd>
+          </dl>
+        </section>
+        <section class="suite">
+          <h1>.abort()</h1>
+          <dl>
+            <dt>should abort the request</dt>
+            <dd><pre><code>var req = request
+.get(uri + '/delay/3000')
+.end(function(err, res){
+  assert(false, 'should not complete the request');
+});
+req.on('abort', done);
+setTimeout(function() {
+  req.abort();
+}, 1000);</code></pre></dd>
+          </dl>
+        </section>
+      </dl>
+    </section>
+    <section class="suite">
+      <h1>request</h1>
+      <dl>
+        <section class="suite">
+          <h1>persistent agent</h1>
+          <dl>
+            <dt>should gain a session on POST</dt>
+            <dd><pre><code>agent3
+  .post('http://localhost:4000/signin')
+  .end(function(err, res) {
+    should.not.exist(err);
+    res.should.have.status(200);
+    should.not.exist(res.headers['set-cookie']);
+    res.text.should.containEql('dashboard');
+    done();
+  });</code></pre></dd>
+            <dt>should start with empty session (set cookies)</dt>
+            <dd><pre><code>agent1
+  .get('http://localhost:4000/dashboard')
+  .end(function(err, res) {
+    should.exist(err);
+    res.should.have.status(401);
+    should.exist(res.headers['set-cookie']);
+    done();
+  });</code></pre></dd>
+            <dt>should gain a session (cookies already set)</dt>
+            <dd><pre><code>agent1
+  .post('http://localhost:4000/signin')
+  .end(function(err, res) {
+    should.not.exist(err);
+    res.should.have.status(200);
+    should.not.exist(res.headers['set-cookie']);
+    res.text.should.containEql('dashboard');
+    done();
+  });</code></pre></dd>
+            <dt>should persist cookies across requests</dt>
+            <dd><pre><code>agent1
+  .get('http://localhost:4000/dashboard')
+  .end(function(err, res) {
+    should.not.exist(err);
+    res.should.have.status(200);
+    done();
+  });</code></pre></dd>
+            <dt>should have the cookie set in the end callback</dt>
+            <dd><pre><code>agent4
+  .post('http://localhost:4000/setcookie')
+  .end(function(err, res) {
+    agent4
+      .get('http://localhost:4000/getcookie')
+      .end(function(err, res) {
+        should.not.exist(err);
+        res.should.have.status(200);
+        assert.strictEqual(res.text, 'jar');
+        done();
+      });
+  });</code></pre></dd>
+            <dt>should not share cookies</dt>
+            <dd><pre><code>agent2
+  .get('http://localhost:4000/dashboard')
+  .end(function(err, res) {
+    should.exist(err);
+    res.should.have.status(401);
+    done();
+  });</code></pre></dd>
+            <dt>should not lose cookies between agents</dt>
+            <dd><pre><code>agent1
+  .get('http://localhost:4000/dashboard')
+  .end(function(err, res) {
+    should.not.exist(err);
+    res.should.have.status(200);
+    done();
+  });</code></pre></dd>
+            <dt>should be able to follow redirects</dt>
+            <dd><pre><code>agent1
+  .get('http://localhost:4000/')
+  .end(function(err, res) {
+    should.not.exist(err);
+    res.should.have.status(200);
+    res.text.should.containEql('dashboard');
+    done();
+  });</code></pre></dd>
+            <dt>should be able to post redirects</dt>
+            <dd><pre><code>agent1
+  .post('http://localhost:4000/redirect')
+  .send({ foo: 'bar', baz: 'blaaah' })
+  .end(function(err, res) {
+    should.not.exist(err);
+    res.should.have.status(200);
+    res.text.should.containEql('simple');
+    res.redirects.should.eql(['http://localhost:4000/simple']);
+    done();
+  });</code></pre></dd>
+            <dt>should be able to limit redirects</dt>
+            <dd><pre><code>agent1
+  .get('http://localhost:4000/')
+  .redirects(0)
+  .end(function(err, res) {
+    should.exist(err);
+    res.should.have.status(302);
+    res.redirects.should.eql([]);
+    res.header.location.should.equal('/dashboard');
+    done();
+  });</code></pre></dd>
+            <dt>should be able to create a new session (clear cookie)</dt>
+            <dd><pre><code>agent1
+  .post('http://localhost:4000/signout')
+  .end(function(err, res) {
+    should.not.exist(err);
+    res.should.have.status(200);
+    should.exist(res.headers['set-cookie']);
+    done();
+  });</code></pre></dd>
+            <dt>should regenerate with an empty session</dt>
+            <dd><pre><code>agent1
+  .get('http://localhost:4000/dashboard')
+  .end(function(err, res) {
+    should.exist(err);
+    res.should.have.status(401);
+    should.not.exist(res.headers['set-cookie']);
+    done();
+  });</code></pre></dd>
+          </dl>
+        </section>
+      </dl>
+    </section>
+    <section class="suite">
+      <h1>Basic auth</h1>
+      <dl>
+        <section class="suite">
+          <h1>when credentials are present in url</h1>
+          <dl>
+            <dt>should set Authorization</dt>
+            <dd><pre><code>request
+.get('http://tobi:learnboost@localhost:3010')
+.end(function(err, res){
+  res.status.should.equal(200);
+  done();
+});</code></pre></dd>
+          </dl>
+        </section>
+        <section class="suite">
+          <h1>req.auth(user, pass)</h1>
+          <dl>
+            <dt>should set Authorization</dt>
+            <dd><pre><code>request
+.get('http://localhost:3010')
+.auth('tobi', 'learnboost')
+.end(function(err, res){
+  res.status.should.equal(200);
+  done();
+});</code></pre></dd>
+          </dl>
+        </section>
+        <section class="suite">
+          <h1>req.auth(user + &quot;:&quot; + pass)</h1>
+          <dl>
+            <dt>should set authorization</dt>
+            <dd><pre><code>request
+.get('http://localhost:3010/again')
+.auth('tobi')
+.end(function(err, res){
+  res.status.should.eql(200);
+  done();
+});</code></pre></dd>
+          </dl>
+        </section>
+      </dl>
+    </section>
+    <section class="suite">
+      <h1>[node] request</h1>
+      <dl>
+        <section class="suite">
+          <h1>res.statusCode</h1>
+          <dl>
+            <dt>should set statusCode</dt>
+            <dd><pre><code>request
+.get('http://localhost:5000/login', function(err, res){
+  assert.strictEqual(res.statusCode, 200);
+  done();
+})</code></pre></dd>
+          </dl>
+        </section>
+        <section class="suite">
+          <h1>with an object</h1>
+          <dl>
+            <dt>should format the url</dt>
+            <dd><pre><code>request
+.get(url.parse('http://localhost:5000/login'))
+.end(function(err, res){
+  assert(res.ok);
+  done();
+})</code></pre></dd>
+          </dl>
+        </section>
+        <section class="suite">
+          <h1>without a schema</h1>
+          <dl>
+            <dt>should default to http</dt>
+            <dd><pre><code>request
+.get('localhost:5000/login')
+.end(function(err, res){
+  assert.equal(res.status, 200);
+  done();
+})</code></pre></dd>
+          </dl>
+        </section>
+        <section class="suite">
+          <h1>req.toJSON()</h1>
+          <dl>
+            <dt>should describe the request</dt>
+            <dd><pre><code>request
+.post(':5000/echo')
+.send({ foo: 'baz' })
+.end(function(err, res){
+  var obj = res.request.toJSON();
+  assert.equal('POST', obj.method);
+  assert.equal(':5000/echo', obj.url);
+  assert.equal('baz', obj.data.foo);
+  done();
+});</code></pre></dd>
+          </dl>
+        </section>
+        <section class="suite">
+          <h1>should allow the send shorthand</h1>
+          <dl>
+            <dt>with callback in the method call</dt>
+            <dd><pre><code>request
+.get('http://localhost:5000/login', function(err, res) {
+    assert.equal(res.status, 200);
+    done();
+});</code></pre></dd>
+            <dt>with data in the method call</dt>
+            <dd><pre><code>request
+.post('http://localhost:5000/echo', { foo: 'bar' })
+.end(function(err, res) {
+  assert.equal('{&quot;foo&quot;:&quot;bar&quot;}', res.text);
+  done();
+});</code></pre></dd>
+            <dt>with callback and data in the method call</dt>
+            <dd><pre><code>request
+.post('http://localhost:5000/echo', { foo: 'bar' }, function(err, res) {
+  assert.equal('{&quot;foo&quot;:&quot;bar&quot;}', res.text);
+  done();
+});</code></pre></dd>
+          </dl>
+        </section>
+        <section class="suite">
+          <h1>res.toJSON()</h1>
+          <dl>
+            <dt>should describe the response</dt>
+            <dd><pre><code>request
+.post('http://localhost:5000/echo')
+.send({ foo: 'baz' })
+.end(function(err, res){
+  var obj = res.toJSON();
+  assert.equal('object', typeof obj.header);
+  assert.equal('object', typeof obj.req);
+  assert.equal(200, obj.status);
+  assert.equal('{&quot;foo&quot;:&quot;baz&quot;}', obj.text);
+  done();
+});</code></pre></dd>
+          </dl>
+        </section>
+        <section class="suite">
+          <h1>res.links</h1>
+          <dl>
+            <dt>should default to an empty object</dt>
+            <dd><pre><code>request
+.get('http://localhost:5000/login')
+.end(function(err, res){
+  res.links.should.eql({});
+  done();
+})</code></pre></dd>
+            <dt>should parse the Link header field</dt>
+            <dd><pre><code>request
+.get('http://localhost:5000/links')
+.end(function(err, res){
+  res.links.next.should.equal('https://api.github.com/repos/visionmedia/mocha/issues?page=2');
+  done();
+})</code></pre></dd>
+          </dl>
+        </section>
+        <section class="suite">
+          <h1>req.unset(field)</h1>
+          <dl>
+            <dt>should remove the header field</dt>
+            <dd><pre><code>request
+.post('http://localhost:5000/echo')
+.unset('User-Agent')
+.end(function(err, res){
+  assert.equal(void 0, res.header['user-agent']);
+  done();
+})</code></pre></dd>
+          </dl>
+        </section>
+        <section class="suite">
+          <h1>req.write(str)</h1>
+          <dl>
+            <dt>should write the given data</dt>
+            <dd><pre><code>var req = request.post('http://localhost:5000/echo');
+req.set('Content-Type', 'application/json');
+req.write('{&quot;name&quot;').should.be.a.boolean;
+req.write(':&quot;tobi&quot;}').should.be.a.boolean;
+req.end(function(err, res){
+  res.text.should.equal('{&quot;name&quot;:&quot;tobi&quot;}');
+  done();
+});</code></pre></dd>
+          </dl>
+        </section>
+        <section class="suite">
+          <h1>req.pipe(stream)</h1>
+          <dl>
+            <dt>should pipe the response to the given stream</dt>
+            <dd><pre><code>var stream = new EventEmitter;
+stream.buf = '';
+stream.writable = true;
+stream.write = function(chunk){
+  this.buf += chunk;
+};
+stream.end = function(){
+  this.buf.should.equal('{&quot;name&quot;:&quot;tobi&quot;}');
+  done();
+};
+request
+.post('http://localhost:5000/echo')
+.send('{&quot;name&quot;:&quot;tobi&quot;}')
+.pipe(stream);</code></pre></dd>
+          </dl>
+        </section>
+        <section class="suite">
+          <h1>.buffer()</h1>
+          <dl>
+            <dt>should enable buffering</dt>
+            <dd><pre><code>request
+.get('http://localhost:5000/custom')
+.buffer()
+.end(function(err, res){
+  assert.equal(null, err);
+  assert.equal('custom stuff', res.text);
+  assert(res.buffered);
+  done();
+});</code></pre></dd>
+          </dl>
+        </section>
+        <section class="suite">
+          <h1>.buffer(false)</h1>
+          <dl>
+            <dt>should disable buffering</dt>
+            <dd><pre><code>request
+.post('http://localhost:5000/echo')
+.type('application/x-dog')
+.send('hello this is dog')
+.buffer(false)
+.end(function(err, res){
+  assert.equal(null, err);
+  assert.equal(null, res.text);
+  res.body.should.eql({});
+  var buf = '';
+  res.setEncoding('utf8');
+  res.on('data', function(chunk){ buf += chunk });
+  res.on('end', function(){
+    buf.should.equal('hello this is dog');
+    done();
+  });
+});</code></pre></dd>
+          </dl>
+        </section>
+        <section class="suite">
+          <h1>.agent()</h1>
+          <dl>
+            <dt>should return the defaut agent</dt>
+            <dd><pre><code>var req = request.post('http://localhost:5000/echo');
+req.agent().should.equal(false);
+done();</code></pre></dd>
+          </dl>
+        </section>
+        <section class="suite">
+          <h1>.agent(undefined)</h1>
+          <dl>
+            <dt>should set an agent to undefined and ensure it is chainable</dt>
+            <dd><pre><code>var req = request.get('http://localhost:5000/echo');
+var ret = req.agent(undefined);
+ret.should.equal(req);
+assert.strictEqual(req.agent(), undefined);
+done();</code></pre></dd>
+          </dl>
+        </section>
+        <section class="suite">
+          <h1>.agent(new http.Agent())</h1>
+          <dl>
+            <dt>should set passed agent</dt>
+            <dd><pre><code>var http = require('http');
+var req = request.get('http://localhost:5000/echo');
+var agent = new http.Agent();
+var ret = req.agent(agent);
+ret.should.equal(req);
+req.agent().should.equal(agent)
+done();</code></pre></dd>
+          </dl>
+        </section>
+        <section class="suite">
+          <h1>with a content type other than application/json or text/*</h1>
+          <dl>
+            <dt>should disable buffering</dt>
+            <dd><pre><code>request
+.post('http://localhost:5000/echo')
+.type('application/x-dog')
+.send('hello this is dog')
+.end(function(err, res){
+  assert.equal(null, err);
+  assert.equal(null, res.text);
+  res.body.should.eql({});
+  var buf = '';
+  res.setEncoding('utf8');
+  res.buffered.should.be.false;
+  res.on('data', function(chunk){ buf += chunk });
+  res.on('end', function(){
+    buf.should.equal('hello this is dog');
+    done();
+  });
+});</code></pre></dd>
+          </dl>
+        </section>
+        <section class="suite">
+          <h1>content-length</h1>
+          <dl>
+            <dt>should be set to the byte length of a non-buffer object</dt>
+            <dd><pre><code>var decoder = new StringDecoder('utf8');
+var img = fs.readFileSync(__dirname + '/fixtures/test.png');
+img = decoder.write(img);
+request
+.post('http://localhost:5000/echo')
+.type('application/x-image')
+.send(img)
+.buffer(false)
+.end(function(err, res){
+  assert.equal(null, err);
+  assert(!res.buffered);
+  assert.equal(res.header['content-length'], Buffer.byteLength(img));
+  done();
+});</code></pre></dd>
+            <dt>should be set to the length of a buffer object</dt>
+            <dd><pre><code>var img = fs.readFileSync(__dirname + '/fixtures/test.png');
+request
+.post('http://localhost:5000/echo')
+.type('application/x-image')
+.send(img)
+.buffer(true)
+.end(function(err, res){
+  assert.equal(null, err);
+  assert(res.buffered);
+  assert.equal(res.header['content-length'], img.length);
+  done();
+});</code></pre></dd>
+          </dl>
+        </section>
+      </dl>
+    </section>
+    <section class="suite">
+      <h1>req.set(&quot;Content-Type&quot;, contentType)</h1>
+      <dl>
+        <dt>should work with just the contentType component</dt>
+        <dd><pre><code>request
+.post('http://localhost:3005/echo')
+.set('Content-Type', 'application/json')
+.send({ name: 'tobi' })
+.end(function(err, res){
+  assert(!err);
+  done();
+});</code></pre></dd>
+        <dt>should work with the charset component</dt>
+        <dd><pre><code>request
+.post('http://localhost:3005/echo')
+.set('Content-Type', 'application/json; charset=utf-8')
+.send({ name: 'tobi' })
+.end(function(err, res){
+  assert(!err);
+  done();
+});</code></pre></dd>
+      </dl>
+    </section>
+    <section class="suite">
+      <h1>exports</h1>
+      <dl>
+        <dt>should expose Part</dt>
+        <dd><pre><code>request.Part.should.be.a.function;</code></pre></dd>
+        <dt>should expose .protocols</dt>
+        <dd><pre><code>Object.keys(request.protocols)
+  .should.eql(['http:', 'https:']);</code></pre></dd>
+        <dt>should expose .serialize</dt>
+        <dd><pre><code>Object.keys(request.serialize)
+  .should.eql(['application/x-www-form-urlencoded', 'application/json']);</code></pre></dd>
+        <dt>should expose .parse</dt>
+        <dd><pre><code>Object.keys(request.parse)
+  .should.eql(['application/x-www-form-urlencoded', 'application/json', 'text', 'image']);</code></pre></dd>
+      </dl>
+    </section>
+    <section class="suite">
+      <h1>flags</h1>
+      <dl>
+        <section class="suite">
+          <h1>with 4xx response</h1>
+          <dl>
+            <dt>should set res.error and res.clientError</dt>
+            <dd><pre><code>request
+.get('http://localhost:3004/notfound')
+.end(function(err, res){
+  assert(err);
+  assert(!res.ok, 'response should not be ok');
+  assert(res.error, 'response should be an error');
+  assert(res.clientError, 'response should be a client error');
+  assert(!res.serverError, 'response should not be a server error');
+  done();
+});</code></pre></dd>
+          </dl>
+        </section>
+        <section class="suite">
+          <h1>with 5xx response</h1>
+          <dl>
+            <dt>should set res.error and res.serverError</dt>
+            <dd><pre><code>request
+.get('http://localhost:3004/error')
+.end(function(err, res){
+  assert(err);
+  assert(!res.ok, 'response should not be ok');
+  assert(!res.notFound, 'response should not be notFound');
+  assert(res.error, 'response should be an error');
+  assert(!res.clientError, 'response should not be a client error');
+  assert(res.serverError, 'response should be a server error');
+  done();
+});</code></pre></dd>
+          </dl>
+        </section>
+        <section class="suite">
+          <h1>with 404 Not Found</h1>
+          <dl>
+            <dt>should res.notFound</dt>
+            <dd><pre><code>request
+.get('http://localhost:3004/notfound')
+.end(function(err, res){
+  assert(err);
+  assert(res.notFound, 'response should be .notFound');
+  done();
+});</code></pre></dd>
+          </dl>
+        </section>
+        <section class="suite">
+          <h1>with 400 Bad Request</h1>
+          <dl>
+            <dt>should set req.badRequest</dt>
+            <dd><pre><code>request
+.get('http://localhost:3004/bad-request')
+.end(function(err, res){
+  assert(err);
+  assert(res.badRequest, 'response should be .badRequest');
+  done();
+});</code></pre></dd>
+          </dl>
+        </section>
+        <section class="suite">
+          <h1>with 401 Bad Request</h1>
+          <dl>
+            <dt>should set res.unauthorized</dt>
+            <dd><pre><code>request
+.get('http://localhost:3004/unauthorized')
+.end(function(err, res){
+  assert(err);
+  assert(res.unauthorized, 'response should be .unauthorized');
+  done();
+});</code></pre></dd>
+          </dl>
+        </section>
+        <section class="suite">
+          <h1>with 406 Not Acceptable</h1>
+          <dl>
+            <dt>should set res.notAcceptable</dt>
+            <dd><pre><code>request
+.get('http://localhost:3004/not-acceptable')
+.end(function(err, res){
+  assert(err);
+  assert(res.notAcceptable, 'response should be .notAcceptable');
+  done();
+});</code></pre></dd>
+          </dl>
+        </section>
+        <section class="suite">
+          <h1>with 204 No Content</h1>
+          <dl>
+            <dt>should set res.noContent</dt>
+            <dd><pre><code>request
+.get('http://localhost:3004/no-content')
+.end(function(err, res){
+  assert(!err);
+  assert(res.noContent, 'response should be .noContent');
+  done();
+});</code></pre></dd>
+          </dl>
+        </section>
+      </dl>
+    </section>
+    <section class="suite">
+      <h1>req.send(Object) as &quot;form&quot;</h1>
+      <dl>
+        <section class="suite">
+          <h1>with req.type() set to form</h1>
+          <dl>
+            <dt>should send x-www-form-urlencoded data</dt>
+            <dd><pre><code>request
+.post('http://localhost:3002/echo')
+.type('form')
+.send({ name: 'tobi' })
+.end(function(err, res){
+  res.header['content-type'].should.equal('application/x-www-form-urlencoded');
+  res.text.should.equal('name=tobi');
+  done();
+});</code></pre></dd>
+          </dl>
+        </section>
+        <section class="suite">
+          <h1>when called several times</h1>
+          <dl>
+            <dt>should merge the objects</dt>
+            <dd><pre><code>request
+.post('http://localhost:3002/echo')
+.type('form')
+.send({ name: { first: 'tobi', last: 'holowaychuk' } })
+.send({ age: '1' })
+.end(function(err, res){
+  res.header['content-type'].should.equal('application/x-www-form-urlencoded');
+  res.text.should.equal('name%5Bfirst%5D=tobi&amp;name%5Blast%5D=holowaychuk&amp;age=1');
+  done();
+});</code></pre></dd>
+          </dl>
+        </section>
+      </dl>
+    </section>
+    <section class="suite">
+      <h1>req.send(String)</h1>
+      <dl>
+        <dt>should default to &quot;form&quot;</dt>
+        <dd><pre><code>request
+.post('http://localhost:3002/echo')
+.send('user[name]=tj')
+.send('user[email]=tj@vision-media.ca')
+.end(function(err, res){
+  res.header['content-type'].should.equal('application/x-www-form-urlencoded');
+  res.body.should.eql({ user: { name: 'tj', email: 'tj@vision-media.ca' } });
+  done();
+})</code></pre></dd>
+      </dl>
+    </section>
+    <section class="suite">
+      <h1>res.body</h1>
+      <dl>
+        <section class="suite">
+          <h1>application/x-www-form-urlencoded</h1>
+          <dl>
+            <dt>should parse the body</dt>
+            <dd><pre><code>request
+.get('http://localhost:3002/form-data')
+.end(function(err, res){
+  res.text.should.equal('pet[name]=manny');
+  res.body.should.eql({ pet: { name: 'manny' }});
+  done();
+});</code></pre></dd>
+          </dl>
+        </section>
+      </dl>
+    </section>
+    <section class="suite">
+      <h1>https</h1>
+      <dl>
+        <section class="suite">
+          <h1>request</h1>
+          <dl>
+            <dt>should give a good response</dt>
+            <dd><pre><code>request
+.get('https://localhost:8443/')
+.ca(cert)
+.end(function(err, res){
+  assert(res.ok);
+  assert.strictEqual('Safe and secure!', res.text);
+  done();
+});</code></pre></dd>
+          </dl>
+        </section>
+        <section class="suite">
+          <h1>.agent</h1>
+          <dl>
+            <dt>should be able to make multiple requests without redefining the certificate</dt>
+            <dd><pre><code>var agent = request.agent({ca: cert});
+agent
+.get('https://localhost:8443/')
+.end(function(err, res){
+  assert(res.ok);
+  assert.strictEqual('Safe and secure!', res.text);
+  agent
+  .get(url.parse('https://localhost:8443/'))
+  .end(function(err, res){
+    assert(res.ok);
+    assert.strictEqual('Safe and secure!', res.text);
+    done();
+  });
+});</code></pre></dd>
+          </dl>
+        </section>
+      </dl>
+    </section>
+    <section class="suite">
+      <h1>res.body</h1>
+      <dl>
+        <section class="suite">
+          <h1>image/png</h1>
+          <dl>
+            <dt>should parse the body</dt>
+            <dd><pre><code>request
+.get('http://localhost:3011/image')
+.end(function(err, res){
+  (res.body.length - img.length).should.equal(0);
+  done();
+});</code></pre></dd>
+          </dl>
+        </section>
+      </dl>
+    </section>
+    <section class="suite">
+      <h1>zlib</h1>
+      <dl>
+        <dt>should deflate the content</dt>
+        <dd><pre><code>request
+  .get('http://localhost:3080')
+  .end(function(err, res){
+    res.should.have.status(200);
+    res.text.should.equal(subject);
+    res.headers['content-length'].should.be.below(subject.length);
+    done();
+  });</code></pre></dd>
+        <dt>should handle corrupted responses</dt>
+        <dd><pre><code>request
+  .get('http://localhost:3080/corrupt')
+  .end(function(err, res){
+    assert(err, 'missing error');
+    assert(!res, 'response should not be defined');
+    done();
+  });</code></pre></dd>
+        <section class="suite">
+          <h1>without encoding set</h1>
+          <dl>
+            <dt>should emit buffers</dt>
+            <dd><pre><code>request
+  .get('http://localhost:3080/binary')
+  .end(function(err, res){
+    res.should.have.status(200);
+    res.headers['content-length'].should.be.below(subject.length);
+    res.on('data', function(chunk){
+      chunk.should.have.length(subject.length);
+    });
+    res.on('end', done);
+  });</code></pre></dd>
+          </dl>
+        </section>
+      </dl>
+    </section>
+    <section class="suite">
+      <h1>req.send(Object) as &quot;json&quot;</h1>
+      <dl>
+        <dt>should default to json</dt>
+        <dd><pre><code>request
+.post('http://localhost:3005/echo')
+.send({ name: 'tobi' })
+.end(function(err, res){
+  res.should.be.json
+  res.text.should.equal('{&quot;name&quot;:&quot;tobi&quot;}');
+  done();
+});</code></pre></dd>
+        <dt>should work with arrays</dt>
+        <dd><pre><code>request
+.post('http://localhost:3005/echo')
+.send([1,2,3])
+.end(function(err, res){
+  res.should.be.json
+  res.text.should.equal('[1,2,3]');
+  done();
+});</code></pre></dd>
+        <dt>should work with value null</dt>
+        <dd><pre><code>request
+.post('http://localhost:3005/echo')
+.type('json')
+.send('null')
+.end(function(err, res){
+  res.should.be.json
+  assert.strictEqual(res.body, null);
+  done();
+});</code></pre></dd>
+        <dt>should work with value false</dt>
+        <dd><pre><code>request
+.post('http://localhost:3005/echo')
+.type('json')
+.send('false')
+.end(function(err, res){
+  res.should.be.json
+  res.body.should.equal(false);
+  done();
+});</code></pre></dd>
+        <dt>should work with value 0</dt>
+        <dd><pre><code>request
+.post('http://localhost:3005/echo')
+.type('json')
+.send('0')
+.end(function(err, res){
+  res.should.be.json
+  res.body.should.equal(0);
+  done();
+});</code></pre></dd>
+        <dt>should work with empty string value</dt>
+        <dd><pre><code>request
+.post('http://localhost:3005/echo')
+.type('json')
+.send('&quot;&quot;')
+.end(function(err, res){
+  res.should.be.json
+  res.body.should.equal(&quot;&quot;);
+  done();
+});</code></pre></dd>
+        <dt>should work with GET</dt>
+        <dd><pre><code>request
+.get('http://localhost:3005/echo')
+.send({ tobi: 'ferret' })
+.end(function(err, res){
+  res.should.be.json
+  res.text.should.equal('{&quot;tobi&quot;:&quot;ferret&quot;}');
+  done();
+});</code></pre></dd>
+        <dt>should work with vendor MIME type</dt>
+        <dd><pre><code>request
+.post('http://localhost:3005/echo')
+.set('Content-Type', 'application/vnd.example+json')
+.send({ name: 'vendor' })
+.end(function(err, res){
+  res.text.should.equal('{&quot;name&quot;:&quot;vendor&quot;}');
+  done();
+});</code></pre></dd>
+        <section class="suite">
+          <h1>when called several times</h1>
+          <dl>
+            <dt>should merge the objects</dt>
+            <dd><pre><code>request
+.post('http://localhost:3005/echo')
+.send({ name: 'tobi' })
+.send({ age: 1 })
+.end(function(err, res){
+  res.should.be.json
+  res.text.should.equal('{&quot;name&quot;:&quot;tobi&quot;,&quot;age&quot;:1}');
+  done();
+});</code></pre></dd>
+          </dl>
+        </section>
+      </dl>
+    </section>
+    <section class="suite">
+      <h1>res.body</h1>
+      <dl>
+        <section class="suite">
+          <h1>application/json</h1>
+          <dl>
+            <dt>should parse the body</dt>
+            <dd><pre><code>request
+.get('http://localhost:3005/json')
+.end(function(err, res){
+  res.text.should.equal('{&quot;name&quot;:&quot;manny&quot;}');
+  res.body.should.eql({ name: 'manny' });
+  done();
+});</code></pre></dd>
+          </dl>
+        </section>
+        <section class="suite">
+          <h1>HEAD requests</h1>
+          <dl>
+            <dt>should not throw a parse error</dt>
+            <dd><pre><code>request
+.head('http://localhost:3005/json')
+.end(function(err, res){
+  assert.strictEqual(err, null);
+  assert.strictEqual(res.text, undefined)
+  assert.strictEqual(Object.keys(res.body).length, 0)
+  done();
+});</code></pre></dd>
+          </dl>
+        </section>
+        <section class="suite">
+          <h1>Invalid JSON response</h1>
+          <dl>
+            <dt>should return the raw response</dt>
+            <dd><pre><code>request
+.get('http://localhost:3005/invalid-json')
+.end(function(err, res){
+  assert.deepEqual(err.rawResponse, &quot;)]}', {'header':{'code':200,'text':'OK','version':'1.0'},'data':'some data'}&quot;);
+  done();
+});</code></pre></dd>
+          </dl>
+        </section>
+        <section class="suite">
+          <h1>No content</h1>
+          <dl>
+            <dt>should not throw a parse error</dt>
+            <dd><pre><code>request
+.get('http://localhost:3005/no-content')
+.end(function(err, res){
+  assert.strictEqual(err, null);
+  assert.strictEqual(res.text, '');
+  assert.strictEqual(Object.keys(res.body).length, 0);
+  done();
+});</code></pre></dd>
+          </dl>
+        </section>
+        <section class="suite">
+          <h1>application/json+hal</h1>
+          <dl>
+            <dt>should parse the body</dt>
+            <dd><pre><code>request
+.get('http://localhost:3005/json-hal')
+.end(function(err, res){
+  if (err) return done(err);
+  res.text.should.equal('{&quot;name&quot;:&quot;hal 5000&quot;}');
+  res.body.should.eql({ name: 'hal 5000' });
+  done();
+});</code></pre></dd>
+          </dl>
+        </section>
+        <section class="suite">
+          <h1>vnd.collection+json</h1>
+          <dl>
+            <dt>should parse the body</dt>
+            <dd><pre><code>request
+.get('http://localhost:3005/collection-json')
+.end(function(err, res){
+  res.text.should.equal('{&quot;name&quot;:&quot;chewbacca&quot;}');
+  res.body.should.eql({ name: 'chewbacca' });
+  done();
+});</code></pre></dd>
+          </dl>
+        </section>
+      </dl>
+    </section>
+    <section class="suite">
+      <h1>Request</h1>
+      <dl>
+        <section class="suite">
+          <h1>#attach(name, path, filename)</h1>
+          <dl>
+            <dt>should use the custom filename</dt>
+            <dd><pre><code>request
+.post(':3005/echo')
+.attach('document', 'test/node/fixtures/user.html', 'doc.html')
+.end(function(err, res){
+  if (err) return done(err);
+  var html = res.files.document;
+  html.name.should.equal('doc.html');
+  html.type.should.equal('text/html');
+  read(html.path).should.equal('&lt;h1&gt;name&lt;/h1&gt;');
+  done();
+})</code></pre></dd>
+            <dt>should fire progress event</dt>
+            <dd><pre><code>var loaded = 0;
+var total = 0;
+request
+.post(':3005/echo')
+.attach('document', 'test/node/fixtures/user.html')
+.on('progress', function (event) {
+  total = event.total;
+  loaded = event.loaded;
+})
+.end(function(err, res){
+  if (err) return done(err);
+  var html = res.files.document;
+  html.name.should.equal('user.html');
+  html.type.should.equal('text/html');
+  read(html.path).should.equal('&lt;h1&gt;name&lt;/h1&gt;');
+  total.should.equal(221);
+  loaded.should.equal(221);
+  done();
+})</code></pre></dd>
+          </dl>
+        </section>
+      </dl>
+    </section>
+    <section class="suite">
+      <h1>with network error</h1>
+      <dl>
+        <dt>should error</dt>
+        <dd><pre><code>request
+.get('http://localhost:' + this.port + '/')
+.end(function(err, res){
+  assert(err, 'expected an error');
+  done();
+});</code></pre></dd>
+      </dl>
+    </section>
+    <section class="suite">
+      <h1>request</h1>
+      <dl>
+        <section class="suite">
+          <h1>not modified</h1>
+          <dl>
+            <dt>should start with 200</dt>
+            <dd><pre><code>request
+.get('http://localhost:3008/')
+.end(function(err, res){
+  res.should.have.status(200)
+  res.text.should.match(/^\d+$/);
+  ts = +res.text;
+  done();
+});</code></pre></dd>
+            <dt>should then be 304</dt>
+            <dd><pre><code>request
+.get('http://localhost:3008/')
+.set('If-Modified-Since', new Date(ts).toUTCString())
+.end(function(err, res){
+  res.should.have.status(304)
+  // res.text.should.be.empty
+  done();
+});</code></pre></dd>
+          </dl>
+        </section>
+      </dl>
+    </section>
+    <section class="suite">
+      <h1>req.parse(fn)</h1>
+      <dl>
+        <dt>should take precedence over default parsers</dt>
+        <dd><pre><code>request
+.get('http://localhost:3033/manny')
+.parse(request.parse['application/json'])
+.end(function(err, res){
+  assert(res.ok);
+  assert.equal('{&quot;name&quot;:&quot;manny&quot;}', res.text);
+  assert.equal('manny', res.body.name);
+  done();
+});</code></pre></dd>
+        <dt>should be the only parser</dt>
+        <dd><pre><code>request
+.get('http://localhost:3033/image')
+.parse(function(res, fn) {
+  res.on('data', function() {});
+})
+.end(function(err, res){
+  assert(res.ok);
+  assert.strictEqual(res.text, undefined);
+  res.body.should.eql({});
+  done();
+});</code></pre></dd>
+        <dt>should emit error if parser throws</dt>
+        <dd><pre><code>request
+.get('http://localhost:3033/manny')
+.parse(function() {
+  throw new Error('I am broken');
+})
+.on('error', function(err) {
+  err.message.should.equal('I am broken');
+  done();
+})
+.end();</code></pre></dd>
+        <dt>should emit error if parser returns an error</dt>
+        <dd><pre><code>request
+.get('http://localhost:3033/manny')
+.parse(function(res, fn) {
+  fn(new Error('I am broken'));
+})
+.on('error', function(err) {
+  err.message.should.equal('I am broken');
+  done();
+})
+.end()</code></pre></dd>
+        <dt>should not emit error on chunked json</dt>
+        <dd><pre><code>request
+.get('http://localhost:3033/chunked-json')
+.end(function(err){
+  assert(!err);
+  done();
+});</code></pre></dd>
+        <dt>should not emit error on aborted chunked json</dt>
+        <dd><pre><code>var req = request
+.get('http://localhost:3033/chunked-json')
+.end(function(err){
+  assert(!err);
+  done();
+});
+setTimeout(function(){req.abort()},50);</code></pre></dd>
+      </dl>
+    </section>
+    <section class="suite">
+      <h1>pipe on redirect</h1>
+      <dl>
+        <dt>should follow Location</dt>
+        <dd><pre><code>var stream = fs.createWriteStream('test/node/fixtures/pipe.txt');
+var redirects = [];
+var req = request
+  .get('http://localhost:3012/')
+  .on('redirect', function (res) {
+    redirects.push(res.headers.location);
+  })
+  .on('end', function () {
+    var arr = [];
+    arr.push('/movies');
+    arr.push('/movies/all');
+    arr.push('/movies/all/0');
+    redirects.should.eql(arr);
+    fs.readFileSync('test/node/fixtures/pipe.txt', 'utf8').should.eql('first movie page');
+    done();
+  });
+  req.pipe(stream);</code></pre></dd>
+      </dl>
+    </section>
+    <section class="suite">
+      <h1>request pipe</h1>
+      <dl>
+        <dt>should act as a writable stream</dt>
+        <dd><pre><code>var req = request.post('http://localhost:3020');
+var stream = fs.createReadStream('test/node/fixtures/user.json');
+req.type('json');
+req.on('response', function(res){
+  res.body.should.eql({ name: 'tobi' });
+  done();
+});
+stream.pipe(req);</code></pre></dd>
+        <dt>should act as a readable stream</dt>
+        <dd><pre><code>var stream = fs.createWriteStream('test/node/fixtures/tmp.json');
+var req = request.get('http://localhost:3025');
+req.type('json');
+req.on('end', function(){
+  JSON.parse(fs.readFileSync('test/node/fixtures/tmp.json', 'utf8')).should.eql({ name: 'tobi' });
+  done();
+});
+req.pipe(stream);</code></pre></dd>
+      </dl>
+    </section>
+    <section class="suite">
+      <h1>req.query(String)</h1>
+      <dl>
+        <dt>should supply uri malformed error to the callback</dt>
+        <dd><pre><code>request
+.get('http://localhost:3006')
+.query('name=toby')
+.query('a=\uD800')
+.query({ b: '\uD800' })
+.end(function(err, res){
+  assert(err instanceof Error);
+  assert.equal('URIError', err.name);
+  done();
+});</code></pre></dd>
+        <dt>should support passing in a string</dt>
+        <dd><pre><code>request
+.del('http://localhost:3006')
+.query('name=t%F6bi')
+.end(function(err, res){
+  res.body.should.eql({ name: 't%F6bi' });
+  done();
+});</code></pre></dd>
+        <dt>should work with url query-string and string for query</dt>
+        <dd><pre><code>request
+.del('http://localhost:3006/?name=tobi')
+.query('age=2%20')
+.end(function(err, res){
+  res.body.should.eql({ name: 'tobi', age: '2 ' });
+  done();
+});</code></pre></dd>
+        <dt>should support compound elements in a string</dt>
+        <dd><pre><code>request
+  .del('http://localhost:3006/')
+  .query('name=t%F6bi&amp;age=2')
+  .end(function(err, res){
+    res.body.should.eql({ name: 't%F6bi', age: '2' });
+    done();
+  });</code></pre></dd>
+        <dt>should work when called multiple times with a string</dt>
+        <dd><pre><code>request
+.del('http://localhost:3006/')
+.query('name=t%F6bi')
+.query('age=2%F6')
+.end(function(err, res){
+  res.body.should.eql({ name: 't%F6bi', age: '2%F6' });
+  done();
+});</code></pre></dd>
+        <dt>should work with normal `query` object and query string</dt>
+        <dd><pre><code>request
+.del('http://localhost:3006/')
+.query('name=t%F6bi')
+.query({ age: '2' })
+.end(function(err, res){
+  res.body.should.eql({ name: 't%F6bi', age: '2' });
+  done();
+});</code></pre></dd>
+      </dl>
+    </section>
+    <section class="suite">
+      <h1>req.query(Object)</h1>
+      <dl>
+        <dt>should construct the query-string</dt>
+        <dd><pre><code>request
+.del('http://localhost:3006/')
+.query({ name: 'tobi' })
+.query({ order: 'asc' })
+.query({ limit: ['1', '2'] })
+.end(function(err, res){
+  res.body.should.eql({ name: 'tobi', order: 'asc', limit: ['1', '2'] });
+  done();
+});</code></pre></dd>
+        <dt>should not error on dates</dt>
+        <dd><pre><code>var date = new Date(0);
+request
+.del('http://localhost:3006/')
+.query({ at: date })
+.end(function(err, res){
+  assert.equal(date.toISOString(), res.body.at);
+  done();
+});</code></pre></dd>
+        <dt>should work after setting header fields</dt>
+        <dd><pre><code>request
+.del('http://localhost:3006/')
+.set('Foo', 'bar')
+.set('Bar', 'baz')
+.query({ name: 'tobi' })
+.query({ order: 'asc' })
+.query({ limit: ['1', '2'] })
+.end(function(err, res){
+  res.body.should.eql({ name: 'tobi', order: 'asc', limit: ['1', '2'] });
+  done();
+});</code></pre></dd>
+        <dt>should append to the original query-string</dt>
+        <dd><pre><code>request
+.del('http://localhost:3006/?name=tobi')
+.query({ order: 'asc' })
+.end(function(err, res) {
+  res.body.should.eql({ name: 'tobi', order: 'asc' });
+  done();
+});</code></pre></dd>
+        <dt>should retain the original query-string</dt>
+        <dd><pre><code>request
+.del('http://localhost:3006/?name=tobi')
+.end(function(err, res) {
+  res.body.should.eql({ name: 'tobi' });
+  done();
+});</code></pre></dd>
+      </dl>
+    </section>
+    <section class="suite">
+      <h1>request.get</h1>
+      <dl>
+        <section class="suite">
+          <h1>on 301 redirect</h1>
+          <dl>
+            <dt>should follow Location with a GET request</dt>
+            <dd><pre><code>var req = request
+  .get('http://localhost:3210/test-301')
+  .redirects(1)
+  .end(function(err, res){
+    req.req._headers.host.should.eql('localhost:3211');
+    res.status.should.eql(200);
+    res.text.should.eql('GET');
+    done();
+  });</code></pre></dd>
+          </dl>
+        </section>
+        <section class="suite">
+          <h1>on 302 redirect</h1>
+          <dl>
+            <dt>should follow Location with a GET request</dt>
+            <dd><pre><code>var req = request
+  .get('http://localhost:3210/test-302')
+  .redirects(1)
+  .end(function(err, res){
+    req.req._headers.host.should.eql('localhost:3211');
+    res.status.should.eql(200);
+    res.text.should.eql('GET');
+    done();
+  });</code></pre></dd>
+          </dl>
+        </section>
+        <section class="suite">
+          <h1>on 303 redirect</h1>
+          <dl>
+            <dt>should follow Location with a GET request</dt>
+            <dd><pre><code>var req = request
+  .get('http://localhost:3210/test-303')
+  .redirects(1)
+  .end(function(err, res){
+    req.req._headers.host.should.eql('localhost:3211');
+    res.status.should.eql(200);
+    res.text.should.eql('GET');
+    done();
+  });</code></pre></dd>
+          </dl>
+        </section>
+        <section class="suite">
+          <h1>on 307 redirect</h1>
+          <dl>
+            <dt>should follow Location with a GET request</dt>
+            <dd><pre><code>var req = request
+  .get('http://localhost:3210/test-307')
+  .redirects(1)
+  .end(function(err, res){
+    req.req._headers.host.should.eql('localhost:3211');
+    res.status.should.eql(200);
+    res.text.should.eql('GET');
+    done();
+  });</code></pre></dd>
+          </dl>
+        </section>
+        <section class="suite">
+          <h1>on 308 redirect</h1>
+          <dl>
+            <dt>should follow Location with a GET request</dt>
+            <dd><pre><code>var req = request
+  .get('http://localhost:3210/test-308')
+  .redirects(1)
+  .end(function(err, res){
+    req.req._headers.host.should.eql('localhost:3211');
+    res.status.should.eql(200);
+    res.text.should.eql('GET');
+    done();
+  });</code></pre></dd>
+          </dl>
+        </section>
+      </dl>
+    </section>
+    <section class="suite">
+      <h1>request.post</h1>
+      <dl>
+        <section class="suite">
+          <h1>on 301 redirect</h1>
+          <dl>
+            <dt>should follow Location with a GET request</dt>
+            <dd><pre><code>var req = request
+  .post('http://localhost:3210/test-301')
+  .redirects(1)
+  .end(function(err, res){
+    req.req._headers.host.should.eql('localhost:3211');
+    res.status.should.eql(200);
+    res.text.should.eql('GET');
+    done();
+  });</code></pre></dd>
+          </dl>
+        </section>
+        <section class="suite">
+          <h1>on 302 redirect</h1>
+          <dl>
+            <dt>should follow Location with a GET request</dt>
+            <dd><pre><code>var req = request
+  .post('http://localhost:3210/test-302')
+  .redirects(1)
+  .end(function(err, res){
+    req.req._headers.host.should.eql('localhost:3211');
+    res.status.should.eql(200);
+    res.text.should.eql('GET');
+    done();
+  });</code></pre></dd>
+          </dl>
+        </section>
+        <section class="suite">
+          <h1>on 303 redirect</h1>
+          <dl>
+            <dt>should follow Location with a GET request</dt>
+            <dd><pre><code>var req = request
+  .post('http://localhost:3210/test-303')
+  .redirects(1)
+  .end(function(err, res){
+    req.req._headers.host.should.eql('localhost:3211');
+    res.status.should.eql(200);
+    res.text.should.eql('GET');
+    done();
+  });</code></pre></dd>
+          </dl>
+        </section>
+        <section class="suite">
+          <h1>on 307 redirect</h1>
+          <dl>
+            <dt>should follow Location with a POST request</dt>
+            <dd><pre><code>var req = request
+  .post('http://localhost:3210/test-307')
+  .redirects(1)
+  .end(function(err, res){
+    req.req._headers.host.should.eql('localhost:3211');
+    res.status.should.eql(200);
+    res.text.should.eql('POST');
+    done();
+  });</code></pre></dd>
+          </dl>
+        </section>
+        <section class="suite">
+          <h1>on 308 redirect</h1>
+          <dl>
+            <dt>should follow Location with a POST request</dt>
+            <dd><pre><code>var req = request
+  .post('http://localhost:3210/test-308')
+  .redirects(1)
+  .end(function(err, res){
+    req.req._headers.host.should.eql('localhost:3211');
+    res.status.should.eql(200);
+    res.text.should.eql('POST');
+    done();
+  });</code></pre></dd>
+          </dl>
+        </section>
+      </dl>
+    </section>
+    <section class="suite">
+      <h1>request</h1>
+      <dl>
+        <section class="suite">
+          <h1>on redirect</h1>
+          <dl>
+            <dt>should follow Location</dt>
+            <dd><pre><code>var redirects = [];
+request
+.get('http://localhost:3003/')
+.on('redirect', function(res){
+  redirects.push(res.headers.location);
+})
+.end(function(err, res){
+  var arr = [];
+  arr.push('/movies');
+  arr.push('/movies/all');
+  arr.push('/movies/all/0');
+  redirects.should.eql(arr);
+  res.text.should.equal('first movie page');
+  done();
+});</code></pre></dd>
+            <dt>should retain header fields</dt>
+            <dd><pre><code>request
+.get('http://localhost:3003/header')
+.set('X-Foo', 'bar')
+.end(function(err, res){
+  res.body.should.have.property('x-foo', 'bar');
+  done();
+});</code></pre></dd>
+            <dt>should remove Content-* fields</dt>
+            <dd><pre><code>request
+.post('http://localhost:3003/header')
+.type('txt')
+.set('X-Foo', 'bar')
+.set('X-Bar', 'baz')
+.send('hey')
+.end(function(err, res){
+  res.body.should.have.property('x-foo', 'bar');
+  res.body.should.have.property('x-bar', 'baz');
+  res.body.should.not.have.property('content-type');
+  res.body.should.not.have.property('content-length');
+  res.body.should.not.have.property('transfer-encoding');
+  done();
+});</code></pre></dd>
+            <dt>should retain cookies</dt>
+            <dd><pre><code>request
+.get('http://localhost:3003/header')
+.set('Cookie', 'foo=bar;')
+.end(function(err, res){
+  res.body.should.have.property('cookie', 'foo=bar;');
+  done();
+});</code></pre></dd>
+            <dt>should preserve timeout across redirects</dt>
+            <dd><pre><code>request
+.get('http://localhost:3003/movies/random')
+.timeout(250)
+.end(function(err, res){
+  assert(err instanceof Error, 'expected an error');
+  err.should.have.property('timeout', 250);
+  done();
+});</code></pre></dd>
+            <dt>should not resend query parameters</dt>
+            <dd><pre><code>var redirects = [];
+var query = [];
+request
+.get('http://localhost:3003/?foo=bar')
+.on('redirect', function(res){
+  query.push(res.headers.query);
+  redirects.push(res.headers.location);
+})
+.end(function(err, res){
+  var arr = [];
+  arr.push('/movies');
+  arr.push('/movies/all');
+  arr.push('/movies/all/0');
+  redirects.should.eql(arr);
+  res.text.should.equal('first movie page');
+  query.should.eql(['{&quot;foo&quot;:&quot;bar&quot;}', '{}', '{}']);
+  res.headers.query.should.eql('{}');
+  done();
+});</code></pre></dd>
+            <dt>should handle no location header</dt>
+            <dd><pre><code>request
+.get('http://localhost:3003/bad-redirect')
+.end(function(err, res){
+  err.message.should.equal('No location header for redirect');
+  done();
+});</code></pre></dd>
+            <section class="suite">
+              <h1>when relative</h1>
+              <dl>
+                <dt>should redirect to a sibling path</dt>
+                <dd><pre><code>var redirects = [];
+request
+.get('http://localhost:3003/relative')
+.on('redirect', function(res){
+  redirects.push(res.headers.location);
+})
+.end(function(err, res){
+  var arr = [];
+  redirects.should.eql(['tobi']);
+  res.text.should.equal('tobi');
+  done();
+});</code></pre></dd>
+                <dt>should redirect to a parent path</dt>
+                <dd><pre><code>var redirects = [];
+request
+.get('http://localhost:3003/relative/sub')
+.on('redirect', function(res){
+  redirects.push(res.headers.location);
+})
+.end(function(err, res){
+  var arr = [];
+  redirects.should.eql(['../tobi']);
+  res.text.should.equal('tobi');
+  done();
+});</code></pre></dd>
+              </dl>
+            </section>
+          </dl>
+        </section>
+        <section class="suite">
+          <h1>req.redirects(n)</h1>
+          <dl>
+            <dt>should alter the default number of redirects to follow</dt>
+            <dd><pre><code>var redirects = [];
+request
+.get('http://localhost:3003/')
+.redirects(2)
+.on('redirect', function(res){
+  redirects.push(res.headers.location);
+})
+.end(function(err, res){
+  var arr = [];
+  assert(res.redirect, 'res.redirect');
+  arr.push('/movies');
+  arr.push('/movies/all');
+  redirects.should.eql(arr);
+  res.text.should.match(/Moved Temporarily|Found/);
+  done();
+});</code></pre></dd>
+          </dl>
+        </section>
+        <section class="suite">
+          <h1>on POST</h1>
+          <dl>
+            <dt>should redirect as GET</dt>
+            <dd><pre><code>var redirects = [];
+request
+.post('http://localhost:3003/movie')
+.send({ name: 'Tobi' })
+.redirects(2)
+.on('redirect', function(res){
+  redirects.push(res.headers.location);
+})
+.end(function(err, res){
+  var arr = [];
+  arr.push('/movies/all/0');
+  redirects.should.eql(arr);
+  res.text.should.equal('first movie page');
+  done();
+});</code></pre></dd>
+          </dl>
+        </section>
+        <section class="suite">
+          <h1>on 303</h1>
+          <dl>
+            <dt>should redirect with same method</dt>
+            <dd><pre><code>request
+.put('http://localhost:3003/redirect-303')
+.send({msg: &quot;hello&quot;})
+.redirects(1)
+.on('redirect', function(res) {
+  res.headers.location.should.equal('/reply-method')
+})
+.end(function(err, res){
+  res.text.should.equal('method=get');
+  done();
+})</code></pre></dd>
+          </dl>
+        </section>
+        <section class="suite">
+          <h1>on 307</h1>
+          <dl>
+            <dt>should redirect with same method</dt>
+            <dd><pre><code>request
+.put('http://localhost:3003/redirect-307')
+.send({msg: &quot;hello&quot;})
+.redirects(1)
+.on('redirect', function(res) {
+  res.headers.location.should.equal('/reply-method')
+})
+.end(function(err, res){
+  res.text.should.equal('method=put');
+  done();
+})</code></pre></dd>
+          </dl>
+        </section>
+        <section class="suite">
+          <h1>on 308</h1>
+          <dl>
+            <dt>should redirect with same method</dt>
+            <dd><pre><code>request
+.put('http://localhost:3003/redirect-308')
+.send({msg: &quot;hello&quot;})
+.redirects(1)
+.on('redirect', function(res) {
+  res.headers.location.should.equal('/reply-method')
+})
+.end(function(err, res){
+  res.text.should.equal('method=put');
+  done();
+})</code></pre></dd>
+          </dl>
+        </section>
+      </dl>
+    </section>
+    <section class="suite">
+      <h1>response</h1>
+      <dl>
+        <dt>should act as a readable stream</dt>
+        <dd><pre><code>var req = request
+  .get('http://localhost:3025')
+  .buffer(false);
+req.end(function(err,res){
+  if (err) return done(err);
+  var trackEndEvent = 0;
+  var trackCloseEvent = 0;
+  res.on('end',function(){
+    trackEndEvent++;
+    trackEndEvent.should.equal(1);
+    trackCloseEvent.should.equal(0);  // close should not have been called
+    done();
+  });
+  res.on('close',function(){
+    trackCloseEvent++;
+  });
+
+  (function(){ res.pause() }).should.not.throw();
+  (function(){ res.resume() }).should.not.throw();
+  (function(){ res.destroy() }).should.not.throw();
+});</code></pre></dd>
+      </dl>
+    </section>
+    <section class="suite">
+      <h1>.timeout(ms)</h1>
+      <dl>
+        <section class="suite">
+          <h1>when timeout is exceeded</h1>
+          <dl>
+            <dt>should error</dt>
+            <dd><pre><code>request
+.get('http://localhost:3009/500')
+.timeout(150)
+.end(function(err, res){
+  assert(err, 'expected an error');
+  assert.equal('number', typeof err.timeout, 'expected an error with .timeout');
+  assert.equal('ECONNABORTED', err.code, 'expected abort error code')
+  done();
+});</code></pre></dd>
+          </dl>
+        </section>
+      </dl>
+    </section>
+    <section class="suite">
+      <h1>res.toError()</h1>
+      <dl>
+        <dt>should return an Error</dt>
+        <dd><pre><code>request
+.get('http://localhost:' + server.address().port)
+.end(function(err, res){
+  var err = res.toError();
+  assert.equal(err.status, 400);
+  assert.equal(err.method, 'GET');
+  assert.equal(err.path, '/');
+  assert.equal(err.message, 'cannot GET / (400)');
+  assert.equal(err.text, 'invalid json');
+  done();
+});</code></pre></dd>
+      </dl>
+    </section>
+    <section class="suite">
+      <h1>req.get()</h1>
+      <dl>
+        <dt>should set a default user-agent</dt>
+        <dd><pre><code>request
+.get('http://localhost:3345/ua')
+.end(function(err, res){
+  assert(res.headers);
+  assert(res.headers['user-agent']);
+  assert(/^node-superagent\/\d+\.\d+\.\d+$/.test(res.headers['user-agent']));
+  done();
+});</code></pre></dd>
+        <dt>should be able to override user-agent</dt>
+        <dd><pre><code>request
+.get('http://localhost:3345/ua')
+.set('User-Agent', 'foo/bar')
+.end(function(err, res){
+  assert(res.headers);
+  assert.equal(res.headers['user-agent'], 'foo/bar');
+  done();
+});</code></pre></dd>
+        <dt>should be able to wipe user-agent</dt>
+        <dd><pre><code>request
+.get('http://localhost:3345/ua')
+.unset('User-Agent')
+.end(function(err, res){
+  assert(res.headers);
+  assert.equal(res.headers['user-agent'], void 0);
+  done();
+});</code></pre></dd>
+      </dl>
+    </section>
+    <section class="suite">
+      <h1>utils.type(str)</h1>
+      <dl>
+        <dt>should return the mime type</dt>
+        <dd><pre><code>utils.type('application/json; charset=utf-8')
+  .should.equal('application/json');
+utils.type('application/json')
+  .should.equal('application/json');</code></pre></dd>
+      </dl>
+    </section>
+    <section class="suite">
+      <h1>utils.params(str)</h1>
+      <dl>
+        <dt>should return the field parameters</dt>
+        <dd><pre><code>var str = 'application/json; charset=utf-8; foo  = bar';
+var obj = utils.params(str);
+obj.charset.should.equal('utf-8');
+obj.foo.should.equal('bar');
+var str = 'application/json';
+utils.params(str).should.eql({});</code></pre></dd>
+      </dl>
+    </section>
+    <section class="suite">
+      <h1>utils.parseLinks(str)</h1>
+      <dl>
+        <dt>should parse links</dt>
+        <dd><pre><code>var str = '&lt;https://api.github.com/repos/visionmedia/mocha/issues?page=2&gt;; rel=&quot;next&quot;, &lt;https://api.github.com/repos/visionmedia/mocha/issues?page=5&gt;; rel=&quot;last&quot;';
+var ret = utils.parseLinks(str);
+ret.next.should.equal('https://api.github.com/repos/visionmedia/mocha/issues?page=2');
+ret.last.should.equal('https://api.github.com/repos/visionmedia/mocha/issues?page=5');</code></pre></dd>
+      </dl>
+    </section>
+    </div>
+    <a href="http://github.com/visionmedia/superagent"><img style="position: absolute; top: 0; right: 0; border: 0;" src="https://s3.amazonaws.com/github/ribbons/forkme_right_white_ffffff.png" alt="Fork me on GitHub"></a>
+  </body>
+</html>

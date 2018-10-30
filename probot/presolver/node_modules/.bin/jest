@@ -1,0 +1,1 @@
+../jest/bin/jest.js

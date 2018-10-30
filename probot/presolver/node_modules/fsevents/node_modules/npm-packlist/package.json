@@ -1,0 +1,69 @@
+{
+  "_args": [
+    [
+      "npm-packlist@1.1.10",
+      "/Users/eshanker/Code/fsevents"
+    ]
+  ],
+  "_from": "npm-packlist@1.1.10",
+  "_id": "npm-packlist@1.1.10",
+  "_inBundle": true,
+  "_integrity": "sha512-AQC0Dyhzn4EiYEfIUjCdMl0JJ61I2ER9ukf/sLxJUcZHfo+VyEfz2rMJgLZSS1v30OxPQe1cN0LZA1xbcaVfWA==",
+  "_location": "/fsevents/npm-packlist",
+  "_phantomChildren": {},
+  "_requested": {
+    "type": "version",
+    "registry": true,
+    "raw": "npm-packlist@1.1.10",
+    "name": "npm-packlist",
+    "escapedName": "npm-packlist",
+    "rawSpec": "1.1.10",
+    "saveSpec": null,
+    "fetchSpec": "1.1.10"
+  },
+  "_requiredBy": [
+    "/fsevents/node-pre-gyp"
+  ],
+  "_resolved": "https://registry.npmjs.org/npm-packlist/-/npm-packlist-1.1.10.tgz",
+  "_spec": "1.1.10",
+  "_where": "/Users/eshanker/Code/fsevents",
+  "author": {
+    "name": "Isaac Z. Schlueter",
+    "email": "i@izs.me",
+    "url": "http://blog.izs.me/"
+  },
+  "bugs": {
+    "url": "https://github.com/npm/npm-packlist/issues"
+  },
+  "dependencies": {
+    "ignore-walk": "^3.0.1",
+    "npm-bundled": "^1.0.1"
+  },
+  "description": "Get a list of the files to add from a folder into an npm package",
+  "devDependencies": {
+    "mkdirp": "^0.5.1",
+    "rimraf": "^2.6.1",
+    "tap": "^10.7.2"
+  },
+  "directories": {
+    "test": "test"
+  },
+  "files": [
+    "index.js"
+  ],
+  "homepage": "https://www.npmjs.com/package/npm-packlist",
+  "license": "ISC",
+  "main": "index.js",
+  "name": "npm-packlist",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/npm/npm-packlist.git"
+  },
+  "scripts": {
+    "postpublish": "git push origin --all; git push origin --tags",
+    "postversion": "npm publish",
+    "preversion": "npm test",
+    "test": "tap test/*.js --100 -J"
+  },
+  "version": "1.1.10"
+}

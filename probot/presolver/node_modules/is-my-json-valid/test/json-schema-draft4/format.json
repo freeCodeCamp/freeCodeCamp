@@ -1,0 +1,143 @@
+[
+    {
+        "description": "validation of date-time strings",
+        "schema": {"format": "date-time"},
+        "tests": [
+            {
+                "description": "a valid date-time string",
+                "data": "1963-06-19T08:30:06.283185Z",
+                "valid": true
+            },
+            {
+                "description": "an invalid date-time string",
+                "data": "06/19/1963 08:30:06 PST",
+                "valid": false
+            },
+            {
+                "description": "only RFC3339 not all of ISO 8601 are valid",
+                "data": "2013-350T01:01:01",
+                "valid": false
+            }
+        ]
+    },
+    {
+        "description": "validation of URIs",
+        "schema": {"format": "uri"},
+        "tests": [
+            {
+                "description": "a valid URI",
+                "data": "http://foo.bar/?baz=qux#quux",
+                "valid": true
+            },
+            {
+                "description": "an invalid URI",
+                "data": "\\\\WINDOWS\\fileshare",
+                "valid": false
+            },
+            {
+                "description": "an invalid URI though valid URI reference",
+                "data": "abc",
+                "valid": false
+            }
+        ]
+    },
+    {
+        "description": "validation of e-mail addresses",
+        "schema": {"format": "email"},
+        "tests": [
+            {
+                "description": "a valid e-mail address",
+                "data": "joe.bloggs@example.com",
+                "valid": true
+            },
+            {
+                "description": "an invalid e-mail address",
+                "data": "2962",
+                "valid": false
+            }
+        ]
+    },
+    {
+        "description": "validation of IP addresses",
+        "schema": {"format": "ipv4"},
+        "tests": [
+            {
+                "description": "a valid IP address",
+                "data": "192.168.0.1",
+                "valid": true
+            },
+            {
+                "description": "an IP address with too many components",
+                "data": "127.0.0.0.1",
+                "valid": false
+            },
+            {
+                "description": "an IP address with out-of-range values",
+                "data": "256.256.256.256",
+                "valid": false
+            },
+            {
+                "description": "an IP address without 4 components",
+                "data": "127.0",
+                "valid": false
+            },
+            {
+                "description": "an IP address as an integer",
+                "data": "0x7f000001",
+                "valid": false
+            }
+        ]
+    },
+    {
+        "description": "validation of IPv6 addresses",
+        "schema": {"format": "ipv6"},
+        "tests": [
+            {
+                "description": "a valid IPv6 address",
+                "data": "::1",
+                "valid": true
+            },
+            {
+                "description": "an IPv6 address with out-of-range values",
+                "data": "12345::",
+                "valid": false
+            },
+            {
+                "description": "an IPv6 address with too many components",
+                "data": "1:1:1:1:1:1:1:1:1:1:1:1:1:1:1:1",
+                "valid": false
+            },
+            {
+                "description": "an IPv6 address containing illegal characters",
+                "data": "::laptop",
+                "valid": false
+            }
+        ]
+    },
+    {
+        "description": "validation of host names",
+        "schema": {"format": "hostname"},
+        "tests": [
+            {
+                "description": "a valid host name",
+                "data": "www.example.com",
+                "valid": true
+            },
+            {
+                "description": "a host name starting with an illegal character",
+                "data": "-a-host-name-that-starts-with--",
+                "valid": false
+            },
+            {
+                "description": "a host name containing illegal characters",
+                "data": "not_a_valid_host_name",
+                "valid": false
+            },
+            {
+                "description": "a host name with a component too long",
+                "data": "a-vvvvvvvvvvvvvvvveeeeeeeeeeeeeeeerrrrrrrrrrrrrrrryyyyyyyyyyyyyyyy-long-host-name-component",
+                "valid": false
+            }
+        ]
+    }
+]

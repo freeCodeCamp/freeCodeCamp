@@ -1,0 +1,63 @@
+{
+  "_args": [
+    [
+      "safer-buffer@2.1.2",
+      "/Users/eshanker/Code/fsevents"
+    ]
+  ],
+  "_from": "safer-buffer@2.1.2",
+  "_id": "safer-buffer@2.1.2",
+  "_inBundle": true,
+  "_integrity": "sha512-YZo3K82SD7Riyi0E1EQPojLz7kpepnSQI9IyPbHHg1XXXevb5dJI7tpyN2ADxGcQbHG7vcyRHk0cbwqcQriUtg==",
+  "_location": "/fsevents/safer-buffer",
+  "_phantomChildren": {},
+  "_requested": {
+    "type": "version",
+    "registry": true,
+    "raw": "safer-buffer@2.1.2",
+    "name": "safer-buffer",
+    "escapedName": "safer-buffer",
+    "rawSpec": "2.1.2",
+    "saveSpec": null,
+    "fetchSpec": "2.1.2"
+  },
+  "_requiredBy": [
+    "/fsevents/iconv-lite"
+  ],
+  "_resolved": "https://registry.npmjs.org/safer-buffer/-/safer-buffer-2.1.2.tgz",
+  "_spec": "2.1.2",
+  "_where": "/Users/eshanker/Code/fsevents",
+  "author": {
+    "name": "Nikita Skovoroda",
+    "email": "chalkerx@gmail.com",
+    "url": "https://github.com/ChALkeR"
+  },
+  "bugs": {
+    "url": "https://github.com/ChALkeR/safer-buffer/issues"
+  },
+  "description": "Modern Buffer API polyfill without footguns",
+  "devDependencies": {
+    "standard": "^11.0.1",
+    "tape": "^4.9.0"
+  },
+  "files": [
+    "Porting-Buffer.md",
+    "Readme.md",
+    "tests.js",
+    "dangerous.js",
+    "safer.js"
+  ],
+  "homepage": "https://github.com/ChALkeR/safer-buffer#readme",
+  "license": "MIT",
+  "main": "safer.js",
+  "name": "safer-buffer",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ChALkeR/safer-buffer.git"
+  },
+  "scripts": {
+    "browserify-test": "browserify --external tape tests.js > browserify-tests.js && tape browserify-tests.js",
+    "test": "standard && tape tests.js"
+  },
+  "version": "2.1.2"
+}

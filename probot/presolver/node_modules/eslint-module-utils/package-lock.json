@@ -1,0 +1,42 @@
+{
+  "name": "eslint-module-utils",
+  "version": "2.0.0",
+  "lockfileVersion": 1,
+  "dependencies": {
+    "debug": {
+      "version": "2.2.0",
+      "resolved": "https://registry.npmjs.org/debug/-/debug-2.2.0.tgz",
+      "integrity": "sha1-+HBX6ZWxofauaklgZkE3vFbwOdo="
+    },
+    "find-up": {
+      "version": "1.1.2",
+      "resolved": "https://registry.npmjs.org/find-up/-/find-up-1.1.2.tgz",
+      "integrity": "sha1-ay6YIrGizgpgq2TWEOzK1TyyTQ8="
+    },
+    "ms": {
+      "version": "0.7.1",
+      "resolved": "https://registry.npmjs.org/ms/-/ms-0.7.1.tgz",
+      "integrity": "sha1-nNE8A62/8ltl7/3nzoZO6VIBcJg="
+    },
+    "path-exists": {
+      "version": "2.1.0",
+      "resolved": "https://registry.npmjs.org/path-exists/-/path-exists-2.1.0.tgz",
+      "integrity": "sha1-D+tsZPD8UY2adU3V77YscCJ2H0s="
+    },
+    "pinkie": {
+      "version": "2.0.4",
+      "resolved": "https://registry.npmjs.org/pinkie/-/pinkie-2.0.4.tgz",
+      "integrity": "sha1-clVrgM+g1IqXToDnckjoDtT3+HA="
+    },
+    "pinkie-promise": {
+      "version": "2.0.1",
+      "resolved": "https://registry.npmjs.org/pinkie-promise/-/pinkie-promise-2.0.1.tgz",
+      "integrity": "sha1-ITXW36ejWMBprJsXh3YogihFD/o="
+    },
+    "pkg-dir": {
+      "version": "1.0.0",
+      "resolved": "https://registry.npmjs.org/pkg-dir/-/pkg-dir-1.0.0.tgz",
+      "integrity": "sha1-ektQio1bstYp1EcFb/TpyTFM89Q="
+    }
+  }
+}

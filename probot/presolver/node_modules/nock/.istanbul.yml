@@ -1,0 +1,5 @@
+instrumentation:
+    excludes: ['tests/**/*.js', 'examples/**/*.js', 'lib/recorder.js']
+check:
+    global:
+        lines: 90

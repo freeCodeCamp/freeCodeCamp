@@ -1,0 +1,8 @@
+language: node_js
+node_js:
+  - "0.8"
+  - "0.10"
+  - "0.12"
+  - "iojs"
+before_install:
+  - npm install -g npm@~1.4.6

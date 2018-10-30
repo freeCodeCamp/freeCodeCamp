@@ -1,0 +1,1 @@
+../eslint/bin/eslint.js

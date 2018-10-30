@@ -1,0 +1,96 @@
+[
+    {
+        "description": "by int",
+        "schema": {"multipleOf": 2},
+        "tests": [
+            {
+                "description": "int by int",
+                "data": 10,
+                "valid": true
+            },
+            {
+                "description": "int by int fail",
+                "data": 7,
+                "valid": false
+            },
+            {
+                "description": "ignores non-numbers",
+                "data": "foo",
+                "valid": true
+            }
+        ]
+    },
+    {
+        "description": "by number",
+        "schema": {"multipleOf": 1.5},
+        "tests": [
+            {
+                "description": "zero is multiple of anything",
+                "data": 0,
+                "valid": true
+            },
+            {
+                "description": "4.5 is multiple of 1.5",
+                "data": 4.5,
+                "valid": true
+            },
+            {
+                "description": "35 is not multiple of 1.5",
+                "data": 35,
+                "valid": false
+            }
+        ]
+    },
+    {
+        "description": "by small number",
+        "schema": {"multipleOf": 0.0001},
+        "tests": [
+            {
+                "description": "0.0075 is multiple of 0.0001",
+                "data": 0.0075,
+                "valid": true
+            },
+            {
+                "description": "0.00751 is not multiple of 0.0001",
+                "data": 0.00751,
+                "valid": false
+            }
+        ]
+    },
+    {
+        "description": "by decimal number where floating point precision is wrong",
+        "schema": {"multipleOf": 0.01},
+        "tests": [
+            {
+                "description": "Number 2 is multiple of 0.01",
+                "data": 2,
+                "valid": true
+            },
+            {
+                "description": "Number 2.1 is multiple of 0.01",
+                "data": 2.1,
+                "valid": true
+            },
+            {
+                "description": "Number 2.2 is multiple of 0.01",
+                "data": 2.2,
+                "valid": true
+            },
+            {
+                "description": "Number 2.3 is multiple of 0.01",
+                "data": 2.3,
+                "valid": true
+            },
+            {
+                "description": "Number 2.4 is multiple of 0.01",
+                "data": 2.4,
+                "valid": true
+            },
+            {
+                "description": "Number 1.211 is not multiple of 0.01",
+                "data": 1.211,
+                "valid": false
+            }
+        ]
+    }
+]

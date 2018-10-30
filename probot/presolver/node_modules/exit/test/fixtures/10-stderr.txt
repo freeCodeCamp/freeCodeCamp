@@ -1,0 +1,10 @@
+stderr 0
+stderr 1
+stderr 2
+stderr 3
+stderr 4
+stderr 5
+stderr 6
+stderr 7
+stderr 8
+stderr 9

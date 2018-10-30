@@ -1,0 +1,49 @@
+[
+    {
+        "description": "invalid type for default",
+        "schema": {
+            "properties": {
+                "foo": {
+                    "type": "integer",
+                    "default": []
+                }
+            }
+        },
+        "tests": [
+            {
+                "description": "valid when property is specified",
+                "data": {"foo": 13},
+                "valid": true
+            },
+            {
+                "description": "still valid when the invalid default is used",
+                "data": {},
+                "valid": true
+            }
+        ]
+    },
+    {
+        "description": "invalid string value for default",
+        "schema": {
+            "properties": {
+                "bar": {
+                    "type": "string",
+                    "minLength": 4,
+                    "default": "bad"
+                }
+            }
+        },
+        "tests": [
+            {
+                "description": "valid when property is specified",
+                "data": {"bar": "good"},
+                "valid": true
+            },
+            {
+                "description": "still valid when the invalid default is used",
+                "data": {},
+                "valid": true
+            }
+        ]
+    }
+]

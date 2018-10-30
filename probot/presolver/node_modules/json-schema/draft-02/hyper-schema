@@ -1,0 +1,68 @@
+{
+	"$schema" : "http://json-schema.org/draft-02/hyper-schema#",
+	"id" : "http://json-schema.org/draft-02/hyper-schema#",
+
+	"properties" : {
+		"links" : {
+			"type" : "array",
+			"items" : {"$ref" : "http://json-schema.org/draft-02/links#"},
+			"optional" : true
+		},
+		
+		"fragmentResolution" : {
+			"type" : "string",
+			"optional" : true,
+			"default" : "slash-delimited"
+		},
+		
+		"root" : {
+			"type" : "boolean",
+			"optional" : true,
+			"default" : false
+		},
+		
+		"readonly" : {
+			"type" : "boolean",
+			"optional" : true,
+			"default" : false
+		},
+		
+		"pathStart" : {
+			"type" : "string",
+			"optional" : true,
+			"format" : "uri"
+		},
+		
+		"mediaType" : {
+			"type" : "string",
+			"optional" : true,
+			"format" : "media-type"
+		},
+		
+		"alternate" : {
+			"type" : "array",
+			"items" : {"$ref" : "#"},
+			"optional" : true
+		}
+	},
+	
+	"links" : [
+		{
+			"href" : "{$ref}",
+			"rel" : "full"
+		},
+		
+		{
+			"href" : "{$schema}",
+			"rel" : "describedby"
+		},
+		
+		{
+			"href" : "{id}",
+			"rel" : "self"
+		}
+	],
+	
+	"fragmentResolution" : "slash-delimited",
+	"extends" : {"$ref" : "http://json-schema.org/draft-02/schema#"}
+}

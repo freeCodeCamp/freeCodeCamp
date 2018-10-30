@@ -1,0 +1,59 @@
+{
+  "_args": [
+    [
+      "util-deprecate@1.0.2",
+      "/Users/eshanker/Code/fsevents"
+    ]
+  ],
+  "_from": "util-deprecate@1.0.2",
+  "_id": "util-deprecate@1.0.2",
+  "_inBundle": true,
+  "_integrity": "sha1-RQ1Nyfpw3nMnYvvS1KKJgUGaDM8=",
+  "_location": "/fsevents/util-deprecate",
+  "_phantomChildren": {},
+  "_requested": {
+    "type": "version",
+    "registry": true,
+    "raw": "util-deprecate@1.0.2",
+    "name": "util-deprecate",
+    "escapedName": "util-deprecate",
+    "rawSpec": "1.0.2",
+    "saveSpec": null,
+    "fetchSpec": "1.0.2"
+  },
+  "_requiredBy": [
+    "/fsevents/readable-stream"
+  ],
+  "_resolved": "https://registry.npmjs.org/util-deprecate/-/util-deprecate-1.0.2.tgz",
+  "_spec": "1.0.2",
+  "_where": "/Users/eshanker/Code/fsevents",
+  "author": {
+    "name": "Nathan Rajlich",
+    "email": "nathan@tootallnate.net",
+    "url": "http://n8.io/"
+  },
+  "browser": "browser.js",
+  "bugs": {
+    "url": "https://github.com/TooTallNate/util-deprecate/issues"
+  },
+  "description": "The Node.js `util.deprecate()` function with browser support",
+  "homepage": "https://github.com/TooTallNate/util-deprecate",
+  "keywords": [
+    "util",
+    "deprecate",
+    "browserify",
+    "browser",
+    "node"
+  ],
+  "license": "MIT",
+  "main": "node.js",
+  "name": "util-deprecate",
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/TooTallNate/util-deprecate.git"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "version": "1.0.2"
+}

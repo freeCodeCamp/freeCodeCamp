@@ -1,0 +1,10 @@
+{
+  "compilerOptions": {
+    "strict": true,
+    "noEmit": true
+  },
+  "files": [
+    "index.d.ts",
+    "test/typings.ts"
+  ]
+}

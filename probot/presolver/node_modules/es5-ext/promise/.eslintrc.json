@@ -1,0 +1,3 @@
+{
+  "globals": { "Promise": true }
+}

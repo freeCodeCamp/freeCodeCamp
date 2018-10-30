@@ -1,0 +1,18 @@
+[
+  {
+    "description": "multiple types of null and object containing properties",
+    "schema": {
+      "type": ["null", "object"],
+      "properties": {
+        "foo": {}
+      }
+    },
+    "tests": [
+      {
+        "description": "null is valid",
+        "data": null,
+        "valid": true
+      }
+    ]
+  }
+]

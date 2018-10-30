@@ -1,0 +1,22 @@
+language: node_js
+node_js:
+  - "0.10"
+  - "0.12"
+  - "4.4"
+  - "6.2"
+os:
+  - linux
+  - centos
+  - macosx
+
+before_install:
+  - travis_retry npm install -g npm@2.14.2
+  - travis_retry npm install
+
+script:
+  - npm test
+
+matrix:
+  allow_failures:
+    - node_js: "0.10"
+    - node_js: "0.12"

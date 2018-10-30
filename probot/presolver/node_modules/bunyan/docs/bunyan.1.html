@@ -1,0 +1,281 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta http-equiv='content-type' value='text/html;charset=utf8'>
+  <meta name='generator' value='Ronn/v0.7.3 (http://github.com/rtomayko/ronn/tree/0.7.3)'>
+  <title>bunyan(1) - filter and pretty-print Bunyan log file content</title>
+  <style type='text/css' media='all'>
+  /* style: man */
+  body#manpage {margin:0}
+  .mp {max-width:100ex;padding:0 9ex 1ex 4ex}
+  .mp p,.mp pre,.mp ul,.mp ol,.mp dl {margin:0 0 20px 0}
+  .mp h2 {margin:10px 0 0 0}
+  .mp > p,.mp > pre,.mp > ul,.mp > ol,.mp > dl {margin-left:8ex}
+  .mp h3 {margin:0 0 0 4ex}
+  .mp dt {margin:0;clear:left}
+  
+  .mp dd {margin:0 0 0 9ex}
+  .mp h1,.mp h2,.mp h3,.mp h4 {clear:left}
+  .mp pre {margin-bottom:20px}
+  .mp pre+h2,.mp pre+h3 {margin-top:22px}
+  .mp h2+pre,.mp h3+pre {margin-top:5px}
+  .mp img {display:block;margin:auto}
+  .mp h1.man-title {display:none}
+  .mp,.mp code,.mp pre,.mp tt,.mp kbd,.mp samp,.mp h3,.mp h4 {font-family:monospace;font-size:14px;line-height:1.42857142857143}
+  .mp h2 {font-size:16px;line-height:1.25}
+  .mp h1 {font-size:20px;line-height:2}
+  .mp {text-align:justify;background:#fff}
+  .mp,.mp code,.mp pre,.mp pre code,.mp tt,.mp kbd,.mp samp {color:#131211}
+  .mp h1,.mp h2,.mp h3,.mp h4 {color:#030201}
+  .mp u {text-decoration:underline}
+  .mp code,.mp strong,.mp b {font-weight:bold;color:#131211}
+  .mp em,.mp var {font-style:italic;color:#232221;text-decoration:none}
+  .mp a,.mp a:link,.mp a:hover,.mp a code,.mp a pre,.mp a tt,.mp a kbd,.mp a samp {color:#0000ff}
+  .mp b.man-ref {font-weight:normal;color:#434241}
+  .mp pre {padding:0 4ex}
+  .mp pre code {font-weight:normal;color:#434241}
+  .mp h2+pre,h3+pre {padding-left:0}
+  ol.man-decor,ol.man-decor li {margin:3px 0 10px 0;padding:0;float:left;width:33%;list-style-type:none;text-transform:uppercase;color:#999;letter-spacing:1px}
+  ol.man-decor {width:100%}
+  ol.man-decor li.tl {text-align:left}
+  ol.man-decor li.tc {text-align:center;letter-spacing:4px}
+  ol.man-decor li.tr {text-align:right;float:right}
+  </style>
+  <style type='text/css' media='all'>
+  /* style: toc */
+  .man-navigation {display:block !important;position:fixed;top:0;left:113ex;height:100%;width:100%;padding:48px 0 0 0;border-left:1px solid #dbdbdb;background:#eee}
+  .man-navigation a,.man-navigation a:hover,.man-navigation a:link,.man-navigation a:visited {display:block;margin:0;padding:5px 2px 5px 30px;color:#999;text-decoration:none}
+  .man-navigation a:hover {color:#111;text-decoration:underline}
+  </style>
+</head>
+<!--
+  The following styles are deprecated and will be removed at some point:
+  div#man, div#man ol.man, div#man ol.head, div#man ol.man.
+
+  The .man-page, .man-decor, .man-head, .man-foot, .man-title, and
+  .man-navigation should be used instead.
+-->
+<body id='manpage'>
+  <div class='mp' id='man'>
+
+  <div class='man-navigation' style='display:none'>
+    <a href="#NAME">NAME</a>
+    <a href="#SYNOPSIS">SYNOPSIS</a>
+    <a href="#DESCRIPTION">DESCRIPTION</a>
+    <a href="#OPTIONS">OPTIONS</a>
+    <a href="#LOG-LEVELS">LOG LEVELS</a>
+    <a href="#OUTPUT-FORMATS">OUTPUT FORMATS</a>
+    <a href="#DTRACE-SUPPORT">DTRACE SUPPORT</a>
+    <a href="#ENVIRONMENT">ENVIRONMENT</a>
+    <a href="#PROJECT-BUGS">PROJECT &amp; BUGS</a>
+    <a href="#LICENSE">LICENSE</a>
+    <a href="#COPYRIGHT">COPYRIGHT</a>
+  </div>
+
+  <ol class='man-decor man-head man head'>
+    <li class='tl'>bunyan(1)</li>
+    <li class='tc'>bunyan manual</li>
+    <li class='tr'>bunyan(1)</li>
+  </ol>
+
+  <h2 id="NAME">NAME</h2>
+<p class="man-name">
+  <code>bunyan</code> - <span class="man-whatis">filter and pretty-print Bunyan log file content</span>
+</p>
+
+<h2 id="SYNOPSIS">SYNOPSIS</h2>
+
+<p><code>bunyan</code> [OPTIONS]</p>
+
+<p>... | <code>bunyan</code> [OPTIONS]</p>
+
+<p><code>bunyan</code> [OPTIONS] -p PID</p>
+
+<h2 id="DESCRIPTION">DESCRIPTION</h2>
+
+<p>"Bunyan" is <strong>a simple and fast a JSON logging library</strong> for node.js services,
+a one-JSON-object-per-line log format, and <strong>a <code>bunyan</code> CLI tool</strong> for nicely
+viewing those logs. This man page describes the latter.</p>
+
+<h3 id="Pretty-printing">Pretty-printing</h3>
+
+<p>A bunyan log file is a stream of JSON objects, optionally interspersed with
+non-JSON log lines. The primary usage of <a href="bunyan.1.html" class="man-ref">bunyan<span class="s">(1)</span></a> is to pretty print,
+for example:</p>
+
+<pre><code>$ bunyan foo.log          # or `cat foo.log | bunyan
+[2012-02-08T22:56:52.856Z]  INFO: myservice/123 on example.com: My message
+    extra: multi
+    line
+[2012-02-08T22:56:54.856Z] ERROR: myservice/123 on example.com: My message
+...
+</code></pre>
+
+<p>By default the "long" output format is used. Use the <code>-o FORMAT</code> option to
+emit other formats. E.g.:</p>
+
+<pre><code>$ bunyan foo.log -o short
+22:56:52.856Z  INFO myservice: My message
+    extra: multi
+    line
+22:56:54.856Z ERROR myservice: My message
+...
+</code></pre>
+
+<p>These will color the output if supported in your terminal.
+See "OUTPUT FORMATS" below.</p>
+
+<h3 id="Filtering">Filtering</h3>
+
+<p>The <code>bunyan</code> CLI can also be used to filter a bunyan log. Use <code>-l LEVEL</code>
+to filter by level:</p>
+
+<pre><code>$ bunyan foo.log -l error       # show only 'error' level records
+[2012-02-08T22:56:54.856Z] ERROR: myservice/123 on example.com: My message
+</code></pre>
+
+<p>Use <code>-c COND</code> to filter on a JavaScript expression returning true on the
+record data. In the COND code, <code>this</code> refers to the record object:</p>
+
+<pre><code>$ bunyan foo.log -c `this.three`     # show records with the 'extra' field
+[2012-02-08T22:56:52.856Z]  INFO: myservice/123 on example.com: My message
+    extra: multi
+    line
+</code></pre>
+
+<h2 id="OPTIONS">OPTIONS</h2>
+
+<dl>
+<dt><code>-h</code>, <code>--help</code></dt><dd><p>Print this help info and exit.</p></dd>
+<dt><code>--version</code></dt><dd><p>Print version of this command and exit.</p></dd>
+<dt><code>-q</code>, <code>--quiet</code></dt><dd><p>Don't warn if input isn't valid JSON.</p></dd>
+</dl>
+
+
+<p>Dtrace options (only on dtrace-supporting platforms):</p>
+
+<dl>
+<dt><code>-p PID</code>, <code>-p NAME</code></dt><dd>Process bunyan:log-* probes from the process with the given PID.
+Can be used multiple times, or specify all processes with '*',
+or a set of processes whose command &amp; args match a pattern with
+'-p NAME'.</dd>
+</dl>
+
+
+<p>Filtering options:</p>
+
+<dl>
+<dt><code>-l</code>, <code>--level LEVEL</code></dt><dd><p>Only show messages at or above the specified level. You can specify level
+<em>names</em> or numeric values. (See 'Log Levels' below.)</p></dd>
+<dt><code>-c COND</code>, <code>--condition COND</code></dt><dd><p>Run each log message through the condition and only show those that
+resolve to a truish value. E.g. <code>-c 'this.pid == 123'</code>.</p></dd>
+<dt><code>--strict</code></dt><dd><p>Suppress all but legal Bunyan JSON log lines. By default non-JSON, and
+non-Bunyan lines are passed through.</p></dd>
+</dl>
+
+
+<p>Output options:</p>
+
+<dl>
+<dt class="flush"><code>--color</code></dt><dd><p>Colorize output. Defaults to try if output stream is a TTY.</p></dd>
+<dt><code>--no-color</code></dt><dd><p>Force no coloring (e.g. terminal doesn't support it)</p></dd>
+<dt><code>-o FORMAT</code>, <code>--output FORMAT</code></dt><dd><p>Specify an output format. One of <code>long</code> (the default), <code>short</code>, <code>json</code>,
+<code>json-N</code>, <code>bunyan</code> (the native bunyan 0-indent JSON output) or <code>inspect</code>.</p></dd>
+<dt class="flush"><code>-j</code></dt><dd><p>Shortcut for <code>-o json</code>.</p></dd>
+<dt><code>-L</code>, <code>--time local</code></dt><dd><p>Display the time field in <em>local</em> time, rather than the default UTC
+time.</p></dd>
+</dl>
+
+
+<h2 id="LOG-LEVELS">LOG LEVELS</h2>
+
+<p>In Bunyan log records, then <code>level</code> field is a number. For the <code>-l|--level</code>
+argument the level <strong>names</strong> are supported as shortcuts. In <code>-c|--condition</code>
+scripts, uppercase symbols like "DEBUG" are defined for convenience.</p>
+
+<pre><code>Level Name      Level Number    Symbol in COND Scripts
+trace           10              TRACE
+debug           20              DEBUG
+info            30              INFO
+warn            40              WARN
+error           50              ERROR
+fatal           60              FATAL
+</code></pre>
+
+<h2 id="OUTPUT-FORMATS">OUTPUT FORMATS</h2>
+
+<pre><code>FORMAT NAME         DESCRIPTION
+long (default)      The default output. Long form. Colored and "pretty".
+                    'req' and 'res' and 'err' fields are rendered specially
+                    as an HTTP request, HTTP response and exception
+                    stack trace, respectively. For backward compat, the
+                    name "paul" also works for this.
+short               Like the default output, but more concise. Some
+                    typically redundant fields are ellided.
+json                JSON output, 2-space indentation.
+json-N              JSON output, N-space indentation, e.g. "json-4"
+bunyan              Alias for "json-0", the Bunyan "native" format.
+inspect             Node.js `util.inspect` output.
+</code></pre>
+
+<h2 id="DTRACE-SUPPORT">DTRACE SUPPORT</h2>
+
+<p>On systems that support DTrace (e.g., MacOS, FreeBSD, illumos derivatives
+like SmartOS and OmniOS), Bunyan will create a DTrace provider (<code>bunyan</code>)
+that makes available the following probes:</p>
+
+<pre><code>log-trace
+log-debug
+log-info
+log-warn
+log-error
+log-fatal
+</code></pre>
+
+<p>Each of these probes has a single argument: the string that would be
+written to the log.  Note that when a probe is enabled, it will
+fire whenever the corresponding function is called, even if the level of
+the log message is less than that of any stream.</p>
+
+<p>See <a href="https://github.com/trentm/node-bunyan#dtrace-support" data-bare-link="true">https://github.com/trentm/node-bunyan#dtrace-support</a> for more details
+and the '-p PID' option above for convenience usage.</p>
+
+<h2 id="ENVIRONMENT">ENVIRONMENT</h2>
+
+<dl>
+<dt><code>BUNYAN_NO_COLOR</code></dt><dd>Set to a non-empty value to force no output coloring. See '--no-color'.</dd>
+</dl>
+
+
+<h2 id="PROJECT-BUGS">PROJECT &amp; BUGS</h2>
+
+<p><code>bunyan</code> is written in JavaScript and requires node.js (<code>node</code>). The project
+lives at <a href="https://github.com/trentm/node-bunyan" data-bare-link="true">https://github.com/trentm/node-bunyan</a> and is published to npm as
+"bunyan".</p>
+
+<ul>
+<li>README, Install notes: <a href="https://github.com/trentm/node-bunyan#readme" data-bare-link="true">https://github.com/trentm/node-bunyan#readme</a></li>
+<li>Report bugs to <a href="https://github.com/trentm/node-bunyan/issues" data-bare-link="true">https://github.com/trentm/node-bunyan/issues</a>.</li>
+<li>See the full changelog at: <a href="https://github.com/trentm/node-bunyan/blob/master/CHANGES.md" data-bare-link="true">https://github.com/trentm/node-bunyan/blob/master/CHANGES.md</a></li>
+</ul>
+
+
+<h2 id="LICENSE">LICENSE</h2>
+
+<p>MIT License (see <a href="https://github.com/trentm/node-bunyan/blob/master/LICENSE.txt" data-bare-link="true">https://github.com/trentm/node-bunyan/blob/master/LICENSE.txt</a>)</p>
+
+<h2 id="COPYRIGHT">COPYRIGHT</h2>
+
+<p>node-bunyan is Copyright (c) 2012 Joyent, Inc. Copyright (c) 2012 Trent Mick.
+All rights reserved.</p>
+
+
+  <ol class='man-decor man-foot man foot'>
+    <li class='tl'></li>
+    <li class='tc'>January 2015</li>
+    <li class='tr'>bunyan(1)</li>
+  </ol>
+
+  </div>
+<a href="https://github.com/trentm/node-bunyan"><img style="position: absolute; top: 0; right: 0; border: 0;" src="https://s3.amazonaws.com/github/ribbons/forkme_right_darkblue_121621.png" alt="Fork me on GitHub"></a></body>
+</html>

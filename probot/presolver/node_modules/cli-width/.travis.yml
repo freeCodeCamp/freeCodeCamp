@@ -1,0 +1,11 @@
+language: node_js
+node_js:
+  - '0.10'
+  - '0.11'
+  - '0.12'
+  - 'iojs-1'
+  - 'iojs-2'
+  - 'iojs-3'
+  - '4.0'
+after_script:
+  - npm run coveralls

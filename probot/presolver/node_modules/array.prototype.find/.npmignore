@@ -1,0 +1,25 @@
+# Numerous always-ignore extensions
+*.diff
+*.err
+*.orig
+*.log
+*~
+
+# OS or Editor folders
+.DS_Store
+.cache
+Icon?
+
+# Folders to ignore
+.hg
+.svn
+
+# Node.js package manager
+/node_modules
+/npm-debug.log
+
+# Other stuff
+*.pyc
+/tmp
+
+# Project stuff

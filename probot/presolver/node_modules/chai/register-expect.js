@@ -1,0 +1,1 @@
+global.expect = require('./').expect;

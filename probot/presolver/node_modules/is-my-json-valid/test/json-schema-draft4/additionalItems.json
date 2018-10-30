@@ -1,0 +1,82 @@
+[
+    {
+        "description": "additionalItems as schema",
+        "schema": {
+            "items": [{}],
+            "additionalItems": {"type": "integer"}
+        },
+        "tests": [
+            {
+                "description": "additional items match schema",
+                "data": [ null, 2, 3, 4 ],
+                "valid": true
+            },
+            {
+                "description": "additional items do not match schema",
+                "data": [ null, 2, 3, "foo" ],
+                "valid": false
+            }
+        ]
+    },
+    {
+        "description": "items is schema, no additionalItems",
+        "schema": {
+            "items": {},
+            "additionalItems": false
+        },
+        "tests": [
+            {
+                "description": "all items match schema",
+                "data": [ 1, 2, 3, 4, 5 ],
+                "valid": true
+            }
+        ]
+    },
+    {
+        "description": "array of items with no additionalItems",
+        "schema": {
+            "items": [{}, {}, {}],
+            "additionalItems": false
+        },
+        "tests": [
+            {
+                "description": "no additional items present",
+                "data": [ 1, 2, 3 ],
+                "valid": true
+            },
+            {
+                "description": "additional items are not permitted",
+                "data": [ 1, 2, 3, 4 ],
+                "valid": false
+            }
+        ]
+    },
+    {
+        "description": "additionalItems as false without items",
+        "schema": {"additionalItems": false},
+        "tests": [
+            {
+                "description":
+                    "items defaults to empty schema so everything is valid",
+                "data": [ 1, 2, 3, 4, 5 ],
+                "valid": true
+            },
+            {
+                "description": "ignores non-arrays",
+                "data": {"foo" : "bar"},
+                "valid": true
+            }
+        ]
+    },
+    {
+        "description": "additionalItems are allowed by default",
+        "schema": {"items": [{"type": "integer"}]},
+        "tests": [
+            {
+                "description": "only the first item is validated",
+                "data": [1, "foo", false],
+                "valid": true
+            }
+        ]
+    }
+]

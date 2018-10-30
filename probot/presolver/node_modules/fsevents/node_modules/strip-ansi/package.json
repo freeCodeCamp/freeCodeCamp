@@ -1,0 +1,105 @@
+{
+  "_args": [
+    [
+      "strip-ansi@3.0.1",
+      "/Users/eshanker/Code/fsevents"
+    ]
+  ],
+  "_from": "strip-ansi@3.0.1",
+  "_id": "strip-ansi@3.0.1",
+  "_inBundle": true,
+  "_integrity": "sha1-ajhfuIU9lS1f8F0Oiq+UJ43GPc8=",
+  "_location": "/fsevents/strip-ansi",
+  "_phantomChildren": {},
+  "_requested": {
+    "type": "version",
+    "registry": true,
+    "raw": "strip-ansi@3.0.1",
+    "name": "strip-ansi",
+    "escapedName": "strip-ansi",
+    "rawSpec": "3.0.1",
+    "saveSpec": null,
+    "fetchSpec": "3.0.1"
+  },
+  "_requiredBy": [
+    "/fsevents/gauge",
+    "/fsevents/string-width"
+  ],
+  "_resolved": "https://registry.npmjs.org/strip-ansi/-/strip-ansi-3.0.1.tgz",
+  "_spec": "3.0.1",
+  "_where": "/Users/eshanker/Code/fsevents",
+  "author": {
+    "name": "Sindre Sorhus",
+    "email": "sindresorhus@gmail.com",
+    "url": "sindresorhus.com"
+  },
+  "bugs": {
+    "url": "https://github.com/chalk/strip-ansi/issues"
+  },
+  "dependencies": {
+    "ansi-regex": "^2.0.0"
+  },
+  "description": "Strip ANSI escape codes",
+  "devDependencies": {
+    "ava": "*",
+    "xo": "*"
+  },
+  "engines": {
+    "node": ">=0.10.0"
+  },
+  "files": [
+    "index.js"
+  ],
+  "homepage": "https://github.com/chalk/strip-ansi#readme",
+  "keywords": [
+    "strip",
+    "trim",
+    "remove",
+    "ansi",
+    "styles",
+    "color",
+    "colour",
+    "colors",
+    "terminal",
+    "console",
+    "string",
+    "tty",
+    "escape",
+    "formatting",
+    "rgb",
+    "256",
+    "shell",
+    "xterm",
+    "log",
+    "logging",
+    "command-line",
+    "text"
+  ],
+  "license": "MIT",
+  "maintainers": [
+    {
+      "name": "Sindre Sorhus",
+      "email": "sindresorhus@gmail.com",
+      "url": "sindresorhus.com"
+    },
+    {
+      "name": "Joshua Boy Nicolai Appelman",
+      "email": "joshua@jbna.nl",
+      "url": "jbna.nl"
+    },
+    {
+      "name": "JD Ballard",
+      "email": "i.am.qix@gmail.com",
+      "url": "github.com/qix-"
+    }
+  ],
+  "name": "strip-ansi",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/chalk/strip-ansi.git"
+  },
+  "scripts": {
+    "test": "xo && ava"
+  },
+  "version": "3.0.1"
+}

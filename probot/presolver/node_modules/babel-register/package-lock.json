@@ -1,0 +1,78 @@
+{
+  "name": "babel-register",
+  "version": "6.24.1",
+  "lockfileVersion": 1,
+  "requires": true,
+  "dependencies": {
+    "callsite": {
+      "version": "1.0.0",
+      "resolved": "https://registry.npmjs.org/callsite/-/callsite-1.0.0.tgz",
+      "integrity": "sha1-KAOY5dZkvXQDi28JBRU+borxvCA=",
+      "dev": true
+    },
+    "core-js": {
+      "version": "2.5.0",
+      "resolved": "https://registry.npmjs.org/core-js/-/core-js-2.5.0.tgz",
+      "integrity": "sha1-VpwFCRi+ZIazg3VSAorgRmtxcIY="
+    },
+    "decache": {
+      "version": "4.1.0",
+      "resolved": "https://registry.npmjs.org/decache/-/decache-4.1.0.tgz",
+      "integrity": "sha1-IDfV7fdW3aIwyFAjZZ58PR1uAQU=",
+      "dev": true,
+      "requires": {
+        "callsite": "1.0.0"
+      }
+    },
+    "home-or-tmp": {
+      "version": "2.0.0",
+      "resolved": "https://registry.npmjs.org/home-or-tmp/-/home-or-tmp-2.0.0.tgz",
+      "integrity": "sha1-42w/LSyufXRqhX440Y1fMqeILbg=",
+      "requires": {
+        "os-homedir": "1.0.2",
+        "os-tmpdir": "1.0.2"
+      }
+    },
+    "lodash": {
+      "version": "4.17.4",
+      "resolved": "https://registry.npmjs.org/lodash/-/lodash-4.17.4.tgz",
+      "integrity": "sha1-eCA6TRwyiuHYbcpkYONptX9AVa4="
+    },
+    "minimist": {
+      "version": "0.0.8",
+      "resolved": "https://registry.npmjs.org/minimist/-/minimist-0.0.8.tgz",
+      "integrity": "sha1-hX/Kv8M5fSYluCKCYuhqp6ARsF0="
+    },
+    "mkdirp": {
+      "version": "0.5.1",
+      "resolved": "https://registry.npmjs.org/mkdirp/-/mkdirp-0.5.1.tgz",
+      "integrity": "sha1-MAV0OOrGz3+MR2fzhkjWaX11yQM=",
+      "requires": {
+        "minimist": "0.0.8"
+      }
+    },
+    "os-homedir": {
+      "version": "1.0.2",
+      "resolved": "https://registry.npmjs.org/os-homedir/-/os-homedir-1.0.2.tgz",
+      "integrity": "sha1-/7xJiDNuDoM94MFox+8VISGqf7M="
+    },
+    "os-tmpdir": {
+      "version": "1.0.2",
+      "resolved": "https://registry.npmjs.org/os-tmpdir/-/os-tmpdir-1.0.2.tgz",
+      "integrity": "sha1-u+Z0BseaqFxc/sdm/lc0VV36EnQ="
+    },
+    "source-map": {
+      "version": "0.5.6",
+      "resolved": "https://registry.npmjs.org/source-map/-/source-map-0.5.6.tgz",
+      "integrity": "sha1-dc449SvwczxafwwRjYEzSiu19BI="
+    },
+    "source-map-support": {
+      "version": "0.4.15",
+      "resolved": "https://registry.npmjs.org/source-map-support/-/source-map-support-0.4.15.tgz",
+      "integrity": "sha1-AyAt9lwG0r2MfsI2KhkwVv7407E=",
+      "requires": {
+        "source-map": "0.5.6"
+      }
+    }
+  }
+}

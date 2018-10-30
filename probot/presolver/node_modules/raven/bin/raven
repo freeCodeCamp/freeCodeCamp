@@ -1,0 +1,59 @@
+#!/usr/bin/env node
+
+var os = require('os');
+var raven = require('../');
+
+function usage() {
+  var path = require('path');
+  console.log('usage:', path.basename(process.argv[1]), 'test [SENTRY_DSN]');
+}
+
+if (process.argv[2] !== 'test') {
+  usage();
+  process.exit(1);
+}
+
+var dsn = process.argv.slice(3).join(' ') || process.env.SENTRY_DSN;
+if (!dsn) {
+  usage();
+  console.log();
+  console.log('Error: No configuration detected!');
+  console.log('You must either pass a DSN to the command or set the SENTRY_DSN environment variable.');
+  process.exit(1);
+}
+
+console.log('Using DSN configuration:');
+console.log(' ', dsn);
+console.log();
+
+var client = new raven.Client(dsn);
+
+console.log('Sending a test message...');
+
+client.on('logged', function(result) {
+  console.log('success!');
+  console.log('Event ID was', client.getIdent(result));
+});
+client.on('error', function(err) {
+  console.log('error!');
+  throw err;
+});
+
+try {
+  test
+} catch (ex) {
+  client.captureException(ex, {
+    message: 'This is a test message generated using ``raven test``',
+    level: 'info',
+    logger: 'sentry.test',
+    transaction: 'bin:raven at main',
+    request: {
+      method: 'GET',
+      url: 'http://example.com'
+    },
+    extra: {
+      user: process.getuid && process.getuid(),
+      loadavg: os.loadavg()
+    }
+  });
+}

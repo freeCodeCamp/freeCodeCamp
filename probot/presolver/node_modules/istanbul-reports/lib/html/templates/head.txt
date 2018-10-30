@@ -1,0 +1,60 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <title>Code coverage report for {{entity}}</title>
+    <meta charset="utf-8" />
+{{#if prettify}}
+    <link rel="stylesheet" href="{{prettify.css}}" />
+{{/if}}
+    <link rel="stylesheet" href="{{base.css}}" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style type='text/css'>
+        .coverage-summary .sorter {
+            background-image: url({{sorter.image}});
+        }
+    </style>
+</head>
+<body>
+<div class='wrapper'>
+  <div class='pad1'>
+    <h1>
+      {{{pathHtml}}}
+    </h1>
+    <div class='clearfix'>
+      {{#with metrics.statements}}
+      <div class='fl pad1y space-right2'>
+        <span class="strong">{{pct}}% </span>
+        <span class="quiet">Statements</span>
+        <span class='fraction'>{{covered}}/{{total}}</span>
+      </div>
+      {{/with}}
+      {{#with metrics.branches}}
+      <div class='fl pad1y space-right2'>
+        <span class="strong">{{pct}}% </span>
+        <span class="quiet">Branches</span>
+        <span class='fraction'>{{covered}}/{{total}}</span>
+      </div>
+      {{/with}}
+      {{#with metrics.functions}}
+      <div class='fl pad1y space-right2'>
+        <span class="strong">{{pct}}% </span>
+        <span class="quiet">Functions</span>
+        <span class='fraction'>{{covered}}/{{total}}</span>
+      </div>
+      {{/with}}
+      {{#with metrics.lines}}
+      <div class='fl pad1y space-right2'>
+        <span class="strong">{{pct}}% </span>
+        <span class="quiet">Lines</span>
+        <span class='fraction'>{{covered}}/{{total}}</span>
+      </div>
+      {{/with}}
+      {{#if_has_ignores metrics}}
+      <div class='fl pad1y'>
+        <span class="strong">{{#show_ignores metrics}}{{/show_ignores}}</span>
+        <span class="quiet">Ignored</span>  &nbsp;&nbsp;&nbsp;&nbsp;
+      </div>
+      {{/if_has_ignores}}
+    </div>
+  </div>
+  <div class='status-line {{reportClass}}'></div>

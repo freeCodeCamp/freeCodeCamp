@@ -1,0 +1,23 @@
+{
+	"root": true,
+
+	"extends": "@ljharb",
+
+	"rules": {
+		"array-bracket-newline": 0,
+		"array-element-newline": 0,
+		"complexity": 0,
+		"eqeqeq": [2, "allow-null"],
+		"func-name-matching": 0,
+		"id-length": [2, { "min": 1, "max": 30 }],
+		"max-lines": [2, 700],
+		"max-params": [2, 4],
+		"max-statements": [2, 24],
+		"max-statements-per-line": [2, { "max": 2 }],
+		"no-magic-numbers": 0,
+		"new-cap": 0,
+		"no-extra-parens": 1,
+		"operator-linebreak": [2, "before"],
+		"sort-keys": 0
+	}
+}

@@ -1,0 +1,79 @@
+{
+  "_args": [
+    [
+      "glob@7.1.2",
+      "/Users/eshanker/Code/fsevents"
+    ]
+  ],
+  "_from": "glob@7.1.2",
+  "_id": "glob@7.1.2",
+  "_inBundle": true,
+  "_integrity": "sha512-MJTUg1kjuLeQCJ+ccE4Vpa6kKVXkPYJ2mOCQyUuKLcLQsdrMCpBPUi8qVE6+YuaJkozeA9NusTAw3hLr8Xe5EQ==",
+  "_location": "/fsevents/glob",
+  "_phantomChildren": {},
+  "_requested": {
+    "type": "version",
+    "registry": true,
+    "raw": "glob@7.1.2",
+    "name": "glob",
+    "escapedName": "glob",
+    "rawSpec": "7.1.2",
+    "saveSpec": null,
+    "fetchSpec": "7.1.2"
+  },
+  "_requiredBy": [
+    "/fsevents/rimraf"
+  ],
+  "_resolved": "https://registry.npmjs.org/glob/-/glob-7.1.2.tgz",
+  "_spec": "7.1.2",
+  "_where": "/Users/eshanker/Code/fsevents",
+  "author": {
+    "name": "Isaac Z. Schlueter",
+    "email": "i@izs.me",
+    "url": "http://blog.izs.me/"
+  },
+  "bugs": {
+    "url": "https://github.com/isaacs/node-glob/issues"
+  },
+  "dependencies": {
+    "fs.realpath": "^1.0.0",
+    "inflight": "^1.0.4",
+    "inherits": "2",
+    "minimatch": "^3.0.4",
+    "once": "^1.3.0",
+    "path-is-absolute": "^1.0.0"
+  },
+  "description": "a little globber",
+  "devDependencies": {
+    "mkdirp": "0",
+    "rimraf": "^2.2.8",
+    "tap": "^7.1.2",
+    "tick": "0.0.6"
+  },
+  "engines": {
+    "node": "*"
+  },
+  "files": [
+    "glob.js",
+    "sync.js",
+    "common.js"
+  ],
+  "homepage": "https://github.com/isaacs/node-glob#readme",
+  "license": "ISC",
+  "main": "glob.js",
+  "name": "glob",
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/isaacs/node-glob.git"
+  },
+  "scripts": {
+    "bench": "bash benchmark.sh",
+    "benchclean": "node benchclean.js",
+    "prepublish": "npm run benchclean",
+    "prof": "bash prof.sh && cat profile.txt",
+    "profclean": "rm -f v8.log profile.txt",
+    "test": "tap test/*.js --cov",
+    "test-regen": "npm run profclean && TEST_REGEN=1 node test/00-setup.js"
+  },
+  "version": "7.1.2"
+}

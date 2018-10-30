@@ -1,0 +1,23 @@
+language: node_js
+
+os:
+  - linux
+  - osx
+
+env:
+ - SKIP_DTRACE=1
+
+node_js:
+  - '0.10'
+  - '0.12'
+  - '4'
+  - '5'
+  - '6'
+  - 'node'
+
+
+# Gives us faster boot time, see https://docs.travis-ci.com/user/ci-environment/
+sudo: false
+
+script:
+  - npm test

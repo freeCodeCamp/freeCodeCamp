@@ -1,0 +1,105 @@
+{
+  "_args": [
+    [
+      "needle@2.2.0",
+      "/Users/eshanker/Code/fsevents"
+    ]
+  ],
+  "_from": "needle@2.2.0",
+  "_id": "needle@2.2.0",
+  "_inBundle": true,
+  "_integrity": "sha512-eFagy6c+TYayorXw/qtAdSvaUpEbBsDwDyxYFgLZ0lTojfH7K+OdBqAF7TAFwDokJaGpubpSGG0wO3iC0XPi8w==",
+  "_location": "/fsevents/needle",
+  "_phantomChildren": {},
+  "_requested": {
+    "type": "version",
+    "registry": true,
+    "raw": "needle@2.2.0",
+    "name": "needle",
+    "escapedName": "needle",
+    "rawSpec": "2.2.0",
+    "saveSpec": null,
+    "fetchSpec": "2.2.0"
+  },
+  "_requiredBy": [
+    "/fsevents/node-pre-gyp"
+  ],
+  "_resolved": "https://registry.npmjs.org/needle/-/needle-2.2.0.tgz",
+  "_spec": "2.2.0",
+  "_where": "/Users/eshanker/Code/fsevents",
+  "author": {
+    "name": "Tomás Pollak",
+    "email": "tomas@forkhq.com"
+  },
+  "bin": {
+    "needle": "./bin/needle"
+  },
+  "bugs": {
+    "url": "https://github.com/tomas/needle/issues"
+  },
+  "dependencies": {
+    "debug": "^2.1.2",
+    "iconv-lite": "^0.4.4",
+    "sax": "^1.2.4"
+  },
+  "description": "The leanest and most handsome HTTP client in the Nodelands.",
+  "devDependencies": {
+    "JSONStream": "",
+    "jschardet": "",
+    "mocha": "",
+    "q": "",
+    "should": "",
+    "sinon": "",
+    "xml2js": ""
+  },
+  "directories": {
+    "lib": "./lib"
+  },
+  "engines": {
+    "node": ">= 0.10.x"
+  },
+  "homepage": "https://github.com/tomas/needle#readme",
+  "keywords": [
+    "http",
+    "https",
+    "simple",
+    "request",
+    "client",
+    "multipart",
+    "upload",
+    "proxy",
+    "deflate",
+    "timeout",
+    "charset",
+    "iconv",
+    "cookie",
+    "redirect"
+  ],
+  "license": "MIT",
+  "main": "./lib/needle",
+  "name": "needle",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/tomas/needle.git"
+  },
+  "scripts": {
+    "test": "mocha test"
+  },
+  "tags": [
+    "http",
+    "https",
+    "simple",
+    "request",
+    "client",
+    "multipart",
+    "upload",
+    "proxy",
+    "deflate",
+    "timeout",
+    "charset",
+    "iconv",
+    "cookie",
+    "redirect"
+  ],
+  "version": "2.2.0"
+}

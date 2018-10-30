@@ -1,0 +1,80 @@
+{
+  "_args": [
+    [
+      "balanced-match@1.0.0",
+      "/Users/eshanker/Code/fsevents"
+    ]
+  ],
+  "_from": "balanced-match@1.0.0",
+  "_id": "balanced-match@1.0.0",
+  "_inBundle": true,
+  "_integrity": "sha1-ibTRmasr7kneFk6gK4nORi1xt2c=",
+  "_location": "/fsevents/balanced-match",
+  "_phantomChildren": {},
+  "_requested": {
+    "type": "version",
+    "registry": true,
+    "raw": "balanced-match@1.0.0",
+    "name": "balanced-match",
+    "escapedName": "balanced-match",
+    "rawSpec": "1.0.0",
+    "saveSpec": null,
+    "fetchSpec": "1.0.0"
+  },
+  "_requiredBy": [
+    "/fsevents/brace-expansion"
+  ],
+  "_resolved": "https://registry.npmjs.org/balanced-match/-/balanced-match-1.0.0.tgz",
+  "_spec": "1.0.0",
+  "_where": "/Users/eshanker/Code/fsevents",
+  "author": {
+    "name": "Julian Gruber",
+    "email": "mail@juliangruber.com",
+    "url": "http://juliangruber.com"
+  },
+  "bugs": {
+    "url": "https://github.com/juliangruber/balanced-match/issues"
+  },
+  "dependencies": {},
+  "description": "Match balanced character pairs, like \"{\" and \"}\"",
+  "devDependencies": {
+    "matcha": "^0.7.0",
+    "tape": "^4.6.0"
+  },
+  "homepage": "https://github.com/juliangruber/balanced-match",
+  "keywords": [
+    "match",
+    "regexp",
+    "test",
+    "balanced",
+    "parse"
+  ],
+  "license": "MIT",
+  "main": "index.js",
+  "name": "balanced-match",
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/juliangruber/balanced-match.git"
+  },
+  "scripts": {
+    "bench": "make bench",
+    "test": "make test"
+  },
+  "testling": {
+    "files": "test/*.js",
+    "browsers": [
+      "ie/8..latest",
+      "firefox/20..latest",
+      "firefox/nightly",
+      "chrome/25..latest",
+      "chrome/canary",
+      "opera/12..latest",
+      "opera/next",
+      "safari/5.1..latest",
+      "ipad/6.0..latest",
+      "iphone/6.0..latest",
+      "android-browser/4.2..latest"
+    ]
+  },
+  "version": "1.0.0"
+}

@@ -1,0 +1,69 @@
+{{# def.definitions }}
+{{# def.errors }}
+{{# def.missing }}
+{{# def.setupKeyword }}
+{{# def.setupNextLevel }}
+
+
+{{
+  var $schemaDeps = {}
+    , $propertyDeps = {};
+
+  for ($property in $schema) {
+    var $sch = $schema[$property];
+    var $deps = Array.isArray($sch) ? $propertyDeps : $schemaDeps;
+    $deps[$property] = $sch;
+  }
+}}
+
+var {{=$errs}} = errors;
+
+{{ var $currentErrorPath = it.errorPath; }}
+
+var missing{{=$lvl}};
+{{ for (var $property in $propertyDeps) { }}
+  {{ $deps = $propertyDeps[$property]; }}
+  if ({{=$data}}{{= it.util.getProperty($property) }} !== undefined
+    {{? $breakOnError }}
+        && ({{# def.checkMissingProperty:$deps }})) {
+        {{# def.errorMissingProperty:'dependencies' }}
+    {{??}}
+      ) {
+        {{~ $deps:$reqProperty }}
+          {{# def.allErrorsMissingProperty:'dependencies' }}
+        {{~}}
+    {{?}}
+  } {{# def.elseIfValid }}
+{{ } }}
+
+{{
+  it.errorPath = $currentErrorPath;
+  var $currentBaseId = $it.baseId;
+}}
+
+
+{{ for (var $property in $schemaDeps) { }}
+  {{ var $sch = $schemaDeps[$property]; }}
+  {{? {{# def.nonEmptySchema:$sch }} }}
+    {{=$nextValid}} = true;
+
+    if ({{=$data}}{{= it.util.getProperty($property) }} !== undefined) {
+      {{ 
+        $it.schema = $sch;
+        $it.schemaPath = $schemaPath + it.util.getProperty($property);
+        $it.errSchemaPath = $errSchemaPath + '/' + it.util.escapeFragment($property);
+      }}
+
+      {{# def.insertSubschemaCode }}
+    }
+
+    {{# def.ifResultValid }}
+  {{?}}
+{{ } }}
+
+{{? $breakOnError }} 
+  {{= $closingBraces }}
+  if ({{=$errs}} == errors) {
+{{?}}
+
+{{# def.cleanUp }}

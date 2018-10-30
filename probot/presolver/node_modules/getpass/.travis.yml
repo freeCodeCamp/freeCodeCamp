@@ -1,0 +1,9 @@
+language: node_js
+node_js:
+  - "5.10"
+  - "4.4"
+  - "4.1"
+  - "0.12"
+  - "0.10"
+before_install:
+  - "make check"

@@ -1,0 +1,78 @@
+{
+  "_args": [
+    [
+      "brace-expansion@1.1.11",
+      "/Users/eshanker/Code/fsevents"
+    ]
+  ],
+  "_from": "brace-expansion@1.1.11",
+  "_id": "brace-expansion@1.1.11",
+  "_inBundle": true,
+  "_integrity": "sha512-iCuPHDFgrHX7H2vEI/5xpz07zSHB00TpugqhmYtVmMO6518mCuRMoOYFldEBl0g187ufozdaHgWKcYFb61qGiA==",
+  "_location": "/fsevents/brace-expansion",
+  "_phantomChildren": {},
+  "_requested": {
+    "type": "version",
+    "registry": true,
+    "raw": "brace-expansion@1.1.11",
+    "name": "brace-expansion",
+    "escapedName": "brace-expansion",
+    "rawSpec": "1.1.11",
+    "saveSpec": null,
+    "fetchSpec": "1.1.11"
+  },
+  "_requiredBy": [
+    "/fsevents/minimatch"
+  ],
+  "_resolved": "https://registry.npmjs.org/brace-expansion/-/brace-expansion-1.1.11.tgz",
+  "_spec": "1.1.11",
+  "_where": "/Users/eshanker/Code/fsevents",
+  "author": {
+    "name": "Julian Gruber",
+    "email": "mail@juliangruber.com",
+    "url": "http://juliangruber.com"
+  },
+  "bugs": {
+    "url": "https://github.com/juliangruber/brace-expansion/issues"
+  },
+  "dependencies": {
+    "balanced-match": "^1.0.0",
+    "concat-map": "0.0.1"
+  },
+  "description": "Brace expansion as known from sh/bash",
+  "devDependencies": {
+    "matcha": "^0.7.0",
+    "tape": "^4.6.0"
+  },
+  "homepage": "https://github.com/juliangruber/brace-expansion",
+  "keywords": [],
+  "license": "MIT",
+  "main": "index.js",
+  "name": "brace-expansion",
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/juliangruber/brace-expansion.git"
+  },
+  "scripts": {
+    "bench": "matcha test/perf/bench.js",
+    "gentest": "bash test/generate.sh",
+    "test": "tape test/*.js"
+  },
+  "testling": {
+    "files": "test/*.js",
+    "browsers": [
+      "ie/8..latest",
+      "firefox/20..latest",
+      "firefox/nightly",
+      "chrome/25..latest",
+      "chrome/canary",
+      "opera/12..latest",
+      "opera/next",
+      "safari/5.1..latest",
+      "ipad/6.0..latest",
+      "iphone/6.0..latest",
+      "android-browser/4.2..latest"
+    ]
+  },
+  "version": "1.1.11"
+}

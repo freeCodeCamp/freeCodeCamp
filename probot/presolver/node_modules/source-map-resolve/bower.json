@@ -1,0 +1,30 @@
+{
+  "name": "source-map-resolve",
+  "version": "0.5.2",
+  "author": "Simon Lydell",
+  "license": "MIT",
+  "description": "Resolve the source map and/or sources for a generated file.",
+  "keywords": [
+    "source map",
+    "sourcemap",
+    "source",
+    "map",
+    "sourceMappingURL",
+    "resolve",
+    "resolver",
+    "locate",
+    "locator",
+    "find",
+    "finder"
+  ],
+  "authors": [
+    "Simon Lydell"
+  ],
+  "ignore": [
+    ".*"
+  ],
+  "dependencies": {
+    "source-map-url": "^0.4.0",
+    "resolve-url": "^0.2.1"
+  }
+}

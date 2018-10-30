@@ -1,0 +1,110 @@
+[
+    {
+        "description":
+            "patternProperties validates properties matching a regex",
+        "schema": {
+            "patternProperties": {
+                "f.*o": {"type": "integer"}
+            }
+        },
+        "tests": [
+            {
+                "description": "a single valid match is valid",
+                "data": {"foo": 1},
+                "valid": true
+            },
+            {
+                "description": "multiple valid matches is valid",
+                "data": {"foo": 1, "foooooo" : 2},
+                "valid": true
+            },
+            {
+                "description": "a single invalid match is invalid",
+                "data": {"foo": "bar", "fooooo": 2},
+                "valid": false
+            },
+            {
+                "description": "multiple invalid matches is invalid",
+                "data": {"foo": "bar", "foooooo" : "baz"},
+                "valid": false
+            },
+            {
+                "description": "ignores non-objects",
+                "data": 12,
+                "valid": true
+            }
+        ]
+    },
+    {
+        "description": "multiple simultaneous patternProperties are validated",
+        "schema": {
+            "patternProperties": {
+                "a*": {"type": "integer"},
+                "aaa*": {"maximum": 20}
+            }
+        },
+        "tests": [
+            {
+                "description": "a single valid match is valid",
+                "data": {"a": 21},
+                "valid": true
+            },
+            {
+                "description": "a simultaneous match is valid",
+                "data": {"aaaa": 18},
+                "valid": true
+            },
+            {
+                "description": "multiple matches is valid",
+                "data": {"a": 21, "aaaa": 18},
+                "valid": true
+            },
+            {
+                "description": "an invalid due to one is invalid",
+                "data": {"a": "bar"},
+                "valid": false
+            },
+            {
+                "description": "an invalid due to the other is invalid",
+                "data": {"aaaa": 31},
+                "valid": false
+            },
+            {
+                "description": "an invalid due to both is invalid",
+                "data": {"aaa": "foo", "aaaa": 31},
+                "valid": false
+            }
+        ]
+    },
+    {
+        "description": "regexes are not anchored by default and are case sensitive",
+        "schema": {
+            "patternProperties": {
+                "[0-9]{2,}": { "type": "boolean" },
+                "X_": { "type": "string" }
+            }
+        },
+        "tests": [
+            {
+                "description": "non recognized members are ignored",
+                "data": { "answer 1": "42" },
+                "valid": true
+            },
+            {
+                "description": "recognized members are accounted for",
+                "data": { "a31b": null },
+                "valid": false
+            },
+            {
+                "description": "regexes are case sensitive",
+                "data": { "a_x_3": 3 },
+                "valid": true
+            },
+            {
+                "description": "regexes are case sensitive, 2",
+                "data": { "a_X_3": 3 },
+                "valid": false
+            }
+        ]
+    }
+]

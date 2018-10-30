@@ -1,0 +1,8 @@
+up to date in 1.038s
+found 0 vulnerabilities
+
+
+> spdx-exceptions@2.1.0 test /home/kyle/spdx-exceptions.json
+> echo 'Error: no test specified'
+
+Error: no test specified

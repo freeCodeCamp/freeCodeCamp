@@ -1,0 +1,62 @@
+{
+  "_args": [
+    [
+      "wrappy@1.0.2",
+      "/Users/eshanker/Code/fsevents"
+    ]
+  ],
+  "_from": "wrappy@1.0.2",
+  "_id": "wrappy@1.0.2",
+  "_inBundle": true,
+  "_integrity": "sha1-tSQ9jz7BqjXxNkYFvA0QNuMKtp8=",
+  "_location": "/fsevents/wrappy",
+  "_phantomChildren": {},
+  "_requested": {
+    "type": "version",
+    "registry": true,
+    "raw": "wrappy@1.0.2",
+    "name": "wrappy",
+    "escapedName": "wrappy",
+    "rawSpec": "1.0.2",
+    "saveSpec": null,
+    "fetchSpec": "1.0.2"
+  },
+  "_requiredBy": [
+    "/fsevents/inflight",
+    "/fsevents/once"
+  ],
+  "_resolved": "https://registry.npmjs.org/wrappy/-/wrappy-1.0.2.tgz",
+  "_spec": "1.0.2",
+  "_where": "/Users/eshanker/Code/fsevents",
+  "author": {
+    "name": "Isaac Z. Schlueter",
+    "email": "i@izs.me",
+    "url": "http://blog.izs.me/"
+  },
+  "bugs": {
+    "url": "https://github.com/npm/wrappy/issues"
+  },
+  "dependencies": {},
+  "description": "Callback wrapping utility",
+  "devDependencies": {
+    "tap": "^2.3.1"
+  },
+  "directories": {
+    "test": "test"
+  },
+  "files": [
+    "wrappy.js"
+  ],
+  "homepage": "https://github.com/npm/wrappy",
+  "license": "ISC",
+  "main": "wrappy.js",
+  "name": "wrappy",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/npm/wrappy.git"
+  },
+  "scripts": {
+    "test": "tap --coverage test/*.js"
+  },
+  "version": "1.0.2"
+}

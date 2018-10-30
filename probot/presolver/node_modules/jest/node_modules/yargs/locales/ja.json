@@ -1,0 +1,42 @@
+{
+  "Commands:": "コマンド:",
+  "Options:": "オプション:",
+  "Examples:": "例:",
+  "boolean": "真偽",
+  "count": "カウント",
+  "string": "文字列",
+  "number": "数値",
+  "array": "配列",
+  "required": "必須",
+  "default:": "デフォルト:",
+  "choices:": "選択してください:",
+  "aliases:": "エイリアス:",
+  "generated-value": "生成された値",
+  "Not enough non-option arguments: got %s, need at least %s": "オプションではない引数が %s 個では不足しています。少なくとも %s 個の引数が必要です:",
+  "Too many non-option arguments: got %s, maximum of %s": "オプションではない引数が %s 個では多すぎます。最大で %s 個までです:",
+  "Missing argument value: %s": {
+    "one": "引数が見つかりません: %s",
+    "other": "引数が見つかりません: %s"
+  },
+  "Missing required argument: %s": {
+    "one": "必須の引数が見つかりません: %s",
+    "other": "必須の引数が見つかりません: %s"
+  },
+  "Unknown argument: %s": {
+    "one": "未知の引数です: %s",
+    "other": "未知の引数です: %s"
+  },
+  "Invalid values:": "不正な値です:",
+  "Argument: %s, Given: %s, Choices: %s": "引数は %s です。指定できるのは %s つです。選択してください: %s",
+  "Argument check failed: %s": "引数のチェックに失敗しました: %s",
+  "Implications failed:": "オプションの組み合わせで不正が生じました:",
+  "Not enough arguments following: %s": "次の引数が不足しています。: %s",
+  "Invalid JSON config file: %s": "JSONの設定ファイルが不正です: %s",
+  "Path to JSON config file": "JSONの設定ファイルまでのpath",
+  "Show help": "ヘルプを表示",
+  "Show version number": "バージョンを表示",
+  "Did you mean %s?": "もしかして %s?",
+  "Arguments %s and %s are mutually exclusive" : "引数 %s と %s は同時に指定できません",
+  "Positionals:": "位置:",
+  "command": "コマンド"
+}

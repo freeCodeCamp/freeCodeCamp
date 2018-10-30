@@ -1,0 +1,114 @@
+{
+    "id": "streamConfig.json",
+    "$schema": "http://json-schema.org/draft-04/schema#",
+    "type": "object",
+    "properties": {
+        "border": {
+            "$ref": "#/definitions/borders"
+        },
+        "columns": {
+            "$ref": "#/definitions/columns"
+        },
+        "columnDefault": {
+            "$ref": "#/definitions/column"
+        },
+        "columnCount": {
+            "type": "number"
+        }
+    },
+    "additionalProperties": false,
+    "definitions": {
+        "columns": {
+            "type": "object",
+            "patternProperties": {
+                "^[0-9]+$": {
+                    "$ref": "#/definitions/column"
+                }
+            },
+            "additionalProperties": false
+        },
+        "column": {
+            "type": "object",
+            "properties": {
+                "alignment": {
+                    "type": "string",
+                    "enum": [
+                        "left",
+                        "right",
+                        "center"
+                    ]
+                },
+                "width": {
+                    "type": "number"
+                },
+                "wrapWord": {
+                    "type": "boolean"
+                },
+                "truncate": {
+                    "type": "number"
+                },
+                "paddingLeft": {
+                    "type": "number"
+                },
+                "paddingRight": {
+                    "type": "number"
+                }
+            },
+            "additionalProperties": false
+        },
+        "borders": {
+            "type": "object",
+            "properties": {
+                "topBody": {
+                    "$ref": "#/definitions/border"
+                },
+                "topJoin": {
+                    "$ref": "#/definitions/border"
+                },
+                "topLeft": {
+                    "$ref": "#/definitions/border"
+                },
+                "topRight": {
+                    "$ref": "#/definitions/border"
+                },
+                "bottomBody": {
+                    "$ref": "#/definitions/border"
+                },
+                "bottomJoin": {
+                    "$ref": "#/definitions/border"
+                },
+                "bottomLeft": {
+                    "$ref": "#/definitions/border"
+                },
+                "bottomRight": {
+                    "$ref": "#/definitions/border"
+                },
+                "bodyLeft": {
+                    "$ref": "#/definitions/border"
+                },
+                "bodyRight": {
+                    "$ref": "#/definitions/border"
+                },
+                "bodyJoin": {
+                    "$ref": "#/definitions/border"
+                },
+                "joinBody": {
+                    "$ref": "#/definitions/border"
+                },
+                "joinLeft": {
+                    "$ref": "#/definitions/border"
+                },
+                "joinRight": {
+                    "$ref": "#/definitions/border"
+                },
+                "joinJoin": {
+                    "$ref": "#/definitions/border"
+                }
+            },
+            "additionalProperties": false
+        },
+        "border": {
+            "type": "string"
+        }
+    }
+}

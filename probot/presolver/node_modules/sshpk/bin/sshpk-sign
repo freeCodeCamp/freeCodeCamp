@@ -1,0 +1,191 @@
+#!/usr/bin/env node
+// -*- mode: js -*-
+// vim: set filetype=javascript :
+// Copyright 2015 Joyent, Inc.  All rights reserved.
+
+var dashdash = require('dashdash');
+var sshpk = require('../lib/index');
+var fs = require('fs');
+var path = require('path');
+var getPassword = require('getpass').getPass;
+
+var options = [
+	{
+		names: ['hash', 'H'],
+		type: 'string',
+		help: 'Hash algorithm (sha1, sha256, sha384, sha512)'
+	},
+	{
+		names: ['verbose', 'v'],
+		type: 'bool',
+		help: 'Display verbose info about key and hash used'
+	},
+	{
+		names: ['identity', 'i'],
+		type: 'string',
+		help: 'Path to key to use'
+	},
+	{
+		names: ['file', 'f'],
+		type: 'string',
+		help: 'Input filename'
+	},
+	{
+		names: ['out', 'o'],
+		type: 'string',
+		help: 'Output filename'
+	},
+	{
+		names: ['format', 't'],
+		type: 'string',
+		help: 'Signature format (asn1, ssh, raw)'
+	},
+	{
+		names: ['binary', 'b'],
+		type: 'bool',
+		help: 'Output raw binary instead of base64'
+	},
+	{
+		names: ['help', 'h'],
+		type: 'bool',
+		help: 'Shows this help text'
+	}
+];
+
+var parseOpts = {};
+
+if (require.main === module) {
+	var parser = dashdash.createParser({
+		options: options
+	});
+
+	try {
+		var opts = parser.parse(process.argv);
+	} catch (e) {
+		console.error('sshpk-sign: error: %s', e.message);
+		process.exit(1);
+	}
+
+	if (opts.help || opts._args.length > 1) {
+		var help = parser.help({}).trimRight();
+		console.error('sshpk-sign: sign data using an SSH key\n');
+		console.error(help);
+		process.exit(1);
+	}
+
+	if (!opts.identity) {
+		var help = parser.help({}).trimRight();
+		console.error('sshpk-sign: the -i or --identity option ' +
+		    'is required\n');
+		console.error(help);
+		process.exit(1);
+	}
+
+	var keyData = fs.readFileSync(opts.identity);
+	parseOpts.filename = opts.identity;
+
+	run();
+}
+
+function run() {
+	var key;
+	try {
+		key = sshpk.parsePrivateKey(keyData, 'auto', parseOpts);
+	} catch (e) {
+		if (e.name === 'KeyEncryptedError') {
+			getPassword(function (err, pw) {
+				parseOpts.passphrase = pw;
+				run();
+			});
+			return;
+		}
+		console.error('sshpk-sign: error loading private key "' +
+		    opts.identity + '": ' + e.name + ': ' + e.message);
+		process.exit(1);
+	}
+
+	var hash = opts.hash || key.defaultHashAlgorithm();
+
+	var signer;
+	try {
+		signer = key.createSign(hash);
+	} catch (e) {
+		console.error('sshpk-sign: error creating signer: ' +
+		    e.name + ': ' + e.message);
+		process.exit(1);
+	}
+
+	if (opts.verbose) {
+		console.error('sshpk-sign: using %s-%s with a %d bit key',
+		    key.type, hash, key.size);
+	}
+
+	var inFile = process.stdin;
+	var inFileName = 'stdin';
+
+	var inFilePath;
+	if (opts.file) {
+		inFilePath = opts.file;
+	} else if (opts._args.length === 1) {
+		inFilePath = opts._args[0];
+	}
+
+	if (inFilePath)
+		inFileName = path.basename(inFilePath);
+
+	try {
+		if (inFilePath) {
+			fs.accessSync(inFilePath, fs.R_OK);
+			inFile = fs.createReadStream(inFilePath);
+		}
+	} catch (e) {
+		console.error('sshpk-sign: error opening input file' +
+		     ': ' + e.name + ': ' + e.message);
+		process.exit(1);
+	}
+
+	var outFile = process.stdout;
+
+	try {
+		if (opts.out && !opts.identify) {
+			fs.accessSync(path.dirname(opts.out), fs.W_OK);
+			outFile = fs.createWriteStream(opts.out);
+		}
+	} catch (e) {
+		console.error('sshpk-sign: error opening output file' +
+		    ': ' + e.name + ': ' + e.message);
+		process.exit(1);
+	}
+
+	inFile.pipe(signer);
+	inFile.on('end', function () {
+		var sig;
+		try {
+			sig = signer.sign();
+		} catch (e) {
+			console.error('sshpk-sign: error signing data: ' +
+			    e.name + ': ' + e.message);
+			process.exit(1);
+		}
+
+		var fmt = opts.format || 'asn1';
+		var output;
+		try {
+			output = sig.toBuffer(fmt);
+			if (!opts.binary)
+				output = output.toString('base64');
+		} catch (e) {
+			console.error('sshpk-sign: error converting signature' +
+			    ' to ' + fmt + ' format: ' + e.name + ': ' +
+			    e.message);
+			process.exit(1);
+		}
+
+		outFile.write(output);
+		if (!opts.binary)
+			outFile.write('\n');
+		outFile.once('drain', function () {
+			process.exit(0);
+		});
+	});
+}

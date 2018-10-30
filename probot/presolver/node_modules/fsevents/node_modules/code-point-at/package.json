@@ -1,0 +1,73 @@
+{
+  "_args": [
+    [
+      "code-point-at@1.1.0",
+      "/Users/eshanker/Code/fsevents"
+    ]
+  ],
+  "_from": "code-point-at@1.1.0",
+  "_id": "code-point-at@1.1.0",
+  "_inBundle": true,
+  "_integrity": "sha1-DQcLTQQ6W+ozovGkDi7bPZpMz3c=",
+  "_location": "/fsevents/code-point-at",
+  "_phantomChildren": {},
+  "_requested": {
+    "type": "version",
+    "registry": true,
+    "raw": "code-point-at@1.1.0",
+    "name": "code-point-at",
+    "escapedName": "code-point-at",
+    "rawSpec": "1.1.0",
+    "saveSpec": null,
+    "fetchSpec": "1.1.0"
+  },
+  "_requiredBy": [
+    "/fsevents/string-width"
+  ],
+  "_resolved": "https://registry.npmjs.org/code-point-at/-/code-point-at-1.1.0.tgz",
+  "_spec": "1.1.0",
+  "_where": "/Users/eshanker/Code/fsevents",
+  "author": {
+    "name": "Sindre Sorhus",
+    "email": "sindresorhus@gmail.com",
+    "url": "sindresorhus.com"
+  },
+  "bugs": {
+    "url": "https://github.com/sindresorhus/code-point-at/issues"
+  },
+  "description": "ES2015 `String#codePointAt()` ponyfill",
+  "devDependencies": {
+    "ava": "*",
+    "xo": "^0.16.0"
+  },
+  "engines": {
+    "node": ">=0.10.0"
+  },
+  "files": [
+    "index.js"
+  ],
+  "homepage": "https://github.com/sindresorhus/code-point-at#readme",
+  "keywords": [
+    "es2015",
+    "ponyfill",
+    "polyfill",
+    "shim",
+    "string",
+    "str",
+    "code",
+    "point",
+    "at",
+    "codepoint",
+    "unicode"
+  ],
+  "license": "MIT",
+  "name": "code-point-at",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/sindresorhus/code-point-at.git"
+  },
+  "scripts": {
+    "test": "xo && ava"
+  },
+  "version": "1.1.0"
+}

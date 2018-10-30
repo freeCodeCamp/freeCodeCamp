@@ -1,0 +1,53 @@
+{
+  "_args": [
+    [
+      "process-nextick-args@2.0.0",
+      "/Users/eshanker/Code/fsevents"
+    ]
+  ],
+  "_from": "process-nextick-args@2.0.0",
+  "_id": "process-nextick-args@2.0.0",
+  "_inBundle": true,
+  "_integrity": "sha512-MtEC1TqN0EU5nephaJ4rAtThHtC86dNN9qCuEhtshvpVBkAW5ZO7BASN9REnF9eoXGcRub+pFuKEpOHE+HbEMw==",
+  "_location": "/fsevents/process-nextick-args",
+  "_phantomChildren": {},
+  "_requested": {
+    "type": "version",
+    "registry": true,
+    "raw": "process-nextick-args@2.0.0",
+    "name": "process-nextick-args",
+    "escapedName": "process-nextick-args",
+    "rawSpec": "2.0.0",
+    "saveSpec": null,
+    "fetchSpec": "2.0.0"
+  },
+  "_requiredBy": [
+    "/fsevents/readable-stream"
+  ],
+  "_resolved": "https://registry.npmjs.org/process-nextick-args/-/process-nextick-args-2.0.0.tgz",
+  "_spec": "2.0.0",
+  "_where": "/Users/eshanker/Code/fsevents",
+  "author": "",
+  "bugs": {
+    "url": "https://github.com/calvinmetcalf/process-nextick-args/issues"
+  },
+  "description": "process.nextTick but always with args",
+  "devDependencies": {
+    "tap": "~0.2.6"
+  },
+  "files": [
+    "index.js"
+  ],
+  "homepage": "https://github.com/calvinmetcalf/process-nextick-args",
+  "license": "MIT",
+  "main": "index.js",
+  "name": "process-nextick-args",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/calvinmetcalf/process-nextick-args.git"
+  },
+  "scripts": {
+    "test": "node test.js"
+  },
+  "version": "2.0.0"
+}

@@ -1,0 +1,73 @@
+{
+  "_args": [
+    [
+      "set-blocking@2.0.0",
+      "/Users/eshanker/Code/fsevents"
+    ]
+  ],
+  "_from": "set-blocking@2.0.0",
+  "_id": "set-blocking@2.0.0",
+  "_inBundle": true,
+  "_integrity": "sha1-BF+XgtARrppoA93TgrJDkrPYkPc=",
+  "_location": "/fsevents/set-blocking",
+  "_phantomChildren": {},
+  "_requested": {
+    "type": "version",
+    "registry": true,
+    "raw": "set-blocking@2.0.0",
+    "name": "set-blocking",
+    "escapedName": "set-blocking",
+    "rawSpec": "2.0.0",
+    "saveSpec": null,
+    "fetchSpec": "2.0.0"
+  },
+  "_requiredBy": [
+    "/fsevents/npmlog"
+  ],
+  "_resolved": "https://registry.npmjs.org/set-blocking/-/set-blocking-2.0.0.tgz",
+  "_spec": "2.0.0",
+  "_where": "/Users/eshanker/Code/fsevents",
+  "author": {
+    "name": "Ben Coe",
+    "email": "ben@npmjs.com"
+  },
+  "bugs": {
+    "url": "https://github.com/yargs/set-blocking/issues"
+  },
+  "description": "set blocking stdio and stderr ensuring that terminal output does not truncate",
+  "devDependencies": {
+    "chai": "^3.5.0",
+    "coveralls": "^2.11.9",
+    "mocha": "^2.4.5",
+    "nyc": "^6.4.4",
+    "standard": "^7.0.1",
+    "standard-version": "^2.2.1"
+  },
+  "files": [
+    "index.js",
+    "LICENSE.txt"
+  ],
+  "homepage": "https://github.com/yargs/set-blocking#readme",
+  "keywords": [
+    "flush",
+    "terminal",
+    "blocking",
+    "shim",
+    "stdio",
+    "stderr"
+  ],
+  "license": "ISC",
+  "main": "index.js",
+  "name": "set-blocking",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/yargs/set-blocking.git"
+  },
+  "scripts": {
+    "coverage": "nyc report --reporter=text-lcov | coveralls",
+    "pretest": "standard",
+    "test": "nyc mocha ./test/*.js",
+    "version": "standard-version"
+  },
+  "version": "2.0.0"
+}
