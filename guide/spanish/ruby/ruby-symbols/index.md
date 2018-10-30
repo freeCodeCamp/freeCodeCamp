@@ -2,7 +2,7 @@
 title: Ruby Symbols
 localeTitle: Símbolos de rubí
 ---
-## Símbolos de rubí
+## Símbolos de ruby
 
 Un símbolo parece un nombre de variable pero tiene un prefijo con dos puntos. Ejemplos -: action,: line\_items. No tiene que declarar previamente un símbolo y se garantiza que son únicos. No hay necesidad de asignar algún tipo de valor a un símbolo, Ruby se encarga de eso por ti. Ruby también garantiza que no importa dónde aparezca en su programa, un símbolo en particular tendrá el mismo valor.
 
@@ -50,7 +50,7 @@ Entonces, lo primero que podemos hacer es inspeccionar un Símbolo para ver qué
 
 Entonces podemos ver que los Símbolos y las Cadenas son instancias de dos objetos diferentes.
 
-Puede llamar a métodos parecidos a una cadena, como `upcase` , `downcase` y `capitalize` en los símbolos:
+Puede llamar a métodos parecidos a una cadena, como `upcase`(poner las letras mayúsculas) , `downcase`(poner las letras minúsculas) y `capitalize`(poner la primera letra de la 'string' Mayúscula) en los símbolos:
 
 ```ruby
 :hello.upcase 
