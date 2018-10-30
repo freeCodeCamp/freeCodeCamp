@@ -17,3 +17,5 @@ localeTitle: 敏捷
 ### 更多信息
 
 [敏捷联盟的主页](https://www.agilealliance.org/)
+
+我的变化.
