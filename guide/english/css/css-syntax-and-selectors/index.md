@@ -18,12 +18,12 @@ To apply inline CSS, add the "style" attribute to an HTML element that you'd lik
 Here's an example of inline CSS. The words "One" and "Two" will have a background color of yellow and text color of red. The word "Three" has a new style that overrides the first, and will have a background color of green and text color of cyan. In the example, we're applying styles to `<div>` tags, but you can apply a style to any HTML element. 
 
 ```html
-<div style="color:red; background:yellow">
+<div style="color:red; background:yellow;">
   One
   <div>
     Two
   </div>
-  <div style="color:cyan; background:green">
+  <div style="color:cyan; background:green;">
     Three
   </div>
 </div>
