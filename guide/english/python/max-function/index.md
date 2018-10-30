@@ -48,3 +48,5 @@ The largest item in the iterable is returned. If two or more positional argument
 ![:rocket:](//forum.freecodecamp.com/images/emoji/emoji_one/rocket.png?v=2 ":rocket:") <a href='https://repl.it/CVok' target='_blank' rel='nofollow'>Run Code</a>
 
 <a href='https://docs.python.org/3/library/functions.html#max' target='_blank' rel='nofollow'>Official Docs</a>
+max(A,B,C,a,b,c)
+#Output:c
