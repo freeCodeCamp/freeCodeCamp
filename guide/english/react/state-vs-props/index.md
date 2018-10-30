@@ -24,6 +24,7 @@ See the below example to get an idea of state:
       super(props);
       this.state = {
         age:0
+      }
       this.incrementAge = this.incrementAge.bind(this)
     }
 
@@ -37,7 +38,7 @@ See the below example to get an idea of state:
       return(
         <div>
           <label>My age is: {this.state.age}</label>
-          <button onClick={this.incrementAge}>Grow me older !!<button>
+          <button onClick={this.incrementAge}>Grow me older !!</button>
         </div>
       );
     }
