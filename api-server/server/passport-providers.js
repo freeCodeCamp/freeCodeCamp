@@ -7,6 +7,11 @@ const successRedirect = `${homeLocation}/welcome`;
 const failureRedirect = '/signin';
 
 export default {
+  devlogin: {
+    authScheme: 'mock',
+    provider: 'dev',
+    module: 'passport-mock-strategy'
+  },
   local: {
     provider: 'local',
     module: 'passport-local',

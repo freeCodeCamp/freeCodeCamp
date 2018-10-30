@@ -98,6 +98,7 @@
     "joi-objectid": "^2.0.0",
     "loopback-component-explorer": "^6.3.1",
     "nodemon": "^1.18.4",
+    "passport-mock-strategy": "^1.1.1",
     "pm2": "^3.0.3",
     "prettier": "^1.14.2",
     "sinon": "^7.1.1",
