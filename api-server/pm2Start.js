@@ -15,10 +15,7 @@ pm2.connect(function() {
     NODE_ENV: 'production'
   }, function() {
     console.log(
-      'pm2 started %s with %s instances at %s max memory',
-      serverName,
-      instances,
-      maxMemory
+      `pm2 started ${serverName} with ${instances} instances at ${maxMemory} max memory`
     );
     pm2.disconnect();
   });
