@@ -5,7 +5,7 @@ title: Infinite Loops
 
 An infinte loop is a loop statement (`for`, `while`, `do-while`) which does not end on its own.
 
-The test condition of a looping statement decides whether the loop body will execute or not. So a test condition which is always true will keep on executing the body of the loop, forever. That's the case in an infinte loop.
+The test condition of a looping statement decides whether the loop body will execute or not. So a `test condition` which is always true will keep on executing the body of the loop, forever. That's the case in an infinte loop.
 
 Examples:
 
