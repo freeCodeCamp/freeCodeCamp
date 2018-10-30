@@ -42,7 +42,7 @@ The structure of the card can be enhanced by the addition of a header and a foot
 
 * These classes have to be used with the ```<img>``` tag inside a card to work properly.
 
-* Keep in mind, that if you want an image to span the entire width, you would add the image container outside of the ```<div>``` container with the card-body class.
+* Keep in mind that if you want an image to span the entire width, you would add the image container outside of the ```<div>``` container with the card-body class.
 
 ###### This is how it will look in an html doc
 
