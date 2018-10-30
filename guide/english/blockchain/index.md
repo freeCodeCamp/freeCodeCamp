@@ -28,6 +28,17 @@ The words block and chain were used separately in Satoshi Nakamoto's original pa
 
 As of 2016, blockchain 2.0 implementations continue to require an off-chain oracle to access any "external data or events based on time or market conditions to interact with the blockchain."
 
+## Modern Use Cases of Blockchain
+1. Asset Tokenization : Using blockchain technology, previously illiquid assets can now be converted into its tokenized form and cheaply and efficiently fractionalized, traded and settled on chain (rather than go through the lengthy process of clearing and settlement process through third parties like clearing houses)
+ 
+2. Supply Chain Management : Blockchains allow multiple parties to access a database to act as the single source of truth. Recorded transactions are immutable, are append only and provide a time stamped audit trail.
+
+3. Digital Identity : A self sovereign ID can be used to verify identity without needing an individual to produce numerous documents and paperwork each time they need their identity verified. This could be done with a single key that can be matched against an immutable ledger. The digital ID can also collect other online information about a user’s identity like social security information, medical records and social media credentials and have that stored securely on the blockchain.
+
+4. Energy Market : Blockchain technology can enable the smart metering of electricity generated through an individual’s solar panels to be recorded, traded and settled on a ledger.
+
+5. Healthcare : Using blockchain technology to record patient information on a distributed ledger can allow different stakeholders conditional access to a single source of truth where each interaction with a patient’s health data can be recorded on a ledger as a transaction with a time stamped audit trail.
+
 ### Bitcoin
 
 Bitcoin’s main problem to solve was to achieve distributed consensus while remaining a decentralized system. Distributed consensus is essentially the idea that all the nodes that make up the network must come to a collective agreement without the use of a centralized control. In Bitcoin, the nodes are agreeing on exactly which transactions present on the network are valid. This is difficult in many ways, one of which is the potential for n number of nodes to be malicious and not want to follow
@@ -37,6 +48,7 @@ the consensus of the other nodes. Bitcoin has the benefit of being able to incen
 1. [Bettina Warburg, "How the blockchain will radically transform the economy", *TED Talks*, December 8, 2016](https://youtu.be/RplnSVTzvnU?t=213)
 2. [Depository Trust and Clearing Corporation, "Embracing Disruption: Tapping the Potential of Distributed Ledgers to Improve the Post-Trade Landscape", DTCC, 2016]
 (https://hub.digitalasset.com/hubfs/Industry%20Reports/dtcc-embracing-disruption.pdf?t=1539879453546)
+
 
 
 ##### More information
