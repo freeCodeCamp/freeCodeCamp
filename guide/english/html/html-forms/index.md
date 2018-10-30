@@ -28,6 +28,8 @@ Code example:
     <input type="text" name="username" id="username">
     <label for="password">Password:</label>
     <input type="password" name="password" id="password">
+    <label for="email">Email:</label>
+    <input type="text" name="email" id="email">
     <input type="radio" name="gender" value="male">Male<br>
     <input type="radio" name="gender" value="female">Female<br>
     <input type="radio" name="gender" value="other">Other
