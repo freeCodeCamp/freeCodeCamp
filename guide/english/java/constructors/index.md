@@ -2,9 +2,9 @@
 title: Constructors
 ---
 
-If an object copies from a class, the what's the point? I should be able to store data in it right?
+If an object copies from a class, then what's the point? I should be able to store data in it right?
 
-That's when we use either **getter** (e.g., getName()) / **setter** (e.g., setName()) methods, or in this case constructors, to initialize a class. Basically, every Java Class has a constructor which is the method called first when any object of the class is initialized. Think of it as a bit of starter code.
+That's when we use either **getter** (Accessor - e.g., getName()) / **setter** (Mutator - e.g., setName()) methods, or in this case constructors, to initialize a class. Basically, every Java Class has a constructor which is the method called first when any object of the class is initialized. Think of it as a bit of starter code.
 
 When you write a class without any constructor, the Java compiler creates a default constructor :
 
@@ -16,7 +16,7 @@ public class Car {
 Car modelS = new Car();
 ```
 
-This initializing with no parameters is a way of calling the default constructor. You can also have a default constructor written this way:
+Initializing with no parameters is a way of calling the default constructor. You can also have a default constructor written this way:
 
 ```java
 public class Car {
