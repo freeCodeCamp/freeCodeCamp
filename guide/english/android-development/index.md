@@ -26,7 +26,7 @@ There is definitely a learning curve to get used to the Android framework, howev
 
 The learning curve involved in Android has a relatively smaller slope compared to learning other technologies such as NodeJS. It is also relatively easier to understand and make contributions towards AOSP hosted by Google. The project can be found [here](https://source.android.com/) 
 
-## Getting started
+# Getting started
 Check out the guides in this folder to learn about the 4 [core components](core-components/index.md) that make up an Android app and how you can get started with a sample app, and then delve into the more advanced topics such as fragments and the Gradle build system. Then check out the material design specifications guide as well to learn how to make your apps beautiful and user friendly.
 
 ### Setting Up and Getting Started with Android Studio
@@ -81,7 +81,7 @@ The best part of learning Android is that many of the courses and material avail
 The link to the basic course is here - [Developing Android Apps](https://udacity.com/course/new-android-fundamentals--ud851).
 The link to the advanced course is here - [Advanced Android App Development](https://www.udacity.com/course/advanced-android-app-development--ud855). 
 
-### Android Studio
+## Android Studio
 
 [Android Studio](https://developer.android.com/studio/)  
 [Installing Android Studio](https://developer.android.com/studio/install)  
