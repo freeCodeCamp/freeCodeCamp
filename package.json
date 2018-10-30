@@ -18,6 +18,9 @@
     "test:server": "echo 'Warning: TODO - Define Testing.'",
     "test:tools": "jest ./tools"
   },
+  "jest": {
+    "testURL": "http://localhost/"
+  },
   "devDependencies": {
     "cross-env": "^5.2.0",
     "debug": "^4.0.1",
