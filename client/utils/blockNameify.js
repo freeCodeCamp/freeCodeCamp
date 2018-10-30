@@ -1,4 +1,6 @@
 const preFormattedBlockNames = {
+  'apis-and-microservices-certification': 'APIs and Microservices Certification',
+  'apis-and-microservices-projects': 'APIs and Microservices Projects',
   'api-projects': 'API Projects',
   'basic-css': 'Basic CSS',
   'basic-html-and-html5': 'Basic HTML and HTML5',
