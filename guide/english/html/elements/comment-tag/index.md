@@ -26,3 +26,4 @@ Comments can also be used to make code inactive without having to delete it enti
 -->
 ```
 
+The example would display "Hello Friends", but "Hello Campers" and "Hello Paragraph" would not be displayed as they are comments, and are only visible in code or Inspect Element.
