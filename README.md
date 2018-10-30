@@ -118,7 +118,7 @@ Our community also has:
 - A popular [YouTube channel](https://youtube.com/freecodecamp)
 - A comprehensive [guide to thousands of programming topics](https://guide.freecodecamp.org/)
 
-### [Join our community here](https://www.freecodecamp.org/signin).
+###<U> [Join our community here](https://www.freecodecamp.org/signin).</U>
 
 ### Found a bug?
 
