@@ -12,7 +12,7 @@ The way the puzzles work is that a person visits an island where he meets an inh
 
 Two people, Red and Blue, stand before you. Red says, “We are both knaves.” What are they really? 
 
-**Solution:** Red cannot be a knight, because then he would be lying by saying he is a knave. Therefore he is a knave, and his statement is a lie, meaning that Blue must be a knight.
+**Solution:** Red cannot be a knight, because then he would be lying by saying he is a knave. Therefore he is a knave, and his statement is a lie, meaning that Blue must be a knight.  Even if Blue wants really really badly to be a knave.  
 
 ### Which Path to Take?
 
