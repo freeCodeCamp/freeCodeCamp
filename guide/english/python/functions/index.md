@@ -47,7 +47,10 @@ Functions are blocks of code that can be reused simply by calling the function. 
 Functions in Python are created using the `def` keyword, followed by a function name and function parameters inside parentheses.
 
 A function always returns a value,The `return` keyword is used by the function to return a value, if you don't want to return any value, the default value `None` will returned. 
-
+For only printing value of function you can use "print".  
+For example: 
+            def sum(x,y):
+               print(x+y)
 The function name is used to call the function, passing the needed parameters inside parentheses.
 
 ```python
@@ -58,7 +61,19 @@ def sum(a, b):
 result = sum(1, 2)
 # result = 3
 ```
-
+```python
+# code for checking prime number
+def check_prime(x):
+   for i in range(2,x):
+      if x%i==0:
+         return False
+      elif i==x-1:
+         return True
+      else:
+           continue
+#check_prime(5)
+#Output:True
+```
 You can define default values for the parameters, that way Python will interpretate that the value of that parameter is the default one if none is given.
 
 ```python
