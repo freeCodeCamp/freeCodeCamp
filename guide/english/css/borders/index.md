@@ -138,6 +138,7 @@ h5 { border: dotted; }
 ### Other Border Attributes
 - 'border-radius' - This can set radius of the border. 
 - 'border-spacing' - This can set spacing between the text and border. 
-- 'border-image' - This sets an image as border. 
+- 'border-image' - This sets an image as border.
+- 'border-color' - This sets the color of the border.
 
 Browser Support: IE6+
