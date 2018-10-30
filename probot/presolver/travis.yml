@@ -4,3 +4,18 @@ node_js:
   - "8.3"
 notifications:
   disabled: true
+cache:
+  directories:
+    - "node_modules"
+branches:
+  only:
+    - master
+install:
+  - npm install
+script:
+  - echo "Skipping tests"
+deploy:
+  provider: pages
+  skip-cleanup: true
+  on:
+    branch: master
