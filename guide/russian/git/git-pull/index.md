@@ -121,3 +121,5 @@ ID - идентификатор запроса pull, а BRANCHNAME - это на
 *   [Git commit](../git-commit/index.md)
 *   [Скрытый текст](../git-stash/index.md)
 *   [Git branch](../git-branch/index.md)
+
+<div>Git pull-наше все!)))</div>
