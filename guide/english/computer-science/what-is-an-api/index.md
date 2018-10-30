@@ -38,6 +38,11 @@ Source: [Open Weather API](https://openweathermap.org/current)
 
 In the example above, a developer made a request for the current weather at a specific latitude and longitude, and the server responded with a *JSON object* about wind, rain, and clouds for that location. Services that you use every day are made with tons of request and response cycles like this.
 
+## Types of Web Api
+1. Simple Object Access Protocol (SOAP)
+2. Remote Procedure Call (RPC)
+3. Representational State Transfer (REST).
+
 <strong>Here are Top 10 APIs for beginners </strong>
 
 <ol>
