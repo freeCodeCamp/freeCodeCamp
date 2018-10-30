@@ -51,9 +51,9 @@ It is the most important form element.  Different types of input element are:
 ```
 
 ### The NAME attribute
-If you want to submit the form that the input fields must contain the name attribute,if it is not present,
+If you want to submit the form that the input fields must contain the name attribute, if it is not present,
 the data of that input field will not be sent at all.
-In the below given example,only input type corresponding to first name will be submitted.
+In the below given example, only input type corresponding to first name will be submitted.
 
 ```html
 <form action="my.php" method="post">
