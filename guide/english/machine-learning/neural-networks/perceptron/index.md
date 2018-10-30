@@ -3,7 +3,7 @@ title: Perceptron
 ---
 ## Perceptron
 
-A Perceptron is a single layered neural network. It consists of single neuron, which takes in a no. of parameters as input, and gives a output. It is basically a linear classifier (binary). It consists of the following parts:
+A perceptron is a single layered neural network. It consists of single neuron, which takes in a no. of parameters as input, and gives a output. It is basically a linear classifier (binary). It consists of the following parts:
 1. Input Values
 2. Weights and Biases for each input
 3. An Activation function.
