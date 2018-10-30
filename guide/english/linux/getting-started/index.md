@@ -3,10 +3,12 @@ title: Getting Started
 ---
 ## Choosing a distribution.
 
-There are various types of Linux distributions to choose from nowadays, choosing one is a major concern in the currently Linux world. Taking in consideration easy to use OSs, the top dogs in this category are:
-Ubuntu - Derivative of the stable Debian system, Ubuntu thrives in the a easy to use and up to date environment.
-Mint - Based on Ubuntu and Debian, this OS has great features like Ubuntu's PPA compatibility, the apt package manager. The base mint distribution remind of Windows, this can be a nice characteristic for users comming from Windows. 
+There are various types of Linux distributions to choose from nowadays, and choosing one is the first stemp to getting started in the Linux world. Taking into consideration ease of use, the top dogs in this category are:
+Ubuntu - Derivative of the stable Debian system, Ubuntu thrives as an easy to use and up-to-date environment.
+Mint - Based on Ubuntu and Debian, this OS has great features like Ubuntu's PPA compatibility, the apt package manager. The default Mint distribution is reminiscent of Microsoft Windows, which can help to ease the transion for users coming from that environment. 
 Trisquel - A distribution  derived from Ubuntu that focuses on only utilizing fully free software, avoiding proprietary software. Trisquel is endorsed by the Free Software Foundation (FSF).
+
+If you are only interested in learning to use the Linux command line, and currently working on a Windows 10 machine, you have the option of accessing a terminal through *Windows Subsystem for Linux (WSL)*.  Check out articles at [linux.com](https://www.linux.com/blog/learn/2018/2/how-get-started-using-wsl-windows-10 "How to Get Started Using WSL in Windows 10")(https://www.computerhope.com/issues/ch001879.htm "How to Install WSL on Windows 10") to get started down this path!
 
 ## Installing.
 
