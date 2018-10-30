@@ -11,6 +11,8 @@ In addition to the introduction of the `opacity` declaration, colors in CSS3 can
 
 HTML supports 140 standard <a href='https://www.w3schools.com/colors/colors_names.asp' target='_blank' rel='nofollow'>color names</a>.
 
+We can also use the # digit numbers for the color changes that we are making and are defined below.
+
 ### RGB(A)
 
 RGB stands for "Red, Green, Blue".
