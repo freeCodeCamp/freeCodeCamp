@@ -10,3 +10,5 @@ A PSU is usually not user serviceable. For your safety, it is wise to never open
 #### More Information:
 <!-- Please add any articles you think might be helpful to read before writing the article -->
 * <a href='https://en.wikipedia.org/wiki/Power_supply_unit_(computer)' target='_blank' rel='nofollow'>Power Supply</a>
+
+A great way to make sure you dont underpower your computer is to put all the components together to see how much power they require and go 50-100 above that. A good way to calculate your required voltage is to go to a place like https://pcpartpicker.com/ and add in each component an it will calculate the minimum for you! :D 
