@@ -53,7 +53,7 @@ The second, and more important thing, is that there is a huge community of Java 
 
 ###### Java Programmers Should Learn Kotlin
 
-Now, coming back to the second set of programmers who wants to learn Android development: our fellow Java developers. For them, I think its best to learn Kotlin because it really improves productivity.
+Now, coming back to the second set of programmers who want to learn Android development: our fellow Java developers. For them, I think its best to learn Kotlin because it really improves productivity.
 
 A class which takes 50 lines of code in Java can really be written in just one line in Kotlin. It can help you avoid all boiler-plate code, e.g. you don't need to specify getters and setters, equals(), hashCode() or toString() methods. Kotlin can generate all that by itself.
 
