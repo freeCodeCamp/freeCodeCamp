@@ -35,6 +35,7 @@ Popular distributions of Linux include:
 
 * Ubuntu
 * Linux Mint
+* Debian
 * CentOS
 * RHEL
 * Arch Linux
