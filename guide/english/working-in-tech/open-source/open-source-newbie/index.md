@@ -16,5 +16,5 @@ Even though the above paragraph might seem a little off putting do not fret. Yes
 * https://medium.freecodecamp.org/i-made-my-first-open-source-contribution-within-200-days-and-how-you-can-too-4d5bdbd63fad
 * https://opensource.com/article/17/5/making-your-first-open-source-contribution
 * https://medium.com/ifme/my-first-open-source-contribution-68c86de88af9
-
+* https://opensource.com/article/18/9/awesome-economics-open-source
 
