@@ -21,7 +21,7 @@ The container is the outer most element that will *contain* your grid, use `cont
 ```
 
 ###### Row
-Use `row` to group your columns, this will keep everything lined up properly and help you structure your grid.
+Use `row` to group your columns. This will keep everything lined up properly and help you structure your grid.
 ```
 <div class="row"></div>
 ```
