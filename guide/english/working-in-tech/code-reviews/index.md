@@ -18,7 +18,7 @@ while other teams have whole days when they dedicate to code reviews across the 
 
 It is important to be humble throughout the code review process. Accept your mistakes, 
 and be professional when pointing out improvements or errors in the code of your fellow
-team members.
+team members. The beautiful freeCodeCamp community is always there to help if needed.
 
 #### More Information:
 
