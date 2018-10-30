@@ -1,7 +1,7 @@
 ---
 title: Sass
 ---
-Sass is a preprossessor scripting language that compiles CSS. It essentially brings the power of a standard programming language (e.g. loops, variables, conditional statements, etc...) to your stylesheets.
+Sass is a preprocessor scripting language that compiles CSS. It essentially brings the power of a standard programming language (e.g. loops, variables, conditional statements, etc...) to your stylesheets.
 
 ## Store data with Sass variables:
 
@@ -20,7 +20,7 @@ h1{
 
 ## Nest CSS within SASS:
 
-On normal CSS codes we have to write each elements css seperate like:
+On normal CSS codes we have to write each elements css separate like:
 ```
 .nav-bar{
   background-color: green;
