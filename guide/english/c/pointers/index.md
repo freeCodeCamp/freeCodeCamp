@@ -229,6 +229,29 @@ int main(void)
    return 0;
 }
 ```
+# Pointer to pointer
+In case of pointer to pointer the first pointer is used to store the address of the second pointer, and the second pointer is used to point the address of the variable.
+```C
+#include<stdio.h>
+int main()
+{
+    int p=10;
+    int *p2;
+    int **p1;   //declaration of pointer to pointer
+    p2=&p;
+    p1=&p2;
+    printf("%d\n",p);
+    printf("%d\n",*p2);
+    printf("%d",**p1);  // printing using pointer to pointer
+    return 0;
+}
+```
+## Output
+```
+->10
+  10
+  10
+```
 # constant pointer to constant
 Above declaration is constant pointer to constant variable which means we cannot change value pointed by pointer as well as we cannot point the pointer to other variable.
 ```c
