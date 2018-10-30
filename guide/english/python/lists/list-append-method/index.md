@@ -4,7 +4,7 @@ title: List Append Method
 ## List Append Method
 
 There are many methods for lists, you can explore all of them by typing `help(list)` in your python console.
-One of them is the append function which, as the name says appends the argument given list.
+One of them is the append function which, as the name says appends the argument to a given list. This is also a good method to use in combination with a loop if you want to add arguments to a list.
 
 #### Example Usage
 
