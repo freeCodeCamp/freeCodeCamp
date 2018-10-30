@@ -9,7 +9,9 @@ Examples include:
 
 * <a href='https://darkpatterns.org/types-of-dark-pattern/bait-and-switch' target='_blank' rel='nofollow'>**Bait and Switch**</a> – A user sets out to do one thing, but a different, undesirable thing happens instead.
 
-* [**Disguised Ads**](https://darkpatterns.org/types-of-dark-pattern/disguised-ads) – Adverts disguised as other kinds of content or navigation, in order to get users to click on them.
+* [**Disguised Ads**](https://darkpatterns.org/types-of-dark-pattern/confirmshaming) – Adverts disguised as other kinds of content or navigation, in order to get users to click on them.
+
+* [**Confirmshaming**](https://darkpatterns.org/types-of-dark-pattern/disguised-ads) – Confirmshaming is the act of guilting the user into opting in to something. The option to decline is worded in such a way as to shame the user into compliance.
 
 * [**Forced Continuity**](https://darkpatterns.org/types-of-dark-pattern/forced-continuity) – Silently charging a user's credit card without warning at the end of a free trial.
 
