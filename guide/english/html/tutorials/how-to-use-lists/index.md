@@ -69,7 +69,7 @@ A description list is used to specify a list of terms and their descriptions. Th
 </dl>
 
 #### Styling List
-You can also control the style of the list. You can use `list-style` property of lists. Your list can be bullets, square, in roman numearls or can be images you want.
+You can also control the style of the list. You can use `list-style` property of lists. Your list can be bullets, square, in roman numerals or can be images you want.
 
 `list-style` property is a shorthand for `list-style-type`, `list-style-position`, `list-style-image`.
 
