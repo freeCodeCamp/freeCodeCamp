@@ -51,7 +51,7 @@ You can specify the position of the background by typing :
    background-position : left bottom;
 ```
 
-It will set you background at the bottom left of the element.
+It will set your background at the bottom left of the element.
 
 ### Background Image - Fixed Position
 
