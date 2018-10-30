@@ -56,3 +56,6 @@ Linux allows user to change desktop design and themes, add widgets and more. The
 Hard to beat that!
 ## It's safer.
 Linux distributions have broadly two types of users, namely ROOT and NON-ROOT. There could be only 1 root user but multiple non-root users. Root users have the permission to do any modification (de-modification too!!!) to the system without the use of password (once asked while logging in). In case of non-root users they require permission from the root users to do any activity which could affect the system. So, browsing with non-root user is safe as just by clicking some sort of malicious links, it can't be installed and affect the system without the permission from root user.
+
+## Upgrade Hardware By Choice, Not Necessity
+Something else that struck me as awesome early on was the fact that Linux provides existing hardware with a lot more life than other operating systems. And thankfully, there are distributions for really old hardware and there are robust distributions that will run on slightly newer to brand new hardware. With so many distributions out there to choose from, your business can find the best version of Linux to meet the needs of your existing infrastructure. Hardware failure, however, is another issue entirely.
