@@ -36,8 +36,8 @@ Popular distributions of Linux include:
 * Ubuntu
 * Linux Mint
 * CentOS
-* RHEL
 * Arch Linux
+* Kali Linux
 
 Package types are split between higher-level distributions, with Debian (.deb) and Red Hat (.rpm) being two of the most commonly used,
 however there are others including Pacman (used for Arch Linux) and PetGet (Puppy Linux).
