@@ -48,18 +48,18 @@ O VirtualBox estende as capacidades do seu computador existente para que ele pos
 
 O VirtualBox é uma solução simples para:
 
-*   Executando vários sistemas operacionais simultaneamente.
+*   Executar vários sistemas operacionais simultaneamente.
 *   Não é necessário reinicializar para usar um programa específico que pode não ser suportado pelo sistema operacional em uso.
 *   Instalações de software mais fáceis
 *   Uma configuração completa de um sistema pode ser empacotada em uma máquina virtual.
 *   Testes e recuperação de desastres
-*   Pode experimentar livremente com um ambiente de computação, sem afetar nada fora da máquina virtual.
+*   Poder experimentar livremente com um ambiente de computação, sem afetar nada fora da máquina virtual.
 *   Consolidação de infra-estrutura
 *   A virtualização reduz significativamente os custos de hardware e eletricidade.
 
-A caixa virtual suporta uma ampla variedade de sistemas operacionais:
+O VirtualBox suporta uma ampla variedade de sistemas operacionais:
 
-*   janelas
+*   Windows
 *   Linux
 *   Macintosh
 *   Hosts Solaris
