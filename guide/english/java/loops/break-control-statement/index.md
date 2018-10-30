@@ -72,3 +72,14 @@ while(i < 10){
 ```
 
 ![:rocket:](//forum.freecodecamp.com/images/emoji/emoji_one/rocket.png?v=2 ":rocket:") <a href='https://repl.it/CJZC/0' target='_blank' rel='nofollow'>Run Code</a>
+
+Also for function it is possible to break with the return statement:
+```java
+  public int firstMultipleOf7(int[] array){
+    for(int i = 0; i < array.length; i++){
+      if(array[i] % 7 == 0 && array[i] != 0){
+        return array[i]; // break here out of the function
+      }
+    }
+  }
+^^^

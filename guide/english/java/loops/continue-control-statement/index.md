@@ -46,4 +46,16 @@ System.out.println("numPs = " + numPs);
 
 ![:rocket:](//forum.freecodecamp.com/images/emoji/emoji_one/rocket.png?v=2 ":rocket:") <a href='https://repl.it/CJZH/0' target='_blank' rel='nofollow'>Run Code</a>
 
-Additionally, you can use labels to choose a specific loop out of a nested set to skip to the next iteration. 
+Additionally, you can use labels to choose a specific loop out of a nested set to skip to the next iteration.
+
+Jumping to Labels is possible but never advised:
+```java
+myLabel:
+System.out.println("I'm getting printed twice :)");
+for(int i = 0; i < 10; i++){
+  if(i == 5) {
+    continue myLabel;
+  }
+}
+// this code will print out "I'm getting printed twice :)" twice
+```
