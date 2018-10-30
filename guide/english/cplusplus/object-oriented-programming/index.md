@@ -81,6 +81,44 @@ Polymorphism means ability to take more than one form. An operation may exhibit 
 
 C++ supports operator overloading and function overloading. Operator overloading is the process of making an operator to exhibit different behaviors in different instances. Function overloading is using a single function name to perform different types of tasks. Polymorphism is extensively used in implementing inheritance.
 
+Example:
+```
+class Base {
+ public:
+  void nonVirtualFunction() {
+    cout << "Base nonVirtualFucntion called.\n";
+  }
+  virtual void virtualFunction() {
+    cout << "Base virtualFuction called.\n";
+  }
+};
+
+class Derived : public Base {
+ public:
+  void nonVirtualFunction() {
+    cout << "Derived nonVirtualFunction called.\n";
+  }
+  void virtualFunction() {
+    cout << "Derived virtualFunction called.\n";
+  }
+};
+
+int main() {
+  Base* bBase = new Base();
+  Base* bDerived = new Derived();
+  bBase->nonVirtualFunction();
+  bBase->virtualFunction();
+  bDerived->nonVirtualFunction();
+  bDerived->virtualFunction();
+}
+
+```
+The output will be:
+ Base nonVirtualFucntion called.
+ Base virtualFuction called.
+ Base nonVirtualFucntion called.
+ Derived virtualFunction called.
+
 ### Dynamic Binding:
 In dynamic binding, the code to be executed in response to function call is decided at runtime. C++ has virtual functions to support this.
 
