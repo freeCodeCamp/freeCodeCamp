@@ -36,6 +36,7 @@ title: JavaScript Tutorials and Other Resources
 *   [Introduction to JavaScript: First Steps](https://www.educative.io/collection/5679346740101120/5720605454237696)
 *   [JavaScript for Cats](http://jsforcats.com/)
 *   [Javascript.com by Pluralsight](https://www.javascript.com/learn)
+*   [SoloLearn JavaScript Tutorial](https://www.sololearn.com/Course/JavaScript/)
 
 
 ## Video Tutorials
@@ -47,6 +48,7 @@ title: JavaScript Tutorials and Other Resources
 *   [Functional programming in JavaScript](https://www.youtube.com/playlist?list=PL0zVEGEvSaeEd9hlmCXrk5yUyqUag-n84)
 *   [Douglas Crockford's Videos](https://www.youtube.com/watch?v=v2ifWcnQs6M&index=1&list=PL62E185BB8577B63D)
 *   [Gordon Zhu - Practical JavaScript](https://watchandcode.com/p/practical-javascript)
+*   [The Net Ninja - JavaScript Tutorial for Beginners](https://www.youtube.com/watch?v=qoSksQ4s_hg&list=PL4cUxeGkcC9i9Ae2D9Ee1RvylH38dKuET)
 
 
 ## Desktop Editors
@@ -77,6 +79,7 @@ title: JavaScript Tutorials and Other Resources
 *   [Object Playground](http://www.objectplayground.com) - Excellent resource to get to grips with Object Orientated JS.
 *   [Plunker](https://plnkr.co)
 *   [AWS Cloud 9](https://aws.amazon.com/cloud9) - Cloud Based IDE by Amazon
+*   [Glitch](https://glitch.com/)
 
 
 ## Coding Challenges and Exercises
