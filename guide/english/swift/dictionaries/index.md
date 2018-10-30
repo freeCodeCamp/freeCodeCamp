@@ -44,7 +44,7 @@ When getting the values from a dictionary it will return an optional value as it
 
 ```swift
 let charmander = pokeDexionary[4] // Optional("Charmander")
-let trySquirtle = pokeDexionary[7] // returns nil... cause apparently we don't have Squirtle yet.
+let trySquirtle = pokeDexionary[7] // returns nil... cause no one will trade with me!
 ```
 
 #### Adding New Values
