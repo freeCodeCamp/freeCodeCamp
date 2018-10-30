@@ -88,6 +88,48 @@ For instance:
   }
 ```
 
+## Shorthand If / Else Examples
+Basic True / False Declaration
+```
+<?php
+  $is_admin = ($user['permissions'] == 'admin') ? true : false;
+```
+Conditional Welcome Message
+```
+<?php
+  echo 'Welcome '.($user['is_logged_in'] ? $user['first_name'] : 'Guest').'!';
+```
+Conditional Items Message
+```
+<?php
+  echo 'Your cart contains '.$num_items.' item'.($num_items != 1 ? 's' : '').'.';
+```
+Conditional Error Reporting Level
+```
+<?php
+  error_reporting($WEBSITE_IS_LIVE ? 0 : E_STRICT);
+```
+Conditional Basepath
+```
+<?php
+  echo '<base href="http'.($PAGE_IS_SECURE ? 's' : '').'://mydomain.com" />';
+```
+Nested PHP Shorthand
+```
+<?php
+  echo 'Your score is:  '.($score > 10 ? ($age > 10 ? 'Average' : 'Exceptional') : ($age > 10 ? 'Horrible' : 'Average') );
+```
+Leap Year Check
+```
+<?php
+  $is_leap_year = ((($year % 4) == 0) && ((($year % 100) != 0) || (($year %400) == 0)));
+```
+Conditional PHP Redirect
+```
+<?php
+  header('Location: '.($valid_login ? '/members/index.php' : 'login.php?errors=1')); exit();
+```
+
 ## Ternary Operators
 
 Another important option to consider when using short If/Else statements is the ternary operator.
