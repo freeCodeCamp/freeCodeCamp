@@ -23,20 +23,15 @@ The field of computer security is growing at a rapid rate every year, in a repor
 — Project manager
 
 ### Books
-
-[About Face: The Essentials of Interaction Design](https://amzn.to/2uwtugk)
-
-[Thinking in Systems: A Primer](https://amzn.to/2u6FbJF)
-
-[Thinking, Fast and Slow](https://amzn.to/2tnnlTN)
-
-[Learn You a Haskell for Great Good!](https://amzn.to/2veOjdv)
-
-[Think Like a Programmer](https://www.nostarch.com/thinklikeaprogrammer)
-
-[Hooked: How to Build Habit-Forming Products](https://www.amazon.com/Hooked-How-Build-Habit-Forming-Products/dp/1591847788/)
-
-["Lean In: Women, Work, and the Will to Lead" by Sheryl Sandberg](https://www.amazon.com/Lean-Women-Work-Will-Lead/dp/0385349947/)
+ [About Face: The Essentials of Interaction Design](https://www.amazon.com/gp/product/1118766571/)
+ 
+ [Thinking in Systems: A Primer](https://www.amazon.com/gp/product/1603580557)
+ 
+ [Thinking, Fast and Slow](https://www.amazon.com/gp/product/0374533555/)
+ 
+ [Learn You a Haskell for Great Good!](https://www.amazon.com/gp/product/1593272839/)
+ 
+ ["Lean In: Women, Work, and the Will to Lead" by Sheryl Sandberg](https://www.amazon.com/Lean-Women-Work-Will-Lead/dp/0385349947/)
 
 To see the full list, visit: https://talkpython.fm/episodes/show/130/10-books-python-developers-should-be-reading
 
