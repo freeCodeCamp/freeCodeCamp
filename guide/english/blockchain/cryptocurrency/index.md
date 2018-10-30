@@ -19,6 +19,7 @@ Some people invest in cryptocurrency on exchanges such as Binance, Bitrex, or Co
 [Cryptocurrency](https://en.wikipedia.org/wiki/Cryptocurrency)    
 [Ultimate Guide to Cryptocurrency](https://blockgeeks.com/guides/what-is-cryptocurrency)
 [Bitcoin](https://en.wikipedia.org/wiki/Bitcoin)
+[Blockchain Revolution](https://www.amazon.com/Blockchain-Revolution-Technology-Changing-Business/dp/151135769X)
 
 ### Background History on origins of cryptocurrency:
 [Blockchain History](https://www.activism.net/cypherpunk/manifesto.html)
