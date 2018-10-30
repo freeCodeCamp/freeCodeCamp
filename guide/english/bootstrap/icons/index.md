@@ -38,7 +38,7 @@ To use bootstrap icons you simply create `<span>` tag and apply the applicable C
 
 ### Bootstrap Glyphicon Class List
 
-This is an example of the CSS classes that bootstrap provides for glyphicons. More of them is avalible <a href='https://getbootstrap.com/docs/3.3/components/#glyphicons' target='_blank' rel='nofollow'>here</a>
+This is an example of the CSS classes that bootstrap provides for glyphicons. More of them are avalible <a href='https://getbootstrap.com/docs/3.3/components/#glyphicons' target='_blank' rel='nofollow'>here</a>
 
 `.glyphicon glyphicon-plus` This is bootstrap's plus/add icon.
 
