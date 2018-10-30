@@ -4,9 +4,9 @@ localeTitle: Desenvolvimento Android
 ---
 # Desenvolvimento Android
 
-Os aplicativos para Android podem ser uma ótima maneira divertida de entrar no mundo da programação. Oficialmente os programadores podem usar Java, Kotlin ou C ++ para desenvolver para Android, e embora possa haver restrições API, usando ferramentas, os desenvolvedores podem usar um grande número de idiomas, incluindo JavaScript, C ou assembly, e as possibilidades são infinitas.
+Os aplicativos para Android podem ser uma ótima e divertida maneira de entrar no mundo da programação. Oficialmente, os programadores podem usar Java, Kotlin ou C ++ para desenvolver para Android, e embora possa haver restrições API, usando ferramentas, os desenvolvedores podem usar um grande número de linguagens, incluindo JavaScript, C ou assembly, e as possibilidades são infinitas.
 
-Desde jogos simples e aplicativos de utilitários até players de música completos, há muitas oportunidades para criar algo significativo com o Android. A comunidade de desenvolvedores do Android é muito difundida, e a documentação e os recursos on-line são fáceis de encontrar, para que você possa enfrentar qualquer problema que esteja enfrentando.
+Desde jogos simples e aplicativos de utilitários, até players de música completos, há muitas oportunidades para criar algo significativo com o Android. A comunidade de desenvolvedores do Android é muito difundida, e a documentação e os recursos on-line são fáceis de encontrar, para que você possa enfrentar qualquer problema que esteja enfrentando.
 
 Há definitivamente uma curva de aprendizado para se acostumar com o framework Android, no entanto, uma vez que você entenda os principais componentes que compõem o aplicativo, o resto virá naturalmente.
 
@@ -30,7 +30,7 @@ Por fim, aprenda a integrar bibliotecas de terceiros e serviços do Firebase par
 
 Desde que o Google anunciou o Kotlin como a língua oficial para o desenvolvimento do Android no Google IO em 2017, os programadores que querem se tornar desenvolvedores do Android estão em um dilema. A grande questão na frente deles é se eles deveriam aprender Kotlin ou Java.
 
-##### Iniciantes no desenvolvimento Android deve começar com Java
+##### Iniciantes no desenvolvimento Android devem começar com Java
 
 A primeira e principal coisa é que o desenvolvimento do Android não é tudo; Como programador, você pode começar sua carreira com o desenvolvimento do Android, mas se começar com uma linguagem bem estabelecida como o Java, você se torna parte da comunidade e do mercado Java, o que significa mais oportunidades de emprego.
 
@@ -38,7 +38,7 @@ A segunda e mais importante é que existe uma enorme comunidade de programadores
 
 ###### Programadores Java devem aprender Kotlin
 
-Agora, voltando ao segundo conjunto de programadores que quer aprender o desenvolvimento do Android: nossos colegas desenvolvedores Java. Para eles, eu acho que é melhor aprender Kotlin porque realmente melhora a produtividade.
+Agora, voltando ao segundo conjunto de programadores que querem aprender o desenvolvimento do Android: nossos colegas desenvolvedores Java. Para eles, eu acho que é melhor aprender Kotlin porque realmente melhora a produtividade.
 
 Uma classe que leva 50 linhas de código em Java pode realmente ser escrita em apenas uma linha no Kotlin. Ele pode ajudá-lo a evitar todo o código da placa da caldeira, por exemplo, você não precisa especificar os métodos getters e setters, equals (), hashCode () ou toString (). Kotlin pode gerar tudo isso por si só.
 
