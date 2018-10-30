@@ -67,7 +67,7 @@ Bootstrap comes with predefined grid classes for your use in markup. See more de
 
 - Starting with version 3.0, Bootstrap adopted a mobile-first design philosophy, emphasizing responsive design by default.
 
-- Version 4.0 added Sass and flexbox support
+- Version 4.0 added SASS (Synatically Awesome Style Sheets) and Flexbox support (Flexbox is a more elegant layout method).
 
 #### More Information:
 
