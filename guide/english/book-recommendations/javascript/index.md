@@ -23,6 +23,12 @@ Book by the "grandfather" of JavaScript, Douglas Crockford. He discusses both th
 
 - [Amazon](https://www.amazon.com/JavaScript-Good-Parts-Douglas-Crockford/dp/0596517742)
 
+#### JavaScript and JQuery: Interactive Front-End Web Development
+
+A book by Jon Duckett showing you how to make web pages more interactive and interfaces more intuitive through the use of inspiring code examples, infographics, and photography. The content assumes no previous programming experience, other than knowing how to create a basic web page in HTML & CSS. Introduces core programming concepts in JavaScript and jQuery, teaches you how to create scripts from scratch, and understand the thousands of JavaScripts, JavaScript APIs, and jQuery plugins that are available on the web.
+
+- [Amazon](https://www.amazon.com/JavaScript-JQuery-Interactive-Front-End-Development/dp/1118531647)
+
 #### JavaScript: Info
 
 A collection of articles covering the basics (core language and working with a browser) as well as advanced topics with concise explanations. Available as an e-book with pay and also as an online tutorial.
