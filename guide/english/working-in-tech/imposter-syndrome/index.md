@@ -46,3 +46,4 @@ More great resources to help you know more about Imposter Syndrome and some tips
 * [NY Times - Learning How to Deal with the Imposter Syndrome](https://www.nytimes.com/2015/10/26/your-money/learning-to-deal-with-the-impostor-syndrome.html)
 * [The Every Girl - 5 Books to Read If You're Struggling With Imposter Syndrome](http://theeverygirl.com/5-books-read-youre-struggling-imposter-syndrome/)
 * [Wikipedia - Imposter Syndrome](https://en.wikipedia.org/wiki/Impostor_syndrome)
+*[Amazon - The Impostor Syndrome: How to Replace Self-Doubt with Self-Confidence and Train Your Brain for Success](https://www.amazon.com/Impostor-Syndrome-Replace-Self-Doubt-Self-Confidence-Success/dp/143635448X)
