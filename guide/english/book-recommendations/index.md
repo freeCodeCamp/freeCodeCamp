@@ -272,6 +272,10 @@ title: Books to Read for Programmers
 - [Amazon] (https://www.amazon.com/Innovators-Dilemma-Technologies-Management-Innovation-ebook/dp/B00E257S86_
 - ASIN: B00E257S86
 
+*Mastering Docker*
+- [Amazon Smile](https://smile.amazon.com/Mastering-Docker-Master-widely-containerization/dp/1787280241/)
+- ISBN-13: 978-1-78728-024-3
+
 This list was compiled from multiple suggestion threads on Reddit and Stackoverflow. 
 
 Please feel free to add more that you have found useful!
