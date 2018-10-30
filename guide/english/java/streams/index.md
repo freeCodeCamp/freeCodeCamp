@@ -91,5 +91,22 @@ List<String> result2 = Arrays.asList("de", "abc", "f", "abc")
 // result: abc de
 ```
 
+You can also create Parallel streams if you have a function that takes a long time to complete.
+```java
+List<Integer> result3 = Arrays.asList(14, 31, 76)
+        .parallelStream()
+        .map(num -> veryLongFunc(num))
+        .collect(Collectors.toList());
+```
+
+If you already have a stream and you want to make it parallel you can use `.parallel()`.
+```java
+Stream inputNumbers = Stream.of(13, 12, 87, 21);
+List<Integer> result4 = inputNumbers
+        .parallel()
+        .map(num -> veryLongFunc(num))
+        .collect(Collectors.toList());
+```
+
 ### Sources
 1. [Processing Data with Java SE 8 Streams, Part 1](http://www.oracle.com/technetwork/articles/java/ma14-java-se-8-streams-2177646.html)
