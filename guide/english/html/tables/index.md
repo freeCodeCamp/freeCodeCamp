@@ -168,7 +168,14 @@ Result:
   </tr>
 </table>
 
+## Adding Cell Padding to Tables
 
+th,td
+{
+padding: 10px;
+}
+
+<a href='https://www.w3schools.com/html/tryit.asp?filename=tryhtml_table_cellpadding'> DEMO </a>
 
 #### More Information:
 <a href='https://developer.mozilla.org/en-US/docs/Web/HTML/Element/table' target='_blank' rel='nofollow'>MDN Article on the HTML <table> tag</a>
