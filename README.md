@@ -24,7 +24,7 @@ The languages and technologies currently taught by freeCodeCamp include HTML5, C
 
 ### Certifications
 
-freeCodeCamp.org offers several free developer certifications. Each of these certifications involves building 5 required web app projects, along with hundreds of optional coding challenges to help you prepare for those projects. We estimate that each certification will take a beginning programmer around 300 hours to earn.
+freeCodeCamp.org offers several free developer certifications. Each of these certifications involves building 5 required web app projects, along with hundreds of optional coding challenges to help you prepare for those projects. We estimate that each certification will take a beginning programmer around 300 hours to earn.freeCodeCamp's platform is used by about 350,000 unique visitors per month,[17][18] with students from over 160 countries.[19] According to Alexa, freeCodeCamp is ranked around 2,850 globally and around 1,650 in the United States in terms of monthly traffic.
 
 Each of these 30 projects in the freeCodeCamp.org curriculum has its own agile user stories and automated tests. These help you build up your project incrementally and ensure you've fulfilled all the user stories before you submit it.
 
