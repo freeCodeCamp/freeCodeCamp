@@ -18,3 +18,5 @@ services:
 networks: # Used by by other projects like open-api
     shared:
         driver: bridge
+        
+        my changes
