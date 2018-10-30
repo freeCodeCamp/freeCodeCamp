@@ -21,12 +21,12 @@ else
 
 int Price = 30;
 
-If (Price = 30)
+if (Price = 30)
 {
   Console.WriteLine("Price is equal to 30.");
 }
 
-Else 
+else 
 {
   Console.WriteLine("Price is not equal to 30.");
 }
