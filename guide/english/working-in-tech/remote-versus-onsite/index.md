@@ -13,23 +13,23 @@ Onsite work is what you might think of when you think of a 9-5 job. When you're 
 
 Remote work occurs when team members work in separate physical locations. You can work from anywhere: your home (no commute!), a co-working space (sometimes paid for by your employer), or even a beach in Thailand. Often your only restriction is that you have internet access. Sometimes you will also see this listed as a "distributed team" or "100% remote", with emphasis on the 100%. 
 
-Because in-person communication occurs less frequently (if at all), remote teams often rely more on communication software like [Slack](https://slack.com/) and [Skype](https://www.skype.com/).
+As in-person communication occurs less frequently (if at all), remote teams often rely on communication software like [Slack](https://slack.com/) and [Skype](https://www.skype.com/).
 
-Remote teams may host regular company retreats so team members can meet, hang out and plan the next steps for their company.
+Remote teams may host regular company retreats. There, team members can meet, hang out and plan the next steps for their company.
 
 ### The "In-Between"
 
 Some companies are 100% onsite, and some are 100% remote. But, it's not unusual to find companies or teams that allow you to work remotely a day or two out of the week. This allows you to experience some of the benefits of remote work, without being remote all the time. Sometimes you will see this called "partially distributed".
 
-Remote work can be a great tool for a business as a contingency plan in the event of inclement weather or a natural disaster.
+Remote work can be a great ad-hoc tool for a business as a contingency plan. It is good answer for the event of inclement weather or a natural disaster.
 
-Some companies also have a physical office where you can go to work if you'd like, but allow you to work wherever. Recently there has been more movement from large companies, such as IBM, toward moving employees back to onsite employment. However, many large organizations are still very flexible and willing to let you work from home, or another convenient location.
+Some companies also have a physical office where you can go to work if you'd like, but allow you to work wherever. Recently there has been new policy in large companies, such as IBM, toward moving employees back to onsite employment. Yet, many large organizations are still very flexible. And they are willing to let you work from any convenient location.
 
-With teams that are not 100% remote (some onsite and some remote) this can sometimes create a disconnected between those working in the office and those working from home. For example, communication needs to be top priority to make sure no one is left out of an impromptu meeting or decision. 
+With teams that are not 100% remote (some onsite and some remote) this can sometimes create a feeling of disconnection. Especially between those working in the office and those working from home. Communication needs to be top priority to make sure no one is left out of an impromptu meeting or decision. 
 
 ### Multiple Teams 
 
-Larger companies may have a different version of the "in-between", where they have a number of different teams working  onsite, but in multiple different locations. For example, a team working onsite in New York and another team working onsite in Chicago. You can hang out with other team members in an office, but you also use remote working techniques (Slack, Skype, etc) to stay in contact and in sync with the other teams. The teams may all be working on the same project, or developing something independently against the same application or platform.
+Larger companies may have a different version of the "in-between". Usually they have some different teams working  onsite, but in many different locations. For example, a team working onsite in New York and another team working onsite in Chicago. You can hang out with other team members in an office, but you also use remote working tools to stay in contact and in sync. The teams may all be working on the same project, or developing something independently against the same application or platform.
 
 ### More Information:
 
