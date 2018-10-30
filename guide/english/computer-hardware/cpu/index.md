@@ -26,9 +26,8 @@ A microprocessor is a silicon chip containing millions of microscopic transistor
 
 <b> Manufacturers of computer microprocessors </b>
   
-There are two primary manufacturers of computer microprocessors. Intel and Advanced Micro Devices (AMD) lead the market in terms of speed and quality. Intel's desktop CPUs include Celeron, Pentium and Core. AMD's desktop processors include Sempron, Athlon and Phenom. Intel makes Celeron M, Pentium M and Core mobile processors for notebooks. AMD makes mobile versions of its Sempron and Athlon, as well as the Turion mobile processor which comes in Ultra and Dual-Core versions. Both companies make both single-core and multi-core processors.
-
-
+There are two primary manufacturers of computer microprocessors (CPU's), Intel and Advanced Micro Devices (AMD). Intel's desktop grade CPUs include popular models such as Celeron, Pentium, Xeon, and the Core lineup, whilst AMD touts desktop models such as FX, Athlon, and Ryzen. Both Intel and AMD produce mobile processers for laptops and mobile devices. Both produce single-core and multi-core processors.
+  
 <b> Manufacturers of mobile microprocessors </b>
 
 The improvements in microprocessor technology have also led to signficant technology advances in CPUs designed specifically for the mobile space. Processors based on designs from ARM, Qualcomm, and others have resulted in new mobile devices with capabilities that are unheard of in past generations. These modern mobile CPUs power popular consumer devices from the latest iteration of Apple iPhones and Android based Phones to IOT(Internet of Things), devices like Amazon Echo and Google Home, with capabilities such as HD Video recording/video conferencing, stereo audio, 3D gaming, and applications that are dependent on mobile CPU performance. This is one of the factors contributing to the growth and adoption of mobile devices which in turn has generated demand and provided opportunity for the creation of new applications with greater capabilities.
