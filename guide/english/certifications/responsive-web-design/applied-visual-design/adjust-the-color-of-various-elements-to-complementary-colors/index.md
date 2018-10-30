@@ -7,10 +7,21 @@ This is a stub. <a href='https://github.com/freecodecamp/guides/tree/master/src/
 
 ## Hints
 Add the following code on the .blue-box and the corresponding values for each padding.
-    padding-top: (add_value_here);
-    padding-right: (add_value_here);
-    padding-bottom: (add_value_here);
-    padding-left: (add_value_here);
+Then change 0px to corresponding values of paddings.
+
+Top - 40px
+Right - 20px
+Bottom - 20px
+Left - 40px
+
+<style>
+.blue-box {
+        padding-top: 0px;
+        padding-right: 0px;
+        padding-bottom: 0px;
+        padding-left: 0px;
+}
+</style>
   
 
 
