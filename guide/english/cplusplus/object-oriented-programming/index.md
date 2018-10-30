@@ -4,7 +4,7 @@ title: Object Oriented Programming using C++
 
 ## Object Oriented Programming using C++
 
-Object oriented programming, OOP for short, aims to implement real world entities like inheritance, hiding and polymorphism in programming. The main aim of OOP is to bind together the data and the functions that operates on them so that no other part of code can access this data except that function.
+Object oriented programming, OOP for short, aims to implement real world entities like abstraction,encapsulation,inheritance and polymorphism in programming. The main aim of OOP is to bind together the data and the functions that operates on them so that no other part of code can access this data except that function.
 
 Let us learn about different characteristics of an Object Oriented Programming language:
 
@@ -46,15 +46,15 @@ class class_name
 ```
 Class is a user defined data type like structures and unions in C.
 
-By default class variables are private but in case of structure it is public. in above example person is a class.
+By default class variables are private but in case of structure it is public. In above example person is a class.
 
 ### Encapsulation and Data abstraction:
 Wrapping up (combining) of data and functions into a single unit is known as encapsulation. The data is not accessible to the outside world and only those functions which are wrapping in the class can access it. This insulation of the data from direct access by the program is called data hiding or information hiding.
 
-Data abstraction refers to providing only needed information to the outside world and hiding implementation details. For example, consider a class Complex with public functions as getReal() and getImag(). We may implement the class as an array of size 2 or as two variables. The advantage of abstractions is, we can change implementation at any point, users of Complex class won't be affected as our method interface remains same. Had our implementation be public, we would not have been able to change it.
+Data abstraction refers to providing only needed information to the outside world and hiding implementation details. For example, consider a class Complex with public functions as getReal() and getImag(). We may implement the class as an array of size 2 or as two variables. The advantage of abstraction is, we can change implementation at any point, users of Complex class won't be affected as our method interface remains same. 
 
 ### Inheritance:
-Inheritance is the process by which objects of one class acquire the properties of objects of another class. It supports the concept of hierarchical classification. Inheritance provides reusability. This means that we can add additional features to an existing class without modifying it.
+Inheritance is the process by which objects of one class acquire the properties of objects of another class. It supports the concept of hierarchical classification. Inheritance provides reusability of code. This means that we can add additional features to an existing class without modifying it.
 
 Here is an example of using inheritance to create a hierarchy, which can be refered to as an 'IS A' relationship between the classes.
 ```
