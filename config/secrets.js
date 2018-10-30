@@ -2,7 +2,7 @@ const {
   MONGODB,
   MONGOHQ_URL,
 
-  SESSION_SECRET,
+  SESSION_ST,
   COOKIE_SECRET,
   JWT_SECRET,
 
@@ -36,7 +36,7 @@ module.exports = {
 
   cookieSecret: COOKIE_SECRET,
   jwtSecret: JWT_SECRET,
-  sessionSecret: SESSION_SECRET,
+  sessionSecret: SESSION_ST,
 
   auth0: {
     clientID: AUTH0_CLIENT_ID,
