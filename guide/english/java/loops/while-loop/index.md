@@ -3,7 +3,7 @@ title: While Loop
 ---
 # While Loop
 
-The `while` loop repeatedly executes the block of statements until the condition specified within the parentheses evaluates to `false`. For instance:
+The `while` loop repeatedly executes the block of statements until the `condition` specified within the parentheses evaluates to `false`. For instance:
 
 ```java
 while (some_condition_is_true)
