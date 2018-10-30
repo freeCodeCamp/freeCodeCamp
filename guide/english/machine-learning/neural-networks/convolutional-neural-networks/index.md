@@ -3,7 +3,7 @@ title: Convolutional Neural Networks
 ---
 
 Convolutional Neural Networks (ConvNets or CNNs) are a category of Neural Networks that have proven very effective in areas such as image recognition and classification. ConvNets have been successful in identifying faces, objects and traffic signs apart from powering vision in robots and self driving cars.
-The idea was first presented by Yann LeCun and Yoshua Bengio, back in 1995
+The idea was first presented by Yann LeCun and Yoshua Bengio, back in 1995.
 
 ### Why Convolutional Neural Network
 
