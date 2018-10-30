@@ -31,7 +31,7 @@ and only have to change the one place where the object is created.
 
 Interface Example:
 ```csharp
-public Interface IUserFavoriteFood
+public interface IUserFavoriteFood
 {
   void AddFood();
   Task<User> EatFavoriteFood(int id);
