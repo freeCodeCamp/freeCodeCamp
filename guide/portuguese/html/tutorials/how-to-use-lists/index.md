@@ -48,7 +48,7 @@ Uma lista não ordenada é usada para agrupar um conjunto de itens relacionados,
 *   Bolo floresta negra
 *   Bolo de abacaxi
 
-### Descrição Listas
+### Listas de descrição
 
 Uma lista de descrição é usada para especificar uma lista de termos e suas descrições. Esta lista é criada com a tag `<dl>` . Cada item da lista é cercado pela tag `<dd>` .
 
@@ -74,7 +74,7 @@ Café
 
 Uma bebida feita a partir de grãos de café torrados.
 
-#### Lista de estilo
+#### Estilo da lista
 
 Você também pode controlar o estilo da lista. Você pode usar `list-style` propriedade de listas de `list-style` . Sua lista pode ser marcadores, quadrados, números numéricos ou imagens que você deseja.
 
