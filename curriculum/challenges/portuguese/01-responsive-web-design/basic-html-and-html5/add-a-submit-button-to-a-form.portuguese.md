@@ -7,13 +7,14 @@ videoUrl: ''
 localeTitle: Adicionar um botão Enviar para um formulário
 ---
 
-## Description
-<section id="description"> Vamos adicionar um botão de <code>submit</code> ao seu formulário. Clicar neste botão enviará os dados do seu formulário para o URL que você especificou com o atributo de <code>action</code> do seu formulário. Aqui está um exemplo de botão de envio: <code>&lt;button type=&quot;submit&quot;&gt;this button submits the form&lt;/button&gt;</code> </section>
+## Descrição
+<section id="description"> Vamos adicionar um botão de <code>submit</code> ao seu formulário. Clicar neste botão enviará os dados do seu formulário para o URL que você especificou com o atributo de <code>action</code> do seu formulário. 
+Aqui está um exemplo de botão de envio: <code>&lt;button type=&quot;submit&quot;&gt;this button submits the form&lt;/button&gt;</code> </section>
 
-## Instructions
+## Instruções
 <section id="instructions"> Adicione um botão como o último elemento do seu elemento de <code>form</code> com um tipo de <code>submit</code> e &quot;Enviar&quot; como seu texto. </section>
 
-## Tests
+## Testes
 <section id='tests'>
 
 ```yml
@@ -31,7 +32,7 @@ tests:
 
 </section>
 
-## Challenge Seed
+## Desafio
 <section id='challengeSeed'>
 
 <div id='html-seed'>
@@ -68,7 +69,7 @@ tests:
 
 </section>
 
-## Solution
+## Solução
 <section id='solution'>
 
 ```js
