@@ -34,7 +34,7 @@ class Honda extends Bike{
 ```
 
 Output wil be - 
-  Output:Compile Time Error
+  Output:Compilation Error
   
 ---------------------------------------------------------------------------------------
 
@@ -55,4 +55,4 @@ class Honda1 extends Bike{
 ```
 
 Output will be-
- Output:Compile Time Error
+ Output:Compilation Error
