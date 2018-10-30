@@ -186,3 +186,27 @@ My
 
 **More Information:**
 - [String Documentation](https://docs.oracle.com/javase/7/docs/api/java/lang/String.html)
+#### More string methods
+Some more sring methods are:
+1.indexOf(String s):
+It returns the index of the first character of the first occurence of the the specified string.Return type is integer.
+Example:
+```
+ String str = ”India is my country”;
+ int out = s.indexOf(“my”); // returns 9
+ ```
+
+2.lastIndexOf(char c):
+It returns the index of last index of the specified character or string and its return type is also int.If not present , it returns -1.
+Example:
+```
+String str = ”India is my country”;
+int out = s.lastindexOf(‘o’); // returns 13
+ ```
+
+3.trim():
+It is used to delete the leading and trailing spaces in a string.
+Example:
+```
+String str1 = “   India  “;  // returns “India”
+```
