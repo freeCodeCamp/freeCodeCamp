@@ -37,5 +37,6 @@ Not all motherboards or CPUs can handle ECC memory; however, it also is rarely a
 * [Dynamic RAM](https://en.wikipedia.org/wiki/Dynamic_random-access_memory)
 * [DDR3 SDRAM](https://en.wikipedia.org/wiki/DDR3_SDRAM)
 * [DDR4 SDRAM](https://en.wikipedia.org/wiki/DDR4_SDRAM)
+* [DDR5 SDRAM](https://en.wikipedia.org/wiki/DDR5_SDRAM)
 * [Types of RAM](http://www.computermemoryupgrade.net/types-of-computer-memory-common-uses.html)
 * [Laptop Memory Buyer's Guide](https://www.lifewire.com/laptop-memory-buyers-guide-833024)
