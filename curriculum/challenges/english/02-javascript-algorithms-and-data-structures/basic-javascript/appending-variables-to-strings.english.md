@@ -42,9 +42,9 @@ ourStr += anAdjective;
 
 // Only change code below this line
 
-var someAdjective;
+var someAdjective = "always cool!";
 var myStr = "Learning to code is ";
-
+myStr += someAdjective;
 ```
 
 </div>
