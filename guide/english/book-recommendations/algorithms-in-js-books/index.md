@@ -24,4 +24,10 @@ title: Algorithms in JavaScript books
 - [Amazon](https://https://www.amazon.com/Learning-JavaScript-Data-Structures-Algorithms/dp/1788623878/)
 - ISBN-13: 978-1788623872
  
+ *A Common-Sense Guide to Data Structures and Algorithms: Level Up Your Core Programming Skills*
+ -By Jay Wengrow
+ -This book takes a practical approach to data structures and algorithms, with techniques and real-world scenarios that you can use in your daily production code.
+ -[Amazon](https://www.amazon.com/Common-Sense-Guide-Data-Structures-Algorithms/dp/1680502441/ref=sr_1_3?ie=UTF8&qid=1540865116&sr=8-3&keywords=a+common-sense+guide+to+data+structures+and+algorithms&dpID=41ifrhvheUL&preST=_SX218_BO1,204,203,200_QL40_&dpSrc=srch)
+ -ISBN-13: 978-1680502442
+ 
 Please feel free to add more that you have found useful!
