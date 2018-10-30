@@ -30,7 +30,7 @@ As of 2016, blockchain 2.0 implementations continue to require an off-chain orac
 
 ### Bitcoin
 
-Bitcoin’s main problem to solve was to achieve distributed consensus while remaining a decentralized system. Distributed consensus is essentially the idea that all the nodes that make up the network must come to a collective agreement without the use of a centralized control. In Bitcoin, the nodes are agreeing on exactly which transactions present on the network are valid. This is difficult in many ways, one of which is the potential for n number of nodes to be malicious and not want to follow
+The main problem which Bitcoin sought to solve was how to achieve distributed consensus while remaining a decentralized system. Distributed consensus is essentially the idea that all the nodes that make up the network must come to a collective agreement without the use of a centralized control. In Bitcoin, the nodes agree on exactly which transactions present on the network are valid. This is difficult in many ways, one of which is the potential for n number of nodes to be malicious and not want to follow
 the consensus of the other nodes. Bitcoin has the benefit of being able to incentivize its nodes to “follow the rules” through rewards and transaction fees because it is a currency system.
 
 #### Sources
