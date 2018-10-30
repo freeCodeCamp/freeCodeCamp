@@ -35,7 +35,7 @@ A case is used to house all the components of a computer.
 ### Power Supply
 A power supply is an electronic device that supplies electric energy to an electrical load. A computer power supply supplies electrical energy to all the components of the computer including: the motherboard, disk drives, and fans. Power supplies vary in the amount of output they provide and power supplies must be matched to the number of components needing power so they are not overloaded. 
  
- ![Power Supply](https://upload.wikimedia.org/wikipedia/commons/thumb/b/b6/SFX_PC-PSU_Delta_IMG_9760.JPG/620px-SFX_PC-PSU_Delta_IMG_9760.JPG)
+ ![Power Supply](https://www.addonics.com/products/images/AATXPS500.png)
  
 ### Motherboard
 Motherboard holds and allows communication between many of the crucial electronic components of a system, such as the central processing unit (CPU) and memory, and provides connectors for other peripherals.
