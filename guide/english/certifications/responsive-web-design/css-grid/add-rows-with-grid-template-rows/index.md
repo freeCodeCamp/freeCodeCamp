@@ -11,7 +11,7 @@ You can define rows by using the `grid-template-rows` CSS property.
 
 ### Solution
 
-Since the challenge requires you to create two rows of `50px` each, declare the followin in your `.container` CSS code block:
+Since the challenge requires you to create two rows of `50px` each, declare the following in your `.container` CSS code block:
  
 ````css
 grid-template-rows: 50px 50px;
