@@ -56,6 +56,8 @@ localeTitle: CSS类
  background-color: blue; 
  } 
 ```
+此外，可以选择在标记里添加样式
+<h1 style="color:red;"> the heading is red </h1>
 
 您可以在[此处](https://codepen.io/Tlandis/pen/RLvomV)查看上述代码的[结果](https://codepen.io/Tlandis/pen/RLvomV) 。 [在这里](https://www.w3schools.com/css/css_combinators.asp)学习如何使用选择器组合CSS类。
 
