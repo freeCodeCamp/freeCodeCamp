@@ -77,3 +77,5 @@ import java.util.ArrayList;
 请注意，在命名类时，在尖括号内，您可以确保Generic类型是那样的 你要。例如，如果您想确保类型可以作为String的形式读取，那么您将去`<T extends String>` 。
 
 请注意，字母`T`是占位符，只要您使用相同的字母，就可以制作任何您喜欢的内容 整个班级。
+
+My changes.
