@@ -5,6 +5,8 @@ title: Python Boolean Operations
 
 <a href='https://docs.python.org/3/library/stdtypes.html#boolean-operations-and-or-not' target='_blank' rel='nofollow'>Python Docs - Boolean Operations</a>
 
+## Boolean Operations:
+
 These are the Boolean operations, ordered by ascending priority:
 
 Operation | Result | Notes  
@@ -23,25 +25,25 @@ not x | if x is false, then True, else False | (3)
 
 ### `or`:
 
-    >>> True or False    # Short-circuited at first argument.
-    True
-    >>> False or True    # Second argument is evaluated.
-    True
-    >>> False or False   # Second argument is evaluated.
-    False
+        >>> True or False    # Short-circuited at first argument.
+        True
+        >>> False or True    # Second argument is evaluated.
+        True
+        >>> False or False   # Second argument is evaluated.
+        False
 
 ### `and`:
 
-    >>> True and False    # Short-circuited at first argument.
-    False
-    >>> False and True    # Second argument is evaluated.
-    False
-    >>> True and True     # Second argument is evaluated.
-    True
+        >>> True and False    # Short-circuited at first argument.
+        False
+        >>> False and True    # Second argument is evaluated.
+        False
+        >>> True and True     # Second argument is evaluated.
+        True
     
 ### `not`:
 
-    >>> not True
-    False
-    >>> not False
-    True
+        >>> not True
+        False
+        >>> not False
+        True
