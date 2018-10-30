@@ -9,7 +9,7 @@ For example, if you happen to pass along your code to an absolute beginner, they
 
 It is a good idea to make a habit out of commenting your functions, loops, and declarations and treating comments as part of the source code.
 
-Many developers have probably learned that it is much harder to go back through your code and comment it after you finish. It's always a good idea to label and comment your code as you go, so that you don't forget or mix up what certain variables or functions do.
+Many developers have probably learned that it is much harder to go back through your code and comment it after you finish. It's always a good idea to add labels and comments to your code as you go, so that you don't forget or mix up what certain variables or functions do.
 
 ![An example of commenting in the real world](https://cdn-images-1.medium.com/max/1620/1*Pyxsc7Uixbitv5myywaA_Q.jpeg)
 
