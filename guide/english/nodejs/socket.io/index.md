@@ -4,7 +4,7 @@ title: Socket.io
 
 ## Socket.io
 
-[Socket.io](https://socket.io/) is a Node.js library made to help make real-time communication between computers possible. To ensure this Socket.io uses a combination of WebSockets and Polling to establish a connection between the client's browser and the server. This allows it to work on older browsers that may not support pure websockets. This library uses [Engine.IO](https://github.com/socketio/engine.io) for building the connection.
+[Socket.io](https://socket.io/) is a Node.js library made to help make real-time communication between computers possible. To ensure this Socket.io uses a combination of WebSockets and Polling to establish a connection between the client's browser and the server. This allows it to work on older browsers (non HTML5) that may not support pure websockets. This library uses [Engine.IO](https://github.com/socketio/engine.io) for building the connection.
 
 ### Demos
 
