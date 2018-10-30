@@ -23,4 +23,5 @@ Their goal is to ensure the integrity of high availability network infrastructur
 computer;
 voice;
 firewall.
+
 Network engineers may work internally as part of an organisation's IT support team, or externally as part of an outsourced IT networking consultancy firm working with a number of clients.
