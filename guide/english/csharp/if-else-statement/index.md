@@ -4,31 +4,31 @@ title: If Else Statement
 
 # If Else Statement
 
-The If-Else statement executes a block of code depending on whether your precondition is fullfilled or not.
+The If-Else statement executes different blocks of code depending on the truthfulness of the specified condition.
 
-## Example
+## Syntax
 ```
-
-if(boolean expression)
+if (boolean expression)
 {
-// execute this code block if expression evalutes to true
+   // execute this code block if expression evalutes to true
 }
 else
 {
-// always execute this code block when above if expression is false
+   // always execute this code block when above if expression is false
 }
+```
 
-
+## Example
+```
 int Price = 30;
 
-If (Price = 30)
+if (Price == 30)
 {
-  Console.WriteLine("Price is equal to 30.");
+    Console.WriteLine("Price is equal to 30.");
 }
-
-Else 
+else 
 {
-  Console.WriteLine("Price is not equal to 30.");
+    Console.WriteLine("Price is not equal to 30.");
 }
 ```
 
