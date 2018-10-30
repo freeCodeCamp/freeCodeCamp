@@ -5,10 +5,14 @@ title: Books on JavaScript
 
 #### Eloquent JavaScript
 
+![alt text](https://images-na.ssl-images-amazon.com/images/I/515jiKSErDL._SL200_.jpg "Eloquent JavaScript")
+
 One of the best books on JavaScript. A must for both, beginners and intermediate programmers, who code in JavaScript. The best part is that the e-book is available for free.
 
 - [E-book](https://eloquentjavascript.net/)(free)
 - [Amazon](https://www.amazon.com/gp/product/1593275846/ref=as_li_qf_sp_asin_il_tl?ie=UTF8&camp=1789&creative=9325&creativeASIN=1593275846&linkCode=as2&tag=marijhaver-20&linkId=VPXXXSRYC5COG5R5)
+- ISBN-10: 1593275846
+- ISBN-13: 978-1593275846
 
 #### You Don't Know JS
 
@@ -19,22 +23,31 @@ Six book series by Kyle Simpson. In-depth series on every aspect of JavaScript. 
 
 #### JavaScript: The Good Parts
 
+![alt text](https://images-na.ssl-images-amazon.com/images/I/5131OWtQRaL._SL200_.jpg "JavaScript: The Good Parts")
+
 Book by the "grandfather" of JavaScript, Douglas Crockford. He discusses both the "good" and "bad" aspects of JavaScript. Note: The 1st edition of this book written in 2008 has never been updated and many of the things the book discusses are now out of date. It is good reading for someone who wants to understand why Crockford was so important to the history of JavaScript, but many of the techniques he recommends in the book are no longer best practice.
 
 - [Amazon](https://www.amazon.com/JavaScript-Good-Parts-Douglas-Crockford/dp/0596517742)
+- ISBN-10: 9780596517748 
+- ISBN-13: 978-0596517748 
 
 #### JavaScript: Info
 
 A collection of articles covering the basics (core language and working with a browser) as well as advanced topics with concise explanations. Available as an e-book with pay and also as an online tutorial.
 
-- [Online](https://javascript.info/)
+- [Github(Free)](https://github.com/iliakan/javascript-tutorial-en/tree/master)
+- [Online(Free)](https://javascript.info/)
 - [E-book](https://javascript.info/ebook)
 
 #### Javascript and Jquery: Interactive Front End Web Development
+
+![alt text](https://images-na.ssl-images-amazon.com/images/I/41y31M-zcgL._SL200_.jpg "Javascript and Jquery")
+
 This full-color book will show you how to make your websites more interactive and your interfaces more interesting and intuitive. Author is Jon Duckett who also penned HTML & CSS: Design and Build Websites. *Does not cover ES6*
 
 - [Amazon](https://www.amazon.com/JavaScript-JQuery-Interactive-Front-End-Development/dp/1118531647)
-
+- ISBN-10: 9781118531648 
+- ISBN-13: 978-1118531648 
 
 #### Other Resources
 
