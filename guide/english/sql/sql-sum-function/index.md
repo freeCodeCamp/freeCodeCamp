@@ -38,6 +38,19 @@ ORDER BY sum(Total_$) DESC; -- orders the presented rows with the largest ones f
 7 rows in set (0.01 sec)
 ```
 
+### Other Simple Example of use
+If you just want to simply get the grand total of the column sum(Total_$) from the above example. 
+```sql
+SELECT SUM(sum(Total_$))
+FROM combined_party_data;
+
+```text
++--------------+-------------------+
+| GRAND TOTAL:         34606731.78 |
++--------------+-------------------+
+1 rows in set (0.01 sec)
+```
+
 
 As with all of these SQL things there is MUCH MORE to them than what's in this introductory guide.  
 
