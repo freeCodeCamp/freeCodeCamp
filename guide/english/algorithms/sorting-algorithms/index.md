@@ -53,3 +53,17 @@ Any comparison based sorting algorithm must make at least nLog2n comparisons to 
 
 ### Algorithmic Paradigm
 Merge Sort and Quick Sort are based on Divide and Conquer Algorithm
+
+### Sorting can be internal or external
+##internal sorting 
+1. Insertion sort
+2. Bubble sort
+3. Selection sort
+4. Quick Sort
+5. Heap Sort
+6. Shell sort
+
+##external sorting
+1. Merge Sort
+2. Distribution Sort
+
