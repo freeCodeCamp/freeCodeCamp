@@ -1,8 +1,8 @@
 ---
 title: Women in Tech
-localeTitle: Mujeres en tecnologia
+localeTitle: Mujeres en tecnología
 ---
-## Mujeres en tecnologia
+## Mujeres en tecnología
 
 De un artículo sobre ["Las últimas estadísticas sobre las mujeres en la tecnología"](https://www.themuse.com/advice/the-latest-stats-on-women-in-tech) ,
 
@@ -16,9 +16,9 @@ De un artículo sobre ["Las últimas estadísticas sobre las mujeres en la tecno
 
 Aunque las mujeres todavía están subrepresentadas en el mundo tecnológico, no significa que no estemos haciendo una diferencia en el mundo tecnológico.
 
-En un evento Redondeado de Mujeres en la Tecnología presentado por Google en Austin, las Mujeres que hablaron en estos eventos fueron vicepresidentes (VP) y cargos administrativos de alto nivel de compañías rentables que trabajan en la industria tecnológica. No todos ellos comenzaron su carrera en el mundo tecnológico, muchos habían comenzado como secretarios y otros roles que a menudo están orientados hacia las mujeres. Trabajaron duro y tomaron riesgos para llegar a donde están ahora. El único consejo que parecía resonar de todos ellos era que para que usted tenga éxito, debe tomar riesgos.
+En el evento Redondeado de Mujeres en la Tecnología presentado por Google en Austin, las mujeres que hablaron en estos eventos fueron vicepresidentas (VP) y cargas administrativas de alto nivel de compañías rentables que trabajan en la industria tecnológica. No todas ellas comenzaron su carrera en el mundo tecnológico, muchas habían comenzadas como secretarias y otros roles que a menudo estaban orientados hacia las mujeres. Trabajaron duro y tomaron riesgos para llegar a donde están ahora. El único consejo que parecía resonar de todas ellas era que para que usted tenga éxito, debe tomar riesgos.
 
-El vicepresidente de Google que habló en este evento nos dio un consejo: que debemos aprovechar todas las oportunidades que nos brinden y arriesgarnos a postularnos a trabajos para los que no estamos calificados. Lo peor que sucederá es que lo rechacen o no obtendrá una entrevista. Los hombres obtienen puestos de tecnología no porque tengan más experiencia o sean mejores que las mujeres, sino porque se aplican a puestos para los que a menudo no están calificados, mientras que las mujeres solo solicitan trabajos para los que creen que están calificados. Lo peor que puedes hacer es venderte corto si quieres algo, arriesgarte y lograr lo imposible.
+El vicepresidente de Google que habló en este evento nos dio un consejo: que debemos aprovechar todas las oportunidades que nos brinden y arriesgarnos a postularnos a trabajos para los que no estamos calificados. Lo peor que sucederá es que lo rechacen o no obtendrá una entrevista. Los hombres obtienen puestos de tecnología no porque tengan más experiencia o sean mejores que las mujeres, sino porque se aplican a puestos para los que a menudo no están calificados, mientras que las mujeres solo solicitan trabajos para los que creen que están calificadas. Lo peor que puedes hacer es venda ti misma cortocircuita. Si quieres algo, arriesgarte y lograr lo imposible.
 
 ### Más información:
 
