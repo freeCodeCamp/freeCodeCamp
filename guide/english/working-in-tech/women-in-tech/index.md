@@ -28,12 +28,17 @@ The worst thing you can do is to sell yourself short if you want something take 
 
 ### A non-exhaustive list of global women in tech initiatives:
 
+- [1 Million Women To Tech](https://1millionwomentotech.com/)
+- [Ada Developers Academy](https://www.adadevelopersacademy.org/)
+- [Black Girls Code](http://www.blackgirlscode.com/)
+- [Django Girls](https://djangogirls.org/) 
+- [Ela Community](http://ela.community/)
+- [Girls Who Code](https://girlswhocode.com/)
+- [MotherCoders](http://www.mothercoders.org/)
 - [PyLadies](https://www.pyladies.com/)
 - [R-Ladies](https://rladies.org/)
-- [Django Girls](https://djangogirls.org/)
+- [Railsbridge](http://www.railsbridge.org/)
 - [Rails Girls](http://railsgirls.com/)
-- [Girls Who Code](https://girlswhocode.com/)
-- [1 Million Women To Tech](https://1millionwomentotech.com/)
+- [The Grace Hopper Program](https://www.gracehopper.com/)
 - [Women Techmakers](https://www.womentechmakers.com/)  
 - [Women Who Code](https://www.womenwhocode.com/)
-
