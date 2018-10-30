@@ -1,7 +1,7 @@
 ---
 title: Code Smells
 ---
-## Code Smells
+#### Code Smells
 
 A Code Smell in computer programming is a surface indication that there might be a problem regarding your system and the quality of your code. This problem might require refactoring to be fixed.
 
