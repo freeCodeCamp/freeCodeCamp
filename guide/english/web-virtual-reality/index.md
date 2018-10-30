@@ -24,6 +24,7 @@ This section contains articles related to Virtual Reality Application Developmen
 * Samsung Gear VR - https://www.samsung.com/global/galaxy/gear-vr/
   * https://samsungvr.com/
 * HTC - https://www.vive.com/us/
+Note: The HTC Vive and Oculus Rift require a VR ready laptop to use with the headset. Many other headsets require a VR ready phone. Oculus Go is a standalone VR headset, that doesn't need a phone or laptop for use, closer to getting VR more attainable by the masses.
 
 ## Examples of Various Virtual Reality Creations
 
