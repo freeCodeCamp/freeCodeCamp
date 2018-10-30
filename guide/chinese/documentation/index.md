@@ -11,3 +11,11 @@ localeTitle: 代码文档
 ![在现实世界中评论的一个例子](https://cdn-images-1.medium.com/max/1620/1*Pyxsc7Uixbitv5myywaA_Q.jpeg)
 
 #### 更多信息：
+
+*[有关代码文档的文章 (Medium)](https://medium.com/@andrewgoldis/how-to-document-source-code-responsibly-2b2f303aa525)
+
+*[15大最佳实践 (Code tuts)](https://code.tutsplus.com/tutorials/top-15-best-practices-for-writing-super-readable-code--net-8118)
+
+*["黄金三镖客" (Medium)](https://medium.freecodecamp.org/code-comments-the-good-the-bad-and-the-ugly-be9cc65fbf83)
+
+*[如何写代码文档的文章 (Medium)](https://medium.com/@andrewgoldis/how-to-document-source-code-responsibly-2b2f303aa525)
