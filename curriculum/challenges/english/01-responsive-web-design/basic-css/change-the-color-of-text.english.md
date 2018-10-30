@@ -52,6 +52,7 @@ tests:
       <li>cat nip</li>
       <li>laser pointers</li>
       <li>lasagna</li>
+      <li>grooming and being groomed</li>
     </ul>
     <p>Top 3 things cats hate:</p>
     <ol>
