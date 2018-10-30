@@ -17,7 +17,7 @@ RGB stands for "Red, Green, Blue".
 An RGB value is a combination of intensity values for red, green, and blue. Each is between 0 (black) and 255 (full intensity).
 RGBA color values are an extension of RGB color values with an alpha channel - which specifies the opacity for a color. The alpha parameter is a number between 0.0 (fully transparent) and 1.0 (fully opaque).
 
-An RGB color value is specified with: rgb(red, green, blue)
+An RGB color value is specified with: rgb(red, green, blue).
 An RGBA color value is similar, with the alpha value in last position: rgba(red, green, blue, alpha)
 
 ### HSL(A)
@@ -91,7 +91,7 @@ h2 {
 }
 ```
 
-You can also add an alpha value, or transparency to colors. Transparency allows text to be overlaid on an image and stil have the image partially viewable through the text, or can be used to change the shade of the colour if no other elements are in front or behind the text. Use `rgba()` or `hsla()` and fill in your color values. The alpha value goes last and is a percent converted to a decimal. (For example, 20% is 0.2, 75% is 0.75, etc.)
+You can also add an alpha value, or transparency to colors. Transparency allows text to be overlaid on an image and stil have the image partially viewable through the text, or can be used to change the shade of the colour if no other elements are in front or behind the text. Use `rgba()` or `hsla()` and fill in your color values. The alpha value goes last and is a percent converted to a decimal. For example, 20% is 0.2, 75% is 0.75, etc.
 
 ```css
 body {
