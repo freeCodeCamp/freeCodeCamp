@@ -77,7 +77,7 @@ Para crear botones redondeados, use la propiedad border-radius:
 
 ![Rounded Buttons](https://image.ibb.co/cfH00m/button_bradius.png "Botones redondos")
 
-### Botones Hoverable
+### Interacción al sobrevolar el botón
 
 Para cambiar el estilo de un botón cuando mueva el mouse sobre él, use el: selector de desplazamiento:
 ```
