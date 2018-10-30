@@ -81,7 +81,7 @@ The best part of learning Android is that many of the courses and material avail
 The link to the basic course is here - [Developing Android Apps](https://udacity.com/course/new-android-fundamentals--ud851).
 The link to the advanced course is here - [Advanced Android App Development](https://www.udacity.com/course/advanced-android-app-development--ud855). 
 
-### Android Studio
+## Android Studio
 
 [Android Studio](https://developer.android.com/studio/)  
 [Installing Android Studio](https://developer.android.com/studio/install)  
