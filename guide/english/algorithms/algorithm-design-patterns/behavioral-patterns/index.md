@@ -25,6 +25,5 @@ Examples of this type of design pattern include:
 15. **Strategy pattern**: Algorithms can be selected on the fly.
 16. **Template method pattern**: Describes the program skeleton of a program.
 17. **Visitor pattern**: A way to separate an algorithm from an object.
-
-### Sources
+## Sources
 [Behavioral patterns - Wikipedia](https://en.wikipedia.org/wiki/Behavioral_pattern)
