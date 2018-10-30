@@ -1,8 +1,8 @@
 ---
 title: SQL and Operator
-localeTitle: SQL y Operador
+localeTitle: SQL AND Operador
 ---
-## Operador SQL Y
+## Operador SQL AND
 
 AND se utiliza en una cláusula WHERE o GROUP BY HAVING para limitar las filas devueltas desde la sentencia ejecutada. Use Y cuando se requiera que se cumpla más de una condición.
 
