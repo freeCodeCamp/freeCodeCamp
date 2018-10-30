@@ -4,7 +4,7 @@ title: Carousel
 ## Carousel
 
 Carousel is a slideshow component for cycling through elements like images or slides of text.
-It provides a dynamic way of representing large amount of data (text or images) by sliding or cycling through, in a smooth fashion
+It provides a dynamic way of representing large amount of data (text or images) by sliding or cycling through, in a smooth fashion way.
 
 Sample Code of Image Slider is below :
 
@@ -16,7 +16,7 @@ Sample Code of Image Slider is below :
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css" integrity="sha384-PsH8R72JQ3SOdhVi3uxftmaW6Vc51MKb0q5P2rRUpPvrszuE4W1povHYgTpBfshb" crossorigin="anonymous">
 
 
- </head>
+</head>
 
 <style>
   
@@ -102,7 +102,7 @@ Understanding the Attributes and classes used in above example :
 
 a) `data-ride`  :-  `data-ride ="carousel"`  allows on page load animation to begin.
 
-b) `data-target` :- It points to the id of the Carousel
+b) `data-target` :- It points to the id of the Carousel.
 
 c) `data-slide-to` :- It specifies which slide to move on to when clicking on the indicators(specific dots).
 
