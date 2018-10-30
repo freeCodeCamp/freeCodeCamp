@@ -63,7 +63,7 @@ for (variable in object) {
  //   b 
  //   c 
 ```
-
+<div>I love JS very much!It's really intresting and amazing!</div>
 # Ресурсы Ohter:
 
 *   [Ссылка MDN](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/for…in)
