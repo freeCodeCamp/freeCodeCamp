@@ -2,7 +2,7 @@
 title: Source Code Editors
 ---
 
-##Source Code Editors
+## Source Code Editors
 
 Source code editors are the programs that allow for code creation and  
 editing. Any text editor can be used to write code. But dedicated code  
@@ -62,22 +62,25 @@ Its main features are:
 *   Build-in Git - Review diffs, stage files, make commits, push and pull, all available in the editor.
 *   Extensions - Install extensions to add new languages, themes, debuggers, and connect additional services.
 
-## <a href='https://atom.io/' target='_blank' rel='nofollow'>WebStorm</a>
+## <a href='https://www.jetbrains.com/webstorm/' target='_blank' rel='nofollow'>WebStorm</a>
 
-DON'T COMPROMISE ON DEVELOPMENT EXPERIENCE
-The smartest editor
+DON'T COMPROMISE ON DEVELOPMENT EXPERIENCE - The smartest editor
+
 Use the full power of the modern JavaScript ecosystem – WebStorm’s got you covered! Enjoy the intelligent code completion, on-the-fly error detection, powerful navigation and refactoring for JavaScript, TypeScript, stylesheet languages, and the most popular frameworks.
 
 Web
 * Angular
 * React
 * Vue.js
+
 Mobile
 * Ionic
 * Cordova
 * React Native
+
 Server
 * Node.js
 * Meteor
+
 Desktop
 * Electron
