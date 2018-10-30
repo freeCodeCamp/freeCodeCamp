@@ -3,6 +3,7 @@ title: Background
 ---
 ## Background
 The background property lets you use images and colors to create backgrounds for your web pages.
+The website becomes very appealing after we use this.
 
 ### Background Color
 The background color property allows you to choose the color of your element. This can be the background for the entire page or the background of one section of your page.
