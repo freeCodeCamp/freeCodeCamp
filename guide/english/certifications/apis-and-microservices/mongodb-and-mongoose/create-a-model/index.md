@@ -12,13 +12,13 @@ name: {type: String}
 name: {type: String, required: true} //preferred
 ```
 For array of favoriteFoods here is the validation:
-````javascript
+```javascript
 favoriteFoods: [{ type: String }]
-````
+```
 ### Creating a Model
 Now that we have the schema of our model, we can actually create a model by:
-````javascript
+```javascript
 var Model  = mongoose.model('Model', modelSchema);
-````
+```
 
 <!-- The article goes here, in GitHub-flavored Markdown. Feel free to add YouTube videos, images, and CodePen/JSBin embeds  -->
