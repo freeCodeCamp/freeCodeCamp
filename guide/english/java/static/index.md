@@ -30,7 +30,7 @@ public class MyClass {
 // Outputs "2"
 ```
 
-The outout is 2, because the `COUNT` variable is static and gets incremented by one each time a new object of the Counter class is created.  You can also access the static variable using any object of that class, such as `c1.COUNT`.
+The output is 2, because the `COUNT` variable is static and gets incremented by one each time a new object of the Counter class is created.  You can also access the static variable using any object of that class, such as `c1.COUNT`.
 
 ## Static Methods
 
@@ -62,7 +62,7 @@ public class MyClass {
 }
 // Outputs "2"
 ```
-The output is 2 because it gets incremented by static method `increament()`. Similar to static variables, static methods can also be accessed using instance variables.
+The output is 2 because it gets incremented by static method `increment()`. Similar to static variables, static methods can also be accessed using instance variables.
 
 ## Static Blocks
 
