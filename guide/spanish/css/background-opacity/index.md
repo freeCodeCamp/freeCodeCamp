@@ -10,7 +10,7 @@ La propiedad de opacidad puede tomar un valor de 0.0 - 1.0. Cuanto menor sea el 
 
 Encuentra más detalles [aquí](https://www.w3schools.com/css/css_image_transparency.asp)
 
-Puede elegir hasta qué punto desea que el elemento sea transparente. Tienes que agregar la siguiente propiedad CSS para lograr los niveles de transparencia.
+Puedes elegir hasta qué punto desea que el elemento sea transparente. Tienes que agregar la siguiente propiedad CSS para lograr los niveles de transparencia.
 
 **Completamente opaco**
 
