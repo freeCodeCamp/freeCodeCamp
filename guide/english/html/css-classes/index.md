@@ -9,6 +9,7 @@ When writing HTML, you can add classes to an element. Just add the attribute `cl
 
 ```html
 <h1 class="super-man other-class third-class">"Here I come to save the day!"</h1>
+<h2 class="third-class">"Free Code Camp"</h2>
 <p>is a popular catchphrase that <span class="super-man">Super Man</span> often said.</p>
 ```
 
