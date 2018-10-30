@@ -4,7 +4,7 @@
 
 ## Introduction
 
-Some of the email workflows, like updating a user's email, requires the back-end api-server to send out emails. While developing you can use a tool to catch these emails locally, instead of having to use an email provider and send an actual email. MailHog is one such email testing tool for developers, that will catch the emails your local freeCodeCamp instance is sending.
+Some of the email workflows, like updating a user's email, requires the back-end api-server to send out emails. While developing, you can use a tool to catch these emails locally, instead of having to use an email provider and send an actual email. MailHog is one such email testing tool for developers that will catch the emails your local freeCodeCamp instance is sending.
 
 ## Installing MailHog
 
@@ -79,7 +79,7 @@ Next, you can go to [using MailHog](#using-mailhog).
 
 ## Using MailHog
 
-Once you have installed MailHog and started it running you need to open your MailHog inbox in your browser, open a new tab or window and navigate to [http://localhost:8025](http://localhost:8025).
+Once you have installed MailHog and started it running, you need to open your MailHog inbox in your browser, open a new tab or window and navigate to [http://localhost:8025](http://localhost:8025).
 You should now see a screen like below:
 
 ![MailHog Screenshot 1](images/mailhog/1.jpg)
