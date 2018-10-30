@@ -44,3 +44,24 @@ O loop for é comumente usado quando o número de iterações é conhecido.
  > Item on index 3 is 4 
 
 ```
+
+## Exemplo Fibonacci
+```c
+ #include <stdio.h>
+ int main () {
+     int A[10];
+    A[0]=1;
+    A[1]=1;
+     for (int i = 2; i < 10; i++) {
+        A[i]=A[i-1]+A[i-2];
+    }
+     for (int i = 0; i < 10; i++) {
+    	printf(" %d",A[i]);
+    }
+}
+```
+## Saída:
+```shell 
+ 1 1 2 3 5 8 13 21 34 55
+ 
+```
