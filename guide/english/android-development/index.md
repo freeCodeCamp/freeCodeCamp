@@ -64,6 +64,8 @@ Because Kotlin generates Java bytecode, you can use your favorite Java framework
 ### Practice
 
 [Codelabs for Boosting up Skills](https://codelabs.developers.google.com)
+[Google Developer Training - GitBook](https://legacy.gitbook.com/@google-developer-training)
+
 
 ### Google Developer Console
 
