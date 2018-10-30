@@ -2,6 +2,10 @@
 title: Cascading Style Sheets (CSS)
 ---
 
+
+CSS for Brginners:
+So the full form is Cascading Style Sheets and it is a very important part of web designing in simple terms it's used to colour and stylize your websites to make them look attractive and user-friendly.
+
 ### Cascading Style Sheets (CSS)
 
 CSS is an acronym for Cascading Style Sheets. It was first invented in 1996, and is now a standard feature of all major web browsers.
