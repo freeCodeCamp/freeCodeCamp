@@ -40,18 +40,24 @@ When starting out with linux, there are some basic commands everyone should know
 - This one is less of a command and more of a how-to, however, it is very useful for doing almost anything in a terminal on linux. To begin, highlight text like normal and then "right-click" on your mouse to copy a selection. You should see the highlighted portion become un-highlighted, this means you copied the selection. Now "right-click" on where you want to paste the selection and you're done. 
 
  11. **less** - view file content  
-- Use `less filename.txt` to view contents of a file and navigate through them. By default, less will go through the file page by page.
+- Use `less filename.txt` to view contents of a file and navigate through them. By default, less will go through the file page by page.  The page by page feature of `less` makes it a good choice for larger files.
 
  12. **cat** - display file's textual contents  
 - Use this command to display text from within a given file on your terminal. Entering `cat myFile.txt` in your terminal will display the contents of the file `myFile.txt` on screen. The `cat` command can be a very handy tool when used with the terminal _pipes_.
 
- 13. **clear** - clear terminal
+ 13. **head** - display the first few lines of a file
+ - Example: `head filename.txt`
+ 
+ 14. **tail** - display the last few lines of a file
+ - Example: `tail filename.txt`
+
+ 15. **clear** - clear terminal
 - Use `clear` to simply clear all output from your terminal.
 
- 14. **cp** - copy files and directories
+ 16. **cp** - copy files and directories
 - Use `cp` to copy a file or a direcotry with files inside it to another location using command 'cp CURRENT_FILE-LOCATION DESTINATION_FOLDER'. Add '-r' flag to copy a directory that is not empty. 
 
-15. **grep** -  The grep searches any given input files, selecting lines that match one or more patterns.
+17. **grep** -  The grep searches any given input files, selecting lines that match one or more patterns.
 - use `grep` to find a file, a directory, some text in the file/directory.  
 **Example:**
 ```sh
@@ -61,7 +67,7 @@ When starting out with linux, there are some basic commands everyone should know
  25409 s004  Ss     0:00.04 login -pf <user>
 ```
 
- 15. **df -h** Checks disk space in human readable form
+ 18. **df -h** Checks disk space in human readable form
 - Shows the size, amount used, amount available and capacity percentage of mounted drives/partitions.
 
 
