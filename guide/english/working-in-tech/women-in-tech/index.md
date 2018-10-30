@@ -36,4 +36,16 @@ The worst thing you can do is to sell yourself short if you want something take 
 - [1 Million Women To Tech](https://1millionwomentotech.com/)
 - [Women Techmakers](https://www.womentechmakers.com/)  
 - [Women Who Code](https://www.womenwhocode.com/)
+- [Systers](https://anitab.org/systers/)
+- [AnitaB.org Local](https://community.anitab.org/)
+- [She's Coding](https://shescoding.org/)
+- [ngGirls](http://ng-girls.org/)
+- [Tech Ladies](https://www.hiretechladies.com/)
+- [She Codes Now](http://shecodesnow.com/)
+- [Girl Geek Dinners](https://girlgeekdinners.com/locations)
+- [Girl Develop It](https://www.girldevelopit.com/)
+- [ChickTech](https://chicktech.org/) (US)
+- [Write / Speak / Code](https://www.writespeakcode.com/)
+- [Codess](https://www.codess.net/)
+
 
