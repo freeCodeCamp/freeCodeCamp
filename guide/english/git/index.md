@@ -137,3 +137,4 @@ This article uses information from the <a href='https://github.com/progit/progit
 - [Most useful commands when you're in bad GIT situation](http://ohshitgit.com/)
 - [Resources to learn Git](https://try.github.io/) 
 - For coders who prefer the Sublime Text editor, git commits can be easily made using [Sublime Merge](https://www.sublimemerge.com/)
+- For many people Git can seem like a black magic, but once you develop an understanding of the fundamental internal model, things start to make a lot more sense.  Check out these videos by GitHub evangelists [Matt McCullough](https://youtu.be/ig5E8CcdM9g "Advanced Git: Graphs, Hashes, and Compression, Oh My!") and [Tim Berglund](https://youtu.be/MYP56QJpDr4 "Git From the Bits Up") for a peek into the world of *Git Internals*. 
