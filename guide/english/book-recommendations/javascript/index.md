@@ -1,5 +1,5 @@
 ---
-title: Books on JavaScript
+Title: Books on JavaScript
 ---
  ### List of Books
 
@@ -35,6 +35,9 @@ This full-color book will show you how to make your websites more interactive an
 
 - [Amazon](https://www.amazon.com/JavaScript-JQuery-Interactive-Front-End-Development/dp/1118531647)
 
+#### Speaking JavaScript: An In-Depth Guide for Programmers 1st Edition
+This is book covers all the concepts of  JavaScript in depth written by by Axel Rauschmayer and published by O'Reilly Media.
+- [Amazon](https://www.amazon.com/gp/product/1449365035/ref=nav_signin?ie=UTF8&camp=1789&creative=390957&creativeASIN=1449365035&linkCode=as2&tag=2ality-20&linkId=HBJ7QHIQ4C3I7VCV&)
 
 #### Other Resources
 
