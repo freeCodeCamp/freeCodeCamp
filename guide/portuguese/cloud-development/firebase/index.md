@@ -14,7 +14,7 @@ O Firebase, em sua forma mais básica, foi adquirido pelo Google em outubro de 2
 
 Os principais recursos do Firebase são agrupados em três categorias:
 
-1.  **desenvolve**
+1.  **Desenvolver**
     
     *   Autenticação
     *   Base de dados
