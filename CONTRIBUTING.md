@@ -80,6 +80,7 @@ You can help us to translate our Guide articles and Coding challenges into a lan
 - [Arabic (عربى)](https://github.com/freeCodeCamp/freeCodeCamp/tree/master/curriculum/challenges/arabic)
 - [Spanish (Español)](https://github.com/freeCodeCamp/freeCodeCamp/tree/master/curriculum/challenges/spanish)
 - [Portuguese (Português)](https://github.com/freeCodeCamp/freeCodeCamp/tree/master/curriculum/challenges/portuguese)
+- [French (Français)](https://github.com/freeCodeCamp/freeCodeCamp/tree/master/curriculum/challenges/french)
 
 We would love your help in improving the quality of these translations. Millions of people use the English language version of freeCodeCamp.org, and we expect millions more to use these translated versions as well.
 
