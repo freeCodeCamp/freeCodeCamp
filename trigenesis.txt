@@ -1,0 +1,2 @@
+if shailene == adam
+  dj==56;
