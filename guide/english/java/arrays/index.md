@@ -179,5 +179,84 @@ Output:
 [ 0 | 1 | 2 | 3 | 4 ]  
 [ 0 | 1 | 2 | 3 | 4 ]  
 
+#Multiplication Of 2-Dimeshional Array
+'''java
+    //This is the program to Multiply two 2 Dimensional Arrays
+//Developer : D.K.A.R.Y.A
+//Please report if there are any kind of bug or improvement needed:-)
+
+//Happy Coding  :-)
+public class Multiply
+{
+	public static void main(String[] args) 
+	{
+		int b[][]={{1,-2,3}};
+		int a[][]={{2},{4},{2}};
+		int c[][];
+		System.out.println("Your First Array is:-");
+		for(int i=0;i<a.length;i++)
+		{
+			for(int j=0;j<a[0].length;j++)
+			{
+				System.out.print(a[i][j]+"\t");
+			}
+			System.out.println();
+		}
+		System.out.println("Your Second Array is:-");
+		for(int i=0;i<b.length;i++)
+		{
+			for(int j=0;j<b[0].length;j++)
+			{
+				System.out.print(b[i][j]+"\t");
+			}
+			System.out.println();
+		}
+		if(a[0].length==b.length)
+		{
+			c=new int[a.length][b[0].length];
+			for(int i=0;i<a.length;i++)
+			{
+				for(int j=0;j<b[0].length;j++)
+				{
+					c[i][j]=0;
+					for(int k=0;k<a[0].length;k++)
+					{
+						c[i][j]+=a[i][k]*b[k][j];
+					}
+				}
+			}
+			System.out.print("Mulplication of Array is:-\n");
+			for(int i=0;i<a.length;i++)
+			{
+				for(int j=0;j<b[0].length;j++)
+				{
+					System.out.print(c[i][j]+"\t");
+				}
+				System.out.println();
+			}
+		}
+		else 
+			System.out.print("Mulplication is not Possible\n");
+	}	
+}
+'''
+
+
+#Output
+
+'''java
+Your First Array is:-
+2
+4
+2
+Your Second Array is:-
+1       -2      3
+Mulplication of Array is:-
+2       -4      6
+4       -8      12
+2       -4      6
+
+'''
+
 #### More Information:
 * Source: <a href='https://docs.oracle.com/javase/tutorial/java/nutsandbolts/arrays.html' target='_blank' rel='nofollow'>Java Arrays</a>
