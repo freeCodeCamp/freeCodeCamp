@@ -33,7 +33,7 @@ To do this, we will be using the `<Link>` component. `<Link>` is similar to usin
 
 From the docs:
 
-The primary way to allow users to navigate around your application. <Link> will render a fully accessible anchor tag with the proper href.
+The primary way to allow users to navigate around your application. `<Link>` will render a fully accessible anchor tag with the proper href.
 To do this, let’s first create a Nav component. Our Nav component will contain `<Link>` components, and will look like this:
 
 ```javascript
