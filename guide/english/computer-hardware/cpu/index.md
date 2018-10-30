@@ -21,7 +21,7 @@ Perhaps the most common issue affecting the CPU is inadequate cooling. CPUs are 
 
 <b>Function</b>
 
-A microprocessor is a silicon chip containing millions of microscopic transistors. This chip functions as the computer's brain. It processes the instructions or operations contained within executable computer programs. Instead of taking instructions directly off of the hard drive, the processor takes its instructions from memory. This greatly increases the computer's speed.
+A microprocessor is a silicon chip containing millions of microscopic electronic switches called transistors. This chip functions as the computer's brain. It processes the instructions or operations contained within executable computer programs. Instead of taking instructions directly off of the hard drive, the processor takes its instructions from memory. This greatly increases the computer's speed.
 
 
 <b> Manufacturers of computer microprocessors </b>
