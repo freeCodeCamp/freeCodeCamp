@@ -16,7 +16,7 @@ title: JavaScript Tutorials and Other Resources
 *   <a href='https://www.codementor.io/community/topic/javascript' target='_blank' rel='nofollow'>Codementor JavaScript tutorial</a> 
 *   <a href='http://youmightnotneedjquery.com/' target='_blank' rel='nofollow'>You Might Not Need jQuery</a>
 *   <a href='http://javascriptbook.com/' target='_blank' rel='nofollow'>JavaScript and jQuery: interactive front-end web development</a>
-
+*   <a href='https://eu.udacity.com/course/intro-to-javascript--ud803'>Udacity Intro to JavaScript
 ## References
 
 *   [Mozilla Developer Network (MDN)](https://developer.mozilla.org/en-US/docs/Web/JavaScript)
