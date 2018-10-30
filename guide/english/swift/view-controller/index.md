@@ -72,14 +72,14 @@ This is an example of how you can add a TableView to a Basic View Controller.
       }
   }
 ```
-1. Define the outlet for our tableView
-2. Define the data that we'll be loading into our tableView
-3. Adds extension to ViewController class that conforms to UITableViewDataSource
-4. Implement the UITableViewDataSource stubs for required methods - cellForRowAt (defines what goes in a specific cell)
-5. Define a cell as a resuable element with the identifier "myCellIdentifier"
-6. Provide our cell's textLabel with the referenced data
-7. Return that cell
-8. Implement the UITableViewDataSource stubs for required methods - numberOfRowsInSection (defines how many rows will be in your tableView)
-9. Return the size of our data array
-10. Set the tableView's dataSource to self when the view loads
-11. register the tableView's cell
+1. Define the outlet for our tableView.
+2. Define the data that we'll be loading into our tableView.
+3. Adds extension to ViewController class that conforms to UITableViewDataSource.
+4. Implement the UITableViewDataSource stubs for required methods - cellForRowAt (defines what goes in a specific cell).
+5. Define a cell as a resuable element with the identifier "myCellIdentifier".
+6. Provide our cell's textLabel with the referenced data.
+7. Return that cell.
+8. Implement the UITableViewDataSource stubs for required methods - numberOfRowsInSection (defines how many rows will be in your tableView).
+9. Return the size of our data array.
+10. Set the tableView's dataSource to self when the view loads.
+11. register the tableView's cell.
