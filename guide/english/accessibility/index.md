@@ -42,3 +42,5 @@ Copyright &copy; 2005 <a href="http://www.w3.org" shape="rect">World Wide Web Co
 <a href='http://a11yproject.com/' target='_blank' rel='nofollow'>The A11Y Project</a>
 
 <a href='https://webaim.org/intro/' target='_blank' rel='nofollow'>WebAIM: Introduction to Web Accessibility</a>
+
+<a href='https://en.wikipedia.org/wiki/Web_accessibility' target='_blank' rel='nofollow'>Web accessibility- Wiki</a>
