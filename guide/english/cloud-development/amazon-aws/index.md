@@ -24,11 +24,10 @@ on building great products for their users and growing their business over time 
 
 Popular AWS services include:
 * Virtual Machines via the EC2 (Elastic Compute Cloud) platform
-* Databases including both SQL and NoSQL
+* Databases including both SQL and NoSQL(See below for details)
 * S3 (Simple Storage Service)
 * SQS (Simple Queue Service)
 * Games development via the Amazon Lumberyard game development engine and subsequent hosting platform.
-* DynamoDB (Amazon Dynamo Data Base)
 * CloudWatch (Metrics and Alarms)
 * CodeDeploy (Deployments)  
 * Lambda (Serverless)
@@ -36,6 +35,16 @@ Popular AWS services include:
 * Mobile development tools and platforms
 * Amazon Alexa development area
 * CloudFormation (Infrastructure as Code)
+
+#### Database Options
+AWS has many database options to meet the varying needs of their clients. Offerings can be SQL/Relational or NoSQL/Nonrelational and can be run as licenses on a server, as a managed service , or serverless options.
+
+Database Options (Incomplete list):
+* Relational-Server - EC2 + SQL Server
+* Relational-Managed - RDS(Relational Database Service, including SQL, MariaDB, and more)
+* Relational-Serverless - Aurora Serverless
+* Nonrelational-Serverless - DynamoDB
+* (And more!)
 
 #### AWS Certifications 
 AWS offers many different certifications for it's practitioners. There are different tiers to AWS certs as well as role-based certifications. 
