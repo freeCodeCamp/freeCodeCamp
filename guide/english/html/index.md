@@ -105,6 +105,7 @@ HTML headings are defined with the `<h1>` to `<h6>` tags:
 
 `<p>Paragraph 1</p>`
 `<p>Paragraph 2</p>`
+`<p>Paragraph 3</p>`
 
 **Line Breaks**  
 
