@@ -34,7 +34,7 @@ Al comenzar con Linux, hay algunos comandos básicos que todos deben conocer.
 
 *   Este comando elimina archivos, no directorios. `rm file.txt` eliminará el archivo llamado file.txt mientras exista y se encuentre en el directorio actual.
 
-1.  **tocar** - crea un archivo
+1.  **touch** - crea un archivo
 
 *   El comando táctil se utiliza para crear un archivo. Puede ser cualquier cosa, desde un archivo txt vacío a un archivo zip vacío. 'touch new.txt' creará un nuevo archivo con el nombre nuevo.
 
@@ -46,6 +46,10 @@ Al comenzar con Linux, hay algunos comandos básicos que todos deben conocer.
 
 *   Este es un comando menos y más práctico, sin embargo, es muy útil para hacer casi cualquier cosa en un terminal en Linux. Para comenzar, resalte el texto como normal y luego haga clic con el botón derecho en su mouse para copiar una selección. Debería ver que la parte resaltada no está resaltada, esto significa que copió la selección. Ahora haga clic derecho en el lugar donde desea pegar la selección y listo.
 
-1.  **menos** - ver el contenido del archivo
+1.  **less** - ver el contenido del archivo
 
 *   Use `less filename.txt` para ver el contenido de un archivo y navegar a través de ellos. Por defecto, menos irá a través del archivo página a página.
+
+1.  **man** - manual de linux
+
+*   Use `man comando` para ver la referencia del manual del comando. man muestra información detallada de los arumentos y opciones de comando.
