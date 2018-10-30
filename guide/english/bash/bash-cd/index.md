@@ -18,5 +18,9 @@ There are a few really helpful arguments to aid this:
 - Typing only `cd` will move to the home directory works same as `cd ~`
 - Typing 'pwd' will show you which directory you are currently working in.
 
+### Related Commands
+
+The `cd` command is the daily workhorse for navigating through your path, but closely related are the `pushd`, `popd`, and `dirs` commands, which maintain a *stack* of your directory movements and allow you to more quickly navigate through this stack.   
+
 ### More Information:
 * [Wikipedia](https://en.wikipedia.org/wiki/Cd_(command))
