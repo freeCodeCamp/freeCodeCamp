@@ -14,6 +14,13 @@ for letter in 'hello, world!':
     print(letter)
     time.sleep(2)  # sleep 2 seconds between each print
 ```
+Or importing the sleep() function from the time library:
+
+```
+from time import sleep
+
+sleep(1.5)  
+```
 
 Floating point numbers can be given as the argument to `sleep()` for more precise sleep times.
 
