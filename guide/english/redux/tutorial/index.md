@@ -145,6 +145,9 @@ The example above demonstrates how the base App component is setup and how it wi
 
 Also how to dispatch a defined action from the component which will be passed down to the store and make the changes on the application reducer.
 
+Connect is a Higher Order Component(HOC) i.e it takes in a component and returns a newer component. 
+Infact, it is the newly returned HOC which has the returned values of mapStateToProps and mapDispatchToProps available as props. This HOC is what is consumed by rest of the project.
+
 ## Declaration of the Application Actions
 
 The following file:
