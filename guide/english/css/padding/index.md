@@ -24,7 +24,11 @@ This property may be specified using one, two, three, or four values.
 /* em refers to the current font size of an element */
 /* Apply to all four sides */
 padding: 1em;
-  
+
+
+/*  top, right, bottom, left (clockwise) */
+padding: 5px 10px 5px 10 px;
+
 /* top and bottom | left and right */
 padding: 5% 10%;
   
