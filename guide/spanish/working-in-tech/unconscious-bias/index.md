@@ -4,9 +4,9 @@ localeTitle: Sesgo inconsciente
 ---
 ## Sesgo inconsciente
 
-El sesgo es un prejuicio a favor o en contra de una cosa, persona o grupo en comparación con otra, por lo general de una manera que se considera injusta. Los sesgos pueden ser mantenidos por un individuo, grupo o institución y pueden tener consecuencias negativas o positivas. Por esa razón, los beneficios del prejuicio solo pueden existir a expensas de otros. Por lo tanto, para estar "sesgado por" debe estar "sesgado en contra".
+El sesgo es un prejuicio a favor o en contra de una cosa, persona o grupo en comparación con otro, por lo general de una manera que se considera injusta. Los sesgos pueden ser mantenidos por un individuo, grupo o institución y pueden tener consecuencias negativas o positivas. Por esa razón, los beneficios del prejuicio solo pueden existir a expensas de los demás. Por lo tanto, "estar sesgado por" debe ser "estar sesgado en contra".
 
-El sesgo inconsciente, también conocido como "sesgo implícito", ocurre cuando las personas favorecen a otros que se parecen a ellos y / o comparten sus valores. Por ejemplo, una persona puede ser atraída a alguien con antecedentes educativos similares, de la misma área, que comparte una orientación sexual similar, o que tiene el mismo color o etnia que ellos.
+El sesgo inconsciente, también conocido como "sesgo implícito", ocurre cuando se favorece a otros que se parece a ellos y / o comparten sus valores. Por ejemplo, una persona puede ser atraída a alguien con antecedentes educativos similares, de la misma área, que comparte una orientación sexual similar, o orígen étnico.
 
 El sesgo implícito o inconsciente sucede cuando nuestros cerebros realizan juicios y evaluaciones increíblemente rápidos de personas y situaciones sin que nos demos cuenta. Nuestros prejuicios están influenciados por nuestros antecedentes, entorno cultural y experiencias personales. Es posible que ni siquiera seamos conscientes de estos puntos de vista y opiniones, o que estemos al tanto de su impacto total e implicaciones. 3
 
