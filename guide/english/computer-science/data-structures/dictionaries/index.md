@@ -3,7 +3,7 @@ title: Dictionaries
 ---
 ## Dictionaries
 
-Let's assume we have a homogeneous list.  We want to count how many times each item occurs in the list.  How can we do that, without using Python's built-in methods such as count or Counter from the Python collections module?  A Google search for "How to count the occurrences of an item in a list?" will return Stack Overflow answers pointing you to the count method and the collections module, but for learning purposes let's try to solve the problem without using these tools.
+Let's assume we have a homogeneous list.  We want to count how many times each item occurs in the list.  How can we do so, without using Python's built-in methods such as count or Counter from the Python collections module?  A Google search for "How to count the occurrences of an item in a list?" will return Stack Overflow answers pointing you to the count method and the collections module, but for learning purposes let's try to solve the problem without using these tools.
 
 Here's the list we'll be working with:
 
