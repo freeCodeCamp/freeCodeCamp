@@ -8,7 +8,7 @@ O GameMaker Studio, anteriormente conhecido como GameMaker, é um software de de
 
 ### Visão geral:
 
-O GameMaker permite que os usuários criem e prototipem jogos rapidamente, sem a necessidade de aprender uma linguagem de programação. Jogos de GameMaker geralmente consiste em pelo menos 3 coisas: sprites (imagens e animações), objetos (lógica e interatividade) e salas (telas e níveis). Cada jogo precisa de pelo menos uma sala que seja usada para ambos os menus e níveis, e a transição entre cada um.
+O GameMaker permite que os usuários criem e prototipem jogos rapidamente, sem a necessidade de aprender uma linguagem de programação. Jogos feitos com o GameMaker geralmente consistem em pelo menos 3 coisas: sprites (imagens e animações), objetos (lógica e interatividade) e salas (telas e níveis). Cada jogo precisa de pelo menos uma sala que seja usada para ambos os menus e níveis, e a transição entre cada um.
 
 O GameMaker Studio 2 foi lançado em 2 de novembro de 2016.
 
@@ -32,15 +32,15 @@ O suporte para PlayStation Portable e Raspberry Pi foi demonstrado, mas não foi
 ### Jogos populares feitos com o GameMaker Studio:
 
 *   Spelunky
-*   Linha quente Miami
+*   Hotline Miami
 *   Hyper Light Drifter
 *   Crashlands
 *   VA-11 Hall-A
 *   Undertale
-*   Trono Nuclear
+*   Nuclear Throne
 
 #### Mais Informações:
 
-*   \[Wikipedia\] https://en.wikipedia.org/wiki/GameMaker\_Studio
+*   \[Wikipedia\] https://pt.wikipedia.org/wiki/GameMaker:_Studio
 *   \[YoYo Games (publisher)\] https://www.yoyogames.com/gamemaker
 *   \[GameMaker: Studio | Documentação\] https://docs.yoyogames.com/
