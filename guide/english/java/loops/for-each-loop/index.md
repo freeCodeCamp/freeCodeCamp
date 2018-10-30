@@ -85,3 +85,34 @@ Output:
 
 
 In the above code snippets, `number_list` is an array. If you don't know what this is, don't worry about it. An array is a container object that holds a fixed number of values of a single type, but more on this later.
+
+
+#Use Of For Loop for printing Fibonacci Series
+
+'''java
+public class Main
+{
+	public static void main(String[] args) 
+	{
+		int a=0,b=1;
+		System.out.print("Fibonacci Series upto 10 elements is:-\n"+a);
+		for (int i=0;i<=8 ;i++) 
+		{
+			a=a+b;
+			b=a-b;
+			a=a-b;
+			a=a+b;
+			System.out.print(" "+a);			
+		}	
+    System.out.println();
+	}
+}
+
+'''
+
+#Output
+
+Fibonacci Series upto 10 elements is:-
+0 1 1 2 3 5 8 13 21 34
+
+:rocket: <a href='https://repl.it/@DeepakKumar22/FibonacciSeries' target='_blank' rel='nofollow'>Run Code</a>
