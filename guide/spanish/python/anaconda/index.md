@@ -6,7 +6,7 @@ localeTitle: Anaconda
 
 ## Visión de conjunto
 
-La forma más rápida de comenzar a usar Conda es atravesar el [Inicio de](https://conda.io/docs/user-guide/getting-started.html) 20 minutos [con](https://conda.io/docs/user-guide/getting-started.html) guía de [conda](https://conda.io/docs/user-guide/getting-started.html) .
+La forma más rápida de comenzar a usar Conda es realizar el [Tutorial de inicio](https://conda.io/docs/user-guide/getting-started.html) 20 minutos [con](https://conda.io/docs/user-guide/getting-started.html) guía de [conda](https://conda.io/docs/user-guide/getting-started.html) .
 
 El comando `conda` es la interfaz principal para la gestión. Instalaciones de diversos paquetes. Puede:
 
