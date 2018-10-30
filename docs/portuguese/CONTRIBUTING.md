@@ -17,7 +17,7 @@ Olá 👋!
 
 freeCodeCamp.org é possível graças a milhares de voluntários gentis como você. Somos gratos por suas contribuições e estamos felizes em te receber.
 
-Nós seguimos as diretrizes do nosso ["Código de Conduta"](https://www.freecodecamp.org/code-of-conduct). Dedique um tempo para lê-lo. Ele não é muito longo e tem cerca de 196 palavras.
+Nós seguimos as diretrizes do nosso ["Código de Conduta"](https://www.freecodecamp.org/code-of-conduct). Dedique um tempo para lê-lo. Ele não é muito longo.
 
 Divirta-se contribuindo 🎉!
 
@@ -25,7 +25,7 @@ Divirta-se contribuindo 🎉!
 
 Você pode contribuir para qualquer área do seu interesse:
 
-1. [Contribua para esa base de códigos <i>open source.</i>](#contribua-para-essa-base-de-códigos-<i>open-source</i>)
+1. [Contribua para essa base de códigos <i>open source.</i>](#contribua-para-essa-base-de-códigos-<i>open-source</i>)
 
     Nos ajude criando e editando [Artigos guia](https://www.freecodecamp.org/guide), [desafios de codificação](https://www.freecodecamp.org/learn), ou corrigindo bugs na plataforma de aprendizado.
 
