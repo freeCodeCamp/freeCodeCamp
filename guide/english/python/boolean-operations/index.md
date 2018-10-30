@@ -45,3 +45,19 @@ not x | if x is false, then True, else False | (3)
     False
     >>> not False
     True
+    
+How python sees True and False
+For python
+True==1 
+False==0
+```
+python
+1 and False
+#output:False
+0 and 1
+#output False
+1 and True
+#output:True
+1 or 0
+#output:True
+```
