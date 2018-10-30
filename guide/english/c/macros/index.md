@@ -48,7 +48,14 @@ You get the equivallent of:
 ```C
 printf("Hello World!");
 ```
+## Difference between macros and function
+1. The main difference is that macros are preprocessed which mean all the macros will be processed before the program compiles but functions are not, functions are compiled.
+ 
+2. We can't do recursion in macro but in function we can. 
 
+3. Speed of execution is faster in macros than function.
+ 
+4. There is no type checking in macros but it is done in function.
 #### More Information:
 <!-- Please add any articles you think might be helpful to read before writing the article -->
 [GCC Online Documentation: Macros](https://gcc.gnu.org/onlinedocs/cpp/Macros.html)
