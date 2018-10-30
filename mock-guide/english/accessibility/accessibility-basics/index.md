@@ -51,7 +51,7 @@ However, doing this research is key in actually defending such a statement. Did 
 
 If you did, good for you. If not, I guess this drives my point home all the more.
 
-The picture gets even more complicated when we look at legislation that actually forces you to make certain websites and web apps accessible. A prime example is the US-based <a href='http://jimthatcher.com/webcourse1.htm' target='_blank' rel='nofollow'>section 508</a>. Right now, this law mainly refers to government organizations, public sector websites etc. However, laws change.
+The picture gets even more complicated. When we look at legislation that actually forces you to make certain websites and web apps accessible. A prime example is the US-based <a href='http://jimthatcher.com/webcourse1.htm' target='_blank' rel='nofollow'>section 508</a>. Right now, this law mainly refers to government organizations, public sector websites etc. However, laws change.
 
 Last year, airline websites were included in this list which meant that even here in Europe, airline website devs scrambled to make their content accessible. Not doing so can get your company a fine of literally tens of thousands of dollars for each day the problem isn't fixed.
 
