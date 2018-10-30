@@ -25,4 +25,10 @@ enum StringBasedEnum {
     Programming = "is fun",
     Pizza = "is good"
 }
+
+// heterogeneous enum
+enum Heterogeneous enum {
+    True = 1,
+    False = 'False'
+}
 ```
