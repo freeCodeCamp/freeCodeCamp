@@ -66,3 +66,4 @@ _Note: Bootstrap's Glyphicons icon is not avalable on bootstrap V4_
 ### More Information:
 
 - [Bootstrap Glyphicons Icons Doc](https://getbootstrap.com/docs/3.3/components/#glyphicons)
+- [Bootstrap Glyphicons Icons Doc](https://www.w3schools.com/bootstrap/bootstrap_ref_comp_glyphs.asp)
