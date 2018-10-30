@@ -6,7 +6,7 @@
 
 ## 分叉GitHub存储库
 
-['Forking']（https://help.github.com/articles/about-forks/）是您在GitHub上获得自己的freeCodeCamp主存储库（a.k.a _repo_）副本的步骤。
+['Forking'](https://help.github.com/articles/about-forks/) 是您在GitHub上获得自己的freeCodeCamp主存储库（a.k.a _repo_）副本的步骤。
 
 这是必不可少的，因为这样您就可以在GitHub上处理freeCodeCamp的副本，或者下载它以便在您电脑局部地工作。稍后，您将能够通过拉取请求将更改并入主存储库。
 
@@ -17,7 +17,7 @@
 **按照以下步骤分叉`https：// github.com / freeCodeCamp / freeCodeCamp`存储库：**
 
 1.请到GitHub上的freeCodeCamp存储库：<https://github.com/freeCodeCamp/freeCodeCamp>
-2.点击网页右上角的“Fork”按钮（[更多详情]（https://help.github.com/articles/fork-a-repo/））
+2.点击网页右上角的“Fork”按钮（[更多详情](https://help.github.com/articles/fork-a-repo/)）
 3.存储库分叉后，您将被带到https：// github.com / 您用户名 / freeCodeCamp的freeCodeCamp副本。
 
 ![GIF - How to fork freeCodeCamp on Github](/docs/images/github/how-to-fork-freeCodeCamp.gif)
@@ -28,23 +28,23 @@
 
 **按照以下步骤准备好开发环境：**
 
-1.若您还未安装，请安装[Git]（https://git-scm.com/）或您喜欢的Git客户端。更新到最新版本，您的操作系已有的版本可能已过时。
+1.若您还未安装，请安装[Git](https://git-scm.com/) 或您喜欢的Git客户端。更新到最新版本，您的操作系已有的版本可能已过时。
 
-2.（可选但建议您）为GitHub设置[SSH密钥]（https://help.github.com/articles/generating-an-ssh-key/）。
+2.（可选但建议您）为GitHub设置[SSH密钥](https://help.github.com/articles/generating-an-ssh-key/)。
 
 3.安装您选择的代码编辑器。
 
-    我们强烈建议使用[VS Code]（https://code.visualstudio.com/）或[Atom]（https://atom.io/）。这些是一些很棒而免费的开源代码编辑器。
+  我们强烈建议使用[VS Code](https://code.visualstudio.com/) 或 [Atom](https://atom.io/) 。这些是一些很棒而免费的开源代码编辑器。
 
 4.为您的代码编辑器设置linting。
 
-您应该[在您的编辑器中运行[ESLint]（http://eslint.org/docs/user-guide/integrations.html），它将突出显示任何不符合[freeCodeCamp的JavaScript样式指南]的内容（http：/ /forum.freecodecamp.org/t/free-code-camp-javascript-style-guide/19121）。
+   您应该[在您的编辑器中运行[ESLint](http://eslint.org/docs/user-guide/integrations.html) ，它将突出显示任何不符合[freeCodeCamp的JavaScript样式指南](http://forum.freecodecamp.org/t/free-code-camp-javascript-style-guide/19121) 的内容。
 
-    >请不要忽略任何Linting显示的错误。它是在**帮助您**，并确保干净简单的代码库。
+   >请不要忽略任何Linting显示的错误。它是在**帮助您**，并确保干净简单的代码库。
 
 ## 复制您的freeCodeCamp副本
 
-['Cloning']（https://help.github.com/articles/cloning-a-repository/）让您可以**下载**您或其他人拥有的一个“远程”存储库副本。在您的情况下，这个“远程”副本是freeCodeCamp存储库的`fork`，应该可以在`https：// github.com / 您用户名  / freeCodeCamp`获得。
+['Cloning'](https://help.github.com/articles/cloning-a-repository/) 让您可以**下载**您或其他人拥有的一个“远程”存储库副本。在您的情况下，这个“远程”副本是freeCodeCamp存储库的`fork`，应该可以在`https：// github.com / 您用户名  / freeCodeCamp`获得。
 
 在局部性电脑上运行以下命令：
 
@@ -54,9 +54,9 @@
 
 2.克隆你的freeCodeCamp的fork，用你的GitHub用户名替换'YOUR_USER_NAME`
 
-    ```shell
+```shell
     git clone https://github.com/YOUR_USER_NAME/freeCodeCamp.git
-    ```
+```
 
 这将把整个freeCodeCamp存储库下载到您的项目目录中。
 
@@ -70,30 +70,30 @@
 
 1.将目录更改为新的freeCodeCamp目录：
 
-    ```shell
-    cd freeCodeCamp
-    ```
+```shell
+   cd freeCodeCamp
+```
 
 2.将"远程“副本添加到主freeCodeCamp存储库：
 
-    ```shell
-    git remote add upstream https://github.com/freeCodeCamp/freeCodeCamp.git
-    ```
+```shell
+   git remote add upstream https://github.com/freeCodeCamp/freeCodeCamp.git
+```
 
 3.检查配置,看合不合您心意：
 
-    ```shell
-        git remote -v
-    ```
+```shell
+   git remote -v
+```
 
-        输出应如下所示：
+  输出应如下所示：
 
-    ```shell
-        origin    https://github.com/YOUR_USER_NAME/freeCodeCamp.git (fetch)
-        origin    https://github.com/YOUR_USER_NAME/freeCodeCamp.git (push)
-        upstream    https://github.com/freeCodeCamp/freeCodeCamp.git (fetch)
-        upstream    https://github.com/freeCodeCamp/freeCodeCamp.git (push)
-    ```
+```shell
+   origin    https://github.com/YOUR_USER_NAME/freeCodeCamp.git (fetch)
+   origin    https://github.com/YOUR_USER_NAME/freeCodeCamp.git (push)
+   upstream    https://github.com/freeCodeCamp/freeCodeCamp.git (fetch)
+   upstream    https://github.com/freeCodeCamp/freeCodeCamp.git (push)
+```
 
 ## 在您的电脑上本地运行freeCodeCamp
 
@@ -105,7 +105,7 @@
 
 如果您只是编辑文件，执行`rebase`或解决`merge`冲突，您可以跳过本地运行freeCodeCamp。您以后可以随时返回这部分说明。
 
-[跳过本地运行freeCodeCamp]（＃making-changes-to-your-clone-of-freecodecamp-local）
+[跳过本地运行freeCodeCamp](#making-changes-to-your-clone-of-freecodecamp-locally)
 
 ### 安装必备软件
 
@@ -113,8 +113,8 @@
 
 |必备软件|版本|备注|
 | ------------------------------------------- | ------- | ----- |
-| [MongoDB社区服务器]（https://docs.mongodb.com/manual/administration/install-community/）| `3.6` | [发布说明]（https://docs.mongodb.com/manual/release-notes/），注意：我们目前在`3.6`，[计划升级]（https://github.com/freeCodeCamp/freeCodeCamp /问题/ 18275）。
-| [Node.js]（http://nodejs.org）| `8.x` | [LTS Schedule]（https://github.com/nodejs/Release#release-schedule）|
+| [MongoDB社区服务器](https://docs.mongodb.com/manual/administration/install-community/)| `3.6` | [发布说明](https://docs.mongodb.com/manual/release-notes/)， 注意：我们目前在`3.6`， [计划升级](https://github.com/freeCodeCamp/freeCodeCamp/issues/18275)。
+| [Node.js](http://nodejs.org) | `8.x` | [LTS Schedule](https://github.com/nodejs/Release#release-schedule) |
 | npm（与Node捆绑在一起）| `6.x` |没有LTS版本，我们使用与Node LTS |捆绑在一起的版本
 
 **重要：**
@@ -134,7 +134,7 @@ npm -v
 
 我们定期开发流行的和最新的操作系统，如macOS 10.12或更高版本，Ubuntu 16.04或更高版本以及Windows 10.建议您在以下资源上搜寻您的特定问题：Google，Stack Overflow或Stack Exchange。有可能有人遇到了同样的问题，并且已经有了答案。
 
-如果您使用的是其他操作系统，和/或仍然遇到问题，请联系我们公共论坛上的[贡献者社区]（https://www.freeCodeCamp.org/c/contributors）或[贡献者聊天室] （https://gitter.im/freeCodeCamp/Contributors）。我们或许可以解决一些常见问题。
+如果您使用的是其他操作系统，和/或仍然遇到问题，请联系我们公共论坛上的[贡献者社区](https://www.freeCodeCamp.org/c/contributors)  或 [贡献者聊天室](https://gitter.im/freeCodeCamp/Contributors) 。我们或许可以解决一些常见问题。
 
 我们无法在GitHub上为您提供支持，因为软件安装问题超出了本项目的范围。
 
@@ -182,35 +182,35 @@ npm run bootstrap
 
  - 在macOS和Ubuntu上：
 
-    ```shell
+```shell
     mongod
-    ```
+```
 
  - 在Windows上，您必须指定`mongod`二进制文件的完整路径
 
     确保用您安装的版本替换`3.6`
 
-    ```shell
+```shell
     “C：\ Program Files \ MongoDB \ Server \ 3.6 \ bin \ mongod”
-    ```
+```
 
 > 专人指点：
 >将其设为后台服务安装，可以避免每次启动MongoDB。
->您可以[在他们的操作系统文档中了解更多信息]（https://docs.mongodb.com/manual/administration/install-community/）
+>您可以[在他们的操作系统文档中了解更多信息](https://docs.mongodb.com/manual/administration/install-community/)
 
 ### 播种数据库
 
 接下来，我们将在数据库播种。在此步骤中，我们运行以下命令，该命令将其他服务所需的一些初始数据集添加进MongoDB服务器。这包括一些模式，以及其他内容。
 
 ```shell
-npm run seed
+   npm run seed
 ```
 ### 开始freeCodeCamp客户端应用程序和API服务器
 
 您能现在开始API服务器和客户端应用程序。
 
 ```shell
-npm run develop
+   npm run develop
 ```
 这一个命令将射击所有服务，包括API服务器和客户端应用程序都可为您运作。
 现在打开浏览器并且参观< http://localhost:8000 >。 如果app装载，恭喜 -- 您已整装待发。
@@ -231,33 +231,33 @@ npm run develop
 1.确保您在‘master'的支上
 
 ```shell
-git status
+   git status
 ```
 您应该收到以下回复：
 
 ```shell
-On branch master
-Your branch is up-to-date with 'origin/master'.
+   On branch master
+   Your branch is up-to-date with 'origin/master'.
 
-nothing to commit, working directory clean 
+   nothing to commit, working directory clean 
 ```
 若您不再‘master' 或工作目录还没清理，请清理文件与拼合修改，然后 checkout `master`:
 
 ```shell
-git checkout master
+   git checkout master
 ```
 2.接下来，您必须由`upstream`来`rebase` 。
 
 这一步将从freeCodeCamp的主储藏库**同步任何改变**。为避免文件有冲突，您必须经常做‘rebase'。
 
-    ```shell
-    git pull --rebase upstream master
-    ```
+```shell
+   git pull --rebase upstream master
+```
 您也可以有‘起源’合拼进主储藏库，以保持您Github上副本的整洁。
 
-    ```shell
-    git push origin master --force
-    ```
+```shell
+   git push origin master --force
+```
 
 3. 之后, 您需要一个新的分支。
 
@@ -265,21 +265,21 @@ git checkout master
 
    如之前所提，检查您是否在 `master`然后从那里分支:
 
-    ```shell
-    git checkout -b fix/update-guide-for-xyz
-    ```
+```shell
+   git checkout -b fix/update-guide-for-xyz
+```
 
     您的分支名称应始于`fix/`, `feat/`等等。避免使用编号。给分支取格简短，易分辨，有意义的名称。
 
     好的分支名称例子:
 
-    ```md
+```md
     fix/update-challenges-for-react
     fix/update-guide-for-html-css
     fix/platform-bug-sign-in-issues
     feat/add-guide-article-for-javascript
     translate/add-spanish-basic-html
-    ```
+```
 
 4. 接下来, 您可在您所喜的编辑器篇写文章或编码了。
 
@@ -289,13 +289,13 @@ git checkout master
 
 7. 接下来, 检查和确认您想跟新的文件。
 
-    ```shell
+```shell
     git status
-    ```
+```
 
-    这将会显示您所修改的`unstaged`文件。
+   这将会显示您所修改的`unstaged`文件。
 
-    ```shell
+```shell
     On branch feat/documentation
     Your branch is up to date with 'upstream/feat/documentation'.
 
@@ -308,30 +308,27 @@ git checkout master
         modified:   docs/how-to-setup-freecodecamp-locally.md
         modified:   docs/how-to-work-on-guide-articles.md
     ...
-    ```
+```
 
 8. 改变阶段与提出更改。
 
    在这一步，您应该只选出您修改或更新的文件。（您可以重启您不想更改的文件。）
    
-    ```shell
-    git add path/to/my/changed/file.ext
-    ```
+```shell
+   git add path/to/my/changed/file.ext
+```
+   或者, 您可把 `unstaged` 文件加入’staging area‘:
 
-    或者, 您可把 `unstaged` 文件加入’staging area‘:
+```shell
+   git add .
+```
+   只有移至‘staging area’的文件会被加入更改。
 
-    ```shell
-    git add .
-    ```
-
-    只有移至‘staging area’的文件会被加入更改。
-
-    ```shell
-    git status
-    ```
-
-    回复:
-    ```shell
+```shell
+   git status
+```
+   回复:
+```shell
     On branch feat/documentation
     Your branch is up to date with 'upstream/feat/documentation'.
 
@@ -342,53 +339,53 @@ git checkout master
         modified:   docs/README.md
         modified:   docs/how-to-setup-freecodecamp-locally.md
         modified:   docs/how-to-work-on-guide-articles.md
-    ```
+```
 
-    现在，您便可加入留言，拼合您的修改如下：
+   现在，您便可加入留言，拼合您的修改如下：
 
-    ```shell
+```shell
     git commit -m "fix: my short commit message"
-    ```
+```
 
-    例:
+   例:
 
-    ```md
+```md
     fix: update guide article for Java - for loop
     feat: add guide article for alexa skills
-    ```
+```
 
-    可选:
+   可选:
 
-    我们强力推荐使用常规拼合讯息。您将会在人气开源储藏库发现，这是个好习惯。身为开发人员，这鼓励您遵循常规原则。
+   我们强力推荐使用常规拼合讯息。您将会在人气开源储藏库发现，这是个好习惯。身为开发人员，这鼓励您遵循常规原则。
     
-    常规拼合讯息例子:
+   常规拼合讯息例子:
 
-    ```md
+```md
     fix: update HTML guide article
     fix: update build scripts for Travis-CI
     feat: add article for JavaScript hoisting
     docs: update contributing guidelines
-    ```
+```
 
-    请简短, 不要过于50个字。您可在之下的留言格上，书写详细内容。
+   请简短, 不要过于50个字。您可在之下的留言格上，书写详细内容。
 
-    这并不会比用非常规的'update file'或'add index.md'花上跟多时间。
+   这并不会比用非常规的'update file'或'add index.md'花上跟多时间。
 
-    您可到[这里](https://www.conventionalcommits.org/en/v1.0.0-beta.2/#why-use-conventional-commits)了解为何该使用常规拼合讯息。
+   您可到[这里](https://www.conventionalcommits.org/en/v1.0.0-beta.2/#why-use-conventional-commits)了解为何该使用常规拼合讯息。
 
 9. 如果您发现您需要修改文件，或更新您的请求讯息，您可在作出更改后：
 
-    ```shell
+```shell
     git commit --amend
-    ```
+```
 
-    这会开启默认文本编辑器，如`nano`或`vi`。您便能更改或加入讯息。
+   这会开启默认文本编辑器，如`nano`或`vi`。您便能更改或加入讯息。
 
 10. 现在, 您可由您的分叉拼合。
 
-    ```shell
+```shell
     git push origin branch/name-here
-    ```
+```
 
 ## 讓你的PR接受
 1.一旦提交了編輯內容，系統將提示您在fork的GitHub頁面上創建一個拉取請求。
@@ -420,7 +417,7 @@ git checkout master
 
 ## 獲得幫助
 
-如果您遇到困難並需要幫助，請通過我們論壇上的['貢獻者'類別]（https://www.freecodecamp.org/forum/c/contributors）或[貢獻者聊天室]詢問我們（關於Gitter的https://gitter.im/FreeCodeCamp/Contributors）。
+如果您遇到困難並需要幫助，請通過我們論壇上的['貢獻者'類別](https://www.freecodecamp.org/forum/c/contributors)或[貢獻者聊天室](https://gitter.im/FreeCodeCamp/Contributors)詢問我們的Gitter。
 
 您的瀏覽器控制台或Bash /終端/命令行中可能存在錯誤，有助於識別問題。
 
