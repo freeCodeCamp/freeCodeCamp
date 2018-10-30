@@ -58,5 +58,5 @@ int main(void)
 
 This code renders a triangle to a black window. To build this example you need the library [GLFW](https://www.glfw.org). <br>
 ```
-sudo apt-get install libglfw-dev
+sudo apt-get install libglfw3-dev
 ```
