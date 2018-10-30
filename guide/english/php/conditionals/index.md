@@ -35,4 +35,5 @@ if ($_GET['name'] = "freecodecamp"){
 In cases where you have a lot of possible conditions you may want to use a <a href="/php/switch">Switch Statement</a>.
 
 #### More Information:
+* <a href="http://php.net/manual/en/control-structures.if.php" rel="nofollow">Control Structures IF Manual</a>
 * <a href="https://secure.php.net/manual/en/control-structures.elseif.php" rel="nofollow">php.net control structures manual</a>
