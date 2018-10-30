@@ -3,17 +3,17 @@ title: MongoDB
 ---
 ## MongoDB
 
-MongoDB is an open-source non-relational Database that uses a JSON like structure to store data. 
-It uses a document model to store and retrieve the data instead of the table model used by sequential databases such as SQL or Oracle.
+MongoDB is an open-source non-relational database that uses a JSON-like structure to store data. 
+It uses a document model to store and retrieve the data instead of the table model used by relational databases such as SQL or Oracle.
 MongoDB is a distributed database at its core, so high availability, horizontal scaling, and geographic distribution are built in and easy to use.
 
-### NOSQL Vs RDBMS
+### NoSQL Vs RDBMS
 
 | MongoDB Terms And Concepts | SQL Terms and Concepts |
 | --- | --- |
 | Database | Database |
 | Collection | Table |
-| document | Row |
+| Document | Row |
 | Field | Column |
 | Index | Index |
 | Embedded Documents | Table Joins |
