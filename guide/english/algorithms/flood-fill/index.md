@@ -62,6 +62,36 @@ and start checking the other adiacent squares.
 Going south we will get to point (5,4) and the function runs again.
 
 
+### Flood-fill as a Graph Traversal Problem
+
+Flood-fill can be conveniently modelled as a Graph Traversal Problem by considering our given area as a matrix. Each cell in the matrix can be considered a node. Each cell is a vertex that is connected to the cells above, below, left and right of it (also consider diagonal cells, in case of 8-point connections).
+
+For eg, let's consider a cell **(x,y)**
+In case of 4-connections, its connected nodes are:
+**(x-1,y) , (x+1,y) , (x,y-1) , (a,y+1)**
+
+**NOTE** :  Keep the boundary conditions in mind.
+
+After the area has been modelled as a Graph, we can traverse this graph using either DFS or BFS.
+The psuedo code is given below:
+
+```
+function DFS(x, y, visited, n, m)
+    if (x ≥ n OR y ≥ m)
+        return
+    if(x < 0 OR y < 0)
+        return
+    if(visisted[x][y] == True)
+        return
+    visited[x][y] = True
+    DFS(x-1, y, visited, n, m)
+    DFS(x, y-1, visited, n, m)
+    DFS(x, y+1, visited, n, m)
+    DFS(x+1, y, visited, n, m)
+  
+```
+Time Complexity : **O ( n x m )**
+
 ### Exercise problem
 
 I always considered that solving a (or more) problem/s using a newly learned algorithm is the best way to fully understand
