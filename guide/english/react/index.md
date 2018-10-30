@@ -229,8 +229,11 @@ If you click on the head tag we can see our script libraries we included. Then w
 
 or
 
-<a href="http://www.youtube.com/watch?feature=player_embedded&v=100pKUE3OPI" target="_blank"><img src="http://img.youtube.com/vi/YOUTUBE_VIDEO_ID_HERE/0.jpg" 
-alt="Watch Video Here" width="240" height="180" border="10" /></a>
+[Watch Video Here](https://www.youtube.com/watch?v=100pKUE3OPI)
+
+<a href="http://www.youtube.com/watch?v=100pKUE3OPI" target="_blank">
+  <img src="https://img.youtube.com/vi/100pKUE3OPI/0.jpg" alt="Watch Video Here" width="180" height="130" border="10" />
+</a>
 
 ### Quick React App Setup
 Setting up a react app can be time consuming. A great tool for starting a new react project is create-react-app. 
