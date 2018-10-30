@@ -6,7 +6,9 @@ localeTitle: Extensible Markup Language (XML)
 
 XML significa eXtensible Markup Language. Ele é extensível, porque não usa um conjunto predefinido de tags para identificar componentes estruturais; em vez disso, fornece um mecanismo para definir esses conjuntos de tags. O principal objetivo da linguagem é compartilhar os dados. Ao contrário do HTML, no XML não há um conjunto predefinido de tags e tags especificam o significado, em vez da apresentação.
 
-\## Sintaxe do XML A sintaxe XML refere-se às regras que determinam como um aplicativo XML pode ser gravado. A sintaxe XML é muito simples e isso torna o XML muito fácil de aprender. Documentos XML devem conter um elemento raiz que seja o pai de todos os outros elementos:
+## Sintaxe do XML
+
+A sintaxe XML refere-se às regras que determinam como uma aplicação XML pode ser escrita. A sintaxe XML é muito simples e isso torna o XML muito fácil de aprender. Documentos XML devem conter um elemento raiz que seja o pai de todos os outros elementos:
 ```
 <root> 
   <child> 
@@ -17,7 +19,7 @@ XML significa eXtensible Markup Language. Ele é extensível, porque não usa um
 
 #### XML deve ter um elemento raiz
 
-Acima da sintaxe mostra o elemento raiz que é necessário ao criar um código XML. Isso pode ser mostrado pelo exemplo:
+A sintaxe acima mostra o elemento raiz que é necessário ao criar um código XML. Isso pode ser mostrado pelo exemplo:
 ```
 <?xml version="1.0" encoding="UTF-8"?> 
  <note> 
@@ -36,25 +38,23 @@ Neste exemplo, 'note' é o elemento raiz.
     *   Independência do fornecedor
     *   Independência de plataforma
     *   Infraestrutura extensa
-*   Desvantagens do uso de XML:
-    
-*   Sintaxe detalhada e incômoda
-    
-*   Armazenamento altamente ineficiente
+*   Desvantagens do uso de XML: 
+    *   Sintaxe detalhada e incômoda
+    *   Armazenamento altamente ineficiente
     
 
-Em Linguagem de Computação, a Linguagem de Marcação Extensível (XML) é aquela que define um conjunto ou bloco de Regras que são posteriormente usadas para codificar documentos em tal Formato, que é ao mesmo tempo Máquina e Leitura Humana.
+Em Linguagem de Computação, a Linguagem de Marcação Extensível (XML) é aquela que define um conjunto ou bloco de Regras que são posteriormente usadas para codificar documentos em tal Formato, que pode ser lido tanto por máquinas quanto por humanos.
 
-Há uma coisa principal entre XML e HTML que os torna diferentes uns dos outros. É que o XML foi projetado para transportar uma informação específica e se concentra apenas nessa informação. E o HTML se concentra em exibir informações específicas como design e todas essas informações relacionadas a informações.
+Há uma coisa principal entre XML e HTML que os tornam diferentes um do outro. É que o XML foi projetado para transportar uma informação específica e se concentra apenas nessa informação. E o HTML se concentra em exibir informações específicas como design e todas essas informações relacionadas a informações.
 
-O XML também não usa tags predefinidas usadas pelo HTML. Utiliza tags definidas pelo usuário.
+O XML também não usa tags predefinidas como as usadas pelo HTML. Utiliza tags definidas pelo usuário.
 
-A seguir, a simplicidade causada pelo XML:
+A seguir temos áreas que podem ser simplificadas com XML:
 
-1.  Simplifica o compartilhamento de dados
-2.  Simplifica o transporte de dados
-3.  Simplifica as mudanças de plataforma
-4.  Simplifica a disponibilidade de dados
+1.  compartilhamento de dados
+2.  transporte de dados
+3.  mudanças de plataforma
+4.  disponibilidade de dados
 
 E a principal conquista foi que se tornou uma recomendação do W3C já em fevereiro de 1998.
 
