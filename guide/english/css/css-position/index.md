@@ -8,7 +8,7 @@ The position property specifies the type of positioning method used for an eleme
 ```css
 .static         { position: static; } // default value
 .relative       { position: relative; }
-.sticky         { position: sticky; }
+.sticky         { position: -webkit-sticky; position: sticky; }
 .fixed          { position: fixed; }
 .absolute       { position: absolute; }
 ```
