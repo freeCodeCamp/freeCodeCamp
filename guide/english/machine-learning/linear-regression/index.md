@@ -63,3 +63,6 @@ print(model.intercept_)
 from sklearn import metrics
 print(metrics.accuracy_score(y_test, y_pred_class))
 ```
+### Ridge Regression
+
+Ridge Regression is a technique for analyzing multiple regression data when multicollinearity occurs. If we have data that suffers from multicollinearity, least squares estimates are unbiased, but their variances are large so they may be far from the true value. By adding a degree of bias to the regression estimates, ridge regression reduces the standard errors. It is hoped that the net effect will be to give estimates that are more reliable. Another biased regression technique, principal components regression, is also available in NCSS. Ridge regression is the more popular of the two methods.
