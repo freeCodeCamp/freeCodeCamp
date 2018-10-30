@@ -33,8 +33,8 @@ In c++ there are two types of data:
 
 ### Simple data types
 
-* Boolean -- bool
-Works like a switch, can be on or off.
+* Boolean  -- bool
+Boolean variable can store either true or false.
 * Character -- char
 Stores a single character.
 * Integer  -- int

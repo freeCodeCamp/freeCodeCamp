@@ -32,7 +32,7 @@ Find the last 9 digits of S(217, 721, 127).
 ```yml
 tests:
   - text: <code>euler340()</code> should return 291504964.
-    testString: 'assert.strictEqual(euler340(), 291504964, "<code>euler340()</code> should return 291504964.");'
+    testString: assert.strictEqual(euler340(), 291504964, '<code>euler340()</code> should return 291504964.');
 
 ```
 

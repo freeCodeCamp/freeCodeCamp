@@ -24,7 +24,7 @@ Your task has been made easy, as the encryption key consists of three lower case
 ```yml
 tests:
   - text: <code>euler59()</code> should return 107359.
-    testString: 'assert.strictEqual(euler59(), 107359, "<code>euler59()</code> should return 107359.");'
+    testString: assert.strictEqual(euler59(), 107359, '<code>euler59()</code> should return 107359.');
 
 ```
 

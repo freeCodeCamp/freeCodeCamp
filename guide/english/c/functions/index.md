@@ -23,8 +23,10 @@ int main(void) {
     return 0;
 }
 ```
+## WHAT DOES THE main() FUNCTION DO ?
+Suppose a program is divided into hundreds of mini programs (each such mini program is called 'function'). Now the programmer wants that certain functions are used only when they are called or told to run. But it is quite confusing for the compiler to know which function to skip and which to run. So, the idea of the <b>main()</b> function was created, in which only a single function is executed by the compiler and is the <b>main()</b> function. All the other function calls are to be made inside of the <b>main()</b> function wherever neccessary. Any other piece of code (functions) is not accessible unless it is called in inside the <b>main()</b> function.
 
-Notice that like `main`, `divides` has a similar format. That's because `main` is also a function- it's just special because C looks for it first. `divides` also comes before `main`. This is important because `main` calls `divides`. Calling a function means that its code is being used. Code must be compiled before it gets used, and C compiles line by line from the top, so in order for a function to be called, it must be written out before it is called like in this example. If `divides` came after `main`, it would fail because the compiler doesn't know that `divides` exists yet. You may also use a function prototype before main to allow you to place `divides` after main. A function prototype is identical to the function with the same variables and return type, except they braces are omitted and replaced with a semicolon like so:
+Notice that like `main`, `divides` has a similar format. That's because `main` is also a function- it's just special because C looks for it first. `divides` also comes before `main`. This is important because `main` calls `divides`. Calling a function means that its code is beiEng used. Code must be compiled before it gets used, and C compiles line by line from the top, so in order for a function to be called, it must be written out before it is called like in this example. If `divides` came after `main`, it would fail because the compiler doesn't know that `divides` exists yet. You may also use a function prototype before main to allow you to place `divides` after main. A function prototype is identical to the function with the same variables and return type, except they braces are omitted and replaced with a semicolon like so:
 ```C
 int divides(int a, int b);
 ```
@@ -105,6 +107,13 @@ int factorial (int n)
     return (n * factorial (n -1));
 }   
 ```
+<!-- Some minor additional info on Recursion -MR -->
+The recursion continues until some condition is met to prevent it.
+To prevent infinite recursion, an if...else statement or similar approach can be used where one branch makes the recursive call and the other doesn't.
+
+Recursion makes program more elegant and clean. All algorithms can be defined recursively, which makes it easier to visualize and prove. 
+If the speed of the program is important then you may not want to use recursion as it uses more memory and can slow the program down.
+
 
 # Before you go on...
 ## A review
