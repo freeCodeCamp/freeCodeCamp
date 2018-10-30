@@ -83,7 +83,28 @@ main ()
 
 ``
 
+## Example for printing for Fibonacci numbers
+```c
 
+#include <stdio.h>
 
+int main () {
 
+    int A[10];
+    A[0]=1;
+    A[1]=1;
 
+    for (int i = 2; i < 10; i++) {
+        A[i]=A[i-1]+A[i-2];
+    }
+
+    for (int i = 0; i < 10; i++) {
+    	printf(" %d",A[i]);
+    }
+}
+```
+## Output:
+```shell 
+ 1 1 2 3 5 8 13 21 34 55
+ 
+```
