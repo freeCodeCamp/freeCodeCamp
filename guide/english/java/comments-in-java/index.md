@@ -5,7 +5,7 @@ title: Comments in Java
 
 Comments in Java are like real life sticky notes used to display some helpful information, which other programmers or developers can read and understand.
 
-It is good practice to add comments to your code, especially when working with a team. This helps future developers and teammates to more easily understand at your code. Comments make your code more neat and organized.
+It is good practice to add comments to your code, especially when working with a team. This helps future developers and teammates to more easily understand your code. Comments make your code more neat and organized.
 
 Java comments are not executed by the compiler or interpreter.
 
