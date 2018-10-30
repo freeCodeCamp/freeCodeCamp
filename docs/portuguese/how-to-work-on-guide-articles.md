@@ -1,16 +1,16 @@
 # Como trabalhar em Artigos Guia
 
-Com a tua ajuda, nós podemos criar uma ferramenta de referência compreensiva que ajudará milhões de pessoas que estão a aprender código nos anos que aí vêm. 💛
+Com a sua ajuda, nós podemos criar uma ferramenta de referência compreensiva que ajudará milhões de pessoas que estão aprendendo a programar nos próximos anos. 💛
 
 Tu podes:
 
-- [Ajudar-nos criando e Editando Artigos Guia](#steps-for-creating-and-editing-guide-articles).
-- [Ajudar-nos revendo <i>pull requests</i> para Artigos Guia]()
+- [Ajude criando e Editando Artigos Guia](#steps-for-creating-and-editing-guide-articles).
+- [Ajude revendo <i>pull requests</i> para Artigos Guia]()
 
 ## Passos para Criar e Editar Artigos Guia
 
 1. 🍴 [Fazer <i>fork</i> a este repositório](https://github.com/freeCodeCamp/freeCodeCamp#fork-destination-box)
-2. 👀️ Seguir as guias de contribuição delineados mais abaixo.
+2. 👀️ Seguir os guias de contribuição delineados mais abaixo.
 3. 🔧 Fazer algumas mudanças impressionantes!
 4. 📖 Ler este [guia de estilo de melhores práticas](/docs/style-guide-for-guide-articles).
 5. 👉 [Fazer um <i>pull request</i>](https://github.com/freeCodeCamp/freeCodeCamp/compare)
@@ -22,30 +22,30 @@ Ou então apenas [criar um <i>issue</i>](https://github.com/freeCodeCamp/freeCod
 
 ### Criar um <i>Pull request</i> (PR) para propor mudanças
 
-Há duas maneiras para propor uma mudança num repositório, depois de editares ou adicionar um Artigo Guia:
+Há duas maneiras para propor uma mudança num repositório, depois de editar ou adicionar um Artigo Guia:
 
 - [Usando o GitHub Web Interface no teu <i>browser</i>](#using-the-github-web-interface-on-your-browser).
 - [Trabalhando na tua máquina pessoal](#working-on-your-local-machine) (_recomendado_ para pré-visualizar mudanças).
 
 #### Usando o GitHub Web Interface no teu browser
 
-Vê a demonstração em vídeo ou segue os passos abaixo:
+Veja a demonstração em vídeo ou segue os passos abaixo:
 
 **[A FAZER]** Atualizar a gravação do GIF.
 
 ![GIF a mostrar os passos do GitHub interface](#)
 
-1. Ir à pasta **"pages"** (localizada no [`guide`](/guide)) e encontrar o artigo que gostarias de escrever ou editar.
+1. Ir à pasta **"pages"** (localizada no [`guide`](/guide)) e encontrar o artigo que gostaria de escrever ou editar.
 
     > Todos os <i>stubs</i> estarão num ficheiro index.md
 
-2. Carrega o icon de lápis do <kbd>Edit this file</kbd> e faz as tuas mudanças ao ficheiro usando o GitHub-flavored Markdown.
+2. Apertar o icone de lápis do <kbd>Edit this file</kbd> e faz as tuas mudanças ao ficheiro usando o GitHub-flavored Markdown.
 
-    > Se o icon estiver acizentado e a dar o aviso "You must be on a branch to make or propose changes to this file", então está provavelmente na <i>tree</i> de outra pessoa. No topo esquerdo da página estará uma caixa <i>drop down</i> que dirá "Tree: #######". Carrega no <i>drop down</i> e muda o <i>branch</i> para "master". Agora o lápis deve estar clicável.
+    > Se o icone estiver acizentado e a dar o aviso "You must be on a branch to make or propose changes to this file", então está provavelmente na <i>tree</i> de outra pessoa. No topo esquerdo da página estará uma caixa <i>drop down</i> que dirá "Tree: #######". Carrega no <i>drop down</i> e muda o <i>branch</i> para "master". Agora o lápis deve estar clicável.
 
-3. Faz <i>scroll</i> até ao fim do ecrã e adiciona uma mensagem de <i>commit</i> a explicar as tuas mudanças.
+3. Faça um <i>scroll</i> até ao fim do ecrã e adiciona uma mensagem de <i>commit</i> a explicar as suas mudanças.
 
-    (Opcional): Nós recomendamos vivamente fazer uma mensagem de <i>commit</i> convencional. Isto é uma boa prática que verás em alguns dos repositórios <i>Open Source</i> mais populares. Como developer, isto encoraja-te a seguir práticas <i>standard</i>.
+    (Opcional): Nós recomendamos vivamente fazer uma mensagem de <i>commit</i> convencional. Isto é uma boa prática que verá em alguns dos repositórios <i>Open Source</i> mais populares. Como developer, isto encoraja-te a seguir práticas <i>standard</i>.
 
     Alguns exemplos de mensagens de <i>commit</i> convencionais:
 
@@ -68,13 +68,13 @@ Vê a demonstração em vídeo ou segue os passos abaixo:
 
 Parabéns 🎉! Criaste um <i>pull request</i>.
 
-#### Trabalhando na tua máquina pessoal (_recomendado_ para pré-visualizar mudanças)
+#### Trabalhando na sua máquina pessoal (_recomendado_ para pré-visualizar mudanças)
 
 Não é obrigatório trabalhares na tua máquina pessoal, a não ser que queiras pré-visualizar as tuas edições ou trabalhar com <i>UI fixes</i> e melhorias. Também é recomendado caso encontres problemas de git como conflitos de <i>merge, rebasing</i>, etc.
 
 ##### Lê estas guias em [Como configurar o freeCodeCamp localmente](/docs/how-to-setup-freecodecamp-locally.md)
 
-### Ter um PR aceite
+### Ter um PR aceito
 
 Aqui estão algumas diretrizes que os <i>reviewers</i> seguem ao analizar PRs:
 
@@ -95,7 +95,7 @@ Aqui estão algumas diretrizes que os <i>reviewers</i> seguem ao analizar PRs:
 
 #### Conteúdo Contraditório/Duplicado
 
-UM PR é considera um **duplicate** se faz mudanças ao mesmo artigo que outro PR.
+UM PR é considerado um **duplicate** se faz mudanças ao mesmo artigo que outro PR.
 
 Em geral, um <i>reviewer</i> irá:
 
