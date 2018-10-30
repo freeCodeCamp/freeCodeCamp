@@ -2,7 +2,7 @@
 title: Acceptance Testing
 ---
 
-## Acceptance Testing
+## Acceptance Testing:
 
 Acceptance testing, a testing technique performed to determine whether or not the software system has met the requirement specifications. The main purpose of this test is to evaluate the system's compliance with the business requirements and verify if it has met the required criteria for delivery to end users.
 
@@ -18,7 +18,7 @@ There are various forms of acceptance testing:
 >
 > - Beta Testing
 
-## Acceptance Criteria
+## Acceptance Criteria:
 Acceptance criteria are defined on the basis of the following attributes
 
 > - Functional Correctness and Completeness
@@ -103,7 +103,7 @@ An Acceptance Test tests that the code performs as expected i.e. produces the ex
 
 An Acceptance Test are used to test relatively bigger functional blocks of software aka Features.
 
-### Example
+### Example:
 You have created a page that requires the user to first enter their name in a dialog box before they can see the content. You have a list of invited users, so any other users will be returned an error.
 
 There are multiple scenarios here such as: 
@@ -118,7 +118,7 @@ You can write Acceptance Tests for each of these sub-features of the bigger dial
   - And The dialog box should contain an input box
   - And The input box should have placeholder text "Your name, please!"
 
-### Notes
+### Notes:
 
 - Acceptance Tests can be written in any language and run using various tools available that would take care of the infrastructure mentioned above e.g. Opening a browser, loading a page, providing the menthods to access elements on the page, assertion libraries and so on.
 
