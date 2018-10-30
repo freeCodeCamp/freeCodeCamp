@@ -9,7 +9,7 @@ Frames are divided into control information and data (also called the 'payload')
 
 ![A frame in data link layer](http://www.highteck.net/images/156-Datalink-PDU.jpg)
 
-The Data Frame header contains protocol specific information but all headers include the protocol being used and source/destination MAC addresses. Common Layer 2 protocols include Ethernet and Point-to-Point Protocol (PPP). Data Frame trailers typically contain a Frame Check Sequence (FCS) that allows the receiving device to verify the integrity of the received frame.
+The Data Frame header contains protocol specific information but all headers include the protocol being used and source/destination MAC addresses. Common Layer 2 protocols include Ethernet (IEEE 802.3), WiFi (IEEE 802.11), and Point-to-Point Protocol (PPP). Data Frame trailers typically contain a Frame Check Sequence (FCS) that allows the receiving device to verify the integrity of the received frame.
 
 #### More Information:
 <!-- Please add any articles you think might be helpful to read before writing the article -->
