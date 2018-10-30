@@ -52,6 +52,9 @@ These roles for each of the tiers include:
 AWS offers a prerequisite AWS Cloud Practitioner Essentials certification* relevant to anyone no matter their role.
 Outside of the standard roles there are specialty certifications for Advanced networking, Big Data, and Security.
 
+AWS Educate for Students & Beginners:
+Amazon Web Services is it's Amazon's own cloud based web services ,well begoinner developers can try out Alexa Actions and many more but to do so you'll need a AWS account of course and to activate you'll be asked for a credit/master card .Since students are new to this and you need to learn before you pay so you can apply for the AWS Educate account.
+
 #### More Information:
 <!-- Please add any articles you think might be helpful to read before writing the article -->
 * [AWS](https://aws.amazon.com/)
