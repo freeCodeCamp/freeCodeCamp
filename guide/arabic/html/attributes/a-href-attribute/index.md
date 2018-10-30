@@ -33,8 +33,8 @@ localeTitle: سمة Href
 
  `
 <a href="#">This is a dead link</a> 
- <a href="https://www.freecodecamp.org">This is a live link to freeCodeCamp</a> 
- <a href="https://html.com/attributes/a-href/">more with a href attribute</a> 
+ <a href="https://www.freecodecamp.org">هذا هو رابط مباشر ل freeCodeCamp</a> 
+ <a href="https://html.com/attributes/a-href/">أكثر مع سمة href</a> 
 ` 
 
 ### المراسي في الصفحة
@@ -68,6 +68,6 @@ localeTitle: سمة Href
 ### بعض الأمثلة أكثر من href
 
  `
-<base href="https://www.freecodecamp.org/a-href/">This gives a base url for all further urls on the page</a> 
- <link href="style.css">This is a live link to an external stylesheet</a> 
+<base href="https://www.freecodecamp.org/a-href/">يوفر هذا عنوان URL أساسيًا لجميع عناوين url الإضافية في الصفحة</a> 
+ <link href="style.css">هذا رابط مباشر إلى ورقة أنماط خارجية</a> 
 `
