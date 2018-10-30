@@ -72,3 +72,5 @@ while(i < 10){
 ```
 
 ![:rocket:](//forum.freecodecamp.com/images/emoji/emoji_one/rocket.png?v=2 ":rocket:") <a href='https://repl.it/CJZC/0' target='_blank' rel='nofollow'>Run Code</a>
+
+It should be noted that while break statements, labels and goto's are all part of the java syntax, using them is more often than not considered bad programming style. 
