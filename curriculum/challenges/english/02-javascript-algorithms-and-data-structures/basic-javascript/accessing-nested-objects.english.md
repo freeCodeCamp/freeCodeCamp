@@ -50,7 +50,7 @@ var myStorage = {
   }
 };
 
-var gloveBoxContents = undefined; // Change this line
+var gloveBoxContents = myStorage.car.inside.["glove box"]; // Change this line
 
 ```
 
