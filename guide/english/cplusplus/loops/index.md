@@ -26,9 +26,9 @@ Therefore, in order to solve such problems loops are introduced.
 There are different types of loop functions:
 ### While and do while loops
 
-While and do while loops allow you to run the loop until a condition finishes.
-The difference between While and Do while is that Do while loop always executes atleast once.
-The very use of Do while loop can be seen in the scenarios when the number of times that the loop will run depends upon the first iteration of the loop.
+`While` and `do while` loops allow you to run the loop until a condition finishes.
+The difference between `While` and `Do while` is that Do while loop always executes atleast once.
+The very use of `Do while` loop can be seen in the scenarios when the number of times that the loop will run depends upon the first iteration of the loop.
 Here you can see an example:
 ``` c++
 while (condition){
@@ -40,7 +40,7 @@ do {
 ```
 ### For loops
 
-For loops are usually used when you know how many times the code will execute.
+`For loops` are usually used when you know how many times the code will execute.
 The flow can be seen in this [graph](https://www.tutorialspoint.com/cplusplus/images/cpp_for_loop.jpg).
 
 They are declared this way:
@@ -50,7 +50,7 @@ for ( initialize a variable; check a condition; increment the initialized variab
 }
 ```
 
-Lets write a program which will print numbers from 0 to 1000 including 1000 on the screen using a for loop.
+Lets write a program which will print numbers from 0 to 1000 including 1000 on the screen using a `for loop`.
 
 ``` c++
 for (int i = 0;i<=1000;i++)
