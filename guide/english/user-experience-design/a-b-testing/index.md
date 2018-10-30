@@ -16,5 +16,6 @@ For more information on A/B Testing please read
 <a href='https://vwo.com/ab-testing/' target='_blank'>The Complete Guide to A/B Testing</a> and
 <a href='https://hbr.org/2017/06/a-refresher-on-ab-testing' target='_blank'>A Refresher on A/B Testing</a>.
 <a href='https://www.optimizely.com/ab-testing/' target='_blank'>What is A/B Testing?</a>
+<a href='https://neilpatel.com/blog/ab-testing-introduction/' target='_blank'>A Beginner's Guide to A/B Testing</a>
 
 
