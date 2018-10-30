@@ -35,6 +35,11 @@ This full-color book will show you how to make your websites more interactive an
 
 - [Amazon](https://www.amazon.com/JavaScript-JQuery-Interactive-Front-End-Development/dp/1118531647)
 
+#### Secrets of The JavaScript Ninja 2nd Edition
+
+More than ever, the web is a universal platform for all types of applications, and JavaScript is the language of the web. If you're serious about web development, it's not enough to be a decent JavaScript coder. You need to be ninja-stealthy, efficient, and ready for anything. This book shows you how. You also get the 1st edition for free
+-[Manning](https://www.manning.com/books/secrets-of-the-javascript-ninja-second-edition)
+
 
 #### Other Resources
 
