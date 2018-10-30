@@ -65,7 +65,7 @@ We are humans, we make things better. That's what humans do, or at least what we
 
 This is all about thinking about your teammates and associates. The people who work with you, and the people that rely on your code. For example, don't do anything that slows anyone else down. Don't write a function with too many arguments, or make a mess in someone else's code. Don't do this to code that other people depend upon, because it is just going to <b>slow them down</b>.
 
-Don't put long running tests into the test-suite. Keep those tests running fast. Consider your teammates at all times. Consider the enviorment at all times. Keep everything going quickly. Don't impede their productivity.
+Don't put long running tests into the test-suite. Keep those tests running fast. Consider your teammates at all times. Consider the environment at all times. Keep everything going quickly. Don't impede their productivity.
 
 ### Promise 7
 >7. I will continuously ensure that others can cover for me, and that I can cover for them.
@@ -90,7 +90,7 @@ When someone says to you "I need this done by Tuesday," and your not sure if you
 ### Promise 9
 > 9. I will never stop learning and improving my craft.
 
-This doesn't need much explanation. You should always try to learn new languages, new frameworks, new techniques, new disiplines, new processes. You need to apply what you learn then, to constantly impove your craft. 
+This doesn't need much explanation. You should always try to learn new languages, new frameworks, new techniques, new disciplines, new processes. You need to apply what you learn then, to constantly improve your craft. 
 
 ### Promise 10
 >10. I will only produce code which conforms to ethics.
