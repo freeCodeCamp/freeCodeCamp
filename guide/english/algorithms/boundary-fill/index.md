@@ -3,8 +3,8 @@ title: Boundary Fill
 ---
 
 ## Boundary Fill
-Boundary fill is the algorithm used frequently in computer graphics to fill a desired color inside a closed polygon having the same boundary 
-color for all of its sides.
+Boundary fill is the algorithm used frequently in computer graphics to fill a desired color inside a closed polygon having the same boundary color for all of its sides.
+ Boundary Fill Algorithm starts at a pixel inside the polygon to be filled and paints the interior proceeding outwards towards the boundary. This algorithm works only if the color with which the region has to be filled and the color of the boundary of the region are different. If the boundary is of one single color, this approach proceeds outwards pixel by pixel until it hits the boundary of the region.
 
 The most approached implementation of the algorithm is a stack-based recursive function.
 
@@ -37,3 +37,6 @@ void boundary_fill(int pos_x, int pos_y, int boundary_color, int fill_color)
 ```
 From the given code you can see that for any pixel that you land on, you first check whether it can be changed to the fill_color and then you do so 
 for its neighbours till all the pixels within the boundary have been checked.
+
+### Sources
+https://www.geeksforgeeks.org/boundary-fill-algorithm/
