@@ -66,9 +66,9 @@ You might be wondering why you would use `loop/recur` rather than simply definin
 
 This is more concise, and works in a similar way. Why would you _ever_ use loop and recur?
 
-### Tail Call Optimisation
+### Tail Call Optimization
 
-If you use `loop/recur`, then the compiler (the software that turns Clojure code into JVM bytecode) knows that you want to create a recursive loop. This means that it tries its hardest to optimise your code for recursion. Let's compare the speed of `fact` and `fact-no-loop`:
+If you use `loop/recur`, then the compiler (the software that turns Clojure code into JVM bytecode) knows that you want to create a recursive loop. This means that it tries its hardest to optimize your code for recursion. Let's compare the speed of `fact` and `fact-no-loop`:
 
     (time (fact 20))
     ; => "Elapsed time: 0.083927 msecs"
@@ -79,7 +79,7 @@ If you use `loop/recur`, then the compiler (the software that turns Clojure code
 
 ![:rocket:](//forum.freecodecamp.com/images/emoji/emoji_one/rocket.png?v=2 ":rocket:") <a href='https://ideone.com/tpC0Xo' target='_blank' rel='nofollow'>IDEOne it!</a>
 
-At this scale, the difference is negligible. In fact, `fact-no-loop` is occasionally faster than `fact` due to the unpredictable nature of computer memory. However, on a larger scale, this kind of optimisation can make your code much, much quicker.
+At this scale, the difference is negligible. In fact, `fact-no-loop` is occasionally faster than `fact` due to the unpredictable nature of computer memory. However, on a larger scale, this kind of optimization can make your code much, much quicker.
 
 ### Nesting Recursion Within functions
 
