@@ -4,7 +4,7 @@ localeTitle: Comparações Python
 ---
 [Documentos do Python - Comparações](https://docs.python.org/3/library/stdtypes.html#comparisons)
 
-Existem oito operações de comparação no Python. Todos eles têm a mesma prioridade (que é maior que a das operações booleanas). Comparações podem ser encadeadas arbitrariamente; por exemplo, `x < y <= z` é equivalente a `x < y and y <= z` , exceto que `y` é avaliado apenas uma vez (mas em ambos os casos `z` não é avaliado quando `x < y` é falso).
+Existem oito operações de comparação no Python. Todas eles têm a mesma prioridade (que é maior que a das operações booleanas). Comparações podem ser encadeadas arbitrariamente; por exemplo, `x < y <= z` é equivalente a `x < y and y <= z` , exceto que `y` é avaliado apenas uma vez (mas em ambos os casos `z` não é avaliado quando `x < y` é falso).
 
 Esta tabela resume as operações de comparação:
 
@@ -14,7 +14,7 @@ Operação | Significado
 `<=` | menos que ou igual a `>` | estritamente maior que `>=` | Melhor que ou igual a `==` | igual a `!=` | não é igual a `is` | identidade do objeto  
 `is not` | identidade do objeto negado
 
-Objetos de diferentes tipos, exceto diferentes tipos numéricos, nunca se comparam iguais. Além disso, alguns tipos (por exemplo, objetos de função) suportam apenas uma noção degenerada de comparação em que quaisquer dois objetos desse tipo são desiguais. Os operadores `<` , `<=` , `>` e `>=` `TypeError` uma exceção `TypeError` ao comparar um número complexo com outro tipo numérico integrado, quando os objetos forem de tipos diferentes que não puderem ser comparados ou em outros casos em que não houver definição encomenda.
+Objetos de diferentes tipos, exceto diferentes tipos numéricos, nunca se comparam iguais. Além disso, alguns tipos (por exemplo, objetos de função) suportam apenas uma noção degenerada de comparação em que quaisquer dois objetos desse tipo não são iguais. Os operadores `<` , `<=` , `>` e `>=` `TypeError` uma exceção `TypeError` ao comparar um número complexo com outro tipo numérico integrado, quando os objetos forem de tipos diferentes que não puderem ser comparados ou em outros casos em que não houver definição encomenda.
 
 As instâncias não idênticas de uma classe normalmente comparam como não iguais, a menos que a classe defina o `__eq__()` .
 
@@ -31,28 +31,28 @@ No Python, existem dois operadores de comparação que nos permitem verificar se
 A principal diferença entre 'é' e '==' pode ser resumida como:
 
 *   `is` usado para comparar **identidade**
-*   `==` é usado para comparar a **igualdade**
+*   `==` usado para comparar a **igualdade**
 
 ## Exemplo
 
 Primeiro, crie uma lista em Python.
 
 ```python
-myListA = [1,2,3] 
+minhaListaA = [1,2,3] 
 ```
 
 Em seguida, crie uma cópia dessa lista.
 
 ```python
-myListB = myListA 
+minhaListaB = minhaListaA 
 ```
 
 Se usarmos o operador '==' ou o operador 'is', ambos resultarão em uma saída **True** .
 
 ```python
->>> myListA == myListB # both lists contains similar elements 
+>>> minhaListaA == minhaListaB # As duas listas contêm elementos similares.
  True 
- >>> myListB is myListA # myListB contains the same elements 
+ >>> minhaListaB is minhaListaA # minhaListaB contêm os mesmos elementos.
  True 
 ```
 
@@ -61,21 +61,21 @@ Isso ocorre porque myListA e myListB estão apontando para a mesma variável de 
 No entanto, e se eu criar agora uma nova lista?
 
 ```python
-myListC = [1,2,3] 
+minhaListaC = [1,2,3] 
 ```
 
 Realizar o operador `==` ainda mostra que ambas as listas são as mesmas, em termos de conteúdo.
 
 ```python
->>> myListA == myListC 
+>>> minhaListaA == minhaListaC 
  True 
 ```
 
 No entanto, executar o operador `is` agora produzirá uma saída `False` . Isso ocorre porque myListA e myListC são duas variáveis ​​diferentes, apesar de conter os mesmos dados. Mesmo parecendo iguais, eles são **diferentes** .
 
 ```python
->>> myListA is myListC 
- False # both lists have different reference 
+>>> minhaListaA is minhaListaC 
+ False # As duas listas têm referências diferentes.
 ```
 
 Resumindo:
