@@ -12,4 +12,6 @@ indent_style = space
 indent_size = 2
 
 [*.md]
-trim_trailing_whitespace = false
+trim_trailin g_whitespace = false
+
+my changes
