@@ -33,7 +33,12 @@ MongoDB is a distributed database at its core, so high availability, horizontal 
 3. Rich Query Language
 4. High Availability
 5. Horizontal Scalability
+6. Supports Indexing
 
+### Cons of MongoDB
+1. Schemaless design requires database manager to ensure certain constraints
+2. Indexing on multiple fields takes more memory
+3. Aggregation queries are at times non-intutive
 
 ### More Information
 [What is Mongo DB?](https://www.mongodb.com/what-is-mongodb)
@@ -43,3 +48,7 @@ MongoDB is a distributed database at its core, so high availability, horizontal 
 [SQL vs NoSQL](https://insights.dice.com/2012/07/16/sql-vs-nosql-which-is-better/)
 
 [Learn MongoDB from MongoDB](https://university.mongodb.com/)
+
+[ACID vs BASE databases](http://www.dataversity.net/acid-vs-base-the-shifting-ph-of-database-transaction-processing/)
+
+[MongoDB Manual](https://docs.mongodb.com/manual/)
