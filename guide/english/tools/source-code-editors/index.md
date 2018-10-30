@@ -50,7 +50,7 @@ be overwhelming to new users. There is also plenty of <a href='http://readwrite.
 <a href='http://stackoverflow.com/search?q=atom' target='_blank' rel='nofollow'>availble</a> online.
 
 
-## <a href='https://code.visualstudio.com/' target='_blank' rel='nofollow'>Visual Studio Code</a> ![Visual Studio Code Icon](https://i.imgur.com/b4vFsKa.png)
+## <a href='https://code.visualstudio.com/' target='_blank' rel='nofollow'>Visual Studio Code</a> ![Visual Studio Code Icon](https://ibb.co/hhQOv0)
 
 ![Visual Studio Code Screenshot](https://code.visualstudio.com/home/home-screenshot-mac-lg.png)
 
