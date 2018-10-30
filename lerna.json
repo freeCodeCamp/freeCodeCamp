@@ -1,6 +1,6 @@
 {
   "packages": [
-    "api-server",
+    "api-ser",
     "client",
     "curriculum",
     "tools/challenge-md-parser",
