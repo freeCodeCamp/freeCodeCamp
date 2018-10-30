@@ -23,3 +23,5 @@ Other than the above, we can take our react knowledge to develop mobile native a
 
 #### More Information
 To learn more about why React is so great check out the [official website](https://reactjs.org/)
+
+///OPINION: should include a brief summary of JSX individually.
