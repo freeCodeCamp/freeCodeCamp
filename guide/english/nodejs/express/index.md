@@ -7,7 +7,7 @@ When it comes to build web applications using Node.js, creating a server can tak
 
 ## What is Express?
 
-Express is the most popular Node.js framework because it requires minimum setup to start an application or an API and is fast, and unopinionated at the same time. In other words, it does not enforces its own philosophy that a application or API should be built in a specific way, unlike Rails and Django. Its flexibility can be calculated by the number of `npm` modules available which makes it pluggable at the same time. If you have basic knowledge of HTML, CSS, and JavaScript and how Node.js works in general, in no time you will be able to get started with Expressjs.
+Express is the most popular Node.js framework because it requires minimum setup to start an application or an API and is fast, and unopinionated at the same time. In other words, it does not enforce its own philosophy that a application or API should be built in a specific way, unlike Rails and Django. Its flexibility can be calculated by the number of `npm` modules available which makes it pluggable at the same time. If you have basic knowledge of HTML, CSS, and JavaScript and how Node.js works in general, in no time you will be able to get started with Expressjs.
 
 Express was developed by TJ Holowaychuk and is now maintained by Node.js foundation and open source developers. To get started with the development using Express, you need to have Node.js and npm installed. You can install [Node.js](https://nodejs.org/en/) on your local machine and along with it comes the command line utility `npm` that will help us to install plugins or as called dependencies later on in our project.
 
@@ -68,7 +68,7 @@ Now we have `package.json` file, we can install Express by running the command:
 npm install --save express
 ```
 
-We can confirm that Express has correctly installed by two ways. First, there will be new section in `package.json` file named `dependencies` under which our Express exists:
+We can confirm that Express has correctly installed by two ways. First, there will be a new section in `package.json` file named `dependencies` under which our Express exists:
 
 ```json
 {
@@ -136,7 +136,7 @@ These statements are the custom application based settings that are defined afte
 
 **Middleware**
 
-These functions determine the flow of request-response cycle. They are executred after every incoming request. We can also define custom middleware functions. We have section on them below.
+These functions determine the flow of request-response cycle. They are executred after every incoming request. We can also define custom middleware functions. We have a section on them below.
 
 **Routes**
 
@@ -146,7 +146,7 @@ They are the endpoints defined in our server that helps to perform operations fo
 
 The last that gets executed in an Express server is the `app.listen()` function which starts our server.
 
-We will now start disussing sections that we haven't previously discussed about.
+We will now start discussing sections that we haven't previously discussed about.
 
 ## Routing
 
