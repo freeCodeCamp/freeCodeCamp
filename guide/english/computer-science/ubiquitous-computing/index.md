@@ -14,4 +14,5 @@ A famous example of ubiquitous technology is a smart fridge that knows when you 
 * [Pervasive Computing on TechTarget](http://internetofthingsagenda.techtarget.com/definition/pervasive-computing-ubiquitous-computing)
 * [Ubiquitous Computing on Techopedia](https://www.techopedia.com/definition/22702/ubiquitous-computing)
 * [7 things you need to know about ubiquitous computing](http://www.monitis.com/blog/top-7-things-you-need-to-know-about-ubiquitous-computing/)
+*[Ubiquitous Computing: What is it and how can Businesses use it?](https://www.darwinrecruitment.com/blog/2018/04/ubiquitous-computing-what-is-it)
 * [YouTube video: A Day Made of Glass](https://youtu.be/jZkHpNnXLB0)
