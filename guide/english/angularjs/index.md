@@ -30,3 +30,14 @@ HTML:
 ```html
 <script src="/bower_components/angular/angular.js"></script>
 ```
+
+bower:
+
+```shell
+bower install angular
+```
+HTML:
+
+```html
+<script src="/bower_components/angular/angular.js"></script>
+```
