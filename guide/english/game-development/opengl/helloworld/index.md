@@ -60,3 +60,7 @@ This code renders a triangle to a black window. To build this example you need t
 ```
 sudo apt-get install libglfw3-dev
 ```
+To build it just run <br>
+```
+gcc -o hello_world source.c -lglfw -lGL
+```
