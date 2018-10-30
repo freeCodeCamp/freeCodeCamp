@@ -19,6 +19,7 @@ There are various forms of acceptance testing:
 > - Beta Testing
 
 ## Acceptance Criteria
+
 Acceptance criteria are defined on the basis of the following attributes
 
 > - Functional Correctness and Completeness
@@ -42,6 +43,7 @@ Acceptance criteria are defined on the basis of the following attributes
 > - Documentation
 
 ## Acceptance Test Plan - Attributes
+
 The acceptance test activities are carried out in phases. Firstly, the basic tests are executed, and if the test results are satisfactory then the execution of more complex scenarios are carried out.
 
 The Acceptance test plan has the following attributes:
@@ -81,6 +83,7 @@ The acceptance test activities are designed to reach at one of the conclusions:
 - Do not accept the system
 
 ## Acceptance Test Report - Attributes
+
 The Acceptance test Report has the following attributes:
 
 > - Report Identifier
@@ -104,6 +107,7 @@ An Acceptance Test tests that the code performs as expected i.e. produces the ex
 An Acceptance Test are used to test relatively bigger functional blocks of software aka Features.
 
 ### Example
+
 You have created a page that requires the user to first enter their name in a dialog box before they can see the content. You have a list of invited users, so any other users will be returned an error.
 
 There are multiple scenarios here such as: 
@@ -133,4 +137,5 @@ You can write Acceptance Tests for each of these sub-features of the bigger dial
 - Acceptance testing can also validate if a completed epic/story/task fulfills the defined acceptance criteria. In contrast to definition of done, this criteria can cover specific business cases that the team wants to solve. This provides a good measurement of work quality.
 
 #### More Information:
+
 - [International Software Testing Qualifications Board](http://www.istqb.org/)
