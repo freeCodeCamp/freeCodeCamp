@@ -29,5 +29,7 @@ One of the biggest Open Source projects is Linux.
 #### More Information:
 
 [Open Source Initiative](https://opensource.org/)
+
 [Wikipedia Open Source Model](https://en.wikipedia.org/wiki/Open-source_model)
+
 [Wikipedia Open Source Software](https://en.wikipedia.org/wiki/Open-source_software)
