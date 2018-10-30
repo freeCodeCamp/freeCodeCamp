@@ -83,3 +83,4 @@ For more options available in this property, check out the [W3Schools page on tr
 * [W3 Schools CSS Transitions](https://www.w3schools.com/css/css3_transitions.asp)
 * [MDN CSS Transitions Web Docs](https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Transitions/Using_CSS_transitions)
 * [All you need to know about CSS Transitions by Alex MacCaw](https://blog.alexmaccaw.com/css-transitions)
+* [CSS Tricks: Transitions](https://css-tricks.com/almanac/properties/t/transition/)
