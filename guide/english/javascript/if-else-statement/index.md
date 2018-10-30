@@ -51,6 +51,7 @@ if (condition) {
     if (x == 5) {
       z = 7;
       q = 42
+    }
     else
       z = 19;
 ```
