@@ -6,6 +6,7 @@ title: goto as a powerful utility
 
 goto is one of the most powerful, yet highly underrated piece of logic in C++. Crazy amount of optimization can be achieved using goto, provided it is used properly.
 It does exactly what it is named as. It goes to the mentioned occurence of the next label, wherever may it be.
+goto is generally deemed a low-level feature, with no particular use cases in modern higher-level programming paradigms generally used with C++
 
 # Terminology
 
