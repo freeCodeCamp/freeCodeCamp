@@ -1,1 +1,0 @@
-global.should = require('./').should();

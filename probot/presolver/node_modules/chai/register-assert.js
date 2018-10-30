@@ -1,1 +1,0 @@
-global.assert = require('./').assert;

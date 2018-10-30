@@ -1,7 +1,0 @@
-.nyc_output
-.travis.yml
-coverage
-test.js
-node_modules
-/.circleci
-/tests/integration

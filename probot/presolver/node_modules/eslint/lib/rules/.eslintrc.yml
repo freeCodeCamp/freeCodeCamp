@@ -1,3 +1,0 @@
-rules:
-    internal-no-invalid-meta: "error"
-    internal-consistent-docs-description: "error"

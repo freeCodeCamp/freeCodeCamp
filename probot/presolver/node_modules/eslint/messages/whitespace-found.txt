@@ -1,3 +1,0 @@
-ESLint couldn't find the plugin "<%- pluginName %>". because there is whitespace in the name. Please check your configuration and remove all whitespace from the plugin name.
-
-If you still can't figure out the problem, please stop by https://gitter.im/eslint/eslint to chat with the team.

@@ -1,7 +1,0 @@
-{
-	"rules": {
-		"max-statements-per-line": [2, { "max": 3 }],
-		"no-magic-numbers": 0,
-		"object-curly-newline": 0,
-	}
-}

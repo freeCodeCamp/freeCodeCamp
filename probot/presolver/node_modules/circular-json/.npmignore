@@ -1,9 +1,0 @@
-coverage/*
-src/*
-test/*
-template/*
-node_modules/*
-build/*.amd.js
-.travis.yml
-Makefile
-index.html

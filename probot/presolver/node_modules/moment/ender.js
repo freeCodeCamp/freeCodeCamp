@@ -1,1 +1,0 @@
-$.ender({ moment: require('moment') })

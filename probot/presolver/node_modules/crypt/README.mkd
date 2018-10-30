@@ -1,1 +1,0 @@
-**crypt** provides utilities for encryption and hashing

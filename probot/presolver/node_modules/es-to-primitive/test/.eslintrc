@@ -1,9 +1,0 @@
-{
-	"rules": {
-		"array-bracket-newline": 0,
-		"array-element-newline": 0,
-		"max-statements-per-line": [2, { "max": 3 }],
-		"no-magic-numbers": [0],
-		"sort-keys": [0]
-	}
-}

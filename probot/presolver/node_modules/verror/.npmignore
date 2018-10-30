@@ -1,9 +1,0 @@
-.gitignore
-.gitmodules
-deps
-examples
-experiments
-jsl.node.conf
-Makefile
-Makefile.targ
-test

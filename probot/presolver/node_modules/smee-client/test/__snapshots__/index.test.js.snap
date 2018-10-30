@@ -1,3 +1,0 @@
-// Jest Snapshot v1, https://goo.gl/fbAQLP
-
-exports[`client connecting to a channel throws an error if the source is invalid 1`] = `"The provided URL is invalid."`;

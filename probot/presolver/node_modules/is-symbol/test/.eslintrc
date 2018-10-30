@@ -1,7 +1,0 @@
-{
-	"rules": {
-		"max-statements-per-line": [2, { "max": 2 }],
-		"no-restricted-properties": 0,
-		"symbol-description": 0,
-	}
-}

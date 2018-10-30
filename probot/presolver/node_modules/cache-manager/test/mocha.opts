@@ -1,5 +1,0 @@
---reporter spec
---ui bdd
---globals state,newBlocks,params,type,__coverage__
---timeout 6500
---slow 200

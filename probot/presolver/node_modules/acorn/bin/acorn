@@ -1,4 +1,0 @@
-#!/usr/bin/env node
-'use strict';
-
-require('./_acorn.js');

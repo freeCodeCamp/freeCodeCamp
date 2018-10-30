@@ -1,1 +1,0 @@
-exports.f = Object.getOwnPropertySymbols;

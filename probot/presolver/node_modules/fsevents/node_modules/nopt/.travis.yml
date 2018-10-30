@@ -1,8 +1,0 @@
-language: node_js
-node_js:
-  - '0.12'
-  - '4'
-  - '6'
-  - '7'
-before_install:
-  - npm install -g npm@latest

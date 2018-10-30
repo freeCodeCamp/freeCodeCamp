@@ -1,3 +1,0 @@
---require coffee-script/register
---compilers coffee:coffee-script/register
---reporter spec

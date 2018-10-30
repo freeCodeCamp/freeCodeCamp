@@ -1,8 +1,0 @@
-"use strict";
-
-module.exports = function (t, a) {
-	a(t(2), true, "Number");
-	a(t("23"), false, "Not numeric");
-	a(t(NaN), false, "NaN");
-	a(t(Infinity), false, "Infinity");
-};

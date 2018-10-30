@@ -1,2 +1,0 @@
-instrumentation:
-    excludes: ['**/spec/**']

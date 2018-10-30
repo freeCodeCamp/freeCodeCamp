@@ -1,3 +1,0 @@
-[submodule "spec/mustache"]
-	path = spec/mustache
-	url = git://github.com/mustache/spec.git

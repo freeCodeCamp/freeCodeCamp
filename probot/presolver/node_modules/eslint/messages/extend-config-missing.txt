@@ -1,3 +1,0 @@
-ESLint couldn't find the config "<%- configName %>" to extend from. Please check that the name of the config is correct.
-
-If you still have problems, please stop by https://gitter.im/eslint/eslint to chat with the team.

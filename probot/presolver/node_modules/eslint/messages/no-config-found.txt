@@ -1,7 +1,0 @@
-ESLint couldn't find a configuration file. To set up a configuration file for this project, please run:
-
-    eslint --init
-
-ESLint looked for configuration files in <%= directory %> and its ancestors.
-
-If you think you already have a configuration file or if you need more help, please stop by the ESLint chat room: https://gitter.im/eslint/eslint
