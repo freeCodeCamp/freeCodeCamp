@@ -4,6 +4,13 @@ title: Operators
 
 ## Operators
 
+The following example will output the Pre-increment	Increments $x by one, then returns $x:
+````php
+<?php
+$x = 10;  
+echo ++$x;
+?>
+````
 
 PHP contains all the normal operators one would expect to find in a programming language. 
 
