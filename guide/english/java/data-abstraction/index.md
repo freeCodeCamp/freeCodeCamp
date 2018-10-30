@@ -9,6 +9,16 @@ Likewise in Object-oriented programming, abstraction is a process of hiding the 
 
 In Java, abstraction is achieved using Abstract classes and interfaces.
 
+Interfaces were introduced in Java to enhance Java’s single-inheritance model, multiple inheritance created too many problems for programmers and compiler writers. 
+All methods in interface are public, we may not write it every time, like all of them are abstract, but we never write the key word abstract.
+The interface should have at least one method but not too many.
+
+Advantages using interfaces:
+It decouples your code.
+Helps in team corporation.
+Increase your flexibility.
+
+
 ## Resources
 [Tutorials Point - Java Abstract classes and interfaces](https://www.tutorialspoint.com/java/java_abstraction.htm)
 <br />
