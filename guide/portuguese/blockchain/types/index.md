@@ -16,7 +16,7 @@ A partir de agora, existem basicamente três tipos de blockchains que surgiram. 
 
 Tecnologia Blockchain que pertence a uma entidade privada ou a uma organização. É uma arquitetura descentralizada, mas alguns poderes para tomar decisões são investidos nas mãos da pessoa encarregada.
 
-A pessoa responsável é responsável por conceder acessos e permissões seletivas, como leitura / gravação.
+A pessoa responsável, concede acessos e permissões seletivas, como leitura / gravação.
 
 Exemplo: Bankchain, Hyperledger
 
@@ -30,13 +30,13 @@ Exemplo: Bitcoin, Litecoin
 
 #### 3\. Blockchain Federado
 
-Neste tipo de blockchain o problema do blockchain privado é resolvido. A questão da autonomia exclusiva, investindo o poder nas mãos de um indivíduo, é feita por meio de mais de uma pessoa encarregada.
+Neste tipo de blockchain, o problema do blockchain privado é resolvido. A questão da autonomia exclusiva, investindo o poder nas mãos de um indivíduo, é feita por meio de mais de uma pessoa encarregada.
 
-Um grupo de pessoas se reúne para formar um consórcio ou federação. Que por sua vez trabalha em conjunto para o bem comum.
+Um grupo de pessoas se reúne para formar um consórcio ou federação, que por sua vez, trabalha em conjunto para o bem comum.
 
 Exemplo: [Energy Web Foundation](http://energyweb.org/)
 
-Existe outra categoria para classificação, baseada na permissão concedida à rede blockchain. Eles são classificados como -
+Existe outra categoria para classificação, baseada na permissão concedida à rede blockchain. Eles são classificados como:
 
 1.  Bloqueio Público Autorizado
 2.  Blockchain Autorizado Privado
