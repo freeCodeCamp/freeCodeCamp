@@ -64,6 +64,10 @@ When starting out with linux, there are some basic commands everyone should know
  15. **df -h** Checks disk space in human readable form
 - Shows the size, amount used, amount available and capacity percentage of mounted drives/partitions.
 
+ 16. ***locate*** - location command
+-Use 'locate -i *input*file**name*' to locate files in Linux OS and "i" is a flag that directs the system to look for a certain file regardless of capital or lowercase status in the file name
+
+
 
 ### Useful Resources for Practice:
 - [JSLinux](https://bellard.org/jslinux/vm.html?url=https://bellard.org/jslinux/buildroot-x86.cfg): Run the terminal inside your browser. Great for practice.
