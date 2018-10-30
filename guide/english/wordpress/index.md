@@ -25,6 +25,10 @@ Here are some examples of big name brands using WordPress:
 
 Whether it's page transitions or a customized contact form, WordPress users are only a few clicks away from building a website.
 
+WordPress users can pick one of two flawors:
+* WordPress.org -  here you can download WordPress softwear and you will have to hosted your blog or website on your own.
+* WordPress.com -  here you can sign up for WordPress hosting service, it's free with limited futures, you will have to pay for advenced functionality. No need to download any softwear, your blog or website will be hosted by WordPress.com 
+
 ### More Information
 
 - [WordPress Codex: the online manual](https://codex.wordpress.org/)
