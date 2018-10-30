@@ -34,6 +34,11 @@ Here are examples that do the same thing:
 <input type="text" required="required" >
 ```
 
+# Custom Data Attributes
+HTML also provides the facility to embed custom attributes to element which is specific for that application or technology in which the webpage is built.
+
+These are usally of the format data-*  where * is the name of the custom attribute.
+
 ## Other Resources
 
 [HTML links](#)
@@ -41,3 +46,4 @@ Here are examples that do the same thing:
 [Lang Attribute](#)
 [HTML Input Element](#)
 [Required Attribute](#)
+[Cutom Data Attribute](https://www.w3schools.com/tags/att_global_data.asp)
