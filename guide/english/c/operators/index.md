@@ -217,3 +217,24 @@ with higher precedence will be evaluated first.
 - Conditional `?:`
 - Assignment `= += -= *= /= %= >>= <<= &= ^= |=`
 - Comma `,`
+
+## Note:
+We can use & operator for checking whether a given number is even or odd more quickly than regular way.
+### Example
+```C
+#include<stdio.h>
+int main()
+{
+    int a=25;
+    if(a&1)
+    printf("Odd");
+    else
+    printf("Even");
+    return 0;
+}
+```
+## Output
+```
+-> Odd
+```
+The value of (a & 1) will be a non zero element only when a is odd, and 0 if it is even.
