@@ -3,8 +3,7 @@ title: Visualize Data with a Scatterplot Graph
 ---
 ## Visualize Data with a Scatterplot Graph
 
-This is a stub. <a href='https://github.com/freecodecamp/guides/tree/master/src/pages/certifications/data-visualization/data-visualization-projects/visualize-data-with-a-scatterplot-graph/index.md' target='_blank' rel='nofollow'>Help our community expand it</a>.
+A scatterplot is a useful way to visualize the relationship between two variables. Similar to correlations, scatterplots are often used to make initial diagnoses before any statistical analyses are conducted. One way to visualize Scatter plot is using R Studio.
 
-<a href='https://github.com/freecodecamp/guides/blob/master/README.md' target='_blank' rel='nofollow'>This quick style guide will help ensure your pull request gets accepted</a>.
+Checkout the tutorial for visualizing the data using scatterplot.(https://www.r-bloggers.com/r-tutorial-series-scatterplots/)
 
-<!-- The article goes here, in GitHub-flavored Markdown. Feel free to add YouTube videos, images, and CodePen/JSBin embeds  -->
