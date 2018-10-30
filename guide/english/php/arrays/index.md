@@ -28,6 +28,7 @@ A multidimensional array is an array that contains other arrays.
 <?php
 $freecodecamp = array(array("free"=>"0","code"=>"1","camp"=>"2"),array("free"=>"0","code"=>"1","camp"=>"2"),array("free"=>"0","code"=>"1","camp"=>"2"));
 ```
+`$freecodecamp['0']['free']` would return "0" from First array.
 
 #### More Information:
 * <a href="https://secure.php.net/manual/en/language.types.array.php" rel="nofollow">php.net arrays manual</a>
