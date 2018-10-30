@@ -1,6 +1,6 @@
 ---
 title: SQL and Operator
-localeTitle: SQL AND Operador
+localeTitle: SQL AND Operador 
 ---
 ## Operador SQL AND
 
