@@ -1,8 +1,8 @@
 ---
 title: Manipulating Cookies
-localeTitle: Manipulando galletas
+localeTitle: Manipulando Cookies
 ---
-## Manipulando galletas
+## Manipulando cookies
 
 Obtener o configurar cookies es una operación sencilla que se puede lograr al acceder a la propiedad de la cookie en el objeto de documento del navegador.
 
@@ -23,24 +23,24 @@ Se puede configurar una cookie utilizando la siguiente sintaxis, pero se recomie
 **Tenga en cuenta que un dominio determinado solo puede leer un conjunto de cookies y solo subdominios.**
 
 ```javascript
-// Using vanilla javascript 
+// Con vanilla javascript 
  document.cookie = 'userLanguage=french; expires=Sun, 2 Dec 2017 23:56:11 UTC; path=/'; 
  
- //Using JS cookie library 
+ // Con la librería Cookie de JS
  Cookies.set('userLanguage', 'french', { expires: 7, path: '/' }); 
 ```
 
 _La cookie expira en 7 días._
 
-### Obtener galletas
+### Obtener cookies
 
 ```javascript
-// Using vanilla javascript 
+// Con vanilla javascript 
  console.log(document.cookie) 
  
  // => "_ga=GA1.2.1266762736.1473341790; userLanguage=french" 
  
- // Using JS cookie library 
+ // Con la librería Cookie de JS 
  Cookies.get('userLanguage'); 
  
  // => "french" 
@@ -48,13 +48,13 @@ _La cookie expira en 7 días._
 
 ### Eliminar cookie
 
-Para eliminar una cookie, establezca la fecha de caducidad en algo en el pasado.
+Para eliminar una cookie, establezca la fecha de caducidad en el pasado.
 
 ```javascript
-// Using vanilla javascript 
+// Con vanilla javascript 
  document.cookie = 'userLanguage; expires=Thu, 01 Jan 1970 00:00:01 GMT; path=/'; 
  
- //Using JS cookie library 
+ // Con la librería Cookie de JS
  Cookies.remove('userLanguage'); 
 ```
 
