@@ -100,8 +100,7 @@ Also there is an alternative syntax for control structures
   else
     statement5;
 ~~~~
-For more information check out the following link:
-<a href='http://php.net/manual/en/control-structures.alternative-syntax.php' target='_blank' rel='nofollow'>PHP Alternative syntax for control structures</a>
-
-For more information please check out the following link:
-[PHP: if](http://php.net/manual/en/control-structures.if.php)
+#### More Information:
+* <a href='http://php.net/manual/en/control-structures.alternative-syntax.php' target='_blank' rel='nofollow'>PHP Alternative syntax for control structures</a>
+* <a href="http://php.net/manual/en/control-structures.if.php" rel="nofollow">php.net control structures If Manual</a>
+* <a href="https://secure.php.net/manual/en/control-structures.elseif.php" rel="nofollow">php.net control structures Else If Manual</a>
