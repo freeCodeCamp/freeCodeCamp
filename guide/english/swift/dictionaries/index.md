@@ -94,6 +94,6 @@ Who's That Pokemon? Its.... #25: Pikachu.
 
 **Note:** Because dictionaries have no designated order the above output can be in different order each time you run it.
 
-### More Information: 
+### More Information:
 * [Swift Dictionaries](https://docs.swift.org/swift-book/LanguageGuide/CollectionTypes.html#ID113)
 * [Hashable Protocol](https://developer.apple.com/documentation/swift/hashable)
