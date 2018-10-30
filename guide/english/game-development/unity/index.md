@@ -47,7 +47,7 @@ In picture above, you will notice five section:
 * Club Penguin Island
 * Kerbal Space Program
 * Monument Valley
-* Rust
+* Rust 
      
 ## History
 
