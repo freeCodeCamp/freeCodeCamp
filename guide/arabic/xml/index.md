@@ -58,7 +58,7 @@ localeTitle: لغة الترميز الموسعة (XML)
 
 وكان الإنجاز الرئيسي هو أنها أصبحت توصية W3C في وقت مبكر من فبراير 1998.
 
-### معلومات اكثر
+# معلومات اكثر
 
 *   [مقدمة XML](https://developer.mozilla.org/en-US/docs/XML_introduction)
 *   [مقدمة في XML](https://www.w3schools.com/xml/xml_whatis.asp)
