@@ -47,7 +47,10 @@ tests:
 
 ```js
 function factorialize(num) {
-  return num;
+	if(num === 1){
+		return num;	
+	}
+  	return num*factorialize(num - 1);
 }
 
 factorialize(5);
