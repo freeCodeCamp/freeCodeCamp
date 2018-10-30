@@ -2,7 +2,7 @@
 title: Algorithms
 ---
 
-## Algorithms
+#### Algorithms
 
 In computer science, an algorithm is an unambiguous specification of how to solve a class of problems. Algorithms can perform calculations, data processing and automated reasoning tasks.
 
@@ -17,11 +17,11 @@ There are certain requirements that an algorithm must abide by:
 
 Some common types of algorithms include sorting algorithms, search algorithms, and compression algorithms. Classes of algorithms include Graph, Dynamic Programming, Sorting, Searching, Strings, Math, Computational Geometry, Optimization, and Miscellaneous. Although technically not a class of algorithms, Data Structures are often grouped with them. 
 
-### Efficiency
+#### Efficiency
 
 Algorithms are most commonly judged by their efficiency and the amount of computing resources they require to complete their task. A common way to evaluate an algorithm is to look at its time complexity. This shows how the running time of the algorithm grows as the input size grows. Since the algorithms today, have to be operate on large data inputs, it is essential for our algorithms to have a reasonably fast running time .
 
-### Sorting Algorithms
+#### Sorting Algorithms
 
 Sorting algorithms come in various flavors depending on your necessity.
 Some, very common and widely used are:
@@ -37,7 +37,7 @@ It is the sorting algorithm which relies on the concept how to sorted arrays are
 
 freeCodeCamp's curriculum heavily emphasizes creating algorithms. This is because learning algorithms is a good way to practice programming skills. Interviewers most commonly test candidates on algorithms during developer job interviews.
 
-### Further Resources
+#### Further Resources
 
 [Intro to Algorithms | Crash Course: Computer Science](https://www.youtube.com/watch?v=rL8X2mlNHPM)
 
