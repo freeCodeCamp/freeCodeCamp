@@ -17,22 +17,22 @@ Olá 👋!
 
 freeCodeCamp.org é possível graças a milhares de voluntários gentis como você. Somos gratos por suas contribuições e estamos felizes em te receber.
 
-Nós seguimos as diretrizes do nosso ["Código de Conduta"](https://www.freecodecamp.org/code-of-conduct). Dedique um tempo para lê-lo. Ele não é muito longo.
+Nós seguimos as diretrizes do nosso ["Código de Conduta"](https://www.freecodecamp.org/code-of-conduct). Dedique um tempo para lê-lo. Ele não é muito longo e tem cerca de 196 palavras.
 
 Divirta-se contribuindo 🎉!
 
 ## Esses são alguns jeitos divertidos de contribuir
 
-Você pode escolher contribuir para uma área do seu interesse:
+Você pode contribuir para qualquer área do seu interesse:
 
-1. [Contribua para essa base de códigos <i>open source.</i>](#contribua-para-essa-base-de-códigos-<i>open-source</i>)
+1. [Contribua para esa base de códigos <i>open source.</i>](#contribua-para-essa-base-de-códigos-<i>open-source</i>)
 
-    Nos ajude criando e editando [Artigos de guias](https://www.freecodecamp.org/guide), [desafios de código](https://www.freecodecamp.org/learn) e corrigindo bugs na plataforma de aprendizado.
+    Nos ajude criando e editando [Artigos guia](https://www.freecodecamp.org/guide), [desafios de codificação](https://www.freecodecamp.org/learn), ou corrigindo bugs na plataforma de aprendizado.
 
-2. Ajude <i>campers</i> em nosso [fórum público](https://www.freecodecamp.org/forum/).
+2. Ajude campistas em nosso [fórum público](https://www.freecodecamp.org/forum/).
 
-    - ❓ Ajude <i>campers</i> [respondendo suas perguntas](https://www.freecodecamp.org/forum/?max_posts=1).
-    - 💬 [Faça comentários](https://www.freecodecamp.org/forum/c/project-feedback?max_posts=1) em projetos dos <i>campers</i>.
+    - ❓ Ajude campistas [respondendo suas perguntas](https://www.freecodecamp.org/forum/?max_posts=1).
+    - 💬 [Faça comentários](https://www.freecodecamp.org/forum/c/project-feedback?max_posts=1) em projetos dos campistas.
 
 3. Nos ajude a legendar nosso [canal no YouTube](https://www.youtube.com/channel/UC8butISFwT-Wl7EV0hUK0BQ/videos).
 
