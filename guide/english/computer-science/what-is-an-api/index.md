@@ -11,6 +11,8 @@ An interface sits on top of a complicated system and simplifies certain tasks, a
 
 If you have ever programmed in an object-oriented language like Java or C++, an API is quite similar to the concept of a class. When we call a method on an object (such as ```.toString()```) we don't really care HOW the object is producing the result, all we care about is the string we get at the end. A call to an API works in the same way. For example, when we make a call to the Facebook API to retrieve a user's profile picture, we don't care about how the information is retrieved from the server. We just make the request to the API, let it handle all the complicated retrieval logic, and get our photo at the end of it all. 
 
+You may wonder what is the difference between an API and a webpage. An API returns data in the form of JSON and XML. While webpages response in HTML , CSS and JavaScript.
+
 ## Why Are APIs Useful?
 
 Having access to an API generally means having access to a large amount of organized data. The gatekeeper of that data gives a developer permission (in the form of an *API key*) to query a server for information. If the request is successful, the server responds with a message that may look something like this:
