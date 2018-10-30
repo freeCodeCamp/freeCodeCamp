@@ -22,3 +22,4 @@ client/static/js/frame-runner.js
 client/static/js/frame-runner.js.map
 client/static/_redirects
 env.json
+*.bak
