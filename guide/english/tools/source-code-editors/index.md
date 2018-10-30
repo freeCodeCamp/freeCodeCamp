@@ -1,3 +1,7 @@
+---
+title: Source Code Editors
+---
+
 ## Source Code Editors
 
 Source code editors are the programs that allow for code creation and  
