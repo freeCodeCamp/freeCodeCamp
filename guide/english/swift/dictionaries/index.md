@@ -20,7 +20,7 @@ var emptyDictionary4: [Float: String] = [:]
 ```
 **(1)** The shorthand variant(s) are the preferred style to use due to the brevity and clarity it provides in comparison to its "full" variations.  
 
-**(2)** You can utilize any type as the key of a dictionary as long as it conforms to the **Hashable** Protocol. For more information check out [Hashable](https://developer.apple.com/documentation/swift/hashable).
+**(2)** You can utilize any type as the key of a dictionary as long as it conforms to the **Hashable** Protocol. For more information check out [Protocols](https://docs.swift.org/swift-book/LanguageGuide/Protocols.html#ID268) and [Hashable](https://developer.apple.com/documentation/swift/hashable).
 
 #### Create many Entries using a "Dictionary Literal".
 
@@ -96,4 +96,5 @@ Who's That Pokemon? Its.... #25: Pikachu.
 
 ### More Information:
 * [Swift Dictionaries](https://docs.swift.org/swift-book/LanguageGuide/CollectionTypes.html#ID113)
+* [Protocols](https://docs.swift.org/swift-book/LanguageGuide/Protocols.html#ID268)
 * [Hashable Protocol](https://developer.apple.com/documentation/swift/hashable)
