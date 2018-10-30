@@ -6,7 +6,7 @@ title: For Loop
 
 The for loop executes a block of code repeatedly until a specified conditional expression evaluates to false.
 
-Anatomy of for loop:
+Anatomy of the For loop:
 ```
 for (initialization; condition; iterator)
 {
@@ -19,6 +19,8 @@ for (initialization; condition; iterator)
 - iterator       - Executes after each iteration of the body of the loop.
 
 ### Example 1
+
+In this instance, starting at zero, the console will print "Number" and the incremented digit until that digit reaches 5, which will NOT print.
 ```
 for (int i = 0; i < 5; i++)
 {
