@@ -1,0 +1,27 @@
+---
+title: Compress Files and Folder
+---
+## Zip Files and Folder
+
+ZIP file format
+
+ZIP is an archive file format that supports lossless data compression. A ZIP file may contain one or more files or directories that may have been compressed.
+Python allows you to quickly create zip/tar archives.
+
+A good way to zip in python is to use the following command wich zip the whole directory `dir_name`
+```shutil.make_archive(output_filename, 'zip', dir_name)```
+
+Why? Because the module shutil is part of the python standard library, so you don't need to install anything to make it work.
+
+Here are the steps to create Zip File in Python:
+####Step1 
+To create an archive file from Python, make sure you have your import statement correct and in order. Here the import statement for the archive is 
+`from shutil import make_archive`
+
+####Step 2
+<li>Import make_archive class from module shutil</li>
+<li>Then we call the module `shutil.make_archive(output_filename, "zip", root_dir)` to create archive file, which will be in zip format</li>
+<li>When you run the code, you can see the archive zip file is created in the working directory</li>
+
+#### More Information:
+<a href="https://docs.python.org/2/library/shutil.html">make_archive documentation</a>
