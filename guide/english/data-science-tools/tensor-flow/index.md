@@ -4,8 +4,15 @@ title: TensorFlow
 ## Tensor Flow
 
 <a href='https://www.tensorflow.org/' target='_blank' rel='nofollow'>TensorFlow</a> is an open source software library for Machine Intelligence.
+In TensorFlow, representation of data is done in the form of tensors.
+A Tensor is an <b>n dimensional array.</b>
+Flow is used to describe the interaction between tensors by using computational graphs.
+
+TensorFlow is built in C++, which enables the code to execute at a very low level. TensorFlow has bindings to different language like Python, R, & Java. This enables TensorFlow to be used in these languages.
 
 With the aim of conducting research in these fascinating areas, the Google team developed TensorFlow.
+
+
 
 ## How it is used for Data Science
 TensorFlow is an open source software library for numerical computation using data flow graphs. 
