@@ -7,7 +7,7 @@ Gulp can do **a lot**. This is just an overview of the basics. Once you understa
 
 ## What is Gulp?
 
-Gulp is a JavaScript build/task runner. Are you using Jade, but need HTML? Sass, but need CSS? CoffeeScript, but need JavaScript? Or maybe you just want to concatenate and/or minify what you already have? Gulp can do all of this for you easily, so you do not have to keep going back to your terminal after every little change.
+Gulp is a JavaScript build/task runner. Are you using Jade, but need HTML? Sass, but need CSS? CoffeeScript, but need JavaScript? Or maybe you just want to concatenate and/or minify what you already have? Gulp can do all of this for you easily, so you do not have to keep going back to your terminal after every little change.Simply put, Gulp is a task runner built on Node.js and npm, used for automation of time-consuming and repetitive tasks involved in web development like minification, concatenation, cache busting, unit testing, linting, optimization, etc.
 
 ## Why use Gulp?
 
