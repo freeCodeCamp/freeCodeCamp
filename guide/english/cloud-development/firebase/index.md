@@ -27,6 +27,11 @@ Firebase main features are grouped to 3 categories:
     
  3. **Earn**
     * AdMob
+    
+    
+ Firebase for Android Beginners:
+ For all the android developers who are trying to develop apps which may require some database or real-time database you can easily make use of firebase it's very simple integrating firebase with your android app,and it's almost free for small amount of requests and from then on you can opt for a pay as you go account for more info visit the official firebase page.    
+    
 
 #### More Information:
 
