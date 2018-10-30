@@ -19,6 +19,7 @@ GameMaker Studio 2 released on 2 November 2016.
 * Ubuntu
 * HTML5
 * Android
+* Windows Phone
 * iOS
 * Amazon Fire TV
 * Android TV
