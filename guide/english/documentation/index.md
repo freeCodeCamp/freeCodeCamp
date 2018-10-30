@@ -3,13 +3,13 @@ title: Code documentation
 ---
 ## Code Documentation
 
-Code Documentation is a way for developers to communicate the intent or reasoning behind a piece of code. Successfuly documented code helps other developers get comfortable with the logic and use of the particular module, functions etc for a particular programming language. It is generally recomended that you document your code as you develop it; this way nothing is forgotten when development is being wrapped up.
+Code Documentation is a way for developers to communicate the intent or reasoning behind a piece of code. Successfully documented code helps other developers get comfortable with the logic and use of the particular module, functions, etc. for a particular programming language. It is generally recommended that you document your code as you develop it; this way, nothing is forgotten when development is being wrapped up.
 
-For example, if you happen to pass along your code to an absolute beginner, they should be able to follow along via external documentation, comments, appropriate variable names; even if they have very little knowledge of the language in use.
+For example, if you happen to pass your code along to an absolute beginner, they should be able to follow along via external documentation, comments, and appropriate variable names, even if they have very little knowledge of the language in use.
 
-It is a good idea to make a habit out of commenting your functions, loops, and declarations and treating comments as part of the source code.
+It is a good idea to make a habit out of commenting your functions, loops, and declarations, and treating comments as part of the source code.
 
-Many developers have probably learned that it is much harder to go back through your code and comment it after you finish. It's always a good idea to label and comment your code as you go, so that you don't forget or mix up what certain variables or functions do.
+Many developers have learned that it is much harder to go back through your code and comment it after you finish. It's always a good idea to label and comment your code as you go, so that you don't forget or mix up what certain variables or functions do.
 
 ![An example of commenting in the real world](https://cdn-images-1.medium.com/max/1620/1*Pyxsc7Uixbitv5myywaA_Q.jpeg)
 
