@@ -26,3 +26,7 @@ _JavaScript: Info_ Uma coleção de artigos cobrindo o básico (linguagem centra
 
 *   [Conectados](https://javascript.info/)
 *   [E-book](https://javascript.info/ebook)
+
+_JavaScript: O Guia Definitivo_ Livro do David Flanagan, indispensável para todos os programadores javascript, independente do nível de experiência.
+
+*   [Amazon](https://www.amazon.com/JavaScript-Definitive-Guide-David-Flanagan/dp/0596805527/ref=sr_1_1?ie=UTF8&qid=1540857864&sr=8-1&keywords=javascript+the+definitive+guide)
