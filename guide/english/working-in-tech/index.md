@@ -23,13 +23,13 @@ The field of computer security is growing at a rapid rate every year, in a repor
 
 ### Books
 
-[About Face: The Essentials of Interaction Design](https://amzn.to/2uwtugk)
+[About Face: The Essentials of Interaction Design](https://www.amazon.com/gp/product/1118766571/)
 
-[Thinking in Systems: A Primer](https://amzn.to/2u6FbJF)
+[Thinking in Systems: A Primer](https://www.amazon.com/gp/product/1603580557)
 
-[Thinking, Fast and Slow](https://amzn.to/2tnnlTN)
+[Thinking, Fast and Slow](https://www.amazon.com/gp/product/0374533555/)
 
-[Learn You a Haskell for Great Good!](https://amzn.to/2veOjdv)
+[Learn You a Haskell for Great Good!](https://www.amazon.com/gp/product/1593272839/)
 
 [Think Like a Programmer](https://www.nostarch.com/thinklikeaprogrammer)
 
