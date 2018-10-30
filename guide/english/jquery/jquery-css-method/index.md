@@ -50,3 +50,4 @@ To change `background-color` of an element
 #### More Information:
 
 Documentation: <a href='http://api.jquery.com/css/' target='_blank' rel='nofollow'>api.jquery</a>
+w3schools: <a href='https://www.w3schools.com/jquery/jquery_css.asp' target='_blank' rel='nofollow'>jQuery - css() Method</a>
