@@ -32,3 +32,5 @@ React Native just like PhoneGap and cordova offers the opportunity for Web Devel
 #### PowerApps
 Launched in 2017, PowerApps is a browser-based platform by Microsoft that allows developers and non-developers to build mobile applications from selectable templates or from a blank canvas. PowerApps at its core is a Platform as a Service. It allows you to create Mobile Apps that run on Android, iOS, Windows (Modern Apps) – and with almost any Internet browser. It takes care of the differences between the operating systems and just allows you to run your apps. It is essentially a container that makes mobile apps much easier to use across mobile platforms. PowerApps offers to dramatically accelerate how business apps are built, reducing time to solution from weeks or months to minutes and empowering a new category of app creators.
 
+#### Flutter
+It's a free and open source mobile app SDK by Google.It can be used for developing high-quality native applications that can run both in Android and ios.The programming language that fluttter runs upon is Dart.
