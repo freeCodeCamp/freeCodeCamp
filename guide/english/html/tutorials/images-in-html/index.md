@@ -44,6 +44,20 @@ Here's an example to make a rounded image:
 <img src="URL of the Image" alt="Descriptive Title" style="border-radius: 50%;"/>
 ```
 
+## Image Floating
+Use the CSS ```float``` property to let the image float to the right or to the left of a text:
+
+## Example
+
+```
+<p><img src="smiley.gif" alt="Smiley face" style="float:right;width:42px;height:42px;">
+The image will float to the right of the text.</p>
+
+<p><img src="smiley.gif" alt="Smiley face" style="float:left;width:42px;height:42px;">
+The image will float to the left of the text.</p>
+```
+
+
 ### More Information
 
 - See the freeCodeCamp page on the `<img>` tag [here](https://guide.freecodecamp.org/html/elements/img-tag)
