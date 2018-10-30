@@ -7,13 +7,13 @@ title: Control Flow
 
 ### Conditionals
 
-With Vue.js you can decide wheter to show or not a piece of code in you final
+With Vue.js you can decide whether to show or not a piece of code in your final
 page, depending on some condition. For example, imagine a form input that is
 required a text at least 8 characters long: if the user input is shorter than 8,
 than an error message should appear; but if the input is longer than 8, the
 message disappears.
 
-But let's make a simpler example. We want to condition the exibition of a
+But let's make a simpler example. We want to condition the exhibition of a
 message to a counter:
 
 ```html
@@ -101,7 +101,7 @@ let app = new Vue({
 ```
 
 Way easier than inserting a lot of `<li>`. And notice that whenever the `list`
-changes, the result will change acordingly. Try it out: open the console and
+changes, the result will change accordingly. Try it out: open the console and
 `push` some string to the `list` with
 
 ```javascript
