@@ -172,3 +172,6 @@ int main ()
 3. In Backtracking, as in DFS algorithm.
 4. Memory management, run-time environment for nested language features. etc
 
+## Reference Link
+1. [GeeksforGeeks C++ STL stack](https://www.geeksforgeeks.org/stack-in-cpp-stl/)
+
