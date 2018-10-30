@@ -138,8 +138,8 @@ Vous devriez passer en revue les ticket de **`Help Wanted`** ou **`first timers 
 
 Si ces questions manquent de clarté sur ce qui doit être fait, n'hésitez pas à poser des questions dans les commentaires.
 
-**I found a typo, should I report an issue before I can make a pull request ? **
+**J'ai trouvé une coquille, dois-je signaler un problème avant de pouvoir faire une *pull request* ?**
 
-Pour les fautes de frappe et autres changements de formulation, vous pouvez ouvrir directement un *pull request* sans créer de ticket au préalable. Il s'agit plutôt de discuter de problèmes plus vastes liés aux codes ou aux aspects structurels du programme d'études.
+Pour les fautes de frappe et autres changements de formulation, vous pouvez ouvrir directement une *pull request* sans créer de ticket au préalable. Il s'agit plutôt de discuter de problèmes plus vastes liés aux codes ou aux aspects structurels du programme d'études.
 
 
