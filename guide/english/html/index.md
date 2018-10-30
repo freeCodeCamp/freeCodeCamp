@@ -2,6 +2,10 @@
 title: HTML
 ---
 
+HTML for Beginners:
+If you're wondering whats this as said Hyper Text Markup-Language is the right place for you to start to learn about web-development
+and here are the things you need to know, first thing is there are tags like braces in this language once you open one to use never forget to close and learning this may not be enough still you need to learn CSS and Java Script to understand and develop standard websites, But it's a goodplace to begin.
+
 # HTML
 
 HyperText Markup Language (HTML) is a markup language used to construct online documents and is the foundation of most websites today. A markup language like HTML allows us to 1) create links to other documents, 2) structure the content in our document, and 3) ascribe context and meaning to the content of our document.
