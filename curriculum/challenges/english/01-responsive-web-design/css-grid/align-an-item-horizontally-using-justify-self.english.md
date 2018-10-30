@@ -24,7 +24,7 @@ Use the <code>justify-self</code> property to center the item with the class <co
 ```yml
 tests:
   - text: <code>item2</code> class should have a <code>justify-self</code> property that has the value of <code>center</code>.
-    testString: 'assert(code.match(/.item2\s*?{[\s\S]*justify-self\s*?:\s*?center\s*?;[\s\S]*}/gi), "<code>item2</code> class should have a <code>justify-self</code> property that has the value of <code>center</code>.");'
+    testString: assert(code.match(/.item2\s*?{[\s\S]*justify-self\s*?:\s*?center\s*?;[\s\S]*}/gi), '<code>item2</code> class should have a <code>justify-self</code> property that has the value of <code>center</code>.');
 
 ```
 
