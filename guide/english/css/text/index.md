@@ -11,6 +11,7 @@ Several properties are provided by CSS to change the look and feel of the text. 
 ``` html
 <html>
   <body>
+    <h1>Free Code Camp</h1>
     <p>This is an example of CSS text property.</p>
   </body>
 </html>
@@ -19,6 +20,10 @@ Several properties are provided by CSS to change the look and feel of the text. 
 p {
     color:red;
  }
+ 
+h1 {
+    color:blue;
+  }
 ```
 
 In the above example, the text `color` of `<p>` element is changed to red. You can also specify the color as RGB values, HLS values, and hex codes (For more information about colors, click [here](https://guide.freecodecamp.org/css/colors)).
