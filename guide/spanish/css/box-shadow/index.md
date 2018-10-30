@@ -20,8 +20,8 @@ Una sombra de cuadro se puede describir con varias propiedades, que incluyen:
     } 
   ``` 
  * #### inset (default: none) 
- If not specified, the shadow is assumed to be a drop shadow (as if the box were raised above the content). 
- The presence of the `inset` keyword changes the shadow to one inside the frame 
+ Si no está especificado, la sombra asume la forma de sombra arrojada (como si la cara estuviera por encima del contenido).
+ La presencia de la palabra clave `inset` cambia la sombra hacia el interior del marco.
  
  * #### offset-x offset-y 
  These are two `length` values to set the shadow offset. <offset-x> specifies the horizontal distance. Negative values place the shadow to the left of the element. `offset-y` specifies the vertical distance. Negative values place the shadow above the element. See `length` for possible units. 
