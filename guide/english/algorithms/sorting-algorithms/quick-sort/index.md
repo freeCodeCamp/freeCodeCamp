@@ -128,7 +128,32 @@ int main()
     return 0; 
 } 
 ```
+
+A quick implementation in python
+```python
+import random
+
+z=[random.randint(0,100) for i in range(0,20)]
+
+def quicksort(z):
+    if(len(z)>1):        
+        piv=int(len(z)/2)
+        val=z[piv]
+        lft=[i for i in z if i<val]
+        mid=[i for i in z if i==val]
+        rgt=[i for i in z if i>val]
+
+        res=quicksort(lft)+mid+quicksort(rgt)
+        return res
+    else:
+        return z
+        
+ans1=quicksort(z)
+print(ans1)
+
+```
 The space complexity of quick sort is O(n). This is an improvement over other divide and conquer sorting algorithms, which take O(nlong(n)) space. Quick sort achieves this by changing the order of elements within the given array. Compare this with the <a href='https://guide.freecodecamp.org/algorithms/sorting-algorithms/merge-sort' target='_blank' rel='nofollow'>merge sort</a> algorithm which creates 2 arrays, each length n/2, in each function call.
+However there does exist the problem of this sorting algorithm being of time O(n\*n) if the pivot is always kept at the middle. This can be overcomed by utilizing a random pivot
 
 #### More Information:
 
