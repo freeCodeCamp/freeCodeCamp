@@ -20,13 +20,13 @@ Este artigo apresenta os ganchos do ciclo de vida na ordem de sua execução (se
 
 Todos os métodos de ciclo de vida estão disponíveis em `@angular/core` . Embora não seja obrigatório, a Angular [recomenda implementar todos os ganchos](https://angular.io/guide/lifecycle-hooks#interfaces-are-optional-technically) . Essa prática leva a melhores mensagens de erro em relação ao componente.
 
-### Em ordem de execução ...
+### Em ordem de execução...
 
 #### ngOnChanges
 
-`ngOnChanges` acionado após a modificação dos membros da classe ligada `@Input` . Dados ligados pelo decorador `@Input()` vêm de uma fonte externa. Quando a fonte externa altera esses dados de uma maneira detectável, ela passa pela propriedade `@Input` novamente.
+`ngOnChanges` é acionado após a modificação dos membros da classe ligada `@Input` . Dados ligados pelo decorador `@Input()` vêm de uma fonte externa. Quando a fonte externa altera esses dados de uma maneira detectável, ela passa pela propriedade `@Input` novamente.
 
-Com essa atualização, `ngOnChanges` acionado imediatamente. Também é acionado na inicialização dos dados de entrada. O gancho recebe um parâmetro opcional do tipo `SimpleChanges` . Este valor contém informações sobre as propriedades alteradas de entrada alteradas.
+Com essa atualização, `ngOnChanges` é acionado imediatamente. Também é acionado na inicialização dos dados de entrada. O gancho recebe um parâmetro opcional do tipo `SimpleChanges` . Este valor contém informações sobre as propriedades de entrada alteradas.
 
 ```typescript
 import { Component, Input, OnChanges } from '@angular/core'; 
@@ -66,11 +66,11 @@ import { Component, Input, OnChanges } from '@angular/core';
  } 
 ```
 
-**Resumo:** ParentComponent associa dados de entrada ao ChildComponent. O componente recebe esses dados por meio de sua propriedade `@Input` . `ngOnChanges` acionado. Após cinco segundos, o retorno de chamada `setTimeout` acionado. ParentComponent modifica a fonte de dados da propriedade vinculada a entrada do ChildComponent. Os novos dados fluem através da propriedade de entrada. `ngOnChanges` acionado novamente.
+**Resumo:** ParentComponent associa dados de entrada ao ChildComponent. O componente recebe esses dados por meio de sua propriedade `@Input` . `ngOnChanges` é acionado. Após cinco segundos, o retorno de chamada `setTimeout` é acionado. ParentComponent modifica a fonte de dados da propriedade vinculada a entrada do ChildComponent. Os novos dados fluem através da propriedade de entrada. `ngOnChanges` é acionado novamente.
 
 #### ngOnInit
 
-`ngOnInit` acionado uma vez na inicialização das propriedades de entrada de dados ( `@Input` ) de um componente. O próximo exemplo será semelhante ao último. O gancho não dispara quando o ChildComponent recebe os dados de entrada. Em vez disso, ele é acionado logo após o processamento dos dados no modelo ChildComponent.
+`ngOnInit` é acionado uma vez na inicialização das propriedades de entrada de dados ( `@Input` ) de um componente. O próximo exemplo será semelhante ao último. O gancho não dispara quando o ChildComponent recebe os dados de entrada. Em vez disso, ele é acionado logo após o processamento dos dados no modelo ChildComponent.
 
 ```typescript
 import { Component, Input, OnInit } from '@angular/core'; 
@@ -110,13 +110,13 @@ import { Component, Input, OnInit } from '@angular/core';
  } 
 ```
 
-**Resumo:** ParentComponent associa dados de entrada ao ChildComponent. ChildComponent recebe esses dados por meio de sua propriedade `@Input` . Os dados são renderizados no modelo. `ngOnInit` acionado. Após cinco segundos, o retorno de chamada `setTimeout` acionado. ParentComponent modifica a fonte de dados da propriedade vinculada a entrada do ChildComponent. ngOnInit **NÃO FOGO** .
+**Resumo:** ParentComponent associa dados de entrada ao ChildComponent. ChildComponent recebe esses dados por meio de sua propriedade `@Input` . Os dados são renderizados no modelo. `ngOnInit` é acionado. Após cinco segundos, o retorno de chamada `setTimeout` é acionado. ParentComponent modifica a fonte de dados da propriedade vinculada a entrada do ChildComponent. ngOnInit **NÃO É ACIONADO** .
 
 `ngOnInit` é um gancho de um e pronto. Inicialização é sua única preocupação.
 
 #### ngDoCheck
 
-`ngDoCheck` acionado a cada ciclo de detecção de alterações. Angular executa a detecção de alterações com freqüência. Realizar qualquer ação fará com que ela faça o ciclo. `ngDoCheck` dispara com esses ciclos. Use com cautela. Pode criar problemas de desempenho quando implementado incorretamente.
+`ngDoCheck` é acionado a cada ciclo de detecção de alterações. Angular executa a detecção de alterações com freqüência. Realizar qualquer ação fará com que ela faça o ciclo. `ngDoCheck` dispara com esses ciclos. Use com cautela. Pode criar problemas de desempenho quando implementado incorretamente.
 
 `ngDoCheck` permite que os desenvolvedores verifiquem seus dados manualmente. Eles podem acionar uma nova data de aplicação condicionalmente. Em conjunto com o `ChangeDetectorRef` , os desenvolvedores podem criar suas próprias verificações para detecção de alterações.
 
@@ -133,14 +133,14 @@ import { Component, DoCheck, ChangeDetectorRef } from '@angular/core';
  export class ExampleComponent implements DoCheck { 
   lifecycleTicks: number = 0; 
   oldTheData: string; 
-  data: string[] = ['initial']; 
+  data: string[] = ['inicial']; 
  
   constructor(private changeDetector: ChangeDetectorRef) { 
-    this.changeDetector.detach(); // lets the class perform its own change detection 
+    this.changeDetector.detach(); // permite que a classe faça sua própria detecção de alterações
  
     setTimeout(() => { 
-      this.oldTheData = 'final'; // intentional error 
-      this.data.push('intermediate'); 
+      this.oldTheData = 'final'; // erro intencional
+      this.data.push('intermediário'); 
     }, 3000); 
  
     setTimeout(() => { 
@@ -161,7 +161,7 @@ import { Component, DoCheck, ChangeDetectorRef } from '@angular/core';
 
 Preste atenção ao console versus o display. Os dados progridem até 'intermediário' antes do congelamento. Três rodadas de detecção de alterações ocorrem durante esse período, conforme indicado no console. Mais uma rodada de detecção de mudanças ocorre quando a 'final' é empurrada para o final desse `this.data` . Uma última rodada de detecção de alterações ocorre. A avaliação da instrução if determina que não são necessárias atualizações na visualização.
 
-**Resumo: A** classe instancia após dois ciclos de detecção de alterações. O construtor de classe inicia o `setTimeout` duas vezes. Após três segundos, o primeiro `setTimeout` aciona a detecção de alterações. `ngDoCheck` marca a exibição de uma atualização. Três segundos depois, o segundo `setTimeout` aciona a detecção de alterações. Nenhuma atualização de vista é necessária de acordo com a avaliação do `ngDoCheck` .
+**Resumo:** A classe instancia após dois ciclos de detecção de alterações. O construtor de classe inicia o `setTimeout` duas vezes. Após três segundos, o primeiro `setTimeout` aciona a detecção de alterações. `ngDoCheck` marca a exibição de uma atualização. Três segundos depois, o segundo `setTimeout` aciona a detecção de alterações. Nenhuma atualização de vista é necessária de acordo com a avaliação do `ngDoCheck` .
 
 ##### Aviso
 
@@ -171,7 +171,7 @@ O conteúdo DOM define o innerHTML dos elementos da diretiva. Por outro lado, a 
 
 #### ngAfterContentInit
 
-`ngAfterContentInit` acionado depois que o DOM do conteúdo do componente é inicializado (carrega pela primeira vez). Esperar em `@ContentChild(ren)` é o caso de uso principal do gancho.
+`ngAfterContentInit` é acionado depois que o DOM do conteúdo do componente é inicializado (carrega pela primeira vez). Esperar em `@ContentChild(ren)` é o caso de uso principal do gancho.
 
 `@ContentChild(ren)` produzem referências de elemento para o conteúdo DOM. Como tal, eles não estão disponíveis até depois do carregamento do conteúdo DOM. Daí porque `ngAfterContentInit` e sua contraparte `ngAfterContentChecked` são usados.
 
@@ -224,13 +224,13 @@ import { Component, ContentChild, AfterContentInit, ElementRef, Renderer2 } from
 
 Os resultados da consulta `@ContentChild` estão disponíveis em `ngAfterContentInit` . `Renderer2` atualiza o conteúdo DOM de BComponent contendo uma tag `h3` e CComponent. Este é um exemplo comum de [projeção](https://alligator.io/angular/content-projection-angular) de [conteúdo](https://alligator.io/angular/content-projection-angular) .
 
-**Resumo: a** renderização começa com AComponent. Para terminar, AComponent deve renderizar o BComponent. BComponent projeta conteúdo aninhado em seu elemento através do elemento `<ng-content></ng-content>` . CComponent faz parte do conteúdo projetado. O conteúdo projetado termina a renderização. `ngAfterContentInit` acionado. O BComponent finaliza a renderização. AComponent finaliza a renderização. `ngAfterContentInit` não será disparado novamente.
+**Resumo:** a renderização começa com AComponent. Para terminar, AComponent deve renderizar o BComponent. BComponent projeta conteúdo aninhado em seu elemento através do elemento `<ng-content></ng-content>` . CComponent faz parte do conteúdo projetado. O conteúdo projetado termina a renderização. `ngAfterContentInit` é acionado. O BComponent finaliza a renderização. AComponent finaliza a renderização. `ngAfterContentInit` não será disparado novamente.
 
 #### ngAfterContentChecked
 
-`ngAfterContentChecked` acionado após cada ciclo de detecção de alterações visando o conteúdo DOM. Isso permite que os desenvolvedores facilitem como o conteúdo DOM reage para alterar a detecção. `ngAfterContentChecked` pode disparar com freqüência e causar problemas de desempenho se for mal implementado.
+`ngAfterContentChecked` é acionado após cada ciclo de detecção de alterações visando o conteúdo DOM. Isso permite que os desenvolvedores facilitem como o conteúdo DOM reage para alterar a detecção. `ngAfterContentChecked` pode disparar com freqüência e causar problemas de desempenho se for mal implementado.
 
-`ngAfterContentChecked` acionado durante os estágios de inicialização de um componente também. Ele vem logo após o `ngAfterContentInit` .
+`ngAfterContentChecked` é acionado durante os estágios de inicialização de um componente também. Ele vem logo após o `ngAfterContentInit` .
 
 ```typescript
 import { Component, ContentChild, AfterContentChecked, ElementRef, Renderer2 } from '@angular/core'; 
@@ -285,15 +285,15 @@ import { Component, ContentChild, AfterContentChecked, ElementRef, Renderer2 } f
  export class AComponent { } 
 ```
 
-Isso dificilmente difere de `ngAfterContentInit` . Um mero `<button></button>` foi adicionado ao BComponent. Clicar nele causa um loop de detecção de alteração. Isso ativa o gancho, conforme indicado pela aleatorização da `background-color` de `background-color` .
+Isso dificilmente difere de `ngAfterContentInit`. Um mero `<button></button>` foi adicionado ao BComponent. Clicar nele causa um loop de detecção de alteração. Isso ativa o gancho, conforme indicado pela aleatorização da `background-color` de `background-color` .
 
-**Resumo: a** renderização começa com AComponent. Para terminar, AComponent deve renderizar o BComponent. BComponent projeta conteúdo aninhado em seu elemento através do elemento `<ng-content></ng-content>` . CComponent faz parte do conteúdo projetado. O conteúdo projetado termina a renderização. `ngAfterContentChecked` acionado. O BComponent finaliza a renderização. AComponent finaliza a renderização. `ngAfterContentChecked` pode disparar novamente por meio da detecção de alterações.
+**Resumo:** a renderização começa com AComponent. Para terminar, AComponent deve renderizar o BComponent. BComponent projeta conteúdo aninhado em seu elemento através do elemento `<ng-content></ng-content>` . CComponent faz parte do conteúdo projetado. O conteúdo projetado termina a renderização. `ngAfterContentChecked` é acionado. O BComponent finaliza a renderização. AComponent finaliza a renderização. `ngAfterContentChecked` pode disparar novamente por meio da detecção de alterações.
 
 #### ngAfterViewInit
 
-`ngAfterViewInit` acionado uma vez após o DOM da visualização terminar de inicializar. A vista sempre é carregada logo após o conteúdo. `ngAfterViewInit` aguarda em `@ViewChild(ren)` para resolver. Esses elementos são consultados dentro da mesma exibição do componente.
+`ngAfterViewInit` é acionado uma vez após o DOM da visualização terminar de inicializar. A vista sempre é carregada logo após o conteúdo. `ngAfterViewInit` aguarda as consultas de `@ViewChild(ren)` serem resolvidas. Esses elementos são consultados dentro da mesma exibição do componente.
 
-No exemplo abaixo, o cabeçalho `h3` do BComponent é consultado. `ngAfterViewInit` executado assim que os resultados da consulta estiverem disponíveis.
+No exemplo abaixo, o cabeçalho `h3` do BComponent é consultado. `ngAfterViewInit` é executado assim que os resultados da consulta estiverem disponíveis.
 
 ```typescript
 import { Component, ViewChild, AfterViewInit, ElementRef, Renderer2 } from '@angular/core'; 
@@ -340,11 +340,11 @@ import { Component, ViewChild, AfterViewInit, ElementRef, Renderer2 } from '@ang
 
 `Renderer2` altera a cor do plano de fundo do cabeçalho do BComponent. Isso indica que o elemento view foi consultado com sucesso graças ao `ngAfterViewInit` .
 
-**Resumo: a** renderização começa com AComponent. Para terminar, AComponent deve renderizar o BComponent. BComponent projeta conteúdo aninhado em seu elemento através do elemento `<ng-content></ng-content>` . CComponent faz parte do conteúdo projetado. O conteúdo projetado termina a renderização. O BComponent finaliza a renderização. `ngAfterViewInit` acionado. AComponent finaliza a renderização. `ngAfterViewInit` não será disparado novamente.
+**Resumo:** a renderização começa com AComponent. Para terminar, AComponent deve renderizar o BComponent. BComponent projeta conteúdo aninhado em seu elemento através do elemento `<ng-content></ng-content>` . CComponent faz parte do conteúdo projetado. O conteúdo projetado termina a renderização. O BComponent finaliza a renderização. `ngAfterViewInit` é acionado. AComponent finaliza a renderização. `ngAfterViewInit` não será disparado novamente.
 
 #### ngAfterViewChecked
 
-`ngAfterViewChecked` acionado após qualquer ciclo de detecção de mudança que tenha como alvo a exibição do componente. O gancho `ngAfterViewChecked` permite que os desenvolvedores facilitem como a detecção de alterações afeta a visão DOM.
+`ngAfterViewChecked` é acionado após qualquer ciclo de detecção de mudança que tenha como alvo a exibição do componente. O gancho `ngAfterViewChecked` permite que os desenvolvedores facilitem como a detecção de alterações afeta a visão DOM.
 
 ```typescript
 import { Component, ViewChild, AfterViewChecked, ElementRef, Renderer2 } from '@angular/core'; 
@@ -396,13 +396,13 @@ import { Component, ViewChild, AfterViewChecked, ElementRef, Renderer2 } from '@
  export class AComponent { } 
 ```
 
-**Resumo: a** renderização começa com AComponent. Para terminar, AComponent deve renderizar o BComponent. BComponent projeta conteúdo aninhado em seu elemento através do elemento `<ng-content></ng-content>` . CComponent faz parte do conteúdo projetado. O conteúdo projetado termina a renderização. O BComponent finaliza a renderização. `ngAfterViewChecked` acionado. AComponent finaliza a renderização. `ngAfterViewChecked` pode disparar novamente por meio da detecção de alterações.
+**Resumo:** a renderização começa com AComponent. Para terminar, AComponent deve renderizar o BComponent. BComponent projeta conteúdo aninhado em seu elemento através do elemento `<ng-content></ng-content>`. CComponent faz parte do conteúdo projetado. O conteúdo projetado termina a renderização. O BComponent finaliza a renderização. `ngAfterViewChecked` é acionado. AComponent finaliza a renderização. `ngAfterViewChecked` pode disparar novamente por meio da detecção de alterações.
 
-Clicar no elemento `<button></button>` inicia uma rodada de detecção de alterações. `ngAfterContentChecked` dispara e randomiza a `background-color` de `background-color` dos elementos consultados em cada clique de botão.
+Clicar no elemento `<button></button>` inicia uma rodada de detecção de alterações. `ngAfterContentChecked` dispara e randomiza a `background-color` dos elementos consultados em cada clique de botão.
 
 #### ngOnDestroy
 
-`ngOnDestroy` acionado na remoção de um componente da view e do DOM subseqüente. Esse gancho fornece uma chance de limpar qualquer extremidade solta antes da exclusão de um componente.
+`ngOnDestroy` é acionado na remoção de um componente da view e do DOM subseqüente. Esse gancho fornece uma chance de limpar qualquer extremidade solta antes da exclusão de um componente.
 
 ```typescript
 import { Directive, Component, OnDestroy } from '@angular/core'; 
@@ -433,7 +433,7 @@ import { Directive, Component, OnDestroy } from '@angular/core';
  } 
 ```
 
-**Resumo:** o botão é clicado. O membro `destroy` do ExampleComponent alterna false. A diretiva estrutural `*ngIf` avaliada como falsa. `ngOnDestroy` acionado. `*ngIf` remove seu host `<p></p>` . Esse processo é repetido várias vezes clicando no botão para alternar o `destroy` para false.
+**Resumo:** o botão é clicado. O membro `destroy` do ExampleComponent alterna false. A diretiva estrutural `*ngIf` avaliada como falsa. `ngOnDestroy` é acionado. `*ngIf` remove seu host `<p></p>` . Esse processo é repetido várias vezes clicando no botão para alternar o `destroy` para false.
 
 #### Conclusão
 
