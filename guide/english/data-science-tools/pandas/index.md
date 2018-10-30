@@ -50,6 +50,19 @@ A data frame can be subset in many ways. One of the simplest is getting a single
 ages=df["age"]
 ```
 
+## Subsetting: Getting multiple columns by name:
+Instead of passing only one column name inside the brackets, we will pass it an array of column names. The return value is a DataFrame.
+```python
+person_info=df[["name","age","address"]]
+```
+The `person_info` is referenced the original `df`. If you want to make it separated, simply use the `copy` method
+```python
+person_info=df[["name","age","address"]].copy()
+```
+
+
+
+
 #### More Information:
 1. [pandas](http://pandas.pydata.org/)
 2. [read_csv](http://pandas.pydata.org/pandas-docs/stable/generated/pandas.read_csv.html?highlight=read_csv#pandas.read_csv)
