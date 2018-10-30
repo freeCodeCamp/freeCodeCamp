@@ -16,7 +16,7 @@ When the condition is tested and the result is false, the loop body will be skip
 Example:
 
 ```C++
-#include <iostream>
+#include <bits/stdc++.h>
 using namespace std;
 
 int main () {
