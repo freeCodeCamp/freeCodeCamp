@@ -149,5 +149,5 @@ As an XML format, it allows you to benefit from the full power of JavaScript and
 
 ## Resources
 
-- <a href='https://www.w3.org/TR/SVG/' target='_blank' rel='nofollow'>W3C, Scalable Vector Graphics (SVG) 1.1 (Second Edition)</a>
-- <a href='https://developer.mozilla.org/en-US/docs/Web/SVG' target='_blank' rel='nofollow'>Mozilla Developer Network, SVG</a>
+* [W3C, Scalable Vector Graphics (SVG) 1.1 (Second Edition)](https://www.w3.org/TR/SVG/)
+* [Mozilla Developer Network, SVG](https://developer.mozilla.org/en-US/docs/Web/SVG)
