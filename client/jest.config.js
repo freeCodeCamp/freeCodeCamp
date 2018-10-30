@@ -13,6 +13,7 @@ module.exports = {
     __PATH_PREFIX__: ''
   },
   verbose: true,
+  testURL: "http://localhost/",
   transform: {
     '^.+\\.js$': '<rootDir>/jest.transform.js'
   },
