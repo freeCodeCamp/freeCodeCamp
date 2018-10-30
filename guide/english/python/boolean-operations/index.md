@@ -1,7 +1,7 @@
 ---
 title: Python Boolean Operations
 ---
-<a href='https://docs.python.org/3/reference/expressions.html#and' target='_blank' rel='nofollow'>`and`</a>, <a href='https://docs.python.org/3/reference/expressions.html#or' target='_blank' rel='nofollow'>`or`</a>, <a href='https://docs.python.org/3/reference/expressions.html#not' target='_blank' rel='nofollow'>`not`</a>
+<a href='https://docs.python.org/3/reference/expressions.html#or' target='_blank' rel='nofollow'>`or`</a>, <a href='https://docs.python.org/3/reference/expressions.html#and' target='_blank' rel='nofollow'>`and`</a>, <a href='https://docs.python.org/3/reference/expressions.html#not' target='_blank' rel='nofollow'>`not`</a>
 
 <a href='https://docs.python.org/3/library/stdtypes.html#boolean-operations-and-or-not' target='_blank' rel='nofollow'>Python Docs - Boolean Operations</a>
 
@@ -21,12 +21,14 @@ not x | if x is false, then True, else False | (3)
 
 ## Examples:
 
-### `not`:
+### `or`:
 
-    >>> not True
-    False
-    >>> not False
+    >>> True or False    # Short-circuited at first argument.
     True
+    >>> False or True    # Second argument is evaluated.
+    True
+    >>> False or False   # Second argument is evaluated.
+    False
 
 ### `and`:
 
@@ -36,12 +38,10 @@ not x | if x is false, then True, else False | (3)
     False
     >>> True and True     # Second argument is evaluated.
     True
+    
+### `not`:
 
-### `or`:
-
-    >>> True or False    # Short-circuited at first argument.
-    True
-    >>> False or True    # Second argument is evaluated.
-    True
-    >>> False or False   # Second argument is evaluated.
+    >>> not True
     False
+    >>> not False
+    True

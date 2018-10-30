@@ -27,12 +27,14 @@ When starting out with linux, there are some basic commands everyone should know
 
  7. **rm** - remove   
 - This command removes files, not directories. `rm file.txt` will remove the file named file.txt as long as it exists and is in the current directory.
+- **Warning, this command is capable of destroying entire systems, use with caution**
 
  8. **touch** - creates file   
 - The touch command is used to create a file. It can be anything, from an empty txt file to an empty zip file. 'touch new.txt' will create a new file with name new.
 
  9. **mv** - move   
 - Use the mv command to move files through the command line. We can also use the mv command to rename a file. For example, if we want to rename the file “text” to “new”, we can use 'mv text new'.
+- **Warning, this command is capable of destroying entire systems, use with caution**
 
  10. **right-click** - copy and paste  
 - This one is less of a command and more of a how-to, however, it is very useful for doing almost anything in a terminal on linux. To begin, highlight text like normal and then "right-click" on your mouse to copy a selection. You should see the highlighted portion become un-highlighted, this means you copied the selection. Now "right-click" on where you want to paste the selection and you're done. 
@@ -47,7 +49,21 @@ When starting out with linux, there are some basic commands everyone should know
 - Use `clear` to simply clear all output from your terminal.
 
  14. **cp** - copy files and directories
-- Use 'cp' to copy a file or a direcotry with files inside it to another location using command 'cp CURRENT_FILE-LOCATION DESTINATION_FOLDER'. Add '-r' flag to copy a directory that is not empty. 
+- Use `cp` to copy a file or a direcotry with files inside it to another location using command 'cp CURRENT_FILE-LOCATION DESTINATION_FOLDER'. Add '-r' flag to copy a directory that is not empty. 
+
+15. **grep** -  The grep searches any given input files, selecting lines that match one or more patterns.
+- use `grep` to find a file, a directory, some text in the file/directory.  
+**Example:**
+```sh
+ $ ps ax | grep -w login
+ 25291 s000  Ss     0:00.11 login -pf <user>
+ 25467 s000  R+     0:00.00 grep -w login
+ 25409 s004  Ss     0:00.04 login -pf <user>
+```
+
+ 15. **df -h** Checks disk space in human readable form
+- Shows the size, amount used, amount available and capacity percentage of mounted drives/partitions.
+
 
 ### Useful Resources for Practice:
 - [JSLinux](https://bellard.org/jslinux/vm.html?url=https://bellard.org/jslinux/buildroot-x86.cfg): Run the terminal inside your browser. Great for practice.
