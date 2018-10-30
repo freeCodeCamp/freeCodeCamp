@@ -4,7 +4,7 @@
 [![first-timers-only Friendly](https://img.shields.io/badge/first--timers--only-friendly-blue.svg)](http://www.firsttimersonly.com/)
 [![Known Vulnerabilities](https://snyk.io/test/github/freecodecamp/freecodecamp/badge.svg)](https://snyk.io/test/github/freecodecamp/freecodecamp)
 
-
+    
 ## Welcome to freeCodeCamp.org's open source codebase and curriculum!
 
 freeCodeCamp.org is a friendly community where you can learn to code for free. It is run by a [donor-supported 501(c)(3) nonprofit](https://donate.freecodecamp.org) with the goal of helping millions of busy adults transition into tech. Our community has already helped more than 10,000 people get their first developer job.
@@ -133,7 +133,7 @@ Please don't create GitHub issues for security issues. Instead, please send an e
 #### [Please follow these steps to contribute.](CONTRIBUTING.md)
 
 ### License
-
+###
 Copyright © 2018 freeCodeCamp.org
 
 The content of this repository is bound by the following licenses:
