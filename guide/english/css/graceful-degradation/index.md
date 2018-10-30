@@ -27,8 +27,6 @@ title: Graceful Degradation
 
 [Online HTML beautifier](https://www.10bestdesign.com/dirtymarkup/)
 
-[W3C CSS validator](http://jigsaw.w3.org/css-validator/)
-
-[Online CSS linter](http://csslint.net/)
+[W3C CSS validator](https://jigsaw.w3.org/css-validator/)
 
 [MDN - Graceful degradation](https://developer.mozilla.org/en-US/docs/Glossary/Graceful_degradation)
