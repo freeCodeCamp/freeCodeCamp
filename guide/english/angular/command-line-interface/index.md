@@ -6,7 +6,7 @@ title: Command-line Interface
 
 #### Motivation
 
-Angular is closely associated with its command-line interface (CLI). The CLI streamlines generation of the Angular file system. It deals with most of the configuration behind the scenes so developers can start coding. The CLI also has a low learning curve recommendable for any newcomer wanting to jump right in. Heck, even experienced Angular developers rely on the CLI!
+Angular is closely associated with its command-line interface (CLI). The CLI streamlines generation of the Angular file system. It deals with most of the configuration behind the scenes so developers can start coding. The CLI also has a low learning curve recommendable for any newcomer wanting to jump right in. Heck, even experienced Angular developers rely on the CLI! Its really a great way to use CLI.
 
 #### Installation
 
