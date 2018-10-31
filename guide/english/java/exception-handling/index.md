@@ -32,3 +32,9 @@ finally {
 // block of code to be executed after try block ends
 }
 ```
+## Exception Hierarchy 
+
+All exception and errors types are sub classes of a class called Throwable, which is the base class of hierarchy.
+One branch is headed by the Exception class. This class is used for exceptional conditions that user programs should catch(find out). NullPointerException is an example of such an exception.
+Another branch,Error are used by the Java run-time system(JVM) to indicate errors having to do with the run-time environment itself(JRE). 
+StackOverflowError is an example of such an error.
