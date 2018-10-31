@@ -35,6 +35,13 @@ This full-color book will show you how to make your websites more interactive an
 
 - [Amazon](https://www.amazon.com/JavaScript-JQuery-Interactive-Front-End-Development/dp/1118531647)
 
+#### How Javascript Works
+
+- "Douglas Crockford starts by looking at the fundamentals: names, numbers, booleans, characters, and bottom values. JavaScript’s number type is shown to be faulty and limiting, but then Crockford shows how to repair those problems." - Amazon.com
+- [Amazon] (https://www.amazon.com/How-JavaScript-Works-Douglas-Crockford/dp/1949815005/)
+
+
+
 
 #### Other Resources
 
