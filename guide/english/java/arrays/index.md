@@ -18,7 +18,10 @@ Here, ```java datatype[] ``` describes that all the variables stated after it wi
 ```java
 dataType arrayName[];  //  works but not preferred way
 ```
-Here, ```java datatype``` describes only that the variables stated after it belong to that datatype. Besides, ```java []``` after the variable name describes that the variable is an array of the specified datatype (not just a value or object of that datatype). So, if we want to instantiate more arrays of the similar datatype, we will add the variables names just after the one already specified, separated by commas and each time we will have to add ```java []``` after the variable name otherwise the variable will be instantiated as an ordinary value-storing variable (not an array). For better understanding an example is given in the next section.
+Here, ```java datatype``` describes only that the variables stated after it belong to that datatype. Besides, ```java []``` after the variable name describes that the variable is an array of the specified datatype (not just a value or object of that datatype). So, if we want to instantiate more arrays of the similar datatype, we will add the variables names just after the one already specified, separated by commas and each time we will have to add ```java []``` after the variable name otherwise the variable will be instantiated as an ordinary value-storing variable (not an array). 
+Array is also called referenced variable. Since, array could store many variables and so cannot be stored at the place where a normal primitive variable is stored. Therefore, object of array (actual array variable is stored somewhere else) is made which stores the data of location or simply the reference of actual arrays. Thus, when we declare an array then it is stored at some place in the harddisk and when its object is made its location is stored in it. 
+
+For better understanding an example is given in the next section.
 
 ## Code snippets of above syntax:
 
