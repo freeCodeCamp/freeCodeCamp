@@ -234,7 +234,7 @@ printf("%.1lf / %.1lf = %.1lf",firstNumber, secondNumber, firstNumber/firstNumbe
 Finally, the break statement ends the switch statement.
 
 If break statement is not used, all cases after the correct case is executed. 
-## finding the Bigger among two numbers using if else statement.
+## Finding the bigger one among two numbers using if-else statements.
 ```C
 int a,b;
 printf("Enter the first number: \n");
