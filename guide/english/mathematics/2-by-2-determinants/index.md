@@ -29,6 +29,7 @@ Note: If the determinant equals zero, there are no solutions (intersections) to 
 #### More Information:
 - [Determinant of a Matrix](https://github.com/freeCodeCamp/guides/blob/master/src/pages/mathematics/determinant-of-a-matrix/index.md "Determinant of a Matrix")
 - [Wikipedia: 2x2 Determinant](https://en.wikipedia.org/wiki/Determinant#2_.C3.97_2_matrices)
+- [inverse of matrix](https://www.mathsisfun.com/algebra/matrix-inverse.html)
 
 
 ![img](https://ncalculators.com/images/formulas/2x2-matrix-determinant.jpg)
