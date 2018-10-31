@@ -13,6 +13,8 @@ Los operadores de asignación, como su nombre indica, asignan (o reasignan) valo
 `=` | Operador de asignación | Necesario  
 `y` | Valor a asignar a la variable | Necesario
 
+Es así que en el lado izquierdo siempre se declara la variable, el signo `=` determina la asignación y en el lado derecho, por último, se define el valor que se le dará a la variable. 
+
 ## Ejemplos
 ```
 let initialVar = 5;   // Variable initialization requires the use of an assignment operator 
