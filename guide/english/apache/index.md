@@ -21,3 +21,22 @@ sudo yum install httpd
 ```
 pacman -S apache
 ```
+#### On Windows
++ Navigate [here](http://httpd.apache.org/download.cgi) to download the latest version of Apache HTTP Server.
++ Download the latest stable version.
++ unzip the file downloaded file in to a folder.
++ Open a command prompt as Administrato.
++ Now navigate unzipped folder then bin folder(eg., C:\Apache\bin).
++ Run the command **httpd.exe -k install -n "Apache HTTP Server"**  to add Apache as a  Windows Service
++ Navigate to Windows Services and start **Apache HTTP Server**.
++ Open a browser and type machine **IPaddress** and hit enter.  
+
+
+
+
+
+
+
+
+
+
