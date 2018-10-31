@@ -25,6 +25,8 @@ JavaScript has both **strict** and **type–converting** comparisons.
 
 *   Null and Undefined Types are strictly equal to themselves and abstractly equal to each other.
 
+*   Multiple Comparison Operators can be used in conjuction with one another usering Logical Operators such as and (&&) & or (||). Please see the Logical Opertator section for more details.
+
 ## Equality operators
 
 ### Equality (==)
