@@ -3,7 +3,7 @@ title: Animation
 ---
 ## Animation in Canvas
 
-To animate things in `canvas`, use `window.requestAnimationFrame` to set up a draw loop.
+To animate things in the `canvas`, use `window.requestAnimationFrame` to set up a draw loop.
 
 ```js
 function draw() {
