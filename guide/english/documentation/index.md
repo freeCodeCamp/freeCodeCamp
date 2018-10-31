@@ -25,4 +25,3 @@ Many developers have probably learned that it is much harder to go back through 
 
 *[Medium Article "The Good, The Bad, The Ugly"](https://medium.freecodecamp.org/code-comments-the-good-the-bad-and-the-ugly-be9cc65fbf83)
 
-*[Medium Article about how to document source code](https://medium.com/@andrewgoldis/how-to-document-source-code-responsibly-2b2f303aa525)
