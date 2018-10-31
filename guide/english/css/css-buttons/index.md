@@ -4,7 +4,7 @@ title: CSS Buttons
 ## CSS Buttons
 
 CSS Buttons are a great way to add functional design features to your page.
-
+They are used widely and are very easy to use.
 * You can style any clickable button (HTML `<button>` element)
 
 `<button>Click Me</button>`
