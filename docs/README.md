@@ -37,6 +37,7 @@ This directory contains all of the documentation on contributing to freeCodeCamp
 ## Quick commands reference when working locally
 
 A quick reference to the commands that you will need, when working locally.
+//change smt
 
 | command | description |
 | ------- | ----------- |
