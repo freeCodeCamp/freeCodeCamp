@@ -14,22 +14,22 @@ O Google lançou a versão inicial do AngularJS em 20 de outubro de 2010. A libe
 
 Após algumas modificações, o Angular 4.0 foi lançado em dezembro de 2016. Angular 4 é retrocompatível com o Angular 2.0. A biblioteca HttpClient é uma das características do Angular 4.0. O lançamento do Angular 5 ocorreu em 1º de novembro de 2017. O suporte para aplicativos da Web progressivos foi um dos aprimoramentos no Angular 5.0. O lançamento do Angular 6 foi em maio de 2018. A última versão estável é a [6.1.9](https://blog.angular.io/angular-v6-1-now-available-typescript-2-9-scroll-positioning-and-more-9f1c03007bb6)
 
-**Instalar** :
+**Instalação**:
 
 Podemos adicionar o Angular consultando as fontes disponíveis ou baixando o framework.
 
-**Link para a fonte** :
+**Link para a fonte**:
 
-AngularJS: Podemos adicionar AngularJS (versões Angular 1.x) referenciando a Content Delivery Network do Google.
+AngularJS: Podemos adicionar o AngularJS (versões Angular 1.x) referenciando a Content Delivery Network do Google.
 
 ```html
 
 <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular.min.js"></script> 
 ```
 
-Download / install: Podemos baixar o framework com npm, Bower ou compositor
+Download / install: Podemos baixar o framework com npm, Bower ou compositor.
 
-**Angular 1.x** :
+**Angular 1.x**:
 
 npm
 
