@@ -166,3 +166,4 @@ import { Pipe, PipeTransform } from '@angular/core';
 *   [Angular GitHub存储库](https://github.com/angular/angular)
 *   [用Angular预包装的管道列表](https://angular.io/api?query=pipe)
 *   [角度CLI](https://cli.angular.io)
+
