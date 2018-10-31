@@ -9,7 +9,13 @@ For example, if you happen to pass along your code to an absolute beginner, they
 
 It is a good idea to make a habit out of commenting your functions, loops, and declarations and treating comments as part of the source code.
 
-Many developers have probably learned that it is much harder to go back through your code and comment it after you finish. It's always a good idea to label and comment your code as you go, so that you don't forget or mix up what certain variables or functions do.
+Many developers have probably learned that it is much harder to go back through your code and comment it after you finish. It's always a good idea to label and comment your code as you go, so that you don't forget or mix up what certain variables or functions do.BB
+
+### Coding Beginners
+
+Even if you are sure that no one will be following your code but yourself, documentation is still important. When coding a project, you may have a great idea and begin to code but get distracted. Documenting can help you pick back up where you left off. Additionally, if you need to make changes at a later time, you won't be asking yourself why you created a particular block of code.
+
+Documenting can also help beginners to coding keep their projects organized. If edits are needed well documented code makes it much easier to locate and adjust a project.
 
 ![An example of commenting in the real world](https://cdn-images-1.medium.com/max/1620/1*Pyxsc7Uixbitv5myywaA_Q.jpeg)
 
