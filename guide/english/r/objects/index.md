@@ -31,7 +31,9 @@ follows the arrow.
 
 3. You can name an object in R almost anything you want, but there are a few rules. First,
 a name cannot start with a number. 
-Second, a name cannot use some special symbols, like  `^,  !,  $,  @,  +,  -,  /, or  *`:
+Second, a name cannot use some special symbols, like  `^,  !,  $,  @,  +,  -,  /, or  *`. 
+
+While following best practice naming conventions is recommended, if an R object name is found with one of the special symbols, it can be selected by using \`\`.
 
 4. R also understands capitalization (or is case-sensitive), so name and Name will refer to different objects.
 
