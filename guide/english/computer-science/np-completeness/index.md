@@ -1,7 +1,7 @@
 ---
-title: Np Completeness
+title: NP Completeness
 ---
-## Np Completeness
+## NP Completeness
 
 NP-Complete is a property of certain types of problems. If a problem is NP-Complete, it means that there is no efficient (polynomial) algorithm to find a solution to it quickly. However, if a solution is given to us, we can quickly (in polynomial time) verify that it is correct.
 

@@ -69,3 +69,11 @@ Notepad++ is a free, open source code editor, that runs in the Microsoft Windows
 
 <a href='https://notepad-plus-plus.org' target='_blank' rel='nofollow'>notepad-plus-plus.org</a>
 
+### VIM
+
+![VIM Icon](https://www.vim.org/images/vim_header.gif)
+
+VIM is an advanced text editor open source tool which is also considered to be an IDE in its way. This tool allows managing your text editing activities with vim editors and UNIX System which can be used on-premise or online. It is written in C. Vim is a highly configurable text editor built to enable efficient text editing. It is an improved version of the vi editor distributed with most UNIX systems.
+
+<a href='https://www.vim.org/' target='_blank' rel='nofollow'>vim.org</a>
+
