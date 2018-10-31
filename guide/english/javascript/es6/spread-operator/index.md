@@ -5,7 +5,7 @@ title: Spread Operator
 
 The spread operator (`...`), allows to get the elements of a collection.
 
-One of the most commom uses is for `Node` Objects, when using query selectors in the browser, in order to make them iterable Array Objects:
+One of the most common uses is for `Node` Objects, when using query selectors in the browser, in order to make them iterable Array Objects:
 ```javascript
 const paragraphs = document.querySelectorAll('p.paragraph');
 const arr = [...paragraphs];
