@@ -20,15 +20,15 @@ Convertendo o número decimal 30 em binário.
  3 / 2 = 1 r 1 
  1 / 2 = 0 r 1 
  
- Writing out the remainders bottom to top gives you the bit pattern: 
+  Escrevendo os restos de baixo para cima resulta no padrão binario:
  
  11110 
  
- Checking your answer by converting the binary number back to decimal: 
+ Verificando a resposta convertendo o número binário de volta para decimal:
  
  (1*2^4)+(1*2^3)+(1*2^2)+(1*2^1)+(0*2^0) = 30 
  
- So your answer is correct. 
+ Então a sua resposta está correta. 
 ```
 
 Convertendo o número decimal 116 em binário.
@@ -41,14 +41,14 @@ Convertendo o número decimal 116 em binário.
  3 / 2 = 1 r 1 
  1 / 2 = 0 r 1 
  
- Writing out the remainders bottom to top gives you the bit pattern: 
+  Escrevendo os restos de baixo para cima resulta no padrão binario:
  
  1110100 
  
- Checking your answer by converting the binary number back to decimal: 
+ Verificando a resposta convertendo o número binário de volta para decimal:
  
  (1*2^6)+(1*2^5)+(1*2^4)+(0*2^3)+(1*2^2)+(0*2^1)+(0*2^0) = 116 
  
- So your answer is correct. 
+ Então a sua resposta está correta.  
 
 ```
