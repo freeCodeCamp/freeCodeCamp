@@ -61,7 +61,7 @@ When starting out with linux, there are some basic commands everyone should know
  25409 s004  Ss     0:00.04 login -pf <user>
 ```
 
- 15. **df -h** Checks disk space in human readable form
+ 16. **df -h** Checks disk space in human readable form
 - Shows the size, amount used, amount available and capacity percentage of mounted drives/partitions.
 
 
