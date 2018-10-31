@@ -18,6 +18,6 @@ title: Basic HTML
 ## Explanation:
 The `<!DOCTYPE html>` is to tell the browser you want the page to be rendered using HTML5.
 
-The `<head></head>` is were you want to put things that help the browser and search engines such as `<title></title>` and `<meta>`.
+The `<head></head>` is where you want to put things that help the browser and search engines such as `<title></title>` and `<meta>`.
 
-The `<body></body>` is were the tags that will display on the page are such as `<h1></h1>` or `<p></p>`.
+The `<body></body>` is where the tags that will display on the page are such as `<h1></h1>` or `<p></p>`.
