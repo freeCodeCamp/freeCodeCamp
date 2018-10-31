@@ -36,6 +36,15 @@ img {
 }
 ```
 
+It isn't necessary, but a way to easily find properties within a selector is to write them in alphabetical order:
+```CSS
+div {
+  color: blue;
+  text-align: center;
+}
+```
+This is particularly helpful for any project with longer and more complex CSS. It is also slightly faster for a computer to render when the project isn't using a compiler.
+
 #### More Information:
 - [CSS Syntax on Code The Web](https://codetheweb.blog/2017/11/11/css-syntax/)
 - More on [CSS selectors][selector]
