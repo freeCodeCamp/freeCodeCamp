@@ -11,7 +11,7 @@ Several properties are provided by CSS to change the look and feel of the text. 
 ``` html
 <html>
   <body>
-    <p>This is an example of CSS text property.</p>
+    <p>This is an example of CSS text property that has been changed to red.</p>
   </body>
 </html>
 ```
