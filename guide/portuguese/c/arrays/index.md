@@ -11,7 +11,7 @@ Antes de tentar explicar quais são os arrays, vamos ver o código onde queremos
 ```C
 #include <stdio.h> 
  int main(void) { 
-    int a, b, c, d, e, f, g, i, j, k; 
+    int a, b, c, d, e, f, g, i, j, k;  //variáveis declaradas
     scanf("%d", &a); 
     scanf("%d", &b); 
     ... 
