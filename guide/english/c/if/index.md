@@ -6,6 +6,10 @@ title: If
 
 The if statement executes different blocks of code based on conditions.
 
+If the Boolean expression evaluates to true, then the block of code inside the 'if' statement will be executed. If the Boolean expression evaluates to false, then the first set of code after the end of the 'if' statement (after the closing curly brace) will be executed.
+
+C programming language assumes any non-zero and non-null values as true and if it is either zero or null, then it is assumed as false value.
+
 ```
 if (condition) {
 	// Do something when `condition` is true
