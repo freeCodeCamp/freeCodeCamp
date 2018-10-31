@@ -221,6 +221,10 @@ Consider the same example as in method 2: matrix, which we will call B:
 
 <em>det(B) = -21 - 100 + 0 - 90 - 20 - 0 = -231</em>, same, as in method 1
 
+### Some basic properties of Determinant
+1. <em>det(I) = 1 where I is n x n Identity matrix.
+2. <em>det(transpose of A) = det(A).
+3. <em>det(AB) = det(A)det(B)  
 
 #### More information:
  * [Determinant of a Matrix](https://www.mathsisfun.com/algebra/matrix-determinant.html) on MathIsFun
