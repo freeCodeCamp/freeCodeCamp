@@ -49,6 +49,17 @@ A data frame can be subset in many ways. One of the simplest is getting a single
 ```python
 ages=df["age"]
 ```
+## Some affregation functions
+
+df.mean()Returns the mean of all columns
+df.corr()Returns the correlation between columns in a data frame
+df.count()Returns the number of non-null values in each data frame column
+df.max()Returns the highest value in each column
+df.min()Returns the lowest value in each column
+df.median()Returns the median of each column
+df.std()Returns the standard deviation of each column
+
+
 
 #### More Information:
 1. [pandas](http://pandas.pydata.org/)
