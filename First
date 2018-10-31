@@ -1,0 +1,10 @@
+print("prime number upto a range as input by the user")
+x=int(input("enter the lower bound:"))
+y=int(input("enter the upper bound:"))
+for n in range(x,y+1):
+    k=0
+    for i in range(2,n//2+1):
+        if (n%i)==0:
+            k=k+1
+    if(k<=0):
+        print(n)
