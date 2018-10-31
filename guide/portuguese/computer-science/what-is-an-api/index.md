@@ -4,7 +4,7 @@ localeTitle: O que é uma API?
 ---
 ## O que é uma API?
 
-API significa Application Programming Interface. As APIs ocultam a complexidade dos desenvolvedores, estendem os sistemas aos parceiros, organizam o código e tornam os componentes reutilizáveis. Não se preocupe com o AP, apenas foque no I. Uma API é uma interface. Você usa interfaces o tempo todo. Um sistema operacional de computador é uma interface. Botões em um elevador são uma interface. Um pedal de gás em um carro é uma interface.
+API significa Application Programming Interface. As APIs ocultam a complexidade dos desenvolvedores, estendem os sistemas aos parceiros, organizam o código e tornam os componentes reutilizáveis. APIs funcionam muito bem em ajudando você criar codigo com mais facilidade e mais rapido. Não se preocupe com o AP, apenas foque no I. Uma API é uma interface. Você usa interfaces o tempo todo. Um sistema operacional de computador é uma interface. Botões em um elevador são uma interface. Um pedal de gás em um carro é uma interface.
 
 Uma interface fica no topo de um sistema complicado e simplifica certas tarefas, um intermediário que evita que você precise conhecer todos os detalhes do que está acontecendo sob o capô. Uma API da web é o mesmo tipo de coisa. Ele fica no topo de um serviço da web, como o Twitter ou o YouTube, e simplifica certas tarefas para você. Ele traduz suas ações em detalhes técnicos para o sistema de computador na outra extremidade.
 
