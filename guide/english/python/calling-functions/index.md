@@ -35,6 +35,21 @@ The actual parameters (arguments) to a function call are introduced in the local
     Hello Bob
     >>> person                  # person used to call remains bound to original object, 'Bob'.
     'Bob'
+    
+Function calling itself is called recursive function. 
+
+    #This function is to get the factorial of a number.
+    #Code written in standard form.
+    
+    def fact(num):
+        if num==1:
+            return 1
+        else:
+            return num*fact(num-1).
+            
+    x=input("Enter the number")
+    print(fact(x))
+
 
 The arguments used to call a function cannot be reassigned by the function, but arguments that reference mutable objects can have their values changed:
 
