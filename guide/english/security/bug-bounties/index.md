@@ -4,7 +4,7 @@ title: Bug Bounties
 
 ## Bug Bounties
 
-Bug bounties are programs that are set up by companies to encourage people to check their products for vulnerabilities.  In return these companies offer cash prizes for the discovered vulnerabilities.
+Bug bounties are programs that are set up by companies to encourage people to check their products for vulnerabilities.  In return these companies can offer cash prizes for the discovered vulnerabilities. Many companies have stringent requirements as to which discovered vulnerability would be considered for a cash prize. It's important to understand the limitations and rules for each organization prior to doing any bug hunting.
 
 ### Benefits to bounty hunters
 
