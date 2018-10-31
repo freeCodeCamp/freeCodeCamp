@@ -3,11 +3,14 @@ title: Erlang
 ---
 ## Erlang
 
-Erlang is a functional programming language, developed by Ericsson for use in telecom applications. Because they felt that it's unacceptable for a telecom system to have any significant downtime, Erlang was built to be (among other things):
+Erlang is a concurrent functional programming language developed by Ericsson for use in telecom applications. Because they felt that it was unacceptable for a telecom system to have any significant downtime, Erlang was built to be (among other things):
 
 * distributed and fault-tolerant _(a piece of failing software or hardware should not bring the system down)_
 * concurrent _(it can spawn many processes, each executing a small and well-defined piece of work, and isolated from one another but able to communicate via messaging)_
 * hot-swappable _(code can be swapped into the system while it's running, leading to high availability and minimal system downtime)_
+
+Erlang has been in development since 1986.  It became Open Source in 1998 and is available today under the Apache Licence 2.0.
+
 
 ### Syntax
 
