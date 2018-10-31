@@ -8,6 +8,7 @@ title: If-Else Statement
 * In the simple If statement, if the value of the test expression is false, then we skip the code of block and continue with our next statement.
 * But many times, we want to execute certain steps if the value of test expression is false.
 * In such cases, we use the if-else statement.
+* The major difference between loop and if-else is that the later one is used for decision making and the earlier one is used as multiple round decision making.
 
 ### General Form of If-Else Statement
 
