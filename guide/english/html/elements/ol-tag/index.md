@@ -21,7 +21,7 @@ The `<ol>` tag creates an ordered list element in HTML. An ordered list is one o
 
 ### Ordered vs. Unordered Lists
 
-In HTML, ordered and unordered lists are similar in both usage and styling. Use ordered lists in places where changing the order of the items would change the meaning of the list. For example, an ordered list could be used for a recipe, where changing the order of the steps would matter. Use unordered lists for groups of items without meaningful order. A list of animals on a farm could go in an unordered list.
+In HTML, `ordered and unordered lists are similar` in both usage and styling. Use ordered lists in places where changing the order of the items would change the meaning of the list. For example, an ordered list could be used for a recipe, where changing the order of the steps would matter. Use unordered lists for groups of items without meaningful order. A list of animals on a farm could go in an unordered list.
 
 #### More Information:
 <!-- Please add any articles you think might be helpful to read before writing the article -->
