@@ -41,7 +41,7 @@ False Condition:
 The instance of operator is used for type checking. It can be used to test if an object is an instance of a class, a subclass or an interface. General format-
 *object **instance** of class/subclass/interface*
 
-Here is a program to illustrate instanecof operator:
+Here is a program to illustrate instanceof operator:
 ```Java
   Person obj1 = new Person();
         Person obj2 = new Boy();
