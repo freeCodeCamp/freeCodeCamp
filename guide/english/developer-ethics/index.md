@@ -7,7 +7,7 @@ Developer Ethics describes the field of ethics when applied to the behavior of s
 
 According to <a href='http://www.iep.utm.edu/ethics/' target='_blank' rel='nofollow'>The Internet Encyclopedia of Philosophy</a>, the field of ethics (or moral philosophy) involves "systematizing, defending, and recommending concepts of right and wrong." 
 
-Over the years, a number of organizations and individuals have attempted to codify developer ethics into a variety of oaths, pledges, and codes of conduct. 
+Over the years, a number of organizations and individuals have attempted to codify developer ethics into a variety of oaths, pledges and codes of conduct. 
 
 Examples include:
 
