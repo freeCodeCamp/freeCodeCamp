@@ -4,7 +4,7 @@ localeTitle: Azur
 ---
 ## Microsoft Azure
 
-Microsoft Azure es la oferta de nube pública de Microsoft que permite a las personas y organizaciones crear, implementar y operar servicios de infraestructura y aplicaciones basadas en la nube. La plataforma de nube pública de Microsoft Azure ofrece servicios IaaS, PaaS y SaaS a organizaciones de todo el mundo y es compatible con muchos lenguajes de programación, herramientas y marcos diferentes, incluidos software y sistemas de Microsoft específicos y de terceros.
+Microsoft Azure es la oferta de nube pública de Microsoft que permite a las personas y organizaciones crear, implementar y operar servicios de infraestructura y aplicaciones basadas en la nube. La plataforma de nube pública de Microsoft Azure ofrece servicios IaaS, PaaS y SaaS a organizaciones de todo el mundo y es compatible con muchos lenguajes de programación, herramientas y marcos diferentes, incluyendo software y sistemas de Microsoft específicos y de terceros.
 
 Microsoft Azure también se puede usar junto con varias soluciones de Microsoft, como Microsoft System Center, y se puede aprovechar para ampliar el centro de datos actual de una organización a una nube híbrida que expande la capacidad y proporciona capacidades más allá de lo que podría ofrecerse únicamente desde una Premisas del punto de vista.
 
