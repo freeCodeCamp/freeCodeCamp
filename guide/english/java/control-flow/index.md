@@ -98,4 +98,6 @@ if( cash < 25 ){
 ```
 In this example, `meetFriendsAtSportsBar()` will be executed.
 
+When using a switch statement ENUMS are often used since they are constant.
+
 ![:rocket:](https://forum.freecodecamp.org/images/emoji/emoji_one/rocket.png?v=2 ":rocket:") <a href='https://repl.it/CJZi/1' target='_blank' rel='nofollow'>Run Code</a>
