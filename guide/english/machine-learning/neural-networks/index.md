@@ -8,7 +8,7 @@ An artificial neural network is a computing system. They are like biological neu
 To train a neural network, we need an input vector and a corresponding output vector.
 The training works by minimizing an error term. This error can be the squared difference between the predicted output and the original output.
 
-The basic principle which underlies the remarkable success of neural networks is 'The Universal Approximation Theorem'. It has been mathematically proven thet the neural networks are universal approximation machines which are capable of approximating any mathematical function between the given input and output.
+The basic principle which underlies the remarkable success of neural networks is 'The Universal Approximation Theorem'. It has been mathematically proven that the neural networks are universal approximation machines which are capable of approximating any mathematical function between the given input and output.
 
 Neural networks initially became popular in the 1980s, but limitations in computational power prohibited their widespread acceptance until the past decade.
 Innovations in CPU size and power allow for neural network implementation at scale, though other machine learning paradigms still outrank neural networks in terms of efficiency.
