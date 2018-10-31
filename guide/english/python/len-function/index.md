@@ -24,7 +24,18 @@ This function returns the number of elements in the argument which is passed to 
 
     dict1 = {'name': 'John', 'age': 4, 'score': 45} # dictionary
     print(len(dict1)) # prints 3 as there are 3 key and value pairs in the dict1
-
-![:rocket:](//forum.freecodecamp.com/images/emoji/emoji_one/rocket.png?v=2 ":rocket:") <a href='https://repl.it/CUmt/15' target='_blank' rel='nofollow'>Run Code</a>
-
-<a href='https://docs.python.org/3/library/functions.html#len' target='_blank' rel='nofollow'>Official Docs</a>
+    
+    
+ It is also possible to do the function of len() without using it.
+ 
+ ## Length of a string without using len()
+  
+    str=raw_input("Enter the string: ")
+    count=0
+    for i in str:
+        count+=1
+    print (count)
+    
+So  here comes the significance of len(). The entire code above can be executed just with the use of len().
+    
+<a href='https://www.programiz.com/python-programming/methods/built-in/len' >Programiz</a>
