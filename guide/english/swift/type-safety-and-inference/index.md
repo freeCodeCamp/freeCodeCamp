@@ -29,7 +29,7 @@ Swift is a "type-safe" language. This means that by design the language helps pr
 
 When a variable's type is an optional type it denotes that its value can have a value **_or_** no value at all (nil). 
 
-You declare an optional by appending a question mark at the end of the type declaration. 
+You declare an optional by appending a question mark at the end of the type declaration.
  
 ```swift
     var optionalFloat: Float?          // This is an Optional Float
