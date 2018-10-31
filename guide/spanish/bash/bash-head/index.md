@@ -4,9 +4,9 @@ localeTitle: Bash Head
 ---
 ## Bash command: head
 
-Head se utiliza para imprimir las primeras diez líneas (de forma predeterminada) o cualquier otra cantidad especificada de un archivo o archivos. Cat se utiliza para leer un archivo de forma secuencial e imprimirlo en la salida estándar. es decir, imprime todo el contenido de todo el archivo. - eso no siempre es necesario, tal vez solo desee verificar el contenido de un archivo para ver si es el correcto, o verificar que no esté vacío. El comando head le permite ver las primeras N líneas de un archivo.
+Head se utiliza para imprimir las primeras diez líneas (de forma predeterminada) o cualquier otra cantidad especificada de un archivo o archivos. Cat se utiliza para leer un archivo de forma secuencial e imprimirlo en la salida estándar. Es decir, imprime todo el contenido de todo el archivo. - eso no siempre es necesario, tal vez solo desee verificar el contenido de un archivo para ver si es el correcto, o verificar que no esté vacío. El comando head le permite ver las primeras N líneas de un archivo.
 
-si se llama a más de un archivo, se muestran las primeras diez líneas de cada archivo, a menos que se especifique un número específico de líneas. Elegir mostrar el encabezado del archivo es opcional usando la opción a continuación
+Si se llama a más de un archivo, se muestran las primeras diez líneas de cada archivo, a menos que se especifique un número específico de líneas. Elegir mostrar el encabezado del archivo es opcional usando la opción a continuación
 
 ### Uso
 
