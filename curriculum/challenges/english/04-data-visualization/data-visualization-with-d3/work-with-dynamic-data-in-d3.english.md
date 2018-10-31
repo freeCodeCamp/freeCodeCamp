@@ -82,6 +82,10 @@ tests:
 <section id='solution'>
 
 ```js
-// solution required
+// Add your code below this line
+
+.text((d) => d + " USD");
+
+// Add your code above this line
 ```
 </section>
