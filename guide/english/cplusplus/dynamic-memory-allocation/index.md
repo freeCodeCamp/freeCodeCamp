@@ -11,6 +11,10 @@ title: Dynamic Memory Allocation
 * It is possible in C to do dynamic memory allocation by using the _calloc_ and _malloc_ functions to allocate memory as needed, and then using the _free_ function to deallocate it.
 * In C++, in addition to the above C functions, there are two operators, _new_ and _delete_, for respectively performing dynamic memory allocation and deallocation.
 
+# Mechanism Memory allocated/deallocated in C++?
+*C uses malloc() and calloc() function to allocate memory dynamically at run time and uses free() function to free dynamically allocated    memory. C++ supports these functions and also has two operators new and delete that perform the task of allocating and freeing the memory in a better and easier way.
+
+
 ### NEW operator
 * The `new` operator can grant the programmer memory from the heap (if available). If the memory which the programmer asks for is available, then the `new` operator initializes the memory and returns the address (reference) of the memory allocated (otherwise an exception of type `std::bad_alloc` is thrown).
 * **Syntax**  
