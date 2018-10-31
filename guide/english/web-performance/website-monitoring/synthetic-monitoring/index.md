@@ -12,3 +12,5 @@ This is a stub. <a href='https://github.com/freecodecamp/guides/tree/master/src/
 #### More Information:
 <!-- Please add any articles you think might be helpful to read before writing the article -->
 <a href='https://en.wikipedia.org/wiki/Synthetic_monitoring' target='_blank' rel='nofollow'>Synthetic Monitoring Wikipedia Article</a>
+
+A brief and beautifully explained <a href = "https://dzone.com/articles/what-is-synthetic-monitoring-and-why-use-it"> article</a> on synthetic monitoring and its use. 
