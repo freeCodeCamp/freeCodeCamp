@@ -127,6 +127,9 @@ const jQueryScript = fs.readFileSync(
         }
 
         it('Test suite must fail on the initial contents', async function() {
+          // suppress errors in the console.
+          const oldConsoleError = console.error;
+          console.error = () => {};
           let fails = (
           await Promise.all(tests.map(async function(test) {
             try {
@@ -141,6 +144,7 @@ const jQueryScript = fs.readFileSync(
               return true;
             }
           }))).some(v => v);
+          console.error = oldConsoleError;
           assert(fails, 'Test suit does not fail on the initial contents');
         });
 
