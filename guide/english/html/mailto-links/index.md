@@ -4,7 +4,7 @@ title: Mailto Links
 
 ## Mailto Links
 
-A mailto link is a kind of hyperlink (`<a href=""></a>`) with special parameters that lets you specify additional recipients, a subject line, and/or a body text.
+A mailto link is a hyperlink (`<a href=""></a>`) with parameters that let you specify additional recipients, a subject line, and/or a body text.
 
 ### The basic syntax with a recipient is:
 
@@ -22,28 +22,27 @@ If you want to add a specific subject to that mail, be careful to add `%20` or `
 
 Similarly, you can add a specific message in the body portion of the email:
 Again, spaces have to be replaced by `%20` or `+`.
-After the subject paramater, any additional parameter must be preceded by `&`
+After the subject parameter, any additional parameter must be preceded by `&`.
 
-Example: Say you want users to send an email to their friends about their progress at Free Code Camp:
+Example: To enable a user to send an email to their friends about their progress at Free Code Camp:
 
 Address: empty
 
 Subject: Great news
 
-Body: I am becoming a developer
+Body: I am becoming a developer!
 
 Your html link now:
 ```html
 <a href="mailto:?subject=Great%20news&body=I%20am%20becoming%20a%20developer">Send mail!</a>
 ```
-Here, we've left mailto empty (mailto:?). This will open the user's email client and the user will add the recipient address themselves.
+In this instance we have left mailto empty (mailto:?) which will open the user's email client and the user will add the recipient's email address themselves.
 
 #### Adding more recipients:
+Separete each email address with a comma to add additional recipients.
 
-In the same manner, you can add CC and bcc parameters. 
-Seperate each address by a comma!
+Additional parameters, such as cc and bcc, are preceded by `&`.
 
-Additional parameters must be preceded by `&`.
 ```html
 <a href="mailto:firstfriend@something.com?subject=Great%20news&cc=secondfriend@something.com,thirdfriend@something.com&bcc=fourthfriend@something.com">Send mail!</a>
 ```
