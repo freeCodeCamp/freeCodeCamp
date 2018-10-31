@@ -49,4 +49,4 @@ modelS.charge();
 
 See here that the class `ElectricCar` inherits or `extends` the public methods from `Car` class, as well as has its own methods and properties. Cool way to pass on information!
 
-Also notice the usage of <a href='https://docs.oracle.com/javase/tutorial/java/IandI/super.html' target='_blank' rel='nofollow'>super</a> keyword here. Since our `Car` class had a constructor, so we have to initialize that constructor from the child class as well. We do that using the `super` keyword. Read more about <a>Inheritance here</a>.
+Also notice the usage of <a href='https://docs.oracle.com/javase/tutorial/java/IandI/super.html' target='_blank' rel='nofollow'>super</a> keyword here. Since our `Car` class had a constructor, so we have to initialize that constructor from the child class as well. We do that using the `super` keyword. Read more about Inheritance [here](https://github.com/freeCodeCamp/freeCodeCamp/tree/master/guide/english/java/inheritance).
