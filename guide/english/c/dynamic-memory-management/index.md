@@ -89,10 +89,10 @@ In other cases you wish to resize the amount of memory a pointer points to. For 
 The improper use of dynamic memory allocation can frequently be a source of bugs as you have seen before.
 Most common errors are:
 
-* Not checking for allocation failures
+* Not checking for allocation failures:
 Memory allocation is not guaranteed to succeed, and may instead return a null pointer. 
 Using the returned value, without checking if the allocation is successful, invokes undefined behavior. This usually leads to crash (due to the resulting segmentation fault on the null pointer dereference), but there is no guarantee that a crash will happen so relying on that can also lead to problems.
-* Memory leaks
+* Memory leaks:
 Failure to deallocate memory using `free` leads to buildup of non-reusable memory, which is no longer used by the program.
-* Logical errors
-All allocations must follow the same pattern: allocation using `malloc`, usage to store data, deallocation using `free`. If you not follow this pattern usually segmentation fault errore will be given and the program will crash. These errors can be transient and hard to debug – for example, freed memory is usually not immediately reclaimed by the system, and dangling pointers may persist for a while and appear to work.
+* Logical errors:
+All allocations must follow the same pattern: allocation using `malloc`, usage to store data, and deallocation using `free`. If you do not follow this pattern usually segmentation fault errore will be given and the program will crash. These errors can be transient and hard to debug – for example, freed memory is usually not immediately reclaimed by the system, and dangling pointers may persist for a while and appear to work.
