@@ -58,6 +58,9 @@ filtered = []
 for num in my_list:
      if num % 2 != 0:
          filtered.append(num)
+         
+
+The filter() function in Python takes in a function and a list as arguments.
 
 print(filtered)      # Python 2: print filtered
 # [1, 3, 5, 7, 9]
