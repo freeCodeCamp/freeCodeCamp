@@ -1,6 +1,7 @@
 ---
 title: Open Source
 ---
+![Open Source Logo](https://opensource.org/files/osi_logo_100X133_90ppi_0.png)
 ## Open Source
 
 Open source software is any type of software that is available to the public to use, modify, or download for free. Anyone is capable of creating an open source project.
