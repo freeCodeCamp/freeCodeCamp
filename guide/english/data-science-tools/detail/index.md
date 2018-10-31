@@ -12,7 +12,7 @@ Person who is better at statistics than any software engineer and better at soft
 ## What Skills Do You Need?
 
 Mathematics - Calculus, Linear Algebra
-Statistics - Hypothesis, Testing, Regression
+Statistics - Hypothesis, Testing, Regression, Probability
 Programming - SQL, R/Python
 Machine Learning - Supervised and Unsupervised Learning, Model Fitting
 Business/Product Intuition - Interpret and communicate results to non-technical audience
