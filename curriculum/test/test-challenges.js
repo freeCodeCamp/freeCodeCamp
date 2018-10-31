@@ -1,4 +1,5 @@
-const assert = require('chai').assert;
+const { assert, AssertionError } = require('chai');
+const Mocha = require('mocha');
 
 const { flatten } = require('lodash');
 const path = require('path');
@@ -25,6 +26,15 @@ const { validateChallenge } = require('../schema/challengeSchema');
 const { challengeTypes } = require('../../client/utils/challengeTypes');
 
 const { LOCALE: lang = 'english' } = process.env;
+
+const oldRunnerFail = Mocha.Runner.prototype.fail;
+Mocha.Runner.prototype.fail = function(test, err) {
+  // Don't show stacktrace for assertion errors.
+  if (err.stack && err instanceof AssertionError) {
+    delete err.stack;
+  }
+  return oldRunnerFail.call(this, test, err);
+};
 
 let mongoIds = new MongoIds();
 let challengeTitles = new ChallengeTitles();
