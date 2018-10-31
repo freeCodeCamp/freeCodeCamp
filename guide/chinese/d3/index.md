@@ -18,7 +18,7 @@ _D3_ \*没有引入新的视觉表现。与**Processing** ， **Raphaël**或**P
 
 ###### 入门
 
-你可以从中学到超过20,000多个**D3.js的**例子，但是你永远不知道任何给定的例子会多么平易近人！所以，问题是 - 如何从第一原理构建可视化？正如您可能已经看到的那样，D3的API非常庞大，所以我们可以提前了解一些在早期特别有用的实用工具：
+您可以从中学到超过20,000多个**D3.js的**例子，但是您永远不知道任何给定的例子会多么平易近人！所以，问题是 - 如何从第一原理构建可视化？正如您可能已经看到的那样，D3的API非常庞大，所以我们可以提前了解一些在早期特别有用的实用工具：
 
 *   **D3级**
 
@@ -56,7 +56,7 @@ _D3_ \*没有引入新的视觉表现。与**Processing** ， **Raphaël**或**P
     
 *   https://en.wikipedia.org/wiki/D3.js
     
-*   https://en.wikipedia.org/wiki/Document _对象_模型
+*   https://en.wikipedia.org/wiki/Document 
     
 *   http://blockbuilder.org/search
     
