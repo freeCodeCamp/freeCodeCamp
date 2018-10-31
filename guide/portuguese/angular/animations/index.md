@@ -6,7 +6,7 @@ localeTitle: Animações
 
 #### Motivação
 
-Os componentes da web modernos usam frequentemente animações. Folhas de estilo em cascata (CSS) armam os desenvolvedores com as ferramentas para criar animações impressionantes. Transições de propriedades, animações nomeadas com exclusividade, quadros-chave de várias partes são possíveis com CSS. As possibilidades animables são infinitas graças ao CSS.
+Os componentes da web modernos usam animações frequentemente. Folhas de estilo em cascata (CSS) armam os desenvolvedores com as ferramentas para criar animações impressionantes. Transições de propriedades, animações nomeadas com exclusividade, quadros-chave de várias partes são possíveis com CSS. As possibilidades animables são infinitas graças ao CSS.
 
 Em uma aplicação web moderna, a animação foca a atenção do usuário. Boas animações procuram orientar a atenção do usuário de maneira satisfatória e produtiva. Animações não devem ser irritantes para o usuário.
 
@@ -14,15 +14,15 @@ Animações oferecem feedback na forma de movimento. Eles mostram ao usuário qu
 
 Animações continuam a crescer mais e mais relevantes no caso de Angular. O Google desenvolve o Angular enquanto promove a filosofia de Design de Materiais. Ele incentiva interfaces de usuário concisas (UI) complementadas com feedback animado do usuário. Faz com que os aplicativos da web se sintam um tanto vivos e divertidos de usar.
 
-A comunidade Angular desenvolve uma biblioteca central de widgets chamada [Material2](https://github.com/angular/material2) . Este projeto adiciona uma variedade de módulos de widgets ao Angular. A maioria deles apresenta animações. Para entender como eles funcionam, este artigo recomenda estudar as animações CSS antes de continuar lendo.
+A comunidade Angular desenvolve uma biblioteca central de widgets chamada [Material2](https://github.com/angular/material2). Este projeto adiciona uma variedade de módulos de widgets ao Angular. A maioria deles apresenta animações. Para entender como eles funcionam, este artigo recomenda estudar as animações CSS antes de continuar lendo.
 
-Animações angulares é a versão simplificada do framework do que o CSS fornece nativamente. CSS é a tecnologia central para animações angulares que ocorrem no navegador da web. CSS está além do escopo deste artigo. É hora de enfrentar animações angulares de frente.
+Animação angular é a versão simplificada do framework do que o CSS fornece nativamente. CSS é a tecnologia central para animações angulares que ocorrem no navegador da web. CSS está além do escopo deste artigo. É hora de enfrentar animações angulares de frente.
 
 #### Configurando animações
 
-Antes de animar, o `BrowserAnimationsModule` deve incluir na matriz de importações do módulo raiz. Está disponível em `@angular/platform-browser/animations` . Este NgModule garante que as animações funcionem para a plataforma em questão. Este artigo pressupõe o navegador da Web padrão para cada exemplo.
+Antes de animar, o `BrowserAnimationsModule` deve incluir na matriz de importações do módulo raíz. Está disponível em `@angular/platform-browser/animations` . Este NgModule garante que as animações funcionem para a plataforma em questão. Este artigo pressupõe o navegador da Web padrão para cada exemplo.
 
-As animações angulares são declaradas nos metadados do `@Component` . `@Component` decora uma classe para distingui-la como um componente para Angular. Seus metadados contêm configurações de componentes, incluindo o campo `animations: []` . Cada elemento da matriz deste campo representa um acionador de animação ( `AnimationTriggerMetadata` ).
+As animações angulares são declaradas nos metadados do `@Component` . O `@Component` decora uma classe para distingui-la como um componente para Angular. Seus metadados contêm configurações de componentes, incluindo o campo `animations: []` . Cada elemento da matriz deste campo representa um acionador de animação ( `AnimationTriggerMetadata` ).
 
 As animações são exclusivas de seu componente host por meio dos metadados do decorador. Animações só podem ser usadas no modelo do componente host. As animações não herdam os filhos do componente. Existe uma solução fácil para isso.
 
@@ -84,11 +84,11 @@ Obviamente, os estilos animados em CSS são transferidos para o método de `styl
 
 ##### animate (timing: string | number, AnimationStyleMetadata | AnimationKeyframesMetadata)
 
-A função `animate(...)` aceita uma expressão de tempo como seu primeiro argumento. Esse argumento cronometra, estimula e / ou atrasa a animação do método. Este argumento aceita um número ou expressão de string. A formatação é explicada [aqui](https://angular.io/api/animations/animate#usage) .
+A função `animate(...)` aceita uma expressão de tempo como seu primeiro argumento. Esse argumento cronometra, estimula e / ou atrasa a animação do método. Este argumento aceita um número ou expressão de string. A formatação é explicada [aqui](https://angular.io/api/animations/animate#usage).
 
 O segundo argumento do `animate(...)` é a propriedade CSS que garante a animação. Isso assume a forma do método `style(...)` que retorna `AnimationStyleMetadata` . Pense no `animate(...)` como o método que inicia a animação.
 
-Uma série de quadros-chave também pode se aplicar ao segundo argumento. Keyframes é uma opção mais avançada que este artigo explica mais tarde. Quadros-chave distinguem várias seções da animação.
+Uma série de quadros-chave também pode se aplicar ao segundo argumento. Keyframes é uma opção mais avançada que este artigo explicará mais tarde. Quadros-chave distinguem várias seções da animação.
 
 `animate(...)` pode não receber um segundo argumento. Nesse caso, o tempo de animação do método só se aplica ao CSS refletido nos métodos `state(...)` . Alterações de propriedade nos métodos do `state(...)` do gatilho `state(...)` serão animadas.
 
@@ -145,7 +145,7 @@ A ligação liga-se ao valor de `isGreen` da classe de componentes. Esse valor d
 
 O elemento de botão no modelo também tem um evento de `click` associado a ele. Clicar no botão faz com que `isGreen` alterne os valores. Isso altera os dados da classe do componente. A ligação de animação é capturada e invoca seu método `trigger(...)` . O `trigger(...)` está dentro da matriz de animações dos metadados do componente. Duas coisas ocorrem na invocação do gatilho.
 
-A primeira ocorrência diz respeito aos dois métodos de `state(...)` . O novo valor de `isGreen` corresponde a um primeiro argumento do método `state(...)` . Depois de corresponder, os estilos CSS de `style(...)` aplicam-se ao estado final do elemento host da ligação da animação. ʻO estado final entra em vigor após toda a animação.
+A primeira ocorrência diz respeito aos dois métodos de `state(...)` . O novo valor de `isGreen` corresponde a um primeiro argumento do método `state(...)` . Depois de corresponder, os estilos CSS de `style(...)` aplicam-se ao estado final do elemento host da ligação da animação. O estado final entra em vigor após toda a animação.
 
 Agora, para a segunda ocorrência. A alteração de dados que chamou a ligação de animação é comparada entre os dois métodos de `transition(...)` . Um deles corresponde à mudança nos dados para o primeiro argumento. O primeiro clique no botão fez com que `isGreen` fosse de 'verdadeiro' para 'falso' ('verdadeiro => falso'). Isso significa que o primeiro método de `transition(...)` ativa seu segundo argumento.
 
@@ -182,7 +182,7 @@ Também existe `void` e `*` states. `void` indica que o componente está entrand
 
 Este artigo abordou os fundamentos para animar aplicativos angulares. Técnicas avançadas de animação existem ao lado dessas noções básicas. Agrupar quadros-chave é uma dessas técnicas. É inspirado na regra CSS `@keyframes` . Se você já trabalhou com CSS `@keyframes` , já entende como os quadros-chave no Angular funcionam. Torna-se apenas uma questão de sintaxe
 
-O `keyframes(...)` método importa de `@angular/animations` . Ele passa para o segundo argumento do `animate(...)` vez do típico `AnimationStyleMetadata` . O método `keyframes(...)` aceita um argumento como uma matriz do `AnimationStyleMetadata` . Isso também pode ser chamado de uma matriz de métodos de `style(...)` .
+O método `keyframes(...)` importa de `@angular/animations` . Ele passa para o segundo argumento do `animate(...)` vez do típico `AnimationStyleMetadata` . O método `keyframes(...)` aceita um argumento como uma matriz do `AnimationStyleMetadata` . Isso também pode ser chamado de uma matriz de métodos de `style(...)` .
 
 Cada quadro-chave da animação fica dentro da matriz de `keyframes(...)` - `keyframes(...)` . Esses elementos do quadro-chave são métodos `style(...)` que suportam a propriedade `offset` . `offset` indica um ponto na duração da animação onde as propriedades de estilo que acompanham devem ser aplicadas. Seu valor vai de 0 (início da animação) a 1 (final da animação).
 
@@ -251,7 +251,7 @@ Qualquer número de quadros-chave pode existir entre o deslocamento 0 e 1. As se
 
 Você irá, sem dúvida, se deparar com a situação em que deseja anexar uma animação ao elemento HTML de um componente em si, em vez de um elemento no modelo do componente. Isso requer um pouco mais de esforço, pois você não pode simplesmente entrar no HTML modelo e anexar a animação lá. Em vez disso, você terá que importar o `HostBinding` e utilizá-lo.
 
-O código mínimo para este cenário é mostrado abaixo. Vou reutilizar a mesma condição de animação para o código acima para consistência e não mostro nenhum código de animação real, pois você pode encontrar facilmente o que está acima.
+O código mínimo para este cenário é mostrado abaixo. Vou reutilizar a mesma condição de animação para o código acima para consistência e não mostro nenhum código de animação real, pois você pode encontrar facilmente no que está acima.
 
 ```typescript
 import { Component, HostBinding } from '@angular/core'; 
@@ -266,7 +266,7 @@ import { Component, HostBinding } from '@angular/core';
  } 
 ```
 
-A idéia por trás da animação do componente host é praticamente a mesma que animar um elemento do modelo, com a única diferença sendo a falta de acesso ao elemento que você está animando. Você ainda terá que passar o nome da animação ( `@animateArc` ) ao declarar o `HostBinding` e ainda terá que retornar o estado atual da animação ( `this.arc` ). O nome da função não é importante, portanto, o `arcAnimation` poderia ter sido alterado para qualquer coisa, desde que não colida com nomes de propriedades existentes no componente, e funcionaria perfeitamente bem.
+A ideia por trás da animação do componente host é praticamente a mesma que animar um elemento do modelo, com a única diferença sendo a falta de acesso ao elemento que você está animando. Você ainda terá que passar o nome da animação ( `@animateArc` ) ao declarar o `HostBinding` e ainda terá que retornar o estado atual da animação ( `this.arc` ). O nome da função não é importante, portanto, o `arcAnimation` poderia ter sido alterado para qualquer coisa, desde que não colida com nomes de propriedades existentes no componente, e funcionaria perfeitamente bem.
 
 #### Conclusão
 
