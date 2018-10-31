@@ -1,7 +1,7 @@
 ---
 title: Use React to Render Nested Components
 ---
-## Use React to Render Nested Components
+# Use React to Render Nested Components
 
 You have learned in earlier lessons, that there are two ways to create a React component:
 
@@ -17,3 +17,41 @@ return (
 )
 ```
 Try this with the TypesOfFruit and Fruits components.
+
+## Solution
+
+If you need some extra help, here's the solution. Try to use the hints and what you've learned in previous challenges, first!
+
+Add the `TypesOfFruit` component as a child to the `Fruits` component:
+````javascript
+const Fruits = () => {
+  return (
+    <div>
+      { /* change code below this line */ }
+      <TypesOfFruit />
+      { /* change code above this line */ }
+    </div>
+  );
+};
+````
+Add the `Fruits` component as a child to the TypesOfFood component:
+````javascript
+class TypesOfFood extends React.Component {
+  constructor(props) {
+    super(props);
+  }
+
+  render() {
+    return (
+      <div>
+        <h1>Types of Food:</h1>
+        { /* change code below this line */ }
+        <Fruits />
+        { /* change code above this line */ }
+      </div>
+    );
+  }
+};
+````
+
+
