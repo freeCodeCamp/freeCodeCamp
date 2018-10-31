@@ -121,11 +121,42 @@ Each corner of `border-radius` can be adjusted. The order is top, bottom, left, 
 
 While it is nice that CSS allows a web developer to be very specific in creating a customized border, sometimes it is just easier and less of a headache to create a uniform border, all in single line of CSS code.
 
-Example:
+Examples:
 ```css
 <style type="text/css">
+p {
+	border-width: 20px;
+	border-style: outset;
+	border-color: blue;
+}
+
+        can also be written in shorthand as
+ 
 p { border: 20px outset blue; } 
+</style>
+```
+
+```css
+<style type="text/css">
+h4 {
+	border-width: 5px;
+	border-style: solid;
+}
+
+        can also be written in shorthand as
+
 h4 { border: 5px solid; } 
+</style>
+```
+
+```css
+<style type="text/css">
+h5 {
+	border-style: dotted;
+}
+
+        can also be written in shorthand as
+
 h5 { border: dotted; }
 </style>
 ```
