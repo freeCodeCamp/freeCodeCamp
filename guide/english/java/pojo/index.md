@@ -27,6 +27,31 @@ public class Bar implements javax.ejb.EntityBean {
 }  
 ```
 
+4. For any class field which is marked as private it must have getter and setter methods alongside it. Also it must have EMPTY constructor if custom constructor declared.
+```
+public class Car {
+  
+  private int gear;
+  
+  // default constructor
+  public Car() { }
+  
+  // custom constructor
+  public Car(int car){
+    this.car = car;
+  }
+  
+  public int getGear() {
+    return this.gear;
+  }
+  
+  public void setGear(int gear){ 
+    this.gear = gear;
+  }
+  
+}
+```
+
 Therefore a Java Object qualifies as a POJO only when it is free from the above modifications. It therefore follows that a POJO is not 'bound by any restrictions' other those prescribed by the formal Java language specification.
 
 
