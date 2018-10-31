@@ -29,16 +29,13 @@ Puedes optar por contribuir a cualquier área de tu interés:
 
     Ayúdanos a crear o editar [artículos de guía](https://www.freecodecamp.org/guide), [desafíos de codificación](https://www.freecodecamp.org/learn) o corregir errores en la plataforma de aprendizaje.
 
-2. Ayuda a los campistas en nuestro [foro público](https://www.freecodecamp.org/forum/):
-
-    - ❓ [Respondiendo a sus preguntas](https://www.freecodecamp.org/forum/?max_posts=1).
-    - 💬 [Dando retroalimentación](https://www.freecodecamp.org/forum/c/project-feedback?max_posts=1) a sus proyectos.
+2. Ayuda a los campistas en nuestro [foro público](https://www.freecodecamp.org/forum/). [Respondiendo a sus preguntas](https://www.freecodecamp.org/forum/?max_posts=1) o [Dando retroalimentación a sus proyectos](https://www.freecodecamp.org/forum/c/project-feedback?max_posts=1).
 
 3. Ayúdanos a agregar subtítulos en nuestro [canal de YouTube](https://www.youtube.com/channel/UC8butISFwT-Wl7EV0hUK0BQ/videos).
 
 ## Contribuye a esta base de código abierto
 
-Tenemos una gran base de código abierto de los miles de [Desafíos de Codificación](https://www.freecodecamp.org/learn) y [Artículos de Guía](https://www.freecodecamp.org/guide). Estos desafíos y artículos conforman el contenido de aprendizaje disponible en la plataforma de aprendizaje de freeCodeCamp.org.
+Tenemos una gran base de código abierto de los miles de [Desafíos de Codificación](https://www.freecodecamp.org/learn) y [Artículos de Guía](https://www.freecodecamp.org/guide).
 
 Puedes ayudarnos con:
 
@@ -66,9 +63,7 @@ Para obtener ayuda, busca un `esbozo de artículo` en nuestro [sitio web de la G
 
 Si no puedes encontrar un esbozo sobre el tema que deseas escribir, puedes abrir un PR (pull request) que crea el esbozo e incluye tu borrador del artículo.
 
-**Si deseas trabajar en ello, sigue estas pautas:**
-
-#### [Cómo trabajar en los artículos de Guía.](/docs/how-to-work-on-guide-articles.md)
+Si te gustaría ayudar a mejorar estos artículos, Aquí está [Cómo trabajar en los artículos de Guía.](/docs/how-to-work-on-guide-articles.md)
 
 ### Crear, actualizar y corregir errores en nuestros desafíos de codificación
 
@@ -76,25 +71,19 @@ Todos nuestros desafíos de codificación son curados por la comunidad, aportand
 
 Puedes ayudar a expandirlos y hacer que su redacción sea más clara. Puedes actualizar las historias de usuario para explicar mejor el concepto e incluso eliminar las redundantes. Es posible también que desees refactorizar las pruebas que no pasan con un código válido para las historias de usuario.
 
-**Si deseas trabajar en ello, sigue estas pautas:**
-
-#### [Cómo trabajar en desafíos de codificación.](/docs/how-to-work-on-coding-challenges.md)
+Si estás interesado en mejorar estos desafíos, Aquí está [Cómo trabajar en desafíos de codificación.](/docs/how-to-work-on-coding-challenges.md)
 
 ### Traducir artículos de guía y desafíos de codificación
 
 Puedes ayudarnos a traducir nuestros artículos de Guía y desafíos de codificación para un idioma que hables. Actualmente tenemos versiones traducidas en:
 
-- Chino (中文)
-- Ruso (русский)
-- Árabe (عربى)
-- Español
-- Portugués (Português)
+- [Chino (中文)](https://github.com/freeCodeCamp/freeCodeCamp/tree/master/curriculum/challenges/chinese)
+- [Ruso (русский)](https://github.com/freeCodeCamp/freeCodeCamp/tree/master/curriculum/challenges/russian)
+- [Árabe (عربى)](https://github.com/freeCodeCamp/freeCodeCamp/tree/master/curriculum/challenges/arabic)
+- [Español](https://github.com/freeCodeCamp/freeCodeCamp/tree/master/curriculum/challenges/spanish)
+- [Portugués (Português)](https://github.com/freeCodeCamp/freeCodeCamp/tree/master/curriculum/challenges/portuguese)
 
 La mayoría de estas versiones están traducidas automáticamente. Nos encantaría tu ayuda para mejorar la calidad de estas traducciones.
-
-**Si deseas trabajar en ello, sigue estas pautas:**
-
-**[POR HACER/TODO]** Estamos en el proceso de actualizar documentos para el flujo de trabajo de traducción. Siga [`#18313`](https://github.com/freeCodeCamp/freeCodeCamp/issues/18313) para ver el progreso.
 
 ### Ayúdanos a corregir errores en la plataforma de aprendizaje de freeCodeCamp.org
 
