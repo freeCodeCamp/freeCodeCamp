@@ -14,7 +14,9 @@ title: Books on Python Programming Language
 - ISBN-13: 978-1491939369
  
 *Learn Python 3 the Hard Way*
+
 ![alt text](http://www.informit.com/ShowCover.aspx?isbn=9780134692883&type=f "Learn Python 3 the Hard Way")
+
 - [Website](https://learnpythonthehardway.org/) (Buy from the creator | Includes video lessons)
 - [E-book](https://learnpythonthehardway.org/python3/) (free)
 - [Amazon Smile](https://smile.amazon.com/Learn-Python-Hard-Way-Introduction/dp/0134692888)
@@ -22,26 +24,34 @@ title: Books on Python Programming Language
 - ISBN-10: 0134692888
 
 *Black Hat Python: Python Programming for Hackers and Pentesters*
+
 ![alt text](https://images-na.ssl-images-amazon.com/images/I/51O-GzoZi5L._SL200_.jpg "Black hat Python")
+
 - [Amazon Smile](https://smile.amazon.co.uk/Black-Hat-Python-Programming-Pentesters/dp/1593275900)
 - ISBN-10: 1593275900
 
 *Programming Python*
+
 ![alt text](https://covers.oreillystatic.com/images/9780596158118/cat.gif "Programming Python: Fourth Edition")
+
 - [Amazon Smile](https://smile.amazon.com/Programming-Python-Powerful-Object-Oriented/dp/0596158106)
 - [O'Reilly](http://shop.oreilly.com/product/9780596158118.do)
 - ISBN-10: 0596158106
 - ISBN-13: 978-0596158101
 
 *Data Science from Scratch: First Principles with Python*
+
 ![alt text](https://covers.oreillystatic.com/images/0636920033400/cat.gif "Data Science From Scratch")
+
 - [O'Reilly](http://shop.oreilly.com/product/0636920033400.do)
 - [Amazon Smile](https://smile.amazon.com/Data-Science-Scratch-Principles-Python/dp/149190142X)
 - ISBN-10: 149190142X
 - ISBN-13: 978-1491901427
 
 *Automate The Boring Stuff With Python*
+
 ![alt text](https://images-na.ssl-images-amazon.com/images/I/517XL4pO6jL._SL200_.jpg "Automate the boring stuff with Python")
+
 - Great book for beginners. Has interesting projects to practice Python.
 - [Amazon](https://www.amazon.com/gp/product/1593275994/)
 - ISBN-10: 1593275994
