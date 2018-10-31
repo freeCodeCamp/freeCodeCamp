@@ -161,6 +161,21 @@ def swap( A, x, y ):
   A[y] = tmp
 
 ```
+### Example in Ruby
+def bubble_sort(arr)
+        sorted = false
+        until sorted
+        sorted = true
+        (arr.acount-1).times do|i|
+          if arr[i] > arr[i + 1]
+                arr[i], arr[i +1] = arr[i +1], arr[i]
+                sorted = false
+                end
+            end
+          end
+          arr end
+
+```
 ### More Information
 <!-- Please add any articles you think might be helpful to read before writing the article -->
 - [Wikipedia](https://en.wikipedia.org/wiki/Bubble_sort)
