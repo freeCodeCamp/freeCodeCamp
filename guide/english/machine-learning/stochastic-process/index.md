@@ -7,6 +7,9 @@ A Stochastic Process is basically a process which is non-deterministic. Note tha
 
 Stochastic processes are widely used as mathematical models of systems and phenomena that appear to vary in a random manner. They have applications in many disciplines including the natural sciences such as biology, chemistry and physics as well as technology and engineering fields such as image processing, signal processing, information theory, computer science, cryptography and telecommunications. Furthermore, seemingly random changes in financial markets have motivated the extensive use of stochastic processes in finance.
 
+In it's simplest form, a stochastic process can be though of as a description of the movement of an object over time.  At every new unit of time, the object could assume one of many possible positions, and each position has a probability associated with it.  While we cannot know the exact path that the object will take, we can make inferences about the path it might take based those probabilities.
+
+
 
 
 ### More Information:
