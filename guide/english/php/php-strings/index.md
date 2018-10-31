@@ -156,3 +156,51 @@ This will produce the following result -
 ```
    The substring was found!
 ```
+### Using the explode() function
+The explode() function is used to split a string into an array of substrings based on a string delimiter.  
+The function accepts 3 parameters.  A string delimiter, the string to be 'exploded', and an optional integer limit.  
+
+If the limit is positive, the function will return a maximum number of substrings equal to the limit.  The last substring being the remainder of the string.  
+
+If the limit is 0, it is treated like 1.  
+
+If the limit is negative, all substrings except the last negative limit are returned.  
+
+Example:
+
+```
+<?php
+   $s = 'a|b|c|d';
+   print_r(explode('|', $s));
+   
+   print_r(explode('|', $s, 3));
+   
+   print_r(explode('|', $s, -1));
+?>
+```
+
+Result:
+
+```
+Array
+(
+   [0] => a
+   [1] => b
+   [2] => c
+   [3] => d
+)
+
+Array
+(
+   [0] => a
+   [1] => b
+   [2] => c|d
+)
+
+Array
+(
+   [0] => a
+   [1] => b
+   [2] => c
+)
+```
