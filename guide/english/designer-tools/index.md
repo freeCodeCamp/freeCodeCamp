@@ -26,11 +26,15 @@ Better for complicated interactions.
 ### Wireframes and prototyping
 Ideal for click-through prototypes.
 
+[Balsamiq](https://balsamiq.com/)
+
 [InVision](https://www.invisionapp.com/)
 
 [Marvel](https://marvelapp.com/)
 
 [Moqups](https://moqups.com/)
+
+One benefit of Balsamiq is that it wireframes in black and white in the most stripped down version. When focusing on structure rather than content, this allows reviewers to not become distracted by color and pictures. Balsamiq does allow for minimal prototyping.
 
 ### Painting
 Great for artists.
