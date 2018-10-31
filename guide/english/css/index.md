@@ -24,6 +24,8 @@ A good start is the freeCodeCamp curriculum [Introduction to Basic CSS](https://
 
 Another suggestion for beginners is W3C's [Starting with HTML + CSS](https://www.w3.org/Style/Examples/011/firstcss) teaches how to create a style sheet.
 
+For additional reading see [Mozilla Developer Network's CSS basics](https://developer.mozilla.org/en-US/docs/Learn/Getting_started_with_the_web/CSS_basics).
+
 The site [CSS Zen Garden](http://www.csszengarden.com/) is a great example how the same html can be styled to look totally unique.
 
 For a demonstration of the power of CSS, check out [Species In Pieces](http://species-in-pieces.com/#).
