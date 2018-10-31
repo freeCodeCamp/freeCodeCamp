@@ -8,7 +8,7 @@ Here is the **syntax** for while loop:
 ## Syntax:
 
     while (condition)
-
+        code to be executed
     {
 
       statement(s);
@@ -38,5 +38,13 @@ _condition:_ Here, condition is a Boolean expression which is evaluated before e
         7
         8
         9
-
+        
+## Example 2:
+var text = "";
+var i = 0;
+while (i < 10) {
+    text += "<br>The number is " + i;
+    i++;
+}
+* Soucre: https://www.w3schools.com/js/js_loop_while.asp
 *Source: [While Loop - MDN](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/while)*
