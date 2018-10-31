@@ -22,7 +22,7 @@ Most used options:
 * `-G`, enable colorized output.
 * `-s`, List File Size.
 * `-R`, displays the contents of the directory, and its subdirectories.
-
+* `-h`, When combined with '-l', long format, show files sizes with suffixes, making sizes more easily read and savign space
 ### Example:
 
 List files in `freeCodeCamp/guide/`
