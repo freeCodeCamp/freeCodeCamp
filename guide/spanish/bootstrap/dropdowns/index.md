@@ -2,9 +2,9 @@
 title: Dropdowns
 localeTitle: Listas deplegables
 ---
-## Listas deplegables
+## Listas desplegables
 
-Bootstrap proporciona Dropdowns como un complemento para mostrar listas de enlaces. El menú desplegable es un botón que alterna la visualización de una lista de enlaces.
+Bootstrap proporciona menús desplegables como un complemento para mostrar listas de enlaces. El menú desplegable es un botón que alterna la visualización de una lista de enlaces.
 
 Los menús desplegables de Bootstrap están diseñados para ser genéricos y aplicables a una variedad de situaciones. Por ejemplo, es posible crear menús desplegables que contengan campos de búsqueda o formularios de inicio de sesión.
 
