@@ -99,5 +99,22 @@ Output
 True
 >
 ```
-
+***use of logical operators in if else***
+ We can use logic operators in if else statement,it not only make code easy to read and write but also decrease complexity of code and
+ result in using less if else statement.The logical operators are AND,OR,NOR,NOT,XOR, etc.Any other statement is not allowded in between   if and else statement.
+ 
+ 
+ ```
+ python
+ x=89
+ y=45
+ if(x==89 and y==45):
+    print("successfully used logical operator")
+```
+Output
+```
+>
+successfully used logical operator
+>
+```
 
