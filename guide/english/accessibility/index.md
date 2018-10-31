@@ -36,6 +36,13 @@ Just like Alt text is for people who are visually impaired, transcripts of the a
 
 Copyright &copy; 2005 <a href="http://www.w3.org" shape="rect">World Wide Web Consortium</a>, (<a href="http://www.csail.mit.edu/" shape="rect">MIT</a>, <a href="http://www.ercim.org" shape="rect">ERCIM</a>, <a href="http://www.keio.ac.jp" shape="rect">Keio</a>,<a href="http://ev.buaa.edu.cn" shape="rect">Beihang</a>). http://www.w3.org/Consortium/Legal/2015/doc-license
 
+### Online Courses in Web Accessibility:
+<a href='https://www.udacity.com/course/web-accessibility--ud891' target='_blank' rel='nofollow'>Web Accessibility by Google [Udacity]</a>
+
+<a href='https://www.open.edu/openlearn/education-development/assistive-technologies-and-online-learning/content-section-0?active-tab=description-tab' target='_blank' rel='nofollow'>Assistive Technologies and Online Learning [Open.edu]</a>
+
+<a href='https://bcourses.berkeley.edu/courses/1456326' target='_blank' rel='nofollow'>A11y Intro Course [UC Berkeley]</a>
+
 ### More Information:
 <a href='https://www.w3.org/WAI/intro/accessibility.php' target='_blank' rel='nofollow'>w3.org introduction to accessibility.</a>
 
