@@ -21,7 +21,7 @@ Electron基于Chromium（谷歌浏览器的开源版本）。Electron是在2013�
 *   [Discord](https://discordapp.com) （适合游戏玩家的流行消息应用）
 *   [Github Desktop](https://desktop.github.com/) （官方Github桌面客户端）
 
-您可以从[Electron的网页](https://electronjs.org/apps）查询更多使用Electron构建的应用。
+您可以从[Electron的网页](https://electronjs.org/apps)查询更多使用Electron构建的应用。
 
 ### 其他信息参考
 
