@@ -272,6 +272,15 @@ title: Books to Read for Programmers
 - [Amazon] (https://www.amazon.com/Innovators-Dilemma-Technologies-Management-Innovation-ebook/dp/B00E257S86_
 - ASIN: B00E257S86
 
+*The Well-Grounded Rubyist (2nd Edition) by David A. Black*
+- [Amazon] (https://www.amazon.com/exec/obidos/ASIN/1617291692/zenruby-20/ref=nosim/)
+- ISBN-13: 978-1617291692
+
+*Practical Object-Oriented Design in Ruby: An Agile Primer by Sandi Metz*
+- [Amazon] (https://www.amazon.com/exec/obidos/ASIN/0321721330/zenruby-20/ref=nosim/)
+- ISBN: 978-0321721334
+
+
 This list was compiled from multiple suggestion threads on Reddit and Stackoverflow. 
 
 Please feel free to add more that you have found useful!
