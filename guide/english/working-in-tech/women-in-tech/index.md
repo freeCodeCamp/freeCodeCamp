@@ -40,4 +40,3 @@ The worst thing you can do is to sell yourself short if you want something take 
 
 ### Podcasts on Women-in-tech:
 If you're interested in podcasts, check out Esperee Devora's on women in tech [here](http://podcast.womenintechshow.com/episodes)
-
