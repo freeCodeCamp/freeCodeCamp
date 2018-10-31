@@ -4,8 +4,6 @@ localeTitle: Encontrando um Percentual
 ---
 ## Encontrando um Percentual
 
-Este é um esboço. [Ajude nossa comunidade a expandi-lo](https://github.com/freecodecamp/guides/tree/master/src/pages/mathematics/finding-a-percent/index.md) .
-
-[Este guia de estilo rápido ajudará a garantir que sua solicitação de recebimento seja aceita](https://github.com/freecodecamp/guides/blob/master/README.md) .
+Para encontrar um percentual de um número, basta multiplicar o número total pelo seu percentual, por exemplo, caso queira achar 25% de 36, basta multiplicar 36 por 0,25 (25/100) e o resultado é 9 .
 
 #### Mais Informações:
