@@ -3,6 +3,7 @@ title: How to Use Lists
 ---
 ## How to Use Lists
 Lists are used to specify a set of consecutive items or related information in well formed and semantic way, such as a list of ingredients or a list of procedural steps.
+
 HTML markup has three different types of lists - **ordered**, **unordored** and **description** lists. 
 
 ### Ordered Lists
