@@ -3,7 +3,7 @@ title: Hr Tag
 ---
 ## Hr Tag
 
-The horizontal rule or `<hr>` is a tag that allows to insert a divisory line, defining the content of your document.
+The `horizontal rule` or `<hr>` is a tag that allows to insert a divisory line, defining the content of your document.
 It's very important to clarify that this tag is a thematic break; in previous versions of .html is a horizontal rule.
 
 ### Example
