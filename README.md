@@ -31,23 +31,7 @@ You can pull in these test suites through [freeCodeCamp's CDN](https://cdn.freec
 
 Once you’ve earned a certification, you will always have it. You will always be able to link to it from your LinkedIn or résumé. And when your prospective employers or freelance clients click that link, they’ll see a verified certification specific to you.
 
-The one exception to this is in the event that we discover violations of our [Academic Honesty Policy](https://www.freecodecamp.org/academic-honesty). When we catch people unambiguously plagiarizing (submitting other people's code or projects as their own without citation), we do what all rigorous institutions of learning should do - we revoke their certifications and ban those people.
-
-Here are our six core certifications:
-
-#### 1. Responsive Web Design Certification
-
-- Basic HTML and HTML5
-- Basic CSS
-- Applied Visual Design
-- Applied Accessibility
-- Responsive Web Design Principles
-- CSS Flexbox
-- CSS Grid <br />
-  <br />
-  **Projects**: Tribute Page, Survey Form, Product Landing Page, Technical Documentation Page, Personal Portfolio Webpage
-
-#### 2. JavaScript Algorithms and Data Structures Certification
+The one exception to this is in the event that we discover violations of our [Academic Honesty Policy](https://www.freecodecamp.org/ac
 
 - Basic JavaScript
 - ES6
