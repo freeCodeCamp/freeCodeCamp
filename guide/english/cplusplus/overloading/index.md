@@ -101,3 +101,42 @@ Output for the above program
 ```
 4 + i3
 ```
+
+
+# unary operator overloading
+
+*example for unary operator overloading
+
+#include<iostream.h>
+#include<conio.h>
+class c1
+{
+public:
+int x,y,z;
+void get()
+{
+cout<<"enter any 3 nos.";
+cin>>x>>y>>z;
+}
+void operator -()
+{
+x=-x;
+y=-y;
+z=-z;
+}
+void show()
+{
+cout<<" the reversed sign of the 3 nos are:"
+cout<<x<<y<<z;
+}
+};
+void main()
+{
+clrscr();
+c1 ob1
+ob1.get();
+-ob1;
+ob1.show();
+getch();
+}
+
