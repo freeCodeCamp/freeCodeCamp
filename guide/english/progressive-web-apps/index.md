@@ -46,13 +46,15 @@ This implies that depending on the browser, the experience can change.
 
 ### Demo
 
+```html
 <iframe width="560" height="315" src="https://www.youtube.com/embed/esfi7ZLibmk" frameborder="0" gesture="media" allow="encrypted-media" allowfullscreen></iframe>
+```
 
 ### References
 
 1. [Russell, Alex. "Progressive Web Apps: Escaping Tabs Without Losing Our Soul" "Infrequently Noted" Posted: June 15, 2015.](https://infrequently.org/2015/06/progressive-apps-escaping-tabs-without-losing-our-soul/)
 2. [Progressive Web Apps - Google Developers](https://developers.google.com/web/progressive-web-apps/)
-3. [Introduction to Progressive Web Apps - MDN Web Docs] (https://developer.mozilla.org/en-US/docs/Web/Apps/Progressive/Introduction)
+3. [Introduction to Progressive Web Apps - MDN Web Docs](https://developer.mozilla.org/en-US/docs/Web/Apps/Progressive/Introduction)
 4. [Hume, Dean. Alan. "Progressive Web Apps: Live book](https://livebook.manning.com/#!/book/progressive-web-apps/about-this-book/)
-5. [Hofmann, Simon. "The Road to PWA - Part 1"] (https://blog.simon-hofmann.org/pwa/js/2018/05/07/road-to-pwa01.html)
+5. [Hofmann, Simon. "The Road to PWA - Part 1"](https://blog.simon-hofmann.org/pwa/js/2018/05/07/road-to-pwa01.html)
 
