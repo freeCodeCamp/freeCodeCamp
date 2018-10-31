@@ -18,7 +18,7 @@ You can:
 
 Or just [create an issue](https://github.com/freeCodeCamp/freeCodeCamp/issues) - any little bit of help counts! 😊
 
-### [Follow these recommended guidelines in from our Style guide for a compelling guide article](/docs/style-guide-for-guide-articles.md)
+### [Follow these recommended guidelines from our Style guide for a compelling guide article](/docs/style-guide-for-guide-articles.md)
 
 ### Creating a Pull request (PR) to propose changes
 
