@@ -17,6 +17,10 @@ Advantages of WordPress include:
 * Built-in blog ready to go whenever applicable 
 * Plugins to extend functionality to WordPress sites 
 * Thousands of free themes are available to customize
+* Supported by a thriving,engaged community
+* Easy to update
+* SEO Ready
+* Mobile friendly websites
 
 Here are some examples of big name brands using WordPress: 
 * Sony Music
@@ -25,8 +29,13 @@ Here are some examples of big name brands using WordPress:
 
 Whether it's page transitions or a customized contact form, WordPress users are only a few clicks away from building a website.
 
-### More Information
-
+### Learning Resources
+- [Official WordPress Lessons](https://learn.wordpress.com/)
+- [WordPress TV](https://wordpress.tv/)
+- [WPBeginner-Youtube channel](https://www.youtube.com/user/wpbeginner)
 - [WordPress Codex: the online manual](https://codex.wordpress.org/)
+
+### More Information
+- [WPHub-WordPress Themes](https://www.wphub.com/)
 - [WordPress Code Reference](https://developer.wordpress.org/reference/)
 - [WordPress Github Repository](https://github.com/WordPress/WordPress)
