@@ -3,9 +3,13 @@ title: Kerning and Tracking
 ---
 ## Kerning and Tracking
 
-Kerning refers to the spacing between two individual characters within a word.
+### Kerning
 
-Tracking refers to the spacing between words. 
+**Kerning** refers to the spacing between two individual characters within a word. Serifs and flourishes can cause too much or too little space between letters. This is fixed by kerning.
+
+### Tracking
+
+**Tracking** adjusts the space throughout the word or text. It can be used to fit more text within a given area.  
 
 Some typefaces are not designed to be kerned or tracked too loosely and vice versa. If one kerns or tracks too tightly or too loosely, they risk sacrificing readability and legibility. 
 
