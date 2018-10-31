@@ -5,7 +5,11 @@ title: Working in Tech & Information Technology(IT)
 
 A wide variety of technology-related fields such as web development, design, data science, and product management are often lumped into the catch-all term "tech" or IT. 
 
-This section will focus on additional career challenges faced by under-represented minorities and people from non-traditional education backgrounds. Specific topis will include sexism and ageism, which have been particularly prevalent in certain industries and organizations. 
+This section will focus on additional career challenges faced by under-represented minorities and people from non-traditional education backgrounds. Specific topis will include sexism and ageism, which have been particularly prevalent in certain industries and organizations.
+
+### Working with recruiters
+
+Persons of color or females or disadvantaged workers may find it necessary to utilize recruiters in IT. It is important to develop a relationship with recruiters who may be more successful getting you an interview. Recruiters can sell your skills as they often have direct relationships with the hiring managers. This is the equivalent of having a friend recommend you. Also, before beginning your job search, clean up all social media and mute those friends who make inappropriate posts. Your posts should be positive and be sprinkled with samples of your work or projects.
 
 ### Computer Security
 
