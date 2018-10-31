@@ -6,7 +6,7 @@ localeTitle: DevOps Azure
 
 Azure DevOps Services es un servicio en la nube para colaborar en el desarrollo de código. Proporciona un conjunto integrado de funciones a las que puede acceder a través de su navegador web o cliente IDE, incluidas las siguientes:
 
-*   Git repositorios para el control de código fuente de tu código.
+*   Repositorios git para el control de versiones de tu código fuente.
 *   Cree y libere la administración para admitir la integración y entrega continua de sus aplicaciones
 *   Herramientas ágiles para admitir la planificación y el seguimiento de su trabajo, defectos de código y problemas con los métodos Kanban y Scrum
 *   Una variedad de herramientas para probar sus aplicaciones, incluyendo pruebas manuales / exploratorias, pruebas de carga y pruebas continuas
