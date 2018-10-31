@@ -11,6 +11,8 @@ The distance from one point, throught the center to another point is called the 
 
 The distance all around the circle is called the circumference (C). 
 
+Area of cirle is 3.14*R^2.
+
 ![circle](https://upload.wikimedia.org/wikipedia/commons/thumb/0/03/Circle-withsegments.svg/612px-Circle-withsegments.svg.png "circle")
 
 #### More Information:
