@@ -13,10 +13,11 @@ WordPress powers over 30% of all websites and is by far the most used CMS on the
 Easy to use, Wordpress offers an easy solution for both web developers and non-web developers.
 
 Advantages of WordPress include:
-* Manageable from any computer
+* Manageable from any computer or mobile device.
 * Built-in blog ready to go whenever applicable 
 * Plugins to extend functionality to WordPress sites 
 * Thousands of free themes are available to customize
+* Easy to deploy 
 
 Here are some examples of big name brands using WordPress: 
 * Sony Music
