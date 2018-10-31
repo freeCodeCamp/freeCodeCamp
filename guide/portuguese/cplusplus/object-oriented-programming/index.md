@@ -13,7 +13,7 @@ Vamos aprender sobre diferentes características de uma linguagem de programaç�
 Objetos são entidades básicas de tempo de execução em um sistema orientado a objetos, objetos são instâncias de uma classe, são definidos como tipos de dados definidos pelo usuário.
 
 ```cpp
-class person 
+class Person 
  { 
     char name[20]; 
     int id; 
@@ -23,7 +23,7 @@ class person
  
  int main() 
  { 
-   person p1; //p1 is an object 
+   Person p1; //p1 é um objeto 
  } 
 ```
 
@@ -51,7 +51,7 @@ class class_name
 
 Classe é um tipo de dados definido pelo usuário, como estruturas e uniões em C.
 
-Por padrão, as variáveis ​​de classe são privadas, mas no caso de estrutura, são públicas. no exemplo acima, a pessoa é uma classe.
+Por padrão, as variáveis ​​de classe são privadas, mas no caso de estrutura, são públicas. no exemplo anterior, Person é uma classe.
 
 ### Encapsulamento e abstração de dados:
 
@@ -63,9 +63,32 @@ A abstração de dados se refere a fornecer apenas informações necessárias pa
 
 Herança é o processo pelo qual objetos de uma classe adquirem as propriedades de objetos de outra classe. Suporta o conceito de classificação hierárquica. A herança fornece reutilização. Isso significa que podemos adicionar recursos adicionais a uma classe existente sem modificá-la.
 
+Aqui está um exemplo de herança para criar uma hierarquia, a qual podemos nos referir como possuindo uma relação 'É UM/UMA' entre as classes.
+
+```cpp
+class animal { 
+    private:
+    public:
+        void dormir();
+    protected: 
+        int qt_patas;
+};
+
+class gato: public animal {
+    private:
+    public:
+        void purr();
+    protected:
+        char * cor_do_pelo;
+};
+```
+
+No código acima, a classe gato deriva da classe animal, o que significa que gato É UM animal, com mais algumas características. A classe gato explicitamente possui uma variável para a cor do pêlo e uma função para ronronar, mas também tem implícita a variável para quantidade de patas e uma função para dormir.
+
+
 ### Polimorfismo:
 
-Polimorfismo significa capacidade de tomar mais de um formulário. Uma operação pode exibir diferentes comportamentos em diferentes instâncias. O comportamento depende dos tipos de dados usados ​​na operação.
+Polimorfismo significa capacidade de tomar mais de uma forma. Uma operação pode exibir diferentes comportamentos em diferentes instâncias. O comportamento depende dos tipos de dados usados ​​na operação.
 
 C ++ suporta sobrecarga do operador e sobrecarga de funções. A sobrecarga do operador é o processo de fazer com que um operador exiba comportamentos diferentes em instâncias diferentes. A sobrecarga de funções está usando um único nome de função para executar diferentes tipos de tarefas. O polimorfismo é amplamente utilizado na implementação de herança.
 
