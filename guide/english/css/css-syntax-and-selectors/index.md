@@ -82,6 +82,7 @@ Here's an example where we're specifying a style that should only be applied to 
 
 ### External CSS
 
+You can change the look of an entire website by changing just one file,using external CSS.
 All the styling has its own document which is linked in the ```<head>``` tag. The extension of the linked file is ```.css```
 
 #### More Information:
