@@ -12,6 +12,7 @@ Why Bulma?
 * growing community.
 * Easy to learn.
 * Quick Customization.
+* No JavaScript Required
 
 Just one command to get started:
 ```terminal
