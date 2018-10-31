@@ -24,7 +24,7 @@ For all such things, we have the component's class. The class keeps everything r
 
 #### Component Class and Metadata
 
-Go ahead and install the [Angular command-line interface (CLI)](https://cli.angular.io). You can learn more about it from [this article](https://guide.freecodecamp.org/angular/command-line-interface). The CLI command `ng generate component [name-of-component]` yields the following.
+Go ahead and install the [Angular command-line interface (CLI)](https://cli.angular.io). You can learn more about it from [this article](https://guide.freecodecamp.org/angular/command-line-interface). The CLI commandc`ng generate component [name-of-component]` or `ng g c [name-of-component]` yields the following.
 
 ```typescript
 import { Component, OnInit } from '@angular/core';
