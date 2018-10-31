@@ -10,7 +10,7 @@ Before doing a penetration test, it is mandatory to have an agreement that will 
 - where will be the IP source of the attack, and
 - what will be the penetration fields of the system.
 
-Penetration testing is conducted by professional ethical hackers who mainly use commercial, open-source tools, automate tools and manual checks. There are no restrictions; the most important objective here is to uncover as many security flaws as possible. Many big companies offer rewards for anybody that can point out security vulnerabilities in their systems, through what is called [bug bounty programs](https://en.wikipedia.org/wiki/Bug_bounty_program). Google, for example, will offer tens of thousands of dollars through their Vulnerability Reward Program.
+Penetration testing is conducted by professional ethical hackers who mainly use commercial, open-source tools, automate tools and manual checks. Restrictions are set forth by the organization and it is important for those restrictions to be followed. Many big companies offer rewards for anybody that can point out security vulnerabilities in their systems, through what is called [bug bounty programs](https://en.wikipedia.org/wiki/Bug_bounty_program). Google, for example, will offer tens of thousands of dollars through their Vulnerability Reward Program.
 
 ## Phases of Penetration Testing
 
