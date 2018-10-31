@@ -40,7 +40,6 @@ To add a colored border to a button, use the border property:
 ```
 button {
   background-color: #FFF;
-  color: #FFF;
   border: 2px solid #6ba0f4;
 }
 ```
@@ -58,6 +57,28 @@ To change the text font size of a button, use the font-size property:
 ### Button Padding
 
 To change the padding of a button, use the padding property:
+
+*when 1 value is specified, the value will utilised in the padding of all 4 sides (top, right, bottom and left)*
+
+`button {padding: 15px;}`
+
+
+*when 2 values are specified, the first value will be utilised for top and bottom padding and the second value for the right and left padding*
+
+`button {padding: 15px 30px;}`
+
+
+*when 3 values are specified, the first value will be utilised for the top padding, the second value for the right and left padding and the third value for the bottom padding*
+
+`button {padding: 15px 30px 45px;}`
+
+
+*when 4 values are specified, the first value will be utilised for the top padding, the second value for the right padding, the third value for the bottom padding and the fourth value for the left padding*
+
+`button {padding: 15px 30px 45px 60px;}`
+
+
+*example of padding with 2 values*
 
 `button {padding: 15px 30px;}`
 
