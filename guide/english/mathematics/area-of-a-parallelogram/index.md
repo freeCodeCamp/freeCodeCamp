@@ -4,6 +4,8 @@ title: Area of a Parallelogram
 
 ## Area of a Parallelogram
 
+
+
 A parallelogram is a four-sided figure in which the opposite sides and angles are equal. It can be considered as being made up of two same  triangles sticked base to base.
 ![alt text](http://www.onemathematicalcat.org/Math/Geometry_obj/graphics/area_parallelogram.bmp)
 
