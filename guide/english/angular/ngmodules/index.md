@@ -178,7 +178,7 @@ The above example does not introduce anything new. The focus here is on the comm
 
 #### Feature Modules
 
-Applications grow overtime. Scaling them properly requires application organization. A solid system for this will make further development much easier.
+Applications grow overtime. Scaling them properly requires application organization. A solid system for this will make further development much easier and file structure pleasant to the eye.
 
 In Angular, schematics ensure purpose-driven sections of code remain distinguishable. Beyond the sub-NgModule schematics, there are the NgModules themselves. They are a type of schematic too. They stand above the rest in the list of schematics excluding the application itself.
 
@@ -261,6 +261,8 @@ export class AppComponent {
 `<app-awesome></app-awesome>` (component), `awesome` (pipe), and `appAwesome` (directive) are exclusive to AwesomeModule. Had it not exported these declarables or AppModule neglected to add AwesomeModule to its imports, then AwesomeModule's declarables would not have been usable by AppComponent’s template. AwesomeModule is a feature module to the root NgModule AppModule.
 
 Angular provides some its own modules that supplement the root upon their importation. This is due to these feature modules exporting what they create.
+
+Feature modules can be of different types as shown in the Angular docs.
 
 #### Static module methods
 
