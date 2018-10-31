@@ -2,7 +2,7 @@
 title: Dynamic Memory Management
 ---
 # Dynamic Memory Management
-Sometimes you will need to allocate memory spaces in the heap also known as the dynamic memory. This is particulary useful when you do not know during compile time how large a data structure (like an array) will be. 
+Sometimes you will need to allocate memory spaces in the heap also known as the dynamic memory. This is particularly useful when you do not know during compile time how large a data structure (like an array) will be. 
 ## An Example
 Here's a simple example where we allocate an array asking the user to choose the dimension
 ```C
@@ -43,13 +43,13 @@ sizeof(int)
 ```
 Let's start from `sizeof`. The `malloc` needs to know how much space allocate for your data. In fact a `int` variable will use less storage space then a `double` one.
 It is generally not safe to assume the size of any datatype. For example, even though most implementations of C and C++ on 32-bit systems define type int to be four octets, this size may change when code is ported to a different system, breaking the code.
-`sizeof` as it's name suggests generates the size of a variable or datatype.
+`sizeof` as its name suggests generates the size of a variable or datatype.
 
 ```C
 arrayPointer = (int*) malloc(sizeof(int) * arrayDimension);
 ```
 In this example, malloc allocates memory and returns a pointer to the memory block. The size of the block allocated is equal to the number of bytes for a single object of type int multiplied by `arrayDimension`, providing the system has enough space available.
-But what if you do not have enough space or `malloc` can not allocate it for some other reasons?
+But what if you do not have enough space or `malloc` cannot allocate it for some other reasons?
 
 ## Checking the malloc output
 This do not happens commonly but it is a very good practice to check the value of your pointer variable after allocating a new space of memory.
@@ -58,10 +58,10 @@ This do not happens commonly but it is a very good practice to check the value o
     if(arrayPointer == NULL)
       printf("Error allocating memory!");
 ```
-This will also be very usefull during your debug phase and will prevent some possible errors using the last function used in the example.
+This will also be very useful during your debug phase and will prevent some possible errors using the last function used in the example.
 
 ## A word on free()
-Usually variables are automatically de-allocated when their scope is destroyed, freeing the memory they were using.
+Usually variables are automatically de-allocated when their scope are destroyed, freeing the memory they were using.
 This simple does not happen when you manually allocate memory using the `malloc`.
 To prevent memory leaks in more complex programs and in order to not create garbage in the system you have to free the memory area recently used before terminating your code execution.
 
@@ -70,7 +70,7 @@ To prevent memory leaks in more complex programs and in order to not create garb
 ```
 
 In the end you will understand for sure that checking `arrayPointer` value was necessary to prevent an error using the `free` function.
-If `arrayPointer` value was equal to `NULL` you could have expirencied some kind of bug.
+If `arrayPointer` value was equal to `NULL` you could have experienced some kind of bug.
 
 ## Other functions similar to malloc
 Sometimes you need to not only reserve a new area of memory for your operations, you might also need to initialize all bytes to zero.
@@ -95,4 +95,4 @@ Using the returned value, without checking if the allocation is successful, invo
 * Memory leaks
 Failure to deallocate memory using `free` leads to buildup of non-reusable memory, which is no longer used by the program.
 * Logical errors
-All allocations must follow the same pattern: allocation using `malloc`, usage to store data, deallocation using `free`. If you not follow this pattern usually segmentation fault errore will be given and the program will crash. These errors can be transient and hard to debug – for example, freed memory is usually not immediately reclaimed by the system, and dangling pointers may persist for a while and appear to work.
+All allocations must follow the same pattern: allocation using `malloc`, usage to store data, deallocation using `free`. If you not follow this pattern usually segmentation fault error will be given and the program will crash. These errors can be transient and hard to debug – for example, freed memory is usually not immediately reclaimed by the system, and dangling pointers may persist for a while and appear to work.
