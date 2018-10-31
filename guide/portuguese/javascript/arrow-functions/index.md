@@ -2,7 +2,7 @@
 title: Arrow Functions
 localeTitle: Funções de seta
 ---
-As funções de seta são uma nova sintaxe do ES6 para escrever expressões de função JavaScript. A sintaxe mais curta economiza tempo, além de simplificar o escopo da função.
+As funções de seta (*arrow functions*) são uma nova sintaxe do ES6 para escrever expressões de função em JavaScript. A sintaxe mais curta economiza tempo, além de simplificar o escopo da função.
 
 ## O que são funções de seta?
 
@@ -25,11 +25,11 @@ Abaixo está um exemplo básico de uma função de seta:
  var multiply = (x, y) => x * y; 
 ```
 
-Você não precisa mais da `function` e `return` palavras-chave, ou até mesmo as chaves.
+Você não precisa mais das palavras-chave `function` e `return`, ou nem mesmo das chaves.
 
-### Um simplificado `this`
+### Um `this` simplificado
 
-Antes de funções de seta, novas funções definidas sua própria `this` valor. Para usar `this` dentro de uma expressão de função tradicional, temos que escrever uma solução alternativa assim:
+Antes das funções de seta, novas funções definiam seu próprio valor `this`. Para usar `this` dentro de uma expressão de função tradicional, temos que escrever uma solução alternativa assim:
 
 ```javascript
 // ES5 syntax 
@@ -45,7 +45,7 @@ Antes de funções de seta, novas funções definidas sua própria `this` valor.
  } 
 ```
 
-Uma função de seta não define é possuir `this` valor, ele herda `this` da função delimitador:
+Uma função de seta não define seu próprio valor `this`, ela herda o `this` da função que a contém:
 
 ```javascript
 // ES6 syntax 
