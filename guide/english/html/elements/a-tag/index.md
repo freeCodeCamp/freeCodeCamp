@@ -15,7 +15,9 @@ By default, a linked page is displayed in the current browser window unless anot
   <a href= "https://guide.freecodecamp.org/">freeCodeCamp</a>
 ```
 
-An image can also be turned into a link by enclosing the `<img>` tag in an `<a>` tag.
+To the website visitor, this would appear as "freeCodeCamp." In most browsers, the text that contains a link is colored blue and underlined.
+
+An image can also be turned into a link by enclosing the `<img>` tag in an `<a>` tag. In order to open the link, the user must then click on or select the image.
 
 #### Example:
 
