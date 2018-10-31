@@ -156,3 +156,21 @@ This will produce the following result -
 ```
    The substring was found!
 ```
+### Using the strtolower() function
+
+The strtolower() function is a simple, but useful string manipulation function.  As the name implies, it makes any character in a string lower case.  The function takes one parameter (a string).  
+
+Example:
+
+```
+<?php
+$s = "THIS IS AN ALL CAP STRING";
+$s = strtolower($s);
+echo $s;
+?>
+```
+Result:
+
+```
+this is an all cap string
+```
