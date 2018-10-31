@@ -59,9 +59,7 @@ As shown, the border property allows you to select different sections of it. [to
 
 ### Border Width
 
-To alter the thickness of your border use the border-width attribute. You may use key terms or exact values to define the border width. Note: You must
-define a border-style for the border to show up. The width can be set as a specific size (in px, pt, cm, em, etc) or by using one of the three pre-defined
-values: thin, medium, or thick.
+To alter the thickness of your border, use the border-width attribute. You may use key terms or exact values to define the border width. Note: You must define a border-style for the border to show up. The width can be set as a specific size (in px, pt, cm, em, etc) or by using one of the three pre-defined values: thin, medium, or thick.
 
 Example:
 ```css
@@ -83,8 +81,7 @@ p {
 
 ### Border Color
 
-Now for the creative aspect of CSS Borders! With the use of the border-color attribute, you will be able to create customized borders to fit the flow and layout
-of your website. Border colors can be any color defined by RGB, hexadecimal, or key terms. Below is an example of each of these types.
+Now, for the creative aspect of CSS Borders! With the use of the border-color attribute, you will be able to create customized borders to fit the flow and layout of your website. Border colors can be any color defined by RGB, hexadecimal, or key terms. Below is an example of each of these types.
 
 Example:
 ```css
