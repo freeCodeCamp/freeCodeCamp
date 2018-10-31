@@ -1,7 +1,7 @@
 ---
 title: Joomla
 ---
-
+![Joomla Logo](https://docs.joomla.org/images/f/f0/Joomla-3D-Horizontal-logo-light-background-en.png)
 # Joomla
 
 Joomla! is a free and open-source content management system (CMS) built on a model–view–controller web application framework that can be used independently of the CMS. It is developed by Open Source Matters, Inc.
