@@ -4,10 +4,10 @@ title: Binary Search Trees
 ## Binary Search Trees
 ![Binary Search Tree](https://cdn-images-1.medium.com/max/1320/0*x5o1G1UpM1RfLpyx.png)
 
-A tree is a data structure composed of nodes that has the following characteristics:
-1. Each tree has a root node (at the top) - containing some value (can be any datatype).
+A tree is a data structure which is composed of nodes that has the following characteristics:
+1. Each tree has a root node (at the top) - containing some value (can be of any datatype).
 2. The root node has zero or more child nodes.
-3. Each child node has zero or more child nodes, and so on. This creates a subtree in the tree. Every node has its own subtree made up of its children and their children, etc. This means that every node on its own can be a tree.
+3. Each child node, in turn, has zero or more child nodes, and so on. This creates a subtree in the tree. Every node has its own subtree made up of its children and their children, etc. This means that every node on its own can be a tree.
 
 A binary search tree (BST) adds these two characteristics:
 1. Each node has a maximum of up to two children.
