@@ -79,6 +79,13 @@ Since ArrayList implements *List*, an ArrayList can be created using the followi
    ```java
   Collections.reverseOrder());
  ```
+ 
+ Sorting an ArrayList of custom objects can also be accomplished by using the compareTo method and your custom class name:
+  ```java 
+  myList.sort(compareTo:ClassName);
+  ```
+
+
   
   An ArrayList allows us to randomly access elements. ArrayList is similar to *Vector* in a lot of ways. But it is faster than Vectors. The main thing to note is that - Vectors are faster than arrays but ArrayLists are not. 
   
