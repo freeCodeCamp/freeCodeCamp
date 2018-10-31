@@ -35,6 +35,15 @@ This full-color book will show you how to make your websites more interactive an
 
 - [Amazon](https://www.amazon.com/JavaScript-JQuery-Interactive-Front-End-Development/dp/1118531647)
 
+#### Javascript fo Kids: A Playful Introduction to Progragramming
+Contrary to the title this is a great book for those you haven't coded before and has a number of wins for the novice javascript developer.  
+- [Amazon](https://www.amazon.com/JavaScript-Kids-Playful-Introduction-Programming/dp/1593274084/ref=as_li_ss_tl?_encoding=UTF8&qid=&sr=&linkCode=ll1&tag=eejs-20&linkId=78320bf6b48bd7f6549a22f9abadc66c)
+
+#### Javascript: The Definitive Guide
+Even after six editions of this books, this is a deep and verbose look at web applications from a javascript perspective.  
+
+- [Amazon](https://www.amazon.com/JavaScript-Definitive-Guide-Activate-Guides/dp/0596805527/ref=as_li_ss_tl?ie=UTF8&redirect=true&linkCode=ll1&tag=eejs-20&linkId=11a79cf9e89a54625cb3a8e8ff2dc8d5)
+
 
 #### Other Resources
 
