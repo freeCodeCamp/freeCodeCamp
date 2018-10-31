@@ -1,6 +1,6 @@
 # Cómo trabajar en artículo de la Guía
 
-Con tu yuda, podemos crear un herramienta de referencia accesible que ayudará a millones de personas que están aprendiendo a programar en los próximos años. 💛
+Con tu ayuda, podemos crear un herramienta de referencia accesible que ayudará a millones de personas que están aprendiendo a programar en los próximos años. 💛
 
 Puedes:
 
