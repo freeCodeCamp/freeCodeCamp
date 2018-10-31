@@ -95,7 +95,7 @@ Broadly,
 
 Contributing to this requires some understanding of APIs, ES6 Syntax and a lot of curiosity.
 
-Essentially we expect basic familiarity with some of the aforementioned technologies, tools and libraries. That being said, you are not required to be an expert on them in order to contribute.
+Essentially, we expect basic familiarity with some of the aforementioned technologies, tools and libraries. That being said, you are not required to be an expert on them in order to contribute.
 
 Feel free to ask us questions on the related issue threads and we will be glad to answer them. When in doubt, you can reach Mrugesh Mohapatra [`@raisedadead`](https://github.com/raisedadead) or Stuart Taylor [`@bouncey`](https://github.com/bouncey) from our platform dev team to help you with this.
 
