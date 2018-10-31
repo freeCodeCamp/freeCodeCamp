@@ -80,3 +80,13 @@ If there is no return statement the function returns None when it reaches the en
      ...
      >>> print("First value = %d,  Second value = %d" %(return_two_values()))
      First value = 40,  Second value = 2
+     
+ It is possible to have return statement in a loop but it execute only once
+ 
+    >>>def return_yes():
+    ...    word="hello"    
+    ...    for i in range(0,5):
+                return word
+    >>>print(return_yes())
+    hello
+    
