@@ -22,7 +22,7 @@ Android apps can be a great, fun way to get into the world of programming. Offic
 
 From simple games and utility apps to full-blown music players, there are many opportunities to create something meaningful with Android. The Android developer community is widespread, and the documentation and resources online are easy to find, so that you can tackle any issue you're facing.
 
-There is definitely a learning curve to get used to the Android framework, however once you understand the core components that make up the app, the rest will come naturally.
+There is definitely a learning curve to get used to the Android framework, however, once you understand the core components that make up the app, the rest will come naturally.
 
 The learning curve involved in Android has a relatively smaller slope compared to learning other technologies such as NodeJS. It is also relatively easier to understand and make contributions towards AOSP hosted by Google. The project can be found [here](https://source.android.com/) 
 
