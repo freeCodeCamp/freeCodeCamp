@@ -34,13 +34,13 @@ HTML5 presenta una gran cantidad de elementos semánticos. Aunque hablamos de qu
 
 ! DOCTYPE html: define este documento como HTML5
 
-html: el elemento raíz de una página HTML
+Html: el elemento raíz de una página HTML
 
-head: el elemento contiene información meta sobre el documento
+Head: el elemento contiene información meta sobre el documento
 
-título: el elemento especifica un título para el documento
+Título: el elemento especifica un título para el documento
 
-cuerpo: el elemento contiene el contenido de la página visible
+Cuerpo: el elemento contiene el contenido de la página visible
 
 h1: el elemento define un encabezado grande
 
