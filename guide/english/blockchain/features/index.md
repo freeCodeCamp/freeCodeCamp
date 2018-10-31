@@ -61,3 +61,4 @@ Consensus Based is an approach to decision making. It is a creative and dynamic 
 3. [Consensus Mechanism](https://www.seedsforchange.org.uk/consensus)
 4. [Major Features of Blockchain](https://cryptocurry.com/news/top-4-major-features-blockchain/)
 5. [Application and Features of Blockchain](https://arxiv.org/pdf/1806.03693.pdf)
+6. [Key Characteristics of the Blockchain](https://www2.deloitte.com/content/dam/Deloitte/in/Documents/industries/in-convergence-blockchain-key-characteristics-noexp.pdf)
