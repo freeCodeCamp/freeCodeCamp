@@ -13,11 +13,11 @@ Arrays always start with the index of 0 and are instantiated to a set number of 
 ```java
 dataType[] arrayName;   // preferred way
 ```
-Here, ```java datatype[] ``` describes that all the variables stated after it will be instantiated as arrays of the specified datatype. So, if we want to instantiate more arrays of the similar datatype, we just have to add them after the specified ```java arrayName```(Don't forget to separate them through commas only). An example is given below in the next section for reference. 
+Here, `datatype[]` describes that all the variables stated after it will be instantiated as arrays of the specified datatype. So, if we want to instantiate more arrays of the similar datatype, we just have to add them after the specified `arrayName`(don't forget to separate them through commas only). An example is given below in the next section for reference. 
 ```java
 dataType arrayName[];  //  works but not preferred way
 ```
-Here, ```java datatype``` describes only that the variables stated after it belong to that datatype. Besides, ```java []``` after the variable name describes that the variable is an array of the specified datatype (not just a value or object of that datatype). So, if we want to instantiate more arrays of the similar datatype, we will add the variables names just after the one already specified, separated by commas and each time we will have to add ```java []``` after the variable name otherwise the variable will be instantiated as an ordinary value-storing variable (not an array). For better understanding an example is given in the next section.
+Here, `datatype` describes only that the variables stated after it belong to that datatype. Besides, `[]` after the variable name describes that the variable is an array of the specified datatype (not just a value or object of that datatype). So, if we want to instantiate more arrays of the similar datatype, we will add the variables names just after the one already specified, separated by commas and each time we will have to add `[]` after the variable name otherwise the variable will be instantiated as an ordinary value-storing variable (not an array). For better understanding an example is given in the next section.
 
 ## Code snippets of above syntax:
 
@@ -44,7 +44,7 @@ dataType[] arrayName = new dataType[arraySize];
 double[] List = new double[10];
 ```
 
-## Another way to declare and initialise an Array:
+## Another way to declare and initialize an Array:
 
 ```java
 dataType[] arrayName = {value_0, value_1, ..., value_k};
@@ -80,7 +80,7 @@ Output:
 arrayName[index] = value; 
 ```
 
-Note: You cannot change the size or type of an array after initialising it.
+Note: You cannot change the size or type of an array after initializing it.
 Note: You can however reset the array like so
 
 ```java
@@ -88,7 +88,7 @@ arrayName = new dataType[] {value1, value2, value3};
 ```
 
 ## Size of Arrays:
-It's possible to find the number of elements in an array using the ```java length``` attribute. It should be noted here that ```java length``` is an **attribute** of every array, i.e., a variable storing the length of the array. It must not be confused for a **method** of Array since the name is same as the ```java length()``` method corresponding to String classes.
+It's possible to find the number of elements in an array using the `length` attribute. It should be noted here that `length` is an **attribute** of every array, i.e., a variable storing the length of the array. It must not be confused for a **method** of Array since the name is same as the `length()` method corresponding to String classes.
 ```java
 int[] a = {4, 5, 6, 7, 8}; // declare array
 System.out.println(a.length); //prints 5
@@ -119,7 +119,7 @@ Output:
 
 
 ### Multi-dimensional Arrays
-Two-dimensional arrays (2D arrays) can be thought of as a table with rows and columns. Though this representation is only a way to visualise the array for better problem-solving. The values are actually stored in sequential memory addresses only.
+Two-dimensional arrays (2D arrays) can be thought of as a table with rows and columns. Though this representation is only a way to visualize the array for better problem-solving. The values are actually stored in sequential memory addresses only.
 ```java
 int M = 5;
 int N = 5;
@@ -131,40 +131,41 @@ for(int i = 0; i < M; i++) {
 }
 ```
 This loop will execute M ^ N times and will build this:
+```java
+[ 0 | 1 | 2 | 3 | 4 ]  
+[ 0 | 1 | 2 | 3 | 4 ]  
+[ 0 | 1 | 2 | 3 | 4 ]  
+[ 0 | 1 | 2 | 3 | 4 ]  
+[ 0 | 1 | 2 | 3 | 4 ]  
+```
 
-[ 0 | 1 | 2 | 3 | 4 ]  
-[ 0 | 1 | 2 | 3 | 4 ]  
-[ 0 | 1 | 2 | 3 | 4 ]  
-[ 0 | 1 | 2 | 3 | 4 ]  
-[ 0 | 1 | 2 | 3 | 4 ]  
-
-Similarly a 3D array can also be made. It can be visualised as a cuboid instead of a rectangle(as above), divided into smaller cubes with each cube storing some value. It can be initialised follows:
+Similarly a 3D array can also be made. It can be visualized as a cuboid instead of a rectangle(as above), divided into smaller cubes with each cube storing some value. It can be initialized follows:
 ```java
 int a=2, b=3, c=4;
 int[][][] a=new int[a][b][c];
 ```
-In a similar manner, one can declare an array of as many dimensions as desired, although visualising an array of more than 3 dimensions is difficult.
+In a similar manner, one can declare an array of as many dimensions as desired, although visualizing an array of more than 3 dimensions is difficult.
 
 ### Jagged Arrays
 Jagged arrays are multi-dimensional arrays that have a set number of rows but a varying number of columns. Jagged arrays are used to conserve memory use of the array. Here is an example:
 
-
 ```java
-int[][] array = new int[5][]; //initialise a 2D array with 5 rows
+int[][] array = new int[5][]; //initialize a 2D array with 5 rows
 array[0] = new int[1]; //creates 1 column for first row
 array[1] = new int[2]; //creates 2 columns for second row
 array[2] = new int[5]; //creates 5 columns for third row
 array[3] = new int[5]; //creates 5 columns for fourth row
 array[4] = new int[5]; //creates 5 columns for fifth row
-```	
+```
 
 Output: 
-
+```java
 [ 0 ]                  
 [ 0 | 1 ]              
 [ 0 | 1 | 2 | 3 | 4 ]  
 [ 0 | 1 | 2 | 3 | 4 ]  
 [ 0 | 1 | 2 | 3 | 4 ]  
+```
 
 #### More Information:
-* Source: <a href='https://docs.oracle.com/javase/tutorial/java/nutsandbolts/arrays.html' target='_blank' rel='nofollow'>Java Arrays</a>
+* Source: [Java Arrays](https://docs.oracle.com/javase/tutorial/java/nutsandbolts/arrays.html)
