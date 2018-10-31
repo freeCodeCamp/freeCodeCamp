@@ -3,13 +3,13 @@ title: Product Management
 ---
 ## Product Management
 
-Product Management is an organisational function that assumes responsibility for the entire lifecycle of the products that are being sold. As a business function, Product Management, is held accountable for creating customer value and measurable benefits to the business. 
+Product Management is an organizational function that assumes responsibility for the entire lifecycle of the products that are being sold. As a business function, Product Management, is held accountable for creating customer value and measurable benefits to the business. 
 
 There are a few core responsibilities common to most product management roles inside both established enterprise companies and at startups. Most often product management is responsible for understanding customer requirements as well as requirements driven by the current state of the industry (including the competitive landscape), defining and prioritizing them, organizing them into a long-term roadmap, and working with the engineering team to build them. Setting strategy and defining the roadmap is often considered to be inbound work and bringing the product to market is often considered to be "outbound."
 
 It is important to understand the differences between inbound and outbound product management because a great product manager has the diverse set of skills to do both well. 
 
-Difference between Product Management and Project Management is, the scale and life cycle. Project Managers ensure multiple products/services/projects are delivered to a customer, while Product Managers go beyond development and work towards longjevity and operation of a product/service.
+Difference between Product Management and Project Management is, the scale and life cycle. Project Managers ensure multiple products/services/projects are delivered to a customer, while Product Managers go beyond development and work towards longevity and operation of a product/service.
 
 In Game development we can see the clear shift from Projects to Products due to games having more detailed post launch plans and monetization strategies.
 
