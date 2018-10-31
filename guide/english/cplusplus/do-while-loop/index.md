@@ -52,3 +52,21 @@ int main()
 }
 
 ```
+# Difference between while and do-while loop
+       1) The main difference between the above loops is no. of times they have been runned.
+                The while loop can be run zero or more time but do-while loop runs at least one time
+       2) Syntax for while loop is
+                        while(test condition)
+                        {
+                                ----
+                                CODE-
+                        }
+          Syntax for do-while loop is
+                        do
+                        {
+                        
+                                ----
+                                code
+                        }while(test condition);
+       
+                         
