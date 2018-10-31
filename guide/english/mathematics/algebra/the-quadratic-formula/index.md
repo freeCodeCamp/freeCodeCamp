@@ -95,6 +95,15 @@ Make sure that you are careful not to drop the square root or the "plus/minus" i
 
 Remember that "b^2" means "the square of ALL of b, including its sign", so don't leave b^2 being negative.
 
+### Summary:
+1)Quadratic Equation in Standard Form: ax^2 + bx + c = 0
+2)Quadratic Equations can be factored
+3)Quadratic Formula: x =  −b ± √(b^2 − 4ac)/2a
+4)When the Discriminant (b^2−4ac) is:
+    1) positive, there are 2 real solutions
+    2) zero, there is one real solution
+    3) negative, there are 2 complex solutions
+
 #### More Information:
 [The Quadratic Formula Explained](http://www.purplemath.com/modules/quadform.htm "The Quadratic Formula Explained")
 
