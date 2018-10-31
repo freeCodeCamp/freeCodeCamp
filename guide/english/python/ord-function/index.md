@@ -4,7 +4,7 @@ title: Python Ord Function
 
 ## Ord function
 
-`ord()` is a built-in function in Python 3, to convert the string representing one Unicode character into integer 
+`ord()` is a built-in function in Python 2.7 & 3, to convert the string representing one Unicode character into integer 
 representing the Unicode code of the character.
 
 #### Examples:
@@ -17,7 +17,7 @@ representing the Unicode code of the character.
 
 ## chr function
 
-`chr()` is a built-in function in Python 3, to convert the integer 
+`chr()` is a built-in function in Python 2.7 & 3, to convert the integer 
 representing the Unicode code into a string representing a corresponding character.
 
 #### Examples:
