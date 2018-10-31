@@ -20,7 +20,7 @@ dataType arrayName[];  //  works but not preferred way
 ```
 Here, ```java datatype``` describes only that the variables stated after it belong to that datatype. Besides, ```java []``` after the variable name describes that the variable is an array of the specified datatype (not just a value or object of that datatype). So, if we want to instantiate more arrays of the similar datatype, we will add the variables names just after the one already specified, separated by commas and each time we will have to add ```java []``` after the variable name otherwise the variable will be instantiated as an ordinary value-storing variable (not an array). For better understanding an example is given in the next section.
 
-## Code snippets of above syntax:
+### Code snippets of above syntax:
 
 ```java
 double[] list1, list2; // preferred way
@@ -39,7 +39,7 @@ Note: The style `double list[]` is not preferred as it comes from the C/C++ lang
 dataType[] arrayName = new dataType[arraySize];
 ```
 
-## Code snippets of the above syntax:
+### Code snippets of the above syntax:
 
 ```java
 double[] List = new double[10];
@@ -51,7 +51,7 @@ double[] List = new double[10];
 dataType[] arrayName = {value_0, value_1, ..., value_k};
 ```
 
-## Code snippets of above syntax:
+### Code snippets of above syntax:
 
 ```java
 double[] list = {1, 2, 3, 4};
@@ -68,7 +68,7 @@ that are used to represent arrays in two different ways.
 dataType[] arrayName = new dataType[] {value_0, value_1, ..., value_k};
 ```
 
-## Code snippets of above syntax:
+### Code snippets of above syntax:
 
 ```java
 int[] intArray = new int[]{ 1,2,3,4,5,6,7,8,9,10 }; 
@@ -79,8 +79,9 @@ int[] intArray = new int[]{ 1,2,3,4,5,6,7,8,9,10 };
 arrayName[index]; // gives you the value at the specified index
 ```
 
-## Code snippets of above syntax:
+### Code snippets of above syntax:
 ```java
+double[] list = {1, 2, 3, 4};
 System.out.println(list[1]);
 ```
 Output:
@@ -88,32 +89,7 @@ Output:
 2.0
 ```
 
-## Modifying Arrays:
-```java
-arrayName[index] = value; 
-```
-
-Note: You cannot change the size or type of an array after initialising it.
-Note: You can however reset the array like so
-
-```java
-arrayName = new dataType[] {value1, value2, value3};
-```
-
-## Size of Arrays:
-It's possible to find the number of elements in an array using the "length attribute". It should be noticed here that ```java length``` is an **attribute** of every array i.e. a variable name storing the length of the variable. It must not be confused for a **method** of array since the name is same as the ```java length()``` method corresponding to String classes.
-```java
-int[] a = {4, 5, 6, 7, 8}; // declare array
-System.out.println(a.length); //prints 5
-```
-
-## Code snippets of above syntax:
-```java
-list[1] = 3; // now, if you access the array like above, it will output 3 rather than 2
-```
-
-_Example of code:_
-
+You may also loop through an array to access and print elements.
 ```java
 int[] a = {4, 5, 6, 7, 8}; // declare array
 for (int i = 0; i < a.length; i++){ // loop goes through each index
@@ -130,6 +106,28 @@ Output:
     8
 ```
 
+## Modifying Arrays:
+```java
+arrayName[index] = value; 
+```
+### Code snippets of above syntax:
+```java
+list[1] = 3; // now, if you access the array like above, it will output 3 rather than 2
+```
+
+Note: You cannot change the size or type of an array after initialising it.
+Note: You can however reset the array like so
+
+```java
+arrayName = new dataType[] {value1, value2, value3};
+```
+
+## Size of Arrays:
+It's possible to find the number of elements in an array using the "length attribute". It should be noticed here that ```java length``` is an **attribute** of every array i.e. a variable name storing the length of the variable. It must not be confused for a **method** of array since the name is same as the ```java length()``` method corresponding to String classes.
+```java
+int[] a = {4, 5, 6, 7, 8}; // declare array
+System.out.println(a.length); //prints 5
+```
 
 ### Multi-dimensional Arrays
 Two-dimensional arrays (2D arrays) can be thought of as a table with rows and columns. Though this representation is only a way to visualize the array for better problem-solving. The values are actually stored in sequential memory addresses only.
