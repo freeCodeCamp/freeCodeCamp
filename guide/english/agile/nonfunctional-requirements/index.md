@@ -5,6 +5,8 @@ title: Nonfunctional Requirements
 
 A non-functional requirement (NFR) is a requirement that specifies criteria that can be used to judge the operation of a system, rather than specific behaviors (a functional requirement). Non-functional requirements are often called "quality attributes", "constraints" or "non-behavioral requirements". 
 
+In plain English, non-functional requirements are things that 100% is needed for the code to run. For example, a requirement would be to be able to login, but whether it takes 1 second to log in or 1 hour to login, both satisfy the functional requirement. The non-functional requirement would then be that the login time should take no more than 3 seconds. 
+
 Informally, these are sometimes called the "ilities", from attributes like stability and portability. NFRs can be divided into two main categories:
 * **Execution qualities**, such as safety, security and usability, which are observable during operation (at run time).
 * **Evolution qualities**, such as testability, maintainability, extensibility and scalability, which are embodied in the static structure of the system
