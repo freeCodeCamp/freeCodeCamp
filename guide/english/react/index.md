@@ -7,7 +7,7 @@ React is a JavaScript library for building user interfaces. It was voted the mos
 
 React is a JavaScript library and React applications built on it run in the browser, NOT on the server. Applications of this kind only communicate with the server when necessary, which makes them very fast compared to traditional websites that force the user to wait for the server to re-render entire pages and send them to the browser.
 
-React is used for building user interfaces - what the user sees on their screen and how they interact with your web app. This interface is split up into components, instead of having one huge page you break it up into smaller pieces known as components. In more general terms, this approach is called Modularity.
+React is used for building user interfaces, or what the user sees on their screen and how they interact with your web app. This interface is split up into components, instead of having one huge page you break it up into smaller pieces known as components. In more general terms, this approach is called Modularity.
 
 - It's declarative: React uses a declarative paradigm that makes it more readable. 
 - It's efficient: React computes the minimal set of changes necessary to keep your DOM up-to-date. 
