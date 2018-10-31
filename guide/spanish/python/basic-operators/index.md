@@ -78,51 +78,48 @@ Realiza una operación de división de piso. Devuelve la parte integral del coci
 
 Nota: para obtener el resultado en tipo flotante, uno de los operandos también debe ser de tipo flotante.
 
-#### Operadores relacionales
+#### Operadores relacionales (o de comparación)
 
 Un operador relacional se utiliza para comparar dos operandos para decidir una relación entre ellos. Devuelve un valor booleano basado en la condición.
 
-Operador
+<table style="width:100%">
+  <tr>
+    <th>Operator</th>
+    <th>Description</th> 
+    <th>Usage</th>
+  </tr>
+  <tr>
+    <td align="center">></td>
+    <td>Devuelve True si el operando izquierdo es mayor que el operando derecho <br> Devuelve False de lo contrario </td> 
+    <td>12 > 3 devuelve True</td>
+  </tr>
+  <tr>
+    <td align="center"><</td>
+    <td>Devuelve True si el operando derecho es mayor que el operando izquierdo <br> De lo contrario devuelve Falsoe</td> 
+    <td>12 < 3 devuelve False</td>
+  </tr>
+  <tr>
+    <td align="center">==</td>
+    <td>Devuelve True si ambos operandos son iguales<br>De lo contrario devuelve False</td> 
+    <td>12 == 3 devuelve False</td>
+  </tr>
+  <tr>
+    <td align="center">>=</td>
+    <td>Devuelve True si el operando izquierdo es mayor o igual al operando derecho<br>De lo contrario devuelve False</td> 
+    <td>12 >= 3 devuelve True</td>
+  </tr>
+  <tr>
+    <td align="center"><=</td>
+    <td>Devuelve True si el operando derecho es mayor o igual que el operando izquierdo<br>De lo contrario devuelve False</td> 
+    <td>12 <= 3 devuelve False</td>
+  </tr>
+  <tr>
+    <td align="center">!=</td>
+    <td>Devuelve True si ambos operandos no son iguales<br>De lo contrario devuelve False</td> 
+    <td>12 != 3 devuelve True</td>
+  </tr>
+</table>
 
-Descripción
-
-Uso
-
-\>
-
-Devuelve True si el operando izquierdo es mayor que el operando derecho Devuelve False de lo contrario
-
-12> 3 devuelve Verdadero
-
-<
-
-Devuelve True si el operando derecho es mayor que el operando izquierdo Devuelve False de lo contrario
-
-12 <3 devuelve Falso
-
-\==
-
-Devuelve True si ambos operandos son iguales Devuelve False de lo contrario
-
-12 == 3 devuelve Falso
-
-\> =
-
-Devuelve True si el operando izquierdo es mayor o igual que el operando derecho Devuelve False de lo contrario
-
-12> = 3 devuelve True
-
-<=
-
-Devuelve True si el operando derecho es mayor o igual que el operando izquierdo Devuelve False de lo contrario
-
-12 <= 3 devuelve False
-
-! =
-
-Devuelve True si ambos operandos no son iguales Devuelve False de lo contrario
-
-12! = 3 devuelve True
 
 #### Operadores de Bitwise
 
