@@ -26,3 +26,4 @@ So this means that hover on paragraph will change it's background color to yello
 More information can be found [here].
 
 [here]: https://www.w3schools.com/jquery/event_hover.asp
+* <a href="https://api.jquery.com/hover/" rel="nofollow">jquery.com .hover()</a>
