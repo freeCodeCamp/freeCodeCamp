@@ -6,12 +6,12 @@ localeTitle: Bash Cat
 
 Cat es uno de los comandos más utilizados en los sistemas operativos Unix.
 
-Cat se utiliza para leer un archivo de forma secuencial e imprimirlo en la salida estándar. El nombre se deriva de su función a los archivos Enate con **gato.**
+Cat se utiliza para leer un archivo de forma secuencial e imprimirlo por la salida estándar. El nombre deriva de su función de con**cat**enar archivos.
 
 ### Uso
 
 ```bash
-cat [options] [file_names] 
+cat [opciones] [nombre_fichero] 
 ```
 
 Opciones más utilizadas:
@@ -23,10 +23,10 @@ Opciones más utilizadas:
 
 ### Ejemplo
 
-Imprimir en la terminal el contenido de file.txt:
+Imprimir en la terminal el contenido de fichero.txt:
 
 ```bash
-cat file.txt 
+cat fichero.txt 
 ```
 
 Concatene el contenido de los dos archivos y muestre el resultado en el terminal:
