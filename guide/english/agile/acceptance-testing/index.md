@@ -31,7 +31,7 @@ Acceptance criteria are defined on the basis of the following attributes
 >
 > - Performance
 >
-> - Timeliness
+
 >
 > - Confidentiality and Availability
 >
