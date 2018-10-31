@@ -23,6 +23,8 @@ Here are some examples of big name brands using WordPress:
 * The New Yorker
 * MTV News
 
+There are several plug-ins that can be used to enhance the look and feel of one's Worpress website.
+
 Whether it's page transitions or a customized contact form, WordPress users are only a few clicks away from building a website.
 
 ### More Information
