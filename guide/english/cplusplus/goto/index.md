@@ -4,7 +4,7 @@ title: goto as a powerful utility
 
 # Intro to the use of goto and labels
 
-goto is one of the most powerful, yet highly underrated piece of logic in C++. Crazy amount of optimization can be achieved using goto, provided it is used properly.
+Goto is one of the most powerful, yet highly underrated piece of logic in C++. Crazy amount of optimization can be achieved using goto, provided it is used properly.
 It does exactly what it is named as. It goes to the mentioned occurence of the next label, wherever may it be.
 
 # Terminology
@@ -19,7 +19,7 @@ goto <label>;
 
 //This takes the exe to the next appearance of label.
 
-goto is something that transcends all loops. To be clearer on this point, here is an example.
+Goto is something that transcends all loops. To be clearer on this point, here is an example.
 
 https://code.sololearn.com/cI4qqQA8W2q3
 
