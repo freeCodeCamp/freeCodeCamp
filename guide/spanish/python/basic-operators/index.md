@@ -12,7 +12,7 @@ Los diferentes tipos de operadores en Python se enumeran a continuación:
 2.  Operadores relacionales
 3.  Operadores de Bitwise
 4.  Operadores de Asignación
-5.  Operadores logicos
+5.  Operadores lógicos
 6.  Operadores de membresía
 7.  Operadores de Identidad
 
@@ -130,137 +130,141 @@ Un operador bit a bit realiza operaciones en los operandos bit a bit
 
 Considere a = 2 (en notación binaria, 10) y b = 3 (en notación binaria, 11) para los siguientes usos
 
-Operador
+<table style="width:100%">
+  <tr>
+    <th>Operador</th>
+    <th>Descripción</th> 
+    <th>Uso</th>
+  </tr>
+  <tr>
+    <td align="center">&</td>
+    <td> Realiza operaciones bitwise AND ("y") en los operandos. </td> 
+    <td>a & b = 2<br>Binary: 10 & 11 = 10</td>
+  </tr>
+  <tr>
+    <td align="center">|</td>
+    <td> Realiza la operación OR ("o") en modo bit en los operandos.</td> 
+    <td>a | b = 3<br>Binary: 10 | 11 = 11</td>
+  </tr>
+  <tr>
+    <td align="center">^</td>
+    <td>Realiza la operación XOR en modo bit a los operandos.</td> 
+    <td>a ^ b = 1<br>Binary: 10 ^ 11 = 01</td>
+  </tr>
+  <tr>
+    <td align="center">~</td>
+    <td>Realiza una operación NOT ("no") bit a bit en el operando. <br> Se voltea cada bit en el operando.</td> 
+    <td>~a = -3<br>Binary: ~(00000010) = (11111101)</td>
+  </tr>
+  <tr>
+    <td align="center">>></td>
+    <td>Realiza un desplazamiento a la derecha en modo bit. Desplaza los bits del operando izquierdo, derecho por el número de bits especificados como el operando derecho. </td> 
+    <td>a >> b = 0<br>Binary: 00000010 >> 00000011 = 00000000</td>
+  </tr>
+  <tr>
+    <td align="center"><<</td>
+    <td>Realiza un desplazamiento a la izquierda en modo bit. Desplaza los bits del operando izquierdo, a la izquierda por el número de bits especificados como el operando derecho </td> 
+    <td>a << b = 16<br>Binary: 00000010 << 00000011 = 00001000</td>
+  </tr>
+</table>
 
-Descripción
-
-Uso
-
-Y
-
-Realiza operaciones bitwise Y en los operandos.
-
-a & b = 2 Binario: 10 y 11 = 10
-
-|
-
-Realiza la operación OR en modo bit en los operandos.
-
-un | b = 3 Binario: 10 | 11 = 11
-
-^
-
-Realiza la operación XOR en modo bit a los operandos.
-
-a ^ b = 1 Binario: 10 ^ 11 = 01
-
-~
-
-Realiza una operación NO bit a bit en el operando Se voltea cada bit en el operando.
-
-~ a = -3 Binario: ~ (00000010) = (11111101)
-
-\>>
-
-Realiza un desplazamiento a la derecha en modo bit. Desplaza los bits del operando izquierdo, derecho por el número de bits especificados como el operando derecho
-
-a >> b = 0 Binario: 00000010 >> 00000011 = 0
-
-<<
-
-Realiza un desplazamiento a la izquierda en modo bit. Desplaza los bits del operando izquierdo, a la izquierda por el número de bits especificados como el operando derecho
-
-a << b = 16 Binario: 00000010 << 00000011 = 00001000
 
 #### Operadores de Asignación
 
 Un operador de asignación se utiliza para asignar valores a una variable. Esto generalmente se combina con otros operadores (como aritmética, bitwise) donde la operación se realiza en los operandos y el resultado se asigna al operando de la izquierda.
 
-Considere los siguientes ejemplos, **a = 18** . Aquí `=` es un operador de asignación, y el resultado se almacena en la variable a. **a + = 10** . Aquí `+=` es un operador de asignación, y el resultado se almacena en la variable a. Esto es lo mismo que a = a + 10.
+Considere los siguientes ejemplos, 
+**a = 18** . Aquí `=` es un operador de asignación, y el resultado se almacena en la variable a. **a + = 10** . Aquí `+=` es un operador de asignación, y el resultado se almacena en la variable a. Esto es lo mismo que a = a + 10.
 
-Operador
+<table style="width:100%">
+  <tr>
+    <th>Operador</th>
+    <th>Uso</th>
+  </tr>
+  <tr>
+    <td align="center">=</td>
+    <td>a = 5. El valor 5 se asigna a la variable a</td>
+  </tr>
+  <tr>
+    <td align="center">+=</td>
+    <td>a += 5 es equivalente a a = a + 5</td>
+  </tr>
+  <tr>
+    <td align="center">-=</td>
+    <td>a -= 5 es equivalente a a = a - 5</td>
+  </tr>
+  <tr>
+    <td align="center">*=</td>
+    <td>a *= 3 es equivalente a a = a * 3</td>
+  </tr>
+  <tr>
+    <td align="center">/=</td>
+    <td>a /= 3 es equivalente a a = a / 3</td>
+  </tr>
+  <tr>
+    <td align="center">%=</td>
+    <td>a %= 3 es equivalente a a = a % 3</td>
+  </tr>
+  <tr>
+    <td align="center">**=</td>
+    <td>a **= 3 es equivalente a a = a ** 3</td>
+  </tr>
+  <tr>
+    <td align="center">//=</td>
+    <td>a //= 3 es equivalente a a = a // 3</td>
+  </tr>
+  <tr>
+    <td align="center">&=</td>
+    <td>a &= 3 es equivalente a a = a & 3</td>
+  </tr>
+  <tr>
+    <td align="center">|=</td>
+    <td>a |= 3 es equivalente a a = a | 3</td>
+  </tr>
+  <tr>
+    <td align="center">^=</td>
+    <td>a ^= 3 es equivalente a a = a ^ 3</td>
+  </tr>
+  <tr>
+    <td align="center">>>=</td>
+    <td>a >>= 3 es equivalente a a = a >> 3</td>
+  </tr>
+  <tr>
+    <td align="center"><<=</td>
+    <td>a <<= 3 es equivalente a a = a << 3</td>
+  </tr>
+</table>
 
-Uso
 
-\=
-
-a = 5. El valor 5 se asigna a la variable a
-
-\+ =
-
-a + = 5 es equivalente a a = a + 5
-
-\- =
-
-a - = 5 es equivalente a a = a - 5
-
-\* =
-
-a \* = 3 es equivalente a a = a \* 3
-
-/ =
-
-a / = 3 es equivalente a a = a / 3
-
-% =
-
-a% = 3 es equivalente a a = a% 3
-
-\*\* =
-
-a \*\* = 3 es equivalente a a = a \*\* 3
-
-// =
-
-a // = 3 es equivalente a a = a // 3
-
-& =
-
-a & = 3 es equivalente a a = a & 3
-
-| =
-
-a | = 3 es equivalente a a = a | 3
-
-^ =
-
-a ^ = 3 es equivalente a a = a ^ 3
-
-\>> =
-
-a >> = 3 es equivalente a a = a >> 3
-
-<< =
-
-a << = 3 es equivalente a a = a << 3
 
 #### Operadores logicos
 
 Un operador lógico se utiliza para tomar una decisión basada en múltiples condiciones. Los operadores lógicos utilizados en Python son `and` , `or` `not`
 
-Operador
+<table style="width:100%">
+  <tr>
+    <th>Operator</th>
+    <th>Description</th>
+    <th>Usage</th>
+  </tr>
+  <tr>
+    <td align="center">and</td>
+    <td>Devuelve True si ambos operandos son True <br> De lo contrario devuelve False</td>
+    <td>a and b</td>
+  </tr>
+  <tr>
+    <td align="center">or</td>
+    <td>Devuelve True si cualquira de los operadores es True<br>De lo contrario devuelve False</td>
+    <td>a or b</td>
+  </tr>
+  <tr>
+    <td align="center">not</td>
+    <td>Devuelve True si el operando es False<br>De lo contrario devuelve False</td>
+    <td>not a</td>
+  </tr>
+  <tr>
+</table>
 
-Descripción
-
-Uso
-
-y
-
-Devuelve True si ambos operandos son True Devuelve False de lo contrario
-
-a y B
-
-o
-
-Devuelve True si alguno de los operandos es True Devuelve False de lo contrario
-
-a o B
-
-no
-
-Devuelve True si el operando es False Devuelve False de lo contrario
-
-No un
 
 #### Operadores de membresía
 
