@@ -28,9 +28,9 @@ FILE *fp;
 ```
 C provides a number of build-in function to perform basic file operation
 
-**fopen()**   **-**   **create a new file or open a existing file**
+**fopen()**   **-**   **creates a new file or open an existing file**
 
-**fclose()**   **-**   **close a file**
+**fclose()**   **-**   **closes a file**
 
 **getc()**   **-**   **reads a character from a file**
 
@@ -40,19 +40,19 @@ C provides a number of build-in function to perform basic file operation
 
 **fprintf()**   **-**   **writes a set of data to a file**
 
-**getw()**   **-**   **reads a integer from a file**
+**getw()**   **-**   **reads an integer from a file**
 
-**putw()**   **-**   **writes a integer to a file**
+**putw()**   **-**   **writes an integer to a file**
 
-**fseek()**   **-**   **set the position to desire point**
+**fseek()**   **-**   **sets the position to desired point**
 
 **ftell()**   **-**   **gives current position in the file**
 
-**rewind()**   **-**   **set the position to the begining point**
+**rewind()**   **-**   **sets the position to the starting point**
 
 ### Opening a file
 
-  The **fopen()** function is used to create a file or open a existing file
+  The **fopen()** creates a file or opens an existing file
   
   ```c
   fp = fopen(const char filename,const char mode);
@@ -95,7 +95,7 @@ main()
 }
 ```
 
-Now you might be thinking, "this justs prints text to my screen.  How is this file IO?"
+Now you might be thinking, "This just prints text to my screen.  How is this file IO?"
 The answer isn't obvious at first, and needs some understanding about the UNIX system.
 Under a UNIX system, everything is treated as a file, meaning you can read and write from it.
 This means that your printer can be abstracted as a file since all you do with a printer is write with it.
@@ -104,16 +104,16 @@ It is also useful to think of these files as streams, since as you'll see later,
 So how does this relate to `helloworld` and file IO?
 
 When you call `printf`, you are really just writing to a special file called `stdout`, short for __standard output__.
-`stdout` represents, well, the standard output as decided by your shell, which is usually the terminal.
+`stdout` represents the standard output as decided by your shell, which is usually the terminal.
 This explains why it printed to your screen.
 
-There are two other streams (i.e. files) that are available to you with effort, `stdin` and `stderr`.
+There are two other streams (i.e. files) that are easily available, `stdin` and `stderr`.
 `stdin` represents the __standard input__, which your shell usually attaches to the keyboard.
 `stderr` represents the __standard error__ output, which your shell usually attaches to the terminal.
 
 ### Rudimentary File IO, or How I Learnt to Lay Pipes
 Enough theory, let's get down to business by writing some code!
-The easist way to write to a file is to redirect the output stream using the output redirect tool, `>`.
+The easiest way to write to a file is to redirect the output stream using the output redirect tool, `>`.
 If you want to append, you can use `>>`. _N.b. these redirection operators are in_ `bash` _and similar shells._
 
 ```bash
@@ -123,7 +123,7 @@ If you want to append, you can use `>>`. _N.b. these redirection operators are i
 ./helloworld > hello.txt
 ```
 
-The contents of `hello.txt` will, not surprisingly, be
+The contents of `hello.txt` will, unsurprisingly, be
 
 ```
 Hello, world!
@@ -184,7 +184,7 @@ int main() {
 
     // Greetings time!
     char name[20];
-    // Basically keep on reading untill there's nothing left.
+    // Basically keep on reading until there's nothing left.
     while (fscanf(names, "%s\n", name) > 0) {
         fprintf(greet, "Hello, %s!\n", name);
     }
