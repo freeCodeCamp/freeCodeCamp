@@ -58,8 +58,8 @@ O Swift está fortemente documentado. Tenha em mente que codificar Swift envolve
 
 # Quer aprender mais?
 
-*   [RayWenderlich.com](https://www.raywenderlich.com/) : Tem muitos ótimos tutoriais para o desenvolvimento do Swift e do iOS.
-*   [Hacking com Swift](https://www.hackingwithswift.com/read) : Um tutorial completo do Swift, levando você de iniciante a avançado usando projetos práticos.
+*   [RayWenderlich.com](https://www.raywenderlich.com/) : Tem centenas de tutoriais para o desenvolvimento do Swift e do iOS.
+*   [Hacking com Swift](https://www.hackingwithswift.com/read) : Um tutorial completo do Swift, levando você de iniciante a avançado começando com projetos basicos ate projetos mais avançados.
 
 ### Fontes
 
