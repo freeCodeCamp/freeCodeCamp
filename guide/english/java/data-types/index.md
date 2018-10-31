@@ -168,7 +168,7 @@ class demo{
 
 ## String:
 
-String is not a primitive data type, but it lets you store multiple character data types in an array and has many methods that can be used. It is used quite commonly when the user types in data and you have to manipulate it. 
+String is not a primitive data type, it is an object, but it lets you store multiple character data types in an array and has many methods that can be used. It is used quite commonly when the user types in data and needs to manipulate it later on. 
 
 In the example below, we try to remove all of the letters from the string and output it:
 
@@ -182,7 +182,7 @@ for(int i=0;i<input.length();i++){
 //if the character at index i on the string is a letter or a space, move on to the next index
 if(Character.isLetter(input.charAt(i)) || input.charAt(i)==' '){ 
     
-    continue;
+    continue; //continues the remainder of the for loop if the conditions in the if statement are met
 }
 
 output = output + input.charAt(i); //the number is added onto the output
