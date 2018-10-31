@@ -69,6 +69,9 @@ a[[1]]
 a[["a"]]
 ## [1] 1
 ```
+## Dplyr
+Selection, filtering can be achieved using the dplyr package in R, I have added the details about this in the resources section.
+
 
 ## Resources
 
@@ -76,3 +79,4 @@ a[["a"]]
  * [R Documentation](https://www.rdocumentation.org/packages/base/versions/3.5.1/topics/subset)
  * [R Bloggers](https://www.r-bloggers.com/5-ways-to-subset-a-data-frame-in-r/)
  * [Advanced R](http://adv-r.had.co.nz/Subsetting.html)
+ * [Dplyr](https://cran.r-project.org/web/packages/dplyr/vignettes/dplyr.html)
