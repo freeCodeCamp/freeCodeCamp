@@ -26,6 +26,8 @@ img {
 <!-- Please add any articles you think might be helpful to read before writing the article -->
 It is advised to change any one parameter, either height or width, to get a proportionate image. Changing both dimensions results in forced scaling and is not advisable.
 
+An image can be set to automatically resize itself to fit the size of its container.
+
 ##### Properties
 <a title="The image-orientation CSS property describes how to correct the default orientation of an image." href="/en-US/docs/Web/CSS/image-orientation"><code>image-orientation</code></a>
 <a title="The image-rendering CSS property provides a hint to the browser about the algorithm it should use to scale images." href="/en-US/docs/Web/CSS/image-rendering"><code>image-rendering</code></a>
