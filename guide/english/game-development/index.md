@@ -10,7 +10,7 @@ A game developer could be a programmer, a sound designer, an artist, a designer 
 
 Game Development can be undertaken by a large Game Development Studio or by a single individual. It can be as small or large as you like. As long as it lets the player interact with content and is able to manipulate the game's elements, you can call it a 'game'.
 
-To get involved in the Game Development process, you do not need to write code. Artists may create and design assets, while a Developer might focus on programming a health bar. A Tester may get involved to see that the game works as expected.
+To get involved in the Game Development process, code will not be necessary. Artists may create and design assets, while a Developer might focus on programming a health bar. A Tester may get involved to see that the game works as expected.
 
 ![What first games looked like](https://i.ytimg.com/vi/ePc12V6F0ws/maxresdefault.jpg "What first games looked like")
 
