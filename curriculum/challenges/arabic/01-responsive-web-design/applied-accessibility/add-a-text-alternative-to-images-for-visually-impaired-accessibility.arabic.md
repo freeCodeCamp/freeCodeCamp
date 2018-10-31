@@ -7,13 +7,13 @@ guideUrl: 'https://arabic.freecodecamp.org/guide/certificates/add-alt-text-to-an
 localeTitle: إضافة بديل نص إلى الصور لإعاقة الوصول بصريًا
 ---
 
-## Description
+## Description الوصف 
 <section id="description"> من المحتمل أنك رأيت سمة <code>alt</code> على علامة <code>img</code> في تحديات أخرى. يصف النص <code>Alt</code> محتوى الصورة ويوفر بديلًا نصيًا. يساعد ذلك في حالة فشل تحميل أو عدم تمكن المستخدم من رؤية الصورة. ويستخدم أيضًا من قِبل محركات البحث لفهم ما تحتويه الصورة لتضمينها في نتائج البحث. في ما يلي مثال: <code>&lt;img src=&quot;importantLogo.jpeg&quot; alt=&quot;Company logo&quot;&gt;</code> يعتمد الأشخاص الذين يعانون من إعاقات بصرية على قارئي الشاشة لتحويل محتوى الويب إلى واجهة صوتية. لن يحصلوا على المعلومات إذا تم تقديمها فقط بصريًا. بالنسبة للصور ، يمكن لقارئي الشاشة الوصول إلى سمة <code>alt</code> وقراءة محتوياتها لتقديم المعلومات الأساسية. النص <code>alt</code> الجيد قصير ولكن وصفي ، ويقصد به أن ينقل بإيجاز معنى الصورة. يجب عليك دائمًا تضمين سمة <code>alt</code> على صورتك. وفقًا لمواصفات HTML5 ، يعتبر هذا الآن إلزاميًا. </section>
 
-## Instructions
+## Instructions تعليمات 
 <section id="instructions"> كامبر كات هو عبارة عن نينجا مشفر ونينجا فعليين ، ويقوم ببناء موقع ويب لتبادل معرفته. تظهر صورة الملف الشخصي التي يريد استخدامها مهاراته ، ويجب أن تحظى بتقدير جميع زائري الموقع. إضافة سمة <code>alt</code> في علامة <code>img</code> ، التي تشرح كامبر كات تقوم بالكاراتيه. (لا ترتبط الصورة <code>src</code> بملف فعلي ، لذلك يجب أن ترى النص <code>alt</code> في الشاشة.) </section>
 
-## Tests
+## Tests اختبار
 <section id='tests'>
 
 ```yml
@@ -25,7 +25,7 @@ tests:
 
 </section>
 
-## Challenge Seed
+## Challenge Seed منصة التحدي
 <section id='challengeSeed'>
 
 <div id='html-seed'>
@@ -41,7 +41,7 @@ tests:
 
 </section>
 
-## Solution
+## Solution الحل 
 <section id='solution'>
 
 ```js
