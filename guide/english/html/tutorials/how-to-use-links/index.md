@@ -7,7 +7,7 @@ In HTML you can use the `<a>` tag to create a link. For example you can write `<
 
 Links are found in nearly all web pages. Links allow users to click their way from page to page.
 
-HTML links are hyperlinks. You can click on a link and jump to another document.
+HTML links are hyperlinks. You can click on a link and jump redirected to another document.
 
 When you move the mouse over a link, the mouse arrow will turn into a little hand.
 
