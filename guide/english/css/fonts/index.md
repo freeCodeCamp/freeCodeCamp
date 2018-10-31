@@ -9,6 +9,27 @@ The font family of a text is simply set by using the `font-family` property.
 
 It works with a *fallback* system, if your browser does not support the first font, it tries with the next one and so on. If the name of the font is more than one word it must be surrounded by quotes. 
 
+90%* of website design comes down to:
+
+(1) the image assets you use 
+(2) the fonts you select.
+(*That’s my personal completely hypothetical, biased estimate.)
+Font embedding services (like Google Web Fonts or Typekit) sprung up as an alternative, giving your designs something new, fresh, and unexpected.
+
+They’re also super easy to use.
+
+Take Google for example:
+
+Choose any font like Open Sans or Droid Serif or Lato. Generate the code and paste in your document’s <Head>. And you’re all set to reference it in CSS!
+
+That took 60 seconds. And it was completely free. (Thanks, Google!)
+
+What could go wrong, right?
+
+Not everyone will have access to that same font. Which means you will have a problem. That beautiful font you just chose is going to show up as something random for your visitors.
+
+Not if you create a fallback with a web safe alternative!
+
 ```css
 p {
     font-family: "Times New Roman", Times, serif;   
