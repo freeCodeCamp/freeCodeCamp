@@ -11,6 +11,8 @@ In Java, there are two ways to check if two variables are the "same": `==` and `
 The basic equality operation in Java, `==` as in `var1 == var2`, checks whether `var1` and `var2` point to the same *object reference*.
 That is, if `var1` is the same *instance* of a class in memory as `var2`, then `var1 == var2` is true.
 
+Main difference between .equals() method and == operator is that one is method and other is operator.
+
 However, if `var1` and `var2` were created as two separate instances of a class (i.e. with the `new` keyword), then `var1 == var2` will be false. Even if both objects happen to contain the exact same properties and values, the `==` comparison would not pass because they are not pointing to the same object in memory.
 
 For primitive variable types, such as `int` and `double`, the `==` operator can always be used to check for equality, as their values are stored directly with the variable (rather than as a reference to another slot in memory).
