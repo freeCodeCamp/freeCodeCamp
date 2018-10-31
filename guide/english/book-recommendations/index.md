@@ -274,4 +274,17 @@ title: Books to Read for Programmers
 
 This list was compiled from multiple suggestion threads on Reddit and Stackoverflow. 
 
-Please feel free to add more that you have found useful!
+<div class="cong">Please feel free to add more that you have found useful!</div>
+
+<style>
+.cong{
+    animation: ease nr 3s infinite;
+    font-weight: bold;
+    font-size:18px;
+}
+@keyframes nr{
+    0%{color:#333}
+    50%{color:#47a}
+    100%{color:#333}
+}
+</style>
