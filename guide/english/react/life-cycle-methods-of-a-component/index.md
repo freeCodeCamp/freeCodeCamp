@@ -4,7 +4,7 @@ title: Life Cycle Methods Of A Component
 
 ## Life Cycle Methods Of A Component
 
-When we start working with components, we need to perform several actions to update state or to perform some actions when something changes in that component. In this scenario, life-cycle methods of a component comes handy !! So let us dive into them in this article.
+When we start working with components, we may need to perform actions to update state or to respond to another change in a component. In this scenario, life-cycle methods of a component can come in handy! So let's dive into them in this article.
 
 Broadly, we can divide the life cycle methods into **3** categories.
 
