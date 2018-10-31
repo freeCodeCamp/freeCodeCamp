@@ -2,11 +2,11 @@
 title: HTML5 Semantic Elements
 ---
 ## HTML5 Semantic Elements
-Semantic HTML elements clearly describe it's meaning in a human and machine readable way. Elements such as `<header>`, `<footer>` and `<article>` are all considered semantic because they accurately describe the purpose of the element and the type of content that is inside them.
+Semantic HTML elements clearly describe their meaning in a human and machine readable way. Elements such as `<header>`, `<footer>` and `<article>` are all considered semantic because they accurately describe the purpose of the element and the type of content that is inside them.
 
 
 ### A Quick History
-HTML was originally created as a markup language to describe documents on the early internet. As the internet grew and was adopted by more people, it's needs changed. Where the internet was originally inteded for sharing scientific documents, now people wanted to share other things as well. Very quickly, people started wanting to make the web look nicer. Because the web was not initially built to be designed, programmers used different hacks to get things laid out in different ways. Rather than using the ```<table></table>``` to describe information using a table, programmers would use them to position other elements on a page. As the use of visually designed layouts progressed, programmers started to use a generic "non-semantic" tag like `<div>`. They would often give these elements a `class` or `id` attribute to describe their purpose. For example, instead of `<header>` this was often written as `<div class="header">`. As HTML5 is still relatively new, this use of non-semantic elements is still very common on websites today.
+HTML was originally created as a markup language to describe documents on the early internet. As the internet grew and was adopted by more people, it needed to be changed. While the internet was originally inteded for sharing scientific documents, people now wanted to share other things as well. Very quickly, people started wanting to make the web look nicer. Because the web was not initially built to be designed, programmers used different hacks to get things laid out in different ways. Rather than using the ```<table></table>``` to describe information using a table, programmers would use them to position other elements on a page. As the use of visually designed layouts progressed, programmers started to use a generic "non-semantic" tag like `<div>`. They would often give these elements a `class` or `id` attribute to describe their purpose. For example, instead of writing `<header>` you would often rather write `<div class="header">`. As HTML5 is still relatively new, this use of non-semantic elements is still very common on websites today.
 
 #### List of new semantic elements
 The semantic elements added in HTML5 are:
@@ -61,14 +61,14 @@ Whilst this second block of code uses non-semantic elements:
 
 First, it is  much **easier to read**. This is probably the first thing you will notice when looking at the first block of code using semantic elements. This is a small example, but as a programmer you can be reading through hundreds or thousands of lines of code. The easier it is to read and understand that code, the easier it makes your job.
 
-It has **greater accessibility**. You are not the only one that finds semantic elements easier to understand. Search engines and assistive technologies (like screen readers for users with a sight impairment) are also able to better understand the context and content of your website, meaning a better experience for your users.
+It has **greater accessibility**. You are not the only one that finds semantic elements easier to understand. Search engines and assistive technologies (like screen readers for users with a sight impairment) are also able to better understand the context and content of your website, resulting in a better experience for your users.
 
-Overall, semantic elements also lead to more **consistent code**. When creating a header using non-semantic elements, different programmers might write this as `<div class="header">`, `<div id="header">`, `<div class="head">`, or simply `<div>`. There are so many ways that you can create a header element, and they all depend on the personal preference of the programmer. By creating a standard semantic element, it makes it easier for everyone.
+Overall, semantic elements also lead to more **consistent code**. When creating a header using non-semantic elements, different programmers might write this as `<div class="header">`, `<div id="header">`, `<div class="head">`, or simply `<div>`. There are so many ways for you to create a header element, and they all depend on the personal preference of the programmer. Creating a standard semantic element makes it easier for everyone.
 
-Since October 2014, HTML4 got upgraded to HTML5, along with some new “semantic” elements.  To this day, some of us might still be confused as to why so many different elements that doesn’t seem to show any major changes.
+Since October 2014, HTML4 got upgraded to HTML5, along with some new “semantic” elements.  To this day, some of us might still be confused as to why so many different elements, that doesn’t seem to show any major changes, were added.
 
 #### <code>&#60;section&#62;</code> and <code>&#60;article&#62;</code>
-“What’s the difference?”, you may ask.  Both these elements are used for sectioning a content, and yes, they can definitely be used interchangeably.  It’s a matter of in which situation.  HTML4 offered only one type of container element, which is <code>&#60;div&#62;</code>.  While this is still used in HTML5, HTML5 provided us with <code>&#60;section&#62;</code> and <code>&#60;article&#62;</code> in a way to replace <code>&#60;div&#62;</code>.
+“What’s the difference?”, you may ask.  Both these elements are used for sectioning content, and yes, they can definitely be used interchangeably. Which one you want to use depends on your situation.  HTML4 offered only one type of container element, which is <code>&#60;div&#62;</code>.  While this is still used in HTML5, HTML5 provided us with <code>&#60;section&#62;</code> and <code>&#60;article&#62;</code> in a way to replace <code>&#60;div&#62;</code>.
   
 The <code>&#60;section&#62;</code> and <code>&#60;article&#62;</code> elements are conceptually similar and interchangeable.  To decide which of these you should choose, take note of the following:
   
@@ -121,10 +121,10 @@ The <code>&#60;hgroup&#62;</code> element should be used where you want a main h
 </hgroup>
 ```
 
-REMEMBER, that the <code>&#60;header&#62;</code> element can contain any content, but the <code>&#60;hgroup&#62;</code> element can only contain other headers, that is <code>&#60;h1&#62;</code> to <code>&#60;h6&#62;</code> and including <code>&#60;hgroup&#62;</code>.
+REMEMBER, that the <code>&#60;header&#62;</code> element can contain any content, but the <code>&#60;hgroup&#62;</code> element can only contain other headers, that is <code>&#60;h1&#62;</code> to <code>&#60;h6&#62;</code>, including <code>&#60;hgroup&#62;</code>.
   
 #### <code>&#60;aside&#62;</code>
-The <code>&#60;aside&#62;</code> element is intended for content that is not part of the flow of the text in which it appears, however still related in some way.  This of <code>&#60;aside&#62;</code> as a sidebar to your main content.
+The <code>&#60;aside&#62;</code> element is intended for content that is not part of the flow of the text in which it appears, however still related in some way.  This shows an example of <code>&#60;aside&#62;</code> as a sidebar to your main content:
   
 ```html
 <aside>
@@ -133,7 +133,7 @@ The <code>&#60;aside&#62;</code> element is intended for content that is not par
 ```
 
 #### <nav>
-Before HTML5, our menus were created with <code>&#60;ul&#62;</code>’s and <code>&#60;li&#62;</code>’s.  Now, together with these, we can separate our menu items with a <code>&#60;nav&#62;</code>, for navigation between your pages.  You can have any number of <code>&#60;nav&#62;</code> elements on a page, for example, its common to have global navigation across the top (in the <code>&#60;header&#62;</code>) and local navigation in a sidebar (in an <code>&#60;aside&#62;</code> element).
+Before HTML5, our menus were created with <code>&#60;ul&#62;</code>’s and <code>&#60;li&#62;</code>’s.  Now, together with these, we can separate our menu items with a <code>&#60;nav&#62;</code>, for navigation between your pages.  You can have any number of <code>&#60;nav&#62;</code> elements on a page, for example, it's common to have global navigation across the top (in the <code>&#60;header&#62;</code>) and local navigation in a sidebar (in an <code>&#60;aside&#62;</code> element).
   
 ```html
 <nav>
@@ -146,7 +146,7 @@ Before HTML5, our menus were created with <code>&#60;ul&#62;</code>’s and <cod
 ```
 
 #### <code>&#60;footer&#62;</code>
-If there is a <code>&#60;header&#62;</code> there must be a <code>&#60;footer&#62;</code>.    A <code>&#60;footer&#62;</code> is generally found at the bottom of a document, a section, or an article.  Just like the <code>&#60;header&#62;</code> the content is generally metainformation, such as author details, legal information, and/or links to related information.  It is also valid to include <code>&#60;section&#62;</code> elements within a footer.
+If there is a <code>&#60;header&#62;</code> there must be a <code>&#60;footer&#62;</code>.    A <code>&#60;footer&#62;</code> is generally found at the bottom of a document, a section, or an article.  Just like the <code>&#60;header&#62;</code>, the content is generally meta information, such as author details, legal information, and/or links to related information.  It is also valid to include <code>&#60;section&#62;</code> elements within a footer.
   
 ```html
 <footer>&copy;Company A</footer>
@@ -166,10 +166,10 @@ The <code>&#60;time&#62;</code> element allows an unambiguous ISO 8601 date to b
 <time datetime="2017-10-31T11:21:00+02:00">Tuesday, 31 October 2017</time>
 ```
 
-Why bother with <code>&#60;time&#62;</code>?  While humans can read time that can disambiguate through context in the normal way, the computers can read the ISO 8601 date and see the date, time, and the time zone. 
+Why bother with <code>&#60;time&#62;</code>?  While humans can read time that can disambiguate through context in the normal way, computers can read the ISO 8601 date and see the date, time, and the time zone. 
   
 #### <code>&#60;figure&#62;</code> and <code>&#60;figcaption&#62;</code>
-<code>&#60;figure&#62;</code> is for wrapping your image content around it, and <code>&#60;figcaption&#62;</code> is to caption your image.
+<code>&#60;figure&#62;</code> is used to wrap around your image content, and <code>&#60;figcaption&#62;</code> is to caption your image.
   
 ```html
 <figure>
@@ -178,6 +178,6 @@ Why bother with <code>&#60;time&#62;</code>?  While humans can read time that ca
 </figure>
 ```
 ### Learn more about the new HTML5 elements:
-* [w3schools](https://www.w3schools.com/html/html5_semantic_elements.asp) provides simple and clear descriptions of many of the news elements and how/where they should be used.
+* [w3schools](https://www.w3schools.com/html/html5_semantic_elements.asp) provides simple and clear descriptions of many of the new elements and how/where they should be used.
 * [MDN](https://developer.mozilla.org/en-US/docs/Web/HTML/Element) also provides a great reference for all HTML elements and goes deeper into each.
 
