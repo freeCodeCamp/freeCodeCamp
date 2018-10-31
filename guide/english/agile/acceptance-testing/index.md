@@ -40,6 +40,7 @@ Acceptance criteria are defined on the basis of the following attributes
 > - Scalability
 >
 > - Documentation
+>- Service
 
 ## Acceptance Test Plan - Attributes
 The acceptance test activities are carried out in phases. Firstly, the basic tests are executed, and if the test results are satisfactory then the execution of more complex scenarios are carried out.
