@@ -1,9 +1,9 @@
 ---
-title: Working in Tech
+title: Working in Tech & Information Technology(IT)
 ---
-## Working in Tech
+## Working in Tech and IT
 
-A wide variety of technology-related fields such as web development, design, data science, and product management are often lumped into the catch-all term "tech."
+A wide variety of technology-related fields such as web development, design, data science, and product management are often lumped into the catch-all term "tech" or IT. 
 
 This section will focus on various aspects of working in tech. We will discuss the additional career challenges that under-represented minorities and people from non-traditional education backgrounds face. This includes issues such as sexism and ageism that have been particularly prevalent in certain industries and organizations. 
 
@@ -20,6 +20,7 @@ The field of computer security is growing at a rapid rate every year, in a repor
 - Network Administrator
 - Support Desk Engineer
 - Security Engineer
+— Project manager
 
 ### Books
 
@@ -50,3 +51,5 @@ To see the full list, visit: https://talkpython.fm/episodes/show/130/10-books-py
 
 ### Podcasts
 [10 Books Python Developers should be reading - talkpython.fm](https://talkpython.fm/episodes/show/130/10-books-python-developers-should-be-reading)
+
+[Programming Throwdown - Good overview of multiple languages and concepts](https://www.programmingthrowdown.com/)

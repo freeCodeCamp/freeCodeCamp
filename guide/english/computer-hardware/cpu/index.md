@@ -11,7 +11,7 @@ CPU speeds are measured in gigahertz (GHz). For every gigahertz of speed, a CPU 
 
 [Gigahertz](https://en.wikipedia.org/wiki/Hertz) is not the only determining factor in the actual speed of a processor, as different processors with the same gigahertz speed (also known as clock speed) may perform real-world tasks at different speeds due to using different sets of instructions to perform these tasks. These instruction sets are called CPU architectures.
 
-Most modern CPUs use a 64-bit architecture, which means they use 64-bit long memory adresses. Older CPUs used 32-bit, 16-bit, and even 8-bit architectures. The largest number a 64-bit CPU can store is 18,446,744,073,709,552,000. A CPPU need memory adresses to get specified values from the RAM. If we call the length of the memory adresses n, 2^n is the amount of memory cells a CPU can adress.
+Most modern CPUs use a 64-bit architecture, which means they use 64-bit long memory adresses. Older CPUs used 32-bit, 16-bit, and even 8-bit architectures. The largest number a 64-bit CPU can store is 18,446,744,073,709,552,000. A CPU needs memory adresses to get specified values from the RAM. If we call the length of the memory adresses n, 2^n is the amount of memory cells a CPU can adress.
 
 An instruction cycle for a CPU is called the fetch-decode-execute cycle - where the computer retrieves a instruction from its memory, deetermines which instruction it fetched and what it does, and then carries out said instrucitons.
 
@@ -31,7 +31,7 @@ There are two primary manufacturers of computer microprocessors. Intel and Advan
 
 <b> Manufacturers of mobile microprocessors </b>
 
-The improvements in microprocessor technology have also led to signficant technology advances in cpus designed specifically for the mobile space. Processors based on designs from ARM, Qualcomm, and others have resulted in new mobile devices with capabilities that are unheard of in past generations. These modern mobile cpus power popular consumer devices from the latest iteration of Apple iPhones and Android based Phones to IOT(Internet of Things) devices like Amazon Echo and Google Home with capabilities such as HD Video recording/video conferencing, stereo audio, 3D gaming, and applications that are dependent on mobile cpu performance. This is one of the factors contributing to the growth and adoption of mobile devices which in turn has generated demand and provided opportunity for the creation of new applications with greater capabilities.
+The improvements in microprocessor technology have also led to signficant technology advances in CPUs designed specifically for the mobile space. Processors based on designs from ARM, Qualcomm, and others have resulted in new mobile devices with capabilities that are unheard of in past generations. These modern mobile CPUs power popular consumer devices from the latest iteration of Apple iPhones and Android based Phones to IOT(Internet of Things), devices like Amazon Echo and Google Home, with capabilities such as HD Video recording/video conferencing, stereo audio, 3D gaming, and applications that are dependent on mobile CPU performance. This is one of the factors contributing to the growth and adoption of mobile devices which in turn has generated demand and provided opportunity for the creation of new applications with greater capabilities.
 
 
 #### More Information:

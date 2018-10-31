@@ -28,6 +28,12 @@ Since ArrayList implements *List*, an ArrayList can be created using the followi
   
   An ArrayList is dynamic, meaning it will grow in size if required and similarly shrink in size if elements are deleted from it. This is what makes it better to use than normal arrays.
   
+**Add elements to the list**
+  ```java
+  variable.add(String e);
+  variable.add(int index, String element);
+  ```
+  
 **Clear/Delete all elements from the list**
   ```java
   variable.clear();
@@ -45,7 +51,17 @@ Since ArrayList implements *List*, an ArrayList can be created using the followi
    
 **Modify/update element at specified index**
    ```java
-   variable_name.set(index_number,element);
+   variable_name.set(index_number, element);
+  ```
+  
+**Get the size of the list**
+   ```java
+   variable_name.size();
+  ```
+  
+**Get a sublist of the list**
+   ```java
+   variable_name.subList(int fromIndex, int toIndex);
   ```
   
 **Reverse elements in list**  

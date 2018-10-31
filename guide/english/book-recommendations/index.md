@@ -22,6 +22,10 @@ title: Books to Read for Programmers
 - [Amazon Smile](https://smile.amazon.com/Code-Language-Computer-Hardware-Software/dp/0735611319/ref=sr_1_1?s=books&ie=UTF8&qid=1508780869&sr=1-1&keywords=code)
 - ISBN-13: 978-0735611313
 
+*Coders at Work: Reflections on the Craft of Programming* by P. Seibel
+- [Amazon Smile](https://smile.amazon.com/Coders-Work-Reflections-Craft-Programming/dp/1430219483)
+- ISBN-13: 978-1430219484
+
 *DevOps Handbook:How to Create World-Class Agility, Reliability, and Security in Technology Organizations* by Gene Kim et al
 - [Amazon Smile](https://www.amazon.com/DevOps-Handbook-World-Class-Reliability-Organizations/dp/1942788002/ref=sr_1_4?s=books&ie=UTF8&qid=1539733859&sr=1-4&keywords=devops+handbook)
 - ISBN-13: 978-1942788003
@@ -60,6 +64,10 @@ title: Books to Read for Programmers
 - [Amazon Smile](https://smile.amazon.com/Cracking-Coding-Interview-Programming-Questions/dp/098478280X)
 - ISBN-13: 978-0984782802
 
+*Grokking Algorithms: An illustrated guide for programmers and other curious people* by Aditya Bhargava
+- [Amazon Smile](https://smile.amazon.com/Grokking-Algorithms-illustrated-programmers-curious/dp/1617292230/)
+- ISBN-13: 978-1617292231
+
 ## BASH
 
 *The Linux Command Line: A Complete Introduction 1st Edition by William E. Shotts Jr*
@@ -71,8 +79,8 @@ title: Books to Read for Programmers
 - ISBN-13: 978-0596009656
 
 ## C-lang
-*C Notes for Professionals book
--https://books.goalkicker.com/CBook/
+*C Notes for Professionals book*
+- https://books.goalkicker.com/CBook/
 
 *The C Programming Language* by Brian W. Kernighan and Dennis M. Ritchie
 - [Amazon Smile](https://smile.amazon.com/Programming-Language-2nd-Brian-Kernighan/dp/0131103628/)
@@ -92,6 +100,10 @@ title: Books to Read for Programmers
 - https://www.amazon.com/Pro-NET-Core-Andrew-Troelsen/dp/1484230175/ref=sr_1_1?s=books&ie=UTF8&qid=1539643534&sr=1-1&keywords=Pro-NET-Core-Andrew-Troelsen
 - ISBN-13: 978-1484230176
 
+*Murach's C# 2015 by Joel Murach (Author), Anne Boehm (Author)
+- https://www.amazon.com/Murachs-C-2015-Anne-Boehm/dp/1890774944
+- ISBN-13: 978-1890774943
+
 ## Coding Interview
 
 *Cracking the Coding Interview: 150 Programming Questions and Solutions*
@@ -101,6 +113,11 @@ title: Books to Read for Programmers
 *Programming Interviews Exposed: Secrets to Landing Your Next Job, 2nd Edition*
 - [Wiley](https://www.wiley.com/en-id/Programming+Interviews+Exposed:+Secrets+to+Landing+Your+Next+Job,+2nd+Edition-p-9780470121672)
 - ISBN: 978-0-470-12167-2
+
+## Database
+
+*Database Systems: Design, Implementation, & Management 12th Edition*
+- [Amazon Smile](https://smile.amazon.com/Database-Systems-Design-Implementation-Management/dp/1305627482/ref=sr_1_1?s=books&ie=UTF8&qid=1539892264&sr=1-1&keywords=database+systems+design%2C+implementation%2C+%26+management)
 
 ## Java
 
@@ -112,6 +129,9 @@ title: Books to Read for Programmers
 - [Amazon Smile](https://smile.amazon.com/Effective-Java-3rd-Joshua-Bloch/dp/0134685997)
 - ISBN-13: 978-0134685991
 
+*Introduction to Java Programming and Data Structures by Y. Daniel Liang
+- [Amazon Smile](https://smile.amazon.com/Introduction-Programming-Structures-Comprehensive-Version/dp/0134670949/ref=sr_1_3?s=books&ie=UTF8&qid=1539892132&sr=1-3&keywords=introduction+to+java+programming+daniel+liang+11th+edition&pldnSite=1)
+
 ## JavaScript
 
 *You Don't Know JS (book series)*
@@ -121,7 +141,7 @@ title: Books to Read for Programmers
 *Eloquent JavaScript: A Modern Introduction to Programming by Marijn Haverbeke*
 - [Read it online here](https://eloquentjavascript.net)
 - [Amazon Smile](https://smile.amazon.com/gp/product/1593275846/ref=as_li_qf_sp_asin_il_tl?ie=UTF8&camp=1789&creative=9325&creativeASIN=1593275846&linkCode=as2&tag=marijhaver-20&linkId=VPXXXSRYC5COG5R5)
--ISBN-13: 978-1593275846
+- ISBN-13: 978-1593275846
 
 *JavaScript: The Good Parts*
 - [Amazon Smile](https://smile.amazon.com/JavaScript-Good-Parts-Douglas-Crockford/dp/0596517742)
@@ -141,6 +161,10 @@ title: Books to Read for Programmers
 - [Amazon Smile](https://smile.amazon.com/Core-Python-Applications-Programming-3rd/dp/0132678209)
 - ISBN-13: 978-0132678209
 
+*Python Tricks: A Buffet of Awesome Python Features by Dan Bader*
+- [Amazon Smile](https://smile.amazon.com/Python-Tricks-Buffet-Awesome-Features-ebook/dp/B0785Q7GSY)
+- ISBN-13: 978-1775093305
+
 ## Soft Skills
 
 *Soft Skills: The software developer's life manual*
@@ -149,11 +173,11 @@ title: Books to Read for Programmers
 
 ## Other
 
-*Hacking: Ultimate Hacking Guide: Hacking For Beginners And Tor Browser
+*Hacking: Ultimate Hacking Guide: Hacking For Beginners And Tor Browser*
 - https://www.amazon.in/dp/B075CX7T6G/ref=cm_sw_r_cp_awdb_t1_-7ESBbZ43CCBM
 - (ISBN 1976112524).
 
-*Code: The Hidden Language of Computer Hardware and Software (Developer Best Practices) *
+*Code: The Hidden Language of Computer Hardware and Software (Developer Best Practices)*
 - [Amazon Smile](https://smile.amazon.com/Code-Language-Computer-Hardware-Software/dp/0735611319)
 - ISBN-13: 978-0735611313
 
@@ -230,17 +254,23 @@ title: Books to Read for Programmers
 - ISBN-13: 978-0201835953
 
 *Deep Learning by Ian Goodfellow, Yoshua Bengio, Aaron Courville*
-- [Amazon](https://www.amazon.com/Deep-Learning-Adaptive-Computation-Machine/dp/0262035618)
+- [Amazon Smile](https://smile.amazon.com/Deep-Learning-Adaptive-Computation-Machine/dp/0262035618)
 - ISBN: 978-0262035613
+
 *Oracle® Database Notes for Professionals*
-https://books.goalkicker.com/OracleDatabaseBook/
+- https://books.goalkicker.com/OracleDatabaseBook/
 
 *Pro PHP Programming - Peter MacIntyre*
-[Amazon]https://www.amazon.com/Pro-PHP-Programming-Peter-MacIntyre-ebook/dp/B005PZ09AG
+- [Amazon Smile](https://smile.amazon.com/Pro-PHP-Programming-Peter-MacIntyre-ebook/dp/B005PZ09AG)
+- ISBN-13: 978-1430235606
 
 *Mastering Linux Shell Scripting by Andrew Mallett*
-- [Amazon](https://www.amazon.com/Mastering-Linux-Scripting-Andrew-Mallett/dp/1784396974/)
+- [Amazon Smile](https://smile.amazon.com/Mastering-Linux-Scripting-Andrew-Mallett/dp/1784396974/)
 - ISBN-13: 978-1784396978
+
+*The Innovator's Delimma*
+- [Amazon] (https://www.amazon.com/Innovators-Dilemma-Technologies-Management-Innovation-ebook/dp/B00E257S86_
+- ASIN: B00E257S86
 
 This list was compiled from multiple suggestion threads on Reddit and Stackoverflow. 
 
