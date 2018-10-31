@@ -82,6 +82,10 @@ Developers can utilize a screen reader to understand how a webpage can be made a
 - **[JAWS](https://www.freedomscientific.com/Products/Blindness/)**
 
    JAWS(Job Access With Speech) is a computer screen reader program which is available as licensed software for Windows.
+   
+- **<a href='https://a11yproject.com/' target='_blank' rel='nofollow'>a11yproject</a>**
+
+   This site provides pracical guides and examples for implementing accessible features and components during web development. The site contains how-tos, myths, tips, and recommended accessibility tools. The project is community driven and can be contributed to on Github.
 
 - **[ChromeVox](https://www.chromevox.com/)**
 
