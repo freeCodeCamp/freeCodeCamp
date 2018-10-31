@@ -3,8 +3,16 @@ title: CSS Position
 ---
 ## CSS Position
 
-The position property specifies the type of positioning method used for an element. It has 5 keyword values:
+The `position` property specifies the type of positioning method used for an element. 
 
+
+### Types of positioning
+- **positioned element** is a element whose position is set to anything else than default `static` value. Values of positioned element can be: `relative`, `sticky`, `fixed` or `absolute`.
+- **relatively positioned element** is an element with `position: relative` property. The top, bottom, left and right properties specify the offset from its normal position.
+- **absolutely positioned element** is an element with `position: absolute` property. The top, right, bottom, and left properties specify offsets relative to its closest positioned ancestor.
+- **stickily positioned element** is an element with `position: sticky` property. The element is treated like a relatively positioned element until the scroll location of the viewport reaches a specified threshold, at which point the element takes a fixed position where it is told to stick.
+
+### Property values
 ```css
 .static         { position: static; } // default value
 .relative       { position: relative; }
