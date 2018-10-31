@@ -17,15 +17,15 @@ You can build some pretty amazing things in CSS alone, such as this pure-CSS [Mi
 ### Popular CSS Frameworks 2018
 Frameworks exist to make the more complex parts of css easier and more efficient for developers to build out websites.
 Some of the most popular CSS Frameworks are:
-Bootstrap, Foundation, Bulma, uikit, Semantic UI, mini.css, Materialize, Material Design Lite, Spectre and Kube
+Bootstrap, Foundation, Bulma, uikit, Semantic UI, mini.css, Materialize, Material Design Lite, Spectre and Kube.
 
 #### Suggested Reading:
-A good start is the freeCodeCamp curriculum [Introduction to Basic CSS](https://learn.freecodecamp.org/responsive-web-design/basic-css).
+* [Introduction to Basic CSS](https://learn.freecodecamp.org/responsive-web-design/basic-css) by freeCodeCamp: a good place to start!
 
-Another suggestion for beginners is W3C's [Starting with HTML + CSS](https://www.w3.org/Style/Examples/011/firstcss) teaches how to create a style sheet.
+* [Starting with HTML + CSS](https://www.w3.org/Style/Examples/011/firstcss) by W3C: how to create a style sheet - for beginners.
 
-The site [CSS Zen Garden](http://www.csszengarden.com/) is a great example how the same html can be styled to look totally unique.
+* [CSS Zen Garden](http://www.csszengarden.com/): a great example of how the same HTML can be styled to look totally unique.
 
-For a demonstration of the power of CSS, check out [Species In Pieces](http://species-in-pieces.com/#).
+* [Species In Pieces](http://species-in-pieces.com/#): for a demonstration of the power of CSS. 
 
-To find some awesome articles and summaries of Front End Development related ideas visit [CSS-Tricks](https://css-tricks.com)
+* [CSS-Tricks](https://css-tricks.com): awesome articles and summaries of Front End Development-related ideas.
