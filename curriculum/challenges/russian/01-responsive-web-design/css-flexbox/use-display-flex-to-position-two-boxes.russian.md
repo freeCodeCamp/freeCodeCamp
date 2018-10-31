@@ -3,7 +3,7 @@ id: 587d78ab367417b2b2512af0
 title: 'Use display: flex to Position Two Boxes'
 challengeType: 0
 videoUrl: ''
-localeTitle: 'Используй display: flex для позиционирования двух прямоугольников'
+localeTitle: 'Используйте display: flex для позиционирования двух прямоугольников'
 ---
 
 ## Description
