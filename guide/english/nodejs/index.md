@@ -54,6 +54,7 @@ When the timer completes it's execution taking 5 seconds, it calls the function 
 1. Great for beginners. JavaScript is a beginner friendly language.
 2. Great supportive community and massive amount of modules (Express, Grunt, etc).
 3. Wide range of hosting options.
+4. effient for data intensive programs (but not for cpu intensive programs).
 
 #### More information:
 - [Official NodeJS site](https://nodejs.org)
