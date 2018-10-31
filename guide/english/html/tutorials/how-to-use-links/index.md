@@ -31,6 +31,17 @@ The link text is the visible part (Visit our site for tutorials).
 
 Clicking on the link text will send you to the specified address.
 
+## HTML Links - The target Attribute
+The target attribute specifies where to open the linked document.
+
+The target attribute can have one of the following values:
+
+_blank - Opens the linked document in a new window or tab
+_self - Opens the linked document in the same window/tab as it was clicked (this is default)
+_parent - Opens the linked document in the parent frame
+_top - Opens the linked document in the full body of the window
+framename - Opens the linked document in a named frame
+
 #### More Information:
 <!-- Please add any articles you think might be helpful to read before writing the article -->
 * [MDN - HTML <a> Reference](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/a)
