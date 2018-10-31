@@ -1,16 +1,16 @@
 ---
 title: Graph algorithms
-localeTitle: Algoritmos gráficos
+localeTitle: Algoritmos em grafos
 ---
-## Algoritmos gráficos
+## Algoritmos em grafos
 
-Algoritmos gráficos são um conjunto de instruções que atravessam (visitas de um gráfico).
+Algoritmos em grafos são um conjunto de instruções que atravessam (visitas de um grafo).
 
 Alguns algoritmos são usados ​​para encontrar um nó específico ou o caminho entre dois nós especificados.
 
-### Por que os algoritmos gráficos são importantes?
+### Por que os algoritmos em grafos são importantes?
 
-Os gráficos são estruturas de dados muito úteis que podem ser modelar vários problemas. Esses algoritmos têm aplicativos diretos em sites de redes sociais, modelagem de máquinas de estado e muito mais.
+Os grafos são estruturas de dados muito úteis que podem ser modelar vários problemas. Esses algoritmos têm aplicativos diretos em sites de redes sociais, modelagem de máquinas de estado, sistemas de mapas e muito mais.
 
 ### Algoritmos comuns de grafos
 
@@ -18,6 +18,10 @@ Alguns dos algoritmos gráficos mais comuns são:
 
 [Gráficos](https://github.com/freecodecamp/guides/computer-science/data-structures/graphs/index.md)
 
-[Largura da Primeira Pesquisa (BFS)](https://github.com/freecodecamp/guides/tree/master/src/pages/algorithms/graph-algorithms/breadth-first-search/index.md)
+[Busca em largura (BFS)](https://github.com/freecodecamp/guides/tree/master/src/pages/algorithms/graph-algorithms/breadth-first-search/index.md)
 
-[Primeira pesquisa de profundidade (DFS)](https://github.com/freecodecamp/guides/tree/master/src/pages/algorithms/graph-algorithms/depth-first-search/index.md)
+[Busca em profundidade (DFS)](https://github.com/freecodecamp/guides/tree/master/src/pages/algorithms/graph-algorithms/depth-first-search/index.md)
+
+[Algoritmo de Dijkstra](https://github.com/freeCodeCamp/freeCodeCamp/blob/master/guide/portuguese/algorithms/graph-algorithms/dijkstra/index.md)
+
+[Algoritmo de Floyd Warshall](https://github.com/freeCodeCamp/freeCodeCamp/blob/master/guide/portuguese/algorithms/graph-algorithms/floyd-warshall-algorithm/index.md)
