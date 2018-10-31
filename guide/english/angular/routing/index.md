@@ -462,6 +462,8 @@ Routing techniques apply regardless of a `Route` object’s level of nesting. Th
 
 Web applications often consist of public and private data. Both types of data tend to have their own pages with *guarded* routes. These routes allow/restrict access depending on the user’s privileges. Unauthorized users may interact with a guarded route. The route should block the user if he or she attempts to access its routed content.
 
+One example of why you would have an guarded route is to prevent someone not meant to access a route accessing a particular route by just knowing the endpoint.
+
 Angular provides a bundle of authentication guards that can attach to any route. These methods trigger automatically depending on how the user interacts with the guarded route.
 
 * `canActivate(...)` - fires when the user attempts to access a route
