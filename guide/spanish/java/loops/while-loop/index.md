@@ -4,7 +4,7 @@ localeTitle: Mientras bucle
 ---
 # Mientras bucle
 
-El `while` bucle se ejecuta repetidamente el bloque de instrucciones hasta que la condición especificada dentro de los paréntesis se evalúa como `false` . Por ejemplo:
+El `while` bucle repetidamente ejecuta el bloque de instrucciónes hasta que la condición especificada dentro de los paréntesis se evalúa como `false` . Por ejemplo:
 
 ```java
 while (some_condition_is_true) 
@@ -13,13 +13,12 @@ while (some_condition_is_true)
  } 
 ```
 
-Cada 'iteración' (de ejecutar el bloque de sentencias) está precedida por la evaluación de la condición especificada entre paréntesis: las sentencias se ejecutan solo si la condición se evalúa como `true` . Si se evalúa como `false` , la ejecución del programa se reanuda desde la instrucción justo después del bloque `while` .
+Cada 'iteración' (de ejecutar el bloque de instrucciónes) está precedida por la evaluación de la condición especificada dentro del paréntesis: las instrucciónes se ejecutan solo si la condición se evalúa como `true` . Si se evalúa como `false` , la ejecución del programa se reanuda desde la instrucción justo después del bloque `while`.
 
-**Nota:** Para el `while` de bucle para iniciar la ejecución, que le requiere la condición de ser `true` inicialmente. Sin embargo, para salir del bucle, debe hacer algo dentro del bloque de sentencias para llegar a una iteración cuando la condición se evalúe como `false` (como se hace a continuación). De lo contrario el bucle se ejecutará para siempre. (En la práctica, se ejecutará hasta que la [JVM](https://guide.freecodecamp.org/java/the-java-virtual-machine-jvm) se quede sin memoria).
+**Nota:** Para que el `while` bucle empieze la ejecución, requiere que la condición sea `true` inicialmente. Sin embargo, para salir del bucle, debe hacer algo dentro del bloque de instrucciónes para llegar a una iteración cuando la condición se evalúe como `false` (como en el siguiente ejemplo). De lo contrario, el bucle se ejecutará para siempre. (En realidad, se ejecutará hasta que la [JVM](https://guide.freecodecamp.org/java/the-java-virtual-machine-jvm) se quede sin memoria).
 
 ## Ejemplo
-
-En el siguiente ejemplo, la `expression` está dada por `iter_While < 10` . Incrementamos `iter_While` en `1` cada vez que se ejecuta el bucle. Los `while` se rompe bucle cuando `iter_While` valor alcanza `10` .
+En el siguiente ejemplo, la `expression` es `iter_While < 10` . Incrementamos `iter_While` por `1` cada vez que se ejecuta el bucle. El bucle `while` se rompe cuando el valor de `iter_While` alcanza `10` .
 
 ```java
 int iter_While = 0; 
