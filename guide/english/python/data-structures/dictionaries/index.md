@@ -8,11 +8,11 @@ The special thing about dictionaries is the way they are implemented. Hash-table
 existence - which means that we can easily determine if a specific key is present in the dictionary without needing to examine
 every element. The Python interpreter can just go to the location key and check if the key is there.
 
-Dictionaries can use almost any arbitrary datatypes, like strings, integers etc, for keys. However, values that are not hashable,
+Dictionaries can use almost any arbitrary datatypes, like strings or integers, for keys. However, values that are not hashable,
 that is, values containing lists, dictionaries or other mutable types (that are compared by value rather than by object identity) may not be used as keys. Numeric types used for keys obey the normal rules for numeric comparison: if two numbers compare equal (such as `1` and `1.0`) then they can be used interchangeably to index the same dictionary entry. (Note however, that since computers store floating-point numbers as approximations it is usually unwise to use them as dictionary keys.)  
 
 One most important requirement of a dictionary is that the keys **must** be unique.  
-To create an empty dictionary just use a pair of braces:  
+To create an empty dictionary, use a pair of braces:  
 ```python
     >>> teams = {}
     >>> type(teams)
@@ -46,7 +46,7 @@ It's easy to add key-value pairs to an existing dictionary:
 **`in`** keyword can be used to check whether a key exist in the dict or not:  
 
 ```python
-    >>> 'sanots' in teams
+    >>> 'santos' in teams
     False    
     >>> 'barcelona' in teams
     True
@@ -65,7 +65,7 @@ It's easy to add key-value pairs to an existing dictionary:
     >>> club_names
     [1910, 1875]
 ```  
-Yet another way of creating dictionary is using the **`dict()`** method:
+Yet another way of creating a dictionary is using the **`dict()`** method:
 ```python
     >>> players = dict( [('messi','argentina'), ('ronaldo','portugal'), ('kaka','brazil')] ) # sequence of key-value pair is passed  
     >>> players
