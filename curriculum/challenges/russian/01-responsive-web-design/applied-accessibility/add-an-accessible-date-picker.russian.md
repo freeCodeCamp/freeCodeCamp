@@ -7,10 +7,12 @@ localeTitle: Добавить доступную дату выбора
 ---
 
 ## Description
+
 <section id="description"> Формы часто содержат поле <code>input</code> , которое может использоваться для создания нескольких различных элементов управления формой. Атрибут <code>type</code> в этом элементе указывает, какой тип ввода будет создан. Возможно, вы заметили <code>text</code> и <code>submit</code> типы ввода в предыдущих задачах, а в HTML5 появилась возможность указать тип ввода <code>date</code> . В зависимости от поддержки браузера, в поле <code>input</code> появляется окно выбора даты, когда оно находится в фокусе, что облегчает заполнение формы для всех пользователей. Для более старых браузеров по умолчанию используется тип <code>text</code> , поэтому он помогает показывать пользователям ожидаемый формат даты на метке(label) или в качестве placeholder текста на всякий случай. Например: <blockquote> &lt;label for = &quot;input1&quot;&gt; Введите дату: &lt;/ label&gt; <br> &lt;input type = &quot;date&quot; id = &quot;input1&quot; name = &quot;input1&quot;&gt; <br></blockquote></section>
 
 ## Instructions
 <section id="instructions"> Camper Cat создает турнир Mortal Kombat и хочет попросить своих конкурентов посмотреть, какая дата лучше всего работает. Добавьте <code>input</code> тег с <code>type</code> атрибутом «date», c <code>id</code> атрибутом «pickdate», и <code>name</code> атрибутом «date». </section>
+
 
 ## Tests
 <section id='tests'>
