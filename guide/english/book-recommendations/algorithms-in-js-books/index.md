@@ -24,4 +24,10 @@ title: Algorithms in JavaScript books
 - [Amazon](https://https://www.amazon.com/Learning-JavaScript-Data-Structures-Algorithms/dp/1788623878/)
 - ISBN-13: 978-1788623872
  
+ *Get Coding: Learn HTML, CSS & JavaScript & Build a Website, App & Game*
+ - published 1 Aug 2017, by Young Rewired State
+ - Written by Young Rewired State, a worldwide tech community made up of kids and teens, this story-based adventure aims to get readers coding.
+ - [Amazon] (https://www.amazon.com/Get-Coding-Learn-JavaScript-Website/dp/076369276X/)
+ - ISBN-13: 978-0763692766
+ 
 Please feel free to add more that you have found useful!
