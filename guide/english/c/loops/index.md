@@ -174,7 +174,6 @@ int main()
 }
 ```
 
-
 # Loop Control Statements
 Loop control statements change execution form its normal sequence. When execution leaves a scope, all automatic objects that were created in that scope are destroyed.
 
@@ -192,6 +191,10 @@ Transfers control to the labeled statement.
 # Some Fun and Useful Quirks
 
 ## Infinite looping with for loops
+A loop becomes an infinite loop if a condition never becomes false. The for loop is traditionally used for this purpose. Since none of the three expressions that form the 'for' loop are required, you can make an endless loop by leaving the conditional expression empty.
+
+When the conditional expression is absent, it is assumed to be true. You may have an initialization and increment expression, but C programmers more commonly use the for(;;) construct to signify an infinite loop.
+
 Take a moment to consider what this code will do:
 ```C
 for(;;){
@@ -207,6 +210,8 @@ There's nothing in the initialization section, so nothing has been initialized. 
 Next is the condition, which is blank. That's a little odd. This means that no condition will be tested, so it's never going to be false, so it will run through the loop, perform the afterthought (which is to do nothing), and then check the condition again, which will make it run again. As you've probably realized, this is an infinite loop. As it turns out, this is actually useful. When creating performing an infinite loop, the method of doing `while(1)` is perfectly legitimate, but performs a comparison every time. `for(;;)`, on the other hand, does not. For that reason, `for(;;)` has a legitimate use in that it is a hair more efficient than other methods of infinite looping. Thankfully, many compilers will take care of this for you.
 
 The loop in second code while("Free Code Camp") will also execute infinitely.The reason is because C considers any non-zero value as true and hence will execute the loop infinitely.
+
+# NOTE − You can terminate an infinite loop by pressing Ctrl + C keys.
 
 ## Not using brackets
 Throughout this page, you've read that the code 'within the brackets' is what gets run, and that's mostly true. However, what if there are no brackets?
