@@ -8,8 +8,7 @@ Functions can be named and called repeatedly or can be run anonymously in place 
 
 Developing full understanding of R functions requires understanding of environments. 
 Environments are simply a way to manage objects. An example of environments in action is that you can use a redundant variable
-name within a function, that won't be affected if the larger runtime already has the same variable. Additionally, if a 
-function calls a variable not defined within the function it will check the higher level environment for that variable.
+name within a function, that won't be affected if the larger runtime already has the same variable. Additionally, (lexical scoping)[https://en.wikipedia.org/wiki/Scope_(computer_science)#Lexical_scoping] is used when a function calls a variable not defined within the function it will check the higher level environment for that variable.
 
 ### Syntax
 
