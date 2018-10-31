@@ -10,6 +10,10 @@ Gradle build scripts can be written in Groovy or Kotlin and are highly customiza
 ## Maven
 Maven build files are written with XML. Like Gradle, many plugins are written for Maven to customize your builds, however Maven is not as customizable because you cannot directly interact with a Maven API. However, you can modify certain configurations by modifying your settings.xml file in the .m2 folder. More info available [here](https://maven.apache.org/settings.html)
 
+## Ant
+Apache Ant is a Java based command-line build and dependency management tool. The main purpose is to build the Java applications and drive the processes and task described in the ant-build file. Ant comes with many built-in tasks allowing to compile,assemble,test and run Java applications.
+It is used effectively to build/drive non Java applications. Ant is written in Java. So, User can build their own antlib containing tasks and targets
+
 ### More Information:
 https://gradle.org/
 
@@ -18,3 +22,5 @@ https://en.wikipedia.org/wiki/Gradle
 https://maven.apache.org/what-is-maven.html
 
 https://en.wikipedia.org/wiki/Apache_Maven
+
+https://ant.apache.org/
