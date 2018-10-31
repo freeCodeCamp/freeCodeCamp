@@ -3,6 +3,8 @@ title: Bash cd
 ---
 
 ## Bash command: cd
+**cd - Change Directory**
+It is used to change the current working directory.
 
 **Change Directory** to the path specified, for example `cd projects`.
 
