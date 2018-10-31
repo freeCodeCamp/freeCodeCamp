@@ -3,10 +3,12 @@ title: Algorithm Performance
 localeTitle: Rendimiento del algoritmo
 ---
 En matemáticas, la notación de gran O es un simbolismo utilizado para describir y comparar el _comportamiento limitante_ de una función.  
-El comportamiento limitante de una función es cómo la función actúa cuando tiende hacia un valor particular y, en notación de gran O, es generalmente como tiende hacia el infinito.  
+
+El comportamiento limitante de una función es cómo la función actúa cuando tiende hacia un valor particular y, en notación de gran O, es generalmente como tiende hacia el infinito.
+
 En resumen, la notación de gran O se usa para describir el crecimiento o la disminución de una función, generalmente con respecto a otra función.
 
-en el diseño de algoritmos usualmente usamos la notación de gran O porque podemos ver qué tan bueno o malo funcionará un algoritmo en el peor modo. pero tenga en cuenta que no siempre es así porque el peor de los casos puede ser súper raro y en esos casos calculamos el caso promedio. Por ahora, no sea la notación big O de disscus.
+En el diseño de algoritmos usualmente usamos la notación de gran O porque podemos ver qué tan bueno o malo funcionará un algoritmo en el peor modo. pero tenga en cuenta que no siempre es así porque el peor de los casos puede ser súper raro y en esos casos calculamos el caso promedio. Por ahora, no sea la notación big O de disscus.
 
 En matemáticas, la notación de gran O es un simbolismo utilizado para describir y comparar el _comportamiento limitante_ de una función.
 
@@ -17,6 +19,7 @@ En resumen, la notación de gran O se usa para describir el crecimiento o la dis
 NOTA: x ^ 2 es equivalente a x \* x o 'x cuadrado'\]
 
 Por ejemplo, decimos que x = O (x ^ 2) para todo x> 1 o, en otras palabras, x ^ 2 es un límite superior en x y, por lo tanto, crece más rápido.  
+
 El símbolo de una reclamación como x = O (x ^ 2) para todo x> _n_ se puede sustituir con x <= x ^ 2 para todo x> _n_ donde _n_ es el número mínimo que satisface la reclamación, en este caso 1.
 
 Efectivamente, decimos que una función f (x) que es O (g (x)) crece más lentamente que g (x).
@@ -79,10 +82,12 @@ Como ejemplo, podemos examinar la complejidad del tiempo del algoritmo [\[de cla
     } 
 ```
 
-Al observar este código, podemos ver que en el mejor de los casos en que la matriz ya está ordenada, el programa solo realizará _n_ comparaciones ya que no se producirán intercambios.  
+Al observar este código, podemos ver que en el mejor de los casos en que la matriz ya fue ordenada, el programa solo realizará _n_ comparaciones ya que no se producirán intercambios.
+
 Por lo tanto, podemos decir que la mejor complejidad de tiempo de caso de la clasificación de burbuja es O ( _n_ ).
 
-Al examinar el peor de los casos en que la matriz está en orden inverso, la primera iteración hará _n_ comparaciones, mientras que la siguiente tendrá que hacer _n_ - 1 comparaciones y así sucesivamente hasta que solo se haga 1 comparación.  
+Al examinar el peor de los casos, en que la matriz está en orden inverso, la primera iteración hará _n_ comparaciones, mientras que la siguiente tendrá que hacer _n_ - 1 comparaciones y así sucesivamente hasta que solo se haga 1 comparación.
+
 La notación big-O para este caso es, por lo tanto, _n_ \* \[( _n_ - 1) / 2\] que = 0.5 _n_ ^ 2 - 0.5 _n_ = O ( _n_ ^ 2) ya que el término _n_ ^ 2 domina la función que nos permite Ignora el otro término en la función.
 
 Podemos confirmar este análisis utilizando \[esta útil hoja de trucos de gran O que presenta la complejidad del gran O de muchas de las estructuras de datos y algoritmos de uso común.
