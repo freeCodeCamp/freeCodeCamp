@@ -7,19 +7,19 @@ videoUrl: ''
 localeTitle: Certificado de Diseño Web Responsivo
 ---
 
-## Description
-<section id="description">
+## Descripción
+<section id="descripción">
 </section>
 
-## Instructions
-<section id="instructions">
+## Instrucciones
+<section id="instrucciones">
 </section>
 
-## Tests
-<section id='tests'>
+## Pruebas 
+<section id='pruebas'>
 
 ```yml
-tests:
+pruebas:
   - text: ''
     testString: !<tag:yaml.org,2002:js/undefined> ''
   - text: ''
@@ -35,15 +35,15 @@ tests:
 
 </section>
 
-## Challenge Seed
-<section id='challengeSeed'>
+## Reto Seed
+<section id='retoSeed'>
 
 </section>
 
-## Solution
-<section id='solution'>
+## Solución
+<section id='solución'>
 
 ```js
-// solution required
+// solución requirida 
 ```
 </section>
