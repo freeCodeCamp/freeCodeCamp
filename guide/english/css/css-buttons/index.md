@@ -83,6 +83,14 @@ To create rounded buttons, use the border-radius property:
 
 To change the style of a button when you move the mouse over it, use the :hover selector:
 
+
+###Button shapes
+h2>Button Shapes</h2>
+  <p><button class="w3-button w3-black w3-round-small">Round Small</button></p>
+  <p><button class="w3-button w3-black w3-round">Round Normal</button></p>
+  <p><button class="w3-button w3-black w3-round-large">Round Large</button></p>
+  <p><button class="w3-button w3-black w3-round-xlarge">Round XLarge</button></p>
+  <p><button class="w3-button w3-black w3-round-xxlarge">Round XXLarge</button></p>
 ```
 button:hover {
   background-color: #0E2C5B;
