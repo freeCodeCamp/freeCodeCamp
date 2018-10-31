@@ -13,6 +13,8 @@ To compare, compilers convert all the source code at once to binary code, then r
 #### More Information:
 [Matt Adesanya's "A Gentler Introduction to Programming"](https://medium.freecodecamp.org/a-gentler-introduction-to-programming-707453a79ee8) compares compilers and interpreters, and introduces other basic programming concepts.
 
+[Wikipedia article about Interpreted Language"](https://en.wikipedia.org/wiki/Interpreted_language) gives information about historical background, advantages and disadvantages of interpreted languages.
+
 Some Interpreted Languages:
 * [Python](https://en.wikipedia.org/wiki/Python_(programming_language))
 * [JavaScript](https://en.wikipedia.org/wiki/JavaScript)
