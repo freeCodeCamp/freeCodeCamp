@@ -52,5 +52,34 @@ Here is a program to illustrate instanecof operator:
                            
        
  ```
- 
+## examples
+class BasicAlgebra
+{
+    public static void main(String arg[])
+    {
+        int a = 3 + 4;
+        int b = a * 4;
+        int c = b - a;
+        int d = b / 2;
+        
+        System.out.println("a = " + a);
+        System.out.println("b = " + b);
+        System.out.println("c = " + c);
+        System.out.println("d = " + d);    
+    }
+}
+-------------------------------------------
+output
+
+a = 7
+b = 28
+c = 21
+d = 14
+
+
+
+
+
+
+
 
