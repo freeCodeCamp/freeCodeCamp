@@ -30,6 +30,9 @@ Here the task sounds simple. Given a corpus (a dataset of sentences), generate i
 #### n-gram models
 Next task is to build a language model. Here we consider an assumption that the nth word depends only on the previous n-1 words. 2-gram and 3-gram models are most commonly used. To build a 3-gram model, just group 3 tokens together and count their frequency in the corpus. You are now ready to predict the probability of a group of 3 words!
 
+## Using Neural networks for Language modelling
+For knowledge representation, the knowledge represented by neural network language models is the approximate probabilistic distribution of word sequences from a certain training data set rather than the knowledge of a language itself or the information conveyed by word sequences in a natural language. Statistical Language Modeling. Statistical Language Modeling, or Language Modeling and LM for short, is the development of probabilistic models that are able to predict the next word in the sequence given the words that precede it
+
 ## Applications
 - Spelling and grammar checking.
 - Chatbots for particular services.
