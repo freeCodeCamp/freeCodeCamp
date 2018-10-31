@@ -24,8 +24,8 @@ Uma coleção de recursos angulares úteis
 
 ### Páginas gerais
 
-*   [Angular](https://angular.io/) - a página inicial angular
-*   [Guia de Estilo Angular](https://angular.io/guide/styleguide) - Melhores Práticas Detalhadas para o Desenvolvimento Angular
+*   [Angular](https://angular.io/) - Página inicial do Angular
+*   [Guia de Estilo Angular](https://angular.io/guide/styleguide) - Melhores práticas detalhadas para o desenvolvimento Angular
 
 ### Páginas de tópicos específicos
 
