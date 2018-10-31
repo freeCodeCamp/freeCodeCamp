@@ -20,8 +20,6 @@ This directory contains all of the documentation on contributing to freeCodeCamp
 
 ## [If you are getting started, start by reading this first.](/CONTRIBUTING.md)
 
----
-
 ## Quick references articles
 
 <a href="/how-to-work-on-guide-articles.md">1. How to work on Guide articles.</a>
