@@ -10,7 +10,7 @@ As a CMS, WordPress allows you to control and manage content of your website wit
 
 WordPress powers over 30% of all websites and is by far the most used CMS on the planet. Backed by a huge community, this open-source platform powers a multi-billion dollar economy with themes/plugins and custom software.
 
-Easy to use, Wordpress offers an easy solution for both web developers and non-web developers.
+Easy to use, Wordpress offers an easy solution for both web developers and non-web developers. Even people without any programming knowledge can create websites easily with wordpress because of the drag and drop theme builders
 
 Advantages of WordPress include:
 * Manageable from any computer
