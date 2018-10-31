@@ -43,6 +43,23 @@ The `long long` data type is overkill for just about every application, but C wi
 #### Getting a wider range of doubles: `long double`
 `long double` takes at least 80 bits. As a result, we can get 19 decimal places from 3.4E-4932 to 1.1E+4932.
 
+Different data types also have different ranges upto which they can store numbers. These ranges may vary from compiler to compiler. Below is list of ranges along with the memory requirement and format specifiers on 32 bit gcc compiler.
+
+Data Type             Memory (bytes)          Range                      Format Specifier
+short int                   2          -32,768 to 32,767                       %hd
+unsigned short int          2           0 to 65,535                            %hu
+unsigned int                4           0 to 4,294,967,295                     %u
+int                         4          -2,147,483,648 to 2,147,483,647         %d
+long int                    4          -2,147,483,648 to 2,147,483,647         %ld
+unsigned long int           4           0 to 4,294,967,295                     %lu
+long long int               8          -(2^63) to (2^63)-1                     %lld
+unsigned long long int      8           0 to 18,446,744,073,709,551,615        %llu
+signed char                 1          -128 to 127                             %c 
+unsigned char               1           0 to 255                               %c
+float                       4                                                  %f
+double                      8                                                  %lf
+long double                 12                                                 %Lf
+
 ## Picking the right data type
 C makes pick the data type, and makes us be very specific and intentional about the way that we do this. This gives you a lot of power over your code, but it's important to pick the right one.
 
