@@ -5,7 +5,7 @@ title: Elements
 
 Elements are the building blocks of HTML that describe the structure and content of a web page. They are the "Markup" part of HyperText Markup Language (HTML).
 
-HTML syntax uses the angle brackets ("&lt;" and "&gt;") to hold the name of an HTML element. Elements usually have an opening tag and a closing tag, and give information about the content they contain. The difference between the two is that the closing tag has a forward slash.
+HTML syntax uses the angular brackets ("&lt;" and "&gt;") to hold the name of an HTML element. Elements usually have an opening tag and a closing tag(not needed by Self-closing elements), and give information about the content they contain. The difference between the two is that the closing tag has a forward slash.
 
 Here's an example using the [p element](#) (`<p>`) to tell the browser that a group of text is a paragraph:
 
