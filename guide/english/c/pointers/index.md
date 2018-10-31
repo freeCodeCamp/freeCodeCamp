@@ -34,6 +34,32 @@ value of my_double_variable: 10.100000
 value of my_pointer: 11.100000
 ```
 
+
+
+## pointers
+#include <stdio.h>
+int main()
+{
+   /* Pointer of integer type, this can hold the
+    * address of a integer type variable.
+    */
+   int *p;
+
+   int var = 10;
+
+   /* Assigning the address of variable var to the pointer
+    * p. The p can hold the address of var because var is
+    * an integer type variable.
+    */
+   p= &var;
+
+   printf("Value of variable var is: %d", var);
+   printf("\nValue of variable var is: %d", *p);
+   printf("\nAddress of variable var is: %p", &var);
+   printf("\nAddress of variable var is: %p", p);
+   printf("\nAddress of pointer p is: %p", &p);
+   return 0;
+}
 In this code, there are two declarations. The first is a typical variable initialization which creates a `double` and sets it equal to 10.1. New in our declarations is the usage of `*`. The asterisk (`*`) is usually used for multiplication, but when we use it by placing it in front of a variable it tells C that this is a pointer variable.  
 
 The next line tells the compiler where that somewhere else actually is. By using `&` in this way, it becomes the 'dereferencing operator', and returns the memory location of the variable it's looking at.
