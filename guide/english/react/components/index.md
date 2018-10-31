@@ -23,11 +23,13 @@ The value ```name="Faisal Arkan"``` will be assigned to ```{props.name}``` from 
 
 ### Other ways to declare components
 
-There are many ways to declare components when using React.js, but there are two kinds of components, ***stateless*** components and ***stateful*** components.
+There are many ways to declare components when using React.js, but there are two kinds of components: ***stateful*** and ***stateless***.
 
-### Stateful
+### Stateful Components
 
-#### Class Type Components
+A component should be created as a stateful component if:
+1. it needs to utilize its own state (also known as *local state*)
+2. it requires any of React's lifecycle methods
 
 ```jsx
 
@@ -55,7 +57,9 @@ class Cat extends React.Component {
 
 ### Stateless Components
 
-#### Functional Components (Arrow Function from ES6)
+If a component does not have any of the requirements mentioned for stateful components, then it's usually a good idea to make it a stateless component; these components are shorter and more readable (especially when implicitly returned).
+
+#### Functional Component Using ES6's Arrow Function
 
 ```jsx
 
@@ -70,7 +74,9 @@ const Cat = props => {
 
 ```
 
-#### Implicit Return Components
+#### Implicitly Returned Arrow Function Component
+
+Functionally the same as the previous example, but implicit return allows us to omit both the code block (curly braces) and the return statement.
 
 ```jsx
 
@@ -84,4 +90,5 @@ const Cat = props =>
 
 ### More Information:
 
-[https://reactjs.org/docs/components-and-props.html](Components and Props)
+[Components and Props](https://reactjs.org/docs/components-and-props.html)
+[Arrow Functions](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Functions/Arrow_functions)
