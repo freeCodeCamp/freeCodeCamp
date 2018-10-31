@@ -78,3 +78,29 @@ $ sudo groupdel grouname
   <a href='https://www.digitalocean.com/community/tutorials/how-to-add-and-delete-users-on-ubuntu-16-04' target='_blank' rel='nofollow'>Debian(Ubuntu)</a>
 
   <a href='https://www.digitalocean.com/community/tutorials/how-to-add-and-delete-users-on-a-centos-7-server' target='_blank' rel='nofollow'>RHEL (CentOS/Fedora)</a>
+
+
+Numeric Codes of Access Permission for Linux File/Directory System.
+----------------------------------------------------------------
+
+Linux File Permissions
+r w x  Octal Value Meaning
+0 0 0      0      No permission
+0 0 1      1      Execute-only permission
+0 1 0      2      Write-only permission
+0 1 1      3      Write and execute permissions
+1 0 0      4      Read-only permission
+1 0 1      5      Read and execute permissions
+1 1 0      6      Read and write permissions
+1 1 1      7      Read, write and execute permissions
+
+A set of read(r), write(w) and execute(x) permission can be grouped together in a 3 digit octal value. For example:
+(r-- -w- --x) this permission set of (100 010 001) can also be equivalently labeled as (4 2 1) and can be used in command line to assign permission; for example :
+
+chmod 421 file1
+
+
+
+
+
+
