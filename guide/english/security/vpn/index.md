@@ -2,12 +2,8 @@
 title: VPNs
 ---
 ## VPNs
-
-This is a stub. <a href='https://github.com/freecodecamp/guides/tree/master/src/pages/security/vpn/index.md' target='_blank' rel='nofollow'>Help our community expand it</a>.
-
-<a href='https://github.com/freecodecamp/guides/blob/master/README.md' target='_blank' rel='nofollow'>This quick style guide will help ensure your pull request gets accepted</a>.
-
-<!-- The article goes here, in GitHub-flavored Markdown. Feel free to add YouTube videos, images, and CodePen/JSBin embeds  -->
+VPN (Virtual Private Network) is a technology that lets you browse the web anonymously and safely. It creates tunnels between two hosts using various types of encryption protocols, such as SSL/TLS. Users can share data as if they were connected directly (no one else can see their connection details). VPN can be also used to bypass geo-blocking or censorship. VPN may be considered as Tor alternative.
 
 #### More Information:
 <!-- Please add any articles you think might be helpful to read before writing the article -->
+https://en.wikipedia.org/wiki/Virtual_private_network

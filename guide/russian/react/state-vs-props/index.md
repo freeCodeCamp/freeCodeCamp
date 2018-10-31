@@ -1,3 +1,4 @@
+
 ---
 title: State vs Props
 localeTitle: State против Props
@@ -84,3 +85,4 @@ const person = <Person character = "good"></Person>
 При необходимости вы можете найти меня на [твиттере](https://twitter.com/getifyJr) .
 
 Счастливого программирования!!!
+

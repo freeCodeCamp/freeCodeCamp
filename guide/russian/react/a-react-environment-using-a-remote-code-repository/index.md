@@ -1,13 +1,11 @@
 ---
 title: A React Environment Using a Remote Code Repository
-localeTitle: React Environment с использованием удаленного репозитория кода
+
+localeTitle: Среда разработки для React с использованием удаленного репозитория
 ---
+Данное руководство поможет создать рабочую среду разработки для React, используя удаленные репозитории с необходимыми библиотеками. Для этого мы будем использовать cdnjs.cloudflare.com, react 16.0.0, react-dom, and babel-standalone 6.26.0. babel-polyfill используется для совместимости со старыми браузерами.
 
-Здесь описано как создать нерабочую среду React с использованием удаленного репозитория кода.
-Мы будем использовать cdnjs.cloudflare.com 16.0.0, react, react-dom и babel-standalone 6.26.0 для этого.
-babel-polyfill используется для совместимости старых браузеров.
-
- ```html
+```html
 <!DOCTYPE html>
 <html>
 
@@ -26,6 +24,7 @@ babel-polyfill используется для совместимости ста
   </script>
 </head>
 
+
 <body>
   <div id="helloreact"></div>
   <script type="text/babel">
@@ -36,6 +35,7 @@ babel-polyfill используется для совместимости ста
 
 </html>
  ```
- 
+
 Если этот код сохраняется с расширением .html (helloReact.html), то его можно открыть в веб-браузере,
 который, в свою очередь, запустит React и Babel.
+

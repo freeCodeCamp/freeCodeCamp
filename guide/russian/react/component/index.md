@@ -4,7 +4,9 @@ localeTitle: React - Компоненты
 ---
 ## React - Компоненты
 
+
 Компоненты могут повторно использоваться в react.js. Вы можете ввести значение в props, как указано ниже:
+
 
 ```jsx
 function Welcome(props) {
@@ -23,12 +25,14 @@ ReactDOM.render(
 
 ### Другие способы объявления компонентов
 
+
 Существует много способов объявления компонентов при использовании React.js,
 но есть два вида компонентов, компоненты ***stateless*** и компоненты ***stateful***.
 
+
 ### Stateful
 
-#### Компоненты типа класса
+#### Компоненты-классы
 
 ```jsx
 class Cat extends React.Component { 
@@ -52,9 +56,11 @@ class Cat extends React.Component {
  } 
 ```
 
+
 ### Stateless
 
 #### Функциональные компоненты (Arrow Function из стандарта ES6)
+
 
 ```jsx
 const Cat = props => {
@@ -68,12 +74,13 @@ const Cat = props => {
 
 ```
 
-#### Неявные возвращаемые компоненты
+#### Неявно возвращаемые компоненты
 
 ```jsx
 const Cat = props => 
+
   <div>
     <h1>{props.name}</h1>
     <p>{props.color}</p>
   </div>;
-```
+
