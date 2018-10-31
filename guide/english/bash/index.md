@@ -4,7 +4,7 @@ title: Bash
 
 ## What is Bash?
 
-<a>Bash</a> (short for Bourne Again SHell) is a Unix shell, and a command language interpreter. A shell is simply a macro processor that executes commands. It's the most widely used shell packaged by default for most Linux distributions, and a successor for the Korn shell (ksh) and the C shell (csh).
+<a>Bash</a> (short for Bourne Again SHell) is a Unix shell, and a command language interpreter. A shell is simply a macro processor that executes commands. It is the most widely used, shell packaged by default for most Linux distributions, and a successor for the Korn shell (ksh), and the C shell (csh).
 
 Many things that can be done Linux operating system can be done via command line. Some examples are...
 * Editing files
@@ -17,14 +17,14 @@ You can read more about bash <a href="https://www.gnu.org/software/bash/">here</
 
 ## Using bash on the command line (Linux, OS X)
 
-You can start using bash on most Linux and OS X operating systems by opening up a terminal.  Let's consider a simple hello world example. Open up your terminal, and write the following line (everything after the $ sign):
+You can start using bash on most Linux and OS X operating systems by opening up a terminal.  Let us consider the simple hello-world examplar. Open up your terminal, and write the following line (everything after the $ sign):
 
 ```
 zach@marigold:~$ echo "Hello world!"
 Hello world!
 ```
 
-As you can see, we used the echo command to print the string "Hello world!" to the terminal.  
+As you can see, we used the echo command to print the string, "Hello world!" to the terminal.  
 
 
 ## Writing a bash script 
@@ -49,7 +49,7 @@ zach@marigold:~$ ./myBashScript.sh
 Hello world!
 ```
 
-The script only has two lines. The first indicates what interpreter to use to run the file (in this case, bash). The second line is the command we want to use, echo, followed by what we want to print which is "Hello World".
+The script only has two lines. The first indicates what interpreter to use to run the file (in this case, bash). The second line is the command we wish to use, echo, followed by what we want to print, which is "Hello World".
 
 Sometimes the script won't be executed, and the above command will return an error. It is due to the permissions set on the file. To avoid that use:
 ```
