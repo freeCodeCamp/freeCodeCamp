@@ -179,5 +179,42 @@ Output:
 [ 0 | 1 | 2 | 3 | 4 ]  
 [ 0 | 1 | 2 | 3 | 4 ]  
 
+
+#Here is an example program of Array which show greatest number among an Array
+
+import java.util.Scanner;
+public class NewLogic
+{
+    public static void main(String[] args) 
+    {
+        Scanner input=new Scanner(System.in);
+        int len;
+        int large;
+        System.out.println("Enter the length of Array");
+        len=input.nextInt();
+        System.out.println("\nEnter "+len+" elements ");
+        int intArray[]=new int[len];
+        for(int i=0;i<intArray.length;i++)
+        {
+            intArray[i]=input.nextInt();
+        }
+        large=intArray[0];
+        for(int a=0;a<intArray.length;a++)
+        {
+            if(large<intArray[a])
+            {
+                large=intArray[a];
+            }
+        }  
+        System.out.println("Enter Array is ");
+        for(int i=0;i<intArray.length;i++)
+        {
+            System.out.print(" "+intArray[i]);
+        }
+        System.out.println("\nLargest Number in Entered array is "+large);
+    }
+}
+
+
 #### More Information:
 * Source: <a href='https://docs.oracle.com/javase/tutorial/java/nutsandbolts/arrays.html' target='_blank' rel='nofollow'>Java Arrays</a>
