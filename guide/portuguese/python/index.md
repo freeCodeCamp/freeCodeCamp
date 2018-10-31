@@ -173,3 +173,4 @@ O Free Code Camp possui ótimos recursos. A web é um lugar grande, há muito ma
 *   Lista de mais recursos para aprender python: https://github.com/vinta/awesome-python
 *   Python interativo: http://interactivepython.org/runestone/static/thinkcspy/index.html
 *   Guia do desenvolvedor para Python: https://devguide.python.org/
+*   Curso de Python On line: https://www.devmedia.com.br/curso/curso-python/426
