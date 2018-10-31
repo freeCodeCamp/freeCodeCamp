@@ -131,3 +131,13 @@ Output:
 4
 5
 ```
+# Important point about for loop
+```
+You can also write for loop as
+
+for(;test condition;)
+{
+
+
+}
+this will be an infinite loop if test condition is True
