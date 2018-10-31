@@ -15,23 +15,23 @@ localeTitle: 计算机科学
 计算机科学分为几个领域。以下是目前已建立和研究得很好的领域。大多数字段进一步分类为sub0fields。
 
 *   [计算理论](https://en.wikipedia.org/wiki/Theory_of_computation)
-*   复杂性理论
-*   形式方法
+*   [复杂性理论] (https://en.wikipedia.org/wiki/Computational_complexity_theory)
+*   [形式方法] (https://en.wikipedia.org/wiki/Formal_methods)
 *   分布式算法
 *   [安全](https://en.wikipedia.org/wiki/Computer_security)
 *   加密
 *   [人工智能](https://en.wikipedia.org/wiki/Artificial_intelligence)
-*   数据挖掘
-*   机器学习
-*   计算机视觉
+*   [数据挖掘] (https://en.wikipedia.org/wiki/Data_mining)
+*   [机器学习] (https://en.wikipedia.org/wiki/Machine_learning)
+*   [计算机视觉] (https://en.wikipedia.org/wiki/Computer_vision)
 *   [软件工程](https://en.wikipedia.org/wiki/Software_engineering)
 *   [数据科学](https://en.wikipedia.org/wiki/Data_science)
-*   大数据
+*   [大数据] (https://en.wikipedia.org/wiki/Big_data)
 *   [人机交互](https://en.wikipedia.org/wiki/Human%E2%80%93computer_interaction)
-*   脑计算机接口
-*   系统
-*   分布式系统
-*   操作系统
+*   [脑计算机接口] (https://en.wikipedia.org/wiki/Brain%E2%80%93computer_interface)
+*   [系统] (https://en.wikipedia.org/wiki/System)
+*   [分布式系统] (https://en.wikipedia.org/wiki/Distributed_computing)
+*   [操作系统] (https://en.wikipedia.org/wiki/Operating_system)
 *   数据库系统
 
 ## 更多信息
