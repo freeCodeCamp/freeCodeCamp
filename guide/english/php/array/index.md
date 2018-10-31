@@ -48,7 +48,7 @@ For instance:
 
 $bikes = ['Suzuki', 'BMW', 'Yamaha'];
 
-echo 'I like '. $bikes[0]
+echo 'I like '. $bikes[0];
 ```
 
 Would produce the following output:
@@ -67,7 +67,7 @@ $bikes = [
     'not my favorite' => 'Yamaha'
 ];
 
-echo 'I like '. $bikes['not my favorite']
+echo 'I like '. $bikes['not my favorite'];
 ```
 
 Would produce the following output:
