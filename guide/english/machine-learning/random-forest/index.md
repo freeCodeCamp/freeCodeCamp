@@ -3,6 +3,7 @@ title: Random Forest
 ---
 ## Random Forest
 A Random Forest is a group of decision trees that make better decisions as a whole than individually.
+To say it in simple words: Random forest builds multiple decision trees and merges them together to get a more accurate and stable prediction.
 
 ### Problem
 Decision trees by themselves are prone to **overfitting**. This means that the tree becomes so used to the training data that it has difficulty making decisions for data it has never seen before.
