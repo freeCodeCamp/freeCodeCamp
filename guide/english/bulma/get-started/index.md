@@ -57,3 +57,7 @@ For bulma to work correctly, you need to make your webpage responsive.
 
 ### Bulma-start
 ```bulma-start``` is a tiny ```npm``` package that includes the npm dependencies you need to build your own website with Bulma.
+
+### Further References:
+- [Bulma Documentation](https://bulma.io/documentation)
+- [Vue.js based on Bulma](https://buefy.github.io/documentation)
