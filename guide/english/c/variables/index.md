@@ -110,30 +110,25 @@ We get `15.300000`. So, say we just want two places after the decimal to give us
 
 ```C
 #include<stdio.h>
-int
-main ()
-{
 
+int main() {
   int i;
   float f;
   printf ("enter integer value\n");
   scanf ("%d", &i);
   printf ("enter float value\n");
   scanf ("%f", &f);
-  printf ("integer value is:%d \nfloat value is:%f \n ", i, f);
+  printf ("integer value: %d \nfloat value: %f\n", i, f);
   return 0;
-
 }
-
 ```
 
 #OUTPUT
-```C
+```sh
 enter integer value
 1
 enter float value
 2.2
-integer value is:1
- float value is:2.2 
-
+integer value: 1
+float value: 2.200000
 ```
