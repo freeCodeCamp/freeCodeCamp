@@ -71,3 +71,18 @@ The form tag can also have an attribute named "target" which specifies where the
 
 The action attribute defines the action to be performed when the form is submitted.
 Normally, the form data is sent to a web page at the Script URL when the user clicks on the submit button. If the action attribute is omitted, the action is set to the current page.
+
+The <form> Element
+The HTML <form> element defines a form that is used to collect user input
+Text Input
+<input type="text"> defines a one-line input field for text input
+ Radio Button Input
+<input type="radio"> defines a radio button.
+
+Radio buttons let a user select ONE of a limited number of choices
+The Submit Button
+<input type="submit"> defines a button for submitting the form data to a form-handler.
+
+The form-handler is typically a server page with a script for processing input data.
+
+The form-handler is specified in the form's action attribute
