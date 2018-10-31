@@ -48,3 +48,5 @@ the consensus of the other nodes. Bitcoin has the benefit of being able to incen
 * [Blockchain academic papers](https://github.com/decrypto-org/blockchain-papers)
 * [Blockchain Resources](https://github.com/BlockchainDevs/CryptocurrencyAwesome/blob/master/README.md)
 * [Blockchain Wikipedia](https://en.wikipedia.org/wiki/Blockchain)
+
+Link - https://youtu.be/jKYhLpHJv8U
