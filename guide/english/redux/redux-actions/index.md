@@ -3,7 +3,7 @@ title: Redux Actions
 ---
 ## Redux Actions
 
-Redux action is a simple object that describes what sort of event has happened in your application. They can even contain
+Redux actions are simple objects that describe what sort of event has happened in your application. They can even contain
 data that needs to be sent from the application to the Redux store. An action can contain anything but it must have a mandatory type property which describes the event taking place. A good practice is to use constants while describing the action.
 
 For example
