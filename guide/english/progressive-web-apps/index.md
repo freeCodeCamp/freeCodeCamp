@@ -4,7 +4,7 @@ title: Progressive Web Apps
 
 ## Progressive Web Apps
 
-Progressive Web Apps or "PWAs" appear to be more than just a fad, but a fundamentally different way of approaching what a website can and should be on whatever platform you are viewing it from.
+`Progressive Web Apps or "PWAs"` appear to be more than just a fad, but a fundamentally different way of approaching what a website can and should be on whatever platform you are viewing it from.
 
 PWAs can install portions of themselves onto devices for offline viewing, use service workers to deliver content as needed when a connection is available and best of all standardize certain functionality between mobile and desktop devices.
 
