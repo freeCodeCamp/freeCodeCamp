@@ -79,6 +79,8 @@ h) `.modal-title` class styles the header of the modal with a proper height.
 i) `.modal-body` class styles the body of the modal(dialog/popup).It can have other markups like `<p>,<img>,<video>` etc.
 
 j) `.modal-footer` class styles the footer of the modal.
+
+k) `.modal-dialog-centered` class styles to vertically center the modal.
   
   
 #### More Information : 
