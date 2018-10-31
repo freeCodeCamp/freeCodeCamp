@@ -134,7 +134,7 @@ npm -v
 
 We regularly develop on popular and latest operating systems like macOS 10.12 or later, Ubuntu 16.04 or later and Windows 10. Its recommended to lookup your specific issue on resources like: Google, Stack Overflow or Stack Exchange. Chances are that someone has faced the same issue and there is already an answer to your specific query.
 
-If you are on a different OS, and/or are still running into issues, reach out to [contributors community on our public forum](https://www.freecodecamp.org/forum/c/contributors) or the [Contributor's Chat room](https://gitter.im/freeCodeCamp/Contributors). We may be able to troubleshoot some common issues.
+If you are on a different OS, and/or are still running into issues, reach out to the [contributors community on our public forum](https://www.freecodecamp.org/forum/c/contributors) or the [Contributor's Chat room](https://gitter.im/freeCodeCamp/Contributors). We may be able to troubleshoot some common issues.
 
 We can't support you on GitHub, because software installation issues are beyond the scope of this project.
 
@@ -168,7 +168,7 @@ You can leave the other keys as they are. Keep in mind if you want to use more s
 
 Next lets, bootstrap the various services, i.e. the api-server, the client UI application, etc. You can [learn more about these services in this guide](#).
 
-By bootstrapping you are tying the links between the services. They are semi-independent. Meaning, in production these services are deployed to their own locations, but while running locally you want them all to be available to you.
+By bootstrapping, you are tying the links between the services. They are semi-independent, meaning, in production these services are deployed to their own locations, but are all to be available to you while running locally.
 
 ```shell
 # Bootstrap all projects inside this repository
