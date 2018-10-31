@@ -21,7 +21,7 @@ int main() {
 }
 ```
 
-File Handling is one of the most important part of a programming . In C language we use a **FILE** type structure pointer  to declare a **file**.
+File Handling is one of the most important part of a programming . In C language we use a **FILE** type structure pointer  to declare a **file**.A file represents a sequence of bytes on the disk where a group of related data is stored. File is created for permanent storage of data. It is a readymade structure. In C language, we use a structure pointer of file type to declare a file.
 
 ```c
 FILE *fp;
