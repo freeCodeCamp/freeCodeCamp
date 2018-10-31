@@ -62,7 +62,7 @@ Its main features are:
 *   Build-in Git - Review diffs, stage files, make commits, push and pull, all available in the editor.
 *   Extensions - Install extensions to add new languages, themes, debuggers, and connect additional services.
 
-## <a href='https://atom.io/' target='_blank' rel='nofollow'>WebStorm</a>
+## <a href='https://www.jetbrains.com/webstorm/' target='_blank' rel='nofollow'>WebStorm</a>
 
 DON'T COMPROMISE ON DEVELOPMENT EXPERIENCE
 The smartest editor
