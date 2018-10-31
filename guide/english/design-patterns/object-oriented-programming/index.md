@@ -33,3 +33,14 @@ See the image below. It represents a blueprint of a class named car. An instance
 
 ## What next?
 Pick an OO language, and build a basic terminal based game to illustrate these concepts.
+
+
+A Critical Comparison between Static vs Dynamic Binding:
+-----------------------------------------------------------
+Broadly speaking, Polymorphism is governed by 2 distinct types of 'Binding', i.e the way of chaining constructors between .java classes e.g. Static Binding and  Dynamic Binding.
+
+- In Static Binding a Class file can have more than one methods with the same name (but ofcourse with different arguments), whereas in Dynamic Binding case both Superclass and subclass can have same exact method with same exact list of Parameters.
+
+- From JVM's (Java Virtual Machine) perspective - for Static Binding JVM decides the precedence of running the class method at compile time  while in Dynamic Binding this is decided at runtime and not by the formal parameter list. 
+
+
