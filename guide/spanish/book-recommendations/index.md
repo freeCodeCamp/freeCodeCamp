@@ -254,4 +254,4 @@ El mes-hombre mítico: ensayos sobre ingeniería de software
 
 Esta lista se compiló a partir de múltiples hilos de sugerencias en Reddit y Stackoverflow.
 
-Por favor, siéntase libre de agregar más que haya encontrado útil!
+Por favor, siéntase libre de agregar más libros que haya encontrado útil!
