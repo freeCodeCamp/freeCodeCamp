@@ -9,12 +9,12 @@ This property specifies how your mouse reacts when you hover over any element on
 
 ```css
 
-.example{
+.example {
   pointer-events: auto; 
   /*this will use the default look set by the browser agent*/
 }
 
-.example{
+.example {
   pointer-events: none; 
   /*this will use the regular mouse look when hovered over the element*/
 }
