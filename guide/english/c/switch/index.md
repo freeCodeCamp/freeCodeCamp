@@ -10,6 +10,8 @@ It's a list of possibilities, with an action for each possibility, and an option
 
 We exit from the switch by `break`. If the `break` statement is not reached before the beginning of the next case, the execution will fall through and begin executing the code in the next case.
 
+Note:- `break` and `continue` are applicable only with for, while and switch code blocks.
+
 ## Syntax of switch...case
 
 ```c
