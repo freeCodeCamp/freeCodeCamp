@@ -26,7 +26,7 @@ There are few commonly used arguments:
 
 ### Warning
 
-This command is capable of deleting many files at once with ease.  This can be beneficial, but also dangerous. Use at your own risk
+This command is capable of deleting many files at once with ease.  This can be beneficial, but also dangerous. Use at your own risk.
 
 ### More Information:
 * [Wikipedia](https://en.wikipedia.org/wiki/Rm_(Unix))
