@@ -68,11 +68,10 @@ The `Stream` API goes over the list of students and uses the intermediate `map` 
 
 The terminal `collect` operation collects the stream as a list of strings.
 
-This is only one use of the Streams API used in Java 8. There are many other applications of streams utilizing other operations as seen here in the
- [documentation](https://docs.oracle.com/javase/8/docs/api/java/util/stream/Stream.html).
+This is only one use of the Streams API used in Java 8. There are many other applications of streams utilizing other operations as seen in the [streams guide](/java/streams) and the [introduction](http://www.oracle.com/technetwork/articles/java/ma14-java-se-8-streams-2177646.html) from Oracle.
 
 #### More Information:
-<!-- Please add any articles you think might be helpful to read before writing the article -->
 - [Lambda Expressions](https://docs.oracle.com/javase/tutorial/java/javaOO/lambdaexpressions.html)
-- [Java 8 Stream API](https://docs.oracle.com/javase/8/docs/api/java/util/stream/package-summary.html)
+- [Java 8 Stream package javadoc](https://docs.oracle.com/javase/8/docs/api/java/util/stream/package-summary.html)
+- [Java 8 Stream interface javadoc](https://docs.oracle.com/javase/8/docs/api/java/util/stream/Stream.html)
 - [Java 8 Double Colon Operator](https://www.baeldung.com/java-8-double-colon-operator)
