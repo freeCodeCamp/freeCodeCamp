@@ -73,6 +73,7 @@ npm install
 go install
 alloy dev
 ```
+just wanna try.
 4. Visit website at `http://localhost:1212`
 
 *Alloy uses Node, NPM, and Webpack*
