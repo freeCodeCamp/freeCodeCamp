@@ -1,6 +1,6 @@
 ---
-title: Variables
-localeTitle: المتغيرات
+Title: Variables
+العنوان: المتغيرات
 ---
 # المتغيرات
 
