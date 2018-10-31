@@ -15,7 +15,7 @@ You can build some pretty amazing things in CSS alone, such as this pure-CSS [Mi
 ![Minesweeper clone in CSS](https://cdn-images-1.medium.com/max/800/1*GFcKk9KxqHAnWa1ECcKDOQ.png)
 
 ### Popular CSS Frameworks 2018
-Frameworks exist to make the more complex parts of css easier and more efficient for developers to build out websites.
+Frameworks exist to make the more complex parts of css easier and more efficient for developers to build out websites.  They also allow the developer to have more flexibility as well as additional features to produce amazing results.
 Some of the most popular CSS Frameworks are:
 Bootstrap, Foundation, Bulma, uikit, Semantic UI, mini.css, Materialize, Material Design Lite, Spectre and Kube
 
