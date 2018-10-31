@@ -4,13 +4,13 @@ localeTitle: Área de um retângulo
 ---
 ## Área de um retângulo
 
-A área de um retângulo pode ser calculada multiplicando-se os comprimentos dos dois lados perpendiculares.
+A área de um retângulo pode ser calculada multiplicando-se os comprimentos dos dois lados perpendiculares (comprimento e altura).
 
-`Area = axb`
+`Area = a x b`
 
-**Por exemplo** Para um retângulo onde _a = 3_ _eb = 4_
+**Por exemplo** Para um retângulo onde _a = 3_e b = 4_
 
-`Area = axb = 3 x 4 = 12`
+`Area = a x b = 3 x 4 = 12`
 
 #### Mais Informações:
 
