@@ -8,6 +8,8 @@ A dropdown is a button which toggles displaying a list of links.
 
 Bootstrap’s dropdowns are designed to be generic and applicable to a variety of situations. For instance, it is possible to create dropdowns that contain search fields or login forms.
 
+Dropdowns are a dynamic way to build the UX on your website. The dropsdowns functionality and style increase user access as well as provide  engagement and 
+
 ## Example
 
 ```html
