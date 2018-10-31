@@ -1,7 +1,7 @@
 ---
 title: Drupal
 ---
-
+![Drupal logo](https://www.drupal.org/files/drupal_logo-blue.png)
 # Drupal
 
 Drupal is an open source content management software. Like WordPress, it is based on PHP and MySql. It has a strong core suite of features but its strength comes in its modular design enabling users and developers alike to alter the product to fit their needs and use case.
