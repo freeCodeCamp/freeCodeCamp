@@ -4,7 +4,7 @@ localeTitle: Algoritmos de Retrocesso
 ---
 # Algoritmos de Retrocesso
 
-Backtracking é um algoritmo geral para encontrar todas (ou algumas) soluções para alguns problemas computacionais, notavelmente problemas de satisfação de restrições, que constroem candidatos para as soluções e abandona cada candidato parcial _("backtracks")_ assim que determina que o candidato não pode possivelmente ser completado para uma solução válida.
+Backtracking é um algoritmo geral DE TENTATIVA E ERRO para encontrar todas (ou algumas) soluções para alguns problemas computacionais, notavelmente problemas de satisfação de restrições, que constroem candidatos para as soluções e abandona cada candidato parcial _("backtracks")_ assim que determina que o candidato não pode possivelmente ser completado para uma solução válida.
 
 ### Exemplo de problema (problema do passeio do cavaleiro)
 
