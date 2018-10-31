@@ -14,7 +14,7 @@ disabilities affect Web use and includes scenarios of people with disabilities u
 
 Web accessibility also **benefits** people *without* disabilities. For example, a key  principle of Web accessibility is designing Web sites and software
 that are flexible to meet different user needs, preferences, and situations. This **flexibility** also benefits people *without* disabilities in certain
-situations, such as people using a slow Internet connection, people with "temporary disabilities" such as a broken arm, and people with changing abilities
+situations, such as people using a slow internet connection, people with "temporary disabilities" such as a broken arm, and people with changing abilities
 due to aging. The document [Developing a Web Accessibility Business Case for Your Organization](https://www.w3.org/WAI/bcase/Overview) describes many
 different benefits of Web accessibility, including **benefits for organizations**.
 
