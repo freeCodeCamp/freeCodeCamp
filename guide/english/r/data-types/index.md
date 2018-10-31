@@ -1,22 +1,40 @@
 ---
 title: Data Types in R
 --- 
-## Scalars
- Scalar refers to an atomic quantity that can hold only one value at a time. Scalars are the most basic data types. Some common types of scalars :
+## Vectors
+Vectors are atomic data structures that can hold one or more elments. While scalars are typically discussed in programming, a vector of length one takes the place of a scalar in R. For this reason, many mathematical operations are vectorized. The examples below illustrate vectors of length one: 
 
-1. Number
+1. Numeric (double)
 ```r
 	> x <- 5
 	> y <- 5.5
+        > z <- c(1, 2)
 	> class(x)
 	[1] "numeric"
 	> class(y)
 	[1] "numeric"
+        > class(y)
+        [1] "numeric"
 	> class(x+y)
 	[1] "numeric"
 ```
 
-2. Logical value
+2. Integer
+```r
+        > x <- c(5L, 5L)
+        > class(x)
+	[1] "integer"
+```
+
+If an integer and numeric are added together, the result is coerced to a numeric:
+```r
+        > class(5L + 5.1)
+        [1] "numeric"
+```
+
+
+
+3. Logical
 ```r
 	> m <- x > y      # Used to check, Is x larger than y?
 	> n <- x < y      # Used to check, Is x smaller than y?
@@ -30,7 +48,7 @@ title: Data Types in R
 	[1] "logical"
 ```
 
- 3. Character(string)
+ 4. Character
 ```r
 	> a <- "1"; b <- "2.5" 
 	> a;b
@@ -46,8 +64,7 @@ title: Data Types in R
 	[1] "character"
 ```
 
-## Vector
- It is a sequence of data elements of the same basic type. For example:
+ Since vectors are atomic, they can only hold one data type:
 
 	> o <- c(1,2,5.3,6,-2,4)                             	 # Numeric vector
 	> p <- c("one","two","three","four","five","six")    	 # Character vector
@@ -56,6 +73,26 @@ title: Data Types in R
 	[1]  1.0  2.0  5.3  6.0 -2.0  4.0
 	[1] "one"   "two"   "three" "four"  "five"  "six"
 	[1]  TRUE  TRUE FALSE  TRUE FALSE
+
+## Augmented Vectors
+Factors and date-time vectors are augmented vectors, which are built on top of integer and numeric, respectively. Factors are used for handling categorical data have an attribute referred to as levels.
+
+```r
+        > x <- as.factor("a")
+        > typeof(x)
+        [1] "integer"
+        > class(x)
+        [1] "factor"
+        > attributes(x)
+        $levels
+        [1] "a"
+
+        > y <- Sys.time()
+        > typeof(y)
+        [1] "double"
+        > class(y)
+        [1] "POSIXct" "POSIXt" 
+```
 
 	
 ## Matrix
