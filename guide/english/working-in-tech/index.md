@@ -3,9 +3,9 @@ title: Working in Tech & Information Technology(IT)
 ---
 ## Working in Tech and IT
 
-A wide variety of technology-related fields such as web development, design, data science, and product management are often lumped into the catch-all term "tech" or IT. 
+Information Technology encompasses a wide range of sub-fields, which may include web development, design, data science and product management. These are often lumped into the catch-all term "tech" or IT. 
 
-This section will focus on various aspects of working in tech. We will discuss the additional career challenges that under-represented minorities and people from non-traditional education backgrounds face. This includes issues such as sexism and ageism that have been particularly prevalent in certain industries and organizations. 
+This section will focus on various aspects of working in tech. We will discuss the additional career challenges that under-represented minorities and people from non-traditional education backgrounds face. This includes issues such as sexism and ageism that have been particularly prevalent in certain industries and organizations.
 
 ### Computer Security
 
