@@ -1,6 +1,7 @@
 ---
 title: SQL
 ---
+![SQLlite logo](https://cdn.pixabay.com/photo/2013/09/18/12/13/sqlite-183454_1280.png)
 ## SQL
 
 SQL stands for Structured Query Language. It is the most common tool used to manipulate and manage data in a relational database (often referred to as a "SQL database").
