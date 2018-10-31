@@ -138,7 +138,7 @@ This draws the following chart:
 There are a few tools available to create SVG in the form of a drawing program.
 
 - <a href='https://www.inkscape.org/' target='_blank' rel='nofollow'>Inkscape</a> - It is an open source tool for state-of-the-art vector drawing with an easy to use graphical interface.
-- <a href='https://www.adobe.com/products/illustrator/' target='_blank' rel='nofollow'>Adobe Illustrator</a> - Adobe Illustrator is a commercial tool for Vector Imagery.
+- <a href='https://www.adobe.com/products/illustrator/' target='_blank' rel='nofollow'>Adobe Illustrator</a> - Adobe Illustrator is a commercial tool for Vector Imagery. For beginners to the SVG process, one definite advantage of using Adobe Illustrator is its ability to export clean SVG code to use in your projects, including the CSS. However, labeling of the layers is key so that changes to the CSS are easy to track.
 
 For more tools, refer to <a href='https://https://www.w3.org/Graphics/SVG/WG/wiki/Implementations' target='_blank' rel='nofollow'>W3C list of tools that supports SVG</a>
 
