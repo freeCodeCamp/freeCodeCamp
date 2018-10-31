@@ -47,4 +47,14 @@ _Python para Todos: Tutoriales y libro en PDF (2.x)_
 
 *   [Link diretor al PDF \[GRATIS\]](https://launchpadlibrarian.net/18980633/Python%20para%20todos.pdf) 
 
+
+_Programar la Raspberry Pi con Python_
+
+* [Programar la Raspberry Pi con Python](https://www.amazon.es/Programar-Raspberry-Python-T%C3%ADtulos-Especiales/dp/8441539766)
+Un poco desfasado por referirse a la Raspberry 2 pero es bueno.
+
+_Aprender Python_
+
+* Repositorio de tutoriales muy amplio (introducción a Python, web scrapping o blockchain con python, etc.) https://www.aprenderpython.net
+
     Por favor, siéntase libre de agregar más que haya encontrado útil!
