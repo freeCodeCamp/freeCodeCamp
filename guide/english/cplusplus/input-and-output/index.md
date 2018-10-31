@@ -122,7 +122,24 @@ When chained, the extraction operator will first read data from `cin` to fill `a
 
 
 C's standard printf and scanf statements can also be used with c++ by importing '<cstdio>' header file.
+<br>
+  
+cout, cin, max(), min(), _gcd() etc all these are defined in std namespace.
 
+If you do not write using namespace std then you have to use std::cout, std::cin etc everywhere. For example:
+  
+```C++
+  include <iostream>
+
+  int main()
+  {
+      int x,y;
+      std::cout <<"Please enter two numbers:" << endl;
+      std::cin >> x >> y;
+      return 0;
+  }
+  
+  ```
 
 ## Sources
 1. http://www.cplusplus.com/reference/ostream/ostream/operator%3C%3C/
