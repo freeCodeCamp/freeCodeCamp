@@ -8,9 +8,11 @@ In computer science, a search algorithm is any algorithm which solves the Search
 This kind of algorithm looks at the problem of re-arranging an array of items in asceding order. The two most clasical examples of that is the binary search and the merge sort algorithm.
 
 In the following links you can also find more information about:
-* <a href="">Binary</a> Search
-* <a href="">Linear</a> Search
-* Searching <a href="">linked lists vs arrays</a>
+* [Binary search](https://github.com/freeCodeCamp/freeCodeCamp/tree/master/guide/english/algorithms/search-algorithms/binary-search/index.md)
+* [Exponential search](https://github.com/freeCodeCamp/freeCodeCamp/tree/master/guide/english/algorithms/search-algorithms/exponential-search/index.md)
+* [Jump search](https://github.com/freeCodeCamp/freeCodeCamp/tree/master/guide/english/algorithms/search-algorithms/jump-search/index.md)
+* [Linear search](https://github.com/freeCodeCamp/freeCodeCamp/tree/master/guide/english/algorithms/search-algorithms/linear-search/index.md)
+* [Searching-linked-lists-versus-arrays](https://github.com/freeCodeCamp/freeCodeCamp/tree/master/guide/english/algorithms/search-algorithms/searching-linked-lists-versus-arrays/index.md)
 
 #### More Information:
 <!-- Please add any articles you think might be helpful to read before writing the article -->
