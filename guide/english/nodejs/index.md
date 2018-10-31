@@ -59,3 +59,8 @@ When the timer completes it's execution taking 5 seconds, it calls the function 
 - [Official NodeJS site](https://nodejs.org)
 - [Node Version Manager](https://github.com/creationix/nvm/blob/master/README.md)
 - [n: Interactive NodeJS Version Manager](https://github.com/tj/n)
+
+### Getting Started with Node.js <br><br>
+<a href="http://www.youtube.com/watch?feature=player_embedded&v=U8XF6AFGqlc"
+" target="_blank"><img src="http://img.youtube.com/vi/U8XF6AFGqlc/0.jpg" 
+alt="Node.js Tutorial for Absolute Beginners" width="240" height="180" border="10" /></a>
