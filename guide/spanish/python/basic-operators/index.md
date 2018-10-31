@@ -20,61 +20,58 @@ Los diferentes tipos de operadores en Python se enumeran a continuación:
 
 Un operador aritmético toma dos operandos como entrada, realiza un cálculo y devuelve el resultado.
 
-Considera la expresión, **“a = 2 + 3”** . Aquí, `2` y `3` son los _operandos_ y `+` es el _operador aritmético_ . El resultado de la operación se almacena en la variable a.
+Considera la expresión, **“a = 2 + 3”** . Aquí, `2` y `3` son los _operandos_ y `+` es el _operador aritmético_ . El resultado de la operación se almacena en la variable a. (Esto pasa porque `=` es un operando de asignación. Ver abajo.)
 
-Operador
+<table style="width:100%">
+  <tr>
+    <th>Operator</th>
+    <th>Description</th> 
+    <th>Usage</th>
+  </tr>
+  <tr>
+    <td align="center">+</td>
+    <td>Realiza la adición de los operandos.</td> 
+    <td>12 + 3 = 15</td>
+  </tr>
+  <tr>
+    <td align="center">-</td>
+    <td>Realiza la resta en los operandos. <br> Resta el operando derecho del operando izquierdo</td> 
+    <td>12 - 3 = 9</td>
+  </tr>
+  <tr>
+    <td align="center">*</td>
+    <td>Realiza la multiplicación de los operandos.</td> 
+    <td>12 * 3 = 36</td>
+  </tr>
+  <tr>
+    <td align="center">/</td>
+    <td>Realiza división sobre los operandos. <br> Divide el operando izquierdo por el operando derecho </td> 
+    <td>12 / 3 = 4</td>
+  </tr>
+  <tr>
+    <td>Nota: Cuando se usan dos enteros, el resultado difiere entre Python 2 y Python 3.</td> 
+    <td>5 / 2 = 2 en Python 2</td>
+    <td>5 / 2 = 2.5 en Python 3</td>
+  </tr>
+  <tr>
+    <td align="center">%</td>
+    <td>Realiza un módulo sobre los operandos. <br> Devuelve el resto obtenido dividiendo el operando izquierdo por el operando derecho</td> 
+    <td>16 % 3 = 1</td>
+  </tr>
+  <tr>
+    <td align="center">**</td>
+    <td>Realiza una operación de Exposiciónción. <br>  El operando izquierdo se eleva a la potencia del operando derecho</td> 
+    <td>12 ** 3 = 1728</td>
+  </tr>
+  <tr>
+    <td align="center">//</td>
+    <td>PRealiza una operación de división de piso.<br>  Devuelve la parte integral del cociente obtenido después de bucear el operando izquierdo por el operando derecho</td> 
+    <td>18 // 5 = 3</td>
+  </tr>
+</table>
 
-Descripción
 
-Uso
 
-+
-
-Realiza la adición de los operandos.
-
-12 + 3 = 15
-
-\-
-
-Realiza la resta en los operandos. Resta el operando derecho del operando izquierdo
-
-12 - 3 = 9
-
-\*
-
-Realiza la multiplicación de los operandos.
-
-12 \* 3 = 36
-
-/
-
-Realiza división sobre los operandos. Divide el operando izquierdo por el operando derecho
-
-12/3 = 4
-
-Nota: Cuando se usan dos enteros, el resultado difiere entre Python 2 y Python 3.
-
-5/2 = 2 en Python 2
-
-5/2 = 2.5 en Python 3
-
-%
-
-Realiza un módulo sobre los operandos. Devuelve el resto obtenido dividiendo el operando izquierdo por el operando derecho
-
-16% 3 = 1
-
-\*\*
-
-Realiza una operación de Exposiciónción. El operando izquierdo se eleva a la potencia del operando derecho
-
-12 \*\* 3 = 1728
-
-//
-
-Realiza una operación de división de piso. Devuelve la parte integral del cociente obtenido después de bucear el operando izquierdo por el operando derecho
-
-18 // 5 = 3
 
 Nota: para obtener el resultado en tipo flotante, uno de los operandos también debe ser de tipo flotante.
 
