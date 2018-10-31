@@ -1,6 +1,6 @@
 ---
-title: Comments in Java
-localeTitle: تعليقات في جافا
+Title: Comments in Java
+العنوان: التعليقات في جافا
 ---
 ## تعليقات في جافا
 
@@ -22,6 +22,7 @@ localeTitle: تعليقات في جافا
 #### 2\. تعليق متعدد الخط
 
 لإنشاء تعليق تعليق متعدد الأسطر ، يتم وضع الأسطر بين `/*` line هنا `*/`
+مثال:
 
  `public class MyFirstJava { 
     public static void main(String[] args) { 
