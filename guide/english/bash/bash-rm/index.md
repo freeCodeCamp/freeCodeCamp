@@ -23,6 +23,7 @@ There are few commonly used arguments:
 - `-r` , means to recursively delete all the folders inside a directory.
 - `-f` , means to forcefully delete anything folder or file.
 - `-rf` , means that both arguments will be used together.
+- `-i`, prompt before every removal (recommended to avoid accidentally deleting wrong files)
 
 ### Warning
 
