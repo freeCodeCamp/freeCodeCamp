@@ -12,9 +12,9 @@ A Central Processing Unit (CPU) is the electronic circuitry within a computer th
 
 ![Intel Core i5 - Front](https://upload.wikimedia.org/wikipedia/commons/thumb/8/83/Intel_i5-2500.jpg/247px-Intel_i5-2500.jpg) ![Intel Core i5 - Back](https://upload.wikimedia.org/wikipedia/commons/thumb/9/95/Intel_i5-3330%2C_bottom.jpg/240px-Intel_i5-3330%2C_bottom.jpg)
 
-### Expansion Cards (eg. GPU)
-An expansion card is an embedded circuit card that can be added to the motherboard to augument a computer's capability. It can either add capabilities, ex allow for a new type of I/O port, or upgrade existing ones, ex. faster ethernet connection. The most common type of expansion card is a GPU, or a graphical processing unit.
-  
+### Graphical Processing Unit (GPU)
+A GPU performs parallel operations. Although it is used for 2D data as well as for zooming and panning the screen, a GPU is essential for smooth decoding and rendering of 3D animations and video. The more sophisticated the GPU, the higher the resolution and the faster and smoother the motion in games and movies. GPUs on stand-alone cards include their own memory (RAM), while GPUs in the chipset or CPU chip share main memory with the CPU.
+
 ![Nvidia Titan XP](https://cdn.arstechnica.net/wp-content/uploads/2017/04/nvidia-titan-x.jpg)  
   
 ### Storage (SSD or HDD)
@@ -27,7 +27,7 @@ Random-access memory (RAM) is a form of computer data storage which stores data 
   
 ![Ram](https://images10.newegg.com/NeweggImage/ProductImage/20-232-476-S01.jpg)  
 
-### Case
+### Case/Cabinet
 A case is used to house all the components of a computer.
   
 ![Case](https://images-na.ssl-images-amazon.com/images/I/41Wq97Jk20L._SL500_AC_SS350_.jpg)  
