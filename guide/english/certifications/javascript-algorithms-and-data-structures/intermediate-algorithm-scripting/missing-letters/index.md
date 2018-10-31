@@ -73,6 +73,36 @@ You will need to figure out where the missing letter is, along with handling the
 
 *   <a href='http://forum.freecodecamp.com/t/javascript-for-loop/14666s-Explained' target='_blank' rel='nofollow'>JS For Loops Explained</a>
 *   <a>String.length</a>
+## ![:sunflower:](https://forum.freecodecamp.com/images/emoji/emoji_one/sunflower.png?v=3 ":sunflower:")Simplified Intermediate Code Solution:
+
+    // This solution does not make use of the ASCII code
+    function fearNotLetter(str) {
+        let letterExp = 'abcdefghijklmnopqrstuvwxyz';
+        if(str === letterExp ){
+            return undefined;
+        }
+        else{
+            let newWord = (letterExp.slice(letterExp.indexOf(str[0]),letterExp.indexOf(str[str.length-1])))
+            return (newWord.split('').filter((x)=>{return str.indexOf(x) === -1})[0])
+        }
+    }
+    // test here
+    fearNotLetter("abcdefghijklmnopqrstuvwxyz");
+
+![:rocket:](https://forum.freecodecamp.com/images/emoji/emoji_one/rocket.png?v=3 ":rocket:") <a href='https://repl.it/CLnE/0' target='_blank' rel='nofollow'>Run Code</a>
+
+### Code Explanation:
+
+*   First we define a string variable that contains all the English characters arranged in alphabetical order.
+*   We check if the given string is equal to the English characters variable and return `undefined` if that is true (this serves as our base case).
+*   if the two strings are not equal,we `slice` the ordered English character string using the `indexOf` the start and end character of the given string.
+*   We `split` the ordered English characters string and filter out the missing character.
+
+#### Relevant Links
+
+*   <a href='http://forum.freecodecamp.com/t/javascript-string-prototype-split/15944' target='_blank' rel='nofollow'>JS String Prototype Split</a>
+*   <a href='https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/filter' target='_blank' rel='nofollow'>JS Array Prototype Filter</a>
+
 
 ## ![:sunflower:](https://forum.freecodecamp.com/images/emoji/emoji_one/sunflower.png?v=3 ":sunflower:") Intermediate Code Solution:
 
