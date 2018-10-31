@@ -12,3 +12,5 @@ This is a stub. <a href='https://github.com/freecodecamp/guides/tree/master/src/
 #### More Information:
 <!-- Please add any articles you think might be helpful to read before writing the article -->
 <a href='https://en.wikipedia.org/wiki/Real_user_monitoring' target='_blank' rel='nofollow'>Real User Monitoring Wikipedia Article</a>
+
+A brief <a href="https://dzone.com/articles/what-is-real-user-monitoring-definition-examples-a">article</a> on Real user monitoring and its benefits explained with nice examples.
