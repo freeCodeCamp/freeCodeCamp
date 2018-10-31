@@ -36,7 +36,7 @@ if (a < 20) // This expression is true, so...
 }
 else
 {
-  //...the code in this block gets skipped.
+  //...the code in this block gets skipped because 10 is less than 20, so there is no need to read this portion of the if/else statement.
 }
 //program continues
 ```
