@@ -51,3 +51,7 @@ Este vídeo demonstra visualmente alguns algoritmos de classificação populares
 [Visualizador de Algoritmo](http://algo-visualizer.jasonpark.me)
 
 Este também é um projeto de código aberto muito bom que ajuda você a visualizar algoritmos.
+
+[URI ONLINE JUDGE](https://www.urionlinejudge.com.br/)
+
+Web-site feito para treinamento de Programação Competitiva, onde uma variedade de Algoritmos se é aplicado na prática.
