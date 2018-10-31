@@ -248,6 +248,22 @@ Output:
 19
 ```
 
+### toInt (toBigDecimal etc.)
+
+As seen above, you can use .toString() method to return a string representation of the object. This can be done other way around as well with methods like toInt(), toBigDecimal() etc.
+
+```kotlin
+val foo = "3"
+println(foo + 1)
+println(foo.toInt() + 1)
+```
+
+Output:
+```shell
+31
+4
+```
+
 #### Resources
 
 * [Kotlin Basic Types](https://kotlinlang.org/docs/reference/basic-types.html)
