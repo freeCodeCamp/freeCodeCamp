@@ -3,7 +3,7 @@ title: Dijkstra's Algorithm
 ---
 # Dijkstra's Algorithm
 
-Dijkstra's Algorithm is a graph algorithm presented by E.W. Dijkstra. It finds the single source shortest path in a graph with non-negative edges.(why?)
+Dijkstra's Algorithm is a graph algorithm presented by E.W. Dijkstra, a Dutch systems scientist and programmer. It finds the single source shortest path in a graph with non-negative edges.(why?)
 
 We create 2 arrays : visited and distance, which record whether a vertex is visited and what is the minimum distance from the source vertex respectively. Initially visited array is assigned as false and distance as infinite.
 
