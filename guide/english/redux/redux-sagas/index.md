@@ -3,13 +3,15 @@ title: Redux Sagas
 ---
 ## Redux Sagas
 
-This is a stub. <a href='https://github.com/freecodecamp/guides/tree/master/src/pages/redux/redux-sagas/index.md' target='_blank' rel='nofollow'>Help our community expand it</a>.
+Redux Saga is a middleware for Redux that helps perform asynchronous operations and side effects like network requests before updating Redux store in an easier to manage and simpler to test manner compared to other libraries like Redux Thunk. Redux saga uses the ES6 feature [Generators](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/function*). Usage of Generators helps make the asynchronous code flow easier to test and also to keep actions pure.
 
-<a href='https://github.com/freecodecamp/guides/blob/master/README.md' target='_blank' rel='nofollow'>This quick style guide will help ensure your pull request gets accepted</a>.
+Redux sagas can be controlled using Redux actions from the application, they have full access to Redux store and can also dispatch Redux actions. 
 
-<!-- The article goes here, in GitHub-flavored Markdown. Feel free to add YouTube videos, images, and CodePen/JSBin embeds  -->
+Redux sagas are divided into two Generators: Watchers and Workers.
+
+A watcher listens to a specific Redux action and calls the watcher. The watcher then performs asynchronous operations and/or dispatches new Redux actions.
 
 #### More Information:
-<!-- Please add any articles you think might be helpful to read before writing the article -->
+[Redux Saga](https://redux-saga.js.org/)
 
 
