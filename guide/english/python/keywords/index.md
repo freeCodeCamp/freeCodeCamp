@@ -24,5 +24,5 @@ Keyword | - | - | - | -
 `True` | `def` | `from` | `nonlocal` | `while`
 `and` | `del` | `global` | `not` | `with`
 `as` | `elif` | `if` | `or` | `yield`
-`assert` | `else` | `import` | `pass`
-`break` | `except` | `in` | `raise`
+`assert` | `else` | `import` | `pass` | `print`
+`break` | `except` | `in` | `raise` | `eval`
