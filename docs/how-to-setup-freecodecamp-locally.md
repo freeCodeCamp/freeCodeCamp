@@ -244,7 +244,7 @@ Follow these steps:
     git status
     ```
 
-    You should get a output like this:
+    You should get an output like this:
 
     ```shell
     On branch master
