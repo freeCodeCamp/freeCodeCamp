@@ -6,7 +6,7 @@ title: React Router
 # Installation
 React Router has been broken into three packages: `react-router`, `react-router-dom`, and `react-router-native`.
 
-You should almost never have to install react-router directly. That package provides the core routing components and functions for React Router applications. The other two provide environment specific (browser and react-native) components, but they both also re-export all of react-router's exports.
+You should almost never have to install react-router directly. The package provides the core routing components and functions for React Router applications. The other two provide environment specific (browser and react-native) components, but they both also re-export all of react-router's exports.
 
 We are building a website (something that will be run in browsers), so we will install react-router-dom.
 
