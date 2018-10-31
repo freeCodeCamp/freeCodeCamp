@@ -79,7 +79,7 @@ It is possible to also have outlined buttons rather than fully colored in ones. 
 
 Outlined buttons are a part of Bootstrap since version 4, please be sure that you are using the right version if you are unable to get them to work.
 
-_Note: Do not include the dot in the HTML Class Attribute, referring to the classes with a dot is only used when adjusting the classes in CSS._
+_Note: Do not include the dot in the HTML Class Attribute. Referring to the classes with a dot is only used when adjusting the classes in CSS._
 
 #### More Information: 
 * <a href='https://getbootstrap.com/docs/4.0/components/buttons/' target='_blank' rel='nofollow'>Bootstrap Buttons documentation</a>
