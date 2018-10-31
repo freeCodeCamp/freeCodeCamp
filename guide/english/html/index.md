@@ -20,6 +20,9 @@ HTML5 Introduces a host of semantic elements. Though we discussed HTML helped to
 <!DOCTYPE html>
 <html>
 <head>
+ <style type ="text/css">
+  body{background-color: green;}
+ </style>
   <title>Page Title</title>
 </head>
 <body>
