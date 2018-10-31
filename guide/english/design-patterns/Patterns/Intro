@@ -1,0 +1,15 @@
+Design patterns are optimized, reusable solutions to the programming problems that we encounter every day. A design pattern is not a class or a library that we can simply plug into our system; it's much more than that. It is a template that has to be implemented in the correct situation. It's not language-specific either. A good design pattern should be implementable in most—if not all—languages, depending on the capabilities of the language. Most importantly, any design pattern can be a double-edged sword— if implemented in the wrong place, it can be disastrous and create many problems for you. However, implemented in the right place, at the right time, it can be your savior.
+
+There are three basic kinds of design patterns:
+
+structural
+creational
+behavioral
+
+Structural patterns generally deal with relationships between entities, making it easier for these entities to work together.
+
+Creational patterns provide instantiation mechanisms, making it easier to create objects in a way that suits the situation.
+
+Behavioral patterns are used in communications between entities and make it easier and more flexible for these entities to communicate.
+
+Reference : https://code.tutsplus.com/articles/a-beginners-guide-to-design-patterns--net-12752
