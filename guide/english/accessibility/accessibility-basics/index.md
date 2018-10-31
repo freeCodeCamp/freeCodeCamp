@@ -10,11 +10,11 @@ title: Accessibility Basics
 
 Accessibility's role in development is essentially understanding the user's perspective and needs, and knowing that the web, and applications are a solution for people with disabilities.
 
-In this day and age, more and more new technologies are invented to make the life of developers, as well as users, easier. To what degree this is a good thing is a debate for another time, for now it's enough to say the toolbox of a developer, especially a web developer, is as ever-changing as the so called "dark arts" are according to our friend Snape.
+In this day and age, more new technologies are invented to make the life of developers, as well as users, easier. To what degree this is a good thing is a debate for another time, for now it's enough to say the toolbox of a developer, especially a web developer, is as ever-changing as the so called "dark arts" are according to our friend Snape.
 
-One tool in that toolbox should be accessibility. It is a tool that should ideally be used in one of the very first steps of writing any form of web content. However, this tool is often not all that well presented in the toolbox of most developers. This could be due to a simple case of not knowing it even exists to extreme cases like not caring about it.
+One tool in that toolbox should be accessibility. It is a tool that ideally should be used in the very first steps of writing any form of web content. However, this tool if often not present at all in the toolboxes of most developers. This could be due to a simple case of not knowing it even exists or it could be extreme cases like not caring about it.
 
-In my life as a user, and later a developer, who benefits from accessibility in any form of content, I have seen both ends of that spectrum. If you are reading this article, I am guessing you are in one of the following categories:
+In my life as a user and a developer, who benefits from accessibility in any form of content, I have seen both ends of that spectrum. If you are reading this article, I am guessing you are in one of the following categories:
 
 *   You are a novice web developer and would like to know more about accessibility.
 *   You are a seasoned web developer and have lost your way (more on that later).
@@ -24,11 +24,9 @@ If you fall outside these rather broad categories, please let me know. I always 
 
 ## So, what is accessibility anyway?
 
-Accessibility in itself is a bit of a misleading term sometimes, especially if English is your second language. It is sometimes referred to as inclusive design.
+Accessibility in itself is a misleading term sometimes, especially if English is your second language. It is sometimes referred to as inclusive design.
 
-If your site is on the Internet, reachable by anyone with a web browser, in one sense that website is accessible to everyone with a web browser.
-
-But, is all content on your website actually readable, usable and understandable for everyone? Are there no thresholds that bar certain people from 'accessing' all the information you are exposing?
+If your site is on the Internet, that website is accessible to everyone with a web browser. But, is all content on your website actually readable, usable and understandable for everyone? Are there no thresholds that bar certain people from 'accessing' all the information you are exposing?
 
 You could ask yourself questions like the following ones:
 
@@ -41,7 +39,7 @@ You could ask yourself questions like the following ones:
 *   Does your application still work (progressive enhancement) assuming that JavaScript does not load in time?
 *   You can even go as far as saying, if your website is very resource-heavy, will someone on a slow or spotty connection be able to read your content?
 
-This is where accessibility comes into play. Accessibility basically entails making your content as friendly, as easy to 'access' as possible for the largest amount of people. This includes people who are deaf, low-vision, blind, dyslexic, mute, on a slow connection, colorblind, suffering from epilepsy, mental fatigue, age, physical limitations, etc.
+This is where accessibility comes into play. Accessibility entails making your content as friendly - as easy to 'access' as possible - for the largest amount of people. This includes people who are deaf, low-vision, blind, dyslexic, mute, on a slow connection, colorblind, suffering from epilepsy, mental fatigue, age, physical limitations, etc.
 
 ## Why implement accessibility?
 
@@ -55,7 +53,7 @@ If you did, good for you. If not, I guess this drives my point home all the more
 
 The picture gets even more complicated when we look at legislation that actually forces you to make certain websites and web apps accessible. A prime example is the US-based <a href='http://jimthatcher.com/webcourse1.htm' target='_blank' rel='nofollow'>section 508</a>. Right now, this law mainly refers to government organizations, public sector websites etc. However, laws change.
 
-Last year, airline websites were included in this list which meant that even here in Europe, airline website devs scrambled to make their content accessible. Not doing so can get your company a fine of literally tens of thousands of dollars for each day the problem isn't fixed.
+Last year, airline websites were included in this list which meant that even here in Europe, airline website devs scrambled to make their content accessible. Not doing so can get your company fined thousands of dollars for each day the problem isn't fixed.
 
 There's variations on this legislation all over the world, some more severe and all-encompassing than others. Not knowing about that fact doesn't make the lawsuit go away, sadly.
 
@@ -106,7 +104,7 @@ Also remember that headings are hierarchical. If you use an h2, make sure the h3
 
 ### What's the alternative?
 
-Images on a website are great. They add a new layer to your content, can really make the experience your site visitors have way more immersive and generally just look good among all that text. A picture can say more than a thousand words, right?
+Images on a website are great. They add a new layer to your conten and they can really make the experience your site visitors have a more immersive experience and visually-pleasing experience. A picture can say more than a thousand words, right?
 
 Certainly. That is, if you can see them. In the HTML5-specification, an img-attribute must always have an alt-attribute. This attribute is meant as an alternative to the image in case it can't be seen. This would be true for blind visitors to your website, but also when your image can't be loaded for some reason. Not adding an alt-tag to an img-attribute is therefore not only breaking accessibility, but going against the HTML5-spec.
 
