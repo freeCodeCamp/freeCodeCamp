@@ -36,3 +36,4 @@ There are four variations of SAFe, varying in complexity and needs of your proje
 - <a href="http://www.scaledagileframework.com/what-is-safe/" target="_blank" rel="nofollow">What is SAFe?</a>
 - <a href="http://www.scaledagileframework.com/essential-safe/" target="_blank" rel="nofollow">The Ten Essential Elements</a>
 - <a href="http://www.scaledagileframework.com/safe-lean-agile-principles/" target="_blank" rel="nofollow">SAFe Principles</a>
+- <a href="https://www.scaledagile.com/enterprise-solutions/how-to-safe/grow-safe-starting-the-implementation/" target="_blank" rel="nofollow">SAFe Implementation Roadmap</a>
