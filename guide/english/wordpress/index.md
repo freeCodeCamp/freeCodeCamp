@@ -24,6 +24,8 @@ Here are some examples of big name brands using WordPress:
 * MTV News
 
 Whether it's page transitions or a customized contact form, WordPress users are only a few clicks away from building a website.
+### Wordpress Most used Plugins
+- [Most Popular Wordpress Plugins ](https://www.hostgator.com/blog/most-popular-wordpress-plugins/)
 
 ### More Information
 
