@@ -36,6 +36,15 @@ console.log(window.dog); //Fluffy
 
 It’s a best practice to minimize global variables. Since the variable can be accessed anywhere in the program, they can cause strange behavior.
 
+-------------------
+Best Practices
+-------------------
+1)Avoid Global Variables
+2)Minimize the use of global variables.
+3)This includes all data types, objects, and functions.
+4)Global variables and functions can be overwritten by other scripts.
+5)Use local variables instead
+
 References:
 * [var -Javascript|MDN](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/var)
 * [You Don't Know JavaScript: Scopes & Closures](https://github.com/getify/You-Dont-Know-JS/tree/master/scope%20%26%20closures)
