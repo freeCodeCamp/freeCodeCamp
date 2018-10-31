@@ -5,7 +5,7 @@ title: Python Comparisons
 
 There are eight comparison operations in Python. They all have the same priority (which is higher than that of the Boolean operations). Comparisons can be chained arbitrarily; for example, `x < y <= z` is equivalent to `x < y and y <= z`, except that `y` is evaluated only once (but in both cases `z` is not evaluated at all when `x < y` is found to be false).
 
-You can also give two condition and check for only one condition using 'or'  like 'x > y or x >= y' will check for either of the two conditions. If one of the condition is true the programme will proceed. This is the functionality of 'or'
+You can also give two condition and check for only one condition using `or`  like `x > y or x >= y` will check for either of the two conditions. If one of the condition is true the program will proceed. This is the functionality of `or`.
 
 This table summarizes the comparison operations:
 
@@ -82,5 +82,5 @@ False # both lists have different reference
 ```
 
 To sum up:
-* An `is` expression outputs `True` if both variables are pointing to the same reference 
-* An `==` expression outputs `True` if both variables contain the same data
+* An `is` expression outputs `True`, if both variables are pointing to the same reference 
+* An `==` expression outputs `True`, if both variables contain the same data
