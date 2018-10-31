@@ -4,11 +4,11 @@ localeTitle: Comandos básicos de Linux
 ---
 ## Comandos básicos de Linux
 
-Al comenzar con Linux, hay algunos comandos básicos que todos deben conocer.
+Al comenzar con Linux, hay algunos comandos básicos que todos deben conocer:
 
 1.  **cd** - cambiar directorio
 
-*   cd seguido de una ruta de directorio o archivo lo llevará dentro de ese directorio (carpeta).
+*   `cd` seguido de una ruta de directorio o archivo lo llevará dentro de ese directorio (o carpeta).
 
 1.  **ls** - comando de lista
 
@@ -16,7 +16,7 @@ Al comenzar con Linux, hay algunos comandos básicos que todos deben conocer.
 
 1.  **hombre** - comando manual
 
-*   Te muestra el manual para el siguiente comando. Esto es muy útil cuando se trata de averiguar cómo funciona un comando desconocido. Por ejemplo, escriba `man ls` para todo lo que necesita saber sobre el comando ls. Teclea `q` para salir.
+*   Te muestra el manual para el siguiente comando. Esto es muy útil cuando se trata de averiguar cómo funciona un comando desconocido. Por ejemplo, escriba `man ls` para todo lo que necesita saber sobre el comando ls. Teclee `q` para salir.
 
 1.  **pwd** - camino
 
@@ -36,11 +36,11 @@ Al comenzar con Linux, hay algunos comandos básicos que todos deben conocer.
 
 1.  **tocar** - crea un archivo
 
-*   El comando táctil se utiliza para crear un archivo. Puede ser cualquier cosa, desde un archivo txt vacío a un archivo zip vacío. 'touch new.txt' creará un nuevo archivo con el nombre nuevo.
+*   El comando tocar se utiliza para crear un archivo. Puede ser cualquier cosa, desde un archivo txt vacío a un archivo zip vacío. `touch new.txt` creará un nuevo archivo con el nombre nuevo.
 
 1.  **mv** - mover
 
-*   Utilice el comando mv para mover archivos a través de la línea de comandos. También podemos usar el comando mv para renombrar un archivo. Por ejemplo, si queremos cambiar el nombre del archivo "texto" a "nuevo", podemos usar 'mv texto nuevo'.
+*   Utilice el comando mv para mover archivos a través de la línea de comandos. También podemos usar el comando mv para renombrar un archivo. Por ejemplo, si queremos cambiar el nombre del archivo "texto" a "nuevo", podemos usar `mv texto nuevo`.
 
 1.  **clic derecho** - copiar y pegar
 
