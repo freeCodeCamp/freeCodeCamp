@@ -4,19 +4,19 @@ localeTitle: Fundição
 ---
 ## Fundição
 
-Um elenco é um operador especial que força um tipo de dados a ser convertido em outro
+Um *cast* é um operador especial que força um tipo de dados a ser convertido em outro
 
-Fundindo em C ++ difere um pouco para isso de C. C ++ faz uso de funções de carcaça distintas.
+O *Casting* ou a conversão em C++ difere um pouco da que acontece em C. C++ faz uso de diferentes funções de conversão.
 
 ### static\_cast
 
-Elenco estático é usado para conversões implícitas entre primitivos e sobrecargas de tipos.
+O cast estático (conversão estática) é usado para conversões implícitas entre primitivos e sobrecargas de tipos.
 
 ### const\_cast
 
-Const cast pode ser usado para expulsar constância. Isso é útil quando há um desejo de alterar um valor constante. Isso deve ser usado com moderação, em vez disso, deve-se considerar a criação de parâmetros / funções não-constantes nos casos em que um const-cast é usado.
+O const cast (conversão de constância) pode ser usado para remover constância. Isso é útil quando há um desejo de alterar um valor constante. Deve ser usado com moderação, em vez disso, deve-se considerar a criação de parâmetros / funções não-constantes nos casos em que um const-cast é usado.
 
-Const cast também pode resultar em comportamento indefinido. A única aplicação do const cast deve ser remover a constância de um valor que foi passado para uma função e marcada const. Se o valor é verdadeiramente const, isto é, é marcado como const em tempo de compilação e é atribuído um valor, const cast e mutação da variável resultará em um comportamento indefinido.
+O const cast também pode resultar em comportamento indefinido. A única aplicação do const cast deve ser remover a constância de um valor que foi passado para uma função e marcada const. Se o valor é verdadeiramente const, isto é, é marcado como const em tempo de compilação e é atribuído um valor, const cast e mutação da variável resultará em um comportamento indefinido.
 ```
 const int y = 10;             // y is set to 10. 
  const_cast<int &>(y) = 20;    // undefined behaviour. 
@@ -24,17 +24,17 @@ const int y = 10;             // y is set to 10.
 
 ### dynamic\_cast
 
-A conversão dinâmica é usada para converter um objeto dentro de sua hierarquia de classes (para pai, pai e irmãos). O elenco dinâmico só pode ser chamado em classes polimórficas. Assim, a classe original neste caso `MyClass` deve ter um membro virtual, que está presente na forma do destruidor virtual.
+O cast dinâmico (conversão dinâmica) é usado para converter um objeto dentro de sua hierarquia de classes (para o pai, do pai e para irmãos). O cast dinâmico só pode ser chamado em classes polimórficas. Assim, a classe original neste caso `MyClass` deve ter um membro virtual, que está presente na forma do destruidor virtual.
 
-Se o elenco dinâmico falhar, ele retornará um `nullptr` . O elenco dinâmico pode ser útil na determinação de tipos de objetos em tempo de execução. No entanto, deve-se notar que a conversão dinâmica não é livre e, em alguns casos, outras técnicas podem se mostrar mais eficientes na determinação do tipo de classe em tempo de execução.
+Se o cast dinâmico falhar, ele retornará um `nullptr` . O cast dinâmico pode ser útil na determinação de tipos de objetos em tempo de execução. No entanto, deve-se notar que o cast dinâmico não é livre e, em alguns casos, outras técnicas podem se mostrar mais eficientes na determinação do tipo de classe em tempo de execução.
 
 ### reinterpret\_cast
 
-Reinterpretar elenco é talvez o mais perigoso de todos os elencos C ++, mas quando usado corretamente, pode ser ideal. Reinterpretar conversão não incorre em custo de desempenho, pois não realiza conversões. Ele simplesmente instrui o compilador a tratar o objeto fundido como se fosse o tipo solicitado. Isso também pode trazer problemas de alinhamento, por isso deve ser usado com moderação e somente quando os efeitos colaterais são conhecidos e explicados.
+O cast por interpretação (conversão por interpretação) é talvez o mais perigoso de todos os *casts* do C++, mas quando usado corretamente, pode ser ideal. O cast por interpretação não incorre em custo de desempenho, pois não realiza conversões. Ele simplesmente instrui o compilador a tratar o objeto convertido como se fosse o tipo solicitado. Isso também pode trazer problemas de alinhamento, por isso deve ser usado com moderação e somente quando os efeitos colaterais são conhecidos e explicados.
 
-#### Uma nota em moldes de estilo C
+#### Uma nota em conversões de estilo C
 
-O C ++ suporta o uso de conversões no estilo C, embora elas não sejam recomendadas. O uso da conversão de estilo C instruirá o compilador a executar primeiro uma conversão estática _, se a conversão estática_ falhar, reinterpret\_cast será usado em seu lugar. Por esse motivo, os lançamentos no estilo C podem produzir resultados imprevisíveis e gerar problemas inesperados.
+O C++ suporta o uso de conversões no estilo C, embora elas não sejam recomendadas. O uso da conversão de estilo C instruirá o compilador a executar primeiro uma conversão estática _, se a conversão estática_ falhar, reinterpret\_cast será usado em seu lugar. Por esse motivo, as conversões no estilo C podem produzir resultados imprevisíveis e gerar problemas inesperados.
 
 ## Exemplos
 
