@@ -5,7 +5,7 @@ title: Books on Python Programming Language
  ### List of Books
  
  *Think Python 2e*
- ![alt text](http://greenteapress.com/thinkpython2/think_python2_medium.jpg "Think Python 2e")
+- ![alt text](http://greenteapress.com/thinkpython2/think_python2_medium.jpg "Think Python 2e")
 - [Website](http://greenteapress.com/wp/think-python-2e/)
 - [E-book](http://greenteapress.com/thinkpython2/html/index.html)(free)
 - [Amazon Smile](https://smile.amazon.com/gp/product/1491939362)
