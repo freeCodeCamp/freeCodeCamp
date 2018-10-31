@@ -3,7 +3,7 @@ title: ExpressJS
 ---
 ## ExpressJS
 
-When it comes to build web applications using Node.js, creating a server can take a lot of time. Over the years Node.js has matured enough due to the support from community. Using Node.js as a backend for web applications and websites help the developers to start working on their application or product quickly. In this tutorial, we are going to look into Expressjs which is a Node.js framework for web development that comes with features like routing and rendering and support for REST APIs.
+When it comes to build web applications using Node.js, creating a server can take a lot of time. Over the years Node.js has matured enough due to the support from community. Using Node.js as a backend for web applications and websites help the developers to start working on their application or product quickly. In this tutorial, we are going to look into Expressjs (most commonly named Express) which is a Node.js framework for web development that comes with features like routing and rendering and support for REST APIs.
 
 ## What is Express?
 
@@ -36,7 +36,7 @@ Whenever we create a project using `npm`, our project must have a `package.json`
 
 ### Creating package.json
 
-A JSON (JavaScript Object Notation) file is contains every information about any Express project. The number of modules installed, the name of the project, the version, and other meta information. To add Expressjs as a module in our project, first we need to create a project directory and then create a package.json file.
+This file contains a lot of information about your project. The modules installed, the name of the project, the version, and other meta information. To add Express as a module in our project, first we need to create a project directory and then create a package.json file.
 
 ```shell
 mkdir express-app-example
