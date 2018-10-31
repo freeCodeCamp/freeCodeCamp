@@ -33,7 +33,7 @@ System.out.println(obj2 == obj3) // false
 
 The built-in `Object` class in Java, which all other classes automatically extend, contains a number of helpful built-in methods. One such method is `equals()`, which takes another object as its argument and returns whether the two objects should be considered "equal" according to the relevant logic for that class.
 
-The 'String' class is one of the most common examples of a class that overrides the 'equals()' method. When comparing two 'String's for equality, you need to use the 'equals()' method, as '==' won't work as you expect.
+The 'String' class is one of the most common examples of a class that overrides the 'equals()' method. When comparing two 'String's for equality, you need to use the 'equals()' method, as '==' won't work as you expect. Instead of returning 'true' when comparing objects, the '==' operator will continuously return 'false' unless the objects being compared are the <em>same object</em>
 
 ```java
 String s1 = "Bob";
@@ -45,15 +45,16 @@ System.out.println(s1.equals(s2)); //true
 
 When you create a new class in Java, you will often want to override the `equals()` method in order to provide a more meaningful way to compare two objects of the same class. How this method is implemented is completely up to the developer's judgement. 
 
-For example, you may decide that two `Person`s should be considered "equal" if their `name` and `dateOfBirth` are the same. This logic would be implemented in your `Person` class's `equals()` method:
+For example, you may decide that two `Person` objects should be considered "equal" if their `name` and `dateOfBirth` instance variables are the same. This logic would be implemented in your `Person` class's `equals()` method:
 
 ```java
 public class Person {
     public String name;
     public Date dateOfBirth;
+    //The two lines above are instance attributes of the Person object
     
     public boolean equals(Person person) {
-        return this.name.equals(person.name) && this.dateOfBirth.equals(person.dateOfBirth);
+        return this.name.equals(person.name) && this.dateOfBirth.equals(person.dateOfBirth); //An edited equals() method can allow for the developer to choose what characteristics of an object should be compared in order to deem them equal
     }
 }
 ```
