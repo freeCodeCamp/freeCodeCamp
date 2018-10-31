@@ -33,6 +33,8 @@ Once you’ve earned a certification, you will always have it. You will always b
 
 The one exception to this is in the event that we discover violations of our [Academic Honesty Policy](https://www.freecodecamp.org/academic-honesty). When we catch people unambiguously plagiarizing (submitting other people's code or projects as their own without citation), we do what all rigorous institutions of learning should do - we revoke their certifications and ban those people.
 
+Although a web search for a code solution is part of the learning process, when learning the importance of completing the code on your own is essential.  Yes, it will be hard - but you can do it! In other words, don't just copy and paste from someone else's work. 
+
 Here are our six core certifications:
 
 #### 1. Responsive Web Design Certification
