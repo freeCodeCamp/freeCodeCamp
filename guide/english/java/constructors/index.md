@@ -174,6 +174,33 @@ class Complex {
     }
 }
 ```
+
+## Refer to constructor from current class 
+Constructor can also be invoked from another constructor inside of same class. Invocation of one constructor inside of another constructor is being performed by using this keyword which contains all parameteres which signutare of 1st constructor holds. For more clear explanation example is given below:
+
+```Java
+class Car { 
+    String brand;
+    String model;
+    int seats;
+    
+    // 1st constructor
+    public Car(String brand, String model) {
+        this.brand = brand;
+        this.model = model; 
+    }
+    
+    // 2nd constructor
+    public Car(String brand, String model, int seats) {
+        this(brand, model); // invoking 1st constructor by passing parameters stated inside of this constructors signature
+        this.seats = seats;
+    }
+    
+}
+```
+
+
+
 [run the full code](https://repl.it/MwnJ)
 
 
