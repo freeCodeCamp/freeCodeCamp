@@ -113,101 +113,101 @@ _Java eficaz por Joshua Bloch_
 
 _Você não sabe JS (série de livros)_
 
-*   https://github.com/getify/You-Nont-Know-JS
+*   https://github.com/getify/You-Dont-Know-JS
 *   ISBN-13: 9781491924464
 
-_JavaScript eloquente: uma introdução moderna à programação por Marijn Haverbeke_
+_JavaScript eloquente: uma introdução moderna à programação_ por Marijn Haverbeke
 
 *   [Leia on-line aqui](https://eloquentjavascript.net)
 *   [Sorriso da Amazônia](https://smile.amazon.com/gp/product/1593275846/ref=as_li_qf_sp_asin_il_tl?ie=UTF8&camp=1789&creative=9325&creativeASIN=1593275846&linkCode=as2&tag=marijhaver-20&linkId=VPXXXSRYC5COG5R5) -ISBN-13: 978-1593275846
 
-_JavaScript: as boas partes_
+_JavaScript: as boas partes_ por Douglas Crockford
 
 *   [Sorriso da Amazônia](https://smile.amazon.com/JavaScript-Good-Parts-Douglas-Crockford/dp/0596517742)
 *   ISBN-13: 978-0596517748
 
-_JavaScript e JQuery: Desenvolvimento Web de front-end interativo_
+_JavaScript e JQuery: Desenvolvimento Web de front-end interativo_ por Jon Duckett
 
 *   [Sorriso da Amazônia](https://smile.amazon.com/JavaScript-JQuery-Interactive-Front-End-Development/dp/1118531647/?pldnSite=1)
 *   ISBN-13: 978-1118531648
 
 ## Python
 
-_Automatize o material chato com o Python_
+_Automatize o material chato com o Python_ por Al Sweigart
 
 *   http://automatetheboringstuff.com/
 *   ISBN-13: 978-1593275990
 
-_Programação de Aplicações Core Python (3ª Edição) por Wesley J Chun_
+_Programação de Aplicações Core Python (3ª Edição)_ por Wesley J Chun
 
 *   [Sorriso da Amazônia](https://smile.amazon.com/Core-Python-Applications-Programming-3rd/dp/0132678209)
 *   ISBN-13: 978-0132678209
 
 ## Habilidades interpessoais
 
-_Soft Skills: O manual de vida do desenvolvedor de software_
+_Soft Skills: O manual de vida do desenvolvedor de software_ por John Sonmez
 
 *   [Sorriso da Amazônia](https://smile.amazon.com/Soft-Skills-software-developers-manual/dp/1617292397?pldnSite=1)
 *   ISBN-13: 9781617292392
 
 ## De outros
 
-\* Hacking: Ultimate Hacking Guide: Hacking Para Iniciantes E Tor Browser
+_Hacking: Guia definitivo de hackers: Hacking Para Iniciantes E Tor Browser_ por Cooper Alvin
 
 *   https://www.amazon.in/dp/B075CX7T6G/ref=cm _sw_ r _cp_ awdb _t1_ -7ESBbZ43CCBM
 *   (ISBN 1976112524).
 
-\* Código: A Linguagem Oculta do Hardware e Software do Computador (Práticas Recomendadas para Desenvolvedores) \*
+_Código: A Linguagem Oculta do Hardware e Software do Computador (Práticas Recomendadas para Desenvolvedores)_ por Charles Petzold
 
 *   [Sorriso da Amazônia](https://smile.amazon.com/Code-Language-Computer-Hardware-Software/dp/0735611319)
 *   ISBN-13: 978-0735611313
 
-_Estruturas de Dados e Algoritmos Facilitados_
+_Estruturas de Dados e Algoritmos Facilitados_ por Narasimha Karumanchi 
 
 *   [Sorriso da Amazônia](https://smile.amazon.com/Data-Structures-Algorithms-Made-Easy/dp/819324527X)
 *   ISBN-13: 978-8193245279
 
-_Pense Python: Como pensar como um cientista da computação_
+_Pense Python: Como pensar como um cientista da computação_ por Allen B. Downey 
 
 *   [Sorriso da Amazônia](https://smile.amazon.com/Think-Python-Like-Computer-Scientist/dp/1491939362)
 *   ISBN-13: 978-1491939369
 
-_Curso intensivo de Python: Uma introdução prática à programação baseada em projeto_
+_Curso intensivo de Python: Uma introdução prática à programação baseada em projeto_ por Eric Matthes
 
 *   [Sorriso da Amazônia](https://smile.amazon.com/Python-Crash-Course-Hands-Project-Based/dp/1593276036)
 *   ISBN-13: 978-1593276034
 
-_Ciência da Computação Destilada: Aprenda a arte de solucionar problemas computacionais por Wladston Ferreira Filho_
+_Ciência da Computação Destilada: Aprenda a arte de solucionar problemas computacionais_ por Wladston Ferreira Filho
 
 *   [Sorriso da Amazônia](https://smile.amazon.com/Computer-Science-Distilled-Computational-Problems/dp/0997316020)
 *   ISBN-13: 978-0-9773160-2-5
 
-_Algoritmos desbloqueados por Thomas H. Cormen_
+_Algoritmos desbloqueados_ por Thomas H. Cormen
 
 *   [Sorriso da Amazônia](https://smile.amazon.com/Algorithms-Unlocked-Press-Thomas-Cormen/dp/0262518805)
 *   ISBN-13: 978-0262518802
 
-_Python Violento: Um Livro de Receitas para Hackers, Analistas Forenses, Testadores de Penetração e Engenheiros de Segurança_
+_Python Violento: Um Livro de Receitas para Hackers, Analistas Forenses, Testadores de Penetração e Engenheiros de Segurança_ por TJ O'Connor 
 
 *   [Sorriso da Amazônia](https://smile.amazon.com/Violent-Python-Cookbook-Penetration-Engineers/dp/1597499579/ref=sr_1_2?ie=UTF8&qid=1538665634&sr=8-2&keywords=violent+python)
 *   ISBN-13: 978-1597499576
 
-_O Manual do Shellcoder: Descobrindo e explorando os buracos de segurança_
+_O Manual do Shellcoder: Descobrindo e explorando os buracos de segurança_ por Chris Anley, John Heasman, Felix Lindner e Gerardo Richarte
 
 *   [Sorriso da Amazônia](https://smile.amazon.com/Shellcoders-Handbook-Discovering-Exploiting-Security/dp/047008023X/ref=sr_1_1?ie=UTF8&qid=1538665772&sr=8-1&keywords=shellcoders+handbook+3rd+edition&dpID=41xfa6zpuPL&preST=_SX218_BO1,204,203,200_QL40_&dpSrc=srch)
 *   ISBN-13: 978-0470080238
 
-_Head First C: Um guia favorável ao cérebro_
+_Head First C: Um guia favorável ao cérebro_ por David Griffiths e Dawn Griffiths
 
 *   [Sorriso da Amazônia](https://smile.amazon.com/Head-First-C-Brain-Friendly-Guide/dp/1449399916/ref=sr_1_2?ie=UTF8&qid=1538665818&sr=8-2&keywords=head+first+c&dpID=51StqzL2dWL&preST=_SX218_BO1,204,203,200_QL40_&dpSrc=srch)
 *   ISBN-13: 978-1449399917
 
-_Design prático orientado a objetos em Ruby_
+_Design prático orientado a objetos em Ruby_ por Sandi Metz 
 
 *   [Sorriso da Amazônia](https://smile.amazon.com/Practical-Object-Oriented-Design-Ruby-Addison-Wesley/dp/0321721330)
 *   ISBN-13: 978-0321721334
 
-_Pensando em C ++ por Bruce Eckel_
+_Pensando em C ++_ por Bruce Eckel
 
 *   [Sorriso da Amazônia](https://smile.amazon.com/Thinking-C-Bruce-Eckel/dp/0139177094)
 *   ISBN-13: 978-0139177095
