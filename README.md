@@ -1,3 +1,5 @@
+
+[![Hactoberfest](https://img.shields.io/badge/hactoberfest-foss-blue.svg)](https://opensource.microsoft.com/?sort=Awesomeness&keyword=&tag=android)
 ![freeCodeCamp.org Social Banner](https://s3.amazonaws.com/freecodecamp/wide-social-banner.png)
 [![Build Status](https://travis-ci.org/freeCodeCamp/freeCodeCamp.svg?branch=staging)](https://travis-ci.org/freeCodeCamp/freeCodeCamp)
 [![Pull Requests Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg?style=flat)](http://makeapullrequest.com)
