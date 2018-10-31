@@ -17,15 +17,15 @@ CSS Buttons are a great way to add functional design features to your page.
 
 You can change several properties of a button in order to change its appearance.
 
-* To add shadows to the button use `box-shadow` property.
+* To add shadows to the button, use `box-shadow` property.
 
-* To add transparency to a button for a disabled effect use the property `opacity`.
+* To add transparency to a button for a disabled effect, use the property `opacity`.
 
-* To remove the margins and create a button group add `float:left/right` property.
+* To remove the margins and create a button group, add `float:left/right` property.
 
 * To create a button group but with the borders, use `float` property and add a `border property`.
 
-* To create a vertical group of buttons use display:`block property`.
+* To create a vertical group of buttons, use display:`block property`.
 
 ### Button Color
 
