@@ -7,7 +7,7 @@ Linux updates happen through the global collaboration of developers. Bugs are do
 
 ## Less risk.
 
-Software is only as good as the support its given. Imagine this: a piece of software is created by the company XYZ and later down the road, they go bankrupt or get bought by another company that decides to cut its support. The software would never see improvements or fixes and therefore its usefulness would inevitably erode and die. Linux is owned and operated by no single entity or company, so this situation cannot happen. More than that anyone is free to pick it up and contribute as well. The risk of losing support for Linux is very unlikely due to its overwhelming popularity and use.
+Software is only as good as the support it's given. Imagine this: a piece of software is created by the company XYZ and later down the road, they go bankrupt or get bought by another company that decides to cut its support. The software would never see improvements or fixes and therefore its usefulness would inevitably erode and die. Linux is owned and operated by no single entity or company, so this situation cannot happen. More than that anyone is free to pick it up and contribute as well. The risk of losing support for Linux is very unlikely due to its overwhelming popularity and use.
 
 ## Lightweight.
 
