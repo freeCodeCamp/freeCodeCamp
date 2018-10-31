@@ -35,9 +35,9 @@ So how long would it take to do the linear search operation?
 In the best case, you could get lucky and the item you are looking at maybe at the first position in the array!
 But in the worst case, you would have to look at each and every item before you find the item at the last place or before you realize that the item is not in the array.
 
-The complexity therefore of the linear search is: O(n).
+The complexity therefore of the linear search is O(n).
 
-If the element to be searched presides on the the first memory block then the complexity would be: O(1).
+If the element to be searched presides on the the first memory block then the complexity would be O(1).
 
 The code for a linear search function in JavaScript is shown below. This function returns the position of the item we are looking for in the array. If the item is not present in the array, the function would return null.
 
@@ -127,7 +127,7 @@ Target = 5
 
 Array = [ 1, 2, 3, 4, 5, 6, 5, 7, 8, 9, 5]
 
-This array has 3 occurances of 5s and we want to return the indexes (where they are in the array) of all of them. This is called global linear search and you will need to adjust your code to return an array of the index points at which it finds out target element. When you find an index element that matches your target, the index point (counter) will be added in the results array. If it doesn’t match the code will continue to move on to the next element in the array by adding 1 to the counter.
+This array has 3 occurances of 5s and we want to return the indexes (where they are in the array) of all of them. This is called global linear search. You will need to adjust your code to return an array of the index points at which it finds the target element. When you find an index element that matches your target, the index point (counter) will be added in the results array. If it doesn’t match the code will continue to move on to the next element in the array by adding 1 to the counter.
 
 ```ruby
 def global_linear_search(target, array)
