@@ -85,6 +85,11 @@ Jupyter notebooks automatically come with the distribution. You'll be able to us
 To install Jupyter notebooks in a conda environment: `conda install jupyter notebook`
 To install Jupyter notebooks with pip: `pip install jupyter notebook`
 
+### How to launch Jupyter Notebook (Mac OS)
+Click on spotlight, type terminal to open a terminal window.
+Enter the startup folder by typing cd /your_folder_name.
+Type "jupyter notebook" to launch the Jupyter Notebook App The notebook interface will appear in a new browser window or tab.
+
 #### More Information:
 * [Jupyter Org Website](http://jupyter.org)
 * [Jupyter/IPython Notebook Quick Start Guide](http://jupyter-notebook-beginner-guide.readthedocs.io/en/latest/what_is_jupyter.html)
