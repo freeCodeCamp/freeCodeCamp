@@ -165,6 +165,10 @@ title: Books to Read for Programmers
 - [Amazon Smile](https://smile.amazon.com/Python-Tricks-Buffet-Awesome-Features-ebook/dp/B0785Q7GSY)
 - ISBN-13: 978-1775093305
 
+*Data Structures and Algorithms in Python  Michael T. Goodrich, Roberto Tamassia , Michael H. Goldwasser 
+-  http://amzn.in/d/bHb4D6m
+-  ISBN-13: 978-8126562176
+
 ## Soft Skills
 
 *Soft Skills: The software developer's life manual*
