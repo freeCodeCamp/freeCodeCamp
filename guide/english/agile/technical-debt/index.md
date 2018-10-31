@@ -1,5 +1,5 @@
 ---
-title: Technical Debt
+Title: Technical Debt
 ---
 ## Technical Debt
 Often in agile development, if you are producing software in the "good enough" practice, you will also be adding to your technical debt. This is the accumulation of short cuts and work-arounds.
