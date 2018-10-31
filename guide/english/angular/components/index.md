@@ -18,7 +18,7 @@ As mentioned, components consume utility (services/resources). They stand betwee
 
 Angular must recognize components when it comes across them. To do this, `@Component` must decorate every class intended to be a component. Decorators indicate to Angular what the class' is.
 
-In the case of a component, it must know how to interact with its injector, connect with a template, pull from a list of styles, encapsulate its styles, and so on. Angular takes care of most of the low-level requirements. Developers still need to configure a component's behavior, import its dependencies, and extend its logic.
+In the case of a component, it must know how to interact with its injector, connect with a template, pull from a list of styles, encapsulate its styles, and so on. Angular takes care of most of the low-level requirements, but developers still need to configure a component's behavior, import its dependencies, and extend its logic.
 
 For all such things, we have the component's class. The class keeps everything relatively uniform. It encapsulates the component's business logic.
 
