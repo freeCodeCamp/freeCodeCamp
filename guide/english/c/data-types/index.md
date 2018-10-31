@@ -61,7 +61,7 @@ int main()
     
     double c = 3.14;
     
-    printf("Hello World!\n");
+    printf("Hey there, Hello\n");
  
     //printing the variables defined above along with their sizes
     printf("Hello! I am a character. My value is %c and "
