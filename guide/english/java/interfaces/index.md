@@ -257,6 +257,8 @@ public class SmartPhone implements MusicPlayer {
 }
 ```
 
+Interfaces in Java can inherit multiple classes unlike normal classes which cannot inherit from multiple classes. 
+
 ![:rocket:](//forum.freecodecamp.com/images/emoji/emoji_one/rocket.png?v=2 ":rocket:") <a href='https://repl.it/CIty/0' target='_blank' rel='nofollow'>Run Code</a>
 
 Whoops, did I forget `next()` ? See, since it was a `default` method, I didn't had to provide an implementation at all. (Won't work for JDK < 8)
