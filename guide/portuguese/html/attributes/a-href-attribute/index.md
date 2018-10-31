@@ -4,7 +4,7 @@ localeTitle: Um atributo Href
 ---
 ## Um atributo Href
 
-O atributo `<a href>` refere-se a um destino fornecido por um link. A `a` (âncora) tag é morto sem o `<href>` atributo. Às vezes, no seu fluxo de trabalho, você não deseja um link ativo ou ainda não saberá o destino do link. Nesse caso, é útil definir o atributo `href` como `"#"` para criar um link inativo. O atributo `href` pode ser usado para vincular a arquivos ou arquivos locais na Internet.
+O atributo `<a href>` cria uma referência para um destino fornecido por um link. A `a` (âncora) tag é morto sem o `<href>` atributo. Às vezes, no seu fluxo de trabalho, você não deseja um link ativo ou ainda não saberá o destino do link. Nesse caso, é útil definir o atributo `href` como `"#"` para criar um link inativo. O atributo `href` pode ser usado para vincular a arquivos ou arquivos locais na Internet.
 
 Por exemplo:
 
