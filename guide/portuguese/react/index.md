@@ -1,10 +1,10 @@
 ---
 title: React
-localeTitle: Reagir
+localeTitle: React
 ---
 # React
 
-React é uma biblioteca JavaScript para criar interfaces com o usuário. Ele foi eleito o mais amado na categoria "Frameworks, bibliotecas e outras tecnologias" da Pesquisa de desenvolvedores do Stack Overflow 2017. 1
+React é uma biblioteca JavaScript para criar interfaces com o usuário. É mantido pelo Facebook, Instagram e uma comunidade de desenvolvedores individuais e outras empresas. Ele foi eleito o mais amado na categoria "Frameworks, bibliotecas e outras tecnologias" da Pesquisa de desenvolvedores do Stack Overflow 2017. 1
 
 React é uma biblioteca JavaScript e os aplicativos React criados nele são executados no navegador, NÃO no servidor. Aplicativos desse tipo só se comunicam com o servidor quando necessário, o que os torna muito rápidos em comparação com os sites tradicionais que forçam o usuário a esperar que o servidor renderize novamente páginas inteiras e as envie para o navegador.
 
@@ -47,9 +47,8 @@ const Component2 = () => {
 2.  React é declarativo para a maior parte em que estamos mais preocupados com o que fazer, em vez de como fazer uma tarefa específica. A programação declarativa é um paradigma de programação que expressa a lógica de uma computação sem descrever seu fluxo de controle. A programação declarativa vem com certas vantagens, como redução de efeitos colaterais (ocorre quando modificamos qualquer estado ou transformamos algo ou fazemos uma requisição de API), minimizando a mutabilidade (muito abstraído), melhor legibilidade, menores erros.
     
 3.  Fluxo de dados unidirecional. A interface do usuário no React é, na verdade, a função do estado que significa que, à medida que o estado é atualizado, ele também atualiza a interface do usuário. Portanto, nossa interface do usuário progride conforme o estado muda.
-    
-
-## Vantagens de React
+   
+## Vantagens do React
 
 Algumas razões para usar o React são:
 
@@ -225,7 +224,7 @@ Então, vamos fazer uma rápida recapitulação. Na nossa tag head pegamos as ta
 
 *   [Página de Reação](https://reactjs.org/)
 *   [Twitter de Dan Abramov](https://twitter.com/dan_abramov)
-*   [React Tutoriais em Egghead.io](https://egghead.io/browse/frameworks/react)
+*   [Tutoriais de React em Egghead.io](https://egghead.io/browse/frameworks/react)
 
 ### Fontes
 

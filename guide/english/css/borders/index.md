@@ -6,7 +6,7 @@ title: Border Property
 CSS Border
 ----
 
-Our personal favorite CSS attribute, allow you to completely customize the borders that appear around HTML elements. With HTML, it used to be impossible to place a border around an element, except for the table. CSS Borders let you create crisp, customized border styles with very little work, compared to the antiquated methods of HTML.
+Our personal favorite CSS attribute, allows you to completely customize the borders that appear around HTML elements. With HTML, it used to be impossible to place a border around an element, except for the table. CSS Borders lets you create crisp and customized border styles with very little work, compared to the antiquated methods of HTML.
 
 The `border` shorthand property sets all the border properties in one declaration. 
 ```css 

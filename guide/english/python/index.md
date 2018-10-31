@@ -1,10 +1,11 @@
 ---
 title: Python
 ---
+![alt text](https://www.python.org/static/community_logos/python-logo-master-v3-TM.png)
 
 ## What is Python?
 
-<a href='https://www.python.org' target='_blank' rel='nofollow'>Python</a> is a general purpose programming language which is dynamically typed, interpreted, and known for its easy readability with great design principles.
+<a href='https://www.python.org' target='_blank' rel='nofollow'>Python</a> is a general purpose programming language which is dynamically typed, interpreted, and known for its easy readability with great design principles. It was created by Guido van Rossum and released in 1991. Since then, the language has exploded in popularity.  
 
 To learn more about Python, check out these pages on python.org:
 
@@ -43,7 +44,7 @@ From terminal:
     $ python hello_campers.py
     Hello campers!
 
-"When multiple versions of Python are installed, calling them by version is possible depending on the install configuration. In the Cloud9 ide custom environment, they can be invoked like:
+When multiple versions of Python are installed, calling them by version is possible depending on the install configuration. In the Cloud9 IDE custom environment, they can be invoked like:
 
     $ python --version
     Python 2.7.6
@@ -106,6 +107,8 @@ Some of the principles that influenced the design of Python are included as an E
 1. Interactive language with a module support for almost all functionality.
 2. Open Source: So, you can contribute to the community, the functions you have developed for future use and to help others
 3. A lot of good interpreters and notebooks available for better experience like jupyter notebook.
+4. It is a very easy language to learn and debug too. To check if a small bit of code works or not, you can just open up the interpreter and test.  
+5. There are multiple libraries available for Python, like numpy, pandas, etc.  
 
 #### Cons
 1. Being open source, many different ways have developed over the year for same function. This sometimes, creates chaos for others to read someone else code.
@@ -152,6 +155,9 @@ Also the most important thing about python is that you don't have to specify the
 will do that itself based on the type of value assigned.
 
 The `objects` parameter is prefixed with a `*` which indicates that the function will take an arbitrary number of arguments for that parameter.
+
+## Things you can do with python
+As stated python is a general purpose language. You can use it to do anything you like but one of the major uses of python is in machine learning and artificial intelligence. It is also a popular language in web development with some amazing frameworks like [Django](https://www.djangoproject.com/) and [flask](http://flask.pocoo.org/). It is also a popular scripting language. With its easy to read syntax it is becoming one the most popular programming languages growing rapidly in different fields.
 
 ## Want to learn more?
 
