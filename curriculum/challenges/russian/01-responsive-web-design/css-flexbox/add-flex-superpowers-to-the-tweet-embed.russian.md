@@ -3,7 +3,7 @@ id: 587d78ab367417b2b2512af1
 title: Add Flex Superpowers to the Tweet Embed
 challengeType: 0
 videoUrl: ''
-localeTitle: Добавь суперспособности Flex к компоненту твита
+localeTitle: Добавьте суперспособности Flex к компоненту твита
 ---
 
 ## Description
