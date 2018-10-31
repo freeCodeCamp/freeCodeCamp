@@ -93,9 +93,9 @@ Spans e divs são não-elementos. Eles são destinados a conter outros elementos
 
 ```html
 
-    <button>This is a button</button> 
+    <button>Isto eh um botao</button> 
  
-    <h2>Here's a heading level two</h2> 
+    <h2>Aqui nos temos um cabecalho nivel dois</h2> 
  
     <a href="JavascriptThing">English</a> 
 ```
