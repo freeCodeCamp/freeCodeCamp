@@ -113,6 +113,7 @@ This code is running live at [freeCodeCamp.org](https://www.freecodecamp.org).
 Our community also has:
 
 - A super active [forum](https://www.freecodecamp.org/forum)
+- A [Facebook group](https://www.facebook.com/groups/freeCodeCampEarth/permalink/428140994253892/) with over 100,000 members worldwide
 - Thousands of [local study groups](https://study-group-directory.freecodecamp.org/) around the world, where you can code together in person
 - Medium's [largest technical publication](https://medium.freecodecamp.org)
 - A popular [YouTube channel](https://youtube.com/freecodecamp)
