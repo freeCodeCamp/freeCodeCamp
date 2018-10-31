@@ -37,7 +37,7 @@ First is the `#include`:
 ```C
 #include <stdio.h> // This is called preprocessor directives
 ```
-This is an instruction to the compiler to find and include a set of header files. Header files contain additional code that we can use. In this case, the compiler has been instructed to include `<stdio.h>`, which contains all kinds of useful functions like `printf()`. We can also write it as `#include"stdio.h"`. We'll get into detail about what functions are later, but for now just remember that a function is a collection of code that we can use.
+This is an instruction to the compiler to find and include a set of header files. Header files contain additional code that we can use. In this case, the compiler has been instructed to include `<stdio.h>`, which contains all kinds of useful functions like `printf()`. We can also write it as `#include"stdio.h"`. There are other header functions like `<conio.h>` , `<math.h>` etc. We'll get into detail about what functions are later, but for now just remember that a function is a collection of code that we can use.
 
 ```C
 int main(void)
