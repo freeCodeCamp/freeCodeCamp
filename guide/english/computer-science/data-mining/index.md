@@ -1,12 +1,4 @@
----
-title: Computor Science > Data Mining
-author: binarygalwalkin
-description: The definition of, and links to resources on Data Mining.
-fcc.custom: Free Code Camp Guides
-fcc.author: Amber P.
-fcc.date: 10/25/18
 
----
 # Data Mining 
 
 A subfield of Computor Science where the main goal is to extract patterns and information (using intelligent methods) from a larger data set and transform the information collected into a simpler, more useable form, for later use.
