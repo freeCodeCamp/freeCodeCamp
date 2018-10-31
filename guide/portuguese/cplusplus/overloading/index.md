@@ -19,29 +19,29 @@ A seguir, o exemplo em que a mesma função print () está sendo usada para impr
  #include <string> 
  using namespace std; 
  
- class printData { 
+ class imprimirDados { 
    public: 
-      void print(int i) { 
-        cout << "Printing int: " << i << endl; 
+      void imprimir(int i) { 
+        cout << "Imprimindo int: " << i << endl; 
       } 
-      void print(double  f) { 
-        cout << "Printing float: " << f << endl; 
+      void imprimir(double  f) { 
+        cout << "Imprimindo float: " << f << endl; 
       } 
-      void print(const string& s) { 
-        cout << "Printing string: " << s << endl; 
+      void imprimir(const string& s) { 
+        cout << "Imprimindo string: " << s << endl; 
       } 
  }; 
  
  int main() { 
-   printData pd; 
+   imprimirDados pd; 
  
-   // Call print to print integer 
+   // Chamada para imprimir inteiro 
    pd.print(5); 
  
-   // Call print to print float 
+   // Chamada para imprimir float
    pd.print(500.263); 
  
-   // Call print to print string 
+   // Chamada para imprimir string
    pd.print("Hello C++"); 
  
    return 0; 
@@ -50,9 +50,9 @@ A seguir, o exemplo em que a mesma função print () está sendo usada para impr
 
 Quando o código acima é compilado e executado, ele produz o seguinte resultado -
 ```
-Printing int: 5 
- Printing float: 500.263 
- Printing string: Hello C++ 
+ Imprimindo int: 5 
+ Imprimindo float: 500.263 
+ Imprimindo string: Hello C++ 
 ```
 
 ### Sobrecarga de Operador em C ++
