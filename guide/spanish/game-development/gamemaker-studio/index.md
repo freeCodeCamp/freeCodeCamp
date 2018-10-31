@@ -44,3 +44,11 @@ La compatibilidad con PlayStation Portable y Raspberry Pi se demostró pero no s
 *   \[Wikipedia\] https://en.wikipedia.org/wiki/GameMaker\_Studio
 *   \[YoYo Games (editor)\] https://www.yoyogames.com/gamemaker
 *   \[GameMaker: Studio | Documentación\] https://docs.yoyogames.com/
+
+#### Tutoriales recomendados:
+Estos dos tutoriales están en inglés, pero se pueden seguir copiando código y viendo los ejemplos.
+
+*   **GameMaker Studio 2: Complete Platformer Tutorial** https://www.youtube.com/watch?v=izNXbMdu348
+El primer video en una serie muy completa creada por Shaun Spalding
+*   **GameMaker Studio 2: Your First Game (Drag And Drop)** https://www.youtube.com/watch?v=IWXJbUHLYXA
+El primer video en una serie creada también por Shaun Spalding, hecha para la página de aprendizaje de YoYo Games (creadores de GameMaker Studio). Aquí te enseña a hacer un *shooter* con el sistema Drag And Drop, que no requiere conocimientos de programación.
