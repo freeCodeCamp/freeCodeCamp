@@ -312,12 +312,15 @@ print z is x # prints True
 
 str1 = "FreeCodeCamp"
 str2 = "FreeCodeCamp"
+str3 = "FreeCodeCamp1"
 
 print str1 is str2 # prints True
 print "Code" is str2 # prints False
+print str2 is str3 # prints False
 
 a = [10,20,30]
 b = [10,20,30]
 
 print a is b # prints False (since lists are mutable in Python)  
 ```
+A non zero value is True  and zero value is False.
