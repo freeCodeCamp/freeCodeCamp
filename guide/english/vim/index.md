@@ -20,6 +20,8 @@ One of the main differences that Vim (and its predecessor, *vi*) have over other
 
 The modal part of Vim is what makes it really powerful. For a interactive tutorial, please visit [OpenVim](http://www.openvim.com/). Here you can try for yourself several of its more powerful features.
 
+A great way to learn vi for most is as simple as a walkthrough tutorial from the command line.  For most you can type `vimtutor` and spend ~30 learning the majority of the commands available in vi.
+
 ## More information
 
 For more information head to <a href='https://vim.sourceforge.io' target='_blank' rel='nofollow'>Vim's homepage</a>
@@ -27,3 +29,4 @@ For more information head to <a href='https://vim.sourceforge.io' target='_blank
 * [Vim.org](https://www.vim.org/) is an online resource with downloadable binaries for most operating systems. 
 * [Open Vim](http://www.openvim.com/) is an online, interactive Vim tutorial you can do right in your browser. 
 * [Vim Adventures](https://vim-adventures.com) is an online game based on VIM's keyboard shortcuts. It's the "Zelda meets text editing" game.
+*[Four Week Plan to Learn Vim](https://medium.com/actualize-network/how-to-learn-vim-a-four-week-plan-cd8b376a9b85) A straightforward, slow on-ramp to learning vim.
