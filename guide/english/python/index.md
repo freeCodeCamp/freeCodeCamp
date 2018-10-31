@@ -162,16 +162,16 @@ As stated python is a general purpose language. You can use it to do anything yo
 ## Want to learn more?
 
 Free Code Camp has some great resources. The web is a big place, there's plenty more to explore:
-* Python Practice Book: http://anandology.com/python-practice-book/index.html
-* Think Python: http://greenteapress.com/thinkpython/html/index.html
-* Practical Business Python: http://pbpython.com/
-* Another course: https://realpython.com/?utm_source=fsp&utm_medium=promo&utm_campaign=bestresources
-* General: https://www.fullstackpython.com/
-* Learn the Basics: https://www.codecademy.com/learn/learn-python
-* Computer science using Python: https://www.edx.org/course/introduction-computer-science-mitx-6-00-1x-11?ref=hackernoon#!
-* Another computer science course using Python: https://www.udacity.com/course/intro-to-computer-science--cs101
-* List of more resources for learning python: https://github.com/vinta/awesome-python
-* Interactive Python: http://interactivepython.org/runestone/static/thinkcspy/index.html
-* Developer's Guide to Python: https://devguide.python.org/
-* Learn Python the Hard Way book: https://learnpythonthehardway.org/python3/
-* Introduction to Python Programming: https://www.udacity.com/course/introduction-to-python--ud1110
+* [Python Practice Book](http://anandology.com/python-practice-book/index.html)
+* [Think Python](http://greenteapress.com/thinkpython/html/index.html)
+* [Practical Business Python](http://pbpython.com/)
+* [Another course](https://realpython.com/?utm_source=fsp&utm_medium=promo&utm_campaign=bestresources "Real Python")
+* [General](https://www.fullstackpython.com/ "Fullstack Python")
+* [Learn the Basics](https://www.codecademy.com/learn/learn-python "Code Academy")
+* [Computer science using Python](https://www.edx.org/course/introduction-computer-science-mitx-6-00-1x-11?ref=hackernoon#! "edx")
+* [Another computer science course using Python](https://www.udacity.com/course/intro-to-computer-science--cs101 "Udacity")
+* [List of more resources for learning python](https://github.com/vinta/awesome-python)
+* [Interactive Python](http://interactivepython.org/runestone/static/thinkcspy/index.html)
+* [Developer's Guide to Python](https://devguide.python.org/)
+* [Learn Python the Hard Way book](https://learnpythonthehardway.org/python3/)
+* [Introduction to Python Programming](https://www.udacity.com/course/introduction-to-python--ud1110)
