@@ -16,7 +16,8 @@ enum Gender
 ```
 By default, the integer values start at 0 and increase by 1, for each enumeration name i.e. Male = 0, Female = 1 etc. 
 
-These can be overridden by specifying an integer value for any of the enumeration names.
+These can be overridden by specifying an integer value for any of the enumeration names. 
+For example, the 4 suits in a deck of playing cards may be 4 enumerators named Club, Diamond, Heart, and Spade, belonging to an enumerated type named Suit. Other examples include natural enumerated types (like the planets, days of the week, colors, directions, etc.). 
 
 ## Example
 ```
