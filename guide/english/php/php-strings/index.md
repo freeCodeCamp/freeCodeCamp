@@ -156,3 +156,23 @@ This will produce the following result -
 ```
    The substring was found!
 ```
+
+### Using the strtoupper() function
+
+The strtoupper() function is a simple, but useful string manipulation function.  As the name implies, it makes any character in a string upper case.  The function takes one parameter (a string).  
+
+Example:
+
+```
+<?php
+$s = "this is an all lower case string";
+$s = strtoupper($s);
+echo $s;
+?>
+```
+Result:
+
+```
+THIS IS AN ALL LOWER CASE STRING
+```
+
