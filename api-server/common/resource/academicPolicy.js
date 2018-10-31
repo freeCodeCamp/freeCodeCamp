@@ -21,7 +21,7 @@ const policy = [
   'we take academic honesty very seriously. If you have any questions about ' +
   'this policy, or suspect that someone has violated it, you can email ' +
   '<a href="mailto:team@freecodecamp.org">team@freecodecamp.org</a> and we ' +
-  'will investigate.'
+  'will investigate the claim.'
 ];
 
 export default policy;
