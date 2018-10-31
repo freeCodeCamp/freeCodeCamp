@@ -28,14 +28,13 @@ Some, very common and widely used are:
 
 #### Quick Sort
 
-There is no sorting discussion which can finish without quick sort. The basic concept is in the link below.
-[Quick Sort](http://me.dt.in.th/page/Quicksort/)
+Quick Sort is the fastest sorting algorithm and there is this is highly popular in the programing world. The basic concept is [here](http://me.dt.in.th/page/Quicksort/).
 
 #### Merge Sort
-It is the sorting algorithm which relies on the concept how to sorted arrays are merged to give one sorted arrays. Read more about it here-
-[Merge Sort](https://www.geeksforgeeks.org/merge-sort/)
+It is the sorting algorithm which relies on the concept how to sorted arrays are merged to give one sorted arrays. Read more about it
+[here](https://www.geeksforgeeks.org/merge-sort/).
 
-freeCodeCamp's curriculum heavily emphasizes creating algorithms. This is because learning algorithms is a good way to practice programming skills. Interviewers most commonly test candidates on algorithms during developer job interviews.
+FreeCodeCamp's curriculum heavily emphasizes creating algorithms. This is because learning algorithms is a good way to practice programming skills. Interviewers most commonly test candidates on algorithms during developer job interviews.
 
 ### Further Resources
 
