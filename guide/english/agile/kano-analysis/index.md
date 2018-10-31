@@ -2,6 +2,7 @@
 title: Kano Analysis
 ---
 ## Kano Analysis
+The Kano Model (or Kano Analysis) was developed by Noriaki Kano. It was developed as a foundation to evaluate customer satisfaction.
 
 This is a stub. <a href='https://github.com/freecodecamp/guides/tree/master/src/pages/agile/kano-analysis/index.md' target='_blank' rel='nofollow'>Help our community expand it</a>.
 
