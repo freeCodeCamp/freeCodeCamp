@@ -18,13 +18,13 @@ Para obtener más información sobre Python, consulte estas páginas en python.o
 *   [Python 2 o Python 3](https://wiki.python.org/moin/Python2orPython3)
     *   [Python 2.x no se mantendrá a partir de 2020.](https://www.python.org/dev/peps/pep-0373/)
     *   3.x esta en desarrollo activo. Esto significa que todas las mejoras recientes de la biblioteca estándar, por ejemplo, solo están disponibles de forma predeterminada en Python 3.x.
-    *   El ecosistema de Python ha acumulado una cantidad significativa de software de calidad a lo largo de los años. La desventaja de romper la compatibilidad con versiones anteriores en 3.x es que parte de ese software (especialmente el software interno de las empresas) todavía no funciona en 3.x todavía.
+    *   El ecosistema de Python ha acumulado una cantidad significativa de software de calidad a lo largo de los años. La desventaja de romper la compatibilidad con versiones anteriores en 3.x es que parte de ese software (especialmente el software interno de las empresas) todavía no funciona en 3.x.
 
 ## Instalación
 
-La mayoría de los sistemas operativos basados ​​en \* nix vienen con Python instalado (generalmente Python 2, Python 3 en los más recientes). Reemplazar el sistema Python no se recomienda y puede causar problemas. Sin embargo, diferentes versiones de Python pueden instalarse de manera segura junto con el sistema Python. Consulte [Configuración y uso de Python](https://docs.python.org/3/using/index.html) .
+La mayoría de los sistemas operativos basados ​​en \* nix vienen con Python instalado (generalmente Python 2; Python 3 en los más recientes). No se recomienda reemplazar el sistema Python, ya que puede causar problemas. Sin embargo, diferentes versiones de Python pueden instalarse de manera segura junto con el sistema Python. Consulte [Configuración y uso de Python](https://docs.python.org/3/using/index.html) .
 
-Windows no viene con Python, el instalador y las instrucciones se pueden encontrar [aquí](https://docs.python.org/3/using/windows.html)
+Windows no viene con Python; el instalador y las instrucciones se pueden encontrar [aquí](https://docs.python.org/3/using/windows.html)
 
 ## Intérprete de Python
 
@@ -109,13 +109,13 @@ Algunos de los principios que influyeron en el diseño de Python se incluyen com
 ### Pros
 
 1.  Lenguaje interactivo con soporte de módulo para casi todas las funcionalidades.
-2.  Código abierto: Entonces, puede contribuir a la comunidad, las funciones que ha desarrollado para su uso futuro y para ayudar a otros
-3.  Un montón de buenos intérpretes y cuadernos disponibles para una mejor experiencia como el cuaderno jupyter.
+2.  Es un Código abierto: se puede contribuir a la comunidad; las funciones se desarrollan para su uso futuro y para ayudar a otros
+3.  Hay un montón de buenos intérpretes y cuadernos disponibles para una mejor experiencia, por ejemplo el cuaderno jupyter.
 
 #### Contras
 
 1.  Siendo de código abierto, se han desarrollado muchas formas diferentes a lo largo del año para la misma función. Esto a veces, crea un caos para que otros lean el código de otra persona.
-2.  Es un lenguaje lento. Entonces, un lenguaje muy malo para usar en el desarrollo de algoritmos generales.
+2.  Es un lenguaje lento. Por lo tanto, es un lenguaje muy malo para usar en el desarrollo de algoritmos generales.
 
 ## Documentación
 
@@ -127,7 +127,7 @@ Otra referencia importante son las Propuestas de mejora de Python ( [PEP](https:
 
 Las declaraciones de `print` línea se pueden utilizar para la depuración simple:
 
-> **... a menudo, la forma más rápida de depurar un programa es agregar algunas declaraciones de impresión a la fuente: el rápido ciclo de edición-prueba-depuración hace que este enfoque simple sea muy efectivo.**
+> **... a menudo, la forma más rápida de depurar un programa es agregar algunas declaraciones de impresión a la fuente: el ciclo rápido de edición-prueba-depuración hace que este enfoque simple sea muy efectivo.**
 > 
 > \- [Resumen ejecutivo](https://www.python.org/doc/essays/blurb/)
 
@@ -155,7 +155,7 @@ La función de [`print`](https://docs.python.org/3/library/functions.html#print)
 
 Se llama a una función cuando el nombre de la función va seguido de `()` . Para el mundo Hola! Por ejemplo, la función de impresión se llama con una cadena como argumento para el primer parámetro. Para el resto de los parámetros se utilizan los valores por defecto.
 
-El argumento con el que llamamos a la función de `print` es un objeto `str` o _cadena_ , uno de los [_tipos incorporados_](https://docs.python.org/3/library/stdtypes.html#text-sequence-type-str) de Python. Además, lo más importante de python es que no tiene que especificar el tipo de datos al declarar una variable, el compilador de python Lo hará por sí mismo en función del tipo de valor asignado.
+El argumento con el que llamamos a la función de `print` es un objeto `str` o _cadena_ , uno de los [_tipos incorporados_](https://docs.python.org/3/library/stdtypes.html#text-sequence-type-str) de Python. Además, lo más importante de Python es que no se tiene que especificar el tipo de datos al declarar una variable, el compilador de Python lo hará por sí mismo en función del tipo de valor asignado.
 
 El parámetro de los `objects` tiene un prefijo `*` que indica que la función tomará un número arbitrario de argumentos para ese parámetro.
 
