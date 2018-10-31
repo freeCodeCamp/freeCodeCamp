@@ -5,7 +5,9 @@ title: Git Stash
 
 Git has an area called the stash where you can temporarily store a snapshot of your changes without committing them to the repository. It's separate from the working directory, the staging area, or the repository.
 
-This functionality is useful when you've made changes to a branch that you aren't ready to commit, but you need to switch to another branch.
+This functionality is useful when you've made changes to a branch that you aren't ready to commit, but you need to switch to another branch.This is where git stash comes in handy. This takes a working tree and files it away in a location which can be retrieved at a later stage. The stash can then be popped to get the changes back as they were prior to the stash taking place.
+
+
 
 ### Stash Changes
 To save your changes in the stash, run the command:
