@@ -10,6 +10,7 @@ When you have Docker containers running, you first need to stop them before dele
 
 - Stop all running containers: `docker stop $(docker ps -a -q)`  
 - Delete all stopped containers: `docker rm $(docker ps -a -q)`
+- Delete all images saved on machine: 'docker rmi $(docker images -q)'
 
 ### Remove multiple containers
 
