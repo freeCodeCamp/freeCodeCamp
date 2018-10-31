@@ -6,7 +6,7 @@ title: Dictionaries
 
 A dictionary is a type of collection that stores an **unordered** list of associated "key-value" pairs. Each **key** is a unique identifier that stores a specified **value**, which then can be accessed or referenced later with the corresponding key.
 
-## Initialization
+## Initializationv
 
 **Various ways to initialize a Dictionary:** 
 ```swift
