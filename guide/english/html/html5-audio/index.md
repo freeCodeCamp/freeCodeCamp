@@ -4,7 +4,7 @@ title: HTML5 Audio
 ## HTML5 Audio 
 
 Before HTML5, audio files had to be played in a browser using a plug-in like Adobe Flash.
-The HTML <audio> element is used to embed sound content in documents. It may contain one or more audio sources, represented using the src attribute or the [source](<source>) element
+The HTML <audio> element is used to embed sound content in documents. It may contain one or more audio sources, represented by using the src attribute or the [source](<source>) element
 
 The following code snippet adds an audio file with the filename `tutorial.ogg` or `tutorial.mp3`. The <source> element indicates alternative audio files which the browser may choose from. The browser will utilize the first recognized format. 
 
