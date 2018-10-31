@@ -109,6 +109,7 @@ else
 
 ## 4. Nested if statement
 It is always legal in C programming to nest if-else statements, which means you can use one if or else if statement inside another if or else if statement(s).
+
 #### Syntax
 ```C
 if(boolean_expression_1)
@@ -150,7 +151,7 @@ switch (n)
 {
     case constant1:
         // code to be executed if n is equal to constant1;
-        break;
+        break; // break is used to quit from switch statement without executing next case or default
 
     case constant2:
         // code to be executed if n is equal to constant2;
