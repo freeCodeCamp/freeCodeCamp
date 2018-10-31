@@ -1,14 +1,14 @@
 ---
 title: Docker
-localeTitle: Estibador
 ---
-## Estibador
+![alt text](https://www.docker.com/sites/default/files/horizontal.png)
+## Docker
 
-Docker es una plataforma abierta para construir, enviar y ejecutar aplicaciones distribuidas. Está escrito en ir. Se lanzó por primera vez en 2013 y está desarrollado por Docker, Inc.
+Docker es una plataforma abierta para construir, enviar y ejecutar aplicaciones distribuidas. Está escrito en Go. Se lanzó por primera vez en 2013 y está desarrollado por Docker, Inc.
 
 Docker se utiliza para ejecutar paquetes llamados "contenedores". Los contenedores están aislados unos de otros y del sistema operativo. Estos son más ligeros que las máquinas virtuales, ya que no utilizan la máquina host para ejecutar un sistema operativo.
 
-La contenedorización, que es una forma de implementar y ejecutar aplicaciones, ejecuta servicios aislados que se ejecutan de forma nativa en el kernel de Linux. La memoria se puede configurar manualmente para cada contenedor en Docker.
+La contenerización, que es una forma de implementar y ejecutar aplicaciones, ejecuta servicios aislados que se ejecutan de forma nativa en el kernel de Linux. La memoria se puede configurar manualmente para cada contenedor en Docker.
 
 Docker se utiliza para simplificar las configuraciones y garantizar un flujo continuo de integración y despliegue sin problemas. Se pueden especificar contenedores específicos para entornos de desarrollo, organización y producción. Una verdadera implementación de un contenedor en producción, de acuerdo con el manual de Docker, es ejecutarlo como un servicio, utilizando el archivo `docker-compose.yml` para la configuración. Este es un archivo YAML que define cómo deben comportarse los contenedores Docker en producción.
 
