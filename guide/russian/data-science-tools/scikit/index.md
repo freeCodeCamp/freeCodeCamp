@@ -1,13 +1,16 @@
 ---
 title: scikit-learn
-localeTitle: scikit учиться
+localeTitle: scikit-learn
 ---
-## Scikit учиться
+## Scikit-learn
 
-Это заглушка. [Помогите нашему сообществу расширить его](https://github.com/freecodecamp/guides/tree/master/src/pages/data-science-tools/scikit/index.md) .
+Scikit-learn - это популярная библиотека с открытым исходным кодом для Python, реализующая алгоритмы машинного обучения, и построенная на базе пакетов, таких как numpy и scipy. Содержит весь необходимый код, начиная с импорта и очистки данных до подготовки модели и тестирования.
 
-[Это руководство по быстрому стилю поможет вам принять ваш запрос на тягу](https://github.com/freecodecamp/guides/blob/master/README.md) .
+## Установка
+Для установки scikit-learn в окружении conda: `conda install scikit-learn` <br>
+Для установки scikit-learn при помощи pip: `pip install scikit-learn`
 
-#### Дополнительная информация:
+## Ссылки
 
-[Страница справки Scikit-learn](http://scikit-learn.org/stable/)
+Главная страница scikit-learn: http://scikit-learn.org/stable/ <br>
+Руководства: http://scikit-learn.org/stable/tutorial/index.html
