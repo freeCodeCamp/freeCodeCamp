@@ -15,6 +15,7 @@ Na memória do computador ou seja, RAM, estruturas de dados diferentes são cria
 #### Mais Informações:
 
 *   [Estruturas de dados](http://www.studytonight.com/data-structures/introduction-to-data-structures)
+*   [Estruturas de dados 2](https://pt.wikipedia.org/wiki/Estrutura_de_dados)
 *   [Geek para o geek](http://www.geeksforgeeks.org/data-structures/)
 *   [Ponto de tutoriais](https://www.tutorialspoint.com/data_structures_algorithms/data_structure_overview.htm)
 *   [Estruturas de dados](http://www.studytonight.com/data-structures/introduction-to-data-structures)
