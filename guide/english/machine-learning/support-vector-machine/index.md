@@ -27,6 +27,16 @@ An SVM will find the line (or hyperplane in the more general case) that splits t
 While outliers may sway the line to one direction, a small enough C value will enforce regularization. 
 This new regularizing works the same with 1/\lambda, as seen in linear and logistic regression, but here we modify the cost component.
 
+### Benefits :
+* It works really well with clear margin of separation
+* It is effective in high dimensional spaces.
+* It is effective in cases where number of dimensions is greater than the number of samples.
+* It uses a subset of training points in the decision function (called support vectors), so it is also memory efficient.
+
+### Challenges :
+* It doesn’t perform well, when we have large data set because the required training time is higher
+* It also doesn’t perform very well, when the data set has more noise i.e. target classes are overlapping
+* SVM doesn’t directly provide probability estimates, these are calculated using an expensive five-fold cross-validation. It   is related SVC method of Python scikit-learn library.
 
 #### More Information:
 [Andrew Ng's ML Course](https://www.coursera.org/learn/machine-learning/)
@@ -172,4 +182,5 @@ class Svm (object):
 #### More Information:
 <!-- Please add any articles you think might be helpful to read before writing the article -->
 <a href='http://scikit-learn.org/stable/modules/svm.html' target='_blank' rel='nofollow'>Scikit-learn SVM</a>
+<a href='https://www.analyticsvidhya.com/blog/2017/09/understaing-support-vector-machine-example-code/' target='_blank' rel='nofollow'>Understanding Support Vector Machine</a>
 
