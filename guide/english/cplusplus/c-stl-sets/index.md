@@ -49,5 +49,19 @@ set <int>::iterator it;
 for(it=s.begin(); it!=s.end(); ++it)
   cout<<*it;
 ```
+## A few more stl use cases in cpp
+
+include the #include<bits/stdc++.h> for importing all the major libraries in one go.
+
+### Implementing an integer stack
+
+Initialisse the stack as follows
+
+stack<int> s;
+  
+It has the following operations
+
+s.push(), s.pop(), s.empty() to check whether stack is empty or not
+
 
 
