@@ -24,7 +24,6 @@ exports.createRedirects = function createRedirects(locations) {
     .replace(forumProxyPlaceholderRE, forumProxy);
 };
 
-/* eslint-disable max-len */
 const template = `#api redirect
 
 /internal/*                                   #{{API}}/internal/:splat
