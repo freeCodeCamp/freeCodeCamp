@@ -3,7 +3,7 @@ title: Hexagon
 ---
 ## Hexagon
 
-A hexagon is a polygon with six sides. The sum of the internal angles totals 720°. In a regular hexagon, each individual angle measures 120°.
+A hexagon is a polygon with six sides, with hexa- being Greek prefix for six. The sum of the internal angles totals 720°. In a regular hexagon, each individual angle measures 120°.
 
 <img src=https://upload.wikimedia.org/wikipedia/commons/thumb/c/cb/Hexagon_1.svg/2000px-Hexagon_1.svg.png  alt="a regular hexagon" height="150" />
 
