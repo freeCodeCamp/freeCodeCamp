@@ -26,17 +26,17 @@ _CÓDIGO: A Linguagem Oculta de Hardware e Software de Computador_ por Charles P
 *   [Sorriso da Amazônia](https://smile.amazon.com/Code-Language-Computer-Hardware-Software/dp/0735611319/ref=sr_1_1?s=books&ie=UTF8&qid=1508780869&sr=1-1&keywords=code)
 *   ISBN-13: 978-0735611313
 
-_Não me faça pensar, revisitado: uma abordagem de senso comum para a usabilidade na Web por Steve Krug_
+_Não me faça pensar, revisitado: uma abordagem de senso comum para a usabilidade na Web_ por Steve Krug
 
 *   [Sorriso da Amazônia](https://smile.amazon.com/Dont-Make-Think-Revisited-Usability/dp/0321965515/ref=sr_1_1?ie=UTF8&qid=1538370339&sr=8-1&keywords=dont+make+me+think)
 *   ISBN-13: 978-0321965516
 
-_Programming Pearls (2nd Edition) por Jon Bentley_
+_Programming Pearls (2nd Edition)_ por Jon Bentley
 
 *   [Sorriso da Amazônia](https://smile.amazon.com/Programming-Pearls-2nd-Jon-Bentley/dp/0201657880)
 *   ISBN-13: 978-0201657883
 
-_Estrutura e Interpretação de Programas de Computador_
+_Estrutura e Interpretação de Programas de Computador_ por Hal Abelson, Jerry Sussman e Julie Sussman
 
 *   https://mitpress.mit.edu/sicp/
 *   ISBN-13: 978-0262510875
@@ -56,7 +56,7 @@ _Você não sabe JS (série de livros)_ por Kyle Simpson
 *   https://github.com/getify/You-Nont-Know-JS
 *   ISBN-13: 9781491924464
 
-_Soft Skills: O manual de vida do desenvolvedor de software_ - John Sonmez
+_Soft Skills: O manual de vida do desenvolvedor de software_ por John Sonmez
 
 *   [Sorriso da Amazônia](https://smile.amazon.com/Soft-Skills-software-developers-manual/dp/1617292397?pldnSite=1)
 *   ISBN-13: 9781617292392
@@ -68,7 +68,7 @@ _Introdução aos Algoritmos, 3a Edição (MIT Press)_ por Thomas H. Cormen e Ch
 *   [Sorriso da Amazônia](https://smile.amazon.com/Introduction-Algorithms-3rd-MIT-Press/dp/0262033844/)
 *   ISBN-13: 978-0262033848
 
-_Cracking the Coding Interview: 150 perguntas e soluções de programação_ por Gayle Laakmann McDowell
+_Quebrando a entrevista de codificação: 150 perguntas e soluções de programação_ por Gayle Laakmann McDowell
 
 *   [Sorriso da Amazônia](https://smile.amazon.com/Cracking-Coding-Interview-Programming-Questions/dp/098478280X)
 *   ISBN-13: 978-0984782802
@@ -80,31 +80,31 @@ _A linguagem de programação C_ por Brian W. Kernighan e Dennis M. Ritchie
 *   [Sorriso da Amazônia](https://smile.amazon.com/Programming-Language-2nd-Brian-Kernighan/dp/0131103628/)
 *   ISBN-13: 978-0131103628
 
-_Um livro sobre C: Programação em C_
+_Um livro sobre C: Programação em C_ por Al Kelley e Ira Pohl 
 
 *   [Amazon](https://www.amazon.com/Book-Programming-4th-Al-Kelley/dp/0201183994/ref=cm_cr_arp_d_bdcrb_top?ie=UTF8)
 *   ISBN-13: 978-0201183993
 
 ## Entrevista de Codificação
 
-_Quebrando a entrevista de codificação: 150 perguntas e soluções de programação_
+_Quebrando a entrevista de codificação: 150 perguntas e soluções de programação_ por Gayle Laakmann McDowell
 
 *   [Sorriso da Amazônia](https://smile.amazon.com/Cracking-Coding-Interview-Programming-Questions/dp/098478280X)
 *   ISBN-13: 978-0984782802
 
-_Entrevistas de Programação Expostos: Segredos para Landing Your Next Job, 2nd Edition_
+_Entrevistas de Programação Expostos: Segredos para Conseguir seu Próximo Emprego, 2a Edição_ por John Mongan, Noah Suojanen Kindler e Eric Giguère
 
 *   [Wiley](https://www.wiley.com/en-id/Programming+Interviews+Exposed:+Secrets+to+Landing+Your+Next+Job,+2nd+Edition-p-9780470121672)
 *   ISBN: 978-0-470-12167-2
 
 ## Java
 
-_Head First Java_ de Kathy Sierra e Bert Bates
+_Head First Java_ por Kathy Sierra e Bert Bates
 
 *   [Sorriso da Amazônia](https://smile.amazon.com/Head-First-Java-Kathy-Sierra/dp/0596009208)
 *   ISBN-13: 978-0596009205
 
-_Java eficaz por Joshua Bloch_
+_Java eficaz_ por Joshua Bloch
 
 *   [Sorriso da Amazônia](https://smile.amazon.com/Effective-Java-3rd-Joshua-Bloch/dp/0134685997)
 *   ISBN-13: 978-0134685991
