@@ -18,24 +18,22 @@ Java supports the following operations on variables:
 
 *   __Others__: `Conditional/Ternary(?:)`, `instanceof`
 **Ternary because it work on the functionality of If Then Else i.e If condition is right then first alternative anotherwise the second one **
-While most of the operations are self-explanatory, the Conditional (Ternary) Operator works as follows:
-
+While most of the operations are self-explanatory, the Conditional (Ternary) Operator works as follows:  
 `expression that results in boolean output ? return this value if true : return this value if false;`
 
 Example:
 True Condition:
 
 ```java
-    int x = 10;
-    int y = (x == 10) ? 5 : 9; // y will equal 5 since the expression x == 10 evaluates to true
-    
+int x = 10;
+int y = (x == 10) ? 5 : 9; // y will equal 5 since the expression x == 10 evaluates to true
 ```
 
 False Condition:
 
 ```java
-    int x = 25;
-    int y = (x == 10) ? 5 : 9; // y will equal 9 since the expression x == 10 evaluates to false
+int x = 25;
+int y = (x == 10) ? 5 : 9; // y will equal 9 since the expression x == 10 evaluates to false
 ```
 
 The instance of operator is used for type checking. It can be used to test if an object is an instance of a class, a subclass or an interface. General format-
@@ -43,14 +41,14 @@ The instance of operator is used for type checking. It can be used to test if an
 
 Here is a program to illustrate instanecof operator:
 ```Java
-  Person obj1 = new Person();
-        Person obj2 = new Boy();
+Person obj1 = new Person();
+Person obj2 = new Boy();
  
-        // As obj is of type person, it is not an
-        // instance of Boy or interface
-        System.out.println("obj1 instanceof Person: " +  (obj1 instanceof Person)); /*it returns true since obj1 is an instance of person */
-                           
-       
- ```
- 
+// As obj is of type person, it is not an
+// instance of Boy or interface
+System.out.println("obj1 instanceof Person: " +  (obj1 instanceof Person)); /*it returns true since obj1 is an instance of person */
+```
 
+# More Information
+- [Java Operators](https://docs.oracle.com/javase/tutorial/java/nutsandbolts/operators.html)
+- [Summary of Operators](https://docs.oracle.com/javase/tutorial/java/nutsandbolts/opsummary.html)
