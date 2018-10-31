@@ -4,7 +4,7 @@ title: Add Rounded Corners with border-radius
 challengeType: 0
 guideUrl: 'https://russian.freecodecamp.org/guide/certificates/add-rounded-corners-a-border-radius'
 videoUrl: ''
-localeTitle: Добавить закругленные углы при помощи свойства border-radius
+localeTitle: Добавление закругленных углов при помощи свойства border-radius
 ---
 
 ## Description
@@ -18,7 +18,7 @@ localeTitle: Добавить закругленные углы при помо�
 
 ```yml
 tests:
-  - text: Элемент изображения должен иметь класс «толсто-зеленая граница».
+  - text: Элемент изображения должен иметь класс «thick-green-border».
     testString: 'assert($("img").hasClass("thick-green-border"), "Your image element should have the class "thick-green-border".");'
   - text: Ваше изображение должно иметь радиус границы <code>10px</code>
     testString: 'assert(parseInt($("img").css("border-top-left-radius")) > 8, "Your image should have a border radius of <code>10px</code>");'
@@ -61,22 +61,22 @@ tests:
 
 <h2 class="red-text">CatPhotoApp</h2>
 <main>
-  <p class="red-text">Click here to view more <a href="#">cat photos</a>.</p>
+  <p class="red-text">Нажмите здесь, чтобы просмотреть больше <a href="#">cat photos</a>.</p>
 
-  <a href="#"><img class="smaller-image thick-green-border" src="https://bit.ly/fcc-relaxing-cat" alt="A cute orange cat lying on its back."></a>
+  <a href="#"><img class="smaller-image thick-green-border" src="https://bit.ly/fcc-relaxing-cat" alt="Симпатичная оранжевая кошка лежит на спине."></a>
 
   <div>
-    <p>Things cats love:</p>
+    <p>Вещи которые кошки любят:</p>
     <ul>
-      <li>cat nip</li>
-      <li>laser pointers</li>
-      <li>lasagna</li>
+      <li>котовник</li>
+      <li>лазерные указки</li>
+      <li>лазанья</li>
     </ul>
-    <p>Top 3 things cats hate:</p>
+    <p>Топ 3 вещи которые кошки ненавидят:</p>
     <ol>
-      <li>flea treatment</li>
-      <li>thunder</li>
-      <li>other cats</li>
+      <li>лечение блох</li>
+      <li>гром</li>
+      <li>другие кошки</li>
     </ol>
   </div>
 
