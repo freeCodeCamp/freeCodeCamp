@@ -7,7 +7,9 @@ title: Bash Cat
 Cat is one of the most frequently used commands in Unix operating systems.
 
 Cat is used to read a file sequentially and print it to the standard output.
-The name is derived from its function to con**cat**enate files.
+The name is derived from its function to con**cat**enate files. 
+
+To print file lines in reverse order, **tac** command can be used which has the same syntax as cat.
 
 ### Usage
 
