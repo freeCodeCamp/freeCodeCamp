@@ -1,5 +1,5 @@
 ---
-title: Accessibility Basics
+ ACCESSIBILITY BASICS 101
 ---
 
 ## Accessibility Basics
