@@ -20,10 +20,8 @@ If you're a Mac or Linux user, ssh support is built right into your terminal! Wi
 If connecting with a terminal, you can test if your connection is working by typing `ssh username@remote` into your terminal. Remote would be the IP address of the machine that you want to log into and username would be the user you want to login as. You should be prompted for a password. Once you enter the password, you should be logged in remotely!
 
 ### More information
-<a href="https://en.wikipedia.org/wiki/Comparison_of_SSH_clients">Comparison of SSH clients(Wikipedia)</a>
-<br>
-<a href="https://youtu.be/zlv9dI-9g1U">How SSH Works (YouTube Video)</a>
-<br>
-<a href="https://en.wikipedia.org/wiki/Secure_Shell">SSH(Wikipedia)</a><br>
-<a href="https://www.wikihow.com/Use-SSH">How to Use SSH(Wikihow)</a><br>
-<a href="http://overthewire.org/wargames/bandit/bandit0.html">OverTheWire Bandit Wargame (real-life SSH practice)</a>
+- [Comparison of SSH clients (Wikipedia)](https://en.wikipedia.org/wiki/Comparison_of_SSH_clients)
+- [How SSH Works (YouTube Video)](https://www.youtube.com/watch?v=zlv9dI-9g1U)
+- [SSH (Wikipedia)](https://en.wikipedia.org/wiki/Secure_Shell)
+- [How to Use SSH (Wikihow)](https://www.wikihow.com/Use-SSH)
+- [OverTheWire Bandit Wargame (real-life SSH practice)](http://overthewire.org/wargames/bandit/bandit0.html)
