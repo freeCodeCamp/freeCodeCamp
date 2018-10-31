@@ -6,6 +6,7 @@ title: connecting-to-firebase
 1. The Latest Version of Android Studio
 
 <br>
+The steps to connect have been concisely mentioned as follows.
 The easiest way to connect to firebase is to use the firebase assistant. 
 
 # 1. Connecting using Firebase Assistant
