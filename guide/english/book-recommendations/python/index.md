@@ -69,11 +69,8 @@ You'll learn many of the first princliples for data science tools and how algori
 
 *Head First Python, Second Edition*
  - Paid book: a great beginner's book; part of the Head First series which uses cognitive science approach to way people learn.
-by Paul Barry
-Publisher: O'Reilly Media, Inc.
-Release Date: November 2016
-ISBN: 9781491919521
-Table of Contents [https://www.oreilly.com/library/view/head-first-python/9781491919521/#toc-start]
+- ISBN: 9781491919521
+[O'reilly] [https://www.oreilly.com/library/view/head-first-python/9781491919521/#toc-start]
 
 #### Other Resources
 
