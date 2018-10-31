@@ -4,27 +4,27 @@ localeTitle: Botones
 ---
 ## Botones
 
-El marco de Bootstrap le proporciona varias opciones de estilo para los botones. Estos estilos le ayudan a proporcionar una representación visual al usuario de lo que puede hacer el botón.
+Bootstrap le proporciona varias opciones de estilo para los botones. Estos estilos le proporcionan una representación visual al usuario de lo que puede hacer el botón.
 
-#### Cómo utilizar:
+#### Cómo usarlos:
 
-Para usar los botones de arranque, siga los mismos pasos que haría para crear un botón en HTML, excepto que también aplica la clase de CSS correspondiente al botón. A continuación se proporciona un ejemplo de código.
+Para usar los botones, siga los mismos pasos que haría para crear un botón en HTML, excepto que también aplica la clase de CSS correspondiente al botón. A continuación se proporciona un ejemplo de código.
 
 **Ejemplo de código:**
 
-`<button type="button" class="btn btn-primary">Primary</button>`
+`<button type="button" class="btn btn-primario">Primario</button>`
 
 Primario
 
-También puede usar los botones de arranque con los elementos `<a>` e `<input>` como se muestra en los ejemplos a continuación.
+También puede usar los botones con los elementos `<a>` e `<input>` como se muestra en los ejemplos a continuación.
 
-`<a class="btn btn-primary" href="#" role="button">This button is a link</a>`
+`<a class="btn btn-primary" href="#" role="button">Este botón es un enlace</a>`
 
 [Este botón es un enlace.](#)
 
 `<input class="btn btn-primary" type="submit" value="Submit">`
 
-#### Lista de clases de botones de arranque:
+#### Lista de clases de botones:
 
 Esta es una lista de las clases CSS que bootstrap proporciona para los botones.
 
