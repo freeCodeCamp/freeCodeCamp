@@ -39,6 +39,20 @@ print("Hello, I am " + str(age) + " years old")
 ```
 <a href='https://repl.it/Jz8Q/0' target='_blank' rel='nofollow'>Run code on repl.it</a>
 
+Formatted string literals or "f-strings":
+
+Python 3.6 (and later) allows strings to be [formatted with minimal syntax](https://docs.python.org/3/whatsnew/3.6.html#pep-498-formatted-string-literals).
+
+```py
+name = "Xochitl"
+age = 45
+
+f'Hello, my name is {name}, and I am {age} years young.'
+
+# Output
+# 'Hello, my name is Xochitl, and I am 45 years young.'
+```
+
 Print `1 2 3 4 5 6 7 8 9 10` using a single string
 ```py
 result = ""
@@ -67,7 +81,9 @@ print(result)
 
 
 #### More Information:
-<a href='https://docs.python.org/3/library/stdtypes.html#str' target='_blank' rel='nofollow'>Official Python documentation for `str()`</a>
+- <a href='https://docs.python.org/3/library/stdtypes.html#str' target='_blank' rel='nofollow'>Official Python documentation for `str()`</a>
+
+- Official Python documentation for <a href='https://docs.python.org/3/reference/lexical_analysis.html#formatted-string-literals' target='_blank' rel='nofollow'>_formatted string literals_ or _f-strings_.</a>
 
 
 
