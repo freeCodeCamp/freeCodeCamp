@@ -53,4 +53,4 @@ To see the full list, visit: https://talkpython.fm/episodes/show/130/10-books-py
 
 [Programming Throwdown - Good overview of multiple languages and concepts](https://www.programmingthrowdown.com/)
 
-[Shop Talk: A Web Design and Development Podcast] (https://shoptalkshow.com/)
+[Shop Talk: A Web Design and Development Podcast](https://shoptalkshow.com/)
