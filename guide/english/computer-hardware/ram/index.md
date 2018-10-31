@@ -13,6 +13,7 @@ There are two main types of RAM: static (SRAM) and dynamic (DRAM). Static RAM is
 Some examples of packaging RAM are: DIMM, RIMM, SIMM, SO-DIMM, and SOO-RIMM. Below is an example image of a 512 MB DIMM computer memory module, a typical piece of RAM found in desktop computers. This memory module would be installed into one of the memory slots on a motherboard.
 
 ![RAM](https://images-na.ssl-images-amazon.com/images/I/41kVnWQebtL._SL256_.jpg)
+![RAM SLOT] (https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcR2nvNiUisA5iaPnKKQwrCWLlTKQxLJFieCgtf50JHU5Ms_q6iQ)
 
 #### RAM speeds:
 
