@@ -95,7 +95,7 @@ The Acceptance test Report has the following attributes:
 >
 > - Approval Decision
 
-Acceptance Testing focuses on checking if the developed software meets all the requirements. Its main purpose is to check if the solution developed meets the user expectations.
+Acceptance Testing focuses on checking if the developed software meets all the requirements or not. Its main purpose is to check if the solution developed meets the user expectations.
 
 Acceptance Testing is a well-established practice in software development. Acceptance Testing is a major part of Functional Testing of your code.
 
