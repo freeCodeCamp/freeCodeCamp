@@ -14,7 +14,7 @@ Figura 1 - Ejemplo de tabla de usuario.
 
 ## Archivos
 
-Un registro es una sola entidad de datos. Como en el ejemplo anterior, podría ser un usuario, una cuenta, un dispositivo o cualquier cosa que los datos puedan representar. Los registros necesitan un identificador único, a veces denominado clave. Esta clave debe ser única, ya que se utiliza para describir las relaciones que un registro tiene con otros registros en otras tablas. En la Figura 1, podríamos agregar claves a cada fila que identifique a cada usuario con una clave y la tabla ahora se vería como la Figura 2.
+Un registro es una sola entidad de datos. Como en el ejemplo anterior, podría ser un usuario, una cuenta, un dispositivo o cualquier cosa que los datos puedan representar. Los registros necesitan un identificador único, a veces denominado clave. Esta clave debe ser única, ya que se utiliza para describir las relaciones que un registro tiene con otros registros en otras tablas. En la Figura 1, podríamos agregar en cada fila una clave que identifique a cada usuario y la tabla se vería como la Figura 2.
 
 | Llave | usuario | email | Teléfono | | ----------- | ------------ | ------------------ | ----- --------------------------------- | | u1 | Jerry | j@j.uk.za | 771447444121 | | u2 | Sally | batgirl@gh.co.za | 771447444121 | | u3 | Alex | samwis@tty.fe | 771447444121 | | u4 | Doug | 4sure@dam.us | 745151515152 |
 
@@ -40,7 +40,7 @@ Una relación de uno a varios es un registro vinculado a muchos otros registros,
 
 ## Conclusión
 
-Esta es solo una breve introducción a las bases de datos relacionales. A continuación se proporcionan enlaces a recursos que podrían ayudarlo a estudiar más a fondo el tema.
+Esta es solo una breve introducción a las bases de datos relacionales. A continuación se proporcionan enlaces a recursos que podrían ayudarlo a estudiar el tema más a fondo.
 
 #### Más información:
 
