@@ -1,24 +1,16 @@
 ---
 id: cf1111c1c12feddfaeb1bdef
 title: Generate Random Whole Numbers with JavaScript
-localeTitle: Generar números enteros al azar con JavaScript
 challengeType: 1
+videoUrl: ''
+localeTitle: Generar números enteros al azar con JavaScript
 ---
 
 ## Description
-<section id='description'> 
-Es genial que podamos generar números decimales aleatorios, pero es aún más útil si lo usamos para generar números enteros aleatorios. 
-<ol><li> Usa <code>Math.random()</code> para generar un decimal aleatorio. </li><li> Multiplica ese decimal aleatorio por <code>20</code> . </li><li> Use otra función, <code>Math.floor()</code> para redondear el número a su número entero más cercano. </li></ol> 
-Recuerda que <code>Math.random()</code> nunca puede devolver un <code>1</code> y, porque estamos redondeando, es imposible obtener <code>20</code> . Esta técnica nos dará un número entero entre <code>0</code> y <code>19</code> . 
-Poniendo todo junto, así es como se ve nuestro código: 
-<code>Math.floor(Math.random() * 20);</code> 
-Estamos llamando a <code>Math.random()</code> , multiplicamos el resultado por 20 y luego <code>Math.floor()</code> el valor a la función <code>Math.floor()</code> para redondear el valor al número entero más cercano. 
-</section>
+<section id="description"> Es genial que podamos generar números decimales aleatorios, pero es aún más útil si lo usamos para generar números enteros aleatorios. <ol><li> Usa <code>Math.random()</code> para generar un decimal aleatorio. </li><li> Multiplica ese decimal aleatorio por <code>20</code> . </li><li> Use otra función, <code>Math.floor()</code> para redondear el número a su número entero más cercano. </li></ol> Recuerda que <code>Math.random()</code> nunca puede devolver un <code>1</code> y, como estamos redondeando, es imposible obtener <code>20</code> . Esta técnica nos dará un número entero entre <code>0</code> y <code>19</code> . Poniendo todo junto, así es como se ve nuestro código: <code>Math.floor(Math.random() * 20);</code> Llamamos a <code>Math.random()</code> , multiplicamos el resultado por 20 y luego <code>Math.floor()</code> el valor a la función <code>Math.floor()</code> para redondear el valor al número entero más cercano. </section>
 
 ## Instructions
-<section id='instructions'> 
-Use esta técnica para generar y devolver un número entero aleatorio entre <code>0</code> y <code>9</code> . 
-</section>
+<section id="instructions"> Utilice esta técnica para generar y devolver un número entero aleatorio entre <code>0</code> y <code>9</code> . </section>
 
 ## Tests
 <section id='tests'>
@@ -52,6 +44,7 @@ function randomWholeNum() {
 
   return Math.random();
 }
+
 ```
 
 </div>
@@ -71,12 +64,7 @@ console.info('after the test');
 ## Solution
 <section id='solution'>
 
-
 ```js
-var randomNumberBetween0and19 = Math.floor(Math.random() * 20);
-function randomWholeNum() {
-  return Math.floor(Math.random() * 10);
-}
+// solution required
 ```
-
 </section>

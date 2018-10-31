@@ -1,19 +1,16 @@
 ---
 id: bad87fee1348bd9aec908852
 title: Create a Class to Target with jQuery Selectors
-localeTitle: Crea una clase para apuntar con los selectores jQuery
 challengeType: 0
+videoUrl: ''
+localeTitle: Crea una clase para apuntar con los selectores jQuery
 ---
 
 ## Description
-<section id='description'> 
-No todas las clases necesitan tener CSS correspondiente. A veces creamos clases con el único fin de seleccionar estos elementos más fácilmente utilizando jQuery. 
-Da a cada uno de los elementos de tu <code>button</code> el <code>target</code> la clase. 
-</section>
+<section id="description"> No todas las clases necesitan tener CSS correspondiente. A veces creamos clases con el único fin de seleccionar estos elementos más fácilmente utilizando jQuery. Dale a cada uno de los elementos de tu <code>button</code> el <code>target</code> la clase. </section>
 
 ## Instructions
-<section id='instructions'> 
-
+<section id="instructions">
 </section>
 
 ## Tests
@@ -53,6 +50,7 @@ tests:
     </div>
   </div>
 </div>
+
 ```
 
 </div>

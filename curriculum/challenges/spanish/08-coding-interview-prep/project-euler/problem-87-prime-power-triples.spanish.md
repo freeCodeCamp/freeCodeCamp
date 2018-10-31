@@ -1,23 +1,16 @@
 ---
-id: 5
-localeTitle: 5900f3c51000cf542c50fed8
+id: 5900f3c51000cf542c50fed8
 challengeType: 5
 title: 'Problem 87: Prime power triples'
+videoUrl: ''
+localeTitle: 'Problema 87: la potencia principal se triplica'
 ---
 
 ## Description
-<section id='description'> 
-El número más pequeño expresable como la suma de un cuadrado principal, un cubo principal y una cuarta potencia principal es 28. De hecho, hay exactamente cuatro números por debajo de cincuenta que se pueden expresar de tal manera: 
-28 = 22 + 23 + 24 
-33 = 32 + 23 + 24 
-49 = 52 + 23 + 24 
-47 = 22 + 33 + 24 
-¿Cuántos números por debajo de cincuenta millones se pueden expresar como la suma de un cuadrado primario, un cubo primario y una cuarta potencia principal? 
-</section>
+<section id="description"> El número más pequeño expresable como la suma de un cuadrado principal, un cubo principal y una cuarta potencia principal es 28. De hecho, hay exactamente cuatro números por debajo de cincuenta que se pueden expresar de tal manera: 28 = 22 + 23 + 24 33 = 32 + 23 + 24 49 = 52 + 23 + 24 47 = 22 + 33 + 24 ¿Cuántos números por debajo de cincuenta millones se pueden expresar como la suma de un cuadrado primario, un cubo primario y una cuarta potencia principal? </section>
 
 ## Instructions
-<section id='instructions'> 
-
+<section id="instructions">
 </section>
 
 ## Tests
@@ -44,6 +37,7 @@ function euler87() {
 }
 
 euler87();
+
 ```
 
 </div>

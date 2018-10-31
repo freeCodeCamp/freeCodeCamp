@@ -1,21 +1,16 @@
 ---
 id: 587d824b367417b2b2512c49
 title: Test for Truthiness
-localeTitle: Prueba de la verdad
 challengeType: 2
+videoUrl: ''
+localeTitle: Prueba de la verdad
 ---
 
 ## Description
-<section id='description'> 
-Como recordatorio, este proyecto se está construyendo sobre el siguiente proyecto de inicio en <a href='https://glitch.com/#!/import/github/freeCodeCamp/boilerplate-mochachai/'>Glitch</a> , o clonado desde <a href='https://github.com/freeCodeCamp/boilerplate-mochachai/'>GitHub</a> . 
-Utilice assert.isTrue () o assert.isNotTrue () para hacer que se pasen las pruebas. 
-.isTrue (verdadero) y .isNotTrue (todo lo demás) pasarán. 
-.isFalse () y .isNotFalse () también existen. 
-</section>
+<section id="description"> Como recordatorio, este proyecto se está construyendo sobre el siguiente proyecto de inicio en <a href="https://glitch.com/#!/import/github/freeCodeCamp/boilerplate-mochachai/">Glitch</a> , o clonado desde <a href="https://github.com/freeCodeCamp/boilerplate-mochachai/">GitHub</a> . Utilice assert.isTrue () o assert.isNotTrue () para hacer que se pasen las pruebas. .isTrue (verdadero) y .isNotTrue (todo lo demás) pasarán. .isFalse () y .isNotFalse () también existen. </section>
 
 ## Instructions
-<section id='instructions'> 
-
+<section id="instructions">
 </section>
 
 ## Tests

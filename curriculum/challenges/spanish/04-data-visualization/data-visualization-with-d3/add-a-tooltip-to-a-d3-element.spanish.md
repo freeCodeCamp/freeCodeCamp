@@ -1,22 +1,18 @@
 ---
 id: 587d7faa367417b2b2512bd6
 title: Add a Tooltip to a D3 Element
-localeTitle: Añadir una información sobre herramientas a un elemento D3
 required:
   - src: 'https://cdnjs.cloudflare.com/ajax/libs/d3/4.3.0/d3.min.js'
 challengeType: 6
+videoUrl: ''
+localeTitle: Añadir una información sobre herramientas a un elemento D3
 ---
 
 ## Description
-<section id='description'> 
-Una información sobre herramientas muestra más información sobre un elemento en una página cuando el usuario se desplaza sobre ese elemento. Hay varias formas de agregar información sobre herramientas a una visualización, este desafío utiliza el elemento de <code>title</code> SVG. 
-pares de <code>title</code> con el método <code>text()</code> para agregar dinámicamente datos a las barras. 
-</section>
+<section id="description"> Una información sobre herramientas muestra más información sobre un elemento en una página cuando el usuario se desplaza sobre ese elemento. Hay varias formas de agregar información sobre herramientas a una visualización, este desafío utiliza el elemento de <code>title</code> SVG. <code>title</code> combinan con el método <code>text()</code> para agregar dinámicamente datos a las barras. </section>
 
 ## Instructions
-<section id='instructions'> 
-Agregue un elemento de <code>title</code> debajo de cada nodo <code>rect</code> . Luego llame al método <code>text()</code> con una función de devolución de llamada para que el texto muestre el valor de los datos. 
-</section>
+<section id="instructions"> Agregue un elemento de <code>title</code> debajo de cada nodo <code>rect</code> . Luego llame al método <code>text()</code> con una función de devolución de llamada para que el texto muestre el valor de los datos. </section>
 
 ## Tests
 <section id='tests'>
@@ -97,6 +93,7 @@ tests:
 
   </script>
 </body>
+
 ```
 
 </div>

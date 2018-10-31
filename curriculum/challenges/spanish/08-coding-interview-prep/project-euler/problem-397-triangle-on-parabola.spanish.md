@@ -1,25 +1,16 @@
 ---
-id: 5
-localeTitle: 5900f4f91000cf542c51000c
+id: 5900f4f91000cf542c51000c
 challengeType: 5
 title: 'Problem 397: Triangle on parabola'
+videoUrl: ''
+localeTitle: 'Problema 397: Triángulo en parábola'
 ---
 
 ## Description
-<section id='description'> 
-En la parábola y = x2 / k, se eligen tres puntos A (a, a2 / k), B (b, b2 / k) y C (c, c2 / k). 
-
-
-Sea F (K, X) el número de los cuádruples enteros (k, a, b, c) de manera que al menos un ángulo del triángulo ABC sea de 45 grados, con 1 ≤ k ≤ K y -X ≤ a &lt;b &lt;c ≤ X. 
-
-
-Por ejemplo, F (1, 10) = 41 y F (10, 100) = 12492. 
-Encuentre F (106, 109). 
-</section>
+<section id="description"> En la parábola y = x2 / k, se eligen tres puntos A (a, a2 / k), B (b, b2 / k) y C (c, c2 / k). <p> Sea F (K, X) el número de los cuadrupletes de enteros (k, a, b, c) de modo que al menos un ángulo del triángulo ABC sea de 45 grados, con 1 ≤ k ≤ K y -X ≤ a &lt; b &lt;c ≤ X. </p><p> Por ejemplo, F (1, 10) = 41 y F (10, 100) = 12492. Encuentre F (106, 109). </p></section>
 
 ## Instructions
-<section id='instructions'> 
-
+<section id="instructions">
 </section>
 
 ## Tests
@@ -46,6 +37,7 @@ function euler397() {
 }
 
 euler397();
+
 ```
 
 </div>

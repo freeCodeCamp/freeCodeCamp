@@ -1,26 +1,19 @@
 ---
 id: 587d7dbd367417b2b2512bb5
 title: Nest CSS with Sass
-localeTitle: Nest CSS con Sass
 required:
   - src: 'https://cdnjs.cloudflare.com/ajax/libs/sass.js/0.10.9/sass.sync.min.js'
     raw: true
 challengeType: 0
+videoUrl: ''
+localeTitle: Nest CSS con Sass
 ---
 
 ## Description
-<section id='description'> 
-Sass permite <code>nesting</code> reglas CSS, lo que es una forma útil de organizar una hoja de estilo. 
-Normalmente, cada elemento está enfocado en una línea diferente para diseñarlo, así: 
-<blockquote>nav {<br>&nbsp;&nbsp;background-color: red;<br>}<br><br>nav ul {<br>&nbsp;&nbsp;list-style: none;<br>}<br><br>nav ul li {<br>&nbsp;&nbsp;display: inline-block;<br>}</blockquote> 
-Para un proyecto grande, el archivo CSS tendrá muchas líneas y reglas. Aquí es donde el <code>nesting</code> puede ayudar a organizar su código al colocar reglas de estilo secundarias dentro de los elementos principales respectivos: 
-<blockquote>nav {<br>&nbsp;&nbsp;background-color: red;<br><br>&nbsp;&nbsp;ul {<br>&nbsp;&nbsp;&nbsp;&nbsp;list-style: none;<br><br>&nbsp;&nbsp;&nbsp;&nbsp;li {<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;display: inline-block;<br>&nbsp;&nbsp;&nbsp;&nbsp;}<br>&nbsp;&nbsp;}<br>}<br></blockquote> 
-</section>
+<section id="description"> Sass permite <code>nesting</code> reglas CSS, que es una forma útil de organizar una hoja de estilo. Normalmente, cada elemento está enfocado en una línea diferente para diseñarlo, así: <blockquote> nav { <br> color de fondo: rojo; <br> } <br><br> nav ul { <br> estilo de lista: ninguno; <br> } <br><br> nav ul li { <br> pantalla: bloque en línea; <br> } </blockquote> Para un proyecto grande, el archivo CSS tendrá muchas líneas y reglas. Aquí es donde el <code>nesting</code> puede ayudar a organizar su código al colocar reglas de estilo secundarias dentro de los elementos principales respectivos: <blockquote> nav { <br> color de fondo: rojo; <br><br> ul { <br> estilo de lista: ninguno; <br><br> li { <br> pantalla: bloque en línea; <br> } <br> } <br> } <br></blockquote></section>
 
 ## Instructions
-<section id='instructions'> 
-Use la técnica de <code>nesting</code> que se muestra arriba para reorganizar las reglas de CSS para ambos elementos del elemento <code>.blog-post</code> . Para propósitos de prueba, el <code>h1</code> debe venir antes del elemento <code>p</code> . 
-</section>
+<section id="instructions"> Use la técnica de <code>nesting</code> que se muestra arriba para reorganizar las reglas de CSS para ambos elementos del elemento <code>.blog-post</code> . Para propósitos de prueba, el <code>h1</code> debe venir antes del elemento <code>p</code> . </section>
 
 ## Tests
 <section id='tests'>
@@ -57,6 +50,7 @@ tests:
   <h1>Blog Title</h1>
   <p>This is a paragraph</p>
 </div>
+
 ```
 
 </div>

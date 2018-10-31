@@ -1,21 +1,17 @@
 ---
 id: 5a24c314108439a4d4036165
 title: Use React to Render Nested Components
-localeTitle: Use React para renderizar componentes anidados
 challengeType: 6
 isRequired: false
+videoUrl: ''
+localeTitle: Use React para renderizar componentes anidados
 ---
 
 ## Description
-<section id='description'> 
-El último desafío mostró una forma sencilla de componer dos componentes, pero hay muchas formas diferentes de componer componentes con React. 
-composición de componentes es una de las características poderosas de React. Cuando trabaja con React, es importante comenzar a pensar en su interfaz de usuario en términos de componentes como el ejemplo de la aplicación en el último desafío. Rompes tu interfaz de usuario en sus bloques de construcción básicos, y esas piezas se convierten en componentes. Esto ayuda a separar el código responsable de la IU del código responsable de manejar la lógica de la aplicación. Puede simplificar enormemente el desarrollo y mantenimiento de proyectos complejos. 
-</section>
+<section id="description"> El último desafío mostró una forma sencilla de componer dos componentes, pero hay muchas formas diferentes de componer componentes con React. La composición de componentes es una de las características poderosas de React. Cuando trabaja con React, es importante comenzar a pensar en su interfaz de usuario en términos de componentes como el ejemplo de la aplicación en el último desafío. Rompes tu interfaz de usuario en sus bloques de construcción básicos, y esas piezas se convierten en componentes. Esto ayuda a separar el código responsable de la IU del código responsable de manejar la lógica de la aplicación. Puede simplificar enormemente el desarrollo y mantenimiento de proyectos complejos. </section>
 
 ## Instructions
-<section id='instructions'> 
-Hay dos componentes funcionales definidos en el editor de código, llamados <code>TypesOfFruit</code> y <code>Fruits</code> . Tome el <code>TypesOfFruit</code> componentes y componerlos, o un <em>nido</em> que, dentro de la <code>Fruits</code> componente. Luego tome el componente <code>Fruits</code> y <code>TypesOfFood</code> dentro del componente <code>TypesOfFood</code> . El resultado debe ser un componente hijo, anidado dentro de un componente padre, que está anidado dentro de un componente padre propio. 
-</section>
+<section id="instructions"> Hay dos componentes funcionales definidos en el editor de código, llamados <code>TypesOfFruit</code> y <code>Fruits</code> . Tome el <code>TypesOfFruit</code> componentes y componerlos, o un <em>nido</em> que, dentro de la <code>Fruits</code> componente. Luego tome el componente <code>Fruits</code> y <code>TypesOfFood</code> dentro del componente <code>TypesOfFood</code> . El resultado debe ser un componente hijo, anidado dentro de un componente padre, que está anidado dentro de un componente padre propio. </section>
 
 ## Tests
 <section id='tests'>
@@ -81,6 +77,7 @@ class TypesOfFood extends React.Component {
     );
   }
 };
+
 ```
 
 </div>
@@ -100,48 +97,7 @@ console.info('after the test');
 ## Solution
 <section id='solution'>
 
-
 ```js
-const TypesOfFruit = () => {
-  return (
-    <div>
-      <h2>Fruits:</h2>
-      <ul>
-        <li>Apples</li>
-        <li>Blueberries</li>
-        <li>Strawberries</li>
-        <li>Bananas</li>
-      </ul>
-    </div>
-  );
-};
-
-const Fruits = () => {
-  return (
-    <div>
-      { /* change code below this line */ }
-        <TypesOfFruit />
-      { /* change code above this line */ }
-    </div>
-  );
-};
-
-class TypesOfFood extends React.Component {
-  constructor(props) {
-    super(props);
-  }
-
-  render() {
-    return (
-      <div>
-        <h1>Types of Food:</h1>
-        { /* change code below this line */ }
-        <Fruits />
-        { /* change code above this line */ }
-      </div>
-    );
-  }
-};
+// solution required
 ```
-
 </section>

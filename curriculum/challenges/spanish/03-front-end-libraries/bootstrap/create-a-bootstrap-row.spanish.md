@@ -1,19 +1,16 @@
 ---
 id: bad87fee1348bd9bec908846
 title: Create a Bootstrap Row
-localeTitle: Crear una fila Bootstrap
 challengeType: 0
+videoUrl: ''
+localeTitle: Crear una fila Bootstrap
 ---
 
 ## Description
-<section id='description'> 
-Ahora crearemos una fila Bootstrap para nuestros elementos en línea. 
-Crea un elemento <code>div</code> debajo de la etiqueta <code>h3</code> , con una clase de <code>row</code> . 
-</section>
+<section id="description"> Ahora crearemos una fila Bootstrap para nuestros elementos en línea. Cree un elemento <code>div</code> debajo de la etiqueta <code>h3</code> , con una clase de <code>row</code> . </section>
 
 ## Instructions
-<section id='instructions'> 
-
+<section id="instructions">
 </section>
 
 ## Tests

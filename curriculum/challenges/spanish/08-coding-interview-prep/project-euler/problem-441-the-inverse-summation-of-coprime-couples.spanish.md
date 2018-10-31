@@ -1,28 +1,16 @@
 ---
-id: 5
-localeTitle: 5900f5261000cf542c510038
+id: 5900f5261000cf542c510038
 challengeType: 5
 title: 'Problem 441: The inverse summation of coprime couples'
+videoUrl: ''
+localeTitle: 'Problema 441: La suma inversa de las parejas coprime'
 ---
 
 ## Description
-<section id='description'> 
-Para un entero M, definimos R (M) como la suma de 1 / (p · q) para todos los pares de enteros pyq que satisfacen todas estas condiciones: 
-
-1 ≤ p &lt;q ≤ M 
-p + q ≥ M 
-p y q son coprime. 
-
-También definimos S (N) como la suma de R (i) para 2 ≤ i ≤ N. 
-Podemos verificar que S (2) = R (2) = 1/2, S (10) ≈ 6.9147 y S (100) ≈ 58.2962. 
-
-
-Encuentra S (107). Da tu respuesta redondeada a cuatro lugares decimales. 
-</section>
+<section id="description"> Para un entero M, definimos R (M) como la suma de 1 / (p · q) para todos los pares de enteros pyq que satisfacen todas estas condiciones: <p> 1 ≤ p &lt;q ≤ M p + q ≥ M p y q son coprime. </p><p> También definimos S (N) como la suma de R (i) para 2 ≤ i ≤ N. Podemos verificar que S (2) = R (2) = 1/2, S (10) ≈ 6.9147 y S (100 ) ≈ 58.2962. </p><p> Encontrar S (107). Da tu respuesta redondeada a cuatro lugares decimales. </p></section>
 
 ## Instructions
-<section id='instructions'> 
-
+<section id="instructions">
 </section>
 
 ## Tests
@@ -49,6 +37,7 @@ function euler441() {
 }
 
 euler441();
+
 ```
 
 </div>

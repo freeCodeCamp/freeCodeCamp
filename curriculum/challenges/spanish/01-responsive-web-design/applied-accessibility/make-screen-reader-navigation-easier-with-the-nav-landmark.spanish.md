@@ -1,21 +1,16 @@
 ---
 id: 587d7788367417b2b2512aa2
 title: Make Screen Reader Navigation Easier with the nav Landmark
-localeTitle: Facilita la navegación por el lector de pantalla con el navegador Landmark
 challengeType: 0
 videoUrl: ''
+localeTitle: Facilita la navegación por el lector de pantalla con el navegador Landmark
 ---
 
 ## Description
-<section id='description'> 
-El elemento de <code>nav</code> es otro elemento de HTML5 con la función de marca incorporada para facilitar la navegación del lector de pantalla. Esta etiqueta está diseñada para envolver alrededor de los enlaces de navegación principales en su página. 
-Si hay enlaces repetidos al sitio en la parte inferior de la página, no es necesario marcar también aquellos con una etiqueta de <code>nav</code> . Usar un <code>footer</code> (cubierto en el siguiente desafío) es suficiente. 
-</section>
+<section id="description"> El elemento de <code>nav</code> es otro elemento de HTML5 con la función de marca incorporada para facilitar la navegación del lector de pantalla. Esta etiqueta está diseñada para envolver alrededor de los enlaces de navegación principales en su página. Si hay enlaces repetidos al sitio en la parte inferior de la página, no es necesario marcarlos también con una etiqueta de <code>nav</code> . Usar un <code>footer</code> (cubierto en el siguiente desafío) es suficiente. </section>
 
 ## Instructions
-<section id='instructions'> 
-Camper Cat incluyó enlaces de navegación en la parte superior de su página de entrenamiento, pero los envolvió en un <code>div</code> . Cambie el <code>div</code> a una etiqueta de <code>nav</code> para mejorar la accesibilidad en su página. 
-</section>
+<section id="instructions"> Camper Cat incluyó enlaces de navegación en la parte superior de su página de entrenamiento, pero los envolvió en un <code>div</code> . Cambie el <code>div</code> a una etiqueta de <code>nav</code> para mejorar la accesibilidad en su página. </section>
 
 ## Tests
 <section id='tests'>
@@ -72,6 +67,7 @@ tests:
     </section>
   </main>
 </body>
+
 ```
 
 </div>

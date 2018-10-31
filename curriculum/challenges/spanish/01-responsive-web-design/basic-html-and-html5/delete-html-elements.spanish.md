@@ -1,21 +1,16 @@
 ---
 id: bad87fed1348bd9aedf08833
 title: Delete HTML Elements
-localeTitle: Eliminar elementos HTML
 challengeType: 0
 videoUrl: ''
+localeTitle: Eliminar elementos HTML
 ---
 
 ## Description
-<section id='description'> 
-Nuestro teléfono no tiene mucho espacio vertical. 
-Eliminemos los elementos innecesarios para que podamos comenzar a construir nuestra CatPhotoApp. 
-</section>
+<section id="description"> Nuestro teléfono no tiene mucho espacio vertical. Vamos a eliminar los elementos innecesarios para que podamos comenzar a construir nuestra CatPhotoApp. </section>
 
 ## Instructions
-<section id='instructions'> 
-Borre su elemento <code>h1</code> para que podamos simplificar nuestra vista. 
-</section>
+<section id="instructions"> Borre su elemento <code>h1</code> para que podamos simplificar nuestra vista. </section>
 
 ## Tests
 <section id='tests'>
@@ -44,6 +39,7 @@ tests:
 <h2>CatPhotoApp</h2>
 
 <p>Kitty ipsum dolor sit amet, shed everywhere shed everywhere stretching attack your ankles chase the red dot, hairball run catnip eat the grass sniff.</p>
+
 ```
 
 </div>
@@ -55,9 +51,7 @@ tests:
 ## Solution
 <section id='solution'>
 
-
 ```js
-var code = "<h2>CatPhotoApp</h2><p>Kitty ipsum dolor sit amet, shed everywhere shed everywhere stretching attack your ankles chase the red dot, hairball run catnip eat the grass sniff.</p>"
+// solution required
 ```
-
 </section>

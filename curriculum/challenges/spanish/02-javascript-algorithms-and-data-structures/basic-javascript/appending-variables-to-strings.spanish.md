@@ -1,20 +1,17 @@
 ---
 id: 56533eb9ac21ba0edf2244ed
 title: Appending Variables to Strings
-localeTitle: Anexando Variables a las Cadenas
 challengeType: 1
 guideUrl: 'https://spanish.freecodecamp.org/guide/certificates/appending-variables-to-strings'
+videoUrl: ''
+localeTitle: Anexando Variables a las Cadenas
 ---
 
 ## Description
-<section id='description'> 
-Al igual que podemos construir una cadena sobre varias líneas a partir de <dfn>literales</dfn> de cadena, también podemos agregar variables a una cadena usando el operador más es igual a ( <code>+=</code> ). 
-</section>
+<section id="description"> Del mismo modo que podemos construir una cadena sobre varias líneas a partir de <dfn>literales</dfn> de cadena, también podemos agregar variables a una cadena utilizando el operador más es igual a ( <code>+=</code> ). </section>
 
 ## Instructions
-<section id='instructions'> 
-Establezca <code>someAdjective</code> y <code>someAdjective</code> a <code>myStr</code> usando el operador <code>+=</code> . 
-</section>
+<section id="instructions"> Configure <code>someAdjective</code> y <code>someAdjective</code> a <code>myStr</code> usando el operador <code>+=</code> . </section>
 
 ## Tests
 <section id='tests'>
@@ -65,15 +62,7 @@ console.info('after the test');
 ## Solution
 <section id='solution'>
 
-
 ```js
-var anAdjective = "awesome!";
-var ourStr = "freeCodeCamp is ";
-ourStr += anAdjective;
-
-var someAdjective = "neat";
-var myStr = "Learning to code is ";
-myStr += someAdjective;
+// solution required
 ```
-
 </section>

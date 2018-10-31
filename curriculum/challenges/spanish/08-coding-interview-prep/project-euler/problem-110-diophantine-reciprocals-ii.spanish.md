@@ -1,21 +1,16 @@
 ---
-id: 5
-localeTitle: 5900f3db1000cf542c50feed
+id: 5900f3db1000cf542c50feed
 challengeType: 5
 title: 'Problem 110: Diophantine Reciprocals II'
+videoUrl: ''
+localeTitle: 'Problema 110: Reciprocos diofánticos II'
 ---
 
 ## Description
-<section id='description'> 
-En la siguiente ecuación x, y yn son enteros positivos. 
-1 / <var>x</var> + 1 / <var>y</var> = 1 / <var>n</var> 
-Se puede verificar que cuando <var>n</var> = 1260 hay 113 soluciones distintas y este es el valor mínimo de <var>n</var> para el cual el número total de soluciones distintas supera las cien. 
-¿Cuál es el valor mínimo de <var>n</var> para el cual el número de soluciones distintas supera los cuatro millones? 
-</section>
+<section id="description"> En la siguiente ecuación, x, y y n son enteros positivos. 1 / <var>x</var> + 1 / <var>y</var> = 1 / <var>n</var> Se puede verificar que cuando <var>n</var> = 1260 hay 113 soluciones distintas y este es el valor mínimo de <var>n</var> para el cual el número total de soluciones distintas supera las cien. ¿Cuál es el valor mínimo de <var>n</var> para el cual el número de soluciones distintas supera los cuatro millones? </section>
 
 ## Instructions
-<section id='instructions'> 
-
+<section id="instructions">
 </section>
 
 ## Tests
@@ -42,6 +37,7 @@ function diophantineTwo() {
 }
 
 diophantineTwo();
+
 ```
 
 </div>

@@ -1,21 +1,16 @@
 ---
 id: 587d7b85367417b2b2512b39
 title: Catch Missing Open and Closing Parenthesis After a Function Call
-localeTitle: Atrapa los paréntesis abiertos y de cierre que faltan después de una llamada de función
 challengeType: 1
+videoUrl: ''
+localeTitle: Atrapa los paréntesis abiertos y de cierre que faltan después de una llamada de función
 ---
 
 ## Description
-<section id='description'> 
-Cuando una función o método no acepta ningún argumento, puede olvidarse de incluir los paréntesis de apertura y cierre (vacíos) al llamarla. Muchas veces, el resultado de una llamada de función se guarda en una variable para otro uso en su código. Este error se puede detectar registrando valores de variables (o sus tipos) en la consola y al ver que uno se establece en una referencia de función, en lugar del valor esperado que devuelve la función. 
-Las variables en el siguiente ejemplo son diferentes: 
-<blockquote>function myFunction() {<br>&nbsp;&nbsp;return "You rock!";<br>}<br>let varOne = myFunction; // set to equal a function<br>let varTwo = myFunction(); // set to equal the string "You rock!"</blockquote> 
-</section>
+<section id="description"> Cuando una función o método no toma ningún argumento, puede olvidarse de incluir los paréntesis de apertura y cierre (vacíos) al llamarla. Muchas veces, el resultado de una llamada de función se guarda en una variable para otro uso en su código. Este error se puede detectar registrando valores de variables (o sus tipos) en la consola y al ver que uno se establece en una referencia de función, en lugar del valor esperado que devuelve la función. Las variables en el siguiente ejemplo son diferentes: <blockquote> función myFunction () { <br> regresa &quot;¡Tú rock!&quot;; <br> } <br> deja varOne = myFunction; // establecer para igualar una función <br> vamos varTwo = myFunction (); // establecer para igualar la cadena &quot;You rock!&quot; </blockquote></section>
 
 ## Instructions
-<section id='instructions'> 
-Corrija el código para que el <code>result</code> variable se establezca en el valor devuelto al llamar a la función <code>getNine</code> . 
-</section>
+<section id="instructions"> Corrija el código para que el <code>result</code> variable se establezca en el valor devuelto al llamar a la función <code>getNine</code> . </section>
 
 ## Tests
 <section id='tests'>
@@ -45,6 +40,7 @@ function getNine() {
 
 let result = getNine;
 console.log(result);
+
 ```
 
 </div>

@@ -1,21 +1,16 @@
 ---
 id: 5675e877dbd60be8ad28edc6
 title: Iterate Through an Array with a For Loop
-localeTitle: Iterar a través de una matriz con un bucle For
 challengeType: 1
+videoUrl: ''
+localeTitle: Iterar a través de una matriz con un bucle For
 ---
 
 ## Description
-<section id='description'> 
-Una tarea común en JavaScript es iterar a través del contenido de una matriz. Una forma de hacerlo es con un bucle <code>for</code> . Este código dará salida a cada elemento de la matriz <code>arr</code> a la consola: 
-<blockquote>var arr = [10,9,8,7,6];<br>for (var i = 0; i < arr.length; i++) {<br>&nbsp;&nbsp; console.log(arr[i]);<br>}</blockquote> 
-Recuerde que las matrices tienen numeración basada en cero, lo que significa que el último índice de la matriz es la longitud - 1. Nuestra <dfn>condición</dfn> para este bucle es <code>i &lt; arr.length</code> , que se detiene cuando <code>i</code> tiene la longitud - 1. 
-</section>
+<section id="description"> Una tarea común en JavaScript es iterar a través del contenido de una matriz. Una forma de hacerlo es con un bucle <code>for</code> . Este código dará salida a cada elemento de la matriz <code>arr</code> a la consola: <blockquote> var arr = [10,9,8,7,6]; <br> para (var i = 0; i &lt;arr.length; i ++) { <br> console.log (arr [i]); <br> } </blockquote> Recuerde que las matrices tienen numeración basada en cero, lo que significa que el último índice de la matriz es la longitud - 1. Nuestra <dfn>condición</dfn> para este bucle es <code>i &lt; arr.length</code> , que se detiene cuando <code>i</code> tiene la longitud - 1. </section>
 
 ## Instructions
-<section id='instructions'> 
-Declarar e inicializar una variable <code>total</code> a <code>0</code> . Use un bucle <code>for</code> para agregar el valor de cada elemento de la matriz <code>myArr</code> al <code>total</code> . 
-</section>
+<section id="instructions"> Declarar e inicializar una variable <code>total</code> a <code>0</code> . Use un bucle <code>for</code> para agregar el valor de cada elemento de la matriz <code>myArr</code> al <code>total</code> . </section>
 
 ## Tests
 <section id='tests'>
@@ -54,7 +49,6 @@ var myArr = [ 2, 3, 4, 5, 6];
 
 // Only change code below this line
 
-
 ```
 
 </div>
@@ -74,21 +68,7 @@ console.info('after the test');
 ## Solution
 <section id='solution'>
 
-
 ```js
-var ourArr = [ 9, 10, 11, 12];
-var ourTotal = 0;
-
-for (var i = 0; i < ourArr.length; i++) {
-  ourTotal += ourArr[i];
-}
-
-var myArr = [ 2, 3, 4, 5, 6];
-var total = 0;
-
-for (var i = 0; i < myArr.length; i++) {
-  total += myArr[i];
-}
+// solution required
 ```
-
 </section>

@@ -1,21 +1,17 @@
 ---
 id: 5a24c314108439a4d4036152
 title: Use const for Action Types
-localeTitle: Utilice const para tipos de acción
 challengeType: 6
 isRequired: false
+videoUrl: ''
+localeTitle: Utilice const para tipos de acción
 ---
 
 ## Description
-<section id='description'> 
-Una práctica común cuando se trabaja con Redux es asignar tipos de acción como constantes de solo lectura, luego hacer referencia a estas constantes donde sea que se usen. Puede refactorizar el código con el que está trabajando para escribir los tipos de acción como <code>const</code> . 
-</section>
+<section id="description"> Una práctica común cuando se trabaja con Redux es asignar tipos de acción como constantes de solo lectura, luego hacer referencia a estas constantes donde sea que se usen. Puede refactorizar el código con el que está trabajando para escribir los tipos de acción como <code>const</code> . </section>
 
 ## Instructions
-<section id='instructions'> 
-Declare <code>LOGIN</code> y <code>LOGOUT</code> como valores <code>const</code> y asígnelos a las cadenas <code>&#39;LOGIN&#39;</code> y <code>&#39;LOGOUT&#39;</code> , respectivamente. Luego, edite el <code>authReducer()</code> y los creadores de acciones para hacer referencia a estas constantes en lugar de valores de cadena. 
-<strong>Nota:</strong> generalmente es una convención para escribir constantes en mayúsculas, y esto también es una práctica estándar en Redux. 
-</section>
+<section id="instructions"> Declare <code>LOGIN</code> y <code>LOGOUT</code> como valores <code>const</code> y asígnelos a las cadenas <code>&#39;LOGIN&#39;</code> y <code>&#39;LOGOUT&#39;</code> , respectivamente. Luego, edite el <code>authReducer()</code> y los creadores de acciones para hacer referencia a estas constantes en lugar de valores de cadena. <strong>Nota:</strong> generalmente es una convención para escribir constantes en mayúsculas, y esto también es una práctica estándar en Redux. </section>
 
 ## Tests
 <section id='tests'>
@@ -91,6 +87,7 @@ const logoutUser = () => {
     type: 'LOGOUT'
   }
 };
+
 ```
 
 </div>
@@ -102,49 +99,7 @@ const logoutUser = () => {
 ## Solution
 <section id='solution'>
 
-
 ```js
-const LOGIN = 'LOGIN';
-const LOGOUT = 'LOGOUT';
-
-const defaultState = {
-  authenticated: false
-};
-
-const authReducer = (state = defaultState, action) => {
-
-  switch (action.type) {
-
-    case LOGIN:
-      return {
-        authenticated: true
-      }
-
-    case LOGOUT:
-      return {
-        authenticated: false
-      }
-
-    default:
-      return state;
-
-  }
-
-};
-
-const store = Redux.createStore(authReducer);
-
-const loginUser = () => {
-  return {
-    type: LOGIN
-  }
-};
-
-const logoutUser = () => {
-  return {
-    type: LOGOUT
-  }
-};
+// solution required
 ```
-
 </section>

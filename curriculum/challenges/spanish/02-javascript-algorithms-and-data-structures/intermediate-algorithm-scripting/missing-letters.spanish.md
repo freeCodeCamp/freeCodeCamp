@@ -1,21 +1,17 @@
 ---
 id: af7588ade1100bde429baf20
 title: Missing letters
-localeTitle: Cartas perdidas
 isRequired: true
 challengeType: 5
+videoUrl: ''
+localeTitle: Cartas perdidas
 ---
 
 ## Description
-<section id='description'> 
-Encuentre la letra que falta en el rango de la letra pasada y devuélvala. 
-Si todas las letras están presentes en el rango, devuelve indefinido. 
-Recuerda usar <a href='http://forum.freecodecamp.org/t/how-to-get-help-when-you-are-stuck/19514' target='_blank'>Read-Search-Ask</a> si te atascas. Trate de emparejar el programa. Escribe tu propio código. 
-</section>
+<section id="description"> Encuentra la letra que falta en el rango de letras aprobadas y devuélvela. Si todas las letras están presentes en el rango, devuelve indefinido. Recuerda usar <a href="http://forum.freecodecamp.org/t/how-to-get-help-when-you-are-stuck/19514" target="_blank">Read-Search-Ask</a> si te atascas. Trate de emparejar el programa. Escribe tu propio código. </section>
 
 ## Instructions
-<section id='instructions'> 
-
+<section id="instructions">
 </section>
 
 ## Tests
@@ -49,6 +45,7 @@ function fearNotLetter(str) {
 }
 
 fearNotLetter("abce");
+
 ```
 
 </div>
@@ -60,18 +57,7 @@ fearNotLetter("abce");
 ## Solution
 <section id='solution'>
 
-
 ```js
-function fearNotLetter (str) {
-  for (var i = str.charCodeAt(0); i <= str.charCodeAt(str.length - 1); i++) {
-    var letter = String.fromCharCode(i);
-    if (str.indexOf(letter) === -1) {
-      return letter;
-    }
-  }
-
-  return undefined;
-}
+// solution required
 ```
-
 </section>

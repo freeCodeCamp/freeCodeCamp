@@ -1,22 +1,16 @@
 ---
-id: 5
-localeTitle: 5900f3941000cf542c50fea7
+id: 5900f3941000cf542c50fea7
 challengeType: 5
 title: 'Problem 40: Champernowne"s constant'
+videoUrl: ''
+localeTitle: 'Problema 40: constante de Champernowne'
 ---
 
 ## Description
-<section id='description'> 
-Una fracción decimal irracional se crea mediante la concatenación de los números enteros positivos: 
-<span style='display: block; text-align: center;'>,12345678910 <b style='color: red;'>1</b> 112131415161718192021 ...</span> 
-Se puede observar que el 12 <sup>de</sup> dígitos de la parte fraccionaria es de 1. 
-Si <i>d <sub>n</sub></i> representa el <i><sup>enésimo</sup></i> dígitos de la parte fraccionaria , encuentra el valor de la siguiente expresión. 
-<span style='display: block; text-align: center;'>d <sub>1</sub> × d <sub>10</sub> × d <sub>100</sub> × d <sub>1000</sub> × d <sub>10000</sub> × d <sub>100000</sub> × d <sub>1000000</sub></span> 
-</section>
+<section id="description"> Una fracción decimal irracional se crea mediante la concatenación de los números enteros positivos: <span style="display: block; text-align: center;"><b style="color: red;">1</b> 0.12345678910 112131415161718192021 ...</span> Se puede observar que el 12 <sup>de</sup> dígitos de la parte fraccionaria es 1. Si <i>d <sub>n</sub></i> representa el <i><sup>enésimo</sup></i> dígitos de la parte fraccionaria, encontrar el valor de la siguiente expresion <span style="display: block; text-align: center;">d <sub>1</sub> × d <sub>10</sub> × d <sub>100</sub> × d <sub>1000</sub> × d <sub>10000</sub> × d <sub>100000</sub> × d <sub>1000000</sub></span> </section>
 
 ## Instructions
-<section id='instructions'> 
-
+<section id="instructions">
 </section>
 
 ## Tests
@@ -47,6 +41,7 @@ function champernownesConstant(n) {
 }
 
 champernownesConstant(100);
+
 ```
 
 </div>
@@ -58,22 +53,7 @@ champernownesConstant(100);
 ## Solution
 <section id='solution'>
 
-
 ```js
-function champernownesConstant(n) {
-  let fractionalPart = ";
-  for (let i = 0; fractionalPart.length <= n; i++) {
-    fractionalPart += i.toString();
-  }
-
-  let product = 1;
-  for (let i = 0; i < n.toString().length; i++) {
-    const index = 10 ** i;
-    product *= parseInt(fractionalPart[index], 10);
-  }
-
-  return product;
-}
+// solution required
 ```
-
 </section>

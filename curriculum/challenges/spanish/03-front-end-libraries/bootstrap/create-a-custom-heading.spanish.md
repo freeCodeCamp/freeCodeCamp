@@ -1,21 +1,16 @@
 ---
 id: bad87fee1348bd9aede08845
 title: Create a Custom Heading
-localeTitle: Crear un título personalizado
 challengeType: 0
+videoUrl: ''
+localeTitle: Crear un título personalizado
 ---
 
 ## Description
-<section id='description'> 
-Haremos un encabezado simple para nuestra aplicación de foto Cat colocando el título y la imagen relajante del gato en la misma fila. 
-Recuerde, Bootstrap utiliza un sistema de cuadrícula sensible, lo que facilita colocar los elementos en filas y especificar el ancho relativo de cada elemento. La mayoría de las clases de Bootstrap se pueden aplicar a un elemento <code>div</code> . 
-Anide su primera imagen y su elemento <code>h2</code> dentro de un único elemento <code>&lt;div class=&quot;row&quot;&gt;</code> . Anide su elemento <code>h2</code> dentro de un <code>&lt;div class=&quot;col-xs-8&quot;&gt;</code> y su imagen en un <code>&lt;div class=&quot;col-xs-4&quot;&gt;</code> para que estén en la misma línea. 
-¿Observa cómo la imagen tiene el tamaño justo para encajar en el texto? 
-</section>
+<section id="description"> Haremos un encabezado simple para nuestra aplicación de fotos Cat al poner el título y la imagen relajante del gato en la misma fila. Recuerde, Bootstrap utiliza un sistema de cuadrícula sensible, lo que facilita colocar los elementos en filas y especificar el ancho relativo de cada elemento. La mayoría de las clases de Bootstrap se pueden aplicar a un elemento <code>div</code> . Anide su primera imagen y su elemento <code>h2</code> dentro de un único elemento <code>&lt;div class=&quot;row&quot;&gt;</code> . Anide su elemento <code>h2</code> dentro de un <code>&lt;div class=&quot;col-xs-8&quot;&gt;</code> y su imagen en un <code>&lt;div class=&quot;col-xs-4&quot;&gt;</code> para que estén en la misma línea. ¿Observa cómo la imagen tiene el tamaño justo para ajustarse a lo largo del texto? </section>
 
 ## Instructions
-<section id='instructions'> 
-
+<section id="instructions">
 </section>
 
 ## Tests
@@ -96,6 +91,7 @@ tests:
     <button type="submit">Submit</button>
   </form>
 </div>
+
 ```
 
 </div>

@@ -1,24 +1,16 @@
 ---
 id: bad87fee1348bd9acde08712
 title: Use Responsive Design with Bootstrap Fluid Containers
-localeTitle: Utilice un diseño responsivo con los contenedores de líquidos Bootstrap
 challengeType: 0
+videoUrl: ''
+localeTitle: Utilice un diseño responsivo con los contenedores de líquidos Bootstrap
 ---
 
 ## Description
-<section id='description'> 
-En la sección de HTML5 y CSS de freeCodeCamp construimos una aplicación Cat Photo. Ahora volvamos a ello. Esta vez, lo aplicaremos utilizando el popular marco de trabajo CSS que responde a Bootstrap. 
-Bootstrap descubrirá qué tan ancha es su pantalla y responderá redimensionando sus elementos HTML, de ahí el nombre <code>Responsive Design</code> . 
-Con un diseño responsivo, no es necesario diseñar una versión móvil de su sitio web. Se verá bien en dispositivos con pantallas de cualquier ancho. 
-Puede agregar Bootstrap a cualquier aplicación agregando el siguiente código en la parte superior de su HTML: 
-<code>&lt;link rel=&quot;stylesheet&quot; href=&quot;https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css&quot; integrity=&quot;sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u&quot; crossorigin=&quot;anonymous&quot;/&gt;</code> 
-En este caso, ya lo hemos agregado para esta página detrás de las escenas. Tenga en cuenta que es aceptable usar <code>&gt;</code> o <code>/&gt;</code> para cerrar la etiqueta de <code>link</code> . 
-Para comenzar, debemos anidar todo nuestro HTML (excepto la etiqueta de <code>link</code> y el elemento de <code>style</code> ) en un elemento <code>div</code> con la clase <code>container-fluid</code> . 
-</section>
+<section id="description"> En la sección de HTML5 y CSS de freeCodeCamp construimos una aplicación Cat Photo. Ahora volvamos a ello. Esta vez, lo aplicaremos utilizando el popular marco de trabajo CSS que responde a Bootstrap. Bootstrap descubrirá qué tan ancha es su pantalla y responderá redimensionando sus elementos HTML, de ahí el nombre <code>Responsive Design</code> . Con un diseño receptivo, no es necesario diseñar una versión móvil de su sitio web. Se verá bien en dispositivos con pantallas de cualquier ancho. Puede agregar Bootstrap a cualquier aplicación agregando el siguiente código en la parte superior de su HTML: <code>&lt;link rel=&quot;stylesheet&quot; href=&quot;https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css&quot; integrity=&quot;sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u&quot; crossorigin=&quot;anonymous&quot;/&gt;</code> En este caso, ya lo hemos agregado para esta página detrás de las escenas. Tenga en cuenta que es aceptable usar <code>&gt;</code> o <code>/&gt;</code> para cerrar la etiqueta de <code>link</code> . Para comenzar, debemos anidar todo nuestro HTML (excepto la etiqueta de <code>link</code> y el elemento de <code>style</code> ) en un elemento <code>div</code> con la clase <code>container-fluid</code> . </section>
 
 ## Instructions
-<section id='instructions'> 
-
+<section id="instructions">
 </section>
 
 ## Tests
@@ -97,6 +89,7 @@ tests:
   <input type="text" placeholder="cat photo URL" required>
   <button type="submit">Submit</button>
 </form>
+
 ```
 
 </div>

@@ -1,31 +1,16 @@
 ---
-id: 5
-localeTitle: 5900f4b91000cf542c50ffcb
+id: 5900f4b91000cf542c50ffcb
 challengeType: 5
 title: 'Problem 332: Spherical triangles'
+videoUrl: ''
+localeTitle: 'Problema 332: triángulos esféricos'
 ---
 
 ## Description
-<section id='description'> 
-Un triángulo esférico es una figura formada en la superficie de una esfera por tres grandes arcos circulares que se intersecan en pares en tres vértices. 
-
-
-
-
-Sea C (r) la esfera con el centro (0,0,0) y el radio r. 
-Sea Z (r) el conjunto de puntos en la superficie de C (r) con coordenadas enteras. 
-Sea T (r) el conjunto de triángulos esféricos con vértices en Z (r). 
-Los triángulos esféricos degenerados, formados por tres puntos en el mismo gran arco, no se incluyen en T (r). 
-Sea A (r) el área del triángulo esférico más pequeño en T (r). 
-
-Por ejemplo, A (14) es 3.294040 redondeado a seis decimales. 
-
-Encuentra A (r). Da tu respuesta redondeada a seis decimales. 
-</section>
+<section id="description"> Un triángulo esférico es una figura formada en la superficie de una esfera por tres grandes arcos circulares que se cruzan en pares en tres vértices. <p> Sea C (r) la esfera con el centro (0,0,0) y el radio r. Sea Z (r) el conjunto de puntos en la superficie de C (r) con coordenadas enteras. Sea T (r) el conjunto de triángulos esféricos con vértices en Z (r). Los triángulos esféricos degenerados, formados por tres puntos en el mismo gran arco, no se incluyen en T (r). Sea A (r) el área del triángulo esférico más pequeño en T (r). </p><p> Por ejemplo, A (14) es 3.294040 redondeado a seis decimales. </p><p> Encuentra A (r). Da tu respuesta redondeada a seis decimales. </p></section>
 
 ## Instructions
-<section id='instructions'> 
-
+<section id="instructions">
 </section>
 
 ## Tests
@@ -52,6 +37,7 @@ function euler332() {
 }
 
 euler332();
+
 ```
 
 </div>

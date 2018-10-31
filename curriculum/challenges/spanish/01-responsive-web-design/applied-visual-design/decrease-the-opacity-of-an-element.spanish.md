@@ -1,22 +1,16 @@
 ---
 id: 587d781c367417b2b2512abf
 title: Decrease the Opacity of an Element
-localeTitle: Disminuir la opacidad de un elemento
 challengeType: 0
 videoUrl: ''
+localeTitle: Disminuir la opacidad de un elemento
 ---
 
 ## Description
-<section id='description'> 
-La propiedad de <code>opacity</code> en CSS se usa para ajustar la opacidad o, a la inversa, la transparencia de un elemento. 
-<blockquote>A value of 1 is opaque, which isn't transparent at all.<br>A value of 0.5 is half see-through.<br>A value of 0 is completely transparent.</blockquote> 
-El valor dado se aplicará a todo el elemento, ya sea una imagen con alguna transparencia, o los colores de primer plano y de fondo para un bloque de texto. 
-</section>
+<section id="description"> La propiedad de <code>opacity</code> en CSS se usa para ajustar la opacidad, o por el contrario, la transparencia de un elemento. <blockquote> Un valor de 1 es opaco, que no es transparente en absoluto. <br> Un valor de 0.5 es medio transparente. <br> Un valor de 0 es completamente transparente. </blockquote> El valor dado se aplicará a todo el elemento, ya sea una imagen con alguna transparencia, o los colores de primer plano y de fondo para un bloque de texto. </section>
 
 ## Instructions
-<section id='instructions'> 
-Establezca la <code>opacity</code> de las etiquetas de anclaje en 0.7 utilizando la clase de <code>links</code> para seleccionarlas. 
-</section>
+<section id="instructions"> Establezca la <code>opacity</code> de las etiquetas de anclaje en 0.7 utilizando la clase de <code>links</code> para seleccionarlas. </section>
 
 ## Tests
 <section id='tests'>
@@ -81,6 +75,7 @@ tests:
     </div>
   </div>
 </div>
+
 ```
 
 </div>

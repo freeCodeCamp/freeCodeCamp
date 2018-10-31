@@ -1,27 +1,16 @@
 ---
-id: 5
-localeTitle: 5900f4c81000cf542c50ffdb
+id: 5900f4c81000cf542c50ffdb
 challengeType: 5
 title: 'Problem 348: Sum of a square and a cube'
+videoUrl: ''
+localeTitle: 'Problema 348: Suma de un cuadrado y un cubo'
 ---
 
 ## Description
-<section id='description'> 
-Muchos números se pueden expresar como la suma de un cuadrado y un cubo. Algunos de ellos en más de una forma. 
-
-Considere los números palindrómicos que pueden expresarse como la suma de un cuadrado y un cubo, ambos mayores que 1, de exactamente 4 formas diferentes. 
-Por ejemplo, 5229225 es un número palindrómico y puede expresarse de exactamente 4 formas diferentes: 
-22852 + 203 
-22232 + 663 
-18102 + 1253 
-11972 + 1563 
-
-Halla la suma de los cinco números palindrómicos más pequeños. 
-</section>
+<section id="description"> Muchos números se pueden expresar como la suma de un cuadrado y un cubo. Algunos de ellos en más de una forma. <p> Considere los números palindrómicos que pueden expresarse como la suma de un cuadrado y un cubo, ambos mayores que 1, en exactamente 4 formas diferentes. Por ejemplo, 5229225 es un número palindrómico y puede expresarse de exactamente 4 formas diferentes: 22852 + 203 22232 + 663 18102 + 1253 11972 + 1563 </p><p> Encuentra la suma de los cinco números palindrómicos más pequeños. </p></section>
 
 ## Instructions
-<section id='instructions'> 
-
+<section id="instructions">
 </section>
 
 ## Tests
@@ -48,6 +37,7 @@ function euler348() {
 }
 
 euler348();
+
 ```
 
 </div>

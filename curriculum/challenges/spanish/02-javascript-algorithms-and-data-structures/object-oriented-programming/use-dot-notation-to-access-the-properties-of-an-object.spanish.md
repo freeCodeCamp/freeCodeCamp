@@ -1,21 +1,16 @@
 ---
 id: 587d7dac367417b2b2512b74
 title: Use Dot Notation to Access the Properties of an Object
-localeTitle: Usar la notación de puntos para acceder a las propiedades de un objeto
 challengeType: 1
+videoUrl: ''
+localeTitle: Usar la notación de puntos para acceder a las propiedades de un objeto
 ---
 
 ## Description
-<section id='description'> 
-El último desafío creó un <code>object</code> con varias <code>properties</code> , ahora verá cómo acceder a los valores de esas <code>properties</code> . Aquí hay un ejemplo: 
-<blockquote>let duck = {<br>&nbsp;&nbsp;name: "Aflac",<br>&nbsp;&nbsp;numLegs: 2<br>};<br>console.log(duck.name);<br>// This prints "Aflac" to the console</blockquote> 
-notación de puntos se utiliza en el nombre del <code>object</code> , <code>duck</code> , seguido del nombre de la <code>property</code> , <code>name</code> , para acceder al valor de &quot;Aflac&quot;. 
-</section>
+<section id="description"> El último desafío creó un <code>object</code> con varias <code>properties</code> , ahora verá cómo acceder a los valores de esas <code>properties</code> . Aquí hay un ejemplo: <blockquote> dejar pato = { <br> nombre: &quot;Aflac&quot;, <br> NumLegs: 2 <br> }; <br> console.log (duck.name); <br> // Esto imprime &quot;Aflac&quot; a la consola. </blockquote> La notación de puntos se utiliza en el nombre del <code>object</code> , <code>duck</code> , seguido del nombre de la <code>property</code> , <code>name</code> , para acceder al valor de &quot;Aflac&quot;. </section>
 
 ## Instructions
-<section id='instructions'> 
-Imprime las dos <code>properties</code> del objeto <code>dog</code> debajo de tu consola. 
-</section>
+<section id="instructions"> Imprime las dos <code>properties</code> del objeto <code>dog</code> debajo de tu consola. </section>
 
 ## Tests
 <section id='tests'>
@@ -43,7 +38,6 @@ let dog = {
 };
 // Add your code below this line
 
-
 ```
 
 </div>
@@ -55,14 +49,7 @@ let dog = {
 ## Solution
 <section id='solution'>
 
-
 ```js
-let dog = {
-  name: "Spot",
-  numLegs: 4
-};
-console.log(dog.name);
-console.log(dog.numLegs);
+// solution required
 ```
-
 </section>

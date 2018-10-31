@@ -1,25 +1,16 @@
 ---
-id: 5
-localeTitle: 5900f4d01000cf542c50ffe3
+id: 5900f4d01000cf542c50ffe3
 challengeType: 5
 title: 'Problem 356: Largest roots of cubic polynomials'
+videoUrl: ''
+localeTitle: 'Problema 356: Raíces más grandes de polinomios cúbicos.'
 ---
 
 ## Description
-<section id='description'> 
-Sea la raíz real más grande de un polinomio g (x) = x3 - 2n · x2 + n. 
-Por ejemplo, a2 = 3.86619826 ... 
-
-
-Encuentra los últimos ocho dígitos de. 
-
-
-Nota: representa la función de piso. 
-</section>
+<section id="description"> Sea una la raíz real más grande de un polinomio g (x) = x3 - 2n · x2 + n. Por ejemplo, a2 = 3.86619826 ... <p> Encuentra los últimos ocho dígitos de. </p><p> Nota: representa la función de suelo. </p></section>
 
 ## Instructions
-<section id='instructions'> 
-
+<section id="instructions">
 </section>
 
 ## Tests
@@ -46,6 +37,7 @@ function euler356() {
 }
 
 euler356();
+
 ```
 
 </div>

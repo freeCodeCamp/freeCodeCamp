@@ -1,27 +1,16 @@
 ---
 id: 5690307fddb111c6084545d7
 title: Logical Order in If Else Statements
-localeTitle: Orden lógico en si otras declaraciones
 challengeType: 1
+videoUrl: ''
+localeTitle: Orden lógico en si otras declaraciones
 ---
 
 ## Description
-<section id='description'> 
-orden es importante en <code>if</code> , <code>else if</code> declaraciones. 
-La función se ejecuta de arriba a abajo, por lo que deberá tener cuidado con la afirmación que aparece primero. 
-Toma estas dos funciones como ejemplo. 
-Aquí está el primero: 
-<blockquote>function foo(x) {<br>&nbsp;&nbsp;if (x < 1) {<br>&nbsp;&nbsp;&nbsp;&nbsp;return "Less than one";<br>&nbsp;&nbsp;} else if (x < 2) {<br>&nbsp;&nbsp;&nbsp;&nbsp;return "Less than two";<br>&nbsp;&nbsp;} else {<br>&nbsp;&nbsp;&nbsp;&nbsp;return "Greater than or equal to two";<br>&nbsp;&nbsp;}<br>}</blockquote> 
-Y el segundo solo cambia el orden de las declaraciones: 
-<blockquote>function bar(x) {<br>&nbsp;&nbsp;if (x < 2) {<br>&nbsp;&nbsp;&nbsp;&nbsp;return "Less than two";<br>&nbsp;&nbsp;} else if (x < 1) {<br>&nbsp;&nbsp;&nbsp;&nbsp;return "Less than one";<br>&nbsp;&nbsp;} else {<br>&nbsp;&nbsp;&nbsp;&nbsp;return "Greater than or equal to two";<br>&nbsp;&nbsp;}<br>}</blockquote> 
-Si bien estas dos funciones parecen casi idénticas, si pasamos un número a ambas obtenemos diferentes salidas. 
-<blockquote>foo(0) // "Less than one"<br>bar(0) // "Less than two"</blockquote> 
-</section>
+<section id="description"> El orden es importante en <code>if</code> , <code>else if</code> declaraciones. La función se ejecuta de arriba a abajo, por lo que deberá tener cuidado con la afirmación que aparece primero. Tomemos estas dos funciones como ejemplo. Aquí está el primero: <blockquote> función foo (x) { <br> si (x &lt;1) { <br> devuelve &quot;Menos de uno&quot;; <br> } else if (x &lt;2) { <br> devuelve &quot;Menos de dos&quot;; <br> } else { <br> devuelve &quot;Mayor o igual a dos&quot;; <br> } <br> } </blockquote> Y el segundo simplemente cambia el orden de las declaraciones: <blockquote> barra de funciones (x) { <br> si (x &lt;2) { <br> devuelve &quot;Menos de dos&quot;; <br> } else if (x &lt;1) { <br> devuelve &quot;Menos de uno&quot;; <br> } else { <br> devuelve &quot;Mayor o igual a dos&quot;; <br> } <br> } </blockquote> Si bien estas dos funciones parecen casi idénticas, si pasamos un número a ambas obtenemos diferentes salidas. <blockquote> foo (0) // &quot;Menos de uno&quot; <br> barra (0) // &quot;Menos de dos&quot; </blockquote></section>
 
 ## Instructions
-<section id='instructions'> 
-Cambie el orden de la lógica en la función para que devuelva las declaraciones correctas en todos los casos. 
-</section>
+<section id="instructions"> Cambie el orden de la lógica en la función para que devuelva las declaraciones correctas en todos los casos. </section>
 
 ## Tests
 <section id='tests'>
@@ -57,6 +46,7 @@ function orderMyLogic(val) {
 
 // Change this value to test
 orderMyLogic(7);
+
 ```
 
 </div>
@@ -68,17 +58,7 @@ orderMyLogic(7);
 ## Solution
 <section id='solution'>
 
-
 ```js
-function orderMyLogic(val) {
-  if(val < 5) {
-    return "Less than 5";
-  } else if (val < 10) {
-    return "Less than 10";
-  } else {
-    return "Greater than or equal to 10";
-  }
-}
+// solution required
 ```
-
 </section>

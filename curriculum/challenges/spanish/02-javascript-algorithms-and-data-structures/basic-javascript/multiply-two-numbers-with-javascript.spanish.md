@@ -1,24 +1,16 @@
 ---
 id: cf1231c1c11feddfaeb5bdef
 title: Multiply Two Numbers with JavaScript
-localeTitle: Multiplica dos números con JavaScript
 challengeType: 1
+videoUrl: ''
+localeTitle: Multiplica dos números con JavaScript
 ---
 
 ## Description
-<section id='description'> 
-También podemos multiplicar un número por otro. 
-JavaScript usa el símbolo <code>*</code> para la multiplicación de dos números. 
-
-<strong>Ejemplo</strong> 
-<blockquote>myVar = 13 * 13; // assigned 169</blockquote> 
-
-</section>
+<section id="description"> También podemos multiplicar un número por otro. JavaScript usa el símbolo <code>*</code> para la multiplicación de dos números. <p> <strong>Ejemplo</strong> </p><blockquote> myVar = 13 * 13; // asignado 169 </blockquote></section>
 
 ## Instructions
-<section id='instructions'> 
-Cambia el <code>0</code> para que el producto sea igual a <code>80</code> . 
-</section>
+<section id="instructions"> Cambia el <code>0</code> para que el producto sea igual a <code>80</code> . </section>
 
 ## Tests
 <section id='tests'>
@@ -42,7 +34,6 @@ tests:
 ```js
 var product = 8 * 0;
 
-
 ```
 
 </div>
@@ -62,9 +53,7 @@ console.info('after the test');
 ## Solution
 <section id='solution'>
 
-
 ```js
-var product = 8 * 10;
+// solution required
 ```
-
 </section>

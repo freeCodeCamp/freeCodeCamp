@@ -1,36 +1,16 @@
 ---
-id: 5
-localeTitle: 5900f4a51000cf542c50ffb7
+id: 5900f4a51000cf542c50ffb7
 challengeType: 5
 title: 'Problem 312: Cyclic paths on Sierpiński graphs'
+videoUrl: ''
+localeTitle: 'Problema 312: Rutas cíclicas en los gráficos de Sierpiński'
 ---
 
 ## Description
-<section id='description'> 
-- Un gráfico de Sierpiński de orden-1 (S1) es un triángulo equilátero. 
-: Sn + 1 se obtiene de Sn al colocar tres copias de Sn para que cada par de copias tenga una esquina común. 
-
-
-
-
-Sea C (n) el número de ciclos que pasan exactamente una vez a través de todos los vértices de Sn. 
-Por ejemplo, C (3) = 8 porque se pueden dibujar ocho de estos ciclos en S3, como se muestra a continuación: 
-
-
-
-
-También se puede verificar que: 
-C (1) = C (2) = 1 
-C (5) = 71328803586048 
-C (10 000) mod 108 = 37652224 
-C (10 000) mod 138 = 617720485 
-
-Encuentre C (C (C (10 000))) mod 138. 
-</section>
+<section id="description"> - Un gráfico de Sierpiński de orden 1 (S1) es un triángulo equilátero. - Sn + 1 se obtiene de Sn colocando tres copias de Sn para que cada par de copias tenga una esquina común. <p> Sea C (n) el número de ciclos que pasan exactamente una vez a través de todos los vértices de Sn. Por ejemplo, C (3) = 8 porque se pueden dibujar ocho de estos ciclos en S3, como se muestra a continuación: </p><p> También se puede verificar que: C (1) = C (2) = 1 C (5) = 71328803586048 C (10 000) mod 108 = 37652224 C (10 000) mod 138 = 617720485 </p><p> Encuentre C (C (C (10 000))) mod 138. </p></section>
 
 ## Instructions
-<section id='instructions'> 
-
+<section id="instructions">
 </section>
 
 ## Tests
@@ -57,6 +37,7 @@ function euler312() {
 }
 
 euler312();
+
 ```
 
 </div>

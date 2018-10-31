@@ -1,31 +1,16 @@
 ---
-id: 5
-localeTitle: 5900f4b21000cf542c50ffc5
+id: 5900f4b21000cf542c50ffc5
 challengeType: 5
 title: 'Problem 326: Modulo Summations'
+videoUrl: ''
+localeTitle: 'Problema 326: sumas de módulo'
 ---
 
 ## Description
-<section id='description'> 
-Sea una secuencia recursivamente definida por:. 
-
-
-Así que los primeros 10 elementos de una son: 1,1,0,3,0,3,5,4,1,9. 
-
-Sea f (N, M) el número de pares (p, q) tal que: 
-
-
-Se puede ver que f (10,10) = 4 con los pares (3,3), (5, 5), (7,9) y (9,10). 
-
-
-También se le da que f (104,103) = 97158. 
-
-Encuentra f (1012,106). 
-</section>
+<section id="description"> Sea una secuencia definida recursivamente por:. <p> Así que los primeros 10 elementos de una son: 1,1,0,3,0,3,5,4,1,9. </p><p> Sea f (N, M) el número de pares (p, q) de manera que: </p><p> Se puede ver que f (10,10) = 4 con los pares (3,3), (5,5), (7,9) y (9,10). </p><p> También se le da que f (104,103) = 97158. </p><p> Encontrar f (1012,106). </p></section>
 
 ## Instructions
-<section id='instructions'> 
-
+<section id="instructions">
 </section>
 
 ## Tests
@@ -52,6 +37,7 @@ function euler326() {
 }
 
 euler326();
+
 ```
 
 </div>

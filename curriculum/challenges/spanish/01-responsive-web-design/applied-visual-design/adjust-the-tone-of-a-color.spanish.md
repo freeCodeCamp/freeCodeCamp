@@ -1,20 +1,16 @@
 ---
 id: 587d78a4367417b2b2512ad5
 title: Adjust the Tone of a Color
-localeTitle: Ajustar el tono de un color
 challengeType: 0
 videoUrl: ''
+localeTitle: Ajustar el tono de un color
 ---
 
 ## Description
-<section id='description'> 
-La opción <code>hsl()</code> en CSS también facilita el ajuste del tono de un color. Mezclar el blanco con un tono puro crea un tinte de ese color, y agregar negro creará un tono. Alternativamente, se produce un tono agregando gris o teñiendo y sombreando. Recuerde que la &#39;s&#39; y la &#39;l&#39; de <code>hsl()</code> representan la saturación y la luminosidad, respectivamente. El porcentaje de saturación cambia la cantidad de gris y el porcentaje de luminosidad determina la cantidad de blanco o negro que hay en el color. Esto es útil cuando tienes un tono base que te gusta, pero necesitas diferentes variaciones de él. 
-</section>
+<section id="description"> La opción <code>hsl()</code> en CSS también facilita el ajuste del tono de un color. Mezclar el blanco con un tono puro crea un tinte de ese color, y agregar negro creará un tono. Alternativamente, se produce un tono agregando gris o teñiendo y sombreando. Recuerde que la &#39;s&#39; y la &#39;l&#39; de <code>hsl()</code> representan la saturación y la luminosidad, respectivamente. El porcentaje de saturación cambia la cantidad de gris y el porcentaje de luminosidad determina la cantidad de blanco o negro que hay en el color. Esto es útil cuando tienes un tono base que te gusta, pero necesitas diferentes variaciones de él. </section>
 
 ## Instructions
-<section id='instructions'> 
-La barra de navegación en este sitio actualmente hereda su <code>background-color</code> de <code>background-color</code> del elemento del <code>header</code> . Comenzando con ese color como base, agregue un <code>background-color</code> al elemento de <code>nav</code> para que use el mismo tono cian, pero tiene 80% de saturación y 25% de luminosidad para cambiar su tono y tono. 
-</section>
+<section id="instructions"> La barra de navegación en este sitio actualmente hereda su <code>background-color</code> de <code>background-color</code> del elemento del <code>header</code> . Comenzando con ese color como base, agregue un <code>background-color</code> al elemento de <code>nav</code> para que use el mismo tono cian, pero tiene 80% de saturación y 25% de luminosidad para cambiar su tono y tono. </section>
 
 ## Tests
 <section id='tests'>
@@ -75,6 +71,7 @@ tests:
     </ul>
   </nav>
 </header>
+
 ```
 
 </div>
@@ -86,9 +83,7 @@ tests:
 ## Solution
 <section id='solution'>
 
-
 ```js
-var code = "nav {background-color: hsl(180, 80%, 25%);}"
+// solution required
 ```
-
 </section>

@@ -1,18 +1,16 @@
 ---
-id: 5
-localeTitle: 5900f4841000cf542c50ff96
+id: 5900f4841000cf542c50ff96
 challengeType: 5
 title: 'Problem 279: Triangles with integral sides and an integral angle'
+videoUrl: ''
+localeTitle: 'Problema 279: Triángulos con lados integrales y un ángulo integral'
 ---
 
 ## Description
-<section id='description'> 
-¿Cuántos triángulos hay con lados integrales, al menos un ángulo integral (medido en grados) y un perímetro que no exceda de 108? 
-</section>
+<section id="description"> ¿Cuántos triángulos hay con lados integrales, al menos un ángulo integral (medido en grados) y un perímetro que no exceda de 108? </section>
 
 ## Instructions
-<section id='instructions'> 
-
+<section id="instructions">
 </section>
 
 ## Tests
@@ -39,6 +37,7 @@ function euler279() {
 }
 
 euler279();
+
 ```
 
 </div>

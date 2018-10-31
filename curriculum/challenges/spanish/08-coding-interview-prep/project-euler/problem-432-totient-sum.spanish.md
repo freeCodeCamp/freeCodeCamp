@@ -1,23 +1,16 @@
 ---
-id: 5
-localeTitle: 5900f51e1000cf542c510030
+id: 5900f51e1000cf542c510030
 challengeType: 5
 title: 'Problem 432: Totient sum'
+videoUrl: ''
+localeTitle: Problema 432 a totient
 ---
 
 ## Description
-<section id='description'> 
-Sea S (n, m) = ∑φ (n × i) para 1 ≤ i ≤ m. (φ es la función total de Euler) 
-Se le da que S (510510,106) = 45480596821125120. 
-
-
-Encuentre S (510510,1011). 
-Da los últimos 9 dígitos de tu respuesta. 
-</section>
+<section id="description"> Sea S (n, m) = ∑φ (n × i) para 1 ≤ i ≤ m. (φ es la función total de Euler) Se le da que S (510510,106) = 45480596821125120. <p> Encontrar S (510510,1011). Da los últimos 9 dígitos de tu respuesta. </p></section>
 
 ## Instructions
-<section id='instructions'> 
-
+<section id="instructions">
 </section>
 
 ## Tests
@@ -44,6 +37,7 @@ function euler432() {
 }
 
 euler432();
+
 ```
 
 </div>

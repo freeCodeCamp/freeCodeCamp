@@ -1,33 +1,16 @@
 ---
 title: 24 game
 id: 5951e88f64ebf159166a1176
-localeTitle: 5951e88f64ebf159166a1176
 challengeType: 5
+videoUrl: ''
+localeTitle: 24 juegos
 ---
 
 ## Description
-<section id='description'> 
-<p> Implemente una función que tome una cadena de cuatro dígitos como su argumento, con cada dígito de 1 ──► 9 (inclusive) con repeticiones permitidas, y devuelva una expresión aritmética que se evalúe al número 24. Si no existe tal solución, devuelva &quot; no existe ninguna solución &quot;. </p> 
-<p> Reglas: </p> 
-Solo se permiten los siguientes operadores / funciones: multiplicación, división, suma, resta 
-división debe usar coma flotante o aritmética racional, etc., para preservar los residuos. 
-se permite formar números de varios dígitos a partir de los dígitos suministrados. (Entonces, una respuesta de 12 + 12 cuando se da 1, 2, 2 y 1 es incorrecta). 
-El orden de los dígitos cuando se dan no tiene que ser preservado. 
-<p> Entradas de ejemplo: </p> 
-<code>solve24(&quot;4878&quot;);</code> 
-<code>solve24(&quot;1234&quot;);</code> 
-<code>solve24(&quot;6789&quot;);</code> 
-<code>solve24(&quot;1127&quot;);</code> 
-<p> Ejemplos de salidas (cadenas): </p> 
-<code>(7-8/8)*4</code> 
-<code>3*1*4*2</code> 
-<code>(6*8)/(9-7)</code> 
-<code>(1+7)*(2+1)</code> 
-</section>
+<section id="description"><p> Implemente una función que tome una cadena de cuatro dígitos como su argumento, con cada dígito de 1 ──► 9 (inclusive) con repeticiones permitidas, y devuelva una expresión aritmética que se evalúe al número 24. Si no existe tal solución, devuelva &quot; no existe ninguna solución &quot;. </p><p> Reglas: </p> Solo se permiten los siguientes operadores / funciones: multiplicación, división, suma, resta La división debe usar coma flotante o aritmética racional, etc., para preservar los residuos. No se permite formar números de varios dígitos a partir de los dígitos suministrados. (Entonces, una respuesta de 12 + 12 cuando se da 1, 2, 2 y 1 es incorrecta). El orden de los dígitos cuando se dan no tiene que ser preservado. <p> Entradas de ejemplo: </p> <code>solve24(&quot;4878&quot;);</code> <code>solve24(&quot;1234&quot;);</code> <code>solve24(&quot;6789&quot;);</code> <code>solve24(&quot;1127&quot;);</code> <p> Ejemplos de salidas (cadenas): </p> <code>(7-8/8)*4</code> <code>3*1*4*2</code> <code>(6*8)/(9-7)</code> <code>(1+7)*(2+1)</code> </section>
 
 ## Instructions
-<section id='instructions'> 
-
+<section id="instructions">
 </section>
 
 ## Tests
@@ -60,6 +43,7 @@ function solve24 (numStr) {
   // Good luck!
   return true;
 }
+
 ```
 
 </div>
@@ -79,78 +63,7 @@ console.info('after the test');
 ## Solution
 <section id='solution'>
 
-
 ```js
-// noprotect
-
-function solve24 (numStr) {
-  const digitsArr = numStr.split('');
-  const answers = [];
-
-  const digitPermutations = [];
-  const operatorPermutations = [];
-
-  function generateDigitPermutations (digits, permutations = []) {
-    if (digits.length === 0) {
-      digitPermutations.push(permutations);
-    }
-    else {
-      for (let i = 0; i < digits.length; i++) {
-        const curr = digits.slice();
-        const next = curr.splice(i, 1);
-        generateDigitPermutations(curr.slice(), permutations.concat(next));
-      }
-    }
-  }
-
-  function generateOperatorPermutations (permutations = []) {
-    const operators = ['+', '-', '*', '/'];
-    if (permutations.length === 3) {
-      operatorPermutations.push(permutations);
-    }
-    else {
-      for (let i = 0; i < operators.length; i++) {
-        const curr = permutations.slice();
-        curr.push(operators[i]);
-        generateOperatorPermutations(curr);
-      }
-    }
-  }
-
-  generateDigitPermutations(digitsArr);
-  generateOperatorPermutations();
-
-  interleave();
-
-  return answers[0];
-
-  function interleave () {
-    for (let i = 0; i < digitPermutations.length; i++) {
-      for (let j = 0; j < operatorPermutations.length; j++) {
-        const d = digitPermutations[i];
-        const o = operatorPermutations[j];
-        const perm = [
-          `${d[0]}${o[0]}${d[1]}${o[1]}${d[2]}${o[2]}${d[3]}`,
-          `(${d[0]}${o[0]}${d[1]})${o[1]}${d[2]}${o[2]}${d[3]}`,
-          `${d[0]}${o[0]}(${d[1]}${o[1]}${d[2]})${o[2]}${d[3]}`,
-          `${d[0]}${o[0]}${d[1]}${o[1]}(${d[2]}${o[2]}${d[3]})`,
-          `${d[0]}${o[0]}(${d[1]}${o[1]}${d[2]}${o[2]}${d[3]})`,
-          `(${d[0]}${o[0]}${d[1]}${o[1]}${d[2]})${o[2]}${d[3]}`,
-          `(${d[0]}${o[0]}${d[1]})${o[1]}(${d[2]}${o[2]}${d[3]})`
-        ];
-
-        perm.forEach(combination => {
-          const res = eval(combination);
-
-          if (res === 24) {
-            return answers.push(combination);
-          }
-        });
-      }
-    }
-  }
-}
-
+// solution required
 ```
-
 </section>

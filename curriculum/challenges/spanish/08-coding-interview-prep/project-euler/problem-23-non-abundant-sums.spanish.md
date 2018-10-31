@@ -1,21 +1,16 @@
 ---
-id: 5
-localeTitle: 5900f3831000cf542c50fe96
+id: 5900f3831000cf542c50fe96
 challengeType: 5
 title: 'Problem 23: Non-abundant sums'
+videoUrl: ''
+localeTitle: 'Problema 23: sumas no abundantes'
 ---
 
 ## Description
-<section id='description'> 
-Un número perfecto es un número para el cual la suma de sus divisores apropiados es exactamente igual al número. Por ejemplo, la suma de los divisores apropiados de 28 sería 1 + 2 + 4 + 7 + 14 = 28, lo que significa que 28 es un número perfecto. 
-Un número <var>n</var> se llama deficiente si la suma de sus divisores apropiados es menor que <var>n</var> y se llama abundante si esta suma excede <var>n</var> . 
-Como 12 es el número abundante más pequeño, 1 + 2 + 3 + 4 + 6 = 16, el número más pequeño que puede escribirse como la suma de dos números abundantes es 24. Por análisis matemático, se puede mostrar que todos los enteros son mayores 28123 se puede escribir como la suma de dos números abundantes. Sin embargo, este límite superior no puede reducirse más por análisis aunque se sepa que el mayor número que no puede expresarse como la suma de dos números abundantes es menor que este límite. 
-Encuentre la suma de todos los enteros positivos &lt;= <var>n</var> que no se puede escribir como la suma de dos números abundantes. 
-</section>
+<section id="description"> Un número perfecto es un número para el cual la suma de sus divisores apropiados es exactamente igual al número. Por ejemplo, la suma de los divisores apropiados de 28 sería 1 + 2 + 4 + 7 + 14 = 28, lo que significa que 28 es un número perfecto. Un número <var>n</var> se llama deficiente si la suma de sus divisores apropiados es menor que <var>n</var> y se llama abundante si esta suma excede <var>n</var> . Como 12 es el número abundante más pequeño, 1 + 2 + 3 + 4 + 6 = 16, el número más pequeño que se puede escribir como la suma de dos números abundantes es 24. Por análisis matemático, se puede mostrar que todos los enteros mayores que 28123 se puede escribir como la suma de dos números abundantes. Sin embargo, este límite superior no puede reducirse más por análisis aunque se sepa que el mayor número que no puede expresarse como la suma de dos números abundantes es menor que este límite. Encuentre la suma de todos los enteros positivos &lt;= <var>n</var> que no se puede escribir como la suma de dos números abundantes. </section>
 
 ## Instructions
-<section id='instructions'> 
-
+<section id="instructions">
 </section>
 
 ## Tests
@@ -48,6 +43,7 @@ function sumOfNonAbundantNumbers(n) {
 }
 
 sumOfNonAbundantNumbers(28123);
+
 ```
 
 </div>

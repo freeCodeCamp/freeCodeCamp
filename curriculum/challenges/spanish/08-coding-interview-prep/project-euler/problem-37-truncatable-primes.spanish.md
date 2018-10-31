@@ -1,20 +1,16 @@
 ---
-id: 5
-localeTitle: 5900f3911000cf542c50fea4
+id: 5900f3911000cf542c50fea4
 challengeType: 5
 title: 'Problem 37: Truncatable primes'
+videoUrl: ''
+localeTitle: 'Problema 37: primos truncables'
 ---
 
 ## Description
-<section id='description'> 
-El número 3797 tiene una propiedad interesante. Al ser primo, es posible eliminar continuamente dígitos de izquierda a derecha y permanecer primo en cada etapa: 3797, 797, 97 y 7. Del mismo modo, podemos trabajar de derecha a izquierda: 3797, 379, 37 y 3. 
-Encuentre la suma de los únicos n primarios n (8 &lt;= n &lt;= 11) que se pueden truncar de izquierda a derecha y de derecha a izquierda. 
-NOTA: 2, 3, 5 y 7 no se consideran primos que se pueden cortar. 
-</section>
+<section id="description"> El número 3797 tiene una propiedad interesante. Al ser primo, es posible eliminar continuamente dígitos de izquierda a derecha y permanecer primo en cada etapa: 3797, 797, 97 y 7. Del mismo modo, podemos trabajar de derecha a izquierda: 3797, 379, 37 y 3. Encuentre la suma de los únicos n primarios n (8 &lt;= n &lt;= 11) que son truncables de izquierda a derecha y de derecha a izquierda. NOTA: 2, 3, 5 y 7 no se consideran primos que se pueden cortar. </section>
 
 ## Instructions
-<section id='instructions'> 
-
+<section id="instructions">
 </section>
 
 ## Tests
@@ -47,6 +43,7 @@ function truncatablePrimes(n) {
 }
 
 truncatablePrimes(11);
+
 ```
 
 </div>

@@ -1,25 +1,16 @@
 ---
 id: 587d7b8e367417b2b2512b5f
 title: Pass Arguments to Avoid External Dependence in a Function
-localeTitle: Pasar argumentos para evitar la dependencia externa en una función
 challengeType: 1
+videoUrl: ''
+localeTitle: Pasar argumentos para evitar la dependencia externa en una función
 ---
 
 ## Description
-<section id='description'> 
-El último desafío fue un paso más cerca de los principios de programación funcional, pero todavía falta algo. 
-No alteramos el valor de la variable global, pero el <code>incrementer</code> la función no funcionaría sin que la variable global <code>fixedValue</code> estuviera allí. 
-Otro principio de la programación funcional es siempre declarar explícitamente sus dependencias. Esto significa que si una función depende de que una variable u objeto esté presente, entonces pase esa variable u objeto directamente a la función como un argumento. 
-Hay varias buenas consecuencias de este principio. La función es más fácil de probar, usted sabe exactamente qué entrada toma, y ​​no dependerá de nada más en su programa. 
-Esto le puede dar más confianza cuando modifica, elimina o agrega un nuevo código. Sabría lo que puede o no puede cambiar y puede ver dónde están las posibles trampas. 
-Finalmente, la función siempre produciría la misma salida para el mismo conjunto de entradas, sin importar qué parte del código la ejecute. 
-</section>
+<section id="description"> El último desafío fue un paso más cerca de los principios de programación funcional, pero todavía falta algo. No alteramos el valor de la variable global, pero el <code>incrementer</code> la función no funcionaría sin que la variable global <code>fixedValue</code> estuviera allí. Otro principio de la programación funcional es declarar siempre sus dependencias explícitamente. Esto significa que si una función depende de que una variable u objeto esté presente, entonces pase esa variable u objeto directamente a la función como un argumento. Hay varias buenas consecuencias de este principio. La función es más fácil de probar, usted sabe exactamente qué entrada toma, y ​​no dependerá de nada más en su programa. Esto puede darle más confianza cuando modifica, elimina o agrega un nuevo código. Sabría lo que puede o no puede cambiar y puede ver dónde están las posibles trampas. Finalmente, la función siempre produciría la misma salida para el mismo conjunto de entradas, sin importar qué parte del código la ejecute. </section>
 
 ## Instructions
-<section id='instructions'> 
-Actualicemos la función <code>incrementer</code> para declarar claramente sus dependencias. 
-Escriba la función <code>incrementer</code> para que tome un argumento y luego aumente el valor en uno. 
-</section>
+<section id="instructions"> Vamos a actualizar la función <code>incrementer</code> para declarar claramente sus dependencias. Escriba la función <code>incrementer</code> para que tome un argumento y luego aumente el valor en uno. </section>
 
 ## Tests
 <section id='tests'>
@@ -55,6 +46,7 @@ function incrementer () {
 
 var newValue = incrementer(fixedValue); // Should equal 5
 console.log(fixedValue); // Should print 4
+
 ```
 
 </div>

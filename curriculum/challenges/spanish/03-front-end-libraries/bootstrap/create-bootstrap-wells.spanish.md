@@ -1,19 +1,16 @@
 ---
 id: bad87fee1348bd9aec908848
 title: Create Bootstrap Wells
-localeTitle: Crear Bootstrap Wells
 challengeType: 0
+videoUrl: ''
+localeTitle: Crear Bootstrap Wells
 ---
 
 ## Description
-<section id='description'> 
-Bootstrap tiene una clase llamada <code>well</code> que puede crear un sentido visual de profundidad para sus columnas. 
-Nido uno <code>div</code> elemento con la clase <code>well</code> en cada uno de sus <code>col-xs-6</code> <code>div</code> elementos. 
-</section>
+<section id="description"> Bootstrap tiene una clase llamada <code>well</code> que puede crear un sentido visual de profundidad para sus columnas. Anidar una <code>div</code> elemento con la clase <code>well</code> en cada uno de sus <code>col-xs-6</code> <code>div</code> elementos. </section>
 
 ## Instructions
-<section id='instructions'> 
-
+<section id="instructions">
 </section>
 
 ## Tests
@@ -49,6 +46,7 @@ tests:
     </div>
   </div>
 </div>
+
 ```
 
 </div>

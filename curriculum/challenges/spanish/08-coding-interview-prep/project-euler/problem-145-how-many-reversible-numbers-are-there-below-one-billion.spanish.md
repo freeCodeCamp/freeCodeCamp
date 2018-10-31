@@ -1,22 +1,16 @@
 ---
-id: 5
-localeTitle: 5900f3fd1000cf542c50ff10
+id: 5900f3fd1000cf542c50ff10
 challengeType: 5
 title: 'Problem 145: How many reversible numbers are there below one-billion?'
+videoUrl: ''
+localeTitle: 'Problema 145: ¿Cuántos números reversibles hay por debajo de mil millones?'
 ---
 
 ## Description
-<section id='description'> 
-Algunos enteros positivos n tienen la propiedad de que la suma [n + reverse (n)] consta completamente de dígitos impares (decimales). Por ejemplo, 36 + 63 = 99 y 409 + 904 = 1313. Llamaremos a dichos números reversibles; por lo que 36, 63, 409 y 904 son reversibles. Los ceros iniciales no están permitidos ni en n ni en reversa (n). 
-
-Hay 120 números reversibles por debajo de mil. 
-
-¿Cuántos números reversibles hay por debajo de mil millones (109)? 
-</section>
+<section id="description"> Algunos enteros positivos n tienen la propiedad de que la suma [n + reverse (n)] consta completamente de dígitos impares (decimales). Por ejemplo, 36 + 63 = 99 y 409 + 904 = 1313. Llamaremos a dichos números reversibles; por lo que 36, 63, 409 y 904 son reversibles. Los ceros iniciales no están permitidos ni en n ni en reversa (n). <p> Hay 120 números reversibles por debajo de mil. </p><p> ¿Cuántos números reversibles hay por debajo de mil millones (109)? </p></section>
 
 ## Instructions
-<section id='instructions'> 
-
+<section id="instructions">
 </section>
 
 ## Tests
@@ -43,6 +37,7 @@ function euler145() {
 }
 
 euler145();
+
 ```
 
 </div>

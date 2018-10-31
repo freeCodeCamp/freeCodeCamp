@@ -1,23 +1,16 @@
 ---
-id: 5
-localeTitle: 5900f4e11000cf542c50fff3
+id: 5900f4e11000cf542c50fff3
 challengeType: 5
 title: 'Problem 372: Pencils of rays'
+videoUrl: ''
+localeTitle: 'Problema 372: Lápices de rayos.'
 ---
 
 ## Description
-<section id='description'> 
-Sea R (M, N) el número de puntos de la red (x, y) que satisfacen M <x≤N, M<y≤N and  is odd.<code> 0 Podemos verificar que R (0, 100) = 3019 y R (100, 10000) = 29750422. 
-Encuentre R (2 · 106, 109). 
-
-
-
-Nota: representa la función de piso. 
-</section>
+<section id="description"> Sea R (M, N) el número de puntos de la red (x, y) que satisfacen M <p> Nota: representa la función de suelo. </p></section>
 
 ## Instructions
-<section id='instructions'> 
-
+<section id="instructions">
 </section>
 
 ## Tests
@@ -44,6 +37,7 @@ function euler372() {
 }
 
 euler372();
+
 ```
 
 </div>

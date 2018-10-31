@@ -1,26 +1,16 @@
 ---
 id: 587d7b8b367417b2b2512b53
 title: Use class Syntax to Define a Constructor Function
-localeTitle: Use la clase Sintaxis para definir una función constructora
 challengeType: 1
+videoUrl: ''
+localeTitle: Use la clase Sintaxis para definir una función constructora
 ---
 
 ## Description
-<section id='description'> 
-ES6 proporciona una nueva sintaxis para ayudar a crear objetos, utilizando la <dfn>clase de</dfn> palabra clave. 
-Esto debe notarse, que la sintaxis de <code>class</code> es solo una sintaxis, y no una implementación de paradigmas orientados a objetos basada en clases de pleno derecho, a diferencia de lenguajes como Java, Python, o Ruby, etc. 
-En ES5, generalmente definimos una función constructora, y use la <code>new</code> palabra clave para crear una instancia de un objeto. 
-<blockquote>var SpaceShuttle = function(targetPlanet){<br>&nbsp;&nbsp;this.targetPlanet = targetPlanet;<br>}<br>var zeus = new SpaceShuttle('Jupiter');</blockquote> 
-La sintaxis de la clase simplemente reemplaza la creación de la función de constructor: 
-<blockquote>class SpaceShuttle {<br>&nbsp;&nbsp;constructor(targetPlanet){<br>&nbsp;&nbsp;&nbsp;&nbsp;this.targetPlanet = targetPlanet;<br>&nbsp;&nbsp;}<br>}<br>const zeus = new SpaceShuttle('Jupiter');</blockquote> 
-Tenga en cuenta que la <code>class</code> se añadió la palabra clave declara una nueva función, y un constructor, que se invoca cuando <code>new</code> se llama - para crear un nuevo objeto. 
-</section>
+<section id="description"> ES6 proporciona una nueva sintaxis para ayudar a crear objetos, utilizando la <dfn>clase de</dfn> palabra clave. Cabe señalar que la sintaxis de <code>class</code> es solo una sintaxis, y no una implementación de paradigmas orientados a objetos basada completamente en clases, a diferencia de lenguajes como Java, Python o Ruby, etc. En ES5, generalmente definimos un constructor función, y utilizar la <code>new</code> palabra clave para crear una instancia de un objeto. <blockquote> var SpaceShuttle = function (targetPlanet) { <br> this.targetPlanet = targetPlanet; <br> } <br> var zeus = nuevo SpaceShuttle (&#39;Jupiter&#39;); </blockquote> La sintaxis de clase simplemente reemplaza la creación de la función de constructor: <blockquote> clase SpaceShuttle { <br> constructor (targetPlanet) { <br> this.targetPlanet = targetPlanet; <br> } <br> } <br> const zeus = nuevo SpaceShuttle (&#39;Jupiter&#39;); </blockquote> Observe que la <code>class</code> de palabras clave declara una nueva función, y se añadió un constructor, que se invoca cuando <code>new</code> se llama - para crear un nuevo objeto. </section>
 
 ## Instructions
-<section id='instructions'> 
-Use <code>class</code> palabra clave de <code>class</code> y escriba un constructor adecuado para crear la clase <code>Vegetable</code> . 
-El <code>Vegetable</code> permite crear un objeto vegetal, con un <code>name</code> propiedad, que se pasará al constructor. 
-</section>
+<section id="instructions"> Use <code>class</code> palabra clave de <code>class</code> y escriba un constructor adecuado para crear la clase <code>Vegetable</code> . La <code>Vegetable</code> permite crear un objeto vegetal, con un <code>name</code> propiedad, para pasarlo al constructor. </section>
 
 ## Tests
 <section id='tests'>
@@ -56,6 +46,7 @@ function makeClass() {
 const Vegetable = makeClass();
 const carrot = new Vegetable('carrot');
 console.log(carrot.name); // => should be 'carrot'
+
 ```
 
 </div>

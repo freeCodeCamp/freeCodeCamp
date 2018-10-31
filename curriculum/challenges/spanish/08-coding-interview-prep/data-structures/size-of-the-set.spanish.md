@@ -1,18 +1,16 @@
 ---
 id: 8d1923c8c441eddfaeb5bdef
 title: Size of the Set
-localeTitle: Tamaño del set
 challengeType: 1
+videoUrl: ''
+localeTitle: Tamaño del set
 ---
 
 ## Description
-<section id='description'> 
-En este ejercicio vamos a crear una función de tamaño para nuestro Conjunto. Esta función debe llamarse <code>this.size</code> y debe devolver el tamaño de la colección. 
-</section>
+<section id="description"> En este ejercicio vamos a crear una función de tamaño para nuestro Conjunto. Esta función debe llamarse <code>this.size</code> y debe devolver el tamaño de la colección. </section>
 
 ## Instructions
-<section id='instructions'> 
-
+<section id="instructions">
 </section>
 
 ## Tests
@@ -66,6 +64,7 @@ function Set() {
     // change code below this line
     // change code above this line
 }
+
 ```
 
 </div>
@@ -77,9 +76,7 @@ function Set() {
 ## Solution
 <section id='solution'>
 
-
 ```js
-function Set() {var collection = []; this.has = function(e){return(collection.indexOf(e) !== -1);};this.values = function() {return collection;};this.add = function(element) {if (!this.has(element)) {collection.push(element);return true;} else {return false;}};this.remove = function(element) {if(this.has(element)) {var i = collection.indexOf(element);collection.splice(i, 1);return true;}return false;};this.size = function() {return collection.length;};}
+// solution required
 ```
-
 </section>

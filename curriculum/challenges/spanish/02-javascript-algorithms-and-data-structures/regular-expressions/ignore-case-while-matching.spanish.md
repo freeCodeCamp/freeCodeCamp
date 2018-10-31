@@ -1,21 +1,16 @@
 ---
 id: 587d7db4367417b2b2512b91
 title: Ignore Case While Matching
-localeTitle: Ignorar caso mientras coinciden
 challengeType: 1
+videoUrl: ''
+localeTitle: Ignorar caso mientras coinciden
 ---
 
 ## Description
-<section id='description'> 
-Hasta ahora, has visto expresiones regulares para hacer coincidencias literales de cadenas. Pero a veces, es posible que también desee igualar las diferencias de casos. 
-Caso (o, a veces, mayúsculas) es la diferencia entre letras mayúsculas y minúsculas. Ejemplos de mayúsculas son <code>&quot;A&quot;</code> , <code>&quot;B&quot;</code> y <code>&quot;C&quot;</code> . Ejemplos de minúsculas son <code>&quot;a&quot;</code> , <code>&quot;b&quot;</code> y <code>&quot;c&quot;</code> . 
-Puedes hacer coincidir ambos casos usando lo que se llama una bandera. Hay otras banderas, pero aquí se enfocará en la bandera que ignora el caso, la bandera <code>i</code> . Puedes usarlo añadiéndolo a la expresión regular. Un ejemplo de uso de esta bandera es <code>/ignorecase/i</code> . Esta expresión regular puede coincidir con las cadenas <code>&quot;ignorecase&quot;</code> , <code>&quot;igNoreCase&quot;</code> e <code>&quot;IgnoreCase&quot;</code> . 
-</section>
+<section id="description"> Hasta ahora, has visto expresiones regulares para hacer coincidencias literales de cadenas. Pero a veces, es posible que también desee igualar las diferencias de casos. El caso (o, a veces, el caso de las letras) es la diferencia entre las letras mayúsculas y las minúsculas. Ejemplos de mayúsculas son <code>&quot;A&quot;</code> , <code>&quot;B&quot;</code> y <code>&quot;C&quot;</code> . Ejemplos de minúsculas son <code>&quot;a&quot;</code> , <code>&quot;b&quot;</code> y <code>&quot;c&quot;</code> . Puedes emparejar ambos casos usando lo que se llama una bandera. Hay otras banderas, pero aquí se enfocará en la bandera que ignora el caso, la bandera <code>i</code> . Puedes usarlo añadiéndolo a la expresión regular. Un ejemplo de uso de esta bandera es <code>/ignorecase/i</code> . Esta expresión regular puede coincidir con las cadenas <code>&quot;ignorecase&quot;</code> , <code>&quot;igNoreCase&quot;</code> e <code>&quot;IgnoreCase&quot;</code> . </section>
 
 ## Instructions
-<section id='instructions'> 
-Escriba una expresión regular <code>fccRegex</code> para que coincida con <code>&quot;freeCodeCamp&quot;</code> , sin importar su caso. Su expresión regular no debe coincidir con ninguna abreviatura o variación con espacios. 
-</section>
+<section id="instructions"> Escriba un regex <code>fccRegex</code> para que coincida con <code>&quot;freeCodeCamp&quot;</code> , sin importar su caso. Su expresión regular no debe coincidir con ninguna abreviatura o variación con espacios. </section>
 
 ## Tests
 <section id='tests'>
@@ -56,6 +51,7 @@ tests:
 let myString = "freeCodeCamp";
 let fccRegex = /change/; // Change this line
 let result = fccRegex.test(myString);
+
 ```
 
 </div>

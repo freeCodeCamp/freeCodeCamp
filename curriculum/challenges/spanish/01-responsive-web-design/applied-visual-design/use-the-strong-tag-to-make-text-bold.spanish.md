@@ -1,20 +1,16 @@
 ---
 id: 587d781a367417b2b2512ab7
 title: Use the strong Tag to Make Text Bold
-localeTitle: Utilice la etiqueta fuerte para hacer el texto en negrita
 challengeType: 0
 videoUrl: ''
+localeTitle: Utilice la etiqueta fuerte para hacer el texto en negrita
 ---
 
 ## Description
-<section id='description'> 
-Para poner el texto en negrita, puede usar la etiqueta <code>strong</code> . Esto se usa a menudo para llamar la atención sobre el texto y simbolizar que es importante. Con la etiqueta <code>strong</code> , el navegador aplica el CSS de <code>font-weight: bold;</code> al elemento. 
-</section>
+<section id="description"> Para poner el texto en negrita, puede utilizar la etiqueta <code>strong</code> . Esto se usa a menudo para llamar la atención sobre el texto y simbolizar que es importante. Con la etiqueta <code>strong</code> , el navegador aplica el CSS de <code>font-weight: bold;</code> al elemento. </section>
 
 ## Instructions
-<section id='instructions'> 
-Envuelve una etiqueta <code>strong</code> alrededor de &quot;Stanford University&quot; dentro de la etiqueta <code>p</code> . 
-</section>
+<section id="instructions"> Envuelva una etiqueta <code>strong</code> alrededor de &quot;Stanford University&quot; dentro de la etiqueta <code>p</code> . </section>
 
 ## Tests
 <section id='tests'>
@@ -76,6 +72,7 @@ tests:
     </div>
   </div>
 </div>
+
 ```
 
 </div>

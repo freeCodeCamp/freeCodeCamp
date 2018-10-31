@@ -1,20 +1,17 @@
 ---
 id: 5a24c314108439a4d403614e
 title: Define an Action Creator
-localeTitle: Definir un creador de acción
 challengeType: 6
 isRequired: false
+videoUrl: ''
+localeTitle: Definir un creador de acción
 ---
 
 ## Description
-<section id='description'> 
-Después de crear una acción, el siguiente paso es enviar la acción al almacén de Redux para que pueda actualizar su estado. En Redux, se definen creadores de acciones para lograr esto. Un creador de acciones es simplemente una función de JavaScript que devuelve una acción. En otras palabras, los creadores de acciones crean objetos que representan eventos de acción. 
-</section>
+<section id="description"> Después de crear una acción, el siguiente paso es enviar la acción al almacén de Redux para que pueda actualizar su estado. En Redux, se definen creadores de acciones para lograr esto. Un creador de acciones es simplemente una función de JavaScript que devuelve una acción. En otras palabras, los creadores de acciones crean objetos que representan eventos de acción. </section>
 
 ## Instructions
-<section id='instructions'> 
-Defina una función llamada <code>actionCreator()</code> que devuelve el objeto de <code>action</code> cuando se le llama. 
-</section>
+<section id="instructions"> Defina una función llamada <code>actionCreator()</code> que devuelve el objeto de <code>action</code> cuando se le llama. </section>
 
 ## Tests
 <section id='tests'>
@@ -54,15 +51,7 @@ const action = {
 ## Solution
 <section id='solution'>
 
-
 ```js
-const action = {
-  type: 'LOGIN'
-}
-// Define an action creator here:
-const actionCreator = () => {
-  return action;
-};
+// solution required
 ```
-
 </section>

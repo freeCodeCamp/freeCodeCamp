@@ -1,18 +1,16 @@
 ---
-id: 5
-localeTitle: 5900f4181000cf542c50ff2b
+id: 5900f4181000cf542c50ff2b
 challengeType: 5
 title: 'Problem 172: Investigating numbers with few repeated digits'
+videoUrl: ''
+localeTitle: 'Problema 172: Investigando números con pocos dígitos repetidos'
 ---
 
 ## Description
-<section id='description'> 
-¿Cuántos números de 18 dígitos n (sin ceros a la izquierda) hay de tal manera que no aparezca un dígito más de tres veces en n? 
-</section>
+<section id="description"> ¿Cuántos números de 18 dígitos n (sin ceros a la izquierda) hay de tal manera que no aparezca un dígito más de tres veces en n? </section>
 
 ## Instructions
-<section id='instructions'> 
-
+<section id="instructions">
 </section>
 
 ## Tests
@@ -39,6 +37,7 @@ function euler172() {
 }
 
 euler172();
+
 ```
 
 </div>

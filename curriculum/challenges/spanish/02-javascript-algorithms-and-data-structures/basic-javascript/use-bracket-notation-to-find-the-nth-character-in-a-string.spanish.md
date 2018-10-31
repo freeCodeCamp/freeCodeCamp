@@ -1,21 +1,16 @@
 ---
 id: bd7123c9c450eddfaeb5bdef
 title: Use Bracket Notation to Find the Nth Character in a String
-localeTitle: Usa la notación de corchete para encontrar el enésimo carácter de una cadena
 challengeType: 1
+videoUrl: ''
+localeTitle: Usa la notación de corchete para encontrar el enésimo carácter de una cadena
 ---
 
 ## Description
-<section id='description'> 
-También puede usar la <dfn>notación de corchetes</dfn> para obtener el carácter en otras posiciones dentro de una cadena. 
-Recuerde que las computadoras comienzan a contar en <code>0</code> , por lo que el primer carácter es en realidad el carácter cero. 
-</section>
+<section id="description"> También puede usar la <dfn>notación de corchetes</dfn> para obtener el carácter en otras posiciones dentro de una cadena. Recuerde que las computadoras comienzan a contar en <code>0</code> , por lo que el primer carácter es en realidad el carácter cero. </section>
 
 ## Instructions
-<section id='instructions'> 
-Intentemos establecer <code>thirdLetterOfLastName</code> para que sea igual a la tercera letra de la variable <code>lastName</code> usando notación de corchete. 
-<strong>Pista</strong> <br> Intenta mirar la declaración de la variable <code>secondLetterOfFirstName</code> si te quedas atascado. 
-</section>
+<section id="instructions"> Intentemos establecer <code>thirdLetterOfLastName</code> para que sea igual a la tercera letra de la variable <code>lastName</code> usando notación de corchete. <strong>Insinuación</strong> <br> Intenta mirar la declaración de la variable <code>secondLetterOfFirstName</code> si te quedas atascado. </section>
 
 ## Tests
 <section id='tests'>
@@ -47,7 +42,6 @@ var lastName = "Lovelace";
 // Only change code below this line.
 var thirdLetterOfLastName = lastName;
 
-
 ```
 
 </div>
@@ -67,10 +61,7 @@ console.info('after the test');
 ## Solution
 <section id='solution'>
 
-
 ```js
-var lastName = "Lovelace";
-var thirdLetterOfLastName = lastName[2];
+// solution required
 ```
-
 </section>

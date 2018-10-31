@@ -1,24 +1,16 @@
 ---
 id: 56533eb9ac21ba0edf2244ac
 title: Increment a Number with JavaScript
-localeTitle: Incrementar un número con JavaScript
 challengeType: 1
+videoUrl: ''
+localeTitle: Incrementar un número con JavaScript
 ---
 
 ## Description
-<section id='description'> 
-Puede <dfn>incrementar</dfn> o agregar fácilmente uno a una variable con el operador <code>++</code> . 
-<code>i++;</code> 
-es el equivalente de 
-<code>i = i + 1;</code> 
-<strong>Nota</strong> <br> La línea entera se convierte en <code>i++;</code> , eliminando la necesidad del signo igual. 
-</section>
+<section id="description"> Puede <dfn>incrementar</dfn> o agregar fácilmente uno a una variable con el operador <code>++</code> . <code>i++;</code> es el equivalente de <code>i = i + 1;</code> <strong>Nota</strong> <br> La línea entera se convierte en <code>i++;</code> , eliminando la necesidad del signo igual. </section>
 
 ## Instructions
-<section id='instructions'> 
-Cambie el código para usar el operador <code>++</code> en <code>myVar</code> . 
-<strong>Pista</strong> <br> Obtenga más información sobre los <a href="https://developer.mozilla.org/en/docs/Web/JavaScript/Reference/Operators/Arithmetic_Operators#Increment_()" target="_blank">operadores aritméticos - Incremento (++)</a> . 
-</section>
+<section id="instructions"> Cambie el código para usar el operador <code>++</code> en <code>myVar</code> . <strong>Insinuación</strong> <br> Obtenga más información sobre los <a href="https://developer.mozilla.org/en/docs/Web/JavaScript/Reference/Operators/Arithmetic_Operators#Increment_()" target="_blank">operadores aritméticos - Incremento (++)</a> . </section>
 
 ## Tests
 <section id='tests'>
@@ -68,10 +60,7 @@ console.info('after the test');
 ## Solution
 <section id='solution'>
 
-
 ```js
-var myVar = 87;
-myVar++;
+// solution required
 ```
-
 </section>

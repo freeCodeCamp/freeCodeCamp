@@ -1,19 +1,16 @@
 ---
 id: bad87fee1348bd9aefe08806
 title: Style Multiple Elements with a CSS Class
-localeTitle: Estilo de elementos múltiples con una clase CSS
 challengeType: 0
 videoUrl: ''
+localeTitle: Estilo de elementos múltiples con una clase CSS
 ---
 
 ## Description
-<section id='description'> 
-Las clases le permiten usar los mismos estilos CSS en varios elementos HTML. Puedes ver esto aplicando tu clase de <code>red-text</code> al primer elemento <code>p</code> . 
-</section>
+<section id="description"> Las clases le permiten usar los mismos estilos CSS en varios elementos HTML. Puedes ver esto aplicando tu clase de <code>red-text</code> al primer elemento <code>p</code> . </section>
 
 ## Instructions
-<section id='instructions'> 
-
+<section id="instructions">
 </section>
 
 ## Tests
@@ -79,6 +76,7 @@ tests:
     <button type="submit">Submit</button>
   </form>
 </main>
+
 ```
 
 </div>

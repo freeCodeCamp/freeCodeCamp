@@ -1,23 +1,16 @@
 ---
 id: 56533eb9ac21ba0edf2244dd
 title: Selecting from Many Options with Switch Statements
-localeTitle: Selección de muchas opciones con instrucciones de cambio
 challengeType: 1
+videoUrl: ''
+localeTitle: Selección de muchas opciones con instrucciones de cambio
 ---
 
 ## Description
-<section id='description'> 
-Si tiene muchas opciones para elegir, use una instrucción de <code>switch</code> . Una instrucción de <code>switch</code> prueba un valor y puede tener muchas declaraciones de <code>case</code> que definen varios valores posibles. Las declaraciones se ejecutan desde el primer valor de <code>case</code> coincidente hasta que se encuentra una <code>break</code> . 
-Aquí hay un ejemplo de <dfn>pseudocódigo</dfn> : 
-<blockquote>switch(num) {<br>&nbsp;&nbsp;case value1:<br>&nbsp;&nbsp;&nbsp;&nbsp;statement1;<br>&nbsp;&nbsp;&nbsp;&nbsp;break;<br>&nbsp;&nbsp;case value2:<br>&nbsp;&nbsp;&nbsp;&nbsp;statement2;<br>&nbsp;&nbsp;&nbsp;&nbsp;break;<br>...<br>&nbsp;&nbsp;case valueN:<br>&nbsp;&nbsp;&nbsp;&nbsp;statementN;<br>&nbsp;&nbsp;&nbsp;&nbsp;break;<br>}</blockquote> 
-valores de 
-<code>case</code> se prueban con igualdad estricta ( <code>===</code> ). La <code>break</code> le dice a JavaScript que deje de ejecutar sentencias. Si se omite la <code>break</code> , se ejecutará la siguiente instrucción. 
-</section>
+<section id="description"> Si tiene muchas opciones para elegir, use una instrucción de <code>switch</code> . Una instrucción de <code>switch</code> prueba un valor y puede tener muchas declaraciones de <code>case</code> que definen varios valores posibles. Las declaraciones se ejecutan desde el primer valor de <code>case</code> coincidente hasta que se encuentra una <code>break</code> . Aquí hay un ejemplo de <dfn>pseudocódigo</dfn> : <blockquote> interruptor (núm) { <br> valor de caso1: <br> sentencia1; <br> descanso; <br> valor de caso2: <br> declaración2; <br> descanso; <br> ... <br> valor de casoN: <br> declaración N; <br> descanso; <br> } </blockquote> <code>case</code> valores de <code>case</code> se prueban con igualdad estricta ( <code>===</code> ). La <code>break</code> le dice a JavaScript que deje de ejecutar sentencias. Si se omite la <code>break</code> , se ejecutará la siguiente instrucción. </section>
 
 ## Instructions
-<section id='instructions'> 
-Escriba una instrucción de conmutación que pruebe <code>val</code> y establezca la <code>answer</code> para las siguientes condiciones: <br> <code>1</code> - &quot;alfa&quot; <br> <code>2</code> - &quot;beta&quot; <br> <code>3</code> - &quot;gamma&quot; <br> <code>4</code> - &quot;delta&quot; 
-</section>
+<section id="instructions"> Escriba una instrucción de conmutación que pruebe <code>val</code> y establezca la <code>answer</code> para las siguientes condiciones: <br> <code>1</code> - &quot;alfa&quot; <br> <code>2</code> - &quot;beta&quot; <br> <code>3</code> - &quot;gamma&quot; <br> <code>4</code> - &quot;delta&quot; </section>
 
 ## Tests
 <section id='tests'>
@@ -71,26 +64,7 @@ caseInSwitch(1);
 ## Solution
 <section id='solution'>
 
-
 ```js
-function caseInSwitch(val) {
-  var answer = "";
-
-  switch(val) {
-    case 1:
-      answer = "alpha";
-      break;
-    case 2:
-      answer = "beta";
-      break;
-    case 3:
-      answer = "gamma";
-      break;
-    case 4:
-      answer = "delta";
-  }
-  return answer;
-}
+// solution required
 ```
-
 </section>

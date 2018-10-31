@@ -1,27 +1,16 @@
 ---
-id: 5
-localeTitle: 5900f50f1000cf542c510021
+id: 5900f50f1000cf542c510021
 challengeType: 5
 title: 'Problem 418: Factorisation triples'
+videoUrl: ''
+localeTitle: 'Problema 418: Triple Factorización'
 ---
 
 ## Description
-<section id='description'> 
-Sea n un entero positivo. Un triple entero (a, b, c) se llama triple de factorización de n si: 1 ≤ a ≤ b ≤ c 
-a · b · c = n. 
-
-Defina f (n) como a + b + c para la factorización triple (a, b, c) de n que minimiza c / a. Se puede demostrar que este triple es único. 
-
-
-Por ejemplo, f (165) = 19, f (100100) = 142 y f (20!) = 4034872. 
-
-
-Encuentre f (43!). 
-</section>
+undefined
 
 ## Instructions
-<section id='instructions'> 
-
+<section id="instructions">
 </section>
 
 ## Tests
@@ -48,6 +37,7 @@ function euler418() {
 }
 
 euler418();
+
 ```
 
 </div>

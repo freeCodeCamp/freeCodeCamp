@@ -1,22 +1,16 @@
 ---
-id: 5
-localeTitle: 5900f38b1000cf542c50fe9e
+id: 5900f38b1000cf542c50fe9e
 challengeType: 5
 title: 'Problem 31: Coin sums'
+videoUrl: ''
+localeTitle: 'Problema 31: Sumas de monedas'
 ---
 
 ## Description
-<section id='description'> 
-En Inglaterra, la moneda se compone de libras, £ y peniques, p, y hay ocho monedas en circulación general: 
-1p, 2p, 5p, 10p, 20p, 50p, £ 1 (100p) y £ 2 (200p ). 
-Es posible hacer £ 2 de la siguiente manera: 
-1 × £ 1 + 1 × 50p + 2 × 20p + 1 × 5p + 1 × 2p + 3 × 1p 
-¿De cuántas maneras diferentes se pueden hacer £ (n) utilizando cualquier cantidad de monedas? 
-</section>
+<section id="description"> En Inglaterra, la moneda se compone de libras, £ y peniques, p, y hay ocho monedas en circulación general: 1p, 2p, 5p, 10p, 20p, 50p, £ 1 (100p) y £ 2 (200p). Es posible hacer £ 2 de la siguiente manera: 1 × £ 1 + 1 × 50p + 2 × 20p + 1 × 5p + 1 × 2p + 3 × 1p ¿Cuántas formas diferentes se pueden hacer con cualquier número? de monedas? </section>
 
 ## Instructions
-<section id='instructions'> 
-
+<section id="instructions">
 </section>
 
 ## Tests
@@ -49,6 +43,7 @@ function coinSums(n) {
 }
 
 coinSums(200);
+
 ```
 
 </div>
@@ -60,16 +55,7 @@ coinSums(200);
 ## Solution
 <section id='solution'>
 
-
 ```js
-const coinSums = (n) => {
-  const getWays = (n, m=8, c=[1, 2, 5, 10, 20, 50, 100, 200]) => {
-    if (n === 0) return 1;
-    if (m === 0 || n < 0) return 0;
-    return getWays(n - c[m - 1], m, c) + getWays(n, m - 1, c);
-  };
-  return getWays(n);
-};
+// solution required
 ```
-
 </section>

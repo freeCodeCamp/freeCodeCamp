@@ -1,22 +1,16 @@
 ---
 id: 56533eb9ac21ba0edf2244b0
 title: Compound Assignment With Augmented Subtraction
-localeTitle: Asignación compuesta con resta aumentada
 challengeType: 1
+videoUrl: ''
+localeTitle: Asignación compuesta con resta aumentada
 ---
 
 ## Description
-<section id='description'> 
-Al igual que el operador <code>+=</code> , <code>-=</code> resta un número de una variable. 
-<code>myVar = myVar - 5;</code> 
-restará <code>5</code> de <code>myVar</code> . Esto se puede reescribir como: 
-<code>myVar -= 5;</code> 
-</section>
+<section id="description"> Al igual que el operador <code>+=</code> , <code>-=</code> resta un número de una variable. <code>myVar = myVar - 5;</code> restará <code>5</code> de <code>myVar</code> . Esto se puede reescribir como: <code>myVar -= 5;</code> </section>
 
 ## Instructions
-<section id='instructions'> 
-Convierta las asignaciones para <code>a</code> , <code>b</code> y <code>c</code> para usar el operador <code>-=</code> . 
-</section>
+<section id="instructions"> Convierta las asignaciones para <code>a</code> , <code>b</code> y <code>c</code> para usar el operador <code>-=</code> . </section>
 
 ## Tests
 <section id='tests'>
@@ -54,7 +48,6 @@ a = a - 6;
 b = b - 15;
 c = c - 1;
 
-
 ```
 
 </div>
@@ -74,17 +67,7 @@ console.info('after the test');
 ## Solution
 <section id='solution'>
 
-
 ```js
-var a = 11;
-var b = 9;
-var c = 3;
-
-a -= 6;
-b -= 15;
-c -= 1;
-
-
+// solution required
 ```
-
 </section>

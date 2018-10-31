@@ -1,25 +1,16 @@
 ---
 id: 5a9d7286424fe3d0e10cad13
 title: Attach a Fallback value to a CSS Variable
-localeTitle: Adjuntar un valor de reserva a una variable CSS
 challengeType: 0
 videoUrl: ''
+localeTitle: Adjuntar un valor de reserva a una variable CSS
 ---
 
 ## Description
-<section id='description'> 
-Al usar su variable como un valor de propiedad CSS, puede adjuntar un valor de reserva al que su navegador volverá si la variable dada no es válida. 
-<strong>Nota:</strong> Este respaldo no se utiliza para aumentar la compatibilidad del navegador, y no funcionará en los navegadores IE. Más bien, se usa para que el navegador tenga un color para mostrar si no puede encontrar su variable. 
-Así es como lo haces: 
-<blockquote>background: var(--penguin-skin, black);</blockquote> 
-Esto establecerá el fondo en negro si su variable no se estableció. 
-Tenga en cuenta que esto puede ser útil para la depuración. 
-</section>
+<section id="description"> Cuando use su variable como un valor de propiedad CSS, puede adjuntar un valor de reserva al que su navegador volverá si la variable dada no es válida. <strong>Nota:</strong> este respaldo no se utiliza para aumentar la compatibilidad del navegador, y no funcionará en los navegadores IE. Más bien, se usa para que el navegador tenga un color para mostrar si no puede encontrar su variable. Así es como lo haces: <blockquote> fondo: var (- piel de pingüino, negro); </blockquote> Esto establecerá el fondo en negro si su variable no se estableció. Tenga en cuenta que esto puede ser útil para la depuración. </section>
 
 ## Instructions
-<section id='instructions'> 
-Parece que hay un problema con las variables proporcionadas a las <code>.penguin-top</code> y <code>.penguin-bottom</code> . En lugar de corregir el error tipográfico, agregue un valor alternativo de <code>black</code> a la propiedad de <code>background</code> de las <code>.penguin-top</code> y <code>.penguin-bottom</code> . 
-</section>
+<section id="instructions"> Parece que hay un problema con las variables proporcionadas a las <code>.penguin-top</code> y <code>.penguin-bottom</code> . En lugar de corregir el error tipográfico, agregue un valor alternativo de <code>black</code> a la propiedad de <code>background</code> de las <code>.penguin-top</code> y <code>.penguin-bottom</code> . </section>
 
 ## Tests
 <section id='tests'>
@@ -245,6 +236,7 @@ tests:
     <div class="beak-bottom"></div>
   </div>
 </div>
+
 ```
 
 </div>
@@ -256,9 +248,7 @@ tests:
 ## Solution
 <section id='solution'>
 
-
 ```js
-var code = ".penguin-top {background: var(--pengiun-skin, black);} .penguin-bottom {background: var(--pengiun-skin, black);}"
+// solution required
 ```
-
 </section>

@@ -1,21 +1,16 @@
 ---
 id: 587d8257367417b2b2512c7d
 title: Find the Minimum and Maximum Height of a Binary Search Tree
-localeTitle: Encuentra la altura mínima y máxima de un árbol de búsqueda binario
 challengeType: 1
+videoUrl: ''
+localeTitle: Encuentra la altura mínima y máxima de un árbol de búsqueda binario
 ---
 
 ## Description
-<section id='description'> 
-En el último desafío describimos un escenario en el que un árbol podría desequilibrarse. Para entender el concepto de equilibrio, echemos un vistazo a otra propiedad del árbol: la altura. La altura en un árbol representa la distancia desde el nodo raíz a cualquier nodo hoja dado. Diferentes caminos en una estructura de árbol altamente ramificada pueden tener diferentes alturas, pero para un árbol dado habrá una altura mínima y máxima. Si el árbol está equilibrado, estos valores diferirán como máximo en uno. Esto significa que en un árbol equilibrado, todos los nodos de hoja existen dentro del mismo nivel, o si no están dentro del mismo nivel, están a lo sumo en un nivel. 
-La propiedad del equilibrio es importante para los árboles porque es lo que determina la eficiencia de las operaciones de los árboles. Como explicamos en el último desafío, enfrentamos la complejidad del peor de los casos para árboles muy desequilibrados. Los árboles de equilibrio automático se usan comúnmente para explicar este problema en árboles con conjuntos de datos dinámicos. Los ejemplos comunes de estos incluyen árboles AVL, árboles rojo-negros y árboles-B. Todos estos árboles contienen lógica interna adicional que vuelve a equilibrar el árbol cuando las inserciones o eliminaciones crean un estado de desequilibrio. 
-Nota: una propiedad similar a la altura es la profundidad, que se refiere a qué tan lejos está un nodo dado del nodo raíz. 
-Instrucciones: escriba dos métodos para nuestro árbol binario: <code>findMinHeight</code> y <code>findMaxHeight</code> . Estos métodos deben devolver un valor entero para la altura mínima y máxima dentro de un árbol binario dado, respectivamente. Si el nodo está vacío, asignémosle una altura de <code>-1</code> (ese es el caso base). Finalmente, agregue un tercer método <code>isBalanced</code> que devuelva <code>true</code> o <code>false</code> dependiendo de si el árbol está equilibrado o no. Puedes usar los dos primeros métodos que acabas de escribir para determinar esto. 
-</section>
+<section id="description"> En el último desafío describimos un escenario en el que un árbol podría desequilibrarse. Para entender el concepto de equilibrio, echemos un vistazo a otra propiedad del árbol: la altura. La altura en un árbol representa la distancia desde el nodo raíz a cualquier nodo hoja dado. Diferentes caminos en una estructura de árbol altamente ramificada pueden tener diferentes alturas, pero para un árbol dado habrá una altura mínima y máxima. Si el árbol está equilibrado, estos valores diferirán como máximo en uno. Esto significa que en un árbol equilibrado, todos los nodos de hoja existen dentro del mismo nivel, o si no están dentro del mismo nivel, están a lo sumo en un nivel. La propiedad del equilibrio es importante para los árboles porque es lo que determina la eficiencia de las operaciones de los árboles. Como explicamos en el último desafío, enfrentamos la complejidad del peor de los casos para árboles muy desequilibrados. Los árboles de equilibrio automático se usan comúnmente para explicar este problema en árboles con conjuntos de datos dinámicos. Los ejemplos comunes de estos incluyen árboles AVL, árboles rojo-negros y árboles-B. Todos estos árboles contienen lógica interna adicional que vuelve a equilibrar el árbol cuando las inserciones o eliminaciones crean un estado de desequilibrio. Nota: una propiedad similar a la altura es la profundidad, que se refiere a qué tan lejos está un nodo dado del nodo raíz. Instrucciones: Escriba dos métodos para nuestro árbol binario: <code>findMinHeight</code> y <code>findMaxHeight</code> . Estos métodos deben devolver un valor entero para la altura mínima y máxima dentro de un árbol binario dado, respectivamente. Si el nodo está vacío, asignémosle una altura de <code>-1</code> (ese es el caso base). Finalmente, agregue un tercer método <code>isBalanced</code> que devuelva <code>true</code> o <code>false</code> dependiendo de si el árbol está equilibrado o no. Puedes usar los dos primeros métodos que acabas de escribir para determinar esto. </section>
 
 ## Instructions
-<section id='instructions'> 
-
+<section id="instructions">
 </section>
 
 ## Tests
@@ -61,6 +56,7 @@ function BinarySearchTree() {
     // change code below this line
     // change code above this line
 }
+
 ```
 
 </div>

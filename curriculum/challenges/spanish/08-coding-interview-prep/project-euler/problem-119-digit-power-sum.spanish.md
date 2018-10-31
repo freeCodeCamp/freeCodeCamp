@@ -1,21 +1,16 @@
 ---
-id: 5
-localeTitle: 5900f3e41000cf542c50fef6
+id: 5900f3e41000cf542c50fef6
 challengeType: 5
 title: 'Problem 119: Digit power sum'
+videoUrl: ''
+localeTitle: 'Problema 119: suma de potencia de dígitos'
 ---
 
 ## Description
-<section id='description'> 
-El número 512 es interesante porque es igual a la suma de sus dígitos elevados a alguna potencia: 5 + 1 + 2 = 8, y 83 = 512. Otro ejemplo de un número con esta propiedad es 614656 = 284. 
-define como el enésimo término de esta secuencia e insiste en que un número debe contener al menos dos dígitos para tener una suma. 
-Te dan que a2 = 512 y a10 = 614656. 
-Encuentra a30. 
-</section>
+<section id="description"> El número 512 es interesante porque es igual a la suma de sus dígitos elevados a alguna potencia: 5 + 1 + 2 = 8, y 83 = 512. Otro ejemplo de un número con esta propiedad es 614656 = 284. Definiremos un para ser el enésimo término de esta secuencia e insista en que un número debe contener al menos dos dígitos para tener una suma. Te dan que a2 = 512 y a10 = 614656. Encuentra a30. </section>
 
 ## Instructions
-<section id='instructions'> 
-
+<section id="instructions">
 </section>
 
 ## Tests
@@ -42,6 +37,7 @@ function euler119() {
 }
 
 euler119();
+
 ```
 
 </div>

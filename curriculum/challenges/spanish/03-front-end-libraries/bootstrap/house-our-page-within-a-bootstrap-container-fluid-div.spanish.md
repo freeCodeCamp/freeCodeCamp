@@ -1,19 +1,16 @@
 ---
 id: bad87fee1348bd9aec908746
 title: House our page within a Bootstrap container-fluid div
-localeTitle: Aloja nuestra página dentro de un div de fluido de contenedores Bootstrap
 challengeType: 0
+videoUrl: ''
+localeTitle: Aloja nuestra página dentro de un div de fluido de contenedores Bootstrap
 ---
 
 ## Description
-<section id='description'> 
-Ahora asegurémonos de que todo el contenido de su página responda a dispositivos móviles. 
-<code>h3</code> su elemento <code>h3</code> dentro de un elemento <code>div</code> con la clase <code>container-fluid</code> . 
-</section>
+<section id="description"> Ahora asegurémonos de que todo el contenido de su página responda a dispositivos móviles. <code>h3</code> su elemento <code>h3</code> dentro de un elemento <code>div</code> con la clase <code>container-fluid</code> . </section>
 
 ## Instructions
-<section id='instructions'> 
-
+<section id="instructions">
 </section>
 
 ## Tests
@@ -39,7 +36,6 @@ tests:
 
 ```html
 <h3 class="text-primary text-center">jQuery Playground</h3>
-
 
 ```
 

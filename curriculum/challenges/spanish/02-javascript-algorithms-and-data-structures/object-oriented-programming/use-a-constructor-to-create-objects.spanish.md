@@ -1,25 +1,16 @@
 ---
 id: 587d7dad367417b2b2512b78
 title: Use a Constructor to Create Objects
-localeTitle: Usa un constructor para crear objetos
 challengeType: 1
+videoUrl: ''
+localeTitle: Usa un constructor para crear objetos
 ---
 
 ## Description
-<section id='description'> 
-Aquí está el constructor <code>Bird</code> del desafío anterior: 
-<blockquote>function Bird() {<br>&nbsp;&nbsp;this.name = "Albert";<br>&nbsp;&nbsp;this.color  = "blue";<br>&nbsp;&nbsp;this.numLegs = 2;<br>&nbsp;&nbsp;// "this" inside the constructor always refers to the object being created<br>}<br><br>let blueBird = new Bird();</blockquote> 
-Observe que el <code>new</code> operador se utiliza al llamar a un constructor. Esto le dice a JavaScript que cree una nueva <code>instance</code> de <code>Bird</code> llamada <code>blueBird</code> . Sin el <code>new</code> operador, <code>this</code> dentro del constructor no apuntaría al objeto recién creado, dando resultados inesperados. 
-Ahora, <code>blueBird</code> tiene todas las propiedades definidas dentro del constructor <code>Bird</code> : 
-<blockquote>blueBird.name; // => Albert<br>blueBird.color; // => blue<br>blueBird.numLegs; // => 2</blockquote> 
-Al igual que cualquier otro objeto, sus propiedades se pueden acceder y modificar: 
-<blockquote>blueBird.name = 'Elvira';<br>blueBird.name; // => Elvira</blockquote> 
-</section>
+<section id="description"> Aquí está el constructor de <code>Bird</code> del desafío anterior: <blockquote> función Bird () { <br> this.name = &quot;Albert&quot;; <br> this.color = &quot;blue&quot;; <br> this.numLegs = 2; <br> // &quot;esto&quot; dentro del constructor siempre se refiere al objeto que se está creando <br> } <br><br> Deje que blueBird = new Bird (); </blockquote> Observe que el <code>new</code> operador se utiliza al llamar a un constructor. Esto le dice a JavaScript que cree una nueva <code>instance</code> de <code>Bird</code> llamada <code>blueBird</code> . Sin el <code>new</code> operador, <code>this</code> dentro del constructor no apuntaría al objeto recién creado, dando resultados inesperados. Ahora <code>blueBird</code> tiene todas las propiedades definidas dentro del constructor de <code>Bird</code> : <blockquote> blueBird.name; // =&gt; Albert <br> blueBird.color; // =&gt; azul <br> blueBird.numLegs; // =&gt; 2 </blockquote> Al igual que cualquier otro objeto, se puede acceder y modificar sus propiedades: <blockquote> blueBird.name = &#39;Elvira&#39;; <br> blueBird.name; // =&gt; Elvira </blockquote></section>
 
 ## Instructions
-<section id='instructions'> 
-Usa el constructor <code>Dog</code> de la última lección para crear una nueva instancia de <code>Dog</code> , asignándola a un <code>hound</code> variable. 
-</section>
+<section id="instructions"> Usa el constructor <code>Dog</code> de la última lección para crear una nueva instancia de <code>Dog</code> , asignándola a un <code>hound</code> variable. </section>
 
 ## Tests
 <section id='tests'>
@@ -48,7 +39,6 @@ function Dog() {
 }
 // Add your code below this line
 
-
 ```
 
 </div>
@@ -60,14 +50,7 @@ function Dog() {
 ## Solution
 <section id='solution'>
 
-
 ```js
-function Dog() {
-  this.name = "Rupert";
-  this.color = "brown";
-  this.numLegs = 4;
-}
-const hound = new Dog();
+// solution required
 ```
-
 </section>

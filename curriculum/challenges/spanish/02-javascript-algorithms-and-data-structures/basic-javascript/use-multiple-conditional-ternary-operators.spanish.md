@@ -1,23 +1,16 @@
 ---
 id: 587d7b7e367417b2b2512b21
 title: Use Multiple Conditional (Ternary) Operators
-localeTitle: Usar múltiples operadores condicionales (ternarios)
 challengeType: 1
+videoUrl: ''
+localeTitle: Usar múltiples operadores condicionales (ternarios)
 ---
 
 ## Description
-<section id='description'> 
-En el desafío anterior, usaste un solo <code>conditional operator</code> . También puede encadenarlos para verificar múltiples condiciones. 
-La siguiente función usa las declaraciones if, else if, y else para verificar múltiples condiciones: 
-<blockquote>function findGreaterOrEqual(a, b) {<br>&nbsp;&nbsp;if(a === b) {<br>&nbsp;&nbsp;&nbsp;&nbsp;return "a and b are equal";<br>&nbsp;&nbsp;}<br>&nbsp;&nbsp;else if(a > b) {<br>&nbsp;&nbsp;&nbsp;&nbsp;return "a is greater";<br>&nbsp;&nbsp;}<br>&nbsp;&nbsp;else {<br>&nbsp;&nbsp;&nbsp;&nbsp;return "b is greater";<br>&nbsp;&nbsp;}<br>}</blockquote> 
-La función anterior puede reescribirse utilizando múltiples <code>conditional operators</code> : 
-<blockquote>function findGreaterOrEqual(a, b) {<br>&nbsp;&nbsp;return (a === b) ? "a and b are equal" : (a > b) ? "a is greater" : "b is greater";<br>}</blockquote> 
-</section>
+<section id="description"> En el desafío anterior, usaste un solo <code>conditional operator</code> . También puede encadenarlos para verificar múltiples condiciones. La siguiente función usa las declaraciones if, else if, y else para verificar múltiples condiciones: <blockquote> función findGreaterOrEqual (a, b) { <br> si (a === b) { <br> devuelve &quot;a y b son iguales&quot;; <br> } <br> si no (a&gt; b) { <br> devuelve &quot;a es mayor&quot;; <br> } <br> else { <br> el retorno &quot;b es mayor&quot;; <br> } <br> } </blockquote> La función anterior se puede reescribir utilizando múltiples <code>conditional operators</code> : <blockquote> función findGreaterOrEqual (a, b) { <br> retorno (a === b)? &quot;a y b son iguales&quot;: (a&gt; b)? &quot;a es mayor&quot;: &quot;b es mayor&quot;; <br> } </blockquote></section>
 
 ## Instructions
-<section id='instructions'> 
-Use múltiples <code>conditional operators</code> en la función <code>checkSign</code> para verificar si un número es positivo, negativo o cero. 
-</section>
+<section id="instructions"> Use múltiples <code>conditional operators</code> en la función <code>checkSign</code> para verificar si un número es positivo, negativo o cero. </section>
 
 ## Tests
 <section id='tests'>
@@ -48,6 +41,7 @@ function checkSign(num) {
 }
 
 checkSign(10);
+
 ```
 
 </div>

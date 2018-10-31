@@ -1,20 +1,17 @@
 ---
 id: 5a24c314108439a4d4036157
 title: Write a Counter with Redux
-localeTitle: Escribir un contador con redux
 challengeType: 6
 isRequired: false
+videoUrl: ''
+localeTitle: Escribir un contador con redux
 ---
 
 ## Description
-<section id='description'> 
-Ahora has aprendido todos los principios básicos de Redux! Ha visto cómo crear acciones y creadores de acciones, crear una tienda Redux, enviar sus acciones contra la tienda y diseñar actualizaciones de estado con reductores puros. Incluso ha visto cómo administrar el estado complejo con una composición de reductor y manejar acciones asíncronas. Estos ejemplos son simplistas, pero estos conceptos son los principios básicos de Redux. Si los entiende bien, está listo para comenzar a crear su propia aplicación Redux. Los siguientes desafíos cubren algunos de los detalles relacionados con <code>state</code> inmutabilidad del <code>state</code> , pero primero, aquí hay una revisión de todo lo que has aprendido hasta ahora. 
-</section>
+<section id="description"> ¡Ahora has aprendido todos los principios básicos de Redux! Ha visto cómo crear acciones y creadores de acciones, crear una tienda Redux, enviar sus acciones contra la tienda y diseñar actualizaciones de estado con reductores puros. Incluso ha visto cómo administrar el estado complejo con una composición de reductor y manejar acciones asíncronas. Estos ejemplos son simplistas, pero estos conceptos son los principios básicos de Redux. Si los entiende bien, está listo para comenzar a crear su propia aplicación Redux. Los siguientes desafíos cubren algunos de los detalles relacionados con <code>state</code> inmutabilidad del <code>state</code> , pero primero, aquí hay una revisión de todo lo que has aprendido hasta ahora. </section>
 
 ## Instructions
-<section id='instructions'> 
-En esta lección, implementará un contador simple con Redux desde cero. Los conceptos básicos se proporcionan en el editor de código, ¡pero tendrás que completar los detalles! Utilice los nombres que se proporcionan y defina los creadores de acción <code>incAction</code> y <code>decAction</code> , los <code>decAction</code> acción <code>counterReducer()</code> , <code>INCREMENT</code> y <code>DECREMENT</code> , y finalmente la <code>store</code> Redux. Una vez que hayas terminado, deberías poder enviar acciones de <code>INCREMENT</code> o <code>DECREMENT</code> para incrementar o disminuir el estado que se tiene en la <code>store</code> . Buena suerte construyendo tu primera aplicación de Redux! 
-</section>
+<section id="instructions"> En esta lección, implementará un contador simple con Redux desde cero. Los conceptos básicos se proporcionan en el editor de código, ¡pero tendrás que completar los detalles! Utilice los nombres que se proporcionan y defina los creadores de acción <code>incAction</code> y <code>decAction</code> , los <code>decAction</code> acción <code>counterReducer()</code> , <code>INCREMENT</code> y <code>DECREMENT</code> , y finalmente la <code>store</code> Redux. Una vez que hayas terminado, deberías poder enviar acciones de <code>INCREMENT</code> o <code>DECREMENT</code> para incrementar o disminuir el estado que se tiene en la <code>store</code> . Buena suerte construyendo tu primera aplicación de Redux! </section>
 
 ## Tests
 <section id='tests'>
@@ -54,6 +51,7 @@ const incAction = null; // define an action creator for incrementing
 const decAction = null; // define an action creator for decrementing
 
 const store = null; // define the Redux store here, passing in your reducers
+
 ```
 
 </div>
@@ -65,35 +63,7 @@ const store = null; // define the Redux store here, passing in your reducers
 ## Solution
 <section id='solution'>
 
-
 ```js
-const INCREMENT = 'INCREMENT';
-const DECREMENT = 'DECREMENT';
-
-const counterReducer = (state = 0, action) => {
-  switch(action.type) {
-    case INCREMENT:
-      return state + 1;
-    case DECREMENT:
-      return state - 1;
-    default:
-      return state;
-  }
-};
-
-const incAction = () => {
-  return {
-    type: INCREMENT
-  }
-};
-
-const decAction = () => {
-  return {
-    type: DECREMENT
-  }
-};
-
-const store = Redux.createStore(counterReducer);
+// solution required
 ```
-
 </section>

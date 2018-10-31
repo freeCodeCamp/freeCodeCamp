@@ -1,23 +1,16 @@
 ---
 id: 56533eb9ac21ba0edf2244af
 title: Compound Assignment With Augmented Addition
-localeTitle: Asignación compuesta con adición aumentada
 challengeType: 1
+videoUrl: ''
+localeTitle: Asignación compuesta con adición aumentada
 ---
 
 ## Description
-<section id='description'> 
-En la programación, es común usar asignaciones para modificar el contenido de una variable. Recuerde que todo a la derecha del signo igual se evalúa primero, por lo que podemos decir: 
-<code>myVar = myVar + 5;</code> 
-para agregar <code>5</code> a <code>myVar</code> . Dado que este es un patrón tan común, hay operadores que realizan tanto una operación matemática como una asignación en un solo paso. 
-Uno de tales operadores es el operador <code>+=</code> . 
-<blockquote>var myVar = 1;<br>myVar += 5;<br>console.log(myVar); // Returns 6</blockquote> 
-</section>
+<section id="description"> En programación, es común usar asignaciones para modificar el contenido de una variable. Recuerde que todo a la derecha del signo igual se evalúa primero, por lo que podemos decir: <code>myVar = myVar + 5;</code> para agregar <code>5</code> a <code>myVar</code> . Dado que este es un patrón tan común, hay operadores que realizan tanto una operación matemática como una asignación en un solo paso. Uno de tales operadores es el operador <code>+=</code> . <blockquote> var myVar = 1; <br> myVar + = 5; <br> console.log (myVar); // Devoluciones 6 </blockquote></section>
 
 ## Instructions
-<section id='instructions'> 
-Convierta las asignaciones para <code>a</code> , <code>b</code> y <code>c</code> para usar el operador <code>+=</code> . 
-</section>
+<section id="instructions"> Convierta las asignaciones para <code>a</code> , <code>b</code> y <code>c</code> para usar el operador <code>+=</code> . </section>
 
 ## Tests
 <section id='tests'>
@@ -74,15 +67,7 @@ console.info('after the test');
 ## Solution
 <section id='solution'>
 
-
 ```js
-var a = 3;
-var b = 17;
-var c = 12;
-
-a += 12;
-b += 9;
-c += 7;
+// solution required
 ```
-
 </section>

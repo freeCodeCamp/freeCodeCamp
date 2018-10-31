@@ -1,22 +1,16 @@
 ---
-id: 5
-localeTitle: 5900f46e1000cf542c50ff81
+id: 5900f46e1000cf542c50ff81
 challengeType: 5
 title: 'Problem 258: A lagged Fibonacci sequence'
+videoUrl: ''
+localeTitle: 'Problema 258: Una secuencia de Fibonacci retrasada'
 ---
 
 ## Description
-<section id='description'> 
-Una secuencia se define como: 
-
-gk = 1, para 0 ≤ k ≤ 1999 
-gk = gk-2000 + gk-1999, para k ≥ 2000. 
-Encontrar gk mod 20092010 para k = 1018. 
-</section>
+<section id="description"> Una secuencia se define como: <p> gk = 1, para 0 ≤ k ≤ 1999 gk = gk-2000 + gk-1999, para k ≥ 2000. Encuentre gk mod 20092010 para k = 1018. </p></section>
 
 ## Instructions
-<section id='instructions'> 
-
+<section id="instructions">
 </section>
 
 ## Tests
@@ -43,6 +37,7 @@ function euler258() {
 }
 
 euler258();
+
 ```
 
 </div>

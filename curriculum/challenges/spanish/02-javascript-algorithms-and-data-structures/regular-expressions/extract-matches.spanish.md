@@ -1,21 +1,16 @@
 ---
 id: 587d7db4367417b2b2512b92
 title: Extract Matches
-localeTitle: Extraer fósforos
 challengeType: 1
+videoUrl: ''
+localeTitle: Extraer fósforos
 ---
 
 ## Description
-<section id='description'> 
-Hasta ahora, solo ha estado comprobando si existe un patrón o no dentro de una cadena. También puede extraer las coincidencias reales que encontró con el método <code>.match()</code> . 
-Para usar el método <code>.match()</code> , aplique el método en una cadena y pase la expresión regular dentro de los paréntesis. Aquí hay un ejemplo: 
-<blockquote>"Hello, World!".match(/Hello/);<br>// Returns ["Hello"]<br>let ourStr = "Regular expressions";<br>let ourRegex = /expressions/;<br>ourStr.match(ourRegex);<br>// Returns ["expressions"]</blockquote> 
-</section>
+<section id="description"> Hasta ahora, solo has estado comprobando si un patrón existe o no dentro de una cadena. También puede extraer las coincidencias reales que encontró con el método <code>.match()</code> . Para usar el método <code>.match()</code> , aplique el método en una cadena y pase la expresión regular dentro de los paréntesis. Aquí hay un ejemplo: <blockquote> &quot;¡Hola, mundo!&quot;. Match (/ Hello /); <br> // Devoluciones [&quot;Hola&quot;] <br> deja ourStr = &quot;expresiones regulares&quot;; <br> vamos a nuestroRegex = / expresiones /; <br> ourStr.match (ourRegex); <br> // Devoluciones [&quot;expresiones&quot;] </blockquote></section>
 
 ## Instructions
-<section id='instructions'> 
-Aplique el método <code>.match()</code> para extraer la <code>coding</code> palabras. 
-</section>
+<section id="instructions"> Aplique el método <code>.match()</code> para extraer la <code>coding</code> palabras. </section>
 
 ## Tests
 <section id='tests'>
@@ -42,6 +37,7 @@ tests:
 let extractStr = "Extract the word 'coding' from this string.";
 let codingRegex = /change/; // Change this line
 let result = extractStr; // Change this line
+
 ```
 
 </div>

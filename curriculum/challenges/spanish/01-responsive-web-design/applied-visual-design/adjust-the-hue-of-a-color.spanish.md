@@ -1,25 +1,16 @@
 ---
 id: 587d78a4367417b2b2512ad4
 title: Adjust the Hue of a Color
-localeTitle: Ajustar el tono de un color
 challengeType: 0
 videoUrl: ''
+localeTitle: Ajustar el tono de un color
 ---
 
 ## Description
-<section id='description'> 
-colores tienen varias características que incluyen matiz, saturación y luminosidad. CSS3 introdujo la propiedad <code>hsl()</code> como una forma alternativa de elegir un color al establecer directamente estas características. 
-<b>Hue</b> es lo que la gente generalmente considera como &#39;color&#39;. Si imaginas un espectro de colores comenzando con rojo a la izquierda, moviéndote a través de verde en el medio y azul a la derecha, el tono es donde un color se ajusta a lo largo de esta línea. En <code>hsl()</code> , el tono utiliza un concepto de rueda de color en lugar del espectro, donde el ángulo del color en el círculo se da como un valor entre 0 y 360. 
-<b>Saturación</b> es la cantidad de gris en un color. Un color completamente saturado no tiene gris, y un color mínimamente saturado es casi completamente gris. Esto se da como un porcentaje con 100% completamente saturado. 
-<b>luminosidad</b> es la cantidad de blanco o negro en un color. Se da un porcentaje que va del 0% (negro) al 100% (blanco), donde el 50% es el color normal. 
-Aquí hay algunos ejemplos de <code>hsl()</code> usar <code>hsl()</code> con colores de luminosidad normal completamente saturados: 
-<table class="table table-striped"><thead><tr><th> Color </th><th> HSL </th></tr></thead><tbody><tr><td> rojo </td><td> hsl (0, 100%, 50%) </td></tr><tr><td> amarillo </td><td> hsl (60, 100%, 50%) </td></tr><tr><td> verde </td><td> hsl (120, 100%, 50%) </td></tr><tr><td> cian </td><td> hsl (180, 100%, 50%) </td></tr><tr><td> azul </td><td> hsl (240, 100%, 50%) </td></tr><tr><td> magenta </td><td> hsl (300, 100%, 50%) </td></tr></tbody></table> 
-</section>
+<section id="description"> Los colores tienen varias características que incluyen matiz, saturación y luminosidad. CSS3 introdujo la propiedad <code>hsl()</code> como una forma alternativa de elegir un color al establecer directamente estas características. <b>Hue</b> es lo que la gente generalmente considera como &quot;color&quot;. Si imaginas un espectro de colores comenzando con rojo a la izquierda, moviéndote a través de verde en el medio y azul a la derecha, el tono es donde un color se ajusta a lo largo de esta línea. En <code>hsl()</code> , el tono utiliza un concepto de rueda de color en lugar del espectro, donde el ángulo del color en el círculo se da como un valor entre 0 y 360. La <b>saturación</b> es la cantidad de gris en un color. Un color completamente saturado no tiene gris, y un color mínimamente saturado es casi completamente gris. Esto se da como un porcentaje con 100% completamente saturado. <b>La luminosidad</b> es la cantidad de blanco o negro en un color. Se da un porcentaje que va del 0% (negro) al 100% (blanco), donde el 50% es el color normal. Aquí hay algunos ejemplos de <code>hsl()</code> usar <code>hsl()</code> con colores de luminosidad normal completamente saturados: <table class="table table-striped"><thead><tr><th> Color </th><th> HSL </th></tr></thead><tbody><tr><td> rojo </td><td> hsl (0, 100%, 50%) </td></tr><tr><td> amarillo </td><td> hsl (60, 100%, 50%) </td></tr><tr><td> verde </td><td> hsl (120, 100%, 50%) </td></tr><tr><td> cian </td><td> hsl (180, 100%, 50%) </td></tr><tr><td> azul </td><td> hsl (240, 100%, 50%) </td></tr><tr><td> magenta </td><td> hsl (300, 100%, 50%) </td></tr></tbody></table></section>
 
 ## Instructions
-<section id='instructions'> 
-Cambie el <code>background-color</code> de <code>background-color</code> de cada elemento <code>div</code> función de los nombres de clase ( <code>green</code> , <code>cyan</code> o <code>blue</code> ) usando <code>hsl()</code> . Los tres deben tener saturación completa y luminosidad normal. 
-</section>
+<section id="instructions"> Cambie el <code>background-color</code> de <code>background-color</code> de cada elemento <code>div</code> función de los nombres de clase ( <code>green</code> , <code>cyan</code> o <code>blue</code> ) usando <code>hsl()</code> . Los tres deben tener saturación completa y luminosidad normal. </section>
 
 ## Tests
 <section id='tests'>
@@ -76,6 +67,7 @@ tests:
 <div class="green"></div>
 <div class="cyan"></div>
 <div class="blue"></div>
+
 ```
 
 </div>

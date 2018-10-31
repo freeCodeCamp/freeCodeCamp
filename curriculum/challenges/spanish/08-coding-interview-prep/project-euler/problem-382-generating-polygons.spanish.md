@@ -1,41 +1,16 @@
 ---
-id: 5
-localeTitle: 5900f4eb1000cf542c50fffd
+id: 5900f4eb1000cf542c50fffd
 challengeType: 5
 title: 'Problem 382: Generating polygons'
+videoUrl: ''
+localeTitle: 'Problema 382: Generando polígonos'
 ---
 
 ## Description
-<section id='description'> 
-Un polígono es una forma plana que consiste en segmentos de línea recta que se unen para formar una cadena o circuito cerrado. Un polígono consta de al menos tres lados y no se intersecta por sí mismo. 
-
-
-
-Se dice que un conjunto S de números positivos genera un polígono P si: no hay dos lados de P que tengan la misma longitud, 
-la longitud de cada lado de P está en S, y 
-S no tiene otro valor. 
-
-Por ejemplo: 
-El conjunto {3, 4, 5} genera un polígono con los lados 3, 4 y 5 (un triángulo). 
-El conjunto {6, 9, 11, 24} genera un polígono con los lados 6, 9, 11 y 24 (un cuadrilátero). 
-Los conjuntos {1, 2, 3} y {2, 3, 4, 9} no generan ningún polígono. 
-
-
-Considere la secuencia s, que se define a continuación: s1 = 1, s2 = 2, s3 = 3 
-sn = sn-1 + sn-3 para n&gt; 3. 
-
-Sea Un conjunto {s1, s2, ..., sn}. Por ejemplo, U10 = {1, 2, 3, 4, 6, 9, 13, 19, 28, 41}. 
-Sea f (n) el número de subconjuntos de Un que generan al menos un polígono. 
-Por ejemplo, f (5) = 7, f (10) = 501 y f (25) = 18635853. 
-
-
-
-Encuentre los últimos 9 dígitos de f (1018). 
-</section>
+<section id="description"> Un polígono es una forma plana que consiste en segmentos de línea recta que se unen para formar una cadena o circuito cerrado. Un polígono consta de al menos tres lados y no se intersecta por sí mismo. <p> Se dice que un conjunto S de números positivos genera un polígono P si: no hay dos lados de P que tengan la misma longitud, la longitud de cada lado de P está en S y S no contiene ningún otro valor. </p><p> Por ejemplo: el conjunto {3, 4, 5} genera un polígono con los lados 3, 4 y 5 (un triángulo). El conjunto {6, 9, 11, 24} genera un polígono con los lados 6, 9, 11 y 24 (un cuadrilátero). Los conjuntos {1, 2, 3} y {2, 3, 4, 9} no generan ningún polígono. </p><p> Considere la secuencia s, definida como sigue: s1 = 1, s2 = 2, s3 = 3 sn = sn-1 + sn-3 para n&gt; 3. </p><p> Sea Un el conjunto {s1, s2, ..., sn}. Por ejemplo, U10 = {1, 2, 3, 4, 6, 9, 13, 19, 28, 41}. Sea f (n) el número de subconjuntos de Un que generan al menos un polígono. Por ejemplo, f (5) = 7, f (10) = 501 y f (25) = 18635853. </p><p> Encuentra los últimos 9 dígitos de f (1018). </p></section>
 
 ## Instructions
-<section id='instructions'> 
-
+<section id="instructions">
 </section>
 
 ## Tests
@@ -62,6 +37,7 @@ function euler382() {
 }
 
 euler382();
+
 ```
 
 </div>

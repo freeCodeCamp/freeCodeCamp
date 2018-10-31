@@ -1,30 +1,16 @@
 ---
-id: 5
-localeTitle: 5900f42b1000cf542c50ff3e
+id: 5900f42b1000cf542c50ff3e
 challengeType: 5
 title: 'Problem 191: Prize Strings'
+videoUrl: ''
+localeTitle: 'Problema 191: Cadenas de premios'
 ---
 
 ## Description
-<section id='description'> 
-Una escuela en particular ofrece recompensas en efectivo a los niños con buena asistencia y puntualidad. Si están ausentes por tres días consecutivos o tarde en más de una ocasión, pierden su premio. 
-
-Durante un período de n días, se forma una cadena trinaria para cada niño que consta de L&#39;s (tarde), O&#39;s (a tiempo) y A&#39;s (ausente). 
-
-Aunque se pueden formar ochenta y una cadenas trinarias durante un período de 4 días, exactamente cuarenta y tres cadenas darían lugar a un premio: 
-
-OOOO OOOA OOOL OOAO OOA OOAL OOLO OOLA OAOO OAOA 
-OAOL OAAO OAAL OALA OALA OALA OLOO OLOA OLAO OLAA AOOO 
-AOOA AOOL AOAO AOAA AOAL AOLO AOLA AAOO AAOA AAOL 
-AALO AALA ALOO ALOA ALAA LOOO LOOA LOOA LOAO LOAA 
-LAOO LAOA LAAO 
-
-¿Cuántos &quot;premios&quot; existen en un día? 
-</section>
+<section id="description"> Una escuela en particular ofrece recompensas en efectivo a los niños con buena asistencia y puntualidad. Si están ausentes por tres días consecutivos o tarde en más de una ocasión, pierden su premio. <p> Durante un período de n días, se forma una cadena trinaria para cada niño que consta de L&#39;s (tarde), O&#39;s (a tiempo) y A&#39;s (ausente). </p><p> Si bien se pueden formar ochenta y una cadenas trinarias durante un período de 4 días, exactamente cuarenta y tres cadenas darían lugar a un premio: </p><p> OOOO OOOA OOOL OOAO OOAA OOAL OOLO OOLA OAOO OAOA OAOL OAAO OAAL OALO OALA OLOA OLAO OLAA AOOO AOAAAAAAAAAAAAAAAAAAAAOAAOAAAOAOAOAOAOAOAOAOAOAOAOAOAOAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA IaAa DeAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA De nica DeAAAAAOAaaaaaaaaaaa que que lo usaba, lo hacemos </p><p> ¿Cuántas cadenas de &quot;premio&quot; existen en un período de 30 días? </p></section>
 
 ## Instructions
-<section id='instructions'> 
-
+<section id="instructions">
 </section>
 
 ## Tests
@@ -51,6 +37,7 @@ function euler191() {
 }
 
 euler191();
+
 ```
 
 </div>

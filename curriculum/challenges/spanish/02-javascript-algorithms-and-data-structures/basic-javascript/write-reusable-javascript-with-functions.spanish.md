@@ -1,24 +1,16 @@
 ---
 id: 56bbb991ad1ed5201cd392cf
 title: Write Reusable JavaScript with Functions
-localeTitle: Escribir JavaScript reutilizable con funciones
 challengeType: 1
+videoUrl: ''
+localeTitle: Escribir JavaScript reutilizable con funciones
 ---
 
 ## Description
-<section id='description'> 
-En JavaScript, podemos dividir nuestro código en partes reutilizables llamadas <dfn>funciones</dfn> . 
-Aquí hay un ejemplo de una función: 
-<blockquote>function functionName() {<br>&nbsp;&nbsp;console.log("Hello World");<br>}</blockquote> 
-Puede llamar o <dfn>invocar</dfn> esta función usando su nombre seguido de paréntesis, como este: 
-<code>functionName();</code> 
-Cada vez que se llame a la función, se imprimirá el mensaje <code>&quot;Hello World&quot;</code> en la consola dev. Todo el código entre las llaves se ejecutará cada vez que se llame a la función. 
-</section>
+<section id="description"> En JavaScript, podemos dividir nuestro código en partes reutilizables llamadas <dfn>funciones</dfn> . Aquí hay un ejemplo de una función: <blockquote> función functionName () { <br> console.log (&quot;Hello World&quot;); <br> } </blockquote> Puede llamar o <dfn>invocar</dfn> esta función utilizando su nombre seguido de paréntesis, como este: <code>functionName();</code> Cada vez que se llame a la función, se imprimirá el mensaje <code>&quot;Hello World&quot;</code> en la consola dev. Todo el código entre las llaves se ejecutará cada vez que se llame a la función. </section>
 
 ## Instructions
-<section id='instructions'> 
-<ol> <li> Crea una función llamada <code>reusableFunction</code> que imprime <code>&quot;Hi World&quot;</code> en la consola dev. </li><li> Llama a la función. </li></ol> 
-</section>
+<section id="instructions"><ol><li> Crea una función llamada <code>reusableFunction</code> que imprime <code>&quot;Hi World&quot;</code> en la consola dev. </li><li> Llama a la función. </li></ol></section>
 
 ## Tests
 <section id='tests'>
@@ -79,6 +71,7 @@ function uncapture() {
 }
 
 capture();
+
 ```
 
 </div>
@@ -97,12 +90,7 @@ console.info('after the test');
 ## Solution
 <section id='solution'>
 
-
 ```js
-function reusableFunction() {
-  console.log("Hi World");
-}
-reusableFunction();
+// solution required
 ```
-
 </section>

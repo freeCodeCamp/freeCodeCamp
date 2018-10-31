@@ -1,20 +1,16 @@
 ---
 id: 5a90373638fddaf9a66b5d39
 title: Use grid-row to Control Spacing
-localeTitle: Usa la fila de la rejilla para controlar el espaciado
 challengeType: 0
 videoUrl: ''
+localeTitle: Usa la fila de la rejilla para controlar el espaciado
 ---
 
 ## Description
-<section id='description'> 
-Por supuesto, puede hacer que los artículos consuman varias filas al igual que con las columnas. Define las líneas horizontales en las que desea que comience y se detenga un elemento utilizando la propiedad de la <code>grid-row</code> la <code>grid-row</code> en un elemento de la cuadrícula. 
-</section>
+<section id="description"> Por supuesto, puede hacer que los artículos consuman varias filas al igual que con las columnas. Define las líneas horizontales en las que desea que comience y se detenga un elemento utilizando la propiedad de la <code>grid-row</code> la <code>grid-row</code> en un elemento de la cuadrícula. </section>
 
 ## Instructions
-<section id='instructions'> 
-Hacer que el elemento con la clase <code>item5</code> consuma las dos últimas filas. 
-</section>
+<section id="instructions"> Hacer que el elemento con la clase <code>item5</code> consuma las dos últimas filas. </section>
 
 ## Tests
 <section id='tests'>
@@ -68,6 +64,7 @@ tests:
   <div class="item4">4</div>
   <div class="item5">5</div>
 </div>
+
 ```
 
 </div>
@@ -79,9 +76,7 @@ tests:
 ## Solution
 <section id='solution'>
 
-
 ```js
-var code = ".item5 {grid-row: 2 / 4;}"
+// solution required
 ```
-
 </section>

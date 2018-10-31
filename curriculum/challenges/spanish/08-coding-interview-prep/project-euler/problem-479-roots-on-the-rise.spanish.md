@@ -1,26 +1,16 @@
 ---
-id: 5
-localeTitle: 5900f54b1000cf542c51005d
+id: 5900f54b1000cf542c51005d
 challengeType: 5
 title: 'Problem 479: Roots on the Rise'
+videoUrl: ''
+localeTitle: 'Problema 479: Raíces en la subida'
 ---
 
 ## Description
-<section id='description'> 
-Sean ak, bk y ck las tres soluciones (números reales o complejos) para la expresión 1 / x = (k / x) 2 (k + x2) - kx. 
-
-Por ejemplo, para k = 5, vemos que {a5, b5, c5} es aproximadamente {5.727244, -0.363622 + 2.057397i, -0.363622-2.057397i}. 
-
-Sea S (n) = Σ (ak + bk) p (bk + ck) p (ck + ak) p para todos los enteros p, k tal que 1 ≤ p, k ≤ n. 
-
-Curiosamente, S (n) es siempre un número entero. Por ejemplo, S (4) = 51160. 
-
-Encuentre S (106) módulo 1 000 000 007. 
-</section>
+<section id="description"> Sean ak, bk y ck las tres soluciones (números reales o complejos) para la expresión 1 / x = (k / x) 2 (k + x2) - kx. <p> Por ejemplo, para k = 5, vemos que {a5, b5, c5} es aproximadamente {5.727244, -0.363622 + 2.057397i, -0.363622-2.057397}. </p><p> Sea S (n) = Σ (ak + bk) p (bk + ck) p (ck + ak) p para todos los enteros p, k tal que 1 ≤ p, k ≤ n. </p><p> Curiosamente, S (n) es siempre un número entero. Por ejemplo, S (4) = 51160. </p><p> Encontrar S (106) módulo 1 000 000 007. </p></section>
 
 ## Instructions
-<section id='instructions'> 
-
+<section id="instructions">
 </section>
 
 ## Tests
@@ -47,6 +37,7 @@ function euler479() {
 }
 
 euler479();
+
 ```
 
 </div>

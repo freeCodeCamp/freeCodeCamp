@@ -1,22 +1,16 @@
 ---
 title: Hofstadter Q sequence
 id: 59637c4d89f6786115efd814
-localeTitle: 59637c4d89f6786115efd814
 challengeType: 5
+videoUrl: ''
+localeTitle: Secuencia de Hofstadter Q
 ---
 
 ## Description
-<section id='description'> 
-<p> La <a href="https://en.wikipedia.org/wiki/Hofstadter_sequence#Hofstadter_Q_sequence" title="wp: Hofstadter_sequence # Hofstadter_Q_sequence">secuencia de Hofstadter Q</a> se define como: </p> 
-<p> $ Q (1) = Q (2) = 1, \\ Q (n) = Q \ big (nQ (n-1) \ big) + Q \ big (nQ (n-2)), \ quad n&gt; 2. $ </p> 
-<p> Se define como la <a href="http://rosettacode.org/wiki/Fibonacci sequence" title="secuencia Fibonacci">secuencia de Fibonacci</a> , pero mientras que el siguiente término en la secuencia de Fibonacci es la suma de los dos términos anteriores, en la secuencia Q los dos términos anteriores le dicen a qué distancia retroceder en la secuencia Q para encontrar los dos números Para sumar hacer el siguiente término de la secuencia. </p> 
-Tarea: 
-Implementar la ecuación de secuencia Q de Hofstadter en JavaScript 
-</section>
+<section id="description"><p> La <a href="https://en.wikipedia.org/wiki/Hofstadter_sequence#Hofstadter_Q_sequence" title="wp: Hofstadter_sequence # Hofstadter_Q_sequence">secuencia de Hofstadter Q</a> se define como: </p><p> $ Q (1) = Q (2) = 1, \\ Q (n) = Q \ big (nQ (n-1) \ big) + Q \ big (nQ (n-2)), \ quad n&gt; 2. $ </p><p> Se define como la <a href="http://rosettacode.org/wiki/Fibonacci sequence" title="secuencia Fibonacci">secuencia de Fibonacci</a> , pero mientras que el siguiente término en la secuencia de Fibonacci es la suma de los dos términos anteriores, en la secuencia Q los dos términos anteriores le dicen a qué distancia retroceder en la secuencia Q para encontrar los dos números Para sumar hacer el siguiente término de la secuencia. </p> Tarea: Implementar la ecuación de secuencia Q de Hofstadter en JavaScript </section>
 
 ## Instructions
-<section id='instructions'> 
-
+<section id="instructions">
 </section>
 
 ## Tests
@@ -51,6 +45,7 @@ function hofstadterQ (n) {
   // Good luck!
   return n;
 }
+
 ```
 
 </div>
@@ -70,21 +65,7 @@ console.info('after the test');
 ## Solution
 <section id='solution'>
 
-
 ```js
-function hofstadterQ (n) {
-  const memo = [1, 1, 1];
-  const Q = function (i) {
-    let result = memo[i];
-    if (typeof result !== 'number') {
-      result = Q(i - Q(i - 1)) + Q(i - Q(i - 2));
-      memo[i] = result;
-    }
-    return result;
-  };
-  return Q(n);
-}
-
+// solution required
 ```
-
 </section>

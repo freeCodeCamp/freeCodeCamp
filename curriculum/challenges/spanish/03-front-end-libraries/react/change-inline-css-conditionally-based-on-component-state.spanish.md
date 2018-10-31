@@ -1,21 +1,17 @@
 ---
 id: 5a24c314108439a4d4036189
 title: Change Inline CSS Conditionally Based on Component State
-localeTitle: Cambiar CSS en línea condicionalmente basado en el estado del componente
 challengeType: 6
 isRequired: false
+videoUrl: ''
+localeTitle: Cambiar CSS en línea condicionalmente basado en el estado del componente
 ---
 
 ## Description
-<section id='description'> 
-En este punto, ha visto varias aplicaciones de representación condicional y el uso de estilos en línea. Aquí hay un ejemplo más que combina estos dos temas. También puede representar CSS de forma condicional en función del estado de un componente React. Para hacer esto, verifica una condición, y si esa condición se cumple, modifica el objeto de estilos que está asignado a los elementos JSX en el método de procesamiento. 
-Es importante entender este paradigma porque es un cambio dramático con respecto al enfoque más tradicional de aplicar estilos mediante la modificación directa de elementos DOM (que es muy común con jQuery, por ejemplo). En ese enfoque, debe realizar un seguimiento de cuándo cambian los elementos y también manejar la manipulación real directamente. Puede ser difícil hacer un seguimiento de los cambios, lo que podría hacer que su UI sea impredecible. Cuando configura un objeto de estilo basado en una condición, describe cómo debe verse la interfaz de usuario en función del estado de la aplicación. Hay un flujo claro de información que solo se mueve en una dirección. Este es el método preferido al escribir aplicaciones con React. 
-</section>
+<section id="description"> En este punto, ha visto varias aplicaciones de representación condicional y el uso de estilos en línea. Aquí hay un ejemplo más que combina estos dos temas. También puede representar CSS de forma condicional en función del estado de un componente React. Para hacer esto, verifica una condición, y si esa condición se cumple, modifica el objeto de estilos que está asignado a los elementos JSX en el método de procesamiento. Es importante entender este paradigma porque es un cambio dramático con respecto al enfoque más tradicional de aplicar estilos mediante la modificación directa de elementos DOM (que es muy común en jQuery, por ejemplo). En ese enfoque, debe realizar un seguimiento de cuándo cambian los elementos y también manejar la manipulación real directamente. Puede ser difícil hacer un seguimiento de los cambios, lo que podría hacer que su UI sea impredecible. Cuando configura un objeto de estilo basado en una condición, describe cómo debe verse la interfaz de usuario en función del estado de la aplicación. Hay un flujo claro de información que solo se mueve en una dirección. Este es el método preferido al escribir aplicaciones con React. </section>
 
 ## Instructions
-<section id='instructions'> 
-El editor de código tiene un componente de entrada controlado simple con un borde con estilo. Desea que el estilo de este borde sea rojo si el usuario escribe más de 15 caracteres de texto en el cuadro de entrada. Agregue una condición para verificar esto y, si la condición es válida, establezca el estilo de borde de entrada en <code>3px solid red</code> . Puedes probarlo ingresando texto en la entrada. 
-</section>
+<section id="instructions"> El editor de código tiene un componente de entrada controlado simple con un borde con estilo. Desea que el estilo de este borde sea rojo si el usuario escribe más de 15 caracteres de texto en el cuadro de entrada. Agregue una condición para verificar esto y, si la condición es válida, establezca el estilo de borde de entrada en <code>3px solid red</code> . Puedes probarlo ingresando texto en la entrada. </section>
 
 ## Tests
 <section id='tests'>
@@ -43,7 +39,6 @@ tests:
 <div id='jsx-seed'>
 
 ```jsx
-
 class GateKeeper extends React.Component {
   constructor(props) {
     super(props);
@@ -74,6 +69,7 @@ class GateKeeper extends React.Component {
     );
   }
 };
+
 ```
 
 </div>
@@ -93,38 +89,7 @@ console.info('after the test');
 ## Solution
 <section id='solution'>
 
-
 ```js
-class GateKeeper extends React.Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      input: "
-    };
-    this.handleChange = this.handleChange.bind(this);
-  }
-  handleChange(event) {
-    this.setState({ input: event.target.value })
-  }
-  render() {
-    let inputStyle = {
-      border: '1px solid black'
-    };
-    if (this.state.input.length > 15) {
-      inputStyle.border = '3px solid red';
-    };
-    return (
-      <div>
-        <h3>Don't Type Too Much:</h3>
-        <input
-          type="text"
-          style={inputStyle}
-          value={this.state.input}
-          onChange={this.handleChange} />
-      </div>
-    );
-  }
-};
+// solution required
 ```
-
 </section>

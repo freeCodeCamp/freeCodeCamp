@@ -1,23 +1,16 @@
 ---
-id: 5
-localeTitle: 5900f3721000cf542c50fe85
+id: 5900f3721000cf542c50fe85
 challengeType: 5
 title: 'Problem 6: Sum square difference'
+videoUrl: ''
+localeTitle: 'Problema 6: suma de la diferencia cuadrada'
 ---
 
 ## Description
-<section id='description'> 
-La suma de los cuadrados de los primeros diez números naturales es, 
-<div style='text-align: center;'> 1 <sup>2</sup> + 2 <sup>2</sup> + ... + 10 <sup>2</sup> = 385 </div> 
-El cuadrado de la suma de los primeros diez números naturales es, 
-<div style='text-align: center;'> (1 + 2 + ... + 10) <sup>2</sup> = 55 <sup>2</sup> = 3025 </div> 
-Por lo tanto, la diferencia entre la suma de los cuadrados de los primeros diez números naturales y el cuadrado de la suma es 3025 - 385 = 2640. 
-Halla la diferencia entre la suma de los cuadrados de los primeros <code>n</code> números naturales y el cuadrado de suma. 
-</section>
+<section id="description"> La suma de los cuadrados de los primeros diez números naturales es, <div style="text-align: center;"> 1 <sup>2</sup> + 2 <sup>2</sup> + ... + 10 <sup>2</sup> = 385 </div> El cuadrado de la suma de los primeros diez números naturales es, <div style="text-align: center;"> (1 + 2 + ... + 10) <sup>2</sup> = 55 <sup>2</sup> = 3025 </div> Por lo tanto, la diferencia entre la suma de los cuadrados de los primeros diez números naturales y el cuadrado de la suma es 3025 - 385 = 2640. Encuentre la diferencia entre la suma de los cuadrados de los primeros <code>n</code> números naturales y el cuadrado de la suma. </section>
 
 ## Instructions
-<section id='instructions'> 
-
+<section id="instructions">
 </section>
 
 ## Tests
@@ -48,6 +41,7 @@ function sumSquareDifference(n) {
 }
 
 sumSquareDifference(100);
+
 ```
 
 </div>
@@ -59,21 +53,7 @@ sumSquareDifference(100);
 ## Solution
 <section id='solution'>
 
-
 ```js
-const sumSquareDifference = (number)=>{
-  let squareOfSum = Math.pow(sumOfArithmeticSeries(1,1,number),2);
-  let sumOfSquare = sumOfSquareOfNumbers(number);
- return squareOfSum - sumOfSquare;
-}
-
-function sumOfArithmeticSeries(a,d,n){
-  return (n/2)*(2*a+(n-1)*d);
-}
-
-function sumOfSquareOfNumbers(n){
- return (n*(n+1)*(2*n+1))/6;
-}
+// solution required
 ```
-
 </section>

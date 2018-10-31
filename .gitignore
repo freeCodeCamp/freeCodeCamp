@@ -16,7 +16,9 @@ node_modules
 .DS_Store
 
 curriculum/dist
+curriculum/build
 curriculum/curricula.json
 client/static/js/frame-runner.js
 client/static/js/frame-runner.js.map
 client/static/_redirects
+env.json

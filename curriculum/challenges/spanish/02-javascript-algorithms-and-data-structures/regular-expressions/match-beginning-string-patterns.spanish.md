@@ -1,21 +1,16 @@
 ---
 id: 587d7db7367417b2b2512b9d
 title: Match Beginning String Patterns
-localeTitle: Emparejar patrones de cuerdas que comienzan
 challengeType: 1
+videoUrl: ''
+localeTitle: Emparejar patrones de cuerdas que comienzan
 ---
 
 ## Description
-<section id='description'> 
-Los desafíos anteriores mostraron que las expresiones regulares se pueden usar para buscar una serie de coincidencias. También se utilizan para buscar patrones en posiciones específicas en cadenas. 
-En un desafío anterior, <code>caret</code> carácter de <code>caret</code> ( <code>^</code> ) dentro de un <code>character set</code> para crear un <code>negated character set</code> en la forma <code>[^thingsThatWillNotBeMatched]</code> . Fuera de un <code>character set</code> , el <code>caret</code> se utiliza para buscar patrones al principio de las cadenas. 
-<blockquote>let firstString = "Ricky is first and can be found.";<br>let firstRegex = /^Ricky/;<br>firstRegex.test(firstString);<br>// Returns true<br>let notFirst = "You can't find Ricky now.";<br>firstRegex.test(notFirst);<br>// Returns false</blockquote> 
-</section>
+<section id="description"> Los desafíos anteriores mostraron que las expresiones regulares se pueden utilizar para buscar una serie de coincidencias. También se utilizan para buscar patrones en posiciones específicas en cadenas. En un desafío anterior, <code>caret</code> carácter de <code>caret</code> ( <code>^</code> ) dentro de un <code>character set</code> para crear un <code>negated character set</code> en la forma <code>[^thingsThatWillNotBeMatched]</code> . Fuera de un <code>character set</code> , el <code>caret</code> se utiliza para buscar patrones al principio de las cadenas. <blockquote> Let firstString = &quot;Ricky es el primero y se puede encontrar.&quot;; <br> Let firstRegex = / ^ Ricky /; <br> firstRegex.test (firstString); <br> // Devuelve true <br> let notFirst = &quot;No puedes encontrar a Ricky ahora.&quot;; <br> firstRegex.test (notFirst); <br> // Devuelve falso </blockquote></section>
 
 ## Instructions
-<section id='instructions'> 
-Use el carácter de <code>caret</code> en una expresión regular para encontrar <code>&quot;Cal&quot;</code> solo al principio de la cadena <code>rickyAndCal</code> . 
-</section>
+<section id="instructions"> Use el carácter de <code>caret</code> en una expresión regular para encontrar <code>&quot;Cal&quot;</code> solo al principio de la cadena <code>rickyAndCal</code> . </section>
 
 ## Tests
 <section id='tests'>
@@ -44,6 +39,7 @@ tests:
 let rickyAndCal = "Cal and Ricky both like racing.";
 let calRegex = /change/; // Change this line
 let result = calRegex.test(rickyAndCal);
+
 ```
 
 </div>

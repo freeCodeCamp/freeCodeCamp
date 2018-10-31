@@ -1,19 +1,16 @@
 ---
 id: 56533eb9ac21ba0edf2244b9
 title: Constructing Strings with Variables
-localeTitle: Construyendo cuerdas con variables
 challengeType: 1
+videoUrl: ''
+localeTitle: Construyendo cuerdas con variables
 ---
 
 ## Description
-<section id='description'> 
-A veces necesitarás construir una cadena, al estilo de <a href="https://en.wikipedia.org/wiki/Mad_Libs" target="_blank">Mad Libs</a> . Al utilizar el operador de concatenación ( <code>+</code> ), puede insertar una o más variables en una cadena que está creando. 
-</section>
+<section id="description"> A veces necesitarás construir una cadena, al estilo de <a href="https://en.wikipedia.org/wiki/Mad_Libs" target="_blank">Mad Libs</a> . Al utilizar el operador de concatenación ( <code>+</code> ), puede insertar una o más variables en una cadena que está creando. </section>
 
 ## Instructions
-<section id='instructions'> 
-Establezca <code>myName</code> en una cadena igual a su nombre y compile <code>myStr</code> con <code>myName</code> entre las cadenas <code>&quot;My name is &quot;</code> y <code>&quot; and I am well!&quot;</code> 
-</section>
+<section id="instructions"> Establezca <code>myName</code> en una cadena igual a su nombre y compile <code>myStr</code> con <code>myName</code> entre las cadenas <code>&quot;My name is &quot;</code> y <code>&quot; and I am well!&quot;</code> </section>
 
 ## Tests
 <section id='tests'>
@@ -43,7 +40,6 @@ var ourStr = "Hello, our name is " + ourName + ", how are you?";
 var myName;
 var myStr;
 
-
 ```
 
 </div>
@@ -63,10 +59,7 @@ console.info('after the test');
 ## Solution
 <section id='solution'>
 
-
 ```js
-var myName = "Bob";
-var myStr = "My name is " + myName + " and I am well!";
+// solution required
 ```
-
 </section>

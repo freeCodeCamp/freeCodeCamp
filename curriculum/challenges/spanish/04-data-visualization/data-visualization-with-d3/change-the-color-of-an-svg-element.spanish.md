@@ -1,22 +1,18 @@
 ---
 id: 587d7fa9367417b2b2512bd1
 title: Change the Color of an SVG Element
-localeTitle: Cambiar el color de un elemento SVG
 required:
   - src: 'https://cdnjs.cloudflare.com/ajax/libs/d3/4.3.0/d3.min.js'
 challengeType: 6
+videoUrl: ''
+localeTitle: Cambiar el color de un elemento SVG
 ---
 
 ## Description
-<section id='description'> 
-Las barras están en la posición correcta, pero todas son del mismo color negro. SVG tiene una manera de cambiar el color de las barras. 
-En SVG, una forma <code>rect</code> se colorea con el atributo de <code>fill</code> . Admite códigos hexadecimales, nombres de colores y valores rgb, así como opciones más complejas como gradientes y transparencias. 
-</section>
+<section id="description"> Las barras están en la posición correcta, pero todas son del mismo color negro. SVG tiene una manera de cambiar el color de las barras. En SVG, una forma <code>rect</code> se colorea con el atributo de <code>fill</code> . Admite códigos hexadecimales, nombres de colores y valores rgb, así como opciones más complejas como gradientes y transparencias. </section>
 
 ## Instructions
-<section id='instructions'> 
-Agregue un método <code>attr()</code> para establecer el &quot;relleno&quot; de todas las barras con el color &quot;marino&quot;. 
-</section>
+<section id="instructions"> Agregue un método <code>attr()</code> para establecer el &quot;relleno&quot; de todas las barras con el color &quot;azul marino&quot;. </section>
 
 ## Tests
 <section id='tests'>
@@ -63,6 +59,7 @@ tests:
        // Add your code above this line
   </script>
 </body>
+
 ```
 
 </div>

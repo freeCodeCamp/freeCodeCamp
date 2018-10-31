@@ -1,20 +1,16 @@
 ---
 id: 5a9036e138fddaf9a66b5d33
 title: Add Rows with grid-template-rows
-localeTitle: Añadir filas con cuadrícula-filas-plantilla
 challengeType: 0
 videoUrl: ''
+localeTitle: Añadir filas con cuadrícula-filas-plantilla
 ---
 
 ## Description
-<section id='description'> 
-La cuadrícula que creó en el último desafío establecerá el número de filas automáticamente. Para ajustar las filas manualmente, use la propiedad <code>grid-template-rows</code> de la misma forma que usó <code>grid-template-columns</code> en el desafío anterior. 
-</section>
+<section id="description"> La cuadrícula que creó en el último desafío establecerá el número de filas automáticamente. Para ajustar las filas manualmente, use la propiedad <code>grid-template-rows</code> de la misma forma que usó <code>grid-template-columns</code> en el desafío anterior. </section>
 
 ## Instructions
-<section id='instructions'> 
-Agregue dos filas a la cuadrícula que tengan <code>50px</code> altura cada una. 
-</section>
+<section id="instructions"> Agregue dos filas a la cuadrícula que tengan <code>50px</code> altura cada una. </section>
 
 ## Tests
 <section id='tests'>
@@ -61,6 +57,7 @@ tests:
   <div class="d4">4</div>
   <div class="d5">5</div>
 </div>
+
 ```
 
 </div>
@@ -72,9 +69,7 @@ tests:
 ## Solution
 <section id='solution'>
 
-
 ```js
-var code = ".container {grid-template-rows: 50px 50px;}"
+// solution required
 ```
-
 </section>

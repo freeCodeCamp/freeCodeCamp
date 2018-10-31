@@ -1,20 +1,16 @@
 ---
 id: 5a90375238fddaf9a66b5d3b
 title: Align an Item Vertically using align-self
-localeTitle: Alinear un elemento verticalmente con align-self
 challengeType: 0
 videoUrl: ''
+localeTitle: Alinear un elemento verticalmente con align-self
 ---
 
 ## Description
-<section id='description'> 
-Al igual que puede alinear un elemento horizontalmente, también hay una forma de alinear un elemento verticalmente. Para hacer esto, utiliza la propiedad <code>align-self</code> en un elemento. Esta propiedad acepta todos los mismos valores como <code>justify-self</code> del último desafío. 
-</section>
+<section id="description"> Al igual que puede alinear un elemento horizontalmente, también hay una forma de alinear un elemento verticalmente. Para hacer esto, utiliza la propiedad <code>align-self</code> en un elemento. Esta propiedad acepta todos los mismos valores como <code>justify-self</code> del último desafío. </section>
 
 ## Instructions
-<section id='instructions'> 
-Alinee el elemento con la clase <code>item3</code> verticalmente al <code>end</code> . 
-</section>
+<section id="instructions"> Alinea el elemento con la clase <code>item3</code> verticalmente al <code>end</code> . </section>
 
 ## Tests
 <section id='tests'>
@@ -68,6 +64,7 @@ tests:
   <div class="item4">4</div>
   <div class="item5">5</div>
 </div>
+
 ```
 
 </div>
@@ -79,9 +76,7 @@ tests:
 ## Solution
 <section id='solution'>
 
-
 ```js
-var code = ".item3 {align-self: end;}"
+// solution required
 ```
-
 </section>

@@ -1,20 +1,16 @@
 ---
-id: 5
-localeTitle: 5900f3bc1000cf542c50fecf
+id: 5900f3bc1000cf542c50fecf
 challengeType: 5
 title: 'Problem 80: Square root digital expansion'
+videoUrl: ''
+localeTitle: 'Problema 80: Expansión digital de raíz cuadrada.'
 ---
 
 ## Description
-<section id='description'> 
-Es bien sabido que si la raíz cuadrada de un número natural no es un número entero, entonces es irracional. La expansión decimal de tales raíces cuadradas es infinita sin ningún patrón repetitivo. 
-La raíz cuadrada de dos es 1.41421356237309504880 ..., y la suma digital de los primeros cien dígitos decimales es 475. 
-Para los primeros cien números naturales, encuentre el total de las sumas digitales de los primeros cien dígitos decimales para Todas las raíces cuadradas irracionales. 
-</section>
+<section id="description"> Es bien sabido que si la raíz cuadrada de un número natural no es un número entero, entonces es irracional. La expansión decimal de tales raíces cuadradas es infinita sin ningún patrón repetitivo. La raíz cuadrada de dos es 1.41421356237309504880 ..., y la suma digital de los primeros cien dígitos decimales es 475. Para los primeros cien números naturales, encuentre el total de las sumas digitales de los primeros cien dígitos decimales para todos los Raíces cuadradas irracionales. </section>
 
 ## Instructions
-<section id='instructions'> 
-
+<section id="instructions">
 </section>
 
 ## Tests
@@ -41,6 +37,7 @@ function euler80() {
 }
 
 euler80();
+
 ```
 
 </div>

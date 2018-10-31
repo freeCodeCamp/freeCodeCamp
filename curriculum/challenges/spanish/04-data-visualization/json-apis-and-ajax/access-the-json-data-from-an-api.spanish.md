@@ -1,35 +1,23 @@
 ---
 id: 587d7fae367417b2b2512be4
 title: Access the JSON Data from an API
-localeTitle: Accede a los datos JSON desde una API
 challengeType: 6
+videoUrl: ''
+localeTitle: Accede a los datos JSON desde una API
 ---
 
 ## Description
-<section id='description'> 
-En el desafío anterior, viste cómo obtener datos JSON de la API de foto freeCodeCamp Cat. 
-Ahora analizará más de cerca los datos devueltos para comprender mejor el formato JSON. Recordemos alguna notación en JavaScript: 
-<blockquote>[ ] -> Square brackets represent an array<br>{ } -> Curly brackets represent an object<br>" " -> Double quotes represent a string. They are also used for key names in JSON</blockquote> 
-Comprender la estructura de los datos que devuelve una API es importante porque influye en cómo recuperar los valores que necesita. 
-A la derecha, haga clic en el botón &quot;Obtener mensaje&quot; para cargar el API JSON de la foto Cat de freeCodeCamp en el HTML. 
-El primer y último carácter que ve en los datos JSON son corchetes <code>[ ]</code> . Esto significa que los datos devueltos son una matriz. El segundo carácter en los datos JSON es un rizo <code>{</code> corchete, que inicia un objeto. Mirando de cerca, puedes ver que hay tres objetos separados. Los datos JSON son una matriz de tres objetos, donde cada objeto contiene información sobre una foto de gato. 
-Aprendió anteriormente que los objetos contienen &quot;pares clave-valor&quot; que están separados por comas. En el ejemplo de Cat Photo, el primer objeto tiene <code>&quot;id&quot;:0</code> donde &quot;id&quot; es una clave y 0 es su valor correspondiente. Del mismo modo, hay claves para &quot;imageLink&quot;, &quot;altText&quot; y &quot;codeNames&quot;. Cada objeto de foto de gato tiene estas mismas claves, pero con valores diferentes. 
-Otro &quot;par clave-valor&quot; interesante en el primer objeto es <code>&quot;codeNames&quot;:[&quot;Juggernaut&quot;,&quot;Mrs. Wallace&quot;,&quot;ButterCup&quot;]</code> . Aquí &quot;codeNames&quot; es la clave y su valor es una matriz de tres cadenas. Es posible tener matrices de objetos, así como una clave con una matriz como valor. 
-Recuerda cómo acceder a los datos en matrices y objetos. Las matrices utilizan la notación de corchetes para acceder a un índice específico de un elemento. Los objetos usan el soporte o la notación de puntos para acceder al valor de una propiedad determinada. Este es un ejemplo que imprime el &quot;altText&quot; de la primera foto del gato. Tenga en cuenta que los datos JSON analizados en el editor se guardan en una variable llamada <code>json</code> : 
-<blockquote>console.log(json[0].altText);<br>// Prints "A white cat wearing a green helmet shaped melon on its head."</blockquote> 
-</section>
+<section id="description"> En el desafío anterior, viste cómo obtener datos JSON de la API de foto freeCodeCamp Cat. Ahora analizará con más detalle los datos devueltos para comprender mejor el formato JSON. Recordemos alguna notación en JavaScript: <blockquote> [] -&gt; Los corchetes representan una matriz <br> {} -&gt; Los corchetes representan un objeto <br> &quot;&quot; -&gt; Las comillas dobles representan una cadena. También se utilizan para nombres de clave en JSON </blockquote> Comprender la estructura de los datos que devuelve una API es importante porque influye en cómo recuperar los valores que necesita. A la derecha, haga clic en el botón &quot;Obtener mensaje&quot; para cargar el JC API JC de FreeCodeCamp Campamp en el HTML. El primer y último carácter que ve en los datos JSON son corchetes <code>[ ]</code> . Esto significa que los datos devueltos son una matriz. El segundo carácter en los datos JSON es un rizo <code>{</code> corchete, que inicia un objeto. Mirando de cerca, puedes ver que hay tres objetos separados. Los datos JSON son una matriz de tres objetos, donde cada objeto contiene información sobre una foto de gato. Anteriormente aprendió que los objetos contienen &quot;pares clave-valor&quot; que están separados por comas. En el ejemplo de Cat Photo, el primer objeto tiene <code>&quot;id&quot;:0</code> donde &quot;id&quot; es una clave y 0 es su valor correspondiente. Del mismo modo, hay claves para &quot;imageLink&quot;, &quot;altText&quot; y &quot;codeNames&quot;. Cada objeto de foto de gato tiene estas mismas claves, pero con valores diferentes. Otro &quot;par clave-valor&quot; interesante en el primer objeto es <code>&quot;codeNames&quot;:[&quot;Juggernaut&quot;,&quot;Mrs. Wallace&quot;,&quot;ButterCup&quot;]</code> . Aquí &quot;codeNames&quot; es la clave y su valor es una matriz de tres cadenas. Es posible tener matrices de objetos, así como una clave con una matriz como valor. Recuerda cómo acceder a los datos en matrices y objetos. Las matrices utilizan la notación de corchetes para acceder a un índice específico de un elemento. Los objetos usan el soporte o la notación de puntos para acceder al valor de una propiedad determinada. Aquí hay un ejemplo que imprime el &quot;altText&quot; de la primera foto del gato; tenga en cuenta que los datos JSON analizados en el editor se guardan en una variable llamada <code>json</code> : <blockquote> console.log (json [0] .altText); <br> // Imprime &quot;Un gato blanco con un casco verde con forma de melón en la cabeza&quot;. </blockquote></section>
 
 ## Instructions
-<section id='instructions'> 
-Para el gato con el &quot;id&quot; de 2, imprima en la consola el segundo valor de la matriz <code>codeNames</code> . Debe usar el corchete y la notación de puntos en el objeto (que se guarda en la variable <code>json</code> ) para acceder al valor. 
-</section>
+<section id="instructions"> Para el gato con el &quot;id&quot; de 2, imprima en la consola el segundo valor en la matriz <code>codeNames</code> . Debe usar el corchete y la notación de puntos en el objeto (que se guarda en la variable <code>json</code> ) para acceder al valor. </section>
 
 ## Tests
 <section id='tests'>
 
 ```yml
 tests:
-  - text: 'Tu código debe usar el soporte y la notación de puntos para acceder al nombre del código correcto e imprimir "Loki" en la consola.'
+  - text: Su código debe usar el soporte y la notación de puntos para acceder al nombre del código correcto e imprimir "Loki" en la consola.
     testString: 'assert(code.match(/(?:json\[2\]\.codeNames\[1\]|json\[2\]\[("|")codeNames\1\]\[1\])/g), "Your code should use bracket and dot notation to access the proper code name, and print "Loki" to the console.");'
 
 ```
@@ -94,6 +82,7 @@ tests:
     Get Message
   </button>
 </p>
+
 ```
 
 </div>

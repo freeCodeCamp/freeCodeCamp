@@ -13,7 +13,7 @@ Using spread syntax, we have just achieved an operation that would have been mor
 
 ## Instructions
 <section id='instructions'>
-We have defined a function <code>spreadOut</code> that returns the variable <code>sentence</code>, modify the function using the <dfn>spread</dfn> operator so that it returns the array <code>['learning', 'to', 'code', 'is', 'fun']</code>.
+We have defined a function <code>spreadOut</code> that returns the variable <code>sentence</code>. Modify the function using the <dfn>spread</dfn> operator so that it returns the array <code>['learning', 'to', 'code', 'is', 'fun']</code>.
 </section>
 
 ## Tests
@@ -21,10 +21,10 @@ We have defined a function <code>spreadOut</code> that returns the variable <cod
 
 ```yml
 tests:
-  - text: '<code>spreadOut</code> should return <code>["learning", "to", "code", "is", "fun"]</code>'
-    testString: 'assert.deepEqual(spreadOut(), ["learning", "to", "code", "is", "fun"], "<code>spreadOut</code> should return <code>["learning", "to", "code", "is", "fun"]</code>");'
+  - text: <code>spreadOut</code> should return <code>["learning", "to", "code", "is", "fun"]</code>
+    testString: assert.deepEqual(spreadOut(), ['learning', 'to', 'code', 'is', 'fun'], '<code>spreadOut</code> should return <code>["learning", "to", "code", "is", "fun"]</code>');
   - text: The <code>spreadOut</code> function should utilize spread syntax
-    testString: 'assert.notStrictEqual(spreadOut.toString().search(/[...]/), -1, "The <code>spreadOut</code> function should utilize spread syntax");'
+    testString: assert.notStrictEqual(spreadOut.toString().search(/[...]/), -1, 'The <code>spreadOut</code> function should utilize spread syntax');
 
 ```
 

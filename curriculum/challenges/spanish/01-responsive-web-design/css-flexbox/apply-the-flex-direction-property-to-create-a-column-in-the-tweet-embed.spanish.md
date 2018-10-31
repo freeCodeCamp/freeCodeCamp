@@ -1,20 +1,16 @@
 ---
 id: 587d78ac367417b2b2512af5
 title: Apply the flex-direction Property to Create a Column in the Tweet Embed
-localeTitle: Aplique la propiedad de dirección flexible para crear una columna en la inserción de tweets
 challengeType: 0
 videoUrl: ''
+localeTitle: Aplique la propiedad de dirección flexible para crear una columna en la inserción de tweets
 ---
 
 ## Description
-<section id='description'> 
-El <code>header</code> y el <code>footer</code> inserción del tweet usaron la propiedad de <code>flex-direction</code> anteriormente con un valor de fila. De manera similar, los elementos dentro del elemento <code>.profile-name</code> funcionarán bien apilados como una columna. 
-</section>
+<section id="description"> El <code>header</code> y el <code>footer</code> la <code>flex-direction</code> tweet usaron la propiedad de <code>flex-direction</code> anteriormente con un valor de fila. De manera similar, los elementos dentro del elemento <code>.profile-name</code> funcionarán bien apilados como una columna. </section>
 
 ## Instructions
-<section id='instructions'> 
-Agregue la propiedad CSS <code>flex-direction</code> al elemento <code>.profile-name</code> del encabezado y establezca el valor en columna. 
-</section>
+<section id="instructions"> Agregue la propiedad CSS <code>flex-direction</code> al elemento <code>.profile-name</code> del encabezado y establezca el valor en columna. </section>
 
 ## Tests
 <section id='tests'>
@@ -122,6 +118,7 @@ tests:
     <button class="like-btn">Like</button>
   </div>
 </footer>
+
 ```
 
 </div>

@@ -1,25 +1,18 @@
 ---
 id: 587d7fa7367417b2b2512bc7
 title: Change Styles Based on Data
-localeTitle: Cambiar estilos basados ​​en datos
 required:
   - src: 'https://cdnjs.cloudflare.com/ajax/libs/d3/4.3.0/d3.min.js'
 challengeType: 6
+videoUrl: ''
+localeTitle: Cambiar estilos basados ​​en datos
 ---
 
 ## Description
-<section id='description'> 
-D3 es sobre visualización y presentación de datos. Es probable que desee cambiar el estilo de los elementos en función de los datos. Puede usar una función de devolución de llamada en el método <code>style()</code> para cambiar el estilo de los diferentes elementos. 
-Por ejemplo, es posible que desee colorear un punto de datos en azul si tiene un valor inferior a 20 y, de lo contrario, rojo. Puede usar una función de devolución de llamada en el método <code>style()</code> e incluir la lógica condicional. La función de devolución de llamada utiliza el parámetro <code>d</code> para representar el punto de datos: 
-<blockquote>selection.style("color", (d) => {<br>&nbsp;&nbsp;/* Logic that returns the color based on a condition */<br>});</blockquote> 
-El método <code>style()</code> no se limita a configurar el <code>color</code> , también se puede usar con otras propiedades CSS. 
-</section>
+<section id="description"> D3 es sobre visualización y presentación de datos. Es probable que desee cambiar el estilo de los elementos en función de los datos. Puede usar una función de devolución de llamada en el método <code>style()</code> para cambiar el estilo de los diferentes elementos. Por ejemplo, es posible que desee colorear un punto de datos en azul si tiene un valor inferior a 20 y, de lo contrario, en rojo. Puede usar una función de devolución de llamada en el método <code>style()</code> e incluir la lógica condicional. La función de devolución de llamada utiliza el parámetro <code>d</code> para representar el punto de datos: <blockquote> selection.style (&quot;color&quot;, (d) =&gt; { <br> / * Lógica que devuelve el color basado en una condición * / <br> }); </blockquote> El método <code>style()</code> no se limita a establecer el <code>color</code> , también se puede usar con otras propiedades CSS. </section>
 
 ## Instructions
-<section id='instructions'> 
-Agregue el método <code>style()</code> al código en el editor para establecer el <code>color</code> de los elementos <code>h2</code> condicionalmente. Escriba la función de devolución de llamada de modo que si el valor de los datos es inferior a 20, devuelve &quot;rojo&quot;; de lo contrario, devuelve &quot;verde&quot;. 
-<strong>Nota</strong> <br> Puede utilizar la lógica if-else o el operador ternario. 
-</section>
+<section id="instructions"> Agregue el método <code>style()</code> al código en el editor para establecer el <code>color</code> de los elementos <code>h2</code> condicionalmente. Escriba la función de devolución de llamada de modo que si el valor de los datos es inferior a 20, devuelve &quot;rojo&quot;; de lo contrario, devuelve &quot;verde&quot;. <strong>Nota</strong> <br> Puede utilizar la lógica if-else o el operador ternario. </section>
 
 ## Tests
 <section id='tests'>
@@ -71,6 +64,7 @@ tests:
       // Add your code above this line
   </script>
 </body>
+
 ```
 
 </div>

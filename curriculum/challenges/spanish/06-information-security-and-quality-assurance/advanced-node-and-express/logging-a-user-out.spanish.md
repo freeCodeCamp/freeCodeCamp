@@ -1,32 +1,24 @@
 ---
 id: 58965611f9fc0f352b528e6c
 title: Logging a User Out
-localeTitle: Cerrar sesión de un usuario
 challengeType: 2
+videoUrl: ''
+localeTitle: Cerrar sesión de un usuario
 ---
 
 ## Description
-<section id='description'> 
-Como recordatorio, este proyecto se está construyendo sobre el siguiente proyecto de inicio en <a href='https://glitch.com/#!/import/github/freeCodeCamp/boilerplate-advancednode/'>Glitch</a> , o clonado desde <a href='https://github.com/freeCodeCamp/boilerplate-advancednode/'>GitHub</a> . 
-Crear la lógica de cierre de sesión es fácil. La ruta simplemente debe no autenticar al usuario y redirigir a la página de inicio en lugar de mostrar cualquier vista. 
-En el pasaporte, la no autenticación de un usuario es tan fácil como llamar a <code>req.logout();</code> antes de redirigir 
-<pre> app.route (&#39;/ logout&#39;) 
-.get ((req, res) =&gt; { 
-req.logout (); 
-res.redirect (&#39;/&#39;); 
-}); </pre> 
-Es posible que haya notado que tampoco estamos manejando páginas faltantes (404), la forma común de manejar esto en Node es con el siguiente middleware. Continúa y agrega esto después de todas tus otras rutas: 
-<pre> app.use ((req, res, next) =&gt; { 
-res.status (404) 
-.type (&#39;text&#39;) 
-.send (&#39;Not Found&#39;); 
-}); </pre> 
-Envía tu página cuando creas que lo has hecho bien. 
-</section>
+<section id="description"> Como recordatorio, este proyecto se está construyendo sobre el siguiente proyecto de inicio en <a href="https://glitch.com/#!/import/github/freeCodeCamp/boilerplate-advancednode/">Glitch</a> , o clonado desde <a href="https://github.com/freeCodeCamp/boilerplate-advancednode/">GitHub</a> . Crear la lógica de cierre de sesión es fácil. La ruta simplemente debe no autenticar al usuario y redirigir a la página de inicio en lugar de mostrar cualquier vista. En el pasaporte, la no autenticación de un usuario es tan fácil como llamar a <code>req.logout();</code> antes de redirigir <pre> app.ruta (&#39;/ logout&#39;)
+  .get ((req, res) =&gt; {
+      req.logout ();
+      res.redirect (&#39;/&#39;);
+  }); </pre> Es posible que haya notado que tampoco estamos manejando páginas faltantes (404), la forma común de manejar esto en Node es con el siguiente middleware. Continúa y agrega esto después de todas tus otras rutas: <pre> app.use ((req, res, next) =&gt; {
+  estado de res. (404)
+    .teclee el texto&#39;)
+    .send (&#39;No encontrado&#39;);
+}); </pre> Envía tu página cuando creas que lo has hecho bien. </section>
 
 ## Instructions
-<section id='instructions'> 
-
+<section id="instructions">
 </section>
 
 ## Tests

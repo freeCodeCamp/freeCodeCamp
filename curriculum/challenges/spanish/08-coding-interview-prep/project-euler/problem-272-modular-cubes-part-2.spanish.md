@@ -1,23 +1,16 @@
 ---
-id: 5
-localeTitle: 5900f47d1000cf542c50ff8f
+id: 5900f47d1000cf542c50ff8f
 challengeType: 5
 title: 'Problem 272: Modular Cubes, part 2'
+videoUrl: ''
+localeTitle: 'Problema 272: Cubos modulares, parte 2'
 ---
 
 ## Description
-<section id='description'> 
-Para un número positivo n, defina C (n) como el número de los enteros x, para los cuales 1 <x<n andx3≡1 mod n.<code> 0 
-
-Cuando n = 91, hay 8 valores posibles para x, a saber: 9, 16, 22, 29, 53, 74, 79, 81. 
-Por lo tanto, C (91) = 8. 
-
-Encuentra la suma de los números positivos n≤1011 para los que C (n) = 242. 
-</section>
+<section id="description"> Para un número positivo n, defina C (n) como el número de los enteros x, para los cuales 1 <p> Cuando n = 91, hay 8 valores posibles para x, a saber: 9, 16, 22, 29, 53, 74, 79, 81. Por lo tanto, C (91) = 8. </p><p> Encuentre la suma de los números positivos n≤1011 para los que C (n) = 242. </p></section>
 
 ## Instructions
-<section id='instructions'> 
-
+<section id="instructions">
 </section>
 
 ## Tests
@@ -44,6 +37,7 @@ function euler272() {
 }
 
 euler272();
+
 ```
 
 </div>

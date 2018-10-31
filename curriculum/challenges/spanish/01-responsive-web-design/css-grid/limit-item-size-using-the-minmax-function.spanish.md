@@ -1,22 +1,16 @@
 ---
 id: 5a94fe4469fb03452672e460
 title: Limit Item Size Using the minmax Function
-localeTitle: Limitar el tamaño del elemento utilizando la función minmax
 challengeType: 0
 videoUrl: ''
+localeTitle: Limitar el tamaño del elemento utilizando la función minmax
 ---
 
 ## Description
-<section id='description'> 
-Hay otra función incorporada para usar con <code>grid-template-columns</code> <code>grid-template-rows</code> llamada <code>minmax</code> . Se utiliza para limitar el tamaño de los elementos cuando el contenedor de cuadrícula cambia de tamaño. Para hacer esto, necesita especificar el rango de tamaño aceptable para su artículo. Aquí hay un ejemplo: 
-<blockquote>grid-template-columns: 100px minmax(50px, 200px);</blockquote> 
-En el código anterior, <code>grid-template-columns</code> está configurado para crear dos columnas; el primero tiene un ancho de 100 px y el segundo tiene el ancho mínimo de 50 px y el ancho máximo de 200 px. 
-</section>
+<section id="description"> Hay otra función incorporada para usar con <code>grid-template-columns</code> <code>grid-template-rows</code> llamada <code>minmax</code> . Se utiliza para limitar el tamaño de los elementos cuando el contenedor de cuadrícula cambia de tamaño. Para hacer esto, necesita especificar el rango de tamaño aceptable para su artículo. Aquí hay un ejemplo: <blockquote> rejilla-plantilla-columnas: 100px minmax (50px, 200px); </blockquote> En el código anterior, <code>grid-template-columns</code> está configurado para crear dos columnas; el primero tiene un ancho de 100 px y el segundo tiene el ancho mínimo de 50 px y el ancho máximo de 200 px. </section>
 
 ## Instructions
-<section id='instructions'> 
-Con la función <code>minmax</code> , reemplace el <code>1fr</code> en la función de <code>repeat</code> con un tamaño de columna que tenga el ancho mínimo de <code>90px</code> y el ancho máximo de <code>1fr</code> , y <code>1fr</code> tamaño del panel de vista previa para ver el efecto. 
-</section>
+<section id="instructions"> Usando la función <code>minmax</code> , reemplace el <code>1fr</code> en la función de <code>repeat</code> con un tamaño de columna que tenga el ancho mínimo de <code>90px</code> y el ancho máximo de <code>1fr</code> , y <code>1fr</code> tamaño del panel de vista previa para ver el efecto. </section>
 
 ## Tests
 <section id='tests'>
@@ -66,6 +60,7 @@ tests:
   <div class="item4">4</div>
   <div class="item5">5</div>
 </div>
+
 ```
 
 </div>
@@ -77,9 +72,7 @@ tests:
 ## Solution
 <section id='solution'>
 
-
 ```js
-var code = ".container {grid-template-columns: repeat(3, minmax(90px, 1fr));}"
+// solution required
 ```
-
 </section>

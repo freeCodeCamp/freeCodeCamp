@@ -1,21 +1,16 @@
 ---
 id: 56533eb9ac21ba0edf2244bc
 title: Shopping List
-localeTitle: Lista de la compra
 challengeType: 1
+videoUrl: ''
+localeTitle: Lista de la compra
 ---
 
 ## Description
-<section id='description'> 
-Crea una lista de compras en la variable <code>myList</code> . La lista debe ser una matriz multidimensional que contenga varias subarreglas. 
-El primer elemento de cada sub-matriz debe contener una cadena con el nombre del elemento. El segundo elemento debe ser un número que represente la cantidad, es decir, 
-<code>[&quot;Chocolate Bar&quot;, 15]</code> 
-Debe haber al menos 5 subarreglos en la lista. 
-</section>
+<section id="description"> Crea una lista de compras en la variable <code>myList</code> . La lista debe ser una matriz multidimensional que contenga varias subarreglas. El primer elemento de cada sub-matriz debe contener una cadena con el nombre del elemento. El segundo elemento debe ser un número que represente la cantidad, es decir, <code>[&quot;Chocolate Bar&quot;, 15]</code> Debe haber al menos 5 subarreglas en la lista. </section>
 
 ## Instructions
-<section id='instructions'> 
-
+<section id="instructions">
 </section>
 
 ## Tests
@@ -44,7 +39,6 @@ tests:
 ```js
 var myList = [];
 
-
 ```
 
 </div>
@@ -64,15 +58,7 @@ console.info('after the test');
 ## Solution
 <section id='solution'>
 
-
 ```js
-var myList = [
-  ["Candy", 10],
-  ["Potatoes", 12],
-  ["Eggs", 12],
-  ["Catfood", 1],
-  ["Toads", 9]
-];
+// solution required
 ```
-
 </section>

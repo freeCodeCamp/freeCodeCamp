@@ -1,26 +1,16 @@
 ---
-id: 5
-localeTitle: 5900f4bd1000cf542c50ffce
+id: 5900f4bd1000cf542c50ffce
 challengeType: 5
 title: 'Problem 335: Gathering the beans'
+videoUrl: ''
+localeTitle: 'Problema 335: Recolectando los frijoles'
 ---
 
 ## Description
-<section id='description'> 
-Cuando Peter se siente aburrido, coloca unos cuencos, que contienen un frijol cada uno, en un círculo. Después de esto, toma todos los frijoles de un tazón determinado y los deja caer uno por uno en los tazones en el sentido de las agujas del reloj. Repite esto, comenzando desde el tazón en el que soltó el último grano, hasta que la situación inicial vuelve a aparecer. Por ejemplo, con 5 tazones, actúa de la siguiente manera: 
-
-
-
-Entonces, con 5 tazones, Peter 15 se mueve para volver a la situación inicial. 
-
-Deje que M (x) represente el número de movimientos necesarios para volver a la situación inicial, comenzando con x tazones. Por lo tanto, M (5) = 15. También se puede verificar que M (100) = 10920. 
-
-Encuentre M (2k + 1). Da tu respuesta módulo 79. 
-</section>
+<section id="description"> Cada vez que Peter se siente aburrido, coloca unos cuencos, que contienen un frijol cada uno, en un círculo. Después de esto, toma todos los frijoles de un tazón determinado y los deja caer uno por uno en los tazones en el sentido de las agujas del reloj. Repite esto, comenzando desde el tazón en el que soltó el último grano, hasta que la situación inicial vuelve a aparecer. Por ejemplo, con 5 tazones actúa de la siguiente manera: <p> Así que con 5 tazones toma Peter 15 movimientos para volver a la situación inicial. </p><p> Sea M (x) el número de movimientos necesarios para volver a la situación inicial, comenzando con x tazones. Por lo tanto, M (5) = 15. También se puede verificar que M (100) = 10920. </p><p> Encuentra M (2k + 1). Da tu respuesta módulo 79. </p></section>
 
 ## Instructions
-<section id='instructions'> 
-
+<section id="instructions">
 </section>
 
 ## Tests
@@ -47,6 +37,7 @@ function euler335() {
 }
 
 euler335();
+
 ```
 
 </div>

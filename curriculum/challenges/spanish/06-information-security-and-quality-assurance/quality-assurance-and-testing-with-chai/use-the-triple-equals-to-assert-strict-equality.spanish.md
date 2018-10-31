@@ -1,20 +1,16 @@
 ---
 id: 587d824b367417b2b2512c4b
 title: Use the Triple Equals to Assert Strict Equality
-localeTitle: Utilice el triple igual para afirmar la igualdad estricta
 challengeType: 2
+videoUrl: ''
+localeTitle: Utilice el triple igual para afirmar la igualdad estricta
 ---
 
 ## Description
-<section id='description'> 
-Como recordatorio, este proyecto se está construyendo sobre el siguiente proyecto de inicio en <a href='https://glitch.com/#!/import/github/freeCodeCamp/boilerplate-mochachai/'>Glitch</a> , o clonado desde <a href='https://github.com/freeCodeCamp/boilerplate-mochachai/'>GitHub</a> . 
-.strictEqual (), .notStrictEqual () 
-.strictEqual () compara objetos utilizando &#39;===&#39; 
-</section>
+<section id="description"> Como recordatorio, este proyecto se está construyendo sobre el siguiente proyecto de inicio en <a href="https://glitch.com/#!/import/github/freeCodeCamp/boilerplate-mochachai/">Glitch</a> , o clonado desde <a href="https://github.com/freeCodeCamp/boilerplate-mochachai/">GitHub</a> . .strictEqual (), .notStrictEqual () .strictEqual () compara objetos utilizando &#39;===&#39; </section>
 
 ## Instructions
-<section id='instructions'> 
-
+<section id="instructions">
 </section>
 
 ## Tests

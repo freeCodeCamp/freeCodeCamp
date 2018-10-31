@@ -1,20 +1,16 @@
 ---
 id: 587d824f367417b2b2512c59
 title: Run Functional Tests on API Endpoints using Chai-HTTP II
-localeTitle: Ejecutar pruebas funcionales en puntos finales de API utilizando Chai-HTTP II
 challengeType: 2
+videoUrl: ''
+localeTitle: Ejecutar pruebas funcionales en puntos finales de API utilizando Chai-HTTP II
 ---
 
 ## Description
-<section id='description'> 
-Como recordatorio, este proyecto se está construyendo sobre el siguiente proyecto de inicio en <a href='https://glitch.com/#!/import/github/freeCodeCamp/boilerplate-mochachai/'>Glitch</a> , o clonado desde <a href='https://github.com/freeCodeCamp/boilerplate-mochachai/'>GitHub</a> . 
-Reemplace assert.fail (). Probar el estado y la text.response. Hacer pasar la prueba. 
-Enviar su nombre en la consulta adjuntando? Nombre = <your_name> , el punto final con responde con &#39;hola <your_name> &#39;. 
-</section>
+<section id="description"> Como recordatorio, este proyecto se está construyendo sobre el siguiente proyecto de inicio en <a href="https://glitch.com/#!/import/github/freeCodeCamp/boilerplate-mochachai/">Glitch</a> , o clonado desde <a href="https://github.com/freeCodeCamp/boilerplate-mochachai/">GitHub</a> . Reemplace assert.fail (). Probar el estado y la text.response. Hacer pasar la prueba. ¿Enviar su nombre en la consulta adjuntando? Nombre = <your_name> , el punto final con responde con &#39;hola <your_name> &#39;. </your_name></your_name></section>
 
 ## Instructions
-<section id='instructions'> 
-
+<section id="instructions">
 </section>
 
 ## Tests

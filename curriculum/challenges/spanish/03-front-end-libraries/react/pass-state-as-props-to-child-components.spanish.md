@@ -1,22 +1,17 @@
 ---
 id: 5a24c314108439a4d403617a
 title: Pass State as Props to Child Components
-localeTitle: Pasar estado como accesorios a componentes secundarios
 challengeType: 6
 isRequired: false
+videoUrl: ''
+localeTitle: Pasar estado como accesorios a componentes secundarios
 ---
 
 ## Description
-<section id='description'> 
-Vio muchos ejemplos que pasaron apoyos a elementos JSX secundarios y componentes React secundarios en desafíos anteriores. Quizás te preguntes de dónde provienen esos accesorios. Un patrón común es tener un componente con estado que contenga el <code>state</code> importante para su aplicación, que luego presente componentes secundarios. Desea que estos componentes tengan acceso a algunas partes de ese <code>state</code> , que se pasan como accesorios. 
-Por ejemplo, tal vez tenga un componente de la <code>App</code> que presente una <code>Navbar</code> , entre otros componentes. En su <code>App</code> , tiene un <code>state</code> que contiene mucha información de usuario, pero la <code>Navbar</code> solo necesita acceso al nombre de usuario del usuario para poder mostrarla. <code>Navbar</code> esa pieza de <code>state</code> al componente <code>Navbar</code> como prop. 
-Este patrón ilustra algunos paradigmas importantes en React. El primero es <em>el flujo de datos unidireccional</em> . El estado fluye en una dirección en el árbol de los componentes de la aplicación, desde el componente primario con estado hasta los componentes secundarios. Los componentes secundarios solo reciben los datos de estado que necesitan. La segunda es que las aplicaciones con estado complejas pueden dividirse en solo unos pocos, o tal vez un solo componente con estado. El resto de sus componentes simplemente reciben el estado del padre como apoyo y representan una IU desde ese estado. Comienza a crear una separación donde la administración del estado se maneja en una parte del código y la representación de la interfaz de usuario en otra. Este principio de separar la lógica de estado de la lógica de UI es uno de los principios clave de React. Cuando se usa correctamente, hace que el diseño de aplicaciones complejas y con estado sea mucho más fácil de administrar. 
-</section>
+<section id="description"> Vio muchos ejemplos que pasaron apoyos a elementos JSX secundarios y componentes React secundarios en desafíos anteriores. Quizás te preguntes de dónde provienen esos accesorios. Un patrón común es tener un componente con estado que contenga el <code>state</code> importante para su aplicación, que luego presente componentes secundarios. Desea que estos componentes tengan acceso a algunas partes de ese <code>state</code> , que se pasan como accesorios. Por ejemplo, tal vez tenga un componente de la <code>App</code> que presente una <code>Navbar</code> , entre otros componentes. En su <code>App</code> , tiene un <code>state</code> que contiene mucha información de usuario, pero la <code>Navbar</code> solo necesita acceso al nombre de usuario del usuario para poder mostrarla. <code>Navbar</code> esa pieza de <code>state</code> al componente <code>Navbar</code> como prop. Este patrón ilustra algunos paradigmas importantes en React. El primero es <em>el flujo de datos unidireccional</em> . El estado fluye en una dirección en el árbol de los componentes de la aplicación, desde el componente primario con estado hasta los componentes secundarios. Los componentes secundarios solo reciben los datos de estado que necesitan. La segunda es que las aplicaciones con estado complejas pueden dividirse en solo unos pocos, o tal vez un solo componente con estado. El resto de sus componentes simplemente reciben el estado del padre como apoyo y representan una IU desde ese estado. Comienza a crear una separación donde la administración del estado se maneja en una parte del código y la representación de la interfaz de usuario en otra. Este principio de separar la lógica de estado de la lógica de UI es uno de los principios clave de React. Cuando se usa correctamente, hace que el diseño de aplicaciones complejas y con estado sea mucho más fácil de administrar. </section>
 
 ## Instructions
-<section id='instructions'> 
-El componente <code>MyApp</code> tiene estado y representa un componente de la <code>Navbar</code> como un elemento secundario. Pase la propiedad del <code>name</code> en su <code>state</code> hasta el componente secundario, luego muestre el <code>name</code> en la etiqueta <code>h1</code> que forma parte del método de renderizado de la <code>Navbar</code> de <code>Navbar</code> . 
-</section>
+<section id="instructions"> El componente <code>MyApp</code> tiene estado y representa un componente de la <code>Navbar</code> como un elemento secundario. Pase la propiedad del <code>name</code> en su <code>state</code> hasta el componente secundario, luego muestre el <code>name</code> en la etiqueta <code>h1</code> que forma parte del método de renderizado de la <code>Navbar</code> de <code>Navbar</code> . </section>
 
 ## Tests
 <section id='tests'>
@@ -68,6 +63,7 @@ class Navbar extends React.Component {
     );
   }
 };
+
 ```
 
 </div>
@@ -87,35 +83,7 @@ console.info('after the test');
 ## Solution
 <section id='solution'>
 
-
 ```js
-class MyApp extends React.Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      name: 'CamperBot'
-    }
-  }
-  render() {
-    return (
-       <div>
-         <Navbar name={this.state.name}/>
-       </div>
-    );
-  }
-};
-class Navbar extends React.Component {
-  constructor(props) {
-    super(props);
-  }
-  render() {
-    return (
-    <div>
-      <h1>Hello, my name is: {this.props.name}</h1>
-    </div>
-    );
-  }
-};
+// solution required
 ```
-
 </section>

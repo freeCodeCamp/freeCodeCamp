@@ -1,30 +1,20 @@
 ---
 id: 5895f70cf9fc0f352b528e65
 title: Set up Passport
-localeTitle: Configurar pasaporte
 challengeType: 2
+videoUrl: ''
+localeTitle: Configurar pasaporte
 ---
 
 ## Description
-<section id='description'> 
-Como recordatorio, este proyecto se está construyendo sobre el siguiente proyecto de inicio en <a href='https://glitch.com/#!/import/github/freeCodeCamp/boilerplate-advancednode/'>Glitch</a> , o clonado desde <a href='https://github.com/freeCodeCamp/boilerplate-advancednode/'>GitHub</a> . 
-Es hora de configurar <em>Passport</em> para que finalmente podamos comenzar a permitir que un usuario se registre o inicie sesión en una cuenta! Además de Passport, usaremos Express-session para manejar las sesiones. El uso de este middleware guarda el id de sesión como una cookie en el cliente y nos permite acceder a los datos de la sesión usando ese id en el servidor. De esta manera, mantenemos la información de la cuenta personal fuera de la cookie utilizada por el cliente para verificar que nuestro servidor esté autenticado y solo mantengamos la <em>clave</em> para acceder a los datos almacenados en el servidor. 
-Para configurar Passport para su uso en su proyecto, primero deberá agregarlo como una dependencia en su package.json. <code>&quot;passport&quot;: &quot;^0.3.2&quot;</code> 
-Además, agregue Express-session como una dependencia ahora también. Express-session tiene un montón de funciones avanzadas que puedes usar, ¡pero por ahora solo usaremos lo básico! <code>&quot;express-session&quot;: &quot;^1.15.0&quot;</code> 
-Deberá configurar los ajustes de la sesión ahora e inicializar Passport. Asegúrese de crear primero las variables &#39;sesión&#39; y &#39;pasaporte&#39; para requerir &#39;sesión rápida&#39; y &#39;pasaporte&#39; respectivamente. 
-Para configurar su aplicación Express para usar la sesión, definiremos solo algunas opciones básicas. Asegúrese de agregar &#39;SESSION_SECRET&#39; a su archivo .env y asígnele un valor aleatorio. Esto se usa para calcular el hash utilizado para cifrar su cookie. 
-<pre> app.use (session ({ 
-secret: process.env.SESSION_SECRET, 
-resave: true, 
-saveUninitialized: true, 
-})); </pre> 
-También puede continuar y decirle a su aplicación Express que <b>use</b> &#39;passport.initialize ()&#39; y &#39;passport.session ()&#39;. (Por ejemplo, <code>app.use(passport.initialize());</code> ) 
-Envíe su página cuando crea que la tiene correcta. Si está teniendo errores, puede consultar el proyecto completado hasta este punto <a href='https://gist.github.com/JosephLivengood/338a9c5a326923c3826a666d430e65c3'>aquí</a> . 
-</section>
+<section id="description"> Como recordatorio, este proyecto se está construyendo sobre el siguiente proyecto de inicio en <a href="https://glitch.com/#!/import/github/freeCodeCamp/boilerplate-advancednode/">Glitch</a> , o clonado desde <a href="https://github.com/freeCodeCamp/boilerplate-advancednode/">GitHub</a> . Es hora de configurar <em>Passport</em> para que finalmente podamos comenzar a permitir que un usuario se registre o inicie sesión en una cuenta. Además de Passport, usaremos Express-session para manejar las sesiones. El uso de este middleware guarda el id de sesión como una cookie en el cliente y nos permite acceder a los datos de la sesión usando ese id en el servidor. De esta manera, mantenemos la información de la cuenta personal fuera de la cookie utilizada por el cliente para verificar que nuestro servidor esté autenticado y solo mantengamos la <em>clave</em> para acceder a los datos almacenados en el servidor. Para configurar Passport para su uso en su proyecto, primero deberá agregarlo como una dependencia en su package.json. <code>&quot;passport&quot;: &quot;^0.3.2&quot;</code> Además, agregue Express-session como una dependencia ahora también. Express-session tiene un montón de funciones avanzadas que puedes usar, ¡pero por ahora solo usaremos lo básico! <code>&quot;express-session&quot;: &quot;^1.15.0&quot;</code> Deberá configurar los ajustes de la sesión ahora e inicializar Passport. Asegúrese de crear primero las variables &#39;sesión&#39; y &#39;pasaporte&#39; para requerir &#39;sesión rápida&#39; y &#39;pasaporte&#39; respectivamente. Para configurar su aplicación Express para usar la sesión, definiremos solo algunas opciones básicas. Asegúrese de agregar &#39;SESSION_SECRET&#39; a su archivo .env y asígnele un valor aleatorio. Esto se usa para calcular el hash utilizado para cifrar su cookie. <pre> app.use (sesión ({
+  secreto: process.env.SESSION_SECRET,
+  resave: verdadero,
+  saveUninitialized: true,
+})); </pre> También puede continuar y decirle a su aplicación Express que <b>use</b> &#39;passport.initialize ()&#39; y &#39;passport.session ()&#39;. (Por ejemplo, <code>app.use(passport.initialize());</code> ) Envíe su página cuando crea que la tiene correcta. Si está teniendo errores, puede consultar el proyecto completado hasta este punto <a href="https://gist.github.com/JosephLivengood/338a9c5a326923c3826a666d430e65c3">aquí</a> . </section>
 
 ## Instructions
-<section id='instructions'> 
-
+<section id="instructions">
 </section>
 
 ## Tests

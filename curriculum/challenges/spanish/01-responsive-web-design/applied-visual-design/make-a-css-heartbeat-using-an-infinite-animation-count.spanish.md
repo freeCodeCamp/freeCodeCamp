@@ -1,21 +1,16 @@
 ---
 id: 587d78a8367417b2b2512ae4
 title: Make a CSS Heartbeat using an Infinite Animation Count
-localeTitle: Haz un Heartbeat CSS usando un conteo de animaciones infinitas
 challengeType: 0
 videoUrl: ''
+localeTitle: Haz un Heartbeat CSS usando un conteo de animaciones infinitas
 ---
 
 ## Description
-<section id='description'> 
-Aquí hay otro ejemplo de animación continua con la propiedad de <code>animation-iteration-count</code> que usa el corazón que diseñó en un desafío anterior. 
-La animación de un segundo de latido del corazón consta de dos piezas animadas. Los elementos del <code>heart</code> (que incluyen <code>:before</code> y <code>:after</code> piezas) se animan para cambiar el tamaño con la propiedad de <code>transform</code> , y la <code>div</code> fondo se anima para cambiar su color con la propiedad de <code>background</code> . 
-</section>
+<section id="description"> Aquí hay otro ejemplo de animación continua con la propiedad de <code>animation-iteration-count</code> que usa el corazón que diseñó en un desafío anterior. La animación de un segundo de latido del corazón consta de dos piezas animadas. Los elementos del <code>heart</code> (que incluyen <code>:before</code> y <code>:after</code> piezas) se animan para cambiar el tamaño con la propiedad de <code>transform</code> , y la <code>div</code> fondo se anima para cambiar su color con la propiedad de <code>background</code> . </section>
 
 ## Instructions
-<section id='instructions'> 
-Mantenga el corazón latiendo agregando la propiedad de <code>animation-iteration-count</code> para la clase de <code>back</code> y la clase de <code>heart</code> y estableciendo el valor en infinito. El <code>heart:before</code> y <code>heart:after</code> selectores <code>heart:after</code> no necesitan propiedades de animación. 
-</section>
+<section id="instructions"> Mantenga el latido del corazón agregando la propiedad de <code>animation-iteration-count</code> tanto para la clase de <code>back</code> como para la clase del <code>heart</code> y establezca el valor en infinito. El <code>heart:before</code> y <code>heart:after</code> selectores <code>heart:after</code> no necesitan propiedades de animación. </section>
 
 ## Tests
 <section id='tests'>
@@ -106,6 +101,7 @@ tests:
 </style>
 <div class="back"></div>
 <div class="heart"></div>
+
 ```
 
 </div>

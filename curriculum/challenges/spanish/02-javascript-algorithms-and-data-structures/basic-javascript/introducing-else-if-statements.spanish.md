@@ -1,20 +1,16 @@
 ---
 id: 56533eb9ac21ba0edf2244db
 title: Introducing Else If Statements
-localeTitle: Introduciendo Else If Sentencias
 challengeType: 1
+videoUrl: ''
+localeTitle: Introduciendo Else If Sentencias
 ---
 
 ## Description
-<section id='description'> 
-Si tiene varias condiciones que deben abordarse, puede encadenar <code>if</code> sentencias junto con <code>else if</code> sent. 
-<blockquote>if (num > 15) {<br>&nbsp;&nbsp;return "Bigger than 15";<br>} else if (num < 5) {<br>&nbsp;&nbsp;return "Smaller than 5";<br>} else {<br>&nbsp;&nbsp;return "Between 5 and 15";<br>}</blockquote> 
-</section>
+<section id="description"> Si tiene múltiples condiciones que deben abordarse, puede encadenar <code>if</code> sentencias junto con <code>else if</code> sent. <blockquote> if (num&gt; 15) { <br> devuelve &quot;Más grande que 15&quot;; <br> } else if (num &lt;5) { <br> devuelve &quot;Menor de 5&quot;; <br> } else { <br> volver &quot;Entre 5 y 15&quot;; <br> } </blockquote></section>
 
 ## Instructions
-<section id='instructions'> 
-Convertir la lógica para usar <code>else if</code> instrucciones. 
-</section>
+<section id="instructions"> Convierte la lógica para usar <code>else if</code> . </section>
 
 ## Tests
 <section id='tests'>
@@ -74,17 +70,7 @@ testElseIf(7);
 ## Solution
 <section id='solution'>
 
-
 ```js
-function testElseIf(val) {
-  if(val > 10) {
-    return "Greater than 10";
-  } else if(val < 5) {
-    return "Smaller than 5";
-  } else {
-    return "Between 5 and 10";
-  }
-}
+// solution required
 ```
-
 </section>

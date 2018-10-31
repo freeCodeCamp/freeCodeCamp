@@ -1,21 +1,18 @@
 ---
 id: 587d7faa367417b2b2512bd3
 title: Style D3 Labels
-localeTitle: Etiquetas de estilo D3
 required:
   - src: 'https://cdnjs.cloudflare.com/ajax/libs/d3/4.3.0/d3.min.js'
 challengeType: 6
+videoUrl: ''
+localeTitle: Etiquetas de estilo D3
 ---
 
 ## Description
-<section id='description'> 
-métodos D3 pueden agregar estilos a las etiquetas de barra. El atributo de <code>fill</code> establece el color del texto para un nodo de <code>text</code> . El método <code>style()</code> establece reglas CSS para otros estilos, como &quot;font-family&quot; o &quot;font-size&quot;. 
-</section>
+<section id="description"> Los métodos D3 pueden agregar estilos a las etiquetas de barra. El atributo de <code>fill</code> establece el color del texto para un nodo de <code>text</code> . El método <code>style()</code> establece reglas CSS para otros estilos, como &quot;font-family&quot; o &quot;font-size&quot;. </section>
 
 ## Instructions
-<section id='instructions'> 
-Establezca el <code>font-size</code> de <code>font-size</code> de los elementos de <code>text</code> en 25px, y el color del texto en rojo. 
-</section>
+<section id="instructions"> Establezca el <code>font-size</code> de <code>font-size</code> de los elementos de <code>text</code> en 25px, y el color del texto en rojo. </section>
 
 ## Tests
 <section id='tests'>
@@ -73,6 +70,7 @@ tests:
        // Add your code above this line
   </script>
 </body>
+
 ```
 
 </div>

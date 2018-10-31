@@ -1,24 +1,16 @@
 ---
 id: bad87dee1348bd9aede07836
 title: Use an id Attribute to Style an Element
-localeTitle: Use un atributo de ID para diseñar un elemento
 challengeType: 0
 videoUrl: ''
+localeTitle: Use un atributo de ID para diseñar un elemento
 ---
 
 ## Description
-<section id='description'> 
-Una cosa interesante acerca de los atributos de <code>id</code> es que, al igual que las clases, puedes aplicarles un estilo usando CSS. 
-Sin embargo, una <code>id</code> no es reutilizable y solo debe aplicarse a un elemento. Una <code>id</code> también tiene una mayor especificidad (importancia) que una clase, por lo que si ambas se aplican al mismo elemento y tienen estilos en conflicto, se aplicarán los estilos de la <code>id</code> . 
-Aquí hay un ejemplo de cómo puedes tomar tu elemento con el atributo <code>id</code> de <code>cat-photo-element</code> y darle el color de fondo de verde. En su elemento de <code>style</code> : 
-<blockquote>#cat-photo-element {<br>&nbsp;&nbsp;background-color: green;<br>}</blockquote> 
-Tenga en cuenta que dentro de su elemento de <code>style</code> , siempre hace referencia a las clases poniendo un <code>.</code> delante de sus nombres. Siempre hace referencia a los identificadores colocando un <code>#</code> delante de sus nombres. 
-</section>
+<section id="description"> Una cosa interesante acerca de los atributos de <code>id</code> es que, al igual que las clases, puedes aplicarles un estilo usando CSS. Sin embargo, una <code>id</code> no es reutilizable y solo debe aplicarse a un elemento. Una <code>id</code> también tiene una mayor especificidad (importancia) que una clase, por lo que si ambas se aplican al mismo elemento y tienen estilos en conflicto, se aplicarán los estilos de la <code>id</code> . Este es un ejemplo de cómo puede tomar su elemento con el atributo <code>id</code> de <code>cat-photo-element</code> y darle el color de fondo de verde. En su elemento de <code>style</code> : <blockquote> # cat-photo-element { <br> color de fondo: verde; <br> } </blockquote> Tenga en cuenta que dentro de su elemento de <code>style</code> , siempre hace referencia a las clases poniendo un <code>.</code> delante de sus nombres. Siempre hace referencia a los identificadores colocando un <code>#</code> delante de sus nombres. </section>
 
 ## Instructions
-<section id='instructions'> 
-Intente darle a su formulario, que ahora tiene el atributo <code>id</code> de <code>cat-photo-form</code> , un fondo verde. 
-</section>
+<section id="instructions"> Intente darle a su formulario, que ahora tiene el atributo <code>id</code> de <code>cat-photo-form</code> , un fondo verde. </section>
 
 ## Tests
 <section id='tests'>
@@ -106,6 +98,7 @@ tests:
     <button type="submit">Submit</button>
   </form>
 </main>
+
 ```
 
 </div>

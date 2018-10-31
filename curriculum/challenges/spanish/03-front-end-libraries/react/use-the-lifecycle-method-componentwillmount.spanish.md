@@ -1,28 +1,17 @@
 ---
 id: 5a24c314108439a4d403617c
 title: Use the Lifecycle Method componentWillMount
-localeTitle: Utilice el método de ciclo de vida componentWillMount
 challengeType: 6
 isRequired: false
+videoUrl: ''
+localeTitle: Utilice el método de ciclo de vida componentWillMount
 ---
 
 ## Description
-<section id='description'> 
-componentes React tienen varios métodos especiales que brindan oportunidades para realizar acciones en puntos específicos del ciclo de vida de un componente. Estos se denominan métodos de ciclo de vida, o ganchos de ciclo de vida, y le permiten capturar componentes en ciertos puntos en el tiempo. Esto puede ser antes de que se procesen, antes de que se actualicen, antes de que reciban accesorios, antes de desmontar, y así sucesivamente. Aquí hay una lista de algunos de los métodos principales del ciclo de vida: 
-<code>componentWillMount()</code> 
-<code>componentDidMount()</code> 
-<code>componentWillReceiveProps()</code> 
-<code>shouldComponentUpdate()</code> 
-<code>componentWillUpdate()</code> 
-<code>componentDidUpdate()</code> 
-<code>componentWillUnmount()</code> 
-Las siguientes lecciones cubrirán algunas de las Casos de uso básicos para estos métodos de ciclo de vida. 
-</section>
+<section id="description"> Los componentes de React tienen varios métodos especiales que brindan oportunidades para realizar acciones en puntos específicos del ciclo de vida de un componente. Estos se denominan métodos de ciclo de vida, o ganchos de ciclo de vida, y le permiten capturar componentes en ciertos puntos en el tiempo. Esto puede ser antes de que se procesen, antes de que se actualicen, antes de que reciban accesorios, antes de desmontar, y así sucesivamente. Aquí hay una lista de algunos de los métodos principales del ciclo de vida: <code>componentWillMount()</code> <code>componentDidMount()</code> <code>componentWillReceiveProps()</code> <code>shouldComponentUpdate()</code> <code>componentWillUpdate()</code> <code>componentDidUpdate()</code> <code>componentWillUnmount()</code> Las siguientes lecciones cubrirán algunos de los casos de uso básico para estos métodos de vida. </section>
 
 ## Instructions
-<section id='instructions'> 
-El método <code>componentWillMount()</code> se llama antes que el método <code>render()</code> cuando se está montando un componente en el DOM. Registre algo en la consola dentro de <code>componentWillMount()</code> : es posible que desee tener abierta la consola del navegador para ver el resultado. 
-</section>
+<section id="instructions"> El método <code>componentWillMount()</code> se llama antes que el método <code>render()</code> cuando un componente se está montando en el DOM. Registre algo en la consola dentro de <code>componentWillMount()</code> : es posible que desee tener abierta la consola del navegador para ver el resultado. </section>
 
 ## Tests
 <section id='tests'>
@@ -57,6 +46,7 @@ class MyComponent extends React.Component {
     return <div />
   }
 };
+
 ```
 
 </div>
@@ -76,21 +66,7 @@ console.info('after the test');
 ## Solution
 <section id='solution'>
 
-
 ```js
-class MyComponent extends React.Component {
-  constructor(props) {
-    super(props);
-  }
-  componentWillMount() {
-    // change code below this line
-    console.log('Component is mounting...');
-    // change code above this line
-  }
-  render() {
-    return <div />
-  }
-};
+// solution required
 ```
-
 </section>

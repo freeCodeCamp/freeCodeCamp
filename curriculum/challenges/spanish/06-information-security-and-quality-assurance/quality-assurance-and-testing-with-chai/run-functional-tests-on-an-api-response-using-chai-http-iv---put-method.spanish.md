@@ -1,22 +1,16 @@
 ---
 id: 587d824f367417b2b2512c5b
 title: Run Functional Tests on an API Response using Chai-HTTP IV - PUT method
-localeTitle: Ejecute pruebas funcionales en una respuesta de API usando el método Chai-HTTP IV - PUT
 challengeType: 2
+videoUrl: ''
+localeTitle: Ejecute pruebas funcionales en una respuesta de API usando el método Chai-HTTP IV - PUT
 ---
 
 ## Description
-<section id='description'> 
-Como recordatorio, este proyecto se está construyendo sobre el siguiente proyecto de inicio en <a href='https://glitch.com/#!/import/github/freeCodeCamp/boilerplate-mochachai/'>Glitch</a> , o clonado desde <a href='https://github.com/freeCodeCamp/boilerplate-mochachai/'>GitHub</a> . 
-Este ejercicio es similar al anterior. Míralo por los detalles. 
-Enviar {apellido: &#39;da Verrazzano&#39;}. Reemplace assert.fail () y haga que la prueba pase. 
-Verifique 1) estado, 2) tipo, 3) cuerpo.nombre, 4) cuerpo. Apellido 
-Siga el orden de aserción anterior, nos basamos en él. 
-</section>
+<section id="description"> Como recordatorio, este proyecto se está construyendo sobre el siguiente proyecto de inicio en <a href="https://glitch.com/#!/import/github/freeCodeCamp/boilerplate-mochachai/">Glitch</a> , o clonado desde <a href="https://github.com/freeCodeCamp/boilerplate-mochachai/">GitHub</a> . Este ejercicio es similar al anterior. Míralo por los detalles. Enviar {apellido: &#39;da Verrazzano&#39;}. Reemplace assert.fail () y haga que la prueba pase. Compruebe si hay 1) estado, 2) tipo, 3) cuerpo.nombre, 4) cuerpo. Apellido Siga el orden de aserción anterior, nos basamos en él. </section>
 
 ## Instructions
-<section id='instructions'> 
-
+<section id="instructions">
 </section>
 
 ## Tests

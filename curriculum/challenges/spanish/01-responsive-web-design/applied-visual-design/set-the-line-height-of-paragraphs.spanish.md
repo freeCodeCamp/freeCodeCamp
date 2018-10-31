@@ -1,20 +1,16 @@
 ---
 id: 587d781d367417b2b2512ac5
 title: Set the line-height of Paragraphs
-localeTitle: Establecer la línea de altura de los párrafos
 challengeType: 0
 videoUrl: ''
+localeTitle: Establecer la línea de altura de los párrafos
 ---
 
 ## Description
-<section id='description'> 
-CSS ofrece la <code>line-height</code> propiedad para cambiar la altura de cada línea en un bloque de texto. Como sugiere su nombre, cambia la cantidad de espacio vertical que obtiene cada línea de texto. 
-</section>
+<section id="description"> CSS ofrece la <code>line-height</code> propiedad para cambiar la altura de cada línea en un bloque de texto. Como sugiere su nombre, cambia la cantidad de espacio vertical que obtiene cada línea de texto. </section>
 
 ## Instructions
-<section id='instructions'> 
-Agregue una propiedad de <code>line-height</code> a la etiqueta <code>p</code> y establézcala en 25px. 
-</section>
+<section id="instructions"> Agregue una propiedad de <code>line-height</code> a la etiqueta <code>p</code> y establézcala en 25px. </section>
 
 ## Tests
 <section id='tests'>
@@ -43,6 +39,7 @@ tests:
 <p>
   Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
 </p>
+
 ```
 
 </div>

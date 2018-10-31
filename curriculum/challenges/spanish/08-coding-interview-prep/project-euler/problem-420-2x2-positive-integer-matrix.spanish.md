@@ -1,31 +1,16 @@
 ---
-id: 5
-localeTitle: 5900f5111000cf542c510023
+id: 5900f5111000cf542c510023
 challengeType: 5
 title: 'Problem 420: 2x2 positive integer matrix'
+videoUrl: ''
+localeTitle: 'Problema 420: matriz entera positiva 2x2'
 ---
 
 ## Description
-<section id='description'> 
-Una matriz de enteros positivos es una matriz cuyos elementos son todos enteros positivos. 
-Algunas matrices de enteros positivos se pueden expresar como un cuadrado de una matriz de enteros positivos de dos maneras diferentes. Este es un ejemplo: 
-
-
-
-
-
-Definimos F (N) como el número de matrices de enteros positivos 2x2 que tienen una traza menor que N y que se pueden expresar como un cuadrado de una matriz de enteros positivos de dos maneras diferentes . 
-Podemos verificar que F (50) = 7 y F (1000) = 1019. 
-
-
-
-Encuentre F (107). 
-</section>
+undefined
 
 ## Instructions
-<section id='instructions'> 
-
-</section>
+undefined
 
 ## Tests
 <section id='tests'>
@@ -51,6 +36,7 @@ function euler420() {
 }
 
 euler420();
+
 ```
 
 </div>

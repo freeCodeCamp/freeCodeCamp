@@ -1,25 +1,16 @@
 ---
-id: 5
-localeTitle: 5900f4a01000cf542c50ffb2
+id: 5900f4a01000cf542c50ffb2
 challengeType: 5
 title: 'Problem 307: Chip Defects'
+videoUrl: ''
+localeTitle: 'Problema 307: Defectos de la viruta'
 ---
 
 ## Description
-<section id='description'> 
-k defectos se distribuyen aleatoriamente entre n chips de circuitos integrados producidos por una fábrica (cualquier número de defectos se puede encontrar en un chip y cada defecto es independiente de los otros defectos). 
-
-
-Sea p (k, n) la probabilidad de que haya un chip con al menos 3 defectos. 
-Por ejemplo, p (3,7) ≈ 0.0204081633. 
-
-
-Encuentre p (20 000, 1 000 000) y dé su respuesta redondeada a 10 lugares decimales en la forma 0.abcdefghij 
-</section>
+<section id="description"> Los defectos k se distribuyen aleatoriamente entre n chips de circuito integrado producidos por una fábrica (cualquier número de defectos puede encontrarse en un chip y cada defecto es independiente de los otros defectos). <p> Sea p (k, n) la probabilidad de que haya un chip con al menos 3 defectos. Por ejemplo, p (3,7) ≈ 0.0204081633. </p><p> Encuentre p (20 000, 1 000 000) y dé su respuesta redondeada a 10 lugares decimales en la forma 0.abcdefghij </p></section>
 
 ## Instructions
-<section id='instructions'> 
-
+<section id="instructions">
 </section>
 
 ## Tests
@@ -46,6 +37,7 @@ function euler307() {
 }
 
 euler307();
+
 ```
 
 </div>

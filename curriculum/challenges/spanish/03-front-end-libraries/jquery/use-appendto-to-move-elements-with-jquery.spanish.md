@@ -1,22 +1,16 @@
 ---
 id: bad87fee1348bd9aed608826
 title: Use appendTo to Move Elements with jQuery
-localeTitle: Usa appendTo para mover elementos con jQuery
 challengeType: 6
+videoUrl: ''
+localeTitle: Usa appendTo para mover elementos con jQuery
 ---
 
 ## Description
-<section id='description'> 
-Ahora intentemos mover elementos de un <code>div</code> a otro. 
-jQuery tiene una función llamada <code>appendTo()</code> que le permite seleccionar elementos HTML y agregarlos a otro elemento. 
-Por ejemplo, si quisiéramos mover <code>target4</code> de nuestro pozo derecho a nuestro pozo izquierdo, <code>$(&quot;#target4&quot;).appendTo(&quot;#left-well&quot;);</code> : 
-<code>$(&quot;#target4&quot;).appendTo(&quot;#left-well&quot;);</code> 
-Mueva su elemento <code>target2</code> de su <code>left-well</code> a su <code>right-well</code> . 
-</section>
+<section id="description"> Ahora intentemos mover elementos de un <code>div</code> a otro. jQuery tiene una función llamada <code>appendTo()</code> que te permite seleccionar elementos HTML y agregarlos a otro elemento. Por ejemplo, si quisiéramos mover <code>target4</code> de nuestro pozo derecho a nuestro pozo izquierdo, <code>$(&quot;#target4&quot;).appendTo(&quot;#left-well&quot;);</code> : <code>$(&quot;#target4&quot;).appendTo(&quot;#left-well&quot;);</code> Mueva su elemento <code>target2</code> de su <code>left-well</code> a su <code>right-well</code> . </section>
 
 ## Instructions
-<section id='instructions'> 
-
+<section id="instructions">
 </section>
 
 ## Tests
@@ -73,6 +67,7 @@ tests:
     </div>
   </div>
 </div>
+
 ```
 
 </div>

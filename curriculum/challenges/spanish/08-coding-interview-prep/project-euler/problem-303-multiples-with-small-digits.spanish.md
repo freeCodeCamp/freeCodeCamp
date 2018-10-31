@@ -1,22 +1,16 @@
 ---
-id: 5
-localeTitle: 5900f49b1000cf542c50ffae
+id: 5900f49b1000cf542c50ffae
 challengeType: 5
 title: 'Problem 303: Multiples with small digits'
+videoUrl: ''
+localeTitle: 'Problema 303: Múltiplos con dígitos pequeños'
 ---
 
 ## Description
-<section id='description'> 
-Para un entero positivo n, defina f (n) como el mínimo positivo múltiplo de n que, escrito en base 10, usa solo dígitos ≤ 2. 
-Por lo tanto, f (2) = 2, f (3) = 12, f ( 7) = 21, f (42) = 210, f (89) = 1121222. 
-también,. 
-
-Buscar. 
-</section>
+<section id="description"> Para un entero positivo n, defina f (n) como el mínimo positivo múltiplo de n que, escrito en base 10, usa solo dígitos ≤ 2. Por lo tanto, f (2) = 2, f (3) = 12, f (7) = 21, f (42) = 210, f (89) = 1121222. También, . <p> Encontrar . </p></section>
 
 ## Instructions
-<section id='instructions'> 
-
+<section id="instructions">
 </section>
 
 ## Tests
@@ -43,6 +37,7 @@ function euler303() {
 }
 
 euler303();
+
 ```
 
 </div>

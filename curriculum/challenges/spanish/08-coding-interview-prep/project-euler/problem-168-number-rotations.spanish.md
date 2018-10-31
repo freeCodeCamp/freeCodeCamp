@@ -1,21 +1,16 @@
 ---
-id: 5
-localeTitle: 5900f4151000cf542c50ff27
+id: 5900f4151000cf542c50ff27
 challengeType: 5
 title: 'Problem 168: Number Rotations'
+videoUrl: ''
+localeTitle: 'Problema 168: Rotaciones de números'
 ---
 
 ## Description
-<section id='description'> 
-Considere el número 142857. Podemos rotar a la derecha este número moviendo el último dígito (7) hacia el frente, dándonos 714285. 
-Se puede verificar que 714285 = 5 × 142857. 
-Esto demuestra una propiedad inusual de 142857: es un divisor de su rotación hacia la derecha. 
-Encuentre los últimos 5 dígitos de la suma de todos los enteros n, 10 &lt;n &lt;10100, que tienen esta propiedad. 
-</section>
+<section id="description"> Considere el número 142857. Podemos rotar a la derecha este número moviendo el último dígito (7) hacia el frente, dándonos 714285. Se puede verificar que 714285 = 5 × 142857. Esto demuestra una propiedad inusual de 142857: es un divisor de su rotación hacia la derecha. Encuentre los últimos 5 dígitos de la suma de todos los enteros n, 10 &lt;n &lt;10100, que tienen esta propiedad. </section>
 
 ## Instructions
-<section id='instructions'> 
-
+<section id="instructions">
 </section>
 
 ## Tests
@@ -42,6 +37,7 @@ function euler168() {
 }
 
 euler168();
+
 ```
 
 </div>

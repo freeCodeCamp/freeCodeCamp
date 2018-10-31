@@ -1,20 +1,16 @@
 ---
 id: a7bf700cd123b9a54eef01d5
 title: No Repeats Please
-localeTitle: No se repite por favor
 challengeType: 5
+videoUrl: ''
+localeTitle: No se repite por favor
 ---
 
 ## Description
-<section id='description'> 
-Devuelve el número de permutaciones totales de la cadena proporcionada que no tienen letras consecutivas repetidas. Supongamos que todos los caracteres de la cadena proporcionada son únicos. 
-Por ejemplo, <code>aab</code> debería devolver 2 porque tiene 6 permutaciones totales ( <code>aab</code> , <code>aab</code> , <code>aba</code> , <code>aba</code> , <code>baa</code> , <code>baa</code> ), pero solo 2 de ellas ( <code>aba</code> y <code>aba</code> ) no tienen la misma letra (en este caso, <code>a</code> ) repitiendo. 
-Recuerda usar <a href='http://forum.freecodecamp.org/t/how-to-get-help-when-you-are-stuck/19514' target='_blank'>Read-Search-Ask</a> si te atascas. Trate de emparejar el programa. Escribe tu propio código. 
-</section>
+<section id="description"> Devuelve el número de permutaciones totales de la cadena proporcionada que no tienen letras consecutivas repetidas. Supongamos que todos los caracteres de la cadena proporcionada son únicos. Por ejemplo, <code>aab</code> debe devolver 2 porque tiene 6 permutaciones totales ( <code>aab</code> , <code>aab</code> , <code>aba</code> , <code>aba</code> , <code>baa</code> , <code>baa</code> ), pero solo 2 de ellas ( <code>aba</code> y <code>aba</code> ) no tienen la misma letra (en este caso <code>a</code> ) repitiendo Recuerda usar <a href="http://forum.freecodecamp.org/t/how-to-get-help-when-you-are-stuck/19514" target="_blank">Read-Search-Ask</a> si te atascas. Trate de emparejar el programa. Escribe tu propio código. </section>
 
 ## Instructions
-<section id='instructions'> 
-
+<section id="instructions">
 </section>
 
 ## Tests
@@ -58,6 +54,7 @@ function permAlone(str) {
 }
 
 permAlone('aab');
+
 ```
 
 </div>
@@ -69,43 +66,7 @@ permAlone('aab');
 ## Solution
 <section id='solution'>
 
-
 ```js
-function permAlone(str) {
-  return permutor(str).filter(function(perm) {
-    return !perm.match(/(.)\1/g);
-  }).length;
-}
-
-function permutor(str) {
-  // http://staff.roguecc.edu/JMiller/JavaScript/permute.html
-  //permArr: Global array which holds the list of permutations
-  //usedChars: Global utility array which holds a list of "currently-in-use" characters
-  var permArr = [], usedChars = [];
-  function permute(input) {
-    //convert input into a char array (one element for each character)
-    var i, ch, chars = input.split("");
-    for (i = 0; i < chars.length; i++) {
-      //get and remove character at index "i" from char array
-      ch = chars.splice(i, 1);
-      //add removed character to the end of used characters
-      usedChars.push(ch);
-      //when there are no more characters left in char array to add, add used chars to list of permutations
-      if (chars.length === 0) permArr[permArr.length] = usedChars.join("");
-      //send characters (minus the removed one from above) from char array to be permuted
-      permute(chars.join(""));
-      //add removed character back into char array in original position
-      chars.splice(i, 0, ch);
-      //remove the last character used off the end of used characters array
-      usedChars.pop();
-    }
-  }
-  permute(str);
-  return permArr;
-}
-
-permAlone('aab');
-
+// solution required
 ```
-
 </section>

@@ -1,29 +1,16 @@
 ---
-id: 5
-localeTitle: 5900f4ea1000cf542c50fffc
+id: 5900f4ea1000cf542c50fffc
 challengeType: 5
 title: 'Problem 381: (prime-k) factorial'
+videoUrl: ''
+localeTitle: 'Problema 381: factorial (prime-k)'
 ---
 
 ## Description
-<section id='description'> 
-Para un primo p, deje que S (p) = (∑ (pk)!) Mod (p) para 1 ≤ k ≤ 5. 
-
-
-Por ejemplo, si p = 7, 
-(7-1)! + (7-2)! + (7-3)! + (7-4)! + (7-5)! = 6! + 5! + 4! + 3! + 2! = 720 + 120 + 24 + 6 + 2 = 872. 
-Como 872 mod (7) = 4, S (7) = 4. 
-
-
-Se puede verificar que ∑S (p) = 480 para 5 ≤ p &lt; 100. 
-
-
-Encuentra ∑S (p) para 5 ≤ p &lt;108. 
-</section>
+<section id="description"> Para una cebada p, deje que S (p) = (∑ (pk)!) Mod (p) para 1 ≤ k ≤ 5. <p> Por ejemplo, si p = 7, (7-1)! + (7-2)! + (7-3)! + (7-4)! + (7-5)! = 6! + 5! + 4! + 3! + 2! = 720 + 120 + 24 + 6 + 2 = 872. Como 872 mod (7) = 4, S (7) = 4. </p><p> Se puede verificar que ∑S (p) = 480 para 5 ≤ p &lt;100. </p><p> Encuentre ∑S (p) para 5 ≤ p &lt;108. </p></section>
 
 ## Instructions
-<section id='instructions'> 
-
+<section id="instructions">
 </section>
 
 ## Tests
@@ -50,6 +37,7 @@ function euler381() {
 }
 
 euler381();
+
 ```
 
 </div>

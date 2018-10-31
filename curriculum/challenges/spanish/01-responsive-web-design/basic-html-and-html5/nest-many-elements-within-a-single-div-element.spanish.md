@@ -1,23 +1,16 @@
 ---
 id: bad87fee1348bd9aede08835
 title: Nest Many Elements within a Single div Element
-localeTitle: Anidar muchos elementos dentro de un único elemento div
 challengeType: 0
 videoUrl: ''
+localeTitle: Anidar muchos elementos dentro de un único elemento div
 ---
 
 ## Description
-<section id='description'> 
-El elemento <code>div</code> , también conocido como elemento de división, es un contenedor de propósito general para otros elementos. 
-El elemento <code>div</code> es probablemente el elemento HTML más utilizado de todos. 
-Al igual que cualquier otro elemento que no se cierre automáticamente, puede abrir un elemento <code>div</code> con <code>&lt;div&gt;</code> y cerrarlo en otra línea con <code>&lt;/div&gt;</code> . 
-</section>
+<section id="description"> El elemento <code>div</code> , también conocido como elemento de división, es un contenedor de propósito general para otros elementos. El elemento <code>div</code> es probablemente el elemento HTML más utilizado de todos. Al igual que cualquier otro elemento que no se cierre automáticamente, puede abrir un elemento <code>div</code> con <code>&lt;div&gt;</code> y cerrarlo en otra línea con <code>&lt;/div&gt;</code> . </section>
 
 ## Instructions
-<section id='instructions'> 
-Anide sus listas de &quot;Cosas que los gatos aman&quot; y &quot;Cosas que los gatos odian&quot;, todo dentro de un único elemento <code>div</code> . 
-Sugerencia: intente colocar su etiqueta <code>div</code> apertura sobre el elemento <code>p</code> &quot;Things cats love&quot; y su etiqueta <code>div</code> cierre después de su etiqueta <code>ol</code> cierre para que ambas listas estén dentro de una <code>div</code> . 
-</section>
+<section id="instructions"> Anida las listas de &quot;Cosas que los gatos aman&quot; y &quot;Cosas que los gatos odian&quot;, todo dentro de un único elemento <code>div</code> . Sugerencia: intente colocar la etiqueta <code>div</code> apertura sobre el elemento <code>p</code> &quot;Things cats love&quot; y la etiqueta <code>div</code> cierre después de la etiqueta <code>ol</code> cierre para que ambas listas estén dentro de una <code>div</code> . </section>
 
 ## Tests
 <section id='tests'>
@@ -72,6 +65,7 @@ tests:
     <button type="submit">Submit</button>
   </form>
 </main>
+
 ```
 
 </div>

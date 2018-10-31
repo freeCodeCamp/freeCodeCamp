@@ -1,29 +1,16 @@
 ---
-id: 5
-localeTitle: 5900f3ff1000cf542c50ff12
+id: 5900f3ff1000cf542c50ff12
 challengeType: 5
 title: 'Problem 147: Rectangles in cross-hatched grids'
+videoUrl: ''
+localeTitle: 'Problema 147: Rectángulos en cuadrículas rayadas'
 ---
 
 ## Description
-<section id='description'> 
-En una cuadrícula sombreada de 3x2, un total de 37 rectángulos diferentes podrían situarse dentro de esa cuadrícula como se indica en el boceto. 
-
-Hay 5 cuadrículas más pequeñas que 3x2, siendo importantes las dimensiones vertical y horizontal, es decir, 1x1, 2x1, 3x1, 1x2 y 2x2. Si cada uno de ellos es sombreado, el siguiente número de rectángulos diferentes podría situarse dentro de esas cuadrículas más pequeñas: 
-1x1: 1 
-2x1: 4 
-3x1: 8 
-1x2: 4 
-2x2: 18 
-
-Agregar estos a la de la cuadrícula de 3x2, un total de 72 rectángulos diferentes podrían situarse dentro de 3x2 y cuadrículas más pequeñas. 
-
-¿Cuántos rectángulos diferentes podrían situarse dentro de 47x43 y cuadrículas más pequeñas? 
-</section>
+<section id="description"> En una cuadrícula sombreada de 3x2, un total de 37 rectángulos diferentes podrían situarse dentro de esa cuadrícula como se indica en el boceto. <p> Hay 5 cuadrículas más pequeñas que 3x2, siendo importantes las dimensiones verticales y horizontales, es decir, 1x1, 2x1, 3x1, 1x2 y 2x2. Si cada uno de ellos es sombreado, el siguiente número de rectángulos diferentes podría situarse dentro de esas cuadrículas más pequeñas: 1x1: 1 2x1: 4 3x1: 8 1x2: 4 2x2: 18 </p><p> Sumando esos a los 37 de la cuadrícula 3x2, un total de 72 rectángulos diferentes podrían situarse dentro de 3x2 y cuadrículas más pequeñas. </p><p> ¿Cuántos rectángulos diferentes podrían situarse dentro de 47x43 y cuadrículas más pequeñas? </p></section>
 
 ## Instructions
-<section id='instructions'> 
-
+<section id="instructions">
 </section>
 
 ## Tests
@@ -50,6 +37,7 @@ function euler147() {
 }
 
 euler147();
+
 ```
 
 </div>

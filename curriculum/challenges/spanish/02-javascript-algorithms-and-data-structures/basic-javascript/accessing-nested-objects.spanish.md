@@ -1,22 +1,17 @@
 ---
 id: 56533eb9ac21ba0edf2244cc
 title: Accessing Nested Objects
-localeTitle: Accediendo a objetos anidados
 challengeType: 1
 guideUrl: 'https://spanish.freecodecamp.org/guide/certificates/accessing-nested-objects-in-json'
+videoUrl: ''
+localeTitle: Accediendo a objetos anidados
 ---
 
 ## Description
-<section id='description'> 
-Se puede acceder a las sub-propiedades de los objetos encadenando la notación de punto o corchete. 
-Aquí hay un objeto anidado: 
-<blockquote>var ourStorage = {<br>&nbsp;&nbsp;"desk": {<br>&nbsp;&nbsp;&nbsp;&nbsp;"drawer": "stapler"<br>&nbsp;&nbsp;},<br>&nbsp;&nbsp;"cabinet": {<br>&nbsp;&nbsp;&nbsp;&nbsp;"top drawer": { <br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"folder1": "a file",<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"folder2": "secrets"<br>&nbsp;&nbsp;&nbsp;&nbsp;},<br>&nbsp;&nbsp;&nbsp;&nbsp;"bottom drawer": "soda"<br>&nbsp;&nbsp;}<br>};<br>ourStorage.cabinet["top drawer"].folder2;  // "secrets"<br>ourStorage.desk.drawer; // "stapler"</blockquote> 
-</section>
+<section id="description"> Se puede acceder a las sub-propiedades de los objetos encadenando la notación de punto o corchete. Aquí hay un objeto anidado: <blockquote> var ourStorage = { <br> &quot;escritorio&quot;: { <br> &quot;cajón&quot;: &quot;grapadora&quot; <br> } <br> &quot;gabinete&quot;: { <br> &quot;cajón de arriba&quot;: { <br> &quot;folder1&quot;: &quot;un archivo&quot;, <br> &quot;folder2&quot;: &quot;secretos&quot; <br> } <br> &quot;cajón inferior&quot;: &quot;soda&quot; <br> } <br> }; <br> ourStorage.cabinet [&quot;cajón superior&quot;]. folder2; // &quot;secretos&quot; <br> ourStorage.desk.drawer; // &quot;engrapadora&quot; </blockquote></section>
 
 ## Instructions
-<section id='instructions'> 
-Acceda al objeto <code>myStorage</code> y asigne el contenido de la propiedad de la <code>glove box</code> a la variable <code>gloveBoxContents</code> . Utilice la notación de corchete para las propiedades con un espacio en su nombre. 
-</section>
+<section id="instructions"> Acceda al objeto <code>myStorage</code> y asigne el contenido de la propiedad <code>glove box</code> a la variable <code>gloveBoxContents</code> . Utilice la notación de corchete para las propiedades con un espacio en su nombre. </section>
 
 ## Tests
 <section id='tests'>
@@ -72,20 +67,7 @@ console.info('after the test');
 ## Solution
 <section id='solution'>
 
-
 ```js
-var myStorage = {
-  "car":{
-    "inside":{
-      "glove box":"maps",
-      "passenger seat":"crumbs"
-    },
-    "outside":{
-      "trunk":"jack"
-    }
-  }
-};
-var gloveBoxContents = myStorage.car.inside["glove box"];
+// solution required
 ```
-
 </section>

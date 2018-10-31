@@ -1,19 +1,16 @@
 ---
-id: 5
-localeTitle: 5900f3731000cf542c50fe86
+id: 5900f3731000cf542c50fe86
 challengeType: 5
 title: 'Problem 7: 10001st prime'
+videoUrl: ''
+localeTitle: 'Problema 7: 10001st prime'
 ---
 
 ## Description
-<section id='description'> 
-Al enumerar los seis primeros números primos: 2, 3, 5, 7, 11 y 13, podemos ver que el primer sexto es 13. 
-¿Cuál es el <code>n</code> º número primo? 
-</section>
+<section id="description"> Haciendo una lista de los seis primeros números primos: 2, 3, 5, 7, 11 y 13, podemos ver que el primer sexto es 13. ¿Cuál es el <code>n</code> º número primo? </section>
 
 ## Instructions
-<section id='instructions'> 
-
+<section id="instructions">
 </section>
 
 ## Tests
@@ -48,6 +45,7 @@ function nthPrime(n) {
 }
 
 nthPrime(10001);
+
 ```
 
 </div>
@@ -59,24 +57,7 @@ nthPrime(10001);
 ## Solution
 <section id='solution'>
 
-
 ```js
-const nthPrime = (number)=>{
- let pN = 2;
- let step = 0;
- while (step<number) {
-   let isPrime = true;
-   for(let i = 2;i<pN;i++){
-      if(!(pN%i)){
-        isPrime = false;
-        break;
-      }
-   }
-   isPrime ? step++ : ";
-    pN++;
- }
- return pN-1;
-}
+// solution required
 ```
-
 </section>

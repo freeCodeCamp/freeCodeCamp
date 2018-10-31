@@ -1,26 +1,16 @@
 ---
-id: 5
-localeTitle: 5900f52c1000cf542c51003f
+id: 5900f52c1000cf542c51003f
 challengeType: 5
 title: 'Problem 448: Average least common multiple'
+videoUrl: ''
+localeTitle: 'Problema 448: Promedio del mínimo común múltiplo'
 ---
 
 ## Description
-<section id='description'> 
-La función lcm (a, b) denota el mínimo común múltiplo de ay b. 
-Sea A (n) el promedio de los valores de mcm (n, i) para 1≤i≤n. 
-Por ejemplo: A (2) = (2 + 2) / 2 = 2 y A (10) = (10 + 10 + 30 + 20 + 10 + 30 + 70 + 40 + 90 + 10) / 10 = 32. 
-
-Sea S (n) = ∑A (k) para 1≤k≤n. 
-S (100) = 122726. 
-
-
-Encuentra S (99999999019) mod 999999017. 
-</section>
+<section id="description"> La función mcm (a, b) denota el mínimo común múltiplo de ay b. Sea A (n) el promedio de los valores de mcm (n, i) para 1≤i≤n. Ej .: A (2) = (2 + 2) / 2 = 2 y A (10) = (10 + 10 + 30 + 20 + 10 + 30 + 70 + 40 + 90 + 10) / 10 = 32. <p> Sea S (n) = ∑A (k) para 1≤k≤n. S (100) = 122726. </p><p> Encuentra S (99999999019) mod 999999017. </p></section>
 
 ## Instructions
-<section id='instructions'> 
-
+<section id="instructions">
 </section>
 
 ## Tests
@@ -47,6 +37,7 @@ function euler448() {
 }
 
 euler448();
+
 ```
 
 </div>

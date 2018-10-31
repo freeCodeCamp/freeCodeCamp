@@ -1,25 +1,16 @@
 ---
-id: 5
-localeTitle: 5900f3891000cf542c50fe9c
+id: 5900f3891000cf542c50fe9c
 challengeType: 5
 title: 'Problem 29: Distinct powers'
+videoUrl: ''
+localeTitle: 'Problema 29: poderes distintos'
 ---
 
 ## Description
-<section id='description'> 
-Considere todas las combinaciones de números enteros de ab para 2 ≤ a ≤ 5 y 2 ≤ b ≤ 5: 
-22 = 4, 23 = 8, 24 = 16, 25 = 32 
-32 = 9, 33 = 27, 34 = 81, 35 = 243 
-42 = 16, 43 = 64, 44 = 256, 45 = 1024 
-52 = 25, 53 = 125, 54 = 625, 55 = 3125 
-Si se colocan en orden numérico, con cualquier repetición eliminada, obtenga la siguiente secuencia de 15 términos distintos: 
-4, 8, 9, 16, 25, 27, 32, 64, 81, 125, 243, 256, 625, 1024, 3125 
-¿Cuántos términos distintos hay en la secuencia generada por ab para 2 ≤ a ≤ n y 2 ≤ b ≤ n? 
-</section>
+<section id="description"> Considere todas las combinaciones de números enteros de ab para 2 ≤ a ≤ 5 y 2 ≤ b ≤ 5: 22 = 4, 23 = 8, 24 = 16, 25 = 32 32 = 9, 33 = 27, 34 = 81, 35 = 243 42 = 16, 43 = 64, 44 = 256, 45 = 1024 52 = 25, 53 = 125, 54 = 625, 55 = 3125 Si luego se colocan en orden numérico, con cualquier repetición eliminada, obtenemos la siguiente secuencia de 15 términos distintos: 4, 8, 9, 16, 25, 27, 32, 64, 81, 125, 243, 256, 625, 1024, 3125 ¿Cuántos términos distintos hay en la secuencia generada por ab para 2 ≤ a ≤ n y 2 ≤ b ≤ n? </section>
 
 ## Instructions
-<section id='instructions'> 
-
+<section id="instructions">
 </section>
 
 ## Tests
@@ -52,6 +43,7 @@ function distinctPowers(n) {
 }
 
 distinctPowers(30);
+
 ```
 
 </div>
@@ -63,18 +55,7 @@ distinctPowers(30);
 ## Solution
 <section id='solution'>
 
-
 ```js
-const distinctPowers = (n) => {
-  let list = [];
-  for (let a=2; a<=n; a++) {
-    for (let b=2; b<=n; b++) {
-      let term = Math.pow(a, b);
-      if (list.indexOf(term)===-1) list.push(term);
-    }
-  }
-  return list.length;
-};
+// solution required
 ```
-
 </section>

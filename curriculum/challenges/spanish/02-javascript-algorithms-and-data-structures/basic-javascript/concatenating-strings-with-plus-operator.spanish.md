@@ -1,22 +1,16 @@
 ---
 id: 56533eb9ac21ba0edf2244b7
 title: Concatenating Strings with Plus Operator
-localeTitle: Concatenando cuerdas con el operador Plus
 challengeType: 1
+videoUrl: ''
+localeTitle: Concatenando cuerdas con el operador Plus
 ---
 
 ## Description
-<section id='description'> 
-En JavaScript, cuando el operador <code>+</code> se usa con un valor de <code>String</code> , se llama operador de <dfn>concatenación</dfn> . Puede construir una nueva cadena a partir de otras cadenas <dfn>concatenándolas</dfn> juntas. 
-<strong>Ejemplo</strong> 
-<blockquote>'My name is Alan,' + ' I concatenate.'</blockquote> 
-<strong>Nota</strong> <br> Cuidado con los espacios. La concatenación no agrega espacios entre las cadenas concatenadas, por lo que deberá agregarlas usted mismo. 
-</section>
+<section id="description"> En JavaScript, cuando el operador <code>+</code> se usa con un valor de <code>String</code> , se llama operador de <dfn>concatenación</dfn> . Puede construir una nueva cadena a partir de otras cadenas <dfn>concatenándolas</dfn> juntas. <strong>Ejemplo</strong> <blockquote> &#39;Mi nombre es Alan,&#39; + &#39;Concatené&#39;. </blockquote> <strong>Nota</strong> <br> Cuidado con los espacios. La concatenación no agrega espacios entre las cadenas concatenadas, por lo que deberá agregarlas usted mismo. </section>
 
 ## Instructions
-<section id='instructions'> 
-Construye <code>myStr</code> partir de las cadenas <code>&quot;This is the start. &quot;</code> y <code>&quot;This is the end.&quot;</code> utilizando el operador <code>+</code> . 
-</section>
+<section id="instructions"> Construye <code>myStr</code> partir de las cadenas <code>&quot;This is the start. &quot;</code> y <code>&quot;This is the end.&quot;</code> utilizando el operador <code>+</code> . </section>
 
 ## Tests
 <section id='tests'>
@@ -49,7 +43,6 @@ var ourStr = "I come first. " + "I come second.";
 
 var myStr;
 
-
 ```
 
 </div>
@@ -69,10 +62,7 @@ console.info('after the test');
 ## Solution
 <section id='solution'>
 
-
 ```js
-var ourStr = "I come first. " + "I come second.";
-var myStr = "This is the start. " + "This is the end.";
+// solution required
 ```
-
 </section>

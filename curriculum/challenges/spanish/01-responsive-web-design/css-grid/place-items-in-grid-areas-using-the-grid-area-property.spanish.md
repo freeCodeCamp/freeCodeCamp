@@ -1,22 +1,16 @@
 ---
 id: 5a94fe1369fb03452672e45d
 title: Place Items in Grid Areas Using the grid-area Property
-localeTitle: Colocar elementos en áreas de cuadrícula utilizando la propiedad de área de cuadrícula
 challengeType: 0
 videoUrl: ''
+localeTitle: Colocar elementos en áreas de cuadrícula utilizando la propiedad de área de cuadrícula
 ---
 
 ## Description
-<section id='description'> 
-Después de crear una plantilla de áreas para su contenedor de cuadrícula, como se muestra en el desafío anterior, puede colocar un elemento en su área personalizada haciendo referencia al nombre que le dio. Para hacer esto, usa la propiedad del <code>grid-area</code> la <code>grid-area</code> en un elemento como este: 
-<blockquote>.item1 { grid-area: header; }</blockquote> 
-Esto le permite a la cuadrícula saber que desea que la clase <code>item1</code> en el área denominada <code>header</code> . En este caso, el elemento utilizará toda la fila superior porque toda esa fila se denomina área de encabezado. 
-</section>
+<section id="description"> Después de crear una plantilla de áreas para su contenedor de cuadrícula, como se muestra en el desafío anterior, puede colocar un elemento en su área personalizada haciendo referencia al nombre que le dio. Para hacer esto, usa la propiedad de <code>grid-area</code> en un elemento como este: <blockquote> .item1 {grid-area: header; } </blockquote> Esto le permite a la cuadrícula saber que desea que la clase <code>item1</code> vaya en el área llamada <code>header</code> . En este caso, el elemento utilizará toda la fila superior porque toda esa fila se denomina área de encabezado. </section>
 
 ## Instructions
-<section id='instructions'> 
-Coloque un elemento con la clase <code>item5</code> en el área del <code>footer</code> usando la propiedad del <code>grid-area</code> la <code>grid-area</code> . 
-</section>
+<section id="instructions"> Coloque un elemento con la clase <code>item5</code> en el área del <code>footer</code> usando la propiedad del <code>grid-area</code> la <code>grid-area</code> . </section>
 
 ## Tests
 <section id='tests'>
@@ -73,6 +67,7 @@ tests:
   <div class="item4">4</div>
   <div class="item5">5</div>
 </div>
+
 ```
 
 </div>
@@ -84,9 +79,7 @@ tests:
 ## Solution
 <section id='solution'>
 
-
 ```js
-var code = ".item5 {grid-area: footer;}"
+// solution required
 ```
-
 </section>

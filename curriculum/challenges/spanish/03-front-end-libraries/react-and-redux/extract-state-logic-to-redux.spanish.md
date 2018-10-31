@@ -1,21 +1,17 @@
 ---
 id: 5a24c314108439a4d4036143
 title: Extract State Logic to Redux
-localeTitle: Extraer la lógica de estado para redux
 challengeType: 6
 isRequired: false
+videoUrl: ''
+localeTitle: Extraer la lógica de estado para redux
 ---
 
 ## Description
-<section id='description'> 
-Ahora que terminó el componente React, necesita mover la lógica que está ejecutando localmente en su <code>state</code> a Redux. Este es el primer paso para conectar la aplicación React simple a Redux. La única funcionalidad que tiene su aplicación es agregar nuevos mensajes del usuario a una lista desordenada. El ejemplo es simple para demostrar cómo React y Redux trabajan juntos. 
-</section>
+<section id="description"> Ahora que terminó el componente React, necesita mover la lógica que está ejecutando localmente en su <code>state</code> a Redux. Este es el primer paso para conectar la aplicación React simple a Redux. La única funcionalidad que tiene su aplicación es agregar nuevos mensajes del usuario a una lista desordenada. El ejemplo es simple para demostrar cómo React y Redux trabajan juntos. </section>
 
 ## Instructions
-<section id='instructions'> 
-Primero, defina un tipo de acción &#39;AGREGAR&#39; y ajústelo a una constante <code>ADD</code> . A continuación, defina un creador de acción <code>addMessage()</code> que crea la acción para agregar un mensaje. Deberá pasar un <code>message</code> a este creador de acción e incluir el mensaje en la <code>action</code> devuelta. 
-Luego cree un reductor llamado <code>messageReducer()</code> que maneje el estado de los mensajes. El estado inicial debe ser igual a una matriz vacía. Este reductor debe agregar un mensaje a la matriz de mensajes retenidos o devolver el estado actual. Finalmente, crea tu tienda Redux y pásale el reductor. 
-</section>
+<section id="instructions"> Primero, defina un tipo de acción &#39;AGREGAR&#39; y ajústelo a una constante <code>ADD</code> . A continuación, defina un creador de acción <code>addMessage()</code> que crea la acción para agregar un mensaje. Deberá pasar un <code>message</code> a este creador de acción e incluir el mensaje en la <code>action</code> devuelta. Luego cree un reductor llamado <code>messageReducer()</code> que maneje el estado de los mensajes. El estado inicial debe ser igual a una matriz vacía. Este reductor debe agregar un mensaje a la matriz de mensajes retenidos o devolver el estado actual. Finalmente, crea tu tienda Redux y pásale el reductor. </section>
 
 ## Tests
 <section id='tests'>
@@ -58,30 +54,7 @@ tests:
 ## Solution
 <section id='solution'>
 
-
 ```js
-const ADD = 'ADD';
-
-const addMessage = (message) => {
-  return {
-    type: ADD,
-    message
-  }
-};
-
-const messageReducer = (state = [], action) => {
-  switch (action.type) {
-    case ADD:
-      return [
-        ...state,
-        action.message
-      ];
-    default:
-      return state;
-  }
-};
-
-const store = Redux.createStore(messageReducer);
+// solution required
 ```
-
 </section>

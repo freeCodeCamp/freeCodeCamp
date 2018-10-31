@@ -1,27 +1,18 @@
 ---
 id: 587d7fa9367417b2b2512bce
 title: Dynamically Set the Coordinates for Each Bar
-localeTitle: Establecer dinámicamente las coordenadas para cada barra
 required:
   - src: 'https://cdnjs.cloudflare.com/ajax/libs/d3/4.3.0/d3.min.js'
 challengeType: 6
+videoUrl: ''
+localeTitle: Establecer dinámicamente las coordenadas para cada barra
 ---
 
 ## Description
-<section id='description'> 
-El último desafío creó y agregó un rectángulo al elemento <code>svg</code> para que cada punto en el <code>dataset</code> de <code>dataset</code> represente una barra. Desafortunadamente, todos estaban apilados uno encima del otro. 
-La colocación de un rectángulo es manejada por los atributos <code>x</code> e <code>y</code> . Le dicen a D3 dónde comenzar a dibujar la forma en el área de <code>svg</code> . El último desafío los puso a 0, por lo que cada barra se colocó en la esquina superior izquierda. 
-Para un gráfico de barras, todas las barras deben estar en el mismo nivel vertical, lo que significa que el valor <code>y</code> mantiene igual (en 0) para todas las barras. El valor <code>x</code> , sin embargo, debe cambiar a medida que agrega nuevas barras. Recuerde que los valores de <code>x</code> más grandes empujan los elementos más hacia la derecha. A medida que recorre los elementos de la matriz en el <code>dataset</code> de <code>dataset</code> , el valor de x debería aumentar. 
-El método <code>attr()</code> en D3 acepta una función de devolución de llamada para establecer dinámicamente ese atributo. La función de devolución de llamada toma dos argumentos, uno para el punto de datos en sí (generalmente <code>d</code> ) y otro para el índice del punto de datos en la matriz. El segundo argumento para el índice es opcional. Aquí está el formato: 
-<blockquote>selection.attr("property", (d, i) => {<br>&nbsp;&nbsp;/* <br>&nbsp;&nbsp;* d is the data point value<br>&nbsp;&nbsp;* i is the index of the data point in the array<br>&nbsp;&nbsp;*/<br>})</blockquote> 
-Es importante tener en cuenta que NO es necesario escribir un bucle <code>for</code> o usar <code>forEach()</code> para iterar sobre los elementos del conjunto de datos. Recuerde que el método <code>data()</code> analiza el conjunto de datos, y cualquier método que se encadene después de que <code>data()</code> se ejecute una vez para cada elemento en el conjunto de datos. 
-</section>
+<section id="description"> El último desafío creó y agregó un rectángulo al elemento <code>svg</code> para que cada punto en el <code>dataset</code> de <code>dataset</code> represente una barra. Desafortunadamente, todos estaban apilados uno encima del otro. La colocación de un rectángulo es manejada por los atributos <code>x</code> e <code>y</code> . Le dicen a D3 dónde comenzar a dibujar la forma en el área de <code>svg</code> . El último desafío los puso a 0, por lo que cada barra se colocó en la esquina superior izquierda. Para un gráfico de barras, todas las barras deben estar en el mismo nivel vertical, lo que significa que el valor de <code>y</code> permanece igual (en 0) para todas las barras. El valor <code>x</code> , sin embargo, debe cambiar a medida que agrega nuevas barras. Recuerde que los valores de <code>x</code> más grandes empujan los elementos más hacia la derecha. A medida que recorre los elementos de la matriz en el <code>dataset</code> de <code>dataset</code> , el valor de x debería aumentar. El método <code>attr()</code> en D3 acepta una función de devolución de llamada para establecer dinámicamente ese atributo. La función de devolución de llamada toma dos argumentos, uno para el punto de datos en sí (generalmente <code>d</code> ) y otro para el índice del punto de datos en la matriz. El segundo argumento para el índice es opcional. Aquí está el formato: <blockquote> selection.attr (&quot;propiedad&quot;, (d, i) =&gt; { <br> / * <br> * d es el valor del punto de datos <br> * i es el índice del punto de datos en la matriz <br> * / <br> }) </blockquote> Es importante tener en cuenta que NO es necesario escribir un bucle <code>for</code> o usar <code>forEach()</code> para iterar sobre los elementos del conjunto de datos. Recuerde que el método <code>data()</code> analiza el conjunto de datos, y cualquier método que se encadene después de que <code>data()</code> se ejecute una vez para cada elemento en el conjunto de datos. </section>
 
 ## Instructions
-<section id='instructions'> 
-Cambie la función de devolución de llamada del atributo <code>x</code> para que devuelva el índice por 30. 
-<strong>Nota</strong> <br> Cada barra tiene un ancho de 25, por lo que al aumentar cada valor <code>x</code> en 30 se agrega algo de espacio entre las barras. Cualquier valor mayor que 25 funcionaría en este ejemplo. 
-</section>
+<section id="instructions"> Cambie la función de devolución de llamada del atributo <code>x</code> para que devuelva el índice por 30. <strong>Nota</strong> <br> Cada barra tiene un ancho de 25, por lo que al aumentar cada valor <code>x</code> en 30 se agrega algo de espacio entre las barras. Cualquier valor mayor que 25 funcionaría en este ejemplo. </section>
 
 ## Tests
 <section id='tests'>
@@ -85,6 +76,7 @@ tests:
        .attr("height", 100);
   </script>
 </body>
+
 ```
 
 </div>

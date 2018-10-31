@@ -1,19 +1,16 @@
 ---
 id: bd7993c9ca9feddfaeb7bdef
 title: Divide One Decimal by Another with JavaScript
-localeTitle: Divide un decimal por otro con JavaScript
 challengeType: 1
+videoUrl: ''
+localeTitle: Divide un decimal por otro con JavaScript
 ---
 
 ## Description
-<section id='description'> 
-Ahora dividamos un decimal por otro. 
-</section>
+<section id="description"> Ahora dividamos un decimal por otro. </section>
 
 ## Instructions
-<section id='instructions'> 
-Cambie el <code>0.0</code> para que el <code>quotient</code> sea ​​igual a <code>2.2</code> . 
-</section>
+<section id="instructions"> Cambia el <code>0.0</code> para que el <code>quotient</code> sea ​​igual a <code>2.2</code> . </section>
 
 ## Tests
 <section id='tests'>
@@ -38,7 +35,6 @@ tests:
 
 ```js
 var quotient = 0.0 / 2.0; // Fix this line
-
 
 ```
 

@@ -1,20 +1,16 @@
 ---
 id: 587d78a6367417b2b2512adc
 title: Use the CSS Transform Property skewY to Skew an Element Along the Y-Axis
-localeTitle: Utilice la propiedad de transformación de CSS sesgada para sesgar un elemento a lo largo del eje Y
 challengeType: 0
 videoUrl: ''
+localeTitle: Utilice la propiedad de transformación de CSS sesgada para sesgar un elemento a lo largo del eje Y
 ---
 
 ## Description
-<section id='description'> 
-Dado que la función <code>skewX()</code> el elemento seleccionado a lo largo del eje X en un grado determinado, no es sorprendente que la propiedad <code>skewY()</code> un elemento a lo largo del eje Y (vertical). 
-</section>
+<section id="description"> Dado que la función <code>skewX()</code> desvía el elemento seleccionado a lo largo del eje X en un grado determinado, no es sorprendente que la propiedad <code>skewY()</code> un elemento a lo largo del eje Y (vertical). </section>
 
 ## Instructions
-<section id='instructions'> 
-Inclina el elemento con el id de <code>top</code> 10 grados <code>top</code> largo del eje Y utilizando la propiedad de <code>transform</code> . 
-</section>
+<section id="instructions"> Inclina el elemento con la identificación de <code>top</code> -10 grados <code>top</code> largo del eje Y usando la propiedad de <code>transform</code> . </section>
 
 ## Tests
 <section id='tests'>
@@ -52,6 +48,7 @@ tests:
 
 <div id="top"></div>
 <div id="bottom"></div>
+
 ```
 
 </div>
@@ -63,9 +60,7 @@ tests:
 ## Solution
 <section id='solution'>
 
-
 ```js
-var code = "#top {background-color: red; transform: skewY(-10deg);}"
+// solution required
 ```
-
 </section>

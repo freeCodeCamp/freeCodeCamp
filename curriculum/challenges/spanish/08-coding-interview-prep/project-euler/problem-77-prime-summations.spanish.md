@@ -1,24 +1,16 @@
 ---
-id: 5
-localeTitle: 5900f3b91000cf542c50fecc
+id: 5900f3b91000cf542c50fecc
 challengeType: 5
 title: 'Problem 77: Prime summations'
+videoUrl: ''
+localeTitle: 'Problema 77: sumas principales'
 ---
 
 ## Description
-<section id='description'> 
-Es posible escribir diez como la suma de números primos en exactamente cinco formas diferentes: 
-7 + 3 
-5 + 5 
-5 + 3 + 2 
-3 + 3 + 2 + 2 
-2 + 2 + 2 + 2 + 2 
-¿Cuál es el primer valor que se puede escribir como la suma de números primos en más de cinco mil formas diferentes? 
-</section>
+<section id="description"> Es posible escribir diez como la suma de números primos en exactamente cinco formas diferentes: 7 + 3 5 + 5 5 + 3 + 2 3 + 3 + 2 + 2 2 + 2 + 2 + 2 + 2 ¿Cuál es el primer valor que ¿Se puede escribir como la suma de números primos en más de cinco mil formas diferentes? </section>
 
 ## Instructions
-<section id='instructions'> 
-
+<section id="instructions">
 </section>
 
 ## Tests
@@ -45,6 +37,7 @@ function euler77() {
 }
 
 euler77();
+
 ```
 
 </div>

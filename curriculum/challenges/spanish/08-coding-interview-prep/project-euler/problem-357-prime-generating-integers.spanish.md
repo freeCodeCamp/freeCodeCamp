@@ -1,23 +1,16 @@
 ---
-id: 5
-localeTitle: 5900f4d11000cf542c50ffe4
+id: 5900f4d11000cf542c50ffe4
 challengeType: 5
 title: 'Problem 357: Prime generating integers'
+videoUrl: ''
+localeTitle: 'Problema 357: Primeros enteros generadores'
 ---
 
 ## Description
-<section id='description'> 
-Considera los divisores de 30: 1,2,3,5,6,10,15,30. 
-Se puede ver que para cada divisor d de 30, d + 30 / d es primo. 
-
-
-Encuentre la suma de todos los enteros positivos n que no excedan de 100 000 000, de modo que 
-para cada divisor d de n, d + n / d es primo. 
-</section>
+<section id="description"> Considera los divisores de 30: 1,2,3,5,6,10,15,30. Se puede ver que para cada divisor d de 30, d + 30 / d es primo. <p> Encuentre la suma de todos los enteros positivos n que no excedan de 100 000 000, tal que para cada divisor d de n, d + n / d es primo. </p></section>
 
 ## Instructions
-<section id='instructions'> 
-
+<section id="instructions">
 </section>
 
 ## Tests
@@ -44,6 +37,7 @@ function euler357() {
 }
 
 euler357();
+
 ```
 
 </div>

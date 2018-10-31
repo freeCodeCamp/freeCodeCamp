@@ -1,26 +1,16 @@
 ---
 id: 587d7fae367417b2b2512be5
 title: Convert JSON Data to HTML
-localeTitle: Convertir datos JSON a HTML
 challengeType: 6
+videoUrl: ''
+localeTitle: Convertir datos JSON a HTML
 ---
 
 ## Description
-<section id='description'> 
-Ahora que está obteniendo datos de una API JSON, puede mostrarlos en el HTML. 
-Puede usar un método <code>forEach</code> para recorrer en bucle los datos, ya que los objetos de la foto del gato se mantienen en una matriz. A medida que llegas a cada elemento, puedes modificar los elementos HTML. 
-Primero, declare una variable html con <code>var html = &quot;&quot;;</code> . 
-Luego, recorra el JSON, agregando HTML a la variable que envuelve los nombres de las claves en etiquetas <code>strong</code> , seguido del valor. Cuando el bucle termina, lo renderizas. 
-Aquí está el código que hace esto: 
-<blockquote>json.forEach(function(val) {</br>&nbsp;&nbsp;var keys = Object.keys(val);</br>&nbsp;&nbsp;html += "&lt;div class = 'cat'&gt;";</br>&nbsp;&nbsp;keys.forEach(function(key) {</br>&nbsp;&nbsp;&nbsp;&nbsp;html += "&lt;strong&gt;" + key + "&lt;/strong&gt;: " + val[key] + "&lt;br&gt;";</br>&nbsp;&nbsp;});</br>&nbsp;&nbsp;html += "&lt;/div&gt;&lt;br&gt;";</br>});</blockquote> 
-</section>
+<section id="description"> Ahora que está obteniendo datos de una API JSON, puede mostrarlos en el HTML. Puede usar un método <code>forEach</code> para recorrer los datos, ya que los objetos de la foto del gato se mantienen en una matriz. A medida que llegas a cada elemento, puedes modificar los elementos HTML. Primero, declare una variable html con <code>var html = &quot;&quot;;</code> . Luego, recorra el JSON, agregando HTML a la variable que envuelve los nombres de las claves en etiquetas <code>strong</code> , seguido del valor. Cuando el bucle termina, lo renderizas. Aquí está el código que hace esto: <blockquote> json.forEach (función (val) { <br> var keys = Object.keys (val); <br> html + = &quot;&lt;div class = &#39;cat&#39;&gt;&quot;; <br> keys.forEach (function (key) { <br> html + = &quot;&lt;strong&gt;&quot; + clave + &quot;&lt;/strong&gt;:&quot; + val [clave] + &quot;&lt;br&gt;&quot;; <br> }); <br> html + = &quot;&lt;/div&gt; &lt;br&gt;&quot;; <br> }); </blockquote></section>
 
 ## Instructions
-<section id='instructions'> 
-Agregue un método <code>forEach</code> para recorrer en bucle los datos JSON y cree los elementos HTML para mostrarlos. 
-Aquí hay un ejemplo JSON 
-<blockquote>[</br>&nbsp;&nbsp;{</br>&nbsp;&nbsp;&nbsp;&nbsp;"id":0,</br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"imageLink":"https://s3.amazonaws.com/freecodecamp/funny-cat.jpg",</br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"altText":"A white cat wearing a green helmet shaped melon on its head. ",</br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"codeNames":[ "Juggernaut", "Mrs. Wallace", "Buttercup"</br>&nbsp;&nbsp;&nbsp;&nbsp;]</br>&nbsp;&nbsp;}</br>]</blockquote> 
-</section>
+<section id="instructions"> Agregue un método <code>forEach</code> para recorrer los datos JSON y crear los elementos HTML para mostrarlos. Aquí hay un ejemplo de JSON <blockquote> El <br> { <br> &quot;id&quot;: 0, <br> &quot;imageLink&quot;: &quot;https://s3.amazonaws.com/freecodecamp/funny-cat.jpg&quot;, <br> &quot;altText&quot;: &quot;Un gato blanco con un casco verde con forma de melón en la cabeza&quot;. <br> &quot;codeNames&quot;: [&quot;Juggernaut&quot;, &quot;Mrs. Wallace&quot;, &quot;Buttercup&quot; <br> ] <br> } <br> ] </blockquote></section>
 
 ## Tests
 <section id='tests'>
@@ -98,6 +88,7 @@ tests:
     Get Message
   </button>
 </p>
+
 ```
 
 </div>

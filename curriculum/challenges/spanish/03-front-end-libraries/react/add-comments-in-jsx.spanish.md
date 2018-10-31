@@ -1,21 +1,17 @@
 ---
 id: 5a24bbe0dba28a8d3cbd4c5e
 title: Add Comments in JSX
-localeTitle: Añadir comentarios en JSX
 challengeType: 6
 isRequired: false
+videoUrl: ''
+localeTitle: Añadir comentarios en JSX
 ---
 
 ## Description
-<section id='description'> 
-JSX es una sintaxis que se compila en JavaScript válido. A veces, para facilitar la lectura, es posible que necesite agregar comentarios a su código. Como la mayoría de los lenguajes de programación, JSX tiene su propia manera de hacer esto. 
-Para colocar comentarios dentro de JSX, usa la sintaxis <code>{/* */}</code> para envolver el texto del comentario. 
-</section>
+<section id="description"> JSX es una sintaxis que se compila en JavaScript válido. A veces, para facilitar la lectura, es posible que necesite agregar comentarios a su código. Como la mayoría de los lenguajes de programación, JSX tiene su propia manera de hacer esto. Para colocar comentarios dentro de JSX, usa la sintaxis <code>{/* */}</code> para envolver el texto del comentario. </section>
 
 ## Instructions
-<section id='instructions'> 
-El editor de código tiene un elemento JSX similar al que creaste en el último desafío. Agregue un comentario en algún lugar dentro del elemento <code>div</code> proporcionado, sin modificar los elementos <code>h1</code> o <code>p</code> existentes. 
-</section>
+<section id="instructions"> El editor de código tiene un elemento JSX similar al que creaste en el último desafío. Agregue un comentario en algún lugar dentro del elemento <code>div</code> proporcionado, sin modificar los elementos <code>h1</code> o <code>p</code> existentes. </section>
 
 ## Tests
 <section id='tests'>
@@ -47,6 +43,7 @@ const JSX = (
     <p>Here's a subtitle</p>
   </div>
 );
+
 ```
 
 </div>
@@ -66,14 +63,7 @@ console.info('after the test');
 ## Solution
 <section id='solution'>
 
-
 ```js
-const JSX = (
-<div>
-  <h1>This is a block of JSX</h1>
-  { /* this is a JSX comment */ }
-  <p>Here's a subtitle</p>
-</div>);
+// solution required
 ```
-
 </section>

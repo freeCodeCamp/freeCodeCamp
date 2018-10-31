@@ -1,21 +1,16 @@
 ---
-id: 5
-localeTitle: 5900f4411000cf542c50ff54
+id: 5900f4411000cf542c50ff54
 challengeType: 5
 title: 'Problem 213: Flea Circus'
+videoUrl: ''
+localeTitle: 'Problema 213: Circo de pulgas'
 ---
 
 ## Description
-<section id='description'> 
-Una cuadrícula de cuadrados de 30 × 30 contiene 900 pulgas, inicialmente una pulga por cuadrado. 
-Cuando se toca una campana, cada pulga salta a un cuadrado adyacente al azar (generalmente 4 posibilidades, excepto las pulgas en el borde de la cuadrícula o en las esquinas). 
-
-¿Cuál es el número esperado de cuadrados desocupados después de 50 timbres de la campana? Da tu respuesta redondeada a seis decimales. 
-</section>
+<section id="description"> Una cuadrícula de 30 × 30 cuadrados contiene 900 pulgas, inicialmente una pulga por cuadrado. Cuando suena una campana, cada pulga salta a un cuadrado adyacente al azar (generalmente 4 posibilidades, excepto las pulgas en el borde de la cuadrícula o en las esquinas). <p> ¿Cuál es el número esperado de cuadrados desocupados después de 50 anillos de la campana? Da tu respuesta redondeada a seis decimales. </p></section>
 
 ## Instructions
-<section id='instructions'> 
-
+<section id="instructions">
 </section>
 
 ## Tests
@@ -42,6 +37,7 @@ function euler213() {
 }
 
 euler213();
+
 ```
 
 </div>

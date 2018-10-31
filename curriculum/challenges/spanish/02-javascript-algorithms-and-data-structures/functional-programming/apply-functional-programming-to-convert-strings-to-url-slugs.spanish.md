@@ -1,25 +1,16 @@
 ---
 id: 587d7dab367417b2b2512b6d
 title: Apply Functional Programming to Convert Strings to URL Slugs
-localeTitle: Aplique programación funcional para convertir cadenas en slugs de URL
 challengeType: 1
+videoUrl: ''
+localeTitle: Aplique programación funcional para convertir cadenas en slugs de URL
 ---
 
 ## Description
-<section id='description'> 
-Los últimos varios desafíos cubrieron una serie de métodos de matriz y cadena útiles que siguen los principios de programación funcional. También hemos aprendido sobre <code>reduce</code> , que es un método poderoso que se utiliza para reducir problemas a formas más simples. Desde los promedios de computación hasta la clasificación, cualquier operación de matriz se puede lograr aplicándolo. Recordemos que el <code>map</code> y el <code>filter</code> son casos especiales de <code>reduce</code> . 
-Combinemos lo que hemos aprendido para resolver un problema práctico. 
-Muchos sitios de administración de contenido (CMS) tienen los títulos de una publicación agregada a parte de la URL con fines de marcadores simples. Por ejemplo, si escribe una publicación mediana titulada &quot;Dejar de usar reducir&quot;, es probable que la URL tenga alguna forma de la cadena de título (&quot;... / stop-using-reduce-)&quot;. Es posible que ya hayas notado esto en el sitio freeCodeCamp. 
-</section>
+<section id="description"> Los últimos varios desafíos cubrieron una serie de métodos de matriz y cadena útiles que siguen los principios de programación funcional. También hemos aprendido sobre <code>reduce</code> , que es un método poderoso que se utiliza para reducir problemas a formas más simples. Desde los promedios de computación hasta la clasificación, cualquier operación de matriz se puede lograr aplicándolo. Recordemos que el <code>map</code> y el <code>filter</code> son casos especiales de <code>reduce</code> . Combinemos lo que hemos aprendido para resolver un problema práctico. Muchos sitios de administración de contenido (CMS) tienen los títulos de una publicación agregada a parte de la URL con fines de marcadores simples. Por ejemplo, si escribe una publicación mediana titulada &quot;Dejar de usar reducir&quot;, es probable que la URL tenga alguna forma de la cadena de título (&quot;... / stop-using-reduce-)&quot;. Es posible que ya hayas notado esto en el sitio freeCodeCamp. </section>
 
 ## Instructions
-<section id='instructions'> 
-Rellene la función <code>urlSlug</code> para que convierta un <code>title</code> cadena y devuelva la versión con guión para la URL. Puede usar cualquiera de los métodos cubiertos en esta sección, y no usar <code>replace</code> . Estos son los requisitos: 
-La entrada es una cadena con espacios y palabras en mayúsculas 
-La salida es una cadena con espacios entre palabras reemplazadas por un guión ( <code>-</code> ) 
-La salida debe ser todas letras minúsculas 
-La salida debe no tiene espacios 
-</section>
+<section id="instructions"> Complete la función <code>urlSlug</code> para que convierta un <code>title</code> cadena y devuelva la versión con guión para la URL. Puede usar cualquiera de los métodos cubiertos en esta sección, y no usar <code>replace</code> . Estos son los requisitos: La entrada es una cadena con espacios y palabras en letras. La salida es una cadena con los espacios entre palabras reemplazadas por un guión ( <code>-</code> ) La salida debe ser todas letras minúsculas La salida no debe tener espacios </section>
 
 ## Tests
 <section id='tests'>
@@ -60,6 +51,7 @@ function urlSlug(title) {
 // Add your code above this line
 
 var winterComing = urlSlug(globalTitle); // Should be "winter-is-coming"
+
 ```
 
 </div>

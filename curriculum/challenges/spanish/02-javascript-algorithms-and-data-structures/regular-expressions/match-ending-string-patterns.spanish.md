@@ -1,21 +1,16 @@
 ---
 id: 587d7db7367417b2b2512b9e
 title: Match Ending String Patterns
-localeTitle: Coincidir con patrones de cadena
 challengeType: 1
+videoUrl: ''
+localeTitle: Coincidir con patrones de cadena
 ---
 
 ## Description
-<section id='description'> 
-En el último desafío, aprendiste a usar el carácter de <code>caret</code> para buscar patrones al principio de las cadenas. También hay una forma de buscar patrones al final de las cadenas. 
-Puede buscar el final de las cadenas con el <code>dollar sign</code> <code>$</code> al final de la expresión regular. 
-<blockquote>let theEnding = "This is a never ending story";<br>let storyRegex = /story$/;<br>storyRegex.test(theEnding);<br>// Returns true<br>let noEnding = "Sometimes a story will have to end";<br>storyRegex.test(noEnding);<br>// Returns false<br></blockquote> 
-</section>
+<section id="description"> En el último desafío, aprendiste a usar el carácter de <code>caret</code> para buscar patrones al principio de las cadenas. También hay una forma de buscar patrones al final de las cadenas. Puede buscar el final de las cadenas con el <code>dollar sign</code> <code>$</code> al final de la expresión regular. <blockquote> Let theEnding = &quot;Esta es una historia interminable&quot;; <br> Deje storyRegex = / story $ /; <br> storyRegex.test (theEnding); <br> // Devuelve true <br> Deje que noEnding = &quot;A veces una historia tenga que terminar&quot;; <br> storyRegex.test (noEnding); <br> // Devuelve falso <br></blockquote></section>
 
 ## Instructions
-<section id='instructions'> 
-Use el carácter de ancla ( <code>$</code> ) para que coincida con la cadena <code>&quot;caboose&quot;</code> al final de la cadena <code>caboose</code> . 
-</section>
+<section id="instructions"> Utilice el carácter de ancla ( <code>$</code> ) para que coincida con la cadena <code>&quot;caboose&quot;</code> al final de la cadena <code>caboose</code> . </section>
 
 ## Tests
 <section id='tests'>
@@ -42,6 +37,7 @@ tests:
 let caboose = "The last car on a train is the caboose";
 let lastRegex = /change/; // Change this line
 let result = lastRegex.test(caboose);
+
 ```
 
 </div>

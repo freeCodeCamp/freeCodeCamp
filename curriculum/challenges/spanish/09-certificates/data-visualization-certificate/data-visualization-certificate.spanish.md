@@ -1,19 +1,18 @@
 ---
 id: 5a553ca864b52e1d8bceea14
 title: Data Visualization Certificate
-localeTitle: Certificado de visualización de datos
 challengeType: 7
 isPrivate: true
+videoUrl: ''
+localeTitle: Certificado de visualización de datos
 ---
 
 ## Description
-<section id='description'> 
-
+<section id="description">
 </section>
 
 ## Instructions
-<section id='instructions'> 
-
+<section id="instructions">
 </section>
 
 ## Tests
@@ -21,16 +20,16 @@ isPrivate: true
 
 ```yml
 tests:
-  - id: bd7168d8c242eddfaeb5bd13
-    title: Visualize Data with a Bar Chart
-  - id: bd7178d8c242eddfaeb5bd13
-    title: Visualize Data with a Scatterplot Graph
-  - id: bd7188d8c242eddfaeb5bd13
-    title: Visualize Data with a Heat Map
-  - id: 587d7fa6367417b2b2512bbf
-    title: Visualize Data with a Choropleth Map
-  - id: 587d7fa6367417b2b2512bc0
-    title: Visualize Data with a Treemap Diagram
+  - text: ''
+    testString: !<tag:yaml.org,2002:js/undefined> ''
+  - text: ''
+    testString: !<tag:yaml.org,2002:js/undefined> ''
+  - text: ''
+    testString: !<tag:yaml.org,2002:js/undefined> ''
+  - text: ''
+    testString: !<tag:yaml.org,2002:js/undefined> ''
+  - text: ''
+    testString: !<tag:yaml.org,2002:js/undefined> ''
 
 ```
 

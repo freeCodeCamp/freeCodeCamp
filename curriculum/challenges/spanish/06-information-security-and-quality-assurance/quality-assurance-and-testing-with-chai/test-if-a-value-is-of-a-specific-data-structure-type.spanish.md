@@ -1,20 +1,16 @@
 ---
 id: 587d824e367417b2b2512c56
 title: Test if a Value is of a Specific Data Structure Type
-localeTitle: Probar si un valor es de un tipo específico de estructura de datos
 challengeType: 2
+videoUrl: ''
+localeTitle: Probar si un valor es de un tipo específico de estructura de datos
 ---
 
 ## Description
-<section id='description'> 
-Como recordatorio, este proyecto se está construyendo sobre el siguiente proyecto de inicio en <a href='https://glitch.com/#!/import/github/freeCodeCamp/boilerplate-mochachai/'>Glitch</a> , o clonado desde <a href='https://github.com/freeCodeCamp/boilerplate-mochachai/'>GitHub</a> . 
-#typeOf afirma que el tipo de valor es la cadena dada, según lo determinado por Object.prototype.toString. 
-Use #typeOf o #notTypeOf cuando corresponda 
-</section>
+<section id="description"> Como recordatorio, este proyecto se está construyendo sobre el siguiente proyecto de inicio en <a href="https://glitch.com/#!/import/github/freeCodeCamp/boilerplate-mochachai/">Glitch</a> , o clonado desde <a href="https://github.com/freeCodeCamp/boilerplate-mochachai/">GitHub</a> . #typeOf afirma que el tipo de valor es la cadena dada, según lo determinado por Object.prototype.toString. Use #typeOf o #notTypeOf cuando sea apropiado </section>
 
 ## Instructions
-<section id='instructions'> 
-
+<section id="instructions">
 </section>
 
 ## Tests

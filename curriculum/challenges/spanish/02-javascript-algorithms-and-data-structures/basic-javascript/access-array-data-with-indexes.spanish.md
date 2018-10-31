@@ -1,24 +1,17 @@
 ---
 id: 56bbb991ad1ed5201cd392ca
 title: Access Array Data with Indexes
-localeTitle: Acceso a datos de matriz con índices
 challengeType: 1
 guideUrl: 'https://spanish.freecodecamp.org/guide/certificates/access-array-data-with-indexes'
+videoUrl: ''
+localeTitle: Acceso a datos de matriz con índices
 ---
 
 ## Description
-<section id='description'> 
-Podemos acceder a los datos dentro de las matrices utilizando <code>indexes</code> . 
-índices de matriz se escriben en la misma notación de corchete que usan las cadenas, excepto que en lugar de especificar un carácter, están especificando una entrada en la matriz. Al igual que las cadenas, las matrices utilizan indización <dfn>basada en cero</dfn> , por lo que el primer elemento de una matriz es el elemento <code>0</code> . 
-<strong>Ejemplo</strong> 
-<blockquote>var array = [50,60,70];<br>array[0]; // equals 50<br>var data = array[1];  // equals 60</blockquote> 
-<strong>Nota</strong> <br> No debe haber espacios entre el nombre de la matriz y los corchetes, como la <code>array [0]</code> . Aunque JavaScript puede procesar esto correctamente, esto puede confundir a otros programadores que leen su código. 
-</section>
+<section id="description"> Podemos acceder a los datos dentro de las matrices utilizando <code>indexes</code> . Los índices de matriz se escriben en la misma notación de corchete que usan las cadenas, excepto que en lugar de especificar un carácter, están especificando una entrada en la matriz. Al igual que las cadenas, las matrices utilizan indización <dfn>basada en cero</dfn> , por lo que el primer elemento de una matriz es el elemento <code>0</code> . <strong>Ejemplo</strong> <blockquote> var array = [50,60,70]; <br> array [0]; // es igual a 50 <br> var data = array [1]; // es igual a 60 </blockquote> <strong>Nota</strong> <br> No debe haber espacios entre el nombre de la matriz y los corchetes, como la <code>array [0]</code> . Aunque JavaScript puede procesar esto correctamente, esto puede confundir a otros programadores que leen su código. </section>
 
 ## Instructions
-<section id='instructions'> 
-Cree una variable llamada <code>myData</code> y <code>myArray</code> para que sea igual al primer valor de <code>myArray</code> usando notación de corchete. 
-</section>
+<section id="instructions"> Cree una variable llamada <code>myData</code> y <code>myArray</code> para que sea igual al primer valor de <code>myArray</code> usando notación de corchetes. </section>
 
 ## Tests
 <section id='tests'>
@@ -68,10 +61,7 @@ console.info('after the test');
 ## Solution
 <section id='solution'>
 
-
 ```js
-var myArray = [50,60,70];
-var myData = myArray[0];
+// solution required
 ```
-
 </section>

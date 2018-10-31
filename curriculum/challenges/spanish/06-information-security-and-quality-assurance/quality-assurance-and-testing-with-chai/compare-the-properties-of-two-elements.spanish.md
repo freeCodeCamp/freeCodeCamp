@@ -1,19 +1,16 @@
 ---
 id: 587d824c367417b2b2512c4d
 title: Compare the Properties of Two Elements
-localeTitle: Compara las propiedades de dos elementos
 challengeType: 2
+videoUrl: ''
+localeTitle: Compara las propiedades de dos elementos
 ---
 
 ## Description
-<section id='description'> 
-Como recordatorio, este proyecto se está construyendo sobre el siguiente proyecto de inicio en <a href='https://glitch.com/#!/import/github/freeCodeCamp/boilerplate-mochachai/'>Glitch</a> , o clonado desde <a href='https://github.com/freeCodeCamp/boilerplate-mochachai/'>GitHub</a> . 
-.isAbove () =&gt; a&gt; b, .isAtMost () =&gt; a &lt;= b 
-</section>
+<section id="description"> Como recordatorio, este proyecto se está construyendo sobre el siguiente proyecto de inicio en <a href="https://glitch.com/#!/import/github/freeCodeCamp/boilerplate-mochachai/">Glitch</a> , o clonado desde <a href="https://github.com/freeCodeCamp/boilerplate-mochachai/">GitHub</a> . .isAbove () =&gt; a&gt; b, .isAtMost () =&gt; a &lt;= b </section>
 
 ## Instructions
-<section id='instructions'> 
-
+<section id="instructions">
 </section>
 
 ## Tests

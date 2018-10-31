@@ -1,22 +1,16 @@
 ---
 id: 587d7fae367417b2b2512be6
 title: Render Images from Data Sources
-localeTitle: Renderizar imágenes desde fuentes de datos
 challengeType: 6
+videoUrl: ''
+localeTitle: Renderizar imágenes desde fuentes de datos
 ---
 
 ## Description
-<section id='description'> 
-Los últimos desafíos mostraron que cada objeto en la matriz JSON contiene una clave <code>imageLink</code> con un valor que es la URL de la imagen de un gato. 
-Cuando recorre estos objetos, puede usar esta propiedad <code>imageLink</code> para mostrar esta imagen en un elemento <code>img</code> . 
-Aquí está el código que hace esto: 
-<code>html += &quot;&lt;img src = &#39;&quot; + val.imageLink + &quot;&#39; &quot; + &quot;alt=&#39;&quot; + val.altText + &quot;&#39;&gt;&quot;;</code> 
-</section>
+<section id="description"> Los últimos desafíos mostraron que cada objeto en la matriz JSON contiene una clave <code>imageLink</code> con un valor que es la URL de la imagen de un gato. Cuando recorre estos objetos, puede usar esta propiedad <code>imageLink</code> para mostrar esta imagen en un elemento <code>img</code> . Aquí está el código que hace esto: <code>html += &quot;&lt;img src = &#39;&quot; + val.imageLink + &quot;&#39; &quot; + &quot;alt=&#39;&quot; + val.altText + &quot;&#39;&gt;&quot;;</code> </section>
 
 ## Instructions
-<section id='instructions'> 
-Agregue código para usar las propiedades <code>imageLink</code> y <code>altText</code> en una etiqueta <code>img</code> . 
-</section>
+<section id="instructions"> Agregue código para usar las propiedades <code>imageLink</code> y <code>altText</code> en una etiqueta <code>img</code> . </section>
 
 ## Tests
 <section id='tests'>
@@ -93,6 +87,7 @@ tests:
     Get Message
   </button>
 </p>
+
 ```
 
 </div>

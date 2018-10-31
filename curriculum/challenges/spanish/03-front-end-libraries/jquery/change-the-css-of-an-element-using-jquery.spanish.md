@@ -1,26 +1,18 @@
 ---
 id: bad87fee1348bd9aed908826
 title: Change the CSS of an Element Using jQuery
-localeTitle: Cambia el CSS de un elemento usando jQuery
 required:
   - link: 'https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.2.0/animate.css'
 challengeType: 6
+videoUrl: ''
+localeTitle: Cambia el CSS de un elemento usando jQuery
 ---
 
 ## Description
-<section id='description'> 
-También podemos cambiar el CSS de un elemento HTML directamente con jQuery. 
-jQuery tiene una función llamada <code>.css()</code> que le permite cambiar el CSS de un elemento. 
-Así es como cambiaríamos su color a azul: 
-<code>$(&quot;#target1&quot;).css(&quot;color&quot;, &quot;blue&quot;);</code> 
-Esto es ligeramente diferente de una declaración CSS normal, porque la propiedad CSS y su valor están entre comillas y se separan con una coma en lugar de dos puntos. 
-Borre sus selectores jQuery, dejando una <code>document ready function</code> vacío <code>document ready function</code> . 
-Selecciona <code>target1</code> y cambia su color a rojo. 
-</section>
+<section id="description"> También podemos cambiar el CSS de un elemento HTML directamente con jQuery. jQuery tiene una función llamada <code>.css()</code> que te permite cambiar el CSS de un elemento. Así es como cambiaríamos su color a azul: <code>$(&quot;#target1&quot;).css(&quot;color&quot;, &quot;blue&quot;);</code> Esto es ligeramente diferente de una declaración CSS normal, porque la propiedad CSS y su valor están entre comillas y se separan con una coma en lugar de dos puntos. Borre sus selectores de jQuery, dejando una <code>document ready function</code> vacío <code>document ready function</code> . Seleccione <code>target1</code> y cambie su color a rojo. </section>
 
 ## Instructions
-<section id='instructions'> 
-
+<section id="instructions">
 </section>
 
 ## Tests
@@ -76,6 +68,7 @@ tests:
     </div>
   </div>
 </div>
+
 ```
 
 </div>

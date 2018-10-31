@@ -1,30 +1,16 @@
 ---
-id: 5
-localeTitle: 5900f4291000cf542c50ff3c
+id: 5900f4291000cf542c50ff3c
 challengeType: 5
 title: 'Problem 189: Tri-colouring a triangular grid'
+videoUrl: ''
+localeTitle: 'Problema 189: Tri-colorear una cuadrícula triangular'
 ---
 
 ## Description
-<section id='description'> 
-Considere la siguiente configuración de 64 triángulos: 
-
-
-
-Deseamos colorear el interior de cada triángulo con uno de tres colores: rojo, verde o azul, para que no haya dos triángulos vecinos del mismo color. Tal coloración se llamará válida. Aquí, se dice que dos triángulos son vecinos si comparten un borde. 
-Nota: si solo comparten un vértice, entonces no son vecinos. 
-
-Por ejemplo, aquí hay una coloración válida de la cuadrícula anterior: 
-
-
-Una coloración C &#39;que se obtiene de una coloración C por rotación o reflexión se considera distinta de C a menos que las dos sean idénticas. 
-
-¿Cuántos colores válidos distintos hay para la configuración anterior? 
-</section>
+<section id="description"> Considera la siguiente configuración de 64 triángulos: <p> Deseamos colorear el interior de cada triángulo con uno de tres colores: rojo, verde o azul, para que no haya dos triángulos vecinos del mismo color. Tal coloración se llamará válida. Aquí, se dice que dos triángulos son vecinos si comparten un borde. Nota: si solo comparten un vértice, entonces no son vecinos. </p><p> Por ejemplo, aquí hay una coloración válida de la cuadrícula anterior: </p><p> Una coloración C &#39;que se obtiene de una coloración C por rotación o reflexión se considera distinta de C a menos que las dos sean idénticas. </p><p> ¿Cuántos colores válidos distintos hay para la configuración anterior? </p></section>
 
 ## Instructions
-<section id='instructions'> 
-
+<section id="instructions">
 </section>
 
 ## Tests
@@ -51,6 +37,7 @@ function euler189() {
 }
 
 euler189();
+
 ```
 
 </div>

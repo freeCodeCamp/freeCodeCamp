@@ -1,20 +1,16 @@
 ---
 id: bad87fee1348bd9aec908855
 title: Give Each Element a Unique id
-localeTitle: Dale a cada elemento una identificación única
 challengeType: 0
+videoUrl: ''
+localeTitle: Dale a cada elemento una identificación única
 ---
 
 ## Description
-<section id='description'> 
-También desearemos poder usar jQuery para apuntar a cada botón por su ID única. 
-Dé a cada uno de sus botones una identificación única, comenzando con <code>target1</code> y terminando con <code>target6</code> . 
-Asegúrese de que <code>target1</code> to <code>target3</code> esté en <code>#left-well</code> , y <code>target4</code> to <code>target6</code> esté en <code>#right-well</code> . 
-</section>
+<section id="description"> También desearemos poder utilizar jQuery para apuntar a cada botón por su ID única. Dé a cada uno de sus botones una identificación única, comenzando con <code>target1</code> y terminando con <code>target6</code> . Asegúrese de que <code>target1</code> to <code>target3</code> esté en <code>#left-well</code> , y <code>target4</code> to <code>target6</code> esté en <code>#right-well</code> . </section>
 
 ## Instructions
-<section id='instructions'> 
-
+<section id="instructions">
 </section>
 
 ## Tests
@@ -66,6 +62,7 @@ tests:
     </div>
   </div>
 </div>
+
 ```
 
 </div>

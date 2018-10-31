@@ -1,23 +1,16 @@
 ---
-id: 5
-localeTitle: 5900f3f61000cf542c50ff09
+id: 5900f3f61000cf542c50ff09
 challengeType: 5
 title: 'Problem 138: Special isosceles triangles'
+videoUrl: ''
+localeTitle: 'Problema 138: triángulos isósceles especiales'
 ---
 
 ## Description
-<section id='description'> 
-Considere el triángulo isósceles con la longitud de la base, b = 16, y las piernas, L = 17. 
-
-
-Al usar el teorema de Pitágoras, se puede ver que la altura del triángulo, h = √ (172 - 82) = 15, que es uno menos que la longitud de la base. 
-Con b = 272 y L = 305, obtenemos h = 273, que es uno más que la longitud de la base, y este es el segundo triángulo isósceles más pequeño con la propiedad que h = b ± 1. 
-Encuentra ∑ L para los doce Los triángulos isósceles más pequeños para los cuales h = b ± 1 y b, L son enteros positivos. 
-</section>
+<section id="description"> Considere el triángulo isósceles con la longitud de la base, b = 16, y las patas, L = 17. <p> Al usar el teorema de Pitágoras, se puede ver que la altura del triángulo, h = √ (172 - 82) = 15, que es uno menos que la longitud de la base. Con b = 272 y L = 305, obtenemos h = 273, que es uno más que la longitud de la base, y este es el segundo triángulo isósceles más pequeño con la propiedad que h = b ± 1. Encuentre ∑ L para las doce isósceles más pequeñas triángulos para los cuales h = b ± 1 y b, L son enteros positivos. </p></section>
 
 ## Instructions
-<section id='instructions'> 
-
+<section id="instructions">
 </section>
 
 ## Tests
@@ -44,6 +37,7 @@ function euler138() {
 }
 
 euler138();
+
 ```
 
 </div>

@@ -1,20 +1,16 @@
 ---
-id: 5
-localeTitle: 5900f3801000cf542c50fe93
+id: 5900f3801000cf542c50fe93
 challengeType: 5
 title: 'Problem 20: Factorial digit sum'
+videoUrl: ''
+localeTitle: 'Problema 20: suma de dígitos factoriales'
 ---
 
 ## Description
-<section id='description'> 
-<var>n</var> ! significa <var>n</var> × ( <var>n</var> - 1) × ... × 3 × 2 × 1 
-Por ejemplo, 10! = 10 × 9 × ... × 3 × 2 × 1 = 3628800, <br> y la suma de los dígitos en el número 10! es 3 + 6 + 2 + 8 + 8 + 0 + 0 = 27. 
-Encuentra la suma de los dígitos <var>n</var> ! 
-</section>
+<section id="description"> <var>n</var> ! significa <var>n</var> × ( <var>n</var> - 1) × ... × 3 × 2 × 1 Por ejemplo, 10! = 10 × 9 × ... × 3 × 2 × 1 = 3628800, <br> y la suma de los dígitos en el número 10! es 3 + 6 + 2 + 8 + 8 + 0 + 0 = 27. ¡Encuentra la suma de los dígitos <var>n</var> ! </section>
 
 ## Instructions
-<section id='instructions'> 
-
+<section id="instructions">
 </section>
 
 ## Tests
@@ -49,6 +45,7 @@ function sumFactorialDigits(n) {
 }
 
 sumFactorialDigits(100);
+
 ```
 
 </div>

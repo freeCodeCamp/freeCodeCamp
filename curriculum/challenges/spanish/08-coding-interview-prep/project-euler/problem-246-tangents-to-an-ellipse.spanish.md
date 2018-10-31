@@ -1,35 +1,16 @@
 ---
-id: 5
-localeTitle: 5900f4621000cf542c50ff75
+id: 5900f4621000cf542c50ff75
 challengeType: 5
 title: 'Problem 246: Tangents to an ellipse'
+videoUrl: ''
+localeTitle: 'Problema 246: Tangentes a una elipse'
 ---
 
 ## Description
-<section id='description'> 
-Una definición para una elipse es: 
-Dado un círculo c con centro M y radio r y un punto G tal que d (G, M) <r, the locus of the points that are equidistant from c and G form an ellipse.<code> 0 
-La construcción de los puntos de la elipse se muestra a continuación. 
-
-
-
-
-
-dan los puntos M (-2000,1500) y G (8000,1500). 
-Se da también el círculo c con el centro M y el radio 15000. 
-El lugar geométrico de los puntos que están equidistantes de G yc forman una elipse e. 
-Desde un punto P fuera e, se dibujan las dos tangentes t1 y t2 a la elipse. 
-Deje que los puntos donde t1 y t2 toquen la elipse sean R y S. 
-
-
-
-
-¿Cuántos puntos de la red P es el ángulo RPS mayor que 45 grados? 
-</section>
+<section id="description"> Una definición para una elipse es: Dado un círculo c con centro M y radio r y un punto G tal que d (G, M) <p> La construcción de los puntos de la elipse se muestra a continuación. </p><p> Dados los puntos M (-2000,1500) y G (8000,1500). También se da el círculo c con el centro M y el radio 15000. El lugar geométrico de los puntos que están equidistantes de G yc forman una elipse e. Desde un punto P fuera e, se dibujan las dos tangentes t1 y t2 a la elipse. Deje que los puntos donde t1 y t2 toquen la elipse sean R y S. </p><p> ¿Para cuántos puntos de celosía P es el ángulo RPS mayor que 45 grados? </p></section>
 
 ## Instructions
-<section id='instructions'> 
-
+<section id="instructions">
 </section>
 
 ## Tests
@@ -56,6 +37,7 @@ function euler246() {
 }
 
 euler246();
+
 ```
 
 </div>

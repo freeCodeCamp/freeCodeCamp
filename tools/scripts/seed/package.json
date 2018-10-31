@@ -2,7 +2,7 @@
   "name": "@freecodecamp/database-seeding",
   "version": "0.0.1",
   "description": "A script to seed challenges in to the database",
-  "main": "index.js",
+  "main": "seedChallenges.js",
   "scripts": {
     "test": "jest"
   },

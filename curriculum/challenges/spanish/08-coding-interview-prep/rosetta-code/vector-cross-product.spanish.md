@@ -1,26 +1,16 @@
 ---
 title: Vector cross product
 id: 594810f028c0303b75339ad2
-localeTitle: 594810f028c0303b75339ad2
 challengeType: 5
+videoUrl: ''
+localeTitle: Producto cruzado vector
 ---
 
 ## Description
-<section id='description'> 
-Un vector se define como que tiene tres dimensiones como se representa por una colección ordenada de tres números: (X, Y, Z). 
-<p> 
-Tarea: 
-
-Escribir una función que toma dos vectores (matrices) como entrada y calcula su producto cruzado. 
-
-Su función debe devolver <code>null</code> en 
-entradas no válidas (es decir, vectores de diferentes longitudes). 
-</p> 
-</section>
+<section id="description"> Un vector se define como que tiene tres dimensiones como se representa por una colección ordenada de tres números: (X, Y, Z). <p> Tarea: </p><pre> <code>Write a function that takes two vectors (arrays) as input and computes their cross product.</code> </pre><p> Su función debe devolver <code>null</code> en entradas no válidas (es decir, vectores de diferentes longitudes). </p><p></p></section>
 
 ## Instructions
-<section id='instructions'> 
-
+<section id="instructions">
 </section>
 
 ## Tests
@@ -48,6 +38,7 @@ tests:
 function crossProduct() {
     // Good luck!
 }
+
 ```
 
 </div>
@@ -67,25 +58,7 @@ console.info('after the test');
 ## Solution
 <section id='solution'>
 
-
 ```js
-function crossProduct(a, b) {
-  if (!a || !b) {
-    return null;
-  }
-
-  // Check lengths
-  if (a.length !== 3 || b.length !== 3) {
-    return null;
-  }
-
-  return [
-    (a[1] * b[2]) - (a[2] * b[1]),
-    (a[2] * b[0]) - (a[0] * b[2]),
-    (a[0] * b[1]) - (a[1] * b[0])
-  ];
-}
-
+// solution required
 ```
-
 </section>

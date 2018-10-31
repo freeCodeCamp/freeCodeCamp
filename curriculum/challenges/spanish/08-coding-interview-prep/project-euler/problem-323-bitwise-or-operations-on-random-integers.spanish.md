@@ -1,25 +1,16 @@
 ---
-id: 5
-localeTitle: 5900f4b01000cf542c50ffc2
+id: 5900f4b01000cf542c50ffc2
 challengeType: 5
 title: 'Problem 323: Bitwise-OR operations on random integers'
+videoUrl: ''
+localeTitle: 'Problema 323: operaciones de bitwise-OR en enteros aleatorios'
 ---
 
 ## Description
-<section id='description'> 
-Sean y0, y1, y2, ... una secuencia de enteros de 32 bits sin signo aleatorios 
-(es decir, 0 ≤ yi &lt;232, cada valor es igualmente probable). 
-Para la secuencia xi se da la siguiente recursión: x0 = 0 y 
-xi = xi-1 | yi-1, para i&gt; 0. (| es el operador OR a nivel de bits) 
-Se puede ver que eventualmente habrá un índice N tal que xi = 232 -1 (un patrón de bits de todos) para todos i ≥ N. 
-
-Encuentre el valor esperado de N. 
-Dé su respuesta redondeada a 10 dígitos después del punto decimal. 
-</section>
+<section id="description"> Sean y0, y1, y2, ... una secuencia de enteros aleatorios de 32 bits sin signo (es decir, 0 ≤ yi &lt;232, cada valor es igualmente probable). Para la secuencia xi se da la siguiente recursión: x0 = 0 y xi = xi-1 | yi-1, para i&gt; 0. (| es el operador OR a nivel de bits) Se puede ver que eventualmente habrá un índice N tal que xi = 232 -1 (un patrón de bits de todos) para todos i ≥ NORTE. <p> Encuentre el valor esperado de N. Dé su respuesta redondeada a 10 dígitos después del punto decimal. </p></section>
 
 ## Instructions
-<section id='instructions'> 
-
+<section id="instructions">
 </section>
 
 ## Tests
@@ -46,6 +37,7 @@ function euler323() {
 }
 
 euler323();
+
 ```
 
 </div>

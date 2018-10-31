@@ -1,19 +1,16 @@
 ---
-id: 5
-localeTitle: 5900f4f21000cf542c510004
+id: 5900f4f21000cf542c510004
 challengeType: 5
 title: 'Problem 389: Platonic Dice'
+videoUrl: ''
+localeTitle: 'Problema 389: dados platónicos'
 ---
 
 ## Description
-<section id='description'> 
-Se lanza un dado de 4 caras sin sesgo y su valor, T, se anota. Se lanzan dados de 6 caras sin sesgo y se suman sus puntuaciones. Se anota la suma de C. Se lanzan dados imparciales de 8 lados y se suman sus puntuaciones. Se anota la suma, O. Se lanzan dados imparciales de 12 lados y se suman sus puntuaciones. Se anota la suma, D. Se lanzan dados imparciales de 20 lados y se suman sus puntuaciones. La suma, yo, se anota. 
-Encuentra la varianza de I y da tu respuesta redondeada a 4 lugares decimales. 
-</section>
+<section id="description"> Se lanza un solo dado imparcial de 4 lados y se anota su valor, T. Se lanzan los dados sin sesgo de 6 lados y se suman sus puntuaciones. Se anota la suma de C. Se lanzan dados imparciales de 8 lados y se suman sus puntuaciones. Se anota la suma, O. Se lanzan dados imparciales de 12 lados y se suman sus puntuaciones. Se anota la suma, D. Se lanzan dados imparciales de 20 lados y se suman sus puntuaciones. La suma, yo, se anota. Encuentra la varianza de I y da tu respuesta redondeada a 4 lugares decimales. </section>
 
 ## Instructions
-<section id='instructions'> 
-
+<section id="instructions">
 </section>
 
 ## Tests
@@ -40,6 +37,7 @@ function euler389() {
 }
 
 euler389();
+
 ```
 
 </div>

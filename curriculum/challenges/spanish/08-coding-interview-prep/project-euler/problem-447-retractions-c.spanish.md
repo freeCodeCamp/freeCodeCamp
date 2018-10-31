@@ -1,26 +1,16 @@
 ---
-id: 5
-localeTitle: 5900f52c1000cf542c51003e
+id: 5900f52c1000cf542c51003e
 challengeType: 5
 title: 'Problem 447: Retractions C'
+videoUrl: ''
+localeTitle: 'Problema 447: Retracciones C'
 ---
 
 ## Description
-<section id='description'> 
-Para cada entero n&gt; 1, la familia de funciones fn, a, b se define 
-por fn, a, b (x) ≡ax + b mod n para a, b, x entero y 0 <a<n, 0≤b<n, 0≤x<n.<code> 0 Llamaremos retracción de fn, a, ba si fn, a, b (fn, a, b (x)) ≡fn, a, b (x) mod n para cada 0≤x <n.<code> 0 Sea R (n) el número de retracciones para n. 
-
-
-F (N) = ∑R (n) para 2≤n≤N. 
-F (107) ≡638042271 (mod 1 000 000 007). 
-
-
-Encuentra F (1014) (mod 1 000 000 007). 
-</section>
+<section id="description"> Para cada entero n&gt; 1, la familia de funciones fn, a, b está definida por fn, a, b (x) ≡ax + b mod n para a, b, x entero y 0 <p> F (N) = ∑R (n) para 2≤n≤N. F (107) ≡638042271 (mod 1 000 000 007). </p><p> Encuentre F (1014) (mod 1 000 000 007). </p></section>
 
 ## Instructions
-<section id='instructions'> 
-
+<section id="instructions">
 </section>
 
 ## Tests
@@ -47,6 +37,7 @@ function euler447() {
 }
 
 euler447();
+
 ```
 
 </div>

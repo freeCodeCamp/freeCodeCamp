@@ -1,28 +1,16 @@
 ---
 id: 587d824f367417b2b2512c5a
 title: Run Functional Tests on an API Response using Chai-HTTP III - PUT method
-localeTitle: Ejecute pruebas funcionales en una respuesta de API usando el método Chai-HTTP III - PUT
 challengeType: 2
+videoUrl: ''
+localeTitle: Ejecute pruebas funcionales en una respuesta de API usando el método Chai-HTTP III - PUT
 ---
 
 ## Description
-<section id='description'> 
-Como recordatorio, este proyecto se está construyendo sobre el siguiente proyecto de inicio en <a href='https://glitch.com/#!/import/github/freeCodeCamp/boilerplate-mochachai/'>Glitch</a> , o clonado desde <a href='https://github.com/freeCodeCamp/boilerplate-mochachai/'>GitHub</a> . 
-En el siguiente ejemplo veremos cómo enviar datos en una carga útil de solicitud (cuerpo). 
-Vamos a probar una solicitud PUT. El punto final &#39;/ travellers&#39; acepta 
-un objeto JSON que toma la estructura: 
-{apellido: [apellido de un viajero del pasado]}, 
-La ruta responde con: 
-{nombre: [nombre], apellido: [último nombre], fechas: [años de nacimiento - muerte]} 
-vea el código del servidor para más detalles. 
-Enviar {apellido: &#39;Colombo&#39;}. Reemplace assert.fail () y haga que la prueba pase. 
-Verifique 1) estado, 2) tipo, 3) cuerpo.nombre, 4) cuerpo. Apellido 
-Siga el orden de aserción anterior, nos basamos en él. 
-</section>
+<section id="description"> Como recordatorio, este proyecto se está construyendo sobre el siguiente proyecto de inicio en <a href="https://glitch.com/#!/import/github/freeCodeCamp/boilerplate-mochachai/">Glitch</a> , o clonado desde <a href="https://github.com/freeCodeCamp/boilerplate-mochachai/">GitHub</a> . En el siguiente ejemplo veremos cómo enviar datos en una carga útil de solicitud (cuerpo). Vamos a probar una solicitud PUT. El punto final &#39;/ travelers&#39; acepta un objeto JSON que toma la estructura: {apellido: [apellido de un viajero del pasado]}, la ruta responde con: {nombre: [nombre], apellido: [apellido], fechas : [años de nacimiento - muerte]} ver el código del servidor para más detalles. Enviar {apellido: &#39;Colombo&#39;}. Reemplace assert.fail () y haga que la prueba pase. Compruebe si hay 1) estado, 2) tipo, 3) cuerpo.nombre, 4) cuerpo. Apellido Siga el orden de aserción anterior, nos basamos en él. </section>
 
 ## Instructions
-<section id='instructions'> 
-
+<section id="instructions">
 </section>
 
 ## Tests

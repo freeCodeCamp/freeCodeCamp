@@ -1,22 +1,16 @@
 ---
-id: 5
-localeTitle: 5900f37b1000cf542c50fe8e
+id: 5900f37b1000cf542c50fe8e
 challengeType: 5
 title: 'Problem 15: Lattice paths'
+videoUrl: ''
+localeTitle: 'Problema 15: caminos de celosía'
 ---
 
 ## Description
-<section id='description'> 
-Comenzando en la esquina superior izquierda de una cuadrícula de 2 × 2, y solo pudiendo moverse hacia la derecha y hacia abajo, hay exactamente 6 rutas hacia la esquina inferior derecha. 
-
-<img class="img-responsive center-block" alt="un diagrama de 6 cuadrículas de 2 por 2 que muestra todas las rutas hacia la esquina inferior derecha" src="https://i.imgur.com/1Atixoj.gif"> 
-
-¿Cuántas de estas rutas hay a través de un <code>gridSize</code> dado? 
-</section>
+<section id="description"> Comenzando en la esquina superior izquierda de una cuadrícula de 2 × 2, y solo pudiendo moverse hacia la derecha y hacia abajo, hay exactamente 6 rutas hacia la esquina inferior derecha. <img class="img-responsive center-block" alt="un diagrama de 6 cuadrículas de 2 por 2 que muestra todas las rutas hacia la esquina inferior derecha" src="https://i.imgur.com/1Atixoj.gif"><p> ¿Cuántas de estas rutas hay a través de un <code>gridSize</code> dado? </p></section>
 
 ## Instructions
-<section id='instructions'> 
-
+<section id="instructions">
 </section>
 
 ## Tests
@@ -47,6 +41,7 @@ function latticePaths(gridSize) {
 }
 
 latticePaths(4);
+
 ```
 
 </div>
@@ -58,17 +53,7 @@ latticePaths(4);
 ## Solution
 <section id='solution'>
 
-
 ```js
-function latticePaths(gridSize) {
-  let paths = 1;
-
-  for (let i = 0; i < gridSize; i++) {
-    paths *= (2 * gridSize) - i;
-    paths /= i + 1;
-  }
-  return paths;
-}
+// solution required
 ```
-
 </section>

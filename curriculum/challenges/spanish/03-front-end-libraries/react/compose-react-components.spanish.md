@@ -1,21 +1,17 @@
 ---
 id: 5a24c314108439a4d4036166
 title: Compose React Components
-localeTitle: Componer React Componentes
 challengeType: 6
 isRequired: false
+videoUrl: ''
+localeTitle: Componer React Componentes
 ---
 
 ## Description
-<section id='description'> 
-A medida que los desafíos continúan usando composiciones más complejas con los componentes React y JSX, hay un punto importante a tener en cuenta. La representación de los componentes de la clase de estilo ES6 dentro de otros componentes no es diferente de la representación de los componentes simples que usó en los últimos desafíos. Puede representar elementos JSX, componentes funcionales sin estado y componentes de clase ES6 dentro de otros componentes. 
-</section>
+<section id="description"> A medida que los desafíos continúan utilizando composiciones más complejas con componentes React y JSX, hay un punto importante a tener en cuenta. La representación de los componentes de la clase de estilo ES6 dentro de otros componentes no es diferente de la representación de los componentes simples que usó en los últimos desafíos. Puede representar elementos JSX, componentes funcionales sin estado y componentes de clase ES6 dentro de otros componentes. </section>
 
 ## Instructions
-<section id='instructions'> 
-En el editor de código, el componente <code>TypesOfFood</code> ya está representando un componente llamado <code>Vegetables</code> . Además, está el componente <code>Fruits</code> del último desafío. 
-Anide dos componentes dentro de <code>Fruits</code> : primero <code>NonCitrus</code> y luego <code>Citrus</code> . Ambos componentes se proporcionan para usted en el fondo. A continuación, anide el componente de la clase <code>Fruits</code> en el componente <code>TypesOfFood</code> , debajo del encabezado <code>h1</code> y encima de <code>Vegetables</code> . El resultado debe ser una serie de componentes anidados, que utiliza dos tipos de componentes diferentes. 
-</section>
+<section id="instructions"> En el editor de código, el componente <code>TypesOfFood</code> ya está representando un componente llamado <code>Vegetables</code> . Además, está el componente <code>Fruits</code> del último desafío. Anide dos componentes dentro de <code>Fruits</code> : primero <code>NonCitrus</code> y luego <code>Citrus</code> . Ambos componentes se proporcionan para usted en el fondo. A continuación, anide el componente de la clase <code>Fruits</code> en el componente <code>TypesOfFood</code> , debajo del encabezado <code>h1</code> y encima de <code>Vegetables</code> . El resultado debe ser una serie de componentes anidados, que utiliza dos tipos de componentes diferentes. </section>
 
 ## Tests
 <section id='tests'>
@@ -73,6 +69,7 @@ class TypesOfFood extends React.Component {
     );
   }
 };
+
 ```
 
 </div>
@@ -125,6 +122,7 @@ class Vegetables extends React.Component {
     );
      }
 };
+
 ```
 
 </div>
@@ -143,41 +141,7 @@ console.info('after the test');
 ## Solution
 <section id='solution'>
 
-
 ```js
-class Fruits extends React.Component {
-  constructor(props) {
-    super(props);
-  }
-  render() {
-    return (
-      <div>
-        <h2>Fruits:</h2>
-        { /* change code below this line */ }
-        <NonCitrus />
-        <Citrus />
-        { /* change code above this line */ }
-      </div>
-    )
-  }
-}
-
-class TypesOfFood extends React.Component {
-  constructor(props) {
-     super(props);
-  }
-    render() {
-      return (
-        <div>
-        <h1>Types of Food:</h1>
-          { /* change code below this line */ }
-          <Fruits />
-          { /* change code above this line */ }
-          <Vegetables />
-        </div>
-      );
-    }
-};
+// solution required
 ```
-
 </section>

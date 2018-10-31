@@ -1,38 +1,22 @@
 ---
 title: 9 billion names of God the integer
 id: 5949b579404977fbaefcd736
-localeTitle: 5949b579404977fbaefcd736
 challengeType: 5
+videoUrl: ''
+localeTitle: 9 mil millones de nombres de Dios el entero
 ---
 
 ## Description
-<section id='description'> 
-<p> Esta tarea es una variación de la <a href="https://en.wikipedia.org/wiki/The Nine Billion Names of God#Plot_summary" title="wp: Los nueve mil millones de nombres de Dios # Plot_summary">historia corta de Arthur C. Clarke</a> . </p> 
-<p> (Los solucionadores deben ser conscientes de las consecuencias de completar esta tarea). </p> 
-<p> En detalle, para especificar qué se entiende por un &quot;nombre&quot;: </p> 
-<p> El entero 1 tiene 1 nombre &quot;1&quot;. </p> 
-<p> El número entero 2 tiene 2 nombres &quot;1 + 1&quot; y &quot;2&quot;. </p> 
-<p> El número entero 3 tiene 3 nombres &quot;1 + 1 + 1&quot;, &quot;2 + 1&quot; y &quot;3&quot;. </p> 
-<p> El número entero 4 tiene 5 nombres “1 + 1 + 1 + 1”, “2 + 1 + 1”, “2 + 2”, “3 + 1”, “4”. </p> 
-<p> El número entero 5 tiene 7 nombres “1 + 1 + 1 + 1 + 1”, “2 + 1 + 1 + 1”, “2 + 2 + 1”, “3 + 1 + 1”, “3 + 2”, “4 + 1”, “5”. </p> 
-<p> Esto se puede visualizar de la siguiente forma: </p> 
-<pre> 
-1 
-1 1 
-1 1 1 
-1 2 1 1 
-1 2 2 1 1 
-1 3 3 2 1 1 
-</pre> 
-<p> Donde la fila $ n $ corresponde al entero $ n $, y cada columna $ C $ en la fila $ m $ de izquierda a derecha corresponde al número de nombres que comienzan con $ C $. </p> 
-<p> Opcionalmente, tenga en cuenta que la suma de $ n $ -th row $ P (n) $ es la <a href="http://mathworld.wolfram.com/PartitionFunctionP.html" title="enlace: http://mathworld.wolfram.com/PartitionFunctionP.html">función de partición entera</a> . </p> 
-Tarea 
-<p> Implementar una función que devuelve la suma de la fila $ n $ -th. </p> 
-</section>
+<section id="description"><p> Esta tarea es una variación de la <a href="https://en.wikipedia.org/wiki/The Nine Billion Names of God#Plot_summary" title="wp: Los nueve mil millones de nombres de Dios # Plot_summary">historia corta de Arthur C. Clarke</a> . </p><p> (Los solucionadores deben ser conscientes de las consecuencias de completar esta tarea). </p><p> En detalle, para especificar qué se entiende por un &quot;nombre&quot;: </p><p> El entero 1 tiene 1 nombre &quot;1&quot;. </p><p> El número entero 2 tiene 2 nombres &quot;1 + 1&quot; y &quot;2&quot;. </p><p> El número entero 3 tiene 3 nombres &quot;1 + 1 + 1&quot;, &quot;2 + 1&quot; y &quot;3&quot;. </p><p> El número entero 4 tiene 5 nombres “1 + 1 + 1 + 1”, “2 + 1 + 1”, “2 + 2”, “3 + 1”, “4”. </p><p> El número entero 5 tiene 7 nombres “1 + 1 + 1 + 1 + 1”, “2 + 1 + 1 + 1”, “2 + 2 + 1”, “3 + 1 + 1”, “3 + 2”, “4 + 1”, “5”. </p><p> Esto se puede visualizar de la siguiente forma: </p><pre> 1
+        1 1
+      1 1 1
+    1 2 1 1
+  1 2 2 1 1
+1 3 3 2 1 1
+</pre><p> Donde la fila $ n $ corresponde al entero $ n $, y cada columna $ C $ en la fila $ m $ de izquierda a derecha corresponde al número de nombres que comienzan con $ C $. </p><p> Opcionalmente, tenga en cuenta que la suma de $ n $ -th row $ P (n) $ es la <a href="http://mathworld.wolfram.com/PartitionFunctionP.html" title="enlace: http://mathworld.wolfram.com/PartitionFunctionP.html">función de partición entera</a> . </p> Tarea <p> Implementar una función que devuelve la suma de la fila $ n $ -th. </p></section>
 
 ## Instructions
-<section id='instructions'> 
-
+<section id="instructions">
 </section>
 
 ## Tests
@@ -69,6 +53,7 @@ function numberOfNames (num) {
   // Good luck!
   return true;
 }
+
 ```
 
 </div>
@@ -80,24 +65,7 @@ function numberOfNames (num) {
 ## Solution
 <section id='solution'>
 
-
 ```js
-function numberOfNames (num) {
-  const cache = [
-    [1]
-  ];
-  for (let l = cache.length; l < num + 1; l++) {
-    let Aa;
-    let Mi;
-    const r = [0];
-    for (let x = 1; x < l + 1; x++) {
-      r.push(r[r.length - 1] + (Aa = cache[l - x < 0 ? cache.length - (l - x) : l - x])[(Mi = Math.min(x, l - x)) < 0 ? Aa.length - Mi : Mi]);
-    }
-    cache.push(r);
-  }
-  return cache[num][cache[num].length - 1];
-}
-
+// solution required
 ```
-
 </section>

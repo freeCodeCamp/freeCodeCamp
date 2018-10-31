@@ -1,21 +1,16 @@
 ---
 id: 5a9d72a1424fe3d0e10cad15
 title: Change a variable for a specific area
-localeTitle: Cambiar una variable para un área específica
 challengeType: 0
 videoUrl: ''
+localeTitle: Cambiar una variable para un área específica
 ---
 
 ## Description
-<section id='description'> 
-Cuando cree sus variables en <code>:root</code> , establecerán el valor de esa variable para toda la página. 
-Puede sobrescribir estas variables configurándolas nuevamente dentro de un elemento específico. 
-</section>
+<section id="description"> Cuando cree sus variables en <code>:root</code> , establecerán el valor de esa variable para toda la página. Luego puede sobrescribir estas variables configurándolas nuevamente dentro de un elemento específico. </section>
 
 ## Instructions
-<section id='instructions'> 
-Cambie el valor de <code>--penguin-belly</code> a <code>white</code> en la clase de <code>penguin</code> . 
-</section>
+<section id="instructions"> Cambia el valor de <code>--penguin-belly</code> a <code>white</code> en la clase de <code>penguin</code> . </section>
 
 ## Tests
 <section id='tests'>
@@ -239,6 +234,7 @@ tests:
     <div class="beak-bottom"></div>
   </div>
 </div>
+
 ```
 
 </div>
@@ -250,9 +246,7 @@ tests:
 ## Solution
 <section id='solution'>
 
-
 ```js
-var code = ".penguin {--penguin-belly: white;}"
+// solution required
 ```
-
 </section>

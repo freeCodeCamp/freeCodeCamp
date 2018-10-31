@@ -1,29 +1,16 @@
 ---
-id: 5
-localeTitle: 5900f49d1000cf542c50ffb0
+id: 5900f49d1000cf542c50ffb0
 challengeType: 5
 title: 'Problem 305: Reflexive Position'
+videoUrl: ''
+localeTitle: 'Problema 305: Posición reflexiva'
 ---
 
 ## Description
-<section id='description'> 
-Llamemos a S la cadena (infinita) que se forma al concatenar los enteros positivos consecutivos (comenzando desde 1) escritos en la base 10. 
-Por lo tanto, S = 1234567891011121314151617181920212223242 ... 
-
-
-Es fácil ver que cualquier número se mostrará un número infinito de veces en S. 
-
-
-Llamemos a f (n) la posición de inicio de la enésima aparición de n en S. 
-Por ejemplo, f (1) = 1, f (5) = 81, f ( 12) = 271 yf (7780) = 111111365. 
-
-
-Encuentra ∑f (3k) para 1≤k≤13. 
-</section>
+<section id="description"> Llamemos a S la cadena (infinita) que se forma al concatenar los enteros positivos consecutivos (comenzando desde 1) escritos en la base 10. Por lo tanto, S = 1234567891011121314151617181920212223242 ... <p> Es fácil ver que cualquier número aparecerá un número infinito de veces en S. </p><p> Llamemos a f (n) la posición inicial de la enésima aparición de n en S. Por ejemplo, f (1) = 1, f (5) = 81, f (12) = 271 yf (7780) = 111111365. </p><p> Encuentra ∑f (3k) para 1≤k≤13. </p></section>
 
 ## Instructions
-<section id='instructions'> 
-
+<section id="instructions">
 </section>
 
 ## Tests
@@ -50,6 +37,7 @@ function euler305() {
 }
 
 euler305();
+
 ```
 
 </div>

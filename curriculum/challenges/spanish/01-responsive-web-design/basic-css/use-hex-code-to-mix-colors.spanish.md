@@ -1,25 +1,16 @@
 ---
 id: bad87fee1348bd9aedf08721
 title: Use Hex Code to Mix Colors
-localeTitle: Usa el código hexadecimal para mezclar colores
 challengeType: 0
 videoUrl: ''
+localeTitle: Usa el código hexadecimal para mezclar colores
 ---
 
 ## Description
-<section id='description'> 
-Para revisar, los códigos hexadecimales usan 6 dígitos hexadecimales para representar los colores, dos para cada uno de los componentes rojo (R), verde (G) y azul (B). 
-De estos tres colores puros (rojo, verde y azul), podemos variar las cantidades de cada uno para crear más de 16 millones de otros colores! 
-Por ejemplo, el naranja es rojo puro, mezclado con un poco de verde y sin azul. En código hexadecimal, esto se traduce en ser <code>#FFA500</code> . 
-El dígito <code>0</code> es el número más bajo en código hexadecimal y representa una ausencia completa de color. 
-El dígito <code>F</code> es el número más alto en código hexadecimal y representa el brillo máximo posible. 
-</section>
+<section id="description"> Para revisar, los códigos hexadecimales usan 6 dígitos hexadecimales para representar los colores, dos para cada uno de los componentes rojo (R), verde (G) y azul (B). ¡De estos tres colores puros (rojo, verde y azul), podemos variar las cantidades de cada uno para crear más de 16 millones de otros colores! Por ejemplo, el naranja es rojo puro, mezclado con un poco de verde y sin azul. En código hexadecimal, esto se traduce en ser <code>#FFA500</code> . El dígito <code>0</code> es el número más bajo en código hexadecimal y representa una ausencia completa de color. El dígito <code>F</code> es el número más alto en código hexadecimal y representa el brillo máximo posible. </section>
 
 ## Instructions
-<section id='instructions'> 
-Reemplace las palabras de color en nuestro elemento de <code>style</code> con sus códigos hexadecimales correctos. 
-<table class='table table-striped'><tr><th> Color </th><th> Código hexadecimal </th></tr><tr><td> Dodger Blue </td><td> <code>#1E90FF</code> </td> </tr><tr><td> Verde </td><td> <code>#00FF00</code> </td> </tr><tr><td> naranja </td><td> <code>#FFA500</code> </td> </tr><tr><td> rojo </td><td> <code>#FF0000</code> </td> </tr></table> 
-</section>
+<section id="instructions"> Reemplace las palabras de color en nuestro elemento de <code>style</code> con sus códigos hexadecimales correctos. <table class="table table-striped"><tbody><tr><th> Color </th><th> Código hexadecimal </th></tr><tr><td> Dodger Blue </td><td> <code>#1E90FF</code> </td> </tr><tr><td> Verde </td><td> <code>#00FF00</code> </td> </tr><tr><td> naranja </td><td> <code>#FFA500</code> </td> </tr><tr><td> rojo </td><td> <code>#FF0000</code> </td> </tr></tbody></table></section>
 
 ## Tests
 <section id='tests'>
@@ -75,6 +66,7 @@ tests:
 <h1 class="dodger-blue-text">I am dodger blue!</h1>
 
 <h1 class="orange-text">I am orange!</h1>
+
 ```
 
 </div>

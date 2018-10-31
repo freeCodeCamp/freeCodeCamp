@@ -1,21 +1,16 @@
 ---
 id: 56533eb9ac21ba0edf2244dc
 title: Chaining If Else Statements
-localeTitle: Encadenamiento en caso contrario
 challengeType: 1
+videoUrl: ''
+localeTitle: Encadenamiento en caso contrario
 ---
 
 ## Description
-<section id='description'> 
-<code>if/else</code> sentencias pueden ser encadenadas juntas para lógica compleja. Aquí está el <dfn>pseudocódigo</dfn> de múltiples encadenadas <code>if</code> / <code>else if</code> enunciados: 
-<blockquote>if ( <em>condition1</em> ) {<br>&nbsp;&nbsp; <em>statement1</em> <br>} else if ( <em>condition2</em> ) {<br>&nbsp;&nbsp; <em>statement2</em> <br>} else if ( <em>condition3</em> ) {<br>&nbsp;&nbsp; <em>statement3</em> <br>. . .<br>} else {<br>&nbsp;&nbsp; <em>statementN</em> <br>}</blockquote> 
-</section>
+<section id="description"> <code>if/else</code> declaraciones <code>if/else</code> se pueden encadenar para una lógica compleja. Aquí está el <dfn>pseudocódigo</dfn> de múltiples encadenadas <code>if</code> / <code>else if</code> sentencias: <blockquote> if ( <em>condición1</em> ) { <br> <em>declaración1</em> <br> } else if ( <em>condition2</em> ) { <br> <em>declaración2</em> <br> } else if ( <em>condition3</em> ) { <br> <em>declaración3</em> <br> . . . <br> } else { <br> <em>declaraciónN</em> <br> } </blockquote></section>
 
 ## Instructions
-<section id='instructions'> 
-Escribir en cadena <code>if</code> / <code>else if</code> sentencias para cumplir con las siguientes condiciones: 
-<code>num &lt; 5</code> - devolver &quot;Tiny&quot; <br> <code>num &lt; 10</code> - devuelve &quot;Small&quot; <br> <code>num &lt; 15</code> - devuelve &quot;Medio&quot; <br> <code>num &lt; 20</code> - devuelve &quot;Large&quot; <br> <code>num &gt;= 20</code> - devuelve &quot;Enorme&quot; 
-</section>
+<section id="instructions"> Escriba en cadena las sentencias <code>if</code> / <code>else if</code> para cumplir las siguientes condiciones: <code>num &lt; 5</code> - return &quot;Tiny&quot; <br> <code>num &lt; 10</code> - devuelve &quot;Small&quot; <br> <code>num &lt; 15</code> - devuelve &quot;Medio&quot; <br> <code>num &lt; 20</code> - devuelve &quot;Large&quot; <br> <code>num &gt;= 20</code> - devuelve &quot;Enorme&quot; </section>
 
 ## Tests
 <section id='tests'>
@@ -69,6 +64,7 @@ function testSize(num) {
 
 // Change this value to test
 testSize(7);
+
 ```
 
 </div>
@@ -80,21 +76,7 @@ testSize(7);
 ## Solution
 <section id='solution'>
 
-
 ```js
-function testSize(num) {
-  if (num < 5) {
-    return "Tiny";
-  } else if (num < 10) {
-    return "Small";
-  } else if (num < 15) {
-    return "Medium";
-  } else if (num < 20) {
-    return "Large";
-  } else {
-    return "Huge";
-  }
-}
+// solution required
 ```
-
 </section>

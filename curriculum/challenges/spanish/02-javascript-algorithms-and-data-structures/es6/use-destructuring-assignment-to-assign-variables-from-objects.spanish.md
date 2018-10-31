@@ -1,27 +1,16 @@
 ---
 id: 587d7b89367417b2b2512b49
 title: Use Destructuring Assignment to Assign Variables from Objects
-localeTitle: Usar asignación de destrucción para asignar variables de objetos
 challengeType: 1
+videoUrl: ''
+localeTitle: Usar asignación de destrucción para asignar variables de objetos
 ---
 
 ## Description
-<section id='description'> 
-Ya vimos cómo el operador de propagación puede difundir o desempaquetar efectivamente el contenido de la matriz. 
-Podemos hacer algo similar con los objetos también. <dfn>La asignación de destrucción</dfn> es una sintaxis especial para asignar cuidadosamente valores tomados directamente de un objeto a variables. 
-Considera el siguiente código ES5: 
-<blockquote>var voxel = {x: 3.6, y: 7.4, z: 6.54 };<br>var x = voxel.x; // x = 3.6<br>var y = voxel.y; // y = 7.4<br>var z = voxel.z; // z = 6.54</blockquote> 
-Aquí está la misma declaración de asignación con la sintaxis de desestructuración ES6: 
-<blockquote>const { x, y, z } = voxel; // x = 3.6, y = 7.4, z = 6.54</blockquote> 
-Si, por el contrario, desea almacenar los valores de <code>voxel.x</code> en <code>a</code> , <code>voxel.y</code> en <code>b</code> , y <code>voxel.z</code> en <code>c</code> , también tiene esa libertad. 
-<blockquote>const { x : a, y : b, z : c } = voxel // a = 3.6, b = 7.4, c = 6.54</blockquote> 
-Puede leerlo como &quot;obtener el campo <code>x</code> y copiar el valor en <code>a</code> &quot;, y así sucesivamente. 
-</section>
+<section id="description"> Anteriormente vimos cómo el operador de propagación puede difundir o desempaquetar efectivamente el contenido de la matriz. Podemos hacer algo similar con los objetos también. <dfn>La asignación de destrucción</dfn> es una sintaxis especial para asignar cuidadosamente valores tomados directamente de un objeto a variables. Considere el siguiente código ES5: <blockquote> var voxel = {x: 3.6, y: 7.4, z: 6.54}; <br> var x = voxel.x; // x = 3.6 <br> var y = voxel.y; // y = 7.4 <br> var z = voxel.z; // z = 6.54 </blockquote> Aquí está la misma declaración de asignación con la sintaxis de desestructuración ES6: <blockquote> const {x, y, z} = voxel; // x = 3.6, y = 7.4, z = 6.54 </blockquote> Si, por el contrario, desea almacenar los valores de <code>voxel.x</code> en <code>a</code> , <code>voxel.y</code> en <code>b</code> , y <code>voxel.z</code> en <code>c</code> , también tiene esa libertad. <blockquote> const {x: a, y: b, z: c} = vóxel // a = 3.6, b = 7.4, c = 6.54 </blockquote> Puede leerlo como &quot;obtener el campo <code>x</code> y copiar el valor en <code>a</code> &quot;, y así sucesivamente. </section>
 
 ## Instructions
-<section id='instructions'> 
-Use la desestructuración para obtener la temperatura promedio para mañana del objeto de entrada <code>AVG_TEMPERATURES</code> , y asigne un valor con la clave <code>tomorrow</code> a <code>tempOfTomorrow</code> en línea. 
-</section>
+<section id="instructions"> Utilice la desestructuración para obtener la temperatura promedio para mañana desde el objeto de entrada <code>AVG_TEMPERATURES</code> , y asigne un valor con la clave <code>tomorrow</code> a <code>tempOfTomorrow</code> en línea. </section>
 
 ## Tests
 <section id='tests'>
@@ -57,6 +46,7 @@ function getTempOfTmrw(avgTemperatures) {
 }
 
 console.log(getTempOfTmrw(AVG_TEMPERATURES)); // should be 79
+
 ```
 
 </div>

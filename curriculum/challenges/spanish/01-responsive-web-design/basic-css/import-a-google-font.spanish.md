@@ -1,27 +1,16 @@
 ---
 id: bad87fee1348bd9aedf08807
 title: Import a Google Font
-localeTitle: Importar una fuente de Google
 challengeType: 0
 videoUrl: ''
+localeTitle: Importar una fuente de Google
 ---
 
 ## Description
-<section id='description'> 
-Además de especificar las fuentes comunes que se encuentran en la mayoría de los sistemas operativos, también podemos especificar fuentes web no estándar y personalizadas para su uso en nuestro sitio web. Existen varias fuentes de fuentes web en Internet, pero, para este ejemplo, nos centraremos en la biblioteca de fuentes de Google. 
-<a href='https://fonts.google.com/' target='_blank'>Google Fonts</a> es una biblioteca gratuita de fuentes web que puede usar en su CSS haciendo referencia a la URL de la fuente. 
-Entonces, sigamos adelante, importemos y apliquemos una fuente de Google (tenga en cuenta que si Google está bloqueado en su país, deberá saltarse este desafío). 
-Para importar una fuente de Google, puede copiar la URL de la (s) fuente (s) de la biblioteca de fuentes de Google y luego pegarla en su HTML. Para este desafío, importaremos la fuente <code>Lobster</code> . Para hacer esto, copie el siguiente fragmento de código y péguelo en la parte superior de su editor de código (antes del elemento de <code>style</code> apertura): 
-<code>&lt;link href=&quot;https://fonts.googleapis.com/css?family=Lobster&quot; rel=&quot;stylesheet&quot; type=&quot;text/css&quot;&gt;</code> 
-Ahora puedes usar la fuente <code>Lobster</code> en tu CSS usando <code>Lobster</code> como el FAMILY_NAME como en el siguiente ejemplo: <br> <code>font-family: FAMILY_NAME, GENERIC_NAME;</code> . 
-El GENERIC_NAME es opcional, y es una fuente alternativa en caso de que la otra fuente especificada no esté disponible. Esto está cubierto en el próximo desafío. 
-Los nombres de las familias distinguen entre mayúsculas y minúsculas y deben incluirse entre comillas si hay un espacio en el nombre. Por ejemplo, necesita citas para usar la fuente <code>&quot;Open Sans&quot;</code> , pero no para usar la fuente <code>Lobster</code> . 
-</section>
+<section id="description"> Además de especificar las fuentes comunes que se encuentran en la mayoría de los sistemas operativos, también podemos especificar fuentes web personalizadas y no estándar para su uso en nuestro sitio web. Existen varias fuentes de fuentes web en Internet, pero, para este ejemplo, nos centraremos en la biblioteca de fuentes de Google. <a href="https://fonts.google.com/" target="_blank">Google Fonts</a> es una biblioteca gratuita de fuentes web que puede utilizar en su CSS haciendo referencia a la URL de la fuente. Entonces, sigamos adelante, importemos y apliquemos una fuente de Google (tenga en cuenta que si Google está bloqueado en su país, deberá saltarse este desafío). Para importar una fuente de Google, puede copiar la URL de la (s) fuente (s) de la biblioteca de fuentes de Google y luego pegarla en su HTML. Para este desafío, importaremos la fuente <code>Lobster</code> . Para hacer esto, copie el siguiente fragmento de código y péguelo en la parte superior de su editor de código (antes del elemento de <code>style</code> apertura): <code>&lt;link href=&quot;https://fonts.googleapis.com/css?family=Lobster&quot; rel=&quot;stylesheet&quot; type=&quot;text/css&quot;&gt;</code> Ahora puede usar la fuente <code>Lobster</code> en su CSS usando <code>Lobster</code> como FAMILY_NAME como en el siguiente ejemplo: <br> <code>font-family: FAMILY_NAME, GENERIC_NAME;</code> . GENERIC_NAME es opcional y es una fuente alternativa en caso de que la otra fuente especificada no esté disponible. Esto está cubierto en el próximo desafío. Los nombres de las familias distinguen entre mayúsculas y minúsculas y deben estar entre comillas si hay un espacio en el nombre. Por ejemplo, necesita citas para usar la fuente <code>&quot;Open Sans&quot;</code> , pero no para usar la fuente <code>Lobster</code> . </section>
 
 ## Instructions
-<section id='instructions'> 
-Cree una regla CSS de la <code>font-family</code> que use la fuente <code>Lobster</code> y asegúrese de que se aplicará a su elemento <code>h2</code> . 
-</section>
+<section id="instructions"> Cree una regla CSS de la <code>font-family</code> que use la fuente <code>Lobster</code> y asegúrese de que se aplicará a su elemento <code>h2</code> . </section>
 
 ## Tests
 <section id='tests'>
@@ -89,6 +78,7 @@ tests:
     <button type="submit">Submit</button>
   </form>
 </main>
+
 ```
 
 </div>

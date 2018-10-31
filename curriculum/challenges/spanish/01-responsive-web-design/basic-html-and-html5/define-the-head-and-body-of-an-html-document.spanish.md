@@ -1,23 +1,16 @@
 ---
 id: 587d78aa367417b2b2512aec
 title: Define the Head and Body of an HTML Document
-localeTitle: Definir la cabeza y el cuerpo de un documento HTML
 challengeType: 0
 videoUrl: ''
+localeTitle: Definir la cabeza y el cuerpo de un documento HTML
 ---
 
 ## Description
-<section id='description'> 
-Puede agregar otro nivel de organización en su documento HTML dentro de las etiquetas <code>html</code> con los elementos de <code>head</code> y <code>body</code> . Cualquier marca con información sobre su página irá a la etiqueta de <code>head</code> . Luego, cualquier marca con el contenido de la página (lo que se muestra para un usuario) entraría en la etiqueta del <code>body</code> . 
-Los elementos de metadatos, como <code>link</code> , <code>meta</code> , <code>title</code> y <code>style</code> , por lo general van dentro de la <code>head</code> del elemento. 
-Aquí hay un ejemplo del diseño de una página: 
-<blockquote>&lt;!DOCTYPE html&gt;<br>&lt;html&gt;<br>&nbsp;&nbsp;&lt;head&gt;<br>&nbsp;&nbsp;&nbsp;&nbsp;&lt;!-- metadata elements --&gt;<br>&nbsp;&nbsp;&lt;/head&gt;<br>&nbsp;&nbsp;&lt;body&gt;<br>&nbsp;&nbsp;&nbsp;&nbsp;&lt;!-- page contents --&gt;<br>&nbsp;&nbsp;&lt;/body&gt;<br>&lt;/html&gt;</blockquote> 
-</section>
+<section id="description"> Puede agregar otro nivel de organización en su documento HTML dentro de las etiquetas <code>html</code> con los elementos de <code>head</code> y <code>body</code> . Cualquier marca con información sobre su página irá a la etiqueta de <code>head</code> . Luego, cualquier marca con el contenido de la página (lo que se muestra para un usuario) se colocará en la etiqueta del <code>body</code> . Los elementos de metadatos, como <code>link</code> , <code>meta</code> , <code>title</code> y <code>style</code> , por lo general van dentro de la <code>head</code> del elemento. Aquí hay un ejemplo del diseño de una página: <blockquote> &lt;! DOCTYPE html&gt; <br> &lt;html&gt; <br> &lt;head&gt; <br> &lt;! - Elementos de metadatos -&gt; <br> &lt;/head&gt; <br> &lt;body&gt; <br> &lt;! - contenidos de la página -&gt; <br> &lt;/body&gt; <br> &lt;/html&gt; </blockquote></section>
 
 ## Instructions
-<section id='instructions'> 
-Edita el marcado para que haya una <code>head</code> y un <code>body</code> . La <code>head</code> elemento sólo debe incluir el <code>title</code> , y el <code>body</code> elemento sólo debe incluir la <code>h1</code> y <code>p</code> . 
-</section>
+<section id="instructions"> Edite el marcado para que haya una <code>head</code> y un <code>body</code> . La <code>head</code> elemento sólo debe incluir el <code>title</code> , y el <code>body</code> elemento sólo debe incluir la <code>h1</code> y <code>p</code> . </section>
 
 ## Tests
 <section id='tests'>
@@ -55,6 +48,7 @@ tests:
   <p>Cat ipsum dolor sit amet, jump launch to pounce upon little yarn mouse, bare fangs at toy run hide in litter box until treats are fed. Go into a room to decide you didn't want to be in there anyway. I like big cats and i can not lie kitty ipsum dolor sit amet, shed everywhere shed everywhere stretching attack your ankles chase the red dot, hairball run catnip eat the grass sniff. Meow i could pee on this if i had the energy for slap owner's face at 5am until human fills food dish yet scamper. Knock dish off table head butt cant eat out of my own dish scratch the furniture. Make meme, make cute face. Sleep in the bathroom sink chase laser but pee in the shoe. Paw at your fat belly licks your face and eat grass, throw it back up kitty ipsum dolor sit amet, shed everywhere shed everywhere stretching attack your ankles chase the red dot, hairball run catnip eat the grass sniff.</p>
 
 </html>
+
 ```
 
 </div>

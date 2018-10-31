@@ -1,22 +1,16 @@
 ---
-id: 5
-localeTitle: 5900f4311000cf542c50ff44
+id: 5900f4311000cf542c50ff44
 challengeType: 5
 title: 'Problem 197: Investigating the behaviour of a recursively defined sequence'
+videoUrl: ''
+localeTitle: 'Problema 197: investigar el comportamiento de una secuencia definida recursivamente'
 ---
 
 ## Description
-<section id='description'> 
-Se da la función f (x) = ⌊230.403243784-x2⌋ × 10-9 (⌊ ⌋ es la función de piso), 
-la secuencia un está definida por u0 = -1 y un + 1 = f (un). 
-
-Encuentre un + un + 1 para n = 1012. 
-Dé su respuesta con 9 dígitos después del punto decimal. 
-</section>
+<section id="description"> Dada la función f (x) = ⌊230.403243784-x2⌋ × 10-9 (⌊ ⌋ es la función de piso), la secuencia un está definida por u0 = -1 y un + 1 = f (un). <p> Encuentra un + un + 1 para n = 1012. Da tu respuesta con 9 dígitos después del punto decimal. </p></section>
 
 ## Instructions
-<section id='instructions'> 
-
+<section id="instructions">
 </section>
 
 ## Tests
@@ -43,6 +37,7 @@ function euler197() {
 }
 
 euler197();
+
 ```
 
 </div>

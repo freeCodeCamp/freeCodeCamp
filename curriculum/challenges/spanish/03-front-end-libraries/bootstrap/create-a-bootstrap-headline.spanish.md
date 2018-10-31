@@ -1,21 +1,16 @@
 ---
 id: bad87fee1348bd9aec908846
 title: Create a Bootstrap Headline
-localeTitle: Crear un título de Bootstrap
 challengeType: 0
+videoUrl: ''
+localeTitle: Crear un título de Bootstrap
 ---
 
 ## Description
-<section id='description'> 
-Ahora vamos a construir algo desde cero para practicar nuestras habilidades HTML, CSS y Bootstrap. 
-Construiremos un patio de juegos de jQuery, que pronto utilizaremos en nuestros desafíos de jQuery. 
-Para empezar, cree un elemento <code>h3</code> , con el texto <code>jQuery Playground</code> . 
-Colorea tu elemento <code>h3</code> con la clase Bootstrap <code>text-primary</code> del <code>text-primary</code> céntrala con la clase Bootstrap del centro de <code>text-center</code> . 
-</section>
+<section id="description"> Ahora vamos a construir algo desde cero para practicar nuestras habilidades HTML, CSS y Bootstrap. Construiremos un patio de juegos de jQuery, que pronto utilizaremos en nuestros desafíos de jQuery. Para empezar, crea un elemento <code>h3</code> , con el texto <code>jQuery Playground</code> . Colorea tu elemento <code>h3</code> con la clase Bootstrap de <code>text-primary</code> céntrala con la clase Bootstrap de centro de <code>text-center</code> . </section>
 
 ## Instructions
-<section id='instructions'> 
-
+<section id="instructions">
 </section>
 
 ## Tests

@@ -1,30 +1,16 @@
 ---
-id: 5
-localeTitle: 5900f4d91000cf542c50ffea
+id: 5900f4d91000cf542c50ffea
 challengeType: 5
 title: 'Problem 364: Comfortable distance'
+videoUrl: ''
+localeTitle: 'Problema 364: distancia cómoda'
 ---
 
 ## Description
-<section id='description'> 
-Hay N asientos en una fila. N personas vienen una detrás de la otra para llenar los asientos de acuerdo con las siguientes reglas: 
-Si hay algún asiento cuyos asientos adyacentes no estén ocupados, tome ese asiento. 
-Si no hay tal asiento y hay algún asiento para el que solo esté ocupado un asiento adyacente, tome ese asiento. 
-De lo contrario, tome uno de los asientos disponibles restantes. 
-
-Sea T (N) la cantidad de posibilidades que N asientos están ocupados por N personas con las reglas dadas. La siguiente figura muestra T (4) = 8. 
-
-
-
-
-
-Podemos verificar que T (10) = 61632 y T (1 000) mod 100 000 007 = 47255094. 
-Encontrar T (1 000 000) mod 100 000 007. 
-</section>
+<section id="description"> Hay N asientos en una fila. N personas vienen una detrás de la otra para llenar los asientos de acuerdo con las siguientes reglas: Si hay algún asiento cuyos asientos adyacentes no estén ocupados, tome ese asiento. Si no hay tal asiento y hay algún asiento para el que solo esté ocupado un asiento adyacente, tome ese asiento. De lo contrario, tome uno de los asientos disponibles restantes. <p> Sea T (N) la cantidad de posibilidades que N asientos están ocupados por N personas con las reglas dadas. La siguiente figura muestra T (4) = 8. </p><p> Podemos verificar que T (10) = 61632 y T (1 000) mod 100 000 007 = 47255094. Encontrar T (1 000 000) mod 100 000 007. </p></section>
 
 ## Instructions
-<section id='instructions'> 
-
+<section id="instructions">
 </section>
 
 ## Tests
@@ -51,6 +37,7 @@ function euler364() {
 }
 
 euler364();
+
 ```
 
 </div>

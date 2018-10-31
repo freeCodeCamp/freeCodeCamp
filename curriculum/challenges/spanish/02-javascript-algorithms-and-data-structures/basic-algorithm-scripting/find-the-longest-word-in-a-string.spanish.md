@@ -1,21 +1,17 @@
 ---
 id: a26cbbe9ad8655a977e1ceb5
 title: Find the Longest Word in a String
-localeTitle: Encuentra la palabra más larga en una cadena
 isRequired: true
 challengeType: 5
+videoUrl: ''
+localeTitle: Encuentra la palabra más larga en una cadena
 ---
 
 ## Description
-<section id='description'> 
-Devuelve la longitud de la palabra más larga en la oración provista. 
-Tu respuesta debe ser un número. 
-Recuerda usar <a href="http://forum.freecodecamp.org/t/how-to-get-help-when-you-are-stuck/19514" target="_blank">Read-Search-Ask</a> si te atascas. Escribe tu propio código. 
-</section>
+<section id="description"> Devuelve la longitud de la palabra más larga en la oración provista. Tu respuesta debe ser un número. Recuerda usar <a href="http://forum.freecodecamp.org/t/how-to-get-help-when-you-are-stuck/19514" target="_blank">Read-Search-Ask</a> si te atascas. Escribe tu propio código. </section>
 
 ## Instructions
-<section id='instructions'> 
-
+<section id="instructions">
 </section>
 
 ## Tests
@@ -51,6 +47,7 @@ function findLongestWordLength(str) {
 }
 
 findLongestWordLength("The quick brown fox jumped over the lazy dog");
+
 ```
 
 </div>
@@ -62,14 +59,7 @@ findLongestWordLength("The quick brown fox jumped over the lazy dog");
 ## Solution
 <section id='solution'>
 
-
 ```js
-function findLongestWordLength(str) {
-  return str.split(' ').sort((a, b) => b.length - a.length)[0].length;
-}
-
-findLongestWordLength("The quick brown fox jumped over the lazy dog");
-
+// solution required
 ```
-
 </section>

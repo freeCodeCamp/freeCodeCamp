@@ -1,25 +1,16 @@
 ---
 id: bad87fee1348bd9aedf08845
 title: Use a span to Target Inline Elements
-localeTitle: Use un lapso para apuntar elementos en línea
 challengeType: 0
+videoUrl: ''
+localeTitle: Use un lapso para apuntar elementos en línea
 ---
 
 ## Description
-<section id='description'> 
-Puedes usar espacios para crear elementos en línea. ¿Recuerdas cuando usamos la clase <code>btn-block</code> para hacer que el botón llene toda la fila? 
-<button class='btn' style='background-color: rgb(0, 100, 0);  color: rgb(255, 255, 255);'>botón normal</button> 
-<button class='btn btn-block' style='background-color: rgb(0, 100, 0);  color: rgb(255, 255, 255);'>botón BTN-bloque</button> 
-Que ilustra la diferencia entre un elemento &quot;en línea&quot; y un elemento de &quot;bloque&quot;. 
-Al usar el elemento de <code>span</code> línea, puede colocar varios elementos en la misma línea, e incluso diseñar diferentes partes de la misma línea de manera diferente. 
-Anida la palabra &quot;amor&quot; en el elemento &quot;Cosas que los gatos aman&quot; debajo de un elemento de <code>span</code> . Luego, <code>span</code> la clase <code>text-danger</code> para hacer que el texto sea rojo. 
-continuación le indicamos cómo haría esto con el elemento &quot;Las 3 principales cosas que los gatos odian&quot;: 
-<code>&lt;p&gt;Top 3 things cats &lt;span class=&quot;text-danger&quot;&gt;hate:&lt;/span&gt;&lt;/p&gt;</code> 
-</section>
+<section id="description"> Puede utilizar intervalos para crear elementos en línea. ¿Recuerdas cuando usamos la clase <code>btn-block</code> para hacer que el botón llene toda la fila? <button class="btn" style="background-color: rgb(0, 100, 0);  color: rgb(255, 255, 255);">botón normal botón</button> <button class="btn btn-block" style="background-color: rgb(0, 100, 0);  color: rgb(255, 255, 255);">btn-block</button> Que ilustra la diferencia entre un elemento &quot;en línea&quot; y un elemento &quot;block&quot;. Al utilizar el elemento de <code>span</code> línea, puede colocar varios elementos en la misma línea, e incluso diseñar diferentes partes de la misma línea de manera diferente. Anida la palabra &quot;amor&quot; en el elemento &quot;Cosas que los gatos aman&quot; debajo de un elemento <code>span</code> . Luego, <code>span</code> la clase <code>text-danger</code> para hacer que el texto sea rojo. A continuación le indicamos cómo haría esto con el elemento &quot;Las 3 cosas que los gatos odian más&quot;: <code>&lt;p&gt;Top 3 things cats &lt;span class=&quot;text-danger&quot;&gt;hate:&lt;/span&gt;&lt;/p&gt;</code> </section>
 
 ## Instructions
-<section id='instructions'> 
-
+<section id="instructions">
 </section>
 
 ## Tests
@@ -101,6 +92,7 @@ tests:
     <button type="submit">Submit</button>
   </form>
 </div>
+
 ```
 
 </div>

@@ -1,20 +1,16 @@
 ---
-id: 5
-localeTitle: 5900f44e1000cf542c50ff5f
+id: 5900f44e1000cf542c50ff5f
 challengeType: 5
 title: 'Problem 224: Almost right-angled triangles II'
+videoUrl: ''
+localeTitle: 'Problema 224: triángulos casi rectos II'
 ---
 
 ## Description
-<section id='description'> 
-Llamemos a un triángulo de lados enteros con lados a ≤ b ≤ c apenas obtuso si los lados satisfacen a2 + b2 = c2 - 1. 
-
-¿Cuántos triángulos apenas obtusos hay con el perímetro ≤ 75,000,000? 
-</section>
+<section id="description"> Llamemos a un triángulo de lados enteros con lados a ≤ b ≤ c apenas obtuso si los lados satisfacen a2 + b2 = c2 - 1. <p> ¿Cuántos triángulos apenas obtusos hay con un perímetro ≤ 75,000,000? </p></section>
 
 ## Instructions
-<section id='instructions'> 
-
+<section id="instructions">
 </section>
 
 ## Tests
@@ -41,6 +37,7 @@ function euler224() {
 }
 
 euler224();
+
 ```
 
 </div>

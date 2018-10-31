@@ -1,23 +1,16 @@
 ---
-id: 5
-localeTitle: 5900f4291000cf542c50ff3b
+id: 5900f4291000cf542c50ff3b
 challengeType: 5
 title: 'Problem 188: The hyperexponentiation of a number'
+videoUrl: ''
+localeTitle: 'Problema 188: La hiperexposición de un número.'
 ---
 
 ## Description
-<section id='description'> 
-La hipereexposición o tetración de un número a por un entero positivo b, denotado por ↑↑ b o ba, se define recursivamente por: 
-a ↑↑ 1 = a, 
-a ↑↑ (k + 1) = a (a ↑↑ k). 
-
-Así tenemos, por ejemplo, 3 ↑↑ 2 = 33 = 27, por lo tanto, 3 ↑↑ 3 = 327 = 7625597484987 y 3 ↑↑ 4 es aproximadamente 103.6383346400240996 * 10 ^ 12. 
-Encuentra los últimos 8 dígitos de 1777 ↑↑ 1855. 
-</section>
+<section id="description"> La hipereexposición o tetración de un número a por un entero positivo b, denotado por ↑↑ b o ba, se define recursivamente por: a ↑↑ 1 = a, a ↑↑ (k + 1) = a (a ↑↑ k ). <p> Así tenemos, por ejemplo, 3 ↑↑ 2 = 33 = 27, por lo que 3 ↑↑ 3 = 327 = 7625597484987 y 3 ↑↑ 4 es aproximadamente 103.6383346400240996 * 10 ^ 12. Encuentra los últimos 8 dígitos de 1777 ↑↑ 1855. </p></section>
 
 ## Instructions
-<section id='instructions'> 
-
+<section id="instructions">
 </section>
 
 ## Tests
@@ -44,6 +37,7 @@ function euler188() {
 }
 
 euler188();
+
 ```
 
 </div>

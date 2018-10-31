@@ -1,22 +1,16 @@
 ---
 id: 56533eb9ac21ba0edf2244df
 title: Multiple Identical Options in Switch Statements
-localeTitle: Múltiples opciones idénticas en declaraciones de cambio
 challengeType: 1
+videoUrl: ''
+localeTitle: Múltiples opciones idénticas en declaraciones de cambio
 ---
 
 ## Description
-<section id='description'> 
-Si la sentencia de <code>break</code> se omite en el <code>case</code> de una sentencia de <code>switch</code> , se ejecutan las siguientes sentencias de <code>case</code> hasta que se encuentra una <code>break</code> . Si tiene varias entradas con la misma salida, puede representarlas en una declaración de <code>switch</code> como esta: 
-<blockquote>switch(val) {<br>&nbsp;&nbsp;case 1:<br>&nbsp;&nbsp;case 2:<br>&nbsp;&nbsp;case 3:<br>&nbsp;&nbsp;&nbsp;&nbsp;result = "1, 2, or 3";<br>&nbsp;&nbsp;&nbsp;&nbsp;break;<br>&nbsp;&nbsp;case 4:<br>&nbsp;&nbsp;&nbsp;&nbsp;result = "4 alone";<br>}</blockquote> 
-casos para 1, 2 y 3 producirán el mismo resultado. 
-</section>
+<section id="description"> Si la declaración de <code>break</code> se omite en el <code>case</code> de una instrucción de <code>switch</code> , se ejecutan las siguientes instrucciones de <code>case</code> hasta que se encuentra una <code>break</code> . Si tiene varias entradas con la misma salida, puede representarlas en una declaración de <code>switch</code> como esta: <blockquote> interruptor (val) { <br> caso 1: <br> caso 2: <br> caso 3: <br> resultado = &quot;1, 2 o 3&quot;; <br> descanso; <br> caso 4: <br> result = &quot;4 solo&quot;; <br> } </blockquote> Los casos para 1, 2 y 3 producirán el mismo resultado. </section>
 
 ## Instructions
-<section id='instructions'> 
-Escriba una instrucción de cambio para establecer la <code>answer</code> para los siguientes rangos: <br> <code>1-3</code> - &quot;Bajo&quot; <br> <code>4-6</code> - &quot;Mid&quot; <br> <code>7-9</code> - &quot;Alta&quot; 
-<strong>Nota</strong> <br> Deberá tener una declaración de <code>case</code> para cada número en el rango. 
-</section>
+<section id="instructions"> Escriba una instrucción de cambio para establecer la <code>answer</code> para los siguientes rangos: <br> <code>1-3</code> - &quot;Bajo&quot; <br> <code>4-6</code> - &quot;Mid&quot; <br> <code>7-9</code> - <strong>Nota</strong> &quot;Alta&quot; <br> Deberá tener una declaración de <code>case</code> para cada número en el rango. </section>
 
 ## Tests
 <section id='tests'>
@@ -80,30 +74,7 @@ sequentialSizes(1);
 ## Solution
 <section id='solution'>
 
-
 ```js
-function sequentialSizes(val) {
-  var answer = "";
-
-  switch(val) {
-    case 1:
-    case 2:
-    case 3:
-      answer = "Low";
-      break;
-    case 4:
-    case 5:
-    case 6:
-      answer = "Mid";
-      break;
-    case 7:
-    case 8:
-    case 9:
-      answer = "High";
-  }
-
-  return answer;
-}
+// solution required
 ```
-
 </section>

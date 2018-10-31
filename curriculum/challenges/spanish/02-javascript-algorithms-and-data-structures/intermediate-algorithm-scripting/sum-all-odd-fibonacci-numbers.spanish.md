@@ -1,22 +1,17 @@
 ---
 id: a5229172f011153519423690
 title: Sum All Odd Fibonacci Numbers
-localeTitle: Suma todos los números impares de Fibonacci
 isRequired: true
 challengeType: 5
+videoUrl: ''
+localeTitle: Suma todos los números impares de Fibonacci
 ---
 
 ## Description
-<section id='description'> 
-Dado un número entero positivo <code>num</code> , devolver la suma de todos los números impares de Fibonacci que son menos que o igual a <code>num</code> . 
-Los dos primeros números en la secuencia de Fibonacci son 1 y 1. Cada número adicional en la secuencia es la suma de los dos números anteriores. Los primeros seis números de la secuencia de Fibonacci son 1, 1, 2, 3, 5 y 8. 
-Por ejemplo, <code>sumFibs(10)</code> debe devolver <code>10</code> porque todos los números impares de Fibonacci menores o iguales a <code>10</code> son 1, 1, 3, y 5. 
-Recuerda usar <a href='http://forum.freecodecamp.org/t/how-to-get-help-when-you-are-stuck/19514' target='_blank'>Read-Search-Ask</a> si te atascas. Trate de emparejar el programa. Escribe tu propio código. 
-</section>
+<section id="description"> Dado un número entero positivo <code>num</code> , devolver la suma de todos los números impares de Fibonacci que son menos que o igual a <code>num</code> . Los primeros dos números en la secuencia de Fibonacci son 1 y 1. Cada número adicional en la secuencia es la suma de los dos números anteriores. Los primeros seis números de la secuencia de Fibonacci son 1, 1, 2, 3, 5 y 8. Por ejemplo, <code>sumFibs(10)</code> debe devolver <code>10</code> porque todos los números de Fibonacci impares menores o iguales a <code>10</code> son 1, 1, 3 y 5. Recuerda usar <a href="http://forum.freecodecamp.org/t/how-to-get-help-when-you-are-stuck/19514" target="_blank">Read-Search-Ask</a> si te atascas. Trate de emparejar el programa. Escribe tu propio código. </section>
 
 ## Instructions
-<section id='instructions'> 
-
+<section id="instructions">
 </section>
 
 ## Tests
@@ -52,6 +47,7 @@ function sumFibs(num) {
 }
 
 sumFibs(4);
+
 ```
 
 </div>
@@ -63,20 +59,7 @@ sumFibs(4);
 ## Solution
 <section id='solution'>
 
-
 ```js
-function sumFibs(num) {
-  var a = 1;
-  var b = 1;
-  var s = 0;
-  while (a <= num) {
-    if (a % 2 !== 0) {
-      s += a;
-    }
-    a = [b, b=b+a][0];
-  }
-  return s;
-}
+// solution required
 ```
-
 </section>

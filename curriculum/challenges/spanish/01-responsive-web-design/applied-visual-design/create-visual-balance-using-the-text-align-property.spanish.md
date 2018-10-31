@@ -1,25 +1,16 @@
 ---
 id: 587d7791367417b2b2512ab3
 title: Create Visual Balance Using the text-align Property
-localeTitle: Crear balance visual usando la propiedad text-align
 challengeType: 0
 videoUrl: ''
+localeTitle: Crear balance visual usando la propiedad text-align
 ---
 
 ## Description
-<section id='description'> 
-Esta sección del currículo se enfoca en el Diseño Visual Aplicado. El primer grupo de desafíos se basa en el diseño de la tarjeta dada para mostrar una serie de principios básicos. 
-texto es a menudo una gran parte del contenido web. CSS tiene varias opciones para alinearlo con la propiedad <code>text-align</code> . 
-<code>text-align: justify;</code> hace que todas las líneas de texto, excepto la última línea, se encuentren con los bordes izquierdo y derecho del cuadro de línea. 
-<code>text-align: center;</code> Centra el texto 
-<code>text-align: right;</code> alinea a la derecha el texto 
-y alinea el texto <code>text-align: left;</code> (el valor predeterminado) alinea a la izquierda el texto. 
-</section>
+<section id="description"> Esta sección del currículo se enfoca en el Diseño Visual Aplicado. El primer grupo de desafíos se basa en el diseño de la tarjeta dada para mostrar una serie de principios básicos. El texto es a menudo una gran parte del contenido web. CSS tiene varias opciones para alinearlo con la propiedad <code>text-align</code> . <code>text-align: justify;</code> hace que todas las líneas de texto, excepto la última línea, se encuentren con los bordes izquierdo y derecho del cuadro de línea. <code>text-align: center;</code> Centra el texto <code>text-align: right;</code> alinea a la derecha el texto y alinea el texto <code>text-align: left;</code> (el valor predeterminado) alinea a la izquierda el texto. </section>
 
 ## Instructions
-<section id='instructions'> 
-Alinee el texto de la etiqueta <code>h4</code> , que dice &quot;Google&quot;, al centro. Luego justifique la etiqueta de párrafo que contiene información sobre cómo se fundó Google. 
-</section>
+<section id="instructions"> Alinee el texto de la etiqueta <code>h4</code> , que dice &quot;Google&quot;, al centro. Luego justifique la etiqueta de párrafo que contiene información sobre cómo se fundó Google. </section>
 
 ## Tests
 <section id='tests'>
@@ -74,6 +65,7 @@ tests:
     </div>
   </div>
 </div>
+
 ```
 
 </div>

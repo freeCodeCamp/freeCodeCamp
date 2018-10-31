@@ -1,23 +1,16 @@
 ---
 id: bad87fee1348bd9aedf08726
 title: Use Hex Code for Specific Colors
-localeTitle: Use el código hexadecimal para colores específicos
 challengeType: 0
 videoUrl: ''
+localeTitle: Use el código hexadecimal para colores específicos
 ---
 
 ## Description
-<section id='description'> 
-¿Sabías que hay otras formas de representar los colores en CSS? Una de estas formas se llama código hexadecimal, o <code>hex code</code> para abreviar. 
-Usualmente usamos <code>decimals</code> , o números de base 10, que usan los símbolos del 0 al 9 para cada dígito. <code>Hexadecimals</code> (o <code>hex</code> ) son números base 16. Esto significa que utiliza dieciséis símbolos distintos. Al igual que los decimales, los símbolos 0-9 representan los valores de cero a nueve. Luego, A, B, C, D, E, F representan los valores de diez a quince. En total, de 0 a F puede representar un dígito en <code>hexadecimal</code> , lo que nos da un total de 16 valores posibles. Puede encontrar más información sobre los <a target='_blank' href='https://en.wikipedia.org/wiki/Hexadecimal'>números hexadecimales aquí</a> . 
-En CSS, podemos usar 6 dígitos hexadecimales para representar los colores, dos para cada uno de los componentes rojo (R), verde (G) y azul (B). Por ejemplo, <code>#000000</code> es negro y también es el valor más bajo posible. Puede encontrar más información sobre el <a target='_blank' href='https://en.wikipedia.org/wiki/RGB_color_model'>sistema de color RGB aquí</a> . 
-<blockquote>body {<br>&nbsp;&nbsp;color: #000000;<br>}</blockquote> 
-</section>
+<section id="description"> ¿Sabías que hay otras formas de representar los colores en CSS? Una de estas formas se llama código hexadecimal, o <code>hex code</code> para abreviar. Usualmente usamos <code>decimals</code> , o números de base 10, que usan los símbolos del 0 al 9 para cada dígito. <code>Hexadecimals</code> (o <code>hex</code> ) son números base 16. Esto significa que utiliza dieciséis símbolos distintos. Al igual que los decimales, los símbolos 0-9 representan los valores de cero a nueve. Luego, A, B, C, D, E, F representan los valores de diez a quince. En total, de 0 a F puede representar un dígito en <code>hexadecimal</code> , lo que nos da un total de 16 valores posibles. Puede encontrar más información sobre los <a target="_blank" href="https://en.wikipedia.org/wiki/Hexadecimal">números hexadecimales aquí</a> . En CSS, podemos usar 6 dígitos hexadecimales para representar colores, dos para cada uno de los componentes rojo (R), verde (G) y azul (B). Por ejemplo, <code>#000000</code> es negro y también es el valor más bajo posible. Puede encontrar más información sobre el <a target="_blank" href="https://en.wikipedia.org/wiki/RGB_color_model">sistema de color RGB aquí</a> . <blockquote> cuerpo { <br> color: # 000000; <br> } </blockquote></section>
 
 ## Instructions
-<section id='instructions'> 
-Reemplace la palabra <code>black</code> en el color de fondo de nuestro elemento del <code>body</code> con su representación en <code>hex code</code> , <code>#000000</code> . 
-</section>
+<section id="instructions"> Reemplace la palabra <code>black</code> en el color de fondo de nuestro elemento del <code>body</code> con su representación en <code>hex code</code> , <code>#000000</code> . </section>
 
 ## Tests
 <section id='tests'>
@@ -44,6 +37,7 @@ tests:
     background-color: black;
   }
 </style>
+
 ```
 
 </div>

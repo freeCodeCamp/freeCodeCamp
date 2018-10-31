@@ -1,22 +1,16 @@
 ---
 id: 56533eb9ac21ba0edf2244b1
 title: Compound Assignment With Augmented Multiplication
-localeTitle: Asignación compuesta con multiplicación aumentada
 challengeType: 1
+videoUrl: ''
+localeTitle: Asignación compuesta con multiplicación aumentada
 ---
 
 ## Description
-<section id='description'> 
-El operador <code>*=</code> multiplica una variable por un número. 
-<code>myVar = myVar * 5;</code> 
-multiplicará <code>myVar</code> por <code>5</code> . Esto se puede reescribir como: 
-<code>myVar *= 5;</code> 
-</section>
+<section id="description"> El operador <code>*=</code> multiplica una variable por un número. <code>myVar = myVar * 5;</code> multiplicará <code>myVar</code> por <code>5</code> . Esto se puede reescribir como: <code>myVar *= 5;</code> </section>
 
 ## Instructions
-<section id='instructions'> 
-Convierta las asignaciones para <code>a</code> , <code>b</code> y <code>c</code> para usar el operador <code>*=</code> . 
-</section>
+<section id="instructions"> Convierta las asignaciones para <code>a</code> , <code>b</code> y <code>c</code> para usar el operador <code>*=</code> . </section>
 
 ## Tests
 <section id='tests'>
@@ -54,7 +48,6 @@ a = a * 5;
 b = 3 * b;
 c = c * 10;
 
-
 ```
 
 </div>
@@ -74,15 +67,7 @@ console.info('after the test');
 ## Solution
 <section id='solution'>
 
-
 ```js
-var a = 5;
-var b = 12;
-var c = 4.6;
-
-a *= 5;
-b *= 3;
-c *= 10;
+// solution required
 ```
-
 </section>

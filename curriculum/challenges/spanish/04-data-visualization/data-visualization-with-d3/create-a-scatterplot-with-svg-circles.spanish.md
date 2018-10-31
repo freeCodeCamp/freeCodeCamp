@@ -1,23 +1,18 @@
 ---
 id: 587d7fab367417b2b2512bd7
 title: Create a Scatterplot with SVG Circles
-localeTitle: Crear un diagrama de dispersión con círculos SVG
 required:
   - src: 'https://cdnjs.cloudflare.com/ajax/libs/d3/4.3.0/d3.min.js'
 challengeType: 6
+videoUrl: ''
+localeTitle: Crear un diagrama de dispersión con círculos SVG
 ---
 
 ## Description
-<section id='description'> 
-Un diagrama de dispersión es otro tipo de visualización. Por lo general, utiliza círculos para asignar puntos de datos, que tienen dos valores cada uno. Estos valores se vinculan con los ejes <code>x</code> e <code>y</code> , y se utilizan para colocar el círculo en la visualización. 
-SVG tiene una etiqueta <code>circle</code> para crear la forma del círculo. Funciona mucho como los elementos <code>rect</code> que <code>rect</code> para el gráfico de barras. 
-</section>
+<section id="description"> Un diagrama de dispersión es otro tipo de visualización. Por lo general, utiliza círculos para asignar puntos de datos, que tienen dos valores cada uno. Estos valores se vinculan con los ejes <code>x</code> e <code>y</code> , y se utilizan para colocar el círculo en la visualización. SVG tiene una etiqueta <code>circle</code> para crear la forma del círculo. Funciona mucho como los elementos <code>rect</code> que <code>rect</code> para el gráfico de barras. </section>
 
 ## Instructions
-<section id='instructions'> 
-Use los métodos <code>data()</code> , <code>enter()</code> y <code>append()</code> para vincular el <code>dataset</code> de <code>dataset</code> a los nuevos elementos del <code>circle</code> que se agregan al lienzo de SVG. 
-<strong>Nota</strong> <br> Los círculos no serán visibles porque todavía no hemos establecido sus atributos. Lo haremos en el próximo reto. 
-</section>
+<section id="instructions"> Use los métodos <code>data()</code> , <code>enter()</code> y <code>append()</code> para vincular el <code>dataset</code> de <code>dataset</code> a los nuevos elementos del <code>circle</code> que se agregan al lienzo de SVG. <strong>Nota</strong> <br> Los círculos no serán visibles porque todavía no hemos establecido sus atributos. Lo haremos en el próximo reto. </section>
 
 ## Tests
 <section id='tests'>
@@ -70,6 +65,7 @@ tests:
 
   </script>
 </body>
+
 ```
 
 </div>

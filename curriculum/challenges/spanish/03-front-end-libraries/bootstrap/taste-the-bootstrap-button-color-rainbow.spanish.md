@@ -1,20 +1,16 @@
 ---
 id: bad87fee1348cd8acef08811
 title: Taste the Bootstrap Button Color Rainbow
-localeTitle: Prueba el botín Bootstrap Color del arco iris
 challengeType: 0
+videoUrl: ''
+localeTitle: Prueba el botín Bootstrap Color del arco iris
 ---
 
 ## Description
-<section id='description'> 
-La clase <code>btn-primary</code> es el color principal que usarás en tu aplicación. Es útil para resaltar las acciones que desea que su usuario realice. 
-Reemplace la clase <code>btn-default</code> Bootstrap por <code>btn-primary</code> en su botón. 
-Tenga en cuenta que este botón todavía necesitará las clases <code>btn</code> y <code>btn-block</code> . 
-</section>
+<section id="description"> La clase <code>btn-primary</code> es el color principal que usarás en tu aplicación. Es útil para resaltar las acciones que desea que su usuario realice. Reemplace la clase <code>btn-default</code> Bootstrap por <code>btn-primary</code> en su botón. Tenga en cuenta que este botón todavía necesitará las clases <code>btn</code> y <code>btn-block</code> . </section>
 
 ## Instructions
-<section id='instructions'> 
-
+<section id="instructions">
 </section>
 
 ## Tests
@@ -97,6 +93,7 @@ tests:
     <button type="submit">Submit</button>
   </form>
 </div>
+
 ```
 
 </div>

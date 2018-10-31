@@ -1,20 +1,16 @@
 ---
-id: 5
-localeTitle: 5900f3fe1000cf542c50ff11
+id: 5900f3fe1000cf542c50ff11
 challengeType: 5
 title: 'Problem 146: Investigating a Prime Pattern'
+videoUrl: ''
+localeTitle: 'Problema 146: Investigando un patrón Prime'
 ---
 
 ## Description
-<section id='description'> 
-El entero positivo más pequeño n para el cual los números n2 + 1, n2 + 3, n2 + 7, n2 + 9, n2 + 13 y n2 + 27 son primos consecutivos es 10. La suma de todos los enteros de este tipo n debajo de uno es millón es 1242490. 
-
-¿Cuál es la suma de todos estos enteros n por debajo de 150 millones? 
-</section>
+<section id="description"> El entero positivo n más pequeño para el que los números n2 + 1, n2 + 3, n2 + 7, n2 + 9, n2 + 13 y n2 + 27 son primos consecutivos es 10. La suma de todos estos enteros n es inferior a un millón es 1242490. <p> ¿Cuál es la suma de todos estos enteros n debajo de 150 millones? </p></section>
 
 ## Instructions
-<section id='instructions'> 
-
+<section id="instructions">
 </section>
 
 ## Tests
@@ -41,6 +37,7 @@ function euler146() {
 }
 
 euler146();
+
 ```
 
 </div>

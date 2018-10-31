@@ -1,39 +1,16 @@
 ---
-id: 5
-localeTitle: 5900f5021000cf542c510014
+id: 5900f5021000cf542c510014
 challengeType: 5
 title: 'Problem 405: A rectangular tiling'
+videoUrl: ''
+localeTitle: 'Problema 405: un mosaico rectangular'
 ---
 
 ## Description
-<section id='description'> 
-Queremos embaldosar un rectángulo cuya longitud es el doble de su ancho. 
-Sea T (0) el mosaico que consiste en un solo rectángulo. 
-Para n&gt; 0, obtenga T (n) de T (n-1) reemplazando todos los mosaicos de la siguiente manera: 
-
-
-
-
-
-
-La siguiente animación muestra las inclinaciones T (n) para n desde 0 a 5: 
-
-
-
-
-
-
-Sea f (n) el número de puntos donde se encuentran cuatro mosaicos en T (n). 
-Por ejemplo, f (1) = 0, f (4) = 82 y f (109) mod 177 = 126897180. 
-
-
-
-Encuentre f (10k) para k = 1018, dé su respuesta módulo 177. 
-</section>
+<section id="description"> Queremos embaldosar un rectángulo cuya longitud es el doble de su ancho. Sea T (0) el mosaico que consiste en un solo rectángulo. Para n&gt; 0, obtenga T (n) de T (n-1) reemplazando todos los mosaicos de la siguiente manera: <p> La siguiente animación muestra las inclinaciones T (n) para n de 0 a 5: </p><p> Sea f (n) el número de puntos donde se encuentran cuatro mosaicos en T (n). Por ejemplo, f (1) = 0, f (4) = 82 y f (109) mod 177 = 126897180. </p><p> Encuentra f (10k) para k = 1018, da tu respuesta módulo 177. </p></section>
 
 ## Instructions
-<section id='instructions'> 
-
+<section id="instructions">
 </section>
 
 ## Tests
@@ -60,6 +37,7 @@ function euler405() {
 }
 
 euler405();
+
 ```
 
 </div>

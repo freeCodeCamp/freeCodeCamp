@@ -1,23 +1,16 @@
 ---
-id: 5
-localeTitle: 5900f4941000cf542c50ffa7
+id: 5900f4941000cf542c50ffa7
 challengeType: 5
 title: 'Problem 296: Angular Bisector and Tangent'
+videoUrl: ''
+localeTitle: 'Problema 296: Bisectriz angular y tangente'
 ---
 
 ## Description
-<section id='description'> 
-Dado es un triángulo de lado entero ABC con BC ≤ AC ≤ AB.k es la bisectriz angular del ángulo ACB.m es la tangente en C al círculo circunscrito de ABC.n es una línea paralela de m a B. 
-La intersección de n y k se llama E. 
-
-
-
-¿Cuántos triángulos ABC con un perímetro que no exceda de 100 000 existen de modo que BE tenga una longitud integral? 
-</section>
+<section id="description"> Dado es un triángulo de lados enteros ABC con BC ≤ AC ≤ AB.k es la bisectriz angular del ángulo ACB.m es la tangente en C al círculo circunscrito de ABC.n es una línea paralela de m a B. La intersección de n yk se llama E. <p> ¿Cuántos triángulos ABC con un perímetro que no exceda de 100 000 existen de modo que BE tenga una longitud integral? </p></section>
 
 ## Instructions
-<section id='instructions'> 
-
+<section id="instructions">
 </section>
 
 ## Tests
@@ -44,6 +37,7 @@ function euler296() {
 }
 
 euler296();
+
 ```
 
 </div>

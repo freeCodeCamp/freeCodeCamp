@@ -1,21 +1,16 @@
 ---
 id: 56533eb9ac21ba0edf2244d7
 title: Comparison with the Less Than Or Equal To Operator
-localeTitle: Comparación con el operador menor o igual que
 challengeType: 1
+videoUrl: ''
+localeTitle: Comparación con el operador menor o igual que
 ---
 
 ## Description
-<section id='description'> 
-El operador <code>less than or equal to</code> ( <code>&lt;=</code> ) compara los valores de dos números. Si el número a la izquierda es menor o igual que el número a la derecha, devuelve <code>true</code> . Si el número de la izquierda es mayor que el de la derecha, devuelve <code>false</code> . Al igual que el operador de igualdad, <code>less than or equal to</code> convierte los tipos de datos. 
-<strong>ejemplos</strong> 
-<blockquote>4 &lt;= 5  // true<br>'7' &lt;= 7  // true<br>5 &lt;= 5  // true<br>3 &lt;= 2  // false<br>'8' &lt;= 4  // false</blockquote> 
-</section>
+<section id="description"> El operador <code>less than or equal to</code> ( <code>&lt;=</code> ) compara los valores de dos números. Si el número a la izquierda es menor o igual que el número a la derecha, devuelve <code>true</code> . Si el número de la izquierda es mayor que el de la derecha, devuelve <code>false</code> . Al igual que el operador de igualdad, <code>less than or equal to</code> convierte los tipos de datos. <strong>Ejemplos</strong> <blockquote> 4 &lt;= 5 // verdadero <br> &#39;7&#39; &lt;= 7 // verdadero <br> 5 &lt;= 5 // verdadero <br> 3 &lt;= 2 // falso <br> &#39;8&#39; &lt;= 4 // falso </blockquote></section>
 
 ## Instructions
-<section id='instructions'> 
-Agregue el operador <code>less than or equal to</code> las líneas indicadas para que las declaraciones de devolución tengan sentido. 
-</section>
+<section id="instructions"> Agregue el operador <code>less than or equal to</code> las líneas indicadas para que las declaraciones de devolución tengan sentido. </section>
 
 ## Tests
 <section id='tests'>
@@ -75,19 +70,7 @@ testLessOrEqual(10);
 ## Solution
 <section id='solution'>
 
-
 ```js
-function testLessOrEqual(val) {
-  if (val <= 12) {  // Change this line
-    return "Smaller Than or Equal to 12";
-  }
-
-  if (val <= 24) {  // Change this line
-    return "Smaller Than or Equal to 24";
-  }
-
-  return "More Than 24";
-}
+// solution required
 ```
-
 </section>

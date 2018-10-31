@@ -1,21 +1,16 @@
 ---
 id: 5a858944d96184f06fd60d61
 title: Create Your First CSS Grid
-localeTitle: Crea tu primera cuadrícula CSS
 challengeType: 0
 videoUrl: ''
+localeTitle: Crea tu primera cuadrícula CSS
 ---
 
 ## Description
-<section id='description'> 
-Convierta cualquier elemento HTML en un contenedor de cuadrícula estableciendo su propiedad de <code>display</code> en <code>grid</code> . Esto le da la posibilidad de usar todas las demás propiedades asociadas con CSS Grid. 
-<strong>Nota</strong> <br> En CSS Grid, el elemento padre se conoce como el <dfn>contenedor</dfn> y sus hijos se denominan <dfn>elementos</dfn> . 
-</section>
+<section id="description"> Convierta cualquier elemento HTML en un contenedor de cuadrícula estableciendo su propiedad de <code>display</code> en <code>grid</code> . Esto le da la posibilidad de usar todas las demás propiedades asociadas con CSS Grid. <strong>Nota</strong> <br> En CSS Grid, el elemento padre se conoce como el <dfn>contenedor</dfn> y sus hijos se denominan <dfn>elementos</dfn> . </section>
 
 ## Instructions
-<section id='instructions'> 
-Cambie la visualización del div con la clase de <code>container</code> a <code>grid</code> . 
-</section>
+<section id="instructions"> Cambia la visualización del div con la clase de <code>container</code> a la <code>grid</code> . </section>
 
 ## Tests
 <section id='tests'>
@@ -60,6 +55,7 @@ tests:
   <div class="d4">4</div>
   <div class="d5">5</div>
 </div>
+
 ```
 
 </div>
@@ -71,9 +67,7 @@ tests:
 ## Solution
 <section id='solution'>
 
-
 ```js
-var code = ".container {display: grid;}"
+// solution required
 ```
-
 </section>

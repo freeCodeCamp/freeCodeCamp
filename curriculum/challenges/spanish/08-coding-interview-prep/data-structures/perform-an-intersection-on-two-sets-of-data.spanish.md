@@ -1,19 +1,16 @@
 ---
 id: 587d8253367417b2b2512c6d
 title: Perform an Intersection on Two Sets of Data
-localeTitle: Realizar una intersección en dos conjuntos de datos
 challengeType: 1
+videoUrl: ''
+localeTitle: Realizar una intersección en dos conjuntos de datos
 ---
 
 ## Description
-<section id='description'> 
-En este ejercicio vamos a realizar una intersección en 2 conjuntos de datos. Crearemos un método en nuestra estructura de datos del <code>Set</code> llamada <code>intersection</code> . Una intersección de conjuntos representa todos los valores que son comunes a dos o más conjuntos. Este método debe tomar otro <code>Set</code> como argumento y devolver la <code>intersection</code> de los dos conjuntos. 
-Por ejemplo, si <code>setA = [&#39;a&#39;,&#39;b&#39;,&#39;c&#39;]</code> y <code>setB = [&#39;a&#39;,&#39;b&#39;,&#39;d&#39;,&#39;e&#39;]</code> , entonces la intersección de setA y setB es: <code>setA.intersection(setB) = [&#39;a&#39;, &#39;b&#39;]</code> . 
-</section>
+<section id="description"> En este ejercicio vamos a realizar una intersección en 2 conjuntos de datos. Crearemos un método en nuestra estructura de datos del <code>Set</code> llamada <code>intersection</code> . Una intersección de conjuntos representa todos los valores que son comunes a dos o más conjuntos. Este método debe tomar otro <code>Set</code> como argumento y devolver la <code>intersection</code> de los dos conjuntos. Por ejemplo, si <code>setA = [&#39;a&#39;,&#39;b&#39;,&#39;c&#39;]</code> y <code>setB = [&#39;a&#39;,&#39;b&#39;,&#39;d&#39;,&#39;e&#39;]</code> , entonces la intersección de setA y setB es: <code>setA.intersection(setB) = [&#39;a&#39;, &#39;b&#39;]</code> . </section>
 
 ## Instructions
-<section id='instructions'> 
-
+<section id="instructions">
 </section>
 
 ## Tests
@@ -84,6 +81,7 @@ function Set() {
     // change code below this line
     // change code above this line
 }
+
 ```
 
 </div>
@@ -95,9 +93,7 @@ function Set() {
 ## Solution
 <section id='solution'>
 
-
 ```js
-function Set() {var collection = []; this.has = function(e){return(collection.indexOf(e) !== -1);};this.values = function() {return collection;};this.add = function(element) {if (!this.has(element)) {collection.push(element);return true;} else {return false;}};this.remove = function(element) {if(this.has(element)) {var i = collection.indexOf(element);collection.splice(i, 1);return true;}return false;};this.size = function() {return collection.length;};this.union = function(set) {var u = new Set();var c = this.values();var s = set.values();c.forEach(function(element){u.add(element);});s.forEach(function(element){u.add(element);});return u;};this.intersection = function(set) {var i = new Set();var c = this.values();c.forEach(function(element){if(s.has(element)) i.add(element);});};}
+// solution required
 ```
-
 </section>

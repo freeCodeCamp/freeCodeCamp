@@ -1,20 +1,16 @@
 ---
-id: 5
-localeTitle: 5900f43f1000cf542c50ff52
+id: 5900f43f1000cf542c50ff52
 challengeType: 5
 title: 'Problem 211: Divisor Square Sum'
+videoUrl: ''
+localeTitle: 'Problema 211: Divisor Cuadrado Suma'
 ---
 
 ## Description
-<section id='description'> 
-Para un entero positivo n, sea σ2 (n) la suma de los cuadrados de sus divisores. Por ejemplo, 
-σ2 (10) = 1 + 4 + 25 + 100 = 130. 
-Halla la suma de todos n, 0 &lt;n &lt;64,000,000 de manera que σ2 (n) sea un cuadrado perfecto. 
-</section>
+<section id="description"> Para un entero positivo n, sea σ2 (n) la suma de los cuadrados de sus divisores. Por ejemplo, σ2 (10) = 1 + 4 + 25 + 100 = 130. Encuentre la suma de todos n, 0 &lt;n &lt;64,000,000 de manera que σ2 (n) sea un cuadrado perfecto. </section>
 
 ## Instructions
-<section id='instructions'> 
-
+<section id="instructions">
 </section>
 
 ## Tests
@@ -41,6 +37,7 @@ function euler211() {
 }
 
 euler211();
+
 ```
 
 </div>

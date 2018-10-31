@@ -1,24 +1,16 @@
 ---
-id: 5
-localeTitle: 5900f4311000cf542c50ff43
+id: 5900f4311000cf542c50ff43
 challengeType: 5
 title: 'Problem 195: Inscribed circles of triangles with one angle of 60 degrees'
+videoUrl: ''
+localeTitle: 'Problema 195: círculos inscritos de triángulos con un ángulo de 60 grados'
 ---
 
 ## Description
-<section id='description'> 
-Llamemos a un triángulo de lados enteros con exactamente un ángulo de 60 grados a un triángulo de 60 grados. 
-Sea r el radio del círculo inscrito de un triángulo de 60 grados. 
-Hay 1234 triángulos de 60 grados para los que r ≤ 100. 
-Sea T (n) el número de triángulos de 60 grados para los que r ≤ n, entonces 
-T (100) = 1234, T (1000) = 22767, y T (10000) = 359912. 
-
-Encuentre T (1053779). 
-</section>
+<section id="description"> Llamemos a un triángulo de lados enteros con exactamente un ángulo de 60 grados a un triángulo de 60 grados. Sea r el radio del círculo inscrito de un triángulo de 60 grados. Hay 1234 triángulos de 60 grados para los que r ≤ 100. Sea T (n) el número de triángulos de 60 grados para los que r ≤ n, entonces T (100) = 1234, T (1000) = 22767 y T ( 10000) = 359912. <p> Encuentra T (1053779). </p></section>
 
 ## Instructions
-<section id='instructions'> 
-
+<section id="instructions">
 </section>
 
 ## Tests
@@ -45,6 +37,7 @@ function euler195() {
 }
 
 euler195();
+
 ```
 
 </div>

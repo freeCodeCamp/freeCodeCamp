@@ -1,20 +1,16 @@
 ---
 id: 587d8257367417b2b2512c7c
 title: Check if an Element is Present in a Binary Search Tree
-localeTitle: Compruebe si un elemento está presente en un árbol de búsqueda binario
 challengeType: 1
+videoUrl: ''
+localeTitle: Compruebe si un elemento está presente en un árbol de búsqueda binario
 ---
 
 ## Description
-<section id='description'> 
-Ahora que tenemos una idea general de lo que es un árbol de búsqueda binario, hablemos de ello con un poco más de detalle. Los árboles de búsqueda binarios proporcionan tiempo logarítmico para las operaciones comunes de búsqueda, inserción y eliminación en el caso promedio, y el tiempo lineal en el peor de los casos. ¿Por qué es esto? Cada una de esas operaciones básicas nos obliga a encontrar un elemento en el árbol (o en el caso de la inserción para encontrar dónde debe ir) y debido a la estructura de árbol en cada nodo principal, estamos bifurcando a la izquierda o la derecha y excluyendo efectivamente la mitad del tamaño del árbol restante. Esto hace que la búsqueda sea proporcional al logaritmo del número de nodos en el árbol, lo que crea el tiempo logarítmico para estas operaciones en el caso promedio. 
-Ok, pero ¿qué pasa con el peor de los casos? Bueno, considere construir un árbol a partir de los siguientes valores, agregándolos de izquierda a derecha: <code>10</code> , <code>12</code> , <code>17</code> , <code>25</code> . Siguiendo nuestras reglas para un árbol de búsqueda binario, agregaremos <code>12</code> a la derecha de <code>10</code> , <code>17</code> a la derecha de este, y <code>25</code> a la derecha de este. Ahora nuestro árbol se asemeja a una lista enlazada y recorrerla para encontrar <code>25</code> requeriría que recorriéramos todos los elementos de manera lineal. Por lo tanto, el tiempo lineal en el peor de los casos. El problema aquí es que el árbol está desequilibrado. Veremos un poco más sobre lo que esto significa en los siguientes desafíos. 
-Instrucciones: En este desafío, crearemos una utilidad para nuestro árbol. Escriba un método <code>isPresent</code> que toma un valor entero como entrada y devuelve un valor booleano para la presencia o ausencia de ese valor en el árbol de búsqueda binario. 
-</section>
+<section id="description"> Ahora que tenemos una idea general de lo que es un árbol de búsqueda binario, hablemos de ello con un poco más de detalle. Los árboles de búsqueda binarios proporcionan tiempo logarítmico para las operaciones comunes de búsqueda, inserción y eliminación en el caso promedio, y el tiempo lineal en el peor de los casos. ¿Por qué es esto? Cada una de esas operaciones básicas nos obliga a encontrar un elemento en el árbol (o en el caso de la inserción para encontrar dónde debe ir) y debido a la estructura de árbol en cada nodo principal, estamos bifurcando a la izquierda o la derecha y excluyendo efectivamente la mitad del tamaño del árbol restante. Esto hace que la búsqueda sea proporcional al logaritmo del número de nodos en el árbol, lo que crea el tiempo logarítmico para estas operaciones en el caso promedio. Ok, pero ¿qué pasa con el peor de los casos? Bueno, considere construir un árbol a partir de los siguientes valores, agregándolos de izquierda a derecha: <code>10</code> , <code>12</code> , <code>17</code> , <code>25</code> . Siguiendo nuestras reglas para un árbol de búsqueda binario, agregaremos <code>12</code> a la derecha de <code>10</code> , <code>17</code> a la derecha de este, y <code>25</code> a la derecha de este. Ahora nuestro árbol se asemeja a una lista enlazada y recorrerla para encontrar <code>25</code> requeriría que recorriéramos todos los elementos de manera lineal. Por lo tanto, el tiempo lineal en el peor de los casos. El problema aquí es que el árbol está desequilibrado. Veremos un poco más sobre lo que esto significa en los siguientes desafíos. Instrucciones: En este desafío, crearemos una utilidad para nuestro árbol. Escriba un método <code>isPresent</code> que toma un valor entero como entrada y devuelve un valor booleano para la presencia o ausencia de ese valor en el árbol de búsqueda binario. </section>
 
 ## Instructions
-<section id='instructions'> 
-
+<section id="instructions">
 </section>
 
 ## Tests
@@ -52,6 +48,7 @@ function BinarySearchTree() {
     // change code below this line
     // change code above this line
 }
+
 ```
 
 </div>

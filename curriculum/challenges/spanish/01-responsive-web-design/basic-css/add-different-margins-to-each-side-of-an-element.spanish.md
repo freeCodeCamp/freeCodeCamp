@@ -1,21 +1,16 @@
 ---
 id: bad87fee1248bd9aedf08824
 title: Add Different Margins to Each Side of an Element
-localeTitle: Añadir diferentes márgenes a cada lado de un elemento
 challengeType: 0
 videoUrl: ''
+localeTitle: Añadir diferentes márgenes a cada lado de un elemento
 ---
 
 ## Description
-<section id='description'> 
-A veces querrá personalizar un elemento para que tenga un <code>margin</code> diferente en cada uno de sus lados. 
-CSS le permite controlar el <code>margin</code> de los cuatro lados individuales de un elemento con las propiedades <code>margin-top</code> , <code>margin-right</code> , <code>margin-bottom</code> y <code>margin-left</code> . 
-</section>
+<section id="description"> A veces querrá personalizar un elemento para que tenga un <code>margin</code> diferente en cada uno de sus lados. CSS le permite controlar el <code>margin</code> de los cuatro lados individuales de un elemento con las propiedades <code>margin-top</code> , <code>margin-right</code> , <code>margin-bottom</code> y <code>margin-left</code> . </section>
 
 ## Instructions
-<section id='instructions'> 
-Dé a la caja azul un <code>margin</code> de <code>40px</code> en su lado superior e izquierdo, pero solo <code>20px</code> en su lado inferior y derecho. 
-</section>
+<section id="instructions"> Dé a la caja azul un <code>margin</code> de <code>40px</code> en su lado superior e izquierdo, pero solo <code>20px</code> en su lado inferior y derecho. </section>
 
 ## Tests
 <section id='tests'>
@@ -79,6 +74,7 @@ tests:
   <h5 class="box red-box">padding</h5>
   <h5 class="box blue-box">padding</h5>
 </div>
+
 ```
 
 </div>

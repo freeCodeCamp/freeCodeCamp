@@ -1,20 +1,16 @@
 ---
 id: 56533eb9ac21ba0edf2244b8
 title: Concatenating Strings with the Plus Equals Operator
-localeTitle: Concatenando cadenas con el operador Plus Equals
 challengeType: 1
+videoUrl: ''
+localeTitle: Concatenando cadenas con el operador Plus Equals
 ---
 
 ## Description
-<section id='description'> 
-También podemos usar el operador <code>+=</code> para <dfn>concatenar</dfn> una cadena al final de una variable de cadena existente. Esto puede ser muy útil para romper una cadena larga en varias líneas. 
-<strong>Nota</strong> <br> Cuidado con los espacios. La concatenación no agrega espacios entre las cadenas concatenadas, por lo que deberá agregarlas usted mismo. 
-</section>
+<section id="description"> También podemos usar el operador <code>+=</code> para <dfn>concatenar</dfn> una cadena al final de una variable de cadena existente. Esto puede ser muy útil para romper una cadena larga en varias líneas. <strong>Nota</strong> <br> Cuidado con los espacios. La concatenación no agrega espacios entre las cadenas concatenadas, por lo que deberá agregarlas usted mismo. </section>
 
 ## Instructions
-<section id='instructions'> 
-Construya <code>myStr</code> en varias líneas concatenando estas dos cadenas: <code>&quot;This is the first sentence. &quot;</code> y <code>&quot;This is the second sentence.&quot;</code> utilizando el operador <code>+=</code> . Utilice el operador <code>+=</code> similar a como se muestra en el editor. Comience por asignar la primera cadena a <code>myStr</code> , luego agregue la segunda cadena. 
-</section>
+<section id="instructions"> Construya <code>myStr</code> en varias líneas concatenando estas dos cadenas: <code>&quot;This is the first sentence. &quot;</code> y <code>&quot;This is the second sentence.&quot;</code> utilizando el operador <code>+=</code> . Utilice el operador <code>+=</code> similar a como se muestra en el editor. Comience por asignar la primera cadena a <code>myStr</code> , luego agregue la segunda cadena. </section>
 
 ## Tests
 <section id='tests'>
@@ -44,7 +40,6 @@ ourStr += "I come second.";
 
 var myStr;
 
-
 ```
 
 </div>
@@ -64,13 +59,7 @@ console.info('after the test');
 ## Solution
 <section id='solution'>
 
-
 ```js
-var ourStr = "I come first. ";
-ourStr += "I come second.";
-
-var myStr = "This is the first sentence. ";
-myStr += "This is the second sentence.";
+// solution required
 ```
-
 </section>

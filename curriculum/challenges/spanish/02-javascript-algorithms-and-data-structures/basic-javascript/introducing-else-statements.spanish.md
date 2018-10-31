@@ -1,20 +1,16 @@
 ---
 id: 56533eb9ac21ba0edf2244da
 title: Introducing Else Statements
-localeTitle: Introduciendo otras declaraciones
 challengeType: 1
+videoUrl: ''
+localeTitle: Introduciendo otras declaraciones
 ---
 
 ## Description
-<section id='description'> 
-Cuando una condición para una sentencia <code>if</code> es verdadera, se ejecuta el bloque de código siguiente. ¿Qué pasa cuando esa condición es falsa? Normalmente no pasaría nada. Con una sentencia <code>else</code> , se puede ejecutar un bloque de código alternativo. 
-<blockquote>if (num > 10) {<br>&nbsp;&nbsp;return "Bigger than 10";<br>} else {<br>&nbsp;&nbsp;return "10 or Less";<br>}</blockquote> 
-</section>
+<section id="description"> Cuando una condición para una sentencia <code>if</code> es verdadera, se ejecuta el bloque de código siguiente. ¿Qué pasa cuando esa condición es falsa? Normalmente no pasaría nada. Con una sentencia <code>else</code> , se puede ejecutar un bloque de código alternativo. <blockquote> if (num&gt; 10) { <br> devuelve &quot;Más grande que 10&quot;; <br> } else { <br> devuelve &quot;10 o menos&quot;; <br> } </blockquote></section>
 
 ## Instructions
-<section id='instructions'> 
-Combine las sentencias <code>if</code> en una sola sentencia <code>if/else</code> . 
-</section>
+<section id="instructions"> Combine las declaraciones <code>if</code> en una sola instrucción <code>if/else</code> . </section>
 
 ## Tests
 <section id='tests'>
@@ -76,17 +72,7 @@ testElse(4);
 ## Solution
 <section id='solution'>
 
-
 ```js
-function testElse(val) {
-  var result = "";
-  if(val > 5) {
-    result = "Bigger than 5";
-  } else {
-    result = "5 or Smaller";
-  }
-  return result;
-}
+// solution required
 ```
-
 </section>

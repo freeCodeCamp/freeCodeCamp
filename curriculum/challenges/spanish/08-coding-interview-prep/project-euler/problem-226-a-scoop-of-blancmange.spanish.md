@@ -1,27 +1,16 @@
 ---
-id: 5
-localeTitle: 5900f4511000cf542c50ff62
+id: 5900f4511000cf542c50ff62
 challengeType: 5
 title: 'Problem 226: A Scoop of Blancmange'
+videoUrl: ''
+localeTitle: 'Problema 226: Una cucharada de cambio de color'
 ---
 
 ## Description
-<section id='description'> 
-La curva de rango de blanco es el conjunto de puntos (x, y) de manera que 0 ≤ x ≤ 1 y, donde s (x) = la distancia de x al entero más cercano. 
-
-El área bajo la curva de rango de blanco es igual a ½, que se muestra en rosa en el siguiente diagrama. 
-
-
-
-
-Sea C el círculo con el centro (¼, ½) y el radio ¼, que se muestra en negro en el diagrama. 
-
-¿Qué área bajo la curva de rango de blanco está encerrada por C? Da tu respuesta redondeada a ocho lugares decimales en la forma 0.abcdefgh 
-</section>
+<section id="description"> La curva de rango de blanco es el conjunto de puntos (x, y) de manera que 0 ≤ x ≤ 1 y, donde s (x) = la distancia de x al entero más cercano. <p> El área bajo la curva de rango de blanco es igual a ½, que se muestra en rosa en el diagrama a continuación. </p><p> Sea C el círculo con el centro (¼, ½) y el radio ¼, que se muestra en negro en el diagrama. </p><p> ¿Qué área bajo la curva de rango de blanco está encerrada por C? Da tu respuesta redondeada a ocho lugares decimales en la forma 0.abcdefgh </p></section>
 
 ## Instructions
-<section id='instructions'> 
-
+<section id="instructions">
 </section>
 
 ## Tests
@@ -48,6 +37,7 @@ function euler226() {
 }
 
 euler226();
+
 ```
 
 </div>

@@ -1,20 +1,16 @@
 ---
-id: 5
-localeTitle: 5900f4801000cf542c50ff93
+id: 5900f4801000cf542c50ff93
 challengeType: 5
 title: 'Problem 276: Primitive Triangles'
+videoUrl: ''
+localeTitle: 'Problema 276: triángulos primitivos'
 ---
 
 ## Description
-<section id='description'> 
-Considera los triángulos con lados enteros a, b y c con a ≤ b ≤ c. 
-Un triángulo de un lado entero (a, b, c) se llama primitivo si gcd (a, b, c) = 1. 
-¿Cuántos triángulos de lados enteros primitivos existen con un perímetro que no exceda de 10 000 000? 
-</section>
+<section id="description"> Considera los triángulos con lados enteros a, b y c con a ≤ b ≤ c. Un triángulo de lados enteros (a, b, c) se llama primitivo si gcd (a, b, c) = 1. ¿Cuántos triángulos de lados enteros primitivos existen con un perímetro que no exceda de 10 000 000? </section>
 
 ## Instructions
-<section id='instructions'> 
-
+<section id="instructions">
 </section>
 
 ## Tests
@@ -41,6 +37,7 @@ function euler276() {
 }
 
 euler276();
+
 ```
 
 </div>

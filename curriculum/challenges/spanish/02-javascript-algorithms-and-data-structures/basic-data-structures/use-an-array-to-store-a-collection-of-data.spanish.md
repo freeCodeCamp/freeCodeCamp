@@ -1,23 +1,16 @@
 ---
 id: 587d7b7e367417b2b2512b20
 title: Use an Array to Store a Collection of Data
-localeTitle: Utilice una matriz para almacenar una colección de datos
 challengeType: 1
+videoUrl: ''
+localeTitle: Utilice una matriz para almacenar una colección de datos
 ---
 
 ## Description
-<section id='description'> 
-A continuación se muestra un ejemplo de la implementación más simple de una estructura de datos de matriz. Esto se conoce como una <dfn>matriz unidimensional</dfn> , lo que significa que solo tiene un nivel, o que no tiene ninguna otra matriz anidada dentro de ella. Observe que contiene <dfn>valores booleanos</dfn> , <dfn>cadenas</dfn> y <dfn>números</dfn> , entre otros tipos de datos de JavaScript válidos: 
-<blockquote>let simpleArray = ['one', 2, 'three’, true, false, undefined, null];<br>console.log(simpleArray.length);<br>// logs 7</blockquote> 
-Todas las matrices tienen una propiedad de longitud que, como se muestra arriba, se puede acceder muy fácilmente con la sintaxis <code>Array.length</code> . 
-Una implementación más compleja de una matriz se puede ver a continuación. Esto se conoce como una <dfn>matriz multidimensional</dfn> o una matriz que contiene otras matrices. Tenga en cuenta que esta matriz también contiene <dfn>objetos</dfn> JavaScript, que examinaremos detenidamente en nuestra próxima sección, pero por ahora, todo lo que necesita saber es que las matrices también son capaces de almacenar objetos complejos. 
-<blockquote>let complexArray = [<br>&nbsp;&nbsp;[<br>&nbsp;&nbsp;&nbsp;&nbsp;{<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;one: 1,<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;two: 2<br>&nbsp;&nbsp;&nbsp;&nbsp;},<br>&nbsp;&nbsp;&nbsp;&nbsp;{<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;three: 3,<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;four: 4<br>&nbsp;&nbsp;&nbsp;&nbsp;}<br>&nbsp;&nbsp;],<br>&nbsp;&nbsp;[<br>&nbsp;&nbsp;&nbsp;&nbsp;{<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;a: "a",<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;b: "b"<br>&nbsp;&nbsp;&nbsp;&nbsp;},<br>&nbsp;&nbsp;&nbsp;&nbsp;{<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;c: "c",<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;d: “d”<br>&nbsp;&nbsp;&nbsp;&nbsp;}<br>&nbsp;&nbsp;]<br>];</blockquote> 
-</section>
+<section id="description"> El siguiente es un ejemplo de la implementación más simple de una estructura de datos de matriz. Esto se conoce como una <dfn>matriz unidimensional</dfn> , lo que significa que solo tiene un nivel, o que no tiene ninguna otra matriz anidada dentro de ella. Observe que contiene <dfn>valores booleanos</dfn> , <dfn>cadenas</dfn> y <dfn>números</dfn> , entre otros tipos de datos de JavaScript válidos: <blockquote> deje simpleArray = [&#39;uno&#39;, 2, &#39;tres&#39;, verdadero, falso, indefinido, nulo]; <br> console.log (simpleArray.length); <br> // logs 7 </blockquote> Todas las matrices tienen una propiedad de longitud, que, como se muestra arriba, se puede acceder muy fácilmente con la sintaxis <code>Array.length</code> . Una implementación más compleja de una matriz se puede ver a continuación. Esto se conoce como una <dfn>matriz multidimensional</dfn> o una matriz que contiene otras matrices. Tenga en cuenta que esta matriz también contiene <dfn>objetos</dfn> JavaScript, que examinaremos detenidamente en nuestra próxima sección, pero por ahora, todo lo que necesita saber es que las matrices también son capaces de almacenar objetos complejos. <blockquote> deja complexArray = [ <br> El <br> { <br> uno 1, <br> dos: 2 <br> } <br> { <br> tres: 3, <br> cuatro: 4 <br> } <br> ] <br> El <br> { <br> a: &quot;a&quot;, <br> b: &quot;b&quot; <br> } <br> { <br> c: &quot;c&quot;, <br> d: &quot;d&quot; <br> } <br> ] <br> ]; </blockquote></section>
 
 ## Instructions
-<section id='instructions'> 
-Hemos definido una variable llamada <code>yourArray</code> . Complete la declaración asignando una matriz de al menos 5 elementos de longitud a la variable <code>yourArray</code> . Su matriz debe contener al menos una <dfn>cadena</dfn> , un <dfn>número</dfn> y un <dfn>booleano</dfn> . 
-</section>
+<section id="instructions"> Hemos definido una variable llamada <code>yourArray</code> . Complete la declaración asignando una matriz de al menos 5 elementos de longitud a la variable <code>yourArray</code> . Su matriz debe contener al menos una <dfn>cadena</dfn> , un <dfn>número</dfn> y un <dfn>booleano</dfn> . </section>
 
 ## Tests
 <section id='tests'>
@@ -26,13 +19,13 @@ Hemos definido una variable llamada <code>yourArray</code> . Complete la declara
 tests:
   - text: yourArray es una matriz
     testString: 'assert.strictEqual(Array.isArray(yourArray), true, "yourArray is an array");'
-  - text: <code class = "notranslate"> yourArray </code> tiene al menos 5 elementos
+  - text: <code>yourArray</code> tiene al menos 5 elementos de largo
     testString: 'assert.isAtLeast(yourArray.length, 5, "<code>yourArray</code> is at least 5 elements long");'
-  - text: <code class = "notranslate"> yourArray </code> contiene al menos un <code class = "notranslate"> boolean </code>
+  - text: <code>yourArray</code> contiene al menos un <code>boolean</code>
     testString: 'assert(yourArray.filter( el => typeof el === "boolean").length >= 1, "<code>yourArray</code> contains at least one <code>boolean</code>");'
-  - text: <code class = "notranslate"> yourArray </code> contiene al menos un <code class = "notranslate"> number </code>
+  - text: <code>yourArray</code> contiene al menos un <code>number</code>
     testString: 'assert(yourArray.filter( el => typeof el === "number").length >= 1, "<code>yourArray</code> contains at least one <code>number</code>");'
-  - text: <code class = "notranslate"> yourArray </code> contiene al menos una <code class = "notranslate"> string </code>
+  - text: <code>yourArray</code> contiene al menos una <code>string</code>
     testString: 'assert(yourArray.filter( el => typeof el === "string").length >= 1, "<code>yourArray</code> contains at least one <code>string</code>");'
 
 ```
@@ -46,6 +39,7 @@ tests:
 
 ```js
 let yourArray; // change this line
+
 ```
 
 </div>

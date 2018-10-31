@@ -1,23 +1,19 @@
 ---
 id: bad87fee1348bd9aedb08845
 title: Responsively Style Radio Buttons
-localeTitle: Botones de radio de estilo responsivo
 required:
   - link: 'https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.2.0/css/font-awesome.css'
     raw: true
 challengeType: 0
+videoUrl: ''
+localeTitle: Botones de radio de estilo responsivo
 ---
 
 ## Description
-<section id='description'> 
-También puede usar las clases <code>col-xs-*</code> en elementos de <code>form</code> ! De esta manera, nuestros botones de radio se distribuirán de manera uniforme en toda la página, independientemente de la resolución de la pantalla. 
-Anide ambos botones de radio dentro de un elemento <code>&lt;div class=&quot;row&quot;&gt;</code> . Luego anida cada uno de ellos dentro de un elemento <code>&lt;div class=&quot;col-xs-6&quot;&gt;</code> . 
-<strong>Nota:</strong> Como recordatorio, los botones de radio son elementos de <code>input</code> del tipo de <code>radio</code> . 
-</section>
+<section id="description"> ¡También puedes usar las clases <code>col-xs-*</code> en elementos de <code>form</code> ! De esta manera, nuestros botones de radio se distribuirán de manera uniforme en toda la página, independientemente de la resolución de la pantalla. Anida ambos botones de radio dentro de un elemento <code>&lt;div class=&quot;row&quot;&gt;</code> . Luego anida cada uno de ellos dentro de un elemento <code>&lt;div class=&quot;col-xs-6&quot;&gt;</code> . <strong>Nota:</strong> Como recordatorio, los botones de radio son elementos de <code>input</code> de tipo <code>radio</code> . </section>
 
 ## Instructions
-<section id='instructions'> 
-
+<section id="instructions">
 </section>
 
 ## Tests
@@ -99,6 +95,7 @@ tests:
     <button type="submit">Submit</button>
   </form>
 </div>
+
 ```
 
 </div>

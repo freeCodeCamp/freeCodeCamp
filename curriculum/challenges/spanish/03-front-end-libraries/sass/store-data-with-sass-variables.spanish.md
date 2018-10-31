@@ -1,26 +1,19 @@
 ---
 id: 587d7dbd367417b2b2512bb4
 title: Store Data with Sass Variables
-localeTitle: Almacenar datos con variables Sass
 required:
   - src: 'https://cdnjs.cloudflare.com/ajax/libs/sass.js/0.10.9/sass.sync.min.js'
     raw: true
 challengeType: 0
+videoUrl: ''
+localeTitle: Almacenar datos con variables Sass
 ---
 
 ## Description
-<section id='description'> 
-Una característica de Sass que es diferente de CSS es que utiliza variables. Se declaran y configuran para almacenar datos, de forma similar a JavaScript. 
-En JavaScript, las variables se definen utilizando las palabras clave <code>let</code> y <code>const</code> . En Sass, las variables comienzan con <code>$</code> seguido del nombre de la variable. 
-Aquí hay un par de ejemplos: 
-<blockquote>$main-fonts: Arial, sans-serif;<br>$headings-color: green;<br><br>//To use variables:<br>h1 {<br>&nbsp;&nbsp;font-family: $main-fonts;<br>&nbsp;&nbsp;color: $headings-color;<br>}</blockquote> 
-Un ejemplo en el que las variables son útiles es cuando varios elementos deben ser del mismo color. Si se cambia ese color, el único lugar para editar el código es el valor variable. 
-</section>
+<section id="description"> Una característica de Sass que es diferente de CSS es que utiliza variables. Se declaran y configuran para almacenar datos, de forma similar a JavaScript. En JavaScript, las variables se definen utilizando las palabras clave <code>let</code> y <code>const</code> . En Sass, las variables comienzan con <code>$</code> seguido del nombre de la variable. Aqui hay un par de ejemplos: <blockquote> $ main-fonts: Arial, sans-serif; <br> $ encabezados-color: verde; <br><br> // Para utilizar variables: <br> h1 { <br> familia de fuentes: $ main-fonts; <br> color: $ encabezados-color; <br> } </blockquote> Un ejemplo en el que las variables son útiles es cuando varios elementos deben ser del mismo color. Si se cambia ese color, el único lugar para editar el código es el valor variable. </section>
 
 ## Instructions
-<section id='instructions'> 
-Crea una variable <code>$text-color</code> y configúrala en rojo. Luego cambie el valor de la propiedad de <code>color</code> para <code>.blog-post</code> y <code>h2</code> a la variable <code>$text-color</code> . 
-</section>
+<section id="instructions"> Crea una variable <code>$text-color</code> y configúrala en rojo. Luego cambie el valor de la propiedad de <code>color</code> para <code>.blog-post</code> y <code>h2</code> a la variable <code>$text-color</code> . </section>
 
 ## Tests
 <section id='tests'>
@@ -70,6 +63,7 @@ tests:
   <h2>Here is another header</h2>
   <p>Even more random text within a paragraph</p>
 </div>
+
 ```
 
 </div>

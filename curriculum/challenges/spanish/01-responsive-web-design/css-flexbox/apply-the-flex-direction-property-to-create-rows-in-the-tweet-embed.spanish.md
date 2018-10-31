@@ -1,20 +1,16 @@
 ---
 id: 587d78ab367417b2b2512af3
 title: Apply the flex-direction Property to Create Rows in the Tweet Embed
-localeTitle: Aplique la propiedad de dirección flexible para crear filas en el Tweet Insertar
 challengeType: 0
 videoUrl: ''
+localeTitle: Aplique la propiedad de dirección flexible para crear filas en el Tweet Insertar
 ---
 
 ## Description
-<section id='description'> 
-El <code>header</code> y el <code>footer</code> de <code>footer</code> en el ejemplo de inserción de tweets tienen elementos secundarios que se podrían organizar como filas usando la propiedad de <code>flex-direction</code> . Esto le dice a CSS que alinee a los niños horizontalmente. 
-</section>
+<section id="description"> El <code>header</code> y el <code>footer</code> de <code>footer</code> en el ejemplo de inserción de tweets tienen elementos secundarios que podrían organizarse como filas usando la propiedad de <code>flex-direction</code> . Esto le dice a CSS que alinee a los niños horizontalmente. </section>
 
 ## Instructions
-<section id='instructions'> 
-Agregue la propiedad CSS <code>flex-direction</code> al <code>header</code> y al <code>footer</code> y establezca el valor en fila. 
-</section>
+<section id="instructions"> Agregue la propiedad CSS <code>flex-direction</code> al <code>header</code> y al <code>footer</code> y establezca el valor en fila. </section>
 
 ## Tests
 <section id='tests'>
@@ -127,6 +123,7 @@ tests:
     <button class="like-btn">Like</button>
   </div>
 </footer>
+
 ```
 
 </div>
@@ -138,9 +135,7 @@ tests:
 ## Solution
 <section id='solution'>
 
-
 ```js
-var code = "header {flex-direction: row;} footer {flex-direction: row;}"
+// solution required
 ```
-
 </section>

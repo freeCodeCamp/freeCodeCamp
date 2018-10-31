@@ -1,25 +1,16 @@
 ---
-id: 5
-localeTitle: 5900f3881000cf542c50fe9b
+id: 5900f3881000cf542c50fe9b
 challengeType: 5
 title: 'Problem 28: Number spiral diagonals'
+videoUrl: ''
+localeTitle: 'Problema 28: Número de diagonales en espiral'
 ---
 
 ## Description
-<section id='description'> 
-Comenzando con el número 1 y moviéndose hacia la derecha en el sentido de las agujas del reloj, se forma una espiral de 5 por 5 de la siguiente manera: 
-21 22 23 24 25 
-20 7 8 9 10 
-19 6 1 2 11 
-18 5 4 3 12 
-17 16 15 14 13 
-Se puede verificar que la suma de los números en las diagonales es 101. 
-¿Cuál es la suma de los números en las diagonales en una espiral by by n formada de la misma manera? 
-</section>
+<section id="description"> Comenzando con el número 1 y moviéndose hacia la derecha en el sentido de las agujas del reloj, se forma una espiral de 5 por 5 como sigue: 21 22 23 24 25 20 7 8 9 10 19 6 1 2 11 18 5 4 3 12 17 16 15 14 13 It se puede verificar que la suma de los números en las diagonales es 101. ¿Cuál es la suma de los números en las diagonales en una espiral by by n formada de la misma manera? </section>
 
 ## Instructions
-<section id='instructions'> 
-
+<section id="instructions">
 </section>
 
 ## Tests
@@ -52,6 +43,7 @@ function spiralDiagonals(n) {
 }
 
 spiralDiagonals(1001);
+
 ```
 
 </div>
@@ -63,18 +55,7 @@ spiralDiagonals(1001);
 ## Solution
 <section id='solution'>
 
-
 ```js
-const spiralDiagonals = (n) => {
-  const Sn2 = (n) => {
-    return n*(n+1)*(2*n+1)/6;
-  };
-  const Sn = (n) => {
-    return n*(n+1)/2;
-  };
-  let sum = (Sn2(n-1) + Sn(n-1) + n-1) + (Math.floor(n/2) + Sn2(n));
-  return sum;
-};
+// solution required
 ```
-
 </section>

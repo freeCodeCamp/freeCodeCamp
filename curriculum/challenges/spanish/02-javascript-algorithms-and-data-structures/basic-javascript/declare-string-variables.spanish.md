@@ -1,21 +1,16 @@
 ---
 id: bd7123c9c444eddfaeb5bdef
 title: Declare String Variables
-localeTitle: Declarar variables de cadena
 challengeType: 1
+videoUrl: ''
+localeTitle: Declarar variables de cadena
 ---
 
 ## Description
-<section id='description'> 
-Anteriormente hemos utilizado el código 
-<code>var myName = &quot;your name&quot;;</code> 
-<code>&quot;your name&quot;</code> se llama una <dfn>cadena</dfn> <dfn>literal</dfn> . Es una cadena porque es una serie de cero o más caracteres entre comillas simples o dobles. 
-</section>
+<section id="description"> Anteriormente hemos utilizado el código <code>var myName = &quot;your name&quot;;</code> <code>&quot;your name&quot;</code> se llama una <dfn>cadena</dfn> <dfn>literal</dfn> . Es una cadena porque es una serie de cero o más caracteres entre comillas simples o dobles. </section>
 
 ## Instructions
-<section id='instructions'> 
-Crea dos nuevas variables de <code>string</code> : <code>myFirstName</code> y <code>myLastName</code> y asigna los valores de tu nombre y apellido, respectivamente. 
-</section>
+<section id="instructions"> Cree dos nuevas variables de <code>string</code> : <code>myFirstName</code> y <code>myLastName</code> y asigne los valores de su nombre y apellido, respectivamente. </section>
 
 ## Tests
 <section id='tests'>
@@ -43,7 +38,6 @@ var lastName = "Turing";
 
 // Only change code below this line
 
-
 ```
 
 </div>
@@ -63,10 +57,7 @@ console.info('after the test');
 ## Solution
 <section id='solution'>
 
-
 ```js
-var myFirstName = "Alan";
-var myLastName = "Turing";
+// solution required
 ```
-
 </section>

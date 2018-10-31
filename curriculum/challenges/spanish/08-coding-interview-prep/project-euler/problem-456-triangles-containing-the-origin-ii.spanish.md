@@ -1,33 +1,16 @@
 ---
-id: 5
-localeTitle: 5900f5351000cf542c510047
+id: 5900f5351000cf542c510047
 challengeType: 5
 title: 'Problem 456: Triangles containing the origin II'
+videoUrl: ''
+localeTitle: 'Problema 456: Triángulos que contienen el origen II'
 ---
 
 ## Description
-<section id='description'> 
-Defina: xn = (1248n mod 32323) - 16161yn = (8421n mod 30103) - 15051 
-Pn = {(x1, y1), (x2, y2), ..., (xn, yn)} 
-
-
-For ejemplo, P8 = {(-14913, -6630), (-10161, 5625), (5226, 11896), (8340, -10778), (15852, -5203), (-15165, 11295), (-1427 , -14495), (12407, 1060)}. 
-
-Sea C (n) el número de triángulos cuyos vértices están en Pn que contienen el origen en el interior. 
-
-
-Ejemplos: 
-C (8) = 20 
-C (600) = 8950634 
-C (40 000) = 2666610948988 
-
-
-Encuentre C (2 000 000). 
-</section>
+<section id="description"> Defina: xn = (1248n mod 32323) - 16161yn = (8421n mod 30103) - 15051 Pn = {(x1, y1), (x2, y2), ..., (xn, yn)} <p> Por ejemplo, P8 = {(-14913, -6630), (-10161, 5625), (5226, 11896), (8340, -10778), (15852, -5203), (-15165, 11295), (- 1427, -14495), (12407, 1060)}. </p><p> Sea C (n) el número de triángulos cuyos vértices están en Pn que contienen el origen en el interior. </p><p> Ejemplos: C (8) = 20 C (600) = 8950634 C (40 000) = 2666610948988 </p><p> Encontrar C (2 000 000). </p></section>
 
 ## Instructions
-<section id='instructions'> 
-
+<section id="instructions">
 </section>
 
 ## Tests
@@ -54,6 +37,7 @@ function euler456() {
 }
 
 euler456();
+
 ```
 
 </div>

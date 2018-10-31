@@ -1,23 +1,18 @@
 ---
 id: 587d7fa7367417b2b2512bc6
 title: Add Inline Styling to Elements
-localeTitle: Añadir estilo en línea a los elementos
 required:
   - src: 'https://cdnjs.cloudflare.com/ajax/libs/d3/4.3.0/d3.min.js'
 challengeType: 6
+videoUrl: ''
+localeTitle: Añadir estilo en línea a los elementos
 ---
 
 ## Description
-<section id='description'> 
-D3 le permite agregar estilos CSS en línea en elementos dinámicos con el método <code>style()</code> . 
-El método <code>style()</code> toma un par clave-valor separado por comas como argumento. Aquí hay un ejemplo para establecer el color del texto de la selección en azul: 
-<code>selection.style(&quot;color&quot;,&quot;blue&quot;);</code> 
-</section>
+<section id="description"> D3 le permite agregar estilos CSS en línea en elementos dinámicos con el método <code>style()</code> . El método <code>style()</code> toma un par clave-valor separado por comas como argumento. Aquí hay un ejemplo para establecer el color del texto de la selección en azul: <code>selection.style(&quot;color&quot;,&quot;blue&quot;);</code> </section>
 
 ## Instructions
-<section id='instructions'> 
-Agregue el método <code>style()</code> al código en el editor para hacer que todo el texto mostrado tenga una <code>font-family</code> de <code>verdana</code> . 
-</section>
+<section id="instructions"> Agregue el método <code>style()</code> al código en el editor para hacer que todo el texto mostrado tenga una <code>font-family</code> de <code>verdana</code> . </section>
 
 ## Tests
 <section id='tests'>
@@ -55,6 +50,7 @@ tests:
       // Add your code above this line
   </script>
 </body>
+
 ```
 
 </div>

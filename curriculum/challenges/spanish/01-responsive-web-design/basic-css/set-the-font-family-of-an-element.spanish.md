@@ -1,22 +1,16 @@
 ---
 id: bad87fee1348bd9aede08807
 title: Set the Font Family of an Element
-localeTitle: Establecer la familia de fuentes de un elemento
 challengeType: 0
 videoUrl: ''
+localeTitle: Establecer la familia de fuentes de un elemento
 ---
 
 ## Description
-<section id='description'> 
-Puede establecer qué fuente debe usar un elemento, usando la propiedad <code>font-family</code> . 
-Por ejemplo, si quisiera establecer la fuente de su elemento <code>h2</code> en <code>sans-serif</code> , usaría el siguiente CSS: 
-<blockquote>h2 {<br>&nbsp;&nbsp;font-family: sans-serif;<br>}</blockquote> 
-</section>
+<section id="description"> Puede establecer qué fuente debe usar un elemento, usando la propiedad de <code>font-family</code> . Por ejemplo, si quisiera establecer la fuente de su elemento <code>h2</code> en <code>sans-serif</code> , usaría el siguiente CSS: <blockquote> h2 { <br> Familia tipográfica: sans-serif; <br> } </blockquote></section>
 
 ## Instructions
-<section id='instructions'> 
-Haz que todos tus elementos <code>p</code> usen la fuente <code>monospace</code> . 
-</section>
+<section id="instructions"> Haz que todos tus elementos <code>p</code> utilicen la fuente <code>monospace</code> . </section>
 
 ## Tests
 <section id='tests'>
@@ -77,6 +71,7 @@ tests:
     <button type="submit">Submit</button>
   </form>
 </main>
+
 ```
 
 </div>

@@ -1,18 +1,16 @@
 ---
-id: 5
-localeTitle: 5900f48f1000cf542c50ffa1
+id: 5900f48f1000cf542c50ffa1
 challengeType: 5
 title: 'Problem 290: Digital Signature'
+videoUrl: ''
+localeTitle: 'Problema 290: Firma digital'
 ---
 
 ## Description
-<section id='description'> 
-¿Cuántos enteros 0 ≤ n &lt;1018 tienen la propiedad de que la suma de los dígitos de n es igual a la suma de los dígitos de 137n? 
-</section>
+<section id="description"> ¿Cuántos enteros 0 ≤ n &lt;1018 tienen la propiedad de que la suma de los dígitos de n es igual a la suma de los dígitos de 137n? </section>
 
 ## Instructions
-<section id='instructions'> 
-
+<section id="instructions">
 </section>
 
 ## Tests
@@ -39,6 +37,7 @@ function euler290() {
 }
 
 euler290();
+
 ```
 
 </div>

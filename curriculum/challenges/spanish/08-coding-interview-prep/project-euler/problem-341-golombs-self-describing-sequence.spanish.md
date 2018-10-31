@@ -1,26 +1,16 @@
 ---
-id: 5
-localeTitle: 5900f4c11000cf542c50ffd3
+id: 5900f4c11000cf542c50ffd3
 challengeType: 5
 title: 'Problem 341: Golomb"s self-describing sequence'
+videoUrl: ''
+localeTitle: 'Problema 341: secuencia autodescriptiva de Golomb'
 ---
 
 ## Description
-<section id='description'> 
-La secuencia autodescriptiva de Golomb {G (n)} es la única secuencia no decreciente de números naturales, por lo que n aparece exactamente G (n) veces en la secuencia. Los valores de G (n) para los primeros n son 
-
-
-n123456789101112131415… G (n) 122334445556666… 
-
-Se le da que G (103) = 86, G (106) = 6137. 
-También se le da eso ΣG (n3) = 153506976 para 1 ≤ n &lt;103. 
-
-Encuentre ΣG (n3) para 1 ≤ n &lt;106. 
-</section>
+<section id="description"> La secuencia autodescriptiva de Golomb {G (n)} es la única secuencia no decreciente de números naturales, por lo que n aparece exactamente G (n) veces en la secuencia. Los valores de G (n) para los primeros n son <p> n123456789101112131415… G (n) 122334445556666… </p><p> Se le da que G (103) = 86, G (106) = 6137. También se le da que ΣG (n3) = 153506976 para 1 ≤ n &lt;103. </p><p> Encuentre ΣG (n3) para 1 ≤ n &lt;106. </p></section>
 
 ## Instructions
-<section id='instructions'> 
-
+<section id="instructions">
 </section>
 
 ## Tests
@@ -47,6 +37,7 @@ function euler341() {
 }
 
 euler341();
+
 ```
 
 </div>

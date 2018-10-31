@@ -1,20 +1,16 @@
 ---
 id: 587d78a5367417b2b2512ad8
 title: Create Texture by Adding a Subtle Pattern as a Background Image
-localeTitle: Crear textura agregando un patrón sutil como imagen de fondo
 challengeType: 0
 videoUrl: ''
+localeTitle: Crear textura agregando un patrón sutil como imagen de fondo
 ---
 
 ## Description
-<section id='description'> 
-Una forma de agregar textura e interés a un fondo y hacer que se destaque más es agregar un patrón sutil. La clave es el equilibrio, ya que no desea que el fondo se destaque demasiado y quita el primer plano. La propiedad de <code>background</code> compatible con la función <code>url()</code> para enlazar a una imagen de la textura o patrón elegido. La dirección del enlace está entre comillas dentro de los paréntesis. 
-</section>
+<section id="description"> Una forma de agregar textura e interés a un fondo y hacer que se destaque más es agregar un patrón sutil. La clave es el equilibrio, ya que no desea que el fondo se destaque demasiado y quita el primer plano. La propiedad de <code>background</code> compatible con la función <code>url()</code> para enlazar a una imagen de la textura o patrón elegido. La dirección del enlace está entre comillas dentro de los paréntesis. </section>
 
 ## Instructions
-<section id='instructions'> 
-Usando la url de <code>https://i.imgur.com/MJAkxbh.png</code> , establezca el <code>background</code> de toda la página con el selector de <code>body</code> . 
-</section>
+<section id="instructions"> Usando la url de <code>https://i.imgur.com/MJAkxbh.png</code> , establezca el <code>background</code> de toda la página con el selector de <code>body</code> . </section>
 
 ## Tests
 <section id='tests'>
@@ -39,6 +35,7 @@ tests:
 
   }
 </style>
+
 ```
 
 </div>
@@ -50,9 +47,7 @@ tests:
 ## Solution
 <section id='solution'>
 
-
 ```js
-var code = "body {background: url('https://i.imgur.com/MJAkxbh.png')}"
+// solution required
 ```
-
 </section>

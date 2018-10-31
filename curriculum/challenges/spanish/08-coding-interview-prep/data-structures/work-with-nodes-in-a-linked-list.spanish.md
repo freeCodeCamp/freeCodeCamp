@@ -1,21 +1,16 @@
 ---
 id: 587d8251367417b2b2512c61
 title: Work with Nodes in a Linked List
-localeTitle: Trabajar con nodos en una lista enlazada
 challengeType: 1
+videoUrl: ''
+localeTitle: Trabajar con nodos en una lista enlazada
 ---
 
 ## Description
-<section id='description'> 
-Otra estructura de datos común con la que se encontrará en informática es la <dfn>lista enlazada</dfn> . Una lista enlazada es una colección lineal de elementos de datos, llamados &#39;nodos&#39;, cada uno de los cuales apunta al siguiente. Cada <dfn>nodo</dfn> en una lista enlazada contiene dos piezas clave de información: el <code>element</code> sí, y una referencia al siguiente <code>node</code> . 
-Imagina que estás en una línea de conga. Tienes las manos en la siguiente persona en la línea, y la persona detrás de ti tiene las manos sobre ti. Puede ver a la persona directamente delante de usted, pero está bloqueando la vista de las otras personas en la fila. Un nodo es como una persona en una línea de conga: saben quiénes son y solo pueden ver a la siguiente persona en la línea, pero no son conscientes de las otras personas que están delante o detrás. 
-</section>
+<section id="description"> Otra estructura de datos común con la que se encontrará en informática es la <dfn>lista enlazada</dfn> . Una lista enlazada es una colección lineal de elementos de datos, llamados &#39;nodos&#39;, cada uno de los cuales apunta al siguiente. Cada <dfn>nodo</dfn> en una lista enlazada contiene dos piezas clave de información: el <code>element</code> sí, y una referencia al siguiente <code>node</code> . Imagina que estás en una línea de conga. Tienes las manos en la siguiente persona en la línea, y la persona detrás de ti tiene las manos sobre ti. Puede ver a la persona directamente delante de usted, pero está bloqueando la vista de las otras personas en la fila. Un nodo es como una persona en una línea de conga: saben quiénes son y solo pueden ver a la siguiente persona en la línea, pero no son conscientes de las otras personas que están delante o detrás. </section>
 
 ## Instructions
-<section id='instructions'> 
-En nuestro editor de código, hemos creado dos nodos, <code>Kitten</code> y <code>Puppy</code> , y hemos conectado manualmente el nodo <code>Kitten</code> nodo <code>Puppy</code> . 
-Crea un nodo <code>Cat</code> y <code>Dog</code> y agrégalos manualmente a la línea. 
-</section>
+<section id="instructions"> En nuestro editor de código, hemos creado dos nodos, <code>Kitten</code> y <code>Puppy</code> , y hemos conectado manualmente el nodo <code>Kitten</code> nodo <code>Puppy</code> . Crea un nodo <code>Cat</code> y <code>Dog</code> y agrégalos manualmente a la línea. </section>
 
 ## Tests
 <section id='tests'>
@@ -49,6 +44,7 @@ Kitten.next = Puppy;
 
 // test your code
 console.log(Kitten.next);
+
 ```
 
 </div>

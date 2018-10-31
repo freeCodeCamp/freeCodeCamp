@@ -1,103 +1,16 @@
 ---
-id: 5
-localeTitle: 5900f3e21000cf542c50fef4
+id: 5900f3e21000cf542c50fef4
 challengeType: 5
 title: 'Problem 117: Red, green, and blue tiles'
+videoUrl: ''
+localeTitle: 'Problema 117: Azulejos rojos, verdes y azules.'
 ---
 
 ## Description
-<section id='description'> 
-Usando una combinación de azulejos cuadrados negros y azulejos oblongos elegidos entre: azulejos rojos que miden dos unidades, azulejos verdes que miden tres unidades, y azulejos azules que miden cuatro unidades, es posible alinear una fila de cinco unidades de longitud en exactamente quince formas diferentes . 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-¿De cuántas maneras se puede formar una fila de cincuenta unidades de longitud? 
-NOTA: Esto está relacionado con el Problema 116. 
-</section>
+<section id="description"> Usando una combinación de azulejos cuadrados negros y azulejos oblongos elegidos entre: azulejos rojos que miden dos unidades, azulejos verdes que miden tres unidades, y azulejos azules que miden cuatro unidades, es posible alinear una fila de cinco unidades de longitud en exactamente quince formas diferentes. <p> ¿De cuántas maneras se puede formar una fila en una fila de cincuenta unidades de longitud? NOTA: Esto está relacionado con el Problema 116. </p></section>
 
 ## Instructions
-<section id='instructions'> 
-
+<section id="instructions">
 </section>
 
 ## Tests
@@ -124,6 +37,7 @@ function euler117() {
 }
 
 euler117();
+
 ```
 
 </div>

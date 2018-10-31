@@ -1,24 +1,16 @@
 ---
 id: 587d8257367417b2b2512c7e
 title: Use Depth First Search in a Binary Search Tree
-localeTitle: Utilice la búsqueda en profundidad primero en un árbol de búsqueda binario
 challengeType: 1
+videoUrl: ''
+localeTitle: Utilice la búsqueda en profundidad primero en un árbol de búsqueda binario
 ---
 
 ## Description
-<section id='description'> 
-Sabemos cómo buscar un árbol de búsqueda binario para un valor específico. Pero ¿y si solo queremos explorar todo el árbol? ¿O qué sucede si no tenemos un árbol ordenado y solo necesitamos buscar un valor? Aquí introduciremos algunos métodos de recorrido de árboles que se pueden usar para explorar estructuras de datos de árboles. Lo primero es buscar primero en profundidad. En la búsqueda en profundidad, un subárbol determinado se explora lo más profundamente posible antes de que la búsqueda continúe en otro subárbol. Hay tres formas de hacerlo: 
-En orden: comience la búsqueda en el nodo más a la izquierda y finalice en el nodo más a la derecha. 
-Pre-orden: Explorar todas las raíces antes de las hojas. 
-Orden posterior: Explorar todas las hojas antes de las raíces. 
-Como puede suponer, puede elegir diferentes métodos de búsqueda según el tipo de datos que su árbol esté almacenando y lo que está buscando. Para un árbol de búsqueda binario, un recorrido inorder devuelve los nodos en orden ordenado. 
-Instrucciones: Aquí crearemos estos tres métodos de búsqueda en nuestro árbol de búsqueda binario. La búsqueda en profundidad es una operación intrínsecamente recursiva que continúa explorando más subárboles mientras haya nodos secundarios presentes. Una vez que entienda este concepto básico, puede simplemente reorganizar el orden en el que explora los nodos y subárboles para producir cualquiera de las tres búsquedas anteriores. Por ejemplo, en la búsqueda posterior al pedido querríamos repetir todo el camino a un nodo hoja antes de que comencemos a devolver cualquiera de los nodos, mientras que en la búsqueda previa al pedido deseamos devolver primero los nodos y luego continuar recurriendo abajo del arbol 
-Defina los métodos <code>inorder</code> , <code>preorder</code> y <code>postorder</code> en nuestro árbol. Cada uno de estos métodos debe devolver una matriz de elementos que representan el recorrido del árbol. Asegúrese de devolver los valores enteros en cada nodo de la matriz, no los nodos en sí. Finalmente, devuelve <code>null</code> si el árbol está vacío. 
-</section>
+<section id="description"> Sabemos cómo buscar un árbol de búsqueda binario para un valor específico. Pero ¿y si solo queremos explorar todo el árbol? ¿O qué sucede si no tenemos un árbol ordenado y solo necesitamos buscar un valor? Aquí introduciremos algunos métodos de recorrido de árboles que se pueden usar para explorar estructuras de datos de árboles. Lo primero es buscar primero en profundidad. En la búsqueda en profundidad, un subárbol determinado se explora lo más profundamente posible antes de que la búsqueda continúe en otro subárbol. Hay tres formas de hacer esto: En orden: Comience la búsqueda en el nodo más a la izquierda y finalice en el nodo más a la derecha. Pre-orden: Explorar todas las raíces antes de las hojas. Orden posterior: Explorar todas las hojas antes de las raíces. Como puede suponer, puede elegir diferentes métodos de búsqueda según el tipo de datos que su árbol esté almacenando y lo que está buscando. Para un árbol de búsqueda binario, un recorrido inorder devuelve los nodos en orden ordenado. Instrucciones: Aquí crearemos estos tres métodos de búsqueda en nuestro árbol de búsqueda binario. La búsqueda en profundidad es una operación intrínsecamente recursiva que continúa explorando más subárboles mientras haya nodos secundarios presentes. Una vez que entienda este concepto básico, puede simplemente reorganizar el orden en el que explora los nodos y subárboles para producir cualquiera de las tres búsquedas anteriores. Por ejemplo, en la búsqueda posterior al pedido querríamos repetir todo el camino a un nodo hoja antes de que comencemos a devolver cualquiera de los nodos, mientras que en la búsqueda previa al pedido deseamos devolver primero los nodos y luego continuar recurriendo abajo del arbol Defina los métodos <code>inorder</code> , <code>preorder</code> y <code>postorder</code> en nuestro árbol. Cada uno de estos métodos debe devolver una matriz de elementos que representan el recorrido del árbol. Asegúrese de devolver los valores enteros en cada nodo de la matriz, no los nodos en sí. Finalmente, devuelve <code>null</code> si el árbol está vacío. </section>
 
 ## Instructions
-<section id='instructions'> 
-
+<section id="instructions">
 </section>
 
 ## Tests
@@ -68,6 +60,7 @@ function BinarySearchTree() {
     // change code below this line
     // change code above this line
 }
+
 ```
 
 </div>

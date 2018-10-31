@@ -1,21 +1,23 @@
 ---
 id: 587d7791367417b2b2512ab5
 title: Adjust the Height of an Element Using the height Property
-localeTitle: Ajustar la altura de un elemento usando la propiedad height
 challengeType: 0
 videoUrl: ''
+localeTitle: Ajustar la altura de un elemento usando la propiedad height
 ---
 
 ## Description
-<section id='description'> 
-Puede especificar la altura de un elemento utilizando la propiedad de <code>height</code> en CSS, similar a la propiedad de <code>width</code> . Aquí hay un ejemplo que cambia la altura de una imagen a 20px: 
-<blockquote>img {<br>&nbsp;&nbsp;height: 20px;<br>}</blockquote> 
+<section id="description"> Puede especificar la altura de un elemento utilizando la propiedad de <code>height</code> en CSS, similar a la propiedad de <code>width</code> . Aquí hay un ejemplo que cambia la altura de una imagen a 20px: 
+  
+```css
+img {
+  height: 20px;
+}
+```
 </section>
 
 ## Instructions
-<section id='instructions'> 
-Agregue una propiedad de <code>height</code> a la etiqueta <code>h4</code> y configúrela a 25px. 
-</section>
+<section id="instructions"> Agregue una propiedad de <code>height</code> a la etiqueta <code>h4</code> y configúrela a 25px. </section>
 
 ## Tests
 <section id='tests'>
@@ -23,7 +25,7 @@ Agregue una propiedad de <code>height</code> a la etiqueta <code>h4</code> y con
 ```yml
 tests:
   - text: Su código debe cambiar la propiedad de <code>height</code> <code>h4</code> a un valor de 25 píxeles.
-    testString: 'assert($("h4").css("height") == "25px", "Your code should change the <code>h4</code> <code>height</code> property to a value of 25 pixels.");'
+    testString: 'assert($("h4").css("height") == "25px", "Su código debe cambiar la propiedad de <code>height</code> <code>h4</code> a un valor de 25 píxeles.");'
 
 ```
 
@@ -70,6 +72,7 @@ tests:
     </div>
   </div>
 </div>
+
 ```
 
 </div>

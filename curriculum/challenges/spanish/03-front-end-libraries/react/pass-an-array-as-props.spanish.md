@@ -1,26 +1,17 @@
 ---
 id: 5a24c314108439a4d403616a
 title: Pass an Array as Props
-localeTitle: Pasar una matriz como apoyos
 challengeType: 6
 isRequired: false
+videoUrl: ''
+localeTitle: Pasar una matriz como apoyos
 ---
 
 ## Description
-<section id='description'> 
-El último desafío demostró cómo pasar información de un componente de los padres a un componente secundario como <code>props</code> o propiedades. Este desafío analiza cómo se pueden pasar las matrices como <code>props</code> . Para pasar una matriz a un elemento JSX, se debe tratar como JavaScript y se debe incluir entre llaves. 
-<blockquote>&lt;ParentComponent&gt;<br>&nbsp;&nbsp;&lt;ChildComponent colors={["green", "blue", "red"]} /&gt;<br>&lt;/ParentComponent&gt;</blockquote> 
-El componente hijo tiene acceso a los <code>colors</code> propiedad de matriz. Se pueden usar métodos de matriz como <code>join()</code> al acceder a la propiedad. 
-<code>const ChildComponent = (props) =&gt; &lt;p&gt;{props.colors.join(&#39;, &#39;)}&lt;/p&gt;</code> 
-Esto unirá todos los elementos de la matriz de <code>colors</code> en una cadena separada por comas y producirá: 
-<code>&lt;p&gt;green, blue, red&lt;/p&gt;</code> 
-Más adelante, aprenderemos sobre otros métodos comunes para procesar matrices de datos en React. 
-</section>
+<section id="description"> El último desafío demostró cómo pasar información de un componente de los padres a un componente secundario como <code>props</code> o propiedades. Este desafío analiza cómo se pueden pasar las matrices como <code>props</code> . Para pasar una matriz a un elemento JSX, se debe tratar como JavaScript y se debe incluir entre llaves. <blockquote> &lt;ParentComponent&gt; <br> &lt;ChildComponent colors = {[&quot;green&quot;, &quot;blue&quot;, &quot;red&quot;]} /&gt; <br> &lt;/ParentComponent&gt; </blockquote> El componente hijo tiene acceso a los <code>colors</code> propiedad de matriz. Se pueden usar métodos de matriz como <code>join()</code> al acceder a la propiedad. <code>const ChildComponent = (props) =&gt; &lt;p&gt;{props.colors.join(&#39;, &#39;)}&lt;/p&gt;</code> Esto unirá todos los elementos de matriz de <code>colors</code> en una cadena separada por comas y producirá: <code>&lt;p&gt;green, blue, red&lt;/p&gt;</code> Más adelante, aprenderemos sobre otros métodos comunes para procesar matrices de datos en React. </section>
 
 ## Instructions
-<section id='instructions'> 
-Hay componentes <code>List</code> y <code>ToDo</code> en el editor de código. Al representar cada <code>List</code> desde el componente de <code>ToDo</code> , pase una propiedad de <code>tasks</code> asignada a una serie de tareas a realizar, por ejemplo <code>[&quot;walk dog&quot;, &quot;workout&quot;]</code> . Luego acceda a esta matriz de <code>tasks</code> en el componente <code>List</code> , mostrando su valor dentro del elemento <code>p</code> . Utilice <code>join(&quot;, &quot;)</code> para mostrar la matriz <code>props.tasks</code> en el elemento <code>p</code> como una lista separada por comas. La lista de hoy debe tener al menos 2 tareas y la de mañana debe tener al menos 3 tareas. 
-</section>
+<section id="instructions"> Hay componentes <code>List</code> y <code>ToDo</code> en el editor de código. Al representar cada <code>List</code> desde el componente de <code>ToDo</code> , pase una propiedad de <code>tasks</code> asignada a una serie de tareas a realizar, por ejemplo <code>[&quot;walk dog&quot;, &quot;workout&quot;]</code> . Luego acceda a esta matriz de <code>tasks</code> en el componente <code>List</code> , mostrando su valor dentro del elemento <code>p</code> . Utilice <code>join(&quot;, &quot;)</code> para mostrar la matriz <code>props.tasks</code> en el elemento <code>p</code> como una lista separada por comas. La lista de hoy debe tener al menos 2 tareas y la de mañana debe tener al menos 3 tareas. </section>
 
 ## Tests
 <section id='tests'>
@@ -39,7 +30,7 @@ tests:
     testString: 'assert((function() { const mockedComponent = Enzyme.mount(React.createElement(ToDo)); return mockedComponent.find("List").get(0).props.tasks.length >= 2; })(), "The first <code>List</code> component representing the tasks for today should have 2 or more items.");'
   - text: El segundo componente de la <code>List</code> que representa las tareas para mañana debe tener 3 o más elementos.
     testString: 'assert((function() { const mockedComponent = Enzyme.mount(React.createElement(ToDo)); return mockedComponent.find("List").get(1).props.tasks.length >= 3; })(), "The second <code>List</code> component representing the tasks for tomorrow should have 3 or more items.");'
-  - text: El componente <code>List</code> debe representar el valor de las <code>tasks</code> prop en la etiqueta <code>p</code> como una lista separada por comas, por ejemplo, <code>walk dog, workout</code> .
+  - text: 'El componente <code>List</code> debe representar el valor de las <code>tasks</code> prop en la etiqueta <code>p</code> como una lista separada por comas, por ejemplo, <code>walk dog, workout</code> .'
     testString: 'assert((function() { const mockedComponent = Enzyme.mount(React.createElement(ToDo)); return mockedComponent.find("p").get(0).props.children === mockedComponent.find("List").get(0).props.tasks.join(", ") && mockedComponent.find("p").get(1).props.children === mockedComponent.find("List").get(1).props.tasks.join(", "); })(), "The <code>List</code> component should render the value from the <code>tasks</code> prop in the <code>p</code> tag as a comma separated list, for example <code>walk dog, workout</code>.");'
 
 ```
@@ -76,6 +67,7 @@ class ToDo extends React.Component {
     );
   }
 };
+
 ```
 
 </div>
@@ -95,28 +87,7 @@ console.info('after the test');
 ## Solution
 <section id='solution'>
 
-
 ```js
-const List= (props) => {
-  return <p>{props.tasks.join(', ')}</p>
-};
-
-class ToDo extends React.Component {
-  constructor(props) {
-    super(props);
-  }
-  render() {
-    return (
-      <div>
-        <h1>To Do Lists</h1>
-        <h2>Today</h2>
-        <List tasks={['study', 'exercise']} />
-        <h2>Tomorrow</h2>
-        <List tasks={['call Sam', 'grocery shopping', 'order tickets']} />
-      </div>
-    );
-  }
-};
+// solution required
 ```
-
 </section>

@@ -1,26 +1,16 @@
 ---
-id: 5
-localeTitle: 5900f5311000cf542c510044
+id: 5900f5311000cf542c510044
 challengeType: 5
 title: 'Problem 453: Lattice Quadrilaterals'
+videoUrl: ''
+localeTitle: 'Problema 453: Cuadriláteros de celosía'
 ---
 
 ## Description
-<section id='description'> 
-Un cuadrilátero simple es un polígono que tiene cuatro vértices distintos, no tiene ángulos rectos y no se intersecta por sí mismo. 
-
-Sea Q (m, n) el número de cuadriláteros simples cuyos vértices son puntos de red con coordenadas (x, y) que satisfacen 0 ≤ x ≤ my 0 ≤ y ≤ n. 
-
-Por ejemplo, Q (2, 2) = 94 como se puede ver a continuación: 
-
-También se puede verificar que Q (3, 7) = 39590, Q (12, 3) = 309000 y Q (123, 45 ) = 70542215894646. 
-
-Encuentra Q (12345, 6789) mod 135707531. 
-</section>
+<section id="description"> Un cuadrilátero simple es un polígono que tiene cuatro vértices distintos, no tiene ángulos rectos y no se intersecta por sí mismo. <p> Sea Q (m, n) el número de cuadriláteros simples cuyos vértices son puntos de celosía con coordenadas (x, y) que satisfacen 0 ≤ x ≤ my 0 ≤ y ≤ n. </p><p> Por ejemplo, Q (2, 2) = 94 como se puede ver a continuación: </p><p> También se puede verificar que Q (3, 7) = 39590, Q (12, 3) = 309000 y Q (123, 45) = 70542215894646. </p><p> Encuentra Q (12345, 6789) mod 135707531. </p></section>
 
 ## Instructions
-<section id='instructions'> 
-
+<section id="instructions">
 </section>
 
 ## Tests
@@ -47,6 +37,7 @@ function euler453() {
 }
 
 euler453();
+
 ```
 
 </div>

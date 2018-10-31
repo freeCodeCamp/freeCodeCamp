@@ -1,24 +1,16 @@
 ---
 id: 56bbb991ad1ed5201cd392d2
 title: Add New Properties to a JavaScript Object
-localeTitle: Agregar nuevas propiedades a un objeto de JavaScript
 challengeType: 1
+videoUrl: ''
+localeTitle: Agregar nuevas propiedades a un objeto de JavaScript
 ---
 
 ## Description
-<section id='description'> 
-Puede agregar nuevas propiedades a los objetos JavaScript existentes de la misma manera que los modificaría. 
-Así es como agregaríamos una propiedad de <code>&quot;bark&quot;</code> a <code>ourDog</code> : 
-<code>ourDog.bark = &quot;bow-wow&quot;;</code> 
-o 
-<code>ourDog[&quot;bark&quot;] = &quot;bow-wow&quot;;</code> 
-Ahora, cuando evaluamos <code>ourDog.bark</code> , obtendremos su ladrido, &quot;bow-wow&quot;. 
-</section>
+<section id="description"> Puede agregar nuevas propiedades a los objetos JavaScript existentes de la misma manera que los modificaría. Así es como agregaríamos una propiedad de <code>&quot;bark&quot;</code> a <code>ourDog</code> : <code>ourDog.bark = &quot;bow-wow&quot;;</code> o <code>ourDog[&quot;bark&quot;] = &quot;bow-wow&quot;;</code> Ahora, cuando evaluamos <code>ourDog.bark</code> , obtendremos su ladrido, &quot;bow-wow&quot;. </section>
 
 ## Instructions
-<section id='instructions'> 
-Agrega una propiedad de <code>&quot;bark&quot;</code> a <code>myDog</code> y <code>myDog</code> con un sonido de perro, como &quot;woof&quot;. Puede usar la notación de punto o corchete. 
-</section>
+<section id="instructions"> Agrega una propiedad de <code>&quot;bark&quot;</code> a <code>myDog</code> y <code>myDog</code> con un sonido de perro, como &quot;woof&quot;. Puede usar la notación de punto o corchete. </section>
 
 ## Tests
 <section id='tests'>
@@ -79,15 +71,7 @@ console.info('after the test');
 ## Solution
 <section id='solution'>
 
-
 ```js
-var myDog = {
-  "name": "Happy Coder",
-  "legs": 4,
-  "tails": 1,
-  "friends": ["freeCodeCamp Campers"]
-};
-myDog.bark = "Woof Woof";
+// solution required
 ```
-
 </section>

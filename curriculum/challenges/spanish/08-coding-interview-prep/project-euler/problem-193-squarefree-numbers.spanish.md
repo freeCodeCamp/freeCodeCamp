@@ -1,20 +1,16 @@
 ---
-id: 5
-localeTitle: 5900f42f1000cf542c50ff41
+id: 5900f42f1000cf542c50ff41
 challengeType: 5
 title: 'Problem 193: Squarefree Numbers'
+videoUrl: ''
+localeTitle: 'Problema 193: Números de Squarefree'
 ---
 
 ## Description
-<section id='description'> 
-Un entero positivo n se llama squarefree, si ningún cuadrado de un primo divide n, entonces 1, 2, 3, 5, 6, 7, 10, 11 son squarefree, pero no 4, 8, 9, 12. 
-
-Cómo Cuántos números cuadrados libres hay por debajo de 250? 
-</section>
+<section id="description"> Un entero positivo n se llama squarefree, si ningún cuadrado de un primo divide n, por lo tanto 1, 2, 3, 5, 6, 7, 10, 11 son squarefree, pero no 4, 8, 9, 12. <p> ¿Cuántos números cuadrados libres hay por debajo de 250? </p></section>
 
 ## Instructions
-<section id='instructions'> 
-
+<section id="instructions">
 </section>
 
 ## Tests
@@ -41,6 +37,7 @@ function euler193() {
 }
 
 euler193();
+
 ```
 
 </div>

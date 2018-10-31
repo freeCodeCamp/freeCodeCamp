@@ -1,18 +1,16 @@
 ---
-id: 5
-localeTitle: 5900f3fa1000cf542c50ff0d
+id: 5900f3fa1000cf542c50ff0d
 challengeType: 5
 title: 'Problem 142: Perfect Square Collection'
+videoUrl: ''
+localeTitle: 'Problema 142: Perfect Square Collection'
 ---
 
 ## Description
-<section id='description'> 
-Encuentre el x + y + z más pequeño con los enteros x&gt; y&gt; z&gt; 0 de manera que x + y, x - y, x + z, x - z, y + z, y - z sean todos cuadrados perfectos. 
-</section>
+<section id="description"> Encuentre el x + y + z más pequeño con enteros x&gt; y&gt; z&gt; 0, de modo que x + y, x - y, x + z, x - z, y + z, y - z sean todos cuadrados perfectos. </section>
 
 ## Instructions
-<section id='instructions'> 
-
+<section id="instructions">
 </section>
 
 ## Tests
@@ -39,6 +37,7 @@ function euler142() {
 }
 
 euler142();
+
 ```
 
 </div>

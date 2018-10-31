@@ -1,27 +1,16 @@
 ---
-id: 5
-localeTitle: 5900f4fa1000cf542c51000d
+id: 5900f4fa1000cf542c51000d
 challengeType: 5
 title: 'Problem 398: Cutting rope'
+videoUrl: ''
+localeTitle: 'Problema 398: Cuerda de corte'
 ---
 
 ## Description
-<section id='description'> 
-Dentro de una cuerda de longitud n, se colocan n-1 puntos con una distancia de 1 entre sí y desde los puntos finales. Entre estos puntos, elegimos m-1 puntos al azar y cortamos la cuerda en estos puntos para crear m segmentos. 
-
-
-Sea E (n, m) la longitud esperada del segundo segmento más corto. 
-Por ejemplo, E (3, 2) = 2 y E (8, 3) = 16/7. 
-Tenga en cuenta que si varios segmentos tienen la misma longitud más corta, la longitud del segundo segmento más corto se define como la longitud más corta. 
-
-
-Encuentra E (107, 100). 
-Da tu respuesta redondeada a 5 lugares decimales detrás del punto decimal. 
-</section>
+<section id="description"> Dentro de una cuerda de longitud n, los puntos n-1 se colocan con una distancia de 1 entre sí y desde los puntos finales. Entre estos puntos, elegimos m-1 puntos al azar y cortamos la cuerda en estos puntos para crear m segmentos. <p> Sea E (n, m) la longitud esperada del segundo segmento más corto. Por ejemplo, E (3, 2) = 2 y E (8, 3) = 16/7. Tenga en cuenta que si varios segmentos tienen la misma longitud más corta, la longitud del segundo segmento más corto se define como la longitud más corta. </p><p> Encuentra E (107, 100). Da tu respuesta redondeada a 5 lugares decimales detrás del punto decimal. </p></section>
 
 ## Instructions
-<section id='instructions'> 
-
+<section id="instructions">
 </section>
 
 ## Tests
@@ -48,6 +37,7 @@ function euler398() {
 }
 
 euler398();
+
 ```
 
 </div>

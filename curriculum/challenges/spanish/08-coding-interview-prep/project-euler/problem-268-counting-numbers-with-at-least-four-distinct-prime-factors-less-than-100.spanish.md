@@ -1,20 +1,16 @@
 ---
-id: 5
-localeTitle: 5900f4791000cf542c50ff8b
+id: 5900f4791000cf542c50ff8b
 challengeType: 5
 title: 'Problem 268: Counting numbers with at least four distinct prime factors less than 100'
+videoUrl: ''
+localeTitle: 'Problema 268: contar números con al menos cuatro factores primos distintos menos de 100'
 ---
 
 ## Description
-<section id='description'> 
-Se puede verificar que hay 23 enteros positivos menores que 1000 que son divisibles por al menos cuatro primos distintos menores que 100. 
-
-Encuentre cuántos enteros positivos menores de 1016 son divisibles por al menos cuatro primos distintos menores que 100. 
-</section>
+<section id="description"> Se puede verificar que hay 23 enteros positivos menores que 1000 que son divisibles por al menos cuatro primos distintos menores que 100. <p> Calcule cuántos enteros positivos menores de 1016 son divisibles por al menos cuatro primos distintos menores de 100. </p></section>
 
 ## Instructions
-<section id='instructions'> 
-
+<section id="instructions">
 </section>
 
 ## Tests
@@ -41,6 +37,7 @@ function euler268() {
 }
 
 euler268();
+
 ```
 
 </div>

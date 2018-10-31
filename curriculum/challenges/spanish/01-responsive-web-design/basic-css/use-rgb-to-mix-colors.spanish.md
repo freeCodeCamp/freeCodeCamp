@@ -1,21 +1,16 @@
 ---
 id: bad82fee1348bd9aedf08721
 title: Use RGB to Mix Colors
-localeTitle: Usa RGB para mezclar colores
 challengeType: 0
 videoUrl: ''
+localeTitle: Usa RGB para mezclar colores
 ---
 
 ## Description
-<section id='description'> 
-Al igual que con el código hexadecimal, puede mezclar colores en RGB utilizando combinaciones de diferentes valores. 
-</section>
+<section id="description"> Al igual que con el código hexadecimal, puede mezclar colores en RGB utilizando combinaciones de diferentes valores. </section>
 
 ## Instructions
-<section id='instructions'> 
-Reemplace los códigos hexadecimales en nuestro elemento de <code>style</code> con sus valores RGB correctos. 
-<table class='table table-striped'><tr><th> Color </th><th> RGB </th></tr><tr><td> Azul </td><td> <code>rgb(0, 0, 255)</code> </td> </tr><tr><td> rojo </td><td> <code>rgb(255, 0, 0)</code> </td> </tr><tr><td> Orquídea </td><td> <code>rgb(218, 112, 214)</code> </td> </tr><tr><td> Tierra de siena </td><td> <code>rgb(160, 82, 45)</code> </td> </tr></table> 
-</section>
+<section id="instructions"> Reemplace los códigos hexadecimales en nuestro elemento de <code>style</code> con sus valores RGB correctos. <table class="table table-striped"><tbody><tr><th> Color </th><th> RGB </th></tr><tr><td> Azul </td><td> <code>rgb(0, 0, 255)</code> </td> </tr><tr><td> rojo </td><td> <code>rgb(255, 0, 0)</code> </td> </tr><tr><td> Orquídea </td><td> <code>rgb(218, 112, 214)</code> </td> </tr><tr><td> Tierra de siena </td><td> <code>rgb(160, 82, 45)</code> </td> </tr></tbody></table></section>
 
 ## Tests
 <section id='tests'>
@@ -71,6 +66,7 @@ tests:
 <h1 class="sienna-text">I am sienna!</h1>
 
 <h1 class="blue-text">I am blue!</h1>
+
 ```
 
 </div>

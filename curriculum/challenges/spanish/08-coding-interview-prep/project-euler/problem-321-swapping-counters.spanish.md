@@ -1,32 +1,16 @@
 ---
-id: 5
-localeTitle: 5900f4ae1000cf542c50ffc0
+id: 5900f4ae1000cf542c50ffc0
 challengeType: 5
 title: 'Problem 321: Swapping Counters'
+videoUrl: ''
+localeTitle: 'Problema 321: Intercambiar contadores'
 ---
 
 ## Description
-<section id='description'> 
-Una fila horizontal compuesta por 2n + 1 cuadrados tiene n contadores rojos colocados en un extremo y n contadores azules en el otro extremo, separados por un solo cuadrado vacío en el centro. Por ejemplo, cuando n = 3. 
-
-
-
-Un contador puede moverse de una casilla a la siguiente (deslizar) o puede saltar sobre otro contador (salto) siempre que la casilla junto a ese contador esté desocupada. 
-
-
-
-Sea M (n) el número mínimo de movimientos / acciones para invertir completamente las posiciones de los contadores de colores; es decir, mueva todos los contadores rojos a la derecha y todos los contadores azules a la izquierda. 
-Se puede verificar M (3) = 15, que también es un número de triángulo. 
-
-Si creamos una secuencia basada en los valores de n para los que M (n) es un número de triángulo, los primeros cinco términos serían: 
-1, 3, 10, 22 y 63, y su suma sería 99. 
-
-Encuentra la suma de los primeros cuarenta términos de esta secuencia. 
-</section>
+<section id="description"> Una fila horizontal compuesta por 2n + 1 cuadrados tiene n contadores rojos colocados en un extremo y n contadores azules en el otro extremo, separados por un solo cuadrado vacío en el centro. Por ejemplo, cuando n = 3. <p> Un contador puede moverse de una casilla a la siguiente (deslizar) o puede saltar sobre otro contador (salto) siempre que la casilla junto a ese contador esté desocupada. </p><p> Sea M (n) el número mínimo de movimientos / acciones para invertir completamente las posiciones de los contadores de colores; es decir, mueva todos los contadores rojos a la derecha y todos los contadores azules a la izquierda. Se puede verificar M (3) = 15, que también es un número de triángulo. </p><p> Si creamos una secuencia basada en los valores de n para los que M (n) es un número de triángulo, los primeros cinco términos serían: 1, 3, 10, 22 y 63, y su suma sería 99. </p><p> Encuentra la suma de los primeros cuarenta términos de esta secuencia. </p></section>
 
 ## Instructions
-<section id='instructions'> 
-
+<section id="instructions">
 </section>
 
 ## Tests
@@ -53,6 +37,7 @@ function euler321() {
 }
 
 euler321();
+
 ```
 
 </div>

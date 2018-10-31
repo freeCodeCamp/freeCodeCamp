@@ -1,24 +1,16 @@
 ---
 id: 587d7b7e367417b2b2512b22
 title: Use the parseInt Function with a Radix
-localeTitle: Usa la función parseInt con un Radix
 challengeType: 1
+videoUrl: ''
+localeTitle: Usa la función parseInt con un Radix
 ---
 
 ## Description
-<section id='description'> 
-La <code>parseInt()</code> analiza una cadena y devuelve un entero. Toma un segundo argumento para el radix, que especifica la base del número en la cadena. El radix puede ser un número entero entre 2 y 36. 
-La función call se parece a: 
-<code>parseInt(string, radix);</code> 
-Y aquí hay un ejemplo: 
-<code>var a = parseInt(&quot;11&quot;, 2);</code> 
-La variable radix dice que &quot;11&quot; está en el sistema binario, o base 2. Este ejemplo convierte la cadena &quot;11&quot; en un entero 3. 
-</section>
+<section id="description"> La <code>parseInt()</code> analiza una cadena y devuelve un entero. Toma un segundo argumento para el radix, que especifica la base del número en la cadena. El radix puede ser un número entero entre 2 y 36. La llamada a la función se parece a: <code>parseInt(string, radix);</code> Y aquí hay un ejemplo: <code>var a = parseInt(&quot;11&quot;, 2);</code> La variable radix dice que &quot;11&quot; está en el sistema binario, o base 2. Este ejemplo convierte la cadena &quot;11&quot; en un entero 3. </section>
 
 ## Instructions
-<section id='instructions'> 
-Use <code>parseInt()</code> en la función <code>convertToInteger</code> para que convierta un número binario en un entero y lo devuelva. 
-</section>
+<section id="instructions"> Use <code>parseInt()</code> en la función <code>convertToInteger</code> para que convierta un número binario en un entero y lo devuelva. </section>
 
 ## Tests
 <section id='tests'>
@@ -51,6 +43,7 @@ function convertToInteger(str) {
 }
 
 convertToInteger("10011");
+
 ```
 
 </div>

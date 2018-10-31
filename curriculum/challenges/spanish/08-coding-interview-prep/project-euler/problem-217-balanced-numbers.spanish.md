@@ -1,22 +1,16 @@
 ---
-id: 5
-localeTitle: 5900f4461000cf542c50ff58
+id: 5900f4461000cf542c50ff58
 challengeType: 5
 title: 'Problem 217: Balanced Numbers'
+videoUrl: ''
+localeTitle: 'Problema 217: Números equilibrados'
 ---
 
 ## Description
-<section id='description'> 
-Un entero positivo con k dígitos (decimales) se llama balanceado si sus primeros dígitos ⌈k / 2⌉ suman el mismo valor que sus últimos dígitos ⌈k / 2⌉, donde ⌈x⌉, el techo pronunciado de x, es el más pequeño entero ≥ x, entonces ⌈π⌈ = 4 y ⌈5⌉ = 5. 
-Entonces, por ejemplo, todos los palíndromos están balanceados, como lo es 13722. 
-Sea T (n) la suma de todos los números balanceados menores que 10n. 
-Así: T (1) = 45, T (2) = 540 y T (5) = 334795890. 
-Encuentra T (47) mod 315 
-</section>
+<section id="description"> Un entero positivo con k dígitos (decimales) se llama balanceado si sus primeros dígitos ⌈k / 2⌉ suman el mismo valor que sus últimos dígitos ⌈k / 2⌉, donde ⌈x⌉, el techo de x pronunciado, es el entero más pequeño ≥ x, por lo tanto, ⌉π⌉ = 4 y ⌈5⌉ = 5. Entonces, por ejemplo, todos los palíndromos están balanceados, como lo es 13722. Sea T (n) la suma de todos los números balanceados menores que 10n. Por lo tanto: T (1) = 45, T (2) = 540 y T (5) = 334795890. Encuentre T (47) mod 315 </section>
 
 ## Instructions
-<section id='instructions'> 
-
+<section id="instructions">
 </section>
 
 ## Tests
@@ -43,6 +37,7 @@ function euler217() {
 }
 
 euler217();
+
 ```
 
 </div>

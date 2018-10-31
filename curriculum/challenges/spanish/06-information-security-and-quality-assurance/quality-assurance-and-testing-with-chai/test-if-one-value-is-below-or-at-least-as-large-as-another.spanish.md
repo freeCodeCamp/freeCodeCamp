@@ -1,19 +1,16 @@
 ---
 id: 587d824c367417b2b2512c4e
 title: Test if One Value is Below or At Least as Large as Another
-localeTitle: Probar si un valor está por debajo o al menos tan grande como otro
 challengeType: 2
+videoUrl: ''
+localeTitle: Probar si un valor está por debajo o al menos tan grande como otro
 ---
 
 ## Description
-<section id='description'> 
-Como recordatorio, este proyecto se está construyendo sobre el siguiente proyecto de inicio en <a href='https://glitch.com/#!/import/github/freeCodeCamp/boilerplate-mochachai/'>Glitch</a> , o clonado desde <a href='https://github.com/freeCodeCamp/boilerplate-mochachai/'>GitHub</a> . 
-.isBelow () =&gt; a &lt;b, .isAtLeast =&gt; a&gt; = b 
-</section>
+<section id="description"> Como recordatorio, este proyecto se está construyendo sobre el siguiente proyecto de inicio en <a href="https://glitch.com/#!/import/github/freeCodeCamp/boilerplate-mochachai/">Glitch</a> , o clonado desde <a href="https://github.com/freeCodeCamp/boilerplate-mochachai/">GitHub</a> . .isBelow () =&gt; a &lt;b, .isAtLeast =&gt; a&gt; = b </section>
 
 ## Instructions
-<section id='instructions'> 
-
+<section id="instructions">
 </section>
 
 ## Tests

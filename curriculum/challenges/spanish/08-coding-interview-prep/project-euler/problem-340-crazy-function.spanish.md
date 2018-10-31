@@ -1,30 +1,16 @@
 ---
-id: 5
-localeTitle: 5900f4c21000cf542c50ffd4
+id: 5900f4c21000cf542c50ffd4
 challengeType: 5
 title: 'Problem 340: Crazy Function'
+videoUrl: ''
+localeTitle: 'Problema 340: función loca'
 ---
 
 ## Description
-<section id='description'> 
-Para los enteros fijos a, b, c, defina la función loca F (n) de la siguiente manera: 
-F (n) = n - c para todos n&gt; b 
-F (n) = F (a + F (a + F) (a + F (a + n)))) para todos n ≤ b. 
-
-
-También, defina S (a, b, c) =. 
-
-
-Por ejemplo, si a = 50, b = 2000 y c = 40, entonces F (0) = 3240 y F (2000) = 2040. 
-Además, S (50, 2000, 40) = 5204240. 
-
-
-Encuentra los últimos 9 dígitos de S (217, 721, 127). 
-</section>
+<section id="description"> Para los enteros fijos a, b, c, defina la función loca F (n) de la siguiente manera: F (n) = n - c para todos n&gt; b F (n) = F (a + F (a + F (a + F (a + n))) para todos n ≤ b. <p> Además, define S (a, b, c) =. </p><p> Por ejemplo, si a = 50, b = 2000 y c = 40, entonces F (0) = 3240 y F (2000) = 2040. También, S (50, 2000, 40) = 5204240. </p><p> Encuentra los últimos 9 dígitos de S (217, 721, 127). </p></section>
 
 ## Instructions
-<section id='instructions'> 
-
+<section id="instructions">
 </section>
 
 ## Tests
@@ -51,6 +37,7 @@ function euler340() {
 }
 
 euler340();
+
 ```
 
 </div>

@@ -1,30 +1,18 @@
 ---
 id: 587d7fa6367417b2b2512bc2
 title: Add Document Elements with D3
-localeTitle: Añadir elementos de documento con D3
 required:
   - src: 'https://cdnjs.cloudflare.com/ajax/libs/d3/4.3.0/d3.min.js'
 challengeType: 6
+videoUrl: ''
+localeTitle: Añadir elementos de documento con D3
 ---
 
 ## Description
-<section id='description'> 
-D3 tiene varios métodos que le permiten agregar y cambiar elementos en su documento. 
-El método <code>select()</code> selecciona un elemento del documento. Toma un argumento para el nombre del elemento que desea y devuelve un nodo HTML para el primer elemento del documento que coincide con el nombre. Aquí hay un ejemplo: 
-<code>const anchor = d3.select(&quot;a&quot;);</code> 
-El ejemplo anterior encuentra la primera etiqueta de anclaje en la página y guarda un nodo HTML para ella en el <code>anchor</code> la variable. Puede utilizar la selección con otros métodos. La parte &quot;d3&quot; del ejemplo es una referencia al objeto D3, que es cómo acceder a los métodos D3. 
-Otros dos métodos útiles son <code>append()</code> y <code>text()</code> . 
-El método <code>append()</code> toma un argumento para el elemento que desea agregar al documento. Agrega un nodo HTML a un elemento seleccionado y devuelve un identificador a ese nodo. 
-El método <code>text()</code> establece el texto del nodo seleccionado o obtiene el texto actual. Para establecer el valor, se pasa una cadena como un argumento dentro de los paréntesis del método. 
-Aquí hay un ejemplo que selecciona una lista desordenada, agrega un elemento de lista y agrega texto: 
-<blockquote>d3.select("ul")<br>&nbsp;&nbsp;.append("li")<br>&nbsp;&nbsp;.text("Very important item");</blockquote> 
-D3 le permite encadenar varios métodos junto con puntos para realizar varias acciones seguidas. 
-</section>
+<section id="description"> D3 tiene varios métodos que le permiten agregar y cambiar elementos en su documento. El método <code>select()</code> selecciona un elemento del documento. Toma un argumento para el nombre del elemento que desea y devuelve un nodo HTML para el primer elemento del documento que coincide con el nombre. Aquí hay un ejemplo: <code>const anchor = d3.select(&quot;a&quot;);</code> El ejemplo anterior encuentra la primera etiqueta de anclaje en la página y guarda un nodo HTML para ella en el <code>anchor</code> la variable. Puede utilizar la selección con otros métodos. La parte &quot;d3&quot; del ejemplo es una referencia al objeto D3, que es cómo acceder a los métodos D3. Otros dos métodos útiles son <code>append()</code> y <code>text()</code> . El método <code>append()</code> toma un argumento para el elemento que desea agregar al documento. Agrega un nodo HTML a un elemento seleccionado y devuelve un identificador a ese nodo. El método <code>text()</code> establece el texto del nodo seleccionado o obtiene el texto actual. Para establecer el valor, se pasa una cadena como un argumento dentro de los paréntesis del método. Aquí hay un ejemplo que selecciona una lista desordenada, agrega un elemento de lista y agrega texto: <blockquote> d3.seleccionar (&quot;ul&quot;) <br> .append (&quot;li&quot;) <br> .text (&quot;Elemento muy importante&quot;); </blockquote> D3 le permite encadenar varios métodos junto con puntos para realizar varias acciones seguidas. </section>
 
 ## Instructions
-<section id='instructions'> 
-Utilice el <code>select</code> método para seleccionar el <code>body</code> la etiqueta en el documento. Luego, <code>append</code> una etiqueta <code>h1</code> y agregue el texto &quot;Aprendizaje D3&quot; en el elemento <code>h1</code> . 
-</section>
+<section id="instructions"> Utilice el <code>select</code> método para seleccionar el <code>body</code> la etiqueta en el documento. Luego, <code>append</code> una etiqueta <code>h1</code> y agregue el texto &quot;Aprendizaje D3&quot; en el elemento <code>h1</code> . </section>
 
 ## Tests
 <section id='tests'>
@@ -63,6 +51,7 @@ tests:
     // Add your code above this line
   </script>
 </body>
+
 ```
 
 </div>

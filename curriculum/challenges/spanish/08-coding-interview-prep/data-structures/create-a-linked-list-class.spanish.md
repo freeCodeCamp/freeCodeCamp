@@ -1,24 +1,16 @@
 ---
 id: 587d8251367417b2b2512c62
 title: Create a Linked List Class
-localeTitle: Crear una clase de lista enlazada
 challengeType: 1
+videoUrl: ''
+localeTitle: Crear una clase de lista enlazada
 ---
 
 ## Description
-<section id='description'> 
-Vamos a crear una clase de <code>linked list</code> . Cada lista vinculada debe comenzar con unas pocas propiedades básicas: una <code>head</code> (el primer elemento de su lista) y una <code>length</code> (número de elementos en su lista). A veces, verás implementaciones de listas vinculadas que incorporan una <code>tail</code> para el último elemento de la lista, pero por ahora solo nos quedaremos con estos dos. Cada vez que agregamos un elemento a la lista vinculada, nuestra propiedad de <code>length</code> debe incrementarse en uno. 
-Queremos tener una forma de agregar elementos a nuestra lista vinculada, por lo que el primer método que querremos crear es el método de <code>add</code> . 
-Si nuestra lista está vacía, agregar un elemento a nuestra lista vinculada es lo suficientemente simple: simplemente envolvemos ese elemento en una clase de <code>Node</code> , y asignamos ese nodo al <code>head</code> de nuestra lista vinculada. 
-¿Pero qué pasa si nuestra lista ya tiene uno o más miembros? ¿Cómo agregamos un elemento a la lista? Recuerde que cada nodo en una lista vinculada tiene una propiedad <code>next</code> . Para agregar un nodo a la lista, busque el último nodo en la lista y apunte la <code>next</code> propiedad del último nodo a nuestro nuevo nodo. (Sugerencia: sabe que ha llegado al final de una lista enlazada cuando la <code>next</code> propiedad de un nodo es <code>null</code> ). 
-</section>
+<section id="description"> Vamos a crear una clase de <code>linked list</code> . Cada lista vinculada debe comenzar con unas pocas propiedades básicas: una <code>head</code> (el primer elemento de su lista) y una <code>length</code> (número de elementos en su lista). A veces, verás implementaciones de listas vinculadas que incorporan una <code>tail</code> para el último elemento de la lista, pero por ahora solo nos quedaremos con estos dos. Cada vez que agregamos un elemento a la lista vinculada, nuestra propiedad de <code>length</code> debe incrementarse en uno. Queremos tener una forma de agregar elementos a nuestra lista vinculada, por lo que el primer método que querremos crear es el método de <code>add</code> . Si nuestra lista está vacía, agregar un elemento a nuestra lista vinculada es lo suficientemente simple: simplemente envolvemos ese elemento en una clase de <code>Node</code> , y asignamos ese nodo al <code>head</code> de nuestra lista vinculada. Pero, ¿y si nuestra lista ya tiene uno o más miembros? ¿Cómo agregamos un elemento a la lista? Recuerde que cada nodo en una lista vinculada tiene una propiedad <code>next</code> . Para agregar un nodo a la lista, busque el último nodo en la lista y apunte la <code>next</code> propiedad del último nodo a nuestro nuevo nodo. (Sugerencia: sabe que ha llegado al final de una lista vinculada cuando la <code>next</code> propiedad de un nodo es <code>null</code> ). </section>
 
 ## Instructions
-<section id='instructions'> 
-Escriba un método de adición que asigne el primer nodo que empuja a la lista vinculada al <code>head</code> ; después de eso, cada vez que agregue un nodo, cada nodo debe ser referenciado por la <code>next</code> propiedad del nodo anterior. 
-Nota 
-La <code>length</code> su lista debe aumentar en uno cada vez que se agregue un elemento a la lista vinculada. 
-</section>
+<section id="instructions"> Escriba un método de adición que asigne el primer nodo que empuja a la lista vinculada al <code>head</code> ; después de eso, cada vez que agregue un nodo, cada nodo debe ser referenciado por la <code>next</code> propiedad del nodo anterior. Nota La <code>length</code> su lista debe aumentar en uno cada vez que se agregue un elemento a la lista vinculada. </section>
 
 ## Tests
 <section id='tests'>
@@ -67,6 +59,7 @@ function LinkedList() {
     // Only change code above this line
   };
 }
+
 ```
 
 </div>

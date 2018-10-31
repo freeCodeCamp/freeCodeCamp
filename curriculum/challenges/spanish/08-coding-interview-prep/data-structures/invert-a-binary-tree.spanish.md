@@ -1,18 +1,16 @@
 ---
 id: 587d8259367417b2b2512c83
 title: Invert a Binary Tree
-localeTitle: Invertir un árbol binario
 challengeType: 1
+videoUrl: ''
+localeTitle: Invertir un árbol binario
 ---
 
 ## Description
-<section id='description'> 
-Aquí crearemos una función para invertir un árbol binario. Dado un árbol binario, queremos producir un nuevo árbol que sea equivalente a la imagen de espejo de este árbol. La ejecución de un recorrido inorder en un árbol invertido explorará los nodos en orden inverso en comparación con el recorrido inorder del árbol original. Escribe un método para hacer esto llamado <code>invert</code> en nuestro árbol binario. Llamar a este método debería invertir la estructura de árbol actual. Idealmente, nos gustaría hacer esto in situ en tiempo lineal. Es decir, solo visitamos cada nodo una vez y modificamos la estructura de árbol existente a medida que avanzamos, sin utilizar ninguna memoria adicional. ¡Buena suerte! 
-</section>
+<section id="description"> Aquí vamos a crear una función para invertir un árbol binario. Dado un árbol binario, queremos producir un nuevo árbol que sea equivalente a la imagen de espejo de este árbol. La ejecución de un recorrido inorder en un árbol invertido explorará los nodos en orden inverso en comparación con el recorrido inorder del árbol original. Escribe un método para hacer esto llamado <code>invert</code> en nuestro árbol binario. Llamar a este método debería invertir la estructura de árbol actual. Idealmente, nos gustaría hacer esto in situ en tiempo lineal. Es decir, solo visitamos cada nodo una vez y modificamos la estructura de árbol existente a medida que avanzamos, sin utilizar ninguna memoria adicional. ¡Buena suerte! </section>
 
 ## Instructions
-<section id='instructions'> 
-
+<section id="instructions">
 </section>
 
 ## Tests
@@ -50,6 +48,7 @@ function BinarySearchTree() {
     // change code below this line
     // change code above this line
 }
+
 ```
 
 </div>

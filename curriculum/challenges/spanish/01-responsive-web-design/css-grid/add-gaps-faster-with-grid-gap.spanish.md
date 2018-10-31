@@ -1,20 +1,16 @@
 ---
 id: 5a9036ee38fddaf9a66b5d37
 title: Add Gaps Faster with grid-gap
-localeTitle: Agregue espacios más rápido con la rejilla
 challengeType: 0
 videoUrl: ''
+localeTitle: Agregue espacios más rápido con la rejilla
 ---
 
 ## Description
-<section id='description'> 
-<code>grid-gap</code> es una propiedad abreviada <code>grid-row-gap</code> y <code>grid-column-gap</code> de los dos desafíos anteriores que es más conveniente de usar. Si <code>grid-gap</code> tiene un valor, creará un gap entre todas las filas y columnas. Sin embargo, si hay dos valores, utilizará el primero para establecer el espacio entre las filas y el segundo valor para las columnas. 
-</section>
+<section id="description"> <code>grid-gap</code> es una propiedad abreviada de <code>grid-row-gap</code> y <code>grid-column-gap</code> de los dos desafíos anteriores que es más conveniente de usar. Si <code>grid-gap</code> tiene un valor, creará un gap entre todas las filas y columnas. Sin embargo, si hay dos valores, utilizará el primero para establecer el espacio entre las filas y el segundo valor para las columnas. </section>
 
 ## Instructions
-<section id='instructions'> 
-Use <code>grid-gap</code> para introducir un espacio de <code>10px</code> entre las filas y un espacio de <code>20px</code> entre las columnas. 
-</section>
+<section id="instructions"> Use <code>grid-gap</code> para introducir un espacio de <code>10px</code> entre las filas y un espacio de <code>20px</code> entre las columnas. </section>
 
 ## Tests
 <section id='tests'>
@@ -62,6 +58,7 @@ tests:
   <div class="d4">4</div>
   <div class="d5">5</div>
 </div>
+
 ```
 
 </div>
@@ -73,9 +70,7 @@ tests:
 ## Solution
 <section id='solution'>
 
-
 ```js
-var code = ".container {grid-gap: 10px 20px;}"
+// solution required
 ```
-
 </section>

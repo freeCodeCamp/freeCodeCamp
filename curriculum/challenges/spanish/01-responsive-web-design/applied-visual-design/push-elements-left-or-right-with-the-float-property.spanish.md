@@ -1,20 +1,16 @@
 ---
 id: 587d78a3367417b2b2512ace
 title: Push Elements Left or Right with the float Property
-localeTitle: Empuje los elementos hacia la izquierda o hacia la derecha con la propiedad float
 challengeType: 0
 videoUrl: ''
+localeTitle: Empuje los elementos hacia la izquierda o hacia la derecha con la propiedad float
 ---
 
 ## Description
-<section id='description'> 
-La siguiente herramienta de posicionamiento no usa realmente la <code>position</code> , pero establece la propiedad de <code>float</code> de un elemento. Los elementos flotantes se eliminan del flujo normal de un documento y se empujan hacia la <code>left</code> o hacia la <code>right</code> de su elemento principal que contiene. Se usa comúnmente con la propiedad de <code>width</code> para especificar cuánto espacio horizontal requiere el elemento flotante. 
-</section>
+<section id="description"> La siguiente herramienta de posicionamiento no usa realmente la <code>position</code> , pero establece la propiedad de <code>float</code> de un elemento. Los elementos flotantes se eliminan del flujo normal de un documento y se empujan hacia la <code>left</code> o hacia la <code>right</code> de su elemento principal que contiene. Se usa comúnmente con la propiedad de <code>width</code> para especificar cuánto espacio horizontal requiere el elemento flotante. </section>
 
 ## Instructions
-<section id='instructions'> 
-El marcado dado funcionaría bien como un diseño de dos columnas, con la <code>section</code> y los elementos a <code>aside</code> lado uno del otro. Dé al elemento <code>#left</code> un <code>float</code> de la <code>left</code> y el elemento <code>#right</code> un <code>float</code> de la <code>right</code> . 
-</section>
+<section id="instructions"> El marcado dado funcionaría bien como un diseño de dos columnas, con los elementos de <code>section</code> y <code>aside</code> uno al lado del otro. Dé al elemento <code>#left</code> un <code>float</code> de la <code>left</code> y el elemento <code>#right</code> un <code>float</code> de la <code>right</code> . </section>
 
 ## Tests
 <section id='tests'>
@@ -65,6 +61,7 @@ tests:
     <p>Links</p>
   </aside>
 </body>
+
 ```
 
 </div>

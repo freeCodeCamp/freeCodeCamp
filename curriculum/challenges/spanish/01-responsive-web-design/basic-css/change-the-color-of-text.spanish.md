@@ -1,25 +1,16 @@
 ---
 id: bad87fee1348bd9aedf08803
 title: Change the Color of Text
-localeTitle: Cambiar el color del texto
 challengeType: 0
 videoUrl: ''
+localeTitle: Cambiar el color del texto
 ---
 
 ## Description
-<section id='description'> 
-Ahora vamos a cambiar el color de algunos de nuestros textos. 
-Podemos hacer esto cambiando el <code>style</code> de su elemento <code>h2</code> . 
-La propiedad que es responsable del color del texto de un elemento es la propiedad de estilo de <code>color</code> . 
-Así es como establecería el color del texto de su elemento <code>h2</code> en azul: 
-<code>&lt;h2 style=&quot;color: blue;&quot;&gt;CatPhotoApp&lt;/h2&gt;</code> 
-Tenga en cuenta que es una buena práctica finalizar las declaraciones de <code>style</code> línea con una <code>;</code> . 
-</section>
+<section id="description"> Ahora cambiemos el color de algunos de nuestros textos. Podemos hacer esto cambiando el <code>style</code> de su elemento <code>h2</code> . La propiedad que es responsable del color del texto de un elemento es la propiedad de estilo de <code>color</code> . A continuación le indicamos cómo establecería el color del texto de su elemento <code>h2</code> en azul: <code>&lt;h2 style=&quot;color: blue;&quot;&gt;CatPhotoApp&lt;/h2&gt;</code> Tenga en cuenta que es una buena práctica finalizar las declaraciones de <code>style</code> línea con una <code>;</code> . </section>
 
 ## Instructions
-<section id='instructions'> 
-Cambia el estilo de tu elemento <code>h2</code> para que su color de texto sea rojo. 
-</section>
+<section id="instructions"> Cambia el estilo de tu elemento <code>h2</code> para que su color de texto sea rojo. </section>
 
 ## Tests
 <section id='tests'>
@@ -72,6 +63,7 @@ tests:
     <button type="submit">Submit</button>
   </form>
 </main>
+
 ```
 
 </div>

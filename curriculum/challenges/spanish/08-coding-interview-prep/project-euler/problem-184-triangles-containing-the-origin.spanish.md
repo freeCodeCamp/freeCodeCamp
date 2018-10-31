@@ -1,24 +1,16 @@
 ---
-id: 5
-localeTitle: 5900f4241000cf542c50ff37
+id: 5900f4241000cf542c50ff37
 challengeType: 5
 title: 'Problem 184: Triangles containing the origin'
+videoUrl: ''
+localeTitle: 'Problema 184: Triángulos que contienen el origen.'
 ---
 
 ## Description
-<section id='description'> 
-Considere el conjunto Ir de puntos (x, y) con coordenadas enteras en el interior del círculo con radio r, centrado en el origen, es decir, x2 + y2 &lt;r2. 
-Para un radio de 2, I2 contiene los nueve puntos (0,0), (1,0), (1,1), (0,1), (-1,1), (-1,0), (-1, -1), (0, -1) y (1, -1). Hay ocho triángulos con los tres vértices en I2 que contienen el origen en el interior. Dos de ellos se muestran a continuación, los otros se obtienen de estos por rotación. 
-
-
-Para un radio de 3, hay 360 triángulos que contienen el origen en el interior y tienen todos los vértices en I3 y para I5 el número es 10600. 
-
-¿Cuántos triángulos hay que contienen el origen en el interior y tienen los tres ¿Vértices en I105? 
-</section>
+<section id="description"> Considere el conjunto Ir de puntos (x, y) con coordenadas enteras en el interior del círculo con radio r, centrado en el origen, es decir, x2 + y2 &lt;r2. Para un radio de 2, I2 contiene los nueve puntos (0,0), (1,0), (1,1), (0,1), (-1,1), (-1,0), ( -1, -1), (0, -1) y (1, -1). Hay ocho triángulos con los tres vértices en I2 que contienen el origen en el interior. Dos de ellos se muestran a continuación, los otros se obtienen de estos por rotación. <p> Para un radio de 3, hay 360 triángulos que contienen el origen en el interior y tienen todos los vértices en I3 y para I5 el número es 10600. </p><p> ¿Cuántos triángulos hay que contengan el origen en el interior y tengan los tres vértices en I105? </p></section>
 
 ## Instructions
-<section id='instructions'> 
-
+<section id="instructions">
 </section>
 
 ## Tests
@@ -45,6 +37,7 @@ function euler184() {
 }
 
 euler184();
+
 ```
 
 </div>

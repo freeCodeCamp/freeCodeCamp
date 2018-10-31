@@ -1,27 +1,16 @@
 ---
 id: 587d7dab367417b2b2512b70
 title: Introduction to Currying and Partial Application
-localeTitle: Introducción al curry y aplicación parcial.
 challengeType: 1
+videoUrl: ''
+localeTitle: Introducción al curry y aplicación parcial.
 ---
 
 ## Description
-<section id='description'> 
-La <code>arity</code> de una función es el número de argumentos que requiere. <code>Currying</code> una función significa convertir una función de N <code>arity</code> en N funciones de <code>arity</code> 1. 
-En otras palabras, reestructura una función para que tome un argumento, luego devuelva otra función que tome el siguiente argumento, y así sucesivamente. 
-Aquí hay un ejemplo: 
-<blockquote>//Un-curried function<br>function unCurried(x, y) {<br>&nbsp;&nbsp;return x + y;<br>}<br><br>//Curried function<br>function curried(x) {<br>&nbsp;&nbsp;return function(y) {<br>&nbsp;&nbsp;&nbsp;&nbsp;return x + y;<br>&nbsp;&nbsp;}<br>}<br>curried(1)(2) // Returns 3</blockquote> 
-Esto es útil en su programa si no puede suministrar todos los argumentos a una función al mismo tiempo. Puede guardar cada llamada de función en una variable, que mantendrá la referencia de función devuelta que toma el siguiente argumento cuando esté disponible. Aquí hay un ejemplo que usa la función <code>curried</code> en el ejemplo anterior: 
-<blockquote>// Call a curried function in parts:<br>var funcForY = curried(1);<br>console.log(funcForY(2)); // Prints 3</blockquote> 
-De manera similar, <code>partial application</code> puede describirse como la aplicación de algunos argumentos a una función a la vez y la devolución de otra función que se aplica a más argumentos. 
-Aquí hay un ejemplo: 
-<blockquote>//Impartial function<br>function impartial(x, y, z) {<br>&nbsp;&nbsp;return x + y + z;<br>}<br>var partialFn = impartial.bind(this, 1, 2);<br>partialFn(10); // Returns 13</blockquote> 
-</section>
+<section id="description"> La <code>arity</code> de una función es el número de argumentos que requiere. <code>Currying</code> una función significa convertir una función de N <code>arity</code> en N funciones de <code>arity</code> 1. En otras palabras, reestructura una función para que tome un argumento, luego devuelva otra función que tome el siguiente argumento, y así sucesivamente. Aquí hay un ejemplo: <blockquote> // Función sin currículum <br> función unCurried (x, y) { <br> devuelve x + y; <br> } <br><br> // Función de curry <br> función curry (x) { <br> función de retorno (y) { <br> devuelve x + y; <br> } <br> } <br> Curried (1) (2) // Devoluciones 3 </blockquote> Esto es útil en su programa si no puede suministrar todos los argumentos a una función al mismo tiempo. Puede guardar cada llamada de función en una variable, que mantendrá la referencia de función devuelta que toma el siguiente argumento cuando esté disponible. Aquí hay un ejemplo que usa la función de <code>curried</code> en el ejemplo anterior: <blockquote> // Llamar una función al curry en partes: <br> var funcForY = al curry (1); <br> console.log (funcForY (2)); // Impresiones 3 </blockquote> De manera similar, <code>partial application</code> puede describirse como la aplicación de unos pocos argumentos a una función a la vez y la devolución de otra función que se aplica a más argumentos. Aquí hay un ejemplo: <blockquote> // Función imparcial <br> función imparcial (x, y, z) { <br> devuelve x + y + z; <br> } <br> var partialFn = imparcial.bind (esto, 1, 2); <br> parcialFn (10); // Devoluciones 13 </blockquote></section>
 
 ## Instructions
-<section id='instructions'> 
-Rellene el cuerpo de la función de <code>add</code> para que use el curry para agregar los parámetros <code>x</code> , <code>y</code> y <code>z</code> . 
-</section>
+<section id="instructions"> Rellene el cuerpo de la función de <code>add</code> para que use el curry para agregar los parámetros <code>x</code> , <code>y</code> y <code>z</code> . </section>
 
 ## Tests
 <section id='tests'>
@@ -54,6 +43,7 @@ function add(x) {
   // Add your code above this line
 }
 add(10)(20)(30);
+
 ```
 
 </div>

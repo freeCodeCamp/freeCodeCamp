@@ -1,20 +1,16 @@
 ---
 id: 587d8251367417b2b2512c64
 title: Search within a Linked List
-localeTitle: Buscar dentro de una lista enlazada
 challengeType: 1
+videoUrl: ''
+localeTitle: Buscar dentro de una lista enlazada
 ---
 
 ## Description
-<section id='description'> 
-Agreguemos algunos métodos más útiles a nuestra clase de lista vinculada. ¿No sería útil si pudiéramos decir si nuestra lista estaba vacía o no, al igual que con nuestras clases de <code>Stack</code> y <code>Queue</code> ? 
-También deberíamos poder encontrar elementos específicos en nuestra lista enlazada. ¡Recorrer a través de estructuras de datos es algo con lo que querrás practicar mucho! Vamos a crear un método <code>indexOf</code> que tome un <code>element</code> como un argumento y devuelva el <code>index</code> ese elemento en la lista enlazada. Si el elemento no se encuentra en la lista enlazada, devuelva <code>-1</code> . 
-Implementemos también un método que haga lo contrario: un método <code>elementAt</code> que toma un <code>index</code> como argumento y devuelve el <code>element</code> en el <code>index</code> dado. Si no se encuentra ningún <code>element</code> , devuelva <code>undefined</code> . 
-</section>
+<section id="description"> Agreguemos algunos métodos más útiles a nuestra clase de lista vinculada. ¿No sería útil si pudiéramos decir si nuestra lista estaba vacía o no, al igual que con nuestras clases de <code>Stack</code> y <code>Queue</code> ? También deberíamos poder encontrar elementos específicos en nuestra lista enlazada. ¡Recorrer a través de estructuras de datos es algo con lo que querrás practicar mucho! Vamos a crear un método <code>indexOf</code> que tome un <code>element</code> como un argumento y devuelva el <code>index</code> ese elemento en la lista enlazada. Si el elemento no se encuentra en la lista enlazada, devuelva <code>-1</code> . También implementemos un método que haga lo contrario: un método <code>elementAt</code> que toma un <code>index</code> como argumento y devuelve el <code>element</code> en el <code>index</code> dado. Si no se encuentra ningún <code>element</code> , devuelva <code>undefined</code> . </section>
 
 ## Instructions
-<section id='instructions'> 
-Escriba un método <code>isEmpty</code> que compruebe si la lista enlazada está vacía, un método <code>indexOf</code> que devuelve el <code>index</code> de un elemento determinado y un <code>elementAt</code> que devuelve un <code>element</code> en un <code>index. <code>0</code></code> determinado <code>index. <code>0</code></code> </section>
+<section id="instructions"> Escriba un método <code>isEmpty</code> que compruebe si la lista enlazada está vacía, un método <code>indexOf</code> que devuelve el <code>index</code> de un elemento dado y un <code>elementAt</code> que devuelve un <code>element</code> en un <code>index.</code> determinado <code>index.</code> </section>
 
 ## Tests
 <section id='tests'>
@@ -97,6 +93,7 @@ function LinkedList() {
 
   // Only change code above this line
 }
+
 ```
 
 </div>

@@ -1,22 +1,16 @@
 ---
 id: 56533eb9ac21ba0edf2244c0
 title: Global vs. Local Scope in Functions
-localeTitle: Ámbito global vs. local en funciones
 challengeType: 1
+videoUrl: ''
+localeTitle: Ámbito global vs. local en funciones
 ---
 
 ## Description
-<section id='description'> 
-Es posible tener variables <dfn>locales</dfn> y <dfn>globales</dfn> con el mismo nombre. Cuando haces esto, la variable <code>local</code> tiene prioridad sobre la variable <code>global</code> . 
-En este ejemplo: 
-<blockquote>var someVar = "Hat";<br>function myFun() {<br>&nbsp;&nbsp;var someVar = "Head";<br>&nbsp;&nbsp;return someVar;<br>}</blockquote> 
-La función <code>myFun</code> devolverá <code>&quot;Head&quot;</code> porque la versión <code>local</code> de la variable está presente. 
-</section>
+<section id="description"> Es posible tener variables <dfn>locales</dfn> y <dfn>globales</dfn> con el mismo nombre. Cuando haces esto, la variable <code>local</code> tiene prioridad sobre la variable <code>global</code> . En este ejemplo: <blockquote> var someVar = &quot;Hat&quot;; <br> función myFun () { <br> var someVar = &quot;Head&quot;; <br> devuelve someVar; <br> } </blockquote> La función <code>myFun</code> devolverá <code>&quot;Head&quot;</code> porque la versión <code>local</code> de la variable está presente. </section>
 
 ## Instructions
-<section id='instructions'> 
-Agregue una variable local a la función <code>myOutfit</code> para anular el valor de <code>outerWear</code> con <code>&quot;sweater&quot;</code> . 
-</section>
+<section id="instructions"> Agregue una variable local a la función <code>myOutfit</code> para anular el valor de <code>outerWear</code> con <code>&quot;sweater&quot;</code> . </section>
 
 ## Tests
 <section id='tests'>
@@ -53,6 +47,7 @@ function myOutfit() {
 }
 
 myOutfit();
+
 ```
 
 </div>
@@ -64,13 +59,7 @@ myOutfit();
 ## Solution
 <section id='solution'>
 
-
 ```js
-var outerWear = "T-Shirt";
-function myOutfit() {
-  var outerWear = "sweater";
-  return outerWear;
-}
+// solution required
 ```
-
 </section>

@@ -1,22 +1,17 @@
 ---
 id: a202eed8fc186c8434cb6d61
 title: Reverse a String
-localeTitle: Revertir una cadena
 isRequired: true
 challengeType: 5
+videoUrl: ''
+localeTitle: Revertir una cadena
 ---
 
 ## Description
-<section id='description'> 
-Invertir la cadena proporcionada. 
-Es posible que deba convertir la cadena en una matriz antes de poder revertirla. 
-Su resultado debe ser una cadena. 
-Recuerda usar <a href="http://forum.freecodecamp.org/t/how-to-get-help-when-you-are-stuck/19514" target="_blank">Read-Search-Ask</a> si te atascas. Escribe tu propio código. 
-</section>
+<section id="description"> Invierta la cadena provista. Es posible que deba convertir la cadena en una matriz antes de poder revertirla. Su resultado debe ser una cadena. Recuerda usar <a href="http://forum.freecodecamp.org/t/how-to-get-help-when-you-are-stuck/19514" target="_blank">Read-Search-Ask</a> si te atascas. Escribe tu propio código. </section>
 
 ## Instructions
-<section id='instructions'> 
-
+<section id="instructions">
 </section>
 
 ## Tests
@@ -48,6 +43,7 @@ function reverseString(str) {
 }
 
 reverseString("hello");
+
 ```
 
 </div>
@@ -59,14 +55,7 @@ reverseString("hello");
 ## Solution
 <section id='solution'>
 
-
 ```js
-function reverseString(str) {
-  return str.split('').reverse().join('');
-}
-
-reverseString("hello");
-
+// solution required
 ```
-
 </section>

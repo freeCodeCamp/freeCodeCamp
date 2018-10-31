@@ -1,19 +1,16 @@
 ---
-id: 5
-localeTitle: 5900f3ab1000cf542c50febe
+id: 5900f3ab1000cf542c50febe
 challengeType: 5
 title: 'Problem 63: Powerful digit counts'
+videoUrl: ''
+localeTitle: 'Problema 63: recuentos de dígitos potentes'
 ---
 
 ## Description
-<section id='description'> 
-El número de 5 dígitos, 16807 = 75, es también una quinta potencia. De manera similar, el número de 9 dígitos, 134217728 = 89, es una novena potencia. 
-¿Cuántos enteros positivos de n dígitos existen que también son una enésima potencia? 
-</section>
+<section id="description"> El número de 5 dígitos, 16807 = 75, es también una quinta potencia. De manera similar, el número de 9 dígitos, 134217728 = 89, es una novena potencia. ¿Cuántos enteros positivos de n dígitos existen que también son una enésima potencia? </section>
 
 ## Instructions
-<section id='instructions'> 
-
+<section id="instructions">
 </section>
 
 ## Tests
@@ -40,6 +37,7 @@ function euler63() {
 }
 
 euler63();
+
 ```
 
 </div>

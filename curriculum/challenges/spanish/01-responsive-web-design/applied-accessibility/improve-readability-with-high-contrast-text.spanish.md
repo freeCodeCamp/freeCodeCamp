@@ -1,21 +1,16 @@
 ---
 id: 587d778e367417b2b2512aab
 title: Improve Readability with High Contrast Text
-localeTitle: Mejora la legibilidad con texto de alto contraste
 challengeType: 0
 videoUrl: ''
+localeTitle: Mejora la legibilidad con texto de alto contraste
 ---
 
 ## Description
-<section id='description'> 
-bajo contraste entre los colores de primer plano y de fondo puede dificultar la lectura del texto. Un contraste suficiente mejora la legibilidad de su contenido, pero ¿qué significa exactamente &quot;suficiente&quot;? 
-Las Pautas de Accesibilidad al Contenido en la Web (WCAG) recomiendan al menos una relación de contraste de 4.5 a 1 para el texto normal. La relación se calcula comparando los valores de luminancia relativa de dos colores. Esto varía de 1: 1 para el mismo color, o sin contraste, a 21: 1 para blanco contra negro, el contraste más fuerte. Hay muchas herramientas de comprobación de contraste disponibles en línea que calculan esta relación para usted. 
-</section>
+<section id="description"> El bajo contraste entre los colores de fondo y de primer plano puede dificultar la lectura del texto. Un contraste suficiente mejora la legibilidad de su contenido, pero ¿qué significa exactamente &quot;suficiente&quot;? Las Pautas de Accesibilidad al Contenido en la Web (WCAG) recomiendan al menos una relación de contraste de 4.5 a 1 para el texto normal. La relación se calcula comparando los valores de luminancia relativa de dos colores. Esto varía de 1: 1 para el mismo color, o sin contraste, a 21: 1 para blanco contra negro, el contraste más fuerte. Hay muchas herramientas de comprobación de contraste disponibles en línea que calculan esta relación para usted. </section>
 
 ## Instructions
-<section id='instructions'> 
-La elección del texto gris claro de Camper Cat sobre un fondo blanco para su reciente publicación en el blog tiene una relación de contraste de 1.5: 1, lo que dificulta su lectura. Cambie el <code>color</code> del texto del gris actual ( <code>#D3D3D3</code> ) a un gris más oscuro ( <code>#636363</code> ) para mejorar la relación de contraste a 6: 1. 
-</section>
+<section id="instructions"> La elección del texto gris claro de Camper Cat sobre un fondo blanco para su reciente publicación en el blog tiene una relación de contraste de 1.5: 1, lo que dificulta su lectura. Cambie el <code>color</code> del texto del gris actual ( <code>#D3D3D3</code> ) a un gris más oscuro ( <code>#636363</code> ) para mejorar la relación de contraste a 6: 1. </section>
 
 ## Tests
 <section id='tests'>
@@ -55,6 +50,7 @@ tests:
     <p>As I've stated in the past, I firmly believe a true ninja's skills must come from within, with no external influences. My own catnip use shall continue as purely recreational.</p>
   </article>
 </body>
+
 ```
 
 </div>

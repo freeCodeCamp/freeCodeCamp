@@ -1,24 +1,16 @@
 ---
-id: 5
-localeTitle: 5900f4f61000cf542c510008
+id: 5900f4f61000cf542c510008
 challengeType: 5
 title: 'Problem 393: Migrating ants'
+videoUrl: ''
+localeTitle: 'Problema 393: migrar hormigas'
 ---
 
 ## Description
-<section id='description'> 
-Una cuadrícula n × n de cuadrados contiene n2 hormigas, una hormiga por cuadrado. 
-Todas las hormigas deciden moverse simultáneamente a un cuadrado adyacente (generalmente 4 posibilidades, excepto las hormigas en el borde de la cuadrícula o en las esquinas). 
-Definimos f (n) como el número de formas en que esto puede suceder sin que ninguna hormiga termine en el mismo cuadrado y sin que dos hormigas crucen el mismo borde entre dos cuadrados. 
-
-
-Se le da que f (4) = 88. 
-Encuentre f (10). 
-</section>
+<section id="description"> Una cuadrícula n × n de cuadrados contiene n2 hormigas, una hormiga por cuadrado. Todas las hormigas deciden moverse simultáneamente a un cuadrado adyacente (generalmente 4 posibilidades, excepto las hormigas en el borde de la cuadrícula o en las esquinas). Definimos f (n) como el número de formas en que esto puede suceder sin que ninguna hormiga termine en el mismo cuadrado y sin que dos hormigas crucen el mismo borde entre dos cuadrados. <p> Te dan que f (4) = 88. Encuentra f (10). </p></section>
 
 ## Instructions
-<section id='instructions'> 
-
+<section id="instructions">
 </section>
 
 ## Tests
@@ -45,6 +37,7 @@ function euler393() {
 }
 
 euler393();
+
 ```
 
 </div>

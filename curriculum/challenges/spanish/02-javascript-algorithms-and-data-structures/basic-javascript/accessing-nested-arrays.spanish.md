@@ -1,22 +1,17 @@
 ---
 id: 56533eb9ac21ba0edf2244cd
 title: Accessing Nested Arrays
-localeTitle: Acceso a matrices anidadas
 challengeType: 1
 guideUrl: 'https://spanish.freecodecamp.org/guide/certificates/access-array-data-with-indexes'
+videoUrl: ''
+localeTitle: Acceso a matrices anidadas
 ---
 
 ## Description
-<section id='description'> 
-Como hemos visto en ejemplos anteriores, los objetos pueden contener tanto objetos anidados como matrices anidadas. Al igual que para acceder a objetos anidados, la notación de paréntesis de arrays se puede encadenar para acceder a arrays anidados. 
-Aquí hay un ejemplo de cómo acceder a una matriz anidada: 
-<blockquote>var ourPets = [<br>&nbsp;&nbsp;{<br>&nbsp;&nbsp;&nbsp;&nbsp;animalType: "cat",<br>&nbsp;&nbsp;&nbsp;&nbsp;names: [<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"Meowzer",<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"Fluffy",<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"Kit-Cat"<br>&nbsp;&nbsp;&nbsp;&nbsp;]<br>&nbsp;&nbsp;},<br>&nbsp;&nbsp;{<br>&nbsp;&nbsp;&nbsp;&nbsp;animalType: "dog",<br>&nbsp;&nbsp;&nbsp;&nbsp;names: [<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"Spot",<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"Bowser",<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"Frankie"<br>&nbsp;&nbsp;&nbsp;&nbsp;]<br>&nbsp;&nbsp;}<br>];<br>ourPets[0].names[1]; // "Fluffy"<br>ourPets[1].names[0]; // "Spot"</blockquote> 
-</section>
+<section id="description"> Como hemos visto en ejemplos anteriores, los objetos pueden contener tanto objetos anidados como matrices anidadas. Al igual que para acceder a objetos anidados, la notación de paréntesis de arrays se puede encadenar para acceder a arrays anidados. Aquí hay un ejemplo de cómo acceder a una matriz anidada: <blockquote> var ourPets = [ <br> { <br> tipo de animal: &quot;gato&quot;, <br> nombres: [ <br> &quot;Meowzer&quot;, <br> &quot;Mullido&quot;, <br> &quot;Kit-Cat&quot; <br> ] <br> } <br> { <br> tipo de animal: &quot;perro&quot;, <br> nombres: [ <br> &quot;Lugar&quot;, <br> &quot;Bowser&quot;, <br> &quot;Frankie&quot; <br> ] <br> } <br> ]; <br> ourPets [0] .names [1]; // &quot;Fluffy&quot; <br> ourPets [1] .names [0]; // &quot;Lugar&quot; </blockquote></section>
 
 ## Instructions
-<section id='instructions'> 
-Recupere el segundo árbol de la variable <code>myPlants</code> usando el punto de objeto y la notación de corchete de matriz. 
-</section>
+<section id="instructions"> Recupere el segundo árbol de la variable <code>myPlants</code> usando el punto de objeto y la notación de corchete de matriz. </section>
 
 ## Tests
 <section id='tests'>
@@ -81,30 +76,7 @@ console.info('after the test');
 ## Solution
 <section id='solution'>
 
-
 ```js
-var myPlants = [
-  {
-    type: "flowers",
-    list: [
-      "rose",
-      "tulip",
-      "dandelion"
-    ]
-  },
-  {
-    type: "trees",
-    list: [
-      "fir",
-      "pine",
-      "birch"
-    ]
-  }
-];
-
-// Only change code below this line
-
-var secondTree = myPlants[1].list[1];
+// solution required
 ```
-
 </section>

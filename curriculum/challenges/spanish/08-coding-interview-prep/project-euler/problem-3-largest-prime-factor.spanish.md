@@ -1,19 +1,16 @@
 ---
-id: 5
-localeTitle: 5900f36f1000cf542c50fe82
+id: 5900f36f1000cf542c50fe82
 challengeType: 5
 title: 'Problem 3: Largest prime factor'
+videoUrl: ''
+localeTitle: 'Problema 3: el factor primordial más grande'
 ---
 
 ## Description
-<section id='description'> 
-Los factores primos de 13195 son 5, 7, 13 y 29. 
-¿Cuál es el factor primo más grande de un <code>number</code> dado? 
-</section>
+<section id="description"> Los factores primos de 13195 son 5, 7, 13 y 29. ¿Cuál es el factor primo más grande de un <code>number</code> dado? </section>
 
 ## Instructions
-<section id='instructions'> 
-
+<section id="instructions">
 </section>
 
 ## Tests
@@ -50,6 +47,7 @@ function largestPrimeFactor(number) {
 }
 
 largestPrimeFactor(13195);
+
 ```
 
 </div>
@@ -61,18 +59,7 @@ largestPrimeFactor(13195);
 ## Solution
 <section id='solution'>
 
-
 ```js
-const largestPrimeFactor = (number)=>{
-  let largestFactor = number;
-  for(let i = 2;i<largestFactor;i++){
-  if(!(largestFactor%i)){
-    largestFactor = largestFactor/i;
-    largestPrimeFactor(largestFactor);
-  }
-  }
-  return largestFactor;
-}
+// solution required
 ```
-
 </section>

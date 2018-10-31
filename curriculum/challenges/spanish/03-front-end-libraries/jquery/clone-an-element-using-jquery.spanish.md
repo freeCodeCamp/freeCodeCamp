@@ -1,23 +1,16 @@
 ---
 id: bad87fee1348bd9aed508826
 title: Clone an Element Using jQuery
-localeTitle: Clonar un elemento usando jQuery
 challengeType: 6
+videoUrl: ''
+localeTitle: Clonar un elemento usando jQuery
 ---
 
 ## Description
-<section id='description'> 
-Además de mover elementos, también puede copiarlos de un lugar a otro. 
-jQuery tiene una función llamada <code>clone()</code> que hace una copia de un elemento. 
-Por ejemplo, si quisiéramos copiar <code>target2</code> de nuestro <code>left-well</code> a nuestro <code>left-well</code> <code>right-well</code> , <code>$(&quot;#target2&quot;).clone().appendTo(&quot;#right-well&quot;);</code> : 
-<code>$(&quot;#target2&quot;).clone().appendTo(&quot;#right-well&quot;);</code> 
-¿Notaste que esto involucra pegar dos funciones de jQuery? Esto se denomina <code>function chaining</code> y es una forma conveniente de hacer las cosas con jQuery. 
-Clone su elemento <code>target5</code> y <code>target5</code> a su <code>left-well</code> . 
-</section>
+<section id="description"> Además de mover elementos, también puede copiarlos de un lugar a otro. jQuery tiene una función llamada <code>clone()</code> que hace una copia de un elemento. Por ejemplo, si quisiéramos copiar <code>target2</code> de nuestro <code>left-well</code> a nuestro <code>left-well</code> <code>right-well</code> , <code>$(&quot;#target2&quot;).clone().appendTo(&quot;#right-well&quot;);</code> : <code>$(&quot;#target2&quot;).clone().appendTo(&quot;#right-well&quot;);</code> ¿Notaste que esto involucra pegar dos funciones de jQuery? Esto se denomina <code>function chaining</code> y es una forma conveniente de hacer las cosas con jQuery. <code>target5</code> tu elemento <code>target5</code> y <code>target5</code> a tu <code>left-well</code> . </section>
 
 ## Instructions
-<section id='instructions'> 
-
+<section id="instructions">
 </section>
 
 ## Tests
@@ -75,6 +68,7 @@ tests:
     </div>
   </div>
 </div>
+
 ```
 
 </div>

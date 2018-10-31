@@ -1,24 +1,16 @@
 ---
 id: 587d8251367417b2b2512c63
 title: Remove Elements from a Linked List
-localeTitle: Eliminar elementos de una lista enlazada
 challengeType: 1
+videoUrl: ''
+localeTitle: Eliminar elementos de una lista enlazada
 ---
 
 ## Description
-<section id='description'> 
-El siguiente método importante que necesitará cualquier implementación de una lista vinculada es un método de <code>remove</code> . Este método debe tomar el elemento que queremos eliminar como argumento y luego buscar en la lista para encontrar y eliminar el nodo que contiene ese elemento. 
-Siempre que eliminemos un nodo de una lista vinculada, es importante que no dejemos huérfanos accidentalmente al hacerlo. Recuerde que la <code>next</code> propiedad de cada nodo apunta al nodo que lo sigue en la lista. Si estamos eliminando el elemento medio, por ejemplo, vamos a querer asegurarse de que tenemos una conexión desde previa del nodo de ese elemento <code>next</code> propiedad para el elemento medio <code>next</code> propiedad (que es el siguiente nodo en la lista!) 
-Esto podría suena realmente confuso, así que volvamos al ejemplo de la línea de conga para tener un buen modelo conceptual. Imagínate a ti mismo en una línea de conga, y la persona que está directamente delante de ti deja la línea. La persona que acaba de dejar la línea ya no tiene a sus manos sobre nadie, y usted ya no tiene las manos sobre la persona que se fue. Da un paso adelante y pone sus manos sobre la siguiente persona que ve. 
-Si el elemento que queremos eliminar es el elemento <code>head</code> , reasignamos la <code>head</code> al segundo nodo de la lista enlazada. 
-</section>
+<section id="description"> El siguiente método importante que necesitará cualquier implementación de una lista vinculada es un método de <code>remove</code> . Este método debe tomar el elemento que queremos eliminar como argumento y luego buscar en la lista para encontrar y eliminar el nodo que contiene ese elemento. Cada vez que eliminamos un nodo de una lista vinculada, es importante que no dejemos huérfanos accidentalmente al hacerlo. Recuerde que la <code>next</code> propiedad de cada nodo apunta al nodo que lo sigue en la lista. Si estamos eliminando el elemento medio, por ejemplo, vamos a querer asegurarse de que tenemos una conexión desde previa del nodo de ese elemento <code>next</code> propiedad para el elemento medio <code>next</code> propiedad (que es el siguiente nodo en la lista!) Esto puede sonar realmente confuso, así que volvamos al ejemplo de la línea de conga para tener un buen modelo conceptual. Imagínate a ti mismo en una línea de conga, y la persona que está directamente delante de ti deja la línea. La persona que acaba de dejar la línea ya no tiene a sus manos sobre nadie, y usted ya no tiene las manos sobre la persona que se fue. Da un paso adelante y pone sus manos sobre la siguiente persona que ve. Si el elemento que queremos eliminar es el elemento <code>head</code> , reasignamos la <code>head</code> al segundo nodo de la lista enlazada. </section>
 
 ## Instructions
-<section id='instructions'> 
-Escriba un método de <code>remove</code> que tome un elemento y lo elimine de la lista vinculada. 
-Nota 
-La <code>length</code> de la lista debe disminuir en uno cada vez que se elimine un elemento de la lista vinculada. 
-</section>
+<section id="instructions"> Escriba un método de <code>remove</code> que toma un elemento y lo elimina de la lista vinculada. Nota La <code>length</code> de la lista debería disminuir en uno cada vez que se elimine un elemento de la lista vinculada. </section>
 
 ## Tests
 <section id='tests'>
@@ -84,6 +76,7 @@ function LinkedList() {
     // Only change code above this line
   };
 }
+
 ```
 
 </div>
@@ -95,67 +88,7 @@ function LinkedList() {
 ## Solution
 <section id='solution'>
 
-
 ```js
-class Node {
-  constructor (element) {
-    this.element = element;
-    this.next = null;
-  }
-}
-
-class LinkedList {
-  constructor () {
-    this._length = 0;
-    this._head = null;
-  }
-
-  head () {
-    return this._head;
-  }
-
-  size () {
-    return this._length;
-  }
-
-  add (element) {
-    const node = new Node(element);
-
-    if (this._head === null) {
-      this._head = node;
-    } else {
-      let current = this._head;
-
-      while (current.next !== null) {
-        current = current.next;
-      }
-
-      current.next = node;
-    }
-
-    ++this._length;
-  }
-
-  remove (element) {
-    if (this._head === null) return;
-
-    let previous;
-    let current = this._head;
-
-    while (current.next !== null && current.element !== element) {
-      previous = current;
-      current = current.next;
-    }
-
-    if (previous) {
-      previous.next = current.next;
-    } else {
-      this._head = current.next;
-    }
-
-    --this._length;
-  }
-}
+// solution required
 ```
-
 </section>

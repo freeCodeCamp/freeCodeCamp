@@ -1,20 +1,16 @@
 ---
 id: bad87fee1348cd8acef08813
 title: Call out Optional Actions with btn-info
-localeTitle: Llama a acciones opcionales con btn-info
 challengeType: 0
+videoUrl: ''
+localeTitle: Llama a acciones opcionales con btn-info
 ---
 
 ## Description
-<section id='description'> 
-Bootstrap viene con varios colores predefinidos para botones. La clase <code>btn-info</code> se utiliza para llamar la atención sobre acciones opcionales que el usuario puede realizar. 
-Cree un nuevo botón Bootstrap a nivel de bloque debajo de su botón &quot;Me gusta&quot; con el texto &quot;Información&quot;, y agregue las clases <code>btn-info</code> y <code>btn-block</code> Bootstrap. 
-Tenga en cuenta que estos botones aún necesitan las clases <code>btn</code> y <code>btn-block</code> . 
-</section>
+<section id="description"> Bootstrap viene con varios colores predefinidos para botones. La clase <code>btn-info</code> se utiliza para llamar la atención sobre acciones opcionales que el usuario puede realizar. Cree un nuevo botón Bootstrap a nivel de bloque debajo de su botón &quot;Me gusta&quot; con el texto &quot;Información&quot;, y agregue las clases <code>btn-info</code> y <code>btn-block</code> Bootstrap. Tenga en cuenta que estos botones aún necesitan las clases <code>btn</code> y <code>btn-block</code> . </section>
 
 ## Instructions
-<section id='instructions'> 
-
+<section id="instructions">
 </section>
 
 ## Tests
@@ -99,6 +95,7 @@ tests:
     <button type="submit">Submit</button>
   </form>
 </div>
+
 ```
 
 </div>

@@ -1,28 +1,16 @@
 ---
-id: 5
-localeTitle: 5900f4671000cf542c50ff7a
+id: 5900f4671000cf542c50ff7a
 challengeType: 5
 title: 'Problem 251: Cardano Triplets'
+videoUrl: ''
+localeTitle: 'Problema 251: Cardano Triplets'
 ---
 
 ## Description
-<section id='description'> 
-Un triplete de enteros positivos (a, b, c) se llama Cardano Triplet si cumple la condición: 
-
-
-
-Por ejemplo, (2,1,5) es un Cardano Triplet. 
-
-
-Existen 149 Cardano Triplets para los cuales a + b + c ≤ 1000. 
-
-
-Encuentre cuántos Cardano Triplets existen de tal manera que a + b + c ≤ 110,000,000. 
-</section>
+<section id="description"> Un triplete de enteros positivos (a, b, c) se llama Cardano Triplet si cumple con la condición: <p> Por ejemplo, (2,1,5) es un Triplete Cardano. </p><p> Existen 149 trillizos de Cardano para los cuales a + b + c ≤ 1000. </p><p> Halla cuántos trillizos Cardano existen de modo que a + b + c ≤ 110,000,000. </p></section>
 
 ## Instructions
-<section id='instructions'> 
-
+<section id="instructions">
 </section>
 
 ## Tests
@@ -49,6 +37,7 @@ function euler251() {
 }
 
 euler251();
+
 ```
 
 </div>

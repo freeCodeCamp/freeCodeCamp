@@ -1,22 +1,18 @@
 ---
 id: 587d7faa367417b2b2512bd4
 title: Add a Hover Effect to a D3 Element
-localeTitle: Añadir un efecto de desplazamiento sobre un elemento D3
 required:
   - src: 'https://cdnjs.cloudflare.com/ajax/libs/d3/4.3.0/d3.min.js'
 challengeType: 6
+videoUrl: ''
+localeTitle: Añadir un efecto de desplazamiento sobre un elemento D3
 ---
 
 ## Description
-<section id='description'> 
-Es posible agregar efectos que resalten una barra cuando el usuario se desplaza sobre ella con el mouse. Hasta ahora, el estilo de los rectángulos se aplica con los métodos D3 y SVG incorporados, pero también se puede usar CSS. 
-Establece la clase CSS en los elementos SVG con el método <code>attr()</code> . Luego, la pseudo-clase <code>:hover</code> para su nueva clase contiene las reglas de estilo para cualquier efecto de hover. 
-</section>
+<section id="description"> Es posible agregar efectos que resalten una barra cuando el usuario se desplaza sobre ella con el mouse. Hasta ahora, el estilo de los rectángulos se aplica con los métodos D3 y SVG incorporados, pero también se puede usar CSS. Establece la clase CSS en los elementos SVG con el método <code>attr()</code> . Luego, la pseudo-clase <code>:hover</code> para su nueva clase contiene las reglas de estilo para cualquier efecto de hover. </section>
 
 ## Instructions
-<section id='instructions'> 
-Use el método <code>attr()</code> para agregar una clase de <code>bar</code> a todos los elementos <code>rect</code> . Esto cambia el color de <code>fill</code> de la barra a marrón cuando pasas el mouse sobre ella. 
-</section>
+<section id="instructions"> Use el método <code>attr()</code> para agregar una clase de <code>bar</code> a todos los elementos <code>rect</code> . Esto cambia el color de <code>fill</code> de la barra a marrón cuando pasas el mouse sobre ella. </section>
 
 ## Tests
 <section id='tests'>
@@ -78,6 +74,7 @@ tests:
 
   </script>
 </body>
+
 ```
 
 </div>

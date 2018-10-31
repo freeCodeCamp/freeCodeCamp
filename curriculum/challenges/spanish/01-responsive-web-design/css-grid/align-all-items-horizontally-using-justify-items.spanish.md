@@ -1,20 +1,16 @@
 ---
 id: 5a90376038fddaf9a66b5d3c
 title: Align All Items Horizontally using justify-items
-localeTitle: Alinear todos los elementos horizontalmente utilizando elementos justificados
 challengeType: 0
 videoUrl: ''
+localeTitle: Alinear todos los elementos horizontalmente utilizando elementos justificados
 ---
 
 ## Description
-<section id='description'> 
-A veces desea que todos los elementos en su Cuadrícula de CSS compartan la misma alineación. Puede usar las propiedades aprendidas anteriormente y alinearlas individualmente, o puede alinearlas todas a la vez de forma horizontal mediante el uso <code>justify-items</code> en su contenedor de cuadrícula. Esta propiedad puede aceptar todos los valores que aprendió en los dos desafíos anteriores, con la diferencia de que moverá <b>todos</b> los elementos de nuestra cuadrícula a la alineación deseada. 
-</section>
+<section id="description"> A veces desea que todos los elementos en su Cuadrícula de CSS compartan la misma alineación. Puede usar las propiedades aprendidas anteriormente y alinearlas individualmente, o puede alinearlas todas a la vez de forma horizontal mediante el uso <code>justify-items</code> en su contenedor de cuadrícula. Esta propiedad puede aceptar todos los valores que aprendió en los dos desafíos anteriores, con la diferencia de que moverá <b>todos</b> los elementos de nuestra cuadrícula a la alineación deseada. </section>
 
 ## Instructions
-<section id='instructions'> 
-Utilice esta propiedad para centrar todos nuestros artículos horizontalmente. 
-</section>
+<section id="instructions"> Utilice esta propiedad para centrar todos nuestros artículos horizontalmente. </section>
 
 ## Tests
 <section id='tests'>
@@ -64,6 +60,7 @@ tests:
   <div class="item4">4</div>
   <div class="item5">5</div>
 </div>
+
 ```
 
 </div>
@@ -75,9 +72,7 @@ tests:
 ## Solution
 <section id='solution'>
 
-
 ```js
-var code = ".container {justify-items: center;}"
+// solution required
 ```
-
 </section>

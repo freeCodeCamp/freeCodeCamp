@@ -1,25 +1,16 @@
 ---
-id: 5
-localeTitle: 5900f37a1000cf542c50fe8d
+id: 5900f37a1000cf542c50fe8d
 challengeType: 5
 title: 'Problem 14: Longest Collatz sequence'
+videoUrl: ''
+localeTitle: 'Problema 14: la secuencia más larga de Collatz'
 ---
 
 ## Description
-<section id='description'> 
-La siguiente secuencia iterativa se define para el conjunto de enteros positivos: 
-<div style='padding-left: 4em;'> <var>n</var> → <var>n</var> / 2 ( <var>n</var> es par) </div> 
-<div style='padding-left: 4em;'> <var>n</var> → 3 <var>n</var> + 1 ( <var>n</var> es impar) </div> 
-Usando la regla anterior y comenzando con 13, generamos la siguiente secuencia: 
-<div style='text-align: center;'> 13 → 40 → 20 → 10 → 5 → 16 → 8 → 4 → 2 → 1 </div> 
-Se puede ver que esta secuencia (comenzando en 13 y terminando en 1) contiene 10 términos. Aunque aún no se ha probado (Problema de Collatz), se piensa que todos los números iniciales terminan en 1. 
-¿Qué número inicial, debajo del <code>limit</code> dado, produce la cadena más larga? 
-NOTA: Una vez que la cadena comienza, los términos pueden ir por encima de un millón. 
-</section>
+<section id="description"> La siguiente secuencia iterativa se define para el conjunto de enteros positivos: <div style="padding-left: 4em;"> <var>n</var> → <var>n</var> / 2 ( <var>n</var> es par) </div><div style="padding-left: 4em;"> <var>n</var> → 3 <var>n</var> + 1 ( <var>n</var> es impar) </div> Usando la regla anterior y comenzando con 13, generamos la siguiente secuencia: <div style="text-align: center;"> 13 → 40 → 20 → 10 → 5 → 16 → 8 → 4 → 2 → 1 </div> Se puede ver que esta secuencia (comenzando en 13 y terminando en 1) contiene 10 términos. Aunque aún no se ha probado (Problema de Collatz), se piensa que todos los números iniciales terminan en 1. ¿Qué número inicial, debajo del <code>limit</code> dado, produce la cadena más larga? NOTA: Una vez que la cadena comienza, se permite que los términos superen el millón. </section>
 
 ## Instructions
-<section id='instructions'> 
-
+<section id="instructions">
 </section>
 
 ## Tests
@@ -54,6 +45,7 @@ function longestCollatzSequence(limit) {
 }
 
 longestCollatzSequence(14);
+
 ```
 
 </div>
@@ -65,37 +57,7 @@ longestCollatzSequence(14);
 ## Solution
 <section id='solution'>
 
-
 ```js
-function longestCollatzSequence(limit) {
-  let longestSequenceLength = 0;
-  let startingNum = 0;
-
-  function sequenceLength(num) {
-    let length = 1;
-
-    while (num >= 1) {
-      if (num === 1) {        break;
-      } else if (num % 2 === 0) {
-        num = num / 2;
-        length++;
-      } else {
-        num = num * 3 + 1;
-        length++;
-      }
-    }
-    return length;
-  }
-
-  for (let i = 2; i < limit; i++) {
-    let currSequenceLength = sequenceLength(i);
-    if (currSequenceLength > longestSequenceLength) {
-      longestSequenceLength = currSequenceLength;
-      startingNum = i;
-    }
-  }
-  return startingNum;
-}
+// solution required
 ```
-
 </section>

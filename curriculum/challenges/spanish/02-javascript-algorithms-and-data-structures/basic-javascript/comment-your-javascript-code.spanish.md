@@ -1,25 +1,16 @@
 ---
 id: bd7123c9c441eddfaeb4bdef
 title: Comment Your JavaScript Code
-localeTitle: Comenta tu código JavaScript
 challengeType: 1
+videoUrl: ''
+localeTitle: Comenta tu código JavaScript
 ---
 
 ## Description
-<section id='description'> 
-comentarios son líneas de código que JavaScript ignorará intencionalmente. Los comentarios son una excelente manera de dejar notas para usted y para otras personas que más tarde necesitarán averiguar qué hace ese código. 
-Hay dos formas de escribir comentarios en JavaScript: 
-Al usar <code>//</code> le indicará a JavaScript que ignore el resto del texto en la línea actual: 
-<blockquote>// This is an in-line comment.</blockquote> 
-Puede hacer un comentario de varias líneas comenzando con <code>/*</code> y terminando con <code>*/</code> : 
-<blockquote>/* This is a<br>multi-line comment */</blockquote> 
-<strong>Mejores Prácticas</strong> <br> A medida que escribe el código, debe agregar comentarios regularmente para aclarar la función de partes de su código. Los buenos comentarios pueden ayudar a comunicar la intención de su código, tanto para los demás <em>como</em> para su futuro. 
-</section>
+<section id="description"> Los comentarios son líneas de código que JavaScript ignorará intencionalmente. Los comentarios son una excelente manera de dejar notas para usted y para otras personas que más tarde necesitarán averiguar qué hace ese código. Hay dos formas de escribir comentarios en JavaScript: Usar <code>//</code> le dirá a JavaScript que ignore el resto del texto en la línea actual: <blockquote> // Este es un comentario en línea. </blockquote> Puede hacer un comentario de varias líneas comenzando con <code>/*</code> y terminando con <code>*/</code> : <blockquote> /* Esto es un <br> comentario multilínea * / </blockquote> <strong>Mejores prácticas</strong> <br> A medida que escribe el código, debe agregar comentarios regularmente para aclarar la función de partes de su código. Los buenos comentarios pueden ayudar a comunicar la intención de su código, tanto para los demás <em>como</em> para su futuro. </section>
 
 ## Instructions
-<section id='instructions'> 
-Intenta crear uno de cada tipo de comentario. 
-</section>
+<section id="instructions"> Intenta crear uno de cada tipo de comentario. </section>
 
 ## Tests
 <section id='tests'>
@@ -53,10 +44,7 @@ tests:
 ## Solution
 <section id='solution'>
 
-
 ```js
-// Fake Comment
-/* Another Comment */
+// solution required
 ```
-
 </section>

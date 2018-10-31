@@ -1,23 +1,19 @@
 ---
 id: bad87fee1348bd9aec908845
 title: Line up Form Elements Responsively with Bootstrap
-localeTitle: Alinee los elementos del formulario responsivamente con Bootstrap
 required:
   - link: 'https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.2.0/css/font-awesome.css'
     raw: true
 challengeType: 0
+videoUrl: ''
+localeTitle: Alinee los elementos del formulario responsivamente con Bootstrap
 ---
 
 ## Description
-<section id='description'> 
-Ahora obtengamos la <code>input</code> formulario y el <code>button</code> envío en la misma línea. Haremos esto de la misma manera que lo hemos hecho anteriormente: usando un elemento <code>div</code> con la <code>row</code> clase y otros elementos <code>div</code> dentro de ella usando la clase <code>col-xs-*</code> . 
-Anide tanto el <code>input</code> texto del formulario como el <code>button</code> envío dentro de un <code>div</code> con la <code>row</code> clase. Anide la <code>input</code> texto de tu formulario dentro de un div con la clase de <code>col-xs-7</code> . Anide el <code>button</code> envío de su formulario en un <code>div</code> con la clase <code>col-xs-5</code> . 
-Este es el último desafío que haremos por nuestra aplicación Cat Photo por ahora. ¡Esperamos que hayas disfrutado aprendiendo Font Awesome, Bootstrap y un diseño sensible! 
-</section>
+<section id="description"> Ahora vamos a obtener su <code>input</code> formulario y su <code>button</code> envío en la misma línea. Haremos esto de la misma manera que lo hemos hecho anteriormente: usando un elemento <code>div</code> con la <code>row</code> clase y otros elementos <code>div</code> dentro de ella usando la clase <code>col-xs-*</code> . Anide tanto el <code>input</code> texto del formulario como el <code>button</code> envío dentro de un <code>div</code> con la <code>row</code> clase. Anide la <code>input</code> texto de tu formulario dentro de un div con la clase de <code>col-xs-7</code> . Anide el <code>button</code> envío de su formulario en un <code>div</code> con la clase <code>col-xs-5</code> . Este es el último desafío que haremos por nuestra aplicación Cat Photo por ahora. ¡Esperamos que hayas disfrutado aprendiendo Font Awesome, Bootstrap y un diseño sensible! </section>
 
 ## Instructions
-<section id='instructions'> 
-
+<section id="instructions">
 </section>
 
 ## Tests
@@ -116,6 +112,7 @@ tests:
     <button type="submit" class="btn btn-primary"><i class="fa fa-paper-plane"></i> Submit</button>
   </form>
 </div>
+
 ```
 
 </div>

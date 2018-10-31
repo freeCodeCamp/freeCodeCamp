@@ -1,19 +1,18 @@
 ---
 id: 660add10cb82ac38a17513be
 title: Legacy Back End Certificate
-localeTitle: Certificado de final de carrera heredado
 challengeType: 7
 isPrivate: true
+videoUrl: ''
+localeTitle: Certificado de final de carrera heredado
 ---
 
 ## Description
-<section id='description'> 
-
+<section id="description">
 </section>
 
 ## Instructions
-<section id='instructions'> 
-
+<section id="instructions">
 </section>
 
 ## Tests
@@ -21,26 +20,26 @@ isPrivate: true
 
 ```yml
 tests:
-  - id: bd7158d8c443edefaeb5bdef
-    title: Timestamp Microservice
-  - id: bd7158d8c443edefaeb5bdff
-    title: Request Header Parser Microservice
-  - id: bd7158d8c443edefaeb5bd0e
-    title: URL Shortener Microservice
-  - id: bd7158d8c443edefaeb5bdee
-    title: Image Search Abstraction Layer
-  - id: bd7158d8c443edefaeb5bd0f
-    title: File Metadata Microservice
-  - id: bd7158d8c443eddfaeb5bdef
-    title: Build a Voting App
-  - id: bd7158d8c443eddfaeb5bdff
-    title: Build a Nightlife Coordination App
-  - id: bd7158d8c443eddfaeb5bd0e
-    title: Chart the Stock Market
-  - id: bd7158d8c443eddfaeb5bd0f
-    title: Manage a Book Trading Club
-  - id: bd7158d8c443eddfaeb5bdee
-    title: Build a Pinterest Clone
+  - text: ''
+    testString: !<tag:yaml.org,2002:js/undefined> ''
+  - text: ''
+    testString: !<tag:yaml.org,2002:js/undefined> ''
+  - text: ''
+    testString: !<tag:yaml.org,2002:js/undefined> ''
+  - text: ''
+    testString: !<tag:yaml.org,2002:js/undefined> ''
+  - text: ''
+    testString: !<tag:yaml.org,2002:js/undefined> ''
+  - text: ''
+    testString: !<tag:yaml.org,2002:js/undefined> ''
+  - text: ''
+    testString: !<tag:yaml.org,2002:js/undefined> ''
+  - text: ''
+    testString: !<tag:yaml.org,2002:js/undefined> ''
+  - text: ''
+    testString: !<tag:yaml.org,2002:js/undefined> ''
+  - text: ''
+    testString: !<tag:yaml.org,2002:js/undefined> ''
 
 ```
 

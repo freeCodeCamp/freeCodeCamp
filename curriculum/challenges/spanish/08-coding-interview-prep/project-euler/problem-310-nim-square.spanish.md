@@ -1,24 +1,16 @@
 ---
-id: 5
-localeTitle: 5900f4a21000cf542c50ffb5
+id: 5900f4a21000cf542c50ffb5
 challengeType: 5
 title: 'Problem 310: Nim Square'
+videoUrl: ''
+localeTitle: 'Problema 310: Plaza Nim'
 ---
 
 ## Description
-<section id='description'> 
-Alice y Bob juegan el juego Nim Square. 
-Nim Square es como el juego normal de tres pilas de Nim, pero los jugadores solo pueden eliminar un número cuadrado de piedras de una pila. 
-El número de piedras en los tres montones está representado por el triple ordenado (a, b, c). 
-Si 0≤a≤b≤c≤29, entonces el número de posiciones perdedoras para el siguiente jugador es 1160. 
-
-
-Encuentra el número de posiciones perdedoras para el siguiente jugador si 0≤a≤b≤c≤100 000. 
-</section>
+<section id="description"> Alice y Bob juegan al juego Nim Square. Nim Square es como el juego normal de tres pilas de Nim, pero los jugadores solo pueden eliminar un número cuadrado de piedras de una pila. El número de piedras en los tres montones está representado por el triple ordenado (a, b, c). Si 0≤a≤b≤c≤29 entonces el número de posiciones perdedoras para el siguiente jugador es 1160. <p> Encuentra el número de posiciones perdedoras para el siguiente jugador si 0≤a≤b≤c≤100 000. </p></section>
 
 ## Instructions
-<section id='instructions'> 
-
+<section id="instructions">
 </section>
 
 ## Tests
@@ -45,6 +37,7 @@ function euler310() {
 }
 
 euler310();
+
 ```
 
 </div>

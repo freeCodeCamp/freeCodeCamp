@@ -1,25 +1,16 @@
 ---
 id: bad87eee1348bd9aede07836
 title: Set the id of an Element
-localeTitle: Establecer la id de un elemento
 challengeType: 0
 videoUrl: ''
+localeTitle: Establecer la id de un elemento
 ---
 
 ## Description
-<section id='description'> 
-Además de las clases, cada elemento HTML también puede tener un atributo <code>id</code> . 
-Existen varios beneficios de usar atributos de <code>id</code> : puede usar una <code>id</code> para diseñar un solo elemento y más adelante aprenderá que puede usarlos para seleccionar y modificar elementos específicos con JavaScript. 
-atributos de 
-<code>id</code> deben ser únicos. Los navegadores no harán cumplir esto, pero es una buena práctica ampliamente aceptada. Entonces, por favor, no le dé a más de un elemento el mismo atributo de <code>id</code> . 
-Aquí hay un ejemplo de cómo le das a tu elemento <code>h2</code> el ID de <code>cat-photo-app</code> : 
-<code>&lt;h2 id=&quot;cat-photo-app&quot;&gt;</code> 
-</section>
+<section id="description"> Además de las clases, cada elemento HTML también puede tener un atributo <code>id</code> . El uso de atributos de <code>id</code> tiene varios beneficios: puede usar una <code>id</code> para diseñar un solo elemento y más adelante aprenderá que puede usarlos para seleccionar y modificar elementos específicos con JavaScript. <code>id</code> atributos de <code>id</code> deben ser únicos. Los navegadores no harán cumplir esto, pero es una buena práctica ampliamente aceptada. Entonces, por favor, no le dé a más de un elemento el mismo atributo de <code>id</code> . Aquí hay un ejemplo de cómo le das a tu elemento <code>h2</code> el ID de <code>cat-photo-app</code> : <code>&lt;h2 id=&quot;cat-photo-app&quot;&gt;</code> </section>
 
 ## Instructions
-<section id='instructions'> 
-Dale a tu elemento de <code>form</code> la identificación <code>cat-photo-form</code> . 
-</section>
+<section id="instructions"> Dale a tu elemento de <code>form</code> la identificación <code>cat-photo-form</code> . </section>
 
 ## Tests
 <section id='tests'>
@@ -101,6 +92,7 @@ tests:
     <button type="submit">Submit</button>
   </form>
 </main>
+
 ```
 
 </div>

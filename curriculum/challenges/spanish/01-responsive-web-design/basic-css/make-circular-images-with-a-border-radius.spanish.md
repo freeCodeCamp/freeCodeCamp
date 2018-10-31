@@ -1,27 +1,23 @@
 ---
 id: bad87fee1348bd9aedf08815
 title: Make Circular Images with a border-radius
-localeTitle: Hacer imágenes circulares con un radio de borde
 challengeType: 0
 videoUrl: ''
+localeTitle: Hacer imágenes circulares con un radio de borde
 ---
 
 ## Description
-<section id='description'> 
-Además de los píxeles, también puede especificar el <code>border-radius</code> del <code>border-radius</code> usando un porcentaje. 
-</section>
+<section id="description"> Además de los píxeles, también puede especificar el <code>border-radius</code> del <code>border-radius</code> usando un porcentaje. </section>
 
 ## Instructions
-<section id='instructions'> 
-Dale a tu foto de gato un <code>border-radius</code> de <code>border-radius</code> del <code>50%</code> . 
-</section>
+<section id="instructions"> Dale a tu foto de gato un <code>border-radius</code> de <code>border-radius</code> del <code>50%</code> . </section>
 
 ## Tests
 <section id='tests'>
 
 ```yml
 tests:
-  - text: &quot;Su imagen debe tener un radio de borde del <code>50%</code> , por lo que es perfectamente circular&quot;.
+  - text: 'Su imagen debe tener un radio de borde del <code>50%</code> , por lo que es perfectamente circular.'
     testString: 'assert(parseInt($("img").css("border-top-left-radius")) > 48, "Your image should have a border radius of <code>50%</code>, making it perfectly circular.");'
   - text: Asegúrese de utilizar un valor porcentual del <code>50%</code> .
     testString: 'assert(code.match(/50%/g), "Be sure to use a percentage value of <code>50%</code>.");'
@@ -94,6 +90,7 @@ tests:
     <button type="submit">Submit</button>
   </form>
 </main>
+
 ```
 
 </div>
