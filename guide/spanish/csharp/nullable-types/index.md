@@ -1,33 +1,34 @@
 ---
 title: Nullable Types
-localeTitle: Tipos anulables
+localeTitle: Tipos que aceptan valores NULL
 ---
-## Tipos anulables
+## Tipos que aceptan valores NULL
 
-Los tipos anulables son instancias de [System.Nullable \\](https://docs.microsoft.com/en-us/dotnet/api/system.nullable-1) estructura Un tipo anulable puede representar el rango correcto de valores para su tipo de valor subyacente, más un valor `null` adicional. Esta capacidad es muy útil cuando se trata de bases de datos u otros tipos de datos que pueden contener elementos sin valor asignado.
+Los tipos que aceptan valores NULL son instancias de la estructura [System.Nullable\<T\>](https://docs.microsoft.com/en-us/dotnet/api/system.nullable-1). Pueden representar el rango de valores para su tipo de valor subyacente, más un valor `null`. Esta capacidad es muy útil cuando se trata de bases de datos u otros tipos de datos que pueden contener elementos sin valor asignado.
 
 #### Cómo utilizar el tipo nullable
 
 ```csharp
-// Declare a variable of Nullable type (Nullable<int>) 
+ // Declaración de una variable que acepta valores NULL (Nullable<int>) 
  int? i = null; 
  
  int  j = 0; 
- int defaultValue = 0; 
+ int valorPorDefecto = 0; 
  
- // test for null and assign value to another variable 
+ // pruebo si es NULL y asigno el valor a otra variable
  if (i.HasValue) 
  { 
     j = i.Value; 
  } 
  
- // get assigned value or default when current value is null 
- j = i.GetValueOrDefault(); // i.GetValueOrDefault(defaultValue) 
+ // obtengo el valor asinado o el valor default cuando el valor es NULL
+  j = i.GetValueOrDefault(); // i.GetValueOrDefault(valorPorDefecto) 
  
- //use coalescing operator to assign default value when current value is null 
- j = i ?? defaultValue; 
+ // uso el operador coalescente para asignar el valor por defecto cuando el valor actual es NULL
+  j = i ?? valorPorDefecto; 
 ```
 
-Para más información, visite el siguiente enlace:
+Para más información, visite los siguientes enlaces:
 
-*   [Guía de programación de C #: tipos anulables](https://docs.microsoft.com/en-us/dotnet/csharp/programming-guide/nullable-types/)
+* [Guía de programación de C#: tipos que aceptan valores null](https://docs.microsoft.com/es-es/dotnet/csharp/programming-guide/nullable-types/using-nullable-types)
+* [Tipos que aceptan valores null](https://docs.microsoft.com/es-es/dotnet/csharp/programming-guide/nullable-types/index)
