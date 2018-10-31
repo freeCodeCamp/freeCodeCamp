@@ -5,6 +5,7 @@ title: Cross Product
 
 In set theory, a cross product of two sets is a binary operation performed on sets, which outputs a result set.
 It is denoted by the symbol X. Sometimes it is also called as Cartesian Product after mathematician Rene Descartes.
+Each element of A is paired with each element of B.
 
 <pre><code>
 A X B = {(a, b) | a &isin; A and b &isin; B} 
