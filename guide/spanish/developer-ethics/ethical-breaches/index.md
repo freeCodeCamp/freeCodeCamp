@@ -6,9 +6,9 @@ localeTitle: Brechas éticas
 
 Ha habido una serie de casos bien publicitados en los que se utilizó software para engañar a los usuarios o incluso violar la ley. En el corazón de estos casos se encuentra una violación de la ética por parte de uno o más desarrolladores. Tales casos incluyen:
 
-*   [**Uber Greyball**](http://www.businessinsider.com/uber-greyball-app-vtos-authorities-2017-3?op=1) : una herramienta creada por la empresa de viajes compartidos Uber que recopiló datos de la aplicación de Uber para identificar y evadir a los funcionarios en varias ciudades.
+*   [**Uber Greyball**](http://www.businessinsider.com/uber-greyball-app-vtos-authorities-2017-3?op=1) : una herramienta creada por la empresa de viajes compartidos Uber que recopiló datos de su propia aplicación para identificar y evadir a los funcionarios en varias ciudades.
     
-*   [**Escándalo de emisiones de**](https://en.wikipedia.org/wiki/Volkswagen_emissions_scandal) Volkswagon: los motores diesel con inyección directa turbo (TDI) turbo programados intencionalmente para activar algunos controles de emisiones solo durante las pruebas de emisiones en el laboratorio. La programación hizo que la producción de óxido de nitrógeno de los vehículos cumpliera con los estándares de EE. UU. Durante las pruebas reglamentarias, pero emitiera hasta 40 veces más óxido de nitrógeno en la conducción en el mundo real.
+*   [**Escándalo de emisiones de**](https://en.wikipedia.org/wiki/Volkswagen_emissions_scandal) Volkswagon: los motores diesel con inyección directa turbo (TDI) programados intencionalmente para activar algunos controles de emisiones solo durante las pruebas de emisiones en el laboratorio. La programación hizo que la producción de óxido de nitrógeno de los vehículos cumpliera con los estándares de EE. UU. Durante las pruebas reglamentarias, pero emitiera hasta 40 veces más óxido de nitrógeno en la conducción en el mundo real.
     
 *   [**Violaciones de seguros de Zenefits**](http://www.techwire.net/news/zenefits-fined-7-million-for-california-insurance-violations.html) : el ex CEO de Zenefits, Parker Conrad, creó una extensión de navegador que permitió a sus corredores falsificar que habían completado un curso de capacitación en línea de 52 horas que los agentes de seguros deben tomar para obtener una licencia en California.
     
