@@ -8,6 +8,8 @@ Los programadores usan comentarios para agregar consejos, notas, sugerencias o a
 
 Siempre es una buena práctica a la hora de comenzar el comentar con más frecuencia que no hacerlo, ya que puede ayudar a los que lean su código a comprender qué es exactamente lo que su código pretende hacer.
 
+Sin embargo, muchos programadores consideran los comentarios excesivos como una práctica confusa que puede acusar inexperiencia.
+
 JavaScript tiene dos formas de asignar comentarios a su código.
 
 La primera forma es el comentario `//`; Todo el texto después de `//` en la misma línea es comentado. Por ejemplo:
