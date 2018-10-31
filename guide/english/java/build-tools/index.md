@@ -8,7 +8,9 @@ Java build tools allow you to customize your builds to do things such as specify
 Gradle build scripts can be written in Groovy or Kotlin and are highly customizable. Most projects use the Gradle wrapper, allowing them to be built on any system, even without Gradle installed. Gradle is the recommended build tool for Android development.
 
 ## Maven
-Maven build files are written with XML. Like Gradle, many plugins are written for Maven to customize your builds, however Maven is not as customizable because you cannot directly interact with a Maven API. However, you can modify certain configurations by modifying your settings.xml file in the .m2 folder. More info available [here](https://maven.apache.org/settings.html)
+Maven build files are written with XML. Like Gradle, many plugins are written for Maven to customize your builds, however Maven is not as customizable because you cannot directly interact with a Maven API. However, you can modify certain configurations by modifying your settings.xml file in the .m2 folder.
+Short tutorial about how to create, run and test your Maven project(s) can be found here: [here](https://maven.apache.org/guides/getting-started/maven-in-five-minutes.html)
+More info available [here](https://maven.apache.org/settings.html)
 
 ### More Information:
 https://gradle.org/
