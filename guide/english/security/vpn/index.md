@@ -3,6 +3,8 @@ title: VPNs
 ---
 ## VPNs
 
+VPN (Virtual Private Network) is a technology that lets you browse the web anonymously and safely. It creates tunnels between two hosts using various types of encryption protocols, such as SSL/TLS. Users can share data as if they were connected directly (no one else can see their connection details). VPN can be also used to bypass geo-blocking or censorship. VPN may be considered as Tor alternative.
+
 VPN is a private network that uses a public network to create an encrypted connection for users, thus ensuring security and privacy. It was widely adopted by businesses to allow its employees to be able to connect to the company’s network remotely, and later adopted as a software product for everyday customers. 
 
 A common analogy of how VPN works is an island. In short, VPNs serve as an island for its customers on the way to its destination. When the client reaches its destination, you can’t tell where is the original source of the client - you only know that it came from the island. To extend this analogy, we say that we actually have a network of islands, and we can only travel between them in a provided submarine, and no one can see what’s going on inside the submarine.
@@ -18,8 +20,11 @@ Once the encrypted data gets to the VPN, it’s decrypted and then sent from one
 In practice, this mechanism is often implemented with IPSec which is a widely used protocol for securing traffic on IP networks, including the Internet. IPSec has manyunderlying encryption protocols for different modes and uses, such as IPSec Encapsulation Security Payload, and IPSec Authentication Header, and Point-to-Point protocols.
 
 #### More Information:
+
 [How VPNs work](https://technet.microsoft.com/pt-pt/library/cc779919(v=ws.10).aspx) - a guide by Microsoft
 
 [How VPNs work](https://computer.howstuffworks.com/vpn1.htm) - a guide by HowStuffWorks
 
 [Overview of IPSec](https://www.routeralley.com/guides/ipsec_overview.pdf) 
+
+[Virtual Private Network](https://en.wikipedia.org/wiki/Virtual_private_network) - Wikipedia
