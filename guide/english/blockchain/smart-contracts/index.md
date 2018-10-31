@@ -18,3 +18,18 @@ Two of the most common technologies used are :
 - Ethereum: generally made with Solidity
 - Hyperledger: generally made with Go, or Java
 
+## Hello World Smart Contract
+
+```solidity
+pragma solidity ^0.4.24;
+contract Hello {
+    string public message;
+    function Hello(string initialMessage) public {
+        message = initialMessage;
+    }
+    function setMessage(string newMessage) public {
+        message = newMessage;
+    }
+}
+```
+Pulled from https://medium.com/coinmonks/how-to-write-a-simple-smart-contract-25f6d3c1d6db
