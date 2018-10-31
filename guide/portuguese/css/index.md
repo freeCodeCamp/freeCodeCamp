@@ -10,7 +10,7 @@ O CSS permite que os desenvolvedores controlem como as páginas da Web parecem "
 
 As especificações CSS são mantidas pelo [World Wide Web Consortium (W3C)](https://www.w3.org/) .
 
-Você pode construir algumas coisas incríveis no CSS sozinho, como este [jogo de caça](https://codepen.io/bali_balo/pen/BLJONk) - [minas](https://codepen.io/bali_balo/pen/BLJONk) puro CSS (que não usa JavaScript).
+Você pode construir varias coisas incríveis apenas utilizando CSS , como este [jogo de caça](https://codepen.io/bali_balo/pen/BLJONk) - [minas](https://codepen.io/bali_balo/pen/BLJONk) puro CSS (que não usa JavaScript).
 
 ![](https://cdn-images-1.medium.com/max/800/1*GFcKk9KxqHAnWa1ECcKDOQ.png)
 
