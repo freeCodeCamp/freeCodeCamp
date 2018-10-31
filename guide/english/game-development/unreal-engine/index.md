@@ -33,6 +33,9 @@ Unreal has gone through 4 major revisions. Although some code is common between 
 - Gears of War
 - Fortnite
 
+### Latest Unreal Engine Version
+- 4.20
+
 #### More Information:
 
 <a href='https://www.unrealengine.com/' target='_blank' rel='nofollow'>www.UnrealEngine.com</a>  
