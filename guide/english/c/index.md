@@ -124,6 +124,7 @@ Make a new program with `file` -> `new` -> `Source File`, then copy over the hel
 #### More information:
 
 * [C Programming Tutorials.](https://www.tutorialspoint.com/cprogramming/)
+* [syntax for c programming](https://www.studytonight.com/c/c-syntax.php)
 
 
 
