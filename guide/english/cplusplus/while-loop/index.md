@@ -11,7 +11,7 @@ while(condition) {
 
 A key point of the while loop is that the loop might not ever run.
 When the condition is tested and the result is false, the loop body will be skipped and the first statement after the while loop will be executed.
-
+Moreover, break statement is used for immediate exit from the loop.
 
 Example:
 
