@@ -9,6 +9,9 @@ One of the best books on JavaScript. A must for both, beginners and intermediate
 
 - [E-book](https://eloquentjavascript.net/)(free)
 - [Amazon](https://www.amazon.com/gp/product/1593275846/ref=as_li_qf_sp_asin_il_tl?ie=UTF8&camp=1789&creative=9325&creativeASIN=1593275846&linkCode=as2&tag=marijhaver-20&linkId=VPXXXSRYC5COG5R5)
+-The 3rd edition of this book will be release in November 2018
+- [Amazon] (https://www.amazon.com/Eloquent-JavaScript-3rd-Introduction-Programming/dp/1593279507/)
+- ISBN: 978-1593279509
 
 #### You Don't Know JS
 
@@ -34,6 +37,8 @@ A collection of articles covering the basics (core language and working with a b
 This full-color book will show you how to make your websites more interactive and your interfaces more interesting and intuitive. Author is Jon Duckett who also penned HTML & CSS: Design and Build Websites. *Does not cover ES6*
 
 - [Amazon](https://www.amazon.com/JavaScript-JQuery-Interactive-Front-End-Development/dp/1118531647)
+
+#### 
 
 
 #### Other Resources
