@@ -4,18 +4,18 @@ localeTitle: Comentários em CSS
 ---
 ## Comentários em CSS
 
-Os comentários são usados ​​no CSS para explicar um bloco de código ou para fazer alterações temporárias durante o desenvolvimento. O código comentado não é executado.
+Os comentários são usados no CSS para explicar um bloco de código ou para fazer alterações temporárias durante o desenvolvimento. O código comentado não é executado.
 
 A sintaxe de comentário no CSS funciona para comentários de uma ou várias linhas. Você pode adicionar tantos comentários à sua folha de estilo quanto quiser.
 
 ```css
     /* 
-        This is 
-        a multi-line 
-        comment 
+        Este é
+        um comentário
+        com várias linhas
     */ 
  
-    /* This is a single line comment*/ 
+    /* Este é um comentário de apenas uma linha*/ 
     .group:after { 
         content: ""; 
         display: table; 
@@ -37,7 +37,8 @@ Você também pode tornar seus comentários mais legíveis estilizando-os.
  * but didn't write it would need to know. 
  * The asterisk around the paragraph make it more readable. 
  *** 
- */ 
+ */
+ ```
  
  You can add as many comments to your stylesheet as you like. It's good practice to use CSS comments to help identify parts of any stylesheet that might be difficult to understand from a cursory glance. Comments are especially important when working in a team, when your code must be understood by others. By using CSS comments to make your stylesheets more readable, the CSS will be easier to maintain in the future. 
  
@@ -45,34 +46,56 @@ Você também pode tornar seus comentários mais legíveis estilizando-os.
  
  Comments should be used everyday in your CSS to keep in maintainable and readable by any dev who dives into said CSS. 
  Here are a few exmples to get you started of CSS comments you can use in your daily work to make your life that bit easier. 
+``` css
+/* ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+   ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+   CSS TABLE OF CONTENTS
+   
+   1.0 - Reset
+   2.0 - Fonts
+   3.0 - Globals
+   4.0 - Color Palette
+   5.0 - Header
+   6.0 - Body
+       6.1 - Sliders
+       6.2 - Imagery
+   7.0 - Footer
+   ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ */
+
+/****************************************************************************
+1.0 - Reset */
+
+/****************************************************************************
+2.0 - Fonts */
+
+/****************************************************************************
+3.0 - Globals */
+
+/****************************************************************************
+4.0 - Color Palette */
+
+/****************************************************************************
+5.0 - Header */
+
+/****************************************************************************
+6.0 - Body */
+
+    /************************************************************************
+    5.1 - Sliders */
+    
+    /************************************************************************
+    5.2 - Imagery */
+    
+/****************************************************************************
+7.0 - Footer */
+
+h2 {
+    font-size: 1.2em;
+    font-family: "Ubuntu", serif;
+    text-transform: uppercase;
+    }
 ```
-
-css / \* ++++++++++++++++++++++++++++++++++++++++++++++++ ++++++++++++++++++++++++++ ++++++++++++++++++++++++++++++++++++++++++++++++++ ++++++++++++++++++++++++ TABELA DE CONTEÚDO DA CSS
-
-1,0 - Reset 2.0 - Fontes 3.0 - Globals 4.0 - Paleta de Cores 5.0 - cabeçalho 6.0 - corpo 6.1 - Sliders 6.2 - Imagens 7.0 - Rodapé ++++++++++++++++++++++++++++++++++++++++++++++++++ ++++++++++++++++++++++++ ++++++++++++++++++++++++++++++++++++++++++++++++++ ++++++++++++++++++++++++ \* /
-
-/ 1,0 - Redefinir \* /
-
-/ 2.0 - Fontes \* /
-
-/ 3.0 - Globals \* /
-
-/ 4.0 - Paleta de Cores \* /
-
-/ 5.0 - Cabeçalho \* /
-
-/ 6.0 - corpo \* /
-```
-/************************************************************************ 
- 5.1 - Sliders */ 
- 
- /************************************************************************ 
- 5.2 - Imagery */ 
-```
-
-/ 7,0 - Rodapé \* / \`\` \`css
-
-h2 { tamanho da fonte: 1,2em; font-family: "Ubuntu", serif; text-transform: maiúscula; } \`\` \`
 
 ### Mais Informações:
 
