@@ -17,7 +17,7 @@ You can build some pretty amazing things in CSS alone, such as this pure-CSS [Mi
 ### Popular CSS Frameworks 2018
 Frameworks exist to make the more complex parts of css easier and more efficient for developers to build out websites.
 Some of the most popular CSS Frameworks are:
-Bootstrap, Foundation, Bulma, uikit, Semantic UI, mini.css, Materialize, Material Design Lite, Spectre and Kube
+[Bootstrap](https://getbootstrap.com/), [Foundation](https://foundation.zurb.com/sites/docs/v/5.5.3/css.html), [Bulma](https://bulma.io/), [uikit](https://getuikit.com/), [Semantic UI](https://semantic-ui.com/), [mini.css](https://minicss.org/), [Materialize](https://materializecss.com/), [Material Design Lite](https://getmdl.io/), [Spectre](https://picturepan2.github.io/spectre/) and [Kube](https://imperavi.com/kube/)
 
 #### Suggested Reading:
 A good start is the freeCodeCamp curriculum [Introduction to Basic CSS](https://learn.freecodecamp.org/responsive-web-design/basic-css).
