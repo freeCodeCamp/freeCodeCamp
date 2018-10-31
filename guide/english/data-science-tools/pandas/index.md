@@ -14,7 +14,7 @@ import pandas as pd
 ```
 
 ## Data frames
-A data frame consist of a number of rows and column. Each column represents a feature of the data set, and so has a name and a data type. Each row represents a data point through associated feature values. The pandas library allows you to manipulate the data in a data frame in various ways. pandas has a lot of possibilities, so the following is merely scratching the surface to give a feel for the library.
+Two-dimensional size-mutable, potentially heterogeneous tabular data structure with labeled axes (rows and columns). Arithmetic operations align on both row and column labels. Can be thought of as a dict-like container for Series objects. The primary pandas data structure.A data frame consist of a number of rows and column. Each column represents a feature of the data set, and so has a name and a data type. Each row represents a data point through associated feature values. The pandas library allows you to manipulate the data in a data frame in various ways. pandas has a lot of possibilities, so the following is merely scratching the surface to give a feel for the library.
 ## Series
 Series is the basic data-type in pandas.A Series is very similar to a array (NumPy array) (in fact it is built on top of the NumPy array object).A Series can have axis labels, as it can be indexed by a label with no number indexing for the location of data.  It can hold any valid Python Object like List,Dictionary etc.
 
