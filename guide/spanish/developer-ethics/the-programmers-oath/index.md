@@ -6,7 +6,7 @@ localeTitle: El juramento de los programadores
 
 El juramento de los programadores es un juramento creado por Robert C. Martin, que destaca las pautas para una mejor web. El juramento es el siguiente:
 
-> Para defender y preservar el honor de la profesión de programadores informáticos, Prometo eso, a mi mejor capacidad y buen juicio:
+> Para defender y preservar el honor de la profesión de programadores informáticos, Prometo esto, a mi mejor capacidad y buen juicio:
 > 
 > 1.  No produciré código dañino.
 > 2.  El código que produzco será siempre mi mejor trabajo. A sabiendas, no permitiré que se acumule el código defectuoso en el comportamiento o la estructura.
