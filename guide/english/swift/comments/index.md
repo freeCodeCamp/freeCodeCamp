@@ -19,6 +19,15 @@ Multiline comments begin with a forward-slash followed by an asterisk `/*` and e
    /* Hello,
    multiline-line comment! */
 ```
+There are also "special" comments usefull for navigation through code. 
 
+#### Example:
+```swift
+    //MARK: Separates some logical part of your code
+
+    //TODO: Mark code that needs more work to be done
+
+    //FIXME: Add annotation for a code that needs fixing
+```
 #### More Information:
 - <a href='https://docs.swift.org/swift-book/LanguageGuide/TheBasics.html#ID315' target='_blank' rel='nofollow'>The Swift Programming Language</a>
