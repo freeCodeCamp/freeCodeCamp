@@ -12,6 +12,14 @@ jQuery.get( url [, data ] [, success ] [, dataType ] )
 * `success`: A callback function executed if the request succeeds. It takes as an argument the returned data. It is also passed the text status of the response.
 * `dataType`: The type of data expected from the server. The default is Intelligent Guess (xml, json, script, text, html). If this parameter is provided, the success callback also must be provided.
 
+Requests made by this method are cached by default. You can disable caching by providing an additional `data` property `_` with value of `$.now()`. Like this: 
+```
+var data = {
+    "_": $.now(),
+    // ...other properties
+};
+```
+
 #### Examples
 
 Request `resource.json` from the server, send additional data, and ignore the returned result:
