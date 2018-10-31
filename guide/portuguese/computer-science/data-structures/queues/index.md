@@ -1,6 +1,6 @@
 ---
 title: Queues
-localeTitle: caudas
+localeTitle: Filas
 ---
 ## Filas
 
