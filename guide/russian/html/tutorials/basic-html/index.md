@@ -1,6 +1,6 @@
 ---
 title: Basic HTML
-localeTitle: Основной HTML
+localeTitle: Основы HTML
 ---
 ## Основной HTML
 
@@ -8,7 +8,7 @@ localeTitle: Основной HTML
 
 [Это руководство по быстрому стилю поможет вам принять ваш запрос на тягу](https://github.com/freecodecamp/guides/blob/master/README.md) .
 
-Структура базового файла HTML:
+Структура базового файла HTML выглядит следующим образом:
 
 ```html
 
