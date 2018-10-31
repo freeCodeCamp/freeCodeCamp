@@ -10,7 +10,7 @@ can build desktop apps for Windows, Mac, and most common flavors of Linux.
 
 Electron is actually built on two technologies: Node.js (or simply Node) and Chromium (the open-sourced version of Google Chrome). You use web technologies like HTML, JavaScript, and CSS to build Electron apps. That means you can use most any web technology you want to build your native desktop app. For example, you could use [React](https://medium.freecodecamp.org/building-an-electron-application-with-create-react-app-97945861647c) or [Angular](https://scotch.io/tutorials/creating-desktop-applications-with-angularjs-and-github-electron) to build your first desktop app.
 Thus, any web application you have written can run on Electron. Similarly, any Node application you have written
-can run on Electron. But the power of Electron is that you can use both solutions together. Note that this also means that any code Chrome can run, Electron can run, which reduces the cross-browser compatability issues which keep many a developer up at night.
+can run on Electron. But the power of Electron is that you can use both solutions together. Note that this also means that any code Chrome can run, Electron can run. This reduces the cross-browser compatability issues which keep many a developer up at night.
 
 Additionally, Electron comes with support for auto-updating, crash reporting, and native menus.
 
