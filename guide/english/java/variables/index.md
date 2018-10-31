@@ -50,6 +50,40 @@ byte anotherByte = (byte)0b00100001;
 As evident from the above example, variables of Primitive type behave slightly differently from variables of Reference (& Wrapper) type - while Primitive variables <i>store</i> the actual value, Reference variables <i>refer to</i> an 'object' containing the actual value.
 You can find out more in the sections linked below.
 
+# Types of variables:
+There are three types of variables based on the scope of the variables.
+1. Instance variable :Variable defined in the class without using static modifier are called as Instance variable.Memory will be 
+   allocated at the time of creating an object.Instance variable cannot be accessed directly from Static Method(main Method).
+   
+2. Static variable :Variable defined in the class using static modifier are called as static variables.It is also called as Class
+   variable.Memory will be allocated for static variables at the time of loading the class.Static variable can be accessed from 
+   static method(main method).
+   
+3. Local variable :Variable declared inside the class members like method,constructor and block are called as local variable.
+   Memory will be created for local variables whenever method,constructor and block will be called.JVM will not initialized local      
+   variables with default value,it must be initialized by programmer before using.
+   
+Example:
+```java
+public class Test{
+              int a; //instance variable
+              static int b; //static variable
+              void show(){
+                 int c; //local variable
+              }
+}
+```
+Both Instance Variable and Static variable can be Primitive or Reference.
+Example:
+```java
+public class Myclass{
+ int a;  //primitive instance variable
+ String str; //reference instance variable
+ static int b; //primitive static variable
+ static String msg; //reference static variable
+}
+```
+
 # Other Resources
 * <a href='https://guide.freecodecamp.org/java/data-types' target='_blank' rel='nofollow'>Data Types</a>
 * <a href='https://guide.freecodecamp.org/java/classes-and-objects' target='_blank' rel='nofollow'>Classes and Objects</a>
