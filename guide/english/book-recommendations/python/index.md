@@ -74,6 +74,12 @@ You'll learn many of the first princliples for data science tools and how algori
 - ISBN-10: 1617294039
 - ISBN-13: 978-1617294037
 
+*Coding Projects in Python*
+- Paid book. Perfect for kids ages 10 and over who are ready to take a second step after Scratch, Coding Projects in Python teaches kids how to build amazing graphics, fun games, and useful apps. All they need is a desktop or laptop, and an Internet connection to download Python 3.
+- [Amazon] (https://www.amazon.com/Coding-Projects-Python-DK/dp/1465461884/)
+-ISBN-10: 1465461884
+-ISBN-13: 978-1465461889
+
 #### Other Resources
 
 - [Functional Programming in Python by David Mertz [OREILLY] [FREE]](https://www.oreilly.com/programming/free/files/functional-programming-python.pdf)
