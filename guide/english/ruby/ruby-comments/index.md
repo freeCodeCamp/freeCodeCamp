@@ -45,3 +45,7 @@ When executed, the program above produces the following:
 ```
 Hello World!
 ```
+Trailing comments are far enough from the code and that they are easily distinguished. If more than one trailing comment exists in a block, align them. For example 
+
+@counter      # keeps track times page has been hit
+@siteCounter  # keeps track of times all pages have been hit
