@@ -28,5 +28,7 @@ eg.
       int i = (int)l;	//explicit type casting required
 ```
 
+Whenever you convert a double to an int you just lose the numbers after the decimal regardless of the value so if you have 9.9 and convert it to an int it will turn out to be 9.
+
 #### More Information:
 - [Oracle Java Docs :Typecasting](https://docs.oracle.com/javase/specs/jls/se7/html/jls-5.html)
