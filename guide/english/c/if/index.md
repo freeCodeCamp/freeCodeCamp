@@ -39,7 +39,7 @@ Note that the `else` and `else if` sections are not required, while `if` is mand
 int main () {
 
    // Local variable definition
-   int a = 10;
+   int a = 100;
 
    // Check the boolean condition
    if(a < 5) {
