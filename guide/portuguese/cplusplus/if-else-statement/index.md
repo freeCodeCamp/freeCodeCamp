@@ -1,7 +1,8 @@
 ---
 title: If-Else Statement
 localeTitle: Declaração If-Else
----## O que faz uma declaração If-Else?
+---
+## O que faz uma declaração If-Else?
 
 *   A instrução If-Else é uma extensão da instrução If simples.
 *   Na declaração if simples, se o valor da expressão de teste for falso, então pulamos o código do bloco e continuamos com nossa próxima instrução.
@@ -11,13 +12,13 @@ localeTitle: Declaração If-Else
 ### Formulário Geral da Declaração If-Else
 
 ```cpp
-if (test expression) 
+if (expressão teste) 
  { 
-  //statements that run if the test expression is true 
+  //comandos se a espressão for verdadeira 
  } 
  else 
  { 
-  //statements that run if the test expression is false 
+  //comandos se a expressão for falsa
  } 
 ```
 
