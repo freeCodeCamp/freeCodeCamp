@@ -10,7 +10,7 @@ Core components are the essential elements which an app for Android consists of.
 - Content providers
 
 ## [Activities](https://developer.android.com/guide/components/activities/)
-An _activity_ is a component that has a user interface and represents a single screen. An app can have multiple activities, each of those can be an entry point to the application itself for the user or the system (an app's activity that wants to open another activity that belongs to the same application or to a different one).
+An _activity_ is a component that has a user interface and represents a single screen. An app can have multiple activities, and each of those can be an entry point to the application itself for the user or the system (an app's activity that wants to open another activity that belongs to the same application or to a different one).
 
 ### [Activity Lifecycle](https://developer.android.com/guide/components/activities/activity-lifecycle)
 ![Activity Lifecycle](https://developer.android.com/images/activity_lifecycle.png)
