@@ -13,6 +13,8 @@ Stakeholders may be made up from any of the following
 - Business Owner
 - Anyone who is on the RACI chart (Responsible, Accountable, Consultative, or Informed)
 
+It may also be other entities such as the law, other projects or environmental factors.
+
 Their participation in the project is essential for success.
 
 For example, when your team is performing the Sprint Review meetings, the demonstration of the project is for the stakeholders, and their feedback is captured and added to the backlog.
