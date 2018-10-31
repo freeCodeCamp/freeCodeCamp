@@ -6,6 +6,8 @@ title: Backtracking Algorithms
 
 Backtracking is a general algorithm for finding all (or some) solutions to some computational problems, notably constraint satisfaction problems, that incrementally builds candidates to the solutions, and abandons each partial candidate *("backtracks")* as soon as it determines that the candidate cannot possibly be completed to a valid solution.
 
+Backtracking often uses recursion as it often breaks a given problem down into smaller problems with the same (or similar) features to the original problem.
+
 ### Example Problem (The Knight’s tour problem)
 
    *The knight is placed on the first block of an empty board and, moving according to the rules of chess, must visit each square exactly once.*
