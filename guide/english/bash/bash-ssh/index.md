@@ -4,6 +4,8 @@ title: Bash ssh
 
 ## Bash command: ssh
 
+**Secure Shell (SSH) is a cryptographic network protocol for operating network services securely over an unsecured network.**
+
 This command is used **to connect to a remote computer**, for example `ssh 123.456.789.012` will try to establish a connection with that host. The address of the remote computer can be provided using an IP address or, if provided, an identifier.
 
 If the remote computer requires the user to login, they can use the form `ssh username@remote_address`, which will then prompt them for the user password on a successful connection.
