@@ -1,0 +1,11 @@
+{
+  "requires": true,
+  "lockfileVersion": 1,
+  "dependencies": {
+    "crypto-js": {
+      "version": "3.1.9-1",
+      "resolved": "https://registry.npmjs.org/crypto-js/-/crypto-js-3.1.9-1.tgz",
+      "integrity": "sha1-/aGedh/Ad+Af+/3G6f38WeiAbNg="
+    }
+  }
+}
