@@ -19,9 +19,11 @@ Advantages of WordPress include:
 * Thousands of free themes are available to customize
 
 Here are some examples of big name brands using WordPress: 
-* Sony Music
-* The New Yorker
-* MTV News
+* Sony Music.
+* The New Yorker.
+* MTV News.
+* BBC America.
+* The Official Star Wars Blog.
 
 Whether it's page transitions or a customized contact form, WordPress users are only a few clicks away from building a website.
 
@@ -30,3 +32,6 @@ Whether it's page transitions or a customized contact form, WordPress users are 
 - [WordPress Codex: the online manual](https://codex.wordpress.org/)
 - [WordPress Code Reference](https://developer.wordpress.org/reference/)
 - [WordPress Github Repository](https://github.com/WordPress/WordPress)
+
+
+
