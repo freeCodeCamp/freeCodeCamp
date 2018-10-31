@@ -3,7 +3,7 @@ title: Control Flow
 ---
 # Control Flow
 
-Control flow statements are exactly what the term means. They are statements that alter execution flow based on decisions, loops and branching so that the program can conditionally execute blocks of code.
+`Control flow statements` are exactly what the term means. They are statements that alter execution flow based on decisions, loops and branching so that the program can conditionally execute blocks of code.
 
 Primarily, Java has the following constructs for flow control:
 
@@ -25,7 +25,7 @@ Primarily, Java has the following constructs for flow control:
 
 *   `switch`
 
-Switch is an alternative for the `if...else` construct when there are multiple values and cases to check against.
+`Switch` is an alternative for the `if...else` construct when there are multiple values and cases to check against.
 
 ```java
 switch( <integer / String / Enum > ){
