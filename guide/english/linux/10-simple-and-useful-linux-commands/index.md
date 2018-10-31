@@ -57,3 +57,33 @@ Copy file from source to destination preserving same mode.
 11. `systemctl` Command
 
 This is a command which allows operators to work with the Linux system services. The standard use of the command is `systemctl <OPTION> <SERVICE-NAME>` by providing an `OPTION` (e.g. `start`, `stop`, `status`) and than providing a specific Service Name to act on. You can use the command to get a general status of your Linux services (e.g `systemctl status`). Note that you will either need Administrator access or use `sudo` to elevate your rights to run the command successfully.
+
+
+## Additional simple linux command
+
+
+Watch Logs in Real-Time in Linux
+With watch command, you can run another Linux command periodically while displaying its output on fullscreen and alongside tail command which is used to view the last parts of a file, it is possible to watch the recording of log entries in a logfile.
+
+In the example below, you will watch the system authentication logfile. Open two terminal windows, display the logfile for watching in real-time in the first window like so:
+
+$ sudo watch tail /var/log/auth.log
+You can also use tail command which shows the last parts of a file. Its -f flag enables watching changes in a file in real-time, therefore it is possible to watch the recording of log entries in a logfile.
+
+$ sudo tail -f /var/log/auth.log
+And run the commands below in the second terminal as you observe the logfile content from the first window:
+
+$ sudo mkdir -p /etc/test
+$ sudo rm -rf /etc/test
+10. List All Shell builtin Commands
+A shell builtin is a command or a function, called from within and executed directly in the shell itself, instead of an external executable program which the shell would load from the hard disk and execute.
+
+To list all shell builtins and their usage syntax, run:
+
+$ help
+As a concluding remark, command line tricks and tips always come in handy and make learning and using Linux easy and fun especially for newbies.
+
+You can as well share with us other useful and interesting command line tricks or tips in Linux that you have come across via the comment form below.
+
+
+
