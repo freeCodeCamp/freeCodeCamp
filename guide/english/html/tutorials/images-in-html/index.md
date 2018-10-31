@@ -8,7 +8,7 @@ title: Images in HTML
 You can define images by using the `<img>` tag. It does not have a closing tag since it can contain only attributes.
 To insert an image you define the source and an alternative text wich is displayed when the image can not be rendered.
 
-`src` - This attribute provides the url to image present either on your desktop/laptop or to be included from some other website. Remember the link provided should not be broken otherwise the image will not be produced on your webpage.
+`src` - This attribute will provide the url to image present either on your desktop/laptop or to be included from some other website. Remember the link provided should not be broken otherwise the image will not be produced on your webpage.
 
 `alt` - This attribute is used to overcome the problem of broken image or incapability of your browser to not being able to produce image on webpage. This attribute as name suggests provide "alternative" to image which is some text describing the image.
 
