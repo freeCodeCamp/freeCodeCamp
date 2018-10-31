@@ -113,5 +113,21 @@ $("#cat,#dog,#rat").css("background-color","red");
 
 These are just a few of the selectors available for use in jQuery. See the More Information section for a link to the complete list on the jQuery website.
 
+### Warning
+Accessing DOM is a very expensive operation. If you find yourself using the same selector in multiple places, consider caching the objects.
+```
+BAD:
+if ($("#cat").css("color") == "red") {
+   $('#cat").css("color", "blue");
+}
+
+GOOD:
+var $cat = $('#cat');
+if ($cat.css("color") == "red") {
+   $cat.css("color", "blue");
+}
+
+```
+
 #### More Information:
 * [Full list of jQuery selectors](http://api.jquery.com/category/selectors/)
