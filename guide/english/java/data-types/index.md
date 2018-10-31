@@ -197,3 +197,118 @@ Output:
 ```
 10198442
 ```
+
+
+## Splitting a String Data into multiple integer to facilitate pass by argument for an ArrayList
+-------------------------------------------------------------------------------------------------
+There may be circumstances when certain user specified String data needs to be splited bitwise for storing or for purposes like pass by ref/arg purposes. For example user put a String in the field 'Date of Birth'.. The objective is to split the String into integer chunk/s 
+One easy way to do this -
+
+
+public class OurDate{
+
+private static final CALENDAR calendar = CALENDAR.getInstance();
+private int day;
+private int month;
+private int year;
+
+public OurDate(){
+this (CALENDAR.get(CALENDAR.DATE), CALENDAR.get(CALENDAR.month), CALENDAR.get(CALENDAR.year));
+
+public OurDate(int day, int month, int year)
+setDay(day);
+setMonth(month);
+setYear(year); 
+
+// after setting up setter-getter for all 3 day, month and year
+}//end of Class
+---------------------------------------------------------------
+
+public class Patient{
+
+private String name;
+private int healthCardNo;
+private OurDate birthDate;
+
+
+public Patient(){
+this ("unknown" , "null", new OurDate()); 
+}
+
+public Patient(String name, int healthCardNo, OurDate birthDate){
+setName(name);
+setHealthCardNumber(healthCardNo);
+setBirthDate(birthDate);
+
+// setting up getter-setter for all variables..
+
+	public OurDate getBirthDate() {
+		return birthDate;
+	}
+	private void setBirthDate(OurDate birthDate) {
+		this.birthDate = birthDate;
+	}
+
+}//end of Class
+-------------------------------------------------------------
+
+public class Appointment{
+
+private Doctor doctor;
+private Patient patient;
+
+
+private OurDate appointmentDate; 
+
+
+	public Appointment() {
+		this(new Patient(),new Doctor(), new OurDate());
+	}
+
+	public Appointment(Patient patient,Doctor doctor,OurDate appointmentDate) {
+		setDoctor(doctor);
+		setPatient(patient);
+		setAppointmentDate(appointmentDate);
+     }
+     // setting up getter-setter for remaining variables..
+
+}//end of class
+---------------------------------------------------------------------
+
+public class MedicalClinicUserInterface {
+
+private MedicalClinic clinic;
+private Scanner in = new Scanneer(System.in)
+private ArrayList<Patient>patients; 
+    
+public MedicalClinicUserInterface() {
+clinic = new MedicalClinic();
+	}
+    
+  public void addPatient() {
+
+	String name;
+	int healthCardNumber;
+	String dob;
+
+
+			System.out.print("Enter Name: ");
+			name = in.next();
+
+			System.out.print("Enter Health Card Number: ");
+			healthCardNumber = in.nextInt();
+
+			System.out.print("Enter birthdate DDMMYYYY: ");
+			dob = in.next();
+
+
+			int day = Integer.parseInt((dob.substring(0, 2)));
+			int month = Integer.parseInt((dob.substring(2, 4)));
+			int year = Integer.parseInt((dob.substring(4, 8)));
+
+
+			clinic.addPatients(firstName, lastName, healthCardNumber, new OurDate(day,month,year), patientType);
+		}
+
+	}//end of addPatient()
+    
