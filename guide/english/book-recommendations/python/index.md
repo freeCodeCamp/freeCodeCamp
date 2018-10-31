@@ -74,6 +74,12 @@ You'll learn many of the first princliples for data science tools and how algori
 - ISBN-10: 1617294039
 - ISBN-13: 978-1617294037
 
+*Python Programming: The Ultimate Beginner's Guide to Learn Python Step by Step*
+- Paid book. This book is a complete guide for beginners who are trying to learn Python on their own, without consulting another programmer. This is a Kindle ebook.
+- [Amazon] (https://www.amazon.com/Python-Programming-Ultimate-Beginners-Guide-ebook/dp/B07HYQFVYL/)
+- ASIN: B07HYQFVYL
+
+
 #### Other Resources
 
 - [Functional Programming in Python by David Mertz [OREILLY] [FREE]](https://www.oreilly.com/programming/free/files/functional-programming-python.pdf)
