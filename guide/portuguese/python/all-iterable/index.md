@@ -2,7 +2,7 @@
 title: Python All Iterable
 localeTitle: Python All Iterable
 ---
-`all()` é uma função interna do Python 3 (e do Python 2 desde a versão 2.5), para verificar se todos os itens de um [_iterável_](https://docs.python.org/3/glossary.html#term-iterable) são `True` . É preciso um argumento, `iterable` .
+`all()` é uma função interna do Python 3 (e também do Python 2 desde a versão 2.5) usada para verificar se todos os itens de um objeto [_iterável_](https://docs.python.org/3/glossary.html#term-iterable) são `True` . É necessário um argumento, `iterable` .
 
 ## Argumento
 
@@ -12,9 +12,27 @@ O argumento `iterable` é a coleção cujas entradas devem ser verificadas. Pode
 
 ## Valor de retorno
 
-O valor de retorno é um booleano. Se e somente se **todas as** entradas de `iterable` são [truthy](https://guide.freecodecamp.org/python/truth-value-testing) , ele retorna `True` . Essa função essencialmente executa uma operação Booleana `AND` em todos os elementos.
+O valor de retorno é um booleano. Se (e somente se) **todas as** entradas de `iterable` são [truthy](https://guide.freecodecamp.org/python/truth-value-testing) , ele retorna `True` . Essa função essencialmente executa uma operação Booleana `AND` em todos os elementos.
 
 Se mesmo um deles não for verdade, ele retornará `False` .
+
+Afinal, é preciso lembrar que:
+
+>>> True and False
+False
+
+>>> True and True
+True
+
+>>> False and True
+False
+
+>>> False or True
+True
+
+>>> False or False
+False
+
 
 A operação `all()` é equivalente a (não implementada internamente exatamente assim)
 ```
