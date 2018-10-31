@@ -24,7 +24,7 @@ $ your-desired-editor myscript.sh
 ```
 3) Add some comands:
 ```bash
-$ echo "echo Hello World!" >> myscript.sh
+$ echo "Hello World!" >> myscript.sh
 ```
 4) Give the file _execution_ mode:
 ```bash
