@@ -35,17 +35,17 @@ tests:
 
 ```js
 function zeroArray(m, n) {
-  // Creates a 2-D array with m rows and n columns of zeroes
+  // Crea un array 2-D con m filas y n columnas de ceros
   let newArray = [];
   let row = [];
   for (let i = 0; i < m; i++) {
     // Adds the m-th row into newArray
 
     for (let j = 0; j < n; j++) {
-      // Pushes n zeroes into the current row to create the columns
+      // Empuja n ceros en la fila actual para crear las columnas
       row.push(0);
     }
-    // Pushes the current row, which now has n zeroes in it, to the array
+    // Empuja la fila actual, la cual tiene n ceros en ella, al array
     newArray.push(row);
   }
   return newArray;
