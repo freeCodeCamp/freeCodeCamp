@@ -1,12 +1,12 @@
 ---
 title: For Loop
-localeTitle: En bucle
+localeTitle: Bucle For
 ---
-# En bucle
+# Bucle for
 
-El bucle `for` ejecuta un bloque de código hasta que una condición especificada es falsa. Use `while` bucles cuando el número de iteraciones es variable, de lo contrario use `for` bucles. Un uso común de `for` bucles son iteraciones de matriz.
+El bucle `for` ejecuta un bloque de código hasta que una condición especificada es falsa. Utilize bucles `while` cuando el número de iteraciones sea variable, de lo contrario use bucles `for`. Un uso común de los bucles `for` son iteraciones de matriz.
 
-## Sintaxis de For Loop
+## Sintaxis del bucle For
 
 ```c
 for ( init; condition; increment ) { 
@@ -16,7 +16,7 @@ for ( init; condition; increment ) {
 
 El bucle `for` consta de 3 secciones, la sección de inicialización, una condición específica y la sección de operación incremental o decremental. Estas 3 secciones controlan el bucle `for` .
 
-La sentencia de inicialización se ejecuta una sola vez. Luego, se evalúa la expresión de prueba. Si la expresión de prueba es falsa (0), el bucle finaliza. Pero si la expresión de prueba es verdadera (distinta de cero), se ejecutan los códigos dentro del cuerpo de for loop y se actualiza la expresión de actualización. Este proceso se repite hasta que la expresión de prueba es falsa.
+La sección de inicialización se ejecuta una sola vez. Luego, se evalúa la condición específica. Si la condición específica es falsa (0), el bucle finaliza. Pero si la condición es verdadera (distinta de cero), se ejecuta el código dentro del cuerpo del bucle for y se actualiza la expresión de actualización. Este proceso se repite hasta que condición es falsa.
 
 El bucle for se usa comúnmente cuando se conoce el número de iteraciones.
 
