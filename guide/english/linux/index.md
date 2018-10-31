@@ -29,7 +29,7 @@ different versions of Linux (called distributions) allow the user varying degree
 system. This means that users can choose their Linux distributions based on their wants and needs.  
 
 There is also Kali Linux which is used for advanced penetration testing and auditing. It has over 700 tools, to be able to use it
-efficiently you will need to know how to use command line. It is not advised for beginners.
+efficiently you will need to know how to use command line. Since, it used for ethical hacking and pen testing you will have to perform certain malicious hacks which might brick your system. Therefore, one should have complete knowledge ablut the command line interface, so, that you can fix errors if occured and knew what you have done and hence it is not advised for beginners.
 
 Popular distributions of Linux include:
 
