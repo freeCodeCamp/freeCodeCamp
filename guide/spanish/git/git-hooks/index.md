@@ -2,16 +2,16 @@
 title: Git Hooks
 localeTitle: Git ganchos
 ---
-## Git ganchos
+## Hooks de Git
 
-Los Git Hooks son scripts ubicados en el `.git/hooks/` de un repositorio de git. Estos scripts se ejecutan después de ser activados por diferentes etapas en el proceso de control de versiones.
+Los Hooks de Git son scripts ubicados en el directorio `.git/hooks/` de cualquier repositorio de git. Estos scripts se ejecutan después de ser activados por diferentes etapas en el proceso de control de versiones.
 
-### Muestras
+### Ejemplos
 
-En este directorio hay un puñado de scripts de muestra, como `pre-commit.sample` . Esta muestra en particular se ejecuta cada vez que un usuario ejecuta `git commit` . Si el script de enganche sale con un estado distinto de 0, la confirmación se detiene.
+En este directorio hay varios scripts de muestra, como `pre-commit.sample`. Este ejemplo en particular se ejecuta cada vez que un usuario ejecuta `git commit`. Si el Hook devuelve un valor distinto de 0, la confirmación se detiene.
 
 ### Documentación
 
-*   [Documentación para Git Hooks](https://git-scm.com/docs/githooks)
-*   [Atlassian Tutorial en Git Hooks](https://www.atlassian.com/git/tutorials/git-hooks)
-*   [Guía de ganchos de Git](http://githooks.com/)
+*   [Documentación de Git Hooks](https://git-scm.com/docs/githooks)
+*   [Tutorial de Atlassian de Git Hooks](https://www.atlassian.com/git/tutorials/git-hooks)
+*   [Guía de Hooks de Git](http://githooks.com/)
