@@ -23,7 +23,7 @@ subtr( $string, $start, $length);
 
 ## Example
 
-Below is an example of how you could use a do while loop in a real world situation:
+Below is an example of how you could use the substring function in a real world situation:
 
 ```
 <?php
