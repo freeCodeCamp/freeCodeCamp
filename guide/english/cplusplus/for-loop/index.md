@@ -131,3 +131,25 @@ Output:
 4
 5
 ```
+
+# Iterator-based for-loop
+Iterator based for loops are also possible in C++ and functionality for them exists in many of the data structures found within the STL. Unlike for-each loops, iterator based loops allow for mutating the contents of the container during iteration. This is rather useful when one needs to remove or insert values while looping over data.
+
+
+## Syntax
+```
+// Create a vector
+std::vector<int> vec;
+
+// Populate the vector
+vec.push_back(1);
+vec.push_back(2);
+vec.push_back(3);
+
+// Iterate over the vector using the 'it' object.
+for(std::vector<string>::iterator it = vec.begin(); it != vec.end(); it++)    {
+    // Print the value held by the iterator (this is the object or primitive contained within 
+    // the vector, in this case, an int).
+    cout<< *it << endl;  // prints d.
+}
+```
