@@ -5,7 +5,7 @@ title: Bash rm
 ## Bash command: rm
 
 ### Usage
-
+          To delete a file/directory.
 **Delete a File**
 
 ```bash
