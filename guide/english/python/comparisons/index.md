@@ -28,6 +28,8 @@ Instances of a class cannot be ordered with respect to other instances of the sa
 
 The behavior of the `is` and `is not` operators cannot be customized; also they can be applied to any two objects and never raise an exception.
 
+Two more operations with the same syntactic priority, `in` and `not in`, are supported by types that are iterable or implement the __contains__() method.
+
 We can also chain `<` and `>` operators together. For instance, `3 < 4 < 5` will return `True`, but `3 < 4 > 5` will not. We can also chain the equality operator. For instance, `3 == 3 < 5` will return `True` but `3 == 5 < 5` will not.
 
 ### Equality Comparisons - "is" vs "=="
