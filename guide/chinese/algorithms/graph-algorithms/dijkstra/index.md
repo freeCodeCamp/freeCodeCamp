@@ -4,7 +4,7 @@ localeTitle: Dijkstra的算法
 ---
 # Dijkstra的算法
 
-Dijkstra算法是由EW Dijkstra提出的图算法。它在具有非负边的图中找到单源最短路径。（为什么？）
+Dijkstra算法是由EW Dijkstra，一个荷兰电脑科学家，提出的图算法。它在具有非负边的图中找到单源最短路径。（为什么？）
 
 我们创建了2个数组：visit和distance，它们分别记录是否访问了顶点以及距离源顶点的最小距离。最初访问的数组被指定为false，距离指定为无限。
 
