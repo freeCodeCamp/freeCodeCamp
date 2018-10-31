@@ -75,7 +75,7 @@ Optional Binding is a special kind of condition statement (either with an if or 
     }
  ```
 
-If the optional does not have a value (nil), then the condition would be considered false and its code would not execute and the program will continue on normally.
+If the optional does not have a value (nil), then the condition would be considered false and its code would not execute and the program will continue on normally. 
 
 
 #### More Information:
