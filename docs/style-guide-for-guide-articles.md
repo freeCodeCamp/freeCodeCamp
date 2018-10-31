@@ -1,6 +1,6 @@
 # Style guide for creating and editing Guide Articles
 
-We recommend the following guidelines to writing Guide articles to help you get started contributing and creating helpful articles.
+We recommend the following guidelines for writing Guide articles to help you get started contributing and to create helpful articles.
 
 ## Title
 
