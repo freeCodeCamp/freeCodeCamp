@@ -123,3 +123,8 @@ Also, here is a list of free IDEs for Java coding:
 * <a href='https://www.bluej.org/' target='_blank' rel='nofollow'>BlueJ</a>
 * <a href='http://www.jedit.org/' target='_blank' rel='nofollow'>jEdit</a>
 * <a href='http://www.oracle.com/technetwork/developer-tools/jdev/overview/index-094652.html' target='_blank' rel='nofollow'>Oracle JDeveloper</a>
+
+### Getting Started with Java <br><br>
+<a href="http://www.youtube.com/watch?feature=player_embedded&v=WPvGqX-TXP0"
+" target="_blank"><img src="http://img.youtube.com/vi/WPvGqX-TXP0/0.jpg" 
+alt="Java in 30 Minutes" width="240" height="180" border="10" /></a>
