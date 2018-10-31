@@ -25,6 +25,11 @@ Download the latest Visual Studio Coder package: <a href='https://code.visualstu
 
     sudo dpkg -i vscode-amd64.deb
 
+**Installing Brackets:**
+    sudo add-apt-repository ppa:webupd8team/brackets
+    sudo apt-get update
+    sudo apt-get install brackets
+
 ### IDEs
 
 **Installing Eclipse:**
