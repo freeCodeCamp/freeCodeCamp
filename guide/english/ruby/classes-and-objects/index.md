@@ -12,6 +12,8 @@ Considering a car, then its state could be described as its model, make, and col
 
 An object in Ruby has very similar characteristics. Ruby Objects also have a state and behavior. In Ruby Objects, the state is stored in instance variables and the behavior is stored in functions.
 
+My changes.
+
 
 ### Classes in Ruby
 
