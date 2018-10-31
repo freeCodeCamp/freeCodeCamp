@@ -3,11 +3,6 @@ title: Libraries to use to create web components
 ---
 #### Libraries for building web components
 
-This is a stub. <a href='https://github.com/freecodecamp/guides/tree/master/src/pages/web-components/libraries-used-to-create-web-components/index.md' target='_blank' rel='nofollow'>Help our community expand it</a>.
+Although web components are [supported natively in modern browsers](https://developer.mozilla.org/en-US/docs/Web/Web_Components#Browser_support), there are several libraries which can be used to facilitate development.
 
-<ahref='https://github.com/freecodecamp/guides/blob/master/README.md' target='_blank' rel='nofollow'>This quick style guide will help ensure your pull request gets accepted</a>.
-
-<!-- The article goes here, in GitHub-flavored Markdown. Feel free to add YouTube videos, images, and CodePen/JSBin embeds  -->
-
-#### More Information:
-<!-- Please add any articles you think might be helpful to read before writing the article -->
+webcomponents.org hosts a good [list of web components libraries](https://www.webcomponents.org/libraries) maintained by the community.
