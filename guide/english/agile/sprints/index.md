@@ -19,3 +19,5 @@ In Scrum, the **Sprint** is a period of working time usually between one and fou
 - Scrum Alliance <a href='https://www.scrumalliance.org/community/articles/2014/may/sprint-is-more-than-just-a-timebox' target='_blank' rel='nofollow'>Sprint is More Than Just a Timebox</a>
 - Scrum Inc <a href='https://www.scruminc.com/what-is-timeboxing/' target='_blank' rel='nofollow'>What is Timeboxing</a>
 - Scrum.org <a href='https://www.scrum.org/resources/what-is-a-sprint-in-scrum' target='_blank' rel='nofollow'>What is a Sprint in Scrum</a>
+
+Edited
