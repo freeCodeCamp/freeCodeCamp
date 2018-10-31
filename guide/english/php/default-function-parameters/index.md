@@ -24,7 +24,7 @@ public function foo ($numOne = 1, $numTwo = 2) {
 
 ## Example
 
-Below is an example of how you could use a do while loop in a real world situation:
+Below is an example of how you could use default function parameters in a real world situation:
 
 ```
 <?php
