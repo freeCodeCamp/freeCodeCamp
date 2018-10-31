@@ -18,7 +18,7 @@ An expansion card is an embedded circuit card that can be added to the motherboa
 ![Nvidia Titan XP](https://cdn.arstechnica.net/wp-content/uploads/2017/04/nvidia-titan-x.jpg)  
   
 ### Storage (SSD or HDD)
-The Solid State Drive (SSD) or Hard Disk Drive (HDD) are used to store information on the computer. It retains the memory even after loss of power.
+The Solid State Drive (SSD) or Hard Disk Drive (HDD) are used to store information on the computer. It retains the memory even after loss of power. SSDs are much faster than HDDs, due to the fact that they store information in microchips opposed to using a mechanical arm. HDDs will often times have larger capacities and are cheaper to attain.
   
 ![SSD](https://images10.newegg.com/NeweggImage/ProductImage/20-147-373-09.jpg)  
   
