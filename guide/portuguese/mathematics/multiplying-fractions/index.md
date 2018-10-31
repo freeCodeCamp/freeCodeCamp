@@ -10,7 +10,7 @@ Considere a fração 4 ⁄ 5 , aqui 4 é chamado de numerador e 5 é chamado de 
 
 Aqui estão os passos para multiplicar duas frações
 
-1.  Multiplique o numerador e o denominador das frações
+1.  Multiplique os dois numeradores e os dois denominadores das frações
 2.  Se possível, simplifique a fração resultante
 
 #### Exemplo 1
