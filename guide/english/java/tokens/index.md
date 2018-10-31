@@ -43,6 +43,6 @@ System.out.println(“Hello World”);
 }
 ```
 
-The source code contains tokens such as _public_, _class_, _Hello_, {, _public_, _static_, _void_, _main_, (, _String_, [], _args_, {, _System_, _out_, _println_, (, _"Hello World"_, }, }. The resulting tokens· are compiled into Java bytecodes that is capable of being run from within an interpreted java environment. Token are useful for compiler to detect errors. When tokens are not arranged in a particular sequence, the compiler generates an error message.
+The source code contains tokens such as _public_, _class_, _Hello_, {, _public_, _static_, _void_, _main_, (, _String_, [], _args_, {, _System_, _out_, _println_, (, _"Hello World"_, }, }. The resulting tokens are compiled into Java bytecodes that is capable of being run from within an interpreted java environment. Token are useful for compiler to detect errors. When tokens are not arranged in a particular sequence, the compiler generates an error message.
 
-
+Note: Tokens are an essential concept of parsing and computer language design.
