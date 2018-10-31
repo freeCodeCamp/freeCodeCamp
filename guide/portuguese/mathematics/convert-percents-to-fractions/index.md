@@ -10,11 +10,11 @@ Para converter porcentagem em frações, use a fórmula abaixo:
 
 #### Exemplo 1
 
- 25% = 25 ⁄ 100 = 1 ⁄ 4 
+ 25% = 25 ⁄ 100 = 1 ⁄ 4 (divide-se o numerador e o denominador por 25)
 
 #### Exemplo 2
 
- 36% = 36 ⁄ 100 = 9 ⁄ 25 
+ 36% = 36 ⁄ 100 = 9 ⁄ 25 (divide-se o numerador e o denominador por 4)
 
 #### Exemplo 3
 
