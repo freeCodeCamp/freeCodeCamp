@@ -29,7 +29,6 @@ Sublime Text is a very popular editor that has been around <a href='https://www.
 
 ![Sublime Text Screenshot](//discourse-user-assets.s3.amazonaws.com/original/2X/6/63f774c31a7b1a439bcef9d11e95463b6998310e.png)
   
-&nbsp;
   
 ### Brackets
 
@@ -41,7 +40,6 @@ Brackets is a relatively new open-source editor by Adobe. It is very user friend
 
 ![Brackets Screenshot](//discourse-user-assets.s3.amazonaws.com/original/2X/2/2f395a58d24ed551ed8440a10ae640777f1143b6.png)
   
-&nbsp;
   
 ### Atom
 
@@ -53,7 +51,6 @@ Atom is an <a href='https://github.com/atom/atom' target='_blank' rel='nofollow'
 
 ![Atom Screenshot](//discourse-user-assets.s3.amazonaws.com/original/2X/8/8016e7c0937e8ce6fcb6104c9aee0026443912f5.png)
 
-&nbsp;
 
 ### Visual Studio Code
 
@@ -63,7 +60,6 @@ Visual Studio Code (a.k.a vsc or vscode) is a very popular, open source editor, 
 
 <a href='https://code.visualstudio.com/' target='_blank' rel='nofollow'>code.visualstudio.com</a>
 
-&bnsp;
 
 ### Notepad++
 
@@ -72,4 +68,12 @@ Visual Studio Code (a.k.a vsc or vscode) is a very popular, open source editor, 
 Notepad++ is a free, open source code editor, that runs in the Microsoft Windows Environment. It was developed in 2003, by Dan Ho. It is written in <a href='www.cplusplus.com' target='_blank' rel='nofollow'>C++</a> (the name comes from that). Notepad++ supports tabbed editing, wich allows working with multiple open files in a single window, and also can be use as a plain text editor.
 
 <a href='https://notepad-plus-plus.org' target='_blank' rel='nofollow'>notepad-plus-plus.org</a>
+
+### VIM
+
+![VIM Icon](https://www.vim.org/images/vim_header.gif)
+
+VIM is an advanced text editor open source tool which is also considered to be an IDE in its way. This tool allows managing your text editing activities with vim editors and UNIX System which can be used on-premise or online. It is written in C. Vim is a highly configurable text editor built to enable efficient text editing. It is an improved version of the vi editor distributed with most UNIX systems.
+
+<a href='https://www.vim.org/' target='_blank' rel='nofollow'>vim.org</a>
 

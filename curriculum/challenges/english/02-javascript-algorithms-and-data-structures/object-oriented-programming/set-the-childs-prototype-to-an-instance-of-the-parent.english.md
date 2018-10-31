@@ -25,7 +25,7 @@ Modify the code so that instances of <code>Dog</code> inherit from <code>Animal<
 ```yml
 tests:
   - text: <code>Dog.prototype</code> should be an instance of <code>Animal</code>.
-    testString: 'assert(Animal.prototype.isPrototypeOf(Dog.prototype), "<code>Dog.prototype</code> should be an instance of <code>Animal</code>.");'
+    testString: assert(Animal.prototype.isPrototypeOf(Dog.prototype), '<code>Dog.prototype</code> should be an instance of <code>Animal</code>.');
 
 ```
 

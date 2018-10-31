@@ -20,9 +20,11 @@ ASI имеет набор правил, которые он использует
 
 ## Ошибки, которые могут возникнуть
 
-Когда Javascript был впервые создан, он призван помочь начинающим программистам. Никто не хочет искать дэн-двоеточие в своем коде, когда они начинают программировать. Таким образом, выбор полуколонок был реализован, как указано выше, они технически существуют.
+Когда Javascript был впервые создан, он призван помочь начинающим программистам. Никто не хочет искать проклятую точку с запятой в своем коде, когда они только начинают программировать. Таким образом, выбор точек с запятой был реализован, как указано выше, они технически существуют.
 
-Например: `javasctipt function foo(x) { return function(y) { return x + y; } } let z = foo(10); z(10)// TypeError z is not a function // Because of Automatic Semicolon Insertion, our inner function does not exist.` Javasctipt будет реализовывать полуколоны, где они ожидаются.
+Например: `javasctipt function foo(x) { return function(y) { return x + y; } } let z = foo(10); z(10)// TypeError z is not a function // Because of Automatic Semicolon Insertion, our inner function does not exist.` 
+
+Javasctipt будет применять точки с запятой там, где они необходимы.
 
 ### Другие источники
 
