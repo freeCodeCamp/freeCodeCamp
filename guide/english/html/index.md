@@ -143,3 +143,11 @@ There are many possible ways a user can give input/s like:
 ```
 
 Comments can help in the understanding of the markup and do not display in the webpage.
+
+**Excellent places to start learning HTML for free:**
+
+[The FreeCodeCamp Curriculum](https://learn.freecodecamp.org/)
+
+[Scrimba's Basic HTML Course](https://scrimba.com/g/ghtml)
+
+[W3C's Full HTML Tutorial](https://www.w3schools.com/html/default.asp)
