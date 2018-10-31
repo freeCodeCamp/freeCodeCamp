@@ -29,7 +29,7 @@ Imprimir en la terminal el contenido de file.txt:
 cat file.txt 
 ```
 
-Concatene el contenido de los dos archivos y muestre el resultado en el terminal:
+Concatenar el contenido de los dos archivos y mostrar el resultado en la terminal:
 
 ```bash
 cat file1.txt file2.txt 
