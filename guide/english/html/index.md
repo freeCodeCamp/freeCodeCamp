@@ -143,3 +143,10 @@ There are many possible ways a user can give input/s like:
 ```
 
 Comments can help in the understanding of the markup and do not display in the webpage.
+
+# HTML Attributes
+**Attribute -** Property of an HTML element that contains additional information about that HTML element.They generally come in name-value pair and are included in the opening tag of the element.
+
+Ex-  <a href="www.freecodecamp.org">Click here to go to freeCodeCamp!</a> 
+
+Here "href" is an attribute and it's value is "www.freecodecamp.org".
