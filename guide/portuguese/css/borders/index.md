@@ -8,19 +8,24 @@ localeTitle: Propriedade Border
 
 Nosso atributo CSS favorito, permite que você personalize completamente as bordas que aparecem em torno dos elementos HTML. Com o HTML, costumava ser impossível colocar uma borda em torno de um elemento, exceto a tabela. As bordas de CSS permitem criar estilos de borda nítidos e personalizados com muito pouco trabalho, em comparação com os métodos antiquados de HTML.
 
-A propriedade abreviada de `border` define todas as propriedades da borda em uma declaração. \`\` \`css borda: 1px sólido # 000;
+A propriedade abreviada de `border` define todas as propriedades da borda em uma declaração.
+
+```css 
+  border: 1px solid #000;
 ```
-The properties that can be set, are (in order): 
+
+As propriedades que podem ser atribuídas, são (na ordem): 
  1. `border-style` 
  2. `border-width` 
  3. `border-color` 
  4. `border-radius` 
  
  It does not matter if one of the values above are missing, for example: 
+ 
+```css 
+  border: solid red;
 ```
 
-css borda: vermelho sólido;
-```
 The above code is also valid CSS. 
  
  ### Border Styles 
@@ -41,15 +46,18 @@ The above code is also valid CSS.
  
  Based on the property you choose, these styles can be mismatched. 
  You can style each side seperately: 
+```css
+  border-top-style: solid;
+  border-left-style: dotted;
+  border-right-style: dashed;
+  border-bottom-style: double;
 ```
 
-css border-top-style: sólido; border-left-style: pontilhado; border-right-style: tracejado; border-bottom-style: duplo;
-```
 Or you can style them all at once: 
+```css
+  border-style: solid dashed double dotted;
 ```
 
-css estilo de borda: sólido pontilhado duplo;
-```
 As shown, the border property allows you to select different sections of it. [top, bottom, left, right] 
  
  ### Border Width 
@@ -59,48 +67,71 @@ As shown, the border property allows you to select different sections of it. [to
  values: thin, medium, or thick. 
  
  Example: 
+```css
+<style type="text/css">
+table {
+	border-width: 7px;
+	border-style: outset;
+}
+td {
+	border-width: medium;
+	border-style: outset;
+}
+p {
+	border-width: thick;
+	border-style: solid;
+}
+</style>
 ```
 
-css
-
-table { border-width: 7px; border-style: outset; } td { border-width: medium; border-style: outset; } p { border-width: thick; border-style: solid; }
-```
 ### Border Color 
  
  Now for the creative aspect of CSS Borders! With the use of the border-color attribute, you will be able to create customized borders to fit the flow and layout 
  of your website. Border colors can be any color defined by RGB, hexadecimal, or key terms. Below is an example of each of these types. 
  
  Example: 
+```css
+<style type="text/css">
+table {
+	border-color: rgb( 100, 100, 255);
+	border-style: dashed;
+}
+
+td {
+	border-color: #FFBD32;
+	border-style: ridge;
+}
+
+p {
+	border-color: blue;
+	border-style: solid;
+}
+</style>
 ```
 
-css
-
-table { border-color: rgb( 100, 100, 255); border-style: dashed; } td { border-color: #FFBD32; border-style: ridge; } p { border-color: blue; border-style: solid; }
-```
 ### Border-Radius 
  The `border-radius` property allows the corners of a border to be rounded. This is done by providing a size for 
  how much the border is to be rounded. Size can be in px or %. 
+```css 
+  border-radius: 25px;
+```
+Each corner of `border-radius` can be adjusted. The order is top, bottom, left, right.
+```css 
+  border-radius: 15% 10px 30% 5px;
 ```
 
-css raio de fronteira: 25 px;
-```
-Each corner of `border-radius` can be adjusted. The order is top, bottom, left, right. 
-```
-
-css raio de fronteira: 15% 10px 30% 5px;
-```
 ### Border: All in One 
  
  While it is nice that CSS allows a web developer to be very specific in creating a customized border, sometimes it is just easier and less of a headache to create a uniform border, all in single line of CSS code. 
  
  Example: 
+```css
+<style type="text/css">
+p { border: 20px outset blue; } 
+h4 { border: 5px solid; } 
+h5 { border: dotted; }
+</style>
 ```
-
-css
-
-p { border: 20px outset blue; } h4 { border: 5px solid; } h5 { border: dotted; }
-
-\`\` \`
 
 ### Mais Informações:
 
@@ -110,7 +141,7 @@ p { border: 20px outset blue; } h4 { border: 5px solid; } h5 { border: dotted; }
 ### Outros atributos de borda
 
 *   'border-radius' - Isso pode definir o raio da borda.
-*   'border-espaçamento' - Isso pode definir o espaçamento entre o texto e a borda.
+*   'border-spacing' - Isso pode definir o espaçamento entre o texto e a borda.
 *   'border-image' - Isto define uma imagem como borda.
 
-Suporte ao Navegador: IE6 +
+Suporte ao Navegador: IE6+
