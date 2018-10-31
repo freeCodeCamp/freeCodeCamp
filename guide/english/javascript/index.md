@@ -5,10 +5,10 @@ title: JavaScript
 ## JavaScript
 JavaScript is the most widely used scripting language on Earth. And it has the largest library ecosystem of any programming language.
 
-By definition, Javascript is an high-level iterpreted language. Meaning its higher abstracted from the computer, easy to use, and you
+By definition, Javascript is a high-level interpreted language. Meaning its higher abstracted from the computer, easy to use, and you
 don't need to compile in order to execute but its interpreted at the runtime.
 
-JavaScript is the core language of the web, and the only programming language that can run in all major web browsers.
+JavaScript is the core language of the web and the only programming language that can run in all major web browsers.
 
 Notably, JavaScript has no relation to Java. [JavaScript: The World's Most Misunderstood Programming Language](http://www.crockford.com/javascript/javascript.html)
 
@@ -27,7 +27,7 @@ Node.js, built on top of V8, a platform which enables server-side applications t
 
 Windows includes JScript, a JavaScript variant in Windows Script Host.
 
-Chakra, a fork of Jscript, is developed by Microsoft and used in their Edge browser.
+Chakra, a fork of JScript, is developed by Microsoft and used in their Edge browser.
 
 Mozilla also offers Rhino, an implementation of JavaScript built in Java, typically embedded into Java applications to provide scripting to end users.
 
