@@ -1,5 +1,5 @@
-import axios from 'axios';
-import qs from 'query-string';
+import axios from 'axios'; // imports axios library
+import qs from 'query-string'; // imports qs library
 
 export function getArticleById(shortId) {
   return axios.get(
