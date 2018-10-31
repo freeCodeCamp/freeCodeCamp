@@ -14,8 +14,6 @@ A graphs are very useful data structures which can be to model various problems.
 ### Some Common Graph Algorithms
 Some of the most common graph algorithms are:
 
-<a href='https://github.com/freecodecamp/guides/computer-science/data-structures/graphs/index.md' target='_blank' rel='nofollow'>Graphs</a>
-
 <a href='https://github.com/freecodecamp/guides/tree/master/src/pages/algorithms/graph-algorithms/breadth-first-search/index.md' target='_blank' rel='nofollow'>Breadth First Search (BFS)</a>
 
 <a href='https://github.com/freecodecamp/guides/tree/master/src/pages/algorithms/graph-algorithms/depth-first-search/index.md' target='_blank' rel='nofollow'>Depth First Search (DFS)</a>
