@@ -23,6 +23,27 @@ For instance:
 </html>
 ```
 The `<a href>` attribute is supported by all browsers.
+Different URL Forms
+The URL may be:
+
+Fully Qualified (include a protocol)
+https://html.com
+https://html.com
+URL with a relative (unspecified) protocol
+//html.com
+Browser-specific protocol
+chrome://settings/
+Relative to the current page
+next
+Relative to the current domain
+/
+/wp-content/uploads/flamingo.jpg
+Values of the href Attribute
+Value Name	Notes
+url	The URL (URI) of the linked resource.
+
+
+Read more: https://html.com/attributes/a-href/#ixzz5VX8eY5eg
 
 #### More attributes:
  `hreflang` : Specifies the language of the linked resource.
