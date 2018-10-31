@@ -1,8 +1,8 @@
-import React from 'react';
-import {BrowserRouter} from 'react-router-dom';
-import { render } from 'react-dom';
+import React from 'react'; // imports React library
+import {BrowserRouter} from 'react-router-dom'; // imports BrowserRouter library
+import { render } from 'react-dom'; // imports render library
 
-import NewsApp from './NewsApp';
+import NewsApp from './NewsApp'; // imports NewsApp library
 
 const newsMountPoint = document.getElementById('news-app-mount');
 
