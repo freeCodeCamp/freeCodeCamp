@@ -4,7 +4,7 @@ localeTitle: Arrays
 ---
 # Formación
 
-Un Array es una colección de valores (u objetos) de tipos de datos similares (se permiten las formas de tipos de datos primitivas y de referencia) mantenidas en direcciones de memoria secuenciales. Una matriz se utiliza para almacenar una colección de tipos de datos similares. Las matrices siempre comienzan con el índice de 0 y se crean instancias de un número determinado de índices. Todas las variables de la matriz deben ser del mismo tipo, declaradas en la instanciación.
+Una matriz, o Array, es una colección de valores (o objetos) de tipos de datos similares (se permiten las formas de tipos de datos primitivas y de referencia) mantenidas en direcciones de memoria secuenciales. Una matriz se utiliza para almacenar una colección de tipos de datos similares. Las matrices siempre comienzan con el índice de 0 y se crean instancias de un número determinado de índices. Todas las variables de la matriz deben ser del mismo tipo, declaradas en la instanciación.
 
 **Sintaxis:**
 
