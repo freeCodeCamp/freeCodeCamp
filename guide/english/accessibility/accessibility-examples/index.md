@@ -53,3 +53,15 @@ These CSS styles hide the link by default and only display the link when it is r
 
 ### Accessible Tables
 ### Accessible Tabs
+
+### Accessible Header Structure
+
+- Role "banner" is added to the ```header``` tag to signify to screen readers that this tag is the top most section. The role on the ```header``` is depreciated in HTML5 but should be added still in order to support as many screen readers as possible.
+- This role is added to the ```header``` element when it is the child of the ```body``` element.
+
+- More information can be found at the [https://www.w3.org/TR/2017/NOTE-wai-aria-practices-1.1-20171214/examples/landmarks/banner.html](W3C Website documentation).
+
+```html
+<header role="banner">
+</header>  
+```
