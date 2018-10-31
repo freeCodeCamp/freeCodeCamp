@@ -10,7 +10,7 @@ Angular contém muitos _esquemas_ para criação de aplicativos. Componentes sã
 
 Entre todos os esquemas, os componentes tendem a consumir mais do que os fornecidos. Enquanto outros esquemas como diretivas, canais e serviços oferecem utilidade, os componentes utilizam. Eles são responsáveis ​​pela interface do aplicativo, portanto, faz sentido porque o utilitário consumir.
 
-Componentes simplificam o aplicativo. A lógica de afunilamento em uma única seção da interface visível é seu objetivo principal. Para criar aplicativos passo a passo, você deve criar componente por componente. Componentes agem como blocos de construção angular afinal.
+Componentes simplificam o aplicativo. A lógica de afunilamento em uma única seção da interface visível é seu objetivo principal. Para criar aplicativos passo a passo, você deve criar componente por componente. Componentes agem como blocos de construção angular, afinal.
 
 #### Introdução aos componentes
 
@@ -24,7 +24,7 @@ Para todas essas coisas, temos a classe do componente. A turma mantém tudo rela
 
 #### Classe de componente e metadados
 
-Vá em frente e instale a [interface de linha de comando (CLI) Angular](https://cli.angular.io) . Você pode aprender mais sobre isso [neste artigo](https://guide.freecodecamp.org/angular/command-line-interface) . O comando CLI `ng generate component [name-of-component]` produz o seguinte.
+Vá em frente e instale a [interface de linha de comando (CLI) Angular](https://cli.angular.io). Você pode aprender mais sobre isso [neste artigo](https://guide.freecodecamp.org/angular/command-line-interface). O comando CLI `ng generate component [name-of-component]` produz o seguinte.
 
 ```typescript
 import { Component, OnInit } from '@angular/core'; 
@@ -66,7 +66,7 @@ Hora de seguir em frente. Por favor, consulte os artigos acima mencionados para 
 
 #### Dados de componentes
 
-Dados conduz tudo. Componentes não são exceção. Componentes encapsulam todos os seus dados. Para receber dados externamente, um componente deve declará-lo explicitamente. Essa forma de privacidade impede que as informações entrem em conflito na árvore de componentes.
+Dados conduzem tudo. Componentes não são exceção. Componentes encapsulam todos os seus dados. Para receber dados externamente, um componente deve declará-lo explicitamente. Essa forma de privacidade impede que as informações entrem em conflito na árvore de componentes.
 
 Os dados determinam o que é exibido da classe do componente para o modelo. Quaisquer atualizações nos dados da classe irão (ou pelo menos devem) atualizar a exibição do modelo.
 
@@ -120,7 +120,7 @@ Os componentes geralmente inicializam um conjunto de membros (ou variáveis) que
 
 Observe as formas como o componente interage com seus dados. Primeiro, ele busca de `../../data/posts.data` antes de começar a encaminhá-lo ao modelo para exibição.
 
-Os dados aparecem em todo o modelo. Dentro das chaves duplas, o valor de uma variável é mapeado da classe do componente para as chaves. O `*ngFor` loop no array de classes `allPosts` . Clicar no botão remove um elemento específico de `allPosts` por seu índice. Você pode até mudar o `username` de `username` mais alto, digitando na caixa de entrada.
+Os dados aparecem em todo o modelo. Dentro das chaves duplas, o valor de uma variável é mapeado da classe do componente para as chaves. O loop `*ngFor` no array de classes `allPosts`. Clicar no botão remove um elemento específico de `allPosts` por seu índice. Você pode até mudar o `username` de `username` mais alto, digitando na caixa de entrada.
 
 As interações acima alteram os dados da classe do componente, o que, por sua vez, atualiza o HTML do modelo do componente. Os componentes fornecem a lógica de backbone que facilita o fluxo de dados. O modelo HTML torna esses dados legíveis para o usuário.
 
@@ -138,7 +138,7 @@ Os dados que gerenciam o estado do modelo funcionam imperativamente OK. No entan
 
 Para fazer isso, o componente deve ter referência aos elementos do modelo. Quando os dados são alterados, o componente pode manipular o DOM explicitamente. Esta é uma abordagem mais declarativa.
 
-Os componentes podem capturar referências usando a interface de programação de aplicativos DOM (API) do navegador da web. Má idéia embora. Angular prefere compatibilidade entre plataformas. Para que um componente funcione fora do navegador da Web, ele precisa usar a API do Angular em vez do DOM.
+Os componentes podem capturar referências usando a interface de programação de aplicativos DOM (API) do navegador da web. Má ideia embora. Angular prefere compatibilidade entre plataformas. Para que um componente funcione fora do navegador da Web, ele precisa usar a API do Angular em vez do DOM.
 
 Os componentes podem consultar seus modelos usando os decoradores `@ViewChild` e `ContentChild` . Eles pegam referências a elementos de modelo em nome da classe de componentes.
 
