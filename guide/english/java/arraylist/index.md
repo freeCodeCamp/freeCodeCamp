@@ -100,6 +100,17 @@ for(Object obj : arr) {
 }
 ```
 
+**Split a delimited string into an list of String**
+
+Let's say we have a string variable called ``` String stringToSplit = "PHP,Java,C++"; ```.
+Now, we want to split it into a List of String, so we can iterate over the List.
+
+Since ArrayList implements the interface *List*, we can use the function ```asList``` to obtain a fixed-size List of String out of the splitted string ```stringToSplit```:
+
+```java
+  List<String> list = new ArrayList<String>(Arrays.asList(stringToSplit.split(",")));
+```
+
 An ArrayList allows us to randomly access elements. ArrayList is similar to *Vector* in a lot of ways, but it is faster than Vectors. The main thing to note is that - Vectors are faster than arrays but ArrayLists are not. 
 
 So when it comes down to choosing between the two - if speed is critical then Vectors should be considered for a small set of items, otherwise ArrayLists are better when it comes to storing large number of elements and accessing them efficiently. Vectors are synchronized and arraylist are not, thats why choose vector for frequent update of elements otherwise Arraylist is efficient for traversing.
