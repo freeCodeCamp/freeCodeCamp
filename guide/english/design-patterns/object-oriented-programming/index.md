@@ -12,7 +12,7 @@ In this paradigm, entities are represented as real world data. For instance, we 
 
 ## OO concepts
 What makes OO programming powerful is its ability to do the following:
-* Inheritence
+* Inheritance
 * Polymorphism
 * Encapsulation
 * Abstraction
