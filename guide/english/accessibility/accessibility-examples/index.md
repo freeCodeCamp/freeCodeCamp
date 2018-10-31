@@ -53,3 +53,6 @@ These CSS styles hide the link by default and only display the link when it is r
 
 ### Accessible Tables
 ### Accessible Tabs
+
+Below is a guide to creating fully-accessible tabs using ARIA. Credit: Github user jonathantneal.
+<script src="https://gist.github.com/jonathantneal/435478e415bfe4f54d06.js"></script>
