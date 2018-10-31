@@ -13,7 +13,7 @@ Stakeholders may be made up from any of the following
 - Business Owner
 - Anyone who is on the RACI chart (Responsible, Accountable, Consultative, or Informed)
 
-Their participation in the project is essential for success.
+Their participation in the project is essential for success. Different groups of stakeholders can share their feedback in different ways. Usually participants of the business side of the project are involved in the development process, while input from customers/users can be provided e.g. by web analytic tools.
 
 For example, when your team is performing the Sprint Review meetings, the demonstration of the project is for the stakeholders, and their feedback is captured and added to the backlog.
 
