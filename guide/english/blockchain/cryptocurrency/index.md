@@ -122,6 +122,13 @@ In this more well-known protocol, miners compete with each other to solve a math
 In proof of stake, the network is secured via network participants staking or wagering their coins. If network participants misbehave, they will lose the coins that they staked. As a reward for properly securing the network, stakers will periodically receive a small amount of coins relative to how many coins they put up for staking. Instead of competing to solve a difficult math problem to validate blocks, block validators under proof of stake are randomly chosen. Proof of stake is typically significantly less energy-intensive than proof of work.
 
 
+## Permissionless Blockchains
+Rather than imposing barriers to entry, permissionless blockchains are public and open for anyone to join. Since such networks can reasonably expect all kind of agents - including malicious actors - the key lies in incentivizing good behavior in a critical majority of the network, such that:
+-	The malicious actors cannot take over the network through an escalated attack.
+-	The malicious actors cannot collude to undertake an organized majority attack on the network.
+-	The payoffs of securing the network are consistently higher than the cost of attacking the network.
+-	The cost of attacking the network is prohibitively high.
+
 ### Background History on Origins of Cryptocurrency:
 [Blockchain Origins Story](https://www.activism.net/cypherpunk/manifesto.html)
 Cypherpunks, crypoanarchists, and libertarians paved the way for the right to privacy and deregulating the government's control and diminishing individual citizen's autonomy.
