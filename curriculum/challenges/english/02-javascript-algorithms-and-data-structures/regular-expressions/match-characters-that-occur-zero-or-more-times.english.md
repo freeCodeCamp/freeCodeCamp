@@ -22,15 +22,15 @@ Create a regex <code>chewieRegex</code> that uses the <code>*</code> character t
 ```yml
 tests:
   - text: Your regex <code>chewieRegex</code> should use the <code>*</code> character to match zero or more <code>a</code> characters.
-    testString: 'assert(/\*/.test(chewieRegex.source), "Your regex <code>chewieRegex</code> should use the <code>*</code> character to match zero or more <code>a</code> characters.");'
+    testString: assert(/\*/.test(chewieRegex.source), 'Your regex <code>chewieRegex</code> should use the <code>*</code> character to match zero or more <code>a</code> characters.');
   - text: Your regex <code>chewieRegex</code> should match 16 characters.
-    testString: 'assert(result[0].length === 16, "Your regex <code>chewieRegex</code> should match 16 characters.");'
+    testString: assert(result[0].length === 16, 'Your regex <code>chewieRegex</code> should match 16 characters.');
   - text: Your regex should match <code>"Aaaaaaaaaaaaaaaa"</code>.
-    testString: 'assert(result[0] === "Aaaaaaaaaaaaaaaa", "Your regex should match <code>"Aaaaaaaaaaaaaaaa"</code>.");'
-  - text: 'Your regex should not match any characters in <code>"He made a fair move. Screaming about it can&#39t help you."</code>'
-    testString: 'assert(!"He made a fair move. Screaming about it can\"t help you.".match(chewieRegex), "Your regex should not match any characters in <code>"He made a fair move. Screaming about it can&#39t help you."</code>");'
-  - text: 'Your regex should not match any characters in <code>"Let him have it. It&#39s not wise to upset a Wookiee."</code>'
-    testString: 'assert(!"Let him have it. It\"s not wise to upset a Wookiee.".match(chewieRegex), "Your regex should not match any characters in <code>"Let him have it. It&#39s not wise to upset a Wookiee."</code>");'
+    testString: assert(result[0] === 'Aaaaaaaaaaaaaaaa', 'Your regex should match <code>"Aaaaaaaaaaaaaaaa"</code>.');
+  - text: Your regex should not match any characters in <code>"He made a fair move. Screaming about it can&#39t help you."</code>
+    testString: assert(!"He made a fair move. Screaming about it can\'t help you.".match(chewieRegex), 'Your regex should not match any characters in <code>"He made a fair move. Screaming about it can&#39t help you."</code>');
+  - text: Your regex should not match any characters in <code>"Let him have it. It&#39s not wise to upset a Wookiee."</code>
+    testString: assert(!"Let him have it. It\'s not wise to upset a Wookiee.".match(chewieRegex), 'Your regex should not match any characters in <code>"Let him have it. It&#39s not wise to upset a Wookiee."</code>');
 
 ```
 

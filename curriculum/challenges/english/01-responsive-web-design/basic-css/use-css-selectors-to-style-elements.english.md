@@ -28,15 +28,15 @@ Delete your <code>h2</code> element's style attribute, and instead create a CSS 
 ```yml
 tests:
   - text: Remove the style attribute from your <code>h2</code> element.
-    testString: 'assert(!$("h2").attr("style"), "Remove the style attribute from your <code>h2</code> element.");'
+    testString: assert(!$("h2").attr("style"), 'Remove the style attribute from your <code>h2</code> element.');
   - text: Create a <code>style</code> element.
-    testString: 'assert($("style") && $("style").length > 1, "Create a <code>style</code> element.");'
+    testString: assert($("style") && $("style").length > 1, 'Create a <code>style</code> element.');
   - text: Your <code>h2</code> element should be blue.
-    testString: 'assert($("h2").css("color") === "rgb(0, 0, 255)", "Your <code>h2</code> element should be blue.");'
+    testString: assert($("h2").css("color") === "rgb(0, 0, 255)", 'Your <code>h2</code> element should be blue.');
   - text: Ensure that your stylesheet <code>h2</code> declaration is valid with a semicolon and closing brace.
-    testString: 'assert(code.match(/h2\s*\{\s*color\s*:.*;\s*\}/g), "Ensure that your stylesheet <code>h2</code> declaration is valid with a semicolon and closing brace.");'
+    testString: assert(code.match(/h2\s*\{\s*color\s*:.*;\s*\}/g), 'Ensure that your stylesheet <code>h2</code> declaration is valid with a semicolon and closing brace.');
   - text: Make sure all your <code>style</code> elements are valid and have a closing tag.
-    testString: 'assert(code.match(/<\/style>/g) && code.match(/<\/style>/g).length === (code.match(/<style((\s)*((type|media|scoped|title|disabled)="[^"]*")?(\s)*)*>/g) || []).length, "Make sure all your <code>style</code> elements are valid and have a closing tag.");'
+    testString: assert(code.match(/<\/style>/g) && code.match(/<\/style>/g).length === (code.match(/<style((\s)*((type|media|scoped|title|disabled)="[^"]*")?(\s)*)*>/g) || []).length, 'Make sure all your <code>style</code> elements are valid and have a closing tag.');
 
 ```
 

@@ -5,7 +5,7 @@ title: Product Management
 
 Product Management is an organisational function that assumes responsibility for the entire lifecycle of the products that are being sold. As a business function, Product Management, is held accountable for creating customer value and measurable benefits to the business. 
 
-There are a few core responsibilities common to most product management roles inside both established enterprise companies and at startups. Most often product management is responsible for understanding customer requirements, defining and prioritizing them, and working with the engineering team to build them. Setting strategy and defining the roadmap is often considered to be inbound work and bringing the product to market is often considered to be "outbound."
+There are a few core responsibilities common to most product management roles inside both established enterprise companies and at startups. Most often product management is responsible for understanding customer requirements as well as requirements driven by the current state of the industry (including the competitive landscape), defining and prioritizing them, organizing them into a long-term roadmap, and working with the engineering team to build them. Setting strategy and defining the roadmap is often considered to be inbound work and bringing the product to market is often considered to be "outbound."
 
 It is important to understand the differences between inbound and outbound product management because a great product manager has the diverse set of skills to do both well. 
 
@@ -44,7 +44,7 @@ Product Marketing and Go-to-Market (Outbound)
 
 Product management continues to expand as a profession. Demand for qualified product managers is growing at every level. There are a variety of roles and responsibilities depending on experience level. Opportunities range from an Associate Product Manager all the way to CPO.
 
-Most Product Managers have been in different roles earlier in their careers. Very often software engineers, sales engineers or professional services consultant grow into the role of Product Manager. But in some companies (e.g. Google, Facebook, ...), junior Product Managers are recruited straight out of school, supported by career programs to teach them on the job.   
+Most Product Managers have been in different roles earlier in their careers. Very often software engineers, sales engineers, or professional services consultant grow into the role of Product Manager. However, in some companies (e.g. Google, Facebook, ...), junior Product Managers are recruited straight out of school, supported by career programs to teach them on the job.   
 
 #### More Information:
 Wikipedia page: https://en.wikipedia.org/wiki/Product_management
