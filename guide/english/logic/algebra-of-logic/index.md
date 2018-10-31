@@ -18,6 +18,7 @@ The three basic operations in Boolean Algebra are `AND`, `OR`, and `NOT`. Consid
 `NOT` of boolean statements can be refactored to apply directly to each variable. Consider the following :
 - `NOT (x AND y) = NOT x OR NOT y`
 - `NOT (x OR y) = NOT x AND NOT y`
+'XOR','XNOR','NAND','NOR' operations are also possible.
 
 ### More Information:
 - The Calculus of Logic: <a href='http://www.maths.tcd.ie/pub/HistMath/People/Boole/CalcLogic/CalcLogic.html' target='_blank' rel='nofollow'>George Boole</a>
