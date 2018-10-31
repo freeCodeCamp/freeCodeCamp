@@ -66,8 +66,7 @@ Here are our six core certifications:
 - jQuery
 - Sass
 - React
-- Redux
-- React and Redux <br />
+- Redux <br />
   <br />
   **Projects**: Random Quote Machine, Markdown Previewer, Drum Machine, JavaScript Calculator, Pomodoro Clock
 
