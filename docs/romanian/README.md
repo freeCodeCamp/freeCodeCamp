@@ -22,7 +22,7 @@ freeCodeCamp.org este posibil datorită miilor de voluntari și tine . Suntem re
 
 Aplicăm cu strictețe ["Codul nostru de conduită"](https://www.freecodecamp.org/code-of-conduct). Ia-ți un moment să il citești. Sunt doar 196 de cuvinte de citit.
 
-Iți urăm contribuține plăcută 🎉!
+Iți urăm contribuție plăcută 🎉!
 
 ## Aici sunt câteva moduri plăcute în ne poți ajuta
 
