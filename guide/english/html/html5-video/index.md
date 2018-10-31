@@ -5,15 +5,17 @@ title: HTML5 Video
 
 
 Before HTML5, in order to have a video play in a webpage, you would need to use a plugin, like Adobe Flash Player. With the introduction of HTML5, you can now place it directly into the page itself.
-The HTML <video> tag is used to embed video in web documents. It may contain one or more video sources, represented using the src attribute or the [source](<source>) element.
+
+The HTML <video> tag is used to embed video in web documents. It may contain one or more video sources, represented using the src attribute or the [source](<source>) element, and <track> element defines text tracks in media players.
   
   
  To embed a video file into a web page, just add this code snippet and change the src of the audio file.
  
  ```html
  <video controls>
-    <source src="tutorial.ogg" type="video /ogg">
-    <source src="tutorial.mp4" type="video /mpeg">
+    <source src="tutorial.ogg" type="video/ogg">
+    <source src="tutorial.mp4" type="video/mpeg">
+    <source src="tutorial.webm" type="video/webm">
   Your browser does not support the video element. Kindly,update it to latest version.
   </video >
 ```
