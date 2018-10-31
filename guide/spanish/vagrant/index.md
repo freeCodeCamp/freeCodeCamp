@@ -1,11 +1,14 @@
 ---
 title: Vagrant 
-localeTitle: Vagabundo
 ---
-## Vagabundo
+![alt text](https://www.datocms-assets.com/2885/1506457090-blog-vagrant-list.svg)
+## Vagrant
 
-Esto es un talón. [Ayuda a nuestra comunidad a expandirla](https://github.com/freecodecamp/guides/tree/master/src/pages/mathematics/quadratic-equations/index.md) .
+Vagrant es una herramienta de automatización para la administración de máquinas virtuales por línea de comando.
+Se utiliza para la creación, administración y eliminación automática de las VM con la finalidad de crear entornos de desarrollo fácil y rápidamente.
 
-[Esta guía rápida de estilo ayudará a asegurar que su solicitud de extracción sea aceptada](https://github.com/freecodecamp/guides/blob/master/README.md) .
+Vagrant se aprovisiona de máquinas por medio de VirtualBox, VMware, AWS y cualquier otro proveedor.
 
 #### Más información:
+
+* Para descargar Vagrant y leer la documentación oficial visita la página de Vagrant: [Vagrant official site](https://www.vagrantup.com)
