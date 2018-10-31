@@ -102,7 +102,8 @@ There are three kinds of services:
 - _bound_ services: they are  offers a client-server interface that allows components to interact with the service, send requests, receive results, and even do so across processes with interprocess communication (IPC).
 
 ## [Broadcast receivers](https://developer.android.com/guide/components/broadcasts)
-A _broadcast receiver_ is another component without user interface (except an optional status bar notification) that lets the system to deliver events from/to the app, even when the latter hasn't been previously launched.
+A _broadcast receiver_ is another component without user interface (except an optional status bar notification) that lets the system to deliver events from/to the app, even when the latter hasn't been previously launched.It works similar to the publish-subscribe design pattern and used for asynchronous inter-process communication.
+It is good practice to use broadcast receivers when you want to send or receive data between different applications. But if the communication is limited to your application then it is not good to use the global broadcast.
 
 ## [Content providers](https://developer.android.com/guide/topics/providers/content-providers)
 A _content provider_ is a component used to manage a set of app data to share with other applications. Each item saved in the content provider is identified by a URI scheme.
