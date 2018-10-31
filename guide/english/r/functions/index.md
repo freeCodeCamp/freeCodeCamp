@@ -44,7 +44,7 @@ multiply = function(val1, val2){
 multiply(3, 5)  # prints 15 to the console
 ```
 
-Functions are blocks of code that can be reused simply by calling the function. This enables simple, elegent code reuse without explicitly re-writing sections of code. This makes code both more readable, makes for easier debugging, and limits typing errors. 
+Functions are blocks of code that can be reused simply by calling the function. This enables simple, elegent code reuse without explicitly re-writing sections of code. The benefits include: better readable, easier debugging, and limited typos. 
 
 Functions in R are created using the `function` keyword, along with a function name and function parameters inside parentheses.
 
