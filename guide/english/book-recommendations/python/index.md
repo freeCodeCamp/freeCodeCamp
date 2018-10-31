@@ -13,6 +13,8 @@ title: Books on Python Programming Language
 - [Amazon Smile](https://smile.amazon.com/gp/product/1491939362)
 - ISBN-13: 978-1491939369
  
+ 
+ 
 *Learn Python 3 the Hard Way*
 
 ![alt text](http://www.informit.com/ShowCover.aspx?isbn=9780134692883&type=f "Learn Python 3 the Hard Way")
@@ -23,12 +25,16 @@ title: Books on Python Programming Language
 - ISBN-13: 978-0134692883
 - ISBN-10: 0134692888
 
+
+
 *Black Hat Python: Python Programming for Hackers and Pentesters*
 
 ![alt text](https://images-na.ssl-images-amazon.com/images/I/51O-GzoZi5L._SL200_.jpg "Black hat Python")
 
 - [Amazon Smile](https://smile.amazon.co.uk/Black-Hat-Python-Programming-Pentesters/dp/1593275900)
 - ISBN-10: 1593275900
+
+
 
 *Programming Python*
 
@@ -39,6 +45,8 @@ title: Books on Python Programming Language
 - ISBN-10: 0596158106
 - ISBN-13: 978-0596158101
 
+
+
 *Data Science from Scratch: First Principles with Python*
 
 ![alt text](https://covers.oreillystatic.com/images/0636920033400/cat.gif "Data Science From Scratch")
@@ -47,6 +55,8 @@ title: Books on Python Programming Language
 - [Amazon Smile](https://smile.amazon.com/Data-Science-Scratch-Principles-Python/dp/149190142X)
 - ISBN-10: 149190142X
 - ISBN-13: 978-1491901427
+
+
 
 *Automate The Boring Stuff With Python*
 
@@ -57,17 +67,23 @@ title: Books on Python Programming Language
 - ISBN-10: 1593275994
 - ISBN-13: 978-1593275990
 
+
+
 *Python crash course 2e* (note that 3e is going to be published on April 2019)
 - Paid book which gives concrete introduction to both programming and Python by the creation of projects.
 - [Amazon Smile](https://smile.amazon.com/Python-Crash-Course-Hands-Project-Based/dp/1593276036/)
 - ISBN-10: 1593276036
 - ISBN-13: 978-1593276034
 
+
+
 *The Quick Python Book, Third Edition*
 - Paid book which provides a good level of information for those starting Python and as a reference for the Python language
 - [Manning](https://www.manning.com/books/the-quick-python-book-third-edition)
 - ISBN-10: 1617294039
 - ISBN-13: 978-1617294037
+
+
 
 *Head First Python, Second Edition*
  - Paid book: a great beginner's book; part of the Head First series which uses cognitive science approach to way people learn.
