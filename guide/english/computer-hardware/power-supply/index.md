@@ -14,10 +14,10 @@ Is typically seen as a metal box either in the top or bottom, most posterior por
 ## Standard types of Cables
 
 With every modern power supply you should have:
--1x Large cable for motherboard
--1x Small cable for motherboard, typically powers the CPU
--1x Small cable to power the GPU
--2x or more small cables to power hard drives, optical drives, and accessory parts. 
+- 1x Large cable for motherboard
+- 1x Small cable for motherboard, typically powers the CPU
+- 1x Small cable to power the GPU
+- 2x or more small cables to power hard drives, optical drives, and accessory parts. 
 
 ## MISC Information
 
