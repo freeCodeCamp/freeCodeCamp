@@ -66,6 +66,7 @@ tests:
 <section id='solution'>
 
 ```js
-// solution required
+d3.selectAll('li')
+  .text('list item')
 ```
 </section>
