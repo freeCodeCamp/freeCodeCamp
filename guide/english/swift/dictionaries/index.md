@@ -73,7 +73,7 @@ pokeDexionary[20] = nil; //removed "Raticate" ...
 pokeDexionary.updateValue("Butterfree", forKey: 12)// and added "Butterfree" instead
 ```
 
-## Iteration
+## Iteration 
 
 The most common way to iterate over a dictionary is by using a for-in loop.
 ```swift
