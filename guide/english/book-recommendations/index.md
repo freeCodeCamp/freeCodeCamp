@@ -167,7 +167,7 @@ title: Books to Read for Programmers
 
 *Data Structures and Algorithms in Python  Michael T. Goodrich, Roberto Tamassia , Michael H. Goldwasser 
 -  http://amzn.in/d/bHb4D6m
--  ISBN-13: 978-8126562176
+-  ISBN-13: 978-8126562176 
 
 ## Soft Skills
 
