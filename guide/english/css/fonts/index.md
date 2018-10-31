@@ -14,9 +14,8 @@ p {
     font-family: "Times New Roman", Times, serif;   
 }
 ```
-In the above example, "Times New Roman" is the <family-name> of the font, while "serif" is the <generic-name>. Generic names are used as a fallback
-mechanism for preserving style if the family-name is unavailable. A generic name should always be the last item in the list of font family names. Generic
-family names are serif, sans-serif, monospace, cursive, fantasy, system-ui. 
+In the above example, "Times New Roman" is the *family-name* of the font, while "serif" is the *generic-name*. Generic names are used as a fallback
+mechanism for preserving style if the family-name is unavailable. A generic name should always be the last item in the list of font family names. Generic family names are serif, sans-serif, monospace, cursive, fantasy, system-ui. 
 In addition to specifying common fonts that are found on most operating systems, custom web fonts can be used as well. To import such a font, copy the font URL from the library and reference it in the HTML.
 
 ### Font style
@@ -101,12 +100,24 @@ p.small {
 Font properties can be specified with the shorthand font. 
 It takes as value (in this order):
 - font-style (optional)
-- font-variant (optional)
-- font-weight (optional)
-- font-size (mandatory)
-- line-height (optional)
-- font-family (mandatory)
+`p {font-style: italic;}`
 
+- font-variant (optional)
+`p {font-variant: small-caps;}`
+
+- font-weight (optional)
+`p {font-weight: 800;}`
+
+- font-size (mandatory)
+`p {font-size: 20px;}`
+
+- line-height (optional)
+`p {line-height: 1.5;}`
+
+- font-family (mandatory)
+`p {font-family: Arial;}`
+
+Can be written in short hand as  
 ```css
 p {
   font: italic small-caps 800 20px/1.5 Arial;
