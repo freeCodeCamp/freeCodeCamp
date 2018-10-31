@@ -12,6 +12,17 @@ The first step to installing WordPress locally is to download MAMP. MAMP stands 
 
 After MAMP is installed you will want to uninstall MAMP pro. To do this, just navigate to your applications folder and find the MAMP pro folder. There will be an uninstaller inside of this folder. I chose to click all of the check boxes, since it is a fresh install of MAMP.
 
+## Why MAMP
+
+MAMP allows you to:
+
+* Develop and design your site locally—no need to worry about “breaking” the live site by testing out a few changes
+* Build sites you don’t want the world to see (since search engines can’t index your local site)
+* Work in a faster development environment (because it doesn’t rely on an internet connection and communicating with a web   server)
+* Work offline (great for trips on airplanes)
+* Use the local install as a partial backup of your existing site
+* Develop sites in a secure environment (again, because MAMP sites are not online, it makes it basically impossible to be  hacked or have some other kind of security breach)
+
 ## Configuring MAMP
 
 Open the MAMP application and you should be greeted with this screen:
