@@ -4,6 +4,17 @@ title: Conditionals
 ## Conditionals
 Conditionals in PHP are written using the `if`, `elseif`, `else` syntax. Using conditionals allows you to perform different actions depending on different inputs and values provided to a page at run time. In PHP conditionals are often referred to as control structures.
 
+### List of PHP Control Structures (conditionals)
+
+-[if](https://secure.php.net/manual/en/control-structures.if.php)
+-[else](https://secure.php.net/manual/en/control-structures.else.php)
+-[elseif/else if(https://secure.php.net/manual/en/control-structures.elseif.php)
+-[while](https://secure.php.net/manual/en/control-structures.while.php)
+-[do-while](https://secure.php.net/manual/en/control-structures.do.while.php)
+-[for](https://secure.php.net/manual/en/control-structures.for.php)
+-[foreach](https://secure.php.net/manual/en/control-structures.foreach.php)
+-[switch](https://secure.php.net/manual/en/control-structures.switch.php)
+
 ### If
 ```PHP
 <?php
