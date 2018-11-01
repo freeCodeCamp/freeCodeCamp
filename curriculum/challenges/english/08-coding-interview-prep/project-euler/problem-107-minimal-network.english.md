@@ -35,7 +35,7 @@ Using network.txt (right click and 'Save Link/Target As...'), a 6K text file con
 ```yml
 tests:
   - text: <code>euler107()</code> should return 259679.
-    testString: 'assert.strictEqual(euler107(), 259679, "<code>euler107()</code> should return 259679.");'
+    testString: assert.strictEqual(euler107(), 259679, '<code>euler107()</code> should return 259679.');
 
 ```
 
