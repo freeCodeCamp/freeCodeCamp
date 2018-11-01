@@ -34,7 +34,10 @@ Encouraging girls in elementary, middle, and high school can also help to increa
 - [R-Ladies](https://rladies.org/)
 - [Django Girls](https://djangogirls.org/)
 - [Girls Who Code](https://girlswhocode.com/)
+- [Women Who Code](https://www.womenwhocode.com/)
 - [1 Million Women To Tech](https://1millionwomentotech.com/)
 - [Women Techmakers](https://www.womentechmakers.com/)  
-- [Women Who Code](https://www.womenwhocode.com/)
 
+
+### Podcasts on Women-in-tech:
+If you're interested in podcasts, check out Esperee Devora's on women in tech [here](http://podcast.womenintechshow.com/episodes).
