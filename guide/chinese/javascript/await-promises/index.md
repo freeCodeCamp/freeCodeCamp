@@ -1,34 +1,42 @@
 ---
 title: Await Promises
-localeTitle: 等待承诺
+localeTitle: Await Promise
 ---
-## 等待承诺
+## Await Promise
 
-`async` / `await` [运算符](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators)可以更轻松地实现许多异步Promise。它们还允许工程师编写更清晰，更简洁，可测试的代码。
+`async` / `await` [关键字](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators)可以更轻松地实现许多异步Promise。它们能帮助工程师编写更清晰，更简洁，可测试的代码。
 
-要理解这个主题，您应该对[Promise](https://guide.freecodecamp.org/javascript/promises)如何工作有充分的了解。
+要理解这个主题，您需要对[Promise](https://guide.freecodecamp.org/javascript/promises)的工作机制有充分的了解。
 
 * * *
 
 ## 基本语法
 
-\`\`\`\`javascript function slowlyResolvedPromiseFunc（string）{ 返回新的Promise（resolve => { setTimeout（（）=> { 解析（字符串）; }，5000）; }）; }
+```javascript
+function slowlyResolvedPromiseFunc (string) {
+  return new Promise（resolve => {
+    setTimeout（() => { resolve（string}, 5000;
+  };
+}
 
-异步函数doIt（）{ const myPromise = await slowResolvedPromiseFunc（“foo”）; 的console.log（myPromise）; //“foo” }
-
-doIt方法（）;
-```
-There are a few things to note: 
+async function doIt () {
+  const myPromise = await slowResolvedPromiseFunc ('foo');
+  console.log(myPromise); // 'foo'
+ }
  
- * The function that encompasses the `await` declaration must include the `async` operator. This will tell the JS interpreter that it must wait until the Promise is resolved or rejected. 
- * The `await` operator must be inline, during the const declaration. 
- * This works for `reject` as well as `resolve`. 
+doIt();
+```
+有几点需要注意: 
+ 
+ * 包含`await`关键字的函数在定义时必须有`async`关键字修饰. 它会阻塞javascript进程，直到Promise执行了resolve或者reject。
+ * `await`关键字必须和声明的变量在同一行。
+ * 对`reject`和`resolve`效果相同。 
  
  --- 
  
- ## Nested Promises vs. `Async` / `Await` 
+ ## 嵌套 Promises vs. `Async` / `Await` 
  
- Implementing a single Promise is pretty straightforward. In contrast, Chained Promises or the creation of a dependency pattern may produce "spaghetti code". 
+ 实现一个Promise很简单。 然而，链式的Promise或有依赖的模式会导致“意大利面条”式的代码。
  
  The following examples assume that the <a href='https://github.com/request/request-promise' target='_blank' rel='nofollow'>`request-promise`</a> library is available as `rp`. 
  
