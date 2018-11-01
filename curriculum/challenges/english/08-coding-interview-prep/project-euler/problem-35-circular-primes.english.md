@@ -63,11 +63,10 @@ circularPrimes(1000000);
 
 
 ```js
-function rotations(n) {
+function rotate(n) {
   if (String(n).length == 1) return n;
-  return String((n % 10) + Math.floor(n / 10));
+  return "" + (n % 10) + Math.floor(n / 10);
 }
-
 function circularPrimes(n) {
   const primes = [];
   let count = 0;
@@ -99,9 +98,9 @@ function circularPrimes(n) {
       let num = String(primes[i]);
       let tmp = 1; // tmp variable to hold the no of rotations
       let curr = num;
-      for (let x = rotations(curr); x != curr; x = rotations(x)) {
-        // If the rotated value is 0 then its not a ciruclar prime, break the loop
+      for (let x = rotate(curr); x != curr; x = rotate(x)) {
         if (!primes[x]) {
+          // If the rotated value is 0 then its not a ciruclar prime, break the loop
           tmp = 0;
           break;
         }
