@@ -76,7 +76,7 @@ List of fruits: Apple, Banana, Pear
 ```
 ### Convert an integer to 8-bit binary
 
-### Input
+#### Input
 
 ```python
 num = 42
@@ -84,7 +84,7 @@ num = 42
 print(f'The binary of {num} is {num:08b}')
 ```
 
-### Output
+#### Output
 ```
 The binary of 42 is 00101010
 ```
