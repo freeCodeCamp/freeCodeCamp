@@ -32,7 +32,7 @@ module.exports = async app => {
   app.log('Yay, the app was loaded!')
 
   app.on('pull_request.labeled', async context => {
-    const [requestedAction, prNumber] = context.payload.requested_action.identifier.split(':')
+    const prNumber = context.payload.pull_request.number;
     return context.github.pullRequests.update(context.repo({
         number: prNumber,
         body: body.trim() ? `${body.trim()}\n\nprobot label test` : 'probot label test'
