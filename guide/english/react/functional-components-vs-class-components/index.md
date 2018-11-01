@@ -60,6 +60,11 @@ class Person extends Component {
 export default Person;
 ```
 
+## How to call an API from class based component
+
+*Always do it in componentDidMount and ComponentDidUpdate
+*and then use it in the either getDerivedStateFromProps or directly from the praent
+
 ## More Information
 
 * [React Components](https://reactjs.org/docs/components-and-props.html)
