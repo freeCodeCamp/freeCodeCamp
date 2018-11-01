@@ -1,6 +1,6 @@
 ---
 title: React Hooks
-localeTitle: React Hooks
+localeTitle: React Hooks (Ganchos reativos)
 ---
 
 ### React Hooks (Ganchos reativos)
