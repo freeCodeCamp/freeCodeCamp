@@ -42,3 +42,4 @@ Mais recursos excelentes para ajudar você a saber mais sobre a Síndrome do Imp
 *   [FastCompany - Tipos de síndrome do impostor e como vencê-los](https://www.fastcompany.com/40421352/the-five-types-of-impostor-syndrome-and-how-to-beat-them)
 *   [Startup Bros - 21 maneiras comprovadas de superar a síndrome do impostor](https://startupbros.com/21-ways-overcome-impostor-syndrome/)
 *   [NY Times - Aprendendo a lidar com a síndrome do impostor](https://www.nytimes.com/2015/10/26/your-money/learning-to-deal-with-the-impostor-syndrome.html)
+*   [The Five Types Of Impostor Syndrome And How To Beat Them](https://www.fastcompany.com/40421352/the-five-types-of-impostor-syndrome-and-how-to-beat-them)
