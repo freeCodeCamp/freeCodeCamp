@@ -126,6 +126,6 @@ Cuando solo se requiere un número limitado de campos en el objeto de estado, la
 
 ### Más información
 
-*   [Reaccionar - Estado y Ciclo de Vida](https://reactjs.org/docs/state-and-lifecycle.html)
-*   [Reaccionar - Levantando el Estado](https://reactjs.org/docs/lifting-state-up.html)
-*   [Reaccionar nativo - Estado arriba](https://facebook.github.io/react-native/docs/state.html)
+*   [React - Estado y Ciclo de Vida](https://reactjs.org/docs/state-and-lifecycle.html)
+*   [React - Levantando el Estado](https://reactjs.org/docs/lifting-state-up.html)
+*   [React native - Estado arriba](https://facebook.github.io/react-native/docs/state.html)
