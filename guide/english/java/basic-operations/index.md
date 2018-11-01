@@ -53,4 +53,64 @@ Here is a program to illustrate instanecof operator:
        
  ```
  
+ 
+ ## Operation of ASSIGNMENT Operators explained:
+ ----------------------------------------------
+ 
+ Often times students come across questions in exam/quizes involving complex equations/relations between different variables established with different combinations of assignmen operators. On face, they look preety ambiguous. But follwoing a simpe rule might make solving them preety straigh forward.
+ The rule itself is simple... On any circumstance, first one must deal with PRE-operations, then 'Assignment' operator and then finally comes with 'POST - operations'.
+ 
+ In summary, the order of operation is - 
+ 
+ step 1. PRE-operations
+ step 2. Assignment
+ step 3. POST - operations.
+ 
+ For example-
+ ----------------------------------------------------------------
+ int a = 1;
+ int b;
+ int b = a-- + ++a ;
+ what will be the value of a & b after the program compiles?
+ ----------------------------------------------------------------
+ step 1. PRE-operations: 
+ a is assigned value 1. 
+ Upon pre-assignment, it becomes 2(since it is '+' here)
+ 
+ step 2. Assignment:
+ At this point, 
+ a = 2 
+ and for b ,  
+     b =a-- + ++a
+ or, b = 2-- + 2 =  4. [Note:POST - operations has not yet come to play yet]
+ 
+ step 3. POST - operations:
+ At this point, 
+ b = 4 
+ a = 2. But WAIT, there's still one 'post operation' on a to deal with... i.e. a--
+ 
+ So it follows-
+    a--
+ =  2--
+ =  1 (since it is '-' here).
+ 
+ 
+ 
+Again, consider this example-
+---------------------------------------------
+int num1 = 10;
+int num2 = 0;
+int num3 = 4;
+int num4 = 6;
+
+num3 = ++num1 - num4++;
+
+what will be the value of num3 & num4 ?
+---------------------------------------------------------------
+
+num3 = 5
+num4 = 7
+
+
+
 
