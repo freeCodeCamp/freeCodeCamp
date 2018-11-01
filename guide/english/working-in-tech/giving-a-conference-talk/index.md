@@ -46,4 +46,4 @@ You may be nervous (that's okay!) but try to enjoy the other talks and events th
 Give yourself plenty of time to be at your speaking location beforehand and bring a friend to see your talk if possible. Be aware that many conferences now record talks and prepare for this ahead of time. Take several deep breaths before you go on and try to have a nice time. If people can see that you are happy to be there, they will most likely be happy to hear what you have to say. 
 
 #### More Information
-[How and Why to Speak at a Tech Conferece](https://hackernoon.com/how-and-why-to-speak-at-tech-conferences-1d50a3f548e0)
+[How and Why to Speak at a Tech Conference](https://hackernoon.com/how-and-why-to-speak-at-tech-conferences-1d50a3f548e0)
