@@ -12,3 +12,5 @@ There are also some HTML elements that are self-closing.
 For example, the image tag `<img />` and the input tag `<input />`.
 
 <a href='http://www.freecodecamp.com/challenges/say-hello-to-html-elements' target='_blank' rel='nofollow'>Try it here!</a>
+
+If you want a more in depth list of the many HTML elements you can find that <a href="https://www.w3schools.com/tags/" target="_blank" rel="nofollow">here</a>.
