@@ -1,17 +1,17 @@
 ---
-title: Working in Tech
+title: Working in Tech & Information Technology(IT)
 ---
-## Working in Tech
+## Working in Tech and IT
 
-A wide variety of technology-related fields such as web development, design, data science, and product management are often lumped into the catch-all term "tech."
+A wide variety of technology-related fields such as web development, design, data science, and product management are often lumped into the catch-all term "tech" or IT. 
 
-This section will focus on various aspects of working in tech. We will discuss the additional career challenges that under-represented minorities and people from non-traditional education backgrounds face. This includes issues such as sexism and ageism that have been particularly prevalent in certain industries and organizations. 
+This section will focus on additional career challenges faced by under-represented minorities and people from non-traditional education backgrounds. Specific topis will include sexism and ageism, which have been particularly prevalent in certain industries and organizations. 
 
 ### Computer Security
 
-The field of computer security is growing at a rapid rate every year, in a report done recently it is estimated that by 2021 their will be 3.5 million jobs unfilled. The demand is due to the increase in cyber attacks and with how much data is being created everyday, data is so valuable nowadays and it needs to be kept secure and safe.
+The field of computer security is growing at a rapid rate every year. A recent report estimates that by 2021, 3.5 million jobs in computer security will be unfilled. The demand is due to the ever-increasing amount of valuable data being created every day that must be kept safe and secure from cyber attacks.
 
-### Examples of Tech related jobs
+### Examples of Tech-related jobs
 - Software Developer
 - Computer Systems Analyst
 - Web Developer
@@ -20,6 +20,7 @@ The field of computer security is growing at a rapid rate every year, in a repor
 - Network Administrator
 - Support Desk Engineer
 - Security Engineer
+— Project manager
 
 ### Books
 
@@ -33,9 +34,9 @@ The field of computer security is growing at a rapid rate every year, in a repor
 
 [Think Like a Programmer](https://www.nostarch.com/thinklikeaprogrammer)
 
-Hooked: How to Build Habit-Forming Products: amzn.to/2bVG5AQ
+[Hooked: How to Build Habit-Forming Products](https://www.amazon.com/Hooked-How-Build-Habit-Forming-Products/dp/1591847788/)
 
-"Lean In: Women, Work, and the Will to Lead" by Sheryl Sandberg http://amzn.to/2igRgoq
+["Lean In: Women, Work, and the Will to Lead" by Sheryl Sandberg](https://www.amazon.com/Lean-Women-Work-Will-Lead/dp/0385349947/)
 
 To see the full list, visit: https://talkpython.fm/episodes/show/130/10-books-python-developers-should-be-reading
 
@@ -50,3 +51,5 @@ To see the full list, visit: https://talkpython.fm/episodes/show/130/10-books-py
 
 ### Podcasts
 [10 Books Python Developers should be reading - talkpython.fm](https://talkpython.fm/episodes/show/130/10-books-python-developers-should-be-reading)
+
+[Programming Throwdown - Good overview of multiple languages and concepts](https://www.programmingthrowdown.com/)
