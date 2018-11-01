@@ -25,12 +25,12 @@ tests:
     testString: assert(circularPrimes(100) == 13, '<code>circularPrimes(100)</code> should return 13.');
   - text: <code>circularPrimes(100000)</code> should return 43.
     testString: assert(circularPrimes(100000) == 43, '<code>circularPrimes(100000)</code> should return 43.');
-  - text: <code>circularPrimes(250000)</code> should return 45.
-    testString: assert(circularPrimes(250000) == 45, '<code>circularPrimes(250000)</code> should return 45.');
-  - text: <code>circularPrimes(500000)</code> should return 49.
-    testString: assert(circularPrimes(500000) == 49, '<code>circularPrimes(500000)</code> should return 49.');
-  - text: <code>circularPrimes(750000)</code> should return 49.
-    testString: assert(circularPrimes(750000) == 49, '<code>circularPrimes(750000)</code> should return 49.');
+  - text: <code>circularPrimes(250000)</code> should return 43.
+    testString: assert(circularPrimes(250000) == 43, '<code>circularPrimes(250000)</code> should return 43.');
+  - text: <code>circularPrimes(500000)</code> should return 43.
+    testString: assert(circularPrimes(500000) == 43, '<code>circularPrimes(500000)</code> should return 43.');
+  - text: <code>circularPrimes(750000)</code> should return 43.
+    testString: assert(circularPrimes(750000) == 43, '<code>circularPrimes(750000)</code> should return 43.');
   - text: <code>circularPrimes(1000000)</code> should return 55.
     testString: assert(circularPrimes(1000000) == 55, '<code>circularPrimes(1000000)</code> should return 55.');
 
@@ -63,37 +63,56 @@ circularPrimes(1000000);
 
 
 ```js
-const circularPrimes = (n) => {
-  const primeCheck = (num) => {
-    if (num === 1) {
-      return false;
+function rotations(n) {
+  if (String(n).length == 1) return n;
+  return String((n % 10) + Math.floor(n / 10));
+}
+
+function circularPrimes(n) {
+  const primes = [];
+  let count = 0;
+
+  // Making primes array
+  for (let i = 0; i < n; i++) {
+    primes.push(i);
+  }
+  primes[1] = 0;
+
+  // Getting upperbound
+  const upperBound = Math.ceil(Math.sqrt(n));
+
+  // Treating multiples of 2 as special cases
+  for (let i = 4; i < n; i += 2) {
+    primes[i] = 0;
+  }
+
+  // Setting other non-prime numbers to 0
+  for (let i = 3; i < upperBound; i += 2) {
+    for (let j = i * i; j < n; j += i) {
+      primes[j] = 0;
     }
-    for (let i = 2; i <= Math.floor(Math.sqrt(num)); i++) {
-      if (num % i === 0) {
-        return false;
-      }
-    }
-    return true;
-  };
-  let count = 1;
-  for (let i = 1; i < n; i += 2) {
-    if (primeCheck(i)) {
-      let flag = true;
-      let circularNum = i.toString();
-      for (let j = 1; j < i.toString().length; j++) {
-        circularNum = circularNum.substring(1) + circularNum.substring(0, 1);
-        if (primeCheck(Number(circularNum)) === false) {
-          flag = false;
+  }
+
+  // Iterating through the array
+  for (let i = 2; i < n; i++) {
+    if (primes[i]) {
+      let num = String(primes[i]);
+      let tmp = 1; // tmp variable to hold the no of rotations
+      let curr = num;
+      for (let x = rotations(curr); x != curr; x = rotations(x)) {
+        // If the rotated value is 0 then its not a ciruclar prime, break the loop
+        if (!primes[x]) {
+          tmp = 0;
           break;
         }
+        tmp++;
+        primes[x] = 0;
       }
-      if (flag) {
-        count++;
-      }
+      count += tmp;
     }
   }
   return count;
-};
+}
 ```
 
 </section>
