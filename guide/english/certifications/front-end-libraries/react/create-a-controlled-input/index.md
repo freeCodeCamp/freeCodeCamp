@@ -16,12 +16,12 @@ handleChange(event) {
 }
   
 ```
-Now your next step will involve creating a input box and trigger it when someone types anything. Luckily we have a event called `onChange()` to serve this purpose. <br>
+Now your next step will involve creating a input box and trigger it when someone types anything. Luckily we have an event called `onChange()` to serve this purpose. <br>
 PS - Here is another way to bind `this` into a function 
 ```
 <input onChange = {this.handleChange.bind(this)}/>
 ```
-But this just won't serve your purpose. Although you might feel that its working. So what's happening here is text updates from from the browser not the state. So to correct this we'll add a `value` attribute and set it to `this.state.input` to the input element which will make the input get controlled by state.
+But this just won't serve your purpose. Although you might feel that its working. So what's happening here is text updates from the browser not the state. So to correct this we'll add a `value` attribute and set it to `this.state.input` to the input element which will make the input get controlled by state.
 
 ```
 <input value = {this.state.input} onChange = {this.handleChange.bind(this)}/>
@@ -32,4 +32,4 @@ It can be a bit hard to digest but to make things further clear try removing the
 <input value = {this.state.input}/>
 ```
 Now run the tests again are you able to type anything? <br>
-The answer to it will be "NO" since your input box is getting value from the state variable `input` since there is no change in the state `input`(an empty string initially) which will only happen when you trigger the function `handleChange()` which will only happen when you have a event handler like `onChange()` hence the string inside the input box will remain as it is i.e, an empty string.
+The answer to it will be "NO" since your input box is getting value from the state variable `input` since there is no change in the state `input`(an empty string initially) which will only happen when you trigger the function `handleChange()` which will only happen when you have an event handler like `onChange()` hence the string inside the input box will remain as it is i.e, an empty string.
