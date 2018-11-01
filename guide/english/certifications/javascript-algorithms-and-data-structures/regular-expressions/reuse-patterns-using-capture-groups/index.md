@@ -6,7 +6,7 @@ title: Reuse Patterns Using Capture Groups
 ## Hint 1:
 Given code below:
 ```javascript
-let testString = "test test test ";
+let testString = "test test test";
 let reRegex =/(test)\s\1/;
 let result = reRegex.test(testString);
 ```
@@ -15,19 +15,19 @@ let result = reRegex.test(testString);
 If we were to lierally translate the regex, it would look something like this:
 
 ```js
-let re = /(test)\s\1;
-let literalRe = /test\stest;
+let re = /(test)\s\1/;
+let literalRe = /test\stest/;
 ```
-Both `rea` and `literalRe` would match the same thing.
+Both `re` and `literalRe` would match the same thing.
 
 ## Hint 2:
 Given the code below:
 ```javascript
-let testString = "test test test ";
+let testString = "test test test";
 let reRegex =/(test)(\s)\1\2\1/;
 let result = reRegex.test(testString);
 ```
-will match whole `test test test` because:
+`result` will match whole `test test test` because:
 `\1` repeats (test)
 `\2` repeats (\s)
 
