@@ -43,8 +43,8 @@ Here are our six core certifications:
 - Applied Accessibility
 - Responsive Web Design Principles
 - CSS Flexbox
-- CSS Grid <br />
-  <br />
+- CSS Grid <br/>
+  <br/>
   **Projects**: Tribute Page, Survey Form, Product Landing Page, Technical Documentation Page, Personal Portfolio Webpage
 
 #### 2. JavaScript Algorithms and Data Structures Certification
@@ -56,8 +56,8 @@ Here are our six core certifications:
 - Basic Data Structures
 - Algorithm Scripting
 - Object Oriented Programming
-- Functional Programming <br />
-  <br />
+- Functional Programming <br/>
+  <br/>
   **Projects**: Palindrome Checker, Roman Numeral Converter, Caesars Cipher, Telephone Number Validator, Cash Register
 
 #### 3. Front End Libraries Certification
@@ -67,8 +67,8 @@ Here are our six core certifications:
 - Sass
 - React
 - Redux
-- React and Redux <br />
-  <br />
+- React and Redux <br/>
+  <br/>
   **Projects**: Random Quote Machine, Markdown Previewer, Drum Machine, JavaScript Calculator, Pomodoro Clock
 
 #### 4. Data Visualization Certification
