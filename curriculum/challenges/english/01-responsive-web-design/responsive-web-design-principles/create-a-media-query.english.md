@@ -47,6 +47,12 @@ tests:
   }
 
   /* Add media query below */
+  
+  @media (max-height: 800px) { 
+  p {
+    font-size: 10px;
+    }
+  }
 
 </style>
 
@@ -65,4 +71,10 @@ tests:
 ```js
 // solution required
 ```
+@media (max-height: 800px) { 
+p {
+    font-size: 10px;
+    }
+  }
+
 </section>
