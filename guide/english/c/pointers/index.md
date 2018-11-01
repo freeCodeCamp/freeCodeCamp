@@ -14,7 +14,7 @@ type *var-name;
 #include <stdio.h>
 
 int main(void){
-    double my_double_variable = 10.1;
+    double my_double_variable = 10.2;
     double *my_pointer;
 
     my_pointer = &my_double_variable;
@@ -30,7 +30,7 @@ int main(void){
 ```
 Output:
 ```
-value of my_double_variable: 10.100000
+value of my_double_variable: 10.200000
 value of my_pointer: 11.100000
 ```
 
