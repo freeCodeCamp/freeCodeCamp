@@ -405,7 +405,8 @@ async function evaluateReactReduxTest({
     </html>
   `, {
     runScripts: 'dangerously',
-    virtualConsole
+    virtualConsole,
+    url: 'http://localhost'
   });
 
   const { window } = dom;
