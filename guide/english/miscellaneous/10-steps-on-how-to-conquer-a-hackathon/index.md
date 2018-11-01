@@ -14,7 +14,7 @@ I recently competed in my first hackathon, and I was completely scared with a ma
 
 3.  **Just keep pushing.** 
 
-If you are at a hackathon and your project comes to a halt, just keep pushing, part of a project is better than no project.
+If you are at a hackathon and your project comes to a halt, just keep pushing, part of a project is better than no project at all.
 
 4.  **Enjoy the freebies.** 
 
@@ -22,11 +22,11 @@ As stressful as hacking away at something you're creating can be, there is a lot
 
 5.  **Enjoy the free food.** 
 
-Another awesome aspect of hackathons is free food, since you're there for minimum of 12 hours up to 4 or 5 days (extreme cases), they provide free meals for the participants, YUM!
+Another awesome aspect of hackathons is all the free food, since there is a good chance you will be there for a minimum of 12 hours or even as long as 4 or 5 days (extreme cases), Many event hosts will provide free meals for the participants, YUM!
 
 6.  **Learn as much as you can.** 
 
-One of the best parts about a hackathon is learning some really cool things. A lot of people who come to the events have different skill sets, expertise, and educational background. From this, you can learn anything and everything they have to offer. Some of the participants will give you links to cool libraries, tutorials and communities, some will just throw around a new buzzword, some will even show you a cool ergonomic gadget that can improve your workflow. Last but not least, learning some technical skills on the spot with other participants is invaluable!
+One of the best parts about a hackathon is learning some really cool things. A lot of people who come to the events have different skill sets, expertise, and educational backgrounds. From this, you can learn anything and everything they have to offer. Some of the participants will give you links to cool libraries, tutorials and communities, some will just throw around a new buzzword, some will even show you a cool ergonomic gadget that can improve your workflow. Last but not least, learning some technical skills on the spot with other participants is invaluable!
 
 7.  **Network.** 
 
