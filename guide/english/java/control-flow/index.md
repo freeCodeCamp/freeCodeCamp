@@ -65,7 +65,7 @@ Any of the previous control flows can be nested. Which means you can have nested
 
 For example, let's consider the following scenario:
 
-*   If you have less than 25 bucks, you get yourself a cup of coffee.
+*   If you have less than 20 bucks, you get yourself a cup of coffee.
 *   If you have more than 25 bucks but less than 60 bucks, you get yourself a decent meal.
 *   If you have more than 60 bucks but less than a 100, you get yourself a decent meal along with a glass of wine.
 *   However, when you have more than a 100 bucks, depending on who you are with, you either go for a candle lit dinner (with your wife) or you go to a sports bar (with your friends).
@@ -76,7 +76,7 @@ One of the ways to represent this will be:
 int cash = 150;
 String company = "friends";
 
-if( cash < 25 ){
+if( cash < 20 ){
     getCoffee();
 } else if( cash < 60 ){
     getDecentMeal();
