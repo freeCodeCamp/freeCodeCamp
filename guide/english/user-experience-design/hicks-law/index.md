@@ -24,6 +24,8 @@ Reducing the number of perceived options on the screen makes the interface more 
 
 Hicks' Law - <a href='https://en.wikipedia.org/wiki/Hick%27s_law' target='_blank' rel='nofollow'>Wikipedia</a>
 
+Interaction Design - <a href='https://www.interaction-design.org/literature/article/hick-s-law-making-the-choice-easier-for-users' target='_blank' rel='nofollow'>Hick’s Law: Making the choice easier for users</a>
+
 Design Principles: Hick's Law - <a href='https://uxplanet.org/design-principles-hicks-law-quick-decision-making-3dcc1b1a0632' target='_blank' rel='nofollow'>uxplanet</a>
 
 Good UI (75 patterns tested by A/B Tests) - <a href='https://goodui.org' target='_blank' rel='nofollow'>UI screens get better when backed by A/B Tests</a>
