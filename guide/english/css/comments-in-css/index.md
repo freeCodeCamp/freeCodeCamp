@@ -98,7 +98,7 @@ h2 {
     }
 ```
 
-Tip: Many code editors will comment a highlighted portion of text by typing CMD+/ (Apple) or CTRL+/ (Windows).
+Tip: Many code editors will comment a highlighted portion of text by typing `CMD + /` (Mac) or `CTRL + /` (Windows).
 
 ### More Information:
 
