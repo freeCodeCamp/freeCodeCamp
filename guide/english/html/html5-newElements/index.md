@@ -29,13 +29,13 @@ Tag 	Description
 <time> 	Defines a date/time
 <wbr> 	Defines a possible line-break
 ```
-##New Form Elements
+## New Form Elements
 ```html
 Tag 	Description
 <datalist> 	Specifies a list of pre-defined options for input controls
 <output> 	Defines the result of a calculation
 ```
-#New Input Types
+## New Input Types
 ```html 	
 	color
     date
@@ -51,7 +51,7 @@ Tag 	Description
     url
     week
 ```
-#New Input Attributes
+## New Input Attributes
 ```html 
     autocomplete
     autofocus
@@ -70,7 +70,7 @@ Tag 	Description
     required
     step
 ```
-##HTML5 - New Attribute Syntax
+## HTML5 - New Attribute Syntax
 HTML5 allows four different syntaxes for attributes.
 ```html 
 This example demonstrates the different syntaxes used in an <input> tag:
@@ -81,7 +81,7 @@ Double-quoted 	<input type="text" value="John Doe">
 Single-quoted 	<input type="text" value='John Doe'>
 ```
 
-##HTML5 Graphics
+## HTML5 Graphics
 ```html 
 Tag 	Description
 <canvas> 	Draw graphics, on the fly, via scripting (usually JavaScript)
