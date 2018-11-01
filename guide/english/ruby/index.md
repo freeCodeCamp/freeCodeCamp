@@ -117,6 +117,6 @@ To write cross-platform native apps in Ruby, RUBY MOTION is used to develop cros
 More resources here: http://www.rubymotion.com/
 
 ## What after learning Ruby?
-Every programming language plays an imporatnt role . You can contribute to a lot of open source projects or you can apply for some big companies after having a good grasp on Ruby. As many big internet sites such as Basecamp, Airbnb, Bleacher Report, Fab.com, Scribd, Groupon, Gumroad, Hulu, Kickstarter, Pitchfork, Sendgrid, Soundcloud, Square, Yammer, Crunchbase, Slideshare, Funny or Die, Zendesk, Github, Shopify are build on Ruby so, there are plenty of option for you out there.
-Moreover, a lot of startups are hiring people who have skill in RUby on Rails as not many programmers try to learn Ruby. So,you might have a clear cut to work in a start-up company.
-So, Ruby is beginner friendly and is quite hard skill set to find you have a good number of openings to work as a developer.
+Every programming language plays an imporatnt role. You can contribute to a lot of open source projects or you can apply for some big companies after having a good grasp on Ruby. As many big internet sites such as Basecamp, Airbnb, Bleacher Report, Fab.com, Scribd, Groupon, Gumroad, Hulu, Kickstarter, Pitchfork, Sendgrid, Soundcloud, Square, Yammer, Crunchbase, Slideshare, Funny or Die, Zendesk, Github, and Shopify are built on Ruby, so there are plenty of options for you out there.
+Moreover, a lot of startups are hiring people who have skills in Ruby on Rails as not many programmers try to learn Ruby. So, you might have a clear cut to work in a start-up company.
+Ruby is beginner friendly and is quite a hard skillset to find, so you will have a good number of openings to work as a developer.
