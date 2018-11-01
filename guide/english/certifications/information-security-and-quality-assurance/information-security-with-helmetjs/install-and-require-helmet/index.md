@@ -3,8 +3,17 @@ title: Install and Require Helmet
 ---
 ## Install and Require Helmet
 
-This is a stub. <a href='https://github.com/freecodecamp/guides/tree/master/src/pages/certifications/information-security-and-quality-assurance/information-security-with-helmetjs/install-and-require-helmet/index.md' target='_blank' rel='nofollow'>Help our community expand it</a>.
+For this series of lessons, it's easiest to clone the glitch boilerplate project and follow the instructions there.  
+In this challenge you need to add and require helmet to your project.
 
-<a href='https://github.com/freecodecamp/guides/blob/master/README.md' target='_blank' rel='nofollow'>This quick style guide will help ensure your pull request gets accepted</a>.
+### Hint
 
-<!-- The article goes here, in GitHub-flavored Markdown. Feel free to add YouTube videos, images, and CodePen/JSBin embeds  -->
+- You can search for packages on glitch somewhere when in your package.json file
+- After you add helmet, you need to require it in the myApp.js file
+
+### Solution
+
+- In the `package.json` file, click the `add package` button, search for `helmet`, and click it to add it to your project.
+- Then, go in to the `myApp.js` file and require it by adding `const helmet = require('helmet');` near the top of the file.
+
+**Note:** Be sure to submit the link to the **live demo** of your project.
