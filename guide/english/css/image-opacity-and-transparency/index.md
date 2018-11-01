@@ -16,7 +16,7 @@ img {
  }
  ```
  
-Include ```filter: alpha(opacity=x)``` for IE8 and earlier. 'x' takes a value from 0-100.
+Include ```filter: alpha(opacity=x)``` for IE8 and earlier. `x` takes a value from 0-100.
 ```css
 img {
    opacity: 0.3;
@@ -58,9 +58,9 @@ img:hover {
 
 
 #### More Information:
--w3schools.com: [CSS Opacity/Transparency](https://www.w3schools.com/css/css_image_transparency.asp)
+- w3schools.com: [CSS Opacity/Transparency](https://www.w3schools.com/css/css_image_transparency.asp)
 
--MDN Web Docs: [Opacity](https://developer.mozilla.org/en-US/docs/Web/CSS/opacity)
+- MDN Web Docs: [Opacity](https://developer.mozilla.org/en-US/docs/Web/CSS/opacity)
 
 
 
