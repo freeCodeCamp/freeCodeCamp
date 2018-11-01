@@ -8,7 +8,7 @@ One quirk of C's data types is that they depend entirely on the hardware that yo
 
 There are two categories that we can break this into: integers, and floating point numbers. Integers are whole numbers. They can be positive, negative, or zero. Numbers like -321, 497, 19345, and -976812 are all perfectly valid integers, but 4.5 is not because 4.5 is not a whole number.
 
-Floating point numbers are numbers with a decimal. Like integers, -321, 497, 19345, and -976812 are all valid, but now 4.5, 0.0004, -324.984, and other non-whole numbers are valid too.
+Floating point numbers are numbers with a decimal. Like integers, -321, 497, 19345, and -976812 are all valid, but now 4.5, 0.0004, -324.984, and other non-whole numbers are valid too. When we enter a whole number, c takes it in by adding a decimal and a 0 after the number. For Example, when we give 497, it takes it in as 497.0
 
 C allows us to choose between several different options with our data types because they are all stored in different ways on the computer. As a result, it is important to be aware of the abilities and limitations of each data type to choose the most appropriate one.
 
