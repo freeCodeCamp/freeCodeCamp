@@ -63,3 +63,5 @@ public int getNumber() {
     return this.number;
 }
 ```
+
+In addition to the above stated info, a POJO (Plain Old Java Object) should have an empty constructor for its instantiation and also its getters and setters be defined beforehand to get hold of any instance of that particular class.
