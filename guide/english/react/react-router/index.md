@@ -45,3 +45,22 @@ const Nav = () => (
   </div>
 )
 ```
+# React Router with redux
+
+The main thing that many developers face is how to integrate react router with redux to pass down stroe as well as the props from the browser router to enhance the functionality of the component.
+
+A basic example is as follows:
+
+```jsx
+  const Root = ({store}) => (
+  <Provider store={store}>
+    <Router>
+      <Route path="/" component={App} />
+      {/* Making a router in the main App.js file will facilitate the passing of porps from both Provider as well as Router  */}
+   </Router>
+   </Provider>
+)
+```
+
+### For more info:
+[Redux-with-reactRouter](https://redux.js.org/advanced/usagewithreactrouter)
