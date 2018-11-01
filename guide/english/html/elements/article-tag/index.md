@@ -7,6 +7,8 @@ The `<article>` tag represents self-contained content in a document. The article
 
 The `<article>` tag was added in HTML5 and is supported by major browsers.
 
+The `<article>` tag can adds semantic meaning to your markup. It is a good choice to contain entire blog posts, news articles, and similar content.
+
 ### Example
 Here is an example of how to use article tag in webpage:
 
@@ -20,5 +22,4 @@ Here is an example of how to use article tag in webpage:
 ```
 
 #### More Information:
-
 [MDN](https://developer.mozilla.org/tr/docs/Web/HTML/Element/article)
