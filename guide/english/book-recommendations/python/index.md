@@ -8,8 +8,8 @@ title: Books on Python Programming Language
  
  A free (E-book) which covers the basics of Python. It's beginner friendly and a must for people who are new to programming!
  
-- [Website](http://greenteapress.com/wp/think-python-2e/)
-- [E-book](http://greenteapress.com/thinkpython2/html/index.html)(free)
+- [Website](https://greenteapress.com/wp/think-python-2e/)
+- [E-book](https://greenteapress.com/thinkpython2/html/index.html)(free)
 - [Amazon](https://www.amazon.com/gp/product/1491939362)
 - ISBN-13: 978-1491939369
  
@@ -36,7 +36,6 @@ Explore the darker side of Python and discover how to write network sniffers, ma
 So you've covered the basics of Python? You're now ready to discover the in-depth tutorials which cover the advanced programming aspects of Python. These include system administration, GUIs and the web. Understand how Python is used in databases, networking, front-end scripting layers and more.
 
 - [Amazon](https://www.amazon.com/Programming-Python-Powerful-Object-Oriented/dp/0596158106)
-- [O'Reilly](http://shop.oreilly.com/product/9780596158118.do)
 - ISBN-10: 0596158106
 - ISBN-13: 978-0596158101
 
@@ -44,7 +43,6 @@ So you've covered the basics of Python? You're now ready to discover the in-dept
 
 You'll learn many of the first princliples for data science tools and how algorithms work by implementing these from scratch. If you have an aptitude for maths and some coding skills, you'll have a crash course in Python that includes the basics of algebra, statistics, and probability. You'll learn how to implement models such as k-nearest Neighbors, Naive Bayes, linear and logistic regression, decision trees, neural networks and clustering. Discover recommender systems, natural lanuage processing, network analysis, MapReduce and databases.
 
-- [O'Reilly](http://shop.oreilly.com/product/0636920033400.do)
 - [Amazon](https://www.amazon.com/Data-Science-Scratch-Principles-Python/dp/149190142X)
 - ISBN-10: 149190142X
 - ISBN-13: 978-1491901427
@@ -65,7 +63,7 @@ You'll learn many of the first princliples for data science tools and how algori
 
 - [Functional Programming in Python by David Mertz [OREILLY] [FREE]](https://www.oreilly.com/programming/free/files/functional-programming-python.pdf)
 - [Python in Education by Nicholas H. Tollervey[OREILLY] [FREE]](https://www.oreilly.com/programming/free/files/python-in-education.pdf)
-- [How to think like a Computer Scientist by Allen Downey[V 2.0.17] [FREE]](http://greenteapress.com/thinkpython/thinkpython.pdf)
+- [How to think like a Computer Scientist by Allen Downey[V 2.0.17] [FREE]](https://greenteapress.com/thinkpython/thinkpython.pdf)
 - [A Byte of Python[FREE]](https://python.swaroopch.com)
 
 Please feel free to add more that you have found useful!
