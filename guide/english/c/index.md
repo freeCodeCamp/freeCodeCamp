@@ -97,6 +97,17 @@ Once you've got it compiled, run the following command:
 
 If everything has gone well, you should see `Hello, World!` printed to the screen.
 
+#### Compilation and running C in Windows with Cygwin
+[*Cygwin*](htttp://www.cygwin.com) is a program that provides a *UNIX* environment for the Windows operating system. With *Cygwin*, one can compile and run C programs with gcc that comes with it. In order to run the C program, it first needs to be compiled:
+```shell
+gcc helloworld.c -o helloworld
+```
+The above snippet of code compiles the C program and outputs it to the 'helloworld' file. Finally, in *Cygwin*, type in:
+```shell
+helloworld
+```
+to run the program. Notice that you do not need to specify the path (prepending the name of the C program with './') in Windows, but you have to do that in Linux and Mac.
+
 #### Compilation and running C with CodeBlocks
 <a href='http://www.codeblocks.org/downloads/26' target='_blank' rel='nofollow'>Codeblocks can be downloaded from here.</a>
 Make a new program with `file` -> `new` -> `file`, select C/C++ source, select C as your language, and then copy over the helloworld.c text that you read through earlier. Compile and run the code with `Build` -> `Build and Run`.
