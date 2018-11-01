@@ -8,7 +8,7 @@ title: IDE and Printing different text
 
 ## IDEs mainly consist of 3 kinds of software :
 
-**1 Editor :** A slightly modified text editor to make coding easy. An example of an editor for coding is Notepad++.
+**1 Editor :** A slightly modified text editor to make coding easy. Examples of editors for coding include Notepad++, Sublime Text, and Adobe Dreamweaver.
 
 **2 Debugger :** Software that helps you find errors in your program , and resolve them before execution. Imagine FaceBook crashing on loading an application or a game crashing all of a sudden. To prevent faulty execution of a program, the debugger is a programmer's best friend.
 
