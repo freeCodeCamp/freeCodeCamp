@@ -148,6 +148,9 @@ title: Books to Read for Programmers
 *Oracle® Database Notes for Professionals*
 - https://books.goalkicker.com/OracleDatabaseBook/
 
+* Database Concepts
+https://www.amazon.com/Database-Concepts-7th-David-Kroenke/dp/0133544621
+
 ## Deep Learning
 
 *Deep Learning by Ian Goodfellow, Yoshua Bengio, Aaron Courville*
