@@ -1,4 +1,4 @@
-const Presolver = require('./lib/presolver');
+/*const Presolver = require('./lib/presolver');
 
 function probotPlugin(robot) {
   const events = [
@@ -26,14 +26,20 @@ function getPullRequest(context) {
 }
 
 module.exports = probotPlugin;
-
-/*module.exports = async app => {
+*/
+module.exports = async app => {
   // Your code here
   app.log('Yay, the app was loaded!')
 
-  app.on('issues.opened', async context => {
-    const issueComment = context.issue({ body: 'Thanks for opening this issue!' })
-    return context.github.issues.createComment(issueComment)
+  app.on('pull_request.labeled', async context => {
+    const [requestedAction, prNumber] = context.payload.requested_action.identifier.split(':')
+    return context.github.pullRequests.update(context.repo({
+        number: prNumber,
+        body: body.trim() ? `${body.trim()}\n\nprobot label test` : 'probot label test'
+      }))
+    
+    
+    
   })
 
   // For more information on building apps:
@@ -41,4 +47,4 @@ module.exports = probotPlugin;
 
   // To get your app running against GitHub, see:
   // https://probot.github.io/docs/development/
-}*/
+}
