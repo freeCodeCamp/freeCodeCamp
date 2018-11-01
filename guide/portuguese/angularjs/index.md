@@ -10,21 +10,22 @@ O AngularJS (versões 1.x) é uma estrutura JavaScript de front-end de software 
 
 npm:
 
-\`\` \`shell npm instalar angular
+```shell 
+npm install angular
 ```
-HTML: 
+HTML:
+
+```html
+<script src="/node_modules/angular/angular.js"></script>
 ```
 
-html
-```
-bower: 
-```
+bower:
 
-Concha bower instalar angular
+```shell
+bower install angular
 ```
-HTML: 
+HTML:
+
+```html
+<script src="/bower_components/angular/angular.js"></script>
 ```
-
-html
-
-\`\` \`

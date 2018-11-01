@@ -12,7 +12,7 @@ have predetermined functions you can utilize to execute calculations. In program
 the theory of computation, the design of algorithms, and computer language design.
 
 #### Fibonacci sequence (generating functions)
-We all know that the recursion excercise begins with solving a fibonaaci sequence. It is also the first example which shows the power of Dynamic Programming. So, it is the special case of a class of mathematics known as generating functions. So, what we will be discussing here applies in general to all genrating function.
+We all know that the recursion exercise begins with solving a fibonaaci sequence. It is also the first example which shows the power of Dynamic Programming. So, it is the special case of a class of mathematics known as generating functions. So, what we will be discussing here applies in general to all genrating function.
 There is a concept in mathematics that "Each generating function has a sequence and each sequence has a generating function". But, the problem arises in second part. It is not always easy to find the generating in general. To remeber this, I draw a analogy to non-terminating rational number "If you know the number in decimal form, it is not easy to find the corresponding fractional form, but if we know the fraction, it is always easy to find the decimal form". So, we generally study some quite beautiful generating functions, in terms of their sequence. Why? Because, we know that sequences can easily be handled by a lot of algorithmic paradigm. Some famous sequences known are fibonacci, hadamard (similar to catalan), etc.
 
 ### Including math libraries

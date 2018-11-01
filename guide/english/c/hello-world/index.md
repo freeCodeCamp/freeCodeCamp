@@ -27,5 +27,10 @@ To write on console you can use the function `printf()` contained in the library
 
  ## Output:
  ```
- >Hello World
+ >hello, world
  ```
+ 
+ #### More Information
+ * Conventionally, the first ever program you write is the "hello world" program, be it in any language.
+ * This is because Brian Kernighan was the  first  to write "hello, world" program for the documentation of the BCPL programming language developed by Martin Richards. 
+
