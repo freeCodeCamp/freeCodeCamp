@@ -10,26 +10,26 @@ localeTitle: Добавить Flex Superpowers в Tweet Вставить
 <section id="description"> Справа находится вставка твита, которая будет использоваться в качестве практического примера. Некоторые элементы будут выглядеть лучше с другой компоновкой. Последняя задача продемонстрировала <code>display: flex</code> . Здесь вы добавите его к нескольким компонентам в tweet embed, чтобы начать настройку их позиционирования. </section>
 
 ## Instructions
-<section id="instructions"> Добавьте <code>display: flex</code> свойств CSS <code>display: flex</code> для всех следующих элементов: обратите внимание, что селектор уже настроен в <code>header</code> CSS: <code>header</code> <code>.profile-name</code> , заголовок <code>.follow-btn</code> , <code>h3</code> и <code>h4</code> заголовка, <code>footer</code> , и <code>.stats</code> колонтитула. </section>
+<section id="instructions"> Добавьте свойства CSS <code>display: flex</code> для всех следующих элементов: обратите внимание, что селекторы уже настроены в CSS: <code>header</code>, <code>.profile-name</code> загаловка, <code>.follow-btn</code> загаловка, <code>h3</code> и <code>h4</code> заголовка, <code>footer</code>, и <code>.stats</code> колонтитула. </section>
 
 ## Tests
 <section id='tests'>
 
 ```yml
 tests:
-  - text: Ваш <code>header</code> должен иметь свойство <code>display</code> установленное в flex.
+  - text: Ваш <code>header</code> должен иметь свойство <code>display</code> установленное на flex.
     testString: 'assert($("header").css("display") == "flex", "Your <code>header</code> should have a <code>display</code> property set to flex.");'
-  - text: Ваш <code>footer</code> должен иметь свойство <code>display</code> должно быть гибким.
+  - text: Ваш <code>footer</code> должен иметь свойство <code>display</code> установленное на flex.
     testString: 'assert($("footer").css("display") == "flex", "Your <code>footer</code> should have a <code>display</code> property set to flex.");'
-  - text: Ваш <code>h3</code> должен иметь свойство <code>display</code> установленное в flex.
+  - text: Ваш <code>h3</code> должен иметь свойство <code>display</code> установленное на flex.
     testString: 'assert($("h3").css("display") == "flex", "Your <code>h3</code> should have a <code>display</code> property set to flex.");'
-  - text: Ваш <code>h4</code> должен иметь свойство <code>display</code> установленное в flex.
+  - text: Ваш <code>h4</code> должен иметь свойство <code>display</code> установленное на flex.
     testString: 'assert($("h4").css("display") == "flex", "Your <code>h4</code> should have a <code>display</code> property set to flex.");'
-  - text: Ваше <code>.profile-name</code> должно иметь свойство <code>display</code> установленное в flex.
+  - text: Ваше <code>.profile-name</code> должно иметь свойство <code>display</code> установленное на flex.
     testString: 'assert($(".profile-name").css("display") == "flex", "Your <code>.profile-name</code> should have a <code>display</code> property set to flex.");'
-  - text: Ваш <code>.follow-btn</code> должен иметь свойство <code>display</code> <code>.follow-btn</code> должно быть гибким.
+  - text: Ваш <code>.follow-btn</code> должен иметь свойство <code>display</code> установленное на flex.
     testString: 'assert($(".follow-btn").css("display") == "flex", "Your <code>.follow-btn</code> should have a <code>display</code> property set to flex.");'
-  - text: У вашего <code>.stats</code> должно быть свойство <code>display</code> установленное в flex.
+  - text: У вашего <code>.stats</code> должно быть свойство <code>display</code> установленное на flex.
     testString: 'assert($(".stats").css("display") == "flex", "Your <code>.stats</code> should have a <code>display</code> property set to flex.");'
 
 ```
