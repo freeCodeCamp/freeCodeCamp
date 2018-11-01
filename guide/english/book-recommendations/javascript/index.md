@@ -40,6 +40,10 @@ This full-color book will show you how to make your websites more interactive an
 
 - [Amazon](https://www.amazon.com/JavaScript-JQuery-Interactive-Front-End-Development/dp/1118531647)
 
+### Beginning JavaScript 4th Edition 
+Authors of this book are Paul Wilton and Jeremy McPeak. There are many exercises which will get you try to write code alongside learning about JavaScript. 
+- [Amazon](https://www.amazon.com/Beginning-JavaScript-Paul-Wilton/dp/0470525932)
+
 ### Other Resources
 
 - A selection of online free resources; including e-books for JavaScript are available at [JS Books](https://jsbooks.revolunet.com/)
