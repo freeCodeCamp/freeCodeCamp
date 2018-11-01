@@ -22,12 +22,12 @@ Give all the children of your <code>right-well</code> element the color orange.
 
 ```yml
 tests:
-  - text: 'All children of <code>#right-well</code> should have orange text.'
-    testString: 'assert($("#right-well").children().css("color") === "rgb(255, 165, 0)", "All children of <code>#right-well</code> should have orange text.");'
-  - text: 'You should use the <code>children&#40&#41</code> function to modify these elements.'
-    testString: 'assert(code.match(/\.children\(\)\.css/g), "You should use the <code>children&#40&#41</code> function to modify these elements.");'
+  - text: All children of <code>#right-well</code> should have orange text.
+    testString: assert($("#right-well").children().css("color") === 'rgb(255, 165, 0)', 'All children of <code>#right-well</code> should have orange text.');
+  - text: You should use the <code>children&#40&#41</code> function to modify these elements.
+    testString: assert(code.match(/\.children\(\)\.css/g), 'You should use the <code>children&#40&#41</code> function to modify these elements.');
   - text: Only use jQuery to add these classes to the element.
-    testString: 'assert(code.match(/<div class="well" id="right-well">/g), "Only use jQuery to add these classes to the element.");'
+    testString: assert(code.match(/<div class="well" id="right-well">/g), 'Only use jQuery to add these classes to the element.');
 
 ```
 

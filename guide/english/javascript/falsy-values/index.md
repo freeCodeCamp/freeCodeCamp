@@ -46,7 +46,7 @@ if (![]) // <-- falsy, will also NOT run code in if-block
 
 ## Caveat
 
-Be aware of the data type when evaluating a value in a Boolean context. If the data type of the value is meant to be a _number_, the truthy/falsy evalution can result in an unexpected outcome:
+Be aware of the data type when evaluating a value in a Boolean context. If the data type of the value is meant to be a _number_, the truthy/falsy evaluation can result in an unexpected outcome:
 ```javascript
 const match = { teamA: 0, teamB: 1 }
 if (match.teamA)
