@@ -6,13 +6,13 @@ Many a time, in a program we need some input from the user. Taking inputs from t
 1.  When we just want to take the input:
 
     # This will just give a prompt without any message
-    inp = input()
+    `inp = input()`
 
 ![:rocket:](//forum.freecodecamp.com/images/emoji/emoji_one/rocket.png?v=2 ":rocket:") <a href='https://repl.it/CUqX/0' target='_blank' rel='nofollow'>Run Code</a>
 
 1.  To give a prompt with a message:
 
-    prompt_with_message = input('<Your prompt message should appear here>')
+   ` prompt_with_message = input('<Your prompt message should appear here>')`
     # <Your prompt message should appear here> _
     # The '_' in the output is the prompt
 
@@ -41,20 +41,20 @@ Though, inputs are stored by default as a string. Using the `str()` function mak
 
 5\. Separating input with spaces:
 ```
-a,b,c=input("Please enter 3 words: ").split()
+a, b, c=input("Please enter 3 words: ").split()
 ```
 ![:rocket:](//forum.freecodecamp.com/images/emoji/emoji_one/rocket.png?v=2 ":cohete:") [Ejecutar código](https://repl.it/@Brian_RG/multinput)
  In this case, we can read 3 words separated by space and store in three different vars, so we can use them later.
 
  6\. Separating input of integers:
 ```
-a,b,c=map(int,input("Please insert 3 numbers: ").split())
+a, b, c=map(int,input("Please insert 3 numbers: ").split())
 ```
 As we know, the input are stored by default as a string, so we can use the map() function, indicate that the input will be converted to integers and then store each value in a variable.
 
  ![:rocket:](//forum.freecodecamp.com/images/emoji/emoji_one/rocket.png?v=2 ":cohete:") [Ejecutar código](https://repl.it/@Brian_RG/Intput)
  [Documentos oficiales](https://docs.python.org/3/library/functions.html#input)
 
-NOTE: Inside the split() function, we can add the separator for the input, por example, if we want to separate each value by a comma, we should write input().split(",") and so on.
+NOTE: Inside the `split()` function, we can add the separator for the input, for example, if we want to separate each value by a comma, we should write `input().split(",")` and so on.
 
 <a href='https://docs.python.org/3/library/functions.html#input' target='_blank' rel='nofollow'>Official Docs</a>
