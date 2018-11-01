@@ -37,3 +37,12 @@ Available to buy or download for free (e-book)! This book is broken down into tw
 This book introduces you to the Haskell language without drowning you in academic jargon or heavy programming theory. It's great for beginners. It is written by Will Kurt. It is packed with focused topics, short code examples and short programs, plus numerous exercises to help stretch and strengthen your new knowledge.
 
 - [Amazon](https://www.amazon.com/Get-Programming-Haskell-Will-Kurt/dp/1617293768)
+
+#### Real World Haskell (1st edition)
+
+This book is very great book not just to learn about Haskell, also to do some actual coding in Haskell. As title of the book suggests, it is full of real world problem which you can solve using Haskell. It is available as a free e-book but you also can buy a hardcopy.
+
+- [E-book](http://book.realworldhaskell.org/read/)
+- [Amazon](https://www.amazon.com/gp/product/0596514980)
+- ISBN-10: 0596514980
+- ISBN-13: 978-0596514983 
