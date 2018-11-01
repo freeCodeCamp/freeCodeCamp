@@ -30,7 +30,7 @@ Find E(1018). Give your answer rounded to fourteen decimal places in the form 0.
 ```yml
 tests:
   - text: <code>euler469()</code> should return 0.56766764161831.
-    testString: 'assert.strictEqual(euler469(), 0.56766764161831, "<code>euler469()</code> should return 0.56766764161831.");'
+    testString: assert.strictEqual(euler469(), 0.56766764161831, '<code>euler469()</code> should return 0.56766764161831.');
 
 ```
 
