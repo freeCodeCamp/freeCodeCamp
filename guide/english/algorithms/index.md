@@ -51,6 +51,10 @@ This video introduces algorithms and briefly discusses some high profile uses of
 
 This video visually demonstrates some popular sorting algorithms that are commonly taught in programming and Computer Science courses.
 
+[How algorithms shape our world | Kevin Slavin](https://www.youtube.com/watch?v=TDaFwnOiKVE)
+
+This is a short video on how algorithms shape our world and their occurence in everyday life.
+
 [Algorithm Visualizer](http://algo-visualizer.jasonpark.me)
 
 This is also a really good open source project that helps you visualize algorithms. 
