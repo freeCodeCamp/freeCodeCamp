@@ -24,7 +24,7 @@ Classical computers encode information in bits. Each bit can take the value of 1
 
 ### What can quantum computers do?
 
-Quantum systems may untangle the complexity of molecular and chemical interactions leading to the discovery of new medicines and materials. They may enable ultra-efficient logistics and supply chains, such as optimizing fleet operations for deliveries during the holiday season. They may help us find new ways to model financial data and isolate key global risk factors to make better investments. And they may make facets of artificial intelligence such as machine learning much more powerful.
+Quantum systems may untangle the complexity of molecular and chemical interactions leading to the discovery of new medicines and materials. They may enable ultra-efficient logistics and supply chains, such as optimizing fleet operations for deliveries during the holiday season. They may help us find new ways to model financial data and isolate key global risk factors to make better investments. From a database development perspective, this level of processing can handle queries and pull data at levels beyond binary computing's capabilities. And they may make facets of artificial intelligence such as machine learning much more powerful.
 
 ### Further Resources
 
