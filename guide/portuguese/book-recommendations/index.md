@@ -212,46 +212,46 @@ _Pensando em C ++ por Bruce Eckel_
 *   [Sorriso da Amazônia](https://smile.amazon.com/Thinking-C-Bruce-Eckel/dp/0139177094)
 *   ISBN-13: 978-0139177095
 
-_Conceitos do sistema operacional_
+_Conceitos do sistema operacional_ por Abraham Silberschatz, Peter B. Galvin e Greg Gagne
 
 *   [Sorriso da Amazônia](https://smile.amazon.com/Operating-System-Concepts-Abraham-Silberschatz/dp/1118063333/ref=sr_1_1?s=books&ie=UTF8&qid=1538967825&sr=1-1&keywords=operating+system+concepts+10th+edition&dpID=51Qy2upM%252BaL&preST=_SY291_BO1,204,203,200_QL40_&dpSrc=srch)
 *   ISBN-13: 978-1118063330
 
-_Redes de Computadores: Uma Abordagem Top-Down (7ª Edição) por Kurose e Ross_
+_Redes de Computadores: Uma Abordagem Top-Down (7ª Edição)_ por Kurose e Ross
 
 *   [Sorriso da Amazônia](https://smile.amazon.com/Computer-Networking-Top-Down-Approach-7th/dp/0133594149/ref=sr_1_1?s=books&ie=UTF8&qid=1538967896&sr=1-1&keywords=kurose+and+ross&dpID=51xp1%252BoDRML&preST=_SX218_BO1,204,203,200_QL40_&dpSrc=srch)
 *   ISBN-13: 978-0133594140
 
-_Programação Competitiva 3: O Novo Limite Inferior dos Concursos de Programação_
+_Programação Competitiva 3: O Novo Limite Inferior dos Concursos de Programação_ por Steven Halim
 
 *   [Sorriso da Amazônia](https://smile.amazon.com/Competitive-Programming-3rd-Steven-Halim/dp/B00FG8MNN8)
 *   ISBN-13: 978-5800083125
 
-_Programação Dinâmica para Entrevistas de Codificação: Uma abordagem Bottom-Up para a resolução de problemas_
+_Programação Dinâmica para Entrevistas de Codificação: Uma abordagem Bottom-Up para a resolução de problemas_ por Meenakshi e Kamal Rawat
 
-*   [Sorriso da Amazônia](https://smile.amazon.in/Dynamic-Programming-Coding-Interviews-Bottom-Up-ebook/dp/B06XZ61CMP)
+*   [Sorriso da Amazônia](https://smile.amazon.com/Dynamic-Programming-Coding-Interviews-Bottom-Up-ebook/dp/B06XZ61CMP)
 *   ISBN-13: 978-1946556691
 
-_GATE 2019 Ciência da Computação e Tecnologia da Informação_
+_GATE 2019 Ciência da Computação e Tecnologia da Informação_ por ACE
 
 *   [Sorriso da Amazônia](https://smile.amazon.com/GATE-Computer-Science-Information-Technology/dp/194658178X)
 *   ISBN-13: 978-1946581785
 
-_A arte da programação de computadores por Donald E. Knuth_
+_A arte da programação de computadores_ por Donald E. Knuth
 
 *   https://www-cs-faculty.stanford.edu/~knuth/taocp.html
 *   ISBN-13: 978-0321751041
 
-_Fatos e Falácias da Engenharia de Software_
+_Fatos e Falácias da Engenharia de Software_ por Robert L. Glass
 
 *   [Sorriso da Amazônia](https://smile.amazon.com/Facts-Fallacies-Software-Engineering-Robert/dp/0321117425/)
 *   ISBN-13: 978-0321117427
 
-The Mythical Man-Month: Ensaios sobre engenharia de software
+_O mítico homem-mês: Ensaios sobre engenharia de software_ por Frederick P. Brooks Jr.
 
 *   [Sorriso da Amazônia](https://www.amazon.com/Mythical-Man-Month-Software-Engineering-Anniversary/dp/0201835959)
 *   ISBN-13: 978-0201835953
 
 Esta lista foi compilada a partir de vários encadeamentos de sugestões no Reddit e no Stackoverflow.
 
-Por favor, sinta-se livre para adicionar mais que você achou útil!
+Por favor, sinta-se livre para adicionar mais obras que você achou útil!
