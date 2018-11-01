@@ -5,6 +5,7 @@
     "postinstall": "npm run bootstrap",
     "prebootstrap": "npm run ensure-env",
     "bootstrap": "lerna bootstrap && lerna run build --scope @freecodecamp/curriculum",
+    "clean": "lerna clean",
     "develop": "npm-run-all -s ensure-env start-develop",
     "ensure-env": "cross-env DEBUG=fcc:* node ./tools/scripts/ensure-env.js",
     "lint": "echo 'Warning: TODO - Define Linting with fixing.'",
