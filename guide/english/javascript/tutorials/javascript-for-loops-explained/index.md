@@ -9,11 +9,11 @@ The for loop has the following syntax:
         code block to be executed                  
     }
 
-[initialization] is executed before the loop (the code block) starts.
+The [initialization] is executed before the loop (the code block) starts.
 
-[condition] defines the condition for running the loop (the code block).
+The [condition] defines the condition for running the loop (the code block).
 
-[final-expression] is executed each time after the loop (the code block) has been executed.
+The [final-expression] is executed each time after the loop (the code block) has been executed.
 
 ## Example in JavaScript:
 
@@ -30,9 +30,9 @@ From the example above, you can read:
 
 [final-expression] increases a value (i++) each time the code block in the loop has been executed.
 
-## Why we need "for loops"?
+## Why do we need "for loops"?
 
-For loops are used to loop through a block of code a known number of times. Sometimes it is the computer that knows how many times, not you, but it is still known.
+For loops are used to loop through a block of code for a known number of times. Sometimes only the computer knows how many times the loop will occur, not you, either way it is still known.
 
 Checkout some of our other articles on loops:
 
