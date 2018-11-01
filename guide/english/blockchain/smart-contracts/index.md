@@ -11,6 +11,9 @@ As a piece of code that sits on the blockchain, a smart contract can automate ta
 When an account receives money it can automatically distribute it to others.
 This is entirely transparent so all the nodes(miners) can see what logic is being executed.
 
+## Applications of Smart Contacts
+
+Smart Contracts allows the transfer of goods and services without the need for a independent third part. Logic and rules are built into the smart contract that define the permissions and processes associated with a particular agreement and enforce the obligations attached to it. This provides an opportunity to remove middlemen that are traditionally required to interact with physical property or financial service instruments.
 
 ## Blockchain Technologies
 
@@ -18,3 +21,18 @@ Two of the most common technologies used are :
 - Ethereum: generally made with Solidity
 - Hyperledger: generally made with Go, or Java
 
+## Hello World Smart Contract
+
+```solidity
+pragma solidity ^0.4.24;
+contract Hello {
+    string public message;
+    function Hello(string initialMessage) public {
+        message = initialMessage;
+    }
+    function setMessage(string newMessage) public {
+        message = newMessage;
+    }
+}
+```
+Pulled from https://medium.com/coinmonks/how-to-write-a-simple-smart-contract-25f6d3c1d6db
