@@ -4,7 +4,7 @@ title: Managing Ruby versions
 
 ## Ruby has changed over time
 
-Ruby was been in constant development since the 1990s, and like many languages,
+Ruby has been in constant development since the 1990s, and like many languages,
 there have been syntax changes across versions, so it is important to be clear
 about which Ruby version your code expects.
 
