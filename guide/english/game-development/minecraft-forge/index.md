@@ -12,7 +12,7 @@ Forge is a modding api. Minecraft Forge (or Forge for short) is a layer between 
 * A Minecraft account which can be bought from their official website. (https://minecraft.net/en-us/store/)
 * An IDE (Eclipe or IntelliJ are recommended for Minecraft development)
 
-After installing/acquire these pieces of software, download your desired Forge version at https://files.minecraftforge.net/ (*TIP:* Hover over the information button and press direct download to avoid an Adfly virus!)
+After installing/acquiring these pieces of software, download your desired Forge version at https://files.minecraftforge.net/ (*TIP:* Hover over the information button and press direct download to avoid an Adfly virus!)
 Once you have downloaded this ZIP you'll be able to unzip it. Do so and cd (cmd command) into the directory with all of the Forge files. 
 Run `gradlew setupDecompWorkspace`
 

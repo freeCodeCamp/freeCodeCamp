@@ -11,7 +11,9 @@ Cryptocurrency is a subset of digital currency, which acts as a medium of exchan
 
 Cryptocurrency can be exchanged as fractions not possible with traditional currency. For example, transactions can amount to 0.00007 BTC or even lower.
 
-If you want to earn bitcoins through mining, it can be done through solving mathematical proof-of-work problems that validate transactions. Blockchain uses the concept of irreversible cryptographic hash function which consists of guessing a random number (usually less than a certain value) to solve the problem for transaction validation. You will require machines with high processing power to be able to solve these problems (for example Fast-Hash One or CoinTerra TerraMiner IV). Computer's with a high end Graphics Card installed (such as the Nivida GTX 1080) are also able to solve these hashes effectively. 
+If you want to earn bitcoins through mining, it can be done through solving mathematical proof-of-work problems that validate transactions. Blockchain uses the concept of irreversible cryptographic hash function which consists of guessing a random number (usually less than a certain value) to solve the problem for transaction validation.
+
+In order to control the supply of bitcoin, mining is deliberately designed to be difficult and resource-intensive. You will require machines with high processing power to be able to solve these problems (for example Fast-Hash One or CoinTerra TerraMiner IV). Computers with a high end Graphics Card installed (such as the Nivida GTX 1080) are also able to solve these hashes effectively. 
 
 Some people invest in cryptocurrency on exchanges such as Binance, Bitrex, or Coinbase. The market peeked in January of 2018. 
 
@@ -19,3 +21,7 @@ Some people invest in cryptocurrency on exchanges such as Binance, Bitrex, or Co
 [Cryptocurrency](https://en.wikipedia.org/wiki/Cryptocurrency)    
 [Ultimate Guide to Cryptocurrency](https://blockgeeks.com/guides/what-is-cryptocurrency)
 [Bitcoin](https://en.wikipedia.org/wiki/Bitcoin)
+
+### Background History on origins of cryptocurrency:
+[Blockchain origins story](https://www.activism.net/cypherpunk/manifesto.html)
+Cypherpunks, crypoanarchists, and libertarians paved the way for the right to privacy and deregulating the government's control and diminishing individual citizen's autonomy.
