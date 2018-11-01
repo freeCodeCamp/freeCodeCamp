@@ -26,7 +26,7 @@ value inside your opening ```<a>``` tag. That looks like this:
 ```html 
 <a href="url" target="_blank">Link Text</a>
 ```
-Here is another example, using the offical freeCodeCamp Guide as the ```href=""``` destination, and "The freeCodeCamp Guide" as the link text:
+Here is another example, using the official freeCodeCamp Guide as the ```href=""``` destination, and "The freeCodeCamp Guide" as the link text:
 ```html
 <!-- target="_blank" makes the link open in a new tab. -->
 <a href="https://guide.freecodecamp.org" target="_blank">The freeCodeCamp Guide</a>
