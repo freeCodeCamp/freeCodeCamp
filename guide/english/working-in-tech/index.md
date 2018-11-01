@@ -21,6 +21,8 @@ The field of computer security is growing at a rapid rate every year. A recent r
 - Support Desk Engineer
 - Security Engineer
 — Project manager
+- Data Analyst 
+- Data Scientist 
 
 ### Books
 
@@ -48,6 +50,7 @@ To see the full list, visit: https://talkpython.fm/episodes/show/130/10-books-py
 * [What is technical debt? And why does almost every startup have it?](https://medium.freecodecamp.org/what-is-technical-debt-and-why-do-most-startups-have-it-9a54458daabf)
 * [How you can land a 6-figure job In tech with no connections — tips that got me job offers from Google and other tech giants](https://medium.freecodecamp.org/how-you-can-land-a-6-figure-job-in-tech-with-no-connections-6eed0de26ea4)
 * [The Complete Software Developer's Career Guide](https://simpleprogrammer.com/products/careerguide/)
+* [What is data analytics and how can I start learning it?](https://learntocodewith.me/posts/data-analysis/)
 
 ### Podcasts
 [10 Books Python Developers should be reading - talkpython.fm](https://talkpython.fm/episodes/show/130/10-books-python-developers-should-be-reading)
