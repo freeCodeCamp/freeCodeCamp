@@ -2,6 +2,7 @@
 title: PHP
 ---
 
+
 ![logo](https://upload.wikimedia.org/wikipedia/commons/thumb/2/27/PHP-logo.svg/150px-PHP-logo.svg.png "PHP logo")
 
 ## What is PHP?
