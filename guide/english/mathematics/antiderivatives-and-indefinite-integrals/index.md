@@ -7,7 +7,9 @@ Calculating an antiderivative and integrating an indefinite integral are synonym
 
 Integration calculates the area under a particular curve, that which is defined in the integrand. Indefinite interals consider the areas of infinitely many, infinitely small rectangles to calculate the area under a particlar curve.
 
-Real-life applications of Antiderivatives and Indefinite Integrals are commonly found in physics, where one can integrate a given velocity to calculate how far a particular object has moved (displacement). 
+Real-life applications of Antiderivatives and Indefinite Integrals are commonly found in physics, where one can integrate a given velocity to calculate how far a particular object has moved (displacement).
+
+The integral symbol is: ∫
 
 #### More Information:
 
