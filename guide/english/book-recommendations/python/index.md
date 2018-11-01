@@ -74,6 +74,15 @@ You'll learn many of the first princliples for data science tools and how algori
 - ISBN-10: 1617294039
 - ISBN-13: 978-1617294037
 
+#### Learning Python, 5th Edition
+ ![alt text](https://covers.oreillystatic.com/images/0636920028154/lrg.jpg "Learning Python, 5th Edition")
+ 
+ A paid, very great book for beginner Python learners. It's full of quizzes, exercises and many others helpful things that will help you to practice your skills while learning them.
+ 
+- [Amazon](https://www.amazon.com/_/dp/1449355730?tag=oreilly20-20)
+- ISBN-13: 978-1449355739
+- ISBN-10: 1449355730
+
 #### Other Resources
 
 - [Functional Programming in Python by David Mertz [OREILLY] [FREE]](https://www.oreilly.com/programming/free/files/functional-programming-python.pdf)
