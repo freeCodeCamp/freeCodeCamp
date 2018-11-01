@@ -50,6 +50,10 @@ title: Books to Read for Programmers
 - [Author Page](https://www-cs-faculty.stanford.edu/~knuth/taocp.html)
 - ISBN-13: 978-0321751041
 
+*Automate the Boring Stuff with Python: Practical Programming for Total Beginners* by Al Sweigart
+- [Amazon](https://www.amazon.com/gp/product/1593275994)
+- ISBN-13: 978-1593275990
+
 ## Algorithms
 
 *Introduction to Algorithms, 3rd Edition (MIT Press)* by Thomas H. Cormen and Charles E. Leiserson
