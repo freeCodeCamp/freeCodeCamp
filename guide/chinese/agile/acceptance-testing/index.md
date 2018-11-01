@@ -131,3 +131,5 @@ localeTitle: 验收测试
 #### 更多信息：
 
 *   [国际软件测试资格委员会](http://www.istqb.org/)
+
+My changes.
