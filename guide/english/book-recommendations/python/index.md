@@ -63,6 +63,7 @@ You'll learn many of the first princliples for data science tools and how algori
 - ISBN-13: 978-1593275990
 
 *Python crash course 2e* (note that 3e is going to be published on April 2019)
+![alt text](https://images-na.ssl-images-amazon.com/images/I/51F48HFHq6L._SL200_.jpg "Python Crash Course")
 - Paid book which gives concrete introduction to both programming and Python by the creation of projects.
 - [Amazon](https://www.amazon.fr/Python-Crash-Course-Hands-Project-Based/dp/1593276036/ref=sr_1_1?ie=UTF8&qid=1539459730&sr=8-1&keywords=python+crash+course)
 - ISBN-10: 1593276036
