@@ -68,6 +68,56 @@ New lifecycle methods will be introduced in React 17
 * `getSnapshotBeforeUpdate` will be added to support safely reading properties from the DOM updates are made
 
 
+## Hooks introduced in React 16 for functional components
+
+### 1. UseState Hook
+
+```jsx
+import { useState } from 'react';
+
+function Sample() {
+  const [count, setCount] = useState(0);
+  // New way of declaring the state in a functional component
+  // Basically the first element in the desctructured array is the name of the variable that the state will assign the intial value to     // it, the second is the function hooked with changing the value of the state element and the value insde the paranthesis viz
+  // useState(0)-> 0 is the initial value
+  return (
+    <div>
+      <p>You clicked {count} times</p>
+      <button onClick={() => setCount(count + 1)}>
+        Click me
+      </button>
+    </div>
+  );
+}
+
+```
+
+### 2. UseEffect Hook
+
+```jsx
+import { useState, useEffect } from 'react';
+
+function Sample() {
+  const [count, setCount] = useState(0);
+
+  // Similar to componentDidMount and componentDidUpdate:
+  useEffect(() => {
+    // Update the document title using the browser API
+    document.title = `You clicked ${count} times`;
+  });
+
+  return (
+    <div>
+      <p>You clicked {count} times</p>
+      <button onClick={() => setCount(count + 1)}>
+        Click me
+      </button>
+    </div>
+  );
+}
+```
+
+
 Many things can be learned by diving into coding. So get your hands dirty by coding.
 
 ### Sources
@@ -75,3 +125,4 @@ Many things can be learned by diving into coding. So get your hands dirty by cod
 
 ### Resources
 [Update on Async Rendering](https://reactjs.org/blog/2018/03/27/update-on-async-rendering.html)
+[Introduction to hooks](https://reactjs.org/docs/hooks-intro.html)
