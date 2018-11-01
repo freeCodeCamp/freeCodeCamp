@@ -59,3 +59,4 @@ There are over 20,000+ **D3.js** examples you could learn from, but you never kn
 - https://d3indepth.com/
 - https://davidwalsh.name/learning-d3
  ------------
+ Strikethrough uses two tildes. ~~Scratch this.~~
