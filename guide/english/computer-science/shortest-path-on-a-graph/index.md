@@ -4,8 +4,38 @@ title: Shortest Path on a Graph
 ## Shortest Path on a Graph
 
 <!-- The article goes here, in GitHub-flavored Markdown. Feel free to add YouTube videos, images, and CodePen/JSBin embeds  -->
-Finding the shortest path between two points on a graph is a common problem in data structures especially when dealing with optimization. A graph is a series of nodes connected by edges. Graphs can be weighted (edges carry values) and directional (edges have direction).
+Finding the shortest path between two points on a graph is a common problem in data structures especially when dealing with optimization. A graph is a series of nodes connected by edges.
 
+
+## Breadth First Search
+
+For unweighted graphs, the *Breadth First Search* algorithm is useful. Below is a Python 3 implementation.
+
+```python
+from collections import deque
+
+def BFS(graph, startNode, endNode):
+# Assume graph is written as an adjacency list.
+  queue = deque()
+  queue.append([startNode])
+  visited = set()
+  visited.add(startNode)
+  
+  while queue:
+    currentPath = queue.popleft()
+    for node in graph[currentPath[-1]]:
+      if node == endNode:
+        newPath = currentPath.append(node)
+        return newPath
+      elif node not in visited:
+        visited.add(node)
+        newPath = currentPath.append(node)
+        queue.append(newPath)
+  
+  return -1
+```
+
+However, graphs can be weighted (edges carry values) and directional (edges have direction).
 
 Some applications of this are flight path optimization or <a href='https://en.wikipedia.org/wiki/Six_Degrees_of_Kevin_Bacon' target='_blank' rel='nofollow'>6 degrees of Kevin Bacon</a>
 
