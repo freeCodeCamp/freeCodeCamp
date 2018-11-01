@@ -6,10 +6,6 @@ title: Books to Read for Programmers
 
 ## General
 
-*Automate the Boring Stuff With Python* by Al Sweigart
-- http://automatetheboringstuff.com/
-- ISBN-13: 978-1593275990
-
 *Structure and Interpretation of Computer Programs* by Harold Abelson, Gerald Jay Sussman, and Julie Sussman
 - https://mitpress.mit.edu/sicp/
 - ISBN-13: 978-0262510875
@@ -25,10 +21,6 @@ title: Books to Read for Programmers
 *Coders at Work: Reflections on the Craft of Programming* by P. Seibel
 - [Amazon Smile](https://smile.amazon.com/Coders-Work-Reflections-Craft-Programming/dp/1430219483)
 - ISBN-13: 978-1430219484
-
-*DevOps Handbook:How to Create World-Class Agility, Reliability, and Security in Technology Organizations* by Gene Kim et al
-- [Amazon Smile](https://www.amazon.com/DevOps-Handbook-World-Class-Reliability-Organizations/dp/1942788002/ref=sr_1_4?s=books&ie=UTF8&qid=1539733859&sr=1-4&keywords=devops+handbook)
-- ISBN-13: 978-1942788003
 
 *Don't Make Me Think, Revisited: A Common Sense Approach to Web Usability by Steve Krug*
 - [Amazon Smile](https://smile.amazon.com/Dont-Make-Think-Revisited-Usability/dp/0321965515/ref=sr_1_1?ie=UTF8&qid=1538370339&sr=8-1&keywords=dont+make+me+think)
@@ -46,13 +38,17 @@ title: Books to Read for Programmers
 - [Amazon Smile](https://smile.amazon.com/Self-Taught-Programmer-Definitive-Programming-Professionally-ebook/dp/B01M01YDQA?sa-no-redirect=1)
 - ISBN-13: 978-1520288178
 
-*You Don't Know JS (book series)* by Kyle Simpson
-- https://github.com/getify/You-Dont-Know-JS
-- ISBN-13: 9781491924464
+*Code: The Hidden Language of Computer Hardware and Software (Developer Best Practices)*
+- [Amazon Smile](https://smile.amazon.com/Code-Language-Computer-Hardware-Software/dp/0735611319)
+- ISBN-13: 978-0735611313
 
-*Soft Skills: The software developer's life manual* - John Sonmez
-- [Amazon Smile](https://smile.amazon.com/Soft-Skills-software-developers-manual/dp/1617292397?pldnSite=1)
-- ISBN-13: 9781617292392
+*Computer Science Distilled: Learn the art of solving computaitonal problems by Wladston Ferreira Filho*
+- [Amazon Smile](https://smile.amazon.com/Computer-Science-Distilled-Computational-Problems/dp/0997316020)
+- ISBN-13: 978-0-9773160-2-5
+
+*The Art of Computer Programming by Donald E. Knuth*
+- [Author Page](https://www-cs-faculty.stanford.edu/~knuth/taocp.html)
+- ISBN-13: 978-0321751041
 
 ## Algorithms
 
@@ -68,6 +64,14 @@ title: Books to Read for Programmers
 - [Amazon Smile](https://smile.amazon.com/Grokking-Algorithms-illustrated-programmers-curious/dp/1617292230/)
 - ISBN-13: 978-1617292231
 
+*Data Structures And Algorithms Made Easy*
+- [Amazon Smile](https://smile.amazon.com/Data-Structures-Algorithms-Made-Easy/dp/819324527X)
+- ISBN-13: 978-8193245279
+
+*Algorithms Unlocked by Thomas H. Cormen*
+- [Amazon Smile](https://smile.amazon.com/Algorithms-Unlocked-Press-Thomas-Cormen/dp/0262518805)
+- ISBN-13: 978-0262518802
+
 ## BASH
 
 *The Linux Command Line: A Complete Introduction 1st Edition by William E. Shotts Jr*
@@ -77,6 +81,10 @@ title: Books to Read for Programmers
 *Learning the bash Shell: Unix Shell Programming by Cameron Newham*
 - [Amazon](https://www.amazon.com/Learning-bash-Shell-Programming-Nutshell/dp/0596009658)
 - ISBN-13: 978-0596009656
+
+*Mastering Linux Shell Scripting by Andrew Mallett*
+- [Amazon Smile](https://smile.amazon.com/Mastering-Linux-Scripting-Andrew-Mallett/dp/1784396974/)
+- ISBN-13: 978-1784396978
 
 ## C-lang
 *C Notes for Professionals book*
@@ -89,6 +97,10 @@ title: Books to Read for Programmers
 *A Book on C: Programming in C*
 - [Amazon](https://www.amazon.com/Book-Programming-4th-Al-Kelley/dp/0201183994/ref=cm_cr_arp_d_bdcrb_top?ie=UTF8)
 - ISBN-13: 978-0201183993
+
+*Head First C: A Brain-Friendly Guide*
+- [Amazon Smile](https://smile.amazon.com/Head-First-C-Brain-Friendly-Guide/dp/1449399916/ref=sr_1_2?ie=UTF8&qid=1538665818&sr=8-2&keywords=head+first+c&dpID=51StqzL2dWL&preST=_SX218_BO1,204,203,200_QL40_&dpSrc=srch)
+- ISBN-13: 978-1449399917
 
 ## C#
 
@@ -114,10 +126,49 @@ title: Books to Read for Programmers
 - [Wiley](https://www.wiley.com/en-id/Programming+Interviews+Exposed:+Secrets+to+Landing+Your+Next+Job,+2nd+Edition-p-9780470121672)
 - ISBN: 978-0-470-12167-2
 
+*Dynamic Programming for Coding Interviews: A Bottom-Up approach to problem solving*
+- [Amazon Smile](https://smile.amazon.in/Dynamic-Programming-Coding-Interviews-Bottom-Up-ebook/dp/B06XZ61CMP)
+- ISBN-13: 978-1946556691
+
+## Computer Networks
+
+*Computer Networking: A Top-Down Approach (7th Edition) by Kurose and Ross*
+- [Amazon Smile](https://smile.amazon.com/Computer-Networking-Top-Down-Approach-7th/dp/0133594149/ref=sr_1_1?s=books&ie=UTF8&qid=1538967896&sr=1-1&keywords=kurose+and+ross&dpID=51xp1%252BoDRML&preST=_SX218_BO1,204,203,200_QL40_&dpSrc=srch)
+- ISBN-13: 978-0133594140 
+
+*Computer Networks By Andrew S. Tanenbaum*
+- [Amazon Smile](https://smile.amazon.com/Computer-Networks-Tanenbaum-International-Economy/dp/9332518742/)
+- ISBN-13: 978-9332518742
+
 ## Database
 
 *Database Systems: Design, Implementation, & Management 12th Edition*
 - [Amazon Smile](https://smile.amazon.com/Database-Systems-Design-Implementation-Management/dp/1305627482/ref=sr_1_1?s=books&ie=UTF8&qid=1539892264&sr=1-1&keywords=database+systems+design%2C+implementation%2C+%26+management)
+
+*Oracle® Database Notes for Professionals*
+- https://books.goalkicker.com/OracleDatabaseBook/
+
+## Deep Learning
+
+*Deep Learning by Ian Goodfellow, Yoshua Bengio, Aaron Courville*
+- [Amazon Smile](https://smile.amazon.com/Deep-Learning-Adaptive-Computation-Machine/dp/0262035618)
+- ISBN: 978-0262035613
+
+## DevOps
+
+*DevOps Handbook:How to Create World-Class Agility, Reliability, and Security in Technology Organizations* by Gene Kim et al
+- [Amazon Smile](https://www.amazon.com/DevOps-Handbook-World-Class-Reliability-Organizations/dp/1942788002/ref=sr_1_4?s=books&ie=UTF8&qid=1539733859&sr=1-4&keywords=devops+handbook)
+- ISBN-13: 978-1942788003
+
+## Information Security
+
+*Hacking: Ultimate Hacking Guide: Hacking For Beginners And Tor Browser*
+- https://www.amazon.in/dp/B075CX7T6G/ref=cm_sw_r_cp_awdb_t1_-7ESBbZ43CCBM
+- (ISBN 1976112524).
+
+*The Shellcoder's Handbook: Discovering and Exploiting Security Holes*
+- [Amazon Smile](https://smile.amazon.com/Shellcoders-Handbook-Discovering-Exploiting-Security/dp/047008023X/ref=sr_1_1?ie=UTF8&qid=1538665772&sr=8-1&keywords=shellcoders+handbook+3rd+edition&dpID=41xfa6zpuPL&preST=_SX218_BO1,204,203,200_QL40_&dpSrc=srch)
+- ISBN-13: 978-0470080238
 
 ## Java
 
@@ -151,9 +202,15 @@ title: Books to Read for Programmers
 - [Amazon Smile](https://smile.amazon.com/JavaScript-JQuery-Interactive-Front-End-Development/dp/1118531647/?pldnSite=1)
 - ISBN-13: 978-1118531648 
 
+## Operating Systems
+
+*Operating System Concepts*
+- [Amazon Smile](https://smile.amazon.com/Operating-System-Concepts-Abraham-Silberschatz/dp/1118063333/ref=sr_1_1?s=books&ie=UTF8&qid=1538967825&sr=1-1&keywords=operating+system+concepts+10th+edition&dpID=51Qy2upM%252BaL&preST=_SY291_BO1,204,203,200_QL40_&dpSrc=srch)
+- ISBN-13: 978-1118063330
+
 ## Python
 
-*Automate the Boring Stuff With Python*
+*Automate the Boring Stuff With Python* by Al Sweigart
 - http://automatetheboringstuff.com/
 - ISBN-13: 978-1593275990
 
@@ -165,26 +222,6 @@ title: Books to Read for Programmers
 - [Amazon Smile](https://smile.amazon.com/Python-Tricks-Buffet-Awesome-Features-ebook/dp/B0785Q7GSY)
 - ISBN-13: 978-1775093305
 
-## Soft Skills
-
-*Soft Skills: The software developer's life manual*
-- [Amazon Smile](https://smile.amazon.com/Soft-Skills-software-developers-manual/dp/1617292397?pldnSite=1)
-- ISBN-13: 9781617292392 
-
-## Other
-
-*Hacking: Ultimate Hacking Guide: Hacking For Beginners And Tor Browser*
-- https://www.amazon.in/dp/B075CX7T6G/ref=cm_sw_r_cp_awdb_t1_-7ESBbZ43CCBM
-- (ISBN 1976112524).
-
-*Code: The Hidden Language of Computer Hardware and Software (Developer Best Practices)*
-- [Amazon Smile](https://smile.amazon.com/Code-Language-Computer-Hardware-Software/dp/0735611319)
-- ISBN-13: 978-0735611313
-
-*Data Structures And Algorithms Made Easy*
-- [Amazon Smile](https://smile.amazon.com/Data-Structures-Algorithms-Made-Easy/dp/819324527X)
-- ISBN-13: 978-8193245279
-
 *Think Python: How to Think Like a Computer Scientist*
 - [Amazon Smile](https://smile.amazon.com/Think-Python-Like-Computer-Scientist/dp/1491939362)
 - ISBN-13: 978-1491939369
@@ -193,57 +230,35 @@ title: Books to Read for Programmers
 - [Amazon Smile](https://smile.amazon.com/Python-Crash-Course-Hands-Project-Based/dp/1593276036)
 - ISBN-13: 978-1593276034
 
-*Computer Science Distilled: Learn the art of solving computaitonal problems by Wladston Ferreira Filho*
-- [Amazon Smile](https://smile.amazon.com/Computer-Science-Distilled-Computational-Problems/dp/0997316020)
-- ISBN-13: 978-0-9773160-2-5
-
-*Algorithms Unlocked by Thomas H. Cormen*
-- [Amazon Smile](https://smile.amazon.com/Algorithms-Unlocked-Press-Thomas-Cormen/dp/0262518805)
-- ISBN-13: 978-0262518802
-
 *Violent Python: A Cookbook for Hackers, Forensic Analysts, Penetration Testers and Security Engineers*
 - [Amazon Smile](https://smile.amazon.com/Violent-Python-Cookbook-Penetration-Engineers/dp/1597499579/ref=sr_1_2?ie=UTF8&qid=1538665634&sr=8-2&keywords=violent+python)
 - ISBN-13: 978-1597499576
 
-*The Shellcoder's Handbook: Discovering and Exploiting Security Holes*
-- [Amazon Smile](https://smile.amazon.com/Shellcoders-Handbook-Discovering-Exploiting-Security/dp/047008023X/ref=sr_1_1?ie=UTF8&qid=1538665772&sr=8-1&keywords=shellcoders+handbook+3rd+edition&dpID=41xfa6zpuPL&preST=_SX218_BO1,204,203,200_QL40_&dpSrc=srch)
-- ISBN-13: 978-0470080238
-
-*Head First C: A Brain-Friendly Guide*
-- [Amazon Smile](https://smile.amazon.com/Head-First-C-Brain-Friendly-Guide/dp/1449399916/ref=sr_1_2?ie=UTF8&qid=1538665818&sr=8-2&keywords=head+first+c&dpID=51StqzL2dWL&preST=_SX218_BO1,204,203,200_QL40_&dpSrc=srch)
-- ISBN-13: 978-1449399917
+## Ruby
 
 *Practical Object-Oriented Design in Ruby*
 - [Amazon Smile](https://smile.amazon.com/Practical-Object-Oriented-Design-Ruby-Addison-Wesley/dp/0321721330)
 - ISBN-13: 978-0321721334
 
+## Soft Skills
+
+*Soft Skills: The software developer's life manual*
+- [Amazon Smile](https://smile.amazon.com/Soft-Skills-software-developers-manual/dp/1617292397?pldnSite=1)
+- ISBN-13: 9781617292392 
+
+## Other
+
 *Thinking in C++ by Bruce Eckel*
 - [Amazon Smile](https://smile.amazon.com/Thinking-C-Bruce-Eckel/dp/0139177094)
 - ISBN-13: 978-0139177095
-
-*Operating System Concepts*
-- [Amazon Smile](https://smile.amazon.com/Operating-System-Concepts-Abraham-Silberschatz/dp/1118063333/ref=sr_1_1?s=books&ie=UTF8&qid=1538967825&sr=1-1&keywords=operating+system+concepts+10th+edition&dpID=51Qy2upM%252BaL&preST=_SY291_BO1,204,203,200_QL40_&dpSrc=srch)
-- ISBN-13: 978-1118063330
-
-*Computer Networking: A Top-Down Approach (7th Edition) by Kurose and Ross*
-- [Amazon Smile](https://smile.amazon.com/Computer-Networking-Top-Down-Approach-7th/dp/0133594149/ref=sr_1_1?s=books&ie=UTF8&qid=1538967896&sr=1-1&keywords=kurose+and+ross&dpID=51xp1%252BoDRML&preST=_SX218_BO1,204,203,200_QL40_&dpSrc=srch)
-- ISBN-13: 978-0133594140 
 
 *Competitive Programming 3: The New Lower Bound of Programming Contests*
 - [Amazon Smile](https://smile.amazon.com/Competitive-Programming-3rd-Steven-Halim/dp/B00FG8MNN8)
 - ISBN-13: 978-5800083125
 
-*Dynamic Programming for Coding Interviews: A Bottom-Up approach to problem solving*
-- [Amazon Smile](https://smile.amazon.in/Dynamic-Programming-Coding-Interviews-Bottom-Up-ebook/dp/B06XZ61CMP)
-- ISBN-13: 978-1946556691
-
 *GATE 2019 Computer Science and Information Technology*
 - [Amazon Smile](https://smile.amazon.com/GATE-Computer-Science-Information-Technology/dp/194658178X)
 - ISBN-13: 978-1946581785
-
-*The Art of Computer Programming by Donald E. Knuth*
-- https://www-cs-faculty.stanford.edu/~knuth/taocp.html
-- ISBN-13: 978-0321751041
 
 *Facts and Fallacies of Software Engineering*
 - [Amazon Smile](https://smile.amazon.com/Facts-Fallacies-Software-Engineering-Robert/dp/0321117425/)
@@ -253,20 +268,9 @@ title: Books to Read for Programmers
 - [Amazon Smile](https://www.amazon.com/Mythical-Man-Month-Software-Engineering-Anniversary/dp/0201835959)
 - ISBN-13: 978-0201835953
 
-*Deep Learning by Ian Goodfellow, Yoshua Bengio, Aaron Courville*
-- [Amazon Smile](https://smile.amazon.com/Deep-Learning-Adaptive-Computation-Machine/dp/0262035618)
-- ISBN: 978-0262035613
-
-*Oracle® Database Notes for Professionals*
-- https://books.goalkicker.com/OracleDatabaseBook/
-
 *Pro PHP Programming - Peter MacIntyre*
 - [Amazon Smile](https://smile.amazon.com/Pro-PHP-Programming-Peter-MacIntyre-ebook/dp/B005PZ09AG)
 - ISBN-13: 978-1430235606
-
-*Mastering Linux Shell Scripting by Andrew Mallett*
-- [Amazon Smile](https://smile.amazon.com/Mastering-Linux-Scripting-Andrew-Mallett/dp/1784396974/)
-- ISBN-13: 978-1784396978
 
 *The Innovator's Delimma*
 - [Amazon] (https://www.amazon.com/Innovators-Dilemma-Technologies-Management-Innovation-ebook/dp/B00E257S86_

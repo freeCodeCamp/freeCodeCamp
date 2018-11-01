@@ -16,7 +16,6 @@ You can use it for:
 See your results as you go step by step, just like in this image.
 
 ### What Is A Jupyter Notebook?
-
 In this case, "notebook" or "notebook documents" denote documents that contain both code and rich text elements, such as figures, links, or equations. Because of this mix, people use Jupyter Notebooks to show the description of an analysis and its results. Also, they can run the notebook to execute the code and perform the data analysis in real time.
 
 The name "Jupyter" is a loose acronym combining **Ju**lia, **Py**thon, and **R**, which were the first target programming languages of the Jupyter application. The notebook technology now supports many other languages. You can check the [list of available Jupyter kernels here](https://github.com/jupyter/jupyter/wiki/Jupyter-kernels).

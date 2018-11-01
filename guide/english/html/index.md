@@ -10,7 +10,7 @@ An HTML document has two aspects to it. It contains structured information (Mark
  
 The internet was originally created to store and present static (unchanging) documents. The aspects of HTML discussed above were seen perfectly in these documents which lacked all design and styling. They presented structured information that contained links to other documents.
  
-HTML5 is the latest version, or specification, of HTML. The World Wide Web Consortium (W3C) is the organization responsible for developing standards for the World Wide Web, including those for HTML. As web pages and web applications grow more complex, W3C  updates HTML's standards.
+HTML5 is the latest version, or specification, of HTML. The [World Wide Web Consortium (W3C)](https://www.w3.org/) is the organization responsible for developing standards for the World Wide Web, including those for HTML. As web pages and web applications grow more complex, W3C  updates HTML's standards.
  
 HTML5 Introduces a host of semantic elements. Though we discussed HTML helped to provide meaning to our document, it wasn't until HTML5s' introduction of [semantic elements](#) that its potential was realized.
 

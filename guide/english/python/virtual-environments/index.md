@@ -51,9 +51,19 @@ lsvirtualenv
 
 ### Activate an Environment
 
+Note : On Windows, activating a virtual environment requires the user to have the permission to run scripts.
+
 Before you can start using the environment you need to activate it:
+
+For Mac OS or Linux systems : 
+
 ```
 source my-env/bin/activate
+```
+And for Windows : 
+
+```
+.\my-env\Scripts\activate.bat
 ```
 
 This ensures that only packages under `my-env/` are used.
