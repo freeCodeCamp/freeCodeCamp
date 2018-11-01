@@ -8,4 +8,4 @@ Hooks are a new feature proposal that lets you use state and other react feature
 
 ### More Information:
 
-[https://reactjs.org/docs/hooks-intro.html](Introducing Hooks)
+[Introducing Hooks](https://reactjs.org/docs/hooks-intro.html)
