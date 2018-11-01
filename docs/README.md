@@ -24,10 +24,10 @@ This directory contains all of the documentation on contributing to freeCodeCamp
 
 ## Quick references articles
 
-<a href="/how-to-work-on-guide-articles.md">1. How to work on Guide articles.</a>
-<a href="/how-to-work-on-coding-challenges.md">2. How to work on Coding Challenges.</a>
-<a href="/how-to-setup-freecodecamp-locally.md">3. How to setup freeCodeCamp locally.</a>
-<a href="/how-to-catch-outgoing-emails-locally.md">4. How to catch outgoing emails locally.</a>
+<a href="/how-to-work-on-guide-articles.md">1. How to work on Guide articles.</a><br>
+<a href="/how-to-work-on-coding-challenges.md">2. How to work on Coding Challenges.</a><br>
+<a href="/how-to-setup-freecodecamp-locally.md">3. How to setup freeCodeCamp locally.</a><br>
+<a href="/how-to-catch-outgoing-emails-locally.md">4. How to catch outgoing emails locally.</a><br>
 
 ## Style guides
 
