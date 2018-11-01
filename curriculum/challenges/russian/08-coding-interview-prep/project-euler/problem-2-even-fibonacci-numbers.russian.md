@@ -3,11 +3,11 @@ id: 5900f36e1000cf542c50fe81
 challengeType: 5
 title: 'Problem 2: Even Fibonacci Numbers'
 videoUrl: ''
-localeTitle: 'Проблема 2: Даже числа Фибоначчи'
+localeTitle: 'Проблема 2: Чётные числа Фибоначчи'
 ---
 
 ## Description
-<section id="description"> Каждый новый член в последовательности Фибоначчи генерируется путем добавления предыдущих двух членов. Начиная с 1 и 2, первые 10 условий будут: <div style="text-align: center;"> 1, 2, 3, 5, 8, 13, 21, 34, 55, 89, ... </div> Рассматривая слагаемые в последовательности Фибоначчи, значения которых не превышают <code>n</code> го слагаемого, найдем сумму четных членов. </section>
+<section id="description"> Каждый новый член в последовательности Фибоначчи генерируется путем сложения предыдущих двух членов. Начиная с 1 и 2, первые 10 членов будут: <div style="text-align: center;"> 1, 2, 3, 5, 8, 13, 21, 34, 55, 89, ... </div> Рассматривая члены в последовательности Фибоначчи до <code>n</code> -го включительно, найдите сумму четных чисел последовательности. </section>
 
 ## Instructions
 <section id="instructions">
@@ -26,7 +26,7 @@ tests:
     testString: 'assert.strictEqual(fiboEvenSum(43), 1485607536, "<code>fiboEvenSum(43)</code> should return 1485607536.");'
   - text: 'Ваша функция не возвращает правильный результат, используя наши значения тестов.'
     testString: 'assert.strictEqual(fiboEvenSum(18), 3382, "Your function is not returning the correct result using our tests values.");'
-  - text: Ваша функция должна возвращать <code>even</code> значение.
+  - text: Ваша функция должна возвращать <code>чётные</code> значения.
     testString: 'assert.equal(fiboEvenSum(31) % 2 === 0, true, "Your function should return an <code>even</code> value.");'
 
 ```
@@ -40,7 +40,7 @@ tests:
 
 ```js
 function fiboEvenSum(n) {
-  // You can do it!
+  // Вы можете сделать это!
   return true;
 }
 
