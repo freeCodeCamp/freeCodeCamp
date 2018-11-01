@@ -4,7 +4,7 @@ localeTitle: En bucle
 ---
 # En bucle
 
-El bucle `for` le ofrece una forma compacta de iterar sobre un rango de valores. Un básico `for` declaración tiene tres partes: una inicialización de variables, una expresión booleana, y una expresión de la subasta.
+El bucle `for` le ofrece una forma compacta de iterar sobre un rango de valores. Una declaracion básica de `for` tiene tres partes: una inicialización de variables, una expresión booleana, y una expresión de incremento.
 
 ```java
 for (variable initialization; boolean expression; increment expression) 
@@ -15,14 +15,14 @@ for (variable initialization; boolean expression; increment expression)
 
 *   `initialization` : inicializa el bucle y se ejecuta solo una vez, al principio.
 
-Puede inicializar más de una variable del mismo tipo en la primera parte de la declaración básica `for` bucle `for` ; Cada inicialización debe estar separada por una coma.
+Puede inicializar más de una variable al mismo tipo en la primera parte de la declaración básica del bucle `for`; Cada inicialización debe estar separada por una coma.
 
 *   `expression` - Evaluado al comienzo de cada iteración. Si la `expression` evalúa como `true` , las `Statements` se ejecutarán.
-*   `increment` : se invoca después de cada iteración a través del bucle. Puede aumentar / disminuir el valor de las variables aquí. Asegúrese de que el incremento esté trabajando hacia el valor de la expresión, para evitar un bucle infinito.
+*   `increment` : se invoca después de cada iteración a través del bucle. Puede aumentar / disminuir el valor de los variables aquí. Asegúrese de que el incremento esté acerandose hacia el valor de la expresión, para evitar un bucle infinito.
 
-Una forma común `for` se usa el bucle `for` es si necesita iterar su código una cantidad específica de veces. Por ejemplo, si quisiera dar salida a los números del 0 al 10, inicializaría la variable para su contador a 0, luego verifique si el valor es menor que 10 y agregaría uno al contador después de cada iteración.
+Una forma común para el bucle `for` es si necesita iterar su código una cantidad específica de veces. Por ejemplo, si quisiera encontrar a los números del 0 al 10, inicializaría la variable para su contador a 0, luego verifique si el valor es menor que 10 y agregaría uno al contador después de cada iteración.
 
-Observe que comprobaría si el valor es menor que 10, no menor o igual a 10, ya que está iniciando su contador en 0.
+Note que comprobaría si el valor es menor que 10, no menor o igual a 10, ya que está iniciando su contador en 0.
 
 ```java
 for (int iter_For = 0; iter_For < 10; iter_For++) 
@@ -34,7 +34,7 @@ for (int iter_For = 0; iter_For < 10; iter_For++)
  System.out.println("iter_For Value: " + iter_For); 
 ```
 
-Nota: También es aceptable declarar una variable dentro del bucle for como una sola declaración.
+Nota: También es aceptable declarar una variable dentro del bucle `for` como una sola declaración.
 
 ```java
 for (int iter_For = 0; iter_For < 10; iter_For++) 
@@ -50,7 +50,8 @@ Salida:
  iter_For Value: 10 
 ```
 
-Otro ejemplo de un bucle for que agrega los primeros 50 números sería así. i ++ significa i = i + 1.
+Otro ejemplo de un bucle `for` que suma los primeros 50 números sería así.
+i++ significa i = i+1.
 
 ```java
 int addUntil = 50; 
@@ -68,6 +69,6 @@ int addUntil = 50;
 
 ### Extras
 
-No puede usar un número (antiguo constructo de lenguaje de estilo C) o cualquier cosa que no se evalúe como un valor booleano como condición para una sentencia if o un constructo en bucle. No puede, por ejemplo, decir si (x), a menos que x sea una variable booleana.
+No puede usar un número (antiguo constructo de lenguaje de estilo C) o cualquier cosa que no se evalúe como un valor booleano como condición para una sentencia `if` o un constructo en bucle. No puede, por ejemplo, decir `if(x)`, a menos que x sea un variable booleano.
 
 Además, es importante tener en cuenta que la expresión booleana debe, en algún momento, evaluar como verdadera. De lo contrario, su programa se atascará en un bucle infinito.
