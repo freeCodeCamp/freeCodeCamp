@@ -3,7 +3,11 @@ title: JavaScript
 ---
 
 ## JavaScript
+
 JavaScript is the most widely used scripting language on earth and has the largest library ecosystem of any programming language. It is the core language of the web, and the only programming language that can run in all major web browsers.
+
+By definition, Javascript is a high-level interpreted language. Meaning its higher abstracted from the computer, easy to use, and you
+don't need to compile in order to execute but its interpreted at the runtime.
 
 Notably, JavaScript has no relation to Java. [JavaScript: The World's Most Misunderstood Programming Language](http://www.crockford.com/javascript/javascript.html)
 
@@ -22,7 +26,7 @@ Node.js, built on top of Google Chrome's Javascript V8 Engine, a platform which 
 
 Windows includes JScript, a JavaScript variant in Windows Script Host.
 
-Chakra, a fork of Jscript, is developed by Microsoft and used in their Edge browser.
+Chakra, a fork of JScript, is developed by Microsoft and used in their Edge browser.
 
 Mozilla also offers Rhino, an implementation of JavaScript built in Java, typically embedded into Java applications to provide scripting to end users.
 
@@ -30,4 +34,9 @@ WebKit (except for the Chromium project) implements the JavaScriptCore engine.
 
 ## JavaScript Frameworks
 Most frequently used JavaScript Frameworks are React JS, Angular JS, Create JS, jQuery, nodeJS etc. 
-For details follow this [link](https://javascriptreport.com/the-ultimate-guide-to-javascript-frameworks/).
+For details follow this [link](https://javascriptreport.com/the-ultimate-guide-to-javascript-frameworks/)
+
+
+## More Resourses
+
+[MDN Docs](https://developer.mozilla.org/bm/docs/Web/JavaScript)

@@ -5,7 +5,7 @@ title: Pygame
 
 ### Game Development with Pygame
 
-Pygame is an open source, cross platform python library used for game development, written by Pete Shinners. The Pygame documentation and more information can be found on their website at https://pygame.org.
+Pygame is an open source, cross platform Python library used for game development, written by Pete Shinners. The Pygame documentation and more information can be found on their website at https://pygame.org.
 
 ### Overview
 

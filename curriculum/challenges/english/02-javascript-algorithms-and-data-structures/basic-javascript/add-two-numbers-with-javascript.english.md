@@ -24,9 +24,9 @@ Change the <code>0</code> so that sum will equal <code>20</code>.
 ```yml
 tests:
   - text: <code>sum</code> should equal <code>20</code>
-    testString: 'assert(sum === 20, "<code>sum</code> should equal <code>20</code>");'
+    testString: assert(sum === 20, '<code>sum</code> should equal <code>20</code>');
   - text: Use the <code>+</code> operator
-    testString: 'assert(/\+/.test(code), "Use the <code>+</code> operator");'
+    testString: assert(/\+/.test(code), 'Use the <code>+</code> operator');
 
 ```
 
@@ -49,7 +49,7 @@ var sum = 10 + 0;
 <div id='js-teardown'>
 
 ```js
-console.info('after the test');
+(function(z){return 'sum = '+z;})(sum);
 ```
 
 </div>
