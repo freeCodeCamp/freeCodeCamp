@@ -55,6 +55,8 @@ Mood boards can convey color scheme, type face, and specific imagery.  They can 
 
 There are many factors that go into making the perfect mood board. Depending on your audience, you may want to decide on choosing a larger image and building the mood board around it. This image would become your inspiration and centerpiece for the entire board. Also, do you think you should create a physical or digital mood board, which one would portray your ideas and inspiration more effectively?
 
+You can also create moodboards on websites such as Pinterest, Dribble, Behance and many other such sites.
+
 ![An example of a physical mood board](https://www.designyourway.net/blog/wp-content/uploads/2018/02/06moodboard3-superjumbo.jpg)
 
 #### More Information:
