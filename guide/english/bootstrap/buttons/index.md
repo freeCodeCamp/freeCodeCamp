@@ -64,6 +64,10 @@ This is a list of the CSS classes for different size of the buttons.
 
 `<button type="button" class="btn btn-lg">Large</button>`
 
+`.btn-md` This is bootstrap's medium button.
+
+`<button type="button" class="btn btn-md">Medium</button>`
+
 `.btn-sm` Bootstrap's small button.
 
 `<button type="button" class="btn btn-sm">Small</button>`
