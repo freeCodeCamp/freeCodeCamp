@@ -3,11 +3,7 @@ title: Article Tag
 ---
 ## Article Tag
 
-The `<article>` tag represents self-contained content in a document. The article should be independent from the rest of page, intended to be distributable and reusable.
-
-The `<article>` tag was added in HTML5 and is supported by major browsers.
-
-The `<article>` tag can adds semantic meaning to your markup. It is a good choice to contain entire blog posts, news articles, and similar content.
+The `<article>` tag represents self-contained content in a document. The article should be independent from the rest of page; intended to be distributable and reusable. It can add semantic meaning to your markup, and is a good choice to contain entire blog posts, news articles, and similar content. The `<article>` tag was added in HTML5 and is supported by major browsers.
 
 ### Example
 Here is an example of how to use article tag in webpage:
