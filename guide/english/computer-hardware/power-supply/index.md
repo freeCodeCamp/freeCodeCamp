@@ -3,7 +3,7 @@ title: Power Supply
 ---
 ## Power Supply
 
-A Power Supply Unit (PSU) supplies power to a computer. It converts AC power into steady low-voltage DC power for the internal components. It also regulates overheating by controlling the voltage. Depending on the model of power supply voltage control can either be manual or automatic. 
+A Power Supply Unit (PSU) supplies power to a computer. It converts AC power into steady low-voltage DC power for the internal components. A power supply is required in order for a computer to operate properly and it's wattage must be matched appropriately to all the components inside the computer. It also regulates overheating by controlling the voltage. Depending on the model of power supply, voltage control can either be manual or automatic.
 
 Like the CPU, or RAM, the PSU is a necessary component to the PC because without it nothing within the machine would function. Arguably may be one of the more crucial parts to research when assembling custom computers because of this fact. 
 

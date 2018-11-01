@@ -24,7 +24,7 @@ Use the <code>console.log()</code> method to print the value of the variable <co
 ```yml
 tests:
   - text: Your code should use <code>console.log()</code> to check the value of the variable <code>a</code>.
-    testString: 'assert(code.match(/console\.log\(a\)/g), "Your code should use <code>console.log()</code> to check the value of the variable <code>a</code>.");'
+    testString: assert(code.match(/console\.log\(a\)/g), 'Your code should use <code>console.log()</code> to check the value of the variable <code>a</code>.');
 
 ```
 
