@@ -16,7 +16,7 @@ It's also known to have one of the <a href="https://www.ruby-lang.org/en/communi
 *   Has "mixin" functionality by module
 *   Iterators and closures
 
-If you are unfamiliar with some of the concepts above, read on, and don't worry. Ruby focus on simplicity and productivity with an elegant syntax that is natural to read and easy to write, like:
+If you are unfamiliar with some of the concepts above, read on and don't worry. Ruby focuses on simplicity and productivity with an elegant syntax that is natural to read and easy to write, like:
 ```ruby
 # Quick example of Ruby with Object Oriented Programming
 class Greeter
