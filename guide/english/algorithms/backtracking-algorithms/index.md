@@ -54,3 +54,5 @@ Else
 [Geeks 4 Geeks](http://www.geeksforgeeks.org/backtracking-set-1-the-knights-tour-problem/)
 
 [A very interesting introduction to backtracking](https://www.hackerearth.com/practice/basic-programming/recursion/recursion-and-backtracking/tutorial/)
+
+[A YouTube demonstration](https://www.youtube.com/watch?v=gBC_Fd8EE8A)
