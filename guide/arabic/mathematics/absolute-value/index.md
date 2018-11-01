@@ -40,3 +40,5 @@ localeTitle: قيمه مطلقه
 #### معلومات اكثر:
 
 [قيمه مطلقه](http://www.purplemath.com/modules/absolute.htm "Absolute Value")
+[قيمه مطلقه](https://www.youtube.com/watch?v=u6zDpUL5RkU)
+[قيمه مطلقه]](https://www.youtube.com/watch?v=WFESvO48y7M)
