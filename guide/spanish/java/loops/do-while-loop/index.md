@@ -4,7 +4,7 @@ localeTitle: Do ... While Loop
 ---
 # Hacer ... mientras bucle
 
-El `do while` es similar al `while` de bucle, pero el grupo de instrucciones es garantizado para funcionar al menos una vez antes de comprobar si una condición dada. Una cosa importante a tener en cuenta es que el bucle 'while' es un bucle de control de salida. mientras que (no necesariamente se ejecutará), 'hacer mientras' es un bucle controlado de entrada (se ejecutará al menos una vez, incluso si la condición no es verdadera).
+El `do while` es similar al bucle `while`, pero el grupo de instrucciones siempre es usado al menos una vez antes de verificar una condición. Una cosa importante a tener en cuenta es que el bucle 'while' es un bucle de control de salida. `while` no necesariamente se ejecutará, mientras `do while` es un bucle controlado de entrada (se ejecutará al menos una vez, incluso si la condición no es verdadera).
 
 ```java
 do 
@@ -35,13 +35,13 @@ Salida:
     iter_DoWhile Value: 21 
 ```
 
-**Recuerde** : la condición de un bucle `do-while` while se comprueba después de que el cuerpo del código se ejecuta una vez.
+**Recuerde** : la condición de un bucle `do-while` se comprueba después de que el cuerpo del código se ejecutado una vez.
 
 ![:rocket:](//forum.freecodecamp.com/images/emoji/emoji_one/rocket.png?v=2 ":cohete:") [Ejecutar código](https://repl.it/CJYl/0)
 
 ## Ejercicio
 
-¿Puedes adivinar la salida del siguiente fragmento de código?
+¿Puedes adivinar el resultado del siguiente fragmento de código?
 
 ```java
 int i = 10; 
