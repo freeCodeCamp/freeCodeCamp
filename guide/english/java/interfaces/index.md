@@ -261,4 +261,6 @@ public class SmartPhone implements MusicPlayer {
 
 Whoops, did I forget `next()` ? See, since it was a `default` method, I didn't had to provide an implementation at all. (Won't work for JDK < 8)
 
+To add, an interface is a 100% abstract class i.e., no concrete methods.
+
 So, now you have a good grasp of Interfaces! Go learn about Abstract Classes to know how Java gives you yet another way to define contracts.
