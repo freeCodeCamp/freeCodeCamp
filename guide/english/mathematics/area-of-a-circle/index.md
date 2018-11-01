@@ -88,3 +88,5 @@ Note: Max could have estimated the area by:
 
 More information with illustrations can be found [WikiHow](https://www.wikihow.com/Calculate-the-Area-of-a-Circle)
 
+Calculus based proof that Area = π × r<sup>2</sup>: http://www.analyzemath.com/calculus/Integrals/area_circle.html
+
