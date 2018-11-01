@@ -7,7 +7,7 @@ Every language learning starts with Traditional Hello World example. Here, you g
 
 Everything in React is a component. 
 
-But before that we need to make sure to have node.js and npm installed in the computer. Optionally we can use CRA(Create React App) which is a tool built by developers at Facebook to help you build React applications. It saves you from time-consuming setup and configuration. You simply run one command and create react app sets up the tools you need to start your React project.
+But before that we need to make sure to have node.js and npm installed in the computer. Optionally we can use CRA(Create React App) which is a tool built by developers at Facebook to help you build React applications. It saves you from time-consuming setup and configuration. You simply run one command and create-react-app sets up the tools you need to start your React project.
 
 We can install it through the following commands 
 ```
@@ -64,6 +64,6 @@ document.getElementById('root'));  //The <App /> is the way components are calle
 
 In the above, App.js is called a component. Normally, we make multiple components and put them together in App.js which will be then rendered in index.js which is then rendered into the root div that is in the index.html.
 
-Congrats !! You have created your first React Hello world app. You will learn more about React in the coming articles.
+Congrats!! You have created your first React Hello world app. You will learn more about React in the coming articles.
 
-Happy Coding !!
+Happy Coding!!
