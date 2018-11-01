@@ -19,11 +19,11 @@ Advantages of WordPress include:
 * Thousands of free themes are available to customize
 
 Here are some examples of big name brands using WordPress: 
-* Sony Music
-* TechCrunch
-* BBC America
-* Bloomberg Professional
-* The Walt Disney Company
+* [Sony Music](https://www.sonymusic.com/)
+* [TechCrunch](https://techcrunch.com/)
+* [BBC America](http://www.bbcamerica.com/)
+* [Bloomberg Professional](https://www.bloomberg.com/professional/)
+* [The Walt Disney Company](https://www.thewaltdisneycompany.com/)
 
 Whether it's page transitions or a customized contact form, WordPress users are only a few clicks away from building a website.
 
