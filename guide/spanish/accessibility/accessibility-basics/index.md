@@ -136,7 +136,7 @@ La WCAG tiene relaciones de contraste para letras más pequeñas y más grandes 
 
 Un buen lugar para comenzar a verificar el contraste de color es mediante el uso del [verificador de](https://webaim.org/resources/contrastchecker/) contraste de color [WebAIM](https://webaim.org/resources/contrastchecker/) .
 
-### Qué hace este botón?
+### ¿Qué hace este botón?
 
 Mientras estamos en el tema de los formularios, echemos un vistazo rápido a la etiqueta de `input` . Este pequeño es algo importante.
 
