@@ -2,9 +2,25 @@
 title: Match Whitespace
 ---
 ## Match Whitespace
-
-This is a stub. <a href='https://github.com/freecodecamp/guides/tree/master/src/pages/certifications/javascript-algorithms-and-data-structures/regular-expressions/match-whitespace/index.md' target='_blank' rel='nofollow'>Help our community expand it</a>.
-
-<a href='https://github.com/freecodecamp/guides/blob/master/README.md' target='_blank' rel='nofollow'>This quick style guide will help ensure your pull request gets accepted</a>.
+---
+title: Match Literal Strings
+---
+## Match Literal Strings
 
 <!-- The article goes here, in GitHub-flavored Markdown. Feel free to add YouTube videos, images, and CodePen/JSBin embeds  -->
+This challenge is not any different from the previous; in this case though, you learn the shortcut for whitespace, which is \s.
+
+
+## Hint 1:
+
+Don't forget to include a -g global flag.
+
+## Spoiler Alert - Solution Ahead!
+
+## Solution:
+
+```javascript
+let sample = "Whitespace is important in separating words";
+let countWhiteSpace = /\s/g; // Change this line
+let result = sample.match(countWhiteSpace);
+```
