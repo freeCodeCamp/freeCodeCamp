@@ -27,7 +27,7 @@ const styles = `
   }
 
   .featured-list-item .title {
-    color: #333;
+    color: #1681dd;
     padding-bottom: 20px;
   }
 
