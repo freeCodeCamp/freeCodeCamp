@@ -24,3 +24,24 @@ Python allows `str` objects, or _strings_, to be expressed in a few different wa
 ## Reference:
 
 <a href='https://docs.python.org/3/library/stdtypes.html#text-sequence-type-str' target='_blank' rel='nofollow'>Text Sequence Type _str_</a>
+
+##My Changes
+
+Pythn String Methods:
+
+String Length -> str = "Hello world!"
+print(len(str))
+>> 12
+
+String Index ->
+
+print(str.Index("e"))
+>> 1
+
+String Upper & Lower Case ->
+print(str.upper())
+>> HELLO WORLD!
+print(str.lower())
+>> hello world!
+
+
