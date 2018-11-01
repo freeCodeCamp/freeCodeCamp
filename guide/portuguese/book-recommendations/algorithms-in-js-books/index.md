@@ -1,7 +1,8 @@
 ---
 title: Algorithms in JavaScript books
 localeTitle: Algoritmos em livros JavaScript
----### Lista de livros
+---
+\### Lista de livros
 
 _Estruturas de dados em JavaScript_
 
@@ -20,4 +21,4 @@ _Estruturas de Dados e Algoritmos com JavaScript: Trazendo abordagens clássicas
 *   [Amazon](https://www.amazon.com/Data-Structures-Algorithms-JavaScript-approaches/dp/1449364934)
 *   ISBN-13: 978-1449364939
 
-Por favor, sinta-se livre para adicionar mais que você achou útil!
+Por favor, sinta-se livre para adicionar mais obras que você achou útil!
