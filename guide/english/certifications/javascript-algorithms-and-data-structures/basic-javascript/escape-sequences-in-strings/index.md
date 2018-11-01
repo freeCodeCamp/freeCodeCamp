@@ -3,8 +3,19 @@ title: Escape Sequences in Strings
 ---
 ## Escape Sequences in Strings
 
-This is a stub. <a href='https://github.com/freecodecamp/guides/tree/master/src/pages/certifications/javascript-algorithms-and-data-structures/basic-javascript/escape-sequences-in-strings/index.md' target='_blank' rel='nofollow'>Help our community expand it</a>.
+* Escape sequences allow you to use characters you might not otherwise be able to type out, such as a backspace.
+* By following this diagram with character combinations you will be able to assign escape sequences to the string.
+* ’	single quote
+* "	double quote
+* \	backslash
+* \n	new line
+* \r	carriage return
+* \t	tab
+* \b	backspace
+* \f	form feed
+* The challenge requires that you don't use space between characters.
 
-<a href='https://github.com/freecodecamp/guides/blob/master/README.md' target='_blank' rel='nofollow'>This quick style guide will help ensure your pull request gets accepted</a>.
-
-<!-- The article goes here, in GitHub-flavored Markdown. Feel free to add YouTube videos, images, and CodePen/JSBin embeds  -->
+## Solution
+```javascript
+var myStr = "FirstLine\n\t\\SecondLine\nThirdLine";
+```
