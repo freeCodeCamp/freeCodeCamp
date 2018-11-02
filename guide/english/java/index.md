@@ -6,6 +6,9 @@ title: Java
 
 <a href='https://www.oracle.com/java/index.html' target='_blank' rel='nofollow'>Java</a> is an object-oriented programming language developed by <a href='https://en.wikipedia.org/wiki/Sun_Microsystems' target='_blank' rel='nofollow'>Sun Microsystems</a> in 1995, which was later acquired by <a href='http://www.oracle.com/index.html' target='_blank' rel='nofollow'>Oracle</a>. It's now a full platform with lots of standard APIs, open source APIs, tools, a huge developer community, and is used to build the most trusted enterprise solutions by big and small companies alike. <a href='https://www.android.com/' target='_blank' rel='nofollow'>Android</a> application development is done fully with Java and its ecosystem. To know more about Java, read <a href='https://java.com/en/download/faq/whatis_java.xml' target='_blank' rel='nofollow'>this</a> and <a href='http://tutorials.jenkov.com/java/what-is-java.html' target='_blank' rel='nofollow'>this</a>.
 
+## OBJECT-ORIENTED PROGRAMMING LANGUAGE
+JAVA is one of the OBJECT ORIENTED PROGRAMMING LANGUAGES, unlike C and FORTAN which are procedural languages. The OBJECT ORIENTED concept of programming makes it much more efficient than procedural languages. Basically, object orientation breaks the program into parts, which is decided by the programmer. Then the complete program is stored in the permanent memory and when it is executed only that part is brought to dynamic memory which is called by the programmer. Each such part is called a `class` and when it is called in the dynamic memory it is called an `object`.
+
 ## Version
 
 The latest version is <a href='http://www.oracle.com/technetwork/java/javase/overview' target='_blank' rel='nofollow'> Java 11</a>, which was released in 2018 with <a href='https://www.oracle.com/technetwork/java/javase/11-relnote-issues-5012449.html' target='_blank' rel='nofollow'>various improvements</a> over the previous version, Java 10. But for all intents and purposes, we will use Java 8 in this wiki for all tutorials.
@@ -80,7 +83,7 @@ Ok now since we are done with the installations, let's begin to understand first
 
 Java is a pretty secure language as it doesn't let your program run directly on the machine. Instead, your program runs on a Virtual Machine called JVM. This Virtual Machine exposes several APIs for low level machine interactions you can make, but other than that you cannot play with machine instructions explicitely. This adds a huge bonus of security.
 
-Also, once your bytecode is compiled it can run on any Java VM. This Virtual Machine is machine dependent, i.e it has different implementations for Windows, Linux and Mac. But your program is guranteed to run in any system thanks to this VM. This philosophy is called <a href='https://en.wikipedia.org/wiki/Write_once,_run_anywhere' target='_blank' rel='nofollow'>"Write Once, Run Anywhere"</a>.
+Also, once your bytecode is compiled it can run on any Java VM. This Virtual Machine is machine dependent, i.e it has different implementations for Windows, Linux and Mac. But your program is guaranteed to run in any system thanks to this VM. This philosophy is called <a href='https://en.wikipedia.org/wiki/Write_once,_run_anywhere' target='_blank' rel='nofollow'>"Write Once, Run Anywhere"</a>.
 
 ## Hello World!
 

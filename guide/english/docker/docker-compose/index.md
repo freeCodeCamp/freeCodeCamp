@@ -44,7 +44,25 @@ docker-compose -f docker-compose.yml --build -d
 docker-compose -f docker-compose.yml down
 ```
 
+* Command to remove service containers
+
+```
+docker-compose -f docker-compose.yml rm
+```
+
+* Command to pull Images for all service containers from repository (by default from Docker Hub)
+
+```
+docker-compose -f docker-compose.yml pull
+```
+
+* Command to view logs of all service contaienrs (add -f to follow logs)
+
+```
+docker-compose -f docker-compose.yml logs 
+```
+
+
 #### More Information:
-- [More information on Docker-compose]
-(https://docs.docker.com/compose/)
+- [More information on Docker-compose](https://docs.docker.com/compose/)
     

@@ -23,7 +23,7 @@ free to use or evaluate.
 
 ![Sublime Text Icon](https://logo.clearbit.com/sublimetext.com)
 
-Sublime Text is a very popular editor that has been around <a href='https://www.sublimetext.com/blog/articles/one-point-oh' target='_blank' rel='nofollow'>since 2008</a>. There are many options and <a href='https://packagecontrol.io/' target='_blank' rel='nofollow'>extensions</a> available, and a lot of <a href='http://stackoverflow.com/search?q=sublime+text' target='_blank' rel='nofollow'>help available</a> online to help <a href='http://www.websightdesigns.com/wiki/Setting_up_Sublime_Text_3' target='_blank' rel='nofollow'>set it up</a>. (The license for continued use costs $70\. However, Sublime Text is free to download and evaluate, with a nag-screen pop-up.)
+Sublime Text is a very popular editor that has been around <a href='https://www.sublimetext.com/blog/articles/one-point-oh' target='_blank' rel='nofollow'>since 2008</a>. There are many options and <a href='https://packagecontrol.io/' target='_blank' rel='nofollow'>extensions</a> available, and a lot of <a href='http://stackoverflow.com/search?q=sublime+text' target='_blank' rel='nofollow'>help available</a> online to help <a href='http://www.websightdesigns.com/wiki/Setting_up_Sublime_Text_3' target='_blank' rel='nofollow'>set it up</a>. (The license for continued use costs $80(personal use)\. However, Sublime Text is free to download and evaluate, with a nag-screen pop-up.)
 
 <a href='https://www.sublimetext.com/' target='_blank' rel='nofollow'>sublimetext.com</a>
 
@@ -68,4 +68,12 @@ Visual Studio Code (a.k.a vsc or vscode) is a very popular, open source editor, 
 Notepad++ is a free, open source code editor, that runs in the Microsoft Windows Environment. It was developed in 2003, by Dan Ho. It is written in <a href='www.cplusplus.com' target='_blank' rel='nofollow'>C++</a> (the name comes from that). Notepad++ supports tabbed editing, wich allows working with multiple open files in a single window, and also can be use as a plain text editor.
 
 <a href='https://notepad-plus-plus.org' target='_blank' rel='nofollow'>notepad-plus-plus.org</a>
+
+### VIM
+
+![VIM Icon](https://www.vim.org/images/vim_header.gif)
+
+VIM is an advanced text editor open source tool which is also considered to be an IDE in its way. This tool allows managing your text editing activities with vim editors and UNIX System which can be used on-premise or online. It is written in C. Vim is a highly configurable text editor built to enable efficient text editing. It is an improved version of the vi editor distributed with most UNIX systems.
+
+<a href='https://www.vim.org/' target='_blank' rel='nofollow'>vim.org</a>
 
