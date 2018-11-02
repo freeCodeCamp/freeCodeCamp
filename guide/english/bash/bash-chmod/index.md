@@ -15,9 +15,9 @@ chmod [permission] [file_names]
 ```
 permission can be r+w or r+w+x ...etc
 
-* r = read (lire)
-* w = write (écrire)
-* x = execute (executer)
+* r = read
+* w = write
+* x = execute
 
 ### More Information:
 * [Wikipedia](https://en.wikipedia.org/wiki/Chmod)
