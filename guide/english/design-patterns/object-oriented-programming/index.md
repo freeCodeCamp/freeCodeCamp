@@ -17,6 +17,8 @@ What makes OO programming powerful is its ability to do the following:
 * Encapsulation
 * Abstraction
 
+These are collectively known as the "four pillars" of OOP.
+
 In procedural programming, we simply create variables and change them when required. However in OO programming, we can literally simulate real world objects. Encapsulation is achieved by creating a specific class for an entity, for example dog. Objects of this class are then created, which are nothing but instances of the class. Each object has its own attribute values.
 
 Another extremely useful concept is that of inheritance. The idea is that a class can inherit attributes and behaviour from a base class. For example, while creating a game, we have a player and enemy. We can create a base class called person, and give it attributes like name, age, gender, etc. Person's behaviour can be walk and jump. A player and enemy can then inherit these "qualities" from person, and can have added qualities like kill, score, eat, etc.

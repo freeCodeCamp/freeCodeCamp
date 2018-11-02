@@ -73,7 +73,7 @@ If you're interested in improving these coding challenges, here's [how to work o
 
 ### Translate guide articles and coding challenges
 
-You can help us to translate our Guide articles and Coding challenges into a language that you speak. Currently we have translated versions in:
+You can help us translate our Guide articles and Coding challenges for a language that you speak. Currently, we have translated versions in:
 
 - [Chinese (中文)](https://github.com/freeCodeCamp/freeCodeCamp/tree/master/curriculum/challenges/chinese)
 - [Russian (русский)](https://github.com/freeCodeCamp/freeCodeCamp/tree/master/curriculum/challenges/russian)

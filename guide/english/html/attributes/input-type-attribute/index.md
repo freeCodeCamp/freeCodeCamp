@@ -54,9 +54,9 @@ Only one option can be selected by the user. The group of radio buttons needs to
 A user can select zero or more options from the group of checkboxes. You can use `checked` property here too for one or more options.
 ```html
     <form>
-      <label><input type="checkbox" name="lang" value="english">english</label>
-      <label><input type="checkbox" name="lang" value="spanish">spanish</label>
-      <label><input type="checkbox" name="lang" value="french">french</label>
+      <label><input type="checkbox" name="lang" value="english">English</label>
+      <label><input type="checkbox" name="lang" value="spanish">Spanish</label>
+      <label><input type="checkbox" name="lang" value="french">French</label>
     </form>
 ```
 ### button
