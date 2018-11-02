@@ -17,13 +17,13 @@ import java.util.*;
  public class Dijkstra { 
     class Graph { 
     LinkedList<Pair<Integer>> adj[]; 
-    int n; // Numero de vertices 
+    int n; // Numero de vértices 
     Graph(int n) { 
         this.n = n; 
         adj = new LinkedList[n]; 
         for(int i = 0;i<n;i++) adj[i] = new LinkedList<>(); 
     } 
-    // Adiciona um vertice dirigido entre a e b com custo igual ao peso
+    // Adiciona um vértices dirigido entre a e b com custo igual ao peso
     public void addEdgeDirected(int a, int b, int cost) { 
         adj[a].add(new Pair(b, cost)); 
     } 
@@ -48,9 +48,9 @@ import java.util.*;
     } 
     } 
  
-    // Calcula o caminho mais curto para cada vertice apartir da fonte e retorna a distancia
+    // Calcula o caminho mais curto para cada vértice apartir da fonte e retorna a distância
     public int[] dijkstra(Graph g, int src) { 
-    int distance[] = new int[gn]; // Menor distancia de cada vertice da fonte
+    int distance[] = new int[gn]; // Menor distância de cada vértice da fonte
     boolean visited[] = new boolean[gn]; // vertex is visited or not 
     Arrays.fill(distance, Integer.MAX_VALUE); 
     Arrays.fill(visited, false); 
@@ -58,17 +58,17 @@ import java.util.*;
         pq.add(new Pair<Integer>(src, 0)); 
     distance[src] = 0; 
     while(!pq.isEmpty()) { 
-        Pair<Integer> x = pq.remove(); // Retira o vertice com menor distancia á fonte
+        Pair<Integer> x = pq.remove(); // Retira o vértice com menor distância à fonte
         int u = x.first; 
         visited[u] = true; 
         Iterator<Pair<Integer>> iter = g.adj[u].listIterator(); 
-        // Itera sobre os visinhos de u e atualiza as suas distancias
+        // Itera sobre os visinhos de u e atualiza as suas distâncias
         while(iter.hasNext()) { 
         Pair<Integer> y = iter.next(); 
         int v = y.first; 
         int weight = y.second; 
-        // Verifica se vertice v não foi visitado
-        // Se o novo caminho u oferece menor custo, actualiza o vector de distancias e adiciona a pq
+        // Verifica se vértice v não foi visitado
+        // Se o novo caminho u oferece menor custo, actualiza o vetor de distâncias e adiciona a pq
         if(!visited[v] && distance[u]+weight<distance[v]) { 
             distance[v] = distance[u]+weight; 
             pq.add(new Pair(v, distance[v])); 
