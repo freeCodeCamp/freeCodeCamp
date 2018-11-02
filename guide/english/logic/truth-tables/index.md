@@ -107,7 +107,7 @@ Here is the truth table for the OR operator
 | F  | F  | F  |
 | F  | T  | T  |
 | T  | F  | T  |
-| T  | T  | F  |
+| T  | T  | T  |
 
 Just like above the OR operator operates on two variables, notice that the only time the OR operator evaluates to True is when `x` & `y` negate eachother.
 
