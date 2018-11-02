@@ -6,7 +6,7 @@ The commands listed here are basic, and will help you get started quickly. But t
 1. `echo` This takes the text you give it and sends it somewhere—back to the screen, to a file, or to another command. By default it echoes back to the screen, unless used with redirection `>` 
 Example: `echo "hello!"`
 Example 2: `echo "Hello world" > hello.txt`
-2. `cat` To display the contents of a text file, just type `cat myfile`.
+2. `cat` To display the contents of a text file, just type `cat myfile`. This command can display multiple files one after another by concatenating them into one string, hence the name. Just type `cat myfile1 myfile2`.
 3. `find` It does what it says, and it’s good at it. Use it to locate files by path, size, date, owner and a bunch of other useful filters. Example: `find . -type f -mtime -1h # List files in this directory modified in the past hour`.
 4. `date` Just type date when you want to know what time it is. Example: `date "+It's %l:%m%p on %A"`. Use it in a script to name files according to the current date.
 5. `ls` What's in this directory? Combine `ls` with some useful flags to display and sort directory contents by date and size. It also gives you lots of options for formatting the output.
@@ -16,7 +16,6 @@ Example 2: `echo "Hello world" > hello.txt`
 9. `grep` To find lines of text that contain a certain string, use grep. Example: `grep 'root' /etc/passwd # root:x:0:0:root:/root:/bin/bash`
 10. `sed` Use sed to find and change a substring in a piece of text. Example: `echo "this, that, and the other" | sed 's/that/those/' # "this, those, and the other"`
 11. `shutdown` use shut down the system and turn off the power. Example: `shutdown -h now`shuts down system immediately. `shutdown -h +5` shuts down system after five minutes. You can also reboot the system immediately by issuing the command `shutdown -r now`.
-
 
 Use these commands in scripts and at the command line. They're all very powerful commands, and Linux's man page has a lot more information about each one.
 
