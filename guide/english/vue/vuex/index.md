@@ -1,3 +1,7 @@
+---
+title: Vuex
+---
+
 ## Introduction
 Vuex is a state management pattern and a library for Vue.js apps. It allows the developer to store all data for the app in one location. And not just store - Vuex provides ways to get and modify the data. This is especially useful in larger applications with many components where some components are nested: with Vuex each component has an access to the data store.
 Vuex was inspired by Redux, Flux and Elm architecture, if you happen to know either of them, you might see some similarities in the concept.
