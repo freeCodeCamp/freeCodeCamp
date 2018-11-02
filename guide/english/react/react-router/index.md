@@ -1,9 +1,10 @@
 ---
 title: React Router
 ---
+
 # React Router for beginners
 
-# Installation
+## Installation
 React Router has been broken into three packages: `react-router`, `react-router-dom`, and `react-router-native`.
 
 You should almost never have to install react-router directly. That package provides the core routing components and functions for React Router applications. The other two provide environment specific (browser and react-native) components, but they both also re-export all of react-router's exports.
@@ -12,14 +13,14 @@ We are building a website (something that will be run in browsers), so we will i
 
 `npm install --save react-router-dom`
 
-# The Router
+## The Router
 When starting a new project, you need to determine which type of router to use. For browser based projects, there are <BrowserRouter> and <HashRouter> components. The `<BrowserRouter>` should be used when you have a server that will handle dynamic requests (knows how to respond to any possible URI), while the <HashRouter> should be used for static websites (where the server can only respond to requests for files that it knows about).
 
 Usually it is preferable to use a `<BrowserRouter>`, but if your website will be hosted on a server that only serves static files, then the `<HashRouter>` is a good solution.
 
 For our project, we will assume that the website will be backed by a dynamic server, so our router component of choice is the `<BrowserRouter>`.
 
-# Import Statement
+## Import Statement
 
 ```javascript
 
@@ -45,7 +46,7 @@ const Nav = () => (
   </div>
 )
 ```
-# React Router with redux
+## React Router with redux
 
 The main thing that many developers face is how to integrate react router with redux to pass down both the store as well as the props from the browser router to enhance the functionality of the component.
 
@@ -62,5 +63,5 @@ A basic example is as follows:
 )
 ```
 
-### For more info:
-[Redux-with-reactRouter](https://redux.js.org/advanced/usagewithreactrouter)
+### Resources
+* [Redux-with-react Router](https://redux.js.org/advanced/usagewithreactrouter)
