@@ -54,8 +54,11 @@ Action handlers receive a context object:
 ```javascript
 actions: {
     myAction (context) {
-      context.commit('MY_MUTATION')
+      context.commit('ADD_MOVIE')
     }
   }
 ```
 Actions can be called from any component using `dispatch` method.
+
+### Modules
+When you have a really big app modules come as handy way of organizing your code. You can divide your store into modules and each module can contain state, getters, mutations, actions and even nested modules. By default getters, mutations and actions in modules are global, but you can make them namespaced.
