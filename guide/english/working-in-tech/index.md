@@ -53,3 +53,5 @@ To see the full list, visit: https://talkpython.fm/episodes/show/130/10-books-py
 [10 Books Python Developers should be reading - talkpython.fm](https://talkpython.fm/episodes/show/130/10-books-python-developers-should-be-reading)
 
 [Programming Throwdown - Good overview of multiple languages and concepts](https://www.programmingthrowdown.com/)
+
+[Shop Talk: A Web Design and Development Podcast](https://shoptalkshow.com/)
