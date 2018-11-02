@@ -7,7 +7,7 @@ videoUrl: 'https://scrimba.com/c/cRkpDhB'
 
 ## Description
 <section id='description'>
-We just proved that browsers read CSS from top to bottom. That means that, in the event of a conflict, the browser will use whichever CSS declaration came last.
+We just proved that browsers read CSS from top to bottom in order of their declaration. That means that, in the event of a conflict, the browser will use whichever CSS declaration came last. Notice that if we even had put <code>blue-text</code> before <code>pink-text</code> in our <code>h1</code> element's classes, it would still look at the declaration order and not the order of their use!
 But we're not done yet. There are other ways that you can override CSS. Do you remember id attributes?
 Let's override your <code>pink-text</code> and <code>blue-text</code> classes, and make your <code>h1</code> element orange, by giving the <code>h1</code> element an id and then styling that id.
 </section>
@@ -28,19 +28,19 @@ Note: It doesn't matter whether you declare this CSS above or below pink-text cl
 ```yml
 tests:
   - text: Your <code>h1</code> element should have the class <code>pink-text</code>.
-    testString: 'assert($("h1").hasClass("pink-text"), "Your <code>h1</code> element should have the class <code>pink-text</code>.");'
+    testString: assert($("h1").hasClass("pink-text"), 'Your <code>h1</code> element should have the class <code>pink-text</code>.');
   - text: Your <code>h1</code> element should have the class <code>blue-text</code>.
-    testString: 'assert($("h1").hasClass("blue-text"), "Your <code>h1</code> element should have the class <code>blue-text</code>.");'
+    testString: assert($("h1").hasClass("blue-text"), 'Your <code>h1</code> element should have the class <code>blue-text</code>.');
   - text: Give your <code>h1</code> element the id of <code>orange-text</code>.
-    testString: 'assert($("h1").attr("id") === "orange-text", "Give your <code>h1</code> element the id of <code>orange-text</code>.");'
+    testString: assert($("h1").attr("id") === "orange-text", 'Give your <code>h1</code> element the id of <code>orange-text</code>.');
   - text: There should be only one <code>h1</code> element.
-    testString: 'assert(($("h1").length === 1), "There should be only one <code>h1</code> element.");'
+    testString: assert(($("h1").length === 1), 'There should be only one <code>h1</code> element.');
   - text: Create a CSS declaration for your <code>orange-text</code> id
-    testString: 'assert(code.match(/#orange-text\s*{/gi), "Create a CSS declaration for your <code>orange-text</code> id");'
+    testString: assert(code.match(/#orange-text\s*{/gi), 'Create a CSS declaration for your <code>orange-text</code> id');
   - text: Do not give your <code>h1</code> any <code>style</code> attributes.
-    testString: 'assert(!code.match(/<h1.*style.*>/gi), "Do not give your <code>h1</code> any <code>style</code> attributes.");'
+    testString: assert(!code.match(/<h1.*style.*>/gi), 'Do not give your <code>h1</code> any <code>style</code> attributes.');
   - text: Your <code>h1</code> element should be orange.
-    testString: 'assert($("h1").css("color") === "rgb(255, 165, 0)", "Your <code>h1</code> element should be orange.");'
+    testString: assert($("h1").css("color") === "rgb(255, 165, 0)", 'Your <code>h1</code> element should be orange.');
 
 ```
 
