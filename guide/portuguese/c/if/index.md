@@ -35,7 +35,7 @@ Observe que o `else` e `else if` seções não forem necessárias, enquanto `if`
  
  int main () { 
  
-   // Variavel local
+   // Definicao da variavel local
    int a = 10; 
  
    // Verifica se a condicao é verdadeira
