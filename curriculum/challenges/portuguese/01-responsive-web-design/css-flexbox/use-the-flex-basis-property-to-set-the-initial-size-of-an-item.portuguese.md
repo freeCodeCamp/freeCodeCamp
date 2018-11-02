@@ -7,10 +7,11 @@ localeTitle: Use a propriedade de base flexível para definir o tamanho inicial 
 ---
 
 ## Description
-<section id="description"> A propriedade de <code>flex-basis</code> especifica o tamanho inicial do item antes que o CSS faça ajustes com <code>flex-shrink</code> ou <code>flex-grow</code> . As unidades usadas pela propriedade <code>flex-basis</code> são as mesmas que outras propriedades de tamanho ( <code>px</code> , <code>em</code> , <code>%</code> , etc.). O valor <code>auto</code> dimensiona itens com base no conteúdo. </section>
+<section id="description"> A propriedade <code>flex-basis</code> especifica o tamanho inicial do item antes que o CSS faça ajustes com <code>flex-shrink</code> ou <code>flex-grow</code> .
+As unidades usadas pela propriedade <code>flex-basis</code> são as mesmas que outras propriedades de tamanho ( <code>px</code> , <code>em</code> , <code>%</code> , etc.). O valor <code>auto</code> dimensiona itens com base no conteúdo. </section>
 
 ## Instructions
-<section id="instructions"> Defina o tamanho inicial das caixas usando <code>flex-basis</code> . Adicione a propriedade <code>flex-basis</code> CSS a <code>#box-1</code> e <code>#box-2</code> . Dê <code>#box-1</code> um valor de <code>10em</code> e <code>#box-2</code> um valor de <code>20em</code> . </section>
+<section id="instructions"> Defina o tamanho inicial das caixas usando <code>flex-basis</code> . Adicione a propriedade CSS <code>flex-basis</code> a ambos <code>#box-1</code> e <code>#box-2</code> . Dê <code>#box-1</code> um valor de <code>10em</code> e <code>#box-2</code> um valor de <code>20em</code> . </section>
 
 ## Tests
 <section id='tests'>

@@ -7,7 +7,7 @@ localeTitle: قم بإنشاء قائمة غير مرتبة بالعدادات
 ---
 
 ## Description
-<section id="description"> يحتوي HTML على عنصر خاص لإنشاء <code>unordered lists</code> أو قوائم أنماط النقطة. تبدأ القوائم غير مرتبة باستخدام عنصر <code>&lt;ul&gt;</code> الافتتاحي ، متبوعًا بأي عدد من عناصر <code>&lt;li&gt;</code> . وأخيرًا ، تغلق القوائم غير المرتبة بـ <code>&lt;/ul&gt;</code> على سبيل المثال: <blockquote style=";text-align:right;direction:rtl"> &lt;UL&gt; <br> &lt;li&gt; والحليب &lt;/ لى&gt; <br> &lt;li&gt; والجبن &lt;/ لى&gt; <br> &lt;/ UL&gt; </blockquote> إنشاء قائمة نمط نقطي من &quot;الحليب&quot; و &quot;الجبن&quot;. </section>
+<section id="description"> يحتوي HTML على عنصر خاص لإنشاء <code>unordered lists</code> أو  قوائم غير مرتبة. تبدأ القوائم غير مرتبة باستخدام عنصر <code>&lt;ul&gt;</code> الافتتاحي ، متبوعًا بأي عدد من عناصر <code>&lt;li&gt;</code> . وأخيرًا ، تغلق القوائم غير المرتبة بـ <code>&lt;/ul&gt;</code> على سبيل المثال: <blockquote style=";text-align:right;direction:rtl"> &lt;UL&gt; <br> &lt;li&gt; الحليب &lt;/ لى&gt; <br> &lt;li&gt; الجبن &lt;/ لى&gt; <br> &lt;/ UL&gt; </blockquote> إنشاء قائمة غير مرتبة من &quot;الحليب&quot; و &quot;الجبن&quot;. </section>
 
 ## Instructions
 <section id="instructions"> أزل آخر عنصرين من <code>p</code> وأنشئ قائمة غير مرتبة من ثلاثة أشياء تحبها القطط في أسفل الصفحة. </section>

@@ -7,6 +7,7 @@
         <td><a href="/docs/arabic/README.md"> عربى </a></td>
         <td><a href="/docs/spanish/README.md"> Español </a></td>
         <td><a href="/docs/portuguese/README.md"> Português </a></td>
+        <td><a href="/docs/german/README.md"> Deutsch </a></td>
     </tr>
 </table>
 
@@ -33,7 +34,7 @@ Este directorio contiene toda la documentación sobre cómo contribuir a freeCod
 1. Guía de estilo sobre cómo crear Guías.
 2. Guía de estilo sobre cómo crear Desafíos de programación.
 
-## Referencía rápida de comandos para trabajar en local
+## Referencia rápida de comandos para trabajar en local
 
 Una referencia rápida de los comandos que necesitarás cuando trabajes en local.
 
