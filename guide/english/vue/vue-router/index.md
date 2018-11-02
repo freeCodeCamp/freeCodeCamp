@@ -1,3 +1,7 @@
+---
+title: Vue-Router
+---
+
 ## Introduction
 Vue router is the official router for Vue.js. With it you can easily create your Single Page Apps.
 
