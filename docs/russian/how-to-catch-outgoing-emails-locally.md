@@ -1,9 +1,9 @@
 <table>
     <tr>
-        <td> Read these guidelines in </td>
+        <td> Прочтите эти рекомендации на </td>
         <td><a href='/CONTRIBUTING.md'> English </a></td>
         <td><a href='/docs/chinese/CONTRIBUTING.md'> 中文 </a></td>
-        <td><a href='/docs/russian/CONTRIBUTING.md'> русский </a></td>
+        <td><a href='/docs/russian/CONTRIBUTING.md'> Русском </a></td>
         <td><a href='/docs/arabic/CONTRIBUTING.md'> عربى </a></td>
         <td><a href='/docs/spanish/CONTRIBUTING.md'> Español </a></td>
         <td><a href='/docs/portuguese/CONTRIBUTING.md'> Português </a></td>
