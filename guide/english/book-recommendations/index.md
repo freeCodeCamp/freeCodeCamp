@@ -64,6 +64,12 @@ title: Books to Read for Programmers
 - [Amazon Smile](https://smile.amazon.com/Thinking-C-Bruce-Eckel/dp/0139177094)
 - ISBN-13: 978-0139177095
 
+## C++
+
+*Thinking in C++ by Bruce Eckel*
+- [Amazon Smile](https://smile.amazon.com/Thinking-C-Bruce-Eckel/dp/0139177094)
+- ISBN-13: 978-0139177095
+
 ## C#
 
 *C# 6.0 in a Nutshell: The Definitive Reference 6th Edition* by Joseph Albahari  (Author), Ben Albahari (Author)
@@ -115,11 +121,6 @@ title: Books to Read for Programmers
 *Oracle® Database Notes for Professionals*
 - https://books.goalkicker.com/OracleDatabaseBook/
 
-## Deep Learning
-
-*Deep Learning by Ian Goodfellow, Yoshua Bengio, Aaron Courville*
-- [Amazon Smile](https://smile.amazon.com/Deep-Learning-Adaptive-Computation-Machine/dp/0262035618)
-- ISBN: 978-0262035613
 
 ## DevOps
 
@@ -222,21 +223,29 @@ title: Books to Read for Programmers
 
 ## Other
 
+*Blue Team Field Manual (BTFM)
+- [Amazon Smile](https://smile.amazon.com/Blue-Team-Field-Manual-BTFM-ebook/dp/B077WF4WYV)
+- ISBN: 154101636X
+
 *Code: The Hidden Language of Computer Hardware and Software (Developer Best Practices) *
 - [Amazon Smile](https://smile.amazon.com/Code-Language-Computer-Hardware-Software/dp/0735611319)
 - ISBN-13: 978-0735611313
-
-*Computer Networking: A Top-Down Approach (7th Edition) by Kurose and Ross*
-- [Amazon Smile](https://smile.amazon.com/Computer-Networking-Top-Down-Approach-7th/dp/0133594149)
-- ISBN-13: 978-0133594140 
 
 *Competitive Programming 3: The New Lower Bound of Programming Contests*
 - [Amazon Smile](https://smile.amazon.com/Competitive-Programming-3rd-Steven-Halim/dp/B00FG8MNN8)
 - ISBN-13: 978-5800083125
 
+*Computer Networking: A Top-Down Approach (7th Edition) by Kurose and Ross*
+- [Amazon Smile](https://smile.amazon.com/Computer-Networking-Top-Down-Approach-7th/dp/0133594149)
+- ISBN-13: 978-0133594140 
+
 *Data Structures And Algorithms Made Easy*
 - [Amazon Smile](https://smile.amazon.com/Data-Structures-Algorithms-Made-Easy/dp/819324527X)
 - ISBN-13: 978-8193245279
+
+*Deep Learning by Ian Goodfellow, Yoshua Bengio, Aaron Courville*
+- [Amazon](https://smile.amazon.com/Deep-Learning-Adaptive-Computation-Machine/dp/0262035618)
+- ISBN: 978-0262035613
 
 *Dynamic Programming for Coding Interviews: A Bottom-Up approach to problem solving*
 - [Amazon Smile](https://smile.amazon.com/Dynamic-Programming-Coding-Interviews-Bottom-Up-ebook/dp/B06XZ61CMP)
@@ -254,16 +263,9 @@ title: Books to Read for Programmers
 - [Amazon Smile](https://www.amazon.com/dp/B075CX7T6G)
 - ISBN: 1976112524
 
-*Deep Learning by Ian Goodfellow, Yoshua Bengio, Aaron Courville*
-- [Amazon](https://smile.amazon.com/Deep-Learning-Adaptive-Computation-Machine/dp/0262035618)
-- ISBN: 978-0262035613
-
 *Operating System Concepts*
 - [Amazon Smile](https://smile.amazon.com/Operating-System-Concepts-Abraham-Silberschatz/dp/1118063333)
 - ISBN-13: 978-1118063330
-
-*Oracle® Database Notes for Professionals*
-https://books.goalkicker.com/OracleDatabaseBook/
 
 *Mastering Linux Shell Scripting by Andrew Mallett*
 - [Amazon Smile](https://smile.amazon.com/Mastering-Linux-Scripting-Andrew-Mallett/dp/1784396974/)
@@ -273,12 +275,16 @@ https://books.goalkicker.com/OracleDatabaseBook/
 - [Amazon Smile](https://smile.amazon.com/Pro-PHP-Programming-Peter-MacIntyre-ebook/dp/B005PZ09AG)
 - ISBN-13: 978-1430235606
 
+*Rtfm: Red Team Field Manual
+- [Amazon Smile](https://smile.amazon.com/Rtfm-Red-Team-Field-Manual/dp/1494295504)
+- ISBN-13: 978-1494295509
+
 *The Innovator's Delimma*
-- [Amazon Smile](https://smile.amazon.com/Innovators-Dilemma-Technologies-Management-Innovation-ebook/dp/B00E257S86)
+- [Amazon] (https://www.amazon.com/Innovators-Dilemma-Technologies-Management-Innovation-ebook/dp/B00E257S86_
 - ASIN: B00E257S86
 
 *The Mythical Man-Month: Essays on Software Engineering*
-- [Amazon Smile](https://smile.amazon.com/Mythical-Man-Month-Software-Engineering-Anniversary/dp/0201835959)
+- [Amazon Smile](https://www.amazon.com/Mythical-Man-Month-Software-Engineering-Anniversary/dp/0201835959)
 - ISBN-13: 978-0201835953
 
 ## Python
@@ -313,6 +319,13 @@ https://books.goalkicker.com/OracleDatabaseBook/
 *Practical Object-Oriented Design in Ruby*
 - [Amazon Smile](https://smile.amazon.com/Practical-Object-Oriented-Design-Ruby-Addison-Wesley/dp/0321721330)
 - ISBN-13: 978-0321721334
+
+
+## Soft Skills
+
+*Soft Skills: The software developer's life manual*
+- [Amazon Smile](https://smile.amazon.com/Soft-Skills-software-developers-manual/dp/1617292397?pldnSite=1)
+- ISBN-13: 9781617292392 
 
 
 This list was compiled from multiple suggestion threads on Reddit and Stackoverflow. 
