@@ -114,7 +114,7 @@ Start by installing these prerequisite software.
 | Prerequisite                                | Version | Notes |
 | ------------------------------------------- | ------- | ----- |
 | [MongoDB Community Server](https://docs.mongodb.com/manual/administration/install-community/) | `3.6`   | [Release Notes](https://docs.mongodb.com/manual/release-notes/), Note: We currently on `3.6`, an [upgrade is planned](https://github.com/freeCodeCamp/freeCodeCamp/issues/18275).
-| [Node.js](http://nodejs.org)                | `8.x`   | [LTS Schedule](https://github.com/nodejs/Release#release-schedule) |
+| [Node.js](http://nodejs.org)                | `8.x`   | [LTS Schedule](https://github.com/nodejs/Release#release-schedule), Note: We currently on `8.x`, an upgrade is planned to 10.x |
 | npm (comes bundled with Node)               | `6.x`   | Does not have LTS releases, we use the version bundled with Node LTS |
 
 **Important:**
@@ -259,9 +259,11 @@ Follow these steps:
     git checkout master
     ```
 
-2. Next, you would want to **sync the lastest changes** from the main repository of freeCodeCamp.
+2. Next, you would want to **sync the lastest changes for `master` branch** from the main repository of freeCodeCamp.
 
-    Its important that you do this as often as possible, to avoid conflicts later:
+    **Note:** If you have any outstanding pull-request that you made from the `master` branch of your fork previously, you will lose them. You should get it merged by a moderator, prior following this. To avoid this, you should always work on a branch.
+
+    Its recommended that you do this as often as possible, to avoid conflicts later:
 
     ```shell
     git fetch upstream
@@ -272,12 +274,6 @@ Follow these steps:
     ```shell
     git reset --hard upstream/master
     ```
-
-    **Important:**
-
-    If you have any outstanding PRs that you made from the `master` branch, you will lose them.
-
-    Get them, merged by a moderator, in such a case. And to avoid this, you should always work on a branch.
 
     Push this branch back to your origin, to have a clean history on your fork on GitHub:
 
@@ -444,10 +440,6 @@ Follow these steps:
 5. Indicate if you have tested on a local copy of the site or not.
 
     This is very important when you are making changes that are not copy editing markdown files. For example, changes to CSS or JavaScript code, etc.
-
-## Get your PR accepted
-
-
 
 ## Getting Help
 
