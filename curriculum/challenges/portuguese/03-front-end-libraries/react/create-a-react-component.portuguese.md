@@ -4,7 +4,7 @@ title: Create a React Component
 challengeType: 6
 isRequired: false
 videoUrl: ''
-localeTitle: Criar um componente de reação
+localeTitle: Criar um componente React
 ---
 
 ## Description
@@ -40,11 +40,10 @@ class MyComponent extends React.Component {
     super(props);
   }
   render() {
-    // change code below this line
+    // Mude o código depois dessa linha
 
 
-
-    // change code above this line
+    // Mude o código acima dessa linha
   }
 };
 
