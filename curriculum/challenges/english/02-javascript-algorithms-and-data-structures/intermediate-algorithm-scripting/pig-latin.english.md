@@ -25,19 +25,19 @@ Remember to use <a href='http://forum.freecodecamp.org/t/how-to-get-help-when-yo
 ```yml
 tests:
   - text: <code>translatePigLatin("california")</code> should return "aliforniacay".
-    testString: 'assert.deepEqual(translatePigLatin("california"), "aliforniacay", "<code>translatePigLatin("california")</code> should return "aliforniacay".");'
+    testString: assert.deepEqual(translatePigLatin("california"), "aliforniacay", '<code>translatePigLatin("california")</code> should return "aliforniacay".');
   - text: <code>translatePigLatin("paragraphs")</code> should return "aragraphspay".
-    testString: 'assert.deepEqual(translatePigLatin("paragraphs"), "aragraphspay", "<code>translatePigLatin("paragraphs")</code> should return "aragraphspay".");'
+    testString: assert.deepEqual(translatePigLatin("paragraphs"), "aragraphspay", '<code>translatePigLatin("paragraphs")</code> should return "aragraphspay".');
   - text: <code>translatePigLatin("glove")</code> should return "oveglay".
-    testString: 'assert.deepEqual(translatePigLatin("glove"), "oveglay", "<code>translatePigLatin("glove")</code> should return "oveglay".");'
+    testString: assert.deepEqual(translatePigLatin("glove"), "oveglay", '<code>translatePigLatin("glove")</code> should return "oveglay".');
   - text: <code>translatePigLatin("algorithm")</code> should return "algorithmway".
-    testString: 'assert.deepEqual(translatePigLatin("algorithm"), "algorithmway", "<code>translatePigLatin("algorithm")</code> should return "algorithmway".");'
+    testString: assert.deepEqual(translatePigLatin("algorithm"), "algorithmway", '<code>translatePigLatin("algorithm")</code> should return "algorithmway".');
   - text: <code>translatePigLatin("eight")</code> should return "eightway".
-    testString: 'assert.deepEqual(translatePigLatin("eight"), "eightway", "<code>translatePigLatin("eight")</code> should return "eightway".");'
+    testString: assert.deepEqual(translatePigLatin("eight"), "eightway", '<code>translatePigLatin("eight")</code> should return "eightway".');
   - text: Should handle words where the first vowel comes in the end of the word.
-    testString: 'assert.deepEqual(translatePigLatin("schwartz"), "artzschway", "Should handle words where the first vowel comes in the end of the word.");'
+    testString: assert.deepEqual(translatePigLatin("schwartz"), "artzschway", 'Should handle words where the first vowel comes in the end of the word.');
   - text: Should handle words without vowels.
-    testString: 'assert.deepEqual(translatePigLatin("rhythm"), "rhythmay", "Should handle words without vowels.");'
+    testString: assert.deepEqual(translatePigLatin("rhythm"), "rhythmay", 'Should handle words without vowels.');
 
 ```
 

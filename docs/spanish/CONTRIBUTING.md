@@ -15,7 +15,7 @@
 
 Hola 👋!
 
-freeCodeCamp.org es posible gracias a miles de voluntarios amables como tú. Nos emocionados por tus contribuciones y nos complace darte la bienvenida a bordo.
+freeCodeCamp.org es posible gracias a miles de voluntarios amables como tú. Nos emocionamos por tus contribuciones y nos complace darte la bienvenida a bordo.
 
 Cumplimos estrictamente nuestro ["Código de conducta"](https://www.freecodecamp.org/code-of-conduct). Tómate un momento para leerlo. No es muy largo.
 
@@ -48,7 +48,7 @@ Puedes ayudarnos con:
 
 - [🌐 Traducir artículos de guía y desafíos de codificación.](#traducir-artículos-de-guía-y-desafíos-de-codificación)
 
-- [🛠 Ayúdenos a corregir errores en la plataforma de aprendizaje de freeCodeCamp.org.](#ayúdenos-a-corregir-errores-en-la-plataforma-de-aprendizaje-de-freeCodeCamp.org)
+- [🛠 Ayúdanos a corregir errores en la plataforma de aprendizaje de freeCodeCamp.org.](#ayúdenos-a-corregir-errores-en-la-plataforma-de-aprendizaje-de-freeCodeCamp.org)
 
 ### Investiga, escribe y actualiza nuestros artículos de guía
 
@@ -62,7 +62,7 @@ Puedes encontrar un [artículo de ejemplo sobre elementos HTML aquí](./client/s
 
 Agradecemos tu ayuda al escribir estos artículos. No tienes que ser un experto en un tema para escribir sobre él; toda esta Guía es de código abierto, por lo que incluso si cometes un error, otro colaborador lo corregirá.
 
-Para obtener ayuda, busca un `esbozo de artículo` en nuestro [sitio web de la Guía](https://www.freecodecamp.org/guide), escribe el artículo y luego abre una solicitud para reemplazar el esbozo con tu artículo. Una solicitud o [pull request](https://help.github.com/articles/about-pull-requests/) es la forma en que sugerirán los cambios. Permite a otros conocer tus cambios, revisarlos y adóptalos.
+Para obtener ayuda, busca un `esbozo de artículo` en nuestro [sitio web de la Guía](https://www.freecodecamp.org/guide), escribe el artículo y luego abre una solicitud para reemplazar el esbozo con tu artículo. Una solicitud o [pull request](https://help.github.com/articles/about-pull-requests/) es la forma en que sugerirán los cambios. Permite a otros conocer tus cambios, revisarlos y adóptarlos.
 
 Si no puedes encontrar un esbozo sobre el tema que deseas escribir, puedes abrir un PR (pull request) que crea el esbozo e incluye tu borrador del artículo.
 
