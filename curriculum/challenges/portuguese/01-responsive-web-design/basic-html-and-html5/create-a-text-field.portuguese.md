@@ -6,11 +6,11 @@ videoUrl: ''
 localeTitle: Crie um campo de texto
 ---
 
-## Description
-<section id="description"> Agora vamos criar um formulário web. Os elementos de entrada são uma maneira conveniente de obter informações do usuário. Você pode criar uma entrada de texto assim: <code>&lt;input type=&quot;text&quot;&gt;</code> Observe que os elementos de <code>input</code> são de fechamento automático. </section>
+## Descrição
+<section id="description"> Agora vamos criar um campo de formulário web. Os elementos de entrada são uma maneira conveniente de obter informações do usuário. Podemos utilizar esses campos para que os usuários digitem por exemplo seus nomes ou endereços. Você pode criar uma entrada de texto assim: <code>&lt;input type=&quot;text&quot;&gt;</code> Observe que os elementos de <code>input</code> são de fechamento automático. </section>
 
-## Instructions
-<section id="instructions"> Crie um elemento de <code>input</code> do tipo <code>text</code> abaixo das suas listas. </section>
+## Instruções
+<section id="instructions"> Crie um elemento de <code>input</code> do tipo <code>text</code> abaixo de cada uma das suas listas. </section>
 
 ## Tests
 <section id='tests'>
@@ -24,7 +24,7 @@ tests:
 
 </section>
 
-## Challenge Seed
+## Desafio semente
 <section id='challengeSeed'>
 
 <div id='html-seed'>
@@ -60,10 +60,10 @@ tests:
 
 </section>
 
-## Solution
+## Solução
 <section id='solution'>
 
 ```js
-// solution required
+// Solução necessária
 ```
 </section>

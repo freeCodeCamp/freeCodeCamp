@@ -7,7 +7,7 @@ localeTitle: Transforme uma imagem em um link
 ---
 
 ## Description
-<section id="description"> Você pode criar elementos em links aninhando-os em <code>a</code> elemento. Aninhe sua imagem em <code>a</code> elemento. Aqui está um exemplo: <code>&lt;a href=&quot;#&quot;&gt;&lt;img src=&quot;https://bit.ly/fcc-running-cats&quot; alt=&quot;Three kittens running towards the camera.&quot;&gt;&lt;/a&gt;</code> Lembre-se de usar <code>#</code> como seu <code>a</code> elemento <code>href</code> propriedade, a fim de transformá-lo em um link morto. </section>
+<section id="description"> Você pode criar elementos em links aninhando-os em um elemento <code>a</code>. Aninhe sua imagem em um elemento<code>a</code>. Aqui está um exemplo: <code>&lt;a href=&quot;#&quot;&gt;&lt;img src=&quot;https://bit.ly/fcc-running-cats&quot; alt=&quot;Three kittens running towards the camera.&quot;&gt;&lt;/a&gt;</code> Lembre-se de usar <code>#</code> como seu <code>a</code> elemento <code>href</code> propriedade, a fim de transformá-lo em um link morto. </section>
 
 ## Instructions
 <section id="instructions"> Coloque o elemento de imagem existente dentro de um elemento de âncora. Depois de fazer isso, passe o mouse sobre sua imagem com o cursor. O ponteiro normal do cursor deve se tornar o ponteiro de clique do link. A foto agora é um link. </section>
@@ -21,7 +21,7 @@ tests:
     testString: 'assert($("a").children("img").length > 0, "Nest the existing <code>img</code> element within an <code>a</code> element.");'
   - text: 'Sua <code>a</code> elemento deve ser um link morto com um <code>href</code> atributo definido como <code>#</code> .'
     testString: 'assert(new RegExp("#").test($("a").children("img").parent().attr("href")), "Your <code>a</code> element should be a dead link with a <code>href</code> attribute set to <code>#</code>.");'
-  - text: Certifique-se de cada um de seus <code>a</code> elementos tem uma marca de fechamento.
+  - text: Certifique-se de cada um de seus elementos <code>a</code> tem uma marca de fechamento.
     testString: 'assert(code.match(/<\/a>/g) && code.match(/<a/g) && code.match(/<\/a>/g).length === code.match(/<a/g).length, "Make sure each of your <code>a</code> elements has a closing tag.");'
 
 ```
