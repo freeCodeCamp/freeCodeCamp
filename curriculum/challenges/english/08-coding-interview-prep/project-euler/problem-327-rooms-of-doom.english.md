@@ -41,7 +41,7 @@ Find ΣM(C,30) for 3 ≤ C ≤ 40.
 ```yml
 tests:
   - text: <code>euler327()</code> should return 34315549139516.
-    testString: 'assert.strictEqual(euler327(), 34315549139516, "<code>euler327()</code> should return 34315549139516.");'
+    testString: assert.strictEqual(euler327(), 34315549139516, '<code>euler327()</code> should return 34315549139516.');
 
 ```
 
