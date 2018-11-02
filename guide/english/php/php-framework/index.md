@@ -1,4 +1,7 @@
-#8 of the Best PHP Frameworks for Web Development
+---
+title: 8 of the Best PHP Frameworks for Web Development
+---
+
 
 If you’ve ever used frameworks before, then you’ll know that each tool is very unique. With that in mind, we’re going to do our best to provide all the information you’ll need to pick the best PHP framework for you. All of these options are free and open source, so you can try out whichever ones spark your interest. Let’s start from the top!
 
