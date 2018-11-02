@@ -102,6 +102,12 @@ title: Books to Read for Programmers
 - [Amazon Smile](https://smile.amazon.com/Head-First-C-Brain-Friendly-Guide/dp/1449399916/ref=sr_1_2?ie=UTF8&qid=1538665818&sr=8-2&keywords=head+first+c&dpID=51StqzL2dWL&preST=_SX218_BO1,204,203,200_QL40_&dpSrc=srch)
 - ISBN-13: 978-1449399917
 
+## C++
+
+*Thinking in C++ by Bruce Eckel*
+- [Amazon Smile](https://smile.amazon.com/Thinking-C-Bruce-Eckel/dp/0139177094)
+- ISBN-13: 978-0139177095
+
 ## C#
 
 *C# 6.0 in a Nutshell: The Definitive Reference 6th Edition* by Joseph Albahari  (Author), Ben Albahari (Author)
@@ -208,6 +214,52 @@ title: Books to Read for Programmers
 - [Amazon Smile](https://smile.amazon.com/Operating-System-Concepts-Abraham-Silberschatz/dp/1118063333/ref=sr_1_1?s=books&ie=UTF8&qid=1538967825&sr=1-1&keywords=operating+system+concepts+10th+edition&dpID=51Qy2upM%252BaL&preST=_SY291_BO1,204,203,200_QL40_&dpSrc=srch)
 - ISBN-13: 978-1118063330
 
+## Other
+
+*Blue Team Field Manual (BTFM)
+- [Amazon Smile](https://smile.amazon.com/Blue-Team-Field-Manual-BTFM-ebook/dp/B077WF4WYV)
+- ISBN: 154101636X
+
+*Code: The Hidden Language of Computer Hardware and Software (Developer Best Practices) *
+- [Amazon Smile](https://smile.amazon.com/Code-Language-Computer-Hardware-Software/dp/0735611319)
+- ISBN-13: 978-0735611313
+
+*Competitive Programming 3: The New Lower Bound of Programming Contests*
+- [Amazon Smile](https://smile.amazon.com/Competitive-Programming-3rd-Steven-Halim/dp/B00FG8MNN8)
+- ISBN-13: 978-5800083125
+
+*Data Structures And Algorithms Made Easy*
+- [Amazon Smile](https://smile.amazon.com/Data-Structures-Algorithms-Made-Easy/dp/819324527X)
+- ISBN-13: 978-8193245279
+
+*Facts and Fallacies of Software Engineering*
+- [Amazon Smile](https://smile.amazon.com/Facts-Fallacies-Software-Engineering-Robert/dp/0321117425/)
+- ISBN-13: 978-0321117427
+
+*GATE 2019 Computer Science and Information Technology*
+- [Amazon Smile](https://smile.amazon.com/GATE-Computer-Science-Information-Technology/dp/194658178X)
+- ISBN-13: 978-1946581785
+
+*Hacking: Ultimate Hacking Guide: Hacking For Beginners And Tor Browser
+- [Amazon Smile](https://smile.amazon.com/dp/B075CX7T6G)
+- ISBN: 1976112524
+
+*Pro PHP Programming - Peter MacIntyre*
+- [Amazon Smile](https://smile.amazon.com/Pro-PHP-Programming-Peter-MacIntyre-ebook/dp/B005PZ09AG)
+- ISBN-13: 978-1430235606
+
+*Rtfm: Red Team Field Manual
+- [Amazon Smile](https://smile.amazon.com/Rtfm-Red-Team-Field-Manual/dp/1494295504)
+- ISBN-13: 978-1494295509
+
+*The Innovator's Delimma*
+- [Amazon] (https://www.amazon.com/Innovators-Dilemma-Technologies-Management-Innovation-ebook/dp/B00E257S86_
+- ASIN: B00E257S86
+
+*The Mythical Man-Month: Essays on Software Engineering*
+- [Amazon Smile](https://www.amazon.com/Mythical-Man-Month-Software-Engineering-Anniversary/dp/0201835959)
+- ISBN-13: 978-0201835953
+
 ## Python
 
 *Automate the Boring Stuff With Python* by Al Sweigart
@@ -218,6 +270,10 @@ title: Books to Read for Programmers
 - [Amazon Smile](https://smile.amazon.com/Core-Python-Applications-Programming-3rd/dp/0132678209)
 - ISBN-13: 978-0132678209
 
+*Python Crash Course: A Hands-On, Project-Based Introduction to Programming*
+- [Amazon Smile](https://smile.amazon.com/Python-Crash-Course-Hands-Project-Based/dp/1593276036)
+- ISBN-13: 978-1593276034
+
 *Python Tricks: A Buffet of Awesome Python Features by Dan Bader*
 - [Amazon Smile](https://smile.amazon.com/Python-Tricks-Buffet-Awesome-Features-ebook/dp/B0785Q7GSY)
 - ISBN-13: 978-1775093305
@@ -225,10 +281,6 @@ title: Books to Read for Programmers
 *Think Python: How to Think Like a Computer Scientist*
 - [Amazon Smile](https://smile.amazon.com/Think-Python-Like-Computer-Scientist/dp/1491939362)
 - ISBN-13: 978-1491939369
-
-*Python Crash Course: A Hands-On, Project-Based Introduction to Programming*
-- [Amazon Smile](https://smile.amazon.com/Python-Crash-Course-Hands-Project-Based/dp/1593276036)
-- ISBN-13: 978-1593276034
 
 *Violent Python: A Cookbook for Hackers, Forensic Analysts, Penetration Testers and Security Engineers*
 - [Amazon Smile](https://smile.amazon.com/Violent-Python-Cookbook-Penetration-Engineers/dp/1597499579/ref=sr_1_2?ie=UTF8&qid=1538665634&sr=8-2&keywords=violent+python)
@@ -246,35 +298,6 @@ title: Books to Read for Programmers
 - [Amazon Smile](https://smile.amazon.com/Soft-Skills-software-developers-manual/dp/1617292397?pldnSite=1)
 - ISBN-13: 9781617292392 
 
-## Other
-
-*Thinking in C++ by Bruce Eckel*
-- [Amazon Smile](https://smile.amazon.com/Thinking-C-Bruce-Eckel/dp/0139177094)
-- ISBN-13: 978-0139177095
-
-*Competitive Programming 3: The New Lower Bound of Programming Contests*
-- [Amazon Smile](https://smile.amazon.com/Competitive-Programming-3rd-Steven-Halim/dp/B00FG8MNN8)
-- ISBN-13: 978-5800083125
-
-*GATE 2019 Computer Science and Information Technology*
-- [Amazon Smile](https://smile.amazon.com/GATE-Computer-Science-Information-Technology/dp/194658178X)
-- ISBN-13: 978-1946581785
-
-*Facts and Fallacies of Software Engineering*
-- [Amazon Smile](https://smile.amazon.com/Facts-Fallacies-Software-Engineering-Robert/dp/0321117425/)
-- ISBN-13: 978-0321117427
-
-*The Mythical Man-Month: Essays on Software Engineering*
-- [Amazon Smile](https://www.amazon.com/Mythical-Man-Month-Software-Engineering-Anniversary/dp/0201835959)
-- ISBN-13: 978-0201835953
-
-*Pro PHP Programming - Peter MacIntyre*
-- [Amazon Smile](https://smile.amazon.com/Pro-PHP-Programming-Peter-MacIntyre-ebook/dp/B005PZ09AG)
-- ISBN-13: 978-1430235606
-
-*The Innovator's Delimma*
-- [Amazon] (https://www.amazon.com/Innovators-Dilemma-Technologies-Management-Innovation-ebook/dp/B00E257S86_
-- ASIN: B00E257S86
 
 This list was compiled from multiple suggestion threads on Reddit and Stackoverflow. 
 
