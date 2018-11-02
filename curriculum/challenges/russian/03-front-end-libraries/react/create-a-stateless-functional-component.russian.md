@@ -20,11 +20,11 @@ undefined
 
 ```yml
 tests:
-  - text: ''
+  - text: '<code>MyComponent</code> должен возвращать JSX.'
     testString: 'assert((function() { const mockedComponent = Enzyme.mount(React.createElement(MyComponent)); return mockedComponent.length === 1; })(), "<code>MyComponent</code> should return JSX.");'
-  - text: ''
+  - text: '<code>MyComponent</code> должен вернуть элемент <code>div</code>.'
     testString: 'assert((function() { const mockedComponent = Enzyme.mount(React.createElement(MyComponent)); return mockedComponent.children().type() === "div" })(), "<code>MyComponent</code> should return a <code>div</code> element.");'
-  - text: ''
+  - text: 'Элемент <code>div</code> должен содержать строку текста.'
     testString: 'assert((function() { const mockedComponent = Enzyme.mount(React.createElement(MyComponent)); return mockedComponent.find("div").text() !== ""; })(), "The <code>div</code> element should contain a string of text.");'
 
 ```
