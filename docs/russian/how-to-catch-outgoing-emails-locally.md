@@ -30,7 +30,7 @@
 
 ### Установка MailHog на macOS
 
-
+ 
 Как установить MailHog на macOS с помощью [Homebrew](https://brew.sh/):
 
 
