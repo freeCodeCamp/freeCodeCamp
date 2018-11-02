@@ -18,9 +18,9 @@ undefined
 
 ```yml
 tests:
-  - text: ''
+  - text: 'Компонент <code>Frameworks</code> должен присутсовать и отображаться на странице.'
     testString: 'assert(Enzyme.mount(React.createElement(Frameworks)).find("Frameworks").length === 1, "The <code>Frameworks</code> component should exist and render to the page.");'
-  - text: ''
+  - text: '<code>Frameworks</code> должен отображать элемент <code>h1</code>.'
     testString: 'assert(Enzyme.mount(React.createElement(Frameworks)).find("h1").length === 1, "<code>Frameworks</code> should render an <code>h1</code> element.");'
   - text: <code>Frameworks</code> должны отображать элемент <code>ul</code> .
     testString: 'assert(Enzyme.mount(React.createElement(Frameworks)).find("ul").length === 1, "<code>Frameworks</code> should render a <code>ul</code> element.");'
