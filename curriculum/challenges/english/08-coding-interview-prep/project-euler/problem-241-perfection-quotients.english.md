@@ -28,7 +28,7 @@ Find the sum of all positive integers n ≤ 1018 for which p(n) has the form k +
 ```yml
 tests:
   - text: <code>euler241()</code> should return 482316491800641150.
-    testString: 'assert.strictEqual(euler241(), 482316491800641150, "<code>euler241()</code> should return 482316491800641150.");'
+    testString: assert.strictEqual(euler241(), 482316491800641150, '<code>euler241()</code> should return 482316491800641150.');
 
 ```
 

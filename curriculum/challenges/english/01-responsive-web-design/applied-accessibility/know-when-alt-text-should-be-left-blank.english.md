@@ -25,9 +25,9 @@ Camper Cat has coded a skeleton page for the blog part of his website. He's plan
 ```yml
 tests:
   - text: Your <code>img</code> tag should have an <code>alt</code> attribute.
-    testString: 'assert(!($("img").attr("alt") == undefined), "Your <code>img</code> tag should have an <code>alt</code> attribute.");'
+    testString: assert(!($('img').attr('alt') == undefined), 'Your <code>img</code> tag should have an <code>alt</code> attribute.');
   - text: The <code>alt</code> attribute should be set to an empty string.
-    testString: 'assert($("img").attr("alt") == "", "The <code>alt</code> attribute should be set to an empty string.");'
+    testString: assert($('img').attr('alt') == '', 'The <code>alt</code> attribute should be set to an empty string.');
 
 ```
 

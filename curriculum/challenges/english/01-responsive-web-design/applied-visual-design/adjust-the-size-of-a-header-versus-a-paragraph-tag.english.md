@@ -21,7 +21,7 @@ To make the heading significantly larger than the paragraph, change the <code>fo
 ```yml
 tests:
   - text: Your code should add a <code>font-size</code> property to the <code>h4</code> element set to 27 pixels.
-    testString: 'assert($("h4").css("font-size") == "27px", "Your code should add a <code>font-size</code> property to the <code>h4</code> element set to 27 pixels.");'
+    testString: assert($('h4').css('font-size') == '27px', 'Your code should add a <code>font-size</code> property to the <code>h4</code> element set to 27 pixels.');
 
 ```
 

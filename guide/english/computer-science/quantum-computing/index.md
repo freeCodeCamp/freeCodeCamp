@@ -18,13 +18,13 @@ Because a quantum computer is able to take advantage of these quantum mechanical
 
 The computers we use today are known as classical computers. They’ve been a driving force in the world for decades -- advancing everything from healthcare to how we shop. But there are certain problems that classical computers will simply never be able to solve. Consider the caffeine molecule in a cup of coffee. Surprisingly, it’s complex enough that no computer that exists or could be built would be capable of modeling caffeine and fully understanding its detailed structure and properties. This is the type of challenge quantum has the potential to tackle.
 
-### How do quantum computers works? 
+### How do quantum computers work? 
 
 Classical computers encode information in bits. Each bit can take the value of 1 or 0. These 1s and 0s act as on/off switches that ultimately drive computer functions. Quantum computers, on the other hand, are based on qubits, which operate according to two key principles of quantum physics: superposition and entanglement. Superposition means that each qubit can represent both a 1 and a 0 at the same time. Entanglement means that qubits in a superposition can be correlated with each other; that is, the state of one (whether it is a 1 or a 0) can depend on the state of another. Using these two principles, qubits can act as more sophisticated switches, enabling quantum computers to function in ways that allow them to solve difficult problems that are intractable using today’s computers.
 
 ### What can quantum computers do?
 
-Quantum systems may untangle the complexity of molecular and chemical interactions leading to the discovery of new medicines and materials. They may enable ultra-efficient logistics and supply chains, such as optimizing fleet operations for deliveries during the holiday season. They may help us find new ways to model financial data and isolate key global risk factors to make better investments. And they may make facets of artificial intelligence such as machine learning much more powerful.
+Quantum systems may untangle the complexity of molecular and chemical interactions leading to the discovery of new medicines and materials. They may enable ultra-efficient logistics and supply chains, such as optimizing fleet operations for deliveries during the holiday season. They may help us find new ways to model financial data and isolate key global risk factors to make better investments. From a database development perspective, this level of processing can handle queries and pull data at levels beyond binary computing's capabilities. And they may make facets of artificial intelligence such as machine learning much more powerful.
 
 ### Further Resources
 
