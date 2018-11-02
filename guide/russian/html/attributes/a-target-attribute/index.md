@@ -50,4 +50,4 @@ localeTitle: Атрибут target
 
 #### Дополнительная информация:
 
-Атрибут цели: [w3schools](https://www.w3schools.com/tags/att_a_target.asp)
+Атрибут target: [w3schools](https://www.w3schools.com/tags/att_a_target.asp)
