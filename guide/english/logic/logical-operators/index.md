@@ -11,7 +11,7 @@ A&&B returns True if both A and B are True. If either A or B (or both) are False
 |  f| t | f |
 |  f| f | f |
 |  t| t | t |
-|  t| f | t |
+|  t| f | f |
 
 
 **OR (||)** </br>
