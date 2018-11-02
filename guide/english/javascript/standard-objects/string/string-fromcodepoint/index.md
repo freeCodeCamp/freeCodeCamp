@@ -2,8 +2,13 @@
 title: String FromCodePoint
 ---
 
+# String.fromCodePoint
+
 `String.fromCodePoint` returns a string from a list or sequence of code points.
 
+## Description
+
+You can use this static `String` method to create a string based on a sequence of code points. Basically, a code point is any value that exist in a **code-space**, such as **Unicode**.
 
 ## Syntax
 
@@ -16,10 +21,6 @@ String.fromCodePoint(num1[, ...[, numN]])
 >**num1, ..., numN**
 
 A sequence of code points.
-
-## Description
-
-You can use this static `String` method to create a string based on a sequence of code points. Basically, a code point is any value that exist in a **code-space**, such as **Unicode**.
 
 ## Examples
 
