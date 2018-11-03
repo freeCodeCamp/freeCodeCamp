@@ -3,34 +3,34 @@ id: 587d7da9367417b2b2512b68
 title: Use the reduce Method to Analyze Data
 challengeType: 1
 videoUrl: ''
-localeTitle: Используйте метод уменьшения для анализа данных
+localeTitle: Используйте метод reduce для анализа данных
 ---
 
-## Description
-<section id="description"> <code>Array.prototype.reduce()</code> или просто <code>reduce()</code> , является наиболее общей из всех операций с массивами в JavaScript. Вы можете решить практически любую проблему обработки массива с помощью метода <code>reduce</code> . Это не относится к методам <code>filter</code> и <code>map</code> поскольку они не позволяют взаимодействовать между двумя различными элементами массива. Например, если вы хотите сравнить элементы массива или добавить их вместе, <code>filter</code> или <code>map</code> не смогут обработать это. Метод <code>reduce</code> позволяет использовать более общие формы обработки массивов, и можно показать, что как <code>filter</code> и <code>map</code> могут быть получены как специальное приложение <code>reduce</code> . Однако, прежде чем мы доберемся туда, давайте сначала будем использовать <code>reduce</code> . </section>
+## Описание
+<section id="description"> <code>Array.prototype.reduce()</code> или просто <code>reduce()</code>, является наиболее общей из всех операций с массивами в JavaScript. Вы можете решить практически любую проблему обработки массива с помощью метода <code>reduce</code> . Это не относится к методам <code>filter</code> и <code>map</code> поскольку они не позволяют взаимодействовать между двумя различными элементами массива. Например, если вы хотите сравнить элементы массива или добавить их вместе, <code>filter</code> или <code>map</code> не смогут обработать это. Метод <code>reduce</code> позволяет использовать более общие формы обработки массивов, и можно показать, что как <code>filter</code>, так и <code>map</code> могут быть реализованы через <code>reduce</code>. Однако, прежде чем мы перейдем к этому, давайте сначала научимся использовать <code>reduce</code>. </section>
 
-## Instructions
-<section id="instructions"> Переменная <code>watchList</code> содержит массив объектов с информацией о нескольких фильмах. Используйте <code>reduce</code> чтобы найти средний рейтинг IMDB фильмов <strong>режиссера Кристофера Нолана</strong> . Вспомните предыдущие проблемы, как <code>filter</code> данные и <code>map</code> их, чтобы вытащить то, что вам нужно. Возможно, вам придется создавать другие переменные, но сохранить окончательное среднее значение в переменной <code>averageRating</code> . Обратите внимание, что значения рейтинга сохраняются как строки в объекте и должны быть преобразованы в числа, прежде чем они будут использоваться в любых математических операциях. </section>
+## Указания
+<section id="instructions"> Переменная <code>watchList</code> содержит массив объектов с информацией о нескольких фильмах. Используйте <code>reduce</code> чтобы найти средний рейтинг IMDB фильмов <strong>режиссера Кристофера Нолана</strong>. Вспомните предыдущие задачи, как применять к данным <code>filter</code> и <code>map</code>, чтобы вытащить то, что вам нужно. Возможно, вам придется создавать другие переменные, но сохранить окончательное среднее значение в переменной <code>averageRating</code>. Обратите внимание, что значения рейтинга сохраняются как строки в объекте и должны быть преобразованы в числа, прежде чем они будут использоваться в любых математических операциях. </section>
 
-## Tests
+## Тесты
 <section id='tests'>
 
 ```yml
 tests:
   - text: Переменная <code>watchList</code> не должна изменяться.
     testString: 'assert(watchList[0].Title === "Inception" && watchList[4].Director == "James Cameron", "The <code>watchList</code> variable should not change.");'
-  - text: Ваш код должен использовать метод <code>reduce</code> .
+  - text: Ваш код должен использовать метод <code>reduce</code>.
     testString: 'assert(code.match(/\.reduce/g), "Your code should use the <code>reduce</code> method.");'
   - text: <code>averageRating</code> должно равняться 8.675.
     testString: 'assert(averageRating == 8.675, "The <code>averageRating</code> should equal 8.675.");'
-  - text: Ваш код не должен использовать цикл <code>for</code> .
+  - text: Ваш код не должен использовать цикл <code>for</code>.
     testString: 'assert(!code.match(/for\s*?\(.*\)/g), "Your code should not use a <code>for</code> loop.");'
 
 ```
 
 </section>
 
-## Challenge Seed
+## Исходные данные
 <section id='challengeSeed'>
 
 <div id='js-seed'>
@@ -166,7 +166,7 @@ console.log(averageRating);
 
 </section>
 
-## Solution
+## Решение
 <section id='solution'>
 
 ```js

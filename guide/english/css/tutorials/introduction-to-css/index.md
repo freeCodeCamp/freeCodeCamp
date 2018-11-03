@@ -15,7 +15,7 @@ title: Introduction to CSS
 
 Cascading Style Sheets (CSS) describe how the html on a page should appear.
 
-Before CSS developers would apply styles using attributes or special tags on each node of a page. This made markup repetitive and prone to errors.
+Before CSS, developers would apply styles using attributes or special tags on each node of a page. This made markup repetitive and prone to errors.
 
 CSS allows selectors to describe how each piece of matching content should look.
 

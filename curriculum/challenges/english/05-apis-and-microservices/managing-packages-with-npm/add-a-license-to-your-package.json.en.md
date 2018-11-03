@@ -24,8 +24,9 @@ Fill the license-field in the package.json of your Glitch project as you find su
 <section id='tests'>
 
 ```yml
-- text: package.json should have a valid "license" key
-  testString: 'getUserInput => $.get(getUserInput(''url'') + ''/_api/package.json'').then(data => { var packJson = JSON.parse(data); assert(packJson.license, ''"license" is missing''); }, xhr => { throw new Error(xhr.responseText); })'
+tests:
+  - text: package.json should have a valid "license" key
+    testString: 'getUserInput => $.get(getUserInput(''url'') + ''/_api/package.json'').then(data => { var packJson = JSON.parse(data); assert(packJson.license, ''"license" is missing''); }, xhr => { throw new Error(xhr.responseText); })'
 
 ```
 

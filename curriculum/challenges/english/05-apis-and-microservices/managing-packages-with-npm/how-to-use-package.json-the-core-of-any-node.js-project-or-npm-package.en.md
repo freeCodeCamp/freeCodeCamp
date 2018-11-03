@@ -27,8 +27,9 @@ All fields must be separated with a comma (,)
 <section id='tests'>
 
 ```yml
-- text: package.json should have a valid "author" key
-  testString: 'getUserInput => $.get(getUserInput(''url'') + ''/_api/package.json'').then(data => { var packJson = JSON.parse(data); assert(packJson.author, ''"author" is missing''); }, xhr => { throw new Error(xhr.responseText); })'
+tests:
+  - text: package.json should have a valid "author" key
+    testString: 'getUserInput => $.get(getUserInput(''url'') + ''/_api/package.json'').then(data => { var packJson = JSON.parse(data); assert(packJson.author, ''"author" is missing''); }, xhr => { throw new Error(xhr.responseText); })'
 
 ```
 
