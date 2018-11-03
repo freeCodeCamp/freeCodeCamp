@@ -25,13 +25,13 @@ Try giving your form, which now has the <code>id</code> attribute of <code>cat-p
 ```yml
 tests:
   - text: Give your <code>form</code> element the id of <code>cat-photo-form</code>.
-    testString: 'assert($("form").attr("id") === "cat-photo-form", "Give your <code>form</code> element the id of <code>cat-photo-form</code>.");'
+    testString: assert($("form").attr("id") === "cat-photo-form", 'Give your <code>form</code> element the id of <code>cat-photo-form</code>.');
   - text: Your <code>form</code> element should have the <code>background-color</code> of green.
-    testString: 'assert($("#cat-photo-form").css("background-color") === "rgb(0, 128, 0)", "Your <code>form</code> element should have the <code>background-color</code> of green.");'
+    testString: assert($("#cat-photo-form").css("background-color") === "rgb(0, 128, 0)", 'Your <code>form</code> element should have the <code>background-color</code> of green.');
   - text: Make sure your <code>form</code> element has an <code>id</code> attribute.
-    testString: 'assert(code.match(/<form.*cat-photo-form.*>/gi) && code.match(/<form.*cat-photo-form.*>/gi).length > 0, "Make sure your <code>form</code> element has an <code>id</code> attribute.");'
+    testString: assert(code.match(/<form.*cat-photo-form.*>/gi) && code.match(/<form.*cat-photo-form.*>/gi).length > 0, 'Make sure your <code>form</code> element has an <code>id</code> attribute.');
   - text: Do not give your <code>form</code> any <code>class</code> or <code>style</code> attributes.
-    testString: 'assert(!code.match(/<form.*style.*>/gi) && !code.match(/<form.*class.*>/gi), "Do not give your <code>form</code> any <code>class</code> or <code>style</code> attributes.");'
+    testString: assert(!code.match(/<form.*style.*>/gi) && !code.match(/<form.*class.*>/gi), 'Do not give your <code>form</code> any <code>class</code> or <code>style</code> attributes.');
 
 ```
 

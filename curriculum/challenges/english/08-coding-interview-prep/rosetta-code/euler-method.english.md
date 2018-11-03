@@ -36,15 +36,15 @@ Initial values:
 ```yml
 tests:
   - text: <code>eulersMethod</code> is a function.
-    testString: 'assert(typeof eulersMethod === "function", "<code>eulersMethod</code> is a function.");'
-  - text: '<code>eulersMethod(0, 100, 100, 10)</code> should return a number.'
-    testString: 'assert(typeof eulersMethod(0, 100, 100, 10) === "number", "<code>eulersMethod(0, 100, 100, 10)</code> should return a number.");'
-  - text: '<code>eulersMethod(0, 100, 100, 10)</code> should return 20.0424631833732.'
-    testString: 'assert.equal(eulersMethod(0, 100, 100, 2), 20.0424631833732, "<code>eulersMethod(0, 100, 100, 10)</code> should return 20.0424631833732.");'
-  - text: '<code>eulersMethod(0, 100, 100, 10)</code> should return 20.01449963666907.'
-    testString: 'assert.equal(eulersMethod(0, 100, 100, 5), 20.01449963666907, "<code>eulersMethod(0, 100, 100, 10)</code> should return 20.01449963666907.");'
-  - text: '<code>eulersMethod(0, 100, 100, 10)</code> should return 20.000472392.'
-    testString: 'assert.equal(eulersMethod(0, 100, 100, 10), 20.000472392, "<code>eulersMethod(0, 100, 100, 10)</code> should return 20.000472392.");'
+    testString: assert(typeof eulersMethod === 'function', '<code>eulersMethod</code> is a function.');
+  - text: <code>eulersMethod(0, 100, 100, 10)</code> should return a number.
+    testString: assert(typeof eulersMethod(0, 100, 100, 10) === 'number', '<code>eulersMethod(0, 100, 100, 10)</code> should return a number.');
+  - text: <code>eulersMethod(0, 100, 100, 10)</code> should return 20.0424631833732.
+    testString: assert.equal(eulersMethod(0, 100, 100, 2), 20.0424631833732, '<code>eulersMethod(0, 100, 100, 10)</code> should return 20.0424631833732.');
+  - text: <code>eulersMethod(0, 100, 100, 10)</code> should return 20.01449963666907.
+    testString: assert.equal(eulersMethod(0, 100, 100, 5), 20.01449963666907, '<code>eulersMethod(0, 100, 100, 10)</code> should return 20.01449963666907.');
+  - text: <code>eulersMethod(0, 100, 100, 10)</code> should return 20.000472392.
+    testString: assert.equal(eulersMethod(0, 100, 100, 10), 20.000472392, '<code>eulersMethod(0, 100, 100, 10)</code> should return 20.000472392.');
 
 ```
 
