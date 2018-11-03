@@ -29,7 +29,22 @@ except Exception as err:
 >>> error:
 >>> must be str, not int
 ```
+Two additional clauses for the try-except statement are `else` and `finally`. The `else` clause executes when the program runs successfully without any error. While the `finally` clause will always execute no matter what:
 
+```python
+try:
+    print("this is a " + "string")
+except Exception as err:
+    print("error:\n" + str(err))
+else:
+    print("successfully concatenated string")
+finally:
+    print("end execution")
+    
+>>> this is a string
+>>> successfully concatenated string
+>>> end execution
+```
 More Information:
 
 Errors and Exceptions <a href='https://docs.python.org/3.6/tutorial/errors.html' target='_blank' rel='nofollow'>documentation</a>.
