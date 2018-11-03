@@ -9,11 +9,13 @@ The chmod command is used to change file permissions for both files and director
 The standard mode is used via the arguments listed below in the commonly used arguments section.
 
 The numeric mode is dictated by three numbers the user, group, and others, in that order.
-4 stands for "read",
-2 stands for "write",
-1 stands for "execute", and
-0 stands for "no permission."
-You can use a combination of these numbers such as 7 would give all permissions, 6 would give read/write and 5 would give read execute.
+
+- 4 stands for "read",
+- 2 stands for "write",
+- 1 stands for "execute", and
+- 0 stands for "no permission."
+
+You can also use a combination of these numbers; for example 7 would give all permissions, 6 would give read and write permissions, and 5 would give read and execute permissions.
 
 The reference mode is used by specifying a file for reference and the targeted file. The targeted file then takes on the permissions of the reference file.
 
@@ -28,15 +30,17 @@ chmod [Options] Numeric_Mode file1 [file2 ...]
 ```bash
 chmod [Options] --reference=RFile file1 [file2 ...]
 ```
-**There are few commonly used arguments:**
+### Commonly Used Arguments
 
 The first arguments are the user's permissions that will be targeted. These are followed by a '+' to add permission, '-' to remove permission or '=' to set as the only permissions. 
+
 - `u`: The user who owns it.
 - `g`: Other users in the files' group.
 - `o`: Other users not in the files' group.
 - `a`: All users.
 
 The second arguments dictate the permissions given.
+
 - `r`: Read permission.
 - `w`: Write permission.
 - `x`: Execute permission.
