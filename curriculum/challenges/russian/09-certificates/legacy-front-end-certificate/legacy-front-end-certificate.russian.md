@@ -4,7 +4,7 @@ title: Legacy Front End Certificate
 challengeType: 7
 isPrivate: true
 videoUrl: ''
-localeTitle: Устаревший сертификат переднего плана
+localeTitle: Устаревший фронт-энд сертификат
 ---
 
 ## Description
