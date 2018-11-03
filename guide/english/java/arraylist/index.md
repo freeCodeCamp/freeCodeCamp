@@ -80,6 +80,10 @@ Since ArrayList implements *List*, an ArrayList can be created using the followi
   Collections.reverseOrder());
  ```
  
+   An ArrayList allows us to randomly access elements. ArrayList is similar to *Vector* in a lot of ways. But it is faster than Vectors. The main thing to note is that - Vectors are faster than arrays but ArrayLists are not. 
+  
+  So when it comes down to choosing between the two - if speed is critical then Vectors should be considered, otherwise ArrayLists are better when it comes to storing large number of elements and accessing them efficiently.
+ 
  ## Basic Big O for ArrayList Methods:
  
 `.get(int index)`  
@@ -95,10 +99,7 @@ Since ArrayList implements *List*, an ArrayList can be created using the followi
 - O(n). For the same reason as above. The elements must be shifted after removal.
      
  It is important to understand the Big O for methods of data structures. This way, you can choose the most efficient data structure for your program.
-  
-  An ArrayList allows us to randomly access elements. ArrayList is similar to *Vector* in a lot of ways. But it is faster than Vectors. The main thing to note is that - Vectors are faster than arrays but ArrayLists are not. 
-  
-  So when it comes down to choosing between the two - if speed is critical then Vectors should be considered, otherwise ArrayLists are better when it comes to storing large number of elements and accessing them efficiently.
+
 
 ## More Information
 - [ArrayList Documentation](https://docs.oracle.com/javase/8/docs/api/java/util/ArrayList.html)
