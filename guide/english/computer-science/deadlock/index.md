@@ -1,3 +1,7 @@
+---
+title: Deadlock
+---
+
 # Deadlocks
 ### The Deadlock Problem
 
@@ -59,11 +63,11 @@ If yes, grant the request otherwise do not grant the request
 
 ### Algorithms for deadlock avoidance
 
-### - Resource allocation graph algorithm
-### - Banker’s algorithm
+#### Resource allocation graph algorithm
 <i>Resource Allocation graph</i> - this technique can be  employed when there is single instance of every resource. In resource allocation graph for deadlock avoidance we introduce a third kind of edge called the claim edge which is a dotted line from a process towards a resource meaning that the resource can be requested by the process in future.
 When ever  a process requests for a resource the claim edge is changed to request edge and if the resource can be granted the request edge is changed to assignment edge. After this change look for a cycle in the graph. If no cycle exists, then the system is in safe state and the deadlock will not occur else the  system is in unsafe state and deadlock may or may not occur.
 
+#### Banker’s algorithm
 <i>Banker's Algorithm</i> - this technique is used when there are multiple instances of a resource. This algorithm requires four data structures to be implemented:
 Available – no. of available resources of each type
 Max – maximum need of any process for any resource
