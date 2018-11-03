@@ -14,5 +14,8 @@ In hibernate there are some important files that must be present :
 * **class-name.hbm.xml** 
     : This contains table and colums structure details
 
+## Hibernate Tools
+Hibernate Tools is a toolset for Hibernate implemented as an integrated suite of Eclipse plugins, together with a unified Ant task for integration into the build cycle. Hibernate Tools is a core component of JBoss Tools and hence also part of JBoss Developer Studio.
+
 #### More Information:
 For documentation and downloads, visit [Hibernate's Official Site](https://hibernate.org)
