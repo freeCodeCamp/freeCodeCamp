@@ -22,8 +22,8 @@ For example: <code>href="#"</code>
 
 ```yml
 tests:
-  - text: 'Your <code>a</code> element should be a dead link with the value of the <code>href</code> attribute set to "#".'
-    testString: 'assert($("a").attr("href") === "#", "Your <code>a</code> element should be a dead link with the value of the <code>href</code> attribute set to "#".");'
+  - text: Your <code>a</code> element should be a dead link with the value of the <code>href</code> attribute set to "#".
+    testString: assert($("a").attr("href") === "#", 'Your <code>a</code> element should be a dead link with the value of the <code>href</code> attribute set to "#".');
 
 ```
 
