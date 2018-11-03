@@ -82,17 +82,17 @@ Since ArrayList implements *List*, an ArrayList can be created using the followi
  
  ## Basic Big O for ArrayList Methods:
  
- `.get(int index)`  
-    O(1). This will always be constant time. 
+`.get(int index)`  
+- O(1). This will always be constant time. 
     
- `.add(E ele)`  
-    O(1). We are only adding an element to the END of the list.
+`.add(E ele)`  
+- O(1). We are only adding an element to the END of the list.
 
- `.add(int ind, E ele)`
-    O(n). Because of the way an ArrayList is implemented, we must do shifting which requires O(n) time on average.
+`.add(int ind, E ele)`  
+- O(n). Because of the way an ArrayList is implemented, we must do shifting which requires O(n) time on average.
 
- `.remove(int ind)`
-    O(n). For the same reason as above. The elements must be shifted after removal.
+`.remove(int ind)`
+- O(n). For the same reason as above. The elements must be shifted after removal.
      
  It is important to understand the Big O for methods of data structures. This way, you can choose the most efficient data structure for your program.
   
