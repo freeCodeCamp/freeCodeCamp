@@ -8,11 +8,15 @@ It reduces the repetitive use of HTML code. This repetition can be avoided by us
 much time and effort.
 
 ## AngularJS Expressions
-AngularJS expressions can be written inside double braces: {{ expression }}.
-AngularJS expressions can also be written inside a directive: ng-bind="expression".
-AngularJS will resolve the expression, and return the result exactly where the expression is written.
-AngularJS expressions are much like JavaScript expressions: They can contain literals, operators, and variables.
-Example {{ 5 + 5 }} or {{ firstName + " " + lastName }}
+- Expressions can be written inside double braces: `{{ expression }}`
+- Expressions can also be written inside a directive: `ng-bind="expression"`
+- AngularJS will resolve the expression, and return the result exactly where the expression is written
+- Expressions are much like JavaScript expressions: They can contain literals, operators, and variables.
+
+Example:
+```js
+{{ 5 + 5 }} or {{ firstName + " " + lastName }}
+```
 
 **Install**:
 
