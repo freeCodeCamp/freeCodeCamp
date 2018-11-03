@@ -67,6 +67,7 @@ circularPrimes(1000000);
 
 ```js
 function rotate(n) {
+  n = Number(n);
   if (n.length == 1) return n;
   return `${n % 10}${Math.floor(n / 10)}`;
 }
@@ -83,27 +84,24 @@ function isPrime(num) {
 }
 
 function circularPrimes(n) {
-  const primes = [];
+  const primes = [0, 0, 2];
   let count = 0;
 
   // Making primes array
-  for (let i = 0; i < n; i++) {
-    primes.push(i);
+  for (let i = 4; i <= n; i += 2) {
+    primes.push(i - 1);
+    primes.push(0);
   }
-  primes[1] = 0;
 
   // Getting upperbound
   const upperBound = Math.ceil(Math.sqrt(n));
 
-  // Treating multiples of 2 as special cases
-  for (let i = 4; i < n; i += 2) {
-    primes[i] = 0;
-  }
-
   // Setting other non-prime numbers to 0
   for (let i = 3; i < upperBound; i += 2) {
-    for (let j = i * i; j < n; j += i) {
-      primes[j] = 0;
+    if (primes[i]) {
+      for (let j = i * i; j < n; j += i) {
+        primes[j] = 0;
+      }
     }
   }
 
