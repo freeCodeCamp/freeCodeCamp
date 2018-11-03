@@ -20,6 +20,21 @@ As you can see, the *for* attribute of the `<label>` tag should be equal to the 
 |Google Chrome|Yes|
 |Opera|Yes|
 |Safari|Yes|
+version: '1.0'
+stages:
+ - [stage-name-1]
+ - [stage-name-2]
+
+steps:
+  step-name:
+    [step-contents]
+    stage: [name-of-stage]
+  another-step:
+    [step-contents]
+    stage: [name-of-stage]
+  the-very-last-step:
+    [step-contents]
+    stage: [name-of-stage]
 
 ### Attributes
 |Attribute|	Value|Description|
