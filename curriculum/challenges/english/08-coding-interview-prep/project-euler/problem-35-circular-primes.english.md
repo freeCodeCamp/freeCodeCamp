@@ -71,13 +71,13 @@ function rotate(n) {
   return "" + (n % 10) + Math.floor(n / 10);
 }
 
-function isPrime(num){
+function isPrime(num) {
   const upperBound = Math.ceil(Math.sqrt(num));
 
   if (num % 2 === 0 && num !== 2) return false;
-  
-  for (let i = 3; i <= upperBound; i+=2) {
-	  if (num % i === 0) return false;
+
+  for (let i = 3; i <= upperBound; i += 2) {
+    if (num % i === 0) return false;
   }
   return num !== 1;
 }
@@ -114,10 +114,9 @@ function circularPrimes(n) {
       let tmp = 1; // tmp variable to hold the no of rotations
       let curr = num;
       for (let x = rotate(curr); x != curr; x = rotate(x)) {
-		    if (x > n && isPrime(x)) {
-		      continue;
-        }
-        else if (!primes[x]) {
+        if (x > n && isPrime(x)) {
+          continue;
+        } else if (!primes[x]) {
           // If the rotated value is 0 then its not a ciruclar prime, break the loop
           tmp = 0;
           break;
