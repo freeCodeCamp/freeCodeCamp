@@ -67,6 +67,9 @@ When starting out with linux, there are some basic commands everyone should know
  25409 s004  Ss     0:00.04 login -pf <user>
 ```
 
+ 15. **sudo** - execute a command as super user
+- A widely used command in the Linux command line, sudo stands for "SuperUser Do". So, if you want any command to be done with administrative or root privileges, you can use the sudo command.
+
 ### Useful Resources for Practice:
 - [JSLinux](https://bellard.org/jslinux/vm.html?url=https://bellard.org/jslinux/buildroot-x86.cfg): Run the terminal inside your browser. Great for practice.
 - [LearnShell](https://www.learnshell.org/): Interactive Linux shell (terminal) tutorials.
