@@ -88,7 +88,7 @@ const IndexPage = () => (
       <Spacer />
       <h2>As featured in:</h2>
       <Image
-        alt="companies featuring freeCodeCamp"
+        alt='companies featuring freeCodeCamp'
         className='img-center'
         responsive={true}
         src='https://s3.amazonaws.com/freecodecamp/as-seen-on.png'
