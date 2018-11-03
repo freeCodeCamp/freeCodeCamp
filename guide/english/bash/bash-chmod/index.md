@@ -31,15 +31,15 @@ chmod [Options] --reference=RFile file1 [file2 ...]
 **There are few commonly used arguments:**
 
 The first arguments are the user's permissions that will be targeted. These are followed by a '+' to add permission, '-' to remove permission or '=' to set as the only permissions. 
-- `-u` , The user who owns it.
-- `-g` , Other users in the files' group.
-- `-o` , Other users not in the files' group.
-- `-a` , All users.
+- `u`: The user who owns it.
+- `g`: Other users in the files' group.
+- `o`: Other users not in the files' group.
+- `a`: All users.
 
 The second arguments dictate the permissions given.
-- `-r` , Read permission.
-- `-w` , Write permission.
-- `-x` , Execute permission.
+- `r`: Read permission.
+- `w`: Write permission.
+- `x`: Execute permission.
 
 ### Examples
 
