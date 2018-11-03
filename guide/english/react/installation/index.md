@@ -30,5 +30,7 @@ to create an optimized build of your app in the `build`folder.
 
 #### Sources
 [1. The React tutorial on installing](https://reactjs.org/docs/installation.html)
+
 [2. Link to the React minimal JavaScript library on cdnjs.org](https://cdnjs.com/libraries/react)
+
 [3. npm start command](https://docs.npmjs.com/cli/start)

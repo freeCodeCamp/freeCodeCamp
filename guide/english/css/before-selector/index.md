@@ -53,7 +53,7 @@ In the example above we are prepending a grey border before every paragraph elem
 
 This will show `Hello world!!` in the page.
 
-Not only strings, also images, counters or even nothing ("", useful for clearfix) can be inserted into the `content` attibute, but <strong>not HTML</strong>. There are a good number of cool things that can be made using ```::before``` and ```after``` in a creative way. You can take a look in the next link if you are curious: <a href='https://www.w3schools.com/css/css_pseudo_elements.asp' target='_blank' rel='nofollow'>A Whole Bunch of Amazing Stuff Pseudo Elements Can Do</a>
+Not only strings, also images, counters or even nothing ("", useful for clearfix) can be inserted into the `content` attribute, but <strong>not HTML</strong>. There are a good number of cool things that can be made using ```::before``` and ```after``` in a creative way. You can take a look in the next link if you are curious: <a href='https://www.w3schools.com/css/css_pseudo_elements.asp' target='_blank' rel='nofollow'>A Whole Bunch of Amazing Stuff Pseudo Elements Can Do</a>
 
 #### Single-colon vs. Double-colon
 There's a bit of discussion about the right way of using pseudo-elements: old style single-colon (```:before```), used in CSS specifications 1 and 2, versus CSS3 recomendation, double-colon (```::before```), mainly to <em>"establish a discrimination between pseudo-classes and pseudo-elements"</em>. But for compatibility reasons, single-colon is still accepted. Talking about compatibility, IE8 supports the single-colon notation only. 

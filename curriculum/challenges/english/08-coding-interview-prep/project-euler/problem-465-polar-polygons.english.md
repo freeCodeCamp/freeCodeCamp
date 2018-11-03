@@ -36,7 +36,7 @@ Find P(713) mod 1 000 000 007.
 ```yml
 tests:
   - text: <code>euler465()</code> should return 585965659.
-    testString: 'assert.strictEqual(euler465(), 585965659, "<code>euler465()</code> should return 585965659.");'
+    testString: assert.strictEqual(euler465(), 585965659, '<code>euler465()</code> should return 585965659.');
 
 ```
 
