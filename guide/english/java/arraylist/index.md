@@ -28,38 +28,54 @@ Since ArrayList implements *List*, an ArrayList can be created using the followi
   
   An ArrayList is dynamic, meaning it will grow in size if required and similarly shrink in size if elements are deleted from it. This is what makes it better to use than normal arrays.
   
-  To clear/delete all elements from ArrayList
+**Add elements to the list**
+  ```java
+  variable.add(String e);
+  variable.add(int index, String element);
+  ```
+  
+**Clear/Delete all elements from the list**
   ```java
   variable.clear();
   ```
   
-  we can delete existing element from the list
+**Delete element at specified index from the list**
   ```java
   variable_name.remove(index_number);
   ```
   
-  to access existing element from the list
+**Access element at specified index**
   ```java
   variable_name.get(index_number);
   ```
    
-   we can modify the existing element too
+**Modify/update element at specified index**
    ```java
-   variable_name.set(index_number,element);
+   variable_name.set(index_number, element);
   ```
   
-  we can reverse the order of elements in Array-list.
+**Get the size of the list**
+   ```java
+   variable_name.size();
+  ```
+  
+**Get a sublist of the list**
+   ```java
+   variable_name.subList(int fromIndex, int toIndex);
+  ```
+  
+**Reverse elements in list**  
   import java.util.Collections // package
   ```java
   Collections.reverse(variable_name);
   ```
   
- Sort the collection // in ascending order
- ```java
+**Sort elements in ascending order**
+```java
   Collections.sort(variable_name);
   ```
   
-   for sorting in decending order
+**Sort elements in descending order**
    ```java
   Collections.reverseOrder());
  ```
@@ -67,3 +83,6 @@ Since ArrayList implements *List*, an ArrayList can be created using the followi
   An ArrayList allows us to randomly access elements. ArrayList is similar to *Vector* in a lot of ways. But it is faster than Vectors. The main thing to note is that - Vectors are faster than arrays but ArrayLists are not. 
   
   So when it comes down to choosing between the two - if speed is critical then Vectors should be considered, otherwise ArrayLists are better when it comes to storing large number of elements and accessing them efficiently.
+
+## More Information
+- [ArrayList Documentation](https://docs.oracle.com/javase/8/docs/api/java/util/ArrayList.html)
