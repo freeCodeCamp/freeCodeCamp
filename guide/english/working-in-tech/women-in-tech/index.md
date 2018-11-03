@@ -21,6 +21,8 @@ In a Women in Tech Round-Up event presented by Google in Austin, the women who s
 The Google VP who spoke at this event gave us all a piece of advice: that we should take any and every opportunity offered to us and risk applying to jobs we are not qualified for. The worst that will happen is you’ll get rejected or you won’t get an interview. Men get tech positions not because they are more experienced or better than women but because they apply to positions that they often aren’t qualified for while women only apply for jobs that they think they are qualified for. 
 The worst thing you can do is to sell yourself short. If you want something, take that risk and achieve the impossible.
 
+Encouraging girls in elementary, middle, and high school can also help to increase the number of women going to work in the tech industry as they get older. We must actively fight against gender stereotypes in careers beginning at a young age so that children fully understand what career options are available to them. If girls are able to get more familiar with computer science concepts at a young age, this will help to make entering a college classroom full of men a less intimidating experience. Over time we will hopefully start to see a gender balance in tech careers. 
+
 ### More Information:
 
 - [Why are there so few women in tech? The truth behind the Google memo](https://www.theguardian.com/lifeandstyle/2017/aug/08/why-are-there-so-few-women-in-tech-the-truth-behind-the-google-memo)
@@ -32,7 +34,10 @@ The worst thing you can do is to sell yourself short. If you want something, tak
 - [R-Ladies](https://rladies.org/)
 - [Django Girls](https://djangogirls.org/)
 - [Girls Who Code](https://girlswhocode.com/)
+- [Women Who Code](https://www.womenwhocode.com/)
 - [1 Million Women To Tech](https://1millionwomentotech.com/)
 - [Women Techmakers](https://www.womentechmakers.com/)  
-- [Women Who Code](https://www.womenwhocode.com/)
 
+
+### Podcasts on Women-in-tech:
+If you're interested in podcasts, check out Esperee Devora's on women in tech [here](http://podcast.womenintechshow.com/episodes).

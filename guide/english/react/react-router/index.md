@@ -1,10 +1,10 @@
 ---
 title: React Router
 ---
-
 ## React Router
 
 ### Installation
+
 React Router has been broken into three packages: `react-router`, `react-router-dom`, and `react-router-native`.
 
 You should almost never have to install react-router directly. That package provides the core routing components and functions for React Router applications. The other two provide environment specific (browser and react-native) components, but they both also re-export all of react-router's exports.
@@ -21,13 +21,13 @@ Usually it is preferable to use a `<BrowserRouter>`, but if your website will be
 For our project, we will assume that the website will be backed by a dynamic server, so our router component of choice is the `<BrowserRouter>`.
 
 ### Import Statement
-
 ```javascript
 
 import { BrowserRouter as Router, Switch, Route, Link } from 'react-router-dom';
 
 ```
-## IndexRoute and Links
+
+### IndexRoute and Links
 Now, let’s add navigation to get us between pages.
 
 To do this, we will be using the `<Link>` component. `<Link>` is similar to using an html anchor tag.
@@ -87,3 +87,24 @@ const Home = (props) => {
   }, 3000)
 }
 ```
+
+### React Router with redux
+
+The main thing that many developers face is how to integrate react router with redux to pass down both the store as well as the props from the browser router to enhance the functionality of the component.
+
+A basic example is as follows:
+
+```jsx
+  const Root = ({store}) => (
+  <Provider store={store}>
+    <Router>
+      <Route path="/" component={App} />
+      {/* Making a router in the main App.js file will facilitate the passing of props from the Provider and the Router  */}
+   </Router>
+   </Provider>
+)
+```
+
+### Resources
+* [Redux-with-react Router](https://redux.js.org/advanced/usagewithreactrouter)
+
