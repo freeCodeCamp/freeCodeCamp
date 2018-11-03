@@ -28,8 +28,7 @@ interface User = {
 }
 ```
 
-We can also use interfaces as the Promises to our classes.For example when we declaring names of methods in our interface they 
-needs to be in our implementation otherwise we will get an exception 
+We can also use interfaces as the Promises to our classes.  For example, when declaring names of methods in our interface they need to be in our implementation otherwise we will get an exception.
 Example:
 ```typescript
 interface Login {
