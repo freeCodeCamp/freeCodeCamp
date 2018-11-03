@@ -327,7 +327,16 @@ title: Books to Read for Programmers
 - [Amazon Smile](https://smile.amazon.com/Soft-Skills-software-developers-manual/dp/1617292397?pldnSite=1)
 - ISBN-13: 9781617292392 
 
+*The Innovator's Delimma*
+- [Amazon] (https://www.amazon.com/Innovators-Dilemma-Technologies-Management-Innovation-ebook/dp/B00E257S86_
+- ASIN: B00E257S86
+
+## Visual Basic
+
+*Beginning Visual Basic: A Step by Step Computer Programming Tutorial by Philip Conrod*
+- ISBN-13: 978-1-937161-75-0
 
 This list was compiled from multiple suggestion threads on Reddit and Stackoverflow. 
 
 Please feel free to add more that you have found useful!
+
