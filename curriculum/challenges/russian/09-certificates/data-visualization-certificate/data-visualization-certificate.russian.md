@@ -4,7 +4,7 @@ title: Data Visualization Certificate
 challengeType: 7
 isPrivate: true
 videoUrl: ''
-localeTitle: Сертификат визуализации данных
+localeTitle: Сертификат по направлению Визуализация данных
 ---
 
 ## Description
