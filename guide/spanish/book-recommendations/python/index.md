@@ -40,5 +40,11 @@ _Black Hat Python: Programación en Python para hackers y pentesters_
 *   [Sonrisa de amazon](https://smile.amazon.com/Black-Hat-Python-Programming-Pentesters/dp/1593275900/)
     
 *   ISBN-10: 1593275900
-    
+
+_Python para Todos: Tutoriales y libro en PDF (2.x)_
+
+*   [Python para Todos](http://mundogeek.net/tutorial-python/)
+
+*   [Link diretor al PDF \[GRATIS\]](https://launchpadlibrarian.net/18980633/Python%20para%20todos.pdf) 
+
     Por favor, siéntase libre de agregar más que haya encontrado útil!

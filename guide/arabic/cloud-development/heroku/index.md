@@ -1,5 +1,5 @@
 ---
- title: Heroku
+title: Heroku
 localeTitle: Heroku
 ---
 \## هيروكو
