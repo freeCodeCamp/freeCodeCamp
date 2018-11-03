@@ -169,4 +169,4 @@ $('.collapsible-element').on('show.bs.collapse', function() {
 
 #### Дополнительная информация:
 
-[Официальный справочник Bootstrap 4 по краху](https://v4-alpha.getbootstrap.com/components/collapse/)
+[Официальный справочник Bootstrap 4 по collapse](https://v4-alpha.getbootstrap.com/components/collapse/)
