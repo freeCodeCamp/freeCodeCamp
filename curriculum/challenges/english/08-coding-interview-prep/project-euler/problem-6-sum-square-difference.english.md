@@ -25,11 +25,11 @@ Find the difference between the sum of the squares of the first <code>n</code> n
 ```yml
 tests:
   - text: <code>sumSquareDifference(10)</code> should return 2640.
-    testString: 'assert.strictEqual(sumSquareDifference(10), 2640, "<code>sumSquareDifference(10)</code> should return 2640.");'
+    testString: assert.strictEqual(sumSquareDifference(10), 2640, '<code>sumSquareDifference(10)</code> should return 2640.');
   - text: <code>sumSquareDifference(20)</code> should return 41230.
-    testString: 'assert.strictEqual(sumSquareDifference(20), 41230, "<code>sumSquareDifference(20)</code> should return 41230.");'
+    testString: assert.strictEqual(sumSquareDifference(20), 41230, '<code>sumSquareDifference(20)</code> should return 41230.');
   - text: <code>sumSquareDifference(100)</code> should return 25164150.
-    testString: 'assert.strictEqual(sumSquareDifference(100), 25164150, "<code>sumSquareDifference(100)</code> should return 25164150.");'
+    testString: assert.strictEqual(sumSquareDifference(100), 25164150, '<code>sumSquareDifference(100)</code> should return 25164150.');
 
 ```
 
