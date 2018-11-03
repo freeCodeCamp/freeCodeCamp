@@ -8,12 +8,12 @@ When coding, the coding style you follow can be really important. Specially when
 code.
 Most of these guidelines are standard and can be applied to most of the programming languages, however, here you have applications and 
 snippets with c++ code, so you can familiarize with it easier.
-Remember that these are only recommendations for achieving clarity, which can be a personal prefference, so take these pieces of advice 
+Remember that these are only recommendations for achieving clarity, which can be a personal preference, so take these pieces of advice 
 into account but don't take them to the letter. Sometimes breaking some of these rules can lead to cleaner code.
 
 ## Use good variable names and make comments
 
-Make sure you create good variable names, for example, if you are creating a game, avoid using the variable "a" use something like "p1" referring to player 1. The [hungarian notation](https://en.wikipedia.org/wiki/Hungarian_notation) is commonly spread and can give you some gidelines for declaring variables.
+Make sure you create good variable names, for example, if you are creating a game, avoid using the variable "a" use something like "p1" referring to player 1. The [hungarian notation](https://en.wikipedia.org/wiki/Hungarian_notation) is commonly spread and can give you some guidelines for declaring variables.
 
 Also, PLEASE, use comments, I'm not even kidding, just try to read some old projects you did without comments... now imagine being someone else who didn't even code it.
 
@@ -74,7 +74,7 @@ for (int i = 1; i <= 5; i++)
 
 ## Declare constants and types at the top
 
-They are usually declared after libraries, this makes them be toguether and easier to read.
+They are usually declared after libraries, this makes them be together and easier to read.
 For local variables it happens the same, declare them at the top (Other people preffer it declaring them as later as possible in order to save memory see: [cplusplus.com](http://www.cplusplus.com/forum/general/33612/)
 
 ## Use only one return function at the end
