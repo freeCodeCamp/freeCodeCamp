@@ -28,54 +28,73 @@ Since ArrayList implements *List*, an ArrayList can be created using the followi
   
   An ArrayList is dynamic, meaning it will grow in size if required and similarly shrink in size if elements are deleted from it. This is what makes it better to use than normal arrays.
   
-  To clear/delete all elements from ArrayList
+**Add elements to the list**
+  ```java
+  variable.add(String e);
+  variable.add(int index, String element);
+  ```
+  
+**Clear/Delete all elements from the list**
   ```java
   variable.clear();
   ```
   
-  We can delete existing element from the list
+**Delete element at specified index from the list**
   ```java
   variable_name.remove(index_number);
   ```
   
-  to access existing element from the list
+**Access element at specified index**
   ```java
   variable_name.get(index_number);
   ```
    
-   we can modify the existing element too
+**Modify/update element at specified index**
    ```java
-   variable_name.set(index_number,element);
+   variable_name.set(index_number, element);
   ```
   
-  we can reverse the order of elements in Array-list.
+**Get the size of the list**
+   ```java
+   variable_name.size();
+  ```
+  
+**Get a sublist of the list**
+   ```java
+   variable_name.subList(int fromIndex, int toIndex);
+  ```
+  
+**Reverse elements in list**  
   import java.util.Collections // package
   ```java
   Collections.reverse(variable_name);
   ```
   
- Sort the collection // in ascending order
- ```java
+**Sort elements in ascending order**
+```java
   Collections.sort(variable_name);
   ```
   
-   for sorting in decending order
+**Sort elements in descending order**
    ```java
   Collections.reverseOrder());
  ```
  
- Basic Big O for ArrayList Methods:
+ ## Basic Big O for ArrayList Methods:
  
- .get(int index) 
-    ~O(1). This will always be constant time. 
- .add(E ele) 
-    ~O(1). We are only adding an element to the END of the list.
- .add(int ind, E ele)
-     ~O(N). Because of the way an ArrayList is implemented, we must do shifting which requires O(N) time on average.
- .remove(int ind)
-     ~O(N). For the same reason as above. The elements must be shifted after removal.
+ `.get(int index)`  
+    O(1). This will always be constant time. 
+    
+ `.add(E ele)`  
+    O(1). We are only adding an element to the END of the list.
+
+ `.add(int ind, E ele)`
+    O(n). Because of the way an ArrayList is implemented, we must do shifting which requires O(n) time on average.
+
+ `.remove(int ind)`
+    O(n). For the same reason as above. The elements must be shifted after removal.
      
- It is important to the the Big O for methods of data structures. This way, you can choose the most efficient data structure for your program.
+ It is important to understand the Big O for methods of data structures. This way, you can choose the most efficient data structure for your program.
   
   An ArrayList allows us to randomly access elements. ArrayList is similar to *Vector* in a lot of ways. But it is faster than Vectors. The main thing to note is that - Vectors are faster than arrays but ArrayLists are not. 
   
