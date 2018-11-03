@@ -5,7 +5,7 @@ title: Heapsort
 
 Heapsort is an efficient sorting algorithm based on the use of max/min heaps. A heap is a tree-based data structure that satisfies the heap property -- that is for a max heap, the key of any node is less than or equal to the key of its parent (if it has a parent). This property can be leveraged to access the maximum element in the heap in O(logn) time using the maxHeapify method. We perform this operation n times, each time moving the maximum element in the heap to the top of the heap and extracting it from the heap and into a sorted array. Thus, after n iterations we will have a sorted version of the input array. This algorithm runs in O(nlogn) time and O(1) additional space [O(n) including the space required to store the input data] since all operations are performed entirely in-place.
 
-The est worst and average case time complecity of Heapsort is O(nlogn). Although heapsort has a better worse-case complexity than quicksort, a well-implemented quicksort runs faster in practice. This is a comparison-based algorithm so it can be used for nonnumerical data sets insofar as some relation (heap property) can be defined over the elements.
+The best worst and average case time complecity of Heapsort is O(nlogn). Although heapsort has a better worse-case complexity than quicksort, a well-implemented quicksort runs faster in practice. This is a comparison-based algorithm so it can be used for nonnumerical data sets insofar as some relation (heap property) can be defined over the elements.
 
 Heapsort can process before all data is known/available. It can start sorting incrementally, starting at the first given data point, and be nearly finished when the last data point is given.
 
