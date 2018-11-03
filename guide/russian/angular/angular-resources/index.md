@@ -1,8 +1,8 @@
 ---
 title: Angular Resources
-localeTitle: Угловые ресурсы
+localeTitle: Ресурсы Angular
 ---
-Коллекция полезных угловых ресурсов
+Коллекция полезных ресурсов Angular
 
 ## Angular 1.x
 
@@ -14,7 +14,7 @@ localeTitle: Угловые ресурсы
 ### Видео
 
 *   [Маршрутизация в режиме «Угловая JS-](https://www.youtube.com/watch?v=5uhZCc0j9RY) клиентская маршрутизация» за 15 минут
-*   [Угловое приложение ToDo](https://www.youtube.com/watch?v=WuiHuZq_cg4) - [приложение](https://www.youtube.com/watch?v=WuiHuZq_cg4) Angular ToDo за 12 минут
+*   [AngularJS приложение ToDo](https://www.youtube.com/watch?v=WuiHuZq_cg4) - [приложение](https://www.youtube.com/watch?v=WuiHuZq_cg4) Angular ToDo за 12 минут
 
 ### Курсы
 
@@ -33,10 +33,10 @@ localeTitle: Угловые ресурсы
 
 ### Курсы
 
-*   [Egghead.io Угловые курсы ($)](https://egghead.io/browse/frameworks/angular)
+*   [Egghead.io Курсы Angular($)](https://egghead.io/browse/frameworks/angular)
 *   [FrontendMasters - Создание приложений Awesomer на Angular](https://frontendmasters.com/courses/building-apps-angular)
 *   [Ultimate Angular - Тоддский девиз](https://ultimateangular.com/)
-*   [Угловое 6 (ранее Angular 2) - Полное руководство ($) Максимилиан Шварцмюллер](https://www.udemy.com/the-complete-guide-to-angular-2/)
+*   [Angular 6 (ранее Angular 2) - Полное руководство ($) Максимилиан Шварцмюллер](https://www.udemy.com/the-complete-guide-to-angular-2/)
 
 ## Блоги
 
