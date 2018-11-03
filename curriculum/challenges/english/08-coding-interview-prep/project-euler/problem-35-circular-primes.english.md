@@ -67,8 +67,8 @@ circularPrimes(1000000);
 
 ```js
 function rotate(n) {
-  n = Number(n);
   if (n.length == 1) return n;
+  n = Number(n);
   return `${n % 10}${Math.floor(n / 10)}`;
 }
 
