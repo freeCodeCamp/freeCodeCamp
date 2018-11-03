@@ -6,7 +6,7 @@ title: Border Property
 CSS Border
 ----
 
-Our personal favorite CSS property, `border` allows you to completely customize the borders that appear around HTML elements. With HTML, it used to be impossible to place a border around an element, with the exception of tables. CSS Borders lets you create crisp, custom border styles with very little work compared to antiquated HTML methods.
+The CSS property `border` allows complete customization of the borders that appear around HTML elements. With HTML, it used to be impossible to place a border around an element, with the exception of tables. CSS Borders let you create crisp, custom border styles with very little work compared to antiquated HTML methods.
 
 The `border` shorthand property sets all border properties in one declaration. 
 ```css 
@@ -19,7 +19,7 @@ The properties that can be set are (in order):
 3. `border-color`
 4. `border-radius`
 
-It does not matter if one of the values above is missing. For example, the following code is valid CSS:
+It does not matter if one of the values above is missing. For example, the following is valid CSS:
 
 ```css 
   border: solid red;
@@ -42,7 +42,7 @@ The `border-style` property can be set to a wide range of different border types
 
 Each side of the border doesn't need to match.
 
-You can style each side seperately:
+Each side can be styled separately:
 ```css
   border-top-style: solid;
   border-left-style: dotted;
@@ -50,7 +50,7 @@ You can style each side seperately:
   border-bottom-style: double;
 ```
 
-Or you can style them all at once:
+Or they can all be styled at once:
 ```css
   border-style: solid dashed double dotted;
 ```
@@ -58,9 +58,8 @@ The border property allows you to select each side of the element in one declara
 
 ### Border Width
 
-To alter the thickness of your border, use the border-width attribute. You may use key terms or exact values to define the border width. Note: You must
-define a border-style for the border to appear. The width can be set as a specific size (in px, pt, cm, em, etc) or by using one of the three pre-defined
-values: `thin`, `medium`, or `thick`.
+To alter the thickness of a border, use the `border-width` attribute. You may use key terms or exact values to define the border width.  
+Note: You must define a `border-style` for the border to appear. The `width` can be set as a specific size (in px, pt, cm, em, etc) or by using one of the three pre-defined values: `thin`, `medium`, or `thick`.
 
 Example:
 ```css
@@ -82,7 +81,7 @@ p {
 
 ### Border Color
 
-Now for the creative aspect of CSS Borders! With the use of the border-color property, you will be able to create customized borders to fit the flow and layout
+Now for the creative aspect of CSS Borders!  With the use of the `border-color` property, you will be able to create customized borders to fit the flow and layout
 of your website. Border colors can be any color defined by RGB, HSL, hexadecimal, or key terms.
 
 Example:
