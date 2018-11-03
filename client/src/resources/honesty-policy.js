@@ -8,18 +8,18 @@ const policy = [
   <p>
     "I understand that plagiarism means copying someone else’s work and
     presenting the work as if it were my own, without clearly attributing the
-    original author.
+    original author."
   </p>,
   <p>
     "I understand that plagiarism is an act of intellectual dishonesty, and that
     people usually get kicked out of university or fired from their jobs if they
-    get caught plagiarizing.
+    get caught plagiarizing".
   </p>,
   <p>
     "Aside from using open source libraries such as jQuery and Bootstrap, and
     short snippets of code which are clearly attributed to their original
     author, 100% of the code in my projects was written by me, or along with
-    another camper with whom I was pair programming in real time.
+    another camper with whom I was pair programming in real time."
   </p>,
   <p>
     "I pledge that I did not plagiarize any of my freeCodeCamp.org work. I
