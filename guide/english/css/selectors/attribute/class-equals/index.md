@@ -20,5 +20,3 @@ p.happy {
 
 #### More Information:
 https://developer.mozilla.org/en-US/docs/Web/CSS/Attribute_selectors
-https://www.w3schools.com/css/css_attribute_selectors.asp
-https://www.w3schools.com/cssref/sel_attribute_value.asp
