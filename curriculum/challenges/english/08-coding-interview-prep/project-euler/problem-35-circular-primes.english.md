@@ -67,8 +67,8 @@ circularPrimes(1000000);
 
 ```js
 function rotate(n) {
-  if (String(n).length == 1) return n;
-  return "" + (n % 10) + Math.floor(n / 10);
+  if (n.length == 1) return n;
+  return `${n % 10}${Math.floor(n / 10)}`;
 }
 
 function isPrime(num) {
@@ -110,9 +110,8 @@ function circularPrimes(n) {
   // Iterating through the array
   for (let i = 2; i < n; i++) {
     if (primes[i]) {
-      let num = String(primes[i]);
+      let curr = String(primes[i]);
       let tmp = 1; // tmp variable to hold the no of rotations
-      let curr = num;
       for (let x = rotate(curr); x != curr; x = rotate(x)) {
         if (x > n && isPrime(x)) {
           continue;
