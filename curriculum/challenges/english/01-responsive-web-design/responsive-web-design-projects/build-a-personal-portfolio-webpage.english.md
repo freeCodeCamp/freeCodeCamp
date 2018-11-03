@@ -13,7 +13,7 @@ You can use HTML, JavaScript, and CSS to complete this project. Plain CSS is rec
 <strong>User Story #1:</strong> My portfolio should have a welcome section with an id of <code>welcome-section</code>.
 <strong>User Story #2:</strong> The welcome section should have an <code>h1</code> element that contains text.
 <strong>User Story #3:</strong> My portfolio should have a projects section with an id of <code>projects</code>.
-<strong>User Story #4:</strong> The projects section should contain at least one element with a class of <code>project-tile</code> to hold a project.
+<strong>User Story #4:</strong> The projects section should contain at least one element with a class of <code>project-title</code> to hold a project.
 <strong>User Story #5:</strong> The projects section should contain at least one link to a project.
 <strong>User Story #6:</strong> My portfolio should have a navbar with an id of <code>navbar</code>.
 <strong>User Story #7:</strong> The navbar should contain at least one link that I can click on to navigate to different sections of the page.
