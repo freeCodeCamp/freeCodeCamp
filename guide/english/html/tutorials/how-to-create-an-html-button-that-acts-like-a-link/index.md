@@ -19,7 +19,7 @@ A second option is to create your link as you normally would with your `<a>` tag
 <a href='https://www.freecodecamp.org/'>Link To freeCodeCamp</a>
 ```
 
-Once you've created your link, you can the use CSS to make it look like a button. For instance, you could add a border, a background color, some styles for when the user is hovering the link...
+Once you've created your link, you can then use CSS to make it look like a button. For instance, you could add a border, a background color, some styles for when the user is hovering the link...
 
 Another way to add a button is to wrap an `input` inside `form` tags. Specify the desired target URL in the form action attribute.
 

@@ -30,29 +30,29 @@ Remember to use <a href='http://forum.freecodecamp.org/t/how-to-get-help-when-yo
 ```yml
 tests:
   - text: <code>Object.keys(bob).length</code> should return 6.
-    testString: 'assert.deepEqual(Object.keys(bob).length, 6, "<code>Object.keys(bob).length</code> should return 6.");'
+    testString: assert.deepEqual(Object.keys(bob).length, 6, '<code>Object.keys(bob).length</code> should return 6.');
   - text: <code>bob instanceof Person</code> should return true.
-    testString: 'assert.deepEqual(bob instanceof Person, true, "<code>bob instanceof Person</code> should return true.");'
+    testString: assert.deepEqual(bob instanceof Person, true, '<code>bob instanceof Person</code> should return true.');
   - text: <code>bob.firstName</code> should return undefined.
-    testString: 'assert.deepEqual(bob.firstName, undefined, "<code>bob.firstName</code> should return undefined.");'
+    testString: assert.deepEqual(bob.firstName, undefined, '<code>bob.firstName</code> should return undefined.');
   - text: <code>bob.lastName</code> should return undefined.
-    testString: 'assert.deepEqual(bob.lastName, undefined, "<code>bob.lastName</code> should return undefined.");'
+    testString: assert.deepEqual(bob.lastName, undefined, '<code>bob.lastName</code> should return undefined.');
   - text: <code>bob.getFirstName()</code> should return "Bob".
-    testString: 'assert.deepEqual(bob.getFirstName(), "Bob", "<code>bob.getFirstName()</code> should return "Bob".");'
+    testString: assert.deepEqual(bob.getFirstName(), 'Bob', '<code>bob.getFirstName()</code> should return "Bob".');
   - text: <code>bob.getLastName()</code> should return "Ross".
-    testString: 'assert.deepEqual(bob.getLastName(), "Ross", "<code>bob.getLastName()</code> should return "Ross".");'
+    testString: assert.deepEqual(bob.getLastName(), 'Ross', '<code>bob.getLastName()</code> should return "Ross".');
   - text: <code>bob.getFullName()</code> should return "Bob Ross".
-    testString: 'assert.deepEqual(bob.getFullName(), "Bob Ross", "<code>bob.getFullName()</code> should return "Bob Ross".");'
+    testString: assert.deepEqual(bob.getFullName(), 'Bob Ross', '<code>bob.getFullName()</code> should return "Bob Ross".');
   - text: <code>bob.getFullName()</code> should return "Haskell Ross" after <code>bob.setFirstName("Haskell")</code>.
-    testString: 'assert.strictEqual((function () { bob.setFirstName("Haskell"); return bob.getFullName(); })(), "Haskell Ross", "<code>bob.getFullName()</code> should return "Haskell Ross" after <code>bob.setFirstName("Haskell")</code>.");'
+    testString: assert.strictEqual((function () { bob.setFirstName("Haskell"); return bob.getFullName(); })(), 'Haskell Ross', '<code>bob.getFullName()</code> should return "Haskell Ross" after <code>bob.setFirstName("Haskell")</code>.');
   - text: <code>bob.getFullName()</code> should return "Haskell Curry" after <code>bob.setLastName("Curry")</code>.
-    testString: 'assert.strictEqual((function () { var _bob=new Person("Haskell Ross"); _bob.setLastName("Curry"); return _bob.getFullName(); })(), "Haskell Curry", "<code>bob.getFullName()</code> should return "Haskell Curry" after <code>bob.setLastName("Curry")</code>.");'
+    testString: assert.strictEqual((function () { var _bob=new Person('Haskell Ross'); _bob.setLastName("Curry"); return _bob.getFullName(); })(), 'Haskell Curry', '<code>bob.getFullName()</code> should return "Haskell Curry" after <code>bob.setLastName("Curry")</code>.');
   - text: <code>bob.getFullName()</code> should return "Haskell Curry" after <code>bob.setFullName("Haskell Curry")</code>.
-    testString: 'assert.strictEqual((function () { bob.setFullName("Haskell Curry"); return bob.getFullName(); })(), "Haskell Curry", "<code>bob.getFullName()</code> should return "Haskell Curry" after <code>bob.setFullName("Haskell Curry")</code>.");'
+    testString: assert.strictEqual((function () { bob.setFullName("Haskell Curry"); return bob.getFullName(); })(), 'Haskell Curry', '<code>bob.getFullName()</code> should return "Haskell Curry" after <code>bob.setFullName("Haskell Curry")</code>.');
   - text: <code>bob.getFirstName()</code> should return "Haskell" after <code>bob.setFullName("Haskell Curry")</code>.
-    testString: 'assert.strictEqual((function () { bob.setFullName("Haskell Curry"); return bob.getFirstName(); })(), "Haskell", "<code>bob.getFirstName()</code> should return "Haskell" after <code>bob.setFullName("Haskell Curry")</code>.");'
+    testString: assert.strictEqual((function () { bob.setFullName("Haskell Curry"); return bob.getFirstName(); })(), 'Haskell', '<code>bob.getFirstName()</code> should return "Haskell" after <code>bob.setFullName("Haskell Curry")</code>.');
   - text: <code>bob.getLastName()</code> should return "Curry" after <code>bob.setFullName("Haskell Curry")</code>.
-    testString: 'assert.strictEqual((function () { bob.setFullName("Haskell Curry"); return bob.getLastName(); })(), "Curry", "<code>bob.getLastName()</code> should return "Curry" after <code>bob.setFullName("Haskell Curry")</code>.");'
+    testString: assert.strictEqual((function () { bob.setFullName("Haskell Curry"); return bob.getLastName(); })(), 'Curry', '<code>bob.getLastName()</code> should return "Curry" after <code>bob.setFullName("Haskell Curry")</code>.');
 
 ```
 
