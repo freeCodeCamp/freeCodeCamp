@@ -43,5 +43,5 @@ In the diagram above, to the extreme left is the unit of data that is used in ea
 
 * _**Layer 7 - Application Layer:**_ The application layer serves as the window for users and application processes to access network services.
 
-Recommended reading:
-https://www.mheducation.com/highered/product/data-communications-networking-forouzan/M0073376221.html
+#### More Information:
+* https://www.mheducation.com/highered/product/data-communications-networking-forouzan/M0073376221.html
