@@ -5,7 +5,7 @@ title: Data Types in R
  Scalar refers to an atomic quantity that can hold only one value at a time. Scalars are the most basic data types. Some common types of scalars :
 
 1. Number
-
+```r
 	> x <- 5
 	> y <- 5.5
 	> class(x)
@@ -14,9 +14,10 @@ title: Data Types in R
 	[1] "numeric"
 	> class(x+y)
 	[1] "numeric"
+```
 
 2. Logical value
-
+```r
 	> m <- x > y      # Used to check, Is x larger than y?
 	> n <- x < y      # Used to check, Is x smaller than y?
 	> m
@@ -27,9 +28,10 @@ title: Data Types in R
 	[1] "logical"
 	> class(NA)       # NA is another logical value: 'Not Available'/Missing Values
 	[1] "logical"
+```
 
  3. Character(string)
-
+```r
 	> a <- "1"; b <- "2.5" 
 	> a;b
 	[1] "1"
@@ -42,7 +44,7 @@ title: Data Types in R
 	[1] "numeric"
 	> class(as.character(x))
 	[1] "character"
-
+```
 
 ## Vector
  It is a sequence of data elements of the same basic type. For example:
@@ -97,5 +99,5 @@ title: Data Types in R
 
 
 ## Reference:
-<a href='https://cran.r-project.org/manuals.html' target='_blank' rel='nofollow'>Official Docs</a>
-<a href='https://www.r-bloggers.com/classes-and-objects-in-r/' target='_blank' rel='nofollow'>Data Types in R by r-bloggers</a>
+ * [Official Docs](https://cran.r-project.org/manuals.html)
+ * [Data Types in R by r-bloggers](https://www.r-bloggers.com/classes-and-objects-in-r/)
