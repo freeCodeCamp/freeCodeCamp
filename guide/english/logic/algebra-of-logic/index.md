@@ -19,7 +19,7 @@ The three basic operations in Boolean Algebra are `AND`, `OR`, and `NOT`. Consid
 - `NOT (x AND y) = NOT x OR NOT y`
 - `NOT (x OR y) = NOT x AND NOT y`
 
-The above statements are called "De Morgan's Laws." This is a very useful and important law in Boolean Algerbra.
+The above statements are called "De Morgan's Laws." This is a very useful and important law in Boolean Algebra.
 
 
 ### More Information:
