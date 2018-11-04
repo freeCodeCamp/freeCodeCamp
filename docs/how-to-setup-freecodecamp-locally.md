@@ -2,7 +2,7 @@
 
 Follow these guidelines for getting freeCodeCamp locally on your system. This is highly recommended if you want to be contributing regularly.
 
-Some of the contribution workflows like previewing pages for the guide or the coding challenges, debugging and fixing bugs in codebase requires you to have freeCodeCamp running locally.
+Some of the contribution workflows such as previewing pages for the guide or coding challenges, debugging, and fixing bugs in the codebase requires you to have freeCodeCamp running locally.
 
 ## Fork the repository on GitHub
 
