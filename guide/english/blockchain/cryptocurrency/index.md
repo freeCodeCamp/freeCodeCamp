@@ -17,6 +17,7 @@ In order to control the supply of bitcoin, mining is deliberately designed to be
 
 Some people invest in cryptocurrency on exchanges such as Binance, Bitrex, or Coinbase. The market peeked in January of 2018. 
 
+The Downside about bitcoin is that it uses alot of energy to mine. And its not good for the enviroment.
 #### More Information:
 [Cryptocurrency](https://en.wikipedia.org/wiki/Cryptocurrency)    
 [Ultimate Guide to Cryptocurrency](https://blockgeeks.com/guides/what-is-cryptocurrency)
