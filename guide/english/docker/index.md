@@ -1,6 +1,7 @@
 ---
 title: Docker
 ---
+![alt text](https://www.docker.com/sites/default/files/horizontal.png)
 ## Docker
 
 Docker is an open platform to build, ship, and run distributed applications. It is written in Go. It was first released in 2013 and is developed by Docker, Inc.

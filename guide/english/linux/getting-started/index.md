@@ -4,11 +4,12 @@ title: Getting Started
 ## Choosing a distribution.
 
 There are several types and "flavors" of Linux distributions to choose from nowadays, so choosing one is a major concern in the Linux world. Taking into consideration easy to use OSs, the top dogs in this category are:
-Ubuntu - Derivative of the stable Debian system, Ubuntu thrives in the a easy to use and up to date environment.
 
-Mint - Based on Ubuntu and Debian, this OS has great features like Ubuntu's PPA compatibility, the apt package manager. The base mint distribution might remind some of Windows, which can be a nice characteristic for users comming from Windows.
+Ubuntu - Derivative of the stable Debian system, Ubuntu thrives in the easy to use and up-to-date environment.
 
-Trisquel - A distribution derived from Ubuntu that focuses on only utilizing fully free software, avoiding proprietary software. Trisquel is endorsed by the Free Software Foundation (FSF).
+Mint - Based on Ubuntu and Debian, this OS has great features like Ubuntu's PPA compatibility, the apt package manager. The base mint distribution has some similarities to the Windows UI - this can be an excellent characteristic for users coming from Windows. 
+
+Trisquel - A distribution derived from Ubuntu that focuses on only utilizing entirely free software, avoiding proprietary software. Trisquel is endorsed by the Free Software Foundation (FSF).
 
 ## Installing.
 
@@ -38,3 +39,9 @@ ls (List) - This command list the content in the current directory. It can be al
 ls
 ```
 Now we can see our directories in our home.
+
+pwd (Print Working Directory) - This command lists the directory you are currently in.
+
+```unix
+pwd
+```
