@@ -17,3 +17,5 @@ The time complexity of brute force is <b> O(n*m) </b>. So, if we were to search 
 #### More Information:
 
 <a href="https://en.wikipedia.org/wiki/Brute-force_search"> Wikipedia </a>
+
+An example from YouTube <a href='https://www.youtube.com/watch?v=xRVpT-7c0Rw'> HERE </a>.

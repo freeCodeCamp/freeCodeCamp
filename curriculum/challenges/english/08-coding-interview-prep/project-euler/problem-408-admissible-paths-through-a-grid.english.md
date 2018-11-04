@@ -29,7 +29,7 @@ Find P(10 000 000) mod 1 000 000 007.
 ```yml
 tests:
   - text: <code>euler408()</code> should return 299742733.
-    testString: 'assert.strictEqual(euler408(), 299742733, "<code>euler408()</code> should return 299742733.");'
+    testString: assert.strictEqual(euler408(), 299742733, '<code>euler408()</code> should return 299742733.');
 
 ```
 
