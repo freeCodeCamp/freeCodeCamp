@@ -17,6 +17,7 @@ Write a function to sort an array (or list) of strings in order of descending le
 <section id='tests'>
 
 ``` yml
+tests:
 - text: <code>lengthSorter</code> should be a function.
   testString: assert(typeof lengthSorter=='function','<code>lengthSorter</code> should be a function.');
 - text: <code>lengthSorter(["Here","are","some","sample","strings","to","be","sorted"])</code> should return a array.
@@ -35,6 +36,8 @@ Write a function to sort an array (or list) of strings in order of descending le
 
 </section>
 
+## Challenge Seed
+<section id='challengeSeed'>
 <div id='js-seed'>
 
 ```js
@@ -44,6 +47,7 @@ function lengthSorter (arr) {
 ```
 
 </div>
+</section>
 
 ## Solution
 <section id='solution'>
