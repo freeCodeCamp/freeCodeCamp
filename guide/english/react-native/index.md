@@ -37,4 +37,4 @@ There are three quick easy ways to get started with React Native. Depending on y
 
 1. [Create React Native App](https://www.npmjs.com/package/create-react-native-app)- Similar to Create React App it get up in running using the terminal.
 1. [Expo](https://expo.io) - Best for prototyping apps or useful if an app is in an earlier stage. Using Expo you can even create an quick app using drag and drop features from snack.expo.io in the broswer.
-1. [Ignite CLI](https://github.com/infinitered/ignite) - Empowers developers to easily create a new React Native app with plugins. Ignite CLI also enables developers to easily setup best practices.
+1. [Ignite CLI](https://github.com/infinitered/ignite) - Empower devleopers to easily create a new React Native app with plug ins. Ignite CLI also enables developers to easily setup best practices. 
