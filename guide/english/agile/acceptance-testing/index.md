@@ -113,10 +113,10 @@ There are multiple scenarios here such as:
 
 You can write Acceptance Tests for each of these sub-features of the bigger dialog box feature. Aside from the code that handles the infrastructure of how the test will be executed, your test for the first scenario could look like (in pseudocode):
 
-  - Given that the page is opened
-  - The dialog box should be visible
-  - And The dialog box should contain an input box
-  - And The input box should have placeholder text "Your name, please!"
+- Given that the page is opened
+   - The dialog box should be visible
+   - And The dialog box should contain an input box
+   - And The input box should have placeholder text "Your name, please!"
 
 ### Notes
 
