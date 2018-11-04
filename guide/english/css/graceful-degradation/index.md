@@ -17,4 +17,16 @@ title: Graceful Degradation
  ### Example
  
  A simple example is the use of 24-bit alpha-transparent PNGs. Those images can be displayed on modern browsers without problems. IE5.5 and IE6 would show the image, but transparency effects would fail (it can be made to work if necessary). Older browsers that do not support PNG would show alt text or an empty space.
- 
+
+
+### Resources
+
+[How can polyfills be used as a fallback for older browsers](https://developer.mozilla.org/en-US/docs/Glossary/Polyfill)
+
+[What is polyfill](https://remysharp.com/2010/10/08/what-is-a-polyfill)
+
+[Online HTML beautifier](https://www.10bestdesign.com/dirtymarkup/)
+
+[W3C CSS validator](https://jigsaw.w3.org/css-validator/)
+
+[MDN - Graceful degradation](https://developer.mozilla.org/en-US/docs/Glossary/Graceful_degradation)

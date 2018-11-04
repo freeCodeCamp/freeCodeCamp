@@ -1,7 +1,7 @@
 ---
 title: Android Core Components
 ---
-# Android core components
+## Android core components
 Core components are the essential elements contained in an Android app. Each of them has its own purpose and lifecycle, but not all of them are independent. The Android Core Components are:
 
 - Activities
@@ -9,10 +9,10 @@ Core components are the essential elements contained in an Android app. Each of 
 - Broadcast receivers
 - Content providers
 
-## [Activities](https://developer.android.com/guide/components/activities/)
+### [Activities](https://developer.android.com/guide/components/activities/)
 An _activity_ is a component that has a user interface and represents a single screen in an Android app. An app can have multiple activities, each of which can be an entry point to the application itself for the user or the system (an app's activity that wants to open another activity that belongs to the same application or to a different one).
 
-### [Activity Lifecycle](https://developer.android.com/guide/components/activities/activity-lifecycle)
+#### [Activity Lifecycle](https://developer.android.com/guide/components/activities/activity-lifecycle)
 ![Activity Lifecycle](https://developer.android.com/images/activity_lifecycle.png)
 
 * onCreate():
@@ -43,7 +43,7 @@ An _activity_ is a component that has a user interface and represents a single s
 
 * onDestroy():
 
-> The final call you receive before your activity is destroyed. This can happen either because the activity is finishing (someone called finish() on it), or because the system is temporarily destroying this instance of the activity to save space. You can distinguish between these two scenarios with the isFinishing() method.
+> The final call you receive before your activity is destroyed. This can happen either because the activity is finishing (someone called finish() on it), or because the system is temporarily destroying this instance of the activity to save space. You can distinguish between these two scenarios with the isFinishing() method. This call is often used when the user hits the back button, or closes the instance of the app.
 
 #### Sample code to understand Activity Lifecycle
 ``` java
@@ -93,21 +93,22 @@ public class MainActivity extends Activity {
 ```
 
 
-## [Services](https://developer.android.com/guide/components/services)
+### [Services](https://developer.android.com/guide/components/services)
 A _service_ is a component without a user interface, and is used to perform long-running operations in the background.
-There are two kinds of services:
+There are three kinds of services:
 
 - _foreground_ services: they are strictly related to user's interaction (for example music playback), so it's harder for the system to kill them.
 - _background_ services: they are not directly related to user's activities, so they can be killed if more RAM is needed.
+- _bound_ services: they are  offers a client-server interface that allows components to interact with the service, send requests, receive results, and even do so across processes with interprocess communication (IPC).
 
-## [Broadcast receivers](https://developer.android.com/guide/components/broadcasts)
+### [Broadcast receivers](https://developer.android.com/guide/components/broadcasts)
 A _broadcast receiver_ is another component without user interface (except an optional status bar notification) that provides a gateway for the system to deliver events from/to the app, even when the latter hasn't been previously launched.
 
-## [Content providers](https://developer.android.com/guide/topics/providers/content-providers)
+### [Content providers](https://developer.android.com/guide/topics/providers/content-providers)
 A _content provider_ is a component used to manage a set of app data to share with other applications. Each item saved in the content provider is identified by a URI scheme.
 
 For detailed information about the topic, see the official [Android fundamentals](https://developer.android.com/guide/components/fundamentals) documentation.
 
-## Advanced Android Development  
+### Advanced Android Development  
 To learn advanced Android programming concepts, see Google's [Advanced Android Development](https://developers.google.com/training/courses/android-advanced) course.
 
