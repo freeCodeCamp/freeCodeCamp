@@ -64,7 +64,7 @@ Do not forget that when we truncate the word, we also must count the length adde
       if (str.length <= num) {
         return str;
       } else {
-        return str.slice(0, num > 3 ? num - 3 : num) + '...';
+        return str.slice(0, num) + '...';
       }
     }
 
@@ -77,10 +77,10 @@ Do not forget that when we truncate the word, we also must count the length adde
     if (str.length <= num)
       return str;
 
-*   If our `if` statement above fails, we move to the `else`, where we are going to return a "slice" of the string. The slice method extracts a section of a string and returns a new string. Here we pass 0 as the starting point for our slice. To determine the endpoint, we use a ternary operator: `num > 3 ? num - 3 : num`. In our ternary, if `num` is larger than 3, we must factor in the three dots to our total length, and thus we end our slice at `num-3`. If num is less than or equal to 3, our slice gets an end variable of just `num`. Finally, the `'...'` is appended to the end of our new string and is returned.
+*   If our `if` statement above fails, we move to the `else`, where we are going to return a "slice" of the string. The slice method extracts a section of a string and returns a new string. Here we pass 0 as the starting point for our slice. The endpoint for our slice is the `num`. Finally, the `'...'` is appended to the end of our new string and is returned.
 
     } else {
-        return str.slice(0, num > 3 ? num - 3 : num) + '...';
+        return str.slice(0, num) + '...';
       }
 
 *   **NOTE** In order to understand the above code, you need to understand how a Ternary Operator works. The Ternary Operator is frequently used as a shortcut for the `if` statement and follows this format: `condition ? expr1 : expr2`. If the `condition` evaluates to true, the operator returns the value of `expr1`. Otherwise, it returns the value of `expr2`.
