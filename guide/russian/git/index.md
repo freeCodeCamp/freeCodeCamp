@@ -14,11 +14,11 @@ Git - это система управления распределенной в
 
 **Оглавление**
 
-*   [Понимать три раздела проекта Git](#understand-the-three-sections-of-a-git-project)
+*   [Понимание трёх разделов проекта Git](#understand-the-three-sections-of-a-git-project)
 *   [Установка Git](#install-git)
 *   [Настройка среды Git](#configure-the-git-environment)
-*   [Инициализировать Git в проекте](#initialize-git-in-a-project)
-*   [Получить помощь в Git](#get-help-in-git)
+*   [Инициализация Git в проекте](#initialize-git-in-a-project)
+*   [Помощь в Git](#get-help-in-git)
 *   [Источники](#sources)
 *   [Дополнительная информация](#more-information)
 
