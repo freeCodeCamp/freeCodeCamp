@@ -58,3 +58,4 @@ Story: Returns go to stock
 *   Wiki上的[BDD](https://en.wikipedia.org/wiki/Behavior-driven_development)
 *   众所周知的行为驱动开发（BDD）框架是[Cucumber](https://cucumber.io/) 。 Cucumber支持许多编程语言，可以与许多框架集成;例如， [Ruby on Rails](http://rubyonrails.org/) ， [Spring Framework](http://spring.io/)和[Selenium](http://www.seleniumhq.org/)
 *   https://inviqa.com/blog/bdd-guide
+Access wiki page.
