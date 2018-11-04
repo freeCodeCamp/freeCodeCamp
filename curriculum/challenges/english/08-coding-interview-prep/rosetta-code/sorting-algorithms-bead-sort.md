@@ -21,6 +21,7 @@ This is the case when bead sort is implemented without a mechanism to assist in 
 <section id='tests'>
 
 ``` yml
+tests:
 - text: <code>beadSort</code> should be a function.
   testString: assert(typeof beadSort=='function','<code>beadSort</code> should be a function.');
 - text: <code>beadSort([25,32,12,7,20])</code> should return a array.
@@ -39,6 +40,8 @@ This is the case when bead sort is implemented without a mechanism to assist in 
 
 </section>
 
+## Challenge Seed
+<section id='challengeSeed'>
 <div id='js-seed'>
 
 ```js
@@ -48,6 +51,7 @@ function beadSort (arr) {
 ```
 
 </div>
+</section>
 
 ## Solution
 <section id='solution'>
