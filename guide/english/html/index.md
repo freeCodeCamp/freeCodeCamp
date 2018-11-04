@@ -8,7 +8,7 @@ HyperText Markup Language (HTML) is a markup language used to construct online d
  
 An HTML document has two aspects to it. It contains structured information (Markup), and text-links (HyperText) to other documents. We structure our pages using [HTML elements](#). They are constructs of the language providing [structure](#) and [meaning](#) in our document for the browser and the [<anchor>](#) element links to other documents across the internet.
 
-The first publicly available description of HTML was a document called "HTML Tags", first mentioned on the Internet by Tim Berners-Lee in late 1991. Who is widely credited with the invention of html. 
+The first publicly available description of HTML was a document called "HTML Tags", first mentioned on the Internet in late 1991 by Tim Berners-Lee, who is widely credited with the invention of html. 
 
 The internet was originally created to store and present static (unchanging) documents. The aspects of HTML discussed above were seen perfectly in these documents which lacked all design and styling. They presented structured information that contained links to other documents.
  
