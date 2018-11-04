@@ -35,4 +35,4 @@ class Calc
 ## Output:
 ```
 > The sum of 4 and 3 is 7
-``
+```
