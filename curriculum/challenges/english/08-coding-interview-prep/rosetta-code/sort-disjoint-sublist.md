@@ -23,6 +23,7 @@ Where the correct result would be:
 <section id='tests'>
 
 ``` yml
+tests:
 - text: <code>sortDisjoint</code> should be a function.
   testString: assert(typeof sortDisjoint=='function','<code>sortDisjoint</code> should be a function.');
 - text: <code>sortDisjoint([7,6,5,4,3,2,1,0],[6,1,7])</code> should return a array.
@@ -41,6 +42,8 @@ Where the correct result would be:
 
 </section>
 
+## Challenge Seed
+<section id='challengeSeed'>
 <div id='js-seed'>
 
 ```js
