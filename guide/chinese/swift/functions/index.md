@@ -4,9 +4,9 @@ localeTitle: 功能
 ---
 ## 功能
 
-Swift中的函数由参数和返回类型组成。可以使用以下基本结构创建函数： \`\`\`斯威夫特 func sayHello（nameOfPerson：String） - > String { let hello =“Hello，”+ nameOfPerson +“。” 打印（你好） }
+Swift中的函数由参数和返回类型组成。可以使用以下基本结构创建函数： \`\`\`斯威夫特 func sayHello（nameOfPerson：String） - > String { let hello =“Hello，”+ nameOfPerson +“。” return hello }
 
-sayHello（nameOfPerson：“史蒂夫”） ` `` In this example, the function sayHello takes in a string name and prints out the phrase` “Hello，Steve。”。
+运行函数： print(sayHello (nameOfPerson：“史蒂夫”)) ` `` In this example, the function sayHello takes in a string name and prints out the phrase` 输出结果是： “Hello，史蒂夫。”。
 
 ## 功能参数
 
