@@ -13,13 +13,13 @@
 
 # Pautas de Contribución
 
-Hola 👋!
+¡Hola 👋!
 
 freeCodeCamp.org es posible gracias a miles de voluntarios amables como tú. Nos emocionamos por tus contribuciones y nos complace darte la bienvenida a bordo.
 
 Cumplimos estrictamente nuestro ["Código de conducta"](https://www.freecodecamp.org/code-of-conduct). Tómate un momento para leerlo. No es muy largo.
 
-Feliz contribución 🎉!
+¡Feliz contribución 🎉!
 
 ## Aquí hay algunas maneras divertidas en que puedes ayudar:
 
@@ -137,7 +137,7 @@ Siéntete libre de pedir ayuda en:
 - [La categoría "Colaboradores" en nuestro foro público](https://www.freecodecamp.org/forum/c/contributors).
 - [La sala de chat de nuestros colaboradores públicos en Gitter](https://gitter.im/FreeCodeCamp/Contributors).
 
-Nos emociona ayudarte a contribuir con cualquiera de los temas en los que le gustaría trabajar. Asegúrate de buscar tu consulta antes de publicar una nueva. Sé educado y paciente. Nuestros voluntarios y moderadores de la comunidad están siempre alrededor para guiarlo a través de sus consultas.
+Nos emociona ayudarte a contribuir con cualquiera de los temas en los que le gustaría trabajar. Asegúrate de buscar tu consulta antes de publicar una nueva. Sé educado y paciente. Nuestros voluntarios y moderadores de la comunidad están siempre alrededor para guiarte a través de sus consultas.
 
 **Soy nuevo en GitHub y Open Source en general:**
 
@@ -145,9 +145,9 @@ Lee nuestra [Guía de cómo contribuir al Código Abierto](https://github.com/fr
 
 **¿Qué significan estas diferentes etiquetas, que están etiquetadas en los problemas?**
 
-Nuestros moderadores de nuestra comunidad [evalúan](https://en.wikipedia.org/wiki/Software_bug#Bug_management) problemas y solicitudes según su prioridad, gravedad y otros factores. Puedes [encontrar un glosario completo de sus significados aquí](https://github.com/freecodecamp/freecodecamp/labels).
+Los moderadores de nuestra comunidad [evalúan](https://en.wikipedia.org/wiki/Software_bug#Bug_management) problemas y solicitudes según su prioridad, gravedad y otros factores. Puedes [encontrar un glosario completo de sus significados aquí](https://github.com/freecodecamp/freecodecamp/labels).
 
-Debes revisar los problemas **`Help Wanted`** o **`first timers welcome`** para una búsqueda rápida de lo que está disponible para que trabajes. Estos están libres para todos y no necesita permisión antes de trabajar en ellos.
+Debes revisar los problemas **`Help Wanted`** o **`first timers welcome`** para una búsqueda rápida de lo que está disponible para que trabajes. Estos están libres para todos y no necesita permisos antes de trabajar en ellos.
 
 Si estos temas carecen de claridad sobre lo que debe hacerse, siéntete libre de hacer preguntas en los comentarios.
 
