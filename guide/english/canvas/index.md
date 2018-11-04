@@ -7,20 +7,21 @@ Canvas is a technology introduced in HTML5 which can be accessed by the `<canvas
 
 ## Usage 
 
-<!DCTYPE html>
+
+```html
+<!DOCTYPE html>
 <html>
     <body>
       <canvas id="myCanvas" width="200" height="100" style="border:1px solid #000111;"></canvas>
     </body>
 </html>
+```
 
-1. In the above example, the "id=myCanvas" attribute is referred by JavaScript.
-2. The "width" & "height" attributes are necessary to define the size of the canvas.
-3. By default, <canvas> element has no border & no content. So, to add a border we use the "style" attribute.
-4. We can have multiple <canvas> elements on one HTML page.
+1. In the above example, the `"id=myCanvas"` attribute is referred by JavaScript.
+2. The `"width"` & `"height"` attributes are necessary to define the size of the canvas.
+3. By default, `<canvas>` element has no border & no content. So, to add a border we use the `"style"` attribute.
+4. We can have multiple `<canvas>` elements on one HTML page.
 
 #### More Information:
 
 - [MDN Canvas API](https://developer.mozilla.org/en-US/docs/Web/API/Canvas_API)
-
-
