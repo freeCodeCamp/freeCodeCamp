@@ -3,7 +3,7 @@ id: 587d778b367417b2b2512aa8
 title: Add an Accessible Date Picker
 challengeType: 0
 videoUrl: ''
-localeTitle: Добавить доступную дату выбора
+localeTitle: Добавить доступный выбор даты
 ---
 
 ## Description
@@ -19,7 +19,7 @@ localeTitle: Добавить доступную дату выбора
 
 ```yml
 tests:
-  - text: Ваш код должен добавить один тег <code>input</code> для поля выбора даты.
+  - text: Вы должны добавить один тег <code>input</code> для поля выбора даты.
     testString: 'assert($("input").length == 2, "Your code should add one <code>input</code> tag for the date selector field.");'
   - text: Тег <code>input</code> должен иметь атрибут <code>type</code> со значением даты.
     testString: 'assert($("input").attr("type") == "date", "Your <code>input</code> tag should have a <code>type</code> attribute with a value of date.");'
