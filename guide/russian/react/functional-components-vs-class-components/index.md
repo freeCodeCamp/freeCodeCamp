@@ -34,9 +34,9 @@ import React from "react";
 ## Компоненты с использованием классов
 
 *   Компоненты с классами используют ключевое слово class из ES6 и расширяют класс `Component` в React.
-*   Иногда они называются «умными» или «с состоянием», поскольку они склонны реализовывать логику и состояние.
+*   Иногда они называются «умными» или «с состоянием», поскольку они предназначены для реализации логики и состояние приложения.
 *   Методы жизненного цикла React могут использоваться внутри компонентов класса (например, `componentDidMount` ).
-*   Вы передаете свойства (props) до компонентов класса и получаете доступ к ним с помощью `this.props`
+*   Вы передаете свойства (props) вниз к классовым компонентам и получаете доступ к соответствующим свойствам с помощью `this.props`
 
 ```js
 import React, { Component } from "react"; 
@@ -65,5 +65,5 @@ import React, { Component } from "react";
 
 *   [React компоненты](https://reactjs.org/docs/components-and-props.html)
 *   [Функциональные компоненты класса vs компоненты с использованием классов](https://react.christmas/16)
-*   [Функциональные компоненты с состоянием vs компонентов без состояния](https://code.tutsplus.com/tutorials/stateful-vs-stateless-functional-components-in-react--cms-29541)
+*   [Компоненты с состоянием vs компонентов без состояния](https://code.tutsplus.com/tutorials/stateful-vs-stateless-functional-components-in-react--cms-29541)
 *   [Состояние и жизненный цикл](https://reactjs.org/docs/state-and-lifecycle.html)
