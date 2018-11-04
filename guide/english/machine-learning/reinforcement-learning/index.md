@@ -28,4 +28,4 @@ Some applications of the reinforcement learning algorithms are computer played b
 
 ## More information:
 * [David Silver's RL course](http://www0.cs.ucl.ac.uk/staff/d.silver/web/Teaching.html)
-
+* [RL using Tensorflow](https://medium.com/emergent-future/simple-reinforcement-learning-with-tensorflow-part-0-q-learning-with-tables-and-neural-networks-d195264329d0)

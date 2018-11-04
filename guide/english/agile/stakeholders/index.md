@@ -3,12 +3,15 @@ title: Stakeholders
 ---
 ## Stakeholders
 
-The Stakeholders are the people that will benefit from your project. It is up to the Product Owner to understand the outcome required by the Stakeholders, and to communicate that need to the Delivery Team.
+The Stakeholders are the people who are invested in the outcome of your project.  It is up to the Product Owner to understand the outcome required by the Stakeholders, and to communicate that need to the Delivery Team.
+
 Stakeholders may be made up from any of the following
 - Users
-- Customers
+- Customers/Consumers
 - Managers
-- Funders / investors
+- Funders / Investors
+- Business Owner
+- Anyone who is on the RACI chart (Responsible, Accountable, Consultative, or Informed)
 
 Their participation in the project is essential for success.
 
