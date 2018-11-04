@@ -22,7 +22,7 @@ How many primitive integer sided triangles exist with a perimeter not exceeding 
 ```yml
 tests:
   - text: <code>euler276()</code> should return 5777137137739633000.
-    testString: 'assert.strictEqual(euler276(), 5777137137739633000, "<code>euler276()</code> should return 5777137137739633000.");'
+    testString: assert.strictEqual(euler276(), 5777137137739633000, '<code>euler276()</code> should return 5777137137739633000.');
 
 ```
 
