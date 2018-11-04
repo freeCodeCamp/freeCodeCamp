@@ -7,6 +7,7 @@ title: Extensible Markup Language (XML)
   
  ## Syntax of XML
   XML syntax refers to the rules that determine how an XML application can be written. XML syntax is very straight forward, and this makes XML very easy to learn.
+
   XML documents must contain one root element that is the parent of all other elements:
   
 ```
@@ -17,7 +18,7 @@ title: Extensible Markup Language (XML)
 </root>
 ```  
 #### XML must have a root element 
-Above syntax shows the root element which is necessary while creating an XML code. This can be shown by the example:-
+The above syntax shows the root element which is necessary while writing XML code. This is shown in the following example:-
 ```
 <?xml version="1.0" encoding="UTF-8"?>
 <note>
@@ -27,7 +28,7 @@ Above syntax shows the root element which is necessary while creating an XML cod
   <body>Don't forget me this weekend!</body>
 </note>
 ```
-In this example 'note' is the root element.
+In this example, 'note' is the root element.
  
   
   * Advantages of using XML:
@@ -42,9 +43,11 @@ In this example 'note' is the root element.
 
 In Computer Language, eXtensible Markup Language(XML) is that which defines a set or block of Rules which are later used for Encoding documents in such a format that is both human and machine readable.
 
+There is a main difference between XML and HTML; XML was designed to carry a particular information and focuses on that informaion only, while HTML focuses on displaying that particular information like design and all these stuff regarding the information.
+
 XML does not uses a predefined tags as used by HTML. It uses user defined tags.
 
-XML helps to simplify: 
+XML helps simplify: 
 1. data sharing
 2. data transport
 3. platform changes

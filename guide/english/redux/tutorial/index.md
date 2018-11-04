@@ -53,7 +53,7 @@ project_root
   - /project_root/index.js 
     - Is the entry point for the app it will contain the entry point for which store, and it will render the the App.jsx file.
 
-Bellow is an example of the code that will be declared on the file
+Below is an example of the code that will be declared in the file:
 
 ```javascript
 import React from 'react';
