@@ -21,10 +21,12 @@ Shuffle(list)
 <section id='instructions'>
 
 </section>
+
 ## Tests
 <section id='tests'>
 
 ``` yml
+tests:
 - text: <code>bogosort</code> should be a function.
   testString: assert(typeof bogosort=='function','<code>bogosort</code> should be a function.');
 - text: <code>bogosort([25,32,12,7,20])</code> should return a array.
@@ -43,6 +45,8 @@ Shuffle(list)
 
 </section>
 
+## Challenge Seed
+<section id='challengeSeed'>
 <div id='js-seed'>
 
 ```js
@@ -52,6 +56,7 @@ function bogosort (v) {
 ```
 
 </div>
+</section>
 
 ## Solution
 <section id='solution'>
