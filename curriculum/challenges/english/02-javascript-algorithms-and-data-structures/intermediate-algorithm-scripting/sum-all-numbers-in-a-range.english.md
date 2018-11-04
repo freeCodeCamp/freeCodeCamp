@@ -22,16 +22,16 @@ Remember to use <a href='http://forum.freecodecamp.org/t/how-to-get-help-when-yo
 
 ```yml
 tests:
-  - text: '<code>sumAll([1, 4])</code> should return a number.'
-    testString: 'assert(typeof sumAll([1, 4]) === "number", "<code>sumAll([1, 4])</code> should return a number.");'
-  - text: '<code>sumAll([1, 4])</code> should return 10.'
-    testString: 'assert.deepEqual(sumAll([1, 4]), 10, "<code>sumAll([1, 4])</code> should return 10.");'
-  - text: '<code>sumAll([4, 1])</code> should return 10.'
-    testString: 'assert.deepEqual(sumAll([4, 1]), 10, "<code>sumAll([4, 1])</code> should return 10.");'
-  - text: '<code>sumAll([5, 10])</code> should return 45.'
-    testString: 'assert.deepEqual(sumAll([5, 10]), 45, "<code>sumAll([5, 10])</code> should return 45.");'
-  - text: '<code>sumAll([10, 5])</code> should return 45.'
-    testString: 'assert.deepEqual(sumAll([10, 5]), 45, "<code>sumAll([10, 5])</code> should return 45.");'
+  - text: <code>sumAll([1, 4])</code> should return a number.
+    testString: assert(typeof sumAll([1, 4]) === 'number', '<code>sumAll([1, 4])</code> should return a number.');
+  - text: <code>sumAll([1, 4])</code> should return 10.
+    testString: assert.deepEqual(sumAll([1, 4]), 10, '<code>sumAll([1, 4])</code> should return 10.');
+  - text: <code>sumAll([4, 1])</code> should return 10.
+    testString: assert.deepEqual(sumAll([4, 1]), 10, '<code>sumAll([4, 1])</code> should return 10.');
+  - text: <code>sumAll([5, 10])</code> should return 45.
+    testString: assert.deepEqual(sumAll([5, 10]), 45, '<code>sumAll([5, 10])</code> should return 45.');
+  - text: <code>sumAll([10, 5])</code> should return 45.
+    testString: assert.deepEqual(sumAll([10, 5]), 45, '<code>sumAll([10, 5])</code> should return 45.');
 
 ```
 

@@ -20,7 +20,7 @@ Find the smallest x + y + z with integers x > y > z > 0 such that x + y, x − y
 ```yml
 tests:
   - text: <code>euler142()</code> should return 1006193.
-    testString: 'assert.strictEqual(euler142(), 1006193, "<code>euler142()</code> should return 1006193.");'
+    testString: assert.strictEqual(euler142(), 1006193, '<code>euler142()</code> should return 1006193.');
 
 ```
 
