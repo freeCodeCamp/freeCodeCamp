@@ -16,8 +16,7 @@ Web accessibility also **benefits** people *without* disabilities. For example, 
 
 Web accessibility should also include the people who don't have access to the internet or to computers.
 
-A prominent guideline for web development was introduced by the [World Wide Web Consortium (W3C)](https://www.w3.org/), the [Web Accessibility Initiative](https://www.w3.org/WAI/)
-from which we get the [WAI-ARIA](https://developer.mozilla.org/en-US/docs/Learn/Accessibility/WAI-ARIA_basics), the Accessible Rich Internet Applications Suite. Where WAI tackles the semantics of html to more easily nagivate the DOM Tree, ARIA attempts to make web apps, especially those developed with javascript and AJAX, more accessible. 
+A prominent guideline for web development was introduced by the [World Wide Web Consortium (W3C)](https://www.w3.org/), the [Web Accessibility Initiative](https://www.w3.org/WAI/) from which we get the [WAI-ARIA](https://developer.mozilla.org/en-US/docs/Learn/Accessibility/WAI-ARIA_basics), the Accessible Rich Internet Applications Suite. Where WAI tackles the semantics of html to more easily nagivate the DOM Tree, ARIA attempts to make web apps, especially those developed with javascript and AJAX, more accessible. 
 
 The use of images and graphics on websites can decrease accessibility for those with visual impairments. However, this doesn't mean designers should avoid using these visual elements. When used correctly, visual elements can convey the appropriate look and feel to users without disabilities and should be used to do so. In order to use these elements appropriately, web designers must use alt text to communicate the message of these elements to those who cannot see
 them. Alt text should be short and to the point--generally [no more than five to 15 words](https://www.thoughtco.com/writing-great-alt-text-3466185). If a graphic is used to convey information that exceeds the limitations of alt text, that information should also exist as web text in order to be read by screen readers. [Learn more about alt text](https://webaim.org/techniques/alttext/).
@@ -28,4 +27,7 @@ Copyright &copy; 2005 <a href="http://www.w3.org" shape="rect">World Wide Web Co
 
 ### More Information:
 <a href='https://www.w3.org/WAI/intro/accessibility.php' target='_blank' rel='nofollow'>w3.org introduction to accessibility.</a>
+
 <a href='http://a11yproject.com/' target='_blank' rel='nofollow'>The A11Y Project</a>
+
+<a href='https://webaim.org/intro/' target='_blank' rel='nofollow'>WebAIM: Introduction to Web Accessibility</a>
