@@ -38,7 +38,7 @@ int power(int x, unsigned int y) {
 
 ## Modular Exponentiation
 
-Given three numbers x, y and p, compute (x^y) % p
+Given three numbers x, y, and p, compute (x^y) % p
 
 ```C
 int power(int x, unsigned int y, int p) { 
