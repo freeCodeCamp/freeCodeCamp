@@ -24,6 +24,7 @@ Write a function that takes a 2D array as a parameter. Each element has 2 elemen
 <section id='tests'>
 
 ``` yml
+tests:
 - text: <code>stableSort</code> should be a function.
   testString: assert(typeof stableSort=='function','<code>stableSort</code> should be a function.');
 - text: <code>stableSort([["UK","London"],["US","New York"],["US","Birmingham"],["UK","Birmingham"]])</code> should return a array.
@@ -42,6 +43,8 @@ Write a function that takes a 2D array as a parameter. Each element has 2 elemen
 
 </section>
 
+## Challenge Seed
+<section id='challengeSeed'>
 <div id='js-seed'>
 
 ```js
