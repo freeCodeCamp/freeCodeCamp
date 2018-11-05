@@ -71,7 +71,7 @@ foo.toFixed(2);  // "47.69"
 Numbers in strings are treated differently than normal numbers.
 
 ```javascript
-var foo = "12" + "18"; // "1218"
+var foo = "12" + 18; // "1218"
 ```
 In order to convert a string into a number you must run it through a ```Number()``` function.
 
