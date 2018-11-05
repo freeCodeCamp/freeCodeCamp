@@ -50,7 +50,7 @@ Now let's take a look at what's inside the brackets:
 ```C
 return a / b;
 ```
-This is pretty straightforward, because this is such a simple function. `a` is divided by `b`, and that value is returned. You've seen `return` before in the `main` function, but now instead of ending our program, it ends the method and gives the value to whatever called it.
+This is pretty straightforward, because this is such a simple function. `a` is divided by `b`, and that value is returned. You've seen `return` before in the `main` function, but now instead of ending our program, it ends the function and gives the value to whatever called it.
 
 So to recap what this function does- it gets two integers, divides them, and gives them back to whatever called it.
 
