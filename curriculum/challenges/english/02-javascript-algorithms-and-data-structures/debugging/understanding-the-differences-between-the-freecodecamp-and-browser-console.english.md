@@ -26,11 +26,11 @@ Use <code>console.log()</code> to print the variables in the code where indicate
 ```yml
 tests:
   - text: Use <code>console.log()</code> to print the <code>outputTwo</code> variable.  In your Browser Console this should print out the value of the variable two times.
-    testString: 'assert(code.match(/console\.log\(outputTwo\)/g), "Use <code>console.log()</code> to print the <code>outputTwo</code> variable.  In your Browser Console this should print out the value of the variable two times.");'
+    testString: assert(code.match(/console\.log\(outputTwo\)/g), 'Use <code>console.log()</code> to print the <code>outputTwo</code> variable.  In your Browser Console this should print out the value of the variable two times.');
   - text: Use <code>console.log()</code> to print the <code>outputOne</code> variable.
-    testString: 'assert(code.match(/console\.log\(outputOne\)/g), "Use <code>console.log()</code> to print the <code>outputOne</code> variable.");'
+    testString: assert(code.match(/console\.log\(outputOne\)/g), 'Use <code>console.log()</code> to print the <code>outputOne</code> variable.');
   - text: Use <code>console.clear()</code> to modify your output so that <code>outputOne</code> variable only outputs once.
-    testString: 'assert(code.match(/^(\s*console.clear\(\);?\s*)$/gm), "Use <code>console.clear()</code> to modify your output so that <code>outputOne</code> variable only outputs once.");'
+    testString: assert(code.match(/^(\s*console.clear\(\);?\s*)$/gm), 'Use <code>console.clear()</code> to modify your output so that <code>outputOne</code> variable only outputs once.');
 
 ```
 

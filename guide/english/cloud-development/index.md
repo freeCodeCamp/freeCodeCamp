@@ -22,7 +22,8 @@ IaaS is from the infrastructure provider perspective, meaning that at this layer
 
 #### More Information:
 
-[Getting Started with AWS](https://aws.amazon.com/getting-started/)
-[Google Cloud Documentation](https://cloud.google.com/docs/)
-[Getting Started with Microsoft Azure](https://docs.microsoft.com/en-us/azure/guides/developer/azure-developer-guide)
-[Firebase Documentation](https://firebase.google.com/docs/)
+- [Getting Started with AWS](https://aws.amazon.com/getting-started/)
+- [Google Cloud Documentation](https://cloud.google.com/docs/)
+- [Getting Started with Microsoft Azure](https://docs.microsoft.com/en-us/azure/guides/developer/azure-developer-guide)
+- [Firebase Documentation](https://firebase.google.com/docs/)
+- [Cloud computing news](https://www.ibm.com/blogs/cloud-computing/2018/10/15/what-is-ibm-multicloud-manager/)
