@@ -38,6 +38,7 @@ localeTitle: Nest CSS con Sass
     }
   }
 ```
+</section>
 
 ## Instructions
 <section id="instructions"> Use la técnica de <code>nesting</code> que se muestra arriba para reorganizar las reglas de CSS para ambos elementos del elemento <code>.blog-post</code> . Para propósitos de prueba, el <code>h1</code> debe venir antes del elemento <code>p</code> . </section>
