@@ -105,7 +105,7 @@ tests:
 
 ## Solution
 <section id='solution'>
-
+```html
 <html>
 <head>
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
@@ -172,4 +172,5 @@ tests:
   </form>
 </div>
 </html>
+```
 </section>
