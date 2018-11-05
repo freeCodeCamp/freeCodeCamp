@@ -10,6 +10,7 @@ title: Cryptocurrency
 Cryptocurrency is a subset of digital currency, which acts as a medium of exchange amongst two parties. It is known as crypto-currency because of the utilization of cryptography in securing its transactions. There are various cryptocurrencies including Litecoin, Dash, Ethereum, Ripple, and the currently most popular one Bitcoin.
 
 > You can’t stop things like Bitcoin. It will be everywhere and the world will have to readjust. World governments will have to readjust
+
 > – John McAfee
 
 Cryptocurrency enables trustless and anonymous transactions since it does not involve any third party - there is no central bank.  Instead, a blockchain keeps a ledger of transactions across a public network of computers. Blockchains are append-only, meaning nobody can change past transactions.
