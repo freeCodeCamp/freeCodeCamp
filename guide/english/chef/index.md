@@ -7,10 +7,6 @@ title: Chef
 
 Chef enables programmers and system administrators to work together. Instead of developers writing applications and then waiting on Ops staff to figure out how to deploy the software, Chef serves both communities. Chef moves the process from a herky-jerky release cycle to a continuous delivery model by enabling an effective and automated workflow—a central goal of the DevOps movement. 
 
-<a href="https://www.youtube.com/watch?v=jlwGcgFfcnU" target="_blank"><img src="" 
-</a>
-
-
 #### How Chef Works
 <p>Chef stores collections of recipes in a cookbook. One cookbook should relate to a single task, but can have a number of different server configurations involved (for example a web application with a database, will have two recipes, one for each part, stored together in a cookbook).</p>
 
