@@ -22,15 +22,15 @@ The code editor has a simple controlled input component with a styled border. Yo
 ```yml
 tests:
   - text: The <code>GateKeeper</code> component should render a <code>div</code> element.
-    testString: 'assert((function() { const mockedComponent = Enzyme.mount(React.createElement(GateKeeper)); return mockedComponent.find("div").length === 1; })(), "The <code>GateKeeper</code> component should render a <code>div</code> element.");'
+    testString: assert((function() { const mockedComponent = Enzyme.mount(React.createElement(GateKeeper)); return mockedComponent.find('div').length === 1; })(), 'The <code>GateKeeper</code> component should render a <code>div</code> element.');
   - text: The <code>GateKeeper</code> component should be initialized with a state key <code>input</code> set to an empty string.
-    testString: 'assert((function() { const mockedComponent = Enzyme.mount(React.createElement(GateKeeper)); return mockedComponent.state().input === ""; })(), "The <code>GateKeeper</code> component should be initialized with a state key <code>input</code> set to an empty string.");'
+    testString: assert((function() { const mockedComponent = Enzyme.mount(React.createElement(GateKeeper)); return mockedComponent.state().input === ''; })(), 'The <code>GateKeeper</code> component should be initialized with a state key <code>input</code> set to an empty string.');
   - text: The <code>GateKeeper</code> component should render an <code>h3</code> tag and an <code>input</code> tag.
-    testString: 'assert((function() { const mockedComponent = Enzyme.mount(React.createElement(GateKeeper)); return mockedComponent.find("h3").length === 1 && mockedComponent.find("input").length === 1; })(), "The <code>GateKeeper</code> component should render an <code>h3</code> tag and an <code>input</code> tag.");'
+    testString: assert((function() { const mockedComponent = Enzyme.mount(React.createElement(GateKeeper)); return mockedComponent.find('h3').length === 1 && mockedComponent.find('input').length === 1; })(), 'The <code>GateKeeper</code> component should render an <code>h3</code> tag and an <code>input</code> tag.');
   - text: The <code>input</code> tag should initially have a style of <code>1px solid black</code> for the <code>border</code> property.
-    testString: 'assert((function() { const mockedComponent = Enzyme.mount(React.createElement(GateKeeper)); return mockedComponent.find("input").props().style.border === "1px solid black"; })(), "The <code>input</code> tag should initially have a style of <code>1px solid black</code> for the <code>border</code> property.");'
+    testString: assert((function() { const mockedComponent = Enzyme.mount(React.createElement(GateKeeper)); return mockedComponent.find('input').props().style.border === '1px solid black'; })(), 'The <code>input</code> tag should initially have a style of <code>1px solid black</code> for the <code>border</code> property.');
   - text: The <code>input</code> tag should be styled with a border of <code>3px solid red</code> if the input value in state is longer than 15 characters.
-    testString: 'async () => {  const waitForIt = (fn) => new Promise((resolve, reject) => setTimeout(() => resolve(fn()), 100)); const mockedComponent = Enzyme.mount(React.createElement(GateKeeper)); const simulateChange = (el, value) => el.simulate("change", {target: {value}}); let initialStyle = mockedComponent.find("input").props().style.border; const state_1 = () => { mockedComponent.setState({input: "this is 15 char" }); return waitForIt(() => mockedComponent.find("input").props().style.border )}; const state_2 = () => { mockedComponent.setState({input: "A very long string longer than 15 characters." }); return waitForIt(() => mockedComponent.find("input").props().style.border )}; const style_1 = await state_1(); const style_2 = await state_2(); assert(initialStyle === "1px solid black" && style_1 === "1px solid black" && style_2 === "3px solid red", "The <code>input</code> tag should be styled with a border of <code>3px solid red</code> if the input value in state is longer than 15 characters."); }; '
+    testString: 'async () => {  const waitForIt = (fn) => new Promise((resolve, reject) => setTimeout(() => resolve(fn()), 100)); const mockedComponent = Enzyme.mount(React.createElement(GateKeeper)); const simulateChange = (el, value) => el.simulate(''change'', {target: {value}}); let initialStyle = mockedComponent.find(''input'').props().style.border; const state_1 = () => { mockedComponent.setState({input: ''this is 15 char'' }); return waitForIt(() => mockedComponent.find(''input'').props().style.border )}; const state_2 = () => { mockedComponent.setState({input: ''A very long string longer than 15 characters.'' }); return waitForIt(() => mockedComponent.find(''input'').props().style.border )}; const style_1 = await state_1(); const style_2 = await state_2(); assert(initialStyle === ''1px solid black'' && style_1 === ''1px solid black'' && style_2 === ''3px solid red'', ''The <code>input</code> tag should be styled with a border of <code>3px solid red</code> if the input value in state is longer than 15 characters.''); }; '
 
 ```
 
@@ -47,7 +47,7 @@ class GateKeeper extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      input: "
+      input: ''
     };
     this.handleChange = this.handleChange.bind(this);
   }
@@ -82,7 +82,7 @@ class GateKeeper extends React.Component {
 <div id='jsx-teardown'>
 
 ```js
-console.info('after the test');
+ReactDOM.render(<GateKeeper />, document.getElementById('root'))
 ```
 
 </div>
@@ -98,7 +98,7 @@ class GateKeeper extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      input: "
+      input: ''
     };
     this.handleChange = this.handleChange.bind(this);
   }

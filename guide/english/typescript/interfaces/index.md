@@ -27,3 +27,18 @@ interface User = {
     email?: string;
 }
 ```
+
+We can also use interfaces as the Promises to our classes.  For example, when declaring names of methods in our interface they need to be in our implementation otherwise we will get an exception.
+Example:
+```typescript
+interface Login {
+  login(): boolean;
+}
+class LoginImplementation implements Login {
+    login(): boolean {
+        //Here would be our implementation of login class.In this case it returns an Error.
+        throw new Error("Method not implemented.");
+    }
+
+}
+```
