@@ -29,9 +29,9 @@ Use a <code>for</code> loop to work to push the values 1 through 5 onto <code>my
 ```yml
 tests:
   - text: You should be using a <code>for</code> loop for this.
-    testString: 'assert(code.match(/for\s*\(/g).length > 1, "You should be using a <code>for</code> loop for this.");'
-  - text: '<code>myArray</code> should equal <code>[1,2,3,4,5]</code>.'
-    testString: 'assert.deepEqual(myArray, [1,2,3,4,5], "<code>myArray</code> should equal <code>[1,2,3,4,5]</code>.");'
+    testString: assert(code.match(/for\s*\(/g).length > 1, 'You should be using a <code>for</code> loop for this.');
+  - text: <code>myArray</code> should equal <code>[1,2,3,4,5]</code>.
+    testString: assert.deepEqual(myArray, [1,2,3,4,5], '<code>myArray</code> should equal <code>[1,2,3,4,5]</code>.');
 
 ```
 
@@ -65,7 +65,7 @@ var myArray = [];
 <div id='js-teardown'>
 
 ```js
-console.info('after the test');
+if (typeof myArray !== "undefined"){(function(){return myArray;})();}
 ```
 
 </div>
