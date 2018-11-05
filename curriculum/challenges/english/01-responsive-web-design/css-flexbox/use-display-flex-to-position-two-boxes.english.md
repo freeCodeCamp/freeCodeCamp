@@ -21,8 +21,8 @@ Add the CSS property <code>display</code> to <code>#box-container</code> and set
 
 ```yml
 tests:
-  - text: '<code>#box-container</code> should have the <code>display</code> property set to a value of flex.'
-    testString: 'assert($("#box-container").css("display") == "flex", "<code>#box-container</code> should have the <code>display</code> property set to a value of flex.");'
+  - text: <code>#box-container</code> should have the <code>display</code> property set to a value of flex.
+    testString: assert($('#box-container').css('display') == 'flex', '<code>#box-container</code> should have the <code>display</code> property set to a value of flex.');
 
 ```
 
