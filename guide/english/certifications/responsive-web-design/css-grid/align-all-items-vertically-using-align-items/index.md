@@ -3,8 +3,22 @@ title: Align All Items Vertically using align-items
 ---
 ## Align All Items Vertically using align-items
 
-This is a stub. <a href='https://github.com/freecodecamp/guides/tree/master/src/pages/certifications/responsive-web-design/css-grid/align-all-items-vertically-using-align-items/index.md' target='_blank' rel='nofollow'>Help our community expand it</a>.
+In this challenge you are required to use the "align-items" property to vertically align all the items in the grid.
 
-<a href='https://github.com/freecodecamp/guides/blob/master/README.md' target='_blank' rel='nofollow'>This quick style guide will help ensure your pull request gets accepted</a>.
+### Hint
 
-<!-- The article goes here, in GitHub-flavored Markdown. Feel free to add YouTube videos, images, and CodePen/JSBin embeds  -->
+You can vertically align the items by declaring the following in your CSS codeblock:
+
+````css
+align-items: value;
+````
+
+where value is how you could like to vertically align the items.
+
+### Solution
+
+Since the challenge requires you to move all the items to the end of each cell (vertically), declare the following in your .container CSS codeblock:
+
+````css
+align-items: end;
+````
