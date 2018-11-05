@@ -22,11 +22,13 @@ There are few commonly used arguments:
 
 - `-r` , means to recursively delete all the folders inside a directory.
 - `-f` , means to forcefully delete anything folder or file.
-- `-rf` , means that both arguments will be used together.
+- `-i` , will ask before deleting the file.
+- `-v` , will explain what was deleted.
 
 ### Warning
 
-This command is capable of deleting many files at once with ease.  This can be beneficial, but also dangerous. Use at your own risk
+This command is capable of deleting many files at once with ease. This can be beneficial, but also dangerous. Use at your own risk.
+
 
 ### More Information:
 * [Wikipedia](https://en.wikipedia.org/wiki/Rm_(Unix))

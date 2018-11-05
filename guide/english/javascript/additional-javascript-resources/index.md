@@ -55,12 +55,12 @@ title: JavaScript Tutorials and Other Resources
 
 *   [Visual Studio Code](https://code.visualstudio.com)
 
-    Visual Studio Code includes built-in support for IntelliSense code completion, rich semantic code understanding and navigation, and code refactoring. It comes with a built-in debugger and git support and has a plethora of extensions.
+    Visual Studio Code includes built-in support for IntelliSense code completion, rich semantic code understanding and navigation and code refactoring. It comes with a built-in debugger, git support and has a plethora of extensions.
     
 *   [Webstorm](https://www.jetbrains.com/webstorm)
 
-    A full-feature IDE for Javascript, including code completion and support for live linting, version control, and testing. Made by Jet Brains and modelled after their IntelliJ Java IDE.
-    
+    A full-feature IDE for Javascript, including code completion, support for live linting, version control, and testing. Made by Jet Brains and modelled after their IntelliJ Java IDE.
+
 *   [Atom](https://atom.io)
 
     Open source text editor made by GitHub.
@@ -128,8 +128,8 @@ title: JavaScript Tutorials and Other Resources
     
 *   [Functional Light JS](https://github.com/getify/Functional-Light-JS)
 
-    This book aims to be a useful companion for anyone wishing to (re)discover the many facets of JavaScript. From the very basics of programming up to front-end and back-end web development, a lot of topics are covered in a simple and accessible way. No prior knowledge needed!
-    
+    This book aims to be a useful companion for anyone wishing to (re)discover the many facets of JavaScript. From the very basics of programming up to front-end and back-end web development.  Many topics are covered in a simple and accessible way. No prior knowledge needed!
+
 *   [Learning JavaScript Design Patterns](http://addyosmani.com/resources/essentialjsdesignpatterns/book)
 *   [Airbnb JavaScript Style Guide](https://github.com/airbnb/javascript)
 *   [Javascript Allonge Six](https://leanpub.com/javascriptallongesix/read)
@@ -137,5 +137,3 @@ title: JavaScript Tutorials and Other Resources
 *   [Modern JS Cheatsheet](https://mbeaudru.github.io/modern-js-cheatsheet)
 *   [Speaking Javascript](http://speakingjs.com/es5)
 *   [Exploring ES6](http://exploringjs.com/es6)
-
-
