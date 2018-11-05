@@ -105,6 +105,7 @@ tests:
 
 ## Solution
 <section id='solution'>
+  
 ```html
 <html>
 <head>
@@ -173,4 +174,5 @@ tests:
 </div>
 </html>
 ```
+
 </section>
