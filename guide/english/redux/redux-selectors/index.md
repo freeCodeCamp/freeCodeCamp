@@ -21,7 +21,7 @@ With this approach we would have two copies of the items and would be easier for
 
 In case of any operation on the data it would be necessary to make the update twice.
 
-Another naive approach would be to transform the data directly in the component making use of Redux mapStateToProps like how it's shown in the code bellow.
+Another naive approach would be to transform the data directly in the component making use of Redux mapStateToProps like how it's shown in the code below.
 
 
 ```javascript
