@@ -63,9 +63,11 @@ You'll learn many of the first princliples for data science tools and how algori
 ![alt text](https://images-na.ssl-images-amazon.com/images/I/517XL4pO6jL._SL200_.jpg "Automate the boring stuff with Python")
 
 - Great book for beginners. Has interesting projects to practice Python.
+- [Website](https://automatetheboringstuff.com/)
 - [Amazon](https://www.amazon.com/gp/product/1593275994/)
 - ISBN-10: 1593275994
 - ISBN-13: 978-1593275990
+
 
 
 *Python crash course 2e* (note that 3e is going to be published on April 2019)
