@@ -42,13 +42,14 @@ Instructions about what exactly needs to be done.
 
 </section>
 
-<div id='js-seed'>
+## Challenge Seed
+<section id='challengeSeed'>
 
 ```js
 Code desplayed in the editor by default.
 ```
 
-</div>
+</section>
 
 ### Before Test
 <div id='js-setup'>
@@ -59,7 +60,6 @@ Test setup code.
 
 </div>
 
-</section>
 
 ### After Test
 <div id='js-teardown'>
@@ -70,7 +70,6 @@ Test tear down code.
 
 </div>
 
-</section>
 
 ## Solution
 <section id='solution'>
