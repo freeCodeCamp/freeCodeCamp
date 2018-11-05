@@ -37,7 +37,7 @@ git checkout -B BRANCH-NAME START-POINT
 If the `BRANCH-NAME` branch doesn't exist, Git will create it and start it at `START-POINT`. If the `BRANCH-NAME` branch already exists, then Git resets the branch to `START-POINT`. This is equivalent to running `git branch` with `-f`.
 
 ### Force a Checkout 
-You can pass the `-f` or `--force` option with the `git checkout` command to force Git to switch branches, even if you have un-staged changes (in other words, the index of the working tree differs from `HEAD`). Basically, it can be used to throw away local changes.
+You can pass the `-f` or `--force` option with the `git checkout` command to force Git to switch branches, even if you have unstaged changes (in other words, the index of the working tree differs from `HEAD`). Basically, it can be used to throw away local changes.
 
 When you run the following command, Git will ignore unmerged entries:
 
