@@ -9,11 +9,11 @@ localeTitle: Implementar o Bubble Sort
 ## Description
 <section id="description"> Este é o primeiro de vários desafios de ordenação de algoritmos. Dado um array de itens não ordenados, queremos retornar um array ordenado. Vamos ver várias maneiras diferentes para fazer isso e aprender os pontos positivos e negativos entre essas diferentes abordagens. Embora a maioria das linguagens modernas tenha métodos internos de ordenação para operações como essa, ainda é importante entender algumas das abordagens básicas comuns e aprender como elas podem ser implementadas. Aqui vamos ver o bubble sort. O método de ordenação bubble sort inicia no início de um array não ordenado e &#39;borbulha&#39; valores não ordenados no final, percorrendo o array até que ele seja completamente ordenado. Ele faz isso comparando itens adjacentes e trocando-os se estiverem fora de ordem. O método continua percorrendo o array até que não ocorram swaps, momento em que o array é ordenado. Esse método requer várias iterações por meio do array e, para os casos médios e piores, tem complexidade de tempo quadrática. Embora simples, geralmente é impraticável na maioria das situações. <strong>Instruções:</strong> Escreva uma função <code>bubbleSort</code> que receba um array de inteiros como entrada e retorne um array desses números inteiros na ordem classificada de menor para maior. <strong>Nota:</strong> <br> Estamos chamando essa função 'por trás dos panos'; o array de teste que estamos usando está comentado no editor. Tente logar o <code>array</code> para ver seu algoritmo de ordenação em ação! </section>
 
-## Instructions
+## Instruções
 <section id="instructions">
 </section>
 
-## Tests
+## Testes
 <section id='tests'>
 
 ```yml
@@ -52,7 +52,7 @@ function bubbleSort(array) {
 </div>
 
 
-### After Test
+### Depois do teste
 <div id='js-teardown'>
 
 ```js
@@ -63,7 +63,7 @@ console.info('after the test');
 
 </section>
 
-## Solution
+## Solução
 <section id='solution'>
 
 ```js

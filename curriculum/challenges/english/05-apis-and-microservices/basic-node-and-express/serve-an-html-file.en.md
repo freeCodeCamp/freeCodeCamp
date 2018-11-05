@@ -22,8 +22,9 @@ Note: You can edit the solution of the previous challenge, or create a new one. 
 <section id='tests'>
 
 ```yml
-- text: Your app should serve the file views/index.html
-  testString: 'getUserInput => $.get(getUserInput(''url'')).then(data => { assert.match(data, /<h1>.*<\/h1>/, ''Your app does not serve the expected HTML''); }, xhr => { throw new Error(xhr.responseText); })'
+tests:
+  - text: Your app should serve the file views/index.html
+    testString: 'getUserInput => $.get(getUserInput(''url'')).then(data => { assert.match(data, /<h1>.*<\/h1>/, ''Your app does not serve the expected HTML''); }, xhr => { throw new Error(xhr.responseText); })'
 
 ```
 
