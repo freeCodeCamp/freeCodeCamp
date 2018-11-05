@@ -3,16 +3,16 @@ id: 587d7b8f367417b2b2512b62
 title: Implement map on a Prototype
 challengeType: 1
 videoUrl: ''
-localeTitle: Реализовать карту на прототипе
+localeTitle: Реализовать map на прототипе
 ---
 
-## Description
-<section id="description"> Как вы видели из применения <code>Array.prototype.map()</code> или просто <code>map()</code> ранее, метод <code>map</code> возвращает массив той же длины, что и тот, на который он был вызван. Он также не изменяет исходный массив, если его функция обратного вызова не работает. Другими словами, <code>map</code> является чистой функцией, и ее выход зависит исключительно от ее входов. Кроме того, в качестве аргумента требуется другая функция. Это научит нас много о <code>map</code> чтобы попытаться реализовать версию, которая ведет себя точно так же, как <code>Array.prototype.map()</code> с циклом <code>for</code> или <code>Array.prototype.forEach()</code> . Примечание. Чистая функция позволяет изменять локальные переменные, определенные в пределах ее области действия, хотя предпочтительно избегать этого. </section>
+## Описание
+<section id="description"> Как вы видели из применения <code>Array.prototype.map()</code> или просто <code>map()</code> ранее, метод <code>map</code> возвращает массив той же длины, что и тот, на котором он был вызван. Он также не изменяет исходный массив, если его функция обратного вызова не отработает. Другими словами, <code>map</code> является чистой функцией, и результат еевыполнения зависит исключительно от ее аргументов. Кроме того, в качестве аргумента требуется другая функция. Это достаточно описало <code>map</code> чтобы попытаться реализовать версию, которая ведет себя точно так же, как <code>Array.prototype.map()</code> с помощью цикла <code>for</code> или <code>Array.prototype.forEach()</code> . Примечание. Чистая функция позволяет изменять локальные переменные, определенные в пределах ее области действия, хотя предпочтительно избегать этого. </section>
 
-## Instructions
+## Указания
 <section id="instructions"> Напишите свой собственный <code>Array.prototype.myMap()</code> , который должен вести себя точно так же, как <code>Array.prototype.map()</code> . Вы можете использовать цикл <code>for</code> или метод <code>forEach</code> . </section>
 
-## Tests
+## Тесты
 <section id='tests'>
 
 ```yml
@@ -26,7 +26,7 @@ tests:
 
 </section>
 
-## Challenge Seed
+## Исходные данные
 <section id='challengeSeed'>
 
 <div id='js-seed'>
@@ -56,7 +56,7 @@ var new_s = s.myMap(function(item){
 
 </section>
 
-## Solution
+## Решение
 <section id='solution'>
 
 ```js
