@@ -126,7 +126,9 @@ result = s(1, 2)
   print(x)  # error - x is not defined
   print(double(4))  # prints 8
   ```
+  
 - Python interprets the function block only when the function is called and not when the function is defined.So even if the function definition block contains some sort of error,the python interpretar will point that out only when the function is called. 
+
 
 ### Recursion
 Using functions in our programs can help to explicitly handle the execution of specific type of algorithms.

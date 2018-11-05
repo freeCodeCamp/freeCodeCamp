@@ -13,6 +13,12 @@ In the early days of modern computers, one of the most common ROM chips used was
 #### CD-ROM
 The CD-ROM is a type of compact disc storage object that requires the use of an optical laser to read the data off the disc. The devices used to read the data house the lasers and are called CD-ROM Drives. The disc itself is generally created in a factory and once made, is read only. This is in contrast to the CD-R (compact disc recordables) medium which has the additional ability to hold new data.
 
+#### ROM cartridge
+ROM cartridges appear in the 1980's with the rise of personnal computing. They are designed to be connected to a wide variety of devices, from calculators to home video game console systems. They are used to load software or enable specific hardware. Despite their quick load times and general robustness, they fell into disuse due to a smaller capacity and higher production costs than optical media.
+
+![ROM](https://upload.wikimedia.org/wikipedia/commons/thumb/8/83/N64-Game-Cartridge.jpg/2560px-N64-Game-Cartridge.jpg)
+*A Nintendo 64 "Game Pak" ROM cartridge*
+
 <!-- The article goes here, in GitHub-flavored Markdown. Feel free to add YouTube videos, images, and CodePen/JSBin embeds  -->
 
 #### More Information:

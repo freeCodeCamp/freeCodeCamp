@@ -93,7 +93,7 @@ and (orientation: landscape) {
 
 ### Breakpoints based on Content
 
-This is the most preferred choice while making or writing the breakpoint rules. Because it is easire to adjust your content according a particular layout only when it requires a change.
+This is the most preferred choice while making or writing the breakpoint rules. Because it is easier to adjust your content according a particular layout only when it requires a change.
 ```
 @media only screen (min-width: 768px){
 ...
