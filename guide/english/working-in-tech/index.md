@@ -20,7 +20,10 @@ The field of computer security is growing at a rapid rate every year. A recent r
 - Network Administrator
 - Support Desk Engineer
 - Security Engineer
+- Infrastructure Support
+- Help Desk Analyst
 — Project manager
+
 
 ### Books
 
