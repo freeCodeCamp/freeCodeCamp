@@ -11,6 +11,29 @@ There are 4 possible values that can be assigned to the `pointer-events` propert
 - `initial`	Uses the default value
 - `inherit`	Inherits from parent 
 
+This property specifies how your mouse reacts when you hover over any element on a page.
+
+### Example
+
+```css
+
+.example {
+  pointer-events: auto; 
+  /*this will use the default look set by the browser agent*/
+}
+
+.example {
+  pointer-events: none; 
+  /*this will use the regular mouse look when hovered over the element*/
+}
+
+```
+
+### Other acceptable values
+
+Other values could be: `initial`, and `inherit`
+
+
 #### More Information:
 - [pointer-events on MDN web docs](https://developer.mozilla.org/en-US/docs/Web/CSS/pointer-events)
 - [Scalable Vector Graphics 1.1 specification (recommendation)](https://www.w3.org/TR/SVG11/interact.html#PointerEventsProperty)

@@ -48,7 +48,7 @@ For instance:
 
 $bikes = ['Suzuki', 'BMW', 'Yamaha'];
 
-echo 'I like '. $bikes[0]
+echo 'I like '. $bikes[0];
 ```
 
 Would produce the following output:
@@ -67,7 +67,7 @@ $bikes = [
     'not my favorite' => 'Yamaha'
 ];
 
-echo 'I like '. $bikes['not my favorite']
+echo 'I like '. $bikes['not my favorite'];
 ```
 
 Would produce the following output:
@@ -75,6 +75,15 @@ Would produce the following output:
 ```
 I like BWM
 ```
+
+## Multidimensional Array
+
+As we mentioned earlier arrays are collection of items, often times these items may be arrays of themselves. 
+![alt text](https://preview.ibb.co/hLBfcf/img.png "Screenshot of multidimensional arrays")
+
+You will always be able to get the value for the specific key by going down the layers: $arr['layerOne']['two']
+
+
 
 ## Pitfalls
 

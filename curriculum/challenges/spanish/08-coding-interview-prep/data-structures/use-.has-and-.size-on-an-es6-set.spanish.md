@@ -18,7 +18,7 @@ localeTitle: Utilice .has y .size en un conjunto ES6
 ```yml
 tests:
   - text: '<code>checkSet([4, 5, 6], 3)</code> debe devolver [false, 3]'
-    testString: 'assert(function(){var test = checkSet([4,5,6], 3); test === [ false, 3 ]}, "<code>checkSet([4, 5, 6], 3)</code> should return [ false, 3 ]");'
+    testString: 'assert((function(){var test = checkSet([4,5,6], 3); test === [ false, 3 ]})(), "<code>checkSet([4, 5, 6], 3)</code> should return [ false, 3 ]");'
 
 ```
 
