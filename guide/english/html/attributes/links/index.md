@@ -25,7 +25,8 @@ The link ends up looking like this: [The freeCodeCamp Guide](https://guide.freec
 ### `target` Attribute
 
 **Opening a page in a new tab**
-If you'd like your link to open in a new tab, you'll use the `target` attribute along with the `"_blank"` 
+
+If you'd like your link to open in a new tab, you'll use the `target` attribute along with the `_blank` 
 value inside your opening `<a>` tag:
 
 ```html 
