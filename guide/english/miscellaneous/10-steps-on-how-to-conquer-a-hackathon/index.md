@@ -38,7 +38,7 @@ This, initially was one of my biggest mountains of fear to climb. I really wante
 
 9.  **Embrace the experience.** 
 
-Sometimes when you're caught in the middle of a bug you can't fix, or your team seems to be not getting along, remember that all of this is part of the experience of coming to a hackathon. You're not the first person to feel this way and you won't be the last. Treat it all as part of the learning experience.
+Sometimes when you're caught in the middle of a bug you can't fix, or your team doesn't seem to be getting along, remember that all of this is part of the experience of coming to a hackathon. You're not the first person to feel this way and you won't be the last. Treat it all as part of the learning experience.
 
 10.  **Have fun!** 
 

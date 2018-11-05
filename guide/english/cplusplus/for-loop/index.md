@@ -43,8 +43,11 @@ Note that the variables declared in init can only be used inside the brackets of
 Next the condition is evaluated. If it holds true, the body of the loop is executed. If it holds false, the body of the loop does not execute and flow of control jumps to the next iteration(repetition of a process).
 
 ### update
-The update statement is used to alter the loop variable by using simple operations like addition,subtraction,multiplication or division.
+The update statement is used to alter the loop variable by using simple operations like addition, subtraction, multiplication or division.
+
 The update statement executes after the execution of the body of the loop.
+
+You will often see an increment operation as the update statement (e.g. i++, count++). This is often seen as one of the distinguishing features and possible name sources for the C++ language.
 
 ## IMPLEMENTATION:
 ```C++
