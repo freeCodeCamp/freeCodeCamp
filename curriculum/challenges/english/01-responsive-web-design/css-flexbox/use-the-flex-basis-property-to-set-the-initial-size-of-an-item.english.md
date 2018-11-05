@@ -73,7 +73,7 @@ tests:
 
 ## Solution
 <section id='solution'>
-  
+
 ```html
 <style>
   #box-container {
