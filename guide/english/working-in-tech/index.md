@@ -38,7 +38,6 @@ The field of computer security is growing at a rapid rate every year. A recent r
 
 ["Lean In: Women, Work, and the Will to Lead" by Sheryl Sandberg](https://www.amazon.com/Lean-Women-Work-Will-Lead/dp/0385349947/)
 
-To see the full list, visit: https://talkpython.fm/episodes/show/130/10-books-python-developers-should-be-reading
 
 ### Articles
 
