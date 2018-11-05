@@ -10,3 +10,4 @@ PI is a mathematical constant whose value is approximately equal to 3.1415926535
 The ratio 𝜋 = circumference/diameter always remains the same, regardless of the size of a circle. For example, even if we take a new circle of twice the diameter of a previous circle, then the circumference of that new circle will be exactly double of the previous one preserving the value of 𝜋 to be constant.
 
 Note: Though Pi irrational, because its decimal repeats infinitely, the number itself is not infinite because it is contained between 3 and 4.
+
