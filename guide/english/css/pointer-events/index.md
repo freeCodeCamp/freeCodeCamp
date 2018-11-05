@@ -6,10 +6,10 @@ title: Pointer Events
 The `pointer-events` property determines if an element will react to pointer events.
 
 There are 4 possible values that can be assigned to the `pointer-events` property:
-`auto`	  Default Setting:  Reacts to `pointer events` like :hover or click. 
-`none`	  Sets that the element won't react to `pointer-events`
-`initial`	Uses the default value
-`inherit`	Inherits from parent 
+- `auto`	  Default Setting:  Reacts to `pointer events` like :hover or click. 
+- `none`	  Sets that the element won't react to `pointer-events`
+- `initial`	Uses the default value
+- `inherit`	Inherits from parent 
 
 #### More Information:
 - [pointer-events on MDN web docs](https://developer.mozilla.org/en-US/docs/Web/CSS/pointer-events)
