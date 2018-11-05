@@ -23,7 +23,7 @@ In the following code, please import the default export, <code>subtract</code>, 
 ```yml
 tests:
   - text: Properly imports <code>export default</code> method.
-    testString: 'getUserInput => assert(getUserInput("index").match(/import\s+subtract\s+from\s+"math_functions"/g), "Properly imports <code>export default</code> method.");'
+    testString: getUserInput => assert(getUserInput('index').match(/import\s+subtract\s+from\s+"math_functions"/g), 'Properly imports <code>export default</code> method.');
 
 ```
 
