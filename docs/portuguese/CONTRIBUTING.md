@@ -17,7 +17,7 @@ Olá 👋!
 
 freeCodeCamp.org é possível graças a milhares de voluntários gentis como você. Somos gratos por suas contribuições e estamos felizes em te receber.
 
-Nós seguimos as diretrizes do nosso ["Código de Conduta](https://www.freecodecamp.org/code-of-conduct). Dedique um tempo para lê-lo. Ele não é muito longo.
+Nós seguimos as diretrizes do nosso ["Código de Conduta"](https://www.freecodecamp.org/code-of-conduct). Dedique um tempo para lê-lo. Ele não é muito longo.
 
 Divirta-se contribuindo 🎉!
 

@@ -26,17 +26,17 @@ Update the code to create and send a "POST" request. Then enter your name in inp
 ```yml
 tests:
   - text: Your code should create a new <code>XMLHttpRequest</code>.
-    testString: 'assert(code.match(/new\s+?XMLHttpRequest\(\s*?\)/g), "Your code should create a new <code>XMLHttpRequest</code>.");'
+    testString: assert(code.match(/new\s+?XMLHttpRequest\(\s*?\)/g), 'Your code should create a new <code>XMLHttpRequest</code>.');
   - text: Your code should use the <code>open</code> method to initialize a "POST" request to the server.
-    testString: 'assert(code.match(/\.open\(\s*?("|")POST\1\s*?,\s*?url\s*?,\s*?true\s*?\)/g), "Your code should use the <code>open</code> method to initialize a "POST" request to the server.");'
+    testString: assert(code.match(/\.open\(\s*?('|")POST\1\s*?,\s*?url\s*?,\s*?true\s*?\)/g), 'Your code should use the <code>open</code> method to initialize a "POST" request to the server.');
   - text: Your code should use the <code>setRequestHeader</code> method.
-    testString: 'assert(code.match(/\.setRequestHeader\(\s*?("|")Content-Type\1\s*?,\s*?("|")text\/plain\2\s*?\)/g), "Your code should use the <code>setRequestHeader</code> method.");'
+    testString: assert(code.match(/\.setRequestHeader\(\s*?('|")Content-Type\1\s*?,\s*?('|")text\/plain\2\s*?\)/g), 'Your code should use the <code>setRequestHeader</code> method.');
   - text: Your code should have an <code>onreadystatechange</code> event handler set to a function.
-    testString: 'assert(code.match(/\.onreadystatechange\s*?=/g), "Your code should have an <code>onreadystatechange</code> event handler set to a function.");'
+    testString: assert(code.match(/\.onreadystatechange\s*?=/g), 'Your code should have an <code>onreadystatechange</code> event handler set to a function.');
   - text: Your code should get the element with class <code>message</code> and change its inner HTML to the <code>responseText</code>.
-    testString: 'assert(code.match(/document\.getElementsByClassName\(\s*?("|")message\1\s*?\)\[0\]\.innerHTML\s*?=\s*?.+?\.responseText/g), "Your code should get the element with class <code>message</code> and change its inner HTML to the <code>responseText</code>.");'
+    testString: assert(code.match(/document\.getElementsByClassName\(\s*?('|")message\1\s*?\)\[0\]\.innerHTML\s*?=\s*?.+?\.responseText/g), 'Your code should get the element with class <code>message</code> and change its inner HTML to the <code>responseText</code>.');
   - text: Your code should use the <code>send</code> method.
-    testString: 'assert(code.match(/\.send\(\s*?userName\s*?\)/g), "Your code should use the <code>send</code> method.");'
+    testString: assert(code.match(/\.send\(\s*?userName\s*?\)/g), 'Your code should use the <code>send</code> method.');
 
 ```
 
