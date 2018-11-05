@@ -105,7 +105,7 @@ tests:
 
 ## Solution
 <section id='solution'>
-  
+
 ```html
 <html>
 <head>
