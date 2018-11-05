@@ -58,11 +58,11 @@ for examples of native data structures.)
 ```yml
 tests:
   - text: <code>parseSexpr</code> is a function.
-    testString: 'assert(typeof parseSexpr === "function", "<code>parseSexpr</code> is a function.");'
-  - text: '<code>parseSexpr("(data1 data2 data3)")</code> should return ["data1", "data2", "data3"]")'
-    testString: 'assert.deepEqual(parseSexpr(simpleSExpr), simpleSolution, "<code>parseSexpr("(data1 data2 data3)")</code> should return ["data1", "data2", "data3"]");'
+    testString: assert(typeof parseSexpr === 'function', '<code>parseSexpr</code> is a function.');
+  - text: <code>parseSexpr('(data1 data2 data3)')</code> should return ['data1', 'data2', 'data3']")
+    testString: assert.deepEqual(parseSexpr(simpleSExpr), simpleSolution, "<code>parseSexpr('(data1 data2 data3)')</code> should return ['data1', 'data2', 'data3']");
   - text: <code>parseSexpr('(data1 data2 data3)')</code> should return an array with 3 elements")
-    testString: 'assert.deepEqual(parseSexpr(basicSExpr), basicSolution, "<code>parseSexpr("(data1 data2 data3)")</code> should return an array with 3 elements");'
+    testString: assert.deepEqual(parseSexpr(basicSExpr), basicSolution, "<code>parseSexpr('(data1 data2 data3)')</code> should return an array with 3 elements");
 
 ```
 
@@ -87,7 +87,11 @@ function parseSexpr(str) {
 <div id='js-teardown'>
 
 ```js
-console.info('after the test');
+const simpleSExpr = '(data1 data2 data3)';
+const simpleSolution = ['data1', 'data2', 'data3'];
+
+const basicSExpr = '((data "quoted data" 123 4.5) (data (!@# (4.5) "(more" "data)")))';
+const basicSolution = [["data","\"quoted data\"",123,4.5],["data",["!@#",[4.5],"\"(more\"","\"data)\""]]];
 ```
 
 </div>
@@ -108,7 +112,7 @@ function parseSexpr(str) {
     else if (ti == '(') t[i] = '[', c += 1;
     else if (ti == ')') t[i] = ']', c -= 1;
     else if ((n = +ti) == ti) t[i] = n;
-    else t[i] = `'${ti.replace('\", '\\\")}'`;
+    else t[i] = `'${ti.replace('\'', '\\\'')}'`;
     if (i > 0 && ti != ']' && t[i - 1].trim() != '(') t.splice(i, 0, ',');
     if (!c) if (!o) o = true; else return;
   }
