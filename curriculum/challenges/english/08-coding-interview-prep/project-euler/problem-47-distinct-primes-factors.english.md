@@ -53,53 +53,55 @@ distinctPrimeFactors(4, 4);
 
 </div>
 
-
-
 </section>
 
 ## Solution
 <section id='solution'>
 
-
 ```js
 function distinctPrimeFactors(targetNumPrimes, targetConsecutive) {
-  function getPrimeFactors(n) {
-    const factors = new Set();
-    
+  function numberOfPrimeFactors(n) {
+    let factors = 0;
+
     //  Considering 2 as a special case
+    let firstFactor = true;
     while (n % 2 == 0) {
       n = n / 2;
-      factors.add(2);
+      if (firstFactor) {
+        factors++;
+        firstFactor = false;
+      }
     }
-    // Adding other factors to the set
-    for (let i = 3; i <= Math.sqrt(n); i += 2) {
+    // Adding other factors
+    const bound = Math.sqrt(n);
+    for (let i = 3; i < bound; i += 2) {
+      firstFactor = true;
       while (n % i == 0) {
-        factors.add(i);
         n = n / i;
+        if (firstFactor) {
+          factors++;
+          firstFactor = false;
+        }
       }
     }
 
-    if (n > 2) factors.add(n);
-    
-    return [...factors];
+    if (n > 1) { factors++; }
+
+    return factors;
   }
 
-  function findConsecutiveNumbers() {
-    let number = 0;
-    let consecutive = 0;
+  let number = 0;
+  let consecutive = 0;
 
-    while (consecutive < targetConsecutive) {
-      number++;
-      if (getPrimeFactors(number).length >= targetNumPrimes) {
-        consecutive++;
-      } else {
-        consecutive = 0;
-      }
+  while (consecutive < targetConsecutive) {
+    number++;
+    if (numberOfPrimeFactors(number) >= targetNumPrimes) {
+      consecutive++;
+    } else {
+      consecutive = 0;
     }
-    return number - targetConsecutive + 1;
   }
-
-  return findConsecutiveNumbers();
+  return number - targetConsecutive + 1;
 }
 ```
 
