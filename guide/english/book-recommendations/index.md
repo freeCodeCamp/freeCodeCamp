@@ -130,7 +130,7 @@ title: Books to Read for Programmers
 
 ## General
 
-*Clean Code: A Handbook of Agile Software Crafstmanship* by Robert C. Martin
+*Clean Code: A Handbook of Agile Software Craftsmanship* by Robert C. Martin
 - [Amazon Smile](https://smile.amazon.com/Clean-Code-Handbook-Software-Craftsmanship/dp/0132350882)
 - ISBN-13: 978-0132350884
 
