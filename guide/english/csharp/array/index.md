@@ -38,7 +38,7 @@ You can assign multiple values at once while declaring the array using the forma
 
 `dataType [] nameOfArray = {5,17,19,92};`
 
-The will assign the value of 5 into element [0], 17 into element [1], 19 into element [2] and 92 into element [3].
+The above code will assign the value of 5 into element [0], 17 into element [1], 19 into element [2] and 92 into element [3].
 
 You can declare, initilise and assign values in the array all at once by using the format below:
 
