@@ -27,7 +27,7 @@ How many different ways can one hundred be written as a sum of at least two posi
 ```yml
 tests:
   - text: <code>euler76()</code> should return 190569291.
-    testString: 'assert.strictEqual(euler76(), 190569291, "<code>euler76()</code> should return 190569291.");'
+    testString: assert.strictEqual(euler76(), 190569291, '<code>euler76()</code> should return 190569291.');
 
 ```
 

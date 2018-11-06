@@ -1,13 +1,27 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import { connect } from 'react-redux';
 import { Button } from '@freecodecamp/react-bootstrap';
-import { Link } from 'gatsby';
+
+import { hardGoTo } from '../../../redux';
+import { apiLocation } from '../../../../config/env.json';
 
 import './login.css';
 
-function Login({ children, ...restProps }) {
+const mapStateToProps = () => ({});
+const mapDispatchToProps = dispatch => ({
+  navigate: location => dispatch(hardGoTo(location))
+});
+
+const createOnClick = navigate => e => {
+  e.preventDefault();
+  return navigate(`${apiLocation}/signin`);
+};
+
+function Login(props) {
+  const { children, navigate, ...restProps } = props;
   return (
-    <Link to='/signin'>
+    <a href='/signin' onClick={createOnClick(navigate)}>
       <Button
         {...restProps}
         bsStyle='default'
@@ -17,13 +31,17 @@ function Login({ children, ...restProps }) {
         >
         {children || 'Sign In'}
       </Button>
-    </Link>
+    </a>
   );
 }
 
 Login.displayName = 'Login';
 Login.propTypes = {
-  children: PropTypes.any
+  children: PropTypes.any,
+  navigate: PropTypes.func.isRequired
 };
 
-export default Login;
+export default connect(
+  mapStateToProps,
+  mapDispatchToProps
+)(Login);
