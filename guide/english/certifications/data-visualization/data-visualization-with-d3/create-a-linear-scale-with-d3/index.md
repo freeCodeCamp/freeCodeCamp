@@ -30,7 +30,7 @@ Where `scalingFactor` is a number.
 
 ### Solution
 
-To solve this challenge, the `scale` variable has to be re-initialized with a D3 scale ans the scaling factor in the output has to beset to `50`, to do this, change you code to look like this:
+To solve this challenge, the `scale` variable has to be re-initialized with a D3 scale ans the scaling factor in the output has to be set to `50`, to do this, change you code to look like this:
 ```javascript
 <body>
   <script>
