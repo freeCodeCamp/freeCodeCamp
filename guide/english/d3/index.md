@@ -11,7 +11,7 @@ title: D3
 
 **D3.js** version 1.0.0 was released back in 18 February 2011.
 
-## Why, D3.js?
+## Why D3.js?
 
 *D3** does not introduce a new visual representation. Unlike **Processing**, **Raphaël**, or **Protovis**, *D3's* vocabulary of graphical marks comes directly from web standards: HTML, SVG, and CSS - https://d3js.org/
 

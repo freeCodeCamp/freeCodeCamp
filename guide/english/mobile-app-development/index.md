@@ -11,9 +11,10 @@ This section contains articles related to Mobile Hybrid Applications Development
 
 Native App Definition
 
-- Built for a specific operating system and can be accessed only from the dedicated app store.
-Android App can only be accessed by Android users and is developed using Java, Windows, C++ etc.
-iOS App using XCode / Objective-C etc.
+- Built for a specific operating system and can be accessed only from the dedicated app store. 
+Android App can only be accessed by Android users and is developed using Java, Windows, C++ etc. 
+iOS App using XCode / Objective-C / Swift etc. 
+
 - Development Costs & Effort is Higher
 
 Hybrid App Definition
