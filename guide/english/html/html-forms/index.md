@@ -48,6 +48,8 @@ Other elements that form can contain:
 - ```textarea``` - is a multiline box which is most often used for adding some text eg. comment. Size of textarea is defined by number of rows and columns.
 - ```select``` - together with ```<option></option>``` tag creates drop-down select menu.
 - ```button``` - The button element can be used to define a clickable button.
+- ```fieldset```- It groups related elements in a form.
+- ```legend```- It defines a caption for a <fieldset> element.
 
 MORE INFORMATION ON HTML FORMS.
 
