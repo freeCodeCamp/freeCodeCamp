@@ -65,6 +65,19 @@ let result = userCheck.test(username);
 <section id='solution'>
 
 ```js
-// solution required
+function validUsername(username) {
+  const checkUsername = /^[A-Za-z]{2,}\d{0,}$/;
+  return checkUsername.test(username);
+}
+
+validUsername('JACK');
+validUsername('J');
+validUsername('Oceans11');
+validUsername('RegexGuru');
+validUsername('007');
+validUsername('9');
+validUsername('A1');
+validUsername('BadUs3rnam3');
+
 ```
 </section>
