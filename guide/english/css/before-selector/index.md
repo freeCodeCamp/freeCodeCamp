@@ -3,7 +3,7 @@ title: Before Selector
 ---
 ## Before Selector
 
-The CSS **::before** selector can be used to insert anything before the content an element or elements. It allows the designer perform any css design before the content in an element. It is used by attaching **::before** to an the element it is to be used on. 
+The CSS **::before** selector can be used to insert anything before the content an element or elements. It allows the designer perform any css design before the content in an element. It is used by attaching **::before** to an element it is to be used on. 
 
 Let's look at some examples:
 
