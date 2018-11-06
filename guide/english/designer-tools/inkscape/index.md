@@ -1,7 +1,5 @@
 ---
-
-title:
-Inkscape
+title: Inkscape
 ---
 
 ## Inkscape
