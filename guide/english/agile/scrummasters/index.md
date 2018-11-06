@@ -14,7 +14,7 @@ The Scrum Master is a servant-leader for the Scrum Team. The Scrum Master helps 
 - Setting up retrospectives, sprint reviews or sprint planning sessions
 - Shielding the team from interruptions during the sprint
 - Making sure that obstacles that affect the team are removed, by doing it themselves or helping the team learn how to handle the obstacle
-- Assisting the product owner with understanding the practice of writing, splitting, and prioritizing
+- Assisting the product owner with understanding the practice of writing, splitting, and prioritizing user stories
 - Encouraging collaboration between the Scrum team and product owner . 
 
 Typically a Scrum Master will ask the following qustions: 
@@ -29,4 +29,4 @@ Often their role is to: guide the sprint planning, monitor daily standup, conduc
 #### More Information:
 
 - <a href="https://www.scrum.org/resources/what-is-a-scrum-master" target="_blank" rel="nofollow">What is a Scrum Master</a>
-- <a href="https://www.scrumguides.org/scrum-guide.html" rel="nofollow">Scrum Guide</a> 
+- <a href="https://www.scrumguides.org/index.html" rel="nofollow">Scrum Guide</a> 
