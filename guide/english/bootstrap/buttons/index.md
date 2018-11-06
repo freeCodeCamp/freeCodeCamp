@@ -25,13 +25,13 @@ This is a list of the CSS classes that bootstrap provides for buttons.
 
 `<button type="button" class="btn">Basic</button>`
 
-`.btn-default` Bootstrap's default button.
-
-`<button type="button" class="btn btn-default">Default</button>`
-
 `.btn-primary` Bootstrap's primary button.
 
 `<button type="button" class="btn btn-primary">Primary</button>`
+
+`.btn-secondary` Bootstrap's secondary button.
+
+`<button type="button" class="btn btn-secondary">Secondary</button>`
 
 `.btn-success` Bootstrap's success button.
 
@@ -64,6 +64,10 @@ This is a list of the CSS classes for different size of the buttons.
 
 `<button type="button" class="btn btn-lg">Large</button>`
 
+`.btn-md` This is bootstrap's medium button.
+
+`<button type="button" class="btn btn-md">Medium</button>`
+
 `.btn-sm` Bootstrap's small button.
 
 `<button type="button" class="btn btn-sm">Small</button>`
@@ -71,6 +75,10 @@ This is a list of the CSS classes for different size of the buttons.
 `.btn-xs` This is bootstrap's extra small button.
 
 `<button type="button" class="btn btn-xs">Extra Small</button>`
+
+`.btn-block` This is bootstrap's full width button.
+
+<button type="button" class="btn btn-block">Block</button>
 
 #### Bootstrap Outlined Buttons:
 It is possible to also have outlined buttons rather than fully colored in ones. This is achieved by placing the mid fix `outline` between the button class you want. A sample usage would be as follows:

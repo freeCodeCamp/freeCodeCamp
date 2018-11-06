@@ -60,6 +60,14 @@ or
 zach@marigold:~$ chmod 744 myBashScript.sh
 ````
 And then execute the script.
+## Script Example
+If you execute this script it is going to print out your name.
+```
+#!/usr/bin/env bash
+NAME="John"  
+echo  "Hello $NAME!"
+```
+
 ### More Information:
 
 * [Wikipedia - Bash](https://en.wikipedia.org/wiki/Bash_(Unix_shell))

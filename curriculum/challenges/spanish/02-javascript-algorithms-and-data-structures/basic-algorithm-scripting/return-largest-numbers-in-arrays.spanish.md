@@ -8,7 +8,7 @@ localeTitle: Devolver los números más grandes en matrices
 ---
 
 ## Description
-<section id="description"> Devuelve una matriz que consiste en el número más grande de cada sub-matriz proporcionada. Por simplicidad, la matriz provista contendrá exactamente 4 sub-matrices. Recuerde, puede recorrer una matriz con un simple bucle for, y acceder a cada miembro con la sintaxis de matriz <code>arr[i]</code> . Recuerda usar <a href="http://forum.freecodecamp.org/t/how-to-get-help-when-you-are-stuck/19514" target="_blank">Read-Search-Ask</a> si te atascas. Escribe tu propio código. </section>
+<section id="description"> Devuelve una matriz que consiste del número más grande de cada sub-matriz proporcionada. Por simplicidad, la matriz provista contendrá exactamente 4 sub-matrices. Recuerde, puede recorrer una matriz con un simple bucle for, y acceder a cada miembro con la sintaxis de matriz <code>arr[i]</code> . Recuerda usar <a href="http://forum.freecodecamp.org/t/how-to-get-help-when-you-are-stuck/19514" target="_blank">Read-Search-Ask</a> si se atasca. Escribe su propio código. </section>
 
 ## Instructions
 <section id="instructions">
