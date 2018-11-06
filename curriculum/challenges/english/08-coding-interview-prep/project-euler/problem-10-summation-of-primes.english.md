@@ -49,33 +49,28 @@ primeSummation(2000000);
 
 </div>
 
-
-
 </section>
 
 ## Solution
 <section id='solution'>
 
-
 ```js
 //noprotect
 function primeSummation(n) {
-  let nums = [], sum = 0;
-  for (let i = 0; i < n; i++){
-    nums.push(i);   
+  if (n < 3) { return 0 };
+  let nums = [0, 0, 2];
+  for (let i = 3; i < n; i += 2){
+    nums.push(i);
+    nums.push(0);
   }
-  nums[1] = 0;
-  const upperBound = Math.ceil(Math.sqrt(n));
-  for (let i = 2; i <= upperBound; i++){
+  let sum = 2;
+  for (let i = 3; i < n; i += 2){
     if (nums[i] !== 0){
       sum += nums[i];
       for (let j = i*i; j < n; j += i){
         nums[j] = 0;
       }
     }
-  }
-  for (let i = upperBound + 1; i < n; i++){
-    sum += nums[i];
   }
   return sum;
 }
