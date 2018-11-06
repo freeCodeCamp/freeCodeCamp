@@ -130,7 +130,7 @@ title: Books to Read for Programmers
 
 ## Full Stack Development
 *Pro Mern Stack: Full Stack Web App Development with Mongo, Express, React, and Node*
-- [Amazon Smile](https://www.amazon.com/Pro-MERN-Stack-Development-Express/dp/1484226526)  
+- [Amazon Smile](https://smile.amazon.com/Pro-MERN-Stack-Development-Express/dp/1484226526)  
 - ISBN-13: 978-1484226520 
 
 ## General
