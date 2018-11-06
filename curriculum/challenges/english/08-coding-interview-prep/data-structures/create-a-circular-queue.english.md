@@ -7,12 +7,13 @@ challengeType: 1
 ## Description
 <section id='description'>
 In this challenge you will be creating a Circular Queue. A circular queue is basically a queue that writes to the end of a collection then begins over writing itself at the beginning of the collection. This is type of data structure has some useful applications in certain situations. For example, a circular queue can be used for streaming media. Once the queue is full, new media data simply begins to overwrite old data.
-A good way to illustrate this concept is with an array:
-<blockquote>[1, 2, 3, 4, 5]<br> ^Read @ 0<br> ^Write @ 0</blockquote>
+A good way to illustrate this concept is with an array of length `5`:
+  
+<blockquote>[null, null, null, null, null]<br> ^Read @ 0<br> ^Write @ 0</blockquote>
 Here the read and write are both at position <code>0</code>. Now the queue gets 3 new records <code>a</code>, <code>b</code>, and <code>c</code>. Our queue now looks like:
-<blockquote>[a, b, c, 4, 5]<br> ^Read @ 0<br>       ^Write @ 3</blockquote>
+<blockquote>[a, b, c, null, null]<br> ^Read @ 0<br>       ^Write @ 3</blockquote>
 As the read head reads, it can remove values or keep them:
-<blockquote>[null, null, null, 4, 5]<br>                   ^Read @ 3<br>                   ^Write @ 3</blockquote>
+<blockquote>[null, null, null, null, null]<br>                   ^Read @ 3<br>                   ^Write @ 3</blockquote>
 Once the write reaches the end of the array it loops back to the beginning:
 <blockquote>[f, null, null, d, e]<br>                ^Read @ 3<br> ^Write @ 1</blockquote>
 This approach requires a constant amount of memory but allows files of a much larger size to be processed.
@@ -64,13 +65,11 @@ class CircularQueue {
         this.queue.push(null);
         size--;
      }
-
    }
 
    print() {
      return this.queue;
    }
-
 
    enqueue(item) {
     // Only change code below this line
@@ -98,46 +97,51 @@ class CircularQueue {
 
 ```js
 class CircularQueue {
- constructor(size) {
- this.queue = [];
- this.read = 0;
- this.write = 0;
- this.max = size - 1;
- while (size > 0) {
- this.queue.push(null);
- size--;
- }
- }
- print() {
- return this.queue;
- }
- enqueue(item) {
- if (this.queue[this.write] === null) {
- this.queue[this.write] = item;
- if (this.write === this.max) {
- this.write = 0;
- } else {
- this.write++;
- }
- return item;
- }
- return null;
- }
- dequeue() {
- if (this.queue[this.read] !== null) {
- var item = this.queue[this.read];
- this.queue[this.read] = null;
- if (this.read === this.max) {
- this.read = 0;
- } else {
- this.read++;
- }
- return item;
- } else {
- return null;
- }
- }
- }
+  constructor(size) {
+    this.queue = [];
+    this.read = 0;
+    this.write = 0;
+    this.max = size - 1;
+
+    while (size > 0) {
+      this.queue.push(null);
+      size--;
+    }
+  }
+
+  print() {
+    return this.queue;
+  }
+
+  enqueue(item) {
+    // Only change code below this line
+    console.log(this.write, this.max);
+    if (this.queue[this.write] === null) {
+      this.queue[this.write++] = item;
+
+      if (this.write > this.max) {
+        this.write = 0;
+      }
+      return item;
+    }
+    return null;
+    // Only change code above this line
+  }
+
+  dequeue() {
+    // Only change code below this line
+    if (this.queue[this.read] !== null) {
+      let item = this.queue[this.read];
+      this.queue[this.read++] = null;
+      if (this.read > this.max) {
+        this.read = 0;
+      }
+      return item;
+    }
+    return null;
+    // Only change code above this line
+  }
+}
 ```
 
 </section>
