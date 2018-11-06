@@ -68,21 +68,13 @@ This is a list of the CSS classes for different size of the buttons.
 
 `<button type="button" class="btn btn-lg">Large</button>`
 
-`.btn-md` This is bootstrap's medium button.
-
-`<button type="button" class="btn btn-md">Medium</button>`
-
 `.btn-sm` Bootstrap's small button.
 
 `<button type="button" class="btn btn-sm">Small</button>`
 
-`.btn-xs` This is bootstrap's extra small button.
+`.btn-block` Bootstrap's block level button, it spans the full width of a parent element.
 
-`<button type="button" class="btn btn-xs">Extra Small</button>`
-
-`.btn-block` This is bootstrap's full width button.
-
-<button type="button" class="btn btn-block">Block</button>
+`<button type="button" class="btn btn-block">Block button</button>`
 
 #### Bootstrap Outlined Buttons:
 It is possible to also have outlined buttons rather than fully colored in ones. This is achieved by placing the mid fix `outline` between the button class you want. A sample usage would be as follows:
