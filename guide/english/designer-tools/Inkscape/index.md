@@ -1,9 +1,6 @@
 ---
-
-title:
-Inkscape
+title: Inkscape
 ---
-
 ## Inkscape
 
 Inkscape is an open-source vector-based graphic editing tool used by graphic designers, artists andillustrationist to create high quality,
