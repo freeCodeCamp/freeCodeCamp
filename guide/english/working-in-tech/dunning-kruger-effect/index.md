@@ -21,7 +21,7 @@ DK Effect is exactly opposite of [Imposter Syndrome](https://en.wikipedia.org/wi
 Sorry, but there isn't a straight answer to this question. You can ask following questions to yourself:
 
  -  Are you able to give accurate estimates?
- -  Are you open to learn new concepts?
+ -  Are you open to learning new concepts?
  -  Are you open to implement or try new design paradigms?
  -  Are you humble? 
  -  Are you able to take criticism and objectively evaluate feedback?

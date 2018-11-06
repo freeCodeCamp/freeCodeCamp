@@ -3,7 +3,7 @@ title: Working in Tech & Information Technology(IT)
 ---
 ## Working in Tech and IT
 
-A wide variety of technology-related fields such as web development, design, data science, and product management are often lumped into the catch-all term "tech" or IT. 
+A wide variety of technology-related fields such as web development, design, data science, infrastructure support, information security, and product management are often lumped into the catch-all term "tech" or IT. 
 
 This section will focus on additional career challenges faced by under-represented minorities and people from non-traditional education backgrounds. Specific topis will include sexism and ageism, which have been particularly prevalent in certain industries and organizations. 
 
@@ -20,7 +20,10 @@ The field of computer security is growing at a rapid rate every year. A recent r
 - Network Administrator
 - Support Desk Engineer
 - Security Engineer
+- Infrastructure Support
+- Help Desk Analyst
 — Project manager
+
 
 ### Books
 
@@ -38,7 +41,6 @@ The field of computer security is growing at a rapid rate every year. A recent r
 
 ["Lean In: Women, Work, and the Will to Lead" by Sheryl Sandberg](https://www.amazon.com/Lean-Women-Work-Will-Lead/dp/0385349947/)
 
-To see the full list, visit: https://talkpython.fm/episodes/show/130/10-books-python-developers-should-be-reading
 
 ### Articles
 

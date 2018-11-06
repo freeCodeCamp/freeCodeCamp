@@ -21,6 +21,9 @@ Some common types of algorithms include sorting algorithms, search algorithms, a
 
 Algorithms are most commonly judged by their efficiency and the amount of computing resources they require to complete their task. A common way to evaluate an algorithm is to look at its time complexity. This shows how the running time of the algorithm grows as the input size grows. Since the algorithms today, have to be operate on large data inputs, it is essential for our algorithms to have a reasonably fast running time .
 
+### Big O
+To describe the running time and efficiency of algorithms, the standard language and metric used is called Big O notation and can be denoted as `O(running time)` for example the time taken to search an element using linear search (i.e to find an element by comparing it to all the other elements in an array of size n) is `O(n)`. The notation helps us to understand how fast a particular algorithm is by making sure that it is at least as fast as the denoted run-time. [Big_O - wikipedia](https://en.wikipedia.org/wiki/Big_O_notation)
+
 ### Sorting Algorithms
 
 Sorting algorithms come in various flavors depending on your necessity.
@@ -28,7 +31,7 @@ Some, very common and widely used are:
 
 #### Quick Sort
 
-There is no sorting discussion which can finish without quick sort. The basic concept is in the link below.
+There is no sorting discussion which can finish without quick sort.
 [Quick Sort](http://me.dt.in.th/page/Quicksort/)
 
 #### Merge Sort
