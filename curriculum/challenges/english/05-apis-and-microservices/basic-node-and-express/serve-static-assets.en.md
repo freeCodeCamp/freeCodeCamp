@@ -20,8 +20,9 @@ Now your app should be able to serve a CSS stylesheet. From outside the public f
 <section id='tests'>
 
 ```yml
-- text: Your app should serve asset files from the <code>/public</code> directory
-  testString: 'getUserInput => $.get(getUserInput(''url'') + ''/style.css'').then(data => { assert.match(data, /body\s*\{[^\}]*\}/, ''Your app does not serve static assets''); }, xhr => { throw new Error(xhr.responseText); })'
+tests:
+  - text: Your app should serve asset files from the <code>/public</code> directory
+    testString: 'getUserInput => $.get(getUserInput(''url'') + ''/style.css'').then(data => { assert.match(data, /body\s*\{[^\}]*\}/, ''Your app does not serve static assets''); }, xhr => { throw new Error(xhr.responseText); })'
 
 ```
 

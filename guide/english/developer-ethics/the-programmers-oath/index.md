@@ -39,7 +39,7 @@ Notice that in the promise, there is an aspect of both "behavior" and "structure
 ### Promise 3
 >3. I will produce, with each release, a quick, sure, and repeatable proof that every element of the code works as it should.
 
-Customers, users, and even businesses would expect that we would be able to undemand prove that our code works as it is supposed to. Notice that in the oath there are words like quick, sure, and repeatable. You want to be able to prove on a moment's notice that code still works as it is supposed to.
+Customers, users, and even businesses would expect that we would be able to prove that our code works as it is supposed to. Notice that in the oath there are words like quick, sure, and repeatable. You want to be able to prove on a moment's notice that code still works as it is supposed to.
 
 If you add a new feature, that doesn't break anything older, or fix a new structure that doesn't break anything that used to be there, you want to be able to show that quickly and easily, that the code still does what it's intended to do. 
 
