@@ -6,7 +6,7 @@ title: C++
 ## What is C++?
 
 * C++ is a general purpose programming language which has been used since the 1990's
-* It was designed by Bjarne Stroustrup under with the name "C with classes".
+* It was designed by Bjarne Stroustrup under the name "C with classes".
 * It is a version of C that includes Object-Oriented elements, including classes and functions.
 
 * It is considered one of the biggest programming languages, as you can see in the following image:
