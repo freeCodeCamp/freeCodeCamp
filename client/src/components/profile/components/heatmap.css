@@ -1,0 +1,15 @@
+.streak-container {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  font-size: 18px;
+  color: #006400;
+}
+
+.streak strong {
+  color: #333;
+}
+
+.night .streak strong {
+  color: #ccc;
+}
