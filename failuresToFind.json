@@ -1,0 +1,14 @@
+[
+  {
+    "error": "missing script: test-ci",
+    "regex": "/missing script: test-ci/i"
+  },
+  {
+    "error": "lerna ERR! npm ci exited 1 in '@freecodecamp/api-server",
+    "regex": "lerna ERR! npm ci exited 1 in '@freecodecamp\/api-server'"
+  }
+  {
+    "error": "localStorage is not available for opaque origins",
+    "regex": "/localStorage is not available for opaque origins/i"
+  }
+]
