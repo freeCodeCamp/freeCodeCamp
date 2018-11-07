@@ -4,9 +4,9 @@ title: Virtual Environments
 
 ## Virtual Environments
 
-Virtual environments can be described as isolated installation directories. This isolation allows you to localized the installation of your project's dependencies, without forcing you to install them system-wide.
+Virtual environments can be described as isolated installation directories. This isolation allows you to localize the installation of your project's dependencies, without forcing you to install them system-wide.
 
-Imagine you have two applications App1 and App2. Both require the package Pak, but with different versions. If you install Pak version 2.3 for App1, you would not be able to run App2, because it requires version 3.1. Here is when virtual environments come in handy.
+Imagine you have two applications App1 and App2. Both require the package Pak, but each requires a different version. If you install Pak version 2.3 for App1, you would not be able to run App2, because it requires version 3.1. Here is when virtual environments come in handy.
 
 Benefits:
 * You can have multiple environments, with multiple sets of packages, without conflicts among them. This way, different projects' requirements can be satisfied at the same time.
