@@ -15,25 +15,17 @@ Depending of your browser, in order to open up this console press the following:
 Menu > More Tools > Developer Tools > Console tab 
 * or else , for keyboard shortcut:
 - Ctrl + Shift + J (Windows/Linux)
-- Command + Option + J (Mac)
 
 ## Firefox: 
 Menu > Developer > Web Console 
 * or else , for keyboard shortcut:
 - Ctrl + Shift + K (Windows/Linux)
-- Command + Option + K (Mac)
 
 ## Safari:
 Safari > Preferences > Advanced > enable "Show Develop menu in menu bar" 
 and then: Develop > Show Error Console 
-* or else , for keyboard shortcut:
-Command + Option + C
 
 ## Edge:
-Menu "three dots" icon > F12 Developer Tools > Console tab
+Icon with: ''...'' > F12 Developer Tools > Console tab
 
 
-
-
-### Resources:
-The above mentioned shortcuts and keyboard shortcuts are thoroughly presented [here](https://documentation.concrete5.org/tutorials/how-open-browser-console-view-errors)
