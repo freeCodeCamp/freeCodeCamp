@@ -38,6 +38,7 @@ Popular AWS services include:
 * CloudFormation (Infrastructure as Code)
 
 #### AWS Certifications 
+
 AWS offers many different certifications for its practitioners. AWS offers a prerequisite AWS Cloud Practitioner Essentials certification relevant to anyone no matter their role. There are different tiers to AWS certs as well as role-based certifications. 
 
 The roles are:

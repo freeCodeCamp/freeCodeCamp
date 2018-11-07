@@ -65,7 +65,7 @@ function Person() {
 }
 ```
 
-An arrow function doesn't define it's own `this` value, it inherits `this` from the enclosing function:
+An arrow function doesn't define its own `this` value, it inherits `this` from the enclosing function:
 
 ```javascript
 // ES6 syntax
