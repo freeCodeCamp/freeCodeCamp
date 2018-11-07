@@ -49,7 +49,8 @@ function findElement(arr, func) {
 }
 ```
 
-### Code Explanation
+## Code Explanation
+
 1. Look through the array given in the 1st paramater "arr" using the .map() method
 2. Use the function in the 2nd parameter as the callback function in arr.map()
 3. Acquire the index of the first number that meets the condition in the function.
