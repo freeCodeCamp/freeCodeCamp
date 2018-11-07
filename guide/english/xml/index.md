@@ -43,9 +43,9 @@ In this example, 'note' is the root element.
 
 In Computer Language, eXtensible Markup Language(XML) is that which defines a set or block of Rules which are later used for Encoding documents in such a format that is both human and machine readable.
 
-There is a main difference between XML and HTML; XML was designed to carry a particular information and focuses on that informaion only, while HTML focuses on displaying that particular information like design and all these stuff regarding the information.
-
-XML does not uses a predefined tags as used by HTML. It uses user defined tags.
+There are two primary differences between XML and HTML: 
+1. XML was designed to describe data; whereas, HTML was designed to display data. 
+2. HTML uses predefined tags while XML uses user defined tags.
 
 XML helps simplify: 
 1. data sharing
