@@ -95,6 +95,6 @@ for (const para of paragraphs)
 }
 ```
 
-#### Further Reading
+#### More Information
 
-<a href='https://hacks.mozilla.org/2015/04/es6-in-depth-iterators-and-the-for-of-loop/' target='_blank' rel='nofollow'>ES6 In Depth: Iterators and the for-of loop</a>
+[ES6 In Depth: Iterators and the for-of loop](https://hacks.mozilla.org/2015/04/es6-in-depth-iterators-and-the-for-of-loop/)
