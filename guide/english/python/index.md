@@ -1,10 +1,11 @@
 ---
 title: Python
 ---
+![alt text](https://www.python.org/static/community_logos/python-logo-master-v3-TM.png)
 
 ## What is Python?
 
-<a href='https://www.python.org' target='_blank' rel='nofollow'>Python</a> is a general purpose programming language which is dynamically typed, interpreted, and known for its easy readability with great design principles.
+<a href='https://www.python.org' target='_blank' rel='nofollow'>Python</a> is a general purpose programming language which is dynamically typed, interpreted, and known for its easy readability with great design principles. It was created by Guido van Rossum and released in 1991. Since then, the language has exploded in popularity.  
 
 To learn more about Python, check out these pages on python.org:
 
@@ -28,7 +29,7 @@ Windows doesn't come with Python, the installer and instructions can be found <a
 
 ## Python Interpreter
 
-The Python interpreter is what is used to run Python scripts.
+The Python interpreter is used to run Python scripts.
 
 If it is available and in Unix shell’s search path makes it possible to start it by typing the command `python` followed by the script name will invoke the interpreter and run the script.
 
@@ -104,8 +105,10 @@ Some of the principles that influenced the design of Python are included as an E
 ## Pros and Cons of Python
 ### Pros
 1. Interactive language with a module support for almost all functionality.
-2. Open Source: So, you can contribute to the community, the functions you have developed for future use and to help others
+2. Open Source: So, you can contribute to the community, the functions you have developed for future use and to help others.
 3. A lot of good interpreters and notebooks available for better experience like jupyter notebook.
+4. It is a very easy language to learn and debug too. To check if a small bit of code works or not, you can just open up the interpreter and test.
+5. There are multiple libraries available for Python, like numpy, pandas, etc., to make doing complex operations easy!
 
 #### Cons
 1. Being open source, many different ways have developed over the year for same function. This sometimes, creates chaos for others to read someone else code.
@@ -153,6 +156,9 @@ will do that itself based on the type of value assigned.
 
 The `objects` parameter is prefixed with a `*` which indicates that the function will take an arbitrary number of arguments for that parameter.
 
+## Things you can do with python
+As stated python is a general purpose language. You can use it to do anything you like but one of the major uses of python is in machine learning and artificial intelligence. It is also a popular language in web development with some amazing frameworks like [Django](https://www.djangoproject.com/) and [flask](http://flask.pocoo.org/). It is also a popular scripting language. With its easy to read syntax it is becoming one the most popular programming languages growing rapidly in different fields.
+
 ## Want to learn more?
 
 Free Code Camp has some great resources. The web is a big place, there's plenty more to explore:
@@ -169,3 +175,4 @@ Free Code Camp has some great resources. The web is a big place, there's plenty 
 * Developer's Guide to Python: https://devguide.python.org/
 * Learn Python the Hard Way book: https://learnpythonthehardway.org/python3/
 * Introduction to Python Programming: https://www.udacity.com/course/introduction-to-python--ud1110
+

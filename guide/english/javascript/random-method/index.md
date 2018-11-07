@@ -32,6 +32,11 @@ var x = Math.random()*10;
 
 console.log(x);
 // 4.133793901445541
+
+//In function form
+function randomFloatZeroToMax(max){
+  return Math.random()*max;
+}
 ```
 
 ### Generating a random floating point number within a range
@@ -45,6 +50,11 @@ var x = Math.random()*(max - min)+min;
 
 console.log(x);
 // 126.94014012699063
+
+//In function form
+function randomFloatInRange(min, max){
+  return Math.random()*(max - min)+min;
+}
 ```
 
 ### Generating a random integer between 0 and a max
@@ -57,6 +67,11 @@ var x = Math.floor(Math.random()*10);
 
 console.log(x);
 // 7
+
+//In function form
+function randomIntZeroToMax(max){
+  return Math.floor(Math.random()*max);
+}
 ```
 
 (Remember that `Math.random()` will never return exactly 1, so `Math.random()*10` will never return exactly 10. This means that after rounding down, the result will always be 9 or less.)
@@ -69,6 +84,11 @@ var x = Math.ceil(Math.random()*31);
 
 console.log(x);
 // 23
+
+//In function form
+function randomIntOneToMax(max){
+  return Math.ceil(Math.random()*max);
+}
 ```
 
 Another way would have been to use the previous function (using `Math.floor()`) and add 1 to it:
@@ -78,6 +98,11 @@ var x = Math.floor(Math.random()*31)+1;
 
 console.log(x);
 // 17
+
+//In function form
+function randomIntInRange(min, max){
+  return Math.floor(Math.random()*(max-1))+1;
+}
 ```
 
 ### Generating a random integer within a range
@@ -91,6 +116,11 @@ var x = Math.floor(Math.random()*(max-min+1)+min);
 
 console.log(x);
 //2509
+
+//In function form
+function randomIntInRange(min, max){
+  return Math.floor(Math.random()*(max - min)+min);
+}
 ```
 
 ### How random is Math.random()?
