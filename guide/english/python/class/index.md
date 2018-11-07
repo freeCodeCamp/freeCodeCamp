@@ -98,5 +98,18 @@ x.__privatenum  # gives following error : 'Foo' object has no attribute '__priva
  
 ```
 
+## Simple class and Object Implementation
+```python
+class Friend:
+    def __init__(self,first,last,state):
+        self.fname = first
+        self.lname = last
+        self.state = state
+        self.email = first+"."+state+"@nith.com"
+    def show(self):
+        return '{} {} {} {}'.format(self.fname,self.lname,self.state,self.email)
 
+fr1 = Friend("Nilesh","Bharti","Bihar")
+fr1.show()
+```
 

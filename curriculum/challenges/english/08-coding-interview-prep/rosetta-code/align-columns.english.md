@@ -40,13 +40,13 @@ It is not a requirement to add separating characters between or around columns.
 ```yml
 tests:
   - text: <code>formatText</code> is a function.
-    testString: 'assert(typeof formatText === "function", "<code>formatText</code> is a function.");'
+    testString: assert(typeof formatText === 'function', '<code>formatText</code> is a function.');
   - text: '<code>formatText</code> with the above input and "right" justification should produce the following: '
-    testString: 'assert.strictEqual(formatText(testInput, "right"), rightAligned, "<code>formatText</code> with the above input and "right" justification should produce the following: ");'
+    testString: 'assert.strictEqual(formatText(testInput, ''right''), rightAligned, ''<code>formatText</code> with the above input and "right" justification should produce the following: '');'
   - text: '<code>formatText</code> with the above input and "left" justification should produce the following: '
-    testString: 'assert.strictEqual(formatText(testInput, "left"), leftAligned, "<code>formatText</code> with the above input and "left" justification should produce the following: ");'
+    testString: 'assert.strictEqual(formatText(testInput, ''left''), leftAligned, ''<code>formatText</code> with the above input and "left" justification should produce the following: '');'
   - text: '<code>formatText</code> with the above input and "center" justification should produce the following: '
-    testString: 'assert.strictEqual(formatText(testInput, "center"), centerAligned, "<code>formatText</code> with the above input and "center" justification should produce the following: ");'
+    testString: 'assert.strictEqual(formatText(testInput, ''center''), centerAligned, ''<code>formatText</code> with the above input and "center" justification should produce the following: '');'
 
 ```
 
@@ -83,9 +83,52 @@ function formatText (input, justification) {
 <div id='js-teardown'>
 
 ```js
-console.info('after the test');
-```
+const testInput = [
+  'Given$a$text$file$of$many$lines',
+  'where$fields$within$a$line$',
+  'are$delineated$by$a$single$\"dollar\"$character',
+  'write$a$program',
+  'that$aligns$each$column$of$fields$',
+  'by$ensuring$that$words$in$each$',
+  'column$are$separated$by$at$least$one$space.',
+  'Further,$allow$for$each$word$in$a$column$to$be$either$left$',
+  'justified,$right$justified',
+  'or$center$justified$within$its$column.'
+];
 
+const rightAligned = '     Given          a      text   file     of     many     lines\n' +
+'     where     fields    within      a   line \n' +
+'       are delineated        by      a single "dollar" character\n' +
+'     write          a   program\n' +
+'      that     aligns      each column     of   fields \n' +
+'        by   ensuring      that  words     in     each \n' +
+'    column        are separated     by     at    least       one space.\n' +
+'  Further,      allow       for   each   word       in         a column to be either left \n' +
+'justified,      right justified\n' +
+'        or     center justified within    its  column.';
+
+const leftAligned = 'Given      a          text      file   of     many     lines    \n' +
+'where      fields     within    a      line   \n' +
+'are        delineated by        a      single "dollar" character\n' +
+'write      a          program  \n' +
+'that       aligns     each      column of     fields   \n' +
+'by         ensuring   that      words  in     each     \n' +
+'column     are        separated by     at     least    one       space.\n' +
+'Further,   allow      for       each   word   in       a         column to be either left \n' +
+'justified, right      justified\n' +
+'or         center     justified within its    column. ';
+
+const centerAligned = '  Given        a        text     file    of     many     lines  \n' +
+'  where      fields    within     a     line  \n' +
+'   are     delineated    by       a    single \"dollar\" character\n' +
+'  write        a       program \n' +
+'   that      aligns     each    column   of    fields  \n' +
+'    by      ensuring    that    words    in     each   \n' +
+'  column      are     separated   by     at    least      one    space.\n' +
+' Further,    allow       for     each   word     in        a     column to be either left \n' +
+'justified,   right    justified\n' +
+'    or       center   justified within  its   column. ';
+```
 </div>
 
 </section>
@@ -131,10 +174,10 @@ function formatText (input, justification) {
         left = ' '.repeat(Math.floor(diff));
         right = ' '.repeat(Math.ceil(diff));
         if (justification === 'left') {
-          right += left; left = ";
+          right += left; left = '';
         }
         if (justification === 'right') {
-          left += right; right = ";
+          left += right; right = '';
         }
         input[y][x] = left + input[y][x] + right;
       }
