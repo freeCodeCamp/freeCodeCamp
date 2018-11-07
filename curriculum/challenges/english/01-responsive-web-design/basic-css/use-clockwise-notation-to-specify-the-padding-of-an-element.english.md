@@ -23,15 +23,15 @@ Use Clockwise Notation to give the ".blue-box" class a <code>padding</code> of <
 ```yml
 tests:
   - text: Your <code>blue-box</code> class should give the top of elements <code>40px</code> of <code>padding</code>.
-    testString: 'assert($(".blue-box").css("padding-top") === "40px", "Your <code>blue-box</code> class should give the top of elements <code>40px</code> of <code>padding</code>.");'
+    testString: assert($(".blue-box").css("padding-top") === "40px", 'Your <code>blue-box</code> class should give the top of elements <code>40px</code> of <code>padding</code>.');
   - text: Your <code>blue-box</code> class should give the right of elements <code>20px</code> of <code>padding</code>.
-    testString: 'assert($(".blue-box").css("padding-right") === "20px", "Your <code>blue-box</code> class should give the right of elements <code>20px</code> of <code>padding</code>.");'
+    testString: assert($(".blue-box").css("padding-right") === "20px", 'Your <code>blue-box</code> class should give the right of elements <code>20px</code> of <code>padding</code>.');
   - text: Your <code>blue-box</code> class should give the bottom of elements <code>20px</code> of <code>padding</code>.
-    testString: 'assert($(".blue-box").css("padding-bottom") === "20px", "Your <code>blue-box</code> class should give the bottom of elements <code>20px</code> of <code>padding</code>.");'
+    testString: assert($(".blue-box").css("padding-bottom") === "20px", 'Your <code>blue-box</code> class should give the bottom of elements <code>20px</code> of <code>padding</code>.');
   - text: Your <code>blue-box</code> class should give the left of elements <code>40px</code> of <code>padding</code>.
-    testString: 'assert($(".blue-box").css("padding-left") === "40px", "Your <code>blue-box</code> class should give the left of elements <code>40px</code> of <code>padding</code>.");'
+    testString: assert($(".blue-box").css("padding-left") === "40px", 'Your <code>blue-box</code> class should give the left of elements <code>40px</code> of <code>padding</code>.');
   - text: You should use the clockwise notation to set the padding of <code>blue-box</code> class.
-    testString: 'assert(!/padding-top|padding-right|padding-bottom|padding-left/.test(code), "You should use the clockwise notation to set the padding of <code>blue-box</code> class.");'
+    testString: assert(!/padding-top|padding-right|padding-bottom|padding-left/.test(code), 'You should use the clockwise notation to set the padding of <code>blue-box</code> class.');
 
 ```
 

@@ -1,7 +1,7 @@
 ---
 id: 5900f4b71000cf542c50ffc9
 challengeType: 5
-title: 'Problem 330: Euler"s Number'
+title: 'Problem 330: Euler''s Number'
 ---
 
 ## Description
@@ -60,7 +60,7 @@ Find A(109) + B(109) and give your answer mod 77 777 777.
 ```yml
 tests:
   - text: <code>euler330()</code> should return 15955822.
-    testString: 'assert.strictEqual(euler330(), 15955822, "<code>euler330()</code> should return 15955822.");'
+    testString: assert.strictEqual(euler330(), 15955822, '<code>euler330()</code> should return 15955822.');
 
 ```
 
