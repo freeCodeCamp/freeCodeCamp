@@ -3,8 +3,27 @@ title: Add Axes to a Visualization
 ---
 ## Add Axes to a Visualization
 
-This is a stub. <a href='https://github.com/freecodecamp/guides/tree/master/src/pages/certifications/data-visualization/data-visualization-with-d3/add-axes-to-a-visualization/index.md' target='_blank' rel='nofollow'>Help our community expand it</a>.
+### Hint 1
 
-<a href='https://github.com/freecodecamp/guides/blob/master/README.md' target='_blank' rel='nofollow'>This quick style guide will help ensure your pull request gets accepted</a>.
+Set the y-axis variable using `const yAxis = d3.axisLeft(yScale);`.
 
-<!-- The article goes here, in GitHub-flavored Markdown. Feel free to add YouTube videos, images, and CodePen/JSBin embeds  -->
+### Hint 2
+
+Append the y-axis using `svg.append()`.
+
+### Spoiler Alert | Solution Ahead
+### Solution
+
+To solve the challenge, use:
+```javascript
+const xAxis = d3.axisBottom(xScale);
+const yAxis = d3.axisLeft(yScale);
+    
+svg.append("g")
+  .attr("transform", "translate(0," + (h - padding) + ")")
+  .call(xAxis);
+  
+svg.append("g")
+  .attr("transform", "translate(" + padding + ", 0)")
+  .call(yAxis);
+```
