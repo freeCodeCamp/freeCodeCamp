@@ -38,7 +38,7 @@ Popular AWS services include:
 * CloudFormation (Infrastructure as Code)
 
 #### AWS Certifications 
-AWS offers many different certifications for it's practitioners. There are different tiers to AWS certs as well as role-based certifications. 
+AWS offers many different certifications for its practitioners. There are different tiers to AWS certs as well as role-based certifications. 
 The tiers are:
 * Foundational (Cloud Practitioner)
 * Associate (Solutions Architect, Developer, SysOps Administrator)
