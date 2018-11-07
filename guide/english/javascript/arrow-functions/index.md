@@ -77,13 +77,13 @@ function Person(){
 
 var p = new Person();
 ```
-An arrow function doesn't go well with function arguments. For example, if you do not know the number of arguments to a function you will be using in a function you do not leave it empty, rather you can use spread operator:
+An arrow function does not have its own `arguments` object. For example, if you do not know the number of arguments passed to a function, instead of using `arguments` you can use the `rest` operator:
 ```javascript
 const myFunc = (...n) => {
   console.log('The first argument is', n[0]);
 }
 
-myFunc(10,20,30,40,40);
+myFunc(10,20,30,40,40); // output: The first argument is 10
 ```
 #### Further Reading
 
