@@ -26,11 +26,11 @@ tests:
   - text: Your regex should match <code>JACK</code>
     testString: assert(userCheck.test("JACK"), 'Your regex should match <code>JACK</code>');
   - text: Your regex should not match <code>J</code>
-    testString: 'assert(!userCheck.test("J"), "Your regex should not match <code>J</code>");'
+    testString: assert(!userCheck.test("J"), 'Your regex should not match <code>J</code>');
   - text: Your regex should not match <code>J6</code>
-    testString: 'assert(!userCheck.test("J6"), "Your regex should not match <code>J6</code>");'
+    testString: assert(!userCheck.test("J6"), 'Your regex should not match <code>J6</code>');
   - text: Your regex should match <code>Jo</code>
-    testString: 'assert(userCheck.test("Jo"), "Your regex should match <code>Jo</code>");'
+    testString: assert(userCheck.test("Jo"), 'Your regex should match <code>Jo</code>');
   - text: Your regex should match <code>Oceans11</code>
     testString: assert(userCheck.test("Oceans11"), 'Your regex should match <code>Oceans11</code>');
   - text: Your regex should match <code>RegexGuru</code>
@@ -73,4 +73,3 @@ const userCheck = /^[A-Za-z]{2,}\d*$/;
 ```
 
 </section>
-
