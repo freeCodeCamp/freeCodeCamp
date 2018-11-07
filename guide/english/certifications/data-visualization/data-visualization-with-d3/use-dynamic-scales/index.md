@@ -3,8 +3,28 @@ title: Use Dynamic Scales
 ---
 ## Use Dynamic Scales
 
-This is a stub. <a href='https://github.com/freecodecamp/guides/tree/master/src/pages/certifications/data-visualization/data-visualization-with-d3/use-dynamic-scales/index.md' target='_blank' rel='nofollow'>Help our community expand it</a>.
+### Hint 1
 
-<a href='https://github.com/freecodecamp/guides/blob/master/README.md' target='_blank' rel='nofollow'>This quick style guide will help ensure your pull request gets accepted</a>.
+Use the `.domain()` and `.range()` functions.
 
-<!-- The article goes here, in GitHub-flavored Markdown. Feel free to add YouTube videos, images, and CodePen/JSBin embeds  -->
+### Hint 2 
+
+Use a callback function on the `.domain()` function.
+
+### Hint 3
+
+Both the `.domain()` and `.range()` functions accept an array or two elements.
+
+### Hint 4
+
+Subtract padding from height to get SVG height including padding.
+
+### Solution
+
+To solve the solution by including all the hints, set the `yScale` variable to:
+
+```javascript
+const yScale = d3.scaleLinear()
+  .domain([0, d3.max(dataset, (d) => d[1])])
+  .range([h - padding, padding]);
+```
