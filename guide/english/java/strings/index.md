@@ -159,6 +159,29 @@ The result will be:
 Hello
 World
 ```
+We can find the index of a character in a string by using the function called ```.indexOf()```. This function allows us to know the exact index of a character making it easier to split a string with ```.substring()``` which you learn in the next example.
+Example:
+```java
+String name = "Julie";
+System.out.println(name.indexOf("J"));
+```
+Output:
+```
+0
+```
+You can also use ```.indexOf()``` to find mulitple of the same character.
+Example:
+```java
+String name = "name;city;state";
+int firstSemiColon = name.indexOf(";");
+int secondSemiColon = name.indexOf(";", firstSemiColon + 1);
+System.out.println(firstSemiColon + " " + secondSemiColon);
+```
+Output:
+```
+4 9
+```
+
 We can also split the string by specifing the start and end index of the characters in the string. We will do this using the Java function called ```.substring()```.
 
 The ```.substring()``` method can be used in two ways. One with only the starting index and one with both the start and end index. Take note that the index starts from 0.
