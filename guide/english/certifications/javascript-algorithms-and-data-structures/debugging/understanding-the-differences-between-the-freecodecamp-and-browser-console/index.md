@@ -1,4 +1,6 @@
-
+---
+title: Understanding the Differences between the freeCodeCamp and Browser Console
+---
 ## Understanding the Differences between the freeCodeCamp and Browser Console
 
 #### Hint:
