@@ -9,9 +9,21 @@ Popular choices for Public Cloud providers are Amazon Web Services, Microsoft Az
 
 Many modern websites and big data efforts are said to be developed in the Cloud, meaning they are operating in some of these massive shared datacenters.
 
+## Cloud Layers
+
+### Software as a Service
+SaaS is from a end user perspective, meaning that at this layer cloud providers will host and provide a software/application as a whole, running,  to the end users. One good example could be Google Drive here.
+
+### Platform as a Service
+PaaS is from the service provider perspective, meaning that at this layer the cloud providers will provide us the platform used for developing the applications offered as a SaaS. One good example could be Google App Engine.
+
+### Infrastructure as a Service
+IaaS is from the infrastructure provider perspective, meaning that at this layer the cloud providers will provide us the virtualised resources like CPU, memory and storage on a pay per use basis. One good example could be Amazon EC2.
+
 #### More Information:
 
-[Getting Started with AWS](https://aws.amazon.com/getting-started/)
-[Google Cloud Documentation](https://cloud.google.com/docs/)
-[Getting Started with Microsoft Azure](https://docs.microsoft.com/en-us/azure/guides/developer/azure-developer-guide)
-[Firebase Documentation](https://firebase.google.com/docs/)
+- [Getting Started with AWS](https://aws.amazon.com/getting-started/)
+- [Google Cloud Documentation](https://cloud.google.com/docs/)
+- [Getting Started with Microsoft Azure](https://docs.microsoft.com/en-us/azure/guides/developer/azure-developer-guide)
+- [Firebase Documentation](https://firebase.google.com/docs/)
+- [Cloud computing news](https://www.ibm.com/blogs/cloud-computing/2018/10/15/what-is-ibm-multicloud-manager/)

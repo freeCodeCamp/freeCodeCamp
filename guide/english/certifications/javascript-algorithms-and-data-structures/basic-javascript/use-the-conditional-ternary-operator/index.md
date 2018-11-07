@@ -10,7 +10,7 @@ Use ternary operator to check for equality.
 
 ```javascript
 function checkEqual(a, b) {
-  return (a = b ? true : false );
+  return (a == b ? true : false );
 }
 
 checkEqual(1, 2);
