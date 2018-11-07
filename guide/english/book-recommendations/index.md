@@ -130,7 +130,7 @@ title: Books to Read for Programmers
 
 ## General
 
-*Clean Code: A Handbook of Agile Software Crafstmanship* by Robert C. Martin
+*Clean Code: A Handbook of Agile Software Craftsmanship* by Robert C. Martin
 - [Amazon Smile](https://smile.amazon.com/Clean-Code-Handbook-Software-Craftsmanship/dp/0132350882)
 - ISBN-13: 978-0132350884
 
@@ -220,6 +220,31 @@ title: Books to Read for Programmers
 - [Amazon Smile](https://smile.amazon.com/JavaScript-JQuery-Interactive-Front-End-Development/dp/1118531647/)
 - ISBN-13: 978-1118531648 
 
+
+## Python
+
+*Automate the Boring Stuff With Python*
+- http://automatetheboringstuff.com/
+- ISBN-13: 978-1593275990
+
+*Core Python Applications Programming (3rd Edition) by Wesley J Chun*
+- [Amazon Smile](https://smile.amazon.com/Core-Python-Applications-Programming-3rd/dp/0132678209)
+- ISBN-13: 978-0132678209
+
+## Go 
+*Introducing Go: Build Reliable, Scalable Programs by Caleb Doxsey*
+- [Amazon Smile](https://smile.amazon.com/Introducing-Go-Reliable-Scalable-Programs/dp/1491941952)
+- ISBN-13: 978-1491941959
+
+*Go in Practice: Includes 70 Techniques 1st Edition by Matt Butcher, Matt Farina*
+- [Amazon Smile](https://smile.amazon.com/Go-Practice-Techniques-Matt-Butcher/dp/1633430073)
+- ISBN-13: 978-1633430075
+
+## Soft Skills
+
+*Soft Skills: The software developer's life manual*
+- [Amazon Smile](https://smile.amazon.com/Soft-Skills-software-developers-manual/dp/1617292397?pldnSite=1)
+- ISBN-13: 9781617292392 
 
 ## Other
 

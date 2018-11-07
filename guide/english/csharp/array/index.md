@@ -31,14 +31,14 @@ You can assign a value into an element directly by using the format below:
 
 `nameOfArray[2] = 50;`
 
-The will assign the value of 50 directly into element [2]
+Code above will assign the value of 50 directly into element [2]
 
 
 You can assign multiple values at once while declaring the array using the format below:
 
 `dataType [] nameOfArray = {5,17,19,92};`
 
-The will assign the value of 5 into element [0], 17 into element [1], 19 into element [2] and 92 into element [3].
+The above code will assign the value of 5 into element [0], 17 into element [1], 19 into element [2] and 92 into element [3].
 
 You can declare, initilise and assign values in the array all at once by using the format below:
 
