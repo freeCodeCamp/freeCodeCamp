@@ -9,23 +9,22 @@ In this console we can execute Javascript commands and see the result. It behave
 
 ***Please follow the instructions provided and copy paste the JS code provided to the example from FCC to your browser's console!***
 
-Depending of your browser, in order to open up this console press the following:
+Depending on your browser, in order to open up the Javascript console you need to:
 
 ## Chrome: 
-Menu > More Tools > Developer Tools > Console tab 
-* or else , for keyboard shortcut:
-- Ctrl + Shift + J (Windows/Linux)
+* Click the the following: Menu->More Tools->Developer Tools->Console tab 
+* or else , for keyboard shortcut: Ctrl + Shift + J (Windows/Linux)
 
 ## Firefox: 
-Menu > Developer > Web Console 
-* or else , for keyboard shortcut:
-- Ctrl + Shift + K (Windows/Linux)
+* Click the the following: Menu->Developer->Web Console 
+* or else , for keyboard shortcut: Ctrl + Shift + K (Windows/Linux)
 
 ## Safari:
-Safari > Preferences > Advanced > enable "Show Develop menu in menu bar" 
-and then: Develop > Show Error Console 
+* Click the the following: Safari->Preferences->Advanced
+and to the option presented enable: "Show Develop menu in menu bar" 
+Lastly, click: Develop->Show Error Console 
 
 ## Edge:
-Icon with: ''...'' > F12 Developer Tools > Console tab
+* Click the the following: ''...'' symbol->Developer Tools-> Console tab
 
 
