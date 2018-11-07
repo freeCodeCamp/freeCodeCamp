@@ -1,10 +1,39 @@
----
-title: Understanding the Differences between the freeCodeCamp and Browser Console
----
+
 ## Understanding the Differences between the freeCodeCamp and Browser Console
 
-This is a stub. <a href='https://github.com/freecodecamp/guides/tree/master/src/pages/certifications/javascript-algorithms-and-data-structures/debugging/understanding-the-differences-between-the-freecodecamp-and-browser-console/index.md' target='_blank' rel='nofollow'>Help our community expand it</a>.
+#### Solution:
+So were exactly do you run this *console.log()* command?
+In order to see the difference between the live console (terminal of freecodecamp) and our browser we need to open up the console in our browser. 
+Contemporary internet browser have a built in feature called Developer Tools which, among others contains a live console. 
+In this console we can execute Javascript commands and see the result. It behaves in a same manner as the window we write code here in Freecodecamp!
 
-<a href='https://github.com/freecodecamp/guides/blob/master/README.md' target='_blank' rel='nofollow'>This quick style guide will help ensure your pull request gets accepted</a>.
+***Please follow the instructions provided and copy paste the JS code provided to the example from FCC to your browser's console!***
 
-<!-- The article goes here, in GitHub-flavored Markdown. Feel free to add YouTube videos, images, and CodePen/JSBin embeds  -->
+Depending of your browser, in order to open up this console press the following:
+
+## Chrome: 
+Menu > More Tools > Developer Tools > Console tab 
+* or else , for keyboard shortcut:
+- Ctrl + Shift + J (Windows/Linux)
+- Command + Option + J (Mac)
+
+## Firefox: 
+Menu > Developer > Web Console 
+* or else , for keyboard shortcut:
+- Ctrl + Shift + K (Windows/Linux)
+- Command + Option + K (Mac)
+
+## Safari:
+Safari > Preferences > Advanced > enable "Show Develop menu in menu bar" 
+and then: Develop > Show Error Console 
+* or else , for keyboard shortcut:
+Command + Option + C
+
+## Edge:
+Menu "three dots" icon > F12 Developer Tools > Console tab
+
+
+
+
+### Resources:
+The above mentioned shortcuts and keyboard shortcuts are thoroughly presented [here](https://documentation.concrete5.org/tutorials/how-open-browser-console-view-errors)
