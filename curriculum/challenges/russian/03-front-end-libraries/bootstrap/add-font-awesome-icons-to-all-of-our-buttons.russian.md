@@ -6,7 +6,7 @@ required:
     raw: true
 challengeType: 0
 videoUrl: ''
-localeTitle: Добавить шрифт Удивительные иконки ко всем нашим кнопкам
+localeTitle: Добавим иконки Font Awesome ко всем нашим кнопкам
 ---
 
 ## Description
