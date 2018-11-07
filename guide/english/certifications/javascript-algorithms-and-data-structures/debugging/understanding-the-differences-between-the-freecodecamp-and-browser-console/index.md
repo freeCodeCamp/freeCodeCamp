@@ -43,5 +43,4 @@ console.clear();
 
 // Use console.log() to print the outputOne variable
 console.log(outputOne);
-
 ````
