@@ -1,8 +1,10 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { Thumbnail, Media } from '@freecodecamp/react-bootstrap';
+import { Media } from '@freecodecamp/react-bootstrap';
 
 import { FullWidthRow } from '../../helpers';
+
+import './portfolio.css';
 
 const propTypes = {
   portfolio: PropTypes.arrayOf(
@@ -21,35 +23,31 @@ function Portfolio({ portfolio = [] }) {
     return null;
   }
   return (
-    <div>
-      <FullWidthRow>
-        <h2 className='text-center'>Portfolio</h2>
-        {portfolio.map(({ title, url, image, description, id }) => (
-          <Media key={id}>
-            <Media.Left align='middle'>
-              {image && (
-                <a href={url} rel='nofollow'>
-                  <Thumbnail
-                    alt={`A screen shot of ${title}`}
-                    src={image}
-                    style={{ width: '150px' }}
-                  />
-                </a>
-              )}
-            </Media.Left>
-            <Media.Body>
-              <Media.Heading>
-                <a href={url} rel='nofollow'>
-                  {title}
-                </a>
-              </Media.Heading>
-              <p>{description}</p>
-            </Media.Body>
-          </Media>
-        ))}
-      </FullWidthRow>
+    <FullWidthRow>
+      <h2 className='text-center'>Portfolio</h2>
+      {portfolio.map(({ title, url, image, description, id }) => (
+        <Media key={id}>
+          <Media.Left align='middle'>
+            {image && (
+              <img
+                alt={`A screen shot of ${title}`}
+                className='portfolio-screen-shot'
+                src={image}
+              />
+            )}
+          </Media.Left>
+          <Media.Body>
+            <Media.Heading className='portfolio-heading'>
+              <a href={url} rel='nofollow noopener noreferrer'>
+                {title}
+              </a>
+            </Media.Heading>
+            <p>{description}</p>
+          </Media.Body>
+        </Media>
+      ))}
       <hr />
-    </div>
+    </FullWidthRow>
   );
 }
 
