@@ -23,9 +23,9 @@ Transform the text of the <code>h4</code> to be uppercase using the <code>text-t
 ```yml
 tests:
   - text: The <code>h4</code> text should be uppercase.
-    testString: 'assert($("h4").css("text-transform") === "uppercase", "The <code>h4</code> text should be uppercase.");'
+    testString: assert($('h4').css('text-transform') === 'uppercase', 'The <code>h4</code> text should be uppercase.');
   - text: The original text of the h4 should not be changed.
-    testString: 'assert(($("h4").text() !== $("h4").text().toUpperCase()), "The original text of the h4 should not be changed.");'
+    testString: assert(($('h4').text() !== $('h4').text().toUpperCase()), 'The original text of the h4 should not be changed.');
 
 ```
 

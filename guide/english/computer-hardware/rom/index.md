@@ -21,6 +21,12 @@ This type of ROM can have its contents erased by ultraviolet light and then repr
 
 #### Electrically Erasable Programmable Read-Only Memory (EEPROM)
 This type of ROM works in a similar way to Flash memory in that it can its contents can be 'flashed' for erasure ad then written to without having to remove the chip from its environment. EEPROMs are used to store a computer system's BIOS, and can be updated without returning the unit to the factory. In many cases, BIOS updates can be carried out by computer users wishing a BIOS update.
+=======
+#### ROM cartridge
+ROM cartridges appear in the 1980's with the rise of personnal computing. They are designed to be connected to a wide variety of devices, from calculators to home video game console systems. They are used to load software or enable specific hardware. Despite their quick load times and general robustness, they fell into disuse due to a smaller capacity and higher production costs than optical media.
+
+![ROM](https://upload.wikimedia.org/wikipedia/commons/thumb/8/83/N64-Game-Cartridge.jpg/2560px-N64-Game-Cartridge.jpg)
+*A Nintendo 64 "Game Pak" ROM cartridge*
 
 <!-- The article goes here, in GitHub-flavored Markdown. Feel free to add YouTube videos, images, and CodePen/JSBin embeds  -->
 
