@@ -1,14 +1,18 @@
 [
   {
     "error": "missing script: test-ci",
-    "regex": "/missing script: test-ci/i"
+    "regex": "missing script: test-ci"
   },
   {
     "error": "lerna ERR! npm ci exited 1 in '@freecodecamp/api-server",
     "regex": "lerna ERR! npm ci exited 1 in '@freecodecamp\/api-server'"
-  }
+  },
   {
     "error": "localStorage is not available for opaque origins",
-    "regex": "/localStorage is not available for opaque origins/i"
+    "regex": "localStorage is not available for opaque origins"
+  },
+  {
+    "error": "Upper case characters found in 3D, all folder names must be lower case",
+    "regex": "Upper case characters found in 3D, all folder names must be lower case"
   }
 ]
