@@ -1,14 +1,23 @@
-const prOpenClose = async () => {
-  const result = await octokit.pullRequests.update({ owner, repo , number, state: 'closed', base })
+require('dotenv').config();
+const { owner, repo, fccBaseUrl, prBaseUrl } = require('./constants');
+const { octokitConfig, octokitAuth } = require('./octokitConfig');
+const octokit = require('@octokit/rest')(octokitConfig);
+octokit.authenticate(octokitAuth);
+
+const prOpenClose = async (number) => {
+  const result = await octokit.pullRequests.update({ owner, repo , number, state: 'closed', base: 'master' })
   .then(() => {
-    return octokit.pullRequests.update({ owner, repo , number, state: 'open', base })
+    return octokit.pullRequests.update({ owner, repo , number, state: 'open', base: 'master' })
   })
   .then(() => {
-    log.update(true)
+    console.log('success')
+    //log.update(true)
   })
-  .catch(() => {
-    log.update(false)
+  .catch((err) => {
+    console.log('catch')
+    console.log(err)
+    //log.update(false)
   })
 };
 
-exports.changePrState = changePrState;
+exports.prOpenClose = prOpenClose;
