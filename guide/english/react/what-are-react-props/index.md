@@ -3,7 +3,7 @@ title: React TypeChecking with PropTypes
 ---
 ## React PropTypes
 
-These serve as a method of typechecking as an application tends go grow, with this a very big base of bugs tends to be corrected with the use of this feature.
+These serve as a method of typechecking as an application tends to grow, with this a very big base of bugs tends to be corrected with the use of this feature.
 
 ## How to get PropTypes
 
@@ -14,8 +14,8 @@ In order to use it, it's required to be added to the project as a dependency by 
 ```sh
 npm install --save prop-types
 ```
-After that a whole range of validators that can be used to make sure the data the developer is going to recieve is actually valid.
-When an invalid value is provided there will be warning appearing in the JavaScript console.
+After that, a whole range of validators can be used to make sure the data the developer recieves is actually valid.
+When an invalid value is provided a warning  will appear in the JavaScript console.
 
 Note that for performance reasons the PropTypes defined are only checked while in development mode.
 
@@ -25,7 +25,7 @@ It's value cannot be changed by the component.
 
 ## Proptypes available
 
-Bellow is a code example with the different validators provided by the package, and how to inject them in the component.
+Below is a code example with the different validators provided by the package, and how to inject them in the component.
 
 ```javascript
 import PropTypes from 'prop-types';
@@ -99,7 +99,7 @@ As a part of this feature it's also possible to define default values for any gi
 
 These make sure that the prop will have a value even if not specified by the parent component.
 
-The code bellow ilustrates how to use this funcionality.
+The code below illustrates how to use this funcionality.
 
 ```javascript
 import React,{Component} from 'react';

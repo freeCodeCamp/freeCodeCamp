@@ -79,3 +79,60 @@ you want. For example, if you wanted to make sure the type can be read as a form
 
 Note that the letter `T` is a placeholder, you could make that anything you like, as long as you use the same one 
 throughout the class.
+
+
+
+Type Erasure in Java Generics
+
+One of the downsides to introducing generics in Java 1.5 was how to ensure backward compatibility (ie) to make sure existing programs continue to work 
+and all existing libraries must be able to use generic types.
+
+Erasure, literally means that the type information which is present in the source code is erased from the compiled bytecode.
+
+```java
+import java.util.ArrayList;
+import java.util.Iterator;
+import java.util.List;
+
+public class GenericsErasure {
+    public static void main(String args[]) {
+        List<String> list = new ArrayList<String>();
+        list.add("Hello");
+        Iterator<String> iter = list.iterator();
+        while(iter.hasNext()) {
+            String s = iter.next();
+            System.out.println(s);
+        }
+    }
+}
+```
+
+If you compile this code and then decompile it with a Java decompiler, you will get something like this.
+Notice that the decompiled code contains no trace of the type information present in the original source code.
+
+```java
+import java.io.PrintStream;
+import java.util.*;
+
+public class GenericsErasure
+{
+
+    public GenericsErasure()
+    {
+    }
+
+    public static void main(String args[])
+    {
+        List list = new ArrayList();
+        list.add("Hello");
+        String s;
+        for(Iterator iter = list.iterator(); iter.hasNext(); System.out.println(s))
+            s = (String)iter.next();
+
+    }
+} 
+```
+
+When you compile some code against a generic type or method, the compiler works out what you really mean (i.e. what the type argument for T is) 
+and verifies at compile time that you're doing the right thing, but the emitted code again just talks in terms of java.lang.Object - the compiler generates extra casts where necessary. 
+At execution time, a List<String> and a List<Date> are exactly the same the extra type information has been erased by the compiler.

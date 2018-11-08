@@ -3,7 +3,7 @@ title: Ternary operator
 ---
 
 # Ternary operator (`?:`)
-Ternary operator return one of the two expression based on the condition. It can be used as a shortcut for if...else statement.
+Ternary operator returns one of the two expressions based on a condition. It can be used as a shortcut for if...else statement.
 
 ## Syntax
 ```
@@ -22,21 +22,22 @@ Returned if `condition_expression` is false.
 ## Example
 ```csharp
 // initialize - set true or false here to view different result
-bool hasFreeSweet = false;
+bool hasFreeSweets = false;
 
-string str = hasFreeSweet ? "Free sweet!" : "No free sweet.";
+string str = hasFreeSweets ? "Free sweets!" : "No free sweets.";
 
 //output in console
 Console.WriteLine(str);
 ```
 
 ## Output
-```csharp
-if hasFreeSweet == true
-> Free sweet!
 
-if hasFreeSweet == false
-> No free sweet.
+```csharp
+if hasFreeSweets == true
+> Free sweets!
+
+if hasFreeSweets == false
+> No free sweets.
 ```
 
 ## Complex Ternary Operations
