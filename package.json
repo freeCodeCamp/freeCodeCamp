@@ -1,0 +1,25 @@
+{
+  "name": "automation",
+  "version": "1.0.0",
+  "description": "Github bots and crawlers for FCC\r # github-bots",
+  "main": "index.js",
+  "dependencies": {
+    "date-fns": "^1.29.0",
+    "dotenv": "^6.1.0",
+    "util": "^0.11.1"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/RandellDawson/automation.git"
+  },
+  "author": "",
+  "license": "BSD-3-Clause",
+  "bugs": {
+    "url": "https://github.com/RandellDawson/automation/issues"
+  },
+  "homepage": "https://github.com/RandellDawson/automation#readme"
+}
