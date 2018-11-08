@@ -61,6 +61,7 @@ Its main features are:
 *   Debugging - Be able to debug using break points, call stacks and an interactive console.
 *   Build-in Git - Review diffs, stage files, make commits, push and pull, all available in the editor.
 *   Extensions - Install extensions to add new languages, themes, debuggers, and connect additional services.
+*   Tasks -  Automate tasks like linting, building, packaging, testing or deploying software systems. 
 
 ## <a href='https://atom.io/' target='_blank' rel='nofollow'>WebStorm</a>
 
