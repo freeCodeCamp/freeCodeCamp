@@ -7,13 +7,13 @@ videoUrl: ''
 localeTitle: Ajustar el relleno de un elemento
 ---
 
-## Description
+## Descripción
 <section id="description"> Ahora vamos a guardar nuestra aplicación Cat Photo por un tiempo y aprender más sobre el estilo de HTML. Es posible que ya hayas notado esto, pero todos los elementos HTML son esencialmente pequeños rectángulos. Tres propiedades importantes controlan el espacio que rodea a cada elemento HTML: <code>padding</code> , <code>margin</code> y <code>border</code> . El <code>padding</code> un elemento controla la cantidad de espacio entre el contenido del elemento y su <code>border</code> . Aquí, podemos ver que el cuadro azul y el cuadro rojo están anidados dentro del cuadro amarillo. Tenga en cuenta que el cuadro rojo tiene más <code>padding</code> que el cuadro azul. Cuando aumente el <code>padding</code> del cuadro azul, aumentará la distancia ( <code>padding</code> ) entre el texto y el borde que lo rodea. </section>
 
-## Instructions
+## Instrucciones
 <section id="instructions"> Cambie el <code>padding</code> de su caja azul para que coincida con el de su caja roja. </section>
 
-## Tests
+## Pruebas
 <section id='tests'>
 
 ```yml
@@ -76,7 +76,7 @@ tests:
 
 </section>
 
-## Solution
+## Solución
 <section id='solution'>
 
 ```js
