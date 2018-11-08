@@ -1,10 +1,12 @@
 ---
 title: Accessibility Basics
 ---
+
+## Accessibility Basics
+
 > "The Dark Arts are many, varied, ever-changing, and eternal. Fighting them is like fighting a many-headed monster, which, each time a neck is severed, sprouts a head even fiercer and cleverer than before. You are fighting that which is unfixed, mutating, indestructible."
 >
 > --Professor Severus Snape, Harry Potter Series
-
 
 Accessibility's role in development is essentially understanding the user's perspective and needs, and knowing that the web, and applications are a solution for people with disabilities.
 
@@ -28,18 +30,18 @@ If your site is on the Internet, reachable by anyone with a web browser, in one 
 
 But, is all content on your website actually readable, usable and understandable for everyone? Are there no thresholds that bar certain people from 'accessing' all the information you are exposing?
 
-You could ask yourself questions like the following ones:
+You could ask yourself questions like the following:
 
-*   If you add information that is only contained in an audio file, can a deaf person still get that information?
+*   If you add information that is only contained in an audio file, can a deaf person access that information?
 *   If you denote an important part of your website with a certain color, will a colorblind person know about it?
 *   If you add images on your website that convey important information, how will a blind or low-vision person know about it?
 *   If you want to navigate the application with keyboard or mouth-stick, will it be possible and predictable?
 *   Does your application assume the orientation of the device, and what if the user can't physically change it?
-*   Are there forgiving timed aspects of your application for someone that might need more time to fill in a form?
+*   Are there forgiving timed aspects of your application when someone might need more time to fill in a form?
 *   Does your application still work (progressive enhancement) assuming that JavaScript does not load in time?
-*   You can even go as far as saying, if your website is very resource-heavy, will someone on a slow or spotty connection be able to read your content?
+*   If your website is very resource-heavy, will someone on an older device with a slow or spotty connection be able to access your content?
 
-This is where accessibility comes into play. Accessibility basically entails making your content as friendly, as easy to 'access' as possible for the largest amount of people. This includes people who are deaf, low-vision, blind, dyslexic, mute, on a slow connection, colorblind, suffering from epilepsy, mental fatigue, age, physical limitations, etc.
+This is where accessibility comes into play. Accessibility basically entails making your content as friendly, as easy to 'access' as possible for the largest amount of people. This includes people who are older, deaf, low-vision, blind, dyslexic, colorblind, have epilepsy, have mental fatigue, have physical limitations, cannot afford new devices or high-speed connections, etc.
 
 ## Why implement accessibility?
 
@@ -55,7 +57,7 @@ The picture gets even more complicated when we look at legislation that actually
 
 Last year, airline websites were included in this list which meant that even here in Europe, airline website devs scrambled to make their content accessible. Not doing so can get your company a fine of literally tens of thousands of dollars for each day the problem isn't fixed.
 
-There's variations on this legislation all over the world, some more severe and all-encompassing than others. Not knowing about that fact doesn't make the lawsuit go away, sadly.
+There are variations on this legislation all over the world, some more severe and all-encompassing than others. Not knowing about that fact doesn't make the lawsuit go away, sadly.
 
 ## Ok, so accessibility is a big deal. Now how do we implement it?
 
@@ -63,7 +65,7 @@ That question, sadly, is harder to answer than it may seem. The Harry Potter quo
 
 As I stated above, accessibility is important for a large group of different people, each with their own needs. Making your website work for literally everyone is a large, on-going task.
 
-To bring a bit of a method to the madness, the Web Content Accessibility Guidelines or <a href='https://www.wuhcag.com/web-content-accessibility-guidelines/' target='_blank' rel='nofollow'>WCAG</a> were composed. This document contains a number of criteria you can use to check your website. For now, I will cover some of the most important basics here. I will point you at the low-hanging fruits, so to speak. In subsequent articles, I will discuss more advanced techniques like [WAI-ARIA] which is important for JavaScript-based apps.
+The Web Content Accessibility Guidelines or <a href='https://www.wuhcag.com/web-content-accessibility-guidelines/' target='_blank' rel='nofollow'>WCAG</a> were composed to help developers create accessible content. This document contains a number of criteria you can use to check your website. For now, I will cover some of the most important basics here. I will point you at the low-hanging fruits, so to speak. In subsequent articles, I will discuss more advanced techniques like [WAI-ARIA] which is important for JavaScript-based apps.
 
 ### Talk like the natives
 
@@ -79,7 +81,7 @@ Guess what? All three of these elements break several criteria of WCAG and there
 
 The first element breaks the so-called 'name, role, value'-criterium, which states that all elements on a web page should expose their name, their role (like button) and their value (like the contents of an edit field) to assistive technologies. This div actually doesn't provide any of the three, rendering it invisible to screen-readers.
 
-The second element looks like a heading visually after styling it with CSS, but semantically is a span. Therefore, assistive technologies won't know its a heading. A screen-reader will read this as regular text, instead of a heading. Screen-readers often have a hotkey to quickly jump to the nearest heading, this heading will not be included in that scope.
+The second element looks like a heading visually after styling it with CSS, but semantically is a span. Therefore, assistive technologies won't know it's a heading. A screen-reader will read this as regular text, instead of a heading. Screen-readers often have a hotkey to quickly jump to the nearest heading, this heading will not be included in that scope.
 
 The third element could for example be an element a user can click to change the language of the website. Maybe a fancy animated menu of languages will expand when it is clicked. However, this is also a span and does not expose its role (link, or button), making assistive technologies think this is just the word English with some styling.
 
@@ -104,7 +106,7 @@ Also remember that headings are hierarchical. If you use an h2, make sure the h3
 
 ### What's the alternative?
 
-Images on a website are great. They add a new layer to your content, can really make the experience your site visitors have way more immersive and generally just look good among all that text. A picture can say more than a thousand words, right?
+Images on a website are great. They add a new layer to your content; can really make the experience your site visitors have way more immersive and generally just look good among all that text. A picture can say more than a thousand words, right?
 
 Certainly. That is, if you can see them. In the HTML5-specification, an img-attribute must always have an alt-attribute. This attribute is meant as an alternative to the image in case it can't be seen. This would be true for blind visitors to your website, but also when your image can't be loaded for some reason. Not adding an alt-tag to an img-attribute is therefore not only breaking accessibility, but going against the HTML5-spec.
 
@@ -124,9 +126,9 @@ The text should provide the context and information that is an alternative to se
 
 ### I can't read your scrawl, son
 
-Even people who don't wear glasses and have no problem with their eyesight at all benefit from an easy to read font and proper contrast. I'm sure you would cringe if you had to fill in a form where light yellow, hopelessly loopy letters are placed on a white background. For people who's eyesight is not as good, like your grandma, for example, this becomes hopelessly worse.
+Even people who don't wear glasses and have no problem with their eyesight at all benefit from an easy to read font and proper contrast. I'm sure you would cringe if you had to fill in a form where light yellow, hopelessly loopy letters are placed on a white background. For people whose eyesight is not as good, like your grandma, for example, this becomes hopelessly worse.
 
-The WCAG has contrast ratios for smaller and larger letters and there's plenty of tools out there to check if the contrast ratios are strong enough. The information and tooling is there, go use it.
+The WCAG has contrast ratios for smaller and larger letters and there's plenty of tools out there to check if the contrast ratios are strong enough. The information and tooling are there, go use it.
 
 A good place to start checking color contrast is by using the [WebAIM](https://webaim.org/resources/contrastchecker/) color contrast checker.
 
