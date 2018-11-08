@@ -9,7 +9,13 @@ title: Cryptocurrency
 
 Cryptocurrency is a subset of digital currency, which acts as a medium of exchange amongst two parties. It is known as crypto-currency because of the utilization of cryptography in securing its transactions. There are various cryptocurrencies including Litecoin, Dash, Ethereum, Ripple, and the currently most popular one Bitcoin.
 
-Cryptocurrency enables trustless and anonymous transactions since it does not involve any third party - there is no central bank. Instead, a blockchain keeps a ledger of transactions across a public network of computers. Blockchains are append-only, meaning nobody can change past transactions. Additionally, unlike normal currency, cryptocurrency is infinitely divisible and can be exchanged in tiny fractions. For example, transactions can amount to 0.00007 BTC or even lower.
+> You can’t stop things like Bitcoin. It will be everywhere and the world will have to readjust. World governments will have to readjust
+
+> – John McAfee
+
+Cryptocurrency enables trustless and anonymous transactions since it does not involve any third party - there is no central bank.  Instead, a blockchain keeps a ledger of transactions across a public network of computers. Blockchains are append-only, meaning nobody can change past transactions.
+Unlike normal currency, cryptocurrency is infinitely divisible and can be exchanged in tiny fractions. For example, transactions can amount to 0.00007 BTC or even lower.  Currently the smallest amount of bitcoin ever recorded on the block chain is 0.00000001 BTC also called satoshi (in honor of the creator of Bitcoin, Satoshi Nakamoto).
+
 
 Every cryptocurrency has three layers:
 1. Protocol - The source code that directs the interaction of the network and various clients (aka core)

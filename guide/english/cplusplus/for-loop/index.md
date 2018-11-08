@@ -8,6 +8,8 @@ The for loop is distinguished from other looping statements through an explicit 
 
 Hence a for loop is a repetition control structure that allows you to efficiently write a loop that needs to execute a specific number of times.
 
+For loop is an entry controlled loop unlike do-while loop.
+
 ## Syntax
 
 ```

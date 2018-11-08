@@ -84,11 +84,11 @@ Puedes ayudar a expandirlos y hacer que su redacción sea más clara. Puedes act
 
 Puedes ayudarnos a traducir nuestros artículos de Guía y desafíos de codificación para un idioma que hables. Actualmente tenemos versiones traducidas en:
 
-- Chino (中文)
-- Ruso (русский)
-- Árabe (عربى)
-- Español
-- Portugués (Português)
+- [Chino (中文)](https://github.com/freeCodeCamp/freeCodeCamp/tree/master/curriculum/challenges/chinese)
+- [Ruso (русский)](https://github.com/freeCodeCamp/freeCodeCamp/tree/master/curriculum/challenges/russian)
+- [Árabe (عربى)](https://github.com/freeCodeCamp/freeCodeCamp/tree/master/curriculum/challenges/arabic)
+- [Español](https://github.com/freeCodeCamp/freeCodeCamp/tree/master/curriculum/challenges/spanish)
+- [Portugués](https://github.com/freeCodeCamp/freeCodeCamp/tree/master/curriculum/challenges/portuguese)
 
 La mayoría de estas versiones están traducidas automáticamente. Nos encantaría tu ayuda para mejorar la calidad de estas traducciones.
 

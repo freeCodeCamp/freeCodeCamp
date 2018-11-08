@@ -5,7 +5,7 @@ title: If / Elif / Else Statements
 ## If / Elif / Else Statements
 
 The `if`/`elif`/`else` structure is a common way to control the flow of a program, allowing you to execute specific blocks of code depending on the value of some data. If the condition following the keyword `if` evaluates as `True`, the block of code will execute.
-Note: that parenthesis is not used before and after the condition check as in other languages.
+Note: that parenthesis is not used before and after the condition check as in other programming languages.
 ```python
 if True:
   print('If block will execute!')

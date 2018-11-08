@@ -29,7 +29,7 @@ Windows doesn't come with Python, the installer and instructions can be found <a
 
 ## Python Interpreter
 
-The Python interpreter is what is used to run Python scripts.
+The Python interpreter is used to run Python scripts.
 
 If it is available and in Unix shell’s search path makes it possible to start it by typing the command `python` followed by the script name will invoke the interpreter and run the script.
 
@@ -162,17 +162,17 @@ As stated python is a general purpose language. You can use it to do anything yo
 ## Want to learn more?
 
 Free Code Camp has some great resources. The web is a big place, there's plenty more to explore:
-* Python Practice Book: http://anandology.com/python-practice-book/index.html
-* Think Python: http://greenteapress.com/thinkpython/html/index.html
-* Practical Business Python: http://pbpython.com/
-* Another course: https://realpython.com/?utm_source=fsp&utm_medium=promo&utm_campaign=bestresources
-* General: https://www.fullstackpython.com/
-* Learn the Basics: https://www.codecademy.com/learn/learn-python
-* Computer science using Python: https://www.edx.org/course/introduction-computer-science-mitx-6-00-1x-11?ref=hackernoon#!
-* Another computer science course using Python: https://www.udacity.com/course/intro-to-computer-science--cs101
-* List of more resources for learning python: https://github.com/vinta/awesome-python
-* Interactive Python: http://interactivepython.org/runestone/static/thinkcspy/index.html
-* Developer's Guide to Python: https://devguide.python.org/
-* Learn Python the Hard Way book: https://learnpythonthehardway.org/python3/
-* Introduction to Python Programming: https://www.udacity.com/course/introduction-to-python--ud1110
-
+* [Python Practice Book](http://anandology.com/python-practice-book/index.html)
+* [Think Python](http://greenteapress.com/thinkpython/html/index.html)
+* [Practical Business Python](http://pbpython.com/)
+* [Real Python](https://realpython.com)
+* [Full Stack Python](https://www.fullstackpython.com/)
+* Learn the Basics [[codecademy](https://www.codecademy.com/learn/learn-python)]
+* Computer science using Python [[edX](https://www.edx.org/course/introduction-computer-science-mitx-6-00-1x-11)]
+* Intro to Computer Science CS101 [[Udacity](https://www.udacity.com/course/intro-to-computer-science--cs101)]
+* List of more resources for learning python [Awesome Python](https://awesome-python.com)
+* [Interactive Python - How to Think Like a Computer Scientist](http://interactivepython.org/runestone/static/thinkcspy/index.html)
+* [Everyday Python Project](http://interactivepython.org/runestone/static/everyday/index.html)
+* [Python Developer’s Guide](https://devguide.python.org)
+* [Learn Python the Hard Way book](https://learnpythonthehardway.org/python3)
+* Introduction to Python Programming [[Udacity](https://www.udacity.com/course/introduction-to-python--ud1110)]
