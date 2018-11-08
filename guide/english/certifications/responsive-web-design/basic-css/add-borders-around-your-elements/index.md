@@ -1,33 +1,40 @@
----
-title: Add Borders Around Your Elements
----
-## Add Borders Around Your Elements
-<!-- The article goes here, in GitHub-flavored Markdown. Feel free to add YouTube videos, images, and CodePen/JSBin embeds  -->
+Add Borders Around Your Elements
+Sometimes you want to have border around some image inside html code. In this case we use the "border-/.../" class which aloows to customize border formatting also.
+Inserting class between <style> and </style> tag.
 
-We need to create a class called ```thick-green-border```. This class should add a 10px, solid, green border around an HTML element. and after, we need to apply the class to your cat photo.
-
-## Solution:
-
-We add between ```<style>``` and ```</style>``` new class ```thick-green-border``` with properties:
-
-```js
-  .thick-green-border {
-    border-color: green;
-    border-width: 10px;
+example:
+```css
+<style>
+  .thin-red-border {
+    border-color: red;
+    border-width: 5px;
     border-style: solid;
   }
+</style>
 ```
-Also, we can add properties this way:
+To set the color of the border use:
+```css
+.example {
+border-color: green;
+}
+```
+(Note:-In place of green desired color can be inserted)
 
-```js
-  .thick-green-border {
-    border: 10px solid green;
-  }
+To set the width of the border use:
+```css
+.example {
+border-width: 10px;
+}
 ```
-The final stage is adding this class to image:
+(Note:- Width of the border should be provided in pixels.)
 
-```js
-<img class="smaller-image thick-green-border" 
-src="https://bit.ly/fcc-relaxing-cat" 
-alt="A cute orange cat lying on its back.">
+To set the style of the border use:
+```css
+.example {
+border-style: thick;
+}
 ```
+(Note:- To set the style of the border add the type infront of style element.)
+
+Finally add the style class made to desired tag to apply given instructions within style block.
+Now finally the created class need to be inserted within the opening tag of imag src.
