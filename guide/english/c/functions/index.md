@@ -50,7 +50,7 @@ Now let's take a look at what's inside the brackets:
 ```C
 return a / b;
 ```
-This is pretty straightforward, because this is such a simple function. `a` is divided by `b`, and that value is returned. You've seen `return` before in the `main` function, but now instead of ending our program, it ends the method and gives the value to whatever called it.
+This is pretty straightforward, because this is such a simple function. `a` is divided by `b`, and that value is returned. You've seen `return` before in the `main` function, but now instead of ending our program, it ends the function and gives the value to whatever called it.
 
 So to recap what this function does- it gets two integers, divides them, and gives them back to whatever called it.
 
@@ -114,6 +114,31 @@ To prevent infinite recursion, an if...else statement or similar approach can be
 Recursion makes program more elegant and clean. All algorithms can be defined recursively, which makes it easier to visualize and prove. 
 If the speed of the program is important then you may not want to use recursion as it uses more memory and can slow the program down.
 
+
+## Defining a function after main program
+There can be instances when you provide the function definition after the main program. In those cases the function should be declared before the main program with arguments and should be ended with semi-colon(;). Later the function can be defined after the main program.
+
+```C
+#include <stdio.h>
+
+int divides(int a, int b);
+
+int main(void) {
+    int first = 5;
+    int second = 10; //MUST NOT BE ZERO;
+
+    int result = divides(first, second);
+
+    printf("first divided by second is %i\n", result);
+
+    return 0;
+}
+
+int divides(int a, int b) {
+    return a / b;
+}
+
+```
 
 # Before you go on...
 ## A review

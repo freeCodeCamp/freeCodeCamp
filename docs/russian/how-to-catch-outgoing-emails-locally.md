@@ -1,14 +1,15 @@
 <table>
     <tr>
-        <td> Read these guidelines in </td>
+        <td> Прочтите эти рекомендации на </td>
         <td><a href='/CONTRIBUTING.md'> English </a></td>
         <td><a href='/docs/chinese/CONTRIBUTING.md'> 中文 </a></td>
-        <td><a href='/docs/russian/CONTRIBUTING.md'> русский </a></td>
+        <td><a href='/docs/russian/CONTRIBUTING.md'> Русском </a></td>
         <td><a href='/docs/arabic/CONTRIBUTING.md'> عربى </a></td>
         <td><a href='/docs/spanish/CONTRIBUTING.md'> Español </a></td>
         <td><a href='/docs/portuguese/CONTRIBUTING.md'> Português </a></td>
     </tr>
 </table>
+
 
 # Как поймать исходящие электронные письма локально (для рабочих процессов электронной почты)
 
@@ -22,18 +23,23 @@
 
 Как вы устанавливаете и запускаете MailHog, зависит от вашей ОС
 
+
 - [Установка MailHog на macOS](#installing-mailhog-on-macos)
 - [Установка MailHog на Windows](#installing-mailhog-on-windows)
 - [Установка MailHog на Linux](#installing-mailhog-on-linux)
 
 ### Установка MailHog на macOS
 
-Вот как настроить MailHog на macOS с помощью [Homebrew](https://brew.sh/):
+ 
+Как установить MailHog на macOS с помощью [Homebrew](https://brew.sh/):
+
+
 
 ```bash
 brew install mailhog
 brew services start mailhog
 ```
+
 
 Это запустит службу почтового ящика в фоновом режиме.
 
@@ -55,11 +61,14 @@ brew services start mailhog
 
 Для систем на базе Debian, таких как Ubuntu и Linux Mint, выполните:
 
+
 ```bash
 sudo apt-get install golang
 ```
 
-Для CentOS, Fedora, Red Hat Linux и других систем на основе RPM выполните:
+
+Для CentOS, Fedora, Red Hat Linux, и других систем на базе RPM, запустите:
+
 
 ```bash
 sudo dnf install golang
@@ -71,10 +80,11 @@ sudo dnf install golang
 sudo yum install golang
 ```
 
-Задайте путь для Go:
+
+Задайте путь к Go:
 
 ```bash
-echo 'export GOPATH=$HOME/go' >> ~/.profile
+echo "export GOPATH=$HOME/go" >> ~/.profile
 echo 'export PATH=$PATH:/usr/local/go/bin:$GOPATH/bin' >> ~/.profile
 source ~/.profile
 ```
@@ -87,25 +97,27 @@ sudo cp /home/$(whoami)/go/bin/MailHog /usr/local/bin/mailhog
 mailhog
 ```
 
-Затем вы можете перейти к [использованию MailHog](#using-mailhog).
+
+Далее, вы можете перейти к [использованию MailHog](#using-mailhog).
 
 ## Использование MailHog
 
-После того, как вы установили MailHog и запустили его, вам нужно открыть почтовый ящик MailHog в своем браузере, открыть новую вкладку или окно и перейти к [http://localhost:8025](http://localhost:8025).
+После того, как вы установили MailHog и запустили его, вам нужно открыть почтовый ящик MailHog в вашем браузере, открыть новую вкладку или окно и перейти на [http://localhost:8025](http://localhost:8025). 
 Теперь вы должны увидеть экран, как показано ниже:
 
-![MailHog Скриншот 1](images/mailhog/1.jpg)
+![MailHog Screenshot 1](../images/mailhog/1.jpg)
 
-Когда ваша freeCodeCamp сборка отправит электронное письмо, вы увидите, что оно появляется здесь. Как показано ниже:
+Когда ваша установка freeCodeCamp отправит электронное письмо, вы увидите, что оно появляется здесь. Как показано ниже:
 
-![MailHog Скриншот 2](images/mailhog/2.jpg)
+![MailHog Screenshot 2](../images/mailhog/2.jpg)
 
-Откройте почту, и вы увидите две вкладки, где вы можете просмотреть содержимое - обычный текст и источник. Убедитесь, что вы находитесь на вкладке обычного текста.
+Откройте письмо, и вы увидите две вкладки, где вы можете просмотреть содержимое - обычный текст и исходник. Убедитесь, что вы находитесь на вкладке обычного текста.
 
-![MailHog Скриншот 3](images/mailhog/3.jpg)
+![MailHog Screenshot 3](../images/mailhog/3.jpg)
 
-Любые ссылки в письме должны быть доступны для просмотра.
+Любые ссылки в письме должны быть кликабельны.
 
 ## Полезные ссылки
 
-- По любым другим вопросам, связанным с MailHog или инструкциями по пользовательским настройкам, ознакомьтесь с [официальным репозиторием MailHog](https://github.com/mailhog/MailHog).
+- По любым другим вопросам, связанным с MailHog или инструкциями по пользовательским настройкам, проверьте репозиторий [MailHog](https://github.com/mailhog/MailHog).
+

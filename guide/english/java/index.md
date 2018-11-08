@@ -83,7 +83,7 @@ Ok now since we are done with the installations, let's begin to understand first
 
 Java is a pretty secure language as it doesn't let your program run directly on the machine. Instead, your program runs on a Virtual Machine called JVM. This Virtual Machine exposes several APIs for low level machine interactions you can make, but other than that you cannot play with machine instructions explicitely. This adds a huge bonus of security.
 
-Also, once your bytecode is compiled it can run on any Java VM. This Virtual Machine is machine dependent, i.e it has different implementations for Windows, Linux and Mac. But your program is guranteed to run in any system thanks to this VM. This philosophy is called <a href='https://en.wikipedia.org/wiki/Write_once,_run_anywhere' target='_blank' rel='nofollow'>"Write Once, Run Anywhere"</a>.
+Also, once your bytecode is compiled it can run on any Java VM. This Virtual Machine is machine dependent, i.e it has different implementations for Windows, Linux and Mac. But your program is guaranteed to run in any system thanks to this VM. This philosophy is called <a href='https://en.wikipedia.org/wiki/Write_once,_run_anywhere' target='_blank' rel='nofollow'>"Write Once, Run Anywhere"</a>.
 
 ## Hello World!
 
