@@ -1,4 +1,5 @@
 require('dotenv').config();
+const formatDate = require('date-fns/format');
 const { owner, repo } = require('./constants');
 const fs = require('fs');
 const { saveToFile } = require('./fileFunctions');
@@ -9,37 +10,39 @@ const { getOpenPrRange } = require('./openPrStats');
 
 octokit.authenticate(octokitAuth);
 
-(async () => {
-  let [ n, f, startingPR ] = process.argv;
-
+const getPrRange = async () => {
+  let [ n, f, type, start, end ] = process.argv;
   let [ firstPR, lastPR ] = await getOpenPrRange().then(data => data);
-  if (startingPR) {
-    startingPR = parseInt(startingPR);
-    if (startingPR < firstPR)  {
+
+  if (type !== 'all' && type !== 'range') {
+    throw `Please specify either all or range for 1st arg.`;
+  }
+  if (type === 'range') {
+    start = parseInt(start);
+    end = parseInt(end);
+    if (!start || !end) {
+      throw `Please specify both a starting PR # (2nd arg) and ending PR # (3rd arg).`;
+    }
+    if (start > end) {
+      throw `Starting PR # must be less than or equal to end PR #.`;
+    }
+    if (start < firstPR)  {
       throw `Starting PR # can not be less than first open PR # (${firstPR})`;
     }
-    firstPR = startingPR
+    firstPR = start
+    if (end > lastPR)  {
+      throw `Ending PR # can not be greater than last open PR # (${lastPR})`;
+    }
+    lastPR = end;
   }
+  return {firstPR, lastPR};
+};
 
-  const methodProps = {
-    owner,  repo, state: 'open',
-    base: 'master',  sort: 'created',
-    direction: 'asc', page: 1, per_page: 100
-  };
+const getOpenPrs = async (firstPR, lastPR, prPropsToGet) => {
+  console.log(`Retrieving PRs (#${firstPR} thru #${lastPR})`);
+  let openPRs = await paginate(octokit.pullRequests.getAll, octokit, firstPR, lastPR, prPropsToGet);
+  return { firstPR, lastPR, openPRs };
+}
 
-  console.log(`Retrieving PRs (starting at #${firstPR}) ...`);
-  const openPRs = await paginate(octokit.pullRequests.getAll, methodProps, octokit);
-  if (startingPR) {
-    openPRs = openPRs.filter(pr => pr.number >= startingPR);
-  }
-
-  return { firstPR, lastPR, openPRs }
-})()
-.then(data => {
-  console.log(`# of PRs Retrieved: ${data.openPRs.length}`);
-  console.log(`PR Range: ${data.firstPR} - ${data.lastPR}`);
-  saveToFile('data/open-prs.json', JSON.stringify(data));
-})
-.catch(err => {
-  console.log(err);
-})
+exports.getOpenPrs = getOpenPrs;
+exports.getPrRange = getPrRange;
