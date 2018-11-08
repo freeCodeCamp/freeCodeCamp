@@ -63,7 +63,8 @@ var myArr = [ 2, 3, 4, 5, 6];
 <div id='js-teardown'>
 
 ```js
-console.info('after the test');
+(function(){if(typeof total !== 'undefined') { return "total = " + total; } else { return "total is undefined";}})()
+
 ```
 
 </div>
