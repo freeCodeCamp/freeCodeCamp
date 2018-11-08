@@ -12,7 +12,7 @@ title: Cards
 
 ###### Code example:
 
-```
+```html
 <div class="card">
   <div class="card-body">Content</div>
   <!-- content of the card goes here -->
@@ -26,7 +26,7 @@ The structure of the card can be enhanced by the addition of a header and a foot
 
 ###### Code example:
 
-```
+```html
 <div class="card">
   <div class="card-header">
       <!-- Header content -->
@@ -84,6 +84,7 @@ The structure of the card can be enhanced by the addition of a header and a foot
 ```
 ### Card is balanced with the image
 
+```html
 <div class="card" style="width: 18rem;">
   <img class="card-img-top" src="..." alt="Card image cap">
   <div class="card-body">
@@ -91,3 +92,4 @@ The structure of the card can be enhanced by the addition of a header and a foot
   </div>
 </div>
 <!--You must set the image height on all cards -->
+```
