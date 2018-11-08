@@ -19,7 +19,7 @@ You may read it as "get the field <code>x</code> and copy the value into <code>a
 
 ## Instructions
 <section id='instructions'>
-Use destructuring to obtain the average temperature for tomorrow from the input object <code>AVG_TEMPERATURES</code>, and assign value with key <code>tomorrow</code> to <code>tempOfTomorrow</code> in line.
+Use destructuring to obtain the average temperature for tomorrow from the input object <code>avgTemperatures</code>, and assign value with key <code>tomorrow</code> to <code>tempOfTomorrow</code> in line.
 </section>
 
 ## Tests
