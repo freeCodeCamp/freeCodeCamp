@@ -20,12 +20,12 @@ Is the same as write this:
 printf("Value of PI: %d", 3.14);
 ```
 #### Undefining Macros
-after defining macros you can also undefine them at any point..
+After defining macros you can also undefine them at any point.
 just Type
 ```C
 #undefine PI
 ```
-This is used to use macros only for specific lines of code and again undefine it..
+This is used to use macros only for specific lines of code and again undefine it.
 
 #### Types of macros
 There are two type of macros. The `Object-like` macros, showed above, and the `Function-like` macros.
