@@ -32,7 +32,7 @@ Lastly, click: Develop->Show Error Console
 
 
 #### Solution:
-```` javascript
+``` javascript
 // Open your browser console
 let outputTwo = "This will print to the browser console 2 times";
 // Use console.log() to print the outputTwo variable
@@ -45,4 +45,4 @@ console.clear();
 
 // Use console.log() to print the outputOne variable
 console.log(outputOne);
-````
+```
