@@ -18,15 +18,15 @@ Some other choices include:
 
 ## Installing.
 
-Most Linux distributions are extremely easy to install, all information is show between each step of the installation.
+Most Linux distributions are extremely easy to install, with all information shown in a step-by-step instalation.
 
-One important step to look out for is when deciding where to install your new Linux distro. For first users it's better to choose the "Guided" option as it will do all the work for you.
+One important step to look out for is when deciding where to install your new Linux distro. For first users it's better to choose a "Guided" option as it will do all the work for you.
 
-Remember to read all the steps carefully and leave some space in your HDD for the new distro, i would say about 30Gb minimum is a nice to have.
+Remember to read all the steps carefully and leave some space in your HDD for the new distro, I would say about 30Gb minimum.
 
 ## The dreaded Terminal.
 
-Linux's terminal is not to be feared, actually it is quite easy to use with some practice and it can make our daily task greatly automated.
+Linux's terminal is not to be feared, actually it is quite easy to use with some practice and it can make our daily tasks easy to automate.
 
 In Debian/Ubuntu and derivatives, the shortcut to open the cli (Comman Line Interface) is "Ctrl + Alt + T". Let's open the terminal and try some commands.
 
@@ -44,3 +44,9 @@ ls (List) - This command list the content in the current directory. It can be al
 ls
 ```
 Now we can see our directories in our home.
+
+pwd (Print Working Directory) - This command lists the directory you are currently in.
+
+```unix
+pwd
+```

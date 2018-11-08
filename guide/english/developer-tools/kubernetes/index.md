@@ -1,5 +1,5 @@
 ---
-  title: kubernetes
+title: kubernetes
 ---
 
 # Kubernetes
@@ -9,7 +9,7 @@
   * [Kubernetes on GitHub](https://github.com/kubernetes/kubernetes)
   * [Kubernetes website](https://kubernetes.io)
   * [Kubernetes tutorial](https://kubernetes.io/docs/tutorials/kubernetes-basics/)
-  
+
 
 ### Sources:
   * The Kubernetes Authors, 2017, kubernetes.io. Accessed 27 Oct. 2017.
