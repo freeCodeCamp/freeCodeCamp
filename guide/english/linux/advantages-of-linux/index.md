@@ -13,13 +13,19 @@ Software is only as good as the support its given. Imagine this: a piece of soft
 
 Linux's requirements for running on a system are much lower than that of Windows or Mac. With the right Linux distribution a user can have a modest setup and Linux will give the system value. Disk space and memory footprint can also be lower too. Some distributions are suitable for CPUs dating back to the Pentium family, others have a requirement of as little as 128MB of RAM and around the same amount for disk space!
 
+## Variety.
+
+With a vast number of linux distributions, you may very well find yourself having a favorite distro for every day of the week. No matter what you plan on using your machine for, there is a linux distro that has it covered. Want security? No problem, Tails OS has you covered (https://tails.boum.org/). Want something lightweight that you can run on your old Chromebook? Gallium OS has you covered. (https://galliumos.org/)
+
+The linux community is super active, and there are always new distros being released. Look around, and find something that will benefit you! Don't let the idea of linux scare you, try it out!
+
 ## Heavily documented for beginners and advanced users alike.
 
 Linux has an active community of those willing to share their knowledge and help (much like FreeCodeCamp!). There are command line utilities built into Linux that provide documentation on commands, libraries, standards, etc. (<a href='https://en.wikipedia.org/wiki/Man_page' target='_blank' rel='nofollow'>Man pages</a> and <a href='https://en.wikipedia.org/wiki/Info_(Unix' target='_blank' rel='nofollow'>Info pages</a>), and there is documentation available on the Internet in a variety of formats including <a href='http://www.tldp.org/' target='_blank' rel='nofollow'>The Linux Documentation Project</a>, <a href='http://www.linuxquestions.org/' target='_blank' rel='nofollow'>LinuxQuestions</a>, <a href='http://serverfault.com/' target='_blank' rel='nofollow'>ServerFault</a>, and <a href='https://wiki.archlinux.org/' target='_blank' rel='nofollow'>The Arch Wiki</a>. 
 
 In addition to documentation, there are plenty of helpful and welcoming communities for newcomers to ask questions such as <a href='https://askubuntu.com/' target='_blank' rel='nofollow'>Ask Ubuntu</a> and <a href='https://www.reddit.com/r/linuxquestions/' target='_blank' rel='nofollow'> Reddit's r/linuxquestions</a>.
 
-There are self-paced certifications that can be taken that are recognized in the IT industry (<a href='https://certification.comptia.org/certifications/linux' target='_blank' rel='nofollow'>CompTIA's Linux+</a> and <a href='https://www.lpi.org' target='_blank' rel='nofollow'>LPI's LPIC tests</a>). Although not required, learning <a href='https://en.wikipedia.org/wiki/C_(programming_language' target='_blank' rel='nofollow'>C</a>) gives the ability for a user to review the Linux code to see what they are running.
+There are self-paced certifications that can be taken that are recognized in the IT industry (<a href='https://certification.comptia.org/certifications/linux' target='_blank' rel='nofollow'>CompTIA's Linux+</a> and <a href='https://www.lpi.org' target='_blank' rel='nofollow'>LPI's LPIC tests</a>). Although not required, learning <a href='https://en.wikipedia.org/wiki/C_(programming_language)' target='_blank' rel='nofollow'>C</a> gives the ability for a user to review the Linux code to see what they are running.
 
 ## Business support.
 
@@ -48,3 +54,5 @@ Linux allows user to change desktop design and themes, add widgets and more. The
 ## It's Free.
 
 Hard to beat that!
+## It's safer.
+Linux distributions have broadly two types of users, namely ROOT and NON-ROOT. There could be only 1 root user but multiple non-root users. Root users have the permission to do any modification (de-modification too!!!) to the system without the use of password (once asked while logging in). In case of non-root users they require permission from the root users to do any activity which could affect the system. So, browsing with non-root user is safe as just by clicking some sort of malicious links, it can't be installed and affect the system without the permission from root user.

@@ -67,7 +67,7 @@ Leave anything that doesn't come between A-Z as it is.
 *   A string variable `nstr` is declared and initialized to store the decoded string.
 *   The for loop is used to loop through each character of the input string.
 *   If the character is not uppercase English alphabets(i.e. its ascii doesn't lie between 65 and 91 ), we'll leave it as it is and <a href='https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/continue' target='_blank' rel='nofollow'>continue</a> with next iteration.
-*   If it's the uppercase English alphabet, we'll subtract 13 from it's ascii code.
+*   If it's the uppercase English alphabet, we'll subtract 13 from its ascii code.
 *   If the ascii code is less than 78, it'll get out of range when subtracted by 13 so we'll add 26 (number of letters in English alphabets) to it so that after A it'll go back to Z. e.g. M(77) ![:left_right_arrow:](https://forum.freecodecamp.com/images/emoji/emoji_one/left_right_arrow.png?v=3 ":left_right_arrow:") 77-13 = 64(Not an English alphabet) +26 = 90 ![:left_right_arrow:](https://forum.freecodecamp.com/images/emoji/emoji_one/left_right_arrow.png?v=3 ":left_right_arrow:") Z(90).
 
 #### Relevant Links
