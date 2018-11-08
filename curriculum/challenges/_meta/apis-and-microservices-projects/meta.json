@@ -1,9 +1,9 @@
 {
   "name": "APIs and Microservices Projects",
-  "dashedName": "apis-and-microservices-projects",
+  "dashedName": "APIs-and-microservices-projects",
   "order": 4,
   "time": "150 hours",
-  "superBlock": "apis-and-microservices",
+  "superBlock": "APIs-and-microservices",
   "superOrder": 5,
   "challengeOrder": [
     [
