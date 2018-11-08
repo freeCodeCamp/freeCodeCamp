@@ -7,25 +7,29 @@ videoUrl: ''
 localeTitle: Добавить к элементу свойство margin с отрицательным значением
 ---
 
-## Description
-<section id="description"> Свойство <code>margin</code> контролирует расстояние между свойством <code>border</code> и окружающими элементами. Если вы присвоите свойству <code>margin</code> отрицательное значение, то элемент увеличится. </section>
 
-## Instructions
-<section id="instructions"> Попытайтесь установить <code>margin</code> на отрицательное значение, подобное значению для красного квадрата. Измените <code>margin</code> синего квадрата на <code>-15px</code> , чтобы он заполнил всю горизонтальную ширину желтого квадрата вокруг него. </section>
+## Описание
+<section id="description"> Свойство элемента <code>margin</code> контролирует объем пространства (отступы) между границей элемента, т.е. <code>border</code> и окружающими элементами. Если вы установите элементу отрицательное значение <code>margin</code>, то размер элемента увеличится. </section>
 
-## Tests
+## Инструкции
+<section id="instructions"> Попытайтесь установить отрицательное значение <code>margin</code>, так же как установлено подобное значению для красного квадрата. Измените <code>margin</code> синего квадрата на <code>-15px</code>, чтобы он заполнил всю горизонтальную ширину желтой рамки вокруг него. </section>
+
+
+## Тесты
 <section id='tests'>
 
 ```yml
 tests:
-  - text: Ваш класс <code>blue-box</code> должен содержать <code>margin</code>, которому присвоено значение <code>-15px</code>.
+
+  - text: Ваш класс <code>blue-box</code> должен установить для элемента <code>margin</code> отступ в размере <code>-15px</code>.
+
     testString: 'assert($(".blue-box").css("margin-top") === "-15px", "Your <code>blue-box</code> class should give elements <code>-15px</code> of <code>margin</code>.");'
 
 ```
 
 </section>
 
-## Challenge Seed
+## Испытание
 <section id='challengeSeed'>
 
 <div id='html-seed'>
@@ -77,10 +81,10 @@ tests:
 
 </section>
 
-## Solution
+## Решение
 <section id='solution'>
 
 ```js
-// solution required
+// впишите ваш код решения
 ```
 </section>
