@@ -155,17 +155,17 @@ function Profile({ user, isSessionUser }) {
           website={website}
           yearsTopContributor={yearsTopContributor}
         />
+        {showHeatMap ? <HeatMap calendar={calendar} streak={streak} /> : null}
+        {showCerts ? <Certifications username={username} /> : null}
+        {showPortfolio ? <Portfolio portfolio={portfolio} /> : null}
+        {showTimeLine ? (
+          <Timeline
+            className='timelime-container'
+            completedMap={completedChallenges}
+            username={username}
+          />
+        ) : null}
       </Grid>
-      {showHeatMap ? <HeatMap calendar={calendar} streak={streak} /> : null}
-      {showCerts ? <Certifications username={username} /> : null}
-      {showPortfolio ? <Portfolio portfolio={portfolio} /> : null}
-      {showTimeLine ? (
-        <Timeline
-          className='timelime-container'
-          completedMap={completedChallenges}
-          username={username}
-        />
-      ) : null}
     </Layout>
   );
 }

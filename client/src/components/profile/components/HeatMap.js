@@ -60,7 +60,6 @@ function HeatMap({ calendar, streak }) {
             if (!value) {
               return 'colour-empty';
             }
-            console.log(value);
             if (value.count > 4) {
               return 'colour-scale-a-lot';
             }
