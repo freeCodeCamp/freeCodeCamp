@@ -18,8 +18,8 @@ After setting the CSS rule for <code>width</code>, <code>$x</code> is incremente
 
 ## Instructions
 <section id='instructions'>
-Use <code>@while</code> to create a series of classes with different <code>font-sizes</code>.
-There should be 10 different classes from <code>text-1</code> to <code>text-10</code>. Then set <code>font-size</code> to 5px multiplied by the current index number. Make sure to avoid an infinite loop!
+Fix the <code>@while</code> to create a series of classes with different <code>font-sizes</code>.
+There should be 10 different classes from <code>text-1</code> to <code>text-10</code>. Then set <code>font-size</code> to 5px multiplied by the current index number.
 </section>
 
 ## Tests
@@ -65,9 +65,13 @@ tests:
 
 ```html
 <style type='text/sass'>
-
-
-
+/* Change code below */
+$x: 0;
+@while $x < 1
+{
+        $x: $x + 1;
+}
+/* Change code above */
 </style>
 
 <p class="text-1">Hello</p>
