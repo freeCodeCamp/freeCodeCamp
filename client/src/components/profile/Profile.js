@@ -157,7 +157,7 @@ function Profile({ user, isSessionUser }) {
         />
       </Grid>
       {showHeatMap ? <HeatMap calendar={calendar} streak={streak} /> : null}
-      {showCerts ? <Certifications /> : null}
+      {showCerts ? <Certifications username={username} /> : null}
       {showPortfolio ? <Portfolio portfolio={portfolio} /> : null}
       {showTimeLine ? (
         <Timeline

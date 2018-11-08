@@ -1,5 +1,6 @@
-import React from 'react';
+import React, { Fragment } from 'react';
 import PropTypes from 'prop-types';
+import { Link } from 'gatsby';
 import { curry } from 'lodash';
 import { createSelector } from 'reselect';
 import { connect } from 'react-redux';
@@ -7,6 +8,7 @@ import { Button, Row, Col } from '@freecodecamp/react-bootstrap';
 
 import { userByNameSelector } from '../../../redux';
 import FullWidthRow from '../../helpers/FullWidthRow';
+import { ButtonSpacer, Spacer } from '../../helpers';
 
 const mapStateToProps = (state, props) =>
   createSelector(
@@ -112,18 +114,23 @@ const propTypes = {
 
 function renderCertShow(username, cert) {
   return cert.show ? (
-    <Row key={cert.showURL}>
-      <Col sm={10} smPush={1}>
-        <Button
-          block={true}
-          bsSize='lg'
-          bsStyle='primary'
-          href={`/certification/${username}/${cert.showURL}`}
-          >
-          View {cert.title}
-        </Button>
-      </Col>
-    </Row>
+    <Fragment>
+      <Row key={cert.showURL}>
+        <Col sm={10} smPush={1}>
+          <Link to={`/certification/${username}/${cert.showURL}`}>
+            <Button
+              block={true}
+              bsSize='lg'
+              bsStyle='primary'
+              className='btn-invert'
+              >
+              View {cert.title}
+            </Button>
+          </Link>
+        </Col>
+      </Row>
+      <ButtonSpacer />
+    </Fragment>
   ) : null;
 }
 
@@ -136,26 +143,27 @@ function Certificates({
 }) {
   const renderCertShowWithUsername = curry(renderCertShow)(username);
   return (
-      <FullWidthRow>
-        <h2 className='text-center'>freeCodeCamp Certifications</h2>
-        <br />
-        {hasModernCert ? (
-          currentCerts.map(renderCertShowWithUsername)
-        ) : (
-          <p className='text-center'>
-            No certifications have been earned under the current curriculum
-          </p>
-        )}
-        {hasLegacyCert ? (
-          <div>
-            <br />
-            <h3 className='text-center'>Legacy Certifications</h3>
-            <br />
-            {legacyCerts.map(renderCertShowWithUsername)}
-          </div>
-        ) : null}
-        <hr />
-      </FullWidthRow>
+    <FullWidthRow>
+      <h2 className='text-center'>freeCodeCamp Certifications</h2>
+      <br />
+      {hasModernCert ? (
+        currentCerts.map(renderCertShowWithUsername).filter(Boolean)
+      ) : (
+        <p className='text-center'>
+          No certifications have been earned under the current curriculum
+        </p>
+      )}
+      {hasLegacyCert ? (
+        <div>
+          <br />
+          <h3 className='text-center'>Legacy Certifications</h3>
+          <br />
+          {legacyCerts.map(renderCertShowWithUsername).filter(Boolean)}
+          <Spacer size={2} />
+        </div>
+      ) : null}
+      <hr />
+    </FullWidthRow>
   );
 }
 
