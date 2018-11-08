@@ -21,7 +21,7 @@ In .net programming, heap has three generations called generation 0, 1, 2. Gener
 
 Generations 1 and 2 has object which has the longer life time. GC on generations 1 and 2 will not happen until the generations 0 has sufficient memory to allocate.
 
-Its not advisable to invoke the GC programmatically. It's good to let it happend on its own. GC get call whenever the generation 0 gets filled. GC will not impact the performance of your program. 
+Its not advisable to invoke the GC programmatically. It's good to let it happen on its own. GC gets called whenever the generation 0 gets filled. GC will not impact the performance of your program. 
 
 Garbage collection is the process in which programs try to free up memory space that is no longer used by variables, objects, and such.  Garbage collection is implemented differently for every language. Most high-level programming languages have some sort of garbage collection built in. Low-level programming languages may add garbage collection through libraries.
 
