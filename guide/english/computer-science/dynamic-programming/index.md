@@ -5,7 +5,7 @@ title: Dynamic Programming
 ## Dynamic Programming
 
 Dynamic Programming(DP) is a programming technique for solving problems where the computations of its subproblems overlap: you write your program in a way that avoids recomputing already solved problems.
-This technique, it's usually applied in conjunction with memoization which is an optimization technique where you cache previously computed results, and return the cached result when the same computation is needed again.
+This technique is usually applied in conjunction with memoization which is an optimization technique where you cache previously computed results, and return the cached result when the same computation is needed again.
 
 An example with Fibonacci's series which is defined as:
 
