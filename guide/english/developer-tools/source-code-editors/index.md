@@ -23,7 +23,7 @@ free to use or evaluate.
 
 ![Sublime Text Icon](https://logo.clearbit.com/sublimetext.com)
 
-Sublime Text is a very popular editor that has been around <a href='https://www.sublimetext.com/blog/articles/one-point-oh' target='_blank' rel='nofollow'>since 2008</a>. There are many options and <a href='https://packagecontrol.io/' target='_blank' rel='nofollow'>extensions</a> available, and a lot of <a href='http://stackoverflow.com/search?q=sublime+text' target='_blank' rel='nofollow'>help available</a> online to help <a href='http://www.websightdesigns.com/wiki/Setting_up_Sublime_Text_3' target='_blank' rel='nofollow'>set it up</a>. (The license for continued use costs $70\. However, Sublime Text is free to download and evaluate, with a nag-screen pop-up.)
+Sublime Text is a very popular editor that has been around <a href='https://www.sublimetext.com/blog/articles/one-point-oh' target='_blank' rel='nofollow'>since 2008</a>. There are many options and <a href='https://packagecontrol.io/' target='_blank' rel='nofollow'>extensions</a> available, and a lot of <a href='http://stackoverflow.com/search?q=sublime+text' target='_blank' rel='nofollow'>help available</a> online to help <a href='http://www.websightdesigns.com/wiki/Setting_up_Sublime_Text_3' target='_blank' rel='nofollow'>set it up</a>. (The license for continued use costs $80(personal use)\. However, Sublime Text is free to download and evaluate, with a nag-screen pop-up.)
 
 <a href='https://www.sublimetext.com/' target='_blank' rel='nofollow'>sublimetext.com</a>
 

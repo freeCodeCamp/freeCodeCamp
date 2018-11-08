@@ -6,13 +6,13 @@ videoUrl: ''
 localeTitle: Anular todos los otros estilos usando Importante
 ---
 
-## Description
+## Descripción
 <section id="description"> ¡Hurra! Acabamos de demostrar que los estilos en línea anularán todas las declaraciones de CSS en su elemento de <code>style</code> . Pero espera. Hay una última forma de anular CSS. Este es el método más poderoso de todos. Pero antes de hacerlo, hablemos de por qué querría anular CSS. En muchas situaciones, usarás bibliotecas CSS. Estos pueden anular accidentalmente su propio CSS. Entonces, cuando necesite estar absolutamente seguro de que un elemento tiene un CSS específico, puede usarlo <code>!important</code> Volvamos a nuestra declaración de clase de <code>pink-text</code> . Recuerde que nuestra clase de <code>pink-text</code> fue anulada por las siguientes declaraciones de clase, declaraciones de id y estilos en línea. </section>
 
-## Instructions
+## Instrucciones
 <section id="instructions"> Agreguemos la palabra clave <code>!important</code> para la declaración de color de su elemento de texto rosa para asegurarnos al 100% de que su elemento <code>h1</code> será rosa. Un ejemplo de cómo hacer esto es: <code>color: red !important;</code> </section>
 
-## Tests
+## Pruebas
 <section id='tests'>
 
 ```yml
@@ -66,7 +66,7 @@ tests:
 
 </section>
 
-## Solution
+## Solución
 <section id='solution'>
 
 ```js

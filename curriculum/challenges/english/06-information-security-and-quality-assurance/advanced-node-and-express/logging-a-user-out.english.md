@@ -14,7 +14,7 @@ In passport, unauthenticating a user is as easy as just calling <code>req.logout
       req.logout();
       res.redirect('/');
   });</pre>
-You may have noticed we also we're not handling missing pages (404), the common way to handle this in Node is with the following middleware. Go ahead and add this in after all your other routes:
+You may have noticed that we're not handling missing pages (404), the common way to handle this in Node is with the following middleware. Go ahead and add this in after all your other routes:
 <pre>app.use((req, res, next) => {
   res.status(404)
     .type('text')
