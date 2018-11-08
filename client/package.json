@@ -40,6 +40,7 @@
     "prismjs": "^1.15.0",
     "query-string": "^6.1.0",
     "react": "^16.4.2",
+    "react-calendar-heatmap": "^1.7.0",
     "react-dom": "^16.4.2",
     "react-freecodecamp-search": "^2.0.2",
     "react-ga": "^2.5.3",
