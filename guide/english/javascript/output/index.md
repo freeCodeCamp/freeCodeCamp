@@ -14,8 +14,8 @@ numbers.forEach(function(number){
   console.log(number + ' is divisible by 2', number%2 == 0);
 });
 ```
-
 #### `console.warn`
+
 As you guessed by the name this is used for showing warnings, and its typical yellow color differentiates it from an error's red text & `console.log`.
 
 ```javascript

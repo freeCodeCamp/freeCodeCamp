@@ -7,7 +7,6 @@ videoUrl: ''
 localeTitle: Añadir bordes alrededor de sus elementos
 ---
 
-
 ## Descripción
 <section id="description"> Los bordes CSS tienen propiedades como <code>style</code> , <code>color</code> y <code>width</code> Por ejemplo, si quisiéramos crear un borde rojo de 5 píxeles alrededor de un elemento HTML, podríamos usar esta clase: <blockquote> &lt;estilo&gt; <br> .thin-red-border { <br> color del borde: rojo; <br> ancho del borde: 5px; <br> estilo de borde: sólido; <br> } <br> &lt;/style&gt; </blockquote></section>
 
