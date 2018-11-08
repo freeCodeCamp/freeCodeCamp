@@ -73,8 +73,8 @@ All pixels are again tested and pixels satisfying all the following conditions a
   (0) The pixel is black and has eight neighbours
   (1) $2 <= B(P1) <= 6$
   (2) $A(P1) = 1$
-  (3) At least one of P2 and P4 and "'P8"' is white
-  (4) At least one of "'P2"' and P6 and P8 is white
+  (3) At least one of P2 and P4 and '''P8''' is white
+  (4) At least one of '''P2''' and P6 and P8 is white
 After iterating over the image and collecting all the pixels satisfying all step 2 conditions, all these condition satisfying pixels are again set to white.
 Iteration:
 If any pixels were set in this round of either step 1 or step 2 then all steps are repeated until no image pixels are so changed.
@@ -95,13 +95,13 @@ Write a routine to perform Zhang-Suen thinning on an image matrix of ones and ze
 ```yml
 tests:
   - text: <code>thinImage</code> must be a function
-    testString: 'assert.equal(typeof thinImage, "function", "<code>thinImage</code> must be a function");'
+    testString: assert.equal(typeof thinImage, 'function', '<code>thinImage</code> must be a function');
   - text: <code>thinImage</code> must return an array
-    testString: 'assert(Array.isArray(result), "<code>thinImage</code> must return an array");'
+    testString: assert(Array.isArray(result), '<code>thinImage</code> must return an array');
   - text: <code>thinImage</code> must return an array of strings
-    testString: 'assert.equal(typeof result[0], "string", "<code>thinImage</code> must return an array of strings");'
+    testString: assert.equal(typeof result[0], 'string', '<code>thinImage</code> must return an array of strings');
   - text: <code>thinImage</code> must return an array of strings
-    testString: 'assert.deepEqual(result, expected, "<code>thinImage</code> must return an array of strings");'
+    testString: assert.deepEqual(result, expected, '<code>thinImage</code> must return an array of strings');
 
 ```
 
@@ -145,7 +145,46 @@ function thinImage(image) {
 <div id='js-teardown'>
 
 ```js
-console.info('after the test');
+const imageForTests = [
+  '                                                          ',
+  ' #################                   #############        ',
+  ' ##################               ################        ',
+  ' ###################            ##################        ',
+  ' ########     #######          ###################        ',
+  '   ######     #######         #######       ######        ',
+  '   ######     #######        #######                      ',
+  '   #################         #######                      ',
+  '   ################          #######                      ',
+  '   #################         #######                      ',
+  '   ######     #######        #######                      ',
+  '   ######     #######        #######                      ',
+  '   ######     #######         #######       ######        ',
+  ' ########     #######          ###################        ',
+  ' ########     ####### ######    ################## ###### ',
+  ' ########     ####### ######      ################ ###### ',
+  ' ########     ####### ######         ############# ###### ',
+  '                                                          '];
+const expected = [
+  '                                                          ',
+  '                                                          ',
+  '    # ##########                       #######            ',
+  '     ##        #                   ####       #           ',
+  '     #          #                 ##                      ',
+  '     #          #                #                        ',
+  '     #          #                #                        ',
+  '     #          #                #                        ',
+  '     ############               #                         ',
+  '     #          #               #                         ',
+  '     #          #                #                        ',
+  '     #          #                #                        ',
+  '     #          #                #                        ',
+  '     #                            ##                      ',
+  '     #                             ############           ',
+  '                       ###                          ###   ',
+  '                                                          ',
+  '                                                          '
+];
+const result = thinImage(imageForTests);
 ```
 
 </div>

@@ -42,7 +42,7 @@ Find ∑L(n) for 3 ≤ n ≤ 100 000 000
 ```yml
 tests:
   - text: <code>euler417()</code> should return 446572970925740.
-    testString: 'assert.strictEqual(euler417(), 446572970925740, "<code>euler417()</code> should return 446572970925740.");'
+    testString: assert.strictEqual(euler417(), 446572970925740, '<code>euler417()</code> should return 446572970925740.');
 
 ```
 
