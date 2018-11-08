@@ -33,10 +33,12 @@ const propTypes = {
       completedDate: PropTypes.number,
       challengeType: PropTypes.number,
       solution: PropTypes.string,
-      files: PropTypes.shape({
-        ext: PropTypes.string,
-        contents: PropTypes.string
-      })
+      files: PropTypes.arrayOf(
+        PropTypes.shape({
+          ext: PropTypes.string,
+          contents: PropTypes.string
+        })
+      )
     })
   ),
   fetchIdToNameMap: PropTypes.func.isRequired,
