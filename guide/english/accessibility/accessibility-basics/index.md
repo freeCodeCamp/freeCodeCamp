@@ -57,7 +57,7 @@ The picture gets even more complicated when we look at legislation that actually
 
 Last year, airline websites were included in this list which meant that even here in Europe, airline website devs scrambled to make their content accessible. Not doing so can get your company a fine of literally tens of thousands of dollars for each day the problem isn't fixed.
 
-There's variations on this legislation all over the world, some more severe and all-encompassing than others. Not knowing about that fact doesn't make the lawsuit go away, sadly.
+There are variations on this legislation all over the world, some more severe and all-encompassing than others. Not knowing about that fact doesn't make the lawsuit go away, sadly.
 
 ## Ok, so accessibility is a big deal. Now how do we implement it?
 
@@ -81,7 +81,7 @@ Guess what? All three of these elements break several criteria of WCAG and there
 
 The first element breaks the so-called 'name, role, value'-criterium, which states that all elements on a web page should expose their name, their role (like button) and their value (like the contents of an edit field) to assistive technologies. This div actually doesn't provide any of the three, rendering it invisible to screen-readers.
 
-The second element looks like a heading visually after styling it with CSS, but semantically is a span. Therefore, assistive technologies won't know its a heading. A screen-reader will read this as regular text, instead of a heading. Screen-readers often have a hotkey to quickly jump to the nearest heading, this heading will not be included in that scope.
+The second element looks like a heading visually after styling it with CSS, but semantically is a span. Therefore, assistive technologies won't know it's a heading. A screen-reader will read this as regular text, instead of a heading. Screen-readers often have a hotkey to quickly jump to the nearest heading, this heading will not be included in that scope.
 
 The third element could for example be an element a user can click to change the language of the website. Maybe a fancy animated menu of languages will expand when it is clicked. However, this is also a span and does not expose its role (link, or button), making assistive technologies think this is just the word English with some styling.
 
@@ -106,7 +106,7 @@ Also remember that headings are hierarchical. If you use an h2, make sure the h3
 
 ### What's the alternative?
 
-Images on a website are great. They add a new layer to your content, can really make the experience your site visitors have way more immersive and generally just look good among all that text. A picture can say more than a thousand words, right?
+Images on a website are great. They add a new layer to your content; can really make the experience your site visitors have way more immersive and generally just look good among all that text. A picture can say more than a thousand words, right?
 
 Certainly. That is, if you can see them. In the HTML5-specification, an img-attribute must always have an alt-attribute. This attribute is meant as an alternative to the image in case it can't be seen. This would be true for blind visitors to your website, but also when your image can't be loaded for some reason. Not adding an alt-tag to an img-attribute is therefore not only breaking accessibility, but going against the HTML5-spec.
 
@@ -126,9 +126,9 @@ The text should provide the context and information that is an alternative to se
 
 ### I can't read your scrawl, son
 
-Even people who don't wear glasses and have no problem with their eyesight at all benefit from an easy to read font and proper contrast. I'm sure you would cringe if you had to fill in a form where light yellow, hopelessly loopy letters are placed on a white background. For people who's eyesight is not as good, like your grandma, for example, this becomes hopelessly worse.
+Even people who don't wear glasses and have no problem with their eyesight at all benefit from an easy to read font and proper contrast. I'm sure you would cringe if you had to fill in a form where light yellow, hopelessly loopy letters are placed on a white background. For people whose eyesight is not as good, like your grandma, for example, this becomes hopelessly worse.
 
-The WCAG has contrast ratios for smaller and larger letters and there's plenty of tools out there to check if the contrast ratios are strong enough. The information and tooling is there, go use it.
+The WCAG has contrast ratios for smaller and larger letters and there's plenty of tools out there to check if the contrast ratios are strong enough. The information and tooling are there, go use it.
 
 A good place to start checking color contrast is by using the [WebAIM](https://webaim.org/resources/contrastchecker/) color contrast checker.
 
