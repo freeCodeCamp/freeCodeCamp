@@ -45,7 +45,7 @@ Here you have created an `array` of `ints`(Integers), called `arr`. This array h
 ```C
 datatype name[number of elements] 
 ```
-The first element of this array is `1`, the second is `2` etc.
+The elements in this array are whatever values you choose to store. The values stored will replace the "number of elements" section.
 
 ```C
 int brr[] = {78, 65};
@@ -150,7 +150,7 @@ double a[5], b[5]
 a = b;
 ```
 You can **only** deal with the values in an array one by one. You **cannot assign all at once**, when you learn about pointers later, the reasons will be clear. 
->(Basically, the first element of an array points to a memory address, and the elements after that are the "houses" next to that first one. So technically an array is just it's first element's memory address. When you want to assign the second array the first array, you run into error due to differing types, or you are trying to change the second memory address of the first element in the second array.)
+>(Basically, the first element of an array points to a memory address, and the elements after that are the "houses" next to that first one. So technically an array is just its first element's memory address. When you want to assign the second array the first array, you run into error due to differing types, or you are trying to change the second memory address of the first element in the second array.)
 
 - When you want to create an array, you have to either tell its size, or assign values to it. Do not do this:
 ```C

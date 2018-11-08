@@ -26,7 +26,7 @@ Find T(1012). Give the last 9 digits of your answer.
 ```yml
 tests:
   - text: <code>euler458()</code> should return 423341841.
-    testString: 'assert.strictEqual(euler458(), 423341841, "<code>euler458()</code> should return 423341841.");'
+    testString: assert.strictEqual(euler458(), 423341841, '<code>euler458()</code> should return 423341841.');
 
 ```
 

@@ -6,7 +6,7 @@ localeTitle: Algoritmos
 
 En informática, un algoritmo es una especificación inequívoca de cómo resolver una clase de problemas. Los algoritmos pueden realizar cálculos, procesamiento de datos y tareas de razonamiento automatizado.
 
-Un algoritmo es un método efectivo que se puede expresar en una cantidad finita de espacio y tiempo y en un lenguaje formal bien definido para calcular una función. Comenzando desde un estado inicial y una entrada inicial (quizás vacía), las instrucciones describen un cálculo que, cuando se ejecuta, avanza a través de un número finito de estados sucesivos bien definidos, que eventualmente producen "salida" y terminan en un estado final final. La transición de un estado a otro no es necesariamente determinista; algunos algoritmos, conocidos como algoritmos aleatorios, incorporan entrada aleatoria.
+Un algoritmo es un método efectivo que se puede expresar en una cantidad finita de espacio y tiempo y en un lenguaje formal bien definido para calcular una función. Comenzando desde un estado inicial y una entrada inicial (quizás vacía), las instrucciones describen un cálculo que, cuando se ejecuta, avanza a través de un número finito de estados sucesivos bien definidos, que eventualmente producen una "salida" y terminan en un estado final. La transición de un estado a otro no es necesariamente determinista; algunos algoritmos, conocidos como algoritmos aleatorios, incorporan entrada aleatoria.
 
 Hay ciertos requisitos que un algoritmo debe cumplir:
 
@@ -22,7 +22,7 @@ Los algoritmos se juzgan más comúnmente por su eficiencia y la cantidad de rec
 
 ### Clasificación de los algoritmos
 
-Los algoritmos de clasificación vienen en varios sabores dependiendo de su necesidad. Algunos, muy comunes y ampliamente utilizados son:
+Los algoritmos de clasificación se dividen en varios tipos dependiendo de su necesidad. Algunos, muy comunes y ampliamente utilizados son:
 
 #### Ordenación rápida
 

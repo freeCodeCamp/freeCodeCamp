@@ -3,9 +3,9 @@ title: User Experience Design
 ---
 ## User Experience Design
 
-User Experience Design is a field that focuses on how the end users interacts with a product or a service. User Experience Design cover covers a wide range of aspects related with a product and not only the visual aspect(such as the GUI). A UX Designer is responsible for the overall experience the end users has with the product and thus a UX Designers role could span from the business side of the product, such as Market and User research, to the Graphical aspect, such as GUI, Interaction Design(sometimes called IxD) and Sound Design. Due the wide area a UX Designer covers it is not uncommon for people to branch out and specialise in certain aspects of the User Experience field, such as User Research, User Interface, User Interaction, Motion Design, Copywriter etc. 
+User Experience Design is a field that focuses on how the end user interacts with a product or a service. User Experience Design covers a wide range of aspects related with a product and not only the visual aspect(such as the GUI). A UX Designer is responsible for the overall experience the end users has with the product and thus a UX Designers role could span from the business side of the product, such as Market and User research, to the Graphical aspect, such as GUI, Interaction Design (sometimes called IxD) and Sound Design. Due the wide area a UX Designer covers it is not uncommon for people to branch out and specialise in certain aspects of the User Experience field, such as User Research, User Interface, User Interaction, Motion Design, Copywriter etc. 
 
-This section and it's guides, will cover a wide variety of user experience design concepts.
+This section, and its guides, will cover a wide variety of user experience design concepts.
 
 
 #### Articles, Resources and Inspiration for User Experience Design
