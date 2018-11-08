@@ -114,8 +114,8 @@ const propTypes = {
 
 function renderCertShow(username, cert) {
   return cert.show ? (
-    <Fragment>
-      <Row key={cert.showURL}>
+    <Fragment key={cert.title}>
+      <Row>
         <Col sm={10} smPush={1}>
           <Link to={`/certification/${username}/${cert.showURL}`}>
             <Button
@@ -147,7 +147,7 @@ function Certificates({
       <h2 className='text-center'>freeCodeCamp Certifications</h2>
       <br />
       {hasModernCert ? (
-        currentCerts.map(renderCertShowWithUsername).filter(Boolean)
+        currentCerts.map(renderCertShowWithUsername)
       ) : (
         <p className='text-center'>
           No certifications have been earned under the current curriculum
@@ -158,7 +158,7 @@ function Certificates({
           <br />
           <h3 className='text-center'>Legacy Certifications</h3>
           <br />
-          {legacyCerts.map(renderCertShowWithUsername).filter(Boolean)}
+          {legacyCerts.map(renderCertShowWithUsername)}
           <Spacer size={2} />
         </div>
       ) : null}
@@ -168,6 +168,6 @@ function Certificates({
 }
 
 Certificates.propTypes = propTypes;
-Certificates.displayName = 'Certificates';
+Certificates.displayName = 'Certifications';
 
 export default connect(mapStateToProps)(Certificates);
