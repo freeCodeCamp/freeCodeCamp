@@ -19,7 +19,7 @@ Is the same as write this:
 ```C
 printf("Value of PI: %d", 3.14);
 ```
-####Undefining Macros
+#### Undefining Macros
 after defining macros you can also undefine them at any point..
 just Type
 ```C
