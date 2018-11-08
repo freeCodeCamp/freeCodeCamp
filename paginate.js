@@ -1,20 +1,24 @@
 const { owner, repo } = require('./constants');
 
 const paginate = async function paginate (method, octokit, firstPR, lastPR, prPropsToGet) {
-  const minMaxFilter = (prs, first, last, prPropsToGet) => {
-    return prs.reduce((filtered, pr) => {
+
+  const prFilter = (prs, first, last, prPropsToGet) => {
+    const filtered = [];
+    for (let pr of prs) {
       if (pr.number >= first && pr.number <= last) {
         const propsObj = prPropsToGet.reduce((obj, prop) => {
           obj[prop] = pr[prop];
           return obj;
         } ,{});
-        filtered =  [propsObj, ...filtered];
+        filtered.push(propsObj);
       }
-      return filtered;
-    }, []);
+      if (pr.number >= last) {
+        done = true;
+        return filtered;
+      }
+    }
+    return filtered;
   };
-
-  const includesPRNum = (prs, prNum) => prs.some(({ number }) => number >= prNum);
 
   const methodProps = {
     owner,  repo, state: 'open',
@@ -25,13 +29,11 @@ const paginate = async function paginate (method, octokit, firstPR, lastPR, prPr
   let done = false; // will be true when lastPR is seen paginated results
   let response = await method(methodProps);
   let { data } = response;
-  data = minMaxFilter(data, firstPR, lastPR, prPropsToGet);
-  done = includesPRNum(data, lastPR);
-  while (octokit.hasNextPage(response) && !done) {
+  data = prFilter(data, firstPR, lastPR, prPropsToGet);
+  while (octokit.hasNextPage(response) && !done ) {
     response = await octokit.getNextPage(response);
-    let dataFiltered = minMaxFilter(response.data, firstPR, lastPR, prPropsToGet);
+    let dataFiltered = prFilter(response.data, firstPR, lastPR, prPropsToGet);
     data = data.concat(dataFiltered);
-    done = includesPRNum(dataFiltered, lastPR);
   }
   return data;
 };

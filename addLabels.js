@@ -6,17 +6,16 @@ const octokit = require('@octokit/rest')(octokitConfig);
 octokit.authenticate(octokitAuth);
 
 const addLabels = (number, labels, log) => {
-  console.log(`PR #${number} added ${JSON.stringify(labels)}\n`);
-  // octokit.issues.addLabels({ owner, repo, number, labels })
-  // .then(() => {
-  //   log.update(number, true);
-  //   console.log(`PR #${number} added ${JSON.stringify(labels)}\n`);
-  // })
-  // .catch((err) => {
-  //   console.log(`PR #${number} had an error when trying to label with ${JSON.stringify(labels)}\n`);
-  //   console.log(err)
-  //   log.finish()
-  // })
+  octokit.issues.addLabels({ owner, repo, number, labels })
+  .then(() => {
+    log.update(number, true);
+    console.log(`PR #${number} added ${JSON.stringify(labels)}\n`);
+  })
+  .catch((err) => {
+    console.log(`PR #${number} had an error when trying to label with ${JSON.stringify(labels)}\n`);
+    console.log(err)
+    log.finish()
+  })
 };
 
 exports.addLabels = addLabels;
