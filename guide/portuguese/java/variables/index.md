@@ -17,28 +17,28 @@ Você deve ter notado que o **Tipo de Wrapper** consiste em tipos escritos exata
 Normalmente, você pode _declarar_ (ou seja, criar) variáveis ​​de acordo com a seguinte sintaxe: < _data-type_ > < _variableName_ >;
 
 ```java
-// Tipo de dados primitivo 
+// Tipo de Dados Primitivo 
  int i; 
  
- // Tipo dados de referência 
+ // Tipo Dados de Referência 
  Float myFloat; 
 ```
 
 Você pode _atribuir_ um valor à variável simultaneamente quando a estiver declarando (o que é chamado de _inicialização_ ) ou em qualquer lugar no código depois de a ter declarado. O símbolo **\=** é usado para o mesmo.
 
 ```java
-// Inicialisar a primitiva de dados int com o valor 10 
+// Inicializar a variável de Tipo de Dados Primitivo 'int' com o valor 10 
  int i = 10; 
  double amount = 10.0; 
  boolean isOpen = false; 
- char c = 'a'; // Nota, apenas pelicas  
+ char c = 'a'; // Note as aspas simples
  
  //As variáveis tambem podem ser declaradas, e mais tarde designar o seu valor
  int j; 
  j = 10; 
  
  // Inicializar um objeto Float com o valor 1.0 
- // a variável aponta agora para o objeto
+ // a variável myFloat aponta agora para o objeto
  Float myFloat = new Float(1.0); 
  
  //Bytes são um dos tipos em java e podem assim ser representados
