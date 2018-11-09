@@ -1,11 +1,13 @@
 ---
 title: Input
 ---
+
 ## Input
-The HTML `<input>` tag is used within a `<form>` element to declare an input element.
+
+The HTML `<input>` tag is typically used within a `<form>` element to declare an input element.
 It allows the user to enter data, and can vary in many ways.
 
-## Example
+### Example
 ```html
 <!DOCTYPE html>
 <html>
@@ -15,14 +17,15 @@ It allows the user to enter data, and can vary in many ways.
    </head>
 	
    <body>
-      <form action = "/cgi-bin/hello_get.cgi" method = "get">
-         First name: 
-            <input type = "text" name = "first_name" value = "" maxlength = "100" />
+      <form action="/my-form-action" method="get">
+         <label for="first_name">First Name:</label>
+            <input type="text" name="first_name" value="" maxlength="100" />
             <br />
             
-         Last name: 
-            <input type = "text" name = "last_name" value = "" maxlength = "100" />
-         <input type = "submit" value = "Submit" />
+            <label for="last_name">Last Name:</label> 
+            <input type="text" name="last_name" value="" maxlength="100" />
+              
+            <input type="submit" value="Submit" />
       </form>
    </body>
 	
@@ -41,4 +44,9 @@ The HTML `<input>` tag uses the attribute `type` to specify what kind of input e
 <br/>`type = "text"` - This is the default type, and generates a one-line text field.
 <br/>`type = "password"`- This will generate a password field, and is used for (you guessed it!) passwords.
 <br/>`type = "hidden"` - This will generate a hidden input field.
-
+<br/>`type = "text"` - Creates a simple text box.
+<br/>`type = "password"` - Creates a text field but masks the characters typed into the input.
+<br/>`type = "checkbox"` - Creates a checkbox field that allows the user to select multiple options.
+<br/>`type = "radio"` - Creates a field that allows a user to select only one option.
+<br/>`type = "submit"` - Displays a button that submits the form when clicked.
+<br/>`type = "hidden"` - This is a special type that doesn't render on the page. It's typically used to pass additional data along with a form.

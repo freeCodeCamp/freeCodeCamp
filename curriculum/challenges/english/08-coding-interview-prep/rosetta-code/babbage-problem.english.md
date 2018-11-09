@@ -25,9 +25,9 @@ challengeType: 5
 ```yml
 tests:
   - text: <code>babbage</code> is a function.
-    testString: 'assert(typeof babbage === "function", "<code>babbage</code> is a function.");'
-  - text: '<code>babbage(99736, 269696)</code> should not return 99736 (there is a smaller answer).'
-    testString: 'assert.equal(babbage(babbageAns, endDigits), answer, "<code>babbage(99736, 269696)</code> should not return 99736 (there is a smaller answer).");'
+    testString: assert(typeof babbage === 'function', '<code>babbage</code> is a function.');
+  - text: <code>babbage(99736, 269696)</code> should not return 99736 (there is a smaller answer).
+    testString: assert.equal(babbage(babbageAns, endDigits), answer, '<code>babbage(99736, 269696)</code> should not return 99736 (there is a smaller answer).');
 
 ```
 
@@ -52,7 +52,9 @@ function babbage (babbageNum, endDigits) {
 <div id='js-teardown'>
 
 ```js
-console.info('after the test');
+const babbageAns = 99736;
+const endDigits = 269696;
+const answer = 25264;
 ```
 
 </div>
@@ -66,7 +68,7 @@ console.info('after the test');
 ```js
 function babbage (babbageAns, endDigits) {
   const babbageNum = Math.pow(babbageAns, 2);
-  const babbageStartDigits = parseInt(babbageNum.toString().replace('269696', "));
+  const babbageStartDigits = parseInt(babbageNum.toString().replace('269696', ''));
   let answer = 99736;
 
   // count down from this answer and save any sqrt int result. return lowest one
