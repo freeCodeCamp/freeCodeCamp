@@ -29,38 +29,21 @@ You will need to use the slice() method and specify where to start and where to 
 
 **Solution ahead!**
 
-## ![:beginner:](https://forum.freecodecamp.com/images/emoji/emoji_one/beginner.png?v=3 ":beginner:") Basic Code Solution:
+```javascript
+function truncateString(str, num) {
+  if(str.length <= num) {
+    return str;
+  }
+  else {
+    return str.slice(0, num) + '...'
+  }
+}
+```
 
-    function truncateString(str, num) {
-      // Clear out that junk in your trunk
-      if(str.length > num) {
-        return str.slice(0,num)+"...";
-      } else {
-        return str;
-      }
-    }
+### Code Explaination:
 
-![:rocket:](https://forum.freecodecamp.com/images/emoji/emoji_one/rocket.png?v=3 ":rocket:") <a href='https://repl.it/CLjU/55' target='_blank' rel='nofollow'>Run Code</a>
-
-### Code Explanation:
-
-*   We start off with a simple `if` statement to determine one of two outcomes...
-*   If our string length is greater than the `num` we want to truncate it, we return a slice of our string starting at character 0, and ending at `num`. We then append our `'...'` to the end of the string.
-*   However, if above situation is not true, it means our string length is less than our truncation `num`. Therefore, we can just return the string.
-
-## ![:rotating_light:](https://forum.freecodecamp.com/images/emoji/emoji_one/rotating_light.png?v=3 ":rotating_light:") Advanced Code Solution:
-
-    function truncateString(str, num) {
-      return (str.length > num)?(str.slice(0,num)+"..."):str;
-    }
-
-![:rocket:](https://forum.freecodecamp.com/images/emoji/emoji_one/rocket.png?v=3 ":rocket:") <a href='https://repl.it/CLjU/54' target='_blank' rel='nofollow'>Run Code</a>
-
-### Code Explanation:
-
-*   This solution is very similar to basic solution. To determine the new string, we use a ternary operator. In our ternary operation, if `str.length` is larger than `num`, we return a new string which is slice of our string starting at character 0, and ending at `num` and the `'...'` is appended to the end of our new string. If `str.length` is less than or equal to `num`, we return the string without any truncation.
-
-*   **NOTE** In order to understand the above code, you need to understand how a Ternary Operator works. The Ternary Operator is frequently used as a shortcut for the `if` statement and follows this format: `condition ? expr1 : expr2`. If the `condition` evaluates to true, the operator returns the value of `expr1`. Otherwise, it returns the value of `expr2`.
+* If the number of characters in the string is less than the number passed to the function, we return the string itself.
+* Else, the number of characters which are to be extracted are taken out using `str.slice(0, num)` and then the three `...` are appended to it and the resultant string is returned.
 
 #### Relevant Links
 
