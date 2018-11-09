@@ -8,10 +8,10 @@ localeTitle: Добавьте тень к карточному элементу
 
 ## Description
 
-<section id="description"> Свойство <code>box-shadow</code> применяет одну или несколько теней к элементу. Свойство <code>box-shadow</code> принимает значения для <code>offset-x</code> (как далеко отбрасывать тень горизонтально от элемента), <code>offset-y</code> (как далеко отбрасывать тень вертикально от элемента), <code>blur-radius</code> <code>spread-radius</code> и значения цвета в этом порядке. Значения <code>blur-radius</code> <code>spread-radius</code> необязательны. Вот пример CSS для создания нескольких теней с некоторым размытием в основном прозрачных черных цветах: <blockquote> box-shadow: 0 10px 20px rgba (0,0,0,0,19), 0 6px 6px rgba (0,0,0,0,23); </blockquote></section>
+<section id="description"> Свойство <code>box-shadow</code> применяет одну или несколько теней к элементу. Свойство <code>box-shadow</code> принимает значения для <code>offset-x</code> (как далеко отбрасывать тень горизонтально от элемента), <code>offset-y</code> (как далеко отбрасывать тень вертикально от элемента), <code>blur-radius</code> <code>spread-radius</code> и значения цвета в этом порядке. Значения <code>blur-radius</code> и <code>spread-radius</code> необязательны. Вот пример CSS для создания нескольких теней с некоторым размытием в основном прозрачных черных цветах: <blockquote> box-shadow: 0 10px 20px rgba (0,0,0,0,19), 0 6px 6px rgba (0,0,0,0,23); </blockquote></section>
 
 ## Instructions
-<section id="instructions"> Элемент теперь имеет идентификатор <code>thumbnail</code>. С помощью этого селектора используйте приведенные выше примеры CSS, чтобы поместить <code>box-shadow</code> на карту. </section>
+<section id="instructions"> Элемент теперь имеет идентификатор <code>thumbnail</code>. С помощью этого селектора используйте приведенные выше примеры CSS, чтобы применить <code>box-shadow</code> к карточке. </section>
 
 
 ## Tests
