@@ -14,7 +14,7 @@ As of now, there are mainly three types of Blockchains that have emerged. These 
 
 #### 1. Private Blockchain
 
-Blockchain Technology that is owned by a private party or an organization. It is a decentralized architecture but some powers to make decisions are vested in the hands of person in-charge.
+Blockchain Technology that is owned by a private party or an organization. It is a decentralized architecture but some powers to make decisions are vested in the hands of person in-charge. This architecture is typically more scalable because there is no need for a consensus algorithm for nodes on the network to agree on the state of the blockchain.
 
 The person in-charge is responsible for giving selective access and permissions such as read/write.
 
@@ -22,11 +22,9 @@ Example : Bankchain, Hyperledger
 
 #### 2. Public Blockchain
 
-In this architecture, no one is in-charge. Anyone and everyone can participate in reading, writing, and auditing the blockchain.
+In this architecture, no one is in-charge. Anyone and everyone can participate in reading, writing, and auditing the blockchain. Public Blockchain is open and transparent and therefore it is open for review by anyone willing to do so, at any given point of time. This architecture requires a consensus algorithm like Proof-of-Work or Proof-of-Stake.
 
-Public Blockchain is open and transparent and therefore it is open for review by anyone willing to do so, at any given point of time.
-
-Example : Bitcoin, Litecoin
+Example : Bitcoin, Ethereum, Litecoin
 
 #### 3. Federated Blockchain
 

@@ -66,7 +66,7 @@ This message shows that your installation appears to be working correctly.
 ```
 
 ### What is containerization then:
-Simply put, it is nothing more than packaging of a process/application and it's dependencies into a distributable image which can run in isolation. 
+Simply put, it is nothing more than packaging of a process/application and its dependencies into a distributable image which can run in isolation. 
 
 ### Why do we need Docker:
 It makes the life of software engineers very smooth as they will always work on the same development environment. 

@@ -38,22 +38,30 @@ Popular AWS services include:
 * CloudFormation (Infrastructure as Code)
 
 #### AWS Certifications 
-AWS offers many different certifications for it's practitioners. There are different tiers to AWS certs as well as role-based certifications. 
-The tiers are:
-* Foundational (Cloud Practitioner)
-* Associate (Solutions Architect, Developer, SysOps Administrator)
-* Professional (Solutions Architect, DevOps Engineer)
 
-These roles for each of the tiers include:
-* Architect
-* Developer
-* Operations
+AWS offers many different certifications for its practitioners. AWS offers a prerequisite AWS Cloud Practitioner Essentials certification relevant to anyone no matter their role. There are different tiers to AWS certs as well as role-based certifications. 
 
-AWS offers a prerequisite AWS Cloud Practitioner Essentials certification* relevant to anyone no matter their role.
-Outside of the standard roles there are specialty certifications for Advanced networking, Big Data, and Security.
+The roles are:
+* Any role:
+   * [Foundational: AWS Certified Cloud Practitioner](https://aws.amazon.com/certification/certified-cloud-practitioner/)
+* Architect:
+   * [Foundational: AWS Certified Cloud Practitioner (optional)](https://aws.amazon.com/certification/certified-cloud-practitioner/)
+   * [Associate: AWS Certified Solutions Architect - Associate](https://aws.amazon.com/certification/certified-solutions-architect-associate/)
+   * [Professional: AWS Certified Solutions Architect - Professional](https://aws.amazon.com/certification/certified-solutions-architect-professional/)
+* Developer:
+   * [Foundational: AWS Certified Cloud Practitioner (optional)](https://aws.amazon.com/certification/certified-cloud-practitioner/)
+   * [Associate: AWS Certified Developer - Associate](https://aws.amazon.com/certification/certified-developer-associate/)
+   * [Professional: AWS Certified DevOps Engineer - Professional](https://aws.amazon.com/certification/certified-devops-engineer-professional/)
+* Operational:
+   * [Foundational: AWS Certified Cloud Practitioner (optional)](https://aws.amazon.com/certification/certified-cloud-practitioner/)
+   * [Associate: AWS Certified SysOps Administrator - Associate](https://aws.amazon.com/certification/certified-sysops-admin-associate/)
+   * [Professional: AWS Certified DevOps Engineer - Professional](https://aws.amazon.com/certification/certified-devops-engineer-professional/)
+* Specialty (unrelated to eachother):
+   * [AWS Certified Big Data - Specialty](https://aws.amazon.com/certification/certified-big-data-specialty)
+   * [AWS Certified Advanced Networking - Specialty](https://aws.amazon.com/certification/certified-advanced-networking-specialty)
+   * [AWS Certified Security - Specialty](https://aws.amazon.com/certification/certified-security-specialty/)
 
 #### More Information:
-<!-- Please add any articles you think might be helpful to read before writing the article -->
 * [AWS](https://aws.amazon.com/)
 * [Certifications](https://aws.amazon.com/certification/)
 * [Certification Preparation](https://aws.amazon.com/certification/certification-prep/)

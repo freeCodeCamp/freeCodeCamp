@@ -24,7 +24,7 @@ Breakpoints are broadly set on basis of either of the following.
 
 ### Breakpoints based on device width
 
-It's quite apparent that all of our devices donot have same screen widths/ sizes. It is now a design decision to include a set of particular devices and code the css rules accordingly. We already have enough devices to worry about, and when a new one comes out with a different width, going back to your CSS and adding a new breakpoint all over again is time-consuming.
+It's quite apparent that all of our devices do not have the same screen widths/sizes. It is now a design decision to include a set of particular devices and code the css rules accordingly. We already have enough devices to worry about, and when a new one comes out with a different width, going back to your CSS and adding a new breakpoint all over again is time-consuming.
 
 Here's an example 
 
@@ -178,7 +178,7 @@ Breakpoints that are based on content as opposed to device are less complicated.
 }
 ```
 
-You can also set a minimum and maximum width, which let's you experiments with differnt ranges. This one roughly triggers between smar-phone and larger desktop and monitor sizes
+You can also set a minimum and maximum width, which lets you experiment with different ranges. This one triggers roughly between smart-phone and larger desktop and monitor sizes
 
 ```code
 @media only screen and (min-width: 700px) and (max-width: 1500px) {
