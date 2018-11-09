@@ -24,7 +24,10 @@ Unfortunately, some of your commits have caused our CI tests to fail.\n
 \n`;
 }, '');
 
-  return `\n${finalMsg}`;
+  return `\n${finalMsg}\n
+\n
+P.S: I am just friendly bot. You should reach out to the [Contributors Chat room](https://gitter.im/FreeCodeCamp/Contributors) for more help.
+`;
 }
 
 const checkPath = fullPath => {
