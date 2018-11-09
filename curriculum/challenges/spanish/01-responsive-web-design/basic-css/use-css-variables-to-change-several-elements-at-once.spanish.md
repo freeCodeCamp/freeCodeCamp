@@ -6,13 +6,13 @@ videoUrl: ''
 localeTitle: Usa las variables CSS para cambiar varios elementos a la vez
 ---
 
-## Description
+## Descripción
 <section id="description"> <dfn>Las Variables CSS</dfn> son una forma poderosa de cambiar muchas propiedades de estilo CSS a la vez cambiando solo un valor. Siga las instrucciones a continuación para ver cómo cambiar solo tres valores puede cambiar el estilo de muchos elementos. </section>
 
-## Instructions
+## Instrucciones
 <section id="instructions"> En la clase de <code>penguin</code> , cambie el valor de <code>black</code> a <code>gray</code> , el valor de <code>gray</code> a <code>white</code> y el de <code>yellow</code> a <code>orange</code> . </section>
 
-## Tests
+## Pruebas
 <section id='tests'>
 
 ```yml
@@ -243,7 +243,7 @@ tests:
 
 </section>
 
-## Solution
+## Solución
 <section id='solution'>
 
 ```js
