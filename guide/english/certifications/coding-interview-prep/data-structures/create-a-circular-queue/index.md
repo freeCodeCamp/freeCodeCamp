@@ -12,26 +12,26 @@ title: Create a Circular Queue
   - First, we create an array of length 5:
   ```output
   [null, null, null, null, null]
-  ^Read @ 0
-  ^Write @ 0
+   ^Read @ 0
+   ^Write @ 0
   ```
   - Then we enqueue `a`, `b`, and `c`:
   ```
   [a, b, c, null, null]
-  ^Read @ 0
-           ^Write @ 3
-  ```output
+   ^Read @ 0
+            ^Write @ 3
+  ```
   - Now we dequeue all the enqueued items:
   ```output
   [null, null, null, null, null]
-                    ^Read @ 3
-                    ^Write @ 3
-  ```output
+                     ^Read @ 3
+                     ^Write @ 3
+  ```
   - Finally, we enqueue `d`, `e` and `f`:
   ```output
   [f, null, null, d, e]
-                 ^Read @ 3
-     ^Write @ 1
+                  ^Read @ 3
+      ^Write @ 1
   ```
 ### Solution:
 ```js
