@@ -21,7 +21,7 @@ Once the robot makes its decision, it needs to act accordingly. For this purpose
 
 First, you need to have good amount of patience to ace in Robotics.
 
-1) Start by using an easy programming language can help you understand how your robot works. A good place to start is [Lego Mindstorms](https://www.lego.com/en-us/mindstorms) where you can use a basic representation of programming to make a robot do things. If you don't want to buy [Lego Mindstorms](https://www.lego.com/en-us/mindstorms) that's okay! However it does help understand how the machine works, which will help you better understand the advanced machines you want to later work with.
+1) Start by using an easy programming language that can help you understand how robots work. A good place to start is [Lego Mindstorms](https://www.lego.com/en-us/mindstorms) where you can use a basic representation of programming to make your robot do things. If you don't want to buy [Lego Mindstorms](https://www.lego.com/en-us/mindstorms), that's okay! However, it does help understand the basics of robotics, which will help you better understand the advanced machines you'll work with in the future.
 2) Be good at any one programming language to have a good grip over code.
 3) Learn RaspberryPi or Arduino for the proper understanding of electronics and logic.
   Now the difference between RaspberryPi and Arduino is:
