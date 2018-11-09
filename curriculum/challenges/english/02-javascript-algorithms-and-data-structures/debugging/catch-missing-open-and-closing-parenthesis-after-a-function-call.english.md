@@ -22,9 +22,9 @@ Fix the code so the variable <code>result</code> is set to the value returned fr
 ```yml
 tests:
   - text: Your code should fix the variable <code>result</code> so it is set to the number that the function <code>getNine</code> returns.
-    testString: 'assert(result == 9, "Your code should fix the variable <code>result</code> so it is set to the number that the function <code>getNine</code> returns.");'
+    testString: assert(result == 9, 'Your code should fix the variable <code>result</code> so it is set to the number that the function <code>getNine</code> returns.');
   - text: Your code should call the <code>getNine</code> function.
-    testString: 'assert(code.match(/getNine\(\)/g).length == 2, "Your code should call the <code>getNine</code> function.");'
+    testString: assert(code.match(/getNine\(\)/g).length == 2, 'Your code should call the <code>getNine</code> function.');
 
 ```
 
