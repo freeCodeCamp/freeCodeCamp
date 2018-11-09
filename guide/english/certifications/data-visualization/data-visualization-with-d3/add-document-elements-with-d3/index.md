@@ -9,6 +9,7 @@ Use the `.select()`, `.append()` and `.text()` methods.
 
 ### Solution
 
+```html
 <body>
   <script>
     d3.select("body")
@@ -16,3 +17,4 @@ Use the `.select()`, `.append()` and `.text()` methods.
     .text("Learning D3");
   </script>
 </body>
+```
