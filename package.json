@@ -9,7 +9,9 @@
     "develop": "npm-run-all -s ensure-env start-develop",
     "ensure-env": "cross-env DEBUG=fcc:* node ./tools/scripts/ensure-env.js",
     "lint": "echo 'Warning: TODO - Define Linting with fixing.'",
-    "seed": "cross-env DEBUG=fcc:* node ./tools/scripts/seed/seedChallenges",
+    "seed": "npm-run-all -p seed:*",
+    "seed:challenges": "cross-env DEBUG=fcc:* node ./tools/scripts/seed/seedChallenges",
+    "seed:news":"cross-env DEBUG=fcc:* node ./tools/scripts/seed/seedNewsArticles",
     "start-develop": "node ./tools/scripts/start-develop.js",
     "pretest": "npm-run-all -s test:lint",
     "test": "npm-run-all -p test:*",
@@ -25,12 +27,15 @@
     "debug": "^4.0.1",
     "dotenv": "^6.0.0",
     "eslint-config-freecodecamp": "^1.1.1",
+    "faker": "^4.1.0",
     "gray-matter": "^4.0.1",
     "jest": "^23.6.0",
     "lerna": "^3.4.0",
     "lodash": "^4.17.11",
     "npm-run-all": "^4.1.3",
     "readdirp-walk": "^1.6.0",
+    "slugg": "^1.2.1",
+    "shortid": "^2.2.14",
     "tree-kill": "^1.2.0"
   }
 }
