@@ -9,7 +9,7 @@ const debug = require('debug');
 
 const log = debug('fcc:tools:seedNewsArticles');
 
-const { MONGOHQ_URL } = process.env;
+const { MONGOHQ_URL, NODE_ENV: env } = process.env;
 
 function handleError(err, client) {
   if (err) {
@@ -26,30 +26,32 @@ function handleError(err, client) {
   }
 }
 
-MongoClient.connect(
-  MONGOHQ_URL,
-  { useNewUrlParser: true },
-  async function(err, client) {
-    handleError(err, client);
+if (env !== 'production') {
+  MongoClient.connect(
+    MONGOHQ_URL,
+    { useNewUrlParser: true },
+    async function(err, client) {
+      handleError(err, client);
 
-    log('Connected successfully to mongo');
-    const db = client.db('freecodecamp');
-    const articleCollection = db.collection('article');
+      log('Connected successfully to mongo');
+      const db = client.db('freecodecamp');
+      const articleCollection = db.collection('article');
 
-    const articles = stubArticles(200);
+      const articles = stubArticles(200);
 
-    await articleCollection
-      .deleteMany({})
-      .catch(err => handleError(err, client));
-    return articleCollection
-      .insertMany(articles)
-      .then(({ insertedCount }) => {
-        log('inserted %d new articles', insertedCount);
-        client.close();
-      })
-      .catch(err => handleError(err, client));
-  }
-);
+      await articleCollection
+        .deleteMany({})
+        .catch(err => handleError(err, client));
+      return articleCollection
+        .insertMany(articles)
+        .then(({ insertedCount }) => {
+          log('inserted %d new articles', insertedCount);
+          client.close();
+        })
+        .catch(err => handleError(err, client));
+    }
+  );
+}
 
 function stubArticles(numberOfArticles = 1) {
   return new Array(numberOfArticles).fill('').map(() => generateArticle());
