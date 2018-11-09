@@ -68,38 +68,28 @@ circularPrimes(1000000);
 ```js
 function rotate(n) {
   if (n.length == 1) return n;
-  n = Number(n);
-  return `${n % 10}${Math.floor(n / 10)}`;
-}
-
-function isPrime(num) {
-  const upperBound = Math.ceil(Math.sqrt(num));
-
-  if (num % 2 === 0 && num !== 2) return false;
-
-  for (let i = 3; i <= upperBound; i += 2) {
-    if (num % i === 0) return false;
-  }
-  return num !== 1;
+  return n.slice(1) + n[0];
 }
 
 function circularPrimes(n) {
+  // Nearest n < 10^k
+  const bound = 10 ** Math.ceil(Math.log10(n));
   const primes = [0, 0, 2];
   let count = 0;
 
   // Making primes array
-  for (let i = 4; i <= n; i += 2) {
+  for (let i = 4; i <= bound; i += 2) {
     primes.push(i - 1);
     primes.push(0);
   }
 
   // Getting upperbound
-  const upperBound = Math.ceil(Math.sqrt(n));
+  const upperBound = Math.ceil(Math.sqrt(bound));
 
   // Setting other non-prime numbers to 0
   for (let i = 3; i < upperBound; i += 2) {
     if (primes[i]) {
-      for (let j = i * i; j < n; j += i) {
+      for (let j = i * i; j < bound; j += i) {
         primes[j] = 0;
       }
     }
@@ -111,9 +101,10 @@ function circularPrimes(n) {
       let curr = String(primes[i]);
       let tmp = 1; // tmp variable to hold the no of rotations
       for (let x = rotate(curr); x != curr; x = rotate(x)) {
-        if (x > n && isPrime(x)) {
+        if (x > n && primes[x]) {
           continue;
-        } else if (!primes[x]) {
+        }
+        else if (!primes[x]) {
           // If the rotated value is 0 then its not a ciruclar prime, break the loop
           tmp = 0;
           break;
