@@ -19,7 +19,7 @@ Alternatively you could use `'''` to write a a comment that spans multiple lines
 For example:
 ```python
     '''
-    This is a multi-line comment, 
+    This is a multiline comment, 
     everything inside the three 
     apostrophes will be regarded 
     by Python as a comment and 
