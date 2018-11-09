@@ -16,7 +16,7 @@ title: Create a Circular Queue
    ^Write @ 0
   ```
   - Then we enqueue `a`, `b`, and `c`:
-  ```
+  ```output
   [a, b, c, null, null]
    ^Read @ 0
             ^Write @ 3
