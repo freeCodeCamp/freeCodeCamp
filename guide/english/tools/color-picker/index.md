@@ -8,7 +8,7 @@ A color picker is a tool to experiment with colors for the web. You can use it t
 
 ### Online Websites
 
-Color picker websites offer the simplest way to quickly choose between colors and get information about them. They are helpful for when you are unsure about using a color tone or another or just want to get the color you are using in a different format.
+Color picker websites offer the simplest way to quickly choose between colors and get information about them. They are helpful when you are unsure about using a color tone or you just want to get the color you are using in a different format.
 
 ### Browser Extensions
 
