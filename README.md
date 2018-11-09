@@ -1,3 +1,7 @@
-# github-bots
-Github bots and crawlers for FCC
-# github-bots
+# automation
+
+Scripts for @freeCodeCamp's GitHub automation tasks.
+
+## Usage
+
+Todo

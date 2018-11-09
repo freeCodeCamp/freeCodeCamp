@@ -12,6 +12,6 @@ exports.octokitConfig = {
 
 exports.octokitAuth = {
     type: 'basic',
-    username: process.env.myUN,
-    password: process.env.myPW
+    username: process.env.USERNAME,
+    password: process.env.ACCESS_TOKEN
 }

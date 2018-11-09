@@ -6,6 +6,7 @@
   "dependencies": {
     "@octokit/rest": "^15.16.1",
     "date-fns": "^1.29.0",
+    "dedent": "^0.7.0",
     "dotenv": "^6.1.0",
     "gray-matter": "^4.0.1",
     "lodash": "^4.17.11",

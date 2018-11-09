@@ -1,73 +1,85 @@
+const dedent = require("dedent");
+
 const allowedLangDirNames = [
-  'arabic',
-  'chinese',
-  'english',
-  'portuguese',
-  'russian',
-  'spanish'
+  "arabic",
+  "chinese",
+  "english",
+  "portuguese",
+  "russian",
+  "spanish"
 ];
 
-const createErrorMsg = (errors, user, hasPrevComments) => {
-  let finalMsg = `**Hi @${user},**\n`;
-  if (!hasPrevComments) {
-    finalMsg += `
-**Thanks for this pull request (PR).**\n
-\n
-Unfortunately, some of your commits have caused our CI tests to fail.\n
-\n`;
-  }
-  finalMsg += `Please correct the issue(s) listed below, so we can consider merging your content.\n
-\n`;
-  finalMsg += errors.reduce((msgStr, error, idx) => {
-    return msgStr += `#### Issue ${idx + 1}:\n
-> ${error}\n
-\n`;
-}, '');
+const createErrorMsg = (errors, user) => {
+  let errorMsgHeader = dedent`
+    Hi @${user},
 
-  return `\n${finalMsg}\n
-\n
-P.S: I am just friendly bot. You should reach out to the [Contributors Chat room](https://gitter.im/FreeCodeCamp/Contributors) for more help.
-`;
-}
+    Thanks for this pull request (PR).
+
+    Unfortunately, these changes have failed some of our recommended guidelines. Please correct the issue(s) listed below, so we can consider merging your content.
+
+    | Issue | Description | File Path |
+    | :---: | --- | --- |
+  `;
+
+  let errorMsgTable = errors.reduce((msgStr, { msg, fullPath }, idx) => {
+    return (msgStr += "\n" + dedent`
+      | ${idx + 1} | ${msg} | ${fullPath} |
+    `);
+  }, "");
+
+  let errorMsgFooter = dedent`
+    P.S: I am just friendly bot. You should reach out to the [Contributors Chat room](https://gitter.im/FreeCodeCamp/Contributors) for more help.
+  `;
+
+  return errorMsgHeader + errorMsgTable + "\n\n" + errorMsgFooter;
+};
 
 const checkPath = fullPath => {
   let errorMsgs = [];
-  const remaining = fullPath.split('/');
+  const remaining = fullPath.split("/");
+
   if (!allowedLangDirNames.includes(remaining[1])) {
-    errorMsgs.push(`${remaining[1]} should not be in the guide directory`);
+    errorMsgs.push({
+      msg: `\`${remaining[1]}\` is not a valid language directory`,
+      fullPath
+    });
   }
 
-  if (remaining[remaining.length - 1] !== 'index.md') {
-    errorMsgs.push(`${remaining[remaining.length - 1]} is not a valid file name, please use 'index.md'
-Found in:
-${fullPath}`);
+  if (remaining[remaining.length - 1] !== "index.md") {
+    errorMsgs.push({
+      msg: `\`${remaining[remaining.length - 1]}\` is not a valid file name, please use \`index.md\``,
+      fullPath
+    });
+  } else if (remaining[2] === "index.md") {
+    errorMsgs.push({
+      msg: `This file is not in its own sub-directory`,
+      fullPath
+    });
   }
 
-  if (remaining[2] === 'index.md') {
-    errorMsgs.push(`${remaining[2]} is not valid in the guide directory`);
-  }
-
-  const dirName = fullPath.replace('/index.md', '');
-  if (dirName.replace(/(\s|\_)/, '') !== dirName) {
-    errorMsgs.push(`Invalid character found in a folder name, please use '-' for spaces and underscores\n
-Found in:\n
-${fullPath}`);
+  const dirName = fullPath.replace("/index.md", "");
+  if (dirName.replace(/(\s|\_)/, "") !== dirName) {
+    errorMsgs.push({
+      msg: `Invalid character found in a directory name, please use \`-\` as separators`,
+      fullPath
+    });
   }
 
   if (dirName.toLowerCase() !== dirName) {
-    errorMsgs.push(`Upper case characters found in a folder name, all folder names must be lower case\n
-Found in :\n
-${fullPath}`);
+    errorMsgs.push({
+      msg: `Upper case characters found in the file path, all file paths must be lower case`,
+      fullPath
+    });
   }
 
   return errorMsgs;
 };
 
-const guideFolderChecks = (fullPath, user, hasPrevComments) => {
+const guideFolderChecks = (fullPath, user) => {
   if (/^guide\//.test(fullPath)) {
     const errors = checkPath(fullPath);
     if (errors.length) {
-      return createErrorMsg(errors, user, hasPrevComments);
+      return createErrorMsg(errors, user);
     }
   }
 };
