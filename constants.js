@@ -1,5 +1,6 @@
-const owner = 'freeCodeCamp';
-const repo = 'freeCodeCamp';
+require('dotenv').config();
+const owner = process.env.REPOSITORY_OWNER;
+const repo = process.env.REPOSITORY;
 const fccBaseUrl = `https://github.com/${owner}/${repo}/`;
 const prBaseUrl = `${fccBaseUrl}pull/`;
 

@@ -11,7 +11,7 @@ const { addLabels } = require('./addLabels');
 const { guideFolderChecks } = require('./guideFolderChecks');
 const { addComment } = require('./addComment');
 
-octokit.authenticate(octokitAuth);
+console.log(octokit.authenticate(octokitAuth));
 
 const labelsAdder = (number, existingLabels, labelsToAdd, log) => {
   const newLabels = Object.keys(labelsToAdd).filter(label => !existingLabels.includes(label));
@@ -26,7 +26,7 @@ const labelsAdder = (number, existingLabels, labelsToAdd, log) => {
 const { PrProcessingLog } = require('./prProcessingLog');
 const log = new PrProcessingLog();
 
-const prPropsToGet = ['number', 'labels'];
+const prPropsToGet = ['number', 'labels', 'user'];
 
 (async () => {
   const { firstPR, lastPR } = await getPrRange();
@@ -47,7 +47,7 @@ const prPropsToGet = ['number', 'labels'];
 
     let interval = setInterval(async () => {
       if (count < maxCount ) {
-        let { number, labels } = openPRs[count];
+        let { number, labels, user: {login: username} } = openPRs[count];
         const { data: prFiles } = await octokit.pullRequests.getFiles({ owner, repo, number });
         log.add(number)
         const existingLabels = labels.map(({ name }) => name);
@@ -61,17 +61,12 @@ const prPropsToGet = ['number', 'labels'];
           if (second && validLabels[second]) { labelsToAdd[validLabels[second]] = 1 }
         })
 
-        /* if guide folder/file name has issues add applicable label and comment to PR
+        const guideFolderErrorsComment = guideFolderChecks(filename, username);
 
-        NOTE: Currently need to resolve a bug with addComment.js before adding this feature
-
-        const guideFolderErrorsComment = guideFolderChecks(filename, user, hasPrevComments);
         if (guideFolderErrors) {
-          // add hasPrevComments
           addComment(number, guideFolderErrorsComment);
           labelsToAdd['status: needs update'] = 1;
         }
-        */
 
         labelsAdder(number, existingLabels, labelsToAdd, log);
       }
