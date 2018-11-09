@@ -32,19 +32,19 @@ Perimeter - the sum of the length of four sides in a square. The four sides are 
 
 1. Given length of one side of square is 8 units:
 
-   Area = 8 x 8 = 64 units<sup>2</sup>
-   
+<pre>   Area = 8 x 8 = 64 units<sup>2</sup> </pre>
+      
 2. Given area of a square is 100 units<sup>2</sup>:
 
-   Length = <span>&#8730;</span>100 = 10 units
+  <pre> Length = <span>&#8730;</span>100 = 10 units </pre>
    
 3. Given diagonal of square is 25 units:
 
-   Area = 10<sup>2</sup> / 2 = 50 units<sup>2</sup>
+  <pre> Area = 10<sup>2</sup> / 2 = 50 units<sup>2</sup> </pre>
   
 4. Given perimeter of a square is 20 units:
 
-   Area = (20 / 4)<sup>2</sup> = 25  units<sup>2</sup>
+  <pre> Area = (20 / 4)<sup>2</sup> = 25  units<sup>2</sup> </pre>
    
   
   
@@ -54,9 +54,9 @@ To find the area of a square given the perimeter, simply start by dividing the g
 
 Ex: Perimeter: 20
 
-20 / 4 = 5
-5 x 5 = 25
-25 = 25²
+<pre> 20 / 4 = 5 </pre>
+<pre> 5 x 5 = 25 </pre>
+<pre> 25 = 25² </pre>
 
 #### More Information:
 
