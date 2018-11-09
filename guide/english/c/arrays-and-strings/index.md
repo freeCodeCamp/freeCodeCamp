@@ -63,6 +63,24 @@ int main(void) {
     return 0;
 }
 ```
+## Memory Allocation In Array
+Normally variables occupy memory in a Random Manner, i.e. if I declare 
+```C
+int a;
+float b;
+```
+`a` and `b` are each assigned a random memory address (e.g. 3004 and 5006). That doesn't happen in the case of an array.
+
+Let's consider an example:
+If the first element is assigned memory address 2000, then the second will be assigned 2002 if it is an `int` array.
+Memory allocation is continuous in Arrays, not random like variables.
+
+As an example, consider an array `a[4]`, which contains 5 elements:
+
+| Position | 0  | 1  | 2  | 3  |
+|:---------|:--:|:--:|:--:|:--:|
+| Value    | 1  | 5  | 3  | 6  |
+|  Address |2000|2002|2004|2006|
 
 ## Strings
 Arrays are sets of variables of the same data type, and strings are sets of characters. As a result, we can represent strings with an array. You _can_ declare something in the same way as before, but you'll need to place '\0' as one of your values (more on that in a minute!):
