@@ -8,6 +8,8 @@ const octokit = require('@octokit/rest')(octokitConfig);
 const { getOpenPrs, getPrRange } = require('./getOpenPrs');
 const { validLabels } = require('./validLabels');
 const { addLabels } = require('./addLabels');
+const { guideFolderChecks } = require('./guideFolderChecks');
+const { addComment } = require('./addComment');
 
 octokit.authenticate(octokitAuth);
 
@@ -58,6 +60,19 @@ const prPropsToGet = ['number', 'labels'];
           if (first && validLabels[first]) { labelsToAdd[validLabels[first]] = 1 }
           if (second && validLabels[second]) { labelsToAdd[validLabels[second]] = 1 }
         })
+
+        /* if guide folder/file name has issues add applicable label and comment to PR
+
+        NOTE: Currently need to resolve a bug with addComment.js before adding this feature
+
+        const guideFolderErrorsComment = guideFolderChecks(filename, user, hasPrevComments);
+        if (guideFolderErrors) {
+          // add hasPrevComments
+          addComment(number, guideFolderErrorsComment);
+          labelsToAdd['status: needs update'] = 1;
+        }
+        */
+
         labelsAdder(number, existingLabels, labelsToAdd, log);
       }
       else {
