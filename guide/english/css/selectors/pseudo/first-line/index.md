@@ -23,6 +23,6 @@ p::first-line {
 The ```::first-line``` CSS pseudo-element is often paired with the ```::first-letter``` CSS pseudo-element for a drop caps effect emphasizing the first letter and line of a paragraph.
 
 #### More Information:
-* [MDN Web Docs](https://www.w3schools.com/cssref/sel_firstline.asp)
-* [W3 Schools](https://developer.mozilla.org/en-US/docs/Web/CSS/::first-line)
-* [CSS Tricks - ::first-line](https://css-tricks.com/almanac/selectors/f/first-line/)
+* [MDN Web Docs](https://developer.mozilla.org/en-US/docs/Web/CSS/::first-line)
+* [W3 Schools](https://www.w3schools.com/cssref/sel_firstline.asp)
+* [CSS Tricks](https://css-tricks.com/almanac/selectors/f/first-line/)
