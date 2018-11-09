@@ -59,14 +59,14 @@ const prPropsToGet = ['number', 'labels', 'user'];
           const [ _, first, second ] = filenameReplacement.match(regex) || []; // need an array to pass to labelsAdder
           if (first && validLabels[first]) { labelsToAdd[validLabels[first]] = 1 }
           if (second && validLabels[second]) { labelsToAdd[validLabels[second]] = 1 }
+
+          const guideFolderErrorsComment = guideFolderChecks(filename, username);
+
+          if (guideFolderErrorsComment) {
+            addComment(number, guideFolderErrorsComment);
+            labelsToAdd['status: needs update'] = 1;
+          }
         })
-
-        const guideFolderErrorsComment = guideFolderChecks(filename, username);
-
-        if (guideFolderErrors) {
-          addComment(number, guideFolderErrorsComment);
-          labelsToAdd['status: needs update'] = 1;
-        }
 
         labelsAdder(number, existingLabels, labelsToAdd, log);
       }
