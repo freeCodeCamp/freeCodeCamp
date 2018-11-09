@@ -20,6 +20,16 @@ Form contains control elements which are wrapped around ```<form></form>``` tags
 - ```week```
 - ```color```
 - ```datalist```
+- ```button```
+- ```datetime-local```
+- ```file```
+- ```hidden```
+- ```image```
+- ```month```
+- ```number```
+- ```reset```
+- ```tel```
+- ```url```
 
 Code example:
 ```html
