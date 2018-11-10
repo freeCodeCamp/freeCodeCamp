@@ -43,9 +43,7 @@ In the end, guidelines can only take you so far. Creativity and surprise are imp
 
 #### More Information:
 
-[20 Perfect Type Pairings](http://www.creativebloq.com/typography/20-perfect-type-pairings-3132120)
+* [20 Perfect Type Pairings](http://www.creativebloq.com/typography/20-perfect-type-pairings-3132120)
 [Choosing the Right Font - A concise article for reference](https://webdesign.tutsplus.com/articles/choosing-the-right-font-a-practical-guide-to-typography-on-the-web--webdesign-15?_ga=2.210603089.55465761.1538586153-769794395.1538586153)
-
-#### More Information:
 * [Smashing Magazine article - How to choose a typeface](https://www.smashingmagazine.com/2011/03/how-to-choose-a-typeface/)
 
