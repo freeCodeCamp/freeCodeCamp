@@ -4,13 +4,13 @@ title: Cascading Style Sheets (CSS)
 
 ### Cascading Style Sheets (CSS)
 
-CSS is an acronym for Cascading Style Sheets. It was first invented in 1996, and is now a standard feature of all major web browsers.
+CSS stands for Cascading Style Sheets. It was first invented in 1996 and is now a standard feature of all major web browsers.
 
 CSS allows developers to control how web pages look by "styling" the HTML structure of that page.
 
 CSS specifications are maintained by the [World Wide Web Consortium (W3C)](https://www.w3.org/).
 
-You can build some pretty amazing things in CSS alone, such as this pure-CSS [Minesweeper game](https://codepen.io/bali_balo/pen/BLJONk) (which uses no JavaScript).
+You can build some pretty amazing things in CSS alone, such as this pure CSS [Minesweeper game](https://codepen.io/bali_balo/pen/BLJONk) (which uses no JavaScript).
 
 ![Minesweeper clone in CSS](https://cdn-images-1.medium.com/max/800/1*GFcKk9KxqHAnWa1ECcKDOQ.png)
 
@@ -25,6 +25,8 @@ A good start is the freeCodeCamp curriculum [Introduction to Basic CSS](https://
 Another suggestion for beginners is W3C's [Starting with HTML + CSS](https://www.w3.org/Style/Examples/011/firstcss) teaches how to create a style sheet.
 
 The site [CSS Zen Garden](http://www.csszengarden.com/) is a great example of how the same HTML code/structure can be styled to look different in unique ways.
+
+Check out [Flexbox Froggy](https://flexboxfroggy.com/), created by the same people who made CSS Zen Garden, to learn how to use flexbox to control your CSS layouts.
 
 For a demonstration of the power of CSS, check out [Species In Pieces](http://species-in-pieces.com/#).
 
