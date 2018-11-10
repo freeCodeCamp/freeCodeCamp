@@ -4,7 +4,6 @@ title: Books to Read for Programmers
 
 ### List of Books
 
-
 ## Algorithms
 
 *Introduction to Algorithms, 3rd Edition (MIT Press)* by Thomas H. Cormen and Charles E. Leiserson
@@ -121,7 +120,6 @@ title: Books to Read for Programmers
 *Oracle® Database Notes for Professionals*
 - https://books.goalkicker.com/OracleDatabaseBook/
 
-
 ## DevOps
 
 *DevOps Handbook:How to Create World-Class Agility, Reliability, and Security in Technology Organizations* by Gene Kim et al
@@ -219,7 +217,6 @@ title: Books to Read for Programmers
 *JavaScript and JQuery: Interactive Front-End Web Development*
 - [Amazon Smile](https://smile.amazon.com/JavaScript-JQuery-Interactive-Front-End-Development/dp/1118531647/)
 - ISBN-13: 978-1118531648 
-
 
 ## Python
 
@@ -338,13 +335,11 @@ title: Books to Read for Programmers
 - [Amazon Smile](https://smile.amazon.com/Violent-Python-Cookbook-Penetration-Engineers/dp)
 - ISBN-13: 978-1597499576
 
-
 ## Ruby
 
 *Practical Object-Oriented Design in Ruby*
 - [Amazon Smile](https://smile.amazon.com/Practical-Object-Oriented-Design-Ruby-Addison-Wesley/dp/0321721330)
 - ISBN-13: 978-0321721334
-
 
 ## Soft Skills
 
@@ -361,7 +356,16 @@ title: Books to Read for Programmers
 *Beginning Visual Basic: A Step by Step Computer Programming Tutorial by Philip Conrod*
 - ISBN-13: 978-1-937161-75-0
 
+## Web Development
+
+*HTML & CSS Design and Build Websites* by Jon Duckett
+- http://www.htmlandcssbook.com/
+- ISBN-13: 978-1118008188
+
+*JavaScript & jQuery Interactive Front-End Web Development* by Jon Duckett
+- http://javascriptbook.com/
+- ISBN-13: 978-1118531648
+
 This list was compiled from multiple suggestion threads on Reddit and Stackoverflow. 
 
 Please feel free to add more that you have found useful!
-
