@@ -33,14 +33,27 @@ The field of computer security is growing at a rapid rate every year. A recent r
 
 [Thinking, Fast and Slow](https://amzn.to/2tnnlTN)
 
+[How to Win Friends & Influence People](https://www.amazon.com/How-Win-Friends-Influence-People/dp/0671027034/)
+
 [Learn You a Haskell for Great Good!](https://amzn.to/2veOjdv)
 
 [Think Like a Programmer](https://www.nostarch.com/thinklikeaprogrammer)
 
+[The Mythical Man-Month: Essays on Software Engineering](https://www.amazon.com/Mythical-Man-Month-Software-Engineering-Anniversary/dp/0201835959)
+
+[The Pragmatic Programmer: From Journeyman to Master](https://www.amazon.com/Pragmatic-Programmer-Journeyman-Master/dp/020161622X)
+
+[Clean Code: A Handbook of Agile Software Craftsmanship](https://www.amazon.com/Clean-Code-Handbook-Software-Craftsmanship/dp/0132350882/)
+
+[Design Patterns: Elements of Reusable Object-Oriented Software](https://www.amazon.com/Design-Patterns-Elements-Reusable-Object-Oriented-ebook/dp/B000SEIBB8)
+
+[Cracking the Coding Interview: 189 Programming Questions and Solutions](https://www.amazon.com/Cracking-Coding-Interview-Programming-Questions/dp/0984782850/)
+
+[Introduction to Algorithms](https://www.amazon.com/Introduction-Algorithms-3rd-MIT-Press/dp/0262033844)
+
 [Hooked: How to Build Habit-Forming Products](https://www.amazon.com/Hooked-How-Build-Habit-Forming-Products/dp/1591847788/)
 
-["Lean In: Women, Work, and the Will to Lead" by Sheryl Sandberg](https://www.amazon.com/Lean-Women-Work-Will-Lead/dp/0385349947/)
-
+[Lean In: Women, Work, and the Will to Lead by Sheryl Sandberg](https://www.amazon.com/Lean-Women-Work-Will-Lead/dp/0385349947/)
 
 ### Articles
 
