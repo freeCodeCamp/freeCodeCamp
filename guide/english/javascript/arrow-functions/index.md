@@ -40,6 +40,9 @@ const multiply = (x, y) => x * y;
 // if you only have one argument/parameter 
 const multiplyBy2 = x => x * 2;
 
+// if you need to concisely return an object, you can wrap the {} inside the () to avoid syntax conflicts
+const getSumProductObject = (x, y) => ({sum : x + y, product: x * y});
+
 // combined with the ternary operator, but note it's not a looker! 
 const addOrMultiply = (x, y, mathOperator) => mathOperator.toLowerCase() === 'add' ? x + y : x * y;
 ```
@@ -62,7 +65,7 @@ function Person() {
 }
 ```
 
-An arrow function doesn't define it's own `this` value, it inherits `this` from the enclosing function:
+An arrow function doesn't define its own `this` value, it inherits `this` from the enclosing function:
 
 ```javascript
 // ES6 syntax
@@ -77,7 +80,14 @@ function Person(){
 
 var p = new Person();
 ```
+An arrow function does not have its own `arguments` object. For example, if you do not know the number of arguments passed to a function, instead of using `arguments` you can use the `rest` operator:
+```javascript
+const myFunc = (...n) => {
+  console.log('The first argument is', n[0]);
+}
 
+myFunc(10,20,30,40,40); // output: The first argument is 10
+```
 #### Further Reading
 
 <a href='https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Functions/Arrow_functions' target='_blank' rel='nofollow'>MDN link</a>

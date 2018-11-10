@@ -113,7 +113,7 @@ for(auto it = v.begin(); it != v.end(); it++) { //notice use of auto keyword
     cout<<*it<<endl; //Will print out string that the iterator is currently ppointing to
 }
 ```
-From here, you can do all sorts of cool stuff, like manipulating the vector or mess around with it's order as you please!
+From here, you can do all sorts of cool stuff, like manipulating the vector or mess around with its order as you please!
 
 ### Some useful member functions
 The standard template library (STL) also provide different *methods* for you:
