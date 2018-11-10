@@ -5,7 +5,8 @@ title: Click Method
 # Click Method
 
 
-The jQuery Click method triggers a function when an element is clicked. The function is known as a "handler" becuase it handles the click event. Functions can
+
+The jQuery Click method triggers a function when an element is clicked. The function is known as a "handler" because it handles the click event. Functions can
 impact the HTML element that is bound to the click using the jQuery Click method, or they can change something else entirely. The most-used form is:
 
 ```javascript
@@ -96,6 +97,34 @@ Can be changed to this on method example:
 ```javascript
 $(document).on("click", "element", function() {
   alert("I've been clicked!");
+});
+```
+
+### Getting The Element From A Click event
+This applies to both jQuery and plain JavaScript, but if you set up your event trigger to target a class, you can grab the specific element that triggered the element by using the `this` keyword.  
+
+jQuery happens to make it very easy (and multi browser friendly) to traverse the DOM to find that element's parents, siblings, and children, as well.  
+
+Let's say I have a table full of buttons and I want to target the row that button is in, I can simply wrap `this` in a jQuery selector and then get its `parent` and its parent's `parent` like so:
+
+```javascript
+$( document ).on("click", ".myCustomBtnClassInATable", function () {
+    var myTableCell = $(this).parent();
+    var myTableRow = myTableCell.parent();
+    var myTableBody = myTableRow.parent();
+    var myTable = myTableBody.parent();
+    
+    //you can also chain these all together to get what you want in one line
+    var myTableBody = $(this).parent().parent().parent();
+});
+```
+
+It is also interesting to check out the event data for the click event, which you can grab by passing in any variable name to the function in the click event.  You'll most likely see an `e` or `event` in most cases:
+
+```javascript
+$( document ).on("click", ".myCustomBtnClassInATable", function (e) { 
+    //find out more information about the event variable in the console
+    console.log(e);
 });
 ```
 
