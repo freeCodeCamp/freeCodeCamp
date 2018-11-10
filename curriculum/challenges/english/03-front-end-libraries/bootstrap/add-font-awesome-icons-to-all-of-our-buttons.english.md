@@ -109,6 +109,7 @@ tests:
 ## Solution
 <section id='solution'>
 
+```html
 <link href="https://fonts.googleapis.com/css?family=Lobster" rel="stylesheet" type="text/css">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 <style>
@@ -167,4 +168,6 @@ tests:
     <button type="submit">Submit</button>
   </form>
 </div>
+```
+
 </section>
