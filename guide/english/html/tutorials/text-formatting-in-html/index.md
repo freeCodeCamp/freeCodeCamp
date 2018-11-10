@@ -40,8 +40,6 @@ The element `<mark>` makes your text marked. In other words, it makes your text 
 ```html
 <p> The land of HTML is a strange and mysterious land, and it's our job to <mark>explore it all!</mark></p>
 ``` 
-Output:
-The land of HTML is a strange and mysterious land, and it's our job to <mark>explore it all!</mark>
 
 ### Deleted 
 The element `<del>` shows strikethrough. It's useful if you want to <del>corroct</del> correct something.
