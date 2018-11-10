@@ -5,7 +5,7 @@ title: Dynamic Programming
 ## Dynamic Programming
 
 Dynamic Programming(DP) is a programming technique for solving problems where the computations of its subproblems overlap: you write your program in a way that avoids recomputing already solved problems.
-This technique, it's usually applied in conjunction with memoization which is an optimization technique where you cache previously computed results, and return the cached result when the same computation is needed again.
+This technique is usually applied in conjunction with memoization which is an optimization technique where you cache previously computed results, and return the cached result when the same computation is needed again.
 
 An example with Fibonacci's series which is defined as:
 
@@ -50,3 +50,4 @@ Caching computed solutions in a lookup table, and query it before go recursion w
 
 [What is dynamic programming on StackOverflow](https://stackoverflow.com/questions/1065433/what-is-dynamic-programming")
 [Difference between memoization and DP on StackOverflow](https://stackoverflow.com/questions/6184869/what-is-the-difference-between-memoization-and-dynamic-programming)
+[Why DP rather than function calling or looping](https://www.quora.com/What-is-the-difference-between-dynamic-programming-and-recursion)

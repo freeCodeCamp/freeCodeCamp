@@ -23,7 +23,7 @@ Given that Fk is the first Fibonacci number for which the first nine digits AND 
 ```yml
 tests:
   - text: <code>euler104()</code> should return 329468.
-    testString: 'assert.strictEqual(euler104(), 329468, "<code>euler104()</code> should return 329468.");'
+    testString: assert.strictEqual(euler104(), 329468, '<code>euler104()</code> should return 329468.');
 
 ```
 
