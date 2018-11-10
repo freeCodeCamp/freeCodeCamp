@@ -10,12 +10,9 @@ const { validLabels } = require('./validLabels');
 const { addLabels } = require('./addLabels');
 const { guideFolderChecks } = require('./guideFolderChecks');
 const { addComment } = require('./addComment');
+const { rateLimiter } = require('./utils');
 
 octokit.authenticate(octokitAuth);
-
-const rateLimiter = (delay) => {
-  return new Promise(resolve => setTimeout(() => resolve(true), delay));
-};
 
 const { PrProcessingLog } = require('./prProcessingLog');
 const log = new PrProcessingLog();
@@ -44,15 +41,8 @@ const prPropsToGet = ['number', 'labels', 'user'];
 
       const guideFolderErrorsComment = guideFolderChecks(prFiles, username);
       if (guideFolderErrorsComment) {
-        const result = await octokit.issues.createComment({ owner, repo, number, body: guideFolderErrorsComment })
-        .catch((err) => {
-          console.log(`PR #${number} had an error when trying to add a comment\n`);
-          console.log(err)
-        });
-       if (result) {
-          console.log(`PR #${number} successfully added a comment\n`);
-          await rateLimiter(3000);
-       }
+        const result = await addComment(number, guideFolderErrorsComment);
+        await rateLimiter(1000);
         labelsToAdd['status: needs update'] = 1;
       }
 
@@ -76,7 +66,7 @@ const prPropsToGet = ['number', 'labels', 'user'];
       const newLabels = Object.keys(labelsToAdd).filter(label => !existingLabels.includes(label));
       if (newLabels.length) {
         addLabels(number, newLabels, log);
-        await rateLimiter(3000);
+        await rateLimiter(1000);
       }
       else {
         log.update(number, false);
