@@ -29,7 +29,7 @@ In detail, how many times can you divide N by 2 until you have 1? This is essent
 1 = N / 2^x
 ```
 
-Multiply by 2^x:
+Multiply by 2<sup>x</sup>:
 
 ```
 2^x = N
