@@ -75,13 +75,16 @@ const checkPath = fullPath => {
   return errorMsgs;
 };
 
-const guideFolderChecks = (fullPath, user) => {
-  if (/^guide\//.test(fullPath)) {
-    const errors = checkPath(fullPath);
-    if (errors.length) {
-      return createErrorMsg(errors, user);
+const guideFolderChecks = (prFiles, user) => {
+  const prErrors = prFiles.reduce((errorsFound, { filename: fullPath }) => {
+    let newErrors;
+    if (/^guide\//.test(fullPath)) {
+      newErrors = checkPath(fullPath);
     }
-  }
+    return newErrors ? errorsFound.concat(newErrors) : errorsFound;
+  }, []);
+
+  return createErrorMsg(prErrors, user);
 };
 
 exports.guideFolderChecks = guideFolderChecks;
