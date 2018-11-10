@@ -13,14 +13,8 @@ const { addComment } = require('./addComment');
 
 octokit.authenticate(octokitAuth);
 
-const labelsAdder = (number, existingLabels, labelsToAdd, log) => {
-  const newLabels = Object.keys(labelsToAdd).filter(label => !existingLabels.includes(label));
-  if (newLabels.length) {
-    addLabels(number, newLabels, log);
-  }
-  else {
-    log.update(number, false);
-  }
+const rateLimiter = (delay) => {
+  return new Promise(resolve => setTimeout(() => resolve(true), delay));
 };
 
 const { PrProcessingLog } = require('./prProcessingLog');
@@ -42,42 +36,55 @@ const prPropsToGet = ['number', 'labels', 'user'];
 
     log.start();
     console.log('Starting labeling process...');
-    let count = 0;
-    const maxCount = openPRs.length;
+    for (let count = 0; count < openPRs.length; count++) {
+      let { number, labels, user: { login: username } } = openPRs[count];
+      const { data: prFiles } = await octokit.pullRequests.getFiles({ owner, repo, number });
+      log.add(number)
+      const labelsToAdd = {}; // holds potential labels to add based on file path
 
-    let interval = setInterval(async () => {
-      if (count < maxCount ) {
-        let { number, labels, user: {login: username} } = openPRs[count];
-        const { data: prFiles } = await octokit.pullRequests.getFiles({ owner, repo, number });
-        log.add(number)
-        const existingLabels = labels.map(({ name }) => name);
-        const labelsToAdd = {}; // holds potential labels to add based on file path
-        prFiles.forEach(({ filename }) => {
-          /* remove '/challenges' from filename so variable second (below) will be the language */
-          const filenameReplacement = filename.replace(/^curriculum\/challenges\//, 'curriculum\/');
-          const regex = /^(docs|curriculum|guide)(?:\/)(arabic|chinese|portuguese|russian|spanish)?\/?/
-          const [ _, first, second ] = filenameReplacement.match(regex) || []; // need an array to pass to labelsAdder
-          if (first && validLabels[first]) { labelsToAdd[validLabels[first]] = 1 }
-          if (second && validLabels[second]) { labelsToAdd[validLabels[second]] = 1 }
+      const guideFolderErrorsComment = guideFolderChecks(prFiles, username);
+      if (guideFolderErrorsComment) {
+        const result = await octokit.issues.createComment({ owner, repo, number, body: guideFolderErrorsComment })
+        .catch((err) => {
+          console.log(`PR #${number} had an error when trying to add a comment\n`);
+          console.log(err)
+        });
+       if (result) {
+          console.log(`PR #${number} successfully added a comment\n`);
+          await rateLimiter(3000);
+       }
+        labelsToAdd['status: needs update'] = 1;
+      }
 
-          const guideFolderErrorsComment = guideFolderChecks(filename, username);
+      const existingLabels = labels.map(({ name }) => name);
 
-          if (guideFolderErrorsComment) {
-            addComment(number, guideFolderErrorsComment);
-            labelsToAdd['status: needs update'] = 1;
-          }
-        })
+      prFiles.forEach(({ filename }) => {
+        /* remove '/challenges' from filename so language variable hold the language */
+        const filenameReplacement = filename.replace(/^curriculum\/challenges\//, 'curriculum\/');
+        const regex = /^(docs|curriculum|guide)(?:\/)(arabic|chinese|portuguese|russian|spanish)?\/?/
+        const [ _, articleType, language ] = filenameReplacement.match(regex) || []; // need an array to pass to labelsAdder
 
-        labelsAdder(number, existingLabels, labelsToAdd, log);
+        if (articleType && validLabels[articleType]) {
+          labelsToAdd[validLabels[articleType]] = 1
+        }
+        if (language && validLabels[language]) {
+          labelsToAdd[validLabels[language]] = 1
+        }
+      })
+
+      /* this next section only adds needed labels which are NOT currently on the PR. */
+      const newLabels = Object.keys(labelsToAdd).filter(label => !existingLabels.includes(label));
+      if (newLabels.length) {
+        addLabels(number, newLabels, log);
+        await rateLimiter(3000);
       }
       else {
-        clearInterval(interval);
-        interval = null;
-        log.export();
+        log.update(number, false);
       }
-      if (count % 25 === 0) { log.export() }
-      count++;
-    }, 1000);
+      if (count % 25 === 0) {
+        log.export()
+      }
+    }
   }
 })()
 .then(() => {
