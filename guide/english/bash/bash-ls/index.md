@@ -23,6 +23,7 @@ Most used options:
 * `-s`, List File Size.
 * `-t`, Sorts the output by modification time
 * `-r`, Reverses the order while sorting
+* `-R`, displays the contents of the directory, and its subdirectories.
 
 ### Example:
 
@@ -40,3 +41,4 @@ assets             gatsby-ssr.js      translations
 #### More Information:
 
 * [Wikipedia](https://en.wikipedia.org/wiki/Ls)
+* [Shapeshed](https://shapeshed.com/unix-ls/)
