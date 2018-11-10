@@ -28,9 +28,9 @@ Instructions: Define a JavaScript Map object and assign to it a variable called 
 ```yml
 tests:
   - text: The myMap object exists.
-    testString: 'assert(typeof myMap === "object", "The myMap object exists.");'
-  - text: 'myMap contains the key value pair <code>freeCodeCamp</code>, <code>Awesome!</code>.'
-    testString: 'assert(myMap.get("freeCodeCamp") === "Awesome!", "myMap contains the key value pair <code>freeCodeCamp</code>, <code>Awesome!</code>.");'
+    testString: assert(typeof myMap === 'object', 'The myMap object exists.');
+  - text: myMap contains the key value pair <code>freeCodeCamp</code>, <code>Awesome!</code>.
+    testString: assert(myMap.get('freeCodeCamp') === 'Awesome!', 'myMap contains the key value pair <code>freeCodeCamp</code>, <code>Awesome!</code>.');
 
 ```
 
