@@ -4,42 +4,42 @@ Con tu yuda, podemos crear un herramienta de referencia accesible que ayudará a
 
 Puedes:
 
-- [Ayudarnos creando y editando artúclos de la Guía](#steps-for-creating-and-editing-guide-articles).
+- [Ayudarnos creando y editando articulos de la Guía](#steps-for-creating-and-editing-guide-articles).
 - [Ayudarnos a revisar Pull Requests para artículos de la guía]()
 
 ## Pasos para crear y editar artículos de la Guía
 
 1. 🍴 [Fork este repositorio](https://github.com/freeCodeCamp/freeCodeCamp#fork-destination-box)
-2. 👀️ Sgiue las normas de controbución expuestas a continuación.
-3. 🔧 Propón cambios asombrosos!
+2. 👀️ Sigue las normas de contribución expuestas a continuación.
+3. 🔧 Propóne cambios asombrosos!
 4. 📖 Lee la [guía de buenas prácticas de estilo](/docs/style-guide-for-guide-articles).
-5. 👉 [Haz una Pull Request](https://github.com/freeCodeCamp/freeCodeCamp/compare)
+5. 👉 [Hace un Pull Request](https://github.com/freeCodeCamp/freeCodeCamp/compare)
 6. 🎉 Consigue que aprueben tu Pull request - Éxito!
 
-O siemplement [crea un tema](https://github.com/freeCodeCamp/freeCodeCamp/issues) - toda pequeña ayuda cuenta! 😊
+O simplemente [crea un tema](https://github.com/freeCodeCamp/freeCodeCamp/issues) - toda pequeña ayuda cuenta! 😊
 
 ### [Sigue estas recomendaciones de nuestra guía de estilo para crear un artículo atractivo](/docs/style-guide-for-guide-articles.md)
 
-### Crear Pull Request para propoenr cambios
+### Crear Pull Request para proponer cambios
 
-Hay dos formas de proponer cambios en el repositorio tras editar o añadir un articulo:
+Hay dos formas de proponer cambios en el repositorio despues de editar o añadir un articulo:
 
-- [Utilizando la interfaz de GitHub en tu navegador](#using-the-github-web-interface-on-your-browser).
-- [Trabajando en tu ordenador personal](#working-on-your-local-machine) (_recomendado_ para previsualiar cambios).
+- [Utilizando el sistema de comunicacion de GitHub en tu navegador](#using-the-github-web-interface-on-your-browser).
+- [Trabajando en tu maquina local](#working-on-your-local-machine) (_recomendado_ para pre-visualiar cambios).
 
-#### Utilizar la interaz web de GitHub
+#### Utilizar el sistema de comunicacion web de GitHub
 
 Mira este vídeo de demostración o sigue los siguientes pasos:
 
-**[TODO]** Update the GIF recording.
+**[TODO]** Actualizar la grabacion GIF.
 
-![GIF showing the GitHub interface steps](#)
+![GIF mostrando los pasos de la interfaz de GitHub](#)
 
-1. Ve a la carpets **"páginas"** (situado en [`guide`](/guide)) donde encontrarás el artículo raiz que quieras editar.
+1. Ve a las carpetas **"páginas"** (situado en [`guide`](/guide)) donde encontrarás el artículo raiz que quieras editar.
 
     > Todas las raíces estarán en un archivo index.md
 
-2. Pincha en <kbd>Editar este archivo</kbd> y haz tus cambios al archivo en la consola de edición de GitHub.
+2. Pincha en <kbd>Editar este archivo</kbd> y hace tus cambios al archivo en la consola de edición de GitHub.
 
     > Si el icono aparece gris y te muestra la alerta "Debes estar en una rama para hacer o proponer cambios a este archivo", significa que probablemente estés en la rama de otra persona. En la parte superior izquierda de la página hay una casilla desplegable que dice: "Árbol: #######". Pincha en el desplegable y cambia la rama a maestra. El icono de edición debería estar disponible ahora.
 
@@ -56,7 +56,7 @@ Mira este vídeo de demostración o sigue los siguientes pasos:
     Documentos: Actualizadas recomendaciones de contribución
     ```
 
-    Se breve, no más de 50 caracteres. Puedes añadir información extra en la descripción del mensaje.
+    Sea breve, no más de 50 caracteres. Puedes añadir información extra en la descripción del mensaje.
 
     esto no supone ningún esfuerzo adicional respecto a mensajes como 'update file' o 'add index.md'
 
@@ -66,61 +66,61 @@ Mira este vídeo de demostración o sigue los siguientes pasos:
 
 5. En la siguiente pantalla, puedes añadir más detalles sobre tu PR, luego pincha en <kbd>Crear pull request</kbd>.
 
-Enhorabuena 🎉! Acabas de crear una pull request.
+Felicidades 🎉! Acabas de crear un pull request.
 
 #### Trabajar desde tu sistema local (_recomendado_ para revisar cambios)
 
-No es obligatorio que trabajes en tu sistema personal, salvo que desees previsualizar tus cambios, o trabajar con mejoras y arreglos de UI. También es recomendable si tienes problemas con git como errores de integración, rebase, etc.
+No es obligatorio que trabajes en tu sistema personal, salvo que desees pre-visualizar tus cambios, o trabajar con version actualizada y arreglos de UI. También es recomendable si tienes problemas con git como errores de integración, rebase, etc.
 
-##### Lee sobre esta recomendaciones en [Cómo configurar freeCodeCamp localmente](/docs/how-to-setup-freecodecamp-locally.md)
+##### Lee sobre estas recomendaciones en [Cómo configurar freeCodeCamp localmente](/docs/how-to-setup-freecodecamp-locally.md)
 
 ### Aceptación de la PR
 
-Estas son algunos criterios utilizados por los revisores cuando evalúan PRs:
+Estos son algunos criterios utilizados por los criticos cuando evalúan PRs:
 
 - Descripción y título relevantes
 - La PR respeta la [guía de estilo](/docs/style-guide-for-guide-articles)
 - Consejos generales de QA de las [recomendaciones para Moderadores](https://forum.freecodecamp.org/t/freecodecamp-moderator-guidelines/18295)
-- Siempre y cuando la PR suponga una mejora o ampliación de la guía, será aceptada aunque tenga errores gramaticales o contenido parcial
+- Siempre y cuando el PR suponga una mejora o ampliación de la guía, será aceptado aunque tenga errores gramaticos o contenido parcial
 - Las PR más antiguas se revisan primero
 
 #### Etiquetas
 
 - **contenido** es para Pull Requests que modifican el contenido de artículos en la guía (añaden un nuevo artículo o actualizan uno existente)
-- **duplicada** es para Pull Request que contienen el mismo contenido que otra PR abierta
-- **cambios solicitados** es para Pull Requests que necesitan algún cambio antes de ser integradas
-- **pasada** es para Pull Requests que con etiqueta _"changes requested"_ que no han tenido actividad durante al menos 2 semanas y serán por tanto cerradas
-  - Una  pull request _pasada_ debe cerrarse.
+- **duplicada** es para Pull Request que contienen el mismo contenido que otro PR abierto
+- **cambios solicitados** es para Pull Requests que necesitan algún cambio antes de ser integrados
+- **pasada** es para Pull Requests que con etiqueta _"changes requested"_ que no han tenido actividad durante al menos 2 semanas y serán por tanto cerrados
+  - Un  pull request _pasado_ debe cerrarse.
   - Este es [un ejemplo](https://github.com/freeCodeCamp/freeCodeCamp/pull/235).
 
 #### Contenido conflictivo/duplicado
 
-Se considera **duplicada** una PR si hace cambios al mismo artículo que otra PR.
+Se considera **duplicado** un PR si hace cambios al mismo artículo que otro PR.
 
 En general el revisor:
 
-1. Organizará las PR desde la más antigua
+1. Organizará los PR desde lo más antiguo
 2. Buscará para PRs con contenido similar
-3. Integrará desde la más antigua a las más nueva
+3. Integrará desde lo más antiguo a los más nuevos
 
-Muy probablemente aparecerán conflictos al integrar PRs duplicadas.
+Muy probablemente aparecerán conflictos al integrar PRs duplicados.
 
-Los revisores harán todos los esfuerzos posibles para resolver estos conflictos e integrar las PRs.
+Los revisores harán todos los esfuerzos posibles para resolver estos conflictos e integrar los PRs.
 
 #### Solicitar cambios
 
-Si la Pull Request no es perfect el revisor podría:
+Si el Pull Request no es perfecto el revisor podría:
 
 - solicitar cambios al contribuidor y añadir la etiqueta *cambios solicitados*
-- solucionar errores menores y hacer un envío encima de la PR
+- solucionar errores menores y hacer un envío encima de el PR
 
 #### Travis CI Build
 
-Todas las PRs deben superar los test de Travis CI antes de poder ser integradas.
+Todos los PRs deben superar los test de Travis CI antes de poder ser integrados.
 
-Si una PR rompe la ejecución (un test de Travis CI falla y muestra una "X" roja) hay tres cauas probables y tendrás que resolver el problemas antes de que podamos integrar la PR:
+Si un PR rompe la ejecución (un test de Travis CI falla y muestra una "X" roja) hay tres causas probables y tendrás que resolver el problema antes de que podamos integrar el PR:
 
-1. Tu PR crea un nueva artículo pero la falta un archivo `index.md` en algún lugar.
+1. Tu PR crea un nuevo artículo pero le falta un archivo `index.md` en algún lugar.
     - Cada directorio en `src/pages` necesita un archivo `index.md` en él (y debe llamarse `index.md`).
     - Dos escenarios muy probables son
       - llamaste al archivo de forma distinta a `index.md`, o
