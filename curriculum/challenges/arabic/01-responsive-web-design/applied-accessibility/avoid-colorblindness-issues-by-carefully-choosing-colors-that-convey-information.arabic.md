@@ -18,7 +18,7 @@ localeTitle: تجنب مشاكل عمى الألوان عن طريق اختيا�
 ```yml
 tests:
   - text: يجب تغيير التعليمات البرمجية الخاصة بك <code>color</code> النص <code>button</code> إلى الأزرق الداكن.
-    testString: 'assert(Colorblindness$("button").css("color") == "rgb(0, 51, 102)", "Your code should change the text <code>color</code> for the <code>button</code> to the dark blue.");'
+    testString: 'assert($("button").css("color") == "rgb(0, 51, 102)", "Your code should change the text <code>color</code> for the <code>button</code> to the dark blue.");'
 
 ```
 
