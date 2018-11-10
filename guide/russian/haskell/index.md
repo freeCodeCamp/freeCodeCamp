@@ -6,17 +6,17 @@ localeTitle: Haskell
 
 Haskell - стандартизированный, универсальный, чисто функциональный язык программирования с декларативной и сильной статической типизацией.
 
-У Хаскелла есть глубокие корни в математике, и вы скоро научитесь ценить последствия этого.
+Haskell глубоко уходит корнями в математику, скоро вы оцените его преимущества.
 
-## Версия
+## Версии
 
-В настоящее время последняя версия GHC составляет 8,6 (по состоянию на 12 октября 2018 года)
+В настоящее время последняя версия GHC - 8.6 (по состоянию на 12 октября 2018 года)
 
-## Монтаж
+## Установка
 
-Рекомендуемый способ установки Haskell - использование stack: [stack download](https://docs.haskellstack.org/en/stable/README/#how-to-install) Stack - это кросс-платформенная программа для разработки проектов Haskell. Он нацелен на Haskellers как новых, так и опытных.
+Рекомендуемый способ установки Haskell - использование stack: [stack download](https://docs.haskellstack.org/en/stable/README/#how-to-install) Stack - это кросс-платформенная утилита для разработки проектов на Haskell. Она нацелена как на опытных пользователей, так и на новичков.
 
-Чтобы начать использовать Haskell, вам нужен GHC (компилятор Glasgow Haskell), поэтому для настройки: [настройка стека](https://docs.haskellstack.org/en/stable/README/#how-to-install://docs.haskellstack.org/en/stable/README/#quick-start-guide)
+Чтобы начать использовать Haskell нужен GHC (Glasgow Haskell Compiler), поэтому для установки можно воспользоваться [этой ссылкой](https://docs.haskellstack.org/en/stable/README/#how-to-install://docs.haskellstack.org/en/stable/README/#quick-start-guide), или просто набрав в консоли:
 
 ```shell
 stack new my-project 
@@ -26,18 +26,19 @@ stack new my-project
  stack exec my-project-exe 
 ```
 
-Слово осторожное, постарайтесь не использовать установку стека даже если он будет устанавливать пакет по всему миру, это не рекомендуется, так как разные версии пакетов совместимы с различными версиями GHC. Следовательно, использование локальной копии пакета с использованием сборки стека - лучший способ следовать.
+## Внимание
+Постарайтесь не использовать `stack install`, т.к. эта команда будет устанавливать пакет глобально, что не рекомендуется, так как разные версии пакетов могут быть не совместимы с разными версиями GHC. Поэтому лучшим вариантов является локальная установка с использованием `stack`.
 
-## Привет мир
+## Hellow, world!
 
 ```haskell
 main :: IO () 
  main = print "Hello Haskell :)" 
 ```
 
-Сохраните код выше в файле с именем «hello.hs» и сохраните.
+Сохраните код в файле с названием «hello.hs».
 
-Чтобы скомпилировать пример Hello World, это преобразует наш код haskell в машинные понятные байт-коды.
+Чтобы скомпилировать его и запустить, наберите
 
 ```shell
 stack ghc hello.hs 
@@ -46,8 +47,9 @@ stack ghc hello.hs
 
 ## Документация
 
-Hackage предоставляет документацию для Haskell
+[Haskell.org](https://www.haskell.org/documentation) - книги, курсы по Haskell
+[Hackage](https://hackage.haskell.org) - пакетный менеджер для Haskell
 
 ## Хотите узнать больше?
 
-*   [Ссылка на](https://wiki.haskell.org/Haskell) Haskell wiki
+*   [wiki](https://wiki.haskell.org/Haskell) Haskell wiki

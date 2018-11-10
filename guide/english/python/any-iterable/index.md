@@ -34,6 +34,6 @@ The `any()` operation is equivalent to (internally, may not be implemented exact
     print(any([0, 6, 7])) #=> True
     print(any([9, 8, [1, 2]])) #=> True
 
-![:rocket:](//forum.freecodecamp.com/images/emoji/emoji_one/rocket.png?v=2 ":rocket:") <a href='https://repl.it/CL9c/0' target='_blank' rel='nofollow'>Run Code</a>
+<a href='https://repl.it/CL9c/0' target='_blank' rel='nofollow'>Run Code</a>
 
 <a href='https://docs.python.org/3/library/functions.html#any' target='_blank' rel='nofollow'>Official Docs</a>

@@ -11,6 +11,7 @@ It is valuable for the team to divide the meeting into two parts by asking these
 * **How** should the team (roughly) tackle the items planned?
 
 #### What
+
 In the What phase, the team starts with the top of the ordered Product Backlog. The team at least implicitly estimates the items by forecasting what they could take into the Sprint Backlog. If needed, they could ask questions and discuss items with the PO, who has to be in place for this meeting. 
 
 #### How
@@ -18,6 +19,7 @@ In the How phase, the team briefly discusses each chosen Sprint Backlog item wit
 
 ### Sprint Goal / Closing
 The team should come up with a shared Sprint Goal for the Sprint to keep the focus in the Sprint time box. At the end of the Sprint Planning, the team forecasts that they can achieve the Sprint Goal and most likely complete all Sprint Backlog items. The SM should prevent the team from overestimating by providing useful insights or statistics. 
+
 
 #### More Information:
 [Scrum Guide: Sprint Planning](http://www.scrumguides.org/scrum-guide.html#events-planning)
