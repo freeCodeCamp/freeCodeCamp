@@ -4,61 +4,6 @@ title: Books to Read for Programmers
 
 ### List of Books
 
-## Beginners
-*HTML & CSS Design and Build Websites* by Jon Duckett
-- http://www.htmlandcssbook.com/
-- ISBN-13: 978-1118008188
-
-*JavaScript & jQuery Interactive Front-End Web Development* by Jon Duckett
-- http://javascriptbook.com/
-- ISBN-13: 978-1118531648
-
-## General
-
-*Automate the Boring Stuff With Python* by Al Sweigart
-- http://automatetheboringstuff.com/
-- ISBN-13: 978-1593275990
-
-*Structure and Interpretation of Computer Programs* by Harold Abelson, Gerald Jay Sussman, and Julie Sussman
-- https://mitpress.mit.edu/sicp/
-- ISBN-13: 978-0262510875
-
-*Clean Code: A Handbook of Agile Software Crafstmanship* by Robert C. Martin
-- [Amazon Smile](https://smile.amazon.com/Clean-Code-Handbook-Software-Craftsmanship/dp/0132350882?sa-no-redirect=1)
-- ISBN-13: 978-0132350884
-
-*CODE: The Hidden Language of Computer Hardware and Software* by Charles Petzold
-- [Amazon Smile](https://smile.amazon.com/Code-Language-Computer-Hardware-Software/dp/0735611319/ref=sr_1_1?s=books&ie=UTF8&qid=1508780869&sr=1-1&keywords=code)
-- ISBN-13: 978-0735611313
-
-*Don't Make Me Think, Revisited: A Common Sense Approach to Web Usability by Steve Krug*
-- [Amazon Smile](https://smile.amazon.com/Dont-Make-Think-Revisited-Usability/dp/0321965515/ref=sr_1_1?ie=UTF8&qid=1538370339&sr=8-1&keywords=dont+make+me+think)
-- ISBN-13: 978-0321965516
-
-*Programming Pearls (2nd Edition) by Jon Bentley*
-- [Amazon Smile](https://smile.amazon.com/Programming-Pearls-2nd-Jon-Bentley/dp/0201657880)
-- ISBN-13: 978-0201657883
-
-*Structure and Interpretation of Computer Programs*
-- https://mitpress.mit.edu/sicp/
-- ISBN-13: 978-0262510875
-
-*The Pragmatic Programmer: From Journeyman to Master* by Andrew Hunt and David Thomas
-- [Amazon Smile](https://smile.amazon.com/Pragmatic-Programmer-Journeyman-Master/dp/020161622X?sa-no-redirect=1)
-- ISBN-13: 978-0201616224
-
-*The Self-Taught Programmer: The Definitive Guide to Programming Professionally* by Cory Althoff
-- [Amazon Smile](https://smile.amazon.com/Self-Taught-Programmer-Definitive-Programming-Professionally-ebook/dp/B01M01YDQA?sa-no-redirect=1)
-- ISBN-13: 978-1520288178
-
-*You Don't Know JS (book series)* by Kyle Simpson
-- https://github.com/getify/You-Dont-Know-JS
-- ISBN-13: 9781491924464
-
-*Soft Skills: The software developer's life manual* - John Sonmez
-- [Amazon Smile](https://smile.amazon.com/Soft-Skills-software-developers-manual/dp/1617292397?pldnSite=1)
-- ISBN-13: 9781617292392
-
 ## Algorithms
 
 *Introduction to Algorithms, 3rd Edition (MIT Press)* by Thomas H. Cormen and Charles E. Leiserson
@@ -175,7 +120,6 @@ title: Books to Read for Programmers
 *Oracle® Database Notes for Professionals*
 - https://books.goalkicker.com/OracleDatabaseBook/
 
-
 ## DevOps
 
 *DevOps Handbook:How to Create World-Class Agility, Reliability, and Security in Technology Organizations* by Gene Kim et al
@@ -273,7 +217,6 @@ title: Books to Read for Programmers
 *JavaScript and JQuery: Interactive Front-End Web Development*
 - [Amazon Smile](https://smile.amazon.com/JavaScript-JQuery-Interactive-Front-End-Development/dp/1118531647/)
 - ISBN-13: 978-1118531648 
-
 
 ## Python
 
@@ -392,13 +335,11 @@ title: Books to Read for Programmers
 - [Amazon Smile](https://smile.amazon.com/Violent-Python-Cookbook-Penetration-Engineers/dp)
 - ISBN-13: 978-1597499576
 
-
 ## Ruby
 
 *Practical Object-Oriented Design in Ruby*
 - [Amazon Smile](https://smile.amazon.com/Practical-Object-Oriented-Design-Ruby-Addison-Wesley/dp/0321721330)
 - ISBN-13: 978-0321721334
-
 
 ## Soft Skills
 
@@ -415,7 +356,16 @@ title: Books to Read for Programmers
 *Beginning Visual Basic: A Step by Step Computer Programming Tutorial by Philip Conrod*
 - ISBN-13: 978-1-937161-75-0
 
+## Web Development
+
+*HTML & CSS Design and Build Websites* by Jon Duckett
+- http://www.htmlandcssbook.com/
+- ISBN-13: 978-1118008188
+
+*JavaScript & jQuery Interactive Front-End Web Development* by Jon Duckett
+- http://javascriptbook.com/
+- ISBN-13: 978-1118531648
+
 This list was compiled from multiple suggestion threads on Reddit and Stackoverflow. 
 
 Please feel free to add more that you have found useful!
-
