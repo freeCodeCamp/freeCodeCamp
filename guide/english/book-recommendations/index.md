@@ -126,6 +126,11 @@ title: Books to Read for Programmers
 - [Amazon Smile](https://www.amazon.com/DevOps-Handbook-World-Class-Reliability-Organizations/dp/1942788002/ref=sr_1_4?s=books&ie=UTF8&qid=1539733859&sr=1-4&keywords=devops+handbook)
 - ISBN-13: 978-1942788003
 
+## Full Stack Development
+*Pro Mern Stack: Full Stack Web App Development with Mongo, Express, React, and Node*
+- [Amazon Smile](https://smile.amazon.com/Pro-MERN-Stack-Development-Express/dp/1484226526)  
+- ISBN-13: 978-1484226520 
+
 ## General
 
 *Clean Code: A Handbook of Agile Software Craftsmanship* by Robert C. Martin
