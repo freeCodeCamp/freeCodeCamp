@@ -39,7 +39,7 @@ Notice that in the promise, there is an aspect of both "behavior" and "structure
 ### Promise 3
 >3. I will produce, with each release, a quick, sure, and repeatable proof that every element of the code works as it should.
 
-Customers, users, and even buisnesses would expect that we would be able to undemand prove that our code works as it is supposed to. Notice that in the oath there are words like quick, sure, and repeatable. You want to be able to prove on a moment's notice that code still works as it is supposed to.
+Customers, users, and even businesses would expect that we would be able to prove that our code works as it is supposed to. Notice that in the oath there are words like quick, sure, and repeatable. You want to be able to prove on a moment's notice that code still works as it is supposed to.
 
 If you add a new feature, that doesn't break anything older, or fix a new structure that doesn't break anything that used to be there, you want to be able to show that quickly and easily, that the code still does what it's intended to do. 
 
@@ -63,7 +63,7 @@ We are humans, we make things better. That's what humans do, or at least what we
 
 This is all about thinking about your teammates and associates. The people who work with you, and the people that rely on your code. For example, don't do anything that slows anyone else down. Don't write a function with too many arguments, or make a mess in someone else's code. Don't do this to code that other people depend upon, because it is just going to <b>slow them down</b>.
 
-Don't put long running tests into the test-suite. Keep those tests running fast. Consider your teammates at all times. Consider the enviorment at all times. Keep everything going quickly. Don't impede their productivity.
+Don't put long running tests into the test-suite. Keep those tests running fast. Consider your teammates at all times. Consider the environment at all times. Keep everything going quickly. Don't impede their productivity.
 
 ### Promise 7
 >7. I will continuously ensure that others can cover for me, and that I can cover for them.
@@ -88,7 +88,7 @@ When someone says to you "I need this done by Tuesday," and your not sure if you
 ### Promise 9
 > 9. I will never stop learning and improving my craft.
 
-This doesn't need much explanation. You should always try to learn new languages, new frameworks, new techniques, new disiplines, new processes. You need to apply what you learn then, to constantly impove your craft. 
+This doesn't need much explanation. You should always try to learn new languages, new frameworks, new techniques, new disciplines, new processes. You need to apply what you learn then, to constantly improve your craft. 
 
 ### Promise 10
 >10. I will only produce code which conforms to ethics.
