@@ -1,7 +1,7 @@
 ---
 title: Tips for Your Coding
 ---
-This list was created by compiling common issue and questions when working on the algorithm challenges, they should be helpful in general.
+This list was created by compiling common issues and questions when working on the algorithm challenges, they should be helpful in general.
 
 1.  If you don't know where to start, write some pseudocode. Plan out the logic you're trying to implement in your native language before you try to put it into code.
 

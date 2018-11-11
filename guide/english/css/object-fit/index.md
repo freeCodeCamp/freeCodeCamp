@@ -3,7 +3,7 @@ title: Object Fit
 ---
 # Object Fit
 
-The `object-fit` property specifies how an element responds to the width / height of it's parent box.
+The `object-fit` property specifies how an element responds to the width / height of its parent box.
 
 This property can be used for image, video, or any other media. It can also be used with the `object-position` property to get more control on how the media is displayed.
 
