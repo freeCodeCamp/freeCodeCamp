@@ -7,11 +7,18 @@ videoUrl: ''
 localeTitle: ''
 ---
 
-## Description
-undefined
+## وصف
+شهادة مكتبات Front-end (300 ساعة) تحتوي على
+    Bootstrap
+    jQuery
+    Sass
+    React
+    Redux
+    React and Redux
 
-## Instructions
-undefined
+##تعليمات
+يجب عليك اجتياز جميع التحديات والمشاريع الخمسة النهائية للحصول على الشهادة
+
 
 ## Tests
 <section id='tests'>
