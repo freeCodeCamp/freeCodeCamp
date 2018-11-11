@@ -18,7 +18,7 @@ Bootstrap 4 estuvo en desarrollo durante dos años antes de lanzar algunas versi
 
 *   Movido de Less a Sass;
 *   Se trasladó a Flexbox y se mejoró el sistema de red;
-*   Tarjetas agregadas (reemplazo de pozos, miniaturas y paneles);
+*   Tarjetas agregadas (reemplazo de cajas, miniaturas y paneles);
 *   ¡Y mucho más!
 
 En el momento de escribir este artículo, la última versión de Bootstrap es \[4.1.3\] (http://blog.getbootstrap.com/2018/07/24/bootstrap-4-1-3/ ). Si desea mantenerse al día con cualquier noticia de anuncios, sígalos [aquí](http://blog.getbootstrap.com/) .
@@ -79,4 +79,9 @@ Además, puedes encontrar tanto [gratuitos](https://bootswatch.com/) como de [pa
 
 #### Recursos Bootstrap:
 
-[Blog oficial de Bootstrap](http://blog.getbootstrap.com/) [Inspiración del sitio Bootstrap](http://expo.getbootstrap.com/) [Escaparate de sitios construidos utilizando Bootstrap.](http://builtwithbootstrap.com/) [Linter HTML para proyectos usando Bootstrap](https://github.com/twbs/bootlint) [Elementos de diseño y fragmentos de código para Bootstrap](https://bootsnipp.com/) [Código, tema y recursos complementarios para Bootstrap](http://expo.getbootstrap.com/resources/)
+- [Blog oficial de Bootstrap](http://blog.getbootstrap.com/)
+- [Inspiración del sitio Bootstrap](http://expo.getbootstrap.com/)
+- [Escaparate de sitios construidos utilizando Bootstrap.](http://builtwithbootstrap.com/)
+- [Linter HTML para proyectos usando Bootstrap](https://github.com/twbs/bootlint)
+- [Elementos de diseño y fragmentos de código para Bootstrap](https://bootsnipp.com/)
+- [Código, tema y recursos complementarios para Bootstrap](http://expo.getbootstrap.com/resources/)

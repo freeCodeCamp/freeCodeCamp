@@ -41,7 +41,7 @@ The current stable version is [2.5.1](https://www.ruby-lang.org/en/news/2018/03/
 
 ## Installation
 
-Mac OS X and many Linux distributions come pre-installed with Ruby. To check if ruby is pre-installed in your system, just run `ruby -v` on your shell. There are several ways to install Ruby:
+Mac OS X and many Linux distributions come pre-installed with Ruby. To check if Ruby is pre-installed in your system, just run `ruby -v` on your shell. There are several ways to install Ruby:
 
 *   When you are on a UNIX-like operating system, using your system’s package manager is the easiest way of getting started. However, the packaged Ruby version usually is not the newest one.
 *   Installers can be used to install a specific or multiple Ruby versions. There is also an installer for Windows.
@@ -113,10 +113,12 @@ Ruby has several frameworks(gems) for quickly scaffolding applications. The most
 
 
 ## Ruby Framework for mobile development
+
 To write cross-platform native apps in Ruby, RUBY MOTION is used to develop cross-platform native apps for iOS, Android and OS X using the Ruby programming langauge.
 More resources here: http://www.rubymotion.com/
 
-## What after learning Ruby?
-Every programming language plays an imporatnt role . You can contribute to a lot of open source projects or you can apply for some big companies after having a good grasp on Ruby. As many big internet sites such as Basecamp, Airbnb, Bleacher Report, Fab.com, Scribd, Groupon, Gumroad, Hulu, Kickstarter, Pitchfork, Sendgrid, Soundcloud, Square, Yammer, Crunchbase, Slideshare, Funny or Die, Zendesk, Github, Shopify are build on Ruby so, there are plenty of option for you out there.
-Moreover, a lot of startups are hiring people who have skill in RUby on Rails as not many programmers try to learn Ruby. So,you might have a clear cut to work in a start-up company.
-So, Ruby is beginner friendly and is quite hard skill set to find you have a good number of openings to work as a developer.
+## After learning Ruby
+
+With a good grasp on Ruby you can contribute to open source projects, or apply to some big companies! Many sites you may know are built on Ruby: Basecamp, Airbnb, Bleacher Report, Fab.com, Scribd, Groupon, Gumroad, Hulu, Kickstarter, Pitchfork, Sendgrid, SoundCloud, Square, Yammer, Crunchbase, SlideShare, Funny or Die, Zendesk, Github, and Shopify, just to name a few. Needless to say, there are plenty of options!
+
+A lot of startups need people who have skill in Ruby on Rails. With less developers trying to learn Ruby, you may find a good number of openings for Ruby developers!
