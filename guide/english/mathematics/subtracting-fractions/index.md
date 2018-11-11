@@ -3,13 +3,16 @@ title: Subtracting Fractions
 ---
 ## Subtracting Fractions
 
-This is a stub. <a href='https://github.com/freecodecamp/guides/tree/master/src/pages/mathematics/subtracting-fractions/index.md' target='_blank' rel='nofollow'>Help our community expand it</a>.
+Subtracting fractions is a bit of a misnomer, as
+```
+(a/b) - (c/d) = (a/b) + (-c/d),
+```
+so there is nothing special going on here, it is just the usual [addition](https://github.com/freeCodeCamp/freeCodeCamp/blob/master/guide/english/mathematics/adding-fractions/index.md) of fractions. Namely,
+```
+(a/b) - (c/d) = (a/b) + (-c/d) = (a*d - b*c)/(d*b).
+```
 
-<a href='https://github.com/freecodecamp/guides/blob/master/README.md' target='_blank' rel='nofollow'>This quick style guide will help ensure your pull request gets accepted</a>.
-
-<!-- The article goes here, in GitHub-flavored Markdown. Feel free to add YouTube videos, images, and CodePen/JSBin embeds  -->
-
-#### More Information:
-<!-- Please add any articles you think might be helpful to read before writing the article -->
-
-
+For example,
+```
+1/7 - 3/8 = (1*8 - 7*3)/(7*8) = -13/56.
+```

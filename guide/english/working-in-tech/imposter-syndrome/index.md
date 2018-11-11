@@ -8,7 +8,7 @@ Imposter Syndrome is a feeling of _being a fraud_ or _not being good enough_ to 
 
 Imposter Syndrome is very common among software engineers or developers who are new to the role and lack the experience of some of their co-workers. Throughout various industries, imposter syndrome is very common with highly successful people. Studies have found the two out of five 'successful' people consider themselves frauds/imposters while other studies have shown that up to 70% of people experience imposter syndrome as one point in time or another.
 
-If you suffer from imposter syndrome you may have a sense of inadequacy or insecurity about your ability to contribute. In reality, you may be perfectly capable and do contribute to your tasks.
+If you suffer from imposter syndrome you may have a sense of inadequacy or insecurity about your ability to contribute. In reality, you may be perfectly capable and do contribute to your tasks. 
 
 These thoughts are fairly common if you struggle with imposter syndrome:
 
@@ -29,7 +29,7 @@ Imposter Syndrome may prevent you from reaching out when you need help, thus slo
 
 The first step in overcoming imposter syndrome is to learn the difference between a growth mindset and a fixed mindset. People with a growth mindset believe that their skills and talents can be developed through hard work, practice, conversations with others, etc. Alternately, those with a fixed mindset tend to believe their talents are set abilities that they were born with.
 
-When you change your outlook to a growth mindset, you allow yourself to take on challenges that may seem out of reach. If you believe that your skills can be developed over time, it will matter less if you don't know how to do something (as long as you are willing to put in the work).
+When you change your outlook to a growth mindset, you allow yourself to take on challenges that may seem out of reach. If you believe that your skills can be developed over time, it will matter less if you don't know how to do something (as long as you are willing to put in the work). In fact, the only true way to continually develop your skills is to be pushed beyond your limits each day and be challenged. Therefore, try to think of imposter syndrome feeling as a good indication that you are becoming better each day.
 
 [Many talented, successful people deal with Imposter Syndrome](https://www.thecut.com/2017/01/25-famous-women-on-impostor-syndrome-and-self-doubt.html). They even say that - counterintuitively - not only does success not eliminate Imposter Syndrome; many times, success makes it worse. So, it isn't something we conquer once. We conquer it every day, every time we take on a project, task, etc.
 

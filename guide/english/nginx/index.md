@@ -15,3 +15,7 @@ Step 2: Install Nginx
 One simple command to install Nginx is all that is needed:
 
 `apt-get -y install nginx`
+
+#### More Information
+
+[An Introduction to NGINX for Developers](https://medium.freecodecamp.org/an-introduction-to-nginx-for-developers-62179b6a458f)
