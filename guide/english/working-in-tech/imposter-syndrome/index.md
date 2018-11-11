@@ -8,7 +8,7 @@ Imposter Syndrome is a feeling of _being a fraud_ or _not being good enough_ to 
 
 Imposter Syndrome is very common among software engineers or developers who are new to the role and lack the experience of some of their co-workers. Throughout various industries, imposter syndrome is very common with highly successful people. Studies have found that two out of five 'successful' people consider themselves frauds/imposters, while other studies have shown that up to 70% of people experience imposter syndrome at one point in time or another.
 
-If you suffer from imposter syndrome you may have a sense of inadequacy or insecurity about your ability to contribute.
+If you suffer from imposter syndrome you may have a sense of inadequacy or insecurity about your ability to contribute. In reality, you may be perfectly capable and do contribute to your tasks.
 
 These thoughts are fairly common if you struggle with imposter syndrome:
 
