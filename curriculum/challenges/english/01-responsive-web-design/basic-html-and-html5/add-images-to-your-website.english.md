@@ -22,7 +22,7 @@ Let's add an <code>alt</code> attribute to our <code>img</code> example above:
 ## Instructions
 <section id='instructions'>
 Let's try to add an image to our website:
-Insert an <code>img</code> tag, before the <code>h2</code> element.
+Insert an <code>img</code> tag, after the <code>main</code> element.
 Now set the <code>src</code> attribute so that it points to this url:
 <code>https://bit.ly/fcc-relaxing-cat</code>
 Finally don't forget to give your image an <code>alt</code> text.
@@ -34,11 +34,11 @@ Finally don't forget to give your image an <code>alt</code> text.
 ```yml
 tests:
   - text: Your page should have an image element.
-    testString: 'assert($("img").length > 0, "Your page should have an image element.");'
+    testString: assert($("img").length > 0, 'Your page should have an image element.');
   - text: Your image should have a <code>src</code> attribute that points to the kitten image.
-    testString: 'assert(new RegExp("\/\/bit.ly\/fcc-relaxing-cat|\/\/s3.amazonaws.com\/freecodecamp\/relaxing-cat.jpg", "gi").test($("img").attr("src")), "Your image should have a <code>src</code> attribute that points to the kitten image.");'
+    testString: assert(new RegExp("\/\/bit.ly\/fcc-relaxing-cat|\/\/s3.amazonaws.com\/freecodecamp\/relaxing-cat.jpg", "gi").test($("img").attr("src")), 'Your image should have a <code>src</code> attribute that points to the kitten image.');
   - text: Your image element <strong>must</strong> have an <code>alt</code> attribute.
-    testString: 'assert(code.match(/alt\s*?=\s*?(\"|\").*(\"|\")/), "Your image element <strong>must</strong> have an <code>alt</code> attribute.");'
+    testString: assert(code.match(/alt\s*?=\s*?(\"|\').*(\"|\')/), 'Your image element <strong>must</strong> have an <code>alt</code> attribute.');
 
 ```
 
@@ -68,7 +68,17 @@ tests:
 ## Solution
 <section id='solution'>
 
-```js
-// solution required
+<div id='html-seed'>
+
+```html
+<h2>CatPhotoApp</h2>
+<main>
+  <img src="https://bit.ly/fcc-relaxing-cat" alt="cat_img"></img>
+
+  <p>Kitty ipsum dolor sit amet, shed everywhere shed everywhere stretching attack your ankles chase the red dot, hairball run catnip eat the grass sniff.</p>
+  <p>Purr jump eat the grass rip the couch scratched sunbathe, shed everywhere rip the couch sleep in the sink fluffy fur catnip scratched.</p>
+</main>
+
+</div>
 ```
 </section>

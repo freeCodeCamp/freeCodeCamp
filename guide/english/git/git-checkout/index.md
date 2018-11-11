@@ -7,7 +7,7 @@ The `git checkout` command switches between branches or restores working tree fi
 
 ### Checkout a specific commit
 
-to checkout a specific commit, run the command :
+to checkout a specific commit, run the command:
 ```shell
 git checkout specific-commit-id
 ```
@@ -23,7 +23,7 @@ git checkout BRANCH-NAME
 Generally, Git won't let you checkout another branch unless your working directory is clean, because you would lose any working directory changes that aren't committed. You have three options to handle your changes: 1) trash them, 2) <a href='https://guide.freecodecamp.org/git/git-commit/' target='_blank' rel='nofollow'>commit them</a>, or 3) <a href='https://guide.freecodecamp.org/git/git-stash/' target='_blank' rel='nofollow'>stash them</a>.
 
 ### Checkout a New Branch
-To create and checkout out a new branch with a single command, you can use:
+To create and checkout a new branch with a single command, you can use:
 ```shell
 git checkout -b NEW-BRANCH-NAME
 ```
@@ -37,7 +37,7 @@ git checkout -B BRANCH-NAME START-POINT
 If the `BRANCH-NAME` branch doesn't exist, Git will create it and start it at `START-POINT`. If the `BRANCH-NAME` branch already exists, then Git resets the branch to `START-POINT`. This is equivalent to running `git branch` with `-f`.
 
 ### Force a Checkout 
-You can pass the `-f` or `--force` option with the `git checkout` command to force Git to switch branches, even if you have un-staged changes (in other words, the index of the working tree differs from `HEAD`). Basically, it can be used to throw away local changes.
+You can pass the `-f` or `--force` option with the `git checkout` command to force Git to switch branches, even if you have unstaged changes (in other words, the index of the working tree differs from `HEAD`). Basically, it can be used to throw away local changes.
 
 When you run the following command, Git will ignore unmerged entries:
 
