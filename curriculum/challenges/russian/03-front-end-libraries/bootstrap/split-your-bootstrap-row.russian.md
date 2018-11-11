@@ -7,7 +7,9 @@ localeTitle: Разделите строку Bootstrap
 ---
 
 ## Description
-undefined
+После того, как мы создали строку Bootstrap, давайте разделим её на две колонки, чтобы хранить в них наши элементы.
+
+Создайте два `div` элемента, оба с классом `col-xs-6`, внутри вашей строки.
 
 ## Instructions
 undefined
@@ -17,7 +19,7 @@ undefined
 
 ```yml
 tests:
-  - text: Nest два элемента <code>div class=&quot;col-xs-6&quot;</code> в вашем элементе <code>div class=&quot;row&quot;</code> .
+  - text: Поместите два элемента <code>div class=&quot;col-xs-6&quot;</code> в ваш элемент <code>div class=&quot;row&quot;</code> .
     testString: 'assert($("div.row > div.col-xs-6").length > 1, "Nest two <code>div class="col-xs-6"</code> elements within your <code>div class="row"</code> element.");'
   - text: 'Убедитесь, что все ваши элементы <code>div</code> имеют закрывающие теги.'
     testString: 'assert(code.match(/<\/div>/g) && code.match(/<div/g) && code.match(/<\/div>/g).length === code.match(/<div/g).length, "Make sure all your <code>div</code> elements have closing tags.");'
