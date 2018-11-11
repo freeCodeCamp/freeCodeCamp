@@ -40,6 +40,7 @@ Lastly, learn to integrate 3rd party libraries and Firebase services to add nume
 ### Official Documentation
 
 [Google Developers Guide for Android](https://developer.android.com/training/index.html)
+[Android System Programming](https://www.packtpub.com/mapt/book/application_development/9781787125360/1)
 
 #### Java vs Kotlin
 
