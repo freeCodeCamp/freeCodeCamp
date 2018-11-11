@@ -73,8 +73,7 @@ function distinctPrimeFactors(targetNumPrimes, targetConsecutive) {
       }
     }
     // Adding other factors
-    const bound = Math.sqrt(n);
-    for (let i = 3; i < bound; i += 2) {
+    for (let i = 3; i < Math.sqrt(n); i += 2) {
       firstFactor = true;
       while (n % i == 0) {
         n = n / i;
