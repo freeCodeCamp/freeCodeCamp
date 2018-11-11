@@ -1,5 +1,5 @@
 ---
-title: Use the s tag to strikethrough text
+title: Use the s Tag to Strikethrough Text
 ---
 ![](//discourse-user-assets.s3.amazonaws.com/original/2X/a/aadd6bead83ab7d79a795c326f005a89e6ad81f5.png)
 
