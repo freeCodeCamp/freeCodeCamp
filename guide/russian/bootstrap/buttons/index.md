@@ -13,17 +13,23 @@ localeTitle: Кнопки
 
 **Пример кода:**
 
-`<button type="button" class="btn btn-primary">Primary</button>`
-
+```html
+<button type="button" class="btn btn-primary">Primary</button>
+```
 первичный
 
 Вы также можете использовать бутстрап-кнопки с элементами `<a>` и `<input>,` как показано в приведенных ниже примерах.
 
-`<a class="btn btn-primary" href="#" role="button">This button is a link</a>`
+```html
+<a class="btn btn-primary" href="#" role="button">This button is a link</a>
+```
 
 [Эта кнопка является ссылкой](#)
 
-`<input class="btn btn-primary" type="submit" value="Submit">`
+
+```html
+<input class="btn btn-primary" type="submit" value="Submit">
+```
 
 #### Bootstrap Button Список классов:
 
@@ -85,7 +91,9 @@ localeTitle: Кнопки
 
 Можно также очертить кнопки, а не полностью окрашивать их. Это достигается путем размещения `outline` в середину класса кнопки, которую вы хотите использовать. Пример использования будет следующим:
 
-`<button type="button" class="btn btn-outline-primary">Primary</button>`
+```html
+<button type="button" class="btn btn-outline-primary">Primary</button>
+```
 
 Очерченые кнопки являются частью Bootstrap с версии 4, пожалуйста, убедитесь, что вы используете правильную версию, если вы не можете заставить их работать.
 
