@@ -92,12 +92,13 @@ button:hover {
 
 ![Hoverable Buttons](https://image.ibb.co/hxQnfm/button_hover.png "Hoverable Buttons")
 
-To determine the speed of the hover effect use the property `transition-duration`.
+To determine the speed of the hover effect, use the property `transition-duration`.
 ```
  button {
   background-color: #f4511e;
   transition-duration: 0.4s;
 }
+
  button:hover {
   background-color: #0E2C5B;
   color: #FFF;
