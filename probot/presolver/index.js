@@ -1,6 +1,28 @@
-/*const Presolver = require('./lib/presolver');
+const debug = require("debug")("probot:presolver");
+/*const Presolver = {
+  (github, { owner, repo, logger = console, ...config }) {
+  //constructor(github, { owner, repo, logger = console, ...config }) {
+    this.github = github;
+    this.logger = logger;
+    this.config = Object.assign({}, {
+      owner,
+      repo
+    });
+    this.pullRequest = {};
+  //}
 
-function probotPlugin(robot) {
+  /*static get STATE() {
+    return Object.freeze({
+      CLASH: 'clashing'
+    });
+  }*/
+  
+  
+  
+
+//}
+
+async function probotPlugin(robot) {
   const events = [
     "pull_request.opened",
     "pull_request.edited",
@@ -10,14 +32,29 @@ function probotPlugin(robot) {
 
   robot.on(events, presolve);
 }
+async function _getClashingRanges(context, pullRequest) {
+  const repo = pullRequest.base.repo;
+  //console.log(pullRequest)
+  const owner = repo.owner;
+  const number = pullRequest.number;
 
-async function presolve(context) {
-  const presolverContext = getRepository(context);
-  const pullRequest = getPullRequest(context);
+  const prs = (await context.github.pullRequests.get({ owner, repo }))
+    .data || [];
+  prs.forEach(function(pr){
+    const files = pr.files()
+    console.log(files)
+  })
 }
+async function presolver(context, pullRequest) {
+  //Object.assign(this.pullRequest, pullRequest);
+  //const { owner, repo } = this.config;
+  //const number = this.pullRequest.number;
 
-function getRepository(context) {
-  const config = Object.assign(context.repo());
+  const state = await _getClashingRanges(context, pullRequest);
+
+}
+function forRepository(context) {
+  const config = Object.assign({}, context.repo({ logger: debug }));
   return new Presolver(context.github, config);
 }
 
@@ -25,20 +62,34 @@ function getPullRequest(context) {
   return context.payload.pull_request || context.payload.review.pull_request;
 }
 
-module.exports = probotPlugin;
-*/
-function getPullRequest(context) {
-  return context.payload.pull_request || context.payload.review.pull_request;
+
+async function presolve(context) {
+  //const presolved = //forRepository(context);
+  const pullRequest = getPullRequest(context);
+  //presolver.presolve(pullRequest);
+  console.log(context);
+  return presolver(context, pullRequest);
 }
-module.exports = async app => {
+module.exports = probotPlugin;
+/*module.exports = async app => {
   // Your code here
   app.log('Yay, the app was loaded!')
 
-  app.on('pull_request.labeled', async context => {
+  app.on('pull_request.opened', async githubcontext => {
+    //console.log(githubcontext)
+    const prContext = getPullRequest(githubcontext);
+    //console.log(prContext);
+    //const config = //Object.assign({}, githubcontext.repo({})
+    //);
+    //const context = prContext.github;
+    //console.log(context)
+    //constructor(github, { owner, repo, logger = console, ...config }) {
+
     //const prNumber = context.payload.pull_request.number;
-    const { title, head, number, id } = getPullRequest(context);
-    const owner = context.repo().owner;
-    const repo = context.repo().repo;
+    
+    const { title, head, number, id } = prContext;*/
+    //const owner = context.owner;
+    //const repo = context.repo;
     /*const reviews =
       (await context.github.pullRequests.getReviews({ owner, repo, number }))
         .data || [];
@@ -72,7 +123,7 @@ module.exports = async app => {
       return Object.values(uniqueReviews);
     }*/
     //const params = 
-    const commit_id = head.sha;
+/*    const commit_id = head.sha;
     const body = 'probot comment test';
     const filepath = './app.js'
     const pos = 4;
@@ -88,7 +139,7 @@ module.exports = async app => {
     const position = 
       //comments[].path = 
       pos;
-    const reviewers = ['tbushman']
+    const reviewers = ['tbushman']*/
     /*return await context.github.pullRequests.createReview({
       owner,
       repo,
@@ -98,16 +149,16 @@ module.exports = async app => {
       event,
       comments
 
-    })
-    /*const issueComment = context.issue({ body: 'probot label test' })
-    return context.github.issues.createComment(issueComment)*/
-    return await context.github.pullRequests.createReviewRequest({owner, repo, number, reviewers})
-  })
+    })*/
+/*    const issueComment = githubcontext.issue({ body: 'probot label test' })
+    return githubcontext.github.issues.createComment(issueComment)
+    //return await githubcontext.github.pullRequests.createReviewRequest({owner, repo, number, reviewers})
+  })*/
 
   // For more information on building apps:
   // https://probot.github.io/docs/
 
   // To get your app running against GitHub, see:
   // https://probot.github.io/docs/development/
-}
+//}
 

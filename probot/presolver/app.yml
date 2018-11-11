@@ -36,12 +36,12 @@ default_events:
 # - project_column
 # - public
 - pull_request
-# - pull_request_review
-# - pull_request_review_comment
+- pull_request_review
+- pull_request_review_comment
 # - push
 # - release
-# - repository
-# - repository_import
+- repository
+- repository_import
 # - status
 # - team
 # - team_add
@@ -54,15 +54,15 @@ default_events:
 default_permissions:
   # Repository creation, deletion, settings, teams, and collaborators.
   # https://developer.github.com/v3/apps/permissions/#permission-on-administration
-  # administration: read
+  administration: read
 
   # Checks on code.
   # https://developer.github.com/v3/apps/permissions/#permission-on-checks
-  # checks: read
+  checks: read
 
   # Repository contents, commits, branches, downloads, releases, and merges.
   # https://developer.github.com/v3/apps/permissions/#permission-on-contents
-  # contents: read
+  contents: read
 
   # Deployments and deployment statuses.
   # https://developer.github.com/v3/apps/permissions/#permission-on-deployments
@@ -70,11 +70,11 @@ default_permissions:
 
   # Issues and related comments, assignees, labels, and milestones.
   # https://developer.github.com/v3/apps/permissions/#permission-on-issues
-  issues: write
+  # issues: write
 
   # Search repositories, list collaborators, and access repository metadata.
   # https://developer.github.com/v3/apps/permissions/#metadata-permissions
-  # metadata: read
+  metadata: read
 
   # Retrieve Pages statuses, configuration, and builds, as well as create new builds.
   # https://developer.github.com/v3/apps/permissions/#permission-on-pages
@@ -86,7 +86,7 @@ default_permissions:
 
   # Manage the post-receive hooks for a repository.
   # https://developer.github.com/v3/apps/permissions/#permission-on-repository-hooks
-  # repository_hooks: read
+  repository_hooks: read
 
   # Manage repository projects, columns, and cards.
   # https://developer.github.com/v3/apps/permissions/#permission-on-repository-projects
@@ -98,7 +98,7 @@ default_permissions:
 
   # Commit statuses.
   # https://developer.github.com/v3/apps/permissions/#permission-on-statuses
-  # statuses: read
+  statuses: read
 
   # Organization members and teams.
   # https://developer.github.com/v3/apps/permissions/#permission-on-members
@@ -118,7 +118,7 @@ default_permissions:
 
   # Manage the post-receive hooks for an organization.
   # https://developer.github.com/v3/apps/permissions/#permission-on-organization-hooks
-  # organization_hooks: read
+  organization_hooks: read
 
   # Get notified of, and update, content references.
   # https://developer.github.com/v3/apps/permissions/
