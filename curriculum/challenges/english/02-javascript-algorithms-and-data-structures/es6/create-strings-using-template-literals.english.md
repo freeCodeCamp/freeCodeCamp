@@ -32,8 +32,9 @@ tests:
   - text: <code>resultDisplayArray</code> is the desired output.
     testString: assert(makeList(result.failure).every((v, i) => v === `<li class="text-warning">${result.failure[i]}</li>` || v === `<li class='text-warning'>${result.failure[i]}</li>`), '<code>resultDisplayArray</code> is the desired output.');
   - text: Template strings were used
-    testString: getUserInput => assert(getUserInput('index').match(/`.*`/g), 'Template strings were not used');
-
+    testString: getUserInput => assert(getUserInput('index').match(/(`.*\${.*}.*`)/g), 'Template strings were not used');
+  - text: An iterator was used
+    testString: getUserInput => assert(getUserInput('index').match(/for|map|reduce|forEach|while/g), 'Iterator was not used');
 ```
 
 </section>
