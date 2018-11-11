@@ -8,21 +8,24 @@ localeTitle: روبي للحلقات
 
 للحلقات هي مجرد مثال واحد على التكرار أو التكرار على العناصر. في ما يلي مثال على حلقة for:
 
- `for element in array do
+```
+for element in array do
   puts element
- end
-`
+end
+```
 
 هناك العديد من الطرق المختلفة التي يمكنك من خلالها تنفيذ حلقة أو حلقة في Ruby ، ​​مثال آخر مثل:
 
- `array.each do |element|
+```
+array.each do |element|
   puts element
- end
-`
+end
+```
 
 هذا من شأنه أن يحقق نفس النتائج بالضبط كما سبق ذكره للحلقة ، ولكن مع ذلك أكثر إتقانا وأكثر كفاءة لأنه يستخدم أساليب Array المضمنة.
 
 للذهاب خطوة أخرى ، يمكننا كتابة الحلقة أعلاه بالطريقة التالية:
 
- `array.each do { |element| puts element }
-`
+```
+array.each do { |element| puts element }
+```
