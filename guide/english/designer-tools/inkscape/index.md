@@ -8,16 +8,14 @@ Inkscape is an open-source vector-based graphic editing tool used by graphic des
 vector-based illustration and designs. Inkscape is widely termed as 'free and open-source' alternative 
 to popular illustration design tool Adobe Illustrator.
 
-Inkscape can be used to create or edit vector based graphics including illustrations, shapes, line arts, charts,logos, diagrams, 
+Inkscape can be used to create or edit vector-based graphics including illustrations, shapes, line arts, charts,logos, diagrams, 
 as well as raster images.
 
 Being an open-source tool, Inkscape comes free of cost. 
 
-You can freely download Inkscape [here](https://inkscape.org/release/0.92.3/)
-
 It is available for all major Operating Systems including Windows, Linux, and Mac OS X.
 
-Download link for particular Operating Systems can be found here:
+Download links for particular Operating Systems can be found here:
 
 - [Windows](https://inkscape.org/release/0.92.3/windows/)
 - [GNU/Linux](https://inkscape.org/release/0.92.3/gnulinux/)
