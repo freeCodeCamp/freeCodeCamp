@@ -30,7 +30,7 @@ class Human {
 }
 ```
 
-**Note:** If you want to use those constants inside the `Human` class, you can reffer them as `self::CONSTANT_NAME`. If you want to use them outside the class, you need to reffer them as `Human::CONSTANT_NAME`.
+**Note:** If you want to use those constants inside the `Human` class, you can refer them as `self::CONSTANT_NAME`. If you want to use them outside the class, you need to refer them as `Human::CONSTANT_NAME`.
 
 #### More Information:
 * <a href="https://secure.php.net/manual/en/language.constants.php" rel="nofollow">php.net constants manual</a>
