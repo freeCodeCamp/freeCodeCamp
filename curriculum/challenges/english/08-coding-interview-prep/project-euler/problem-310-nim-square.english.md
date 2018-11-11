@@ -26,7 +26,7 @@ Find the number of losing positions for the next player if 0≤a≤b≤c≤100 0
 ```yml
 tests:
   - text: <code>euler310()</code> should return 2586528661783.
-    testString: 'assert.strictEqual(euler310(), 2586528661783, "<code>euler310()</code> should return 2586528661783.");'
+    testString: assert.strictEqual(euler310(), 2586528661783, '<code>euler310()</code> should return 2586528661783.');
 
 ```
 

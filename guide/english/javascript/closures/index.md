@@ -115,7 +115,7 @@ Javascript did not have a concept of block-scoped variables. Meaning that when d
     }
 ```
 
-Since the variable i does not have block-scope, it's value within all three functions was updated with the loop counter and created malicious values. Closure can help us solve this issue by creating a snapshot of the environment the function was in when it was created, preserving its state.
+Since the variable i does not have block-scope, its value within all three functions was updated with the loop counter and created malicious values. Closure can help us solve this issue by creating a snapshot of the environment the function was in when it was created, preserving its state.
 
 ```javascript
     var funcs = [];
