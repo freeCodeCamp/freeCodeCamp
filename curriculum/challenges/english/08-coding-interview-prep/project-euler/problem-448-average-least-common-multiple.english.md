@@ -28,7 +28,7 @@ Find S(99999999019) mod 999999017.
 ```yml
 tests:
   - text: <code>euler448()</code> should return 106467648.
-    testString: 'assert.strictEqual(euler448(), 106467648, "<code>euler448()</code> should return 106467648.");'
+    testString: assert.strictEqual(euler448(), 106467648, '<code>euler448()</code> should return 106467648.');
 
 ```
 

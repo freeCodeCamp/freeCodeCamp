@@ -48,6 +48,11 @@ byte anotherByte = (byte)0b00100001;
 ```
 
 As evident from the above example, variables of Primitive type behave slightly differently from variables of Reference (& Wrapper) type - while Primitive variables <i>store</i> the actual value, Reference variables <i>refer to</i> an 'object' containing the actual value.
+Java Programming language defines mainly three kind of variables.
+1) Instance variables
+2) Static Variables
+3) Local Variables
+
 You can find out more in the sections linked below.
 
 # Other Resources
