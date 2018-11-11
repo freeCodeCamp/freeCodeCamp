@@ -44,7 +44,7 @@ It is very similar to the search function. You again start at the root of the tr
 There are 3 cases that can happen when you are trying to delete a node. If it has,
 1. No subtree (no children): This one is the easiest one. You can simply just delete the node, without any additional actions required.
 2. One subtree (one child): You have to make sure that after the node is deleted, its child is then connected to the deleted node's parent.
-3. Two subtrees (two children): You have to find and replace the node you want to delete with its successor (the letfmost node in the right subtree).
+3. Two subtrees (two children): You have to find and replace the node you want to delete with its successor (the leftfmost node in the right subtree).
 
 The time complexity for creating a tree is `O(1)`. The time complexity for searching, inserting or deleting a node depends on the height of the tree `h`, so the worst case is `O(h)`.
 
@@ -287,3 +287,18 @@ Complete Binary Tree: A Binary Tree is complete Binary Tree if all levels are co
       40    50    100   40
      /  \   /
     8   7  9 
+
+### Augumenting a BST
+
+Sometimes we need to store some additional information with the traditional data structures to make our tasks easier.
+For example, consider a scenario where you are supposed to find the ith smallest number in a set. You can use brute force here but we can reduce the complexity of the problem to O(lg n) by augumenting a red-black or any self-balancing tree (where n is the number of elements in the set). We can also compute rank of any element in O(lg n) time. Let us consider a case where we are augumenting a red-black tree to store the addional information needed. Besides the usual attributes, we can store number of internal nodes in the subtree rooted at x(size of the subtree rooted at x including the node itself).
+Let x be any arbitary node of a tree.
+
+x.size = x.left.size + x.right.size + 1
+
+While augumenting the tree, we should keep in mind, that we should be able to maintain the augumented information as well as do other operations like insertion, deletion, updation in O(lg n) time.
+
+Since, we know that the value of x.left.size will give us the number of nodes which preceed x in the inorder traversal of the tree. Thus, x.left.size + 1 is the rank of x within the subtree rooted at x.
+
+### To read more about Augumented Search Trees
+* [Augumented Search Trees](https://www.bowdoin.edu/~ltoma/teaching/cs231/fall10/Lectures/10-augmentedTrees/augtrees.pdf)

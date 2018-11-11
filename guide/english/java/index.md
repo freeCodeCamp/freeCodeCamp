@@ -85,6 +85,13 @@ Java is a pretty secure language as it doesn't let your program run directly on 
 
 Also, once your bytecode is compiled it can run on any Java VM. This Virtual Machine is machine dependent, i.e it has different implementations for Windows, Linux and Mac. But your program is guaranteed to run in any system thanks to this VM. This philosophy is called <a href='https://en.wikipedia.org/wiki/Write_once,_run_anywhere' target='_blank' rel='nofollow'>"Write Once, Run Anywhere"</a>.
 
+### Jvm Core Responsibilities 
+1. Coding & interpreting bytecode
+2. Security
+3. Automatic Memory Management
+4. jvm => Platform Dependent
+5. Bytecode =-> Platform Independent
+
 ## Hello World!
 
 Let's write a sample Hello World application. Open any editor / IDE of choice and create a file `HelloWorld.java`.

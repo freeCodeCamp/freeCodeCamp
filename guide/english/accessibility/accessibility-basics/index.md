@@ -49,7 +49,7 @@ You may think that accessibility doesn't apply to you or to your users, so why i
 
 The truth is, you're right to a certain degree. If you have done meticulous user research and have excluded any chance of a certain group of people visiting your website, the priority for catering to that group of people diminishes quite a bit.
 
-However, doing this research is key in actually defending such a statement. Did you know there were <a href='http://audiogames.net' target='_blank' rel='nofollow'>blind gamers?</a> and even <a href='http://peteeckert.com/' target='_blank' rel='nofollow'>blind photographers?</a>. Perhaps you knew <a href='http://mentalfloss.com/article/25750/roll-over-beethoven-6-modern-deaf-musicians' target='_blank' rel='nofollow'>musicians can be deaf</a>?
+However, doing this research is key in actually defending such a statement. Did you know there were <a href='http://audiogames.net' target='_blank' rel='nofollow'>blind gamers?</a> and even <a href='http://peteeckert.com/' target='_blank' rel='nofollow'>blind photographers</a>? Perhaps you knew <a href='http://mentalfloss.com/article/25750/roll-over-beethoven-6-modern-deaf-musicians' target='_blank' rel='nofollow'>musicians can be deaf</a>?
 
 If you did, good for you. If not, I guess this drives my point home all the more.
 
@@ -133,7 +133,7 @@ The WCAG has contrast ratios for smaller and larger letters and there's plenty o
 A good place to start checking color contrast is by using the [WebAIM](https://webaim.org/resources/contrastchecker/) color contrast checker.
 
 ### What does this button do?
-While we are on the topic of forms, let's quickly glance at the <code>input</code> tag. This little guy is kinda important.  
+While we are on the topic of forms, let's quickly glance at the <code>input</code> tag. This little guy is kind of important.  
 
 When you put some input fields on a web page, you can use labels to ...well ...label them. However, putting them next to each other is not quite enough. The attribute you want is the for-attribute, which takes the ID of a subsequent input field. This way, assistive technologies know what label to associate with what form field.  
 
