@@ -28,7 +28,7 @@ d. `componentDidMount()`
 
 ## Updating:
 
-a. `componentWillRecieveProps()`
+a. `componentWillReceiveProps()`
 
 b. `shouldComponentUpdate()`
 

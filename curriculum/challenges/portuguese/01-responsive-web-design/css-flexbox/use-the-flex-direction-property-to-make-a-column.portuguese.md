@@ -6,13 +6,13 @@ videoUrl: ''
 localeTitle: Use a propriedade flex-direction para criar uma coluna
 ---
 
-## Description
+## Descrição
 <section id="description"> Os dois últimos desafios usaram a propriedade <code>flex-direction</code> definida como <code>row</code> (linha). Essa propriedade também pode criar uma coluna empilhando verticalmente os filhos de um contêiner flexível. </section>
 
-## Instructions
+## Instruções
 <section id="instructions"> Adicione a propriedade CSS<code>flex-direction</code> ao elemento <code>#box-container</code> e atribua a ela um valor de <code>column</code>. </section>
 
-## Tests
+## Testes
 <section id='tests'>
 
 ```yml
@@ -24,7 +24,7 @@ tests:
 
 </section>
 
-## Challenge Seed
+## Desafio Seed
 <section id='challengeSeed'>
 
 <div id='html-seed'>
@@ -62,7 +62,7 @@ tests:
 
 </section>
 
-## Solution
+## Solução
 <section id='solution'>
 
 ```js
