@@ -52,6 +52,8 @@ Line-by-Line Explanation of the above code:
 
 As previously noted, a 'while' loop will run until the conditional logic is false. Because of this, it is important to set a "false" condition within the executable code. If no false is included, the while loop will run infinitely. Be cautious when setting logic parameters to prevent the infinite loop unless that is the desired output. 
 
+Because `while` loops are conditioned controlled loops, they are great for programs that need to be run for an indefinite number of times. This allows for input to be taken time and time again until the condition is met. A good practical example would be for a game in which the player has the option to try again. Until the player responds with the response that meets the `while` loop condition, the player can continue to play the game, simulating the loop as many times as they please.
+
 
 #### More Information:
 
