@@ -30,10 +30,10 @@ When starting out with linux, there are some basic commands everyone should know
 - **Warning, this command is capable of destroying entire systems, use with caution**
 
  8. **touch** - creates file   
-- The touch command is used to create a file. It can be anything, from an empty txt file to an empty zip file. 'touch new.txt' will create a new file with name new.
+- The `touch` command is used to create a file. It can be anything, from an empty txt file to an empty zip file. 'touch new.txt' will create a new file with name new.
 
  9. **mv** - move   
-- Use the mv command to move files through the command line. We can also use the mv command to rename a file. For example, if we want to rename the file “text” to “new”, we can use 'mv text new'.
+- Use the `mv` command to move files through the command line. We can also use the mv command to rename a file. For example, if we want to rename the file “text” to “new”, we can use 'mv text new'.
 - **Warning, this command is capable of destroying entire systems, use with caution**
 
  10. **right-click** - copy and paste  
@@ -49,9 +49,15 @@ When starting out with linux, there are some basic commands everyone should know
 - Use `clear` to simply clear all output from your terminal.
 
  14. **cp** - copy files and directories
-- Use `cp` to copy a file or a direcotry with files inside it to another location using command 'cp CURRENT_FILE-LOCATION DESTINATION_FOLDER'. Add '-r' flag to copy a directory that is not empty. 
+- Use `cp` to copy a file or a direcotry with files inside it to another location using command `cp CURRENT_FILE-LOCATION DESTINATION_FOLDER`. Add `-r` flag to copy a directory that is not empty. 
 
-15. **grep** -  The grep searches any given input files, selecting lines that match one or more patterns.
+ 15. **top** - shows the system load
+- Use `top` to get information about running processes of your system, the amount or RAM they allocate and the CPU percentage that they use. 'Top' is interactive so do not forget to press `q` when you want to quit.
+
+ 16. **df -h** Checks disk space in human readable form
+- Shows the size, amount used, amount available and capacity percentage of mounted drives/partitions.
+
+ 17. **grep** -  The grep searches any given input files, selecting lines that match one or more patterns.
 - use `grep` to find a file, a directory, some text in the file/directory.  
 **Example:**
 ```sh
@@ -61,9 +67,17 @@ When starting out with linux, there are some basic commands everyone should know
  25409 s004  Ss     0:00.04 login -pf <user>
 ```
 
- 15. **df -h** Checks disk space in human readable form
-- Shows the size, amount used, amount available and capacity percentage of mounted drives/partitions.
+ 15. **sudo** - execute a command as super user
+- A widely used command in the Linux command line, sudo stands for "SuperUser Do". So, if you want any command to be done with administrative or root privileges, you can use the sudo command.
 
+15. **kill** - stops runing process
+- The `kill` command sends a signal to a running process. This default action normally stops processes. If you want to stop a process, specify the process ID (PID) in the `ProcessID` variable. The shell reports the PID of each process that is running in the background (unless you start more than one process in a pipeline, in which case the shell reports the number of the last process). You can also use the `ps` command to find the process ID number of commands.
+
+16. **find** - search for files in a directory hierarchy
+- `find` searches the directory tree rooted at each given file name by evaluating the given expression from left to right, according to the rules of precedence, until the outcome is known (the left hand side is false for and operations, true for or), at which point `find` moves on to the next file name.
+
+17. **grep** - print lines matching a pattern
+- `grep` searches for `PATTERN` in each FILE.  A FILE of `“-”` stands for standard input. If no FILE is given, recursive searches examine the working directory, and nonrecursive searches read standard input. By default, `grep` prints the matching lines.
 
 ### Useful Resources for Practice:
 - [JSLinux](https://bellard.org/jslinux/vm.html?url=https://bellard.org/jslinux/buildroot-x86.cfg): Run the terminal inside your browser. Great for practice.

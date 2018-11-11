@@ -6,7 +6,7 @@ challengeType: 1
 
 ## Description
 <section id='description'>
-<code>let</code> is not the only new way to declare variables. In ES6, you can also declare variables using the <code>const</code> keyword.
+The keyword <code>let</code> is not the only new way to declare variables. In ES6, you can also declare variables using the <code>const</code> keyword.
 <code>const</code> has all the awesome features that <code>let</code> has, with the added bonus that variables declared using <code>const</code> are read-only. They are a constant value, which means that once a variable is assigned with <code>const</code>, it cannot be reassigned.
 <blockquote>"use strict"<br>const FAV_PET = "Cats";<br>FAV_PET = "Dogs"; // returns error</blockquote>
 As you can see, trying to reassign a variable declared with <code>const</code> will throw an error. You should always name variables you don't want to reassign using the <code>const</code> keyword. This helps when you accidentally attempt to reassign a variable that is meant to stay constant. A common practice when naming constants is to use all uppercase letters, with words separated by an underscore.

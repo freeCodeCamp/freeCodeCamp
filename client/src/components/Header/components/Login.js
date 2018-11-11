@@ -6,6 +6,8 @@ import { Button } from '@freecodecamp/react-bootstrap';
 import { hardGoTo } from '../../../redux';
 import { apiLocation } from '../../../../config/env.json';
 
+import { gtagReportConversion } from '../../../analytics/gtag';
+
 import './login.css';
 
 const mapStateToProps = () => ({});
@@ -15,6 +17,7 @@ const mapDispatchToProps = dispatch => ({
 
 const createOnClick = navigate => e => {
   e.preventDefault();
+  gtagReportConversion();
   return navigate(`${apiLocation}/signin`);
 };
 
