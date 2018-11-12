@@ -2,17 +2,17 @@
 title: Virtual Environments
 ---
 
-## Virtual Environemnts
+## Virtual Environments
 
-Virtual environments can be described as isolated installation directories. This isolation allows you to localized the installation of your project's dependencies, without forcing you to install them system-wide.
+Virtual environments can be described as isolated installation directories. This isolation allows you to localize the installation of your project's dependencies, without forcing you to install them system-wide.
 
-Imagine you have two applications App1 and App2. Both require the package Pak, but with different versions. If you install Pak version 2.3 for App1, you would not be able to run App2, because it requires version 3.1. Here is when virtual environments come in handy.
+Imagine you have two applications App1 and App2. Both require the package Pak, but each requires a different version. If you install Pak version 2.3 for App1, you would not be able to run App2, because it requires version 3.1. Here is when virtual environments come in handy.
 
 Benefits:
 * You can have multiple environments, with multiple sets of packages, without conflicts among them. This way, different projects' requirements can be satisfied at the same time.
 * You can easily release your project with its own dependent modules.
 
-Here are two ways you can create Python virtual environments.
+Here are three ways you can create Python virtual environments.
 
 ## Virtualenv
 
@@ -28,7 +28,7 @@ Verify the installation with the following command:
 virtualenv --version
 ```
 
-### Create an Environemnt
+### Create an Environment
 
 To create a virtual environment use:
 ```
@@ -51,9 +51,19 @@ lsvirtualenv
 
 ### Activate an Environment
 
+Note : On Windows, activating a virtual environment requires the user to have the permission to run scripts.
+
 Before you can start using the environment you need to activate it:
+
+For Mac OS or Linux systems : 
+
 ```
 source my-env/bin/activate
+```
+And for Windows : 
+
+```
+.\my-env\Scripts\activate.bat
 ```
 
 This ensures that only packages under `my-env/` are used.
@@ -89,6 +99,72 @@ This puts you back to the system’s default Python interpreter with all its ins
 
 Simply delete the environment folder.
 
+## Pipenv
+
+[`pipenv`](https://pipenv.readthedocs.io/en/latest/) is a tool that automatically creates and track packges in your virtual environments. It combines `pip` and `virtualenv` together so you do need to use them separately.
+
+You can install it with `pip`:
+```
+pip install pipenv
+```
+
+Verify the installation with the following command:
+```
+pipenv --version
+```
+
+### Create an Environment
+
+To create a virtual environment, use `pipenv` and specify which version of Python you want to use:
+```
+pipenv --python 3.6
+```
+
+### Install Packages
+
+Virtual environments created by pipenv do not need to be activated. Each project is managed independently. You simply go inside the project directory and install the packages you want:
+```
+pipenv install some-package
+```
+
+Pipenv will install the packge and create a `Pipfile` inside the directory. The Pipfile tracks all packages and dependencies that your project needs. `Pipfile` is the replacement of `requirements.txt` when you use pipenv.
+
+### Uninstall Packages
+
+To uninstall a package and remove it from Pipfile use:
+```
+pipenv uninstall some-package
+```
+
+If you want to uninstall all packages use:
+```
+pipenv uninstall --all
+```
+
+### Import requirements.txt to Pipfile
+
+You can import the packages and dependencies from `requirements.txt` to your Pipfile using:
+```
+pipenv install -r requirements.txt
+```
+
+### Executing Python Scripts
+
+To run Python scripts use:
+```
+pipenv run python main.py
+```
+
+`pipenv run` makes sure that packages installed with pipenv will be available to your program. You do not need to activate your virtual environment to do so.
+
+### Remove an Environment
+
+If you want to remove the virtual environment from pipenv use:
+```
+pipenv --rm
+```
+
+You can also delete the environment by deleting the project directory.
 
 ## Conda
 
@@ -144,5 +220,6 @@ conda remove --name my-env
 
 #### More Information:
 * `virtualenv` [official website](https://virtualenv.pypa.io/en/stable/)
+* `pipenv` [official website](https://pipenv.readthedocs.io/en/latest/)
 * `Conda` [official website](https://conda.io/docs/index.html)
 * `The Hitchhicker's Guide to Python` - [Pypenv & Virtual Environments](http://docs.python-guide.org/en/latest/dev/virtualenvs/)
