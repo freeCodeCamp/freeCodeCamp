@@ -21,7 +21,7 @@ Add a <code>line-height</code> property to the <code>p</code> tag and set it to 
 ```yml
 tests:
   - text: Your code should set the <code>line-height</code> of the <code>p</code> tag to 25 pixels.
-    testString: 'assert($("p").css("line-height") == "25px", "Your code should set the <code>line-height</code> of the <code>p</code> tag to 25 pixels.");'
+    testString: assert($('p').css('line-height') == '25px', 'Your code should set the <code>line-height</code> of the <code>p</code> tag to 25 pixels.');
 
 ```
 
