@@ -71,7 +71,7 @@ const prPropsToGet = ['number', 'labels', 'user'];
       if (newLabels.length) {
         log.update(number, 'labels', newLabels);
         addLabels(number, newLabels, log);
-        await rateLimiter(1400);
+        await rateLimiter(process.env.RATELIMIT_INTERVAL | 1500);
       }
       else {
         log.update(number, 'labels', 'none added');
