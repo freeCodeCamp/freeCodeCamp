@@ -6,7 +6,7 @@ module.exports = (env = {}) => {
     mode: __DEV__ ? 'development' : 'production',
     entry: {
       'frame-runner': './src/client/frame-runner.js',
-      sass: './src/client/workers/sass.js'
+      'sass-compile': './src/client/workers/sass-compile.js'
     },
     devtool: __DEV__ ? 'inline-source-map' : 'source-map',
     output: {
