@@ -11,6 +11,8 @@ It is a good idea to make a habit out of commenting your functions, loops, and d
 
 Many developers have probably learned that it is much harder to go back through your code and comment it after you finish. It's always a good idea to label and comment your code as you go, so that you don't forget or mix up what certain variables or functions do.
 
+Think of Code documention as a history textbook. It allows current developers to keep tabs on their progress, as well as to educate future developers. Use it not only as a learning tool, but also as a reminder. As George Santayana once said, "Those who do not read history are doomed to repeat it!"
+
 ![An example of commenting in the real world](https://cdn-images-1.medium.com/max/1620/1*Pyxsc7Uixbitv5myywaA_Q.jpeg)
 
 <!-- The article goes here, in GitHub-flavored Markdown. Feel free to add YouTube videos, images, and CodePen/JSBin embeds  -->

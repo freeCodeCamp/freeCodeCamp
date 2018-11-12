@@ -16,7 +16,11 @@ git stash save "optional message for yourself"
 
 This saves your changes and reverts the working directory to what it looked like for the latest commit. Stashed changes are available from any branch in that repository.
 
-Note that changes you want to stash need to be on tracked files. If you created a new file and try to stash your changes, you may get the error `No local changes to save`.
+Note that changes you want to stash need to be on tracked files. If you created a new file and try to stash your changes, you may get the error `No local changes to save`. To tell git to track a new file you created, run the command:
+
+```shell
+git add <name of the new file>
+```
 
 ### View Stashed Changes
 To see what is in your stash, run the command:

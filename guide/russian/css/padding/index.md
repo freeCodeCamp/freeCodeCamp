@@ -1,8 +1,8 @@
 ---
 title: Padding
-localeTitle: набивка
+localeTitle: Отступ
 ---
-# набивка
+# Отступ
 
 Свойство `padding` CSS задает область заполнения на всех четырех сторонах элемента. Это свойство может использоваться для создания пространства вокруг контента (внутри границы). Это краткое описание, чтобы установить все отдельные paddings сразу: `padding-top` , `padding-right` , `padding-bottom` и `padding-left` . Значения определяются по часовой стрелке.
 
@@ -42,7 +42,7 @@ localeTitle: набивка
 
 Свойство прокладки в CSS определяет самую внутреннюю часть модели окна, создавая пространство вокруг содержимого элемента внутри любых определенных полей и / или границ.
 
-![Модель CSS Box](https://www.w3.org/TR/css3-box/box.png)
+  * ![Модель CSS Box](http://htmlbook.ru/files/images/css/css_padding_1.png)
 
 ## Поддержка браузера
 
@@ -55,3 +55,4 @@ localeTitle: набивка
 *   [W3C CSS Уровень 1](https://www.w3.org/TR/CSS1/#padding)
 *   [Веб-документы MDN](https://developer.mozilla.org/en-US/docs/Web/CSS/padding)
 *   [Трюки CSS](https://css-tricks.com/almanac/properties/p/padding/)
+*   [CSS на русском языке](http://htmlbook.ru/css/padding)
