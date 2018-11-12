@@ -75,7 +75,7 @@ export const babelTransformer = cond([
   [stubTrue, identity]
 ]);
 
-const sass = new WorkerExecutor('sass');
+const sassWorker = new WorkerExecutor('sass-compile');
 
 const htmlSassTransformCode = file => {
   const div = document.createElement('div');
@@ -84,7 +84,7 @@ const htmlSassTransformCode = file => {
   if (styleTags.length > 0) {
     return Promise.all([].map.call(styleTags, async style => {
       style.type = 'text/css';
-      style.innerHTML = await sass.execute(style.innerHTML, 2000);
+      style.innerHTML = await sassWorker.execute(style.innerHTML, 2000);
     })).then(() => (
       vinyl.transformContents(() => div.innerHTML, file)
     ));
