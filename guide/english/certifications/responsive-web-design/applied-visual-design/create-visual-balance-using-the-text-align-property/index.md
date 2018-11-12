@@ -19,7 +19,7 @@ Use the `text-align` property.
 **Solution ahead!**
 
 The following lines of code solves the challenge:
-```html
+```css
 h4 {
   text-align: center;
 }
