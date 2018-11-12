@@ -1,3 +1,4 @@
+/* closes and reopens an open PR with applicable comment */
 require('dotenv').config();
 const { owner, repo, fccBaseUrl, prBaseUrl } = require('./constants');
 const { octokitConfig, octokitAuth } = require('./octokitConfig');
@@ -19,4 +20,4 @@ const prOpenClose = async (number) => {
   })
 };
 
-exports.prOpenClose = prOpenClose;
+module.exports = prOpenClose;

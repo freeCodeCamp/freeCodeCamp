@@ -39,6 +39,4 @@ const getOpenPrRange = async () => {
   return [firstPR, lastPR];
 };
 
-exports.getOpenPrCount = getOpenPrCount;
-exports.getFirstPr = getFirstPr;
-exports.getOpenPrRange = getOpenPrRange;
+module.exports = { getOpenPrCount, getFirstPr, getOpenPrRange };

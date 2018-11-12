@@ -8,7 +8,6 @@ octokit.authenticate(octokitAuth);
 const addLabels = (number, labels, log) => {
   octokit.issues.addLabels({ owner, repo, number, labels })
   .then(() => {
-    log.update(number, true);
     console.log(`PR #${number} added ${JSON.stringify(labels)}\n`);
   })
   .catch((err) => {
@@ -18,4 +17,4 @@ const addLabels = (number, labels, log) => {
   })
 };
 
-exports.addLabels = addLabels;
+module.exports = { addLabels };

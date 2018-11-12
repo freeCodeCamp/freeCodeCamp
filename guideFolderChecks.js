@@ -84,7 +84,7 @@ const guideFolderChecks = (prFiles, user) => {
     return newErrors ? errorsFound.concat(newErrors) : errorsFound;
   }, []);
 
-  return createErrorMsg(prErrors, user);
+  return prErrors.length ? createErrorMsg(prErrors, user) : null;
 };
 
-exports.guideFolderChecks = guideFolderChecks;
+module.exports = { guideFolderChecks };

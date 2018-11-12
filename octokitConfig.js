@@ -10,8 +10,10 @@ exports.octokitConfig = {
     agent: undefined
 }
 
-exports.octokitAuth = {
+const octokitAuth = {
     type: 'basic',
     username: process.env.USERNAME,
     password: process.env.ACCESS_TOKEN
-}
+};
+
+module.exports = { octokitAuth };

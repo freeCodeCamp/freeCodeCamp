@@ -36,14 +36,18 @@ const prPropsToGet = ['number', 'labels', 'user'];
     for (let count = 0; count < openPRs.length; count++) {
       let { number, labels, user: { login: username } } = openPRs[count];
       const { data: prFiles } = await octokit.pullRequests.getFiles({ owner, repo, number });
-      log.add(number)
+      log.add(number, 'labels', 'comment');
       const labelsToAdd = {}; // holds potential labels to add based on file path
 
       const guideFolderErrorsComment = guideFolderChecks(prFiles, username);
       if (guideFolderErrorsComment) {
+        log.update(number, 'comment', guideFolderErrorsComment);
         const result = await addComment(number, guideFolderErrorsComment);
         await rateLimiter(1000);
         labelsToAdd['status: needs update'] = 1;
+      }
+      else {
+        log.update(number, 'comment', 'not added');
       }
 
       const existingLabels = labels.map(({ name }) => name);
@@ -65,11 +69,12 @@ const prPropsToGet = ['number', 'labels', 'user'];
       /* this next section only adds needed labels which are NOT currently on the PR. */
       const newLabels = Object.keys(labelsToAdd).filter(label => !existingLabels.includes(label));
       if (newLabels.length) {
+        log.update(number, 'labels', newLabels);
         addLabels(number, newLabels, log);
         await rateLimiter(1000);
       }
       else {
-        log.update(number, false);
+        log.update(number, 'labels', 'none added');
       }
       if (count % 25 === 0) {
         log.export()

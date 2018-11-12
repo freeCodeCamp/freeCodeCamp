@@ -38,4 +38,4 @@ const paginate = async function paginate (method, octokit, firstPR, lastPR, prPr
   return data;
 };
 
-exports.paginate = paginate;
+module.exports =  { paginate };

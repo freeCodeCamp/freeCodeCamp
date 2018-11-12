@@ -1,4 +1,4 @@
-exports.validLabels = {
+const validLabels = {
   arabic: 'language: Arabic',
   chinese: 'language: Chinese',
   portuguese: 'language: Portuguese',
@@ -8,3 +8,5 @@ exports.validLabels = {
   docs: 'scope: documentation',
   guide: 'scope: guide'
 };
+
+module.exports = { validLabels };

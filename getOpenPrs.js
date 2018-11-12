@@ -44,5 +44,4 @@ const getOpenPrs = async (firstPR, lastPR, prPropsToGet) => {
   return { firstPR, lastPR, openPRs };
 }
 
-exports.getOpenPrs = getOpenPrs;
-exports.getPrRange = getPrRange;
+module.exports = { getOpenPrs, getPrRange };

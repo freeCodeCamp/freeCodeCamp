@@ -27,12 +27,13 @@ class PrProcessingLog {
     saveToFile(this._logfile, JSON.stringify(log))
   }
 
-  add(prNum) {
-    this._prs[prNum] = null;
+  add(prNum, prop) {
+    this._prs[prNum] = {};
+    this._prs[prNum][prop] = null;
   }
 
-  update(prNum, status) {
-    this._prs[prNum] = status;
+  update(prNum, prop, value) {
+    this._prs[prNum][prop] = value;
   }
 
   start() {
@@ -45,4 +46,4 @@ class PrProcessingLog {
   }
 };
 
-exports.PrProcessingLog = PrProcessingLog;
+module.exports = { PrProcessingLog };

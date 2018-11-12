@@ -12,5 +12,4 @@ const openJSONFile = fileName => {
   return data;
 };
 
-exports.saveToFile = saveToFile;
-exports.openJSONFile = openJSONFile;
+module.exports = { saveToFile, openJSONFile };
