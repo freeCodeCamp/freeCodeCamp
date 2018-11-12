@@ -11,7 +11,7 @@ class PrProcessingLog {
     this._finish = null;
     this._prs = {};
     //path.resolve(__dirname, '../../../guide');
-    this._logfile = path.resolve(__dirname, './data/open-prs-processed.json');
+    this._logfile = path.resolve(__dirname, './work-logs/open-prs-processed.json');
   }
 
   import() {

@@ -1,6 +1,9 @@
 require('dotenv').config();
-const { owner, repo, fccBaseUrl, prBaseUrl } = require('./constants');
+
+const path = require('path');
 const fs = require('fs');
+
+const { owner, repo, fccBaseUrl, prBaseUrl } = require('./constants');
 const formatDate = require('date-fns/format');
 const { saveToFile, openJSONFile } = require('./fileFunctions');
 const { octokitConfig, octokitAuth } = require('./octokitConfig');
@@ -26,7 +29,7 @@ const errorsToFind = require('./failuresToFind.json');
     console.log(`# of PRs Retrieved: ${openPRs.length}`);
     console.log(`PR Range: ${firstPR} - ${lastPR}`);
     const now = formatDate(new Date(), 'YYYY-MM-DDTHHmmss');
-    const fileName = `data/openprs_statuses_urls_${firstPR}-${lastPR}_${now}.json`;
+    const fileName = path.resolve(__dirname, `./work-logs/openprs_statuses_urls_${firstPR}-${lastPR}_${now}.json`);
     saveToFile(fileName, JSON.stringify(openPRs));
     console.log(`Data saved in file: ${fileName}`);
 

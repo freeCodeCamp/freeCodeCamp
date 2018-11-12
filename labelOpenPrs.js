@@ -30,7 +30,7 @@ const prPropsToGet = ['number', 'labels', 'user'];
     console.log(`# of PRs Retrieved: ${openPRs.length}`);
     console.log(`PR Range: ${firstPR} - ${lastPR}`);
     const now = formatDate(new Date(), 'YYYY-MM-DDTHHmmss');
-    const fileName = path.resolve(__dirname, `./data/openprs_${firstPR}-${lastPR}_${now}.json`);
+    const fileName = path.resolve(__dirname, `./work-logs/openprs_${firstPR}-${lastPR}_${now}.json`);
     saveToFile(fileName, JSON.stringify(openPRs));
     console.log(`Data saved in file: ${fileName}`);
 
