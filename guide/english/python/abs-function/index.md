@@ -1,7 +1,7 @@
 ---
 title: Python Abs Function
 ---
-`abs()` is a built-in function in Python 3, to compute the absolute value of any number. The absolute value of a number "means only how far a number is from 0" <sup>1</sup> It takes one argument `x`. The argument can even be a <a href='https://docs.python.org/3.0/library/cmath.html' target='_blank' rel='nofollow'>complex number</a>, and in that case its <a href='http://www.mathcentre.ac.uk/resources/sigma%20complex%20number%20leaflets/sigma-complex9-2009-1.pdf' target='_blank' rel='nofollow'>modulus</a> is returned.
+`abs()` is a built-in function in Python 3, to compute the absolute value of any number. The absolute value of a number "means only how far a number is from 0" <sup>1</sup> It takes one argument `x`. The argument can even be a <a href='https://docs.python.org/3.0/library/cmath.html' target='_blank' rel='nofollow'>complex number</a>, and in that case its <a href='http://www.mathcentre.ac.uk/resources/sigma%20complex%20number%20leaflets/sigma-complex9-2009-1.pdf' target='_blank' rel='nofollow'>modulus</a> is returned.The argument may be a plain or long integer or a floating point number. If the argument is a complex number, its magnitude is returned.
 
 ## Argument
 
