@@ -10,7 +10,7 @@ localeTitle: Создание промежутка у столбца с помо
 <section id="description"> До сих пор в гридах, которые вы создавали, столбцы были рядом друг с другом. Иногда вам нужен промежуток между столбцами. Чтобы добавить промежуток между столбцами, используйте свойство <code>grid-column-gap</code> следующим образом: <blockquote> grid-column-gap: 10px; </blockquote> Пример задаёт 10px пустого пространства между всеми нашими столбцами. </section>
 
 ## Instructions
-<section id="instructions"> Задайте столбцам в гриде пространство <code>20px</code> . </section>
+<section id="instructions"> Задайте столбцам в гриде промежуток <code>20px</code> . </section>
 
 ## Tests
 <section id='tests'>
