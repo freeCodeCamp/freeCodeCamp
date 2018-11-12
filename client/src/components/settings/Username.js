@@ -137,7 +137,6 @@ class UsernameSettings extends Component {
       );
     }
     if (!validating && !isValidUsername) {
-      console.log(this.props, this.state);
       return (
         <FullWidthRow>
           <Alert bsStyle='warning'>Username not available</Alert>
