@@ -97,17 +97,22 @@ _Интервью с программистами: Секреты приземл
 *   [Wiley](https://www.wiley.com/en-id/Programming+Interviews+Exposed:+Secrets+to+Landing+Your+Next+Job,+2nd+Edition-p-9780470121672)
 *   ISBN: 978-0-470-12167-2
 
-## Джава
+## Java
 
-_Голова первая Ява_ Кэти Сьерра и Берт Бейтс
+Head First Java, 2nd Edition Кэти Сьерра и Берт Бейтс
 
 *   [Amazon Smile](https://smile.amazon.com/Head-First-Java-Kathy-Sierra/dp/0596009208)
 *   ISBN-13: 978-0596009205
 
-_Эффективная Java от Джошуа Блоха_
+Effective Java 3rd Edition от Джошуа Блоха
 
 *   [Amazon Smile](https://smile.amazon.com/Effective-Java-3rd-Joshua-Bloch/dp/0134685997)
 *   ISBN-13: 978-0134685991
+
+Core Java Volume I--Fundamentals, 1 (11th Edition) от Кей Хорстманна
+
+*   [Amazon Smile](https://smile.amazon.com/Core-Java-I-Fundamentals-1-11th/dp/0135166306)
+*   ISBN-13: 978-0135166307
 
 ## JavaScript
 

@@ -32,7 +32,7 @@ How many distinct valid colourings are there for the above configuration?
 ```yml
 tests:
   - text: <code>euler189()</code> should return 10834893628237824.
-    testString: 'assert.strictEqual(euler189(), 10834893628237824, "<code>euler189()</code> should return 10834893628237824.");'
+    testString: assert.strictEqual(euler189(), 10834893628237824, '<code>euler189()</code> should return 10834893628237824.');
 
 ```
 
