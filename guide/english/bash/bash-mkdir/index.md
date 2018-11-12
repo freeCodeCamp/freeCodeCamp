@@ -4,10 +4,10 @@ title: Bash mkdir
 
 ## Bash command: mkdir
 
-**Creates a directory**
+**Creates a directory(ies), if they do not already exist.**
 
 ```
-mkdir directory_name
+mkdir [options] directory_name
 ```
 
 Make directory(ies) with the provided name if they do not already exist.

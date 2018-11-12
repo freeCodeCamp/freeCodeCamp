@@ -33,7 +33,7 @@ class NotFoundPage extends React.Component {
       <Layout>
         <div className='notfound-page-wrapper'>
           <Helmet title='Page Not Found | freeCodeCamp' />
-          <img alt='learn to code at freeCodeCamp 404' src={notFoundLogo} />
+          <img alt='404 Not Found' src={notFoundLogo} />
           <h1>NOT FOUND</h1>
           {this.state.randomQuote ? (
             <div>
