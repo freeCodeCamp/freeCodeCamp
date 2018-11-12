@@ -86,7 +86,7 @@ const result = {
 function makeList(arr) {
   "use strict";
   
-  const resultDisplayArray = result.failure.map(val => `<li class="text-warning">${val}</li>`);
+  const resultDisplayArray = arr.map(val => `<li class="text-warning">${val}</li>`);
   
   return resultDisplayArray;
 }
