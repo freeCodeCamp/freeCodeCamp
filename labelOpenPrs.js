@@ -43,7 +43,7 @@ const prPropsToGet = ['number', 'labels', 'user'];
       if (guideFolderErrorsComment) {
         log.update(number, 'comment', guideFolderErrorsComment);
         const result = await addComment(number, guideFolderErrorsComment);
-        await rateLimiter(1400);
+        await rateLimiter(process.env.RATELIMIT_INTERVAL | 1500);
         labelsToAdd['status: needs update'] = 1;
       }
       else {
