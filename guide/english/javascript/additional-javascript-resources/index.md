@@ -82,6 +82,7 @@ title: JavaScript Tutorials and Other Resources
 *   [Plunker](https://plnkr.co)
 *   [AWS Cloud 9](https://aws.amazon.com/cloud9) - Cloud Based IDE by Amazon
 *   [Glitch](https://glitch.com/)
+*   [Babel](https://babeljs.io/repl) - An easy way to see how Babel will convert your ECMAScript 2015+ code into a backwards compatible version of JS.
 
 
 ## Coding Challenges and Exercises
