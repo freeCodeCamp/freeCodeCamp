@@ -3,12 +3,12 @@ const { saveToFile } = require('./fileFunctions');
 
 class PrProcessingLog {
   constructor() {
-    this._start = null,
-    this._lastUpdate = null,
-    this._lastPRlogged = null,
-    this._finish = null,
-    this._prs = {}
-    this._logfile = 'data/open-prs-processed.json'
+    this._start = null;
+    this._lastUpdate = null;
+    this._lastPRlogged = null;
+    this._finish = null;
+    this._prs = {};
+    this._logfile = 'data/open-prs-processed.json';
   }
 
   import() {
