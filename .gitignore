@@ -79,3 +79,4 @@ typings/
 # CUSTOM FILES
 
 # local-work-logs
+work-logs/*
