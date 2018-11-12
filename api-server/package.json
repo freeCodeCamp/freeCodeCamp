@@ -47,7 +47,6 @@
     "express-session": "^1.12.1",
     "express-state": "^1.2.0",
     "express-validator": "^5.0.3",
-    "fetchr": "^0.5.37",
     "googleapis": "^16.1.0",
     "helmet": "^3.1.0",
     "helmet-csp": "^2.1.0",
