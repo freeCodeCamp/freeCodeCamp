@@ -36,7 +36,7 @@ tests:
   - text: <code>class</code> keyword was used.
     testString: getUserInput => assert(getUserInput('index').match(/class/g),'<code>class</code> keyword was used.');
   - text: <code>Thermostat</code> can be instantiated.
-    testString: assert(() => {const t = new Thermostat(32); return typeof t === 'object' && t.temperature === 0;}, '<code>Thermostat</code> can be instantiated.');
+    testString: assert((() => {const t = new Thermostat(32); console.log(t); return typeof t === 'object' && t.temperature === 0;})(), '<code>Thermostat</code> can be instantiated.');
 
 ```
 
@@ -72,6 +72,28 @@ temp = thermos.temperature; // 26 in C
 <section id='solution'>
 
 ```js
-// solution required
+function makeClass() {
+  'use strict';
+  /* Alter code below this line */
+  class Thermostat {
+    
+    constructor(temperature) {
+     this._temperature = (5 / 9) * (temperature - 32);
+    }
+    get temperature() {
+     return this._temperature;
+    }
+    set temperature(temperature) {
+     this._temperature = temperature;
+    }
+  }
+  /* Alter code above this line */
+  return Thermostat;
+}
+const Thermostat = makeClass();
+const thermos = new Thermostat(76); // setting in Fahrenheit scale
+let temp = thermos.temperature; // 24.44 in C
+thermos.temperature = 26;
+temp = thermos.temperature; // 26 in C
 ```
 </section>
