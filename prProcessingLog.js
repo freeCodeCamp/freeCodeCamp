@@ -1,3 +1,4 @@
+const path = require('path');
 const fs = require('fs');
 const { saveToFile } = require('./fileFunctions');
 
@@ -8,7 +9,8 @@ class PrProcessingLog {
     this._lastPRlogged = null;
     this._finish = null;
     this._prs = {};
-    this._logfile = 'data/open-prs-processed.json';
+    //path.resolve(__dirname, '../../../guide');
+    this._logfile = path.resolve(__dirname, './data/open-prs-processed.json');
   }
 
   import() {

@@ -42,7 +42,9 @@ const prPropsToGet = ['number', 'labels', 'user'];
       const guideFolderErrorsComment = guideFolderChecks(prFiles, username);
       if (guideFolderErrorsComment) {
         log.update(number, 'comment', guideFolderErrorsComment);
-        const result = await addComment(number, guideFolderErrorsComment);
+        if (process.env.PRODUCTION_RUN) {
+          const result = await addComment(number, guideFolderErrorsComment);
+        }
         await rateLimiter(process.env.RATELIMIT_INTERVAL | 1500);
         labelsToAdd['status: needs update'] = 1;
       }
@@ -70,7 +72,9 @@ const prPropsToGet = ['number', 'labels', 'user'];
       const newLabels = Object.keys(labelsToAdd).filter(label => !existingLabels.includes(label));
       if (newLabels.length) {
         log.update(number, 'labels', newLabels);
-        addLabels(number, newLabels, log);
+        if (process.env.PRODUCTION_RUN) {
+          addLabels(number, newLabels, log);
+        }
         await rateLimiter(process.env.RATELIMIT_INTERVAL | 1500);
       }
       else {
