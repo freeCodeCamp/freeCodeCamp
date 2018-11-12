@@ -88,7 +88,7 @@ const IndexPage = () => (
       <Spacer />
       <h2>As featured in:</h2>
       <Image
-        alt="companies featuring freeCodeCamp"
+        alt='companies featuring freeCodeCamp'
         className='img-center'
         responsive={true}
         src='https://s3.amazonaws.com/freecodecamp/as-seen-on.png'
@@ -212,7 +212,32 @@ const IndexPage = () => (
           <h2 className='black-text'>D3.js</h2>
         </Col>
       </Row>
+      <hr />
       <Spacer />
+      <h3>
+        freeCodeCamp is a donor-supported tax-exempt 501(c)(3) nonprofit
+        organization (United States Federal Tax Identification Number:
+        82-0779546)
+      </h3>
+      <p className='large-p'>
+        Our mission: to help people learn to code for free. We accomplish this
+        by creating thousands of videos, articles, and interactive coding
+        lessons - all freely available to the public. We also have thousands of
+        freeCodeCamp study groups around the world.
+      </p>
+      <p className='large-p'>
+        Donations to freeCodeCamp go toward our education initiatives, and help
+        pay for servers, services, and staff. You can{' '}
+        <a
+          className='large-p underlined-link'
+          href='https://donate.freecodecamp.org/'
+          rel='noopener noreferrer'
+          target='_blank'
+          >
+          make a tax-deductible donation here
+        </a>
+      </p>
+      .<Spacer />
       <BigCallToAction />
       <Spacer />
       <Spacer />
