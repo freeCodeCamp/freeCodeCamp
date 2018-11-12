@@ -11,7 +11,7 @@ const { addLabels } = require('./addLabels');
 const { guideFolderChecks } = require('./guideFolderChecks');
 const { addComment } = require('./addComment');
 
-console.log(octokit.authenticate(octokitAuth));
+octokit.authenticate(octokitAuth);
 
 const labelsAdder = (number, existingLabels, labelsToAdd, log) => {
   const newLabels = Object.keys(labelsToAdd).filter(label => !existingLabels.includes(label));
