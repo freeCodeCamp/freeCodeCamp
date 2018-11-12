@@ -126,16 +126,26 @@ export default function(UserIdent) {
             created: new Date(),
             ttl: user.constructor.settings.ttl
           });
-          const updateUser = user.update$({
-            email: email,
-            emailVerified: true,
-            emailAuthLinkTTL: null,
-            emailVerifyTTL: null
-          });
+          const updateUser = new Promise((resolve, reject) =>
+            user.updateAttributes(
+              {
+                email: email,
+                emailVerified: true,
+                emailAuthLinkTTL: null,
+                emailVerifyTTL: null
+              },
+              err => {
+                if (err) {
+                  return reject(err);
+                }
+                return resolve();
+              }
+            )
+          );
           return Observable.combineLatest(
             Observable.of(user),
             createToken,
-            updateUser,
+            Observable.fromPromise(updateUser),
             (user, token) => ({ user, token })
           );
         })

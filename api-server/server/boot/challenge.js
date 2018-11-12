@@ -4,7 +4,7 @@
  * a db migration to fix all completedChallenges
  *
  */
-
+import { Observable } from 'rx';
 import _ from 'lodash';
 import debug from 'debug';
 import accepts from 'accepts';
@@ -87,9 +87,6 @@ function buildUserUpdate(user, challengeId, _completedChallenge, timezone) {
       timezone: userTimezone
     };
   }
-
-  log('user update data', updateData);
-
   return {
     alreadyCompleted,
     updateData,
@@ -215,21 +212,24 @@ export default async function bootChallenge(app, done) {
         });
 
         const points = alreadyCompleted ? user.points : user.points + 1;
-
-        return user
-          .update$(updateData)
-          .doOnNext(() => user.manualReload())
-          .doOnNext(({ count }) => log('%s documents updated', count))
-          .map(() => {
-            if (type === 'json') {
-              return res.json({
-                points,
-                alreadyCompleted,
-                completedDate
-              });
+        const updatePromise = new Promise((resolve, reject) =>
+          user.updateAttributes(updateData, err => {
+            if (err) {
+              return reject(err);
             }
-            return res.sendStatus(200);
-          });
+            return resolve();
+          })
+        );
+        return Observable.fromPromise(updatePromise).map(() => {
+          if (type === 'json') {
+            return res.json({
+              points,
+              alreadyCompleted,
+              completedDate
+            });
+          }
+          return res.sendStatus(200);
+        });
       })
       .subscribe(() => {}, next);
   }
@@ -238,6 +238,8 @@ export default async function bootChallenge(app, done) {
     req.checkBody('id', 'id must be an ObjectId').isMongoId();
     const type = accepts(req).type('html', 'json', 'text');
     const errors = req.validationErrors(true);
+
+    const { user } = req;
 
     if (errors) {
       if (type === 'json') {
@@ -248,35 +250,39 @@ export default async function bootChallenge(app, done) {
       return res.sendStatus(403);
     }
 
-    return req.user
+    return user
       .getCompletedChallenges$()
       .flatMap(() => {
         const completedDate = Date.now();
         const { id, solution, timezone, files } = req.body;
 
         const { alreadyCompleted, updateData } = buildUserUpdate(
-          req.user,
+          user,
           id,
           { id, solution, completedDate, files },
           timezone
         );
 
-        const user = req.user;
         const points = alreadyCompleted ? user.points : user.points + 1;
 
-        return user
-          .update$(updateData)
-          .doOnNext(({ count }) => log('%s documents updated', count))
-          .map(() => {
-            if (type === 'json') {
-              return res.json({
-                points,
-                alreadyCompleted,
-                completedDate
-              });
+        const updatePromise = new Promise((resolve, reject) =>
+          user.updateAttributes(updateData, err => {
+            if (err) {
+              return reject(err);
             }
-            return res.sendStatus(200);
-          });
+            return resolve();
+          })
+        );
+        return Observable.fromPromise(updatePromise).map(() => {
+          if (type === 'json') {
+            return res.json({
+              points,
+              alreadyCompleted,
+              completedDate
+            });
+          }
+          return res.sendStatus(200);
+        });
       })
       .subscribe(() => {}, next);
   }
@@ -329,20 +335,24 @@ export default async function bootChallenge(app, done) {
           completedChallenge
         );
 
-        return user
-          .update$(updateData)
-          .doOnNext(() => user.manualReload())
-          .doOnNext(({ count }) => log('%s documents updated', count))
-          .doOnNext(() => {
-            if (type === 'json') {
-              return res.send({
-                alreadyCompleted,
-                points: alreadyCompleted ? user.points : user.points + 1,
-                completedDate: completedChallenge.completedDate
-              });
+        const updatePromise = new Promise((resolve, reject) =>
+          user.updateAttributes(updateData, err => {
+            if (err) {
+              return reject(err);
             }
-            return res.status(200).send(true);
-          });
+            return resolve();
+          })
+        );
+        return Observable.fromPromise(updatePromise).doOnNext(() => {
+          if (type === 'json') {
+            return res.send({
+              alreadyCompleted,
+              points: alreadyCompleted ? user.points : user.points + 1,
+              completedDate: completedChallenge.completedDate
+            });
+          }
+          return res.status(200).send(true);
+        });
       })
       .subscribe(() => {}, next);
   }
@@ -376,19 +386,24 @@ export default async function bootChallenge(app, done) {
           completedChallenge
         );
 
-        return user
-          .update$(updateData)
-          .doOnNext(({ count }) => log('%s documents updated', count))
-          .doOnNext(() => {
-            if (type === 'json') {
-              return res.send({
-                alreadyCompleted,
-                points: alreadyCompleted ? user.points : user.points + 1,
-                completedDate: completedChallenge.completedDate
-              });
+        const updatePromise = new Promise((resolve, reject) =>
+          user.updateAttributes(updateData, err => {
+            if (err) {
+              return reject(err);
             }
-            return res.status(200).send(true);
-          });
+            return resolve();
+          })
+        );
+        return Observable.fromPromise(updatePromise).doOnNext(() => {
+          if (type === 'json') {
+            return res.send({
+              alreadyCompleted,
+              points: alreadyCompleted ? user.points : user.points + 1,
+              completedDate: completedChallenge.completedDate
+            });
+          }
+          return res.status(200).send(true);
+        });
       })
       .subscribe(() => {}, next);
   }
