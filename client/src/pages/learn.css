@@ -16,3 +16,7 @@
 .learn-page-wrapper p {
   margin-bottom: 0.75rem;
 }
+
+#learn-app-wrapper{
+  margin: 0 1em;
+}
