@@ -8,9 +8,9 @@ SSH (**S**ecure **SH**ell) is a secure method of remotely connecting to a Linux 
 
 The basic syntax of the command is `ssh username@hostname`. 
 
-Hostname can be either an IP address or a FQDN. 
-'username@' can be excluded if the user currently logged into the shell has the same username as the desired user on the remote system.
-One thing to note, if the server is configured to listen to any port other than `22`, then you have to use `-p` option to specify the port. For example: `ssh -p 2024 123.456.789.012`.
+* Hostname can be either an IP address or a FQDN. 
+* 'username@' can be excluded if the user currently logged into the shell has the same username as the desired user on the remote system.
+* if the server is configured to listen to any port other than `22`, then you have to use `-p` option to specify the port. For example: `ssh -p 2024 123.456.789.012`.
 
 SSH can rely on password-based authentication or key-based authentication. Password-based authentication is becoming less common as cloud solutions such as Amazon Web Services, Microsoft Azure, and Google Cloud Platform promote the usage of keys. If a system is configured for password-based authentication, once the connection is opened the system will prompt the user for the password. If the system is configured to use keys, the key can be added to the ssh-agent (more below) or specified with the -i switch like so: `ssh -i my_private_key.pem username@hostname`.
 
