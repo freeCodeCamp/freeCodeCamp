@@ -17,7 +17,7 @@ localeTitle: Использование CSS Grid для изменения ра�
 
 ```yml
 tests:
-  - text: 'класс <code>container</code> должен иметь свойство <code>grid-template-columns</code> которое имеет три столбца со следующими ширинами: <code>1fr, 100px, and 2fr</code> .'
+  - text: 'класс <code>container</code> должен иметь свойство <code>grid-template-columns</code> , которое задаёт три столбца шириной: <code>1fr, 100px, and 2fr</code> .'
     testString: 'assert(code.match(/.container\s*?{[\s\S]*grid-template-columns\s*?:\s*?1fr\s*?100px\s*?2fr\s*?;[\s\S]*}/gi), "<code>container</code> class should have a <code>grid-template-columns</code> property that has three columns with the following widths: <code>1fr, 100px, and 2fr</code>.");'
 
 ```
