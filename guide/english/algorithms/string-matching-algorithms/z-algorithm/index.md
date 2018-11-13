@@ -1,4 +1,5 @@
-Z Algorithm 
+---
+title: Z Algorithm 
 ---
 
 **Z algorithm** is used to find all occurrence of a **pattern P** in a **string T** similar to KMP algorithm but this is easier to understand than others.
@@ -46,7 +47,7 @@ We have to maintain an interval [L, R] which is the interval with max R such tha
 Steps for maintaining this interval are as follows – 
 
 1) If i > R then there is no prefix substring that starts before i and ends after i, so we reset L and R and compute new [L,R] by comparing 
-   S[0..] to str[i..] and get Z[i] (= R-L+1).
+   S[0] to str[i] and get Z[i] (= R-L+1).
 
 2) If i <= R then let K = i-L,  now Z[i] >= min(Z[K], R-i+1)  because S[i..] matches with S[K..] for atleast R-i+1 characters (they are in
    [L,R] interval which we know is a prefix substring).     
