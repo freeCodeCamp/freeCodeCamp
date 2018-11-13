@@ -1,9 +1,10 @@
+---
+title: Tar command
+---
+
 # Tar-command
 
-
 Command used for creating .tar.gz or .tgz archives or extracting .tar.gz or .tgz archives
-
-
 
 ```
 tar -czvf ../archive_name.tar.gz /path/to/directory_or_file
