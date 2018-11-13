@@ -1,45 +1,18 @@
 ---
 title: Introducing Inline Styles
 ---
+
+![:triangular_flag_on_post:](https://forum.freecodecamp.com/images/emoji/emoji_one/triangular_flag_on_post.png?v=3 ":triangular_flag_on_post:") Remember to use <a>**`Read-Search-Ask`**</a> if you get stuck. Try to pair program ![:busts_in_silhouette:](https://forum.freecodecamp.com/images/emoji/emoji_one/busts_in_silhouette.png?v=3 ":busts_in_silhouette:") and write your own code ![:pencil:](https://forum.freecodecamp.com/images/emoji/emoji_one/pencil.png?v=3 ":pencil:")
+
 ## Introducing Inline Styles
 
-## Solution 
-This one can be a little tricky because JSX is very similar to HTML but **NOT the same**.
+## Spoiler Alert!
 
-Let's walkthrough the steps so that you understand the difference. 
-First set your style tag to a **JavaScript object**.
+![warning sign](//discourse-user-assets.s3.amazonaws.com/original/2X/2/2d6c412a50797771301e7ceabd554cef4edcd74d.gif)
 
-```react.js
-class Colorful extends React.Component {
-  render() {
-    return (
-      <div style={{}}>
-        Big Red
-      </div>
-    );
-  }
-};
-```
-Now you have your style tag set to an empty object. Notice how there are two sets of curly braces. This is an important difference between JSX and HTML.<br>
+**Solution ahead!**
 
-Second, let's set the color to red. 
-
-```react.js
-class Colorful extends React.Component {
-  render() {
-    return (
-      <div style={{ color: 'red' }}>
-        Big Red
-      </div>
-    );
-  }
-};
-```
-
-Finally, let's set the font size to 72px. 
-
-### Spoiler
-```react.js
+```jsx
 class Colorful extends React.Component {
   render() {
     return (
@@ -51,5 +24,6 @@ class Colorful extends React.Component {
 };
 ```
 
+#### NOTE
 Notice how the JSX attribute is **camelCase**. This is another important difference to remember about JSX.
 Additionally, you probably noticed that there is no unit. In JSX, when setting the fontSize attribute the **unit is optional** and will automatically be set to px if not set manually. 
