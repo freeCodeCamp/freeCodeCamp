@@ -54,6 +54,11 @@ On Debian based GNU/Linux distros, you can install by :
 sudo apt install php
 ```
 
+On Centos 6 or 7 you can install by :
+```bash
+sudo yum install php
+```
+
 After installing you can run any PHP files by simply doing this in terminal :
 ```
 php file.php
@@ -106,4 +111,4 @@ PHP is [well documented](http://php.net/docs.php). The [official docs](http://ph
 
 - [Tizag.com PHP Tutorial](http://www.tizag.com/phpT/): still-relevant tutorials for getting started with PHP
 - [Awesome PHP](https://github.com/ziadoz/awesome-php): a curated list of PHP libraries, resources, and "shiny things"
-- [Laracasts.com](https://laracasts.com/): a membership website to learn web application development with PHP
+- [Laracasts.com](https://laracasts.com/): a membership website to learn web application development with PHP, comes with a free getting starting guide.

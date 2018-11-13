@@ -120,7 +120,7 @@ Docker by default takes space from **/** drive of host system to store data. Ove
 Let the partition created is **mypart**
 - Then, run following command
 `$ docker run –it -v /mypart:/data centos`
-  - **mypart** is a partition in base system and **data** is the folder where docker will store it's data.
+  - **mypart** is a partition in base system and **data** is the folder where docker will store its data.
   - **v** - volume
 
 ### Attaching dvd to a container

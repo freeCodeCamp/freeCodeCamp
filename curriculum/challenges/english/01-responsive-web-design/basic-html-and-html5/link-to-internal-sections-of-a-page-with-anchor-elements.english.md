@@ -7,7 +7,7 @@ videoUrl: 'https://scrimba.com/p/pVMPUv/cyrDRUL'
 
 ## Description
 <section id='description'>
-Anchor elements can also be used to create internal links to jump to different sections within a webpage.
+<code>anchor</code> elements can also be used to create internal links to jump to different sections within a webpage.
 To create an internal link, you assign a link's <code>href</code> attribute to a hash symbol <code>#</code> plus the value of the <code>id</code> attribute for the element that you want to internally link to, usually further down the page. You then need to add the same <code>id</code> attribute to the element you are linking to. An <code>id</code> is an attribute that uniquely describes an element.
 Below is an example of an internal anchor link and its target element:
 <blockquote>&lt;a href="#contacts-header"&gt;Contacts&lt;/a&gt;<br>...<br>&lt;h2 id="contacts-header"&gt;Contacts&lt;/h2&gt;</blockquote>

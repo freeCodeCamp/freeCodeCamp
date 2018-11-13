@@ -1,7 +1,7 @@
 ---
 title: Fractran
 id: 5a7dad05be01840e1778a0d1
-challengeType: 3
+challengeType: 5
 ---
 
 ## Description

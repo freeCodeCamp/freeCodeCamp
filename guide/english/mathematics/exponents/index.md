@@ -2,7 +2,7 @@
 title: Exponents
 ---
 ## Exponents                                                           
-An exponent is shorthand for the the number of times a number is multipled by itself.  It is often denoted with a superscript, karat, or with "to the power of" such as:
+An exponent is shorthand for the the number of times a number is multiplied by itself.  It is often denoted with a superscript, karat, or with "to the power of" such as:
 
 - 2<sup>3</sup>
 - 2^3
@@ -10,7 +10,7 @@ An exponent is shorthand for the the number of times a number is multipled by it
 
 In this example, 3 is the exponent. 
 
-To compute the value of 2<sup>3</sup>, you would multiple 2 to itself 3 times: 2 * 2 * 2.  This evalutes to 8.
+To compute the value of 2<sup>3</sup>, you would multiply 2 to itself 3 times: 2 * 2 * 2. This evaluates to 8.
 
 Common exponents have special names:
 - Exponent of 2 is often referred to as squared.  So 3<sup>2</sup> is referred to as 3 squared, evaluating to 9.
