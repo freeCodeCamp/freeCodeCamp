@@ -2,6 +2,8 @@ import { createAction, handleActions } from 'redux-actions';
 import { reducer as reduxFormReducer } from 'redux-form';
 
 import { createTypes } from '../../../../utils/stateManagement';
+import { createAsyncTypes } from '../../../utils/createTypes';
+
 import { createPoly } from '../utils/polyvinyl';
 import challengeModalEpic from './challenge-modal-epic';
 import completionEpic from './completion-epic';
@@ -11,11 +13,14 @@ import createQuestionEpic from './create-question-epic';
 import codeStorageEpic from './code-storage-epic';
 import currentChallengeEpic from './current-challenge-epic';
 
+import { createIdToNameMapSaga } from './id-to-name-map-saga';
+
 const ns = 'challenge';
 export const backendNS = 'backendChallenge';
 
 const initialState = {
   challengeFiles: {},
+  challengeIdToNameMap: {},
   challengeMeta: {
     id: '',
     nextChallengePath: '/'
@@ -33,16 +38,6 @@ const initialState = {
   projectFormValues: {},
   successMessage: 'Happy Coding!'
 };
-
-export const epics = [
-  challengeModalEpic,
-  codeLockEpic,
-  completionEpic,
-  createQuestionEpic,
-  executeChallengeEpic,
-  codeStorageEpic,
-  currentChallengeEpic
-];
 
 export const types = createTypes(
   [
@@ -76,10 +71,24 @@ export const types = createTypes(
     'executeChallenge',
     'resetChallenge',
     'submitChallenge',
-    'submitComplete'
+    'submitComplete',
+
+    ...createAsyncTypes('fetchIdToNameMap')
   ],
   ns
 );
+
+export const epics = [
+  challengeModalEpic,
+  codeLockEpic,
+  completionEpic,
+  createQuestionEpic,
+  executeChallengeEpic,
+  codeStorageEpic,
+  currentChallengeEpic
+];
+
+export const sagas = [...createIdToNameMapSaga(types)];
 
 export const createFiles = createAction(types.createFiles, challengeFiles =>
   Object.keys(challengeFiles)
@@ -96,6 +105,13 @@ export const createFiles = createAction(types.createFiles, challengeFiles =>
       {}
     )
 );
+
+export const fetchIdToNameMap = createAction(types.fetchIdToNameMap);
+export const fetchIdToNameMapComplete = createAction(
+  types.fetchIdToNameMapComplete
+);
+export const fetchIdToNameMapError = createAction(types.fetchIdToNameMapError);
+
 export const createQuestion = createAction(types.createQuestion);
 export const initTests = createAction(types.initTests);
 export const updateTests = createAction(types.updateTests);
@@ -131,6 +147,8 @@ export const submitChallenge = createAction(types.submitChallenge);
 export const submitComplete = createAction(types.submitComplete);
 
 export const challengeFilesSelector = state => state[ns].challengeFiles;
+export const challengeIdToNameMapSelector = state =>
+  state[ns].challengeIdToNameMap;
 export const challengeMetaSelector = state => state[ns].challengeMeta;
 export const challengeTestsSelector = state => state[ns].challengeTests;
 export const consoleOutputSelector = state => state[ns].consoleOut;
@@ -149,6 +167,10 @@ export const projectFormValuesSelector = state =>
 
 export const reducer = handleActions(
   {
+    [types.fetchIdToNameMapComplete]: (state, { payload }) => ({
+      ...state,
+      challengeIdToNameMap: payload
+    }),
     [types.createFiles]: (state, { payload }) => ({
       ...state,
       challengeFiles: payload
