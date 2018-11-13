@@ -15,6 +15,8 @@ const nameify = utils.nameify;
 const arrToString = arr =>
   Array.isArray(arr) ? arr.join('\n') : _.toString(arr);
 
+exports.localeChallengesRootDir = localeChallengesRootDir;
+
 exports.replaceChallengeNode = function replaceChallengeNode(fullFilePath) {
   const relativeChallengePath = fullFilePath.replace(
     localeChallengesRootDir + path.sep,

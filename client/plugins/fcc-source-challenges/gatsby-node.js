@@ -1,7 +1,4 @@
-const path = require('path');
 const chokidar = require('chokidar');
-
-const curriculumPath = path.resolve(__dirname, '../../../curriculum');
 
 const { createChallengeNode } = require('./create-Challenge-nodes');
 
@@ -9,7 +6,7 @@ exports.sourceNodes = function sourceChallengesSourceNodes(
   { actions, reporter },
   pluginOptions
 ) {
-  const { source, onSourceChange } = pluginOptions;
+  const { source, onSourceChange, curriculumPath } = pluginOptions;
   if (typeof source !== 'function') {
     reporter.panic(`
     "source" is a required option for fcc-source-challenges. It must be a
@@ -20,6 +17,12 @@ exports.sourceNodes = function sourceChallengesSourceNodes(
     reporter.panic(`
     "onSourceChange" is a required option for fcc-source-challenges. It must be
     a function that delivers a new challenge object to the plugin
+    `);
+  }
+  if (typeof curriculumPath !== 'string') {
+    reporter.panic(`
+    "curriculumPath" is a required option for fcc-source-challenges. It must be
+    a path to a curriculum directory
     `);
   }
   const { createNode } = actions;
