@@ -50,7 +50,7 @@ Can be used for:
 
 `text-align: justify;`
 
-Full-justified text is tricky to recommend for body text, as large gaps can appear between words in some lines. However, skilled desgigners can make beautiful use of it.
+Full-justified text is tricky to recommend for body text, as large gaps can appear between words in some lines. However, skilled designers can make beautiful use of it.
 
 Can be used for:
 * Captions
