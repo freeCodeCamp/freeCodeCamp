@@ -14,11 +14,9 @@
   "version": "0.0.0-next.4",
   "main": "lib.js",
   "scripts": {
-    "build": "gulp build",
     "develop": "gulp",
     "format": "prettier --write es5 './**/*.{js,json}' && npm run lint",
     "lint": "eslint ./**/*.js --fix",
-    "prepare": "npm run build",
     "repack": "babel-node ./repack.js",
     "semantic-release": "semantic-release",
     "test": "mocha --delay --reporter progress --bail",
