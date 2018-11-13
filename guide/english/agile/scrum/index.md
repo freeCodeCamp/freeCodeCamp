@@ -17,13 +17,14 @@ The practice revolves around
 - Many organizations have opted for Scrum because unlike the Waterfall model, it ensures a deliverable at the end of each Sprint.
 
 ## Artifacts
-- Sprint: It is the time duration, mostly in weeks, for which a Team works to achieve or create a deliverable. A deliverable can be defined as a piece of code of a fragment of the Final Product which the team wants to achieve. Scrum advises keeping the duration of a Sprint between 2-4 weeks.
+- Sprint: It is the time duration, mostly in weeks, for which a Team works to achieve or create a deliverable. A deliverable can be defined as a piece of code or fragment of the Final Product which the team wants to achieve. Scrum advises to keep the duration of a Sprint between 2-4 weeks.
 - Product Backlog: It is the list of tasks a Team is supposed to finish within the current Sprint. It is decided by the Product Owner, in agreement with the Management as well as Delivery Team.
 
 ## Roles
 - Product Owner(PO): The ONLY Accountable person to the Management. PO decides what goes in or out of the Product Backlog.
-- Delivery Team: They are required to work in accordance with the tasks set by their PO in the product backlog and deliver the required deliverable at the end of the sprint.
-- Scrum Masters: - Scrum Master's has to strictly adhere to Scrum Guide and make the team understand the need to adhere to Scrum guide when following Scrum. It is a Scrum Master's job to ensure all Scrum ceremonies being conducted on time and participated by all the required people as per the scrum guide. The SM has to ensure that the Daily Scrum is conducted regularly and actively participated by the team.
+- Delivery Team: They are required to work in accordance with the tasks set by their PO in the product backlog and deliver the required delivarable at the end of the sprint.
+- Scrum Masters(SM): - Scrum Masters have to strictly adhere to the Scrum Guide and make the team understand the need to adhere to Scrum Guide when following Scrum. It is a Scrum Master's job to ensure all Scrum ceremonies being conducted on time and participated by all the required people as per the Scrum Guide. The SM has to ensure that the Daily Scrum is conducted regularly and actively participated by the team.
+
 
 #### More Information:
 

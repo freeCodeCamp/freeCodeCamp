@@ -9,7 +9,7 @@ First announced only for OS X, at Apple's Worldwide Developers Conference in 200
 ## Overview
 Unity is an all purpose game engine that supports 2D and 3D graphics, drag and drop functionality and scripting through [C#](https://guide.freecodecamp.org/csharp).
 
-Unity is particularly popular for mobile game development and much of their focus is on mobile platforms. Unity3D's 2D pipeline is a more recent addition to the engine, and is less mature than the 3D pipeline. Despite this Unity is an adaquate platform for developing 2D games even when compared to other dedicated 2D engines, particularly if you plan to release the game across multiple mobile devices.
+Unity is particularly popular for mobile game development and much of their focus is on mobile platforms. Unity3D's 2D pipeline is a more recent addition to the engine, and is less mature than the 3D pipeline. Despite this Unity is an adaquate platform for developing 2D games even when compared to other dedicated 2D engines, particularly if you plan to release the game across multiple mobile devices due to its ease of access of building for different platforms.
 
 Unity is also a good choice for VR development, although VR is a very small market at the moment. The mobile and PSVR markets are the largest in VR, and Unity is already well positioned to port games to many platforms such as PS4 and PC, or many different mobile markets. 
 
@@ -44,6 +44,7 @@ In picture above, you will notice five section:
 * Hearthstone: Heroes of Warcraft
 * Inside
 * Cuphead
+* Club Penguin Island
      
 ## History
 
