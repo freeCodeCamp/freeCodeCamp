@@ -26,11 +26,11 @@ Remember to check if the given index is a negative or is longer than the length 
 ```yml
 tests:
   - text: Your <code>addAt</code> method should reassign <code>head</code> to the new node when the given index is 0.
-    testString: 'assert((function(){var test = new LinkedList(); test.add("cat"); test.add("dog"); test.addAt(0,"cat"); return test.head().element === "cat"}()), "Your <code>addAt</code> method should reassign <code>head</code> to the new node when the given index is 0.");'
+    testString: assert((function(){var test = new LinkedList(); test.add('cat'); test.add('dog'); test.addAt(0,'cat'); return test.head().element === 'cat'}()), 'Your <code>addAt</code> method should reassign <code>head</code> to the new node when the given index is 0.');
   - text: Your <code>addAt</code> method should increase the length of the linked list by one for each new node added to the linked list.
-    testString: 'assert((function(){var test = new LinkedList(); test.add("cat"); test.add("dog"); test.addAt(0,"cat"); return test.size() === 3}()), "Your <code>addAt</code> method should increase the length of the linked list by one for each new node added to the linked list.");'
+    testString: assert((function(){var test = new LinkedList(); test.add('cat'); test.add('dog'); test.addAt(0,'cat'); return test.size() === 3}()), 'Your <code>addAt</code> method should increase the length of the linked list by one for each new node added to the linked list.');
   - text: Your <code>addAt</code> method should return <code>false</code> if a node was unable to be added.
-    testString: 'assert((function(){var test = new LinkedList(); test.add("cat"); test.add("dog"); return (test.addAt(4,"cat") === false); }()), "Your <code>addAt</code> method should return <code>false</code> if a node was unable to be added.");'
+    testString: assert((function(){var test = new LinkedList(); test.add('cat'); test.add('dog'); return (test.addAt(4,'cat') === false); }()), 'Your <code>addAt</code> method should return <code>false</code> if a node was unable to be added.');
 
 ```
 

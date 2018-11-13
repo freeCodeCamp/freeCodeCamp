@@ -4,6 +4,8 @@ const readDirP = require('readdirp-walk');
 
 const { parseMarkdown } = require('@freecodecamp/challenge-md-parser');
 
+const { dasherize } = require('./utils');
+
 const challengesDir = path.resolve(__dirname, './challenges');
 
 exports.getChallengesForLang = function getChallengesForLang(lang) {
@@ -47,6 +49,7 @@ async function buildCurriculum(file, curriculum) {
     challengeBlock = curriculum[superBlock].blocks[block];
   } catch (e) {
     console.log(superBlock, block);
+    // eslint-disable-next-line no-process-exit
     process.exit(0);
   }
   const { meta } = challengeBlock;
@@ -56,6 +59,7 @@ async function buildCurriculum(file, curriculum) {
   );
   const { name: blockName, order, superOrder } = meta;
   challenge.block = blockName;
+  challenge.dashedName = dasherize(challenge.title);
   challenge.order = order;
   challenge.superOrder = superOrder;
   challenge.superBlock = superBlock;
@@ -64,7 +68,7 @@ async function buildCurriculum(file, curriculum) {
 }
 
 function superBlockInfoFromPath(filePath) {
-  const [maybeSuper] = filePath.split('/');
+  const [maybeSuper] = filePath.split(path.sep);
   return superBlockInfo(maybeSuper);
 }
 
@@ -82,6 +86,6 @@ function superBlockInfo(fileName) {
 }
 
 function getBlockNameFromPath(filePath) {
-  const [, block] = filePath.split('/');
+  const [, block] = filePath.split(path.sep);
   return block;
 }
