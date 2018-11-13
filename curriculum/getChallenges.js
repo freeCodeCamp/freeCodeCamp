@@ -1,12 +1,17 @@
 const path = require('path');
 const { findIndex } = require('lodash');
 const readDirP = require('readdirp-walk');
-
 const { parseMarkdown } = require('@freecodecamp/challenge-md-parser');
 
 const { dasherize } = require('./utils');
+const { locale } = require('../config/env.json');
 
 const challengesDir = path.resolve(__dirname, './challenges');
+const localeChallengesRootDir = path.resolve(challengesDir, `./${locale}`);
+const metaDir = path.resolve(challengesDir, '_meta');
+exports.challengesDir = challengesDir;
+exports.localeChallengesRootDir = localeChallengesRootDir;
+exports.metaDir = metaDir;
 
 exports.getChallengesForLang = function getChallengesForLang(lang) {
   let curriculum = {};
@@ -18,8 +23,7 @@ exports.getChallengesForLang = function getChallengesForLang(lang) {
 };
 
 async function buildCurriculum(file, curriculum) {
-
-  const { name, depth, path: filePath, fullPath, stat } = file;
+  const { name, depth, path: filePath, stat } = file;
   if (depth === 1 && stat.isDirectory()) {
     // extract the superBlock info
     const { order, name: superBlock } = superBlockInfo(name);
@@ -41,9 +45,9 @@ async function buildCurriculum(file, curriculum) {
   if (name === 'meta.json' || name === '.DS_Store') {
     return;
   }
+
   const block = getBlockNameFromPath(filePath);
   const { name: superBlock } = superBlockInfoFromPath(filePath);
-  const challenge = await parseMarkdown(fullPath);
   let challengeBlock;
   try {
     challengeBlock = curriculum[superBlock].blocks[block];
@@ -53,6 +57,26 @@ async function buildCurriculum(file, curriculum) {
     process.exit(0);
   }
   const { meta } = challengeBlock;
+
+  const challenge = await createChallenge(filePath, meta);
+
+  challengeBlock.challenges = [...challengeBlock.challenges, challenge];
+}
+
+async function createChallenge(challengeFilePath, maybeMeta) {
+  const fullPath = path.resolve(localeChallengesRootDir, challengeFilePath);
+  const metaPath = path.resolve(
+    metaDir,
+    `./${getBlockNameFromFullPath(fullPath)}/meta.json`
+  );
+  let meta;
+  if (maybeMeta) {
+    meta = maybeMeta;
+  } else {
+    meta = require(metaPath);
+  }
+  const { name: superBlock } = superBlockInfoFromPath(challengeFilePath);
+  const challenge = await parseMarkdown(fullPath);
   const challengeOrder = findIndex(
     meta.challengeOrder,
     ([id]) => id === challenge.id
@@ -64,8 +88,11 @@ async function buildCurriculum(file, curriculum) {
   challenge.superOrder = superOrder;
   challenge.superBlock = superBlock;
   challenge.challengeOrder = challengeOrder;
-  challengeBlock.challenges = [...challengeBlock.challenges, challenge];
+
+  return challenge;
 }
+
+exports.createChallenge = createChallenge;
 
 function superBlockInfoFromPath(filePath) {
   const [maybeSuper] = filePath.split(path.sep);
@@ -87,5 +114,10 @@ function superBlockInfo(fileName) {
 
 function getBlockNameFromPath(filePath) {
   const [, block] = filePath.split(path.sep);
+  return block;
+}
+
+function getBlockNameFromFullPath(fullFilePath) {
+  const [, block] = fullFilePath.split(path.sep).reverse();
   return block;
 }

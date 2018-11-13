@@ -3,16 +3,23 @@ const chokidar = require('chokidar');
 
 const curriculumPath = path.resolve(__dirname, '../../../curriculum');
 
-const { createChallengeNodes } = require('./create-Challenge-nodes');
+const { createChallengeNode } = require('./create-Challenge-nodes');
 
 exports.sourceNodes = function sourceChallengesSourceNodes(
   { actions, reporter },
   pluginOptions
 ) {
-  if (typeof pluginOptions.source !== 'function') {
+  const { source, onSourceChange } = pluginOptions;
+  if (typeof source !== 'function') {
     reporter.panic(`
     "source" is a required option for fcc-source-challenges. It must be a
     function that delivers challenge objects to the plugin
+    `);
+  }
+  if (typeof onSourceChange !== 'function') {
+    reporter.panic(`
+    "onSourceChange" is a required option for fcc-source-challenges. It must be
+    a function that delivers a new challenge object to the plugin
     `);
   }
   const { createNode } = actions;
@@ -21,18 +28,32 @@ exports.sourceNodes = function sourceChallengesSourceNodes(
     persistent: true
   });
 
-  watcher.on('ready', sourceAndCreateNodes).on('change', sourceAndCreateNodes);
+  watcher.on('ready', sourceAndCreateNodes).on(
+    'change',
+    filePath =>
+      (/\.md$/).test(filePath)
+        ? onSourceChange(filePath)
+            .then(challenge => {
+              reporter.info(
+                `File changed at ${filePath}, replacing challengeNode id ${
+                  challenge.id
+                }`
+              );
+              return createChallengeNode(challenge, reporter);
+            })
+            .then(createNode)
+        : null
+  );
 
-  function sourceAndCreateNodes(filePath) {
-    if (filePath) {
-      reporter.info(`File ${filePath} has been changed`);
-    }
-    const { source } = pluginOptions;
+  function sourceAndCreateNodes() {
     return source()
+      .then(challenges => Promise.all(challenges))
       .then(challenges =>
         challenges
-          .filter(challenge => challenge.superBlock !== 'Certificates')
-          .map(challenge => createChallengeNodes(challenge, reporter))
+          .filter(
+            challenge => challenge.superBlock.toLowerCase() !== 'certificates'
+          )
+          .map(challenge => createChallengeNode(challenge, reporter))
           .map(node => createNode(node))
       )
       .catch(e =>

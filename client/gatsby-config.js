@@ -1,6 +1,9 @@
 const path = require('path');
 
-const { buildChallenges } = require('./utils/buildChallenges');
+const {
+  buildChallenges,
+  replaceChallengeNode
+} = require('./utils/buildChallenges');
 
 const { NODE_ENV: env, LOCALE: locale = 'english' } = process.env;
 
@@ -36,7 +39,8 @@ module.exports = {
       resolve: 'fcc-source-challenges',
       options: {
         name: 'challenges',
-        source: buildChallenges
+        source: buildChallenges,
+        onSourceChange: replaceChallengeNode
       }
     },
     {
