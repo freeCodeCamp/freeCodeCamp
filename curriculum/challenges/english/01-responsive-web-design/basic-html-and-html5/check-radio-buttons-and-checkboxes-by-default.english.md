@@ -14,7 +14,7 @@ To do this, just add the word "checked" to the inside of an input element. For e
 
 ## Instructions
 <section id='instructions'>
-Set the first of your <code>radio buttons</code> and the first of your <code>checkboxes</code> to both be checked by default.
+Set the first of your <code>radio button</code>s and the first of your <code>checkbox</code>es to both be checked by default.
 </section>
 
 ## Tests
@@ -23,9 +23,9 @@ Set the first of your <code>radio buttons</code> and the first of your <code>che
 ```yml
 tests:
   - text: Your first radio button on your form should be checked by default.
-    testString: 'assert($("input[type="radio"]").prop("checked"), "Your first radio button on your form should be checked by default.");'
+    testString: assert($('input[type="radio"]').prop("checked"), 'Your first radio button on your form should be checked by default.');
   - text: Your first checkbox on your form should be checked by default.
-    testString: 'assert($("input[type="checkbox"]").prop("checked"), "Your first checkbox on your form should be checked by default.");'
+    testString: assert($('input[type="checkbox"]').prop("checked"), 'Your first checkbox on your form should be checked by default.');
 
 ```
 

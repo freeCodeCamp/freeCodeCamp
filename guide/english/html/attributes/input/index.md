@@ -1,11 +1,13 @@
 ---
 title: Input
 ---
-## Input
-The HTML `<input>` tag is used within a form to declare an input element.
-It allows the user to enter data.
 
-## Example
+## Input
+
+The HTML `<input>` tag is typically used within a `<form>` element to declare an input element.
+It allows the user to enter data, and can vary in many ways.
+
+### Example
 ```html
 <!DOCTYPE html>
 <html>
@@ -15,28 +17,36 @@ It allows the user to enter data.
    </head>
 	
    <body>
-      <form action = "/cgi-bin/hello_get.cgi" method = "get">
-         First name: 
-            <input type = "text" name = "first_name" value = "" maxlength = "100" />
+      <form action="/my-form-action" method="get">
+         <label for="first_name">First Name:</label>
+            <input type="text" name="first_name" value="" maxlength="100" />
             <br />
             
-         Last name: 
-            <input type = "text" name = "last_name" value = "" maxlength = "100" />
-         <input type = "submit" value = "Submit" />
+            <label for="last_name">Last Name:</label> 
+            <input type="text" name="last_name" value="" maxlength="100" />
+              
+            <input type="submit" value="Submit" />
       </form>
    </body>
 	
 </html>
 ```
 
-In the above example, there are two input fields which ask the user to enter their first and last names according to the labels specified. The submit `<button type="submit">` is another type of input which is used to take the data entered by the user into the form and send it to some other location specified in the code.
+In the above example, there are two input fields which ask the user to enter their first and last names according to the labels specified. 
+
+Submit (`<input type="submit">`) is another type of input which is used to take the data entered by the user into the form and send it to some other location specified in the code.
+
+### Input Types
+The HTML `<input>` tag uses the attribute `type` to specify what kind of input element to display. Some of these include:
+* `type = "text"` - This is the default type, and generates a one-line text field.
+* `type = "password"`- This will generate a password field, and is used for (you guessed it!) passwords.
+* `type = "hidden"` - This will generate a hidden input field.
+* `type = "text"` - Creates a simple text box.
+* `type = "password"` - Creates a text field but masks the characters typed into the input.
+* `type = "checkbox"` - Creates a checkbox field that allows the user to select multiple options.
+* `type = "radio"` - Creates a field that allows a user to select only one option.
+* `type = "submit"` - Displays a button that submits the form when clicked.
+* `type = "hidden"` - This is a special type that doesn't render on the page. It's typically used to pass additional data along with a form.
 
 #### More Information:
-<a href="https://www.youtube.com/watch?v=qJ9ZkxmVf5s">Youtube</a>
-
-
-## Input
-The HTML `<input>` tag is of many types to enter data. Some of them are:
-Type:Text(This is the most common type which is used to create general textboxes)
-Type:Password(This type is used for creation of password feilds)
-Type:Hidden(This is a special type of Input that is not shown to the user but it is used for passing information from one page to another while using <a href> tag)
+[MDN - Input](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/input)

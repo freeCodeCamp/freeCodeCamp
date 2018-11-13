@@ -15,8 +15,8 @@ All internal angles are 90 degrees
 Sum of all internal angles in 360 degrees
 Diagonals are mutually perpendicular and bisect one another
 
-Area - a * b
-Perimeter - 2(a+b)
+<pre>Area - a * b</pre>
+<pre>Perimeter - 2(a+b)</pre>
 
 
 ### Square
@@ -27,8 +27,8 @@ All internal angles are 90 degrees
 Sum of all internal angles in 360 degrees
 Diagonals are mutually perpendicular and bisect one another
 
-Area - 1/2(base 
-Perimeter - 4a
+<pre>Area - a*a</pre>
+<pre>Perimeter - 4*a</pre>
 
 
 ### Triangle
@@ -37,7 +37,7 @@ Special Info-
 Has a height which is the perpendicular distance from a vertex to the opposite side(base), can lie inside or outside the triangle
 Sum of all angles is 180 degrees
 
-Area - 1/2(base * height)
+<pre>Area - 1/2(base * height)</pre>
 
 
 ### Circle
@@ -49,8 +49,8 @@ Perpendicular distance from the center to a point on periphery is called the rad
 Any line passing through the circle and touching the periphery at both ends is called a chord
 Chord passing through the center of the circle is diameter
 
-Area - {pi} * r * r
-Perimeter - 2 * {pi} * r 
+<pre>Area - {pi} * r * r</pre>
+<pre>Perimeter - 2 * {pi} * r </pre>
 
 
 
