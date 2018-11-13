@@ -1,6 +1,9 @@
 ---
 title: Create a Controlled Form
 ---
+
+![:triangular_flag_on_post:](https://forum.freecodecamp.com/images/emoji/emoji_one/triangular_flag_on_post.png?v=3 ":triangular_flag_on_post:") Remember to use <a>**`Read-Search-Ask`**</a> if you get stuck. Try to pair program ![:busts_in_silhouette:](https://forum.freecodecamp.com/images/emoji/emoji_one/busts_in_silhouette.png?v=3 ":busts_in_silhouette:") and write your own code ![:pencil:](https://forum.freecodecamp.com/images/emoji/emoji_one/pencil.png?v=3 ":pencil:")
+
 ## Create a Controlled Form
 
 Creating a controlled form is the same process as creating a controlled input, except you need to handle a submit event.
@@ -8,7 +11,12 @@ Creating a controlled form is the same process as creating a controlled input, e
 First, create a controlled input that stores its value in state, so that there is a single source of truth. 
 (This is what you did in the previous challenge.) Create an input element, set its value attribute to the input variable located in state. Remember, state can be accessed by `this.state`. Next, set the input element's `onChange` attribute to call the function 'handleChange'.
 
-### Solution
+## Spoiler Alert!
+
+![warning sign](//discourse-user-assets.s3.amazonaws.com/original/2X/2/2d6c412a50797771301e7ceabd554cef4edcd74d.gif)
+
+**Solution ahead!**
+
 ```react.js
 <input value={this.state.input} onChange={this.handleChange}/>
 ```
