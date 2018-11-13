@@ -15,7 +15,6 @@ title: Render React on the Server with renderToString
 You pass a ```class``` to ```.renderToString()``` just like you would pass a component to a ```render``` method.
 
 ```jsx
-
 class App extends React.Component {
   constructor(props) {
     super(props);
@@ -25,6 +24,5 @@ class App extends React.Component {
   }
 };
 
-// change code below this line
 ReactDOMServer.renderToString(<App />);
 ```
