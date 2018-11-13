@@ -8,7 +8,7 @@ localeTitle: Получение состояния из хранилища Redux
 ---
 
 ## Description
-<section id="description"> Объект хранилища Redux предоставляет несколько методов, которые позволяют вам взаимодействовать с ним. Например, вы можете получить текущее состояние <code>state</code> , сохраненное в объекте хранилища Redux, с помощью метода  <code>getState()</code> . </section>
+<section id="description"> У объекта хранилища Redux есть несколько методов, которые позволяют вам взаимодействовать с ним. Например, вы можете получить текущее состояние <code>state</code> , сохраненное в объекте хранилища Redux, с помощью метода  <code>getState()</code> . </section>
 
 ## Instructions
 <section id="instructions"> Код из предыдущего упражнения переписан более кратко в редакторе кода. Используйте <code>store.getState()</code> для извлечения <code>state</code> из <code>store</code> и присвойте его новой переменной <code>currentState</code> . </section>
