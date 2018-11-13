@@ -1,7 +1,7 @@
 ---
 title: Arithmetic Operation
 ---
-JavaScript provides the user with five arithmetic operators: `+`, `-`, `*`, `/` and `%`. The operators are for addition, subtraction, multiplication, division and remainder respectively.
+JavaScript provides five arithmetic operators: `+`, `-`, `*`, `/` and `%`. The operators are for addition, subtraction, multiplication, division and remainder, respectively.
 
 ## Addition
 
@@ -30,7 +30,7 @@ If `"a"` and `"b"` are both strings, their value will concatenate into a string.
     5 + "foo"      // concatenates the string and the number and returns "5foo"
     "foo" + "bar"  // concatenates the strings and returns "foobar"
 
-_Hint:_ There is a handy <a href='https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Arithmetic_Operators#Increment_(' target='_blank' rel='nofollow'>increment</a> operator that is a great shortcut when you're adding numbers by 1.
+_Note:_ There is a handy [increment(++)](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Arithmetic_Operators#Increment) operator that is a great shortcut when you're adding numbers by 1.
 
 ## Subtraction
 
@@ -46,7 +46,7 @@ _Hint:_ There is a handy <a href='https://developer.mozilla.org/en-US/docs/Web/J
     true - 3   // interprets true as 1 and returns -2
     5 - "foo"  // returns NaN (Not a Number)
 
-_Hint:_ There is a handy <a href='https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Arithmetic_Operators#Decrement_(--' target='_blank' rel='nofollow'>decrement</a> operator that is a great shortcut when you're subtracting numbers by 1.
+_Note:_ There is a handy [decrement(--)](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Arithmetic_Operators#Decrement) operator that is a great shortcut when you're subtracting numbers by 1. 
 
 ## Multiplication
 
@@ -73,7 +73,7 @@ _Hint:_ There is a handy <a href='https://developer.mozilla.org/en-US/docs/Web/J
 **Usage**
 
     3 / 2                // returns 1.5
-    3.0 / 2/0            // returns 1.5
+    3.0 / 2.0            // returns 1.5
     3 / 0                // returns Infinity
     3.0 / 0.0            // returns Infinity
     -3 / 0               // returns -Infinity
@@ -83,6 +83,8 @@ _Hint:_ There is a handy <a href='https://developer.mozilla.org/en-US/docs/Web/J
     Infinity / Infinity  // returns NaN
 
 ## Remainder
+
+Also referred to as the "modulus" or "modulo" operator.
 
 **Syntax**
 
@@ -99,7 +101,7 @@ _Hint:_ There is a handy <a href='https://developer.mozilla.org/en-US/docs/Web/J
 
 **Syntax**
 
-`a++ or ++a`
+`a++, ++a or a+=`
 
 **Usage**
     
@@ -110,12 +112,17 @@ _Hint:_ There is a handy <a href='https://developer.mozilla.org/en-US/docs/Web/J
     // Prefix
     var a = 2;
     b = ++a; // a = 3, b = 3
+    
+    // Advanced
+    var a = 4;
+    var b = 5;
+    a += b; //a = 9, b = 5
 
 ## Decrement
 
 **Syntax**
 
-`a-- or --a`
+`a--, --a or a-=`
 
 **Usage**
     
@@ -126,6 +133,12 @@ _Hint:_ There is a handy <a href='https://developer.mozilla.org/en-US/docs/Web/J
     // Prefix
     var a = 2;
     b = --a; // a = 1, b = 1
-_!Important!_ As you can see, you **cannot** perform any sort of operations on `Infinity`.
+    
+    // Advanced
+    var a = 9;
+    var b = 4;
+    a -= b; //a = 5, b = 4
 
-Source: The amazing <a href='https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Arithmetic_Operators' target='_blank' rel='nofollow'>MDN</a>.
+_!Important!_ You **cannot** perform any sort of operations on `Infinity`.
+
+Source: The amazing [MDN](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Arithmetic_Operators)

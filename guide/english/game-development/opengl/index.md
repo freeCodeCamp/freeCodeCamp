@@ -20,7 +20,9 @@ Mesa is the GL library used. Ubuntu 16.04 includes Mesa 11.2 which supports Open
 If you really need 4.5, you will likely need to develop against the propreitary AMD or NVidia drivers, and you will need a card which actually supports 4.5 to run any software you create using that version of the API.
 
 
-#### More Information: 
+#### More Information
 
-[OpenGL Wiki](https://en.wikipedia.org/wiki/OpenGL)
-[OpenGL Tutorials](http://www.opengl-tutorial.org/)
+- [OpenGL Offical Website](https://www.opengl.org/)
+- [OpenGL Wiki](https://en.wikipedia.org/wiki/OpenGL)
+- [OpenGL Tutorials](http://www.opengl-tutorial.org/)
+
