@@ -12,10 +12,10 @@ Currently the latest version of GHC is 8.6 (as of 12 Oct 2018)
 
 
 ## Installation
-The recommended way to install Haskell is by using stack : <a href='https://docs.haskellstack.org/en/stable/README/#how-to-install' target='_blank' rel='nofollow'>stack download</a>
+The recommended way to install Haskell is by using stack. <a href='https://docs.haskellstack.org/en/stable/README/#how-to-install' target='_blank' rel='nofollow'>[How to install the Haskell tool stack]</a>
 Stack is a cross-platform program for developing Haskell projects. It is aimed at Haskellers both new and experienced.
 
-To actually start using Haskell you need the GHC (The Glasgow Haskell Compiler), so to setup : <a href='https://docs.haskellstack.org/en/stable/README/#how-to-install://docs.haskellstack.org/en/stable/README/#quick-start-guide' target='_blank' rel='nofollow'>stack setup</a>
+To actually start using Haskell you need the GHC (The Glasgow Haskell Compiler), so to setup : <a href='https://docs.haskellstack.org/en/stable/README/#quick-start-guide' target='_blank' rel='nofollow'>[How to set up stack]</a>
 
 ```shell
 stack new my-project
@@ -25,7 +25,7 @@ stack build
 stack exec my-project-exe
 ```
 
-A word of cautious, try not to use stack install <package> even though it will install package globally, this is not recommended as different versions of packages are compatible with different versions of GHC. Hence using local copy of package using stack build is best way to follow.
+A word of caution, try not to use stack install <package> even though it will install the package globally, this is not recommended as different versions of packages are compatible with different versions of GHC. As such it's best to use local copies of packages with stack build.
 
 ## Hello World
 
@@ -42,9 +42,10 @@ stack ghc hello.hs
 ```
 
 ## Documentation
-Hackage provides documentation for Haskell
+<a href='https://hackage.haskell.org' target='_blank' rel='nofollow'>Hackage</a> provides documentation for Haskell packages.
+
 
 
 ## Want to learn more?
-* Haskell wiki <a href='https://wiki.haskell.org/Haskell' target='_blank' rel='nofollow'>link</a>
-* Learn You a Haskell for Great Good <a href='http://learnyouahaskell.com/' target='_blank' rel='nofollow'>website</a>
+* <a href='https://wiki.haskell.org/Haskell' target='_blank' rel='nofollow'>Haskell wiki</a>
+* <a href='http://learnyouahaskell.com/' target='_blank' rel='nofollow'>Learn You a Haskell for Great Good </a>
