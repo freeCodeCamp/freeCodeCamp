@@ -1,4 +1,4 @@
-import React, { PureComponent } from 'react';
+import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 
 import './preview.css';
@@ -10,7 +10,7 @@ const propTypes = {
   disableIframe: PropTypes.bool
 };
 
-class Preview extends PureComponent {
+class Preview extends Component {
   constructor(...props) {
     super(...props);
 

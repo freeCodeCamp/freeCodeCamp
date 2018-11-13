@@ -6,13 +6,13 @@ videoUrl: ''
 localeTitle: Heredar estilos del elemento cuerpo
 ---
 
-## Description
+## Descripción
 <section id="description"> Ahora hemos comprobado que cada página HTML tiene un elemento de <code>body</code> y que su elemento de <code>body</code> también se puede diseñar con CSS. Recuerde, puede diseñar su elemento de <code>body</code> como cualquier otro elemento HTML, y todos los demás elementos heredarán los estilos de su elemento de <code>body</code> . </section>
 
-## Instructions
+## Instrucciones
 <section id="instructions"> Primero, cree un elemento <code>h1</code> con el texto <code>Hello World</code> Then, vamos a dar a todos los elementos de su página el color <code>green</code> agregando <code>color: green;</code> a la declaración de estilo de tu elemento <code>body</code> . Finalmente, asigne a su elemento <code>body</code> la familia de fuentes de <code>monospace</code> agregando <code>font-family: monospace;</code> a la declaración de estilo de tu elemento <code>body</code> . </section>
 
-## Tests
+## Pruebas
 <section id='tests'>
 
 ```yml
@@ -57,7 +57,7 @@ tests:
 
 </section>
 
-## Solution
+## Solución
 <section id='solution'>
 
 ```js
