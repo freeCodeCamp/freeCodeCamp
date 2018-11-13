@@ -11,7 +11,7 @@ title: D3
 
 **D3.js** version 1.0.0 was released back in 18 February 2011.
 
-## Why, D3.js?
+## Why D3.js?
 
 *D3** does not introduce a new visual representation. Unlike **Processing**, **Raphaël**, or **Protovis**, *D3's* vocabulary of graphical marks comes directly from web standards: HTML, SVG, and CSS - https://d3js.org/
 
@@ -53,9 +53,10 @@ There are over 20,000+ **D3.js** examples you could learn from, but you never kn
 
  ### Resources
 
-- https://en.wikipedia.org/wiki/D3.js
-- https://en.wikipedia.org/wiki/Document_Object_Model
-- http://blockbuilder.org/search
-- https://d3indepth.com/
-- https://davidwalsh.name/learning-d3
+- [Wikipedia](https://en.wikipedia.org/wiki/D3.js)
+- [Wikipedia](https://en.wikipedia.org/wiki/Document_Object_Model)
+- [Blockbuilder](http://blockbuilder.org/search)
+- [D3 in Depth](https://d3indepth.com)
+- [Learning D3](https://davidwalsh.name/learning-d3)
+- [Motion Visualization with D3](https://omid.al/posts/2016-08-23-MocapVis-D3.html)
  ------------
