@@ -1,3 +1,4 @@
+const path = require('path');
 const _ = require('lodash');
 
 const {
@@ -16,7 +17,7 @@ const arrToString = arr =>
 
 exports.replaceChallengeNode = function replaceChallengeNode(fullFilePath) {
   const relativeChallengePath = fullFilePath.replace(
-    localeChallengesRootDir + '/',
+    localeChallengesRootDir + path.sep,
     ''
   );
   return createChallenge(relativeChallengePath);
