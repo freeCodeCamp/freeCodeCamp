@@ -12,20 +12,25 @@ localeTitle: Кнопки
 Чтобы использовать кнопки из бибилиотеки Bootstrap вы выполняете те же шаги, что и при создании кнопки в HTML, за исключением того, что  вам также потребуется применить к кнопке соответствующий CSS класс. Пример кода приведен ниже.
 
 
+
 **Пример кода:**
 
-`<button type="button" class="btn btn-primary">Primary</button>`
-
-Первичный
+```html
+<button type="button" class="btn btn-primary">Primary</button>
+```
 
 Также, вы можете использовать Bootstrap кнопки вместе с элементами `<a>` и `<input>`, как показано в приведенных ниже примерах.
 
-
-`<a class="btn btn-primary" href="#" role="button">This button is a link</a>`
+```html
+<a class="btn btn-primary" href="#" role="button">This button is a link</a>
+```
 
 [Эта кнопка является ссылкой](#)
 
-`<input class="btn btn-primary" type="submit" value="Submit">`
+
+```html
+<input class="btn btn-primary" type="submit" value="Submit">
+```
 
 #### Bootstrap Button Список классов:
 
@@ -87,7 +92,9 @@ localeTitle: Кнопки
 
 Можно также очертить кнопки, а не полностью окрашивать их. Это достигается путем размещения `outline` в середину класса кнопки, которую вы хотите использовать. Пример использования будет следующим:
 
-`<button type="button" class="btn btn-outline-primary">Primary</button>`
+```html
+<button type="button" class="btn btn-outline-primary">Primary</button>
+```
 
 Очерченые кнопки являются частью Bootstrap с версии 4, пожалуйста, убедитесь, что вы используете правильную версию, если вы не можете заставить их работать.
 
