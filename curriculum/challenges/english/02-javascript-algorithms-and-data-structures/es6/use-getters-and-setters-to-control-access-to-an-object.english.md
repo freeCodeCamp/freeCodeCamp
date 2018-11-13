@@ -36,7 +36,7 @@ tests:
   - text: <code>class</code> keyword was used.
     testString: getUserInput => assert(getUserInput('index').match(/class/g),'<code>class</code> keyword was used.');
   - text: <code>Thermostat</code> can be instantiated.
-    testString: assert((() => {const t = new Thermostat(32); console.log(t); return typeof t === 'object' && t.temperature === 0;})(), '<code>Thermostat</code> can be instantiated.');
+    testString: assert((() => {const t = new Thermostat(32);return typeof t === 'object' && t.temperature === 0;})(), '<code>Thermostat</code> can be instantiated.');
 
 ```
 
