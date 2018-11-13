@@ -6,6 +6,6 @@
 - [ ] None of my changes are plagiarized from another source.
 - [ ] My article does not contain shortened URLs or affiliate links.
 
-If your pull request closes showing a GitHub issue, replace the XXXXX below with the issue number.
+If your pull request closes a GitHub issue, replace the XXXXX below with the issue number.
 
 Closes #XXXXX
