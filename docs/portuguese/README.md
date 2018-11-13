@@ -17,7 +17,7 @@ Olá 👋!
 
 Este directório contem toda a documentação sobre como contribuir para o freeCodeCamp.org
 
-## [Se estás agora a começar, lê isto primeiro.](/CONTRIBUTING.md)
+## [Se estás agora a começar, lê isto primeiro.](/docs/portuguese/CONTRIBUTING.md)
 
 ---
 
