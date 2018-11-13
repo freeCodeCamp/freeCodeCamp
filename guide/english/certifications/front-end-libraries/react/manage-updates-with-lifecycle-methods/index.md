@@ -1,6 +1,9 @@
 ---
 title: Manage Updates with Lifecycle Methods
 ---
+
+![:triangular_flag_on_post:](https://forum.freecodecamp.com/images/emoji/emoji_one/triangular_flag_on_post.png?v=3 ":triangular_flag_on_post:") Remember to use <a>**`Read-Search-Ask`**</a> if you get stuck. Try to pair program ![:busts_in_silhouette:](https://forum.freecodecamp.com/images/emoji/emoji_one/busts_in_silhouette.png?v=3 ":busts_in_silhouette:") and write your own code ![:pencil:](https://forum.freecodecamp.com/images/emoji/emoji_one/pencil.png?v=3 ":pencil:")
+
 ## Manage Updates with Lifecycle Methods
 
 This challenge has you creating a couple lifecycle functions, componentWillUpdate and ComponentWillReceiveProps. You will be provided with another function called componentDidUpdate. We'll discuss how you use them at each stage of the component lifecycle and why you should use them when you are checking different stages of your component.
@@ -41,8 +44,6 @@ class Dialog extends React.Component {
   componentDidUpdate() {
     console.log("Component has updated")
   }
-  
-  // change code above this line
   render() {
     return <h1>{this.props.message}</h1>
   }
@@ -72,7 +73,5 @@ class Controller extends React.Component {
 };
 ```
 ### Resources
-- [React Component Lifecycle](https://reactjs.org/docs/react-component.html#the-component-lifecycle)
-- [React Component Lifecycle Visual](https://cdn-images-1.medium.com/max/2000/1*sn-ftowp0_VVRbeUAFECMA.png)
-
-
+* [React Component Lifecycle](https://reactjs.org/docs/react-component.html#the-component-lifecycle)
+* [React Component Lifecycle Visual](https://cdn-images-1.medium.com/max/2000/1*sn-ftowp0_VVRbeUAFECMA.png)
