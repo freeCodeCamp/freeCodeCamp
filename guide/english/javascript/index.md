@@ -40,3 +40,9 @@ For details follow this [link](https://javascriptreport.com/the-ultimate-guide-t
 ## More Resourses
 
 [MDN Docs](https://developer.mozilla.org/bm/docs/Web/JavaScript)
+
+
+## More Information
+<!-- Please add any articles you think might be helpful to read before writing the article -->
+
+My changes are to correct the typo here ... https://learn.freecodecamp.org/javascript-algorithms-and-data-structures/basic-javascript/understand-string-immutability 
