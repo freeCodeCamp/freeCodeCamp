@@ -15,7 +15,7 @@
 
 Hello 👋!
 
-freeCodeCamp.org is possible, Thanks to thousands of kind volunteers like you. We are grateful for your contributions and we are excited to welcome you aboard.
+freeCodeCamp.org is possible, thanks to thousands of kind volunteers like you. We are grateful for your contributions and we are excited to welcome you aboard.
 
 We strictly enforce our ["Code of Conduct"](https://www.freecodecamp.org/code-of-conduct). Take a moment to read it. It's only 196 words long.
 
@@ -97,7 +97,7 @@ Contributing to this requires some understanding of APIs, ES6 Syntax and a lot o
 
 Essentially we expect certain basic familiarity, with some of the aforementioned technologies, tools, and libraries. That said, you are not required to be an expert on them.
 
-Feel free to ask us questions on the related issue threads and we will be glad to clarify. When in doubt, you can reach Mrugesh Mohapatra [`@raisedadead`](https://github.com/raisedadead) or Stuart Taylor [`@bouncey`](https://github.com/bouncey) from our platform dev team to help you with this.
+Feel free to ask us questions on the related issue threads, and we will be glad to clarify. When in doubt, you can reach Mrugesh Mohapatra [`@raisedadead`](https://github.com/raisedadead) or Stuart Taylor [`@bouncey`](https://github.com/bouncey) from our platform dev team to help you with this.
 
 If you want to help us improve our codebase, here's [how to setup freeCodeCamp locally](/docs/how-to-setup-freecodecamp-locally.md).
 
