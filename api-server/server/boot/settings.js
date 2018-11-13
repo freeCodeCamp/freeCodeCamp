@@ -104,9 +104,17 @@ function updateMyCurrentChallenge(req, res, next) {
     user,
     body: { currentChallengeId }
   } = req;
-  return user
-    .update$({ currentChallengeId })
-    .subscribe(() => res.status(200), next);
+  return user.updateAttribute(
+    'currentChallengeId',
+    currentChallengeId,
+    (err, updatedUser) => {
+      if (err) {
+        return next(err);
+      }
+      const { currentChallengeId } = updatedUser;
+      return res.status(200).json(currentChallengeId);
+    }
+  );
 }
 
 const updateMyThemeValidators = [

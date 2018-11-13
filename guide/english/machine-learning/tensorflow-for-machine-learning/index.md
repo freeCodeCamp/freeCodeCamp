@@ -13,3 +13,4 @@ Tensorflow allows developers to concentrate more on the logic of the application
 * [TensorFlow](https://www.tensorflow.org)
 * [TensorFlow GitHub Repository](https://github.com/tensorflow)
 * [Wikipedia—TensorFlow](https://en.wikipedia.org/wiki/TensorFlow)
+* [Google Cloud Machine Learning Tutorial](https://developers.google.com/machine-learning/crash-course/?gclid=EAIaIQobChMIhajRzKCy3gIVD5t-Ch31wADGEAAYASAAEgJX-fD_BwE)

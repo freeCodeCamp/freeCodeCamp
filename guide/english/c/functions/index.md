@@ -85,6 +85,14 @@ With that, the conditions for a being greater than b, and b being greater than a
 ## A word on 'scope'
 Scope is a thing to be aware of. It refers to the areas in your code where a variable is accessible. When you pass a variable to a function, the function gets its own copy to use. This means that adjusting the variable in the function will not adjust it anywhere else. Similarly, if you haven't passed a variable to a function, it doesn't have it and can't use it.
 
+One of the ways to change value outside of function is using &:
+```C
+//After calling the function, the s value outside of the function will be updated
+void sumOfTwoNums(int a, int b, int &s) {
+    s = a + b;
+}
+```
+
 You may have observed a similar issue with things like if statements and any of the loops. If you declare a variable within brackets, it won't be accessible outside of those brackets. This is true for functions in the same way, but there are some ways to get around it:
 * Make a global variable by declaring it outside of any functions
  * This makes your code messier and is generally not recommended. It should be avoided whenever possible
