@@ -1,21 +1,32 @@
 ---
 title: Change Inline CSS Conditionally Based on Component State
 ---
+
+![:triangular_flag_on_post:](https://forum.freecodecamp.com/images/emoji/emoji_one/triangular_flag_on_post.png?v=3 ":triangular_flag_on_post:") Remember to use <a>**`Read-Search-Ask`**</a> if you get stuck. Try to pair program ![:busts_in_silhouette:](https://forum.freecodecamp.com/images/emoji/emoji_one/busts_in_silhouette.png?v=3 ":busts_in_silhouette:") and write your own code ![:pencil:](https://forum.freecodecamp.com/images/emoji/emoji_one/pencil.png?v=3 ":pencil:")
+
 ## Change Inline CSS Conditionally Based on Component State
 
-## Hint 1:
+## ![:speech_balloon:](https://forum.freecodecamp.com/images/emoji/emoji_one/speech_balloon.png?v=3 ":speech_balloon:") Hint: 1
 
 You are going to be checking the length of ```this.state.input``` so use its ```.length``` property.
 
-```
+```javascript
 this.state.input.length
 ```
 
-## Hint 2:
+> _try to solve the problem now_
 
-You are entering code before the return statement so you can use a pure JavaScript ```if/then``` statement.
+## ![:speech_balloon:](https://forum.freecodecamp.com/images/emoji/emoji_one/speech_balloon.png?v=3 ":speech_balloon:") Hint: 2
 
-## Solution:
+You are entering code before the return statement so you can use a pure JavaScript ```if``` statement.
+
+> _try to solve the problem now_
+
+## Spoiler Alert!
+
+![warning sign](//discourse-user-assets.s3.amazonaws.com/original/2X/2/2d6c412a50797771301e7ceabd554cef4edcd74d.gif)
+
+**Solution ahead!**
 
 You will use an ```if/then``` statement to check the value of ```this.state.input.length```. If it is longer than 15, assign ```'3px solid red'``` to ```inputStyle.border```.
 
@@ -36,11 +47,9 @@ class GateKeeper extends React.Component {
     let inputStyle = {
       border: '1px solid black'
     };
-    // change code below this line
     if (this.state.input.length > 15) {
       inputStyle.border = '3px solid red';
     }
-    // change code above this line
     return (
       <div>
         <h3>Don't Type Too Much:</h3>
@@ -53,16 +62,4 @@ class GateKeeper extends React.Component {
     );
   }
 };
-```
-<!-- The article goes here, in GitHub-flavored Markdown. Feel free to add YouTube videos, images, and CodePen/JSBin embeds  -->
-
-## Solution 
-Write a conditional statement that is evaluated according to your state, as mentioned in the challenge description, checks the length of the input and assigns a new object to the inputStyle variable.
-
-```react.js
-if (this.state.input.length > 15) {
-  inputStyle = {
-    border: '3px solid red'
-  }
-}
 ```
