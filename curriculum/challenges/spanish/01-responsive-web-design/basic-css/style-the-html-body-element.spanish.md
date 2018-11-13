@@ -6,15 +6,14 @@ videoUrl: ''
 localeTitle: Dele estilo al elemento Body del HTML
 ---
 
-## Description
+## Descripción
 <section id="description"> Ahora comencemos de nuevo y hablemos de la herencia CSS. Cada página HTML tiene un elemento <code>body</code> . </section>
 
-## Instructions
+## Instrucciones
 
 <section id="instructions"> Podemos probar que el elemento <code>body</code> existe aquí dándole un <code>background-color</code> de color negro. Podemos hacer esto agregando lo siguiente a nuestro elemento <code>style</code> : <blockquote> body { <br> background-color: black; <br> } </blockquote></section>
 
-
-## Tests
+## Pruebas
 <section id='tests'>
 
 ```yml
@@ -48,7 +47,7 @@ tests:
 
 </section>
 
-## Solution
+## Solución
 <section id='solution'>
 
 ```js

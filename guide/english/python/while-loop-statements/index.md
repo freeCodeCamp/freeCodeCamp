@@ -14,6 +14,7 @@ counter = 0
 while counter < 10:
    # Execute the block of code here as
    # long as counter is less than 10
+   counter += 1
 ```
 
 An example is shown below:
@@ -36,17 +37,23 @@ Today is Friday
 Today is Saturday
 Today is Sunday
 ```
-Line-by-Line Explanation of the above CODE:
-1. the variable 'days' is set to a value 0.
-2. a variable week is assigned to a list containing all the days of the week.
-3. while loop starts 
-4. the block of code will be executed until the condition returns 'true'.
-5. the condition is 'days<7' which rougly says run the while loop till the point the variable days is less than 7
-6. So when the days=7 the while loop stops executing.
-7. the days variable gets updated on every iteration.
-8. When the while loop runs for the first time the line 'Today is Monday' is printed onto the console and the variable days becomes equal to 1.
-9. Since the variable days is equal to 1 which is less than 7 so the while loop is executed again.
-10. It goes on again and again and when the console prints 'Today is Sunday' the variable days is now equal to 7 and the while loop stops executing. 
+Line-by-Line Explanation of the above code:
+1. The variable 'days' is set to a value 0.
+2. A variable week is assigned to a list containing all the days of the week.
+3. While loop starts and keeps running until the condition returns 'true'.
+4. The condition is 'days < 7', which rougly says run the while loop until the variable 'days' is equal to 7.
+5. When `days = 7`, the while loop stops executing.
+6. The `days` variable gets updated on every iteration.
+7. When the while loop runs for the first time, the line 'Today is Monday' is printed onto the console and the variable `days` becomes equal to 1.
+8. Since the variable `days` is equal to 1, which is less than 7, the while loop is executed again.
+9. It repeats until the console prints 'Today is Sunday', the variable days is now equal to 7 and the while loop stops executing. 
+
+## Infinite Loops:
+
+As previously noted, a 'while' loop will run until the conditional logic is false. Because of this, it is important to set a "false" condition within the executable code. If no false is included, the while loop will run infinitely. Be cautious when setting logic parameters to prevent the infinite loop unless that is the desired output. 
+
+Because `while` loops are conditioned controlled loops, they are great for programs that need to be run for an indefinite number of times. This allows for input to be taken time and time again until the condition is met. A good practical example would be for a game in which the player has the option to try again. Until the player responds with the response that meets the `while` loop condition, the player can continue to play the game, simulating the loop as many times as they please.
+
 
 #### More Information:
 
