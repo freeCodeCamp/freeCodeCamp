@@ -10,7 +10,6 @@ class PrProcessingLog {
     this._lastPRlogged = null;
     this._finish = null;
     this._prs = {};
-    //path.resolve(__dirname, '../../../guide');
     this._logfile = path.resolve(__dirname, './work-logs/open-prs-processed.json');
   }
 
