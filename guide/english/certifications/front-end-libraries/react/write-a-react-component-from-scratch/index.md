@@ -1,6 +1,9 @@
 ---
 title: Write a React Component from Scratch
 ---
+
+![:triangular_flag_on_post:](https://forum.freecodecamp.com/images/emoji/emoji_one/triangular_flag_on_post.png?v=3 ":triangular_flag_on_post:") Remember to use <a>**`Read-Search-Ask`**</a> if you get stuck. Try to pair program ![:busts_in_silhouette:](https://forum.freecodecamp.com/images/emoji/emoji_one/busts_in_silhouette.png?v=3 ":busts_in_silhouette:") and write your own code ![:pencil:](https://forum.freecodecamp.com/images/emoji/emoji_one/pencil.png?v=3 ":pencil:")
+
 ## Write a React Component from Scratch
 In this challenge we want to create a `class` react component (React components can be `class` components or `function` components). All of our class components are going to be an extention of `React.Component`. For example we can start to make a component called `FirstComponent` with:
 ```javascript
@@ -30,4 +33,6 @@ class FirstComponent extends React.Component {
   }
 };
 ```
+### Reference Articles
+
 Once your JSX code is in there, your component is complete! If you want a more granular tutorial of React components Samer Buna [wrote a great article](https://medium.freecodecamp.org/how-to-write-your-first-react-js-component-d728d759cabc).
