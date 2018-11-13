@@ -1,5 +1,8 @@
-# Every Function in ES6
 ---
+title: Every Function
+---
+
+# Every Function in ES6
 
 Every function returns true or false if a given array passes the criteria.
 
