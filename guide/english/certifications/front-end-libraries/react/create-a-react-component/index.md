@@ -1,29 +1,34 @@
 ---
 title: Create a React Component
 ---
+
+![:triangular_flag_on_post:](https://forum.freecodecamp.com/images/emoji/emoji_one/triangular_flag_on_post.png?v=3 ":triangular_flag_on_post:") Remember to use <a>**`Read-Search-Ask`**</a> if you get stuck. Try to pair program ![:busts_in_silhouette:](https://forum.freecodecamp.com/images/emoji/emoji_one/busts_in_silhouette.png?v=3 ":busts_in_silhouette:") and write your own code ![:pencil:](https://forum.freecodecamp.com/images/emoji/emoji_one/pencil.png?v=3 ":pencil:")
+
 ## Create a React Component
 
-## Hint 1:
-- You're going to be seeing these React Class Components all the time, so now would be a great time to get comfortable with them. Remember in this exercise you don't have to define the component, you just need to make a function return a little html in between the marked lines.
-- Remember the previous section and return a "div" element which contains an "h1" with the text Hello React!.
-- "div" element has a child so remember to close all tags.
+## ![:speech_balloon:](https://forum.freecodecamp.com/images/emoji/emoji_one/speech_balloon.png?v=3 ":speech_balloon:") Hint
 
-## Solution 
-```javascript
+The `div` element has a child so remember to close all tags.
+
+> _try to solve the problem now_
+
+## Spoiler Alert!
+
+![warning sign](//discourse-user-assets.s3.amazonaws.com/original/2X/2/2d6c412a50797771301e7ceabd554cef4edcd74d.gif)
+
+**Solution ahead!**
+
+```jsx
 class MyComponent extends React.Component {
   constructor(props) {
     super(props);
   }
   render() {
-    // change code below this line
     return (
       <div>
        <h1>Hello React!</h1>
       </div>
     );
-    // change code above this line
   }
 };
 ```
-
-Note that you don't need to put quotes around the text, because when you are working with JSX it is treated as HTML. Also check to make sure your spelling, case, and punctuation are correct! If all this code looks strange, go check out some of the great material on Javascript ES6 here on freeCodeCamp.
