@@ -16,7 +16,7 @@ Use nested components as in the previous challemge to render components.
 
 **Solution ahead!**
 
-The following is the solution to the chakkenge, where it render Citrus and NonCitrus in a component which is then rendered in another:
+The following is the solution to the challenge, where it render Citrus and NonCitrus in a component which is then rendered in another:
 ```jsx
 class Fruits extends React.Component {
   constructor(props) {
