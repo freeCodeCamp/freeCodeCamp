@@ -57,11 +57,11 @@ When starting out with linux, there are some basic commands everyone should know
  -Use ps to to see running processes,and their process id's..
  Example- ps
  
- 17 **history**
+ 17. **history**
  -Use history to see previously entered commands
  Example-history
  
- 18 **grep**
+ 18. **grep**
  -use grep to find out files containg specific keyword
  Example history | grep ls =>it will show all commanda from history containing ls
  
