@@ -1,3 +1,7 @@
+---
+title: Lunacy
+---
+
 ## Lunacy
 
 Lunacy is a windows version of sketch made by people over at Icons8. It is a free design software with the intention of being able to open sketch files so that designers on windows wouldn't be left out of the design ecosystem.
