@@ -15,7 +15,7 @@ As you can see, you can mutate the object <code>[5, 6, 7]</code> itself and the 
 
 ## Instructions
 <section id='instructions'>
-An array is declared as <code>const s = [5, 7, 2]</code>. Change the array to <code>[2, 5, 7]</code> using various element assignment.
+An array is declared as <code>const s = [5, 7, 2, 8]</code>. Change the array to <code>[8, 5, 7, 2]</code> using various element assignment.
 </section>
 
 ## Tests
@@ -28,9 +28,9 @@ tests:
   - text: <code>s</code> should be a constant variable (by using <code>const</code>).
     testString: getUserInput => assert(getUserInput('index').match(/const\s+s/g), '<code>s</code> should be a constant variable (by using <code>const</code>).');
   - text: Do not change the original array declaration.
-    testString: getUserInput => assert(getUserInput('index').match(/const\s+s\s*=\s*\[\s*5\s*,\s*7\s*,\s*2\s*\]\s*;?/g), 'Do not change the original array declaration.');
-  - text: <code>s</code> should be equal to <code>[2, 5, 7]</code>.
-    testString: assert.deepEqual(s, [2, 5, 7], '<code>s</code> should be equal to <code>[2, 5, 7]</code>.');
+    testString: getUserInput => assert(getUserInput('index').match(/const\s+s\s*=\s*\[\s*5\s*,\s*7\s*,\s*2\s*,\s*8\s*\]\s*;?/g), 'Do not change the original array declaration.');
+  - text: <code>s</code> should be equal to <code>[8, 5, 7, 2]</code>.
+    testString: assert.deepEqual(s, [8, 5, 7, 2], '<code>s</code> should be equal to <code>[8, 5, 7, 2]</code>.');
 
 ```
 
@@ -42,12 +42,12 @@ tests:
 <div id='js-seed'>
 
 ```js
-const s = [5, 7, 2];
+const s = [5, 7, 2, 8];
 function editInPlace() {
   'use strict';
   // change code below this line
 
-  // s = [2, 5, 7]; <- this is invalid
+  // s = [8, 5, 7, 2]; <- this is invalid
 
   // change code above this line
 }
@@ -64,15 +64,16 @@ editInPlace();
 <section id='solution'>
 
 ```js
-const s = [5, 7, 2];
+const s = [5, 7, 2, 8];
 function editInPlace() {
   'use strict';
   // change code below this line
 
-  // s = [2, 5, 7]; <- this is invalid
-  s[0] = 2;
+  // s = [8, 5, 7, 2]; <- this is invalid
+  s[0] = 8;
   s[1] = 5;
   s[2] = 7;
+  s[3] = 2;
   // change code above this line
 }
 editInPlace();
