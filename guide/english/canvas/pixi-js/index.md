@@ -1,3 +1,7 @@
+---
+title: PixiJS
+---
+
 ## PixiJS
 
 # Introduction
