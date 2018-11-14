@@ -10,6 +10,10 @@ WordPress powers over 30% of all websites and is by far the most used CMS on the
 
 Both easy to use and highly customizable, Wordpress offers an easy solution for both web developers and non-web developers alike to create a site.
 
+Just a few advantages of WordPress:
+* Users are able to manage their Wordpress webpage from any computer
+* Has a blog built-in and ready to go whenever applicable. 
+* Has plugins, which extend functionality to WordPress sites. 
 
 ### WordPress as Blogging Platform
 
@@ -58,9 +62,7 @@ Using tools such as [Jetpack](https://jetpack.com/) and an [SSL certificate](htt
 
 ### More Information
 
-- [About WordPress](https://wordpress.org/about/)
-- [WordPress Codex: the online manual](https://codex.wordpress.org/)
-- [WordPress Code Reference](https://developer.wordpress.org/reference/)
 - [WordPress Theme Directory](https://wordpress.org/themes/)
 - [WordPress Plugin Directory](https://wordpress.org/plugins/)
 - [WordPress Github Repository](https://github.com/WordPress/WordPress)
+- [WordPress Support Forums](https://wordpress.org/support/)
