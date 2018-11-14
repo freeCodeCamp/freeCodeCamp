@@ -1,14 +1,14 @@
 
 <table>
     <tr>
-        <!-- Do not translate this table -->
-        <td> يمكنك قراءة هذه التعليمات الاسترشادية باللغات التالية :  </td>
-        <td><a href="/CONTRIBUTING.md"> الإنجليزية </a></td>
-        <td><a href="/docs/arabic/README.md"> العربية </a></td>
-        <td><a href="/docs/chinese/README.md"> الصينية </a></td>
-        <td><a href="/docs/russian/README.md"> الروسية </a></td>
-        <td><a href="/docs/portuguese/README.md"> البرتغالية </a></td>
-        <td><a href="/docs/spanish/README.md"> الإسباينة </a></td>
+        <td> Read these guidelines in </td>
+        <td><a href="/CONTRIBUTING.md"> English </a></td>
+        <td><a href="/docs/chinese/README.md"> 中文 </a></td>
+        <td><a href="/docs/russian/README.md"> русский </a></td>
+        <td><a href="/docs/arabic/README.md"> عربى </a></td>
+        <td><a href="/docs/spanish/README.md"> Español </a></td>
+        <td><a href="/docs/portuguese/README.md"> Português </a></td>
+        <td><a href="/docs/german/README.md"> Deutsch </a></td>
     </tr>
 </table>
 
@@ -57,5 +57,3 @@ freecodecamp.org
 | `npm run test:curriculum` | اجراء الاختبار الخاص بالمسار التعليمي |
 | `npm run test:server` | اجراء الاختبار الخاص بالخادم |
 | `npm run commit` | اداة تفاعلية تساعد على عمل رسالة commit  جيدة |
-
-

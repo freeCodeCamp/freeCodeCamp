@@ -7,6 +7,8 @@ Figma is an interface design tool based in the browser, making it easier for tea
 
 It has an in-built version control system, like Git, which allows designers to design without the fear of designs being overridden or deleted by fellow team-mates. 
 
+Figma also has an inbuilt protyping fuctions that also you to quickly create animated prototypes and share it to key stakeholders.
+
 ### Why Figma?
 
 * Browser-based
@@ -16,6 +18,10 @@ It has an in-built version control system, like Git, which allows designers to d
 * Strong Typography and Vector Graphic Tools
 * It has a Multiplayer Mode which makes collaboration a breeze
 * Easy integration with Zeplin and Avocode for exporting your designs
+* In-built protyping capabilities
+* You can build and share libraries between your projects
+* You can live preview the prototypes on mobile devices
+* Engineers can inspect, export and copy css 
 
 The Figma UI is very easy* to use for beginners. If you have been a former Sketch user, you will feel home in no time. 
 

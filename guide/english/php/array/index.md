@@ -76,6 +76,15 @@ Would produce the following output:
 I like BWM
 ```
 
+## Multidimensional Array
+
+As we mentioned earlier arrays are collection of items, often times these items may be arrays of themselves. 
+![alt text](https://preview.ibb.co/hLBfcf/img.png "Screenshot of multidimensional arrays")
+
+You will always be able to get the value for the specific key by going down the layers: $arr['layerOne']['two']
+
+
+
 ## Pitfalls
 
 When working with arrays, there are a few important things to keep in mind:
