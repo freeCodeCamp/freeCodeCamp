@@ -40,7 +40,7 @@ Here, we've left mailto empty (mailto:?). This will open the user's email client
 
 #### Adding more recipients:
 
-In the same manner, you can add CC and bcc parameters. 
+In the same manner, you can add CC (Carbon Copy) and BCC (Blind Carbon Copy) parameters. 
 Seperate each address by a comma!
 
 Additional parameters must be preceded by `&`.

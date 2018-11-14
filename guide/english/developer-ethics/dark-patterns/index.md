@@ -17,11 +17,11 @@ Examples include:
 
 * [**Hidden Costs**](https://darkpatterns.org/types-of-dark-pattern/hidden-costs) – At the last step of a checkout process, only to discover some unexpected charges appear, e.g. delivery charges, tax, etc. that were not disclosed prior to processing the user's payment.
 
-* [**Misdirection**](https://darkpatterns.org/types-of-dark-pattern/misdirection) – The design purposefully focuses users' attention on one thing in order to distract their attention from another.
+* [**Misdirection**](https://darkpatterns.org/types-of-dark-pattern/misdirection) – The design purposefully focuses a users' attention on one thing in order to distract their attention from another.
 
 * [**Price Comparison Prevention**](https://darkpatterns.org/types-of-dark-pattern/price-comparison-prevention) – An online retailer makes it hard for visitor's to compare the price of an item with another item, so they cannot make an informed decision.
 
-* [**Privacy Zuckering**] (https://darkpatterns.org/types-of-dark-pattern/privacy-zuckering) – Users are tricked into publicly sharing more information about themselves than they really intended to. Named after Facebook CEO Mark Zuckerberg.
+* [**Privacy Zuckering**](https://darkpatterns.org/types-of-dark-pattern/privacy-zuckering) – Users are tricked into publicly sharing more information about themselves than they really intended to. Named after Facebook CEO Mark Zuckerberg.
 
 * [**Roach Motel**](https://darkpatterns.org/types-of-dark-pattern/roach-motel) – The design makes it very easy for users to get into a certain situation, but then makes it hard for them to get out of it (e.g. a subscription).
 
@@ -29,4 +29,4 @@ Examples include:
 
 * [**Trick Questions**](https://darkpatterns.org/types-of-dark-pattern/trick-questions) – Users are made to respond to a question, which, when glanced upon quickly appears to ask one thing, but if read carefully, asks another thing entirely.
 
-A catalog of Dark Patterns along with a continuously updated list of real-world examples is maintained at [darkpatterns.org] (https://darkpatterns.org).
+A catalog of Dark Patterns along with a continuously updated list of real-world examples is mainatained at [darkpatterns.org] (https://darkpatterns.org).

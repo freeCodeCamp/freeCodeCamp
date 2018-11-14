@@ -12,7 +12,7 @@ Forge is a modding api. Minecraft Forge (or Forge for short) is a layer between 
 * A Minecraft account which can be bought from their official website. (https://minecraft.net/en-us/store/)
 * An IDE (Eclipe or IntelliJ are recommended for Minecraft development)
 
-After installing/acquire these pieces of software, download your desired Forge version at https://files.minecraftforge.net/ (*TIP:* Hover over the information button and press direct download to avoid an Adfly virus!)
+After installing/acquiring these pieces of software, download your desired Forge version at https://files.minecraftforge.net/ (*TIP:* Hover over the information button and press direct download to avoid an Adfly virus!)
 Once you have downloaded this ZIP you'll be able to unzip it. Do so and cd (cmd command) into the directory with all of the Forge files. 
 Run `gradlew setupDecompWorkspace`
 
@@ -22,7 +22,7 @@ Next up is picking your IDE (integrated development environment). Eclipse? `grad
 
 Hold your horses. There's much more to it. You'll have to texture an item of course, add code and so much more! In this article we'll only look at some simple sample code which I also use for my own mods. Here it is!
 
-`
+```
 @Mod.EventBusSubscriber
 @Mod(modid = Version.MOD_ID, name = Version.MOD_NAME, version = Version.VERSION)
 public class TheMod {
@@ -57,6 +57,6 @@ public class TheMod {
         proxy.postInit(event);
     }
 }
-`
+```
 
 Use this code as you please, make sure you edit for instance the proxy strings and more! This should give you a basic overview of what a basic mod class looks like.

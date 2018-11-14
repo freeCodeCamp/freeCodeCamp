@@ -3,7 +3,7 @@ title: Continuous Integration
 ---
 ## Continuous Integration
 
-At it's most basic, continuous integration (CI) is an agile development methodology in which developers regularly merge their code directly to the main source, usually a remote `master` branch. In order to ensure that no breaking changes are introduced, a full test suite is run on every potentiual build to regression test the new code, i.e. test that the new code does not break existing, working features.
+At its most basic, continuous integration (CI) is an agile development methodology in which developers regularly merge their code directly to the main source, usually a remote `master` branch. In order to ensure that no breaking changes are introduced, a full test suite is run on every potentiual build to regression test the new code, i.e. test that the new code does not break existing, working features.
 
 This approach requires good test coverage of the code base, meaning that a majority, if not all, of the code has tests which ensure its features are fully functional. Ideally continuous integration would be practiced together with full <a href='https://guide.freecodecamp.org/agile/test-driven-development' target='_blank' rel='nofollow'>Test-Driven Development</a>.
 

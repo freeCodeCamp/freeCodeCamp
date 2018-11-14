@@ -9,7 +9,7 @@
 
 freeCodeCamp.org is a friendly community where you can learn to code for free. It is run by a [donor-supported 501(c)(3) nonprofit](https://donate.freecodecamp.org) with the goal of helping millions of busy adults transition into tech. Our community has already helped more than 10,000 people get their first developer job.
 
-Our full stack web development curriculum is completely free and self-paced. We have thousands of interactive coding challenges to help you expand your skills.
+Our full-stack web development curriculum is completely free and self-paced. We have thousands of interactive coding challenges to help you expand your skills.
 
 ## Table of Contents
 
@@ -25,7 +25,7 @@ Our full stack web development curriculum is completely free and self-paced. We 
 
 freeCodeCamp.org offers several free developer certifications. Each of these certifications involves building 5 required web app projects, along with hundreds of optional coding challenges to help you prepare for those projects. We estimate that each certification will take a beginning programmer around 300 hours to earn.
 
-Each of these 30 projects in the freeCodeCamp.org curriculum has its own agile user stories and automated tests. These help you build up your project incrementally, and ensure you've fulfilled all the user stories before you submit it.
+Each of these 30 projects in the freeCodeCamp.org curriculum has its own agile user stories and automated tests. These help you build up your project incrementally and ensure you've fulfilled all the user stories before you submit it.
 
 You can pull in these test suites through [freeCodeCamp's CDN](https://cdn.freecodecamp.org/testable-projects-fcc/v1/bundle.js). This means you can build these projects on websites like CodePen and Glitch - or even on your local computer's development environment.
 
@@ -55,7 +55,7 @@ Here are our six core certifications:
 - Debugging
 - Basic Data Structures
 - Algorithm Scripting
-- Object Oriented Programming
+- Object-Oriented Programming
 - Functional Programming <br />
   <br />
   **Projects**: Palindrome Checker, Roman Numeral Converter, Caesars Cipher, Telephone Number Validator, Cash Register
@@ -122,7 +122,7 @@ Our community also has:
 
 ### Found a bug?
 
-If you think you've found a bug, first read the [Help I've Found a Bug](https://www.freecodecamp.org/forum/t/how-to-report-a-bug/19543) article and follow its instructions. If you're confident it's a new bug, and have confirmed that someone else facing the same issue, go ahead and create a new GitHub issue. Be sure to include as much information as possible so we can reproduce the bug.
+If you think you've found a bug, first read the [Help I've Found a Bug](https://www.freecodecamp.org/forum/t/how-to-report-a-bug/19543) article and follow its instructions. If you're confident it's a new bug, and have confirmed that someone else is facing the same issue, go ahead and create a new GitHub issue. Be sure to include as much information as possible so we can reproduce the bug.
 
 ### Found a security issue?
 
@@ -136,7 +136,7 @@ Please don't create GitHub issues for security issues. Instead, please send an e
 
 Copyright © 2018 freeCodeCamp.org
 
-The content of this repository bound by the following licenses:
+The content of this repository is bound by the following licenses:
 
 - The computer software is licensed under the [BSD-3-Clause](LICENSE.md) License.
 - The [curricular content](https://www.npmjs.com/package/@freecodecamp/curriculum) in the [`/curriculum`](/curriculum) folder and its subdirectories are licensed under the [CC-BY-SA-4.0](/curriculum/LICENSE.md) License.
