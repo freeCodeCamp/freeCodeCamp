@@ -44,7 +44,7 @@ Product Marketing and Go-to-Market (Outbound)
 
 Product management continues to expand as a profession. Demand for qualified product managers is growing at every level. There are a variety of roles and responsibilities depending on experience level. Opportunities range from an Associate Product Manager all the way to CPO.
 
-Most Product Managers have been in different roles earlier in their careers. Very often software engineers, sales engineers, or professional services consultant grow into the role of Product Manager. But in some companies (e.g. Google, Facebook, etc.), junior Product Managers are recruited straight out of school and supported by career programs that teach them while on the job.   
+Most Product Managers have been in different roles earlier in their careers. Very often software engineers, sales engineers, or professional services consultant grow into the role of Product Manager. However, in some companies (e.g. Google, Facebook, etc.), junior Product Managers are recruited straight out of school and supported by career programs that teach them while on the job.   
 
 #### More Information:
 Wikipedia page: https://en.wikipedia.org/wiki/Product_management

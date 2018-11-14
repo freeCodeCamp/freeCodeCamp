@@ -1,6 +1,9 @@
 const { createChallengeNodes } = require('./create-Challenge-nodes');
 
-exports.sourceNodes = ({ actions, reporter }, pluginOptions) => {
+exports.sourceNodes = function sourceChallengesSourceNodes(
+  { actions, reporter },
+  pluginOptions
+) {
   if (typeof pluginOptions.source !== 'function') {
     reporter.panic(`
 "source" is a required option for fcc-source-challenges. It must be a function
