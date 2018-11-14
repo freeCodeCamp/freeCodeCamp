@@ -54,7 +54,9 @@ Output:
 Both the above pieces of code snippets do the same work , however , clearly, the for each loops offer advantages in making iteration through and accessing of elements of a collection(array,in our case) easier.
 
 With the enhanced for loops we no longer need to mention starting and ending points for the loop,thus reducing OutofBounds errors.
-The need for loop counters and manual indexing are removed, and readability of the code is improved.
+The need for loop counters and manual indexing are removed, and readability of the code is improved. 
+
+If we do want a loop counter for a for each loop, all we have to do is create a variable outside the loop and iterate within it.
 
 It is important to note that making changes to the iterating variable for enhanced for loops within the loop causes no changes to the original collection elements.
 
