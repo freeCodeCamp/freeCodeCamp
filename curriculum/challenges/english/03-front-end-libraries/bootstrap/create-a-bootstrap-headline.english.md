@@ -48,14 +48,13 @@ tests:
 
 </div>
 
-
-
 </section>
 
 ## Solution
 <section id='solution'>
 
-```js
-// solution required
+```html
+<h3 class="text-primary text-center">jQuery Playground</h3>
 ```
+
 </section>

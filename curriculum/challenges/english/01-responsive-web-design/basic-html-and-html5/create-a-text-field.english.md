@@ -8,7 +8,7 @@ videoUrl: 'https://scrimba.com/p/pVMPUv/c2EVnf6'
 ## Description
 <section id='description'>
 Now let's create a web form.
-Input elements are a convenient way to get input from your user.
+<code>input</code> elements are a convenient way to get input from your user.
 You can create a text input like this:
 <code>&#60;input type="text"&#62;</code>
 Note that <code>input</code> elements are self-closing.
