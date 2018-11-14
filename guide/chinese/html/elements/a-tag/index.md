@@ -1,8 +1,8 @@
 ---
 title: A Tag
-localeTitle: 一天
+localeTitle: a 标记
 ---
-## 一个标签
+## a 标记
 
 `<a>`标签或_锚_元素创建指向另一个页面或文件的超链接。为了链接到不同的页面或文件， `<a>`标签还必须包含一个`href`属性，该属性指示链接的目的地。
 
@@ -26,9 +26,9 @@ localeTitle: 一天
   <a href= "https://guide.freecodecamp.org/"><img src="logo.svg"></a> 
 ```
 
-还可以确定`<a>`标签的目标。这是使用`target`属性完成的。 `target`属性具有以下值`_blank|_self|_parent|_top|framename` 。
+"herf"还可以通过"target"属性确定`<a>`标签的目标。 `target`属性可以是以下值`_blank|_self|_parent|_top|framename` 。
 
-`_blank` ：根据用户的偏好，在新选项卡或新窗口中打开链接。 `_self` ：在同一帧中打开链接（默认行为）。 `_parent` ：打开父框架中的链接，例如，当用户单击iframe中的链接时。 `_top` ：打开窗口整个主体中的链接。 `framename` ：打开指定帧中的链接。
+`_blank` ：根据用户的偏好，在新选项卡或新窗口中打开链接。 `_self` ：在同一框架中打开链接（默认行为）。 `_parent` ：打开父框架中的链接，例如，当用户单击iframe中的链接时。 `_top` ：打开窗口整个主体中的链接。 `framename` ：打开指定框架中的链接。
 
 #### 例：
 
@@ -41,6 +41,6 @@ localeTitle: 一天
 
 #### 更多信息：
 
-*   [HTML <a>元素：MDN](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/a)
-*   [标签：w3schools](https://www.w3schools.com/tags/tag_a.asp)
-*   [标签：htmlreference.io](http://htmlreference.io/element/a/)
+*   [HTML <a>element：MDN](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/a)
+*   [tag：w3schools](https://www.w3schools.com/tags/tag_a.asp)
+*   [tag：htmlreference.io](http://htmlreference.io/element/a/)

@@ -22,11 +22,11 @@ Set the <code>animation-duration</code> of the elements with the classes <code>s
 ```yml
 tests:
   - text: The <code>animation-duration</code> property for the star with class <code>star-1</code> should remain at 1s.
-    testString: 'assert($(".star-1").css("animation-duration") == "1s", "The <code>animation-duration</code> property for the star with class <code>star-1</code> should remain at 1s.");'
+    testString: assert($('.star-1').css('animation-duration') == '1s', 'The <code>animation-duration</code> property for the star with class <code>star-1</code> should remain at 1s.');
   - text: The <code>animation-duration</code> property for the star with class <code>star-2</code> should be 0.9s.
-    testString: 'assert($(".star-2").css("animation-duration") == "0.9s", "The <code>animation-duration</code> property for the star with class <code>star-2</code> should be 0.9s.");'
+    testString: assert($('.star-2').css('animation-duration') == '0.9s', 'The <code>animation-duration</code> property for the star with class <code>star-2</code> should be 0.9s.');
   - text: The <code>animation-duration</code> property for the star with class <code>star-3</code> should be 1.1s.
-    testString: 'assert($(".star-3").css("animation-duration") == "1.1s", "The <code>animation-duration</code> property for the star with class <code>star-3</code> should be 1.1s.");'
+    testString: assert($('.star-3').css('animation-duration') == '1.1s', 'The <code>animation-duration</code> property for the star with class <code>star-3</code> should be 1.1s.');
 
 ```
 
