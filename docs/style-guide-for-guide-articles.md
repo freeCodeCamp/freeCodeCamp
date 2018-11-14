@@ -1,6 +1,6 @@
 # Style guide for creating and editing Guide Articles
 
-We recommend the following guidelines to writing Guide articles to help you get started contributing and create helpful articles.
+We recommend the following guidelines to writing Guide articles to help you get started contributing and creating helpful articles.
 
 ## Title
 
@@ -8,7 +8,7 @@ Article titles should be as short, concise, and to-the-point as possible.
 
 We want campers to quickly find the information they're looking for, and the title should reflect the main theme of the article.
 
-Folder name is used in the URL, so only use dashes -, numbers 0-9, and lowercase letters a-z for it.
+Folder name is used in the URL, so only use dashes (-), numbers (0-9), and lowercase letters (a-z) for it.
 
 However, you can include special characters in the article title.
 
@@ -185,7 +185,7 @@ And here is even more that should be cited from another source.<sup>2</sup>
 2. [Purdue OWL Staff. "MLA Works Cited: Electronic Sources." *Purdue Online Writing Lab.* October 12, 2017. Accessed: October 20, 2017.](https://owl.english.purdue.edu/owl/resource/747/08/)
 ```
 
-You can check out the Purdue link above to see how to properly cite web sources (they even show how to cite tweets!).
+You can check out the [Purdue link referenced above](https://owl.english.purdue.edu/owl/resource/747/08/) to see how to properly cite web sources (they even show how to cite tweets!).
 
 Typically, an attribution has a structure like the following:
 
@@ -278,7 +278,7 @@ Proper nouns should use correct capitalization when possible. Below is a list of
 - JavaScript (capital letters in "J" and "S" and no abbreviations)
 - Node.js
 
-Front-end development (adjective form with a dash) is when you working on the front end (noun form with no dash). The same goes with the back end, full stack, and many other compound terms.
+Front-end development (adjective form with a dash) is when you're working on the front end (noun form with no dash). The same goes for the back end, full stack, and many other compound terms.
 
 ## Third-Party Tools
 

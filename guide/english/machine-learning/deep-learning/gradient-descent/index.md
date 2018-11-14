@@ -20,7 +20,7 @@ This is where feature scaling, also called normalization, comes in handy, to mak
 
 Machine learning problems usually requires computations over a sample size in the millions, and that could be very computationally intensive. 
 
-In stochastic gradient descent you update the the parameter for the cost gradient of each example rather that the sum of the cost gradient of all the examples. You could arrive at a set of good parameters faster after only a few passes through the training examples, thus the learning is faster as well. 
+In stochastic gradient descent you update the parameter for the cost gradient of each example rather that the sum of the cost gradient of all the examples. You could arrive at a set of good parameters faster after only a few passes through the training examples, thus the learning is faster as well. 
 
 ### Further Reading
 
