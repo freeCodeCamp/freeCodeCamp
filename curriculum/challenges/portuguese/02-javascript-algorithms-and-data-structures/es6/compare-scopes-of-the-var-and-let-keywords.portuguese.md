@@ -3,7 +3,7 @@ id: 587d7b87367417b2b2512b40
 title: Compare Scopes of the var and let Keywords
 challengeType: 1
 videoUrl: ''
-localeTitle: Compare escopos do var e deixe Palavras-chave
+localeTitle: Compare escopos das palvras-chave var e let
 ---
 
 ## Description
