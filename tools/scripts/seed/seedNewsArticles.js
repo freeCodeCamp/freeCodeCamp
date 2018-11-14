@@ -79,7 +79,7 @@ function generateArticle() {
       username: faker.internet.userName()
     },
     featureImage: {
-      src: faker.image.image(2000, 1300),
+      src: 'https://picsum.photos/2000/1300?random',
       alt: faker.lorem.sentence(),
       caption: paragraphs >= 5 ? faker.lorem.sentence() : ''
     },
