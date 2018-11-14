@@ -117,7 +117,7 @@ Printing strings is easy, but other operations are slightly more complex. Thankf
 #### Copying: `strcpy`
 `strcpy` (from 'string copy') copies a string. For example, this code snippet will copy the contents of the string `second` into the string `first`:
 ```C
-strpy(first, second);
+strcpy(first, second);
 ```
 Here is an example of how manual implementation of the strcpy function looks like: 
 
