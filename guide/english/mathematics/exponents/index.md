@@ -12,6 +12,9 @@ In this example, 3 is the exponent.
 
 To compute the value of 2<sup>3</sup>, you would multiply 2 to itself 3 times: 2 * 2 * 2. This evaluates to 8.
 
+The general format of writing an exponent is:  
+- base<sup># of times you multiply base by itself</sup>
+
 Common exponents have special names:
 - Exponent of 2 is often referred to as squared.  So 3<sup>2</sup> is referred to as 3 squared, evaluating to 9.
 - Exponent of 3 is often referred to as cubed.  So 2<sup>3</sup> is referred to as 3 cubed, evaluating to 8.
