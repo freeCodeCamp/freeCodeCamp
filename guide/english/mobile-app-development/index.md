@@ -55,4 +55,4 @@ Originally created by Progress, [NativeScript](https://www.nativescript.org/) ap
 
 ### Xamarin
 
-Xamarin is a cross platform mobile development framework from Microsoft. It allows you to develop on a PC or a MAC using a C# codebase. You can create Native iOS Apps, Native Android Apps, and Native Windows Phone Apps. You can use either Visual Studio or Xamarin Studio as the IDE to develop using Xamarin.
+[Xamarin](https://visualstudio.microsoft.com/xamarin/) is a cross platform mobile development framework from Microsoft. It allows you to develop on a PC or a MAC using a C# codebase. You can create Native iOS Apps, Native Android Apps, and Native Windows Phone Apps. You can use either Visual Studio or Xamarin Studio as the IDE to develop using Xamarin.
