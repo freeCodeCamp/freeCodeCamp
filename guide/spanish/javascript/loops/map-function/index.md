@@ -1,4 +1,4 @@
-## Map Loop
+## Map
 
 Si queremos crear un nuevo array luego de uno existente y modificarlos podemos utilizar Map.
 
