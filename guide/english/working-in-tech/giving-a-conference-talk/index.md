@@ -33,11 +33,11 @@ It is not uncommon for a conference to have an acceptance rate of around 20%. Do
 
 When you are accepted to speak at a conference, it is time to finish writing your talk. Take your outline and fill in the gaps. 
 
-Create your slide deck and add speaker notes so you know what you are going to say for each slide. Be aware of any slide guidelines that the conference might have (aspect ratio, acceptable colors, font, font size, etc) and stick to them. 
+Create your slide deck and add speaker notes so you know what you are going to say for each slide. Be aware of any slide guidelines that the conference might have (aspect ratio, acceptable colors, font, font size, etc.) and stick to them. 
 
 ## Practice
 
-Practice as much as you need to feel relaxed. You should time yourself giving the presentation a few different occassions to make sure that you are well within the time limit—you don't want to be cut off because your talk goes over time. Try your best to not be dependent on your notes/slides so that you can engage the audience by making eye contact as much as possible. 
+Practice as much as you need to feel relaxed. You should time yourself giving the presentation a few different occasions to make sure that you are well within the time limit—you don't want to be cut off because your talk goes over time. Try your best to not be dependent on your notes/slides so that you can engage the audience by making eye contact as much as possible. 
 
 ## Enjoy the Conference
 
