@@ -3,6 +3,7 @@
 ---
 
 # Tableau
+
 Tableau is a data visualization software for business intelligence. Tableau is commercially available through the Tableau Software foundation. Capabilites include highly interactive visualizations, mapping, and dashboards. A robust community for Tableau visualizations exists online, where many individuals publically publish their dashboards. 
 
 # Getting Started with Tableau Public
