@@ -16,6 +16,7 @@ If you want to learn Tableau on your own, it's possible to get a free license fo
 ### Links:
   * [Tableau Website](https://www.tableau.com)
   * [Tableau Public Gallery](https://public.tableau.com/en-us/s/gallery)
+  * [Tableau Blog](https://www.tableau.com/about/blog)
   * [PostgreSQL Server](https://onlinehelp.tableau.com/current/pro/desktop/en-us/examples_postgresql.html)
   * [Using R and Tableau](https://www.tableau.com/learn/whitepapers/using-r-and-tableau)
   * [Tableau Integration with Python](https://community.tableau.com/thread/236479)
