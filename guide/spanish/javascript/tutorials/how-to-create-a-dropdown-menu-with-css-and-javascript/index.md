@@ -241,5 +241,5 @@ El código completo y la demostración de esta aplicación se pueden encontrar [
 ## Más información
 
 *   [ES6 introducción](https://guide.freecodecamp.org/javascript/es6)
-*   [Funciones de flecha](https://guide.freecodecamp.org/javascript/es6/arrow_functions/)
-*   [Let y Const](https://guide.freecodecamp.org/javascript/es6/let_and_const/)
+*   [Funciones de flecha](https://guide.freecodecamp.org/javascript/es6/arrow-functions/)
+*   [Let y Const](https://guide.freecodecamp.org/javascript/es6/let-and-const/)

@@ -10,7 +10,7 @@ Unlike hard drives, RAM is a volatile memory and requires power to keep the data
 
 There are two main types of RAM: static (SRAM) and dynamic (DRAM). Static RAM is constructed using flip-flops, is very fast, but is difficult to make in large sizes. Dynamic RAM is constructed using capacitors, is fairly fast, but needs 'refreshed' periodically to keep charge on the capacitors. SRAM is often used closer to the CPU due to its speed and space constraints whereas DRAM is used as main memory.
 
-Some examples of packaging RAM are: DIMM, RIMM, SIMM, SO-DIMM, and SOO-RIMM. Below is an example image of a 512 MB DIMM computer memory module, a typical piece of RAM found in desktop computers. This memory module would be installed into one of the memory slots on a motherboard.
+Some examples of packaging RAM are: DIMM, RIMM, SIMM, SO-DIMM, and SO-RIMM. Below is an example image of a 512 MB DIMM computer memory module, a typical piece of RAM found in desktop computers. This memory module would be installed into one of the memory slots on a motherboard.
 
 ![RAM](https://images-na.ssl-images-amazon.com/images/I/41kVnWQebtL._SL256_.jpg)
 
@@ -46,3 +46,4 @@ Do you plan on running VMs across a framework of server clients? Consider new, e
 * [DDR4 SDRAM](https://en.wikipedia.org/wiki/DDR4_SDRAM)
 * [Types of RAM](http://www.computermemoryupgrade.net/types-of-computer-memory-common-uses.html)
 * [Laptop Memory Buyer's Guide](https://www.lifewire.com/laptop-memory-buyers-guide-833024)
+* [ECC Memory](https://en.wikipedia.org/wiki/ECC_memory)

@@ -3,7 +3,7 @@
         <!-- Do not translate this table -->
         <td> Read these guidelines in </td>
         <td><a href="/CONTRIBUTING.md"> English </a></td>
-        <td><a href="/docs/arabic/CONTRIBUTING.md"> عربى </a></td>
+        <td><a href="/docs/arabic/CONTRIBUTING.md"> عربي </a></td>
         <td><a href="/docs/chinese/CONTRIBUTING.md"> 中文 </a></td>
         <td><a href="/docs/portuguese/CONTRIBUTING.md"> Português </a></td>
         <td><a href="/docs/russian/CONTRIBUTING.md"> русский </a></td>
@@ -15,7 +15,7 @@
 
 Hello 👋!
 
-freeCodeCamp.org is possible thanks to thousands of kind volunteers like you. We are grateful for your contributions, and we are excited to welcome you aboard.
+freeCodeCamp.org is possible, thanks to thousands of kind volunteers like you. We are grateful for your contributions and we are excited to welcome you aboard.
 
 We strictly enforce our ["Code of Conduct"](https://www.freecodecamp.org/code-of-conduct). Take a moment to read it. It's only 196 words long.
 
@@ -55,7 +55,7 @@ You can find an [example article about HTML Anchor Elements here](https://github
 
 **What can I write an article about?**
 
-We welcome your help in writing these articles. You don't have to be an expert in a topic to write about it—this entire guide is open source, so even if you make a mistake, another contributor will eventually correct it.
+We welcome your help writing these articles. You don't have to be an expert in a topic to write about it.This entire Guide is open source, so even if you make a mistake, another contributor will eventually correct it.
 
 To help, find a `stub article` on our [Guide website](https://guide.freecodecamp.org), write the article, then open a pull request to replace the stub with your article. A [pull request](https://help.github.com/articles/about-pull-requests/) is how you'll suggest changes. It lets others know about, review, and eventually adopt your changes.
 
@@ -73,11 +73,11 @@ If you're interested in improving these coding challenges, here's [how to work o
 
 ### Translate guide articles and coding challenges
 
-You can help us to translate our guide articles and coding challenges into a language that you speak. Currently we have translated versions in:
+You can help us translate our Guide articles and Coding challenges for a language that you speak. Currently, we have translated versions in:
 
 - [Chinese (中文)](https://github.com/freeCodeCamp/freeCodeCamp/tree/master/curriculum/challenges/chinese)
 - [Russian (русский)](https://github.com/freeCodeCamp/freeCodeCamp/tree/master/curriculum/challenges/russian)
-- [Arabic (عربى)](https://github.com/freeCodeCamp/freeCodeCamp/tree/master/curriculum/challenges/arabic)
+- [Arabic (عربي)](https://github.com/freeCodeCamp/freeCodeCamp/tree/master/curriculum/challenges/arabic)
 - [Spanish (Español)](https://github.com/freeCodeCamp/freeCodeCamp/tree/master/curriculum/challenges/spanish)
 - [Portuguese (Português)](https://github.com/freeCodeCamp/freeCodeCamp/tree/master/curriculum/challenges/portuguese)
 
@@ -97,7 +97,7 @@ Contributing to this requires some understanding of APIs, ES6 Syntax, and a lot 
 
 Essentially, we expect basic familiarity with some of the aforementioned technologies, tools, and libraries. With that being said, you are not required to be an expert on them in order to contribute.
 
-Feel free to ask us questions on the related issue threads and we will be glad to answer them. When in doubt, you can reach Mrugesh Mohapatra [`@raisedadead`](https://github.com/raisedadead) or Stuart Taylor [`@bouncey`](https://github.com/bouncey) from our platform dev team to help you with this.
+Feel free to ask us questions on the related issue threads, and we will be glad to clarify. When in doubt, you can reach Mrugesh Mohapatra [`@raisedadead`](https://github.com/raisedadead) or Stuart Taylor [`@bouncey`](https://github.com/bouncey) from our platform dev team to help you with this.
 
 If you want to help us improve our codebase, here's [how to setup freeCodeCamp locally](/docs/how-to-setup-freecodecamp-locally.md).
 
