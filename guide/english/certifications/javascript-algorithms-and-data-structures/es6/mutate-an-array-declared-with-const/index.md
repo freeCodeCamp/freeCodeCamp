@@ -15,7 +15,7 @@ Reassign the values of the `const` variable `s` using various element assignment
 
 > _try to solve the problem now_
 
-## ![:speech_balloon:](https://forum.freecodecamp.com/images/emoji/emoji_one/speech_balloon.png?v=3 ":speech_balloon:") Hint: 1
+## ![:speech_balloon:](https://forum.freecodecamp.com/images/emoji/emoji_one/speech_balloon.png?v=3 ":speech_balloon:") Hint: 2
 
 *   To access array value use array[index]
 
@@ -29,12 +29,13 @@ Reassign the values of the `const` variable `s` using various element assignment
 
 ## ![:beginner:](https://forum.freecodecamp.com/images/emoji/emoji_one/beginner.png?v=3 ":beginner:") Basic Code Solution:
 ```javascript
-    const s = [5, 7, 2];
+    const s = [5, 7, 2, 8];
     function editInPlace() {
       "use strict";
-      s[0] = 2;
+      s[0] = 8;
       s[1] = 5;
       s[2] = 7;
+      s[3] = 2;
     }
     editInPlace();
 ```
@@ -43,6 +44,21 @@ Reassign the values of the `const` variable `s` using various element assignment
 # Code Explanation:
 
 Trying to reassign a read-only `const` variable will throw an error, but by using various element assignment you can access and change the value of an array just like you would with `let` or `var`.
+
+## ![:beginner:](https://forum.freecodecamp.com/images/emoji/emoji_one/beginner.png?v=3 ":beginner:") Advanced Code Solution:
+```javascript
+    const s = [5, 7, 2, 8];
+    function editInPlace() {
+      "use strict";
+      s.unshift(s.pop());
+    }
+    editInPlace();
+```
+![:rocket:](https://forum.freecodecamp.com/images/emoji/emoji_one/rocket.png?v=3 ":rocket:") <a href='https://codepen.io/imambungo/pen/rQjXpX' target='_blank' rel='nofollow'>Run Code</a>
+
+# Code Explanation:
+
+Notice that the problem is to move the last element to the front. Instead of assign every element in the array, we can just pop the last element and unshift the returned value back to the array. Yeah, we can use array methods to a `const` array.
 
 #### Relevant Links
 
