@@ -79,6 +79,23 @@ When starting out with linux, there are some basic commands everyone should know
 17. **grep** - print lines matching a pattern
 - `grep` searches for `PATTERN` in each FILE.  A FILE of `“-”` stands for standard input. If no FILE is given, recursive searches examine the working directory, and nonrecursive searches read standard input. By default, `grep` prints the matching lines.
 
+ 15. **man** - Show the manual for a command
+ - Use `man` to see manual of any commmand.  It will show different ways a given command can be used  
+    Example: `man ls`
+ 
+ 16. **ps** - Show active processes
+ - Use `ps` to see running processes, and their process IDs  
+     Example: `ps`
+ 
+ 17. **history**
+ - Use `history` to see previously entered commands  
+    Example: `history`
+ 
+ 18. **grep**
+ - Use `grep` to match on specific keyword(s)  
+    Example: `history | grep ls` will show all commands from history containing `ls`
+ 
+ 
 ### Useful Resources for Practice:
 - [JSLinux](https://bellard.org/jslinux/vm.html?url=https://bellard.org/jslinux/buildroot-x86.cfg): Run the terminal inside your browser. Great for practice.
 - [LearnShell](https://www.learnshell.org/): Interactive Linux shell (terminal) tutorials.
