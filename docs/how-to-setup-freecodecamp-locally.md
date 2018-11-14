@@ -261,7 +261,7 @@ Follow these steps:
 
 2. Next, you would want to `rebase` from the `upstream`.
 
-    This step **will sync the latest changes** from the main repository of freeCodeCamp. It's important that you rebase as often as possible, to avoid conflicts later.
+    This step **will sync the latest changes** from the main repository of freeCodeCamp. It is important that you rebase as often as possible, to avoid conflicts later.
 
     ```shell
     git pull --rebase upstream master
