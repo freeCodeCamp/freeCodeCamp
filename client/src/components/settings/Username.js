@@ -60,7 +60,7 @@ class UsernameSettings extends Component {
       isFormPristine: true,
       formValue: props.username,
       characterValidation: { valid: false, error: null },
-      sumbitClicked: false
+      submitClicked: false
     };
 
     this.handleChange = this.handleChange.bind(this);
@@ -77,7 +77,7 @@ class UsernameSettings extends Component {
       /* eslint-disable-next-line react/no-did-update-set-state */
       return this.setState({
         isFormPristine: username === formValue,
-        sumbitClicked: false
+        submitClicked: false
       });
     }
     return null;
@@ -92,7 +92,7 @@ class UsernameSettings extends Component {
     } = this.state;
 
     return this.setState(
-      { sumbitClicked: true },
+      { submitClicked: true },
       () => (valid ? submitNewUsername(formValue) : null)
     );
   }
@@ -166,7 +166,7 @@ class UsernameSettings extends Component {
       isFormPristine,
       formValue,
       characterValidation: { valid, error },
-      sumbitClicked
+      submitClicked
     } = this.state;
     const { isValidUsername, validating } = this.props;
 
@@ -190,7 +190,7 @@ class UsernameSettings extends Component {
           <FullWidthRow>
             <BlockSaveButton
               disabled={
-                !(isValidUsername && valid && !isFormPristine) || sumbitClicked
+                !(isValidUsername && valid && !isFormPristine) || submitClicked
               }
             />
           </FullWidthRow>
