@@ -1,6 +1,7 @@
 ---
 title: Laravel
 ---
+
 # Laravel
 
 [Laravel](https://laravel.com/) is a free and open-source PHP web framework available on [GitHub](https://github.com/laravel/laravel) and licensed under the terms of MIT License. It was created by Taylor Otwell and designed with the objective of enabling rapid development of web applications following the model–view–controller (MVC) architectural pattern. It has gained a lot of traction over the years and is now the most starred PHP framework on GitHub. 
@@ -9,8 +10,8 @@ Some of the main features found in Laravel are different ways for accessing rela
 
 Because Laravel is open-source, the community around it is very strong and the documentation is top-notch and example driven. Take a look at the [official documentation](https://laravel.com/docs/5.7/) to get a glimpse of how easy it is to use!
 
-### Valuable Resources
-- [Laracasts](https://laracasts.com/)
+Laravel also has its own online learning platform, [Laracasts](https://laracasts.com/), which offers extensive video tutorials  (some free, some available with paid subscription) on Laravel as well as PHP, Javascript, and other web development topics. The free introductory series [Laravel 5.4 From Scratch](https://laracasts.com/series/laravel-from-scratch-2017) is a great place to start.
+
 
 ### Featured Packages
 
@@ -29,3 +30,25 @@ Ready-to-use bundles provided by Laravel through Composer and Packagist include 
 4. Multiple file system support
 5. Improved method injection
 6. Contracts
+
+
+### Laravel Ecosystem
+
+One of the most powerful features of Laravel is the ecosystem of tools and extensions that surrounds it.
+
+These include a range of services and software, some created by Laravel and some by the wider developer community:
+
+- [Forge](https://forge.laravel.com/) - server management
+- [Envoyer](https://envoyer.io/) - deployment
+- [Horizon](https://horizon.laravel.com/) - queues / monitoring
+- [Lumen](https://lumen.laravel.com/) - fast micro-framework
+- [Nova](https://nova.laravel.com/) - administration panel
+- [Spark](https://spark.laravel.com/) - application boilerplate / scaffolding
+- [Echo](https://laravel.com/docs/5.7/broadcasting) - broadcasting / websockets
+- [Homestead](https://laravel.com/docs/5.7/homestead) - virtual dev environment
+- [Cashier](https://laravel.com/docs/5.7/billing) - subscription billing
+- [Valet](https://laravel.com/docs/5.7/valet) - Mac dev environment
+- [Mix](https://laravel.com/docs/5.7/mix) - build / asset compiling
+- [Eloquent ORM](https://laravel.com/docs/5.7/eloquent) - database model
+- [Cachet](https://cachethq.io/) - status page system
+- [Statamic](https://statamic.com/) - CMS

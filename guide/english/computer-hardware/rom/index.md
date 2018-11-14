@@ -3,7 +3,7 @@ title: ROM
 ---
 ## Read Only Memory
 
-Read-only Memory (ROM) is a self descriptive type of memory that references the idea that a computer and its appliations can only read data from it. This is in direct contrast to other memory types, where it is possibe to read and write data and store it in memory.
+Read-only Memory (ROM) is a self descriptive type of memory that references the idea that a computer and its appliations can only read data from it. This is in direct contrast to other memory types, where it is possibe to read and write data and store it in memory. It is mainly used to store programs and data which generally do not need any modification throughout the life of the device.
 
 ### Examples of ROM 
 

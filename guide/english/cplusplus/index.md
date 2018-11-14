@@ -94,12 +94,8 @@ _You have finished coding your first C++ program and have understood most of the
 
  [Try it yourself ! :)](https://repl.it/L4k3)
 
-**You may need some software to write and execute C++ code. I recommend using CodeBlocks. There's a download link below :**
+**You need software to write and execute C++ code, download from one of the links below:**
 
-Download Link : [Download Here](http://www.codeblocks.org/downloads/26)
-
-* Click the link with the GNU/GCC compiler for windows. This will not require an additional installation
-
-Other alternatives could be visual studio, using a compiler or an online IDE such as Cloud9 or repl.it
-
-Link #2 for Mac : [Download for Mac #2 here](https://developer.apple.com/xcode/)
+[Codeblocks](http://www.codeblocks.org/downloads/26)  
+[Xcode](https://developer.apple.com/xcode/)  
+[Eclipse](http://www.eclipse.org/downloads/)
