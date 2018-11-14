@@ -3,12 +3,13 @@ title: Virtual Reality Development on The Web
 ---
 ## Virtual Reality Development on The Web
 
-This section contains articles related to Virtual Reality Application Development using frameworks such as the A-Frame Framework, WebVR, and Three.js.
+This section contains articles related to Virtual Reality Application Development using frameworks such as the A-Frame Framework, WebVR, Three.js and React 360 formerly known as React-VR.
 
 ## Frameworks
 
 * A-Frame - https://aframe.io/
-* three.js - https://threejs.org/
+* Three.js - https://threejs.org/
+* React 360 - https://facebook.github.io/react-360/
 
 ## Historical Resources on Virtual Reality
 
@@ -24,6 +25,11 @@ This section contains articles related to Virtual Reality Application Developmen
 * Samsung Gear VR - https://www.samsung.com/global/galaxy/gear-vr/
   * https://samsungvr.com/
 * HTC - https://www.vive.com/us/
+
+## 3D Content Resources
+
+* Sketchfab - https://sketchfab.com/
+* Poly - https://poly.google.com/
 
 ## Examples of Various Virtual Reality Creations
 
