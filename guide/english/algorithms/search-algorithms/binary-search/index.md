@@ -26,19 +26,19 @@ for small sets linear search is better but in larger ones it is way more efficie
 In detail, how many times can you divide N by 2 until you have 1? This is essentially saying, do a binary search (half the elements) until you found it. In a formula this would be this:
 
 ```
-1 = N / 2x
+1 = N / 2^x
 ```
 
-Multiply by 2x:
+Multiply by 2<sup>x</sup>:
 
 ```
-2x = N
+2^x = N
 ```
 
 Now do the log2:
 
 ```
-log2(2x)    = log2 N
+log2(2^x)   = log2 N
 x * log2(2) = log2 N
 x * 1       = log2 N
 ```

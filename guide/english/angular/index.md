@@ -6,8 +6,9 @@ title: Angular
 
 
 ## Angular
+![angular logo](https://angular.io/assets/images/logos/angular/angular.png)
 
-AngularJS (versions 1.x) is a JavaScript based open source Framework. It is cross platform and used to develop Single Page Web Application (SPWA). AngularJS implements the MVC pattern to separate the logic , presentation and data components. It also uses dependency injection to make use of server-side services in client side applications.
+AngularJS (versions 1.x) is a JavaScript based open source Framework. It is cross platform and used to develop Single Page Web Applications (SPWA). AngularJS implements the Model-View-Controller(MVC) pattern to separate the logic, presentation and data components. It also uses dependency injection to make use of server-side services in client side applications.
 
 Angular(versions 2.x and up) is a Typescript based open source framework to develop front-end Web application. Angular has following features like generics, static-typing and also some ES6 features.
 
@@ -57,6 +58,14 @@ Then add a `<script>` to your `index.html`:
 
 For more information regarding the documentation, refer to the official site of [AngularJS](https://docs.angularjs.org/api) 
 
-You can install **Angular 2.x** and other versions by following the steps from the official documentation of [Angular](https://angular.io/guide/quickstart)
+**Angular 2.x**:
+
+npm
+
+```shell 
+npm install -g @angular/cli@latest
+```
+
+You can create **Angular 2.x** and other version projects by following the steps from the official documentation of [Angular](https://angular.io/guide/quickstart)
 
 *Note : Please refer the Angular documentation for the updated information.*
