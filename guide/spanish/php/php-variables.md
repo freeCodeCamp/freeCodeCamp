@@ -2,6 +2,7 @@
 title: PHP Variables
 localeTitle: Variables PHP
 ---
+
 ### PHP- Tipos de variables
 
 Las variables son la forma principal de almacenar información en el medio de un programa PHP. Todas las variables en PHP son declaradas con un signo de dólar como `$nombre_de_la_variable` . Las variables se asignan con el `= operador` , con la variable en el lado izquierdo y la expresión a evaluar a la derecha.
