@@ -18,14 +18,15 @@ Example of Number type usage in TypeScript:
 
 ```typescript
 class Employee extends Person{
-age:Number;
-constructor(age : Number){
-  //calling constructor of Person
-  super();
-  this.age = age;
+  age:Number;
+  constructor(age : Number){
+    //calling constructor of Person
+    super();
+    this.age = age;
   }
- getAge(): Number{
-  return this.age;
+ 
+  getAge(): Number{
+    return this.age;
   }
 }
 
