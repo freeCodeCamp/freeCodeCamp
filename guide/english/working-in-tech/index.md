@@ -65,8 +65,8 @@ The field of computer security is growing at a rapid rate every year. A recent r
 * [The Complete Software Developer's Career Guide](https://simpleprogrammer.com/products/careerguide/)
 
 ### Podcasts
-[10 Books Python Developers should be reading - talkpython.fm](https://talkpython.fm/episodes/show/130/10-books-python-developers-should-be-reading)
+- [10 Books Python Developers should be reading - talkpython.fm](https://talkpython.fm/episodes/show/130/10-books-python-developers-should-be-reading)
+- [This week in Google](https://twit.tv/shows/this-week-in-google)
+- [Programming Throwdown - Good overview of multiple languages and concepts](https://www.programmingthrowdown.com/)
+- [Shop Talk: A Web Design and Development Podcast](https://shoptalkshow.com/)
 
-[Programming Throwdown - Good overview of multiple languages and concepts](https://www.programmingthrowdown.com/)
-
-[Shop Talk: A Web Design and Development Podcast](https://shoptalkshow.com/)
