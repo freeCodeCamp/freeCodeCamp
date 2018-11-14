@@ -1,12 +1,13 @@
 <table>
     <tr>
+        <!-- Do not translate this table -->
         <td> Read these guidelines in </td>
-        <td><a href="/docs/how-to-setup-freecodecamp-locally.md"> English </a></td>
-        <td><a href="/docs/chinese/how-to-setup-freecodecamp-locally.md"> 中文 </a></td>
-        <td><a href="/docs/russian/how-to-setup-freecodecamp-locally.md"> Русский </a></td>
-        <td><a href="/docs/arabic/how-to-setup-freecodecamp-locally.md"> عربى </a></td>
-        <td><a href="/docs/spanish/how-to-setup-freecodecamp-locally.md"> Español </a></td>
-        <td><a href="/docs/portuguese/how-to-setup-freecodecamp-locally.md"> Português </a></td>
+        <td><a href="/CONTRIBUTING.md"> English </a></td>
+        <td><a href="/docs/chinese/CONTRIBUTING.md"> 中文 </a></td>
+        <td><a href="/docs/russian/CONTRIBUTING.md"> русский </a></td>
+        <td><a href="/docs/arabic/CONTRIBUTING.md"> عربي </a></td>
+        <td><a href="/docs/spanish/CONTRIBUTING.md"> Español </a></td>
+        <td><a href="/docs/portuguese/CONTRIBUTING.md"> Português </a></td>
     </tr>
 </table>
 
