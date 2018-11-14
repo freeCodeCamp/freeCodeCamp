@@ -20,11 +20,11 @@ challengeType: 5
 ```yml
 tests:
   - text: <code>mode</code> is a function.
-    testString: 'assert(typeof mode === "function", "<code>mode</code> is a function.");'
-  - text: '<code>mode([1, 3, 6, 6, 6, 6, 7, 7, 12, 12, 17])</code> should equal <code>[6]</code>'
-    testString: 'assert.deepEqual(mode(arr1), [6], "<code>mode([1, 3, 6, 6, 6, 6, 7, 7, 12, 12, 17])</code> should equal <code>[6]</code>");'
-  - text: '<code>mode([1, 2, 4, 4, 1])</code> should equal <code>[1, 4]</code>.'
-    testString: 'assert.deepEqual(mode(arr2).sort(), [1, 4], "<code>mode([1, 2, 4, 4, 1])</code> should equal <code>[1, 4]</code>.");'
+    testString: assert(typeof mode === 'function', '<code>mode</code> is a function.');
+  - text: <code>mode([1, 3, 6, 6, 6, 6, 7, 7, 12, 12, 17])</code> should equal <code>[6]</code>
+    testString: assert.deepEqual(mode(arr1), [6], '<code>mode([1, 3, 6, 6, 6, 6, 7, 7, 12, 12, 17])</code> should equal <code>[6]</code>');
+  - text: <code>mode([1, 2, 4, 4, 1])</code> should equal <code>[1, 4]</code>.
+    testString: assert.deepEqual(mode(arr2).sort(), [1, 4], '<code>mode([1, 2, 4, 4, 1])</code> should equal <code>[1, 4]</code>.');
 
 ```
 
@@ -49,7 +49,8 @@ function mode (arr) {
 <div id='js-teardown'>
 
 ```js
-console.info('after the test');
+const arr1 = [1, 3, 6, 6, 6, 6, 7, 7, 12, 12, 17];
+const arr2 = [1, 2, 4, 4, 1];
 ```
 
 </div>

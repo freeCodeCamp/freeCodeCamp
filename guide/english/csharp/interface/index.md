@@ -1,5 +1,5 @@
 ---
-title : Interface 
+title: Interface
 ---
 ---
 An interface is similar to a class or struct but without implementation for its members.
@@ -9,14 +9,14 @@ It may declare only properties, methods and events with NO access modifiers.
 All the declared members must be implemented in the inharit class, otherwise will have an compile error.
 as a convention we will mark interface with the letter I at the begenning (IMyInterface || IUserOptions).
 You define an interface by using the interface keyword.
- 
+
 All members of an interface are:
-implicitly abstract, 
+implicitly abstract,
 implicitly public, cannot declare an access modifier such as protected, internal private etc...
 
-An Interface can: 
+An Interface can:
 * Inherit from other interfaces.
-* Inherit from multiple interfaces at the same time 
+* Inherit from multiple interfaces at the same time
 * Contain only methods, properties, events, and indexers.
 
 An Interface can not :
@@ -47,7 +47,7 @@ public class UserHungry : IUserFavoriteFood
     // Implementation:
     // A method to add food.
   }
-  
+
   public Task<User> EatFavoriteFood(int id)
   {
     // Implementation:

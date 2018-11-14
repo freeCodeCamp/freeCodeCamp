@@ -6,7 +6,7 @@ title: Bash
 
 <a>Bash</a> (short for Bourne Again SHell) is a Unix shell, and a command language interpreter. A shell is simply a macro processor that executes commands. It's the most widely used shell packaged by default for most Linux distributions, and a successor for the Korn shell (ksh) and the C shell (csh).
 
-Many things that can be done Linux operating system can be done via command line. Some examples are...
+Many things that can be done Linux operating system can be done via command line. Some examples are:
 * Editing files
 * Adjusting the volume of the operating system
 * Fetching web pages from the internet
@@ -55,10 +55,22 @@ Sometimes the script won't be executed, and the above command will return an err
 ```
 zach@marigold:~$ chmod u+x myBashScript.sh
 ````
+or
+```
+zach@marigold:~$ chmod 744 myBashScript.sh
+````
 And then execute the script.
+## Script Example
+If you execute this script it is going to print out your name.
+```
+#!/usr/bin/env bash
+NAME="John"  
+echo  "Hello $NAME!"
+```
+
 ### More Information:
 
-* Wikipedia: https://en.wikipedia.org/wiki/Bash_(Unix_shell)
-* tldp.org Guide to Bash: http://tldp.org/HOWTO/Bash-Prog-Intro-HOWTO.html#toc2
-* gnu.org Bash manual: https://www.gnu.org/software/bash/manual/html_node/index.html#SEC_Contents
-* Shell scripting tutorial to get started: https://www.shellscript.sh/
+* [Wikipedia - Bash](https://en.wikipedia.org/wiki/Bash_(Unix_shell))
+* [tldp.org - Guide to Bash](http://tldp.org/HOWTO/Bash-Prog-Intro-HOWTO.html#toc2)
+* [gnu.org - Bash manual](https://www.gnu.org/software/bash/manual/html_node/index.html#SEC_Contents)
+* [Shell scripting tutorial](https://www.shellscript.sh/)
