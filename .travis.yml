@@ -24,4 +24,4 @@ before_script:
   - git config --global user.name "CamperBot"
 
 script:
-  - npm run test-ci
+  - npm run test

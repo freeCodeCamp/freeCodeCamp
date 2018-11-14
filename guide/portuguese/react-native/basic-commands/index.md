@@ -52,7 +52,7 @@ npm install babel-plugin-transform-decorators-legacy --save
 
 ### Exportar APK para executar no dispositivo
 
-Com os seguintes comandos, você terá um apk não assinado para poder instalar e compartilhar com seus colegas para fins de teste. Basta lembrar que este apk não está pronto para fazer o upload para a App Store ou produção. Você vai encontrar o seu apk fresco em _android / app / build / outputs / apk / app-debug.apk_
+Com os seguintes comandos, você terá um apk não assinado para poder instalar e compartilhar com seus colegas para fins de teste. Basta lembrar que este apk não está pronto para fazer o upload para a App Store ou produção. Você vai encontrar o seu apk recem criado em `android/app/build/outputs/apk/app-debug.apk`
 
 **1\. Configuração de depuração do pacote**
 ```

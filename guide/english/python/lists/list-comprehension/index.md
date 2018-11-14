@@ -12,7 +12,7 @@ The first step in learning how to use list comprehension is to look at the tradi
 # Example list for demonstration
 some_list = [1, 2, 5, 7, 8, 10]
 
-# Empty list that will be populate with a loop
+# Empty list that will be populated with a loop
 even_list = []
 
 for number in some_list:
@@ -70,7 +70,7 @@ List comprehension adds an element from an existing list to a new list if some c
 
 ## Examples of List Comprehension with Conditionals
 
-The flow of control in list comprehensions can be controlled using conditionals. For exmaple:
+The flow of control in list comprehensions can be controlled using conditionals. For example:
 
 ```py
 only_even_list = [i for i in range(13) if i%2==0]
