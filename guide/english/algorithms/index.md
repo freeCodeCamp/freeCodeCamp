@@ -21,6 +21,9 @@ Some common types of algorithms include sorting algorithms, search algorithms, a
 
 Algorithms are most commonly judged by their efficiency and the amount of computing resources they require to complete their task. A common way to evaluate an algorithm is to look at its time complexity. This shows how the running time of the algorithm grows as the input size grows. Since the algorithms today, have to be operate on large data inputs, it is essential for our algorithms to have a reasonably fast running time .
 
+### Big O
+To describe the running time and efficiency of algorithms, the standard language and metric used is called Big O notation and can be denoted as `O(running time)` for example the time taken to search an element using linear search (i.e to find an element by comparing it to all the other elements in an array of size n) is `O(n)`. The notation helps us to understand how fast a particular algorithm is by making sure that it is at least as fast as the denoted run-time. [Big_O - wikipedia](https://en.wikipedia.org/wiki/Big_O_notation)
+
 ### Sorting Algorithms
 
 Sorting algorithms come in various flavors depending on your necessity.
@@ -28,12 +31,16 @@ Some, very common and widely used are:
 
 #### Quick Sort
 
-There is no sorting discussion which can finish without quick sort. The basic concept is in the link below.
+There is no sorting discussion which can finish without quick sort.
 [Quick Sort](http://me.dt.in.th/page/Quicksort/)
 
 #### Merge Sort
 It is the sorting algorithm which relies on the concept how to sorted arrays are merged to give one sorted arrays. Read more about it here-
 [Merge Sort](https://www.geeksforgeeks.org/merge-sort/)
+
+#### Heap Sort
+A sorting algorithm that works by first organizing the data to be sorted into a special type of binary tree called a heap. The heap itself has, by definition, the largest value at the top of the tree, so the heap sort algorithm must also reverse the order. Read more about it here-
+[Heap Sort](https://www.geeksforgeeks.org/heap-sort/)
 
 freeCodeCamp's curriculum heavily emphasizes creating algorithms. This is because learning algorithms is a good way to practice programming skills. Interviewers most commonly test candidates on algorithms during developer job interviews.
 
@@ -51,10 +58,14 @@ This video introduces algorithms and briefly discusses some high profile uses of
 
 This video visually demonstrates some popular sorting algorithms that are commonly taught in programming and Computer Science courses.
 
+[How algorithms shape our world | Kevin Slavin](https://www.youtube.com/watch?v=TDaFwnOiKVE)
+
+This is a short video on how algorithms shape our world and their occurence in everyday life.
+
 [Algorithm Visualizer](http://algo-visualizer.jasonpark.me)
 
 This is also a really good open source project that helps you visualize algorithms. 
 
 [Infographic on how Machine Learning Algorithms Work](https://www.boozallen.com/content/dam/boozallen_site/sig/pdf/infographic/how-do-machines-learn.pdf)
 
-This infographic shows you how unsupervised and supervised machine learning algorithms work..
+This infographic shows you how unsupervised and supervised machine learning algorithms work.

@@ -1,6 +1,7 @@
 ---
 title: Mobile Application Development
 ---
+
 ## Mobile Application Development
 
 <img src="https://preview.ibb.co/chfPGv/Whats_App_Image_2017_09_11_at_12_48_41_PM.jpg" alt="hybrid applications" border="0">
@@ -13,17 +14,18 @@ Native App Definition
 
 - Built for a specific operating system and can be accessed only from the dedicated app store. 
 Android App can only be accessed by Android users and is developed using Java, Windows, C++ etc. 
-iOS App using XCode / Objective-C etc. 
+iOS App using XCode / Objective-C / Swift etc. 
+
 - Development Costs & Effort is Higher
 
 Hybrid App Definition
 
 - Uses Native Device's Browser container to contain HTML5 App.
-- Developing hybrid app is consistent, cross platform UI. 
+- Developing hybrid app is consistent, cross platform UI.
 
 Development Cost and Time
 
-Hybrid apps take least amount of time & money to develop compared to native app. 
+Hybrid apps take least amount of time & money to develop compared to native app.
 One code for both platforms.
 
 User Experience
@@ -41,7 +43,7 @@ Better performance for Native App compared to Hybrid App
 
 ### React Native
 
-[React Native](https://facebook.github.io/react-native/) is a front end development framework that contains a lot of the building block elements for Android/iOS development and is a different kind of magic from Apache Cordova
+[React Native](https://facebook.github.io/react-native/) is a front end development framework that contains a lot of the building block elements for Android/iOS development and is a different kind of magic from Apache Cordova. React Native lets you build native mobile apps using JavaScript. It uses the same design as React, letting you compose a rich mobile UI from declarative components.
 
 ### NativeScript
 
@@ -51,3 +53,6 @@ Originally created by Progress, [NativeScript](https://www.nativescript.org/) ap
 
 [Flutter](https://flutter.io/) is a cross platform mobile development framework from Google, i,e it can be used to create both ios and Android apps with ease. It uses Dart as its primary language. It's hot reload feature helps in speeding up the overall Development process. Flutter produces real native apps as in the case of React Native as opposed to cordova, Ionic and Cordova which produces hybrid apps.
 
+### Xamarin
+
+Xamarin is a cross platform mobile development framework from Microsoft. It allows you to develop on a PC or a MAC using a C# codebase. You can create Native iOS Apps, Native Android Apps, and Native Windows Phone Apps. You can use either Visual Studio or Xamarin Studio as the IDE to develop using Xamarin.

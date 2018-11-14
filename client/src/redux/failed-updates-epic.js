@@ -11,7 +11,12 @@ import { ofType } from 'redux-observable';
 import store from 'store';
 import uuid from 'uuid/v4';
 
-import { types, onlineStatusChange, isOnlineSelector } from './';
+import {
+  types,
+  onlineStatusChange,
+  isOnlineSelector,
+  isSignedInSelector
+} from './';
 import postUpdate$ from '../templates/Challenges/utils/postUpdate$';
 import { isGoodXHRStatus } from '../templates/Challenges/utils';
 
@@ -36,6 +41,7 @@ function failedUpdateEpic(action$, state$) {
 
   const flushUpdates = action$.pipe(
     ofType(types.fetchUserComplete, types.updateComplete),
+    filter(() => isSignedInSelector(state$.value)),
     filter(() => store.get(key)),
     filter(() => isOnlineSelector(state$.value)),
     tap(() => {
