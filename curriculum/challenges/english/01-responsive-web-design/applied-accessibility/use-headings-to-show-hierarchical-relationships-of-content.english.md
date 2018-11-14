@@ -17,7 +17,7 @@ One final point, each page should always have one (and only one) <code>h1</code>
 
 ## Instructions
 <section id='instructions'>
-Camper Cat wants a page on his site dedicated to becoming a ninja. Help him fix the headings so his markup gives semantic meaning to the content, and shows the proper parent-child relationships of his sections. Change all the <code>h5</code> tags to the proper heading level to indicate they are subsections of the <code>h2</code> ones.
+Camper Cat wants a page on his site dedicated to becoming a ninja. Help him fix the headings so his markup gives semantic meaning to the content, and shows the proper parent-child relationships of his sections. Change all the <code>h5</code> tags to the proper heading level to indicate they are subsections of the <code>h2</code> ones. Use <code>h3</code> tags for the purpose.
 </section>
 
 ## Tests
