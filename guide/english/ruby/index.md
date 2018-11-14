@@ -6,7 +6,7 @@ title: Ruby
 
 Ruby was created by Yukihiro "Matz" Matsumoto and is an <a href='https://github.com/ruby/ruby' target='_blank' rel='nofollow'>open source</a>, dynamic and interpreted scripting language for quick and easy object-oriented programming. Which means:
 
-It's also known to have one of the <a href="https://www.ruby-lang.org/en/community/">largest and friendly community</a> among programming languages. 
+It's also known to have one of the <a href="https://www.ruby-lang.org/en/community/">largest and friendliest communities</a> among programming languages. 
 
 *   Ability to make operating system calls directly
 *   Immediate feedback during development
