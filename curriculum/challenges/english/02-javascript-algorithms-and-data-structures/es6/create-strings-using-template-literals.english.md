@@ -20,6 +20,7 @@ This new way of creating strings gives you more flexibility to create robust str
 ## Instructions
 <section id='instructions'>
 Use template literal syntax with backticks to display each entry of the <code>result</code> object's <code>failure</code> array. Each entry should be wrapped inside an <code>li</code> element with the class attribute <code>text-warning</code>, and listed within the <code>resultDisplayArray</code>.
+Use an iterator method (any kind of loop) to get the desired output.
 </section>
 
 ## Tests
