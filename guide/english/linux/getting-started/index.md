@@ -22,15 +22,15 @@ Most Linux distributions are extremely easy to install, with all information sho
 
 One important step to look out for is when deciding where to install your new Linux distro. For first users it's better to choose a "Guided" option as it will do all the work for you.
 
-Remember to read all the steps carefully and leave some space in your HDD for the new distro, I would say about 30Gb minimum.
+Remember to read all the steps carefully and leave some space in your HDD for the new distro, I would say, about 30Gb minimum would be nice to have.
 
 ## The dreaded Terminal.
 
 Linux's terminal is not to be feared, actually it is quite easy to use with some practice and it can make our daily tasks easy to automate.
 
-In Debian/Ubuntu and derivatives, the shortcut to open the cli (Comman Line Interface) is "Ctrl + Alt + T". Let's open the terminal and try some commands.
+In Debian/Ubuntu and derivatives, the shortcut to open the CLI (Command Line Interface) is "Ctrl + Alt + T". Let's open the terminal and try some commands.
 
-cd (Change Directory) - The cd command is one of the commands you will use the most at the command line in linux. It allows you to change your working directory. You use it to move around within the hierarchy of your file system.
+cd (Change Directory) - The cd command is one of the commands you will use the most at the command line in Linux. It allows you to change your working directory. You use it to move around within the hierarchy of your file system.
 
 ```unix
 cd
