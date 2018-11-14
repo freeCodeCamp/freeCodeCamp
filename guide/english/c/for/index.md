@@ -43,6 +43,7 @@ int main () {
 > Item on index 1 is 2
 > Item on index 2 is 3
 > Item on index 3 is 4
+> Item on index 4 is 5
 ```
 ## Example for printing star pattern for pyramid 
 ```c
