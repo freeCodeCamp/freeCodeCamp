@@ -44,21 +44,22 @@ then the method must either handle the exception or it must specify the exceptio
 In Java exceptions under Error and RuntimeException classes are unchecked exceptions, everything else under throwable is checked.
 
                    +-----------+
-		               | Throwable |
+		   | Throwable |
                    +-----------+
                     /         \
-		               /           \
+		   /           \
           +-------+          +-----------+
           | Error |          | Exception |
           +-------+          +-----------+
-	         /  |  \           / |        \
-         \________/	       \______/    	 \
-			                                   +------------------+
-	unchecked	              checked	       | RuntimeException |
-					                               +------------------+
-					                                /   |    |      \
-					                                \_________________/
-					   
-					                                    unchecked
+	  /   |  \             /   |      \
+         \________/	       \______/    \
+			                       +------------------+
+	 unchecked	        checked	       | RuntimeException |
+					       +------------------+
+					         /   |    |      \
+					        \_________________/
+					  
+					              unchecked
 
-Reference : https://www.geeksforgeeks.org/checked-vs-unchecked-exceptions-in-java/
+## Reference
+- [Checked vs. Unchecked Exceptions in Java](https://www.geeksforgeeks.org/checked-vs-unchecked-exceptions-in-java/)
