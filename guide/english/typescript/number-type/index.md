@@ -14,7 +14,7 @@ let binary: number = 0b0110;
 let octal: number = 0o531;
 ```
 
-Example of usage Number type in typescript:
+Example of Number type usage in TypeScript:
 
 ```typescript
 class Employee extends Person{
