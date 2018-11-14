@@ -3,7 +3,7 @@
         <!-- Do not translate this table -->
         <td> Read these guidelines in </td>
         <td><a href="/CONTRIBUTING.md"> English </a></td>
-        <td><a href="/docs/arabic/CONTRIBUTING.md"> عربى </a></td>
+        <td><a href="/docs/arabic/CONTRIBUTING.md"> عربي </a></td>
         <td><a href="/docs/chinese/CONTRIBUTING.md"> 中文 </a></td>
         <td><a href="/docs/portuguese/CONTRIBUTING.md"> Português </a></td>
         <td><a href="/docs/russian/CONTRIBUTING.md"> русский </a></td>
@@ -17,7 +17,7 @@ Olá 👋!
 
 freeCodeCamp.org é possível graças a milhares de voluntários gentis como você. Somos gratos por suas contribuições e estamos felizes em te receber.
 
-Nós seguimos as diretrizes do nosso ["Código de Conduta](https://www.freecodecamp.org/code-of-conduct). Dedique um tempo para lê-lo. Ele não é muito longo.
+Nós seguimos as diretrizes do nosso ["Código de Conduta"](https://www.freecodecamp.org/code-of-conduct). Dedique um tempo para lê-lo. Ele não é muito longo.
 
 Divirta-se contribuindo 🎉!
 
@@ -86,7 +86,7 @@ Você pode nos ajudar a traduzir nossos Artigos de guia e Desafios de código pa
 
 - Chinês (中文)
 - Russo (русский)
-- Árabe (عربى)
+- Árabe (عربي)
 - Espanhol (Español)
 - Português (Português)
 

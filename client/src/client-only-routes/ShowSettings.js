@@ -6,10 +6,12 @@ import { createSelector } from 'reselect';
 import { Grid, Button } from '@freecodecamp/react-bootstrap';
 import Helmet from 'react-helmet';
 
+import { apiLocation } from '../../config/env.json';
 import {
   signInLoadingSelector,
   userSelector,
-  isSignedInSelector
+  isSignedInSelector,
+  hardGoTo
 } from '../redux';
 import { submitNewAbout, updateUserFlag, verifyCert } from '../redux/settings';
 import { createFlashMessage } from '../components/Flash/redux';
@@ -29,6 +31,7 @@ import RedirectHome from '../components/RedirectHome';
 
 const propTypes = {
   createFlashMessage: PropTypes.func.isRequired,
+  hardGoTo: PropTypes.func.isRequired,
   isSignedIn: PropTypes.bool,
   showLoading: PropTypes.bool,
   submitNewAbout: PropTypes.func.isRequired,
@@ -101,6 +104,7 @@ const mapDispatchToProps = dispatch =>
   bindActionCreators(
     {
       createFlashMessage,
+      hardGoTo,
       submitNewAbout,
       toggleNightMode: theme => updateUserFlag({ theme }),
       updateInternetSettings: updateUserFlag,
@@ -112,9 +116,15 @@ const mapDispatchToProps = dispatch =>
     dispatch
   );
 
+const createHandleSignoutClick = hardGoTo => e => {
+  e.preventDefault();
+  return hardGoTo(`${apiLocation}/signout`);
+};
+
 function ShowSettings(props) {
   const {
     createFlashMessage,
+    hardGoTo,
     isSignedIn,
     submitNewAbout,
     toggleNightMode,
@@ -193,6 +203,7 @@ function ShowSettings(props) {
               bsStyle='primary'
               className='btn-invert'
               href={'/signout'}
+              onClick={createHandleSignoutClick(hardGoTo)}
               >
               Sign me out of freeCodeCamp
             </Button>
