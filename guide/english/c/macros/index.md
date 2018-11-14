@@ -19,6 +19,13 @@ Is the same as write this:
 ```C
 printf("Value of PI: %d", 3.14);
 ```
+#### Undefining Macros
+After defining macros you can also undefine them at any point.
+just Type
+```C
+#undefine PI
+```
+This is used to use macros only for specific lines of code and again undefine it.
 
 #### Types of macros
 There are two type of macros. The `Object-like` macros, showed above, and the `Function-like` macros.
@@ -48,7 +55,6 @@ You get the equivallent of:
 ```C
 printf("Hello World!");
 ```
-
 #### More Information:
 <!-- Please add any articles you think might be helpful to read before writing the article -->
 [GCC Online Documentation: Macros](https://gcc.gnu.org/onlinedocs/cpp/Macros.html)

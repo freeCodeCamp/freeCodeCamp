@@ -66,7 +66,7 @@ will result in `hello`:
 </div>
 ```
 
-Ther are cases which what we want is to set an attribute using our Vue app's
+There are cases in which what we want is to set an attribute using our Vue app's
 variable.  You might think that the same syntax applies, but Vue has something
 specific for that, what we call "binding".
 
