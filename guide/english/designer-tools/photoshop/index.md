@@ -214,4 +214,5 @@ If you need another format, select `File` > `Export` > `Export as...`. There, yo
 * <a href='https://helpx.adobe.com/support/photoshop.html?promoid=5NHJ8FD2&mv=other' target='_blank' rel='nofollow'>Learn and Support</a>
 
 Alternatives: Gimp (available on Linux and free)
+[Link to Gimp Website for Download](https://www.gimp.org/)
 
