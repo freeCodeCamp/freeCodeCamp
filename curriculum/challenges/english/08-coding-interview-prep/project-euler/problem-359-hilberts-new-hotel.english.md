@@ -1,7 +1,7 @@
 ---
 id: 5900f4d31000cf542c50ffe6
 challengeType: 5
-title: 'Problem 359: Hilbert"s New Hotel'
+title: 'Problem 359: Hilbert''s New Hotel'
 ---
 
 ## Description
@@ -49,7 +49,7 @@ Find the sum of all P(f, r) for all positive f and r such that f × r = 71328803
 ```yml
 tests:
   - text: <code>euler359()</code> should return 40632119.
-    testString: 'assert.strictEqual(euler359(), 40632119, "<code>euler359()</code> should return 40632119.");'
+    testString: assert.strictEqual(euler359(), 40632119, '<code>euler359()</code> should return 40632119.');
 
 ```
 

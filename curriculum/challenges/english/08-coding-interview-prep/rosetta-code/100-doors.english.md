@@ -21,11 +21,11 @@ challengeType: 5
 ```yml
 tests:
   - text: <code>getFinalOpenedDoors</code> is a function.
-    testString: 'assert(typeof getFinalOpenedDoors === "function", "<code>getFinalOpenedDoors</code> is a function.");'
+    testString: assert(typeof getFinalOpenedDoors === 'function', '<code>getFinalOpenedDoors</code> is a function.');
   - text: <code>getFinalOpenedDoors</code> should return an array.
-    testString: 'assert(Array.isArray(getFinalOpenedDoors(100)), "<code>getFinalOpenedDoors</code> should return an array.");'
+    testString: assert(Array.isArray(getFinalOpenedDoors(100)), '<code>getFinalOpenedDoors</code> should return an array.');
   - text: <code>getFinalOpenedDoors</code> did not produce the correct results.
-    testString: 'assert.deepEqual(getFinalOpenedDoors(100), solution, "<code>getFinalOpenedDoors</code> did not produce the correct results.");'
+    testString: assert.deepEqual(getFinalOpenedDoors(100), solution, '<code>getFinalOpenedDoors</code> did not produce the correct results.');
 
 ```
 
@@ -49,7 +49,7 @@ function getFinalOpenedDoors (numDoors) {
 <div id='js-teardown'>
 
 ```js
-console.info('after the test');
+const solution = [1, 4, 9, 16, 25, 36, 49, 64, 81, 100];
 ```
 
 </div>

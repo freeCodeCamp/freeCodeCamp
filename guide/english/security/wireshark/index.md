@@ -5,6 +5,15 @@ title: Wireshark
 
 Wireshark is an open source network analyzer application that is available for Linux, macOS and Windows. It allows you to "sniff" [packets](../../network-engineering/packets/) being sent to and from different nodes on a network.
 
+### Features of wireshark:
+* Supports more than 1,000 protocols
+* Ability to do live capture and offline analysis
+* Has the most powerful display filters in the industry 
+* Captured network data can be displayed via GUI or via a command-line TShark tool
+* Able to read/write many different capture file format such as tcpdump (libpcap), Network General Sniffer, Cisco Seure IDS, iplog, Microsoft Network Monitor, and more
+* Live data can be read from IEEE 802.11, Bluetooth, and Ethernet
+* The output can be exported to XML, PostScript, CSV, and plaintext
+
 #### Why use Wireshark?
 Wireshark is a powerful tool, you might use it to:
 + Learn about how different protocols are used in networking

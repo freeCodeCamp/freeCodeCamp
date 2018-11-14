@@ -16,6 +16,11 @@ The data type you store within a queue goes within angle brackets next to the qu
 
 ![alt text](https://github.com/mohammadaziz313/helloworld/blob/master/Fifo_queue.png "FIFO Queue Enqueue and Dequeue Example")
 
+### Uses of Queue
+- When data is transferred asynchronously between two processes. eg. IO Buffers, pipes,file IO etc.
+- When a resource is shared among multiple consumers. Examples include CPU scheduling, Disk scheduling.
+- In print spooling, documents are loaded into a buffer and afterward the printer puls them off the buffer at its own rate.
+
 ### Queue Operations
 
 The queue container supports the following operations:   

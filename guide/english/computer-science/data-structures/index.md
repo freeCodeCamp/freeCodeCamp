@@ -10,7 +10,7 @@ Data Structure is a way of collecting and organising data in such a way that we 
 In simple language, Data Structures are structures programmed to store ordered data, so that various operations can be performed on it easily. It represents the knowledge of data to be organized in memory. It should be designed and implemented in such a way that it reduces the complexity and increases the effieciency.
 
 <!-- Data Structures in memory-->
-In Computer memory i.e RAM, different data structures are created like stack, queue, linklist, heaps, etc according to the requirement of the program so to use the memory efficiently. 
+In Computer memory i.e RAM, different data structures are created like stack, queue, linked list, heaps, etc according to the requirement of the program so as to use the memory efficiently. 
 
 
 #### More Information:

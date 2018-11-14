@@ -45,7 +45,7 @@ Here are some examples of databases that use the key-value approach:
 - [Oracle NoSQL Database](https://www.oracle.com/database/nosql/index.html)
 - [Cassandra](http://cassandra.apache.org) (hybrid between key-value and column-oriented databases)
 - [Voldemort](http://www.project-voldemort.com/voldemort/)
-- [Consul KV store](https://www.consul.io/intro/getting-started/kv.html) (a tool with it's own key-value store)
+- [Consul KV store](https://www.consul.io/intro/getting-started/kv.html) (a tool with its own key-value store)
 
 #### More Information:
 * Key-value databases on [Wikipedia](https://en.wikipedia.org/wiki/Key-value_database)
