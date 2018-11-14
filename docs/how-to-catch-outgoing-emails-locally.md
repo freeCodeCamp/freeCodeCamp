@@ -39,7 +39,7 @@ Next, you can go to [using MailHog](#using-mailhog).
 
 ### Installing MailHog on Linux
 
-First install [Go](https://golang.org).
+First, install [Go](https://golang.org).
 
 For Debian-based systems like Ubuntu and Linux Mint, run:
 
