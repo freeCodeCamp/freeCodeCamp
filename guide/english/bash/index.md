@@ -6,7 +6,7 @@ title: Bash
 
 <a>Bash</a> (short for Bourne Again SHell) is a Unix shell, and a command language interpreter. A shell is simply a macro processor that executes commands. It's the most widely used shell packaged by default for most Linux distributions, and a successor for the Korn shell (ksh) and the C shell (csh).
 
-Many things that can be done Linux operating system can be done via command line. Some examples are...
+Many things that can be done Linux operating system can be done via command line. Some examples are:
 * Editing files
 * Adjusting the volume of the operating system
 * Fetching web pages from the internet
@@ -60,6 +60,14 @@ or
 zach@marigold:~$ chmod 744 myBashScript.sh
 ````
 And then execute the script.
+## Script Example
+If you execute this script it is going to print out your name.
+```
+#!/usr/bin/env bash
+NAME="John"  
+echo  "Hello $NAME!"
+```
+
 ### More Information:
 
 * [Wikipedia - Bash](https://en.wikipedia.org/wiki/Bash_(Unix_shell))
