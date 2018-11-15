@@ -5,7 +5,7 @@ import Layout from '../components/layouts/Default';
 import { graphql } from 'gatsby';
 
 import FullWidthRow from '../components/helpers/FullWidthRow';
-import Featured from '../components/news/routes/Featured';
+import Featured from '../templates/News/routes/Featured';
 
 const propTypes = {
   data: PropTypes.shape({
@@ -82,6 +82,9 @@ export const query = graphql`
           }
           viewCount
           firstPublishedDate
+          fields {
+            slug
+          }
         }
       }
     }

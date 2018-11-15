@@ -10,9 +10,7 @@ import ArticleMeta from '../../components/ArticleMeta';
 import './featured.css';
 
 const propTypes = {
-  history: PropTypes.shape({
-    push: PropTypes.func.isRequired
-  })
+  featuredList: PropTypes.arrayOf(PropTypes.object)
 };
 
 class Featured extends Component {
@@ -25,12 +23,7 @@ class Featured extends Component {
 
   renderFeatured(articles) {
     return articles.map(article => {
-      const slug = `/${article.author.username}/`.concat(
-        article.slugPart,
-        '--',
-        article.shortId
-      );
-      const { featureImage, shortId, title } = article;
+      const { featureImage, shortId, title, fields: {slug} } = article;
       return (
         <li className='featured-list-item' key={shortId}>
           <a
