@@ -10,7 +10,11 @@ class PrProcessingLog {
     this._lastPRlogged = null;
     this._finish = null;
     this._prs = {};
-    this._logfile = path.resolve(__dirname, './work-logs/open-prs-processed.json');
+    this._logfile = path.resolve(__dirname, `./work-logs/${this.getRunType()}_open-prs-processed.json`);
+  }
+
+  getRunType() {
+    return process.env.PRODUCTION_RUN === 'true' ? 'production' : 'test';
   }
 
   import() {
