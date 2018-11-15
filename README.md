@@ -58,7 +58,7 @@ Here are our six core certifications:
 - Object-Oriented Programming
 - Functional Programming <br />
   <br />
-  **Projects**: Palindrome Checker, Roman Numeral Converter, Caesars Cipher, Telephone Number Validator, Cash Register
+  **Projects**: Palindrome Checker, Roman Numeral Converter, Caesar's Cipher, Telephone Number Validator, Cash Register
 
 #### 3. Front End Libraries Certification
 
