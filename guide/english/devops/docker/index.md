@@ -27,7 +27,7 @@ Installation for [Windows](https://docs.docker.com/docker-for-windows/install/)
 
 Installation for [Ubuntu](https://docs.docker.com/install/linux/docker-ce/ubuntu/)
 
-_All thoses links are for Docker CE (Community Edition)_
+_All those links are for Docker CE (Community Edition)_
 
 ---
 
@@ -66,7 +66,7 @@ This message shows that your installation appears to be working correctly.
 ```
 
 ### What is containerization then:
-Simply put, it is nothing more than packaging of a process/application and it's dependencies into a distributable image which can run in isolation. 
+Simply put, it is nothing more than packaging of a process/application and its dependencies into a distributable image which can run in isolation. 
 
 ### Why do we need Docker:
 It makes the life of software engineers very smooth as they will always work on the same development environment. 

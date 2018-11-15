@@ -169,7 +169,7 @@ In the above pseudocode, suppose the value of n is equal to constant2. The compi
 The break statement is used to prevent the code running into the next case.
 
 ### Example:
-```
+```C
 // Program to create a simple calculator
 // Performs addition, subtraction, multiplication or division depending the input from user
 
@@ -202,6 +202,11 @@ int main()
             break;
 
         case '/':
+            if(secondNumber==0){
+                printf("division with zero is not allowed\n");
+                break;
+                //Avoid runtime error of division with zero
+            }
             printf("%.1lf / %.1lf = %.1lf",firstNumber, secondNumber, firstNumber/secondNumber);
             break;
 
@@ -230,20 +235,37 @@ Finally, the break statement ends the switch statement.
 
 If break statement is not used, all cases after the correct case is executed. 
 
+## finding the Bigger among two numbers using if else statement.
+```C
+int a,b;
+printf("Enter the first number: \n");
+scanf("%d",&a);
+printf("Enter the second number: \n");
+scanf("%d",&b);
+//comparing the numbers
+if(a>b)
+{
+  printf("A is the Bigger number");
+}
+else
+{
+  printf("B is the bigger number");
+}
+```
 ## 6. Ternary operation
 
-The ternary operator is an operator that takes three arguments. The first argument is a comparison argument, the second is the result upon a true comparison , and the third is the result upon a flase comparison .It can be thought of as a shortened way of writing an if-else statement. It is often used to to assign variables based on the result of a comparison.
+The ternary operator (AKA conditional operator) is an operator that takes three arguments. The first argument is a comparison argument, the second is the result upon a true comparison , and the third is the result upon a flase comparison .It can be thought of as a shortened way of writing an if-else statement. It is often used to to assign variables based on the result of a comparison.
 
 #### Syntax
 ```C
-v=(conditional_statement)?value_if_true:value_if_false
+v = (conditional_statement) ? value_if_true : value_if_false
 
 ```
 #### Example 
 ```C
-int a,b=10,c=100;
-a=(b>c)?1:2;
-printf("%d",a);
+int a, b = 10, c = 100;
+a = (b > c) ? 1 : 2;
+printf("%d", a);
 ```
 
 #### Result

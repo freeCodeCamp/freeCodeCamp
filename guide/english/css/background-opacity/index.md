@@ -5,7 +5,7 @@ title: Background Opacity
 
 The opacity property specifies the opacity/transparency of an element, that is, the degree to which the content behind the element is visible.
 
-The opacity property can take a value from 0.0 - 1.0. The lower value, the more transparent:
+The opacity property can take a value from 0.0 - 1.0. The lower the value, the more the transparency:
 
 Find more details <a href='https://www.w3schools.com/css/css_image_transparency.asp' target='_blank' rel='nofollow'>here</a>
 
@@ -51,6 +51,9 @@ Alternatively you can use a transparent rgba value like this:
   }
  ```
 The example above sets the background to be black with 50% opacity. The last value of an rgba value is the alpha value. An alpha value of 1 equals 100%, and 0.5 (.5 for short) quals 50%. We use this method to add transparency to an element without affecting the content inside.
+
+#### Some Info
+Using the rgba value is most preferable when the background has content like text compared to using the background-color property then going on to use the opacity property. First, it's shorter and second, it eliminates the problem of having the content's transparency change with that of its background, if it's something you do not want.
 
 [A codepen example to show background opacity ranges](https://codepen.io/lvcoulter/full/dVrwmK/)
 
