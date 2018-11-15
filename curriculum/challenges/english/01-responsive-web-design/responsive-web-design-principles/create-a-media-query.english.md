@@ -27,9 +27,9 @@ Add a media query, so that the <code>p</code> tag has a <code>font-size</code> o
 ```yml
 tests:
   - text: Your <code>p</code> element should have the <code>font-size</code> of 10px when the device <code>height</code> is less than or equal to 800px.
-    testString: 'assert($("p").css("font-size") == "10px", "Your <code>p</code> element should have the <code>font-size</code> of 10px when the device <code>height</code> is less than or equal to 800px.");'
+    testString: assert($('p').css('font-size') == '10px', 'Your <code>p</code> element should have the <code>font-size</code> of 10px when the device <code>height</code> is less than or equal to 800px.');
   - text: Declare a <code>@media</code> query for devices with a <code>height</code> less than or equal to 800px.
-    testString: 'assert(code.match(/@media\s*?\(\s*?max-height\s*?:\s*?800px\s*?\)/g), "Declare a <code>@media</code> query for devices with a <code>height</code> less than or equal to 800px.");'
+    testString: assert(code.match(/@media\s*?\(\s*?max-height\s*?:\s*?800px\s*?\)/g), 'Declare a <code>@media</code> query for devices with a <code>height</code> less than or equal to 800px.');
 
 ```
 

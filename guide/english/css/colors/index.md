@@ -36,7 +36,7 @@ An HSLA color value is similar, with the alpha value in last position: hsla(hue,
     
 ### CMYK
 
-CMYK colors is a combination of CYAN, MAGENTA, YELLOW , and BLACK. Computer screens display colors using RGB color values. Printers often presents colors using CMYK color values.
+CMYK colors is a combination of CYAN, MAGENTA, YELLOW , and BLACK. Computer screens display colors using RGB color values. Printers often present colors using CMYK color values.
 CMYK is not supported in HTML, but it is suggested as a new standard in CSS4.
 
 Example colors:
@@ -54,6 +54,8 @@ These three pairs each express a value for the amount of red, green and blue in 
 Hex codes are case insensitive, meaning that #FFFFFF and #ffffff would be the same color: white.
 
 Additionally, there are 16,777,216 possible color combinations using hexcode.
+
+A shorthand form also exists. The shorthand #ABC is equivalent to #AABBCC. In this form, 4096 colours are available.
 
 ### Opacity
 
@@ -91,7 +93,7 @@ h2 {
 }
 ```
 
-You can also add an alpha value, or transparency to colors. Transparency allows text to be overlaid on an image and stil have the image partially viewable through the text, or can be used to change the shade of the colour if no other elements are in front or behind the text. Use `rgba()` or `hsla()` and fill in your color values. The alpha value goes last and is a percent converted to a decimal. (For example, 20% is 0.2, 75% is 0.75, etc.)
+You can also add an alpha value, or transparency to colors. Transparency allows text to be overlaid on an image and still have the image partially viewable through the text, or can be used to change the shade of the colour if no other elements are in front or behind the text. Use `rgba()` or `hsla()` and fill in your color values. The alpha value goes last and is a percent converted to a decimal. (For example, 20% is 0.2, 75% is 0.75, etc.)
 
 ```css
 body {
@@ -99,7 +101,7 @@ body {
 }
 ```
 
-Above shows paragraphs styled bright orange and 20% transparent, h2 elements a salmon pink, and the body's background bright blue.
+Above shows paragraphs styled bright orange and 20% transparent, h2 elements salmon pink, and the body's background bright blue.
 
 To get custom colors to use in CSS, you might find a color picker helpful. Some text editors have built-in color pickers, like Visual Studio Code. If you search "color picker" on Google or DuckDuckGo, you will get a color picker that you can use. Google Chrome and Firefox also have color picker add-ons that you can install. Adobe Color CC not only helps you pick a color, but will also help you pick out a color scheme for your web page! It's a good idea to check that you have enough contrast between your text and background colors by using a tool like WebAIM's Color Contrast Checker.
 

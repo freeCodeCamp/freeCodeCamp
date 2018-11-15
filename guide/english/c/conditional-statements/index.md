@@ -169,7 +169,7 @@ In the above pseudocode, suppose the value of n is equal to constant2. The compi
 The break statement is used to prevent the code running into the next case.
 
 ### Example:
-```
+```C
 // Program to create a simple calculator
 // Performs addition, subtraction, multiplication or division depending the input from user
 
@@ -202,6 +202,11 @@ int main()
             break;
 
         case '/':
+            if(secondNumber==0){
+                printf("division with zero is not allowed\n");
+                break;
+                //Avoid runtime error of division with zero
+            }
             printf("%.1lf / %.1lf = %.1lf",firstNumber, secondNumber, firstNumber/secondNumber);
             break;
 
@@ -229,3 +234,20 @@ printf("%.1lf / %.1lf = %.1lf",firstNumber, secondNumber, firstNumber/firstNumbe
 Finally, the break statement ends the switch statement.
 
 If break statement is not used, all cases after the correct case is executed. 
+## finding the Bigger among two numbers using if else statement.
+```C
+int a,b;
+printf("Enter the first number: \n");
+scanf("%d",&a);
+printf("Enter the second number: \n");
+scanf("%d",&b);
+//comparing the numbers
+if(a>b)
+{
+  printf("A is the Bigger number");
+}
+else
+{
+  printf("B is the bigger number");
+}
+```
