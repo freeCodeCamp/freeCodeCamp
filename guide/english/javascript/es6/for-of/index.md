@@ -94,3 +94,7 @@ for (const para of paragraphs)
     // We can add event listeners to each para here
 }
 ```
+
+#### More Information
+
+[ES6 In Depth: Iterators and the for-of loop](https://hacks.mozilla.org/2015/04/es6-in-depth-iterators-and-the-for-of-loop/)
