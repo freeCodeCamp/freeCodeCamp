@@ -11,7 +11,7 @@
     "lint": "echo 'Warning: TODO - Define Linting with fixing.'",
     "seed": "npm-run-all -p seed:*",
     "seed:challenges": "cross-env DEBUG=fcc:* node ./tools/scripts/seed/seedChallenges",
-    "seed:news":"cross-env DEBUG=fcc:* node ./tools/scripts/seed/seedNewsArticles",
+    "seed:news": "cross-env DEBUG=fcc:* node ./tools/scripts/seed/seedNewsArticles",
     "start-develop": "node ./tools/scripts/start-develop.js",
     "pretest": "npm-run-all -s test:lint",
     "test": "npm-run-all -p test:*",
