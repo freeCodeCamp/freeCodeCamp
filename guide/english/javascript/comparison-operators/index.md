@@ -163,7 +163,7 @@ How? This is because there is a special rule for "null" and "undefined". Due to 
 
 If we use comparison operators like <, >, <=, >= etc., "null" and "undefined" are converted to number and in such cases "null" will become 0 and "undefined" will be NaN. Lets check some of those examples.
 
-#### Example - compare null with 0(zero)
+#### Example - compare null with 0 (zero)
 
 ```javascript
 console.log( null > 0 ); // O/P - false
@@ -177,7 +177,7 @@ The reason is "comparison" and "equality check" both works in different way.
 In comparison, "null/undefined" is first converted to number so, in first two cases "null" become 0 and hence case1) (null > 0) -> false and case2) (null >= 0) -> true.
 But, in equality check (==), "null/undefined" works without any conversion and as explained above (special rule), in equality check "null/undefined" are only equal to each other and are not equal to anything else. Hence (null == 0) -> false. 
 
-#### Example - compare undefined with 0(zero)
+#### Example - compare undefined with 0 (zero)
 
 ```javascript
 console.log( undefined  > 0 ); // O/P - false

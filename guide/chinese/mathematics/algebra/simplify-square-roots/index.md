@@ -1,7 +1,6 @@
-
 ---
 title: Simplify Square Roots
-localeTitle: undefined
+localeTitle: 简化平方根
 ---
 ## 简化平方根
 
