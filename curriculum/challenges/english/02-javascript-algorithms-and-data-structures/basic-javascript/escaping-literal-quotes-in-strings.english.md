@@ -24,10 +24,10 @@ Use <dfn>backslashes</dfn> to assign a string to the <code>myStr</code> variable
 
 ```yml
 tests:
-  - text: 'You should use two double quotes (<code>&quot;</code>) and four escaped double quotes (<code>&#92;&quot;</code>).'
-    testString: 'assert(code.match(/\\"/g).length === 4 && code.match(/[^\\]"/g).length === 2, "You should use two double quotes (<code>&quot;</code>) and four escaped double quotes (<code>&#92;&quot;</code>).");'
+  - text: You should use two double quotes (<code>&quot;</code>) and four escaped double quotes (<code>&#92;&quot;</code>).
+    testString: assert(code.match(/\\"/g).length === 4 && code.match(/[^\\]"/g).length === 2, 'You should use two double quotes (<code>&quot;</code>) and four escaped double quotes (<code>&#92;&quot;</code>).');
   - text: 'Variable myStr should contain the string: <code>I am a "double quoted" string inside "double quotes".</code>'
-    testString: 'assert(myStr === "I am a \"double quoted\" string inside \"double quotes\".", "Variable myStr should contain the string: <code>I am a "double quoted" string inside "double quotes".</code>");'
+    testString: 'assert(myStr === "I am a \"double quoted\" string inside \"double quotes\".", ''Variable myStr should contain the string: <code>I am a "double quoted" string inside "double quotes".</code>'');'
 
 ```
 
@@ -51,7 +51,13 @@ var myStr = ""; // Change this line
 <div id='js-teardown'>
 
 ```js
-console.info('after the test');
+(function(){
+  if(typeof myStr === 'string') {
+    console.log("myStr = \"" + myStr + "\"");
+  } else {
+    console.log("myStr is undefined");
+  }
+})();
 ```
 
 </div>
