@@ -32,7 +32,7 @@ You can also make your comments more readable by stylizing it.
 ***
 * SECTION FOR H2 STYLE 
 ***
-* A paragraph where I give informations
+* A paragraph where I give information
 * about everything that someone who reads the code
 * but didn't write it would need to know.
 * The asterisk around the paragraph makes it more readable.
