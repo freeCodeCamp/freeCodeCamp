@@ -31,7 +31,7 @@ An _activity_ is a component that has a user interface and represents a single s
 
 > Called when the activity will start interacting with the user. At this point your activity is at the top of the activity stack, with user input going to it. Always followed by onPause().
 
-* onPause ():
+* onPause():
 
 > Called as part of the activity lifecycle when an activity is going into the background, but has not (yet) been killed. The counterpart to onResume(). Take for example, an Android app with two activities A and B, in which activity A is currently in the foreground and is the only activity on the app activity stack. When activity B is launched in front of activity A, this callback will be invoked on A. B will not be created until A's onPause() returns, so be sure to not do anything lengthy here.
 

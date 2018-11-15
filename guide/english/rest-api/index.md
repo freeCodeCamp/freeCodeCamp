@@ -126,6 +126,13 @@ resources via hyperlinks.
   returns `4xx` or message 
   `Expecting int car id /car/id got string car/MH09234 `
 
+### REST API Development Environment and Testing:
+
+Postman is widely used and famous for manual and automated REST/RESTful API Tests.
+Link: [Get Postman](https://www.getpostman.com/)
+
+A detailed explanation has been given on Quick Code blog on how to use Postman for the best usage:
+[Top Tutorials To Learn POSTMAN For REST API Testing](https://medium.com/quick-code/top-tutorials-to-learn-postman-for-rest-api-testing-3bdf9788e0ba)
 
 ### **Further reading**
 [How to Design Great APIs - Parse Developer Day 2013](https://www.youtube.com/watch?v=qCdpTji8nxo)

@@ -94,7 +94,7 @@ To do so, we mention the package version we want to install.
 $ npm install underscore@1.8.2 -S
 ```
 
-To remove a global dependency, use `-g` flag.
+To install a global dependency, use `-g` flag.
 
 ### Uninstalling Local Packages
 
@@ -294,7 +294,7 @@ Yarn is also a JavaScript package manager developed and maintained by Facebook. 
 npm install -g yarn
 ```
 
-Yarn doesn't intend to replace npm, more like improving on it. It uses the same package.json file, and saves dependencies to the `node_modules/`folder. To initialise a projcet, you will use:
+Yarn doesn't intend to replace npm, more like improving on it. It uses the same package.json file, and saves dependencies to the `node_modules/`folder. To initialise a project, you will use:
 
 ```shell
 yarn init

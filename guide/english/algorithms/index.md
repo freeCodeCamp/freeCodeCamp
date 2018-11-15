@@ -38,6 +38,10 @@ There is no sorting discussion which can finish without quick sort.
 It is the sorting algorithm which relies on the concept how to sorted arrays are merged to give one sorted arrays. Read more about it here-
 [Merge Sort](https://www.geeksforgeeks.org/merge-sort/)
 
+#### Heap Sort
+A sorting algorithm that works by first organizing the data to be sorted into a special type of binary tree called a heap. The heap itself has, by definition, the largest value at the top of the tree, so the heap sort algorithm must also reverse the order. Read more about it here-
+[Heap Sort](https://www.geeksforgeeks.org/heap-sort/)
+
 freeCodeCamp's curriculum heavily emphasizes creating algorithms. This is because learning algorithms is a good way to practice programming skills. Interviewers most commonly test candidates on algorithms during developer job interviews.
 
 ### Further Resources

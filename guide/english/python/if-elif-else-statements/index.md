@@ -4,8 +4,9 @@ title: If / Elif / Else Statements
 
 ## If / Elif / Else Statements
 
-The `if`/`elif`/`else` structure is a common way to control the flow of a program, allowing you to execute specific blocks of code depending on the value of some data. If the condition following the keyword `if` evaluates as `True`, the block of code will execute.
-Note: that parenthesis is not used before and after the condition check as in other programming languages.
+The `if`/`elif`/`else` structure is a common way to control the flow of a program, allowing you to execute specific blocks of code depending on the value of some data. If the condition following the keyword `if` evaluates as `True`, the block of code will execute:
+Note that parenthesis are not used before and after the condition check such as in other languages.
+
 ```python
 if True:
   print('If block will execute!')
@@ -62,7 +63,7 @@ else:
   print("Neither will I!") #this statement does not execute
 ```
 
-*Note: only the first condition that evaluates as `True` will execute. Even though `z > 6` is `True`, the `if/elif/else` block terminates after the first true condition. This means that an `else` will only execute if none of the conditions were `True`.*
+*Note only the first condition that evaluates as `True` will execute. Even though `z > 6` is `True`, the `if/elif/else` block terminates after the first true condition. This means that an `else` will only execute if none of the conditions prior to it were `True`.*
 
 ***Nested if statement***
 
@@ -79,14 +80,14 @@ if x %  2 == 0:  # this is how you create a comment and now, checking for even.
 else:
   print ("The number is not even. So no point checking further.")
 ```
-This was just a simple example for nested if statement. Please feel free to explore more online.
+This was just a simple example of a nested if statement. Please feel free to explore more online.
 
 While the examples above are simple, you can create complex conditions using <a href='https://guide.freecodecamp.org/python/comparisons' target='_blank' rel='nofollow'>boolean comparisons</a> and <a href='https://guide.freecodecamp.org/python/boolean-operations' target='_blank' rel='nofollow'>boolean operators</a>.
 
 
 ***Inline python if-else statement***
 
-We can also use if-else statements with inline python functions
+We can also use if-else statements with inline python functions.
 The following example should check if the number is greater or equal than 50, if yes return True:
 
 ```

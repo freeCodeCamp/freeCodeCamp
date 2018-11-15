@@ -37,12 +37,14 @@ Note: The style `double list[]` is not preferred as it comes from the C/C++ lang
 ```java
 dataType[] arrayName = new dataType[arraySize];
 ```
+Here we have declared and initialized the array in one step. We could have also written it in two parts with one step being the declaration of array followed by the initialization of array. By default, all memory locations allocated to the array is initialized to its default values, depending upon the datatype.
 
 ## Code snippets of the above syntax:
 
 ```java
 double[] List = new double[10];
 ```
+ We are creating a array variable named `List` of type double and allocating it 10 memory locations. This double datatype array is initialized to `0.0` by default.
 
 ## Another way to declare and initialize an Array:
 

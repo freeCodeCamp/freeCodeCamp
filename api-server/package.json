@@ -60,7 +60,7 @@
     "moment": "^2.19.3",
     "moment-timezone": "^0.5.14",
     "mongodb": "^3.0.4",
-    "morgan": "^1.6.1",
+    "morgan": "^1.9.1",
     "nanoid": "^1.1.0",
     "normalize-url": "^1.3.1",
     "normalizr": "^2.2.1",

@@ -98,6 +98,12 @@ Spans and divs are non-elements. They are meant to contain other elements, not t
 ```
 Boom. Suddenly, all these elements are now perfectly accessible, just by using native HTML. HTML the way it was meant to be used, in other words.
 
+### How do pages begin?
+```html
+    <html lang="en-us">
+```
+We copy it from some template and mostly don't even know it is there. These words tell the screen-readers what language to read. When your site is in English, there is no problem. But when you write your site in another language and you forget you actually have this tag, blind readers will have to listen to an English person reading another language like it is English... So be aware of this little tag that can mean the world to some visitors.
+
 ### A foundation cannot stand without structure
 
 A bit earlier, I touched upon a screen-reader's hotkeys to jump from heading to heading. There are in fact many hotkeys like this to quickly jump to the nearest table, form field, link etc. Making sure these headings are actually in logical places is therefore a good practice and really decreases your assistive technology users' stress levels, which is good if you want visitors to keep coming back to your website.
@@ -133,7 +139,8 @@ The WCAG has contrast ratios for smaller and larger letters and there's plenty o
 A good place to start checking color contrast is by using the [WebAIM](https://webaim.org/resources/contrastchecker/) color contrast checker.
 
 ### What does this button do?
-While we are on the topic of forms, let's quickly glance at the <code>input</code> tag. This little guy is kinda important.
+
+While we are on the topic of forms, let's quickly glance at the <code>input</code> tag. This little guy is kind of important.  
 
 When you put some input fields on a web page, you can use labels to ...well ...label them. However, putting them next to each other is not quite enough. The attribute you want is the for-attribute, which takes the ID of a subsequent input field. This way, assistive technologies know what label to associate with what form field.
 

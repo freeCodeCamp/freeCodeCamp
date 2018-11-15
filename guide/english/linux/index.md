@@ -28,10 +28,9 @@ There are also many versions of Linux designed to be run on personal computers, 
 different versions of Linux (called distributions) allow the user varying degrees of personalization and control of the operating
 system. This means that users can choose their Linux distributions based on their wants and needs.  
 
-There is also Kali Linux which is used for advanced penetration testing and auditing. It has over 700 tools, to be able to use it
-efficiently you will need to know how to use command line. It is not advised for beginners.
+There are Linux distributions which appeal to specific niches, like AVLinux. There are distributions with access to different GUIs and window managers, like Kubuntu or Debian (although you can easily switch between these). There is also Kali Linux which is used for advanced penetration testing and auditing. It has over 700 tools, and to be able to use it efficiently you will need to know how to use the command line. It is not advised for beginners.
 
-Popular distributions of Linux include:
+Other popular distributions of Linux include:
 
 * Ubuntu
 * Linux Mint

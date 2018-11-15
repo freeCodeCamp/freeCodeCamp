@@ -12,7 +12,7 @@ Boolean algebra is fundamental to the development of digital electronics. It is 
 The three basic operations in Boolean Algebra are `AND`, `OR`, and `NOT`. Consider two boolean variables `x` and `y`:
 
 - `x AND y` is true if and only if both `x` and `y` are true
-- `x OR y` is true if and only if either of `x`, `y` are true. If `x`, `y` are both true, `x OR y` is still true 
+- `x OR y` is true if either of `x` or `y` are true
 - `NOT x` is true if and only if `x` is false and vice versa
 
 `NOT` of boolean statements can be refactored to apply directly to each variable. Consider the following :

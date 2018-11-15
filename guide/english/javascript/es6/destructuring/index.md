@@ -64,6 +64,7 @@ const {first: firstName, last: lastName} = fullName;
 console.log(firstName, lastName); // John Smith
 ```
 **Array Destructuring with rest**
+
 When destructuring an array, you can unpack and assign the remaining part of it to a variable using the rest pattern:
 ```js
 const [a, ...b] = [1, 2, 3];
