@@ -23,13 +23,13 @@ The Laravel framework has a few system requirements. Of course, all of these req
 
 However, if you are not using Homestead, you will need to make sure your server meets the following requirements:
 
-   - PHP >= 7.1.3
-   -OpenSSL PHP Extension
-   -PDO PHP Extension
-   -Mbstring PHP Extension
-   -Tokenizer PHP Extension
-   -XML PHP Extension
-   -Ctype PHP Extension
-   -JSON PHP Extension
+- PHP >= 7.1.3
+- OpenSSL PHP Extension
+- PDO PHP Extension
+- Mbstring PHP Extension
+- Tokenizer PHP Extension
+- XML PHP Extension
+- Ctype PHP Extension
+- JSON PHP Extension
 
 
