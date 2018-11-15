@@ -23,13 +23,13 @@ tests:
   - text: O primeiro Set () estava contido no segundo Set
     testString: 'assert((function(){var setA = new Set(); var setB = new Set(); setA.add("a"); setB.add("b"); setB.add("c"); setB.add("a"); setB.add("d"); var subsetSetAB = setA.subset(setB);return (subsetSetAB === true)})(), "The first Set() was contained in the second Set");'
   - text: '<code>[&quot;a&quot;, &quot;b&quot;].subset([&quot;a&quot;, &quot;b&quot;, &quot;c&quot;, &quot;d&quot;])</code> deve retornar <code>true</code> &quot;)'
-    testString: 'assert((function(){var setA = new Set(); var setB = new Set(); setA.add("a"); setA.add("b"); setB.add("a"); setB.add("b"); setB.add("c"); setB.add("d"); var subsetSetAB = setA.subset(setB); return (subsetSetAB === true)})(), "<code>["a", "b"].subset(["a", "b", "c", "d"])</code> should return <code>true</code>");'
+    testString: 'assert((function(){var setA = new Set(); var setB = new Set(); setA.add("a"); setA.add("b"); setB.add("a"); setB.add("b"); setB.add("c"); setB.add("d"); var subsetSetAB = setA.subset(setB); return (subsetSetAB === true)})(), "The first `Set` is a `subset` of the second but the `subset` function returned `false`");'
   - text: '<code>[&quot;a&quot;, &quot;b&quot;, &quot;c&quot;].subset([&quot;a&quot;, &quot;b&quot;])</code> deve retornar <code>false</code> &quot;)'
-    testString: 'assert((function(){var setA = new Set(); var setB = new Set(); setA.add("a"); setA.add("b"); setA.add("c"); setB.add("a"); setB.add("b"); var subsetSetAB = setA.subset(setB); return (subsetSetAB === false)})(), "<code>["a", "b", "c"].subset(["a", "b"])</code> should return <code>false</code>");'
+    testString: 'assert((function(){var setA = new Set(); var setB = new Set(); setA.add("a"); setA.add("b"); setA.add("c"); setB.add("a"); setB.add("b"); var subsetSetAB = setA.subset(setB); return (subsetSetAB === false)})(), "The first `Set` was not a `subset` of the second but `subset` function returned `true`");'
   - text: '<code>[].subset([])</code> deve retornar <code>true</code>'
-    testString: 'assert((function(){var setA = new Set(); var setB = new Set(); var subsetSetAB = setA.subset(setB); return (subsetSetAB === true)})(), "<code>[].subset([])</code> should return <code>true</code>");'
+    testString: 'assert((function(){var setA = new Set(); var setB = new Set(); var subsetSetAB = setA.subset(setB); return (subsetSetAB === true)})(), "The `subset` function returned false for empty `Set`s");'
   - text: '<code>[&quot;a&quot;, &quot;b&quot;].subset([&quot;c&quot;, &quot;d&quot;])</code> deve retornar <code>false</code> &quot;)'
-    testString: 'assert((function(){var setA = new Set(); var setB = new Set(); setA.add("a"); setA.add("b"); setB.add("c"); setB.add("d"); var subsetSetAB = setA.subset(setB); return (subsetSetAB === false)})(), "<code>["a", "b"].subset(["c", "d"])</code> should return <code>false</code>");'
+    testString: 'assert((function(){var setA = new Set(); var setB = new Set(); setA.add("a"); setA.add("b"); setB.add("c"); setB.add("d"); var subsetSetAB = setA.subset(setB); return (subsetSetAB === false)})(), "The first `Set` is not a `subset` of the second but the `subset` function returned `true`");'
 
 ```
 
