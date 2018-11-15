@@ -3,17 +3,13 @@ title: Smart Contracts
 ---
 ## Smart Contracts
 
-Transactions in a blockchain are a very basic contract - One party sends resources to another.
-In the Ethereum blockchain, transactions can support any kind of logic. They have the expressive
-power of a Turing-Complete machine - meaning they can be steps for a task that a computer can do.
+Cryptocurrency transactions that occur on a blockchain are an example of a very basic contract: one party sends money to another. However, blockchains also have the potential to manage and execute more complicated contracts. On the Ethereum blockchain, for example, one can utilize _smart contracts_ — blocks of code that only execute when their conditions are met. Smart contracts are Turing-Complete and as decentralized as the monetary transactions that occur on the blockchain. The combination of decentralized programs and money make for interesting possibilities.
 
-As a piece of code that sits on the blockchain, a smart contract can automate tasks.
-When an account receives money it can automatically distribute it to others.
-This is entirely transparent so all the nodes(miners) can see what logic is being executed.
+As a piece of code that sits on the blockchain, a smart contract can automate tasks in a decentralized and transparent manner. Examples of this include managing the process of recieving and distributing micro-payments for viewing ads (such as with the Basic Attention Token) and managing buy/sell order books for exchanges transparently (such as with the 0x project).
 
 ## Applications of Smart Contacts
 
-Smart Contracts allows the transfer of goods and services without the need for a independent third part. Logic and rules are built into the smart contract that define the permissions and processes associated with a particular agreement and enforce the obligations attached to it. This provides an opportunity to remove middlemen that are traditionally required to interact with physical property or financial service instruments.
+Smart Contracts allows the transfer of goods and services without the need for a independent third party. Logic and rules are built into the smart contract that define the permissions and processes associated with a particular agreement and enforce the obligations attached to it. This provides an opportunity to remove middlemen that are traditionally required to interact with physical property or financial service instruments.
 
 ## Blockchain Technologies
 
@@ -35,4 +31,5 @@ contract Hello {
     }
 }
 ```
-Pulled from https://medium.com/coinmonks/how-to-write-a-simple-smart-contract-25f6d3c1d6db
+
+Pulled from [Medium - How to Write a Simple Smart Contract](https://medium.com/coinmonks/how-to-write-a-simple-smart-contract-25f6d3c1d6db).
