@@ -38,19 +38,17 @@ The BuildBox game engine is basically for developing hypercasual games.
 
 ### Typical Game Engines
 
-- CryEngine
-- Unreal Engine
-- Unity Game Engine
-- Game Maker
-- Construct 2 or 3
-- Twine
-- Source
-- Frostbite
-- Buildbox
-- Godot Engine
-
-
-
+- [CryEngine](https://www.cryengine.com/)
+- [Unreal Engine](https://www.unrealengine.com/en-US/what-is-unreal-engine-4)
+- [Unity](https://unity3d.com/)
+- [Game Maker](https://www.yoyogames.com/gamemaker)
+- [Construct](https://www.scirra.com/)
+- [Twine](http://twinery.org/)
+- [Source](https://developer.valvesoftware.com/wiki/SDK_Docs)
+- [Frostbite](https://www.ea.com/frostbite)
+- [Buildbox](https://www.buildbox.com/)
+- [Godot Engine](https://godotengine.org/)
+- [Phaser](https://phaser.io)
 
 ### More Information
 
@@ -58,9 +56,3 @@ The BuildBox game engine is basically for developing hypercasual games.
 * [Game Programming Books](http://www.fromdev.com/2013/07/game-development-books.html)
 * [libGDX Framework](https://libgdx.badlogicgames.com/)
 * [OpenGL Framework](https://www.opengl.org/)
-* [Construct Game Engine](https://www.scirra.com/)
-* [Game Maker Engine](https://www.yoyogames.com/gamemaker)
-* [Unity3D Engine](https://unity3d.com/pt)
-* [Unreal Engine](https://www.unrealengine.com/en-US/what-is-unreal-engine-4)
-* [BuildBox](https://www.buildbox.com/)
-* [Godot Engine](https://godotengine.org/)

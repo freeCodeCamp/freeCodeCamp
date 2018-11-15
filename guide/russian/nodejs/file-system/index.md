@@ -1,5 +1,8 @@
-##localeTitle: undefined
- Файловая система
+---
+title: File System
+localeTitle: Файловая система
+---
+## Файловая система
 
 Модуль Node.js File System позволяет работать с файловой системой на вашем компьютере.
 
@@ -8,7 +11,7 @@ Node.js имеет набор встроенных модулей, которы�
 Чтобы включить модуль, используйте функцию `require()` с именем модуля.
 
 ```javascript
-const fs = require('fs'); 
+const fs = require('fs');
 ```
 
 Общее использование модуля файловой системы:
@@ -26,15 +29,15 @@ const fs = require('fs');
 Код Node.js для чтения файла с вашего компьютера и возврата содержимого на консоль.
 
 ```javascript
-const fs = require('fs'); 
- fs.readFile('input.txt', 'utf-8', (err, data) => { 
-  if(err){ 
-  console.log(err); 
-  } 
-  else{ 
-  console.log("Content present in input.txt file : " + data.toString()); 
-  } 
- }); 
+const fs = require('fs');
+ fs.readFile('input.txt', 'utf-8', (err, data) => {
+  if(err){
+  console.log(err);
+  }
+  else{
+  console.log("Content present in input.txt file : " + data.toString());
+  }
+ });
 ```
 
 Вышеприведенный код считывает файл _input.txt_ с вашего компьютера и возвращает содержимое консоли.
@@ -55,15 +58,15 @@ _Примечание_ . Файл input.txt должен присутствов�
 Код Node.js для записи содержимого в файл.
 
 ```javascript
-const fs = require('fs'); 
- fs.writeFile('output.txt', "New content added", (err, data) => { 
-    if(err){ 
-        console.log(err); 
-    } 
-    else{ 
-        console.log("The file is saved"); 
-    } 
- }); 
+const fs = require('fs');
+ fs.writeFile('output.txt', "New content added", (err, data) => {
+    if(err){
+        console.log(err);
+    }
+    else{
+        console.log("The file is saved");
+    }
+ });
 ```
 
 Вышеприведенный код создает файл _output.txt_ и добавляет контент. Добавлен _новый контент_ .
