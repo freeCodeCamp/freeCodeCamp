@@ -58,7 +58,7 @@ For example, consider the following matrix, which we will call B:
 <em>det(B) = (-41) - 100 - 90 = -231</em>
 
 ### Method 2
-This method it similar to 2 by 2 determinants, and based on opertations with diagonals
+This method is similar to 2 by 2 determinants, and based on operations with diagonals. 
 Again, consider the following matrix, which we will call A:
 
 <table>
