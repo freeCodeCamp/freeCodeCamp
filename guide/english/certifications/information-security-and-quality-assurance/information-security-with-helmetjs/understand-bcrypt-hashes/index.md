@@ -8,7 +8,7 @@ title: Understand BCrypt Hashes
 ### Hint
 
 - Add `bcrypt` to your project as a dependency.
-- After you add it, you need to require is in the server file.
+- After you add it, you need to require it in the server file.
 
 ### Solution
 
