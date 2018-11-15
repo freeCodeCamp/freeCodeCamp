@@ -2,7 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import Helmet from 'react-helmet';
 
-import ArticleMeta from '../../../components/ArticleMeta';
+import ArticleMeta from '../../components/ArticleMeta';
 
 const propTypes = {
   article: PropTypes.shape({

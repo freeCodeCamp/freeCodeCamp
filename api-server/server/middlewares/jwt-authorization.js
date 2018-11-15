@@ -8,7 +8,7 @@ import { wrapHandledError } from '../utils/create-handled-error';
 
 export default () => function authorizeByJWT(req, res, next) {
   const path = req.path.split('/')[1];
-  if (/^external$|^internal$/.test(path)) {
+  if (/^external$|^internal$/.test(path) && !req.path.includes('/internal/p')) {
     const cookie = req.signedCookies && req.signedCookies['jwt_access_token'] ||
       req.cookie && req.cookie['jwt_access_token'];
     if (!cookie) {

@@ -1,11 +1,13 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { Grid } from '@freecodecamp/react-bootstrap';
-import Layout from '../components/layouts/Default';
 import { graphql } from 'gatsby';
+import { Router } from '@reach/router';
+
+import Layout from '../components/layouts/Default';
 
 import FullWidthRow from '../components/helpers/FullWidthRow';
-import Featured from '../templates/News/routes/Featured';
+import Featured from '../templates/News/Featured';
 
 const propTypes = {
   data: PropTypes.shape({
@@ -37,6 +39,14 @@ const propTypes = {
     })
   })
 };
+
+export default function NewsRouter(props) {
+  return (
+    <Router>
+      <NewsIndexPage {...props} default={true} path='/news' />
+    </Router>
+  );
+}
 
 function NewsIndexPage(props) {
   const {
@@ -93,5 +103,3 @@ export const query = graphql`
 
 NewsIndexPage.displayName = 'NewsIndexPage';
 NewsIndexPage.propTypes = propTypes;
-
-export default NewsIndexPage;

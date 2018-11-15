@@ -3,9 +3,9 @@ import PropTypes from 'prop-types';
 import { navigate } from 'gatsby';
 import { Image } from '@freecodecamp/react-bootstrap';
 
-import Spacer from '../../../helpers/Spacer';
-import BannerWide from '../../components/BannerWide';
-import ArticleMeta from '../../components/ArticleMeta';
+import Spacer from '../../../components/helpers/Spacer';
+import BannerWide from '../components/BannerWide';
+import ArticleMeta from '../components/ArticleMeta';
 
 import './featured.css';
 
