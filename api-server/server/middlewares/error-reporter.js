@@ -10,16 +10,20 @@ const { ROLLBAR_APP_ID } = process.env;
 const rollbar = new Rollbar(ROLLBAR_APP_ID);
 const log = debug('fcc:middlewares:error-reporter');
 
-const errTemplate = ({message, ...restError}, req) => `
+const errTemplate = (error, req) => {
+  const { message, stack } = error;
+  return `
 Time: ${new Date(Date.now()).toISOString()}
 Error: ${message}
 Is authenticated user: ${!!req.user}
 Route: ${JSON.stringify(req.route, null, 2)}
+Stack: ${stack}
 
-${JSON.stringify(restError, null, 2)}
+// raw
+${JSON.stringify(error, null, 2)}
 
 `;
-
+};
 export default function errrorReporter() {
   if (process.env.NODE_ENV !== 'production' && process.env.ERROR_REPORTER) {
     return (err, req, res, next) => {

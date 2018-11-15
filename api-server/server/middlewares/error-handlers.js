@@ -47,8 +47,8 @@ const isDev = process.env.NODE_ENV !== 'production';
 export default function prodErrorHandler() {
   // error handling in production.
   // disabling eslint due to express parity rules for error handlers
+  // eslint-disable-next-line no-unused-vars
   return function(err, req, res, next) {
-    // eslint-disable-line
     const handled = unwrapHandledError(err);
     // respect handled error status
     let status = handled.status || err.status || res.statusCode;
