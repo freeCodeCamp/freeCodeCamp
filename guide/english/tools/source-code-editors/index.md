@@ -2,55 +2,36 @@
 title: Source Code Editors
 ---
 
-##Source Code Editors
+## Source Code Editors
 
-Source code editors are the programs that allow for code creation and  
-editing. Any text editor can be used to write code. But dedicated code  
-editors offer many useful features, including: text completion,  
-markup coloring, and tabs/panes for side-by-side editing. These features can  
-be useful even to new users who don't know their way around all of the  
-advanced options.
+Source code editors are the programs that allow for code creation and editing. Any text editor can be used to write code. But dedicated code editors offer many useful features, including: text completion, markup coloring, and tabs/panes for side-by-side editing. These features can be useful even to new users who don't know their way around all of the advanced options.  
 
-There are many, many editors available to download or use  
-online, both paid and free. They offer many of the same core-features, but  
-each have their own subtleties. Further research may help find the one that's  
-right for you. The following editors are all cross-platform and  
-free to use or evaluate.
+There are many, many editors available to download or use online, both paid and free. They offer many of the same core-features, but each have their own subtleties. Further research may help find the one that's right for you. The following editors are all cross-platform and free to use or evaluate.
 
-## <a href='https://www.sublimetext.com/' target='_blank' rel='nofollow'>Sublime Text</a> ![Sublime Text Icon](//discourse-user-assets.s3.amazonaws.com/original/2X/1/1249e18855b9c9ef177e636e6c4e308b4877bf2d.png)
+## [Sublime Text](https://www.sublimetext.com/)<img src="https://i.imgur.com/3ALtws1.png" width="50px">
 
-![Sublime Text Screenshot](//discourse-user-assets.s3.amazonaws.com/original/2X/6/63f774c31a7b1a439bcef9d11e95463b6998310e.png)
+![Sublime Text Screenshot](https://i.imgur.com/Jk2aJod.png)
 
-Sublime Text is a very popular editor that has been around <a href='https://www.sublimetext.com/blog/articles/one-point-oh' target='_blank' rel='nofollow'>since 2008</a>. There  
-are many options and <a href='https://packagecontrol.io/' target='_blank' rel='nofollow'>extensions</a> available,  
-and a lot of <a href='http://stackoverflow.com/search?q=sublime+text' target='_blank' rel='nofollow'>help available</a>  
-online to help  
-<a href='http://www.websightdesigns.com/wiki/Setting_up_Sublime_Text_3' target='_blank' rel='nofollow'>set it up</a>.  
-(The license for continued use costs $70\. However, Sublime Text is free to  
-download and evaluate, with a nag-screen pop-up.)
+Sublime Text is a very popular editor that has been around [since 2008](https://www.sublimetext.com/blog/articles/one-point-oh). There are many options and [extensions](https://packagecontrol.io/search/sublime?sort=popularity) available, and a lot of [help available online](http://stackoverflow.com/search?q=sublime+text) to help set it up. Sublime Text is free to download and evaluate, but the license for continued use costs $70.
 
-## <a href='http://brackets.io/' target='_blank' rel='nofollow'>Brackets</a> ![Brackets Icon](//discourse-user-assets.s3.amazonaws.com/original/2X/d/df30640741461569071875cf4ff6cad9924f8b32.png)
+## [Brackets](http://brackets.io/)<img src="https://i.imgur.com/fassWYs.png" width="50px">
 
-![Brackets Screenshot](//discourse-user-assets.s3.amazonaws.com/original/2X/2/2f395a58d24ed551ed8440a10ae640777f1143b6.png)
+![Brackets Screenshot](https://i.imgur.com/H9mO8qS.jpg)
 
-Brackets is a relatively new open-source editor by Adobe. It is very user  
-friendly, especially for people who aren't used to command-line interfaces  
-or JSON-style settings/prefereces. Extensions and themes are quick and easy  
-to find and install through the Extension Manager.
+Brackets is a relatively new open-source editor by Adobe. It is very user friendly, especially for people who aren't used to command-line interfaces or JSON-style settings/prefereces. Extensions and themes are quick and easy to find and install through the Extension Manager.
 
-## <a href='https://atom.io/' target='_blank' rel='nofollow'>Atom</a> ![Atom Icon](//discourse-user-assets.s3.amazonaws.com/original/2X/7/7f6ba67d0ea310e1c1024f83c9acc1e0ecf255a8.png)
+## [Atom](https://atom.io/)<img src="https://i.imgur.com/woj5vPm.png" width="50px">
 
-![Atom Screenshot](//discourse-user-assets.s3.amazonaws.com/original/2X/8/8016e7c0937e8ce6fcb6104c9aee0026443912f5.png)
+![Atom Screenshot](https://i.imgur.com/halOgkj.png)
 
-Atom is an <a href='https://github.com/atom/atom' target='_blank' rel='nofollow'>open source</a> editor, developed  
-by <a href='https://github.com/' target='_blank' rel='nofollow'>GitHub</a>. Like Sublime Text, Atom is quite popular.  
-It is very configurable ("hackable", as they say) but advanced features may  
-be overwhelming to new users. There is also plenty of <a href='http://readwrite.com/2014/05/20/github-atom-5-tips-getting-started-tutorial-corey-johnson/' target='_blank' rel='nofollow'>helpful</a> <a href='http://flight-manual.atom.io/' target='_blank' rel='nofollow'>documentation</a>  
+Atom is an [open source](https://github.com/atom/atom) editor, developed by [GitHub](https://github.com/). Atom is very popular and configurable("hackable", as they say), but the advanced features may be overwhelming to new users. There is also plenty of helpful documentation available online.
 
-<a href='http://stackoverflow.com/search?q=atom' target='_blank' rel='nofollow'>availble</a> online.
+#### Atom resources:
+- [5 Tips for getting started](http://readwrite.com/2014/05/20/github-atom-5-tips-getting-started-tutorial-corey-johnson/)
+- [Atom flight manual](http://flight-manual.atom.io)
+- [Atom on stackoverflow](http://stackoverflow.com/search?q=atom)
 
-
-## <a href='https://code.visualstudio.com/' target='_blank' rel='nofollow'>Visual Studio Code</a> ![Visual Studio Code Icon](https://i.imgur.com/b4vFsKa.png)
+## [Visual Studio Code](https://code.visualstudio.com/)<img src="https://i.imgur.com/b4vFsKa.png" width="50px">
 
 ![Visual Studio Code Screenshot](https://code.visualstudio.com/home/home-screenshot-mac-lg.png)
 
@@ -62,14 +43,14 @@ Its main features are:
 *   Build-in Git - Review diffs, stage files, make commits, push and pull, all available in the editor.
 *   Extensions - Install extensions to add new languages, themes, debuggers, and connect additional services.
 
-A few extensions that make your life easier and more interesting while using Visual Studio Code are:
-* <a href="https://gitlens.amod.io/" target="_blank" rel="nofollow">GitLens</a> - it helps visualize the code authorship.
-* <a href="https://marketplace.visualstudio.com/items?itemName=ms-vscode.vs-keybindings" target="_blank" rel="nofollow">Visual Studio Keymap</a> - in case you switched to VS Code from Visual Studio.
-* <a href="https://marketplace.visualstudio.com/items?itemName=msjsdiag.debugger-for-chrome" target="_blank" rel="nofollow">Debugger for Chrome</a> - if, obviously, you are using Google Chrome browser too.
-* <a href="https://marketplace.visualstudio.com/items?itemName=formulahendry.auto-close-tag" target="_blank" rel="nofollow">Auto Close tag</a> - automatically adds HTML/XML close tag
-* <a href="https://marketplace.visualstudio.com/items?itemName=formulahendry.auto-rename-tag" target="_blank" rel="nofollow">Auto rename tag</a> - automatically rename paired HTML/XML tag.
-* <a href="https://marketplace.visualstudio.com/items?itemName=dbaeumer.vscode-eslint" target="_blank" rel="nofollow">ESLint</a>
-* <a href="https://marketplace.visualstudio.com/items?itemName=christian-kohler.path-intellisense" target="_blank" rel="nofollow">Path Intellisense</a> - autocompletes filenames.
-* <a href="https://marketplace.visualstudio.com/items?itemName=wayou.vscode-todo-highlight" target="_blank" rel="nofollow">TODO highlight</a> - Highlight TODO, FIXME and other annotations within your code
-* <a href="https://marketplace.visualstudio.com/search?term=snippets&target=VSCode&category=All%20categories&sortBy=Relevance" target="_blank" rel="nofollow">Code Snippets</a> - snippets for anything you need
-
+**A few extensions that make your life easier and more interesting while using Visual Studio Code are:**
+- [VS Live Share](https://marketplace.visualstudio.com/items?itemName=MS-vsliveshare.vsliveshare) - invite someone into your editor and code together
+- [GitLens](https://gitlens.amod.io/) - helps visualize the code authorship
+- [Visual Studio Keymap](https://marketplace.visualstudio.com/items?itemName=ms-vscode.vs-keybindings) - in case you switched to VS Code from Visual Studio
+- [Debugger for Chrome](https://marketplace.visualstudio.com/items?itemName=msjsdiag.debugger-for-chrome) - if you are using Google Chrome browser too
+- [Auto Close tag](https://marketplace.visualstudio.com/items?itemName=formulahendry.auto-close-tag) - automatically adds HTML/XML close tag
+- [Auto rename tag](https://marketplace.visualstudio.com/items?itemName=formulahendry.auto-rename-tag) - automatically rename paired HTML/XML tag
+- [ESLint](https://marketplace.visualstudio.com/items?itemName=dbaeumer.vscode-eslint) - for making sure your code conforms to ESLint formatting
+- [Path Intellisense](https://marketplace.visualstudio.com/items?itemName=christian-kohler.path-intellisense) - autocompletes filenames
+- [TODO highlight](https://marketplace.visualstudio.com/items?itemName=wayou.vscode-todo-highlight) - Highlight TODO, FIXME and other annotations within your code
+- [Code Snippets](https://marketplace.visualstudio.com/search?term=snippets&target=VSCode&category=All%20categories&sortBy=Relevance) - snippets for anything you need
