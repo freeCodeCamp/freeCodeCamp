@@ -10,5 +10,5 @@ This set of lessons has two parts:
 Each part has it's own boilerplate project to get you started.
 
 #### More Information:
-[Helmet](https://helmetjs.github.io/)
+[Helmet](https://helmetjs.github.io/)  
 [bcrypt](https://github.com/kelektiv/node.bcrypt.js#readme)
