@@ -17,15 +17,15 @@ let octal: number = 0o531;
 Example of Number type usage in TypeScript:
 
 ```typescript
-class Employee extends Person{
-  age:Number;
-  constructor(age : Number){
-    //calling constructor of Person
+class Employee extends Person {
+  age: Number;
+  constructor(age: Number){
+    // Calls constructor of Person
     super();
     this.age = age;
   }
  
-  getAge(): Number{
+  getAge(): Number {
     return this.age;
   }
 }
