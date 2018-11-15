@@ -5,7 +5,7 @@ title: Vertical Align CSS
 
 ```vertical-align```is a CSS property used to vertically align an image.
 
-For example, you can be you ```vertical-align``` like this to align an image:
+For example, you can use ```vertical-align``` like this to align an image:
 ```
 img {
     vertical-align: top;

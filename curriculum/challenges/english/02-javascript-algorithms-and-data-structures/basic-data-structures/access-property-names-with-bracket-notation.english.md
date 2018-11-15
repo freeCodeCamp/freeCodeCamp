@@ -22,15 +22,15 @@ We've defined a function, <code>checkInventory</code>, which receives a scanned 
 ```yml
 tests:
   - text: <code>checkInventory</code> is a function
-    testString: 'assert.strictEqual(typeof checkInventory, "function", "<code>checkInventory</code> is a function");'
+    testString: assert.strictEqual(typeof checkInventory, 'function', '<code>checkInventory</code> is a function');
   - text: 'The <code>foods</code> object should have only the following key-value pairs: <code>apples: 25</code>, <code>oranges: 32</code>, <code>plums: 28</code>, <code>bananas: 13</code>, <code>grapes: 35</code>, <code>strawberries: 27</code>'
-    testString: 'assert.deepEqual(foods, {apples: 25, oranges: 32, plums: 28, bananas: 13, grapes: 35, strawberries: 27}, "The <code>foods</code> object should have only the following key-value pairs: <code>apples: 25</code>, <code>oranges: 32</code>, <code>plums: 28</code>, <code>bananas: 13</code>, <code>grapes: 35</code>, <code>strawberries: 27</code>");'
+    testString: 'assert.deepEqual(foods, {apples: 25, oranges: 32, plums: 28, bananas: 13, grapes: 35, strawberries: 27}, ''The <code>foods</code> object should have only the following key-value pairs: <code>apples: 25</code>, <code>oranges: 32</code>, <code>plums: 28</code>, <code>bananas: 13</code>, <code>grapes: 35</code>, <code>strawberries: 27</code>'');'
   - text: <code>checkInventory("apples")</code> should return <code>25</code>
-    testString: 'assert.strictEqual(checkInventory("apples"), 25, "<code>checkInventory("apples")</code> should return <code>25</code>");'
+    testString: assert.strictEqual(checkInventory('apples'), 25, '<code>checkInventory("apples")</code> should return <code>25</code>');
   - text: <code>checkInventory("bananas")</code> should return <code>13</code>
-    testString: 'assert.strictEqual(checkInventory("bananas"), 13, "<code>checkInventory("bananas")</code> should return <code>13</code>");'
+    testString: assert.strictEqual(checkInventory('bananas'), 13, '<code>checkInventory("bananas")</code> should return <code>13</code>');
   - text: <code>checkInventory("strawberries")</code> should return <code>27</code>
-    testString: 'assert.strictEqual(checkInventory("strawberries"), 27, "<code>checkInventory("strawberries")</code> should return <code>27</code>");'
+    testString: assert.strictEqual(checkInventory('strawberries'), 27, '<code>checkInventory("strawberries")</code> should return <code>27</code>');
 
 ```
 

@@ -35,15 +35,15 @@ challengeType: 5
 ```yml
 tests:
   - text: <code>solve24</code> is a function.
-    testString: 'assert(typeof solve24 === "function", "<code>solve24</code> is a function.");'
+    testString: assert(typeof solve24 === 'function', '<code>solve24</code> is a function.');
   - text: <code>solve24("4878")</code> should return <code>(7-8/8)*4</code> or <code>4*(7-8/8)</code>
-    testString: 'assert(include(answers[0], solve24(testCases[0])), "<code>solve24("4878")</code> should return <code>(7-8/8)*4</code> or <code>4*(7-8/8)</code>");'
+    testString: assert(include(answers[0], solve24(testCases[0])), '<code>solve24("4878")</code> should return <code>(7-8/8)*4</code> or <code>4*(7-8/8)</code>');
   - text: <code>solve24("1234")</code> should return any arrangement of <code>1*2*3*4</code>
-    testString: 'assert(include(answers[1], solve24(testCases[1])), "<code>solve24("1234")</code> should return any arrangement of <code>1*2*3*4</code>");'
+    testString: assert(include(answers[1], solve24(testCases[1])), '<code>solve24("1234")</code> should return any arrangement of <code>1*2*3*4</code>');
   - text: <code>solve24("6789")</code> should return <code>(6*8)/(9-7)</code> or <code>(8*6)/(9-7)</code>
-    testString: 'assert(include(answers[2], solve24(testCases[2])), "<code>solve24("6789")</code> should return <code>(6*8)/(9-7)</code> or <code>(8*6)/(9-7)</code>");'
+    testString: assert(include(answers[2], solve24(testCases[2])), '<code>solve24("6789")</code> should return <code>(6*8)/(9-7)</code> or <code>(8*6)/(9-7)</code>');
   - text: <code>solve24("1127")</code> should return a permutation of <code>(1+7)*(1*2)</code>
-    testString: 'assert(include(answers[3], solve24(testCases[3])), "<code>solve24("1127")</code> should return a permutation of <code>(1+7)*(1*2)</code>");'
+    testString: assert(include(answers[3], solve24(testCases[3])), '<code>solve24("1127")</code> should return a permutation of <code>(1+7)*(1*2)</code>');
 
 ```
 
@@ -68,7 +68,24 @@ function solve24 (numStr) {
 <div id='js-teardown'>
 
 ```js
-console.info('after the test');
+const testCases = [
+  '4878',
+  '1234',
+  '6789',
+  '1127'
+];
+
+const answers = [
+  ['(7-8/8)*4', '4*(7-8/8)', '(4-8+7)*8', '(4+7-8)*8', '(7+4-8)*8', '(7-8+4)*8', '8*(4-8+7)', '8*(4+7-8)', '8*(7+4-8)', '8*(7-8+4)'],
+  ['1*2*3*4', '1*2*4*3', '1*3*2*4', '1*3*4*2', '1*4*2*3', '1*4*3*2', '2*1*3*4', '2*1*4*3', '2*3*1*4', '2*3*4*1', '2*4*3*1', '2*4*1*3', '3*1*2*4', '3*1*4*2', '3*2*1*4', '3*2*4*1', '3*4*1*2', '3*4*2*1', '4*1*2*3', '4*1*3*2', '4*2*1*3', '4*2*3*1', '4*3*1*2', '4*3*2*1', '(1+2+3)*4', '(1+3+2)*4', '(2+1+3)*4', '(2+3+1)*4', '(3+1+2)*4', '(3+2+1)*4', '4*(1+2+3)', '4*(2+1+3)', '4*(2+3+1)', '4*(3+1+2)', '4*(3+2+1)'],
+  ['(6*8)/(9-7)', '(8*6)/(9-7)', '6*8/(9-7)', '8*6/(9-7)'],
+  ['(1+7)*(2+1)', '(1+7)*(1+2)', '(1+2)*(1+7)', '(1+2)*(7+1)', '(2+1)*(1+7)', '(7+1)*(2+1)']
+];
+
+function include(ansArr, res) {
+  const index = ansArr.indexOf(res);
+  return index >= 0;
+}
 ```
 
 </div>
