@@ -19,7 +19,7 @@ It is just a name that you can use to call up stored data. For example, you can 
 1. To create an R object, choose a name and then use the less-than symbol, `<`,
 followed by a minus sign,  `-`, to save data into it. This combination looks like an
 arrow, `<-`. R will make an object, give it your name, and store in it whatever
-follows the arrow.
+follows the arrow. You may also use equal sign, `=`, in place of `<-`. 
 
 2. When you ask R what’s in a, it tells you on the next line. For example:
 
@@ -33,7 +33,7 @@ follows the arrow.
 a name cannot start with a number. 
 Second, a name cannot use some special symbols, like  `^,  !,  $,  @,  +,  -,  /, or  *`:
 
-4. R also understands capitalization (or is case-sensitive), so name and Name will refer to different objects.
+4. R also understands capitalization (or is case-sensitive), so `name` and `Name` will refer to two different objects.
 
 5. You can see which object names you have already used with the function `ls()`.
 
