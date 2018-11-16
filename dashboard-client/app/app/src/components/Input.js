@@ -1,10 +1,12 @@
 import React from 'react';
 
-const Input = ({ onInputChange }) => (
+const Input = ({ onInputChange, value, test }) => (
   <input
     type="text"
     placeholder="PR #"
     onChange={onInputChange}
+    value={value}
+    ref={test}
   />
 );
 

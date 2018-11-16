@@ -6,10 +6,15 @@ const Results = ({ foundPRs }) => {
     const files = filenames.map((filename, index) => {
       return <li key={`${number}-${index}`}>{filename}</li>;
     });
-
+    const prUrl = `https://github.com/freeCodeCamp/freeCodeCamp/pull/${number}`
     return (
       <div key={number}>
-        <h4>{number}</h4>
+        <h5>
+          {!Number(number)
+            ? number
+            : <a href={prUrl} rel="noopener noreferrer" target="_blank">{number}</a>
+          }
+        </h5>
         <ul>
           {files}
         </ul>

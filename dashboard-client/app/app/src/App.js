@@ -16,33 +16,54 @@ const Container = styled.div`
 
 class App extends Component {
   state = {
-    number: null,
+    number: '',
     foundPRs: []
   };
 
+  inputRef = React.createRef();
+
   handleInputChange = (event) => {
     const { value } = event.target;
-
-    this.setState((prevState) => ({ number: value }));
+    console.log(Number(value))
+    if (Number(value) || value === '') {
+      this.setState((prevState) => ({ number: value, foundPRs: [] }));
+    }
   }
 
   handleButtonClick = () => {
     const { number } = this.state;
 
-    fetch(`https://pr-relations.glitch.me/test/${number}`)
+    fetch(`https://pr-relations.glitch.me/pr/${number}`)
       .then((response) => response.json())
-      .then(({ foundPRs }) => {
-        console.log(foundPRs);
-        this.setState((prevState) => ({ foundPRs }))
+      .then(({ ok, foundPRs }) => {
+        if (ok) {
+          if (!foundPRs.length) {
+            foundPRs.push({number: 'No PRs with matching files', filenames: []});
+          }
+          this.setState((prevState) => ({ foundPRs }));
+        }
+        else {
+          this.inputRef.current.focus();
+        }
+      })
+      .catch((err) => {
+        //console.log(err)
+        this.setState((prevState) => ({ number: '', foundPRs: [] }));
       });
   }
 
   render() {
-    const { foundPRs } = this.state;
+    const { number, foundPRs } = this.state;
 
     return (
       <Container>
-        <Input onInputChange={this.handleInputChange} />
+      <input
+        type="text"
+        placeholder="PR #"
+        onChange={this.handleInputChange}
+        value={number}
+        ref={this.inputRef}
+      />
         <button onClick={this.handleButtonClick}>Search</button>
         <Results foundPRs={foundPRs} />
       </Container>
