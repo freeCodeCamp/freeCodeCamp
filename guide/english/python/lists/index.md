@@ -1,6 +1,7 @@
 ---
 title: Lists
 ---
+## Lists
 Lists is one of the most common Python data structures you will encounter while programming in Python along with dictionary, tuple or set. 
 
 It is an ordered mutable collection, this means that you store data in different postions in a list. 
