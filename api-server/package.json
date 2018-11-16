@@ -27,7 +27,6 @@
   },
   "license": "(BSD-3-Clause AND CC-BY-SA-4.0)",
   "dependencies": {
-    "@freecodecamp/curriculum": "^3.1.1",
     "@freecodecamp/loopback-component-passport": "^1.0.0",
     "accepts": "^1.3.0",
     "auth0-js": "^9.5.1",
