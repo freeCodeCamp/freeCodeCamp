@@ -55,10 +55,10 @@ Here are our six core certifications:
 - Debugging
 - Basic Data Structures
 - Algorithm Scripting
-- Object Oriented Programming
+- Object-Oriented Programming
 - Functional Programming <br />
   <br />
-  **Projects**: Palindrome Checker, Roman Numeral Converter, Caesars Cipher, Telephone Number Validator, Cash Register
+  **Projects**: Palindrome Checker, Roman Numeral Converter, Caesar's Cipher, Telephone Number Validator, Cash Register
 
 #### 3. Front End Libraries Certification
 
@@ -122,7 +122,7 @@ Our community also has:
 
 ### Found a bug?
 
-If you think you've found a bug, first read the [Help I've Found a Bug](https://www.freecodecamp.org/forum/t/how-to-report-a-bug/19543) article and follow its instructions. If you're confident it's a new bug, and have confirmed that someone else facing the same issue, go ahead and create a new GitHub issue. Be sure to include as much information as possible so we can reproduce the bug.
+If you think you've found a bug, first read the [Help I've Found a Bug](https://www.freecodecamp.org/forum/t/how-to-report-a-bug/19543) article and follow its instructions. If you're confident it's a new bug, and have confirmed that someone else is facing the same issue, go ahead and create a new GitHub issue. Be sure to include as much information as possible so we can reproduce the bug.
 
 ### Found a security issue?
 

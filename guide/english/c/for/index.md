@@ -23,7 +23,7 @@ The initialization statement is executed only once. Then, the test expression is
 
 The for loop is commonly used when the number of iterations is known.
 
-## Example
+#### Example
 ```c
 #include <stdio.h>
 
@@ -34,15 +34,18 @@ int main () {
     for (int i = 0; i < 5; i++) {
     	printf("Item on index %d is %d\n", i, array[i]);
     }
+    
+    return 0;
 }
 ```
 
-## Output:
+#### Output:
 ```shell
 > Item on index 0 is 1
 > Item on index 1 is 2
 > Item on index 2 is 3
 > Item on index 3 is 4
+> Item on index 4 is 5
 ```
 ## Example for printing star pattern for pyramid 
 ```c
@@ -87,3 +90,12 @@ main ()
 
 
 
+## Syntax of For infinite loop
+
+```c
+for ( ; ; ) {
+   statement(s);
+}
+```
+
+An infinite loop occurs when the condition will never be met, due to some inherent characteristic of the loop. An infinite loop also called an endless loop, and it is a piece of coding that lacks a functional exit so that it repeats indefinitely.

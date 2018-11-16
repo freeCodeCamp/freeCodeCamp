@@ -86,8 +86,8 @@ title: Books to Read for Programmers
 ## Coding Interview
 
 *Cracking the Coding Interview: 150 Programming Questions and Solutions*
-- [Amazon Smile](https://smile.amazon.com/Cracking-Coding-Interview-Programming-Questions/dp/098478280X)
-- ISBN-13: 978-0984782802
+- [Amazon](https://www.amazon.com/Cracking-Coding-Interview-Programming-Questions/dp/0984782850/ref=dp_ob_title_bk)
+- ISBN-13: 978-0984782857
 
 *Programming Interviews Exposed: Secrets to Landing Your Next Job, 2nd Edition*
 - [Wiley](https://www.wiley.com/en-id/Programming+Interviews+Exposed:+Secrets+to+Landing+Your+Next+Job,+2nd+Edition-p-9780470121672)
@@ -220,8 +220,14 @@ title: Books to Read for Programmers
 - ISBN-13: 978-0596517748
 
 *JavaScript and JQuery: Interactive Front-End Web Development*
-- [Amazon Smile](https://smile.amazon.com/JavaScript-JQuery-Interactive-Front-End-Development/dp/1118531647/)
-- ISBN-13: 978-1118531648 
+- [Amazon Smile](https://smile.amazon.com/JavaScript-JQuery-Interactive-Front-End-Development/dp/1118531647/?pldnSite=1)
+- ISBN-13: 978-1118531648
+
+## Node.js
+
+ *Beginning Node.js*
+ -[Amazon](https://www.amazon.com/Beginning-Node-js-Basarat-Syed-ebook/dp/B01JFUD1X8/ref=sr_1_1?ie=UTF8&qid=1539929353&sr=8-1&keywords=beginning-Node-js-Basarat-Syed)
+ - ISBN-13: 978-1484201886
 
 ## Python
 

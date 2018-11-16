@@ -9,18 +9,17 @@ HyperText Markup Language (HTML) is a markup language used to construct online d
    2) Atructure the content in our document 
    3) Ascribe context and meaning to the content of our document
  
-An HTML document has two aspects to it. It contains structured information (Markup), and text-links (HyperText) to other documents. We structure our pages using [HTML elements](#). They are constructs of the language providing [structure](#) and [meaning](#) in our document for the browser and the [<anchor>](#) element links to other documents across the internet.
+An HTML document has two aspects to it. It contains structured information (Markup), and text-links (HyperText) to other documents. We structure our pages using [HTML elements](#). They are constructs of the language providing [structure](#) and [meaning](#) in our document for the browser and [<anchor>](#) linking to other documents across the internet.
 
 The first publicly available description of HTML was a document called "HTML Tags", first mentioned on the Internet in late 1991 by Tim Berners-Lee, who is widely credited with the invention of html. 
 
 The internet was originally created to store and present static (unchanging) documents. The aspects of HTML discussed above were seen perfectly in these documents which lacked all design and styling. They presented structured information that contained links to other documents.
  
-HTML5 is the latest version, or specification, of HTML. The [World Wide Web Consortium (W3C)](https://www.w3.org/) is the organization responsible for developing standards for the World Wide Web, including those for HTML. As web pages and web applications grow more complex, W3C  updates HTML's standards.
+HTML5 is the latest version, or specification, of HTML. The [World Wide Web Consortium (W3C)](https://www.w3.org/) is the organization responsible for developing standards for the World Wide Web, including those for HTML. As web pages and web applications grow more complex, W3C updates HTML's standards.
  
-HTML5 introduces a host of semantic elements. Though we discussed HTML helped to provide meaning to our document, it wasn't until HTML5s' introduction of [semantic elements](#) that its potential was realized.
+HTML5 introduced a host of semantic elements. As discussed, HTML provides meaning to our document, however it wasn't until HTML5's introduction of [semantic elements](#) that its potential was realized.
 
-
-## A simple example of HTML Document
+## A simple example of an HTML Document
 
 ```html
 <!DOCTYPE html>
@@ -65,7 +64,7 @@ The end tag is written like the start tag, but with a forward slash inserted bef
 
 ### HTML Versions
 
-Since the early days of the web, there have been many versions of HTML
+Since the early days of the web, there have been many versions of HTML:
 
 |Version|Year|
 |--- |--- |

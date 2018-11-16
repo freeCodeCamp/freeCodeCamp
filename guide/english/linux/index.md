@@ -2,6 +2,8 @@
 title: Linux
 ---
 
+# Linux
+
 <img src="https://upload.wikimedia.org/wikipedia/commons/3/35/Tux.svg">
 
 Linux is a name which broadly denotes a family of free and open-source software operating system distributions built around the Linux

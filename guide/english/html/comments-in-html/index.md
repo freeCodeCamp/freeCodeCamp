@@ -16,8 +16,8 @@ Comments are started with `<!--` and ended with `-->`, and can span multiple lin
 Author: xyz
 Date: xx/xx/xxxx
 Purpose: abc
--->
 Read more: https://html.com/tags/comment-tag/#ixzz4vtZHu5uR
+-->
 <!DOCTYPE html>
 <html>
   <body>

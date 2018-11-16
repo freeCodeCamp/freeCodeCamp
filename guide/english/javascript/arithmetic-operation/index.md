@@ -9,9 +9,21 @@ JavaScript provides five arithmetic operators: `+`, `-`, `*`, `/` and `%`. The o
 
 `a + b`
 
+**Caution**
+<br>
+The `+` serves as an arithmetic operator and for concatenating strings. Take extra caution when dealing with numbers versus string data types.
+
+If `a` and `b` data types are both numbers, their value will add.
+<br>
+If `a` is a number and `"b"` is a string, their value will concatenate into a string.
+<br>
+If `"a"` and `"b"` are both strings, their value will concatenate into a string.
+
 **Usage**
 
     2 + 3          // returns 5
+    5 + "3"        // returns "53"
+    "10" + "40"    // returns "1040"
     true + 2       // interprets true as 1 and returns 3
     false + 5      // interprets false as 0 and returns 5
     true + "bar"   // concatenates the boolean value and returns "truebar"
