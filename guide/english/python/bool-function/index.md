@@ -11,6 +11,35 @@ It takes one argument, `x`. `x` is converted using the standard <a href='https:/
 
 If `x` is false or omitted, this returns `False`; otherwise it returns `True`.
 
+## Comparison Operators
+
+There are three Boolean Operators they are `and`, `or`, and `not`.
+
+### and
+
+| expression | result |
+| --- | --- |
+| true `and` true | true |
+| true `and` false | false |
+| false `and` true | false |
+| false `and` false | false |
+
+### or
+
+| expression | result |
+| --- | --- |
+| true `or` true | true |
+| true `or` false | true |
+| false `or` true | true |
+| false `or` false | false |
+
+### not
+
+| expression | result |
+| --- | --- |
+| `not` true | false |
+| `not` false | true |
+
 ## Code Sample
 
     print(bool(4 > 2)) # Returns True as 4 is greater than 2
