@@ -4,6 +4,8 @@ const readDirP = require('readdirp-walk');
 
 const { parseMarkdown } = require('@freecodecamp/challenge-md-parser');
 
+const { dasherize } = require('./utils');
+
 const challengesDir = path.resolve(__dirname, './challenges');
 
 exports.getChallengesForLang = function getChallengesForLang(lang) {
@@ -57,6 +59,7 @@ async function buildCurriculum(file, curriculum) {
   );
   const { name: blockName, order, superOrder } = meta;
   challenge.block = blockName;
+  challenge.dashedName = dasherize(challenge.title);
   challenge.order = order;
   challenge.superOrder = superOrder;
   challenge.superBlock = superBlock;

@@ -21,7 +21,7 @@
     "prepare": "npm run build",
     "repack": "babel-node ./repack.js",
     "semantic-release": "semantic-release",
-    "test": "mocha --delay --reporter progress",
+    "test": "mocha --delay --reporter progress --bail",
     "unpack": "babel-node ./unpack.js"
   },
   "dependencies": {
