@@ -89,7 +89,7 @@ p {
 }
 
 h2 {
- color: #FA8072; //salmon 
+ color: #FA8072; // salmon 
 }
 ```
 
