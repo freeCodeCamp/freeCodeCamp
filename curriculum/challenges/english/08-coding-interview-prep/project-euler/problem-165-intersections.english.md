@@ -37,7 +37,7 @@ How many distinct true intersection points are found among the 5000 line segment
 ```yml
 tests:
   - text: <code>euler165()</code> should return 2868868.
-    testString: 'assert.strictEqual(euler165(), 2868868, "<code>euler165()</code> should return 2868868.");'
+    testString: assert.strictEqual(euler165(), 2868868, '<code>euler165()</code> should return 2868868.');
 
 ```
 

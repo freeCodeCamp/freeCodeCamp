@@ -4,7 +4,7 @@ title: Box Shadow
 
 ## Box Shadow
 
-The `box-shadow` property attaches one or more shadows around the frame of an element (can be inside). It's an option that give you the power to easily design wonderful shadow effects. Box shadows are a great way to elevate the visuals of your web page.
+The `box-shadow` property attaches one or more shadows around the frame of an element (can be inside). It's an option that gives you the power to easily design wonderful shadow effects. Box shadows are a great way to elevate the visuals of your web page.
 
 A box shadow can be described with several properties including:
 * X and Y offset from the element
@@ -36,7 +36,7 @@ This value is used to set the color of the shadow, usually defined with hex `#00
 
 #### Extended
 
-To maximize compatibility, it is recommended that you declare box shadow property for `moz-appearance` and `webkit`, this extends the normal syntax to:
+To maximize compatibility, it is recommended that you declare box shadow properties for `moz-appearance` and `webkit`, this extends the normal syntax to:
 
 ```css
    div{
