@@ -33,7 +33,7 @@ Example : Bitcoin, Ethereum, Litecoin
 
 In this type of blockchain the problem of the private blockchain is solved. The issue of sole autonomy by vesting the power in the hands of an individual is tackeled by making more than one person in charge.
 
-A group of people come together to form a consortium or federation. Which in turn works together for the common good.
+A group of people come together to form a consortium or federation, which in turn works together for the common good.
 
 Example : [Energy Web Foundation](http://energyweb.org/)
 
@@ -41,7 +41,7 @@ Example : [Energy Web Foundation](http://energyweb.org/)
 
 
 
-There is another category for classification, that is based on the persmission granted to the blockchain network. They are classified as -
+There is another category for classification, that is based on the permission granted to the blockchain network. They are classified as -
 
 1. Public Permissioned Blockchain
 2. Private Permissioned Blockchain
