@@ -48,29 +48,31 @@ Similarly truth tables for other logical operators -
 | T  | F  | T  |
 | T  | T  | F  |
 
-OR operator:
+### XNOR 
 
-| x | y | x OR y  |
+| x | y | x XNOR y  |
 |---|---|---|
-| F  | F  | F  |
-| F  | T  | T  |
-| T  | F  | T  |
+| F  | F  | T  |
+| F  | T  | F  |
+| T  | F  | F  |
 | T  | T  | T  |
 
-NOT operator:
-
-| x | NOT x |
-|---|---|
-| F  | T  |
-| T  | F  |
-
-NAND operator:
+### NAND
 
 | x | y | x NAND y |
 |---|---|---|
 | F  | F  | T  |
 | F  | T  | T  |
 | T  | F  | T  |
+| T  | T  | F  |
+
+### NOR 
+
+| x | y | x NOR y |
+|---|---|---|
+| F  | F  | T  |
+| F  | T  | F  |
+| T  | F  | F  |
 | T  | T  | F  |
 
 Implication operator:
@@ -105,30 +107,6 @@ Double implication operator:
 
 
 Truth tables are a powerful tool. They can be used to express and evaluate simple boolean functions and operations, complex combinational circuits, and sequential logic circuits!
-
-
-
-Here is the truth table for the OR operator
-
-
-| x | y | x OR y  |
-|---|---|---|
-| F  | F  | F  |
-| F  | T  | T  |
-| T  | F  | T  |
-| T  | T  | T  |
-
-Just like above the OR operator operates on two variables, notice that the only time the OR operator evaluates to True is when `x` & `y` negate eachother.
-
-Let's do one more, let's do the table for the Negation, this operates on one value instead of two
-
-
-| x | NOT x  |
-|---|---|
-| T  | F  |
-| F  | T  |
-
-This rule is simpler and it simply negates the original value of `x`
 
 #### More Information:
 
