@@ -23,9 +23,9 @@ Use destructuring assignment to obtain <code>max</code> of <code>forecast.tomorr
 ```yml
 tests:
   - text: <code>maxOfTomorrow</code> equals <code>84.6</code>
-    testString: 'assert(getMaxOfTmrw(LOCAL_FORECAST) === 84.6, "<code>maxOfTomorrow</code> equals <code>84.6</code>");'
+    testString: assert(getMaxOfTmrw(LOCAL_FORECAST) === 84.6, '<code>maxOfTomorrow</code> equals <code>84.6</code>');
   - text: nested destructuring was used
-    testString: 'getUserInput => assert(getUserInput("index").match(/\{\s*tomorrow\s*:\s*\{\s*max\s*:\s*maxOfTomorrow\s*\}\s*\}\s*=\s*forecast/g),"nested destructuring was used");'
+    testString: getUserInput => assert(getUserInput('index').match(/\{\s*tomorrow\s*:\s*\{\s*max\s*:\s*maxOfTomorrow\s*\}\s*\}\s*=\s*forecast/g),'nested destructuring was used');
 
 ```
 
@@ -63,6 +63,19 @@ console.log(getMaxOfTmrw(LOCAL_FORECAST)); // should be 84.6
 <section id='solution'>
 
 ```js
-// solution required
+const LOCAL_FORECAST = {
+  today: { min: 72, max: 83 },
+  tomorrow: { min: 73.3, max: 84.6 }
+};
+
+function getMaxOfTmrw(forecast) {
+  "use strict";
+  // change code below this line
+   const {tomorrow : {max : maxOfTomorrow}} = forecast; // change this line
+  // change code above this line
+  return maxOfTomorrow;
+}
+
+console.log(getMaxOfTmrw(LOCAL_FORECAST)); // should be 84.6
 ```
 </section>
