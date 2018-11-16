@@ -19,9 +19,9 @@ import { types as settingsTypes } from './settings';
 const challengeReduxTypes = {};
 /** ***********************************/
 
-const ns = 'app';
+export const ns = 'app';
 
-const defaultFetchState = {
+export const defaultFetchState = {
   pending: true,
   complete: false,
   errored: false,

@@ -4,3 +4,6 @@
 export const maybeEmailRE = /.*@.*\.\w\w/;
 export const maybeUrlRE = /https?:\/\/.*\..*/;
 export const hasProtocolRE = /^http/;
+
+
+export const handledErrorSymbol = Symbol('handledError');
