@@ -37,12 +37,12 @@ MongoClient.connect(
     const db = client.db('freecodecamp');
     const challengeCollection = db.collection('challenge');
 
-    challengeCollection.deleteMany({}, err => {
+    challengeCollection.deleteMany({}, async err => {
       handleError(err, client);
 
       log('deleted all the challenges');
 
-      const curriculum = getChallengesForLang(lang);
+      const curriculum = await getChallengesForLang(lang);
 
       const allChallenges = Object.keys(curriculum)
         .map(key => curriculum[key].blocks)
