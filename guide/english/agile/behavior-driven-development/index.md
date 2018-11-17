@@ -46,17 +46,20 @@ When he returns the blue garment for a replacement in black
 Then I should have three blue garments in stock
 And two black garments in stock.
 ```
-Along with it are some Benefites:
+Along with it are some Benefits:
 
 1. All development work can be traced back directly to business objectives.
 2. Software development meets user need. Satisfied users = good business.
-3. Efficient prioritisation - business-critical features are delivered first.
+3. Efficient prioritization - business-critical features are delivered first.
 4. All parties have a shared understanding of the project and can be involved in the communication.
 5. A shared language ensures everyone (technical or not) has thorough visibility into the project’s progression.
 6. Resulting software design that matches existing and supports upcoming business needs.
-7. Improved quality code reducing costs of maintenance and minimising project risk.
+7. Improved quality code reducing costs of maintenance and minimizing project risk.
  
 ## More Information
 * Wiki on <a href='https://en.wikipedia.org/wiki/Behavior-driven_development' target='_blank' rel='nofollow'>BDD</a>
 * A well-known Behavior Driven Development (BDD) framework is [Cucumber](https://cucumber.io/). Cucumber supports many programming languages and can be integrated with a number of frameworks; for example, [Ruby on Rails](http://rubyonrails.org/), [Spring Framework](http://spring.io/) and [Selenium](http://www.seleniumhq.org/)
-* https://inviqa.com/blog/bdd-guide
+* [BDD Guide](https://inviqa.com/blog/bdd-guide)
+* Ebook on the [Discovery Phase of BDD](https://leanpub.com/bddbooks-discovery)
+* Dan North about [What's in a story](https://dannorth.net/whats-in-a-story/)
+* Automation Panda on [Writing good Gherkin](https://automationpanda.com/2017/01/30/bdd-101-writing-good-gherkin/)
