@@ -19,4 +19,5 @@
 
 #learn-app-wrapper .reflex-layout.vertical > .reflex-splitter {
   width: 5px;
+  overflow-y: hidden;
 }
