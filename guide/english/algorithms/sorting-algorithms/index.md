@@ -46,7 +46,7 @@ Sorting algorithms are said to be `in place` if they require a constant `O(1)` e
 
 * `Insertion sort` and `Quick-sort` are `in place` sort as we move the elements about the pivot and do not actually use a separate array which is NOT the case in merge sort where the size of the input must be allocated beforehand to store the output during the sort.
 
-* `Merge Sort` is an example of `out place` sort as it require extra memory space for it's operations.
+* `Merge Sort` is an example of `out place` sort as it require extra memory space for its operations.
 
 ### Best possible time complexity for any comparison based sorting
 Any comparison based sorting algorithm must make at least nLog2n comparisons to sort the input array, and Heapsort and merge sort are asymptotically optimal comparison sorts.This can be easily proved by drawing the desicion tree diagram.
