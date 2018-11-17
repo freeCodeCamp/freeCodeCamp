@@ -70,6 +70,7 @@ title: JavaScript Tutorials and Other Resources
     
 *   [Brackets](http://brackets.io)
 *   [Sublime Text](https://www.sublimetext.com)
+    Sublime Text is a cross-platform editor featuring a Python API. Free to download and evaluate, but requires a license for continued use.
 
   
 ## Online Editors
