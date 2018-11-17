@@ -24,3 +24,5 @@ There are many different flavors of agile, including Scrum and Extreme Programmi
 ### More information
 
 [Agile Alliance's Homepage](https://www.agilealliance.org/)
+
+Unlike any other previous models, Agile involves client appreciation and suggestions that can help developers at every stage and end up with a product that is customer satisfactory. This makes it a lot easier for the developers by making changes on the go.
