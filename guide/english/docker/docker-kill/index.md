@@ -24,7 +24,7 @@ To kill more than one container, container names or IDs must be added with a whi
 docker kill mycontainer mysecondcontainer mythirdcontainer
 ```
 
-You can specify which signal is emmitted to the container using the `--signal` (or `-s`) option. For example you can reload your `nginx` container configuration usign :
+You can specify which signal is emitted to the container using the `--signal` (or `-s`) option. For example, you can reload your `nginx` container configuration using:
 
 ```
 docker kill -s HUP container_name
