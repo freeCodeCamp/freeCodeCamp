@@ -7,7 +7,7 @@ title: Binary Agents
 
 ## Problem Explanation:
 
-This problem is very straight forward, you will get a string that will represent a sentence in binary code, and you need to translate that into words. There is not direct way to do this so you will have to translate twice.
+This problem is very straight forward, you will get a string that will represent a sentence in binary code, and you need to translate that into words. There is not a direct way to do this so you will have to translate twice.
 
 ### Relevant Links
 

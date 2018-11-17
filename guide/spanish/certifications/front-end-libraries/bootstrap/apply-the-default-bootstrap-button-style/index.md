@@ -4,7 +4,7 @@ localeTitle: Aplicar el estilo de botón predeterminado Bootstrap
 ---
 ## Aplicar el estilo de botón predeterminado Bootstrap
 
-El último desafío lo llevó a crear 6 botones, 3 en cada elemento de pozo, esta vez se le pedirá que agregue clases a esos botones.
+El último desafío lo llevó a crear 6 botones, 3 en cada caja, esta vez se le pedirá que agregue clases a esos botones.
 
 ### Insinuación
 
