@@ -1,13 +1,15 @@
 ---
-title:While-loop
+title: While-loop
 ---
 
 A while loop statement repeatedly executes a target statement as long as a given condition is true.
 
 Syntax:
+```C++
 while(condition) {
    statement(s);
 }
+```
 
 A key point of the while loop is that the loop might not ever run.
 When the condition is tested and the result is false, the loop body will be skipped and the first statement after the while loop will be executed.
@@ -18,7 +20,7 @@ Example:
 ```C++
 #include <iostream>
 using namespace std;
- 
+
 int main () {
    // Local variable declaration:
    int a = 10;
@@ -28,7 +30,7 @@ int main () {
       cout << "value of a: " << a << endl;
       a++;
    }
- 
+
    return 0;
 }
 ```
@@ -49,5 +51,5 @@ value of a: 19
 ```
 
 
-###Sources
-www.tutorialspoint.com
+### Sources
+- www.tutorialspoint.com
