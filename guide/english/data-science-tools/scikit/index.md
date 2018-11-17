@@ -3,7 +3,7 @@ title: scikit-learn
 ---
 ## Scikit-learn
 
-Scikit-learn is a popular open-source machine learning library for Python, built off of previous packages like numpy and scipy. There is code available to handle everything from importing data and data cleaning to model preparation and testing. 
+Scikit-learn is a popular open-source machine learning library for Python, built off of previous packages like numpy and scipy. There is functions available to handle everything from importing data and data cleaning to model preparation and testing. 
 
 ## Installation
 To install scikit-learn in a conda environment: `conda install scikit-learn` <br>
