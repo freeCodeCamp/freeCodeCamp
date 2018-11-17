@@ -70,6 +70,7 @@ A forest is a set of n ≥ 0 disjoint trees.
 * Red Black Tree
 * Splay Tree
 * Huffmann Tree
+* M-Way Search Tree (used for huge amounts of data)
 
 ### Common uses
 

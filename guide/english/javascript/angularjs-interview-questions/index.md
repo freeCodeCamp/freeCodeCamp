@@ -45,7 +45,7 @@ Answer: $timeout is AngularJs' wrapper for window.setTimeout, you cancel a timeo
       // write your code.
     });
 
-Question: What is the Dependency Injection?
+Question: What is Dependency Injection?
 Answer: Dependency Injection (DI) is a software design pattern that deals with how components get hold of their dependencies.
 The AngularJS injector subsystem is in charge of creating components, resolving their dependencies, and providing them to other components as requested.
 
