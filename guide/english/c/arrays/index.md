@@ -11,9 +11,9 @@ int main(void) {
     scanf("%d", &a);
     scanf("%d", &b);
     ... 
-    printf("%d", &k);
-    printf("%d", &j);
-    printf("%d", &i);
+    printf("%d", k);
+    printf("%d", j);
+    printf("%d", i);
     ... //and so on..
 
     return 0;
