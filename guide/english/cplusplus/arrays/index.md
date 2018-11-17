@@ -15,11 +15,17 @@ int numbers [5];
 
 Initializiation:  
 ```C++
-//Initialization with entries:
+//Initialization with values:
 int numbers [5] = {1, 2, 3, 4, 5};
+//When initializing an array with values, the first value will be stored as the first element, the second value will be stored as the second element, ect... so the first element in this array is the value 1, and the third element is the value 3.
 
 //Initialization with no values:
 int numbers [5] = {};
+
+//Initialization with fewer values than elements:
+int numbers [5] = {6};
+//Initializing an array with fewer values than there are elements will set the trailing elements to 0.
+//int numbers [5] = {6} is equivalent to int numbers [5] = {6, 0, 0, 0, 0};
 
 //Initialization with declaration:
 int numbers [] = {1, 2, 3, 4, 5};

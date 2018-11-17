@@ -12,8 +12,10 @@ To write on console you can use the function `printf()` contained in the library
 
  int main(void)
  {
-
-     printf("Hello World!\n");  //lines starting with this are called comments..
+     //lines starting with this are called comments, so use them to write notes to the reader about your code!
+     
+     //this code prints "hello, world"
+     printf("hello, world\n"); //<-- the \n character prints a newline after the string  
 
      return 0;
  }
@@ -23,7 +25,7 @@ To write on console you can use the function `printf()` contained in the library
  * The stdio.h file contains functions such as scanf() and printf() to take input and display output respectively.
  * If you use printf() function without writing #include <stdio.h>, the program will not be compiled.
  * The execution of a C program starts from the main() function.
- * The printf() is a library function to send formatted output to the screen. In this program, the printf() displays Hello, World! text        on the screen.
+ * The printf() is a library function to send formatted output to the screen. In this program, the printf() displays `Hello, World!` text on the screen.
  * The \n in printf creates a new line for the forthcoming text. 
  * The return 0; statement is the "Exit status" of the program. In simple terms, program ends with this statement
 

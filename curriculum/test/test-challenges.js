@@ -63,7 +63,7 @@ const jQueryScript = fs.readFileSync(
   ));
 
   describe('Check challenges tests', async function() {
-    this.timeout(200000);
+    this.timeout(5000);
 
     allChallenges.forEach(challenge => {
       describe(challenge.title || 'No title', async function() {
@@ -221,6 +221,10 @@ function isPromise(value) {
   );
 }
 
+function timeout(milliseconds) {
+  return new Promise(resolve => setTimeout(resolve, milliseconds));
+}
+
 function transformSass(solution) {
   const fragment = JSDOM.fragment(`<div>${solution}</div>`);
   const styleTags = fragment.querySelectorAll('style[type="text/sass"]');
@@ -317,7 +321,16 @@ A required file can not have both a src and a link: src = ${src}, link = ${link}
   </head>
   `;
 
-  solution = transformSass(solution);
+  const sandbox = { solution, transformSass };
+  const context = vm.createContext(sandbox);
+  vm.runInContext(
+    'solution = transformSass(solution);',
+    context,
+    {
+      timeout: 2000
+    }
+  );
+  solution = sandbox.solution;
   solution = replaceColorNames(solution);
 
   const dom = new JSDOM(`
@@ -331,7 +344,7 @@ A required file can not have both a src and a link: src = ${src}, link = ${link}
   `, options);
 
   if (links || challengeType === challengeTypes.modern) {
-    await new Promise(resolve => setTimeout(resolve, 1000));
+    await timeout(1000);
   }
 
   dom.window.code = code;
@@ -483,7 +496,7 @@ async function runTestInJsdom(dom, testString, scriptString = '') {
     }
   })();`;
   const script = new vm.Script(scriptString);
-  dom.runVMScript(script);
+  dom.runVMScript(script, { timeout: 5000 });
   await dom.window.__result;
   if (dom.window.__error) {
     throw dom.window.__error;
