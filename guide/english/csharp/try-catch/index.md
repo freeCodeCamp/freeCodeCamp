@@ -81,7 +81,7 @@ catch(FormatException exceptionVariable)
     // DO SOMETHING
     Console.WriteLine(exceptionVariable.Message);
 }
-// Only FormatExceptions will be caught in this catch block.
+// Only ArgumentNullException will be caught in this catch block.
 catch(ArgumentNullException nullException)
 {
     // DO SOMETHING DIFFERENT
