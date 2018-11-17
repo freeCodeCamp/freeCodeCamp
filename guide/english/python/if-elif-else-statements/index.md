@@ -87,6 +87,9 @@ This number is even and is greater than 10
 ```
 This was just a simple example of a nested if statement. Please feel free to explore more online.
 
+Some great resources to learn more in-depth about python are Microsoft's Intro to Python for Absolute Beginners, found at EDX.com.  And of course, MDN.  https://developer.mozilla.org/en-US/docs/Learn/Drafts/Python#Learn_Python_basics 
+
+
 While the examples above are simple, you can create complex conditions using <a href='https://guide.freecodecamp.org/python/comparisons' target='_blank' rel='nofollow'>boolean comparisons</a> and <a href='https://guide.freecodecamp.org/python/boolean-operations' target='_blank' rel='nofollow'>boolean operators</a>.
 
 
