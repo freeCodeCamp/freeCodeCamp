@@ -70,7 +70,7 @@ _Unpacking lists for python-3_
 1 2 9 16 25
 ```
 _unpacking elements from the list to variables python-3_
- We can unpack the elements of the list, and assign to variables.
+ The elements of a list can be unpacked and assigned to variables.
  ```
 >>> my_list = [2, 4, 6, 8]
 >>> a, b, c, d = my_list
