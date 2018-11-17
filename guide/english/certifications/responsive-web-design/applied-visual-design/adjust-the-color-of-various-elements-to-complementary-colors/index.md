@@ -3,8 +3,23 @@ title: Adjust the Color of Various Elements to Complementary Colors
 ---
 ## Adjust the Color of Various Elements to Complementary Colors
 
-This is a stub. <a href='https://github.com/freecodecamp/guides/tree/master/src/pages/certifications/responsive-web-design/applied-visual-design/adjust-the-color-of-various-elements-to-complementary-colors/index.md' target='_blank' rel='nofollow'>Help our community expand it</a>.
+### Solution
 
-<a href='https://github.com/freecodecamp/guides/blob/master/README.md' target='_blank' rel='nofollow'>This quick style guide will help ensure your pull request gets accepted</a>.
-
-<!-- The article goes here, in GitHub-flavored Markdown. Feel free to add YouTube videos, images, and CodePen/JSBin embeds  -->
+```css
+header {
+  background-color: #09A7A1;
+  color: white;
+  padding: 0.25em;
+}
+h2 {
+  color: #09A7A1;
+}  
+button {
+  background-color: #FF790E;
+}
+footer {
+  background-color: #09A7A1;
+  color: white;
+  padding: 0.5em;
+}
+```
