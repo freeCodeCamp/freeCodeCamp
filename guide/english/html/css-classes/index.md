@@ -12,7 +12,7 @@ When writing HTML, you can add classes to an element. Just add the attribute `cl
 <p>is a popular catchphrase that <span class="super-man">Super Man</span> often said.</p>
 ```
 
-You can then style these elements with CSS. Classes are referenced with period (.) before them in CSS, but you should not put periods in your HTML.
+You can then style these elements with CSS. Classes are referenced with a period (.) before them in CSS, but you should not put periods in your HTML.
 
 ```css
 .super-man {
@@ -21,14 +21,14 @@ You can then style these elements with CSS. Classes are referenced with period (
 }
 ```
 
-This code will give s blue background and red text color to all the elements which have the `super-man` class.
+This code will give a blue background and red text color to all the elements which have the `super-man` class.
 [View this example on CodePen](https://codepen.io/Tlandis/pen/RLvomV).
 
 You can also declare more than one class to your element, like:
 
 ```html
 
-<div class="ironMan alfred">
+<div class="iron-man alfred">
  We're going to save you.
 </div>
 
@@ -38,7 +38,7 @@ Then in your css file:
 
 ```css
 
-.ironMan{
+.iron-man{
   color:red;
 }
 
@@ -52,13 +52,13 @@ Then in your css file:
 
 You can also combine classes in the same line:
 ```css
-.superMan .spiderMan {
+.super-man .spider-man {
   color: red;
   background-color: blue;
 }
 ```
 
-You can see the result of the above code [here](https://codepen.io/Tlandis/pen/RLvomV').  Learn how to combine css classes using selectors [here](https://www.w3schools.com/css/css_combinators.asp'). 
+You can see the result of the above code [here](https://codepen.io/Tlandis/pen/RLvomV).  Learn how to combine css classes using selectors [here](https://www.w3schools.com/css/css_combinators.asp). 
 
 #### More Information:
 
