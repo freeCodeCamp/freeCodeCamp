@@ -34,7 +34,7 @@ Start by trying to get it to validate each format from the example, each one sho
 ## ![:speech_balloon:](https://forum.freecodecamp.com/images/emoji/emoji_one/speech_balloon.png?v=3 ":speech_balloon:") Hint: 4
  Think through what you are trying to solve in a step by step fashion. Below are the different Booleans you could set up. Once you have these set up, you can create small regex tests for each variable.
  This will lead to a much longer solution than those contained in the spoilers. However it will be easier to decipher and generate.
-   ```
+```js
   // Set up your Booleans here
   let hasTenDigits = false;
   let hasElevenDigits = false;
@@ -55,7 +55,7 @@ Start by trying to get it to validate each format from the example, each one sho
   } else {
     return true;
   }
-  ```
+```
  > _try to solve the problem now_
 
 ## Spoiler Alert!
