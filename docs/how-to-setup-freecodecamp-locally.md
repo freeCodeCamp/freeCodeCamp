@@ -398,7 +398,7 @@ Follow these steps:
 
     You can learn more about why you should use conventional commits [here](https://www.conventionalcommits.org/en/v1.0.0-beta.2/#why-use-conventional-commits).
 
-9.  If you realise that you need to edit a file or, update the commit message after making a commit you can do so after editing the files with:
+9. If you realise that you need to edit a file or update the commit message after making a commit you can do so after editing the files with:
 
     ```shell
     git commit --amend
