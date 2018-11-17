@@ -1,5 +1,5 @@
 {
-  "action": "labeled",
+  "action": "reopened",
   "number": 13,
   "pull_request": {
     "url": "https://api.github.com/repos/tbushman/pu/pulls/13",
@@ -35,7 +35,7 @@
     },
     "body": "",
     "created_at": "2018-11-01T03:06:36Z",
-    "updated_at": "2018-11-01T03:24:19Z",
+    "updated_at": "2018-11-11T09:11:01Z",
     "closed_at": null,
     "merged_at": null,
     "merge_commit_sha": "fc696e1a288b07f66318e775fdd9ea619122d09e",
@@ -329,9 +329,9 @@
     },
     "author_association": "OWNER",
     "merged": false,
-    "mergeable": true,
-    "rebaseable": true,
-    "mergeable_state": "clean",
+    "mergeable": null,
+    "rebaseable": null,
+    "mergeable_state": "unknown",
     "merged_by": null,
     "comments": 0,
     "review_comments": 0,
@@ -340,14 +340,6 @@
     "additions": 0,
     "deletions": 6,
     "changed_files": 1
-  },
-  "label": {
-    "id": 511502933,
-    "node_id": "MDU6TGFiZWw1MTE1MDI5MzM=",
-    "url": "https://api.github.com/repos/tbushman/pu/labels/enhancement",
-    "name": "enhancement",
-    "color": "84b6eb",
-    "default": true
   },
   "repository": {
     "id": 77999410,

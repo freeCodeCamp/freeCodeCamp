@@ -1,4 +1,5 @@
 const debug = require("debug")("probot:presolver");
+const Presolver = require('./lib/presolver')
 /*const Presolver = {
   (github, { owner, repo, logger = console, ...config }) {
   //constructor(github, { owner, repo, logger = console, ...config }) {
@@ -22,6 +23,7 @@ const debug = require("debug")("probot:presolver");
 
 //}
 
+
 async function probotPlugin(robot) {
   const events = [
     "pull_request.opened",
@@ -30,32 +32,38 @@ async function probotPlugin(robot) {
     "pull_request.reopened"
   ];
 
-  robot.on(events, presolve);
+  robot.on(events, presolve.bind(null, robot));
 }
-async function _getClashingRanges(context, pullRequest) {
+/*async function _getClashingRanges(context, pullRequest) {
   const repo = pullRequest.base.repo;
   //console.log(pullRequest)
   const owner = repo.owner;
   const number = pullRequest.number;
-
+	console.log(context)
   const prs = (await context.github.pullRequests.get({ owner, repo }))
     .data || [];
   prs.forEach(function(pr){
     const files = pr.files()
     console.log(files)
   })
-}
-async function presolver(context, pullRequest) {
+}*/
+/*async function presolver(context, pullRequest) {
   //Object.assign(this.pullRequest, pullRequest);
   //const { owner, repo } = this.config;
   //const number = this.pullRequest.number;
 
   const state = await _getClashingRanges(context, pullRequest);
 
+}*/
+async function presolve(app, context) {
+  const presolver = forRepository(context);
+  const pullRequest = getPullRequest(context);
+  return presolver.presolve(pullRequest);
 }
+
 function forRepository(context) {
   const config = Object.assign({}, context.repo({ logger: debug }));
-  return new Presolver(context.github, config);
+  return new Presolver(context, config);
 }
 
 function getPullRequest(context) {
@@ -63,13 +71,6 @@ function getPullRequest(context) {
 }
 
 
-async function presolve(context) {
-  //const presolved = //forRepository(context);
-  const pullRequest = getPullRequest(context);
-  //presolver.presolve(pullRequest);
-  console.log(context);
-  return presolver(context, pullRequest);
-}
 module.exports = probotPlugin;
 /*module.exports = async app => {
   // Your code here

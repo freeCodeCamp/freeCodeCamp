@@ -23,6 +23,7 @@
     "probot": "^7.2.0"
   },
   "devDependencies": {
+    "expect": "^23.6.0",
     "jest": "^22.4.3",
     "nock": "^10.0.0",
     "nodemon": "^1.17.2",
