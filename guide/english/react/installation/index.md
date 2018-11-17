@@ -25,10 +25,12 @@ After you finish your project and are ready to deploy your App to production, yo
 `npm run build`
 to create an optimized build of your app in the `build`folder.
 
-#### Usefull links
+#### Useful links
 [Create React App repository](https://github.com/facebookincubator/create-react-app#create-react-app-)
 
 #### Sources
 [1. The React tutorial on installing](https://reactjs.org/docs/installation.html)
+
 [2. Link to the React minimal JavaScript library on cdnjs.org](https://cdnjs.com/libraries/react)
+
 [3. npm start command](https://docs.npmjs.com/cli/start)
