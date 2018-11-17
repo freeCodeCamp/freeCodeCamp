@@ -4,9 +4,9 @@ title: Bash Cat
 
 ## Bash Cat
 
-Cat is one of the most frequently used commands in Unix operating systems.
+`cat` is one of the most frequently used commands in Unix operating systems.
 
-Cat is used to read a file sequentially and print it to the standard output.
+`cat` is used to read a file sequentially and print it to the standard output.
 The name is derived from its function to con**cat**enate files.
 
 Cat can also be used to create a text file.
@@ -19,10 +19,10 @@ cat [options] [file_names]
 
 Most used options:
 
-* `-b`, numer non-blank output lines
+* `-b`, number non-blank output lines
 * `-n`, number all output lines
 * `-s`, squeeze multiple adjacent blank lines
-* `-v`, display nonprinting characters, except for tabs and the end of line character
+* `-v`, display non-printing characters, except for tabs and the end of line character
 
 ### Example
 
@@ -36,6 +36,8 @@ Concatenate the content of the two files and display the result in terminal:
 cat file1.txt file2.txt
 ```
 
+**Tip**: Using `cat` on a directory will cause error, so make sure it's a readable file.
+
 Creating a new text file:
 ```bash
 cat > yourfile.txt
@@ -44,3 +46,5 @@ After pressing Enter, the cursor will be placed on the next line. You can start 
 
 #### More Information:
 * Wikipedia: https://en.wikipedia.org/wiki/Cat_(Unix)
+
+
