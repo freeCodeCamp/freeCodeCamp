@@ -3,11 +3,11 @@ title: Python Using Pip
 ---
 We have seen how to use `import` statements to `import` various modules and to use them in our programs. Python itself comes with several built-in modules, but the Python community has more to offer.
 
-> It's the modules that makes python so powerful!
+> It's the modules that make Python so powerful!
 
 Third party modules add so much more functionality to Python. Now we would learn how to install these modules so that we can use those in our programs.
 
-The simplest way is to use `pip`
+The simplest way to install these modules is by using `pip`.
 
     pip install <module_name>
 
@@ -53,7 +53,7 @@ For example, we could create the file `requirements.txt` and its content:
     docutils>=0.14
     Cython
     
- In this file we could also set a version for the installation.
+ In this file, we could also set a version for the installation.
  After this, by invoking pip with:
  
      pip install -r <FILE CONTAINING MODULES>
