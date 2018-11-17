@@ -70,7 +70,7 @@ title: JavaScript Tutorials and Other Resources
     A text editor made with web designers and front-end developers in mind. Features include: inline editing, live preview, and preprocessor support.   
 *   <a href='http://atom.io' target='_blank' rel='nofollow'>Atom</a>
 
-    Open source text editor made by GitHub.
+    Atom is an open source text editor made by GitHub. It features embedded Git Control and numerous customization options.
     
 *   [Brackets](http://brackets.io)
 *   [Sublime Text](https://www.sublimetext.com)
