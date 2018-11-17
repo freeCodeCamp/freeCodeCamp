@@ -10,49 +10,48 @@ The hexadecimal number system is very useful in the field of computing like Cryp
 Adding hex numbers are just like adding decimal with a twist.
 
 Lets look at the example below:
-
+```
  0x14
 +0x10
 ______
  0x24
- 
- 4 + 0 = 4 and 1 + 1 = 2. Simple, right? 
+ ```
+
+`4 + 0 = 4` and `1 + 1 = 2`. Simple, right? 
  
  How about when there is a carry over?
- 
+ ```
    0x1A
  + 0x1B
  _______
    0x
-   
-A(10) + B(11) = 21. 21 % 16 = 5
+```
 
+`A(10) + B(11) = 21`. `21 % 16 = 5`.
+
+```
      1
    0x1A
  + 0x1B
  _______
    0x 5
-
-Now, 1 + 1 + 1 = 3. Thus,
+```
+Now, `1 + 1 + 1 = 3`. Thus,
    
-
+```
      1
    0x1A
  + 0x1B
  _______
    0x35
+```
 
 When there is a carry over in hex (meaning two numbers adding together is greater than 15), mod the number by 16 and carry a one over. 
 This is analogous to the decimal system.
   
- 
- 
-
-
 #### More Information:
-<a href='https://en.m.wikipedia.org/wiki/Hexadecimal'>Wikipedia</a>
-Hex Calc:
-https://www.calculator.net/hex-calculator.html
+- <a href='https://en.m.wikipedia.org/wiki/Hexadecimal'>Wikipedia</a>
+- [Hex Calc](https://www.calculator.net/hex-calculator.html)
 
 
  
