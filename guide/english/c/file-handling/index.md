@@ -59,6 +59,7 @@ C provides a number of build-in function to perform basic file operation
   ```
   
   In C there are many mode for opening a file 
+  
   **r**  **-**   **open a file in reading mode**
   
   **w**  **-**   **opens or create a text file in writing mode**
