@@ -37,3 +37,8 @@ font-weight: lighter;
 font-weight: bolder; 
 ```
 
+##### Additional Information
+
+* [Font Size And Weight Matters](https://type-ed.com/resources/rag-right/2017/11/13/font-weight-size)
+
+* [How To Set Weights And Styles With The @font-face Declaration](https://www.smashingmagazine.com/2013/02/setting-weights-and-styles-at-font-face-declaration/)

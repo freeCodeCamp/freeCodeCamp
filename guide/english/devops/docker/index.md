@@ -6,7 +6,7 @@ title: Docker
 
 Docker is an open-source project based on Linux containers. It uses Linux Kernel features like namespaces and control groups to create containers on top of an operating system.
 
-Docker uses containers (a runtime instance of an image) to create environments that can easily build, ship, and run applications. The main benefit is that Docker containers run completely isolated from the host environment by default, only accessing host files and ports if configured to do so. This is a great alternative to virutal machines(VMs) that are often resource intensive. VMs disk image and application state are an entanglement of OS settings, system-installed dependencies, OS security patches, and other easy-to-lose, hard-to-replicate ephemera.
+Docker uses containers (a runtime instance of an image) to create environments that can easily build, ship, and run applications. The main benefit is that Docker containers run completely isolated from the host environment by default, only accessing host files and ports if configured to do so. This is a great alternative to virtual machines(VMs) that are often resource intensive. VMs disk image and application state are an entanglement of OS settings, system-installed dependencies, OS security patches, and other easy-to-lose, hard-to-replicate ephemera.
 
 Docker is a computer program that performs operating-system-level virtualization, also known as "containerization".
 
@@ -27,7 +27,7 @@ Installation for [Windows](https://docs.docker.com/docker-for-windows/install/)
 
 Installation for [Ubuntu](https://docs.docker.com/install/linux/docker-ce/ubuntu/)
 
-_All thoses links are for Docker CE (Community Edition)_
+_All those links are for Docker CE (Community Edition)_
 
 ---
 
@@ -66,7 +66,7 @@ This message shows that your installation appears to be working correctly.
 ```
 
 ### What is containerization then:
-Simply put, it is nothing more than packaging of a process/application and it's dependencies into a distributable image which can run in isolation. 
+Simply put, it is nothing more than packaging of a process/application and its dependencies into a distributable image which can run in isolation. 
 
 ### Why do we need Docker:
 It makes the life of software engineers very smooth as they will always work on the same development environment. 

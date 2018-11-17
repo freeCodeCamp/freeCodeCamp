@@ -1,4 +1,4 @@
-import React, { PureComponent } from 'react';
+import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import uniq from 'lodash/uniq';
 
@@ -21,7 +21,7 @@ const propTypes = {
   nodes: PropTypes.arrayOf(ChallengeNode)
 };
 
-class ShowMap extends PureComponent {
+class ShowMap extends Component {
   renderSuperBlocks(superBlocks) {
     const { nodes, introNodes } = this.props;
     return superBlocks.map(superBlock => (
