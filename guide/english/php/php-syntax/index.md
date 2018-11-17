@@ -13,7 +13,7 @@ All PHP files are saved by the extension ` .php `. PHP scripts can be added anyw
 To print any statement in PHP we use `echo` command.
 
 #### Code sample
-```
+```php
 <!DOCTYPE html>
 <html>
 <body>
@@ -31,7 +31,7 @@ echo "Hello World!";
 
 ### Declaring Variables
 We declare variables in PHP by adding dollar `$` sign before them.
-```
+```php
 <?php
 $x = 5;
 echo $x;
@@ -41,14 +41,15 @@ echo $x;
 ### Comments in PHP
 To write a single line comment in PHP we put hashtag `#` or by putting `//` before the comment.
 
-```
+```php
 <?php
 # This is a single line comment
 // This is also a single line comment
 ?>
 ```
+
 To write a multiple line comment we start the comment with `/*` and end with `*/`.
-```
+```php
 <?php
 /* This is a
 Multiple line comment. */
@@ -57,7 +58,7 @@ Multiple line comment. */
 We can also comment out some parts of the code line.
 
 #### Code Sample
-```
+```php
 <!DOCTYPE html>
 <html>
 <body>

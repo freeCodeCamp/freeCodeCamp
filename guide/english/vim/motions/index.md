@@ -70,7 +70,7 @@ motion + a character to search
   You can also move to begin or end of line with VIM, with this commands:
   
    - `0` -> Begin of the line
-   - `^` -> First non-black character of the line
+   - `^` -> First non-blank character of the line
    - `$` -> End of the line
    
 ### File motions
