@@ -1,7 +1,8 @@
 ---
 title: Open Whisper Systems and Signal
 ---
-<img src='https://upload.wikimedia.org/wikipedia/commons/thumb/4/4f/Signal_Blue_Icon.png/600px-Signal_Blue_Icon.png' height='400' width='400'>  
+
+![signal blue icon](https://upload.wikimedia.org/wikipedia/commons/thumb/4/4f/Signal_Blue_Icon.png/400px-Signal_Blue_Icon.png)
 
 ## Open Whisper Systems and Signal
 
