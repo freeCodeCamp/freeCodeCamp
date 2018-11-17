@@ -21,9 +21,9 @@ Change the <code>0.0</code> so that product will equal <code>5.0</code>.
 ```yml
 tests:
   - text: The variable <code>product</code> should equal <code>5.0</code>.
-    testString: 'assert(product === 5.0, "The variable <code>product</code> should equal <code>5.0</code>.");'
+    testString: assert(product === 5.0, 'The variable <code>product</code> should equal <code>5.0</code>.');
   - text: You should use the <code>*</code> operator
-    testString: 'assert(/\*/.test(code), "You should use the <code>*</code> operator");'
+    testString: assert(/\*/.test(code), 'You should use the <code>*</code> operator');
 
 ```
 
@@ -47,7 +47,7 @@ var product = 2.0 * 0.0;
 <div id='js-teardown'>
 
 ```js
-console.info('after the test');
+(function(y){return 'product = '+y;})(product);
 ```
 
 </div>
