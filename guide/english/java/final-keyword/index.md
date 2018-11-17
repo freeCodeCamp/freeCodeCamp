@@ -58,5 +58,5 @@ Output will be-
  Output:Compile Time Error
 
 #### More Information:
-- [Oracle Java Docs :final Variables](https://docs.oracle.com/javase/specs/jls/se7/html/jls-4.html#jls-4.12.4)
+- [Oracle Java Docs - final variables](https://docs.oracle.com/javase/specs/jls/se7/html/jls-4.html#jls-4.12.4)
  
