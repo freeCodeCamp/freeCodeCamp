@@ -73,4 +73,4 @@ The action attribute defines the action to be performed when the form is submitt
 Normally, the form data is sent to a web page at the Script URL when the user clicks on the submit button. If the action attribute is omitted, the action is set to the current page.
 
 ## More information
-[Read here](https://en.wikipedia.org/wiki/Form_(HTML)) for more information on HTML forms.
+- [Wikipedia](https://en.wikipedia.org/wiki/Form_(HTML))
