@@ -1,6 +1,6 @@
 ---
 title: R
-localeTitle: [R
+localeTitle: R
 ---
 ## 什么是R？
 
@@ -21,23 +21,23 @@ R是用于统计计算和图形的开源编程语言和软件环境。它是数�
 ## 在哪里免费学习R.
 
 *   [R Studio](https://www.rstudio.com/online-learning/)
-    
+
 *   [代码学校](http://tryr.codeschool.com/)
-    
+
 *   [Coursera-允许免费审核课程，但支付认证。](https://www.coursera.org/learn/r-programming)
-    
+
 *   [DataCamp - 允许免费完成介绍部分。](https://www.datacamp.com)
-    
+
 *   [R for Data Science-是一本可以免费在线阅读的书。](http://r4ds.had.co.nz/)
-    
+
 *   [edX - 允许免费审核课程，但支付认证。](https://www.edx.org/learn/r-programming)
-    
+
 *   [高级R](https://adv-r.hadley.nz/)
-    
+
 *   [RSeek](http://rseek.org/)
-    
+
     ## 参考
-    
+
 *   [在Windows上安装R](http://youtu.be/Ohnk9hcxf9M)
-    
+
 *   [在Mac上安装R](https://youtu.be/uxuuWXU-7UQ)
