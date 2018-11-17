@@ -41,3 +41,5 @@ echo "My first PHP script!";
 </body>
 </html>
 ```
+
+Note: You cannot simply open this file with your browser as you could with an html file. In order for this file to display properly in your browser, you must place it in an accessible folder on a server. A simple example: To do this in apache, you would be replacing the "index.html" file with this file and naming it "index.php" (You should check that php is enabled on your apache server).

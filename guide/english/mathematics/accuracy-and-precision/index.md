@@ -3,7 +3,7 @@ title: Accuracy and Precision
 ---
 ## Accuracy and Precision
 
-Accuracy and Precision are often used interchangeablly, but mean different things.
+Accuracy and Precision are often used interchangeably, but mean different things.
 
 ### Accuracy is about closeness to the true value
 
@@ -13,9 +13,9 @@ For example, a ruler that measures a known length of 1 meter as 1 meter would ha
 
 ### Precision is about variability in repeat measurements
 
-The precision of a measurement is the repeatibility of that measurement and expresses the variability within it. In other words, precision is being able to getting close to or the same measurments every time.
+The precision of a measurement is the repeatibility of that measurement and expresses the variability within it. In other words, precision is being able to getting close to or the same measurements every time.
 
-For example, if the ruler mentioned above that measured 1 meter as 0.8 meter, measured the distance as 0.80 m, 0.79 m, 0.80 m, 0.81 m and 0.80 m over successive mesurements the ruler would be quite precise (the measurements have low variability), whilst being inaccurate. Additionally, using the pi example as above, if your measurments constantly get 3.12, then they are precise, but not accurate.
+For example, if the ruler mentioned above that measured 1 meter as 0.8 meter, measured the distance as 0.80 m, 0.79 m, 0.80 m, 0.81 m and 0.80 m over successive measurements the ruler would be quite precise (the measurements have low variability), while being inaccurate. Additionally, using the pi example as above, if your measurments constantly get 3.12, then they are precise, but not accurate.
 
 ### Precision and accuracy are independent from each other
 
