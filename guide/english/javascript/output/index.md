@@ -16,7 +16,9 @@ numbers.forEach(function(number){
 ```
 
 #### `console.warn`
-As you guessed by the name this is used for showing warnings, and it's typical yellow color differentiates it from an error's red text & `console.log`.
+
+As you guessed by the name this is used for showing warnings, and its typical yellow color differentiates it from an error's red text & `console.log`.
+
 
 ```javascript
 function isAdult(age){
