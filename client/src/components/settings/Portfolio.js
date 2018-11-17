@@ -1,4 +1,4 @@
-import React, { PureComponent, Fragment } from 'react';
+import React, { Component, Fragment } from 'react';
 import PropTypes from 'prop-types';
 import nanoid from 'nanoid';
 import {
@@ -51,7 +51,7 @@ const mockEvent = {
   preventDefault() {}
 };
 
-class PortfolioSettings extends PureComponent {
+class PortfolioSettings extends Component {
   constructor(props) {
     super(props);
 

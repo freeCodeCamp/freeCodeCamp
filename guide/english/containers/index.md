@@ -3,7 +3,7 @@ title: Containers
 ---
 ## Containers
 
-Containers are a solution to the problem of how to get software to run reliably when moved from one computing environment to another.This could be from a developer's laptop to a test environment, from a staging environment into production, and perhaps from a physical machine in a Data Center to a Virtual machine in a Private or Public cloud.
+Containers are a solution to the problem of how to get software to run reliably when moved from one computing environment to another. This could be from a developer's laptop to a test environment, from a staging environment into production, and perhaps from a physical machine in a Data Center to a Virtual machine in a Private or Public cloud.
 
 In other words, a Container consists of an entire runtime environment: an application, plus all its dependencies, libraries and other binaries, and configuration files needed to run it, bundled into one package. By containerizing the application platform and its dependencies, differences in OS distributions and underlying infrastructure are abstracted away.
 
@@ -13,7 +13,7 @@ Containers are an operating-system-level virtualization - an operating system fe
 
 A VM is essentially an emulation of a real computer that executes programs like a real computer. VMs run on top of a physical machine using a “hypervisor”. A hypervisor, in turn, runs on either a host machine or on “bare-metal”.
 
-A *hypervisor* is a piece of software, firmware, or hardware that VMs run on top of. The hypervisors themselves run on physical computers, referred to as the “host machine”. The host machine provides the VMs with resources, including RAM and CPU. These resources are divided between VMs and can be distributed as you see fit. So if one VM is running a more resource heavy application, you might allocate more resources to that one than the other VMs running on the same host machine.
+A *hypervisor* is a piece of software, firmware, or hardware that VMs run on top of. The hypervisors themselves run on physical computers, referred to as the “host machine”. The host machine provides the VMs with resources, including RAM and CPU. These resources are divided between VMs and can be distributed as you see fit. So if one VM is running a more resource-heavy application, you might allocate more resources to that one than the other VMs running on the same host machine.
 
 The VM that is running on the host machine (again, using a hypervisor) is also often called a “guest machine.” This guest machine contains both the application and whatever it needs to run that application (e.g. system binaries and libraries). It also carries an entire virtualized hardware stack of its own, including virtualized network adapters, storage, and CPU — which means it also has its own full-fledged guest operating system. From the inside, the guest machine behaves as its own unit with its own dedicated resources. From the outside, we know that it’s a VM — sharing resources provided by the host machine.
 
@@ -33,17 +33,17 @@ Well, since the VM has a virtual operating system of its own, the hypervisor pla
 
 Unlike a VM which provides hardware virtualization, a container provides operating-system-level virtualization by abstracting the “user space”. You’ll see what I mean as we unpack the term container.
 
-For all intent and purposes, containers look like a VM. For example, they have private space for processing, can execute commands as root, have a private network interface and IP address, allow custom routes and iptable rules, can mount file systems, and etc.
+For all intents and purposes, containers look like a VM. For example, they have private space for processing, can execute commands as root, have a private network interface and IP address, allow custom routes and iptable rules, can mount file systems, etc.
 
 The one big difference between containers and VMs is that containers *share* the host system’s kernel with other containers.
 
 ## Orchestration
 
-There are several container orchestration frameworks leveraged in production: docker-swarm and kubernetes
+There are several container orchestration frameworks leveraged in production (i.e docker-swarm and kubernetes)
 
 ## List of container providers
 
-Bellow is a small list of the most used containers vendors that can be used.
+Below is a small list of common container technologies that can be used.
 
 - [Docker](https://www.docker.com/)
 - [Kubernetes](https://kubernetes.io/)
