@@ -12,8 +12,10 @@ To write on console you can use the function `printf()` contained in the library
 
  int main(void)
  {
-
-     printf("Hello World!\n");  //lines starting with this are called comments..
+     //lines starting with this are called comments, so use them to write notes to the reader about your code!
+     
+     //this code prints "hello, world"
+     printf("hello, world\n"); //<-- the \n character prints a newline after the string  
 
      return 0;
  }
