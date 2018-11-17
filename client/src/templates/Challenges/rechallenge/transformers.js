@@ -16,6 +16,7 @@ import presetReact from '@babel/preset-react';
 import protect from 'loop-protect';
 
 import * as vinyl from '../utils/polyvinyl.js';
+import WorkerExecutor from '../utils/worker-executor';
 
 const protectTimeout = 100;
 Babel.registerPlugin('loopProtection', protect(protectTimeout));
@@ -74,27 +75,21 @@ export const babelTransformer = cond([
   [stubTrue, identity]
 ]);
 
+const sassWorker = new WorkerExecutor('sass-compile');
+
 const htmlSassTransformCode = file => {
-  let doc = document.implementation.createHTMLDocument();
-  doc.body.innerHTML = file.contents;
-  let styleTags = [].filter.call(
-    doc.querySelectorAll('style'),
-    style => style.type === 'text/sass'
-  );
-  if (styleTags.length === 0 || typeof Sass === 'undefined') {
-    return vinyl.transformContents(() => doc.body.innerHTML, file);
+  const div = document.createElement('div');
+  div.innerHTML = file.contents;
+  const styleTags = div.querySelectorAll('style[type="text/sass"]');
+  if (styleTags.length > 0) {
+    return Promise.all([].map.call(styleTags, async style => {
+      style.type = 'text/css';
+      style.innerHTML = await sassWorker.execute(style.innerHTML, 2000);
+    })).then(() => (
+      vinyl.transformContents(() => div.innerHTML, file)
+    ));
   }
-  return Promise.all(styleTags.map(style => (
-    new Promise(resolve => {
-      window.Sass.compile(style.innerHTML, function(result) {
-        style.type = 'text/css';
-        style.innerHTML = result.text;
-        resolve();
-      });
-    })
-  ))).then(() => (
-    vinyl.transformContents(() => doc.body.innerHTML, file)
-  ));
+  return vinyl.transformContents(() => div.innerHTML, file);
 };
 
 export const htmlSassTransformer = cond([
