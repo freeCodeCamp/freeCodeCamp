@@ -64,18 +64,18 @@ A forest is a set of n ≥ 0 disjoint trees.
 
 ### Some Popular Types of Trees:
 
-* Binary Tree. It has the following properties:
--The maximum number of nodes at level ‘l’ of a binary tree is 2^l-1.
--In Binary tree where every node has 0 or 2 children, number of leaf nodes is always one more than nodes with two children.
+- **Binary Tree**. It has the following properties:
+  - The maximum number of nodes at level ‘l’ of a binary tree is 2^l-1.
+  - In Binary tree where every node has 0 or 2 children, number of leaf nodes is always one more than nodes with two children.
 
-* Binary Search Tree. It has the following properties:
--The left subtree of a node contains only nodes with keys lesser than the node’s key.
--The right subtree of a node contains only nodes with keys greater than the node’s key.
--The left and right subtree each must also be a binary search tree.
+- **Binary Search Tree**. It has the following properties:
+  - The left subtree of a node contains only nodes with keys lesser than the node’s key
+  - The right subtree of a node contains only nodes with keys greater than the node’s key
+  - The left and right subtree each must also be a binary search tree
 
-* AVL Tree. It has the following properties:
--Height difference of left and right subtree of node should be less than 2.
--Re-balancing is done when heights of two child subtrees of a node differ by more than one.
+- **AVL Tree**. It has the following properties:
+  - Height difference of left and right subtree of node should be less than 2
+  - Re-balancing is done when heights of two child subtrees of a node differ by more than one
 
 * Red Black Tree
 * Splay Tree
