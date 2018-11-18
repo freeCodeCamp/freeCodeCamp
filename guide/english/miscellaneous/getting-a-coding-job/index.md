@@ -23,3 +23,13 @@ I've found <a href='https://github.com/cassidoo/getting-a-gig' target='_blank' r
 ## Pro tip:
 
 Like in any other industry or field, the hardest part is actually getting started. Do not worry too much and take action instead - the results will be mesmerizing.
+
+## Remote Coding Jobs
+
+Of those hundreds of thousands of coding jobs out there, there is a growing number that are remote. In fact, there are quite a bit of remote coding jobs out there. Remote offers companies the opportunity to find the best fit for their position without being geographically limited. Similarly remote jobs opens up opportunities for you that may not be available locally or even in the same timezone. 
+
+### Here are a few remote job boards with coding positions:
+
+- [We Work Remotely](https://weworkremotely.com/)
+- [RemoteOK](https://remoteok.io/)
+- [Remotive](https://remotive.io/find-a-remote-job/)

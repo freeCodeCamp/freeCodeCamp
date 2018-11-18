@@ -1,6 +1,6 @@
- ---
- title: Create a Gradual CSS Linear Gradient
- localeTitle: Создать линейный градиент линейного CSS
+---
+title: Create a Gradual CSS Linear Gradient
+localeTitle: Создать линейный градиент линейного CSS
 ---
 \## Создать постепенный линейный градиент CSS
 
@@ -8,7 +8,7 @@
 
 Синтаксис всегда:
 ```
-background-image: linear-gradient(angle, color-stop1, color-stop2); 
+background-image: linear-gradient(angle, color-stop1, color-stop2);
 ```
 
 Цвета могут использоваться как в форматах hex (), так и в формате rgb (). Поэкспериментируйте немного, и вы поймете, насколько легко и красиво это использовать.

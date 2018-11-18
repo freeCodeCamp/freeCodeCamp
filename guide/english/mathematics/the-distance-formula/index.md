@@ -2,6 +2,7 @@
 title: The Distance Formula
 ---
 ## The Distance Formula
+<a href="https://www.codecogs.com/eqnedit.php?latex=\mathrm{Distance}=\sqrt{(x_{2}&plus;x_{1})^2&space;&plus;&space;(y_{2}&space;&plus;&space;y_{1})^2}" target="_blank"><img src="https://latex.codecogs.com/gif.latex?\mathrm{Distance}=\sqrt{(x_{2}&plus;x_{1})^2&space;&plus;&space;(y_{2}&space;&plus;&space;y_{1})^2}" title="\mathrm{Distance}=\sqrt{(x_{2}+x_{1})^2 + (y_{2} + y_{1})^2}" /></a>
 
 In analytic geometry, the distance between two points of the [xy-plane](https://en.wikipedia.org/wiki/Cartesian_coordinate_system) can be found using the distance formula.  The distance between (*x*<sub>1</sub>, *y*<sub>1</sub>) and (*x*<sub>2</sub>, *y*<sub>2</sub>) is given by:
 
@@ -26,4 +27,3 @@ In physical space the Euclidean distance is in a way the most natural one, becau
 #### More Information:
 <!-- Please add any articles you think might be helpful to read before writing the article -->
 [Wikipedia: Distance](https://en.wikipedia.org/wiki/Distance)
-
