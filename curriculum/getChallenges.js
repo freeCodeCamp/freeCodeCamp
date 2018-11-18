@@ -83,13 +83,25 @@ async function createChallenge(fullPath, maybeMeta) {
     meta.challengeOrder,
     ([id]) => id === challenge.id
   );
-  const { name: blockName, order, superOrder } = meta;
+  const {
+    name: blockName,
+    order,
+    superOrder,
+    isPrivate,
+    required = [],
+    template,
+    time
+  } = meta;
   challenge.block = blockName;
   challenge.dashedName = dasherize(challenge.title);
   challenge.order = order;
   challenge.superOrder = superOrder;
   challenge.superBlock = superBlock;
   challenge.challengeOrder = challengeOrder;
+  challenge.isPrivate = challenge.isPrivate || isPrivate;
+  challenge.required = required.concat(challenge.required || []);
+  challenge.template = template;
+  challenge.time = time;
 
   return challenge;
 }
