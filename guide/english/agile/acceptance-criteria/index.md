@@ -17,10 +17,12 @@ Acceptance criteria can be viewed as an instrument to protect the Delivery Team.
 Consider the following situation: when accepting the user story the Product Owner suggests adding something that was not in the scope of the User story. In this case the Delivery team is in the position to reject this request (however small it might be) and ask the Product owner to create a new User Story that can be taken care of in another Sprint. 
 
 
-#### More Information:
+#### More Information
 
 Nomad8 provides an [FAQ on Acceptance Criteria](https://nomad8.com/acceptance_criteria/)
 
 Leading Agile on [Acceptance Criteria](https://www.leadingagile.com/2014/09/acceptance-criteria/)
+
+Ruby Garage on [Writing Acceptance Criteria with Gherkin Syntax](https://rubygarage.org/blog/clear-acceptance-criteria-and-why-its-important)
 
 Elijah Valenciano [The Acceptance Criteria for Writing Acceptance Criteria](https://medium.freecodecamp.org/the-acceptance-criteria-for-writing-acceptance-criteria-6eae9d497814)
