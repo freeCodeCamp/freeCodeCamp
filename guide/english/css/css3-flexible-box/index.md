@@ -9,7 +9,34 @@ The most important idea behind the Flexbox model is that the parent container ca
 
 <!-- The article goes here, in GitHub-flavored Markdown. Feel free to add YouTube videos, images, and CodePen/JSBin embeds  -->
 #### Basic usage
-Flexbox can be used to center any amount of given elements inside one element. A basic example of this is the following code:
+Flexbox can be used to center any amount of given elements inside one element. Given the following HTML structure:
+
+``` html
+<div class="main-container">
+  <div class="container-item">
+    This is the first container item
+  </div>
+  <div class="container-item">
+    This is the second container item
+  </div>
+</div>
+```
+
+The following css code will apply the Flexbox model, filling the parent's container equally with its children containers and content:
+
+``` css
+.main-container {
+  display: flex;
+}
+
+.container-item {
+  flex: 1;
+}
+```
+
+In this example, the parent container is utilizing the property display set to the value of flex. This will allow children of the main container to make use of the flex property. 
+
+Another basic example of using the Flexbox model is the following code - used for the purpose of centering content within a parent container:
 
 ``` css
 .center-elements-inside {
