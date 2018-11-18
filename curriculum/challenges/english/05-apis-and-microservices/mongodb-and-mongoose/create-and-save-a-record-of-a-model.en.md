@@ -6,7 +6,7 @@ challengeType: 2
 
 ## Description
 <section id='description'>
-Create a document instance using the Person constructor you build before. Pass to the constructor an object having the fields name, age, and favoriteFoods. Their types must be conformant to the ones in the Person Schema. Then call the method document.save() on the returned document instance. Pass to it a callback using the Node convention. This is a common pattern, all the following CRUD methods take a callback function like this as the last argument.
+Create a document instance using the Person constructor you built before. Pass to the constructor an object having the fields name, age, and favoriteFoods. Their types must be conformant to the ones in the Person Schema. Then call the method document.save() on the returned document instance. Pass to it a callback using the Node convention. This is a common pattern, all the following CRUD methods take a callback function like this as the last argument.
 <code>/* Example */</code>
 <code>// ...</code>
 <code>person.save(function(err, data) {</code>
