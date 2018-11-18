@@ -3,6 +3,51 @@ title: Blockchain
 ---
 ## Blockchain
 
+If you want to know what is a Blockchain but have no absolute IDEA on any technologies, then this is for you, my friend!
+
+Blockchain is a new Technology which is able to resolve many problems in this era. One of such problems is money transfer (one of which Blockchain solves).
+
+But let’s study what Blockchain really does for us?
+
+![What Blockchain means](https://cdn-images-1.medium.com/max/800/0*QKJVQSLjey6I1pdU.png)
+
+Looking at the above example, Andi wishes to transfer some form of valuable data to his Manager, Kevin. How does he does it is what is shown above.
+
+Andi simply passes the data to Kevin
+Andi’s transaction to Kevin is logged within his Blockchain Ledger
+On the receiving end (Kevin’s), the Ledger is also updated with the transaction which Andi just made.
+Hence you could understand that there are two duplicate copies of the exact transaction Andi just made. But hey, this is a very simple overview. Now, let’s go in depth.
+
+In actual scenario, Andi won’t be able to transfer ‘whatever data‘ it is directly to Kevin, hence he would go through a series of network (which contains nodes of the Blockchain or rather the individuals like Andi and Kevin) just to transfer the data. This is how it looks like:
+
+![How Blockchain Works Like?](https://cdn-images-1.medium.com/max/800/0*ywNY7Z4nnxMpx5Ae.png)
+
+Essentially, for Andi to transfer any form of Data, this is what he goes through now:
+
+- Andi simply passes the data to the next Node after his Andi’s transaction to Kevin is logged within his Blockchain Ledger
+- The next Node’s Ledger is also updated with the transcation which Andi just made
+- And it goes on till the Data is received by Kevin and also updated Kevin’s Ledger
+
+Simple, isn’t it?
+
+Something for you to think and research: Go and find out if the transfer of the Data goes through every single node in the mesh of networks and educate us in the comments.
+
+Well, now let’s move on in understanding on the construction of the blocks in a blockchain.
+
+![construction of blocks within Blockchain](https://cdn-images-1.medium.com/max/1400/0*TsdaupTghK3lOhnr.png)
+
+A blockchain consists of blocks in which the current block refers to the earlier block using a hash. Ok, I know you are confused!
+
+For example, the latest block present in a Blockchain would refer / call to the previous block using the Previous Block’s Hash Number and would also declare its current Hash using a certain cryptographic hashing algorithm.
+
+And when the next Node is to be created, it simply creates it’s newest Hash Number using a cryptographic hashing algorithm and indicates the previous Hash Number in the block itself.
+
+I know some of you Coders might assume this is a LinkedIn List, but hang on — yes, this is based on LinkedIn List. Aha! (Hang on here, and check out the article on LinkedList to understand more on LinkedList for the curiosity minds)
+
+---
+title:  Now move on to getting a theoretical understanding on Blockchain
+---
+
 > "Is a decentralized database that stores a registry of assets and transactions across a peer-to-peer network. Is basically a public registry of who owns what and who transacts what. The transactions are secured by cryptography, and over time, that transaction history gets locked in blocks of data that are then cryptographically linked together and secured. This creates an immutable, unforgeable record of all the transactions across this network. This record is replicated on every computer that uses the network."
 >
 > --Bettina Warburg<sup>1</sup>
