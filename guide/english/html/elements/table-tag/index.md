@@ -9,29 +9,28 @@ The `<table>` tag allows you to display a table on your webpage.
 ```html
 <table>
   <thead>
-      <tr>
-          <td>Full Name</td>
-          <td>Job Role</td>
-          <td>Location</td>
+    <tr>
+      <th>Full Name</th>
+      <th>Job Role</th>
+      <th>Location</th>
       </tr>
   </thead>
-  
   <tbody>
-      <tr>
-          <td>Sherlock Holmes</td>
-          <td>Detective</td>
-          <td>London</td>
-      </tr>
-      <tr>
-          <td>Harry Potter</td>
-          <td>Wizard</td>
-          <td>Godric's Hollow</td>
-      </tr>
-      <tr>
-          <td>Winnie the Pooh</td>
-          <td>Honey Taster</td>
-          <td>Five Hundred Acre Wood</td>
-      </tr>
+    <tr>
+      <td>Sherlock Holmes</td>
+      <td>Detective</td>
+      <td>London</td>
+    </tr>
+    <tr>
+      <td>Harry Potter</td>
+      <td>Wizard</td>
+      <td>Godric's Hollow</td>
+    </tr>
+    <tr>
+      <td>Winnie the Pooh</td>
+      <td>Honey Taster</td>
+      <td>Five Hundred Acre Wood</td>
+    </tr>
   </tbody>
 </table>
 ```
@@ -39,29 +38,28 @@ This code block would produce the following output:
 
 <table>
   <thead>
-      <tr>
-          <td>Full Name</td>
-          <td>Job Role</td>
-          <td>Location</td>
+    <tr>
+      <th>Full Name</th>
+      <th>Job Role</th>
+      <th>Location</th>
       </tr>
   </thead>
-  
   <tbody>
-      <tr>
-          <td>Sherlock Holmes</td>
-          <td>Detective</td>
-          <td>London</td>
-      </tr>
-      <tr>
-          <td>Harry Potter</td>
-          <td>Wizard</td>
-          <td>Godric's Hollow</td>
-      </tr>
-      <tr>
-          <td>Winnie the Pooh</td>
-          <td>Honey Taster</td>
-          <td>Five Hundred Acre Wood</td>
-      </tr>
+    <tr>
+      <td>Sherlock Holmes</td>
+      <td>Detective</td>
+      <td>London</td>
+    </tr>
+    <tr>
+      <td>Harry Potter</td>
+      <td>Wizard</td>
+      <td>Godric's Hollow</td>
+    </tr>
+    <tr>
+      <td>Winnie the Pooh</td>
+      <td>Honey Taster</td>
+      <td>Five Hundred Acre Wood</td>
+    </tr>
   </tbody>
 </table>
 
