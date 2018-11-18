@@ -1,6 +1,6 @@
 ---
 title: Aside Tag
-localeTitle: Tag 'Aside'
+localeTitle: Além de Tag 
 ---
 
 A tag ```<aside>``` faz parte dos elementos de HTML5. Esta serve para definir conteúdo à parte do conteúdo principal.
@@ -25,3 +25,6 @@ A estrutura pode ser a seguinte:
   </body>
 </html>
 ```
+
+
+#### Mais Informações:
