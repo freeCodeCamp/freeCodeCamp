@@ -22,7 +22,7 @@ Find the value of n, 1 < n < 107, for which φ(n) is a permutation of n and the 
 ```yml
 tests:
   - text: <code>euler70()</code> should return 8319823.
-    testString: 'assert.strictEqual(euler70(), 8319823, "<code>euler70()</code> should return 8319823.");'
+    testString: assert.strictEqual(euler70(), 8319823, '<code>euler70()</code> should return 8319823.');
 
 ```
 
