@@ -94,6 +94,9 @@ __Undo__: Press `u` or type in `:undo` and press `Enter`.
 
 __Redo__: Press `U` (`Shift` + `u`) or type in `:redo` and press `Enter`.
 
+## Repeat last change
+To repeat the last change made to a file, press `.` in __Normal Mode__.
+
 ## Opening a file in a specific line
 - vi filename +n, where n is the line number
 
