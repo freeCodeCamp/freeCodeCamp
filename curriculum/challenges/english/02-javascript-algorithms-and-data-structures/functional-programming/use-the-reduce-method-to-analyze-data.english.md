@@ -27,7 +27,7 @@ tests:
   - text: Your code should use the <code>reduce</code> method.
     testString: assert(code.match(/\.reduce/g), 'Your code should use the <code>reduce</code> method.');
   - text: The <code>getRating(watchList)</code> should equal 8.675.
-    testString: assert(getRating(watchList) === 8.675, 'The <code>getRating()</code> should equal 8.675.');
+    testString: assert(getRating(watchList) === 8.675, 'The <code>getRating(watchList)</code> should equal 8.675.');
   - text: Your code should not use a <code>for</code> loop.
     testString: assert(!code.match(/for\s*?\(.*\)/g), 'Your code should not use a <code>for</code> loop.');
   - text: Your code should return correct output after modifying the <code>watchList</code> object.
