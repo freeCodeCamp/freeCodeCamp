@@ -65,10 +65,12 @@ _Note: Bootstrap's Glyphicons icon is not avalable on bootstrap V4_
 
 ### Things to keep in mind
 
-Don't mix with other components
-Icon classes cannot be directly combined with other components. They should not be used along with other classes on the same element. Instead, add a nested <span> and apply the icon classes to the <span>.
+**Don't mix with other components**
 
-Only use icons on empty elements
+Icon classes cannot be directly combined with other components. They should not be used along with other classes on the same element. Instead, add a nested `<span>` and apply the icon classes to the `<span>`.
+
+**Only use icons on empty elements**
+
 Icon classes should only be used on elements that contain no text content and have no child elements.
 
 ### More Information:
