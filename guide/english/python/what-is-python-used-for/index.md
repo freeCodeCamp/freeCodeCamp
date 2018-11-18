@@ -20,10 +20,10 @@ Python is a very flexible language that can be used to automate boring or repeti
 ##### Artificial Intelligence:
 Python is also used extensively in the growing field of Artificial Intelligence (AI). Google selected Python to be one of the first well-supported programming languages for training and interacting with models using Tensorflow.
 
-#### Mobile app development:
+#### Mobile App development:
 Mobile apps and games can be created with python using Kivy, Pygame and PyQt.
 
-#### Security And Networking:
+#### Security and Networking:
 Python is used to build Networking tools and security-tools that are widely used.Python's remote automation is the most secured, fast and efficient for cloud-testing of frameworks, that's why professional developers use python for making most secured frameworks and for socket-programmings.
 
 ##### Machine Learning, Deep Learning:
@@ -61,7 +61,8 @@ Here's a <a href='https://www.python.org/about/apps/' target='_blank' rel='nofol
 * Scraping data from websites
 * Image Processing
 
-## Why python has got such a wide range of usage?
+## Why Python has got such a wide range of usage?
+
 * Python  has got many packages to work with, some ranging for aerospace research to mathematics. 
 *Secondly for choosing to be a part of the open source community.
   Yes! Python is Open-source. 
@@ -70,7 +71,7 @@ Here's a <a href='https://www.python.org/about/apps/' target='_blank' rel='nofol
   * Python also supports Object-Oriented programming fashion.
   Thus these things add on for the popularity of Python in various communities.
 
-#### Some articles covering the usability of python
+#### Further Reading
 
 * <a href='http://www.dummies.com/programming/python/10-major-uses-of-python/' target='_blank' rel='nofollow'>10 Major Uses of Python</a>
 * <a href='https://www.python.org/about/apps/' target='_blank' rel='nofollow'>Applications for Python</a>
