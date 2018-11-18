@@ -1,6 +1,7 @@
 const expect = require('expect')
 const { Probot } = require('probot')
 const prSuccessEvent = require('./events/pullRequests.opened')
+const prExisting = require('./events/pullRequests.existing')
 const probotPlugin = require('..')
 
 describe('Presolver', () => {
@@ -31,7 +32,7 @@ describe('Presolver', () => {
             {filename: 'test.txt'}
           ]
         })),
-        getAll: jest.fn().mockImplementation(() => ({ data: [prSuccessEvent.pull_request] }))
+        getAll: jest.fn().mockImplementation(() => ({ data: [prExisting.pull_request] }))
       }
     }
     app.auth = () => Promise.resolve(github)
@@ -39,7 +40,7 @@ describe('Presolver', () => {
     // app.app = () => 'test'
   })
 
-  test('creates a comment when an issue is opened', async () => {
+  test('adds a label if a PR has changes to files targeted by an existing PR', async () => {
     // Receive a webhook event
     await probot.receive({name: 'pull_request.opened', payload: prSuccessEvent})
     expect(github.issues.addLabels).toHaveBeenCalled()
