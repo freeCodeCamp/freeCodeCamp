@@ -16,7 +16,7 @@ Bayes Classifier is based on applying Bayes Theorem to update its belief on the 
 Bayes Theorem allows you to compute the probability of B given A, provided you have probabilities for A given B, A, and B.
 (The assumption made here is that the predictors/features are independent. That is presence of one particular feature does not affect the other. Hence it is called naive.)
 
-Bayes Classifier models uncertainty by keeping probabilities for each of the possible scenarios. As more information becomes available, the probabilities are updated to more accurately reflect what is now known about the given situation. 
+Bayes Classifier models uncertainty by keeping probabilities for each of the possible scenarios. As more information becomes available, the probabilities are updated to more accurately reflect what is now known about the given situation. Bayes classifier chooses the class that has the highest posterior probability.
 
 ### Types of Naive Bayes Classifier
 * #### Multinomial Naive Bayes
