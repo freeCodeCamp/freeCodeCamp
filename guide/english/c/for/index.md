@@ -46,7 +46,7 @@ int main () {
 
 ## Warning!
 
-Some older versions of compilers don't support the initialization inside the for loop:
+Some older versions of compilers don't support declaration inside the for loop:
 ```C
 #include <stdio.h>
 
@@ -54,22 +54,22 @@ int main () {
 
     int array[] = {1, 2, 3, 4, 5};
 
-    for (int i = 0; i < 5; i++) {      //The int i = 0 will show you an error on older compiler versions
+    for (int i = 0; i < 5; i++) {      // The int i = 0 will show you an error on older compiler versions
     	printf("Item on index %d is %d\n", i, array[i]);
     }
 }
 ```
 
-You can solve this problem if you initialize the variable before:
+You can solve this problem if you declare the variable before:
 ```C
 #include <stdio.h>
 
 int main () {
 
     int array[] = {1, 2, 3, 4, 5};
-    int i;        //You initialize the variable before the for loop
+    int i;        // You declare the variable before the for loop
 
-    for (i = 0; i < 5; i++) {       //Now you won't have a problem
+    for (i = 0; i < 5; i++) {       // Now you won't have a problem
     	printf("Item on index %d is %d\n", i, array[i]);
     }
 }
