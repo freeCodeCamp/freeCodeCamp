@@ -32,10 +32,10 @@ tests:
     testString: assert(typeof makeList(result.failure) === 'object' && resultDisplayArray.length === 3, '<code>resultDisplayArray</code> is a list containing <code>result failure</code> messages.');
   - text: <code>resultDisplayArray</code> is the desired output.
     testString: assert(makeList(result.failure).every((v, i) => v === `<li class="text-warning">${result.failure[i]}</li>` || v === `<li class='text-warning'>${result.failure[i]}</li>`), '<code>resultDisplayArray</code> is the desired output.');
-  - text: Template strings were used
-    testString: getUserInput => assert(getUserInput('index').match(/(`.*\${.*}.*`)/), 'Template strings were not used');
-  - text: An iterator was used
-    testString: getUserInput => assert(getUserInput('index').match(/for|map|reduce|forEach|while/g), 'Iterator was not used');
+  - text: Template strings should be used
+    testString: getUserInput => assert(getUserInput('index').match(/(`.*\${.*}.*`)/), 'Template strings should be used');
+  - text: An iterator should be used
+    testString: getUserInput => assert(getUserInput('index').match(/for|map|reduce|forEach|while/g), 'An iterator should be used');
 ```
 
 </section>
