@@ -63,7 +63,7 @@ A great book for people willing to test their knowledge in Python by creating ga
 
 - [Website](https://inventwithpython.com/pygame/)
 - [E-book](https://inventwithpython.com/makinggames.pdf) (free)
-- [Amazon](https://www.amazon.com/Making-Games-Python-Pygame-Sweigart/dp/1469901730?ie=UTF8&tag=playwithpyth-20&linkCode=as2&camp=1789&creative=9325&creativeASIN=0982106017)
+- [Amazon](https://www.amazon.com/Making-Games-Python-Pygame-Sweigart/dp/1469901730?ie=UTF8)
 - ISBN-10: 9781469901732
 - ISBN-13: 978-1469901732
 
