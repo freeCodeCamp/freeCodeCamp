@@ -1,10 +1,9 @@
-const path = require('path');
 const _ = require('lodash');
 
 const {
   getChallengesForLang,
   createChallenge,
-  localeChallengesRootDir
+  getChallengesDirForLang
 } = require('../../curriculum/getChallenges');
 const utils = require('./');
 const { locale } = require('../config/env.json');
@@ -15,14 +14,10 @@ const nameify = utils.nameify;
 const arrToString = arr =>
   Array.isArray(arr) ? arr.join('\n') : _.toString(arr);
 
-exports.localeChallengesRootDir = localeChallengesRootDir;
+exports.localeChallengesRootDir = getChallengesDirForLang(locale);
 
 exports.replaceChallengeNode = function replaceChallengeNode(fullFilePath) {
-  const relativeChallengePath = fullFilePath.replace(
-    localeChallengesRootDir + path.sep,
-    ''
-  );
-  return createChallenge(relativeChallengePath);
+  return createChallenge(fullFilePath);
 };
 
 exports.buildChallenges = async function buildChallenges() {
