@@ -14,6 +14,11 @@ title: Books to Read for Programmers
 - [Amazon Smile](https://smile.amazon.com/Cracking-Coding-Interview-Programming-Questions/dp/098478280X)
 - ISBN-13: 978-0984782802
 
+
+*Data Structures and Algorithms Made Easy: Data Structures and Algorithmic Puzzles*
+- [Amazon Smile](https://smile.amazon.com/Data-Structures-Algorithms-Made-Easy/dp/819324527X)
+- ISBN-13: 978-8193245279
+
 *Grokking Algorithms: An illustrated guide for programmers and other curious people* by Aditya Bhargava
 - [Amazon Smile](https://smile.amazon.com/Grokking-Algorithms-illustrated-programmers-curious/dp/1617292230/)
 - ISBN-13: 978-1617292231
