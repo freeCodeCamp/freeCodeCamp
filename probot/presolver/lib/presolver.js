@@ -17,6 +17,9 @@ class Presolver {
     const number = this.pullRequest.number;
     await this._ensurePresolverLabelExists();
     const state = await this._getState();
+    if (this.conflictingFiles.length) {
+      await this._addLabel();
+    }
     /*switch(state) {
       case Presolver.STATE.CONFLICT:
       case Presolver.STATE.NOCONFLICT:
@@ -53,11 +56,11 @@ class Presolver {
   async _getConflictingFiles(prs, files) {
     prs.forEach(function(pr){
       var prFiles = pr.getFiles();
-      prFiles.forEach(function(file){
-        files.forEach(function(f){
+      prFiles.data.forEach(function(file){
+        files.data.forEach(function(f){
           console.log(f, file)
-          if (f === file) {
-            this.conflictingFiles.push(file)
+          if (f.filename === file.filename) {
+            this.conflictingFiles.push(file.filename)
           }
         })
       })
@@ -83,6 +86,32 @@ class Presolver {
           color: labelObj.color
         });
       });
+  }
+  
+  _getLabel(labelObj) {
+   return new Promise((resolve, reject) => {
+     for (const label of this.pullRequest.labels) {
+       if (lableObj && lableObj.name && label.name === lableObj.name) {
+         resolve(lableObj);
+       }
+     }
+     reject(new Error("Not found"));
+   });
+  }
+  async _addLabel() {
+    const { owner, repo } = this.config;
+    const number = this.pullRequest.number;
+    const label = this.config.labelPRConflict;
+
+    // Check if a label does not exist. If it does, it addes the label.
+    return this._getLabel(label).catch(() => {
+      return this.github.issues.addLabels({
+        owner,
+        repo,
+        number,
+        labels: [labelObj.name]
+      });
+    });
   }
 }
 

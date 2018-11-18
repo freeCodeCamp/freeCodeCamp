@@ -1,5 +1,5 @@
 {
-  "action": "reopened",
+  "action": "opened",
   "number": 13,
   "pull_request": {
     "url": "https://api.github.com/repos/tbushman/pu/pulls/13",

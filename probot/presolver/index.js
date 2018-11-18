@@ -29,7 +29,8 @@ async function probotPlugin(robot) {
     "pull_request.opened",
     "pull_request.edited",
     "pull_request.synchronize",
-    "pull_request.reopened"
+    "pull_request.reopened",
+    "pull_request.labeled"
   ];
 
   robot.on(events, presolve.bind(null, robot));

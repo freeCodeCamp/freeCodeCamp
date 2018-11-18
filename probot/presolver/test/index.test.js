@@ -47,7 +47,7 @@ describe('Presolver', () => {
   test('creates a comment when an issue is opened', async () => {
     // Receive a webhook event
     await probot.receive({name: 'pull_request.opened', payload: prSuccessEvent})
-    expect(github.issues.createLabel).toHaveBeenCalled()
+    expect(github.issues.addLabels).toHaveBeenCalled()
   })
 })
 
