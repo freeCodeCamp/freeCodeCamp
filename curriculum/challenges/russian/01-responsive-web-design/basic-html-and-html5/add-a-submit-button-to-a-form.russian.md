@@ -8,7 +8,7 @@ localeTitle: Добавить кнопку отправки в форму
 ---
 
 ## Description
-<section id="description"> Давайте добавим кнопку <code>submit</code> в вашу форму. Нажатие этой кнопки отправит данные из вашей формы в URL-адрес, указанный вами с помощью атрибута <code>action</code> формы. Вот пример кнопки отправки: <code>&lt;button type=&quot;submit&quot;&gt;this button submits the form&lt;/button&gt;</code> </section>
+<section id="description"> Давайте добавим кнопку <code>submit</code> в вашу форму. Нажатие этой кнопки отправит данные из вашей формы по URL-адресу, указанному вами с помощью атрибута формы <code>action</code> . Вот пример кнопки отправки: <code>&lt;button type=&quot;submit&quot;&gt;this button submits the form&lt;/button&gt;</code> </section>
 
 ## Instructions
 <section id="instructions"> Добавьте кнопку в качестве последнего элемента вашего элемента <code>form</code> с типом <code>submit</code> и «Отправить» в качестве текста. </section>
@@ -18,9 +18,11 @@ localeTitle: Добавить кнопку отправки в форму
 
 ```yml
 tests:
-  - text: У вашей формы должна быть кнопка внутри.
+  - text: Ваша форма должна иметь кнопку внутри.
     testString: 'assert($("form").children("button").length > 0, "Your form should have a button inside it.");'
-  - text: 'Кнопка отправки должна иметь <code>type</code> атрибута, установленный для <code>submit</code> .'
+
+  - text: 'Кнопка отправки должна иметь <code>type</code> атрибут, установленный для <code>submit</code> .'
+
     testString: 'assert($("button").attr("type") === "submit", "Your submit button should have the attribute <code>type</code> set to <code>submit</code>.");'
   - text: Кнопка отправки должна содержать только текст «Отправить».
     testString: 'assert($("button").text().match(/^\s*submit\s*$/gi), "Your submit button should only have the text "Submit".");'
