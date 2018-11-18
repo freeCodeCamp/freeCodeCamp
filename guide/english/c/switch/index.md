@@ -79,9 +79,9 @@ int main() {
 ```
 ## Nested Switch Case 
     
-  Like nested if, we can use nested switch case in C programming. A switch case statement enclosed inside another switch case statement is called nested switch case.Nested switch is used at high level where we require sub conditions or cases.The inner and outer switch() case constant may be same.
+  Like nested if, we can use nested switch case in C programming. A switch case statement enclosed inside another switch case statement is called nested switch case. Nested switch is used at high level where we require sub conditions or cases. The inner and outer switch() case constant may be same.
     
-## Syntax for Nestes Switch Case
+## Syntax for Nested Switch Case
 
 ```c
   switch (variable or expression)
