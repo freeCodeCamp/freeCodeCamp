@@ -1,5 +1,5 @@
 ---
-  title: kubernetes
+title: kubernetes
 localeTitle: gobernadores
 ---
 # Kubernetes
