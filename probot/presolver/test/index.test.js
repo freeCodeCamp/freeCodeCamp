@@ -1,12 +1,7 @@
-const expect = require('expect');
+const expect = require('expect')
 const { Probot } = require('probot')
 const prSuccessEvent = require('./events/pullRequests.opened')
 const probotPlugin = require('..')
-// Requiring our fixtures
-//const payload = require('./fixtures/pullRequests.labeled')
-//const issueCreatedBody = { body: 'Thanks for contributing!' }
-// const url = (process.env.NODE_ENV === 'production' ? 'https://api.github.com' : 'https://smee.io/Vq0IH8tsXTuCp6kM')
-//nock.disableNetConnect()
 
 describe('Presolver', () => {
   let probot, github
@@ -36,12 +31,12 @@ describe('Presolver', () => {
             {filename: 'test.txt'}
           ]
         })),
-        getAll: jest.fn().mockResolvedValue({ data: [prSuccessEvent] })
+        getAll: jest.fn().mockImplementation(() => ({ data: [prSuccessEvent.pull_request] }))
       }
     }
     app.auth = () => Promise.resolve(github)
     // just return a test token
-    //app.app = () => 'test'
+    // app.app = () => 'test'
   })
 
   test('creates a comment when an issue is opened', async () => {
