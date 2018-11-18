@@ -35,7 +35,7 @@ tests:
   - text: Template strings should be used
     testString: getUserInput => assert(getUserInput('index').match(/(`.*\${.*}.*`)/), 'Template strings should be used');
   - text: An iterator should be used
-    testString: getUserInput => assert(getUserInput('index').match(/for|map|reduce|forEach|while/g), 'An iterator should be used');
+    testString: getUserInput => assert(getUserInput('index').match(/for|map|reduce|forEach|while/), 'An iterator should be used');
 ```
 
 </section>
