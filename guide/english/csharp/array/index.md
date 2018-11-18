@@ -116,6 +116,31 @@ Console.Write(array[1][2]); // Displays 3 (third element of second subarray)
 Console.Write(array[1][0]); // Displays 1 (first element of second subarray)
 ```
 
+## Multidimensional array
+Arrays can have more than one dimension (every element will be represented by more than one index). Example of declaration and initialization of two dimensional array:
+
+```csharp
+string[,] weekDays = new string[2, 3];
+```
+
+Having two dimensional array we need to use two indexes to represent the position of element:
+
+```csharp
+weekDays[0,0] = "monday";
+weekDays[0,1] = "montag";
+weekDays[0,2] = "lundi";
+weekDays[1,0] = "tuesday";
+weekDays[1,1] = "dienstag";
+weekDays[1,2] = "mardi";
+```
+
+To check number of dimensions we can use Rank property:
+
+```csharp
+int[,,,] array = new int[6, 4, 2, 8];
+Console.WriteLine(array.Rank); // 4
+```
+
 ## Advantages
 
 * Can be easily accessed in a random manner
