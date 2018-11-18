@@ -17,7 +17,7 @@ describe('Presolver', () => {
       issues: {
         createComment: jest.fn().mockReturnValue(Promise.resolve({})),
         addLabels: jest.fn(),
-        getLabels: jest.fn().mockImplementation(() => Promise.resolve([])),
+        getLabel: jest.fn().mockImplementation(() => Promise.resolve([])),
         createLabel: jest.fn()
       },
       repos: {

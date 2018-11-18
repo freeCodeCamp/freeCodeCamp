@@ -7,6 +7,7 @@ class Presolver {
       owner,
       repo
     })
+    // console.log(this.config)
     this.pullRequest = {}
     this.conflictingFiles = []
   }
@@ -62,12 +63,13 @@ class Presolver {
 
   async _createLabel (labelObj) {
     const { owner, repo } = this.config
-
+    const github = this.github
+    console.log(this.github.issues.getLabel({ owner, repo, name: labelObj.name }))
     return this.github.issues
-      .getLabels({ owner, repo, name: labelObj.name })
+      .getLabel({ owner, repo, name: labelObj.name })
       .catch(() => {
-        // console.log(labelObj)
-        return this.github.issues.createLabel({
+        console.log(labelObj)
+        return github.issues.createLabel({
           owner,
           repo,
           name: labelObj.name,
@@ -93,6 +95,7 @@ class Presolver {
 
     // Check if a label does not exist. If it does, it addes the label.
     return this._getLabel(label).catch(() => {
+      // console.log(labelObj)
       return this.github.issues.addLabels({
         owner,
         repo,
