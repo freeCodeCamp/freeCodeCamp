@@ -26,12 +26,12 @@ tests:
     testString: assert(watchList[0].Title === "Inception" && watchList[4].Director == "James Cameron", 'The <code>watchList</code> variable should not change.');
   - text: Your code should use the <code>reduce</code> method.
     testString: assert(code.match(/\.reduce/g), 'Your code should use the <code>reduce</code> method.');
-  - text: The <code>getRating()</code> should equal 8.675.
-    testString: assert(getRating() === 8.675, 'The <code>getRating()</code> should equal 8.675.');
+  - text: The <code>getRating(watchList)</code> should equal 8.675.
+    testString: assert(getRating(watchList) === 8.675, 'The <code>getRating()</code> should equal 8.675.');
   - text: Your code should not use a <code>for</code> loop.
     testString: assert(!code.match(/for\s*?\(.*\)/g), 'Your code should not use a <code>for</code> loop.');
-  - text: Your code should return correct output after modifying <code>watchList</code>.
-    testString: assert((() => { watchList.splice(1, 2);  return getRating() === 8.55;})(), 'Your code should return correct output after modifying <code>watchList</code>');
+  - text: Your code should return correct output after modifying the <code>watchList</code> object.
+    testString: assert((() => { watchList.splice(1, 2);  return getRating(watchList) === 8.55;})(), 'Your code should return correct output after modifying the <code>watchList</code> object');
 
 ```
 
@@ -157,18 +157,16 @@ var watchList = [
                 }
 ];
 
-function getRating(){
+function getRating(watchList){
   // Add your code below this line
   var averageRating;
 
 
-  console.log(averageRating);
   return averageRating;
 }
-
-
 // Add your code above this line
 
+console.log(getRating(watchList));
 ```
 
 </div>
@@ -295,7 +293,7 @@ var watchList = [
                 }
 ];
 
-function getRating(){
+function getRating(watchList){
   var averageRating = watchList.reduce((a, c) => {
     if (c.Director === "Christopher Nolan") {
       a.r += +c.imdbRating;
