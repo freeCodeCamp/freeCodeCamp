@@ -1,4 +1,4 @@
-import React, { PureComponent } from 'react';
+import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux';
@@ -40,7 +40,7 @@ const propTypes = {
 
 const stripeKey = 'pk_live_E6Z6xPM8pEsJziHW905zpAvF';
 
-class DonationModal extends PureComponent {
+class DonationModal extends Component {
   constructor(...props) {
     super(...props);
     this.state = {
