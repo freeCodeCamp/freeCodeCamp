@@ -38,6 +38,15 @@ The term MoSCoW itself is an acronym derived from the first letter of each of fo
 
 By prioritizing in this way, a common definition of the project can be reached and stakeholders' expectations set accordingly. Note That MoSCoW is a bit lax about how to distinguish the category of an item and when something will be done, if not in this timebox.
 
+#### Advantages:
+1.MoSCoW technique is based on expert opinion of the team.
+2.It is quick and easy to complete.
+3.The technique is good in defining the priorities of projects that are in progress.
+
+#### Disadvantages:
+1.MoSCoW rules can be subjective. If there is no effective cooperation with business, this prioritization method may be inaccurate.
+2.The technique requires the team to have good familiarity with the product features. When the participants have different levels of familiarity with the product, it is difficult for them to classify or rank the items. In this case, their expert conclusions will be unhelpful.
+
 #### More Information:
 
 [Wikipedia](https://en.wikipedia.org/wiki/MoSCoW_method)
