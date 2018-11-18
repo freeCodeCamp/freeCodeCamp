@@ -162,10 +162,9 @@ function getRating(watchList){
   var averageRating;
 
 
+  // Add your code above this line
   return averageRating;
 }
-// Add your code above this line
-
 console.log(getRating(watchList));
 ```
 
