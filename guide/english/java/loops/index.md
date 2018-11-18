@@ -8,7 +8,7 @@ come in handy.
 
 Java has 4 types of loops:
 * [While Loop](while-loop)
-* [Do...While Loop](do-while-loop/index.md)
+* [Do...While Loop](do-while-loop)
 * [For Loop](for-loop)
 * [For Each Loop](for-each-loop)
 
