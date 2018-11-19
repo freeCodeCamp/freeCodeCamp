@@ -164,17 +164,19 @@ As stated python is a general purpose language. You can use it to do anything yo
 ## Want to learn more?
 
 Free Code Camp has some great resources. The web is a big place, there's plenty more to explore:
+
 * [Python Practice Book](http://anandology.com/python-practice-book/index.html)
 * [Think Python](http://greenteapress.com/thinkpython/html/index.html)
 * [Practical Business Python](http://pbpython.com/)
 * [Real Python](https://realpython.com)
 * [Full Stack Python](https://www.fullstackpython.com/)
-* Learn the Basics [[codecademy](https://www.codecademy.com/learn/learn-python)]
-* Computer science using Python [[edX](https://www.edx.org/course/introduction-computer-science-mitx-6-00-1x-11)]
-* Intro to Computer Science CS101 [[Udacity](https://www.udacity.com/course/intro-to-computer-science--cs101)]
-* List of more resources for learning python [Awesome Python](https://awesome-python.com)
+* [Learn the Basics on codecademy](https://www.codecademy.com/learn/learn-python)
+* [Computer science using Python on edX](https://www.edx.org/course/introduction-computer-science-mitx-6-00-1x-11)
+* [Intro to Computer Science CS101 on Udacity](https://www.udacity.com/course/intro-to-computer-science--cs101)
+* [List of more resources for learning python on Awesome Python](https://awesome-python.com)
 * [Interactive Python - How to Think Like a Computer Scientist](http://interactivepython.org/runestone/static/thinkcspy/index.html)
 * [Everyday Python Project](http://interactivepython.org/runestone/static/everyday/index.html)
 * [Python Developer’s Guide](https://devguide.python.org)
 * [Learn Python the Hard Way book](https://learnpythonthehardway.org/python3)
-* Introduction to Python Programming [[Udacity](https://www.udacity.com/course/introduction-to-python--ud1110)]
+* [Introduction to Python Programming on Udacity](https://www.udacity.com/course/introduction-to-python--ud1110)
+* [Profiling in Python](https://docs.python.org/2/library/profile.html)
