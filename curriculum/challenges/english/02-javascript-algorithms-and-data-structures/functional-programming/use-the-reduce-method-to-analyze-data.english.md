@@ -31,7 +31,7 @@ tests:
   - text: Your code should not use a <code>for</code> loop.
     testString: assert(!code.match(/for\s*?\(.*\)/g), 'Your code should not use a <code>for</code> loop.');
   - text: Your code should return correct output after modifying the <code>watchList</code> object.
-    testString: assert((() => { watchList.splice(1, 2);  return getRating(watchList) === 8.55;})(), 'Your code should return correct output after modifying the <code>watchList</code> object');
+    testString: assert(getRating(watchList.filter((_, i) => i < 1 || i > 2)) === 8.55), 'Your code should return correct output after modifying the <code>watchList</code> object');
 
 ```
 
