@@ -1,5 +1,6 @@
 import { has, pick, isEmpty } from 'lodash';
 import debug from 'debug';
+import { reportError } from '../middlewares/error-reporter';
 
 const log = debug('fcc:boot:news');
 
@@ -16,20 +17,18 @@ export default function newsBoot(app) {
 function createShortLinkHandler(app) {
   const { Article } = app.models;
 
-  // const referralHandler = createRerralHandler(app);
+  const referralHandler = createRerralHandler(app);
 
   return function shortLinkHandler(req, res, next) {
     const { query, user } = req;
     const { shortId } = req.params;
 
-    // referralHandler(query, shortId, !!user);
+    // We manually report the error here as it should not affect this request
+    referralHandler(query, shortId, !!user).catch(err => reportError(err));
 
-    log(req.origin);
-    log(query.refsource);
     if (!shortId) {
       return res.sendStatus(400);
     }
-    log('shortId', shortId);
     return Article.findOne(
       {
         where: {
@@ -133,7 +132,7 @@ function createPopularityHandler(app) {
 
   function incrementArticleViews(article) {
     return new Promise((resolve, reject) =>
-      article.updateAttributes({ $inc: { viewCount: 1 } }, (err, article) => {
+      article.updateAttributes({ $inc: { viewCount: 1 } }, err => {
         if (err) {
           log(err);
           return reject(err);
@@ -198,56 +197,58 @@ function createPopularityHandler(app) {
   };
 }
 
-// function createRerralHandler(app) {
-//   const { Popularity } = app.models;
+function createRerralHandler(app) {
+  const { Popularity } = app.models;
 
-//   return function referralHandler(query, shortId, byAuthenticatedUser) {
-//     if (!query.refsource) {
-//       return null;
-//     }
-//     const eventUpdate = {
-//       event: `referral - ${query.refsource}`,
-//       timestamp: new Date(Date.now()),
-//       byAuthenticatedUser
-//     };
-//     return Popularity.findOne(
-//       { where: { articleId: shortId } },
-//       (err, popularity) => {
-//         if (err) {
-//           console.error(
-//             'Failed finding a `Popularity` in a referral handler',
-//             err
-//           );
-//           return null;
-//         }
+  return function referralHandler(query, shortId, byAuthenticatedUser) {
+    if (!query.refsource) {
+      return null;
+    }
+    const eventUpdate = {
+      event: `referral - ${query.refsource}`,
+      timestamp: new Date(Date.now()),
+      byAuthenticatedUser
+    };
+    return new Promise((resolve, reject) =>
+      Popularity.findOne(
+        { where: { articleId: shortId } },
+        (err, popularity) => {
+          if (err) {
+            console.error(
+              'Failed finding a `Popularity` in a referral handler',
+              err
+            );
+            return reject(err);
+          }
 
-//         if (popularity) {
-//           return popularity.updateAttribute(
-//             'events',
-//             [eventUpdate, ...popularity.events],
-//             err => {
-//               if (err) {
-//                 console.error(
-//                   'Failed in updating the `events` attribute of a `popularity`',
-//                   err
-//                 );
-//               }
-//             }
-//           );
-//         }
-//         return Popularity.create(
-//           {
-//             events: [eventUpdate],
-//             articleId: shortId
-//           },
-//           err => {
-//             if (err) {
-//               return console.error('Failed creating a new `Popularity`', err);
-//             }
-//             return log('poulartiy created');
-//           }
-//         );
-//       }
-//     );
-//   };
-// }
+          if (popularity) {
+            return popularity.updateAttribute(
+              'events',
+              [eventUpdate, ...popularity.events],
+              err => {
+                if (err) {
+                  return reject(err);
+                }
+                log('populartiy updated');
+                return resolve();
+              }
+            );
+          }
+          return Popularity.create(
+            {
+              events: [eventUpdate],
+              articleId: shortId
+            },
+            err => {
+              if (err) {
+                return reject(err);
+              }
+              log('poulartiy created');
+              return resolve();
+            }
+          );
+        }
+      )
+    );
+  };
+}

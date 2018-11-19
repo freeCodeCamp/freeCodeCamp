@@ -24,6 +24,11 @@ ${JSON.stringify(error, null, 2)}
 
 `;
 };
+
+export function reportError(err) {
+  return rollbar.error(err.message, err);
+}
+
 export default function errrorReporter() {
   if (process.env.NODE_ENV !== 'production' && process.env.ERROR_REPORTER) {
     return (err, req, res, next) => {
@@ -48,6 +53,7 @@ export default function errrorReporter() {
     // logging the error provides us with more information,
     // i.e isAuthenticatedUser, req.route
     console.error(errTemplate(err, req));
-    return rollbar.error(err.message, err);
+    reportError(err);
+    return next(err);
   };
 }
