@@ -109,7 +109,7 @@ func (u User) updateLoginCount {
 
 ### Modifying properties via methods
 
-To modify the data of an object from within one of it's methods, the object must be a pointer. An example might look like this:
+To modify the data of an object from within one of its methods, the object must be a pointer. An example might look like this:
 
 ```go
 // SetEmail sets the user's email address
