@@ -11,6 +11,7 @@ const {
   createGuideArticlePages,
   createNewsArticle
 } = require('./utils/gatsby');
+const { createArticleSlug } = require('./utils/news');
 
 const createByIdentityMap = {
   guideMarkdown: createGuideArticlePages,
@@ -37,11 +38,12 @@ exports.onCreateNode = function onCreateNode({ node, actions, getNode }) {
     }
   }
   if (node.internal.type === 'NewsArticleNode') {
-    const slug = `/news/${node.author.username}/`.concat(
-      node.slugPart,
-      '--',
-      node.shortId
-    );
+    const {
+      author: { username },
+      slugPart,
+      shortId
+    } = node;
+    const slug = createArticleSlug({ username, shortId, slugPart });
     createNodeField({ node, name: 'slug', value: slug });
   }
 };
@@ -53,58 +55,62 @@ exports.createPages = function createPages({ graphql, actions }) {
     // Query for all markdown 'nodes' and for the slug we previously created.
     resolve(
       graphql(`
-      {
-        allChallengeNode(sort: {fields: [superOrder, order, challengeOrder]}) {
-          edges {
-            node {
-              block
-              challengeType
-              fields {
-                slug
-              }
-              id
-              order
-              required {
-                link
-                src
-              }
-              challengeOrder
-              superBlock
-              superOrder
-              template
-            }
-          }
-        }
-        allMarkdownRemark {
-          edges {
-            node {
-              fields {
-                slug
-                nodeIdentity
-              }
-              frontmatter {
+        {
+          allChallengeNode(
+            sort: { fields: [superOrder, order, challengeOrder] }
+          ) {
+            edges {
+              node {
                 block
+                challengeType
+                fields {
+                  slug
+                }
+                id
+                order
+                required {
+                  link
+                  src
+                }
+                challengeOrder
                 superBlock
-                title
-              }
-              htmlAst
-              id
-              excerpt
-            }
-          }
-        }
-        allNewsArticleNode(sort: {fields: firstPublishedDate, order: DESC}) {
-          edges {
-            node {
-              id
-              shortId
-              fields {
-                slug
+                superOrder
+                template
               }
             }
           }
+          allMarkdownRemark {
+            edges {
+              node {
+                fields {
+                  slug
+                  nodeIdentity
+                }
+                frontmatter {
+                  block
+                  superBlock
+                  title
+                }
+                htmlAst
+                id
+                excerpt
+              }
+            }
+          }
+          allNewsArticleNode(
+            sort: { fields: firstPublishedDate, order: DESC }
+          ) {
+            edges {
+              node {
+                id
+                shortId
+                fields {
+                  slug
+                }
+              }
+            }
+          }
         }
-      }
       `).then(result => {
         if (result.errors) {
           console.log(result.errors);
