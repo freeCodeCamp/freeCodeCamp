@@ -130,6 +130,7 @@ The privilege to create view is CREATE VIEW
 Here CASCADE option is necessary to remove all the objects of the user in the database.
 ``` sql    
    DROP USER rita CASCADE
+``` 
 
 ### User rita has been transferred and no longer needs the privilege that was granted to her through the role role_tables_and_views. Write a command to remove her from her previous given priviliges except that she still could connect to the database.
 ``` sql    
