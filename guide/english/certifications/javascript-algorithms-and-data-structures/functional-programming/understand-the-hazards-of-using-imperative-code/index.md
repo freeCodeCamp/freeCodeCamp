@@ -3,6 +3,12 @@ title: Understand the Hazards of Using Imperative Code
 ---
 ## Understand the Hazards of Using Imperative Code
 
+### Disclaimer
+
+In this text, there will two possible solutions for this challenge. First part is code analysis, so if you want to skip to the solutions, please scroll to bottom.  
+
+____
+
 Note: If you run the tests, they will pass even though you didn't make a necessary change.
 
 What you should notice is the fact that output is not as suggested in instructions, which should be the following array:
@@ -75,7 +81,7 @@ tabClose = function (index) {
  
  After the third line and concatenation the returned array is the same as tabsBeforeIndex, which results in both 'Vimeo' and 'Vine' values not being in the array.  
  
- ### Solution
+ ### Solution 1, using splice(). This creates side effects(changes to the original array) and should be avoided in practice.
  
  In order for the method tabClose to work properly, 
  ```
@@ -86,12 +92,30 @@ tabClose = function (index) {
  var tabsAfterIndex = this.tabs.splice(1);
  ```
  
- This way, after second line is executed on the current array **['Vimeo', 'Vine']**, it will always omit the first value (index 0) and the one with index 1 until the end, resulting in the proper array returned.
+  This way, after second line is executed on the current array **['Vimeo', 'Vine']**, it will always omit the first value (index 0) and the one with index 1 until the end, resulting in the proper array returned.
+ 
+ 
+ ### Solution 2,using slice(). This does not create side effects and should be preferred over splice().
+ 
+ This part of the code:
+ ```
+ var tabsBeforeIndex = this.tabs.splice(0, index); // get the tabs before the tab
+ var tabsAfterIndex = this.tabs.splice(index); // get the tabs after the tab
+ ```
 
+ should be replaced with:
+ 
+ 
+ ```
+ var tabsBeforeIndex = this.tabs.slice(0, index); // get the tabs before the tab
+ var tabsAfterIndex = this.tabs.slice(index+1);
+```
 ### Word of caution
 
-splice() should be always used carefully as it modifies the contents it is working on. For documentation please take a look at:
-https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/splice.
+splice() should be always used carefully as it modifies the contents it is working on. For documentation and differences between splice and slice please take a look at:  
+https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/splice  
+https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/slice  
+
 
 
 <!-- The article goes here, in GitHub-flavored Markdown. Feel free to add YouTube videos, images, and CodePen/JSBin embeds  -->
