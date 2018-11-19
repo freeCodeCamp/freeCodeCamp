@@ -166,7 +166,7 @@ This starts by taking a string (something you'll learn about when you get into a
 ### Const Qualifer
 The qualifier const can be applied to the declaration of any variable to specify that its value will not be changed ( Which depends upon where const variables are stored, we may change value of const variable by using pointer ).
 
-#### Pointer to variable
+### Pointer to variable
 We can change the value of ptr and we can also change the value of object ptr pointing to.
 Following code fragment explains pointer to variable
 ```c
@@ -189,7 +189,7 @@ int main(void)
     return 0;
 }
 ```
-#### Pointer to constant
+### Pointer to constant
 We can change pointer to point to any other integer variable, but cannot change value of object (entity) pointed using pointer ptr.
 ```c
 #include <stdio.h> 
@@ -209,7 +209,7 @@ int main(void)
     return 0;
 }
 ```
-#### Constant pointer to variable
+### Constant pointer to variable
 In this we can change the value of the variable the pointer is pointing to. But we can't change the pointer to point to 
 another variable.
 ```c
@@ -229,7 +229,7 @@ int main(void)
    return 0;
 }
 ```
-#### Constant pointer to constant
+### Constant pointer to constant
 Above declaration is constant pointer to constant variable which means we cannot change value pointed by pointer as well as we cannot point the pointer to other variable.
 ```c
 #include <stdio.h>
@@ -249,7 +249,7 @@ int main(void)
 }
 ```
 
-#### Void Pointer
+### Void Pointer
 A void pointer is a pointer variable declared using the reserved word in C ‘void’.
 Lets illustrate this with a void pointer declaration below:
 ```C
