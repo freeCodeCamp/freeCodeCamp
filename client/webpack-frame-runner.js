@@ -4,10 +4,12 @@ module.exports = (env = {}) => {
   const __DEV__ = env.production !== true;
   return {
     mode: __DEV__ ? 'development' : 'production',
-    entry: './src/client/frame-runner.js',
+    entry: {
+      'frame-runner': './src/client/frame-runner.js',
+      'sass-compile': './src/client/workers/sass-compile.js'
+    },
     devtool: __DEV__ ? 'inline-source-map' : 'source-map',
     output: {
-      filename: 'frame-runner.js',
       path: path.join(__dirname, './static/js')
     },
     stats: {
