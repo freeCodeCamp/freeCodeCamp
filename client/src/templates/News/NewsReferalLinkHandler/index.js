@@ -46,11 +46,11 @@ class NewsReferalLinkHandler extends Component {
   }
   componentDidUpdate(nextProps) {
     const {
-      fetchState: { errored },
+      fetchState: { errored, complete },
       redirect
     } = nextProps;
 
-    if (errored) {
+    if (errored || (complete && !redirect)) {
       createFlashMessage({
         type: 'info',
         message:
