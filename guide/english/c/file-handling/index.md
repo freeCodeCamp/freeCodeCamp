@@ -62,6 +62,7 @@ C provides a number of build-in function to perform basic file operation
   ```
   
   In C there are many mode for opening a file 
+  
   **r**  **-**   **open a file in reading mode**
   ..//Provide access only to read a file but not to write it.
   
@@ -76,6 +77,8 @@ C provides a number of build-in function to perform basic file operation
   **a+**  **-**   **opens a file in both reading and writing mode**
   
   **w+**  **-**   **opens a file in both reading and writing mode**
+  
+  **b**  **-**   **opens a file in binary mode**
   
   Here's an  example of reading and writing data to a file
   
