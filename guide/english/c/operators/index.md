@@ -226,8 +226,8 @@ with higher precedence will be evaluated first.
 The conditional operator works as follows:
 
 The first expression conditionalExpression is evaluated first. This expression evaluates to 1 if it's true and evaluates to 0 if it's false.
-1.If conditionalExpression is true, expression1 is evaluated.
-2.If conditionalExpression is false, expression2 is evaluated.
+1. If conditionalExpression is true, expression1 is evaluated.
+2. If conditionalExpression is false, expression2 is evaluated.
 
 ## Example
 ```c
