@@ -66,7 +66,7 @@ const Blog = props => {
 
 Noticed how we used the props object to render the title and body values that will be passed to the Blog component. Props is read-only or immutable, so we don’t have to worry about changing the props values.
 
-Before we write our App component, we need to protect our component be defining the variable type that will passed down to each prop. We will define this using React.PropTypes. Add the following to your JavaScript file.
+Before we write our App component, we need to protect our component by defining the variable type that will passed down to each prop. We will define this using React.PropTypes. Add the following to your JavaScript file.
 
 ```javascript
 Blog.propTypes = {
@@ -102,3 +102,23 @@ Now you should be seeing our blog components rendered with the dummy data passed
 
 You can see a CodePen example [here](https://codepen.io/trey-davis/pen/MvdZGX).
 
+### Destructuring props
+
+Often, when you open a Component `.js` file, it's nice to know exactly what props this component takes. You can do this by using the `propTypes` above -- or you can destructure your props already when defining your stateless component. 
+
+Using the Blog component from above, it would look like this:
+
+```javascript
+const Blog = ({title, body)} => {
+  return (
+    <div>
+      <h2>{title}</h2>
+      <p>{body}</p>
+    </div>
+  );
+};
+```
+
+Notie how we saved a few characters by omitting `props.xx` - and we can quickly see that the component requires a title and a body. Neat!
+
+Be aware that this uses ES6 syntax.
