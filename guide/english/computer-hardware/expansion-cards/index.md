@@ -12,7 +12,9 @@ In the case of expansion of on-board capability, a motherboard may provide a sin
 * USB Card - provides additional USB ports of varying connector type sizes and versions (USB2.0. USB3.0, USB-C) to accommodate plug in peripherals and devices to a computer
 * RAID Controller Card - provides the ability to utilize RAID configurations with your hard drives, enabling complex disk configurations to meet specific user needs (RAID-1 for redundancy for example)
 * Sound Card - if the motherboard doesn't include basic sound capabilities (less common), a sound card can be purchased to add audio capabilities.  Another reason for using a Sound Card are more audio input options (SPDIF & Multichannel Connectors) or additional audio fidelity options that go above and beyond what basic sound capabilities are provided by the motherboard.
-
+* Network Card - an expansion card that has Ethernet ports on it if the motherboard does not have one or if extra ones are needed. There are also wireless network cards that have antennas on them that add Wi-Fi capabilities to a motherboard that wouldn't otherwise have it.
+* Legacy connections - Most newer motherboards won't have parallel or serial ports built in. This is where adapters come in. They plug right into your PCI or PCIE slot(where all the other expansion cards go) and give you these connectors right on the back of your PC!
 #### More Information:
 <!-- Please add any articles you think might be helpful to read before writing the article -->
-* <a href='https://en.wikipedia.org/wiki/Expansion_card' target='_blank' rel='nofollow'>Expansion Cards</a>
+* <a href='https://en.wikipedia.org/wiki/Expansion_card' target='_blank' rel='nofollow'>Expansion Cards - Wikipedia</a>
+* <a href='https://www.computerhope.com/jargon/e/expacard.htm'> Expansion Cards - Computer Hope</a>
