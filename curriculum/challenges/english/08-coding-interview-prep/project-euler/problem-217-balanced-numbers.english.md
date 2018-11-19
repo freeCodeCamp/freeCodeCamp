@@ -24,7 +24,7 @@ Find T(47) mod 315
 ```yml
 tests:
   - text: <code>euler217()</code> should return 6273134.
-    testString: 'assert.strictEqual(euler217(), 6273134, "<code>euler217()</code> should return 6273134.");'
+    testString: assert.strictEqual(euler217(), 6273134, '<code>euler217()</code> should return 6273134.');
 
 ```
 
