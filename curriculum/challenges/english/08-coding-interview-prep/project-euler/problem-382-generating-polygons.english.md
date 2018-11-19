@@ -43,7 +43,7 @@ Find the last 9 digits of f(1018).
 ```yml
 tests:
   - text: <code>euler382()</code> should return 697003956.
-    testString: 'assert.strictEqual(euler382(), 697003956, "<code>euler382()</code> should return 697003956.");'
+    testString: assert.strictEqual(euler382(), 697003956, '<code>euler382()</code> should return 697003956.');
 
 ```
 

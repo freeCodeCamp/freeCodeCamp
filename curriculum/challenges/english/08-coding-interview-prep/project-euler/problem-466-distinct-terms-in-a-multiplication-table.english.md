@@ -35,7 +35,7 @@ Find P(64,1016).
 ```yml
 tests:
   - text: <code>euler466()</code> should return 258381958195474750.
-    testString: 'assert.strictEqual(euler466(), 258381958195474750, "<code>euler466()</code> should return 258381958195474750.");'
+    testString: assert.strictEqual(euler466(), 258381958195474750, '<code>euler466()</code> should return 258381958195474750.');
 
 ```
 
