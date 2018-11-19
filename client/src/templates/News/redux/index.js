@@ -4,9 +4,9 @@ import { createTypes } from '../../../../utils/stateManagement';
 import { createAsyncTypes } from '../../../utils/createTypes';
 import { defaultFetchState } from '../../../redux';
 import { createShortIdSaga } from './shortId-saga';
+import { createArticleSlug } from '../../../../utils/news';
 
 export const ns = 'news';
-
 const initialState = {
   resolveShortIdFetchState: { ...defaultFetchState },
   dynamicArticleByIdMap: {}
@@ -18,7 +18,16 @@ export const sagas = [...createShortIdSaga(types)];
 
 export const resolveShortId = createAction(types.resolveShortId);
 export const resolveShortIdComplete = createAction(
-  types.resolveShortIdComplete
+  types.resolveShortIdComplete,
+  article => {
+    const {
+      slugPart,
+      shortId,
+      author: { username }
+    } = article;
+    article.redirect = createArticleSlug({ username, slugPart, shortId });
+    return article;
+  }
 );
 export const resolveShortIdError = createAction(types.resolveShortIdError);
 
@@ -27,7 +36,6 @@ export const resolveShortIdFetchStateSelector = state =>
 export const dynamicArticleByIdMapSelector = state =>
   state[ns].dynamicArticleByIdMap;
 export const dynamicArticleSelector = (state, { shortId }) => {
-  console.log(shortId);
   const map = dynamicArticleByIdMapSelector(state);
   return map[shortId] || {};
 };
