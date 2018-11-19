@@ -14,6 +14,7 @@ Just a few advantages of WordPress:
 * Users are able to manage their Wordpress webpage from any computer
 * Has a blog built-in and ready to go whenever applicable. 
 * Has plugins, which extend functionality to WordPress sites. 
+* Wordpress sites can be hosted on any server running the LAMP stack
 
 ### WordPress as Blogging Platform
 
@@ -62,7 +63,10 @@ Using tools such as [Jetpack](https://jetpack.com/) and an [SSL certificate](htt
 
 ### More Information
 
+- [WordPress Codex: the online manual](https://codex.wordpress.org/)
+- [WordPress Code Reference](https://developer.wordpress.org/reference/)
 - [WordPress Theme Directory](https://wordpress.org/themes/)
 - [WordPress Plugin Directory](https://wordpress.org/plugins/)
 - [WordPress Github Repository](https://github.com/WordPress/WordPress)
 - [WordPress Support Forums](https://wordpress.org/support/)
+- [Download WordPress](https://wordpress.org/download/)

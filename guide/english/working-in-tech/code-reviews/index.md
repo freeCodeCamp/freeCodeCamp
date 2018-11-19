@@ -24,3 +24,4 @@ team members.
 
 * [How to Do Code Reviews Like a Human (Part One)](https://mtlynch.io/human-code-reviews-1/)
 * [How to Do Code Reviews Like a Human (Part Two)](https://mtlynch.io/human-code-reviews-2/)
+* [Code Reviews: The Definitive Guide](https://simpleprogrammer.com/code-reviews-definitive-guide/)
