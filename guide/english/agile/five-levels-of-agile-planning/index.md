@@ -24,6 +24,6 @@ Agile planning is always continuous and should be revised at least every three m
  
  5. Daily Planning: What did I do yesterday? What will I do today? What is blocking me?
 
-#### More Information:
+#### More Information
 
-Scaling Agile Processes: Five Levels of Agile Planning: https://www.pragmaticmarketing.com/resources/articles/scaling-agile-processes-five-levels-of-planning
+[Scaling Agile Processes: Five Levels of Agile Planning](https://www.pragmaticmarketing.com/resources/articles/scaling-agile-processes-five-levels-of-planning)
