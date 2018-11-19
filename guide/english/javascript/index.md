@@ -33,9 +33,9 @@ Mozilla also offers Rhino, an implementation of JavaScript built in Java, typica
 WebKit (except for the Chromium project) implements the JavaScriptCore engine.
 
 ## JavaScript Frameworks
-Most frequently used JavaScript Frameworks are React JS, Angular JS, Create JS, jQuery, nodeJS etc. 
-For details follow this [link](https://javascriptreport.com/the-ultimate-guide-to-javascript-frameworks/)
+JavaScript frameworks are application frameworks that can be applied to existing JavaScript code. They are often used for front-end development and web applications. The most frequently used JavaScript frameworks are React JS, Angular JS, Create JS, jQuery, nodeJS etc. 
 
+For more details follow this [link](https://javascriptreport.com/the-ultimate-guide-to-javascript-frameworks/).
 
 ## More Resourses
 
