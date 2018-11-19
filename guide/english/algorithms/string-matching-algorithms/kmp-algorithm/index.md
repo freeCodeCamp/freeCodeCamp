@@ -49,7 +49,8 @@ How to use lps[] to decide next positions (or to know a number of characters to 
     -   From above two points, we can conclude that we do not need to match these lps[j-1] characters with txt[i-j…i-1] because we know that these characters will anyway match. Let us consider above example to understand this.
 <br>
 
-### Code Of KMP Algorithm
+### Code Of KMP Algorithm in C++
+```cpp
 void computeLPSArray(char* pat, int M, int* lps) 
 { 
     // length of the previous longest prefix suffix 
@@ -84,7 +85,9 @@ void computeLPSArray(char* pat, int M, int* lps)
         } 
     } 
 } 
+```
 
+```cpp
 void KMPSearch(char* pat, char* txt) 
 { 
     int M = strlen(pat); 
@@ -121,7 +124,7 @@ void KMPSearch(char* pat, char* txt)
         } 
     } 
 } 
-
+```
 
 **More Infromation :**
 - [kmp algorithm for pattern searching](https://www.geeksforgeeks.org/kmp-algorithm-for-pattern-searching/)
