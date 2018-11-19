@@ -272,9 +272,17 @@ function createVerifyCert(certTypeIds, app) {
         // set here so sendCertifiedEmail works properly
         // not used otherwise
         user[certType] = true;
+        const updatePromise = new Promise((resolve, reject) =>
+          user.updateAttributes(updateData, err => {
+            if (err) {
+              return reject(err);
+            }
+            return resolve();
+          })
+        );
         return Observable.combineLatest(
           // update user data
-          user.update$(updateData),
+          Observable.fromPromise(updatePromise),
           // If user has committed to nonprofit,
           // this will complete their pledge
           completeCommitment$(user),
