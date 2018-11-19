@@ -43,18 +43,18 @@ if (condition) {
 
 <a href='https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/if...else' target='_blank' rel='nofollow'>MDN link</a> | <a href='https://msdn.microsoft.com/en-us/library/85yyde5c.aspx' target='_blank' rel='nofollow'>MSDN link</a>
 
-#### Additional ternary operator
-For short syntax like assigning a value to a variable conditionally you can use a ternary operator. Whcih is a shorthand syntax for an if else in javascript
-```
-// Normal if else
+### Additional ternary operator
+For a simple operation like assigning a value to a variable conditionally you can use a ternary operator, which is a shorthand syntax for an `if...else` clause in JavaScript
+```javascript
+// Normal if...else
 let num  = 1;
-if(someCondition){
+if (someCondition){
     num = 1;
 } else {
     num = 0;
 }
 
-// using ternary operator
+// Using ternary operator
 const num = someCondition ? 1 : 2;
 // condition ? true case : false case
 ```
