@@ -23,13 +23,13 @@ The code editor provides an action creator called <code>addMessage()</code>. Wri
 ```yml
 tests:
   - text: <code>addMessage</code> should return an object with keys <code>type</code> and <code>message</code>.
-    testString: 'assert((function() { const addMessageTest = addMessage(); return ( addMessageTest.hasOwnProperty("type") && addMessageTest.hasOwnProperty("message")); })(), "<code>addMessage</code> should return an object with keys <code>type</code> and <code>message</code>.");'
+    testString: assert((function() { const addMessageTest = addMessage(); return ( addMessageTest.hasOwnProperty('type') && addMessageTest.hasOwnProperty('message')); })(), '<code>addMessage</code> should return an object with keys <code>type</code> and <code>message</code>.');
   - text: <code>mapDispatchToProps</code> should be a function.
-    testString: 'assert(typeof mapDispatchToProps === "function", "<code>mapDispatchToProps</code> should be a function.");'
+    testString: assert(typeof mapDispatchToProps === 'function', '<code>mapDispatchToProps</code> should be a function.');
   - text: <code>mapDispatchToProps</code> should return an object.
-    testString: 'assert(typeof mapDispatchToProps() === "object", "<code>mapDispatchToProps</code> should return an object.");'
+    testString: assert(typeof mapDispatchToProps() === 'object', '<code>mapDispatchToProps</code> should return an object.');
   - text: Dispatching <code>addMessage</code> with <code>submitNewMessage</code> from <code>mapDispatchToProps</code> should return a message to the dispatch function.
-    testString: 'assert((function() { let testAction; const dispatch = (fn) => { testAction = fn; }; let dispatchFn = mapDispatchToProps(dispatch); dispatchFn.submitNewMessage("__TEST__MESSAGE__"); return (testAction.type === "ADD" && testAction.message === "__TEST__MESSAGE__"); })(), "Dispatching <code>addMessage</code> with <code>submitNewMessage</code> from <code>mapDispatchToProps</code> should return a message to the dispatch function.");'
+    testString: assert((function() { let testAction; const dispatch = (fn) => { testAction = fn; }; let dispatchFn = mapDispatchToProps(dispatch); dispatchFn.submitNewMessage('__TEST__MESSAGE__'); return (testAction.type === 'ADD' && testAction.message === '__TEST__MESSAGE__'); })(), 'Dispatching <code>addMessage</code> with <code>submitNewMessage</code> from <code>mapDispatchToProps</code> should return a message to the dispatch function.');
 
 ```
 
