@@ -6,13 +6,14 @@ videoUrl: ''
 localeTitle: 'Use display: flex para posicionar duas caixas'
 ---
 
-## Description
-<section id="description"> Esta seção usa estilos de desafio alternados para mostrar como usar o CSS para posicionar elementos de maneira flexível. Primeiro, um desafio explicará a teoria, então um desafio prático usando um simples componente de tweet aplicará o conceito de flexbox. Colocando a <code>display: flex;</code> propriedade CSS <code>display: flex;</code> em um elemento permite que você use outras propriedades flex para criar uma página responsiva. </section>
+## Descrição
+<section id="description"> Esta seção usa estilos de desafio alternados para mostrar como usar o CSS para posicionar elementos de maneira flexível. Primeiro, um desafio explicará a teoria, então um desafio prático usando um simples componente de tweet aplicará o conceito de flexbox.
+Colocando a propriedade CSS <code>display: flex;</code> em um elemento permite que você use outras propriedades flex para criar uma página responsiva. </section>
 
-## Instructions
-<section id="instructions"> Adicione a <code>display</code> propriedade CSS ao <code>#box-container</code> e defina seu valor como flex. </section>
+## Instruções
+<section id="instructions"> Adicione a propriedade CSS <code>display</code> ao <code>#box-container</code> e defina seu valor como *flex*. </section>
 
-## Tests
+## Testes
 <section id='tests'>
 
 ```yml
@@ -24,7 +25,7 @@ tests:
 
 </section>
 
-## Challenge Seed
+## Desafio Seed
 <section id='challengeSeed'>
 
 <div id='html-seed'>
@@ -63,7 +64,7 @@ tests:
 
 </section>
 
-## Solution
+## Solução
 <section id='solution'>
 
 ```js
