@@ -14,10 +14,10 @@ next.
 The problem is pretty simple and usually follows these steps:
 
   1. Take the position of the starting point.
-  2. Decide wether you want to go in 4 directions (**N, S, W, E**) or 8 directions (**N, S, W, E, NW, NE, SW, SE**).
+  2. Decide whether you want to go in 4 directions (**N, S, W, E**) or 8 directions (**N, S, W, E, NW, NE, SW, SE**).
   3. Choose a replacement color and a target color.
   4. Travel in those directions.
-  5. If the tile you land on is a target, reaplce it with the chosen color.
+  5. If the tile you land on is a target, replace it with the chosen color.
   6. Repeat 4 and 5 until you've been everywhere within the boundaries.
   
 Let's take the following array as an example:
@@ -53,7 +53,6 @@ void flood_fill(int pos_x, int pos_y, int target_color, int color)
 
 }
 
-
 ```
 
 As seen above, my starting point is (4,4). After calling the function for the start coordinates **x = 4** and **y = 4**,
@@ -63,7 +62,7 @@ and start checking the other adiacent squares.
 Going south we will get to point (5,4) and the function runs again.
 
 
-### Excercise problem
+### Exercise problem
 
 I always considered that solving a (or more) problem/s using a newly learned algorithm is the best way to fully understand
 the concept.
@@ -72,7 +71,7 @@ So here's one:
 
 **Statement:** 
 
-  In a bidimensional array you are given n number of **"islands"**. Try to find the largest area of an island and
+In a bidimensional array you are given n number of **"islands"**. Try to find the largest area of an island and
 the corresponding island number. 0 marks water and any other x between 1 and n marks one square from the surface corresponding
 to island x.
 
@@ -106,7 +105,3 @@ The problem is quite easy, but here are some hints:
 
     1. Use the flood-fill algorithm whenever you encounter a new island.
     2. As opposed to the sample code, you should go through the area of the island and not on the ocean (0 tiles).
-  
-
-
-
