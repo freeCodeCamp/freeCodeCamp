@@ -3,7 +3,7 @@ title: Python Defining Functions
 ---
 <a href='https://docs.python.org/3/tutorial/controlflow.html#defining-functions' target='_blank' rel='nofollow'>Python Docs</a>
 
-### Basic structure of a python function define
+### Basic structure of a python function
        
        >>> def function_name(arguments):
        ...      ''' docstring'''
