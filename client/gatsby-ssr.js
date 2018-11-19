@@ -5,14 +5,14 @@ import { Provider } from 'react-redux';
 import headComponents from './src/head';
 import { createStore } from './src/redux/createStore';
 
-import GuideNavigationContextProvider from './src/contexts/GuideNavigationContext';
+import GuideNavContextProvider from './src/contexts/GuideNavigationContext';
 
 const store = createStore();
 
 export const wrapRootElement = ({ element }) => {
   return (
     <Provider store={store}>
-      <GuideNavigationContextProvider>{element}</GuideNavigationContextProvider>
+      <GuideNavContextProvider>{element}</GuideNavContextProvider>
     </Provider>
   );
 };

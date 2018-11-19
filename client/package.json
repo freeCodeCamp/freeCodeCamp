@@ -50,6 +50,7 @@
     "react-reflex": "^2.2.9",
     "react-spinkit": "^3.0.0",
     "react-stripe-elements": "^2.0.1",
+    "react-youtube": "^7.8.0",
     "redux": "^4.0.0",
     "redux-actions": "^2.6.1",
     "redux-devtools-extension": "^2.13.5",

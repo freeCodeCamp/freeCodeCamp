@@ -2,7 +2,6 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { Grid } from '@freecodecamp/react-bootstrap';
 import { graphql } from 'gatsby';
-import { Router } from '@reach/router';
 
 import Layout from '../components/layouts/Default';
 
@@ -40,15 +39,7 @@ const propTypes = {
   })
 };
 
-export default function NewsRouter(props) {
-  return (
-    <Router>
-      <NewsIndexPage {...props} default={true} path='/news' />
-    </Router>
-  );
-}
-
-function NewsIndexPage(props) {
+export default function NewsIndexPage(props) {
   const {
     allNewsArticleNode: { edges }
   } = props.data;
@@ -57,7 +48,7 @@ function NewsIndexPage(props) {
     <Layout>
       <Grid>
         <FullWidthRow>
-          <h1>NewsIndexPage</h1>
+          <h1>News - freeCodeCamp.org</h1>
         </FullWidthRow>
         <FullWidthRow>
           <Featured featuredList={articles} />
