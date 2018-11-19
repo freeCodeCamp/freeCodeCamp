@@ -13,7 +13,7 @@ Consider the following ES5 code:
 Here's the same assignment statement with ES6 destructuring syntax:
 <blockquote>const { x, y, z } = voxel; // x = 3.6, y = 7.4, z = 6.54</blockquote>
 If instead you want to store the values of <code>voxel.x</code> into <code>a</code>, <code>voxel.y</code> into <code>b</code>, and <code>voxel.z</code> into <code>c</code>, you have that freedom as well.
-<blockquote>const { x : a, y : b, z : c } = voxel // a = 3.6, b = 7.4, c = 6.54</blockquote>
+<blockquote>const { x : a, y : b, z : c } = voxel; // a = 3.6, b = 7.4, c = 6.54</blockquote>
 You may read it as "get the field <code>x</code> and copy the value into <code>a</code>," and so on.
 </section>
 
