@@ -21,9 +21,9 @@ Create two <code>div</code> elements within your row, both with the class <code>
 ```yml
 tests:
   - text: Nest two <code>div class="col-xs-6"</code> elements within your <code>div class="row"</code> element.
-    testString: 'assert($("div.row > div.col-xs-6").length > 1, "Nest two <code>div class="col-xs-6"</code> elements within your <code>div class="row"</code> element.");'
+    testString: assert($("div.row > div.col-xs-6").length > 1, 'Nest two <code>div class="col-xs-6"</code> elements within your <code>div class="row"</code> element.');
   - text: Make sure all your <code>div</code> elements have closing tags.
-    testString: 'assert(code.match(/<\/div>/g) && code.match(/<div/g) && code.match(/<\/div>/g).length === code.match(/<div/g).length, "Make sure all your <code>div</code> elements have closing tags.");'
+    testString: assert(code.match(/<\/div>/g) && code.match(/<div/g) && code.match(/<\/div>/g).length === code.match(/<div/g).length, 'Make sure all your <code>div</code> elements have closing tags.');
 
 ```
 
