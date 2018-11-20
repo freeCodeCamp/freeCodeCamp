@@ -1,15 +1,15 @@
 const path = require('path');
 const fs = require('fs');
 require('dotenv').config({ path: path.resolve(__dirname, '../../../.env') });
-const MongoClient = require('mongodb').MongoClient;
-const { getChallengesForLang } = require('@freecodecamp/curriculum');
+const { MongoClient, ObjectID } = require('mongodb');
 const { flatten } = require('lodash');
 const debug = require('debug');
 
+const { getChallengesForLang } = require('../../../curriculum/getChallenges');
 const { createPathMigrationMap } = require('./createPathMigrationMap');
 
 const log = debug('fcc:tools:seedChallenges');
-const { MONGOHQ_URL, LOCALE: lang } = process.env;
+const { MONGOHQ_URL, LOCALE: lang = 'english' } = process.env;
 
 function handleError(err, client) {
   if (err) {
@@ -32,15 +32,17 @@ MongoClient.connect(
   function(err, client) {
     handleError(err, client);
 
-    log('Connected successfully to mongo');
+    log('Connected successfully to mongo at %s', MONGOHQ_URL);
 
     const db = client.db('freecodecamp');
-    const challenges = db.collection('challenge');
+    const challengeCollection = db.collection('challenge');
 
-    challenges.deleteMany({}, err => {
+    challengeCollection.deleteMany({}, async err => {
       handleError(err, client);
 
-      const curriculum = getChallengesForLang(lang);
+      log('deleted all the challenges');
+
+      const curriculum = await getChallengesForLang(lang);
 
       const allChallenges = Object.keys(curriculum)
         .map(key => curriculum[key].blocks)
@@ -51,18 +53,25 @@ MongoClient.connect(
           return [...challengeArray, ...flatten(challengesForBlock)];
         }, [])
         .map(challenge => {
-          challenge._id = challenge.id.slice(0);
+          const currentId = challenge.id.slice(0);
+          challenge._id = ObjectID(currentId);
           delete challenge.id;
           return challenge;
         });
 
       try {
-        challenges.insertMany(allChallenges, { ordered: false });
+        challengeCollection.insertMany(
+          allChallenges,
+          { ordered: false },
+          err => {
+            handleError(err, client);
+            log('challenge seed complete');
+            client.close();
+          }
+        );
       } catch (e) {
         handleError(e, client);
       } finally {
-        log('challenge seed complete');
-        client.close();
         log('generating path migration map');
         const pathMap = createPathMigrationMap(curriculum);
         const outputDir = path.resolve(
