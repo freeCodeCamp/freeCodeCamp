@@ -64,7 +64,7 @@ class Presolver {
   async _createLabel (labelObj) {
     const { owner, repo } = this.config
     const github = this.github
-    console.log(this.github.issues.getLabel({ owner, repo, name: labelObj.name }))
+    //console.log(this.github.issues.getLabel({ owner, repo, name: labelObj.name }))
     return this.github.issues
       .getLabel({ owner, repo, name: labelObj.name })
       .catch(() => {
@@ -92,11 +92,11 @@ class Presolver {
     const { owner, repo } = this.config
     const number = this.pullRequest.number
     const label = this.config.labelPRConflict
-
+    const github = this.github
     // Check if a label does not exist. If it does, it addes the label.
     return this._getLabel(label).catch(() => {
       // console.log(labelObj)
-      return this.github.issues.addLabels({
+      return github.issues.addLabels({
         owner,
         repo,
         number,
