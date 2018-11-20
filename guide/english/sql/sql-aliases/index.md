@@ -33,7 +33,7 @@ This results in output as below.
 +-------------+------------------------+
 
 ```
-You can also use AS to assign a name to a table to make it easier to reference in joins.
+You can also use AS to assign a name to a table to make it easier to refer in joins.
 
 ```sql
 SELECT ord.product, ord.ord_number, ord.price, cust.cust_name, cust.cust_number FROM customer_table AS cust
