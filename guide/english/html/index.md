@@ -160,3 +160,19 @@ There are many possible ways a user can give input/s like:
 ```
 
 Comments can help in the understanding of the markup and do not display in the webpage.
+
+### Document type declaration
+
+HTML documents are required to start with a Document Type Declaration (informally, a "doctype"). In browsers, the doctype helps to define the rendering mode—particularly whether to use quirks mode.
+
+It must only appear once, at the top of the page (before any HTML tags).
+
+The doctype declaration is not an HTML tag; it is an instruction to the web browser about what version of the markup language the page is written in.
+
+The Doctype does two things.
+
+   1.It identifies which dialect of HTML you're using.
+   
+   2.It controls whether the browsers uses "standards" or "quirks" mode to render the document.
+   
+ 
