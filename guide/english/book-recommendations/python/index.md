@@ -4,17 +4,16 @@ title: Books on Python Programming Language
  
  ## List of Books
  
- *Think Python 2e*
- 
- ![alt text](http://greenteapress.com/thinkpython2/think_python2_medium.jpg "Think Python 2e")
+**Think Python 2e**
+
+![alt text](http://greenteapress.com/thinkpython2/think_python2_medium.jpg "Think Python 2e")
  
 - [Website](https://greenteapress.com/wp/think-python-2e/)
 - [E-book](https://greenteapress.com/thinkpython2/html/index.html)(free)
 - [Amazon Smile](https://smile.amazon.com/gp/product/1491939362)
 - ISBN-13: 978-1491939369
- 
- 
-*Learn Python 3 the Hard Way*
+
+**Learn Python 3 the Hard Way**
 
 Paid (Free ebook available) book which covers the basics of Python. It's designed to get you started with the Python language and become familiar with its syntax and workings by the time you complete the book. 
 
@@ -26,8 +25,7 @@ Paid (Free ebook available) book which covers the basics of Python. It's designe
 - ISBN-13: 978-0134692883
 - ISBN-10: 0134692888
 
-
-*Black Hat Python: Python Programming for Hackers and Pentesters*
+**Black Hat Python: Python Programming for Hackers and Pentesters**
 
 ![alt text](https://images-na.ssl-images-amazon.com/images/I/51O-GzoZi5L._SL200_.jpg "Black hat Python")
 
@@ -38,8 +36,7 @@ So you've covered the basics of Python? You're now ready to discover the in-dept
 
 - [Amazon](https://www.amazon.com/Programming-Python-Powerful-Object-Oriented/dp/0596158106)
 
-
-*Programming Python*
+**Programming Python**
 
 ![alt text](https://covers.oreillystatic.com/images/9780596158118/cat.gif "Programming Python: Fourth Edition")
 
@@ -47,7 +44,17 @@ So you've covered the basics of Python? You're now ready to discover the in-dept
 - ISBN-10: 0596158106
 - ISBN-13: 978-0596158101
 
-*Data Science from Scratch: First Principles with Python*
+**Python Cookbook: Recipes for Mastering Python 3**
+
+If you need help writing programs in Python 3, or want to update older Python 2 code, this book is just the ticket. Packed with practical recipes written and tested with Python 3.3, this unique cookbook is for experienced Python programmers who want to focus on modern tools and idioms.
+
+- [Amazon](https://www.amazon.in/Python-Cookbook-Recipes-Mastering-ebook/dp/B00DQV4GGY)
+- [O'Reilly](http://shop.oreilly.com/product/0636920027072.do)
+- ISBN-10: 1449340377
+- ISBN-13: 978-1449340377
+
+**Data Science from Scratch: First Principles with Python**
+
 You'll learn many of the first princliples for data science tools and how algorithms work by implementing these from scratch. If you have an aptitude for maths and some coding skills, you'll have a crash course in Python that includes the basics of algebra, statistics, and probability. You'll learn how to implement models such as k-nearest Neighbors, Naive Bayes, linear and logistic regression, decision trees, neural networks and clustering. Discover recommender systems, natural lanuage processing, network analysis, MapReduce and databases.
 
 ![alt text](https://covers.oreillystatic.com/images/0636920033400/cat.gif "Data Science From Scratch")
@@ -57,7 +64,7 @@ You'll learn many of the first princliples for data science tools and how algori
 - ISBN-10: 149190142X
 - ISBN-13: 978-1491901427
 
-#### Making Games with Python and Pygame
+**Making Games with Python and Pygame**
 
 A great book for people willing to test their knowledge in Python by creating games. It involves the use of pygame with easy to follow examples. Paid with a free ebook available.
 
@@ -67,7 +74,7 @@ A great book for people willing to test their knowledge in Python by creating ga
 - ISBN-10: 9781469901732
 - ISBN-13: 978-1469901732
 
-*Automate The Boring Stuff With Python*
+**Automate The Boring Stuff With Python**
 
 ![alt text](https://images-na.ssl-images-amazon.com/images/I/517XL4pO6jL._SL200_.jpg "Automate the boring stuff with Python")
 
@@ -77,32 +84,27 @@ A great book for people willing to test their knowledge in Python by creating ga
 - ISBN-10: 1593275994
 - ISBN-13: 978-1593275990
 
-
-
-*Python crash course 2e* (note that 3e is going to be published on April 2019)
+**Python crash course 2e** (note that 3e is going to be published on April 2019)
 
 - Paid book which gives concrete introduction to both programming and Python by the creation of projects.
 - [Amazon Smile](https://smile.amazon.com/Python-Crash-Course-Hands-Project-Based/dp/1593276036/)
 - ISBN-10: 1593276036
 - ISBN-13: 978-1593276034
 
+**The Quick Python Book, Third Edition**
 
-
-*The Quick Python Book, Third Edition*
 - Paid book which provides a good level of information for those starting Python and as a reference for the Python language
 - [Manning](https://www.manning.com/books/the-quick-python-book-third-edition)
 - ISBN-10: 1617294039
 - ISBN-13: 978-1617294037
 
+**Head First Python, Second Edition**
 
-
-*Head First Python, Second Edition*
- - Paid book: a great beginner's book; part of the Head First series which uses cognitive science approach to way people learn.
+- Paid book: a great beginner's book; part of the Head First series which uses cognitive science approach to way people learn.
 - ISBN: 9781491919521
 - [O'Reilly](https://www.oreilly.com/library/view/head-first-python/9781491919521/#toc-start)
 
 #### Other Resources
-
 - [Functional Programming in Python by David Mertz [OREILLY] [FREE]](https://www.oreilly.com/programming/free/files/functional-programming-python.pdf)
 - [Python in Education by Nicholas H. Tollervey[OREILLY] [FREE]](https://www.oreilly.com/programming/free/files/python-in-education.pdf)
 - [How to think like a Computer Scientist by Allen Downey[V 2.0.17] [FREE]](https://greenteapress.com/thinkpython/thinkpython.pdf)
