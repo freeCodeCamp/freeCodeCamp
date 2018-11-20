@@ -3,8 +3,14 @@ title: Adjust the Tone of a Color
 ---
 ## Adjust the Tone of a Color
 
-This is a stub. <a href='https://github.com/freecodecamp/guides/tree/master/src/pages/certifications/responsive-web-design/applied-visual-design/adjust-the-tone-of-a-color/index.md' target='_blank' rel='nofollow'>Help our community expand it</a>.
+### Solution
 
-<a href='https://github.com/freecodecamp/guides/blob/master/README.md' target='_blank' rel='nofollow'>This quick style guide will help ensure your pull request gets accepted</a>.
+```css
+nav {
+  background-color: hsl(180, 80%, 25%);
+}
+```
 
-<!-- The article goes here, in GitHub-flavored Markdown. Feel free to add YouTube videos, images, and CodePen/JSBin embeds  -->
+#### Explanation
+
+* The `background-color: hsl(180, 80%, 25%);` declaration uses the same hue i.e. `180` as required by the challenge and sets the saturation and lightness at `80%` and `25%` respectively for all `nav` elements.
