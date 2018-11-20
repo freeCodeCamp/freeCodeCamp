@@ -29,6 +29,14 @@ In addition to posts, WordPress also comes with the ability to create "pages" â€
 
 What makes WordPress particularly powerful is that it's possible to create other custom page  types as well. You could, for example, create your own classifieds site with a "listings" page type, or a book review site with a "review" page type, and even assign custom data fields and taxonomies to these as well. Using a combination of plugins and custom coding, you can adopt WordPress as a content management system for all kinds of uses.
 
+### Templates
+
+WordPress does not require work from scratch. For ease of new developers there are tons of free templates available on internet which can be used by basic developer. 
+Few websites which provides these free templates are:
+
+- [AThemes](https://athemes.com/collections/free-wordpress-themes/)
+- [WordPress](https://wordpress.org/themes/)
+- [Just Free Themes](https://justfreethemes.com)
 
 ### Themes and Plugins
 
@@ -61,7 +69,7 @@ Note: WordPress's ease of use may encourage new users to forget about website se
 It is important to choose extremely difficult or random passwords for the administrators and for the database. This guards against random brute-force attacks. 
 Using tools such as [Jetpack](https://jetpack.com/) and an [SSL certificate](https://www.verisign.com/en_US/website-presence/website-optimization/ssl-certificates/index.xhtml) increases your protection against unwanted attacks.
 
-### More Information
+#### More Information
 
 - [WordPress Codex: the online manual](https://codex.wordpress.org/)
 - [WordPress Code Reference](https://developer.wordpress.org/reference/)
