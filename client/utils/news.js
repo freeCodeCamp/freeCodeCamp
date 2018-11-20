@@ -1,4 +1,4 @@
-export const createArticleSlug = ({
+exports.createArticleSlug = ({
   username = '',
   slugPart = '',
   shortId = ''
