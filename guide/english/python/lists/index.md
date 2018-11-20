@@ -1,10 +1,11 @@
 ---
 title: Lists
 ---
+
 ## Lists
 Lists is one of the most common Python data structures you will encounter while programming in Python along with dictionary, tuple or set. 
 
-It is an ordered mutable collection, this means that you store data in different postions in a list. 
+A `list` is an ordered mutable collection, where each value is identified with an *index*. Lists are zero-indexed, i.e., the index of the **1st** element in a `list` is **0**, the index of the **2nd** element is **1**, and so on. This means that a list of **N** elements will have indices from **0** to **N - 1**(not N).
 
 Besides that due to list being *mutable*, you are allowed to make changes to the value of a list without affecting the order of positions within the list.
 
