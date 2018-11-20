@@ -24,7 +24,7 @@ class App extends Component {
 
   handleInputChange = (event) => {
     const { value } = event.target;
-    console.log(Number(value))
+
     if (Number(value) || value === '') {
       this.setState((prevState) => ({ number: value, foundPRs: [] }));
     }
@@ -38,7 +38,7 @@ class App extends Component {
       .then(({ ok, foundPRs }) => {
         if (ok) {
           if (!foundPRs.length) {
-            foundPRs.push({number: 'No PRs with matching files', filenames: []});
+            foundPRs.push({ number: 'No PRs with matching files', filenames: [] });
           }
           this.setState((prevState) => ({ foundPRs }));
         }
@@ -46,25 +46,19 @@ class App extends Component {
           this.inputRef.current.focus();
         }
       })
-      .catch((err) => {
-        //console.log(err)
+      .catch(() => {
         this.setState((prevState) => ({ number: '', foundPRs: [] }));
       });
   }
 
   render() {
-    const { number, foundPRs } = this.state;
+    const { handleButtonClick, handleInputChange, inputRef, state } = this;
+    const { number, foundPRs } = state;
 
     return (
       <Container>
-      <input
-        type="text"
-        placeholder="PR #"
-        onChange={this.handleInputChange}
-        value={number}
-        ref={this.inputRef}
-      />
-        <button onClick={this.handleButtonClick}>Search</button>
+        <Input ref={inputRef} value={number} onInputChange={handleInputChange} />
+        <button onClick={handleButtonClick}>Search</button>
         <Results foundPRs={foundPRs} />
       </Container>
     );

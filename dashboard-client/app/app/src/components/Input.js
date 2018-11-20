@@ -1,13 +1,13 @@
 import React from 'react';
 
-const Input = ({ onInputChange, value, test }) => (
+const Input = React.forwardRef((props, ref) => (
   <input
     type="text"
     placeholder="PR #"
-    onChange={onInputChange}
-    value={value}
-    ref={test}
+    onChange={props.onInputChange}
+    value={props.value}
+    ref={ref}
   />
-);
+));
 
 export default Input;
