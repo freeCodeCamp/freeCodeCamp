@@ -26,14 +26,13 @@ Use the <code>conditional operator</code> in the <code>checkEqual</code> functio
 ```yml
 tests:
   - text: <code>checkEqual</code> should use the <code>conditional operator</code>
-    testString: 'assert(/.+?\s*?\?\s*?.+?\s*?:\s*?.+?/gi.test(code), "<code>checkEqual</code> should use the <code>conditional operator</code>");'
-  - text: '<code>checkEqual(1, 2)</code> should return "Not Equal"'
-    testString: 'assert(checkEqual(1, 2) === "Not Equal", "<code>checkEqual(1, 2)</code> should return \"Not Equal\"");'
-  - text: '<code>checkEqual(1, 1)</code> should return "equal"'
-    testString: 'assert(checkEqual(1, 1) === "Equal", "<code>checkEqual(1, 1)</code> should return \"Equal\"");'
-  - text: '<code>checkEqual(1, -1)</code> should return "Not Equal"'
-    testString: 'assert(checkEqual(1, -1) === "Not Equal", "<code>checkEqual(1, -1)</code> should return \"Not Equal\"");'
-
+    testString: assert(/.+?\s*?\?\s*?.+?\s*?:\s*?.+?/.test(code), '<code>checkEqual</code> should use the <code>conditional operator</code>');
+  - text: <code>checkEqual(1, 2)</code> should return "Not Equal"
+    testString: assert(checkEqual(1, 2) === "Not Equal", '<code>checkEqual(1, 2)</code> should return "Not Equal"');
+  - text: <code>checkEqual(1, 1)</code> should return "Equal"
+    testString: assert(checkEqual(1, 1) === "Equal", '<code>checkEqual(1, 1)</code> should return "Equal"');
+  - text: <code>checkEqual(1, -1)</code> should return "Not Equal"
+    testString: assert(checkEqual(1, -1) === "Not Equal", '<code>checkEqual(1, -1)</code> should return "Not Equal"');
 ```
 
 </section>
