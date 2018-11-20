@@ -4,7 +4,7 @@
   "description": "Github bots and crawlers for FCC\r # github-bots",
   "main": "index.js",
   "dependencies": {
-    "@octokit/rest": "^15.16.1",
+    "@octokit/rest": "^15.18.0",
     "date-fns": "^1.29.0",
     "dedent": "^0.7.0",
     "dotenv": "^6.1.0",
@@ -12,6 +12,7 @@
     "lodash": "^4.17.11",
     "path": "^0.12.7",
     "readdirp-walk": "^1.6.0",
+    "travis-ci": "^2.2.0",
     "util": "^0.11.1"
   },
   "devDependencies": {},
