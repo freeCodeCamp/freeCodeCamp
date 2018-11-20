@@ -12,7 +12,9 @@ In ES5, we usually define a constructor function, and use the <code>new</code> k
 <blockquote>var SpaceShuttle = function(targetPlanet){<br>&nbsp;&nbsp;this.targetPlanet = targetPlanet;<br>}<br>var zeus = new SpaceShuttle('Jupiter');</blockquote>
 The class syntax simply replaces the constructor function creation:
 <blockquote>class SpaceShuttle {<br>&nbsp;&nbsp;constructor(targetPlanet){<br>&nbsp;&nbsp;&nbsp;&nbsp;this.targetPlanet = targetPlanet;<br>&nbsp;&nbsp;}<br>}<br>const zeus = new SpaceShuttle('Jupiter');</blockquote>
-Notice that the <code>class</code> keyword declares a new function, and a constructor was added, which would be invoked when <code>new</code> is called - to create a new object.
+Notice that the <code>class</code> keyword declares a new function, and a constructor was added, which would be invoked when <code>new</code> is called - to create a new object.<br>
+<strong>Note</strong><br>
+UpperCamelCase should be used by convention for ES6 class names, as in <code>SpaceShuttle</code> used above.
 </section>
 
 ## Instructions
