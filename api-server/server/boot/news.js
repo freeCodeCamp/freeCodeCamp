@@ -17,7 +17,7 @@ export default function newsBoot(app) {
 function createShortLinkHandler(app) {
   const { Article } = app.models;
 
-  const referralHandler = createRerralHandler(app);
+  const referralHandler = createReferralHandler(app);
 
   return function shortLinkHandler(req, res, next) {
     const { query, user } = req;
@@ -197,7 +197,7 @@ function createPopularityHandler(app) {
   };
 }
 
-function createRerralHandler(app) {
+function createReferralHandler(app) {
   const { Popularity } = app.models;
 
   return function referralHandler(query, shortId, byAuthenticatedUser) {
