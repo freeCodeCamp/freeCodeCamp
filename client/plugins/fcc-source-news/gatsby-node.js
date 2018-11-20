@@ -11,7 +11,9 @@ exports.sourceNodes = function sourceChallengesSourceNodes(
 ) {
   function handleError(err, client, reject) {
     if (err) {
-      client.close();
+      if (client) {
+        client.close();
+      }
       reject(err);
       reporter.panic(err);
     }
