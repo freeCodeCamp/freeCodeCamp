@@ -4,7 +4,8 @@ const Input = React.forwardRef((props, ref) => (
   <input
     type="text"
     placeholder="PR #"
-    onChange={props.onInputChange}
+    onChange={props.onInputEvent}
+    onKeyPress={props.onInputEvent}
     value={props.value}
     ref={ref}
   />

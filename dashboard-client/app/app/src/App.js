@@ -22,17 +22,26 @@ class App extends Component {
 
   inputRef = React.createRef();
 
-  handleInputChange = (event) => {
-    const { value } = event.target;
+  handleInputEvent = (event) => {
+    const { type, key, target: { value } } = event;
 
-    if (Number(value) || value === '') {
-      this.setState((prevState) => ({ number: value, foundPRs: [] }));
+    if (type === 'change') {
+      if (Number(value) || value === '') {
+        this.setState((prevState) => ({ number: value, foundPRs: [] }));
+      }
+    }
+    else if (type === 'keypress' && key === 'Enter') {
+      this.searchPRs(value);
     }
   }
 
   handleButtonClick = () => {
     const { number } = this.state;
 
+    this.searchPRs(number);
+  }
+
+  searchPRs = (number) => {
     fetch(`https://pr-relations.glitch.me/pr/${number}`)
       .then((response) => response.json())
       .then(({ ok, foundPRs }) => {
@@ -52,12 +61,12 @@ class App extends Component {
   }
 
   render() {
-    const { handleButtonClick, handleInputChange, inputRef, state } = this;
+    const { handleButtonClick, handleInputEvent, inputRef, state } = this;
     const { number, foundPRs } = state;
 
     return (
       <Container>
-        <Input ref={inputRef} value={number} onInputChange={handleInputChange} />
+        <Input ref={inputRef} value={number} onInputEvent={handleInputEvent} />
         <button onClick={handleButtonClick}>Search</button>
         <Results foundPRs={foundPRs} />
       </Container>
