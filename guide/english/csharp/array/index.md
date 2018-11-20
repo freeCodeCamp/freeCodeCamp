@@ -76,6 +76,71 @@ or simply:
 
 `var nameOfArray = new dataType {value1, value2, value3, value4};`
 
+## Jagged Arrays
+
+Jagged arrays contain elements that are arrays itself. Example of declaration and initialization of jagged array:
+
+```csharp
+int[][] array = new int[2][];
+```
+
+Each element of jagged array can contains array of different length, ex:
+
+```csharp
+array[0] = new int[2];
+array[1] = new int[4];
+
+array[0][0] = 1;
+array[0][1] = 2;
+ 
+array[1][0] = 1;
+array[1][1] = 2;
+array[1][2] = 3;
+array[1][3] = 4;
+```
+As you see the array contains 2 other arrays which respectively contain 2 and 4 elements. Above code can be written shorter by using different format:
+
+```csharp
+int[][] array =
+{
+    new int[] {1,2},
+    new int[] {1,2,3,4}
+};
+```
+
+It's important to remember that types of subarrays must be the same as type of main array. To access specific element of jagged array you should use `array[x][y]` syntax where x is an index of main array which indicates subarray and y is index of subarray which indicates element within that subarray.
+
+```csharp
+Console.Write(array[0][0]); // Displays 1 (first element of first subarray)
+Console.Write(array[1][2]); // Displays 3 (third element of second subarray)
+Console.Write(array[1][0]); // Displays 1 (first element of second subarray)
+```
+
+## Multidimensional array
+Arrays can have more than one dimension (every element will be represented by more than one index). Example of declaration and initialization of two dimensional array:
+
+```csharp
+string[,] weekDays = new string[2, 3];
+```
+
+Having two dimensional array we need to use two indexes to represent the position of element:
+
+```csharp
+weekDays[0,0] = "monday";
+weekDays[0,1] = "montag";
+weekDays[0,2] = "lundi";
+weekDays[1,0] = "tuesday";
+weekDays[1,1] = "dienstag";
+weekDays[1,2] = "mardi";
+```
+
+To check number of dimensions we can use Rank property:
+
+```csharp
+int[,,,] array = new int[6, 4, 2, 8];
+Console.WriteLine(array.Rank); // 4
+```
+
 ## Advantages
 
 * Can be easily accessed in a random manner

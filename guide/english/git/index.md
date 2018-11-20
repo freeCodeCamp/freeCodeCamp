@@ -12,7 +12,7 @@ The last point deserves emphasis. Although many people focus on git's ability to
 
 A *distributed* version control system means that different users maintain their own repositories of a project, instead of working from one central repository. Users automatically have full file tracking abilities and the project's complete version history without needing access to a central server or network.
 
-When Git is initialized in a project directory, it begins tracking file changes and stores them as "change sets" or "patches." Users working together on a project submit their change sets which are then included (or rejected) in the project.
+When Git is initialized in a project directory, it begins tracking file changes and stores them as "changesets" or "patches." Users working together on a project submit their changesets which are then included (or rejected) in the project.
 
 **Table of Contents**
 - [Understand the Three Sections of a Git Project](#understand-the-three-sections-of-a-git-project)

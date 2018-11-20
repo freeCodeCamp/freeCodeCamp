@@ -18,7 +18,7 @@ Typically, publicly available data is used for Computational Genomics, and often
 - ISBN-13: 978-0521671910
 A great starter book for beginners 
 
+## Additional Resources
+- This blog by astrobiologist [Mike Lee](https://astrobiomike.github.io/) is a good place to start.  
+- Bioinformatics tools are commonly designed in R and Python.  Two such projects are the [Bioconductor](https://www.bioconductor.org/) project (written in R) and the [Biopython](https://biopython.org/) project.
 
-### Short reads
-
-Data Structures and Algorithms Underlying Genome Reconstruction from Short Reads by Bruce F. Cockburn

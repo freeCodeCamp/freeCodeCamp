@@ -58,6 +58,11 @@ int crr[100] = {3};
 If you do this, then the first element is going to be `3`, but the rest of them is going to be `0`. 
 
 ```C
+int drr[10] = {0};
+```
+If you want to create an array with all the elements as `0`.
+
+```C
 int var = arr[0];
 ```
 Here an int is created called `var`, and it is initialized to the 0th element of arr. **Very importart to note** that in C, indexes start at zero as opposed to 1. This means that to access the first element, the index (between the brackets) is 0, to access the second element, the index is 1 etc. 

@@ -53,7 +53,7 @@ function addTwoNumbers(num1, num2) {
 }
 console.log(addTwoNumbers(10,20)) // will print 30 in the console.
 
-You can also prevent execution of Javascript code just commenting the code lines like this:
+In some cases you may want to prevent code from running for debugging purposes. For example:
 ```javascript
 function hello() {
   /*console.log("Hello world!");*/

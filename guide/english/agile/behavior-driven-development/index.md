@@ -19,7 +19,7 @@ BDD focuses on:
 - How to understand why a test fails
 
 At the heart of BDD is a rethinking of the approach to the unit testing and acceptance testing that naturally arise with these issues. 
-For example, BDD suggests that unit test names be whole sentences starting with a conditional verb ("should" in English for example) and should be written in order of business value. 
+For example, BDD suggests that unit test names should be whole sentences starting with a conditional verb ("should" in English for example) and should be written in order of business value. 
 Acceptance tests should be written using the standard agile framework of a user story: "As a _role_ I want _feature_ so that _benefit_".
 Acceptance criteria should be written in terms of scenarios and implemented as classes: Given _initial context_, when _event occurs_, then _ensure some outcomes_.
 
@@ -59,4 +59,7 @@ Along with it are some Benefits:
 ## More Information
 * Wiki on <a href='https://en.wikipedia.org/wiki/Behavior-driven_development' target='_blank' rel='nofollow'>BDD</a>
 * A well-known Behavior Driven Development (BDD) framework is [Cucumber](https://cucumber.io/). Cucumber supports many programming languages and can be integrated with a number of frameworks; for example, [Ruby on Rails](http://rubyonrails.org/), [Spring Framework](http://spring.io/) and [Selenium](http://www.seleniumhq.org/)
-* https://inviqa.com/blog/bdd-guide
+* [BDD Guide](https://inviqa.com/blog/bdd-guide)
+* Ebook on the [Discovery Phase of BDD](https://leanpub.com/bddbooks-discovery)
+* Dan North about [What's in a story](https://dannorth.net/whats-in-a-story/)
+* Automation Panda on [Writing good Gherkin](https://automationpanda.com/2017/01/30/bdd-101-writing-good-gherkin/)
