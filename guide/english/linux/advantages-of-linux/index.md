@@ -25,7 +25,7 @@ Linux has an active community of those willing to share their knowledge and help
 
 In addition to documentation, there are plenty of helpful and welcoming communities for newcomers to ask questions such as <a href='https://askubuntu.com/' target='_blank' rel='nofollow'>Ask Ubuntu</a> and <a href='https://www.reddit.com/r/linuxquestions/' target='_blank' rel='nofollow'> Reddit's r/linuxquestions</a>.
 
-There are self-paced certifications that can be taken that are recognized in the IT industry (<a href='https://certification.comptia.org/certifications/linux' target='_blank' rel='nofollow'>CompTIA's Linux+</a> and <a href='https://www.lpi.org' target='_blank' rel='nofollow'>LPI's LPIC tests</a>). Although not required, learning <a href='https://en.wikipedia.org/wiki/C_(programming_language' target='_blank' rel='nofollow'>C</a>) gives the ability for a user to review the Linux code to see what they are running.
+There are self-paced certifications that can be taken that are recognized in the IT industry (<a href='https://certification.comptia.org/certifications/linux' target='_blank' rel='nofollow'>CompTIA's Linux+</a> and <a href='https://www.lpi.org' target='_blank' rel='nofollow'>LPI's LPIC tests</a>). Although not required, learning <a href='https://en.wikipedia.org/wiki/C_(programming_language)' target='_blank' rel='nofollow'>C</a> gives the ability for a user to review the Linux code to see what they are running.
 
 ## Business support.
 
@@ -37,7 +37,7 @@ Linux has driver support for NTFS and HFS+ filesystems (used by Windows and Macs
 
 ## Better hardware support.
 
-For other OSs, usually a user would have to go to the manufacturer's website to get driver support for different types of hardware. The Linux kernel supports a majority of hardware automatically via plug-and-play (largely in part because of the open source community). Some manufacturers also develop Linux versions of their proprietary drivers which could be easilly installed via the software repository of a distribution or by manually installing the provided binaries.
+For other OSs, usually a user would have to go to the manufacturer's website to get driver support for different types of hardware. The Linux kernel supports a majority of hardware automatically via plug-and-play (largely in part because of the open source community). Some manufacturers also develop Linux versions of their proprietary drivers which could be easily installed via the software repository of a distribution or by manually installing the provided binaries.
 
 ## Software Availability/Compatibility.
 

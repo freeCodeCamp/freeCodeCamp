@@ -1,4 +1,5 @@
-const assert = require('chai').assert;
+const { assert, AssertionError } = require('chai');
+const Mocha = require('mocha');
 
 const { flatten } = require('lodash');
 const path = require('path');
@@ -25,6 +26,15 @@ const { validateChallenge } = require('../schema/challengeSchema');
 const { challengeTypes } = require('../../client/utils/challengeTypes');
 
 const { LOCALE: lang = 'english' } = process.env;
+
+const oldRunnerFail = Mocha.Runner.prototype.fail;
+Mocha.Runner.prototype.fail = function(test, err) {
+  // Don't show stacktrace for assertion errors.
+  if (err.stack && err instanceof AssertionError) {
+    delete err.stack;
+  }
+  return oldRunnerFail.call(this, test, err);
+};
 
 let mongoIds = new MongoIds();
 let challengeTitles = new ChallengeTitles();
@@ -53,7 +63,7 @@ const jQueryScript = fs.readFileSync(
   ));
 
   describe('Check challenges tests', async function() {
-    this.timeout(200000);
+    this.timeout(5000);
 
     allChallenges.forEach(challenge => {
       describe(challenge.title || 'No title', async function() {
@@ -127,6 +137,9 @@ const jQueryScript = fs.readFileSync(
         }
 
         it('Test suite must fail on the initial contents', async function() {
+          // suppress errors in the console.
+          const oldConsoleError = console.error;
+          console.error = () => {};
           let fails = (
           await Promise.all(tests.map(async function(test) {
             try {
@@ -141,6 +154,7 @@ const jQueryScript = fs.readFileSync(
               return true;
             }
           }))).some(v => v);
+          console.error = oldConsoleError;
           assert(fails, 'Test suit does not fail on the initial contents');
         });
 
@@ -205,6 +219,10 @@ function isPromise(value) {
     typeof value.subscribe !== 'function' &&
     typeof value.then === 'function'
   );
+}
+
+function timeout(milliseconds) {
+  return new Promise(resolve => setTimeout(resolve, milliseconds));
 }
 
 function transformSass(solution) {
@@ -303,7 +321,16 @@ A required file can not have both a src and a link: src = ${src}, link = ${link}
   </head>
   `;
 
-  solution = transformSass(solution);
+  const sandbox = { solution, transformSass };
+  const context = vm.createContext(sandbox);
+  vm.runInContext(
+    'solution = transformSass(solution);',
+    context,
+    {
+      timeout: 2000
+    }
+  );
+  solution = sandbox.solution;
   solution = replaceColorNames(solution);
 
   const dom = new JSDOM(`
@@ -317,7 +344,7 @@ A required file can not have both a src and a link: src = ${src}, link = ${link}
   `, options);
 
   if (links || challengeType === challengeTypes.modern) {
-    await new Promise(resolve => setTimeout(resolve, 1000));
+    await timeout(1000);
   }
 
   dom.window.code = code;
@@ -469,7 +496,7 @@ async function runTestInJsdom(dom, testString, scriptString = '') {
     }
   })();`;
   const script = new vm.Script(scriptString);
-  dom.runVMScript(script);
+  dom.runVMScript(script, { timeout: 5000 });
   await dom.window.__result;
   if (dom.window.__error) {
     throw dom.window.__error;

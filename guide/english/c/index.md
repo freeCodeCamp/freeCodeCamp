@@ -12,10 +12,10 @@ The goals of this course are to teach the C language to beginners. Ideally, some
 
 ## What is C?
 
-C is a general purpose programming language invented by Dennis Ritchie between 1969 and 1973 at Bell Labs. Since then, it has been used to create things like the Linux Kernel, which allows software to interact with hardware on Linux-based operating systems. It can do this, and other low-level operations, because it was designed to be very close to machine code while still being human-readable. Because of this, it provides direct access to computer memory and hardware. This makes it very useful in hardware and robotics applications where having access to those features quickly is important. 
+C is a general-purpose programming language invented by Dennis Ritchie between 1969 and 1973 at Bell Labs. Since then, it has been used to create things like the Linux Kernel, which allows software to interact with hardware on Linux-based operating systems. It can do this, and other low-level operations, because it was designed to be very close to machine code while still being human-readable. Because of this, it provides direct access to computer memory and hardware. This makes it very useful in hardware and robotics applications where having access to those features quickly is important. 
 C, like other low-level languages, requires compilation. The compilation process takes the C code that can be read by a person and turns it into code that can be read and executed by a computer. Compilation requires a compiler, which can either be used from the command line or can be used in an IDE.
 
-If you would prefer to use the command line, consider `gcc`. It can be found by default on GNU+Linux operating systems and on Mac, and is easy to get on Windows. For beginners, however, having an IDE may be more comfortable. Consider CodeBlocks or Xcode (use Command Line Tools if you do not want the whole XCode package) if you're interested in being able to write and run code from a GUI.
+If you would prefer to use the command line, consider `gcc`. It can be found by default on GNU+Linux operating systems and on Mac and is easy to get on Windows. For beginners, however, having an IDE may be more comfortable. Consider CodeBlocks or Xcode (use Command Line Tools if you do not want the whole XCode package) if you're interested in being able to write and run code from a GUI.
 
 Now that you have that background, let's start with our 'Hello, World' program. 'Hello, World' is a traditional way of getting started with a language: it shows that we can write code and make it run, so it's a good place to start!
 
@@ -37,7 +37,7 @@ First is the `#include`:
 ```C
 #include <stdio.h> // This is called preprocessor directives
 ```
-This is an instruction to the compiler to find and include a set of header files. Header files contain additional code that we can use. In this case, the compiler has been instructed to include `<stdio.h>`, which contains all kinds of useful functions like `printf()`. We can also write it as `#include"stdio.h"`. We'll get into detail about what functions are later, but for now just remember that a function is a collection of code that we can use.
+This is an instruction to the compiler to find and include a set of header files. Header files contain additional code that we can use. In this case, the compiler has been instructed to include `<stdio.h>`, which contains all kinds of useful functions like `printf()`. We can also write it as `#include"stdio.h"`. We'll get into detail about what functions are later, but for now, just remember that a function is a collection of code that we can use.
 
 ```C
 int main(void)

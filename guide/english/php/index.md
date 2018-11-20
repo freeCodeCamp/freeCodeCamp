@@ -17,7 +17,7 @@ acronym also changed to what it stands for today: 'PHP: Hypertext Preprocessor'.
 
 ## What is PHP used for?
 
-As of October 2017, PHP is used on [82% of websites whose server-side language is known](https://w3techs.com/technologies/overview/programming_language/all). It is
+As of October 2017, PHP is used on [78.9% of websites whose server-side language is known](https://w3techs.com/technologies/overview/programming_language/all). It is
 typically used on websites to generate web page content dynamically. Use-cases include:
 
 * Websites and web applications (server-side scripting)
@@ -102,7 +102,12 @@ Since writing the whole code for a website is not really practical/feasible for 
  * [Symfony](https://symfony.com/)
  * [Zend](http://www.zend.com/)
  * [CakePHP](https://cakephp.org/)
- 
+ * [FuelPHP](https://fuelphp.com/)
+ * [Slim](https://www.slimframework.com/)
+ * [Yii 2](https://www.yiiframework.com/)
+ * [CodeIgniter](https://codeigniter.com//)
+
+
 ## Documentation
 
 PHP is [well documented](http://php.net/docs.php). The [official docs](http://php.net/manual/en/) include examples on almost every function reference guide, as well as user comments.
@@ -111,4 +116,4 @@ PHP is [well documented](http://php.net/docs.php). The [official docs](http://ph
 
 - [Tizag.com PHP Tutorial](http://www.tizag.com/phpT/): still-relevant tutorials for getting started with PHP
 - [Awesome PHP](https://github.com/ziadoz/awesome-php): a curated list of PHP libraries, resources, and "shiny things"
-- [Laracasts.com](https://laracasts.com/): a membership website to learn web application development with PHP
+- [Laracasts.com](https://laracasts.com/): a membership website to learn web application development with PHP, comes with a free getting starting guide.

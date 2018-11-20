@@ -34,7 +34,8 @@ int cucumber; // global variable "cucumber"
 
 ## Using goto, continue, etc.
 
-This is an usual discussion among programmers, just like global variables, these types of statements are usually considered bad practice.
+This is a usual discussion among programmers, just like global variables, these types of statements are usually considered bad practice.
+
 They are considered bad because they lead to ["spaghetti code"](https://en.wikipedia.org/wiki/Spaghetti_code). When we program we want a
 linear flow, when using those statements the flow is modified and lead to a "twisted and tangled" flow.
 
@@ -75,7 +76,8 @@ for (int i = 1; i <= 5; i++)
 ## Declare constants and types at the top
 
 They are usually declared after libraries, this makes them be together and easier to read.
-For local variables it happens the same, declare them at the top (Other people preffer it declaring them as later as possible in order to save memory see: [cplusplus.com](http://www.cplusplus.com/forum/general/33612/)
+
+For local variables it happens the same, declare them at the top (Other people prefer it declaring them as later as possible in order to save memory see: [cplusplus.com](http://www.cplusplus.com/forum/general/33612/)
 
 ## Use only one return function at the end
 
