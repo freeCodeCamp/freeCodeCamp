@@ -1,16 +1,16 @@
 const path = require('path');
 const fs = require('fs');
 
-const { saveToFile } = require('./fileFunctions');
+const { saveToFile } = require('./saveToFile');
 
-class PrProcessingLog {
+class ProcessingLog {
   constructor() {
     this._start = null;
     this._lastUpdate = null;
     this._lastPRlogged = null;
     this._finish = null;
     this._prs = {};
-    this._logfile = path.resolve(__dirname, `./work-logs/${this.getRunType()}_open-prs-processed.json`);
+    this._logfile = path.resolve(__dirname, `../work-logs/${this.getRunType()}_open-prs-processed.json`);
   }
 
   getRunType() {
@@ -52,4 +52,4 @@ class PrProcessingLog {
   }
 };
 
-module.exports = { PrProcessingLog };
+module.exports = { ProcessingLog };

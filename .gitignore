@@ -80,3 +80,6 @@ typings/
 
 # local-work-logs
 work-logs/*
+
+# local input files
+input-files

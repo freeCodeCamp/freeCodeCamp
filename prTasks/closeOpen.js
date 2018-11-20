@@ -1,12 +1,11 @@
-/* closes and reopens an open PR with applicable comment */
 require('dotenv').config();
-const { owner, repo, fccBaseUrl, prBaseUrl } = require('./constants');
-const { octokitConfig, octokitAuth } = require('./octokitConfig');
+
+const { owner, repo, octokitConfig, octokitAuth } = require('../constants');
 const octokit = require('@octokit/rest')(octokitConfig);
-const { addComment } = require('./addComment');
 
 octokit.authenticate(octokitAuth);
 
+/* closes and reopens an open PR with applicable comment */
 const prOpenClose = async (number) => {
   const result = await octokit.pullRequests.update({ owner, repo , number, state: 'closed', base: 'master' })
   .then(() => {
