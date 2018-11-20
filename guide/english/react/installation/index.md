@@ -17,6 +17,12 @@ cd my-app
 npm start
 ```
 
+Another option is using the package `npx` which doesn't require you to install the package `create-react-app` before using it. So you can use it without installing it which is helpful for the future not to have too many packages installed on your machine
+```
+npm install -g npx
+npx create-react-app my-app
+```
+
 This will set up your development environment so that you can use the latest JavaScript features, provide a nice developer experience, and optimize your app for production.
 
 `npm start` will start up a development server which allows live reloading<sup>3</sup>.
@@ -25,7 +31,7 @@ After you finish your project and are ready to deploy your App to production, yo
 `npm run build`
 to create an optimized build of your app in the `build`folder.
 
-#### Usefull links
+#### Useful links
 [Create React App repository](https://github.com/facebookincubator/create-react-app#create-react-app-)
 
 #### Sources

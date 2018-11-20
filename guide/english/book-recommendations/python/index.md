@@ -57,6 +57,15 @@ You'll learn many of the first princliples for data science tools and how algori
 - ISBN-10: 149190142X
 - ISBN-13: 978-1491901427
 
+#### Making Games with Python and Pygame
+
+A great book for people willing to test their knowledge in Python by creating games. It involves the use of pygame with easy to follow examples. Paid with a free ebook available.
+
+- [Website](https://inventwithpython.com/pygame/)
+- [E-book](https://inventwithpython.com/makinggames.pdf) (free)
+- [Amazon](https://www.amazon.com/Making-Games-Python-Pygame-Sweigart/dp/1469901730?ie=UTF8)
+- ISBN-10: 9781469901732
+- ISBN-13: 978-1469901732
 
 *Automate The Boring Stuff With Python*
 
@@ -98,5 +107,6 @@ You'll learn many of the first princliples for data science tools and how algori
 - [Python in Education by Nicholas H. Tollervey[OREILLY] [FREE]](https://www.oreilly.com/programming/free/files/python-in-education.pdf)
 - [How to think like a Computer Scientist by Allen Downey[V 2.0.17] [FREE]](https://greenteapress.com/thinkpython/thinkpython.pdf)
 - [A Byte of Python[FREE]](https://python.swaroopch.com)
+- [Automate the Boring Stuff with Python [FREE]](https://automatetheboringstuff.com) 
 
 Please feel free to add more that you have found useful!

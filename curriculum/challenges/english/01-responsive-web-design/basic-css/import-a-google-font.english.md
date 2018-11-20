@@ -32,7 +32,7 @@ tests:
   - text: Your <code>h2</code> element should use the font <code>Lobster</code>.
     testString: assert($("h2").css("font-family").match(/lobster/i), 'Your <code>h2</code> element should use the font <code>Lobster</code>.');
   - text: Use an <code>h2</code> CSS selector to change the font.
-    testString: assert(/\s*h2\s*\{\s*font-family\:\s*(\'|")?Lobster(\'|")?\s*;\s*\}/gi.test(code), 'Use an <code>h2</code> CSS selector to change the font.');
+    testString: 'assert(/\s*h2\s*\{\s*font-family\:\s*(\"|")?Lobster(\"|")?(.{0,})\s*;\s*\}/gi.test(code), "Use an <code>h2</code> CSS selector to change the font.");'
   - text: Your <code>p</code> element should still use the font <code>monospace</code>.
     testString: assert($("p").css("font-family").match(/monospace/i), 'Your <code>p</code> element should still use the font <code>monospace</code>.');
 

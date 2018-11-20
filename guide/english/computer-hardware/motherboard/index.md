@@ -18,7 +18,7 @@ If you were to open up your computer and take out the motherboard, you would pro
 To understand how computers work, you don't need to know every single part of the motherboard. However, it is good to know some of the more important parts and how the motherboard connects the various parts of a computer system together. Here are some of the typical parts:
 
 - A CPU socket - the actual CPU is directly soldered onto the socket. Since high speed CPUs generate a lot of heat, there are heat sinks and mounting points for fans right next to the CPU socket.
-  Take note that CPUs only support a single socket type so it mus match with the motherboards socket to work. Socket types usually change every few generations and it also varies per label(consumer-grade CPUs, HEDT, server CPUs)
+  Take note that CPUs only support a single socket type so it must match with the motherboards socket to work. Socket types usually change every few generations and it also varies per label(consumer-grade CPUs, HEDT, server CPUs)
 - A power connector to distribute power to the CPU and other components.
 - Slots for the system's main memory, typically in the form of DRAM chips.
 - A chip forms an interface between the CPU, the main memory and other components. On many types of motherboards, this is referred to as the Northbridge. This chip also contains a large heat sink. In recent years, features of the Northbridge have been increasingly integrated into the CPU itself.
