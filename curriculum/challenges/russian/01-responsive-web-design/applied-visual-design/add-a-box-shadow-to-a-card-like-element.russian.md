@@ -13,7 +13,6 @@ localeTitle: Добавьте тень к карточному элементу
 ## Instructions
 <section id="instructions"> Элемент теперь имеет идентификатор <code>thumbnail</code>. С помощью этого селектора используйте приведенные выше примеры CSS, чтобы применить <code>box-shadow</code> к карточке. </section>
 
-
 ## Tests
 <section id='tests'>
 
@@ -21,7 +20,6 @@ localeTitle: Добавьте тень к карточному элементу
 tests:
 
   - text: Ваш код должен добавить свойство <code>box-shadow</code> для идентификатора <code>thumbnail</code>.
-
     testString: 'assert(code.match(/#thumbnail\s*?{\s*?box-shadow/g), "Your code should add a <code>box-shadow</code> property for the <code>thumbnail</code> id.");'
   - text: Вы должны использовать данный CSS для значения <code>box-shadow</code>.
     testString: 'assert(code.match(/box-shadow:\s*?0\s+?10px\s+?20px\s+?rgba\(\s*?0\s*?,\s*?0\s*?,\s*?0\s*?,\s*?0?\.19\),\s*?0\s+?6px\s+?6px\s+?rgba\(\s*?0\s*?,\s*?0\s*?,\s*?0\s*?,\s*?0?\.23\)/gi), "You should use the given CSS for the <code>box-shadow</code> value.");'
