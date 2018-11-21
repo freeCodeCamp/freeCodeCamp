@@ -21,7 +21,7 @@ title: Algorithms in JavaScript books
 *Learning JavaScript Data Structures and Algorithms: Write complex and powerful JavaScript code using the latest ECMAScript*
 - published 30 Apr 2018, by Loiane Groner
 - Data structures and algorithms are the base of every solution to any programming problem. Learn to write complex and powerful code using the latest ES 2017 features
-- [Amazon](https://https://www.amazon.com/Learning-JavaScript-Data-Structures-Algorithms/dp/1788623878/)
+- [Amazon](https://www.amazon.com/Learning-JavaScript-Data-Structures-Algorithms/dp/1788623878/)
 - ISBN-13: 978-1788623872
  
 Please feel free to add more that you have found useful!
