@@ -1,3 +1,9 @@
+/*
+This is a one-off script to run on all open PRs to add the
+"status: need to test locally" label to any PR with an existing "scope: curriculum"
+label on it.
+*/
+
 require('dotenv').config({ path: '../.env' });
 const { owner, repo, octokitConfig, octokitAuth } = require('../constants');
 

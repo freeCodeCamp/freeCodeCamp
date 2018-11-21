@@ -1,3 +1,8 @@
+/*
+This is a one-off script to find all open PRs which have one of the console.error
+descriptions in the failuresToFind.json file.
+*/
+
 require('dotenv').config({ path: '../.env' });
 const Travis = require('travis-ci');
 
