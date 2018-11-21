@@ -26,7 +26,7 @@ function checkEqual(a, b) {
 ·  Run code at [repl.it](https://repl.it/@AdrianSkar/Basic-JS-Ternary-operator).
 
 ### Code explanation
-- The function checks if the `condition` before the interrogation sign (`?`) is true and, if so, executes the `true` statement. Otherwise, it returns `false`.
+- The function checks if the `condition` before the interrogation sign (`?`) is true, and if so, executes the `true` statement. Otherwise, it returns `false`.
 
 
 ### Resources

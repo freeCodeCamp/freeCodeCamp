@@ -32,7 +32,7 @@ Find the amount of chocolate in mm3 required if a=3 mm and b=1 mm. Give your ans
 ```yml
 tests:
   - text: <code>euler449()</code> should return 103.37870096.
-    testString: 'assert.strictEqual(euler449(), 103.37870096, "<code>euler449()</code> should return 103.37870096.");'
+    testString: assert.strictEqual(euler449(), 103.37870096, '<code>euler449()</code> should return 103.37870096.');
 
 ```
 
