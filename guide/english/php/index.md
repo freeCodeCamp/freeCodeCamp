@@ -31,6 +31,9 @@ your blog posts from a database and display them. Other uses for PHP scripts inc
 * Setting and working with website cookies
 * Restricting access to certain pages of your website
 
+> The largest Social Networking Platform, [Facebook](https://www.facebook.com/) is written using PHP
+
+
 ## How does PHP work?
 
 All PHP code is executed on a web server only, not on your local computer. For example, if you complete a form on a website and submit it, or click a link to a web page written in PHP, no actual PHP code runs on your computer. Instead, the form data or request for the web page gets sent to a web server to be processed by the PHP scripts. The web server then sends the processed HTML back to you (which is where 'Hypertext Preprocessor' in the name comes from), and your web browser displays the results. For this reason, you cannot see the PHP code of a website, only the resulting HTML that the PHP scripts have produced.
@@ -69,6 +72,12 @@ You can also install a localhost server to run PHP websites. For installing Apac
 sudo apt install apache2 libapache2-mod-php
 ```
 
+Or you can also install PHP, MySQL & Web-server all by installing 
+
+<a href="https://www.apachefriends.org/download.html" target="_blank">XAMPP</a> (free and open-source cross-platform web server solution stack package) 
+or similar packages like <a href="http://www.wampserver.com/en/" target="_blank">WAMP</a>
+
+
 ## What Can PHP Do?
 
 * PHP can generate dynamic page content
@@ -78,6 +87,7 @@ sudo apt install apache2 libapache2-mod-php
 * PHP can add, delete, modify data in your database
 * PHP can be used to control user-access
 * PHP can encrypt data
+* PHP can send emails
 
 ## Why PHP?
 
@@ -98,6 +108,7 @@ Since writing the whole code for a website is not really practical/feasible for 
  
 ## Popular frameworks
  
+ * [CodeIgniter](https://codeigniter.com/)
  * [Laravel](https://laravel.com/)
  * [Symfony](https://symfony.com/)
  * [Zend](http://www.zend.com/)
@@ -105,8 +116,6 @@ Since writing the whole code for a website is not really practical/feasible for 
  * [FuelPHP](https://fuelphp.com/)
  * [Slim](https://www.slimframework.com/)
  * [Yii 2](https://www.yiiframework.com/)
- * [CodeIgniter](https://codeigniter.com//)
-
 
 ## Documentation
 
