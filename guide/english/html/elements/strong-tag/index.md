@@ -41,7 +41,7 @@ Note: The `<strong>` tag should not be used to stylistically bold text.
 
   
 #### More Information:
-- [em tag: w3schools](https://www.w3schools.com/tags/tag_strong.asp)
-- [em tag: techonthenet](https://www.techonthenet.com/html/elements/strong_tag.php)
+- [strong tag: w3schools](https://www.w3schools.com/tags/tag_strong.asp)
+- [strong tag: techonthenet](https://www.techonthenet.com/html/elements/strong_tag.php)
 
 
