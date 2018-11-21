@@ -261,7 +261,7 @@ int main(void) {
 ```
 As seen above, both `if` blocks are executed. In the second, the value of `x` is has been overwritten to `4`, which may not be what you want.
 
-## 6. Ternary operation
+## 7. Ternary operation
 The ternary operator (AKA conditional operator) is an operator that takes three arguments. The first argument is a comparison argument, the second is the result upon a true comparison , and the third is the result upon a flase comparison .It can be thought of as a shortened way of writing an if-else statement. It is often used to to assign variables based on the result of a comparison.
 
 #### Syntax
