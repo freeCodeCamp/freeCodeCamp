@@ -22,9 +22,9 @@ For the elements with id of <code>ball1</code> and <code>ball2</code>, add an <c
 ```yml
 tests:
   - text: The value of the <code>animation-timing-function</code> property for the element with the id <code>ball1</code> should be linear.
-    testString: 'assert($("#ball1").css("animation-timing-function") == "linear", "The value of the <code>animation-timing-function</code> property for the element with the id <code>ball1</code> should be linear.");'
+    testString: assert($('#ball1').css('animation-timing-function') == 'linear', 'The value of the <code>animation-timing-function</code> property for the element with the id <code>ball1</code> should be linear.');
   - text: The value of the <code>animation-timing-function</code> property for the element with the id <code>ball2</code> should be ease-out.
-    testString: 'assert($("#ball2").css("animation-timing-function") == "ease-out", "The value of the <code>animation-timing-function</code> property for the element with the id <code>ball2</code> should be ease-out.");'
+    testString: assert($('#ball2').css('animation-timing-function') == 'ease-out', 'The value of the <code>animation-timing-function</code> property for the element with the id <code>ball2</code> should be ease-out.');
 
 ```
 

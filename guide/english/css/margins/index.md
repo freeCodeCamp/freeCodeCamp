@@ -37,10 +37,26 @@ margin: 5px 1em 0 1em;
 ## Where in box model
 The margin property in CSS defines the outermost portion of the box model, creating space around an element's content, outside of any defined paddings and/or borders.
 
-![The CSS Box Model](https://www.w3.org/TR/css3-box/box.png)
+![The CSS Box Model](https://www.w3.org/TR/CSS2/images/boxdim.png "CSS Box Model Diagram")
 
 ## Collapsing margins
 Vertical margins on different elements that touch each other (thus have no content, padding, or borders separating them) will collapse, forming a single margin that is equal to the greater of the adjoining margins. This does not happen on horizontal margins (left and right), only vertical (top and bottom).
+
+## Centering an element using margin
+An element can be aligned to the center by making it a block element and changing the values of the left and right margins to auto.
+
+```css
+.c-pos {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+```
+
+## Unit Information
+ - Pixels (`px`) are relative to the viewing device.
+ - `em` implies relative to the font-size of the element (2em means 2 times the size of the current font).
+ - `%` implies relative to the parent element.
 
 ## Browser Support
 It is effectively supported in all browsers (since IE6+, Firefox 2+, Chrome 1+ etc)
