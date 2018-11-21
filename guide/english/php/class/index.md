@@ -27,3 +27,13 @@ $lab = new Lab(); // keyword new creates instance of Lab class, variable $lab po
 $lab->setName($breaking_bad); // $lab variable that points to Lab instance calls setter function setName with $breaking_bad as parameter
 echo "My Name is " . $lab->say_my_name(). "!";
 ```
+
+
+**Note**: 
+The keywords *private* and *public* define the visibility of the property or the method. 
+
+- Class members declared public can be accessed everywhere.
+- Members declared as private may only be accessed by the class that defines the member.
+
+### More Information
+[visibility documentation](http://php.net/manual/en/language.oop5.visibility.php)
