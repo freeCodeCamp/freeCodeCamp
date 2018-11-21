@@ -9,7 +9,34 @@ The most important idea behind the Flexbox model is that the parent container ca
 
 <!-- The article goes here, in GitHub-flavored Markdown. Feel free to add YouTube videos, images, and CodePen/JSBin embeds  -->
 #### Basic usage
-Flexbox can be used to center any amount of given elements inside one element. A basic example of this is the following code:
+Flexbox can be used to center any amount of given elements inside one element. Given the following HTML structure:
+
+``` html
+<div class="main-container">
+  <div class="container-item">
+    This is the first container item
+  </div>
+  <div class="container-item">
+    This is the second container item
+  </div>
+</div>
+```
+
+The following css code will apply the Flexbox model, filling the parent's container equally with its children containers and content:
+
+``` css
+.main-container {
+  display: flex;
+}
+
+.container-item {
+  flex: 1;
+}
+```
+
+In this example, the parent container is utilizing the property display set to the value of flex. This will allow children of the main container to make use of the flex property. 
+
+Another basic example of using the Flexbox model is the following code - used for the purpose of centering content within a parent container:
 
 ``` css
 .center-elements-inside {
@@ -36,6 +63,8 @@ To get a complete understanding of Flexbox, read <a href="https://medium.freecod
 For an interactive guide go through <a href="https://medium.freecodecamp.org/the-ultimate-guide-to-flexbox-learning-through-examples-8c90248d4676" target="_blank" rel="nofollow">The Ultimate Guide to Flexbox — Learning Through Examples</a>
 
 Both of these are great resources by Ohans Emmanuel.
+
+A great visual guide to Flexbox is provided by [JavaScript Teacher](https://medium.freecodecamp.org/@js_tut) on the FreeCodeCamp Medium page: [The Complete Illustrated Flexbox Tutorial](https://medium.freecodecamp.org/the-complete-illustrated-flexbox-tutorial-d35c085dbf35).
 
 Yet another great visual guide that is in-depth but easy to follow can be found in <a href="https://css-tricks.com/snippets/css/a-guide-to-flexbox/" target="_blank" rel="nofollow"> A Guide to Flexbox</a> by <a href="https://css-tricks.com" target="_blank" rel="nofolow">CSS-Tricks</a>
 

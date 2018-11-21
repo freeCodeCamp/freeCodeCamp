@@ -7,7 +7,9 @@ localeTitle: Добавьте тень к карточному элементу
 ---
 
 ## Description
-<section id="description"> Свойство <code>box-shadow</code> применяет одну или несколько теней к элементу. Свойство <code>box-shadow</code> принимает значения для <code>offset-x</code> (как далеко отталкивать тень горизонтально от элемента), <code>offset-y</code> (как далеко отталкивать тень вертикально от элемента), <code>blur-radius</code> <code>spread-radius</code> и значение цвета в таком порядке. Значения <code>blur-radius</code> <code>spread-radius</code> необязательны. Вот пример CSS для создания нескольких теней с некоторой размытостью в основном в прозрачных черных тонах: <blockquote> box-shadow: 0 10px 20px rgba (0,0,0,0,19), 0 6px 6px rgba (0,0,0,0,23); </blockquote></section>
+
+<section id="description"> Свойство <code>box-shadow</code> добавляет одну или несколько теней к элементу. Свойство <code>box-shadow</code> принимает значения для <code>offset-x</code> (как далеко по горизонтали отбрасывать тень от элемента), <code>offset-y</code> (как далеко по вертикали отбрасывать тень от элемента), <code>blur-radius</code> <code>spread-radius</code> и значение цвета в этом порядке. Значения <code>blur-radius</code> <code>spread-radius</code> необязательны. Вот пример CSS для создания нескольких теней чёрного цвета с размытием и прозрачностью: <blockquote> box-shadow: 0 10px 20px rgba (0,0,0,0,19), 0 6px 6px rgba (0,0,0,0,23); </blockquote></section>
+
 
 ## Instructions
 <section id="instructions"> Элемент теперь имеет id <code>thumbnail</code> . С помощью этого селектора используйте приведенные выше примеры CSS, чтобы поместить <code>box-shadow</code> на карту. </section>
@@ -17,7 +19,9 @@ localeTitle: Добавьте тень к карточному элементу
 
 ```yml
 tests:
-  - text: Ваш код должен добавлять свойство <code>box-shadow</code> для id <code>thumbnail</code> .
+
+  - text: Ваш код должен добавить свойство <code>box-shadow</code> для id <code>thumbnail</code> .
+
     testString: 'assert(code.match(/#thumbnail\s*?{\s*?box-shadow/g), "Your code should add a <code>box-shadow</code> property for the <code>thumbnail</code> id.");'
   - text: Вы должны использовать данный CSS для значения <code>box-shadow</code> .
     testString: 'assert(code.match(/box-shadow:\s*?0\s+?10px\s+?20px\s+?rgba\(\s*?0\s*?,\s*?0\s*?,\s*?0\s*?,\s*?0?\.19\),\s*?0\s+?6px\s+?6px\s+?rgba\(\s*?0\s*?,\s*?0\s*?,\s*?0\s*?,\s*?0?\.23\)/gi), "You should use the given CSS for the <code>box-shadow</code> value.");'

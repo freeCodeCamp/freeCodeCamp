@@ -2,10 +2,10 @@ const path = require('path');
 const fs = require('fs');
 require('dotenv').config({ path: path.resolve(__dirname, '../../../.env') });
 const { MongoClient, ObjectID } = require('mongodb');
-const { getChallengesForLang } = require('@freecodecamp/curriculum');
 const { flatten } = require('lodash');
 const debug = require('debug');
 
+const { getChallengesForLang } = require('../../../curriculum/getChallenges');
 const { createPathMigrationMap } = require('./createPathMigrationMap');
 
 const log = debug('fcc:tools:seedChallenges');
@@ -37,12 +37,12 @@ MongoClient.connect(
     const db = client.db('freecodecamp');
     const challengeCollection = db.collection('challenge');
 
-    challengeCollection.deleteMany({}, err => {
+    challengeCollection.deleteMany({}, async err => {
       handleError(err, client);
 
       log('deleted all the challenges');
 
-      const curriculum = getChallengesForLang(lang);
+      const curriculum = await getChallengesForLang(lang);
 
       const allChallenges = Object.keys(curriculum)
         .map(key => curriculum[key].blocks)

@@ -3,7 +3,6 @@ title: Laravel
 ---
 
 # Laravel
-
 [Laravel](https://laravel.com/) is a free and open-source PHP web framework available on [GitHub](https://github.com/laravel/laravel) and licensed under the terms of MIT License. It was created by Taylor Otwell and designed with the objective of enabling rapid development of web applications following the model–view–controller (MVC) architectural pattern. It has gained a lot of traction over the years and is now the most starred PHP framework on GitHub. 
 
 Some of the main features found in Laravel are different ways for accessing relational databases, utilities that aid in application deployment and maintenance, and a modular packaging system with a dedicated dependency manager. Laravel also simplifies a lot of common tasks found in web development and provides out of the box solutions for things like authentication, routing, and queues, allowing you to focus on your application.
@@ -12,9 +11,7 @@ Because Laravel is open-source, the community around it is very strong and the d
 
 Laravel also has its own online learning platform, [Laracasts](https://laracasts.com/), which offers extensive video tutorials  (some free, some available with paid subscription) on Laravel as well as PHP, Javascript, and other web development topics. The free introductory series [Laravel 5.4 From Scratch](https://laracasts.com/series/laravel-from-scratch-2017) is a great place to start.
 
-
 ### Featured Packages
-
 Ready-to-use bundles provided by Laravel through Composer and Packagist include the following:
 
 - **Cashier** - introduced in Laravel 4.2, provides an interface for managing subscription billing services provided by Stripe, such as handling coupons and generating invoices.
@@ -31,9 +28,7 @@ Ready-to-use bundles provided by Laravel through Composer and Packagist include 
 5. Improved method injection
 6. Contracts
 
-
 ### Laravel Ecosystem
-
 One of the most powerful features of Laravel is the ecosystem of tools and extensions that surrounds it.
 
 These include a range of services and software, some created by Laravel and some by the wider developer community:
@@ -52,3 +47,17 @@ These include a range of services and software, some created by Laravel and some
 - [Eloquent ORM](https://laravel.com/docs/5.7/eloquent) - database model
 - [Cachet](https://cachethq.io/) - status page system
 - [Statamic](https://statamic.com/) - CMS
+
+### Server Requirements
+The Laravel framework has a few system requirements. Of course, all of these requirements are satisfied by the Laravel Homestead virtual machine, so it's highly recommended that you use [Homestead](https://laravel.com/docs/5.7/homestead) as your local Laravel development environment.
+
+However, if you are not using Homestead, you will need to make sure your server meets the following requirements:
+
+- PHP >= 7.1.3
+- OpenSSL PHP Extension
+- PDO PHP Extension
+- Mbstring PHP Extension
+- Tokenizer PHP Extension
+- XML PHP Extension
+- Ctype PHP Extension
+- JSON PHP Extension

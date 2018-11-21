@@ -39,6 +39,23 @@ The structure of the card can be enhanced by the addition of a header and a foot
   </div>
 </div>
 ```
+### Body
+--------
+The main container of Card is .card-body.
+
+###### This is what it would look like in your HTML document
+
+```html
+<div class="card">
+  <div class="card-body">
+    This is some text within a card body.
+  </div>
+</div>
+```
+###### Result
+
+This is some text within a card body.
+
 
 ### Cards with Images
 -----------
