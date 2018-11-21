@@ -36,7 +36,7 @@ tests:
   - text: Your code should use the <code>send</code> method to send the request.
     testString: assert(code.match(/\.send\(\s*\)/g), 'Your code should use the <code>send</code> method to send the request.');
   - text: Your code should have an <code>onload</code> event handler set to a function.
-    testString: assert(code.match(/\.onload\s*=\s*function\(\s*?\)\s*?{/g), 'Your code should have an <code>onload</code> event handler set to a function.');
+    testString: assert(code.match(/\.onload\s*=\s*function\s*?\(\s*?\)\s*?{/g), 'Your code should have an <code>onload</code> event handler set to a function.');
   - text: Your code should use the <code>JSON.parse</code> method to parse the <code>responseText</code>.
     testString: assert(code.match(/JSON\.parse\(.*\.responseText\)/g), 'Your code should use the <code>JSON.parse</code> method to parse the <code>responseText</code>.');
   - text: Your code should get the element with class <code>message</code> and change its inner HTML to the string of JSON data.
