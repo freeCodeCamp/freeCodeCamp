@@ -6,7 +6,7 @@ const frontmatterCheck = (fullPath, isTranslation, fileContent) => {
   let errors = [];
   if (!frontmatter || _.isEmpty(frontmatter) || !frontmatter.title) {
     errors.push({
-      msg: `Missing \`title key\` frontmatter.`,
+      msg: `Misplaced frontmatter or missing \`title key\` frontmatter.`,
       fullPath
     });
   }
