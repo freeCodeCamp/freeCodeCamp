@@ -31,13 +31,31 @@ console.log(a); // 50
 
 ## Const
 
-Const is used to assign a constant value to the variable. And the value cannot be changed. It's fixed.
+Const is used to assign a constant value to the variable, and the value cannot be changed. It is fixed. 
 ```
 const a = 50;
 a = 60; // shows error. You cannot change the value of const.
 const b = "Constant variable";
 b = "Assigning new value"; // shows error.
 ```
+Like `let`, `const` is also block scoped, i.e, only accessible in the block it is defined in.
+
+Consider this second example.
+
+```
+const a = 15;
+const b = 20;
+if (true) {
+	const a = 20;
+	const c = 4;
+	console.log(a/c); // 5 Here, a is the block variable which has the value 20
+	console.log(b/c); // 5 Here, b is the outer variable with value 20
+}
+
+console.log(a); // 15
+console.log(c); // ReferenceError: c is not defined
+```
+
 
 Consider another example.
 ```

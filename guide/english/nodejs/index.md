@@ -1,6 +1,10 @@
 ---
 title: Node.js
 ---
+
+<img src="https://nodejs.org/static/images/logos/nodejs-new-pantone-black.png" height="123" width="201">
+
+
 ## Node.js
 
 Node.js is a JavaScript runtime built on Chrome's V8 JavaScript engine. Node.js uses an event-driven, non-blocking I/O model that makes it lightweight and efficient. Node.js' package ecosystem, npm, is the largest ecosystem of open source libraries in the world.
@@ -45,6 +49,11 @@ Both look similar but the time taken to execute are different. The python code t
 Node.js takes less time because of its non-blocking I/O model. The first call to ```my_io_task()``` starts the timer and leaves it there. It does not wait for the response from the function, instead, it moves on to call the second ```my_io_task()```, starts the timer and leaves it there.  
 
 When the timer completes it's execution taking 5 seconds, it calls the function and prints ```done``` on the console. Since, both the timers are started together, they complete together and therefore take same amount of time.
+
+#### Why use NodeJS:
+1. Great for beginners. JavaScript is a beginner friendly language.
+2. Great supportive community and massive amount of modules (Express, Grunt, etc).
+3. Wide range of hosting options.
 
 #### More information:
 - [Official NodeJS site](https://nodejs.org)

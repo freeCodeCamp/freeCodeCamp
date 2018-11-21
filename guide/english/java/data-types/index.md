@@ -18,7 +18,7 @@ The details of each of the data types is given below :
 
 ## Integers:
 
-These are of four types: `byte`, `short`, `int`, `long`. It is important to note that these are signed positive and negative values. Signed integers are stored in a computer using [2's complement](http://www.ele.uri.edu/courses/ele447/proj_pages/divid/twos.html). It consist both negative and positive values but in different formats like `(-1 to -128)` or `(0 to +127)`. An unsigned integer can hold a larger positive value, and no negative value like `(0 to 255)`. Unlike C++ there is no unsigned integer in Java.
+These are of four types: `byte`, `short`, `int`, `long`. It is important to note that these are signed positive and negative values. Signed integers are stored in a computer using [2's complement](http://www.ele.uri.edu/courses/ele447/proj_pages/divid/twos.html). It consists of both negative and positive values but in different formats like `(-1 to -128)` or `(0 to +127)`. An unsigned integer can hold a larger positive value, and no negative value like `(0 to 255)`. Unlike C++ there is no unsigned integer in Java.
 
 ### byte:
 
