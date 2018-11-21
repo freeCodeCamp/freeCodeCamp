@@ -12,6 +12,13 @@ Folder name is used in the URL, so only use dashes (-), numbers (0-9), and lower
 
 However, you can include special characters in the article title.
 
+The titles use a speacial YAML front matter syntax block as shown below. These contain the information required by the build tools to create webpages for the guide articles.
+
+These are the specific front matter requirements:
+1. The front matter block should be on the first line of the file.
+2. The front matter block should not have whitespaces before and after the lines.
+3. Each key value pair is separated by one space only
+
 Here are some examples of properly named titles:
 
 > [`src/pages/html/tables/index.md`](https://github.com/freeCodeCamp/freeCodeCamp/blob/master/src/pages/html/tables/index.md)
