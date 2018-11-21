@@ -17,31 +17,25 @@ The titles use a speacial YAML front matter syntax block as shown below. These c
 These are the specific front matter requirements:
 1. The front matter block should be on the first line of the file.
 2. The front matter block should not have whitespaces before and after the lines.
-3. Each key value pair is separated by one space only
+3. The `title` keyword and the string value after the colon (`:`) must only be separted by a single space.
+4. If the article is a translation from the english version, the front matter block should also have a `titleLocale` keyword with appilicable translation for the english title.
 
 Here are some examples of properly named titles:
 
-> [`src/pages/html/tables/index.md`](https://github.com/freeCodeCamp/freeCodeCamp/blob/master/src/pages/html/tables/index.md)
-
-```markdown
----
-title: Tables
----
-```
-
-> [`src/pages/css/borders/index.md`](https://github.com/freeCodeCamp/freeCodeCamp/blob/master/src/pages/css/borders/index.md)
-
-```markdown
----
-title: Borders
----
-```
-
-> [`src/pages/javascript/loops/for-loop/index.md`](https://github.com/freeCodeCamp/freeCodeCamp/blob/master/src/pages/javascript/loops/for-loop/index.md)
+> [`guide/english/javascript/loops/for-loop/index.md`](https://github.com/freeCodeCamp/freeCodeCamp/blob/master/guide/english/javascript/loops/for-loop/index.md)
 
 ```markdown
 ---
 title: For Loop
+---
+```
+
+> [`guide/spanish/algorithms/binary-search-trees/index.md`](https://github.com/freeCodeCamp/freeCodeCamp/blob/master/guide/spanish/algorithms/binary-search-trees/index.md)
+
+```
+---
+title: Binary Search Trees
+localeTitle: Árboles binarios de búsqueda
 ---
 ```
 
