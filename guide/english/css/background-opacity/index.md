@@ -51,8 +51,10 @@ Alternatively you can use a transparent rgba value like this:
   }
  ```
 **Transparent Hover Effect**
+
 The opacity property is often used together with the :hover selector to change the opacity on mouse-over:
 
+```
 img {
     opacity: 0.5;
     filter: alpha(opacity=50);
@@ -62,7 +64,7 @@ img:hover {
     opacity: 1.0;
     filter: alpha(opacity=100);
 }
-
+```
 
 
 The example above sets the background to be black with 50% opacity. The last value of an rgba value is the alpha value. An alpha value of 1 equals 100%, and 0.5 (.5 for short) quals 50%. We use this method to add transparency to an element without affecting the content inside.
