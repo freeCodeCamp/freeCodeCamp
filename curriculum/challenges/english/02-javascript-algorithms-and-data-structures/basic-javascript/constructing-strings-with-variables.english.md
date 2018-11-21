@@ -20,9 +20,9 @@ Set <code>myName</code> to a string equal to your name and build <code>myStr</co
 ```yml
 tests:
   - text: <code>myName</code> should be set to a string at least 3 characters long
-    testString: 'assert(typeof myName !== "undefined" && myName.length > 2, "<code>myName</code> should be set to a string at least 3 characters long");'
+    testString: assert(typeof myName !== 'undefined' && myName.length > 2, '<code>myName</code> should be set to a string at least 3 characters long');
   - text: Use two <code>+</code> operators to build <code>myStr</code> with <code>myName</code> inside it
-    testString: 'assert(code.match(/[""]\s*\+\s*myName\s*\+\s*[""]/g).length > 0, "Use two <code>+</code> operators to build <code>myStr</code> with <code>myName</code> inside it");'
+    testString: assert(code.match(/["']\s*\+\s*myName\s*\+\s*["']/g).length > 0, 'Use two <code>+</code> operators to build <code>myStr</code> with <code>myName</code> inside it');
 
 ```
 
@@ -52,7 +52,20 @@ var myStr;
 <div id='js-teardown'>
 
 ```js
-console.info('after the test');
+(function(){
+  var output = [];
+  if(typeof myName === 'string') {
+    output.push('myName = "' + myName + '"');
+  } else {
+    output.push('myName is not a string');
+  }
+  if(typeof myStr === 'string') {
+    output.push('myStr = "' + myStr + '"');
+  } else {
+    output.push('myStr is not a string');
+  }
+  return output.join('\n');
+})();
 ```
 
 </div>
