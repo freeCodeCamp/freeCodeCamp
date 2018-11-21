@@ -63,8 +63,8 @@ A one-to-many relationship is one record linked to many other records, the examp
 
 ### Foreign key
 
-To describe the Relationships above, Foreign keys(FK) should be be used to link table to tables.
-Each FK needs 3 parameter:
+To describe the Relationships above, Foreign keys(FK) used to link tables.
+Each FK needs 3 parameters:
 1. Referenced table: having candidate keys
 2. Child table: having foreign keys
 3. Constraint: having the columns which both tables have in common.
