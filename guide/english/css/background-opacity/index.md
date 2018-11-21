@@ -21,13 +21,13 @@ You have to add the following CSS property to achieve the transparency levels.
 OR
 
 .class-name {
-  opacity:1;
+  opacity:1.0;
 }
 ```
 **Translucent**
 ```css
 .class-name {
-  opacity:.5;
+  opacity:0.5;
 }
 Opacity value can be anything between 0 and 1;
 ```
@@ -40,7 +40,7 @@ Opacity value can be anything between 0 and 1;
 OR
 
 .class-name {
-  opacity:0;
+  opacity:0.0;
 }
 ```
 Alternatively you can use a transparent rgba value like this:
@@ -50,7 +50,7 @@ Alternatively you can use a transparent rgba value like this:
   background-color: rgba(0,0,0,.5);
   }
  ```
-Transparent Hover Effect
+**Transparent Hover Effect**
 The opacity property is often used together with the :hover selector to change the opacity on mouse-over:
 
 img {
