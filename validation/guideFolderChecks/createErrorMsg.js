@@ -19,7 +19,7 @@ const createErrorMsg = (errors, user) => {
   }, "");
 
   let errorMsgFooter = dedent`
-    P.S: I am just friendly bot. You should reach out to the [Contributors Chat room](https://gitter.im/FreeCodeCamp/Contributors) for more help.
+    P.S: I am just friendly bot. Review our [Guidelines for Contributing](https://github.com/FreeCodeCamp/FreeCodeCamp/blob/master/CONTRIBUTING.md) and reach out to the [Contributors Chat room](https://gitter.im/FreeCodeCamp/Contributors) for more help.
   `;
 
   return errorMsgHeader + errorMsgTable + "\n\n" + errorMsgFooter;

@@ -12,7 +12,7 @@ const { owner, repo, octokitConfig, octokitAuth } = require('../constants');
 const octokit = require('@octokit/rest')(octokitConfig);
 
 const { getPRs, getUserInput } = require('../getPRs');
-const { addLabels } = require('../prTasks');
+const { addLabels, addComment } = require('../prTasks');
 const { rateLimiter, savePrData, ProcessingLog } = require('../utils');
 const { frontmatterCheck } = require('../validation/guideFolderChecks/frontmatterCheck');
 const { createErrorMsg } = require('../validation/guideFolderChecks/createErrorMsg');
