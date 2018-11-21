@@ -25,13 +25,13 @@ This is the last challenge we'll do for our Cat Photo App for now. We hope you'v
 ```yml
 tests:
   - text: Nest your form submission button and text input in a div with class <code>row</code>.
-    testString: 'assert($("div.row:has(input[type=\"text\"])").length > 0 &&  $("div.row:has(button[type=\"submit\"])").length > 0, "Nest your form submission button and text input in a div with class <code>row</code>.");'
+    testString: assert($("div.row:has(input[type=\"text\"])").length > 0 &&  $("div.row:has(button[type=\"submit\"])").length > 0, 'Nest your form submission button and text input in a div with class <code>row</code>.');
   - text: Nest your form text input in a div with the class <code>col-xs-7</code>.
-    testString: 'assert($("div.col-xs-7:has(input[type=\"text\"])").length > 0, "Nest your form text input in a div with the class <code>col-xs-7</code>.");'
+    testString: assert($("div.col-xs-7:has(input[type=\"text\"])").length > 0, 'Nest your form text input in a div with the class <code>col-xs-7</code>.');
   - text: Nest your form submission button in a div with the class <code>col-xs-5</code>.
-    testString: 'assert($("div.col-xs-5:has(button[type=\"submit\"])").length > 0, "Nest your form submission button in a div with the class <code>col-xs-5</code>.");'
+    testString: assert($("div.col-xs-5:has(button[type=\"submit\"])").length > 0, 'Nest your form submission button in a div with the class <code>col-xs-5</code>.');
   - text: Make sure each of your <code>div</code> elements has a closing tag.
-    testString: 'assert(code.match(/<\/div>/g) && code.match(/<div/g) && code.match(/<\/div>/g).length === code.match(/<div/g).length, "Make sure each of your <code>div</code> elements has a closing tag.");'
+    testString: assert(code.match(/<\/div>/g) && code.match(/<div/g) && code.match(/<\/div>/g).length === code.match(/<div/g).length, 'Make sure each of your <code>div</code> elements has a closing tag.');
 
 ```
 
