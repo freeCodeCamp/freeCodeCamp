@@ -140,14 +140,7 @@ Please avoid creating GitHub issues for pre-requisite issues. They are out of th
 
 ### Installing dependencies
 
-Start by installing the dependencies required for the application to startup.
-
-```shell
-# Install NPM dependencies
-npm install
-```
-
-Then you need to add the private environment variables (API Keys):
+First you need to add the private environment variables (API Keys):
 
 ```shell
 # Create a copy of the "sample.env" and name it as ".env".
@@ -158,6 +151,13 @@ cp sample.env .env
 
 # Windows
 copy sample.env .env
+```
+
+Then you have to install the dependencies required for the application to startup.
+
+```shell
+# Install NPM dependencies
+npm install
 ```
 
 The keys are not required to be changed, to run the app locally. You can leave the default values from the `sample.env` as it is.
