@@ -120,12 +120,15 @@ function getUnlinkSocial(req, res, next) {
 
       const updateData = { [social]: null };
 
-      return user.update$(updateData).subscribe(() => {
+      return user.updateAttributes(updateData, err => {
+        if (err) {
+          return next(err);
+        }
         log(`${social} has been unlinked successfully`);
 
         req.flash('info', `You've successfully unlinked your ${social}.`);
-        return res.redirect('/' + username);
-      }, next);
+        return res.redirectWithFlash(`${homeLocation}/${username}`);
+      });
     });
   });
 }
