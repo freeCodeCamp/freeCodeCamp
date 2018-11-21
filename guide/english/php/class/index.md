@@ -30,8 +30,10 @@ echo "My Name is " . $lab->say_my_name(). "!";
 
 
 **Note**: 
-The keyword *Private* and *public* define the visibility of the property or the method. 
+The keywords *private* and *public* define the visibility of the property or the method. 
 
-> Class members declared public can be accessed everywhere.
-Members declared as private may only be accessed by the class that defines the member.
-> <br />[Link to the documentation](http://php.net/manual/en/language.oop5.visibility.php)
+- Class members declared public can be accessed everywhere.
+- Members declared as private may only be accessed by the class that defines the member.
+
+### More Information
+[visibility documentation](http://php.net/manual/en/language.oop5.visibility.php)
