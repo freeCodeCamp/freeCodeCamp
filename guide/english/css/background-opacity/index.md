@@ -53,7 +53,7 @@ Alternatively you can use a transparent rgba value like this:
 
 **Transparent Hover Effect**
 
-The opacity property is often used together with the :hover selector to change the opacity on mouse-over:
+The opacity property is often used together with the **:hover** selector to change the opacity on mouse-over:
 
 ```
 img {
