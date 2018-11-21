@@ -149,7 +149,7 @@ b is equal to 200
 The switch statement is often faster than nested if...else (not always). Also, the syntax of switch statement is cleaner and easy to understand.
 
 ### Syntax of switch case
-```
+```C
 switch (n)
 {
     case constant1:
@@ -174,7 +174,7 @@ In the above pseudocode, suppose the value of n is equal to constant2. The compi
 The break statement is used to prevent the code running into the next case.
 
 ### Example:
-```
+```C
 // Program to create a simple calculator
 // Performs addition, subtraction, multiplication or division depending the input from user
 
@@ -229,14 +229,39 @@ Enter two operands: 32.5
 The '-' operator entered by the user is stored in operator variable. And, two operands 32.5 and 12.4 are stored in variables firstNumber and secondNumber respectively.
 
 Then, control of the program jumps to
-```
+```C
 printf("%.1lf / %.1lf = %.1lf",firstNumber, secondNumber, firstNumber/firstNumber);
 ```
 Finally, the break statement ends the switch statement.
 
 If break statement is not used, all cases after the correct case is executed. 
 
-## 6. Ternary operation
+## 6. A note on equality `==`
+
+When doing a comparison for the `if` statement, be very careful to use the equality operator `==` and not an assignment operator `=`. If an assignment operator `=` is used, the variable is overwritten and a `True` is returned. Consider the following code:
+
+```C
+#include <stdio.h>
+
+int main(void) {
+        int x = 5;
+        if (x == 5) {
+                printf("1. x is %i\n",x);
+        }
+
+        if (x = 4) {
+                printf("2. x is %i\n",x);
+        }
+}
+```
+### Output
+```
+1. x is 5
+2. x is 4
+```
+As seen above, both `if` blocks are executed. In the second, the value of `x` is has been overwritten to `4`, which may not be what you want.
+
+## 7. Ternary operation
 The ternary operator (AKA conditional operator) is an operator that takes three arguments. The first argument is a comparison argument, the second is the result upon a true comparison , and the third is the result upon a flase comparison .It can be thought of as a shortened way of writing an if-else statement. It is often used to to assign variables based on the result of a comparison.
 
 #### Syntax
@@ -258,5 +283,3 @@ printf("%d", a);
 https://www.dotnettricks.com/learn/c/conditional-statements-if-else-switch-ladder  
 https://www.programiz.com/c-programming/c-if-else-statement  
 http://www.tutorialspoint.com/ansi_c/c_control_statements.htm
-
-
