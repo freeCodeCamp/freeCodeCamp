@@ -2,9 +2,9 @@
 title: do while loop
 ---
 ## Do While Loop
-This is just like while and for loop but the only difference is that the code in its body is executed once before checking the conditions.
+This is just like the `while` and `for` loop but the only difference is that the code in its body is executed once before checking the condition.
 
-The `do while loop` is almost the same as the while loop. The `do while loop` has the following form:
+The `do while` loop has the following form:
 ```cpp
 do 
 {
