@@ -58,7 +58,7 @@ tests:
     <li>thunder</li>
     <li>other cats</li>
   </ol>
-  <input type="text">
+  <input type="text" placeholder="cat photo URL">
 </main>
 ```
 
