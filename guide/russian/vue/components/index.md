@@ -1,5 +1,6 @@
 ---
 title: Components
+localeTitle: Компоненты
 ---
 
 ## Компоненты
