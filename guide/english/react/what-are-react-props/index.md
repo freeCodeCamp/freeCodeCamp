@@ -1,4 +1,3 @@
-
 ---
 title: React TypeChecking with PropTypes
 ---
