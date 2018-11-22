@@ -40,7 +40,7 @@ function createShortLinkHandler(app) {
           next(err);
         }
         if (!article) {
-          return res.sendStatus(404);
+          return res.status(404).send('Could not find article by shortId');
         }
         const {
           slugPart,
@@ -202,7 +202,7 @@ function createReferralHandler(app) {
 
   return function referralHandler(query, shortId, byAuthenticatedUser) {
     if (!query.refsource) {
-      return null;
+      return Promise.resolve();
     }
     const eventUpdate = {
       event: `referral - ${query.refsource}`,

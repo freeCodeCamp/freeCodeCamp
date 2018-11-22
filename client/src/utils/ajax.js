@@ -43,9 +43,7 @@ export function getUsernameExists(username) {
 
 export function getArticleById(shortId) {
   return get(
-    `/api/articles/findOne?${qs.stringify({
-      filter: JSON.stringify({ where: { shortId } })
-    })}`
+    `/n/${shortId}`
   );
 }
 
