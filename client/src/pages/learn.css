@@ -19,4 +19,8 @@
 
 #learn-app-wrapper {
   margin: 0 1em;
+  position: absolute;
+  width: 100%;
+  right: -1em;
+  padding: 0 5px;
 }
