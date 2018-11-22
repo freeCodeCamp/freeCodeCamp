@@ -24,12 +24,12 @@ You will also need to account for spaces in your string, so that the final sente
 
 ```yml
 tests:
-  - text: '<code>wordBlanks("","","","")</code> should return a string.'
-    testString: 'assert(typeof wordBlanks("","","","") === "string", "<code>wordBlanks("","","","")</code> should return a string.");'
-  - text: '<code>wordBlanks("dog", "big", "ran", "quickly")</code> should contain all of the passed in words separated by non-word characters (and any additional words in your madlib).'
-    testString: 'assert(/\bdog\b/.test(test1) && /\bbig\b/.test(test1) && /\bran\b/.test(test1) && /\bquickly\b/.test(test1),"<code>wordBlanks("dog", "big", "ran", "quickly")</code> should contain all of the passed in words separated by non-word characters (and any additional words in your madlib).");'
-  - text: '<code>wordBlanks("cat", "little", "hit", "slowly")</code> should contain all of the passed in words separated by non-word characters (and any additional words in your madlib).'
-    testString: 'assert(/\bcat\b/.test(test2) && /\blittle\b/.test(test2) && /\bhit\b/.test(test2) && /\bslowly\b/.test(test2),"<code>wordBlanks("cat", "little", "hit", "slowly")</code> should contain all of the passed in words separated by non-word characters (and any additional words in your madlib).");'
+  - text: <code>wordBlanks("","","","")</code> should return a string.
+    testString: assert(typeof wordBlanks("","","","") === 'string', '<code>wordBlanks("","","","")</code> should return a string.');
+  - text: <code>wordBlanks("dog", "big", "ran", "quickly")</code> should contain all of the passed in words separated by non-word characters (and any additional words in your madlib).
+    testString: assert(/\bdog\b/.test(test1) && /\bbig\b/.test(test1) && /\bran\b/.test(test1) && /\bquickly\b/.test(test1),'<code>wordBlanks("dog", "big", "ran", "quickly")</code> should contain all of the passed in words separated by non-word characters (and any additional words in your madlib).');
+  - text: <code>wordBlanks("cat", "little", "hit", "slowly")</code> should contain all of the passed in words separated by non-word characters (and any additional words in your madlib).
+    testString: assert(/\bcat\b/.test(test2) && /\blittle\b/.test(test2) && /\bhit\b/.test(test2) && /\bslowly\b/.test(test2),'<code>wordBlanks("cat", "little", "hit", "slowly")</code> should contain all of the passed in words separated by non-word characters (and any additional words in your madlib).');
 
 ```
 
@@ -60,7 +60,8 @@ wordBlanks("dog", "big", "ran", "quickly");
 <div id='js-teardown'>
 
 ```js
-console.info('after the test');
+var test1 = wordBlanks("dog", "big", "ran", "quickly");
+var test2 = wordBlanks("cat", "little", "hit", "slowly");
 ```
 
 </div>
