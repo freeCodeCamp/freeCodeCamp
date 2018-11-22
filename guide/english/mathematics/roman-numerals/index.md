@@ -3,13 +3,10 @@ title: Roman Numerals
 ---
 ## Roman Numerals
 
-This is a stub. <a href='https://github.com/freecodecamp/guides/tree/master/src/pages/mathematics/roman-numerals/index.md' target='_blank' rel='nofollow'>Help our community expand it</a>.
+The [numeric system](https://en.wikipedia.org/wiki/Numeric_system) represented by **Roman numerals** originated in [ancient Rome](https://en.wikipedia.org/wiki/Ancient_Rome) and remained the usual way of writing numbers throughout Europe well into the [Late Middle Ages](https://en.wikipedia.org/wiki/Late_Middle_Ages). Numbers in this system are represented by combinations of letters from the [Latin alphabet](https://en.wikipedia.org/wiki/Latin_alphabet). Roman numerals, as used today, are based on seven symbols.
 
-<a href='https://github.com/freecodecamp/guides/blob/master/README.md' target='_blank' rel='nofollow'>This quick style guide will help ensure your pull request gets accepted</a>.
-
-<!-- The article goes here, in GitHub-flavored Markdown. Feel free to add YouTube videos, images, and CodePen/JSBin embeds  -->
+<img src="https://www.dadsworksheets.com/charts/roman-numerals-chart/roman-numerals-1-100.jpg" title="Roman Numerals" />
 
 #### More Information:
 <!-- Please add any articles you think might be helpful to read before writing the article -->
-
-
+[Wikipedia: Roman numerals](https://en.wikipedia.org/wiki/Roman_numerals)

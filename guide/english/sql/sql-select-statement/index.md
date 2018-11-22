@@ -37,3 +37,5 @@ from student;
 I hope this at least gives you enough to get started.  
 
 Please see the manual for your database manager and have fun trying different options yourself.
+
+One thing to note for beginners, the select statement is not destructive and can be used as a great place to start learning sql.
