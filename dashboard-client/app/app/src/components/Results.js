@@ -2,17 +2,21 @@ import React from 'react';
 
 const Results = ({ foundPRs }) => {
   const elements = foundPRs.map((foundPR) => {
-    const { number, filenames } = foundPR;
+    const { number, filenames, username } = foundPR;
     const files = filenames.map((filename, index) => {
       return <li key={`${number}-${index}`}>{filename}</li>;
     });
     const prUrl = `https://github.com/freeCodeCamp/freeCodeCamp/pull/${number}`
+
     return (
       <div key={number}>
         <h5>
           {!Number(number)
             ? number
-            : <a href={prUrl} rel="noopener noreferrer" target="_blank">{number}</a>
+            : <>
+                <a href={prUrl} rel="noopener noreferrer" target="_blank">{number}</a>
+                <span>&nbsp;{username}</span>
+              </>
           }
         </h5>
         <ul>
