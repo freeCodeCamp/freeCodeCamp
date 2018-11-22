@@ -1,6 +1,5 @@
 ---
 title: A React Environment Using a Remote Code Repository
-
 localeTitle: Среда разработки для React с использованием удаленного репозитория
 ---
 Данное руководство поможет создать рабочую среду разработки для React, используя удаленные репозитории с необходимыми библиотеками. Для этого мы будем использовать cdnjs.cloudflare.com, react 16.0.0, react-dom, and babel-standalone 6.26.0. babel-polyfill используется для совместимости со старыми браузерами.
