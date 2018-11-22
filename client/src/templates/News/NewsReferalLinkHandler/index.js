@@ -24,7 +24,7 @@ const propTypes = {
   shortId: PropTypes.string.isRequired
 };
 
-const mapStatetoProps = () => (state, props) => {
+const mapStateToProps = () => (state, props) => {
   const article = dynamicArticleSelector(state, props);
   const fetchState = resolveShortIdFetchStateSelector(state, props);
   return {
@@ -81,6 +81,6 @@ NewsReferalLinkHandler.displayName = 'NewsReferalLinkHandler';
 NewsReferalLinkHandler.propTypes = propTypes;
 
 export default connect(
-  mapStatetoProps,
+  mapStateToProps,
   mapDispatchToProps
 )(NewsReferalLinkHandler);
