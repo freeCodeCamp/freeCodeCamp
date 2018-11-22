@@ -23,6 +23,7 @@ const mapStateToProps = (state, props) =>
       isFrontEndCert,
       isBackEndCert,
       isDataVisCert,
+      is2018FullStackCert,
       isFullStackCert
     }) => ({
       hasModernCert:
@@ -32,11 +33,11 @@ const mapStateToProps = (state, props) =>
         isJsAlgoDataStructCert ||
         isApisMicroservicesCert ||
         isInfosecQaCert ||
-        isFullStackCert,
-      hasLegacyCert: isFrontEndCert || isBackEndCert || isDataVisCert,
+        is2018FullStackCert,
+      hasLegacyCert: isFrontEndCert || isBackEndCert || isDataVisCert || isFullStackCert,
       currentCerts: [
         {
-          show: isFullStackCert,
+          show: is2018FullStackCert,
           title: 'Full Stack Certification',
           showURL: 'full-stack'
         },
