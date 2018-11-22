@@ -42,12 +42,12 @@ class DynamicNewsArticle extends Component {
     return null;
   }
 
-  componentDidUpdate(nextProps) {
+  componentDidUpdate() {
     const {
       article,
-      fetchState: { complete }
-    } = nextProps;
-    const { createFlashMessage } = this.props;
+      fetchState: { complete },
+      createFlashMessage
+    } = this.props;
     if ((isNull(article) || isEmpty(article)) && complete) {
       createFlashMessage({
         type: 'info',
