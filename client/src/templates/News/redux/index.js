@@ -57,6 +57,15 @@ export const reducer = handleActions(
         ...state.dynamicArticleByIdMap,
         [payload.shortId]: payload
       }
+    }),
+    [types.resolveShortIdError]: (state, { payload: error }) => ({
+      ...state,
+      resolveShortIdFetchState: {
+        ...defaultFetchState,
+        pending: false,
+        errored: true,
+        error
+      }
     })
   },
   initialState
