@@ -1,6 +1,6 @@
 ---
 title: Installation
-localeTitle: Installation
+localeTitle: Монтаж
 ---
 ## Установка React
 
