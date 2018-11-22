@@ -24,13 +24,13 @@ Use <code>Clockwise Notation</code> to give the element with the <code>blue-box<
 ```yml
 tests:
   - text: Your <code>blue-box</code> class should give the top of elements <code>40px</code> of <code>margin</code>.
-    testString: 'assert($(".blue-box").css("margin-top") === "40px", "Your <code>blue-box</code> class should give the top of elements <code>40px</code> of <code>margin</code>.");'
+    testString: assert($(".blue-box").css("margin-top") === "40px", 'Your <code>blue-box</code> class should give the top of elements <code>40px</code> of <code>margin</code>.');
   - text: Your <code>blue-box</code> class should give the right of elements <code>20px</code> of <code>margin</code>.
-    testString: 'assert($(".blue-box").css("margin-right") === "20px", "Your <code>blue-box</code> class should give the right of elements <code>20px</code> of <code>margin</code>.");'
+    testString: assert($(".blue-box").css("margin-right") === "20px", 'Your <code>blue-box</code> class should give the right of elements <code>20px</code> of <code>margin</code>.');
   - text: Your <code>blue-box</code> class should give the bottom of elements <code>20px</code> of <code>margin</code>.
-    testString: 'assert($(".blue-box").css("margin-bottom") === "20px", "Your <code>blue-box</code> class should give the bottom of elements <code>20px</code> of <code>margin</code>.");'
+    testString: assert($(".blue-box").css("margin-bottom") === "20px", 'Your <code>blue-box</code> class should give the bottom of elements <code>20px</code> of <code>margin</code>.');
   - text: Your <code>blue-box</code> class should give the left of elements <code>40px</code> of <code>margin</code>.
-    testString: 'assert($(".blue-box").css("margin-left") === "40px", "Your <code>blue-box</code> class should give the left of elements <code>40px</code> of <code>margin</code>.");'
+    testString: assert($(".blue-box").css("margin-left") === "40px", 'Your <code>blue-box</code> class should give the left of elements <code>40px</code> of <code>margin</code>.');
 
 ```
 
