@@ -82,4 +82,4 @@ typings/
 work-logs/*
 
 # local input files
-input-files
+input-files/*
