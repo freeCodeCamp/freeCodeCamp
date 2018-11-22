@@ -4,7 +4,7 @@ title: Arrow Functions
 
 ## Arrow functions
 
-Functions in ES6 have changed a bit. I mean the syntax.
+ES6 has introduced a new syntax that allows to declare functions.
 
 ```javascript
 // Old Syntax
@@ -16,10 +16,12 @@ function oldOne() {
 const newOne = () => {
  console.log("Hello World..!");
 }
+
+// Or on one line
+const newOne = () => console.log("Hello World..!");
 ```
 
-The new syntax may be confusing a little bit. But I will try to explain the syntax.
-There are two parts of the syntax.
+The new syntax may be confusing. There are two major parts of it.
 
 1. const newOne = ()
 2. => {}
@@ -58,7 +60,3 @@ axios.get(url).then(response => {
 });
 
 ```
-
-
-
-I don’t think I need to give an explanation for this. It's straightforward.
