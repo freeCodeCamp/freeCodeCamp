@@ -97,7 +97,7 @@ function generateArticle() {
       () => `<p>${faker.lorem.paragraph()}</p>`
     ),
     published: true,
-    featured: true,
+    featured: Math.random() < 0.6,
     underReview: false,
     viewCount: faker.random.number(90000),
     firstPublishedDate: fakeDate,
