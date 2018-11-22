@@ -12,7 +12,7 @@ const fetch = require('node-fetch');
 const { owner, repo, octokitConfig, octokitAuth } = require('../constants');
 
 const octokit = require('@octokit/rest')(octokitConfig);
-const { getPRs, getUserInput } = require('../getPRs');
+const { getPRs, getUserInput } = require('../get-prs');
 const { savePrData, ProcessingLog } = require('../utils');
 
 octokit.authenticate(octokitAuth);

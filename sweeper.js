@@ -2,7 +2,7 @@ const { owner, repo, octokitConfig, octokitAuth } = require('./constants');
 
 const octokit = require('@octokit/rest')(octokitConfig);
 
-const { getPRs, getUserInput } = require('./getPRs');
+const { getPRs, getUserInput } = require('./get-prs');
 const { guideFolderChecks } = require('./validation');
 const { savePrData, ProcessingLog } = require('./utils');
 const { labeler } = require('./labeler');

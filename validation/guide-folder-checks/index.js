@@ -1,9 +1,9 @@
 const fetch = require('node-fetch');
 
-const { addComment } = require('../../prTasks');
+const { addComment } = require('../../pr-tasks');
 const { rateLimiter } = require('../../utils');
-const { createErrorMsg } = require('./createErrorMsg');
-const { checkPath } = require('./checkPath');
+const { createErrorMsg } = require('./create-error-msg');
+const { checkPath } = require('./check-path');
 
 /* check for guide folder issues and add applicable comment */
 const guideFolderChecks = async (number, prFiles, user) => {

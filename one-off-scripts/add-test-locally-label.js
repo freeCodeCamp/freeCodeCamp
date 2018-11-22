@@ -9,8 +9,8 @@ const { owner, repo, octokitConfig, octokitAuth } = require('../constants');
 
 const octokit = require('@octokit/rest')(octokitConfig);
 
-const { getPRs, getUserInput } = require('../getPRs');
-const { addLabels } = require('../prTasks');
+const { getPRs, getUserInput } = require('../get-prs');
+const { addLabels } = require('../pr-tasks');
 const { rateLimiter, savePrData, ProcessingLog } = require('../utils');
 
 octokit.authenticate(octokitAuth);

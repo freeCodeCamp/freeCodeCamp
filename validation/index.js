@@ -1,4 +1,4 @@
-const { validLabels } = require('./validLabels');
-const { guideFolderChecks } = require('./guideFolderChecks');
+const { validLabels } = require('./valid-labels');
+const { guideFolderChecks } = require('./guide-folder-checks');
 
 module.exports = { validLabels, guideFolderChecks };

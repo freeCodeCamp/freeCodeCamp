@@ -1,7 +1,7 @@
 const formatDate = require('date-fns/format');
 const path = require('path');
 
-const { saveToFile } = require('./saveToFile');
+const { saveToFile } = require('./save-to-file');
 
 const savePrData = (openPRs, firstPR, lastPR) => {
   const now = formatDate(new Date(), 'YYYY-MM-DDTHHmmss');

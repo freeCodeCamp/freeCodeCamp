@@ -1,5 +1,5 @@
 const { validLabels } = require('./validation');
-const { addLabels } = require('./prTasks');
+const { addLabels } = require('./pr-tasks');
 const { rateLimiter } = require('./utils');
 
 const labeler = async (number, prFiles, currentLabels, guideFolderErrorsComment) => {

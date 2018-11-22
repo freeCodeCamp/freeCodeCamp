@@ -1,7 +1,7 @@
 const path = require('path');
 const fs = require('fs');
 
-const { saveToFile } = require('./saveToFile');
+const { saveToFile } = require('./save-to-file');
 
 class ProcessingLog {
   constructor() {

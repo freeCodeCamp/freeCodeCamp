@@ -1,4 +1,4 @@
-const { frontmatterCheck } = require('./frontmatterCheck');
+const { frontmatterCheck } = require('./frontmatter-check');
 
 const allowedLangDirNames = [
   "arabic",
