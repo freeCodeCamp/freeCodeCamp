@@ -4,7 +4,7 @@ require('dotenv').config();
 const { owner, repo, octokitConfig, octokitAuth } = require('../constants');
 
 const octokit = require('@octokit/rest')(octokitConfig);
-const { getRange } = require('./prStats');
+const { getRange } = require('./pr-stats');
 
 octokit.authenticate(octokitAuth);
 
