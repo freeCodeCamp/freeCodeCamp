@@ -95,20 +95,12 @@ which would end up looking like:
 </dl>
 
 
-## More Information:
-
-<!-- Please add any articles you think might be helpful to read before writing the article -->
-* [HTML lists on w3schools](https://www.w3schools.com/html/html_lists.asp)
-
-
-
-
-### Nested HTML Lists
+## Nested HTML Lists
 
 List can be nested (lists inside lists):
 
 ##### Code:
-
+```html
 <ul>
   <li>Coffee</li>
   <li>Tea
@@ -119,7 +111,7 @@ List can be nested (lists inside lists):
   </li>
   <li>Milk</li>
 </ul>
-
+```
 
 ##### Output:
 
@@ -134,3 +126,7 @@ List can be nested (lists inside lists):
   <li>Milk</li>
 </ul>
 
+#### More Information:
+
+<!-- Please add any articles you think might be helpful to read before writing the article -->
+* [HTML lists on w3schools](https://www.w3schools.com/html/html_lists.asp)
