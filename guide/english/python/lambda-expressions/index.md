@@ -1,3 +1,6 @@
+---
+title: Lambda Expressions
+---
 ## Lambda Expressions
 
 Lambda Expressions are ideally used when we have something simple to be done and we are more interested in quickly getting the job done rather than formally naming the function. Lambda expressions also known as anonymous functions.
