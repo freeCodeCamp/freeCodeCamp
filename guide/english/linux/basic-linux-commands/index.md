@@ -50,6 +50,8 @@ When starting out with linux, there are some basic commands everyone should know
 
 14. **cp** - copy files and directories
 - Use 'cp' to copy a file or a direcotry with files inside it to another location using command 'cp CURRENT_FILE-LOCATION DESTINATION_FOLDER'. Add '-r' flag to copy a directory that is not empty. 
+ 15. **du** - estimate file space usage
+- Use 'du' to estimate file space usage. du is abbreviation of "disk usage". This command tool reports usage by given directory
 
 15. **ln** - link LINKNAME to TARGET file/directory
 - Link is pointer which connects file name to actual bytes of data on the disk. More than one link can point on the same data.
