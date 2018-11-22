@@ -15,7 +15,7 @@ Remember to use <code>#</code> as your <code>a</code> element's <code>href</code
 
 ## Instructions
 <section id='instructions'>
-Place the existing image element within an anchor element.
+Place the existing image element within an <code>anchor</code> element.
 Once you've done this, hover over your image with your cursor. Your cursor's normal pointer should become the link clicking pointer. The photo is now a link.
 </section>
 
@@ -25,11 +25,11 @@ Once you've done this, hover over your image with your cursor. Your cursor's nor
 ```yml
 tests:
   - text: Nest the existing <code>img</code> element within an <code>a</code> element.
-    testString: 'assert($("a").children("img").length > 0, "Nest the existing <code>img</code> element within an <code>a</code> element.");'
-  - text: 'Your <code>a</code> element should be a dead link with a <code>href</code> attribute set to <code>#</code>.'
-    testString: 'assert(new RegExp("#").test($("a").children("img").parent().attr("href")), "Your <code>a</code> element should be a dead link with a <code>href</code> attribute set to <code>#</code>.");'
+    testString: assert($("a").children("img").length > 0, 'Nest the existing <code>img</code> element within an <code>a</code> element.');
+  - text: Your <code>a</code> element should be a dead link with a <code>href</code> attribute set to <code>#</code>.
+    testString: assert(new RegExp("#").test($("a").children("img").parent().attr("href")), 'Your <code>a</code> element should be a dead link with a <code>href</code> attribute set to <code>#</code>.');
   - text: Make sure each of your <code>a</code> elements has a closing tag.
-    testString: 'assert(code.match(/<\/a>/g) && code.match(/<a/g) && code.match(/<\/a>/g).length === code.match(/<a/g).length, "Make sure each of your <code>a</code> elements has a closing tag.");'
+    testString: assert(code.match(/<\/a>/g) && code.match(/<a/g) && code.match(/<\/a>/g).length === code.match(/<a/g).length, 'Make sure each of your <code>a</code> elements has a closing tag.');
 
 ```
 

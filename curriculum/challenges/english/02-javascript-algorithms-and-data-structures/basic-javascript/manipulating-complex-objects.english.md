@@ -27,23 +27,23 @@ Add a new album to the <code>myMusic</code> array. Add <code>artist</code> and <
 ```yml
 tests:
   - text: <code>myMusic</code> should be an array
-    testString: 'assert(Array.isArray(myMusic), "<code>myMusic</code> should be an array");'
+    testString: assert(Array.isArray(myMusic), '<code>myMusic</code> should be an array');
   - text: <code>myMusic</code> should have at least two elements
-    testString: 'assert(myMusic.length > 1, "<code>myMusic</code> should have at least two elements");'
-  - text: '<code>myMusic[1]</code> should be an object'
-    testString: 'assert(typeof myMusic[1] === "object", "<code>myMusic[1]</code> should be an object");'
-  - text: '<code>myMusic[1]</code> should have at least 4 properties'
-    testString: 'assert(Object.keys(myMusic[1]).length > 3, "<code>myMusic[1]</code> should have at least 4 properties");'
-  - text: '<code>myMusic[1]</code> should contain an <code>artist</code> property which is a string'
-    testString: 'assert(myMusic[1].hasOwnProperty("artist") && typeof myMusic[1].artist === "string", "<code>myMusic[1]</code> should contain an <code>artist</code> property which is a string");'
-  - text: '<code>myMusic[1]</code> should  contain a <code>title</code> property which is a string'
-    testString: 'assert(myMusic[1].hasOwnProperty("title") && typeof myMusic[1].title === "string", "<code>myMusic[1]</code> should  contain a <code>title</code> property which is a string");'
-  - text: '<code>myMusic[1]</code> should contain a <code>release_year</code> property which is a number'
-    testString: 'assert(myMusic[1].hasOwnProperty("release_year") && typeof myMusic[1].release_year === "number", "<code>myMusic[1]</code> should contain a <code>release_year</code> property which is a number");'
-  - text: '<code>myMusic[1]</code> should contain a <code>formats</code> property which is an array'
-    testString: 'assert(myMusic[1].hasOwnProperty("formats") && Array.isArray(myMusic[1].formats), "<code>myMusic[1]</code> should contain a <code>formats</code> property which is an array");'
+    testString: assert(myMusic.length > 1, '<code>myMusic</code> should have at least two elements');
+  - text: <code>myMusic[1]</code> should be an object
+    testString: assert(typeof myMusic[1] === 'object', '<code>myMusic[1]</code> should be an object');
+  - text: <code>myMusic[1]</code> should have at least 4 properties
+    testString: assert(Object.keys(myMusic[1]).length > 3, '<code>myMusic[1]</code> should have at least 4 properties');
+  - text: <code>myMusic[1]</code> should contain an <code>artist</code> property which is a string
+    testString: assert(myMusic[1].hasOwnProperty('artist') && typeof myMusic[1].artist === 'string', '<code>myMusic[1]</code> should contain an <code>artist</code> property which is a string');
+  - text: <code>myMusic[1]</code> should  contain a <code>title</code> property which is a string
+    testString: assert(myMusic[1].hasOwnProperty('title') && typeof myMusic[1].title === 'string', '<code>myMusic[1]</code> should  contain a <code>title</code> property which is a string');
+  - text: <code>myMusic[1]</code> should contain a <code>release_year</code> property which is a number
+    testString: assert(myMusic[1].hasOwnProperty('release_year') && typeof myMusic[1].release_year === 'number', '<code>myMusic[1]</code> should contain a <code>release_year</code> property which is a number');
+  - text: <code>myMusic[1]</code> should contain a <code>formats</code> property which is an array
+    testString: assert(myMusic[1].hasOwnProperty('formats') && Array.isArray(myMusic[1].formats), '<code>myMusic[1]</code> should contain a <code>formats</code> property which is an array');
   - text: <code>formats</code> should be an array of strings with at least two elements
-    testString: 'assert(myMusic[1].formats.every(function(item) { return (typeof item === "string")}) && myMusic[1].formats.length > 1, "<code>formats</code> should be an array of strings with at least two elements");'
+    testString: assert(myMusic[1].formats.every(function(item) { return (typeof item === "string")}) && myMusic[1].formats.length > 1, '<code>formats</code> should be an array of strings with at least two elements');
 
 ```
 
@@ -79,7 +79,7 @@ var myMusic = [
 <div id='js-teardown'>
 
 ```js
-console.info('after the test');
+(function(x){ if (Array.isArray(x)) { return JSON.stringify(x); } return "myMusic is not an array"})(myMusic);
 ```
 
 </div>

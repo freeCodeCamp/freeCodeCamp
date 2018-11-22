@@ -8,7 +8,7 @@ With CSS3 you can create two types of shadows: `text-shadow` (adds shadow to tex
 ### CSS3 Text Shadow
 The `text-shadow` property can take up to four values:
 * the horizontal shadow
-* the vertical shadow 
+* the vertical shadow
 * the blur effect
 * the color
 
@@ -39,14 +39,14 @@ h1 {
 	text-shadow: 0 0 3px #F10D58, 0 0 7px #4578D5;
 }
 ```
-![Multiple shadows examaple with white text](https://raw.githubusercontent.com/nawnaw7/FCC-guides-CSS3-shadows-images/master/CSS3%20Shadow%20Effects%20Images/text-shadow3.png)
+![Multiple shadows example with white text](https://raw.githubusercontent.com/nawnaw7/FCC-guides-CSS3-shadows-images/master/CSS3%20Shadow%20Effects%20Images/text-shadow3.png)
 
 
 ### CSS3 Box Shadow
 The `box-shadow` property can take up to six values:
 * (optional) the `inset` keyword (changes the shadow to one inside the frame)
 * the horizontal shadow
-* the vertical shadow 
+* the vertical shadow
 * the blur effect
 * the spreading
 * the color
