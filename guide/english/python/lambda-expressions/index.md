@@ -3,7 +3,7 @@ title: Lambda Expressions
 ---
 ## Lambda Expressions
 
-Lambda Expressions are ideally used when we have something simple to be done and we are more interested in quickly getting the job done rather than formally naming the function. Lambda expressions also known as anonymous functions.
+Lambda Expressions are ideally used when we have something simple to be done and we are more interested in quickly getting the job done rather than formally naming the function. Lambda expressions are also known as anonymous functions.
 
 Lambda Expressions in Python are a short way to declare small and anonymous functions (it is not necessary to provide a name for lambda functions). Lambda functions behave just like regular functions declared with the `def` keyword. They come in handy when you want to define a small function in a concise way. They can contain only one expression, so they are not well suited for functions with control-flow statements.
 
