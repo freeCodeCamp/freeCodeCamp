@@ -20,13 +20,13 @@ Pipes are also *chainable*. You can integrate pipes one after the other to perfo
 
 #### Use Cases
 
-Angular comes prepackaged with a basic set of pipes. Working with a couple of them will develop the intuition to handle the rest. The following list provides two examples.
+Angular comes prepackaged with a basic set of pipes. Working with a couple of them will develop the intuition to handle the rest. The following list provides three examples.
 
 * AsyncPipe
 
 * DatePipe
 
-These two perform simple tasks. Their simplicity is massively beneficial.
+* TitleCasePipe
 
 ##### AsyncPipe
 
@@ -45,6 +45,9 @@ In the example, `potatoSack$` is an Observable pending an upload of potatoes. On
 ##### DatePipe
 
 Formatting date strings takes a fair bit of hacking with the JavaScript `Date` object. The DatePipe provides a powerful way to format dates assuming the given input is a valid time format.
+
+##### TitleCasePipe
+Transforms text to title case. Capitalizes the first letter of each word, and transforms the rest of the word to lower case. Words are delimited by any whitespace character, such as a space, tab, or line-feed character.
 
 ```typescript
 // example.component.ts
