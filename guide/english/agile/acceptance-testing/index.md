@@ -4,7 +4,7 @@ title: Acceptance Testing
 
 ## Acceptance Testing
 
-Acceptance Testing, a Testing technique performed to determine whether or not the software system has met the requirement specifications. The main purpose of this test is to evaluate the system's compliance with the business requirements and verify if it is has met the required criteria for delivery to end users.
+Acceptance testing is a testing technique performed to determine whether or not the software system has met the requirement specifications. The main purpose of this test is to evaluate the system's compliance with the business requirements and verify if it has met the required criteria for delivery to end users.
 
 In software development, User Acceptance Testing (UAT) - also called beta testing, application testing, and end user testing - is a phase of software development in which the software is tested in the "real world" by the intended audience.In engineering and its various subdisciplines acceptance testing is a test conducted to determine if the requirements of a specification or contract are met. 
 
@@ -114,9 +114,11 @@ There are multiple scenarios here such as:
 You can write Acceptance Tests for each of these sub-features of the bigger dialog box feature. Aside from the code that handles the infrastructure of how the test will be executed, your test for the first scenario could look like (in pseudocode):
 
 - Given that the page is opened
-   - The dialog box should be visible
-   - And The dialog box should contain an input box
-   - And The input box should have placeholder text "Your name, please!"
+  - The dialog box should be visible
+  - And the dialog box should contain an input box
+  - And the input box should have placeholder text "Your name, please!"
+  - And the dialog box shoud contain a "Submit" button
+
 
 ### Notes
 

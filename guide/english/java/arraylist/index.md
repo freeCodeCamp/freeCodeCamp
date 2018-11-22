@@ -6,12 +6,12 @@ title: ArrayList
   
   The *Collection framework* consists of all interfaces and classes that can hold a set of values (similar to [arrays](https://docs.oracle.com/javase/tutorial/java/nutsandbolts/arrays.html)). **ArrayList** is a class that is in this hierarchy and known as a _**Collection object**_. It implements the *List* interface which in turn implements the *Collection* interface. This *Collection* interface can be found in the `java.util` package. You will need to import this package.
   
-  import java.util.ArrayList;  //it would more efficient.
+  ```java import java.util.ArrayList;  //is more efficient than importing all of java.util```
   
-  always import specific package that saves memory size and works in less time
+  Always import the most specific package in order to save memory size and performance time.
   
   
-  ArrayList is a class that is used to create dynamic arrays. It is slower than regular arrays but allows for a lot of manipulation. It can be initialized to have a specific size or it will have a default size of 10 units. 
+  `ArrayList` is a class that is used to create dynamic arrays. It is slower than regular arrays but allows for a lot of manipulation. It should be initialized to have a specific size or it will have the default size of 10 units. 
   
   
   ```java
@@ -48,7 +48,7 @@ Since ArrayList implements *List*, an ArrayList can be created using the followi
   ```java
   variable_name.get(index_number);
   ```
-   
+
 **Modify/update element at specified index**
    ```java
    variable_name.set(index_number, element);
@@ -65,8 +65,9 @@ Since ArrayList implements *List*, an ArrayList can be created using the followi
   ```
   
 **Reverse elements in list**  
-  import java.util.Collections // package
+  
   ```java
+  import java.util.Collections // package
   Collections.reverse(variable_name);
   ```
   
@@ -101,5 +102,5 @@ Since ArrayList implements *List*, an ArrayList can be created using the followi
  It is important to understand the Big O for methods of data structures. This way, you can choose the most efficient data structure for your program.
 
 
-## More Information
+#### More Information
 - [ArrayList Documentation](https://docs.oracle.com/javase/8/docs/api/java/util/ArrayList.html)

@@ -13,7 +13,6 @@
     "@fortawesome/free-regular-svg-icons": "^5.2.0",
     "@fortawesome/free-solid-svg-icons": "^5.2.0",
     "@fortawesome/react-fontawesome": "0.0.20",
-    "@freecodecamp/curriculum": "0.0.0-next.4",
     "@freecodecamp/react-bootstrap": "^0.32.3",
     "@reach/router": "^1.1.1",
     "axios": "^0.18.0",
@@ -82,6 +81,7 @@
   },
   "devDependencies": {
     "babel-plugin-transform-imports": "^1.5.0",
+    "chokidar": "^2.0.4",
     "eslint": "^5.5.0",
     "eslint-config-freecodecamp": "^1.1.1",
     "jest": "^23.6.0",
