@@ -49,12 +49,18 @@ body{
 ```
 You're done! You successfully have new fonts for your site.
 
-##### Additional Resources:
+#### Additional Resources:
 * [Google Fonts](http://fonts.google.com)
 * [FontSpace](http://www.fontspace.com)
 * [Font Squirrel](http://fontsquirrel.com)
 * [DaFont](http://www.dafont.com)
 * [1001 Free Fonts](http://www.1001freefonts.com)
+
+#### Paid Font Reources:
+
+* [Fonts by Hoefler & Co.] (https://www.typography.com/)
+* [MyFonts] (https://www.myfonts.com/)
+* [Adobe Typekit] (https://fonts.adobe.com/)
 
 #### More Information:
 <!-- Please add any articles you think might be helpful to read before writing the article -->
