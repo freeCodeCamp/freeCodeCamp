@@ -5,7 +5,6 @@ import { isNull, pick, isEmpty } from 'lodash';
 import { navigate } from 'gatsby';
 
 import Layout from '../components/layouts/Default';
-import NotFoundPage from '../components/FourOhFour';
 import Loader from '../components/helpers/Loader';
 
 import { getShortIdFromSlug } from '../utils';
@@ -90,13 +89,8 @@ class DynamicNewsArticle extends Component {
 
   render() {
     const {
-      splat,
       fetchState: { pending }
     } = this.props;
-    if (splat) {
-      // This is an incorrect URL - 404
-      return <NotFoundPage />;
-    }
     if (pending) {
       return (
         <Layout>

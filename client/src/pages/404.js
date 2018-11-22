@@ -1,5 +1,8 @@
 import React from 'react';
 import { Router } from '@reach/router';
+
+import NotFoundPage from '../components/FourOhFour';
+import RedirectNews from '../components/RedirectNews';
 /* eslint-disable max-len */
 import ShowProfileOrFourOhFour from '../client-only-routes/ShowProfileOrFourOhFour';
 import ShowDynamicNewsOrFourOhFour from '../client-only-routes/ShowDynamicNewsOrFourOhFour';
@@ -8,11 +11,10 @@ import ShowDynamicNewsOrFourOhFour from '../client-only-routes/ShowDynamicNewsOr
 function FourOhFourPage() {
   return (
     <Router>
-      <ShowProfileOrFourOhFour path='/:maybeUser/:splat' />
       <ShowProfileOrFourOhFour path='/:maybeUser' />
-      <ShowDynamicNewsOrFourOhFour path='/news/:author/' />
       <ShowDynamicNewsOrFourOhFour path='/news/:author/:articleSlug' />
-      <ShowDynamicNewsOrFourOhFour path='/news/:author/:articleSlug/:splat' />
+      <RedirectNews path='/news/:author' />
+      <NotFoundPage default={true} />
     </Router>
   );
 }
