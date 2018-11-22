@@ -14,6 +14,7 @@ const guideFolderChecks = async (number, prFiles, user) => {
       const response = await fetch(fileUrl);
       const fileContent = await response.text();
       newErrors = checkPath(fullPath, fileContent);
+      await rateLimiter(+process.env.RATELIMIT_INTERVAL | 1500);
     }
     if (newErrors) {
       prErrors = prErrors.concat(newErrors);
