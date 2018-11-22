@@ -19,8 +19,8 @@ const octokitConfig = {
 
 const octokitAuth = {
     type: 'basic',
-    username: process.env.USERNAME,
-    password: process.env.ACCESS_TOKEN
+    username: process.env.GITHUB_USERNAME,
+    password: process.env.GITHUB_ACCESS_TOKEN
 };
 
 module.exports = { owner, repo, prBaseUrl, octokitConfig, octokitAuth }
