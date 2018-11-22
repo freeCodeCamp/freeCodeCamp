@@ -20,5 +20,3 @@ export const getShortIdFromSlug = (slug = '') => {
   const [, maybeShortId = ''] = operableSlug.split('--');
   return maybeShortId.replace(/\/*$/, '');
 };
-
-export const handledErrorSymbol = Symbol('handledError');
