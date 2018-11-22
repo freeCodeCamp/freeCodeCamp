@@ -11,6 +11,7 @@ It can be defined as,
 
 <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/6/6b/Absolute_value.svg/2000px-Absolute_value.svg.png" width="300">  
 
+The absolute value of a quantity x is denoted by |x| (the quantity is enclosed between two vertical bars).
 Here you can see that in the graph of y = |x|, if -2 is input in to the function, 2 is the result. This is because -2 has a distance of 2 from zero. The absolute value of a number can never be negative. 
 
 ### Examples
