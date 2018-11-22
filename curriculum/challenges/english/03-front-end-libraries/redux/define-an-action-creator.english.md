@@ -21,11 +21,11 @@ Define a function named <code>actionCreator()</code> that returns the <code>acti
 ```yml
 tests:
   - text: The function <code>actionCreator</code> should exist.
-    testString: 'assert(typeof actionCreator === "function", "The function <code>actionCreator</code> should exist.");'
+    testString: assert(typeof actionCreator === 'function', 'The function <code>actionCreator</code> should exist.');
   - text: Running the <code>actionCreator</code> function should return the action object.
-    testString: 'assert(typeof action === "object", "Running the <code>actionCreator</code> function should return the action object.");'
+    testString: assert(typeof action === 'object', 'Running the <code>actionCreator</code> function should return the action object.');
   - text: The returned action should have a key property type with value <code>LOGIN</code>.
-    testString: 'assert(action.type === "LOGIN", "The returned action should have a key property type with value <code>LOGIN</code>.");'
+    testString: assert(action.type === 'LOGIN', 'The returned action should have a key property type with value <code>LOGIN</code>.');
 
 ```
 
