@@ -1,10 +1,10 @@
 ---
 title: Swift
-localeTitle: Стриж
+localeTitle: Swift
 ---
 ![Swift Logo](https://developer.apple.com/assets/elements/icons/swift-playgrounds/swift-playgrounds-64x64_2x.png)
 
-# Что такое Свифт?
+# Что такое Swift?
 
 Swift - это [открытый](https://en.wikipedia.org/wiki/Open-source_software) язык программирования общего назначения, разработанный Apple Inc. Они описывают его как:
 
@@ -64,4 +64,4 @@ let x = "World"
 
 ### Источники
 
-1.  «Swift 4 - мощный язык программирования, который также легко усваивается». Apple, [developer.apple.com/swift](https://developer.apple.com/swift/) , доступ к 31 октября 2017 года.
+1.  «Swift 4 - мощный язык программирования, который также легко усваивается». Apple, [developer.apple.com/swift](https://developer.apple.com/swift/).
