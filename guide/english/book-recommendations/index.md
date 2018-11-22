@@ -148,7 +148,7 @@ title: Books to Read for Programmers
 - ISBN-13: 9781617292392 
 
 *How to Win Friends & Influence People*
-- [Amazon](https://www.amazon.com/gp/product/0671027034/ref=dbs_a_def_rwt_bibl_vppi_i0)
+- [Amazon Smile](https://smile.amazon.com/dp/product/0671027034/)
 - ISBN-13: 978-0671027032
 
 ## Other
