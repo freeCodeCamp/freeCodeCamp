@@ -1,6 +1,6 @@
 ---
 title: Higher-Order Components
-localeTitle: Higher-Order Components
+localeTitle: Компоненты более высокого порядка
 ---
 ## Higher-Order Components
 
