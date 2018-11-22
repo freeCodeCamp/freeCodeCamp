@@ -1,5 +1,6 @@
 ---
-title: Docker
+title: Docker	
+localeTitle: Docker
 ---
 ![alt text](https://www.docker.com/sites/default/files/horizontal.png)
 ## Docker
