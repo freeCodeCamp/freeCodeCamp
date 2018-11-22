@@ -1,6 +1,6 @@
-
 ---
 title: Hello World
+localeTitle: Hello World
 ---
 ## Hello World!!
 
