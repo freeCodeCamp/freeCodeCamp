@@ -1,6 +1,5 @@
 ---
 title: State vs Props
-
 localeTitle: Состояние vs свойства
 ---
 ## Состояние vs свойства
