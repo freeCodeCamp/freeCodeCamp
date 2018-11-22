@@ -1,16 +1,22 @@
+import {navigate} from 'gatsby';
 import { takeEvery, put } from 'redux-saga/effects';
-import { has, isError } from 'lodash';
+import { isError } from 'lodash';
 
-import { handledErrorSymbol } from '../utils';
+import {isHandledError, unwrapHandledError} from '../utils/handled-error';
+
 import { createFlashMessage } from '../components/Flash/redux';
 import standardErrorMessage from '../utils/standardErrorMessage';
 
 const errorActionSelector = action => isError(action.payload);
 
-function* errorHandlerSaga(action) {
-  if (has(action.payload, handledErrorSymbol)) {
+function* errorHandlerSaga({payload: error}) {
+  if (isHandledError(error)) {
+    const {type, message, redirectTo} = unwrapHandledError(error);
+    navigate(redirectTo);
+    yield put(createFlashMessage({type, message}));
     return;
   }
+  // TODO(Bouncey): Add an error reporting service, like rollbar
   yield put(createFlashMessage(standardErrorMessage));
 }
 
