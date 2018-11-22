@@ -87,3 +87,7 @@ iTerm2 is an alternative to the legacy terminal in Mac OS. iTerm2 brings some ne
 * and many [more](https://www.iterm2.com/features.html)
 
 Just download iTerm2 from the official [website](https://www.iterm2.com/downloads.html). Additional documentation can be found [here](https://www.iterm2.com/documentation.html).
+
+#### iTerm2 Improvements and Customizations
+
+This [guide](https://medium.com/the-code-review/make-your-terminal-more-colourful-and-productive-with-iterm2-and-zsh-11b91607b98c) shows you how you can improve terminal productivity, and have a bit more customization options.
