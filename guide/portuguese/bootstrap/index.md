@@ -52,7 +52,7 @@ Você pode baixar e instalar os arquivos de código-fonte do Bootstrap com Bower
 
 `gem 'bootstrap', '~> 4.1.3'`
 
-\_Nota: Estes são apenas exemplos e podem ser alterados sem aviso prévio. Por favor, consulte o [site](https://getbootstrap.com/) \_ [Bootstrap](https://getbootstrap.com/) \_ para os links mais atualizados.\_
+_Nota: Estes são apenas exemplos e podem ser alterados sem aviso prévio. Por favor, consulte o [site](https://getbootstrap.com/)_ [Bootstrap](https://getbootstrap.com/) _para os links mais atualizados._
 
 #### O sistema de grade de inicialização
 
@@ -79,4 +79,9 @@ Além disso, você pode encontrar tanto [gratuitos](https://bootswatch.com/) qua
 
 #### Recursos do Bootstrap:
 
-[Blog oficial do Bootstrap](http://blog.getbootstrap.com/) [Inspiração do site Bootstrap](http://expo.getbootstrap.com/) [Mostra de sites construídos usando o Bootstrap](http://builtwithbootstrap.com/) [HTML linter para projetos usando Bootstrap](https://github.com/twbs/bootlint) [Elementos de design e trechos de código para o Bootstrap](https://bootsnipp.com/) [Código, tema e recursos adicionais para o Bootstrap](http://expo.getbootstrap.com/resources/)
+* [Blog oficial do Bootstrap](http://blog.getbootstrap.com/) 
+* [Inspiração do site Bootstrap](http://expo.getbootstrap.com/) 
+* [Mostra de sites construídos usando o Bootstrap](http://builtwithbootstrap.com/) 
+* [HTML linter para projetos usando Bootstrap](https://github.com/twbs/bootlint) 
+* [Elementos de design e trechos de código para o Bootstrap](https://bootsnipp.com/) 
+* [Código, tema e recursos adicionais para o Bootstrap](http://expo.getbootstrap.com/resources/)

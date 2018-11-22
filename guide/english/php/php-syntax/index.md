@@ -10,7 +10,7 @@ All PHP files are saved by the extension ` .php `. PHP scripts can be added anyw
 ` <?php   //PHP code goes here  ?> `
 
 ### Print
-To print any statement in PHP we use ` echo ` command.
+To print any statement in PHP we use `echo` command.
 
 #### Code sample
 ```php
@@ -47,11 +47,12 @@ To write a single line comment in PHP we put hashtag `#` or by putting `//` befo
 // This is also a single line comment
 ?>
 ```
-To write a double line comment we start the comment with `/*` and end with `*/`.
+
+To write a multiple line comment we start the comment with `/*` and end with `*/`.
 ```php
 <?php
 /* This is a
-Double line comment. */
+Multiple line comment. */
 ?>
 ```
 We can also comment out some parts of the code line.
