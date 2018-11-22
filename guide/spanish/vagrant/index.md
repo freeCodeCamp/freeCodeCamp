@@ -1,5 +1,6 @@
 ---
 title: Vagrant 
+localeTitle: Vagrant
 ---
 ![alt text](https://www.datocms-assets.com/2885/1506457090-blog-vagrant-list.svg)
 ## Vagrant
