@@ -2,12 +2,17 @@ const path = require('path');
 require('dotenv').config({ path: path.resolve(__dirname, '../../../.env') });
 const MongoClient = require('mongodb').MongoClient;
 const faker = require('faker');
-const shortId = require('shortid');
+const shortid = require('shortid');
 const slugg = require('slugg');
 const { homeLocation } = require('../../../config/env.json');
 const debug = require('debug');
 
 const log = debug('fcc:tools:seedNewsArticles');
+
+const shortIdAlphabet = shortid.characters(
+  '0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ$+'
+);
+const shortId = () => shortid.generate(shortIdAlphabet);
 
 const { MONGOHQ_URL, NODE_ENV: env } = process.env;
 
