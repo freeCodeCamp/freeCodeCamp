@@ -1,6 +1,5 @@
 ---
 title: Props
-
 localeTitle: Props
 ---
 ### Что такое props?
