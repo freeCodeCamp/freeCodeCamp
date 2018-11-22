@@ -1,6 +1,6 @@
 ---
 title: Flask
-localeTitle: Frasco
+localeTitle: Flask
 ---
 ## ¿Que es Flask?
 Flask es un _microframework_ para Python, desarrollado por Armin 
