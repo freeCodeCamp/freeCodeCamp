@@ -1,3 +1,7 @@
+---
+title: Flask
+localeTitle: Frasco
+---
 ## ¿Que es Flask?
 Flask es un _microframework_ para Python, desarrollado por Armin 
 Ronacher. Flask permite la dreacion de aplicaciones web de manera agil, 

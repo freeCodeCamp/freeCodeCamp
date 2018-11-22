@@ -1,3 +1,7 @@
+---
+title: Installing and Using Flask
+localeTitle: Instalaci&oacute;n y Uso de Flask
+---
 ## Instalaci&oacute;n
 
 Para la instalaci&oacute;n se debe tener instalado Python y pip.
