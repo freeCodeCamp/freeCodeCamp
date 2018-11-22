@@ -24,3 +24,8 @@
   right: -1.4em;
   padding: 5px 10px 5px 10px;
 }
+
+.reflex-layout.reflex-container.vertical {
+  width: 100%;
+  margin: 0 18px;
+}
