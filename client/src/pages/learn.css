@@ -18,9 +18,9 @@
 }
 
 #learn-app-wrapper {
-  margin: 0 1em;
+  margin: 0 2em;
   position: absolute;
   width: 100%;
-  right: -1em;
-  padding: 5px;
+  right: -1.4em;
+  padding: 5px 10px 5px 10px;
 }
