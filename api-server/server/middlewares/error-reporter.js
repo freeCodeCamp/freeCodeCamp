@@ -5,9 +5,10 @@ import {
   unwrapHandledError
 } from '../utils/create-handled-error.js';
 
-const { ROLLBAR_APP_ID } = process.env;
+import { rollbar } from '../../../config/secrets';
 
-const rollbar = new Rollbar(ROLLBAR_APP_ID);
+const { appId } = rollbar;
+const reporter = new Rollbar(appId);
 const log = debug('fcc:middlewares:error-reporter');
 
 const errTemplate = (error, req) => {
@@ -26,7 +27,7 @@ ${JSON.stringify(error, null, 2)}
 };
 
 export function reportError(err) {
-  return rollbar.error(err.message, err);
+  return reporter.error(err.message, err);
 }
 
 export default function errrorReporter() {
