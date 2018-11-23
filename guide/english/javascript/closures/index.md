@@ -115,7 +115,7 @@ Javascript did not have a concept of block-scoped variables. Meaning that when d
     }
 ```
 
-Since the variable i does not have block-scope, it's value within all three functions was updated with the loop counter and created malicious values. Closure can help us solve this issue by creating a snapshot of the environment the function was in when it was created, preserving its state.
+Since the variable i does not have block-scope, its value within all three functions was updated with the loop counter and created malicious values. Closure can help us solve this issue by creating a snapshot of the environment the function was in when it was created, preserving its state.
 
 ```javascript
     var funcs = [];
@@ -149,7 +149,7 @@ Unlike many other languages, Javascript does not have a mechanism which allows y
 
 Much like in the previous example, you can build functions which return object literals with methods that have access to the object's local variables without exposing them. Thus, making them effectively private.
 
-Closures can also help you manage your global namespace to avoid collisions with globally shared data. Usually all global variables are shared between all scripts in your project, which will definitely give you alot of trouble when building medium to large programs. That is why library and module authors use closures to hide an entire module's methods and data. This is called the module pattern, it uses an immediately invoked function expression which exports only certain functionality to the outside world, significantly reducing the amount of global references.
+Closures can also help you manage your global namespace to avoid collisions with globally shared data. Usually all global variables are shared between all scripts in your project, which will definitely give you a lot of trouble when building medium to large programs. That is why library and module authors use closures to hide an entire module's methods and data. This is called the module pattern, it uses an immediately invoked function expression which exports only certain functionality to the outside world, significantly reducing the amount of global references.
 
 Here's a short sample of a module skeleton.
 
