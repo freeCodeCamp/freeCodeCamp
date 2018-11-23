@@ -89,12 +89,6 @@ The privilege to create view is CREATE VIEW
 ```   
 
 
-### Create the role role_tables_and_views.
-``` sql
-    CREATE ROLE role_tables_and_views
-``` 
-
-
 ### Grant to the role of the previous question the privileges to connect to the database and the privileges to create tables and views.
 The privilege to connect to the database is CREATE SESSION
 The privilege to create table is CREATE TABLE

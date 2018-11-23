@@ -1,6 +1,5 @@
 ---
 title: State vs Props
-
 localeTitle: Состояние vs свойства
 ---
 ## Состояние vs свойства
@@ -16,9 +15,11 @@ localeTitle: Состояние vs свойства
 
 См. Приведенный ниже пример, чтобы получить представление о состоянии:
 
+
 #### Person.js
 
 ```javascript
+
   import React from 'react'; 
  
   class Person extends React.Component{ 
@@ -45,48 +46,47 @@ localeTitle: Состояние vs свойства
     } 
   } 
  
-  export default Person; 
+export default Person; 
 ```
 
+В приведенном выше примере `age` - это состояние компонента `Person`.
 
-В приведенном выше примере `age` - это состояние компонента `Person` .
+## Props:
 
-## Свойства:
+*   Props похожи на аргументы метода. Они передаются компоненту, в котором используется этот компонент.
+*   Props неизменен. Они доступны только для чтения.
 
-*   Свойства похожи на аргументы метода. Они передаются компоненту, в котором используется этот компонент.
-*   Свойства неизменяемы. Они доступны только для чтения.
-
-См. Пример ниже, чтобы получить представление о свойствах:
-
+См. Пример ниже, чтобы получить представление о props:
 
 #### Person.js
 
 ```javascript
-  import React from 'react'; 
+
+import React from 'react'; 
  
-  class Person extends React.Component{ 
-    render(){ 
-      return( 
-        <div> 
-          <label>I am a {this.props.character} person.</label> 
-        </div> 
-      ); 
-    } 
+class Person extends React.Component{ 
+  render(){ 
+    return( 
+      <div> 
+        <label>I am a {this.props.character} person.</label> 
+      </div> 
+    ); 
   } 
+} 
  
-  export default Person; 
+export default Person; 
  
-  const person = <Person character = "good"></Person> 
+const person = <Person character = "good"></Person> 
 ```
 
+В приведенном выше примере `const person = <Person character = "good"></Person>` мы передаем `character = "good"` prop к компоненту `Person`.
 
-В приведенном выше примере `const person = <Person character = "good"></Person>` мы передаем `character = "good"` свойство к компоненту `Person` .
+Это дает результат как «Я хороший человек», действительно это я.
 
-Это дает результат как "I am a good person".
+Гораздо больше узнать о state и props. Многие вещи можно узнать, фактически погрузившись в кодирование. Так что заставляйте себя программировать.
 
-Гораздо больше узнать о состояниях и свойствах можно только на практике. Так что заставляйте свой руки писать код.
+При необходимости вы можете найти меня на [твиттере](https://twitter.com/getifyJr) .
 
-При необходимости пишите мне в [твиттере](https://twitter.com/getifyJr) .
+Счастливого программирования!!!
 
-Счастливого программирования !!!
 
