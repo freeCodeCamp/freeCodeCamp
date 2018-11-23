@@ -28,11 +28,6 @@ const mapDispatchToProps = dispatch =>
   bindActionCreators({ createFlashMessage, resolveShortId }, dispatch);
 
 class DynamicNewsArticle extends Component {
-  constructor(props) {
-    super(props);
-
-    this.getArticleAsGatsbyProps = this.getArticleAsGatsbyProps.bind(this);
-  }
   componentDidMount() {
     const { shortId, article, resolveShortId } = this.props;
     if (isNull(article)) {
@@ -59,8 +54,7 @@ class DynamicNewsArticle extends Component {
     return;
   }
 
-  getArticleAsGatsbyProps() {
-    const { article } = this.props;
+  getArticleAsGatsbyProps(article) {
     const {
       author: { username },
       slugPart,
@@ -89,7 +83,8 @@ class DynamicNewsArticle extends Component {
 
   render() {
     const {
-      fetchState: { pending }
+      fetchState: { pending },
+      article
     } = this.props;
     if (pending) {
       return (
@@ -100,7 +95,9 @@ class DynamicNewsArticle extends Component {
         </Layout>
       );
     }
-    return <ShowArticle {...this.getArticleAsGatsbyProps()} />;
+    return isEmpty(article) ? null : (
+      <ShowArticle {...this.getArticleAsGatsbyProps(article)} />
+    );
   }
 }
 DynamicNewsArticle.displayName = 'DynamicNewsArticle';

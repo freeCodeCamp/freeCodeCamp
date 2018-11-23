@@ -220,10 +220,9 @@ export const reducer = handleActions(
           [username]: { ...previousUserObject, ...user }
         },
         userProfileFetchState: {
+          ...defaultFetchState,
           pending: false,
-          complete: true,
-          errored: false,
-          error: null
+          complete: true
         }
       };
     },
@@ -253,10 +252,9 @@ export const reducer = handleActions(
       ...state,
       showCert: payload,
       showCertFetchState: {
+        ...defaultFetchState,
         pending: false,
-        complete: true,
-        errored: false,
-        error: null
+        complete: true
       }
     }),
     [types.showCertError]: (state, { payload }) => ({
