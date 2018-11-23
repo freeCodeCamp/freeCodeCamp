@@ -1,9 +1,8 @@
+---
 title: Typechecking With PropTypes
 localeTitle: Checagem de tipo com PropTypes
+---
 
----
-Checagem de tipo com PropTypes
----
 ## React PropTypes
 
 PropTypes servem como um método de typechecking à medida que um aplicativo tende a crescer, com isso uma base muito grande de bugs tende a ser corrigida com o uso desse recurso.
