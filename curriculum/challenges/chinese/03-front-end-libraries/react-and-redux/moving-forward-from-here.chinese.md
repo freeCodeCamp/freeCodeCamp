@@ -19,7 +19,7 @@ localeTitle: 从这里前进
 ```yml
 tests:
   - text: 消息<code>Now I know React and Redux!</code>应该登录到控制台。
-    testString: 'assert(editor.getValue().includes("console.log("Now I know React and Redux!")") || editor.getValue().includes("console.log(\"Now I know React and Redux!\")"), "The message <code>Now I know React and Redux!</code> should be logged to the console.");'
+    testString: assert(new RegExp(/console.log\((\s)*\"Now I know React and Redux!\"(\s)*\)\;/g).test(editor.getValue()) || new RegExp(/console.log\((\s)*\'Now I know React and Redux!\'(\s)*\)\;/g).test(editor.getValue()), 'The message <code>Now I know React and Redux!</code> should be logged to the console.');
 
 ```
 

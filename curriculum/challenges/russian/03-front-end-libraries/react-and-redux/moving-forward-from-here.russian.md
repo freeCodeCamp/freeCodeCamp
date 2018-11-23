@@ -19,7 +19,7 @@ localeTitle: Перемещение вперед
 ```yml
 tests:
   - text: Сообщение <code>Now I know React and Redux!</code> должен быть зарегистрирован на консоли.
-    testString: 'assert(editor.getValue().includes("console.log("Now I know React and Redux!")") || editor.getValue().includes("console.log(\"Now I know React and Redux!\")"), "The message <code>Now I know React and Redux!</code> should be logged to the console.");'
+    testString: assert(new RegExp(/console.log\((\s)*\"Now I know React and Redux!\"(\s)*\)\;/g).test(editor.getValue()) || new RegExp(/console.log\((\s)*\'Now I know React and Redux!\'(\s)*\)\;/g).test(editor.getValue()), 'The message <code>Now I know React and Redux!</code> should be logged to the console.');
 
 ```
 
