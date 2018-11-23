@@ -1,45 +1,49 @@
+require('dotenv').config();
+const formatDate = require('date-fns/format');
 const path = require('path');
 const fs = require('fs');
 
 const { saveToFile } = require('./save-to-file');
 
 class ProcessingLog {
-  constructor() {
+  constructor(script) {
+    this._script = script;
     this._start = null;
-    this._lastUpdate = null;
-    this._lastPRlogged = null;
     this._finish = null;
+    this._elapsedTime = null;
     this._prs = {};
-    this._logfile = path.resolve(__dirname, `../work-logs/${this.getRunType()}_open-prs-processed.json`);
+    this._prCount = null;
+    this._logfile = path.resolve(__dirname, `../work-logs/data-for_${this.getRunType()}_${this._script}.json`);
   }
 
   getRunType() {
     return process.env.PRODUCTION_RUN === 'true' ? 'production' : 'test';
   }
 
-  import() {
-    return JSON.parse(fs.readFileSync(this._logfile, 'utf8'));
-  }
-
   export() {
     let sortedPRs = Object.keys(this._prs)
      .sort((a, b) => a - b)
-     .map(num => ({ [num]: this._prs[num] }));
+     .map(num => ({ number: num, data: this._prs[num] }));
+
     const log = {
       start: this._start,
       finish: this._finish,
+      elapsedTime: this._elapsedTime,
+      prCount: sortedPRs.length,
+      firstPR: this._firstPR,
+      lastPR: this._lastPR,
       prs: sortedPRs
     };
     saveToFile(this._logfile, JSON.stringify(log))
   }
 
-  add(prNum, prop) {
-    this._prs[prNum] = {};
-    this._prs[prNum][prop] = null;
+  add(prNum, props) {
+    this._prs[prNum] = props;
   }
 
-  update(prNum, prop, value) {
-    this._prs[prNum][prop] = value;
+  setFirstLast({ firstPR, lastPR }) {
+    this._firstPR = firstPR;
+    this._lastPR = lastPR;
   }
 
   start() {
@@ -48,7 +52,20 @@ class ProcessingLog {
 
   finish() {
     this._finish = new Date();
+    const minutesElapsed = (this._finish - this._start) / 1000 / 60;
+    this._elapsedTime =  minutesElapsed.toFixed(2) + ' mins';
     this.export();
+    this.changeFilename();
+  }
+
+  changeFilename() {
+    const now = formatDate(new Date(), 'YYYY-MM-DDTHHmmss');
+    const newFilename = path.resolve(__dirname,`../work-logs/${this.getRunType()}_${this._script}_${this._firstPR}-${this._lastPR}_${now}.json`);
+    fs.rename(this._logfile, newFilename, function(err) {
+      if (err) {
+        throw(err);
+      }
+    });
   }
 };
 

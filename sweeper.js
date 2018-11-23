@@ -1,40 +1,50 @@
+/*
+This script was originally created to iterate over all open PRs to label and comment
+on specific PR errors (i.e. guide related filenmame syntax and frontmatter).
+
+Since the first run which covered over 10,000+ PRs, it is curently ran every couple of days
+for just the most recent PRs.
+
+To run the script for a specific range (i.e. label and comment on guide errors),
+run `node sweeper.js range startingPrNumber endingPrNumber`
+*/
+
 const { owner, repo, octokitConfig, octokitAuth } = require('./constants');
 
 const octokit = require('@octokit/rest')(octokitConfig);
 
 const { getPRs, getUserInput } = require('./get-prs');
 const { guideFolderChecks } = require('./validation');
-const { savePrData, ProcessingLog } = require('./utils');
+const { savePrData, ProcessingLog, rateLimiter } = require('./utils');
 const { labeler } = require('./labeler');
 
 octokit.authenticate(octokitAuth);
 
-const log = new ProcessingLog();
+const log = new ProcessingLog('sweeper');
 
+log.start();
 console.log('Sweeper started...');
 (async () => {
   const { firstPR, lastPR } = await getUserInput();
+  log.setFirstLast({ firstPR, lastPR });
   const prPropsToGet = ['number', 'labels', 'user'];
   const { openPRs } = await getPRs(firstPR, lastPR, prPropsToGet);
 
   if (openPRs.length) {
     savePrData(openPRs, firstPR, lastPR);
-    log.start();
     console.log('Processing PRs...');
     for (let count in openPRs) {
       let { number, labels: currentLabels, user: { login: username } } = openPRs[count];
-      log.add(number, 'labels');
-      log.add(number, 'comment');
-
       const { data: prFiles } = await octokit.pullRequests.listFiles({ owner, repo, number });
 
       const guideFolderErrorsComment = await guideFolderChecks(number, prFiles, username);
       const commentLogVal = guideFolderErrorsComment ? guideFolderErrorsComment : 'none';
-      log.update(number, 'comment', commentLogVal)
 
       const labelsAdded = await labeler(number, prFiles, currentLabels, guideFolderErrorsComment);
       const labelLogVal = labelsAdded.length ? labelsAdded : 'none added';
-      log.update(number, 'labels', labelLogVal);
+
+      log.add(number, { comment: commentLogVal, labels: labelLogVal });
+      await rateLimiter(+process.env.RATELIMIT_INTERVAL | 1500);
     }
   }
 })()

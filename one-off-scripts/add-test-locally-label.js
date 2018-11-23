@@ -15,7 +15,7 @@ const { rateLimiter, savePrData, ProcessingLog } = require('../utils');
 
 octokit.authenticate(octokitAuth);
 
-const log = new ProcessingLog();
+const log = new ProcessingLog('all-locally-tested-labels');
 
 (async () => {
   const { firstPR, lastPR } = await getUserInput();
@@ -28,7 +28,6 @@ const log = new ProcessingLog();
     console.log('Starting labeling process...');
     for (let count in openPRs) {
       let { number, labels } = openPRs[count];
-      log.add(number, 'labels');
       const labelsToAdd = {}; // holds potential labels to add based on file path
       const existingLabels = labels.map(({ name }) => name);
       if (existingLabels.includes('scope: curriculum')) {
@@ -38,14 +37,14 @@ const log = new ProcessingLog();
       /* this next section only adds needed labels which are NOT currently on the PR. */
       const newLabels = Object.keys(labelsToAdd).filter(label => !existingLabels.includes(label));
       if (newLabels.length) {
-        log.update(number, 'labels', newLabels);
+        log.add(number, { labels: newLabels });
         if (process.env.PRODUCTION_RUN === 'true') {
           addLabels(number, newLabels, log);
           await rateLimiter(+process.env.RATELIMIT_INTERVAL | 1500);
         }
       }
       else {
-        log.update(number, 'labels', 'none added');
+        log.add(number, { labels: 'none added' });
       }
     }
   }
