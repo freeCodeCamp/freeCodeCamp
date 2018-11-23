@@ -37,7 +37,7 @@ tests:
 ```html
 <h2>CatPhotoApp</h2>
 <main>
-  <p>Click here to view more <a href="http://freecatphotoapp.com" target="_blank">cat photos</a>.</p>
+  <p>Click here to view more <a href="#" target="_blank">cat photos</a>.</p>
 
   <img src="https://bit.ly/fcc-relaxing-cat" alt="A cute orange cat lying on its back.">
 
