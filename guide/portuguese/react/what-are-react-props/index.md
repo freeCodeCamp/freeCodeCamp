@@ -1,3 +1,6 @@
+title: Typechecking With PropTypes
+localeTitle: Checagem de tipo com PropTypes
+
 ---
 Checagem de tipo com PropTypes
 ---
