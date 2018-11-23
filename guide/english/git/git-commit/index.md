@@ -46,7 +46,7 @@ The output in your terminal should look something like this:
 ```
 
 ### Using detailed commit messages
-Although `git commit -m "commit message"` works just fine, it can be useful to provide more detailed and systmatic information.
+Although `git commit -m "commit message"` works just fine, it can be useful to provide more detailed and systematic information.
 
 If you commit without using the `-m` option, git will open your default text editor with a new file, which will include a commented-out list of all the files/changes that are staged in the commit. You then write your detailed commit message (the first line will be treated as the subject line) and the commit will be performed when you save/close the file.
 
