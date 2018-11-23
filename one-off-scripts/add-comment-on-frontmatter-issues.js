@@ -2,7 +2,7 @@
 This is a one-off script to run on all open PRs to add
 a comment and "status: needs update" label to any PR with guide articles which
 have frontmatter issues.
-*//************ log.js **************/
+*/
 
 require('dotenv').config({ path: '../.env' });
 const fetch = require('node-fetch');
@@ -85,6 +85,7 @@ const guideFolderChecks = async (number, prFiles, user) => {
 
 (async () => {
   const { firstPR, lastPR } = await getUserInput();
+  log.setFirstLast({ firstPR, lastPR });
   const prPropsToGet = ['number', 'labels', 'user'];
   const { openPRs } = await getPRs(firstPR, lastPR, prPropsToGet);
 
@@ -102,7 +103,7 @@ const guideFolderChecks = async (number, prFiles, user) => {
       const labelsAdded = await labeler(number, prFiles, currentLabels, guideFolderErrorsComment);
       const labelLogVal = labelsAdded.length ? labelsAdded : 'none added';
 
-      log.update(number, { comment: commentLogVal, labels: labelLogVal });
+      log.add(number, { comment: commentLogVal, labels: labelLogVal });
       await rateLimiter(+process.env.RATELIMIT_INTERVAL | 1500);
     }
   }

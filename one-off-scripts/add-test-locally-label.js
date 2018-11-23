@@ -19,6 +19,7 @@ const log = new ProcessingLog('all-locally-tested-labels');
 
 (async () => {
   const { firstPR, lastPR } = await getUserInput();
+  log.setFirstLast({ firstPR, lastPR });
   const prPropsToGet = ['number', 'labels'];
   const { openPRs } = await getPRs(firstPR, lastPR, prPropsToGet);
 
