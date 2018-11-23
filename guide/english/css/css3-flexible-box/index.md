@@ -57,19 +57,14 @@ There are three slightly more interesting options for `justify-content` you migh
 `flex-start`, `center` and `flex-end` behave as before - left, center and right have become top, center and bottom. Other options are `baseline`, whereby all children will centralize themselves down a single baseline, and `stretch`, whereby they will stretch to fill the container.
 
 
-#### More Information:
-To get a complete understanding of Flexbox, read <a href="https://medium.freecodecamp.org/understanding-flexbox-everything-you-need-to-know-b4013d4dc9af" target='_blank' rel="nofollow">Understanding Flexbox Everything you need to know</a> on the FreeCodeCamp Medium page.
+#### More Information
 
-For an interactive guide go through <a href="https://medium.freecodecamp.org/the-ultimate-guide-to-flexbox-learning-through-examples-8c90248d4676" target="_blank" rel="nofollow">The Ultimate Guide to Flexbox — Learning Through Examples</a>
+- To get a complete understanding of Flexbox, read <a href="https://medium.freecodecamp.org/understanding-flexbox-everything-you-need-to-know-b4013d4dc9af" target='_blank' rel="nofollow">Understanding Flexbox Everything you need to know</a> on the FreeCodeCamp Medium page.
 
-Both of these are great resources by Ohans Emmanuel.
+- For an interactive guide go through <a href="https://medium.freecodecamp.org/the-ultimate-guide-to-flexbox-learning-through-examples-8c90248d4676" target="_blank" rel="nofollow">The Ultimate Guide to Flexbox — Learning Through Examples</a>
 
-A great visual guide to Flexbox is provided by [JavaScript Teacher](https://medium.freecodecamp.org/@js_tut) on the FreeCodeCamp Medium page: [The Complete Illustrated Flexbox Tutorial](https://medium.freecodecamp.org/the-complete-illustrated-flexbox-tutorial-d35c085dbf35).
+- A great visual guide to Flexbox is provided by [JavaScript Teacher](https://medium.freecodecamp.org/@js_tut) on the FreeCodeCamp Medium page: [The Complete Illustrated Flexbox Tutorial](https://medium.freecodecamp.org/the-complete-illustrated-flexbox-tutorial-d35c085dbf35).
 
-Yet another great visual guide that is in-depth but easy to follow can be found in <a href="https://css-tricks.com/snippets/css/a-guide-to-flexbox/" target="_blank" rel="nofollow"> A Guide to Flexbox</a> by <a href="https://css-tricks.com" target="_blank" rel="nofolow">CSS-Tricks</a>
+- Yet another great visual guide that is in-depth but easy to follow can be found in <a href="https://css-tricks.com/snippets/css/a-guide-to-flexbox/" target="_blank" rel="nofolow"> A Guide to Flexbox</a> by <a href="https://css-tricks.com" target="_blank" rel="nofolow">CSS-Tricks</a>
 
-### Sources
-
-1. <a href="https://css-tricks.com/snippets/css/a-guide-to-flexbox/" target="_blank" rel="nofolow">Coyier, Chris. "A Complete Guide to Flexbox" CSS-Tricks. Last updated on September 28, 2017.</a>
-
-
+- <a href="https://flexbox.io/" target="_blank" rel="nofolow">A simple, free 20 video course that will help you master CSS Flexbox! by Wes Bos</a>
