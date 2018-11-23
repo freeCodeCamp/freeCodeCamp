@@ -10,8 +10,8 @@ var sum = 10 + 10;
 Variables can be added in a similar fashion.
 
 ```javascript
-let x = 10;
-let y = 10;
-let z = x + y;
+var x = 10;
+var y = 10;
+var z = x + y;
 console.log(z);    // Will print 20 to the console
 ```
