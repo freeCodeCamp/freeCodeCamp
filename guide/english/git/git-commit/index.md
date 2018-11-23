@@ -53,6 +53,7 @@ If you commit without using the `-m` option, git will open your default text edi
 Bear in mind:
 * Keep your commit message lines length less than 72 charcters as standard practice
 * It is perfectly ok - and even recommended - to write multiline commit messages
+* Good practice is to make sure your commit messages are clear about what changed in the commit, this makes it easier to roll back to earlier versions if you break your code.
 * You can also refer to other issues or pull requests in your commit message. GitHub allocated a number reference to all pull requests and issues, so for example if you want to refer to pull request #788 simply do so in either the subject-line or in the body text as appropriate
     
 #### The --amend Option
