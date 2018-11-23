@@ -67,7 +67,7 @@ Since ArrayList implements *List*, an ArrayList can be created using the followi
 **Reverse elements in list**  
   
   ```java
-  import java.util.Collections // package
+  import java.util.Collections; // package
   Collections.reverse(variable_name);
   ```
   
@@ -80,8 +80,22 @@ Since ArrayList implements *List*, an ArrayList can be created using the followi
    ```java
   Collections.reverseOrder());
  ```
- 
-   An ArrayList allows us to randomly access elements. ArrayList is similar to *Vector* in a lot of ways. But it is faster than Vectors. The main thing to note is that - Vectors are faster than arrays but ArrayLists are not. 
+
+**Creating Array from ArrayList**
+
+   ```java
+   Object[] arr = variable_name.toArray(new Object[variable_name.size()]);
+   ```
+    
+**Creating ArrayList from Array**
+
+```java
+for(Object obj : arr) {
+  variable_name.add(obj);
+}
+```
+    
+  An ArrayList allows us to randomly access elements. ArrayList is similar to *Vector* in a lot of ways. But it is faster than Vectors. The main thing to note is that - Vectors are faster than arrays but ArrayLists are not. 
   
   So when it comes down to choosing between the two - if speed is critical then Vectors should be considered, otherwise ArrayLists are better when it comes to storing large number of elements and accessing them efficiently.
  
