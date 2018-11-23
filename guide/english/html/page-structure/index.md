@@ -29,8 +29,11 @@ To create your pages in `HTML`, you need to know how to structure a page in `HTM
 ### Changes in HTML5
 
 #### Introduction of semantic tags
-Instead of using `<div>` for every other container several semantic(these tags help screenreaders which are used by visually
-impaired) tags such as `<header>` `<footer>`. So it is advisable to use these tags instead of generic `<div>`. 
+HTML contains both semantic and non-semantic tags. 
+
+Semantic tags are descriptive tags that can easily convey their meaning to both a browser and a developer. Examples of semantic tags are: `<header>`, `<footer>`, `<form>`, `<table>`, `<article>`, etc.
+
+Non-semantic tags are tags that convey nothing about what they contain. Examples of non-semantic tags are: `<div>`, `<section>`, `<span>`, etc.
 
 #### More Information:
 [HTML: Introduction](https://www.w3schools.com/html/html_intro.asp)
