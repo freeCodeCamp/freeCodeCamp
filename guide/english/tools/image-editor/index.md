@@ -1,3 +1,7 @@
+---
+title: Image Editor
+---
+
 # Image Editor
 
 Developers/artists use image editors to manipulate or transform images. *Crop, resize, color-correct, composite (combine many images into one), or remove unwanted objects.*
