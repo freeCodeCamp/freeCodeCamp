@@ -20,7 +20,7 @@ const frontmatterCheck = (fullPath, isTranslation, fileContent) => {
   }
   catch(err) {
     errors.push({
-      msg: `Unexpected syntax found in the front matter block. Review Travis CI build Details link above for more details.`,
+      msg: `Unexpected syntax found in the front matter block. Review Travis CI build Details link for more details.`,
       fullPath
     });
   }
