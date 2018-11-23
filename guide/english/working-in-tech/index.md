@@ -1,17 +1,17 @@
 ---
-title: Working in Tech
+title: Working in Tech & Information Technology(IT)
 ---
-## Working in Tech
+## Working in Tech and IT
 
-A wide variety of technology-related fields such as web development, design, data science, and product management are often lumped into the catch-all term "tech."
+A wide variety of technology-related fields such as web development, design, data science, infrastructure support, information security, and product management are often lumped into the catch-all term "tech" or IT. 
 
-This section will focus on various aspects of working in tech. We will discuss the additional career challenges that under-represented minorities and people from non-traditional education backgrounds face. This includes issues such as sexism and ageism that have been particularly prevalent in certain industries and organizations. 
+This section will focus on various aspects of working in tech, such as the ways in which teams cooperate, how to give talks and what code reviews are. We will discuss the additional career challenges that under-represented minorities and people from non-traditional education backgrounds face. This includes issues such as sexism and ageism that have been particularly prevalent in certain industries and organizations. 
 
 ### Computer Security
 
-The field of computer security is growing at a rapid rate every year, in a report done recently it is estimated that by 2021 their will be 3.5 million jobs unfilled. The demand is due to the increase in cyber attacks and with how much data is being created everyday, data is so valuable nowadays and it needs to be kept secure and safe.
+The field of computer security is growing at a rapid rate every year. A recent report estimates that by 2021, 3.5 million jobs in computer security will be unfilled. The demand is due to the ever-increasing amount of valuable data being created every day that must be kept safe and secure from cyber attacks.
 
-### Examples of Tech related jobs
+### Examples of Tech-related jobs
 - Software Developer
 - Computer Systems Analyst
 - Web Developer
@@ -20,6 +20,10 @@ The field of computer security is growing at a rapid rate every year, in a repor
 - Network Administrator
 - Support Desk Engineer
 - Security Engineer
+- Software Tester
+- Infrastructure Support
+- Help Desk Analyst
+- Project manager
 
 ### Books
 
@@ -29,15 +33,27 @@ The field of computer security is growing at a rapid rate every year, in a repor
 
 [Thinking, Fast and Slow](https://amzn.to/2tnnlTN)
 
+[How to Win Friends & Influence People](https://www.amazon.com/How-Win-Friends-Influence-People/dp/0671027034/)
+
 [Learn You a Haskell for Great Good!](https://amzn.to/2veOjdv)
 
 [Think Like a Programmer](https://www.nostarch.com/thinklikeaprogrammer)
 
-Hooked: How to Build Habit-Forming Products: amzn.to/2bVG5AQ
+[The Mythical Man-Month: Essays on Software Engineering](https://www.amazon.com/Mythical-Man-Month-Software-Engineering-Anniversary/dp/0201835959)
 
-"Lean In: Women, Work, and the Will to Lead" by Sheryl Sandberg http://amzn.to/2igRgoq
+[The Pragmatic Programmer: From Journeyman to Master](https://www.amazon.com/Pragmatic-Programmer-Journeyman-Master/dp/020161622X)
 
-To see the full list, visit: https://talkpython.fm/episodes/show/130/10-books-python-developers-should-be-reading
+[Clean Code: A Handbook of Agile Software Craftsmanship](https://www.amazon.com/Clean-Code-Handbook-Software-Craftsmanship/dp/0132350882/)
+
+[Design Patterns: Elements of Reusable Object-Oriented Software](https://www.amazon.com/Design-Patterns-Elements-Reusable-Object-Oriented-ebook/dp/B000SEIBB8)
+
+[Cracking the Coding Interview: 189 Programming Questions and Solutions](https://www.amazon.com/Cracking-Coding-Interview-Programming-Questions/dp/0984782850/)
+
+[Introduction to Algorithms](https://www.amazon.com/Introduction-Algorithms-3rd-MIT-Press/dp/0262033844)
+
+[Hooked: How to Build Habit-Forming Products](https://www.amazon.com/Hooked-How-Build-Habit-Forming-Products/dp/1591847788/)
+
+[Lean In: Women, Work, and the Will to Lead by Sheryl Sandberg](https://www.amazon.com/Lean-Women-Work-Will-Lead/dp/0385349947/)
 
 ### Articles
 
@@ -49,4 +65,9 @@ To see the full list, visit: https://talkpython.fm/episodes/show/130/10-books-py
 * [The Complete Software Developer's Career Guide](https://simpleprogrammer.com/products/careerguide/)
 
 ### Podcasts
-[10 Books Python Developers should be reading - talkpython.fm](https://talkpython.fm/episodes/show/130/10-books-python-developers-should-be-reading)
+
+- [10 Books Python Developers should be reading - talkpython.fm](https://talkpython.fm/episodes/show/130/10-books-python-developers-should-be-reading)
+- [CodeNewbie](https://www.codenewbie.org/)
+- [This week in Google](https://twit.tv/shows/this-week-in-google)
+- [Programming Throwdown - Good overview of multiple languages and concepts](https://www.programmingthrowdown.com/)
+- [Shop Talk: A Web Design and Development Podcast](https://shoptalkshow.com/)
