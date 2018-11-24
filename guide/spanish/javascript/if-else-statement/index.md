@@ -4,7 +4,7 @@ localeTitle: Declaración If-Else
 ---
 ## Introducción
 
-La sentencia `if` ejecuta una sentencia si una condición especificada es `true` . Si la condición es `false` , se puede ejecutar `else` instrucción utilizando la instrucción `else` .
+La sentencia `if` ejecuta una sentencia si una condición especificada es verdadera `true` . Si la condición es falsa `false` , se puede ejecutar otra instrucción, o la siguiente en la lista de condiciones, utilizando la instrucción `else` .
 
 **Nota:** la sentencia `else` es opcional.
 
@@ -15,7 +15,7 @@ if (condición)
     /* Hacer otra cosa */ 
 ```
 
-Se pueden encadenar varias declaraciones `if...else` para crear una cláusula `else if` . Esto especifica una nueva condición para probar y se puede repetir para probar múltiples condiciones, verificando hasta que se presente una declaración verdadera para ejecutar.
+Se pueden encadenar varias declaraciones `if...else` para crear una cláusula o condición: sino, entonces `else if` . Esto especifica una nueva condición para probar y se puede repetir para probar múltiples condiciones, verificando hasta que se presente una declaración verdadera para ejecutar.
 
 ```javascript
 if (condición1) 
@@ -48,7 +48,7 @@ if (condición) {
 **Usando** `if...else` :
 
 ```javascript
-    // si x=5 z=7 y q=42. Si x no es 5 entonces z=19. 
+    // Si x=5 --> z=7 y q=42. Si x no es igual a 5 --> z=19.
     if (x == 5) { 
       z = 7; 
       q = 42; 

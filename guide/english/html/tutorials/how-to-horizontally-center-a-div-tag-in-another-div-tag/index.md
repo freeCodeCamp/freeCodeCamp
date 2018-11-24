@@ -27,7 +27,7 @@ There are a couple ways you can tacklet this, but for this tutorial let's focus 
 
 
 ### Example of Centering a Div Tag with Margins
-If you specify a `width` on your child div you can use `margin: auto`. This will center your child `<div>` by evenly distributing it's left-and-right margins.
+If you specify a `width` on your child div you can use `margin: auto`. This will center your child `<div>` by evenly distributing its left-and-right margins.
 
 ```css
 .parent {
