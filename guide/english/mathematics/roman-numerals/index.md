@@ -46,33 +46,4 @@ MMM = 3000
 
 #### More Information:
 <!-- Please add any articles you think might be helpful to read before writing the article -->
-<table>
-  <tr>
-    <td>1</td>
-    <td>I</td>
-  </tr>
-  <tr>
-    <td>5</td>
-    <td>V</td>
-  </tr>
-  <tr>
-    <td>10</td>
-    <td>X</td>
-  </tr>
-  <tr>
-    <td>50</td>
-    <td>L</td>
-  </tr>
-  <tr>
-    <td>100</td>
-    <td>C</td>
-  </tr>
-  <tr>
-    <td>500</td>
-    <td>D</td>
-  </tr>
-  <tr>
-    <td>1000</td>
-    <td>M</td>
-  </tr>
 
