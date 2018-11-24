@@ -1,8 +1,8 @@
 ---
 title: Ruby Symbols
-localeTitle: Símbolos de rubí
+localeTitle: Símbolos de Ruby
 ---
-## Símbolos de ruby
+## Símbolos de Ruby
 
 Un símbolo parece un nombre de variable pero tiene un prefijo con dos puntos. Ejemplos -: action,: line\_items. No tiene que declarar previamente un símbolo y se garantiza que son únicos. No hay necesidad de asignar algún tipo de valor a un símbolo, Ruby se encarga de eso por ti. Ruby también garantiza que no importa dónde aparezca en su programa, un símbolo en particular tendrá el mismo valor.
 
