@@ -20,6 +20,16 @@ Form contains control elements which are wrapped around ```<form></form>``` tags
 - ```week```
 - ```color```
 - ```datalist```
+- ```button```
+- ```datetime-local```
+- ```file```
+- ```hidden```
+- ```image```
+- ```month```
+- ```number```
+- ```reset```
+- ```tel```
+- ```url```
 
 Code example:
 ```html
@@ -48,6 +58,8 @@ Other elements that form can contain:
 - ```textarea``` - is a multiline box which is most often used for adding some text eg. comment. Size of textarea is defined by number of rows and columns.
 - ```select``` - together with ```<option></option>``` tag creates drop-down select menu.
 - ```button``` - The button element can be used to define a clickable button.
+- ```fieldset```- It groups related elements in a form.
+- ```legend```- It defines a caption for a <fieldset> element.
 
 MORE INFORMATION ON HTML FORMS.
 
@@ -71,3 +83,6 @@ The form tag can also have an attribute named "target" which specifies where the
 
 The action attribute defines the action to be performed when the form is submitted.
 Normally, the form data is sent to a web page at the Script URL when the user clicks on the submit button. If the action attribute is omitted, the action is set to the current page.
+
+## More information
+- [Wikipedia](https://en.wikipedia.org/wiki/Form_(HTML))

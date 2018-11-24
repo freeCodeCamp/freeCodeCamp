@@ -25,8 +25,9 @@ The middleware to handle url encoded data is returned by <code>bodyParser.urlenc
 <section id='tests'>
 
 ```yml
-- text: The 'body-parser' middleware should be mounted
-  testString: 'getUserInput => $.get(getUserInput(''url'') + ''/_api/add-body-parser'').then(data => { assert.isAbove(data.mountedAt, 0, ''"body-parser" is not mounted correctly'') }, xhr => { throw new Error(xhr.responseText); })'
+tests:
+  - text: The 'body-parser' middleware should be mounted
+    testString: 'getUserInput => $.get(getUserInput(''url'') + ''/_api/add-body-parser'').then(data => { assert.isAbove(data.mountedAt, 0, ''"body-parser" is not mounted correctly'') }, xhr => { throw new Error(xhr.responseText); })'
 
 ```
 

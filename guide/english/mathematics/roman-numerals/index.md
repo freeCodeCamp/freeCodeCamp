@@ -43,5 +43,5 @@ MMM = 3000
 </pre>
 
 #### More Information:
-<!-- Please add any articles you think might be helpful to read before writing the article -->
 
+[Wikipedia: Roman numerals](https://en.wikipedia.org/wiki/Roman_numerals)
