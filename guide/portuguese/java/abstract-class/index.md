@@ -8,7 +8,7 @@ Classes abstratas são classes que podem ser subclassificadas (isto é, estendid
 
 Considere o seguinte exemplo para entender classes abstratas: Você tem uma classe Veículo que define certas funcionalidades básicas (métodos) e certos componentes (variáveis de objeto) que uma máquina deve ter para ser classificada como veículo. Você não pode criar um objeto de Veículo porque um veículo em si é um conceito abstrato. No entanto, você pode estender a funcionalidade da classe de veículo para criar um carro ou uma motocicleta.
 
-``` java 
+```java 
 abstract class Veiculo 
 {
   // variável usada para declarar o nº de rodas em um veículo
@@ -32,11 +32,14 @@ public class Motocicleta extends Veiculo
   …
 }
 ```
+Você não pode criar um objeto usando a classe Veiculo. Porém, você pode extender a classe Veiculo, e, então, criar um objeto desta classe que extendeu Veiculo.
+
+```
 
 Você não pode criar um objeto da classe Veículo em lugar algum do seu programa. Porém, você pode estender a classe abstrata Veículo
 e criar objetos das classes que a herdam. 
 
-``` Java 
+```java 
 Veiculo novoVeiculo = new Veiculo (); // Inválido 
 Veiculo carro = new Carro (); // válido 
 Veículo moto = new Motocicleta (); // válido

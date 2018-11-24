@@ -6,7 +6,7 @@ title: Destructuring Assignment
 
 Destructuring Assignment syntax is a Javascript expression that makes it possible to unpack values or properties from arrays or objects.
 
-Lets say that you have an array that contains a first name and last name as it's two values, but you want to reassign those values to something more descriptive. You can use Destructuring to accomplish this.
+Lets say that you have an array that contains a first name and last name as its two values, but you want to reassign those values to something more descriptive. You can use Destructuring to accomplish this.
 
 **ES5 Destructuring**
 
@@ -64,6 +64,7 @@ const {first: firstName, last: lastName} = fullName;
 console.log(firstName, lastName); // John Smith
 ```
 **Array Destructuring with rest**
+
 When destructuring an array, you can unpack and assign the remaining part of it to a variable using the rest pattern:
 ```js
 const [a, ...b] = [1, 2, 3];
