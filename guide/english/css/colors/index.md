@@ -56,7 +56,7 @@ It is also possible to use a three-digit notation as a short version, for exampl
 
 Additionally, there are 16,777,216 possible color combinations using hexcode. A shorthand form also exists. The shorthand #ABC is equivalent to #AABBCC. In this form, 4096 colours are available.
 
-Furthermore, some browser versions (see <a href="https://caniuse.com/#feat=css-rrggbbaa" target="_blank">compatibility</a>) support hexcodes with 8 digits, where the last two digits describe the opacity level (00 - fully transparent, FF - fully opaque), equivalent to the alpha channel of rgba(). 
+Furthermore, some browser versions (see [compatibility](https://caniuse.com/#feat=css-rrggbbaa)) support hexcodes with 8 digits, where the last two digits describe the opacity level (00 - fully transparent, FF - fully opaque), equivalent to the alpha channel of rgba(). 
 
 ### Opacity
 
