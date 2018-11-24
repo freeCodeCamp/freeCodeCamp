@@ -89,6 +89,8 @@ If you are just a beginner in Android Developement. You can directly start learn
 [Head First Android Development](https://www.amazon.in/Head-First-Android-Development-Griffiths/dp/1449362184)
 [Android Application Development All-In-One for Dummies, 2ed](https://www.amazon.in/Android-Application-Development-All-Dummies/dp/1118027701)
 
+[Stanford CS193a Lecture Videos](http://web.stanford.edu/class/cs193a/lectures.shtml)
+
 ### Developing Android Apps
 
 The best part of learning Android is that many of the courses and material available out there online are free.
