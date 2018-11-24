@@ -1,8 +1,10 @@
 import React, { Component } from 'react';
 import styled from 'styled-components';
 
+import Tabs from './components/Tabs';
 import Input from './components/Input';
 import Results from './components/Results';
+import Pareto from './components/Pareto';
 
 const Container = styled.div`
   display: flex;
@@ -12,13 +14,18 @@ const Container = styled.div`
   padding: 15px;
   border-radius: 4px;
   box-shadow: 0 0 4px 0 #777;
+
 `;
 
 class App extends Component {
   state = {
     number: '',
-    foundPRs: []
+    foundPRs: [],
+    pareto: [],
+    view: 'search'
   };
+
+  clearObj = { number: '', foundPRs: [] };
 
   inputRef = React.createRef();
 
@@ -37,7 +44,6 @@ class App extends Component {
 
   handleButtonClick = () => {
     const { number } = this.state;
-
     this.searchPRs(number);
   }
 
@@ -56,19 +62,25 @@ class App extends Component {
         }
       })
       .catch(() => {
-        this.setState((prevState) => ({ number: '', foundPRs: [] }));
+        this.setState((prevState) => (this.clearObj));
       });
   }
 
-  render() {
-    const { handleButtonClick, handleInputEvent, inputRef, state } = this;
-    const { number, foundPRs } = state;
+  handleViewChange = ( { target: { id } }) => {
+    const view = id.replace('tabs-', '');
+    this.setState((prevState) => ({ ...this.clearObj, view }));
+  }
 
+  render() {
+    const { handleButtonClick, handleViewChange, handleInputEvent, inputRef, state } = this;
+    const { number, foundPRs, view } = state;
     return (
       <Container>
+        <Tabs view={view} onViewChange={handleViewChange}/>
         <Input ref={inputRef} value={number} onInputEvent={handleInputEvent} />
         <button onClick={handleButtonClick}>Search</button>
-        <Results foundPRs={foundPRs} />
+        { view === 'search' && <Results foundPRs={foundPRs} /> }
+        { view === 'reports' && <Pareto /> }
       </Container>
     );
   }
