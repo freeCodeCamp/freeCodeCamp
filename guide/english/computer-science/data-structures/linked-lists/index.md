@@ -90,6 +90,7 @@ class List
 	public:
 		void display();
 		void insertBefore(int);
+                void deleteNode(int);
 		List();
 };
 
@@ -119,6 +120,47 @@ void List :: insertBefore(int data)
 		count++;	
 }
 
+void List :: deleteNode(int loc)
+{
+	//delete first node
+	if(loc == 1 || count == 1)
+	{
+		N *node = new N;
+		node = head;
+		head = head->tail;
+		delete node;
+	}
+	//delete last node
+	else if(loc == count)
+	{
+			N *curr = new N;
+			N *prev = new N;
+			curr = head;
+			while(curr->tail != NULL)
+			{
+				prev = curr;
+				curr = curr->tail;
+			}
+			prev->tail = NULL;
+			end = prev;
+			delete curr;
+	}
+	//delete in between
+	else
+	{
+		N *curr=new N;
+    	N *prev=new N;
+    	curr=head;
+    	for(int i=1;i<loc;i++)
+    	{
+      		prev=curr;
+      		curr=curr->tail;
+    	}
+    		prev->tail=curr->tail;
+	}
+	count--;
+}
+
 void List :: display()
 {
 	cout<<"Number of nodes in the list = "<<count<<endl;
@@ -143,6 +185,8 @@ int main()
 	l1.insertBefore(40);
 	l1.insertBefore(50);
 	l1.display();
+        l1.deleteNode(3);
+        l1.display();
 	
 	return 0;
 }
@@ -155,6 +199,11 @@ Number of nodes in the list = 5
 50
 40
 30
+20
+10
+Number of nodes in the list = 4
+50
+40
 20
 10
 ```
