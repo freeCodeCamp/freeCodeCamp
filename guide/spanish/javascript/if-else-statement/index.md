@@ -9,35 +9,35 @@ La sentencia `if` ejecuta una sentencia si una condición especificada es verdad
 **Nota:** la sentencia `else` es opcional.
 
 ```javascript
-if (condition) 
-    /* hacer algo */ 
+if (condición) 
+    /* Hacer algo */ 
  else 
-    /* hacer otra cosa */ 
+    /* Hacer otra cosa */ 
 ```
 
 Se pueden encadenar varias declaraciones `if...else` para crear una cláusula o condición: sino, entonces `else if` . Esto especifica una nueva condición para probar y se puede repetir para probar múltiples condiciones, verificando hasta que se presente una declaración verdadera para ejecutar.
 
 ```javascript
-if (condition1) 
-    /* hacer algo */ 
- else if (condition2) 
-    /* hacer otra cosa */ 
- else if (condition3) 
-    /* hacer otra cosa */ 
+if (condición1) 
+    /* Hacer algo */ 
+ else if (condición2) 
+    /* Hacer otra cosa */ 
+ else if (condición3) 
+    /* Hacer otra cosa */ 
  else 
-    /* sentecnai fina */ 
+    /* sentencia final */ 
 ```
 
-**Nota:** Si desea ejecutar más de una sentencia en el `if` , `else` o `else if` se requiere de partes, llaves alrededor de las declaraciones:
+**Nota:** Si desea ejecutar más de una sentencia en el `if` , `else` o `else if` se requiere de bloques, llaves alrededor de las declaraciones:
 
 ```javascript
-if (condition) { 
+if (condición) { 
     /* hacer */ 
     /* algo */ 
-    /* con multiples sentencias */ 
+    /*con múltiples sentencias */ 
  } else { 
-    /* hacer algo */ 
-    /* mas */ 
+    /* hacer otra */ 
+    /* cosa */ 
  } 
 ```
 
@@ -51,8 +51,8 @@ if (condition) {
     // Si x=5 --> z=7 y q=42. Si x no es igual a 5 --> z=19.
     if (x == 5) { 
       z = 7; 
-      q = 42 
-    else 
+      q = 42; 
+    }else 
       z = 19; 
 ```
 
@@ -60,14 +60,14 @@ if (condition) {
 
 ```javascript
 if (x < 10) 
-    return "Small number"; 
+    return "Numero pequeño"; 
  else if (x < 50) 
-    return "Medium number"; 
+    return "Numero intermedio"; 
  else if (x < 100) 
-    return "Large number"; 
+    return "Numero grande"; 
  else { 
     flag = 1; 
-    return "Invalid number"; 
+    return "Numero Invalido"; 
  } 
 
 ```
