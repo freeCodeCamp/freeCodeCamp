@@ -4,18 +4,17 @@ title: SQL LIKE Operator
 ## SQL LIKE Operator
 
 ### LIKE Operator defined
-The `LIKE` operator is used in a `WHERE` or `HAVING` (as part of the `GROUP BY`) to limit the selected rows to the items when a column has a certain pattern of characters contained in it. It is used alongwith two wildcard characters namely underscore **\_**  & percent **%** symbol
+The `LIKE` operator is used in a `WHERE` or `HAVING` (as part of the `GROUP BY`) to limit the selected rows to the items when a column has a certain pattern of characters contained in it. It is used along with two wildcard characters namely underscore  **_** and percent **%** symbol
 
 ### This guide will demonstrate:
 * Determining if a string starts or ends with a given string pattern
 * Determining if a pattern exists in the middle of the string
 * Determining if a string is not contained in the string
 * Determining if a string is has specified letter at any position in the string
-* 
 
 ### A column starts or ends with a given string pattern
 This SQL will select students that have `FullName` starting with "Monique" or ending with "Greene".
-Here **%** means that it can be replace by any number of characters.
+Here **%** means that it can be replaced by any number of characters.
 
 ```sql
 SELECT studentID, FullName, sat_score, rcd_updated
@@ -77,7 +76,7 @@ WHERE FullName NOT LIKE '%cer Pau%' AND FullName NOT LIKE '%"Ted"%';
 
 ### A string has a specific letter say o in the second position
 This SQL shows records having **o** as the alphabet in second position in the FullName column.
-Here **\_** means that it can be replace by only a single character.
+Here **_** means that it can be replaced by only a single character.
 
 ```sql
 SELECT studentID, FullName, sat_score, rcd_updated
