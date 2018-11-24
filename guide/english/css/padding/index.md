@@ -3,9 +3,9 @@ title: Padding
 ---
 # Padding
 
-The `padding` CSS property sets the padding area on all four sides of an element. This property can be used to generate space around content (inside the border). It is a shorthand to set all individual paddings at once: `padding-top`, `padding-right`, `padding-bottom`, and `padding-left`. Values are defined in the clockwise direction.
+The `padding` CSS property sets the padding area on all four sides of an element. This property can be used to generate space around content (inside the border). It is a shorthand to set all individual paddings at once: `padding-top`, `padding-right`, `padding-bottom`, and `padding-left`. Values are defined in the clockwise direction, starting at the top.
 
-Padding values are set using lengths or percentages or `inherit` keyword, and cannot accept negative values. The initial, or default, value for all padding properties is 0. While you can use `inherit` keyword but it can not be used along with a length value.
+Padding values are set using lengths, percentages, or the `inherit` keyword, and cannot accept negative values. The initial, or default, value for all padding properties is 0. The `inherit` keyword cannot be used with a length value.
 
 ## Syntax
 ```css
@@ -40,6 +40,9 @@ The padding property in CSS defines the innermost portion of the box model, crea
 
 ![The CSS Box Model](https://www.w3.org/TR/css3-box/box.png)
 
+
+## Common Pitfalls
+Do note, while padding and margins are similar in the context of 'adding spaces between elements', padding is **included** into the element's dimensions, while margins are not.
 
 ## Browser Support
 It is effectively supported in all browsers (since IE6+, Firefox 2+, Chrome 1+ etc)
