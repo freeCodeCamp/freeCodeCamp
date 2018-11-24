@@ -79,11 +79,6 @@ Since the early days of the web, there have been many versions of HTML:
 |XHTML|2000|
 |HTML5|2014|
 
-#### Other Resources
-
-- [HTML Elements](https://guide.freecodecamp.org/html/elements)
-- [Semantic HTML](https://guide.freecodecamp.org/html/html5-semantic-elements)
-- [HTML Attributes](https://guide.freecodecamp.org/html/attributes)
 
 # HTML Elements
 
@@ -162,5 +157,12 @@ There are many possible ways a user can give input/s like:
 ```
 <!-- This is a comment -->
 ```
-
 Comments can help in the understanding of the markup and do not display in the webpage.
+
+
+#### More Information
+
+- [HTML Elements](https://guide.freecodecamp.org/html/elements)
+- [Semantic HTML](https://guide.freecodecamp.org/html/html5-semantic-elements)
+- [HTML Attributes](https://guide.freecodecamp.org/html/attributes)
+- [HTML Reference](https://htmlreference.io/)

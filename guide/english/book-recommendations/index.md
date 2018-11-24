@@ -337,6 +337,10 @@ title: Books to Read for Programmers
 - [Amazon Smile](https://smile.amazon.com/Soft-Skills-software-developers-manual/dp/1617292397?pldnSite=1)
 - ISBN-13: 9781617292392 
 
+*How to Win Friends & Influence People*
+- [Amazon Smile](https://smile.amazon.com/dp/product/0671027034/)
+- ISBN-13: 978-0671027032
+
 ## Other
 
 *Blue Team Field Manual (BTFM)
