@@ -10,7 +10,7 @@ Java inheritance refers to the ability of a Java Class to `inherit` the properti
 
 Thus, inheritance gives Java the cool capability of _re-using_ code, or sharing code between classes!
 
-**The syntax of Java Inheritance**
+## Syntax
 ```java
 class Subclass-name extends Superclass-name  
 {  
