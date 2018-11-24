@@ -59,7 +59,7 @@ let result = true; // Change this line
 
 ```js
 let myString = "This is FreeCodeCamp";
-let myRegex = /(Python|JavaScript)/g/;
+let myRegex = /(Python|JavaScript)/g;
 let result = myRegex.test(myString);
 ```
 </section>
