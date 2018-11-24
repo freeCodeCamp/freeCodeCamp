@@ -47,3 +47,6 @@ Motorcycle mBikeObj = new Motorcycle();  // valid
 ```
 
 If the child class doesn't implement the abstract methods of the father, it becomes an abstract class. 
+
+#### More Information
+- [Oracle Java Docs - Abstract Classes](https://docs.oracle.com/javase/specs/jls/se7/html/jls-8.html#jls-8.1.1.1)

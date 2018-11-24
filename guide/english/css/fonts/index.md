@@ -5,9 +5,9 @@ title: Fonts
 The CSS font properties define the font family, weight, size, variant, line height and style of a text.
 
 ### Font family
-The font family of a text is simply set by using the `font-family` property.
+The font family of a text is set by using the `font-family` property.
 
-It works with a *fallback* system, if your browser does not support the first font, it tries with the next one and so on. If the name of the font is more than one word it must be surrounded by quotes. 
+It works with a *fallback* system, meaning if your browser does not support the first font, it tries with the next one and so on. If the name of the font is more than one word it must be surrounded by quotes. 
 
 ```css
 p {
@@ -80,13 +80,14 @@ p {
 ```
 
 ### Font responsiveness
-The text size can be set with a vw(viewport width) unit.
-That way the text size will follow the size of the browser window.
+The text size can be set with a `vw` (viewport width) unit.
+This will allow the text to adjust to the size of the browser window.
 
 ```html
-<h1 style="font-size:10vw">Hello World</h1>
+<h1 style="font-size: 10vw">Hello World</h1>
 ```
-`Viewport is the browser window size. 1vw = 1% of viewport width. If the viewport is 50cm wide, 1vw is 0.5cm.`
+
+Viewport is the browser window size. 1vw = 1% of viewport width. If the viewport is 50cm wide, 1vw is 0.5cm.
 
 ### Font variant
 The `font-variant` property specifies if a text should be displayed in a small-caps font (where all lowercase letters are converted to uppercase letters while appearing in a smaller font-size than the original uppercase letters in the text).

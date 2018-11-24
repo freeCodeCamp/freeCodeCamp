@@ -4,17 +4,26 @@ title: HTML
 
 # HTML
 
-HyperText Markup Language (HTML) is a markup language used to construct online documents and is the foundation of most websites today. A markup language like HTML allows us to 1) create links to other documents, 2) structure the content in our document, and 3) ascribe context and meaning to the content of our document.
+
+HyperText Markup Language (HTML) is a markup language used to construct online documents and is the foundation of most websites today. A markup language like HTML allows us to:
+
+   1) Create links to other documents
+   2) Structure the content in our document 
+   3) Attribute context and meaning to the content of our document
+  
+
  
-An HTML document has two aspects to it. It contains structured information (Markup), and text-links (HyperText) to other documents. We structure our pages using [HTML elements](#). They are constructs of the language providing [structure](#) and [meaning](#) in our document for the browser and the [<anchor>](#) element links to other documents across the internet.
- 
+An HTML document has two aspects to it. It contains structured information (Markup), and text-links (HyperText) to other documents. We structure our pages using [HTML elements](#). They are constructs of the language providing [structure](#) and [meaning](#) in our document for the browser and [<anchor>](#) linking to other documents across the internet.
+
+The first publicly available description of HTML was a document called "HTML Tags", first mentioned on the Internet in late 1991 by Tim Berners-Lee, who is widely credited with the invention of html. 
+
 The internet was originally created to store and present static (unchanging) documents. The aspects of HTML discussed above were seen perfectly in these documents which lacked all design and styling. They presented structured information that contained links to other documents.
  
-HTML5 is the latest version, or specification, of HTML. The [World Wide Web Consortium (W3C)](https://www.w3.org/) is the organization responsible for developing standards for the World Wide Web, including those for HTML. As web pages and web applications grow more complex, W3C  updates HTML's standards.
+HTML5 is the latest version, or specification, of HTML. The [World Wide Web Consortium (W3C)](https://www.w3.org/) is the organization responsible for developing standards for the World Wide Web, including those for HTML. As web pages and web applications grow more complex, W3C updates HTML's standards.
  
-HTML5 Introduces a host of semantic elements. Though we discussed HTML helped to provide meaning to our document, it wasn't until HTML5s' introduction of [semantic elements](#) that its potential was realized.
+HTML5 introduced a host of semantic elements. As discussed, HTML provides meaning to our document, however it wasn't until HTML5's introduction of [semantic elements](#) that its potential was realized.
 
-## A simple example of HTML Document
+## A simple example of an HTML Document
 
 ```html
 <!DOCTYPE html>
@@ -35,19 +44,31 @@ HTML5 Introduces a host of semantic elements. Though we discussed HTML helped to
 
 html: The root element of an HTML page
 
-head: The element contains meta information about the document
+head: This element contains meta information about the document
 
-title: The element specifies a title for the document
+title: This element specifies a title for the document
 
-body: The element contains the visible page content
+body: This element contains the visible page content
 
-h1: The element defines a large heading
+h1: This element defines a large heading
 
-p: The element defines a paragraph
+p: This element defines a paragraph
+
+### HTML Tags
+
+HTML tags are element names surrounded by angle brackets:
+
+```<tagname> here is the content.. </tagname>```
+
+HTML tags normally come in pairs like ```<h1>```and ```</h1>```
+
+The first tag in a pair is the start tag, the second tag is the end tag
+
+The end tag is written like the start tag, but with a forward slash inserted before the tag name
 
 ### HTML Versions
 
-Since the early days of the web, there have been many versions of HTML
+Since the early days of the web, there have been many versions of HTML:
 
 |Version|Year|
 |--- |--- |
@@ -58,11 +79,6 @@ Since the early days of the web, there have been many versions of HTML
 |XHTML|2000|
 |HTML5|2014|
 
-#### Other Resources
-
-- [HTML Elements](https://guide.freecodecamp.org/html/elements)
-- [Semantic HTML](https://guide.freecodecamp.org/html/html5-semantic-elements)
-- [HTML Attributes](https://guide.freecodecamp.org/html/attributes)
 
 # HTML Elements
 
@@ -141,5 +157,12 @@ There are many possible ways a user can give input/s like:
 ```
 <!-- This is a comment -->
 ```
-
 Comments can help in the understanding of the markup and do not display in the webpage.
+
+
+#### More Information
+
+- [HTML Elements](https://guide.freecodecamp.org/html/elements)
+- [Semantic HTML](https://guide.freecodecamp.org/html/html5-semantic-elements)
+- [HTML Attributes](https://guide.freecodecamp.org/html/attributes)
+- [HTML Reference](https://htmlreference.io/)

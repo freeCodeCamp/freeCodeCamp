@@ -6,7 +6,7 @@ title: Bash cd
 
 **Change Directory** to the path specified, for example `cd projects`.
 
-There are a few really helpful arguments to aid this:
+There are a few really helpful arguments to help with this:
 
 - `.` refers to the current directory, such as `./projects`
 - `..` can be used to move up one folder, use `cd ..`, and can be combined to move up multiple levels `../../my_folder`

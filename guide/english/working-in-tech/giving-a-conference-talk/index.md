@@ -33,14 +33,17 @@ It is not uncommon for a conference to have an acceptance rate of around 20%. Do
 
 When you are accepted to speak at a conference, it is time to finish writing your talk. Take your outline and fill in the gaps. 
 
-Create your slide deck and add speaker notes so you know what you are going to say for each slide. Be aware of any slide guidelines that the conference might have (aspect ratio, acceptable colors, font, font size, etc) and stick to them. 
+Create your slide deck and add speaker notes so you know what you are going to say for each slide. Be aware of any slide guidelines that the conference might have (aspect ratio, acceptable colors, font, font size, etc.) and stick to them. 
 
 ## Practice
 
-Practice as much as you need to feel relaxed. You should time yourself giving the presentation a few different occassions to make sure that you are well within the time limit—you don't want to be cut off because your talk goes over time. Try your best to not be dependent on your notes/slides so that you can engage the audience by making eye contact as much as possible. 
+Practice as much as you need to feel relaxed. You should time yourself giving the presentation a few different occasions to make sure that you are well within the time limit—you don't want to be cut off because your talk goes over time. Try your best to not be dependent on your notes/slides so that you can engage the audience by making eye contact as much as possible. 
 
 ## Enjoy the Conference
 
 You may be nervous (that's okay!) but try to enjoy the other talks and events that the conference has to offer. 
 
 Give yourself plenty of time to be at your speaking location beforehand and bring a friend to see your talk if possible. Be aware that many conferences now record talks and prepare for this ahead of time. Take several deep breaths before you go on and try to have a nice time. If people can see that you are happy to be there, they will most likely be happy to hear what you have to say. 
+
+#### More Information
+[How and Why to Speak at a Tech Conference](https://hackernoon.com/how-and-why-to-speak-at-tech-conferences-1d50a3f548e0)

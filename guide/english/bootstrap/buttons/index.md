@@ -25,13 +25,13 @@ This is a list of the CSS classes that bootstrap provides for buttons.
 
 `<button type="button" class="btn">Basic</button>`
 
-`.btn-default` Bootstrap's default button.
-
-`<button type="button" class="btn btn-default">Default</button>`
-
 `.btn-primary` Bootstrap's primary button.
 
 `<button type="button" class="btn btn-primary">Primary</button>`
+
+`.btn-secondary` Bootstrap's secondary button.
+
+`<button type="button" class="btn btn-secondary">Secondary</button>`
 
 `.btn-success` Bootstrap's success button.
 
@@ -56,6 +56,10 @@ This is a list of the CSS classes that bootstrap provides for buttons.
 `.btn-light` Bootstrap's light button.
 
 `<button type="button" class="btn btn-light">Light</button>`
+
+`.btn-dark` Bootstrap's dark button.
+
+`<button type="button" class="btn btn-dark">Dark</button>`
 
 #### Bootstrap Button Sizes:
 This is a list of the CSS classes for different size of the buttons.

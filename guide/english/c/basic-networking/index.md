@@ -19,3 +19,6 @@ Socket programming is a way of connecting two nodes on a network to communicate 
 ## I have Socket... Now what?
 
 Once a socket has been created between two nodes (a.k.a hosts or computing systems), a language needs to be agreed upon so the hosts can communicate between themselves - and others.  This language is often referred to as a [protocol](https://en.wikipedia.org/wiki/Communication_protocol "Wikipedia: Communication Protocol") - or an agreed upon way to communicate between hosts.  While there are many different protocols, the two most often used protocols are [UDP (User Datagram Protocol](https://en.wikipedia.org/wiki/User_Datagram_Protocol "Wikipedia: User Datagram Procol") and [TCP (Transmission Control Protocol)](https://en.wikipedia.org/wiki/Transmission_Control_Protocol "Wikipedia: Transmission Control Protocol").  
+
+#### More Information
+- [GeekForGeeks: Socket Programming in C](https://www.geeksforgeeks.org/socket-programming-cc)
