@@ -126,14 +126,18 @@
     ],
     [
       "587d7dbb367417b2b2512baa",
-      "Reuse Patterns Using Capture Groups"
+      "Check for Groups of Characters"
     ],
     [
       "587d7dbb367417b2b2512bab",
-      "Use Capture Groups to Search and Replace"
+      "Reuse Patterns Using Capture Groups"
     ],
     [
       "587d7dbb367417b2b2512bac",
+      "Use Capture Groups to Search and Replace"
+    ],
+    [
+      "587d7dbb367417b2b2512bad",
       "Remove Whitespace from Start and End"
     ]
   ],
