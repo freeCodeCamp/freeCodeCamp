@@ -25,7 +25,7 @@ The code below requires the contents of a file, <code>"capitalize_strings"</code
 ```yml
 tests:
   - text: Properly uses <code>import * as</code> syntax.
-    testString: 'assert(code.match(/import\s+\*\s+as\s+[a-zA-Z0-9_$]+\s+from\s*"\s*capitalize_strings\s*"\s*;/gi), "Properly uses <code>import * as</code> syntax.");'
+    testString: assert(code.match(/import\s+\*\s+as\s+[a-zA-Z0-9_$]+\s+from\s*"\s*capitalize_strings\s*"\s*;/gi), 'Properly uses <code>import * as</code> syntax.');
 
 ```
 
