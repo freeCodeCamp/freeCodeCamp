@@ -1,3 +1,6 @@
+---
+title: Bash Uptime
+---
 # Bash Uptime
 
 The command  `uptime` displays the following:
