@@ -2,7 +2,7 @@
 title: Virtual Environments
 ---
 
-# Virtual Environemnts
+# Virtual Environments
 
 Virtual environments can be described as isolated installation directories. This isolation allows you to localized the installation of your project's dependencies, without forcing you to install them system-wide.
 
