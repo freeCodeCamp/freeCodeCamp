@@ -28,7 +28,7 @@ background-size属性指定背景图像的大小。您可以设置长度或百�
 
 #### 更多信息：
 
-文档： [MDN](https://developer.mozilla.org/en-US/docs/Web/CSS/background-size)
+文档： [MDN](https://developer.mozilla.org/zh-CN/docs/Web/CSS/background-size)
 
 CSS-Tricks： [背景大小](https://css-tricks.com/almanac/properties/b/background-size/)
 
