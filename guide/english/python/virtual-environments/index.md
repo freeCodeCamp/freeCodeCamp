@@ -89,7 +89,7 @@ python3 -m venv venv
 #### 3. pyenv
 
 [`pyenv`](https://github.com/yyuu/pyenv) simple Python version management based on [`rbenv`](https://github.com/rbenv/rbenv).
-Used togrther with [`pyenv-virtualenv`](https://github.com/pyenv/pyenv-virtualenv) plugin
+Used together with [`pyenv-virtualenv`](https://github.com/pyenv/pyenv-virtualenv) plugin
 Create an Environemnt:
 
 To create a virtual environment use:
