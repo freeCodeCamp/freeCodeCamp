@@ -24,7 +24,7 @@ Then fix the code so that the RegEx that you have created is checked in a string
 ```yml
 tests:
   - text: You should use <code>()</code> in the regex.
-    testString: assert(code.match(/\(\)/g), 'You should use <code>()</code> in the regex.');
+    testString: assert(code.match(/\(.*\)/g), 'You should use <code>()</code> in the regex.');
   - text: Your regex should check for the presence of either of <code>JavaScript</code> or <code>Python</code> in the string.
     testString: assert(code.match(/\/\(((Python\|JavaScript)|(JavaScript\|Python))\)\/g\//g), 'Your regex should check for the presence of either of <code>JavaScript</code> or <code>Python</code> in the string.');
   - text: You should use <code>.test()</code> to test the regex.
