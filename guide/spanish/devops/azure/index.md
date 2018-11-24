@@ -10,7 +10,7 @@ Azure DevOps Services es un servicio en la nube para colaborar en el desarrollo 
 *   Cree y libere la administración para admitir la integración y entrega continua de sus aplicaciones
 *   Herramientas ágiles para admitir la planificación y el seguimiento de su trabajo, defectos de código y problemas con los métodos Kanban y Scrum
 *   Una variedad de herramientas para probar sus aplicaciones, incluyendo pruebas manuales / exploratorias, pruebas de carga y pruebas continuas
-*   Tableros altamente personalizables para compartir avances y tendencias.
+*   Tablas altamente personalizables para compartir avances y tendencias.
 *   Wiki incorporado para compartir información con su equipo
 
 Además, el ecosistema de DevOps de Azure brinda soporte para agregar extensiones, integrarse con otros servicios populares, como Campfire, Slack, Trello, UserVoice y más, y desarrollar sus propias extensiones personalizadas.
