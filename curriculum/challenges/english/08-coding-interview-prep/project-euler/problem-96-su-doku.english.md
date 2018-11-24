@@ -48,7 +48,7 @@ By solving all fifty puzzles find the sum of the 3-digit numbers found in the to
 ```yml
 tests:
   - text: <code>euler96()</code> should return 24702.
-    testString: 'assert.strictEqual(euler96(), 24702, "<code>euler96()</code> should return 24702.");'
+    testString: assert.strictEqual(euler96(), 24702, '<code>euler96()</code> should return 24702.');
 
 ```
 

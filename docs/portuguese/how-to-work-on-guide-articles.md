@@ -1,3 +1,16 @@
+<table>
+    <tr>
+        <!-- Do not translate this table -->
+        <td> Read these guidelines in </td>
+        <td><a href="/CONTRIBUTING.md"> English </a></td>
+        <td><a href="/docs/chinese/CONTRIBUTING.md"> 中文 </a></td>
+        <td><a href="/docs/russian/CONTRIBUTING.md"> русский </a></td>
+        <td><a href="/docs/arabic/CONTRIBUTING.md"> عربي </a></td>
+        <td><a href="/docs/spanish/CONTRIBUTING.md"> Español </a></td>
+        <td><a href="/docs/portuguese/CONTRIBUTING.md"> Português </a></td>
+    </tr>
+</table>
+
 # Como trabalhar em Artigos Guia
 
 Com a tua ajuda, nós podemos criar uma ferramenta de referência compreensiva que ajudará milhões de pessoas que estão a aprender código nos anos que aí vêm. 💛
@@ -31,11 +44,11 @@ Há duas maneiras para propor uma mudança num repositório, depois de editares 
 
 Vê a demonstração em vídeo ou segue os passos abaixo:
 
-**[A FAZER]** Atualizar a gravação do GIF. 
+**[A FAZER]** Atualizar a gravação do GIF.
 
 ![GIF a mostrar os passos do GitHub interface](#)
 
-1. Ir à pasta **"pages"** (localizada no [`client/src/pages/guide`](/client/src/pages/guide)) e encontrar o artigo que gostarias de escrever ou editar.
+1. Ir à pasta **"pages"** (localizada no [`guide`](/guide)) e encontrar o artigo que gostarias de escrever ou editar.
 
     > Todos os <i>stubs</i> estarão num ficheiro index.md
 
@@ -111,7 +124,7 @@ Reviewers farão todos os esforços para resolver estes conflitos e combinar os 
 
 Se um <i>pull requests</i> não é perfeito, o revisor poderá:
 
-- pedir mudanças ao contribuidor e adicionar a label *changes requested* 
+- pedir mudanças ao contribuidor e adicionar a label *changes requested*
 - resolver problemas menores e fazer um <i>commit> no topo do PR
 
 #### Travis CI Build
@@ -358,7 +371,7 @@ It seems that similar changes have already been accepted earlier for this articl
 
 If you feel you have more to add, please feel free to open up a new PR.
 
-Thanks again! 😊 
+Thanks again! 😊
 
 > Hey @username
 

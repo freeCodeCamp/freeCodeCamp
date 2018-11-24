@@ -26,7 +26,7 @@ How many geometric triangles exist with perimeter ≤ 2.5·1013 ?
 ```yml
 tests:
   - text: <code>euler370()</code> should return 41791929448408.
-    testString: 'assert.strictEqual(euler370(), 41791929448408, "<code>euler370()</code> should return 41791929448408.");'
+    testString: assert.strictEqual(euler370(), 41791929448408, '<code>euler370()</code> should return 41791929448408.');
 
 ```
 

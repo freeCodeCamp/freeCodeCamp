@@ -10,7 +10,7 @@ localeTitle: Estandarizar los tiempos con el atributo datetime HTML5
 undefined
 
 ## Instructions
-<section id="instructions"> ¡Los resultados de la encuesta de Mortal Kombat de Camper Cat están aquí! Envuelva una etiqueta de <code>time</code> alrededor del texto &quot;Jueves, 15 de septiembre &lt;sup&gt; th &lt;/sup&gt;&quot; y agregue un atributo de <code>datetime</code> y <code>datetime</code> establecido en &quot;2016-09-15&quot;. </section>
+<section id="instructions"> ¡Los resultados de la encuesta de Mortal Kombat de Camper Cat están aquí! Envuelva una etiqueta de <code>time</code> alrededor del texto &quot;Jueves, 15 de septiembre &lt;sup&gt; th &lt;/sup&gt;&quot; y agregue un atributo de <code>datetime</code> con el valor &quot;2016-09-15&quot;. </section>
 
 ## Tests
 <section id='tests'>
