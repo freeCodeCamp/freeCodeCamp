@@ -3,7 +3,7 @@ title: Bash wget
 ---
 ## Bash wget
 
-Wget is a smal software to revice content from web servers from a terminal. Wget supports downloading via HTTP, HTTPS and FTP.
+Wget is used to receive content from web servers using a terminal. Wget supports downloading via HTTP, HTTPS and FTP.
 
 ### Usage
 ```bash
@@ -14,7 +14,7 @@ Most used options:
 * `-i FILE`, reads URLs from a given FILE.
 * `-t X`, number of `X` attempts to download a file.
 * `-c`, try to continue a partial download.
-* `-N`, only downloads the target file it the file is newer than a file with he same name on your target drive.
+* `-N`, only downloads the target file if the file is newer than a file with he same name on your target drive.
 * `-v`, display all informations (default).
 
 ### Example
@@ -23,7 +23,7 @@ Download the target file to the current directory
 wget http://example.com/folder/file
 ```
 
-Try to get 45 times to download the target file
+Try to download the target file up to 45 times
 ```Bash
 wget -t 45 http://example.com/FOLDER/FILE
 ```
