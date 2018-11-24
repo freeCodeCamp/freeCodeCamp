@@ -24,6 +24,7 @@ export default class HTML extends React.Component {
         <body {...this.props.bodyAttributes}>
           {this.props.preBodyComponents}
           <div
+            className='tex2jax_ignore'
             dangerouslySetInnerHTML={{ __html: this.props.body }}
             id='___gatsby'
             key={'body'}
