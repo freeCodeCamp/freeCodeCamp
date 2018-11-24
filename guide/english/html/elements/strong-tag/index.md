@@ -7,7 +7,7 @@ The `<strong>` tag is used to give importance to text in an HTML document. This 
 
 Only the Global Attributes apply to the `<strong>` tag ie., there are no specific attributes for the `<strong>` tag.
 
-The `<strong>` tag should not be used to stylistically bold text.
+Note: The `<strong>` tag should not be used to stylistically bold text.
 
 A `<strong>` tag can also be referred to as a **strong element**. 
 
@@ -30,6 +30,7 @@ A `<strong>` tag can also be referred to as a **strong element**.
 |Opera|Yes|
 |Safari|Yes|
 
+
 #### More Information:
-[https://www.techonthenet.com/html/elements/strong_tag.php](https://www.techonthenet.com/html/elements/strong_tag.php)
-[https://www.w3schools.com/tags/tag_strong.asp](https://www.w3schools.com/tags/tag_strong.asp)
+- [strong tag: w3schools](https://www.w3schools.com/tags/tag_strong.asp)
+- [strong tag: techonthenet](https://www.techonthenet.com/html/elements/strong_tag.php)
