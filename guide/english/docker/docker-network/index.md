@@ -1,29 +1,29 @@
 ---
-title: Docker network
+title: Docker Network
 ---
 
-By design containers are isolated from the host and other running containers. The virtual networking of Docker containers, allows them to talk to services inside other containers or on the host.
+By design containers are isolated from the host and other running containers. The virtual networking of Docker containers allows them to talk to services inside other containers or on the host.
 
-By default every container gets an virtual ethernet interface that gets connected via a bridge on the host.
+By default, every container gets a virtual Ethernet interface that gets connected via a bridge on the host.
 
 ## List all Docker networks
 
 `docker network ls` lists all current Docker networks. 
 
-When installing Docker it creates three default networks. 
+When installing Docker it creates three default networks:
 
 - *bridge*:  
-Default for container that are run without a network specified
+Default for containers that are run without a network specified
 - *host*:  
-Allows Container to directly use the network stack of the host
+Allows a container to directly use the network stack of the host
 - *none*:  
-No networking to other containers possible
+No networking to other containers is possible
 
-You can use these. But when you plan on running your service containers in production it is advised to create special networks.
+You can use these, but when you plan on running your service containers in production it is advised to create special networks.
 
-## Inspect a Docker network
+## Inspect a Docker Network
 
-`docker network inspect NAMEOFNETWORK` outputs details on the configuration of the network in JSON format. For example the containers that are part of the network, or their private IPv4-adresses.
+`docker network inspect NAMEOFNETWORK` outputs details on the configuration of the network in JSON format. For example, the containers that are part of the network, or their private IPv4-adresses.
 
 ```json
 "Containers": {
@@ -55,7 +55,7 @@ To directly attach a new container to the newly created network run:
 
 `docker run --name my_new_webapp --network="my_app_network" -d httpd:2.4-alpine`
 
-To attach a already running container to a network run:
+To attach an already running container to a network run:
 
 `docker network connect my_app_network my_running_webapp`
 
