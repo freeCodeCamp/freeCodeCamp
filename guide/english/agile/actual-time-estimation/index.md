@@ -5,6 +5,8 @@ title: Actual Time Estimation
 
 Actual Time Estimation is the process of predicting the most realistic amount of effort (expressed in terms of person-hours or money) required to develop or maintain software based on incomplete, uncertain and noisy input. Effort estimates may be used as input to project plans, iteration plans, budgets, investment analyses, pricing processes and bidding rounds.
 
+In agile development, an acceptance test confirms that an story is complete by matching a user action scenario with a desired outcome.
+
 ### State-of-practice
 
 Published surveys on estimation practice suggest that expert estimation is the dominant strategy when estimating software development effort.
