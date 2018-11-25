@@ -47,8 +47,9 @@ title: Operators
      int b = a--; // postfix operator; a = 6, b = 7
      int c = --a; // prefix operator; a = 5, c = 5
      ```
-```C     
-// C Program to demonstrate the working of arithmetic operators
+
+ C Program to demonstrate the working of arithmetic operators
+```C
 #include <stdio.h>
 int main()
 {
@@ -226,10 +227,14 @@ int main()
   // can be rewritten with the ternary operator as
   result = a > b ? x : y;
   ```
-  
-## 6. Operator precedence in C
+
+## 6. Operator precedence and associativity in C
 Operators with the highest precedence appear at the top of the list. Within an expression, operators
-with higher precedence will be evaluated first.
+with higher precedence will be evaluated first. When two or more operators of the same precedence is
+present in an expression, then the associativity of the operator tells us the order in which the operators
+must be evaluated. The associativity in the given list is from left to right i.e, operators in the left are
+evaluated first. 
+
 - Postfix `() [] -> . ++ --`
 - Unary `+ - ! ~ ++ -- (type)* & sizeof`
 - Multiplicative `* / %`
@@ -245,3 +250,38 @@ with higher precedence will be evaluated first.
 - Conditional `?:`
 - Assignment `= += -= *= /= %= >>= <<= &= ^= |=`
 - Comma `,`
+
+## 7. Conditional Operators
+
+## Syntax
+   ```conditionalExpression ? expression1 : expression2```
+   
+The conditional operator works as follows:
+
+The first expression conditionalExpression is evaluated first. This expression evaluates to 1 if it's true and evaluates to 0 if it's false.
+1. If conditionalExpression is true, expression1 is evaluated.
+2. If conditionalExpression is false, expression2 is evaluated.
+
+## Example
+```c
+#include <stdio.h>
+int main(){
+   char February;
+   int days;
+   printf("If this year is leap year, enter 1. If not enter any integer: ");
+   scanf("%c",&February);
+
+   // If test condition (February == 'l') is true, days equal to 29.
+   // If test condition (February =='l') is false, days equal to 28. 
+   days = (February == '1') ? 29 : 28;
+
+   printf("Number of days in February = %d",days);
+   return 0;
+}
+```
+## Output
+
+```
+If this year is leap year, enter 1. If not enter any integer: 1
+Number of days in February = 29
+```
