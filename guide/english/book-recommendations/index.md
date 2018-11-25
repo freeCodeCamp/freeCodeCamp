@@ -242,7 +242,7 @@ https://books.goalkicker.com/OracleDatabaseBook/
 - [Amazon](https://www.amazon.com/Mastering-Linux-Scripting-Andrew-Mallett/dp/1784396974/)
 - ISBN-13: 978-1784396978
 
-*CSS: The Missing Manual
+*CSS: The Missing Manual*
 - [Amazon](https://www.amazon.com/CSS-Missing-Manual-Manuals/dp/0596802447)
 - ISBN-13: 978-0596802448
 
