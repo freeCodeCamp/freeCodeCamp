@@ -1,6 +1,6 @@
 ---
 title: Let and Const
-localeTitle: let 和 Const
+localeTitle: let 和 const
 ---
 ## let
 
