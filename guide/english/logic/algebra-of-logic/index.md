@@ -20,6 +20,6 @@ The three basic operations in Boolean Algebra are `AND`, `OR`, and `NOT`. Consid
 - `NOT (x OR y) = NOT x AND NOT y`
 
 ### More Information:
-- De Morgan's law : <a href='https>//brilliant.org/wiki/de-morgans-law/' target='_blank' rel='nofollow'>DeMorgan</a>
-- The Calculus of Logic: <a href='http://www.maths.tcd.ie/pub/HistMath/People/Boole/CalcLogic/CalcLogic.html' target='_blank' rel='nofollow'>George Boole</a>
-- Boolean algebra article: <a href='https://en.wikipedia.org/wiki/Boolean_algebra' target='_blank' rel='nofollow'>Wikipedia</a>
+- [The Calculus of Logic](https://www.maths.tcd.ie/pub/HistMath/People/Boole/CalcLogic/CalcLogic.html)
+- [Boolean algebra article](https://en.wikipedia.org/wiki/Boolean_algebra)
+- [De Morgan's law](https://en.wikipedia.org/wiki/De_Morgan%27s_laws)
