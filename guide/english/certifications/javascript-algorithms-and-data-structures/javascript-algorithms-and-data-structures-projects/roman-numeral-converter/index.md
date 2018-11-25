@@ -144,7 +144,7 @@ You can't have more than three consecutive Roman numerals together.
 ## ![:sunflower:](https://forum.freecodecamp.com/images/emoji/emoji_one/sunflower.png?v=3 ":sunflower:") Intermediate Code Solution:
 
     function convertToRoman(num) {
-      var romans = 
+      var romans = [
       // 10^i 10^i*5
         ["I", "V"], // 10^0
         ["X", "L"], // 10^1
