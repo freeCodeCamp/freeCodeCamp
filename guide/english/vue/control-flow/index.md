@@ -13,8 +13,7 @@ required a text at least 8 characters long: if the user input is shorter than 8,
 than an error message should appear; but if the input is longer than 8, the
 message disappears.
 
-But let's make a simpler example. We want the condition tro exhibite
-message to a counter:
+But let's make a simpler example. We want a condition that determines what is displayed, using a counter:
 
 ```html
 <div id="app">
