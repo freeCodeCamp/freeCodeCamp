@@ -1,5 +1,4 @@
 require('dotenv').config();
-// const formatDate = require('date-fns/format');
 
 const { owner, repo, octokitConfig, octokitAuth } = require('../constants');
 

@@ -17,12 +17,13 @@ const { savePrData, ProcessingLog } = require('../utils');
 
 octokit.authenticate(octokitAuth);
 
-const log = new ProcessingLog();
+const log = new ProcessingLog('find-failures-script');
 
 const errorsToFind = require(path.resolve(__dirname, '../input-files/failuresToFind.json'));
 
 (async () => {
   const { firstPR, lastPR } = await getUserInput();
+  log.setFirstLast({ firstPR, lastPR });
   const prPropsToGet = ['number', 'head'];
   const { openPRs } = await getPRs(firstPR, lastPR, prPropsToGet);
 
@@ -32,15 +33,15 @@ const errorsToFind = require(path.resolve(__dirname, '../input-files/failuresToF
     console.log('Starting error finding process...');
     for (let count in openPRs) {
       let { number, head: { sha: ref } } = openPRs[count];
-      log.add(number, 'error');
-      const { data: statuses } = await octokit.repos.getStatuses({ owner, repo, ref });
+      const { data: statuses } = await octokit.repos.listStatusesForRef({ owner, repo, ref });
 
       if (statuses.length) {
         const { state, target_url } = statuses[0]; // first element contain most recent status
         const hasProblem = state === 'failure' || state === 'error';
         if (hasProblem) {
-          let buildNum = Number(target_url.match(/\/builds\/(\d+)\?/i)[1]);'
-          const logNumber = 'need to use Travis api to access the full log for the buildNum above'
+          let buildNum = Number(target_url.match(/\/builds\/(\d+)\?/i)[1]);
+          //const logNumber = 'need to use Travis api to access the full log for the buildNum above'
+          const logNumber = ++buildNum;
           const travisLogUrl = `https://api.travis-ci.org/v3/job/${logNumber}/log.txt`;
           const response = await fetch(travisLogUrl)
           const logText = await response.text();
@@ -54,8 +55,8 @@ const errorsToFind = require(path.resolve(__dirname, '../input-files/failuresToF
               break;
             }
           }
-          const errorDesc = error ? error : 'unkown error';
-          log.update(number, 'error', { errorDesc, buildLog: travisLogUrl });
+          const errorDesc = error ? error : 'unknown error';
+          log.add(number, { errorDesc, buildLog: travisLogUrl });
         }
       }
     }
@@ -63,7 +64,7 @@ const errorsToFind = require(path.resolve(__dirname, '../input-files/failuresToF
 })()
 .then(() => {
   log.finish();
-  console.log('Successfully finding all specified errors.');
+  console.log('Successfully finished finding all specified errors.');
 })
 .catch(err => {
   log.finish();
