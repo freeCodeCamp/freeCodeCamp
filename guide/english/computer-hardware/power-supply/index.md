@@ -22,7 +22,7 @@ A non-modular PSU is the most common type of PSU, this PSU is unadaptable with t
 * One or two PCIE power supply modules, usually for expansion cards such as GPU
 * A CPU power supply module
 
-## Modular
+### Modular
 
 Modular power supplies are becoming more common nowadays, these are more commonly seen amongst "high end" PSUs. The advantage these have over non-modular supplies is that they can be expanded to add additional power supply modules.
 
