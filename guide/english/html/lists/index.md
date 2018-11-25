@@ -117,6 +117,28 @@ which would end up looking like:
   <dd>An awesome non-profit organization teaching people how to code.</dd>
 </dl>
 
+## Nested HTML Lists
+ List can be nested (lists inside lists):
+```html
+<ul>
+  <li>Coffee</li>
+  <li>Tea
+    <ul>
+      <li>Black tea</li>
+      <li>Green tea</li>
+    </ul>
+  </li>
+  <li>Milk</li>
+</ul>
+```
+
+is displayed as:
+
+- Coffee
+- Tea
+  - Black tea
+  - Green tea
+- Milk
 
 ## Nested HTML Lists
 
