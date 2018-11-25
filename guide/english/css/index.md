@@ -4,7 +4,7 @@ title: Cascading Style Sheets (CSS)
 
 ### Cascading Style Sheets (CSS)
 
-![alt text][logo]
+![CSS Logo][logo]
 
 [logo]: https://upload.wikimedia.org/wikipedia/commons/thumb/d/d5/CSS3_logo_and_wordmark.svg/726px-CSS3_logo_and_wordmark.svg.png
 
