@@ -96,7 +96,7 @@ which would end up looking like:
 
 ## Nested HTML Lists
  List can be nested (lists inside lists):
-```EXAMPLE
+```html
 <ul>
   <li>Coffee</li>
   <li>Tea
@@ -109,6 +109,13 @@ which would end up looking like:
 </ul>
 ```
 
+is displayed as:
+
+- Coffee
+- Tea
+  - Black tea
+  - Green tea
+- Milk
 
 ## More Information:
 
