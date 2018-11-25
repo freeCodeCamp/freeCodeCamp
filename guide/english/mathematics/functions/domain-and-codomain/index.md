@@ -1,3 +1,6 @@
+---
+title: Domain and Codomain
+---
 
 ## Domain and Codomain
 
