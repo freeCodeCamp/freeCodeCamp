@@ -74,10 +74,10 @@ function HeatMap({ calendar, streak }) {
       <FullWidthRow>
         <div className='streak-container'>
           <span className='streak'>
-            <strong>Longest Streak:</strong> {streak.longest || 1}
+            <strong>Longest Streak:</strong> {streak.longest || 0}
           </span>
           <span className='streak'>
-            <strong>Current Streak:</strong> {streak.current || 1}
+            <strong>Current Streak:</strong> {streak.current || 0}
           </span>
         </div>
       </FullWidthRow>
