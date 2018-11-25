@@ -1,4 +1,8 @@
-# SVG Shapes
+---
+title: SVG Shapes
+---
+
+## SVG Shapes
 
 Several shapes can be created using SVG drawing. An SVG drawing can use and combine seven shapes: Path, Rectangle, Circle, Ellipse, Line, Polyline, and Polygon.
 
