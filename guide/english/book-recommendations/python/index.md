@@ -67,7 +67,6 @@ You'll learn many of the first princliples for data science tools and how algori
 - [Python in Education by Nicholas H. Tollervey[OREILLY] [FREE]](https://www.oreilly.com/programming/free/files/python-in-education.pdf)
 - [How to think like a Computer Scientist by Allen Downey[V 2.0.17] [FREE]](http://greenteapress.com/thinkpython/thinkpython.pdf)
 - [A Byte of Python[FREE]](https://python.swaroopch.com)
+- [Python for Everybody: Exploring Data in Python 3 by Charles Severance](http://do1.dr-chuck.com/pythonlearn/EN_us/pythonlearn.pdf)
 
 Please feel free to add more that you have found useful!
-- [Python for Everybody: Exploring Data in Python 3 by Charles Severance]
-(http://do1.dr-chuck.com/pythonlearn/EN_us/pythonlearn.pdf)
