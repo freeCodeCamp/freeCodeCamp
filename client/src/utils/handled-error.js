@@ -24,32 +24,61 @@ export function handle400Error(e, options = { redirectTo: '/welcome' }) {
   const {
     response: { status }
   } = e;
-  const { redirectTo } = options;
-  let flash = { ...standardErrorMessage };
+  let { redirectTo } = options;
+  let flash = { ...standardErrorMessage, redirectTo };
+
   switch (status) {
     case 401:
     case 403: {
-      flash = { message: 'You are not authorised to continue on this route' };
-      break;
+      return {
+        ...flash,
+        type: 'warn',
+        message: 'You are not authorised to continue on this route'
+      };
     }
     case 404: {
-      flash = {
+      return {
+        ...flash,
         type: 'info',
         message:
           "We couldn't find what you were looking for. " +
           'Please chack and try again'
       };
-      break;
     }
     default: {
-      break;
+      return flash;
     }
   }
-  return wrapHandledError(e, { ...flash, redirectTo });
 }
 
-export function handle500Error(e, options = { redirectTo: '/welcome' }) {
+export function handle500Error(
+  e,
+  options = {
+    redirectTo: '/welcome'
+  },
+  _reportClientSideError = reportClientSideError
+) {
   const { redirectTo } = options;
-  reportClientSideError(e, 'We just handled a 5** error on the client');
-  return wrapHandledError(e, { ...reportedErrorMessage, redirectTo });
+  _reportClientSideError(e, 'We just handled a 5** error on the client');
+  return { ...reportedErrorMessage, redirectTo };
+}
+
+export function handleAPIError(
+  e,
+  options,
+  _reportClientSideError = reportClientSideError
+) {
+  const { response: { status = 0 } = {} } = e;
+  if (status >= 400 && status < 500) {
+    return handle400Error(e, options);
+  }
+  if (status >= 500) {
+    return handle500Error(e, options, _reportClientSideError);
+  }
+  const { redirectTo } = options;
+  _reportClientSideError(
+    e,
+    'We just handled an api error on the client without an error status code'
+  );
+  return { ...reportedErrorMessage, redirectTo };
 }

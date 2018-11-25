@@ -1,11 +1,15 @@
 /* global describe it expect */
 import { isObject } from 'lodash';
+import sinon from 'sinon';
 import {
   isHandledError,
   wrapHandledError,
   unwrapHandledError,
-  handledErrorSymbol
+  handledErrorSymbol,
+  handleAPIError
 } from './handled-error';
+
+import reportedErrorMessage from './reportedErrorMessage';
 
 describe('client/src utilities', () => {
   describe('handled-error.js', () => {
@@ -14,6 +18,7 @@ describe('client/src utilities', () => {
       message: 'something helpful',
       redirectTo: '/a-path-we-choose'
     };
+
     describe('isHandledError', () => {
       it('returns a boolean', () => {
         expect(typeof isHandledError({})).toEqual('boolean');
@@ -64,6 +69,81 @@ describe('client/src utilities', () => {
         handledError[handledErrorSymbol] = mockHandledErrorData;
         const unwrapped = unwrapHandledError(handledError);
         expect(unwrapped).toEqual(mockHandledErrorData);
+      });
+    });
+
+    describe('handleAPIError', () => {
+      let reportMock;
+      beforeEach(() => {
+        reportMock = sinon.spy();
+      });
+
+      it('returns handled error data', () => {
+        expect.assertions(3);
+        const axiosErrorMock = {
+          response: {
+            status: 400
+          }
+        };
+        const result = handleAPIError(
+          axiosErrorMock,
+          { redirectTo: '/' },
+          reportMock
+        );
+        expect(result).toHaveProperty('type');
+        expect(result).toHaveProperty('message');
+        expect(result).toHaveProperty('redirectTo');
+      });
+
+      it('does not report 4** errors', () => {
+        expect.assertions(1);
+        for (let i = 400; i < 500; i++) {
+          const axiosErrorMock = {
+            response: {
+              status: i
+            }
+          };
+          handleAPIError(axiosErrorMock, { redirectTo: '/' }, reportMock);
+        }
+        expect(reportMock.called).toBe(false);
+      });
+
+      it('reports on 5** errors', () => {
+        const axiosErrorMock = {
+          response: {
+            status: 502
+          }
+        };
+        handleAPIError(axiosErrorMock, { redirectTo: '/' }, reportMock);
+        expect(reportMock.calledOnce).toBe(true);
+      });
+
+      it('returns a `reportedErrorMessage` for a 5** error', () => {
+        const axiosErrorMock = {
+          response: {
+            status: 502
+          }
+        };
+        const result = handleAPIError(
+          axiosErrorMock,
+          { redirectTo: '/' },
+          reportMock
+        );
+        expect(result).toEqual({ ...reportedErrorMessage, redirectTo: '/' });
+      });
+
+      it('respects a `null` redirectTo', () => {
+        const axiosErrorMock = {
+          response: {
+            status: 400
+          }
+        };
+        const result = handleAPIError(
+          axiosErrorMock,
+          { redirectTo: null },
+          reportMock
+        );
+        expect(result.redirectTo).toBe(null);
       });
     });
   });
