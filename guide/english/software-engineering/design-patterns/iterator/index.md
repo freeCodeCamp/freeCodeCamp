@@ -1,3 +1,7 @@
+---
+title: Iterator Pattern
+---
+
 ## Iterator Pattern
 
 Iterator pattern tries to separate the job of traversing a Collection or Container of objects from the implementation of the Collection.
