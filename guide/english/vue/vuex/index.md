@@ -1,4 +1,8 @@
-### VUEX
+---
+title: Vuex
+---
+
+## VUEX
 
 Vuex is a state management framework for Vue. It gives your application a single object that defines application state that can be injected into any of your components.
 
@@ -14,7 +18,7 @@ a vuex `store` contains the following objects that give you the ability to chang
 
 `mutations` are the only methods that can actully mutate the state of a store. Mutations methods can only be called from actions. They are only synchronous.
 
-#### VUEX Store Sample
+### VUEX Store Sample
 
 ```
 const store = new Vuex.store({
