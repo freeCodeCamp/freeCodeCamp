@@ -13,13 +13,10 @@ abstract class Veiculo
 {
   // variável usada para declarar o nº de rodas em um veículo
   private int rodas;
-
-  // Variável para definir o tipo de motor usado 
-  private Motor motor;
-
+  
   // um método abstrato que declara, mas não define a funcionalidade inicial
   // porque cada veículo usa um mecanismo de partida diferente 
-  abstract void darPartida ();
+  abstract void darPartida();
 }
 
 public class Carro extends Veiculo
@@ -34,19 +31,14 @@ public class Motocicleta extends Veiculo
 ```
 Você não pode criar um objeto usando a classe Veiculo. Porém, você pode extender a classe Veiculo, e, então, criar um objeto desta classe que extendeu Veiculo.
 
-```
-
-Você não pode criar um objeto da classe Veículo em lugar algum do seu programa. Porém, você pode estender a classe abstrata Veículo
-e criar objetos das classes que a herdam. 
-
 ```java 
-Veiculo novoVeiculo = new Veiculo (); // Inválido 
-Veiculo carro = new Carro (); // válido 
-Veículo moto = new Motocicleta (); // válido
+Veiculo novoVeiculo = new Veiculo(); // Inválido 
+Veiculo carro = new Carro(); // válido 
+Veículo moto = new Motocicleta(); // válido
 
-Carro carroObj = new Carro (); // válido 
-Motocicleta motoObj = new Motocicleta (); // válido 
+Carro carroObj = new Carro(); // válido 
+Motocicleta motoObj = new Motocicleta(); // válido 
 ```
 
-Se a classe filho não implementar os métodos abstratos da classe pai, ela também se tornará
+Se a classe filha não implementar os métodos abstratos da classe mãe, ela também se tornará
 uma classe abstrata. 
