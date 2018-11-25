@@ -45,7 +45,7 @@ let newOneWithOneParam = a => {
 }
 ```
 
-When there is only one statement or operation in the body's section, brackers are optional and the result is returned or undefined.
+When there is only one statement or operation in the function body, braces are optional and the result is returned or undefined.
 
 ```javascript
 let a = 10;
