@@ -1,3 +1,7 @@
+---
+title: PixiJS
+localeTitle: PixiJS
+---
 ## Libraria PixiJS
 
 # Introdução
