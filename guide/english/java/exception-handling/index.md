@@ -32,4 +32,5 @@ finally {
 // block of code to be executed after try block ends
 }
 ```
-If you are not really sure of what kind of exceptions your application may throw, use the Exception parent class to catch any anomaly and use the stacktrace function on the Exception object to debug what went wrong.
+
+Tip: If you are not really sure of what kind of exceptions your application may throw, use the `Exception` parent class to catch any anomaly and use the `stacktrace()` function on the `Exception` object to debug what went wrong.
