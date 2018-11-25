@@ -55,3 +55,21 @@ public class UserHungry : IUserFavoriteFood
   }
 }
 ```
+
+Every implementation can be different:
+```csharp
+public class AnotherUserHungry : IUserFavoriteFood
+{
+  public AddFood()
+  {
+    // DIFFERENT Implementation:
+    // A method to add vegan food.
+  }
+  
+  public Task<User> EatFavoriteFood(int id)
+  {
+    // DIFFERENT Implementation:
+    // A method to Eat only vegan food by id.
+  }
+}
+```
