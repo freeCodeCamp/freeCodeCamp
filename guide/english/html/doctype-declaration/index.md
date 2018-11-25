@@ -54,6 +54,8 @@ The Doctype Declaration must be the very first line of code in an HTML document,
 
 `<!DOCTYPE html>`
 
+It is important to note, that while "DOCTYPE" is shown in uppercase letters here.  The keyword "DOCTYPE" is case-insensitive and can be uppercase or lowercase.  This simplification is part of the reason HTML5 pages are compatible with old and new browsers, and also compatible with the browsers on mobile devices.
+
 #### More Information:
 
 While no longer in general use, there are several other doctype declaration types from previous versions of HTML. There are also specific versions for XML documents. To read more about these, and to see code examples for each, take a look at the [Wikipedia article](https://en.wikipedia.org/wiki/Document_type_declaration).
