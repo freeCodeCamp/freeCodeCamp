@@ -45,7 +45,7 @@ System.out.println(modelS.getManufacturerName());
 modelS.charge();
 ```
 
-![:rocket:](//forum.freecodecamp.com/images/emoji/emoji_one/rocket.png?v=2 ":rocket:") <a href='https://repl.it/CJZY/0' target='_blank' rel='nofollow'>Run Code</a>
+![:rocket:](https://forum.freecodecamp.com/images/emoji/emoji_one/rocket.png?v=2 ":rocket:") <a href='https://repl.it/CJZY/0' target='_blank' rel='nofollow'>Run Code</a>
 
 See here that the class `ElectricCar` inherits or `extends` the public methods from `Car` class, as well as has its own methods and properties. Cool way to pass on information!
 
