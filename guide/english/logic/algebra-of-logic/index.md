@@ -23,6 +23,6 @@ The above statements are called "De Morgan's Laws." This is a very useful and im
 
 ### More Information:
 - Boolean algebra article: [Wikipedia](https://en.wikipedia.org/wiki/Boolean_algebra)
-- The Calculus of Logic: [George Bool](https://www.maths.tcd.ie/pub/HistMath/People/Boole/CalcLogic/CalcLogic.html)
+- The Calculus of Logic: [George Boole](https://www.maths.tcd.ie/pub/HistMath/People/Boole/CalcLogic/CalcLogic.html)
 - Boolean Algebra Demonstration: [Wolfram MathWorld](http://mathworld.wolfram.com/BooleanAlgebra.html)
 - De Morgan's laws: [Wikipedia](https://en.wikipedia.org/wiki/De_Morgan%27s_laws)
