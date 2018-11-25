@@ -2,6 +2,10 @@ export default class WorkerExecutor {
   constructor(workerName) {
     this.workerName = workerName;
     this.worker = null;
+
+    this.execute = this.execute.bind(this);
+    this.killWorker = this.killWorker.bind(this);
+    this.getWorker = this.getWorker.bind(this);
   }
 
   getWorker() {
