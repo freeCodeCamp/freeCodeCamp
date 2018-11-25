@@ -12,14 +12,17 @@ Boolean algebra is fundamental to the development of digital electronics. It is 
 The three basic operations in Boolean Algebra are `AND`, `OR`, and `NOT`. Consider two boolean variables `x` and `y`:
 
 - `x AND y` is true if and only if both `x` and `y` are true
-- `x OR y` is true if and only if either of `x`, `y` are true. If `x`, `y` are both true, `x OR y` is still true 
+- `x OR y` is true if either of `x` or `y` are true
 - `NOT x` is true if and only if `x` is false and vice versa
 
-`NOT` of boolean statements can be refactored to apply directly to each variable. This is also known as the De Morgan's law. Consider the following :
+`NOT` of boolean statements can be refactored to apply directly to each variable. Consider the following :
 - `NOT (x AND y) = NOT x OR NOT y`
 - `NOT (x OR y) = NOT x AND NOT y`
 
+The above statements are called "De Morgan's Laws." This is a very useful and important law in Boolean Algebra.
+
 ### More Information:
-- [The Calculus of Logic](https://www.maths.tcd.ie/pub/HistMath/People/Boole/CalcLogic/CalcLogic.html)
-- [Boolean algebra article](https://en.wikipedia.org/wiki/Boolean_algebra)
-- [De Morgan's law](https://en.wikipedia.org/wiki/De_Morgan%27s_laws)
+- Boolean algebra article: [Wikipedia](https://en.wikipedia.org/wiki/Boolean_algebra)
+- The Calculus of Logic: [George Bool](https://www.maths.tcd.ie/pub/HistMath/People/Boole/CalcLogic/CalcLogic.html)
+- Boolean Algebra Demonstration: [Wolfram MathWorld](http://mathworld.wolfram.com/BooleanAlgebra.html)
+- De Morgan's laws [Wikipedia](https://en.wikipedia.org/wiki/De_Morgan%27s_laws)
