@@ -12,7 +12,9 @@ const errorActionSelector = action => isError(action.payload);
 function* errorHandlerSaga({ payload: error }) {
   if (isHandledError(error)) {
     const { type, message, redirectTo } = unwrapHandledError(error);
-    navigate(redirectTo);
+    if (redirectTo) {
+      navigate(redirectTo);
+    }
     yield put(createFlashMessage({ type, message }));
     return;
   }
