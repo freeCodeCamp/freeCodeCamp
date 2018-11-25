@@ -22,8 +22,8 @@ function Set() {
     this.values = function() {
         return collection;
     };
-    this.add = function(el){
-        return this.has(el) ? false : Boolean(collection.push(el))
+    this.add = function(el) {
+        return this.has(el) ? false : Boolean(collection.push(el));
     }
 }
 ```
