@@ -11,7 +11,6 @@ import {
   resolveShortIdFetchStateSelector
 } from '../redux';
 import { Loader } from '../../../components/helpers';
-import { createFlashMessage } from '../../../components/Flash/redux';
 
 const propTypes = {
   fetchState: PropTypes.shape({
@@ -43,27 +42,6 @@ class NewsReferalLinkHandler extends Component {
       return resolveShortId(shortId);
     }
     return navigate(redirect);
-  }
-
-  componentDidUpdate() {
-    const {
-      fetchState: { errored, complete },
-      redirect
-    } = this.props;
-
-    if (errored || (complete && !redirect)) {
-      createFlashMessage({
-        type: 'info',
-        message:
-          "We couldn't find what you were looking for, " +
-          'please check and try again'
-      });
-      return navigate('/news');
-    }
-    if (redirect) {
-      return navigate(redirect);
-    }
-    return null;
   }
 
   render() {

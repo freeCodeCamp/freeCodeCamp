@@ -2,7 +2,6 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
 import { isNull, pick, isEmpty } from 'lodash';
-import { navigate } from 'gatsby';
 
 import Layout from '../components/layouts/Default';
 import Loader from '../components/helpers/Loader';
@@ -34,24 +33,6 @@ class DynamicNewsArticle extends Component {
       return resolveShortId(shortId);
     }
     return null;
-  }
-
-  componentDidUpdate() {
-    const {
-      article,
-      fetchState: { complete },
-      createFlashMessage
-    } = this.props;
-    if ((isNull(article) || isEmpty(article)) && complete) {
-      createFlashMessage({
-        type: 'info',
-        message:
-          "We couldn't find what you were looking for, " +
-          'please check and try again'
-      });
-      navigate('/news');
-    }
-    return;
   }
 
   getArticleAsGatsbyProps(article) {
