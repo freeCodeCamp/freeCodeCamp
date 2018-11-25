@@ -25,6 +25,7 @@ A collection of helpful Angular resources
 
 *   <a href='https://angular.io/' target='_blank' rel='nofollow'>Angular</a> - The Angular Homepage
 *   <a href='https://angular.io/guide/styleguide' target='_blank' rel='nofollow'>Angular Style Guide</a> - Detailed best practices for Angular Development
+*   <a href='https://material.angular.io/' target='_blank' rel='nofollow'>Angular Material</a> - Excellent UI Framework that was built for Angular
 
 ### Specific-topic Pages
 
@@ -43,3 +44,5 @@ A collection of helpful Angular resources
 
 * <a href='https://alligator.io/angular/' target='_blank' rel='nofollow'>Alligator.io</a>
 * <a href='https://blog.angularindepth.com/tagged/angular' target='_blank' rel='nofollow'>Angular In Depth</a>
+* <a href='https://coursetro.com/posts/code/154/Angular-6-Tutorial---Learn-Angular-6-in-this-Crash-Course' target='_blank' rel='nofollow'>Hands on introduction angular 6 concepts</a>
+* <a href='https://blog.thoughtram.io/categories/angular-2/' target='_blank' rel='nofollow'>Thoughtram</a>
