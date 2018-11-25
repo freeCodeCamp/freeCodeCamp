@@ -23,7 +23,7 @@ function Set() {
         return collection;
     };
     this.add = function(el){
-        return this.has(el) ? false : collection.push(el) && true;
+        return this.has(el) ? false : Boolean(collection.push(el))
     }
 }
 ```
