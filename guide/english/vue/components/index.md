@@ -84,3 +84,32 @@ Once a prop is registered, you can pass data to it as a custom attribute, like t
 <blog-post title="Blogging with Vue"></blog-post>
 <blog-post title="Why Vue is so fun"></blog-post>
 ```
+
+### Single File Components
+
+Instead of declaring many components in a single file resulting in a long spagetti code. You may want to modularize your components by having different files. (ie. more info: https://vuejs.org/v2/guide/single-file-components.html)
+
+Enclose your template in a <template> tag, script the structure of the component in the <script> tag and style your components in the <style scoped> tag.
+
+```
+<template>
+  <p>{{ greeting }} World!</p>
+</template>
+
+<script>
+module.exports = {
+  data: function () {
+    return {
+      greeting: 'Hello'
+    }
+  }
+}
+</script>
+
+<style scoped>
+p {
+  font-size: 2em;
+  text-align: center;
+}
+</style>
+```

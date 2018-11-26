@@ -40,3 +40,11 @@ title: Books on JavaScript
 8. **A Smarter Way to Learn JavaScript: The new approach that uses technology to cut your effort in half**
    This book is designed for beginners and contains lots of code exercises at the end of each chapter. With this book, "you will spend two to three more times practicing than reading." - Mark Meyers (author) 
    - [Amazon](https://www.amazon.com/Smarter-Way-Learn-JavaScript-technology-ebook/dp/B00H1W9I6C)   
+
+9. **Head First Javascript Programming**
+   The Head Frist books series by Eric Freeman and Elisabeth Robson cover a variety of programming topics in a beginner freindly manner. This installment on Javascript is no exception. It is available hard copy and provides exercises to master the basics and understand the nature of programming. 
+   -[Amazon](https://www.amazon.com/Head-First-JavaScript-Programming-Brain-Friendly/dp/144934013X)
+
+#### Other Resources
+
+- A selection of online free resources; including e-books for JavaScript are available at [JS Books](https://jsbooks.revolunet.com/)
