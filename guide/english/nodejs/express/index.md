@@ -346,7 +346,7 @@ app.use(
 );
 ```
 
-### morgan
+#### morgan
 
 The morgan middleware keeps track of all the requests and other important information depending on the output format specified.
 
@@ -361,6 +361,32 @@ app.use(logger('common'));
 ```
 
 `common` is a predfined format case which you can use in the application. There are other predefined formats such as tiny and dev, but you can define you own custom format too using the string parameters that are available to us by morgan.
+
+#### dotenv
+
+The dotenv middleware loads environmental variables from a `.env` file into `process.env`.  An `.env` file can be used to store sensitive information such as API keys and database credentials.  `dotenv` allows for a zero-configuration way to access the information stored in `.env`.  
+**Note:** You should NEVER include your `.env` file in your public repo.  Be sure to add `.env` to your `.gitignore` file.
+
+```shell
+npm install --save dotenv
+```
+
+```sh
+# .env file
+DB_HOST=localhost
+DB_USER=root
+DB_PASS=s1mpl3
+```
+```js
+/* index.js file */
+require('dotenv').config();
+const db = require('db');
+db.connect({
+  host: process.env.DB_HOST,
+  username: process.env.DB_USER,
+  password: process.env.DB_PASS
+});
+```
 
 A list of most used middleware functions is available at this [link](https://expressjs.com/en/resources/middleware.html).
 
@@ -493,10 +519,9 @@ The output will be the same as previous case.
 
 ## Project Structure of an Express App
 
-Since Express does not enforces much on the developer using it, sometimes it can get a bit overwhelming to what project structure one should follow. It does not has a defined structure officially but most common use case that any Node.js based application follows is to separate different tasks in different modules. This means to have separate JavaScript files.
+Because Express does not enforce a particular hierarchy, it can occasionally be overwhelming which project structure to follow.  The most common structure is a separation of tasks into different modules.
 
-Let us go through a typical strucutre of an Express based web application.
-
+An example of a typical structure for an Express-based web application:
 ```
 project-root/
    node_modules/          // This is where the packages installed are stored
@@ -524,4 +549,4 @@ project-root/
    package.json
 ```
 
-This is pattern is commonly known as MVC, model-view-controller. Simply because our database model, the UI of the application and the controllers (in our case, routes) are written and stored in separate files. This design pattern that makes any web application easy to scale if you want to introduce more routes or static files in the future and the code is maintainable.
+This is pattern is commonly known as MVC, model-view-controller. Simply because our database model, the UI of the application and the controllers (in our case, routes) are written and stored in separate files. This design pattern makes any web application easy to scale and helps make the code more maintainable.
