@@ -115,6 +115,12 @@ Each corner of `border-radius` can be adjusted individually in the following ord
   border-radius: 15% 10px 30% 5px;
 ```
 
+
+More complex border-radius values are available. This is done using a slash (/) between horizontal and vertical values.
+```css
+  border-radius: 10px/50px;
+```
+
 ### Border-Image
 
 The `border-image` property allows you to use an image as a custom border style. `border-image` is a shorthand for `border-image-source`, `border-image-width`, `border-image-outset`, and `border-image-repeat`.
