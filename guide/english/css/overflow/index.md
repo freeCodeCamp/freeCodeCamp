@@ -60,6 +60,27 @@ And the `.box-element` will look like this:
 
 If the content overflows the Y-axis, then that content will be hidden, whilst a scrollbar should be visible for users to read the rest of the content.
 
+## text-overflow
+
+* the `text-overflow` property the overflowed content should be displayed/signaled to the user
+* both of the following properties are required for text-overflow:
+ ``` css
+  white-space: nowrap;
+  overflow:hidden;
+  ```
+ * values: 
+ 
+ `clip` - default value, the text is not accessible and is clipped
+ 
+ `ellipsis` - it renders an ellipsis ("...")
+ 
+ `string` - render the given string
+ 
+ `initial` - sets the property to its default value
+ 
+ `inherit` - inherits this property from its parent element
+ 
+
 #### More Information:
 
 CSS-Tricks: <a href='https://css-tricks.com/almanac/properties/o/overflow/' target='_blank' rel='nofollow'>overflow</a>
