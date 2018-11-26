@@ -47,6 +47,28 @@ Then in your css file:
 }
 
 ```
+The order of the multiple classes you give to an element is irrelevant. If classes of a single element have conflicting styling, the order of the classes does not override the styling of the element but the order in CSS does.
+
+```html
+
+<div class="batMan voice">
+ I have a deep voice.
+</div>
+
+```
+```css
+
+.voice{
+  color:red;
+  border:1px solid #000
+}
+
+.batMan{
+  border:1px solid #194745
+}
+
+```
+In this example, border of the element would be green even if the class "voice" comes second in html.
 
 **Note:** Class names are traditionally all lowercase, with each word in a multi-word class name separated by hyphens (e.g. "super-man").
 

@@ -35,3 +35,11 @@ title: Books on JavaScript
    - [Github](https://github.com/AlbertoMontalesi/The-complete-guide-to-modern-JavaScript-from-es2015-to-es2018)
    - [Amazon](https://www.amazon.com/dp/B07DGGFNS6)
    - [Leanpub](https://leanpub.com/thecompleteguidetomodernjavascript)
+
+8. **Head First Javascript Programming**
+   The Head Frist books series by Eric Freeman and Elisabeth Robson cover a variety of programming topics in a beginner freindly manner. This installment on Javascript is no exception. It is available hard copy and provides exercises to master the basics and understand the nature of programming. 
+   -[Amazon](https://www.amazon.com/Head-First-JavaScript-Programming-Brain-Friendly/dp/144934013X)
+
+#### Other Resources
+
+- A selection of online free resources; including e-books for JavaScript are available at [JS Books](https://jsbooks.revolunet.com/)

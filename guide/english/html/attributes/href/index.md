@@ -47,5 +47,5 @@ Tags that use HREF:
 
 #### More Information:
 <!-- Please add any articles you think might be helpful to read before writing the article -->
-<a href='https://tomayko.com/blog/2008/wtf-is-an-href-anyway' target='_blank' rel='nofollow'>WTF is a href anyway</a>
+<a href='https://tomayko.com/blog/2008/wtf-is-an-href-anyway' target='_blank' rel='nofollow'>WTF is a href anyway</a><br>
 <a href='https://developer.mozilla.org/en-US/docs/Web/SVG/Attribute/href' target='_blank' rel='nofollow'>MDN</a>

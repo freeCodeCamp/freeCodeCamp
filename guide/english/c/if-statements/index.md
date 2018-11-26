@@ -3,8 +3,8 @@ title: Logical Operators and If Statements
 ---
 
 # If Statements in C
-
 The ability to change the behavior of a piece of code which is based on certain information in the environment is known as conditional code flow. Sometimes, you want your code to run according to certain conditions. In such situations we can use **If** statements. It is also known as a decision making statement, as it makes the decision on the basis of a given expression (or on a given condition). If the expression evaluates to true, then the block of code inside the 'if' statement will be executed. If the expression evaluates to false, then the first set of code after the end of the 'if' statement (after the closing curly brace) will be executed. An expression is something that has relational and/or logical operators operating on boolean variables. Expressions evaluate to either true or false.
+
 
 ## Syntax of *if statement*
 ```
@@ -65,7 +65,26 @@ Statement is False!
 
 There are a few important things that are different here. First, `stdbool.h` hasn't been included. That's okay, because `true` and `false` aren't being used. In C, we have statements that are treated as true and false even though the words true or false aren't involved in the operation.
 
-Within the parenthesis of the if statement is something new, too: `n == 3`. This is a comparison between `n` and the number 3. `==` is the comparison operator, and is one of several comparison opertations in C.
+Within the parenthesis of the if statement is something new, too: `n == 3`. This is a comparison between `n` and the number 3. `==` is the comparison operator, and is one of several comparison operations in C.
+
+## Ternary operator
+A different notation that replace the if-else statement is the ternary operator.  Have a look at the following code written with the  if-else statement:
+
+```
+if (a > b) {
+    result = x;
+}
+else {
+    result = y;
+}
+```
+
+This code can be rewritten into a single line using the ternary operator as follow:
+
+```
+result = a > b ? x : y;
+```
+A general formula for this operator can be written as `condition ? true : false;`
 
 ## Nested if-else
 The if-else statement allows a choice to be made between two possible alternatives. Sometimes a choice must be made between more than two possibilities. For example the sign function in mathematics returns -1 if the argument is less than zero, returns +1 if the argument is greater than zero and returns zero if the argument is zero. The following C statement implements this function:
