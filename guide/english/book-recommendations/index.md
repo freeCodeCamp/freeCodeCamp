@@ -462,6 +462,10 @@ title: Books to Read for Programmers
 - [No Starch Press](https://nostarch.com/malware)
 - ISBN-13: 978-1-59327-290-6
 
+*CSS: The Missing Manual*
+- [Amazon](https://www.amazon.com/CSS-Missing-Manual-Manuals/dp/0596802447)
+- ISBN-13: 978-0596802448
+
 This list was compiled from multiple suggestion threads on Reddit and Stackoverflow. 
 
 Please feel free to add more that you have found useful!
