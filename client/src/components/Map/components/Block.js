@@ -1,4 +1,4 @@
-import React, { PureComponent } from 'react';
+import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux';
@@ -46,7 +46,7 @@ const propTypes = {
 
 const mapIconStyle = { height: '15px', marginRight: '10px', width: '15px' };
 
-export class Block extends PureComponent {
+export class Block extends Component {
   constructor(...props) {
     super(...props);
 

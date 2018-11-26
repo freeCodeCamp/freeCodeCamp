@@ -139,7 +139,11 @@ int main ()
 #### Empty
 
 Returns whether the `stack` is empty ,i.e. whether your stack size is zero.
-It returns `true` if stack's size is 0 else returns `false` 
+
+It returns `true` if the size of the stack is 0 else returns `false`. An alternative to using this is
+```cpp 
+    if (stackname.size()==0)
+```
 
 ```cpp
 //Empty operation in Stack
@@ -171,8 +175,7 @@ int main ()
 ## Uses of Stack
 
 1. Expression Evaluation and Conversion.
-   Stacks are used to evaluate and convert expressions like Prefix, Postfix and Infix expression. 
-2. In Recursive functions, Stacks are used to keep information about the active functions or subroutines.
-3. In Backtracking, as in DFS algorithm.
-4. Memory management, run-time environment for nested language features. etc
-
+2. Stacks are used to evaluate and convert expressions like Prefix, Postfix and Infix expression. 
+3. In Recursive functions, Stacks are used to keep information about the active functions or subroutines.
+4. In Backtracking, as in DFS algorithm.
+5. Memory management, run-time environment for nested language features. etc
