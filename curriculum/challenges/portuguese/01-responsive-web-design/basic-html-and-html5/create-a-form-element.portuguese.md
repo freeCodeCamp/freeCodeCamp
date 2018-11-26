@@ -6,10 +6,10 @@ videoUrl: ''
 localeTitle: Crie um elemento de formulário
 ---
 
-## Description
-<section id="description"> Você pode criar formulários da Web que realmente enviam dados para um servidor usando nada além de HTML puro. Você pode fazer isso especificando uma ação no seu elemento de <code>form</code> . Por exemplo: <code>&lt;form action=&quot;/url-where-you-want-to-submit-form-data&quot;&gt;&lt;/form&gt;</code> </section>
+## Descrição
+<section id="description"> Você pode criar formulários da Web que realmente enviam dados para um servidor usando nada além de HTML puro. Você pode fazer isso especificando uma ação <code>action</code> no seu elemento de <code>form</code>. O valor definido como ação é o endereço que aponta para algum recurso do seu servidor, onde pode conter códigos de linguagens back-end como PHP, Java, Python e etc. Um exemplo de uso: <code>&lt;form action=&quot;/url-where-you-want-to-submit-form-data&quot;&gt;&lt;/form&gt;</code> </section>
 
-## Instructions
+## Instruções
 <section id="instructions"> Aninhe seu campo de texto dentro de um elemento de <code>form</code> e adicione o atributo <code>action=&quot;/submit-cat-photo&quot;</code> ao elemento form. </section>
 
 ## Tests
@@ -28,7 +28,7 @@ tests:
 
 </section>
 
-## Challenge Seed
+## Desafio semente
 <section id='challengeSeed'>
 
 <div id='html-seed'>
@@ -63,10 +63,10 @@ tests:
 
 </section>
 
-## Solution
+## Solução
 <section id='solution'>
 
 ```js
-// solution required
+// Solução necessária
 ```
 </section>
