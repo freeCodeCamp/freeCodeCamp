@@ -43,7 +43,8 @@ An _activity_ is a component that has a user interface and represents a single s
 
 * onDestroy():
 
-> The final call you receive before your activity is destroyed. This can happen either because the activity is finishing (someone called finish() on it), or because the system is temporarily destroying this instance of the activity to save space. You can distinguish between these two scenarios with the isFinishing() method. This call is often used when the user hits the back button, or closes the instance of the app.
+> The final call you receive before your activity is destroyed. This can happen either because the activity is finishing (someone called finish() on it), or because the system is temporarily destroying this instance of the activity to save space. You can distinguish between these two scenarios with the isFinishing() method.
+This call is often used when the user hits the back button, or closes the instance of the app.
 
 #### Sample code to understand Activity Lifecycle
 ``` java
@@ -97,15 +98,18 @@ public class MainActivity extends Activity {
 A _service_ is a component without a user interface, and is used to perform long-running operations in the background.
 There are three kinds of services:
 
-- _foreground_ services: they are strictly related to user's interaction (for example music playback), so it's harder for the system to kill them.
-- _background_ services: they are not directly related to user's activities, so they can be killed if more RAM is needed.
-- _bound_ services: they are  offers a client-server interface that allows components to interact with the service, send requests, receive results, and even do so across processes with interprocess communication (IPC).
+- _Foreground_ services: they are strictly related to user's interaction (for example music playback), so it's harder for the system to kill them.
+- _Background_ services: they are not directly related to user's activities, so they can be killed if more RAM is needed.
+- _Bound_ services: they are  offers a client-server interface that allows components to interact with the service, send requests, receive results, and even do so across processes with interprocess communication (IPC).
+
+### [Services Lifecycle](https://developer.android.com/guide/components/services#Lifecycle)
+![Services Lifecycle](https://developer.android.com/images/service_lifecycle.png)
 
 ### [Broadcast receivers](https://developer.android.com/guide/components/broadcasts)
-A _broadcast receiver_ is another component without user interface (except an optional status bar notification) that provides a gateway for the system to deliver events from/to the app, even when the latter hasn't been previously launched.
+A _Broadcast receiver_ is another component without user interface (except an optional status bar notification) that provides a gateway for the system to deliver events from/to the app, even when the latter hasn't been previously launched.
 
 ### [Content providers](https://developer.android.com/guide/topics/providers/content-providers)
-A _content provider_ is a component used to manage a set of app data to share with other applications. Each item saved in the content provider is identified by a URI scheme.
+A _Content provider_ is a component used to manage a set of app data to share with other applications. Each item saved in the content provider is identified by a URI scheme.
 
 For detailed information about the topic, see the official [Android fundamentals](https://developer.android.com/guide/components/fundamentals) documentation.
 

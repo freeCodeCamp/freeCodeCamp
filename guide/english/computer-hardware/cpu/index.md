@@ -15,7 +15,7 @@ Most modern CPUs use a 64-bit architecture, which means they use 64 bit long mem
 
 An instruction cycle for a CPU is called the fetch-decode-execute cycle - where the computer retrieves an instruction from its memory, determines which instruction it fetched and what it does, and then carries out said instructions.
 
-Perhaps the most common issue affecting the CPU is inadequate cooling. CPUs are the main generators of heat in computer systems. Due to their nature, they are typically located under the computer fan. There are various ways of reducing heat in a computer with the two main systems being air fans or liquid cooling systems. Proper heat maintenance and additional hardware can allow a properly configured CPU to perform better than rated by the chip manufacturer (aka "Overclocking"). Note that chips must be unlocked in order to have the ablility to be overclocked.
+Perhaps the most common issue affecting the CPU is inadequate cooling. CPUs are the main generators of heat in computer systems. Due to their nature, they are typically located under the computer fan. There are various ways of reducing heat in a computer with the two main systems being air fans or liquid cooling systems. Proper heat maintenance and additional hardware can allow a properly configured CPU to perform better than rated by the chip manufacturer (aka "Overclocking"). Note that chips must be unlocked in order to have the ability to be overclocked.
 
 <!-- The article goes here, in GitHub-flavored Markdown. Feel free to add YouTube videos, images, and CodePen/JSBin embeds  -->
 
