@@ -23,7 +23,7 @@ pacman -S apache
 ```
 
 ### Getting Started
-Once you have Apache installed you need to know where to put your HTML documents.  This location is generally referred to as the `DocumentRoot`.  This location is usually `/var/www/html` on most Linux systems.  Follow these instructions bellow to find the configuration file for Apache and the `DocumentRoot`.
+Once you have Apache installed you need to know where to put your HTML documents. This location is generally referred to as the `DocumentRoot`. This location is usually `/var/www/html` on most Linux systems. Follow the instructions below to find the configuration file for Apache and the `DocumentRoot`.
 
 #### Command
 ``` 
