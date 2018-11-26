@@ -20,8 +20,6 @@ The companies that sponsor these programs gain several benefits:
 
 ### Notable companies and organizations that offer bug bounties
 
-The following list contain notable companies that offer bug bounties:
-
 - Cisco
 - Facebook
 - Github
@@ -33,4 +31,4 @@ The following list contain notable companies that offer bug bounties:
 - Twitter
 - Uber
 
-A more comprehensive list can be found at the Bugcrown's Bug Bounty List - https://www.bugcrowd.com/bug-bounty-list/
+A more comprehensive list can be found at the Bugcrowd's Bug Bounty List - https://www.bugcrowd.com/bug-bounty-list/
