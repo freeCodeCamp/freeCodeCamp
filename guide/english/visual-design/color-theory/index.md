@@ -49,7 +49,15 @@ successful a product is.
 
 **Complementary Colors:**
 Red-green, yellow-purple, blue-orange
-These are colors formed by mixing colors that are oppsite from each other on the color wheel.
+These are colors formed by mixing colors that are opposite from each other on the color wheel.
+When chosing to work with complementary colors, the ratio between them is very important. While a 50 50 ratio could work for the red and green pair, it would produce unpleasing results in a yellow purple pair. 
+
+The basic complementary ratios are:
+```
+Red-Green : 50% 50%
+Orange-Blue : 30% 70%
+Yellow-Purple : 10% 90%
+```
 
 In web design, colors also carry with them connotations and implications that need to be understood or else you could cause confusion. The color red in a non-digital space, such as a fast-food restaurant, carries the implication of energy or excitement. However, on the web the color red also carries with it the implication that the user has committed an error. This example of how color means certain things in certain settings should be a critical reminder to understand how the person viewing your page will interpret the color selection you’ve made.
 
