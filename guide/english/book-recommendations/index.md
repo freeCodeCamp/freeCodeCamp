@@ -341,7 +341,7 @@ title: Books to Read for Programmers
 
 ## Soft Skills
 
-*Soft Skills: The software developer's life manual*
+*Soft Skills: The Software Developer's Life Manual*
 - [Amazon Smile](https://smile.amazon.com/Soft-Skills-software-developers-manual/dp/1617292397?pldnSite=1)
 - ISBN-13: 9781617292392 
 
