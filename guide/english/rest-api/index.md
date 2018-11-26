@@ -134,13 +134,11 @@ Link: [Get Postman](https://www.getpostman.com/)
 A detailed explanation has been given on Quick Code blog on how to use Postman for the best usage:
 [Top Tutorials To Learn POSTMAN For REST API Testing](https://medium.com/quick-code/top-tutorials-to-learn-postman-for-rest-api-testing-3bdf9788e0ba)
 
-### **Further reading**
-[How to Design Great APIs - Parse Developer Day 2013](https://www.youtube.com/watch?v=qCdpTji8nxo)
+#### More Information
 
-[The never-ending REST API design debate by Guillaume Laforge](https://www.youtube.com/watch?v=48azd2VqtP0)
 
-[HTTP status codes](https://httpstatuses.com/)
-
-[Documenting APIs: A guide for technical writers](https://idratherbewriting.com/learnapidoc/)
-
+* [How to Design Great APIs - Parse Developer Day 2013](https://www.youtube.com/watch?v=qCdpTji8nxo)
+* [The never-ending REST API design debate by Guillaume Laforge](https://www.youtube.com/watch?v=48azd2VqtP0)
+* [HTTP status codes](https://httpstatuses.com/)
+* [Documenting APIs: A guide for technical writers](https://idratherbewriting.com/learnapidoc/)
 

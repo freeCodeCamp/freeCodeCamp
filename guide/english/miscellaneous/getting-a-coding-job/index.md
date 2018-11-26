@@ -20,9 +20,10 @@ You'll also need to work hard to network with coders in your city. You can do th
 
 I've found <a href='https://github.com/cassidoo/getting-a-gig' target='_blank' rel='nofollow'>this</a> link to be useful. It does a great job of explaining the process.
 
-## Pro tip:
+## Pro tip
 
-Like in any other industry or field, the hardest part is actually getting started. Do not worry too much and take action instead - the results will be mesmerizing.
+- Like in any other industry or field, the hardest part is actually getting started. Do not worry too much and take action instead - the results will be mesmerizing.
+- Also, if you're new to coding, don't immediately focus on your salary, but focus on finding a job where you can improve your coding skills and up your game. The rest will follow.
 
 ## Remote Coding Jobs
 
@@ -33,3 +34,4 @@ Of those hundreds of thousands of coding jobs out there, there is a growing numb
 - [We Work Remotely](https://weworkremotely.com/)
 - [RemoteOK](https://remoteok.io/)
 - [Remotive](https://remotive.io/find-a-remote-job/)
+

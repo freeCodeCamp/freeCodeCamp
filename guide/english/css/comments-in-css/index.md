@@ -32,7 +32,7 @@ You can also make your comments more readable by stylizing it.
 ***
 * SECTION FOR H2 STYLE 
 ***
-* A paragraph where I give informations
+* A paragraph where I give information
 * about everything that someone who reads the code
 * but didn't write it would need to know.
 * The asterisk around the paragraph makes it more readable.
@@ -100,6 +100,28 @@ h2 {
 ```
 
 Tip: Many code editors will comment a highlighted portion of text by typing `CMD + /` (Mac) or `CTRL + /` (Windows).
+
+The best thing you can do in CSS with comments is the next thing: use Regions. Yes, the regions you use too in C#.
+Regions are useful in a long CSS file, when you've got plenty of classes and sections to manage and organize. They are basically commented titles of specific sections. The best part about regions? You can collapse/expand them.
+
+Here's how region works:
+``` css
+/*#region Header */
+
+.header {
+    font-size: 12px;
+}
+
+/*#endregion */
+
+/*#region Footer
+------------------------------------------- */
+
+.footer {
+    height: 20px;
+}
+/*#endregion */
+````
 
 ### More Information:
 

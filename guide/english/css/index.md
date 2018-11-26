@@ -4,7 +4,11 @@ title: Cascading Style Sheets (CSS)
 
 ### Cascading Style Sheets (CSS)
 
-CSS is an acronym for Cascading Style Sheets. It was first invented in 1996, and is now a standard feature of all major web browsers.
+![CSS Logo][logo]
+
+[logo]: https://upload.wikimedia.org/wikipedia/commons/thumb/d/d5/CSS3_logo_and_wordmark.svg/320px-CSS3_logo_and_wordmark.svg.png
+
+CSS is an acronym for Cascading Style Sheets. It was first invented in 1996 and is now a standard feature of all major web browsers.
 
 CSS allows developers to control how web pages look by "styling" the HTML structure of that page.
 
@@ -17,7 +21,7 @@ You can build some pretty amazing things in CSS alone, such as this pure-CSS [Mi
 ### Popular CSS Frameworks 2018
 Frameworks exist to make the more complex parts of css easier and more efficient for developers to build out websites.
 Some of the most popular CSS Frameworks are:
-Bootstrap, Foundation, Bulma, uikit, Semantic UI, mini.css, Materialize, Material Design Lite, Spectre and Kube
+Bootstrap, Foundation, Bulma, uikit, Semantic UI, mini.css, Materialize, Material Design Lite, Spectre, Kube, and tailwind.css
 
 #### Suggested Reading:
 A good start is the freeCodeCamp curriculum [Introduction to Basic CSS](https://learn.freecodecamp.org/responsive-web-design/basic-css).

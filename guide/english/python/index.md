@@ -13,7 +13,6 @@ To learn more about Python, check out these pages on python.org:
 
 <a href='https://docs.python.org/3/faq/general.html' target='_blank' rel='nofollow'>Python FAQ</a>.
 
-## Python 2 or Python 3
 
 *   The two versions are similar, with knowledge of one switching to writing code for the other is easy.
 *   <a href='https://wiki.python.org/moin/Python2orPython3' target='_blank' rel='nofollow'>Python 2 or Python 3</a>
@@ -104,15 +103,17 @@ Some of the principles that influenced the design of Python are included as an E
 
 ## Pros and Cons of Python
 ### Pros
-1. Interactive language with a module support for almost all functionality.
-2. Open Source: So, you can contribute to the community, the functions you have developed for future use and to help others.
-3. A lot of good interpreters and notebooks available for better experience like jupyter notebook.
-4. It is a very easy language to learn and debug too. To check if a small bit of code works or not, you can just open up the interpreter and test.
-5. There are multiple libraries available for Python, like numpy, pandas, etc., to make doing complex operations easy!
+1. Easy to read, learn, and write.
+2. Interactive language with a module support for almost all functionality.
+3. Open Source: You can contribute to the community and help others with the functions you have developed.
+4. A lot of good interpreters and notebooks available for better experience like jupyter notebook.
+5. It is a very easy language debug. To check if a small bit of code works or not, you can just open up the interpreter and test.
+6. There are multiple libraries available for Python, like numpy, pandas, etc., to make doing complex operations easy!
 
-#### Cons
+### Cons
 1. Being open source, many different ways have developed over the year for same function. This sometimes, creates chaos for others to read someone else code.
 2. It is a slow language. So, a very bad language to use for developing general algorithms.
+3. Python is not the best langauge to use if your project requires efficient memory management.
 
 ## Documentation
 
@@ -145,10 +146,10 @@ The built-in functions are listed in alphabetical order. The name is followed by
 
 The <a href='https://docs.python.org/3/library/functions.html#print' target='_blank' rel='nofollow'>`print`</a> function in Python 3 replaces the <a href='https://docs.python.org/2/reference/simple_stmts.html#print' target='_blank' rel='nofollow'>`print`</a> statement in Python 2.
 
-    >>> print("Hello world!")
-    Hello world!
+    >>> print("Hello, World!")
+    Hello, World!
 
-A function is called when the name of the function is followed by `()`. For the Hello world! example, the print function is called with a string as an argument for the first parameter. For the rest of the parameters the defaults are used.
+A function is called when the name of the function is followed by `()`. For the 'Hello, World!' example, the print function is called with a string as an argument for the first parameter. For the rest of the parameters the defaults are used.
 
 The argument that we called the `print` function with is a `str` object or _string_, one of Python's <a href='https://docs.python.org/3/library/stdtypes.html#text-sequence-type-str' target='_blank' rel='nofollow'>_built-in types_</a>.
 Also the most important thing about python is that you don't have to specify the data type while declaring a variable, python's compiler
@@ -162,17 +163,20 @@ As stated python is a general purpose language. You can use it to do anything yo
 ## Want to learn more?
 
 Free Code Camp has some great resources. The web is a big place, there's plenty more to explore:
+
 * [Python Practice Book](http://anandology.com/python-practice-book/index.html)
 * [Think Python](http://greenteapress.com/thinkpython/html/index.html)
 * [Practical Business Python](http://pbpython.com/)
 * [Real Python](https://realpython.com)
 * [Full Stack Python](https://www.fullstackpython.com/)
-* Learn the Basics [[codecademy](https://www.codecademy.com/learn/learn-python)]
-* Computer science using Python [[edX](https://www.edx.org/course/introduction-computer-science-mitx-6-00-1x-11)]
-* Intro to Computer Science CS101 [[Udacity](https://www.udacity.com/course/intro-to-computer-science--cs101)]
-* List of more resources for learning python [Awesome Python](https://awesome-python.com)
+* [Learn the Basics on codecademy](https://www.codecademy.com/learn/learn-python)
+* [Computer science using Python on edX](https://www.edx.org/course/introduction-computer-science-mitx-6-00-1x-11)
+* [Intro to Computer Science CS101 on Udacity](https://www.udacity.com/course/intro-to-computer-science--cs101)
+* [List of more resources for learning python on Awesome Python](https://awesome-python.com)
 * [Interactive Python - How to Think Like a Computer Scientist](http://interactivepython.org/runestone/static/thinkcspy/index.html)
 * [Everyday Python Project](http://interactivepython.org/runestone/static/everyday/index.html)
 * [Python Developer’s Guide](https://devguide.python.org)
 * [Learn Python the Hard Way book](https://learnpythonthehardway.org/python3)
-* Introduction to Python Programming [[Udacity](https://www.udacity.com/course/introduction-to-python--ud1110)]
+* [Introduction to Python Programming on Udacity](https://www.udacity.com/course/introduction-to-python--ud1110)
+* [Profiling in Python](https://docs.python.org/2/library/profile.html)
+* [Python for Everybody Specialization](https://www.coursera.org/specializations/python)
