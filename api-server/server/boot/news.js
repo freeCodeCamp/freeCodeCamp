@@ -73,7 +73,7 @@ function createPopularityHandler(app) {
 
   function findArticleByShortId(shortId) {
     return new Promise((resolve, reject) =>
-      Article.findOne({ shortId }, (err, article) => {
+      Article.findOne({ where: { shortId } }, (err, article) => {
         if (err) {
           log('Error returned from Article.findOne(shortId)');
           return reject(err);
@@ -86,14 +86,17 @@ function createPopularityHandler(app) {
 
   function findPopularityByShortId(shortId) {
     return new Promise((resolve, reject) =>
-      Popularity.findOne({ articleId: shortId }, (err, popularity) => {
-        if (err) {
-          log('Error returned from Popularity.findOne(shortId)');
-          return reject(err);
+      Popularity.findOne(
+        { where: { articleId: shortId } },
+        (err, popularity) => {
+          if (err) {
+            log('Error returned from Popularity.findOne(shortId)');
+            return reject(err);
+          }
+          log('popularity found');
+          return resolve(popularity);
         }
-        log('popularity found');
-        return resolve(popularity);
-      })
+      )
     );
   }
 
