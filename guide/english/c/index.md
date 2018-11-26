@@ -2,13 +2,13 @@
 title: C
 ---
 
-# Hello World! - Your first C Program
+# Hello World! - Your First C Program
 
 ## Getting the most out of this course
 Make sure that you're comfortable with all of the concepts in this part of the guide before moving on. Getting your first program running is important because it will allow you to follow along with the examples, which is another good thing to do- practice makes perfect! Concepts that might be confusing will have an annotation that links to an appendix. If you don't understand a concept, make sure that you consult the appendix for more information.
 
 ## Course Goal
-The goals of this course are to teach the C language to beginners. Ideally, someone who has never touched a computer language before will be able to know C by following these guides. However, they will still be useful to more experienced programmers by including a summary at the end of each article. Although the content taught here is transferable to microcontrollers like the Arduino, it is not the focus of this guide.
+The goals of this course are to teach the C language to beginners. Ideally, someone who has never touched a computer language before will become comfortable with C by following these guides. Furthermore, these guides will still be useful to more experienced programmers by including a summary at the end of each article. Although the content taught here is transferable to microcontrollers like the Arduino, it is not the focus of this guide.
 
 ## What is C?
 

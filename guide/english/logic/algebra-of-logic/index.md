@@ -21,9 +21,8 @@ The three basic operations in Boolean Algebra are `AND`, `OR`, and `NOT`. Consid
 
 The above statements are called "De Morgan's Laws." This is a very useful and important law in Boolean Algebra.
 
-
 ### More Information:
-- The Calculus of Logic: <a href='http://www.maths.tcd.ie/pub/HistMath/People/Boole/CalcLogic/CalcLogic.html' target='_blank' rel='nofollow'>George Boole</a>
-- Boolean algebra article: <a href='https://en.wikipedia.org/wiki/Boolean_algebra' target='_blank' rel='nofollow'>Wikipedia</a>
-- Boolean Algebra Demonstration: <a href='http://mathworld.wolfram.com/BooleanAlgebra.html' target='_blank' rel='nofollow'>Boolean Algebra</a>
-
+- Boolean algebra article: [Wikipedia](https://en.wikipedia.org/wiki/Boolean_algebra)
+- The Calculus of Logic: [George Boole](https://www.maths.tcd.ie/pub/HistMath/People/Boole/CalcLogic/CalcLogic.html)
+- Boolean Algebra Demonstration: [Wolfram MathWorld](http://mathworld.wolfram.com/BooleanAlgebra.html)
+- De Morgan's laws: [Wikipedia](https://en.wikipedia.org/wiki/De_Morgan%27s_laws)

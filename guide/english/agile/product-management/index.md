@@ -46,7 +46,8 @@ Product management continues to expand as a profession. Demand for qualified pro
 
 Most Product Managers have been in different roles earlier in their careers. Very often software engineers, sales engineers, or professional services consultant grow into the role of Product Manager. However, in some companies (e.g. Google, Facebook, etc.), junior Product Managers are recruited straight out of school and supported by career programs that teach them while on the job.   
 
-#### More Information:
-Wikipedia page: https://en.wikipedia.org/wiki/Product_management
+#### More Information
+- [Wikipedia](https://en.wikipedia.org/wiki/Product_management)
+- [Product Management Overview](https://www.atlassian.com/agile/product-management)
 
 

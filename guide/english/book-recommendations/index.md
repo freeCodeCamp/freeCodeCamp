@@ -4,6 +4,60 @@ title: Books to Read for Programmers
 
 ### List of Books
 
+## General
+
+*Automate the Boring Stuff With Python* by Al Sweigart
+- https://automatetheboringstuff.com/
+- ISBN-13: 978-1593275990
+
+*Structure and Interpretation of Computer Programs* by Harold Abelson, Gerald Jay Sussman, and Julie Sussman
+- https://mitpress.mit.edu/sicp/
+- ISBN-13: 978-0262510875
+
+*Clean Code: A Handbook of Agile Software Crafstmanship* by Robert C. Martin
+- [Amazon Smile](https://smile.amazon.com/Clean-Code-Handbook-Software-Craftsmanship/dp/0132350882?sa-no-redirect=1)
+- ISBN-13: 978-0132350884
+
+*CODE: The Hidden Language of Computer Hardware and Software* by Charles Petzold
+- [Amazon Smile](https://smile.amazon.com/Code-Language-Computer-Hardware-Software/dp/0735611319/)
+- ISBN-13: 978-0735611313
+
+*Don't Make Me Think, Revisited: A Common Sense Approach to Web Usability* by Steve Krug
+- [Amazon Smile](https://smile.amazon.com/Dont-Make-Think-Revisited-Usability/dp/0321965515/)
+- ISBN-13: 978-0321965516
+
+*Programming Pearls (2nd Edition)* by Jon Bentley
+- [Amazon Smile](https://smile.amazon.com/Programming-Pearls-2nd-Jon-Bentley/dp/0201657880)
+- ISBN-13: 978-0201657883
+
+*Structure and Interpretation of Computer Programs*
+- https://mitpress.mit.edu/sicp/
+- ISBN-13: 978-0262510875
+
+*The Pragmatic Programmer: From Journeyman to Master* by Andrew Hunt and David Thomas
+- [Amazon Smile](https://smile.amazon.com/Pragmatic-Programmer-Journeyman-Master/dp/020161622X?sa-no-redirect=1)
+- ISBN-13: 978-0201616224
+
+*The Self-Taught Programmer: The Definitive Guide to Programming Professionally* by Cory Althoff
+- [Amazon Smile](https://smile.amazon.com/Self-Taught-Programmer-Definitive-Programming-Professionally-ebook/dp/B01M01YDQA?sa-no-redirect=1)
+- ISBN-13: 978-1520288178
+
+*You Don't Know JS (book series)* by Kyle Simpson
+- https://github.com/getify/You-Dont-Know-JS
+- ISBN-13: 9781491924464
+
+*Soft Skills: The software developer's life manual* - John Sonmez
+- [Amazon Smile](https://smile.amazon.com/Soft-Skills-software-developers-manual/dp/1617292397?pldnSite=1)
+- ISBN-13: 9781617292392
+
+*Code Complete: A Practical Handbook of Software Construction* - Steve McConnell
+- [Amazon](https://www.amazon.com/Code-Complete-Practical-Handbook-Construction/dp/0735619670)
+- ISBN-13: 978-0735619678
+
+*Design Patterns: Elements of Reusable Object-Oriented Software* - Erich Gamma
+- [Amazon](https://www.amazon.com/Design-Patterns-Elements-Reusable-Object-Oriented/dp/0201633612)
+- ISBN-13: 978-0201633610
+
 ## Algorithms
 
 *Introduction to Algorithms, 3rd Edition (MIT Press)* by Thomas H. Cormen and Charles E. Leiserson
@@ -13,6 +67,14 @@ title: Books to Read for Programmers
 *Cracking the Coding Interview: 150 Programming Questions and Solutions* by Gayle Laakmann McDowell 
 - [Amazon Smile](https://smile.amazon.com/Cracking-Coding-Interview-Programming-Questions/dp/098478280X)
 - ISBN-13: 978-0984782802
+
+*Fundamentals of Computer Algorithms* by Ellis Horowitz, Sartaj Sahni and Sanguthevar Rajasekaran
+- [Amazon](https://www.amazon.com/Fundamentals-Computer-Algorithms-Sanguthevar-Rajasekaran/dp/8173716129)
+- ISBN-13: 978-8173716126
+
+*Data Structures and Algorithms Made Easy: Data Structures and Algorithmic Puzzles*
+- [Amazon Smile](https://smile.amazon.com/Data-Structures-Algorithms-Made-Easy/dp/819324527X)
+- ISBN-13: 978-8193245279
 
 *Grokking Algorithms: An illustrated guide for programmers and other curious people* by Aditya Bhargava
 - [Amazon Smile](https://smile.amazon.com/Grokking-Algorithms-illustrated-programmers-curious/dp/1617292230/)
@@ -28,15 +90,16 @@ title: Books to Read for Programmers
 
 ## BASH
 
-*The Linux Command Line: A Complete Introduction 1st Edition by William E. Shotts Jr*
-- [Amazon Smile](https://smile.amazon.com/The-Linux-Command-Line-Introduction/dp/1593273894)
+*The Linux Command Line: A Complete Introduction 1st Edition* by William E. Shotts Jr
+- [Amazon](https://www.amazon.com/The-Linux-Command-Line-Introduction/dp/1593273894)
 - ISBN-13: 978-1593273897
 
-*Learning the bash Shell: Unix Shell Programming by Cameron Newham*
-- [Amazon Smile](https://smile.amazon.com/Learning-bash-Shell-Programming-Nutshell/dp/0596009658)
+*Learning the bash Shell: Unix Shell Programming* by Cameron Newham
+- [Amazon](https://www.amazon.com/Learning-bash-Shell-Programming-Nutshell/dp/0596009658)
+
 - ISBN-13: 978-0596009656
 
-*Mastering Linux Shell Scripting by Andrew Mallett*
+*Mastering Linux Shell Scripting* by Andrew Mallett
 - [Amazon Smile](https://smile.amazon.com/Mastering-Linux-Scripting-Andrew-Mallett/dp/1784396974/)
 - ISBN-13: 978-1784396978
 
@@ -59,13 +122,13 @@ title: Books to Read for Programmers
 
 ## C++
 
-*Thinking in C++ by Bruce Eckel*
+*Thinking in C++* by Bruce Eckel
 - [Amazon Smile](https://smile.amazon.com/Thinking-C-Bruce-Eckel/dp/0139177094)
 - ISBN-13: 978-0139177095
 
 ## C++
 
-*Thinking in C++ by Bruce Eckel*
+*Thinking in C++* by Bruce Eckel
 - [Amazon Smile](https://smile.amazon.com/Thinking-C-Bruce-Eckel/dp/0139177094)
 - ISBN-13: 978-0139177095
 
@@ -79,14 +142,14 @@ title: Books to Read for Programmers
 - [Amazon Smile](https://smile.amazon.com/Pro-NET-Core-Andrew-Troelsen/dp/1484230175)
 - ISBN-13: 978-1484230176
 
-*Murach's C# 2015 by Joel Murach (Author), Anne Boehm (Author)
+*Murach's C# 2015* by Joel Murach (Author), Anne Boehm (Author)
 - [Amazon Smile](https://smile.amazon.com/Murachs-C-2015-Anne-Boehm/dp/1890774944)
 - ISBN-13: 978-1890774943
 
 ## Coding Interview
 
 *Cracking the Coding Interview: 150 Programming Questions and Solutions*
-- [Amazon](https://www.amazon.com/Cracking-Coding-Interview-Programming-Questions/dp/0984782850/ref=dp_ob_title_bk)
+- [Amazon](https://www.amazon.com/Cracking-Coding-Interview-Programming-Questions/dp/0984782850/)
 - ISBN-13: 978-0984782857
 
 *Programming Interviews Exposed: Secrets to Landing Your Next Job, 2nd Edition*
@@ -99,11 +162,11 @@ title: Books to Read for Programmers
 
 ## Computer Networks
 
-*Computer Networking: A Top-Down Approach (7th Edition) by Kurose and Ross*
-- [Amazon Smile](https://smile.amazon.com/Computer-Networking-Top-Down-Approach-7th/dp/0133594149/ref=sr_1_1?s=books&ie=UTF8&qid=1538967896&sr=1-1&keywords=kurose+and+ross&dpID=51xp1%252BoDRML&preST=_SX218_BO1,204,203,200_QL40_&dpSrc=srch)
+*Computer Networking: A Top-Down Approach (7th Edition)* by Kurose and Ross
+- [Amazon Smile](https://smile.amazon.com/Computer-Networking-Top-Down-Approach-7th/dp/0133594149/)
 - ISBN-13: 978-0133594140 
 
-*Computer Networks By Andrew S. Tanenbaum*
+*Computer Networks* by Andrew S. Tanenbaum
 - [Amazon Smile](https://smile.amazon.com/Computer-Networks-Tanenbaum-International-Economy/dp/9332518742/)
 - ISBN-13: 978-9332518742
 
@@ -123,7 +186,7 @@ title: Books to Read for Programmers
 ## DevOps
 
 *DevOps Handbook:How to Create World-Class Agility, Reliability, and Security in Technology Organizations* by Gene Kim et al
-- [Amazon Smile](https://www.amazon.com/DevOps-Handbook-World-Class-Reliability-Organizations/dp/1942788002/ref=sr_1_4?s=books&ie=UTF8&qid=1539733859&sr=1-4&keywords=devops+handbook)
+- [Amazon Smile](https://www.amazon.com/DevOps-Handbook-World-Class-Reliability-Organizations/dp/1942788002/)
 - ISBN-13: 978-1942788003
 
 ## Full Stack Development
@@ -145,7 +208,7 @@ title: Books to Read for Programmers
 - [Amazon Smile](https://smile.amazon.com/Coders-Work-Reflections-Craft-Programming/dp/1430219483)
 - ISBN-13: 978-1430219484
 
-*Computer Science Distilled: Learn the art of solving computaitonal problems by Wladston Ferreira Filho*
+*Computer Science Distilled: Learn the art of solving computaitonal problems* by Wladston Ferreira Filho
 - [Amazon Smile](https://smile.amazon.com/Computer-Science-Distilled-Computational-Problems/dp/0997316020)
 - ISBN-13: 978-0-9773160-2-5
 
@@ -153,15 +216,15 @@ title: Books to Read for Programmers
 - [Amazon Smile](https://smile.amazon.com/DevOps-Handbook-World-Class-Reliability-Organizations/dp/1942788002)
 - ISBN-13: 978-1942788003
 
-*Don't Make Me Think, Revisited: A Common Sense Approach to Web Usability by Steve Krug*
+*Don't Make Me Think, Revisited: A Common Sense Approach to Web Usability* by Steve Krug
 - [Amazon Smile](https://smile.amazon.com/Dont-Make-Think-Revisited-Usability/dp/0321965515)
 - ISBN-13: 978-0321965516
 
-*Programming Pearls (2nd Edition) by Jon Bentley*
+*Programming Pearls (2nd Edition)* by Jon Bentley
 - [Amazon Smile](https://smile.amazon.com/Programming-Pearls-2nd-Jon-Bentley/dp/0201657880)
 - ISBN-13: 978-0201657883
 
-*Soft Skills: The software developer's life manual* - John Sonmez
+*Soft Skills: The software developer's life manual* by John Sonmez
 - [Amazon Smile](https://smile.amazon.com/Soft-Skills-software-developers-manual/dp/1617292397)
 - ISBN-13: 9781617292392
 
@@ -169,7 +232,7 @@ title: Books to Read for Programmers
 - https://mitpress.mit.edu/sicp/
 - ISBN-13: 978-0262510875
 
-*The Art of Computer Programming by Donald E. Knuth*
+*The Art of Computer Programming* by Donald E. Knuth
 - [Author Page](https://www-cs-faculty.stanford.edu/~knuth/taocp.html)
 - ISBN-13: 978-0321751041
 
@@ -188,8 +251,12 @@ title: Books to Read for Programmers
 - (ISBN 1976112524).
 
 *The Shellcoder's Handbook: Discovering and Exploiting Security Holes*
-- [Amazon Smile](https://smile.amazon.com/Shellcoders-Handbook-Discovering-Exploiting-Security/dp/047008023X/ref=sr_1_1?ie=UTF8&qid=1538665772&sr=8-1&keywords=shellcoders+handbook+3rd+edition&dpID=41xfa6zpuPL&preST=_SX218_BO1,204,203,200_QL40_&dpSrc=srch)
+- [Amazon Smile](https://smile.amazon.com/Shellcoders-Handbook-Discovering-Exploiting-Security/dp/047008023X/)
 - ISBN-13: 978-0470080238
+
+*Cracking the Code to a Successful Interview: 15 Insider Secrets from a Top-Level Recruiter* by Evan Pellett
+- [Amazon](https://www.amazon.co.uk/Cracking-Code-Successful-Interview-Top-Level/dp/1441700536/)
+- ISBN-13: 978-1441700537
 
 ## Java
 
@@ -197,12 +264,16 @@ title: Books to Read for Programmers
 - [Amazon Smile](https://smile.amazon.com/Head-First-Java-Kathy-Sierra/dp/0596009208)
 - ISBN-13: 978-0596009205
 
-*Effective Java by Joshua Bloch*
+*Effective Java* by Joshua Bloch
 - [Amazon Smile](https://smile.amazon.com/Effective-Java-3rd-Joshua-Bloch/dp/0134685997)
 - ISBN-13: 978-0134685991
 
-*Introduction to Java Programming and Data Structures by Y. Daniel Liang
+*Introduction to Java Programming and Data Structures* by Y. Daniel Liang
 - [Amazon Smile](https://smile.amazon.com/Introduction-Programming-Structures-Comprehensive-Version/dp/0134670949)
+
+*Core Java Volume I--Fundamentals* by Cay S. Horstmann and Gary Cornell
+- [Amazon](https://www.amazon.co.uk/Core-Java-I-Fundamentals-Cay-Horstmann/dp/0137081898/)
+- ISBN-13: 978-0137081899
 
 ## JavaScript
 
@@ -210,7 +281,7 @@ title: Books to Read for Programmers
 - https://github.com/getify/You-Dont-Know-JS
 - ISBN-13: 9781491924464 
 
-*Eloquent JavaScript: A Modern Introduction to Programming by Marijn Haverbeke*
+*Eloquent JavaScript: A Modern Introduction to Programming* by Marijn Haverbeke
 - [Read it online here](https://eloquentjavascript.net)
 - [Amazon Smile](https://smile.amazon.com/gp/product/1593275846)
 -ISBN-13: 978-1593275846
@@ -226,25 +297,45 @@ title: Books to Read for Programmers
 ## Node.js
 
  *Beginning Node.js*
- -[Amazon](https://www.amazon.com/Beginning-Node-js-Basarat-Syed-ebook/dp/B01JFUD1X8/ref=sr_1_1?ie=UTF8&qid=1539929353&sr=8-1&keywords=beginning-Node-js-Basarat-Syed)
+ -[Amazon](https://www.amazon.com/Beginning-Node-js-Basarat-Syed-ebook/dp/B01JFUD1X8/)
  - ISBN-13: 978-1484201886
+
+*JavaScript and JQuery: Interactive Front-End Web Development* by Jon Duckett
+- [Amazon] (https://www.amazon.co.uk/JavaScript-JQuery-Interactive-Front-End-Development/dp/1118531647/)
+- ISBN-13: 978-1118531648
 
 ## Python
 
-*Automate the Boring Stuff With Python*
-- http://automatetheboringstuff.com/
+*Automate the Boring Stuff With Python* by Al Sweigart
+- https://automatetheboringstuff.com/
 - ISBN-13: 978-1593275990
 
 *Core Python Applications Programming (3rd Edition) by Wesley J Chun*
 - [Amazon Smile](https://smile.amazon.com/Core-Python-Applications-Programming-3rd/dp/0132678209)
 - ISBN-13: 978-0132678209
 
+*Python Crash Course: A Hands-On, Project-Based Introduction to Programming*
+- [Amazon Smile](https://smile.amazon.com/Python-Crash-Course-Hands-Project-Based/dp/1593276036)
+- ISBN-13: 978-1593276034
+
+*Python Tricks: A Buffet of Awesome Python Features* by Dan Bader
+- [Amazon Smile](https://smile.amazon.com/Python-Tricks-Buffet-Awesome-Features-ebook/dp/B0785Q7GSY)
+- ISBN-13: 978-1775093305
+
+*Think Python: How to Think Like a Computer Scientist*
+- [Amazon Smile](https://smile.amazon.com/Think-Python-Like-Computer-Scientist/dp/1491939362)
+- ISBN-13: 978-1491939369
+
+*Violent Python: A Cookbook for Hackers, Forensic Analysts, Penetration Testers and Security Engineers*
+- [Amazon Smile](https://smile.amazon.com/Violent-Python-Cookbook-Penetration-Engineers/dp)
+- ISBN-13: 978-1597499576
+
 ## Go 
-*Introducing Go: Build Reliable, Scalable Programs by Caleb Doxsey*
+*Introducing Go: Build Reliable, Scalable Programs* by Caleb Doxsey
 - [Amazon Smile](https://smile.amazon.com/Introducing-Go-Reliable-Scalable-Programs/dp/1491941952)
 - ISBN-13: 978-1491941959
 
-*Go in Practice: Includes 70 Techniques 1st Edition by Matt Butcher, Matt Farina*
+*Go in Practice: Includes 70 Techniques 1st Edition* by Matt Butcher, Matt Farina
 - [Amazon Smile](https://smile.amazon.com/Go-Practice-Techniques-Matt-Butcher/dp/1633430073)
 - ISBN-13: 978-1633430075
 
@@ -253,6 +344,10 @@ title: Books to Read for Programmers
 *Soft Skills: The software developer's life manual*
 - [Amazon Smile](https://smile.amazon.com/Soft-Skills-software-developers-manual/dp/1617292397?pldnSite=1)
 - ISBN-13: 9781617292392 
+
+*How to Win Friends & Influence People*
+- [Amazon Smile](https://smile.amazon.com/dp/product/0671027034/)
+- ISBN-13: 978-0671027032
 
 ## Other
 
@@ -268,7 +363,7 @@ title: Books to Read for Programmers
 - [Amazon Smile](https://smile.amazon.com/Competitive-Programming-3rd-Steven-Halim/dp/B00FG8MNN8)
 - ISBN-13: 978-5800083125
 
-*Computer Networking: A Top-Down Approach (7th Edition) by Kurose and Ross*
+*Computer Networking: A Top-Down Approach (7th Edition)* by Kurose and Ross
 - [Amazon Smile](https://smile.amazon.com/Computer-Networking-Top-Down-Approach-7th/dp/0133594149)
 - ISBN-13: 978-0133594140 
 
@@ -276,7 +371,7 @@ title: Books to Read for Programmers
 - [Amazon Smile](https://smile.amazon.com/Data-Structures-Algorithms-Made-Easy/dp/819324527X)
 - ISBN-13: 978-8193245279
 
-*Deep Learning by Ian Goodfellow, Yoshua Bengio, Aaron Courville*
+*Deep Learning* by Ian Goodfellow, Yoshua Bengio, Aaron Courville
 - [Amazon](https://smile.amazon.com/Deep-Learning-Adaptive-Computation-Machine/dp/0262035618)
 - ISBN: 978-0262035613
 
@@ -300,11 +395,11 @@ title: Books to Read for Programmers
 - [Amazon Smile](https://smile.amazon.com/Operating-System-Concepts-Abraham-Silberschatz/dp/1118063333)
 - ISBN-13: 978-1118063330
 
-*Mastering Linux Shell Scripting by Andrew Mallett*
+*Mastering Linux Shell Scripting* by Andrew Mallett
 - [Amazon Smile](https://smile.amazon.com/Mastering-Linux-Scripting-Andrew-Mallett/dp/1784396974/)
 - ISBN-13: 978-1784396978
 
-*Pro PHP Programming - Peter MacIntyre*
+*Pro PHP Programming* by Peter MacIntyre
 - [Amazon Smile](https://smile.amazon.com/Pro-PHP-Programming-Peter-MacIntyre-ebook/dp/B005PZ09AG)
 - ISBN-13: 978-1430235606
 
@@ -320,47 +415,23 @@ title: Books to Read for Programmers
 - [Amazon Smile](https://www.amazon.com/Mythical-Man-Month-Software-Engineering-Anniversary/dp/0201835959)
 - ISBN-13: 978-0201835953
 
-## Python
+*Computer Science Distilled: Learn the art of solving computaitonal problems* by Wladston Ferreira Filho
+- [Amazon Smile](https://smile.amazon.com/Computer-Science-Distilled-Computational-Problems/dp/0997316020)
+- ISBN-13: 978-0-9773160-2-5
 
-*Automate the Boring Stuff With Python* by Al Sweigart
-- http://automatetheboringstuff.com/
-- ISBN-13: 978-1593275990
+*Algorithms Unlocked* by Thomas H. Cormen
+- [Amazon Smile](https://smile.amazon.com/Algorithms-Unlocked-Press-Thomas-Cormen/dp/0262518805)
+- ISBN-13: 978-0262518802
 
-*Core Python Applications Programming (3rd Edition) by Wesley J Chun*
-- [Amazon Smile](https://smile.amazon.com/Core-Python-Applications-Programming-3rd/dp/0132678209)
-- ISBN-13: 978-0132678209
-
-*Python Crash Course: A Hands-On, Project-Based Introduction to Programming*
-- [Amazon Smile](https://smile.amazon.com/Python-Crash-Course-Hands-Project-Based/dp/1593276036)
-- ISBN-13: 978-1593276034
-
-*Python Tricks: A Buffet of Awesome Python Features by Dan Bader*
-- [Amazon Smile](https://smile.amazon.com/Python-Tricks-Buffet-Awesome-Features-ebook/dp/B0785Q7GSY)
-- ISBN-13: 978-1775093305
-
-*Think Python: How to Think Like a Computer Scientist*
-- [Amazon Smile](https://smile.amazon.com/Think-Python-Like-Computer-Scientist/dp/1491939362)
-- ISBN-13: 978-1491939369
-
-*Violent Python: A Cookbook for Hackers, Forensic Analysts, Penetration Testers and Security Engineers*
-- [Amazon Smile](https://smile.amazon.com/Violent-Python-Cookbook-Penetration-Engineers/dp)
-- ISBN-13: 978-1597499576
+*The Innovator's Delimma*
+- [Amazon](https://www.amazon.com/Innovators-Dilemma-Technologies-Management-Innovation-ebook/dp/B00E257S86)
+- ASIN: B00E257S86
 
 ## Ruby
 
 *Practical Object-Oriented Design in Ruby*
 - [Amazon Smile](https://smile.amazon.com/Practical-Object-Oriented-Design-Ruby-Addison-Wesley/dp/0321721330)
 - ISBN-13: 978-0321721334
-
-## Soft Skills
-
-*Soft Skills: The software developer's life manual*
-- [Amazon Smile](https://smile.amazon.com/Soft-Skills-software-developers-manual/dp/1617292397?pldnSite=1)
-- ISBN-13: 9781617292392 
-
-*The Innovator's Delimma*
-- [Amazon] (https://www.amazon.com/Innovators-Dilemma-Technologies-Management-Innovation-ebook/dp/B00E257S86_
-- ASIN: B00E257S86
 
 ## Visual Basic
 
@@ -369,20 +440,31 @@ title: Books to Read for Programmers
 
 ## Web Development
 
+*The Art of Computer Programming* by Donald E. Knuth
+- https://www-cs-faculty.stanford.edu/~knuth/taocp.html
+- ISBN-13: 978-0321751041
+
 *HTML & CSS Design and Build Websites* by Jon Duckett
-- http://www.htmlandcssbook.com/
+- [Amazon](https://www.amazon.co.uk/HTML-CSS-Design-Build-Websites/dp/1118008189)
 - ISBN-13: 978-1118008188
 
-*JavaScript & jQuery Interactive Front-End Web Development* by Jon Duckett
-- http://javascriptbook.com/
-- ISBN-13: 978-1118531648
+## Design Patterns
 
-# Design Patterns
+*Design Patterns: Elements of Reusable Object-Oriented Software* by Erich Gamma (Author), Richard Helm (Author), Ralph Johnson (Author), John Vlissides (Author), Grady Booch (Foreword) 
+- [Amazon](https://www.amazon.com/Design-Patterns-Elements-Reusable-Object-Oriented/dp/0201633612/)
+- ISBN: 978-0201633610
 
-https://www.amazon.com/Design-Patterns-Elements-Reusable-Object-Oriented/dp/0201633612/
+*Head First Design Patterns: A Brain-Friendly Guide* by Eric Freeman (Author), Bert Bates (Author), Kathy Sierra (Author), Elisabeth Robson (Author)
+- [Amazon](https://www.amazon.com/Head-First-Design-Patterns-Brain-Friendly/dp/0596007124)
+- ISBN:  978-0596007126
 
-https://www.amazon.com/Head-First-Design-Patterns-Brain-Friendly/dp/0596007124
+*Practical Malware Analysis - No Starch Press*
+- [No Starch Press](https://nostarch.com/malware)
+- ISBN-13: 978-1-59327-290-6
 
+*CSS: The Missing Manual*
+- [Amazon](https://www.amazon.com/CSS-Missing-Manual-Manuals/dp/0596802447)
+- ISBN-13: 978-0596802448
 
 This list was compiled from multiple suggestion threads on Reddit and Stackoverflow. 
 

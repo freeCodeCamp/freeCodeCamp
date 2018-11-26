@@ -19,6 +19,8 @@ This section contains articles introducing technologies used in DevOps.
 This section contains links to learning DevOps through a MOOC experience. Courses may be pay-only.
 
 * [edX course](https://www.edx.org/microsoft-professional-program-front-end-development)
+* [Udacity](https://www.udacity.com/course/intro-to-devops--ud611)
+* [Class Central](https://www.class-central.com/tag/devops)
 
 ### Lab
 <a href="https://github.com/Microsoft/TechnicalCommunityContent/tree/master/DevOps">DevOps</a>

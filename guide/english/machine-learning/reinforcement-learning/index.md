@@ -11,6 +11,8 @@ title: Reinforcement Learning
 
 Reinforcement Learning refers to a field of Machine Learning that applies to agents that you reinforce by giving them reward and punishment. It gives a nice gradual learning and can simplify the learning of agent in tasks where you cannot determine a proper error value.
 
+Reinforcement learning lies *in between* supervised and unsupervised learning. While the former has a label and the latter does not, reinforcement learning has *sparse time delay labels* (rewards). It revolves around creating a mathematical framework that encapsulates the idea of an AI interacting with an environment and *time* acting as a dimension and learning through **trial and error**.
+
 Example:
 A bot is given a task to play Space Invaders, it tries to learn to play it by interacting with game and in return getting a reward for the points that it scored at end of the game. Greater the reward, greater are its chances of doing the similar gameplay. In that way, it learns how to play the game and perform in the best possible way.
 

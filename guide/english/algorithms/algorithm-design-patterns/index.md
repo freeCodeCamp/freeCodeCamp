@@ -23,5 +23,7 @@ These are design patterns that identify common communication patterns between ob
 
 #### More Information:
 <!-- Please add any articles you think might be helpful to read before writing the article -->
-[Design patterns - Wikipedia](https://en.wikipedia.org/wiki/Design_Patterns)
+- [Design patterns - Wikipedia](https://en.wikipedia.org/wiki/Design_Patterns)
+- [Design patterns tutorial](https://dzone.com/refcardz/design-patterns?chapter=1)
+- [Head First Design](https://www.oreilly.com/library/view/head-first-design/0596007124/)
 

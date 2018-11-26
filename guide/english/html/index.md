@@ -4,10 +4,14 @@ title: HTML
 
 # HTML
 
+
 HyperText Markup Language (HTML) is a markup language used to construct online documents and is the foundation of most websites today. A markup language like HTML allows us to:
+
    1) Create links to other documents
-   2) Atructure the content in our document 
-   3) Ascribe context and meaning to the content of our document
+   2) Structure the content in our document 
+   3) Attribute context and meaning to the content of our document
+  
+
  
 An HTML document has two aspects to it. It contains structured information (Markup), and text-links (HyperText) to other documents. We structure our pages using [HTML elements](#). They are constructs of the language providing [structure](#) and [meaning](#) in our document for the browser and [<anchor>](#) linking to other documents across the internet.
 
@@ -40,15 +44,15 @@ HTML5 introduced a host of semantic elements. As discussed, HTML provides meanin
 
 html: The root element of an HTML page
 
-head: The element contains meta information about the document
+head: This element contains meta information about the document
 
-title: The element specifies a title for the document
+title: This element specifies a title for the document
 
-body: The element contains the visible page content
+body: This element contains the visible page content
 
-h1: The element defines a large heading
+h1: This element defines a large heading
 
-p: The element defines a paragraph
+p: This element defines a paragraph
 
 ### HTML Tags
 
@@ -75,11 +79,6 @@ Since the early days of the web, there have been many versions of HTML:
 |XHTML|2000|
 |HTML5|2014|
 
-#### Other Resources
-
-- [HTML Elements](https://guide.freecodecamp.org/html/elements)
-- [Semantic HTML](https://guide.freecodecamp.org/html/html5-semantic-elements)
-- [HTML Attributes](https://guide.freecodecamp.org/html/attributes)
 
 # HTML Elements
 
@@ -158,5 +157,12 @@ There are many possible ways a user can give input/s like:
 ```
 <!-- This is a comment -->
 ```
-
 Comments can help in the understanding of the markup and do not display in the webpage.
+
+
+#### More Information
+
+- [HTML Elements](https://guide.freecodecamp.org/html/elements)
+- [Semantic HTML](https://guide.freecodecamp.org/html/html5-semantic-elements)
+- [HTML Attributes](https://guide.freecodecamp.org/html/attributes)
+- [HTML Reference](https://htmlreference.io/)
