@@ -51,7 +51,7 @@ int main ()
 
 #### Top
 
-Allows you to access the top element, without removing it, from your stack. 
+Allows you to access the the top element without removing it from your stack.
 
 ```cpp
 //Top operation in Stack
