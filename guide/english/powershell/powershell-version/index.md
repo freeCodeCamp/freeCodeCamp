@@ -1,3 +1,7 @@
+---
+title: PowerShell Version
+---
+
 ## Displaying PowerShell Version Details
 
 ### Usage
