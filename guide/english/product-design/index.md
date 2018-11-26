@@ -12,28 +12,24 @@ User Research, Data Analysis, UX and Interaction Design, Graphic and UI Design, 
 
  ###### Courses:
  
-* <a href='https://classroom.udacity.com/courses/ud509' target='_blank' rel='nofollow'>Product Design Course</a>
-[Udacity]
+* [Udacity - Product Design Course](https://classroom.udacity.com/courses/ud509)
 
-* <a href='https://www.edx.org/course/product-design-the-delft-design-approach-0' target='_blank' rel='nofollow'>Product Design: The Delft Design Approach</a>
-[edX]
+* [edX - Product Design: The Delft Design Approach](https://www.edx.org/course/product-design-the-delft-design-approach-0) 
 
  ###### Youtube:
-* <a href='https://www.youtube.com/watch?v=XRd6Ddn4ZSY' target='_blank' rel='nofollow'>Netflix Product Designer | Navin Iyengar | Design Like a Scientist</a>
-[Awwwards Youtube Channel]
+* [Awwwards Youtube Channel - Design Like a Scientist](https://www.youtube.com/watch?v=XRd6Ddn4ZSY)
 
-* <a href='https://www.youtube.com/watch?v=v-XDF57OOQQ' target='_blank' rel='nofollow'>How to be a Freelance Product Designer — Jared Erondu</a>
-[Dann Petty Youtube Channel]
+* [Dann Petty Youtube Channel - How to be a Freelance Product Designer](https://www.youtube.com/watch?v=v-XDF57OOQQ)
 
 
  ###### Resources:
-* <a href='https://medium.com/@jeanniehuang/product-design-resources-ive-found-helpful-5dadad58dcff' target='_blank' rel='nofollow'>Product Design Resources I’ve Found Helpful- Medium</a>
+* [Medium - Product Design Resources I’ve Found Helpful](https://medium.com/@jeanniehuang/product-design-resources-ive-found-helpful-5dadad58dcff)
 
-* <a href='https://uxdesign.cc/product-design/home' target='_blank' rel='nofollow'>Product Design - UX Collective</a>
+* [UX Collective - Product Design](https://uxdesign.cc/product-design/home)
 
 
-* <a href='https://www.invisionapp.com/inside-design/7-free-resources-every-product-designer-needs' target='_blank' rel='nofollow'>7 free resources every product designer needs- Inside Design by InVision</a>
+* [Inside Design by InVision - 7 free resources every product designer needs](https://www.invisionapp.com/inside-design/7-free-resources-every-product-designer-needs)
 
-* <a href='http://designweekly.atomic.io/' target='_blank' rel='nofollow'>Product Design Weekly</a>
+* [Product Design Weekly](http://designweekly.atomic.io/)
 
-* <a href='https://blog.usejournal.com/almost-every-product-design-resource-you-need-to-understand-the-tech-ecosystem-3d734f9c1a22' target='_blank' rel='nofollow'>The Ultimate Guide to Product & Design in the Tech Ecosystem</a>
+* [The Ultimate Guide to Product & Design in the Tech Ecosystem](https://blog.usejournal.com/almost-every-product-design-resource-you-need-to-understand-the-tech-ecosystem-3d734f9c1a22)
