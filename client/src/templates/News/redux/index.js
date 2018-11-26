@@ -4,7 +4,6 @@ import { createTypes } from '../../../../utils/stateManagement';
 import { createAsyncTypes } from '../../../utils/createTypes';
 import { defaultFetchState } from '../../../redux';
 import { createShortIdSaga } from './shortId-saga';
-import { createArticleSlug } from '../../../../utils/news';
 
 export const ns = 'news';
 const initialState = {
@@ -20,12 +19,8 @@ export const resolveShortId = createAction(types.resolveShortId);
 export const resolveShortIdComplete = createAction(
   types.resolveShortIdComplete,
   article => {
-    const {
-      slugPart,
-      shortId,
-      author: { username }
-    } = article;
-    article.redirect = createArticleSlug({ username, slugPart, shortId });
+    const { slug } = article;
+    article.redirect = slug;
     return article;
   }
 );

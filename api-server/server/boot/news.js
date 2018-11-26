@@ -56,6 +56,8 @@ function createShortLinkHandler(app) {
             'viewCount',
             'title',
             'featureImage',
+            'slugPart',
+            'shortId',
             'meta'
           ]),
           slug

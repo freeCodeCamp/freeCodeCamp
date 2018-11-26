@@ -5,19 +5,10 @@ import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux';
 
 import Layout from '../../../components/layouts/Default';
-import {
-  resolveShortId,
-  dynamicArticleSelector,
-  resolveShortIdFetchStateSelector
-} from '../redux';
+import { resolveShortId, dynamicArticleSelector } from '../redux';
 import { Loader } from '../../../components/helpers';
 
 const propTypes = {
-  fetchState: PropTypes.shape({
-    complete: PropTypes.bool,
-    errored: PropTypes.bool,
-    pending: PropTypes.bool
-  }),
   redirect: PropTypes.string,
   resolveShortId: PropTypes.func.isRequired,
   shortId: PropTypes.string.isRequired
@@ -25,10 +16,8 @@ const propTypes = {
 
 const mapStateToProps = () => (state, props) => {
   const article = dynamicArticleSelector(state, props);
-  const fetchState = resolveShortIdFetchStateSelector(state, props);
   return {
-    redirect: article.redirect,
-    fetchState
+    redirect: article.redirect
   };
 };
 
@@ -42,6 +31,14 @@ class NewsReferalLinkHandler extends Component {
       return resolveShortId(shortId);
     }
     return navigate(redirect);
+  }
+
+  componentDidUpdate() {
+    const { redirect } = this.props;
+    if (redirect) {
+      return navigate(redirect);
+    }
+    return null;
   }
 
   render() {
