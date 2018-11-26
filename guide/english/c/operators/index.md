@@ -4,7 +4,7 @@ title: Operators
 # Operators in C
 
 ## 1. Arithmetic Operators
-- `+` Adds to operands (values) 
+- `+` Adds to operands (values)
      ```C
      int a = 6;
      int c = a + 1; // c = 7
@@ -47,7 +47,7 @@ title: Operators
      int b = a--; // postfix operator; a = 6, b = 7
      int c = --a; // prefix operator; a = 5, c = 5
      ```
- 
+
  C Program to demonstrate the working of arithmetic operators
 ```C
 #include <stdio.h>
@@ -117,7 +117,7 @@ int main()
   ```C
   bool c = (5 < 6) || (8 == 7) // first operand is true, therefore c = true
   ```
-- `!` NOT operator - True when the operand is false. 
+- `!` NOT operator - True when the operand is false.
   ```C
   bool c = !(8 == 7) // translate: NOT (false), therefore c = true
   ```
@@ -190,16 +190,43 @@ int main()
   int a = 21;
   a %= 5; // equivalent to a = a % 5 = 21 % 5 = 1
   ```
-     
-Misc Operators ↦ sizeof & ternary
-Besides the operators discussed above, there are a few other important operators including sizeof and ? : supported by the C Language.
 
-Operator	               Description	                                        Example
-sizeof()	               Returns the size of a variable.	                    sizeof(a), where a is integer, will return 4.
-&	                    Returns the address of a variable.	                    &a; returns the actual address of the variable.
-*	                    Pointer to a variable.	                              *a;
-? :	                    Conditional Expression.	                              If Condition is true ? then value X : otherwise value Y
+## 6. Misc Operators, sizeof(), Address, Value at Address and Ternary
 
+- `sizeof()`  Returns the amount of memory allocated.
+  ```C
+  int a;
+  sizeof(a);  // result is 4
+
+  double b;
+  sizeof(b);  // result is 8
+
+  // note the result of sizeof() may vary depending on the type of machine.
+  ```
+- `&`  Address Operator, Gives the address of a variable.
+  ```C
+  int a;
+  &a;  // result an address such as 860328156
+  ```
+- `*`  Value at Address Operator, gives the value at an address.
+  ```C
+  int a = 50;
+  int *b = &a;
+  &a; // result is the address of 'a' such as 1152113732
+  *b; // result is 50, the value stored at the address
+  ```
+- `? :`  Ternery Operator, simplifies a typical if-else conditional.  condition ? value_if_true : value_if_false 
+  ```C
+  // a typical if-else statement in c
+  if (a > b) {
+     result = x;
+  }
+  else {
+     result = y;
+  }
+  // can be rewritten with the ternary operator as
+  result = a > b ? x : y;
+  ```
 
 ## 6. Operator precedence and associativity in C
 Operators with the highest precedence appear at the top of the list. Within an expression, operators
