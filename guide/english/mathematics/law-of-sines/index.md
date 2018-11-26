@@ -1,16 +1,16 @@
 ---
 title: Law of Sines
 ---
-## Law of Sines
+## Law of sines
 
-The Law of Sines simply states that:
-
-Sin(A)   Sin(B)
------- = ------
-  a         b
-
-Where "A" and "B" are angle measures, and "a" and "b" are their corresponding side lengths
-This law is used with triangles, when two angles and one side length are known, here is an example:
+The law of sines states that
+```
+sin(A)   sin(B)   sin(C)
+------ = ------ = ------
+  a         b        c
+```
+where A, B and C are angles, and a, b and c are their corresponding (opposite) side lengths. This law is used with triangles, when two angles and one side length are known. For example, consider the triangle
+```
      b
 ____________
 \        75/
@@ -19,26 +19,21 @@ ____________
    \    /
     \30/
      \/
-
-In this problem, everything is defined except for "b," therefore, we can use the law of sines to find it. For this problem, I will 
-refer to the corresponding angle and side as "A" and "a":
-
-Sin(A)   Sin(B)      Sin(75)   Sin(30)
------- = ------ ===> ------- = ------- 
+```
+In this (isoceles) triangle, we know everything except for b, the angle opposite B = 30&deg;, therefore, we can use the law of sines to find it. With A = 75 and a = 6, we have
+```
+sin(A)   sin(B)      sin(75)   sin(30)
+------ = ------ ===> ------- = -------
   a         b           6         b
-
-For evaluating the Sines, I used a calculator. I can cross multiply the two sides of the equation, which evaluates as:
-
-    6 * Sin(30)
+```
+Cross multiplying gives
+```
+    6 * sin(30)
 b = -----------
       sin(75)
+```
+which simplifies to, approximately,
 
-Which comes out to
-
-b = 3.106
-
-
-#### More Information:
-<!-- Please add any articles you think might be helpful to read before writing the article -->
-
-
+<p align='center'>
+  b &approx; 3.106
+</p>
