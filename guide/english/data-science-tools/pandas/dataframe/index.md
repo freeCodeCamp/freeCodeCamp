@@ -1,13 +1,12 @@
-
 ---
 title: pandas DataFrame
 ---
 
 ## DataFrame
 
-In this section we will have a detailed look on the other important data-type of pandas DataFrame. In pandas, DataFrame is used as an object to represent multi-dimentional data. They are mainly used to repersent 2 dimensional or tabluar data with rows and columns. They can also be called as collection of `Series`.  
+In this section you will have a detailed look on the other important data-type of pandas "DataFrame". In pandas, DataFrame is used as an object to represent multi-dimensional data. They are mainly used to represent 2 dimensional or tabular data with rows and columns. They can also be called as collection of `Series`.  
 
-DataFrame also supports 3-D data using the multi index properties. It will be the replacement for the old and now existing `panel` object. A 3-D DataFrame can consist of multiple 2-D dataframes.
+DataFrame also supports 3 dimensional data using the multi index properties. It will be the replacement for the old and now existing `panel` object. A 3-dimensional DataFrame can consist of multiple 2-D DataFrame.
 
 ### Basic syntax of DataFrame
 
@@ -26,7 +25,7 @@ pandas.DataFrame(data=None, index=None, columns=None, dtype=None, copy=False)
 
 ### Creating DataFrame in different ways:
 
-As a first step lets import our pandas module:
+As a first step import our pandas module:
 
 
 ```python
@@ -127,15 +126,15 @@ print(df)
     3    John    NaN
 
 
-Notice the above output, For John the score is NaN(not a number). In pandas empty values are defaulted with numpy.nan.
+You can notice the above output, For John the score is NaN(not a number). In pandas empty values are defaulted with numpy.nan.
 
 ### DataFrame Manipulations:
 
-Now that we have a comprehensive idea on how to create a DataFrame and different kind of inputs we can use to create it. Lets move on to different manupulation operations we can do with a DataFrame.
+Now that you have a comprehensive idea on how to create a DataFrame and different kind of inputs you can use to create it. Next on to different manipulation operations we can do with a DataFrame.
 
 ### Column Manipulation:
 
-Here we will discuss about below operation on the column level:
+Below are the operations on the column level discussed here:
 * Column selection
 * Column addition
 * Column deletion
@@ -280,7 +279,7 @@ print(DF)
 
 ### Row Manipulation:
 
-As like colum we have the similar operation for rows as well. Now we will disscuss about those operations in row level in detail. We will use the same `DataFrame` DF we have created before.
+As like column, `DataFrame` have the similar operations for rows as well. Now you will see about those operations in row level in detail. You will use the same `DataFrame` DF we have created before.
 
 ### Row selection:
 
