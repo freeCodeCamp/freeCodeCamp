@@ -172,7 +172,7 @@ int main ()
 
 1. Expression Evaluation and Conversion.
    Stacks are used to evaluate and convert expressions like Prefix, Postfix and Infix expression. 
-2. In Recursive functions,it is used to keep information about the active functions or subroutines.
+2. In Recursive functions, Stacks are used to keep information about the active functions or subroutines.
 3. In Backtracking, as in DFS algorithm.
 4. Memory management, run-time environment for nested language features. etc
 
