@@ -10,6 +10,7 @@ title: Control Flow
 With Vue.js you can decide whether to show or not a piece of code in your final page, depending on some condition. For example, imagine a form input that requires a text input at least 8 characters long: if the user input is shorter than 8, an error message should appear; but if the input is longer than 8, the message disappears.
 
 Let's make a simpler example. We want to condition the exibition of a message to a counter:
+=======
 
 ```html
 <div id="app">
@@ -40,6 +41,7 @@ Let's alter our first example a little bit to get this straight.
 
 ```html
 <div id="app">
+  <button type="button" @click="counter = counter + 1">Click Me!</button>
   <p v-if="counter > 10">
     The counter is greater than 10!
   </p>
@@ -93,6 +95,7 @@ let app = new Vue({
 ```
 
 Way easier than inserting a lot of `<li>`! And notice that whenever the `list` changes, the resulting html will change acordingly. Try it out: open the console and `push` some string to the `list` with
+=======
 
 ```javascript
 app.list.push("something else");

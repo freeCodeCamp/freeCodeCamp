@@ -36,7 +36,7 @@ An HSLA color value is similar, with the alpha value in last position: hsla(hue,
     
 ### CMYK
 
-CMYK colors is a combination of CYAN, MAGENTA, YELLOW , and BLACK. Computer screens display colors using RGB color values. Printers often presents colors using CMYK color values.
+CMYK colors is a combination of CYAN, MAGENTA, YELLOW , and BLACK. Computer screens display colors using RGB color values. Printers often present colors using CMYK color values.
 CMYK is not supported in HTML, but it is suggested as a new standard in CSS4.
 
 Example colors:
@@ -52,8 +52,11 @@ Hex codes are expressed in this format: #000000, which would be the color black 
 These three pairs each express a value for the amount of red, green and blue in a particular color. Taking the hexcode color #AA11BB, AA is the amount of red, 11 the amount of green, and BB the amount of blue. 0 is the lowest value of a color while f is the highest value.
 
 Hex codes are case insensitive, meaning that #FFFFFF and #ffffff would be the same color: white.
+It is also possible to use a three-digit notation as a short version, for example #ABC is equal to #AABBCC.
 
-Additionally, there are 16,777,216 possible color combinations using hexcode.
+Additionally, there are 16,777,216 possible color combinations using hexcode. A shorthand form also exists. The shorthand #ABC is equivalent to #AABBCC. In this form, 4096 colours are available.
+
+Furthermore, some browser versions (see [compatibility](https://caniuse.com/#feat=css-rrggbbaa)) support hexcodes with 8 digits, where the last two digits describe the opacity level (00 - fully transparent, FF - fully opaque), equivalent to the alpha channel of rgba(). 
 
 ### Opacity
 
@@ -87,11 +90,11 @@ p {
 }
 
 h2 {
- color: #FA8072; //salmon 
+ color: #FA8072; // salmon 
 }
 ```
 
-You can also add an alpha value, or transparency to colors. Transparency allows text to be overlaid on an image and stil have the image partially viewable through the text, or can be used to change the shade of the colour if no other elements are in front or behind the text. Use `rgba()` or `hsla()` and fill in your color values. The alpha value goes last and is a percent converted to a decimal. (For example, 20% is 0.2, 75% is 0.75, etc.)
+You can also add an alpha value, or transparency to colors. Transparency allows text to be overlaid on an image and still have the image partially viewable through the text, or can be used to change the shade of the colour if no other elements are in front or behind the text. Use `rgba()` or `hsla()` and fill in your color values. The alpha value goes last and is a percent converted to a decimal. (For example, 20% is 0.2, 75% is 0.75, etc.)
 
 ```css
 body {
@@ -99,13 +102,16 @@ body {
 }
 ```
 
-Above shows paragraphs styled bright orange and 20% transparent, h2 elements a salmon pink, and the body's background bright blue.
+Above shows paragraphs styled bright orange and 20% transparent, h2 elements salmon pink, and the body's background bright blue.
 
 To get custom colors to use in CSS, you might find a color picker helpful. Some text editors have built-in color pickers, like Visual Studio Code. If you search "color picker" on Google or DuckDuckGo, you will get a color picker that you can use. Google Chrome and Firefox also have color picker add-ons that you can install. Adobe Color CC not only helps you pick a color, but will also help you pick out a color scheme for your web page! It's a good idea to check that you have enough contrast between your text and background colors by using a tool like WebAIM's Color Contrast Checker.
 
 #### More Information:
-<a href="https://color.adobe.com/" target="_blank">Adobe Color CC</a><br>
-<a href="https://chrome.google.com/webstore/detail/colorpick-eyedropper/ohcpnigalekghcmgcdcenkpelffpdolg?hl=en" target="_blank">ColorPick Eyedropper on Chrome Web Store</a><br>
-<a href="https://addons.mozilla.org/en-US/firefox/addon/colorzilla/" target="_blank">ColorZilla add-on for Firefox</a><br>
-<a href="http://www.colorhexa.com/" target="_blank">Explore different Hex colors</a><br>
-<a href="https://webaim.org/resources/contrastchecker/" target="_blank">WebAIM Color Contrast Checker</a>
+
+- [MDN Documentation](https://developer.mozilla.org/en-US/docs/Web/CSS/color_value)
+- [Adobe Color CC](https://color.adobe.com/)
+- [ColorPick Eyedropper on Chrome Web Store](https://chrome.google.com/webstore/detail/colorpick-eyedropper/ohcpnigalekghcmgcdcenkpelffpdolg?hl=en)
+- [ColorZilla add-on for Firefox](https://addons.mozilla.org/en-US/firefox/addon/colorzilla/)
+- [Explore different Hex colors](https://www.colorhexa.com/)
+- [WebAIM Color Contrast Checker](https://webaim.org/resources/contrastchecker/)
+- [MDN: Further Reading on Colors](https://developer.mozilla.org/en-US/docs/Web/HTML/Applying_color)
