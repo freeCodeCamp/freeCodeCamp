@@ -25,7 +25,7 @@ const filledString = "some string in here"; // <-- truthy
 
 const zero = 0; // <-- falsy
 
-const numberGreaterThanZero; // <-- falsy
+let numberGreaterThanZero; // <-- falsy
 
 const emptyArray = []; // <-- truthy, we'll explore more about this next
 
