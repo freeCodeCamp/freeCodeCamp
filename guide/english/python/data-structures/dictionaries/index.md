@@ -65,6 +65,15 @@ It's easy to add key-value pairs to an existing dictionary:
     >>> club_names
     [1910, 1875]
 ```  
+**`has_key`** is a built-in *method* that can be used to check if a *key* exists in the dictionary.
+```python
+    >>> items = {'a': 'apple', 'b': 'banana', 'c': 'cat'}
+    >>> items.has_key('a')
+    True
+    >>> items.has_key('d')
+    False
+```
+
 Yet another way of creating dictionary is using the **`dict()`** method:
 ```python
     >>> players = dict( [('messi','argentina'), ('ronaldo','portugal'), ('kaka','brazil')] ) # sequence of key-value pair is passed  
@@ -111,4 +120,14 @@ Use **`items()`** for Python 3.x:
     x 1
     y 2
     z 3
+```
+
+To loop over just the values in the dictionary, do this in Python 3.x:
+```python
+    >>> for value in d.values():
+    ...     print(value)
+    ...
+    1
+    2
+    3
 ```
