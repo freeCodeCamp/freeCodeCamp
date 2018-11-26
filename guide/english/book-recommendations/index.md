@@ -469,3 +469,25 @@ title: Books to Read for Programmers
 This list was compiled from multiple suggestion threads on Reddit and Stackoverflow. 
 
 Please feel free to add more that you have found useful!
+
+## Programming Books for kids to get coding
+
+*Python for Kids: A Playful Introduction to Programming by Jason Briggs (For Ages 10+)*
+- [Amazon Smile](https://smile.amazon.com/Python-Kids-Playful-Introduction-Programming-ebook/dp/B00ADX21Z6)
+- ISBN-13: 978-1593274078
+
+*Trapped in a Video Game by Dustin Brady (For Ages 8 - 12)*
+- [Amazon Smile](https://smile.amazon.com/Trapped-Video-Game-Book-1/dp/1449494862)
+- ISBN: 978-1449494865
+
+*Super Scratch Programming Adventure! by The Lead Project (For Ages 5+)*
+- [Amazon Smile](https://www.amazon.com/gp/product/1593274092/)
+- ISBN: 978-9881840820
+
+*3D Game Programming for Kids: Create Interactive Worlds with JavaScript by Chris Strom (For Ages 10+)*
+- [Amazon Smile](https://smile.amazon.com/gp/product/1937785440/)
+- ISBN-13: 978-1937785444 
+
+*Hello Ruby: Adventures in Coding by Linda Liukas*
+- [Amazon Smile](https://smile.amazon.com/Hello-Ruby-Adventures-Linda-Liukas/dp/1250065003)
+- ISBN: 978-1250065001
