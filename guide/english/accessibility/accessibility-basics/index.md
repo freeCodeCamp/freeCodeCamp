@@ -98,6 +98,12 @@ Spans and divs are non-elements. They are meant to contain other elements, not t
 ```
 Boom. Suddenly, all these elements are now perfectly accessible, just by using native HTML. HTML the way it was meant to be used, in other words.
 
+### How do pages begin?
+```html
+    <html lang="en-us">
+```
+We copy it from some template and mostly don't even know it is there. These words tell the screen-readers what language to read. When your site is in English, there is no problem. But when you write your site in another language and you forget you actually have this tag, blind readers will have to listen to an English person reading another language like it is English... So be aware of this little tag that can mean the world to some visitors.
+
 ### A foundation cannot stand without structure
 
 A bit earlier, I touched upon a screen-reader's hotkeys to jump from heading to heading. There are in fact many hotkeys like this to quickly jump to the nearest table, form field, link etc. Making sure these headings are actually in logical places is therefore a good practice and really decreases your assistive technology users' stress levels, which is good if you want visitors to keep coming back to your website.
@@ -164,7 +170,7 @@ Screen-readers and other assistive technologies render a top-to-bottom represent
 
 DOM stands for Document Object Model and is the tree-like structure of your website's HTML elements. All your HTML elements are nodes that hierarchically interlink based on the HTML tags you use and JavaScript. Screen-readers use this DOM tree to work with your HTML code.
 
-If you put your element at the top of your element, it will show up at the top of your DOM tree as well. therefore, the screen-reader will put it at the top as well, even if you move it to the bottom of the page using CSS.  
+If you put your element at the top of your element, it will show up at the top of your DOM tree as well. Therefore, the screen-reader will put it at the top as well, even if you move it to the bottom of the page using CSS.  
 
 So a final tip I want to give you all is to pay attention to the order of your HTML, not just your finished website with CSS added in. Does it still make sense without CSS? Great!
 

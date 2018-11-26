@@ -10,7 +10,7 @@ It is the most commonly used way to output the data. It's a common practice to i
 
 ```javascript
 var numbers  = [ 1, 2, 3, 4, 5, 6, 7];
-numbers.forEach(function(number){
+numbers.forEach(function(number) {
   console.log(number + ' is divisible by 2', number%2 == 0);
 });
 ```
@@ -21,12 +21,12 @@ As you guessed by the name this is used for showing warnings, and its typical ye
 
 
 ```javascript
-function isAdult(age){
-  if(Number(age) < 18){
+function isAdult(age) {
+  if(Number(age) < 18) {
     console.warn('You are not an adult');
     return false;
-   }
-   return true;
+  }
+  return true;
 }
 ```
 

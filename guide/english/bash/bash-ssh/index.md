@@ -1,5 +1,5 @@
 ---
-title: Bash ssh
+title: Bash ssh (Secure SHell)
 ---
 
 ## Bash command: ssh

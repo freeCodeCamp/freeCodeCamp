@@ -10,9 +10,9 @@ title: Bash ls
 ### Usage
 
 ```bash
-ls [options] [folder_path]
+ls [options] [file_names]
 ```
-You can list the items in any directory without even entering the directory. Consider you are in a directory with folders Test1 and Test2. You're in the parent directory you can list all files in Test1 as follows:
+You can list the items in any directory without even entering the directory. Consider you are in a directory with folders- Test1,Test2. You're in the parent directory you can list all files in Test1 as follows-
 `ls Test1`
 
 Most used options:
@@ -20,7 +20,9 @@ Most used options:
 * `-a`, all files and folders, including ones that are hidden and start with a `.`
 * `-l`, List in long format
 * `-G`, enable colorized output.
-* `-s`, List file size.
+* `-s`, List File Size.
+* `-t`, Sorts the output by modification time
+* `-r`, Reverses the order while sorting
 * `-R`, displays the contents of the directory, and its subdirectories.
 
 ### Example:

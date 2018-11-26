@@ -12,6 +12,7 @@ Cooling devices are available for individual parts on the computer. The two most
 * Passive Systems - Usually consist of a heat sink or a heat conductive metal attached to the component. Passive cooling works by providing a larger surface to adsorb and dissipate the heat.
 * Active Systems - Add a fan to the heat sink and you are actively removing heat. The cooling fan can be dynamically adjusted to the load of the CPU or graphics card on most motherboards.
 * Liquid Cooling - High performance computers can benefit from a liquid cooled system. These types of systems circulate a liquid between the hot components and a cooling radiator.
+* Thermal Paste - As an addition to all GPU and CPU cooling, a layer of thermal paste is added between the CPU and the cooler in order to avoid metal on metal contact, this thermal paste is applied as a thin layer which acts in order to disperse and absorb heat in order to avoid damage to the component.
 
 ## Environmental Considerations
 
