@@ -114,6 +114,10 @@ Each corner of `border-radius` can be adjusted individually in the following ord
 ```css 
   border-radius: 15% 10px 30% 5px;
 ```
+If only two values are provided, the first value will be applied to the top-left and bottom-right corners and the second value will be applied to the top-right and bottom-left corners.
+```css
+  border-radius: 10px 5px;
+```
 
 
 More complex border-radius values are available. This is done using a slash (/) between horizontal and vertical values.
