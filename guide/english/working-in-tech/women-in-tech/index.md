@@ -33,6 +33,7 @@ Encouraging girls in elementary, middle, and high school can also help to increa
 
 ### A non-exhaustive list of global women in tech initiatives:
 
+- [ChickTech](https://chicktech.org/)
 - [PyLadies](https://www.pyladies.com/)
 - [R-Ladies](https://rladies.org/)
 - [Django Girls](https://djangogirls.org/)
