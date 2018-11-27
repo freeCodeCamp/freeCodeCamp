@@ -1,5 +1,5 @@
 ---
-title: recursion
+title: Recursion
 ---
 ## Recursion
 Recursion is a concept found in Java as well as in other programing languages such as C++. It is used to solve complex problems where loops are to uneficcient or not flexible enough. Recursion essentially is calling the current method within the method itself.
