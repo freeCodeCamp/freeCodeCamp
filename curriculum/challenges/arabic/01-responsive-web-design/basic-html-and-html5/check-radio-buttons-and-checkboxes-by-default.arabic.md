@@ -7,10 +7,10 @@ localeTitle: تحقق من أزرار الراديو و Checkboxes حسب الا
 ---
 
 ## Description
-<section id="description"> يمكنك تعيين مربع اختيار أو زر اختيار ليتم فحصه افتراضيًا باستخدام السمة <code>checked</code> . للقيام بذلك ، قم فقط بإضافة الكلمة &quot;محدد&quot; إلى داخل عنصر الإدخال. على سبيل المثال: <code>&lt;input type=&quot;radio&quot; name=&quot;test-name&quot; checked&gt;</code> </section>
+<section id="description"> يمكنك تعيين مربع اختيار أو زر اختيار ليتم تحديده افتراضيًا باستخدام السمة <code>checked</code> . للقيام بذلك ، قم فقط بإضافة الكلمة &quot;محدد&quot; إلى داخل عنصر الإدخال. على سبيل المثال: <code>&lt;input type=&quot;radio&quot; name=&quot;test-name&quot; checked&gt;</code> </section>
 
 ## Instructions
-<section id="instructions"> عيّن أول <code>radio buttons</code> <code>checkboxes</code> وأول <code>checkboxes</code> على كلاهما يتم تحديدها افتراضيًا. </section>
+<section id="instructions"> عيّن أوّل <code>radio buttons</code> وأوّل <code>checkboxes</code> على كلاهما لِيتمّ تحديدها افتراضيًا. </section>
 
 ## Tests
 <section id='tests'>
