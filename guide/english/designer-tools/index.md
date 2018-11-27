@@ -16,6 +16,8 @@ Great for static content.
 
 [Figma](https://www.figma.com) - [Guide](https://github.com/freeCodeCamp/guides/blob/master/src/pages/designer-tools/Figma/index.md)
 
+[Inkscape](https://inkscape.org/)
+
 ### Interaction
 Better for complicated interactions.
 
@@ -32,6 +34,12 @@ Ideal for click-through prototypes.
 
 [Moqups](https://moqups.com/)
 
+[Balsamiq](https://balsamiq.com/)
+
+[Justinmind](https://www.justinmind.com/)
+
+[Zeplin](https://zeplin.io/)
+
 ### Painting
 Great for artists.
 
@@ -43,7 +51,7 @@ Great for artists.
 
 [Autodesk Sketchbook](https://www.sketchbook.com/)
 
-## Plug-ins
+## Plug-ins/Extensions
 
 ### For Firefox
 
@@ -51,3 +59,24 @@ In this section, you can see popular Firefox plug-ins used by designers.
 
 - [Color Picker](https://addons.mozilla.org/en-us/firefox/addon/colorzilla/?src=collection&collection_id=90e68e6a-f13f-5921-3412-5228262ca9db)
 - [React Developer Tools](https://addons.mozilla.org/en-US/firefox/addon/react-devtools/)
+- [YSlow](https://addons.mozilla.org/en-US/firefox/addon/yslow/)
+- [CSSsir](https://addons.mozilla.org/en-US/firefox/addon/csssir/)
+- [Live editor for CSS and LESS](https://addons.mozilla.org/en-US/firefox/addon/live-editor-for-css-and-less/)
+- [Usersnap](https://addons.mozilla.org/en-GB/firefox/addon/usersnap/)
+- [Platypus](https://addons.mozilla.org/en-US/firefox/addon/platypus/)
+
+### For Chrome 
+
+In this section, you can see popular Chrome extensions used by designers. 
+
+- [ColorZilla](https://chrome.google.com/webstore/detail/colorzilla/bhlhnicpbhignbdhedgjhgdocnmhomnp)
+- [React Developer Tools](https://chrome.google.com/webstore/detail/react-developer-tools/fmkadmapgofadopljbjfkapdkoienihi)
+- [Fontface Ninja](https://chrome.google.com/webstore/detail/fontface-ninja/eljapbgkmlngdpckoiiibecpemleclhh)
+- [CSS Peeper](https://chrome.google.com/webstore/detail/css-peeper/mbnbehikldjhnfehhnaidhjhoofhpehk)
+- [Stylebot](https://chrome.google.com/webstore/detail/stylebot/oiaejidbmkiecgbjeifoejpgmdaleoha)
+- [Web Developer](https://chrome.google.com/webstore/detail/web-developer/bfbameneiokkgbdmiekhjnmfkcnldhhm)
+- [PixelParallel](https://chrome.google.com/webstore/detail/pixelparallel-by-htmlburg/iffnoibnepbcloaaagchjonfplimpkob)
+- [Site Palette](https://chrome.google.com/webstore/detail/site-palette/pekhihjiehdafocefoimckjpbkegknoh)
+- [Zoho Annotator](https://chrome.google.com/webstore/detail/zoho-annotator/dmlmcpcjndojhbflolmdgfpojnjfdlbj)
+- [Web Developer](https://chrome.google.com/webstore/detail/web-developer/bfbameneiokkgbdmiekhjnmfkcnldhhm)
+- [Checkbot](https://chrome.google.com/webstore/detail/checkbot-seo-web-speed-se/dagohlmlhagincbfilmkadjgmdnkjinl)
