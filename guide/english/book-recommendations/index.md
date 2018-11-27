@@ -470,6 +470,10 @@ title: Books to Read for Programmers
 - [Amazon](https://www.amazon.com/CSS-Missing-Manual-Manuals/dp/0596802447)
 - ISBN-13: 978-0596802448
 
+*Learning PHP, MySQL & JavaScript: With jQuery, CSS & HTML5 (Learning PHP, MYSQL, Javascript, CSS & HTML5)*
+- [Amazon](https://www.amazon.com/Learning-PHP-MySQL-JavaScript-Javascript/dp/1491978910/ref=dp_ob_title_bk)
+- ISBN-13: 978-1491978917
+
 This list was compiled from multiple suggestion threads on Reddit and Stackoverflow. 
 
 Please feel free to add more that you have found useful!
