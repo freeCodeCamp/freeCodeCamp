@@ -2,7 +2,7 @@
 title: Bash Grep
 ---
  ## Bash command: grep
- `grep` stands for Global Regular Expression Print. It is uesd to search piped input or files for a string which can contain regex.
+ `grep` stands for Global Regular Expression Print. It is used to search piped input or files for a string which can contain regex.
  
  ### Usage
  ```
@@ -25,5 +25,5 @@ title: Bash Grep
  ```
  
  ### More Information
- * run `man grep` for a full list of availible flags/options to use.
+ * run `man grep` for a full list of available flags/options to use.
  * [Wikipedia](https://en.wikipedia.org/wiki/Grep)
