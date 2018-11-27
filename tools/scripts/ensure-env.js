@@ -13,7 +13,8 @@ const {
   API_LOCATION: api,
   FORUM_LOCATION: forum,
   FORUM_PROXY_LOCATION: forumProxy,
-  LOCALE: locale
+  LOCALE: locale,
+  NODE_ENV: NODE_ENV
 } = process.env;
 
 const locations = {
@@ -30,15 +31,18 @@ const clientStaticPath = path.resolve(clientPath, 'static');
 const globalConfigPath = path.resolve(__dirname, '../../config');
 const env = Object.assign(locations, {locale});
 
-const redirects = createRedirects({ api, home, forum, forumProxy });
-
-fs.writeFile(`${clientStaticPath}/_redirects`, redirects, function(err) {
-  if (err) {
-    log('Error');
-    console.error(err);
-  }
-  log('_redirects written');
-});
+if (NODE_ENV === 'production') {
+  const redirects = createRedirects({ api, home, forum, forumProxy });
+  fs.writeFile(`${clientStaticPath}/_redirects`, redirects, function(err) {
+    if (err) {
+      log('Error');
+      console.error(err);
+    }
+    log('_redirects written');
+  });
+} else {
+  log(`ignoring creation of redirect file in ${NODE_ENV}`);
+}
 
 fs.access(`${apiPath}/server/resources/pathMigration.json`, err => {
   if (err) {
