@@ -66,7 +66,7 @@ const sixMonths = 15780000000;
 
 function generateArticle() {
   const now = Date.now();
-  const id = shortId.generate();
+  const id = shortId();
   const title = faker.lorem.sentence();
   const paragraphs = faker.random.number(10) || 1;
   const arrayToLoopOver = new Array(paragraphs).fill('');
