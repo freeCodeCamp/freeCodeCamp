@@ -32,7 +32,7 @@ Traceback (most recent call last):
   File "<stdin>", line 1, in <module>
 ValueError: list.remove(x): x not in list
 ```
-The remove() function removes the first occurrence of the object it sees in the list as illustrated below.
+If there are duplicate elements in the list, the `remove()` function removes the first occurrence of the element. 
 ```py
 numbers=[1,2,3,4,5,1,6]
 numbers.remove(1)
