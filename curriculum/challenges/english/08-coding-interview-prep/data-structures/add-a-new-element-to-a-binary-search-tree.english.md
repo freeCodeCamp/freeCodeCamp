@@ -148,7 +148,7 @@ function Node(value) {
       return searchTree(current);
     }
   }
- 
+}
 ```
 
 </section>
