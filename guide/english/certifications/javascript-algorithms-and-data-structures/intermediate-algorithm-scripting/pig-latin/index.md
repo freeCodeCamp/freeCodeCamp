@@ -114,6 +114,27 @@ You will need to use everything you know about string manipulation to get the la
 *   <a href='http://forum.freecodecamp.com/t/javascript-string-prototype-charat/15932' target='_blank' rel='nofollow'>JS String Prototype CharAt</a>
 *   <a href='http://forum.freecodecamp.com/t/javascript-string-prototype-concat/15935' target='_blank' rel='nofollow'>JS String Prototype Concat</a>
 
+## ![:sunflower:](https://forum.freecodecamp.com/images/emoji/emoji_one/sunflower.png?v=3 ":sunflower:") Intermediate Code Solution:
+
+    function translatePigLatin(str) {
+      return str.replace(/^[aeiou]\w*/, "$&way").replace(/(^[^aeiou]+)(\w*)/, "$2$1ay");
+      }
+
+    // test here
+    translatePigLatin("consonant");
+
+![:rocket:](https://forum.freecodecamp.com/images/emoji/emoji_one/rocket.png?v=3 ":rocket:") <a href='https://repl.it/CLmw/0' target='_blank' rel='nofollow'>Run Code</a>
+
+### Code Explanation:
+
+*   Use `replace()` on the string, using a regular expression to check if the first letter is a consonant and adding **way** at the end in this case. If the first letter is a consonant nothing will happen at this point.
+*   Use `replace()` again to check for consonants at the beginning of the word and to move it or them to the end of the word and add **ay** at the end.
+
+#### Relevant Links
+
+*   <a href='https://guide.freecodecamp.org/javascript/regular-expressions-reference'>Regular Expressions Reference</a>
+*   <a href='https://guide.freecodecamp.org/miscellaneous/regular-expressions-resources/'>Regular Expressions Resources</a>
+
 ## ![:rotating_light:](https://forum.freecodecamp.com/images/emoji/emoji_one/rotating_light.png?v=3 ":rotating_light:") Advanced Code Solution:
 
     function translatePigLatin(str) {
@@ -166,7 +187,7 @@ You will need to use everything you know about string manipulation to get the la
 
 If you found this page useful, you may say thanks to the contributors by copying and pasting the following line in the main chat:
 
-**`Thanks @Rafase282 @sabahang @aganita @Hallaathrad for your help with Algorithm: Pig Latin`**
+**`Thanks @Rafase282 @sabahang @aganita @Hallaathrad @rulamon for your help with Algorithm: Pig Latin`**
 
 ## ![:clipboard:](https://forum.freecodecamp.com/images/emoji/emoji_one/clipboard.png?v=3 ":clipboard:") NOTES FOR CONTRIBUTIONS:
 
