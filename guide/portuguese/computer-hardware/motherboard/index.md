@@ -1,3 +1,6 @@
+---
+title: Motherboard
+---
 ## Motherboard
 
 A placa-mãe é a camada de conexão que permite que os componentes de um computador interajam entre si. A placa-mãe normalmente tem conexões para memória de acesso aleatório (RAM), um disco rígido, uma unidade de processamento gráfico (GPU) e uma unidade de processamento central (CPU). Nos desktops, a placa-mãe é uma placa física à qual todos esses componentes estão conectados. No entanto, em laptops, a placa-mãe normalmente possui alguns desses componentes integrados devido às limitações de espaço dos laptops.
