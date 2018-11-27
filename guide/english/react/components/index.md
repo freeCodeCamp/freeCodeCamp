@@ -82,6 +82,28 @@ const Cat = props =>
 
 ```
 
+### Pure Components
+
+This type of component was added in React 16 and can be used to declare stateless non-functional components.
+These components work like normal stateful components (class-based component) but with `shouldComponentUpdate()` pre-defined.
+They are the fastest components and make the render cycle much cleaner and leaner.
+
+```jsx
+class Cat extends React.PureComponent {
+  render() {
+      return(
+        <div>
+          <h1>{this.props.name}</h1>
+          <p>{props.color}</p>
+        </div>
+      );
+    }
+}
+
+```
+
+This component will only render if there is a change in its props; not when the parent re-renders.
+
 ### More Information:
 
 [https://reactjs.org/docs/components-and-props.html](Components and Props)
