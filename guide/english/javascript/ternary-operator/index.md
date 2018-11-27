@@ -40,6 +40,20 @@ You can also chain a ternary operator indefinitely, in a similar way to using `e
     }
 ```
 
+To ease readability, the code using ternary operators is often formatted across multiple lines as follows:
+
+```javascript
+    function displayNum(num) {
+        return num === 3
+            ? 'number is 3'
+            : num === 2
+                ? 'number is 2'
+                : num === 1
+                    ? 'number is 1'
+                    : 'number is not in range';
+    }
+```
+
 This way of using the ternary operator needs to be done sparingly and in the right places, which is why (as is the case with using multiple `else if's`), it can sometimes lead to more readable code by using a `switch` statement instead.
 
 

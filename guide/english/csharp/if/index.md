@@ -70,6 +70,7 @@ if(number !=2)
 
 ```
 Note that the `else` and `else if` sections are not required, while `if` is mandatory.
+Also note that if the code following your conditional statement is a single line; you do not have to put the brackets around that code - but the brackets help for readability.
 
 
 ## Example
