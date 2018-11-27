@@ -85,9 +85,15 @@ An arrow function does not have its own `arguments` object. For example, if you 
 const myFunc = (...n) => {
   console.log('The first argument is', n[0]);
 }
-
 myFunc(10,20,30,40,40); // output: The first argument is 10
 ```
+
+Because of this, an arrow function cannot be used as a constructor, hence there's no need for a `prototype` property.
+
+```javascript
+(() => {}).hasOwnProperty('prototype');  // false
+```
+
 #### Further Reading
 
 <a href='https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Functions/Arrow_functions' target='_blank' rel='nofollow'>MDN link</a>

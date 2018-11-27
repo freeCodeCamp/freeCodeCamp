@@ -31,7 +31,7 @@ Comments are started with `<!--` and ended with `-->`, and can span multiple lin
 
 Conditional Comments defines some HTML tags to be executed when a certain condition is fulfilled. 
 
-Conditional Comments are only recognized by Internet Explorer Version 5 through to Version 9 (IE5 - IE9).
+Conditional Comments are only recognized by Internet Explorer Version 5 through Version 9 (IE5 - IE9).
 
 ### Example
 ```html
@@ -48,7 +48,6 @@ Conditional Comments are only recognized by Internet Explorer Version 5 through 
 
 ### IE Conditional Comments
 
-
 These comments are only available in Internet Explorer and can be used up to IE9. In current times, there is a good chance you will never see them, but it is good to know about their existence as they do exist on some older sites. Conditional Comments are a way to serve a different experience for different client browsers. For example:
 
 
@@ -58,4 +57,20 @@ These comments are only available in Internet Explorer and can be used up to IE9
 <!--[if gt IE 9]> <p>Your browser is greater then IE9</p> <![endif]-->
 ```
 
-[About conditional comments](https://msdn.microsoft.com/en-us/library/ms537512(v=vs.85).aspx)
+IE Conditional Comments are really helpful when you wish to serve each IE version with a slightly different CSS. IE (and other browsers) can have rendering bugs, or rather, 'quirks' that render your page a little differently than what you would expect. These require some CSS tricks to workaround (or even to make use of!) quirks, and so the conditional comments are good for targeting specific versions.
+
+For example, this CSS would only apply on IE 7 / 8:
+```html
+<!--[if IE 7]>
+<link rel="stylesheet" type="text/css" href="ie-7-stylesheet.css" />
+<![endif]-->
+
+<!--[if IE 8]>
+<link rel="stylesheet" type="text/css" href="ie-8-stylesheet.css" />
+<![endif]-->
+```
+
+More reading:
+* [About conditional comments](https://msdn.microsoft.com/en-us/library/ms537512(v=vs.85).aspx)
+* [Some IE CSS bugs](https://css-tricks.com/ie-css-bugs-thatll-get-you-every-time/)
+* [IE CSS bugs and fixes](https://code.tutsplus.com/tutorials/9-most-common-ie-bugs-and-how-to-fix-them--net-7764)

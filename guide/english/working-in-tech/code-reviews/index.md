@@ -23,5 +23,8 @@ team members.
 #### More Information:
 
 * [How to Do Code Reviews Like a Human (Part One)](https://mtlynch.io/human-code-reviews-1/)
+* [How to Conduct Effective Code Reviews](https://blog.digitalocean.com/how-to-conduct-effective-code-reviews/)
+* [Why Code Reviews Matter (and actually save time!](https://www.atlassian.com/agile/software-development/code-reviews)
 * [How to Do Code Reviews Like a Human (Part Two)](https://mtlynch.io/human-code-reviews-2/)
 * [Code Reviews: The Definitive Guide](https://simpleprogrammer.com/code-reviews-definitive-guide/)
+

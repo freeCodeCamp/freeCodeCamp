@@ -138,14 +138,18 @@ void copy_string(char [] first_string, char [] second_string)
     { 
         first_string[i] = second_string[i]; 
     } 
-}
+
+} 
 ```
+
 #### Concatenate: `strcat`
 `strcat` (from 'string concatenate') will concatenate a string, meaning it will take the contents of one string and place it on the end of another string. In this example, the contents of `second` will be concatenated onto `first`:
 ```C
 strcat(first, second);
 ```
-Here is an example of manual implementation of function strcat:
+
+Here is an example of manual implementation of function `strcat`:
+```C
 
 ```C
 void string_concatenate(char [] s1, char [] s2)
@@ -157,12 +161,16 @@ void string_concatenate(char [] s1, char [] s2)
     }
 }
 ```
-#### Length: `strlen`
+
+#### Get length: `strlen`
+
 `strlen` (from 'string length') will return an integer value corresponding to the length of the string. In this example, an integer called `string_length` will be assigned the length of `my_string`:
 ```C
 string_length = strlen(my_string);
 ```
-Here is an manual implementation of function strlen:
+
+Here is a manual implementation of function strlen:
+
 ```C
 int string_length(char [] string)
 {
