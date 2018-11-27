@@ -63,6 +63,11 @@ tests:
 <section id='solution'>
 
 ```js
-var code = "body {color: hsl(0, 55%, 15%); background-color: hsl(120, 25%, 55%);}"
+const code = `
+	body {
+		color: hsl(0, 55%, 15%);
+		background-color: hsl(120, 25%, 55%);
+	}
+`;
 ```
 </section>
