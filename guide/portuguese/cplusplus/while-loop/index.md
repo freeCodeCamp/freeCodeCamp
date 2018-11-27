@@ -1,5 +1,5 @@
 ---
-title:While-loop
+title: While-loop
 localeTitle: undefined
 ---
 Uma instrução while loop executa repetidamente uma instrução de destino, desde que uma determinada condição seja verdadeira.
@@ -11,21 +11,21 @@ Um ponto-chave do loop while é que o loop pode não ser executado. Quando a con
 Exemplo:
 
 ```C++
-#include <iostream> 
- using namespace std; 
- 
- int main () { 
-   // Local variable declaration: 
-   int a = 10; 
- 
-   // while loop execution 
-   while( a < 20 ) { 
-      cout << "value of a: " << a << endl; 
-      a++; 
-   } 
- 
-   return 0; 
- } 
+#include <iostream>
+ using namespace std;
+
+ int main () {
+   // Local variable declaration:
+   int a = 10;
+
+   // while loop execution
+   while( a < 20 ) {
+      cout << "value of a: " << a << endl;
+      a++;
+   }
+
+   return 0;
+ }
 ```
 
 Saída:
