@@ -12,6 +12,7 @@ function* fetchArticleByIdSaga({ payload }) {
     const { response: { status } = {} } = e;
     if (typeof status !== 'undefined') {
       const handledError = wrapHandledError(
+        e,
         handleAPIError(e, { redirectTo: '/news' })
       );
       yield put(resolveShortIdError(handledError));

@@ -42,7 +42,7 @@ export function handle400Error(e, options = { redirectTo: '/welcome' }) {
         type: 'info',
         message:
           "We couldn't find what you were looking for. " +
-          'Please chack and try again'
+          'Please check and try again'
       };
     }
     default: {
