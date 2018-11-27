@@ -351,11 +351,15 @@ title: Books to Read for Programmers
 
 ## Other
 
-*Blue Team Field Manual (BTFM)
+*Hacking: Ultimate Hacking Guide: Hacking For Beginners And Tor Browser*
+- https://www.amazon.in/dp/B075CX7T6G/ref=cm_sw_r_cp_awdb_t1_-7ESBbZ43CCBM
+- (ISBN 1976112524).
+
+*Blue Team Field Manual (BTFM)*
 - [Amazon Smile](https://smile.amazon.com/Blue-Team-Field-Manual-BTFM-ebook/dp/B077WF4WYV)
 - ISBN: 154101636X
 
-*Code: The Hidden Language of Computer Hardware and Software (Developer Best Practices) *
+*Code: The Hidden Language of Computer Hardware and Software (Developer Best Practices)*
 - [Amazon Smile](https://smile.amazon.com/Code-Language-Computer-Hardware-Software/dp/0735611319)
 - ISBN-13: 978-0735611313
 
