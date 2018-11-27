@@ -18,9 +18,9 @@ A third party is usually needed to validate trust relationships. In the most com
 For this reason Blockchain is also known as **"The Trust Protocol"**.
 
 ### History
-The first work on a cryptographically secured chain of blocks was described in 1991 by Stuart Haber and W. Scott Stornetta. They wanted to implement a system where documents' timestamps could not be tampered with or backdated. In 1992, Bayer, Haber and Stornetta incorporated Merkle trees to the design, which improved its efficiency by allowing several documents to be collected into one block.
+The first work on a cryptographically secured chain of blocks was described in 1991 by Stuart Haber and W. Scott Stornetta. They wanted to implement a system where documents' timestamps could not be tampered with or backdated. In 1992, Bayer, Haber and Stornetta incorporated Merkle trees to the design, which improved its efficiency by allowing several documents to be collated into one block.
 
-The first blockchain was conceptualized by a person (or group of people) known as Satoshi Nakamoto in 2008. It was implemented the following year by Nakamoto as a core component of the cryptocurrency bitcoin, where it serves as the public ledger for all transactions on the network.
+The first blockchain was conceptualized by a person (or group of people) known as Satoshi Nakamoto in 2008. It was implemented in the following year by Nakamoto as a core component of the cryptocurrency, bitcoin, where it serves as the public ledger for all transactions on the network.
 
 In August 2014, the bitcoin blockchain file size, containing records of all transactions that have occurred on the network, reached 20 GB (gigabytes). In January 2015, the size had grown to almost 30 GB, and from January 2016 to January 2017, the bitcoin blockchain grew from 50 GB to 100 GB in size. Furthermore, Nakamoto introduced the concept of proof of work to ensure a more decentralised trust in the records' security.
 
@@ -40,7 +40,7 @@ the consensus of the other nodes. Bitcoin has the benefit of being able to incen
 
 
 ##### More information
-
+* [Bitcoin Whitepaper by Satoshi Nakamoto](https://bitcoin.org/bitcoin.pdf)
 * [WTF is The Blockchain?](https://hackernoon.com/wtf-is-the-blockchain-1da89ba19348)    
 * [Blockchain: the revolution we’re not ready for](https://medium.freecodecamp.org/blockchain-is-our-first-22nd-century-technology-d4ad45fca2ce)
 * [How the blockchain is changing money and business | Don Tapscott (YouTube video)](https://www.youtube.com/watch?v=Pl8OlkkwRpc)

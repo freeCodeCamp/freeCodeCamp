@@ -12,6 +12,8 @@ In addition to being a a great platform for sharing code, [github](www.github.co
 - [Adding Content to Your Website](#adding-content)
 - [Adding a Title and Description to Your Website](#add-title-description)
 - [Next-Steps](#next-steps)
+- [Public Git Hosting Sites](#public-git-hosting)
+- [More Information](#more-info)
 
 ### Setting Up a New Repository <a name="setup-new-repo"></a>
 
@@ -46,5 +48,12 @@ You can use html, css and javascript to make and style a webpage or an entire we
 
 Jekyll is a static website generator which can be used to make reusable templates or layouts which makes managing simple websites easier. You can visit [this](http://jmcglone.com/guides/github-pages/) link to read more creating and using Jekyll templates.
 
-<!--#### More Information:
-Please add any articles you think might be helpful to read before writing the article -->
+Although one can setup his/her own Git server but it's easy and more popular to use an external dedicated hosting site like <a href='https://github.com/' target='_blank'>GitHub</a>. Hosting Git repositories on such popular public hosting sites even makes it easier for the open source community to find the project and collaborate with it.
+
+### Public Git Hosting Sites <a name="public-git-hosting"></a>
+
+There are a lot of hosting options for Git repositories. Here's an up-to-date list: [GitHosting](https://git.wiki.kernel.org/index.php/GitHosting)
+
+#### More Information <a name="more-info"></a>
+
+* Git documentation: [Hosted Git](https://git-scm.com/book/en/v1/Git-on-the-Server-Hosted-Git)

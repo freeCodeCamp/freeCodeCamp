@@ -45,7 +45,7 @@ body {
 ![image](https://user-images.githubusercontent.com/26467304/31036366-eb1fc260-a539-11e7-835d-e3f935a22c86.png)
 
 
-You can also link pictures or gifs that you find online by using their link (ie. from Google Images a search).
+You can also link pictures or gifs that you find online by using their url (ie. from a Google Images search).
 ```css
 body {
   background-image: url("https://mdn.mozillademos.org/files/11983/starsolid.gif");

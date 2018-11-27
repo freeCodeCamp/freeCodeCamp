@@ -94,9 +94,26 @@ When only a limited number of properties in the state object are required, objec
 this.setState(({ value }) => ({ value: value + 1 }));
 ```
 
+When only a limited number of fields in the state object are required, object destructing can be used for cleaner code.
+
+#### The "Functional Way"
+
+The functional way declares state changes separately from the component classes. Hence,
+```javascript
+//  outside your component class
+function increment(state,props){
+  return { score: state.value +1 }
+}
+...
+//  inside your component class
+this.setState(increment)
+```
+
+Importing state via changes via functions helps keep each module as short as possible and can be used for cleaner code.
 
 #### More Information
 
 - [React - State and Lifecycle](https://reactjs.org/docs/state-and-lifecycle.html)
 - [React - Lifting State Up](https://reactjs.org/docs/lifting-state-up.html)
 - [React Native - State Up](https://facebook.github.io/react-native/docs/state.html)
+- [Functional setState is the future of React](https://medium.freecodecamp.org/functional-setstate-is-the-future-of-react-374f30401b6b)
