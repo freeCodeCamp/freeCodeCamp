@@ -25,4 +25,4 @@ Visual Design deals with how applications looks to the user as well as how it fe
 
 
 ### More Information
-https://www.interaction-design.org/literature/article/dieter-rams-10-timeless-commandments-for-good-design
+- [10 timeless commandments for good design](https://www.interaction-design.org/literature/article/dieter-rams-10-timeless-commandments-for-good-design)
