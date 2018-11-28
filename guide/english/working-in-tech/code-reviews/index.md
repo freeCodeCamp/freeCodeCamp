@@ -2,6 +2,7 @@
 title: Code Reviews
 ---
 ## Code Reviews
+
 Code Reviews exist in order to improve the quality of the code in a software project and are common practice for many software development teams.
 Code reviews involve team members looking into each others' code submissions to check for bugs, incorrect logic or 
 potential improvements. A code review can be done amongst developers of the project under review, as well as developers from other teams in the same company.
@@ -19,4 +20,11 @@ It is important to be humble throughout the code review process. Accept your mis
 and be professional when pointing out improvements or errors in the code of your fellow
 team members.
 
-[How to Do Code Reviews Like a Human (Part One)](https://mtlynch.io/human-code-reviews-1/)
+#### More Information:
+
+* [How to Do Code Reviews Like a Human (Part One)](https://mtlynch.io/human-code-reviews-1/)
+* [Smartbear - What is Code Review?](https://smartbear.com/learn/code-review/what-is-code-review/)
+* [How to Conduct Effective Code Reviews](https://blog.digitalocean.com/how-to-conduct-effective-code-reviews/)
+* [Why Code Reviews Matter (and actually save time!](https://www.atlassian.com/agile/software-development/code-reviews)
+* [How to Do Code Reviews Like a Human (Part Two)](https://mtlynch.io/human-code-reviews-2/)
+* [Code Reviews: The Definitive Guide](https://simpleprogrammer.com/code-reviews-definitive-guide/)
