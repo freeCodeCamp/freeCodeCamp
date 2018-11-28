@@ -137,6 +137,7 @@ const jQueryScript = fs.readFileSync(
         }
 
         it('Test suite must fail on the initial contents', async function() {
+          this.timeout(20000);
           // suppress errors in the console.
           const oldConsoleError = console.error;
           console.error = () => {};
