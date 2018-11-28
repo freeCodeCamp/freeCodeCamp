@@ -33,7 +33,7 @@ Angular CLI需要[Node.js和Node Packet Manager（NPM）](https://nodejs.org/en/
 
 每个关键术语都很有说服力。它们共同构成了使用Angular运行所需的功能。当然，还有更多。 [CLI的GitHub文档1](https://github.com/angular/angular-cli/wiki#additional-commands)中概述了所有命令。您可能会发现上面列出的命令将涵盖必要的基础。
 
-#### ng add
+#### ng new
 
 `ng new`创建了一个_新的_ Angular文件系统。这是一个超现实的过程。请导航到_新_应用程序生成所需的文件位置。键入以下命令，将`[name-of-app]`替换`[name-of-app]`您想要的任何内容： `ng new [name-of-app]` 。
 
