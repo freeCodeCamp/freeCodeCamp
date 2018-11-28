@@ -228,7 +228,7 @@ export const reducer = handleActions(
     },
     [types.fetchProfileForUserError]: (state, { payload }) => ({
       ...state,
-      userFetchState: {
+      userProfileFetchState: {
         pending: false,
         complete: false,
         errored: true,
