@@ -1,8 +1,6 @@
 ---
 id: 587d7faa367417b2b2512bd3
 title: Style D3 Labels
-required:
-  - src: 'https://cdnjs.cloudflare.com/ajax/libs/d3/4.3.0/d3.min.js'
 challengeType: 6
 videoUrl: ''
 localeTitle: Etiquetas de estilo D3

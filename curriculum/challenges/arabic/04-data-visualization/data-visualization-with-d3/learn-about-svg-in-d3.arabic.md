@@ -1,8 +1,6 @@
 ---
 id: 587d7fa8367417b2b2512bcb
 title: Learn About SVG in D3
-required:
-  - src: 'https://cdnjs.cloudflare.com/ajax/libs/d3/4.3.0/d3.min.js'
 challengeType: 6
 videoUrl: ''
 localeTitle: ''

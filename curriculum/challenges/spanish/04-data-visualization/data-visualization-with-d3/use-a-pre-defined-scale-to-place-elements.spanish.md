@@ -1,8 +1,6 @@
 ---
 id: 587d7fac367417b2b2512bde
 title: Use a Pre-Defined Scale to Place Elements
-required:
-  - src: 'https://cdnjs.cloudflare.com/ajax/libs/d3/4.3.0/d3.min.js'
 challengeType: 6
 videoUrl: ''
 localeTitle: Use una escala predefinida para colocar elementos

@@ -1,8 +1,6 @@
 ---
 id: 587d7faa367417b2b2512bd6
 title: Add a Tooltip to a D3 Element
-required:
-  - src: 'https://cdnjs.cloudflare.com/ajax/libs/d3/4.3.0/d3.min.js'
 challengeType: 6
 videoUrl: ''
 localeTitle: Añadir una información sobre herramientas a un elemento D3

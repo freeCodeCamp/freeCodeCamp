@@ -1,8 +1,6 @@
 ---
 id: 587d7fa9367417b2b2512bce
 title: Dynamically Set the Coordinates for Each Bar
-required:
-  - src: 'https://cdnjs.cloudflare.com/ajax/libs/d3/4.3.0/d3.min.js'
 challengeType: 6
 videoUrl: ''
 localeTitle: Definir dinamicamente as coordenadas para cada barra
