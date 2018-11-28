@@ -22,3 +22,7 @@ Visual Design deals with how applications looks to the user as well as how it fe
 8. Good design is thorough down to the last detail
 9. Good design is environmentally friendly
 10. Good design involves as little design as possible
+
+
+### More Information
+- [10 timeless commandments for good design](https://www.interaction-design.org/literature/article/dieter-rams-10-timeless-commandments-for-good-design)
