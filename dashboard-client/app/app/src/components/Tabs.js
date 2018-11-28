@@ -13,10 +13,16 @@ const Tab = styled.div`
   font-size: 18px;
   padding: 5px;
   border: 2px solid blue;
+  border-left: none;
+
   &:hover {
     cursor: pointer;
     background: blue;
     color: white;
+  }
+
+  &:first-child {
+    border-left: 2px solid blue;
   }
 `;
 
