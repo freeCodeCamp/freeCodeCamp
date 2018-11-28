@@ -53,9 +53,9 @@ button {
 
 ![Button Text Size](https://image.ibb.co/gM9r6R/button_fontsize.png "Размер текста кнопки")
 
-### Пусковая площадка
+### Площадь нажатия
 
-Чтобы изменить прописку кнопки, используйте свойство padding:
+Чтобы изменить размер кнопки, используйте свойство padding:
 
 `button {padding: 15px 30px;}`
 
