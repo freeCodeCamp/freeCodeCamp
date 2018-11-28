@@ -40,7 +40,7 @@ title: JavaScript Tutorials and Other Resources
 *   [JavaScript for Cats](http://jsforcats.com/)
 *   [Javascript.com by Pluralsight](https://www.javascript.com/learn)
 *   [SoloLearn JavaScript Tutorial](https://www.sololearn.com/Course/JavaScript/)
-
+*   [GeeksforGeeks](https://www.geeksforgeeks.org/javascript-tutorial/)
 
 ## Video Tutorials
 
