@@ -34,7 +34,7 @@ Find the sum of all values of e, 1<e<φ(1009,3643) and gcd(e,φ)=1, so that the 
 ```yml
 tests:
   - text: <code>euler182()</code> should return 399788195976.
-    testString: 'assert.strictEqual(euler182(), 399788195976, "<code>euler182()</code> should return 399788195976.");'
+    testString: assert.strictEqual(euler182(), 399788195976, '<code>euler182()</code> should return 399788195976.');
 
 ```
 
