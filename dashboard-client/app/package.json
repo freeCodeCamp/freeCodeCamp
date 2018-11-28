@@ -1,0 +1,17 @@
+{
+  "name": "pr-relations",
+  "version": "0.1.0",
+  "description": "Pull request query tool.",
+  "main": "index.js",
+  "scripts": {
+    "setup": "npm install && npm install app"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/RandellDawson/pr-relations.git"
+  },
+  "bugs": {
+    "url": "https://github.com/RandellDawson/pr-relations/issues"
+  },
+  "homepage": "https://github.com/RandellDawson/pr-relations#readme"
+}
