@@ -8,21 +8,21 @@ const Container = styled.div`
 `;
 
 const Tab = styled.div`
-  background: ${({ active }) => active ? 'blue' : 'white'};
-  color: ${({ active }) => active ? 'white' : 'blue'};
+  background: ${({ active, theme }) => active ? theme.primary : 'white'};
+  color: ${({ active, theme }) => active ? 'white' : theme.primary};
   font-size: 18px;
   padding: 5px;
-  border: 2px solid blue;
+  border: 2px solid ${({ theme }) => theme.primary};
   border-left: none;
 
   &:hover {
     cursor: pointer;
-    background: blue;
+    background: ${({ theme }) => theme.primary};
     color: white;
   }
 
   &:first-child {
-    border-left: 2px solid blue;
+    border-left: 2px solid ${({ theme }) => theme.primary};
   }
 `;
 
