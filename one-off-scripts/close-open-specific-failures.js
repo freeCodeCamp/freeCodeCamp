@@ -29,16 +29,16 @@ const getUserInput = async () => {
   const lastPR = prs[prs.length - 1].number;
   log.setFirstLast({ firstPR, lastPR });
   for (let { number, data: { errorDesc } } of prs) {
-    if (errorDesc !== "unknown error") {
+    //if (errorDesc !== "unknown error") {
       log.add(number, { closedOpened: true, errorDesc });
       if (process.env.PRODUCTION_RUN === 'true') {
          await closeOpen(number);
-         await rateLimiter(30000);
+         await rateLimiter(2000);
       }
-    }
-    else {
-      log.add(number, { closedOpened: false, errorDesc });
-    }
+    //}
+    //else {
+    //  log.add(number, { closedOpened: false, errorDesc });
+    //}
   }
 })
 .then(() => {

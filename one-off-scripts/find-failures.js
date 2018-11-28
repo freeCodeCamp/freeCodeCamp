@@ -24,7 +24,7 @@ const errorsToFind = require(path.resolve(__dirname, '../input-files/failuresToF
 (async () => {
   const { firstPR, lastPR } = await getUserInput();
   log.setFirstLast({ firstPR, lastPR });
-  const prPropsToGet = ['number', 'head'];
+  const prPropsToGet = ['number', 'labels', 'head'];
   const { openPRs } = await getPRs(firstPR, lastPR, prPropsToGet);
 
   if (openPRs.length) {
@@ -32,31 +32,34 @@ const errorsToFind = require(path.resolve(__dirname, '../input-files/failuresToF
     log.start();
     console.log('Starting error finding process...');
     for (let count in openPRs) {
-      let { number, head: { sha: ref } } = openPRs[count];
-      const { data: statuses } = await octokit.repos.listStatusesForRef({ owner, repo, ref });
+      let { number, labels, head: { sha: ref } } = openPRs[count];
+      const existingLabels = labels.map(({ name }) => name);
 
-      if (statuses.length) {
-        const { state, target_url } = statuses[0]; // first element contain most recent status
-        const hasProblem = state === 'failure' || state === 'error';
-        if (hasProblem) {
-          let buildNum = Number(target_url.match(/\/builds\/(\d+)\?/i)[1]);
-          //const logNumber = 'need to use Travis api to access the full log for the buildNum above'
-          const logNumber = ++buildNum;
-          const travisLogUrl = `https://api.travis-ci.org/v3/job/${logNumber}/log.txt`;
-          const response = await fetch(travisLogUrl)
-          const logText = await response.text();
-          let found = false;
-          let error;
-          for (let { error: errorDesc, regex } of errorsToFind) {
-            regex = RegExp(regex);
-            if (regex.test(logText)) {
-              error = errorDesc;
-              found = true;
-              break;
+      if (!existingLabels.includes('status: merge conflict') && !existingLabels.includes('status: needs update') && !existingLabels.includes('status: discussing')) {
+        const { data: statuses } = await octokit.repos.listStatusesForRef({ owner, repo, ref });
+        if (statuses.length) {
+          const { state, target_url } = statuses[0]; // first element contain most recent status
+          const hasProblem = state === 'failure' || state === 'error';
+          if (hasProblem) {
+            let buildNum = Number(target_url.match(/\/builds\/(\d+)\?/i)[1]);
+            //const logNumber = 'need to use Travis api to access the full log for the buildNum above'
+            const logNumber = ++buildNum;
+            const travisLogUrl = `https://api.travis-ci.org/v3/job/${logNumber}/log.txt`;
+            const response = await fetch(travisLogUrl)
+            const logText = await response.text();
+            let found = false;
+            let error;
+            for (let { error: errorDesc, regex } of errorsToFind) {
+              regex = RegExp(regex);
+              if (regex.test(logText)) {
+                error = errorDesc;
+                found = true;
+                break;
+              }
             }
+            const errorDesc = error ? error : 'unknown error';
+            log.add(number, { errorDesc, buildLog: travisLogUrl });
           }
-          const errorDesc = error ? error : 'unknown error';
-          log.add(number, { errorDesc, buildLog: travisLogUrl });
         }
       }
     }
