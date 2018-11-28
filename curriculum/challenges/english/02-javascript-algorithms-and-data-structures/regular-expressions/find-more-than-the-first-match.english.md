@@ -24,13 +24,13 @@ Using the regex <code>starRegex</code>, find and extract both <code>"Twinkle"</c
 ```yml
 tests:
   - text: Your regex <code>starRegex</code> should use the global flag <code>g</code>
-    testString: 'assert(starRegex.flags.match(/g/).length == 1, "Your regex <code>starRegex</code> should use the global flag <code>g</code>");'
+    testString: assert(starRegex.flags.match(/g/).length == 1, 'Your regex <code>starRegex</code> should use the global flag <code>g</code>');
   - text: Your regex <code>starRegex</code> should use the case insensitive flag <code>i</code>
-    testString: 'assert(starRegex.flags.match(/i/).length == 1, "Your regex <code>starRegex</code> should use the case insensitive flag <code>i</code>");'
+    testString: assert(starRegex.flags.match(/i/).length == 1, 'Your regex <code>starRegex</code> should use the case insensitive flag <code>i</code>');
   - text: Your match should match both occurrences of the word <code>"Twinkle"</code>
-    testString: 'assert(result.sort().join() == twinkleStar.match(/twinkle/gi).sort().join(), "Your match should match both occurrences of the word <code>"Twinkle"</code>");'
+    testString: assert(result.sort().join() == twinkleStar.match(/twinkle/gi).sort().join(), 'Your match should match both occurrences of the word <code>"Twinkle"</code>');
   - text: Your match <code>result</code> should have two elements in it.
-    testString: 'assert(result.length == 2, "Your match <code>result</code> should have two elements in it.");'
+    testString: assert(result.length == 2, 'Your match <code>result</code> should have two elements in it.');
 
 ```
 

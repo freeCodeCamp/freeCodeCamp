@@ -28,7 +28,7 @@ Find the set of four distinct digits, a < b < c < d, for which the longest set o
 ```yml
 tests:
   - text: <code>euler93()</code> should return 1258.
-    testString: 'assert.strictEqual(euler93(), 1258, "<code>euler93()</code> should return 1258.");'
+    testString: assert.strictEqual(euler93(), 1258, '<code>euler93()</code> should return 1258.');
 
 ```
 
