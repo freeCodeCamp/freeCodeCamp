@@ -7,7 +7,7 @@ Application Lifecycle Management (ALM), while commonly associated with Software 
 
 ALM can be divided into three distinct areas: Governance, Development, and Operations:
 
-1. Governance: Encompasses all of the decision making and project management for this application, extends over the entire existance of the application.
+1. Governance: Encompasses all of the decision making and project management for this application, extends over the entire existence of the application.
 
 2. Development: Process (SDLC) of actually creating the application. For most applications, the development process reappears again several more times in the application’s lifetime, including bug fixes, improvements and new versions.
 
