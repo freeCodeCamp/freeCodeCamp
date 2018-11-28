@@ -10,7 +10,7 @@ title: Bash Less
  ```
  
  Commonly used options:
- * Typicall less is used to no options
+ * Typically less is used with no options
  
  ### Examples
  #### View the /etc/hosts file
