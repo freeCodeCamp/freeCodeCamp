@@ -3,8 +3,8 @@ title: Exponential Search
 ---
 
 ## Exponential Search
-Exponential Search also known as finger search, searchs for an element in a sorted array by jumping `2^i` elements every iteration where i represents the 
-value of loop control variable, and then verifying if the search element is present between last jump and the current jump
+Exponential Search, also known as finger search, searches for an element in a sorted array by jumping `2^i` elements in every iteration, where i represents the 
+value of loop control variable, and then verifying if the search element is present between the last jump and the current jump.
 
 # Complexity Worst Case
 O(log(N))

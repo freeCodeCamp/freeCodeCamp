@@ -12,9 +12,9 @@ function Header({ disableSettings }) {
   return (
     <header>
       <nav id='top-nav'>
-        <a className='home-link' href='https://www.freecodecamp.org'>
+        <Link className='home-link' to='/'>
           <NavLogo />
-        </a>
+        </Link>
         {disableSettings ? null : <FCCSearch />}
         <ul id='top-right-nav'>
           <li>
