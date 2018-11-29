@@ -19,9 +19,9 @@ import { types as settingsTypes } from './settings';
 const challengeReduxTypes = {};
 /** ***********************************/
 
-const ns = 'app';
+export const ns = 'app';
 
-const defaultFetchState = {
+export const defaultFetchState = {
   pending: true,
   complete: false,
   errored: false,
@@ -220,16 +220,15 @@ export const reducer = handleActions(
           [username]: { ...previousUserObject, ...user }
         },
         userProfileFetchState: {
+          ...defaultFetchState,
           pending: false,
-          complete: true,
-          errored: false,
-          error: null
+          complete: true
         }
       };
     },
     [types.fetchProfileForUserError]: (state, { payload }) => ({
       ...state,
-      userFetchState: {
+      userProfileFetchState: {
         pending: false,
         complete: false,
         errored: true,
@@ -253,10 +252,9 @@ export const reducer = handleActions(
       ...state,
       showCert: payload,
       showCertFetchState: {
+        ...defaultFetchState,
         pending: false,
-        complete: true,
-        errored: false,
-        error: null
+        complete: true
       }
     }),
     [types.showCertError]: (state, { payload }) => ({
