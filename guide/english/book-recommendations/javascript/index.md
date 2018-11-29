@@ -43,7 +43,7 @@ title: Books on JavaScript
 
 9. **Head First Javascript Programming**
    The Head Frist books series by Eric Freeman and Elisabeth Robson cover a variety of programming topics in a beginner freindly manner. This installment on Javascript is no exception. It is available hard copy and provides exercises to master the basics and understand the nature of programming. 
-   -[Amazon](https://www.amazon.com/Head-First-JavaScript-Programming-Brain-Friendly/dp/144934013X)
+   - [Amazon](https://www.amazon.com/Head-First-JavaScript-Programming-Brain-Friendly/dp/144934013X)
 
 #### Other Resources
 
