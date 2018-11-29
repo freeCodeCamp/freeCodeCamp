@@ -32,5 +32,9 @@ finally {
 // block of code to be executed after try block ends
 }
 ```
+
 ## Advantage of Exception Handling
 The core advantage of exception handling is to maintain the normal flow of the application. An exception normally disrupts the normal flow of the application which is why we use exception handling.
+
+#### More Information:
+- [Oracle Java Docs : Exception](https://docs.oracle.com/javase/specs/jls/se7/html/jls-11.html)
