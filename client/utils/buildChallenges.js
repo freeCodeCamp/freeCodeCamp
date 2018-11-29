@@ -1,10 +1,9 @@
-const path = require('path');
 const _ = require('lodash');
 
 const {
   getChallengesForLang,
   createChallenge,
-  localeChallengesRootDir
+  getChallengesDirForLang
 } = require('../../curriculum/getChallenges');
 const utils = require('./');
 const { locale } = require('../config/env.json');
@@ -15,15 +14,12 @@ const nameify = utils.nameify;
 const arrToString = arr =>
   Array.isArray(arr) ? arr.join('\n') : _.toString(arr);
 
-exports.localeChallengesRootDir = localeChallengesRootDir;
+exports.localeChallengesRootDir = getChallengesDirForLang(locale);
 
-exports.replaceChallengeNode = function replaceChallengeNode(fullFilePath) {
-  const relativeChallengePath = fullFilePath.replace(
-    localeChallengesRootDir + path.sep,
-    ''
-  );
-  return createChallenge(relativeChallengePath);
-};
+exports.replaceChallengeNode =
+  async function replaceChallengeNode(fullFilePath) {
+    return prepareChallenge(await createChallenge(fullFilePath));
+  };
 
 exports.buildChallenges = async function buildChallenges() {
   const curriculum = await getChallengesForLang(locale);
@@ -37,55 +33,32 @@ exports.buildChallenges = async function buildChallenges() {
 
   const builtChallenges = blocks
     .filter(block => !block.isPrivate)
-    .map(({ meta, challenges }) => {
-      const {
-        order,
-        time,
-        template,
-        required,
-        superBlock,
-        superOrder,
-        isPrivate,
-        dashedName: blockDashedName,
-        fileName
-      } = meta;
-
-      return challenges.map(challenge => {
-        challenge.name = nameify(challenge.title);
-
-        challenge.dashedName = dasherize(challenge.name);
-
-        if (challenge.files) {
-          challenge.files = _.reduce(
-            challenge.files,
-            (map, file) => {
-              map[file.key] = {
-                ...file,
-                head: arrToString(file.head),
-                contents: arrToString(file.contents),
-                tail: arrToString(file.tail)
-              };
-              return map;
-            },
-            {}
-          );
-        }
-        challenge.fileName = fileName;
-        challenge.order = order;
-        challenge.block = blockDashedName;
-        challenge.isPrivate = challenge.isPrivate || isPrivate;
-        challenge.isRequired = !!challenge.isRequired;
-        challenge.time = time;
-        challenge.superOrder = superOrder;
-        challenge.superBlock = superBlock
-          .split('-')
-          .map(word => _.capitalize(word))
-          .join(' ');
-        challenge.required = required;
-        challenge.template = template;
-        return challenge;
-      });
-    })
+    .map(({ challenges }) => challenges.map(prepareChallenge))
     .reduce((accu, current) => accu.concat(current), []);
   return builtChallenges;
 };
+
+function prepareChallenge(challenge) {
+  challenge.name = nameify(challenge.title);
+  if (challenge.files) {
+    challenge.files = _.reduce(
+      challenge.files,
+      (map, file) => {
+        map[file.key] = {
+          ...file,
+          head: arrToString(file.head),
+          contents: arrToString(file.contents),
+          tail: arrToString(file.tail)
+        };
+        return map;
+      },
+      {}
+    );
+  }
+  challenge.block = dasherize(challenge.block);
+  challenge.superBlock = challenge.superBlock
+    .split('-')
+    .map(word => _.capitalize(word))
+    .join(' ');
+  return challenge;
+}

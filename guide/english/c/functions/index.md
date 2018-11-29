@@ -177,6 +177,8 @@ int divides(int a, int b) {
 
 ```
 
+NOTE: In recurssion a base codition is mandatory. Otherwise the function executes infinitely.There can be more than one base condition In the above case the bese conditions are if(n<0) and if(n==0) .
+
 # Before you go on...
 ## A review
 * Functions are good to use because they make your code cleaner and easier to debug.
