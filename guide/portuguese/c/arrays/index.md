@@ -6,7 +6,7 @@ localeTitle: Matrizes
 
 ## Problemas
 
-Antes de tentar explicar quais são os arrays, vamos ver o código onde queremos imprimir 10 números dados pelo usuário na ordem inversa.
+Antes de tentar explicar quais são os arrays(vetores), vamos ver o código onde queremos imprimir 10 números dados pelo usuário na ordem inversa.
 
 ```C
 #include <stdio.h> 
@@ -28,7 +28,7 @@ Então, isso parece um pouco entediante. Até agora, todas as variáveis ​​c
 
 ## Matrizes em C
 
-Matrizes são contêineres com um determinado tamanho. Eles contêm variáveis ​​do **mesmo tipo** . Você pode acessar uma variável armazenada na matriz com seu _índice_ . Vamos ver um código:
+Matrizes são contêineres com um determinado tamanho. Eles contêm variáveis ​​do **mesmo tipo** . Você pode acessar uma variável armazenada na matriz com seu _índice_ . Uma matriz pode ser considerada um array de arrays. Vamos ver um código:
 
 ```C
 #include <stdio.h> 
