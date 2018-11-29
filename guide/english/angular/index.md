@@ -8,6 +8,7 @@ title: Angular
 ## Angular
 ![angular logo](https://angular.io/assets/images/logos/angular/angular.png)
 
+
 Angular(versions 2 and up) is a Typescript based open source framework to develop front-end Web application. It is the successor of AngularJS and all mention of Angular should refer to versions 2 and up. Please see the seperate AngularJS catagory for its respective guides. Angular has following features like generics, static-typing and also some ES6 features.
 
 ## Version History
@@ -18,7 +19,8 @@ After some modifications, Angular 4.0 was released on Dec-2016. Angular 4 is bac
 
 **Install**:
  
-The easiest way to install Angualr is through the (CLI project)[https://cli.angular.io/] this tool allows the creation of new projects and generating components/services/modules etc to a standard the Angular team consider to be best practices.
+The easiest way to install Angular is through the [CLI project](https://cli.angular.io/). This tool allows the creation of new projects and generating components/services/modules etc to a standard the Angular team consider to be best practices.
+
 
 ```shell
 npm install -g @angular/cli
@@ -30,5 +32,4 @@ cd example-app
 ng serve
 ```
 
-For more information regarding the documentation, refer to the official docs for the (CLI)[https://cli.angular.io/] or (Angular documentation)[https://angular.io/docs]
-*Note : Please refer the Angular documentation for the updated information.*
+For more information regarding the documentation, refer to the official docs for the [CLI](https://cli.angular.io/) or [Angular documentation](https://angular.io/docs)
