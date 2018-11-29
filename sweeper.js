@@ -16,7 +16,7 @@ const octokit = require('@octokit/rest')(octokitConfig);
 const { getPRs, getUserInput } = require('./get-prs');
 const { guideFolderChecks } = require('./validation');
 const { savePrData, ProcessingLog, rateLimiter } = require('./utils');
-const { labeler } = require('./labeler');
+const { labeler } = require('./pr-tasks');
 
 octokit.authenticate(octokitAuth);
 
