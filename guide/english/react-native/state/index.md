@@ -74,4 +74,6 @@ const Button = ({ onPress, children, buttonProps, textProps }) => {
 };
 ```
 
-<a href='https://learnreact.design/2017/08/16/components-props-and-state' target='_blank'>Good article about state and props</a>
+#### More Information
+
+- [Good article about state and props](https://learnreact.design/2017/08/16/components-props-and-state)
