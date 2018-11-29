@@ -69,10 +69,6 @@ tests:
 ## Solution
 <section id='solution'>
 
-<section id='challengeSeed'>
-
-<div id='html-seed'>
-
 ```html
 <h2>CatPhotoApp</h2>
 <main>
@@ -92,19 +88,10 @@ tests:
     <li>thunder</li>
     <li>other cats</li>
   </ol>
-  
-  <input type="text">
 
+  <input type="text">
 
 </main>
 ```
 
-</div>
-
-
-
-</section>
-```js
-// solution required
-```
 </section>
