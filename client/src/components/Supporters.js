@@ -6,9 +6,12 @@ import FullWidthRow from '../components/helpers/FullWidthRow';
 
 import './supporters.css';
 
-const propTypes = { isDonating: PropTypes.bool.isRequired };
+const propTypes = {
+  activeDonations: PropTypes.number.isRequired,
+  isDonating: PropTypes.bool.isRequired
+};
 
-function Supporters({ isDonating }) {
+function Supporters({ isDonating, activeDonations }) {
   return (
     <Fragment>
       <FullWidthRow>
@@ -16,10 +19,10 @@ function Supporters({ isDonating }) {
       </FullWidthRow>
       <FullWidthRow>
         <div id='supporter-progress-wrapper'>
-          <ProgressBar max={10000} now={400} />
+          <ProgressBar max={10000} now={activeDonations} />
           <div id='progress-label-wrapper'>
             <span className='progress-label'>
-              4000 supporters out of 10,000 goal
+              {activeDonations} supporters out of 10,000 goal
             </span>
           </div>
         </div>

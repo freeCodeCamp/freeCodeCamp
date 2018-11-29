@@ -42,6 +42,7 @@ const initialState = {
   userProfileFetchState: {
     ...defaultFetchState
   },
+  sessionMeta: {},
   showDonationModal: false,
   isOnline: true
 };
@@ -161,6 +162,13 @@ export const userSelector = state => {
   return state[ns].user[username] || {};
 };
 
+export const sessionMetaSelector = state => state[ns].sessionMeta;
+export const activeDonationsSelector = state =>
+// this default is mostly for development where there are likely no donators
+// in the local db
+// If we see this in production then things are getting weird
+  sessionMetaSelector(state).activeDonations || 4040;
+
 function spreadThePayloadOnUser(state, payload) {
   return {
     ...state,
@@ -184,7 +192,10 @@ export const reducer = handleActions(
       ...state,
       userProfileFetchState: { ...defaultFetchState }
     }),
-    [types.fetchUserComplete]: (state, { payload: { user, username } }) => ({
+    [types.fetchUserComplete]: (
+      state,
+      { payload: { user, username, sessionMeta } }
+    ) => ({
       ...state,
       user: {
         ...state.user,
@@ -196,6 +207,10 @@ export const reducer = handleActions(
         complete: true,
         errored: false,
         error: null
+      },
+      sessionMeta: {
+        ...state.sessionMeta,
+        ...sessionMeta
       }
     }),
     [types.fetchUserError]: (state, { payload }) => ({
