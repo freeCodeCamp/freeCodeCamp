@@ -6,7 +6,7 @@ title: A B Testing
 A/B testing (sometimes called split testing) is comparing two versions of a web page or element to see which one performs better. You compare two web pages or elements by showing the two variants (let's call them A and B) to similar visitors at the same time. The one that gives a better conversion rate, wins!
 
 
-Every website wants visitors converting from just visitors to something else(Convertions, sign ups, or just take action for something). The rate at which a website is able to do this is its "conversion rate". Measuring the performance of a variation (A or B) means measuring the rate at which it converts visitors to goal achievers. Data scientists use A/B testing to see which version(s) of their product leads to their desired goal faster. Sometimes large companies run hundreds or thousands of A/B tests to make product decisions. These tests are almost always randomized, large, and blinded. This means that the subject or user does not know abou the A/B test.
+Every website wants visitors converting from just visitors to something else (Convertions, sign ups, or just take action for something). The rate at which a website is able to do this is its "conversion rate". Measuring the performance of a variation (A or B) means measuring the rate at which it converts visitors to goal achievers. Data scientists use A/B testing to see which version(s) of their product leads to their desired goal faster. Sometimes large companies run hundreds or thousands of A/B tests to make product decisions. These tests are almost always randomized, large, and blinded. This means that the subject or user does not know about the A/B test.
 
 
 
