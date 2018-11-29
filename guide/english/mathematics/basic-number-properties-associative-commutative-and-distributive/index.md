@@ -1,5 +1,5 @@
 ---
-title: Basic Number Properties: Associative, Commutative, and Distributive
+title: Basic Number Properties - Associative, Commutative, and Distributive
 ---
 ## Basic Number Properties: Associative, Commutative, and Distributive
 
