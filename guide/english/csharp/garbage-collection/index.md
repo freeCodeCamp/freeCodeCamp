@@ -32,6 +32,5 @@ The downside of garbage collection is that it has a negative impact on performan
 If an object has no references (is no longer reachable) then it is eligible for garbage collection. This ensures there are not much dangling pointers around the memory heap. 
 
 #### More Information:
- -<!-- Please add any articles you think might be helpful to read before writing the article -->
- +- https://docs.microsoft.com/en-us/dotnet/standard/garbage-collection/fundamentals - To know more about garbage Collection
- +- https://docs.microsoft.com/en-us/dotnet/standard/garbage-collection/memory-management-and-gc - Parent link, explains the concept of memory and GC.
+ - [Garbage Collection Fundamentals](https://docs.microsoft.com/en-us/dotnet/standard/garbage-collection/fundamentals)
+ - [Memory Management and GC](https://docs.microsoft.com/en-us/dotnet/standard/garbage-collection/memory-management-and-gc)
