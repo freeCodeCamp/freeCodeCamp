@@ -83,8 +83,8 @@ tests:
 <section id='solution'>
 
 ```js
-// solution expected
-```
+// solution required
+
 <h2 style="color: red;">CatPhotoApp</h2>
 <main>
   <p>Click here to view more <a href="#">cat photos</a>.</p>
@@ -116,4 +116,5 @@ tests:
     <button type="submit">Submit</button>
   </form>
 </main>
+```
 </section>
