@@ -22,7 +22,7 @@ import { randomQuote } from '../utils/get-words';
 import './welcome.css';
 
 const propTypes = {
-  activedonations: PropTypes.number,
+  activeDonations: PropTypes.number,
   fetchState: PropTypes.shape({
     pending: PropTypes.bool,
     complete: PropTypes.bool,
@@ -108,18 +108,6 @@ function Welcome({
             isDonating={isDonating}
           />
           <Spacer size={2} />
-          <Row>
-            <Col sm={8} smOffset={2} xs={12}>
-              <a
-                className='update-link'
-                href='/n/7gR5pBM-K?refsource=userhome'
-                target='_blank'
-                >
-                We're building a massive open dataset about new coders. Take the
-                2018 New Coder Survey. It only takes 5 minutes.
-              </a>
-            </Col>
-          </Row>
           <Spacer />
           <Row className='quote-partial'>
             <Col sm={10} smOffset={1} xs={12}>
