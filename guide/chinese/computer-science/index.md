@@ -12,7 +12,7 @@ localeTitle: 计算机科学
 
 # 计算机科学领域
 
-计算机科学分为几个领域。以下是目前已建立和研究得很好的领域。大多数字段进一步分类为sub0fields。
+计算机科学分为几个领域。以下是目前已建立和研究得很好的领域。大多数领域可以进一步细分为子领域。
 
 - <a href="https://en.wikipedia.org/wiki/Theory_of_computation">计算理论</a>
   - 复杂性理论
