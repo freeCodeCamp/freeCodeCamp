@@ -1,7 +1,8 @@
 ---
 title: User interface desing
+localeTitle: Diseño de Interfaz de Usuario
 ---
-# User interface desing
+# Diseño de Interfaz de Usuario
 El layout define la interfaz de usuario(UI) de un activity o un [widget de una app](https://developer.android.com/guide/topics/appwidgets/?hl=en-419). Puedes declarar el layout de 2 maneras:
 1. Declarar elementos en la UI en XML.
 2. Crear instancias de elementos de diseño de manera programática.
