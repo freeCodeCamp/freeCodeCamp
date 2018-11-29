@@ -33,7 +33,9 @@ function Supporters({ isDonating, activeDonations }) {
             freeCodeCamp.org is a tiny non-profit that's helping millions of
             people learn to code for free. <br />
             {isDonating
-              ? 'Thank you for supporting freeCodeCamp.org'
+              ? "Thanks for being a supporter! Do you know anyone who's " +
+                'interested in technology? Encourage them to join the ' +
+                'community as well.'
               : 'Join 4,000 supporters. Your $5 / month donation will help ' +
                 'keep tech education free and open.'}
           </p>
