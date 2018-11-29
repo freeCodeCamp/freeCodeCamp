@@ -1,7 +1,8 @@
 ---
 title: Material Design
+localeTitle: Diseño de Materiales
 ---
-# Material Design
+# Diseño de Materiales
 Material Design es un sistema de diseño para construir productos digitales audaces y hermosos. Creado por un equipo de ingenieros y diseñadores de UX en Google. Google agrego el  concepto material design en Android 5.0 - Lollipop. Actualmente utilizado en Android, IOS, Flutter y Web.
 
 Emplea las experiencias del mundo físico para hacer interfaces de usuario (UI) mas intuitivos, utilizando los siguientes conceptos: La luz, la sombra y volúmenes de renderizados. Material Design se centra en 4 conceptos principales:
