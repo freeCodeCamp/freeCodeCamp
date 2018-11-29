@@ -35,6 +35,7 @@ This section contains articles related to Virtual Reality Application Developmen
 
 * The starry night Stereo VR experience - https://youtu.be/G7Dt9ziemYA
 * Being inside a Van Gogh painting - https://gfycat.com/SimpleImaginaryIberianmidwifetoad 
+* Multi-Surface and 3D - https://facebook.github.io/react-360/docs/example-multisurface.html
 
 ## A few companies making tools for VR on the Web
 
