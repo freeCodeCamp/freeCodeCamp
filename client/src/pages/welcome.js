@@ -14,13 +14,15 @@ import Supporters from '../components/Supporters';
 import {
   userSelector,
   userFetchStateSelector,
-  isSignedInSelector
+  isSignedInSelector,
+  activeDonationsSelector
 } from '../redux';
 import { randomQuote } from '../utils/get-words';
 
 import './welcome.css';
 
 const propTypes = {
+  activedonations: PropTypes.number,
   fetchState: PropTypes.shape({
     pending: PropTypes.bool,
     complete: PropTypes.bool,
@@ -42,7 +44,13 @@ const mapStateToProps = createSelector(
   userFetchStateSelector,
   isSignedInSelector,
   userSelector,
-  (fetchState, isSignedIn, user) => ({ fetchState, isSignedIn, user })
+  activeDonationsSelector,
+  (fetchState, isSignedIn, user, activeDonations) => ({
+    activeDonations,
+    fetchState,
+    isSignedIn,
+    user
+  })
 );
 const mapDispatchToProps = dispatch => bindActionCreators({}, dispatch);
 
@@ -57,7 +65,8 @@ function Welcome({
     completedCertCount = 0,
     completedLegacyCertCount: completedLegacyCerts = 0,
     isDonating
-  }
+  },
+  activeDonations
 }) {
   if (pending && !complete) {
     return (
@@ -94,7 +103,10 @@ function Welcome({
             </Col>
           </Row>
           <Spacer />
-          <Supporters isDonating={isDonating} />
+          <Supporters
+            activeDonations={activeDonations}
+            isDonating={isDonating}
+          />
           <Spacer size={2} />
           <Row>
             <Col sm={8} smOffset={2} xs={12}>
