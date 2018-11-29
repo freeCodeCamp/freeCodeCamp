@@ -36,7 +36,7 @@ _D3_ \*没有引入新的视觉表现。与**Processing** ， **Raphaël**或**P
 
 ![](https://i0.wp.com/pbiswas101.files.wordpress.com/2018/07/collection.png?w=400&h=100)
 
-*   **D3-层次**
+*   **D3层次**
 
 ![](https://i2.wp.com/pbiswas101.files.wordpress.com/2018/07/hierarchy.png?w=400&h=100)
 
@@ -50,7 +50,7 @@ _D3_ \*没有引入新的视觉表现。与**Processing** ， **Raphaël**或**P
 
 只需要了解一些HTML5功能的基本知识，例如SVG，Canvas，您就可以深入了解像**D3.js**这样的库将数据变为现实的世界！ 
 
-######贡献
+###### 贡献
 
 *   https://github.com/d3/
     
@@ -58,7 +58,7 @@ _D3_ \*没有引入新的视觉表现。与**Processing** ， **Raphaël**或**P
     
 *   https://en.wikipedia.org/wiki/D3.js
     
-*   https://en.wikipedia.org/wiki/Document _对象_模型
+*   https://en.wikipedia.org/wiki/Document_Object_Model
     
 *   http://blockbuilder.org/search
     
