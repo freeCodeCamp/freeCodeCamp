@@ -9,10 +9,11 @@ const debug = require('debug');
 
 const log = debug('fcc:tools:seedNewsArticles');
 
-const shortIdAlphabet = shortid.characters(
+shortid.characters(
   '0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ$+'
 );
-const shortId = () => shortid.generate(shortIdAlphabet);
+
+const shortId = () => shortid.generate();
 
 const { MONGOHQ_URL, NODE_ENV: env } = process.env;
 

@@ -6,10 +6,10 @@ import shortid from 'shortid';
 import { createArticleSlug } from '../../../utils/news';
 import { getShortIdFromSlug } from '../../utils';
 
-const shortIdAlphabet = shortid.characters(
+shortid.characters(
   '0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ$+'
 );
-const shortId = () => shortid.generate(shortIdAlphabet);
+const shortId = () => shortid.generate();
 
 describe('news-slug integration', () => {
   it('returns the correct id from a generated slug', () => {
