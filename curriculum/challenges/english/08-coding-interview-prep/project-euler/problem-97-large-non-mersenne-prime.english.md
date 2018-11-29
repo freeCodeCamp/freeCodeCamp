@@ -22,7 +22,7 @@ Find the last ten digits of this prime number.
 ```yml
 tests:
   - text: <code>euler97()</code> should return 8739992577.
-    testString: 'assert.strictEqual(euler97(), 8739992577, "<code>euler97()</code> should return 8739992577.");'
+    testString: assert.strictEqual(euler97(), 8739992577, '<code>euler97()</code> should return 8739992577.');
 
 ```
 

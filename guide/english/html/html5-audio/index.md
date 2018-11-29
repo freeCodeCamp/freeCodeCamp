@@ -25,7 +25,7 @@ Your browser does not support the audio element.
 
 The `controls` attribute includes audio controls like play, pause, and volume. If you don't use this attribute, then no controls will be shown.
 
-The `<source>` element enables you to indicate alternative audio files which the browser may choose from. The browser will utilize the first recognize format. 
+The `<source>` element enables you to indicate alternative audio files which the browser may choose from. The browser will utilize the first recognized format. 
 The text between the `<audio>` and `</audio>` tags may be shown in browser that does not support the HTML5 `<audio>` element.
 
 The autoplay attribute will automatically play your audio file in the background. It is considered better practice to let visitors choose to play audio.
