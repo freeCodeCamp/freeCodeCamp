@@ -16,11 +16,12 @@ function Supporters({ isDonating }) {
       </FullWidthRow>
       <FullWidthRow>
         <div id='supporter-progress-wrapper'>
-          <ProgressBar
-            label={'4000 supporters out of 10,000 goal'}
-            max={10000}
-            now={4000}
-          />
+          <ProgressBar max={10000} now={400} />
+          <div id='progress-label-wrapper'>
+            <span className='progress-label'>
+              4000 supporters out of 10,000 goal
+            </span>
+          </div>
         </div>
       </FullWidthRow>
       <FullWidthRow>
