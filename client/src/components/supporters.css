@@ -1,7 +1,14 @@
 #supporter-progress-wrapper .progress {
   height: 38px;
+  margin-bottom: 0px;
 }
 
 #supporter-progress-wrapper .progress-bar {
   padding-top: 8px;
+}
+
+#progress-label-wrapper {
+  text-align: left;
+  padding-left: 10px;
+  margin-bottom: 25px;
 }
