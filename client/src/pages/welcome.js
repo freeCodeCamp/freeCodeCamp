@@ -10,6 +10,7 @@ import Helmet from 'react-helmet';
 import { Loader, Spacer } from '../components/helpers';
 import CurrentChallengeLink from '../components/helpers/CurrentChallengeLink';
 import Layout from '../components/layouts/Default';
+import Supporters from '../components/Supporters';
 import {
   userSelector,
   userFetchStateSelector,
@@ -32,7 +33,8 @@ const propTypes = {
     completedChallengeCount: PropTypes.number,
     completedProjectCount: PropTypes.number,
     completedCertCount: PropTypes.number,
-    completedLegacyCertCount: PropTypes.number
+    completedLegacyCertCount: PropTypes.number,
+    isDonating: PropTypes.bool
   })
 };
 
@@ -53,7 +55,8 @@ function Welcome({
     completedChallengeCount: completedChallenges = 0,
     completedProjectCount = 0,
     completedCertCount = 0,
-    completedLegacyCertCount: completedLegacyCerts = 0
+    completedLegacyCertCount: completedLegacyCerts = 0,
+    isDonating
   }
 }) {
   if (pending && !complete) {
@@ -91,6 +94,8 @@ function Welcome({
             </Col>
           </Row>
           <Spacer />
+          <Supporters isDonating={isDonating} />
+          <Spacer size={2} />
           <Row>
             <Col sm={8} smOffset={2} xs={12}>
               <a
