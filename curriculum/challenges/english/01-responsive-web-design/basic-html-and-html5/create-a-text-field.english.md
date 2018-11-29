@@ -70,8 +70,8 @@ tests:
 <section id='solution'>
 
 ```js
-// solution expected
-```
+// solution required
+
 <h2>CatPhotoApp</h2>
 <main>
   <p>Click here to view more <a href="#">cat photos</a>.</p>
@@ -94,4 +94,5 @@ tests:
 	<input type="text">
   </form>
 </main>
+```
 </section>
