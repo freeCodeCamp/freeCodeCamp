@@ -24,11 +24,11 @@ Complete the regex <code>waldoRegex</code> to find <code>"Waldo"</code> in the s
 ```yml
 tests:
   - text: Your regex <code>waldoRegex</code> should find <code>"Waldo"</code>
-    testString: 'assert(waldoRegex.test(waldoIsHiding), "Your regex <code>waldoRegex</code> should find <code>"Waldo"</code>");'
+    testString: assert(waldoRegex.test(waldoIsHiding), 'Your regex <code>waldoRegex</code> should find <code>"Waldo"</code>');
   - text: Your regex <code>waldoRegex</code> should not search for anything else.
-    testString: 'assert(!waldoRegex.test("Somewhere is hiding in this text."), "Your regex <code>waldoRegex</code> should not search for anything else.");'
+    testString: assert(!waldoRegex.test('Somewhere is hiding in this text.'), 'Your regex <code>waldoRegex</code> should not search for anything else.');
   - text: You should perform a literal string match with your regex.
-    testString: 'assert(!/\/.*\/i/.test(code), "You should perform a literal string match with your regex.");'
+    testString: assert(!/\/.*\/i/.test(code), 'You should perform a literal string match with your regex.');
 
 ```
 
