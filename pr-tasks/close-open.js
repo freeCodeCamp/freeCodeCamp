@@ -11,11 +11,11 @@ octokit.authenticate(octokitAuth);
 const closeOpen = async (number) => {
   const result = await octokit.pullRequests.update({ owner, repo , number, state: 'closed', base: 'master' })
   .then(async () => {
-    await rateLimiter(10000);
+    await rateLimiter(5000);
     return octokit.pullRequests.update({ owner, repo , number, state: 'open', base: 'master' })
   })
   .then(async () => {
-    await rateLimiter(2000);
+    await rateLimiter(1000);
     await addComment(number, 'Closed and Reopened this PR to attempt to resolve a specific Travis build failure.');
   })
   .catch(async (err) => {
