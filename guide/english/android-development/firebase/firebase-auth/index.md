@@ -1,5 +1,5 @@
 ---
-title: Setting up Google Sign in using Firebase Authentication
+title: Setting up Firebase Authentication
 ---
 
 # Setting up Firebase Authentication
