@@ -27,6 +27,9 @@ Supervised learning is the machine learning task of inferring a function from su
 data consist of a set of training examples. In supervised learning, each example is a pair consisting of an input object
 (typically a vector) and a desired output value (also called the supervisory signal). Further, the supervised learning can be taken as 2 paradigm, classification and regression.
 
+### Overfitting and Underfitting
+The idea of overfitting in machine learning is making the machine model the data too well. This essentially making the machine to recognize a situation with only a specific characteristics that the data shows, or in other words picking up too much noise in the data. This can be problematic in terms of the lack of flexibility in adapting different situations. On the other hand, underfitting generalizes too much. It doesn't recognizes patterns as well and would not be able to differentiate much about different situations.
+
 #### Basic flowchart/steps for supervised learning
 1. Collect training set.
 2. Divide training set into input object (features) and output object (classes or value)
