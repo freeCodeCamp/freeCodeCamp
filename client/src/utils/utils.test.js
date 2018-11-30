@@ -8,7 +8,7 @@ import {
   mockId
 } from '../__mocks__/news-article';
 
-import { getShortIdFromSlug } from './';
+import { getShortIdFromSlug, commaNumber } from './';
 
 describe('client/src utilities', () => {
   describe('getShortIdFromSlug', () => {
@@ -41,5 +41,36 @@ describe('client/src utilities', () => {
       const result = getShortIdFromSlug(slugWithIdAndTrailingSlash);
       expect(result).toEqual(mockId);
     });
+  });
+
+  describe('commaNumber', () => {
+    it('returns a string', () => {
+      expect(typeof commaNumber(1)).toEqual('string');
+    });
+
+    it('returns a comma separated number, positive', () => {
+      expect.assertions(6);
+      expect(commaNumber(1000)).toEqual('1,000');
+      expect(commaNumber(10000)).toEqual('10,000');
+      expect(commaNumber(100000)).toEqual('100,000');
+      expect(commaNumber(1000000)).toEqual('1,000,000');
+      expect(commaNumber(1234567890)).toEqual('1,234,567,890');
+      expect(commaNumber(Number.MAX_SAFE_INTEGER)).toEqual(
+        '9,007,199,254,740,991'
+      );
+    });
+
+    it('returns a comma separated number, negative', () => {
+      expect.assertions(6);
+      expect(commaNumber(-1000)).toEqual('-1,000');
+      expect(commaNumber(-10000)).toEqual('-10,000');
+      expect(commaNumber(-100000)).toEqual('-100,000');
+      expect(commaNumber(-1000000)).toEqual('-1,000,000');
+      expect(commaNumber(-1234567890)).toEqual('-1,234,567,890');
+      expect(commaNumber(Number.MIN_SAFE_INTEGER)).toEqual(
+        '-9,007,199,254,740,991'
+      );
+    });
+
   });
 });
