@@ -35,7 +35,7 @@ switch (n)
 }
 ```
 
-## Example
+## Example 1
 
 Using a switch statement over multiple if/else statements can contribute to more speed and readability.
 
@@ -83,7 +83,7 @@ int main() {
 -> 32.5 - 12.4 = 20.1
 ```
 
-## Example
+## Example 2
 
 The below code depicts how to handle switch case when single piece of code runs for multiple values.
 
@@ -112,6 +112,7 @@ int main()
     return 0;
 }
 ```
+
 ## Output
 ```c
 Hello World 1
@@ -119,6 +120,102 @@ Hello World 2 or 3
 Hello World 2 or 3
 Hello World 4
 ```
+
+
+## Nested Switch Case 
+    
+  Like nested if, we can use nested switch case in C programming. A switch case statement enclosed inside another switch case statement is called nested switch case. Nested switch is used at high level where we require sub conditions or cases. The inner and outer switch() case constant may be same.
+    
+## Syntax for Nested Switch Case
+
+```c
+  switch (variable or expression)
+{
+    case value1:
+        statement(s);
+        switch (variable or expression)
+        {
+            [body of nested switch]
+        }
+        break;
+    ... ... ...
+    ... ... ...
+    case valueN:
+        statement(s);
+        switch (variable or expression)
+        {
+            [body of nested switch]
+        }
+        break;
+    default:
+        statement(s);         
+        switch (variable or expression)
+        {
+            [body of nested switch]
+        }
+        break;
+}
+```
+
+## Example 2
+    
+   C program to check for head/tail using nested switch case statement 
+```c
+#include<stdio.h>
+int main()
+{
+    int ch1,ch2;
+    printf("H/h for head, T/t for tail\n");
+    printf("Enter first choice-");
+    scanf("%c",&ch1);
+    fflush(stdin);
+    printf("Enter second choice-");
+    scanf("%c",&ch2);
+    switch(ch1)
+    {
+        case 'h':
+        case 'H':
+            switch(ch2)
+            {
+                case 'h':
+                case 'H':
+                    printf("2 Heads");
+                    break;
+                default:
+                    printf("Head and Tail");
+            }
+            break;
+        default:
+            switch(ch2)
+            {
+                case 'h':
+                case 'H':
+                    printf("Tail and Head");
+                    break;
+                default:
+                    printf("2 Tails");
+            }
+    }
+    return 0;
+}
+```
+
+Here, a switch case is inserted inside another switch case. User needs to enter two characters, H/h for head and T/t for tail. Both switch case (outer and inner) tests whether the input entered by user is Head or Tail. According to the combination of inputs entered by user, the output is displayed.
+
+## Output
+
+```
+H/h for head, T/t for tail
+Enter first choice-h
+Enter second choice-t
+Head and Tail
+
+H/h for head, T/t for tail
+Enter first choice-t
+Enter second choice-t
+2 Tails
+```
+
 
 ## Review : Switch vs if else
 * Check the Testing Expression: An if-then-else statement can test expressions based on ranges of values or conditions, whereas a switch statement tests expressions based only on a single integer, enumerated value, or String object.
