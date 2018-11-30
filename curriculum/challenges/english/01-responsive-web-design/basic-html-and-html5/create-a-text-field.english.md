@@ -69,9 +69,7 @@ tests:
 ## Solution
 <section id='solution'>
 
-```js
-// solution required
-
+```html
 <h2>CatPhotoApp</h2>
 <main>
   <p>Click here to view more <a href="#">cat photos</a>.</p>
@@ -95,4 +93,5 @@ tests:
   </form>
 </main>
 ```
+
 </section>
