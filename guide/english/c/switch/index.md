@@ -35,7 +35,7 @@ switch (n)
 }
 ```
 
-## Example 1
+## Example
 
 Using a switch statement over multiple if/else statements can contribute to more speed and readability.
 
@@ -83,7 +83,7 @@ int main() {
 -> 32.5 - 12.4 = 20.1
 ```
 
-## Example 2
+## Example
 
 The below code depicts how to handle switch case when single piece of code runs for multiple values.
 
@@ -157,7 +157,7 @@ Hello World 4
 }
 ```
 
-## Example 2
+## Example
     
    C program to check for head/tail using nested switch case statement 
 ```c
