@@ -34,7 +34,7 @@ When giving your answer, use a lowercase e to separate mantissa and exponent. E.
 ```yml
 tests:
   - text: <code>euler462()</code> should return Infinity.
-    testString: 'assert.strictEqual(euler462(), Infinity, "<code>euler462()</code> should return Infinity.");'
+    testString: assert.strictEqual(euler462(), Infinity, '<code>euler462()</code> should return Infinity.');
 
 ```
 
