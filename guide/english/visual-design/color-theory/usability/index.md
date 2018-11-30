@@ -52,6 +52,10 @@ The good news is that there is still lots of flexibility available in choosing a
 <a href='https://github.com/freecodecamp/guides/blob/master/README.md' target='_blank' rel='nofollow'>This quick style guide will help ensure your pull request gets accepted</a>.
 
 <!-- The article goes here, in GitHub-flavored Markdown. Feel free to add YouTube videos, images, and CodePen/JSBin embeds  -->
+#### Useful color scheme picker websites:
+
+1. [Adobe Color](https://color.adobe.com)
+2. [Paletton](http://paletton.com)
 
 #### More Information:
 <!-- Please add any articles you think might be helpful to read before writing the article -->
