@@ -5,6 +5,7 @@ const Container = styled.div`
   display: flex;
   justify-content: center;
   height: 40px;
+  margin: 10px;
 `;
 
 const Tab = styled.div`
@@ -14,10 +15,12 @@ const Tab = styled.div`
   padding: 5px;
   border: 2px solid ${({ theme }) => theme.primary};
   border-left: none;
+  flex-basis: 200px;
+  text-align: center;
 
   &:hover {
     cursor: pointer;
-    background: ${({ theme }) => theme.primary};
+    background: rgba(0, 0, 255, 0.8);
     color: white;
   }
 
@@ -30,7 +33,7 @@ const Tabs = ({ view, onViewChange }) => {
   return (
     <Container>
       <Tab id="tabs-search" onClick={onViewChange} active={view === 'search'}>Search</Tab>
-      <Tab id="tabs-reports" onClick={onViewChange} active={view === 'reports'}>Reports</Tab>
+      <Tab id="tabs-reports" onClick={onViewChange} active={view === 'reports'}>Pareto</Tab>
     </Container>
   );
 };

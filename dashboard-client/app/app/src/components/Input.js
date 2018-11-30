@@ -1,7 +1,12 @@
 import React from 'react';
+import styled from 'styled-components';
+
+const Container = styled.input`
+  margin-bottom: 10px;
+`;
 
 const Input = React.forwardRef((props, ref) => (
-  <input
+  <Container
     type="text"
     placeholder="PR #"
     onChange={props.onInputEvent}

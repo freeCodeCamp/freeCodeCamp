@@ -1,4 +1,9 @@
 import React from 'react';
+import styled from 'styled-components';
+
+const List = styled.ul`
+  margin: 5px;
+`;
 
 const Results = ({ foundPRs }) => {
   const elements = foundPRs.map((foundPR) => {
@@ -10,18 +15,16 @@ const Results = ({ foundPRs }) => {
 
     return (
       <div key={number}>
-        <h5>
-          {!Number(number)
-            ? number
-            : <>
-                <a href={prUrl} rel="noopener noreferrer" target="_blank">{number}</a>
-                <span>&nbsp;{username}</span>
-              </>
-          }
-        </h5>
-        <ul>
+        {!Number(number)
+          ? number
+          : <>
+              <a href={prUrl} rel="noopener noreferrer" target="_blank">{number}</a>
+              <span>&nbsp;{username}</span>
+            </>
+        }
+        <List>
           {files}
-        </ul>
+        </List>
       </div>
     );
   });

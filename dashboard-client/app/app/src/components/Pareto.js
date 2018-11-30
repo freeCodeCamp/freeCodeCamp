@@ -54,7 +54,7 @@ class Pareto extends React.Component {
 
     return (
       <div>
-        {elements}
+        {data.length ? elements : 'Report Loading...'}
       </div>
     );
   }
