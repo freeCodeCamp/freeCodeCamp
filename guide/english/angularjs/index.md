@@ -31,6 +31,6 @@ HTML:
 <script src="/bower_components/angular/angular.js"></script>
 ```
 
-**Getting Started: Building your own App**:
+#### More Information
 
-[Angular JS App Tutorial](https://docs.angularjs.org/tutorial)
+- [Angular JS App Tutorial](https://docs.angularjs.org/tutorial)
