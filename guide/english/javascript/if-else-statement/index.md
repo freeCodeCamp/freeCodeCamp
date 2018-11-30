@@ -43,6 +43,22 @@ if (condition) {
 
 <a href='https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/if...else' target='_blank' rel='nofollow'>MDN link</a> | <a href='https://msdn.microsoft.com/en-us/library/85yyde5c.aspx' target='_blank' rel='nofollow'>MSDN link</a>
 
+### Additional ternary operator
+For a simple operation like assigning a value to a variable conditionally you can use a ternary operator, which is a shorthand syntax for an `if...else` clause in JavaScript
+```javascript
+// Normal if...else
+let num  = 1;
+if (someCondition){
+    num = 1;
+} else {
+    num = 0;
+}
+
+// Using ternary operator
+const num = someCondition ? 1 : 2;
+// condition ? true case : false case
+```
+
 ## Examples
 
 **Using** `if...else`:
@@ -51,22 +67,30 @@ if (condition) {
     // If x does not equal to 5, then the condition is FALSE. This results in z being set to 19.
     if (x == 5) {
       z = 7;
-      q = 42
-    else
+      q = 42;
+    }else{
       z = 19;
+    }
 ```
 
 **Using** `else if`:
-
 ```javascript
-if (x < 10)
-    return "Small number";
-else if (x < 50)
-    return "Medium number";
-else if (x < 100)
-    return "Large number";
-else {
-    flag = 1;
-    return "Invalid number";
-}
+    // Categorising any number x as a small, medium, or large number  
+    if (x < 10)
+        return "Small number";
+    else if (x < 50)
+        return "Medium number";
+    else if (x < 100)
+        return "Large number";
+    else {
+        flag = 1;
+        return "Invalid number";
+    }
 ```
+
+**Using** `if` **alone**:
+```javascript
+    // This function can also act as a Boolean
+    if (x < 30) {
+        return "true";
+    }
