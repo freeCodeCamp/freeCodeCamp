@@ -38,6 +38,8 @@ Its main features are:
 *   Debugging - Be able to debug using break points, call stacks and an interactive console.
 *   Build-in Git - Review diffs, stage files, make commits, push and pull, all available in the editor.
 *   Extensions - Install extensions to add new languages, themes, debuggers, and connect additional services.
+*   Cusstomizable - Everything from the editing space to the sidebar, and even features can be turned on or off 
+    with a simple setting layout
 
 **A few extensions that make your life easier and more interesting while using Visual Studio Code are:**
 - [VS Live Share](https://marketplace.visualstudio.com/items?itemName=MS-vsliveshare.vsliveshare) - invite someone into your editor and code together
@@ -50,6 +52,7 @@ Its main features are:
 - [Path Intellisense](https://marketplace.visualstudio.com/items?itemName=christian-kohler.path-intellisense) - autocompletes filenames
 - [TODO highlight](https://marketplace.visualstudio.com/items?itemName=wayou.vscode-todo-highlight) - Highlight TODO, FIXME and other annotations within your code
 - [Code Snippets](https://marketplace.visualstudio.com/search?term=snippets&target=VSCode&category=All%20categories&sortBy=Relevance) - snippets for anything you need
+- [VSCode Vim](https://marketplace.visualstudio.com/items?itemName=vscodevim.vim) - Vim keybindings for VSCode (recommended for users used to the Vim environment). 
 
 ## [Notepad++](https://notepad-plus-plus.org)<img src="https://upload.wikimedia.org/wikipedia/commons/0/0f/Notepad%2B%2B_Logo.png" width="50px">
 
