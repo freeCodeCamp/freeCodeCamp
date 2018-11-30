@@ -34,7 +34,7 @@ There are many ways to declare components when using React.js, but there are two
 
 Briefly, stateful components are clever. They can hold their own information (in the `state` object) *and* inherit `props` (as seen above) from parents. Stateless components can *only* inherit `props`, so if they need to update they have to be told by their parent.
 
-See the below examples of af Cat component. The Stateful Cat component is aware of its feeling, the stateless one is not.
+See the below examples of af Cat component. The stateful Cat component is aware of its feeling, the stateless one is not.
 
 ### Stateful
 
@@ -87,7 +87,7 @@ const Cat = props => {
 
 #### Implicit Return Components
 
-If all your component does is render something (i.e. no computing), you can ommit the 'return'.
+If all your component does is render something (i.e. no computing), you can omit the 'return'.
 
 ```jsx
 
