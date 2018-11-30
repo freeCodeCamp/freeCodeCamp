@@ -1,3 +1,4 @@
+/* global browser, page */
 const { assert, AssertionError } = require('chai');
 const Mocha = require('mocha');
 
@@ -8,15 +9,14 @@ require('dotenv').config({ path: path.resolve(__dirname, '../../.env') });
 
 const vm = require('vm');
 
+const puppeteer = require('puppeteer');
+
 const jsdom = require('jsdom');
 const jQuery = require('jquery');
 const Sass = require('node-sass');
 const Babel = require('babel-standalone');
 const presetEnv = require('babel-preset-env');
 const presetReact = require('babel-preset-react');
-
-const rework = require('rework');
-const visit = require('rework-visit');
 
 const { getChallengesForLang } = require('../getChallenges');
 
@@ -29,8 +29,12 @@ const { LOCALE: lang = 'english' } = process.env;
 
 const oldRunnerFail = Mocha.Runner.prototype.fail;
 Mocha.Runner.prototype.fail = function(test, err) {
-  // Don't show stacktrace for assertion errors.
   if (err.stack && err instanceof AssertionError) {
+    const assertIndex = err.message.indexOf(': expected');
+    if (assertIndex !== -1) {
+      err.message = err.message.slice(0, assertIndex);
+    }
+    // Don't show stacktrace for assertion errors.
     delete err.stack;
   }
   return oldRunnerFail.call(this, test, err);
@@ -47,7 +51,8 @@ const babelOptions = {
 };
 
 const jQueryScript = fs.readFileSync(
-  path.resolve('./node_modules/jquery/dist/jquery.slim.min.js')
+  path.resolve('./node_modules/jquery/dist/jquery.slim.min.js'),
+  'utf8'
 );
 
 (async function() {
@@ -63,6 +68,18 @@ const jQueryScript = fs.readFileSync(
   );
 
   describe('Check challenges tests', async function() {
+    before(async function() {
+      this.timeout(30000);
+      global.browser = await puppeteer.launch({ args: ['--no-sandbox'] });
+      global.page = await browser.newPage();
+      await page.setViewport({ width: 300, height: 150 });
+    });
+    after(async function() {
+      if (global.browser) {
+        await browser.close();
+      }
+    });
+
     this.timeout(5000);
 
     allChallenges.forEach(challenge => {
@@ -222,10 +239,6 @@ function isPromise(value) {
   );
 }
 
-function timeout(milliseconds) {
-  return new Promise(resolve => setTimeout(resolve, milliseconds));
-}
-
 function transformSass(solution) {
   const fragment = JSDOM.fragment(`<div>${solution}</div>`);
   const styleTags = fragment.querySelectorAll('style[type="text/sass"]');
@@ -239,60 +252,12 @@ function transformSass(solution) {
   return solution;
 }
 
-const colors = {
-  red: 'rgb(255, 0, 0)',
-  green: 'rgb(0, 255, 0)',
-  blue: 'rgb(0, 0, 255)',
-  black: 'rgb(0, 0, 0)',
-  gray: 'rgb(128, 128, 128)',
-  yellow: 'rgb(255, 255, 0)'
-};
-
-function replaceColorNamesPlugin(style) {
-  visit(style, declarations => {
-    declarations.filter(decl => decl.type === 'declaration').forEach(decl => {
-      if (colors[decl.value]) {
-        decl.value = colors[decl.value];
-      }
-    });
-  });
-}
-
-// JSDOM uses CSSStyleDeclaration, which does not convert color keywords
-// to 'rgb()' https://github.com/jsakas/CSSStyleDeclaration/issues/48.
-// It's a workaround.
-function replaceColorNames(solution) {
-  const fragment = JSDOM.fragment(`<div>${solution}</div>`);
-  const styleTags = fragment.querySelectorAll('style');
-  if (styleTags.length > 0) {
-    styleTags.forEach(styleTag => {
-      styleTag.innerHTML = rework(styleTag.innerHTML)
-        .use(replaceColorNamesPlugin)
-        .toString();
-    });
-    return fragment.children[0].innerHTML;
-  }
-  return solution;
-}
-
-async function evaluateHtmlTest({
-  challengeType,
-  solution,
-  required,
-  files,
-  test
-}) {
+async function evaluateHtmlTest({ solution, required, files, test }) {
   const { head = '', contents = '', tail = '' } = files.html;
   if (!solution) {
     solution = contents;
   }
   const code = solution;
-
-  const options = {
-    resources: 'usable',
-    runScripts: 'dangerously',
-    virtualConsole: new jsdom.VirtualConsole()
-  };
 
   const links = required
     .map(({ link, src }) => {
@@ -313,7 +278,6 @@ A required file can not have both a src and a link: src = ${src}, link = ${link}
 
   const scripts = `
   <head>
-    <script>${jQueryScript}</script>
     ${links}
   </head>
   `;
@@ -324,9 +288,10 @@ A required file can not have both a src and a link: src = ${src}, link = ${link}
     timeout: 2000
   });
   solution = sandbox.solution;
-  solution = replaceColorNames(solution);
 
-  const dom = new JSDOM(
+  await preparePageToTest();
+
+  await page.setContent(
     `
     <!doctype html>
     <html>
@@ -335,16 +300,83 @@ A required file can not have both a src and a link: src = ${src}, link = ${link}
       ${solution}
       ${tail}
     </html>
-  `,
-    options
+  `
   );
 
-  if (links || challengeType === challengeTypes.modern) {
-    await timeout(1000);
-  }
+  await runTestInBrowser(code, test.testString);
+}
 
-  dom.window.code = code;
-  await runTestInJsdom(dom, test.testString);
+async function preparePageToTest() {
+  await page.reload();
+  await page.addScriptTag({
+    url: 'https://cdnjs.cloudflare.com/ajax/libs/chai/4.2.0/chai.min.js'
+  });
+  await page.evaluate(() => {
+    window.assert = window.chai.assert;
+  });
+  await page.evaluate(jQueryScript);
+}
+
+async function runTestInBrowser(code, testString) {
+  const result = await page.evaluate(
+    async function(code, testString) {
+      /* eslint-disable no-unused-vars */
+      // Fake Deep Equal dependency
+      const DeepEqual = (a, b) => JSON.stringify(a) === JSON.stringify(b);
+
+      // Hardcode Deep Freeze dependency
+      const DeepFreeze = o => {
+        Object.freeze(o);
+        Object.getOwnPropertyNames(o).forEach(function(prop) {
+          if (
+            o.hasOwnProperty(prop) &&
+            o[prop] !== null &&
+            (typeof o[prop] === 'object' || typeof o[prop] === 'function') &&
+            !Object.isFrozen(o[prop])
+          ) {
+            DeepFreeze(o[prop]);
+          }
+        });
+        return o;
+      };
+
+      const editor = {
+        getValue() {
+          return code;
+        }
+      };
+      /* eslint-enable no-unused-vars */
+
+      const isPromise = value =>
+        value &&
+        typeof value.subscribe !== 'function' &&
+        typeof value.then === 'function';
+
+      try {
+        // eslint-disable-next-line no-eval
+        const test = eval(testString);
+        if (typeof test === 'function') {
+          const __result = test(() => code);
+          if (isPromise(__result)) {
+            await __result;
+          }
+        }
+      } catch (e) {
+        return {
+          message: e.message,
+          isAssertion: e instanceof window.chai.AssertionError
+        };
+      }
+      return true;
+    },
+    code,
+    testString
+  );
+  if (result !== true) {
+    throw result.isAssertion
+      ? new AssertionError(result.message)
+      : new Error(result.message);
+  }
 }
 
 async function evaluateJsTest({ solution, files, test }) {
