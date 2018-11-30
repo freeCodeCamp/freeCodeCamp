@@ -474,6 +474,10 @@ title: Books to Read for Programmers
 - [Amazon](https://www.amazon.com/Learning-PHP-MySQL-JavaScript-Javascript/dp/1491978910/ref=dp_ob_title_bk)
 - ISBN-13: 978-1491978917
 
+*Artificial Intelligence: A Modern Approach*
+- [Amazon](https://www.amazon.com/Artificial-Intelligence-Modern-Approach-3rd/dp/0136042597/)
+- ISBN-13: 978-1292153964
+
 This list was compiled from multiple suggestion threads on Reddit and Stackoverflow. 
 
 Please feel free to add more that you have found useful!
