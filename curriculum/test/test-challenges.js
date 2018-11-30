@@ -51,23 +51,22 @@ const jQueryScript = fs.readFileSync(
 );
 
 (async function() {
-  const allChallenges = await getChallengesForLang(lang).then(curriculum => (
+  const allChallenges = await getChallengesForLang(lang).then(curriculum =>
     Object.keys(curriculum)
-    .map(key => curriculum[key].blocks)
-    .reduce((challengeArray, superBlock) => {
-      const challengesForBlock = Object.keys(superBlock).map(
-        key => superBlock[key].challenges
-      );
-      return [...challengeArray, ...flatten(challengesForBlock)];
-    }, [])
-  ));
+      .map(key => curriculum[key].blocks)
+      .reduce((challengeArray, superBlock) => {
+        const challengesForBlock = Object.keys(superBlock).map(
+          key => superBlock[key].challenges
+        );
+        return [...challengeArray, ...flatten(challengesForBlock)];
+      }, [])
+  );
 
   describe('Check challenges tests', async function() {
     this.timeout(5000);
 
     allChallenges.forEach(challenge => {
       describe(challenge.title || 'No title', async function() {
-
         it('Common checks', function() {
           const result = validateChallenge(challenge);
           if (result.error) {
@@ -80,11 +79,12 @@ const jQueryScript = fs.readFileSync(
         });
 
         const { challengeType } = challenge;
-        if (challengeType !== challengeTypes.html &&
-            challengeType !== challengeTypes.js &&
-            challengeType !== challengeTypes.bonfire &&
-            challengeType !== challengeTypes.modern &&
-            challengeType !== challengeTypes.backend
+        if (
+          challengeType !== challengeTypes.html &&
+          challengeType !== challengeTypes.js &&
+          challengeType !== challengeTypes.bonfire &&
+          challengeType !== challengeTypes.modern &&
+          challengeType !== challengeTypes.backend
         ) {
           return;
         }
@@ -99,9 +99,7 @@ const jQueryScript = fs.readFileSync(
         describe('Check tests syntax', function() {
           tests.forEach(test => {
             it(`Check for: ${test.text}`, function() {
-              assert.doesNotThrow(
-                () => new vm.Script(test.testString)
-              );
+              assert.doesNotThrow(() => new vm.Script(test.testString));
             });
           });
         });
@@ -109,7 +107,7 @@ const jQueryScript = fs.readFileSync(
         const { files = [], required = [] } = challenge;
         const exts = Array.from(new Set(files.map(({ ext }) => ext)));
         const groupedFiles = exts.reduce((result, ext) => {
-          const file = files.filter(file => file.ext === ext ).reduce(
+          const file = files.filter(file => file.ext === ext).reduce(
             (result, file) => ({
               head: result.head + '\n' + file.head,
               contents: result.contents + '\n' + file.contents,
@@ -124,8 +122,10 @@ const jQueryScript = fs.readFileSync(
         }, {});
 
         let evaluateTest;
-        if (challengeType === challengeTypes.modern &&
-           (groupedFiles.js || groupedFiles.jsx)) {
+        if (
+          challengeType === challengeTypes.modern &&
+          (groupedFiles.js || groupedFiles.jsx)
+        ) {
           evaluateTest = evaluateReactReduxTest;
         } else if (groupedFiles.html) {
           evaluateTest = evaluateHtmlTest;
@@ -141,29 +141,30 @@ const jQueryScript = fs.readFileSync(
           // suppress errors in the console.
           const oldConsoleError = console.error;
           console.error = () => {};
-          let fails = (
-          await Promise.all(tests.map(async function(test) {
-            try {
-              await evaluateTest({
-                challengeType,
-                required,
-                files: groupedFiles,
-                test
-              });
-              return false;
-            } catch (e) {
-              return true;
-            }
-          }))).some(v => v);
+          let fails = (await Promise.all(
+            tests.map(async function(test) {
+              try {
+                await evaluateTest({
+                  challengeType,
+                  required,
+                  files: groupedFiles,
+                  test
+                });
+                return false;
+              } catch (e) {
+                return true;
+              }
+            })
+          )).some(v => v);
           console.error = oldConsoleError;
           assert(fails, 'Test suit does not fail on the initial contents');
         });
 
         let { solutions = [] } = challenge;
         const noSolution = new RegExp('// solution required');
-        solutions = solutions.filter(solution => (
-          !!solution && !noSolution.test(solution)
-        ));
+        solutions = solutions.filter(
+          solution => !!solution && !noSolution.test(solution)
+        );
 
         if (solutions.length === 0) {
           it('Check tests. No solutions');
@@ -192,7 +193,6 @@ const jQueryScript = fs.readFileSync(
   });
 
   run();
-
 })();
 
 // Fake Deep Equal dependency
@@ -250,13 +250,11 @@ const colors = {
 
 function replaceColorNamesPlugin(style) {
   visit(style, declarations => {
-    declarations
-      .filter(decl => decl.type === 'declaration')
-      .forEach(decl => {
-        if (colors[decl.value]) {
-          decl.value = colors[decl.value];
-        }
-      });
+    declarations.filter(decl => decl.type === 'declaration').forEach(decl => {
+      if (colors[decl.value]) {
+        decl.value = colors[decl.value];
+      }
+    });
   });
 }
 
@@ -275,7 +273,6 @@ function replaceColorNames(solution) {
     return fragment.children[0].innerHTML;
   }
   return solution;
-
 }
 
 async function evaluateHtmlTest({
@@ -285,7 +282,6 @@ async function evaluateHtmlTest({
   files,
   test
 }) {
-
   const { head = '', contents = '', tail = '' } = files.html;
   if (!solution) {
     solution = contents;
@@ -324,17 +320,14 @@ A required file can not have both a src and a link: src = ${src}, link = ${link}
 
   const sandbox = { solution, transformSass };
   const context = vm.createContext(sandbox);
-  vm.runInContext(
-    'solution = transformSass(solution);',
-    context,
-    {
-      timeout: 2000
-    }
-  );
+  vm.runInContext('solution = transformSass(solution);', context, {
+    timeout: 2000
+  });
   solution = sandbox.solution;
   solution = replaceColorNames(solution);
 
-  const dom = new JSDOM(`
+  const dom = new JSDOM(
+    `
     <!doctype html>
     <html>
       ${scripts}
@@ -342,7 +335,9 @@ A required file can not have both a src and a link: src = ${src}, link = ${link}
       ${solution}
       ${tail}
     </html>
-  `, options);
+  `,
+    options
+  );
 
   if (links || challengeType === challengeTypes.modern) {
     await timeout(1000);
@@ -352,12 +347,7 @@ A required file can not have both a src and a link: src = ${src}, link = ${link}
   await runTestInJsdom(dom, test.testString);
 }
 
-async function evaluateJsTest({
-  solution,
-  files,
-  test
-}) {
-
+async function evaluateJsTest({ solution, files, test }) {
   const virtualConsole = new jsdom.VirtualConsole();
   const dom = new JSDOM('', { runScripts: 'dangerously', virtualConsole });
 
@@ -365,29 +355,35 @@ async function evaluateJsTest({
   let scriptString = '';
   if (!solution) {
     solution = contents;
-    scriptString = head + '\n' + contents + '\n' + tail + '\n';
     try {
-      // eslint-disable-next-line
-      new vm.Script(scriptString);
+      scriptString =
+        Babel.transform(head, babelOptions).code +
+        '\n' +
+        Babel.transform(contents, babelOptions).code +
+        '\n' +
+        Babel.transform(tail, babelOptions).code +
+        '\n';
     } catch (e) {
       scriptString = '';
     }
   } else {
-    scriptString = head + '\n' + solution + '\n' + tail + '\n';
+    scriptString =
+      Babel.transform(head, babelOptions).code +
+      '\n' +
+      Babel.transform(solution, babelOptions).code +
+      '\n' +
+      Babel.transform(tail, babelOptions).code +
+      '\n';
   }
 
+  dom.window.require = require;
   dom.window.code = solution;
-
   await runTestInJsdom(dom, test.testString, scriptString);
 }
 
-async function evaluateReactReduxTest({
-  solution,
-  files,
-  test
-}) {
-
-  let head = '', tail = '';
+async function evaluateReactReduxTest({ solution, files, test }) {
+  let head = '',
+    tail = '';
   if (files.js) {
     const { head: headJs = '', tail: tailJs = '' } = files.js;
     head += headJs + '\n';
@@ -404,38 +400,50 @@ async function evaluateReactReduxTest({
 
   let scriptString = '';
   if (!solution) {
-    const contents = (files.js ? files.js.contents || '' : '') +
+    const contents =
+      (files.js ? files.js.contents || '' : '') +
       (files.jsx ? files.jsx.contents || '' : '');
     solution = contents;
-    scriptString = head + '\n' + contents + '\n' + tail + '\n';
     try {
-      scriptString = Babel.transform(scriptString, babelOptions).code;
+      scriptString =
+        Babel.transform(head, babelOptions).code +
+        '\n' +
+        Babel.transform(contents, babelOptions).code +
+        '\n' +
+        Babel.transform(tail, babelOptions).code +
+        '\n';
     } catch (e) {
       scriptString = '';
     }
   } else {
-    scriptString = head + '\n' + solution + '\n' + tail + '\n';
-    scriptString = Babel.transform(scriptString, babelOptions).code;
+    scriptString =
+      Babel.transform(head, babelOptions).code +
+      '\n' +
+      Babel.transform(solution, babelOptions).code +
+      '\n' +
+      Babel.transform(tail, babelOptions).code +
+      '\n';
   }
 
   const code = solution;
 
-  const testString = Babel.transform(test.testString, babelOptions).code;
-
   const virtualConsole = new jsdom.VirtualConsole();
   // Mock DOM document for ReactDOM.render method
-  const dom = new JSDOM(`
+  const dom = new JSDOM(
+    `
     <!doctype html>
     <html>
       <body>
       <div id="root"><div id="challenge-node"></div>
       </body>
     </html>
-  `, {
-    runScripts: 'dangerously',
-    virtualConsole,
-    url: 'http://localhost'
-  });
+  `,
+    {
+      runScripts: 'dangerously',
+      virtualConsole,
+      url: 'http://localhost'
+    }
+  );
 
   const { window } = dom;
   const document = window.document;
@@ -468,7 +476,7 @@ async function evaluateReactReduxTest({
     }
   };
 
-  await runTestInJsdom(dom, testString, scriptString);
+  await runTestInJsdom(dom, test.testString, scriptString);
 }
 
 async function runTestInJsdom(dom, testString, scriptString = '') {

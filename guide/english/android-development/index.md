@@ -93,7 +93,7 @@ If you are just a beginner in Android Developement. You can directly start learn
 
 ### Developing Android Apps
 
-The best part of learning Android is that many of the courses and material available out there online are free.
+The best part of learning Android is that many of the courses and material available are online and free. Take your skillset up a notch.
 The link to the basic course is here - [Developing Android Apps](https://udacity.com/course/new-android-fundamentals--ud851).
 The link to the advanced course is here - [Advanced Android App Development](https://www.udacity.com/course/advanced-android-app-development--ud855). 
 

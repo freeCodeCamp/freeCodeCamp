@@ -119,6 +119,7 @@ A great book for people willing to test their knowledge in Python by creating ga
 - [Python in Education by Nicholas H. Tollervey[OREILLY] [FREE]](https://www.oreilly.com/programming/free/files/python-in-education.pdf)
 - [How to think like a Computer Scientist by Allen Downey[V 2.0.17] [FREE]](https://greenteapress.com/thinkpython/thinkpython.pdf)
 - [A Byte of Python[FREE]](https://python.swaroopch.com)
+- [Python for Everybody: Exploring Data in Python 3 by Charles Severance](http://do1.dr-chuck.com/pythonlearn/EN_us/pythonlearn.pdf)
 - [A Practical Introduction to Python Programming by Brian Heinold in [PDF]](https://www.brianheinold.net/python/A_Practical_Introduction_to_Python_Programming_Heinold.pdf) [or in HTML format](https://www.brianheinold.net/python/python_book.html#chapter_forloops)
 - [Automate the Boring Stuff with Python [FREE]](https://automatetheboringstuff.com)
 - [List of Free Resources](https://github.com/EbookFoundation/free-programming-books/blob/master/free-programming-books.md#python)

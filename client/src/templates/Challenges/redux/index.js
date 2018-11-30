@@ -15,7 +15,7 @@ import currentChallengeEpic from './current-challenge-epic';
 
 import { createIdToNameMapSaga } from './id-to-name-map-saga';
 
-const ns = 'challenge';
+export const ns = 'challenge';
 export const backendNS = 'backendChallenge';
 
 const initialState = {

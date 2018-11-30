@@ -3,13 +3,14 @@ title: Extensible Markup Language (XML)
 ---
 ## Extensible Markup Language (XML)
 
-  XML stands for eXtensible Markup Language. It is extensible, because it does not use a predefined set of tags for identifying structural components. Instead, it provides a mechanism for defining such sets of tags. The main purpose of the language is to share data. Unlike HTML, in XML there is no predefined set of tags and tags specify meaning, rather than the presentation.
+  XML stands for eXtensible Markup Language. It is extensible, because it does not use a predefined set of tags for identifying structural components; instead, it provides a mechanism for defining such sets of tags. In XML, tags specify meaning rather than presentation, and the main purpose of the language is to share data: XML is a format that is both human- and machine-readable.
+  XML became a W3C Recommendation as early as February, 1998.
   
- ## Syntax of XML
-  XML syntax refers to the rules that determine how an XML application can be written. XML syntax is very straight forward, and this makes XML very easy to learn.
+## Syntax of XML
+  XML syntax refers to the rules that determine how an XML application can be written. The XML syntax is very straight forward, and this    makes XML very easy to learn.
 
-  XML documents must contain one root element that is the parent of all other elements:
-  
+#### Sample XML snippet:
+
 ```
 <root>
   <child>
@@ -18,7 +19,9 @@ title: Extensible Markup Language (XML)
 </root>
 ```  
 #### XML must have a root element 
-The above syntax shows the root element which is necessary while writing XML code. This is shown in the following example:-
+
+XML documents must contain one root element that is the parent of all other elements: 
+
 ```
 <?xml version="1.0" encoding="UTF-8"?>
 <note>
@@ -28,20 +31,22 @@ The above syntax shows the root element which is necessary while writing XML cod
   <body>Don't forget me this weekend!</body>
 </note>
 ```
-In this example, 'note' is the root element.
- 
-  
-  * Advantages of using XML:
-    * Simplicity - XML documents are ordinary text files that can be created and edited with any text editor.
-    * Vendor independence
-    * Platform independence
-    * Extensive infrastructure
-  
- * Disadvantages of using XML:
-   * Verbose and cumbersome syntax
-   * Highly inefficient storage  
 
-In Computer Language, eXtensible Markup Language(XML) is that which defines a set or block of rules which are later used for encoding documents in such a format which is both machine and human readable.
+In the above example 'note' is the root element.
+ 
+## Advantages of using XML:
+* Simplicity - XML documents are ordinary text files that can be created and edited with any text editor.
+* Vendor independence - XML can be read and written with non-proprietary systems
+* Platform independence - XML can be used to share data between systems
+* Extensive infrastructure - XML-based databases, HTML transformations ([XSLT](https://www.w3schools.com/xml/xml_xslt.asp)), query languages ([XQuery](https://www.w3schools.com/xml/xml_xquery.asp), [XPath](https://www.w3schools.com/xml/xml_xpath.asp)), and more extend what is possible XML.
+
+## Disadvantages of using XML:
+* Verbose and cumbersome syntax
+* Highly inefficient storage  
+
+## XML vs. HTML
+
+There are a few differences between XML and HTML: XML was designed to carry information and focuses on modeling that information for transmission; HTML displays information, with a focus on presentation and display. As mentioned before, XML does not use a predefined set of tags. XML tags are user defined, often with the help of an [XML Schema](https://www.w3schools.com/xml/xml_schema.asp).
 
 XML was replaced by JSON as the main language for transferring data but XML is still widely used to create user interfaces for Android, JavaFX and general GUI design due to its expressive quality. The following example is a view created with a framework called SAPUI5 that uses XML:
 ```
@@ -64,6 +69,7 @@ XML helps simplify:
 4. data availability
 
 It became a W3C Recommendation as early as in February 1998!
+
 
 ### More information
 
