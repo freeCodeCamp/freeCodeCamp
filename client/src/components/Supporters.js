@@ -2,6 +2,7 @@ import React, { Fragment } from 'react';
 import PropTypes from 'prop-types';
 import { Button, ProgressBar } from '@freecodecamp/react-bootstrap';
 
+import { commaNumber } from '../utils';
 import FullWidthRow from '../components/helpers/FullWidthRow';
 
 import './supporters.css';
@@ -36,7 +37,9 @@ function Supporters({ isDonating, activeDonations }) {
               ? "Thanks for being a supporter! Do you know anyone who's " +
                 'interested in technology? Encourage them to join the ' +
                 'community as well.'
-              : 'Join 4,000 supporters. Your $5 / month donation will help ' +
+              : `Join ${commaNumber(
+                  activeDonations
+                )} supporters. Your $5 / month donation will help ` +
                 'keep tech education free and open.'}
           </p>
         </b>
