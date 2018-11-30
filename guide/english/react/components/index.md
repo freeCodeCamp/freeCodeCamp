@@ -7,23 +7,34 @@ Components are the building blocks of React. They help you divide the functional
 
 ```jsx
 
+// 1. Define our Welcome component
 function Welcome(props) {
   return <h1>Hello, {props.name}</h1>;
 }
 
+// 2. Create our "app"
 const element = <Welcome name="Faisal Arkan" />;
+
+// 3. Render the app in the browser window
 ReactDOM.render(
   element,
   document.getElementById('root')
 );
 
 ```
+First, we define our Component (this is a functional, stateless component). It takes a single argument, `props`, and from this object, only the value `name` is ever used. We could replace this with a `firstName` and `lastName` if we wanted. But we don't right now.
 
-The value ```name="Faisal Arkan"``` will be assigned to ```{props.name}``` from ```function Welcome(props)``` and returns a component ```<h1>Hello, Faisal Arkan</h1>``` which is saved into the const variable ```element```. The component can then be rendered via ```ReactDOM.render(element, document.getElementById('root'));```. ```document.getElementById('root')``` in this case is the target location you would like the ```element``` component to be rendered.
+Second, the Welcome component is called with the value ```name="Faisal Arkan"```. This will be assigned to ```{props.name}``` in our component. The Welcome component called with this name returns the element ```<h1>Hello, Faisal Arkan</h1>```. We save this into the const variable ```element```. 
+
+The value `name="Faisal Arkan"` will be assigned to `{props.name}` from `function Welcome(props)` and returns a component `<h1>Hello, Faisal Arkan</h1>` which is saved into the const variable `element`. The component can then be rendered via `ReactDOM.render(element, document.getElementById('root'));`. `document.getElementById('root')` in this case is the target location you would like the `element` component to be rendered.
 
 ### Other ways to declare components
 
 There are many ways to declare components when using React.js, but there are two kinds of components, ***stateless*** components and ***stateful*** components.
+
+Briefly, stateful components are clever. They can hold their own information (in the `state` object) *and* inherit `props` (as seen above) from parents. Stateless components can *only* inherit `props`, so if they need to update they have to be told by their parent.
+
+See the below examples of af Cat component. The stateful Cat component is aware of its feeling, the stateless one is not.
 
 ### Stateful
 
@@ -42,9 +53,12 @@ class Cat extends React.Component {
   render() {
     return(
       <div>
-        <h1>{this.props.name}</h1>
+        <h1>Hi, my name is {this.props.name}</h1>
         <p>
-          {this.props.color}
+          I'm a {this.props.color} cat
+        </p>
+        <p>
+          I am a {this.state.humor} cat.
         </p>
       </div>
     );
@@ -62,8 +76,9 @@ class Cat extends React.Component {
 const Cat = props => {
   return (
     <div>
-      <h1>{props.name}</h1>
-      <p>{props.color}</p>
+      <h1>Hi, my name is {props.name}</h1>
+      <p>I am a {props.color} cat</p>
+      <p>Sadly, I can't tell you how I feel, because I have no state.</p>
     </div>;
   );
 };
@@ -72,12 +87,15 @@ const Cat = props => {
 
 #### Implicit Return Components
 
+If all your component does is render something (i.e. no computing), you can omit the 'return'.
+
 ```jsx
 
 const Cat = props =>
   <div>
     <h1>{props.name}</h1>
     <p>{props.color}</p>
+     <p>Sadly, I can't tell you how I feel, because I have no state.</p>
   </div>;
 
 ```
@@ -105,5 +123,4 @@ class Cat extends React.PureComponent {
 This component will only render if there is a change in its props; not when the parent re-renders.
 
 ### More Information:
-
-[https://reactjs.org/docs/components-and-props.html](Components and Props)
+- [Components and Props](https://reactjs.org/docs/components-and-props.html)
