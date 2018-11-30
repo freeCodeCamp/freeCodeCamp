@@ -1,6 +1,6 @@
 ---
 title: Books to Read for Programmers
-localeTitle: 为程序员阅读的书籍
+localeTitle: 程序员书单
 ---
 ### 书籍清单
 
