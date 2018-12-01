@@ -32,10 +32,10 @@ Use the splice function to delete an element from an array.
 
 ## ![:beginner:](https://forum.freecodecamp.com/images/emoji/emoji_one/beginner.png?v=3 ":beginner:") Basic Code Solution:
 
-    this.remove = function(element)
-    {
-        if(this.has(element))
+     this.remove = function(element){
+        if(this.has(element)) {
             this.values().splice( this.values().indexOf(element), 1 );
+        }
     }
 
 ![:rocket:](https://forum.freecodecamp.com/images/emoji/emoji_one/rocket.png?v=3 ":rocket:") <a href='https://repl.it/repls/ReflectingUsedTrees' target='_blank' rel='nofollow'>Run Code</a>
