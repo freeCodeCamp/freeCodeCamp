@@ -1,20 +1,24 @@
 import React from 'react';
 import styled from 'styled-components';
 
-const List = styled.ul`
-  margin: 5px;
+const Container = styled.div`
+  margin-bottom: 15px;
 `;
 
-const Results = ({ foundPRs }) => {
-  const elements = foundPRs.map((foundPR) => {
-    const { number, filenames, username } = foundPR;
+const List = styled.ul`
+  margin: 3px;
+`;
+
+const PrResults = ({ searchValue, results }) => {
+  const elements = results.map((result, idx) => {
+    const { number, filenames, username } = result;
     const files = filenames.map((filename, index) => {
       return <li key={`${number}-${index}`}>{filename}</li>;
     });
     const prUrl = `https://github.com/freeCodeCamp/freeCodeCamp/pull/${number}`
 
     return (
-      <div key={number}>
+      <Container key={`${number}-${idx}`}>
         {!Number(number)
           ? number
           : <>
@@ -25,15 +29,16 @@ const Results = ({ foundPRs }) => {
         <List>
           {files}
         </List>
-      </div>
+      </Container>
     );
   });
 
   return (
     <div>
+      {results.length ? <h3>Results for PR# {searchValue}</h3> : null}
       {elements}
     </div>
   );
 };
 
-export default Results;
+export default PrResults;

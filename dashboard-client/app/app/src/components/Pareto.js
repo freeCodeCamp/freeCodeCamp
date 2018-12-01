@@ -7,7 +7,23 @@ const Result = styled.div`
   &:nth-child(odd) {
     background: #eee;
   }
+  padding: 3px;
 `;
+
+const List = styled.div`
+  margin: 5px;
+  display: flex;
+  flex-wrap: wrap;
+`;
+
+const ListItem = styled.a`
+  flex-basis: 33%;
+  overflow: hidden;
+`;
+
+const detailsStyle = { padding: '3px' };
+
+const filenameTitle = { fontWeight: '600' };
 
 class Pareto extends React.Component {
   state = {
@@ -33,20 +49,22 @@ class Pareto extends React.Component {
 
   render() {
     const { data } = this.state;
-
     const elements = data.map((entry) => {
       const { filename, count, prs } = entry;
-      const prsList = prs.reduce((html, { number, username }) => {
+      const prsList = prs.map(({ number, username }) => {
         const prUrl = `https://github.com/freeCodeCamp/freeCodeCamp/pull/${number}`;
-        return html += `
-          <a href=${prUrl} rel="noopener noreferrer" target="_blank">#${number} <span>${username}</span></a>, `;
-      }, '');
+        return (
+          <ListItem href={prUrl} rel="noopener noreferrer" target="_blank">
+            #{number} <span>({username})</span>
+          </ListItem>
+        )
+      });
       return (
         <Result key={filename}>
-          {filename}<br />
-          <details>
+          <span style={filenameTitle}>{filename}</span><br />
+          <details style={detailsStyle}>
             <summary># of PRs: {count}</summary>
-            <div dangerouslySetInnerHTML={{__html: prsList}} />
+            <List>{prsList}</List>
           </details>
         </Result>
       );

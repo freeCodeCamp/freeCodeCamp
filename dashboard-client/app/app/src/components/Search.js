@@ -1,45 +1,62 @@
 import React, { Component } from 'react';
 
 import Input from './Input';
-import Results from './Results';
-
+import PrResults from './PrResults';
+import FilenameResults from './FilenameResults';
+import SearchOption from './SearchOption';
 class Search extends Component {
   state = {
-    number: '',
-    foundPRs: [],
+    searchValue: '',
+    selectedOption: 'pr',
+    results: []
   };
 
-  clearObj = { number: '', foundPRs: [] };
+  clearObj = { searchValue: '', results: [] };
 
   inputRef = React.createRef();
 
   handleInputEvent = (event) => {
-    const { type, key, target: { value } } = event;
+    const { type, key, target: { value: searchValue } } = event;
 
     if (type === 'change') {
-      if (Number(value) || value === '') {
-        this.setState((prevState) => ({ number: value, foundPRs: [] }));
+      if (this.state.selectedOption === 'pr'){
+        if (Number(searchValue) || searchValue === '') {
+          this.setState((prevState) => ({ searchValue, results: [] }));
+        }
+      }
+      else {
+        this.setState((prevState) => ({ searchValue, results: [] }));
       }
     }
     else if (type === 'keypress' && key === 'Enter') {
-      this.searchPRs(value);
+      this.searchPRs(searchValue);
     }
   }
 
   handleButtonClick = () => {
-    const { number } = this.state;
-    this.searchPRs(number);
+    const { searchValue } = this.state;
+    this.searchPRs(searchValue);
   }
 
-  searchPRs = (number) => {
-    fetch(`https://pr-relations.glitch.me/pr/${number}`)
+  handleOptionChange = (changeEvent) => {
+    const selectedOption = changeEvent.target.value;
+    this.setState((prevState) => ({ selectedOption, ...this.clearObj }));
+  }
+
+  searchPRs = (value) => {
+    const { selectedOption } = this.state;
+    const baseUrl = 'https://pr-relations.glitch.me/';
+    const fetchUrl = baseUrl + (selectedOption === 'pr' ? `pr/${value}` : `search/?value=${value}`);
+    fetch(fetchUrl)
     .then((response) => response.json())
-    .then(({ ok, foundPRs }) => {
-      if (ok) {
-        if (!foundPRs.length) {
-          foundPRs.push({ number: 'No PRs with matching files', filenames: [] });
+    .then((response) => {
+      if (response.ok) {
+        const { results }  = response;
+        const objArrName = selectedOption === 'pr' ? 'filenames' : 'prs';
+        if (!results.length) {
+          results.push({ searchValue: 'No matching results', [objArrName]: [] });
         }
-        this.setState((prevState) => ({ foundPRs }));
+        this.setState((prevState) => ({ results }));
       }
       else {
         this.inputRef.current.focus();
@@ -51,13 +68,22 @@ class Search extends Component {
   }
 
   render() {
-    const { handleButtonClick, handleInputEvent, inputRef, state } = this;
-    const { number, foundPRs } = state;
+    const { handleButtonClick, handleInputEvent, inputRef, handleOptionChange, state } = this;
+    const { searchValue, results, selectedOption } = state;
     return (
       <>
-        <Input ref={inputRef} value={number} onInputEvent={handleInputEvent} />
+        <div>
+          <SearchOption value="pr" onOptionChange={handleOptionChange} selectedOption={selectedOption}>
+            PR #
+          </SearchOption>
+          <SearchOption value="filename" onOptionChange={handleOptionChange} selectedOption={selectedOption}>
+            Filename
+          </SearchOption>
+        </div>
+        <Input ref={inputRef} value={searchValue} onInputEvent={handleInputEvent} />
         <button onClick={handleButtonClick}>Search</button>
-        <Results foundPRs={foundPRs} />
+        {selectedOption === 'pr' && <PrResults searchValue={searchValue} results={results} /> }
+        {selectedOption === 'filename' && <FilenameResults searchValue={searchValue} results={results} /> }
       </>
     );
   }
