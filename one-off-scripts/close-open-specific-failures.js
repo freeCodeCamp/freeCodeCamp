@@ -33,7 +33,7 @@ const getUserInput = async () => {
       log.add(number, { closedOpened: true, errorDesc });
       if (process.env.PRODUCTION_RUN === 'true') {
          await closeOpen(number);
-         await rateLimiter(120000);
+         await rateLimiter(90000);
       }
     }
     else {
