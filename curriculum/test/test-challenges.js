@@ -231,14 +231,6 @@ const DeepFreeze = o => {
   return o;
 };
 
-function isPromise(value) {
-  return (
-    value &&
-    typeof value.subscribe !== 'function' &&
-    typeof value.then === 'function'
-  );
-}
-
 function transformSass(solution) {
   const fragment = JSDOM.fragment(`<div>${solution}</div>`);
   const styleTags = fragment.querySelectorAll('style[type="text/sass"]');
@@ -347,19 +339,11 @@ async function runTestInBrowser(code, testString) {
       };
       /* eslint-enable no-unused-vars */
 
-      const isPromise = value =>
-        value &&
-        typeof value.subscribe !== 'function' &&
-        typeof value.then === 'function';
-
       try {
         // eslint-disable-next-line no-eval
         const test = eval(testString);
         if (typeof test === 'function') {
-          const __result = test(() => code);
-          if (isPromise(__result)) {
-            await __result;
-          }
+          await test(() => code);
         }
       } catch (e) {
         return {
@@ -518,7 +502,6 @@ async function runTestInJsdom(dom, testString, scriptString = '') {
   dom.window.assert = assert;
   dom.window.DeepEqual = DeepEqual;
   dom.window.DeepFreeze = DeepFreeze;
-  dom.window.isPromise = isPromise;
 
   dom.window.__test = testString;
   scriptString += `;
@@ -527,10 +510,7 @@ async function runTestInJsdom(dom, testString, scriptString = '') {
     try {
       const testResult = eval(__test);
       if (typeof testResult === 'function') {
-        const __result = testResult(() => code);
-        if (isPromise(__result)) {
-          await __result;
-        }
+        await testResult(() => code);
       }
     }catch (e) {
       window.__error = e;
