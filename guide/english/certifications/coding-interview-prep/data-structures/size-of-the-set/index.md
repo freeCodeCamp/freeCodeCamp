@@ -22,7 +22,6 @@ Use the length attribute on the values of the Set.
 > _try to solve the problem now_
 
 
-
 ## Spoiler Alert!
 
 ![warning sign](//discourse-user-assets.s3.amazonaws.com/original/2X/2/2d6c412a50797771301e7ceabd554cef4edcd74d.gif)
@@ -31,10 +30,40 @@ Use the length attribute on the values of the Set.
 
 ## ![:beginner:](https://forum.freecodecamp.com/images/emoji/emoji_one/beginner.png?v=3 ":beginner:") Basic Code Solution:
 
-    this.size = function()
-    {
+```js
+function Set() {
+    var collection = [];
+    this.has = function(element) {
+        return (collection.indexOf(element) !== -1);
+    };
+  
+    this.values = function() {
+        return collection;
+    };
+
+    this.add = function(element) {
+        if(!this.has(element)){
+            collection.push(element);
+            return true;
+        }
+        return false;
+    };
+
+    this.remove = function(element) {
+        if(this.has(element)){
+           var index = collection.indexOf(element);
+            collection.splice(index,1);
+            return true;
+        }
+        return false;
+    };
+
+    this.size = function() {
         return this.values().length;
     }
+
+}
+```
 
 ![:rocket:](https://forum.freecodecamp.com/images/emoji/emoji_one/rocket.png?v=3 ":rocket:") <a href='https://repl.it/repls/SereneScholarlyAnalyst' target='_blank' rel='nofollow'>Run Code</a>
 
@@ -49,3 +78,7 @@ Use the length attribute on the values of the Set.
 *   Categorize the solution in one of the following categories — **Basic**, **Intermediate** and **Advanced**. ![:traffic_light:](https://forum.freecodecamp.com/images/emoji/emoji_one/traffic_light.png?v=3 ":traffic_light:")
 
 > See ![:point_right:](https://forum.freecodecamp.com/images/emoji/emoji_one/point_right.png?v=3 ":point_right:") <a href='http://forum.freecodecamp.com/t/algorithm-article-template/14272' target='_blank' rel='nofollow'>**`Wiki Challenge Solution Template`**</a> for reference.
+
+### Resources:
+- [Wikipedia](https://en.wikipedia.org/wiki/Set_(abstract_data_type))
+>>>>>>> feat: added solution
