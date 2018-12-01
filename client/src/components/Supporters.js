@@ -4,6 +4,7 @@ import { Button, ProgressBar } from '@freecodecamp/react-bootstrap';
 
 import { commaNumber } from '../utils';
 import FullWidthRow from '../components/helpers/FullWidthRow';
+import Spacer from '../components/helpers/Spacer';
 
 import './supporters.css';
 
@@ -28,6 +29,7 @@ function Supporters({ isDonating, activeDonations }) {
           </div>
         </div>
       </FullWidthRow>
+      <Spacer />
       <FullWidthRow>
         <b>
           <p>
