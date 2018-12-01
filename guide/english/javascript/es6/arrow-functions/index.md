@@ -4,7 +4,7 @@ title: Arrow Functions
 
 ## Arrow functions
 
-Functions in ES6 have changed a bit. I mean the syntax.
+ES6 has introduced a new syntax that allows to declare functions.
 
 ```javascript
 // Old Syntax
@@ -16,10 +16,12 @@ function oldOne() {
 const newOne = () => {
  console.log("Hello World..!");
 }
+
+// Or on one line
+const newOne = () => console.log("Hello World..!");
 ```
 
-The new syntax may be confusing a little bit. But I will try to explain the syntax.
-There are two parts of the syntax.
+The new syntax may be confusing. There are two major parts of it.
 
 1. const newOne = ()
 2. => {}
@@ -45,6 +47,14 @@ let newOneWithOneParam = a => {
 }
 ```
 
+When there is only one statement or operation in the function body, braces are optional and the result is returned or undefined.
+
+```javascript
+let a = 10;
+let newOneParamWithNoBrackets = b => a + b;
+console.log(newOneParamWithNoBrackets(20)); // 30
+```
+
 An incredible advantage of the arrows function is that you can not rebind an arrow function. It will always be called with the context in which it was defined. Just use a normal function.
 ```javascript
 // Old Syntax
@@ -58,7 +68,3 @@ axios.get(url).then(response => {
 });
 
 ```
-
-
-
-I don’t think I need to give an explanation for this. It's straightforward.
