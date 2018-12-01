@@ -10,7 +10,8 @@ title: Handle an Action in the Store
 
 ```javascript
 const defaultState = {
-  login: false
+  // And I am modifying the states of theis Redux State
+  login: false,
 };
 
 const reducer = (state = defaultState, action) => {
