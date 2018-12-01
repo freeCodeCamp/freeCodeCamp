@@ -55,7 +55,7 @@ You can find an [example article about HTML Anchor Elements here](https://github
 
 **What can I write an article about?**
 
-We welcome your help writing these articles. You don't have to be an expert in a topic to write about it.This entire Guide is open source, so even if you make a mistake, another contributor will eventually correct it.
+We welcome your help writing these articles. You don't have to be an expert in a topic to write about it. This entire Guide is open source, so even if you make a mistake, another contributor will eventually correct it.
 
 To help, find a `stub article` on our [Guide website](https://guide.freecodecamp.org), write the article, then open a pull request to replace the stub with your article. A [pull request](https://help.github.com/articles/about-pull-requests/) is how you'll suggest changes. It lets others know about, review, and eventually adopt your changes.
 
