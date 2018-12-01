@@ -37,6 +37,20 @@ button:hover {
 In the example above, the button's normal styling is white text on a green button. 
 When a user hovers over the button with their mouse the rule with the `:hover` selector will become active and the button's style will change.
 
+You can also use the hover selector on an element to affect another element.
+
+```css
+button {
+  color: white;
+  background-color: green;
+}
+
+button:hover span{
+  color: green;
+}
+```
+In the example above, when a user moves their mouse over the button element, the span element's color would change to green.
+
 #### More Information:
 <a href='https://developer.mozilla.org/en-US/docs/Web/CSS/Pseudo-classes' target='_blank' rel='nofollow'>MDN `:hover` Docs</a>
 
