@@ -151,23 +151,22 @@ vector<int> Graph::DFS(int s){
 ```
 #Graph represented as an adjacency matrix between nodes (node:connected nodes)
 graph = {1:[2,5], 2:[3,4], 3:[6], 4:[], 5:[6,7], 6:[], 7:[]}
-
 def DFS(head, searchTerm):
-        found = [False]
-        def DFSUtil(start, seen = []):
-                if start in seen: #Protect algorithm from loops in graph
-                        return
-                else:
-                        seen.append(start)
-                if start == searchTerm:
-                        found = [True]
-                        return
-                for child in graph[start]
-                        DFSUtil(child,  seen)
-        DFSUtil(head)
-        return found[0]
+	found = [False]
+	def DFSUtil(start, seen = []):
+		if start in seen: #Protect algorithm from loops in graph
+			return
+		else:
+			seen.append(start)
+			if start == searchTerm:
+				found[0] = True
+				return
+			for child in graph[start]:
+				DFSUtil(child,  seen)
+	DFSUtil(head)
+	return found[0]
         
-DFS[1,6]
+print(DFS(1,6))
 ```
 
 #### More Information:
