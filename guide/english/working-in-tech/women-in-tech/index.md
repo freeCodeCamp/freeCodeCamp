@@ -26,7 +26,7 @@ The worst thing you can do is to sell yourself short. If you want something, tak
 Encouraging girls in elementary, middle, and high school can also help to increase the number of women going to work in the tech industry as they get older. We must actively fight against gender stereotypes in careers beginning at a young age so that children fully understand what career options are available to them. If girls are able to get more familiar with computer science concepts at a young age, this will help to make entering a college classroom full of men a less intimidating experience. Over time we will hopefully start to see a gender balance in tech careers. 
 
 
-### More Information:
+## More Information:
 
 - [Why are there so few women in tech? The truth behind the Google memo](https://www.theguardian.com/lifeandstyle/2017/aug/08/why-are-there-so-few-women-in-tech-the-truth-behind-the-google-memo)
 - [Ellen Pao: Has Anything Really Changed for Women in Tech?](https://www.nytimes.com/2017/09/16/opinion/sunday/ellen-pao-sexism-tech.html)
@@ -35,11 +35,23 @@ Encouraging girls in elementary, middle, and high school can also help to increa
 
 - [ChickTech](https://chicktech.org/)
 - [PyLadies](https://www.pyladies.com/)
+  An international mentorship group with a focus on helping more women become active participants and leaders in the Python open-source community.
 - [R-Ladies](https://rladies.org/)
+  A worldwide organization whose mission is to promote gender diversity in the R Community by encouraging, inspiring, and empowering people of genders currently underrepresented in the R community.
 - [Django Girls](https://djangogirls.org/)
+  A non-profit organization and a community that empowers and helps women to organize free, one-day programming workshops by providing tools, resources and support.
+- [Rails Girls](http://railsgirls.com/)
+  A global, non-profit volunteer community whose aim is to give tools and a community for women to understand technology and to build their ideas. Hosts Ruby-on-Rails-specific coding workshops for girls. 
 - [Girls Who Code](https://girlswhocode.com/)
-- [Women Who Code](https://www.womenwhocode.com/)
+  Girls Who Code is a nonprofit organization which aims to support and increase the number of women in computer science. 
 - [1 Million Women To Tech](https://1millionwomentotech.com/)
+  A 501(c)3 educational non-profit whose mission is to offer free coding education to 1 million women by 2020. 
+- [Women Who Code](https://www.womenwhocode.com)
+  Women Who Code is an global non-profit with a set of programs for engineers to reach the careers we want. 
+- [MotherCoders](http://www.mothercoders.org)
+  MotherCoders offers an eight-week tech camp focusing on helping mothers enter tech careers.
+- [Ada Developers Academy](https://adadevelopersacademy.org/)
+  Ada is a free females-only developer academy lasting 11 months based in Seattle, WA. 
 - [Women Techmakers](https://www.womentechmakers.com/)  
 
 ### Podcasts on Women-in-tech:
