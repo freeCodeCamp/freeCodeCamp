@@ -77,6 +77,40 @@ function Set() {
 <section id='solution'>
 
 ```js
+<<<<<<< HEAD:curriculum/challenges/chinese/08-coding-interview-prep/data-structures/size-of-the-set.chinese.md
 // solution required
+=======
+function Set() {
+    var collection = [];
+    this.has = function(element) {
+        return (collection.indexOf(element) !== -1);
+    };
+  
+    this.values = function() {
+        return collection;
+    };
+
+    this.add = function(element) {
+        if(!this.has(element)){
+            collection.push(element);
+            return true;
+        }
+        return false;
+    };
+
+    this.remove = function(element) {
+        if(this.has(element)){
+           var index = collection.indexOf(element);
+            collection.splice(index,1);
+            return true;
+        }
+        return false;
+    };
+
+    this.size = function() {
+        return this.values().length;
+    }
+}
+>>>>>>> fix: added instructions and solution:curriculum/challenges/english/08-coding-interview-prep/data-structures/size-of-the-set.english.md
 ```
 </section>
