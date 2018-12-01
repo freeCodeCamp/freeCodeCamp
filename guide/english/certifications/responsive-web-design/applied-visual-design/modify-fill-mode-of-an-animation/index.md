@@ -3,8 +3,12 @@ title: Modify Fill Mode of an Animation
 ---
 ## Modify Fill Mode of an Animation
 
-This is a stub. <a href='https://github.com/freecodecamp/guides/tree/master/src/pages/certifications/responsive-web-design/applied-visual-design/modify-fill-mode-of-an-animation/index.md' target='_blank' rel='nofollow'>Help our community expand it</a>.
+### Solution
 
-<a href='https://github.com/freecodecamp/guides/blob/master/README.md' target='_blank' rel='nofollow'>This quick style guide will help ensure your pull request gets accepted</a>.
-
-<!-- The article goes here, in GitHub-flavored Markdown. Feel free to add YouTube videos, images, and CodePen/JSBin embeds  -->
+```css
+button:hover {
+  animation-name: background-color;
+  animation-duration: 500ms;
+  animation-fill-mode: forwards;
+}
+```
