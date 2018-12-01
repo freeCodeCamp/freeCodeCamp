@@ -1,3 +1,4 @@
+/* global PAYPAL_SUPPORTERS */
 import { createAction, handleActions } from 'redux-actions';
 import { uniqBy } from 'lodash';
 
@@ -161,10 +162,8 @@ export const userSelector = state => {
 
 export const sessionMetaSelector = state => state[ns].sessionMeta;
 export const activeDonationsSelector = state =>
-// this default is mostly for development where there are likely no donators
-// in the local db
-// If we see this in production then things are getting weird
-  sessionMetaSelector(state).activeDonations || 4040;
+  Number(sessionMetaSelector(state).activeDonations) +
+  Number(PAYPAL_SUPPORTERS);
 
 function spreadThePayloadOnUser(state, payload) {
   return {
