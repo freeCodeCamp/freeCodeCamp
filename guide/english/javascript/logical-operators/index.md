@@ -4,7 +4,7 @@ title: Logical Operators
 
 # Logical Operators
 
-Logical operators compare Boolean values and return a Boolean response. There are two types of logical operators - Logical AND, and Logical OR. These operators are often written as && for AND, and || for OR.
+Logical operators compare Boolean values and return a Boolean response. There are two types of logical operators: Logical AND, and Logical OR. These operators are often written as && for AND, and || for OR.
 
 #### Logical AND ( && )
 
@@ -13,13 +13,13 @@ If the first evaluates as ["falsy"](https://developer.mozilla.org/en-US/docs/Glo
 
 When only involving boolean values (either `true` or `false`), it returns true if only if both expressions are true. If one or both expressions are false, the entire statement will return false.
 ```js
-true && true //returns  the second value, true
-true && false //returns the second value, false
-false && false //returns the first value, false
-123 && 'abc' // returns the second value, 'abc'
-'abc' && null //returns the second value, null
-undefined && 'abc' //returns the first value, undefined
-0 && false //returns the first value, 0
+true && true        //returns the second value, true
+true && false       //returns the second value, false
+false && false      //returns the first value, false
+123 && 'abc'        //returns the second value, 'abc'
+'abc' && null       //returns the second value, null
+undefined && 'abc'  //returns the first value, undefined
+0 && false          //returns the first value, 0
 ```
 
 #### Logical OR ( || )
@@ -28,13 +28,13 @@ The OR operator compares two expressions. If the first evaluates as "falsy", the
 
 When only involving boolean values (either `true` or `false`), it returns true if either expression is true. Both expressions can be true, but only one is needed to get true as a result.
 ```js
-true || true //returns the first value, true
-true || false //returns the first value, true
-false || false //returns the second value, false
-123 || 'abc' // returns the first value, 123
-'abc' || null //returns the first value, 'abc'
+true || true       //returns the first value, true
+true || false      //returns the first value, true
+false || false     //returns the second value, false
+123 || 'abc'       //returns the first value, 123
+'abc' || null      //returns the first value, 'abc'
 undefined || 'abc' //returns the second value, 'abc'
-0 || false //returns the second value, false
+0 || false         //returns the second value, false
 ```
 #### Short-circuit evaluation
 && and || behave as a short-circuit operators. 

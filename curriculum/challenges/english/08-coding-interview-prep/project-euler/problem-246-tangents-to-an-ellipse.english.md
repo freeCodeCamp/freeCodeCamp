@@ -38,7 +38,7 @@ For how many lattice points P is angle RPS greater than 45 degrees?
 ```yml
 tests:
   - text: <code>euler246()</code> should return 810834388.
-    testString: 'assert.strictEqual(euler246(), 810834388, "<code>euler246()</code> should return 810834388.");'
+    testString: assert.strictEqual(euler246(), 810834388, '<code>euler246()</code> should return 810834388.');
 
 ```
 
