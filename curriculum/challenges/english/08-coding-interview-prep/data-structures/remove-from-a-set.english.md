@@ -11,7 +11,7 @@ In this exercises we are going to create a delete function for our set.
 
 ## Instructions
 <section id='instructions'>
-The function should be named <code>this.remove</code>. This function should accept a value and check if it exists in the set. If it does, remove that value from the set, and return true. Otherwise, return false.
+The function should be named <code>this.remove</code>. This function should accept a value and check if it exists in the set. If it does, remove that value from the set, and return <code>true</code>. Otherwise, return <code>false</code>.
 </section>
 
 ## Tests
