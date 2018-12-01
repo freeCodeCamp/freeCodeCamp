@@ -25,9 +25,9 @@ Change the <code>position</code> of the <code>h2</code> to <code>relative</code>
 ```yml
 tests:
   - text: The <code>h2</code> element should have a <code>position</code> property set to <code>relative</code>.
-    testString: 'assert($("h2").css("position") == "relative", "The <code>h2</code> element should have a <code>position</code> property set to <code>relative</code>.");'
+    testString: assert($('h2').css('position') == 'relative', 'The <code>h2</code> element should have a <code>position</code> property set to <code>relative</code>.');
   - text: Your code should use a CSS offset to relatively position the <code>h2</code> 15px away from the <code>top</code> of where it normally sits.
-    testString: 'assert($("h2").css("top") == "15px", "Your code should use a CSS offset to relatively position the <code>h2</code> 15px away from the <code>top</code> of where it normally sits.");'
+    testString: assert($('h2').css('top') == '15px', 'Your code should use a CSS offset to relatively position the <code>h2</code> 15px away from the <code>top</code> of where it normally sits.');
 
 ```
 

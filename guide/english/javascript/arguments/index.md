@@ -51,7 +51,7 @@ console.log(getGrades(90, 100, 75, 40, 89, 95));
 
 ### Optimization issues with Array.slice()
 
-There is a little problem, it's not recommended to use slice in the arguments object (optimization reasons)...
+There is a little problem; it's not recommended to use slice in the arguments object (optimization reasons)...
 
 > **Important**: You should not slice on arguments because it prevents optimizations in JavaScript engines (V8 for example). Instead, try constructing a new array by iterating through the arguments object.
 > 
@@ -95,7 +95,29 @@ The arguments object is not available inside the body of an arrow function.
 The rest parameter must always come as the last argument in your function definition.  
     ```function getIntoAnArgument(arg1, arg2, arg3, ...restOfArgs  /*no more arguments allowed here*/) {
         //function body
-    }```   
+    }```
+    
+so doing this should throw a SyntaxError: Rest parameter must be last formal parameter 
+    ```function invalidRestUse(...args, arg1, arg2){
+    }```
 
+Rest parameters can be destuctured and unpacked into distinct variables
+    ```
+    function restDestructuring(...[a, b, c]){
+        return a + b + c;
+    }
+    
+    restDestructuring(1, 2, 3);  // 6
+    ```
+### ES6 destructuring of arrays in formal parameter
 
+With the new destructuring feature we can even go one step ahead when passing an array to a function and break down its elements as variables.
+    ```
+    function arrayDestructuring([a, b, c]){
+        return a + b + c;    
+    }
 
+    arrayDestructuring([1,2]) //Nan , as 1 + 2 + undefined = NaN 
+    arrayDestructuring([1,2,3]) // 6
+    arrayDestructuring([1,2,3,4,5]) // 6  additional elements will be ignored
+    ```
