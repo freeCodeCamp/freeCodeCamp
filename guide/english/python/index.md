@@ -5,7 +5,7 @@ title: Python
 
 ## What is Python?
 
-<a href='https://www.python.org' target='_blank' rel='nofollow'>Python</a> is a general purpose programming language which is dynamically typed, interpreted, and known for its easy readability with great design principles. It was created by Guido van Rossum and released in 1991. Since then, the language has exploded in popularity.  
+<a href='https://www.python.org' target='_blank' rel='nofollow'>Python</a> is a general purpose programming language that is dynamically typed and interpreted. Python is known for its easy readability with great design principles. It was created by Guido van Rossum and released in 1991. Since then, the language has exploded in popularity.  
 
 To learn more about Python, check out these pages on python.org:
 

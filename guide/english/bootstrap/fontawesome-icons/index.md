@@ -18,7 +18,7 @@ You can also use Font Awesome's own CDN.
 <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.4.1/css/fontawesome.css" integrity="sha384-BzCy2fixOYd0HObpx3GMefNqdbA7Qjcc91RgYeDjrHTIEXqiF00jKvgQG0+zY/7I" crossorigin="anonymous">
 ```
 
-Additionaly, the Font Awesome CDN can supply the brand and regular logos independently.
+Additionally, the Font Awesome CDN can supply the brand and regular logos independently.
 
 ```html
 <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.4.1/css/brands.css" integrity="sha384-Px1uYmw7+bCkOsNAiAV5nxGKJ0Ixn5nChyW8lCK1Li1ic9nbO5pC/iXaq27X5ENt" crossorigin="anonymous">
@@ -35,12 +35,14 @@ Simply create `<i>` or `<span>` tag and apply the CSS Prefix `fa` and the icon's
 
 <i class="fa fa-twitter" aria-hidden="true"></i>
 
-`<span class="fa fa-freecodecamp" aria-hidden="true"></span>`
+`<span class="fa fa-free-code-camp" aria-hidden="true"></span>`
 
-<span class="fa fa-freecodecamp" aria-hidden="true"></span>
+<span class="fa fa-free-code-camp" aria-hidden="true"></span>
 
-#### Font Awesome Icon List:
-Complete list of icons provided by Font Awesome is available [here](http://fontawesome.io/cheatsheet/)
+Icons inherit the `font-size` of their parent container by default, but sizing can be modified by adding `.fa-*` classes, where `*` is one of `xs, sm, md, lg or [1-5]x`.
+
+#### Fontawesome Icon List:
+Complete list of icons provided by fontawesome is available [here](http://fontawesome.io/cheatsheet/)
 
 `.fa fa-align-left` This is Font Awesome align left icon.
 
