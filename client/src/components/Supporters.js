@@ -24,7 +24,8 @@ function Supporters({ isDonating, activeDonations }) {
           <ProgressBar max={10000} now={activeDonations} />
           <div id='progress-label-wrapper'>
             <span className='progress-label'>
-              {activeDonations} supporters out of 10,000 goal
+              {commaNumber(activeDonations)} supporters out of 10,000 supporter
+              goal
             </span>
           </div>
         </div>
@@ -35,14 +36,21 @@ function Supporters({ isDonating, activeDonations }) {
           <p>
             freeCodeCamp.org is a tiny non-profit that's helping millions of
             people learn to code for free. <br />
-            {isDonating
-              ? "Thanks for being a supporter! Do you know anyone who's " +
-                'interested in technology? Encourage them to join the ' +
-                'community as well.'
-              : `Join ${commaNumber(
-                  activeDonations
-                )} supporters. Your $5 / month donation will help ` +
-                'keep tech education free and open.'}
+            <br />
+            {isDonating ? (
+              <Fragment>
+                Thanks for being a supporter!
+                <br />
+                <br />
+                Do you know anyone who's interested in technology? Encourage
+                them to join the community as well.
+              </Fragment>
+            ) : (
+              `Join ${commaNumber(
+                activeDonations
+              )} supporters. Your $5 / month donation will help ` +
+              'keep tech education free and open.'
+            )}
           </p>
         </b>
       </FullWidthRow>

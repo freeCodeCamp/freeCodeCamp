@@ -6,12 +6,3 @@
 #supporter-progress-wrapper .progress-bar {
   padding-top: 8px;
 }
-
-#progress-label-wrapper {
-  text-align: left;
-  padding-left: 10px;
-  margin-bottom: 25px;
-  position: absolute;
-  top: 0;
-  margin-top: 9px;
-}
