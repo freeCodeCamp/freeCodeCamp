@@ -112,11 +112,12 @@ This code is running live at [freeCodeCamp.org](https://www.freecodecamp.org).
 
 Our community also has:
 
-- A super active [forum](https://www.freecodecamp.org/forum)
-- Thousands of [local study groups](https://study-group-directory.freecodecamp.org/) around the world, where you can code together in person
-- Medium's [largest technical publication](https://medium.freecodecamp.org)
-- A popular [YouTube channel](https://youtube.com/freecodecamp)
+- A [forum](https://www.freecodecamp.org/forum) where you can usually get programming help or project feedback within hours.
+- A [YouTube channel](https://youtube.com/freecodecamp) with free courses on Python, SQL, Android, and a wide variety of other technologies.
+- [Local study groups](https://study-group-directory.freecodecamp.org/) around the world, where you can code together in person
 - A comprehensive [guide to thousands of programming topics](https://guide.freecodecamp.org/)
+- Medium's [largest technical publication](https://medium.freecodecamp.org)
+- A [Facebook group](https://www.facebook.com/groups/freeCodeCampEarth/permalink/428140994253892/) with over 100,000 members worldwide
 
 ### [Join our community here](https://www.freecodecamp.org/signin).
 
