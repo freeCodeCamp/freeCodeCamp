@@ -3,8 +3,35 @@ title: Remove from a Set
 ---
 ## Remove from a Set
 
-This is a stub. <a href='https://github.com/freecodecamp/guides/tree/master/src/pages/certifications/coding-interview-prep/data-structures/remove-from-a-set/index.md' target='_blank' rel='nofollow'>Help our community expand it</a>.
+### Method:
+- In this challenge we need to implement a `.remove()` method for the Set class we made in the previous challenge.
+- The method should return `true` if the element was successfully removed and `false` otherwise. 
+### Solution:
+```js
+function Set() {
+    var collection = [];
+    this.has = function(element) {
+        return (collection.indexOf(element) !== -1);
+    };
+    this.values = function() {
+        return collection;
+    };
+    this.add = function(element) {
+        if(!this.has(element)){
+            collection.push(element);
+            return true;
+        }
+        return false;
+    };
+    this.remove = function(element){
+        if (this.has(element)){
+            collection.splice(collection.indexOf(element), 1);
+            return true;
+        }
+        return false;
+    }
+}
+```
 
-<a href='https://github.com/freecodecamp/guides/blob/master/README.md' target='_blank' rel='nofollow'>This quick style guide will help ensure your pull request gets accepted</a>.
-
-<!-- The article goes here, in GitHub-flavored Markdown. Feel free to add YouTube videos, images, and CodePen/JSBin embeds  -->
+### Resources:
+- [Wikipedia](https://en.wikipedia.org/wiki/Set_(abstract_data_type))
