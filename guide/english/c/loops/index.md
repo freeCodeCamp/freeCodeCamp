@@ -8,7 +8,7 @@ Loops are what you use when you have code that you want to loop, meaning that af
 They can be categorized as:
 
 (a) Entry controlled loops- Loops in which the condition is checked before every iteration. e.g. for loop, while loop
-(a) Exit controlled loop- Loops in which the execution takes place once even if the condition is false. e.g. for do-while loop
+(b) Exit controlled loop- Loops in which the execution takes place once even if the condition is false. e.g. for do-while loop
 
 
 ## While loops
@@ -37,7 +37,7 @@ int main(void) {
     return 0;
 }
 ```
-While the statement within the while loop is true, the content within the brackets will be run. When the program hits the `while(my_number)`, it checks the statement within the parenthesis. If that statement is false, it won't run the while loop. Instead, it will skip over the code between the two brackets and will pick up where it left off.
+While the statement within the while loop is true, the content within the brackets will be run. When the program hits the `while(my_number!=10)`, it checks the statement within the parenthesis. If that statement is false, it won't run the while loop. Instead, it will skip over the code between the two brackets and will pick up where it left off.
 
 If the statement is true, the code within the brackets will be run. Once the code within the brackets has run, the statement within the parenthesis will be checked again. Just like before, if the statement is true, the code will be run, if it's false, the code will be skipped.
 
@@ -133,6 +133,7 @@ The next section is a boolean condition that will be checked for true or false, 
 
 The final section is referred to as the 'increment/decrement'. Its job is to perform some operation every loop - usually adding or subtracting from the initial variable - after the code within the brackets has been run through. In this case, it's just adding one to the count. This is the most common way for the increment to be used, because it lets you keep count of how many times you've run through a for loop.
 
+
 An infinite loop is also possible in the for loop. An infinite for loop has absolutely no items in the paranthesis except for the two semi colons.
 
 ```C
@@ -144,7 +145,7 @@ for(;;) {
 ### Syntax Comparison
 ```C
 
-main()                            
+int main()                            
 {                          
   int i = 1;
   while(i<=5)
@@ -153,10 +154,11 @@ main()
      i++;
    }
   getch();
+  return 0;
 }
 
 
-main()            
+int main()            
 {
   int i = 1;
   do
@@ -165,11 +167,11 @@ main()
      i++;
    } while(i<=5);
   getch();
-
+  return 0;
 }
 
 
-main()                
+int main()                
 {
   int i
   for(i=1;i<=5;i++)
@@ -177,6 +179,7 @@ main()
      printf(“for”);
    }
   getch();
+  return 0;
 }
 ```
 

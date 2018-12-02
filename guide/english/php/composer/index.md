@@ -13,11 +13,36 @@ You can then install Composer locally or globally.
 
 ### Install Packages
 
-Install packages with `composer install`. Composer will install the packages listed in the `composer.json` file to the vendor/ folder.
+Install packages with `composer install`. Composer will install the packages listed in the `composer.json` file to the vendor/ folder. 
 
 ```shell
-    composer install 
+composer install
 ```
+To install only a specific package, use `composer require <package_name>`. This will only download and install the latest version available to the selected package.
+
+If you run this command without a `composer.json` file, composer will automatically create it the before the installation.
+
+```shell
+composer require <package_name>
+```
+
+### Updating Packages
+
+Update packages with `composer update`, Composer will automatically download and install the latest versions of the packages listed in the `composer.json` file to the vendor/ folder.
+
+```shell
+composer update
+```
+
+To update a single package, use `composer update <package_name>`.
+
+### Removing Packages
+
+Removing is easy as installing packages with composer. Just enter `composer remove <package_name>` to uninstall the package from your vendor/ folder. This will automatically update your `composer.json` file.
+
+```shell
+composer remove 
+``` 
 
 ### More Information:
 * The Composer website: <a href='https://getcomposer.org/' target='_blank' rel='nofollow'>getcomposer.org</a>
