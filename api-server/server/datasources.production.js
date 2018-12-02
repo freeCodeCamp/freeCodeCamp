@@ -5,7 +5,8 @@ module.exports = {
     connector: 'mongodb',
     connectionTimeout: 10000,
     url: secrets.db,
-    useNewUrlParser: true
+    useNewUrlParser: true,
+    allowExtendedOperators: true
   },
   mail: {
     connector: 'mail',
