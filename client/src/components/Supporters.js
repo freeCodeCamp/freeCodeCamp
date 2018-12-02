@@ -43,7 +43,7 @@ function Supporters({ isDonating, activeDonations }) {
                 <br />
                 <br />
                 Do you know anyone who's interested in technology? Encourage
-                them to join the community as well.
+                them to join the community.
               </Fragment>
             ) : (
               `Join ${commaNumber(
