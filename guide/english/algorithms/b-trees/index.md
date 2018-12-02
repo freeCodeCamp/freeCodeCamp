@@ -18,7 +18,7 @@ Properties of B-Tree:
 8) Like other balanced Binary Search Trees, time complexity to search, insert and delete is O(Logn).
 
 Search:
-Search is similar to search in Binary Search Tree. Let the key to be searched be k. We start from root and recursively traverse down. For every visited non-leaf node, if the node has key, we simply return the node. Otherwise we recur down to the appropriate child (The child which is just before the first greater key) of the node. If we reach a leaf node and don’t find k in the leaf node, we return NULL.
+Search is similar to search in Binary Search Tree. Let the key to be searched be k. We start from root and recursively traverse down. For every visited non-leaf node, if the node has key, we simply return the node. Otherwise we recur down to the appropriate child (the child which is just before the first greater key) of the node. If we reach a leaf node and don’t find k in the leaf node, we return NULL.
 
 Traverse:
 Traversal is also similar to Inorder traversal of Binary Tree. We start from the leftmost child, recursively print the leftmost child, then repeat the same process for remaining children and keys. In the end, recursively print the rightmost child.

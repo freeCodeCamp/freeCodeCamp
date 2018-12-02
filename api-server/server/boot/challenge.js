@@ -410,6 +410,9 @@ export default async function bootChallenge(app, done) {
 
   async function redirectToCurrentChallenge(req, res, next) {
     const { user } = req;
+    if (!user) {
+      return res.redirect(learnURL);
+    }
     const challengeId = user && user.currentChallengeId;
     log(req.user.username);
     log(challengeId);
