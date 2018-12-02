@@ -142,7 +142,7 @@ for(;;) {
 ```
 
 ### Syntax Comparison
-```
+```C
 
 main()                            
 {                          
