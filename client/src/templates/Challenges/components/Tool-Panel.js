@@ -80,6 +80,14 @@ function ToolPanel({
           >
           Ask for help
         </Button>
+        <Button
+          block={true}
+          bsStyle='primary'
+          className='btn-primary-invert'
+          onClick={saveLesson}
+          >
+          Save Lesson
+        </Button>
       </div>
     </Fragment>
   );
