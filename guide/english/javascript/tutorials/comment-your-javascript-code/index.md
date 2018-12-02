@@ -5,11 +5,11 @@ Comments are a great way to leave notes to yourself and to other people who will
 
 Let's take a look at the two ways you can write comments in JavaScript.
 
-*   The double-slash comment will comment out the remainder of the text on the current line:
+*   The single line comment uses a two slashes (/) to comment out the remainder of the text on the current line:
 
 `// This is a single line comment.`
 
-*   The slash-star-star-slash comment will comment out everything between the `/*` and the `*/` characters:
+*   The multi-line comment uses a pair of slashes (/) and stars (*) and will comment out everything between the `/*` and the `*/` characters:
 
 ```javascript
 /* 
