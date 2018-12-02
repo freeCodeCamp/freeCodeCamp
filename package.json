@@ -5,6 +5,7 @@
   "main": "index.js",
   "dependencies": {
     "@octokit/rest": "^15.18.0",
+    "cli-progress": "^2.1.0",
     "date-fns": "^1.29.0",
     "dedent": "^0.7.0",
     "dotenv": "^6.1.0",
