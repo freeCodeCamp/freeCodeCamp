@@ -110,17 +110,6 @@ double data type is a double-precision 64-bit [IEEE 754 floating point](http://s
     Default value: 0.0d.
 
     Example: double d1 = 123.400778;
-
-### Casting
-    It is also important to note that it is possible to store different data types into one another. However, you would have to let the compiler know that you have acknoledge the possible loss of data by casting the variable.  
-    
-    For example: 
-    double d = 1.23
-    
-    int i = (int)d; 
-    
-    System.out.println(i);
-    Output: 1
     
 ## Character:
 
@@ -207,4 +196,20 @@ System.out.println(output);
 Output: 
 ```
 10198442
+```
+
+### Casting
+
+It is also important to note that it is possible to store different data types into one another. However, you would have to let the compiler know that you have acknowledge the possible loss of data by casting the variable.  
+    
+For example: 
+```java
+double d = 1.23
+
+int i = (int)d;  
+System.out.println(i);
+```
+Output: 
+```
+1
 ```
