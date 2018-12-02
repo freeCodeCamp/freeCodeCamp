@@ -39,7 +39,7 @@ li:not(.online) {
 }
 ```
 
-Our job becomes much easier with this powerful pseudo-class. But take care when using it to exclude multiple items as it's slightly difficult.
+Our job becomes much easier with this powerful pseudo-class. But take care when using it to exclude multiple items as you may inadvertently include more than you intend.
 
 A tricky example would be applying styles to input elements and excluding a few of them. Let's say we want to apply styles to input elements like text, email and password but at the same time we want to avoid styling checkbox, radio and submit input elements.
 
