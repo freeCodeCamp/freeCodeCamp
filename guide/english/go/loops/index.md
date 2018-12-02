@@ -72,3 +72,34 @@ func main() {
 	fmt.Println("The smallest power of 2 above 1000 is", num)
 }
 ```
+
+## Replacement for do-while-loop
+The do-while-loop is useful as the statement is executed at least once before the condition is checked and continue until the condition is no longer true. To simulate the do-while-loop of other languages we can use an infinite for loop with a break condition at the end. The traditional do-while has the following syntax.
+
+```
+do {
+        statement
+} while (condition);
+```
+We can simulate this syntax in go as follows:
+```
+for {
+        statement
+        if (!condition) { break }
+}
+
+```
+A Go example 
+```go
+x := 0
+for {
+        // These statements are ran at least once
+        x++
+        fmt.Println(x)
+        
+        // Check do the condition at the end. If it is no longer true end the loop
+        if !(x < 10) {
+                break
+        }
+}
+```
