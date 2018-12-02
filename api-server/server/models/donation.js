@@ -1,6 +1,7 @@
 import { Observable } from 'rx';
 import debug from 'debug';
 
+import { reportError } from '../middlewares/error-reporter';
 import InMemoryCache from '../utils/in-memory-cache';
 
 const log = debug('fcc:boot:donate');
@@ -9,7 +10,7 @@ const fiveMinutes = 1000 * 60 * 5;
 export default function(Donation) {
   let activeDonationUpdateInterval = null;
   const activeDonationCountCacheTTL = fiveMinutes;
-  const activeDonationCountCache = InMemoryCache(0);
+  const activeDonationCountCache = InMemoryCache(0, reportError);
   const activeDonationsQuery$ = () =>
     Donation.find$({
       // eslint-disable-next-line no-undefined
@@ -23,25 +24,50 @@ export default function(Donation) {
   }
 
   process.on('exit', cleanUp);
+
   Donation.on('dataSourceAttached', () => {
     Donation.find$ = Observable.fromNodeCallback(Donation.find.bind(Donation));
     Donation.findOne$ = Observable.fromNodeCallback(
       Donation.findOne.bind(Donation)
     );
-    activeDonationsQuery$().subscribe(count => {
-      log('activeDonator count: %d', count);
-      return activeDonationCountCache.update(() => count);
-    });
 
+    seedTheCache()
+      .then(setupCacheUpdateInterval)
+      .catch(err => {
+        const errMsg = `Error caught seeding the cache: ${err.message}`;
+        err.message = errMsg;
+        reportError(err);
+      });
+  });
+
+  function seedTheCache() {
+    return new Promise((resolve, reject) =>
+      Observable.defer(activeDonationsQuery$).subscribe(count => {
+        log('activeDonator count: %d', count);
+        activeDonationCountCache.update(() => count);
+        return resolve();
+      }, reject)
+    );
+  }
+
+  function setupCacheUpdateInterval() {
     activeDonationUpdateInterval = setInterval(
       () =>
-        activeDonationsQuery$().subscribe(count => {
-          log('activeDonator count: %d', count);
-          return activeDonationCountCache.update(() => count);
-        }),
+        Observable.defer(activeDonationsQuery$).subscribe(
+          count => {
+            log('activeDonator count: %d', count);
+            return activeDonationCountCache.update(() => count);
+          },
+          err => {
+            const errMsg = `Error caught updating the cache: ${err.message}`;
+            err.message = errMsg;
+            reportError(err);
+          }
+        ),
       activeDonationCountCacheTTL
     );
-  });
+    return null;
+  }
 
   function getCurrentActiveDonationCount$() {
     return Observable.of(activeDonationCountCache.get());
