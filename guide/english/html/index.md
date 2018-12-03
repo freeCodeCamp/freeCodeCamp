@@ -143,7 +143,7 @@ To create a link the `<a>` tag is used. The href attribute holds the URL address
 
 **Inputs**
 
-There are many possible ways a user can give input/s like:
+There are many possible ways a user can give input/s, such as:
 
 ```html
 <input type="text" /> <!-- This is for text input -->
