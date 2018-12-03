@@ -19,8 +19,9 @@ To get started, just print the classic "Hello World" in the console. We recommen
 <section id='tests'>
 
 ```yml
-- text: <code>"Hello World"</code> should be in the console
-  testString: 'getUserInput => $.get(getUserInput(''url'') + ''/_api/hello-console'').then(data => { assert.isTrue(data.passed, ''"Hello World" is not in the server console''); }, xhr => { throw new Error(xhr.responseText); })'
+tests:
+  - text: <code>"Hello World"</code> should be in the console
+    testString: 'getUserInput => $.get(getUserInput(''url'') + ''/_api/hello-console'').then(data => { assert.isTrue(data.passed, ''"Hello World" is not in the server console''); }, xhr => { throw new Error(xhr.responseText); })'
 
 ```
 

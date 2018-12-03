@@ -8,6 +8,7 @@ import { Grid, Row, Col, Button } from '@freecodecamp/react-bootstrap';
 import Helmet from 'react-helmet';
 
 import { Loader, Spacer } from '../components/helpers';
+import CurrentChallengeLink from '../components/helpers/CurrentChallengeLink';
 import Layout from '../components/layouts/Default';
 import {
   userSelector,
@@ -141,9 +142,11 @@ function Welcome({
           <Spacer />
           <Row>
             <Col sm={8} smOffset={2} xs={12}>
+            <CurrentChallengeLink>
               <Button block={true} bsStyle='primary' className='btn-cta-big'>
                 Go to my next challenge
               </Button>
+            </CurrentChallengeLink>
             </Col>
           </Row>
           <Spacer size={4} />
