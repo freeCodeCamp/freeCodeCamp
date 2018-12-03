@@ -32,7 +32,7 @@ How many triangles ABC with perimeter≤100,000,000 exist so that the ratio area
 ```yml
 tests:
   - text: <code>euler257()</code> should return 139012411.
-    testString: 'assert.strictEqual(euler257(), 139012411, "<code>euler257()</code> should return 139012411.");'
+    testString: assert.strictEqual(euler257(), 139012411, '<code>euler257()</code> should return 139012411.');
 
 ```
 
