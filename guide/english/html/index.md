@@ -79,7 +79,6 @@ Since the early days of the web, there have been many versions of HTML:
 |XHTML|2000|
 |HTML5|2014|
 
-
 # HTML Elements
 
 The extent of an element is indicated by a pair of tags: a "start tag" `<p>` and "end tag" `</p>`. The text content of the element, if any, is placed between these tags.
@@ -158,6 +157,23 @@ There are many possible ways a user can give input/s like:
 <!-- This is a comment -->
 ```
 Comments can help in the understanding of the markup and do not display in the webpage.
+
+### New APIs
+
+HTML5 related APIs
+In addition to specifying markup, HTML 5 specifies scripting application programming interfaces (APIs) that can be used with JavaScript. Existing Document Object Model (DOM) interfaces are extended and de facto features documented. There are also new APIs, such as:
+
+- Canvas
+- Timed Media Playback
+- Offline
+- Editable content
+- Drag and drop
+- History
+- MIME type and protocol handler registration
+- Microdata
+- Web Messaging
+- Web Storage
+    - a key-value pair storage framework that provides behaviour similar to cookies but with larger storage capacity and improved API
 
 #### Learn HTML
 - [Introduction to Basic HTML & HTML5](https://learn.freecodecamp.org/responsive-web-design/basic-html-and-html5/)
