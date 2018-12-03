@@ -91,7 +91,7 @@ const log = new Log();
       const filenames = prFiles.map(({ filename }) => filename);
       log.add(number, { number, username, filenames });
       if (numFilenameRequests > 3000 ) {
-        await rateLimiter(1200);
+        await rateLimiter(1250);
       }
       if (numFilenameRequests % 10 === 0) {
         getFilesBar.update(numFilenameRequests);
