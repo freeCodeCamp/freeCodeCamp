@@ -21,7 +21,7 @@ tests:
   - text: Класс <code>Set</code> должен иметь <code>difference</code> метод.
     testString: 'assert((function(){var test = new Set(); return (typeof test.difference === "function")})(), "Your <code>Set</code> class should have a <code>difference</code> method.");'
   - text: Собственная коллекция была возвращена
-    testString: 'assert((function(){var setA = new Set(); var setB = new Set(); setA.add("a"); setA.add("b"); setA.add("c"); setB.add("c"); setB.add("d"); var differenceSetAB = setA.difference(setB); return (differenceSetAB.size() === 2) && (differenceSetAB.values() === [ "a", "b" ])})(), "The proper collection was returned");'
+    testString: 'assert((function(){var setA = new Set(); var setB = new Set(); setA.add("a"); setA.add("b"); setA.add("c"); setB.add("c"); setB.add("d"); var differenceSetAB = setA.difference(setB); return (differenceSetAB.size() === 2) && (differenceSetAB.values() === [ "a", "b" ])})(), "The expected collection was not returned");'
 
 ```
 

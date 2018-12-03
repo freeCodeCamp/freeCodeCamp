@@ -21,7 +21,7 @@ tests:
   - text: Tu clase <code>Set</code> debería tener un método de <code>intersection</code> .
     testString: 'assert((function(){var test = new Set(); return (typeof test.intersection === "function")})(), "Your <code>Set</code> class should have a <code>intersection</code> method.");'
   - text: Se devolvió la colección adecuada.
-    testString: 'assert((function(){  var setA = new Set();  var setB = new Set();  setA.add("a");  setA.add("b");  setA.add("c");  setB.add("c");  setB.add("d");  var intersectionSetAB = setA.intersection(setB); return (intersectionSetAB.size() === 1 && intersectionSetAB.values()[0] === "c")})(), "The proper collection was returned");'
+    testString: 'assert((function(){  var setA = new Set();  var setB = new Set();  setA.add("a");  setA.add("b");  setA.add("c");  setB.add("c");  setB.add("d");  var intersectionSetAB = setA.intersection(setB); return (intersectionSetAB.size() === 1 && intersectionSetAB.values()[0] === "c")})(), "The expected collection was not returned");'
 
 ```
 

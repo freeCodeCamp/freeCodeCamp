@@ -21,7 +21,7 @@ tests:
   - text: 您的<code>Set</code>类应该有一个<code>intersection</code>方法。
     testString: 'assert((function(){var test = new Set(); return (typeof test.intersection === "function")})(), "Your <code>Set</code> class should have a <code>intersection</code> method.");'
   - text: 收回了适当的收藏
-    testString: 'assert((function(){  var setA = new Set();  var setB = new Set();  setA.add("a");  setA.add("b");  setA.add("c");  setB.add("c");  setB.add("d");  var intersectionSetAB = setA.intersection(setB); return (intersectionSetAB.size() === 1 && intersectionSetAB.values()[0] === "c")})(), "The proper collection was returned");'
+    testString: 'assert((function(){  var setA = new Set();  var setB = new Set();  setA.add("a");  setA.add("b");  setA.add("c");  setB.add("c");  setB.add("d");  var intersectionSetAB = setA.intersection(setB); return (intersectionSetAB.size() === 1 && intersectionSetAB.values()[0] === "c")})(), "The expected collection was not returned");'
 
 ```
 
