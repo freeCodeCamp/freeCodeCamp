@@ -30,7 +30,7 @@ Find the last 8 digits of N(25,75,1984).
 ```yml
 tests:
   - text: <code>euler194()</code> should return 61190912.
-    testString: 'assert.strictEqual(euler194(), 61190912, "<code>euler194()</code> should return 61190912.");'
+    testString: assert.strictEqual(euler194(), 61190912, '<code>euler194()</code> should return 61190912.');
 
 ```
 
