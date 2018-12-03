@@ -3,7 +3,7 @@ title: GPU
 ---
 ## GPU
 
-GPU stands for Graphics Processing Unit. The majority of computers use these to render videos or play video games.
+GPU stands for Graphics Processing Unit. Although they are not nessesary for a computer to function, many computers have a dedicated graphics card for better performence rendering videos or playing video games.
 
 A GPU is like a CPU but has different strengths and weaknesses. CPUs are very good at running a couple of tasks very quickly. GPUs are much better at running many tasks at the same time, but slower. A typical GPU can have more than 10,000 tasks running, but to run so many tasks at the same time they must share memory and other resources. GPUs usually run very repetitive tasks over and over to save the CPU from wasting time. Some CPUs have built-in GPUs, but having a separate GPU is almost always more powerful.
 
@@ -13,7 +13,6 @@ The GPU was originally used mainly for 3D game rendering to improve your resolut
 
 There are two major brands producing GPUs: NVidia and AMD. They are often referred as the "green team" and "red team" which indicate the major color of their logo. 
 
-Notable makers of GPU's include: Nvidia and AMD/ATI.
 
 ## Origin of GPU
 
@@ -35,9 +34,9 @@ GPUs were originally modeled on the concept of graphics pipeline. Graphics pipel
 
 ### 0th Generation
 "Reality Engine" board by Silicon Graphics Inc.(SGI) marked the onset of GPU hardware and the graphics pipeline. But the technology was still dependent upon CPU for the first half. Also, the speed was limited to one pixel execution per clock cycle. The engine use OpenGL, a widely used 2D/3D application programming.
-### 1stGeneration
+### 1st Generation
 The "3dfx Voodoo" (1996) evolved as one of the first true 3D-accelerator for games. It handled texture mapping, rasterization, and z-buffering but the CPU still had to do vertex transformations.
-### 2ndGeneration
+### 2nd Generation
 This is the point when the first-ever true GPU, NVIDIA's "GeForce 256" was released in the common market. The GPUs of this generation's used Accelerated Graphics Port(AGP), offered new functions like multi-texturing, hardware geometry transform, light maps, and lighting. The traditional pipelines were known as a "fixed function" pipeline, because once the developer sent graphics data into the GPU's pipeline, the data could not be changed.
 ### 3rd Generation
 With this generation of CPUs, programmable pipelining came into existence. Now the previously non-programmable parts could be programmed by programmers. In 2001, NVIDIA released the GeForce3.

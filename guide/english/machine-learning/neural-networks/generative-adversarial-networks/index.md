@@ -16,4 +16,6 @@ The idea to infer models in a competitive setting (model versus discriminator) w
 ## Application
 GANs have been used to produce samples of [photorealistic](https://en.wikipedia.org/wiki/Photorealistic) images for the purposes of visualizing new interior/industrial design, shoes, bags and clothing items or items for computer games' scenes. These networks were reported to be used by Facebook. Recently, GANs have modeled patterns of motion in video. They have also been used to reconstruct 3D models of objects from images and to improve astronomical images. In 2017 a fully convolutional feedforward GAN was used for image enhancement using automated texture synthesis in combination with perceptual loss. The system focused on realistic textures rather than pixel-accuracy. The result was a higher image quality at high magnification.
 
+#### More Information
+ - [Generative adversarial networks demystified](https://towardsdatascience.com/demystifying-generative-adversarial-networks-c076d8db8f44)
 
