@@ -2,7 +2,6 @@ import React, { Fragment } from 'react';
 import PropTypes from 'prop-types';
 import { Button, ProgressBar } from '@freecodecamp/react-bootstrap';
 
-import { commaNumber } from '../utils';
 import FullWidthRow from '../components/helpers/FullWidthRow';
 import Spacer from '../components/helpers/Spacer';
 
@@ -13,7 +12,11 @@ const propTypes = {
   isDonating: PropTypes.bool.isRequired
 };
 
+const supporterGoal = 10000;
+const supportersLocale = supporterGoal.toLocaleString();
+
 function Supporters({ isDonating, activeDonations }) {
+  const donationsLocale = activeDonations.toLocaleString();
   return (
     <Fragment>
       <FullWidthRow>
@@ -24,7 +27,7 @@ function Supporters({ isDonating, activeDonations }) {
           <ProgressBar max={10000} now={activeDonations} />
           <div id='progress-label-wrapper'>
             <span className='progress-label'>
-              {commaNumber(activeDonations)} supporters out of 10,000 supporter
+              {donationsLocale} supporters out of {supportersLocale} supporter
               goal
             </span>
           </div>
@@ -46,9 +49,7 @@ function Supporters({ isDonating, activeDonations }) {
                 them to join the community.
               </Fragment>
             ) : (
-              `Join ${commaNumber(
-                activeDonations
-              )} supporters. Your $5 / month donation will help ` +
+              `Join ${donationsLocale} supporters. Your $5 / month donation will help ` +
               'keep tech education free and open.'
             )}
           </p>
