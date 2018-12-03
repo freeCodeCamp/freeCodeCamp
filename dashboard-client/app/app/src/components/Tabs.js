@@ -15,13 +15,13 @@ const Tab = styled.div`
   padding: 5px;
   border: 2px solid ${({ theme }) => theme.primary};
   border-left: none;
-  flex-basis: 200px;
+  width: 200px;
   text-align: center;
 
   &:hover {
     cursor: pointer;
-    background: rgba(0, 0, 255, 0.8);
-    color: white;
+    background: #EEEEEE;
+    color: ${({ theme }) => theme.primary};
   }
 
   &:first-child {

@@ -8,7 +8,8 @@ class Search extends Component {
   state = {
     searchValue: '',
     selectedOption: 'pr',
-    results: []
+    results: [],
+    message: ''
   };
 
   clearObj = { searchValue: '', results: [] };
@@ -35,7 +36,9 @@ class Search extends Component {
 
   handleButtonClick = () => {
     const { searchValue } = this.state;
-    this.searchPRs(searchValue);
+    if (searchValue) {
+      this.searchPRs(searchValue);
+    }
   }
 
   handleOptionChange = (changeEvent) => {
@@ -49,14 +52,9 @@ class Search extends Component {
     const fetchUrl = baseUrl + (selectedOption === 'pr' ? `pr/${value}` : `search/?value=${value}`);
     fetch(fetchUrl)
     .then((response) => response.json())
-    .then((response) => {
-      if (response.ok) {
-        const { results }  = response;
-        const objArrName = selectedOption === 'pr' ? 'filenames' : 'prs';
-        if (!results.length) {
-          results.push({ searchValue: 'No matching results', [objArrName]: [] });
-        }
-        this.setState((prevState) => ({ results }));
+    .then(({ ok, message, results }) => {
+      if (ok) {
+        this.setState((prevState) => ({ message, results }));
       }
       else {
         this.inputRef.current.focus();
@@ -69,7 +67,7 @@ class Search extends Component {
 
   render() {
     const { handleButtonClick, handleInputEvent, inputRef, handleOptionChange, state } = this;
-    const { searchValue, results, selectedOption } = state;
+    const { searchValue, message, results, selectedOption } = state;
     return (
       <>
         <div>
@@ -82,6 +80,7 @@ class Search extends Component {
         </div>
         <Input ref={inputRef} value={searchValue} onInputEvent={handleInputEvent} />
         <button onClick={handleButtonClick}>Search</button>
+        {message}
         {selectedOption === 'pr' && <PrResults searchValue={searchValue} results={results} /> }
         {selectedOption === 'filename' && <FilenameResults searchValue={searchValue} results={results} /> }
       </>
