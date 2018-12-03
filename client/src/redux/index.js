@@ -14,10 +14,7 @@ import failedUpdatesEpic from './failed-updates-epic';
 import updateCompleteEpic from './update-complete-epic';
 
 import { types as settingsTypes } from './settings';
-
-/** ***********************************/
-const challengeReduxTypes = {};
-/** ***********************************/
+import { types as challengeReduxTypes } from '../templates/Challenges/redux';
 
 export const ns = 'app';
 
