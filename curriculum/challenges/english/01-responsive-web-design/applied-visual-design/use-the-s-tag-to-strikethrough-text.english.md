@@ -87,6 +87,7 @@ tests:
 <section id='solution'>
 
 ```js
-// solution required
+ <h4><s>Google</s>Alphabet</h4>
+ ...
 ```
 </section>
