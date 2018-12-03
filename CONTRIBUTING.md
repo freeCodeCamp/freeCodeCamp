@@ -132,7 +132,7 @@ Read our [How to Contribute to Open Source Guide](https://github.com/freeCodeCam
 
 Our community moderators [triage](https://en.wikipedia.org/wiki/Software_bug#Bug_management) issues and pull requests based on their priority, severity, and other factors. You can [find a complete glossary of their meanings here](https://github.com/freecodecamp/freecodecamp/labels).
 
-You should go through **`Help Wanted`** or **`first timers welcome`** issues for a quick overview of what is available for you to work on. These are up for grabs, and you do not need to seek permission before working on them.
+You should go through [**`help wanted`**](https://github.com/freeCodeCamp/freeCodeCamp/issues?q=is%3Aopen+is%3Aissue+label%3A%22help+wanted%22) or [**`first timers welcome`**](https://github.com/freeCodeCamp/freeCodeCamp/issues?q=is%3Aopen+is%3Aissue+label%3A%22first+timers+welcome%22) issues for a quick overview of what is available for you to work on. These are up for grabs, and you do not need to seek permission before working on them.
 
 If these issues lack clarity on what needs to be done, feel free to ask questions in the comments.
 
