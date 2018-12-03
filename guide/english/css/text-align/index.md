@@ -5,6 +5,11 @@ title: Text Align
 
 This CSS property describes the horizontal alignment of inline content in its parent block element. `text-align` does not control the alignment of block elements, it affects only their inline content.
 
+### CSS Syntax
+`text-align: value;`
+
+value : `left|right|center|justify|initial|inherit`
+
 ### Values:
 The `text-align` property is specified as a single keyword chosen from the list of values below:  
 

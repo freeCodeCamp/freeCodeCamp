@@ -27,11 +27,11 @@ Here is some example JSON
 ```yml
 tests:
   - text: Your code should store the data in the <code>html</code> variable
-    testString: 'assert(code.match(/html\s+?(\+=|=\shtml\s\+)/g), "Your code should store the data in the <code>html</code> variable");'
+    testString: assert(code.match(/html\s+?(\+=|=\shtml\s\+)/g), 'Your code should store the data in the <code>html</code> variable');
   - text: Your code should use a <code>forEach</code> method to loop over the JSON data from the API.
-    testString: 'assert(code.match(/json\.forEach/g), "Your code should use a <code>forEach</code> method to loop over the JSON data from the API.");'
+    testString: assert(code.match(/json\.forEach/g), 'Your code should use a <code>forEach</code> method to loop over the JSON data from the API.');
   - text: Your code should wrap the key names in <code>strong</code> tags.
-    testString: 'assert(code.match(/<strong>.+<\/strong>/g), "Your code should wrap the key names in <code>strong</code> tags.");'
+    testString: assert(code.match(/<strong>.+<\/strong>/g), 'Your code should wrap the key names in <code>strong</code> tags.');
 
 ```
 
