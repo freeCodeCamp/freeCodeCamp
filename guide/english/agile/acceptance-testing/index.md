@@ -4,9 +4,9 @@ title: Acceptance Testing
 
 ## Acceptance Testing
 
-Acceptance testing, a testing technique performed to determine whether or not the software system has met the requirement specifications. The main purpose of this test is to evaluate the system's compliance with the business requirements and verify if it is has met the required criteria for delivery to end users.
+Acceptance testing is a testing technique performed to determine whether or not the software system has met the requirement specifications. The main purpose of this test is to evaluate the system's compliance with the business requirements and verify if it has met the required criteria for delivery to end users.
 
-In software development, user acceptance testing (UAT) - also called beta testing, application testing, and end user testing - is a phase of software development in which the software is tested in the "real world" by the intended audience. In engineering and its various subdisciplines acceptance testing is a test conducted to determine if the requirements of a specification or contract are met. 
+In software development, user acceptance testing (UAT) - also called beta testing, application testing, and end user testing - is a phase of software development in which the software is tested in the "real world" by the intended audience. In engineering and its various subdisciplines acceptance testing is a test conducted to determine if the requirements of a specification or contract are met.
 
 There are various forms of acceptance testing:
 
@@ -19,7 +19,7 @@ There are various forms of acceptance testing:
 > - Beta Testing
 
 ## Acceptance Criteria
-Acceptance criteria are defined on the basis of the following attributes
+Acceptance criteria are defined on the basis of the following attributes:
 
 > - Functional Correctness and Completeness
 >
@@ -117,6 +117,7 @@ You can write Acceptance Tests for each of these sub-features of the bigger dial
   - The dialog box should be visible
   - The dialog box should contain an input box
   - The input box should have placeholder text "Your name, please!"
+  - The dialog box shoud contain a "Submit" button
 
 ### Notes
 
@@ -124,7 +125,7 @@ You can write Acceptance Tests for each of these sub-features of the bigger dial
 
 - Every time you write a piece of software that will be used again (even by yourself), it helps to write a test for it. When you yourself or another makes changes to this code, running the tests will ensure that you have not broken existing functionality.
 
-- It is usually performed by the users or the Subject Matter Experts. It is also called as User Acceptance Testing (UAT). UAT involves most common real life scenarios. Unlike system testing, it does not focus on the errors or crashes, but on the functionality. UAT is done at the end of the testing life-cycle and will decide if the software is moved to the next environment or not.
+- It is usually performed by the users or the Subject Matter Experts. It is also called User Acceptance Testing (UAT). UAT involves most common real life scenarios. Unlike system testing, it does not focus on the errors or crashes, but on the functionality. UAT is done at the end of the testing life-cycle and will decide if the software is moved to the next environment or not.
 
 - A good way of defining which acceptance tests should be written is to add acceptance criteria to a user story. With acceptance criteria, you can define when a user story is ready to deploy and the issue completed to your wishes.
 
