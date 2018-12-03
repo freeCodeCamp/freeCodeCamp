@@ -5,7 +5,7 @@ In this article, we shall be discussing how to install <a href='https://www.djan
 
 Perhaps you are already familiar with the widespread usage and community support for Python; in web-development. You might as well be aware as to what a web framework is; and the options available for Python.
 
-In case these assumptions are untrue, you might want to take a look at this <a>wiki article</a>. If you are all caught up, let's go ahread with setting up Python web frameworks in your local development machine.
+In case these assumptions are untrue, you might want to take a look at this <a>wiki article</a>. If you are all caught up, let's go ahead with setting up Python web frameworks in your local development machine.
 
 But it would be unfair if we completely ignore the <a href='http://docs.python-guide.org/en/latest/starting/which-python/#the-state-of-python-2-vs-3' target='_blank' rel='nofollow'>Python 2 vs Python 3</a> debate.
 
