@@ -109,7 +109,7 @@ function Set() {
 
     this.size = function() {
         return this.values().length;
-    }
+    };
 }
 >>>>>>> fix: added instructions and solution:curriculum/challenges/english/08-coding-interview-prep/data-structures/size-of-the-set.english.md
 ```
