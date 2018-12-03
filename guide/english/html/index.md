@@ -44,7 +44,7 @@ In HTML tags come in pairs, as seen above. The first tag in a pair is called the
 
 html: The root element of an HTML page
 
-head: This element contains meta information about the document
+head: The element contains meta information about the document and non-visual elements that help make the page work
 
 title: This element specifies a title for the document
 
