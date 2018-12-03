@@ -6,7 +6,7 @@ title: Ruby
 
 Ruby was created by Yukihiro "Matz" Matsumoto and is an <a href='https://github.com/ruby/ruby' target='_blank' rel='nofollow'>open source</a>, dynamic and interpreted scripting language for quick and easy object-oriented programming. Which means:
 
-It's also known to have one of the <a href="https://www.ruby-lang.org/en/community/">largest and friendly community</a> among programming languages. 
+It's also known to have one of the <a href="https://www.ruby-lang.org/en/community/">largest and friendliest communities</a> among programming languages. 
 
 *   Ability to make operating system calls directly
 *   Immediate feedback during development
@@ -41,7 +41,7 @@ The current stable version is [2.5.1](https://www.ruby-lang.org/en/news/2018/03/
 
 ## Installation
 
-Mac OS X and many Linux distributions come pre-installed with Ruby. To check if ruby is pre-installed in your system, just run `ruby -v` on your shell. There are several ways to install Ruby:
+Mac OS X and many Linux distributions come pre-installed with Ruby. To check if Ruby is pre-installed in your system, just run `ruby -v` on your shell. There are several ways to install Ruby:
 
 *   When you are on a UNIX-like operating system, using your system’s package manager is the easiest way of getting started. However, the packaged Ruby version usually is not the newest one.
 *   Installers can be used to install a specific or multiple Ruby versions. There is also an installer for Windows.
@@ -79,7 +79,7 @@ From command-line:
 ## Documentation
 
 Ruby is well <a href='https://www.ruby-lang.org/en/documentation/' target='_blank' rel='nofollow'>documented</a>. These docs include tutorials, guides, references and meta information for language.  
-Another important resouce for documentation is <a href='http://ruby-doc.org/core-2.3.0/' target='_blank' rel='nofollow'>Ruby Doc</a>. You should visit this <a href='https://github.com/airbnb/ruby' target='_blank' rel='nofollow'>link</a> to know more about Ruby style guide, written by developers of AirBnB.
+Another important resource for documentation is <a href='http://ruby-doc.org/core-2.3.0/' target='_blank' rel='nofollow'>Ruby Doc</a>. You should visit this <a href='https://github.com/airbnb/ruby' target='_blank' rel='nofollow'>link</a> to know more about Ruby style guide, written by developers of AirBnB.
 
 A recommended read for beginners in Ruby is <a href='https://poignant.guide/' target='_blank' rel='nofollow'>Why's (Poignant) Guide to Ruby</a>
 This book is unusual among programming books. With quite a lot of strange humor and narrative side tracks which are sometimes completely unrelated to the topic, this one manages to keep the readers entertained while they learn Ruby basics. 
@@ -113,10 +113,12 @@ Ruby has several frameworks(gems) for quickly scaffolding applications. The most
 
 
 ## Ruby Framework for mobile development
+
 To write cross-platform native apps in Ruby, RUBY MOTION is used to develop cross-platform native apps for iOS, Android and OS X using the Ruby programming langauge.
 More resources here: http://www.rubymotion.com/
 
-## What after learning Ruby?
-Every programming language plays an imporatnt role . You can contribute to a lot of open source projects or you can apply for some big companies after having a good grasp on Ruby. As many big internet sites such as Basecamp, Airbnb, Bleacher Report, Fab.com, Scribd, Groupon, Gumroad, Hulu, Kickstarter, Pitchfork, Sendgrid, Soundcloud, Square, Yammer, Crunchbase, Slideshare, Funny or Die, Zendesk, Github, Shopify are build on Ruby so, there are plenty of option for you out there.
-Moreover, a lot of startups are hiring people who have skill in RUby on Rails as not many programmers try to learn Ruby. So,you might have a clear cut to work in a start-up company.
-So, Ruby is beginner friendly and is quite hard skill set to find you have a good number of openings to work as a developer.
+
+## What to do after learning Ruby?
+Every programming language plays an important role. You can contribute to a lot of open source projects or you can apply for some big companies after having a good grasp on Ruby. As many big internet sites such as Basecamp, Airbnb, Bleacher Report, Fab.com, Scribd, Groupon, Gumroad, Hulu, Kickstarter, Pitchfork, Sendgrid, Soundcloud, Square, Yammer, Crunchbase, Slideshare, Funny or Die, Zendesk, Github, Shopify are built on Ruby so there are plenty of options out there.
+
+Moreover, a lot of startups are hiring people who have skills with Ruby on Rails as not many programmers try to learn Ruby. 
