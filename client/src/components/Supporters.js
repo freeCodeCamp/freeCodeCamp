@@ -17,22 +17,33 @@ const supportersLocale = supporterGoal.toLocaleString();
 
 function Supporters({ isDonating, activeDonations }) {
   const donationsLocale = activeDonations.toLocaleString();
+  const isGoalReached = activeDonations >= supporterGoal;
   return (
     <Fragment>
       <FullWidthRow>
         <h2>Support an open future.</h2>
       </FullWidthRow>
-      <FullWidthRow>
-        <div id='supporter-progress-wrapper'>
-          <ProgressBar max={10000} now={activeDonations} />
-          <div id='progress-label-wrapper'>
-            <span className='progress-label'>
-              {donationsLocale} supporters out of {supportersLocale} supporter
-              goal
-            </span>
+      {isGoalReached ? (
+        <FullWidthRow>
+          <Spacer />
+          <p>
+            🎉 {donationsLocale} supporters help keep freeCodeCamp.org free to
+            use
+          </p>
+        </FullWidthRow>
+      ) : (
+        <FullWidthRow>
+          <div id='supporter-progress-wrapper'>
+            <ProgressBar max={supporterGoal} now={activeDonations} />
+            <div id='progress-label-wrapper'>
+              <span className='progress-label'>
+                {donationsLocale} supporters out of {supportersLocale} supporter
+                goal
+              </span>
+            </div>
           </div>
-        </div>
-      </FullWidthRow>
+        </FullWidthRow>
+      )}
       <Spacer />
       <FullWidthRow>
         <b>
