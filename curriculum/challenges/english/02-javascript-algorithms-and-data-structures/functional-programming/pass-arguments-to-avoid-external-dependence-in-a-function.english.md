@@ -28,7 +28,7 @@ tests:
   - text: Your function <code>incrementer</code> should not change the value of <code>fixedValue</code>.
     testString: assert(fixedValue === 4, 'Your function <code>incrementer</code> should not change the value of <code>fixedValue</code>.');
   - text: Your <code>incrementer</code> function should take a parameter.
-    testString: assert(code.match(/function\s+?incrementer\s*?\(.+?\)/g), 'Your <code>incrementer</code> function should take a parameter.');
+    testString: assert(incrementer.length === 1, 'Your <code>incrementer</code> function should take a parameter.');
   - text: Your <code>incrementer</code> function should return a value that is one larger than the <code>fixedValue</code> value.
     testString: assert(newValue === 5, 'Your <code>incrementer</code> function should return a value that is one larger than the <code>fixedValue</code> value.');
 
@@ -45,12 +45,7 @@ tests:
 // the global variable
 var fixedValue = 4;
 
-// Add your code below this line
-function incrementer () {
-
-
-  // Add your code above this line
-}
+const incrementer = val => val + 1;
 
 var newValue = incrementer(fixedValue); // Should equal 5
 console.log(fixedValue); // Should print 4
