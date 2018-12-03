@@ -36,9 +36,7 @@ describe('InMemoryCache', () => {
     it('can handle promises correctly', done => {
       const cache = inMemoryCache(before, reportErrorStub);
       const promisedUpdate = () => new Promise(resolve => resolve(after));
-      cache.update(promisedUpdate);
-      // because async
-      setImmediate(() => {
+      cache.update(promisedUpdate).then(() => {
         expect(cache.get()).toBe(after);
         done();
       });
