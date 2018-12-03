@@ -67,7 +67,8 @@ The input is displayed as a button, the text which should be displayed in the bu
     </form>
 ```
 ### submit
-Displays the submit button. The text which should be displayed in the button is in the value attribute. After clicking on the button, the HTML do the validation and if it passes, the form is submitted.
+Displays the submit button. The text which should be displayed in the button is in value attribute. After clicking on the button, the HTML does the validation and if it passes, the form is submitted.
+
 ```html
     <form>
       <input type="submit" value="SUBMIT">
