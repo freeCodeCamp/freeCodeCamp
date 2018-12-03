@@ -1,4 +1,4 @@
-import React, { PureComponent, Fragment } from 'react';
+import React, { Component, Fragment } from 'react';
 import PropTypes from 'prop-types';
 import isEmail from 'validator/lib/isEmail';
 
@@ -23,7 +23,7 @@ const initialSate = {
   }
 };
 
-class DonateForm extends PureComponent {
+class DonateForm extends Component {
   constructor(...args) {
     super(...args);
     const [props] = args;

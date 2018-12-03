@@ -5,7 +5,7 @@ title: For Loop Statements
 
 Python utilizes a for loop to iterate over a list of elements. Unlike C or Java, which use the for loop to change a value in steps and access something such as an array using that value.
 
-For loops iterate over collection based data structures like lists, tuples, and dictionaries.
+For loops iterate over collection based data structures like [lists](https://github.com/freeCodeCamp/freeCodeCamp/tree/master/guide/english/python/lists), tuples, and dictionaries.
 
 The basic syntax is:
 
@@ -22,6 +22,14 @@ list_of_tuples = [(1,2), (3,4)]
 for a, b in list_of_tuples:
   print("a:", a, "b:", b)
 ```
+Output:
+
+```python
+a: 1 b: 2
+a: 3 b: 4
+```
+
+
 On the other hand, you can loop over anything that is iterable. You can call a function or use a list literal.
 
 ```python
@@ -34,6 +42,17 @@ for character in ["P", "y", "t", "h", "o", "n"]:
   print("Give me a '{}'!".format(character))
 ```
 
+Output:
+
+```python
+Give me a 'P'!
+Give me a 'y'!
+Give me a 't'!
+Give me a 'h'!
+Give me a 'o'!
+Give me a 'n'!
+```
+
 Some ways in which For loops are used: 
 
 **Iterate over the range() function**
@@ -43,7 +62,8 @@ for i in range(10):
     print(i)
 ```
 Rather than being a function, range is actually an immutable sequence type.
-The output will contain results from lower bound i.e 0 to the upper bound i.e 10 but excluding 10.By default the lower bound or the starting index is set to zero.
+The output will contain results from lower bound i.e 0 to the upper bound i.e 10 but excluding 10. By default the lower bound or the starting index is set to zero.
+
 Output:
 
 ```
@@ -177,7 +197,7 @@ for index, item in enumerate(shopping_basket):
   print("Item", index, "is a", item)
 ```
 **for/else statements**
-Pyhton permits you to use else with for loops, the else case is executed when none of the conditions with in the loop body was satisfied. To use the else we have to make use of `break` statement so that we can break out of the loop on a satsfied condition.If we do not break out then the else part will be executed.
+Python permits you to use else with for loops, the else case is executed when none of the conditions with in the loop body was satisfied. To use the else we have to make use of `break` statement so that we can break out of the loop on a satsfied condition. If we do not break out then the else part will be executed.
 
 ```python
 week_days = ['Monday','Tuesday','Wednesday','Thursday','Friday']
