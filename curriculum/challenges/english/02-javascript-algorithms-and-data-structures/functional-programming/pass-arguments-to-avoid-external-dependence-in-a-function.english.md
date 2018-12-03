@@ -45,7 +45,12 @@ tests:
 // the global variable
 var fixedValue = 4;
 
-const incrementer = val => val + 1;
+// Add your code below this line
+function incrementer () {
+
+
+  // Add your code above this line
+}
 
 var newValue = incrementer(fixedValue); // Should equal 5
 console.log(fixedValue); // Should print 4
@@ -61,6 +66,12 @@ console.log(fixedValue); // Should print 4
 <section id='solution'>
 
 ```js
-// solution required
+// the global variable
+var fixedValue = 4;
+
+const incrementer = val => val + 1;
+
+var newValue = incrementer(fixedValue); // Should equal 5
+console.log(fixedValue); // Should print 4
 ```
 </section>
