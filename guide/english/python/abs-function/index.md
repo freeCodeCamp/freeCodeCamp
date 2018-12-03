@@ -9,7 +9,7 @@ It takes one argument `x` - either an integer, or decimal, or complex number, or
 
 ## Return Value
 
-The return value would be a positive number. In case 
+The return value would be a positive number or zero. Even if a complex number is passed, it would return its magnitude, computed as per complex number algebra.
 + A complex number is passed - It would return its <a href='http://www.mathcentre.ac.uk/resources/sigma%20complex%20number%20leaflets/sigma-complex9-2009-1.pdf' target='_blank' rel='nofollow'>modulus</a> i.e., magnitude, computed as per complex number algebra.
 + A mathematical expression is passed - It would return its `|result|`, computed as per <a href ='https://en.wikipedia.org/wiki/Order_of_operations' target='_blank' rel='nofollow'> BODMAS </a> rule. 
 
