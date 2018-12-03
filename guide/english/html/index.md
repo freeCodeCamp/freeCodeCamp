@@ -20,6 +20,8 @@ HTML5 is the latest version, or specification, of HTML. The [World Wide Web Cons
  
 HTML5 introduced a host of semantic elements. As discussed, HTML provides meaning to our document, however it wasn't until HTML5's introduction of [semantic elements](#) that its potential was realized.
 
+HTML can embed programs written in a scripting language such as JavaScript, which affects the behavior and content of web pages.
+
 ## A simple example of an HTML Document
 
 ```html
