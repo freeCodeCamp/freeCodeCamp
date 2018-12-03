@@ -14,11 +14,11 @@ An HTML document has two aspects which are the Markup and the HyperText. The fir
 
 The first publicly available description of HTML was a document called "HTML Tags", first mentioned on the Internet in late 1991 by Tim Berners-Lee, who is widely credited with the invention of html. 
 
-The internet was originally created to store and present static (unchanging) documents. The aspects of HTML discussed above were seen perfectly in these documents which lacked all design and styling. They presented structured information that contained links to other documents.
+The Internet was originally created to store and present static (unchanging) documents. The aspects of HTML discussed above were seen perfectly in these documents which lacked all design and styling. They presented structured information that contained links to other documents.
  
 HTML5 is the latest version, or specification, of HTML. The [World Wide Web Consortium (W3C)](https://www.w3.org/) is the organization responsible for developing standards for the World Wide Web, including those for HTML. As web pages and web applications grow more complex, W3C updates HTML's standards.
  
-HTML5 introduced a host of semantic elements. As discussed, HTML provides meaning to our document, however it wasn't until HTML5's introduction of [semantic elements](#) that its potential was realized.
+HTML5 introduced a host of semantic elements. As discussed, HTML provides meaning to our documents, however it wasn't until HTML5's introduction of [semantic elements](#) that its potential was realized.
 
 HTML can embed programs written in a scripting language such as JavaScript, which affects the behavior and content of web pages.
 
