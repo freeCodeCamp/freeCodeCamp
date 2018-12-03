@@ -159,6 +159,8 @@ There are many possible ways a user can give input/s like:
 ```
 Comments can help in the understanding of the markup and do not display in the webpage.
 
+#### Learn HTML
+- [Introduction to Basic HTML & HTML5](https://learn.freecodecamp.org/responsive-web-design/basic-html-and-html5/)
 
 #### More Information
 
