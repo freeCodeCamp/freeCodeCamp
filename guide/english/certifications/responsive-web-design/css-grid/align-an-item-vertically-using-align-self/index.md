@@ -3,8 +3,22 @@ title: Align an Item Vertically using align-self
 ---
 ## Align an Item Vertically using align-self
 
-This is a stub. <a href='https://github.com/freecodecamp/guides/tree/master/src/pages/certifications/responsive-web-design/css-grid/align-an-item-vertically-using-align-self/index.md' target='_blank' rel='nofollow'>Help our community expand it</a>.
+In this challenge you are required to use the "align-self" property to vertically align a grid item.
 
-<a href='https://github.com/freecodecamp/guides/blob/master/README.md' target='_blank' rel='nofollow'>This quick style guide will help ensure your pull request gets accepted</a>.
+### Hint
 
-<!-- The article goes here, in GitHub-flavored Markdown. Feel free to add YouTube videos, images, and CodePen/JSBin embeds  -->
+You can vertically align an item by declaring the following in your CSS codeblock:
+
+````css
+align-self: value;
+````
+
+where value is how you would like to vertically align the item.
+
+### Solution
+
+Since this challenge requires you to vertically align the item with the class `item3` at the end, declare the following in your `.item3` CSS codeblock:
+
+````css
+align-self: end;
+````

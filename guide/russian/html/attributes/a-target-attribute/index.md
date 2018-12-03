@@ -1,10 +1,10 @@
 ---
 title: A Target Attribute
-localeTitle: Атрибут цели
+localeTitle: Атрибут target
 ---
-## Атрибут цели
+## Атрибут target
 
-`<a target>` указывает, где можно открыть связанный документ в теге `a` (anchor).
+Атрибут `<a target>` указывает, где необходимо открыть связанный документ в теге `a` (ссылка).
 
 #### Примеры:
 
@@ -15,7 +15,7 @@ localeTitle: Атрибут цели
     <a href="https://www.freecodecamp.org" target="_blank">freeCodeCamp</a> 
 ```
 
-Атрибут target со значением «\_self» открывает связанный документ в том же фрейме, который был нажат (это значение по умолчанию и обычно не нужно указывать).
+Атрибут target со значением «\_self» открывает связанный документ в том же фрейме, в котором был нажат (это значение по умолчанию и обычно его не нужно указывать).
 
 ```html
 
@@ -34,7 +34,7 @@ localeTitle: Атрибут цели
     <a href="https://www.freecodecamp.org" target="_parent">freeCodeCamp</a> 
 ```
 
-Атрибут target со значением «\_top» открывает связанный документ во всей полноте окна.
+Атрибут target со значением «\_top» открывает связанный документ во всем окне.
 
 ```html
 
@@ -50,4 +50,4 @@ localeTitle: Атрибут цели
 
 #### Дополнительная информация:
 
-Атрибут цели: [w3schools](https://www.w3schools.com/tags/att_a_target.asp)
+Атрибут target: [w3schools](https://www.w3schools.com/tags/att_a_target.asp)
