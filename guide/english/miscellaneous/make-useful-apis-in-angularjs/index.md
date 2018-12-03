@@ -1,5 +1,5 @@
 ---
-title: Make Useful Apis in Angularjs
+title: Make Useful APIs in Angularjs
 ---
 There are two more things you have to do before this to be useful to you, however. Say you want to show all the _things_ associated with the username requested with that page: you must first
 
