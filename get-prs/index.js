@@ -1,13 +1,14 @@
 require('dotenv').config();
+const _cliProgress = require('cli-progress');
 
 const { owner, repo, octokitConfig, octokitAuth } = require('../constants');
 
 const octokit = require('@octokit/rest')(octokitConfig);
-const { getRange } = require('./pr-stats');
+const { getRange, getCount } = require('./pr-stats');
 
 octokit.authenticate(octokitAuth);
 
-const paginate = async function paginate (method, octokit, firstPR, lastPR, prPropsToGet) {
+const paginate = async function paginate (method, octokit, firstPR, lastPR, prPropsToGet, progressBar) {
 
   const prFilter = (prs, first, last, prPropsToGet) => {
     const filtered = [];
@@ -41,6 +42,7 @@ const paginate = async function paginate (method, octokit, firstPR, lastPR, prPr
     response = await octokit.getNextPage(response);
     let dataFiltered = prFilter(response.data, firstPR, lastPR, prPropsToGet);
     data = data.concat(dataFiltered);
+    progressBar.increment(dataFiltered.length);
   }
   return data;
 };
@@ -48,7 +50,6 @@ const paginate = async function paginate (method, octokit, firstPR, lastPR, prPr
 const getUserInput = async () => {
   let [ n, f, type, start, end ] = process.argv;
   let [ firstPR, lastPR ] = await getRange().then(data => data);
-
   if (type !== 'all' && type !== 'range') {
     throw `Please specify either all or range for 1st arg.`;
   }
@@ -70,12 +71,19 @@ const getUserInput = async () => {
     }
     lastPR = end;
   }
-  return {firstPR, lastPR};
+  const totalPRs = await getCount().then(data => data);
+  return {totalPRs, firstPR, lastPR};
 };
 
-const getPRs = async (firstPR, lastPR, prPropsToGet) => {
-  console.log(`Retrieving PRs (#${firstPR} thru #${lastPR})`);
-  let openPRs = await paginate(octokit.pullRequests.list, octokit, firstPR, lastPR, prPropsToGet);
+const getPRs = async (totalPRs, firstPR, lastPR, prPropsToGet) => {
+  const getPRsBar = new _cliProgress.Bar({
+    format: `Part 1 of 2: Retrieving PRs (${firstPR}-${lastPR}) [{bar}] {percentage}%`
+  }, _cliProgress.Presets.shades_classic);
+  getPRsBar.start(totalPRs, 0);
+  let openPRs = await paginate(octokit.pullRequests.list, octokit, firstPR, lastPR, prPropsToGet, getPRsBar);
+  getPRsBar.update(totalPRs);
+  getPRsBar.stop();
+  console.log(`# of PRs retrieved: ${openPRs.length}`);
   return { firstPR, lastPR, openPRs };
 }
 

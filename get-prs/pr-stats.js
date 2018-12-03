@@ -13,11 +13,14 @@ const page = 1;
 const per_page = 1;
 
 const getCount = async () => {
-  const { data } = await octokit.search.issues({
+  const { data: { total_count: count } } = await octokit.search.issues({
     q: `repo:${owner}/${repo}+is:open+type:pr+base:master`,
     sort: 'created', order: 'asc', page: 1, per_page: 1
+  })
+  .catch((err) => {
+    console.log(err);
   });
-  return data.length;
+  return count;
 };
 
 const getFirst = async () => {
