@@ -4,7 +4,7 @@ title: HTML
 
 # HTML
 
-HyperText Markup Language (HTML) is a markup language used to construct online documents and is the foundation of most websites today. A markup language like HTML allows us to:
+HyperText Markup Language (HTML) is the standard markup language used for creating web pages, web applications and moreover is the foundation of most websites today.. A markup language like HTML allows us to:
 
    1) Create links to other documents
    2) Structure the content in our document 
