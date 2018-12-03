@@ -20,6 +20,7 @@ This new way of creating strings gives you more flexibility to create robust str
 ## Instructions
 <section id='instructions'>
 Use template literal syntax with backticks to display each entry of the <code>result</code> object's <code>failure</code> array. Each entry should be wrapped inside an <code>li</code> element with the class attribute <code>text-warning</code>, and listed within the <code>resultDisplayArray</code>.
+Use an iterator method (any kind of loop) to get the desired output.
 </section>
 
 ## Tests
@@ -31,9 +32,10 @@ tests:
     testString: assert(typeof makeList(result.failure) === 'object' && resultDisplayArray.length === 3, '<code>resultDisplayArray</code> is a list containing <code>result failure</code> messages.');
   - text: <code>resultDisplayArray</code> is the desired output.
     testString: assert(makeList(result.failure).every((v, i) => v === `<li class="text-warning">${result.failure[i]}</li>` || v === `<li class='text-warning'>${result.failure[i]}</li>`), '<code>resultDisplayArray</code> is the desired output.');
-  - text: Template strings were used
-    testString: getUserInput => assert(getUserInput('index').match(/`.*`/g), 'Template strings were not used');
-
+  - text: Template strings and expression interpolation should be used
+    testString: getUserInput => assert(getUserInput('index').match(/(`.*\${.*}.*`)/), 'Template strings and expression interpolation should be used');
+  - text: An iterator should be used
+    testString: getUserInput => assert(getUserInput('index').match(/for|map|reduce|forEach|while/), 'An iterator should be used');
 ```
 
 </section>
@@ -77,6 +79,24 @@ const resultDisplayArray = makeList(result.failure);
 <section id='solution'>
 
 ```js
-// solution required
+const result = {
+  success: ["max-length", "no-amd", "prefer-arrow-functions"],
+  failure: ["no-var", "var-on-top", "linebreak"],
+  skipped: ["id-blacklist", "no-dup-keys"]
+};
+function makeList(arr) {
+  "use strict";
+  
+  const resultDisplayArray = arr.map(val => `<li class="text-warning">${val}</li>`);
+  
+  return resultDisplayArray;
+}
+/**
+ * makeList(result.failure) should return:
+ * [ `<li class="text-warning">no-var</li>`,
+ *   `<li class="text-warning">var-on-top</li>`,
+ *   `<li class="text-warning">linebreak</li>` ]
+ **/
+const resultDisplayArray = makeList(result.failure);
 ```
 </section>
