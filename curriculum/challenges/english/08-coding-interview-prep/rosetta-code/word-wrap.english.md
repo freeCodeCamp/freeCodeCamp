@@ -15,7 +15,7 @@ Example text:
 <pre>
 Wrap text using a more sophisticated algorithm such as the Knuth and Plass TeX algorithm.
 If your language provides this, you get easy extra credit,
-but you "must reference documentation" indicating that the algorithm
+but you ''must reference documentation'' indicating that the algorithm
 is something better than a simple minimimum length algorithm.
 </pre>
 <p>
@@ -44,17 +44,17 @@ than a simple minimimum length algorithm.
 ```yml
 tests:
   - text: wrap must be a function.
-    testString: 'assert.equal(typeof wrap, "function", "wrap must be a function.");'
+    testString: assert.equal(typeof wrap, 'function', 'wrap must be a function.');
   - text: wrap must return a string.
-    testString: 'assert.equal(typeof wrap("abc", 10), "string", "wrap must return a string.");'
+    testString: assert.equal(typeof wrap('abc', 10), 'string', 'wrap must return a string.');
   - text: wrap(80) must return 4 lines.
-    testString: 'assert(wrapped80.split("\n").length === 4, "wrap(80) must return 4 lines.");'
+    testString: assert(wrapped80.split('\n').length === 4, 'wrap(80) must return 4 lines.');
   - text: Your <code>wrap</code> function should return our expected text
-    testString: 'assert.equal(wrapped80.split("\n")[0], firstRow80, "Your <code>wrap</code> function should return our expected text");'
+    testString: assert.equal(wrapped80.split('\n')[0], firstRow80, 'Your <code>wrap</code> function should return our expected text');
   - text: wrap(42) must return 7 lines.
-    testString: 'assert(wrapped42.split("\n").length === 7, "wrap(42) must return 7 lines.");'
+    testString: assert(wrapped42.split('\n').length === 7, 'wrap(42) must return 7 lines.');
   - text: Your <code>wrap</code> function should return our expected text
-    testString: 'assert.equal(wrapped42.split("\n")[0], firstRow42, "Your <code>wrap</code> function should return our expected text");'
+    testString: assert.equal(wrapped42.split('\n')[0], firstRow42, 'Your <code>wrap</code> function should return our expected text');
 
 ```
 
@@ -78,7 +78,19 @@ function wrap (text, limit) {
 <div id='js-teardown'>
 
 ```js
-console.info('after the test');
+const text =
+`Wrap text using a more sophisticated algorithm such as the Knuth and Plass TeX algorithm.
+If your language provides this, you get easy extra credit,
+but you ''must reference documentation'' indicating that the algorithm
+is something better than a simple minimimum length algorithm.`;
+
+const wrapped80 = wrap(text, 80);
+const wrapped42 = wrap(text, 42);
+
+const firstRow80 =
+    'Wrap text using a more sophisticated algorithm such as the Knuth and Plass TeX';
+
+const firstRow42 = 'Wrap text using a more sophisticated';
 ```
 
 </div>
@@ -91,7 +103,7 @@ console.info('after the test');
 
 ```js
 function wrap (text, limit) {
-  const noNewlines = text.replace('\n', ");
+  const noNewlines = text.replace('\n', '');
   if (noNewlines.length > limit) {
     // find the last space within limit
     const edge = noNewlines.slice(0, limit).lastIndexOf(' ');
