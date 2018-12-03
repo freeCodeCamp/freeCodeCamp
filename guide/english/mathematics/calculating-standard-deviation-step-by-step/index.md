@@ -7,7 +7,7 @@ Standard deviation is the measure of the average distance of all data points in 
 
 ![alt text](https://github.com/TheRealSpartacus/sources/blob/master/StdDev/SD%20form.png)
 
-where *n* is the number of elements in the data set, *x<sub>i</sub>* is the *i*th element in the data set, and *x*- is the mean of the data set
+where *n* is the number of elements in the data set, *x<sub>i</sub>* is the *i*th element in the data set, and x&#772; is the mean of the data set
 
 As seen in the formula, you first take the difference of all the values in the data set from the mean, square all of the differences, sum up all the squares, then divide it all by the number of elements in the data set minus 1.
 
