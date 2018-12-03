@@ -78,7 +78,7 @@ function Set() {
         secondSet.forEach(function(e){
             unionSet.add(e);
         });
-        return unionSet;
+        return unionSet.values();
     };
     // this method will return the intersection of two sets as a new set
     this.intersection = function(otherSet) {
@@ -89,7 +89,7 @@ function Set() {
                 intersectionSet.add(e);
             }
         });
-        return intersectionSet;
+        return intersectionSet.values();
     };
     // change code below this line
     // change code above this line
@@ -150,7 +150,7 @@ function Set() {
         secondSet.forEach(function(e){
             unionSet.add(e);
         });
-        return unionSet;
+        return unionSet.values();
     };
     // this method will return the intersection of two sets as a new set
     this.intersection = function(otherSet) {
@@ -161,7 +161,7 @@ function Set() {
                 intersectionSet.add(e);
             }
         });
-        return intersectionSet;
+        return intersectionSet.values();;
     };
     this.difference = function(otherSet) {
         var differenceSet = new Set();
@@ -171,7 +171,7 @@ function Set() {
                 differenceSet.add(e);
             }
         });
-        return differenceSet;
+        return differenceSet.values();
     }
 }
 ```
