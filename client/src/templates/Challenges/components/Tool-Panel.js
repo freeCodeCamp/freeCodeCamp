@@ -6,12 +6,13 @@ import { connect } from 'react-redux';
 import { Button } from '@freecodecamp/react-bootstrap';
 
 import './tool-panel.css';
-import { openModal, executeChallenge } from '../redux';
+import { openModal, executeChallenge, executeSaveLesson } from '../redux';
 
 const mapStateToProps = () => ({});
 const mapDispatchToProps = dispatch =>
   bindActionCreators(
     {
+      executeSaveLesson,
       executeChallenge,
       openHelpModal: () => openModal('help'),
       openVideoModal: () => openModal('video'),
@@ -21,6 +22,7 @@ const mapDispatchToProps = dispatch =>
   );
 
 const propTypes = {
+  executeSaveLesson: PropTypes.func.isRequired,
   executeChallenge: PropTypes.func.isRequired,
   guideUrl: PropTypes.string,
   openHelpModal: PropTypes.func.isRequired,
@@ -30,6 +32,7 @@ const propTypes = {
 };
 
 function ToolPanel({
+  executeSaveLesson,
   executeChallenge,
   openHelpModal,
   openVideoModal,
@@ -84,7 +87,7 @@ function ToolPanel({
           block={true}
           bsStyle='primary'
           className='btn-primary-invert'
-          onClick={saveLesson}
+          onClick={executeSaveLesson}
           >
           Save Lesson
         </Button>

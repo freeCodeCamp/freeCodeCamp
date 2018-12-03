@@ -89,7 +89,7 @@ export const epics = [
   executeChallengeEpic,
   codeStorageEpic,
   currentChallengeEpic,
-  executeSaveLesson
+  executeSaveLessonEpic
 ];
 
 export const sagas = [...createIdToNameMapSaga(types)];
