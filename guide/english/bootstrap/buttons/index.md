@@ -84,6 +84,11 @@ This is a list of the CSS classes for different size of the buttons.
 
 <button type="button" class="btn btn-block">Block</button>
 
+#### Bootstrap Disabled Button State
+This is used to show that the button is disabled by fading the button. This can be achieved through adding "disabled" to the `<button>` tag.
+  
+<button type="button" class="btn btn-lg btn-primary" disabled>Primary button</button>
+
 #### Bootstrap Outlined Buttons:
 It is possible to also have outlined buttons rather than fully colored in ones. This is achieved by placing the mid fix `outline` between the button class you want. A sample usage would be as follows:
 
