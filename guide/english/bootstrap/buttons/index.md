@@ -78,8 +78,8 @@ This is a list of the CSS classes for different size of the buttons.
 
 <button type="button" class="btn btn-xs">Extra Small</button>
 
-#### Bootstrap Disabled Button Sate
-This is used to show that the button is disabled by fading the button. This can be achieved through adding "disabled" to the <button> tag.
+#### Bootstrap Disabled Button State
+This is used to show that the button is disabled by fading the button. This can be achieved through adding "disabled" to the `<button>` tag.
   
 <button type="button" class="btn btn-lg btn-primary" disabled>Primary button</button>
 
@@ -96,6 +96,3 @@ _Note: Do not include the dot in the HTML Class Attribute, referring to the clas
 * <a href='https://getbootstrap.com/docs/4.0/components/buttons/' target='_blank' rel='nofollow'>Bootstrap Buttons documentation</a>
 * <a href='http://getbootstrap.com/docs/4.0/components/button-group/' target='_blank' rel='nofollow'>Bootstrap Button Group documentation</a>
 * [Bootstrap Get Started](/articles/bootstrap/bootstrap-get-started)
-
-#### Credits: 
-*https://getbootstrap.com/docs/4.0/components/buttons/
