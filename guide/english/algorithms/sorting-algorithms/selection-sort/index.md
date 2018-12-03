@@ -77,26 +77,29 @@ def seletion_sort(arr):
          arr[i], arr[min_i] = arr[min_i], arr[i]
 ```
 ### Implementation in Java
+```java
 public void selectionsort(int array[])
+{
+    int n = array.length;            //method to find length of array 
+    for (int i = 0; i < n-1; i++)
     {
-        int n = array.length;            //method to find length of array 
-        for (int i = 0; i < n-1; i++)
+        int index = i;
+        int min = array[i];          // taking the min element as ith element of array
+        for (int j = i+1; j < n; j++)
         {
-            int index = i;
-            int min = array[i];          // taking the min element as ith element of array
-            for (int j = i+1; j < n; j++)
+            if (array[j] < array[index])
             {
-                if (array[j] < array[index])
-                {
-                    index = j;
-                    min = array[j];
-                }
+                index = j;
+                min = array[j];
             }
-            int t = array[index];         //Interchange the places of the elements
-            array[index] = array[i];
-            array[i] = t;
         }
+        int t = array[index];         //Interchange the places of the elements
+        array[index] = array[i];
+        array[i] = t;
     }
+}
+```
+    
 
 ### Properties
 
