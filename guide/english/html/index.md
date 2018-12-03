@@ -28,7 +28,7 @@ HTML can embed programs written in a scripting language such as JavaScript, whic
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Page Title</title>
+  <title>Page Heading or Page Title</title>
 </head>
 <body>
 
