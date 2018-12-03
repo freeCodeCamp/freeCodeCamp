@@ -18,23 +18,20 @@ function InMemoryCache(initialValue, reportError) {
       return typeof value !== 'undefined' ? value : null;
     },
 
-    async update(fn) {
-      let maybePromisedValue;
+    update(fn) {
       try {
-        maybePromisedValue = fn();
+        const value = fn();
+        if (isPromiseLike(value)) {
+          return value.then(value => cache.set(cacheKey, value));
+        } else {
+          cache.set(cacheKey, value);
+        }
       } catch (e) {
         const errMsg = `InMemoryCache > update > caught: ${e.message}`;
         e.message = errMsg;
         reportError(e);
-        return null;
       }
-      if (isPromiseLike(maybePromisedValue)) {
-        return maybePromisedValue.then(value => cache.set(cacheKey, value));
-      } else {
-        const value = maybePromisedValue;
-        cache.set(cacheKey, value);
-        return null;
-      }
+      return null;
     },
 
     clear() {
