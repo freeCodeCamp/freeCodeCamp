@@ -36,6 +36,7 @@ HTML5 introduced a host of semantic elements. As discussed, HTML provides meanin
 </body>
 </html>
 ```
+In HTML tags come in pairs, as seen above. The first tag in a pair is called the *start tag* or the *opening tag*,and the second tag is called the *end tag* or the *closing tag*. The later comes with a forward slash, which is inserted before the tag name.
 
 !DOCTYPE html: Defines this document to be HTML5
 
