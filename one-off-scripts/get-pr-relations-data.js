@@ -54,7 +54,7 @@ class Log {
 
   changeFilename( [first, last] ) {
     const now = formatDate(new Date(), 'YYYY-MM-DDTHHmmss');
-    const newFilename = path.resolve(__dirname,`./work-logs/pr-relations_${first}-${last}_${now}.json`);
+    const newFilename = path.resolve(__dirname,`../work-logs/pr-relations_${first}-${last}_${now}.json`);
     fs.rename(this._logfile, newFilename, function(err) {
       if (err) {
         throw('ERROR: ' + err);
