@@ -127,7 +127,9 @@ class ShowClassic extends Component {
       },
       pageContext: { challengeMeta }
     } = this.props;
-    files.indexhtml.contents = localStorage.getItem(this.props.pathContext.challengeMeta.id)
+    if (localStorage.getItem(this.props.pathContext.challengeMeta.id)) {
+      files.indexhtml.contents = localStorage.getItem(this.props.pathContext.challengeMeta.id)
+    }
     createFiles(files);
     initTests(tests);
     updateChallengeMeta({ ...challengeMeta, title, challengeType });
