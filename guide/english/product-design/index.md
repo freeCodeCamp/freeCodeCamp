@@ -11,26 +11,25 @@ User Research, Data Analysis, UX and Interaction Design, Graphic and UI Design, 
 <!-- Please add any articles you think might be helpful to read before writing the article -->
 
  ###### Courses:
-<a href='https://classroom.udacity.com/courses/ud509' target='_blank' rel='nofollow'>Product Design Course</a>
-[Udacity] (https://classroom.udacity.com/)
+ 
+* [Udacity - Product Design Course](https://classroom.udacity.com/courses/ud509)
 
- <a href='https://www.edx.org/course/product-design-the-delft-design-approach-0' target='_blank' rel='nofollow'>Product Design: The Delft Design Approach</a>
-[edX] (https://www.edx.org/)
+* [edX - Product Design: The Delft Design Approach](https://www.edx.org/course/product-design-the-delft-design-approach-0) 
 
  ###### Youtube:
-<a href='https://www.youtube.com/watch?v=XRd6Ddn4ZSY' target='_blank' rel='nofollow'>Netflix Product Designer | Navin Iyengar | Design Like a Scientist</a>
-[Awwwards Youtube Channel] (https://www.youtube.com/channel/UCYWGYef22gx8PaXZMLHAQsw)
+* [Awwwards Youtube Channel - Design Like a Scientist](https://www.youtube.com/watch?v=XRd6Ddn4ZSY)
 
- <a href='https://www.youtube.com/watch?v=v-XDF57OOQQ' target='_blank' rel='nofollow'>How to be a Freelance Product Designer — Jared Erondu</a>
-[Dann Petty Youtube Channel] (https://www.youtube.com/channel/UCTOwGti_mRb2J1JfTdIkg_w)
+* [Dann Petty Youtube Channel - How to be a Freelance Product Designer](https://www.youtube.com/watch?v=v-XDF57OOQQ)
 
 
  ###### Resources:
-<a href='https://medium.com/@jeanniehuang/product-design-resources-ive-found-helpful-5dadad58dcff' target='_blank' rel='nofollow'>Product Design Resources I’ve Found Helpful</a>
-[Jeannie Huang Medium] (https://medium.com/@jeanniehuang)
+* [Medium - Product Design Resources I’ve Found Helpful](https://medium.com/@jeanniehuang/product-design-resources-ive-found-helpful-5dadad58dcff)
 
- <a href='https://uxdesign.cc/product-design/home' target='_blank' rel='nofollow'>Product Design - UX Collective</a>
-[UX Collective] (https://uxdesign.cc/)
+* [UX Collective - Product Design](https://uxdesign.cc/product-design/home)
 
- <a href='https://www.invisionapp.com/inside-design/7-free-resources-every-product-designer-needs' target='_blank' rel='nofollow'>7 free resources every product designer needs</a>
-[Inside Design by InVision] (https://www.invisionapp.com/inside-design/)
+
+* [Inside Design by InVision - 7 free resources every product designer needs](https://www.invisionapp.com/inside-design/7-free-resources-every-product-designer-needs)
+
+* [Product Design Weekly](http://designweekly.atomic.io/)
+
+* [The Ultimate Guide to Product & Design in the Tech Ecosystem](https://blog.usejournal.com/almost-every-product-design-resource-you-need-to-understand-the-tech-ecosystem-3d734f9c1a22)
