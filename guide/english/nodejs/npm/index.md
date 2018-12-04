@@ -94,7 +94,7 @@ To do so, we mention the package version we want to install.
 $ npm install underscore@1.8.2 -S
 ```
 
-To remove a global dependency, use `-g` flag.
+To install a global dependency, use `-g` flag.
 
 ### Uninstalling Local Packages
 
@@ -288,13 +288,13 @@ $ npm cache clean
 
 ## Yarn - an alternative to npm
 
-Yarn is also a JavaScript package manager developed and maintained by Facebook. Both share high level similarities when it come to using them. It is supposedly to be faster in installing dependencies than npm. To install it:
+Yarn is also a JavaScript package manager developed and maintained by Facebook. Both share high level similarities when it come to using them. It may run faster than npm, but other key features (such as having a lockfile) are now present in npm as of version 5. To install it:
 
 ```shell
 npm install -g yarn
 ```
 
-Yarn doesn't intend to replace npm, more like improving on it. It uses the same package.json file, and saves dependencies to the `node_modules/`folder. To initialise a projcet, you will use:
+Yarn doesn't intend to replace npm, more like improving on it. It uses the same package.json file, and saves dependencies to the `node_modules/`folder. To initialise a project, you will use:
 
 ```shell
 yarn init
