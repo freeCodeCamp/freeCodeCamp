@@ -1,0 +1,13 @@
+{
+  "name": "@freecodecamp/mods-dashboard-server",
+  "private": true,
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js"
+  },
+  "dependencies": {
+    "express": "^4.16.3"
+  },
+  "devDependencies": {},
+  "license": "BSD-3-Clause"
+}

@@ -1,6 +1,8 @@
 {
   "packages": [
-    "sweeper"
+    "sweeper",
+    "dashboard-api",
+    "dashboard-client"
   ],
   "version": "independent"
 }

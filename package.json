@@ -1,5 +1,6 @@
 {
   "name": "@freecodecamp/github-tools",
+  "description": "freeCodeCamp.org's tools for helping maintain its Open Source codebase",
   "private": true,
   "scripts": {
     "postinstall": "lerna bootstrap"

@@ -1,7 +1,6 @@
 {
   "name": "@freecodecamp/sweeper",
-  "version": "1.0.0",
-  "description": "freeCodeCamp.org's tools for helping maintain its Open Source codebase",
+  "private": true,
   "main": "index.js",
   "dependencies": {
     "@octokit/rest": "^15.18.0",
@@ -20,14 +19,5 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/freeCodeCamp/github-tools.git"
-  },
-  "author": "",
-  "license": "BSD-3-Clause",
-  "bugs": {
-    "url": "https://github.com/freeCodeCamp/github-tools/issues"
-  },
-  "homepage": "https://github.com/freeCodeCamp/github-tools#readme"
+  "license": "BSD-3-Clause"
 }
