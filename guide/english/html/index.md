@@ -3,6 +3,8 @@ title: HTML
 ---
 
 # HTML
+![html logo](https://www.w3.org/html/logo/badge/html5-badge-h-solo.png)
+
 
 HyperText Markup Language (HTML) is the standard [markup language](https://en.wikipedia.org/wiki/Markup_language) used for creating web pages, web applications and moreover is the foundation of most websites today. A markup language like HTML allows us to:
 
