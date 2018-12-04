@@ -39,12 +39,10 @@ tests:
 <div id='js-seed'>
 
 ```js
-const increment = (function() {
-  "use strict";
-  return function increment(number, value) {
-    return number + value;
-  };
-})();
+function increment(number, value) {
+  return number + value;
+};
+
 console.log(increment(5, 2)); // returns 7
 console.log(increment(5)); // returns 6
 ```
@@ -59,6 +57,8 @@ console.log(increment(5)); // returns 6
 <section id='solution'>
 
 ```js
-// solution required
+function increment(number, value = 1) {
+  return number + value;
+};
 ```
 </section>
