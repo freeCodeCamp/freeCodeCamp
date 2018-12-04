@@ -1,7 +1,7 @@
 {
-  "name": "automation",
+  "name": "@freecodecamp/sweeper",
   "version": "1.0.0",
-  "description": "Github bots and crawlers for FCC\r # github-bots",
+  "description": "freeCodeCamp.org's tools for helping maintain its Open Source codebase",
   "main": "index.js",
   "dependencies": {
     "@octokit/rest": "^15.18.0",
@@ -22,12 +22,12 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/RandellDawson/automation.git"
+    "url": "git+https://github.com/freeCodeCamp/github-tools.git"
   },
   "author": "",
   "license": "BSD-3-Clause",
   "bugs": {
-    "url": "https://github.com/RandellDawson/automation/issues"
+    "url": "https://github.com/freeCodeCamp/github-tools/issues"
   },
-  "homepage": "https://github.com/RandellDawson/automation#readme"
+  "homepage": "https://github.com/freeCodeCamp/github-tools#readme"
 }
