@@ -74,11 +74,11 @@ function ArticleMeta({
         <span className='meta-item'>
           <FontAwesomeIcon icon={faClock} /> {`${meta.readTime} minute read`}
         </span>
-        {viewCount >= 100 ? (
+        {viewCount >= 100 && (
           <span className='meta-item'>
             <FontAwesomeIcon icon={faFreeCodeCamp} /> {`${viewCount} views`}
           </span>
-        ) : null}
+        )}
       </div>
     </div>
   );

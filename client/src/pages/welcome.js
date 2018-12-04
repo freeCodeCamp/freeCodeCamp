@@ -10,16 +10,19 @@ import Helmet from 'react-helmet';
 import { Loader, Spacer } from '../components/helpers';
 import CurrentChallengeLink from '../components/helpers/CurrentChallengeLink';
 import Layout from '../components/layouts/Default';
+import Supporters from '../components/Supporters';
 import {
   userSelector,
   userFetchStateSelector,
-  isSignedInSelector
+  isSignedInSelector,
+  activeDonationsSelector
 } from '../redux';
 import { randomQuote } from '../utils/get-words';
 
 import './welcome.css';
 
 const propTypes = {
+  activeDonations: PropTypes.number,
   fetchState: PropTypes.shape({
     pending: PropTypes.bool,
     complete: PropTypes.bool,
@@ -32,7 +35,8 @@ const propTypes = {
     completedChallengeCount: PropTypes.number,
     completedProjectCount: PropTypes.number,
     completedCertCount: PropTypes.number,
-    completedLegacyCertCount: PropTypes.number
+    completedLegacyCertCount: PropTypes.number,
+    isDonating: PropTypes.bool
   })
 };
 
@@ -40,7 +44,13 @@ const mapStateToProps = createSelector(
   userFetchStateSelector,
   isSignedInSelector,
   userSelector,
-  (fetchState, isSignedIn, user) => ({ fetchState, isSignedIn, user })
+  activeDonationsSelector,
+  (fetchState, isSignedIn, user, activeDonations) => ({
+    activeDonations,
+    fetchState,
+    isSignedIn,
+    user
+  })
 );
 const mapDispatchToProps = dispatch => bindActionCreators({}, dispatch);
 
@@ -53,8 +63,10 @@ function Welcome({
     completedChallengeCount: completedChallenges = 0,
     completedProjectCount = 0,
     completedCertCount = 0,
-    completedLegacyCertCount: completedLegacyCerts = 0
-  }
+    completedLegacyCertCount: completedLegacyCerts = 0,
+    isDonating
+  },
+  activeDonations
 }) {
   if (pending && !complete) {
     return (
@@ -91,18 +103,11 @@ function Welcome({
             </Col>
           </Row>
           <Spacer />
-          <Row>
-            <Col sm={8} smOffset={2} xs={12}>
-              <a
-                className='update-link'
-                href='/n/7gR5pBM-K?refsource=userhome'
-                target='_blank'
-                >
-                We're building a massive open dataset about new coders. Take the
-                2018 New Coder Survey. It only takes 5 minutes.
-              </a>
-            </Col>
-          </Row>
+          <Supporters
+            activeDonations={activeDonations}
+            isDonating={isDonating}
+          />
+          <Spacer size={2} />
           <Spacer />
           <Row className='quote-partial'>
             <Col sm={10} smOffset={1} xs={12}>

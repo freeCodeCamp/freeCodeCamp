@@ -3,13 +3,14 @@ title: HTML
 ---
 
 # HTML
+![html logo](https://www.w3.org/html/logo/badge/html5-badge-h-solo.png)
 
-HyperText Markup Language (HTML) is the standard markup language used for creating web pages, web applications and moreover is the foundation of most websites today.. A markup language like HTML allows us to:
+HyperText Markup Language (HTML) is the standard [markup language](https://en.wikipedia.org/wiki/Markup_language) used for creating web pages, web applications and moreover is the foundation of most websites today. A markup language like HTML allows us to:
 
    1) Create links to other documents
    2) Structure the content in our document 
    3) Attribute context and meaning to the content of our document
- 
+
 An HTML document has two aspects which are the Markup and the HyperText. The first aspect contains structured information that makes up the website, and latter contains text-links (HyperText) to other documents. We structure our pages using [HTML elements](#). They are constructs of the language providing [structure](#) and [meaning](#) in our document for the browser and the [<anchor>](#) element links to other documents across the internet.
 
 The first publicly available description of HTML was a document called "HTML Tags", first mentioned on the Internet in late 1991 by Tim Berners-Lee, who is widely credited with the invention of html. 
@@ -141,14 +142,25 @@ To create a link the `<a>` tag is used. The href attribute holds the URL address
 <a href="https://www.youtube.com">A link to Youtube!</a>
 ```
 
+**Images**  
+
+To insert an image, `<img>` tag is used. The `src` attribute holds the URL or path to the image.
+
+```html
+<img src="path/image_name.format" alt="descriptive text">
+<img src="image_name.format" alt="descriptive text">
+<img src="www.url/image_name.format" alt="descriptive text">
+```
+
 **Inputs**
 
-There are many possible ways a user can give input/s like:
+There are many possible ways a user can give input/s, such as:
 
 ```html
 <input type="text" /> <!-- This is for text input -->
 <input type="file" /> <!-- This is for uploading files -->
 <input type="checkbox" /> <!-- This is for checkboxes -->
+<input type="radio" /> <!-- This is for radio buttons -->
 ```
 
 **Comments**
@@ -157,6 +169,40 @@ There are many possible ways a user can give input/s like:
 <!-- This is a comment -->
 ```
 Comments can help in the understanding of the markup and do not display in the webpage.
+
+**Text Formatting**
+
+HTML defines special elements for defining text with special meanings.
+
+- `<b>` - Bold Text
+- `<strong>` - Important text
+- `<i>` - Italic Text
+- `<em>` - Emphasized Text
+- `<sub>` - Subscripted Text
+- `<sup>` - Superscripted Text
+
+## HTML Attributes
+
+An attribute gives more information about an element. Attibutes always come inside an opening tag.
+
+**Format of an attribute**
+
+Name = “value”
+Alt = “alternate text”. The alt attribute provides an alternative information about an image that is not displaying. It is good practice to use the alt attribute on all images for the sake of users who cannot view it to help screen readers access the alternate text of the image. An alt text should be a text that describes what the image is about. The alternative text is inserted into the 'alt' within the `<img>` tag
+
+An example of `alt` attribute used in an `<img>` is this:
+
+```html
+<img src ="https://s3.amazonaws.com/freecodecamp/freecodecamp_logo.svg" alt="FreeCodeCamp Logo">
+```
+
+**Empty alt text**
+
+An alt tag can be blank only when the image is used for decorative purposes. When an alt tag is empty, screen readers will ignore them. Decorative images do not add information to the content of the page. A blank alt tag is written without a text in the quotes `alt=""` or `alt = " " `.You might think that because the images is for decorative purposes, why not leave out the option of using `alt` attribute. When you leave out the `alt` attribute, screen readers would read out the file name instead. So, it is always best to include the `alt` attribute.
+
+```
+<img src="examples/topinfo_bg.png" alt="">
+```
 
 ### New APIs
 
@@ -177,6 +223,8 @@ In addition to specifying markup, HTML 5 specifies scripting application program
 
 #### Learn HTML
 - [Introduction to Basic HTML & HTML5](https://learn.freecodecamp.org/responsive-web-design/basic-html-and-html5/)
+- [Scrimba's Basic HTML Course](https://scrimba.com/g/ghtml)
+- [W3C's Full HTML Tutorial](https://www.w3schools.com/html/default.asp)
 
 #### More Information
 
@@ -184,3 +232,5 @@ In addition to specifying markup, HTML 5 specifies scripting application program
 - [Semantic HTML](https://guide.freecodecamp.org/html/html5-semantic-elements)
 - [HTML Attributes](https://guide.freecodecamp.org/html/attributes)
 - [HTML Reference](https://htmlreference.io/)
+- [Image ALT Tag Tips for HTML](http://accessibility.psu.edu/images/imageshtml/)
+- [Decorative Images](https://www.w3.org/WAI/tutorials/images/decorative/)
