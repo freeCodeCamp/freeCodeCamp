@@ -1,15 +1,5 @@
-# automation
+![freeCodeCamp Social Banner](https://s3.amazonaws.com/freecodecamp/wide-social-banner.png)
 
-Scripts for @freeCodeCamp's GitHub automation tasks.
+# github-tools
 
-## Usage
-
-Todo
-
-## Caveat 
-
-The automation scripts will error out on actions performed by repository admins, for example:
-
-> If an admin removes a label from a Pull request, the script can not add that label back. This is usually because the script is acting on behalf of a non-admin user with write access.
->
-> This is usually the case with the use of access tokens for scripts. 
+Tools to help maintain [freeCodeCamp.org](https://www.freecodecamp.org)'s Open Source Codebase on GitHub
