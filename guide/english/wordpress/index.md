@@ -53,6 +53,13 @@ Themes typically provide an overall framework for the design and functionality o
 
 Plugins extend WordPress functionality in specific ways, adding features like mailing list integrations, contact forms, enhanced security, or custom data fields. As with themes, there's a huge number of plugins available, many of them free, or with both free and pro versions available, covering almost any feature you might think of.
 
+The following are some of the popular and useful plugins in WordPress:
+- Yoast SEO
+- JetPack
+- W3 Total Cache
+- Akismet 
+- Mailchimp etc
+
 ### From Blogging Platform to CMS
 
 The power of WordPress becomes apparent in the use of 3 features: custom post types, custom taxonomies, and custom fields. Generating custom post types allows a website administrator or web developer to separate very specific content types from the rest of their website content. This can be helpful on websites with large page counts and numerous varying content sections.
