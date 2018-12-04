@@ -31,6 +31,8 @@ tests:
     testString: assert(half(stats) === 28.015, '<code>half(stats)</code> should be <code>28.015</code>');
   - text: Destructuring was used.
     testString: getUserInput => assert(getUserInput('index').match(/\(\s*\{\s*\w+\s*,\s*\w+\s*\}\s*\)/g), 'Destructuring was used.');
+  - text: Destructured parameter was used.
+    testString: getUserInput => assert(!getUserInput('index').match(/stats\.max|stats\.min/), 'Destructured parameter was used.');
 
 ```
 
@@ -50,17 +52,14 @@ const stats = {
   min: -0.75,
   average: 35.85
 };
-const half = (function() {
-  "use strict"; // do not change this line
 
-  // change code below this line
-  return function half(stats) {
-    // use function argument destructuring
-    return (stats.max + stats.min) / 2.0;
-  };
-  // change code above this line
+// change code below this line
+function half(stats) {
+// use function argument destructuring
+  return (stats.max + stats.min) / 2.0;
+};
+// change code above this line
 
-})();
 console.log(stats); // should be object
 console.log(half(stats)); // should be 28.015
 ```
@@ -75,6 +74,8 @@ console.log(half(stats)); // should be 28.015
 <section id='solution'>
 
 ```js
-// solution required
+function half({max, min}) {
+  return (max + min) / 2.0;
+};
 ```
 </section>
