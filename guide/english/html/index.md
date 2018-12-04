@@ -174,6 +174,7 @@ An example of `alt` attribute used in an `<img>` is this:
 ```
 
 **Empty alt text**
+
 An alt tag can be blank only when the image is used for decorative purposes. When an alt tag is empty, screen readers will ignore them. Decorative images do not add information to the content of the page. A blank alt tag is written without a text in the quotes `alt=""` or `alt = " " `.You might think that because the images is for decorative purposes, why not leave out the option of using `alt` attribute. When you leave out the `alt` attribute, screen readers would read out the file name instead. So, it is always best to include the `alt` attribute.
 
 ```
