@@ -3,28 +3,33 @@ import {of } from 'rxjs';
 import { ofType } from 'redux-observable';
 import {
   switchMap,
-  filter
+  ignoreElements,
+  catchError
 } from 'rxjs/operators';
-// import {
-//   tap
-// } from 'rxjs/operators';
 
 import {
-  types
+  types,
+  disableJSOnError
 } from './'
 
 // maybe create new challengetype import { backend } from '../../../../utils/challengeTypes';
 
-function executeSaveLessonEpic(action$, sat$, { document }) {
+function executeSaveLessonEpic(action$, state$, { document }) {
   return of(document).pipe(
-    filter(Boolean),
     switchMap(() => {
       const saveOutput = action$.pipe(
         ofType(types.executeSaveLesson),
         //debounceTime(executeDebounceTimeout),
         //filter(() => isJSEnabledSelector(state$.value)),
         switchMap(() => {
-          console.log('// console output') //send barrage of console outputs
+          console.log('// console output') //send console outputs
+          localStorage.setItem(state$.value.challenge.challengeMeta.id,
+            state$.value.challenge.challengeFiles.indexhtml.contents)
+
+        }),
+        catchError(err => {
+          console.error(err);
+          return of(disableJSOnError(err));
         })
       );
       return saveOutput;
