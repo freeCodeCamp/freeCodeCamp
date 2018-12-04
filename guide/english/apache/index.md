@@ -13,14 +13,21 @@ Apache runs on 67% of all webservers in the world. It is fast, reliable, and sec
 ```
 sudo aptitude install apache2
 ```
+
 #### On CentOS
 ```
 sudo yum install httpd
 ````
+
 #### On Arch
 ```
 pacman -S apache
 ```
+
+#### On Windows
+Popular options for deploying Apache httpd and optionally, PHP + MySQL or PHP + MariaDB on Microsoft Windows, include;
+* [XAMP](https://www.apachefriends.org/index.html "XAMP website")
+* [WampServer](http://www.wampserver.com/ "WampServer website")
 
 ### Getting Started
 Once you have Apache installed you need to know where to put your HTML documents. This location is generally referred to as the `DocumentRoot`. This location is usually `/var/www/html` on most Linux systems. Follow the instructions below to find the configuration file for Apache and the `DocumentRoot`.

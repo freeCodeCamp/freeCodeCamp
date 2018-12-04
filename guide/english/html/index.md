@@ -4,24 +4,23 @@ title: HTML
 
 # HTML
 
-
-HyperText Markup Language (HTML) is a markup language used to construct online documents and is the foundation of most websites today. A markup language like HTML allows us to:
+HyperText Markup Language (HTML) is the standard markup language used for creating web pages, web applications and moreover is the foundation of most websites today.. A markup language like HTML allows us to:
 
    1) Create links to other documents
    2) Structure the content in our document 
    3) Attribute context and meaning to the content of our document
-  
-
  
-An HTML document has two aspects to it. It contains structured information (Markup), and text-links (HyperText) to other documents. We structure our pages using [HTML elements](#). They are constructs of the language providing [structure](#) and [meaning](#) in our document for the browser and [<anchor>](#) linking to other documents across the internet.
+An HTML document has two aspects which are the Markup and the HyperText. The first aspect contains structured information that makes up the website, and latter contains text-links (HyperText) to other documents. We structure our pages using [HTML elements](#). They are constructs of the language providing [structure](#) and [meaning](#) in our document for the browser and the [<anchor>](#) element links to other documents across the internet.
 
 The first publicly available description of HTML was a document called "HTML Tags", first mentioned on the Internet in late 1991 by Tim Berners-Lee, who is widely credited with the invention of html. 
 
-The internet was originally created to store and present static (unchanging) documents. The aspects of HTML discussed above were seen perfectly in these documents which lacked all design and styling. They presented structured information that contained links to other documents.
+The Internet was originally created to store and present static (unchanging) documents. The aspects of HTML discussed above were seen perfectly in these documents which lacked all design and styling. They presented structured information that contained links to other documents.
  
 HTML5 is the latest version, or specification, of HTML. The [World Wide Web Consortium (W3C)](https://www.w3.org/) is the organization responsible for developing standards for the World Wide Web, including those for HTML. As web pages and web applications grow more complex, W3C updates HTML's standards.
  
-HTML5 introduced a host of semantic elements. As discussed, HTML provides meaning to our document, however it wasn't until HTML5's introduction of [semantic elements](#) that its potential was realized.
+HTML5 introduced a host of semantic elements. As discussed, HTML provides meaning to our documents, however it wasn't until HTML5's introduction of [semantic elements](#) that its potential was realized.
+
+HTML can embed programs written in a scripting language such as JavaScript, which affects the behavior and content of web pages.
 
 ## A simple example of an HTML Document
 
@@ -29,7 +28,7 @@ HTML5 introduced a host of semantic elements. As discussed, HTML provides meanin
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Page Title</title>
+  <title>Page Heading or Page Title</title>
 </head>
 <body>
 
@@ -39,12 +38,13 @@ HTML5 introduced a host of semantic elements. As discussed, HTML provides meanin
 </body>
 </html>
 ```
+In HTML tags come in pairs, as seen above. The first tag in a pair is called the *start tag* or the *opening tag*,and the second tag is called the *end tag* or the *closing tag*. The later comes with a forward slash, which is inserted before the tag name.
 
 !DOCTYPE html: Defines this document to be HTML5
 
 html: The root element of an HTML page
 
-head: This element contains meta information about the document
+head: The element contains meta information about the document and non-visual elements that help make the page work
 
 title: This element specifies a title for the document
 
@@ -78,7 +78,6 @@ Since the early days of the web, there have been many versions of HTML:
 |HTML 4.01|1999|
 |XHTML|2000|
 |HTML5|2014|
-
 
 # HTML Elements
 
@@ -159,6 +158,25 @@ There are many possible ways a user can give input/s like:
 ```
 Comments can help in the understanding of the markup and do not display in the webpage.
 
+### New APIs
+
+HTML5 related APIs
+In addition to specifying markup, HTML 5 specifies scripting application programming interfaces (APIs) that can be used with JavaScript. Existing Document Object Model (DOM) interfaces are extended and de facto features documented. There are also new APIs, such as:
+
+- Canvas
+- Timed Media Playback
+- Offline
+- Editable content
+- Drag and drop
+- History
+- MIME type and protocol handler registration
+- Microdata
+- Web Messaging
+- Web Storage
+    - a key-value pair storage framework that provides behaviour similar to cookies but with larger storage capacity and improved API
+
+#### Learn HTML
+- [Introduction to Basic HTML & HTML5](https://learn.freecodecamp.org/responsive-web-design/basic-html-and-html5/)
 
 #### More Information
 

@@ -7,6 +7,7 @@ const {
 } = require('../../curriculum/getChallenges');
 const utils = require('./');
 const { locale } = require('../config/env.json');
+const { blockNameify } = require('./blockNameify');
 
 const dasherize = utils.dasherize;
 const nameify = utils.nameify;
@@ -56,9 +57,6 @@ function prepareChallenge(challenge) {
     );
   }
   challenge.block = dasherize(challenge.block);
-  challenge.superBlock = challenge.superBlock
-    .split('-')
-    .map(word => _.capitalize(word))
-    .join(' ');
+  challenge.superBlock = blockNameify(challenge.superBlock);
   return challenge;
 }
