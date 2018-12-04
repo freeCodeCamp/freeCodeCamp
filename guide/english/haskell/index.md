@@ -45,6 +45,7 @@ stack ghc hello.hs
 Hackage provides documentation for Haskell
 
 
-## Want to learn more?
-* Haskell wiki <a href='https://wiki.haskell.org/Haskell' target='_blank' rel='nofollow'>link</a>
-* Learn You a Haskell for Great Good <a href='http://learnyouahaskell.com/' target='_blank' rel='nofollow'>website</a>
+#### More Information
+* [Haskell wiki](https://wiki.haskell.org/Haskell)
+* [Learn You a Haskell for Great Good](http://learnyouahaskell.com)
+* [Try Haskell in your browser](https://www.tryhaskell.org)

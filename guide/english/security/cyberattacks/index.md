@@ -29,7 +29,9 @@ no one can be 100% that their data is secure.
 * Cross-Site Scripting (XSS)  
 * Password Attacks  
 * Denial of Service Attacks (DoS)  
-* Man in the Middle (MITM)  
+* Man in the Middle (MITM)
+* False Data Injection
+* Replay Attack
 * Credential Reuse  
 * Rogue Software
 * ARP Poisoning (Network Pentest)
@@ -42,4 +44,5 @@ no one can be 100% that their data is secure.
 * DNS Poisoning
 * E-mail Spoofing
 * KRACK (Key Reinstallation Attack)
+* Buffer Overflow
 
