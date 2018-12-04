@@ -50,14 +50,10 @@ tests:
 <div id='js-seed'>
 
 ```js
-function makeClass() {
-  "use strict";
-  /* Alter code below this line */
+/* Alter code below this line */
 
-  /* Alter code above this line */
-  return Thermostat;
-}
-const Thermostat = makeClass();
+/* Alter code above this line */
+
 const thermos = new Thermostat(76); // setting in Fahrenheit scale
 let temp = thermos.temperature; // 24.44 in C
 thermos.temperature = 26;
@@ -74,24 +70,21 @@ temp = thermos.temperature; // 26 in C
 <section id='solution'>
 
 ```js
-function makeClass() {
-  'use strict';
-  /* Alter code below this line */
-  class Thermostat {
-    constructor(temperature) {
-     this._temperature = (5 / 9) * (temperature - 32);
-    }
-    get temperature() {
-     return this._temperature;
-    }
-    set temperature(temperature) {
-     this._temperature = temperature;
-    }
+
+/* Alter code below this line */
+class Thermostat {
+  constructor(fahrenheit) {
+    this._tempInCelsius = 5/9 * (fahrenheit - 32);
   }
-  /* Alter code above this line */
-  return Thermostat;
+  get tempInCelsius(){
+    return _tempInCelsius;
+  }
+  set tempInCelsius(newTemp){
+    this._tempInCelsius = newTemp;
+  }
 }
-const Thermostat = makeClass();
+/* Alter code above this line */
+
 const thermos = new Thermostat(76); // setting in Fahrenheit scale
 let temp = thermos.temperature; // 24.44 in C
 thermos.temperature = 26;
