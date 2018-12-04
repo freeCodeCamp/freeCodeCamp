@@ -8,7 +8,6 @@ import {
   initLogs,
   updateLogs,
   logsToConsole,
-  checkChallenge,
   updateTests,
   challengeFilesSelector
 } from './';
@@ -22,12 +21,23 @@ import WorkerExecutor from '../utils/worker-executor';
 const testWorker = new WorkerExecutor('test-evaluator');
 const testTimeout = 5000;
 
-function* ExecuteJSChallengeSaga() {
+function* ExecuteChallengeSaga() {
+  const { js, bonfire, backend } = challengeTypes;
   const { challengeType } = yield select(challengeMetaSelector);
-  const { js, bonfire } = challengeTypes;
-  if (challengeType !== js && challengeType !== bonfire) {
-    return;
+  switch (challengeType) {
+    case js:
+    case bonfire:
+      yield ExecuteJSChallengeSaga();
+      break;
+    case backend:
+      // yield ExecuteBackendChallengeSaga();
+      break;
+    default:
+    // yield ExecuteDOMChallengeSaga();
   }
+}
+
+function* ExecuteJSChallengeSaga() {
   yield put(initLogs());
   yield put(initConsole('// running tests'));
   try {
@@ -45,14 +55,11 @@ function* ExecuteJSChallengeSaga() {
       if (pass) {
         newTest.pass = true;
       } else {
-        const { message, stack, isAssertionError } = err;
+        const { message, stack } = err;
         newTest.err = message + '\n' + stack;
         newTest.stack = stack;
         newTest.message = text.replace(/<code>(.*?)<\/code>/g, '$1');
         yield put(updateConsole(newTest.message));
-        if (!isAssertionError) {
-          console.warn(message);
-        }
       }
       testResults.push(newTest);
       for (const log of logs) {
@@ -64,7 +71,6 @@ function* ExecuteJSChallengeSaga() {
     yield put(updateTests(testResults));
     yield put(updateConsole('// tests completed'));
     yield put(logsToConsole('// console output'));
-    yield put(checkChallenge());
   } catch (e) {
     if (e === 'timeout') {
       yield put(updateConsole('Test timed out'));
@@ -77,5 +83,5 @@ function* ExecuteJSChallengeSaga() {
 }
 
 export function createExecuteChallengeSaga(types) {
-  return [takeEvery(types.executeChallenge, ExecuteJSChallengeSaga)];
+  return [takeEvery(types.executeChallenge, ExecuteChallengeSaga)];
 }

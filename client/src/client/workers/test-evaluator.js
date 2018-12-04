@@ -26,10 +26,12 @@ onmessage = async e => {
     self.postMessage({
       err: {
         message: err.message,
-        stack: err.stack,
-        isAssertionError: err instanceof chai.AssertionError
+        stack: err.stack
       },
       logs: self.__logs.map(String)
     });
+    if (!(err instanceof chai.AssertionError)) {
+      console.error(err);
+    }
   }
 };
