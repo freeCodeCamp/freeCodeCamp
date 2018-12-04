@@ -30,8 +30,8 @@ tests:
     testString: assert(sum(5) === 5, 'The result of <code>sum(5)</code> should be 5');
   - text: The result of <code>sum()</code> should be 0
     testString: assert(sum() === 0, 'The result of <code>sum()</code> should be 0');
-  - text: The <code>sum</code> function uses the <code>...</code> spread operator on the <code>args</code> parameter.
-    testString: getUserInput => assert(getUserInput('index').match(/function\s+sum\s*\(\s*...args\s*\)\s*{/g), 'The <code>sum</code> function uses the <code>...</code> spread operator on the <code>args</code> parameter.');
+  - text: The <code>sum</code> function uses the <code>...</code> rest parameter on the <code>args</code> parameter.
+    testString: getUserInput => assert(getUserInput('index').match(/function\s+sum\s*\(\s*...args\s*\)\s*{/g), 'The <code>sum</code> function uses the <code>...</code> rest parameter on the <code>args</code> parameter.');
 
 ```
 
@@ -43,13 +43,10 @@ tests:
 <div id='js-seed'>
 
 ```js
-const sum = (function() {
-  "use strict";
-  return function sum(x, y, z) {
-    const args = [ x, y, z ];
-    return args.reduce((a, b) => a + b, 0);
-  };
-})();
+function sum(x, y, z) {
+  const args = [ x, y, z ];
+  return args.reduce((a, b) => a + b, 0);
+};
 console.log(sum(1, 2, 3)); // 6
 ```
 
@@ -63,6 +60,8 @@ console.log(sum(1, 2, 3)); // 6
 <section id='solution'>
 
 ```js
-// solution required
+function sum(...args) {
+  return args.reduce((a, b) => a + b, 0);
+};
 ```
 </section>
