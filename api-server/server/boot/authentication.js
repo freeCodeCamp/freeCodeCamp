@@ -1,12 +1,13 @@
 import _ from 'lodash';
 import { Observable } from 'rx';
 import dedent from 'dedent';
-// import debugFactory from 'debug';
+import passport from 'passport';
 import { isEmail } from 'validator';
 import { check } from 'express-validator/check';
 
 import { homeLocation } from '../../../config/env';
-
+import { createCookieConfig } from '../utils/cookieConfig';
+import { createPassportCallbackAuthenticator } from '../component-passport';
 import {
   ifUserRedirectTo,
   ifNoUserRedirectTo,
@@ -15,7 +16,6 @@ import {
 import { wrapHandledError } from '../utils/create-handled-error.js';
 
 const isSignUpDisabled = !!process.env.DISABLE_SIGNUP;
-// const debug = debugFactory('fcc:boot:auth');
 if (isSignUpDisabled) {
   console.log('fcc:boot:auth - Sign up is disabled');
 }
@@ -29,7 +29,11 @@ module.exports = function enableAuthentication(app) {
   const api = app.loopback.Router();
   const { AuthToken, User } = app.models;
 
-  api.get('/signin', ifUserRedirect, (req, res) => res.redirect('/auth/auth0'));
+  api.get('/signin', ifUserRedirect, passport.authenticate('auth0-login', {}));
+  api.get(
+    '/auth/auth0/callback',
+    createPassportCallbackAuthenticator('auth0-login', { provider: 'auth0' })
+  );
 
   api.get('/signout', (req, res) => {
     req.logout();
@@ -41,10 +45,7 @@ module.exports = function enableAuthentication(app) {
           redirectTo: homeLocation
         });
       }
-      const config = {
-        signed: !!req.signedCookies,
-        domain: process.env.COOKIE_DOMAIN || 'localhost'
-      };
+      const config = createCookieConfig(req);
       res.clearCookie('jwt_access_token', config);
       res.clearCookie('access_token', config);
       res.clearCookie('userId', config);
@@ -216,5 +217,4 @@ module.exports = function enableAuthentication(app) {
   );
 
   app.use(api);
-  app.use('/internal', api);
 };

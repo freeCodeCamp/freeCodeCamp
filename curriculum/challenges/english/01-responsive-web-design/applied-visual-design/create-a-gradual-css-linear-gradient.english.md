@@ -26,7 +26,7 @@ Use a <code>linear-gradient()</code> for the <code>div</code> element's <code>ba
 ```yml
 tests:
   - text: The <code>div</code> element should have a <code>linear-gradient</code> <code>background</code> with the specified direction and colors.
-    testString: 'assert(code.match(/background:\s*?linear-gradient\(35deg,\s*?(#CCFFFF|#CFF),\s*?(#FFCCCC|#FCC)\);/gi), "The <code>div</code> element should have a <code>linear-gradient</code> <code>background</code> with the specified direction and colors.");'
+    testString: assert(code.match(/background:\s*?linear-gradient\(35deg,\s*?(#CCFFFF|#CFF),\s*?(#FFCCCC|#FCC)\);/gi), 'The <code>div</code> element should have a <code>linear-gradient</code> <code>background</code> with the specified direction and colors.');
 
 ```
 
