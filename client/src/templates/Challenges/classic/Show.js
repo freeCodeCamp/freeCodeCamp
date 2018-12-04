@@ -127,12 +127,17 @@ class ShowClassic extends Component {
       },
       pageContext: { challengeMeta }
     } = this.props;
-    files.indexhtml.contents = localStorage.getItem(this.props.pathContext.challengeMeta.id)
+    var temp = ""
+    if (localStorage.getItem(this.props.pathContext.challengeMeta.id)) {
+      temp = files.indexhtml.contents
+      files.indexhtml.contents = localStorage.getItem(this.props.pathContext.challengeMeta.id)
+    }
     createFiles(files);
     initTests(tests);
     updateChallengeMeta({ ...challengeMeta, title, challengeType });
     updateSuccessMessage(randomCompliment());
     challengeMounted(challengeMeta.id);
+    files.indexhtml.contents = temp
   }
 
   componentDidUpdate(prevProps) {
@@ -186,6 +191,9 @@ class ShowClassic extends Component {
       output
     } = this.props;
     const challengeFile = first(Object.keys(files).map(key => files[key]));
+    if (challengeFile && localStorage.getItem(this.props.pathContext.challengeMeta.id)) {
+      challengeFile.seed = this.props.data.challengeNode.files.indexhtml.contents
+    }
     const editors = challengeFile && (
       <ReflexContainer key={challengeFile.key} orientation='horizontal'>
         <ReflexElement
