@@ -158,6 +158,17 @@ There are many possible ways a user can give input/s, such as:
 ```
 Comments can help in the understanding of the markup and do not display in the webpage.
 
+**Text Formatting**
+
+HTML defines special elements for defining text with special meanings.
+
+- `<b>` - Bold Text
+- `<strong>` - Important text
+- `<i>` - Italic Text
+- `<em>` - Emphasized Text
+- `<sub>` - Subscripted Text
+- `<sup>` - Superscripted Text
+
 ## HTML Attributes
 
 An attribute gives more information about an element. Attibutes always come inside an opening tag.
