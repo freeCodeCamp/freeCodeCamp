@@ -223,6 +223,8 @@ In addition to specifying markup, HTML 5 specifies scripting application program
 
 #### Learn HTML
 - [Introduction to Basic HTML & HTML5](https://learn.freecodecamp.org/responsive-web-design/basic-html-and-html5/)
+- [Scrimba's Basic HTML Course](https://scrimba.com/g/ghtml)
+- [W3C's Full HTML Tutorial](https://www.w3schools.com/html/default.asp)
 
 #### More Information
 
