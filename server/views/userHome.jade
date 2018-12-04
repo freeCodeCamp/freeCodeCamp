@@ -3,13 +3,31 @@ block content
   .text-center
     .row
       h1.landing-heading=title
-    .big-break
-    include homePartials/activeUsersView
-    .big-break
+
     .row
       .col-xs-12.col-sm-8.col-sm-offset-2
-        a(href="https://www.freecodecamp.org/news/quincylarson/code-radio-music-for-programmers--OZ9MIh9Kr" target="_blank" class="update-link")
-          | Listen to Code Radio - jazzy beats you can code, from the freeCodeCamp community.
+        h2 Support an open future.
+
+    .row
+      .col-xs-12.col-sm-8.col-sm-offset-2
+        .donate-progress
+          .progress
+            .progress-bar(class="progress-bar-success",role='progressbar', aria-valuenow='40', aria-valuemin='0', aria-valuemax='100', style='width: 40%;')
+        p 3,890 supporters out of 10,000 goal.
+
+    .row
+      .col-xs-12.col-sm-8.col-sm-offset-2
+        .donate-text
+          p freeCodeCamp.org is a tiny non-profit that's helping millions of people learn to code for free.
+          if (user.isDonating)
+            p Thanks for being a supporter!
+          else
+            .big-break
+            a.btn.btn-lg.btn-primary(href="/donate")
+              | Click here to become a Supporter
+            .big-break
+          p Do you know anyone who's interested in technology? Encourage them to join the community.
+
     .big-break
     include homePartials/quote
     .big-break
