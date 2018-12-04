@@ -162,15 +162,12 @@ Comments can help in the understanding of the markup and do not display in the w
 
 HTML defines special elements for defining text with special meanings.
 
-```
-* <b> - Bold Text
-* <strong> - Important text
-* <i> - Italic Text
-* <em> - Emphasized Text
-* <sub> - Subscripted Text
-* <sup> - Superscripted Text
-
-```
+- `<b>` - Bold Text
+- `<strong>` - Important text
+- `<i>` - Italic Text
+- `<em>` - Emphasized Text
+- `<sub>` - Subscripted Text
+- `<sup>` - Superscripted Text
 
 ## HTML Attributes
 
