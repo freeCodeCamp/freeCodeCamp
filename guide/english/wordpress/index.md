@@ -2,7 +2,7 @@
 title: WordPress
 ---
 
-![alt text][logo]
+![wordpress logo][logo]
 
 [logo]: https://s.w.org/style/images/about/WordPress-logotype-standard.png
 
@@ -14,11 +14,13 @@ WordPress powers over 30% of all websites and is by far the most used CMS on the
 
 Both easy to use and highly customizable, Wordpress offers an easy solution for both web developers and non-web developers alike to create a site.
 
-Just a few advantages of WordPress:
+Just to name a few advantages of WordPress:
 * Users are able to manage their Wordpress webpage from any computer
 * Has a blog built-in and ready to go whenever applicable. 
 * Has plugins, which extend functionality to WordPress sites. 
 * Wordpress sites can be hosted on any server running the LAMP stack
+
+Whether it is page transitions or a customized contact form, WordPress users are only a few clicks away from success and a beautiful website.
 
 ### WordPress as Blogging Platform
 
@@ -137,3 +139,4 @@ After confirming installation your will be on the WordPress Dashboard.
 - [Download WordPress](https://wordpress.org/download/)
 - [WordPress Codex: the online manual](https://codex.wordpress.org/)
 - [WordPress Code Reference](https://developer.wordpress.org/reference/)
+- [WordPress Coding Standards](https://make.wordpress.org/core/handbook/best-practices/coding-standards/)
