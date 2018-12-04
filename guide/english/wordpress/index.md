@@ -17,6 +17,8 @@ Both easy to use and highly customizable, Wordpress offers an easy solution for 
 Just to name a few advantages of WordPress:
 * Users are able to manage their Wordpress webpage from any computer
 * Has a blog built-in and ready to go whenever applicable. 
+* Has continous updates that occur every 3-4 months. 
+* SEO compatible so that the sites can be found easier. 
 * Has plugins, which extend functionality to WordPress sites.
 * Has mobile app (Android and iOS), which can be used to post and manage their Wordpress webpage.
 * Wordpress sites can be hosted on any server running the LAMP stack
@@ -147,4 +149,5 @@ After confirming installation your will be on the WordPress Dashboard.
 - [Download WordPress](https://wordpress.org/download/)
 - [WordPress Codex: the online manual](https://codex.wordpress.org/)
 - [WordPress Code Reference](https://developer.wordpress.org/reference/)
+- [Advantages of WordPress](https://www.fastwebhost.com/blog/top-advantages-of-wordpress-in-2018/)
 - [WordPress Coding Standards](https://make.wordpress.org/core/handbook/best-practices/coding-standards/)
