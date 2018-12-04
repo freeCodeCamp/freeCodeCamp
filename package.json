@@ -1,0 +1,10 @@
+{
+  "name": "@freecodecamp/github-tools",
+  "private": true,
+  "scripts": {
+    "postinstall": "lerna bootstrap"
+  },
+  "devDependencies": {
+    "lerna": "^3.5.1"
+  }
+}
