@@ -67,6 +67,7 @@ Most common operations available on List are,
 6. Access / Peek - Access an existing element from the List.
 7. Size / Count - Returns the number of elements currently present in the List.
 8. IsEmpty - Check whether the List is empty or not.
+9. Reverse - Reversing a linear linked list.
 
 #### Implementation of a Simple Linked List in C++
 ```cpp
@@ -90,6 +91,7 @@ class List
 	public:
 		void display();
 		void insertBefore(int);
+                void deleteNode(int);
 		List();
 };
 
@@ -119,6 +121,47 @@ void List :: insertBefore(int data)
 		count++;	
 }
 
+void List :: deleteNode(int loc)
+{
+	//delete first node
+	if(loc == 1 || count == 1)
+	{
+		N *node = new N;
+		node = head;
+		head = head->tail;
+		delete node;
+	}
+	//delete last node
+	else if(loc == count)
+	{
+			N *curr = new N;
+			N *prev = new N;
+			curr = head;
+			while(curr->tail != NULL)
+			{
+				prev = curr;
+				curr = curr->tail;
+			}
+			prev->tail = NULL;
+			end = prev;
+			delete curr;
+	}
+	//delete in between
+	else
+	{
+		N *curr=new N;
+    	N *prev=new N;
+    	curr=head;
+    	for(int i=1;i<loc;i++)
+    	{
+      		prev=curr;
+      		curr=curr->tail;
+    	}
+    		prev->tail=curr->tail;
+	}
+	count--;
+}
+
 void List :: display()
 {
 	cout<<"Number of nodes in the list = "<<count<<endl;
@@ -143,6 +186,8 @@ int main()
 	l1.insertBefore(40);
 	l1.insertBefore(50);
 	l1.display();
+        l1.deleteNode(3);
+        l1.display();
 	
 	return 0;
 }
@@ -155,6 +200,11 @@ Number of nodes in the list = 5
 50
 40
 30
+20
+10
+Number of nodes in the list = 4
+50
+40
 20
 10
 ```
@@ -419,6 +469,80 @@ int main()
   return 0;
 }
 ```
+
+#### Implementation of a Simple Linked List in Java
+```
+class Node {
+	int data;
+	Node next;
+
+	Node(int d) {
+		data = d;
+		next = null;
+	}
+}
+
+class LinkedList {
+	// Create a linked list with atleast one node
+	Node head;
+	LinkedList(int data) {
+		head = new Node(data);
+	}
+
+	public void addNode(int data) {
+		Node temp = new Node(data);
+		temp.next = head;
+		head = temp;
+	}
+
+	public void reverseLinkedList() {
+		// No need for changes or reversal.
+		if (head == null || head.next == null) {
+			return;
+		}
+		else {
+			Node temp = head;
+			Node curr = head.next;
+			temp.next = null;
+			while (curr != null && curr.next != null) {
+				Node newNode = curr.next;
+				curr.next = temp;
+				temp = curr;
+				curr = newNode;
+			}
+
+			curr.next = temp;
+			head = curr;
+
+		}
+	}
+
+	public void printLinkedList() {
+		Node temp = head;
+		System.out.println();
+		while (temp != null) {
+			System.out.print(temp.data + " ");
+			temp = temp.next;
+		}
+		System.out.println();
+	}
+}
+
+public class LinkedListWork {
+	public static void main(String[] args) {
+		LinkedList ll = new LinkedList(1);
+		ll.addNode(2);
+		ll.addNode(3);
+		ll.addNode(4);
+		ll.addNode(5);
+		ll.printLinkedList();
+
+		ll.reverseLinkedList();
+		ll.printLinkedList();
+	}
+}
+```
+
 #### More Information:
 * <a href='http://www.geeksforgeeks.org/linked-list-set-1-introduction/' target='_blank' rel='nofollow'>Introduction to Linked Lists</a>
 * <a href='https://www.youtube.com/watch?v=njTh_OwMljA' target='_blank' rel='nofollow'>Linked Lists (YouTube video)</a>
