@@ -149,6 +149,7 @@ There are many possible ways a user can give input/s, such as:
 <input type="text" /> <!-- This is for text input -->
 <input type="file" /> <!-- This is for uploading files -->
 <input type="checkbox" /> <!-- This is for checkboxes -->
+<input type="radio" /> <!-- This is for radio buttons -->
 ```
 
 **Comments**
