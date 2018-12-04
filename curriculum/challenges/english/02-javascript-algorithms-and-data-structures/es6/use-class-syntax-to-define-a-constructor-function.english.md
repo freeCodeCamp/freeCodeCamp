@@ -47,14 +47,10 @@ tests:
 <div id='js-seed'>
 
 ```js
-function makeClass() {
-  "use strict";
-  /* Alter code below this line */
+/* Alter code below this line */
 
-  /* Alter code above this line */
-  return Vegetable;
-}
-const Vegetable = makeClass();
+/* Alter code above this line */
+
 const carrot = new Vegetable('carrot');
 console.log(carrot.name); // => should be 'carrot'
 ```
@@ -69,19 +65,11 @@ console.log(carrot.name); // => should be 'carrot'
 <section id='solution'>
 
 ```js
-function makeClass() {
-  "use strict";
-  /* Alter code below this line */
-  class Vegetable {
-    constructor(name){
-      this.name = name;
-    }
+class Vegetable {
+  constructor(name) {
+    this.name = name;
   }
-  /* Alter code above this line */
-  return Vegetable;
 }
-const Vegetable = makeClass();
 const carrot = new Vegetable('carrot');
-console.log(carrot.name); // => should be 'carrot'
 ```
 </section>
