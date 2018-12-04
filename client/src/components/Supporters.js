@@ -27,8 +27,10 @@ function Supporters({ isDonating, activeDonations }) {
         <FullWidthRow>
           <Spacer />
           <p>
-            🎉 {donationsLocale} supporters help keep freeCodeCamp.org free to
-            use
+            <span aria-label='Tada!' role='img'>
+              🎉
+            </span>{' '}
+            {donationsLocale} supporters help keep freeCodeCamp.org free to use
           </p>
         </FullWidthRow>
       ) : (
