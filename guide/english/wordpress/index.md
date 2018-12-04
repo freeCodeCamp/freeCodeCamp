@@ -6,8 +6,6 @@ title: WordPress
 
 [logo]: https://s.w.org/style/images/about/WordPress-logotype-standard.png
 
-WordPress is a free and open-source content management system based on PHP and MySQL. Features include a plugin architecture and a template system. It is most associated with blogging but supports other types of web content including more traditional mailing lists, forums, media galleries, and online stores.
-
 ## WordPress
 
 WordPress is a free and open-source content management system based on PHP and MySQL. Features include robust user management, an extensible theming and plugin architecture, and a flexible template system. It is most associated with blogging but supports other types of web content including forums, media galleries, and online stores.
