@@ -39,6 +39,16 @@ Some libraries have dependencies that need to be linked in the native code gener
 react-native link [LIBRARY-NAME]
 ```
 
+**iOS Manual Linking**
+
+The Link function in the `react-native-cli` occasionally doesn't work for iOS and you will need to manually link your Library. In order to link a library that uses native code manually, follow these steps. 
+
+1. If the library has native code, there should be an .xcodeproj file inside of it's folder. Drag this file to your project on Xcode (usually under the Libraries group on Xcode), or right click your Libraries group and select "Add files to <Your Project>"
+
+2. Click on your main project file (the one that represents the .xcodeproj). Then select Build Phases and drag the static library from the Products folder inside the Library you are importing to Link Binary With Libraries, or under the Link Binary With Libraries section, you can click the + button and find the library that file that represents the library you are trying to link in the list.
+
+3. Not every library will need this step, what you need to consider is: Do I need to know the contents of the library at compile time? What that means is, are you using this library on the native side or only in JavaScript? If you are only using it in JavaScript, you are good to go!
+ If you do need to call it from native, then we need to know the library's headers. To achieve that you have to go to your project's file, select Build Settings and search for Header Search Paths. There you should include the path to your library. 
 
 **Clear bundle**
 

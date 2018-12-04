@@ -8,8 +8,10 @@ const {
   createChallengePages,
   createBlockIntroPages,
   createSuperBlockIntroPages,
-  createGuideArticlePages
+  createGuideArticlePages,
+  createNewsArticle
 } = require('./utils/gatsby');
+const { createArticleSlug } = require('./utils/news');
 
 const createByIdentityMap = {
   guideMarkdown: createGuideArticlePages,
@@ -34,6 +36,15 @@ exports.onCreateNode = function onCreateNode({ node, actions, getNode }) {
     if (!slug.includes('LICENSE')) {
       createNodeField({ node, name: 'slug', value: slug });
     }
+  }
+  if (node.internal.type === 'NewsArticleNode') {
+    const {
+      author: { username },
+      slugPart,
+      shortId
+    } = node;
+    const slug = createArticleSlug({ username, shortId, slugPart });
+    createNodeField({ node, name: 'slug', value: slug });
   }
 };
 
@@ -86,6 +97,19 @@ exports.createPages = function createPages({ graphql, actions }) {
               }
             }
           }
+          allNewsArticleNode(
+            sort: { fields: firstPublishedDate, order: DESC }
+          ) {
+            edges {
+              node {
+                id
+                shortId
+                fields {
+                  slug
+                }
+              }
+            }
+          }
         }
       `).then(result => {
         if (result.errors) {
@@ -126,6 +150,11 @@ exports.createPages = function createPages({ graphql, actions }) {
           return null;
         });
 
+        // Create news article pages
+        result.data.allNewsArticleNode.edges.forEach(
+          createNewsArticle(createPage)
+        );
+
         return null;
       })
     );
@@ -161,7 +190,9 @@ exports.onCreateWebpackConfig = ({ stage, rules, plugins, actions }) => {
         HOME_PATH: JSON.stringify(
           process.env.HOME_PATH || 'http://localhost:3000'
         ),
-        STRIPE_PUBLIC_KEY: JSON.stringify(process.env.STRIPE_PUBLIC_KEY || '')
+        STRIPE_PUBLIC_KEY: JSON.stringify(process.env.STRIPE_PUBLIC_KEY || ''),
+        ROLLBAR_CLIENT_ID: JSON.stringify(process.env.ROLLBAR_CLIENT_ID || ''),
+        ENVIRONMENT: JSON.stringify(process.env.NODE_ENV || 'development')
       }),
       new RmServiceWorkerPlugin()
     ]
