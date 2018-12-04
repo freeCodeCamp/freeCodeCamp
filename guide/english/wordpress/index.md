@@ -10,7 +10,7 @@ title: WordPress
 
 WordPress is a free and open-source content management system based on **PHP** and **MySQL**. Features include robust user management, an extensible theming and plugin architecture, and a flexible template system. It is most associated with blogging but supports other types of web content including forums, media galleries, and online stores.
 
-WordPress powers over 30% of all websites and is by far the most used CMS on the planet. Backed by a huge community, this open source platform powers not only countless sites but a multi-billion dollar economy with themes, plugins, and custom software.
+WordPress was first launched in 2003 and now powers over 30% of all websites. It is by far the most used CMS on the planet. Backed by a huge community, this open source platform powers not only countless sites but a multi-billion dollar economy with themes, plugins, and custom software.
 
 Both easy to use and highly customizable, Wordpress offers an easy solution for both web developers and non-web developers alike to create a site.
 
@@ -149,5 +149,6 @@ After confirming installation your will be on the WordPress Dashboard.
 - [Download WordPress](https://wordpress.org/download/)
 - [WordPress Codex: the online manual](https://codex.wordpress.org/)
 - [WordPress Code Reference](https://developer.wordpress.org/reference/)
+- [Automattic - The Home of WordPress](https://automattic.com/)
 - [Advantages of WordPress](https://www.fastwebhost.com/blog/top-advantages-of-wordpress-in-2018/)
 - [WordPress Coding Standards](https://make.wordpress.org/core/handbook/best-practices/coding-standards/)
