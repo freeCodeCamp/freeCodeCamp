@@ -77,8 +77,9 @@ The following are some of the popular and useful plugins in WordPress:
 
 Examples of Popular Drag and drop themes that makes a WordPress website easy to build are:
 - Avada theme
-- Divi theme, and 
-- Elementor theme.
+- [Divi by Elegant Themes](https://www.elegantthemes.com/)
+- [Genesis Framework](https://my.studiopress.com/themes/genesis/)
+- [Elementor](https://elementor.com/)
 
 ### Visual Editors
 
