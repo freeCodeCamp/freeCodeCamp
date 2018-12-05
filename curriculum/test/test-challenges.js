@@ -22,7 +22,7 @@ const { getChallengesForLang } = require('../getChallenges');
 
 const MongoIds = require('./utils/mongoIds');
 const ChallengeTitles = require('./utils/challengeTitles');
-const { validateChallenge } = require('../schema/challengeSchema');
+const { challengeSchemaValidator } = require('../schema/challengeSchema');
 const { challengeTypes } = require('../../client/utils/challengeTypes');
 
 const { LOCALE: lang = 'english' } = process.env;
@@ -40,8 +40,9 @@ Mocha.Runner.prototype.fail = function(test, err) {
   return oldRunnerFail.call(this, test, err);
 };
 
-let mongoIds = new MongoIds();
-let challengeTitles = new ChallengeTitles();
+const mongoIds = new MongoIds();
+const challengeTitles = new ChallengeTitles();
+const validateChallenge = challengeSchemaValidator(lang);
 
 const { JSDOM } = jsdom;
 
