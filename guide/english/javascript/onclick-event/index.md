@@ -44,11 +44,11 @@ In the above example, when a user clicks on the `paragraph` element in the `html
 However if we attach `onclick` to links (HTML's `a` tag) we might want prevent default action to occur:
 
 ```javascript
-<a href="https://guide.freecodecamp.org" onclick="myAlert()">Guides</a>
+<a href="https://guide.freecodecamp.org" onclick="myAlert(event)">Guides</a>
 
 <script>
-  function myAlert(event) {
-    event.preventDefault();
+  function myAlert(e) {
+    e.preventDefault();
     alert("Link was clicked but page was not open");
   }
 </script>
