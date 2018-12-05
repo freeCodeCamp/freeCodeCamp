@@ -134,8 +134,8 @@ exports.checkFrontmatter = function checkFrontmatter(
   );
 };
 
-function extractLangFromFileName({path}) {
-  return path.split('/')[0];
+function extractLangFromFileName({ path: relativePath }) {
+  return relativePath.split(path.sep)[0];
 }
 
 exports.extractLangFromFileName = extractLangFromFileName;
