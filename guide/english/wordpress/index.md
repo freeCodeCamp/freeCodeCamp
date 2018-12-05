@@ -97,6 +97,8 @@ Here are some examples of big name brands using WordPress:
 * Sony Music
 * The New Yorker
 * MTV News
+* BBC America
+* Techcrunch
 
 Whether it's page transitions or a customized contact form, WordPress users are only a few clicks away from building a website.
 
