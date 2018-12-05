@@ -59,11 +59,14 @@ Plugins extend WordPress functionality in specific ways, adding features like ma
 While free themes offer a range of beautiful designs, WordPress premium themes for web projects beyond the basics may cost between $10 to $200 with an average around $59. Also, most plugins are available in free or premium versions.
 
 The following are some of the popular and useful plugins in WordPress:
-- Yoast SEO
+- Yoast SEO: Improve WordPress SEO
 - JetPack
 - W3 Total Cache
-- Akismet 
-- Mailchimp etc
+- Akismet Anti-spam: Filter spam comment 
+- Mailchimp
+- WooCommerce: Create eCommerce using WordPress
+- Elementor: Open source page builder
+- WP Super Cache: Increase load speed for static website
 
 Examples of Popular Drag and drop themes that makes a WordPress website easy to build are:
 - Avada theme
