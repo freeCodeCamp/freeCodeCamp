@@ -11,7 +11,7 @@ Before you continue you should have a basic understanding of the following:
 ### CSS - A webpage's design plan and instruction
 ### JavaScript - A webpages power worker, that makes it function dynamically. 
 PHP files can contain Text, HTML, CSS, JavaScript, and PHP code.
-A PHP script is executed on the server, and is returned to the user on the browser as just PHP code.
+A PHP script is executed on the server, and is returned to the user on the browser as just HTML markup, with some styling.
 
 A PHP script starts with `<?php` and ends with `?>`:
 ```php
