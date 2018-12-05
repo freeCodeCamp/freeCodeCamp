@@ -26,3 +26,4 @@ $(document).ready(function(){
 
 #### More Information
 * [jQuery Home Page](https://jquery.com/)
+* [Book on Web Development for jQuery](https://www.amazon.com/Web-Design-HTML-JavaScript-jQuery/dp/1118907442/ref=sr_1_6?s=books&ie=UTF8&qid=1544031092&sr=1-6&keywords=javascript+programming)
