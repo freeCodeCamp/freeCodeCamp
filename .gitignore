@@ -1,4 +1,7 @@
-### Node ###
+#-----
+# Node
+#-----
+
 # Logs
 logs
 *.log
@@ -76,7 +79,24 @@ typings/
 # FuseBox cache
 .fusebox/
 
-# CUSTOM FILES
+#-----------------
+# Create React App
+#-----------------
+
+# dependencies
+/node_modules
+/.pnp
+.pnp.js
+
+# testing
+/coverage
+
+# production
+/build
+
+# ------------
+# Custom Files
+# ------------
 
 # local-work-logs
 work-logs/*
