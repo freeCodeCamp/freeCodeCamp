@@ -22,7 +22,8 @@ Just to name a few advantages of WordPress:
 * Has plugins, which extend functionality to WordPress sites.
 * Has mobile app (Android and iOS), which can be used to post and manage their Wordpress webpage.
 * Wordpress sites can be hosted on any server running the LAMP stack
-* WordPress themes make it possible for non-designers to create a customized website  
+* WordPress themes make it possible for non-designers to create a customized website
+* Wordpress site are very scalable, you can start as simple blog then end up with complex online stores, membership, and affiliate program
 
 Whether it is page transitions or a customized contact form, WordPress users are only a few clicks away from success and a beautiful website.
 
