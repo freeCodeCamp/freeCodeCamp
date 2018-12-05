@@ -47,13 +47,22 @@ const paginate = async function paginate (method, octokit, firstPR, lastPR, prPr
   return data;
 };
 
-const getUserInput = async () => {
-  let [ n, f, type, start, end ] = process.argv;
-  let [ firstPR, lastPR ] = await getRange().then(data => data);
-  if (type !== 'all' && type !== 'range') {
-    throw `Please specify either all or range for 1st arg.`;
+const getUserInput = async (rangeType = '') => {
+  let data, firstPR, lastPR;
+  if (rangeType === 'all') {
+    data = await getRange().then(data => data);
+    firstPR = data[0];
+    lastPR = data[1];
   }
-  if (type === 'range') {
+  else {
+    let [ n, f, type, start, end ] = process.argv;
+    data = await getRange().then(data => data);
+    firstPR = data[0];
+    lastPR = data[1];
+    if (type !== 'all' && type !== 'range') {
+    throw `Please specify either all or range for 1st arg.`;
+    }
+    if (type === 'range') {
     start = parseInt(start);
     end = parseInt(end);
     if (!start || !end) {
@@ -70,14 +79,15 @@ const getUserInput = async () => {
       throw `Ending PR # can not be greater than last open PR # (${lastPR})`;
     }
     lastPR = end;
+    }
   }
   const totalPRs = await getCount().then(data => data);
-  return {totalPRs, firstPR, lastPR};
+  return { totalPRs, firstPR, lastPR };
 };
 
 const getPRs = async (totalPRs, firstPR, lastPR, prPropsToGet) => {
   const getPRsBar = new _cliProgress.Bar({
-    format: `Part 1 of 2: Retrieving PRs (${firstPR}-${lastPR}) [{bar}] {percentage}%`
+    format: `Part 1 of 2: Retrieving PRs (${firstPR}-${lastPR}) [{bar}] {percentage}% - {duration_formatted}`
   }, _cliProgress.Presets.shades_classic);
   getPRsBar.start(totalPRs, 0);
   let openPRs = await paginate(octokit.pullRequests.list, octokit, firstPR, lastPR, prPropsToGet, getPRsBar);

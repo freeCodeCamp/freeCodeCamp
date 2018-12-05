@@ -3,6 +3,7 @@ const formatDate = require('date-fns/format');
 const path = require('path');
 const fs = require('fs');
 const _cliProgress = require('cli-progress');
+const fetch = require('node-fetch');
 
 const { saveToFile } = require('../utils/save-to-file');
 
@@ -31,7 +32,6 @@ class Log {
     const first = this._prsArr[0].number;
     const last = this._prsArr[this._prsArr.length -1].number;
     return [first, last];
-    // return [null, null]
   }
 
   add(prNum, props) {
@@ -63,8 +63,14 @@ class Log {
   }
 };
 
-const { owner, repo, octokitConfig, octokitAuth } = require('../constants');
+const getExistingData = async () => {
+  const url = `https://pr-relations.glitch.me/getCurrData`;
+  const response = await fetch(url);
+  const data = await response.json();
+  return data;
+};
 
+const { owner, repo, octokitConfig, octokitAuth } = require('../constants');
 const octokit = require('@octokit/rest')(octokitConfig);
 
 const { getPRs, getUserInput } = require('../get-prs');
@@ -75,22 +81,39 @@ octokit.authenticate(octokitAuth);
 const log = new Log();
 (async () => {
   const { totalPRs, firstPR, lastPR } = await getUserInput('all');
+  log.start();
   const prPropsToGet = ['number', 'user', 'updated_at', 'files'];
   const { openPRs } = await getPRs(totalPRs, firstPR, lastPR, prPropsToGet);
 
   if (openPRs.length) {
-    log.start();
+   const { indices: oldIndices, prs: oldPRs } = await getExistingData();
+
     const getFilesBar = new _cliProgress.Bar({
-      format: `Part 2 of 2: Retrieving filenames [{bar}] {percentage}% | {value}/{total}`
+      format: `Part 2 of 2: Adding/Updating PRs [{bar}] {percentage}% | {value}/{total} | {duration_formatted}`
     }, _cliProgress.Presets.shades_classic);
     getFilesBar.start(openPRs.length, 0);
+
+    let newOrUpdated = '';
     for (let count in openPRs) {
       let { number, updated_at, user: { login: username } } = openPRs[count];
-      const { data: prFiles } = await octokit.pullRequests.listFiles({ owner, repo, number });
-      const filenames = prFiles.map(({ filename }) => filename);
-      log.add(number, { number, updated_at, username, filenames });
-      if (+count > 3000 ) {
-        await rateLimiter(1500);
+      let oldUpdated_at;
+      let oldPrData = oldPRs[oldIndices[number]];
+      if (oldPrData) {
+        oldUpdated_at = oldPrData.updated_at;
+      }
+
+      if (!oldIndices.hasOwnProperty(number) || updated_at > oldUpdated_at) {
+        newOrUpdated += `PR #${number} was new or needed updating\n`;
+        const { data: prFiles } = await octokit.pullRequests.listFiles({ owner, repo, number });
+        const filenames = prFiles.map(({ filename }) => filename);
+        log.add(number, { number, updated_at, username, filenames });
+        if (+count > 3000 ) {
+          await rateLimiter(1400);
+        }
+      }
+      else {
+        let { username: oldUsername, filenames: oldFilenames } = oldPrData;
+        log.add(number, { number, updated_at: oldUpdated_at, username: oldUsername, filenames: oldFilenames });
       }
       if (+count % 10 === 0) {
         getFilesBar.update(+count);
@@ -98,6 +121,7 @@ const log = new Log();
     }
     getFilesBar.update(openPRs.length);
     getFilesBar.stop();
+    console.log(newOrUpdated);
   }
 })()
 .then(() => {
