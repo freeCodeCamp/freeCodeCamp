@@ -73,6 +73,10 @@ Examples of Popular Drag and drop themes that makes a WordPress website easy to 
 - Divi theme, and 
 - Elementor theme.
 
+### Visual Editors
+
+"What You See Is What You Get" (WYSIWYG) editors for WordPress have increased in popularity over recent years. These visual builders provide user-friendly interfaces that allow users to customize all aspects of their site without a bit of code. Some of the most popular include [Divi](https://www.elegantthemes.com/gallery/divi/) and [Thrive](https://thrivethemes.com/architect/?idev_id=4971), which are both under $90, and [SiteOrigin](https://siteorigin.com/page-builder/), which is a free option. WordPress will be shipping its own visual editor, Gutenberg, as of version 5.0. You can learn more about it here: [Gutenberg](https://wordpress.org/gutenberg/).
+
 ### From Blogging Platform to CMS
 
 The power of WordPress becomes apparent in the use of 3 features: custom post types, custom taxonomies, and custom fields. Generating custom post types allows a website administrator or web developer to separate very specific content types from the rest of their website content. This can be helpful on websites with large page counts and numerous varying content sections.
