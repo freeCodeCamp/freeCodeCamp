@@ -96,6 +96,7 @@ class Editor extends Component {
   editorDidMount = (editor, monaco) => {
     this._editor = editor;
     this._editor.focus();
+		this._editor.getAccessibility();
     document.addEventListener('keyup', this.focusEditor);
     this._editor.addAction({
       id: 'execute-challenge',
