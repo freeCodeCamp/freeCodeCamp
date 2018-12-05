@@ -37,7 +37,7 @@ g.salute
 ```
 ## Version
 
-The current stable version is [2.5.1](https://www.ruby-lang.org/en/news/2018/03/28/ruby-2-5-1-released/).
+The current stable version is [2.5.3](https://www.ruby-lang.org/en/news/2018/10/18/ruby-2-5-3-released/).
 
 ## Installation
 
