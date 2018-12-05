@@ -132,7 +132,6 @@ follow the exact steps your domain provider requries.
 
 ## Installing Wordpress
 If you have cPanel, go on to Softaculous and select Wordpress. It will automatically install Wordpress for your domain name.
-<br>
 
 ### Software Setup
 Choose Protocol: http:// (I would prefer this or https://)
@@ -161,7 +160,24 @@ Email Installation Details To: -youremail-
 
 After confirming installation your will be on the WordPress Dashboard.
 
-#### More Information
+## Installation (Development Environment)
+
+### Arch Linux
+1. Download WordPress from https://wordpress.org/download/
+2. Extract the WordPress files from the .tar.gz archive.
+3. Move the extracted WordPress directory to /srv/http. This can be achieved using the following command. Remember to replace the text within the <> with the name of the extracted WordPress directory in your computer (use sudo if superuser access is required):
+    ```sh
+    mv ~Downloads/<insert WordPress directory here) /srv/http
+    ```
+4. For **development purposes**, change the user permissions fo the WordPress folder to 777. This can be done using the following command:
+    ```sh
+    sudo chmod -R 777 /srv/http/<insert WordPress directory here)
+    ```
+5. Open a browser.
+6. Navigate to localhost/<insert WordPress directory here).
+7. Follow the graphical installer and you're all set.
+
+## More Information
 
 - [WordPress Theme Directory](https://wordpress.org/themes/)
 - [WordPress Plugin Directory](https://wordpress.org/plugins/)
