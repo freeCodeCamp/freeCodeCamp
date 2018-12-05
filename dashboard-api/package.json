@@ -1,5 +1,5 @@
 {
-  "name": "@freecodecamp/mods-dashboard-server",
+  "name": "@freecodecamp/dashboard-api",
   "private": true,
   "main": "server.js",
   "scripts": {
