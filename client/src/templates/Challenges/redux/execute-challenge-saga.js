@@ -1,4 +1,4 @@
-import { takeEvery, put, select, call } from 'redux-saga/effects';
+import { put, select, call, takeLatest } from 'redux-saga/effects';
 
 import {
   challengeMetaSelector,
@@ -27,13 +27,13 @@ function* ExecuteChallengeSaga() {
   switch (challengeType) {
     case js:
     case bonfire:
-      yield ExecuteJSChallengeSaga();
+      yield* ExecuteJSChallengeSaga();
       break;
     case backend:
-      // yield ExecuteBackendChallengeSaga();
+      // yield* ExecuteBackendChallengeSaga();
       break;
     default:
-    // yield ExecuteDOMChallengeSaga();
+    // yield* ExecuteDOMChallengeSaga();
   }
 }
 
@@ -83,5 +83,5 @@ function* ExecuteJSChallengeSaga() {
 }
 
 export function createExecuteChallengeSaga(types) {
-  return [takeEvery(types.executeChallenge, ExecuteChallengeSaga)];
+  return [takeLatest(types.executeChallenge, ExecuteChallengeSaga)];
 }
