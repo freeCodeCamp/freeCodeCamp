@@ -25,20 +25,20 @@ Write a function that takes a 2D array as a parameter. Each element has 2 elemen
 
 ``` yml
 tests:
-- text: <code>stableSort</code> should be a function.
-  testString: assert(typeof stableSort=='function','<code>stableSort</code> should be a function.');
-- text: <code>stableSort([["UK","London"],["US","New York"],["US","Birmingham"],["UK","Birmingham"]])</code> should return a array.
-  testString: assert(Array.isArray(stableSort([["UK","London"],["US","New York"],["US","Birmingham"],["UK","Birmingham"]])),'<code>stableSort([["UK","London"],["US","New York"],["US","Birmingham"],["UK","Birmingham"]])</code> should return a array.');
-- text: <code>stableSort([["UK","London"],["US","New York"],["US","Birmingham"],["UK","Birmingham"]])</code> should return <code>[["US","Birmingham"],["UK","Birmingham"],["UK","London"],["US","New York"]]</code>.
-  testString: assert.deepEqual(stableSort([["UK","London"],["US","New York"],["US","Birmingham"],["UK","Birmingham"]]),[["US","Birmingham"],["UK","Birmingham"],["UK","London"],["US","New York"]],'<code>stableSort([["UK","London"],["US","New York"],["US","Birmingham"],["UK","Birmingham"]])</code> should return <code>[["US","Birmingham"],["UK","Birmingham"],["UK","London"],["US","New York"]]</code>.');
-- text: <code>stableSort([[2,2],[1,2],[1,4],[1,5]])</code> should return <code>[[2,2],[1,2],[1,4],[1,5]]</code>.
-  testString: assert.deepEqual(stableSort([[2,2],[1,2],[1,4],[1,5]]),[[2,2],[1,2],[1,4],[1,5]],'<code>stableSort([[2,2],[1,2],[1,4],[1,5]])</code> should return <code>[[2,2],[1,2],[1,4],[1,5]]</code>.');
-- text: <code>stableSort([[11,55],[12,45],[11,45],[32,45]])</code> should return <code>[[12,45],[11,45],[32,45],[11,55]]</code>.
-  testString: assert.deepEqual(stableSort([[11,55],[12,45],[11,45],[32,45]]),[[12,45],[11,45],[32,45],[11,55]],'<code>stableSort([[11,55],[12,45],[11,45],[32,45]])</code> should return <code>[[12,45],[11,45],[32,45],[11,55]]</code>.');
-- text: <code>stableSort([[10,22],[1,2],[1,4],[1,5],[10,9]])</code> should return <code>[[1,2],[1,4],[1,5],[10,9],[10,22]]</code>.
-  testString: assert.deepEqual(stableSort([[10,22],[1,2],[1,4],[1,5],[10,9]]),[[1,2],[1,4],[1,5],[10,9],[10,22]],'<code>stableSort([[10,22],[1,2],[1,4],[1,5],[10,9]])</code> should return <code>[[1,2],[1,4],[1,5],[10,9],[10,22]]</code>.');
-- text: <code>stableSort([[55,54],[12,22],[31,43],[31,54],[10,49]])</code> should return <code>[[12,22],[31,43],[10,49],[55,54],[31,54]]</code>.
-  testString: assert.deepEqual(stableSort([[55,54],[12,22],[31,43],[31,54],[10,49]]),[[12,22],[31,43],[10,49],[55,54],[31,54]],'<code>stableSort([[55,54],[12,22],[31,43],[31,54],[10,49]])</code> should return <code>[[12,22],[31,43],[10,49],[55,54],[31,54]]</code>.');
+  - text: <code>stableSort</code> should be a function.
+    testString: assert(typeof stableSort=='function','<code>stableSort</code> should be a function.');
+  - text: <code>stableSort([["UK","London"],["US","New York"],["US","Birmingham"],["UK","Birmingham"]])</code> should return a array.
+    testString: assert(Array.isArray(stableSort([["UK","London"],["US","New York"],["US","Birmingham"],["UK","Birmingham"]])),'<code>stableSort([["UK","London"],["US","New York"],["US","Birmingham"],["UK","Birmingham"]])</code> should return a array.');
+  - text: <code>stableSort([["UK","London"],["US","New York"],["US","Birmingham"],["UK","Birmingham"]])</code> should return <code>[["US","Birmingham"],["UK","Birmingham"],["UK","London"],["US","New York"]]</code>.
+    testString: assert.deepEqual(stableSort([["UK","London"],["US","New York"],["US","Birmingham"],["UK","Birmingham"]]),[["US","Birmingham"],["UK","Birmingham"],["UK","London"],["US","New York"]],'<code>stableSort([["UK","London"],["US","New York"],["US","Birmingham"],["UK","Birmingham"]])</code> should return <code>[["US","Birmingham"],["UK","Birmingham"],["UK","London"],["US","New York"]]</code>.');
+  - text: <code>stableSort([[2,2],[1,2],[1,4],[1,5]])</code> should return <code>[[2,2],[1,2],[1,4],[1,5]]</code>.
+    testString: assert.deepEqual(stableSort([[2,2],[1,2],[1,4],[1,5]]),[[2,2],[1,2],[1,4],[1,5]],'<code>stableSort([[2,2],[1,2],[1,4],[1,5]])</code> should return <code>[[2,2],[1,2],[1,4],[1,5]]</code>.');
+  - text: <code>stableSort([[11,55],[12,45],[11,45],[32,45]])</code> should return <code>[[12,45],[11,45],[32,45],[11,55]]</code>.
+    testString: assert.deepEqual(stableSort([[11,55],[12,45],[11,45],[32,45]]),[[12,45],[11,45],[32,45],[11,55]],'<code>stableSort([[11,55],[12,45],[11,45],[32,45]])</code> should return <code>[[12,45],[11,45],[32,45],[11,55]]</code>.');
+  - text: <code>stableSort([[10,22],[1,2],[1,4],[1,5],[10,9]])</code> should return <code>[[1,2],[1,4],[1,5],[10,9],[10,22]]</code>.
+    testString: assert.deepEqual(stableSort([[10,22],[1,2],[1,4],[1,5],[10,9]]),[[1,2],[1,4],[1,5],[10,9],[10,22]],'<code>stableSort([[10,22],[1,2],[1,4],[1,5],[10,9]])</code> should return <code>[[1,2],[1,4],[1,5],[10,9],[10,22]]</code>.');
+  - text: <code>stableSort([[55,54],[12,22],[31,43],[31,54],[10,49]])</code> should return <code>[[12,22],[31,43],[10,49],[55,54],[31,54]]</code>.
+    testString: assert.deepEqual(stableSort([[55,54],[12,22],[31,43],[31,54],[10,49]]),[[12,22],[31,43],[10,49],[55,54],[31,54]],'<code>stableSort([[55,54],[12,22],[31,43],[31,54],[10,49]])</code> should return <code>[[12,22],[31,43],[10,49],[55,54],[31,54]]</code>.');
 ```
 
 </section>
@@ -48,8 +48,8 @@ tests:
 <div id='js-seed'>
 
 ```js
-function stableSort (arr) {,
-  // Good luck!,
+function stableSort (arr) {
+  // Good luck!
 }
 ```
 
