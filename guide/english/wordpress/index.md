@@ -22,6 +22,7 @@ Just to name a few advantages of WordPress:
 * Has plugins, which extend functionality to WordPress sites.
 * Has mobile app (Android and iOS), which can be used to post and manage their Wordpress webpage.
 * Wordpress sites can be hosted on any server running the LAMP stack
+* WordPress themes make it possible for non-designers to create a customized website  
 
 Whether it is page transitions or a customized contact form, WordPress users are only a few clicks away from success and a beautiful website.
 
@@ -54,6 +55,8 @@ WordPress has a few great ways to extend its core functionality. Among these, th
 Themes typically provide an overall framework for the design and functionality of a site. WordPress has many free themes available, and there's a large ecosystem of professional-grade themes available at reasonable prices. 
 
 Plugins extend WordPress functionality in specific ways, adding features like mailing list integrations, contact forms, enhanced security, or custom data fields. As with themes, there's a huge number of plugins available, many of them free, or with both free and pro versions available, covering almost any feature you might think of.
+
+While free themes offer a range of beautiful designs, WordPress premium themes for web projects beyond the basics may cost between $10 to $200 with an average around $59. Also, most plugins are available in free or premium versions.
 
 The following are some of the popular and useful plugins in WordPress:
 - Yoast SEO
@@ -130,7 +133,7 @@ Admin Passowrd: -Make sure the admin password is difficult- (https://strongpassw
 ### Choose Language
 Select Language: -Pick Your Desired Language-
 
-###Select Plugins
+### Select Plugins
 Limit Login Attempts (Loginizer): -NO-
 
 ### Advanced Options
