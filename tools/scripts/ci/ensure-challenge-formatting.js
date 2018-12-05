@@ -1,21 +1,67 @@
 const readdirp = require('readdirp-walk');
+const { has, isEmpty, isNumber } = require('lodash');
+const ora = require('ora');
 
 const { parseMarkdown } = require('../../challenge-md-parser');
-const { challengeRoot } = require('./md-testing-utils');
+const { challengeRoot, checkFrontmatter } = require('./md-testing-utils');
 
-readdirp({ root: challengeRoot }).on('data', file =>
-  Promise.all([isChallengeParseable(file)]).catch(err => {
-    console.info(`
+const scrimbaUrlRE = /^https:\/\/scrimba\.com\//;
+const requiredProps = ['title', 'id', 'challengeType'];
+
+const spinner = ora('Checking challenge markdown formatting').start();
+
+readdirp({ root: challengeRoot })
+  .on('data', file => {
+    const frontmatterCheck = (/_meta/).test(file.fullPath)
+      ? Promise.resolve(null)
+      : checkFrontmatter(file, {
+          validator: challengeFrontmatterValidator(file)
+        });
+    return Promise.all([isChallengeParseable(file), frontmatterCheck]).catch(
+      err => {
+        console.info(`
   the following error occured when testing
 
     ${file.fullPath}
 
     `);
-    console.error(err);
-    // eslint-disable-next-line no-process-exit
-    process.exit(1);
+        console.error(err);
+        // eslint-disable-next-line no-process-exit
+        process.exit(1);
+      }
+    );
   })
-);
+  .on('end', () => spinner.stop());
+
+const challengeFrontmatterValidator = file => frontmatter => {
+  const { fullPath } = file;
+
+  const hasRequiredProperties = requiredProps
+    .map(
+      prop =>
+        has(frontmatter, prop) &&
+        (!isEmpty(frontmatter[prop]) || isNumber(frontmatter[prop]))
+    )
+    .every(bool => bool);
+  if (!hasRequiredProperties) {
+    console.log(`${fullPath} is missing required frontmatter
+
+    ${JSON.stringify(frontmatter, null, 2)}
+
+    Required properties are: ${JSON.stringify(requiredProps, null, 2)}
+
+    `);
+  }
+  const { videoUrl } = frontmatter;
+
+  let validVideoUrl = false;
+  if (isEmpty(videoUrl)) {
+    validVideoUrl = true;
+  } else {
+    validVideoUrl = scrimbaUrlRE.test(videoUrl);
+  }
+  return hasRequiredProperties && validVideoUrl;
+};
 
 function isChallengeParseable(file) {
   const { stat, fullPath } = file;

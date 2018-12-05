@@ -1,7 +1,6 @@
 const path = require('path');
 const fs = require('fs');
 const matter = require('gray-matter');
-const _ = require('lodash');
 
 const pass = true;
 
@@ -97,26 +96,11 @@ exports.checkFrontmatter = function checkFrontmatter(
       try {
         const { data: frontmatter } = matter(content);
         const { validator } = options;
-        if (
-          !frontmatter ||
-          _.isEmpty(frontmatter) ||
-          !frontmatter.title ||
-          !validator(frontmatter)
-        ) {
+        if (!validator(frontmatter)) {
           return reject(
-            new Error(`
-  The article at: ${fullPath} is missing frontmatter.
-
-  Example:
-
-  ---
-  title: The Article Title
-  localeTitle: The Translated Title # Only required for translations
-  ---
-
-  < Content >
-
-  `)
+            new Error(
+              `The article at: ${fullPath} failed frontmatter validation.`
+            )
           );
         }
         return resolve(pass);
