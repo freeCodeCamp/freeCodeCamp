@@ -24,20 +24,20 @@ Where the correct result would be:
 
 ``` yml
 tests:
-- text: <code>sortDisjoint</code> should be a function.
-  testString: assert(typeof sortDisjoint=='function','<code>sortDisjoint</code> should be a function.');
-- text: <code>sortDisjoint([7,6,5,4,3,2,1,0],[6,1,7])</code> should return a array.
-  testString: assert(Array.isArray(sortDisjoint([7,6,5,4,3,2,1,0],[6,1,7])),'<code>sortDisjoint([7,6,5,4,3,2,1,0],[6,1,7])</code> should return a array.');
-- text: <code>sortDisjoint([7,6,5,4,3,2,1,0],[6,1,7])</code> should return <code>[7,0,5,4,3,2,1,6]</code>.
-  testString: assert.deepEqual(sortDisjoint([7,6,5,4,3,2,1,0],[6,1,7]),[7,0,5,4,3,2,1,6],'<code>sortDisjoint([7,6,5,4,3,2,1,0],[6,1,7])</code> should return <code>[7,0,5,4,3,2,1,6]</code>.');
-- text: <code>sortDisjoint([7,6,5,4,3,2,1,0],[1,2,5,6])</code> should return <code>[7,1,2,4,3,5,6,0]</code>.
-  testString: assert.deepEqual(sortDisjoint([7,6,5,4,3,2,1,0],[1,2,5,6]),[7,1,2,4,3,5,6,0],'<code>sortDisjoint([7,6,5,4,3,2,1,0],[1,2,5,6])</code> should return <code>[7,1,2,4,3,5,6,0]</code>.');
-- text: <code>sortDisjoint([8,7,6,5,4,3,2,1],[6,1,7])</code> should return <code>[8,1,6,5,4,3,2,7]</code>.
-  testString: assert.deepEqual(sortDisjoint([8,7,6,5,4,3,2,1],[6,1,7]),[8,1,6,5,4,3,2,7],'<code>sortDisjoint([8,7,6,5,4,3,2,1],[6,1,7])</code> should return <code>[8,1,6,5,4,3,2,7]</code>.');
-- text: <code>sortDisjoint([8,7,6,5,4,3,2,1],[1,3,5,6])</code> should return <code>[8,2,6,3,4,5,7,1]</code>.
-  testString: assert.deepEqual(sortDisjoint([8,7,6,5,4,3,2,1],[1,3,5,6]),[8,2,6,3,4,5,7,1],'<code>sortDisjoint([8,7,6,5,4,3,2,1],[1,3,5,6])</code> should return <code>[8,2,6,3,4,5,7,1]</code>.');
-- text: <code>sortDisjoint([6,1,7,1,3,5,6],[6,1,5,4])</code> should return <code>[6,1,7,1,3,5,6]</code>.
-  testString: assert.deepEqual(sortDisjoint([6,1,7,1,3,5,6],[6,1,5,4]),[6,1,7,1,3,5,6],'<code>sortDisjoint([6,1,7,1,3,5,6],[6,1,5,4])</code> should return <code>[6,1,7,1,3,5,6]</code>.');
+  - text: <code>sortDisjoint</code> should be a function.
+    testString: assert(typeof sortDisjoint=='function','<code>sortDisjoint</code> should be a function.');
+  - text: <code>sortDisjoint([7,6,5,4,3,2,1,0],[6,1,7])</code> should return a array.
+    testString: assert(Array.isArray(sortDisjoint([7,6,5,4,3,2,1,0],[6,1,7])),'<code>sortDisjoint([7,6,5,4,3,2,1,0],[6,1,7])</code> should return a array.');
+  - text: <code>sortDisjoint([7,6,5,4,3,2,1,0],[6,1,7])</code> should return <code>[7,0,5,4,3,2,1,6]</code>.
+    testString: assert.deepEqual(sortDisjoint([7,6,5,4,3,2,1,0],[6,1,7]),[7,0,5,4,3,2,1,6],'<code>sortDisjoint([7,6,5,4,3,2,1,0],[6,1,7])</code> should return <code>[7,0,5,4,3,2,1,6]</code>.');
+  - text: <code>sortDisjoint([7,6,5,4,3,2,1,0],[1,2,5,6])</code> should return <code>[7,1,2,4,3,5,6,0]</code>.
+    testString: assert.deepEqual(sortDisjoint([7,6,5,4,3,2,1,0],[1,2,5,6]),[7,1,2,4,3,5,6,0],'<code>sortDisjoint([7,6,5,4,3,2,1,0],[1,2,5,6])</code> should return <code>[7,1,2,4,3,5,6,0]</code>.');
+  - text: <code>sortDisjoint([8,7,6,5,4,3,2,1],[6,1,7])</code> should return <code>[8,1,6,5,4,3,2,7]</code>.
+    testString: assert.deepEqual(sortDisjoint([8,7,6,5,4,3,2,1],[6,1,7]),[8,1,6,5,4,3,2,7],'<code>sortDisjoint([8,7,6,5,4,3,2,1],[6,1,7])</code> should return <code>[8,1,6,5,4,3,2,7]</code>.');
+  - text: <code>sortDisjoint([8,7,6,5,4,3,2,1],[1,3,5,6])</code> should return <code>[8,2,6,3,4,5,7,1]</code>.
+    testString: assert.deepEqual(sortDisjoint([8,7,6,5,4,3,2,1],[1,3,5,6]),[8,2,6,3,4,5,7,1],'<code>sortDisjoint([8,7,6,5,4,3,2,1],[1,3,5,6])</code> should return <code>[8,2,6,3,4,5,7,1]</code>.');
+  - text: <code>sortDisjoint([6,1,7,1,3,5,6],[6,1,5,4])</code> should return <code>[6,1,7,1,3,5,6]</code>.
+    testString: assert.deepEqual(sortDisjoint([6,1,7,1,3,5,6],[6,1,5,4]),[6,1,7,1,3,5,6],'<code>sortDisjoint([6,1,7,1,3,5,6],[6,1,5,4])</code> should return <code>[6,1,7,1,3,5,6]</code>.');
 ```
 
 </section>
@@ -61,16 +61,21 @@ function sortDisjoint (values, indices) {
 
 ```js
 function sortDisjoint(values, indices) {
-    var sublist = [];
-    indices.sort(function (a, b) { return a > b; });
-    for (var i = 0; i < indices.length; i += 1) {
-        sublist.push(values[indices[i]]);
-    }
-    sublist.sort(function (a, b) { return a < b; });
-    for (var i = 0; i < indices.length; i += 1) {
-        values[indices[i]] = sublist.pop();
-    }
-    return values;
+  let sublist = [];
+
+  indices.sort(function (a, b) { return a - b; });
+  
+  for (let i = 0; i < indices.length; i++) {
+    sublist.push(values[indices[i]]);
+  }
+  
+  sublist.sort((a, b) => { return a - b; });
+  
+  for (let i = 0; i < indices.length; i++) {
+    values[indices[i]] = sublist[i];
+  }
+
+  return values;
 }
 ```
 
