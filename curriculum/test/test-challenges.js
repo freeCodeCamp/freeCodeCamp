@@ -25,24 +25,25 @@ const ChallengeTitles = require('./utils/challengeTitles');
 const { challengeSchemaValidator } = require('../schema/challengeSchema');
 const { challengeTypes } = require('../../client/utils/challengeTypes');
 
+const { supportedLangs } = require('../utils');
+
 const { LOCALE: lang = 'english' } = process.env;
 
 const oldRunnerFail = Mocha.Runner.prototype.fail;
 Mocha.Runner.prototype.fail = function(test, err) {
-  if (err.stack && err instanceof AssertionError) {
-    const assertIndex = err.message.indexOf(': expected');
+  if (err instanceof AssertionError) {
+    const errMessage = String(err.message || '');
+    const assertIndex = errMessage.indexOf(': expected');
     if (assertIndex !== -1) {
-      err.message = err.message.slice(0, assertIndex);
+      err.message = errMessage.slice(0, assertIndex);
     }
     // Don't show stacktrace for assertion errors.
-    delete err.stack;
+    if (err.stack) {
+      delete err.stack;
+    }
   }
   return oldRunnerFail.call(this, test, err);
 };
-
-const mongoIds = new MongoIds();
-const challengeTitles = new ChallengeTitles();
-const validateChallenge = challengeSchemaValidator(lang);
 
 const { JSDOM } = jsdom;
 
@@ -56,7 +57,15 @@ const jQueryScript = fs.readFileSync(
   'utf8'
 );
 
-(async function() {
+runTests();
+
+async function runTests() {
+  await Promise.all(supportedLangs.map(lang => populateTestsForLang(lang)));
+
+  run();
+}
+
+async function populateTestsForLang(lang) {
   const allChallenges = await getChallengesForLang(lang).then(curriculum =>
     Object.keys(curriculum)
       .map(key => curriculum[key].blocks)
@@ -68,7 +77,11 @@ const jQueryScript = fs.readFileSync(
       }, [])
   );
 
-  describe('Check challenges tests', async function() {
+  const mongoIds = new MongoIds();
+  const challengeTitles = new ChallengeTitles();
+  const validateChallenge = challengeSchemaValidator(lang);
+
+  describe(`Check challenges (${lang})`, async function() {
     before(async function() {
       this.timeout(30000);
       global.browser = await puppeteer.launch({ args: ['--no-sandbox'] });
@@ -88,8 +101,7 @@ const jQueryScript = fs.readFileSync(
         it('Common checks', function() {
           const result = validateChallenge(challenge);
           if (result.error) {
-            console.log(result.value);
-            throw new Error(result.error);
+            throw new AssertionError(result.error);
           }
           const { id, title } = challenge;
           mongoIds.check(id, title);
@@ -209,9 +221,7 @@ const jQueryScript = fs.readFileSync(
       });
     });
   });
-
-  run();
-})();
+}
 
 // Fake Deep Equal dependency
 const DeepEqual = (a, b) => JSON.stringify(a) === JSON.stringify(b);
