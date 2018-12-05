@@ -78,6 +78,9 @@ Examples of Popular Drag and drop themes that makes a WordPress website easy to 
 
 "What You See Is What You Get" (WYSIWYG) editors for WordPress have increased in popularity over recent years. These visual builders provide user-friendly interfaces that allow users to customize all aspects of their site without a bit of code. Some of the most popular include [Divi](https://www.elegantthemes.com/gallery/divi/) and [Thrive](https://thrivethemes.com/architect/?idev_id=4971), which are both under $90, and [SiteOrigin](https://siteorigin.com/page-builder/), which is a free option. WordPress will be shipping its own visual editor, Gutenberg, as of version 5.0. You can learn more about it here: [Gutenberg](https://wordpress.org/gutenberg/).
 
+#### Gutenberg WordPress editor
+In early 2017 WordPress announced that they had been working on the new Gutenberg WordPress editor. The Gutenberg editor is a page builder being developed to integrate with WordPress core. It aims to add flexibility to the content editing experience through the use of content blocks, which can be styled and moved individually. Although it has not yet been officially released, the editor is available for early testing and feedback. WordPress hope to merge the Gutenberg editor into WordPress 5.0.
+
 ### From Blogging Platform to CMS
 
 The power of WordPress becomes apparent in the use of 3 features: custom post types, custom taxonomies, and custom fields. Generating custom post types allows a website administrator or web developer to separate very specific content types from the rest of their website content. This can be helpful on websites with large page counts and numerous varying content sections.
