@@ -8,7 +8,7 @@ title: WordPress
 
 ## WordPress
 
-WordPress is a free and open-source content management system based on **PHP** and **MySQL**. Its features include robust user management, an extensible theming and plugin architecture, and a flexible template system. It is most often associated with blogging but supports other types of web content including forums, media galleries, and online stores.
+WordPress is a free and open-source [content management](https://en.wikipedia.org/wiki/Content_management_system) system based on **PHP** and **MySQL**. Its features include robust user management, an extensible theming and plugin architecture, and a flexible template system. It is most often associated with blogging but supports other types of web content including forums, media galleries, and online stores.
 
 WordPress was first launched in 2003 and now powers over 30% of all websites. It is by far the most used CMS on the planet. Backed by a huge community, this open source platform powers not only countless sites but a multi-billion dollar economy with themes, plugins, and custom software.
 
@@ -24,6 +24,8 @@ Just to name a few advantages of WordPress:
 * Wordpress sites can be hosted on any server running the LAMP stack
 * WordPress themes make it possible for non-designers to create a customized website
 * Wordpress site are very scalable, you can start as simple blog then end up with complex online stores, membership, and affiliate program
+
+As a CMS, WordPress allows you to control and manage content of your website with a very easy system, such as the WordPress dashboard panel. A dashboard lets you to do work on your website without needing to program anything. You can add or delete images and edit text on your webpage fast and easily.
 
 Whether it is page transitions or a customized contact form, WordPress users are only a few clicks away from success and a beautiful website.
 
@@ -99,8 +101,6 @@ Here are some examples of big name brands using WordPress:
 * MTV News
 * BBC America
 * Techcrunch
-
-Whether it's page transitions or a customized contact form, WordPress users are only a few clicks away from building a website.
 
 Note: WordPress's ease of use may encourage new users to forget about website security. However, the popularity of WordPress increases the activity of malware and other issues. 
 It is important to choose extremely difficult or random passwords for the administrators and for the database. This guards against random brute-force attacks. 
