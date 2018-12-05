@@ -60,6 +60,7 @@ project or application, no matter how small!
 
 * [RayWenderlich.com](https://www.raywenderlich.com/) : Has many great tutorials for Swift and iOS development.
 * [Hacking with Swift](https://www.hackingwithswift.com/read) : A complete Swift tutorial, taking you from a beginner to advanced using hands-on projects.
+* [Swift Programming: The Big Nerd Ranch Guide] (https://www.amazon.com/Swift-Programming-Ranch-Guide-Guides/dp/013461061X/ref=pd_bxgy_14_img_3?_encoding=UTF8&pd_rd_i=013461061X&pd_rd_r=226bb026-f8b2-11e8-a598-6b142cabb10b&pd_rd_w=l7pwY&pd_rd_wg=Dj2qt&pf_rd_i=desktop-dp-sims&pf_rd_m=ATVPDKIKX0DER&pf_rd_p=6725dbd6-9917-451d-beba-16af7874e407&pf_rd_r=FKY58NNBGM8891C1Q16F&pf_rd_s=desktop-dp-sims&pf_rd_t=40701&psc=1&refRID=FKY58NNBGM8891C1Q16F) : A book to review most of swift programming.
 
 ### Sources
 
