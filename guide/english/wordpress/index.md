@@ -65,6 +65,11 @@ The following are some of the popular and useful plugins in WordPress:
 - Akismet 
 - Mailchimp etc
 
+Examples of Popular Drag and drop themes that makes a WordPress website easy to build are:
+- Avada theme
+- Divi theme, and 
+- Elementor theme.
+
 ### From Blogging Platform to CMS
 
 The power of WordPress becomes apparent in the use of 3 features: custom post types, custom taxonomies, and custom fields. Generating custom post types allows a website administrator or web developer to separate very specific content types from the rest of their website content. This can be helpful on websites with large page counts and numerous varying content sections.
