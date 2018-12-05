@@ -18,20 +18,20 @@ Write a function to sort an array (or list) of strings in order of descending le
 
 ``` yml
 tests:
-- text: <code>lengthSorter</code> should be a function.
-  testString: assert(typeof lengthSorter=='function','<code>lengthSorter</code> should be a function.');
-- text: <code>lengthSorter(["Here","are","some","sample","strings","to","be","sorted"])</code> should return a array.
-  testString: assert(Array.isArray(lengthSorter(["Here","are","some","sample","strings","to","be","sorted"])),'<code>lengthSorter(["Here","are","some","sample","strings","to","be","sorted"])</code> should return a array.');
-- text: <code>lengthSorter(["Here","are","some","sample","strings","to","be","sorted"])</code> should return <code>["strings","sample","sorted","Here","some","are","be","to"]</code>.
-  testString: assert.deepEqual(lengthSorter(["Here","are","some","sample","strings","to","be","sorted"]),["strings","sample","sorted","Here","some","are","be","to"],'<code>lengthSorter(["Here","are","some","sample","strings","to","be","sorted"])</code> should return <code>["strings","sample","sorted","Here","some","are","be","to"]</code>.');
-- text: <code>lengthSorter(["I","hope","your","day","is","going","good","?"])</code> should return <code>["going","good","hope","your","day","is","?","I"]</code>.
-  testString: assert.deepEqual(lengthSorter(["I","hope","your","day","is","going","good","?"]),["going","good","hope","your","day","is","?","I"],'<code>lengthSorter(["I","hope","your","day","is","going","good","?"])</code> should return <code>["going","good","hope","your","day","is","?","I"]</code>.');
-- text: <code>lengthSorter(["Mine","is","going","great"])</code> should return <code>["going","great","Mine","is"]</code>.
-  testString: assert.deepEqual(lengthSorter(["Mine","is","going","great"]),["going","great","Mine","is"],'<code>lengthSorter(["Mine","is","going","great"])</code> should return <code>["going","great","Mine","is"]</code>.');
-- text: <code>lengthSorter(["Have","fun","sorting","!!"])</code> should return <code>["sorting","Have","fun","!!"]</code>.
-  testString: assert.deepEqual(lengthSorter(["Have","fun","sorting","!!"]),["sorting","Have","fun","!!"],'<code>lengthSorter(["Have","fun","sorting","!!"])</code> should return <code>["sorting","Have","fun","!!"]</code>.');
-- text: <code>lengthSorter(["Everthing","is","good","!!"])</code> should return <code>["Everthing","good","!!","is"]</code>.
-  testString: assert.deepEqual(lengthSorter(["Everthing","is","good","!!"]),["Everthing","good","!!","is"],'<code>lengthSorter(["Everthing","is","good","!!"])</code> should return <code>["Everthing","good","!!","is"]</code>.');
+  - text: <code>lengthSorter</code> should be a function.
+    testString: assert(typeof lengthSorter=='function','<code>lengthSorter</code> should be a function.');
+  - text: <code>lengthSorter(["Here","are","some","sample","strings","to","be","sorted"])</code> should return a array.
+    testString: assert(Array.isArray(lengthSorter(["Here","are","some","sample","strings","to","be","sorted"])),'<code>lengthSorter(["Here","are","some","sample","strings","to","be","sorted"])</code> should return a array.');
+  - text: <code>lengthSorter(["Here","are","some","sample","strings","to","be","sorted"])</code> should return <code>["strings","sample","sorted","Here","some","are","be","to"]</code>.
+    testString: assert.deepEqual(lengthSorter(["Here","are","some","sample","strings","to","be","sorted"]),["strings","sample","sorted","Here","some","are","be","to"],'<code>lengthSorter(["Here","are","some","sample","strings","to","be","sorted"])</code> should return <code>["strings","sample","sorted","Here","some","are","be","to"]</code>.');
+  - text: <code>lengthSorter(["I","hope","your","day","is","going","good","?"])</code> should return <code>["going","good","hope","your","day","is","?","I"]</code>.
+    testString: assert.deepEqual(lengthSorter(["I","hope","your","day","is","going","good","?"]),["going","good","hope","your","day","is","?","I"],'<code>lengthSorter(["I","hope","your","day","is","going","good","?"])</code> should return <code>["going","good","hope","your","day","is","?","I"]</code>.');
+  - text: <code>lengthSorter(["Mine","is","going","great"])</code> should return <code>["going","great","Mine","is"]</code>.
+    testString: assert.deepEqual(lengthSorter(["Mine","is","going","great"]),["going","great","Mine","is"],'<code>lengthSorter(["Mine","is","going","great"])</code> should return <code>["going","great","Mine","is"]</code>.');
+  - text: <code>lengthSorter(["Have","fun","sorting","!!"])</code> should return <code>["sorting","Have","fun","!!"]</code>.
+    testString: assert.deepEqual(lengthSorter(["Have","fun","sorting","!!"]),["sorting","Have","fun","!!"],'<code>lengthSorter(["Have","fun","sorting","!!"])</code> should return <code>["sorting","Have","fun","!!"]</code>.');
+  - text: <code>lengthSorter(["Everthing","is","good","!!"])</code> should return <code>["Everthing","good","!!","is"]</code>.
+    testString: assert.deepEqual(lengthSorter(["Everthing","is","good","!!"]),["Everthing","good","!!","is"],'<code>lengthSorter(["Everthing","is","good","!!"])</code> should return <code>["Everthing","good","!!","is"]</code>.');
 ```
 
 </section>
