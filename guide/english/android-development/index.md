@@ -88,6 +88,7 @@ If you are just a beginner in Android Developement. You can directly start learn
 
 [Head First Android Development](https://www.amazon.in/Head-First-Android-Development-Griffiths/dp/1449362184)
 [Android Application Development All-In-One for Dummies, 2ed](https://www.amazon.in/Android-Application-Development-All-Dummies/dp/1118027701)
+[Android Programming: The Big Nerd Ranch Guide](https://www.amazon.com/Android-Programming-Ranch-Guide-Guides/dp/0134706056/ref=pd_bxgy_14_3?_encoding=UTF8&pd_rd_i=0134706056&pd_rd_r=1b06fce0-f8b2-11e8-b350-efdd314ccdb1&pd_rd_w=MzX0t&pd_rd_wg=5zO3P&pf_rd_i=desktop-dp-sims&pf_rd_m=ATVPDKIKX0DER&pf_rd_p=6725dbd6-9917-451d-beba-16af7874e407&pf_rd_r=SB7A0D8ETEBY6TCTWHNT&pf_rd_s=desktop-dp-sims&pf_rd_t=40701&psc=1&refRID=SB7A0D8ETEBY6TCTWHNT)
 
 [Stanford CS193a Lecture Videos](http://web.stanford.edu/class/cs193a/lectures.shtml)
 
