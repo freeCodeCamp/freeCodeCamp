@@ -13,6 +13,7 @@ import createQuestionEpic from './create-question-epic';
 import codeStorageEpic from './code-storage-epic';
 import currentChallengeEpic from './current-challenge-epic';
 import executeSaveLessonEpic from './execute-save-lesson-epic';
+import executeDeleteLessonEpic from './execute-delete-lesson-epic';
 
 import { createIdToNameMapSaga } from './id-to-name-map-saga';
 
@@ -75,6 +76,7 @@ export const types = createTypes(
     'submitComplete',
 
     'executeSaveLesson',
+    'executeDeleteLesson',
 
     ...createAsyncTypes('fetchIdToNameMap')
   ],
@@ -89,7 +91,8 @@ export const epics = [
   executeChallengeEpic,
   codeStorageEpic,
   currentChallengeEpic,
-  executeSaveLessonEpic
+  executeSaveLessonEpic,
+  executeDeleteLessonEpic
 ];
 
 export const sagas = [...createIdToNameMapSaga(types)];
@@ -151,6 +154,7 @@ export const submitChallenge = createAction(types.submitChallenge);
 export const submitComplete = createAction(types.submitComplete);
 
 export const executeSaveLesson = createAction(types.executeSaveLesson);
+export const executeDeleteLesson = createAction(types.executeDeleteLesson);
 
 export const challengeFilesSelector = state => state[ns].challengeFiles;
 export const challengeIdToNameMapSelector = state =>

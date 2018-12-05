@@ -11,24 +11,23 @@ import {
   disableJSOnError
 } from './'
 
-function executeSaveLessonEpic(action$, state$, { document }) {
+function executeDeleteLessonEpic(action$, state$, { document }) {
   return of(document).pipe(
     switchMap(() => {
-      const saveOutput = action$.pipe(
-        ofType(types.executeSaveLesson),
+      const deleteOutput = action$.pipe(
+        ofType(types.executeDeleteLesson),
         switchMap(() => {
-          console.log('// console output') //send console outputs
-          localStorage.setItem(state$.value.challenge.challengeMeta.id,
-            state$.value.challenge.challengeFiles.indexhtml.contents)
+          console.log('deleting')
+          localStorage.removeItem(state$.value.challenge.challengeMeta.id)
         }),
         catchError(err => {
           console.error(err);
           return of(disableJSOnError(err));
         })
       );
-      return saveOutput;
+      return deleteOutput;
     })
   );
 }
 
-export default executeSaveLessonEpic;
+export default executeDeleteLessonEpic;
