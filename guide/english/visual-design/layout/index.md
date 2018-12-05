@@ -29,7 +29,6 @@ The works everytime layout is based on the west's way of reading: Left to Right,
 
 Once the body copy has been taken care of, you can then add the tags. Tags are an advertising term that refers to the information usually found at the bottom right hand part of the page.
 
-TheKatHunts. “Good Design: Works-Every-Time Layout.” Writing with Magneto, 1 Apr. 2014, writingwithmagneto.wordpress.com/2014/03/14/good-design-works-every-time-layout/. 
+[TheKatHunts. “Good Design: Works-Every-Time Layout”](https://writingwithmagneto.wordpress.com/2014/03/14/good-design-works-every-time-layout/)
 
-A video on the works everytime layout.
-<a href="http://whitespacedesignbook.com/portfolio/works-every-time-layout/" target="_blank">Works everytime layout</a>
+[A video on the works everytime layout](https://whitespacedesignbook.com/portfolio/works-every-time-layout/)
