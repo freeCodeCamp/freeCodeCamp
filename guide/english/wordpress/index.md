@@ -8,7 +8,7 @@ title: WordPress
 
 ## WordPress
 
-WordPress is a free and open-source content management system based on **PHP** and **MySQL**. Features include robust user management, an extensible theming and plugin architecture, and a flexible template system. It is most associated with blogging but supports other types of web content including forums, media galleries, and online stores.
+WordPress is a free and open-source content management system based on **PHP** and **MySQL**. Its features include robust user management, an extensible theming and plugin architecture, and a flexible template system. It is most often associated with blogging but supports other types of web content including forums, media galleries, and online stores.
 
 WordPress was first launched in 2003 and now powers over 30% of all websites. It is by far the most used CMS on the planet. Backed by a huge community, this open source platform powers not only countless sites but a multi-billion dollar economy with themes, plugins, and custom software.
 
