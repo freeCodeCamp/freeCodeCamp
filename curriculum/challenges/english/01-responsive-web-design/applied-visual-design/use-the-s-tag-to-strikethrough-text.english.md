@@ -86,7 +86,7 @@ tests:
 ## Solution
 <section id='solution'>
 
-```js
+```html
  <style>
   h4 {
     text-align: center;
