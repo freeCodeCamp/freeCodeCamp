@@ -14,13 +14,12 @@ Cryptocurrency can be exchanged as fractions not possible with traditional curre
 If you want to earn bitcoins through mining, it can be done through solving mathematical proof-of-work problems that validate transactions. Blockchain uses the concept of irreversible cryptographic hash function which consists of guessing a random number (usually less than a certain value) to solve the problem for transaction validation. You will require machines with high processing power to be able to solve these problems (for example Fast-Hash One or CoinTerra TerraMiner IV). Computer's with a high end Graphics Card installed (such as the Nivida GTX 1080) are also able to solve these hashes effectively. 
 
 #### Different Types of Cryptocurrency
-
-There are many different types of Cryptocurrency, with mnay new currencies addeded every month. Here are some examples;
-[Bitcoin](https://bitcoin.org/en/)
-[Ethereum](https://www.ethereum.org/)
-[XRP](https://ripple.com/xrp/)
+There are many different types of Cryptocurrency, with many new currencies addeded every month. Here are some popular examples:
+- [Bitcoin](https://bitcoin.org/en/)
+- [Ethereum](https://www.ethereum.org/)
+- [XRP](https://ripple.com/xrp/)
 
 #### More Information:
-[Cryptocurrency](https://en.wikipedia.org/wiki/Cryptocurrency)    
-[Ultimate Guide to Cryptocurrency](https://blockgeeks.com/guides/what-is-cryptocurrency)
-[Bitcoin](https://en.wikipedia.org/wiki/Bitcoin)
+- [Cryptocurrency](https://en.wikipedia.org/wiki/Cryptocurrency)    
+- [Ultimate Guide to Cryptocurrency](https://blockgeeks.com/guides/what-is-cryptocurrency)
+- [Bitcoin](https://en.wikipedia.org/wiki/Bitcoin)
