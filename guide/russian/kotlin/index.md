@@ -4,11 +4,13 @@ localeTitle: Котлин
 ---
 **Что такое Котлин?**
 
+
 [Kotlin](https://kotlinlang.org/) - это язык программирования, разработанный компанией [Jetbrains](https://www.jetbrains.com) , известной своими IDE IntelliJ, Pycharm и др.
 
 Он служит заменой Java и работает на JVM. Он находится в разработке около 6 лет, и достиг версии 1.0 всего год назад.
 
 Kotlin настолько понравился разработчикам, что Google анонсировала его как основной язык разработки приложений под Android [Google I / O 2017](https://blog.jetbrains.com/kotlin/2017/05/kotlin-on-android-now-official/) .
+
 
 ## Версия
 
@@ -16,15 +18,19 @@ Kotlin настолько понравился разработчикам, чт�
 
 ## Установка
 
+
 Прежде чем приступать к установке Kotlin, необходимо убедиться, что вы настроили **JDK (Java Development Kit)**.
 
 Если на вашем компьютере не установлен JDK, перейдите в раздел [по этой ссылке](https://guide.freecodecamp.org/java), чтобы узнать, как его установить и настроить. Kotlin работает с **JDK 1.6+**, поэтому убедитесь, что вы установили нужную версию.
 
+
 **IntelliJ IDEA** - самый быстрый способ заставить Kotlin работать на вашей машине. Это рекомендуемая среда разработки для Kotlin благодаря большому количеству инструментов, предоставляемых Jetbrains. Вы можете бесплатно скачать его [Community Edition](http://www.jetbrains.com/idea/download/index.html) IntelliJ с сайта [JetBrains](https://www.jetbrains.com) .
+
 
 После установки IntelliJ можно создать свой первый Kotlin-проект дополнительных настроек для этого не требуется.
 
 В меню **Файл** выберете **новый проект**. В открывшемся окне выберете слева пунк **Java**. Отметьте пункт **Kotlin (Java)** как показано на скриншоте ниже, и нажмите кнопку **Далее**.
+
 
 ![новый экран проекта](https://kotlinlang.org/assets/images/tutorials/getting-started/new_project_step1.png)
 
@@ -35,6 +41,7 @@ Kotlin настолько понравился разработчикам, чт�
 Теперь вы попадете в окно редактора, где слева вы увидите файлы вашего проекта.
 
 ![структура проекта](https://kotlinlang.org/assets/images/tutorials/getting-started/folders.png)
+
 
 Теперь, создайте новый файл Kotlin в папке **src** и назовите его **helloworld** (или придумайте что-нибудь, более вам подходящее).
 
@@ -47,36 +54,39 @@ Kotlin настолько понравился разработчикам, чт�
 ![окно программы](https://kotlinlang.org/assets/images/tutorials/getting-started/hello_world.png) 
  
  Теперь вы можете ее запустить нажав пиктограмму Kotlin расположенную левее вставленной строчки кода. 
+
  
- ![hello world ](https://kotlinlang.org/assets/images/tutorials/getting-started/run_default.png) 
+![hello world](https://kotlinlang.org/assets/images/tutorials/getting-started/run_default.png) 
  
+
  Если все пойдет хорошо, то вы увидите сообщение "Hello World!" в окне **Run** расположенной внизу главного окна. 
+
  
- ![run window ](https://kotlinlang.org/assets/images/tutorials/getting-started/run_window.png) 
+![run window](https://kotlinlang.org/assets/images/tutorials/getting-started/run_window.png) 
  
  
  
  * ## Eclipse 
  
- While IntelliJ is the recommended IDE for developing with Kotlin, it is definitely not the only option out there. **Eclipse** happens to be another popular IDE of choice among Java developers and Kotlin is supported by Eclipse as well. 
+В то время как IntelliJ является рекомендуемой IDE для разработки на Kotlin, это определенно не единственный вариант. **Eclipse** является еще одной популярной IDE среди Java-разработчиков, и Kotlin также хорошо поддерживается Eclipse.
  
- After setting up the **JDK** on your system, follow the instructions below. 
+После настройки **JDK** в вашей системе следуйте инструкциям ниже.
  
- Download <a href='https://www.eclipse.org/downloads/'>**Eclipse Neon** </a>for your operating system and once you have successfully installed it on your system, download the **Kotlin Plugin** for Eclipse from the <a href='http://marketplace.eclipse.org/content/kotlin-plugin-eclipse'>**Eclipse Marketplace**</a>. 
+ Загрузите <a href='https://www.eclipse.org/downloads/'>**Eclipse Neon** </a>для вашей операционной системы. После его успешной установки загрузите **Kotlin Plugin** для Eclipse из <a href='http://marketplace.eclipse.org/content/kotlin-plugin-eclipse'>**Eclipse Marketplace**</a>. 
  
- ![eclipse marketplace ](https://kotlinlang.org/assets/images/tutorials/getting-started-eclipse/marketplace.png) 
+ ![eclipse marketplace](https://kotlinlang.org/assets/images/tutorials/getting-started-eclipse/marketplace.png) 
  
- ***NOTE: You can also do the same by going into Help -> Eclipse Marketplace and then search for Kotlin Plugin*** 
+  ***Замечание: Вы можете сделать тоже самое, перейдя в Help -> Eclipse Marketplace, и затем найдя Kotlin Plugin***
  
  Once, the plugin is installed you are pretty much done but it would be a good idea to take the IDE for a spin with a quick Hello World sample. 
  
  Create a new Kotlin Project by clicking on File -> New -> Kotlin Project 
  
- ![new kotlin project ](https://kotlinlang.org/assets/images/tutorials/getting-started-eclipse/new-project.png) 
+ ![new kotlin project](https://kotlinlang.org/assets/images/tutorials/getting-started-eclipse/new-project.png) 
  
  An empty project will be created with a directory structure quite similar to a Java project. It would look something like this 
  
- ![empty kotlin project ](https://kotlinlang.org/assets/images/tutorials/getting-started-eclipse/empty-project.png) 
+ ![empty kotlin project](https://kotlinlang.org/assets/images/tutorials/getting-started-eclipse/empty-project.png) 
  
  Go ahead and create a new Kotlin file in the **src** folder 
  
@@ -124,7 +134,15 @@ $ brew install kotlin
 
 После этого запустите с его помощью установку Kotlin:
 
-``` $ sdk install kotlin ```
+
+**Установка в Линуксе** 
+ 
+kotlin компилятор есть также практически во всех пакетных менеджерах дистрибутивов Линукс.
+Например Archlinux:
+`sudo pacman -S kotlin`
+
+Как и все предыдущие параметры установки, было бы неплохо протестировать запуск установки.
+
 
 **Протестируем установку**
 Теперь необходимо убедиться, что компилятор установился и настроен корректно. Откройте текстовый редактор и напишите простую программу Kotlin:
@@ -154,4 +172,6 @@ $ java -jar hello.jar
 
 ## Документация
 
+
 У Kotlin подробная и хорошо структурированная документация. Даже если вы новичок в программировании, вам будет удобно. Jetbrains делают довольно много работы, чтобы все было хорошо структурировано. Посмотреть официальную документацию можно по [этой ссылке](https://kotlinlang.org/docs/reference/) .
+
