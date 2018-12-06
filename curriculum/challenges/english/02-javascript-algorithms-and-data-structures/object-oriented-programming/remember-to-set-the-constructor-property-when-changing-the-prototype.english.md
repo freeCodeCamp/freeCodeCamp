@@ -7,7 +7,7 @@ challengeType: 1
 ## Description
 <section id='description'>
 There is one crucial side effect of manually setting the <code>prototype</code> to a new object. It erased the <code>constructor</code> property! The code in the previous challenge would print the following for <code>duck</code>:
-<blockquote>console.log(duck.constructor)<br>// prints ƒ Object() { [native code] } and not ƒ Bird() { }</blockquote>
+<blockquote>console.log(duck.constructor);<br>// prints ƒ Object() { [native code] } and not ƒ Bird() { }</blockquote>
 To fix this, whenever a prototype is manually set to a new object, remember to define the <code>constructor</code> property:
 <blockquote>Bird.prototype = {<br>&nbsp;&nbsp;constructor: Bird, // define the constructor property<br>&nbsp;&nbsp;numLegs: 2,<br>&nbsp;&nbsp;eat: function() {<br>&nbsp;&nbsp;&nbsp;&nbsp;console.log("nom nom nom");<br>&nbsp;&nbsp;},<br>&nbsp;&nbsp;describe: function() {<br>&nbsp;&nbsp;&nbsp;&nbsp;console.log("My name is " + this.name); <br>&nbsp;&nbsp;}<br>};</blockquote>
 </section>
