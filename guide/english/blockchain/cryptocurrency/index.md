@@ -9,13 +9,19 @@ title: Cryptocurrency
 
 Cryptocurrency is a subset of digital currency, which acts as a medium of exchange amongst two parties. It is known as crypto-currency because of the utilization of cryptography in securing its transactions. There are various cryptocurrencies including Litecoin, Dash, Ethereum, Ripple, and the currently most popular one Bitcoin.
 
+There are hundreds to thousands of cryptocurrencies as of 2018 with new ones coming out on a regularly. Most will never take off. This form of peer-to-peer value exchange is in its infancy still; Bitcoin and Cryptocurrencies have yet to become widely used. Venezuela has made history by becoming the first nation to introduce a national cryptocurrency in a time of national emergency with a goal of circumventing US sanctions and access to international financing.
+
 > You can’t stop things like Bitcoin. It will be everywhere and the world will have to readjust. World governments will have to readjust
 >
 > – John McAfee
 
 Cryptocurrency enables trustless and anonymous transactions since it does not involve any third party - there is no central bank.  Instead, a blockchain keeps a ledger of transactions across a public network of computers. Blockchains are append-only, meaning nobody can change past transactions.
+
 Unlike normal currency, cryptocurrency is infinitely divisible and can be exchanged in tiny fractions. For example, transactions can amount to 0.00007 BTC or even lower.  Currently the smallest amount of bitcoin ever recorded on the block chain is 0.00000001 BTC also called satoshi (in honor of the creator of Bitcoin, Satoshi Nakamoto).
-Bitcoin is a deflationary currency as opposed to most Fiat currencies which are affected by inflation over time. There is a max cap on the amount of Bitcoins that can be mined which is 21 million. The circulating supply of Bitcoin has surpassed 17 million. This means that over 80% of the Bitcoins which will be ever be mined, have already been mined. 
+
+Bitcoin is a deflationary currency as opposed to most Fiat currencies which are affected by inflation over time. There is a max cap on the amount of Bitcoins that can be mined which is 21 million. The circulating supply of Bitcoin has surpassed 17 million. This means that over 80% of the Bitcoins which will be ever be mined, have already been mined.
+
+It will take over 100 years to mine the last bitcoin, ensuring that this cryptocurrency will be a viable option to fiat currency for decades
 
 Every cryptocurrency has three layers:
 1. Protocol - The source code that directs the interaction of the network and various clients (aka core)
@@ -34,3 +40,5 @@ Cypherpunks, crypoanarchists, and libertarians paved the way for the right to pr
 [Cryptocurrency](https://en.wikipedia.org/wiki/Cryptocurrency)    
 [Ultimate Guide to Cryptocurrency](https://blockgeeks.com/guides/what-is-cryptocurrency)
 [Bitcoin](https://en.wikipedia.org/wiki/Bitcoin)
+[National Cryptocurrency](https://minergate.com/blog/countries-with-national-cryptocurrency/)
+[How many Cryptocurrencies are there?] (https://www.fool.com/investing/2018/03/16/how-many-cryptocurrencies-are-there.aspx)
