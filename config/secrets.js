@@ -1,53 +1,98 @@
+const {
+  MONGODB,
+  MONGOHQ_URL,
+
+  SESSION_SECRET,
+  COOKIE_SECRET,
+  JWT_SECRET,
+
+  AUTH0_CLIENT_ID,
+  AUTH0_CLIENT_SECRET,
+  AUTH0_DOMAIN,
+
+  FACEBOOK_ID,
+  FACEBOOK_SECRET,
+
+  GITHUB_ID,
+  GITHUB_SECRET,
+
+  GOOGLE_ID,
+  GOOGLE_SECRET,
+
+  LINKEDIN_ID,
+  LINKEDIN_SECRET,
+
+  TWITTER_KEY,
+  TWITTER_SECRET,
+  TWITTER_TOKEN,
+  TWITTER_TOKEN_SECRET,
+
+  ROLLBAR_APP_ID,
+  ROLLBAR_CLIENT_ID,
+
+  STRIPE_PUBLIC,
+  STRIPE_SECRET
+} = process.env;
+
 module.exports = {
+  db: MONGODB || MONGOHQ_URL,
 
-  db: process.env.MONGODB || process.env.MONGOHQ_URL,
+  cookieSecret: COOKIE_SECRET,
+  jwtSecret: JWT_SECRET,
+  sessionSecret: SESSION_SECRET,
 
-  sessionSecret: process.env.SESSION_SECRET,
+  auth0: {
+    clientID: AUTH0_CLIENT_ID,
+    clientSecret: AUTH0_CLIENT_SECRET,
+    domain: AUTH0_DOMAIN
+  },
 
   facebook: {
-    clientID: process.env.FACEBOOK_ID,
-    clientSecret: process.env.FACEBOOK_SECRET,
+    clientID: FACEBOOK_ID,
+    clientSecret: FACEBOOK_SECRET,
     callbackURL: '/auth/facebook/callback',
     passReqToCallback: true
   },
 
   github: {
-    clientID: process.env.GITHUB_ID,
-    clientSecret: process.env.GITHUB_SECRET,
+    clientID: GITHUB_ID,
+    clientSecret: GITHUB_SECRET,
     callbackURL: '/auth/github/callback',
     passReqToCallback: true
   },
 
   twitter: {
-    consumerKey: process.env.TWITTER_KEY,
-    consumerSecret: process.env.TWITTER_SECRET,
-    token: process.env.TWITTER_TOKEN,
-    tokenSecret: process.env.TWITTER_TOKEN_SECRET,
+    consumerKey: TWITTER_KEY,
+    consumerSecret: TWITTER_SECRET,
+    token: TWITTER_TOKEN,
+    tokenSecret: TWITTER_TOKEN_SECRET,
     callbackURL: '/auth/twitter/callback',
     passReqToCallback: true
   },
 
   google: {
-    clientID: process.env.GOOGLE_ID,
-    clientSecret: process.env.GOOGLE_SECRET,
+    clientID: GOOGLE_ID,
+    clientSecret: GOOGLE_SECRET,
     callbackURL: '/auth/google/callback',
     passReqToCallback: true
   },
 
   linkedin: {
-    clientID: process.env.LINKEDIN_ID,
-    clientSecret: process.env.LINKEDIN_SECRET,
+    clientID: LINKEDIN_ID,
+    clientSecret: LINKEDIN_SECRET,
     callbackURL: '/auth/linkedin/callback',
     profileFields: ['public-profile-url'],
     scope: ['r_basicprofile', 'r_emailaddress'],
     passReqToCallback: true
   },
-  slackHook: process.env.SLACK_WEBHOOK,
 
-  cookieSecret: process.env.COOKIE_SECRET,
+  rollbar: {
+    appId: ROLLBAR_APP_ID,
+    clientId: ROLLBAR_CLIENT_ID
+  },
 
   stripe: {
-    public: process.env.STRIPE_PUBLIC,
-    secret: process.env.STRIPE_SECRET
+    public: STRIPE_PUBLIC,
+    secret: STRIPE_SECRET
   }
 };
