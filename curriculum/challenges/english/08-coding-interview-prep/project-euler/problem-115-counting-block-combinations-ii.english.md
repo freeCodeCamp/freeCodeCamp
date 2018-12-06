@@ -26,7 +26,7 @@ For m = 50, find the least value of n for which the fill-count function first ex
 ```yml
 tests:
   - text: <code>euler115()</code> should return 168.
-    testString: 'assert.strictEqual(euler115(), 168, "<code>euler115()</code> should return 168.");'
+    testString: assert.strictEqual(euler115(), 168, '<code>euler115()</code> should return 168.');
 
 ```
 
