@@ -31,13 +31,13 @@ Each class should set the <code>background-color</code> the respective color.
 ```yml
 tests:
   - text: Your code should use the <code>@each</code> directive.
-    testString: 'assert(code.match(/@each /g), "Your code should use the <code>@each</code> directive.");'
+    testString: assert(code.match(/@each /g), 'Your code should use the <code>@each</code> directive.');
   - text: Your <code>.blue-bg</code> class should have a <code>background-color</code> of blue.
-    testString: 'assert($(".blue-bg").css("background-color") == "rgb(0, 0, 255)", "Your <code>.blue-bg</code> class should have a <code>background-color</code> of blue.");'
+    testString: assert($('.blue-bg').css('background-color') == 'rgb(0, 0, 255)', 'Your <code>.blue-bg</code> class should have a <code>background-color</code> of blue.');
   - text: Your <code>.black-bg</code> class should have a <code>background-color</code> of black.
-    testString: 'assert($(".black-bg").css("background-color") == "rgb(0, 0, 0)", "Your <code>.black-bg</code> class should have a <code>background-color</code> of black.");'
+    testString: assert($('.black-bg').css('background-color') == 'rgb(0, 0, 0)', 'Your <code>.black-bg</code> class should have a <code>background-color</code> of black.');
   - text: Your <code>.red-bg</code> class should have a <code>background-color</code> of red.
-    testString: 'assert($(".red-bg").css("background-color") == "rgb(255, 0, 0)", "Your <code>.red-bg</code> class should have a <code>background-color</code> of red.");'
+    testString: assert($('.red-bg').css('background-color') == 'rgb(255, 0, 0)', 'Your <code>.red-bg</code> class should have a <code>background-color</code> of red.');
 
 ```
 
@@ -72,8 +72,48 @@ tests:
 
 ## Solution
 <section id='solution'>
+  
+The solution requires using the $color variable twice: once for the class name and once for setting the background color. You can use either the list or map data type.
 
+### List Data type
 ```js
-// solution required
+<style type='text/sass'>
+  
+  @each $color in blue, black, red {
+    .#{$color}-bg {background-color: $color;}
+  } 
+  
+  div {
+    height: 200px;
+    width: 200px;
+  }
+</style>
+
+<div class="blue-bg"></div>
+<div class="black-bg"></div>
+<div class="red-bg"></div>
 ```
+
+### Map Data type
+```js
+<style type='text/sass'>
+  
+  $colors: (color1: blue, color2: black, color3: red);
+   
+  @each $key, $color in $colors {
+    .#{$color}-bg {background-color: $color;}
+  } 
+  
+  div {
+    height: 200px;
+    width: 200px;
+  }
+</style>
+
+<div class="blue-bg"></div>
+<div class="black-bg"></div>
+<div class="red-bg"></div>
+```  
+  
+  
 </section>
