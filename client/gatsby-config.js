@@ -1,6 +1,18 @@
 const path = require('path');
 
-const { buildChallenges } = require('./utils/buildChallenges');
+const {
+  buildChallenges,
+  replaceChallengeNode,
+  localeChallengesRootDir
+} = require('./utils/buildChallenges');
+
+const { NODE_ENV: env, LOCALE: locale = 'english' } = process.env;
+
+const selectedGuideDir = `../${
+  env === 'production' ? 'guide' : 'mock-guide'
+}/${locale}`;
+const guideRoot = path.resolve(__dirname, selectedGuideDir);
+const curriculumIntroRoot = path.resolve(__dirname, './src/pages');
 
 module.exports = {
   siteMetadata: {
@@ -20,7 +32,8 @@ module.exports = {
           '/certification/*',
           '/unsubscribed/*',
           '/user/*',
-          '/settings/*'
+          '/settings/*',
+          '/n/*'
         ]
       }
     },
@@ -28,14 +41,29 @@ module.exports = {
       resolve: 'fcc-source-challenges',
       options: {
         name: 'challenges',
-        source: buildChallenges
+        source: buildChallenges,
+        onSourceChange: replaceChallengeNode,
+        curriculumPath: localeChallengesRootDir
       }
     },
     {
-      resolve: '@freecodecamp/gatsby-source-filesystem',
+      resolve: 'fcc-source-news',
+      options: {
+        maximumStaticRenderCount: 100
+      }
+    },
+    {
+      resolve: 'gatsby-source-filesystem',
+      options: {
+        name: 'guides',
+        path: guideRoot
+      }
+    },
+    {
+      resolve: 'gatsby-source-filesystem',
       options: {
         name: 'introductions',
-        path: path.resolve(__dirname, './src/pages')
+        path: curriculumIntroRoot
       }
     },
     {
@@ -110,7 +138,7 @@ module.exports = {
         }
       }
     },
-    'fcc-create-nav-data',
+    { resolve: 'fcc-create-nav-data' },
     {
       resolve: 'gatsby-plugin-manifest',
       options: {
