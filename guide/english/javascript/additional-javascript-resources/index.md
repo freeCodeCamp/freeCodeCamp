@@ -1,6 +1,7 @@
 ---
 title: JavaScript Tutorials and Other Resources
 ---
+
 *   <a href="https://javascript30.com/" target='_blank' rel='nofollow'>Wes Bos's 30 Days of JavaScript</a>
 *   <a href='http://jsforcats.com/' target='_blank' rel='nofollow'>JavaScript for Cats</a>
 *   <a href='https://javascript.info/' target='_blank' rel='nofollow'>The Modern JavaScript Tutorial</a>
@@ -18,6 +19,7 @@ title: JavaScript Tutorials and Other Resources
 *   <a href='http://youmightnotneedjquery.com/' target='_blank' rel='nofollow'>You Might Not Need jQuery</a>
 *   <a href='https://learnxinyminutes.com/docs/javascript/' target='_blank' rel='nofollow'>Learn X in Y minutes (X = JavaScript)</a>
 *   <a href='http://javascriptbook.com/' target='_blank' rel='nofollow'>JavaScript and jQuery: interactive front-end web development</a>
+*   <a href='https://www.udemy.com/the-complete-javascript-course/' target='_blank' rel='nofollow' >The Complete Javascript Course</a>
 
 
 ## References
