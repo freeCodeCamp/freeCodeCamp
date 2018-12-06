@@ -1,0 +1,6 @@
+{
+  "name": "fcc-source-news",
+  "dependencies": {
+    "mongodb": "^3.1.9"
+  }
+}
