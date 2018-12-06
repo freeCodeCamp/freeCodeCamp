@@ -4,7 +4,7 @@ document.addEventListener('DOMContentLoaded', function() {
     catchError,
     map,
     toArray,
-    switchMap,
+    mergeMap,
     of,
     from,
     throwError
@@ -65,7 +65,7 @@ document.addEventListener('DOMContentLoaded', function() {
     // Iterate through the test one at a time
     // on new stacks
     const results = from(tests).pipe(
-      switchMap(function runOneTest({ text, testString }) {
+      mergeMap(function runOneTest({ text, testString }) {
         const newTest = { text, testString };
         let test;
         let __result;

@@ -5,7 +5,7 @@ import {
   map,
   toArray,
   delay,
-  switchMap,
+  mergeMap,
   timeout,
   catchError
 } from 'rxjs/operators';
@@ -98,7 +98,7 @@ const addDepsToDocument = ctx => {
       map,
       toArray,
       delay,
-      switchMap,
+      mergeMap,
       timeout,
       catchError
     },
