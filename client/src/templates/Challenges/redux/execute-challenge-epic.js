@@ -37,7 +37,7 @@ import {
   createMainFramer
 } from '../utils/frame.js';
 
-import { backend } from '../../../../utils/challengeTypes';
+import { challengeTypes } from '../../../../utils/challengeTypes';
 
 const executeDebounceTimeout = 750;
 
@@ -109,7 +109,9 @@ function executeChallengeEpic(action$, state$, { document }) {
           const state = state$.value;
           const { challengeType } = challengeMetaSelector(state);
           const build =
-            challengeType === backend ? buildBackendChallenge : buildFromFiles;
+            challengeType === challengeTypes.backend
+              ? buildBackendChallenge
+              : buildFromFiles;
           return build(state).pipe(
             tap(frameTests),
             ignoreElements(),
