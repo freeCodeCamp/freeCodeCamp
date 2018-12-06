@@ -62,6 +62,7 @@ C provides a number of build-in function to perform basic file operation
   ```
   
   In C there are many mode for opening a file 
+  
   **r**  **-**   **open a file in reading mode**
   ..//Provide access only to read a file but not to write it.
   
@@ -76,6 +77,8 @@ C provides a number of build-in function to perform basic file operation
   **a+**  **-**   **opens a file in both reading and writing mode**
   
   **w+**  **-**   **opens a file in both reading and writing mode**
+  
+  **b**  **-**   **opens a file in binary mode**
   
   Here's an  example of reading and writing data to a file
   
@@ -168,6 +171,32 @@ The above methods only worked for the most basic of cases.  If you wanted to do 
 To accomplish this, you will use a function called `fopen`.  This function takes two string parameters, the first being the file name and the second being the mode.
 Mode is basically permissions, so `r` for read, `w` for write, `a` for append.  You can also combine them, so `rw` would mean you could read and write to the file.  There are more modes, but these are the most used.
 
+There are a number of modes that can be used for file handling.
+
+**"r"**   **-**   **Open file for reading**
+
+**rb**   **-**   **Open file for reading in binary mode**
+
+**w**   **-**   **Open file for writing**
+
+**wb**   **-**   **Open file for writing in binary mode**
+
+**a**   **-**   **Open file for appending**
+
+**ab**   **-**   **Open file for appending in binary mode**
+
+**r+**   **-**   **Open file for both reading and writing**
+
+**rb+**   **-**   **Open file for both reading and writing in binary mode**
+
+**w+**   **-**   **Open file for both writing and reading**
+
+**wb+**   **-**   **Open file for both writing and reading in binary mode**
+
+**a+**   **-**   **Open file for both reading and appending**
+
+**ab+**   **-**   **Open file for both reading and appending in binary mode**
+
 After you have a `FILE` pointer, you can use basically the same IO commands you would've used, except that you have to prefix them with `f` and the first argument will be the file pointer.
 For example, `printf`'s file version is `fprintf`.
 
@@ -200,6 +229,8 @@ int main() {
         printf("Greetings are done!\n");
     }
 
+    fclose(names);
+    fclose(greet);
     return EXIT_SUCCESS;
 }
 ```

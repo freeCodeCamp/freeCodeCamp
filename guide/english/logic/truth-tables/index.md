@@ -64,6 +64,15 @@ NOT operator:
 | F  | T  |
 | T  | F  |
 
+NAND operator:
+
+| x | y | x NAND y |
+|---|---|---|
+| F  | F  | T  |
+| F  | T  | T  |
+| T  | F  | T  |
+| T  | T  | F  |
+
 Implication operator:
 
 | x | y | x IMPLY y  |

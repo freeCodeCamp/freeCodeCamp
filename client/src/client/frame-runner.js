@@ -109,15 +109,12 @@ document.addEventListener('DOMContentLoaded', function() {
             const { message, stack } = err;
             // we catch the error here to prevent the error from bubbling up
             // and collapsing the pipe
-            let errMessage = message.slice(0) || '';
-            const assertIndex = errMessage.indexOf(': expected');
-            if (assertIndex !== -1) {
-              errMessage = errMessage.slice(0, assertIndex);
-            }
-            errMessage = errMessage.replace(/<code>(.*?)<\/code>/g, '$1');
-            newTest.err = errMessage + '\n' + stack;
+            newTest.err = message + '\n' + stack;
             newTest.stack = stack;
-            newTest.message = errMessage;
+            newTest.message = text.replace(/<code>(.*?)<\/code>/g, '$1');
+            if (!(err instanceof chai.AssertionError)) {
+              console.error(err);
+            }
             // RxJS catch expects an observable as a return
             return of(newTest);
           })
