@@ -81,6 +81,9 @@ Examples of Popular Drag and drop themes that makes a WordPress website easy to 
 - [Genesis Framework](https://my.studiopress.com/themes/genesis/)
 - [Elementor](https://elementor.com/)
 
+#### Wordpress Most used Plugins
+- [Most Popular Wordpress Plugins ](https://www.hostgator.com/blog/most-popular-wordpress-plugins/)
+
 ### Visual Editors
 
 "What You See Is What You Get" (WYSIWYG) editors for WordPress have increased in popularity over recent years. These visual builders provide user-friendly interfaces that allow users to customize all aspects of their site without a bit of code. Some of the most popular include [Divi](https://www.elegantthemes.com/gallery/divi/) and [Thrive](https://thrivethemes.com/architect/?idev_id=4971), which are both under $90, and [SiteOrigin](https://siteorigin.com/page-builder/), which is a free option. WordPress will be shipping its own visual editor, Gutenberg, as of version 5.0. You can learn more about it here: [Gutenberg](https://wordpress.org/gutenberg/).
@@ -112,7 +115,6 @@ Here are some examples of big name brands using WordPress:
 Note: WordPress's ease of use may encourage new users to forget about website security. However, the popularity of WordPress increases the activity of malware and other issues. 
 It is important to choose extremely difficult or random passwords for the administrators and for the database. This guards against random brute-force attacks. 
 Using tools such as [Jetpack](https://jetpack.com/) and an [SSL certificate](https://www.verisign.com/en_US/website-presence/website-optimization/ssl-certificates/index.xhtml) increases your protection against unwanted attacks.
-
 
 ## Get Started With Wordpress
 This guide will cover how to setup a basic Wordpress website. If anything is
