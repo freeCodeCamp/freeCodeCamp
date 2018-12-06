@@ -65,8 +65,8 @@ Make sure that each time you transcode a character from binary to decimal, you r
 *   Separate the string into an array of strings separated by whitespace.
 *   Create some variables that you will use along the way - the names are self explanatory for the most part.
 *   Iterate through each binary string in the new array.
-*   Convert to decimal by using `parseInt(_binary_, 2)`. With the second parameter we specify the base of our input numbers.
-*   At the end, return out the converted message.
+*   Convert to decimal by using `parseInt(_binary_, 2)`. Use the second parameter to specify the base of the input numbers.
+*   At the end, return the converted message.
 
 ## Relevant Links
 
