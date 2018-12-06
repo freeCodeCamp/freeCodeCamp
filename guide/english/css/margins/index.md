@@ -53,6 +53,10 @@ An element can be aligned to the center by making it a block element and changin
 }
 ```
 
+## Unit Information
+ - Pixels (`px`) are relative to the viewing device.
+ - `em` implies relative to the font-size of the element (2em means 2 times the size of the current font).
+ - `%` implies relative to the parent element.
 
 ## Browser Support
 It is effectively supported in all browsers (since IE6+, Firefox 2+, Chrome 1+ etc)

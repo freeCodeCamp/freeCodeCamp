@@ -1,4 +1,6 @@
-const assert = require('chai').assert;
+/* global browser, page */
+const { assert, AssertionError } = require('chai');
+const Mocha = require('mocha');
 
 const { flatten } = require('lodash');
 const path = require('path');
@@ -7,15 +9,14 @@ require('dotenv').config({ path: path.resolve(__dirname, '../../.env') });
 
 const vm = require('vm');
 
+const puppeteer = require('puppeteer');
+
 const jsdom = require('jsdom');
 const jQuery = require('jquery');
 const Sass = require('node-sass');
 const Babel = require('babel-standalone');
 const presetEnv = require('babel-preset-env');
 const presetReact = require('babel-preset-react');
-
-const rework = require('rework');
-const visit = require('rework-visit');
 
 const { getChallengesForLang } = require('../getChallenges');
 
@@ -25,6 +26,19 @@ const { validateChallenge } = require('../schema/challengeSchema');
 const { challengeTypes } = require('../../client/utils/challengeTypes');
 
 const { LOCALE: lang = 'english' } = process.env;
+
+const oldRunnerFail = Mocha.Runner.prototype.fail;
+Mocha.Runner.prototype.fail = function(test, err) {
+  if (err.stack && err instanceof AssertionError) {
+    const assertIndex = err.message.indexOf(': expected');
+    if (assertIndex !== -1) {
+      err.message = err.message.slice(0, assertIndex);
+    }
+    // Don't show stacktrace for assertion errors.
+    delete err.stack;
+  }
+  return oldRunnerFail.call(this, test, err);
+};
 
 let mongoIds = new MongoIds();
 let challengeTitles = new ChallengeTitles();
@@ -37,27 +51,39 @@ const babelOptions = {
 };
 
 const jQueryScript = fs.readFileSync(
-  path.resolve('./node_modules/jquery/dist/jquery.slim.min.js')
+  path.resolve('./node_modules/jquery/dist/jquery.slim.min.js'),
+  'utf8'
 );
 
 (async function() {
-  const allChallenges = await getChallengesForLang(lang).then(curriculum => (
+  const allChallenges = await getChallengesForLang(lang).then(curriculum =>
     Object.keys(curriculum)
-    .map(key => curriculum[key].blocks)
-    .reduce((challengeArray, superBlock) => {
-      const challengesForBlock = Object.keys(superBlock).map(
-        key => superBlock[key].challenges
-      );
-      return [...challengeArray, ...flatten(challengesForBlock)];
-    }, [])
-  ));
+      .map(key => curriculum[key].blocks)
+      .reduce((challengeArray, superBlock) => {
+        const challengesForBlock = Object.keys(superBlock).map(
+          key => superBlock[key].challenges
+        );
+        return [...challengeArray, ...flatten(challengesForBlock)];
+      }, [])
+  );
 
   describe('Check challenges tests', async function() {
-    this.timeout(200000);
+    before(async function() {
+      this.timeout(30000);
+      global.browser = await puppeteer.launch({ args: ['--no-sandbox'] });
+      global.page = await browser.newPage();
+      await page.setViewport({ width: 300, height: 150 });
+    });
+    after(async function() {
+      if (global.browser) {
+        await browser.close();
+      }
+    });
+
+    this.timeout(5000);
 
     allChallenges.forEach(challenge => {
       describe(challenge.title || 'No title', async function() {
-
         it('Common checks', function() {
           const result = validateChallenge(challenge);
           if (result.error) {
@@ -70,11 +96,12 @@ const jQueryScript = fs.readFileSync(
         });
 
         const { challengeType } = challenge;
-        if (challengeType !== challengeTypes.html &&
-            challengeType !== challengeTypes.js &&
-            challengeType !== challengeTypes.bonfire &&
-            challengeType !== challengeTypes.modern &&
-            challengeType !== challengeTypes.backend
+        if (
+          challengeType !== challengeTypes.html &&
+          challengeType !== challengeTypes.js &&
+          challengeType !== challengeTypes.bonfire &&
+          challengeType !== challengeTypes.modern &&
+          challengeType !== challengeTypes.backend
         ) {
           return;
         }
@@ -89,9 +116,7 @@ const jQueryScript = fs.readFileSync(
         describe('Check tests syntax', function() {
           tests.forEach(test => {
             it(`Check for: ${test.text}`, function() {
-              assert.doesNotThrow(
-                () => new vm.Script(test.testString)
-              );
+              assert.doesNotThrow(() => new vm.Script(test.testString));
             });
           });
         });
@@ -99,7 +124,7 @@ const jQueryScript = fs.readFileSync(
         const { files = [], required = [] } = challenge;
         const exts = Array.from(new Set(files.map(({ ext }) => ext)));
         const groupedFiles = exts.reduce((result, ext) => {
-          const file = files.filter(file => file.ext === ext ).reduce(
+          const file = files.filter(file => file.ext === ext).reduce(
             (result, file) => ({
               head: result.head + '\n' + file.head,
               contents: result.contents + '\n' + file.contents,
@@ -114,8 +139,10 @@ const jQueryScript = fs.readFileSync(
         }, {});
 
         let evaluateTest;
-        if (challengeType === challengeTypes.modern &&
-           (groupedFiles.js || groupedFiles.jsx)) {
+        if (
+          challengeType === challengeTypes.modern &&
+          (groupedFiles.js || groupedFiles.jsx)
+        ) {
           evaluateTest = evaluateReactReduxTest;
         } else if (groupedFiles.html) {
           evaluateTest = evaluateHtmlTest;
@@ -127,28 +154,34 @@ const jQueryScript = fs.readFileSync(
         }
 
         it('Test suite must fail on the initial contents', async function() {
-          let fails = (
-          await Promise.all(tests.map(async function(test) {
-            try {
-              await evaluateTest({
-                challengeType,
-                required,
-                files: groupedFiles,
-                test
-              });
-              return false;
-            } catch (e) {
-              return true;
-            }
-          }))).some(v => v);
+          this.timeout(20000);
+          // suppress errors in the console.
+          const oldConsoleError = console.error;
+          console.error = () => {};
+          let fails = (await Promise.all(
+            tests.map(async function(test) {
+              try {
+                await evaluateTest({
+                  challengeType,
+                  required,
+                  files: groupedFiles,
+                  test
+                });
+                return false;
+              } catch (e) {
+                return true;
+              }
+            })
+          )).some(v => v);
+          console.error = oldConsoleError;
           assert(fails, 'Test suit does not fail on the initial contents');
         });
 
         let { solutions = [] } = challenge;
         const noSolution = new RegExp('// solution required');
-        solutions = solutions.filter(solution => (
-          !!solution && !noSolution.test(solution)
-        ));
+        solutions = solutions.filter(
+          solution => !!solution && !noSolution.test(solution)
+        );
 
         if (solutions.length === 0) {
           it('Check tests. No solutions');
@@ -177,7 +210,6 @@ const jQueryScript = fs.readFileSync(
   });
 
   run();
-
 })();
 
 // Fake Deep Equal dependency
@@ -199,14 +231,6 @@ const DeepFreeze = o => {
   return o;
 };
 
-function isPromise(value) {
-  return (
-    value &&
-    typeof value.subscribe !== 'function' &&
-    typeof value.then === 'function'
-  );
-}
-
 function transformSass(solution) {
   const fragment = JSDOM.fragment(`<div>${solution}</div>`);
   const styleTags = fragment.querySelectorAll('style[type="text/sass"]');
@@ -220,64 +244,12 @@ function transformSass(solution) {
   return solution;
 }
 
-const colors = {
-  red: 'rgb(255, 0, 0)',
-  green: 'rgb(0, 255, 0)',
-  blue: 'rgb(0, 0, 255)',
-  black: 'rgb(0, 0, 0)',
-  gray: 'rgb(128, 128, 128)',
-  yellow: 'rgb(255, 255, 0)'
-};
-
-function replaceColorNamesPlugin(style) {
-  visit(style, declarations => {
-    declarations
-      .filter(decl => decl.type === 'declaration')
-      .forEach(decl => {
-        if (colors[decl.value]) {
-          decl.value = colors[decl.value];
-        }
-      });
-  });
-}
-
-// JSDOM uses CSSStyleDeclaration, which does not convert color keywords
-// to 'rgb()' https://github.com/jsakas/CSSStyleDeclaration/issues/48.
-// It's a workaround.
-function replaceColorNames(solution) {
-  const fragment = JSDOM.fragment(`<div>${solution}</div>`);
-  const styleTags = fragment.querySelectorAll('style');
-  if (styleTags.length > 0) {
-    styleTags.forEach(styleTag => {
-      styleTag.innerHTML = rework(styleTag.innerHTML)
-        .use(replaceColorNamesPlugin)
-        .toString();
-    });
-    return fragment.children[0].innerHTML;
-  }
-  return solution;
-
-}
-
-async function evaluateHtmlTest({
-  challengeType,
-  solution,
-  required,
-  files,
-  test
-}) {
-
+async function evaluateHtmlTest({ solution, required, files, test }) {
   const { head = '', contents = '', tail = '' } = files.html;
   if (!solution) {
     solution = contents;
   }
   const code = solution;
-
-  const options = {
-    resources: 'usable',
-    runScripts: 'dangerously',
-    virtualConsole: new jsdom.VirtualConsole()
-  };
 
   const links = required
     .map(({ link, src }) => {
@@ -298,15 +270,21 @@ A required file can not have both a src and a link: src = ${src}, link = ${link}
 
   const scripts = `
   <head>
-    <script>${jQueryScript}</script>
     ${links}
   </head>
   `;
 
-  solution = transformSass(solution);
-  solution = replaceColorNames(solution);
+  const sandbox = { solution, transformSass };
+  const context = vm.createContext(sandbox);
+  vm.runInContext('solution = transformSass(solution);', context, {
+    timeout: 2000
+  });
+  solution = sandbox.solution;
 
-  const dom = new JSDOM(`
+  await preparePageToTest();
+
+  await page.setContent(
+    `
     <!doctype html>
     <html>
       ${scripts}
@@ -314,22 +292,78 @@ A required file can not have both a src and a link: src = ${src}, link = ${link}
       ${solution}
       ${tail}
     </html>
-  `, options);
+  `
+  );
 
-  if (links || challengeType === challengeTypes.modern) {
-    await new Promise(resolve => setTimeout(resolve, 1000));
-  }
-
-  dom.window.code = code;
-  await runTestInJsdom(dom, test.testString);
+  await runTestInBrowser(code, test.testString);
 }
 
-async function evaluateJsTest({
-  solution,
-  files,
-  test
-}) {
+async function preparePageToTest() {
+  await page.reload();
+  await page.addScriptTag({
+    url: 'https://cdnjs.cloudflare.com/ajax/libs/chai/4.2.0/chai.min.js'
+  });
+  await page.evaluate(() => {
+    window.assert = window.chai.assert;
+  });
+  await page.evaluate(jQueryScript);
+}
 
+async function runTestInBrowser(code, testString) {
+  const result = await page.evaluate(
+    async function(code, testString) {
+      /* eslint-disable no-unused-vars */
+      // Fake Deep Equal dependency
+      const DeepEqual = (a, b) => JSON.stringify(a) === JSON.stringify(b);
+
+      // Hardcode Deep Freeze dependency
+      const DeepFreeze = o => {
+        Object.freeze(o);
+        Object.getOwnPropertyNames(o).forEach(function(prop) {
+          if (
+            o.hasOwnProperty(prop) &&
+            o[prop] !== null &&
+            (typeof o[prop] === 'object' || typeof o[prop] === 'function') &&
+            !Object.isFrozen(o[prop])
+          ) {
+            DeepFreeze(o[prop]);
+          }
+        });
+        return o;
+      };
+
+      const editor = {
+        getValue() {
+          return code;
+        }
+      };
+      /* eslint-enable no-unused-vars */
+
+      try {
+        // eslint-disable-next-line no-eval
+        const test = eval(testString);
+        if (typeof test === 'function') {
+          await test(() => code);
+        }
+      } catch (e) {
+        return {
+          message: e.message,
+          isAssertion: e instanceof window.chai.AssertionError
+        };
+      }
+      return true;
+    },
+    code,
+    testString
+  );
+  if (result !== true) {
+    throw result.isAssertion
+      ? new AssertionError(result.message)
+      : new Error(result.message);
+  }
+}
+
+async function evaluateJsTest({ solution, files, test }) {
   const virtualConsole = new jsdom.VirtualConsole();
   const dom = new JSDOM('', { runScripts: 'dangerously', virtualConsole });
 
@@ -337,29 +371,35 @@ async function evaluateJsTest({
   let scriptString = '';
   if (!solution) {
     solution = contents;
-    scriptString = head + '\n' + contents + '\n' + tail + '\n';
     try {
-      // eslint-disable-next-line
-      new vm.Script(scriptString);
+      scriptString =
+        Babel.transform(head, babelOptions).code +
+        '\n' +
+        Babel.transform(contents, babelOptions).code +
+        '\n' +
+        Babel.transform(tail, babelOptions).code +
+        '\n';
     } catch (e) {
       scriptString = '';
     }
   } else {
-    scriptString = head + '\n' + solution + '\n' + tail + '\n';
+    scriptString =
+      Babel.transform(head, babelOptions).code +
+      '\n' +
+      Babel.transform(solution, babelOptions).code +
+      '\n' +
+      Babel.transform(tail, babelOptions).code +
+      '\n';
   }
 
+  dom.window.require = require;
   dom.window.code = solution;
-
   await runTestInJsdom(dom, test.testString, scriptString);
 }
 
-async function evaluateReactReduxTest({
-  solution,
-  files,
-  test
-}) {
-
-  let head = '', tail = '';
+async function evaluateReactReduxTest({ solution, files, test }) {
+  let head = '',
+    tail = '';
   if (files.js) {
     const { head: headJs = '', tail: tailJs = '' } = files.js;
     head += headJs + '\n';
@@ -376,38 +416,50 @@ async function evaluateReactReduxTest({
 
   let scriptString = '';
   if (!solution) {
-    const contents = (files.js ? files.js.contents || '' : '') +
+    const contents =
+      (files.js ? files.js.contents || '' : '') +
       (files.jsx ? files.jsx.contents || '' : '');
     solution = contents;
-    scriptString = head + '\n' + contents + '\n' + tail + '\n';
     try {
-      scriptString = Babel.transform(scriptString, babelOptions).code;
+      scriptString =
+        Babel.transform(head, babelOptions).code +
+        '\n' +
+        Babel.transform(contents, babelOptions).code +
+        '\n' +
+        Babel.transform(tail, babelOptions).code +
+        '\n';
     } catch (e) {
       scriptString = '';
     }
   } else {
-    scriptString = head + '\n' + solution + '\n' + tail + '\n';
-    scriptString = Babel.transform(scriptString, babelOptions).code;
+    scriptString =
+      Babel.transform(head, babelOptions).code +
+      '\n' +
+      Babel.transform(solution, babelOptions).code +
+      '\n' +
+      Babel.transform(tail, babelOptions).code +
+      '\n';
   }
 
   const code = solution;
 
-  const testString = Babel.transform(test.testString, babelOptions).code;
-
   const virtualConsole = new jsdom.VirtualConsole();
   // Mock DOM document for ReactDOM.render method
-  const dom = new JSDOM(`
+  const dom = new JSDOM(
+    `
     <!doctype html>
     <html>
       <body>
       <div id="root"><div id="challenge-node"></div>
       </body>
     </html>
-  `, {
-    runScripts: 'dangerously',
-    virtualConsole,
-    url: 'http://localhost'
-  });
+  `,
+    {
+      runScripts: 'dangerously',
+      virtualConsole,
+      url: 'http://localhost'
+    }
+  );
 
   const { window } = dom;
   const document = window.document;
@@ -440,7 +492,7 @@ async function evaluateReactReduxTest({
     }
   };
 
-  await runTestInJsdom(dom, testString, scriptString);
+  await runTestInJsdom(dom, test.testString, scriptString);
 }
 
 async function runTestInJsdom(dom, testString, scriptString = '') {
@@ -450,7 +502,6 @@ async function runTestInJsdom(dom, testString, scriptString = '') {
   dom.window.assert = assert;
   dom.window.DeepEqual = DeepEqual;
   dom.window.DeepFreeze = DeepFreeze;
-  dom.window.isPromise = isPromise;
 
   dom.window.__test = testString;
   scriptString += `;
@@ -459,17 +510,14 @@ async function runTestInJsdom(dom, testString, scriptString = '') {
     try {
       const testResult = eval(__test);
       if (typeof testResult === 'function') {
-        const __result = testResult(() => code);
-        if (isPromise(__result)) {
-          await __result;
-        }
+        await testResult(() => code);
       }
     }catch (e) {
       window.__error = e;
     }
   })();`;
   const script = new vm.Script(scriptString);
-  dom.runVMScript(script);
+  dom.runVMScript(script, { timeout: 5000 });
   await dom.window.__result;
   if (dom.window.__error) {
     throw dom.window.__error;
