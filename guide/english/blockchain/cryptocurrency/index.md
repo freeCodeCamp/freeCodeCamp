@@ -21,6 +21,8 @@ Unlike normal currency, cryptocurrency is infinitely divisible and can be exchan
 
 Bitcoin is a deflationary currency as opposed to most Fiat currencies which are affected by inflation over time. There is a max cap on the amount of Bitcoins that can be mined which is 21 million. The circulating supply of Bitcoin has surpassed 17 million. This means that over 80% of the Bitcoins which will be ever be mined, have already been mined.
 
+Upon the completion of mining, it does not necessarily mean the end of data mining as miners can still be incentivized in other methods, namely through transaction fees by other user in order to be included in the ledger.
+
 It will take over 100 years to mine the last bitcoin, ensuring that this cryptocurrency will be a viable option to fiat currency for decades
 
 Every cryptocurrency has three layers:
@@ -41,8 +43,6 @@ There are many different types of Cryptocurrency, with many new currencies added
 - [Bitcoin](https://bitcoin.org/en/)
 - [Ethereum](https://www.ethereum.org/)
 - [XRP](https://ripple.com/xrp/)
-
-There is only 210,000 Bitcoin available to be mined. Upon the completion of mining, it does not necessarily mean the end of data mining as miners can still be incentivized in other methods, namely through transaction fees by other user in order to be included in the ledger. 
 
 #### More Information:
 - [Cryptocurrency](https://en.wikipedia.org/wiki/Cryptocurrency)    
