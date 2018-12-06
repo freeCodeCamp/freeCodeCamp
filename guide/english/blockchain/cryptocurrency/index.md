@@ -36,9 +36,15 @@ Some people invest in cryptocurrency on exchanges such as Binance, Bitrex, or Co
 [Blockchain origins story](https://www.activism.net/cypherpunk/manifesto.html)
 Cypherpunks, crypoanarchists, and libertarians paved the way for the right to privacy and deregulating the government's control and diminishing individual citizen's autonomy.
 
+#### Different Types of Cryptocurrency
+There are many different types of Cryptocurrency, with many new currencies addeded every month. Here are some popular examples:
+- [Bitcoin](https://bitcoin.org/en/)
+- [Ethereum](https://www.ethereum.org/)
+- [XRP](https://ripple.com/xrp/)
+
 #### More Information:
-[Cryptocurrency](https://en.wikipedia.org/wiki/Cryptocurrency)    
-[Ultimate Guide to Cryptocurrency](https://blockgeeks.com/guides/what-is-cryptocurrency)
-[Bitcoin](https://en.wikipedia.org/wiki/Bitcoin)
-[National Cryptocurrency](https://minergate.com/blog/countries-with-national-cryptocurrency/)
-[How many Cryptocurrencies are there?] (https://www.fool.com/investing/2018/03/16/how-many-cryptocurrencies-are-there.aspx)
+- [Cryptocurrency](https://en.wikipedia.org/wiki/Cryptocurrency)    
+- [Ultimate Guide to Cryptocurrency](https://blockgeeks.com/guides/what-is-cryptocurrency)
+- [Bitcoin](https://en.wikipedia.org/wiki/Bitcoin)
+- [National Cryptocurrency](https://minergate.com/blog/countries-with-national-cryptocurrency/)
+- [How many Cryptocurrencies are there?](https://www.fool.com/investing/2018/03/16/how-many-cryptocurrencies-are-there.aspx)
