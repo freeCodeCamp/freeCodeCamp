@@ -34,17 +34,76 @@ Many cryptocurrencies such as Bitcoin can be earned by validating transactions o
 
 Some people invest in cryptocurrency on exchanges such as Binance, Bitrex, or Coinbase. The market peeked in January of 2018. 
 
+## Create your own cryptocurrency
+
+### Stages in Building your own Cryptocurrency
+
+Search for a community to publicize your currency:
+* At the very start you should always think where to market your currency. Engage with them and learn what they really want to feed on. After a satisfiable round of searching and learning, you can surely move onto coding the coin.
+
+Code your coin to be perpetually un-hackable:
+* It is not very difficult to build you coin with some sprinkles of un-hackability with Bitcoin/Ethereum already in place. You can surely use these open source blockchains already in place. The only time that is need will be invested into changes you need to make in these.
+
+Bring in some miners:
+* Miners are indispensable for some cryptocurrency but there are some cryptocurrencies like IOTA which doesn’t require any miner as such. You should use some miners for your currency to gain popularity and benefit some people who use their computing resources.
+
+Grow a merchant base:
+* Once you get your miners mining for the currency, you should grab hold of some merchants who accept your currency when presente** The trust you build with these people will help you grab a huge set of customers in the long run.
+
+Targeted Marketing:
+* Target your customers in local than global reach. Not only it is easier to publicise but also it becomes easier for you to be present in person and gain their confidence.
+
+### Technical Aspects
+
+Technically speaking, you can have variations in new cryptocurrency implementation as of below:
+
+You can fork a popular cryptocurrency like Bitcoin or Litecoin, change some parameters and make your own coin up and running. 
+
+**Pros:**
+*	Very customizable as per your requirement
+* Easy to list on exchanges
+* Mining possible
+
+**Cons:**
+*	Technically challenging to implement
+*	Will require solid consensus mechanism apart from what already present
+
+You can simply prepare a ERC-20 smart contract in blockchain like Ethereum and let people invest into it using the base currency ETH
+
+**Pros:**
+*	Technically very simple to implement
+*	Customizable to your requirement
+*	Mining not required as base token is ETH and there is already huge list of miners out there.
+*	Consensus will be already integrated by Ethereum
+*	Implementation will be fast as core blockchain code doesn’t need tweaking
+
+**Cons:**
+*	You need to set an exchange value initially between your token and ETH
+*	Exchange listing is quite complex
+
+You can also run your blockchain node like in Ethereum which will be pre-funded with a certain number of tokens in the genesis block and miners can do proof of work to get benefitted
+
+**Pros:**
+*	No need to deploy any smart contract
+*	Can have miner community external of any network
+
+**Cons:**
+*	Integrating with public blockchain is difficult
+*	Need lot of publicity for random miners to mine
+*	Tokens lost in incentivising miners
+*	Listing on exchange is very dificult
+
 ### Background history on origins of cryptocurrency:
 [Blockchain origins story](https://www.activism.net/cypherpunk/manifesto.html)
 Cypherpunks, crypoanarchists, and libertarians paved the way for the right to privacy and deregulating the government's control and diminishing individual citizen's autonomy.
 
-#### Different Types of Cryptocurrency
+### Different Types of Cryptocurrency
 There are many different types of Cryptocurrency, with many new currencies addeded every month. Here are some popular examples:
 - [Bitcoin](https://bitcoin.org/en/)
 - [Ethereum](https://www.ethereum.org/)
 - [XRP](https://ripple.com/xrp/)
 
-#### More Information:
+### More Information:
 - [Cryptocurrency](https://en.wikipedia.org/wiki/Cryptocurrency)    
 - [Ultimate Guide to Cryptocurrency](https://blockgeeks.com/guides/what-is-cryptocurrency)
 - [Bitcoin](https://en.wikipedia.org/wiki/Bitcoin)
