@@ -15,7 +15,7 @@ Cryptocurrency is a subset of digital currency, which acts as a medium of exchan
 
 Cryptocurrency enables trustless and anonymous transactions since it does not involve any third party - there is no central bank.  Instead, a blockchain keeps a ledger of transactions across a public network of computers. Blockchains are append-only, meaning nobody can change past transactions.
 Unlike normal currency, cryptocurrency is infinitely divisible and can be exchanged in tiny fractions. For example, transactions can amount to 0.00007 BTC or even lower.  Currently the smallest amount of bitcoin ever recorded on the block chain is 0.00000001 BTC also called satoshi (in honor of the creator of Bitcoin, Satoshi Nakamoto).
-
+Bitcoin is a deflationary currency as opposed to most Fiat currencies which are affected by inflation over time. There is a max cap on the amount of Bitcoins that can be mined which is 21 million. The circulating supply of Bitcoin has surpassed 17 million. This means that over 80% of the Bitcoins which will be ever be mined, have already been mined. 
 
 Every cryptocurrency has three layers:
 1. Protocol - The source code that directs the interaction of the network and various clients (aka core)
