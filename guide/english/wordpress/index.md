@@ -184,16 +184,21 @@ After confirming installation your will be on the WordPress Dashboard.
 6. Navigate to localhost/<insert WordPress directory here).
 7. Follow the graphical installer and you're all set.
 
-## More Information
+### Learning Resources
+- [Official WordPress Lessons](https://learn.wordpress.com/)
+- [WordPress TV](https://wordpress.tv/)
+- [WPBeginner-Youtube channel](https://www.youtube.com/user/wpbeginner)
 
+### More Information
 - [WordPress Theme Directory](https://wordpress.org/themes/)
 - [WordPress Plugin Directory](https://wordpress.org/plugins/)
 - [WordPress Github Repository](https://github.com/WordPress/WordPress)
 - [WordPress Support Forums](https://wordpress.org/support/)
 - [Download WordPress](https://wordpress.org/download/)
-- [WordPress Codex: the online manual](https://codex.wordpress.org/)
+- [WPHub-WordPress Themes](https://www.wphub.com/)
 - [WordPress Code Reference](https://developer.wordpress.org/reference/)
 - [Automattic - The Home of WordPress](https://automattic.com/)
 - [Advantages of WordPress](https://www.fastwebhost.com/blog/top-advantages-of-wordpress-in-2018/)
 - [WordPress Coding Standards](https://make.wordpress.org/core/handbook/best-practices/coding-standards/)
 - [WordPress WordCamp Central](https://central.wordcamp.org/)
+- [WordPress Codex: the online manual](https://codex.wordpress.org/)
