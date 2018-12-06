@@ -111,6 +111,15 @@ this.setState(increment)
 
 Importing state via changes via functions helps keep each module as short as possible and can be used for cleaner code.
 
+#### setState's callback function
+the `setState` method for class based React components also takes a second argument: a callback function that is called once state is successfully updated. This can be useful for performing tasks that rely on the most recent state value (but aren't in the render method). 
+```
+this.setState({ friends: 0}, () => this.findNewFriends());
+...
+
+findNewFriends = (friends = this.state.friends) => friends < 1 ? this.props.dispatch(getFriendSuggestions()) : this.props.dispatch(getCurrentChatRecords());
+```
+
 #### More Information
 
 - [React - State and Lifecycle](https://reactjs.org/docs/state-and-lifecycle.html)

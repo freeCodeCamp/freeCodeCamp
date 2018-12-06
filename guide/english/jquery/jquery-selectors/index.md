@@ -73,6 +73,24 @@ As with the class selector, this can also be used in combination with a tag name
 $("h1#headline").css("font-size", "2em");
 ```
 
+### Selecting by attribute value
+If you want to select elements with a certain attribute, use ([attributeName="value"]).
+```html
+<input name="myInput" />
+```
+```javascript
+$("[name='myInput']").value("Test"); // sets input value to "Test"
+```
+
+You can also use the attribute selector in combination with a tag name to be more specific.
+```html
+<input name="myElement" />`<br>
+<button name="myElement">Button</button>
+```
+```javascript
+$("input[name='myElement']").remove(); // removes the input field not the button
+```
+
 ### Selectors that act as filters
 There are also selectors that act as filters - they will usually start with colons. For example, the `:first` selector selects the element that is the first child of its parent. Here's an example of an unordered list with some list items. The jQuery selector below the list selects the first `<li>` element in the list--the "One" list item--and then uses the `.css` method to turn the text green.
 
