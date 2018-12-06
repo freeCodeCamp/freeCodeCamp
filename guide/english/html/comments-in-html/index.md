@@ -9,8 +9,6 @@ It is good practice to add comments to your code, especially when working with a
 
 Comments are started with `<!--` and ended with `-->`, and can span multiple lines. They can contain code or text, and won't appear on the front-end of the website when a user visits a page. You can view comments through the Inspector Console, or by viewing Page Source.
 
-# Tip
-> ** CTRL + / ** is Keyboard Shortcut which works in probably all modern text editors to create the comments. It creates a single line comment, but if you want to comment more lines, just highlight all the area and press it. 
 
 ### Example
 ```html
@@ -58,5 +56,10 @@ These comments are only available in Internet Explorer and can be used up to IE9
 <!--[if IE 9]> <p>Your browser is IE9</p> <![endif]-->
 <!--[if gt IE 9]> <p>Your browser is greater then IE9</p> <![endif]-->
 ```
+
+#### Tip
+**CTRL + /** is a keyboard shortcut which works in probably all modern text editors to create the comments. It creates a single line comment, but if you want to comment more lines, just highlight all the area and press it. 
+
+#### More Information
 
 [About conditional comments](https://msdn.microsoft.com/en-us/library/ms537512(v=vs.85).aspx)
