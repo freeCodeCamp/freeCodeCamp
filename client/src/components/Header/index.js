@@ -30,6 +30,9 @@ function Header({ disableSettings }) {
             </a>
           </li>
           <li>
+            <Link to='/news'>News</Link>
+          </li>
+          <li className='user-state-link'>
             <UserState disableSettings={disableSettings} />
           </li>
         </ul>

@@ -3,14 +3,23 @@ title: RAM
 ---
 ## RAM
 
-RAM stands for random-access memory, alternatively referred to as **main memory**, **primary memory**, or **system memory**. It is a piece of computer hardware where the data that your computer is currently working on is stored.<br>
-Unlike hard drives, RAM is a volatile memory and requires power to keep the data accessible. If the computer is turned off, all data contained in RAM is lost. New users often confuse RAM with disk drive space. See [memory definition](https://www.computerhope.com/jargon/m/memory.htm) for a comparison between memory and storage.<br>
+RAM stands for random access memory, alternatively referred to as **main memory**, **primary memory**, or **system memory**.<br>
+
+This is where a PC stores data before it’s processed. A RAM DIMM (Dual Insert Memory Module) is made of up memory chips that a computer can write continiously & rapidly. RAM is a volatile form of data storage, which means that it only process and transfer data as long as it is powered on. The moment RAM is out of power is the moment the data inside RAM is erased. RAM is measured in gigabytes (GB). In contrast to other direct-access storage media such as CD & DVD or hard disks, read and write times varies significantly depending on their physical location, recording medium and media rotation and arm movement.
+
+RAM contains multiplexing and demultiplexing circuitry, to connect the data lines to the addressed storage for reading or writing the entry. Usually more than one bit of storage is accessed by the same address, and RAM devices often have multiple data lines and are said to be "8-bit" or "16-bit", etc. devices.
+
+RAM is associated with volatile types of memory, altough non-volatile RAM has also been developed. However, these types of RAM come with a burden. Such as not being able to write but just read.
+
+RAM consumes much more power than hard drives. However, as stated above the RAM you will be using in your laptop or computer is most likely a volatile memory and requires power to keep the data accessible. If the computer is powered off, all information inside RAM will be lost.
+(https://www.computerhope.com/jargon/m/memory.htm) for a comparison between memory and storage.<br>
+ 
 
 ### Types of RAM:
 
 There are two main types of RAM: static (SRAM) and dynamic (DRAM). Static RAM is constructed using flip-flops, is very fast, but is difficult to make in large sizes. Dynamic RAM is constructed using capacitors, is fairly fast, but needs 'refreshed' periodically to keep charge on the capacitors. SRAM is often used closer to the CPU due to its speed and space constraints whereas DRAM is used as main memory.
 
-Some examples of packaging RAM are: DIMM, RIMM, SIMM, SO-DIMM, and SOO-RIMM. Below is an example image of a 512 MB DIMM computer memory module, a typical piece of RAM found in desktop computers. This memory module would be installed into one of the memory slots on a motherboard.
+Some examples of packaging RAM are: DIMM, RIMM, SIMM, SO-DIMM, and SO-RIMM. Below is an example image of a 512 MB DIMM computer memory module, a typical piece of RAM found in desktop computers. This memory module would be installed into one of the memory slots on a motherboard.
 
 ![RAM](https://images-na.ssl-images-amazon.com/images/I/41kVnWQebtL._SL256_.jpg)
 
@@ -46,3 +55,4 @@ Do you plan on running VMs across a framework of server clients? Consider new, e
 * [DDR4 SDRAM](https://en.wikipedia.org/wiki/DDR4_SDRAM)
 * [Types of RAM](http://www.computermemoryupgrade.net/types-of-computer-memory-common-uses.html)
 * [Laptop Memory Buyer's Guide](https://www.lifewire.com/laptop-memory-buyers-guide-833024)
+* [ECC Memory](https://en.wikipedia.org/wiki/ECC_memory)
