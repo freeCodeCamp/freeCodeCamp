@@ -106,11 +106,11 @@ In this instance, you could create a custom post type for products, a custom pos
 The free and open-source version of wordpress is found at [https://wordpress.org](https://wordpress.org) and must be self-hosted on a server or local development machine. This is also the version of WordPress that is frequently available as a simple installation through cPanel on the majority of hosting providers. Meanwhile, a hosted version of WordPress is available [wordpress.com](https://wordpress.com), but this is not an open-source version. Users of the WordPress.com site may need to pay subscription fees to access many of the features and benefits of the open-source WordPress.
 
 Here are some examples of big name brands using WordPress: 
-* Sony Music
-* The New Yorker
-* MTV News
-* BBC America
-* Techcrunch
+* [Sony Music](https://www.sonymusic.com/)
+* [TechCrunch](https://techcrunch.com/)
+* [BBC America](http://www.bbcamerica.com/)
+* [Bloomberg Professional](https://www.bloomberg.com/professional/)
+* [The Walt Disney Company](https://www.thewaltdisneycompany.com/)
 
 Note: WordPress's ease of use may encourage new users to forget about website security. However, the popularity of WordPress increases the activity of malware and other issues. 
 It is important to choose extremely difficult or random passwords for the administrators and for the database. This guards against random brute-force attacks. 
