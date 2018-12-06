@@ -112,7 +112,7 @@ Return the completed inventory in alphabetical order.
 * The variable **index** stores the location (index) of a product.
 * The helper function `getProductIndex()` returns the index of a specified product. It iterates through each element of the array that it is called on until it can find the name parameter. If the product is not found in the inventory, `undefined` is returned.
 * Then, each item in the new inventory (delivery) is worked through:
-  * **index** is set to the result of invoking the helper function i.e., search the new inventory for that product name and return it's index.
+  * **index** is set to the result of invoking the helper function i.e., search the new inventory for that product name and return its index.
   * If the item is found, quantity of the product is added to the quantity of the same product in current inventory.
   * If the item is not found, the entire product (name and quantity) is added to the current inventory.
 * The updated inventory, **arr1**, is then sorted by product name (held in `arr1[x][1]`).
