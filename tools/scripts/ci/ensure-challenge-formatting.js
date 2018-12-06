@@ -10,27 +10,25 @@ const requiredProps = ['title', 'id', 'challengeType'];
 
 const spinner = ora('Checking challenge markdown formatting').start();
 
-readdirp({ root: challengeRoot })
-  .on('data', file => {
-    const frontmatterCheck = (/_meta/).test(file.fullPath)
-      ? Promise.resolve(null)
-      : checkFrontmatter(file, {
-          validator: challengeFrontmatterValidator(file)
-        });
-    return Promise.all([isChallengeParseable(file), frontmatterCheck]).catch(
-      err => {
-        console.info(`
+readdirp({ root: challengeRoot, directoryFilter: '!_meta' })
+  .on('data', file =>
+    Promise.all([
+      isChallengeParseable(file),
+      checkFrontmatter(file, {
+        validator: challengeFrontmatterValidator(file)
+      })
+    ]).catch(err => {
+      console.info(`
   the following error occured when testing
 
     ${file.fullPath}
 
     `);
-        console.error(err);
-        // eslint-disable-next-line no-process-exit
-        process.exit(1);
-      }
-    );
-  })
+      console.error(err);
+      // eslint-disable-next-line no-process-exit
+      process.exit(1);
+    })
+  )
   .on('end', () => spinner.stop());
 
 const challengeFrontmatterValidator = file => frontmatter => {
@@ -43,6 +41,7 @@ const challengeFrontmatterValidator = file => frontmatter => {
         (!isEmpty(frontmatter[prop]) || isNumber(frontmatter[prop]))
     )
     .every(bool => bool);
+
   if (!hasRequiredProperties) {
     console.log(`${fullPath} is missing required frontmatter
 
@@ -59,6 +58,12 @@ const challengeFrontmatterValidator = file => frontmatter => {
     validVideoUrl = true;
   } else {
     validVideoUrl = scrimbaUrlRE.test(videoUrl);
+
+    if (!validVideoUrl) {
+      console.log(`
+  ${fullPath} contains an invalid videoUrl
+`);
+    }
   }
   return hasRequiredProperties && validVideoUrl;
 };
