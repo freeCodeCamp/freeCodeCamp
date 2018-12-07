@@ -34,7 +34,7 @@ Every cryptocurrency has three layers:
 
 Many cryptocurrencies such as Bitcoin can be earned by validating transactions on the network. This process of validation is called "proof of work" and consists of mathematically guessing a random numbers (usually less than a certain determined value or "difficulty") to attempt to match the blockchain's irreversible cryptographic hash function. As more transactions are validated (and rewards for validation are collected) over time, the difficulty of finding the correct hash increases. An increase in the popularity of cryptocurrency mining over the past few years has outpaced the development of the average computational power of a household computer, so in order to mine effectively, one requires a computer (or computers) with especially powerful graphics cards (such as the Nivida GTX 1080) or specialized cryptocurrency mining equipment (such as the Fast-Hash One or CoinTerra TerraMiner IV). It should also be noted that, because of drawbacks of proof-of-work validation (such as energy inefficiency), some cryptocurrencies are exploring alternative algorithms such as "proof of burn".
 
-Some people invest in cryptocurrency on exchanges such as Binance, Bitrex, or Coinbase. The market peeked in January of 2018. 
+Investment in cryptocurrencies is highly speculative. With much volitility in the market due to the blockchain technologies still being in their infancy and compounded with a glut of inexperienced invstors the prices of the various currencies often change rapidly. Investors can trade fiat and crypto currencies on exchanges such as Binance, Bitrex, or Coinbase. The latest market peek was in January of 2018 with Bitcoin reaching above $20,000 USD on some exchanges. 
 
 ## Create your own cryptocurrency
 
