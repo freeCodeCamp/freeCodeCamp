@@ -27,8 +27,6 @@ const { challengeTypes } = require('../../client/utils/challengeTypes');
 
 const { supportedLangs } = require('../utils');
 
-const { LOCALE: lang = 'english' } = process.env;
-
 const oldRunnerFail = Mocha.Runner.prototype.fail;
 Mocha.Runner.prototype.fail = function(test, err) {
   if (err instanceof AssertionError) {
@@ -60,7 +58,15 @@ const jQueryScript = fs.readFileSync(
 runTests();
 
 async function runTests() {
-  await Promise.all(supportedLangs.map(lang => populateTestsForLang(lang)));
+  let testLangs = [...supportedLangs];
+  if (process.env.TEST_CHALLENGES_FOR_LANGS) {
+    const filterLangs = process.env.TEST_CHALLENGES_FOR_LANGS.split(',').map(
+      lang => lang.trim().toLowerCase()
+    );
+    testLangs = testLangs.filter(lang => filterLangs.includes(lang));
+  }
+
+  await Promise.all(testLangs.map(lang => populateTestsForLang(lang)));
 
   run();
 }
