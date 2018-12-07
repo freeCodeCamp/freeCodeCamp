@@ -60,6 +60,16 @@ XML - расширяемый язык разметки. Предназначен
 
 И главным достижением стало то, что он стал Рекомендацией W3C уже в феврале 1998 года.
 
+#### Отображение XML
+
+Один из способов стилизовать вывод XML - это указать CSS, используя  `xml-stylesheet` инструкцию обработки.
+
+`<?xml-stylesheet type="text/css" href="stylesheet.css"?>`
+
+Более мощным способом отображения XML является Extensible Stylesheet Language Transformations (XSLT), с помощью которого можно преобразовать XML в другие языки разметки.
+
+`<?xml-stylesheet type="text/xsl" href="transform.xsl"?>`
+
 ### Больше информации
 
 *   [Страница в Википедии](https://ru.wikipedia.org/wiki/XML)
