@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React, { Component, Fragment } from 'react';
 import PropTypes from 'prop-types';
 import { bindActionCreators } from 'redux';
 import { createSelector } from 'reselect';
@@ -7,6 +7,8 @@ import Helmet from 'react-helmet';
 import { ReflexContainer, ReflexSplitter, ReflexElement } from 'react-reflex';
 import { graphql } from 'gatsby';
 import { first } from 'lodash';
+import { Tabs, TabPane } from '@freecodecamp/react-bootstrap';
+import Media from 'react-media';
 
 import LearnLayout from '../../../components/layouts/Learn';
 import Editor from './Editor';
@@ -17,6 +19,7 @@ import CompletionModal from '../components/CompletionModal';
 import HelpModal from '../components/HelpModal';
 import VideoModal from '../components/VideoModal';
 import ResetModal from '../components/ResetModal';
+import ToolPanel from '../components/Tool-Panel';
 
 import { randomCompliment } from '../utils/get-words';
 import { createGuideUrl } from '../utils';
@@ -27,11 +30,13 @@ import {
   createFiles,
   challengeFilesSelector,
   challengeTestsSelector,
+  currentTabSelector,
   initTests,
   updateChallengeMeta,
   challengeMounted,
   updateSuccessMessage,
-  consoleOutputSelector
+  consoleOutputSelector,
+  moveToTab
 } from '../redux';
 
 import './classic.css';
@@ -43,16 +48,19 @@ const mapStateToProps = createSelector(
   challengeFilesSelector,
   challengeTestsSelector,
   consoleOutputSelector,
-  (files, tests, output) => ({
+  currentTabSelector,
+  (files, tests, output, currentTab) => ({
     files,
     tests,
-    output
+    output,
+    currentTab
   })
 );
 
 const mapDispatchToProps = dispatch =>
   bindActionCreators(
     {
+      moveToTab,
       createFiles,
       initTests,
       updateChallengeMeta,
@@ -65,6 +73,7 @@ const mapDispatchToProps = dispatch =>
 const propTypes = {
   challengeMounted: PropTypes.func.isRequired,
   createFiles: PropTypes.func.isRequired,
+  currentTab: PropTypes.number,
   data: PropTypes.shape({
     challengeNode: ChallengeNode
   }),
@@ -72,6 +81,7 @@ const propTypes = {
     key: PropTypes.string
   }),
   initTests: PropTypes.func.isRequired,
+  moveToTab: PropTypes.func.isRequired,
   output: PropTypes.string,
   pageContext: PropTypes.shape({
     challengeMeta: PropTypes.shape({
@@ -88,6 +98,8 @@ const propTypes = {
   updateSuccessMessage: PropTypes.func.isRequired
 };
 
+const MAX_MOBILE_WIDTH = 767;
+
 class ShowClassic extends Component {
   constructor() {
     super();
@@ -101,7 +113,6 @@ class ShowClassic extends Component {
       resizing: false
     };
   }
-
   onResize() {
     this.setState({ resizing: true });
   }
@@ -169,88 +180,222 @@ class ShowClassic extends Component {
     }
   }
 
-  render() {
+  getBlockNameTitle() {
     const {
       data: {
         challengeNode: {
-          challengeType,
-          fields: { blockName, slug },
-          title,
+          fields: { blockName },
+          title
+        }
+      }
+    } = this.props;
+    return `${blockName}: ${title}`;
+  }
+
+  getGuideUrl() {
+    const {
+      data: {
+        challengeNode: {
+          fields: { slug }
+        }
+      }
+    } = this.props;
+    return createGuideUrl(slug);
+  }
+
+  getChallengeFile() {
+    const { files } = this.props;
+    return first(Object.keys(files).map(key => files[key]));
+  }
+
+  hasPreview() {
+    const {
+      data: {
+        challengeNode: {
+          challengeType
+        }
+      }
+    } = this.props;
+    return (
+      challengeType === challengeTypes.html ||
+      challengeType === challengeTypes.modern
+    );
+  }
+
+  renderInstructionsPanel({ showToolPanel }) {
+    const {
+      data: {
+        challengeNode: {
+          fields: { blockName },
           description,
           instructions,
           videoUrl
         }
-      },
-      files,
-      output
+      }
     } = this.props;
+    return (
+      <SidePanel
+        className='full-height'
+        description={description}
+        guideUrl={this.getGuideUrl()}
+        instructions={instructions}
+        section={dasherize(blockName)}
+        showToolPanel={showToolPanel}
+        title={this.getBlockNameTitle()}
+        videoUrl={videoUrl}
+      />
+    );
+  }
+
+  renderEditor() {
+    const { files } = this.props;
     const challengeFile = first(Object.keys(files).map(key => files[key]));
-    const editors = challengeFile && (
-      <ReflexContainer key={challengeFile.key} orientation='horizontal'>
-        <ReflexElement
-          flex={1}
-          propagateDimensions={true}
-          renderOnResize={true}
-          renderOnResizeRate={20}
-          {...this.resizeProps}
-          >
-          <Editor {...challengeFile} fileKey={challengeFile.key} />
-        </ReflexElement>
-        <ReflexSplitter propagate={true} {...this.resizeProps} />
-        <ReflexElement
-          flex={0.25}
-          propagateDimensions={true}
-          renderOnResize={true}
-          renderOnResizeRate={20}
-          {...this.resizeProps}
-          >
-          <Output
+    return challengeFile && (
+      <Editor {...challengeFile} fileKey={challengeFile.key} />
+    );
+  }
+
+  renderTestOutput() {
+    const { output } = this.props;
+    return (
+      <Output
             defaultOutput={`
 /**
 * Your test output will go here.
 */
 `}
-            output={decodeHTMLEntities(output)}
-          />
+        output={decodeHTMLEntities(output)}
+      />
+    );
+  }
+
+  renderPreview() {
+    return (
+      <Preview
+        className='full-height'
+        disableIframe={this.state.resizing}
+      />
+    );
+  }
+
+  renderDesktopLayout() {
+    const challengeFile = this.getChallengeFile();
+    return (
+      <ReflexContainer orientation='vertical'>
+        <ReflexElement flex={1} {...this.resizeProps}>
+          {this.renderInstructionsPanel({ showToolPanel: true })}
         </ReflexElement>
+        <ReflexSplitter propagate={true} {...this.resizeProps} />
+        <ReflexElement flex={1} {...this.resizeProps}>
+          {challengeFile && (
+            <ReflexContainer key={challengeFile.key} orientation='horizontal'>
+              <ReflexElement
+                flex={1}
+                propagateDimensions={true}
+                renderOnResize={true}
+                renderOnResizeRate={20}
+                {...this.resizeProps}
+                >
+                {this.renderEditor()}
+              </ReflexElement>
+              <ReflexSplitter propagate={true} {...this.resizeProps} />
+              <ReflexElement
+                flex={0.25}
+                propagateDimensions={true}
+                renderOnResize={true}
+                renderOnResizeRate={20}
+                {...this.resizeProps}
+                >
+                {this.renderTestOutput()}
+              </ReflexElement>
+            </ReflexContainer>
+          )}
+        </ReflexElement>
+        {this.hasPreview() && (
+          <Fragment>
+            <ReflexSplitter propagate={true} {...this.resizeProps} />
+            <ReflexElement flex={0.7} {...this.resizeProps}>
+              {this.renderPreview()}
+            </ReflexElement>
+          </Fragment>
+        )}
       </ReflexContainer>
     );
-    const showPreview =
-      challengeType === challengeTypes.html ||
-      challengeType === challengeTypes.modern;
-    const blockNameTitle = `${blockName}: ${title}`;
+  }
+
+  renderMobileLayout() {
+    const {
+      data: {
+        challengeNode: {
+          videoUrl
+        }
+      },
+      currentTab,
+      moveToTab
+    } = this.props;
+
+    const editorTabPaneProps = {
+      mountOnEnter: true,
+      unmountOnExit: true
+    };
+
+    return (
+      <Fragment>
+        <Tabs
+          activeKey={currentTab}
+          defaultActiveKey={1}
+          id='challege-page-tabs'
+          onSelect={(key) => moveToTab(key)}
+          >
+          <TabPane eventKey={1} title='Instructions'>
+            { this.renderInstructionsPanel({ showToolPanel: false }) }
+          </TabPane>
+          <TabPane eventKey={2} title='Code' {...editorTabPaneProps}>
+            <div className='challege-edittor-wrapper'>
+              {this.renderEditor()}
+            </div>
+          </TabPane>
+          <TabPane eventKey={3} title='Tests' {...editorTabPaneProps}>
+            <div className='challege-edittor-wrapper'>
+              {this.renderTestOutput()}
+            </div>
+          </TabPane>
+          {this.hasPreview() && (
+            <TabPane eventKey={4} title='Preview'>
+              {this.renderPreview()}
+            </TabPane>
+          )}
+        </Tabs>
+        <ToolPanel
+          guideUrl={this.getGuideUrl()}
+          isMobile={true}
+          videoUrl={videoUrl}
+        />
+      </Fragment>
+    );
+  }
+
+  render() {
+    const {
+      data: {
+        challengeNode: {
+          videoUrl
+        }
+      }
+    } = this.props;
+
     return (
       <LearnLayout>
-        <Helmet title={`Learn ${blockNameTitle} | freeCodeCamp.org`} />
-        <ReflexContainer orientation='vertical'>
-          <ReflexElement flex={1} {...this.resizeProps}>
-            <SidePanel
-              className='full-height'
-              description={description}
-              guideUrl={createGuideUrl(slug)}
-              instructions={instructions}
-              section={dasherize(blockName)}
-              title={blockNameTitle}
-              videoUrl={videoUrl}
-            />
-          </ReflexElement>
-          <ReflexSplitter propagate={true} {...this.resizeProps} />
-          <ReflexElement flex={1} {...this.resizeProps}>
-            {editors}
-          </ReflexElement>
-          {showPreview && (
-            <ReflexSplitter propagate={true} {...this.resizeProps} />
-          )}
-          {showPreview ? (
-            <ReflexElement flex={0.7} {...this.resizeProps}>
-              <Preview
-                className='full-height'
-                disableIframe={this.state.resizing}
-              />
-            </ReflexElement>
-          ) : null}
-        </ReflexContainer>
-
+        <Helmet
+          title={`Learn ${this.getBlockNameTitle()} | freeCodeCamp.org`}
+        />
+        <Media query={{ maxWidth: MAX_MOBILE_WIDTH }}>
+          {matches =>
+            matches
+              ? this.renderMobileLayout()
+              : this.renderDesktopLayout()
+          }
+        </Media>
         <CompletionModal />
         <HelpModal />
         <VideoModal videoUrl={videoUrl} />
