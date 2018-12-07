@@ -20,7 +20,9 @@ All fields must be separated with a comma (,)
 
 ## Instructions
 <section id='instructions'>
+Click the following link: https://glitch.com/#!/import/github/freeCodeCamp/boilerplate-npm
 
+Edit the package.json to include "author" key and a valid value.
 </section>
 
 ## Tests
