@@ -6,13 +6,13 @@ videoUrl: ''
 localeTitle: Adicionar uma sombra de caixa a um elemento semelhante ao cartão
 ---
 
-## Description
+## Descrição
 <section id="description"> A propriedade <code>box-shadow</code> aplica uma ou mais sombras a um elemento. A propriedade <code>box-shadow</code> toma valores para <code>offset-x</code> (até onde empurrar a sombra horizontalmente a partir do elemento), <code>offset-y</code> (até onde empurrar a sombra verticalmente a partir do elemento), <code>blur-radius</code> , <code>spread-radius</code> e uma cor valor, nessa ordem. Os valores de <code>spread-radius</code> e <code>blur-radius</code> <code>spread-radius</code> são opcionais. Aqui está um exemplo do CSS para criar várias sombras com algum desfoque, em cores pretas quase transparentes: <blockquote> box-shadow: 0 10px 20px rgba (0,0,0,0.19), 0 6px 6px rgba (0,0,0,0.23); </blockquote></section>
 
-## Instructions
+## Instruções
 <section id="instructions"> O elemento agora tem um id de <code>thumbnail</code> . Com esse seletor, use os valores CSS acima para colocar uma <code>box-shadow</code> no cartão. </section>
 
-## Tests
+## Testes
 <section id='tests'>
 
 ```yml
@@ -26,7 +26,7 @@ tests:
 
 </section>
 
-## Challenge Seed
+## Semente do Desafio
 <section id='challengeSeed'>
 
 <div id='html-seed'>
@@ -85,7 +85,7 @@ tests:
 
 </section>
 
-## Solution
+## Solução
 <section id='solution'>
 
 ```js
