@@ -1,16 +1,16 @@
 ---
 title: React Props and State
-localeTitle: Reagir Adereços e Estado
+localeTitle: React Props e State
 ---
-## Adereços e Estado
+## Props e State
 
-Existem dois tipos de dados que controlam um componente: props e state. Os acessórios são definidos pelo pai e são fixados durante a vida útil de um componente. Para os dados que vão mudar, temos que usar o estado.
+Existem dois tipos de dados que controlam um componente: props e state. As props são definidas pelo pai e são fixadas durante a vida útil de um componente. Para os dados que vão mudar, temos que usar state.
 
-### Adereços
+### Props
 
 A maioria dos componentes pode ser personalizada com parâmetros diferentes quando são criados. Esses parâmetros de criação são chamados de `props` .
 
-Seus próprios componentes também podem usar adereços. Isso permite criar um único componente que é usado em muitos lugares diferentes do aplicativo, com propriedades ligeiramente diferentes em cada lugar. Consulte `this.props` na sua função de renderização:
+Seus próprios componentes também podem usar props. Isso permite criar um único componente que é usado em muitos lugares diferentes do aplicativo, com propriedades ligeiramente diferentes em cada lugar. Consulte `this.props` na sua função de renderização:
 ```
 class Welcome extends React.Component { 
   render() { 
@@ -23,7 +23,7 @@ class Welcome extends React.Component {
 
 A linha `<Welcome name="neel" />` cria um nome de propriedade com o valor `"neel"` .
 
-a propriedade é passada para o componente, semelhante a como um argumento é passado para uma função. Na verdade, poderíamos até mesmo reescrever o componente para ser mais simples:
+A propriedade é passada para o componente, semelhante como a forma que um argumento é passado para uma função. Na verdade, poderíamos até mesmo reescrever o componente para ser mais simples:
 ```
 function Welcome(props) { 
   return <h1>Hello {props.name}</h1>; 
@@ -47,22 +47,22 @@ Se Welcome for chamado sem um nome, ele simplesmente renderizará `<h1> Hello wo
 
 Então `props` podem vir do pai, ou podem ser definidos pelo próprio componente.
 
-Você costumava poder alterar props com setProps e replaceProps, mas estes foram **preteridos** . Durante o ciclo de vida de um componente, adereços não devem mudar (considerá-los imutáveis).
+Você costumava poder alterar props com setProps e replaceProps, mas estes foram **preteridos** . Durante o ciclo de vida de um componente, `props` não devem mudar (considere-os imutáveis).
 
-Uma vez que adereços são passados, e eles não podem mudar, você pode pensar em qualquer componente React que use apenas adereços (e não estado) como “puro”, isto é, ele sempre renderizará a mesma saída dada a mesma entrada. Isso os torna realmente fáceis de testar.
+Uma vez que as props são passadas, e elas não podem mudar, você pode pensar em qualquer componente React que use apenas props (e não state) como “puro”, isto é, ele sempre renderizará a mesma saída dada a mesma entrada. Isso os torna realmente fáceis de testar.
 
-### Estado
+### State
 
 Como `props` , o `state` contém informações sobre o componente. No entanto, o tipo de informação e como ela é tratada é diferente.
 
-Por padrão, um componente não possui estado. O componente de `Welcome` acima é stateless:
+Por padrão, um componente não possui estado. O componente `Welcome` abaixo é chamado stateless:
 ```
 function Welcome(props) { 
   return <h1>Hello {props.name}</h1>; 
  } 
 ```
 
-Quando um componente precisa acompanhar as informações entre renderizações, o próprio componente pode criar, atualizar e usar o estado.
+Quando um componente precisa acompanhar as informações entre renderizações, o próprio componente pode criar, atualizar e usar state.
 
 Trabalharemos com um componente bastante simples para ver o `state` funcionando em ação. Temos um botão que registra quantas vezes você clicou nele.
 
@@ -92,7 +92,7 @@ class Button extends React.Component {
  } 
 ```
 
-### estado é criado no componente
+### State é criado no componente
 
 Vamos ver o método `constructor` :
 ```
@@ -104,7 +104,7 @@ constructor() {
  } 
 ```
 
-É aqui que o estado obtém seus dados iniciais. Os dados iniciais podem ser codificados (como acima), mas também podem vir de `props` .
+É aqui que o estado obtém seus dados iniciais. Os dados iniciais podem ser codificados (como abaixo), mas também podem vir de `props` .
 
 ### `state` é mutável
 
@@ -117,15 +117,15 @@ updateCount() {
  } 
 ```
 
-Alteramos o estado para acompanhar o número total de cliques. O bit importante é setState. Primeiro, observe que o setState tem uma função, porque o setState pode ser executado de forma assíncrona. Ele precisa ter uma função de retorno de chamada em vez de atualizar o estado diretamente. Você pode ver que temos acesso a prevState dentro do callback, isso irá conter o estado anterior, mesmo que o estado já tenha sido atualizado em algum outro lugar.
+Alteramos o state para acompanhar o número total de cliques. O bit importante é setState. Primeiro, observe que o setState tem uma função, porque o setState pode ser executado de forma assíncrona. Ele precisa ter uma função de retorno de chamada em vez de atualizar o state diretamente. Você pode ver que temos acesso a prevState dentro do callback, isso irá conter o state anterior, mesmo que o state já tenha sido atualizado em algum outro lugar.
 
-Reaja vai um passo melhor, setState atualiza o objeto de `state` **e** re-renderiza o componente automagicamente.
+Além disso, o React vai um passo a mais, o setState atualiza o objeto de `state` **e** re-renderiza o componente automaticamente.
 
-### avisos de `state`
+### Avisos de `state`
 
 > É tentador escrever `this.state.count = this.state.count + 1` .
 
-**Não faça isso. O** React não pode ouvir o estado sendo atualizado dessa maneira, portanto, seu componente não será renderizado novamente. Sempre use `setState` .
+**Não faça isso. O** React não permite autualização do state dessa maneira, portanto, seu componente não será renderizado novamente. Sempre use `setState` .
 
 Também pode ser tentador escrever algo assim:
 ```
@@ -135,7 +135,7 @@ Também pode ser tentador escrever algo assim:
  }); 
 ```
 
-Embora isso possa parecer razoável, não gera erros, e você pode encontrar exemplos que usam essa sintaxe on-line, está errado. Isso não leva em conta a natureza asrônica que o `setState` pode usar e pode causar erros com dados de estado fora de sincronia.
+Embora isso possa parecer razoável, não gera erros, e você pode encontrar exemplos que usam essa sintaxe on-line, está errado. Isso não leva em conta a natureza assíncrona que o `setState` pode usar e pode causar erros com dados de state fora de sincronia.
 
 ### Programa Continue !!!
 
@@ -150,7 +150,7 @@ render() {
  } 
 ```
 
-`onClick={() => this.updateCount()}` significa que quando o botão é clicado, o método updateCount será chamado. Precisamos usar **a função de seta do ES6** para que o updateCount tenha acesso ao estado dessa instância.
+`onClick={() => this.updateCount()}` significa que quando o botão é clicado, o método updateCount será chamado. Precisamos usar **a arrow function do ES6** para que o updateCount tenha acesso ao state dessa instância.
 
 O texto renderizado no botão é `Clicked {this.state.count} times` , que usará o que for this.state.count no momento da renderização.
 
