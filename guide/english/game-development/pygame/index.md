@@ -7,15 +7,17 @@ title: Pygame
 
 Pygame is an open source, cross platform python library used for game development, written by Pete Shinners. The Pygame documentation and more information can be found on their website at https://pygame.org.
 
-### Games Built with Pygame
-
-•Too Many Troopers
-•Vectorpods 2
-•QANAT
 
 ### Overview
 
 The project started in the year 2000 as a result of the death of PySDL. The Pygame library version 1.0 was
 released after six months development in April of 2001.
+
+### Games Built with Pygame
+
+- Too Many Troopers
+- Vectorpods 2
+- QANAT
+
 
 * [Pygame Official Website](https://www.pygame.org)
