@@ -15,7 +15,7 @@ import { isPromise } from './polyvinyl';
 
 const jQueryCDN =
   'https://cdn.jsdelivr.net/npm/jquery@3.3.1/dist/jquery.min.js';
-const jQuery = `<script src='${jQueryCDN}' typ='text/javascript'></script>`;
+const jQuery = `<script src='${jQueryCDN}' type='text/javascript'></script>`;
 const frameRunner =
   "<script src='/js/frame-runner.js' type='text/javascript'></script>";
 
