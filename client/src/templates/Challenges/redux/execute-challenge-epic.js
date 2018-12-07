@@ -43,7 +43,12 @@ const executeDebounceTimeout = 750;
 
 function updateMainEpic(action$, state$, { document }) {
   return action$.pipe(
-    ofType(types.updateFile, types.challengeMounted),
+    ofType(
+      types.updateFile,
+      types.previewMounted,
+      types.challengeMounted,
+      types.resetChallenge
+    ),
     filter(() => {
       const { challengeType } = challengeMetaSelector(state$.value);
       return (
