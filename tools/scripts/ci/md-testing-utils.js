@@ -1,10 +1,13 @@
 const path = require('path');
 const fs = require('fs');
-const readdirp = require('readdirp-walk');
 const matter = require('gray-matter');
-const _ = require('lodash');
+
+const pass = true;
 
 const guideRoot = path.resolve(__dirname, '../../../guide');
+const challengeRoot = path.resolve(__dirname, '../../../curriculum/challenges');
+exports.guideRoot = guideRoot;
+exports.challengeRoot = challengeRoot;
 
 const allowedLangDirNames = [
   'arabic',
@@ -15,7 +18,7 @@ const allowedLangDirNames = [
   'spanish'
 ];
 
-function checkFile(file) {
+exports.checkGuideFile = function checkGuideFile(file) {
   const { stat, depth, name, fullPath } = file;
   if (depth === 1) {
     if (stat.isFile()) {
@@ -26,43 +29,10 @@ function checkFile(file) {
     }
   }
   if (stat.isDirectory()) {
-    return checkDirName(name, fullPath).catch(err => {
-      throw err;
-    });
+    return checkDirName(name, fullPath);
   }
-  return checkFileName(name, fullPath)
-    .then(() => checkFrontmatter(fullPath))
-    .catch(err => {
-      console.log(`
-
-    The below occured in:
-
-    ${fullPath}
-
-  `);
-      console.error(err);
-      // eslint-disable-next-line no-process-exit
-      process.exit(1);
-    });
-}
-
-readdirp({ root: guideRoot })
-  .on('data', file =>
-    checkFile(file).catch(err => {
-      console.error(err);
-      // eslint-disable-next-line no-process-exit
-      process.exit(1);
-    })
-  )
-  .on('end', () => {
-    console.log(`
-
-    guide directory naming checks complete
-
-`);
-    // eslint-disable-next-line no-process-exit
-    process.exit(0);
-  });
+  return checkGuideFileName(name, fullPath);
+};
 
 function checkDirName(dirName, fullPath) {
   return new Promise((resolve, reject) => {
@@ -86,11 +56,11 @@ Upper case characters found in ${dirName}, all folder names must be lower case
 `)
       );
     }
-    return resolve();
+    return resolve(pass);
   });
 }
 
-function checkFileName(fileName, fullPath) {
+function checkGuideFileName(fileName, fullPath) {
   return new Promise((resolve, reject) => {
     if (fileName !== 'index.md') {
       return reject(
@@ -103,11 +73,21 @@ function checkFileName(fileName, fullPath) {
         )
       );
     }
-    return resolve();
+    return resolve(pass);
   });
 }
 
-function checkFrontmatter(fullPath) {
+exports.checkFrontmatter = function checkFrontmatter(
+  { fullPath, stat },
+  options = {
+    validator() {
+      return true;
+    }
+  }
+) {
+  if (!stat.isFile()) {
+    return Promise.resolve(pass);
+  }
   return new Promise((resolve, reject) =>
     fs.readFile(fullPath, 'utf8', (err, content) => {
       if (err) {
@@ -115,25 +95,15 @@ function checkFrontmatter(fullPath) {
       }
       try {
         const { data: frontmatter } = matter(content);
-        if (!frontmatter || _.isEmpty(frontmatter) || !frontmatter.title) {
+        const { validator } = options;
+        if (!validator(frontmatter)) {
           return reject(
-            new Error(`
-  The article at: ${fullPath} is missing frontmatter.
-
-  Example:
-
-  ---
-  title: The Article Title
-  localeTitle: The Translated Title # Only required for translations
-  ---
-
-  < The Article Body >
-
-  `)
+            new Error(
+              `The article at: ${fullPath} failed frontmatter validation.`
+            )
           );
-          // process.exit(1);
         }
-        return resolve();
+        return resolve(pass);
       } catch (e) {
         console.log(`
 
@@ -146,4 +116,10 @@ function checkFrontmatter(fullPath) {
       }
     })
   );
+};
+
+function extractLangFromFileName({ path: relativePath }) {
+  return relativePath.split(path.sep)[0];
 }
+
+exports.extractLangFromFileName = extractLangFromFileName;

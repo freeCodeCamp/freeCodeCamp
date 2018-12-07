@@ -81,6 +81,9 @@ Examples of Popular Drag and drop themes that makes a WordPress website easy to 
 - [Genesis Framework](https://my.studiopress.com/themes/genesis/)
 - [Elementor](https://elementor.com/)
 
+#### Wordpress Most used Plugins
+- [Most Popular Wordpress Plugins ](https://www.hostgator.com/blog/most-popular-wordpress-plugins/)
+
 ### Visual Editors
 
 "What You See Is What You Get" (WYSIWYG) editors for WordPress have increased in popularity over recent years. These visual builders provide user-friendly interfaces that allow users to customize all aspects of their site without a bit of code. Some of the most popular include [Divi](https://www.elegantthemes.com/gallery/divi/) and [Thrive](https://thrivethemes.com/architect/?idev_id=4971), which are both under $90, and [SiteOrigin](https://siteorigin.com/page-builder/), which is a free option. WordPress will be shipping its own visual editor, Gutenberg, as of version 5.0. You can learn more about it here: [Gutenberg](https://wordpress.org/gutenberg/).
@@ -103,16 +106,15 @@ In this instance, you could create a custom post type for products, a custom pos
 The free and open-source version of wordpress is found at [https://wordpress.org](https://wordpress.org) and must be self-hosted on a server or local development machine. This is also the version of WordPress that is frequently available as a simple installation through cPanel on the majority of hosting providers. Meanwhile, a hosted version of WordPress is available [wordpress.com](https://wordpress.com), but this is not an open-source version. Users of the WordPress.com site may need to pay subscription fees to access many of the features and benefits of the open-source WordPress.
 
 Here are some examples of big name brands using WordPress: 
-* Sony Music
-* The New Yorker
-* MTV News
-* BBC America
-* Techcrunch
+* [Sony Music](https://www.sonymusic.com/)
+* [TechCrunch](https://techcrunch.com/)
+* [BBC America](http://www.bbcamerica.com/)
+* [Bloomberg Professional](https://www.bloomberg.com/professional/)
+* [The Walt Disney Company](https://www.thewaltdisneycompany.com/)
 
 Note: WordPress's ease of use may encourage new users to forget about website security. However, the popularity of WordPress increases the activity of malware and other issues. 
 It is important to choose extremely difficult or random passwords for the administrators and for the database. This guards against random brute-force attacks. 
 Using tools such as [Jetpack](https://jetpack.com/) and an [SSL certificate](https://www.verisign.com/en_US/website-presence/website-optimization/ssl-certificates/index.xhtml) increases your protection against unwanted attacks.
-
 
 ## Get Started With Wordpress
 This guide will cover how to setup a basic Wordpress website. If anything is
@@ -184,16 +186,21 @@ After confirming installation your will be on the WordPress Dashboard.
 6. Navigate to localhost/<insert WordPress directory here).
 7. Follow the graphical installer and you're all set.
 
-## More Information
+### Learning Resources
+- [Official WordPress Lessons](https://learn.wordpress.com/)
+- [WordPress TV](https://wordpress.tv/)
+- [WPBeginner-Youtube channel](https://www.youtube.com/user/wpbeginner)
 
+### More Information
 - [WordPress Theme Directory](https://wordpress.org/themes/)
 - [WordPress Plugin Directory](https://wordpress.org/plugins/)
 - [WordPress Github Repository](https://github.com/WordPress/WordPress)
 - [WordPress Support Forums](https://wordpress.org/support/)
 - [Download WordPress](https://wordpress.org/download/)
-- [WordPress Codex: the online manual](https://codex.wordpress.org/)
+- [WPHub-WordPress Themes](https://www.wphub.com/)
 - [WordPress Code Reference](https://developer.wordpress.org/reference/)
 - [Automattic - The Home of WordPress](https://automattic.com/)
 - [Advantages of WordPress](https://www.fastwebhost.com/blog/top-advantages-of-wordpress-in-2018/)
 - [WordPress Coding Standards](https://make.wordpress.org/core/handbook/best-practices/coding-standards/)
 - [WordPress WordCamp Central](https://central.wordcamp.org/)
+- [WordPress Codex: the online manual](https://codex.wordpress.org/)

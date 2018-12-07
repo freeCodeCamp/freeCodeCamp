@@ -18,7 +18,8 @@
     "test:lint": "echo 'Warning: TODO - Define Linting tests.'",
     "test:client": "cd ./client && npm test && cd ../",
     "test:curriculum": "cd ./curriculum && npm test && cd ../",
-    "test:guide-directories": "node ./tools/scripts/ci/ensure-guide-page-naming.js",
+    "test:challenge-formatting": "node ./tools/scripts/ci/ensure-challenge-formatting.js",
+    "test:guide-formatting": "node ./tools/scripts/ci/ensure-guide-formatting.js",
     "test:server": "cd ./api-server && npm test && cd ../",
     "test:tools": "jest ./tools"
   },
@@ -33,6 +34,7 @@
     "lerna": "^3.4.0",
     "lodash": "^4.17.11",
     "npm-run-all": "^4.1.5",
+    "ora": "^3.0.0",
     "readdirp-walk": "^1.6.0",
     "shortid": "^2.2.14",
     "slugg": "^1.2.1",
