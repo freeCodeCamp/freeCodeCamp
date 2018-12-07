@@ -35,7 +35,7 @@ otherwise the pixel is white.What is the length of the minimal sequence describi
 ```yml
 tests:
   - text: <code>euler287()</code> should return 313135496.
-    testString: 'assert.strictEqual(euler287(), 313135496, "<code>euler287()</code> should return 313135496.");'
+    testString: assert.strictEqual(euler287(), 313135496, '<code>euler287()</code> should return 313135496.');
 
 ```
 
