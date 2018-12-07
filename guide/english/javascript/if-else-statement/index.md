@@ -8,24 +8,26 @@ The `if` statement executes a statement if a specified condition is `true`. If t
 **Note:** The `else` statement is optional.
 
 ```javascript
-if (condition)
+if (condition) {
     /* do something */
-else
+} else {
     /* do something else */
+}
 ```
 
 
 Multiple `if...else` statements can be chained to create an `else if` clause. This specifies a new condition to test and can be repeated to test multiple conditions, checking until a true statement is presented to execute.
 
 ```javascript
-if (condition1)
+if (condition1) {
     /* do something */
-else if (condition2)
+} else if (condition2) {
     /* do something else */
-else if (condition3)
+} else if (condition3) {
     /* do something else */
-else
+} else {
     /* final statement */
+}
 ```
 
 **Note:** If you want to execute more than one statement in the `if`, `else` or `else if` part, curly braces are required around the statements:
@@ -63,29 +65,30 @@ const num = someCondition ? 1 : 2;
 
 **Using** `if...else`:
 ```javascript
-    // If x is equal to 5, then the condition is TRUE. This results in z being set to 7 and q being set to 42.
-    // If x does not equal to 5, then the condition is FALSE. This results in z being set to 19.
-    if (x == 5) {
-      z = 7;
-      q = 42;
-    }else{
-      z = 19;
-    }
+
+// If x is equal to 5, then the condition is TRUE. This results in z being set to 7 and q being set to 42.
+// If x does not equal to 5, then the condition is FALSE. This results in z being set to 19.
+if (x == 5) {
+  z = 7;
+  q = 42
+} else {
+  z = 19;
+}
+
 ```
 
 **Using** `else if`:
 ```javascript
-    // Categorising any number x as a small, medium, or large number  
-    if (x < 10)
-        return "Small number";
-    else if (x < 50)
-        return "Medium number";
-    else if (x < 100)
-        return "Large number";
-    else {
-        flag = 1;
-        return "Invalid number";
-    }
+if (x < 10) {
+  return "Small number";
+} else if (x < 50) {
+  return "Medium number";
+} else if (x < 100) {
+  return "Large number";
+} else {
+  flag = 1;
+  return "Invalid number";
+}
 ```
 
 **Using** `if` **alone**:

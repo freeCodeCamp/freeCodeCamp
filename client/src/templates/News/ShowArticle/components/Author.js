@@ -46,7 +46,7 @@ function Author({ article }) {
       <Helmet>
         <style>{styles}</style>
       </Helmet>
-      <img height='50px' src={avatar} />
+      <img alt='' height='50px' src={avatar} />
       <div className='author-bio'>
         <ArticleMeta article={article} />
       </div>

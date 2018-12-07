@@ -192,6 +192,12 @@ if(!strcmp(first, second)){
 ```
 Notice the `!`, which is needed because this function returns 0 if they are the same. Placing the exclamation point here will make that comparison return true.
 
+#### Concatenate number of characters to a string: `strncat`
+`strncat` (from 'string number concatenate') concatenates a certain number of characters from the beginning of the second string to the end of first string. In this example, strncat will concatenate some characters from the second to the first string:
+```C
+strncat(char s1[], char s2[], int n);
+```
+
 #### Compare 'n' bytes: `strncmp`
 `strncmp` compares two strings for 'n' characters. The integer value it returns is 0 if they are the same, but it will also return negative if the value of the first (by adding up characters) is less than the value of the second, and positive if the first is greater than the second. Take a look at an example of how this might be used:
 ```C

@@ -17,6 +17,12 @@ A robot has to make decisions based on the input it receives from the environmen
 
 Once the robot makes its decision, it needs to act accordingly. For this purpose, it uses actuators. An _actuator_ is a device that converts energy into motion. Actuators can be classified according to the type of input energy they require. The two most commmon types of actuators are electrical (which use electrical energy to generate motion) and pneumatic (which use air pressure to generate motion). For example, a motor is an actuator that converts electrical energy into rotatory motion. There are always limitations to the accuracy and degree of control of an actuator, hence [control systems](https://en.wikipedia.org/wiki/Control_system) are used in order to compensate those limitations.
 
+### The Three Laws of Robotics
+##### *-- Handbook of Robotics, 56th Edition, 2058 A.D.*
+
+1. A robot may not injure a human being or, through inaction, allow a human being to come to harm.
+2. A robot must obey the orders given it by human beings except where such orders would conflict with the First Law.
+3. A robot must protect its own existence as long as such protection does not conflict with the First or Second Laws.
 ## Essential things for Robotics.
 
 First, you need to have good amount of patience to ace in Robotics.

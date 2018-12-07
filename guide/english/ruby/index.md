@@ -16,7 +16,7 @@ It's also known to have one of the <a href="https://www.ruby-lang.org/en/communi
 *   Has "mixin" functionality by module
 *   Iterators and closures
 
-If you are unfamiliar with some of the concepts above, read on, and don't worry. Ruby focus on simplicity and productivity with an elegant syntax that is natural to read and easy to write, like:
+If you are unfamiliar with some of the concepts above, read on and don't worry. Ruby focuses on simplicity and productivity with an elegant syntax that is natural to read and easy to write, like:
 ```ruby
 # Quick example of Ruby with Object Oriented Programming
 class Greeter
@@ -37,7 +37,7 @@ g.salute
 ```
 ## Version
 
-The current stable version is [2.5.1](https://www.ruby-lang.org/en/news/2018/03/28/ruby-2-5-1-released/).
+The current stable version is [2.5.3](https://www.ruby-lang.org/en/news/2018/10/18/ruby-2-5-3-released/).
 
 ## Installation
 
@@ -52,7 +52,7 @@ To know about how to install Ruby through package managers, installers and sourc
 
 ## IRB
 
-IRB stands for Interactive Ruby Shell. The abbreviation irb comes from the fact that the filename extension for Ruby is ".rb", although interactive Ruby files do not have an extension of ".irb". The program is launched from a command line and allows the execution of Ruby commands with an immediate response, experimenting in real-time. It features command history, line editing capabilities, and job control, and is able to communicate directly as a shell script over the Internet and interact with a live server. It was developed by Keiju Ishitsuka.
+IRB stands for Interactive Ruby Shell. The abbreviation irb comes from the fact that the filename extension for Ruby is ".rb", although interactive Ruby files do not have an extension of ".irb". The program is launched from a command line and allows the execution of Ruby commands with an immediate response, experimenting in real-time. It features command history, line editing capabilities, and job control, and is able to communicate directly as a shell script over the Internet and interact with a live server. Interactive Ruby Shell is a great way to explore the Ruby language and quickly test scripts. It was developed by Keiju Ishitsuka.
 
 ```shell
     irb
@@ -109,7 +109,7 @@ Prints each object to $stdout. Objects that aren’t strings will be converted b
 ```
 ## Frameworks(gems)
 
-Ruby has several frameworks(gems) for quickly scaffolding applications. The most popular by far is <a href='http://rubyonrails.org/' target='_blank' rel='nofollow'>Rails</a> which was initially released in 2004\. Other frameworks(gems) for Ruby include <a href='http://www.sinatrarb.com/' target='_blank' rel='nofollow'>Sinatra</a>, <a href='http://lotusrb.org/' target='_blank' rel='nofollow'>Lotus</a>, and <a href='http://voltframework.com/' target='_blank' rel='nofollow'>Volt</a>. Each of these options has their pros and cons for development and cater to a variety needs.
+Ruby has several frameworks (gems) for quickly scaffolding applications. The most popular by far is <a href='http://rubyonrails.org/' target='_blank' rel='nofollow'>Rails</a> which was initially released in 2004\. Other frameworks (gems) for Ruby include <a href='http://www.sinatrarb.com/' target='_blank' rel='nofollow'>Sinatra</a>, <a href='http://lotusrb.org/' target='_blank' rel='nofollow'>Lotus</a>, and <a href='http://voltframework.com/' target='_blank' rel='nofollow'>Volt</a>. Each of these options has their pros and cons for development and cater to a variety needs.
 
 
 ## Ruby Framework for mobile development

@@ -46,7 +46,7 @@ Yet another feature which CSS lacks are If/Else statements. These will run a set
 Here, the background color will change color depending on the width of the page's body. 
 
 
-These are but a few of the major functions of CSS Preprocessors. As you can see, CSS Preprocessors are incredibly useful and versitile tools. Many web developers use them, and it is highly recommended to learn at least one of them. 
+These are but a few of the major functions of CSS Preprocessors. As you can see, CSS Preprocessors are incredibly useful and versatile tools. Many web developers use them, and it is highly recommended to learn at least one of them. 
 #### More Information:
 <!-- Please add any articles you think might be helpful to read before writing the article -->
 SASS: http://sass-lang.com/

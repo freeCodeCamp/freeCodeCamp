@@ -9,6 +9,7 @@ It is a good practice to add comments to your code, especially when working with
 
 Comments are started with `<!--` and ended with `-->`, and can span multiple lines. They can contain code or text, and won't appear on the front-end of the website when a user visits a page. You can view comments through the Inspector Console, or by viewing Page Source.
 
+
 ### Example
 ```html
 <!-- You can comment out a large number of lines like this.
@@ -57,6 +58,9 @@ These comments are only available in Internet Explorer and can be used up to IE9
 <!--[if gt IE 9]> <p>Your browser is greater then IE9</p> <![endif]-->
 ```
 
+
+[About conditional comments](https://msdn.microsoft.com/en-us/library/ms537512(v=vs.85).aspx)
+
 IE Conditional Comments are really helpful when you wish to serve each IE version with a slightly different CSS. IE (and other browsers) can have rendering bugs, or rather, 'quirks' that render your page a little differently than what you would expect. These require some CSS tricks to workaround (or even to make use of!) quirks, and so the conditional comments are good for targeting specific versions.
 
 For example, this CSS would only apply on IE 7 / 8:
@@ -70,7 +74,11 @@ For example, this CSS would only apply on IE 7 / 8:
 <![endif]-->
 ```
 
-More reading:
+#### Tip
+**CTRL + /** is a keyboard shortcut which works in probably all modern text editors to create the comments. It creates a single line comment, but if you want to comment more lines, just highlight all the area and press it. 
+
+#### More Information
 * [About conditional comments](https://msdn.microsoft.com/en-us/library/ms537512(v=vs.85).aspx)
 * [Some IE CSS bugs](https://css-tricks.com/ie-css-bugs-thatll-get-you-every-time/)
 * [IE CSS bugs and fixes](https://code.tutsplus.com/tutorials/9-most-common-ie-bugs-and-how-to-fix-them--net-7764)
+
