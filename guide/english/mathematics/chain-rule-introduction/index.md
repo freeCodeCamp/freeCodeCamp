@@ -6,15 +6,23 @@ title: Chain Rule Introduction
 Chain Rule is used to compute the derivative of a composition of functions.
 
 Let _F_ be a real valued function which is a composite of two functions _f_ and _g_  i.e. `F(x) = f(g(x))`and both f(x) and g(x) are differentiable.
-Let the derivative D{F(x)} is denoted as F'(x).
+Let the derivative D{F(x)} be denoted as F'(x).
 
 By Chain Rule, 
 #### _`F'(x) = f'(g(x)).g'(x)`_
 
-Suppose, g(x) = t then F(x) = f(g(x)) can be rewritten as F(x)=f(t)
-then in Leibniz's notation Chain Rule can be rewritten as : 
+Suppose g(x) = t, then F(x) = f(g(x)) can be rewritten as F(x)=f(t), which can then be rewritten using the Chain Rule in Leibniz notation: 
 #### `d(F)/dx = df/dt . dt/dx`
 
+A good way to remember this is to imagine a burrito wrapped in foil. You have to unwrap the foil around the burrito to eat the burrito inside. The same goes for Chain Rule. You have to take the derivative of the outside (the outer function) and then derive the inside (the inner function).
+
+Ex: f(x) = sin(x^2)
+    f'(x) = (derivative of outside) . (derivative of inside)
+    = cos(x^2) . (2x)
+
+Ex: f(x) = cos(sin(x))
+    f'(x) = (derivative of outside) . (derivative of inside)
+    = -sin(sin(x)) . cos(x)
 
 
 ### Example 1.   To compute derivative of sin(ax+b)
@@ -31,7 +39,7 @@ Now by Chain Rule:
 
 d(F)/dx = df/dt . dt/dx
 
-=> d(F)/dx = a . cost(t) = a.cos(ax+b)
+=> d(F)/dx = cost(t) . a = a.cos(ax+b)
 
 OR 
 
