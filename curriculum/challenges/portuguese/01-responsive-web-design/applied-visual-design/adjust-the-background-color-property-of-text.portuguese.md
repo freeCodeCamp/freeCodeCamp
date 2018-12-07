@@ -6,13 +6,13 @@ videoUrl: ''
 localeTitle: Ajustar a propriedade de cor de fundo do texto
 ---
 
-## Description
+## Descrição
 <section id="description"> Em vez de ajustar o fundo geral ou a cor do texto para tornar o primeiro plano facilmente legível, você pode adicionar uma <code>background-color</code> ao elemento que contém o texto que deseja enfatizar. Este desafio usa <code>rgba()</code> vez de códigos <code>hex</code> ou <code>rgb()</code> normal <code>rgb()</code> . <blockquote> rgba significa: <br> r = vermelho <br> g = verde <br> b = azul <br> a = alfa / nível de opacidade </blockquote> Os valores RGB podem variar de 0 a 255. O valor alfa pode variar de 1, que é totalmente opaco ou cor sólida, a 0, que é totalmente transparente ou claro. <code>rgba()</code> é ótimo para usar neste caso, pois permite ajustar a opacidade. Isso significa que você não precisa bloquear completamente o plano de fundo. Você usará <code>background-color: rgba(45, 45, 45, 0.1)</code> para este desafio. Ele produz uma cor cinza escura que é quase transparente, dado o baixo valor de opacidade de 0,1. </section>
 
-## Instructions
+## Instruções
 <section id="instructions"> Para tornar o texto mais destacado, ajuste a <code>background-color</code> de fundo do elemento <code>h4</code> ao valor <code>rgba()</code> fornecido. Também para o <code>h4</code> , remova a propriedade <code>height</code> e adicione <code>padding</code> de 10px. </section>
 
-## Tests
+## Testes
 <section id='tests'>
 
 ```yml
@@ -28,7 +28,7 @@ tests:
 
 </section>
 
-## Challenge Seed
+## Semente do Desafio
 <section id='challengeSeed'>
 
 <div id='html-seed'>
@@ -84,7 +84,7 @@ tests:
 
 </section>
 
-## Solution
+## Solução
 <section id='solution'>
 
 ```js
