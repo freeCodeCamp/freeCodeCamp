@@ -6,11 +6,11 @@ title: Some Usages for Linux
 *   The <a href='https://en.wikipedia.org/wiki/New_York_Stock_Exchange' target='_blank' rel='nofollow'>New York Stock Exchange (NYSE)</a>, the largest stock exchange in the world which trades securities worth billions of dollars daily are executed by servers that run on Linux after moving away from UNIX.
 *   The White House powers their web servers using <a href='https://en.wikipedia.org/wiki/Red_Hat' target='_blank' rel='nofollow'>Red Hat Linux</a> and <a href='https://en.wikipedia.org/wiki/Apache_HTTP_Server' target='_blank' rel='nofollow'>Apache</a>.
 *   The US Department of Defense (DoD) uses Linux to run their nuclear submarine fleet.
-*   You can automate everything in your home with just a Raspberry PI.
 *   The US Navy uses Linux for ground control software.
 *   Linux is used to host websites or apps. Linux-based web hosts like 'Dreamhost' are used to host your personal RSS reader with Tiny Tiny RSS, or personal Dropbox clone with OwnCloud.
 *   Home automation can be made possible with Linux along with a small computer like a Raspberry Pi. It can be used to control home with Siri, mount a Google Calendar tablet on wall, set up a home surveillance system, control blinds and air conditioner, stream music , build a digital photo frame, build a sunrise alarm clock amd many more.
 *   Pakistan is using Linux in many of its public schools and colleges and plans to ultimately run it on all of its government computer systems
+*   Planes, buses, and trains' systems run Linux to display schedules or operate check-in systems.
 *   The Sony Playstation 3 gaming console had previously made it possible to run Linux on a seperate hard drive partion. Scientific entities networked together consoles for powerful clusters. <a href='https://en.wikipedia.org/wiki/PlayStation_3_cluster' target='_blank' rel='nofollow'>The United States Air Force Research Laboratory</a> assembled a super computer by cluster 1760 Playstation 3 Consoles.
 *   Linux is in space. Ubuntu is used at the International Space Station. <a href='https://news.softpedia.com/news/Ubuntu-Used-on-the-International-Space-Station-to-Control-Rover-Back-on-Earth-454101.shtml' target='_blank' rel='nofollow'> Read more </a>
 
