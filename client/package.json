@@ -50,6 +50,7 @@
     "react-reflex": "^2.2.9",
     "react-spinkit": "^3.0.0",
     "react-stripe-elements": "^2.0.1",
+    "react-youtube": "^7.8.0",
     "redux": "^4.0.0",
     "redux-actions": "^2.6.1",
     "redux-devtools-extension": "^2.13.5",
@@ -58,7 +59,6 @@
     "redux-saga": "^0.16.0",
     "reselect": "^3.0.1",
     "rxjs": "^6.3.3",
-    "sinon": "^6.3.4",
     "store": "^2.0.12",
     "validator": "^10.7.0",
     "webpack-remove-serviceworker-plugin": "^1.0.0"
@@ -88,6 +88,7 @@
     "prettier": "^1.14.2",
     "prettier-eslint-cli": "^4.7.1",
     "react-test-renderer": "^16.5.2",
+    "sinon": "^6.3.5",
     "webpack-cli": "^3.1.1"
   },
   "repository": {

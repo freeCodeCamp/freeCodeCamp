@@ -11,7 +11,7 @@ Software is only as good as the support its given. Imagine this: a piece of soft
 
 ## Lightweight.
 
-Linux's requirements for running on a system are much lower than that of Windows or Mac. With the right Linux distribution a user can have a modest setup and Linux will give the system value. Disk space and memory footprint can also be lower too. Some distributions are suitable for CPUs dating back to the Pentium family, others have a requirement of as little as 128MB of RAM and around the same amount for disk space!
+Linux's requirements for running on a system are much lower than that of Windows or Mac. The right Linux distribution can allow a modest setup and Linux will give the system value. Disk space and memory footprint can also be lower too. Some distributions are suitable for CPUs dating back to the Pentium family, others have a requirement of as little as 128MB of RAM and around the same amount for disk space!
 
 ## Variety.
 
@@ -37,7 +37,7 @@ Linux has driver support for NTFS and HFS+ filesystems (used by Windows and Macs
 
 ## Better hardware support.
 
-For other OSs, usually a user would have to go to the manufacturer's website to get driver support for different types of hardware. The Linux kernel supports a majority of hardware automatically via plug-and-play (largely in part because of the open source community). Some manufacturers also develop Linux versions of their proprietary drivers which could be easilly installed via the software repository of a distribution or by manually installing the provided binaries.
+For other OSs, usually a user would have to go to the manufacturer's website to get driver support for different types of hardware. The Linux kernel supports a majority of hardware automatically via plug-and-play (largely in part because of the open source community). Some manufacturers also develop Linux versions of their proprietary drivers which could be easily installed via the software repository of a distribution or by manually installing the provided binaries.
 
 ## Software Availability/Compatibility.
 

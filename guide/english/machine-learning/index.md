@@ -27,6 +27,9 @@ Supervised learning is the machine learning task of inferring a function from su
 data consist of a set of training examples. In supervised learning, each example is a pair consisting of an input object
 (typically a vector) and a desired output value (also called the supervisory signal). Further, the supervised learning can be taken as 2 paradigm, classification and regression.
 
+### Overfitting and Underfitting
+The idea of overfitting in machine learning is making the machine model the data too well. This essentially making the machine to recognize a situation with only a specific characteristics that the data shows, or in other words picking up too much noise in the data. This can be problematic in terms of the lack of flexibility in adapting different situations. On the other hand, underfitting generalizes too much. It doesn't recognizes patterns as well and would not be able to differentiate much about different situations.
+
 #### Basic flowchart/steps for supervised learning
 1. Collect training set.
 2. Divide training set into input object (features) and output object (classes or value)
@@ -41,6 +44,7 @@ data consist of a set of training examples. In supervised learning, each example
 4. <a href='http://ciml.info/' target='_blank' rel='nofollow'>Machine Learning</a>
 5. <a href='https://www.edx.org/course/the-analytics-edge' target='_blank' rel='nofollow'>The Analytics Edge - Taught by: MIT</a>
 
+
 #### Video Resources:
 
 1. <a href="https://www.youtube.com/channel/UCWN3xxRkmTPmbKwht9FuE5A" target="_blank">Siraj Raval's Youtube channel</a>
@@ -54,7 +58,8 @@ data consist of a set of training examples. In supervised learning, each example
 2. <a href='https://www.youtube.com/watch?v=83uAOzhzs-U' target='_blank' rel='nofollow'>Machine Learning Demystified:Youtube</a>
 3. If you want a brief introduction of machine learning, and you prefer videos, try this <a href='https://youtu.be/cKxRvEZd3Mw' target='_blank' rel='nofollow'>machine learning introduction video</a>
 4. If you want to know how to proceed with learning machine learning, take a look at this <a href='https://youtu.be/nKW8Ndu7Mjw' target='_blank' rel='nofollow'> video</a>
-5.<a href='https://www.datacamp.com/courses/supervised-learning-with-scikit-learn' target='_blank' rel='nofollow'>Supervised Learning on Data camp</a>
+5. <a href='https://medium.com/meta-design-ideas/math-stats-and-nlp-for-machine-learning-as-fast-as-possible-915ef47ced5f' target='_blank' rel='nofollow'>Math, Stats and NLP for Machine Learning</a>
+6. <a href='https://www.datacamp.com/courses/supervised-learning-with-scikit-learn' target='_blank' rel='nofollow'>Supervised Learning on Data camp</a>
 
 ## Lab
 

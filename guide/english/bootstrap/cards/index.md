@@ -110,3 +110,10 @@ This is some text within a card body.
 </div>
 <!--You must set the image height on all cards -->
 ```
+
+
+#### More Information
+
+- [Bootstrap cards](https://getbootstrap.com/docs/4.1/components/card/)
+
+

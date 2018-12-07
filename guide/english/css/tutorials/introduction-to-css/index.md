@@ -13,12 +13,13 @@ title: Introduction to CSS
 
 ### What is CSS?
 
-Cascading Style Sheets (CSS) describe how the html on a page should appear.
+Cascading Style Sheets (CSS) describe how the html on a page should appear. 
+
+CSS was first proposed way back in 1994 by Håkon Wium Lie, who was working with Tim Berners-Lee at CERN.
 
 Before CSS, developers would apply styles using attributes or special tags on each node of a page. This made markup repetitive and prone to errors.
 
-CSS allows selectors to describe how each piece of matching content should look.
-
+CSS allows selectors to describe how each piece of matching content should look. It is an important technology of World Wide Web, along with HTML and Javascript.
 ```CSS
 body {
     font-size: 15px;
@@ -60,3 +61,4 @@ a {
 * [CSS-Tricks Almanac](https://css-tricks.com/almanac/)
 * [Sitepoint](https://www.sitepoint.com/html-css/?ref_source=github)
 * [MDN](https://developer.mozilla.org/en-US/docs/Learn/CSS/Introduction_to_CSS)
+* [Wikipedia](https://en.wikipedia.org/wiki/Cascading_Style_Sheets)

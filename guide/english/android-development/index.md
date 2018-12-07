@@ -82,12 +82,18 @@ If you are just a beginner in Android Developement. You can directly start learn
 ### Courses
 
 [Udacity Android Nanodegree Program](https://udacity.com/course/android-developer-nanodegree-by-google--nd801)
-
 [Udemy The Complete Android Kotlin Developer Course](https://www.udemy.com/the-complete-kotlin-developer-course/)
+
+### Books
+
+[Head First Android Development](https://www.amazon.in/Head-First-Android-Development-Griffiths/dp/1449362184)
+[Android Application Development All-In-One for Dummies, 2ed](https://www.amazon.in/Android-Application-Development-All-Dummies/dp/1118027701)
+
+[Stanford CS193a Lecture Videos](http://web.stanford.edu/class/cs193a/lectures.shtml)
 
 ### Developing Android Apps
 
-The best part of learning Android is that many of the courses and material available out there online are free.
+The best part of learning Android is that many of the courses and material available are online and free. Take your skillset up a notch.
 The link to the basic course is here - [Developing Android Apps](https://udacity.com/course/new-android-fundamentals--ud851).
 The link to the advanced course is here - [Advanced Android App Development](https://www.udacity.com/course/advanced-android-app-development--ud855). 
 

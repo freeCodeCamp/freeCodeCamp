@@ -138,14 +138,18 @@ void copy_string(char [] first_string, char [] second_string)
     { 
         first_string[i] = second_string[i]; 
     } 
-}
+
+} 
 ```
+
 #### Concatenate: `strcat`
 `strcat` (from 'string concatenate') will concatenate a string, meaning it will take the contents of one string and place it on the end of another string. In this example, the contents of `second` will be concatenated onto `first`:
 ```C
 strcat(first, second);
 ```
-Here is an example of manual implementation of function strcat:
+
+Here is an example of manual implementation of function `strcat`:
+```C
 
 ```C
 void string_concatenate(char [] s1, char [] s2)
@@ -157,12 +161,16 @@ void string_concatenate(char [] s1, char [] s2)
     }
 }
 ```
-#### Length: `strlen`
+
+#### Get length: `strlen`
+
 `strlen` (from 'string length') will return an integer value corresponding to the length of the string. In this example, an integer called `string_length` will be assigned the length of `my_string`:
 ```C
 string_length = strlen(my_string);
 ```
-Here is an manual implementation of function strlen:
+
+Here is a manual implementation of function strlen:
+
 ```C
 int string_length(char [] string)
 {
@@ -183,6 +191,12 @@ if(!strcmp(first, second)){
 }
 ```
 Notice the `!`, which is needed because this function returns 0 if they are the same. Placing the exclamation point here will make that comparison return true.
+
+#### Concatenate number of characters to a string: `strncat`
+`strncat` (from 'string number concatenate') concatenates a certain number of characters from the beginning of the second string to the end of first string. In this example, strncat will concatenate some characters from the second to the first string:
+```C
+strncat(char s1[], char s2[], int n);
+```
 
 #### Compare 'n' bytes: `strncmp`
 `strncmp` compares two strings for 'n' characters. The integer value it returns is 0 if they are the same, but it will also return negative if the value of the first (by adding up characters) is less than the value of the second, and positive if the first is greater than the second. Take a look at an example of how this might be used:

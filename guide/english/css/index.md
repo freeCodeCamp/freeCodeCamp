@@ -4,6 +4,10 @@ title: Cascading Style Sheets (CSS)
 
 ### Cascading Style Sheets (CSS)
 
+![CSS Logo][logo]
+
+[logo]: https://upload.wikimedia.org/wikipedia/commons/thumb/d/d5/CSS3_logo_and_wordmark.svg/320px-CSS3_logo_and_wordmark.svg.png
+
 CSS is an acronym for Cascading Style Sheets. It was first invented in 1996 and is now a standard feature of all major web browsers.
 
 CSS allows developers to control how web pages look by "styling" the HTML structure of that page.
@@ -28,4 +32,8 @@ The site [CSS Zen Garden](http://www.csszengarden.com/) is a great example of ho
 
 For a demonstration of the power of CSS, check out [Species In Pieces](http://species-in-pieces.com/#).
 
+When you're practice and working with CSS, you can refer to this [CSS reference](https://cssreference.io/) to help you along the way if you're unsure about a property. A great tool for helping visualize what each CSS property does.
+
 To find some awesome articles and summaries of Front End Development related ideas visit [CSS-Tricks](https://css-tricks.com)
+
+I recommend that you also look at the blog [CSS-Tricks](https://css-tricks.com/snippets/css/).
