@@ -21,7 +21,7 @@ Find the smallest integer that can be the length of a cathetus of exactly 47547 
 ```yml
 tests:
   - text: <code>euler176()</code> should return 96818198400000.
-    testString: 'assert.strictEqual(euler176(), 96818198400000, "<code>euler176()</code> should return 96818198400000.");'
+    testString: assert.strictEqual(euler176(), 96818198400000, '<code>euler176()</code> should return 96818198400000.');
 
 ```
 
