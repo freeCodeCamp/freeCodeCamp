@@ -1,3 +1,16 @@
+<<<<<<< 293e58cc235db6d313a16e03e18739362f89a250
+=======
+.btn-cta {
+  background-color: #ffac33;
+  background-image: linear-gradient(#ffcc4d, #ffac33);
+  border-color: #f1a02a;
+  color: #292f33 !important;
+  text-shadow: 0 1px 0 rgba(255, 255, 255, 0.5);
+  max-height: 38px;
+  padding: 4px 12px;
+}
+
+>>>>>>> Revert "style: button color change"
 .signup-btn.btn {
   background-color: #ffac33;
   background-image: linear-gradient(#ffcc4d, #ffac33);
@@ -5,7 +18,10 @@
   border-color: #f1a02a;
   color: #292f33 !important;
   text-shadow: 0 1px 0 rgba(255, 255, 255, 0.5);
+<<<<<<< 293e58cc235db6d313a16e03e18739362f89a250
   padding: 4px 12px;
+=======
+>>>>>>> Revert "style: button color change"
 }
 .signup-btn:hover,
 .signup-btn:focus {
