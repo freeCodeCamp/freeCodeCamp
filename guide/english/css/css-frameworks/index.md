@@ -7,15 +7,15 @@ CSS frameworks are designed to simplify the work of the typesetter, eliminate er
 
 Advantages of CSS frameworks:
 
-    * Cross-browser compatibility
-    * Ability to create the correct HTML layout even for a not very experienced specialist.
-    * Code uniformity
-    * Increase development speed
+* Cross-browser compatibility
+* Ability to create the correct HTML layout even for a not very experienced specialist.
+* Code uniformity
+* Increase development speed
 
 Minuses:
 
-    * Attachment to CSS style library
-    * Redundant code
+ * Attachment to CSS style library
+ * Redundant code
 
 
 ## Bootstrap
@@ -40,7 +40,8 @@ Common CSS framework. Along with other main elements includes several HTML templ
 
 Support for Firefox, Chrome, Safari, Internet Explorer, Android 4, Blackberry10. Contains a large number of components: icons, images, labels, menus and other standard components. It supports the latest versions of HTML and CSS and has a good selection of script modules and APIs. Uses Less. On applicability competes with bootstrap.
 
-
-
-
 Each task has its own tool. A good step would be to try the framework and understand “your” it or not. You can use the skeletons of the code presented in the frameworks as a cheat sheet and just take solutions and code from there.
+
+## More information
+<a href="https://blog.zipboard.co/a-beginners-guide-to-css-front-end-frameworks-8045a499456b">A beginner's guide to CSS frameworks</a>
+

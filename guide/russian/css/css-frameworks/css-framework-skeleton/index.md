@@ -1,14 +1,14 @@
 ---
 title: CSS Framework Skeleton
-localeTitle: Скелет рамки CSS
+localeTitle: CSS фреймворк Skeleton
 ---
-# Скелет рамки CSS
+# CSS фреймворк Skeleton
 
-Скелет - это мертвый простой шаблон для запуска любого реагирующего проекта.
+Skeleton(скелет) - это до смерти*(авт.) простой шаблон для запуска любого проекта с отзывчивой версткой.
 
-## Начиная
+## Начало
 
-Вот простой HTML-шаблон, который включает в себя последний скомпилированный и уменьшенный CSS для библиотеки Skeleton.
+Ниже представлен простой HTML-шаблон, который включает в себя последний скомпилированный и уменьшенный CSS для библиотеки Skeleton.
 
 ```html
 
@@ -37,5 +37,5 @@ localeTitle: Скелет рамки CSS
 ## Учебные ресурсы
 
 *   ![:point_right:](//forum.freecodecamp.com/images/emoji/emoji_one/point_right.png?v=2 ": Point_right:") [**`Official Documentation`**](http://getskeleton.com/#grid) скелета.
-*   С открытым исходным кодом GitHub хранилище Checkout скелета [здесь](https://github.com/dhg/Skeleton) .
+*   Посмотрите репозиторий с открытым исходным кодом Skeleton [здесь](https://github.com/dhg/Skeleton) .
 *   [Вот](http://getskeleton.com/#examples) несколько примеров того, как скелет использовался на разных сайтах.
