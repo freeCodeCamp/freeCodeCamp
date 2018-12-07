@@ -3,6 +3,10 @@ title: Bootstrap
 ---
 ## Bootstrap
 
+![Bootstrap Logo][logo]
+
+[logo]: https://getbootstrap.com/docs/4.1/assets/img/bootstrap-stack.png
+
 Bootstrap is a popular front-end framework for web development. It contains pre-built components and design elements to style HTML content. Modern browsers such as Chrome, Firefox, Opera, Safari, and Internet Explorer support Bootstrap.
 
 Bootstrap includes a responsive grid system for varying layouts. It is a great starting point for building a mobile friendly website. It also includes optional JavaScript functionality like collapsible content, carousels, and modals.
@@ -41,7 +45,7 @@ Adding the JavaScript elements of Bootstrap is similar with `<script>` elements 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
 <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
 ```
-_Note: These are only examples and may change without notice. Please refer to a CDN for current links to include in your project._
+_Note: These are only examples and may change without notice. Please refer to a CDN for current links to include in your project. You can find the latest CDN links _<a href='https://www.bootstrapcdn.com/' target='_blank' rel='nofollow'>here</a>_._
 
 ##### Download/Install
 
@@ -77,9 +81,9 @@ In addition, you can find both <a href='https://bootswatch.com/' target='_blank'
 themes that build on the Bootstrap framework to provide a more customized and stylish look.
 
 #### Bootstrap Resources: 
-[Bootstrap's offical blog](http://blog.getbootstrap.com/)
-[Bootstrap site inspiration](http://expo.getbootstrap.com/)
-[Showcase of sites built using Bootstrap](http://builtwithbootstrap.com/)
-[HTML linter for projects using Bootstrap](https://github.com/twbs/bootlint)
-[Design elements and code snippets for Bootstrap](https://bootsnipp.com/)
-[Code, theme, and add-on resources for Bootstrap](http://expo.getbootstrap.com/resources/)
+- [Bootstrap's official blog](http://blog.getbootstrap.com/)
+- [Bootstrap site inspiration](http://expo.getbootstrap.com/)
+- [Showcase of sites built using Bootstrap](http://builtwithbootstrap.com/)
+- [HTML linter for projects using Bootstrap](https://github.com/twbs/bootlint)
+- [Design elements and code snippets for Bootstrap](https://bootsnipp.com/)
+- [Code, theme, and add-on resources for Bootstrap](http://expo.getbootstrap.com/resources/)

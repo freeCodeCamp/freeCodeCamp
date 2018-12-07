@@ -1,7 +1,11 @@
 const Joi = require('joi');
 Joi.objectId = require('joi-objectid')(Joi);
+const path = require('path');
+require('dotenv').config({ path: path.resolve(__dirname, '../../.env') });
 
-const schema = Joi.object().keys({
+const { LOCALE: lang = 'english' } = process.env;
+
+let schema = Joi.object().keys({
   block: Joi.string(),
   blockId: Joi.objectId(),
   challengeOrder: Joi.number(),
@@ -64,10 +68,16 @@ const schema = Joi.object().keys({
       title: Joi.string().required()
     })
   ),
-  template: Joi.string(),
+  template: Joi.string().allow(''),
   time: Joi.string().allow(''),
   title: Joi.string().required()
 });
+
+if (lang !== 'english') {
+  schema = schema.append({
+    localeTitle: Joi.string().required()
+  });
+}
 
 exports.validateChallenge = function validateChallenge(challenge) {
   return Joi.validate(challenge, schema);
