@@ -83,6 +83,37 @@ export function buildFromFiles(state) {
   return concatHtml(finalRequires, template, finalFiles);
 }
 
+export function buildJSFromFiles(files) {
+  const pipeLine = flow(
+    applyFunctions(throwers),
+    applyFunctions(transformers)
+  );
+  const finalFiles = Object.keys(files)
+    .map(key => files[key])
+    .map(pipeLine);
+  const sourceMap = Promise.all(finalFiles).then(files =>
+    files.reduce((sources, file) => {
+      sources[file.name] = file.source || file.contents;
+      return sources;
+    }, {})
+  );
+  const body = Promise.all(finalFiles).then(files =>
+    files
+      .reduce(
+        (body, file) => [
+          ...body,
+          file.head + '\n' + file.contents + '\n' + file.tail
+        ],
+        []
+      )
+      .join('/n')
+  );
+  return Promise.all([body, sourceMap]).then(([body, sources]) => ({
+    solution: body,
+    code: sources && 'index' in sources ? sources['index'] : ''
+  }));
+}
+
 export function buildBackendChallenge(state) {
   const {
     solution: { value: url }
