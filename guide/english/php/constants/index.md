@@ -18,6 +18,21 @@ echo freeCodeCamp;
 Learn to code and help nonprofits
 ```
 
+Also, when you are creating classes, you can declare your own constants.
+
+```php
+class Human {
+  const TYPE_MALE = 'm';
+  const TYPE_FEMALE = 'f';
+  const TYPE_UNKNOWN = 'u'; // When user didn't select his gender
+  
+  .............
+}
+```
+
+**Note:** If you want to use those constants inside the `Human` class, you can refer them as `self::CONSTANT_NAME`. If you want to use them outside the class, you need to refer them as `Human::CONSTANT_NAME`.
+
 #### More Information:
 * <a href="https://secure.php.net/manual/en/language.constants.php" rel="nofollow">php.net constants manual</a>
 * <a href="https://secure.php.net/manual/en/function.define.php" rel="nofollow">php.net define() manual</a>
+* <a href="https://github.com/freeCodeCamp/freeCodeCamp/blob/master/guide/english/php/class/index.md" rel="nofollow">Create your first PHP class</a>
