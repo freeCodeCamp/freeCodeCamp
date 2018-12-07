@@ -3,10 +3,9 @@ title: Canvas
 ---
 ## HTML5 Canvas
 
-Canvas is a technology introduced in HTML5 which can be accessed by the `<canvas>` tag. It allows graphics to be drawn via Javascript, and is a powerful tool for interactivity on the web.
+Canvas is a technology introduced in HTML5 which can be accessed by the `<canvas>` tag. It allows graphics to be drawn via Javascript, and is a powerful tool for interactivity on all modern web browsers. Learn how to draw shapes, manipulate photos, build games, and animate virtually anything following the links below!
 
 ## Usage 
-
 
 ```html
 <!DOCTYPE html>
@@ -22,6 +21,7 @@ Canvas is a technology introduced in HTML5 which can be accessed by the `<canvas
 3. By default, `<canvas>` element has no border & no content. So, to add a border we use the `"style"` attribute.
 4. We can have multiple `<canvas>` elements on one HTML page.
 
-#### More Information:
+#### More Information
 
 - [MDN Canvas API](https://developer.mozilla.org/en-US/docs/Web/API/Canvas_API)
+- [HTML Canvas Deep Dive](https://joshondesign.com/p/books/canvasdeepdive/title.html)
