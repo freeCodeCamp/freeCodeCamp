@@ -6,11 +6,13 @@ title: Git
 
 Git is an open source distributed version control system created in 2005 by Linus Torvalds and others from the Linux development community. Git can work with many types of projects, but it's most commonly used for software source code.
 
-Version control is a system that keeps track of changes to a file or group of files over time. When you have a history of these changes, it lets you find specific versions later, compare changes between versions, recover files you may have deleted, or revert files to previous versions.
+Version control is a system that keeps track of changes to a file or group of files over time. When you have a history of these changes, it lets you find specific versions later, compare changes between versions, recover files you may have deleted, revert files to previous versions, and to experiment with different code solutions to the same problem.
+
+The last point deserves emphasis. Although many people focus on git's ability to revert to previous versions, one of its most powerful features is that branching (creating a new version) is not only very easy and fast, it also uses very little hard disk space. New developers often don't take advantage of the ability to quickly create experiments to help them work with several candidate solutions and as a starting point for discussing each branch / solution with other developers. While junior devs might try to accomplish the same thing by commenting out code in the same version, an experienced dev will just take the few seconds required to create a new branch.
 
 A *distributed* version control system means that different users maintain their own repositories of a project, instead of working from one central repository. Users automatically have full file tracking abilities and the project's complete version history without needing access to a central server or network.
 
-When Git is initialized in a project directory, it begins tracking file changes and stores them as "change sets" or "patches." Users working together on a project submit their change sets which are then included (or rejected) in the project.
+When Git is initialized in a project directory, it begins tracking file changes and stores them as "changesets" or "patches." Users working together on a project submit their changesets which are then included (or rejected) in the project.
 
 **Table of Contents**
 - [Understand the Three Sections of a Git Project](#understand-the-three-sections-of-a-git-project)
@@ -93,6 +95,7 @@ This displays the manual page for the command in your shell window. To navigate,
 ### Sources <a name="sources"></a>
 This article uses information from the <a href='https://github.com/progit/progit2' target='_blank' rel='nofollow'>Pro Git</a> book, written by Scott Chacon and Ben Straub and published by Apress. The book is displayed in full in the <a href='https://git-scm.com/book/en/v2' target='_blank' rel='nofollow'>Git documentation</a>.
 
-### More Information: <a name="more-information"></a>
+#### More Information
 - For downloads, documentation, and a browser-based tutorial: <a href='https://git-scm.com/' target='_blank' rel='nofollow'>Git official website</a>
 - Most useful commands when you're in bad GIT situation: <a href='http://ohshitgit.com/' target='_blank' rel='nofollow'>Oh shit, git!</a>
+- [Resources to learn Git](https://try.github.io/) 
