@@ -98,8 +98,8 @@ You can also run your blockchain node like in Ethereum which will be pre-funded 
 *	Tokens lost in incentivising miners
 *	Listing on exchange is very dificult
 
-### Background history on origins of cryptocurrency:
-[Blockchain origins story](https://www.activism.net/cypherpunk/manifesto.html)
+### Background History on Origins of Cryptocurrency:
+[Blockchain Origins Story](https://www.activism.net/cypherpunk/manifesto.html)
 Cypherpunks, crypoanarchists, and libertarians paved the way for the right to privacy and deregulating the government's control and diminishing individual citizen's autonomy.
 
 ### Different Types of Cryptocurrency
