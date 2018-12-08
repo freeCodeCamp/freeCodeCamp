@@ -67,4 +67,6 @@ There are three slightly more interesting options for `justify-content` you migh
 
 - Yet another great visual guide that is in-depth but easy to follow can be found in <a href="https://css-tricks.com/snippets/css/a-guide-to-flexbox/" target="_blank" rel="nofolow"> A Guide to Flexbox</a> by <a href="https://css-tricks.com" target="_blank" rel="nofolow">CSS-Tricks</a>
 
+- I suggest working out while playing the game [Flexbox Froggy](http://flexboxfroggy.com)- [Guide](https://github.com/thomaspark/flexboxfroggy)
+
 - <a href="https://flexbox.io/" target="_blank" rel="nofolow">A simple, free 20 video course that will help you master CSS Flexbox! by Wes Bos</a>
