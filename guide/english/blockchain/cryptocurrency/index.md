@@ -113,6 +113,14 @@ Artist have to deal through intermediaries to get your work sold. This can be so
 
 There are many more ways that cryptocurrency is changing aspects of our lives; ranging from economic to social. As crypto gains popularity more and more uses will come into the world of Cryptocurrency. 
 
+## Consensus Protocols:
+
+#### Proof of Work:
+In this more well-known protocol, miners compete with each other to solve a math problem first and to be rewarded with a cryptocurrency reward for their work in securing the network. When a math problem is solved, a new block full of transactions gets added onto the blockchain. Bitcoin operates on a proof-of-work algorithm.
+
+#### Proof of Stake:
+In proof of stake, the network is secured via network participants staking or wagering their coins. If network participants misbehave, they will lose the coins that they staked. As a reward for properly securing the network, stakers will periodically receive a small amount of coins relative to how many coins they put up for staking. Instead of competing to solve a difficult math problem to validate blocks, block validators under proof of stake are randomly chosen. Proof of stake is typically significantly less energy-intensive than proof of work.
+
 
 ### Background History on Origins of Cryptocurrency:
 [Blockchain Origins Story](https://www.activism.net/cypherpunk/manifesto.html)
