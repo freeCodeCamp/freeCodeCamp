@@ -26,3 +26,24 @@ enum StringBasedEnum {
     Pizza = "is good"
 }
 ```
+
+A defined Enum is considered as a type, which can be used like a custom type.
+
+```typescript
+enum ProgrammingLanguage {
+    TypeScript,
+    JavaScript,
+    Go,
+    Rust
+}
+
+const helloWorld = (language: ProgrammingLanguage) {
+    switch (language) {
+        case ProgrammingLanguage.Typescript:
+            // do anything with TypeScript
+            break
+        default:
+            // language not supported
+    }
+}
+```
