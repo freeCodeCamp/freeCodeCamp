@@ -68,8 +68,8 @@ Since the numbers might not be always in order, using `max()` and `min()` will h
 
       // Using ES6 arrow function (one-liner)
       var sortedArr = arr.sort((a,b) => a-b);
-      var firstNum = arr[0];
-      var lastNum = arr[1];
+      var firstNum = sortedArr[0];
+      var lastNum = sortedArr[1];
       // Using Arithmetic Progression summing formula
 
       var sum = (lastNum - firstNum + 1) * (firstNum + lastNum) / 2;
@@ -85,7 +85,7 @@ Since the numbers might not be always in order, using `max()` and `min()` will h
 *   Next, using the Arithmetic Progression summing formula we let `sum` equal `(lastNum - firstNum + 1) * (firstNum + lastNum) / 2`.
 *   Finally, we return `sum`.
 
-The line `var sortedArr = arr.sort((a,b) => a-b);` is probably what will have you more confused. This would be the same as creating a function that returns `a-b` for the `sort()` which is the standard way to sort numbers from smallest to largest. Instead using arrow or fat arrow function, we are able to do all that in one single line thus allowing us to write less.
+The line `var sortedArr = arr.sort((a,b) => a-b);` is probably what will have you most confused. This would be the same as creating a function that returns `a-b` for the `sort()` which is the standard way to sort numbers from smallest to largest. Instead, using arrow or fat arrow function, we are able to do all that in one single line thus allowing us to write less.
 
 #### Relevant Links
 
