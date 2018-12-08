@@ -7,19 +7,13 @@ header {
 
 #top-nav {
   background: #006400;
-  height: 38px;
+  height: 40px;
   margin-bottom: 0px;
   border-radius: 0;
   border: none;
   display: flex;
   justify-content: space-between;
   padding: 0 30px 0 15px;
-}
-
-@media screen, (max-width: 630px) {
-  #top-nav {
-    padding: 0;
-  }
 }
 
 #top-nav .home-link {
@@ -39,6 +33,7 @@ header {
   margin: 0;
   list-style: none;
   justify-content: space-around;
+  background-color: #006400;
 }
 
 #top-right-nav a,
@@ -81,6 +76,11 @@ header {
   color: #006400;
 }
 
+li.user-state-link {
+  position: relative;
+  bottom: 0;
+}
+
 li.user-state-link,
 li.user-state-link:hover,
 li.user-state-link:focus,
@@ -120,4 +120,74 @@ li.user-state-link > a:focus {
 }
 .ais-Hits {
   background-color: #fff;
+}
+
+.mobile-menu {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  background-color: #006400;
+  color: #fff;
+  margin-top: -40px;
+  height: 40px;
+  z-index: 300;
+}
+
+.mobile-menu .menu-button {
+  margin: 0 20px 0 12px;
+  padding: 2px 14px;
+  border: 1px solid #fff;
+  border-radius: 3px;
+  cursor: pointer;
+  justify-self: flex-end;
+}
+
+.header-search {
+  position: relative;
+  top: 2px;
+  flex-grow: 1;
+}
+
+.mobile-menu .header-search {
+  top: -1px;
+}
+
+@media (max-width: 734px) {
+  #top-nav {
+    padding: 0;
+  }
+
+  .opened #top-right-nav {
+    transform: translate(0, 40px);
+    padding-bottom: 10px;
+    opacity: 1;
+  }
+
+  #top-right-nav {
+    transform: translate(0, -300px);
+    flex-direction: column;
+    width: 100%;
+    min-height: 180px;
+    margin: 0;
+    opacity: 0;
+  }
+
+  #top-right-nav li:last-child {
+    margin-right: 0;
+  }
+
+  .mobile-menu img {
+    margin: 0 0 0 10px;
+  }
+}
+
+@media (max-width: 420px) {
+  .mobile-menu img {
+    margin: 0 0 0 5px;
+  }
+
+  .mobile-menu .menu-button {
+    margin: 0 10px 0 4px;
+  }
 }
