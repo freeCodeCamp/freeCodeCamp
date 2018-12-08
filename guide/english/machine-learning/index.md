@@ -40,6 +40,7 @@ data consist of a set of training examples. In supervised learning, each example
 3. <a href='https://www.udemy.com/data-science-and-machine-learning-with-python-hands-on/' target='_blank' rel='nofollow'>Data Science and Machine Learning with Python - Hands On!</a>
 4. <a href='http://ciml.info/' target='_blank' rel='nofollow'>Machine Learning</a>
 5. <a href='https://www.edx.org/course/the-analytics-edge' target='_blank' rel='nofollow'>The Analytics Edge - Taught by: MIT</a>
+6. <a href="https://developers.google.com/machine-learning/crash-course/">Google's crash course and certification</a>
 
 #### Video Resources:
 
@@ -58,5 +59,3 @@ data consist of a set of training examples. In supervised learning, each example
 ## Lab
 
 <a href="https://github.com/Microsoft/computerscience/blob/master/Labs/AI%20and%20Machine%20Learning/Azure%20Machine%20Learning/Azure%20Machine%20Learning%20(Node).md">Building Smart Apps with Azure Machine Learning Studio</a>
-## crash course by google
- <a href="https://developers.google.com/machine-learning/crash-course/">crash course and certification from google</a>
