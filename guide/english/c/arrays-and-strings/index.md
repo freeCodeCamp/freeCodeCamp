@@ -63,6 +63,14 @@ int main(void) {
     return 0;
 }
 ```
+## Address Calculation
+In C, an array is stored in row major form. Suppose an arrar int A[10] is declared. It will be stored as shown below:
+```C
+ A[0]  A[1]  A[2]  A[3]  A[4]  A[5]  A[6]  A[7]  A[8]  A[9] 
+ ```
+ Hence, address for the ith element of the array can be calculated as follows:
+ 
+ `Address of A[i] = Base Address + i*(size of data type)`
 
 Output will be  
 ```C

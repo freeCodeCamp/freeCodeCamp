@@ -7,7 +7,9 @@ title: Cryptocurrency
 >
 > – Satoshi Nakamoto, 09 January 2009, announcing Bitcoin on SourceForge.
 
-Cryptocurrency is a subset of digital currency, which acts as a medium of exchange amongst two parties. It is known as crypto-currency because of the utilization of cryptography in securing its transactions. There are various cryptocurrencies including Litecoin, Dash, Ethereum, Ripple, and the currently most popular one Bitcoin.
+Cryptocurrency is a subset of digital currency, which acts as a medium of exchange amongst two parties. It is known as crypto-currency because of the utilization of cryptography to strictly assure the security of transactions taking place on the network. There are various cryptocurrencies including Litecoin, Dash, Ethereum, Ripple, and the currently most popular currency - Bitcoin.
+
+The original purpose of cryptocurrency was to remove the intervention of middlemen or third-parties in order to make transactions swift and secure, with anonymity maintained for all users operating through their respective systems (called 'nodes') on a network.
 
 There are hundreds to thousands of cryptocurrencies as of 2018 with new ones coming out on a regularly. Most will never take off. This form of peer-to-peer value exchange is in its infancy still; Bitcoin and Cryptocurrencies have yet to become widely used. Venezuela has made history by becoming the first nation to introduce a national cryptocurrency in a time of national emergency with a goal of circumventing US sanctions and access to international financing.
 
@@ -32,7 +34,7 @@ Every cryptocurrency has three layers:
 
 Many cryptocurrencies such as Bitcoin can be earned by validating transactions on the network. This process of validation is called "proof of work" and consists of mathematically guessing a random numbers (usually less than a certain determined value or "difficulty") to attempt to match the blockchain's irreversible cryptographic hash function. As more transactions are validated (and rewards for validation are collected) over time, the difficulty of finding the correct hash increases. An increase in the popularity of cryptocurrency mining over the past few years has outpaced the development of the average computational power of a household computer, so in order to mine effectively, one requires a computer (or computers) with especially powerful graphics cards (such as the Nivida GTX 1080) or specialized cryptocurrency mining equipment (such as the Fast-Hash One or CoinTerra TerraMiner IV). It should also be noted that, because of drawbacks of proof-of-work validation (such as energy inefficiency), some cryptocurrencies are exploring alternative algorithms such as "proof of burn".
 
-Some people invest in cryptocurrency on exchanges such as Binance, Bitrex, or Coinbase. The market peeked in January of 2018. 
+Investment in cryptocurrencies is highly speculative. With much volitility in the market due to the blockchain technologies still being in their infancy and compounded with a glut of inexperienced invstors the prices of the various currencies often change rapidly. Investors can trade fiat and crypto currencies on exchanges such as Binance, Bitrex, or Coinbase. The latest market peek was in January of 2018 with Bitcoin reaching above $20,000 USD on some exchanges. 
 
 ## Create your own cryptocurrency
 

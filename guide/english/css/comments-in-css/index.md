@@ -8,18 +8,18 @@ Comments are used in CSS to explain a block of code or to make temporary changes
 The comment syntax in CSS works for both single and multi-line comments. You can add as many comments to your stylesheet as you like.
 
 ```css
-    /*
-        This is
-        a multi-line
-        comment
-    */
-    
-    /* This is a single line comment*/
-    .group:after {
-        content: "";
-        display: table;
-        clear: both;
-    }
+/*
+    This is
+    a multi-line
+    comment
+*/
+
+/* This is a single line comment*/
+.group:after {
+    content: "";
+    display: table;
+    clear: both;
+}
 ```
 
 By using CSS comments to make your stylesheets more readable, the CSS will be easier to maintain in the future for you or another developer. 
@@ -90,13 +90,12 @@ Here are a few exmples to get you started of CSS comments you can use in your da
     
 /****************************************************************************
 7.0 - Footer */
-``` css
 
 h2 {
     font-size: 1.2em;
     font-family: "Ubuntu", serif;
     text-transform: uppercase;
-    }
+}
 ```
 
 Tip: Many code editors will comment a highlighted portion of text by typing `CMD + /` (Mac) or `CTRL + /` (Windows).
