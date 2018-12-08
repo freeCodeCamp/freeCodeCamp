@@ -1,9 +1,18 @@
 ---
 title: How to Use package.json, the Core of Any Node.js Project or npm Package
-localeTitle: Como usar o package.json, o projeto Core of Any Node.js ou o pacote npm
+localeTitle: Como usar o package.json, o núcleo de qualquer projeto Node ou pacote npm
 ---
-## Como usar o package.json, o projeto Core of Any Node.js ou o pacote npm
+## Como usar o package.json, o núcleo de qualquer projeto Node ou pacote npm
 
-Este é um esboço. [Ajude nossa comunidade a expandi-lo](https://github.com/freecodecamp/guides/tree/master/src/pages/certifications/apis-and-microservices/managing-packages-with-npm/how-to-use-package.json-the-core-of-any-node.js-project-or-npm-package/index.md) .
+## Dica
 
-[Este guia de estilo rápido ajudará a garantir que sua solicitação de recebimento seja aceita](https://github.com/freecodecamp/guides/blob/master/README.md) .
+* A chave `author` deve ser adicionada ao seu arquivo package.json usando seu
+nome como valor.
+
+## Alerta de Spoiler: Solução à frente!
+
+## Solução:
+
+```javascript
+"author": "Seu nome aqui"
+```
