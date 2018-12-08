@@ -5,6 +5,8 @@ title: Panels
 
 The Bootstrap framework provides you with a feature called panels. A panel is a box that has a styled heading and then a body that allows you to display information in an organized manner, through a set of one or more panels.
 
+Panels were dropped in Bootstrap 4 in favor of cards, as were thumbnails and wells. [Relevant section of the Bootstrap 4 migration guide here](https://getbootstrap.com/docs/4.1/migration/#panels)
+
 #### How To Use:
 To use Bootstrap Panels you add a `<div>` with a class for your type of panel (class `panel panel-default` or something similar, see the panel examples for more information.) and then two nested `<div>` tags, one for the heading (class `panel panel-heading`) and one for the body (class `panel panel-body`). You may find that the Code Example is easier to understand than a written explanation.
 
