@@ -17,7 +17,7 @@ function NavLogo() {
         ) : (
           <img
             alt='learn to code at freeCodeCamp logo'
-            className='nav-logo logo'
+            className='nav-logo logo-glyph'
             src={fCCglyph}
           />
         )

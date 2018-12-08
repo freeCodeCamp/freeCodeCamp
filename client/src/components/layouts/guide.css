@@ -95,7 +95,7 @@
 
 @media (max-width: 400px) {
   .fcc_searchBar .ais-Hits {
-    width: 80%;
+    width: 100%;
   }
 }
 
@@ -150,7 +150,7 @@
   margin-right: 10px;
 }
 
-@media (min-width: 992px) {
+@media (min-width: 735px) {
   .logo-glyph {
     display: none;
   }

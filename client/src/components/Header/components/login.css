@@ -15,6 +15,7 @@
   border-color: #f1a02a;
   color: #292f33 !important;
   text-shadow: 0 1px 0 rgba(255, 255, 255, 0.5);
+  height: auto;
 }
 .signup-btn:hover,
 .signup-btn:focus {
