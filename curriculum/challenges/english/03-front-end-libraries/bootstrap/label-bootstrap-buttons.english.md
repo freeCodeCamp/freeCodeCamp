@@ -7,7 +7,8 @@ challengeType: 0
 ## Description
 <section id='description'>
 Just like we labeled our wells, we want to label our buttons.
-Give each of your <code>button</code> elements text that corresponds to its <code>id</code>'s selector.
+Give each of your <code>button</code> elements text that corresponds to its <code>id</code>'s selector prefixed with the "#" character.
+That is, for the <code>button</code> with id <code>target1</code> the label should be <code>#target1</label>.
 </section>
 
 ## Instructions
