@@ -82,7 +82,7 @@ Any RHS references inside `bar`'s local scope can be fullfilled by LHS reference
 
 **You can only traverse down a scope chain, not up.**
 
-There are other two important things you should know about JavaScript scopes. 
+There are two other important things you should know about JavaScript scopes. 
 
 1. Scopes are declared by functions, not by blocks.
 2. Functions can be forward-referenced, variables can't.
