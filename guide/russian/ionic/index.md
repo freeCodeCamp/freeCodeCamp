@@ -1,8 +1,8 @@
 ---
 title: Ionic
-localeTitle: ионный
+localeTitle: Ionic
 ---
-## Ионная структура
+## Структура Ionic
 
 Ionic - это платформа разработки мобильных приложений HTML5, предназначенная для создания гибридных мобильных приложений.
 
@@ -14,12 +14,13 @@ Ionic - это платформа разработки мобильных при
 
 Основная часть приложения Ionic будет написана в HTML, Javascript и CSS. Ionic также использует AngularJS для многих основных функциональных возможностей фреймворка.
 
-### Прежде чем мы начнем играть с ионикой. Давайте сначала подготовим нашу систему:
+### Прежде чем мы начнем работать с Ionic. Давайте сначала подготовим нашу систему:
+
 ```
-  nodeJS and npm 
-  Ionic 2 
-  Cordova 
-  Android Environment (or iOS if you're working on a MacOS) 
+  nodeJS and npm
+  Ionic 2
+  Cordova
+  Android Environment (либо iOS если вы работаете на MacOS)
 ```
 
 ### Во-первых, нам нужно иметь Node.js и npm.
@@ -30,16 +31,21 @@ Ionic - это платформа разработки мобильных при
 
 ### Менеджер пакетов Node.js (npm)
 
-\`\` \`  
-sudo apt-get install npm
-```
-### Ionic 2 and cordova 
+```  
+  sudo apt-get install npm
 ```
 
-sudo npm install -g ionic cordova
+### Ionic 2 и cordova 
+
 ```
-### Now sit back and relax, give it some time to finish, it can take several minutes depending on your internet connection. 
- Once that's done, Let's start off by generating a new project based on the “blank” template 
+  sudo npm install -g ionic cordova
 ```
 
-ионный запуск MyFirstApp blank cd MyFirstApp ионная подача \`\` \`
+### Теперь откиньтесь и расслабьтесь, подождите некоторое время, это может занять несколько минут в зависимости от вашего интернет-соединения. 
+Как только установка завершится, начнем с создания нового проекта на основе «чистого» шаблона
+
+```
+  ionic start MyFirstApp blank
+  cd MyFirstApp 
+  ionic serve
+```
