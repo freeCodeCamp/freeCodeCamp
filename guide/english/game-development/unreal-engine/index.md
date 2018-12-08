@@ -42,7 +42,9 @@ Unreal has gone through 4 major revisions. Although some code is common between 
 - Adventure Pinball: Forgotten Island
 
 
+
 #### More Information:
 
-<a href='https://www.unrealengine.com/' target='_blank' rel='nofollow'>www.UnrealEngine.com</a>  
-<a href='https://github.com/EpicGames' target='_blank' rel='nofollow'>www.EpicGames.com</a>
+- <a href='https://www.unrealengine.com/' target='_blank' rel='nofollow'>www.UnrealEngine.com</a>  
+- <a href='https://github.com/EpicGames' target='_blank' rel='nofollow'>www.EpicGames.com</a>
+- <a href='https://academy.unrealengine.com/' target='_blank' rel='nofollow'>https://academy.unrealengine.com/</a>  
