@@ -9,7 +9,7 @@ title: Cryptocurrency
 
 Cryptocurrency is a subset of digital currency, which acts as a medium of exchange amongst two parties. It is known as crypto-currency because of the utilization of cryptography to strictly assure the security of transactions taking place on the network. There are various cryptocurrencies including Litecoin, Dash, Ethereum, Ripple, and the currently most popular currency - Bitcoin.
 
-The original purpose of cryptocurrency was to remove the intervention of middlemen or third-parties in order to make transactions swift and secure, with anonymity maintained for all users operating through their respective systems (called 'nodes') on a network.
+The original purpose of cryptocurrency was to remove the intervention of an intermediary (middleman) or third-parties in order to make transactions swift and secure, with anonymity maintained for all users operating through their respective systems (called 'nodes') on a network.
 
 There are hundreds to thousands of cryptocurrencies as of 2018 with new ones coming out on a regularly. Most will never take off. This form of peer-to-peer value exchange is in its infancy still; Bitcoin and Cryptocurrencies have yet to become widely used. Venezuela has made history by becoming the first nation to introduce a national cryptocurrency in a time of national emergency with a goal of circumventing US sanctions and access to international financing.
 
