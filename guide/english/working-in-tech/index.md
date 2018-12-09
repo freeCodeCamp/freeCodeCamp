@@ -7,6 +7,8 @@ A wide variety of technology-related fields such as web development, design, dat
 
 This section will focus on various aspects of working in tech, such as the ways in which teams cooperate, how to give talks and what code reviews are. We will discuss the additional career challenges that under-represented minorities and people from non-traditional education backgrounds face. This includes issues such as sexism and ageism that have been particularly prevalent in certain industries and organizations. 
 
+It's normal these days for there also to be "tech supervisors" who maange more of a business-facing role instead of tech-facing. This isn't something out of the ordinary, but can be difficult for some people to deal with.
+
 ### Computer Security
 
 The field of computer security is growing at a rapid rate every year. A recent report estimates that by 2021, 3.5 million jobs in computer security will be unfilled. The demand is due to the ever-increasing amount of valuable data being created every day that must be kept safe and secure from cyber attacks.
