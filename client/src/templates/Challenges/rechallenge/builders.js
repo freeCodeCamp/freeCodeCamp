@@ -93,26 +93,22 @@ A required file can not have both a src and a link: src = ${src}, link = ${link}
       return head.concat(element);
     }, '');
 
-  const body = Promise.all(files).then(
-    files => files.reduce(
-      (body, file) => [...body, file.contents + file.tail + htmlCatch],
-      []
-    )
-    .map(source => createBody({ source }))
+  const body = Promise.all(files).then(files =>
+    files
+      .reduce(
+        (body, file) => [...body, file.contents + file.tail + htmlCatch],
+        []
+      )
+      .map(source => createBody({ source }))
   );
 
-  /* eslint-disable max-len */
-  const babelPolyfillCDN =
-    'https://cdnjs.cloudflare.com/ajax/libs/babel-polyfill/7.0.0/polyfill.min.js';
-  const babelPolyfill = `<script src="${babelPolyfillCDN}" type="text/javascript"></script>`;
-  /* eslint-enable max-len */
   const frameRunner =
     '<script src="/js/frame-runner.js" type="text/javascript"></script>';
 
   return from(
-    Promise.all([head, body, babelPolyfill, frameRunner, sourceMap]).then(
-      ([head, body, babelPolyfill, frameRunner, sourceMap]) => ({
-        build: head + body + babelPolyfill + frameRunner,
+    Promise.all([head, body, frameRunner, sourceMap]).then(
+      ([head, body, frameRunner, sourceMap]) => ({
+        build: head + frameRunner + body,
         sources: sourceMap
       })
     )

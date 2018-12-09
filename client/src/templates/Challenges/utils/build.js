@@ -1,5 +1,4 @@
-import { combineLatest, of } from 'rxjs';
-import { map } from 'rxjs/operators';
+import { of } from 'rxjs';
 import { flow } from 'lodash';
 
 import { throwers } from '../rechallenge/throwers';
@@ -13,9 +12,6 @@ import { transformers, testJS$JSX } from '../rechallenge/transformers';
 import { cssToHtml, jsToHtml, concatHtml } from '../rechallenge/builders.js';
 import { isPromise } from './polyvinyl';
 
-const jQueryCDN =
-  'https://cdn.jsdelivr.net/npm/jquery@3.3.1/dist/jquery.min.js';
-const jQuery = `<script src='${jQueryCDN}' type='text/javascript'></script>`;
 const frameRunner =
   "<script src='/js/frame-runner.js' type='text/javascript'></script>";
 
@@ -24,9 +20,6 @@ const globalRequires = [
     link:
       'https://cdnjs.cloudflare.com/' +
       'ajax/libs/normalize/4.2.0/normalize.min.css'
-  },
-  {
-    src: jQueryCDN
   }
 ];
 
@@ -118,11 +111,9 @@ export function buildBackendChallenge(state) {
   const {
     solution: { value: url }
   } = backendFormValuesSelector(state);
-  return combineLatest(of(frameRunner), of(jQuery)).pipe(
-    map(([frameRunner, jQuery]) => ({
-      build: jQuery + frameRunner,
-      sources: { url },
-      checkChallengePayload: { solution: url }
-    }))
-  );
+  return of({
+    build: frameRunner,
+    sources: { url },
+    checkChallengePayload: { solution: url }
+  });
 }
