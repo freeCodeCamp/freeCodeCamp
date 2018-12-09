@@ -1,3 +1,9 @@
+import chai from 'chai';
+import '@babel/polyfill';
+import jQuery from 'jquery';
+
+window.$ = jQuery;
+
 document.addEventListener('DOMContentLoaded', function() {
   const {
     timeout,
@@ -10,7 +16,6 @@ document.addEventListener('DOMContentLoaded', function() {
     throwError
   } = document.__deps__.rx;
   const frameReady = document.__frameReady;
-  const chai = parent.chai;
   const source = document.__source;
   const __getUserInput = document.__getUserInput || (x => x);
   const checkChallengePayload = document.__checkChallengePayload;
@@ -56,10 +61,6 @@ document.addEventListener('DOMContentLoaded', function() {
         return source;
       }
     };
-    const userCode = document.createElement('script');
-    userCode.type = 'text/javascript';
-    userCode.text = code;
-    document.body.appendChild(userCode);
     const assert = chai.assert;
     const getUserInput = __getUserInput;
     // Iterate through the test one at a time
@@ -70,7 +71,7 @@ document.addEventListener('DOMContentLoaded', function() {
         let test;
         let __result;
         // uncomment the following line to inspect
-        // the framerunner as it runs tests
+        // the frame-runner as it runs tests
         // make sure the dev tools console is open
         // debugger;
         try {
