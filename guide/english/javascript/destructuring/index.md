@@ -33,7 +33,7 @@ const [, secondFruit] = fruits;  //ignores the first fruit
 const [,, thirdFruit] = fruits;  //ignores first and second fruit
 ```
 
-Additionaly we can use the <a href='https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Functions/rest_parameters' target='_blank' rel='nofollow'>`rest-operator`</a> to get some values and then pack the remaining in another variable:
+Additionaly we can use the <a href='https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Functions/rest_parameters' target='_blank' rel='nofollow'>`rest-parameter`</a> to get some values and then pack the remaining in another variable:
 ``` javascript
 const [firstFruit, ...otherFruits] = fruits;  // firstFruit = 'apple', otherFruits = ['banana', 'orange', 'tangerine'] 
 ```
@@ -52,7 +52,7 @@ const fruit = { name: 'apple', color: 'red', season: 'autumn' };
 const { name, color, season } = fruit; // name = 'apple', color = 'red', season = 'autumn'
 ```
 
-The rest operator can be used to assing all remaining properties in a new object:
+The rest parameter can be used to assing all remaining properties in a new object:
 ``` javascript
 const { name, ...other } = fruit; // name = 'apple', other = { color = 'red', season = 'autumn' }
 ```
