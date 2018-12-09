@@ -44,7 +44,7 @@ and `yellow` is the style we want to give it.
 We use the `<style>` and `</style>` tags to define the CSS in the HTML file.
 
 ### Popular CSS Frameworks 2018
-Frameworks exist to make the more complex parts of css easier and more efficient for developers to build out websites.
+Frameworks exist to make the more complex parts of css easier and more efficient for developers to build out websites.  They also allow the developer to have more flexibility as well as additional features to produce amazing results.
 Some of the most popular CSS Frameworks are:
 Bootstrap, Foundation, Bulma, uikit, Semantic UI, mini.css, Materialize, Material Design Lite, Spectre and Kube.
 
