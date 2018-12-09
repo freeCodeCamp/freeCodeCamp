@@ -64,7 +64,7 @@ Some of the most popular CSS Frameworks are:
 * [Jon Duckett's book on HTML and CSS](https://www.amazon.com/HTML-CSS-Design-Build-Websites/dp/1118008189) could be an exellent start for the ones who wish to explore the topic to it's great depth with some amazing examples.
 * [The Odin Project](https://www.theodinproject.com/courses/html5-and-css3) features a full course on using CSS alongside HTML.
 * [Species In Pieces](http://species-in-pieces.com/#): for a demonstration of the power of CSS. 
-* [CSS-Tricks](https://css-tricks.com): awesome articles and summaries of Front End Development-related ideas.
 * [MDN Web Docs for CSS](https://developer.mozilla.org/en-US/docs/Web/CSS) for more resources for developers, BY developers!
-* [CSS reference](https://cssreference.io/) to help you along the way if you're unsure about a property. A great tool for helping visualize what each CSS property does.
+* [CSS reference.io](https://cssreference.io/) to help you along the way if you're unsure about a property. A great tool for helping visualize what each CSS property does.
 * [CSS-Tricks](https://css-tricks.com) Tips and tricks for working with CSS
+* [tutorialspoint](https://www.tutorialspoint.com/css/)
