@@ -113,8 +113,8 @@
       "title": "General questions",
       "description": [
         {
-          "subtitle": "Data Structure stack",
-          "question": "A stack data structure obeys the principles of Last in First Out (LIFO) true or false",
+          "subtitle": "Data structure stack",
+          "question": "A stack data structure obeys the principles of Last in First Out (LIFO)? True or false.",
           "choices": [
             "<pre><code class='language-javascript'>true</code></pre>",
             "<pre><code class='language-javascript'>false</code></pre>"
@@ -124,7 +124,7 @@
         },
         {
           "subtitle": "Sorting algorithm",
-          "question": "Which of the following is not a common sorting algorithm ?",
+          "question": "Which of the following is not a common sorting algorithm?",
           "choices": [
             "<pre><code class='language-javascript'>Bubble Sort</code></pre>",
             "<pre><code class='language-javascript'>QuickSort</code></pre>",
@@ -148,7 +148,7 @@
         },
         {
           "subtitle": "Numeric types",
-          "question": "Select the correct Numeric types to their correct size.",
+          "question": "Match the correct numeric types to their correct size.",
           "choices": [
             "<pre><code class='language-javascript'>Byte - 8 bits, long - 64 bits,int - 32 bits, short - 16 bits.</code></pre>",
             "<pre><code class='language-javascript'>Byte - 8 bits, long - 32 bits ,int - 64 bits, short - 16 bits.</code></pre>",
@@ -172,7 +172,7 @@
         },
         {
           "subtitle": "XPath navigation",
-          "question": "The XPath syntax is used to traverse data stored in which format",
+          "question": "The XPath syntax is used to traverse data stored in which format?",
           "choices": [
             "<pre><code class='language-javascript'>XML</code></pre>",
             "<pre><code class='language-javascript'>JSON</code></pre>",
@@ -231,8 +231,8 @@
           "explanation": "An array in most languages is considered an object where as the other three are primitive data types."
         },
         {
-          "subtitle": "Programming languages paradigms",
-          "question": "Object-oriented and Functional are said to be programming language paradigms which of the following isn't a language paradigm.",
+          "subtitle": "Programming language paradigms",
+          "question": "Object-oriented and Functional are said to be programming language paradigms.  Which of the following isn't a language paradigm?"
           "choices": [
             "<pre><code class='language-javascript'>Procedural</code></pre>",
             "<pre><code class='language-javascript'>Imperative</code></pre>",
@@ -240,11 +240,11 @@
             "<pre><code class='language-javascript'>Instance</code></pre>"
           ],
           "answer": 3,
-          "explanation": "Instance is not a recognised programming paradigm."
+          "explanation": "Instance is not a recognized programming paradigm."
         },
         {
           "subtitle": "UML",
-          "question": "UML or Universal Modeling Language is a language created for?",
+          "question": "UML or Universal Modeling Language is a language created for ?",
           "choices": [
             "<pre><code class='language-javascript'>Creating database schemas.</code></pre>",
             "<pre><code class='language-javascript'>Software visualization using diagrams.</code></pre>",
@@ -263,8 +263,8 @@
       "title": "CSS questions part 1",
       "description": [
         {
-          "subtitle": "Elements properties",
-          "question": "Which properties do inline elements not possess under normal document flow.",
+          "subtitle": "Element properties",
+          "question": "Which properties do inline elements not possess under normal document flow?",
           "choices": [
             "<pre>overflow, left or right margins</pre>",
             "<pre>border-radius, z-index</pre>",
@@ -300,7 +300,7 @@
         },
         {
           "subtitle": "Preprocessor CSS",
-          "question": "Which is not considered a Css preprocessor?",
+          "question": "Which is not considered a CSS preprocessor?",
           "choices": [
             "<pre><code class='language-javascript'>Less</code></pre>",
             "<pre><code class='language-javascript'>Sass</code></pre>",
@@ -312,7 +312,7 @@
         },
         {
           "subtitle": "CSS Box Model",
-          "question": "Which is not a property of the Css 'Box Model'?",
+          "question": "Which is not a property of the CSS 'Box Model'?",
           "choices": [
             "<pre><code class='language-javascript'>Border</code></pre>",
             "<pre><code class='language-javascript'>Padding</code></pre>",
@@ -324,7 +324,7 @@
         },
         {
           "subtitle": "CSS positioning",
-          "question": "Absolute positioning in Css removes an element from the normal document flow true/false?",
+          "question": "Absolute positioning in CSS removes an element from the normal document flow.  True or false?",
           "choices": [
             "<pre><code class='language-javascript'>true</code></pre>",
             "<pre><code class='language-javascript'>false</code></pre>"
@@ -334,7 +334,7 @@
         },
         {
           "subtitle": "CSS selector",
-          "question": "With this Css Selector it is possible to select every element in a document.",
+          "question": "With this CSS Selector it is possible to select every element in a document.",
           "choices": [
             "<pre><code class='language-javascript'>Body</code></pre>",
             "<pre><code class='language-javascript'>Universal</code></pre>",
@@ -346,7 +346,7 @@
         },
         {
           "subtitle": "Font size in CSS",
-          "question": "Which is not a valid Css font size?",
+          "question": "Which is not a valid CSS font size?",
           "choices": [
             "<pre><code class='language-javascript'>em</code></pre>",
             "<pre><code class='language-javascript'>%</code></pre>",
@@ -358,7 +358,7 @@
         },
         {
           "subtitle": "CSS clear property",
-          "question": "The Css 'clear' property fulfills which task?",
+          "question": "The CSS 'clear' property fulfills which task?",
           "choices": [
             "<pre><code class='language-javascript'>Allows transparency of an element.</code></pre>",
             "<pre><code class='language-javascript'>Prevents prior properties of the selector from taking effect.</code></pre>",
@@ -370,7 +370,7 @@
         },
         {
           "subtitle": "CSS sudo-class",
-          "question": "An example of a sudo-class of a ul element written in Css would be defined?",
+          "question": "An example of a sudo-class of a ul element written in CSS would be defined how?",
           "choices": [
             "<pre><code class='language-javascript'>ul:first-child</code></pre>",
             "<pre><code class='language-javascript'>ul..first-child</code></pre>",
@@ -390,7 +390,7 @@
       "description": [
         {
           "subtitle": "CSS selector",
-          "question": "An entire Css selector and declaration block whithin a Css document eg:<code><br /> .container div p {<br />position: relative;<br />width: 300px;<br />margin: auto;<br />color: #ffffff;<br />}</code><br /> is referred to as?",
+          "question": "An entire CSS selector and declaration block whithin a CSS document eg:<code><br /> .container div p {<br />position: relative;<br />width: 300px;<br />margin: auto;<br />color: #ffffff;<br />}</code><br /> is referred to as?",
           "choices": [
             "<pre><code class='language-javascript'>Base-Block</code></pre>",
             "<pre><code class='language-javascript'>Selection Properties</code></pre>",
@@ -402,7 +402,7 @@
         },
         {
           "subtitle": "CSS Browser compatibility",
-          "question": "Which is not a valid Css prefix to ensure browser compatibility?",
+          "question": "Which is not a valid CSS prefix to ensure browser compatibility?",
           "choices": [
             "<pre><code class='language-javascript'>-webkit-</code></pre>",
             "<pre><code class='language-javascript'>-win-</code></pre>",
@@ -414,7 +414,7 @@
         },
         {
           "subtitle": "CSS 'text-transform' property",
-          "question": "The Css property 'text-transform' is mainly used for?",
+          "question": "The CSS property 'text-transform' is mainly used for?",
           "choices": [
             "<pre><code class='language-javascript'>Alteration of text letter case.</code></pre>",
             "<pre><code class='language-javascript'>Changing the alignment of text.</code></pre>",
@@ -437,8 +437,8 @@
           "explanation": "1em is equivalent to the base or default font size therefore (12 * 1.5 = 18)."
         },
         {
-          "subtitle": "CCSS font weight",
-          "question": "In Css 'font-weight: bold;' is the same as?",
+          "subtitle": "CSS font weight",
+          "question": "In CSS 'font-weight: bold;' is the same as?",
           "choices": [
             "<pre><code class='language-javascript'>font-weight: 400;</code></pre>",
             "<pre><code class='language-javascript'>font-weight: 900</code></pre>",
@@ -462,7 +462,7 @@
         },
         {
           "subtitle": "CSS match selector",
-          "question": "What would the following Css selector match?<br /><code>section + p</code>",
+          "question": "What would the following CSS selector match?<br /><code>section + p</code>",
           "choices": [
             "<pre><code class='language-javascript'>All &lt;section&gt; and &lt;p&gt; tags.</code></pre>",
             "<pre><code class='language-javascript'>All &lt;p&gt; tags within a &lt;section&gt; tag.</code></pre>",
@@ -474,7 +474,7 @@
         },
         {
           "subtitle": "How to incorporte CSS into web document",
-          "question": "How many different ways is it possible to incorporate Css into a web document?",
+          "question": "How many different ways is it possible to incorporate CSS into a web document?",
           "choices": [
             "<pre><code class='language-javascript'>1</code></pre>",
             "<pre><code class='language-javascript'>2</code></pre>",
@@ -482,11 +482,11 @@
             "<pre><code class='language-javascript'>4</code></pre>"
           ],
           "answer": 2,
-          "explanation": "Currently Css can be used 'Inline' as a style attribute of an Html element, 'Embedded' in a style tag of a document and 'Imported' as an external file with the link tag element."
+          "explanation": "Currently CSS can be used 'Inline' as a style attribute of an Html element, 'Embedded' in a style tag of a document and 'Imported' as an external file with the link tag element."
         },
         {
-          "subtitle": "Using target in css",
-          "question": "What would <code>[role=contentinfo] {...}</code> target in Css?",
+          "subtitle": "Using target in CSS",
+          "question": "What would <code>[role=contentinfo] {...}</code> target in CSS?",
           "choices": [
             "<pre><code class='language-javascript'>Any element with the role attribute of contentinfo.</code></pre>",
             "<pre><code class='language-javascript'>Any element within a &lt;span&gt; tag.</code></pre>",
@@ -498,7 +498,7 @@
         },
         {
           "subtitle": "CSS positioning",
-          "question": "Which is not a value for 'position' in css?",
+          "question": "Which is not a value for 'position' in CSS?",
           "choices": [
             "<pre><code class='language-javascript'>Absolute</code></pre>",
             "<pre><code class='language-javascript'>Static</code></pre>",
