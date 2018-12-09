@@ -1,14 +1,4 @@
 import { toString, flow } from 'lodash';
-import { defer, of, from, Observable, throwError, queueScheduler } from 'rxjs';
-import {
-  tap,
-  map,
-  toArray,
-  delay,
-  mergeMap,
-  timeout,
-  catchError
-} from 'rxjs/operators';
 import { configure, shallow, mount } from 'enzyme';
 import Adapter16 from 'enzyme-adapter-react-16';
 import { setConfig } from 'react-hot-loader';
@@ -43,16 +33,15 @@ const createHeader = (id = mainId) => `
   </script>
 `;
 
-export const runTestsInTestFrame = (document, tests) =>
-  defer(() => {
-    const { contentDocument: frame } = document.getElementById(testId);
-    // Enable Stateless Functional Component. Otherwise, enzyme-adapter-react-16
-    // does not work correctly.
-    setConfig({ pureSFC: true });
-    return frame
-      .__runTests(tests)
-      .pipe(tap(() => setConfig({ pureSFC: false })));
-  });
+export const runTestInTestFrame = async function(document, tests) {
+  const { contentDocument: frame } = document.getElementById(testId);
+  // Enable Stateless Functional Component. Otherwise, enzyme-adapter-react-16
+  // does not work correctly.
+  setConfig({ pureSFC: true });
+  const result = await frame.__runTest(tests);
+  setConfig({ pureSFC: false });
+  return result;
+};
 
 const createFrame = (document, state, id) => ctx => {
   const isJSEnabled = isJSEnabledSelector(state);
@@ -67,14 +56,14 @@ const createFrame = (document, state, id) => ctx => {
   };
 };
 
-const hiddenFrameClassname = 'hide-test-frame';
+const hiddenFrameClassName = 'hide-test-frame';
 const mountFrame = document => ({ element, ...rest }) => {
   const oldFrame = document.getElementById(element.id);
   if (oldFrame) {
-    element.className = oldFrame.className || hiddenFrameClassname;
+    element.className = oldFrame.className || hiddenFrameClassName;
     oldFrame.parentNode.replaceChild(element, oldFrame);
   } else {
-    element.className = hiddenFrameClassname;
+    element.className = hiddenFrameClassName;
     document.body.appendChild(element);
   }
   return {
@@ -83,33 +72,6 @@ const mountFrame = document => ({ element, ...rest }) => {
     document: element.contentDocument,
     window: element.contentWindow
   };
-};
-
-const addDepsToDocument = ctx => {
-  ctx.document.__deps__ = {
-    rx: {
-      of,
-      from,
-      Observable,
-      throwError,
-      queueScheduler,
-      tap,
-      map,
-      toArray,
-      delay,
-      mergeMap,
-      timeout,
-      catchError
-    },
-    log: (...things) => console.log('from test frame', ...things)
-  };
-  // using require here prevents nodejs issues as loop-protect
-  // is added to the window object by webpack and not available to
-  // us server side.
-  /* eslint-disable import/no-unresolved */
-  ctx.document.loopProtect = require('loop-protect');
-  /* eslint-enable import/no-unresolved */
-  return ctx;
 };
 
 const buildProxyConsole = proxyLogger => ctx => {
@@ -122,7 +84,7 @@ const buildProxyConsole = proxyLogger => ctx => {
 };
 
 const writeTestDepsToDocument = frameReady => ctx => {
-  const { sources, checkChallengePayload } = ctx;
+  const { sources } = ctx;
   // add enzyme
   // TODO: do programatically
   // TODO: webpack lazyload this
@@ -133,7 +95,6 @@ const writeTestDepsToDocument = frameReady => ctx => {
   ctx.document.__source = sources && 'index' in sources ? sources['index'] : '';
   // provide the file name and get the original source
   ctx.document.__getUserInput = fileName => toString(sources[fileName]);
-  ctx.document.__checkChallengePayload = checkChallengePayload;
   ctx.document.__frameReady = frameReady;
   return ctx;
 };
@@ -150,19 +111,17 @@ const writeContentToFrame = ctx => {
   return ctx;
 };
 
-export const createMainFramer = (document, state$) =>
+export const createMainFramer = (document, state) =>
   flow(
-    createFrame(document, state$.value, mainId),
+    createFrame(document, state, mainId),
     mountFrame(document),
-    addDepsToDocument,
     writeContentToFrame
   );
 
-export const createTestFramer = (document, state$, frameReady, proxyConsole) =>
+export const createTestFramer = (document, state, frameReady, proxyConsole) =>
   flow(
-    createFrame(document, state$.value, testId),
+    createFrame(document, state, testId),
     mountFrame(document),
-    addDepsToDocument,
     writeTestDepsToDocument(frameReady),
     buildProxyConsole(proxyConsole),
     writeContentToFrame

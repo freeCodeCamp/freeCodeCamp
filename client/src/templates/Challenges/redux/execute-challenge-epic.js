@@ -13,7 +13,7 @@ import {
   startWith,
   delay
 } from 'rxjs/operators';
-import { ofType, combineEpics } from 'redux-observable';
+import { ofType } from 'redux-observable';
 import { overEvery, isString } from 'lodash';
 
 import {
@@ -31,50 +31,11 @@ import {
   isJSEnabledSelector
 } from './';
 import { buildFromFiles, buildBackendChallenge } from '../utils/build';
-import {
-  runTestsInTestFrame,
-  createTestFramer,
-  createMainFramer
-} from '../utils/frame.js';
+import { runTestsInTestFrame, createTestFramer } from '../utils/frame.js';
 
 import { challengeTypes } from '../../../../utils/challengeTypes';
 
 const executeDebounceTimeout = 750;
-
-function updateMainEpic(action$, state$, { document }) {
-  return action$.pipe(
-    ofType(
-      types.updateFile,
-      types.previewMounted,
-      types.challengeMounted,
-      types.resetChallenge
-    ),
-    filter(() => {
-      const { challengeType } = challengeMetaSelector(state$.value);
-      return (
-        challengeType !== challengeTypes.js &&
-        challengeType !== challengeTypes.bonfire
-      );
-    }),
-    debounceTime(executeDebounceTimeout),
-    switchMap(() => {
-      const frameMain = createMainFramer(document, state$);
-      return buildFromFiles(state$.value).pipe(
-        map(frameMain),
-        ignoreElements(),
-        startWith(initConsole('')),
-        catchError((...err) => {
-          console.error(err);
-          return of(disableJSOnError(err.message));
-        })
-      );
-    }),
-    catchError(err => {
-      console.error(err);
-      return of(disableJSOnError(err.message));
-    })
-  );
-}
 
 function executeChallengeEpic(action$, state$, { document }) {
   return of(document).pipe(
@@ -117,13 +78,7 @@ function executeChallengeEpic(action$, state$, { document }) {
       );
       const buildAndFrameChallenge = action$.pipe(
         ofType(types.executeChallenge),
-        filter(() => {
-          const { challengeType } = challengeMetaSelector(state$.value);
-          return (
-            challengeType !== challengeTypes.js &&
-            challengeType !== challengeTypes.bonfire
-          );
-        }),
+        filter(() => false),
         debounceTime(executeDebounceTimeout),
         filter(() => isJSEnabledSelector(state$.value)),
         switchMap(() => {
@@ -151,4 +106,4 @@ function executeChallengeEpic(action$, state$, { document }) {
   );
 }
 
-export default combineEpics(updateMainEpic, executeChallengeEpic);
+export default executeChallengeEpic;
