@@ -16,7 +16,7 @@ Using the <code>.match()</code> method on a string will return an array with the
 
 ## Instructions
 <section id='instructions'>
-Use <code>capture groups</code> in <code>reRegex</code> to match numbers that are repeated only three times in a string, each separated by a space.
+Use <code>capture groups</code> in <code>reRegex</code> to match string with number repeated three times, separated by a space.
 </section>
 
 ## Tests
