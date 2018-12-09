@@ -6,12 +6,11 @@ title: Cascading Style Sheets (CSS)
 
 ![CSS Logo](https://upload.wikimedia.org/wikipedia/commons/thumb/d/d5/CSS3_logo_and_wordmark.svg/320px-CSS3_logo_and_wordmark.svg.png)
 
-CSS stands for *Cascading Style Sheets*. It is a language used for describing the style of a document written in HTML. It was designed to enable the separation of presentation and content, which greatly improved content accessibility and gave more flexibility and control in the specification of presentation, and reduced complexity and repetition in the structural content. It was first invented in 1996, and is now a standard feature of all major web browsers.
+CSS stands for *Cascading Style Sheets*. It is a language used for describing the style of a document written in HTML. It was designed to enable the separation of presentation and content, which greatly improved content accessibility and gave more flexibility and control in the specification of presentation, and reduced complexity and repetition in the structural content. It was first invented in 1996, and is now a standard feature of all major web browsers. The newest version of CSS is CSS3, which builds upon CSS2.1 and adds more visual functionalities, ready for the modern world.
 
 CSS specifications are maintained by the [World Wide Web Consortium (W3C)](https://www.w3.org/).
 
 You can build some pretty amazing things in CSS alone, such as this pure-CSS [Minesweeper game](https://codepen.io/bali_balo/pen/BLJONk) (which uses no JavaScript).
-
 ![Minesweeper clone in CSS](https://cdn-images-1.medium.com/max/800/1*GFcKk9KxqHAnWa1ECcKDOQ.png)
 
 ### Popular CSS Frameworks 2018
