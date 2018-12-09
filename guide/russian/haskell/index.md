@@ -4,17 +4,22 @@ localeTitle: Haskell
 ---
 ## Что такое Haskell?
 
-Haskell - стандартизированный, универсальный, чисто функциональный язык программирования с декларативной и сильной статической типизацией.
+Haskell - стандартизированный декларативный универсальный функциональный язык программирования с сильной статической типизацией.
+
 
 Haskell глубоко уходит корнями в математику, скоро вы оцените его преимущества.
 
+
 ## Версии
 
-В настоящее время последняя версия GHC - 8.6 (по состоянию на 12 октября 2018 года)
+
+В настоящее время последняя версия GHC - 8.6 (по состоянию на 12 октября 2018 года).
+
 
 ## Установка
 
-Рекомендуемый способ установки Haskell - использование stack: [stack download](https://docs.haskellstack.org/en/stable/README/#how-to-install) Stack - это кросс-платформенная утилита для разработки проектов на Haskell. Она нацелена как на опытных пользователей, так и на новичков.
+Рекомендуемый способ установки Haskell - использование stack: [stack download](https://docs.haskellstack.org/en/stable/README/#how-to-install). Stack - это кросс-платформенная среда для разработки проектов Haskell, нацеленная на повсеместное использование как опытными хаскелерами, так и новичками.
+
 
 Чтобы начать использовать Haskell нужен GHC (Glasgow Haskell Compiler), поэтому для установки можно воспользоваться [этой ссылкой](https://docs.haskellstack.org/en/stable/README/#how-to-install://docs.haskellstack.org/en/stable/README/#quick-start-guide), или просто набрав в консоли:
 
@@ -52,4 +57,5 @@ stack ghc hello.hs
 
 ## Хотите узнать больше?
 
-*   [wiki](https://wiki.haskell.org/Haskell) Haskell wiki
+*   [Ссылка на](https://wiki.haskell.org/Haskell) Haskell wiki
+
