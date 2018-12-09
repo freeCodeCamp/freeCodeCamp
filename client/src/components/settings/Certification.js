@@ -239,7 +239,7 @@ class CertificationSettings extends Component {
         : createFlashMessage({
             type: 'info',
             message:
-              'To claim a certification, you must first accept our acedemic ' +
+              'To claim a certification, you must first accept our academic ' +
               'honesty policy'
           });
     };
