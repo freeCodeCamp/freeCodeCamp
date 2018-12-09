@@ -1,4 +1,3 @@
-import { from } from 'rxjs';
 import {
   cond,
   flow,
@@ -102,7 +101,7 @@ A required file can not have both a src and a link: src = ${src}, link = ${link}
   const frameRunner =
     '<script src="/js/frame-runner.js" type="text/javascript"></script>';
 
-  return from(
+  return (
     Promise.all([head, body, frameRunner, sourceMap]).then(
       ([head, body, frameRunner, sourceMap]) => ({
         build: head + frameRunner + body,

@@ -1,4 +1,5 @@
-import { put, select, call, takeLatest } from 'redux-saga/effects';
+import { put, select, call, takeLatest, race } from 'redux-saga/effects';
+import { delay } from 'redux-saga';
 
 import {
   challengeMetaSelector,
@@ -12,11 +13,16 @@ import {
   challengeFilesSelector
 } from './';
 
-import { buildJSFromFiles } from '../utils/build';
+import { buildJSFromFiles, buildFromFiles } from '../utils/build';
 
 import { challengeTypes } from '../../../../utils/challengeTypes';
 
 import WorkerExecutor from '../utils/worker-executor';
+import {
+  createMainFramer,
+  createTestFramer,
+  runTestInTestFrame
+} from '../utils/frame.js';
 
 const testWorker = new WorkerExecutor('test-evaluator');
 const testTimeout = 5000;
@@ -26,8 +32,8 @@ function* ExecuteChallengeSaga() {
     const { js, bonfire, backend } = challengeTypes;
     const { challengeType } = yield select(challengeMetaSelector);
 
-    // TODO: ExecuteBackendChallengeSaga and ExecuteDOMChallengeSaga
-    if (challengeType !== js && challengeType !== bonfire) {
+    // TODO: ExecuteBackendChallengeSaga
+    if (challengeType === backend) {
       return;
     }
 
@@ -45,7 +51,7 @@ function* ExecuteChallengeSaga() {
         // yield ExecuteBackendChallengeSaga();
         break;
       default:
-      // yield ExecuteDOMChallengeSaga();
+        testResults = yield ExecuteDOMChallengeSaga(tests);
     }
 
     yield put(updateTests(testResults));
@@ -96,6 +102,94 @@ function* ExecuteJSChallengeSaga(tests) {
   return testResults;
 }
 
+function createTestFrame(state, ctx, proxyLogger) {
+  return new Promise(resolve => {
+    const frameTest = createTestFramer(document, state, resolve, proxyLogger);
+    frameTest(ctx);
+  }).then(() => console.log('Frame ready'));
+}
+
+function* proxyLogger() {
+  let args = yield;
+  while (true) {
+    args = yield put(updateLogs(args));
+  }
+}
+
+function* ExecuteDOMChallengeSaga(tests) {
+  const testResults = [];
+  const state = yield select();
+  const ctx = yield call(buildFromFiles, state);
+  const proxy = proxyLogger();
+  proxy.next('1');
+  proxy.next('2');
+  proxy.next('3');
+  yield call(createTestFrame, state, ctx, proxy);
+
+  for (const { text, testString } of tests) {
+    const newTest = { text, testString };
+    try {
+      const [{ pass, err, logs }, timeout] = yield race([
+        call(runTestInTestFrame, document, testString),
+        delay(testTimeout, 'timeout')
+      ]);
+      if (timeout) {
+        throw timeout;
+      }
+      for (const log of logs) {
+        yield put(updateLogs(log));
+      }
+      if (pass) {
+        newTest.pass = true;
+      } else {
+        throw err;
+      }
+    } catch (err) {
+      newTest.message = text.replace(/<code>(.*?)<\/code>/g, '$1');
+      if (err === 'timeout') {
+        newTest.err = 'Test timed out';
+        newTest.message = `${newTest.message} (${newTest.err})`;
+      } else {
+        const { message, stack } = err;
+        newTest.err = message + '\n' + stack;
+        newTest.stack = stack;
+      }
+      console.error(err);
+      yield put(updateConsole(newTest.message));
+    } finally {
+      testResults.push(newTest);
+    }
+  }
+  return testResults;
+}
+
+function* updateMainSaga() {
+  try {
+    const { html, modern } = challengeTypes;
+    const { challengeType } = yield select(challengeMetaSelector);
+    if (challengeType !== html && challengeType !== modern) {
+      return;
+    }
+    const state = yield select();
+    const frameMain = yield call(createMainFramer, document, state);
+    const ctx = yield call(buildFromFiles, state);
+    yield call(frameMain, ctx);
+  } catch (err) {
+    console.error(err);
+  }
+}
+
 export function createExecuteChallengeSaga(types) {
-  return [takeLatest(types.executeChallenge, ExecuteChallengeSaga)];
+  return [
+    takeLatest(types.executeChallenge, ExecuteChallengeSaga),
+    takeLatest(
+      [
+        types.updateFile,
+        types.previewMounted,
+        types.challengeMounted,
+        types.resetChallenge
+      ],
+      updateMainSaga
+    )
+  ];
 }
