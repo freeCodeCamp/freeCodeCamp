@@ -32,9 +32,9 @@ not x | if x is false, then True, else False | (3)
 
 ### `and`:
 
-    >>> True and False    # Short-circuited at first argument.
+    >>> True and False    # Second argument is evaluated.
     False
-    >>> False and True    # Second argument is evaluated.
+    >>> False and True    # Short-circuted at first argument.
     False
     >>> True and True     # Second argument is evaluated.
     True
@@ -45,3 +45,6 @@ not x | if x is false, then True, else False | (3)
     False
     >>> not False
     True
+    >>> False or False   # Second argument is evaluated.
+    False
+

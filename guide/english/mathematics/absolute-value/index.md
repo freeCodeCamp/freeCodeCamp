@@ -3,7 +3,7 @@ title: Absolute Value
 ---
 ## Absolute Value
 
-Absolute value is the non-negative value of a number.
+Absolute value is the non-negative value of a number, whether that number is positive or negative.
 You can think of a number's absolute value as its distance from zero.
 It can be defined as,
 

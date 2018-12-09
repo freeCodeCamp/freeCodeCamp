@@ -97,6 +97,25 @@ If this were a while loop, the code within the brackets would never get run beca
 ## For loops
 For loops are for when we want something to run a set number of times.
 
+## Here is an example to print from A to Z
+```c
+#include <stdio.h>
+int main()
+{
+    char c;
+
+    for(c = 'A'; c <= 'Z'; ++c)
+       printf("%c ", c);
+    
+    return 0;
+}
+```
+**Output**
+```c
+A B C D E F G H I J K L M N O P Q R S T U V W X Y Z
+```
+
+
 ### Syntax
 ```
 for(initialisation; condition; changer)

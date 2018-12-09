@@ -16,7 +16,6 @@ title: Basic HTML
 </html>
 ```
 
-
 ### Sample HTML Program
 
 ```html
@@ -57,4 +56,5 @@ The `<body></body>` is were the tags that will display on the page are such as `
 
 #### More Information
 <!-- Please add any articles you think might be helpful to read before writing the article -->
+ - [MDN](https://developer.mozilla.org/en-US/docs/Web/HTML)
  - [W3schools](https://www.w3schools.com/html/)

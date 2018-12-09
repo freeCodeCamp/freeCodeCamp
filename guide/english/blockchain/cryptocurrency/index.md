@@ -7,9 +7,9 @@ title: Cryptocurrency
 >
 > – Satoshi Nakamoto, 09 January 2009, announcing Bitcoin on SourceForge.
 
-Cryptocurrency is a subset of digital currency, which acts as a medium of exchange amongst two parties. It is known as crypto-currency because of the utilization of cryptography to strictly assure the security of transactions taking place on the network. There are various cryptocurrencies including Litecoin, Dash, Ethereum, Ripple, and the currently most popular currency - Bitcoin.
+Cryptocurrency is a subset of digital currency, which acts as a medium of exchange amongst two parties. It is known as crypto-currency because of the utilization of cryptography to strictly assure the security of transactions taking place on the network. There are various cryptocurrencies including Litecoin, Dash, Ethereum, Ripple, and the currently most popular currency - Bitcoin.  A more complete list, with more than 2000, can be found on [CoinMarketCap](https://coinmarketcap.com/).
 
-The original purpose of cryptocurrency was to remove the intervention of middlemen or third-parties in order to make transactions swift and secure, with anonymity maintained for all users operating through their respective systems (called 'nodes') on a network.
+The original purpose of cryptocurrency was to remove the intervention of an intermediary (middleman) or third-parties in order to make transactions swift and secure, with anonymity maintained for all users operating through their respective systems (called 'nodes') on a network.
 
 There are hundreds to thousands of cryptocurrencies as of 2018 with new ones coming out on a regularly. Most will never take off. This form of peer-to-peer value exchange is in its infancy still; Bitcoin and Cryptocurrencies have yet to become widely used. Venezuela has made history by becoming the first nation to introduce a national cryptocurrency in a time of national emergency with a goal of circumventing US sanctions and access to international financing.
 
@@ -34,7 +34,10 @@ Every cryptocurrency has three layers:
 
 Many cryptocurrencies such as Bitcoin can be earned by validating transactions on the network. This process of validation is called "proof of work" and consists of mathematically guessing a random numbers (usually less than a certain determined value or "difficulty") to attempt to match the blockchain's irreversible cryptographic hash function. As more transactions are validated (and rewards for validation are collected) over time, the difficulty of finding the correct hash increases. An increase in the popularity of cryptocurrency mining over the past few years has outpaced the development of the average computational power of a household computer, so in order to mine effectively, one requires a computer (or computers) with especially powerful graphics cards (such as the Nivida GTX 1080) or specialized cryptocurrency mining equipment (such as the Fast-Hash One or CoinTerra TerraMiner IV). It should also be noted that, because of drawbacks of proof-of-work validation (such as energy inefficiency), some cryptocurrencies are exploring alternative algorithms such as "proof of burn".
 
-Investment in cryptocurrencies is highly speculative. With much volitility in the market due to the blockchain technologies still being in their infancy and compounded with a glut of inexperienced invstors the prices of the various currencies often change rapidly. Investors can trade fiat and crypto currencies on exchanges such as Binance, Bitrex, or Coinbase. The latest market peek was in January of 2018 with Bitcoin reaching above $20,000 USD on some exchanges. 
+As with traditional currencies, it is possible to invest in cryptocurrencies. This can be done through centralized exchanges, like Binance, Bittrex, or Coinbase; or decentralized ones like IDEX or EtherDelta. Cryptocurrency trading started to become noticeable around 2013, and the total market capitalization has been on the rise since then, peaking in January of 2018. 
+
+Investment in cryptocurrencies is highly speculative. With much volatility in the market due to the blockchain technologies still being in their infancy and, compounded with a glut of inexperienced investors, the prices of the various currencies often change rapidly.
+
 
 ## Create your own cryptocurrency
 
@@ -95,8 +98,39 @@ You can also run your blockchain node like in Ethereum which will be pre-funded 
 *	Tokens lost in incentivising miners
 *	Listing on exchange is very dificult
 
-### Background history on origins of cryptocurrency:
-[Blockchain origins story](https://www.activism.net/cypherpunk/manifesto.html)
+## Real World Application of Cryptocurrencies
+
+#### Real estate:
+Buying a house with your own cryptocurrency is now made possible. The world’s first international real estate agency that accepts cryptocurrency as payment Propy.com. Propy enables you to buy property with the Blockchain technology.
+MyCOINrealty.com also makes it possible to advertise homes you can purchase with Bitcoin. A few examples of already made transactions are: A purchase of a spectacular villa in Indonesia worth 1000 BTC in 2014 and 157,000 BTC home in Vegas.
+
+#### Charities:
+Corruption keeps a lot of well-wishers from participating. This keeps the money away from people who genuinely need those funds and will continue suffering.
+Blockchain and Cryptocurrency can be used to help solve this problem and deter corruption and fund leaks. The World Food Program (WFP) is already using Blockchain to carefully distribute cash assistance to the hungry. 
+
+#### Buying and Selling content:
+Artist have to deal through intermediaries to get your work sold. This can be solved by selling your work on websites like Bitpremier.com which provides a market platform for you to sell or buy luxury goods. A great example of a user who benefited from this platform is artist named “Reinier van Schoonderwoerd den Bezemer” a artist based in Amsterdam who sold his piece “Collaboration” at a whopping 10.000 euro
+
+There are many more ways that cryptocurrency is changing aspects of our lives; ranging from economic to social. As crypto gains popularity more and more uses will come into the world of Cryptocurrency. 
+
+## Consensus Protocols:
+
+#### Proof of Work:
+In this more well-known protocol, miners compete with each other to solve a math problem first and to be rewarded with a cryptocurrency reward for their work in securing the network. When a math problem is solved, a new block full of transactions gets added onto the blockchain. Bitcoin operates on a proof-of-work algorithm.
+
+#### Proof of Stake:
+In proof of stake, the network is secured via network participants staking or wagering their coins. If network participants misbehave, they will lose the coins that they staked. As a reward for properly securing the network, stakers will periodically receive a small amount of coins relative to how many coins they put up for staking. Instead of competing to solve a difficult math problem to validate blocks, block validators under proof of stake are randomly chosen. Proof of stake is typically significantly less energy-intensive than proof of work.
+
+
+## Permissionless Blockchains
+Rather than imposing barriers to entry, permissionless blockchains are public and open for anyone to join. Since such networks can reasonably expect all kind of agents - including malicious actors - the key lies in incentivizing good behavior in a critical majority of the network, such that:
+-	The malicious actors cannot take over the network through an escalated attack.
+-	The malicious actors cannot collude to undertake an organized majority attack on the network.
+-	The payoffs of securing the network are consistently higher than the cost of attacking the network.
+-	The cost of attacking the network is prohibitively high.
+
+### Background History on Origins of Cryptocurrency:
+[Blockchain Origins Story](https://www.activism.net/cypherpunk/manifesto.html)
 Cypherpunks, crypoanarchists, and libertarians paved the way for the right to privacy and deregulating the government's control and diminishing individual citizen's autonomy.
 
 ### Different Types of Cryptocurrency

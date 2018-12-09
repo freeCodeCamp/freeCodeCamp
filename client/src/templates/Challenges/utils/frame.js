@@ -12,7 +12,6 @@ import {
 import { configure, shallow, mount } from 'enzyme';
 import Adapter16 from 'enzyme-adapter-react-16';
 import { setConfig } from 'react-hot-loader';
-import 'chai';
 
 import { isJSEnabledSelector } from '../redux';
 

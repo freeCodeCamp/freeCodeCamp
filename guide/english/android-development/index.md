@@ -98,9 +98,12 @@ The best part of learning Android is that many of the courses and material avail
 The link to the basic course is here - [Developing Android Apps](https://udacity.com/course/new-android-fundamentals--ud851).
 The link to the advanced course is here - [Advanced Android App Development](https://www.udacity.com/course/advanced-android-app-development--ud855). 
 
+### Code Samples
+
+It is good to check out code samples and projects for your learning process. There are many code samples available online. Here is a link for some android code samples - [Samples | Android Developers](https://developer.android.com/samples/).
+
 ### Android Studio
 
 [Android Studio](https://developer.android.com/studio/)  
 [Installing Android Studio](https://developer.android.com/studio/install)  
 [Running Apps in an Emulator](https://developer.android.com/studio/run/emulator)
-

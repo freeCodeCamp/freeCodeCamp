@@ -9,7 +9,7 @@ Hybrid apps have many benefits over pure native apps, specifically in terms of p
 
 ### Building Hybrid Apps With Ionic
 
-Those familiar with web development will find the structure of an Ionic app straightforward. At its core, it’s just a web page running in an native app shell! That means we can use any kind of HTML, CSS, and Javascript we want. 
+Those familiar with web development will find the structure of an Ionic app straightforward. At its core, it’s just a web page running in a native app shell! That means we can use any kind of HTML, CSS, and Javascript we want. 
 
 As of Ionic 2, the framwork uses Angular (previously using AngularJS), please see seperate freeCodeCamp guides on Angular.
 
