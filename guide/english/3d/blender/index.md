@@ -11,8 +11,19 @@ Blender is now especially useful as the 3D printer technology has become more of
 
 Blender is free and open source software, released under the  **_GNU General Public License (GPL)_**.
 
-#### More Information:
+### Some Useful Blender Keyboard Shortcuts:
+- `RMB` (Right Mouse Button): Selecting an item
+- `LMB` (Left Mouse Button): Performing an action on the selection
+- `Shift+RMB`: Adding more items to the selection
+- `G` (+X/Y/Z): Grab an item and move it with your mouse (+X/Y/Z will move it on the X axis/Y axis/Z axis)
+- `R` (+X/Y/Z): Rotate an item
+- `S`: Scale an item
+- `Shift+C`: Recentring the cursor
+- `Tab`: Get into EditMode
+- `CTRL+R`: Edge Loop
 
+#### More Information:
 * [Blender Official Website](https://www.blender.org)
 * [Blender Documentation](https://docs.blender.org/)
 * [The Blender Foundation](https://www.blender.org/foundation/)
+* [Blendswap](https://www.blendswap.com/) contains loads of material (characters, scenes, etc) with different types of licences
