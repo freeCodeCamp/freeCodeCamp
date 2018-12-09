@@ -2,12 +2,18 @@ const path = require('path');
 require('dotenv').config({ path: path.resolve(__dirname, '../../../.env') });
 const MongoClient = require('mongodb').MongoClient;
 const faker = require('faker');
-const shortId = require('shortid');
+const shortid = require('shortid');
 const slugg = require('slugg');
 const { homeLocation } = require('../../../config/env.json');
 const debug = require('debug');
 
 const log = debug('fcc:tools:seedNewsArticles');
+
+shortid.characters(
+  '0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ$+'
+);
+
+const shortId = () => shortid.generate();
 
 const { MONGOHQ_URL, NODE_ENV: env } = process.env;
 
@@ -61,7 +67,7 @@ const sixMonths = 15780000000;
 
 function generateArticle() {
   const now = Date.now();
-  const id = shortId.generate();
+  const id = shortId();
   const title = faker.lorem.sentence();
   const paragraphs = faker.random.number(10) || 1;
   const arrayToLoopOver = new Array(paragraphs).fill('');
@@ -79,7 +85,7 @@ function generateArticle() {
       username: faker.internet.userName()
     },
     featureImage: {
-      src: faker.image.image(2000, 1300),
+      src: 'https://picsum.photos/2000/1300?random',
       alt: faker.lorem.sentence(),
       caption: paragraphs >= 5 ? faker.lorem.sentence() : ''
     },
@@ -92,7 +98,7 @@ function generateArticle() {
       () => `<p>${faker.lorem.paragraph()}</p>`
     ),
     published: true,
-    featured: true,
+    featured: Math.random() < 0.6,
     underReview: false,
     viewCount: faker.random.number(90000),
     firstPublishedDate: fakeDate,

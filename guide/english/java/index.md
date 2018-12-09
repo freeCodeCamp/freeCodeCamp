@@ -105,7 +105,7 @@ Let's write a sample Hello World application. Open any editor / IDE of choice an
 
     }
 
-**N.B.** Keep in mind in Java file name should be the **exact same name of the public class** in order to compile!
+**N.B.** Keep in mind that in Java the file name should be the **exact same name of the public class** in order to compile!
 
 Now open the terminal / Command Prompt. Change your current directory in the terminal / Command Prompt to the directory where your file is located. And compile the file :
 

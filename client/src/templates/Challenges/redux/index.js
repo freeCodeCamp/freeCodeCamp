@@ -14,8 +14,9 @@ import codeStorageEpic from './code-storage-epic';
 import currentChallengeEpic from './current-challenge-epic';
 
 import { createIdToNameMapSaga } from './id-to-name-map-saga';
+import { createExecuteChallengeSaga } from './execute-challenge-saga';
 
-const ns = 'challenge';
+export const ns = 'challenge';
 export const backendNS = 'backendChallenge';
 
 const initialState = {
@@ -88,7 +89,10 @@ export const epics = [
   currentChallengeEpic
 ];
 
-export const sagas = [...createIdToNameMapSaga(types)];
+export const sagas = [
+  ...createIdToNameMapSaga(types),
+  ...createExecuteChallengeSaga(types)
+];
 
 export const createFiles = createAction(types.createFiles, challengeFiles =>
   Object.keys(challengeFiles)

@@ -4,7 +4,7 @@ title: Class Selector
 ## Class Selector
 A Class Selector is used in a CSS file to apply style to the HTML elements with the corresponding class name. In HTML, you can set the class name for any element by adding a `class` attribute.
 
-To select elements with a specific class, we use a (.) named as period character, with the name of the class.
+To select elements with a specific class, we use a full stop `.` or "period" character, with the name of the class.
 
 For example
 .center {

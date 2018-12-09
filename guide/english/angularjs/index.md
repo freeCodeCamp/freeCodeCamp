@@ -66,3 +66,7 @@ HTML:
 ```html
 <script src="/bower_components/angular/angular.js"></script>
 ```
+
+#### More Information
+
+- [Angular JS App Tutorial](https://docs.angularjs.org/tutorial)

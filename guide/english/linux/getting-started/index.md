@@ -45,8 +45,13 @@ ls
 ```
 Now we can see our directories in our home.
 
+
 pwd (Print Working Directory) - This command lists the directory you are currently in.
 
 ```unix
 pwd
 ```
+
+#### More Information
+
+- ["The Linux Command Line" By William Shotts](http://linuxcommand.org/tlcl.php) 

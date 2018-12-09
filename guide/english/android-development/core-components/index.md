@@ -93,6 +93,56 @@ public class MainActivity extends Activity {
 }
 ```
 
+### [Fragments](https://developer.android.com/guide/components/fragments)
+A fragment is also known as a sub-activity because it must be part of an activity. An android application supports multiple fragments in a single activity. Fragments represent multiple screen inside one activity. You can combine multiple fragments in a single activity to build a multi-pane UI and reuse a fragment in multiple activities. Fragments have their own life cycle and is dependent on the life cycle of the activity it is part of.
+
+#### [Fragment Lifecycle](https://developer.android.com/guide/components/fragments#Lifecycle)
+![Fragment Lifecycle](https://developer.android.com/images/activity_fragment_lifecycle.png)
+ #### Fragment callbacks and their uses
+``` java
+@Override
+public void onAttach(Activity activity) {
+   super.onAttach(activity);
+   // add your code here which executes when fragment instance is associated
+}
+
+@Override
+public void onCreate(Bundle savedInstanceState) {
+   super.onCreate(savedInstanceState);
+   // add your code here which executes when fragment's instance initializes
+}
+
+@Override
+public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
+   View v = inflater.inflate(R.layout.fragment_test, container, false);
+   // add your code here to draw the UI for the first time means in this method we can get the reference of the views which are created         // in our xml file
+ return v;
+}
+
+@Override
+public void onViewCreated(View view, Bundle savedInstanceState) {
+   super.onViewCreated(view, savedInstanceState);
+   // add your code here which executes after the execution of onCreateView() method.
+}
+
+@Override
+public void onActivityCreated(Bundle savedInstanceState) {
+   super.onActivityCreated(savedInstanceState);
+   // add your code here which executes when the host activity is created.
+}
+
+@Override
+public void onDestroyView() {
+   super.onDestroyView();
+   // add your code here which executes when the view's and other related resources created in onCreateView() method are removed
+}
+
+@Override
+public void onDetach() {
+   super.onDetach();
+   // add your code here which executes when fragment has been disassociated from its hosting activity
+}
+```
 
 ### [Services](https://developer.android.com/guide/components/services)
 A _service_ is a component without a user interface, and is used to perform long-running operations in the background.
@@ -102,7 +152,7 @@ There are three kinds of services:
 - _Background_ services: they are not directly related to user's activities, so they can be killed if more RAM is needed.
 - _Bound_ services: they are  offers a client-server interface that allows components to interact with the service, send requests, receive results, and even do so across processes with interprocess communication (IPC).
 
-### [Services Lifecycle](https://developer.android.com/guide/components/services#Lifecycle)
+#### [Services Lifecycle](https://developer.android.com/guide/components/services#Lifecycle)
 ![Services Lifecycle](https://developer.android.com/images/service_lifecycle.png)
 
 ### [Broadcast receivers](https://developer.android.com/guide/components/broadcasts)

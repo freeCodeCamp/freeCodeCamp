@@ -168,7 +168,6 @@ Result:
   </tr>
 </table>
 
-
-
 #### More Information:
-<a href='https://developer.mozilla.org/en-US/docs/Web/HTML/Element/table' target='_blank' rel='nofollow'>MDN Article on the HTML <table> tag</a>
+* [MDN - table](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/table)
+* [YouTube - HTML Tables Tutorial](https://www.youtube.com/watch?v=BczLWImAmBk)

@@ -5,7 +5,17 @@ title: Macros in C
 
 A macro is a piece of code with a given name. When the name is used, it is replaced by the content of the macro. The `#define` keyword is used to define new macros. It's followed by a name and a content. By convention, macro names are written in uppercase. There are two type of macros: `Object-like` macros and `Function-like` macros.
 
-#### Object-like Macros
+#### Why Macros?
+The C compiler will go through your code and replace every occurrence of a macro with it's value. This begs the question, what is the point of using macros? The answer: macros are a tool for the programmer, not for the program.
+
+If you have the number `365` hard-coded into your program, it becomes difficult for you and other people who may look at your code to understand what it means. If you `#define DAYSINYEAR 365` and use that instead of the number, the code makes a lot more sense.
+
+It's also beneficial if you have many instances of the same thing. If you'd used `2018` as the year in multiple places in your program, and then the year changed to `2019`, you would have to go and find every single line containing `2018` and change it, hoping you didn't miss any. With the macro `#define YEAR 2018`, you can simply change the value of the macro and be confident all of the values have been updated accordingly.
+
+
+#### Defining macros
+The `#define` keyword is used to define new macros. It's followed by a name and a content, but no equals sign. By convention, macro names are written in uppercase.
+
 ```C
 #define PI 3.14
 ```

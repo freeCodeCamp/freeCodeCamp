@@ -81,8 +81,9 @@ If you are just a beginner in Android Developement. You can directly start learn
 
 ### Courses
 
-[Udacity Android Nanodegree Program](https://udacity.com/course/android-developer-nanodegree-by-google--nd801)
-[Udemy The Complete Android Kotlin Developer Course](https://www.udemy.com/the-complete-kotlin-developer-course/)
+- [Udacity Android Nanodegree Program](https://udacity.com/course/android-developer-nanodegree-by-google--nd801)
+- [Android Developer Course on Udemy](https://www.udemy.com/become-an-android-developer-from-scratch)
+- [Udemy The Complete Android Kotlin Developer Course](https://www.udemy.com/the-complete-kotlin-developer-course/)
 
 ### Books
 
@@ -93,13 +94,16 @@ If you are just a beginner in Android Developement. You can directly start learn
 
 ### Developing Android Apps
 
-The best part of learning Android is that many of the courses and material available out there online are free.
+The best part of learning Android is that many of the courses and material available are online and free. Take your skillset up a notch.
 The link to the basic course is here - [Developing Android Apps](https://udacity.com/course/new-android-fundamentals--ud851).
 The link to the advanced course is here - [Advanced Android App Development](https://www.udacity.com/course/advanced-android-app-development--ud855). 
+
+### Code Samples
+
+It is good to check out code samples and projects for your learning process. There are many code samples available online. Here is a link for some android code samples - [Samples | Android Developers](https://developer.android.com/samples/).
 
 ### Android Studio
 
 [Android Studio](https://developer.android.com/studio/)  
 [Installing Android Studio](https://developer.android.com/studio/install)  
 [Running Apps in an Emulator](https://developer.android.com/studio/run/emulator)
-
