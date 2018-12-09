@@ -6,9 +6,9 @@ title: Python Max Function
 ## Arguments
 
 This function takes two or more numbers or any kind of iterable as an argument. While giving an iterable as an argument we must make sure that all the elements in the iterable are of the same type. This means that we cannot pass a list which has both string and integer values stored in it.
-Syntax:
-max(iterable, *iterables[,key, default])
-max(arg1, arg2, *args[, key])
+<br>Syntax:
+<br>_max(iterable, *iterables[,key, default])_
+<br>_max(arg1, arg2, *args[, key])_
 
 Valid Arguments:  
 
