@@ -1,9 +1,6 @@
 ---
 id: 587d7fa5367417b2b2512bbd
 title: Extend One Set of CSS Styles to Another Element
-required:
-  - src: 'https://cdnjs.cloudflare.com/ajax/libs/sass.js/0.10.9/sass.sync.min.js'
-    raw: true
 challengeType: 0
 ---
 
@@ -30,9 +27,9 @@ Make a class <code>.info-important</code> that extends <code>.info</code> and al
 ```yml
 tests:
   - text: Your <code>info-important</code> class should have a <code>background-color</code> set to <code>magenta</code>.
-    testString: 'assert(code.match(/\.info-important\s*?{[\s\S]*background-color\s*?:\s*?magenta\s*?;[\s\S]*}/gi), "Your <code>info-important</code> class should have a <code>background-color</code> set to <code>magenta</code>.");'
+    testString: assert(code.match(/\.info-important\s*?{[\s\S]*background-color\s*?:\s*?magenta\s*?;[\s\S]*}/gi), 'Your <code>info-important</code> class should have a <code>background-color</code> set to <code>magenta</code>.');
   - text: Your <code>info-important</code> class should use <code>@extend</code> to inherit the styling from the <code>info</code> class.
-    testString: 'assert(code.match(/\.info-important\s*?{[\s\S]*@extend\s*?.info\s*?;[\s\S]*/gi), "Your <code>info-important</code> class should use <code>@extend</code> to inherit the styling from the <code>info</code> class.");'
+    testString: assert(code.match(/\.info-important\s*?{[\s\S]*@extend\s*?.info\s*?;[\s\S]*/gi), 'Your <code>info-important</code> class should use <code>@extend</code> to inherit the styling from the <code>info</code> class.');
 
 ```
 
