@@ -5,7 +5,7 @@ title: Match Single Characters Not Specified
 In this challenge, we are asked to return a collection of matches that are not exactly specified. Whereas previous regexp challenges would have you match within the character case [a-z], this challenge instead asks us to negate these matches using the caret character [^a-z]. Our goal then is to return a negated collection (non-matches) of letters that are not vowels nor numbers.
 
 ## Hint 1:
-Did you remember to surround your regexp in both brackets and slashes? 
+Did you remember to surround your regexp in both brackets and slashes?
 ```javascript
 let exampleRegExp = /[^a-z]/;
 ```
