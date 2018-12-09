@@ -43,8 +43,8 @@ In order to change the hexcode colour of a class within the style element, we si
 ### Before
 ```html
 <style>
-.ClassName {
-  color: #000000;
+  .ClassName {
+    color: #000000;
 }
 </style>
 ```
@@ -67,8 +67,8 @@ From the Problem above, we need to change `#000000` from the `color` element in 
 ### Before changing `color` of class `.red-text`
 ```html
 <style>
-.red-text {
-  color: #000000;
+  .red-text {
+    color: #000000;
 }
 </style>
 ```
@@ -77,7 +77,7 @@ From the Problem above, we need to change `#000000` from the `color` element in 
 ```html
 <style>
 .red-text {
-  color: rgb(255, 0, 0); /* Color has changed into red when we used this rgb value given from the table*/
+  color: rgb(255, 0, 0); /* Color has changed into red when we used this rgb value from the table*/
 }
 </style>
 ```
@@ -87,14 +87,14 @@ We will follow the same steps for the rest of the classes shown here:
 ### Before changing `color` of other classes
 ```html
 <style>
-.orchid-text {
-  color: #000000; 
+  .orchid-text {
+    color: #000000; 
 }
-.sienna-text {
-  color: #000000; 
+  .sienna-text {
+    color: #000000; 
 } 
-.blue-text {
-  color: #000000; 
+  .blue-text {
+    color: #000000; 
 }  
 </style>
 ```
@@ -102,14 +102,14 @@ We will follow the same steps for the rest of the classes shown here:
 ### After changing `color` of other classes
 ```html
 <style>
-.orchid-text {
-  color: rgb(218, 112, 214); /*Color has changed into orchid when we used this rgb value given from the table*/
+  .orchid-text {
+    color: rgb(218, 112, 214); /*Color has changed into orchid when we used this rgb value from the table*/
 }
-.sienna-text {
-  color: rgb(160, 82, 45); /* Color has changed into sienna when we used this rgb value given from the table*/
+  .sienna-text {
+    color: rgb(160, 82, 45); /* Color has changed into sienna when we used this rgb value from the table*/
 }
-.blue-text {
-  color: rgb(0, 0, 255); /* Color has changed into blue when we used this rgb value given from the table*/
+  .blue-text {
+    color: rgb(0, 0, 255); /* Color has changed into blue when we used this rgb value from the table*/
 }
 </style>
 ```
