@@ -13,4 +13,6 @@ There are various algorithms to generate prime numbers. Here's a link to one of 
 * [Sieve of Eratosthenes algo to generate prime numbers](https://www.geeksforgeeks.org/sieve-of-eratosthenes/)
 
 #### More Information:
-For more information on prime numbers, look here: [Prime Number Chart](https://guide.freecodecamp.org/tools/prime-number-chart)
+- [Prime Number Chart](https://guide.freecodecamp.org/tools/prime-number-chart)
+- [Wikibooks: Prime Number Generating Algorithms](https://en.wikibooks.org/wiki/Some_Basic_and_Inefficient_Prime_Number_Generating_Algorithms)
+
