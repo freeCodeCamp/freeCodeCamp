@@ -16,3 +16,16 @@
 .learn-page-wrapper p {
   margin-bottom: 0.75rem;
 }
+
+#learn-app-wrapper {
+  margin: 0 2em;
+  position: absolute;
+  width: 100%;
+  right: -1.4em;
+  padding: 5px 10px 5px 10px;
+}
+
+.reflex-layout.reflex-container.vertical {
+  width: 100%;
+  margin: 0 18px;
+}

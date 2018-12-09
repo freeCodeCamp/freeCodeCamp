@@ -1,11 +1,25 @@
+<table>
+    <tr>
+        <!-- Do not translate this table -->
+        <td> Read these guidelines in </td>
+        <td><a href="/CONTRIBUTING.md"> English </a></td>
+        <td><a href="/docs/chinese/CONTRIBUTING.md"> 中文 </a></td>
+        <td><a href="/docs/russian/CONTRIBUTING.md"> русский </a></td>
+        <td><a href="/docs/arabic/CONTRIBUTING.md"> عربي </a></td>
+        <td><a href="/docs/spanish/CONTRIBUTING.md"> Español </a></td>
+        <td><a href="/docs/portuguese/CONTRIBUTING.md"> Português </a></td>
+    </tr>
+</table>
+
 # Cómo trabajar en artículos de la Guía
 
 Con tu ayuda, podemos crear un herramienta de referencia accesible que ayudará a millones de personas que están aprendiendo a programar ahora y en los años por venir. 💛
 
 Puedes:
 
-- [Ayudarnos Creando y Editando Artículos de la Guía](#steps-for-creating-and-editing-guide-articles).
-- [Ayudarnos revisando pull requests para Artículos de la Guía]()
+
+- [Ayudarnos creando y editando articulos de la Guía](#steps-for-creating-and-editing-guide-articles).
+- [Ayudarnos revisando Pull Requests para artículos de la Guía]()
 
 ## Pasos para crear y editar artículos de la Guía
 
@@ -20,26 +34,27 @@ O simplemente [crea un tema](https://github.com/freeCodeCamp/freeCodeCamp/issues
 
 ### [Sigue estas recomendaciones de nuestra guía de estilo para crear un artículo atractivo](/docs/style-guide-for-guide-articles.md)
 
-### Crear Pull Request para propoenr cambios
+### Crear Pull Request para proponer cambios
 
-Hay dos formas de proponer cambios en el repositorio tras editar o añadir un articulo:
+Hay dos formas de proponer cambios en el repositorio despues de editar o añadir un articulo:
 
-- [Utilizando la interfaz de GitHub en tu navegador](#using-the-github-web-interface-on-your-browser).
-- [Trabajando en tu ordenador personal](#working-on-your-local-machine) (_recomendado_ para previsualiar cambios).
+- [Utilizando el sistema de comunicacion de GitHub en tu navegador](#using-the-github-web-interface-on-your-browser).
+- [Trabajando en tu maquina local](#working-on-your-local-machine) (_recomendado_ para pre-visualiar cambios).
 
-#### Utilizar la interaz web de GitHub
+#### Utilizar el sistema de comunicacion web de GitHub
 
 Mira este vídeo de demostración o sigue los siguientes pasos:
 
-**[TODO]** Update the GIF recording.
+**[TODO]** Actualizar la grabacion GIF.
 
-![GIF showing the GitHub interface steps](#)
+![GIF mostrando los pasos de la interfaz de GitHub](#)
 
-1. Ve a la carpeta **"páginas"** (situad en [`guide`](/guide)) donde encontrarás el artículo raiz que quieras editar.
+
+1. Ve a la carpeta **"páginas"** (situado en [`guide`](/guide)) donde encontrarás el artículo raiz que quieras editar.
 
     > Todas las raíces estarán en un archivo index.md
 
-2. Pincha en <kbd>Editar este archivo</kbd> y haz tus cambios al archivo en la consola de edición de GitHub.
+2. Pincha en <kbd>Editar este archivo</kbd> y hace tus cambios al archivo en la consola de edición de GitHub.
 
     > Si el icono aparece gris y te muestra la alerta "Debes estar en una rama para hacer o proponer cambios a este archivo", significa que probablemente estés en la rama de otra persona. En la parte superior izquierda de la página hay una casilla desplegable que dice: "Árbol: #######". Pincha en el desplegable y cambia la rama a maestra. El icono de edición debería estar disponible ahora.
 
@@ -56,6 +71,7 @@ Mira este vídeo de demostración o sigue los siguientes pasos:
     docs: Actualizadas recomendaciones de contribución
     ```
 
+
     Se breve, no más de 50 caracteres. Puedes añadir información adicional en la descripción del mensaje.
 
     esto no supone ningún esfuerzo adicional respecto a mensajes como 'update file' o 'add index.md'
@@ -66,17 +82,17 @@ Mira este vídeo de demostración o sigue los siguientes pasos:
 
 5. En la siguiente pantalla, puedes añadir más detalles sobre tu PR, luego click en <kbd>Crear pull request</kbd>.
 
-Enhorabuena 🎉! Acabas de crear una pull request.
+Felicidades 🎉! Acabas de crear un pull request.
 
 #### Trabajar desde tu sistema local (_recomendado_ para revisar cambios)
 
-No es obligatorio que trabajes en tu sistema personal, salvo que desees previsualizar tus cambios, o trabajar con mejoras y arreglos de UI. También es recomendable si tienes problemas con git como errores de integración, rebase, etc.
+No es obligatorio que trabajes en tu sistema personal, salvo que desees pre-visualizar tus cambios, o trabajar con version actualizada y arreglos de UI. También es recomendable si tienes problemas con git como errores de integración, rebase, etc.
 
-##### Lee estas recomendaciones en [Cómo configurar freeCodeCamp localmente](/docs/how-to-setup-freecodecamp-locally.md)
+##### Lee las recomendaciones en [Cómo configurar freeCodeCamp localmente](/docs/how-to-setup-freecodecamp-locally.md)
 
 ### Aceptación del PR
 
-Estas son algunos criterios utilizados por los revisores cuando evalúan PRs:
+Estos son algunos criterios utilizados por los criticos cuando evalúan PRs:
 
 - Descripción y título relevantes
 - El PR respeta la [guía de estilo](/docs/style-guide-for-guide-articles)
@@ -84,13 +100,14 @@ Estas son algunos criterios utilizados por los revisores cuando evalúan PRs:
 - Siempre y cuando el PR suponga una mejora o ampliación de la guía, será aceptado aunque tenga errores gramaticales o contenido parcial
 - Los PR más antiguos se revisan primero
 
+
 #### Etiquetas
 
 - **contenido** es para Pull Requests que modifican el contenido de artículos en la guía (añaden un nuevo artículo o actualizan uno existente)
-- **duplicada** es para Pull Request que contienen el mismo contenido que otro PR abierta
-- **cambios solicitados** es para Pull Requests que necesitan algún cambio antes de ser integradas
-- **pasada** es para Pull Requests que con etiqueta _"changes requested"_ que no han tenido actividad durante al menos 2 semanas y serán por tanto cerradas
-  - Un pull request _pasado_ debe cerrarse.
+- **duplicado** es para Pull Request que contienen el mismo contenido que otro PR abierto
+- **cambios solicitados** es para Pull Requests que necesitan algún cambio antes de ser integrados
+- **pasado** es para Pull Requests que con etiqueta _"changes requested"_ que no han tenido actividad durante al menos 2 semanas y serán por tanto cerrados
+  - Un  pull request _pasado_ debe cerrarse.
   - Este es [un ejemplo](https://github.com/freeCodeCamp/freeCodeCamp/pull/235).
 
 #### Contenido conflictivo/duplicado
@@ -99,13 +116,13 @@ Se considera **duplicado** un PR si hace cambios al mismo artículo que otro PR.
 
 En general el revisor:
 
-1. Organizará las PR desde la más antigua
+1. Organizará los PR desde lo más antiguo
 2. Buscará para PRs con contenido similar
-3. Integrará desde la más antigua a las más nueva
+3. Integrará desde lo más antiguo a los más nuevos
 
-Muy probablemente aparecerán conflictos al integrar PRs duplicadas.
+Muy probablemente aparecerán conflictos al integrar PRs duplicados.
 
-Los revisores harán todos los esfuerzos posibles para resolver estos conflictos e integrar las PRs.
+Los revisores harán todos los esfuerzos posibles para resolver estos conflictos e integrar los PRs.
 
 #### Solicitar cambios
 
@@ -114,13 +131,16 @@ Si el Pull Request no es perfecto el revisor podría:
 - solicitar cambios al contribuidor y añadir la etiqueta *cambios solicitados*
 - solucionar errores menores y hacer un envío encima del PR
 
+
 #### Travis CI Build
 
-Todas las PRs deben superar los test de Travis CI antes de poder ser integradas.
+Todos los PRs deben superar los test de Travis CI antes de poder ser integrados.
 
-Si un PR rompe la ejecución (un test de Travis CI falla y muestra una "X" roja) hay tres cauas probables y tendrás que resolver el problemas antes de que podamos integrar el PR:
 
-1. Tu PR crea un nueva artículo pero la falta un archivo `index.md` en algún lugar.
+Si un PR rompe la ejecución (un test de Travis CI falla y muestra una "X" roja) hay tres causas probables y tendrás que resolver el problema antes de que podamos integrar el PR:
+
+
+1. Tu PR crea un nuevo artículo pero le falta un archivo `index.md` en algún lugar.
     - Cada directorio en `src/pages` necesita un archivo `index.md` en él (y debe llamarse `index.md`).
     - Dos escenarios muy probables son
       - llamaste al archivo de forma distinta a `index.md`, o
