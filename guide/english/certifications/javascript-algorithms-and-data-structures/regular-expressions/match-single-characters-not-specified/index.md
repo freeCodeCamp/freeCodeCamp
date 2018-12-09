@@ -15,9 +15,9 @@ If so, then double check you're adding the appropriate flags:
 * ^  : Negates the matches following this flag
 
 ### Hint 2:
-Be sure to check whether your number range is correct -- the challenge asks us to negate all numbers from 0-99. This can be done using the negate caret placed immediately after the first opening bracket of your regexp. 
+Be sure to check whether your number range is correct -- the challenge asks us to negate all numbers from 0 to 9. This can be done using the negate caret placed immediately after the first opening bracket of your regexp.
 ```javacsript
-let numbersRegExp = /[^0-99]/ig; 
+let numbersRegExp = /[^0-9]/ig;
 ```
 
 ### Spoiler Alert - Solution Ahead
@@ -25,6 +25,6 @@ let numbersRegExp = /[^0-99]/ig;
 ## Solution
 ```javascript
 let quoteSample = "3 blind mice.";
-let myRegex = /[^aeiou^0-99]/ig; // Change this line
+let myRegex = /[^aeiou^0-9]/ig; // Change this line
 let result = quoteSample.match(myRegex); // Change this line
 ```
