@@ -3,14 +3,16 @@ id: 587d778a367417b2b2512aa5
 title: Improve Chart Accessibility with the figure Element
 challengeType: 0
 videoUrl: ''
-localeTitle: Улучшить доступность диаграммы с помощью элемента Элемент
+localeTitle: Улучшите читаемость диаграммы
 ---
 
 ## Description
-<section id="description"> HTML5 представил элемент <code>figure</code> вместе со связанной <code>figcaption</code> . Используемые вместе эти элементы обертывают визуальное представление (например, изображение, диаграмму или диаграмму) вместе с его заголовком. Это дает двукратное повышение доступности как с семантической группировкой связанного контента, так и с предоставлением текстовой альтернативы, которая объясняет эту <code>figure</code> . Для визуализации данных, таких как диаграммы, заголовок можно использовать, чтобы кратко отметить тенденции или выводы для пользователей с нарушениями зрения. Другая проблема заключается в том, как переносить табличную версию данных диаграммы за пределы экрана (с использованием CSS) для пользователей с экрана. Вот пример - обратите внимание , что <code>figcaption</code> идет внутри <code>figure</code> тегов и может быть объединен с другими элементами: <blockquote> &lt;Цифра&gt; <br> &lt;img src = &quot;roundhouseDestruction.jpeg&quot; alt = &quot;Фотография Camper Cat, выполняющая удар в круглой форме&quot;&gt; <br> &lt;br&gt; <br> &lt;Figcaption&gt; <br> Мастер Кэмпер Кота демонстрирует правильную форму нокаута. <br> &lt;/ Figcaption&gt; <br> &lt;/ Цифра&gt; <br></blockquote></section>
+
+<section id="description"> HTML5 представил элемент <code>figure</code> вместе со связанной <code>figcaption</code>. Используемые вместе эти элементы обертывают визуальное представление (например, изображение, диаграмму или схему) вместе с его заголовком. Это дает двукратное повышение доступности как с семантической группировкой связанного контента, так и с предоставлением текстовой альтернативы, которая объясняет эту <code>figure</code>. Для визуализации данных, таких как диаграммы, заголовок можно использовать, чтобы кратко отметить тенденции или выводы для пользователей с нарушениями зрения. Другая проблема заключается в том, как переносить табличную версию данных диаграммы за пределы экрана (с использованием CSS) для пользователей с экрана. Вот пример - обратите внимание, что <code>figcaption</code> идет внутри <code>figure</code> тегов и может быть объединен с другими элементами: <blockquote> &lt;Цифра&gt; <br> &lt;img src = &quot;roundhouseDestruction.jpeg&quot; alt = &quot;Фотография Кэмпер Кота, выполняющего удар с разворота&quot;&gt; <br> &lt;br&gt; <br> &lt;Figcaption&gt; <br> Мастер Кэмпер Кот демонстрирует правильный удар с разворота. <br> &lt;/ Figcaption&gt; <br> &lt;/ Цифра&gt; <br></blockquote></section>
 
 ## Instructions
-<section id="instructions"> Camper Cat тяжело работает, создавая сложную гистограмму, показывающую количество времени в неделю, чтобы провести обучение в хитрости, сражении и оружии. Помогите ему лучше структурировать свою страницу, изменив тег <code>div</code> он использовал для тега <code>figure</code> , и тэг <code>p</code> который окружает подпись к тегу <code>figcaption</code> . </section>
+<section id="instructions"> Кэмпер Кот тяжело работает, создавая сложную гистограмму, показывающую количество времени в неделю, затраченное на обучение в хитрости, сражении и оружии. Помогите ему лучше структурировать свою страницу, изменив тег <code>div</code> который он использовал для тега <code>figure</code>, и тэг <code>p</code> который окружает подпись к тегу <code>figcaption</code>. </section>
+
 
 ## Tests
 <section id='tests'>
@@ -23,7 +25,9 @@ tests:
     testString: 'assert($("figcaption").length == 1, "Your code should have one <code>figcaption</code> tag.");'
   - text: У вашего кода не должно быть никаких тегов <code>div</code> .
     testString: 'assert($("div").length == 0, "Your code should not have any <code>div</code> tags.");'
-  - text: Ваш код не должен иметь каких - либо <code>p</code> - теги.
+
+  - text: Ваш код не должен иметь каких - либо <code>p</code> - тегов.
+
     testString: 'assert($("p").length == 0, "Your code should not have any <code>p</code> tags.");'
   - text: <code>figcaption</code> должен быть дочерним элементом тега <code>figure</code> .
     testString: 'assert($("figure").children("figcaption").length == 1, "The <code>figcaption</code> should be a child of the <code>figure</code> tag.");'
@@ -54,13 +58,13 @@ tests:
   <main>
     <section>
 
-      <!-- Add your code below this line -->
+      <!-- Добавьте ваш код под этой строкой -->
       <div>
         <!-- Stacked bar chart will go here -->
         <br>
         <p>Breakdown per week of time to spend training in stealth, combat, and weapons.</p>
       </div>
-      <!-- Add your code above this line -->
+      <!-- Добавьте ваш код над этой строкой -->
 
     </section>
     <section id="stealth">
@@ -90,10 +94,10 @@ tests:
 
 </section>
 
-## Solution
+## Solution (Решение)
 <section id='solution'>
 
 ```js
-// solution required
+// ваше решение должно быть здесь
 ```
 </section>
