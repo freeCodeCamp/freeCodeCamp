@@ -2,14 +2,21 @@
 title: Class Equals
 ---
 ## Class Equals
+To select an item with a class attribute, you use the following selector:
 
-This is a stub. <a href='https://github.com/freecodecamp/guides/tree/master/src/pages/css/selectors/attribute/class-equals/index.md' target='_blank' rel='nofollow'>Help our community expand it</a>.
+```css
+p[class="happy"] {
+    color: yellow;
+}
+```
 
-<a href='https://github.com/freecodecamp/guides/blob/master/README.md' target='_blank' rel='nofollow'>This quick style guide will help ensure your pull request gets accepted</a>.
+This selector is not commonly used, as there is a general class selector. We can rewrite the above selector like this:
 
-<!-- The article goes here, in GitHub-flavored Markdown. Feel free to add YouTube videos, images, and CodePen/JSBin embeds  -->
+```css
+p.happy {
+    color: yellow;
+}
+```
 
 #### More Information:
-<!-- Please add any articles you think might be helpful to read before writing the article -->
-
-
+https://developer.mozilla.org/en-US/docs/Web/CSS/Attribute_selectors
