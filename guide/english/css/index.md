@@ -2,15 +2,11 @@
 title: Cascading Style Sheets (CSS)
 ---
 
-### Cascading Style Sheets (CSS)
+# Cascading Style Sheets (CSS)
 
-![CSS Logo][logo]
+![CSS Logo](https://upload.wikimedia.org/wikipedia/commons/thumb/d/d5/CSS3_logo_and_wordmark.svg/320px-CSS3_logo_and_wordmark.svg.png)
 
-[logo]: https://upload.wikimedia.org/wikipedia/commons/thumb/d/d5/CSS3_logo_and_wordmark.svg/320px-CSS3_logo_and_wordmark.svg.png
-
-CSS is an acronym for Cascading Style Sheets. It was first invented in 1996 and is now a standard feature of all major web browsers.
-
-CSS allows developers to control how web pages look by "styling" the HTML structure of that page.
+CSS stands for *Cascading Style Sheets*. It is a language used for describing the style of a document written in HTML. It was designed to enable the separation of presentation and content, which greatly improved content accessibility and gave more flexibility and control in the specification of presentation, and reduced complexity and repetition in the structural content. It was first invented in 1996, and is now a standard feature of all major web browsers.
 
 CSS specifications are maintained by the [World Wide Web Consortium (W3C)](https://www.w3.org/).
 
@@ -23,7 +19,7 @@ Frameworks exist to make the more complex parts of css easier and more efficient
 Some of the most popular CSS Frameworks are:
 Bootstrap, Foundation, Bulma, uikit, Semantic UI, mini.css, Materialize, Material Design Lite, Spectre, Kube, and tailwind.css
 
-#### Suggested Reading:
+## Suggested Reading:
 A good start is the freeCodeCamp curriculum [Introduction to Basic CSS](https://learn.freecodecamp.org/responsive-web-design/basic-css).
 
 [Jon Duckett's book on HTML and CSS](https://www.amazon.com/HTML-CSS-Design-Build-Websites/dp/1118008189) could be an exellent start for the ones who wish to explore the topic to it's great depth with some amazing examples.
