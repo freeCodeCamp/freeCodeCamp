@@ -10,3 +10,10 @@ is the equivalent of
     i = i - 1;
 
 **Note:** The entire line becomes `i--;`, eliminating the need for the equal sign.
+
+It is also possible to decrease the variable with more than `1`.
+You can do this with the `-=` operator
+     i-=4;
+    
+is the equivalent of
+     i = i - 4;
