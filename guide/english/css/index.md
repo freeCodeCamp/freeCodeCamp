@@ -49,16 +49,15 @@ Some of the most popular CSS Frameworks are:
 Bootstrap, Foundation, Bulma, uikit, Semantic UI, mini.css, Materialize, Material Design Lite, Spectre, Kube, and tailwind.css
 
 ### Suggested Reading:
-
-A good start is the freeCodeCamp curriculum [Introduction to Basic CSS](https://learn.freecodecamp.org/responsive-web-design/basic-css).
+A good start is the FreeCodeCamp curriculum [Introduction to Basic CSS](https://learn.freecodecamp.org/responsive-web-design/basic-css).
 
 Another suggestion for beginners is W3C's [Starting with HTML + CSS](https://www.w3.org/Style/Examples/011/firstcss) teaches how to create a style sheet. 
 
 [Jon Duckett's book on HTML and CSS](https://www.amazon.com/HTML-CSS-Design-Build-Websites/dp/1118008189) could be an exellent start for the ones who wish to explore the topic to it's great depth with some amazing examples.
 
-The site [CSS Zen Garden](http://www.csszengarden.com/) is a great example of how the same HTML code/structure can be styled to look different in unique ways.
+[CSS Zen Garden](http://www.csszengarden.com/) is a great example of how the same HTML code/structure can be styled to look different in unique ways.
 
-The [Odin Project](https://www.theodinproject.com/courses/html5-and-css3)  features a full course on using CSS alongside HTML.
+[The Odin Project](https://www.theodinproject.com/courses/html5-and-css3) features a full course on using CSS alongside HTML.
 
 For a demonstration of the power of CSS, check out [Species In Pieces](http://species-in-pieces.com/#).
 
