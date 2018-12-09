@@ -161,6 +161,38 @@ def swap( A, x, y ):
   A[y] = tmp
 
 ```
+### Example in C
+```c
+#include <stdio.h>
+
+int BubbleSort(int array[], int n);
+
+int main(void) {
+  int arr[] = {10, 2, 3, 1, 4, 5, 8, 9, 7, 6};
+  BubbleSort(arr, 10);
+
+  for (int i = 0; i < 10; i++) {
+    printf("%d", arr[i]);
+  }
+  return 0;
+}
+int BubbleSort(int array[], n)
+{
+for (int i = 0 ; i < n - 1; i++)
+  {
+    for (int j = 0 ; j < n - i - 1; j++)     //n is length of array
+    {
+      if (array[j] > array[j+1])      // For decreasing order use 
+      {
+        int swap   = array[j];
+        array[j]   = array[j+1];
+        array[j+1] = swap;
+      }
+    }
+  }
+}
+```
+
 ### More Information
 <!-- Please add any articles you think might be helpful to read before writing the article -->
 - [Wikipedia](https://en.wikipedia.org/wiki/Bubble_sort)
