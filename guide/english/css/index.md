@@ -21,9 +21,9 @@ Bootstrap, Foundation, Bulma, uikit, Semantic UI, mini.css, Materialize, Materia
 ## Suggested Reading:
 A good start is the freeCodeCamp curriculum [Introduction to Basic CSS](https://learn.freecodecamp.org/responsive-web-design/basic-css).
 
-[Jon Duckett's book on HTML and CSS](https://www.amazon.com/HTML-CSS-Design-Build-Websites/dp/1118008189) could be an exellent start for the ones who wish to explore the topic to it's great depth with some amazing examples.
+Another suggestion for beginners is W3C's [Starting with HTML + CSS](https://www.w3.org/Style/Examples/011/firstcss) teaches how to create a style sheet. 
 
-Another suggestion for beginners is W3C's [Starting with HTML + CSS](https://www.w3.org/Style/Examples/011/firstcss) teaches how to create a style sheet.
+[Jon Duckett's book on HTML and CSS](https://www.amazon.com/HTML-CSS-Design-Build-Websites/dp/1118008189) could be an exellent start for the ones who wish to explore the topic to it's great depth with some amazing examples.
 
 The site [CSS Zen Garden](http://www.csszengarden.com/) is a great example of how the same HTML code/structure can be styled to look different in unique ways.
 
@@ -31,8 +31,8 @@ The [Odin Project](https://www.theodinproject.com/courses/html5-and-css3)  featu
 
 For a demonstration of the power of CSS, check out [Species In Pieces](http://species-in-pieces.com/#).
 
+Want more infomation about CSS? check out [MDN Web Docs for CSS](https://developer.mozilla.org/en-US/docs/Web/CSS) for more resources for developers, BY developers!
+
 When you're practice and working with CSS, you can refer to this [CSS reference](https://cssreference.io/) to help you along the way if you're unsure about a property. A great tool for helping visualize what each CSS property does.
 
 To find some awesome articles and summaries of Front End Development related ideas visit [CSS-Tricks](https://css-tricks.com)
-
-I recommend that you also look at the blog [CSS-Tricks](https://css-tricks.com/snippets/css/).
