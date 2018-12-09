@@ -69,7 +69,9 @@ Consider the expression, <b>“a = 2 + 3”</b>. Here, `2` and `3` are the <i>op
   </tr>
 </table>
 
-Note: To get the result as floating type, one of the operands must also be of float type.
+Notes: 
+- To get the result in floating type, one of the operands must also be of float type.
+- Python arithmetic operations follow the PEMDAS order of precedence.
 
 #### Comparison (Relational) Operators
 
@@ -148,7 +150,7 @@ Consider a = 2 (in binary notation, 10) and b = 3 (in binary notation, 11) for t
   <tr>
     <td align="center">>></td>
     <td>Performs a bitwise right shift. Shifts the bits of left operand, right by the number of bits specified as the right operand </td> 
-    <td>a >> b = 0<br>Binary: 00000010 >> 00000011 = 0</td>
+    <td>a >> b = 0<br>Binary: 00000010 >> 00000011 = 00000000</td>
   </tr>
   <tr>
     <td align="center"><<</td>
@@ -309,6 +311,7 @@ y = x
 z = y
 print z is 1 # prints True
 print z is x # prints True
+print y is x # prints True
 
 str1 = "FreeCodeCamp"
 str2 = "FreeCodeCamp"
