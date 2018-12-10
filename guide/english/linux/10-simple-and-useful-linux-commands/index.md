@@ -2,7 +2,9 @@
 title: Simple and Useful Linux Commands for Daily use and Operations
 ---
 # Simple and Useful Linux Commands
-The commands listed here are basic, and will help you get started quickly. But they’re also powerful, and they’ll continue to be useful as your Linux expertise expands.
+The commands listed here are basic, and will help you get started quickly. But they’re also powerful, and they’ll continue to be useful as your Linux expertise expands. 
+Use these commands in scripts and at the command line. They're all very powerful commands, and Linux's man page has a lot more information about each one.
+
 1. `echo` This takes the text you give it and sends it somewhere—back to the screen, to a file, or to another command. By default it echoes back to the screen, unless used with redirection `>` 
 Example: `echo "hello!"`
 Example 2: `echo "Hello world" > hello.txt`
@@ -18,12 +20,14 @@ Example 2: `echo "Hello world" > hello.txt`
 11. `shutdown` use shut down the system and turn off the power. Example: `shutdown -h now`shuts down system immediately. `shutdown -h +5` shuts down system after five minutes. You can also reboot the system immediately by issuing the command `shutdown -r now`.
 12. `cd` use `cd` to change the directory. Example: `cd dirName` changes the directory to the folder names `dirName`. `cd ..` this command takes to the upper root folder or out of the folder.
 
-Use these commands in scripts and at the command line. They're all very powerful commands, and Linux's man page has a lot more information about each one.
+### Important commands for file manipulation are:
+1. mv [source] [destination] - Moves a file or a folder from source to destination you can also rename a file with these command
+2. rm [file name1], [file name2]... - Removes a file and rm -r [dir name] removes a folder
+3. mkdir [dir name1], [dir name2] ... - Creates a directory
+4. cp [source] [destination] - Copy file from source to destination
+5. touch [file name] - Creates an empty file
 
-***********
-
-Also, important commands used for System Administrators are following:
-
+### Important commands used for System Administrators:
 1. `uptime`
 It shows since how long your system is running and the number of users who are currently logged in. It also displays the load averages for 1, 5 and 15 minutes intervals.
 
@@ -57,10 +61,8 @@ Copy file from source to destination preserving same mode.
 11. `mv` 
 Move file from source to destination preserving same mode. 
 
-12. 'ifconfig' command
+12. 'ifconfig'
 ifconfig allows you to see the addresses associated with each TCP/IP interface on your machine, or manipulate the state of the interface. A definite must have for any tech or SysAdmin.
 
-13. `systemctl` Command  
-    This is a command which allows operators to work with the Linux system services. The standard use of the command is `systemctl <OPTION> <SERVICE-NAME>` by providing an `OPTION` (e.g. `start`, `stop`, `status`) and than providing a specific Service Name to act on. You can use the command to get a general status of your Linux services (e.g `systemctl status`). Note that you will either need Administrator access or use `sudo` to elevate your rights to run the command successfully.  
-
-These commands are frequently used by adminstrators. This is not a complete list, but it’s a compact list to refer to when needed. 
+13. `systemctl`
+This is a command which allows operators to work with the Linux system services. The standard use of the command is `systemctl <OPTION> <SERVICE-NAME>` by providing an `OPTION` (e.g. `start`, `stop`, `status`) and than providing a specific Service Name to act on. You can use the command to get a general status of your Linux services (e.g `systemctl status`). Note that you will either need Administrator access or use `sudo` to elevate your rights to run the command successfully.  
