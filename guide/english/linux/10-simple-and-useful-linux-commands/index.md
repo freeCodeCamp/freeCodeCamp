@@ -1,6 +1,7 @@
 ---
-title: Simple and Useful Linux Commands for Daily use and Operations
+title: Simple and Useful Linux Commands
 ---
+
 # Simple and Useful Linux Commands
 The commands listed here are basic, and will help you get started quickly. But they’re also powerful, and they’ll continue to be useful as your Linux expertise expands. 
 Use these commands in scripts and at the command line. They're all very powerful commands, and Linux's man page has a lot more information about each one.
@@ -19,6 +20,7 @@ Example 2: `echo "Hello world" > hello.txt`
 10. `sed` Use sed to find and change a substring in a piece of text. Example: `echo "this, that, and the other" | sed 's/that/those/' # "this, those, and the other"`
 11. `shutdown` use shut down the system and turn off the power. Example: `shutdown -h now`shuts down system immediately. `shutdown -h +5` shuts down system after five minutes. You can also reboot the system immediately by issuing the command `shutdown -r now`.
 12. `cd` use `cd` to change the directory. Example: `cd dirName` changes the directory to the folder names `dirName`. `cd ..` this command takes to the upper root folder or out of the folder.
+13. `vi` use vi editor to quickly edit any file. Example: `vi filename`
 
 ### Important commands for file manipulation are:
 1. mv [source] [destination] - Moves a file or a folder from source to destination you can also rename a file with these command
