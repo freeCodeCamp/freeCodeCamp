@@ -66,17 +66,12 @@ In this example `var` is going to store the value `1`.
 One for loop can be used to print the contents of an array.
 ```C
 #include <stdio.h>
-
-
 int main() {
     const int size = 6;
-
     int arr[size] = {5, 4, 12, 3, 9, 1}
-
     for (int i = 0; i < size; i++) {
         printf("%5d", arr[i]);
     }
-
     return 0;
 }
 ```
