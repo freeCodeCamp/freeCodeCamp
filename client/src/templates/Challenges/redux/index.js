@@ -7,7 +7,6 @@ import { createAsyncTypes } from '../../../utils/createTypes';
 import { createPoly } from '../utils/polyvinyl';
 import challengeModalEpic from './challenge-modal-epic';
 import completionEpic from './completion-epic';
-import executeChallengeEpic from './execute-challenge-epic';
 import codeLockEpic from './code-lock-epic';
 import createQuestionEpic from './create-question-epic';
 import codeStorageEpic from './code-storage-epic';
@@ -87,7 +86,6 @@ export const epics = [
   codeLockEpic,
   completionEpic,
   createQuestionEpic,
-  executeChallengeEpic,
   codeStorageEpic,
   currentChallengeEpic
 ];
