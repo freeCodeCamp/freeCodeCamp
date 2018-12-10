@@ -20,7 +20,11 @@ import {
   challengeFilesSelector
 } from './';
 
-import { buildJSFromFiles, buildFromFiles } from '../utils/build';
+import {
+  buildJSFromFiles,
+  buildFromFiles,
+  buildBackendChallenge
+} from '../utils/build';
 
 import { challengeTypes } from '../../../../utils/challengeTypes';
 
@@ -39,11 +43,6 @@ function* ExecuteChallengeSaga() {
     const { js, bonfire, backend } = challengeTypes;
     const { challengeType } = yield select(challengeMetaSelector);
 
-    // TODO: ExecuteBackendChallengeSaga
-    if (challengeType === backend) {
-      return;
-    }
-
     yield put(initLogs());
     yield put(initConsole('// running tests'));
 
@@ -54,7 +53,7 @@ function* ExecuteChallengeSaga() {
         testResults = yield ExecuteJSChallengeSaga();
         break;
       case backend:
-        // yield ExecuteBackendChallengeSaga();
+        testResults = yield ExecuteBackendChallengeSaga();
         break;
       default:
         testResults = yield ExecuteDOMChallengeSaga();
@@ -98,6 +97,32 @@ function* ExecuteDOMChallengeSaga() {
   const ctx = yield call(buildFromFiles, state);
   const consoleProxy = yield channel();
   yield fork(logToConsole, consoleProxy);
+
+  yield call(createTestFrame, state, ctx, consoleProxy);
+
+  const testResults = yield call(executeTests, {
+    testRunner: {
+      execute({ script }, testTimeout) {
+        return Promise.race([
+          runTestInTestFrame(document, script),
+          new Promise((_, reject) =>
+            setTimeout(() => reject('timeout'), testTimeout)
+          )
+        ]);
+      },
+      killWorker() {}
+    }
+  });
+
+  consoleProxy.close();
+  return testResults;
+}
+
+// TODO: use a web worker
+function* ExecuteBackendChallengeSaga() {
+  const state = yield select();
+  const ctx = yield call(buildBackendChallenge, state);
+  const consoleProxy = yield channel();
 
   yield call(createTestFrame, state, ctx, consoleProxy);
 

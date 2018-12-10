@@ -1,4 +1,3 @@
-import { of } from 'rxjs';
 import { flow } from 'lodash';
 
 import { throwers } from '../rechallenge/throwers';
@@ -111,9 +110,8 @@ export function buildBackendChallenge(state) {
   const {
     solution: { value: url }
   } = backendFormValuesSelector(state);
-  return of({
+  return {
     build: frameRunner,
-    sources: { url },
-    checkChallengePayload: { solution: url }
-  });
+    sources: { url }
+  };
 }
