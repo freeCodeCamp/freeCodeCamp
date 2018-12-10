@@ -23,19 +23,19 @@ This is the case when bead sort is implemented without a mechanism to assist in 
 ``` yml
 tests:
   - text: <code>beadSort</code> should be a function.
-    testString: assert(typeof beadSort=='function','<code>beadSort</code> should be a function.');
-  - text: <code>beadSort([25,32,12,7,20])</code> should return a array.
-    testString: assert(Array.isArray(beadSort([25,32,12,7,20])),'<code>beadSort([25,32,12,7,20])</code> should return a array.');
-  - text: <code>beadSort([25,32,12,7,20])</code> should return <code>[7,12,20,25,32]</code>.
-    testString: assert.deepEqual(beadSort([25,32,12,7,20]),[7,12,20,25,32],'<code>beadSort([25,32,12,7,20])</code> should return <code>[7,12,20,25,32]</code>.');
-  - text: <code>beadSort([38,45,35,8,13])</code> should return <code>[8,13,35,38,45]</code>.
-    testString: assert.deepEqual(beadSort([38,45,35,8,13]),[8,13,35,38,45],'<code>beadSort([38,45,35,8,13])</code> should return <code>[8,13,35,38,45]</code>.');
-  - text: <code>beadSort([43,36,20,34,24])</code> should return <code>[20,24,34,36,43]</code>.
-    testString: assert.deepEqual(beadSort([43,36,20,34,24]),[20,24,34,36,43],'<code>beadSort([43,36,20,34,24])</code> should return <code>[20,24,34,36,43]</code>.');
-  - text: <code>beadSort([12,33,26,18,1,16,38])</code> should return <code>[1,12,16,18,26,33,38]</code>.
-    testString: assert.deepEqual(beadSort([12,33,26,18,1,16,38]),[1,12,16,18,26,33,38],'<code>beadSort([12,33,26,18,1,16,38])</code> should return <code>[1,12,16,18,26,33,38]</code>.');
-  - text: <code>beadSort([3,39,48,16,1,4,29])</code> should return <code>[1,3,4,16,29,39,48]</code>.
-    testString: assert.deepEqual(beadSort([3,39,48,16,1,4,29]),[1,3,4,16,29,39,48],'<code>beadSort([3,39,48,16,1,4,29])</code> should return <code>[1,3,4,16,29,39,48]</code>.');
+    testString: assert(typeof beadSort == 'function', '<code>beadSort</code> should be a function.');
+  - text: <code>beadSort([25, 32, 12, 7, 20])</code> should return a array.
+    testString: assert(Array.isArray(beadSort([25, 32, 12, 7, 20])), '<code>beadSort([25, 32, 12, 7, 20])</code> should return a array.');
+  - text: <code>beadSort([25, 32, 12, 7, 20])</code> should return <code>[7, 12, 20, 25, 32]</code>.
+    testString: assert.deepEqual(beadSort([25, 32, 12, 7, 20]), [7, 12, 20, 25, 32], '<code>beadSort([25, 32, 12, 7, 20])</code> should return <code>[7, 12, 20, 25, 32]</code>.');
+  - text: <code>beadSort([38, 45, 35, 8, 13])</code> should return <code>[8, 13, 35, 38, 45]</code>.
+    testString: assert.deepEqual(beadSort([38, 45, 35, 8, 13]), [8, 13, 35, 38, 45], '<code>beadSort([38, 45, 35, 8, 13])</code> should return <code>[8, 13, 35, 38, 45]</code>.');
+  - text: <code>beadSort([43, 36, 20, 34, 24])</code> should return <code>[20, 24, 34, 36, 43]</code>.
+    testString: assert.deepEqual(beadSort([43, 36, 20, 34, 24]), [20, 24, 34, 36, 43], '<code>beadSort([43, 36, 20, 34, 24])</code> should return <code>[20, 24, 34, 36, 43]</code>.');
+  - text: <code>beadSort([12, 33, 26, 18, 1, 16, 38])</code> should return <code>[1, 12, 16, 18, 26, 33, 38]</code>.
+    testString: assert.deepEqual(beadSort([12, 33, 26, 18, 1, 16, 38]), [1, 12, 16, 18, 26, 33, 38], '<code>beadSort([12, 33, 26, 18, 1, 16, 38])</code> should return <code>[1, 12, 16, 18, 26, 33, 38]</code>.');
+  - text: <code>beadSort([3, 39, 48, 16, 1, 4, 29])</code> should return <code>[1, 3, 4, 16, 29, 39, 48]</code>.
+    testString: assert.deepEqual(beadSort([3, 39, 48, 16, 1, 4, 29]), [1, 3, 4, 16, 29, 39, 48], '<code>beadSort([3, 39, 48, 16, 1, 4, 29])</code> should return <code>[1, 3, 4, 16, 29, 39, 48]</code>.');
 ```
 
 </section>
