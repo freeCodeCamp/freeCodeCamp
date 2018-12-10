@@ -10,13 +10,6 @@ if (window.frameElement && window.frameElement.id === testId) {
 }
 
 function initTestFrame() {
-  // window.__logs = [];
-  // const oldLog = window.console.log.bind(window.console);
-  // window.console.log = function proxyConsole(...args) {
-  //   window.__logs = [...window.__logs, ...args];
-  //   return oldLog(...args);
-  // };
-
   const frameReady = document.__frameReady;
   const source = document.__source;
   const __getUserInput = document.__getUserInput || (x => x);
@@ -49,7 +42,6 @@ function initTestFrame() {
   }
 
   document.__runTest = async function runTests(testString) {
-    window.__logs = [];
     /* eslint-disable no-unused-vars */
     const code = source.slice(0);
     const editor = {
@@ -72,7 +64,7 @@ function initTestFrame() {
       if (typeof test === 'function') {
         await test(getUserInput);
       }
-      return { pass: true, logs: window.__logs.map(String) };
+      return { pass: true };
     } catch (err) {
       if (!(err instanceof chai.AssertionError)) {
         console.error(err);
@@ -81,8 +73,7 @@ function initTestFrame() {
         err: {
           message: err.message,
           stack: err.stack
-        },
-        logs: window.__logs.map(String)
+        }
       };
     }
   };

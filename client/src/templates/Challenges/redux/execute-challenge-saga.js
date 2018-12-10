@@ -1,5 +1,13 @@
-import { put, select, call, takeLatest, race } from 'redux-saga/effects';
-import { delay } from 'redux-saga';
+import {
+  put,
+  select,
+  call,
+  takeLatest,
+  takeEvery,
+  race,
+  fork
+} from 'redux-saga/effects';
+import { delay, channel } from 'redux-saga';
 
 import {
   challengeMetaSelector,
@@ -109,35 +117,30 @@ function createTestFrame(state, ctx, proxyLogger) {
   }).then(() => console.log('Frame ready'));
 }
 
-function* proxyLogger() {
-  let args = yield;
-  while (true) {
-    args = yield put(updateLogs(args));
-  }
+function* logToConsole(channel) {
+  yield takeEvery(channel, function*(args) {
+    yield put(updateLogs(args));
+  });
 }
 
 function* ExecuteDOMChallengeSaga(tests) {
   const testResults = [];
   const state = yield select();
   const ctx = yield call(buildFromFiles, state);
-  const proxy = proxyLogger();
-  proxy.next('1');
-  proxy.next('2');
-  proxy.next('3');
-  yield call(createTestFrame, state, ctx, proxy);
+  const consoleProxy = yield channel();
+  yield fork(logToConsole, consoleProxy);
+
+  yield call(createTestFrame, state, ctx, consoleProxy);
 
   for (const { text, testString } of tests) {
     const newTest = { text, testString };
     try {
-      const [{ pass, err, logs }, timeout] = yield race([
+      const [{ pass, err }, timeout] = yield race([
         call(runTestInTestFrame, document, testString),
         delay(testTimeout, 'timeout')
       ]);
       if (timeout) {
         throw timeout;
-      }
-      for (const log of logs) {
-        yield put(updateLogs(log));
       }
       if (pass) {
         newTest.pass = true;
@@ -160,6 +163,7 @@ function* ExecuteDOMChallengeSaga(tests) {
       testResults.push(newTest);
     }
   }
+  consoleProxy.close();
   return testResults;
 }
 
