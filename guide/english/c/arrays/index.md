@@ -68,6 +68,23 @@ int var = arr[0];
 Here an int is created called `var`, and it is initialized to the 0th element of arr. **Very importart to note** that in C, indexes start at zero as opposed to 1. This means that to access the first element, the index (between the brackets) is 0, to access the second element, the index is 1 etc. 
 In this example `var` is going to store the value `1`.
 
+One for loop can be used to print the contents of an array.
+```C
+#include <stdio.h>
+int main() {
+    const int size = 6;
+    int arr[size] = {5, 4, 12, 3, 9, 1}
+    for (int i = 0; i < size; i++) {
+        printf("%5d", arr[i]);
+    }
+    return 0;
+}
+```
+
+```C
+    5    4    12    3    9    1
+```
+
 ## Overview
 
 * A one-dimensional array is like a list; A two dimensional array is like a table;  The C language places no limits on the number of dimensions in an array, though specific implementations may.
