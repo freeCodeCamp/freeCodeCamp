@@ -63,9 +63,6 @@ To install Ansible in a Python virtual environment make sure the environment is 
 pip install ansible
 ```
 
-For more information:
-[Latest Release Via Pip](https://docs.ansible.com/ansible/latest/installation_guide/intro_installation.html#latest-releases-via-pip)
-
 A significant benefit of using Ansible is that it uses SSH (Secure SHell) by default, and the modules can reside on any machine (computer) not requiring servers, daemons or databases.
 
 The true power of Ansible is in using playbooks.  Read more about configuration and use of Ansible on [Ansible's official documentation](https://docs.ansible.com/ansible/latest/index.html). 
@@ -75,3 +72,4 @@ Ansible modules, which are small task specific programs. Once they serve there i
 #### More Information:
 - [Learn more about how Ansible works](https://www.ansible.com/how-ansible-works/)
 - [Ansible documentation](http://docs.ansible.com/)
+- [Latest Release via Pip](https://docs.ansible.com/ansible/latest/installation_guide/intro_installation.html#latest-releases-via-pip)
