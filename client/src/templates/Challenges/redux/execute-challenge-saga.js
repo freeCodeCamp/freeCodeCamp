@@ -67,15 +67,29 @@ function* ExecuteChallengeSaga() {
   }
 }
 
+function* logToConsole(channel) {
+  yield takeEvery(channel, function*(args) {
+    yield put(updateLogs(args));
+  });
+}
+
 function* ExecuteJSChallengeSaga() {
   const files = yield select(challengeFilesSelector);
   const { code, solution } = yield call(buildJSFromFiles, files);
+
+  const consoleProxy = yield channel();
+  yield fork(logToConsole, consoleProxy);
+  const log = args => consoleProxy.put(args);
+  testWorker.on('LOG', log);
 
   const testResults = yield call(executeTests, {
     testRunner: testWorker,
     code,
     solution
   });
+
+  testWorker.remove('LOG', log);
+  consoleProxy.close();
   return testResults;
 }
 
@@ -84,12 +98,6 @@ function createTestFrame(state, ctx, proxyLogger) {
     const frameTest = createTestFramer(document, state, resolve, proxyLogger);
     frameTest(ctx);
   }).then(() => console.log('Frame ready'));
-}
-
-function* logToConsole(channel) {
-  yield takeEvery(channel, function*(args) {
-    yield put(updateLogs(args));
-  });
 }
 
 function* ExecuteDOMChallengeSaga() {
@@ -166,14 +174,11 @@ function* executeTests({ testRunner, code = '', solution = '' }) {
   for (const { text, testString } of tests) {
     const newTest = { text, testString };
     try {
-      const { pass, err, logs = [] } = yield call(
+      const { pass, err } = yield call(
         testRunner.execute,
         { script: solution + '\n' + testString, code },
         testTimeout
       );
-      for (const log of logs) {
-        yield put(updateLogs(log));
-      }
       if (pass) {
         newTest.pass = true;
       } else {
