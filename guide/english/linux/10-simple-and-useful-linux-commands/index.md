@@ -57,7 +57,8 @@ Copy file from source to destination preserving same mode.
 11. `mv` 
 Move file from source to destination preserving same mode. 
 
-12. `ifconfig` to view ip and other information.  
+12. 'ifconfig' command
+ifconfig allows you to see the addresses associated with each TCP/IP interface on your machine, or manipulate the state of the interface. A definite must have for any tech or SysAdmin.
 
 13. `systemctl` Command  
     This is a command which allows operators to work with the Linux system services. The standard use of the command is `systemctl <OPTION> <SERVICE-NAME>` by providing an `OPTION` (e.g. `start`, `stop`, `status`) and than providing a specific Service Name to act on. You can use the command to get a general status of your Linux services (e.g `systemctl status`). Note that you will either need Administrator access or use `sudo` to elevate your rights to run the command successfully.  
