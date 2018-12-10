@@ -20,7 +20,7 @@ You have to add the following CSS property to achieve the transparency levels.
   opacity:1;
 }
 
-OR
+/* OR */
 
 .class-name {
   opacity:1.0;
@@ -32,7 +32,7 @@ OR
 .class-name {
   opacity:0.5;
 }
-Opacity value can be anything between 0 and 1;
+/* Opacity value can be anything between 0 and 1; */
 ```
 
 #### Transparent
@@ -41,7 +41,7 @@ Opacity value can be anything between 0 and 1;
   opacity:0;
 }
 
-OR
+/* OR */
 
 .class-name {
   opacity:0.0;
