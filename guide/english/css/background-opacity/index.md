@@ -32,6 +32,7 @@ You have to add the following CSS property to achieve the transparency levels.
 .class-name {
   opacity:0.5;
 }
+
 /* Opacity value can be anything between 0 and 1; */
 ```
 
@@ -84,15 +85,17 @@ Using the rgba value is most preferable when the background has content like tex
   background: #00ff0080;
  }
  ```
- The example above sets the background with a 50% opacity using hex alpha code. The alpha digit is the last two numbers `80`. The formats are sometimes referred to as #RRGGBBAA and #RGBA and the the AA part is a hex representation of 0-100. For example the hex alpha code of 0% is `00` and the hex alpha code of 100% is `FF`.
+
+The example above sets the background with a 50% opacity using hex alpha code. The alpha digit is the last two numbers `80`. The formats are sometimes referred to as #RRGGBBAA and #RGBA and the the AA part is a hex representation of 0-100. For example the hex alpha code of 0% is `00` and the hex alpha code of 100% is `FF`.
 [A codepen example to show hex alpha values](https://codepen.io/chriscoyier/pen/XjbzAW)
- 
 
 [A codepen example to show background opacity ranges](https://codepen.io/lvcoulter/full/dVrwmK/)
 
 
 #### More Information:
-For more information visit [MDN](https://developer.mozilla.org/en-US/docs/Web/CSS/opacity)
-[Opacity CSS property at CSS-Tricks](https://css-tricks.com/almanac/properties/o/opacity/)
+
++ [MDN](https://developer.mozilla.org/en-US/docs/Web/CSS/opacity)  
++ [CSS Opacity / Transparency Property at W3Schools](https://www.w3schools.com/css/css_image_transparency.asp)  
++ [Opacity CSS property at CSS-Tricks](https://css-tricks.com/almanac/properties/o/opacity/)  
 
 Browser support: <a href= 'https://caniuse.com/#search=opacity' target= '_blank' rel= 'nofollow'>caniuse</a>
