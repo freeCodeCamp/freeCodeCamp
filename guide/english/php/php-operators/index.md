@@ -62,9 +62,11 @@ title: PHP Operators
   </tr>
 </table>
 
-<h3>PHP Assignment Operators</h3>
-<p>The assignment operator is "=". The operand on the left side gets assigned to the value of the expression on the right.</p>
-<h4> Example:</h4>
+### PHP Assignment Operators
+
+The assignment operator is `=`. The operand on the left side gets assigned the value of the expression on the right.
+
+#### Example
 
 ```php
 <?php
@@ -74,12 +76,9 @@ title: PHP Operators
  ?>  
 ```
 
-
 <!-- The article goes here, in GitHub-flavored Markdown. Feel free to add YouTube videos, images, and CodePen/JSBin embeds  -->
 
 #### More Information:
-<!-- Please add any articles you think might be helpful to read before writing the article -->
-<ul>
-  <li><a href='http://php.net/manual/en/language.operators.arithmetic.php' target='_blank' rel='nofollow'>Arithmetic Operators</a></li>
-  <li><a href='http://php.net/manual/en/language.operators.assignment.php' target='_blank' rel='nofollow'>Assignment Operators</a></li>
+- <a href='http://php.net/manual/en/language.operators.arithmetic.php' target='_blank' rel='nofollow'>Arithmetic Operators</a></li>
+- <a href='http://php.net/manual/en/language.operators.assignment.php' target='_blank' rel='nofollow'>Assignment Operators</a></li>
 
