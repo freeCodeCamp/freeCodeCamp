@@ -33,12 +33,12 @@ const createHeader = (id = mainId) => `
   </script>
 `;
 
-export const runTestInTestFrame = async function(document, tests) {
+export const runTestInTestFrame = async function(document, test) {
   const { contentDocument: frame } = document.getElementById(testId);
   // Enable Stateless Functional Component. Otherwise, enzyme-adapter-react-16
   // does not work correctly.
   setConfig({ pureSFC: true });
-  const result = await frame.__runTest(tests);
+  const result = await frame.__runTest(test);
   setConfig({ pureSFC: false });
   return result;
 };
