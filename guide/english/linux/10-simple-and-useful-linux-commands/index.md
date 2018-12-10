@@ -66,6 +66,9 @@ ifconfig allows you to see the addresses associated with each TCP/IP interface o
 12. `systemctl`
 This is a command which allows operators to work with the Linux system services. The standard use of the command is `systemctl <OPTION> <SERVICE-NAME>` by providing an `OPTION` (e.g. `start`, `stop`, `status`) and than providing a specific Service Name to act on. You can use the command to get a general status of your Linux services (e.g `systemctl status`). Note that you will either need Administrator access or use `sudo` to elevate your rights to run the command successfully.  
 
+13. `scp` Command
+securely Copy file between remote hosts without logging or creating a FTP session explicitly. 
+
 ### How to get help about the commands:
 More info can be viewed about how to use each of the commands listed above right in the terminal in the following ways:
 1. Using `man` to access the manual pages. It takes as argument another command name and returns a complete tutorial about the argument, including main options of use, syntax details and another related commands. You can search a text accross all man pages database.
