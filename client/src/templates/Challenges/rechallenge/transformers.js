@@ -97,7 +97,7 @@ async function transformSASS(element) {
   await Promise.all(
     [].map.call(styleTags, async style => {
       style.type = 'text/css';
-      style.innerHTML = await sassWorker.execute(style.innerHTML, 2000);
+      style.innerHTML = await sassWorker.execute(style.innerHTML, 5000);
     })
   );
 }
@@ -122,14 +122,11 @@ export const composeHTML = cond([
   [
     testHTML,
     flow(
-      partial(
-        vinyl.transformHeadTailAndContents,
-        source => {
-          const div = document.createElement('div');
-          div.innerHTML = source;
-          return div.innerHTML;
-        }
-      ),
+      partial(vinyl.transformHeadTailAndContents, source => {
+        const div = document.createElement('div');
+        div.innerHTML = source;
+        return div.innerHTML;
+      }),
       partial(vinyl.compileHeadTail, '')
     )
   ],
