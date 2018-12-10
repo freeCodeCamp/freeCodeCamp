@@ -3,12 +3,11 @@ import '@babel/polyfill';
 
 const oldLog = self.console.log.bind(self.console);
 self.console.log = function proxyConsole(...args) {
-  self.__logs = [...self.__logs, ...args];
+  self.postMessage({ type: 'LOG', data: String(args) });
   return oldLog(...args);
 };
 
 onmessage = async e => {
-  self.__logs = [];
   const { script: __test, code } = e.data;
   /* eslint-disable no-unused-vars */
   const assert = chai.assert;
@@ -21,14 +20,13 @@ onmessage = async e => {
     if (typeof testResult === 'function') {
       await testResult(() => code);
     }
-    self.postMessage({ pass: true, logs: self.__logs.map(String) });
+    self.postMessage({ pass: true });
   } catch (err) {
     self.postMessage({
       err: {
         message: err.message,
         stack: err.stack
-      },
-      logs: self.__logs.map(String)
+      }
     });
     if (!(err instanceof chai.AssertionError)) {
       console.error(err);
