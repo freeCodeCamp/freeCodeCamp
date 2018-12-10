@@ -3,7 +3,7 @@ title: How to Use Lists
 ---
 ## How to Use Lists
 Lists are used to specify a set of consecutive items or related information in well formed and semantic way, such as a list of ingredients or a list of procedural steps.
-HTML markup has three different types of lists - **ordered**, **unordored** and **description** lists. 
+HTML markup has three different types of lists - **ordered**, **unordered** and **description** lists. 
 
 ### Ordered Lists
 An ordered list is used to group a set of related items, in a specific order.
@@ -64,7 +64,7 @@ An unordered list is used to group a set of related items, in no particular orde
 
 
 ### Description Lists
-A description list is used to specify a list of terms and their descriptions. This list is created with `<dl>` tag. Each list item is surrounded with `<dd>` tag.
+A description list is used to specify a list of terms and their descriptions. This list is created with `<dl>` tag. Each list item made up of a `<dt>` tag surrounding the term and a `<dd>` tag surrounding the description of the term.
 
 ##### Code
 
