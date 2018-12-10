@@ -3,33 +3,34 @@ title: How to Use Links
 ---
 ## How to Use Links
 
-In HTML you can use the `<a>` tag to create a link. For example you can write `<a href="https://www.freecodecamp.org/">freeCodeCamp</a>` to create a link to freeCodeCamp's website.
+Links are found in many webpages and its purpose is to allow users to visit other webpages.
 
-Links are found in nearly all web pages. Links allow users to click their way from page to page.
+<br/>In HTML, you can use the `<a>` tag to create a hyperlink. 
 
-HTML links are hyperlinks. You can click on a link and jump to another document.
-
-When you move the mouse over a link, the mouse arrow will turn into a little hand.
-
-Note: A link does not have to be text. It can be an image or any other HTML element.
-
-In HTML, links are defined with the <a> tag:
-  
 ```html
 <a href="url">link text</a>
 ```
+The href attribute is very important, as it defines what the destination address is. 
+<br/>The link text is the actual visable text.
 
-Example
+
+<br/>For example, if you wanted something to link to the freeCodeCamp website, you could type:
+```html
+<a href="https://www.freecodecamp.org/">freeCodeCamp</a>
+```
+When run, this will display the text "freeCodeCamp", but it links to the website `"https://www.freecodecamp.org"`. Clicking on the text will send you to the specified address. Neat!
+
+### Links in images
+
+Links don't need to only be text. You can add a link to an image as well!
 
 ```html
-<a href="https://www.freecodecamp.org/">Visit our site for tutorials</a>
+<a href="https://www.freecodecamp.org"
+   <img src="freecodecamp.png" alt = "freeCodeCamp's logo">
+</a>
 ```
 
-The href attribute specifies the destination address (https://www.freecodecamp.org) of the link.
-
-The link text is the visible part (Visit our site for tutorials).
-
-Clicking on the link text will send you to the specified address.
+What we do here is we put an <img> tag inside of an <a> tag. This allows us to click the image to go to the link, which is `https://www.freecodecamp.org`. Double neato!
 
 #### More Information:
 <!-- Please add any articles you think might be helpful to read before writing the article -->
