@@ -69,6 +69,18 @@ This is a command which allows operators to work with the Linux system services.
 13. `scp` Command
 securely Copy file between remote hosts without logging or creating a FTP session explicitly. 
 
+14. `su` Command
+This command is used to execute sequence of codes in root mode. Root is the super user mode which can modify any file in system without any password (once asked while logging in).
+
+15. `sudo` Command
+This command is used to execute a single line of code in root mode.
+     
+16. `apt-get` Command
+This command is used to install packages which are present in the operating system repositories with complete dependencies (must be run in root mode).
+
+17. `aptitude` Command
+This command is used to install packages with or without complete dependencies, i.e. it can fix any type of incomplete dependencies.
+
 ### How to get help about the commands:
 More info can be viewed about how to use each of the commands listed above right in the terminal in the following ways:
 1. Using `man` to access the manual pages. It takes as argument another command name and returns a complete tutorial about the argument, including main options of use, syntax details and another related commands. You can search a text accross all man pages database.
