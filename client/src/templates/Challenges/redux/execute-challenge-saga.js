@@ -22,7 +22,7 @@ import {
 
 import {
   buildJSFromFiles,
-  buildFromFiles,
+  buildHtmlFromFiles,
   buildBackendChallenge
 } from '../utils/build';
 
@@ -82,11 +82,14 @@ function* ExecuteJSChallengeSaga() {
   const log = args => consoleProxy.put(args);
   testWorker.on('LOG', log);
 
-  const testResults = yield call(executeTests, {
-    testRunner: testWorker,
-    code,
-    solution
-  });
+  const testResults = yield call(executeTests, (testString, testTimeout) =>
+    testWorker
+      .execute({ script: solution + '\n' + testString, code }, testTimeout)
+      .then(result => {
+        testWorker.killWorker();
+        return result;
+      })
+  );
 
   testWorker.remove('LOG', log);
   consoleProxy.close();
@@ -97,30 +100,25 @@ function createTestFrame(state, ctx, proxyLogger) {
   return new Promise(resolve => {
     const frameTest = createTestFramer(document, state, resolve, proxyLogger);
     frameTest(ctx);
-  }).then(() => console.log('Frame ready'));
+  });
 }
 
 function* ExecuteDOMChallengeSaga() {
   const state = yield select();
-  const ctx = yield call(buildFromFiles, state);
+  const ctx = yield call(buildHtmlFromFiles, state);
   const consoleProxy = yield channel();
   yield fork(logToConsole, consoleProxy);
 
   yield call(createTestFrame, state, ctx, consoleProxy);
 
-  const testResults = yield call(executeTests, {
-    testRunner: {
-      execute({ script }, testTimeout) {
-        return Promise.race([
-          runTestInTestFrame(document, script),
-          new Promise((_, reject) =>
-            setTimeout(() => reject('timeout'), testTimeout)
-          )
-        ]);
-      },
-      killWorker() {}
-    }
-  });
+  const testResults = yield call(executeTests, (testString, testTimeout) =>
+    Promise.race([
+      runTestInTestFrame(document, testString),
+      new Promise((_, reject) =>
+        setTimeout(() => reject('timeout'), testTimeout)
+      )
+    ])
+  );
 
   consoleProxy.close();
   return testResults;
@@ -134,51 +132,26 @@ function* ExecuteBackendChallengeSaga() {
 
   yield call(createTestFrame, state, ctx, consoleProxy);
 
-  const testResults = yield call(executeTests, {
-    testRunner: {
-      execute({ script }, testTimeout) {
-        return Promise.race([
-          runTestInTestFrame(document, script),
-          new Promise((_, reject) =>
-            setTimeout(() => reject('timeout'), testTimeout)
-          )
-        ]);
-      },
-      killWorker() {}
-    }
-  });
+  const testResults = yield call(executeTests, (testString, testTimeout) =>
+    Promise.race([
+      runTestInTestFrame(document, testString),
+      new Promise((_, reject) =>
+        setTimeout(() => reject('timeout'), testTimeout)
+      )
+    ])
+  );
 
   consoleProxy.close();
   return testResults;
 }
 
-function* updateMainSaga() {
-  try {
-    const { html, modern } = challengeTypes;
-    const { challengeType } = yield select(challengeMetaSelector);
-    if (challengeType !== html && challengeType !== modern) {
-      return;
-    }
-    const state = yield select();
-    const frameMain = yield call(createMainFramer, document, state);
-    const ctx = yield call(buildFromFiles, state);
-    yield call(frameMain, ctx);
-  } catch (err) {
-    console.error(err);
-  }
-}
-
-function* executeTests({ testRunner, code = '', solution = '' }) {
+function* executeTests(testRunner) {
   const tests = yield select(challengeTestsSelector);
   const testResults = [];
   for (const { text, testString } of tests) {
     const newTest = { text, testString };
     try {
-      const { pass, err } = yield call(
-        testRunner.execute,
-        { script: solution + '\n' + testString, code },
-        testTimeout
-      );
+      const { pass, err } = yield call(testRunner, testString, testTimeout);
       if (pass) {
         newTest.pass = true;
       } else {
@@ -197,10 +170,25 @@ function* executeTests({ testRunner, code = '', solution = '' }) {
       yield put(updateConsole(newTest.message));
     } finally {
       testResults.push(newTest);
-      yield call(testRunner.killWorker);
     }
   }
   return testResults;
+}
+
+function* updateMainSaga() {
+  try {
+    const { html, modern } = challengeTypes;
+    const { challengeType } = yield select(challengeMetaSelector);
+    if (challengeType !== html && challengeType !== modern) {
+      return;
+    }
+    const state = yield select();
+    const frameMain = yield call(createMainFramer, document, state);
+    const ctx = yield call(buildHtmlFromFiles, state);
+    yield call(frameMain, ctx);
+  } catch (err) {
+    console.error(err);
+  }
 }
 
 export function createExecuteChallengeSaga(types) {

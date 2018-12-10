@@ -63,7 +63,7 @@ const pipeLine = flow(
   applyFunctions(toHtml)
 );
 
-export function buildFromFiles(state) {
+export function buildHtmlFromFiles(state) {
   const files = challengeFilesSelector(state);
   const { required = [], template } = challengeMetaSelector(state);
   const finalRequires = [...globalRequires, ...required];
