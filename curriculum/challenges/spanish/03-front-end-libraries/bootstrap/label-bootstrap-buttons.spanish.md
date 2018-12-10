@@ -7,7 +7,7 @@ localeTitle: Botones de etiqueta Bootstrap
 ---
 
 ## Descripción
-<section id="description"> Al igual que etiquetamos nuestros pozos, queremos etiquetar nuestros botones. Dé a cada uno de los elementos de su <code>button</code> texto que corresponda al selector de su <code>id</code> . </section>
+<section id="description"> Al igual que etiquetamos nuestras cajas, queremos etiquetar nuestros botones. Ponga a cada uno de los elementos <code>button</code> texto que corresponda al selector de su <code>id</code> . </section>
 
 ## Instrucciones
 <section id="instructions">
