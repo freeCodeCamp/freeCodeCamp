@@ -60,8 +60,7 @@ _Tenga en cuenta que solo se ejecutará la primera condición que se evalúe com
 También podemos crear anidados si para la toma de decisiones. Antes de la anterior, consulte la guía de sangrado href = 'https: //guide.freecodecamp.org/python/code-blocks-and-indentation' target = '\_ blank' rel = 'nofollow'> una vez antes de la anterior.
 
 Tomemos un ejemplo de encontrar un número que sea par y también mayor que '10 \`
-```
-python 
+```python 
  x = 34 
  if x %  2 == 0:  # this is how you create a comment and now, checking for even. 
   if x > 10: 
@@ -79,8 +78,7 @@ Si bien los ejemplos anteriores son simples, puede crear condiciones complejas u
 **_Python en línea if-else instrucción_**
 
 También podemos usar sentencias if-else en funciones de python en línea El siguiente ejemplo debe verificar si el número es mayor o igual a 50, si es así, devuelva Verdadero:
-```
-python 
+```python 
  x = 89 
  is_greater = True if x >= 50 else False 
  
@@ -88,9 +86,9 @@ python
 ```
 
 Salida
-```
+```python
 > 
  True 
- > 
+> 
 
 ```
