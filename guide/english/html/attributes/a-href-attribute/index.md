@@ -38,13 +38,13 @@ The `<a href>` attribute is supported by all browsers.
 ```
 ### In-page anchors
 
-It's also possible to set an anchor to certain place of the page. To do this you should first place a tab at location on the page with tag `<a>` and necessary attribute "name" with any keyword description in it, like this:
+It's also possible to set an anchor to a certain place on the page. To do this, you should first place an `<a>` tag at the location and include the necessary attribute `name` with any keyword description in it, like this:
 
 ```html
 <a name="top"></a>
 ```
 
-Any description between tags is not required. After that you can place a link leading to this anchor at any place on the same page. To do this you should use tag `<a>` with necessary attribute "href" with symbol # (sharp) and key-word description of the anchor, like this:
+A description between tags is not required. You can now place a link leading to this anchor at any place on the same page. To do this, you should use the `<a>` tag with the necessary attribute "href" with symbol # (sharp) and key-word description of the anchor, like this:
 
 ```html
 <a href="#top">Go to Top</a>
