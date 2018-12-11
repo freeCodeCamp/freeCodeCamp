@@ -146,7 +146,7 @@ export const noStoredCodeFound = createAction(types.noStoredCodeFound);
 export const closeModal = createAction(types.closeModal);
 export const openModal = createAction(types.openModal);
 
-export const previewMounted = createAction(types.challengeMounted);
+export const previewMounted = createAction(types.previewMounted);
 export const challengeMounted = createAction(types.challengeMounted);
 export const checkChallenge = createAction(types.checkChallenge);
 export const executeChallenge = createAction(types.executeChallenge);
