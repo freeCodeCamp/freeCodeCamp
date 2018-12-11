@@ -225,7 +225,6 @@ Então, vamos fazer uma rápida recapitulação. Na nossa tag head pegamos as ta
 
 *   [Página do React](https://reactjs.org/)
 *   [Twitter de Dan Abramov](https://twitter.com/dan_abramov)
-*   [React Tutoriais em Egghead.io](https://egghead.io/browse/frameworks/react)
 
 ### Fontes
 
