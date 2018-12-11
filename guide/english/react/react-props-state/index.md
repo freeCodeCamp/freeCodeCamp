@@ -162,4 +162,4 @@ render() {
 
 The text rendered in the button is `Clicked {this.state.count} times`, which will use whatever this.state.count is at the time of rendering.
 
-More Info about: <a href='https://facebook.github.io/react-vr/docs/components-props-and-state.html' target='_blank' rel='nofollow'>**React props and state**</a>
+More Info about: <a href='https://reactjs.org/docs/components-and-props.html' target='_blank' rel='nofollow'>**React props**</a> and <a href='https://reactjs.org/docs/state-and-lifecycle.html' target='_blank' rel='nofollow'>**state**</a>

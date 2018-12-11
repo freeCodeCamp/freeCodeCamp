@@ -1,10 +1,11 @@
 ---
 title: Python
 ---
+![alt text](https://www.python.org/static/community_logos/python-logo-master-v3-TM.png)
 
 ## What is Python?
 
-<a href='https://www.python.org' target='_blank' rel='nofollow'>Python</a> is a general purpose programming language which is dynamically typed, interpreted, and known for its easy readability with great design principles. It was created by Guido van Rossum and released in 1991. Since then, the language has exploded in popularity.  
+<a href='https://www.python.org' target='_blank' rel='nofollow'>Python</a> is a general purpose programming language that is dynamically typed and interpreted. Python is known for its easy readability with great design principles. It was created by Guido van Rossum and released in 1991. Since then, the language has exploded in popularity.  
 
 To learn more about Python, check out these pages on python.org:
 
@@ -12,25 +13,35 @@ To learn more about Python, check out these pages on python.org:
 
 <a href='https://docs.python.org/3/faq/general.html' target='_blank' rel='nofollow'>Python FAQ</a>.
 
+## Why Python?
+
+> If you're new to programming, you've made the right choice. Python is the perfect beginners' language. It has a clear and simple syntax that will get you writing useful programs in short order. Python even has an interactive mode, which offers immediate feedback, allowing you to test out new ideas almost instantly.
+If you've done some programming before, you've still made the right choice. Python has all the power and flexibility you'd expect from a modern, object-oriented programming language. But even with all of its power, you may be surprised how quickly you can build programs. In fact, ideas translate so quickly to the computer, Python has been called "programming at the speed of thought".
+> - Michael Dawson
+
 ## Python 2 or Python 3
 
-*   The two versions are similar, with knowledge of one switching to writing code for the other is easy.
+*   The two versions are similar. With knowledge of one, switching to writing code for the other is easy.
 *   <a href='https://wiki.python.org/moin/Python2orPython3' target='_blank' rel='nofollow'>Python 2 or Python 3</a>
     *   <a href='https://www.python.org/dev/peps/pep-0373/' target='_blank' rel='nofollow'>Python 2.x will not be maintained past 2020.</a> 
     * 3.x is under active development. This means that all recent standard library improvements, for example, are only available by default in Python 3.x.
-    *   Python ecosystem has amassed a significant amount of quality software over the years. The downside of breaking backwards compatibility in 3.x is that some of that software (especially in-house software in companies) still doesn't work on 3.x yet.
+    *   The Python ecosystem has amassed a significant amount of quality software over the years. The downside of breaking backwards compatibility in 3.x is that some of that software (especially in-house software in companies) still doesn't work on 3.x yet.
 
 ## Installation
 
-Most *nix based operating systems come with Python installed (usually Python 2, Python 3 in most recent ones). Replacing the system Python is not recommended and may cause problems. However, different versions of Python can be safely installed alongside the system Python. See <a href='https://docs.python.org/3/using/index.html' target='_blank' rel='nofollow'>Python Setup and Usage</a>.
+Most *nix based operating systems come with Python installed (usually Python 2, Python 3 in more recent ones). Replacing the system Python is not recommended and may cause problems. However, different versions of Python can be safely installed alongside the system Python. See <a href='https://docs.python.org/3/using/index.html' target='_blank' rel='nofollow'>Python Setup and Usage</a>.
 
-Windows doesn't come with Python, the installer and instructions can be found <a href='https://docs.python.org/3/using/windows.html' target='_blank' rel='nofollow'>here</a>.
+Python doesn't ship with Windows. The installer and instructions can be found <a href='https://docs.python.org/3/using/windows.html' target='_blank' rel='nofollow'>here</a>.
+
+Linux operating systems come with different versions of Python pre-installed. However to install Python 3.x on Linux, follow this [link](https://docs.aws.amazon.com/cli/latest/userguide/awscli-install-linux-python.html).
+
+MacOS doesn't come with Python 3 (however Python 2.7 pre-installed by Apple), the installer and instructions can be found [here](https://docs.python.org/3/using/mac.html).
 
 ## Python Interpreter
 
-The Python interpreter used to run Python scripts.
+The Python interpreter is used to run Python scripts.
 
-Type the command `python` followed by the script name to invoke the interpreter and run the script. This will determine whether the interpreter is available and in Unix shell’s search path.
+In your terminal, type the command `python` followed by the script name to invoke the interpreter and run the script. This will determine whether the interpreter is available and in Unix shell’s search path.
 
 `hello_campers.py`
 
@@ -38,12 +49,12 @@ Type the command `python` followed by the script name to invoke the interpreter 
 print('Hello campers!')
 ```
 
-From terminal:
+From the terminal:
 
     $ python hello_campers.py
     Hello campers!
 
-When multiple versions of Python are installed, calling them by its version is possible depending on the install configuration. In the Cloud9 IDE custom environment, they can be invoked as:
+When multiple versions of Python are installed, calling them by version may be possible depending on the install configuration. In the Cloud9 IDE custom environment, they can be invoked as shown below:
 
     $ python --version
     Python 2.7.6
@@ -74,8 +85,7 @@ Interactive mode has a prompt where Python commands can be entered and run:
     $
 
 ## The Zen of Python
-
-Some of the principles that influenced the design of Python are included as an Easter egg and can be read by using the command inside Python interpreter interactive mode:
+The principles that influenced the design of Python are included as an Easter egg, and can be read by using the following command inside the Python interpreter interactive mode:
 
     >>> import this
     The Zen of Python, by Tim Peters
@@ -103,19 +113,24 @@ Some of the principles that influenced the design of Python are included as an E
 
 ## Pros and Cons of Python
 ### Pros
-1. Interactive language with a module support for almost all functionality.
-2. Open Source: So, you can contribute to the community, the functions you have developed for future use and to help others
-3. A lot of good interpreters and notebooks available for better experience like jupyter notebook.
-4. It is a very easy language to learn and debug too. To check if a small bit of code works or not, you can just open up the interpreter and test.  
-5. There are multiple libraries available for Python, like numpy, pandas, etc.  
+- Easy to read, learn, and write.
+- Interactive language with a module support for almost all functionality.
+- Open Source: You can contribute to the community and help others with the functions you have developed.
+- A lot of good interpreters and notebooks available for better experience like jupyter notebook.
+- It is a very easy language to debug. To check if a small bit of code works or not, you can just open up the interpreter and test.
+- There are multiple libraries available for Python, like numpy, pandas, etc., to make doing complex operations easy!
+- Don't have to worry about range of data types.  For instance, in the C language, we have to specify data types such as `int`, `long int`, `long long int`.
 
-#### Cons
-1. Being open source, many different ways have developed over the year for same function. This sometimes, creates chaos for others to read someone else code.
-2. It is a slow language. So, a very bad language to use for developing general algorithms.
+### Cons
+- Being open source, many different ways have developed over the years for the same function. This can sometimes create chaos for others when reading someone else's code.
+- It is a slow language. So, it may be less preferred for developing general algorithms.
+- Python is dynamically typed, so the errors in code only show up after running an application.
+- Python is not the best langauge to use if your project requires efficient memory management.
+- White space can confuse beginners, as spaces may change depending on the program.
 
 ## Documentation
 
-<a href='https://docs.python.org/3/' target='_blank' rel='nofollow'>Python is well documented</a>. These docs include tutorials, guides, references and meta information for language.
+[Python](https://docs.python.org/3) is well documented. These docs include tutorials, guides, references, and meta information for the language.
 
 Another important reference is the Python Enhancement Proposals (<a href='https://www.python.org/dev/peps/' target='_blank' rel='nofollow'>PEPs</a>). Included in the PEPs is a style guide for writing Python code, <a href='https://www.python.org/dev/peps/pep-0008/' target='_blank' rel='nofollow'>`PEP 8`</a>.
 
@@ -140,37 +155,52 @@ Going back to the docs, we can read about the <a href='https://docs.python.org/3
 
     print(*objects, sep=' ', end='\n', file=sys.stdout, flush=False)
 
-The built-in functions are listed in alphabetical order. The name is followed by a parenthesized list of formal parameters with optional default values. Under that is a short description of the function and its parameters are given and occasionally an example.
+The built-in functions are listed in alphabetical order. The name is followed by a parenthesized list of formal parameters with optional default values. Under that is a short description of the function and its parameters are given. Occasionally, an example is provided.
 
 The <a href='https://docs.python.org/3/library/functions.html#print' target='_blank' rel='nofollow'>`print`</a> function in Python 3 replaces the <a href='https://docs.python.org/2/reference/simple_stmts.html#print' target='_blank' rel='nofollow'>`print`</a> statement in Python 2.
 
-    >>> print("Hello world!")
-    Hello world!
+    >>> print("Hello, World!")
+    Hello, World!
 
-A function is called when the name of the function is followed by `()`. For the Hello world! example, the print function is called with a string as an argument for the first parameter. For the rest of the parameters the defaults are used.
+A function is called when the name of the function is followed by `()`. For the 'Hello, World!' example, the print function is called with a string as an argument for the first parameter. For the rest of the parameters, default values are used.
 
-The argument that we called the `print` function with is a `str` object or _string_, one of Python's <a href='https://docs.python.org/3/library/stdtypes.html#text-sequence-type-str' target='_blank' rel='nofollow'>_built-in types_</a>.
-Also the most important thing about python is that you don't have to specify the data type while declaring a variable, python's compiler
-will do that itself based on the type of value assigned.
+The argument that we called the `print` function with is a `str` object or _string_, one of Python's [_built-in data types_](https://docs.python.org/3/library/stdtypes.html#text-sequence-type-str).
+Also the most important thing about python is that you don't have to specify the data type while declaring a variable Python's compiler will do that itself, based on the type of value assigned.
 
-The `objects` parameter is prefixed with a `*` which indicates that the function will take an arbitrary number of arguments for that parameter.
+The `objects` parameter is prefixed with a `*`, which indicates that the function will take an arbitrary number of arguments for that parameter.
 
-## Things you can do with python
-As stated python is a general purpose language. You can use it to do anything you like but one of the major uses of python is in machine learning and artificial intelligence. It is also a popular language in web development with some amazing frameworks like [Django](https://www.djangoproject.com/) and [flask](http://flask.pocoo.org/). It is also a popular scripting language. With its easy to read syntax it is becoming one the most popular programming languages growing rapidly in different fields.
+## Things you can do with Python
+As stated, Python is a general purpose language. You can use it to do anything you like but one of the major uses of Python is in machine learning and artificial intelligence. It is also a popular language in web development with some amazing frameworks like [Django](https://www.djangoproject.com/) and [flask](http://flask.pocoo.org/). It is also a popular scripting language. With its easy to read syntax it is becoming one the most popular programming languages, growing rapidly in different fields.
+
+For security professionals, Python can be used for but not limited to:
+- Penetration testing
+- Information gathering
+- Scripting tools
+- Automating stuff
+- Forensics
+
 
 ## Want to learn more?
-
 Free Code Camp has some great resources. The web is a big place, there's plenty more to explore:
-* Python Practice Book: http://anandology.com/python-practice-book/index.html
-* Think Python: http://greenteapress.com/thinkpython/html/index.html
-* Practical Business Python: http://pbpython.com/
-* Another course: https://realpython.com/?utm_source=fsp&utm_medium=promo&utm_campaign=bestresources
-* General: https://www.fullstackpython.com/
-* Learn the Basics: https://www.codecademy.com/learn/learn-python
-* Computer science using Python: https://www.edx.org/course/introduction-computer-science-mitx-6-00-1x-11?ref=hackernoon#!
-* Another computer science course using Python: https://www.udacity.com/course/intro-to-computer-science--cs101
-* List of more resources for learning python: https://github.com/vinta/awesome-python
-* Interactive Python: http://interactivepython.org/runestone/static/thinkcspy/index.html
-* Developer's Guide to Python: https://devguide.python.org/
-* Learn Python the Hard Way book: https://learnpythonthehardway.org/python3/
-* Introduction to Python Programming: https://www.udacity.com/course/introduction-to-python--ud1110
+* [Python Practice Book](http://anandology.com/python-practice-book/index.html)
+* [Think Python](http://greenteapress.com/thinkpython/html/index.html)
+* [Practical Business Python](http://pbpython.com/)
+* [Real Python](https://realpython.com)
+* [Full Stack Python](https://www.fullstackpython.com/)
+* [Learn the Basics on codecademy](https://www.codecademy.com/learn/learn-python)
+* [Computer science using Python on edX](https://www.edx.org/course/introduction-computer-science-mitx-6-00-1x-11)
+* [Intro to Computer Science CS101 on Udacity](https://www.udacity.com/course/intro-to-computer-science--cs101)
+* [List of more resources for learning python on Awesome Python](https://awesome-python.com)
+* [Interactive Python - How to Think Like a Computer Scientist](http://interactivepython.org/runestone/static/thinkcspy/index.html)
+* [Everyday Python Project](http://interactivepython.org/runestone/static/everyday/index.html)
+* [Python Developer’s Guide](https://devguide.python.org)
+* [Learn Python the Hard Way book](https://learnpythonthehardway.org/python3)
+* [Introduction to Python Programming on Udacity](https://www.udacity.com/course/introduction-to-python--ud1110)
+* [Profiling in Python](https://docs.python.org/2/library/profile.html)
+* [Python for Everybody Specialization](https://www.coursera.org/specializations/python)
+
+## Additional Resources
+* [Python2](https://docs.python.org/2/tutorial/)
+* [Python3](https://docs.python.org/3/tutorial/)
+* [Google's Python class](https://developers.google.com/edu/python/)
+* [Python Package Index](https://pypi.org/) Find, install and publish Python Packages
