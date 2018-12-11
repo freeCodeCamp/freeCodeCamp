@@ -22,7 +22,7 @@ The tools and software commonly utilized with React are incredibly well maintain
 ### Support
 React is created and maintained by the folks at Facebook and is used by individuals and companies all over the world in large volume. This means React is constantly improving and any problems you may experience are probably already solved on Stack Overflow.
 
-Other than the above, we can take our react knowledge to develop mobile native applications using react-native and also take our knowledge and expand it to VR using react-vr. Basically learning react opens us up to various other oppurtunities like using it for  Web, VR, PWA(Progressive Web App) and many others
+Other than the above, we can take our React knowledge to develop mobile native applications using react-native and also take our knowledge and expand it to VR using react-vr. Basically learning React opens us up to various other oppurtunities like using it for  Web, VR, PWA(Progressive Web App) and many others
 
 #### More Information
 To learn more about why React is so great check out the [official website](https://reactjs.org/)
