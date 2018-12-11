@@ -86,6 +86,26 @@ There are five options for the `MODE`, but the three you'll likely want to use a
 
 See the [Git Reset article](../git-reset/index.md) for all the options and more information.
 
+### Reseting a branch to match remote
+
+You can use the `git reset` command to change current `HEAD` pointer to exactly match the remote. This works for the entire branch. It removes all commits and changes made relative to the remote. To emphasize, it resets the branch to match exactly that of the remote, hence any commits or changes made that diverge from the remote branch will be erased.
+
+The following command fetches the remote and resets your current branch's `HEAD` to match the remote and updates the index. It basically rewinds the state of your branch, then all commits you make going forward write over anything that came after the reset point. 
+
+```shell
+git fetch origin BRANCH-NAME
+git reset --hard origin/BRANCH-NAME
+```
+
+If you merely want to uncommit and unstage all commits made relative to the remote, run:
+
+```shell
+git fetch origin BRANCH-NAME
+git reset origin/BRANCH-NAME
+```
+
+See the [Git Reset article](../git-reset/index.md) for all the options and more information.
+
 ### More Information:
 - [Git checkout documentation](https://git-scm.com/docs/git-checkout)
 - [Git commit documentation](https://git-scm.com/docs/git-commit)

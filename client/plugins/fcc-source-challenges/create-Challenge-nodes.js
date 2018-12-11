@@ -1,6 +1,6 @@
 const crypto = require('crypto');
 
-function createChallengeNodes(challenge, reporter) {
+function createChallengeNode(challenge, reporter) {
   if (typeof challenge.description[0] !== 'string') {
     reporter.warn(`
 
@@ -35,4 +35,4 @@ function createChallengeNodes(challenge, reporter) {
   );
 }
 
-exports.createChallengeNodes = createChallengeNodes;
+exports.createChallengeNode = createChallengeNode;
