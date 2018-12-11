@@ -16,7 +16,7 @@ To learn more about Python, check out these pages on python.org:
 ## Why Python?
 
 > If you're new to programming, you've made the right choice. Python is the perfect beginners' language. It has a clear and simple syntax that will get you writing useful programs in short order. Python even has an interactive mode, which offers immediate feedback, allowing you to test out new ideas almost instantly.
-> If you've done some programming before, you've still made the right choice. Python has all the powewwr and flexibility you'd expect from a modern, object-oriented programming language. But even with all of its power, you may be surprised how quickly you can build programs. In fact, ideas translate so quickly to the computer, Python has been called "programming at the speed of thought."
+If you've done some programming before, you've still made the right choice. Python has all the power and flexibility you'd expect from a modern, object-oriented programming language. But even with all of its power, you may be surprised how quickly you can build programs. In fact, ideas translate so quickly to the computer, Python has been called "programming at the speed of thought".
 > - Michael Dawson
 
 ## Python 2 or Python 3
