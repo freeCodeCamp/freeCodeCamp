@@ -20,7 +20,7 @@ An expansion card is an embedded circuit card that can be added to the motherboa
 ### Storage (SSD or HDD)
 The Solid State Drive (SSD) or Hard Disk Drive (HDD) are used to store information on the computer. It retains the memory even after loss of power.
   
-![SSD](https://images10.newegg.com/NeweggImage/ProductImage/20-147-373-09.jpg)  
+![SSD](https://images10.newegg.com/NeweggImage/ProductImage/20-147-373-09.jpg)  ![HDD](https://www.seagate.com/www-content/product-content/barracuda-fam/barracuda-new/images/barracuda-performance-powerhouse-drive-image-364X516.png)
   
 ### Memory (RAM)
 Random-access memory (RAM) is a form of computer data storage which stores data and machine code currently being used. A random-access memory device allows data items to be read or written in almost the same amount of time irrespective of the physical location of data inside the memory.
@@ -33,7 +33,7 @@ A case is used to house all the components of a computer.
 ![Case](https://images-na.ssl-images-amazon.com/images/I/41Wq97Jk20L._SL500_AC_SS350_.jpg)  
   
 ### Power Supply
-A power supply is an electronic device that supplies electric energy to an electrical load.
+A power supply is an electronic device that supplies electric energy to an electrical load. A computer power supply supplies electrical energy to all the components of the computer including: the motherboard, disk drives, and fans. Power supplies vary in the amount of output they provide and power supplies must be matched to the number of components needing power so they are not overloaded. 
  
  ![Power Supply](https://upload.wikimedia.org/wikipedia/commons/thumb/b/b6/SFX_PC-PSU_Delta_IMG_9760.JPG/620px-SFX_PC-PSU_Delta_IMG_9760.JPG)
  
