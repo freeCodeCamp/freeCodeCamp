@@ -26,3 +26,5 @@ Other than the above, we can take our React knowledge to develop mobile native a
 
 #### More Information
 To learn more about why React is so great check out the [official website](https://reactjs.org/)
+
+[React crash course on YouTube](https://www.youtube.com/watch?v=A71aqufiNtQ)
