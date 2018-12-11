@@ -90,5 +90,9 @@ The form tag can also have an attribute named "target" which specifies where the
 The action attribute defines the action to be performed when the form is submitted.
 Normally, the form data is sent to a web page at the Script URL when the user clicks on the submit button. If the action attribute is omitted, the action is set to the current page.
 
+
+## Form Validation
+Form validation guarantees that user provided all the required data in a correct way. There are 2 broad types: **client-side** and **server-side** validation. Client-side validation can be done via JavaScript or HTML5 (required attribute for instance). It gives helpful and instant feedback to the user. Server-side validation is performed before data is saved to the database to avoid saving incorrect or even dangerous data. Usually, both types of validation should be implemented to get the best of the both worlds: great UX and proper security.
+
 ## More information
 - [Wikipedia](https://en.wikipedia.org/wiki/Form_(HTML))
