@@ -9,7 +9,7 @@ In <a href='https://github.com/FreeCodeCamp/FreeCodeCamp/wiki/Java' target='_bla
 
 *   Primitive Type: `int`, `short`, `char`, `long`, `boolean`, `byte`, `float`, `double`
 *   Wrapper Type: `Integer`, `Short`, `Char`, `Long`, `Boolean`, `Byte`, `Float`, `Double`
-*   Reference Type: `String`, `StringBuilder`, `Calendar`, `ArrayList`, etc.
+*   Reference Type: `String`, `StringBuilder`, `Calendar`, `ArrayList`, `Array`, `Scaner` etc.
 
 You may have noticed that the **Wrapper Type** consists of types spelled exactly like the **Primitive Type**, except for the capitalised alphabet in the begining (like the **Reference Type**). This is because the Wrapper Types are actually a part of the more general Reference Types, but <i>closely linked</i> with their primitive counterparts via <a href='https://docs.oracle.com/javase/tutorial/java/data/autoboxing.html' target='_blank' rel='nofollow'>autoboxing and unboxing</a>. For now, you just need to know that such a 'Wrapper Type' exists.
 
