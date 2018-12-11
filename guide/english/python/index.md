@@ -28,6 +28,8 @@ Python doesn't ship with Windows. The installer and instructions can be found <a
 
 Linux operating systems come with different versions of Python pre-installed. However to install Python 3.x on Linux, follow this <a href='https://docs.aws.amazon.com/cli/latest/userguide/awscli-install-linux-python.html' target='_blank' rel='nofollow'>link</a>
 
+MacOS doesn't come with Python 3 (however Python 2.7 pre-installed by Apple), the installer and instructions can be found <a href='https://docs.python.org/3/using/mac.html' target='_blank' rel='nofollow'>here</a>
+
 ## Python Interpreter
 
 The Python interpreter is used to run Python scripts.
