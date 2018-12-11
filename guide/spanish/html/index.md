@@ -57,3 +57,6 @@ Desde los primeros días de la web, ha habido muchas versiones de HTML.
 *   [Elementos HTML](https://guide.freecodecamp.org/html/elements)
 *   [HTML semantico](https://guide.freecodecamp.org/html/html5-semantic-elements)
 *   [Atributos HTML](https://guide.freecodecamp.org/html/attributes)
+
+##### El Significado del HTML para la Web
+De la mano del científico  Tim Berners Lee en 1991 nace HTML en el CERN,  Laboratorio Europeo de Física Nuclear de Ginebra en Suiza, como un entramado inmerso entre la idea de interconectar contenido entre diferentes ordenadores de manera de tener una sola fuente de información.   Este proyecto que inicialmente surgio como respuesta a una necesidad interna de un grupo de investigacion, transformo y dio un cambio disruptivo a la cultura del conocimiento en el que hoy en dia no podemos encontrar límites en su expansion colectiva.  Solo se necesita un dispositivo electronico capaz de interpretar en lenguaje de marcadao y una conexion a Internet. 

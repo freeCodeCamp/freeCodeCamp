@@ -117,9 +117,62 @@ which would end up looking like:
   <dd>An awesome non-profit organization teaching people how to code.</dd>
 </dl>
 
+## Nested HTML Lists
+ List can be nested (lists inside lists):
+```html
+<ul>
+  <li>Coffee</li>
+  <li>Tea
+    <ul>
+      <li>Black tea</li>
+      <li>Green tea</li>
+    </ul>
+  </li>
+  <li>Milk</li>
+</ul>
+```
 
-## More Information:
+is displayed as:
 
-<!-- Please add any articles you think might be helpful to read before writing the article -->
+- Coffee
+- Tea
+  - Black tea
+  - Green tea
+- Milk
+
+## Nested HTML Lists
+
+List can be nested (lists inside lists):
+
+##### Code:
+```html
+<ul>
+  <li>Coffee</li>
+  <li>Tea
+    <ul>
+      <li>Black tea</li>
+      <li>Green tea</li>
+    </ul>
+  </li>
+  <li>Milk</li>
+</ul>
+```
+
+##### Output:
+
+<ul>
+  <li>Coffee</li>
+  <li>Tea
+    <ul>
+      <li>Black tea</li>
+      <li>Green tea</li>
+    </ul>
+  </li>
+  <li>Milk</li>
+</ul>
+
+#### More Information:
+
 * [HTML lists on w3schools](https://www.w3schools.com/html/html_lists.asp)
 * [HTML lists on WebPlatform](https://webplatform.github.io/docs/guides/html_lists/)
+
