@@ -88,7 +88,10 @@ A form will take input from the site visitor and then will post it to a back-end
 The HTML `<form>` tag is used to create an HTML form and it has the following syntax −
 
 ``` html    
-    <form action = "Script URL" method = "GET|POST">
+    <form action = "Script URL" method = "POST">
+         form elements like input, textarea etc.
+    </form>
+<form action = "Script URL" method = "GET">
          form elements like input, textarea etc.
     </form>
 ```
