@@ -25,9 +25,9 @@ For instance:
 The `<a href>` attribute is supported by all browsers.
 
 #### More attributes:
- `hreflang` : Specifies the language of the linked resource.  
- `target`   : Specifies the context in which the linked resource will open.  
- `title`    : Defines the title of a link, which appears to the user as a tooltip.  
+ `hreflang` : Specifies the language of the linked resource.
+ `target`   : Specifies the context in which the linked resource will open.
+ `title`    : Defines the title of a link, which appears to the user as a tooltip.
 
 ### Examples
 ```html
