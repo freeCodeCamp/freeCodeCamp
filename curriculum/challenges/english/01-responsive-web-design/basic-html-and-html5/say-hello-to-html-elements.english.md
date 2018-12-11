@@ -30,7 +30,7 @@ To pass the test on this challenge, change your <code>h1</code> element's text t
 ```yml
 tests:
   - text: Your <code>h1</code> element should have the text "Hello World".
-    testString: 'assert.isTrue((/hello(\s)+world/gi).test($("h1").text()), "Your <code>h1</code> element should have the text "Hello World".");'
+    testString: assert.isTrue((/hello(\s)+world/gi).test($('h1').text()), 'Your <code>h1</code> element should have the text "Hello World".');
 
 ```
 
@@ -54,7 +54,7 @@ tests:
 ## Solution
 <section id='solution'>
 
-```js
-// solution required
+```html
+<h1>Hello World</h1>
 ```
 </section>
