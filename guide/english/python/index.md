@@ -33,15 +33,15 @@ Most *nix based operating systems come with Python installed (usually Python 2, 
 
 Python doesn't ship with Windows. The installer and instructions can be found <a href='https://docs.python.org/3/using/windows.html' target='_blank' rel='nofollow'>here</a>.
 
-Linux operating systems come with different versions of Python pre-installed. However to install Python 3.x on Linux, follow this <a href='https://docs.aws.amazon.com/cli/latest/userguide/awscli-install-linux-python.html' target='_blank' rel='nofollow'>link</a>
+Linux operating systems come with different versions of Python pre-installed. However to install Python 3.x on Linux, follow this [link](https://docs.aws.amazon.com/cli/latest/userguide/awscli-install-linux-python.html).
 
-MacOS doesn't come with Python 3 (however Python 2.7 pre-installed by Apple), the installer and instructions can be found <a href='https://docs.python.org/3/using/mac.html' target='_blank' rel='nofollow'>here</a>
+MacOS doesn't come with Python 3 (however Python 2.7 pre-installed by Apple), the installer and instructions can be found [here](https://docs.python.org/3/using/mac.html).
 
 ## Python Interpreter
 
 The Python interpreter is used to run Python scripts.
 
-If it is available and in Unix shell’s search path, it is possible to start Python by typing the command `python` followed by the script name. This will invoke the interpreter and run the script.
+In your terminal, type the command `python` followed by the script name to invoke the interpreter and run the script. This will determine whether the interpreter is available and in Unix shell’s search path.
 
 `hello_campers.py`
 
