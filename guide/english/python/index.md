@@ -41,7 +41,7 @@ MacOS doesn't come with Python 3 (however Python 2.7 pre-installed by Apple), th
 
 The Python interpreter is used to run Python scripts.
 
-If it is available and in Unix shell’s search path, it is possible to start it by typing the command `python`, followed by the script name. This will invoke the interpreter and run the script.
+If it is available and in Unix shell’s search path, it is possible to start Python by typing the command `python` followed by the script name. This will invoke the interpreter and run the script.
 
 `hello_campers.py`
 
@@ -54,7 +54,7 @@ From the terminal:
     $ python hello_campers.py
     Hello campers!
 
-When multiple versions of Python are installed, calling them by version is possible, depending on the install configuration. In the Cloud9 IDE custom environment, they can be invoked like this:
+When multiple versions of Python are installed, calling them by version may be possible depending on the install configuration. In the Cloud9 IDE custom environment, they can be invoked as shown below:
 
     $ python --version
     Python 2.7.6
@@ -124,7 +124,7 @@ Some of the principles that influenced the design of Python are included as an E
 
 ### Cons
 - Being open source, many different ways have developed over the years for the same function. This sometimes creates chaos for others to read someone else's code.
-- It is a slow language. So, a very bad language to use for developing general algorithms.
+- It is a slow language. So, it may be less preferred for developing general algorithms.
 - Python is dynamically typed, so the errors in code only show up after running an application.
 - Python is not the best langauge to use if your project requires efficient memory management.
 - White space can confuse beginners, as spaces may change depending on the program.
@@ -171,7 +171,7 @@ Also the most important thing about python is that you don't have to specify the
 The `objects` parameter is prefixed with a `*`, which indicates that the function will take an arbitrary number of arguments for that parameter.
 
 ## Things you can do with python
-As stated python is a general purpose language. You can use it to do anything you like but one of the major uses of python is in machine learning and artificial intelligence. It is also a popular language in web development with some amazing frameworks like [Django](https://www.djangoproject.com/) and [flask](http://flask.pocoo.org/). It is also a popular scripting language. With its easy to read syntax it is becoming one the most popular programming languages growing rapidly in different fields.
+As stated, python is a general purpose language. You can use it to do anything you like but one of the major uses of python is in machine learning and artificial intelligence. It is also a popular language in web development with some amazing frameworks like [Django](https://www.djangoproject.com/) and [flask](http://flask.pocoo.org/). It is also a popular scripting language. With its easy to read syntax it is becoming one the most popular programming languages growing rapidly in different fields.
 
 ## Want to learn more?
 
