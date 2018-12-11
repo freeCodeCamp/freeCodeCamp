@@ -5,7 +5,7 @@ title: A Tag
 
 The `<a>` tag or _anchor_ element creates a hyperlink to another page or file. In order to link to a different page or file the `<a>` tag must also contain a `href` attribute, which indicates the link's destination.
 
-The text between the opening and closing `<a>` tags becomes the link.
+The text between the opening and closing `<a>` tags becomes the link. This text should be a meaningful description of the link destination, and not a generic phrase such as 'click here'. This better enables users with screen readers to navigate amongst various links on a page and understand what content each one will link to.
 
 By default, a linked page is displayed in the current browser window unless another target is specified. 
 
