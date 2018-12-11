@@ -26,7 +26,7 @@ localeTitle: 算法
 
 #### 快速排序
 
-没有快速排序可以完成排序讨论。基本概念在以下链接中。 [快速排序](http://me.dt.in.th/page/Quicksort/)
+几乎所有与排序相关的讨论都涉及快速排序。基本概念在以下链接中。 [快速排序](http://me.dt.in.th/page/Quicksort/)
 
 #### 合并排序
 
