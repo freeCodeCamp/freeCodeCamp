@@ -6,7 +6,7 @@ import {
   takeEvery,
   fork
 } from 'redux-saga/effects';
-import { channel } from 'redux-saga';
+import { delay, channel } from 'redux-saga';
 
 import {
   challengeMetaSelector,
@@ -110,6 +110,8 @@ function* ExecuteDOMChallengeSaga() {
   yield fork(logToConsole, consoleProxy);
 
   yield call(createTestFrame, state, ctx, consoleProxy);
+  // wait for a code execution on a "ready" event in jQuery challenges
+  yield delay(100);
 
   const testResults = yield call(executeTests, (testString, testTimeout) =>
     Promise.race([
