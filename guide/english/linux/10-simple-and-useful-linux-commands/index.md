@@ -57,14 +57,33 @@ It allows quickly view file. You can page up and down. Press `q` to quit from `l
 9. `more` 
 It allows quickly view file and shows details in percentage. You can page up and down. Press `q` to quit from `more` window.
 
-10. `cp` 
-Copy file from source to destination preserving same mode.
+10. `adduser` or `useradd`  
+This command is for administrators to create new user accounts.
 
-11. `mv` 
-Move file from source to destination preserving same mode. 
-
-12. 'ifconfig'
+11. 'ifconfig'
 ifconfig allows you to see the addresses associated with each TCP/IP interface on your machine, or manipulate the state of the interface. A definite must have for any tech or SysAdmin.
 
-13. `systemctl`
+12. `systemctl`
 This is a command which allows operators to work with the Linux system services. The standard use of the command is `systemctl <OPTION> <SERVICE-NAME>` by providing an `OPTION` (e.g. `start`, `stop`, `status`) and than providing a specific Service Name to act on. You can use the command to get a general status of your Linux services (e.g `systemctl status`). Note that you will either need Administrator access or use `sudo` to elevate your rights to run the command successfully.  
+
+13. `scp` Command
+securely Copy file between remote hosts without logging or creating a FTP session explicitly. 
+
+14. `su` Command
+This command is used to execute sequence of codes in root mode. Root is the super user mode which can modify any file in system without any password (once asked while logging in).
+
+15. `sudo` Command
+This command is used to execute a single line of code in root mode.
+     
+16. `apt-get` Command
+This command is used to install packages which are present in the operating system repositories with complete dependencies (must be run in root mode).
+
+17. `aptitude` Command
+This command is used to install packages with or without complete dependencies, i.e. it can fix any type of incomplete dependencies.
+
+### How to get help about the commands:
+More info can be viewed about how to use each of the commands listed above right in the terminal in the following ways:
+1. Using `man` to access the manual pages. It takes as argument another command name and returns a complete tutorial about the argument, including main options of use, syntax details and another related commands. You can search a text accross all man pages database.
+Example: `man cd`
+2. Using the `--help` flag to see quick options to use in command line.
+Example: `cd --help`
