@@ -21,51 +21,61 @@ class ClassName:
     <statement-N> 
  ``` 
  
- #### Class Objects: 
+ #### Объекты классов: 
  
- Class objects support two kinds of operations: attribute references and instantiation. 
+Объекты класса поддерживают два вида операций: ссылки на атрибуты и экземпляр.
+ 
+В ссылках атрибутов используется стандартный синтаксис, используемый для всех ссылок на атрибуты в Python: `obj.name`.
+Допустимые имена атрибутов - это все имена, которые были в пространстве имен класса при создании объекта класса.
+Итак, если определение класса выглядит так:
+
+```python
+class MyClass:
+    """ A simple example class """
+    i = 12345
+
+
+    def f(self):
+        return 'hello world'
+```
+
+Тогда `MyClass.i` и `MyClass.f` являются допустимыми ссылками на атрибуты, возвращая целое число и объект функции соответственно.
+Атрибуты класса также могут быть присвоены, поэтому вы можете изменить значение `MyClass.i` путем присваивания. `__doc__` также является допустимым атрибутом, возвращая docstring, принадлежащую классу: `Простой пример класса" `.
  
- Attribute references use the standard syntax used for all attribute references in Python: `obj.name`. 
- Valid attribute names are all the names that were in the class's namespace when the class object was created. 
- So, if the class definition looked like this: 
+ Для создания экземпляра класса используется нотация функций. Просто представьте, что объект класса является функцией без параметров, которая возвращает новый экземпляр класса. Например (при условии, что указанный класс):
+
+```python
+x = MyClass()
 ```
 
-питон класс MyClass: «" Простой примерный класс "" " i = 12345
-```
-def f(self): 
-    return 'hello world' 
-```
-
-```
-Then `MyClass.i` and `MyClass.f` are valid attribute references, returning an integer and a function object, respectively. 
- Class attributes can also be assigned to, so you can change the value of `MyClass.i` by assignment. `__doc__` is also a valid attribute, returning the docstring belonging to the class: `"A simple example class"`. 
+Создает новый экземпляр класса и назначает этот объект локальной переменной x.
  
- Class instantiation uses function notation. Just pretend that the class object is a parameterless function that returns a new instance of the class. For example (assuming the above class): 
+Операция создания экземпляра («вызов» объекта класса) создает пустой объект.
+Многие классы создают объекты с экземплярами, настроенными для определенного начального состояния.
+Для этого в классе можно определить специальный метод с именем __init__(), например:
+```python
+def __init__(self):
+    self.data = []
 ```
 
-питон x = MyClass ()
-```
-Creates a new instance of the class and assigns this object to the local variable x. 
- 
- The instantiation operation (“calling” a class object) creates an empty object. 
- Many classes like to create objects with instances customized to a specific initial state. 
- Therefore a class may define a special method named __init__(), like this: 
+Если класс определяет метод `__init __ ()`, то экземпляр класса автоматически вызывает `__init __ ()` для вновь созданного экземпляра класса.
+Таким образом, в этом примере новый, инициализированный экземпляр может быть получен:
+
+```python
+x = MyClass()
 ```
 
-питон def **init** (self): self.data = \[\]
-```
-When a class defines an `__init__()` method, class instantiation automatically invokes `__init__()` for the newly-created class instance. 
- So in this example, a new, initialized instance can be obtained by: 
-```
+Конечно, метод `__init __ ()` может иметь аргументы для большей гибкости.
+В этом случае аргументы, заданные оператору экземпляра класса, передаются в `__init __ ()`. Например,
 
-питон x = MyClass ()
+```python
+class Complex:
+    def __init__(self, realpart, imagpart):
+        self.r = realpart
+        self.i = imagpart
+              ...
+
+x = Complex(3.0, -4.5)
+>>> x.r, x.i
+(3.0, -4.5)
 ```
-Of course, the `__init__()` method may have arguments for greater flexibility. 
- In that case, arguments given to the class instantiation operator are passed on to `__init__()`. For example, 
-```
-
-питон класс: def **init** (self, realpart, imagpart): self.r = фактическая часть self.i = imagpart ...
-
-x = комплекс (3,0, -4,5)
-
-> > > xr, xi (3,0, -4,5) \`\` \`
