@@ -53,3 +53,9 @@ title: Import a Google Font
   </form>
 </main>
 ```
+
+#### More Information
+[Developers Google - Getting Started with the Google Fonts API](https://developers.google.com/fonts/docs/getting_started)\
+[Google Fonts](https://fonts.google.com/)\
+[How to use Google Fonts](https://www.w3schools.com/howto/howto_google_fonts.asp)
+
