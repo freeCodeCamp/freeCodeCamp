@@ -122,7 +122,7 @@ The principles that influenced the design of Python are included as an Easter eg
 - Don't have to worry about range of data types.  For instance, in the C language, we have to specify data types such as `int`, `long int`, `long long int`.
 
 ### Cons
-- Being open source, many different ways have developed over the years for the same function. This sometimes creates chaos for others to read someone else's code.
+- Being open source, many different ways have developed over the years for the same function. This can sometimes create chaos for others when reading someone else's code.
 - It is a slow language. So, it may be less preferred for developing general algorithms.
 - Python is dynamically typed, so the errors in code only show up after running an application.
 - Python is not the best langauge to use if your project requires efficient memory management.
@@ -130,7 +130,7 @@ The principles that influenced the design of Python are included as an Easter eg
 
 ## Documentation
 
-<a href='https://docs.python.org/3/' target='_blank' rel='nofollow'>Python is well documented</a>. These docs include tutorials, guides, references and meta information for language.
+[Python](https://docs.python.org/3) is well documented. These docs include tutorials, guides, references, and meta information for the language.
 
 Another important reference is the Python Enhancement Proposals (<a href='https://www.python.org/dev/peps/' target='_blank' rel='nofollow'>PEPs</a>). Included in the PEPs is a style guide for writing Python code, <a href='https://www.python.org/dev/peps/pep-0008/' target='_blank' rel='nofollow'>`PEP 8`</a>.
 
@@ -169,8 +169,8 @@ Also the most important thing about python is that you don't have to specify the
 
 The `objects` parameter is prefixed with a `*`, which indicates that the function will take an arbitrary number of arguments for that parameter.
 
-## Things you can do with python
-As stated, python is a general purpose language. You can use it to do anything you like but one of the major uses of python is in machine learning and artificial intelligence. It is also a popular language in web development with some amazing frameworks like [Django](https://www.djangoproject.com/) and [flask](http://flask.pocoo.org/). It is also a popular scripting language. With its easy to read syntax it is becoming one the most popular programming languages growing rapidly in different fields.
+## Things you can do with Python
+As stated, Python is a general purpose language. You can use it to do anything you like but one of the major uses of Python is in machine learning and artificial intelligence. It is also a popular language in web development with some amazing frameworks like [Django](https://www.djangoproject.com/) and [flask](http://flask.pocoo.org/). It is also a popular scripting language. With its easy to read syntax it is becoming one the most popular programming languages, growing rapidly in different fields.
 
 For security professionals, Python can be used for but not limited to:
 - Penetration testing
