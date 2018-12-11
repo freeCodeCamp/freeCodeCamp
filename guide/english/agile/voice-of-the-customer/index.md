@@ -3,7 +3,7 @@ title: Voice of the Customer
 ---
 ## Voice of the Customer
 
-You, as the Product Owner (PO), are the Voice of the Customer to the Delivery Team. When the team needs clarification on a story, to better understand the What and the Why, they will ask you.<BR>
+In agile development, continuous input from the customer and feedback play very important role in rapid delivery of the product. You, as the Product Owner (PO), are the Voice of the Customer to the Delivery Team. When the team needs clarification on a story, to better understand the What and the Why, they will ask you.<BR>
 You understand the needs, motivations and  desired outcomes of the customer as they change over the length of the project.
 
 #### More Information:
