@@ -73,7 +73,7 @@ array[5]
 ```
 
 #### .pop
-The .pop method will permantently remove the last element of an array:
+The .pop method will permantently remove the last element of an array and return this element:
 
 ``` ruby
 array.pop
