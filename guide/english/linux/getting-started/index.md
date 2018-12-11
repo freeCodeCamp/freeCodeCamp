@@ -18,15 +18,17 @@ Some other choices include:
 
 ## Installing.
 
-Most Linux distributions are extremely easy to install, with all information shown in a step-by-step instalation.
 
-One important step to look out for is when deciding where to install your new Linux distro. For first users it's better to choose a "Guided" option as it will do all the work for you.
+Most Linux distributions are extremely easy to install, all information is shown between each step of the installation.
 
-Remember to read all the steps carefully and leave some space in your HDD for the new distro, I would say, about 30Gb minimum would be nice to have.
+One important step to look out for is when deciding where to install your new Linux distro. For first-time users it's better to choose the "Guided" option as it will do all the work for you.
 
-## The dreaded Terminal.
+Remember to read all the steps carefully and leave some space in your HDD for the new distro, I would say about 30Gb minimum is nice to have.
+
+## The Dreaded Terminal.
 
 Linux's terminal is not to be feared, actually it is quite easy to use with some practice and it can make our daily tasks easy to automate.
+
 
 In Debian/Ubuntu and derivatives, the shortcut to open the CLI (Command Line Interface) is "Ctrl + Alt + T". Let's open the terminal and try some commands.
 
@@ -38,7 +40,7 @@ cd
 
 Using the cd command alone will change the current directory to your user home directory, located in "/home/username" as in "/home/mark".
 
-ls (List) - This command list the content in the current directory. It can be also used to list file information.
+ls (List) - This command list the content in the current directory. It can also be used to list file information.
 
 ```unix
 ls
