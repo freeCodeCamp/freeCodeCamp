@@ -5,18 +5,32 @@ title: Fonts
 The CSS font properties define the font family, weight, size, variant, line height and style of a text.
 
 ### Font family
-The font family of a text is simply set by using the `font-family` property.
+The font family of a text is set by using the `font-family` property.
 
-It works with a *fallback* system, if your browser does not support the first font, it tries with the next one and so on. If the name of the font is more than one word it must be surrounded by quotes. 
+
+It works with a *fallback* system, meaning if your browser does not support the first font, it tries with the next one and so on. If the name of the font is more than one word it must be surrounded by quotes. Either single quotes `(')` or double quotes `(")` can be used.
+
 
 ```css
 p {
     font-family: "Times New Roman", Times, serif;   
 }
 ```
+
 In the above example, "Times New Roman" is the <family-name> of the font, while "serif" is the <generic-name>. Generic names are used as a fallback
 mechanism for preserving style if the family-name is unavailable. A generic name should always be the last item in the list of font family names. Generic
-family names are serif, sans-serif, monospace, cursive, fantasy, system-ui.
+family names are serif, sans-serif, monospace, cursive, fantasy, system-ui. 
+In addition to specifying common fonts that are found on most operating systems, custom web fonts can be used as well. To import such a font, copy the font URL from the library and reference it in the HTML.
+
+### Importing a font from Google
+If you want to use a font that is not downloaded on your computer, you can import one from [fonts.google.com](https://fonts.google.com/).
+
+```css
+<link href="https://fonts.googleapis.com/css?family=Lobster" rel="stylesheet" type="text/css">
+```
+
+Then you can use the font that you have imported (in this example, 'Lobster') in your code as normal.
+
 
 ### Font style
 The `font-style` property can be used to specify italic text.
@@ -48,6 +62,7 @@ There are different types of font size values:
 
 * `px` (pixels) - The default size of text being `16px`
 * `em` - `1em` = the current font size, so `1em` = `16px` (recommended by the W3C)
+* `rem` - `1rem` = the font size of the HTML element, or the browser's default font size
 * `small`, `medium`, `large` - known as absolute size values
 * `%` - percentages
 
@@ -79,13 +94,14 @@ p {
 ```
 
 ### Font responsiveness
-The text size can be set with a vw(viewport width) unit.
-That way the text size will follow the size of the browser window.
+The text size can be set with a `vw` (viewport width) unit.
+This will allow the text to adjust to the size of the browser window.
 
 ```html
-<h1 style="font-size:10vw">Hello World</h1>
+<h1 style="font-size: 10vw">Hello World</h1>
 ```
-`Viewport is the browser window size. 1vw = 1% of viewport width. If the viewport is 50cm wide, 1vw is 0.5cm.`
+
+Viewport is the browser window size. 1vw = 1% of viewport width. If the viewport is 50cm wide, 1vw is 0.5cm.
 
 ### Font variant
 The `font-variant` property specifies if a text should be displayed in a small-caps font (where all lowercase letters are converted to uppercase letters while appearing in a smaller font-size than the original uppercase letters in the text).
@@ -116,3 +132,4 @@ p {
 - [MND - CSS Font](https://developer.mozilla.org/en-US/docs/Web/CSS/font)
 - [W3 Schools - CSS Font](https://www.w3schools.com/css/css_font.asp)
 - [CSSFontStack](https://www.cssfontstack.com/)
+- [Google Fonts](https://fonts.google.com/)
