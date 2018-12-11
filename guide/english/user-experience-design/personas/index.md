@@ -47,3 +47,4 @@ Scenarios is a description of how users would use a product to accomplish an end
 
 - <a href="https://www.usability.gov/how-to-and-tools/methods/personas.html" target='_blank' rel='nofollow'>Personas - usability.gov</a>
 - [Smashing Magazine: A Closer Look At Personas](https://www.smashingmagazine.com/2014/08/a-closer-look-at-personas-part-1/)
+- [How to create user personas that deliver real value](https://uxmastery.com/personas-that-deliver-real-value)

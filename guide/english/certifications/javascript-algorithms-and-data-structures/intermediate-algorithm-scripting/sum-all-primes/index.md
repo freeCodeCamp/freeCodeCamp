@@ -132,6 +132,25 @@ This problem is hard if you have to create your own code to check for primes, so
 
 *   <a href='https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Functions#Recursion' target='_blank' rel='nofollow'>Functions - Recursion</a>
 
+## ![:sunflower:](https://forum.freecodecamp.com/images/emoji/emoji_one/sunflower.png?v=3 ":sunflower:") Intermediate Code Solution 2:
+
+    function sumPrimes(num) {
+      let nums =  Array.from({length: num + 1}).map((_, i) => i).slice(2);
+      for (let n in nums) {
+        nums = nums.filter(val => val == nums[n] || val % nums[n] != 0);
+      }
+      return nums.reduce((prevSum, cur) => prevSum + cur);
+    }
+    // test here
+    sumPrimes(13);
+
+![:rocket:](https://forum.freecodecamp.com/images/emoji/emoji_one/rocket.png?v=3 ":rocket:") <a href='https://repl.it/repls/FrigidFantasticFossil' target='_blank' rel='nofollow'>Run Code</a>
+
+### Code Explanation:
+
+*  Use `Array.from()` to generate a sequence of numbers up to and including `num`. Combine with `.slice()` to slice off first two indices `[0, 1]` since all prime numbers must be greater than 1.
+*   If a number is not prime, it is divided by number > 1 other smaller than himself. 
+
 ## ![:rotating_light:](https://forum.freecodecamp.com/images/emoji/emoji_one/rotating_light.png?v=3 ":rotating_light:") Advanced Code Solution:
 
     function sumPrimes(num) {
