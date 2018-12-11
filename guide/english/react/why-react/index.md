@@ -20,7 +20,7 @@ Of the major frontend "frameworks" available, React has a relatively low barrier
 The tools and software commonly utilized with React are incredibly well maintained and supported and provide several different avenues of best practices to follow when developing web applications. Some of these tools include Redux, React-router, Thunk, and many others. There are also a number of development tools, such as a React and Redux Chrome extension, which helps with debugging your React applications.
 
 ### Support
-React is created and maintained by the folks at Facebook and is used by individuals and companies all over the world in large volume. This means React is constantly improving and any problems you may have have probably already been asked on Stack Overflow.
+React is created and maintained by the folks at Facebook and is used by individuals and companies all over the world in large volume. This means React is constantly improving and any problems you may experience are probably already solved on Stack Overflow.
 
 Other than the above, we can take our react knowledge to develop mobile native applications using react-native and also take our knowledge and expand it to VR using react-vr. Basically learning react opens us up to various other oppurtunities like using it for  Web, VR, PWA(Progressive Web App) and many others
 
