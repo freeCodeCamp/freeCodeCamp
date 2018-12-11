@@ -105,18 +105,19 @@ Some of the principles that influenced the design of Python are included as an E
 
 ## Pros and Cons of Python
 ### Pros
-1. Easy to read, learn, and write.
-2. Interactive language with a module support for almost all functionality.
-3. Open Source: You can contribute to the community and help others with the functions you have developed.
-4. A lot of good interpreters and notebooks available for better experience like jupyter notebook.
-5. It is a very easy language debug. To check if a small bit of code works or not, you can just open up the interpreter and test.
-6. There are multiple libraries available for Python, like numpy, pandas, etc., to make doing complex operations easy!
+- Easy to read, learn, and write.
+- Interactive language with a module support for almost all functionality.
+- Open Source: You can contribute to the community and help others with the functions you have developed.
+- A lot of good interpreters and notebooks available for better experience like jupyter notebook.
+- It is a very easy language debug. To check if a small bit of code works or not, you can just open up the interpreter and test.
+- There are multiple libraries available for Python, like numpy, pandas, etc., to make doing complex operations easy!
 
 ### Cons
 - Being open source, many different ways have developed over the years for the same function. This sometimes creates chaos for others to read someone else's code.
 - It is a slow language. So, a very bad language to use for developing general algorithms.
 - Python is dynamically typed, so the errors in code only show up after running an application.
 - Python is not the best langauge to use if your project requires efficient memory management.
+- White space can confuse beginners, as spaces may change depending on the program.
 
 ## Documentation
 
