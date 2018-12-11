@@ -67,6 +67,15 @@ Other elements that form can contain:
 - ```fieldset```- It groups related elements in a form.
 - ```legend```- It defines a caption for a <fieldset> element.
 
+SETTING MINIMUM AND MAXIMUM VALUES ON INPUTS OF TYPE "NUMBER"
+
+If you would like to require your user to enter a number value within a certain range, you can use the "min" and "max" attributes to the input element.
+
+For example:
+<input type="number" name="age" id="age" min="21" max="99">
+
+You can use only min, only max or both to set your range. If the user enters a value outside of the range, the browser will automatically generate a notifcation alerting them to the requirement.
+
 MORE INFORMATION ON HTML FORMS.
 
 HTML Forms are required when you want to collect some data from the site visitor. For example, during user registration you would like to collect information such as name, email address, credit card, etc.
