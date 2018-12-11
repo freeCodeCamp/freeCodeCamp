@@ -40,7 +40,9 @@ $ tar zxvf jdk-8uversion-linux-x64.tar.gz`
 
 `bash  
 $ rpm -ivh jdk-8uversion-linux-x64.rpm`   
-* Users have the choice to install an open source version of Java, OpenJDK or the Oracle JDK. While OpenJDK is in active development and in sync with Oracle JDK, they just differ in <a href='http://openjdk.java.net/faq/' target='_blank' rel='nofollow'>licensing</a> stuff. However few developers complain of the stability of Open JDK. Instructions for **Ubuntu** :
+* Users have the choice to install an open source version of Java, OpenJDK or the Oracle JDK. While OpenJDK is in active development and in sync with Oracle JDK, they just differ in <a href='http://openjdk.java.net/faq/' target='_blank' rel='nofollow'>licensing</a> stuff. However few developers complain of the stability of Open JDK. 
+
+### Instructions for **Ubuntu** :
 
 Open JDK installation :  
 `bash  
@@ -79,7 +81,7 @@ Verify Java has been properly installed in your system by opening Command Prompt
 
 ## JVM
 
-Ok now since we are done with the installations, let's begin to understand first the nitty gritty of the Java ecosystem. Java is an <a href='http://stackoverflow.com/questions/1326071/is-java-a-compiled-or-an-interpreted-programming-language' target='_blank' rel='nofollow'>interpreted and compiled</a> language, that is the code we write gets compiled to bytecode and interpreted to run. We write the code in .java files, Java compiles them into <a href='https://en.wikipedia.org/wiki/Java_bytecode' target='_blank' rel='nofollow'>bytecodes</a> which are run on a Java Virtual Machine or JVM for execution. These bytecodes typically has a .class extension.
+Ok now since we are done with the installations, let's begin to understand first the nitty gritty of the Java ecosystem. Java is an <a href='http://stackoverflow.com/questions/1326071/is-java-a-compiled-or-an-interpreted-programming-language' target='_blank' rel='nofollow'>interpreted and compiled</a> language, that is the code we write gets compiled to bytecode and interpreted to run. We write the code in .java files, Java compiles them into <a href='https://en.wikipedia.org/wiki/Java_bytecode' target='_blank' rel='nofollow'>bytecodes</a> which are run on a Java Virtual Machine or JVM for execution. These bytecodes typically have a .class extension.
 
 Java is a pretty secure language as it doesn't let your program run directly on the machine. Instead, your program runs on a Virtual Machine called JVM. This Virtual Machine exposes several APIs for low level machine interactions you can make, but other than that you cannot play with machine instructions explicitely. This adds a huge bonus of security.
 
