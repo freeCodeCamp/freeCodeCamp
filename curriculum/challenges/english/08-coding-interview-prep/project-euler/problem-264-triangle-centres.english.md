@@ -40,7 +40,7 @@ Enter as your answer the sum of their perimeters rounded to four decimal places.
 ```yml
 tests:
   - text: <code>euler264()</code> should return 2816417.1055.
-    testString: 'assert.strictEqual(euler264(), 2816417.1055, "<code>euler264()</code> should return 2816417.1055.");'
+    testString: assert.strictEqual(euler264(), 2816417.1055, '<code>euler264()</code> should return 2816417.1055.');
 
 ```
 

@@ -3,7 +3,7 @@ title: Erlang Term Storage
 ---
 ## Erlang Term Storage
 
-Erlang Term Storage, normally abreviated as ETS, is an in-memory database built into OTP, it's accessible within Elixir, and is a powerful alternative to solutions like Redis when your application runs on a single node.
+Erlang Term Storage, normally abreviated as ETS, is an in-memory database built into OTP, its accessible within Elixir, and is a powerful alternative to solutions like Redis when your application runs on a single node.
 
 ## Quick Start
 To create an ETS table you first need to initalize a table `tableName = :ets.new(:table_otp_name, [])`, once you have initalized a table you can: insert data, lookup values, delete data, and more.
