@@ -36,14 +36,18 @@ Encouraging girls in elementary, middle, and high school can also help to increa
 
 
 ## More Information:
-
 - [Why are there so few women in tech? The truth behind the Google memo](https://www.theguardian.com/lifeandstyle/2017/aug/08/why-are-there-so-few-women-in-tech-the-truth-behind-the-google-memo)
 - [Ellen Pao: Has Anything Really Changed for Women in Tech?](https://www.nytimes.com/2017/09/16/opinion/sunday/ellen-pao-sexism-tech.html)
 - [It's Time to Close the Gap for Women of Color in Tech](https://www.marketwatch.com/press-release/its-time-to-close-the-gap-for-women-of-color-in-tech-2018-09-13)
 - [We need more women in tech in order to get more women in tech](https://www.recode.net/2018/6/21/17489450/tech-diversity-inclusion-women-leadership-engineer-culture)
 
-### A non-exhaustive list of global women in tech initiatives:
+### Some Popular Conferences and Summits for Women in Technology:
+- [GHC Women in Computing](https://ghc.anitab.org/)
+- [The Women in Tech Summit](https://womenintechsummit.net/)
+- [Wonder Women Tech National Conference](https://wonderwomentech.com/)
+- [WITI Women in Technology Summit](https://www.witi.com/conferences/2018/summit/)
 
+### A non-exhaustive list of global women in tech initiatives:
 - [ChickTech](https://chicktech.org/)
 - [PyLadies](https://www.pyladies.com/)
   An international mentorship group with a focus on helping more women become active participants and leaders in the Python open-source community.
