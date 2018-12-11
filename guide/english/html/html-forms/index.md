@@ -3,9 +3,9 @@ title: HTML Forms
 ---
 ## HTML Forms
 
-Forms are used to collect data entered by a user, which are then sent to the server for further processing. They are utilized for different kinds of user inputs such as name, email, etc. 
+HTML forms are used to get input entered by a user and send it to a server for further processing. They can be used for different kinds of user inputs, such as name, email, address, etc.
 
-Form contains control elements which are wrapped around ```<form></form>``` tags, like ```input```, which can have types like:
+Forms contain control elements (such as ```input```) which are wrapped around ```<form> </form>``` tags. Input elements can be classified as 'types' such as:
 
 - ```text```
 - ```email```
@@ -30,6 +30,11 @@ Form contains control elements which are wrapped around ```<form></form>``` tags
 - ```reset```
 - ```tel```
 - ```url```
+- ```textarea``` - is a multiline box which is most often used for adding some text (e.g. comment). Size of textarea is defined by number of rows and columns.
+- ```select``` - together with ```<option></option>``` tag creates drop-down select menu.
+- ```button``` - The button element can be used to define a clickable button.
+- ```fieldset```- It groups related elements in a form.
+- ```legend```- It defines a caption for a <fieldset> element.
 
 Code example:
 ```html
@@ -60,14 +65,6 @@ Code example:
 </form>
 ```
 ![Screenshot of Code Above](https://i.imgur.com/r0br52L.png "Screenshot of Code Above")
-
-Other elements that form can contain:
-
-- ```textarea``` - is a multiline box which is most often used for adding some text (e.g. comment). Size of textarea is defined by number of rows and columns.
-- ```select``` - together with ```<option></option>``` tag creates drop-down select menu.
-- ```button``` - The button element can be used to define a clickable button.
-- ```fieldset```- It groups related elements in a form.
-- ```legend```- It defines a caption for a <fieldset> element.
 
 SETTING MINIMUM AND MAXIMUM VALUES ON INPUTS OF TYPE "NUMBER"
 
