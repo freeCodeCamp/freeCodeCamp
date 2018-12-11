@@ -32,21 +32,24 @@ Harm comes in many different forms. <b>You</b> as a professional programmer prom
 
 As a programmer, you want to believe in doing your best work, and you never want to be in a situation where code you release is knowingly not your best work.
 
-You don't want to allow code that is defective to accumulate in your system. You may not be able to prevent it from getting into your system (ex. a release emergency), but you won't allow it to commute to accumulate. 
+You don't want to allow code that is defective to accumulate in your system. You may not be able to prevent it from getting into your system (ex. a release emergency), but you won't allow it to accumulate. 
 
 Notice that in the promise, there is an aspect of both "behavior" and "structure" in the oath.  Something that is defective in behavior is <b>clearly a problem,</b> but code defective in structure will drive the productivity of your team members down, untill you can barely get anything done.
 
 ### Promise 3
 >3. I will produce, with each release, a quick, sure, and repeatable proof that every element of the code works as it should.
 
-Customers, users, and even buisnesses would expect that we would be able to undemand prove that our code works as it is supposed to. Notice that in the oath there are words like quick, sure, and repeatable. You want to be able to prove on a moment's notice that code still works as it is supposed to.
+
+Customers, users, and even buisnesses would expect that we would be able to prove, on demand, that our code works as it is supposed to. Notice that in the oath there are words like "quick", "sure", and "repeatable"; you want to be able to prove on a moment's notice that code still works as it is supposed to.
 
 If you add a new feature, that doesn't break anything older, or fix a new structure that doesn't break anything that used to be there, you want to be able to show that quickly and easily, that the code still does what it's intended to do. 
 
 ### Promise 4
 > 4. I will make frequent, small, releases so that I do not impede the progress of others.
 
-The simple way of saying this, is to not check something out, and check something out for a <b>month</b>. A more insightful way of saying this, is to say that everything you do in the code, you should do in small steps. If what your doing is currently blocking someone else, it can't block them for very long <b>because</b> you are doing it in small steps. 
+The simple way of saying this, is to not check something out, and keep it checked out for a <b>month</b> or more. 
+
+A more insightful way of saying this, is to say that everything you do in the code, you should do in small steps. If what your doing is currently blocking someone else, it can't block them for very long <b>because</b> you are doing it in small steps. 
 
 The advantage in working in small steps is enormous. Make sure that when you do things in commits, you do commits hourly. When you do check-ins, do check-ins frequently. When you do merges, you do merges frequently. 
 
@@ -63,32 +66,32 @@ We are humans, we make things better. That's what humans do, or at least what we
 
 This is all about thinking about your teammates and associates. The people who work with you, and the people that rely on your code. For example, don't do anything that slows anyone else down. Don't write a function with too many arguments, or make a mess in someone else's code. Don't do this to code that other people depend upon, because it is just going to <b>slow them down</b>.
 
-Don't put long running tests into the test-suite. Keep those tests running fast. Consider your teammates at all times. Consider the enviorment at all times. Keep everything going quickly. Don't impede their productivity.
+Don't put long running tests into the test-suite. Keep those tests running fast. Consider your teammates at all times. Consider the environment at all times. Keep everything going quickly. Don't impede their productivity.
 
 ### Promise 7
 >7. I will continuously ensure that others can cover for me, and that I can cover for them.
 
-This is something that we often neglect to do. We're a team, and the way teams behave, is that if another teammate goes down, another teammate covers for them.
+This is something that we often neglect to do. We're a team, and the way teams behave, is that if one teammate goes down, another teammate covers for them.
 
-In software what that means, is that you need to know how your teammates stuff works, and where their scripts are, where their files are, how their code is structured, etc. 
+In software what that means, is that you need to know how your teammates code works, where their scripts are, where their files are, how their code is structured, etc. 
 
-If they go down, we don't want to have silos of knowledge of our teams, we want that knowledge spread around.
+If they go down, we don't want to have silos of knowledge of our teams, the team's knowledge needs to be spread around.
 
 One way to do that is through pair-programming. Make sure that you can cover for each other. 
 
 ### Promise 8
 > 8. I will produce estimates that are honest both in magnitude and precision. I will not make promises without certainty.
 
-One of the biggest problems programmers have, is that they make estimates that are considered to be promises. When you make an estimate, you need to make it very clear that it's a guess, and not a very good guess. I would make sure that when you do estimates, you make them in three numbers: best case, worst case, and nominal case. Make sure that everybody knows that the worse case could happen.
+One of the biggest problems programmers have, is that they make estimates that are considered to be promises. When you make an estimate, you need to make it very clear that it's a guess, *and not a very good guess*. I would make sure that when you do estimates, you make them in three numbers: best case, worst case, and nominal case. Make sure that everybody knows that the worse case could happen.
 
 Don't make promises that you aren't certain that you can complete. If you make a promise, you have to keep it.
 
-When someone says to you "I need this done by Tuesday," and your not sure if you can get it done by Tuesday, then you don't promise. You say "<b>no</b>, I'm not sure I can get this done by Tuesday." Watch out very carefully, because someone might say for you to <b>try</b>, and your answer to that would be, "I am already trying."  You are already trying your hardest, so never let anyone convince you to try harder.
+When someone says to you "I need this done by Tuesday," and your not sure if you can get it done by Tuesday, then you don't promise. You say "<b>no</b>, I'm not sure I can get this done by Tuesday." Be very careful, because someone might push for you to <b>try</b> and make an unreasonable deadline, and your answer to that should be, "I am already trying." You are already trying your hardest, so never let anyone convince you to try harder.
 
 ### Promise 9
 > 9. I will never stop learning and improving my craft.
 
-This doesn't need much explanation. You should always try to learn new languages, new frameworks, new techniques, new disiplines, new processes. You need to apply what you learn then, to constantly impove your craft. 
+This doesn't need much explanation. You should always try to learn new languages, new frameworks, new techniques, new disciplines, new processes. You need to apply what you learn then, to constantly improve your craft. 
 
 ### Promise 10
 >10. I will only produce code which conforms to ethics.
@@ -96,5 +99,5 @@ This doesn't need much explanation. You should always try to learn new languages
 Programmers should work to develop computer systems that can reduce negative consequences to society, such as threats to safety and health, and that can make everyday activities and work easier. It is “an obligation to develop to high standards".
 
 ### <b>In conclusion:</b>
-Perhaps there ought to be more promises that we should make, in fact, many of these promises <b>might not be even practical</b>. However, all these promises feel to be important somehow, and reasonable as an oath that a professional programmer would take.
+Perhaps there ought to be more promises that we should make, in fact, many of these promises <b>might not be even practical</b>. However, these promises are an important guideline, and a reasonable oath that a professional programmer should take.
 
