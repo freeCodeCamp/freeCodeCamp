@@ -156,8 +156,7 @@ if(!strcmp(first, second)){
 ```
 Notice the `!`, which is needed because this function returns 0 if they are the same. Placing the exclamation point here will make that comparison return true.
 
-Or
-you can do it the following way if you found the `!` strange
+***Tip*** -  If you found the `!` strange, you can also compare the result of `strcmp()` with 0, like so -
 ```C
 if(strcmp(first, second) == 0){
     printf("These strings are the same!\n");
