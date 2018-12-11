@@ -97,4 +97,7 @@ This will allow the code to display the output as:
 -->
 ```
 
+#### More Information:
+[CSS Width Property](https://www.w3schools.com/cssref/pr_dim_width.asp)\
+[Image Width - Control Image Size with CSS](https://html.com/attributes/img-width/#Control_Image_Size_with_CSS)
 
