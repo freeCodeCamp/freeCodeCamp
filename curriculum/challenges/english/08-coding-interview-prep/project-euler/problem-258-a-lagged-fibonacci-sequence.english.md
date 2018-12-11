@@ -24,7 +24,7 @@ Find gk mod 20092010 for k = 1018.
 ```yml
 tests:
   - text: <code>euler258()</code> should return 12747994.
-    testString: 'assert.strictEqual(euler258(), 12747994, "<code>euler258()</code> should return 12747994.");'
+    testString: assert.strictEqual(euler258(), 12747994, '<code>euler258()</code> should return 12747994.');
 
 ```
 
