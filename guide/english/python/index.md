@@ -203,3 +203,4 @@ Free Code Camp has some great resources. The web is a big place, there's plenty 
 * [Python2](https://docs.python.org/2/tutorial/)
 * [Python3](https://docs.python.org/3/tutorial/)
 * [Google's Python class](https://developers.google.com/edu/python/)
+* [Python Package Index](https://pypi.org/) Find, install and publish Python Packages
