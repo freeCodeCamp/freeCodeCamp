@@ -81,3 +81,6 @@ tests:
 // solution required
 ```
 </section>
+
+## Disclaimer
+One thing to note is that using IDs to style elements is not a best practice for web development, and should be avoided. Using IDs for styling loses out on much of the functionality of CSS sheets, and because they have such high specificity, they override most other selectors for styling. ID selectors can only be overwritten with inline styles and the <style> tag.
