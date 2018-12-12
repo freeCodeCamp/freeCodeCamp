@@ -70,7 +70,7 @@ The order of the multiple classes you give to an element is irrelevant. If class
 ```
 In this example, border of the element would be green even if the class "voice" comes second in html.
 
-**Note:** Class names are traditionally all lowercase, with each word in a multi-word class name separated by hyphens (e.g. "super-man").
+**Note:** Class names are traditionally all lowercase, with each word in a multi-word class name separated by hyphens (e.g. "super-man").  This format is also known as kebab-case.
 
 You can also combine classes in the same line:
 ```css
