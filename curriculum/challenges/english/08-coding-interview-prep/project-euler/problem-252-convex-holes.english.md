@@ -46,7 +46,7 @@ What is the maximum area for a convex hole on the set containing the first 500 p
 ```yml
 tests:
   - text: <code>euler252()</code> should return 104924.
-    testString: 'assert.strictEqual(euler252(), 104924, "<code>euler252()</code> should return 104924.");'
+    testString: assert.strictEqual(euler252(), 104924, '<code>euler252()</code> should return 104924.');
 
 ```
 
