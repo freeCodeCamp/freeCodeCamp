@@ -95,10 +95,7 @@ A required file can not have both a src and a link: src = ${src}, link = ${link}
 
   const body = Promise.all(files).then(files =>
     files
-      .reduce(
-        (body, file) => [...body, file.contents + file.tail + htmlCatch],
-        []
-      )
+      .reduce((body, file) => [...body, file.contents + htmlCatch], [])
       .map(source => createBody({ source }))
   );
 

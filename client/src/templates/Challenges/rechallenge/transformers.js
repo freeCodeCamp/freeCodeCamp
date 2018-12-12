@@ -92,29 +92,58 @@ export const babelTransformer = cond([
 ]);
 
 const sassWorker = new WorkerExecutor('sass-compile');
+async function transformSASS(element) {
+  const styleTags = element.querySelectorAll('style[type="text/sass"]');
+  await Promise.all(
+    [].map.call(styleTags, async style => {
+      style.type = 'text/css';
+      style.innerHTML = await sassWorker.execute(style.innerHTML, 2000);
+    })
+  );
+}
 
-const htmlSassTransformCode = file => {
+function transformScript(element) {
+  const scriptTags = element.querySelectorAll('script');
+  scriptTags.forEach(script => {
+    script.innerHTML = tryTransform(babelTransformCode(babelOptionsJSX))(
+      script.innerHTML
+    );
+  });
+}
+
+const transformHtml = async function(file) {
   const div = document.createElement('div');
   div.innerHTML = file.contents;
-  const styleTags = div.querySelectorAll('style[type="text/sass"]');
-  if (styleTags.length > 0) {
-    return Promise.all(
-      [].map.call(styleTags, async style => {
-        style.type = 'text/css';
-        style.innerHTML = await sassWorker.execute(style.innerHTML, 2000);
-      })
-    ).then(() => vinyl.transformContents(() => div.innerHTML, file));
-  }
+  await Promise.all([transformSASS(div), transformScript(div)]);
   return vinyl.transformContents(() => div.innerHTML, file);
 };
 
-export const htmlSassTransformer = cond([
-  [testHTML, htmlSassTransformCode],
+export const composeHTML = cond([
+  [
+    testHTML,
+    flow(
+      partial(
+        vinyl.transformHeadTailAndContents,
+        source => {
+          const div = document.createElement('div');
+          div.innerHTML = source;
+          return div.innerHTML;
+        }
+      ),
+      partial(vinyl.compileHeadTail, '')
+    )
+  ],
+  [stubTrue, identity]
+]);
+
+export const htmlTransformer = cond([
+  [testHTML, transformHtml],
   [stubTrue, identity]
 ]);
 
 export const transformers = [
   replaceNBSP,
   babelTransformer,
-  htmlSassTransformer
+  composeHTML,
+  htmlTransformer
 ];
