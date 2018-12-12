@@ -52,9 +52,9 @@ Ambos objetos de expresión regular representan el mismo patrón: un un personaj
 
 ### Prueba de partidos
 ```
-console . log (/ abc /. test (" abcde ") ); 
+console.log(/abc/.test(" abcde ")); 
  // → true 
- console . log (/ abc /. test (" abxde ") ); 
+ console.log(/ abc /.test(" abxde ")); 
  // → false 
 ```
 
