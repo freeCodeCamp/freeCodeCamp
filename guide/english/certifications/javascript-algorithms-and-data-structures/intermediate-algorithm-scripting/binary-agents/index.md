@@ -7,7 +7,7 @@ title: Binary Agents
 
 ## Problem Explanation:
 
-This problem is very straight forward, you will get a string that will represent a sentence in binary code, and you need to translate that into words. There is not direct way to do this so you will have to translate twice.
+This problem is very straight forward - you start with a string that represents a sentence in binary code, and you need to translate that into words. There is not a direct way to do this so you will have to translate twice.
 
 ### Relevant Links
 
@@ -22,7 +22,7 @@ You should first convert from **binary** to **decimal** before translating those
 
 ## ![:speech_balloon:](https://forum.freecodecamp.com/images/emoji/emoji_one/speech_balloon.png?v=3 ":speech_balloon:") Hint: 2
 
-Things are easier when focusing on smaller parts, divide the input to focus on one letter at the time.
+Things are easier when focusing on smaller parts, divide the input to focus on one letter at a time.
 
 > _try to solve the problem now_
 
@@ -63,10 +63,10 @@ Make sure that each time you transcode a character from binary to decimal, you r
 # Code Explanation:
 
 *   Separate the string into an array of strings separated by whitespace.
-*   Create some variables that will be needed along the way, the names are self explanatory for the most part.
+*   Create some variables that you will use along the way - the names are self explanatory for the most part.
 *   Iterate through each binary string in the new array.
-*   Convert to decimal by using parseInt(_binary_, 2) (with the second parameter we tell in which base our numbers currently are)
-*   At the end, we return out converted message.
+*   Convert to decimal by using `parseInt(_binary_, 2)`. Use the second parameter to specify the base of the input numbers.
+*   At the end, return the converted message.
 
 ## Relevant Links
 
