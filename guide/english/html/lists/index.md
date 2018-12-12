@@ -174,5 +174,5 @@ List can be nested (lists inside lists):
 #### More Information:
 
 * [HTML lists on w3schools](https://www.w3schools.com/html/html_lists.asp)
+* [HTML list on tutorialspoint](https://www.tutorialspoint.com/html/html_lists.htm)
 * [HTML lists on WebPlatform](https://webplatform.github.io/docs/guides/html_lists/)
-
