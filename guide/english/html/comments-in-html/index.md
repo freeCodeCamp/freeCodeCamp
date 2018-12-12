@@ -31,7 +31,7 @@ Comments are started with `<!--` and ended with `-->`, and can span multiple lin
 ```
 ## Conditional Comments
 
-Conditional Comments define some HTML tags to be excuted when a certain codition is fulfilled. 
+Conditional Comments defines some HTML tags to be excuted when a certain condition is fullfilled. 
 
 Conditional Comments are only recognized by Internet Explorer Version 5 through to Version 9 (IE5 - IE9).
 
