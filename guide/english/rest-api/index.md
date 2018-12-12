@@ -11,8 +11,17 @@ REST was developed to provide a uniform interface for
 
  - Identifying resources
  - Manipulation of resources
- - Self descriptive messages
+ - Self-descriptive messages
  - Using Hypermedia as the Engine of Application State (HATEOS)
+
+REST is not an architecture, but a set of design criteria.
+Resource-Oriented Architecture (ROA) is a RESTful
+architecture that provides a common sense set of rules and a
+step-by-step procedure for designing RESTful Web services
+following these design criteria. Each resource has a name
+(i.e. a URI) and a representation, and it may be linked to other
+resources via hyperlinks.
+
 
 ### Best Practices
 
@@ -27,17 +36,17 @@ REST was developed to provide a uniform interface for
 
 *Note while PUT operations either client or server can generate id's*
 
-- #### Nouns are good Verbs are bad
+- #### Nouns are good, Verbs are bad
 
   - Use nouns to refer resources like `cars`, `fruits` etc.
   - Use verbs for action declarations `convertMilesToKms`, `getNutritionalValues`
 
 - #### Singular or Plural?
-    Use correct grammer for declaration
+    Use correct grammar for declaration
 
     **Avoid** `/person/145` 
 
-    **Prefer** `/people/154` Assume to return 154th person from list of people
+    **Prefer** `/people/154` Assumed to return 154th person from list of people
 
 - #### Use casing
   Use anyone of the below patterns and be **consistent!**  
@@ -51,14 +60,18 @@ REST was developed to provide a uniform interface for
 
 - #### **Relationships and Resources**
 
-  - Resources can have `one-to-many`, `many-to-many`, `many-to-one` relationships etc. Mapping them correctly is crucial.
+  - Resources can have `one-to-one`, `one-to-many`, and `many-to-many` relationships etc. Mapping them correctly is crucial.
+  - **One-to-One** Mapping
+  
+      For example, `Countries/1/capital` suggests a one-to-one relationship between a country and a capital city. This means a country can only have one capital. This type of relationship means that one row relates only to one row in another table (one country, one capital in two different tables). This type of relationship is not common and is often used to break up the amount of data in one row of a table.
+      
   - **One-to-Many** Mapping
 
        For example, `Tickets/145/messages/4` suggests one-to-many relationship between `tickets` and `messages`. Meaning `1` ticket has `N` messages. Message isn't standalone resource. You can't have `/messages/4`.
 
   - **Many to Many** Mapping
 
-      For example, `/usergroups/345/users/56` suggests select 345th user group and get user with id 56. However, one user might be in multiple `usergroups` i.e. `/usergroups/209/users/56` is also valid. In such case so for seperating the depedant resource `users` into a seperate endpoint like `/users/56` and provide resource linking in `/usergroups/209/users/56`
+      For example, `/usergroups/345/users/56` suggests select 345th user group and get user with id 56. However, one user might be in multiple `usergroups` i.e. `/usergroups/209/users/56` is also valid. In such case so for seperating the dependant resource `users` into a seperate endpoint like `/users/56` and provide resource linking in `/usergroups/209/users/56`
 
 - #### **API Parameters**
  
@@ -66,7 +79,7 @@ REST was developed to provide a uniform interface for
 
    - **Query Parameters** : *optional* filter the list E.g. `/cars?type=SUV&year=2010`
 
-   - **Body** : Resource specific logic. Advance search query. Sometimes it might have both  Query and body.
+   - **Body** : Resource specific logic. Advance search query. Sometimes it might have both Query and body.
 
    - **Header** : Should contain global or platform wide data. E.g. API key parameters, encrypted keys for auth, device type information e.g. mobile or desktop or endpoint, device data type e.g. xml or json. Use header to communicate these parameters
 
@@ -113,10 +126,19 @@ REST was developed to provide a uniform interface for
   returns `4xx` or message 
   `Expecting int car id /car/id got string car/MH09234 `
 
+### REST API Development Environment and Testing:
 
-### **Further reading**
-[How to Design Great APIs - Parse Developer Day 2013](https://www.youtube.com/watch?v=qCdpTji8nxo)
+Postman is widely used and famous for manual and automated REST/RESTful API Tests.
+Link: [Get Postman](https://www.getpostman.com/)
 
-[The never-ending REST API design debate by Guillaume Laforge](https://www.youtube.com/watch?v=48azd2VqtP0)
+A detailed explanation has been given on Quick Code blog on how to use Postman for the best usage:
+[Top Tutorials To Learn POSTMAN For REST API Testing](https://medium.com/quick-code/top-tutorials-to-learn-postman-for-rest-api-testing-3bdf9788e0ba)
 
-[HTTP status codes](https://httpstatuses.com/)
+#### More Information
+
+
+* [How to Design Great APIs - Parse Developer Day 2013](https://www.youtube.com/watch?v=qCdpTji8nxo)
+* [The never-ending REST API design debate by Guillaume Laforge](https://www.youtube.com/watch?v=48azd2VqtP0)
+* [HTTP status codes](https://httpstatuses.com/)
+* [Documenting APIs: A guide for technical writers](https://idratherbewriting.com/learnapidoc/)
+
