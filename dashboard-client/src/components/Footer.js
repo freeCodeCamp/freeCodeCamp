@@ -1,6 +1,8 @@
 import React, { Component } from 'react';
 import styled from 'styled-components';
 
+import { ENDPOINT_INFO } from '../constants';
+
 const Container = styled.div`
   margin-top: 5px;
   text-align: center;
@@ -19,18 +21,16 @@ class Footer extends Component {
   }
 
   componentDidMount() {
-    const baseUrl = 'https://pr-relations.glitch.me/';
-    const fetchUrl = baseUrl + 'info';
-    fetch(fetchUrl)
-    .then((response) => response.json())
-    .then(({ ok, numPRs, prRange, lastUpdate }) => {
-      if (ok) {
-        this.setState((prevState) => ({ numPRs, prRange, lastUpdate }));
-      }
-    })
-    .catch(() => {
-      // do nothing
-    });
+    fetch(ENDPOINT_INFO)
+      .then((response) => response.json())
+      .then(({ ok, numPRs, prRange, lastUpdate }) => {
+        if (ok) {
+          this.setState((prevState) => ({ numPRs, prRange, lastUpdate }));
+        }
+      })
+      .catch(() => {
+        // do nothing
+      });
   }
 
   localTime(lastUpdate) {

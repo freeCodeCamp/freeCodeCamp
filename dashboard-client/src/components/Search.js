@@ -4,6 +4,9 @@ import Input from './Input';
 import PrResults from './PrResults';
 import FilenameResults from './FilenameResults';
 import SearchOption from './SearchOption';
+
+import { ENDPOINT_PR, ENDPOINT_SEARCH } from '../constants';
+
 class Search extends Component {
   state = {
     searchValue: '',
@@ -39,35 +42,44 @@ class Search extends Component {
     if (searchValue) {
       this.searchPRs(searchValue);
     }
+    else {
+      this.inputRef.current.focus();
+    }
   }
 
   handleOptionChange = (changeEvent) => {
     const selectedOption = changeEvent.target.value;
+
     this.setState((prevState) => ({ selectedOption, ...this.clearObj }));
+    this.inputRef.current.focus();
   }
 
   searchPRs = (value) => {
     const { selectedOption } = this.state;
-    const baseUrl = 'https://pr-relations.glitch.me/';
-    const fetchUrl = baseUrl + (selectedOption === 'pr' ? `pr/${value}` : `search/?value=${value}`);
+    const fetchUrl = selectedOption === 'pr' ?
+      `${ENDPOINT_PR}/${value}` :
+      `${ENDPOINT_SEARCH}/?value=${value}`;
+
     fetch(fetchUrl)
-    .then((response) => response.json())
-    .then(({ ok, message, results }) => {
-      if (ok) {
-        this.setState((prevState) => ({ message, results }));
-      }
-      else {
-        this.inputRef.current.focus();
-      }
-    })
-    .catch(() => {
-      this.setState((prevState) => (this.clearObj));
-    });
+      .then((response) => response.json())
+      .then(({ ok, message, results }) => {
+        if (ok) {
+          this.setState((prevState) => ({ message, results }));
+        }
+      })
+      .catch(() => {
+        this.setState((prevState) => (this.clearObj));
+      });
+  }
+
+  componentDidMount() {
+    this.inputRef.current.focus();
   }
 
   render() {
     const { handleButtonClick, handleInputEvent, inputRef, handleOptionChange, state } = this;
     const { searchValue, message, results, selectedOption } = state;
+
     return (
       <>
         <div>

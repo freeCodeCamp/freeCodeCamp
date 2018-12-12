@@ -1,6 +1,8 @@
 import React from 'react';
 import styled from 'styled-components';
 
+import { ENDPOINT_PARETO } from '../constants';
+
 const Result = styled.div`
   word-wrap: break-word;
   margin: 10px 0;
@@ -31,20 +33,20 @@ class Pareto extends React.Component {
   };
 
   componentDidMount() {
-    fetch(`https://pr-relations.glitch.me/pareto`)
-    .then((response) => response.json())
-    .then(({ ok, pareto }) => {
-      if (ok) {
-        if (!pareto.length) {
-          pareto.push({ filename: 'Nothing to show in Pareto Report', count: 0, prs: [] });
+    fetch(ENDPOINT_PARETO)
+      .then((response) => response.json())
+      .then(({ ok, pareto }) => {
+        if (ok) {
+          if (!pareto.length) {
+            pareto.push({ filename: 'Nothing to show in Pareto Report', count: 0, prs: [] });
+          }
+          this.setState((prevState) => ({ data: pareto }));
         }
+      })
+      .catch(() => {
+        const pareto = [{ filename: 'Nothing to show in Pareto Report', count: 0, prs: [] }];
         this.setState((prevState) => ({ data: pareto }));
-      }
-    })
-    .catch(() => {
-      const pareto = [{ filename: 'Nothing to show in Pareto Report', count: 0, prs: [] }];
-      this.setState((prevState) => ({ data: pareto }));
-    });
+      });
   }
 
   render() {
