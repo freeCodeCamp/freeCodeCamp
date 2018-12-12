@@ -9,11 +9,13 @@ The `foreach` loop executes a block of code for each item in a collection. The b
 ### Example
 ```csharp
 
+// syntax
 foreach (element in iterable-item)
 {
     // body of foreach loop
 }
 
+// sample code
 List<string> Names = new List<string>{ "Jim", "Jane", "Jack" }
 
 foreach(string name in Names)

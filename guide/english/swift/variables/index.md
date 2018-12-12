@@ -3,7 +3,7 @@ title: Variables
 ---
 ## Variables
 
-A variable associates a name with a value of a particular type. In Swift there are two main ways to create variables. `let` and `var`. To declare constants use the `let` keyword. To declare mutable variables use the `var` keyword.
+A variable associates a name with a value of a particular type. There are two main ways to create variables in Swift. `let` and `var`. To declare constants use the `let` keyword. To declare mutable variables use the `var` keyword.
 
 The benefit of having two ways to store variables in Swift is to prevent errors of changing variables that should be constant.
 
@@ -19,7 +19,7 @@ The benefit of having two ways to store variables in Swift is to prevent errors 
 
  ```
 
-In this case the variable `daysInAWeek` should be a constant because there are only seven days in a week, while the variable `amountOfMoney` should be a var because the amount of money in ones account changes.
+In this case the variable `daysInAWeek` should be a constant because there are only seven days in a week, while the variable `amountOfMoney` should be a var because the amount of money in one's account changes.
 
 Constant and variable names can contain almost any character, including Unicode characters:
 
@@ -29,7 +29,7 @@ Constant and variable names can contain almost any character, including Unicode 
   let 🐶🐮 = "dogcow"
 ```
 
-To test if your variables has the correct value, use `print()`.
+To test if your variables have the correct value, use `print()`.
 
 ```Swift
   let money = 50
