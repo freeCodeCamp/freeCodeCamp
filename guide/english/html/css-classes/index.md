@@ -52,7 +52,7 @@ Then in your css file:
 
 You can also combine classes on the same line:
 ```css
-.super-man .spider-man {
+.super-man, .spider-man {
   color: red;
   background-color: blue;
 }
