@@ -16,8 +16,7 @@ p {
     font-family: "Times New Roman", Times, serif;   
 }
 ```
-
-In the above example, "Times New Roman" is the <family-name> of the font, while "serif" is the <generic-name>. Generic names are used as a fallback
+In the above example, "Times New Roman" is the <family-name> of the font, while "serif" is the generic name. Generic names are used as a fallback
 mechanism for preserving style if the family-name is unavailable. A generic name should always be the last item in the list of font family names. Generic
 family names are serif, sans-serif, monospace, cursive, fantasy, system-ui. 
 In addition to specifying common fonts that are found on most operating systems, custom web fonts can be used as well. To import such a font, copy the font URL from the library and reference it in the HTML.
