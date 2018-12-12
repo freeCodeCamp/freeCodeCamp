@@ -7,29 +7,29 @@ The CSS font properties define the font family, weight, size, variant, line heig
 ### Font family
 The font family of a text is set by using the `font-family` property.
 
-
 It works with a *fallback* system, meaning if your browser does not support the first font, it tries with the next one and so on. If the name of the font is more than one word it must be surrounded by quotes. Either single quotes `(')` or double quotes `(")` can be used.
-
 
 ```css
 p {
     font-family: "Times New Roman", Times, serif;   
 }
 ```
-In the above example, "Times New Roman" is the <family-name> of the font, while "serif" is the generic name. Generic names are used as a fallback
-mechanism for preserving style if the family-name is unavailable. A generic name should always be the last item in the list of font family names. Generic
-family names are serif, sans-serif, monospace, cursive, fantasy, system-ui. 
-In addition to specifying common fonts that are found on most operating systems, custom web fonts can be used as well. To import such a font, copy the font URL from the library and reference it in the HTML.
+In the above example, "Times New Roman" is the *family-name* of the font, while "serif" is the *generic-name*. Generic names are used as a fallback mechanism for preserving style if the family-name is unavailable. A generic name should always be the last item in the list of font family names.  
 
-### Importing a font from Google
-If you want to use a font that is not downloaded on your computer, you can import one from [fonts.google.com](https://fonts.google.com/).
+Generic family names are:
+* serif
+* sans-serif
+* monospace
+* cursive
+* fantasy
+* system-ui
 
-```css
+### Importing a font
+In addition to specifying common fonts that are found on most operating systems, custom web fonts can be used as well. To import such a font, copy the font URL from the library and reference it in the HTML. [fonts.google.com](https://fonts.google.com/) is a popular place to find fonts to import, but there are many other resources.
+```html
 <link href="https://fonts.googleapis.com/css?family=Lobster" rel="stylesheet" type="text/css">
 ```
-
-Then you can use the font that you have imported (in this example, 'Lobster') in your code as normal.
-
+Then you can use the font that you have imported (in this example, `Lobster`) in your code as normal.
 
 ### Font style
 The `font-style` property can be used to specify italic text.
@@ -60,8 +60,8 @@ The `font-size` property sets the size of the text.
 There are different types of font size values:
 
 * `px` (pixels) - The default size of text being `16px`
-* `em` - `1em` = the current font size, so `1em` = `16px` (recommended by the W3C)
-* `rem` - `1rem` = the font size of the HTML element, or the browser's default font size
+* `em` - based on the current or inherited font size of an element
+* `rem` - like `em`, but always based on the base font-size of the document
 * `small`, `medium`, `large` - known as absolute size values
 * `%` - percentages
 
@@ -83,6 +83,8 @@ There are different types of font size values:
 }
 ```
 
+For more on these units, visit the MDN reference on [CSS Values and Units](https://developer.mozilla.org/en-US/docs/Learn/CSS/Introduction_to_CSS/Values_and_units)
+
 ### Font weight
 The `font-weight`property specifies the weight (or boldness) of the font. Accepts keywords (`bold`, `normal`, `bolder`, `lighter`) or numeric keywords (`100`, `200`, `300`, `400` etc.) `400` is the same as `normal`.
 
@@ -103,7 +105,7 @@ This will allow the text to adjust to the size of the browser window.
 Viewport is the browser window size. 1vw = 1% of viewport width. If the viewport is 50cm wide, 1vw is 0.5cm.
 
 ### Font variant
-The `font-variant` property specifies if a text should be displayed in a small-caps font (where all lowercase letters are converted to uppercase letters while appearing in a smaller font-size than the original uppercase letters in the text).
+The `font-variant` property specifies if text should be displayed using small capitals. When the value `small-caps` is used, all lowercase letters in the text are converted to uppercase letters while appearing in a smaller font-size than the original uppercase letters.
 
 ```css
 p.small {
@@ -112,8 +114,8 @@ p.small {
 ```
 
 ### Font shorthand property
-Font properties can be specified with the shorthand font. 
-It takes as value (in this order):
+Font properties can be specified with the shorthand property `font`. 
+It takes as values (in this order):
 - font-style (optional)
 - font-variant (optional)
 - font-weight (optional)
@@ -126,7 +128,6 @@ p {
   font: italic small-caps 800 20px/1.5 Arial;
 }
 ```
-
 
 #### More Information:
 - [MND - CSS Font](https://developer.mozilla.org/en-US/docs/Web/CSS/font)
