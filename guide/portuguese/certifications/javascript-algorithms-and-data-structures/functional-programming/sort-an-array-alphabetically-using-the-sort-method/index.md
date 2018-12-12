@@ -9,13 +9,13 @@ localeTitle: Ordenar uma matriz em ordem alfabética usando o método de classif
 No exemplo dado, vemos como escrever uma função que retornará uma nova matriz em ordem alfabética inversa.
 
 ```javascript
-function reverseAlpha(arr) { 
-  return arr.sort(function(a, b) { 
-    return a < b; 
-  }); 
- } 
- reverseAlpha(['l', 'h', 'z', 'b', 's']); 
- // Returns ['z', 's', 'l', 'h', 'b'] 
+function reverseAlpha(arr) {
+  return arr.sort(function(a, b) {
+    return a < b;
+  });
+ }
+ reverseAlpha(['l', 'h', 'z', 'b', 's']);
+ // Returns ['z', 's', 'l', 'h', 'b']
 ```
 
 Usando essa lógica, simplesmente faça engenharia reversa da função para retornar uma nova matriz em ordem alfabética.
@@ -23,13 +23,12 @@ Usando essa lógica, simplesmente faça engenharia reversa da função para reto
 ### Solução
 
 ```javascript
-function alphabeticalOrder(arr) { 
-  // Add your code below this line 
-  return arr.sort(function(a,b) { 
-    return a > b; 
-  }); 
-  // Add your code above this line 
- } 
- alphabeticalOrder(["a", "d", "c", "a", "z", "g"]); 
-
+function alphabeticalOrder(arr) {
+  // Add your code below this line
+  return arr.sort(function(a, b) {
+    return a !== b ? a < b ? -1 : 1 : 0;
+  });
+  // Add your code above this line
+ }
+ alphabeticalOrder(["a", "d", "c", "a", "z", "g"]);
 ```

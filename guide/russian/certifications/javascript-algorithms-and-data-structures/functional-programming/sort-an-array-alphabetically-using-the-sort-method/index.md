@@ -9,13 +9,13 @@ localeTitle: Сортировка массива по алфавиту с пом
 В приведенном примере мы видим, как написать функцию, которая вернет новый массив в обратном алфавитном порядке.
 
 ```javascript
-function reverseAlpha(arr) { 
-  return arr.sort(function(a, b) { 
-    return a < b; 
-  }); 
- } 
- reverseAlpha(['l', 'h', 'z', 'b', 's']); 
- // Returns ['z', 's', 'l', 'h', 'b'] 
+function reverseAlpha(arr) {
+  return arr.sort(function(a, b) {
+    return a < b;
+  });
+ }
+ reverseAlpha(['l', 'h', 'z', 'b', 's']);
+ // Returns ['z', 's', 'l', 'h', 'b']
 ```
 
 Используя эту логику, просто перепроектируйте функцию, чтобы вернуть новый массив в алфавитном порядке.
@@ -23,13 +23,12 @@ function reverseAlpha(arr) {
 ### Решение
 
 ```javascript
-function alphabeticalOrder(arr) { 
-  // Add your code below this line 
-  return arr.sort(function(a,b) { 
-    return a > b; 
-  }); 
-  // Add your code above this line 
- } 
- alphabeticalOrder(["a", "d", "c", "a", "z", "g"]); 
-
+function alphabeticalOrder(arr) {
+  // Add your code below this line
+  return arr.sort(function(a, b) {
+    return a !== b ? a < b ? -1 : 1 : 0;
+  });
+  // Add your code above this line
+ }
+ alphabeticalOrder(["a", "d", "c", "a", "z", "g"]);
 ```

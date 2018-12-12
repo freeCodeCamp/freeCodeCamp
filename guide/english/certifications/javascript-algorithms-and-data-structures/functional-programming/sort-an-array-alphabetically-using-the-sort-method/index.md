@@ -27,11 +27,10 @@ Using this logic, simply reverse engineer the function to return a new array in 
 
 function alphabeticalOrder(arr) {
   // Add your code below this line
-  return arr.sort(function(a,b) {
-    return a > b;
+  return arr.sort(function(a, b) {
+    return a !== b ? a < b ? -1 : 1 : 0;
   });
   // Add your code above this line
 }
 alphabeticalOrder(["a", "d", "c", "a", "z", "g"]);
-
 ```
