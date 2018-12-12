@@ -2,6 +2,9 @@
 title: Linear Regression
 ---
 ## Linear Regression
+
+[Linear Regression](https://masmlblog.wordpress.com/2017/10/31/the-linear-regression-algorithm/) is a **discriminative** machine learning algorithm to relate the dependent variable, i.e ‘Y’ on the independent variables i.e ‘Xi‘. Unlike generative models, it does not allow the user to generate samples from the distribution of X and Y. Linear regression is a **supervised** learning algorithm, i.e labelled dataset is needed to train it for the model to be able to make predictions on its own.
+
 Linear regression is a type of regression, or one of the several regression techniques which are used to find the best fitting line for the given set of points in the given dataset.
 Linear regression helps us predict score of a variable X from the scores on other variables Y. When the variables Y are plotted, linear regression finds the best-fitting straight line through the points. The best-fitting line is called a regression line.
 This is done by taking a line equation and comparing it with the points and the required result and then calibrated in such a way that the difference/distance between the points and the line, or simply error, is kept to the minimum. This way of calibrating is called Least Squared Error method.
@@ -34,6 +37,8 @@ def gradient_descent_runner(points, starting_b, starting_m, learning_rate, num_i
     return [b, m]
 
 gradient_descent_runner(wheat_and_bread, 1, 1, 0.01, 100)
+
+
 ```
 
 Code example is from <a href='http://blog.floydhub.com/coding-the-history-of-deep-learning/' target='_blank' rel='nofollow'>this article</a>. It also explains gradient descent and other essential concepts for deep learning.
@@ -63,3 +68,7 @@ print(model.intercept_)
 from sklearn import metrics
 print(metrics.accuracy_score(y_test, y_pred_class))
 ```
+
+
+You can refer to this article for deeper insight into regression  
+https://www.analyticsvidhya.com/blog/2017/06/a-comprehensive-guide-for-linear-ridge-and-lasso-regression/

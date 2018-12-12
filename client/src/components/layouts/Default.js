@@ -149,7 +149,7 @@ class DefaultLayout extends Component {
           ]}
         />
         <Header disableSettings={disableSettings} />
-        <div className={landingPage && 'landing-page'}>
+        <div className={`default-layout ${landingPage ? 'landing-page' : ''}`}>
           <OfflineWarning isOnline={isOnline} isSignedIn={isSignedIn} />
           {hasMessages ? (
             <Flash messages={flashMessages} onClose={removeFlashMessage} />
