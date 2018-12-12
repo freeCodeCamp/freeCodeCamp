@@ -37,6 +37,7 @@ Encouraging girls in elementary, middle, and high school can also help to increa
 - [Ellen Pao: Has Anything Really Changed for Women in Tech?](https://www.nytimes.com/2017/09/16/opinion/sunday/ellen-pao-sexism-tech.html)
 - [It's Time to Close the Gap for Women of Color in Tech](https://www.marketwatch.com/press-release/its-time-to-close-the-gap-for-women-of-color-in-tech-2018-09-13)
 - [We need more women in tech in order to get more women in tech](https://www.recode.net/2018/6/21/17489450/tech-diversity-inclusion-women-leadership-engineer-culture)
+- [Ada Lovelace: the first Computer Programmer](https://en.wikipedia.org/wiki/Ada_Lovelace)
 
 ### Some Popular Conferences and Summits for Women in Technology:
 - [GHC Women in Computing](https://ghc.anitab.org/)
