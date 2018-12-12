@@ -15,7 +15,7 @@
 
 Hola 👋!
 
-freeCodeCamp.org es posible gracias a miles de voluntarios amables como tú. Nos emocionamos por tus contribuciones y nos complace darte la bienvenida a bordo.
+freeCodeCamp.org es posible gracias a miles de voluntarios amables como usted. Estamos muy agardecidos por sus contribuciones y nos complace darle la bienvenida a bordo.
 
 Cumplimos estrictamente nuestro ["Código de conducta"](https://www.freecodecamp.org/code-of-conduct). Tómate un momento para leerlo. No es muy largo.
 
@@ -54,7 +54,7 @@ Puedes ayudarnos con:
 
 **¿Qué son los artículos de Guía?**
 
-Los artículos de guía te ayudan a comprender rápidamente un concepto de tecnología. Estas son explicaciones breves y sencillas que puedes leer antes de ir a recursos más profundos.
+Los artículos de guía ayudan a comprender rápidamente un concepto de tecnología. Estas son explicaciones breves y sencillas que se pueden leer antes de ir a recursos más profundos.
 
 Puedes encontrar un [artículo de ejemplo sobre elementos HTML aquí](./client/src/pages/html/elements/index.md).
 
