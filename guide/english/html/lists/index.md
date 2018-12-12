@@ -152,3 +152,4 @@ is displayed as:
 * [HTML lists on w3schools](https://www.w3schools.com/html/html_lists.asp)
 * [HTML list on tutorialspoint](https://www.tutorialspoint.com/html/html_lists.htm)
 * [HTML lists on WebPlatform](https://webplatform.github.io/docs/guides/html_lists/)
+* [Styling lists on MDN](https://developer.mozilla.org/en-US/docs/Learn/CSS/Styling_text/Styling_lists)
