@@ -36,7 +36,7 @@ Give as your answer the area occupied by the red cells rounded to 10 digits behi
 ```yml
 tests:
   - text: <code>euler392()</code> should return 3.1486734435.
-    testString: 'assert.strictEqual(euler392(), 3.1486734435, "<code>euler392()</code> should return 3.1486734435.");'
+    testString: assert.strictEqual(euler392(), 3.1486734435, '<code>euler392()</code> should return 3.1486734435.');
 
 ```
 

@@ -23,16 +23,16 @@ wget --help
 
 ### Downloading a single file
 ```
-wget http://ftp.gnu.org/gnu/wget/wget-1.5.3.tar.gz
+wget http://ftp.gnu.org/gnu/wget/wget-1.19.5.tar.gz
 ```
 
 ### Downloading from FTP
 ```
-wget ftp://ftp.gnu.org/gnu/wget/wget-1.10.1.tar.gz.sig
+wget ftp://ftp.gnu.org/gnu/wget/wget-1.19.5.tar.gz.sig
 ```
 
 ### Restrict download speed limits
 ```
-wget --limit-rate=100k http://ftp.gnu.org/gnu/wget/wget-1.5.3.tar.gz
+wget --limit-rate=100k http://ftp.gnu.org/gnu/wget/wget-1.19.5.tar.gz
 ```
 You can play with remaining features of the ``wget`` utility

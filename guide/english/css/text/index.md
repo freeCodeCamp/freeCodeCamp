@@ -44,7 +44,7 @@ p {
 
 The `text-decoration` property is used to set or remove decorations from text. The value `text-decoration: none;` is often used to remove underlines from links. Other `text-decorations` include `overline`,`line-through`,and `underline` ([example](https://www.w3schools.com/css/tryit.asp?filename=trycss_text-decoration)).
   
-#### Text Tranformation
+#### Text Transformation
 
 ``` css
 p {
@@ -53,6 +53,17 @@ p {
 ```
 
 The `text-transform` property is used to convert the entire text to `uppercase`,`lowercase` or to `capitilize` each word([example](https://www.w3schools.com/css/tryit.asp?filename=trycss_text-transform)).
+
+#### Text Shadow
+
+``` css
+.header {
+    text-shadow: 5px 5px 5px red;
+}
+```
+
+The `text-shadow` property is used to add shadow to the text. The `h-shadow` (horizontal shadow, the first value) and `v-shadow` (vertical shadow, the second value) are required values. Then you can add `blur-radius` and `color` as optional values.
+In the example provided above, the first value represents the horizontal value, the second is the vertical value, the third value is the blur value and the last one represents the color value.
 
 #### Letter Spacing
 
@@ -83,6 +94,6 @@ p {
 
 #### More Information:
 <!-- Please add any articles you think might be helpful to read before writing the article -->
-<a href ="https://w3schools.com/css/css_text.asp" target='_blank'>W3Schools CSS text<a><br>
+- [W3Schools CSS text](https://w3schools.com/css/css_text.asp)
 
 
