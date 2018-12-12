@@ -19,7 +19,7 @@ Some common types of algorithms include sorting algorithms, search algorithms, a
 
 ### Efficiency
 
-Algorithms are most commonly judged by their efficiency and the amount of computing resources they require to complete their task. A common way to evaluate an algorithm is to look at its time complexity. This shows how the running time of the algorithm grows as the input size grows. Since the algorithms today, have to be operate on large data inputs, it is essential for our algorithms to have a reasonably fast running time .
+Algorithms are most commonly judged by their efficiency and the amount of computing resources they require to complete their task. A common way to evaluate an algorithm is to look at its time complexity. This shows how the running time of the algorithm grows as the input size grows. Since algorithms today have to operate on large data inputs, it is essential for our algorithms to have a reasonably fast running time.
 
 ### Sorting Algorithms
 
@@ -53,8 +53,8 @@ This video visually demonstrates some popular sorting algorithms that are common
 
 [Algorithm Visualizer](http://algo-visualizer.jasonpark.me)
 
-This is also a really good open source project that helps you visualize algorithms. 
+This is a really good open source project that helps you visualize algorithms. 
 
 [Infographic on how Machine Learning Algorithms Work](https://www.boozallen.com/content/dam/boozallen_site/sig/pdf/infographic/how-do-machines-learn.pdf)
 
-This infographic shows you how unsupervised and supervised machine learning algorithms work..
+This infographic shows you how unsupervised and supervised machine learning algorithms work.
