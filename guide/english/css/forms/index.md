@@ -65,7 +65,7 @@ In the below given example,only input type corresponding to first name will be s
 ## Style input element with css
 
 ### :focus selector
-The :focus selector is applied when the element accepts user inputs.
+The `:focus` selector is applied when the element accepts user inputs.
 
 ```css
 input:focus {
