@@ -27,6 +27,12 @@ For more information visit the
 [VirtualBox Manual Chapter 1](https://www.virtualbox.org/manual/ch01.html)
 
 # Run the Machine
+__Importing a VM__
+- Click on import a new VM
+- Follow the directions and you're set
+You can download [some linux vm here](https://virtualboxes.org/images/)
+
+__Or create a new one__
 - Select your new VM, click settings, and navigate to the Storage tab. 
 
 - Next click the Disk shaped "Adds optical drive" Button on the "Controller IDE" line.
