@@ -23,16 +23,28 @@ Unreal has gone through 4 major revisions. Although some code is common between 
   Released in 2004 and targeted Windows PC, Linux, Mac, iOS, Playstation 3 and Xbox 360.  Development is split between Unreal Script and C++, with an additional visual scripting interface called Kismet.
 
   * Unreal Engine 4
-  Released in 2015 and targets PC, PlayStation 4, Xbox One, Mac OS X, iOS, Android, many VR systems, Linux, SteamOS, and HTML5, and the editor can run on Windows, OS X and Linux. Unreal Script has been removed and replaced with dynamically reloaded C++ modules, and a more advanced visual scripting interface called Blueprints.
+  Released in 2015 and targets PC, PlayStation 4, Xbox One, Mac OS X, iOS, Android, many VR systems, Linux, SteamOS, and HTML5, and the editor can run on Windows, OS X and Linux. Unreal Script has been removed and replaced with dynamically reloaded C++ modules, and a more advanced visual scripting interface called Blueprints. Since the release of version 4.20, Unreal Engine has been taking big steps towards mobile gaming and currently is a great tool for developing high-end titles on Android, iOS platforms.
   
 ### Popular Games made in Unreal
+- Ashen
 - Batman Arkham City
 - Mass Effect
 - Bioshock
+- BioShock 2
 - Borderlands
 - Gears of War
+- Fortnite
+- Spec Ops: The Line
+- Disney's Brother Bear
+- Clive Barker's Undying
+- Deus Ex- Spec Ops: The Line
+- Enslaved: Odyssey to the West
+- Adventure Pinball: Forgotten Island
+
+
 
 #### More Information:
 
-<a href='https://www.unrealengine.com/' target='_blank' rel='nofollow'>www.UnrealEngine.com</a>  
-<a href='https://github.com/EpicGames' target='_blank' rel='nofollow'>www.EpicGames.com</a>
+- <a href='https://www.unrealengine.com/' target='_blank' rel='nofollow'>www.UnrealEngine.com</a>  
+- <a href='https://github.com/EpicGames' target='_blank' rel='nofollow'>www.EpicGames.com</a>
+- <a href='https://academy.unrealengine.com/' target='_blank' rel='nofollow'>https://academy.unrealengine.com/</a>  
