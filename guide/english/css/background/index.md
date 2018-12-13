@@ -9,22 +9,22 @@ The `background-color` property allows you to choose the color of your element (
 
 Here is an example of setting the background color for a web page to green.
 ```css
-  body {
-    background-color: green;
-  }
+body {
+  background-color: green;
+}
 ```
 ![fullbackground](https://user-images.githubusercontent.com/26467304/31036038-845567f2-a538-11e7-8e6c-8a52bb0d44b8.png)
 
-Here is an example of setting the background colors for two elements. This will set the background of the header 
-to purple and the rest of the page to blue.
+Here is an example of setting the background colors for two elements. This will set the background of the header to purple and the rest of the page to blue.
 
 ```css
-  body {
-    background-color: blue;
-  }
-  h1 {
-    background–color: purple;
-  }
+body {
+  background-color: blue;
+}
+
+h1 {
+  background–color: purple;
+}
 ```
 ![twobackground](https://user-images.githubusercontent.com/26467304/31036152-0607936a-a539-11e7-9e9f-a5e60ade042d.png)
 
@@ -120,7 +120,7 @@ body {
   background: url("barn.jpg") no-repeat right top;
 }
 ```
-You can leave out properties you don’t need when using the shorthand property, but the properties 
+You can leave out properties you don’t need when using the shorthand property, but the properties
 must be used in a certain order. The order is:
 * color
 * image
@@ -135,7 +135,7 @@ body {
   background: url("barn.jpg"), url("stars.jpg"), linear-gradient(rgba(0, 0, 255, 0.5), rgba(255, 255, 0, 0.5));
 }
 ```
-The first image (or gradient) specified is the most on top, the second comes after, and so on. 
+The first image (or gradient) specified is the most on top, the second comes after, and so on.
 If one of the elements is not correct due to its URL or its syntax, the whole line will be ignored by the browser.
 
 ### Other Resources

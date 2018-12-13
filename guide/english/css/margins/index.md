@@ -10,7 +10,7 @@ Margin values are set using lengths or percentages or `auto` or `inherit` keywor
 ## Syntax
 ```css
 .element {
-    margin: margin-top || margin-right || margin-bottom || margin-left;
+  margin: margin-top || margin-right || margin-bottom || margin-left;
 }
 ```
 
@@ -23,10 +23,10 @@ This property may be specified using one, two, three, or four values.
 ```css
 /* Apply to all four sides */
 margin: 1em;
-  
+
 /* top and bottom | left and right */
 margin: 5% 10%;
-  
+
 /* top | left and right | bottom */
 margin: 1em 2em 2em;
 

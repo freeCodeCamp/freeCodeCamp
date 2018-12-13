@@ -119,7 +119,7 @@ button {
 
 To animate a button on click use 'button:active':
 
-```
+```css
 .button {
   display: inline-block;
   padding: 15px 25px;
@@ -167,4 +167,3 @@ In many cases buttons will have to link to an url. As we can't add an href attri
 #### More Information:
 * https://www.w3schools.com/css/css3_buttons.asp
 * https://www.w3schools.com/howto/howto_css_animate_buttons.asp
-

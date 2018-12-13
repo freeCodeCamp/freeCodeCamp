@@ -11,7 +11,7 @@ It works with a *fallback* system, meaning if your browser does not support the 
 
 ```css
 p {
-    font-family: "Times New Roman", Times, serif;   
+  font-family: "Times New Roman", Times, serif;   
 }
 ```
 In the above example, "Times New Roman" is the *family-name* of the font, while "serif" is the *generic-name*. Generic names are used as a fallback mechanism for preserving style if the family-name is unavailable. A generic name should always be the last item in the list of font family names.  
@@ -42,15 +42,15 @@ This property has 3 values:
 
 ```css
 .normal {
-    font-style: normal;
-} 
+  font-style: normal;
+}
 
 .italic {
-    font-style: italic;
+  font-style: italic;
 }
 
 .oblique {
-    font-style: oblique;
+  font-style: oblique;
 }
 ```
 
@@ -67,19 +67,19 @@ There are different types of font size values:
 
 ```css
 .with-pixels {
-    font-size: 14px;
+  font-size: 14px;
 }
 
 .with-ems {
-    font-size: 0.875em;
+  font-size: 0.875em;
 }
 
 .with-absolute {
-    font-size: large;
+  font-size: large;
 }
 
 .with-percentage {
-    font-size: 80%;
+  font-size: 80%;
 }
 ```
 
@@ -90,7 +90,7 @@ The `font-weight`property specifies the weight (or boldness) of the font. Accept
 
 ```css
 p {
-   font-weight: bold
+  font-weight: bold
 }
 ```
 

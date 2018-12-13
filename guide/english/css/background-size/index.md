@@ -23,9 +23,9 @@ the second one will be set to auto by default.
 To set this property on multiple background images, separate the values by a comma:
 ```css
 .multiple {
-    background-image: url(1.png), url(2.png);
-    background-size: 3px 3px, cover;
-    /* first image is 3x3 px, second image covers the whole area */
+  background-image: url(1.png), url(2.png);
+  background-size: 3px 3px, cover;
+  /* first image is 3x3 px, second image covers the whole area */
 }
 ```
 

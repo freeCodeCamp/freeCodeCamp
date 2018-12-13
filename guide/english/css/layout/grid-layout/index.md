@@ -3,7 +3,7 @@ title: Grid Layout
 ---
 ## Grid Layout
 
-CSS Grid Layout, simply known as Grid, is a layout scheme that is the newest and the most powerful in CSS. It is [supported by all major browsers](https://caniuse.com/#feat=css-grid) and provides a way to position items on the page and move them around. 
+CSS Grid Layout, simply known as Grid, is a layout scheme that is the newest and the most powerful in CSS. It is [supported by all major browsers](https://caniuse.com/#feat=css-grid) and provides a way to position items on the page and move them around.
 
 It can automatically assign items to _areas_, size and resize them, take care of creating columns and rows based on a pattern you define, and doing all the calculations using the newly introduced `fr` unit.
 
@@ -20,7 +20,7 @@ It can automatically assign items to _areas_, size and resize them, take care of
 - Grid and Flex are not mutually exclusive. You can use both on the same project.
 
 
-### Checking browser compatability with `@supports` 
+### Checking browser compatability with `@supports`
 
 Ideally, when you build a site, you'd design it with Grid and use Flex as a fallback. You can find out if your browser supports Grid with the `@support` CSS rule (aka feature query). Here's an example:
 
@@ -41,7 +41,7 @@ Ideally, when you build a site, you'd design it with Grid and use Flex as a fall
 To make any element a grid, you need to assign its `display` property to `grid`, like so:  
 
 ```css
-.conatiner {
+.container {
   display: grid;
 }
 ```
@@ -60,7 +60,7 @@ grid-template-rows: auto 300px;
 Areas
 
 ```css
-grid-template-areas: 
+grid-template-areas:
   "a a a a"
   "b c d e"
   "b c d e"

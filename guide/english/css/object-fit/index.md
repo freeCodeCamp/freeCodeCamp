@@ -12,7 +12,7 @@ Basically we use the `object-fit` property to define how it stretch or squish an
 ## Syntax
 ```css
 .element {
-    object-fit: fill || contain || cover || none || scale-down;
+  object-fit: fill || contain || cover || none || scale-down;
 }
 ```
 

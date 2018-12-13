@@ -21,7 +21,7 @@ The properties that can be set are (in order):
 
 It does not matter if one of the values above is missing. For example, the following is valid CSS:
 
-```css 
+```css
   border: solid red;
 ```
 
@@ -33,15 +33,14 @@ The `border-style` property can be set to a wide range of different border types
 - `dashed` - Sets a dashed border.
 - `solid` - Sets a solid border.
 - `double` - Sets a double border.
-- `groove` - Sets a 3D grooved border. 
-- `ridge` - Sets a 3D ridged border. 
-- `inset` - Sets a 3D inset border. 
+- `groove` - Sets a 3D grooved border.
+- `ridge` - Sets a 3D ridged border.
+- `inset` - Sets a 3D inset border.
 - `outset` - Sets a 3D outset border.
 - `none` - Sets no border.
 - `hidden` - Sets a hidden border.
 
 Each side of the border doesn't need to match.
-
 Each side can be styled separately:
 ```css
   border-top-style: solid;
@@ -82,7 +81,6 @@ p {
 
 ### Border Color
 
-
 Now for the creative aspect of CSS Borders! With the use of the `border-color` property, you will be able to create customized borders to fit the flow and layout
 of your website. Border colors can be any color defined by RGB, hexadecimal, or key terms. Below is an example of each of these types.
 
@@ -107,7 +105,6 @@ p {
 ```
 
 ### Border-Radius
-
 The `border-radius` property allows the corners of a border to be rounded. `border-radius` takes a length as its value which determines the degree of curvature for each corner of the element. The length can be in px or %.
 ```css 
   border-radius: 25px;
@@ -147,8 +144,8 @@ While it is nice that CSS allows a web developer to be very specific in creating
 Example:
 ```css
 <style type="text/css">
-p { border: 20px outset blue; } 
-h4 { border: 5px solid; } 
+p { border: 20px outset blue; }
+h4 { border: 5px solid; }
 h5 { border: dotted; }
 </style>
 ```
