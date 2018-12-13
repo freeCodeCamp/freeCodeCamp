@@ -6,13 +6,13 @@ videoUrl: ''
 localeTitle: Ajustar o tamanho de um cabeçalho versus uma tag de parágrafo
 ---
 
-## Description
+## Descrição
 <section id="description"> O tamanho da fonte das tags de cabeçalho ( <code>h1</code> a <code>h6</code> ) geralmente deve ser maior que o tamanho da fonte das tags de parágrafo. Isso torna mais fácil para o usuário entender visualmente o layout e o nível de importância de tudo na página. Você usa a propriedade <code>font-size</code> para ajustar o tamanho do texto em um elemento. </section>
 
-## Instructions
+## Instruções
 <section id="instructions"> Para tornar o título significativamente maior que o parágrafo, altere o <code>font-size</code> da <code>font-size</code> da marca <code>h4</code> para 27 pixels. </section>
 
-## Tests
+## Testes
 <section id='tests'>
 
 ```yml
@@ -24,7 +24,7 @@ tests:
 
 </section>
 
-## Challenge Seed
+## Semente do Desafio
 <section id='challengeSeed'>
 
 <div id='html-seed'>
@@ -80,7 +80,7 @@ tests:
 
 </section>
 
-## Solution
+## Solução
 <section id='solution'>
 
 ```js
