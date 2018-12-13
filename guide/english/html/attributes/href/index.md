@@ -15,6 +15,7 @@ Link to Google's Homepage:
 ```html
 <a href="https://www.google.com">Visit Google’s Homepage</a>
 ```
+Above `href` is an attribute and `https://www.google.com` is its value.
 
 Image as an Link:
 
