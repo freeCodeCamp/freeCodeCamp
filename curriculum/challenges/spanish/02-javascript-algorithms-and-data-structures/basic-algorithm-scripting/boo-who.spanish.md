@@ -51,7 +51,7 @@ tests:
 
 ```js
 function booWho(bool) {
-  // What is the new fad diet for ghost developers? The Boolean.
+  // ¿Cuál es la nueva dieta milagrosa de los desarrolladores fantasma? La Booleana.
   return bool;
 }
 
