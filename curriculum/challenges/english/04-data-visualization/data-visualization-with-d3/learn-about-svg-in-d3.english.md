@@ -16,8 +16,8 @@ CSS can be scalable when styles use relative units (such as <code>vh</code>, <co
 
 ## Instructions
 <section id='instructions'>
-Add an <code>svg</code> node to the <code>body</code> using <code>append()</code>. Give it a <code>width</code> attribute set to the provided <code>w</code> constant and a <code>height</code> attribute set to the provided <code>h</code> constant using the <code>attr()</code> method for each. You'll see it in the output because there's a <code>background-color</code> of pink applied to it in the <code>style</code> tag.
-<strong>Note</strong><br>Width and height attributes do not have units. This is the building block of scaling - the element will always have a 5:1 width to height ratio, no matter what the zoom level is.
+Add an <code>svg</code> node to the <code>body</code> using <code>append()</code>. Give it a <code>width</code> attribute set to the provided <code>w</code> constant and a <code>height</code> attribute set to the provided <code>h</code> constant using the <code>attr()</code> or <code>style()</code> methods for each. You'll see it in the output because there's a <code>background-color</code> of pink applied to it in the <code>style</code> tag.
+  <strong>Note</strong><br>When using <code>attr()</code> width and height attributes do not have units. This is the building block of scaling - the element will always have a 5:1 width to height ratio, no matter what the zoom level is.
 </section>
 
 ## Tests
@@ -27,10 +27,10 @@ Add an <code>svg</code> node to the <code>body</code> using <code>append()</code
 tests:
   - text: Your document should have 1 <code>svg</code> element.
     testString: assert($('svg').length == 1, 'Your document should have 1 <code>svg</code> element.');
-  - text: The <code>svg</code> element should have a <code>width</code> attribute set to 500.
-    testString: assert($('svg').attr('width') == '500', 'The <code>svg</code> element should have a <code>width</code> attribute set to 500.');
-  - text: The <code>svg</code> element should have a <code>height</code> attribute set to 100.
-    testString: assert($('svg').attr('height') == '100', 'The <code>svg</code> element should have a <code>height</code> attribute set to 100.');
+  - text: The <code>svg</code> element should have a <code>width</code> attribute set to 500 or styled to have a width of 500px.
+    testString: assert($('svg').attr('width') == '500'||$('svg').css('width') == '500px', 'The <code>svg</code> element should have a <code>width</code> attribute set to 500 or styled to have a width of 500px.');
+  - text: The <code>svg</code> element should have a <code>height</code> attribute set to 100 or styled to have a height of 100px.
+    testString: assert($('svg').attr('height') == '100'||$('svg').css('height') == '100px', 'The <code>svg</code> element should have a <code>height</code> attribute set to 100 or styled to have a height of 100px.');
 
 ```
 
