@@ -82,6 +82,7 @@ p {
 
 ### Border Color
 
+
 Now for the creative aspect of CSS Borders! With the use of the `border-color` property, you will be able to create customized borders to fit the flow and layout
 of your website. Border colors can be any color defined by RGB, hexadecimal, or key terms. Below is an example of each of these types.
 
@@ -111,15 +112,16 @@ The `border-radius` property allows the corners of a border to be rounded. `bord
 ```css 
   border-radius: 25px;
 ```
-Each corner of `border-radius` can be adjusted individually in the following order: top, bottom, left, right.
+
+Each corner of `border-radius` can be adjusted separately by specifying two, three, or four values. If two values are set, the first value applies to the top-left and bottom-right corners, while the second value applies to the top-right and bottom-left corners. If four values are set, the top-left, rop-right, bottom-right, and bottom-left corners will be specified in that order. If three values are set, the second value applies to the top-right and bottom-left corner. 
 ```css 
   border-radius: 15% 10px 30% 5px;
 ```
+
 If only two values are provided, the first value will be applied to the top-left and bottom-right corners and the second value will be applied to the top-right and bottom-left corners.
 ```css
   border-radius: 10px 5px;
 ```
-
 
 More complex border-radius values are available. This is done using a slash (/) between horizontal and vertical values.
 ```css
