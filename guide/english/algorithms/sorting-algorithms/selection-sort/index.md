@@ -21,16 +21,16 @@ But, how would you write the code for finding the index of the second smallest v
 ### Implementation in C/C++
 
 ```C
-for(int i = 0; i < n; i++)
+for(int i = 0; i < n-1; i++)
 {
 	int min_index = i;
-	int min_element = a[i];
+	
 	
 	for(int j = i +1; j < n; j++)
 	{
-		if(a[j] < min_element)
+		if(a[j] < a[min_index])
 		{
-			min_element = a[j];
+			
 			min_index = j;
 		}
 	}
@@ -75,6 +75,48 @@ def seletion_sort(arr):
               if arr[j] < arr[min_i]:
                   min_i = j
          arr[i], arr[min_i] = arr[min_i], arr[i]
+```
+### Implementation in Java
+```java
+public void selectionsort(int array[])
+{
+    int n = array.length;            //method to find length of array 
+    for (int i = 0; i < n-1; i++)
+    {
+        int index = i;
+        int min = array[i];          // taking the min element as ith element of array
+        for (int j = i+1; j < n; j++)
+        {
+            if (array[j] < array[index])
+            {
+                index = j;
+                min = array[j];
+            }
+        }
+        int t = array[index];         //Interchange the places of the elements
+        array[index] = array[i];
+        array[i] = t;
+    }
+}
+```
+    
+
+### Implementation in MATLAB
+```MATLAB
+function [sorted] = selectionSort(unsorted)
+    len = length(unsorted);
+    for i = 1:1:len
+        minInd = i;
+        for j = i+1:1:len
+           if unsorted(j) < unsorted(minInd) 
+               minInd = j;
+           end
+        end
+        unsorted([i minInd]) = unsorted([minInd i]);    
+    end
+    sorted = unsorted;
+end
+
 ```
 
 ### Properties
