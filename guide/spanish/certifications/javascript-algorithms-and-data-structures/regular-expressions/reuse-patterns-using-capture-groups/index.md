@@ -19,8 +19,8 @@ let testString = "test test test ";
 Si tuviéramos que traducir literalmente la expresión regular, se vería algo así:
 
 ```js
-let re = /(test)\s\1; 
- let literalRe = /test\stest; 
+let re = /(test)\s\1/; 
+ let literalRe = /test\stest/; 
 ```
 
 Tanto `rea` como `literalRe` coincidirían con la misma cosa.
