@@ -14,7 +14,7 @@ p {
   font-family: "Times New Roman", Times, serif;   
 }
 ```
-In the above example, "Times New Roman" is the *family-name* of the font, while "serif" is the *generic-name*. Generic names are used as a fallback mechanism for preserving style if the family-name is unavailable. A generic name should always be the last item in the list of font family names.  
+In the above example, "Times New Roman" is the *family-name* of the font, while "serif" is the *generic-name*. Generic names are used as a fallback mechanism for preserving style if the family-name is unavailable. A generic name should always be the last item in the list of font family names.
 
 Generic family names are:
 * serif
@@ -63,7 +63,7 @@ There are different types of font size values:
 
 * `px` (pixels) - The default size of text being `16px`
 * `em` - based on the current or inherited font size of an element
-* `rem` - like `em`, but always based on the base font-size of the document
+* `rem` - like `em`, but based on the base font-size of the document
 * `small`, `medium`, `large` - known as absolute size values
 * `%` - percentages
 
@@ -92,7 +92,7 @@ The `font-weight`property specifies the weight (or boldness) of the font. Accept
 
 ```css
 p {
-  font-weight: bold
+  font-weight: bold;
 }
 ```
 
