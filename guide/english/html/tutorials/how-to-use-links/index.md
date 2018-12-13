@@ -31,7 +31,7 @@ The link text is the visible part (Visit our site for tutorials).
 
 Clicking on the link text will send you to the specified address.
 
-Using Target Attribute
+## Using Target Attribute
 
 The target attribute specifies where to open the linked document."_blank" on target attribute mean opens the linked document in a new window or tab. This example will open the linked document in a new browser window/tab.
 
