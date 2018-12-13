@@ -40,6 +40,8 @@ This property has 3 values:
 * italic - Text shown in *italic*
 * oblique - Text shown leaning
 
+`italic` and `oblique` both look like the normal font but slanted. The main difference is that `italic` is a whole other version of the font, slanted at a particular angle and sometimes styled slightly differently. `oblique` is the original font but with the ability to be slanted at and angle to different degrees.
+
 ```css
 .normal {
   font-style: normal;
