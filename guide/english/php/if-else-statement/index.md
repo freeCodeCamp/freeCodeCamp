@@ -91,17 +91,23 @@ For instance:
 ## Ternary Operators
 
 Another important option to consider when using short If/Else statements is the ternary operator.
-~~~~
-  $statement=(condition1 ? "condition1 is true" : "condition1 is false")
-~~~~
-Also there is an alternative syntax for control structures
-~~~~
+
+```php
+  $statement=(condition1 ? "condition1 is true" : "condition1 is false");
+```
+
+## Alternative If/Else Syntax
+
+There is also an alternative syntax for control structures
+
+```php
   if (condition1):
     statement1;
   endif;
   else
     statement5;
-~~~~
+```
+
 For more information check out the following link:
 <a href='http://php.net/manual/en/control-structures.alternative-syntax.php' target='_blank' rel='nofollow'>PHP Alternative syntax for control structures</a>
 
