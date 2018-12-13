@@ -103,9 +103,9 @@ There is also an alternative syntax for control structures
 ```php
   if (condition1):
     statement1;
-  endif;
-  else
+  else:
     statement5;
+  endif;
 ```
 
 For more information check out the following link:
