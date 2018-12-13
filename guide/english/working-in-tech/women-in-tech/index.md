@@ -8,7 +8,7 @@ From an article on ["The Latest Stats on Women in Tech"](https://www.themuse.com
 
 > "We all know that there's a major gender gap when it comes to women in tech. 
 >
-> Although we make up the majority of the workplace and the social media sphere, women only represent a tiny percentage of the technology world.
+> Although we make up the majority of the workplace and the social media sphere, we only represent a tiny percentage of the technology world.
 >
 > And that's reflected in some of the stats you see. According to a 2011 report from the Level Playing Field Institute, 82% of men in startups believed their companies spent the 'right amount of time' addressing diversity, while almost 40% of women believed not enough time was devoted.”
 
@@ -18,14 +18,14 @@ This is especially true in discussions about intersectionality. According to an 
 
 Although women are still underrepresented in the tech world, it does not mean that we are not making a difference there.
 
-In a Women in Tech Round-up event presented by Google in Austin, the Women who spoke at these events were vice presidents (VPs) and high-level management positions from profitable companies working in the tech industry. Not all of them began their careers in the tech world, many had started as secretaries and other roles that are often populated by women. They worked hard and took risks to get where they are now. The one piece of advice that seemed to resound from all of them was that for you to succeed, you must take risks. 
+In a Women in Tech Round-up event presented by Google in Austin, the Women who spoke at this event were vice presidents (VPs) and high-level management positions from profitable companies working in the tech industry. Not all of them began their careers in the tech world, many had started as secretaries and other roles that are often populated by women. They worked hard and took risks to get where they are now. The one piece of advice that seemed to resound from all of them was that for you to succeed, you must take risks. 
 
 The worst thing you can do is to sell yourself short if you want something take that risk and achieve the impossible. 
 
+The Google VP who spoke at this event gave women a piece of advice: we should take any and every opportunity afforded to us and risk applying to jobs we are not qualified for. The worst that will happen is you’ll get rejected or you won’t get an interview. Men frequently get tech positions not because they are more experienced or better than women, but because they apply to positions that they often aren’t qualified for. Conversely, women tend to apply only for jobs that they think they are qualified for. Various studies show that women applied only to jobs where they fully match the desired criteria, compared to men, who applied to positions which were about 50% match.
+
 **"Do not think for one minute that because you are who you are, you cannot be who you imagine yourself to be."**    
 *-Jedidah Isler in her TED talk - [The Untapped Genius That Could Change Science for the Better](https://www.youtube.com/watch?v=3NdSVi38RM8)*    
-
-The Google VP who spoke at this event gave women a piece of advice: that we should take any and every opportunity afforded to us and risk applying to jobs we are not qualified for. The worst that will happen is you’ll get rejected or you won’t get an interview. Men frequently get tech positions not because they are more experienced or better than women, but because they apply to positions that they often aren’t qualified for. Conversely, women tend to apply only for jobs that they think they are qualified for. Various studies show that women applied only to jobs where they fully match the desired criteria, compared to men, who applied to positions which were about 50% match.
 
 The worst thing you can do is to sell yourself short. If you want something, take that risk and achieve the impossible.
 
