@@ -31,6 +31,7 @@ The worst thing you can do is to sell yourself short. If you want something, tak
 
 Encouraging girls in elementary, middle, and high school can also help to increase the number of women going to work in the tech industry as they get older. We must actively fight against gender stereotypes in careers beginning at a young age so that children fully understand what career options are available to them. If girls are able to get more familiar with computer science concepts at a young age, this will help to make entering a college classroom full of men a less intimidating experience. Over time we will hopefully start to see a gender balance in tech careers. 
 
+Additionally, there are a variety tech of women in  groups that you can join no matter where you are in the world. Facebook groups such as [Ladies Storm Hackathons](https://www.facebook.com/groups/LadiesStormHackathons/) and [Women Who Reign: Advancing Women in STEM](https://www.facebook.com/groups/ReigningIt/) offer incredible support for women in tech from women in tech. Members offer advice, post useful links, and opportunities all the time! These groups are definitely great communities to join.
 
 ## More Information:
 - [Why are there so few women in tech? The truth behind the Google memo](https://www.theguardian.com/lifeandstyle/2017/aug/08/why-are-there-so-few-women-in-tech-the-truth-behind-the-google-memo)
