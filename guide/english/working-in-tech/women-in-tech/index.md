@@ -8,7 +8,7 @@ From an article on ["The Latest Stats on Women in Tech"](https://www.themuse.com
 
 > "We all know that there's a major gender gap when it comes to women in tech. 
 >
-> Although women make up the majority of the workplace and the social media sphere, they only represent a tiny percentage of the technology world.
+> Although we make up the majority of the workplace and the social media sphere, we only represent a tiny percentage of the technology world.
 >
 > And that's reflected in some of the stats you see. According to a 2011 report from the Level Playing Field Institute, 82% of men in startups believed their companies spent the 'right amount of time' addressing diversity, while almost 40% of women believed not enough time was devoted.”
 
