@@ -73,3 +73,7 @@ const Button = ({ onPress, children, buttonProps, textProps }) => {
   );
 };
 ```
+
+#### More Information
+
+- [Good article about state and props](https://learnreact.design/2017/08/16/components-props-and-state)
