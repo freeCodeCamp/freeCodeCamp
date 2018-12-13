@@ -6,13 +6,13 @@ videoUrl: ''
 localeTitle: Animar vários elementos a taxas variáveis
 ---
 
-## Description
+## Descrição
 <section id="description"> No desafio anterior, você alterou as taxas de animação para dois elementos animados semelhantes, alterando suas regras <code>@keyframes</code> . Você pode atingir o mesmo objetivo manipulando a <code>animation-duration</code> da <code>animation-duration</code> de vários elementos. Na animação em execução no editor de código, há três &quot;estrelas&quot; no céu que piscam na mesma taxa em um loop contínuo. Para fazê-los brilhar em taxas diferentes, você pode definir a propriedade de <code>animation-duration</code> da <code>animation-duration</code> com valores diferentes para cada elemento. </section>
 
-## Instructions
+## Instruções
 <section id="instructions"> Defina a <code>animation-duration</code> da <code>animation-duration</code> dos elementos com as classes <code>star-1</code> , <code>star-2</code> e <code>star-3</code> a 1s, 0.9s e 1.1s, respectivamente. </section>
 
-## Tests
+## Testes
 <section id='tests'>
 
 ```yml
@@ -28,7 +28,7 @@ tests:
 
 </section>
 
-## Challenge Seed
+## Semente do Desafio
 <section id='challengeSeed'>
 
 <div id='html-seed'>
@@ -96,7 +96,7 @@ tests:
 
 </section>
 
-## Solution
+## Solução
 <section id='solution'>
 
 ```js
