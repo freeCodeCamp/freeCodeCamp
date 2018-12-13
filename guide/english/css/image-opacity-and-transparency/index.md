@@ -9,7 +9,7 @@ The ```opacity``` property allows you to make an image transparent by lowering h
 
 1.0 is the default value for any image. It is fully opaque.
 
-Example
+Example:
 ```css
 img {
   opacity: 0.3;
@@ -24,7 +24,8 @@ img {
 }
 ```
 
-Here's an example of an image set to the parameters in the example above.
+Here's an example of an image set to the parameters in the example above:
+
 ![image at 30% opacity](https://github.com/lvcoulter/images/blob/master/Opacity30percent.jpg?raw=true)
 
 
@@ -41,10 +42,10 @@ img:hover {
   filter: alpha(opacity=100);
 }
 ```
-[A codepen example to show a transparent image turning opaque on hover](https://codepen.io/lvcoulter/full/JrzxXa/)
+[Here's a codepen example to show a transparent image turning opaque on hover](https://codepen.io/lvcoulter/full/JrzxXa/)
 <!--I cannot figure out how to embed a Codepen. I would really like to know-->
 
-You can create the opposite effect with less code since the image is 1.0 opacity by default
+You can create the opposite effect with less code since the image is 1.0 opacity by default.
 
 Example:
 ```css
@@ -53,10 +54,9 @@ img:hover {
   filter: alpha(opacity=30);
 }
 ```
-[A codepen example to show transparency on mouse-over](https://codepen.io/lvcoulter/full/xXBQoR/)
+[Here's a codepen example to show transparency on mouse-over](https://codepen.io/lvcoulter/full/xXBQoR/)
 
 
 #### More Information:
--w3schools.com [CSS Opacity/Transparency](https://www.w3schools.com/css/css_image_transparency.asp)
-
--MDN web docs[Opacity](https://developer.mozilla.org/en-US/docs/Web/CSS/opacity)
+- w3schools.com: [CSS Opacity/Transparency](https://www.w3schools.com/css/css_image_transparency.asp)
+- MDN Web Docs: [Opacity](https://developer.mozilla.org/en-US/docs/Web/CSS/opacity)
