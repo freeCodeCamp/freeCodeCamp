@@ -94,15 +94,21 @@ For instance:
 
 Another important option to consider when using short If/Else statements is the ternary operator.
 
-Also there is an alternative syntax for control structures
-~~~~
+```php
+  $statement=(condition1 ? "condition1 is true" : "condition1 is false");
+```
+
+## Alternative If/Else Syntax
+
+There is also an alternative syntax for control structures
+
+```php
   if (condition1):
     statement1;
-  endif;
-  else
+  else:
     statement5;
-~~~~
-> **Note:** This style draws some similarity to <a href='http://interactivepython.org/runestone/static/pythonds/Introduction/ControlStructures.html' target='_blank' rel='nofollow'>Python's control structure syntax</a>. Use whichever style you're more familiar with!
+  endif;
+```
 
 For more information check out the following link:
 <a href='http://php.net/manual/en/control-structures.alternative-syntax.php' target='_blank' rel='nofollow'>PHP Alternative syntax for control structures</a>
