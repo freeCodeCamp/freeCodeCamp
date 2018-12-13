@@ -40,6 +40,7 @@ Additionally, there are a variety tech of women in  groups that you can join no 
 - [We need more women in tech in order to get more women in tech](https://www.recode.net/2018/6/21/17489450/tech-diversity-inclusion-women-leadership-engineer-culture)
 - [Ada Lovelace: the first Computer Programmer](https://en.wikipedia.org/wiki/Ada_Lovelace)
 - [Women in Tech 2018: What the Statistics Tell Us](https://www.technative.io/women-in-tech-2018-what-the-statistics-tell-us/)
+- [Closing the gender gap in tech—it’s time to act](https://www.linkedin.com/pulse/closing-gender-gap-techits-time-act-melinda-gates/)
 
 ### Some Popular Conferences and Summits for Women in Technology:
 - [GHC Women in Computing](https://ghc.anitab.org/)
@@ -68,6 +69,7 @@ Additionally, there are a variety tech of women in  groups that you can join no 
 - [Ada Developers Academy](https://adadevelopersacademy.org/)
   Ada is a free females-only developer academy lasting 11 months based in Seattle, WA. 
 - [Women Techmakers](https://www.womentechmakers.com/)  
+- [We Can {Code} It]{https://wecancodeit.org/)
 
 ### Podcasts on Women-in-tech:
 If you're interested in podcasts, check out Esperee Devora's on women in tech [here](http://podcast.womenintechshow.com/episodes).
