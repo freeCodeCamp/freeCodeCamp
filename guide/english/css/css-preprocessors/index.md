@@ -45,6 +45,8 @@ Yet another feature which CSS lacks are If/Else statements. These will run a set
 ```
 Here, the background color will change color depending on the width of the page's body. 
 
+### Mixins
+There are probably portions of your styling you would like to reuse. Mixins allow you to group any number of properties under one common name. You declare mixin with the @mixin <name> and use it with the @include <name>.
 
 These are but a few of the major functions of CSS Preprocessors. As you can see, CSS Preprocessors are incredibly useful and versatile tools. Many web developers use them, and it is highly recommended to learn at least one of them. 
 #### More Information:
