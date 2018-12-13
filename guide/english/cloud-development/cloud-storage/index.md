@@ -3,7 +3,7 @@ title: Cloud Storage
 ---
 
 ## STORAGE AS A SERVICE (STaaS) 
-When you use cloud storage, that is STaaS. In this case, a cloud system gives you the ability to store data online and acesss it as if it was local.
+When you use cloud storage, that is STaaS. In this case, a cloud system gives you the ability to store data online and access it as if it was local.
 The Cloud system should have the capability of Storage Scaling.
 We can integrate all storage. For example, if we have multiple pen-drives then we can integrate all pen-drive storages in a single one. 
  
@@ -22,5 +22,5 @@ There are mainly two types of storage
   - If we’re able to make partitions in provided storage, then we can install OS. We have a hard-disk and we can make partitions in them, this type of storage is known as block storage.
   - **Example**
     - Block storage service of AWS – EBS (Elastic Block Storage) 
-    - Cloud provides facility of scaling storage that’s the elastic property of cloud.
+    - Cloud provides the facility of scaling storage that’s the elastic property of cloud.
     - Block storage of OpenStack – Cinder

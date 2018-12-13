@@ -22,8 +22,8 @@ Here are some sample commands using find:
 
 The first parameter always names the directory in which we'll look. In our examples above, these are ~ (home directory of the current user) and / (root directory of the filesystem).
 
-Other parameters are optional and can be combined in any ways you find useful:
-* The type parameter allows you constrain the search for files only (f), directories only (d) or symbolic links (l). If you omit the type parameter, you'll be searching for all of these types.
+Other parameters are optional and can be combined in any way you find useful:
+* The type parameter allows you to constrain the search for files only (f), directories only (d) or symbolic links (l). If you omit the type parameter, you'll be searching for all of these types.
 * The name parameter lets you specify what you want to find by name, either with a literal string ('filename.txt') or using wildcards ('file?.*').
 
 `man find` will show you many more parameters, and is worth reviewing. Find can locate files by name, user, creation date, size and much more. Next time you're looking for something, find it!
