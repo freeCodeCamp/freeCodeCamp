@@ -8,7 +8,7 @@ localeTitle: Mono fornido
 ---
 
 ## Descripción
-<section id="description"> Escriba una función que divida una matriz (primer argumento) en grupos de la longitud del <code>size</code> (segundo argumento) y los devuelva como una matriz bidimensional. Recuerda usar la técnica de <a href="http://forum.freecodecamp.org/t/how-to-get-help-when-you-are-stuck/19514" target="_blank">Leer-Buscar-Preguntar</a> si te atascas. Escribe tu propio código. </section>
+<section id="description"> Escriba una función que divida un vector (primer argumento) en grupos de la longitud del <code>size</code> (segundo argumento) y los devuelva como una matriz bidimensional. Recuerda usar la técnica de <a href="http://forum.freecodecamp.org/t/how-to-get-help-when-you-are-stuck/19514" target="_blank">Leer-Buscar-Preguntar</a> si te atascas. Escribe tu propio código. </section>
 
 ## Instrucciones
 <section id="instructions">
@@ -45,7 +45,7 @@ tests:
 
 ```js
 function chunkArrayInGroups(arr, size) {
-  // Break it up.
+  // Divídelo.
   return arr;
 }
 
@@ -63,6 +63,6 @@ chunkArrayInGroups(["a", "b", "c", "d"], 2);
 <section id='solution'>
 
 ```js
-// solution required
+// solución requerida
 ```
 </section>
