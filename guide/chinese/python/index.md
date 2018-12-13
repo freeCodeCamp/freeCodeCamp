@@ -159,6 +159,9 @@ Python 3中的[`print`](https://docs.python.org/3/library/functions.html#print)�
 
 `objects`参数以`*`为前缀，表示该函数将为该参数采用任意数量的参数。
 
+## 你可以用python来做的事
+正如之前所说，Python是一门通用型语言。你可以用它来做任何你想做的事情，但是python一个很重要的应用在于机器学习和人工智能。python同样是一门很受欢迎的网站开发语言，这得益于一些优秀的框架，例如[Django](https://www.djangoproject.com/) and [flask](http://flask.pocoo.org/)。除此之外，python还是一种流行的脚本语言。由于它易读易懂的语法格式，python正在不同的领域快速发展，并成为最受欢迎的编程语言。
+
 ## 想了解更多？
 
 免费代码营有一些很好的资源。网络是一个很大的地方，还有很多值得探索的地方：
