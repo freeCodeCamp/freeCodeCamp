@@ -4,7 +4,7 @@ title: Behavior Driven Development
 ## Behavior Driven Development
 
 Behavior Driven Development (BDD) is a software development process that emerged from ![Test Driven Development (TDD)](../test-driven-development/index.md).
-Behavior Driven Development combines the general techniques and principles of TDD with ideas from domain-driven design and object-oriented analysis and design to provide software development and management teams with shared tools and a shared process to collaborate on software development.
+BDD combines the general techniques and principles of TDD with ideas from domain-driven design and object-oriented analysis and design to provide software development and management teams with shared tools and a shared process to collaborate on software development.
 It is a software development methodology in which an application is specified and designed by describing how its behavior should appear to an outside observer.
 
 Although BDD is principally an idea about how software development should be managed by both business interests and technical insight, the practice of BDD does assume the use of specialized software tools to support the development process.

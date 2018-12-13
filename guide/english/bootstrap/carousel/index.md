@@ -96,7 +96,7 @@ width :800 px;
 ```
 
 
-Understanding the Attributes and classes used in above example :
+Understanding the attributes and classes used in above example:
 
 ### 1) Attributes
 

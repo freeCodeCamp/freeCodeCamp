@@ -50,10 +50,10 @@ For example, a given block-level element (`<div>`) set to 300px wide, that conta
 * `overflow-y`: Allows the user to scroll through the content that extends beyond the width of the box.
 
 ```css
-  .box-element {
-    overflow-x: scroll;
-    overflow-y: auto;
-  }
+.box-element {
+  overflow-x: scroll;
+  overflow-y: auto;
+}
 ```
 And the `.box-element` will look like this:
 ![Example Image](https://s26.postimg.org/ff2kmdfzd/5-_Xand_Y.png)

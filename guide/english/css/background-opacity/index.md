@@ -48,15 +48,14 @@ You have to add the following CSS property to achieve the transparency levels.
   opacity:0.0;
 }
 ```
+
 Alternatively you can use a transparent rgba value like this:
 ```css
-
 .class-name{
   background-color: rgba(0,0,0,.5);
 }
- ```
+```
 The example above sets the background to be black with 50% opacity. The last value of an rgba value is the alpha value. An alpha value of 1 equals 100%, and 0.5 (.5 for short) equals 50%. We use this method to add transparency to an element without affecting the content inside.
-
 
 #### Transparent Hover Effect
 The opacity property is often used together with the **:hover** selector to change the opacity on mouse-over:
@@ -88,9 +87,7 @@ Using the rgba value is most preferable when the background has content like tex
 
 The example above sets the background with a 50% opacity using hex alpha code. The alpha digit is the last two numbers `80`. The formats are sometimes referred to as #RRGGBBAA and #RGBA and the the AA part is a hex representation of 0-100. For example the hex alpha code of 0% is `00` and the hex alpha code of 100% is `FF`.
 [A codepen example to show hex alpha values](https://codepen.io/chriscoyier/pen/XjbzAW)
-
 [A codepen example to show background opacity ranges](https://codepen.io/lvcoulter/full/dVrwmK/)
-
 
 #### More Information:
 

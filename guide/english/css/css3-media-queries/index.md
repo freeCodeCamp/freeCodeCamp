@@ -21,9 +21,9 @@ The thought process should be:
 ### The basic syntax
 
 ```css
-    @media only screen and (min-width: 768px) {
-      p {padding: 30px;}
-    }
+@media only screen and (min-width: 768px) {
+  p {padding: 30px;}
+}
 ```
 
 The `p` tag will have a padding of 30px as soon as the screen reaches min 768px width.</p>
@@ -32,9 +32,9 @@ The `p` tag will have a padding of 30px as soon as the screen reaches min 768px 
 
 
 ```css
-  @media only screen and (min-height: 768px) and (orientation: landscape) {
-    p {padding: 30px;}
-  }
+@media only screen and (min-height: 768px) and (orientation: landscape) {
+  p {padding: 30px;}
+}
 ```
 
 The `p` tag will have a padding of 30px as soon as the screen reaches min 768px height and its orientation is landscape.
@@ -42,9 +42,9 @@ The `p` tag will have a padding of 30px as soon as the screen reaches min 768px 
 ### The OR syntax
 
 ```css
-    @media only screen and (min-width: 768px), (min-resolution: 150dpi) {
-      p {padding: 30px;}
-    }
+@media only screen and (min-width: 768px), (min-resolution: 150dpi) {
+  p {padding: 30px;}
+}
 ```
 
 The `p` tag will have a padding of 30px as soon as the screen reaches min 768px width or its resolution reaches min 150dpi.
@@ -57,25 +57,25 @@ Beyond the core uses of media queries for mobile-first web design shown above, m
 
 1. Adjusting for screen readers that convert website text to speech for the visually impaired (for example, ignoring non-essential text).
 ```css
-    @media speech {
-      /* ... */
-    }
+  @media speech {
+    /* ... */
+  }
 ```
 2. Allowing for more graceful zooming in for those with minor visual impairments, such as many elderly people.
 3. Allowing smoother experiences for those who prefer or need less animation to read a page.
 ```css
-    @media (prefers-reduced-motion: reduce) {
-      .animation {
-        animation: none;
-        -webkit-animation: none;
-      }
+  @media (prefers-reduced-motion: reduce) {
+    .animation {
+      animation: none;
+      -webkit-animation: none;
     }
+  }
 ```
 4. Restyling a page for when it's printed as opposed to read on a screen.
 ```css
-    @media print {
-      /* ... */
-    }
+  @media print {
+    /* ... */
+  }
 ```
 
 ### More Information

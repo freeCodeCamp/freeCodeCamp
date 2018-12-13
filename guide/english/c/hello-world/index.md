@@ -23,7 +23,7 @@ To write on console you can use the function `printf()` contained in the library
  
   ## Explanation 
   
- * The `#include <stdio.h>` is a preprocessor command. This command tells compiler to include the contents of `stdio.h` (standard input and output) file in the program.
+ * The `#include <stdio.h>` is a preprocessor command. This command tells compiler to include the contents of `stdio.h` (standard input and output) header file in the program.
  * The `stdio.h` file contains functions such as `scanf()` and `printf()` to take input and display output respectively.
  * If you use `printf()` function without writing `#include <stdio.h>`, the program will not be compiled.
  * Two backslash characters (//) are used to _comment_ the code, for better understandability. Anything after // on a line is ignored while compiling the program.
@@ -35,7 +35,7 @@ To write on console you can use the function `printf()` contained in the library
 
  ## Output:
  ```
- >Hello World!
+ Hello World!
  ```
  
  #### More Information

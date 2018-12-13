@@ -6,10 +6,10 @@ This article is a quick tutorial on using the ``wget`` utility on Unix based OS.
 GNU Wget is a free utility for non-interactive download of files from the Web. It supports HTTP, HTTPS, and FTP protocols, as well as retrieval through HTTP proxies.
 
 ### Installing `wget`
-The wget utility is freely available package and licensed under the GNU GPL License. This utility can be installed on any Unix-like OS including Windows and MacOS.
+The wget utility is a freely available package and licensed under the GNU GPL License. This utility can be installed on any Unix-like OS including Windows and MacOS.
 
 ### Basic syntax
-The basic syntax of the ``wget`` is...
+The basic syntax of ``wget`` is...
 ```
 wget [option]... [URL]...
 ```

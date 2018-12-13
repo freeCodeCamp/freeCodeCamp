@@ -50,8 +50,16 @@ km.predict(test).
 In case of supervised learning the quality of the results can be determined. scikit-learn offers methods like [r2_score](http://scikit-learn.org/stable/modules/generated/sklearn.metrics.r2_score.html) or [accuracy_score](http://scikit-learn.org/stable/modules/generated/sklearn.metrics.accuracy_score.html).
 
 
-## References
+## Popular models provided by scikit-learn
+* Clustering
+* Ensemble Methods
+* Support Vector Machines
+* Nearest Neighbors
+* Naive Bayes 
+* Decision Trees
+* Neural Networks
 
-Scikit-learn main page: http://scikit-learn.org/stable/
-Tutorials: http://scikit-learn.org/stable/tutorial/index.html
+#### More Information
 
+- [Scikit-learn main page](http://scikit-learn.org/stable/)
+- [Tutorials](http://scikit-learn.org/stable/tutorial/index.html)
