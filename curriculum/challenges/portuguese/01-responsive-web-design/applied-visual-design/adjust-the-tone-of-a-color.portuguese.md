@@ -6,13 +6,13 @@ videoUrl: ''
 localeTitle: Ajustar o tom de uma cor
 ---
 
-## Description
+## Descrição
 <section id="description"> A opção <code>hsl()</code> no CSS também facilita o ajuste do tom de uma cor. Misturar branco com um tom puro cria um tom dessa cor, e adicionar preto fará sombra. Alternativamente, um tom é produzido pela adição de cinza ou por tingimento e sombreamento. Lembre-se de que &#39;s&#39; e &#39;l&#39; de <code>hsl()</code> significam saturação e luminosidade, respectivamente. O percentual de saturação altera a quantidade de cinza e o percentual de luminosidade determina o quanto branco ou preto está na cor. Isso é útil quando você tem um matiz de base que você gosta, mas precisa de variações diferentes dele. </section>
 
-## Instructions
+## Instruções
 <section id="instructions"> A barra de navegação neste site atualmente herda sua <code>background-color</code> de <code>background-color</code> do elemento de <code>header</code> . Começando com essa cor como base, adicione uma <code>background-color</code> ao elemento de <code>nav</code> para que ele use o mesmo matiz ciano, mas tenha 80% de saturação e 25% de valores de luminosidade para alterar seu tom e tom. </section>
 
-## Tests
+## Testes
 <section id='tests'>
 
 ```yml
@@ -24,7 +24,7 @@ tests:
 
 </section>
 
-## Challenge Seed
+## Semente do Desafio
 <section id='challengeSeed'>
 
 <div id='html-seed'>
@@ -80,7 +80,7 @@ tests:
 
 </section>
 
-## Solution
+## Solução
 <section id='solution'>
 
 ```js
