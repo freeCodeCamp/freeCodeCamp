@@ -3,7 +3,8 @@ title: Python Keywords
 ---
 ## Python Keywords
 
-Python has a list of <a href='https://docs.python.org/3/reference/lexical_analysis.html#keywords' target='_blank' rel='nofollow'>keywords</a> that cannot be used as identifiers (variable names). Trying to use any of these keywords as variables will create a <b>Syntax Error</b> and your Python script will not be run:
+Keywords are the reserved words present in all programming languages .Python has a list of 
+<a href='https://docs.python.org/3/reference/lexical_analysis.html#keywords' target='_blank' rel='nofollow'>keywords</a> that cannot be used as function names or identifiers (variable names) .Python is a dynamic language , so the list of keywords may change in future. Currently,  there are 33 keywords in Python 3.3 .  Trying to use any of these keywords as variables will create a <b>Syntax Error</b> and your Python script will not run:
 
     >>> False = "Hello campers!"
     File "<stdin>"
@@ -26,10 +27,6 @@ Keyword | - | - | - | -
 `as` | `elif` | `if` | `or` | `yield`
 `assert` | `else` | `import` | `pass`
 `break` | `except` | `in` | `raise`
-#### To check keywords in python run the below
-```python
->>> import keyword
->>> print (keyword.kwlist)
-['False', 'None', 'True', 'and', 'as', 'assert', 'break', 'class', 'continue', 'def', 'del', 'elif', 'else', 'except', 'finally', 'for', 'from', 'global', 'if', 'import', 'in', 'is', 'lambda', 'nonlocal', 'not', 'or', 'pass', 'raise', 'return', 'try', 'while', 'with', 'yield']
->>> 
-```
+
+
+All the keywords except `True` , `False` and `None` are in lowercase as shown above. 
