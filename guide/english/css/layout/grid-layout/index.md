@@ -22,7 +22,7 @@ It can automatically assign items to _areas_, size and resize them, take care of
 
 ### Checking browser compatability with `@supports` 
 
-Ideally, when you build a site, you'd design it with Grid and use Flex as a fallback. You can find out if your browser supports grid with the `@support` CSS rule (aka feature query). Here's an example:
+Ideally, when you build a site, you'd design it with Grid and use Flex as a fallback. You can find out if your browser supports Grid with the `@support` CSS rule (aka feature query). Here's an example:
 
 ```css
 .container {
@@ -77,7 +77,7 @@ grid-template-areas:
 
 ### Grid Areas
 
-Here's some sample code on how to define and assign grid areas
+Here's some sample code on how to define and assign grid areas:
 
 ```css
 .site {
@@ -140,7 +140,8 @@ The simple solution is to change the `grid-template-areas` based on the screen s
 See the Pen [CSS Grid by example - 2 (grid areas + grid gap)](https://codepen.io/aamnah/pen/RLVVoE/) by Aamnah Akram ([@aamnah](https://codepen.io/aamnah)) on [CodePen](https://codepen.io).
 
 #### More Information:
-- [CSS Grid Palyground by Mozilla](https://mozilladevelopers.github.io/playground/) Great starting point if you're new to CSS Grids. It has visuals to help you understand the terminology easily
+- [CSS Grid Playground by Mozilla](https://mozilladevelopers.github.io/playground/) Great starting point if you're new to CSS Grids. It has visuals to help you understand the terminology easily
 - [YouTube: Morten Rand-Hendriksen: CSS Grid Changes Everything (About Web Layouts)](https://www.youtube.com/watch?v=txZq7Laz7_4) This presentation will convice you in less than an hour why CSS Grids are cool and why/how you should use them
 - [Videos: Learn Grid Layout Video Series by Rachel Andrew](https://gridbyexample.com/video/) Rachel Andrew is considered an expert on the subject. The video titles may look alien and overwhelming, but the content is short and to the point
 - [Book: Get Ready for CSS Grid Layout by Rachel Andrew](https://abookapart.com/products/get-ready-for-css-grid-layout)
+- [YouTube: Layout Land by Jen Simmons](https://www.youtube.com/layoutland) Jen Simmons is the creator of the Firefox Grid Inspector and a member of the CSS Working Group. Her videos range from teaching the basics of CSS Grid to learning advanced layout techniques. 
