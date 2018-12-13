@@ -25,6 +25,7 @@ To set this property on multiple background images, separate the values by a com
 .multiple {
     background-image: url(1.png), url(2.png);
     background-size: 3px 3px, cover;
+    /* first image is 3x3 px, second image covers the whole area */
 }
 ```
 
