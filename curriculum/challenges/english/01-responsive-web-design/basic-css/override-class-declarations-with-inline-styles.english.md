@@ -76,7 +76,3 @@ tests:
 // solution required
 ```
 </section>
-
-
-## Disclaimer
-One thing to note is that using inline styles to style elements is not a best practice for web development, and should generally be avoided. Using inline styles loses out on much of the functionality of CSS sheets, and can also create confusion. You will typically define element styling in your CSS files, and so inline styling is easy to overlook or forget during development. In addition, because they have such high specificity, they are almost impossible to override.
