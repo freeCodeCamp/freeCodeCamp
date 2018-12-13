@@ -39,6 +39,7 @@ Additionally, there are a variety tech of women in  groups that you can join no 
 - [It's Time to Close the Gap for Women of Color in Tech](https://www.marketwatch.com/press-release/its-time-to-close-the-gap-for-women-of-color-in-tech-2018-09-13)
 - [We need more women in tech in order to get more women in tech](https://www.recode.net/2018/6/21/17489450/tech-diversity-inclusion-women-leadership-engineer-culture)
 - [Ada Lovelace: the first Computer Programmer](https://en.wikipedia.org/wiki/Ada_Lovelace)
+- [Women in Tech 2018: What the Statistics Tell Us](https://www.technative.io/women-in-tech-2018-what-the-statistics-tell-us/)
 
 ### Some Popular Conferences and Summits for Women in Technology:
 - [GHC Women in Computing](https://ghc.anitab.org/)
