@@ -8,9 +8,9 @@ From an article on ["The Latest Stats on Women in Tech"](https://www.themuse.com
 
 > "We all know that there's a major gender gap when it comes to women in tech. 
 >
-> Although we make up the majority of the workplace and the social media sphere, we only represent a tiny percentage of the technology world.
+> Although we make up the majority of the workplace and the social media sphere, women only represent a tiny percentage of the technology world.
 >
-> And that's reflected in some of the stats you see. For example, according to a 2011 report from the Level Playing Field Institute, 82% of men in startups believed their companies spent the 'right amount of time' addressing diversity, while almost 40% of women believed not enough time was devoted.”
+> And that's reflected in some of the stats you see. According to a 2011 report from the Level Playing Field Institute, 82% of men in startups believed their companies spent the 'right amount of time' addressing diversity, while almost 40% of women believed not enough time was devoted.”
 
 This is especially true in discussions about intersectionality. According to an article MarketWatch, today, while women hold about 19% of computing degrees, women of color hold about 4%. Even more concerning is that over the past decade, the percentage of Black, Latina, and Native American women fell by almost 40%.
 
