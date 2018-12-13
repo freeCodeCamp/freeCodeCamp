@@ -6,13 +6,13 @@ videoUrl: ''
 localeTitle: Elementos animados em taxas variáveis
 ---
 
-## Description
+## Descrição
 <section id="description"> Há várias maneiras de alterar as taxas de animação de elementos animados de maneira semelhante. Até agora, isso foi alcançado aplicando uma propriedade de <code>animation-iteration-count</code> e definindo regras <code>@keyframes</code> . Para ilustrar, a animação à direita consiste em duas &quot;estrelas&quot;, cada uma diminuindo de tamanho e opacidade na marca de 20% na regra <code>@keyframes</code> , que cria a animação de brilho. Você pode alterar a regra <code>@keyframes</code> de um dos elementos para que as estrelas brilhem em taxas diferentes. </section>
 
-## Instructions
+## Instruções
 <section id="instructions"> Altere a taxa de animação do elemento com o nome da classe de <code>star-1</code> alterando sua regra <code>@keyframes</code> para 50%. </section>
 
-## Tests
+## Testes
 <section id='tests'>
 
 ```yml
@@ -24,7 +24,7 @@ tests:
 
 </section>
 
-## Challenge Seed
+## Semente do Desafio
 <section id='challengeSeed'>
 
 <div id='html-seed'>
@@ -91,7 +91,7 @@ tests:
 
 </section>
 
-## Solution
+## Solução
 <section id='solution'>
 
 ```js
