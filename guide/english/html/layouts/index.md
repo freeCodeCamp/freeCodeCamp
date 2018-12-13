@@ -5,24 +5,24 @@ title: Layouts
 
 Layouts organize different areas of the web page.
 
-Almost every web page we see can be divided into boxes, that can be arranged into specific order to create that web page. The image below is one such example.
+Almost every web page we see can be divided into boxes that can be arranged into specific order to create that web page. Here is an example:
 
 ![Sample of Website Design - www.codementor.io](http://i.imgur.com/Z1DSMYC.png)
 
-> Websites often display content in multiple columns (like a magazine or newspaper).
+> Websites often display content in multiple columns similar to a magazine or newspaper.
 
-And the HTML layout techniques help us put the needed information into the needed order or design.
+The HTML layout techniques help us put the needed information into the needed order or design.
 
 
 ### Techniques to Implement Layouts 
 
 #### HTML Tables
-One the most basic tools to implement layouts in a webpage, these are provided by HTML. But as the layout gets complicated HTML tables quickly lose their ease, because of the increase in markup text.
+HTML tables are one the most basic tools to implement layouts in a webpage. These are provided by HTML. But as the layout gets complicated HTML tables quickly lose their ease due to the increase in markup text.
 
 <!-- Examples needed  -->
 
 #### CSS Float
-If you are to design a 2-column based page with left navigation pane and center content viewing area, its easy to do it with CSS floats. Simply set the left navigation page into a `<div>` with style property `float: left;`. And voila you get that design. But what if you had 4 columns in a single section. Sure, one can do it with floats, but the syntax of HTML you would be writing would be easy to comprehend.
+If you are to design a 2-column based page with left navigation pane and center content viewing area, it's easy to do it with CSS floats. Simply set the left navigation page into a `<div>` with style property `float: left;`. Voila! You get that design. But what if you had 4 columns in a single section? Sure, one can do it with floats, but the syntax of HTML you would be writing would be easy to comprehend.
 
 <!-- Examples needed  -->
 
