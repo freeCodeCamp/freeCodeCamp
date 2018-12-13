@@ -26,6 +26,11 @@ If you are to design a 2-column based page with left navigation pane and center 
 
 <!-- Examples needed  -->
 
+#### CSS Flexbox
+This is a more recent CSS update that helps avoid issues that 'float' can have, as 'float' was never meant to work as a layout attribute. CSS Flexbox allows users to designate parent containers, giving that container formatting and layout attributes. This is done by definitng 'display: flex;' in the parent container. The user can then add child items to that container. Based on whether the comtainer aligns by rows or columns, the child items will be automatically positioned. Flexbox also makes it incredibly simple to truly center align content. It also makes responsive web design much easier.
+
+[Example Webpage using CSS Flexbox only for layout](https://codepen.io/mbailey83/pen/vVPMwL)
+
 #### CSS Frameworks
 This is where CSS Frameworks such as [Bootstrap](http://getbootstrap.com/) and [Materialize](http://materializecss.com/) come in. These frameworks provide a grid functionality that lets to divide each section of your webpage into 12 columns, which you can order to design. 
 
