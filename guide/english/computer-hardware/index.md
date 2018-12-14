@@ -35,7 +35,8 @@ Random-access memory (RAM) is a form of computer data storage which stores data 
 ![Ram](https://images10.newegg.com/NeweggImage/ProductImage/20-232-476-S01.jpg)  
 
 ### Case
-A case is used to house all the components of a computer. Components housed inside the case are INTERNAL components, while any peripheral components outside the case are known as EXTERNAL components.
+A case is used to house all the components of a computer.  The case helps maintain proper airflow, and prevents dust and other foreign substances from getting onto and into the computer and its components.
+Components housed inside the case are INTERNAL components, while any peripheral components outside the case are known as EXTERNAL components.
   
 ![Case](https://images-na.ssl-images-amazon.com/images/I/41Wq97Jk20L._SL500_AC_SS350_.jpg)  
   
