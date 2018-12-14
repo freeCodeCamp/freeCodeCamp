@@ -14,7 +14,7 @@ title:  CSS3 Colors
 
 ## Colors
 
-CSS Colors is a CSS module that deals with colors, color types, color blending, and opacity. Not all CSS properties that take a <color> as a value are part of this module, but they do depend upon it. In CSS, you can change the color of almost any element in your HTML page. Properties like `background-color`, `color`, and `border-color` set the color of those elements.
+CSS Colors is a CSS module that deals with colors, color types, color blending, and opacity. Not all CSS properties that take a color as a value are part of this module, but they do depend upon it. In CSS, you can change the color of almost any element in your HTML page. Properties like `background-color`, `color`, and `border-color` set the color of those elements.
   
 CSS supports color names, hexadecimal and RGB colors.
 In addition to the introduction of the `opacity` declaration, colors in CSS3 can now be specified using color names, or RGB, HEX, HSL, RGBA, HSLA values.
@@ -43,7 +43,7 @@ HSLA color values are an extension of HSL color values with an alpha channel - w
 
 An HSL color value is specified with: hsl(hue, saturation, lightness).
 An HSLA color value is similar, with the alpha value in last position: hsla(hue, saturation, lightness, alpha)
-    
+
 ### CMYK
 
 CMYK colors is a combination of CYAN, MAGENTA, YELLOW , and BLACK. Computer screens display colors using RGB color values. Printers often present colors using CMYK color values.
@@ -66,7 +66,7 @@ It is also possible to use a three-digit notation as a short version, for exampl
 
 Additionally, there are 16,777,216 possible color combinations using hexcode. A shorthand form also exists. The shorthand #ABC is equivalent to #AABBCC. In this form, 4096 colours are available.
 
-Furthermore, some browser versions (see [compatibility](https://caniuse.com/#feat=css-rrggbbaa)) support hexcodes with 8 digits, where the last two digits describe the opacity level (00 - fully transparent, FF - fully opaque), equivalent to the alpha channel of rgba(). 
+Furthermore, some browser versions (see [compatibility](https://caniuse.com/#feat=css-rrggbbaa)) support hexcodes with 8 digits, where the last two digits describe the opacity level (00 - fully transparent, FF - fully opaque), equivalent to the alpha channel of rgba().
 
 ### Opacity
 
@@ -100,11 +100,11 @@ p {
 }
 
 h2 {
- color: #FA8072; // salmon 
+ color: #FA8072; // salmon
 }
 ```
 
-You can also add an alpha value, or transparency to colors. Transparency allows text to be overlaid on an image and still have the image partially viewable through the text, or can be used to change the shade of the colour if no other elements are in front or behind the text. Use `rgba()` or `hsla()` and fill in your color values. The alpha value goes last and is a percent converted to a decimal. (For example, 20% is 0.2, 75% is 0.75, etc.)
+You can also add an alpha value, or transparency to colors. Transparency allows text to be overlaid on an image and still have the image partially viewable through the text, or can be used to change the shade of the color if no other elements are in front or behind the text. Use `rgba()` or `hsla()` and fill in your color values. The alpha value goes last and is a percent converted to a decimal. (For example, 20% is 0.2, 75% is 0.75, etc.)
 
 ```css
 body {
