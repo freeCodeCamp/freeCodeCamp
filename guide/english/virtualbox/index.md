@@ -73,7 +73,19 @@ Virtual box supports a wide variety of Operating systems:
    - OS/2
    - OpenBSD
  
-
+### Configuring the machine to work with USB devices such as Bluetooth dongles, wireless adapters, SDR's, etc.:
+  - Ensure your USB device is plugged in to your computer
+  - With the virtual machine powered off, select the machine in the VM manager.
+  - Select settings at the top
+  - Select USB
+  - Ensure "Enable USB Controller" box is marked.
+  - Select the proper radio button for the USB device is marked;
+    - "USB 1.1 (OHCI Controller)", "USB 2.0 (EHCI Controller)", "USB 3.0 (xHCI Controller", most of your devices should work with the USB 2.0 option. Verify USB type before selecting.
+    - On the right side, click the USB icon with the green + symbol.
+    - Select your USB device. (If you aren't sure which is which, unplug the device, select a blank area to get rid of the drop down menu, select the icon again, and repeat with the device plugged in to see the difference. You should consult the device's manual or manufacturers website to see what drivers your device uses)
+    - Power on your device, and you should be able to use whatever applications you need the device for, seamlessly.
+ 
+ There will be no need to configure drivers on your virtual machine so long as your device is recognized by the host machine.
 
 #### More Information:
 

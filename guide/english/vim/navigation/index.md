@@ -39,7 +39,7 @@ $   moves to the end of the current line
 :n  moves to line n (ex. :23 moves to line 23) can also use nG
 ^   moves to the first non blank character of the line.
 
-ZZ  moves to the center of the line your on
+ZZ  moves to the center of the line you are on
 H   moves to the top of the screen
 M   moves to the middle of the screen
 L   moves to the bottom of the screen
