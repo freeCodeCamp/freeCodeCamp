@@ -4,12 +4,12 @@ title: QuickSelect
 
 ## QuickSelect
 
-QuickSelect is selecti algorithm to find K-th smallest element in unsorted list.
+QuickSelect is a selection algorithm to find the K-th smallest element in an unsorted list.
 
-### Algorithms
+### Algorithm
 
-After findding pivot (pivot is a position that partition the list into two parts. Every element on the left is less than pivot and every element on the right is more than pivot) it recurs only for the part that contains the k-th smallest element.
-If index of partitioned element (pivot) is more than k, then we recurtion for left part. If index (pivot) is same as k, we have found the k-th smallest element and we return. If index is less than k, then we recursion for right part.
+After finding pivot (Pivot is a position that partitions the list into two parts. Every element on the left is less than pivot and every element on the right is more than pivot) the algorithm recurs only for the part that contains the k-th smallest element.
+If the index of the partitioned element (pivot) is more than k, then the algorithm recurs for the left part. If index (pivot) is same as k,then we have found the k-th smallest element and it is returned. If index is less than k, then the algorithm recurs for the right part.
 
 #### Selection Psudocode
 ```
