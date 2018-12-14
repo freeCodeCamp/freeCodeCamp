@@ -21,7 +21,7 @@ The motherboard houses many of the crucial electronic components of a system, su
 Expansion cards are printed circuit board that can be inserted into a computer motherboard to add functionality to a computer system via the expansion bus.  It can either add capabilities, like allowing for a new type of I/O port, or upgrade existing ones, such as increasing audio quality via sound cards or increasing ethernet speed through a network card. Expansion cards are typically added to the computer by putting them in to the motherboard's available PCI-Express slots.
 An example of extension cards is the Graphics Processing Unit (GPU). A GPU is a specialized electronic circuit designed to rapidly manipulate and alter memory to accelerate the creation of images in a frame buffer intended for output to a display device.
 
-### Graphical Processing Unit
+### Graphics Processing Unit
 Modern computers come equipped with either an internal (built-in) or an external GPU. A GPU is similar to a Processor or CPU - it carries out and performs arithmetic, logic, control, and input/output (I/O) operations specified by the instructions.  They are specifically catered towards graphical workloads. It is a CPU dedicated for the graphics-intensive sets of instructions, thus the name GPU.
 
 ![Nvidia Titan XP](https://cdn.arstechnica.net/wp-content/uploads/2017/04/nvidia-titan-x.jpg)  
