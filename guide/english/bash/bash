@@ -4,4 +4,4 @@ title: Bash bash
 
 ## Bash Command:
 
-`bash` - typing bash will open a new shell.
+`bash` - typing bash and hitting enter will create a new bash instance within the current shell you're working in.
