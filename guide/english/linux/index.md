@@ -2,6 +2,8 @@
 title: Linux
 ---
 
+# Linux
+
 <img src="https://upload.wikimedia.org/wikipedia/commons/3/35/Tux.svg">
 
 Linux is a name which broadly denotes a family of free and open-source software operating system distributions built around the Linux
@@ -25,19 +27,20 @@ mid 90s. Today, Linux is the most popular operating system in the world. It powe
 Google's popular Android operating system.
 
 There are also many versions of Linux designed to be run on personal computers, such as Debian or Ubuntu. More importantly, these
-different versions of Linux (called distributions) allow the user varying degrees of personalization and control of the operating
+different versions of Linux (called distributions or distros for short) allow the user varying degrees of personalization and control of the operating
 system. This means that users can choose their Linux distributions based on their wants and needs.  
 
-There is also Kali Linux which is used for advanced penetration testing and auditing. It has over 700 tools, to be able to use it
-efficiently you will need to know how to use command line. It is not advised for beginners.
+There are Linux distributions which appeal to specific niches, like AVLinux. There are distributions with access to different GUIs and window managers, like Kubuntu or Debian (although you can easily switch between these). There is also Kali Linux which is used for advanced penetration testing and auditing. It has over 700 tools, and to be able to use it efficiently you will need to know how to use the command line. It is not advised for beginners.
 
-Popular distributions of Linux include:
+Other popular distributions of Linux include:
 
 * Ubuntu
 * Linux Mint
 * CentOS
 * RHEL
 * Arch Linux
+* Elementary OS
+* Tails
 
 Package types are split between higher-level distributions, with Debian (.deb) and Red Hat (.rpm) being two of the most commonly used,
 however there are others including Pac-Man (used for Arch Linux) and PetGet (Puppy Linux).
