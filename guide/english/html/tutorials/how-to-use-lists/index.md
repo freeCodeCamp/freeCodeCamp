@@ -3,7 +3,7 @@ title: How to Use Lists
 ---
 ## How to Use Lists
 Lists are used to specify a set of consecutive items or related information in well formed and semantic way, such as a list of ingredients or a list of procedural steps.
-HTML markup has three different types of lists - **ordered**, **unordored** and **description** lists. 
+HTML markup has three different types of lists - **ordered**, **unordered** and **description** lists. 
 
 ### Ordered Lists
 An ordered list is used to group a set of related items, in a specific order.
@@ -24,8 +24,25 @@ This list is created with `<ol>` tag. Each list item is surrounded with `<li>` t
     <li>Allow to stand for ten minutes</li>
 </ol>
 
+An ordered list can also use Roman Numerals by including `type=I` or `type=i` in the `<ol>` tag.
+
+##### Code 
+```html
+<ol type=I>
+    <li>Mix ingredients</li>
+    <li>Bake in oven for an hour</li>
+    <li>Allow to stand for ten minutes</li>
+</ol>
+```
+##### Example
+<ol type=I>
+    <li>Mix ingredients</li>
+    <li>Bake in oven for an hour</li>
+    <li>Allow to stand for ten minutes</li>
+</ol>
+
 ### Unordered Lists
-An unordered list is used to group a set of related items, in no particular order. This list is created with `<ul>` tag. Each list item is surrounded with `<li>` tag.
+An unordered list is used to group a set of related items, in no particular order. This list is created with `<ul>` tag. Each list item is surrounded with `<li>` tag. 
 
 ##### Code
 
@@ -47,7 +64,7 @@ An unordered list is used to group a set of related items, in no particular orde
 
 
 ### Description Lists
-A description list is used to specify a list of terms and their descriptions. This list is created with `<dl>` tag. Each list item is surrounded with `<dd>` tag.
+A description list is used to specify a list of terms and their descriptions. This list is created with `<dl>` tag. Each list item made up of a `<dt>` tag surrounding the term and a `<dd>` tag surrounding the description of the term.
 
 ##### Code
 
@@ -69,7 +86,7 @@ A description list is used to specify a list of terms and their descriptions. Th
 </dl>
 
 #### Styling List
-You can also control the style of the list. You can use `list-style` property of lists. Your list can be bullets, square, in roman numearls or can be images you want.
+You can also control the style of the list. You can use `list-style` property of lists. Your list can use bullets, squares, roman numerals or even images if you want.
 
 `list-style` property is a shorthand for `list-style-type`, `list-style-position`, `list-style-image`.
 
