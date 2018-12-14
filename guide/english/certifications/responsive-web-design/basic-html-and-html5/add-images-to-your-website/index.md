@@ -14,7 +14,7 @@ Attributes are key value pairs inserted into the tag. The syntax is `<tag key1="
 ```html
 <img src="insert URL of the image" alt="Cute dog smiling">
 ```
-Additionaly you can also check out this [CodePen](https://codepen.io/Akhil-Pillai/pen/XxodRj)
+
 
 ### Resources
  - [HTML attributes](https://guide.freecodecamp.org/html/attributes)
