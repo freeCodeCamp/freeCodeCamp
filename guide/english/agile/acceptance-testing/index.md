@@ -6,20 +6,21 @@ title: Acceptance Testing
 
 Acceptance testing, is a testing technique performed to determine whether the software system has met the requirement specifications. The main purpose of this test is to evaluate the system's compliance with the business requirements and verify if it has met the required criteria for delivery to end users.
 
-In software development, user acceptance testing (UAT) - also called beta testing, application testing, and end user testing - is a phase of software development in which the software is tested in the "real world" by the intended audience. In engineering and its various subdisciplines acceptance testing is a test conducted to determine if the requirements of a specification or contract are met. 
+In software development, user acceptance testing (UAT) - also called beta testing, application testing, and end user testing - is a phase of software development in which the software is tested in the 
 
 There are various forms of acceptance testing:
 
-> - User acceptance Testing
+> - User Acceptance Testing
 >
-> - Business acceptance Testing
+> - Business Acceptance Testing
 >
 > - Alpha Testing
 >
 > - Beta Testing
 
 ## Acceptance Criteria
-Acceptance criteria are defined based on the following attributes:
+
+Acceptance criteria are defined on the basis of the following attributes:
 
 > - Functional Correctness and Completeness
 >
@@ -54,13 +55,13 @@ The Acceptance test plan has the following attributes:
 >
 > - Approach
 >
-> - Feature to be tested
+> - Feature To Be Tested
 >
-> - Feature not to be tested
+> - Feature Not To Be Tested
 >
 > - Responsibilities
 >
-> - Test case ID
+> - Test Case ID
 >
 > - Test Title
 >
@@ -72,7 +73,7 @@ The Acceptance test plan has the following attributes:
 >
 > - Resources
 
-The acceptance test activities are designed to reach at one of the conclusions:
+The acceptance test activities are designed to reach one of the conclusions below:
 
 - Accept the system as delivered
 
@@ -99,24 +100,26 @@ Acceptance Testing focuses on checking if the developed software meets all the r
 
 Acceptance Testing is a well-established practice in software development. Acceptance Testing is a major part of Functional Testing of your code.
 
-An Acceptance Test tests that the code performs as expected i.e. produces the expected output, given the expected inputs.
+An Acceptance Test determines if the code performs as expected i.e. produces the expected output, given the expected inputs.
 
-An Acceptance Test are used to test relatively bigger functional blocks of software aka Features.
+An Acceptance Test is used to test relatively bigger functional blocks of software aka Features.
 
 ### Example
-You have created a page that requires the user to first enter their name in a dialog box before they can see the content. You have a list of invited users, so any other users will be returned an error.
+You have created a page that requires the user to first enter their name in a dialog box before they can see the content. You have a list of invited users, so any other users entered will return an error.
 
-There are multiple scenarios here such as: 
-- Every time you load the page, you need to enter your name.
-- If your name is in the list, the dialog will disappear, and you will see the article.
+
+There are multiple scenarios here, such as: 
+- Every time you load the page, you must enter your name.
+- If your name is in the list, the dialog will disappear and you will see the article.
 - If your name is not in the list, the dialog box will show an error.
 
 You can write Acceptance Tests for each of these sub-features of the bigger dialog box feature. Aside from the code that handles the infrastructure of how the test will be executed, your test for the first scenario could look like (in pseudocode):
 
 - Given that the page is opened
   - The dialog box should be visible
-  - And The dialog box should contain an input box
-  - And The input box should have placeholder text "Your name, please!"
+  - The dialog box should contain an input box
+  - The input box should have placeholder text "Your name, please!"
+  - The dialog box shoud contain a "Submit" button
 
 ### Notes
 

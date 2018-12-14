@@ -19,8 +19,8 @@ let testString = "test test test ";
 Если бы мы должны были перевести регулярное выражение, это выглядело бы примерно так:
 
 ```js
-let re = /(test)\s\1; 
- let literalRe = /test\stest; 
+let re = /(test)\s\1/; 
+ let literalRe = /test\stest/; 
 ```
 
 И `rea` и `literalRe` будут соответствовать одному и тому же.
