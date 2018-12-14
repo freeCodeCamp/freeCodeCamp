@@ -30,7 +30,7 @@ A parameter is like a placeholder. When a function is invoked, you pass a value 
 ### Function body:
 The function body contains a collection of statements that define what the function does.
 
-##Example:
+#### Example:
 
 ```cpp
 int max(int num1, int num2)
@@ -45,14 +45,18 @@ int max(int num1, int num2)
  
    return result; 
 }
-## calling a function:
-
+```
+#### Calling the function:
+```cpp
 int res;
-res=max(5,10);
+res = max(5,10);
+```
 
-// if the function returns a value, assign it to that variable, else just call it like function(arg1,arg2). It is demostrated in following code:
+## Functions with void return type
 
-void max(int num1, int num2)        // Return type is void because the function returns nothing
+If a function returns a value, assign it to a variable, else just invoke the function like so:
+```cpp
+void printMax(int num1, int num2)        
 {
    // local variable declaration
    int result;
@@ -64,18 +68,19 @@ void max(int num1, int num2)        // Return type is void because the function 
  
    cout << result; 
 }
-## calling a function:
-
-int res;
-max(5,10);
-
+```
+#### calling the function:
+```cpp
+printMax(5,10);
 ```
 
-Also note that it is not necessary to make a function with parameters, we can also make functions without parameters
-like
+## Functions without parameters
 
-```
-int test()     // Function without parameter
+Also note that it is not necessary to create a function with parameters, we can also make functions without parameters like so:
+
+```cpp
+// Function without parameter
+int test()     
 {
    // code goes here
 }
@@ -83,12 +88,7 @@ int test()     // Function without parameter
 // In main you can call it like:
 int val = test();
 
-// or simply
-test();
-
 ```
-
-One important thing to note is that parameter types have no relation with return type.
 
 ## Why are functions important?
 
