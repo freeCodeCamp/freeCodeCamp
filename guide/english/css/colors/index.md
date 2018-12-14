@@ -117,7 +117,6 @@ Above shows paragraphs styled bright orange and 20% transparent, h2 elements sal
 To get custom colors to use in CSS, you might find a color picker helpful. Some text editors have built-in color pickers, like Visual Studio Code. If you search "color picker" on Google or DuckDuckGo, you will get a color picker that you can use. Google Chrome and Firefox also have color picker add-ons that you can install. Adobe Color CC not only helps you pick a color, but will also help you pick out a color scheme for your web page! It's a good idea to check that you have enough contrast between your text and background colors by using a tool like WebAIM's Color Contrast Checker.
 
 #### More Information:
-
 - [MDN Documentation](https://developer.mozilla.org/en-US/docs/Web/CSS/color_value)
 - [Adobe Color CC](https://color.adobe.com/)
 - [ColorPick Eyedropper on Chrome Web Store](https://chrome.google.com/webstore/detail/colorpick-eyedropper/ohcpnigalekghcmgcdcenkpelffpdolg?hl=en)
@@ -125,3 +124,6 @@ To get custom colors to use in CSS, you might find a color picker helpful. Some 
 - [Explore different Hex colors](https://www.colorhexa.com/)
 - [WebAIM Color Contrast Checker](https://webaim.org/resources/contrastchecker/)
 - [MDN: Further Reading on Colors](https://developer.mozilla.org/en-US/docs/Web/HTML/Applying_color)
+- [Coolors](https://coolors.co/): A simple color scheme generator that gives you two months of skillshare classes for free.
+- [Colormind](http://colormind.io): A color scheme generator that uses deep learning to generate colors based on images, movies, and popular art.
+- [Duotone](https://duotone.shapefactory.co/): A website where you can get images that have a Spotify look to them. You can use your own images, or use images from Unsplash, which is where it's pulling images from.
