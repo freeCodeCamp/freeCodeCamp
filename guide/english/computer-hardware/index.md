@@ -24,7 +24,7 @@ An example of extension cards is the GPU. A graphics processing unit (GPU) is a 
 ![Nvidia Titan XP](https://cdn.arstechnica.net/wp-content/uploads/2017/04/nvidia-titan-x.jpg)  
   
 ### Storage
-A Solid State Drive (SSD) or Hard Disk Drive (HDD) is used to store information on the computer. The drive retains the memory even after loss of power. A Hard Disk Drive uses a spinning disk to store memory, while a Solid State Drive has no moving mechanical components. Solid State Drives are often used to load operating systems since they are a great deal faster than a traditional Hard Disk Drive. 
+A Solid State Drive (SSD) or Hard Disk Drive (HDD) is used to store information on the computer. The drive retains the memory even after the loss of power. A Hard Disk Drive uses a spinning disk to store memory, while a Solid State Drive has no moving mechanical components. Solid State Drives are often used to load operating systems since they are a great deal faster than a traditional Hard Disk Drive. 
 
 ![SSD](https://images10.newegg.com/NeweggImage/ProductImage/20-147-373-09.jpg)  
 ![HDD](https://upload.wikimedia.org/wikipedia/commons/thumb/f/f8/Laptop-hard-drive-exposed.jpg/1280px-Laptop-hard-drive-exposed.jpg) 
