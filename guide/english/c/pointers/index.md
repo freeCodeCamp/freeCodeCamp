@@ -322,11 +322,11 @@ Most of the time, pointer and array accesses can be treated as acting the same, 
 ```c
     int a[10];
     int *p; 
-    p = a; /*legal*/
-    a = p; /*illegal*/ 
+    p = a; /*legal, pointer p, points the starting memory address of array a that is a[0]*/
+    a = p; /*illegal, a is not an individual variable*/ 
 ```
 5) Arithmetic on pointer variable is allowed.
 ```c
-    p++; /*Legal*/
+    p++; /*Legal, p points the next memory address*/
     a++; /*illegal*/ 
 ```
