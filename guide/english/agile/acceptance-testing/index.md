@@ -4,10 +4,9 @@ title: Acceptance Testing
 
 ## Acceptance Testing
 
-Acceptance testing is a testing technique performed to determine whether or not the software system has met the requirement specifications. The main purpose of this test is to evaluate the system's compliance with the business requirements and verify if it has met the required criteria for delivery to end users.
+Acceptance testing, is a testing technique performed to determine whether the software system has met the requirement specifications. The main purpose of this test is to evaluate the system's compliance with the business requirements and verify if it has met the required criteria for delivery to end users.
 
-
-In software development, user acceptance testing (UAT) - also called beta testing, application testing, and end user testing - is a phase of software development in which the software is tested in the "real world" by the intended audience. In engineering and its various subdisciplines acceptance testing is a test conducted to determine if the requirements of a specification or contract are met.
+In software development, user acceptance testing (UAT) - also called beta testing, application testing, and end user testing - is a phase of software development in which the software is tested in the 
 
 There are various forms of acceptance testing:
 
@@ -20,6 +19,7 @@ There are various forms of acceptance testing:
 > - Beta Testing
 
 ## Acceptance Criteria
+
 Acceptance criteria are defined on the basis of the following attributes:
 
 > - Functional Correctness and Completeness
@@ -82,7 +82,7 @@ The acceptance test activities are designed to reach one of the conclusions belo
 - Do not accept the system
 
 ## Acceptance Test Report - Attributes
-The Acceptance test Report has the following attributes:
+The Acceptance Test Report has the following attributes:
 
 > - Report Identifier
 >
@@ -92,7 +92,7 @@ The Acceptance test Report has the following attributes:
 >
 > - Recommendations
 >
-> - Summary of To-DO List
+> - Summary of To-Do List
 >
 > - Approval Decision
 
@@ -106,6 +106,7 @@ An Acceptance Test is used to test relatively bigger functional blocks of softwa
 
 ### Example
 You have created a page that requires the user to first enter their name in a dialog box before they can see the content. You have a list of invited users, so any other users entered will return an error.
+
 
 There are multiple scenarios here, such as: 
 - Every time you load the page, you must enter your name.
@@ -122,17 +123,17 @@ You can write Acceptance Tests for each of these sub-features of the bigger dial
 
 ### Notes
 
-- Acceptance Tests can be written in any language and run using various tools available that would take care of the infrastructure mentioned above e.g. opening a browser, loading a page, providing the methods to access elements on the page, assertion libraries, and so on.
+- Acceptance Tests can be written in any language and run using various tools available that would take care of the infrastructure mentioned above e.g. Opening a browser, loading a page, providing the methods to access elements on the page, assertion libraries and so on.
 
 - Every time you write a piece of software that will be used again (even by yourself), it helps to write a test for it. When you yourself or another makes changes to this code, running the tests will ensure that you have not broken existing functionality.
 
-- It is usually performed by the users or the Subject Matter Experts. It is also called User Acceptance Testing (UAT). UAT involves most common real life scenarios. Unlike system testing, it does not focus on the errors or crashes, but on the functionality. UAT is done at the end of the testing life-cycle and will decide if the software is moved to the next environment or not.
+- It is usually performed by the users or the Subject Matter Experts. It is also called the User Acceptance Testing (UAT). UAT involves most common real life scenarios. Unlike system testing, it does not focus on the errors or crashes, but on the functionality. UAT is done at the end of the testing life-cycle and will decide if the software is moved to the next environment or not.
 
-- A good way of defining which acceptance tests should be written is to add acceptance criteria to a user story. With acceptance criteria, you can define when a user story is ready to deploy and the issue completed to your wishes.
+- A good way of defining which acceptance tests should be written is to add acceptance criteria to a user story. With acceptance criteria, you can define when a user story is ready to deploy, and the issue completed to your wishes.
 
 - In an Agile project it is important for the team to have acceptance criteria defined for all user stories. The Acceptance Testing work will use the defined criteria for evaluating the delivered functionality. When a story can pass all acceptance criteria it is complete. 
 
-- Acceptance testing can also validate if a completed epic/story/task fulfills the defined acceptance criteria. In contrast to definition of done, this criteria can cover specific business cases that the team wants to solve. This provides a good measurement of work quality.
+- Acceptance testing can also validate if a completed epic/story/task fulfills the defined acceptance criteria. In contrast to definition of done, these criteria can cover specific business cases that the team wants to solve. This provides a good measurement of work quality.
 
 #### More Information:
 - [International Software Testing Qualifications Board](http://www.istqb.org/)
