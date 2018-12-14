@@ -45,7 +45,7 @@ A Power Supply Unit is an electronic device that supplies electric energy to an 
 ![Power Supply](https://upload.wikimedia.org/wikipedia/commons/thumb/b/b6/SFX_PC-PSU_Delta_IMG_9760.JPG/620px-SFX_PC-PSU_Delta_IMG_9760.JPG)
    
 ### Input and Output devices (eg. Keyboard and Mouse)
-Input/Output device is any hardware used by a human operator or other systems to communicate with a computer.
+Input/Output device is any hardware used by a human operator or other systems to communicate with a computer. We feed instructions to the computer via input devices. Keyboard and mouse would be the most common example of input devices. 
 
 ![I/O Devices](https://www.clasohlson.com/medias/sys_master/9225929949214.jpg)
 
