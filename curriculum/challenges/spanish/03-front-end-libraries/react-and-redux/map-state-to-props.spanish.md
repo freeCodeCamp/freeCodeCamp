@@ -7,13 +7,13 @@ videoUrl: ''
 localeTitle: Mapa del estado a los apoyos
 ---
 
-## Description
+## Descripción
 <section id="description"> El componente <code>Provider</code> permite proporcionar <code>state</code> y <code>dispatch</code> a sus componentes React, pero debe especificar exactamente qué estado y acciones desea. De esta manera, se asegura de que cada componente solo tenga acceso al estado que necesita. Esto se logra creando dos funciones: <code>mapStateToProps()</code> y <code>mapDispatchToProps()</code> . En estas funciones, declara a qué estados de estado desea acceder y a qué creadores de acción necesita poder enviar. Una vez que estas funciones estén en su lugar, verá cómo utilizar el método React Redux <code>connect</code> para conectarlos a sus componentes en otro desafío. <strong>Nota:</strong> Detrás de escena, React Redux usa el método <code>store.subscribe()</code> para implementar <code>mapStateToProps()</code> . </section>
 
-## Instructions
+## Instrucciones
 <section id="instructions"> Crear una función <code>mapStateToProps()</code> . Esta función debe tomar el <code>state</code> como un argumento, luego devolver un objeto que mapea ese estado a nombres de propiedad específicos. Estas propiedades serán accesibles a su componente a través de <code>props</code> . Como este ejemplo mantiene todo el estado de la aplicación en una sola matriz, puede pasar ese estado completo a su componente. Cree un <code>messages</code> propiedad en el objeto que se está devolviendo y configúrelo en <code>state</code> . </section>
 
-## Tests
+## Pruebas
 <section id='tests'>
 
 ```yml
@@ -39,7 +39,7 @@ tests:
 ```jsx
 const state = [];
 
-// change code below this line
+// cambia el código debajo esta linea
 
 ```
 
@@ -49,10 +49,10 @@ const state = [];
 
 </section>
 
-## Solution
+## Solución
 <section id='solution'>
 
 ```js
-// solution required
+// Solución requerida 
 ```
 </section>

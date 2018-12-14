@@ -1,10 +1,10 @@
 ---
 title: For..Of Loop
-localeTitle: Для ... Loop
+localeTitle: Цикл for..of 
 ---
-# Для ... Loop
+# Цикл for..of 
 
-`for..of` loop - это специальный цикл в TypeScript, который вы можете использовать для повторения значений массива.
+`for..of` - это специальный цикл в TypeScript, который вы можете использовать для итерирования по значениям массива.
 
 ```typescript
 let fruits = ['Apple', 'Banana', 'Orange']; 

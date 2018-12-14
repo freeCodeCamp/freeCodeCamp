@@ -3,8 +3,30 @@ title: Using CSS Animations
 ---
 ## Using CSS Animations
 
-CSS animations add beauty to the Webpages.<br>
-CSS animations make transitions from one CSS style to the other beautiful.
+CSS animations change elements from one CSS style to another.<br>
+There are no limits to how many CSS propreties you can change. <br>
+
+## @Keyframes
+
+CSS animations work by using keyframes, which define what style the element has at any given time.
+
+```css
+
+/* Using from/to */
+
+@keyframes animationName {
+    from {opacity: 1;}
+    to {opacity: 0;}
+}
+
+/* Using Values */
+
+@keyframes animationName {
+    0% {opacity: 1;}
+    50% {opacity: 0;}
+    100% {opacity: 1;}
+}
+```
 
 To create a CSS animation sequence, we have different sub-properties in the `animation` property in CSS :
 - `animation-delay`
@@ -63,4 +85,5 @@ For the CSS part :
 
 
 #### More Information:
-For more deatils on CSS Animations, please visit [Mozilla Developer Network Docs](https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Animations/Using_CSS_animations)
+- [Mozilla Developer Network Docs](https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Animations/Using_CSS_animations)
+- [CSS Animations - 3d Transforms](https://3dtransforms.desandro.com/)
