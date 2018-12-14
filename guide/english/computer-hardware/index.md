@@ -19,7 +19,7 @@ The motherboard houses many of the crucial electronic components of a system, su
 
 ### Expansion Cards
 Expansion cards are printed circuit board that can be inserted into a computer motherboard to add functionality to a computer system via the expansion bus. 
-An example of extension cards is the GPU. A graphics processing unit (GPU) is a specialized electronic circuit designed to rapidly manipulate and alter memory to accelerate the creation of images in a frame buffer intended for output to a display device.
+An example of extension cards is the Graphics Processing Unit (GPU). A GPU is a specialized electronic circuit designed to rapidly manipulate and alter memory to accelerate the creation of images in a frame buffer intended for output to a display device.
   
 ![Nvidia Titan XP](https://cdn.arstechnica.net/wp-content/uploads/2017/04/nvidia-titan-x.jpg)  
   
