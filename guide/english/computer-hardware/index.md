@@ -14,11 +14,11 @@ A Central Processing Unit (CPU) is the electronic circuitry within a computer th
 
 ### Motherboard
 The motherboard houses many of the crucial electronic components of a system, such as the central processing unit (CPU), memory and extension cards. It also provides electrical connection between these compoenents and other peripherals so they can communicate.
-  
+
 ![Motherboard](https://fthmb.tqn.com/mmTUdCN6UBGIKlkEggGq4fpV-3k=/768x0/filters:no_upscale()/gig-57c732ed3df78c71b60e7aa5.jpg)  
 
 ### Expansion Cards
-Expansion cards are printed circuit board that can be inserted into a computer motherboard to add functionality to a computer system via the expansion bus. 
+Expansion cards are printed circuit board that can be inserted into a computer motherboard to add functionality to a computer system via the expansion bus.  It can either add capabilities, like allowing for a new type of I/O port, or upgrade existing ones, such as increasing audio quality via sound cards or increasing ethernet speed through a network card. Expansion cards are typically added to the computer by putting them in to the motherboard's available PCI-Express slots.
 An example of extension cards is the Graphics Processing Unit (GPU). A GPU is a specialized electronic circuit designed to rapidly manipulate and alter memory to accelerate the creation of images in a frame buffer intended for output to a display device.
   
 ![Nvidia Titan XP](https://cdn.arstechnica.net/wp-content/uploads/2017/04/nvidia-titan-x.jpg)  
@@ -31,7 +31,7 @@ A Solid State Drive (SSD) or Hard Disk Drive (HDD) is used to store information 
   
 ### Memory
 Random-access memory (RAM) is a form of computer data storage which stores data and machine code currently being used. A random-access memory device allows data items to be read or written in almost the same amount of time irrespective of the physical location of data inside the memory. It does not retain the data after loss of power.
-  
+
 ![Ram](https://images10.newegg.com/NeweggImage/ProductImage/20-232-476-S01.jpg)  
 
 ### Case
