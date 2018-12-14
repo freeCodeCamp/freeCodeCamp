@@ -19,7 +19,7 @@ CSS Colors is a CSS module that deals with colors, color types, color blending, 
 CSS supports color names, hexadecimal and RGB colors.
 In addition to the introduction of the `opacity` declaration, colors in CSS3 can now be specified using color names, or RGB, HEX, HSL, RGBA, HSLA values.
 
-HTML supports 140 standard <a href='https://www.w3schools.com/colors/colors_names.asp' target='_blank' rel='nofollow'>color names</a>.
+CSS supports 147 standard <a href='https://www.w3.org/TR/css-color-3/#svg-color' target='_blank' rel='nofollow'>color names</a>.
 
 ### RGBA
 
