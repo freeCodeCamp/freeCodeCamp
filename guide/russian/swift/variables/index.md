@@ -9,16 +9,20 @@ localeTitle: Переменные
 Такой двоякий подход к хранению переменных в Swift позволяет избежать ошибок изменения переменных, которые должны быть константами.
 
 ```Swift
+
   let daysInAWeek = 7
   var amountOfMoney = 100
 
+
   amountOfMoney = 150
   // Значение amountOfMoney теперь 150
+
 
   daysInAWeek = 10
   // Эта строка вызовет ошибку!
 
  ```
+
 
 В этом случае переменная `daysInAWeek` должна быть константой, потому что  в неделе только семь дней, а переменная `amountOfMoney` должна иметь возможность меняться, потому что сумма денег на счету изменяется.
 
@@ -36,9 +40,12 @@ localeTitle: Переменные
   let money = 50 
  
   print(money) 
+
   // Эта строка выведет 50 
-```
+
 
 #### Дополнительная информация:
 
+
 * [The Swift Programming Language](https://docs.swift.org/swift-book/LanguageGuide/TheBasics.html#ID310)
+
