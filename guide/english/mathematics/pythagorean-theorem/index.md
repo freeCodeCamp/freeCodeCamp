@@ -17,7 +17,5 @@ Whenever you are given two sides of a right triangle, you can calculate the thir
 
 #### More Information:
 
-<a href = "https://www.khanacademy.org/math/basic-geo/basic-geometry-pythagorean-theorem">Khan Academy Pythagorean Theorem</a>
-
-
-<a href = "https://en.wikipedia.org/wiki/Pythagorean_theorem">Wikipedia Pythagorean Theorem</a>
+- <a href = "https://www.khanacademy.org/math/basic-geo/basic-geometry-pythagorean-theorem">Khan Academy Pythagorean Theorem</a>
+- <a href = "https://en.wikipedia.org/wiki/Pythagorean_theorem">Wikipedia Pythagorean Theorem</a>
