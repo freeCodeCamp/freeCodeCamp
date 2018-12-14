@@ -16,9 +16,9 @@ Get rid of the `function` key word, and plug in this `=>` arrow.
 
 Did you get rid of the `var` keyword?
 
-## Spoiler Alert - Solution Ahead!
+## Spoiler alert - Solution ahead!
 
-## Solution
+## Solution:
 
 ```javascript
 const magic = () => {
@@ -26,5 +26,16 @@ const magic = () => {
   return new Date();
 };
 ```
-
 As long as you got rid of the `var` keyword, you're good.
+
+## Alternative code solution:
+```javascript
+const magic = () => new Date ();
+```
+- [Run code at repl.it](https://repl.it/@AdrianSkar/ES6-Use-arrow-functions)
+
+Remember that _"When there is no function body, and only a return value, arrow function syntax allows you to omit the keyword `return` as well as the brackets surrounding the code."_
+
+
+### Resources
+- ["Arrow functions" - *MDN Javascript reference*](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Functions/Arrow_functions)
