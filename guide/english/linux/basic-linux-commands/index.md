@@ -5,6 +5,7 @@ title: Basic Linux Commands
 
 When starting out with linux, there are some basic commands everyone should know.
 
+
 1. **cd** - change directory 
 - cd followed by a directory or file path will take you inside that directory(folder).
 
@@ -50,40 +51,41 @@ When starting out with linux, there are some basic commands everyone should know
 
 14. **cp** - copy files and directories
 - Use 'cp' to copy a file or a direcotry with files inside it to another location using command 'cp CURRENT_FILE-LOCATION DESTINATION_FOLDER'. Add '-r' flag to copy a directory that is not empty. 
- 15. **du** - estimate file space usage
+ 
+15. **du** - estimate file space usage
 - Use 'du' to estimate file space usage. du is abbreviation of "disk usage". This command tool reports usage by given directory
 
-15. **ln** - link LINKNAME to TARGET file/directory
+16. **ln** - link LINKNAME to TARGET file/directory
 - Link is pointer which connects file name to actual bytes of data on the disk. More than one link can point on the same data.
 - Use `ln` to create a link to targeted file with linkname. Link to target is created in current working directory. By default ln creates [hard link](http://www.linfo.org/hard_link.html) and requires existance of TARGET file/directory. If we add `-s`(--symbolic) to the command, [symbolic link](https://www.computerhope.com/jargon/s/symblink.htm) will be created.
 
-16. **top** - shows the system load
+17. **top** - shows the system load
 - Use `top` to get information about running processes of your system, the amount or RAM they allocate and the CPU percentage that they use. 'Top' is interactive so do not forget to press `q` when you want to quit.
 
-17. **df -h** Checks disk space in human readable form
+18. **df -h** Checks disk space in human readable form
 - Shows the size, amount used, amount available and capacity percentage of mounted drives/partitions.
 
-18. **grep** -  The grep searches any given input files, selecting lines that match one or more patterns.
+19. **grep** -  The grep searches any given input files, selecting lines that match one or more patterns.
 - use `grep` to find a file, a directory, some text in the file/directory.  
 
-19. **sudo** - execute a command as super user
+20. **sudo** - execute a command as super user
 - A widely used command in the Linux command line, sudo stands for "SuperUser Do". So, if you want any command to be done with administrative or root privileges, you can use the sudo command.
 
-20. **kill** - stops runing process
+21. **kill** - stops runing process
 - The `kill` command sends a signal to a running process. This default action normally stops processes. If you want to stop a process, specify the process ID (PID) in the `ProcessID` variable. The shell reports the PID of each process that is running in the background (unless you start more than one process in a pipeline, in which case the shell reports the number of the last process). You can also use the `ps` command to find the process ID number of commands.
 
-21. **find** - search for files in a directory hierarchy
+22. **find** - search for files in a directory hierarchy
 - `find` searches the directory tree rooted at each given file name by evaluating the given expression from left to right, according to the rules of precedence, until the outcome is known (the left hand side is false for and operations, true for or), at which point `find` moves on to the next file name.
 
-22. **man** - Show the manual for a command
+23. **man** - Show the manual for a command
  - Use `man` to see manual of any commmand.  It will show different ways a given command can be used  
     Example: `man ls`
  
-23. **ps** - Show active processes
+24. **ps** - Show active processes
  - Use `ps` to see running processes, and their process IDs  
      Example: `ps`
  
-24. **history**
+25. **history**
  - Use `history` to see previously entered commands  
     Example: `history` 
  
@@ -91,4 +93,3 @@ When starting out with linux, there are some basic commands everyone should know
 - [JSLinux](https://bellard.org/jslinux/vm.html?url=https://bellard.org/jslinux/buildroot-x86.cfg): Run the terminal inside your browser. Great for practice.
 - [LearnShell](https://www.learnshell.org/): Interactive Linux shell (terminal) tutorials.
 - [LinuxJourney](https://linuxjourney.com/lesson/the-shell): A collection of beginner-friendly terminal tutorials.
-
