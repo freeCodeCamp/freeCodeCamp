@@ -53,3 +53,11 @@ Input/Output device is any hardware used by a human operator or other systems to
 A computer monitor is an output device which displays information in pictorial form.
   
 ![Monitor](https://assets.pcmag.com/media/images/523934-dell-ultrasharp-34-curved-monitor-u3417w.jpg?thumb=y)
+
+### Printer
+A Printer is also an output device which print information on paper and you will get hard copy of your information.
+![Printer](https://tse3.mm.bing.net/th?id=OIP.x182MqnHzLndMBv2unN4HwHaE8&pid=15.1&P=0&w=258&h=173)
+
+
+
+
