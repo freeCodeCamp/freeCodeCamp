@@ -4,10 +4,7 @@ title: Shell scripting
 
 # Shell scripting
 
-In the command line, a shell script is an executable file that contains a set
-of instructions that the shell will execute. Its main purpose is to reduce
-a set of instructions (or commands) in just one file. Also, it can handle
-some logic because it's a programming language.
+In the command line, a shell script is an executable file that contains a set of instructions that the shell will execute. Its main purpose is to reduce a set of instructions (or commands) in just one file. Also, it can handles bsome logic because it's a programming language.
 
 ## How to create it
 

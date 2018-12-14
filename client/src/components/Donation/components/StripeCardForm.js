@@ -1,4 +1,4 @@
-import React, { PureComponent } from 'react';
+import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import {
   CardNumberElement,
@@ -17,7 +17,7 @@ const style = {
   }
 };
 
-class StripCardForm extends PureComponent {
+class StripCardForm extends Component {
   constructor(...props) {
     super(...props);
 

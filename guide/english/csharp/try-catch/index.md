@@ -68,7 +68,7 @@ var parsedUserInput = Int32.Parse(userInput);  // Correct
 ```
 
 ## Catch block
-This block is where you specify what type of ```Exception``` you want to catch. If you want to catch ALL possible exceptions you can use the ```Exception``` base class. If you want to only catch a specific type of exception you can specify that instead. Some examples of other exception types are ```ArgumentException```, ```OutOfMemoryException ``` and ```FormatException```.
+This block is where you specify what type of ```Exception``` you want to catch. If you want to catch ALL possible exceptions you can use the ```Exception``` base class. If you want to only catch a specific type of exception you can specify that instead. Some examples of other exception types are ```ArgumentException```, ```OutOfMemoryException ``` and ```FormatException```. You can also use the exception types to handle these exceptions different.
 
 ```csharp
 try
@@ -78,14 +78,27 @@ try
 // Only FormatExceptions will be caught in this catch block.
 catch(FormatException exceptionVariable)
 {
+    // DO SOMETHING
     Console.WriteLine(exceptionVariable.Message);
+}
+// Only ArgumentNullException will be caught in this catch block.
+catch(ArgumentNullException nullException)
+{
+    // DO SOMETHING DIFFERENT
+    Console.WriteLine(nullException.Message);
+}
+// Catch every other possible exception
+catch(Exception exception)
+{
+    // DO SOMETHING ELSE
+    Console.WriteLine(exception.Message);
 }
 ```
 The variable declared after the type of exception will contain all the data of the exception and can be used within the ```Catch``` block.
 
 ## Finally block
-The finally block is **always** run at the end after the ```Try``` and ```Catch``` blocks. This section is usually used to when something **must** happen at the end regardless if an exception was thrown or not.
-For example, say we need a variable to always be re-initalised back to a specific number after it has been manipulated all the time.
+The finally block is **always** run at the end after the ```Try``` and ```Catch``` blocks. This section is usually used when something **must** happen at the end, regardless if an exception was thrown or not.
+For example, say we need a variable to always be re-initialised back to a specific number after it has been manipulated.
 ```csharp
 int initalValue = 12;
 try
