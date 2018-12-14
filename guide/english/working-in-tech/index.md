@@ -23,7 +23,7 @@ The field of computer security is growing at a rapid rate every year, in a repor
 
 ### Books
 
-[About Face: The Essentials of Interaction Design](https://www.amazon.com/About-Face-Essentials-Interaction-Design-dp-1118766571/dp/1118766571/ref=mt_paperback?_encoding=UTF8&me=&qid=)
+[About Face: The Essentials of Interaction Design](https://www.amazon.com/About-Face-Essentials-Interaction-Design-dp-1118766571/dp/1118766571/)
 
 [Thinking in Systems: A Primer](https://www.amazon.com/gp/product/1603580557/)
 
