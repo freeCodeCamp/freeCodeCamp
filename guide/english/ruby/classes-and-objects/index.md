@@ -51,7 +51,7 @@ Now, to create an instance of this class you only need to call the `.new` functi
 mazda3 = Car.new('Mazda', 'Mazda3', 'White')
 ```
 
-This is great, but sometimes you may need to change some of these attributes! Most of these attributes in this example would be static. Still, imagine that you decided to get a new paintjob. How would you go about updating the state of this instance of the `Car` object?
+This is great, but sometimes you may need to change some of these attributes! Most of these attributes in this example would be static. Still, imagine that you decided to get a new paint job, and wanted to change the color of your Car. How would you go about updating the state of this instance of the `Car` object?
 
 ### Modifying Instance State
 

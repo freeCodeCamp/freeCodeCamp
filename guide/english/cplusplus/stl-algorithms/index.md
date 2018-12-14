@@ -4,7 +4,7 @@ title: STL Algorithms
 
 ## STL Algorithms
 
-STL stands for Standard Template Library. It consists various containers like Vectors,Stack,Queue etc. It also consists of some commonly used algorithms like sorting,count etc. The below image shows the quick outline of STL. We will discuss the algorithms part.
+STL stands for Standard Template Library. It consists various containers like Vectors, Stacks, Queues etc. It also consists of some commonly used algorithms like sorting, counting etc. The image below shows the quick outline of STL. We will discuss the algorithms part.
 
 ![STL Outlook](https://i.imgur.com/daIlXQI.png "STL-Outlook")
 
