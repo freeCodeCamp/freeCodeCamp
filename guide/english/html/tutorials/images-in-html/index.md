@@ -18,7 +18,7 @@ To insert an image you define the source and an alternative text wich is display
 <img src="URL of the Image" alt="Descriptive Title" />
 ```
 
-### Define height and width of an image you can use the height and width attribute:
+### To define height and width of an image you can use the height and width attribute:
 ```html
 <img src="URL of the Image" alt="Descriptive Title" height="100" width="150"/>
 ```
