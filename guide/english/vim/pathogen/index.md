@@ -6,7 +6,7 @@ title: Pathogen
 
 Pathogen helps you to manage your runtime path with ease.
 
-It lets install easily bundle for Vim.
+It lets you easily install bundle for Vim.
 
 Run the following commands :
 
@@ -25,7 +25,7 @@ Add this command to your .vimrc file :
 execute pathogen#infect()
 ```
 
-If you don't have any .vimrc file, type `vim ~/.vimrc` and paste this :
+If you don't have a .vimrc file, type `vim ~/.vimrc` and paste this :
 
 ```
 execute pathogen#infect()
@@ -34,13 +34,13 @@ filetype plugin indent on
 ```
 
 This is a very basic example.
-At this moment, every plugins will be extracted to `~/.vim/bundle` and will be added to the _`runtimepath`_
+At this moment, plugins will be extracted to `~/.vim/bundle` and will be added to the _`runtimepath`_
 
 ---
 
 #### | Example
 
-If you wish to install a plugins like NERDTree, simply run this :
+If you wish to install a plugin like NERDTree, simply run this :
 
 ```
 cd ~/.vim/bundle
@@ -49,4 +49,4 @@ git clone https://github.com/scrooloose/nerdtree
 
 It will be added to the \_`runtimepath`.
 
-Curated ressource of Vim plugins : [Vim Awesome](https://vimawesome.com)
+Curated resource of Vim plugins : [Vim Awesome](https://vimawesome.com)
