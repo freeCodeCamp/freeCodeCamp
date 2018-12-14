@@ -29,8 +29,8 @@ A Solid State Drive (SSD) or Hard Disk Drive (HDD) is used to store information 
 ![SSD](https://images10.newegg.com/NeweggImage/ProductImage/20-147-373-09.jpg)  
 ![HDD](https://upload.wikimedia.org/wikipedia/commons/thumb/f/f8/Laptop-hard-drive-exposed.jpg/1280px-Laptop-hard-drive-exposed.jpg) 
   
-### Memory 
-Random-access memory (RAM) is a form of computer data storage which stores data and machine code currently being used. A random-access memory device allows data items to be read or written in almost the same amount of time irrespective of the physical location of data inside the memory.
+### Memory
+Random-access memory (RAM) is a form of computer data storage which stores data and machine code currently being used. A random-access memory device allows data items to be read or written in almost the same amount of time irrespective of the physical location of data inside the memory. It does not retain the data after loss of power.
   
 ![Ram](https://images10.newegg.com/NeweggImage/ProductImage/20-232-476-S01.jpg)  
 
@@ -45,7 +45,7 @@ A Power Supply Unit is an electronic device that supplies electric energy to an 
 ![Power Supply](https://upload.wikimedia.org/wikipedia/commons/thumb/b/b6/SFX_PC-PSU_Delta_IMG_9760.JPG/620px-SFX_PC-PSU_Delta_IMG_9760.JPG)
    
 ### Input/Output devices
-An Input/Output device (IO device) is any hardware used by a human operator or other systems to communicate with a computer. We feed instructions to the computer via input devices. Keyboard and mouse would be the most common example of input devices. 
+An Input/Output device (IO device) is any hardware used by a human operator or other systems to communicate with a computer. We feed instructions to the computer via input devices. Keyboard, mouse, and monitor would be the most common example of input devices. 
 
 ![I/O Devices](https://www.clasohlson.com/medias/sys_master/9225929949214.jpg)
 
