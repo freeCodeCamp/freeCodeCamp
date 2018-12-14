@@ -41,16 +41,13 @@ using namespace std;
 
 int main () {
    // local variable declaration:
-   //char grade = 'D';
+   char grade = 'D';
    
-   /*instead of declaring the variable grade in a trivial way by giving it value directly from code,
-     we can enter it when we run the program, to make our code more dynamic and testing multiple situations
-     by just re-running the program and entering a different thing as an input, instead of modifying the variable
-     over and over again.And to make this happen, we simply code this: */
+   /* You can also have the user enter the value of grade to make your code more dynamic, like so:
    char grade;
-   cin>>grade; //Or cin.get(grade); it does the same thing
+   cin >> grade; 
+   */
    
-
    switch(grade) {
       case 'A' :
          cout << "Excellent!" << endl;
