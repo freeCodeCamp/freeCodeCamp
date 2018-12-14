@@ -37,30 +37,7 @@ This rule changes the font color of all p elements to green, just like above.
 
 Hexadecimal values are yet another way to define colors in CSS and they work quite similarly to RGB values.<br>
 
-A random hex code would like this: `#29432b`, where the first two characters after the hash stand for the amount of RED in the mix, the second two stand for the amount of Green and the last two stand for the amount of Blue. When specifying an RGB color mixture, the values are in base 10. Hexadecimal color codes on the other hand use base 16, or hexadecimal base to specify color mixtures.<br> 
-
-The values of `#000000` and `#ffffff` stand for black and white respectively. When a hex color code is composed of entirely of the same characters, the hex color can be abbreviated, like this:
-
-
-h1 {
-
-  color: #FFFFFF;
-
-  color: #FFF; /* This is the same color as above */
-
-}
-
-
-h2 {
-
-  color: #FF33AA;
-
-  color: #F3A; /* This is the same color as above */
-
-}
-<br>
-You can find the specific Hexadecimal colors you require by using the same tools mentioned for the RGB values. <br>
-
+A random hex code would like this: `#29432b`, where the first two characters after the hash stand for the amount of RED in the mix, the second two stand for the amount of Green and the last two stand for the amount of Blue. Unlike RGB color mixture where the values are in base 10, Hexadecimal color codes use base 16, or hexadecimal base, to specify color mixtures. 
 
 ### Syntax
 
@@ -69,7 +46,29 @@ p {
   color: #00fe00;
 }
 ```
+
 This rule again changes the font color of all p elements to green.
+
+The values of `#000000` and `#ffffff` stand for black and white respectively. 
+
+When a hex color code is composed of entirely of the same characters, the hex color can be abbreviated, like this:
+
+```css
+h1 {
+  color: #FFFFFF;
+  color: #FFF; /* This is the same color as above */
+}
+
+h2 {
+  color: #FF33AA;
+  color: #F3A; /* This is the same color as above */
+}
+```
+
+You can find the specific Hexadecimal colors you require by using the same tools mentioned for the RGB values. <br>
+
+
+
 
 ### HSL
 
