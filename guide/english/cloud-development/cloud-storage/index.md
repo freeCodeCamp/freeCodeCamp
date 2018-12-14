@@ -14,8 +14,8 @@ There are mainly two types of storage
 ### Object Storage
   - We can not a make partition in cloud storage. We can only store files and folders there. This is called object storage. We can’t install OS there as there are no partitions.
   - **Example**
-    - Google drive (google compute engine, GCE), OneDrive, Drop Box, Microsoft Azure.
-    - Amazon has its own cloud service AWS. S3(Simple Storage Service, SSS) is the product of Amazon that provides StAAS. It’s a public cloud. Anyone can use their services.
+    - Google drive (google compute engine, GCE), OneDrive, drop box, Microsoft azure.
+    - Amazon has its own cloud service AWS. S3(Simple Storage Service, SSS) is the product of amazon that provides STaaS. It’s a public cloud. Anyone can use their services.
     - OpenStack is the biggest private cloud. OpenStack has product swift (Object Storage). 
 
 ### Block Storage
