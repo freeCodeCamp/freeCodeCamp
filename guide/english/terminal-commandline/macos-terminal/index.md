@@ -75,7 +75,7 @@ Use the following syntax to delete a file
 ``` kill <PID> ```
 
 ### Previewing file
-    If you would like to preview a file, type the command line: cat <name of document> and you would be able to preview a text document through the terminal.
+If you would like to preview a file, type the command `cat <name of document>` and you would be able to preview a text document through the terminal.
 
 # iTerm2
 
