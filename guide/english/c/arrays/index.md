@@ -19,11 +19,12 @@ int main(void) {
     return 0;
 }
 ```
-So, this looks a bit tedious.Up until now every variable created had some special role. But right now, it would be great if we could just store multiple values in one place and get access to the values with their place in the line maybe (first value, second etc.). Another way to look at this is, suppose you want to store a set of names, you need not create different variables for each name, instead you can create an array of names where each name has its unique identity or *index*. Also, we could use loops on them, which are things you will learn about later, but basically they do the same thing over and over again.
+So, this looks a bit tedious. Up until now every variable created had some special role. But right now, it would be great if we could just store multiple values in one place and get access to the values with their place in the line maybe (first value, second etc.). Another way to look at this is, suppose you want to store a set of names, you need not create different variables for each name, instead you can create an array of names where each name has its unique identity or *index*. Also, we could use loops on them, which are things you will learn about later, but basically they do the same thing over and over again.
 eg. reading from the user, or printing out values. 
 
 ## Arrays in C
-Arrays are containers with a given size. They contain variables of the **same type**.This is called base type of the array. You can access a variable stored in the array with its *index*.
+Arrays are containers with a given size. They contain variables of the **same type**. This is called base type of the array. You can access a variable stored in the array with its *index*.
+
 Let's look at some code:
 ```C
 #include <stdio.h>
@@ -78,7 +79,7 @@ datatype name[size1][size2]...[sizeN]
 ```
 
 Two-dimensional arrays are common and can be initialized using the following syntax. One can logically think of the first index as rows and the second index as columns. This example has 2 rows and 5 columns.
-```C171
+```C
 int arr[2][5] = {0, 1, 2, 3, 4, 5, 6, 7, 8, 9};
 ```
 
