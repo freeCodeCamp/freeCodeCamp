@@ -9,7 +9,8 @@ Popular choices for Public Cloud providers are Amazon Web Services, Microsoft Az
 
 Many modern websites and big data efforts are said to be developed in the Cloud, meaning they are operating in some of these massive shared datacenters.
 
-## Cloud Layers
+## Primary Cloud Service Models
+
 ### SaaS
 Software as a service, this layer executes and hosts working applications over the cloud for end users on a pay per use basis and remotely assesible. Example google drive, gmail, etc.
 
