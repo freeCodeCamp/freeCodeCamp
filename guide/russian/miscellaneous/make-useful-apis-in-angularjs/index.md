@@ -1,6 +1,6 @@
 ---
-title: Make Useful Apis in Angularjs
-localeTitle: Сделать полезный Apis в Angularjs
+title: Make Useful APIs in Angularjs
+localeTitle: Сделать полезный APIs в Angularjs
 ---
 Однако еще две вещи, которые вы должны сделать, прежде чем это будет полезно для вас. Предположим, вы хотите показать все, _что_ связано с именем пользователя, запрошенным на этой странице: сначала вы должны
 
