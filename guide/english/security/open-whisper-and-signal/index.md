@@ -1,6 +1,9 @@
 ---
 title: Open Whisper Systems and Signal
 ---
+
+![signal blue icon](https://upload.wikimedia.org/wikipedia/commons/thumb/4/4f/Signal_Blue_Icon.png/400px-Signal_Blue_Icon.png)
+
 ## Open Whisper Systems and Signal
 
 Open Whisper Systems (abbreviated as OWS) is a software organization that was founded by Moxie Marlinspike in 2013. Its main focus is the development of the Signal Protocol. The organization is funded by a combination of donations and grants, and all of its products are published as free and open-source software.
