@@ -81,7 +81,7 @@ Since ArrayList implements *List*, an ArrayList can be created using the followi
   
 **Sort elements in descending order**
    ```java
-  Collections.reverseOrder());
+  Collections.sort(variable_name, Collections.reverseOrder());
  ```
 
 **Creating Array from ArrayList**
