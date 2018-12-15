@@ -104,7 +104,10 @@ The link to the advanced course is here - [Advanced Android App Development](htt
 It is good to check out code samples and projects for your learning process. There are many code samples available online. Here is a link for some android code samples - [Samples | Android Developers](https://developer.android.com/samples/).
 
 ### Android Studio
+- [Android Studio](https://developer.android.com/studio/)  
+- [Installing Android Studio](https://developer.android.com/studio/install)  
+- [Running Apps in an Emulator](https://developer.android.com/studio/run/emulator)
 
-[Android Studio](https://developer.android.com/studio/)  
-[Installing Android Studio](https://developer.android.com/studio/install)  
-[Running Apps in an Emulator](https://developer.android.com/studio/run/emulator)
+### Additional References
+- [Android Vocabulary Glossary](https://developers.google.com/android/for-all/vocab-words/)
+- [Android Documentation Search](https://developer.android.com/)
