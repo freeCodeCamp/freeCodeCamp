@@ -66,10 +66,6 @@ The best part of learning Android is that many of the courses and material avail
 The link to the basic course is here - [Developing Android Apps](https://udacity.com/course/new-android-fundamentals--ud851).
 The link to the advanced course is here - [Advanced Android App Development](https://www.udacity.com/course/advanced-android-app-development--ud855). 
 
-#### Android References
-
-[Android Vocabulary Glossary](https://developers.google.com/android/for-all/vocab-words/?hl=en)
-
-[Android Documentation Search](https://developer.android.com/)
-
-
+### Additional References
+- [Android Vocabulary Glossary](https://developers.google.com/android/for-all/vocab-words/)
+- [Android Documentation Search](https://developer.android.com/)
