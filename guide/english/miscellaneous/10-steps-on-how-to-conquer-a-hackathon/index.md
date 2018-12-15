@@ -10,7 +10,7 @@ Sometimes, some of the hackathons send out acceptances in batches. If you apply 
 
 2.  **Don't be afraid.** 
 
-I recently competed in my first hackathon, and I was completely scared with a major case of <a href='https://guide.freecodecamp.org/working-in-tech/imposter-syndrome/' target='_blank' rel='nofollow'>imposter syndrome</a>. The key for hackathons is to just got for it without any fear, you are indeed a great asset to a team.
+I recently competed in my first hackathon, and I was completely scared with a major case of <a href='https://guide.freecodecamp.org/working-in-tech/imposter-syndrome/' target='_blank' rel='nofollow'>imposter syndrome</a>. The key for hackathons is to just go for it without any fear, you are indeed a great asset to a team.
 
 3.  **Just keep pushing.** 
 
@@ -38,8 +38,8 @@ This, initially was one of my biggest mountains of fear to climb. I really wante
 
 9.  **Embrace the experience.** 
 
-Sometimes when you're caught in the middle of a bug you can't fix, or your team seems to be not getting along, remember that all of this is part of the experience of coming to a hackathon. You're not the first person to feel this way and you won't be the last. Treat it all as part of the learning experience.
+Sometimes when you're caught in the middle of a bug you can't fix, or your team doesn't seem to be getting along, remember that all of this is part of the experience of coming to a hackathon. You're not the first person to feel this way and you won't be the last. Treat it all as part of the learning experience.
 
 10.  **Have fun!** 
 
-One my favorite quotes from an anonymous source is "If you're not having fun, you're doing it wrong". Make friends, step out of your comfort zone, enjoy the sleepless night, drink some caffeine, laugh when you get a bug, and try to fix it, and you'll remember the experience as a rewarding one.
+One of my favorite quotes from an anonymous source is "If you're not having fun, you're doing it wrong". Make friends, step out of your comfort zone, enjoy the sleepless night, drink some caffeine, laugh when you get a bug, and try to fix it, and you'll remember the experience as a rewarding one.

@@ -15,7 +15,8 @@ localeTitle: JavaScript的优点和缺点
 *   **服务器负载** 。客户端减少了对网站服务器的需求。
 *   **丰富的接口** 。拖放组件或滑块可以为您的网站提供丰富的界面。
 *   **扩展功能** 。像Greasemonkey这样的第三方附加组件使JavaScript开发人员能够编写可以在所需网页上执行以扩展其功能的JavaScript代码片段。
-*   **多功能性** 。如今，有许多方法可以通过Node.js服务器使用JavaScript。如果您使用Express引导node.js，使用像mongodb这样的文档数据库，并在前端为客户端使用JavaScript，则可以仅使用JavaScript从前到后开发整个JavaScript应用程序。
+*   **构架** 。 除了Node和React构架用于网站开发, JavaScript开发人员可以使用<a href='https://facebook.github.io/react-native/' target='_blank' rel='nofollow'>React Native</a>制造混合型的移动设备应用程序。
+*   **多功能性** 。如今，有许多方法可以通过<a href='https://nodejs.org/en/' target='_blank' rel='nofollow'>Node.js</a>服务器使用JavaScript。如果您使用Express引导Node.js，使用像<a href='https://www.mongodb.com/' target='_blank' rel='nofollow'>MongoDB</a>这样的文档数据库，并在前端为客户端使用JavaScript，则可以仅使用JavaScript从前到后开发整个JavaScript应用程序。
 *   **更新** 。自从EcmaScript 5（Javascript依赖的脚本规范）出现以来，Ecma International一直致力于每年更新JavaScript。到目前为止，我们已经在2017年获得了ES6的浏览器支持，并期待在未来几个月内支持ES7。
 
 ## JavaScript的缺点
