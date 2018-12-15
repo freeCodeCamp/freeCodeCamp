@@ -26,9 +26,9 @@ If you fall outside these rather broad categories, please let me know. I always 
 
 Accessibility in itself is a bit of a misleading term sometimes, especially if English is your second language. It is sometimes referred to as "inclusive design."
 
-If your site is on the Internet, reachable by anyone with a web browser, in one sense that website is accessible to everyone with a web browser.
+If your site is on the Internet, reachable by anyone with a web browser,  that website is accessible to everyone with a web browser.
 
-But, is all content on your website actually readable, usable and understandable for everyone? Are there no thresholds that bar certain people from "accessing" all the information you are exposing?
+But, is all content on your website actually readable, usable, and understandable for everyone? Are there no thresholds that bar certain people from "accessing" all the information you are exposing?
 
 You could ask yourself questions like the following:
 
