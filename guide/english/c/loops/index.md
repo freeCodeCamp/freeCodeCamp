@@ -2,7 +2,7 @@
 title: Loops of all kinds
 ---
 # Loops of all kinds in C
-Loops are what you use when you have code that you want to loop, meaning that after it runs, you might want it to loop around to the beginning and run again. There are a few of these in C.
+Loops are what you use when you have code that you want to execute more than once, meaning that after it runs, you might want it to loop around to the beginning and run again. There are a few of these in C.
 
 
 They can be categorized as:

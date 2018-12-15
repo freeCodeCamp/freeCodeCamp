@@ -42,7 +42,7 @@ the consensus of the other nodes. Bitcoin has the benefit of being able to incen
 
 
 #### Sources
-1. [Bettina Warburg, "How the blockchain will radically transform the economy", *TED Talks*, December 8, 2016](https://youtu.be/RplnSVTzvnU?t=213)
+1. [Bettina Warburg, "How the blockchain will radically transform the economy", TED Talks, December 8, 2016](https://youtu.be/RplnSVTzvnU?t=213)
 2. [Depository Trust and Clearing Corporation, "Embracing Disruption: Tapping the Potential of Distributed Ledgers to Improve the Post-Trade Landscape", DTCC, 2016]
 (https://hub.digitalasset.com/hubfs/Industry%20Reports/dtcc-embracing-disruption.pdf?t=1539879453546)
 
