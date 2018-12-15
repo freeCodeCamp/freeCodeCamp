@@ -59,7 +59,7 @@ You can also chain a ternary operator indefinitely, in a similar way to using `e
 
 This method needs to be used sparingly in the right places however, as with multiple `else if's` it can sometimes lead to more readable code using a switch statement.
 
-It is advisable to use Ternary operator only in case of having both `if` and `else` conditions otherwise using `if` block is recommended. In case of chaining Ternary, it is prone to bugs.
+It is advisable to use the ternary operator only in cases which include both `if` and `else` conditions, otherwise using an `if` block is recommended. Chaining ternary operators without care may cause unforeseen bugs.
 
 
 **Read more:** <a href='https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Conditional_Operator' target='_blank' rel='nofollow'>MDN</a>
