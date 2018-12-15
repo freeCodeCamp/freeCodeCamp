@@ -37,13 +37,20 @@ import {
   createMainFramer
 } from '../utils/frame.js';
 
-import { backend } from '../../../../utils/challengeTypes';
+import { challengeTypes } from '../../../../utils/challengeTypes';
 
 const executeDebounceTimeout = 750;
 
 function updateMainEpic(action$, state$, { document }) {
   return action$.pipe(
     ofType(types.updateFile, types.challengeMounted),
+    filter(() => {
+      const { challengeType } = challengeMetaSelector(state$.value);
+      return (
+        challengeType !== challengeTypes.js &&
+        challengeType !== challengeTypes.bonfire
+      );
+    }),
     debounceTime(executeDebounceTimeout),
     switchMap(() => {
       const frameMain = createMainFramer(document, state$);
@@ -77,6 +84,8 @@ function executeChallengeEpic(action$, state$, { document }) {
         consoleProxy
       );
       const challengeResults = frameReady.pipe(
+        // Delay for jQuery ready code, in jQuery challenges
+        delay(250),
         pluck('checkChallengePayload'),
         map(checkChallengePayload => ({
           checkChallengePayload,
@@ -103,13 +112,22 @@ function executeChallengeEpic(action$, state$, { document }) {
       );
       const buildAndFrameChallenge = action$.pipe(
         ofType(types.executeChallenge),
+        filter(() => {
+          const { challengeType } = challengeMetaSelector(state$.value);
+          return (
+            challengeType !== challengeTypes.js &&
+            challengeType !== challengeTypes.bonfire
+          );
+        }),
         debounceTime(executeDebounceTimeout),
         filter(() => isJSEnabledSelector(state$.value)),
         switchMap(() => {
           const state = state$.value;
           const { challengeType } = challengeMetaSelector(state);
           const build =
-            challengeType === backend ? buildBackendChallenge : buildFromFiles;
+            challengeType === challengeTypes.backend
+              ? buildBackendChallenge
+              : buildFromFiles;
           return build(state).pipe(
             tap(frameTests),
             ignoreElements(),
