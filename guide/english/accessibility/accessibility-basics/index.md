@@ -84,8 +84,7 @@ Visually, the second element looks like a heading after styling it with CSS, but
 
 The third element could be something used to change the language of the website. Perhaps a fancy animated menu of languages will expand on click. However, because it is a `span` and does not define its role as link or button, assistive technologies will think this is simple text with some styling.
 
-`Span`s and `div`s are non-elements meant to contain other elements, not to be elements themselves. You can fix these in two ways:
-
+Spans and divs are not semantic elements; they do not provide the contextual meaning of a particular element to web browsers, search engines, or assistive technology.  You can fix these in two ways:
 *   You can manually add ARIA-attributes to the elements above. This is an advanced topic and outside the scope of this article.
 *   Or, you can simply do this:
 ```html
