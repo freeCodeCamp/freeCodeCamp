@@ -34,7 +34,7 @@ We can also chain `<` and `>` operators together. For instance, `3 < 4 < 5` will
 
 In Python, there are two comparison operators which allow us to check to see if two objects are equal. The `is` operator and the `==` operator. However, there is a key difference between them!
 
-The key difference between 'is' and '==' can be summed up as:
+The key difference between `is` and `==` can be summed up as:
 * `is` is used to compare <b>identity</b>
 * `==` is used to compare <b>equality</b>
 
@@ -51,7 +51,7 @@ Next, create a copy of that list.
 myListB = myListA
 ```
 
-If we use the '==' operator or the 'is' operator, both will result in a <b>True</b> output. 
+If we use the `==` operator or the `is` operator, both will result in a <b>True</b> output. 
 
 ```python
 >>> myListA == myListB # both lists contains similar elements
@@ -84,3 +84,17 @@ False # both lists have different reference
 To sum up:
 * An `is` expression outputs `True` if both variables are pointing to the same reference 
 * An `==` expression outputs `True` if both variables contain the same data
+
+However, interestingly, there are a few special cases in Python with `is`.
+```python
+>>> a = 5
+>>> b = 5
+>>> a is b
+True
+>>> a = 1000
+>>> b = 1000
+>>> a is b
+False
+```
+
+This is due to how Python is implemented. In Python, small integers (from -5 up to 256, a fast test shows) are cached. You shouldn't rely on this detail – larger integers do not evaluate to `true` when you use `is`. For more information on this topic, view <a href='https://stackoverflow.com/questions/132988/is-there-a-difference-between-and-is-in-python'>this StackOverflow thread.</a>
