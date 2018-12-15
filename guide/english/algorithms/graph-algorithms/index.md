@@ -24,7 +24,7 @@ Some of the most common graph algorithms are:
 
 <a href='https://github.com/freecodecamp/guides/tree/master/src/pages/algorithms/graph-algorithms/floyd-warshall-algorithm/index.md' target='_blank' rel='nofollow'>Floyd-Warshall Algorithm</a>
 
-### Additional Resources
-[Graph Theory - Wikipedia](https://en.wikipedia.org/wiki/Graph_theory "Graph theory Wiki")
+#### More Information
 
-[Basic Graph Algorithms](https://web.stanford.edu/class/cs97si/06-basic-graph-algorithms.pdf) 
+- [Graph Theory - Wikipedia](https://en.wikipedia.org/wiki/Graph_theory "Graph theory Wiki")
+- [Basic Graph Algorithms](https://web.stanford.edu/class/cs97si/06-basic-graph-algorithms.pdf) 
