@@ -4,7 +4,7 @@ title: Carousel
 ## Carousel
 
 Carousel is a slideshow component for cycling through elements like images or slides of text.
-It provides a dynamic way of representing large amount of data (text or images) by sliding or cycling through, in a smooth fashion
+It provides a dynamic way of representing large amount of data (text or images) by sliding or cycling through, in a smooth fashion.
 
 Sample Code of Image Slider is below :
 
@@ -102,13 +102,13 @@ Understanding the attributes and classes used in above example:
 
 a) `data-ride`  :-  `data-ride ="carousel"`  allows on page load animation to begin.
 
-b) `data-target` :- It points to the id of the Carousel
+b) `data-target` :- It points to the `id` of the carousel.
 
-c) `data-slide-to` :- It specifies which slide to move on to when clicking on the indicators(specific dots).
+c) `data-slide-to` :- It specifies which slide to move on to when clicking on the indicators (specific dots).
 
 ### 2) Classes
 
-a) `carousel`  :- `class="carousel"` specifies that the  div contains carousel.
+a) `carousel`  :- `class="carousel"` specifies that the `div` contains carousel.
 
 b) `slide` :- This class adds CSS transitions.
 
@@ -130,9 +130,9 @@ The `data-ride="carousel"` attribute is used to mark a carousel as animating sta
 `data-slide` accepts the keywords `prev` or `next`, which alters the slide position relative to its current position. 
 #### 2) Via JavaScript
 Call carousel manually with:
-
-`$('.carousel').carousel()`
-
+```javascript
+$('.carousel').carousel()
+```
 ### Options
 Options can be passed via data attributes or JavaScript. For data attributes, append the option name to `data-`, as in `data-interval=""`.
 
