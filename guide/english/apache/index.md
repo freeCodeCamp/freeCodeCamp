@@ -14,6 +14,11 @@ Apache runs on 67% of all webservers in the world. It is fast, reliable, and sec
 sudo aptitude install apache2
 ```
 
+#### On Fedora
+```
+sudo dnf install httpd
+```
+
 #### On CentOS
 ```
 sudo yum install httpd
