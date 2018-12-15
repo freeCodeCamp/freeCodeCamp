@@ -1,9 +1,10 @@
 ---
 title: Hello World
 localeTitle: Hola Mundo
----## Hola Mundo !!
+---
+## Hola Mundo !!
 
-Cada aprendizaje de idiomas comienza con el ejemplo de Hello World tradicional. Aquí, te presentamos a React con el mismo programa HelloWorld.
+Cuando se comienza a aprender un lenguaje de programación el primer programa consiste del ejemplo de Hello World tradicional. Aquí, te presentamos React con el mismo programa HelloWorld.
 
 Todo en React es un componente.
 
