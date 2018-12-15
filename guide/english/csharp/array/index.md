@@ -33,8 +33,7 @@ You can assign a value into an element directly by using the format below:
 
 The will assign the value of 50 directly into element [2]
 
-Be careful when trying to assign/access a value to/from an array. If a not valid index will be used, like `nameOfArray[-1]` you will encounter a run-time error and will get a `IndexOutOfRangeException`.
-
+Note - Be careful when trying to assign/access a value to/from an array. If an invalid index isused, like `nameOfArray[-1]` you will encounter a run-time error. 
 
 You can assign multiple values at once while declaring the array using the format below:
 
