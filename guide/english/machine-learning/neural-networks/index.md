@@ -62,3 +62,4 @@ The second most common form of neural networks is neuroevolution. In this system
 - [3Blue1Brown, Youtube Channel with Neural Network content](https://youtu.be/aircAruvnKk)
 - [Siraj Raval, Youtube CHannel with Neural Network content](https://youtu.be/h3l4qz76JhQ)
 - [Neuroevolution - Wikipedia](https://en.wikipedia.org/wiki/Neuroevolution)
+- [Machine Learning - Coursera](https://www.coursera.org/learn/machine-learning?action=enroll#)
