@@ -71,7 +71,7 @@ The Web Content Accessibility Guidelines or <a href='https://www.wuhcag.com/web-
 
 The HTML specification is a document that describes how the language should be used to build websites. Assistive technologies, like screen-readers, speech recognition programs etc. are aware of this document. Web developers however, often are not, or at least not enough, and think something like this is ok:
 ```html
-    <div class="awesome-button"></div>
+    <div class="epic-button"></div>
 
     <span><strong>Huge heading I will style with CSS later</strong></span>
 
