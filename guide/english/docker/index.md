@@ -34,4 +34,5 @@ sh get-docker.sh
 * For download and documentation check the docker official site: [Docker official site](https://www.docker.com)
 * For more on containerization, checkout [Search IT Operations](https://searchitoperations.techtarget.com/definition/application-containerization-app-containerization)
 * A Docker 101 course [Docker 101](https://github.com/docker/labs/tree/master/beginner/)
+* Online Docker [Classroom](https://training.play-with-docker.com/)
 
