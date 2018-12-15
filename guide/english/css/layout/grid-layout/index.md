@@ -3,7 +3,7 @@ title: Grid Layout
 ---
 ## Grid Layout
 
-CSS Grid Layout, simply known as Grid, is a layout scheme that is the newest and the most powerful in CSS. It is [supported by all major browsers](https://caniuse.com/#feat=css-grid) and provides a way to position items on the page and move them around. 
+CSS Grid Layout, simply known as Grid, is a layout scheme that is the newest and the most powerful in CSS. It is [supported by all major browsers](https://caniuse.com/#feat=css-grid) and provides a way to position items on the page and move them around.
 
 It can automatically assign items to _areas_, size and resize them, take care of creating columns and rows based on a pattern you define, and doing all the calculations using the newly introduced `fr` unit.
 
@@ -11,7 +11,7 @@ It can automatically assign items to _areas_, size and resize them, take care of
 
 - You can easily have a 12-column grid with one line of CSS. `grid-template-columns: repeat(12, 1fr)`
 - Grid lets you move things in any direction. Unlike Flex, where you can move items either horizontally (`flex-direction: row`) or vertically (`flex-direction: column`) - not both at the same time, Grid lets you move any _grid item_ to any predefined _grid area_ on the page. The items you move do not have to be adjacent.
-- With CSS Grid, you can **change the order of HTML elements using only CSS**. Move something from top to the right, move elements that were in footer to the sidebar etc. Instead of moving the `<div>` from `<footer>` to `<aside>` in the HTML, you can just change it's placement with `grid-area` in the CSS stylesheet.
+- With CSS Grid, you can **change the order of HTML elements using only CSS**. Move something from top to the right, move elements that were in footer to the sidebar etc. Instead of moving the `<div>` from `<footer>` to `<aside>` in the HTML, you can just change its placement with `grid-area` in the CSS stylesheet.
 
 ### Grid vs. Flex
 
@@ -20,9 +20,9 @@ It can automatically assign items to _areas_, size and resize them, take care of
 - Grid and Flex are not mutually exclusive. You can use both on the same project.
 
 
-### Checking browser compatability with `@supports` 
+### Checking browser compatability with `@supports`
 
-Ideally, when you build a site, you'd design it with Grid and use Flex as a fallback. You can find out if your browser supports grid with the `@support` CSS rule (aka feature query). Here's an example:
+Ideally, when you build a site, you'd design it with Grid and use Flex as a fallback. You can find out if your browser supports Grid with the `@support` CSS rule (aka feature query). Here's an example:
 
 ```css
 .container {
@@ -41,7 +41,7 @@ Ideally, when you build a site, you'd design it with Grid and use Flex as a fall
 To make any element a grid, you need to assign its `display` property to `grid`, like so:  
 
 ```css
-.conatiner {
+.container {
   display: grid;
 }
 ```
@@ -60,7 +60,7 @@ grid-template-rows: auto 300px;
 Areas
 
 ```css
-grid-template-areas: 
+grid-template-areas:
   "a a a a"
   "b c d e"
   "b c d e"
@@ -77,7 +77,7 @@ grid-template-areas:
 
 ### Grid Areas
 
-Here's some sample code on how to define and assign grid areas
+Here's some sample code on how to define and assign grid areas:
 
 ```css
 .site {
@@ -140,7 +140,8 @@ The simple solution is to change the `grid-template-areas` based on the screen s
 See the Pen [CSS Grid by example - 2 (grid areas + grid gap)](https://codepen.io/aamnah/pen/RLVVoE/) by Aamnah Akram ([@aamnah](https://codepen.io/aamnah)) on [CodePen](https://codepen.io).
 
 #### More Information:
-- [CSS Grid Palyground by Mozilla](https://mozilladevelopers.github.io/playground/) Great starting point if you're new to CSS Grids. It has visuals to help you understand the terminology easily
+- [CSS Grid Playground by Mozilla](https://mozilladevelopers.github.io/playground/) Great starting point if you're new to CSS Grids. It has visuals to help you understand the terminology easily
 - [YouTube: Morten Rand-Hendriksen: CSS Grid Changes Everything (About Web Layouts)](https://www.youtube.com/watch?v=txZq7Laz7_4) This presentation will convice you in less than an hour why CSS Grids are cool and why/how you should use them
 - [Videos: Learn Grid Layout Video Series by Rachel Andrew](https://gridbyexample.com/video/) Rachel Andrew is considered an expert on the subject. The video titles may look alien and overwhelming, but the content is short and to the point
 - [Book: Get Ready for CSS Grid Layout by Rachel Andrew](https://abookapart.com/products/get-ready-for-css-grid-layout)
+- [YouTube: Layout Land by Jen Simmons](https://www.youtube.com/layoutland) Jen Simmons is the creator of the Firefox Grid Inspector and a member of the CSS Working Group. Her videos range from teaching the basics of CSS Grid to learning advanced layout techniques. 
