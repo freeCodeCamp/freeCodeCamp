@@ -21,9 +21,21 @@ Use the following format for declaring arrays:
 
 ## Initializing an array
 
-Use the following format for initialising an array. This method also declares the array and states how many values are to be stored into the array.
+Use the following format for initializing an array. This method also declares the array and states how many values are to be stored into the array.
 
 `dataType [] nameOfArray = new nameOfArray[numberOfElements];`
+
+An array can also be initialized at declaration, in which case the number of elements does not need to be supplied because it is already initialzed with the number of values in the list. For example: 
+
+`string[] months = {"January", "February", "March", "April", "May", "June"};`
+
+It is also possible to initialize an array outside of the declaration. The `new` operator must be used when assigning the array to the variable. For example: 
+
+```csharp
+
+int[] evenNum;
+evenNum = new int[] {2, 4, 6, 8};
+```
 
 ## Assigning values to an array
 
@@ -69,7 +81,7 @@ The above code will assign the value of 5 into element [0], 17 into element [1],
   
 </table>
 
-You can declare, initilise and assign values in the array all at once by using the format below:
+You can declare, initialize and assign values in the array all at once by using the format below:
 
 `dataType [] nameOfArray = new dataType[numberOfElements] {value1, value2, value3, value4};`
 
