@@ -81,13 +81,12 @@ Check equivalence of `Object` in `collection` with `Object` passed as second par
       // "What's in a name? that which we call a rose
       // By any other name would smell as sweet.”
       // -- by William Shakespeare, Romeo and Juliet
-      var srcKeys = Object.keys(source);
 
-      return collection.filter(function (obj) {
-        return srcKeys.every(function (key) {
-          return obj.hasOwnProperty(key) && obj[key] === source[key];
-        });
-      });
+      return collection.filter(obj =>
+        Object.keys(source).every(key =>
+          obj[key] === source[key]
+        )
+      );
     }
 
     // test here
@@ -97,15 +96,14 @@ Check equivalence of `Object` in `collection` with `Object` passed as second par
 
 ### Code Explanation:
 
-*   We filter through the collection using `.filter()`.
-*   Next, we return a `Boolean` value for the `.filter()` method.
-*   Finally, we reduce to `Boolean` value to be returned for the `.every()` method.
+*   We filter through `collection` using `.filter()` with ES6 arrow functions.
+*   Next, we get the array of keys in `source` to check every corresponding value.
+*   Finally, check whether every key-value pair in `source` for each object in `collection` is identical, which then returns the filtered array for our function.
 
 #### Relevant Links
 
 *   <a>Array.prototype.filter()</a>
 *   <a>Array.prototype.every()</a>
-*   <a href='https://developer.mozilla.org/en/docs/Web/JavaScript/Reference/Global_Objects/Object/hasOwnProperty' target='_blank' rel='nofollow'>Object.hasOwnProperty()</a>
 
 ## ![:rotating_light:](https://forum.freecodecamp.com/images/emoji/emoji_one/rotating_light.png?v=3 ":rotating_light:") Advanced Code Solution:
 
