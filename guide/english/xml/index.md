@@ -71,7 +71,13 @@ XML helps simplify:
 It became a W3C Recommendation as early as in February 1998!
 
 
+## Transform to HTML with XSL
+  As mentioned above, XML is primarirly used to carry data, but there are some scenarios where you to represent the information in more user friendly way.
+  For this we have XSLT(eXtensible Stylesheet Language Transformations) or simply XSL, with help of it we can represent the XML data in HTML. 
+  XML + XSL = HTML 
+
 ### More information
 
 * [XML Introduction](https://developer.mozilla.org/en-US/docs/XML_introduction)
 * [Introduction to XML](https://www.w3schools.com/xml/xml_whatis.asp)
+* [Introduction to XSL](https://www.w3schools.com/xml/xsl_intro.asp)
