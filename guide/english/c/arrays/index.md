@@ -23,7 +23,7 @@ So, this looks a bit tedious. Up until now every variable created had some speci
 eg. reading from the user, or printing out values. 
 
 ## Arrays in C
-Arrays are containers with a given size. They contain variables of the **same type**. This is called base type of the array. You can access a variable stored in the array with its *index*.
+Arrays are containers with a given size. They can store values of the **same type**. This is called base type of the array. You can access a value stored in the array with its *index*.
 
 Let's look at some code:
 ```C
