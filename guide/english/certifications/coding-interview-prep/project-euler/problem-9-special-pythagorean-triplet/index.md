@@ -3,8 +3,31 @@ title: Special Pythagorean triplet
 ---
 ## Problem 9: Special Pythagorean triplet
 
-This is a stub. <a href='https://github.com/freecodecamp/guides/tree/master/src/pages/certifications/coding-interview-prep/project-euler/problem-9-special-pythagorean-triplet/index.md' target='_blank' rel='nofollow'>Help our community expand it</a>.
+### Method:
+- In this challenge we need to find the pythagorean triple.
+- We have the following information - `a < b < c`
+- Based on this, we can make a loop starting from `a = 0` and `b = a` since `a < b` always.
+- We also know that `a + b + c = n` and `a^2 + b^2 = c^2`, since we have `a`, `b` and `n`. We can find `c` and see if it satisfies the triplet theorem.
 
-<a href='https://github.com/freecodecamp/guides/blob/master/README.md' target='_blank' rel='nofollow'>This quick style guide will help ensure your pull request gets accepted</a>.
+### Solution:
+```js
+function specialPythagoreanTriplet(n) {
+  let sumOfabc = n;
+  for (let a = 1; a < n; a++){
+    for (let b = a; b < n; b++){
+      let c = n - a- b;
+      if (c > 0){
+        if (c**2 == a**2 + b**2){
+          return a*b*c;
+        }
+      }
+    }
+  } 
+}
 
-<!-- The article goes here, in GitHub-flavored Markdown. Feel free to add YouTube videos, images, and CodePen/JSBin embeds  -->
+specialPythagoreanTriplet(1000);
+```
+- [Run Code](https://repl.it/@ezioda004/Project-Euler-Problem-9-Special-Pythagorean-triplet)
+
+### References:
+- [Wikipedia](https://en.wikipedia.org/wiki/Pythagorean_triple)
