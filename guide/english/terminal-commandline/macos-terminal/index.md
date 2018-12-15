@@ -74,7 +74,7 @@ Use the following syntax to delete a file
 #### Terminate the process which uses the port you want to use
 ``` kill <PID> ```
 
-# iTerm2
+## iTerm2
 
 iTerm2 is an alternative to the legacy terminal in Mac OS. iTerm2 brings some new features such as:
 
@@ -88,9 +88,9 @@ iTerm2 is an alternative to the legacy terminal in Mac OS. iTerm2 brings some ne
 
 Just download iTerm2 from the official [website](https://www.iterm2.com/downloads.html). Additional documentation can be found [here](https://www.iterm2.com/documentation.html).
 
-# Hyper
+## Hyper
 
-Hyper is an Electron-based terminal
+Another alternative is Hyper, an Electron-based terminal
 
 - Built in HTML/CSS/JS
 - Fully extensible
