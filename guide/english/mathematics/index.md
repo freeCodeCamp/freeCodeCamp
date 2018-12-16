@@ -112,5 +112,6 @@ The `math` module can also be imported as follows, and the usage difference is i
 
 Documentation reference: <a href='https://docs.python.org/2/library/math.html' target='_blank' rel='nofollow'>Python 2</a> | <a href='https://docs.python.org/3/library/math.html' target='_blank' rel='nofollow'>Python 3</a>
 
-### Additional resources
-Animated visualizations of mathematical concepts can be found at [3 Blue 1 Brown](http://www.3blue1brown.com/) and [Khan Academy](https://www.khanacademy.org/).
+#### Additional resources
+- Animated visualizations of mathematical concepts can be found at [3 Blue 1 Brown](http://www.3blue1brown.com/) and [Khan Academy](https://www.khanacademy.org/).
+- A very nice book about Mathematics named "The Princeton Companion to Mathematics", clear and very easy to understand. You can find a pdf copy [here](https://isidore.co/calibre/get/pdf/4662).
