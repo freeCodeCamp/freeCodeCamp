@@ -16,6 +16,7 @@ if(boolean_expression)
     //Block of Statements executed when boolean_expression is true
 }
 ```
+
 #### Example
 ```C
 int a = 100;
@@ -24,13 +25,13 @@ if(a < 200)
     printf("a is less than 200\n" );
 }
 ```
+
 #### Result
-
 `a is less than 200`
-
 
 ## 2. if...else statement
 If the Boolean expression evaluates to **true**, then the if block will be executed, otherwise, the else block will be executed.
+
 #### Syntax
 ```C
 if(boolean_expression) 
@@ -42,6 +43,7 @@ else
     //Block of Statements executed when boolean_expression is false
 }
 ```
+
 #### Example
 ```C
 int a = 300;
@@ -54,8 +56,8 @@ else
     printf("a is more than 200\n");
 }
 ```
-#### Result
 
+#### Result
 `a is more than 200`
 
 ## 3. if...else if...else statement
@@ -83,6 +85,7 @@ else
     //Block of Statements executed when all boolean_expression_1, boolean_expression_2 and boolean_expression_3 are false
 }
 ```
+
 #### Example
 ```C
 int a = 300;
@@ -103,12 +106,13 @@ else
     printf("a is more than 300\n");
 }
 ```
-#### Result
 
+#### Result
 `a is equal to 300`
 
 ## 4. Nested if statement
 It is always legal in C programming to nest if-else statements, which means you can use one if or else if statement inside another if or else if statement(s).
+
 #### Syntax
 ```C
 if(boolean_expression_1)
@@ -136,16 +140,16 @@ if(a == 100)
 
 ```
 #### Result
-
 ```bash
 a is equal to 100
 b is equal to 200
 ```
+
 ## 5. Switch Case Statement
 The switch statement is often faster than nested if...else (not always). Also, the syntax of switch statement is cleaner and easy to understand.
 
 ### Syntax of switch case
-```
+```C
 switch (n)
 {
     case constant1:
@@ -162,6 +166,7 @@ switch (n)
         // code to be executed if n doesn't match any constant
 }
 ```
+
 When a case constant is found that matches the switch expression, control of the program passes to the block of code associated with that case.
 
 In the above pseudocode, suppose the value of n is equal to constant2. The compiler will execute the block of code associate with the case statement until the end of switch block, or until the break statement is encountered.
@@ -169,7 +174,7 @@ In the above pseudocode, suppose the value of n is equal to constant2. The compi
 The break statement is used to prevent the code running into the next case.
 
 ### Example:
-```
+```C
 // Program to create a simple calculator
 // Performs addition, subtraction, multiplication or division depending the input from user
 
@@ -213,6 +218,7 @@ int main()
     return 0;
 }
 ```
+
 ### Output
 ```
 Enter an operator (+, -, *,): -
@@ -223,9 +229,57 @@ Enter two operands: 32.5
 The '-' operator entered by the user is stored in operator variable. And, two operands 32.5 and 12.4 are stored in variables firstNumber and secondNumber respectively.
 
 Then, control of the program jumps to
-```
+```C
 printf("%.1lf / %.1lf = %.1lf",firstNumber, secondNumber, firstNumber/firstNumber);
 ```
 Finally, the break statement ends the switch statement.
 
 If break statement is not used, all cases after the correct case is executed. 
+
+## 6. A note on equality `==`
+
+When doing a comparison for the `if` statement, be very careful to use the equality operator `==` and not an assignment operator `=`. If an assignment operator `=` is used, the variable is overwritten and a `True` is returned. Consider the following code:
+
+```C
+#include <stdio.h>
+
+int main(void) {
+        int x = 5;
+        if (x == 5) {
+                printf("1. x is %i\n",x);
+        }
+
+        if (x = 4) {
+                printf("2. x is %i\n",x);
+        }
+}
+```
+### Output
+```
+1. x is 5
+2. x is 4
+```
+As seen above, both `if` blocks are executed. In the second, the value of `x` is has been overwritten to `4`, which may not be what you want.
+
+## 7. Ternary operation
+The ternary operator (AKA conditional operator) is an operator that takes three arguments. The first argument is a comparison argument, the second is the result upon a true comparison , and the third is the result upon a flase comparison .It can be thought of as a shortened way of writing an if-else statement. It is often used to to assign variables based on the result of a comparison.
+
+#### Syntax
+```C
+v = (conditional_statement) ? value_if_true : value_if_false
+```
+
+#### Example 
+```C
+int a, b = 10, c = 100;
+a = (b > c) ? 1 : 2;
+printf("%d", a);
+```
+
+#### Result
+`2`
+
+### More Information
+https://www.dotnettricks.com/learn/c/conditional-statements-if-else-switch-ladder  
+https://www.programiz.com/c-programming/c-if-else-statement  
+http://www.tutorialspoint.com/ansi_c/c_control_statements.htm
