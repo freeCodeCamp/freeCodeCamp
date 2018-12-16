@@ -29,10 +29,13 @@ However, if elements are included within the curly brackets, then it would be ac
 >>> example_set_2 = {1, 2, 3}
 >>> type(example_set_2)
 <class 'set'>
-
-If you want to convert any list to a set, you can do that by using set function:
- a=[11,2,2,6,6,4,8,9,9,7]
- a=set(a)
- print(a)
- this will remove all duplicate values from that list
 ````
+
+### Converting List to Set
+
+If you want to convert a list to a set, you can do that by using the `set()` function. This will remove all duplicate values from the list.
+```python
+>>> a = [11,2,2,6,6,4,8,9,9,7]
+>>> a = set(a)
+>>> print(a) # {2, 4, 6, 7, 8, 9, 11}
+```
