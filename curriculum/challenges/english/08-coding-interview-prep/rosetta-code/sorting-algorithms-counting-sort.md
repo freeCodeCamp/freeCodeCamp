@@ -6,24 +6,28 @@ challengeType: 5
 
 ## Description
 <section id='description'>
-  <p>Implement the <a href="https://en.wikipedia.org/wiki/Counting sort">Counting sort</a>. This is a way of sorting
-    integers when the minimum and maximum value are known.</p>
-  <p>Pseudocode:</p>
-  <p><b>function</b> <i>countingSort</i>(array, min, max):</p>
-  <p>count: <b>array of</b> (max - min + 1) <b>elements</b></p>
-  <p><b>initialize</b> count <b>with</b> 0</p>
-  <p><b>for each</b> number <b>in</b> array <b>do</b></p>
-  <p>count[number - min] := count[number - min] + 1</p>
-  <p><b>done</b></p>
-  <p>z := 0</p>
-  <p><b>for</b> i <b>from</b> min <b>to</b> max <b>do</b></p>
-  <p><b>while</b> ( count[i - min] > 0 ) <b>do</b></p>
-  <p>array[z] := i</p>
-  <p>z := z+1</p>
-  <p>count[i - min] := count[i - min] - 1</p>
-  <p><b>done</b></p>
-  <p><b>done</b></p>
-  <p>Write a function to implement the above pseudo code. The function should return the sorted array.</p>
+Implement the <a href="https://en.wikipedia.org/wiki/Counting sort">Counting sort</a>. This is a way of sorting integers when the minimum and maximum value are known.
+
+Pseudocode:
+
+<pre>
+<b>function</b> <i>countingSort</i>(array, min, max):
+  count: <b>array of</b> (max - min + 1) <b>elements</b>
+  <b>initialize</b> count <b>with</b> 0
+  <b>for each</b> number <b>in</b> array <b>do</b>
+    count[number - min] := count[number - min] + 1
+  <b>done</b>
+  z := 0
+  <b>for</b> i <b>from</b> min <b>to</b> max <b>do</b>
+    <b>while</b> ( count[i - min] > 0 ) <b>do</b>
+      array[z] := i
+      z := z+1
+      count[i - min] := count[i - min] - 1
+    <b>done</b>
+  <b>done</b>
+</pre>
+
+Write a function to implement the above pseudo code. The function should return the sorted array.
 </section>
 
 ## Instructions
