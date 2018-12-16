@@ -120,5 +120,4 @@ Also, here is a list of free IDEs for Java coding:
 * <a href='https://www.bluej.org/' target='_blank' rel='nofollow'>BlueJ</a>
 * <a href='http://www.jedit.org/' target='_blank' rel='nofollow'>jEdit</a>
 * <a href='http://www.oracle.com/technetwork/developer-tools/jdev/overview/index-094652.html' target='_blank' rel='nofollow'>Oracle JDeveloper</a>
-
-Also, do note that the netbeans IDE do require JDK to run. So if you're feeling a little lazy, oracle has an installer that includes the IDE and JDK together. You can download it <a href= 'https://www.oracle.com/technetwork/java/javase/downloads/jdk-netbeans-jsp-3413139-esa.html' target='_blank' rel ='nofollow'>here</a>
+* <a href= 'https://www.oracle.com/technetwork/java/javase/downloads/jdk-netbeans-jsp-3413139-esa.html' target='_blank' rel ='nofollow'>JDK8 bundled with Netbeans 8.2</a>
