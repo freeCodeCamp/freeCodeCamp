@@ -6,30 +6,31 @@ challengeType: 5
 
 ## Description
 <section id='description'>
-  <p>The cocktail shaker sort is an improvement on the <a href="http://rosettacode.org/wiki/Bubble Sort">Bubble Sort</a>.</p>
-  <p>The improvement is basically that values "bubble" both directions through the array, because on each iteration the
-    cocktail shaker sort bubble sorts once forwards and once backwards. Pseudocode for the algorithm (from <a href="https://en.wikipedia.org/wiki/Cocktail sort">wikipedia</a>):</p>
-  <p><b>function</b> <i>cocktailSort</i>( A : list of sortable items )</p>
-  <p><b>do</b></p>
-  <p>swapped := false</p>
-  <p><b>for each</b> i <b>in</b> 0 <b>to</b> length( A ) - 2 <b>do</b></p>
-  <p><b>if</b> A[ i ] > A[ i+1 ] <b>then</b> <i>// test whether the two</i></p>
-  <p><i>// elements are in the wrong</i></p>
-  <p><i>// order</i></p>
-  <p>swap( A[ i ], A[ i+1 ] ) <i>// let the two elements</i></p>
-  <p><i>// change places</i></p>
-  <p>swapped := true;</p>
-  <p><b>if</b> swapped = false <b>then</b></p>
-  <p><i>// we can exit the outer loop here if no swaps occurred.</i></p>
-  <p><b>break do-while loop</b>;</p>
-  <p>swapped := false</p>
-  <p><b>for each</b> i <b>in</b> length( A ) - 2 <b>down to</b> 0 <b>do</b></p>
-  <p><b>if</b> A[ i ] > A[ i+1 ] <b>then</b></p>
-  <p>swap( A[ i ], A[ i+1 ] )</p>
-  <p>swapped := true;</p>
-  <p><b>while</b> swapped; <i>// if no elements have been swapped,</i></p>
-  <p><i>// then the list is sorted</i></p>
-  <p>Write a function that sorts a given array using cocktail sort.</p>
+The cocktail shaker sort is an improvement on the <a href="http://rosettacode.org/wiki/Bubble Sort">Bubble Sort</a>. The improvement is basically that values "bubble" both directions through the array, because on each iteration the cocktail shaker sort bubble sorts once forwards and once backwards. Pseudocode for the algorithm (from <a href="https://en.wikipedia.org/wiki/Cocktail sort">wikipedia</a>):</p>
+<pre>
+<b>function</b> <i>cocktailSort</i>( A : list of sortable items )
+  <b>do</b>
+    swapped := false
+    <b>for each</b> i <b>in</b> 0 <b>to</b> length( A ) - 2 <b>do</b>
+      <b>if</b> A[ i ] > A[ i+1 ] <b>then</b> <i>// test whether the two</i>
+                                <i>// elements are in the wrong</i>
+                                <i>// order</i>
+        swap( A[ i ], A[ i+1 ] ) <i>// let the two elements</i>
+                                 <i>// change places</i>
+        swapped := true;
+    <b>if</b> swapped = false <b>then</b>
+      <i>// we can exit the outer loop here if no swaps occurred.</i>
+      <b>break do-while loop</b>;
+    swapped := false
+    <b>for each</b> i <b>in</b> length( A ) - 2 <b>down to</b> 0 <b>do</b>
+      <b>if</b> A[ i ] > A[ i+1 ] <b>then</b>
+        swap( A[ i ], A[ i+1 ] )
+        swapped := true;
+  <b>while</b> swapped; <i>// if no elements have been swapped,</i>
+                <i>// then the list is sorted</i>
+</pre>
+
+Write a function that sorts a given array using cocktail sort.
 </section>
 
 ## Instructions
