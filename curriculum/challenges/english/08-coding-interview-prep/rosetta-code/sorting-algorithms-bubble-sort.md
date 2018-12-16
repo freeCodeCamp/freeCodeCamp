@@ -18,7 +18,16 @@ The bubble sort works by passing sequentially over a list, comparing each value 
 
 This can be expressed in pseudo-code as follows (assuming 1-based indexing):
 
-<pre>repeat<br>    hasChanged := false<br>    <b>decrement</b> itemCount<br>    <b>repeat with</b> index <b>from</b> 1 <b>to</b> itemCount<br>        <b>if</b> (item <b>at</b> index) > (item <b>at</b> (index + 1))<br>            swap (item <b>at</b> index) with (item <b>at</b> (index + 1))<br>            hasChanged := true<br><b>until</b> hasChanged = <b>false</b></pre>
+<pre>
+repeat
+  hasChanged := false
+  <b>decrement</b> itemCount
+  <b>repeat with</b> index <b>from</b> 1 <b>to</b> itemCount
+    <b>if</b> (item <b>at</b> index) > (item <b>at</b> (index + 1))
+      swap (item <b>at</b> index) with (item <b>at</b> (index + 1))
+      hasChanged := true
+<b>until</b> hasChanged = <b>false</b>
+</pre>
 </section>
 
 ## Instructions
