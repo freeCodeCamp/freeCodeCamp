@@ -39,3 +39,11 @@ for i in range(3, 12, 2):
 9
 11
  ```
+ 
+ #### Notes
+ In Python 2, there are 2 functions for going through a range of numbers: range() and xrange().
+ Out of these functions, xrange() is the "lazy" function, meaning it generates numbers as necessary instead of actually creating
+ a list of numbers and iterating through them. range(), on the other hand, makes an entire list of numbers and iterates through
+ this list. This makes it a strain on the memory in the case of really long lists.
+ 
+ In Python 3, the range() function mimics xrange() as the "lazy" variant, and xrange() itself has been removed.

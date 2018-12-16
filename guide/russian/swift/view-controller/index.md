@@ -6,6 +6,7 @@ localeTitle: View Controllers
 
 Это пример того, как выглядит простой ViewController в Swift.
 
+
  ```Swift
   import UIKit
 
@@ -22,4 +23,5 @@ localeTitle: View Controllers
 
 1.  Метод viewDidLoad вызывается после загрузки ViewController.
 2.  Вызов метода viewDidLoad базового класса UIViewController. Это необходимый шаг для любого ViewController.
+
 3.  Устанавливает цвет фона на белый.
