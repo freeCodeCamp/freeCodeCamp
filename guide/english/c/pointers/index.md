@@ -249,6 +249,19 @@ int main(void)
 }
 ```
 
+
+## Null Pointer
+Consider following line 
+```c
+int  *p;
+```
+We have created a pointer which contain garbage value. If we try to dereference it, we will read the value stored at the garbage address and this can lead to unexpected results, such as segmentation fault. Hence we should never leave a pointer uninitialized and instead initialize it to NULL, to avoid unexpected results.
+```c
+int *p = NULL; // NULL is a constant with value 0
+int *q = 0; // same as above
+```
+
+
 ### Void Pointer
 A void pointer is a pointer variable declared using the reserved word in C ‘void’.
 Lets illustrate this with a void pointer declaration below:
@@ -295,7 +308,6 @@ Example:
     ptr++; // This statement is invalid and will result in an error because 'ptr' is a void pointer variable.
 ```
 Credits: <http://www.circuitstoday.com/void-pointers-in-c>
-
 
 # Before you go on...
 ## A review
