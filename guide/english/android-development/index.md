@@ -110,6 +110,11 @@ It is good to check out code samples and projects for your learning process. The
 - [Installing Android Studio](https://developer.android.com/studio/install)  
 - [Running Apps in an Emulator](https://developer.android.com/studio/run/emulator)
 
+### Useful Libraries
+- [Retrofit](https://square.github.io/retrofit/) - HTTP Requests made easy.
+- [Room Persistence Library](https://developer.android.com/topic/libraries/architecture/room) - Google's database wrapper to make storing local data easier.
+- [LiveData](https://developer.android.com/topic/libraries/architecture/livedata) - Google's lifecycle aware library for making your UI react to data.
+ 
 ### Additional References
 - [Android Vocabulary Glossary](https://developers.google.com/android/for-all/vocab-words/)
 - [Android Documentation Search](https://developer.android.com/)
