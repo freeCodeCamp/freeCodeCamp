@@ -23,7 +23,7 @@ $bikes = array('Suzuki','BMW','Yamaha');
 $bikes = ['Suzuki', 'BMW', 'Yamaha'];
 ```
 
-PHP arrays can store more than one type of values at a time:
+PHP arrays can store more than one type of value at a time:
 ```
 <?php
 
