@@ -111,35 +111,23 @@ Output:
 ```
 
 ## Example for printing star pattern for pyramid 
-```c
-
+```C
 #include<stdio.h>
-int
-main ()
-{
+int main() {
   int i, j;
-  for (i = 1; i <= 5; i++)
-    {
-
-      for (j = i; j < 5; j++)
-	{
-	  printf (" ");
-	}
-
-
-      for (j = 1; j <= (2 * i - 1); j++)
-	{
-	  printf ("*");
-	}
-
-
-      printf ("\n");
+  for (i = 1; i <= 5; i++) {
+    for (j = i; j < 5; j++) {
+      printf (" ");
     }
+    for (j = 1; j <= (2 * i - 1); j++) {
+      printf ("*");
+    }
+    printf ("\n");
+  }
 
   return 0;
 }
 ```
-
 Output:
 ```shell 
      *
@@ -147,6 +135,34 @@ Output:
    *****
   *******
  ********* 
+```
+ 
+## Nested `for` loop in C
+```C
+#include <stdio.h>
+#include <stdlib.h>
+ 
+int main()
+{
+  int i, k, levels, space;
+  printf("Enter the number of levels in pyramid:");
+  scanf("%d",&levels);
+
+  space = levels;
+
+  for ( i = 1 ; i <= levels ; i++ ) {
+    for ( k = 1 ; k < space ; k++ ) {
+      printf(" ");
+    }
+    space--;
+
+    for ( k = 1 ; k <= 2*i - 1 ; k++ ) {
+      printf("*");
+    }
+    printf("\n");
+  }
+  return 0;
+}
 ```
 
 ## Syntax of For Infinite loop
@@ -200,7 +216,6 @@ int main () {
     int array[] = {1, 2, 3, 4, 5};
     int i;        // You declare the variable before the for loop
 
-<<<<<<< HEAD
     for (i = 0; i < 5; i++) {       // Now you won't have a problem
     	printf("Item on index %d is %d\n", i, array[i]);
     }
@@ -255,6 +270,3 @@ output:
 4
 5
 ```
-=======
-``
->>>>>>> I have added a 'Note' part
