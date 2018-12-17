@@ -31,8 +31,10 @@ from student;
 +-----------+-------------------+------------+------------------------+
 9 rows in set (0.00 sec)
 ```
-**_NOTE: TO SIMPLY SELECT ALL THE DATA FROM THE TABLE YOU CAN ALSO USE THE "*" OPERATOR.  
-FOR eg. SELECT * from <table_name>_**
+**NOTE**: You can also select all the data from the table using the `*` operator, like so:
+```sql
+SELECT * from <table_name>
+```
 
 *As with all of these SQL things there is MUCH MORE to them than what's in this introductory guide.  
 
