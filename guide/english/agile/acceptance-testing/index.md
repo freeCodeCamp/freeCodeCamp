@@ -142,7 +142,7 @@ You can write Acceptance Tests for each of these sub-features of the bigger dial
 
 ### Notes
 
-Acceptance Tests can be written in any language and run using various tools available that would take care of the infrastructure mentioned above (e.g., opening a browser, loading a page, providing the menthods to access elements on the page, assertion libraries and more).
+Acceptance Tests can be written in any language and run using various tools available that would take care of the infrastructure mentioned above (e.g., opening a browser, loading a page, providing the methods to access elements on the page, assertion libraries and more).
 
 Every time you write a piece of software that will be used again (even by yourself), it helps to write a test for it. When you or another person makes changes to this code, running the tests will ensure that you have not broken existing functionality.
 
