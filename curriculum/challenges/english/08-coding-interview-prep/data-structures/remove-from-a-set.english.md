@@ -6,12 +6,12 @@ challengeType: 1
 
 ## Description
 <section id='description'>
-In this exercises we are going to create a delete function for our set. The function should be named <code>this.remove</code>. This function should accept a value and check if it exists in the set. If it does, remove that value from the set, and return true. Otherwise, return false.
+In this exercises we are going to create a delete function for our set.
 </section>
 
 ## Instructions
 <section id='instructions'>
-
+The function should be named <code>this.remove</code>. This function should accept a value and check if it exists in the set. If it does, remove that value from the set, and return <code>true</code>. Otherwise, return <code>false</code>.
 </section>
 
 ## Tests
@@ -71,7 +71,29 @@ function Set() {
 
 
 ```js
-function Set() {var collection = []; this.has = function(e){return(collection.indexOf(e) !== -1);};this.values = function() {return collection;};this.add = function(element) {if (!this.has(element)) {collection.push(element);return true;} else {return false;}};this.remove = function(element) {if(this.has(element)) {var i = collection.indexOf(element);collection.splice(i, 1);return true;}return false;};}
+function Set() {
+    var collection = [];
+    this.has = function(element) {
+        return (collection.indexOf(element) !== -1);
+    };
+    this.values = function() {
+        return collection;
+    };
+    this.add = function(element) {
+        if(!this.has(element)){
+            collection.push(element);
+            return true;
+        }
+        return false;
+    };
+    this.remove = function(element){
+        if (this.has(element)){
+            collection.splice(collection.indexOf(element), 1);
+            return true;
+        }
+        return false;
+    }
+}
 ```
 
 </section>
