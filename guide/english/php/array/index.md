@@ -84,13 +84,39 @@ Would produce the following output:
 I like Yamaha
 ```
 
+## Add Item
+
+Is possible to add any item to an existing array.
+
+An example of addition can be seen below:
+
+```
+<?php
+
+$bikes = array('Suzuki', 'BMW');
+
+$bikes[] = 'Yamaha';
+```
+
+Another example, using named keys can be seen below:
+
+```
+<?php
+
+$bikes = [
+    'favorite'        => 'Suzuki',
+    'second favorite' => 'BMW'
+];
+
+$bikes['not my favorite'] = 'Yamaha';
+```
+
 ## Multidimensional Array
 
 As we mentioned earlier arrays are collection of items, often times these items may be arrays of themselves. 
 ![alt text](https://preview.ibb.co/hLBfcf/img.png "Screenshot of multidimensional arrays")
 
 You will always be able to get the value for the specific key by going down the layers: $arr['layerOne']['two']
-
 
 
 ## Pitfalls
