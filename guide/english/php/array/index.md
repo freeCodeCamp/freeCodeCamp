@@ -12,11 +12,13 @@ An array is defined by `array()`, or `[]`.
 
 An example of an array in each style can be seen below:
 
-```
+```php
 <?php
 
 $bikes = array('Suzuki','BMW','Yamaha');
+
 // OR
+
 $bikes = ['Suzuki', 'BMW', 'Yamaha'];
 ```
 
@@ -24,7 +26,7 @@ $bikes = ['Suzuki', 'BMW', 'Yamaha'];
 
 Arrays can also be defined with named keys, as shown below:
 
-```
+```php
 <?php
 
 $bikes = [
@@ -40,7 +42,7 @@ Items within an array can be accessed by their corresponding key, or location wi
 
 For instance:
 
-```
+```php
 <?php
 
 $bikes = ['Suzuki', 'BMW', 'Yamaha'];
@@ -55,7 +57,7 @@ I like Suzuki
 ```
 
 Another example, using named keys can be seen below:
-```
+```php
 <?php
 
 $bikes = [
@@ -72,6 +74,15 @@ Would produce the following output:
 ```
 I like Yamaha
 ```
+
+## Multidimensional Array
+
+As we mentioned earlier arrays are collection of items, often times these items may be arrays of themselves. 
+![alt text](https://preview.ibb.co/hLBfcf/img.png "Screenshot of multidimensional arrays")
+
+You will always be able to get the value for the specific key by going down the layers: $arr['layerOne']['two']
+
+
 
 ## Pitfalls
 
