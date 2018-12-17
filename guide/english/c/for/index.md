@@ -133,7 +133,7 @@ int main () {
 ```
 
 ## Break and Continue statements
-* When "break" statement is executed, the loop stops executing all other statements in it and immediately comes out of the loop.
+When "break" statement is executed, the loop stops executing all other statements in it and immediately comes out of the loop.
  
  ```C
 #include <stdio.h>
@@ -149,13 +149,13 @@ int main(void) {
     return 0;
 }
 ```
-```output
 output:
+```output
 1
 2
 ```
 
-* When "continue" statement is executed, the loop execution is skipped for that time and goes for incrementation/decrementation of the variable, validates the condition and continues the execution of the loop.
+When "continue" statement is executed, the loop execution is skipped for that time and goes for incrementation/decrementation of the variable, validates the condition and continues the execution of the loop.
 
 ```C
 #include <stdio.h>
@@ -171,8 +171,8 @@ int main(void) {
     return 0;
 }
 ```
-```output
 output:
+```output
 1
 2
 4
