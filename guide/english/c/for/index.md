@@ -17,7 +17,10 @@ for ( init; condition; increment ) {
 }
 ```
 
-The `for` loop consists of 3 sections, the initialization section(start value), a specific condition(stop value) and the incremental or decremental operation section(step value). These 3 sections control the `for` loop.
+The `for` loop consists of 3 sections:
+   1. The initialization section (start value)
+   2. Condition (stop value)
+   3. Test Expression (step value)
 
 The initialization statement is executed only once. Then, the test expression is evaluated. If the test expression is false (0), for loop is terminated. But if the test expression is true (nonzero), codes inside the body of for loop is executed and the update expression is updated. This process repeats until the test expression is false.
 
@@ -47,6 +50,10 @@ int main () {
 > Item on index 3 is 4
 > Item on index 4 is 5
 ```
+
+#### Explanation:
+The `for` loop checks the value of `i` based on the conditions. If `i` is smaller than `5`, the text will be printed. After printing, the value of `i` is increased by 1. This function will continue until `i` is greater than 4, at which point the loop will stop and exit.
+
 ### Example for printing star pattern for pyramid 
 ```c
 
