@@ -25,11 +25,12 @@ img {
 #### More Information:
 <!-- Please add any articles you think might be helpful to read before writing the article -->
 It is advised to change any one parameter, either height or width, to get a proportionate image. Changing both dimensions results in forced scaling and is not advisable.
+
+**Example:** Both of these will result in a proportionate image
 ```
-Example, both of these will result in a proportionate image
 <img src="picture.jpg" alt="Picture" width="100">
-     
-     or
+    
+//  or
      
 <img src="picture.jpg" alt="Picture" height="100">
 ```
