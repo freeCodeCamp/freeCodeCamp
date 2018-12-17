@@ -21,7 +21,7 @@ The `for` loop consists of 3 sections:
    2. Condition (stop value)
    3. Update Expression (step value)
 
-The initialization statement is executed only once. Then, the condition is evaluated. If the condition is false (0), the `for` loop is terminated. But if the condition is true (nonzero), code inside the block of the `for` loop is executed. Finally, the update expression is executed. This process repeats until the condition is false.
+The initialization statement is executed only once. Then, the condition is evaluated. If the condition is false (or 0), the `for` loop is terminated. But if the condition is true (nonzero), code inside the block of the `for` loop is executed. Finally, the update expression is executed. This process repeats until the condition is false.
 
 You can leave any of the three field blank:
 - If you leave initialization blank, then there is no initialization phase
