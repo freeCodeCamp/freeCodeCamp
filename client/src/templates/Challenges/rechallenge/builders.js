@@ -63,8 +63,8 @@ export const cssToHtml = cond([
 // ) => Observable[{ build: String, sources: Dictionary }]
 export function concatHtml(required, template, files) {
   const createBody = template ? _template(template) : defaultTemplate;
-  const sourceMap = Promise.all(files).then(
-    files => files.reduce((sources, file) => {
+  const sourceMap = Promise.all(files).then(files =>
+    files.reduce((sources, file) => {
       sources[file.name] = file.source || file.contents;
       return sources;
     }, {})
@@ -93,12 +93,13 @@ A required file can not have both a src and a link: src = ${src}, link = ${link}
       return head.concat(element);
     }, '');
 
-  const body = Promise.all(files).then(
-    files => files.reduce(
-      (body, file) => [...body, file.contents + file.tail + htmlCatch],
-      []
-    )
-    .map(source => createBody({ source }))
+  const body = Promise.all(files).then(files =>
+    files
+      .reduce(
+        (body, file) => [...body, file.contents + file.tail + htmlCatch],
+        []
+      )
+      .map(source => createBody({ source }))
   );
 
   const frameRunner =
@@ -107,7 +108,7 @@ A required file can not have both a src and a link: src = ${src}, link = ${link}
   return from(
     Promise.all([head, body, frameRunner, sourceMap]).then(
       ([head, body, frameRunner, sourceMap]) => ({
-        build: head + body + frameRunner,
+        build: head + frameRunner + body,
         sources: sourceMap
       })
     )

@@ -68,7 +68,7 @@ void increment_by_reference (int & a) {
 ### Function body:
 The function body contains a collection of statements that define what the function does.
 
-##Example:
+#### Example:
 
 ```cpp
 int max(int num1, int num2)
@@ -83,12 +83,49 @@ int max(int num1, int num2)
  
    return result; 
 }
-## calling a function:
-
+```
+#### Calling the function:
+```cpp
 int res;
-res=max(5,10);
+res = max(5,10);
+```
 
-// if the function returns a value, assign it to that variable, else just call it like function(arg1,arg2);
+## Functions with void return type
+
+If a function returns a value, assign it to a variable, else just invoke the function like so:
+```cpp
+void printMax(int num1, int num2)        
+{
+   // local variable declaration
+   int result;
+ 
+   if (num1 > num2)
+      result = num1;
+   else
+      result = num2;
+ 
+   cout << result; 
+}
+```
+#### calling the function:
+```cpp
+printMax(5,10);
+```
+
+## Functions without parameters
+
+Also note that it is not necessary to create a function with parameters, we can also make functions without parameters like so:
+
+```cpp
+// Function without parameter
+int test()     
+{
+   // code goes here
+}
+
+// In main you can call it like:
+int val = test();
+
 ```
 
 ## Why are functions important?
