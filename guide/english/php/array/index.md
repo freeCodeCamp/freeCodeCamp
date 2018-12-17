@@ -124,7 +124,7 @@ You will always be able to get the value for the specific key by going down the 
 When working with arrays, there are a few important things to keep in mind:
 
 1) A comma after the last element is optional.
-2) Named keys must be escaped to be accessed (i.e. $bikes[not my favorite] would not work).
+2) Named keys must use quotes to be accessed (i.e. $bikes[not my favorite] would not work).
 
 For more information, please see [PHP: Arrays](http://php.net/manual/en/language.types.array.php)
 
