@@ -1,6 +1,6 @@
 ---
-title: Make Useful Apis in Angularjs
-localeTitle: Fazer Apis Úteis em Angularjs
+title: Make Useful APIs in Angularjs
+localeTitle: Fazer APIs Úteis em Angularjs
 ---
 Há mais duas coisas que você precisa fazer antes que isso seja útil para você. Digamos que você queira mostrar todas as _coisas_ associadas ao nome de usuário solicitado com essa página: você deve primeiro
 
