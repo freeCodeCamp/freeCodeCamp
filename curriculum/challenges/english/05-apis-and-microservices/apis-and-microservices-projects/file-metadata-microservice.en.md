@@ -21,10 +21,11 @@ Start this project on Glitch using <a href='https://glitch.com/#!/import/github/
 <section id='tests'>
 
 ```yml
-- text: I can submit a FormData object that includes a file upload.
-  testString: ''
-- text: 'When I submit something, I will receive the file size in bytes within the JSON response.'
-  testString: ''
+tests:
+  - text: I can submit a FormData object that includes a file upload.
+    testString: ''
+  - text: 'When I submit something, I will receive the file size in bytes within the JSON response.'
+    testString: ''
 
 ```
 
