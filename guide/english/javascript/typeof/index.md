@@ -5,7 +5,7 @@ title: Typeof
 
 `typeof` is a JavaScript keyword that will return the type of a variable when you call it. You can use this to validate function parameters or check if variables are defined. There are other uses as well.
 
-The `typeof` operator is useful because it is an easy way to check the type of a variable in your code. This is important because JavaScript is a is a <a href='https://stackoverflow.com/questions/2690544/what-is-the-difference-between-a-strongly-typed-language-and-a-statically-typed' target='_blank' rel='nofollow'>dynamically typed language</a>. This means that you aren't required to assign types to variables when you create them. Because a variable is not restricted in this way, its type can change during the runtime of a program.
+The `typeof` operator is useful because it is an easy way to check the type of a variable in your code. This is important because JavaScript is a <a href='https://stackoverflow.com/questions/2690544/what-is-the-difference-between-a-strongly-typed-language-and-a-statically-typed' target='_blank' rel='nofollow'>dynamically typed language</a>. This means that you aren't required to assign types to variables when you create them. Because a variable is not restricted in this way, its type can change during the runtime of a program.
 
 For example:
 ```javascript

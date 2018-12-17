@@ -12,8 +12,7 @@ To insert an image you define the source and an alternative text wich is display
 
 `alt` - This attribute is used to overcome the problem of broken image or incapability of your browser to not being able to produce image on webpage. This attribute as name suggests provide "alternative" to image which is some text describing the image.
 
-
-## Example
+### Example
 
 ```html
 <img src="URL of the Image" alt="Descriptive Title" />
@@ -24,7 +23,7 @@ To insert an image you define the source and an alternative text wich is display
 <img src="URL of the Image" alt="Descriptive Title" height="100" width="150"/>
 ```
 
-### You can also define border thickness (0 means no border):
+### Define border thickness (0 means no border):
 ```html
 <img src="URL of the Image" alt="Descriptive Title" border="2"/>
 ```
@@ -34,14 +33,18 @@ To insert an image you define the source and an alternative text wich is display
 <img src="URL of the Image" alt="Descriptive Title" align="left"/>
 ```
 
-### You are also able to use styles within a style attribute:
+### Use styles within a style attribute:
 ```html
 <img src="URL of the Image" alt="Descriptive Title" style="width: 100px; height: 150px;"/>
 ```
 
-Here's an example to make a rounded image:
+### Make a rounded image:
 ```html
 <img src="URL of the Image" alt="Descriptive Title" style="border-radius: 50%;"/>
+```
+### Use image as link:
+```html
+<a href="#"><img src="URL of the Image" alt="Descriptive Title"."></a>
 ```
 
 ### More Information
