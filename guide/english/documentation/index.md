@@ -3,7 +3,7 @@ title: Code documentation
 ---
 ## Code Documentation
 
-Code Documentation is a way for developers to communicate the intent or reasoning behind a piece of code. Successfully documented code helps other developers get comfortable with the logic and use of the particular module, functions, etc. for a particular programming language. It is generally recommended that you document your code as you develop it; this way, nothing is forgotten when development is being wrapped up.
+Code Documentation allows other developers (and yourself) to understand/remember the customs and purposes of particular pieces of code. It is recommended to use documentation before debugging your code, this helps you to debug effectively.
 
 For example, if you happen to pass your code along to an absolute beginner, they should be able to follow along via external documentation, comments, and appropriate variable names, even if they have very little knowledge of the language in use.
 
