@@ -47,7 +47,7 @@ int main () {
 > Item on index 3 is 4
 > Item on index 4 is 5
 ```
-## Example for printing star pattern for pyramid 
+### Example for printing star pattern for pyramid 
 ```c
 
 #include<stdio.h>
@@ -101,7 +101,7 @@ for ( ; ; ) {
 An infinite loop occurs when the condition will never be met, due to some inherent characteristic of the loop. An infinite loop also called an endless loop, and it is a piece of coding that lacks a functional exit so that it repeats indefinitely.
 
 
-## Warning!
+### Warning!
 
 Some older versions of compilers don't support declaration inside the for loop:
 ```C
@@ -130,4 +130,51 @@ int main () {
     	printf("Item on index %d is %d\n", i, array[i]);
     }
 }
+```
+
+## Break and Continue statements
+When "break" statement is executed, the loop stops executing all other statements in it and immediately comes out of the loop.
+ 
+ ```C
+#include <stdio.h>
+
+int main(void) {
+    int n = 5,i;
+   for(i=0;i<n;i++)
+   {
+   printf("%d\n",i);
+    if(n == 3) 
+        break;
+        }
+    return 0;
+}
+```
+output:
+```output
+1
+2
+```
+
+When "continue" statement is executed, the loop execution is skipped for that time and goes for incrementation/decrementation of the variable, validates the condition and continues the execution of the loop.
+
+```C
+#include <stdio.h>
+
+int main(void) {
+    int n = 5,i;
+   for(i=0;i<n;i++)
+   {
+   printf("%d\n",i);
+    if(n == 3) 
+        continue;
+        }
+    return 0;
+}
+```
+output:
+```output
+1
+2
+4
+5
 ```
