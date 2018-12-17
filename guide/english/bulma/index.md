@@ -7,13 +7,16 @@ Bulma is a free and open source frontend CSS framework based on Flexbox. It cont
 
 ## Features
 
-* 100% Responsive.
-* Modular.
-* Modern.
-* Free (Source code on Github).
-* growing community.
-* Easy to learn.
-* Quick Customization.
+* 100% Responsive
+* Modular
+* Modern
+* Free (Source code on Github)
+* Lightweight
+* Growing community
+* Easy to learn
+* Quick Customization
+
+Bulma is a mobile-first CSS framework that's fully written in SASS. This allows you to import only the modules you need for your projects. Bulma is fairly new compared to something like Bootstrap, but it's quickly growing in popularity.
 
 ## Getting started
 
@@ -27,6 +30,7 @@ Just type the following in your terminal:
 ```terminal
 $ npm install bulma
 ```
+
 ### Using a CDN
 
 Take one of the links from [this page](https://cdnjs.com/libraries/bulma) and embedd them in your project.

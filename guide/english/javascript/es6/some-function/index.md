@@ -4,7 +4,7 @@ title: Some Function
 
 ## The Some Function
 
-The `some()` function is used for verifying if at least one element of an array meets a given condition. The function returns `true` if the condition is met by one element, and false if any of the elements met the condition
+The `some()` function is used for verifying if at least one element of an array meets a given condition. The function returns `true` if the condition is met by one element, and `false` if none of the elements met the condition.
 
 The original syntax of the some function is:
 ```javascript
@@ -22,4 +22,4 @@ if (arr.some(el => el % 2 == 0)) {
 }
 ```
 
-`some()` is a method of the `Array` object, so to pass that function to an iterable object it is necessary to be sure that the object is an Array.
+`some()` is a method of the `Array` object, so to pass the `some()` function to an iterable object it is necessary that the object is an Array.
