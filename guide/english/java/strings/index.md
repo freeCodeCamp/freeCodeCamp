@@ -3,10 +3,10 @@ title: Strings
 ---
 # Strings
 
-Strings are sequences of characters. In Java, a `String` is an `Object`. Strings should not be confused with `char` as characters are literally a single value rather than a sequence of characters. You can still use a single value within a String, however, it is preferred to use `char` when you are checking for a single character.
+Strings are sequences of characters. In Java, a `String` is not a `Primitive` but rather, it's called an `Object`. Strings should not be confused with `char` as characters are literally a single value rather than a sequence of characters. You can still use a single value within a String; however, it is preferred to use `char` when you are checking for a single character.
 
 ```java
-String course = "FCC";
+String course = "FreeCodeCamp";
 System.out.println(course instanceof Object);
 ```
 
@@ -62,11 +62,23 @@ public class StringExample{
       char ch[] = {'s','t','r','i','n','g','s'};  
       String s2 = new String(ch);  // converting char array to string  
       String s3 = new String("example");  // creating Java string by new keyword  
-      System.out.println(s1); // prints "java" 
-      System.out.println(s2); // prints "strings"
-      System.out.println(s3); // prints "example"
+
+      System.out.println("s1: "+s1);  
+      System.out.println("s2: "+s2); 
+      System.out.println("s3: "+s3); 
    }
 }
+```
+If you want to print a string with values in Java it is better to use the following:
+   System.out.printf("example text with %s",value); //where value is a parameter
+   
+This uses the StringBuilder Class wich is more efficient for memory.
+
+Output:
+```
+s1: java
+s2: strings
+s3: example
 ```
 
 #### Comparing Strings 
@@ -90,7 +102,7 @@ to the same `"Hello world"` object created in the String Pool the first time.
 
 The second comparison is true because the variables store the same values. In this case - `"Hello world"`.
 
-We have several inbuilt methods in String. The following is an example of the String Length() method .
+We have several inbuilt methods in String. The following is an example of the String length() method .
 
 ```java
 public class StringDemo {
@@ -159,29 +171,51 @@ The result will be:
 Hello
 World
 ```
+We can find the index of a character in a string by using the function called ```.indexOf()```. This function allows us to know the exact index of a character making it easier to split a string with ```.substring()``` which you learn in the next example.
+Example:
+```java
+String name = "Julie";
+System.out.println(name.indexOf("J"));
+```
+Output:
+```
+0
+```
+You can also use ```.indexOf()``` to find mulitple of the same character.
+Example:
+```java
+String name = "name;city;state";
+int firstSemiColon = name.indexOf(";");
+int secondSemiColon = name.indexOf(";", firstSemiColon + 1);
+System.out.println(firstSemiColon + " " + secondSemiColon);
+```
+Output:
+```
+4 9
+```
+
 We can also split the string by specifing the start and end index of the characters in the string. We will do this using the Java function called ```.substring()```.
 
 The ```.substring()``` method can be used in two ways. One with only the starting index and one with both the start and end index. Take note that the index starts from 0.
 Example:
 ```java
-String text = "Hello,My name is Bob";
+String text = "Hello,This is FreeCodeCamp";
 System.out.println(text.substring(6));
 ```
 Will produce
 ```
-My Name is Bob
+This is FreeCodeCamp
 ```
 To use it with an ending index take note that the actual ending index is -1 of the value passed into the method.
 Now using ```.substring()``` with an ending index
 Example:
 ```
-String text = "Hello,My name is Bob";
-System.out.println(text.substring(6,8));
-
+String text = "Hello,This is FreeCodeCamp";
+System.out.println(text.substring(14,18));
 ```
 The result will be:
 ```
-My
+Free
 ```
 
 **More Information:**

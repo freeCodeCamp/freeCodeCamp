@@ -1,4 +1,4 @@
-import React, { PureComponent } from 'react';
+import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux';
@@ -24,7 +24,7 @@ const RSA =
   'https://forum.freecodecamp.org/t/the-read-search-ask-methodology-for-' +
   'getting-unstuck/137307';
 
-export class HelpModal extends PureComponent {
+export class HelpModal extends Component {
   render() {
     const { isOpen, closeHelpModal, createQuestion } = this.props;
     if (isOpen) {
