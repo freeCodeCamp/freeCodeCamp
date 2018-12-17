@@ -13,8 +13,8 @@ title: Android Development
 * [Java Programmers Should Learn Kotlin](#java-programmers-should-learn-kotlin)
 * [Practice](#practice)
 * [Google Developer Console](#google-developer-console)
-* [Courses](#courses)
-* [Developing Android Apps](#developing-android-apps)
+* [Training Resources](#training-resources)
+* [Android Studio](#android-studio)
 
 # Android Development
 
@@ -84,27 +84,47 @@ If you are just a beginner in Android Developement. You can directly start learn
 
 [Google Developer Console For Publishing Your App In Google Play Store](https://developer.android.com/distribute/console/)
 
-### Courses
+## Training Resources
 
 - [Udacity Android Nanodegree Program](https://udacity.com/course/android-developer-nanodegree-by-google--nd801)
 - [Android Developer Course on Udemy](https://www.udemy.com/become-an-android-developer-from-scratch)
 - [Udemy The Complete Android Kotlin Developer Course](https://www.udemy.com/the-complete-kotlin-developer-course/)
+- [Stanford CS193a Lecture Videos](http://web.stanford.edu/class/cs193a/lectures.shtml)
+
+Following list contains the curated training resources for Android Development.
+
+### [Udacity's Android Basics Nanodegree](https://www.udacity.com/course/android-basics-nanodegree-by-google--nd803)
+
+Ideal for **beginners**, this program comprises of following courses:
+
+1. [Android Basics: User Interface](https://www.udacity.com/course/android-basics-user-interface--ud834)
+2. [Android Basics: User Input](https://www.udacity.com/course/android-basics-user-input--ud836)
+3. [Android Basics: Multiscreen Apps](https://www.udacity.com/course/android-basics-multiscreen-apps--ud839)
+4. [Android Basics: Networking](https://www.udacity.com/course/android-basics-networking--ud843)
+5. [Android Basics: Data Storage](https://www.udacity.com/course/android-basics-data-storage--ud845) *now removed from the Nanodegree program*
+
+### [Udacity's Android Developer Nanodegree](https://www.udacity.com/course/android-developer-nanodegree-by-google--nd801)
+
+Ideal for **intermediate** level, this program comprises of following free courses and few paid *unlisted* here:
+
+1. [Developing Android Apps](https://www.udacity.com/course/new-android-fundamentals--ud851)
+2. [Advanced Android App Development](https://www.udacity.com/course/advanced-android-app-development--ud855)
+3. [Gradle for Android and Java](https://www.udacity.com/course/gradle-for-android-and-java--ud867)
+4. [Material Design for Android Developers](https://www.udacity.com/course/material-design-for-android-developers--ud862)
+
+### [Developer Training by Google!](https://developers.google.com/training/android/)
+
+This website contains *the best resources* from Google, must have a look at these. 
+
+### [Udemy The Complete Android Kotlin Developer Course](https://www.udemy.com/the-complete-kotlin-developer-course/)
+
+For Kotlin oriented Android Development.
 
 ### Books
-
-[Head First Android Development](https://www.amazon.in/Head-First-Android-Development-Griffiths/dp/1449362184)
-[Android Application Development All-In-One for Dummies, 2ed](https://www.amazon.in/Android-Application-Development-All-Dummies/dp/1118027701)
-
-[Stanford CS193a Lecture Videos](http://web.stanford.edu/class/cs193a/lectures.shtml)
-
-### Developing Android Apps
-
-The best part of learning Android is that many of the courses and material available are online and free. Take your skillset up a notch.
-The link to the basic course is here - [Developing Android Apps](https://udacity.com/course/new-android-fundamentals--ud851).
-The link to the advanced course is here - [Advanced Android App Development](https://www.udacity.com/course/advanced-android-app-development--ud855). 
+- [Head First Android Development](https://www.amazon.in/Head-First-Android-Development-Griffiths/dp/1449362184)
+- [Android Application Development All-In-One for Dummies, 2ed](https://www.amazon.in/Android-Application-Development-All-Dummies/dp/1118027701)
 
 ### Code Samples
-
 It is good to check out code samples and projects for your learning process. There are many code samples available online. Here is a link for some android code samples - [Samples | Android Developers](https://developer.android.com/samples/).
 
 ### Android Studio
