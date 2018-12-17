@@ -23,6 +23,15 @@ $bikes = array('Suzuki','BMW','Yamaha');
 $bikes = ['Suzuki', 'BMW', 'Yamaha'];
 ```
 
+PHP arrays can store more than one type of value at a time:
+```
+<?php
+
+$arr = array('Suzuki', 3.1415, false, -273);
+```
+As you can see there is a string, a float number, a boolean valuea and an integer number.
+
+
 ## Key => Value
 
 Arrays can also be defined with named keys, as shown below:
