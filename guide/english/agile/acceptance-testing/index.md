@@ -5,14 +5,14 @@ title: Acceptance Testing
 # Acceptance Testing
 
 ## Table of Contents
-- [Acceptance Testing](#acceptance%20testing)
-- [Acceptance Criteria](#acceptance%20criteria)
-- [Acceptance Test Plan - Attributes](#acceptance%20test%20plan%20-%20attributes)
-- [Acceptance Test Report - Attributes](#acceptance%20test%20report%20-%20attributes)
+- [Acceptance Testing](#acceptance-testing)
+- [Acceptance Criteria](#acceptance-criteria)
+- [Acceptance Test Plan - Attributes](#acceptance-test-plan---attributes)
+- [Acceptance Test Report - Attributes](#acceptance-test-report---attributes)
   - [Example](#example)
-- [Additional Notes](#additional%20notes)
-- [List of Acceptance Testing Frameworks](#list%20of%20acceptance%20testing%20frameworks)
-- [More Information](#more%20information)
+- [Additional Notes](#additional-notes)
+- [List of Acceptance Testing Frameworks](#list-of-acceptance-testing-frameworks)
+- [More Information](#more-information)
 
 ## Acceptance Testing
 Acceptance testing is a testing technique which determines whether or not the software system has met the requirement specifications. The main purpose of this testing technique is to evaluate the system's compliance with business requirements and verify it has met the required criteria for delivery to end users.
