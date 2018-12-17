@@ -7,7 +7,7 @@ Dark Patterns are common patterns used to deceive the users of a website or web 
 
 Examples include:
 
-* <a href='https://darkpatterns.org/types-of-dark-pattern/bait-and-switch' target='_blank' rel='nofollow'>**Bait and Switch**</a> – A user sets out to do one thing, but a different, undesirable thing happens instead.
+* [**Bait and Switch**](https://darkpatterns.org/types-of-dark-pattern/bait-and-switch) – A user sets out to do one thing, but a different, undesirable thing happens instead.
 
 * [**Disguised Ads**](https://darkpatterns.org/types-of-dark-pattern/disguised-ads) – Adverts disguised as other kinds of content or navigation, in order to get users to click on them.
 
@@ -29,4 +29,6 @@ Examples include:
 
 * [**Trick Questions**](https://darkpatterns.org/types-of-dark-pattern/trick-questions) – Users are made to respond to a question, which, when glanced upon quickly appears to ask one thing, but if read carefully, asks another thing entirely.
 
-A catalog of Dark Patterns along with a continuously updated list of real-world examples is mainatained at [darkpatterns.org] (https://darkpatterns.org).
+
+A catalog of Dark Patterns along with a continuously updated list of real-world examples is mainatained at [darkpatterns.org](https://darkpatterns.org).
+

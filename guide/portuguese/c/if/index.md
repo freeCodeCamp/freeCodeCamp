@@ -6,24 +6,24 @@ localeTitle: E se
 
 A instrução if executa diferentes blocos de código com base nas condições.
 ```
-if (condition) { 
-    // Do something when `condition` is true 
+if (condicao) { 
+    // Faz algo quando `condicao` é verdadeiro 
  } 
  else { 
-    // Do something when `condition` is false 
+    // Faz algo quando `condicao` é falso 
  } 
 ```
 
-Quando a `condition` é verdadeira, o código dentro da seção `if` executado, caso `else` executado. Às vezes você precisaria adicionar uma segunda condição. Para facilitar a leitura, você deve usar uma instrução `else if` vez de aninhar `if` .
+Quando a `condicao` é verdadeira, o código dentro da seção `if` executado, caso `else` executado. Às vezes você precisaria adicionar uma segunda condição. Para facilitar a leitura, você deve usar uma instrução `else if` vez de aninhar `if` .
 ```
-if (condition) { 
-    // Do something if `condition` is true 
+if (condicao) { 
+    // Faz algo quando `condicao` é verdadeiro 
  } 
- else if (anotherCondition) { 
-    // Do something if `anotherCondition` is ture 
+ else if (outraCondicao) { 
+    // Faz algo quando `outraCondicao` é verdadeiro 
  } 
  else { 
-    // Do something if `condition` AND `anotherCondition` is false 
+    // Faz algo quando `condicao` é falso 
  } 
 ```
 
@@ -35,20 +35,20 @@ Observe que o `else` e `else if` seções não forem necessárias, enquanto `if`
  
  int main () { 
  
-   // Local variable definition 
-   int a = 100; 
+   // Definicao da variavel local
+   int a = 10; 
  
-   // Check the boolean condition 
+   // Verifica se a condicao é verdadeira
    if(a < 5) { 
-      // If condition is true then print the following 
-      printf("a is less than 5!\n" ); 
+      // Se a condicao for verdadeira printa na tela
+      printf("a e menor que 5!\n" ); 
    } 
    else { 
-      // If condition is false then print the following 
-      printf("a is not less than 5!\n" ); 
+      // Se a condicao for falso printa na tela
+      printf("a nao e menor que 5!\n" ); 
    } 
  
-   printf("Value of a is : %d\n", a); 
+   printf("Valor de a e : %d\n", a); 
  
    return 0; 
  } 
@@ -56,7 +56,7 @@ Observe que o `else` e `else if` seções não forem necessárias, enquanto `if`
 
 ## Saída
 ```
--> a is not less than 5! 
- -> Value of a is : 100 
+-> a nao e menor que 5!
+-> Valor de a e: 10 
 
 ```
