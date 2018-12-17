@@ -40,7 +40,7 @@ int main() {
     for (int i = 0; i < 5; ++i) {
         printf("Item on index %d is %d\n", i, array[i]);
     }
-    
+
     return 0;
 }
 ```
@@ -117,6 +117,8 @@ int main () {
     for (int i = 0; i < 5; i--) {
     	printf("%d \n", i);
     }
+
+    return 0;
 }
 ```
 
@@ -133,6 +135,8 @@ int main () {
     for (int i = 0; i < 5; i++) {      // The int i = 0 will show you an error on older compiler versions
     	printf("Item on index %d is %d\n", i, array[i]);
     }
+
+    return 0;
 }
 ```
 
@@ -148,6 +152,8 @@ int main () {
     for (i = 0; i < 5; i++) {       // Now you won't have a problem
     	printf("Item on index %d is %d\n", i, array[i]);
     }
+
+    return 0;
 }
 ```
 
