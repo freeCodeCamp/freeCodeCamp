@@ -121,8 +121,8 @@ This website contains *the best resources* from Google, must have a look at thes
 For Kotlin oriented Android Development.
 
 ### Books
-[Head First Android Development](https://www.amazon.in/Head-First-Android-Development-Griffiths/dp/1449362184)
-[Android Application Development All-In-One for Dummies, 2ed](https://www.amazon.in/Android-Application-Development-All-Dummies/dp/1118027701)
+- [Head First Android Development](https://www.amazon.in/Head-First-Android-Development-Griffiths/dp/1449362184)
+- [Android Application Development All-In-One for Dummies, 2ed](https://www.amazon.in/Android-Application-Development-All-Dummies/dp/1118027701)
 
 ### Code Samples
 It is good to check out code samples and projects for your learning process. There are many code samples available online. Here is a link for some android code samples - [Samples | Android Developers](https://developer.android.com/samples/).
