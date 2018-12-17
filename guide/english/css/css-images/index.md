@@ -9,7 +9,7 @@ This helps in adding an image to a website. CSS can handle images like JPG, PNG 
 ```<img src="picture.jpg" alt="Picture" width="100" height="100">```
 
 * **src:** It consists the value of the path to the required image.
-* **alt:** This is a text description of the image and is useful if the image cannot be viewed by a visitor. It also allow the image on your page to rank in image search results for search engines such as Google.
+* **alt:** This is a text description of the image and is useful if the image cannot be viewed by a visitor. It also allows the image on your page to rank in image search results for search engines such as Google.
 * **width:** This specifies a width for the image(can be percent or px or auto).
 * **height:** This specifies a height for the image(can be percent or px or auto).
 
