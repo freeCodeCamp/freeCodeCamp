@@ -137,7 +137,7 @@ You can write Acceptance Tests for each of these sub-features of the bigger dial
 - Given that the page is opened
   - The dialog box should be visible,
   - The dialog box should contain an input box, and
-  - The input box should have placeholder text "Your name, please!"
+  - The input box should have placeholder text "Enter your name, please!"
   - The dialog box shoud contain a "Submit" button
 
 ### Notes
