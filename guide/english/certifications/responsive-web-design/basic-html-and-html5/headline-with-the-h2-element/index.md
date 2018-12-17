@@ -3,7 +3,14 @@ title: Headline with the h2 Element
 ---
 ## Headline with the h2 Element
 
-In the first lesson you have learned what an HTML element is and you have modified one. <br/>
+## Problem
+```html
+<h1>Hello World</h1>
+```
+
+## Objective
+The objective is to create a `<h2>` element that states "PhotoCatApp" below the `<h1>` element. \
+In the first lesson you have learned what an HTML element is and you have modified one. \
 Now you are asked to write your own! The first HTML element already present in your code editor (`<h1>Hello World</h1>` ) uses the h1 tag, check the others:
 
 Code  | Effects
@@ -14,3 +21,22 @@ Code  | Effects
 `<h5>  Here is a tiny h5 </h5>` | <h5>  Here is a tiny h5 </h5>
 `<h6> The last - h6 </h6>` | <h6> The last - h6 </h6>
 
+## Solution
+Firstly, we will need to create a `<h2>` tag that states "CatPhotoApp" below the `<h1>`element.
+
+### Before adding `<h2>` element
+```html
+<h1>Hello World</h1>
+```
+
+### After adding `<h2>` element
+```html
+<h1>Hello World</h1>
+<h2>CatPhotoApp</h2> <!-- A <h2> element has been created through an opening tag of <h2>, and a closing tag of </h2> -->
+```
+
+## Full Solution
+```html
+<h1>Hello World</h1>
+<h2>CatPhotoApp</h2>
+```
