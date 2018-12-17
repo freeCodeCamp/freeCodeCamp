@@ -41,6 +41,37 @@ If the element to be searched presides on the the first memory block then the co
 
 The code for a linear search function in JavaScript is shown below. This function returns the position of the item we are looking for in the array. If the item is not present in the array, the function would return null.
 
+### Example in C 
+```c
+#include <stdio.h>
+
+int LinearSearch(int array[], int l,int n);
+
+int main(void) {
+  int arr[] = {10, 2, 3, 1, 4, 5, 8, 9, 7, 6};
+  LinearSearch(arr, 10, 3);
+  return 0;
+}
+
+int LinearSearch(int array[], int l,int n)     // l is length of array, n is the number to be searched
+{
+int i, flag = 0;
+for (i = 0 ; i < l - 1; i++)
+  {
+    if(array[i] == n)
+    {
+      flag = 1;
+      break;
+    }
+  }
+if (flag == 1)
+  printf("Number found");
+else
+  printf("Number not found");
+  
+  return 0;
+}
+```
 ### Example in Javascript
 ```javascript
 function linearSearch(arr, item) {
