@@ -12,12 +12,12 @@ An array is defined by array(), or [].
 
 An example of an array in each style can be seen below:
 
-```
+```php
 <?php
 
 $bikes = array('Suzuki','BMW','Yamaha');
 ```
-```
+```php
 <?php
 
 $bikes = ['Suzuki', 'BMW', 'Yamaha'];
@@ -27,7 +27,7 @@ $bikes = ['Suzuki', 'BMW', 'Yamaha'];
 
 Arrays can also be defined with named keys, as shown below:
 
-```
+```php
 <?php
 
 $bikes = [
@@ -43,7 +43,7 @@ Items within an array can be accessed by their corresponding key, or location wi
 
 For instance:
 
-```
+```php
 <?php
 
 $bikes = ['Suzuki', 'BMW', 'Yamaha'];
@@ -58,7 +58,7 @@ I like Suzuki
 ```
 
 Another example, using named keys can be seen below:
-```
+```php
 <?php
 
 $bikes = [
