@@ -59,7 +59,58 @@ int main() {
 #### Explanation:
 The `for` loop checks the value of `i` based on the conditions. If `i` is smaller than `5`, the text will be printed. After printing, the value of `i` is increased by 1. This function will continue until `i` is greater than 4, at which point the loop will stop and exit.
 
-### Example for printing star pattern for pyramid 
+### For Loop Body
+Generally the part which is inside the curly braces is considered as the body of the `for` loop. In certain circumstances we can ignore the curly braces:
+- When there is only one line of code inside the loop
+- When there is only one `if` statement inside the loop
+- When there is only one loop inside the current loop
+
+#### Examples
+```C
+#include<stdio.h>
+int main() {
+    int a=5,i;
+    for(i=1;i<=5;i++)
+    printf("%d ",i);
+    return 0;
+}
+```
+Output:
+```output
+->1 2 3 4 5
+```
+
+```C
+#include<stdio.h>
+int main() {
+    int a=5,i;
+    for(i=1;i<=5;i++)
+    if(i%2==0)
+    printf("%d ",i);
+    return 0;
+}
+```
+Output:
+```output
+->2 4
+```
+
+```C
+#include<stdio.h>
+int main() {
+    int a=5,i;
+    for(i=1;i<=5;i++)
+        for(j=1;j<=2;j++)
+            printf("%d ",i);
+    return 0;
+}
+```
+Output:
+```output
+->1 1 2 2 3 3 4 4 
+```
+
+## Example for printing star pattern for pyramid 
 ```c
 
 #include<stdio.h>
@@ -149,6 +200,7 @@ int main () {
     int array[] = {1, 2, 3, 4, 5};
     int i;        // You declare the variable before the for loop
 
+<<<<<<< HEAD
     for (i = 0; i < 5; i++) {       // Now you won't have a problem
     	printf("Item on index %d is %d\n", i, array[i]);
     }
@@ -203,3 +255,6 @@ output:
 4
 5
 ```
+=======
+``
+>>>>>>> I have added a 'Note' part
