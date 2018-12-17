@@ -4,6 +4,7 @@ title: Get Started
 ## Get Started
 
 There are several ways to get started with Bulma.
+
 * <b>npm</b> install the Bulma package.
 * cdnjs <b>CDN</b> to link to the Bulma stylesheet.
 * use the <b>Github Repository</b> to get the latest development version.

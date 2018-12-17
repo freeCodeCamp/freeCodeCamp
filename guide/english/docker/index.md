@@ -12,7 +12,7 @@ Containerization, which is a way of deploying and running applications, runs iso
 
 Docker is used to simplify configurations, and ensure a smooth continuous integration and deployment flow. Specific containers can be specified for development, staging, and production environments. A true implementation of a container in production, according to the Docker manual, is to run it as a service, using the  `docker-compose.yml` file for setup. This is a YAML file that defines how Docker containers should behave in production.
 
-One of Docker's biggest advantages is that it can be used by a team using different operateing systems to build projects without needing to worry about software conflicts.
+One of Docker's biggest advantages is that it can be used by a team using different operating systems to build projects without needing to worry about software conflicts.
 
 ### Installation
 
@@ -34,4 +34,5 @@ sh get-docker.sh
 * For download and documentation check the docker official site: [Docker official site](https://www.docker.com)
 * For more on containerization, checkout [Search IT Operations](https://searchitoperations.techtarget.com/definition/application-containerization-app-containerization)
 * A Docker 101 course [Docker 101](https://github.com/docker/labs/tree/master/beginner/)
+* Online Docker [Classroom](https://training.play-with-docker.com/)
 
