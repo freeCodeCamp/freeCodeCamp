@@ -8,7 +8,7 @@ An array can be thought of as a collection of items.
 
 ## Syntax
 
-An array is defined by array(), or [].
+An array is defined by `array()`, or `[]`.
 
 An example of an array in each style can be seen below:
 
@@ -16,12 +16,13 @@ An example of an array in each style can be seen below:
 <?php
 
 $bikes = array('Suzuki','BMW','Yamaha');
-```
-```php
-<?php
+
+// OR
 
 $bikes = ['Suzuki', 'BMW', 'Yamaha'];
 ```
+
+## Associative array (key => value)
 
 PHP arrays can store more than one type of value at a time:
 ```
@@ -31,8 +32,6 @@ $arr = array('Suzuki', 3.1415, false, -273);
 ```
 As you can see there is a string, a float number, a boolean valuea and an integer number.
 
-
-## Key => Value
 
 Arrays can also be defined with named keys, as shown below:
 
@@ -82,7 +81,7 @@ echo 'I like '. $bikes['not my favorite'];
 Would produce the following output:
 
 ```
-I like BWM
+I like Yamaha
 ```
 
 ## Multidimensional Array
