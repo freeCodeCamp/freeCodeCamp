@@ -24,6 +24,15 @@ $bikes = ['Suzuki', 'BMW', 'Yamaha'];
 
 ## Associative array (key => value)
 
+PHP arrays can store more than one type of value at a time:
+```
+<?php
+
+$arr = array('Suzuki', 3.1415, false, -273);
+```
+As you can see there is a string, a float number, a boolean valuea and an integer number.
+
+
 Arrays can also be defined with named keys, as shown below:
 
 ```php
