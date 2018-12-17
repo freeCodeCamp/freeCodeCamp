@@ -13,7 +13,7 @@ Here's an example of how you can take your element with the <code>id</code> attr
 <blockquote>#cat-photo-element {<br>&nbsp;&nbsp;background-color: green;<br>}</blockquote>
 Note that inside your <code>style</code> element, you always reference classes by putting a <code>.</code> in front of their names. You always reference ids by putting a <code>#</code> in front of their names.
   
-One thing to note is that using ID selectors to style elements should be avoided. Using IDs for styling individual elements loses out on much of the functionality of CSS sheets, and because they have such high specificity, they override most other selectors for styling.
+Note: ID selectors to style elements should be avoided. Due to their high specificity, they can override class and tag selectors.
 </section>
 
 ## Instructions
