@@ -6,28 +6,28 @@ challengeType: 5
 
 ## Description
 <section id='description'>
-  <p>Gnome sort is a sorting algorithm which is similar to <a href="http://rosettacode.org/wiki/Insertion sort">Insertion
-      sort</a>, except that moving an element to its proper place is accomplished by a series of swaps, as in <a href="http://rosettacode.org/wiki/Bubble Sort">Bubble
-      Sort</a>.</p>
-  <p>The pseudocode for the algorithm is:</p>
-  <p><b>function</b> <i>gnomeSort</i>(a[0..size-1])</p>
-  <p>i := 1</p>
-  <p>j := 2</p>
-  <p><b>while</b> i < size <b>do</b></p>
-  <p><b>if</b> a[i-1] <= a[i] <b>then</b></p>
-  <p><i>/// for descending sort, use >= for comparison</i></p>
-  <p>i := j</p>
-  <p>j := j + 1</p>
-  <p><b>else</b></p>
-  <p><b>swap</b> a[i-1] <b>and</b> a[i]</p>
-  <p>i := i - 1</p>
-  <p><b>if</b> i = 0 <b>then</b></p>
-  <p>i := j</p>
-  <p>j := j + 1</p>
-  <p><b>endif</b></p>
-  <p><b>endif</b></p>
-  <p><b>done</b></p>
-  <p>Write a function to implement the above pseudo code. The function should return the sorted array.</p>
+Gnome sort is a sorting algorithm which is similar to <a href="http://rosettacode.org/wiki/Insertion sort">Insertion sort</a>, except that moving an element to its proper place is accomplished by a series of swaps, as in <a href="http://rosettacode.org/wiki/Bubble Sort">Bubble Sort</a>.
+The pseudocode for the algorithm is:
+<pre>
+<b>function</b> <i>gnomeSort</i>(a[0..size-1])
+  i := 1
+  j := 2
+  <b>while</b> i < size <b>do</b>
+    <b>if</b> a[i-1] <= a[i] <b>then</b>
+      <i>/// for descending sort, use >= for comparison</i>
+      i := j
+      j := j + 1
+    <b>else</b>
+      <b>swap</b> a[i-1] <b>and</b> a[i]
+      i := i - 1
+      <b>if</b> i = 0 <b>then</b>
+        i := j
+        j := j + 1
+      <b>endif</b>
+    <b>endif</b>
+  <b>done</b>
+</pre>
+Write a function to implement the above pseudo code. The function should return the sorted array.
 </section>
 
 ## Instructions
