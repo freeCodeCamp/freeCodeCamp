@@ -29,7 +29,6 @@ The cocktail shaker sort is an improvement on the <a href="http://rosettacode.or
   <b>while</b> swapped; <i>// if no elements have been swapped,</i>
                 <i>// then the list is sorted</i>
 </pre>
-
 Write a function that sorts a given array using cocktail sort.
 </section>
 
