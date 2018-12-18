@@ -6,30 +6,24 @@ challengeType: 5
 
 ## Description
 <section id='description'>
-  <p>An <span style="font-family: serif"><a href="http://rosettacode.org/wiki/O">O</a>(<i>n</i><sup>2</sup>)</span>
-    sorting algorithm which moves elements one at a time into the correct position.</p>
-  <p>The algorithm consists of inserting one element at a time into the previously sorted part of the array, moving
-    higher ranked elements up as necessary.</p>
-  <p>To start off, the first (or smallest, or any arbitrary) element of the unsorted array is considered to be the sorted
-    part.</p>
-  <p>Although insertion sort is an <span style="font-family: serif"><a href="http://rosettacode.org/wiki/O">O</a>(<i>n</i><sup>2</sup>)</span>
-    algorithm, its simplicity, low overhead, good locality of reference and efficiency make it a good choice in two
-    cases:</p>
-  <p>(i) small <span style="font-family: serif"><i>n</i></span>,</p>
-  <p>(ii) as the final finishing-off algorithm for <span style="font-family: serif"><a href="http://rosettacode.org/wiki/O">O</a>(<i>n</i>
-      log<i>n</i>)</span> algorithms such as <a href="http://rosettacode.org/wiki/Merge sort">mergesort</a> and <a href="http://rosettacode.org/wiki/quicksort">quicksort</a>.</p>
-  <p>The algorithm is as follows (from <a href="https://en.wikipedia.org/wiki/Insertion_sort#Algorithm">wikipedia</a>):</p>
-  <p><b>function</b> <i>insertionSort</i>(array A)</p>
-  <p><b>for</b> i <b>from</b> 1 <b>to</b> length[A]-1 <b>do</b></p>
-  <p>value := A[i]</p>
-  <p>j := i-1</p>
-  <p><b>while</b> j >= 0 <b>and</b> A[j] > value <b>do</b></p>
-  <p>A[j+1] := A[j]</p>
-  <p>j := j-1</p>
-  <p><b>done</b></p>
-  <p>A[j+1] = value</p>
-  <p><b>done</b></p>
-  <p>Write a function that performs insertion sort on a given array. The function should return the sorted array.</p>
+An <span style="font-family: serif"><a href="http://rosettacode.org/wiki/O">O</a>(<i>n</i><sup>2</sup>)</span> sorting algorithm which moves elements one at a time into the correct position. The algorithm consists of inserting one element at a time into the previously sorted part of the array, moving higher ranked elements up as necessary. To start off, the first (or smallest, or any arbitrary) element of the unsorted array is considered to be the sorted part.
+Although insertion sort is an <span style="font-family: serif"><a href="http://rosettacode.org/wiki/O">O</a>(<i>n</i><sup>2</sup>)</span> algorithm, its simplicity, low overhead, good locality of reference and efficiency make it a good choice in two cases:
+(i) small <span style="font-family: serif"><i>n</i></span>,
+(ii) as the final finishing-off algorithm for <span style="font-family: serif"><a href="http://rosettacode.org/wiki/O">O</a>(<i>n</i> log<i>n</i>)</span> algorithms such as <a href="http://rosettacode.org/wiki/Merge sort">mergesort</a> and <a href="http://rosettacode.org/wiki/quicksort">quicksort</a>.
+The algorithm is as follows (from <a href="https://en.wikipedia.org/wiki/Insertion_sort#Algorithm">wikipedia</a>):
+<pre>
+<b>function</b> <i>insertionSort</i>(array A)
+  <b>for</b> i <b>from</b> 1 <b>to</b> length[A]-1 <b>do</b>
+    value := A[i]
+    j := i-1
+    <b>while</b> j >= 0 <b>and</b> A[j] > value <b>do</b>
+      A[j+1] := A[j]
+      j := j-1
+    <b>done</b>
+    A[j+1] = value
+  <b>done</b>
+</pre>
+Write a function that performs insertion sort on a given array. The function should return the sorted array.
 </section>
 
 ## Instructions
