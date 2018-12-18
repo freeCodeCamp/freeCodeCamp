@@ -10,7 +10,7 @@ Margin values are set using lengths or percentages or `auto` or `inherit` keywor
 ## Syntax
 ```css
 .element {
-    margin: margin-top || margin-right || margin-bottom || margin-left;
+  margin: margin-top || margin-right || margin-bottom || margin-left;
 }
 ```
 
@@ -23,10 +23,10 @@ This property may be specified using one, two, three, or four values.
 ```css
 /* Apply to all four sides */
 margin: 1em;
-  
+
 /* top and bottom | left and right */
 margin: 5% 10%;
-  
+
 /* top | left and right | bottom */
 margin: 1em 2em 2em;
 
@@ -41,6 +41,22 @@ The margin property in CSS defines the outermost portion of the box model, creat
 
 ## Collapsing margins
 Vertical margins on different elements that touch each other (thus have no content, padding, or borders separating them) will collapse, forming a single margin that is equal to the greater of the adjoining margins. This does not happen on horizontal margins (left and right), only vertical (top and bottom).
+
+## Centering an element using margin
+An element can be aligned to the center by making it a block element and changing the values of the left and right margins to auto.
+
+```css
+.c-pos {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+```
+
+## Unit Information
+ - Pixels (`px`) are relative to the viewing device.
+ - `em` implies relative to the font-size of the element (2em means 2 times the size of the current font).
+ - `%` implies relative to the parent element.
 
 ## Browser Support
 It is effectively supported in all browsers (since IE6+, Firefox 2+, Chrome 1+ etc)
