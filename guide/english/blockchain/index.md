@@ -13,6 +13,8 @@ A blockchain is built out of a combination of two different “hash-based data s
 
 Even though blockchain can be applied to a wide range of problems, it is not the solution to everything. This technology is best used to solve problems where the parties would prefer to avoid trusting each other. This trustless feature of blockchain thus facilitates an easing of difficulties associated with trade and other ventures.
 
+Difficulties with updating and eliminating errors is a big disadvantage of blockchain technology. The application must be updated on each node of the peer-to-peer network or forked if parts of nodes don’t accept amendments.
+
 A third party is usually needed to validate trust relationships. In the most common example, which is the banking system, a trusted authority is needed, such as a bank, to intermediate transactions, manage accounts, verify balances, and validate transfers. Blockchain then comes in this case to replace the regulatory or central authority. In the case of cryptocurrencies, it replaces the figure of the bank, doing all the validations and guaranteeing the security and veracity of the transactions.
 
 For this reason, Blockchain is also known as **"The Trust Protocol"**.
