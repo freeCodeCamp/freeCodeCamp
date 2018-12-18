@@ -89,7 +89,6 @@ Their are two types of parameters:
 1. Parameter Written In Function Definition is Called “Formal Parameter”.
 2. Parameter Written In Function Call is Called “Actual Parameter”. They are also known as arguments. They are passed to the function definition and a copy is created in the form of formal parameters.
 
-
 ## A more complex example
 That one was a single line function. You'll see them when there's a pretty simple operation that needs to be performed over and over, or an operation that ends up being one long line. By making it a function, the code ends up being more readable and manageable.
 
