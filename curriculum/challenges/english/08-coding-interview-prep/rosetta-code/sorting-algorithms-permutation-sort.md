@@ -6,12 +6,13 @@ challengeType: 5
 
 ## Description
 <section id='description'>
-  <p>Write a function to implement a permutation sort, which proceeds by generating the possible permutations of the
-    input array until discovering the sorted one. The function should return the sorted array.</p>
-  <p>Pseudocode:</p>
-  <p><b>while not</b> InOrder(list) <b>do</b></p>
-  <p>nextPermutation(list)</p>
-  <p><b>done</b></p>
+Write a function to implement a permutation sort, which proceeds by generating the possible permutations of the input array until discovering the sorted one. The function should return the sorted array.
+Pseudocode:
+<pre>
+<b>while not</b> InOrder(list) <b>do</b>
+  nextPermutation(list)
+<b>done</b>
+</pre>
 </section>
 
 ## Instructions
