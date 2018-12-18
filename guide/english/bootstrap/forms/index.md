@@ -4,9 +4,9 @@ title: Forms
 ## Forms
 ---
 
-Bootstrap framework provides a form feature which a programmer can use to create beautiful html forms easily. Using the bootstrap form gives each individual form element a unified global style. Bootstrap form adds the right spacing and look to each element. 
+Bootstrap framework provides a form feature which you can use to create beautiful html forms easily. Using the bootstrap form gives each individual form element a unified global style. Bootstrap form adds the right spacing and look to each element. 
 
-Each bootstrap form element should have a class *form-control*. This class is how bootstrao knows which elements to style. All textual elements like **input**, **textarea** and **select** that has *form-control* class will have 100% width by default. There are two types of Bootstrap forms, which are:
+Each bootstrap form element should have a class *form-control*. This class is how bootstrap knows which elements to style. All textual elements like **input**, **textarea** and **select** that have *form-control* class will have 100% width by default. There are two types of Bootstrap forms, which are:
 
 * Inline form - creates the form on a single line. Useful for login forms in a nav bar
 * Horizontal form - creates a form with each element in a different row
@@ -178,3 +178,7 @@ In combination with Bootstrap's predefined grid classes to align labels and grou
 ```
     
 ![Horizontal Form](https://github.com/TroyB12/Pictures/blob/master/Horizontal%20Form.PNG)
+
+#### More Information
+[Bootstrap Forms](https://getbootstrap.com/docs/4.1/components/forms/)
+
