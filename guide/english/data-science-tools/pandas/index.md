@@ -130,11 +130,13 @@ person_info = df[["name","age","address"]].copy()
 
 ### Basic Statistics
 Descriptive statistics can be performed on each column of a pandas dataframe. 
-
-Get the mean of the values for the requested axis
-```python
-mean = df.mean()
-```
+- `df.mean()` - Returns the mean of all columns
+- `df.corr()` - Returns the correlation between columns in a data frame
+- `df.count()` - Returns the number of non-null values in each data frame column
+- `df.max()` - Returns the highest value in each column
+- `df.min()` - Returns the lowest value in each column
+- `df.median()` - Returns the median of each column
+- `df.std()` - Returns the standard deviation of each column
 
 ### Visualizing the Data in the Dataframe
 To visualize the data in the dataframe, we can use matplotlib library. Here's how to use it:
@@ -147,9 +149,7 @@ matplotlib.style.use('ggplot')
 df['ColumnName'].plot.hist()
 ```
 ## Concatenation
-
 Concatenation basically glues together DataFrames. Keep in mind that dimensions should match along the axis you are concatenating on. You can use **pd.concat** and pass in a list of DataFrames to concatenate together:
-
 
 ```python
 pd.concat([df1,df2,df3])
@@ -179,6 +179,7 @@ right = pd.DataFrame({'C': ['C0', 'C2', 'C3'],
 ```python
 left.join(right)
 ```
+
 # Pandas Functions
 ## Information on Unique Values
 ```python
