@@ -7,10 +7,6 @@ The Apache HTTP Server, commonly known as Apache, is a free and open-source cros
 
 Apache runs on 67% of all webservers in the world. It is fast, reliable, and secure. It can be highly customized to meet the needs of many different environments by using extensions and modules.
 
-### Documentation
-
-[Apache HTTP Server Documentation](http://httpd.apache.org/docs/)
-
 ## Installation
 
 #### On Ubuntu/Debian
@@ -104,3 +100,6 @@ You can copy the `default.conf` and modify accordingly in the following director
 
 ### Getting Started Guides
 - [Getting Started with Apache HTTP Server Version 2.5](https://httpd.apache.org/docs/trunk/getting-started.html)
+
+### Documentation
+- [Apache HTTP Server Documentation](http://httpd.apache.org/docs/)
