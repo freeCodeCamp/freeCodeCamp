@@ -22,11 +22,11 @@ Now that you have that background, let's start with our 'Hello, World' program. 
 ## Hello world in C
 
 ```C
-#include <stdio.h>
+#include <stdio.h> <!-- stdio or standard input output is a dirctory file in C-->
 
-int main(void)
+int main(void)    
 {
-    printf("hello, world\n");
+    printf("hello, world\n");  
     return 0;
 }
 ```
@@ -46,11 +46,9 @@ int main(void)
 ```
 This code declares the main function. The main function is special- it will always get called and is always the 'main' part of your program. If this isn't in your program, your program can't run and won't compile.
 
-Starting the function declaration with `int` means that this function will give an `int` value when it's done running through its code- it's this function's output. `int` is the 'integer' data type, and integers are whole numbers like -3, 0, or 18. So we know that this code will run, and when it's done, it will give us back an integer. By convention, this integer is 0.
+Starting the function declaration with `int` means that this function will give an `int` or integer value when it compiles the code- it's this function's output. `int` is the 'integer' data type, and integers are whole numbers like -3, 0, or 18. So we know that this code will run, and when it's done, it will give us back an integer. By convention, the integer has a `garbage value`.
 
-Next is `main`. `main` is the name of this function, and as you learned earlier, it's important to have a `main` function because your program won't work without it. `main` is followed by `(void)`. This tells the compiler that this function doesn't take any parameters, meaning that it has no input.
-
-This might not make a lot of sense right now, but you'll be learning more about this when you start reading about functions in C later. For now, just remember that `main` is required for your C program, it isn't taking any input, and it's giving a number as its output.
+Next is `main`. The `main` function is the function which acts the parent where all the other elements and functions are it's children. The `main` is followed by `(void)`. This tells the compiler that this function doesn't take any parameters, meaning that it has no input.
 
 Finally, there are the brackets: `{` and `}`. These mark the beginning and end of the function. The open curly bracket (`{`) marks the beginning, and the close curly bracket (`}`) marks the end. Everything between the two is within the function.
 
@@ -60,7 +58,7 @@ Now let's look at the meat of the program:
     printf("Hello, World!\n");
 ```
 
-`printf` is a function that takes text and prints it to the screen. The parenthesis indicates what information we want the `printf` function to take and print to the screen. We show that this is a string we want printed by surrounding it in quotes "like this".
+`printf` is a function that takes input and prints it to the screen. The parenthesis indicates what information we want the `printf` function to take and print to the screen. We show that this is a string we want printed by surrounding it in quotes "like this".
 
 Notice the \n found within the quotes- this tells the `printf` function to print a newline. A newline is what gets printed when you hit enter on your keyboard. Without explicitly telling C to print a newline, everything will be printed on the same line.
 
@@ -112,15 +110,21 @@ Make a new program with `file` -> `new` -> `Source File`, then copy over the hel
 # Before you go on...
 
 ## A review
-* C is lingua franca of programming languages.
-* C was used to re-implement the Unix operating system.
-* C is useful because it's small, fast, and has access to low-level operations. Because of this, it gets used a lot in robotics, operating systems, and consumer electronics, but not in things like webpages.
-* A C program has a few critical parts:
- * The include statement, which tells the C compiler where to find additional code that will be used in the program.
- * The main function, which is where the code will first be executed and is required in order to compile.
- * Stuff within that main function which will get executed, including a return statement that closes the program and gives a value to the program that called it.
-* C needs to be compiled in order to run.
-* C can be used to access specific hardware addresses and to perform type punning to match externally imposed interface requirements, with a low run-time demand on system resources.
+<ul>
+<li>C is lingua franca of programming languages.</li>
+<li>C was used to re-implement the Unix operating system.</li>
+<li>C is useful because it's small, fast, and has access to low-level operations. Because of this, it gets used a lot in robotics, operating systems, and consumer electronics, but not in things like webpages.</li>
+</ul>
+
+#### A C program has a few critical parts:
+<ul>
+ <li>The include statement, which tells the C compiler where to find additional code that will be used in the program.</li>
+ <li>The main function, which is where the code will first be executed and is required in order to compile.</li>
+ <li>Stuff within that main function which will get executed, including a return statement that closes the program and gives a    value to the program that called it.</li>
+ <li>C needs to be compiled in order to run.</li>
+ <li>C can be used to access specific hardware addresses and to perform type punning to match externally imposed interface requirements, with a low run-time demand on system resources.</li>
+</ul>
+
 #### More information:
 
 * [C Programming Tutorials.](https://www.tutorialspoint.com/cprogramming/)
