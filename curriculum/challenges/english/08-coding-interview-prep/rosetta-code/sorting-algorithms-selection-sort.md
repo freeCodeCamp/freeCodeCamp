@@ -6,17 +6,12 @@ challengeType: 5
 
 ## Description
 <section id='description'>
-  <p>Write a function to sort an <a href="http://rosettacode.org/wiki/array">array</a> (or list) of elements using the
-    Selection sort algorithm. The function should return the sorted array.</p>
-  <p>It works as follows:</p>
-  <p>First find the smallest element in the array and exchange it with the element in the first position, then find the
-    second smallest element and exchange it with the element in the second position, and continue in this way until the
-    entire array is sorted.</p>
-  <p>Its asymptotic complexity is <a href="http://rosettacode.org/wiki/O">O</a>(n<sup>2</sup>) making it inefficient on
-    large arrays.</p>
-  <p>Its primary purpose is for when writing data is very expensive (slow) when compared to reading, eg. writing to flash
-    memory or EEPROM.</p>
-  <p>No other sorting algorithm has less data movement.</p>
+Write a function to sort an <a href="http://rosettacode.org/wiki/array">array</a> (or list) of elements using the Selection sort algorithm. The function should return the sorted array.
+It works as follows:
+First find the smallest element in the array and exchange it with the element in the first position, then find the second smallest element and exchange it with the element in the second position, and continue in this way until the entire array is sorted.
+Its asymptotic complexity is <a href="http://rosettacode.org/wiki/O">O</a>(n<sup>2</sup>) making it inefficient on large arrays.
+Its primary purpose is for when writing data is very expensive (slow) when compared to reading, eg. writing to flash memory or EEPROM.
+No other sorting algorithm has less data movement.
 </section>
 
 ## Instructions
