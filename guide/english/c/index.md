@@ -98,6 +98,11 @@ Once you've got it compiled, run the following command:
 
 If everything has gone well, you should see `Hello, World!` printed to the screen.
 
+##### Compilation and running C in Windows with Cygwin
+[*Cygwin*](htttp://www.cygwin.com) is a program that provides a *UNIX* environment for the Windows operating system. With *Cygwin*, one can compile and run C programs with gcc that comes with it.
+
+You do not need to specify the path (prepending the name of the C program with `./`) in Windows as you would in Linux and macOS.
+
 #### Compilation and running C with CodeBlocks
 <a href='http://www.codeblocks.org/downloads/26' target='_blank' rel='nofollow'>Codeblocks can be downloaded from here.</a>
 Make a new program with `file` -> `new` -> `file`, select C/C++ source, select C as your language, and then copy over the helloworld.c code that you read through earlier. Compile and run it with `Build` -> `Build and Run`.
@@ -111,16 +116,16 @@ Make a new program with `file` -> `new` -> `file`, select C/C++ source, select C
 Make a new program with `file` -> `new` -> `Source File`, then copy over the helloworld.c text that you read through earlier and then save the file with`file` -> `save As`  as hello.c , and Compile and run the code with `Execute` -> `Compile & Run`.
 
 ## Review
-* `C` is the common language or *lingua franca* of programming languages; many other languages are based on `C`.
-* `C` was used to re-implement the Unix operating system as Linux.
-* `C` is useful because it's small, fast, and has access to low-level operations. Because of this, it gets used a lot in robotics, operating systems, and consumer electronics, and if you really wanted to even to generate webpages.
+- `C` is the common language or *lingua franca* of programming languages; many other languages are based on `C`.
+- `C` was used to re-implement the Unix operating system as Linux.
+- `C` is useful because it's small, fast, and has access to low-level operations. Because of this, it gets used a lot in robotics, operating systems, and consumer electronics, and if you really wanted to even to generate webpages.
 
-* A `C` program has a few critical parts:
-  * The include directive, tells the `C` preprocessor where to find additional code that will be used to compile the program.
-  * The main function, which is where the code will first be executed and is required in order to compile.
-  * Code within the main function will get executed, including a return statement that exits the function, ends the program and returns the value to the operating system that called it.
-  * `C` code needs to be compiled in order to run.
-  * `C` can be used to access specific hardware addresses and to perform type punning to match externally imposed interface requirements, with a low run-time demand on system resources.
+- A `C` program has a few critical parts:
+  - The include directive, tells the `C` preprocessor where to find additional code that will be used to compile the program.
+  - The main function, which is where the code will first be executed and is required in order to compile.
+  - Code within the main function will get executed, including a return statement that exits the function, ends the program and returns the value to the operating system that called it.
+  - `C` code needs to be compiled in order to run.
+  - `C` can be used to access specific hardware addresses and to perform type punning to match externally imposed interface requirements, with a low run-time demand on system resources.
 
 #### More information:
 
