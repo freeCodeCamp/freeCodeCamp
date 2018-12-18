@@ -59,7 +59,7 @@ This will show the `count`, `mean`, `std`, `min`, `max` among others for numeric
 ## Subsetting
 A data frame can be subset in many ways. One of the simplest is getting a single column. For instance, if the data frame `df` contains a column named `age`, we can extract it as follows:
 ```python
-ages=df["age"]
+ages = df["age"]
 ```
 Another option for subsetting a dataframe is using the loc and iloc methods. The difference between loc and iloc is that loc searches based on a label and iloc searches based on the integer value of a row or column. To perform the same indexing as the above example using loc:
 ```python
@@ -71,3 +71,4 @@ ages=df.loc["age"]
 1. [pandas](http://pandas.pydata.org/)
 2. [read_csv](http://pandas.pydata.org/pandas-docs/stable/generated/pandas.read_csv.html?highlight=read_csv#pandas.read_csv)
 3. [head](http://pandas.pydata.org/pandas-docs/stable/generated/pandas.DataFrame.head.html?highlight=head#pandas.DataFrame.head)
+4. [Introduction to Pandas](https://youtu.be/lkLl_QKLgcA)
