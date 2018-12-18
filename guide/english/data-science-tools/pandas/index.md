@@ -56,7 +56,7 @@ df.describe()
 ```
 This will show the `count`, `mean`, `std`, `min`, `max` among others for numeric data.
 
-## Subsetting
+### Subsetting
 A data frame can be subset in many ways. One of the simplest is getting a single column. For instance, if the data frame `df` contains a column named `age`, we can extract it as follows:
 ```python
 ages = df["age"]
@@ -72,6 +72,14 @@ This will return a data frame only, and not a series.
 Another option for subsetting a dataframe is using the loc and iloc methods. The difference between loc and iloc is that loc searches based on a label and iloc searches based on the integer value of a row or column. To perform the same indexing as the above example using loc:
 ```python
 ages = df.loc["age"]
+```
+
+### Basic Statistics
+Descriptive statistics can be performed on each column of a pandas dataframe. 
+
+Get the mean of the values for the requested axis
+```python
+mean = df.mean()
 ```
 
 #### More Information:
