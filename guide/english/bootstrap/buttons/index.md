@@ -19,9 +19,9 @@ You can also use bootstrap buttons with the `<a>` and `<input>` elements as show
 `<input class="btn btn-primary" type="submit" value="Submit">`
 
 #### Bootstrap Button Class List:
-This is a list of the CSS classes that bootstrap provides for buttons.
+This is a list of the CSS classes that bootstrap provides for buttons. They give the background color to the buttons. 
 
-`.btn` Bootstrap's basic button.
+`.btn` This is bootstrap's basic button. It is a prerequisite if you want other bootstrap buttons to work properly.
 
 `<button type="button" class="btn">Basic</button>`
 
@@ -61,6 +61,14 @@ This is a list of the CSS classes that bootstrap provides for buttons.
 
 `<button type="button" class="btn btn-dark">Dark</button>`
 
+`.btn-dark` This is bootstrap's dark button. 
+
+<button type="button" class="btn btn-dark">Dark</button>
+
+`.btn-secondary` This is bootstrap's secondary button. 
+
+<button type="button" class="btn btn-secondary">Secondary</button>
+
 #### Bootstrap Button Sizes:
 This is a list of the CSS classes for different size of the buttons.
 
@@ -76,6 +84,10 @@ This is a list of the CSS classes for different size of the buttons.
 
 `<button type="button" class="btn btn-sm">Small</button>`
 
+`.btn-md` This is bootstrap's medium button.
+
+<button type="button" class="btn btn-md">Medium</button>
+
 `.btn-xs` This is bootstrap's extra small button.
 
 `<button type="button" class="btn btn-xs">Extra Small</button>`
@@ -83,6 +95,16 @@ This is a list of the CSS classes for different size of the buttons.
 `.btn-block` This is bootstrap's full width button.
 
 <button type="button" class="btn btn-block">Block</button>
+
+#### Bootstrap Disabled Button State
+This is used to show that the button is disabled by fading the button. This can be achieved through adding "disabled" to the `<button>` tag.
+  
+<button type="button" class="btn btn-lg btn-primary" disabled>Primary button</button>
+
+
+`.btn-block` This is bootstrap's block level button. They actually span the entire width of their parent element. For example, a form element with a width of 200px, that means the btn-block button would have a width of 200px.
+
+<button type="button" class="btn btn-sm">Small</button>
 
 #### Bootstrap Outlined Buttons:
 It is possible to also have outlined buttons rather than fully colored in ones. This is achieved by placing the mid fix `outline` between the button class you want. A sample usage would be as follows:
@@ -94,6 +116,5 @@ Outlined buttons are a part of Bootstrap since version 4, please be sure that yo
 _Note: Do not include the dot in the HTML Class Attribute, referring to the classes with a dot is only used when adjusting the classes in CSS._
 
 #### More Information: 
-* <a href='https://getbootstrap.com/docs/4.0/components/buttons/' target='_blank' rel='nofollow'>Bootstrap Buttons documentation</a>
-* <a href='http://getbootstrap.com/docs/4.0/components/button-group/' target='_blank' rel='nofollow'>Bootstrap Button Group documentation</a>
-* [Bootstrap Get Started](/articles/bootstrap/bootstrap-get-started)
+* <a href='https://getbootstrap.com/docs/4.1/components/buttons/' target='_blank' rel='nofollow'>Bootstrap Buttons documentation</a>
+* <a href='https://getbootstrap.com/docs/4.1/components/button-group/' target='_blank' rel='nofollow'>Bootstrap Button Group documentation</a>

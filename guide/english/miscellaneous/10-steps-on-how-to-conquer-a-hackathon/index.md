@@ -42,4 +42,4 @@ Sometimes when you're caught in the middle of a bug you can't fix, or your team 
 
 10.  **Have fun!** 
 
-One my favorite quotes from an anonymous source is "If you're not having fun, you're doing it wrong". Make friends, step out of your comfort zone, enjoy the sleepless night, drink some caffeine, laugh when you get a bug, and try to fix it, and you'll remember the experience as a rewarding one.
+One of my favorite quotes from an anonymous source is "If you're not having fun, you're doing it wrong". Make friends, step out of your comfort zone, enjoy the sleepless night, drink some caffeine, laugh when you get a bug, and try to fix it, and you'll remember the experience as a rewarding one.

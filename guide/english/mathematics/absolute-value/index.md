@@ -3,7 +3,7 @@ title: Absolute Value
 ---
 ## Absolute Value
 
-Absolute value is the non-negative value of a number.
+Absolute value is the non-negative value of a number, whether that number is positive or negative.
 You can think of a number's absolute value as its distance from zero.
 It can be defined as,
 
@@ -40,6 +40,6 @@ Here you can see that in the graph of y = |x|, if -2 is input in to the function
 |-125| = 125
 
 #### More Information:
-<a href='http://www.purplemath.com/modules/absolute.htm "Absolute Value"' target='_blank' rel='nofollow'>Absolute Value</a>
+[Purplemath](https://www.purplemath.com/modules/absolute.htm)
 
 

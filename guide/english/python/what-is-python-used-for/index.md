@@ -20,11 +20,14 @@ Python is a very flexible language that can be used to automate boring or repeti
 ##### Artificial Intelligence:
 Python is also used extensively in the growing field of Artificial Intelligence (AI). Google selected Python to be one of the first well-supported programming languages for training and interacting with models using Tensorflow.
 
-#### Mobile app development:
+#### Mobile App development:
 Mobile apps and games can be created with python using Kivy, Pygame and PyQt.
 
-#### Security And Networking:
+#### Security and Networking:
 Python is used to build Networking tools and security-tools that are widely used.Python's remote automation is the most secured, fast and efficient for cloud-testing of frameworks, that's why professional developers use python for making most secured frameworks and for socket-programmings.
+
+##### Network Testing
+Python can be used in network testing for packet generation. Generation of different streams of traffic and traffic replay can be performed using Scapy. This can be particularly useful in generation of different types of packet streams like VoIP, video, data for QoS testing.
 
 ##### Machine Learning, Deep Learning:
 Python is one of the best languages suited for machine learning, deep learning and data analytics and is widely used in each area.
@@ -61,7 +64,8 @@ Here's a <a href='https://www.python.org/about/apps/' target='_blank' rel='nofol
 * Scraping data from websites
 * Image Processing
 
-## Why python has got such a wide range of usage?
+## Why Python has got such a wide range of usage?
+
 * Python  has got many packages to work with, some ranging for aerospace research to mathematics. 
 *Secondly for choosing to be a part of the open source community.
   Yes! Python is Open-source. 
@@ -70,12 +74,13 @@ Here's a <a href='https://www.python.org/about/apps/' target='_blank' rel='nofol
   * Python also supports Object-Oriented programming fashion.
   Thus these things add on for the popularity of Python in various communities.
 
-#### Some articles covering the usability of python
+#### Further Reading
 
 * <a href='http://www.dummies.com/programming/python/10-major-uses-of-python/' target='_blank' rel='nofollow'>10 Major Uses of Python</a>
 * <a href='https://www.python.org/about/apps/' target='_blank' rel='nofollow'>Applications for Python</a>
 * <a href='https://stackoverflow.com/questions/3043085/where-is-python-language-used' target='_blank' rel='nofollow'>Where is the Python Language Used?</a>
 * <a href='https://stackoverflow.com/questions/1909512/what-is-python-used-for' target='_blank' rel='nofollow'>What is Python used for?</a>
+* <a href='https://pythonprogramming.net/data-analysis-tutorials/' target='_blank' rel='nofollow'>Data Analysis using python with examples and tutorials.</a>
 
 
 The official package index for python is <a href='https://pypi.python.org/pypi' target='_blank' rel='nofollow'>here</a>.

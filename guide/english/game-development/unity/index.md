@@ -19,6 +19,8 @@ Additionally, Unity supports the low-level APIs Metal on iOS and macOS and Vulka
 
 For 3D games, Unity allows specification of texture compression and resolution settings for each platform that the game engine supports, and provides support for bump mapping, reflection mapping, parallax mapping, screen space ambient occlusion (SSAO), dynamic shadows using shadow maps, render-to-texture and full-screen post-processing effects.
 
+## Services and Platforms Supported
+
 Unity also offers services to developers, these are: Unity Ads, Unity Analytics, Unity Certification, Unity Cloud Build, Unity Everyplay, Unity IAP, Unity Multiplayer, Unity Performance Reporting and Unity Collaborate. Besides this, Unity has an asset store where the developer community can download and upload both commercial and free third party resources such as textures, models, plugins, editor extensions and even entire game examples.
 
 Unity is notable for its ability to target games for multiple platforms. The currently supported platforms are Android, Android TV, Facebook Gameroom, Fire OS, Gear VR, Google Cardboard, Google Daydream, HTC Vive, iOS, Linux, macOS, Microsoft HoloLens, Nintendo 3DS family, Nintendo Switch, Oculus Rift, PlayStation 4, PlayStation Vita, PlayStation VR, Samsung Smart TV, Tizen, tvOS, WebGL, Wii U, Windows, Windows Phone, Windows Store, and Xbox One.
@@ -30,14 +32,14 @@ Unity Technologies calls this bundling of a third-party SDK an "industry first".
 
 ![Unity Interface](https://github.com/pawelszpiczakowski/PublicStuff/raw/master/unityInterface.png)
 
-In picture above, you will notice five section:
+In picture above, you will notice five sections:
 1) Section 1. <b>Scene View</b>: This is where you will be creating level for your game, scene or 3D project. All of your Game Objects will be placed and manipulated right here.
 2) Section 2. <b>Game View</b>: This is where you will see your results, how your level or scene looks like. You need to have a Camera on the scene to see how it looks like. Sometimes its called Camera View.
 3) Section 3. <b>Hierarchy</b>: This window will display all Game Objects placed directly on the scene. Basically everything that you see in Game View, needs to be listed here. This will include non-visual and visual game objects.
 4) Section 4. <b>Project</b>: This is your project window. Basically it show whats inside Assets folder on your disk. Everything from Game Objects, Scripts, Textures, Folders, Models, Audio, Video and etc... will be accessible from this window.
 5) Section 5. <b>Inspector</b>: This panel will display different attributes and properties of selected Game Objects. Depending on the selection, the appropriate attributes and components will be listed.
 
-##  Noteworthy Games: 
+##  Noteworthy Games 
 * Assassin’s Creed: Identity
 * Temple Run Trilogy
 * Battlestar Galactica Online
