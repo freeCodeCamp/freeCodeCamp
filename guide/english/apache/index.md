@@ -7,7 +7,7 @@ The Apache HTTP Server, commonly known as Apache, is a free and open-source cros
 Apache runs on 67% of all webservers in the world. It is fast, reliable, and secure. It can be highly customized to meet the needs of many different environments by using extensions and modules
 
 
-### Installation
+## Installation
 
 #### On Ubuntu/Debian
 ```
@@ -27,6 +27,11 @@ sudo yum install httpd
 #### On Arch
 ```
 pacman -S apache
+```
+
+#### On macOS (Using Homebrew)
+```
+brew install httpd
 ```
 
 #### On Windows
