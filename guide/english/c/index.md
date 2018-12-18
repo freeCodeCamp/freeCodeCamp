@@ -49,7 +49,7 @@ int main(void)
 
 This code declares the main function. The main function is special - it will always get called exactly one time and is always the 'main' part of your program. If this isn't in your program, your program can't run and won't compile.
 
-Starting the function declaration with `int` means that this function will return an `int` or integer value when it compiles the code - it's this function's output. `int` is the 'integer' data type, and integers are whole numbers like -3, 0, or 18. So we know that this code will run, and when it's done, it will give us back an integer. By convention, the integer returned is `0` to signal to the operating system the program exited successfully.
+Starting the function declaration with `int` means that this function will return an `int` or integer value when it compiles the code - it's this function's output. `int` is the 'integer' data type, and integers are whole numbers like -3, 0, or 18. So we know that this code will run and, when it's done, it will give us back an integer. By convention, the integer returned is `0` to signal to the operating system the program exited successfully.
 
 Next is `main`. The `main` function is the parent where all the other elements and functions are it's children. `main` is followed by a list of arguments or inputs to the function, in our case there are none, so we denote it with `(void)`. This tells the compiler that this function doesn't take any arguments, meaning that it has no input.
 
