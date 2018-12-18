@@ -6,49 +6,47 @@ challengeType: 5
 
 ## Description
 <section id='description'>
-  <p>The <b>merge sort</b> is a recursive sort of order n*log(n).</p>
-  <p>It is notable for having a worst case and average complexity of <i>O(n*log(n))</i>, and a best case complexity of <i>O(n)</i>
-    (for pre-sorted input).</p>
-  <p>The basic idea is to split the collection into smaller groups by halving it until the groups only have one element
-    or no elements (which are both entirely sorted groups).</p>
-  <p>Then merge the groups back together so that their elements are in order.</p>
-  <p>This is how the algorithm gets its <i>divide and conquer</i> description.</p>
-  <p>Write a function to sort a collection of integers using the merge sort. The function should return the sorted array.</p>
-  <p>The merge sort algorithm comes in two parts:</p>
-  <p>a sort function and</p>
-  <p>a merge function</p>
-  <p>The functions in pseudocode look like this:</p>
-  <p><b>function</b> <i>mergesort</i>(m)</p>
-  <p><b>var</b> list left, right, result</p>
-  <p><b>if</b> length(m) ≤ 1</p>
-  <p><b>return</b> m</p>
-  <p><b>else</b></p>
-  <p><b>var</b> middle = length(m) / 2</p>
-  <p><b>for each</b> x <b>in</b> m <b>up to</b> middle - 1</p>
-  <p><b>add</b> x <b>to</b> left</p>
-  <p><b>for each</b> x <b>in</b> m <b>at and after</b> middle</p>
-  <p><b>add</b> x <b>to</b> right</p>
-  <p>left = mergesort(left)</p>
-  <p>right = mergesort(right)</p>
-  <p><b>if</b> last(left) ≤ first(right)</p>
-  <p><b>append</b> right <b>to</b> left</p>
-  <p><b>return</b> left</p>
-  <p>result = merge(left, right)</p>
-  <p><b>return</b> result</p>
-  <p><b>function</b> <i>merge</i>(left,right)</p>
-  <p><b>var</b> list result</p>
-  <p><b>while</b> length(left) > 0 and length(right) > 0</p>
-  <p><b>if</b> first(left) ≤ first(right)</p>
-  <p><b>append</b> first(left) <b>to</b> result</p>
-  <p>left = rest(left)</p>
-  <p><b>else</b></p>
-  <p><b>append</b> first(right) <b>to</b> result</p>
-  <p>right = rest(right)</p>
-  <p><b>if</b> length(left) > 0</p>
-  <p><b>append</b> rest(left) <b>to</b> result</p>
-  <p><b>if</b> length(right) > 0</p>
-  <p><b>append</b> rest(right) <b>to</b> result</p>
-  <p><b>return</b> result</p>
+The <b>merge sort</b> is a recursive sort of order n*log(n).
+It is notable for having a worst case and average complexity of <i>O(n*log(n))</i>, and a best case complexity of <i>O(n)</i> (for pre-sorted input).
+The basic idea is to split the collection into smaller groups by halving it until the groups only have one element or no elements (which are both entirely sorted groups).
+Then merge the groups back together so that their elements are in order.
+This is how the algorithm gets its <i>divide and conquer</i> description.
+Write a function to sort a collection of integers using the merge sort. The function should return the sorted array.
+The merge sort algorithm comes in two parts: a sort function and a merge function
+The functions in pseudocode look like this:
+<pre>
+<b>function</b> <i>mergesort</i>(m)
+  <b>var</b> list left, right, result
+  <b>if</b> length(m) ≤ 1
+    <b>return</b> m
+  <b>else</b>
+    <b>var</b> middle = length(m) / 2
+    <b>for each</b> x <b>in</b> m <b>up to</b> middle - 1
+      <b>add</b> x <b>to</b> left
+    <b>for each</b> x <b>in</b> m <b>at and after</b> middle
+      <b>add</b> x <b>to</b> right
+    left = mergesort(left)
+    right = mergesort(right)
+    <b>if</b> last(left) ≤ first(right)
+      <b>append</b> right <b>to</b> left
+      <b>return</b> left
+    result = merge(left, right)
+    <b>return</b> result<br>
+<b>function</b> <i>merge</i>(left,right)
+  <b>var</b> list result
+  <b>while</b> length(left) > 0 and length(right) > 0
+    <b>if</b> first(left) ≤ first(right)
+      <b>append</b> first(left) <b>to</b> result
+      left = rest(left)
+    <b>else</b>
+      <b>append</b> first(right) <b>to</b> result
+      right = rest(right)
+    <b>if</b> length(left) > 0
+      <b>append</b> rest(left) <b>to</b> result
+    <b>if</b> length(right) > 0
+      <b>append</b> rest(right) <b>to</b> result
+    <b>return</b> result
+</pre>
 </section>
 
 ## Instructions
