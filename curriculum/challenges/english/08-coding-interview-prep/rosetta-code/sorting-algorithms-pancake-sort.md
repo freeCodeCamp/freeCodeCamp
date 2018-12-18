@@ -6,17 +6,15 @@ challengeType: 5
 
 ## Description
 <section id='description'>
-  <p>Write a function to sort an array of integers (of any convenient size) into ascending order using <a href="https://en.wikipedia.org/wiki/Pancake sorting">Pancake
-      sorting</a>. The function should return the sorted array.</p>
-  <p>In short, instead of individual elements being sorted, the only operation allowed is to "flip" one end of the list,
-    like so:</p>
-  <p>Before:</p>
-  <p><b>6 7 8 9</b> 2 5 3 4 1</p>
-  <p>After:</p>
-  <p><b>9 8 7 6</b> 2 5 3 4 1</p>
-  <p>Only one end of the list can be flipped; this should be the low end, but the high end is okay if it's easier to code
-    or works better, but it <b>must</b> be the same end for the entire solution. (The end flipped can't be arbitrarily
-    changed.)</p>
+Write a function to sort an array of integers (of any convenient size) into ascending order using <a href="https://en.wikipedia.org/wiki/Pancake sorting">Pancake sorting</a>. The function should return the sorted array.
+In short, instead of individual elements being sorted, the only operation allowed is to "flip" one end of the list, like so:
+<pre>
+Before:
+<b>6 7 8 9</b> 2 5 3 4 1
+After:
+<b>9 8 7 6</b> 2 5 3 4 1
+</pre>
+Only one end of the list can be flipped; this should be the low end, but the high end is okay if it's easier to code or works better, but it <b>must</b> be the same end for the entire solution. (The end flipped can't be arbitrarily changed.)
 </section>
 
 ## Instructions
