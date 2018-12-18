@@ -1,8 +1,8 @@
 ---
 title: Android Development
-localeTitle: Android开发
+localeTitle: Android安卓开发
 ---
-# Android开发
+# Android安卓开发
 
 Android应用程序可以成为进入编程世界的一种有趣的方式。官方程序员可以使用Java，Kotlin或C ++为Android开发，虽然可能存在API限制，但使用工具，开发人员可以使用大量语言，包括JavaScript，C或汇编，并且可能性无穷无尽。
 
