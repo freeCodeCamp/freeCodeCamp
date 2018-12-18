@@ -6,51 +6,53 @@ challengeType: 5
 
 ## Description
 <section id='description'>
-  <p><a href="https://en.wikipedia.org/wiki/Heapsort">Heapsort</a> is an in-place sorting algorithm with worst case and
-    average complexity of <span style="font-family: serif">O(<i>n</i> log<i>n</i>)</span>.</p>
-  <p>The basic idea is to turn the array into a binary heap structure, which has the property that it allows efficient
-    retrieval and removal of the maximal element.</p>
-  <p>We repeatedly "remove" the maximal element from the heap, thus building the sorted list from back to front.</p>
-  <p>Heapsort requires random access, so can only be used on an array-like data structure.</p>
-  <p>Pseudocode:</p>
-  <p><b>function</b> heapSort(a, count) <b>is</b></p>
-  <p><b>input:</b> an unordered array <i>a</i> of length <i>count</i></p>
-  <p><span style="color: grey"><i>(first place a in max-heap order)</i></span></p>
-  <p>heapify(a, count)</p>
-  <p>end := count - 1</p>
-  <p><b>while</b> end > 0 <b>do</b></p>
-  <p><span style="color: grey"><i>(swap the root(maximum value) of the heap with the</i></p>
-  <p><i>last element of the heap)</i></span></p>
-  <p>swap(a[end], a[0])</p>
-  <p><span style="color: grey"><i>(decrement the size of the heap so that the previous</i></p>
-  <p><i>max value will stay in its proper place)</i></span></p>
-  <p>end := end - 1</p>
-  <p><span style="color: grey"><i>(put the heap back in max-heap order)</i></span></p>
-  <p>siftDown(a, 0, end)</p>
-  <p><b>function</b> heapify(a,count) <b>is</b></p>
-  <p><span style="color: grey"><i>(start is assigned the index in </i>a<i> of the last parent node)</i></span></p>
-  <p>start := (count - 2) / 2</p>
-  <p><b>while</b> start ≥ 0 <b>do</b></p>
-  <p><span style="color: grey"><i>(sift down the node at index start to the proper place</i></p>
-  <p><i>such that all nodes below the start index are in heap</i></p>
-  <p><i>order)</i></span></p>
-  <p>siftDown(a, start, count-1)</p>
-  <p>start := start - 1</p>
-  <p><span style="color: grey"><i>(after sifting down the root all nodes/elements are in heap order)</i></span></p>
-  <p><b>function</b> siftDown(a, start, end) <b>is</b></p>
-  <p><span style="color: grey"><i>(</i>end<i> represents the limit of how far down the heap to sift)</i></span></p>
-  <p>root := start</p>
-  <p><b>while</b> root * 2 + 1 ≤ end <b>do</b> <span style="color: grey"><i>(While the root has at least one child)</i></span></p>
-  <p>child := root * 2 + 1 <span style="color: grey"><i>(root*2+1 points to the left child)</i></span></p>
-  <p><span style="color: grey"><i>(If the child has a sibling and the child's value is less than its sibling's...)</i></span></p>
-  <p><b>if</b> child + 1 ≤ end <b>and</b> a[child] < a[child + 1] <b>then</b></p>
-  <p>child := child + 1 <span style="color: grey"><i>(... then point to the right child instead)</i></span></p>
-  <p><b>if</b> a[root] < a[child] <b>then</b> <span style="color: grey"><i>(out of max-heap order)</i></span></p>
-  <p>swap(a[root], a[child])</p>
-  <p>root := child <span style="color: grey"><i>(repeat to continue sifting down the child now)</i></span></p>
-  <p><b>else</b></p>
-  <p><b>return</b></p>
-  <p>Write a function to sort a collection of integers using heapsort.</p>
+<a href="https://en.wikipedia.org/wiki/Heapsort">Heapsort</a> is an in-place sorting algorithm with worst case and average complexity of <span style="font-family: serif">O(<i>n</i> log<i>n</i>)</span>.
+The basic idea is to turn the array into a binary heap structure, which has the property that it allows efficient retrieval and removal of the maximal element.
+We repeatedly "remove" the maximal element from the heap, thus building the sorted list from back to front.
+Heapsort requires random access, so can only be used on an array-like data structure.
+Pseudocode:
+<pre>
+<b>function</b> heapSort(a, count) <b>is</b>
+  <b>input:</b> an unordered array <i>a</i> of length <i>count</i><br>
+  <span style="color: grey"><i>(first place a in max-heap order)</i></span>
+  heapify(a, count)<br>
+  end := count - 1
+  <b>while</b> end > 0 <b>do</b>
+    <span style="color: grey"><i>(swap the root(maximum value) of the heap with the</i>
+    <i>last element of the heap)</i></span>
+    swap(a[end], a[0])
+    <span style="color: grey"><i>(decrement the size of the heap so that the previous</i>
+    <i>max value will stay in its proper place)</i></span>
+    end := end - 1
+    <span style="color: grey"><i>(put the heap back in max-heap order)</i></span>
+    siftDown(a, 0, end)
+</pre>
+<pre>
+<b>function</b> heapify(a,count) <b>is</b>
+  <span style="color: grey"><i>(start is assigned the index in </i>a<i> of the last parent node)</i></span>
+  start := (count - 2) / 2<br>
+  <b>while</b> start ≥ 0 <b>do</b>
+    <span style="color: grey"><i>(sift down the node at index start to the proper place</i>
+    <i>such that all nodes below the start index are in heap</i>
+    <i>order)</i></span>
+    siftDown(a, start, count-1)
+    start := start - 1
+  <span style="color: grey"><i>(after sifting down the root all nodes/elements are in heap order)</i></span><br>
+<b>function</b> siftDown(a, start, end) <b>is</b>
+  <span style="color: grey"><i>(</i>end<i> represents the limit of how far down the heap to sift)</i></span>
+  root := start<br>
+  <b>while</b> root * 2 + 1 ≤ end <b>do</b> <span style="color: grey"><i>(While the root has at least one child)</i></span>
+    child := root * 2 + 1 <span style="color: grey"><i>(root*2+1 points to the left child)</i></span>
+    <span style="color: grey"><i>(If the child has a sibling and the child's value is less than its sibling's...)</i></span>
+    <b>if</b> child + 1 ≤ end <b>and</b> a[child] < a[child + 1] <b>then</b>
+      child := child + 1 <span style="color: grey"><i>(... then point to the right child instead)</i></span>
+    <b>if</b> a[root] < a[child] <b>then</b> <span style="color: grey"><i>(out of max-heap order)</i></span>
+      swap(a[root], a[child])
+      root := child <span style="color: grey"><i>(repeat to continue sifting down the child now)</i></span>
+    <b>else</b>
+      <b>return</b>
+</pre>
+Write a function to sort a collection of integers using heapsort.
 </section>
 
 ## Instructions
