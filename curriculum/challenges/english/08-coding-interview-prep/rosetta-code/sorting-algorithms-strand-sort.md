@@ -6,9 +6,8 @@ challengeType: 5
 
 ## Description
 <section id='description'>
-  <p>Write a function to sort an array using the <a href="https://en.wikipedia.org/wiki/Strand sort">Strand sort</a>. The
-    function should return the sorted array.</p>
-  <p>This is a way of sorting numbers by extracting shorter sequences of already sorted numbers from an unsorted list.</p>
+Write a function to sort an array using the <a href="https://en.wikipedia.org/wiki/Strand sort">Strand sort</a>. The function should return the sorted array.
+This is a way of sorting numbers by extracting shorter sequences of already sorted numbers from an unsorted list.
 </section>
 
 ## Instructions
