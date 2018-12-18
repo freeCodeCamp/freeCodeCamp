@@ -45,6 +45,11 @@ df.tail()
 ```
 This will show the last 5 rows of the data frame.
 
+To see the data types of each column in your dataframe, use the 'dtypes' method:
+```python
+df.dtypes()
+```
+
 To show descriptive statistics, such as the shape and central tendency of the dataset, the `describe` method can be used:
 ```python
 df.describe()
