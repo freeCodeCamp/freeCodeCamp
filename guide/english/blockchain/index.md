@@ -28,6 +28,8 @@ The words block and chain were used separately in Satoshi Nakamoto's original pa
 
 As of 2016, blockchain 2.0 implementations continue to require an off-chain oracle to access any "external data or events based on time or market conditions to interact with the blockchain."
 
+In May 2018, Gartner found that only 1% of CIOs indicated any kind of blockchain adoption within their organisations, and only 8% of CIOs were in the short-term planning or [looking at] active experimentation with blockchain.
+
 ## Types of Blockchains
 Blockchains can be broadly classified into two categories -
 1. Permissionless, public blockchains - these are not controlled by any single company or person. The blockchain is accessible to anyone to participate in. Bitcoin and Ethereum are examples of permissionless blockchains. Consensus is arrived at by participating miner nodes in the network, who perform certain actions (Proof-of-Work) and are rewarded for helping to maintain the state of the distributed ledger. Anyone interested can become a miner and participate in the consensus building process. 
