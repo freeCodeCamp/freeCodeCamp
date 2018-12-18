@@ -7,6 +7,16 @@ title: pandas
 ## pandas
 [pandas](http://pandas.pydata.org/) is a Python library for data analysis using data frames. The name `pandas` comes from *panel data*, i.e. a multi-dimensional data measured over time. Data frames are tables of data, which may conceptually be compared to a spreadsheet. Data scientists familiar with R will feel at home here. pandas is often used along with numpy, scipy, pyplot, seaborn and scikit-learn.
 
+### Installing pandas
+#### Installing via Anaconda (__Recommended__):
+Pandas and the other Data Science Stack (Scipy, Numpy, Scikit, etc) are included when installing Anaconda. For more information about installing Anaconda, please refer to this [site](http://docs.continuum.io/anaconda/install/).
+
+#### Installing via pip:
+If you want to install pandas using default python package manager (pip), here is the command:
+```
+pip install pandas
+```
+
 ### Importing pandas
 It is a widely used convention to import the pandas library using the alias `pd`:
 ```python
