@@ -8,9 +8,9 @@ Their purpose is supporting Apache software projects under Apache license.
 
 ## Apache HTTP Server
 
-The Apache HTTP Server, commonly known as Apache, is a free and open-source cross-platform web server, released under the terms of [Apache License 2.0](https://en.wikipedia.org/wiki/Apache_License). Apache is developed and maintained by an open community of developers under the auspices of the Apache Software Foundation.
-Apache runs on 67% of all webservers in the world. It is fast, reliable, and secure. It can be highly customized to meet the needs of many different environments by using extensions and modules.
+The Apache HTTP Server, commonly known as Apache, is a free and open-source cross-platform web server, released under the terms of [Apache License 2.0](https://en.wikipedia.org/wiki/Apache_License). Apache is developed and maintained by an open community of developers under the auspices of the [Apache Software Foundation](http://www.apache.org/).
 
+Apache runs on 67% of all webservers in the world. It is fast, reliable, and secure. It can be highly customized to meet the needs of many different environments by using extensions and modules.
 
 ## Installation
 
@@ -105,3 +105,6 @@ You can copy the `default.conf` and modify accordingly in the following director
 
 ### Getting Started Guides
 - [Getting Started with Apache HTTP Server Version 2.5](https://httpd.apache.org/docs/trunk/getting-started.html)
+
+### Documentation
+- [Apache HTTP Server Documentation](http://httpd.apache.org/docs/)
