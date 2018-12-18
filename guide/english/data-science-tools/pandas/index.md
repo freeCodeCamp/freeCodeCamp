@@ -5,7 +5,7 @@ title: pandas
 ![Everybody loves pandas!](https://pandas.pydata.org/_static/pandas_logo.png "pandas")
 
 ## pandas
-[pandas](http://pandas.pydata.org/) is a Python library for data analysis using data frames. Data frames are tables of data, which may conceptually be compared to a spreadsheet. Data scientists familiar with R will feel at home here. pandas is often used along with numpy, pyplot, and scikit-learn.
+[pandas](http://pandas.pydata.org/) is a Python library for data analysis using data frames. The name `pandas` comes from *panel data*, i.e. a multi-dimensional data measured over time. Data frames are tables of data, which may conceptually be compared to a spreadsheet. Data scientists familiar with R will feel at home here. pandas is often used along with numpy, scipy, pyplot, seaborn and scikit-learn.
 
 ### Importing pandas
 It is a widely used convention to import the pandas library using the alias `pd`:
