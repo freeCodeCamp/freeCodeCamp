@@ -26,7 +26,7 @@ df = pd.read_csv(file_path)
 ```
 Here, `file_path` can be a local path to a csv file on you computer, or an url pointing to one. The column names may be included in the csv file, or may be passed as an argument. For more on this, and much more, take a look at the [documentation](http://pandas.pydata.org/pandas-docs/stable/generated/pandas.read_csv.html?highlight=read_csv#pandas.read_csv).
 
-## Getting an overview of a data frame
+## Getting an Overview of a Data Frame
 To show the first few rows of a data frame, the `head` method is useful (once more this should sound familiar to R programmers):
 ```python
 df.head()
@@ -80,6 +80,17 @@ Descriptive statistics can be performed on each column of a pandas dataframe.
 Get the mean of the values for the requested axis
 ```python
 mean = df.mean()
+```
+
+### Visualizing the Data in the Dataframe
+To visualize the data in the dataframe, we can use matplotlib library. Here's how to use it:
+The below code will setup matplotlib inline in your Jupyter notebook. set the style to be 'ggplot', one of the many styles available in matplotlib. and plot a histogram of a given ColumnName from the dataframe
+
+```python
+%matplotlib inline
+import matplotlib
+matplotlib.style.use('ggplot')
+df['ColumnName'].plot.hist()
 ```
 
 #### More Information:
