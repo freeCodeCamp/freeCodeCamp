@@ -61,7 +61,22 @@ The `-R` flag will cause grep to search recursively through the `/etc` directory
 /etc/httpd/conf/httpd.conf  DocumentRoot /var/www/html
 ```
 
-## Basic Configuration 
+## Features
+
+Apache supports a variety of features, many implemented as compiled modules which extend the core functionality. These can range from authentication schemes to supporting server-side programming languages such as Perl, Python, Tcl and PHP. Popular authentication modules include mod_access, mod_auth, mod_digest, and mod_auth_digest, the successor to mod_digest. A sample of other features include Secure Sockets Layer and Transport Layer Security support (mod_ssl), a proxy module (mod_proxy), a URL rewriting module (mod_rewrite), custom log files (mod_log_config), and filtering support (mod_include and mod_ext_filter).
+
+Popular compression methods on Apache include the external extension module, mod_gzip, implemented to help with reduction of the size (weight) of Web pages served over HTTP. ModSecurity is an open source intrusion detection and prevention engine for Web applications. Apache logs can be analyzed through a Web browser using free scripts, such as AWStats/W3Perl or Visitors.
+
+Virtual hosting allows one Apache installation to serve many different Web sites. For example, one computer with one Apache installation could simultaneously serve www.example.com, www.example.org, test47.test-server.example.edu, etc.
+
+Apache features configurable error messages, DBMS-based authentication databases, content negotiation and supports several graphical user interfaces (GUIs).
+
+It supports password authentication and digital certificate authentication. Because the source code is freely available, anyone can adapt the server for specific needs, and there is a large public library of Apache add-ons.
+
+
+## Basic Configuration
+
+### Virtual Hosts
 If you want to host multiple domains on a single server, you can configure Virtual Hosts in Apache.
 
 You can copy the `default.conf` and modify accordingly in the following directory:
