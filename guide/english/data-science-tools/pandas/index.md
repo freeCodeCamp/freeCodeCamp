@@ -206,6 +206,17 @@ df['col1'].apply(len)
 del df['col1']
 ```
 
+## Checking for missing values
+ ```df.isnull()```
+It wil return a Boolean value telling you whether it’s a missing value.
+
+## Getting rid of missing data points
+```pd.dropna()```
+This will drop all rows that have any missing values.
+
+
+
+
 #### More Information:
 1. [pandas](http://pandas.pydata.org/)
 2. [read_csv](http://pandas.pydata.org/pandas-docs/stable/generated/pandas.read_csv.html?highlight=read_csv#pandas.read_csv)
