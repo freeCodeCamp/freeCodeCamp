@@ -5,14 +5,15 @@ import {
   map,
   toArray,
   delay,
-  switchMap,
+  mergeMap,
   timeout,
   catchError
 } from 'rxjs/operators';
-import { ShallowWrapper, ReactWrapper } from 'enzyme';
+import { configure, shallow, mount } from 'enzyme';
 import Adapter16 from 'enzyme-adapter-react-16';
+import { setConfig } from 'react-hot-loader';
+
 import { isJSEnabledSelector } from '../redux';
-import 'chai';
 
 // we use two different frames to make them all essentially pure functions
 // main iframe is responsible rendering the preview and is where we proxy the
@@ -45,7 +46,12 @@ const createHeader = (id = mainId) => `
 export const runTestsInTestFrame = (document, tests) =>
   defer(() => {
     const { contentDocument: frame } = document.getElementById(testId);
-    return frame.__runTests(tests);
+    // Enable Stateless Functional Component. Otherwise, enzyme-adapter-react-16
+    // does not work correctly.
+    setConfig({ pureSFC: true });
+    return frame
+      .__runTests(tests)
+      .pipe(tap(() => setConfig({ pureSFC: false })));
   });
 
 const createFrame = (document, state, id) => ctx => {
@@ -91,7 +97,7 @@ const addDepsToDocument = ctx => {
       map,
       toArray,
       delay,
-      switchMap,
+      mergeMap,
       timeout,
       catchError
     },
@@ -120,18 +126,8 @@ const writeTestDepsToDocument = frameReady => ctx => {
   // add enzyme
   // TODO: do programatically
   // TODO: webpack lazyload this
-  ctx.document.Enzyme = {
-    shallow: (node, options) =>
-      new ShallowWrapper(node, null, {
-        ...options,
-        adapter: new Adapter16()
-      }),
-    mount: (node, options) =>
-      new ReactWrapper(node, null, {
-        ...options,
-        adapter: new Adapter16()
-      })
-  };
+  configure({ adapter: new Adapter16() });
+  ctx.document.Enzyme = { shallow, mount };
   // default for classic challenges
   // should not be used for modern
   ctx.document.__source = sources && 'index' in sources ? sources['index'] : '';

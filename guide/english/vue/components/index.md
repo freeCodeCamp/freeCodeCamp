@@ -11,7 +11,7 @@ this feature with Components.
 
 Suppose you're developing a landing page for your company's product and you need
 to display the 4 main features of it following the same structure of a card-like
-object, with a icon, a title and a short description.
+object, with an icon, a title and a short description.
 
 ```javascript
 Vue.component('feature-card', {
@@ -41,6 +41,7 @@ you want to bind some attribute to a variable, you can prepend a `:` to the
 attribute name instead of using the full form `v-bind`.
 
 With this code, we did a lot of new things:
+
 * we created a new component called `feature-card`
 * we defined `feature-card` default **structure** with the `template` attribute
 * we opened a list of properties that that component accept with the `props`
@@ -62,7 +63,7 @@ can just reference it by using as a tag. In our example, we can use the tag
 ```
 
 In this case, we called the `<feature-card>` as it was an existing tag, as well
-as we setted `iconSrc` or `featureTitle` as they were valid attributes. And the
+as we set `iconSrc` or `featureTitle` as they were valid attributes. And the
 purpose of Vue.js components is this: increment your toolbox with your own
 tools.
 
@@ -76,11 +77,42 @@ Vue.component('feature-card', {
   template: '<h3>{{ title }}</h3>'
 })
 ```
+
 A component can have as many props as you’d like and by default, any value can be passed to any prop. In the template above, you’ll see that we can access this value on the component instance, just like with data.
 
 Once a prop is registered, you can pass data to it as a custom attribute, like this:
+
 ```html
 <blog-post title="My journey with Vue"></blog-post>
 <blog-post title="Blogging with Vue"></blog-post>
 <blog-post title="Why Vue is so fun"></blog-post>
+```
+
+### Single File Components
+
+Instead of declaring many components in a single file resulting in a long spaghetti code. You may want to modularize your components by having different files. (ie. more info: [Single File Components](https://vuejs.org/v2/guide/single-file-components.html))
+
+Enclose your template in a `<template>` tag, script the structure of the component in the `<script>` tag and style your components in the `<style scoped>` tag.
+
+```html
+<template>
+  <p>{{ greeting }} World!</p>
+</template>
+
+<script>
+module.exports = {
+  data: function () {
+    return {
+      greeting: 'Hello'
+    }
+  }
+}
+</script>
+
+<style scoped>
+p {
+  font-size: 2em;
+  text-align: center;
+}
+</style>
 ```
