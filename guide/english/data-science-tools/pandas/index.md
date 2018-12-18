@@ -119,6 +119,15 @@ Another option for subsetting a dataframe is using the loc and iloc methods. The
 ages = df.loc["age"]
 ```
 
+Instead of passing only one column name inside the brackets, we can pass a List of column names. The return value is a DataFrame.
+```python
+person_info = df[["name","age","address"]]
+```
+The `person_info` variable is a reference to the original `df`. If you want to make a clone that does not reference the original, simply use the `copy` method:
+```python
+person_info = df[["name","age","address"]].copy()
+```
+
 ### Basic Statistics
 Descriptive statistics can be performed on each column of a pandas dataframe. 
 
@@ -163,10 +172,9 @@ left = pd.DataFrame({'A': ['A0', 'A1', 'A2'],
                       index=['K0', 'K1', 'K2']) 
 
 right = pd.DataFrame({'C': ['C0', 'C2', 'C3'],
-                    'D': ['D0', 'D2', 'D3']},
+                      'D': ['D0', 'D2', 'D3']},
                       index=['K0', 'K2', 'K3'])
 ```
-
 
 ```python
 left.join(right)
@@ -213,9 +221,6 @@ It wil return a Boolean value telling you whether it’s a missing value.
 ## Getting rid of missing data points
 ```pd.dropna()```
 This will drop all rows that have any missing values.
-
-
-
 
 #### More Information:
 1. [pandas](http://pandas.pydata.org/)
