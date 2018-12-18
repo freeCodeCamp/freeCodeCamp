@@ -166,7 +166,7 @@ This starts by taking a string (something you'll learn about when you get into a
 ### Const Qualifer
 The qualifier const can be applied to the declaration of any variable to specify that its value will not be changed ( Which depends upon where const variables are stored, we may change value of const variable by using pointer ).
 
-# Pointer to variable
+### Pointer to variable
 We can change the value of ptr and we can also change the value of object ptr pointing to.
 Following code fragment explains pointer to variable
 ```c
@@ -189,7 +189,7 @@ int main(void)
     return 0;
 }
 ```
-# Pointer to constant
+### Pointer to constant
 We can change pointer to point to any other integer variable, but cannot change value of object (entity) pointed using pointer ptr.
 ```c
 #include <stdio.h> 
@@ -209,7 +209,7 @@ int main(void)
     return 0;
 }
 ```
-# Constant pointer to variable
+### Constant pointer to variable
 In this we can change the value of the variable the pointer is pointing to. But we can't change the pointer to point to 
 another variable.
 ```c
@@ -229,7 +229,7 @@ int main(void)
    return 0;
 }
 ```
-# constant pointer to constant
+### Constant pointer to constant
 Above declaration is constant pointer to constant variable which means we cannot change value pointed by pointer as well as we cannot point the pointer to other variable.
 ```c
 #include <stdio.h>
@@ -248,6 +248,66 @@ int main(void)
     return 0;
 }
 ```
+
+
+## Null Pointer
+Consider following line 
+```c
+int  *p;
+```
+We have created a pointer which contain garbage value. If we try to dereference it, we will read the value stored at the garbage address and this can lead to unexpected results, such as segmentation fault. Hence we should never leave a pointer uninitialized and instead initialize it to NULL, to avoid unexpected results.
+```c
+int *p = NULL; // NULL is a constant with value 0
+int *q = 0; // same as above
+```
+
+
+### Void Pointer
+A void pointer is a pointer variable declared using the reserved word in C ‘void’.
+Lets illustrate this with a void pointer declaration below:
+```C
+void  *ptr;
+```
+A pointer variable with the keyword `void`is a general purpose pointer variable. 
+The pointer can hold an address of any variable of any data type (`int`, `char`...etc).
+
+As illustrated earlier on, the * operator serves its own purpose.
+But in the case of a void pointer we need to typecast the pointer variable to dereference it mainly because a void pointer has no specific data type associated with it. 
+There is no other way the compiler can tell what type of data is pointed to by the void pointer. 
+So to take the data pointed to by a void pointer we typecast it with the correct type of the data that is held inside the void pointer's location. 
+
+Below is an example to illustrate how a void pointer coild be used in a program:
+
+```C
+#include<stdio.h>
+
+void main() {
+    int a = 10;
+    float b = 35.75;
+    void *ptr; // Declaration of a void pointer
+    ptr = &a; // Assigning address of integer to void pointer.
+    printf("The value of integer variable is = %d",*( (int*) ptr) );// (int*)ptr - is ype typecasting, to point to an int type. Where as *((int*)ptr) dereferences the typecasted void pointer variable.
+}
+```
+The output becomes
+```output
+The value of integer variable is = 10
+```
+
+A void pointer can be useful if the programmer is not sure about the data type of data inputted by the end user. 
+In such a case the programmer can use a void pointer to point to the location of the unknown data type. 
+The program can be set in such a way to ask the user to inform the type of data and type casting can be performed according to the information inputted by the user.
+
+Another important point you should keep in mind about void pointers is that pointer arithmetic can not be performed in a void pointer. 
+
+Example:
+```C
+    void *ptr;
+    int a;
+    ptr=&a;
+    ptr++; // This statement is invalid and will result in an error because 'ptr' is a void pointer variable.
+```
+Credits: <http://www.circuitstoday.com/void-pointers-in-c>
 
 # Before you go on...
 ## A review
@@ -274,12 +334,11 @@ Most of the time, pointer and array accesses can be treated as acting the same, 
 ```c
     int a[10];
     int *p; 
-    p = a; /*legal*/
-    a = p; /*illegal*/ 
+    p = a; /*legal, pointer p, points the starting memory address of array a that is a[0]*/
+    a = p; /*illegal, a is not an individual variable*/ 
 ```
 5) Arithmetic on pointer variable is allowed.
 ```c
-    p++; /*Legal*/
+    p++; /*Legal, p points the next memory address*/
     a++; /*illegal*/ 
 ```
-

@@ -45,13 +45,37 @@ df.tail()
 ```
 This will show the last 5 rows of the data frame.
 
-## Subsetting: Getting a column by name
+To see the data types of each column in your dataframe, use the 'dtypes' method:
+```python
+df.dtypes()
+```
+
+To show descriptive statistics, such as the shape and central tendency of the dataset, the `describe` method can be used:
+```python
+df.describe()
+```
+This will show the `count`, `mean`, `std`, `min`, `max` among others for numeric data.
+
+## Subsetting
 A data frame can be subset in many ways. One of the simplest is getting a single column. For instance, if the data frame `df` contains a column named `age`, we can extract it as follows:
 ```python
-ages=df["age"]
+ages = df["age"]
+```
+This will return what's called a pandas series. 
+
+We can also extract a list of columns from the data frame. For instance, if the data frame contains columns `name`, `age` and `address`, we can get the `name` and `age` as follows:
+```python
+details = df[["name", "age"]]
+```
+This will return a data frame only, and not a series.
+
+Another option for subsetting a dataframe is using the loc and iloc methods. The difference between loc and iloc is that loc searches based on a label and iloc searches based on the integer value of a row or column. To perform the same indexing as the above example using loc:
+```python
+ages = df.loc["age"]
 ```
 
 #### More Information:
 1. [pandas](http://pandas.pydata.org/)
 2. [read_csv](http://pandas.pydata.org/pandas-docs/stable/generated/pandas.read_csv.html?highlight=read_csv#pandas.read_csv)
 3. [head](http://pandas.pydata.org/pandas-docs/stable/generated/pandas.DataFrame.head.html?highlight=head#pandas.DataFrame.head)
+4. [Introduction to Pandas](https://youtu.be/lkLl_QKLgcA)
