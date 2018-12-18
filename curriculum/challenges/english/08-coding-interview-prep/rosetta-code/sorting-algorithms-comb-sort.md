@@ -7,26 +7,19 @@ challengeType: 5
 ## Description
 <section id='description'>
 Implement a <i>comb sort</i>.
-
 The <b>Comb Sort</b> is a variant of the <a href="http://rosettacode.org/wiki/Bubble Sort">Bubble Sort</a>.
-
 Like the <a href="http://rosettacode.org/wiki/Shell sort">Shell sort</a>, the Comb Sort increases the gap used in comparisons and exchanges.
-
 Dividing the gap by $(1-e^{-\varphi})^{-1} \approx 1.247330950103979$ works best, but 1.3 may be more practical.
-
 Some implementations use the insertion sort once the gap is less than a certain amount.
-
 <b>Also see</b>
 <ul>
   <li>the Wikipedia article: <a href="https://en.wikipedia.org/wiki/Comb sort">Comb sort</a>.</li>
 </ul>
-
 Variants:
 <ul>
   <li>Combsort11 makes sure the gap ends in (11, 8, 6, 4, 3, 2, 1), which is significantly faster than the other two possible endings.</li>
   <li>Combsort with different endings changes to a more efficient sort when the data is almost sorted (when the gap is small). Comb sort with a low gap isn't much better than the Bubble Sort.</li>
 </ul>
-
 Pseudocode:
 <pre>
 <b>function</b> combsort(<b>array</b> input)
@@ -52,7 +45,6 @@ Pseudocode:
   <b>end loop</b>
 <b>end function</b>
 </pre>
-
 Write a function that sorts a given array using Comb sort.
 </section>
 
