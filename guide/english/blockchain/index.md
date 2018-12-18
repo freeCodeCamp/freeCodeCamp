@@ -3,6 +3,51 @@ title: Blockchain
 ---
 
 # Blockchain
+
+## Introduction
+If you want to know what is a Blockchain but have no understanding of the technology, then this is for you, my friend!
+
+Blockchain is a new technology that is able to resolve many modern problems including money transfer, a difficult problem indeed.
+
+But let’s study what a blockchain really does for us.
+
+![What Blockchain means](https://cdn-images-1.medium.com/max/800/0*QKJVQSLjey6I1pdU.png)
+
+Looking at the above example, Andi wishes to transfer some form of valuable data to his manager, Kevin.
+
+- Andi passes the data to Kevin
+- Andi’s transaction to Kevin is logged within his blockchain ledger
+- On the receiving end (Kevin’s), the ledger is also updated with the transaction which Andi just made
+
+Hence you could understand that there are two duplicate copies of the exact transaction Andi just made. But hey, this is a very simple overview. Now, let’s go in depth.
+
+In an actual scenario, Andi won’t be able to transfer ‘whatever data‘ directly to Kevin.  He would instead go through a series of networks (which contains nodes of the blockchain - individuals like Andi and Kevin) just to transfer the data.
+
+This is what it looks like:
+
+![How Blockchain Works Like?](https://cdn-images-1.medium.com/max/800/0*ywNY7Z4nnxMpx5Ae.png)
+
+Essentially, for Andi to transfer any form of data, this is the process:
+
+- Andi passes the data to the next node after his Andi’s transaction to Kevin is logged within his blockchain ledger
+- The next node’s ledger is also updated with the transaction which Andi just made
+- This continues until the data is received by Kevin and also updated in Kevin’s ledger
+
+Simple, isn’t it?
+
+Well, now let’s move on in understanding on the construction of the blocks in a blockchain.
+
+![construction of blocks within blockchain](https://cdn-images-1.medium.com/max/1400/0*TsdaupTghK3lOhnr.png)
+
+A blockchain consists of blocks in which the current block refers to the earlier block using a hash.
+
+For example, the latest block present in a Blockchain would refer / call to the previous block using the previous block’s hash number and would also declare its current hash using a cryptographic hashing algorithm.
+
+When the next node is going to be created, it creates it’s newest hash number using a cryptographic hashing algorithm and indicates the previous hash number in the block itself.
+
+I know some of you coders might assume this is a `linked list`, but hang on — yes, this is based on `linked list`!
+
+## Blockchain
 > "Is a decentralized database that stores a registry of assets and transactions across a peer-to-peer network. Is basically a public registry of who owns what and who transacts what. The transactions are secured by cryptography, and over time, that transaction history gets locked in blocks of data that are then cryptographically linked together and secured. This creates an immutable, unforgeable record of all the transactions across this network. This record is replicated on every computer that uses the network."
 >
 > --Bettina Warburg<sup>1</sup>
