@@ -6,8 +6,7 @@ challengeType: 5
 
 ## Description
 <section id='description'>
-  <p>Write a function to sort an integer array with the <a href="https://en.wikipedia.org/wiki/Radix sort">radix sort
-      algorithm</a>. The function should return the sorted array.</p>
+Write a function to sort an integer array with the <a href="https://en.wikipedia.org/wiki/Radix sort">radix sort algorithm</a>. The function should return the sorted array.
 </section>
 
 ## Instructions
