@@ -19,8 +19,8 @@ let testString = "test test test ";
 Se fôssemos traduzir literalmente o regex, seria algo como isto:
 
 ```js
-let re = /(test)\s\1; 
- let literalRe = /test\stest; 
+let re = /(test)\s\1/; 
+ let literalRe = /test\stest/; 
 ```
 
 Ambos `rea` e `literalRe` combinariam com a mesma coisa.

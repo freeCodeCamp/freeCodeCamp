@@ -5,31 +5,40 @@ title: Binary Search Trees
 ![Binary Search Tree](https://cdn-images-1.medium.com/max/1320/0*x5o1G1UpM1RfLpyx.png)
 
 A tree is a data structure composed of nodes that has the following characteristics:
-1. Each tree has a root node (at the top) having some value.
+1. Each tree has a root node (at the top) - containing some value (can be any datatype).
 2. The root node has zero or more child nodes.
-3. Each child node has zero or more child nodes, and so on. This create a subtree in the tree. Every node has it's own subtree made up of his children and their children, etc. This means that every node on its own can be a tree.
+3. Each child node has zero or more child nodes, and so on. This creates a subtree in the tree. Every node has its own subtree made up of its children and their children, etc. This means that every node on its own can be a tree.
 
 A binary search tree (BST) adds these two characteristics:
 1. Each node has a maximum of up to two children.
 2. For each node, the values of its left descendent nodes are less than that of the current node, which in turn is less than the right descendent nodes (if any).
 
 
-The BST is built up on the idea of the <a href='https://guide.freecodecamp.org/algorithms/search-algorithms/binary-search' targer='_blank' rel='nofollow'>binary search</a> algorithm, which allows for fast lookup, insertion and removal of nodes. The way that they are set up means that, on average, each comparison allows the operations to skip about half of the tree, so that each lookup, insertion or deletion takes time proportional to the logarithm of the number of items stored in the tree, `O(log n)`. However, some times the worst case can happen, when the tree isn't balanced and the time complexity is `O(n)` for all three of these functions. That is why self-balancing trees (AVL, red-black, etc.) are a lot more effective than the basic BST.
 
+The BST is built on the idea of the <a href='https://guide.freecodecamp.org/algorithms/search-algorithms/binary-search' targer='_blank' rel='nofollow'>binary search</a> algorithm, which allows for fast lookup, insertion and removal of nodes. The way that they are set up means that, on average, each comparison allows the operations to skip about half of the tree, so that each lookup, insertion or deletion takes time proportional to the logarithm of the number of items stored in the tree, `O(log n)`. However, some times the worst case can happen, when the tree isn't balanced and the time complexity is `O(n)` for all three of these functions. That is why self-balancing trees (AVL, red-black, etc.) are a lot more effective than the basic BST.
 
-**Worst case scenario example:** This can happen when you keep adding nodes that are *always* larger than the node before (it's parent), the same can happen when you always add nodes with values lower than their parents.
+**Worst case scenario example:** This can happen when you keep adding nodes that are *always* larger than the node before (its parent), the same can happen when you always add nodes with values lower than their parents.
 
 ### Basic operations on a BST
 - Create: creates an empty tree.
 - Insert: insert a node in the tree.
 - Search: Searches for a node in the tree.
 - Delete: deletes a node from the tree.
+- Inorder: in-order traversal of the tree.
+- Preorder: pre-order traversal of the tree.
+- Postorder: post-order traversal of the tree.
 
 #### Create
 Initially an empty tree without any nodes is created. The variable/identifier which must point to the root node is initialized with a `NULL` value.
 
 #### Search
 You always start searching the tree at the root node and go down from there. You compare the data in each node with the one you are looking for. If the compared node doesn't match then you either proceed to the right child or the left child, which depends on the outcome of the following comparison: If the node that you are searching for is lower than the one you were comparing it with, you proceed to to the left child, otherwise (if it's larger) you go to the right child. Why? Because the BST is structured (as per its definition), that the right child is always larger than the parent and the left child is always lesser.
+
+###### Breadth-first search (BFS)
+Breadth first search is an algorithm used to traverse a BST. It begins at the root node and travels in a lateral manner (side to side), searching for the desired node. This type of search can be described as O(n) given that each node is visited once and the size of the tree directly correlates to the length of the search.
+
+###### Depth-first search (DFS)
+With a Depth-first search approach, we start with the root node and travel down a single branch. If the desired node is found along that branch, great, but if not, continue upwards and search unvisited nodes. This type of search also has a big O notation of O(n). 
 
 #### Insert
 It is very similar to the search function. You again start at the root of the tree and go down recursively, searching for the right place to insert our new node, in the same way as explained in the search function. If a node with the same value is already in the tree, you can choose to either insert the duplicate or not. Some trees allow duplicates, some don't. It depends on the certain implementation.
@@ -38,7 +47,7 @@ It is very similar to the search function. You again start at the root of the tr
 There are 3 cases that can happen when you are trying to delete a node. If it has,
 1. No subtree (no children): This one is the easiest one. You can simply just delete the node, without any additional actions required.
 2. One subtree (one child): You have to make sure that after the node is deleted, its child is then connected to the deleted node's parent.
-3. Two subtrees (two children): You have to find and replace the node you want to delete with its successor (the letfmost node in the right subtree).
+3. Two subtrees (two children): You have to find and replace the node you want to delete with its successor (the leftfmost node in the right subtree).
 
 The time complexity for creating a tree is `O(1)`. The time complexity for searching, inserting or deleting a node depends on the height of the tree `h`, so the worst case is `O(h)`.
 
@@ -46,7 +55,7 @@ The time complexity for creating a tree is `O(1)`. The time complexity for searc
 Predecessors can be described as the node that would come right before the node you are currently at. To find the predecessor of the current node, look at the right-most/largest leaf node in the left subtree.
 
 #### Successor of a node
-Successors can be described as the node that would come right after the node you are currently at. To find the successor of the current node, look at the left-most/smallest leaf node in the right subtree.
+Successors can be described as the node that would come right after the the current node. To find the successor of the current node, look at the left-most/smallest leaf node in the right subtree.
 
 ### Special types of BT
 - Heap
@@ -154,7 +163,10 @@ void insert(int data) {
    }
 }        
 ```
+
 #### Delete Operation
+
+```c
 void deleteNode(struct node* root, int data){
 
     if (root == NULL) root=tempnode; 
@@ -190,6 +202,7 @@ void deleteNode(struct node* root, int data){
     return root; 
 
 }
+```
 
 Binary search trees (BSTs) also give us quick access to predecessors and successors.
   Predecessors can be described as the node that would come right before the node you are currently at.
@@ -205,15 +218,18 @@ So for instance, if we want to calculate the height of a tree, that is the heigh
 * For instance, if we have a nil tree, then its height is a 0.
 * Otherwise, We're 1 plus the maximum of the left child tree and the right child tree.
 * So if we look at a leaf for example, that height would be 1 because the height of the left child is nil, is 0, and the height of the nil right child is also 0. So the max of that is 0, then 1 plus 0.
+
 #### Height(tree) algorithm
-```
+
+```c
 if tree = nil:
     return 0
 return 1 + Max(Height(tree.left),Height(tree.right))
 ```
 
 #### Here is the code in C++
-```
+
+```c
 int maxDepth(struct node* node)
 {
     if (node==NULL)
@@ -239,21 +255,73 @@ We could also look at calculating the size of a tree that is the number of nodes
 
 * Again, if we have a nil tree, we have zero nodes.
 * Otherwise, we have the number of nodes in the left child plus 1 for ourselves plus the number of nodes in the right child. So 1 plus the size of the left tree plus the size of the right tree.
+
 #### Size(tree) algorithm
-```
+
+```c
 if tree = nil
     return 0
 return 1 + Size(tree.left) + Size(tree.right)
 ```
 
 #### Here is the code in C++
-```
+
+```c
 int treeSize(struct node* node)
 {
     if (node==NULL)
         return 0;
     else
         return 1+(treeSize(node->left) + treeSize(node->right));
+}
+```
+
+#### Traversal
+There are 3 kinds of traversals that are done typically over a binary search tree. All these traversals have a somewhat common way of going over the nodes of the tree. 
+##### In-order
+This traversal first goes over the left subtree of the root node, then accesses the current node, followed by the right subtree of the current node. The code represents the base case too, which says that an empty tree is also a binary search tree.
+```
+void inOrder(struct node* root) {
+        // Base case
+        if (root == null) {
+                return;
+        }
+        // Travel the left sub-tree first.
+        inOrder(root.left);
+        // Print the current node value
+        printf("%d ", root.data);
+        // Travel the right sub-tree next.
+        inOrder(root.right);
+}
+```
+##### Pre-order
+This traversal first accesses the current node value, then traverses the left and right sub-trees respectively. 
+```
+void preOrder(struct node* root) {
+        if (root == null) {
+                return;
+        }
+        // Print the current node value
+        printf("%d ", root.data);
+        // Travel the left sub-tree first.
+        preOrder(root.left);
+        // Travel the right sub-tree next.
+        preOrder(root.right);
+}
+```
+##### Post-order
+This traversal puts the root value at last, and goes over the left and right sub-trees first. The relative order of the left and right sub-trees remain the same. Only the position of the root changes in all the above mentioned traversals.
+```
+void postOrder(struct node* root) {
+        if (root == null) {
+                return;
+        }
+        // Travel the left sub-tree first.
+        postOrder(root.left);
+        // Travel the right sub-tree next.
+        postOrder(root.right);
+        // Print the current node value
+        printf("%d ", root.data);
 }
 ```
 
@@ -281,3 +349,18 @@ Complete Binary Tree: A Binary Tree is complete Binary Tree if all levels are co
       40    50    100   40
      /  \   /
     8   7  9 
+
+### Augumenting a BST
+
+Sometimes we need to store some additional information with the traditional data structures to make our tasks easier.
+For example, consider a scenario where you are supposed to find the ith smallest number in a set. You can use brute force here but we can reduce the complexity of the problem to O(lg n) by augumenting a red-black or any self-balancing tree (where n is the number of elements in the set). We can also compute rank of any element in O(lg n) time. Let us consider a case where we are augumenting a red-black tree to store the addional information needed. Besides the usual attributes, we can store number of internal nodes in the subtree rooted at x(size of the subtree rooted at x including the node itself).
+Let x be any arbitary node of a tree.
+
+x.size = x.left.size + x.right.size + 1
+
+While augumenting the tree, we should keep in mind, that we should be able to maintain the augumented information as well as do other operations like insertion, deletion, updation in O(lg n) time.
+
+Since, we know that the value of x.left.size will give us the number of nodes which preceed x in the inorder traversal of the tree. Thus, x.left.size + 1 is the rank of x within the subtree rooted at x.
+
+### To read more about Augumented Search Trees
+* [Augumented Search Trees](https://www.bowdoin.edu/~ltoma/teaching/cs231/fall10/Lectures/10-augmentedTrees/augtrees.pdf)
