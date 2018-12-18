@@ -6,71 +6,65 @@ challengeType: 5
 
 ## Description
 <section id='description'>
-  <p>Write a function to sort an array elements using the <a href="https://en.wikipedia.org/wiki/Quicksort"><i>quicksort</i></a>
-    algorithm. The function should return the sorted array.</p>
-  <p>The elements must have a <a href="https://en.wikipedia.org/wiki/Weak_ordering">strict weak order</a> and the index
-    of the array can be of any discrete type.</p>
-  <p>Quicksort, also known as <i>partition-exchange sort</i>, uses these steps.</p>
-  <p>Choose any element of the array to be the pivot.</p>
-  <p>Divide all other elements (except the pivot) into two partitions.</p>
-  <p>All elements less than the pivot must be in the first partition.</p>
-  <p>All elements greater than the pivot must be in the second partition.</p>
-  <p>Use recursion to sort both partitions.</p>
-  <p>Join the first sorted partition, the pivot, and the second sorted partition.</p>
-  <p>The best pivot creates partitions of equal length (or lengths differing by <b>1</b>).</p>
-  <p>The worst pivot creates an empty partition (for example, if the pivot is the first or last element of a sorted
-    array).</p>
-  <p>The run-time of Quicksort ranges from <i><a href="http://rosettacode.org/wiki/O">O</a>(n </i>log<i> n)</i> with the
-    best pivots, to <i><a href="http://rosettacode.org/wiki/O">O</a>(n<sup>2</sup>)</i> with the worst pivots, where <i>n</i>
-    is the number of elements in the array.</p>
-  <p>This is a simple quicksort algorithm, adapted from Wikipedia.</p>
-  <p><b>function</b> <i>quicksort</i>(array)</p>
-  <p>less, equal, greater <b>:=</b> three empty arrays</p>
-  <p><b>if</b> length(array) > 1</p>
-  <p>pivot <b>:=</b> <i>select any element of</i> array</p>
-  <p><b>for each</b> x <b>in</b> array</p>
-  <p><b>if</b> x < pivot <b>then add</b> x <b>to</b> less</p>
-  <p><b>if</b> x = pivot <b>then add</b> x <b>to</b> equal</p>
-  <p><b>if</b> x > pivot <b>then add</b> x <b>to</b> greater</p>
-  <p>quicksort(less)</p>
-  <p>quicksort(greater)</p>
-  <p>array <b>:=</b> concatenate(less, equal, greater)</p>
-  <p>A better quicksort algorithm works in place, by swapping elements within the array, to avoid the memory allocation
-    of more arrays.</p>
-  <p><b>function</b> <i>quicksort</i>(array)</p>
-  <p><b>if</b> length(array) > 1</p>
-  <p>pivot <b>:=</b> <i>select any element of</i> array</p>
-  <p>left <b>:= first index of</b> array</p>
-  <p>right <b>:=</b> <b>last index of</b> array</p>
-  <p><b>while</b> left ≤ right</p>
-  <p><b>while</b> array[left] < pivot</p> <p>left := left + 1</p>
-  <p><b>while</b> array[right] > pivot</p>
-  <p>right := right - 1</p>
-  <p><b>if</b> left ≤ right</p>
-  <p><b>swap</b> array[left] <b>with</b> array[right]</p>
-  <p>left := left + 1</p>
-  <p>right := right - 1</p>
-  <p>quicksort(array <b>from first index to</b> right)</p>
-  <p>quicksort(array <b>from</b> left <b>to last index</b>)</p>
-  <p>Quicksort has a reputation as the fastest sort. Optimized variants of quicksort are common features of many
-    languages and libraries. One often contrasts quicksort with <a href="http://rosettacode.org/wiki/../Merge sort">merge
-      sort</a>, because both sorts have an average time of <i><a href="http://rosettacode.org/wiki/O">O</a>(n </i>log<i>
-      n)</i>.</p>
-  <p><i>"On average, mergesort does fewer comparisons than quicksort, so it may be better when complicated comparison
-      routines are used. Mergesort also takes advantage of pre-existing order, so it would be favored for using sort() to
-      merge several sorted arrays. On the other hand, quicksort is often faster for small arrays, and on arrays of a few
-      distinct values, repeated many times."</i> — http://perldoc.perl.org/sort.html</p>
-  <p>Quicksort is at one end of the spectrum of divide-and-conquer algorithms, with merge sort at the opposite end.<ul>
-      <li>Quicksort is a conquer-then-divide algorithm, which does most of the work during the partitioning and the
-        recursive calls. The subsequent reassembly of the sorted partitions involves trivial effort.</li>
-  </p>
-  <p>
-    <li>Merge sort is a divide-then-conquer algorithm. The partioning happens in a trivial way, by splitting the input
-      array in half. Most of the work happens during the recursive calls and the merge phase.</li>
-    </ul>
-  </p>
-  <p>With quicksort, every element in the first partition is less than or equal to every element in the second partition.
-    Therefore, the merge phase of quicksort is so trivial that it needs no mention!</p>
+Write a function to sort an array elements using the <a href="https://en.wikipedia.org/wiki/Quicksort"><i>quicksort</i></a> algorithm. The function should return the sorted array.
+The elements must have a <a href="https://en.wikipedia.org/wiki/Weak_ordering">strict weak order</a> and the index of the array can be of any discrete type.
+Quicksort, also known as <i>partition-exchange sort</i>, uses these steps.
+<ol>
+  <li>Choose any element of the array to be the pivot.</li>
+  <li>Divide all other elements (except the pivot) into two partitions.</li>
+  <ul>
+    <li>All elements less than the pivot must be in the first partition.</li>
+    <li>All elements greater than the pivot must be in the second partition.</li>
+  </ul>
+  <li>Use recursion to sort both partitions.</li>
+  <li>Join the first sorted partition, the pivot, and the second sorted partition.</li>
+</ol>
+The best pivot creates partitions of equal length (or lengths differing by <b>1</b>).
+The worst pivot creates an empty partition (for example, if the pivot is the first or last element of a sorted array).
+The run-time of Quicksort ranges from <i><a href="http://rosettacode.org/wiki/O">O</a>(n </i>log<i> n)</i> with the best pivots, to <i><a href="http://rosettacode.org/wiki/O">O</a>(n<sup>2</sup>)</i> with the worst pivots, where <i>n</i> is the number of elements in the array.
+This is a simple quicksort algorithm, adapted from Wikipedia.
+<pre>
+<b>function</b> <i>quicksort</i>(array)
+  less, equal, greater <b>:=</b> three empty arrays
+  <b>if</b> length(array) > 1
+    pivot <b>:=</b> <i>select any element of</i> array
+    <b>for each</b> x <b>in</b> array
+      <b>if</b> x < pivot <b>then add</b> x <b>to</b> less
+      <b>if</b> x = pivot <b>then add</b> x <b>to</b> equal
+      <b>if</b> x > pivot <b>then add</b> x <b>to</b> greater
+    quicksort(less)
+    quicksort(greater)
+    array <b>:=</b> concatenate(less, equal, greater)
+</pre>
+A better quicksort algorithm works in place, by swapping elements within the array, to avoid the memory allocation of more arrays.
+<pre>
+<b>function</b> <i>quicksort</i>(array)
+  <b>if</b> length(array) > 1
+    pivot <b>:=</b> <i>select any element of</i> array
+    left <b>:= first index of</b> array
+    right <b>:=</b> <b>last index of</b> array
+    <b>while</b> left ≤ right
+      <b>while</b> array[left] < pivot
+        left := left + 1
+      <b>while</b> array[right] > pivot
+        right := right - 1
+      <b>if</b> left ≤ right
+        <b>swap</b> array[left] <b>with</b> array[right]
+        left := left + 1
+        right := right - 1
+    quicksort(array <b>from first index to</b> right)
+    quicksort(array <b>from</b> left <b>to last index</b>)
+</pre>
+Quicksort has a reputation as the fastest sort. Optimized variants of quicksort are common features of many languages and libraries. One often contrasts quicksort with <a href="http://rosettacode.org/wiki/../Merge sort">merge sort</a>, because both sorts have an average time of <i><a href="http://rosettacode.org/wiki/O">O</a>(n </i>log<i> n)</i>.
+<blockquote>
+  <i>"On average, mergesort does fewer comparisons than quicksort, so it may be better when complicated comparison routines are used. Mergesort also takes advantage of pre-existing order, so it would be favored for using sort() to merge several sorted arrays. On the other hand, quicksort is often faster for small arrays, and on arrays of a few distinct values, repeated many times."</i> — <a href="http://perldoc.perl.org/sort.html">http://perldoc.perl.org/sort.html</a>
+</blockquote>
+Quicksort is at one end of the spectrum of divide-and-conquer algorithms, with merge sort at the opposite end.
+<ul>
+ <li>Quicksort is a conquer-then-divide algorithm, which does most of the work during the partitioning and the recursive calls. The subsequent reassembly of the sorted partitions involves trivial effort.</li>
+  <li>Merge sort is a divide-then-conquer algorithm. The partioning happens in a trivial way, by splitting the input array in half. Most of the work happens during the recursive calls and the merge phase.</li>
+</ul>
+With quicksort, every element in the first partition is less than or equal to every element in the second partition. Therefore, the merge phase of quicksort is so trivial that it needs no mention!
 </section>
 
 ## Instructions
