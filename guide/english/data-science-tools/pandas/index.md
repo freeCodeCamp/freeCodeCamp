@@ -19,12 +19,23 @@ A data frame consists of a number of rows and columns. Each column represents a 
 ## Series
 Series is the basic data-type in pandas. A Series is very similar to an array (NumPy array) (in fact it is built on top of the NumPy array object). A Series can have axis labels, as it can be indexed by a label with no number indexing for the location of data. It can hold any valid Python Object like List, Dictionary, etc.
 
-## Loading data from a csv file
+## Loading Data from a CSV File
 A `.csv` file is a *comma separated value* file. A very common way to store data. To load such data into a pandas data frame use the `read_csv` method:
 ```python
 df = pd.read_csv(file_path)
 ```
 Here, `file_path` can be a local path to a csv file on you computer, or an url pointing to one. The column names may be included in the csv file, or may be passed as an argument. For more on this, and much more, take a look at the [documentation](http://pandas.pydata.org/pandas-docs/stable/generated/pandas.read_csv.html?highlight=read_csv#pandas.read_csv).
+
+The read_csv function can be adapted to the available data via various parameters. The parameter parse_dates can be used, for example, to read data formats correctly (also via own functions) or the decimal character can be adapted.
+
+## Loading Data from Other Sources
+Data can also be read from other sources into the pandas table format. For example, functions for reading JSON and HTML are available.
+With read_html, the HTML code is searched for table elements and the corresponding table is interpreted and read into a DataFrame.
+
+```python
+url = '"https://www.census.gov/data/tables/time-series/econ/mhs/latest-data.html"'
+pd.read_html(url)
+```
 
 ## Getting an Overview of a Data Frame
 To show the first few rows of a data frame, the `head` method is useful (once more this should sound familiar to R programmers):
