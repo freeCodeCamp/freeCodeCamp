@@ -40,14 +40,15 @@ for(int i = 0; i < n; i++)
 
 ### 在Javascript中实现
 
-\`\`\`Javascript 功能选择_排序（A）{ var len =数组_长度（A）; for（var i = 0; i <len - 1; i = i + 1）{ var j _min = i; for（var j = i + 1; j <len; j = j + 1）{ if（A \[j\] <A \[j_ min\]）{ j _min = j; } else {} } if（j_ min！== i）{ 交换（A，i，j\_min）; } else {} } }
+```
+Javascript 功能选择_排序（A）{ var len =数组_长度（A）; for（var i = 0; i <len - 1; i = i + 1）{ var j _min = i; for（var j = i + 1; j <len; j = j + 1）{ if（A \[j\] <A \[j_ min\]）{ j _min = j; } else {} } if（j_ min！== i）{ 交换（A，i，j\_min）; } else {} } }
 
 函数交换（A，x，y）{ var temp = A \[x\]; A \[x\] = A \[y\]; A \[y\] = temp; }
 ```
 ### Implementation in Python 
 ```
-
-蟒蛇 def seletion _sort（arr）： 如果不是arr： 回归 对于范围内的我（len（arr））： min_ i = i 对于范围内的j（i + 1，len（arr））： 如果arr \[j\] <arr \[min _i\]： min_ i = j arr \[i\]，arr \[min _i\] = arr \[min_ i\]，arr \[i\] \`\`\`
+蟒蛇 def seletion _sort（arr）： 如果不是arr： 回归 对于范围内的我（len（arr））： min_ i = i 对于范围内的j（i + 1，len（arr））： 如果arr \[j\] <arr \[min _i\]： min_ i = j arr \[i\]，arr \[min _i\] = arr \[min_ i\]，arr \[i\] 
+```
 
 ### 属性
 
