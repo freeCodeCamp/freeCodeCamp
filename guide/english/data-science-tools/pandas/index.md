@@ -45,6 +45,12 @@ df.tail()
 ```
 This will show the last 5 rows of the data frame.
 
+To show descriptive statistics, such as the shape and central tendency of the dataset, the `describe` method can be used:
+```python
+df.describe()
+```
+This will show the `count`, `mean`, `std`, `min`, `max` among others for numeric data.
+
 ## Subsetting
 A data frame can be subset in many ways. One of the simplest is getting a single column. For instance, if the data frame `df` contains a column named `age`, we can extract it as follows:
 ```python
