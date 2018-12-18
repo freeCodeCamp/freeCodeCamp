@@ -28,6 +28,10 @@ The words block and chain were used separately in Satoshi Nakamoto's original pa
 
 As of 2016, blockchain 2.0 implementations continue to require an off-chain oracle to access any "external data or events based on time or market conditions to interact with the blockchain."
 
+> “What the internet did for communications, blockchain will do for trusted transactions.”
+>
+> --Ginni Rometty, CEO of IBM
+
 In May 2018, Gartner found that only 1% of CIOs indicated any kind of blockchain adoption within their organisations, and only 8% of CIOs were in the short-term planning or [looking at] active experimentation with blockchain.
 
 ## Types of Blockchains
