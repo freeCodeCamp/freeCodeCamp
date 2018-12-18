@@ -13,7 +13,7 @@ Apache runs on 67% of all web servers in the world. It is fast, reliable, and se
 
 ## Installation
 
-#### On Ubuntu/Debian
+#### On Debian, Ubuntu, Raspbian, and LinuxMint
 ```
 sudo aptitude install apache2
 ```
@@ -23,7 +23,7 @@ sudo aptitude install apache2
 sudo dnf install httpd
 ```
 
-#### On CentOS
+#### On CentOS and Red Hat Enterprise Linux (RHEL)
 ```
 sudo yum install httpd
 ````
