@@ -56,7 +56,7 @@ df.describe()
 ```
 This will show the `count`, `mean`, `std`, `min`, `max` among others for numeric data.
 
-## Subsetting
+### Subsetting
 A data frame can be subset in many ways. One of the simplest is getting a single column. For instance, if the data frame `df` contains a column named `age`, we can extract it as follows:
 ```python
 ages = df["age"]
@@ -73,11 +73,15 @@ Another option for subsetting a dataframe is using the loc and iloc methods. The
 ```python
 ages = df.loc["age"]
 ```
-## Basic Statistics (Descriptive)
-The descriptive statists can be performed on each columns of a pandas dataframe. 
+
+### Basic Statistics
+Descriptive statistics can be performed on each column of a pandas dataframe. 
+
+Get the mean of the values for the requested axis
 ```python
-df.mean()
+mean = df.mean()
 ```
+
 #### More Information:
 1. [pandas](http://pandas.pydata.org/)
 2. [read_csv](http://pandas.pydata.org/pandas-docs/stable/generated/pandas.read_csv.html?highlight=read_csv#pandas.read_csv)
