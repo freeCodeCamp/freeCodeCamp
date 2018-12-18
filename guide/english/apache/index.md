@@ -61,8 +61,12 @@ The `-R` flag will cause grep to search recursively through the `/etc` directory
 /etc/httpd/conf/httpd.conf  DocumentRoot /var/www/html
 ```
 
-#### References
-- Installation and Configurations guides
-   - [Ubuntu](https://tutorials.ubuntu.com/tutorial/install-and-configure-apache#2)
-   - [CentOS](https://www.centos.org/docs/5/html/Deployment_Guide-en-US/s1-apache-config-ui.html)
-   - [Arch Linux](https://wiki.archlinux.org/index.php/Apache_HTTP_Server)
+### Resources
+
+#### Installation and Configurations Guides
+- [Ubuntu](https://tutorials.ubuntu.com/tutorial/install-and-configure-apache#2)
+- [CentOS](https://www.centos.org/docs/5/html/Deployment_Guide-en-US/s1-apache-config-ui.html)
+- [Arch Linux](https://wiki.archlinux.org/index.php/Apache_HTTP_Server)
+
+#### Getting Started Guides
+- [Getting Started with Apache HTTP Server Version 2.5](https://httpd.apache.org/docs/trunk/getting-started.html)
