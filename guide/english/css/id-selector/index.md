@@ -29,6 +29,10 @@ Remember, the ID selector must match an HTML element's ID attribute.
 ### Specificity 
 ID selectors have a high specificity making them difficult to override. Classes have a much lower specificity and are generally the preferred way to style elements in order to avoid specificity issues. [Specificity on MDN](https://developer.mozilla.org/en-US/docs/Web/CSS/Specificity) 
 
+#### Class vs ID
+- Use a class when you want to consistently style multiple elements throughout the page.
+- Use the ID selector when you have a single element on the page that will take the style. Remember that ids are unique in the page.
+
 #### More Information:
 <a href="https://www.freecodecamp.org/challenges/set-the-id-of-an-element" target="_blank">freeCodeCamp Challenge - Set the ID of an Element</a>
 
