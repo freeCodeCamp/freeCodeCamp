@@ -48,6 +48,13 @@ the consensus of the other nodes. Bitcoin has the benefit of being able to incen
 ## Byzantine Fault Tolerance
 Imagine the scenario where there is an empire and there are three generals with their respective armies at different positions. All of them must attack in order to win the fight or they can choose to retreat. Their only means of communications are through pigeon posts. But there is a problem, the generals can't trust each other or ensure that the message has not been corrupted along the way. How do they solve this problem? Blockchain essentially does so by listening to information broadcasted by other people, reaching to a consensus of which information is deemed true. As such, this model asssumes that the amount of "traitors" do not exceed more than 1/3 of the entire network.
 
+## Modern Use Cases of Blockchain
+- Asset Tokenization : Using blockchain technology, previously illiquid assets can now be converted into its tokenized form and cheaply and efficiently fractionalized, traded and settled on chain (rather than go through the lengthy process of clearing and settlement process through third parties like clearing houses)
+- Supply Chain Management : Blockchains allow multiple parties to access a database to act as the single source of truth. Recorded transactions are immutable, are append only and provide a time stamped audit trail.
+- Digital Identity : A self sovereign ID can be used to verify identity without needing an individual to produce numerous documents and paperwork each time they need their identity verified. This could be done with a single key that can be matched against an immutable ledger. The digital ID can also collect other online information about a user’s identity like social security information, medical records and social media credentials and have that stored securely on the blockchain.
+- Energy Market : Blockchain technology can enable the smart metering of electricity generated through an individual’s solar panels to be recorded, traded and settled on a ledger.
+- Healthcare : Using blockchain technology to record patient information on a distributed ledger can allow different stakeholders conditional access to a single source of truth where each interaction with a patient’s health data can be recorded on a ledger as a transaction with a time stamped audit trail.
+
 ## Issues
 Whilst blockchain technology is undoubtedly elegant, there are several problems that its presence brings, the main one being use my malicious third parties. Due to the extremely secure nature of blockchain, its technologies are often used by criminals to carry out transactions, which are impossible for governments to track.
 
