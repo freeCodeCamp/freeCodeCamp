@@ -6,18 +6,19 @@ challengeType: 5
 
 ## Description
 <section id='description'>
-  <p>Write a function to permform <a href="https://en.wikipedia.org/wiki/Stooge sort">Stooge Sort</a> on an array of
-    integers. The function should return a sorted array.</p>
-  <p>The Stooge Sort algorithm is as follows:</p>
-  <p><b>algorithm</b> stoogesort(<b>array</b> L, i = 0, j = <b>length</b>(L)-1)</p>
-  <p><b>if</b> L[j] < L[i] <b>then</b></p>
-  <p>L[i] <b>↔</b> L[j]</p>
-  <p><b>if</b> j - i > 1 <b>then</b></p>
-  <p>t <b>:=</b> (j - i + 1)/3</p>
-  <p>stoogesort(L, i , j-t)</p>
-  <p>stoogesort(L, i+t, j )</p>
-  <p>stoogesort(L, i , j-t)</p>
-  <p><b>return</b> L</p>
+Write a function to permform <a href="https://en.wikipedia.org/wiki/Stooge sort">Stooge Sort</a> on an array of integers. The function should return a sorted array.
+The Stooge Sort algorithm is as follows:
+<pre>
+<b>algorithm</b> stoogesort(<b>array</b> L, i = 0, j = <b>length</b>(L)-1)
+  <b>if</b> L[j] < L[i] <b>then</b>
+    L[i] <b>↔</b> L[j]
+  <b>if</b> j - i > 1 <b>then</b>
+    t <b>:=</b> (j - i + 1)/3
+    stoogesort(L, i , j-t)
+    stoogesort(L, i+t, j )
+    stoogesort(L, i , j-t)
+  <b>return</b> L
+</pre>
 </section>
 
 ## Instructions
