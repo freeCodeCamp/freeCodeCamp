@@ -1,9 +1,6 @@
 ---
 id: 587d7dbe367417b2b2512bb8
 title: Use @if and @else to Add Logic To Your Styles
-required:
-  - src: 'https://cdnjs.cloudflare.com/ajax/libs/sass.js/0.10.9/sass.sync.min.js'
-    raw: true
 challengeType: 0
 videoUrl: ''
 localeTitle: ''
