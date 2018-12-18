@@ -7,9 +7,7 @@ challengeType: 5
 ## Description
 <section id='description'>
 Implement the <a href="https://en.wikipedia.org/wiki/Counting sort">Counting sort</a>. This is a way of sorting integers when the minimum and maximum value are known.
-
 Pseudocode:
-
 <pre>
 <b>function</b> <i>countingSort</i>(array, min, max):
   count: <b>array of</b> (max - min + 1) <b>elements</b>
@@ -26,7 +24,6 @@ Pseudocode:
     <b>done</b>
   <b>done</b>
 </pre>
-
 Write a function to implement the above pseudo code. The function should return the sorted array.
 </section>
 
