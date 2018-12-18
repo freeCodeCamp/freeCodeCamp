@@ -3,21 +3,21 @@ id: 5a9036ee38fddaf9a66b5d34
 title: Use CSS Grid units to Change the Size of Columns and Rows
 challengeType: 0
 videoUrl: ''
-localeTitle: Используйте элементы сетки CSS для изменения размера столбцов и строк.
+localeTitle: Использование CSS Grid для изменения размера столбцов и строк
 ---
 
 ## Description
-<section id="description"> Вы можете использовать абсолютные и относительные единицы, такие как <code>px</code> и <code>em</code> в CSS Grid, чтобы определить размер строк и столбцов. Вы также можете использовать их: <code>fr</code> : устанавливает столбец или строку на долю доступного пространства, <code>auto</code> : <code>auto</code> устанавливает столбец или строку в ширину или высоту своего содержимого, <code>%</code> : настраивает столбец или строку на процентную ширину его контейнера. Вот код, который генерирует вывод в предварительном просмотре: <blockquote> grid-template-columns: auto 50px 10% 2fr 1fr; </blockquote> Этот фрагмент создает пять столбцов. Первый столбец такой же широкий, как и его содержимое, второй столбец - 50 пикселей, третий столбец - 10% его контейнера и для последних двух столбцов; оставшееся пространство делится на три секции, два - на четвертый столбец, а второй - на пятый. </section>
+<section id="description"> В CSS Grid вы можете использовать абсолютные и относительные единицы измерения, такие как <code>px</code> и <code>em</code>, чтобы определить размер строк и столбцов. Также вы можете использовать следующие единицы измерения: <code>fr</code> : устанавливает столбцу или строке долю доступного пространства, <code>auto</code> :  устанавливает столбцу или строке ширину или высоту по содержимому автоматически, <code>%</code> : устанавливает столбцу или строке процентную ширину его контейнера. Вот код, который генерирует вывод в предварительном просмотре: <blockquote> grid-template-columns: auto 50px 10% 2fr 1fr; </blockquote> Этот фрагмент создает пять столбцов. Ширина первого столбца задается его содержимым, второй столбец шириной 50 пикселей, третий столбец шириной 10% от ширины его контейнера и последние два столбца делят оставшееся пространство между собой в отношении 2 к 1, две доли - четвёртому столбцу и одна доля - пятому. </section>
 
 ## Instructions
-<section id="instructions"> Создайте сетку с тремя столбцами, ширина которых будет следующей: 1fr, 100px и 2fr. </section>
+<section id="instructions"> Создайте грид с тремя столбцами, ширина которых будет следующей: 1fr, 100px и 2fr. </section>
 
 ## Tests
 <section id='tests'>
 
 ```yml
 tests:
-  - text: 'класс <code>container</code> должен иметь свойство <code>grid-template-columns</code> которое имеет три столбца со следующими ширинами: <code>1fr, 100px, and 2fr</code> .'
+  - text: 'класс <code>container</code> должен иметь свойство <code>grid-template-columns</code> , которое задаёт три столбца шириной: <code>1fr, 100px, and 2fr</code> .'
     testString: 'assert(code.match(/.container\s*?{[\s\S]*grid-template-columns\s*?:\s*?1fr\s*?100px\s*?2fr\s*?;[\s\S]*}/gi), "<code>container</code> class should have a <code>grid-template-columns</code> property that has three columns with the following widths: <code>1fr, 100px, and 2fr</code>.");'
 
 ```
