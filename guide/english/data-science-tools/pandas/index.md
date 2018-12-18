@@ -61,11 +61,18 @@ A data frame can be subset in many ways. One of the simplest is getting a single
 ```python
 ages = df["age"]
 ```
+This will return what's called a pandas series. 
+
+We can also extract a list of columns from the data frame. For instance, if the data frame contains columns `name`, `age` and `address`, we can get the `name` and `age` as follows:
+```python
+details = df[["name", "age"]]
+```
+This will return a data frame only, and not a series.
+
 Another option for subsetting a dataframe is using the loc and iloc methods. The difference between loc and iloc is that loc searches based on a label and iloc searches based on the integer value of a row or column. To perform the same indexing as the above example using loc:
 ```python
-ages=df.loc["age"]
+ages = df.loc["age"]
 ```
-
 
 #### More Information:
 1. [pandas](http://pandas.pydata.org/)
