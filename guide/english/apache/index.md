@@ -47,23 +47,33 @@ Popular options for deploying Apache httpd and optionally, PHP + MySQL or PHP + 
 ### Getting Started
 Once you have Apache installed you need to know where to put your HTML documents. This location is generally referred to as the `DocumentRoot`. This location is usually `/var/www/html` on most Linux systems. Follow the instructions below to find the configuration file for Apache and the `DocumentRoot`.
 
-#### Command
+#### Find DocumentRoot
 ``` 
 ~$ sudo grep "DocumentRoot" -R /etc/
 ```
 
 The `-R` flag will cause grep to search recursively through the `/etc` directory and print out the full path of the file that it finds the `DocumentRoot` keyword in.
 
-#### Ubuntu output
+###### Ubuntu output:
 ```
 /etc/apache2/sites-available/000-default.conf:  DocumentRoot /var/www/html
 /etc/apache2/sites-available/default-ssl.conf:          DocumentRoot /var/www/html
 /etc/apache2/sites-enabled/000-default.conf:    DocumentRoot /var/www/html
 ```
 
-#### Centos output
+###### Centos output:
 ``` 
 /etc/httpd/conf/httpd.conf  DocumentRoot /var/www/html
+```
+
+#### Start Apache
+```sh
+sudo systemctl start httpd
+```
+
+#### Run Apache on Startup
+```sh
+sudo systemctl enable httpd
 ```
 
 ## Features
