@@ -15,3 +15,7 @@ This is when Puppet comes in as a configuration management tool.
 You define the state you want your servers to be in, you define this state in "manifest files" (.pp). Then puppet makes sure that all your servers which connect to puppet are in this desired state.  This is powerful because you don't have to specify the steps needed to make it to your desired end state (i.e. install package "a", then install package "b" etc...).  You simply tell puppet how you want your systems to look/perform and puppet takes care of the steps to get you to that specified end state.
 
 Next time you want to install new package in your machines, you just edit the manifest file to include something like "ensure this package is installed" and puppet will take care of the rest.
+
+#### More Information
+
+- [How To Install Puppet To Manage Your Server Infrastructure](https://www.digitalocean.com/community/tutorials/how-to-install-puppet-to-manage-your-server-infrastructure)
