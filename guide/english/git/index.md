@@ -12,7 +12,7 @@ The last point deserves emphasis. Although many people focus on git's ability to
 
 A *distributed* version control system means that different users maintain their own repositories of a project, instead of working from one central repository. Users automatically have full file tracking abilities and the project's complete version history without needing access to a central server or network.
 
-When Git is initialized in a project directory, it begins tracking file changes and stores them as "change sets" or "patches." Users working together on a project submit their change sets which are then included (or rejected) in the project.
+When Git is initialized in a project directory, it begins tracking file changes and stores them as "changesets" or "patches." Users working together on a project submit their changesets which are then included (or rejected) in the project.
 
 **Table of Contents**
 - [Understand the Three Sections of a Git Project](#understand-the-three-sections-of-a-git-project)
@@ -95,6 +95,7 @@ This displays the manual page for the command in your shell window. To navigate,
 ### Sources <a name="sources"></a>
 This article uses information from the <a href='https://github.com/progit/progit2' target='_blank' rel='nofollow'>Pro Git</a> book, written by Scott Chacon and Ben Straub and published by Apress. The book is displayed in full in the <a href='https://git-scm.com/book/en/v2' target='_blank' rel='nofollow'>Git documentation</a>.
 
-### More Information: <a name="more-information"></a>
+#### More Information
 - For downloads, documentation, and a browser-based tutorial: <a href='https://git-scm.com/' target='_blank' rel='nofollow'>Git official website</a>
 - Most useful commands when you're in bad GIT situation: <a href='http://ohshitgit.com/' target='_blank' rel='nofollow'>Oh shit, git!</a>
+- [Resources to learn Git](https://try.github.io/) 

@@ -22,8 +22,9 @@ Add a version to the package.json in your Glitch project.
 <section id='tests'>
 
 ```yml
-- text: package.json should have a valid "version" key
-  testString: 'getUserInput => $.get(getUserInput(''url'') + ''/_api/package.json'').then(data => { var packJson = JSON.parse(data); assert(packJson.version, ''"version" is missing''); }, xhr => { throw new Error(xhr.responseText); })'
+tests:
+  - text: package.json should have a valid "version" key
+    testString: 'getUserInput => $.get(getUserInput(''url'') + ''/_api/package.json'').then(data => { var packJson = JSON.parse(data); assert(packJson.version, ''"version" is missing''); }, xhr => { throw new Error(xhr.responseText); })'
 
 ```
 
