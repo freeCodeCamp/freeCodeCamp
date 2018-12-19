@@ -14,6 +14,8 @@ The developers of rust make it extremely easy to install and manage rust on your
 
 The official installation documentation can be found [here](https://doc.rust-lang.org/book/second-edition/ch01-01-installation.html).
 
+This documentation can also be accessed offline by  running ``` rustup doc ``` after installation.
+
 ### Linux or Mac
 
 If you're running Linux or Mac, installation of `rustup` is best done through the terminal:
