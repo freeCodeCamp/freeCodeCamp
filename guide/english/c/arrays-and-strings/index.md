@@ -2,7 +2,7 @@
 title: Arrays and Strings
 ---
 # Arrays in C
-Arrays allow for a set of variables to be grouped together as one variable. This is useful in its own right, but also because strings fall into this category. Strings, which are how we represent words and sentences in computer languages, are just collections of character variables. Therefore, we represent strings using arrays in C.
+Arrays allow for a set of variables of the same type to be grouped together as one variable. This is useful in its own right, but also because strings fall into this category. Strings, which are how we represent words and sentences in computer languages, are just collections of character variables. Therefore, we represent strings using arrays in C.
 
 ## Making an Array
 A normal integer variable would be declared like so:
@@ -57,15 +57,53 @@ int main(void) {
     int my_array[] = {1, 1, 2, 3, 5, 7, 12};
 
     for(int count = 0; count < 7; count++) {
-        printf("%i, \n", my_array[count]);
+        printf("%i\n", my_array[count]);
     }
 
     return 0;
 }
 ```
+## Address Calculation
+In C, an array is stored in row major form. Suppose an arrar int A[10] is declared. It will be stored as shown below:
+```C
+ A[0]  A[1]  A[2]  A[3]  A[4]  A[5]  A[6]  A[7]  A[8]  A[9] 
+ ```
+ Hence, address for the ith element of the array can be calculated as follows:
+ 
+ `Address of A[i] = Base Address + i*(size of data type)`
+
+Output will be  
+```C
+1
+1
+2
+3
+5
+7
+12
+```
+
+## Memory Allocation In Array
+Normally variables occupy memory in a Random Manner, i.e. if I declare 
+```C
+int a;
+float b;
+```
+`a` and `b` are each assigned a random memory address (e.g. 3004 and 5006). That doesn't happen in the case of an array.
+
+Let's consider an example:
+If the first element is assigned memory address 2000, then the second will be assigned 2002 if it is an `int` array.
+Memory allocation is continuous in Arrays, not random like variables.
+
+As an example, consider an array `a[4]`, which contains 5 elements:
+
+| Position | 0  | 1  | 2  | 3  |
+|:---------|:--:|:--:|:--:|:--:|
+| Value    | 1  | 5  | 3  | 6  |
+|  Address |2000|2002|2004|2006|
 
 ## Strings
-Arrays are sets of variables, and strings are sets of characters. As a result, we can represent strings with an array. You _can_ declare something in the same way as before, but you'll need to place '\0' as one of your values (more on that in a minute!):
+Arrays are sets of variables of the same data type, and strings are sets of characters. As a result, we can represent strings with an array. You _can_ declare something in the same way as before, but you'll need to place '\0' as one of your values (more on that in a minute!):
 ```C
 char hello_world[] = {'H', 'e', 'l', 'l', 'o', ' ', 'w', 'o', 'r', 'l', 'd', '!', '\0'};
 ```
@@ -89,62 +127,75 @@ Another thing C makes easier for us is the printing of strings. Rather than forc
 int main(void) {
     char hello_world[] = "Hello, World!\n";
     printf("%s", hello_world);
-
     return 0;
 }
 ```
-
 ### Playing with Strings
 Printing strings is easy, but other operations are slightly more complex. Thankfully, the `string.h` library has some helpful functions to use for a number of situations.
 #### Copying: `strcpy`
-`strcpy` (from 'string copy') copies a string. For example, this code snippet will copy the contents of the string `second` into the string `first`:
+`strcpy` (from 'string copy') copies a string. For example, this code snippet will copy the contents of the string variable `second` into the string variable `first`:
 ```C
-strpy(first, second);
+strcpy(first, second);
 ```
 Here is an example of how manual implementation of the strcpy function looks like: 
-
+```C
 void copy_string(char [] first_string, char [] second_string) 
 { 
-    int i; 
-     
-    for(i = 0; first_string[i] != '\0'; i++) 
+    int i;
+    for(i = 0; second_string[i] != '\0'; i++) 
     { 
         first_string[i] = second_string[i]; 
     } 
+
 } 
+```
 
 #### Concatenate: `strcat`
 `strcat` (from 'string concatenate') will concatenate a string, meaning it will take the contents of one string and place it on the end of another string. In this example, the contents of `second` will be concatenated onto `first`:
 ```C
 strcat(first, second);
 ```
-Here is an example of manual implementation of fuction strcat:
 
+Here is an example of manual implementation of function `strcat`:
+```C
+
+```C
 void string_concatenate(char [] s1, char [] s2)
 {
     int i = strlen(s1), j;
-    for(int j = 0; s2[j]; j++, i += 1)
+    for(j = 0; s2[j]; j++, i += 1)
     {
         s1[i] = s2[j];
     }
 }
+```
+
+#### Concatenate number of characters to a string: `strncat`
+`strncat` (from 'string number concatenate') concatenates a certain number of characters from the beginning of the second string to the end of first string. In this example, strncat will concatenate some characters from the second to the first string:
+```C
+strncat(char s1[], char s2[], int n);
+```
 
 #### Get length: `strlen`
-`strlen` (from 'string length') will return an integer value corresponding to the length of the string. In this example, an integer called `string_length` will be assigned the length of `my_string`:
+
+`strlen` (from 'string length') will return an integer value corresponding to the length of the string. Even though all strings are terminated with a \0 character, it will not be included in the count (so the length "hello" is indeed 5 and not 6). In this example, an integer called `string_length` will be assigned the length of `my_string`:
+
 ```C
 string_length = strlen(my_string);
 ```
-Here is an manual implementation of fuction strlen:
 
+Here is a manual implementation of function strlen:
+
+```C
 int string_length(char [] string)
 {
     int i;
     
-    for(int i = 0; string[i]; i++);
+    for(i = 0; string[i]; i++);
     
     return i;
 }
-
+```
 #### Compare: `strcmp`
 `strcmp` (from 'string compare') compares two strings. The integer value it returns is 0 if they are the same, but it will also return negative if the value of the first (by adding up characters) is less than the value of the second, and positive if the first is greater than the second. Take a look at an example of how this might be used:
 ```C
@@ -156,15 +207,54 @@ if(!strcmp(first, second)){
 ```
 Notice the `!`, which is needed because this function returns 0 if they are the same. Placing the exclamation point here will make that comparison return true.
 
+***Tip*** -  If you found the `!` strange, you can also compare the result of `strcmp()` with 0, like so -
+```C
+if(strcmp(first, second) == 0){
+```
+
+#### Compare 'n' bytes: `strncmp`
+`strncmp` compares two strings for 'n' characters. The integer value it returns is 0 if they are the same, but it will also return negative if the value of the first (by adding up characters) is less than the value of the second, and positive if the first is greater than the second. Take a look at an example of how this might be used:
+```C
+if(!strncmp(first, second, 4)){
+
+    printf("These strings are the same!\n");
+} else {
+    printf("These strings are not the same!\n");
+}
+```
+
+If the first string is `wires` and the second string is `wired`, the above snippet would still print `These strings are the same!` comparing first 4 characters. 
+
+Notice the `!`, which is needed because this function returns 0 if they are the same. Placing the exclamation point here will make that comparison return true.
+
 #### Split a string: `strtok`
 `strtok` (from 'string token') breaks a string into a series of tokens using a  delimiter. In this example, strtok breaks  string str into a series of tokens using the delimiter delim:
 ```C
 char *strtok(char *str, const char *delim);
 ```
+Let's see an example of how this being used:
+```C
+void ParseInput(char [] input)
+{
+    char *delim="|", *token;
+    
+    token=strtok(input,delim);
+    printf("Code - %s\n",*token);
+    
+    token=strtok(NULL, delim);
+    printf("Desc - %s\n",*token);
+}
+```
+Output of the above execution for input string `US|United States` would be,
+```C
+Code - US
+Desc - United States
+```
 
 # Before you go on...
 ## A Review
 * Arrays are collections of variables.
+* Arrays can only store same data types. An integer array will not be able to store characters in it.
 * Arrays have separate positions that can be declared with brackets, and accessed with square brackets.
 * Strings are arrays too, but we can treat them a little differently: they can be declared using double quotes, and printed using %s.
 * Strings have their own library, `string.h`, which has some handy functions to use.
