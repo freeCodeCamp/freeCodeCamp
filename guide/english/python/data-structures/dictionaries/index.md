@@ -4,7 +4,7 @@ title: The Python Dict
 
 A Dictionary (a.k.a "dict") in python is a built-in datatype that can be used to store **`key-value`** pairs. This allows you to treat a **`dict`** like it's a *database* to store and organize data.  
   
-The special thing about dictionaries is the way they are implemented. It's similar to how a filing cabinet work. By just specifying the **key** which is like a book title, the python interpreter can just go to the location of the key and checks for the content (**value**) of that key.
+The special thing about dictionaries is the way they are implemented. It's similar to how a filing cabinet works. By just specifying the **key** which is like a book title, the python interpreter can just go to the location of the key and check for the content (**value**) of that key.
 
 Dictionaries can use almost any datatypes, like strings, integers etc, as the key of dictionaries. However, values that are not hashable values which is *lists*, *dictionaries* or other mutable types (that are compared by value rather than by object identity) may not be used as keys. 
 
