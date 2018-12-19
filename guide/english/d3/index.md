@@ -57,3 +57,4 @@ With just some basic knowledge of the latest HTML5 features such as SVG and Canv
 - [D3 in Depth](https://d3indepth.com)
 - [Learning D3](https://davidwalsh.name/learning-d3)
 - [Motion Visualization with D3](https://omid.al/posts/2016-08-23-MocapVis-D3.html)
+- [tutorialspoint](https://www.tutorialspoint.com/d3js/)
