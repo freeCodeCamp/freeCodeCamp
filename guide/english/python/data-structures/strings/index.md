@@ -19,12 +19,13 @@ Python allows `str` objects, or _strings_, to be expressed in a few different wa
         Traceback (most recent call last):
                 File "<stdin>", line 1, in <module>
         TypeError: 'str' object does not support item assignment
-Now, since strings are immutable, the concern about modifying a string occurs in our mind. So we can do it this way:
         
-        >>> foo="my string"
-        >>> foo_list_form=list(foo)
-        >>> foo_list_form[0]="a"
-        >>> foo=''.join(foo_list_form)
+    Instead, you can convert the string into a list, modify the list element (string character) you wish to change, and then join  the list elements back to a string, like so:
+        
+        >>> foo = "my string"
+        >>> foo_list_form = list(foo)
+        >>> foo_list_form[0] = "a"
+        >>> foo = ' '.join(foo_list_form)
         >>> print(foo)
         ay string # The required output
         
