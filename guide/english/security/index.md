@@ -19,9 +19,9 @@ Security researchers use a wide variety of methods and tools, which are discusse
 
 Although hacking is a key threat to secure applications, it is not the only one.  Application developers need to balance user experience with security features.  Some cyber breches are self-infliced due to complex or hard to understadn security configurations.  What security features should be set by default?  What features should be seemless and which should require explict user consent? 
 
-# Website Security Scanners
+### Website Security Scanners
 
-## Qualys Website Scanner:
+#### Qualys Website Scanner
 It checks your website for server & application vulnerabilities, hidden malware, and SSL security configuration errors.
 1. Scan web servers & apps on the Internet or in your network.
 2. Detect vulnerabilities and review ways to fix them.
@@ -30,7 +30,7 @@ It checks your website for server & application vulnerabilities, hidden malware,
 
 Link: https://www.qualys.com/forms/freescan/website-scan/
 
-## Pentest-Tools 
+#### Pentest-Tools 
 It is a security company built by people with passion for cyber security. It is very effective in detecting Cross-Site Scripting (XSS) which is one of the most well known web application vulnerabilities. 
 
 Link: https://pentest-tools.com/website-vulnerability-scanning/xss-scanner-online
