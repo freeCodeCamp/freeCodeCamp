@@ -9,7 +9,6 @@ Imaginary numbers are used to represent two-dimensional numbers.  Much like radi
 
 #### More Information:
 
-Better Explained is a great website (https://betterexplained.com/) that provides some great intuitive explanations for all things mathematics - to include imaginary numbers.
-<!-- Please add any articles you think might be helpful to read before writing the article -->
+- [Better Explained: great intuitive explanations for all things mathematics ](https://betterexplained.com/)
 
 
