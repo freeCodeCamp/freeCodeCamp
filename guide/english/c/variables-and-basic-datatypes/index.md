@@ -4,24 +4,24 @@ title: Variables and Basic Data Types
 
 # Variables and Basic Data Types
 ## What is a variable?
-A variable can be defined as an identifier of a memory location, in which a value can be stored and from which a stored value can be retrieved for use in a program.
-Variables store values. Basically you give a name to a stored value, which you want to use later. It is important to note that one variable can store only one value at once. However later on, you can change the stored values 	later on in the code and you can also assign the value of one variable to another.
 
->When you create a variable, it is called `declaring`, and when you give it a value to store, it is called `assignment`. If you give the variable a value at the same time as declaring it, it is called `initializing`. 
->C is very fussy about how you create variables and what you store in them. C is a `strongly typed` language, which means you have to define the type and name for each variable when you declare it. The name of a variable can be composed of letters, digits, and the underscore character.
+Variables store values. Basically you give a name to a stored value, which you want to use later. It is important to note that one variable can store only one value at once. However later on, you can change the stored values later on in the code and you can also assign the value of one variable to another.
 
-##Variable Naming Conventions
-In C, variables, being identifiers, we follow naming conventions for identifiers. These are listed below (Note: the list below is not exhaustive):
+When you create a variable, it is called `declaring`, and when you give it a value to store, it is called `assignment`. If you give the variable a value at the same time as declaring it, it is called `initializing`. 
+
+C is very fussy about how you create variables and what you store in them. C is a `strongly typed` language, which means you have to define the type and name for each variable when you declare it. The name of a variable can be composed of letters, digits, and the underscore character.
+
+## Variable Naming Conventions
+
+In C, variables, being identifiers, we follow naming conventions for identifiers. These are listed below (Note: the list below is not exhaustive and more information can be found here):
 1. the variable name can only consist of only alphabetic characters (both upper case and lower case), digits and an underscore sign.
 2. The variable should not be a C keyword.
 3. C is a case sensitive language. Therefore, lowercase and uppercase letters are treated differently. for example, 
 `Sum` and `sum` are two different variables.
 4. First character of a variable name can only be an alphabet letter or an underscore sign.
 5. A variable name can only be one word - that is there can not be a space in a variable name.
-6. An identifier (remember, a variable name is an identifier too...) may be arbitrarily long. Some implementations of C recognise only the first 8 characters of, although many implementations recognise 31 characters.
+6. An identifier (remember, a variable name is an identifier too...) may be arbitrarily long. Some implementations of C recognize only the first 8 characters, although many implementations recognise 31 characters.
       
-(Source: C in Depth, 2nd Ed by S. K. Srivastava and D Srivastava)
-
 
 ## Basic types
 In Standard C there are four important basic data types: `int`, `float`, `double`, `char`.
