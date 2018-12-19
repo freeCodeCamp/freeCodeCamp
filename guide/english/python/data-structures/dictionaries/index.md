@@ -6,7 +6,7 @@ A Dictionary (a.k.a "dict") in python is a built-in datatype that can be used to
   
 The special thing about dictionaries is the way they are implemented. It's similar to how a filing cabinet works. By just specifying the **key** which is like a book title, the python interpreter can just go to the location of the key and check for the content (**value**) of that key.
 
-Dictionaries can use almost any datatypes, like strings, integers etc, as the key of dictionaries. However, values that are not hashable values which is *lists*, *dictionaries* or other mutable types (that are compared by value rather than by object identity) may not be used as keys. 
+Dictionaries can use almost any datatypes, like strings, integers etc, as the key of dictionaries. However, values that are not hashable, such as, *lists*, *dictionaries* or other mutable types (that are compared by value rather than by object identity) may not be used as keys. 
 
 Numeric types used for keys obey the normal rules for numeric comparison. For example if two numbers compare equal (such as `1` and `1.0`) then they can be used interchangeably to index the same dictionary entry. 
 (Note however, that since computers store floating-point numbers as approximations it is usually unwise to use them as dictionary keys.)  
