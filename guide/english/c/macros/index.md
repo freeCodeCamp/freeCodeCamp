@@ -66,6 +66,15 @@ You get the equivalent of:
 ```C
 printf("Hello World!");
 ```
+An example to explain how code is replaced by macros
+```c
+#define add(a,b) a+b
+```
+Now calling :
+```c
+int x = 2*add(3,5)*4;
+```
+Here, the value of x will be 26 because the expression will become 2*3+5*4 which evaluates to give 26. Sometimes we think that the macro will give us 3+5 i.e. 8 and the expression will become 2*8*4 but this is not the case. This shows how the code is replaced exactly.
 
 #### Special Operators in Macros
 One can use the special operators # (stringize) and ## (concatenate) in macros for achieving unique functionality.
