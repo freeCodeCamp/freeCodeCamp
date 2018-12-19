@@ -14,6 +14,22 @@ This is how you print to the console:
 Also You can print an error log in the console with this code:
 
     console.error('I am an error!')
+
+Or you can print warning logs with the following code:
+
+    console.warn('I am a warning!')
+
+If you want to group multiple console messages, you can use the `console.group`:
+
+    console.group();
+    console.log('Nothing happend yet...');
+    console.log('Yet nothing to report');
+    console.warn('Warning! Something went wrong');
+    console.groupEnd();
+    console.error('I am not part of the group');
     
-**Further Reading**    
-You can see few other `console` methods from <a href="https://developer.mozilla.org/en-US/docs/Web/API/Console" target="_blank" rel="noopener noreferrer">here</a> and use them as per your requirements
+Above example of the group is not collapsed by default, if you want to, use `console.groupCollapsed` instead.
+
+#### More Information
+- <a href="https://developer.mozilla.org/en-US/docs/Web/API/Console" target="_blank" rel="noopener noreferrer">MDN</a
+
