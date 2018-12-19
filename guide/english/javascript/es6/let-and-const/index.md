@@ -28,12 +28,12 @@ if (true) {
 console.log(c); // 10
 console.log(a); // 50
 ```
-Differences to var
 
-Hoisting
-let variables are not initialized until their definition is evaluated
+### Differences with `var`
 
-```
+Hoisting - `let` variables are not initialized until their definition is evaluated:
+
+```js
 function action() {
   console.log(a); // undefined
   console.log(b); // ReferenceError
