@@ -10,15 +10,14 @@ A table is a group of data stored in a database.
 To create a table in a database you use the `CREATE TABLE` statement. You give a name to the table and a list of columns with its datatypes.
 
 ##### SYNTAX #####
-```
+```sql
 CREATE TABLE table_name(Attribute1 Datatype,
                        Attribute2 Datatype,
                        ........);
 ```
 here:
- * Attribute1,Attribute2,... -> Column Name
-
- * Datatype...               -> type of value you want to column have. For eg. int(size), char(size), Varchar(size),etc.
+ * Attribute1, Attribute2... -> Column Name
+ * Datatype... -> type of value you want to column have. For eg. int(size), char(size), Varchar(size),etc.
 
 
 Here’s an example creating a table named Person:
