@@ -17,8 +17,8 @@ acronym also changed to what it stands for today: 'PHP: Hypertext Preprocessor'.
 
 ## What is PHP used for?
 
-As of October 2017, PHP is used on [82% of websites whose server-side language is known](https://w3techs.com/technologies/overview/programming_language/all). It is
-typically used on websites to generate web page content dynamically. Use-cases include:
+As of October 2018, PHP is used on [80% of websites whose server-side language is known](https://w3techs.com/technologies/overview/programming_language/all). 
+It is typically used on websites to generate web page content dynamically. Use-cases include:
 
 * Websites and web applications (server-side scripting)
 * Command line scripting
@@ -30,6 +30,9 @@ your blog posts from a database and display them. Other uses for PHP scripts inc
 * Processing and saving user input from form data
 * Setting and working with website cookies
 * Restricting access to certain pages of your website
+
+> The largest Social Networking Platform, [Facebook](https://www.facebook.com/) is written using PHP
+
 
 ## How does PHP work?
 
@@ -54,6 +57,11 @@ On Debian based GNU/Linux distros, you can install by :
 sudo apt install php
 ```
 
+On Centos 6 or 7 you can install by :
+```bash
+sudo yum install php
+```
+
 After installing you can run any PHP files by simply doing this in terminal :
 ```
 php file.php
@@ -64,6 +72,12 @@ You can also install a localhost server to run PHP websites. For installing Apac
 sudo apt install apache2 libapache2-mod-php
 ```
 
+Or you can also install PHP, MySQL & Web-server all by installing 
+
+<a href="https://www.apachefriends.org/download.html" target="_blank">XAMPP</a> (free and open-source cross-platform web server solution stack package) 
+or similar packages like <a href="http://www.wampserver.com/en/" target="_blank">WAMP</a>
+
+
 ## What Can PHP Do?
 
 * PHP can generate dynamic page content
@@ -73,6 +87,7 @@ sudo apt install apache2 libapache2-mod-php
 * PHP can add, delete, modify data in your database
 * PHP can be used to control user-access
 * PHP can encrypt data
+* PHP can send emails
 
 ## Why PHP?
 
@@ -93,11 +108,15 @@ Since writing the whole code for a website is not really practical/feasible for 
  
 ## Popular frameworks
  
+ * [CodeIgniter](https://codeigniter.com/)
  * [Laravel](https://laravel.com/)
  * [Symfony](https://symfony.com/)
  * [Zend](http://www.zend.com/)
  * [CakePHP](https://cakephp.org/)
- 
+ * [FuelPHP](https://fuelphp.com/)
+ * [Slim](https://www.slimframework.com/)
+ * [Yii 2](https://www.yiiframework.com/)
+
 ## Documentation
 
 PHP is [well documented](http://php.net/docs.php). The [official docs](http://php.net/manual/en/) include examples on almost every function reference guide, as well as user comments.
@@ -106,4 +125,4 @@ PHP is [well documented](http://php.net/docs.php). The [official docs](http://ph
 
 - [Tizag.com PHP Tutorial](http://www.tizag.com/phpT/): still-relevant tutorials for getting started with PHP
 - [Awesome PHP](https://github.com/ziadoz/awesome-php): a curated list of PHP libraries, resources, and "shiny things"
-- [Laracasts.com](https://laracasts.com/): a membership website to learn web application development with PHP
+- [Laracasts.com](https://laracasts.com/): a membership website to learn web application development with PHP, comes with a free getting starting guide.

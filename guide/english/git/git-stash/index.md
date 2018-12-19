@@ -14,9 +14,13 @@ To save your changes in the stash, run the command:
 git stash save "optional message for yourself"
 ```
 
-This saves your changes and reverts the working directory to what it looked like for the latest commit. Stashed changes are available from any branch in that repository.
+This saves your changes and reverts the working directory to what it looked like for the latest commit. Stashed changes are available from any branch in that repository. You can optionally use `git stash` to stash your changes without any message, and git will give it a default name.  
 
-Note that changes you want to stash need to be on tracked files. If you created a new file and try to stash your changes, you may get the error `No local changes to save`.
+Note that changes you want to stash need to be on tracked files. If you created a new file and try to stash your changes, you may get the error `No local changes to save`. To tell git to track a new file you created, run the command:
+
+```shell
+git add <name of the new file>
+```
 
 ### View Stashed Changes
 To see what is in your stash, run the command:
@@ -46,6 +50,8 @@ To retrieve changes out of the stash and apply them to the current branch you're
 
 1. `git stash apply STASH-NAME` applies the changes and leaves a copy in the stash
 2. `git stash pop STASH-NAME` applies the changes and removes the files from the stash
+
+You can optionally use `git stash pop` without any stash name, and git will apply the last saved changes.
 
 There may be conflicts when you apply changes. You can resolve the conflicts similar to a merge (<a href='https://guide.freecodecamp.org/git/git-merge/' target='_blank' rel='nofollow'>see Git merge for details</a>).
 
