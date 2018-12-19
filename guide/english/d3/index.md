@@ -15,7 +15,7 @@ title: D3
 
 *D3** does not introduce a new visual representation. Unlike **Processing**, **Raphaël**, or **Protovis**, *D3's* vocabulary of graphical marks comes directly from web standards: HTML, SVG, and CSS - https://d3js.org/
 
-###### Get Started
+## Get Started
 There are over [20,000+ **D3.js** examples](https://github.com/d3/d3/wiki/Gallery) you could learn from, but you never know how approachable any given one will be! So, the question is - how do you build up your visualization from first principles? As you've probably seen, D3's API is massive, so lets call out a few of the utilities that will be particularly helpful early on:
 
 - **[d3-scale](https://github.com/d3/d3-scale)**
@@ -46,13 +46,13 @@ There are over [20,000+ **D3.js** examples](https://github.com/d3/d3/wiki/Galler
 
 ![](https://i1.wp.com/pbiswas101.files.wordpress.com/2018/07/force.gif?w=400&h=100)
 
- So, with just some basic knowledge of the latest HTML5 features such as SVG, Canvas you can dive into a world where library like **D3.js** bring data to life!
- ###### Contribution
+ With just some basic knowledge of the latest HTML5 features such as SVG and Canvas, you can dive into a world where a library like **D3.js** can bring data to life!
+
+### Contribution
 
 -  https://github.com/d3/
 
  ### Resources
-
 - [Wikipedia](https://en.wikipedia.org/wiki/D3.js)
 - [Blockbuilder](http://blockbuilder.org/search)
 - [D3 in Depth](https://d3indepth.com)
