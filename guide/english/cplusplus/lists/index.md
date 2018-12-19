@@ -17,7 +17,7 @@ Traversal in a list is slow as compared to Vectors and Arrays, but once a positi
 ## How to declare a List
 If you want to declare a List of Numbers you write:
 
-'''std::list<int> Numbers;''' 
+```std::list<int> Numbers;``` 
 
 ## Functions used with List
 size() : Returns the number of elements in the list

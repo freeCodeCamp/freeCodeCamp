@@ -1,0 +1,33 @@
+.featured-list {
+  list-style: none;
+  padding-left: 0;
+  margin-top: 40px;
+}
+
+.featured-list-item {
+  padding-bottom: 20px;
+}
+
+.featured-list-item .title {
+  color: #333;
+  padding-bottom: 20px;
+}
+
+.featured-list-item a {
+  padding-top: 5px;
+}
+
+.featured-list-image {
+  margin: 0 auto;
+}
+
+.featured-list-item a:hover,
+.featured-list-item a:focus {
+  text-decoration: none;
+  text-decoration-line: none;
+  text-decoration-color: transparaent;
+}
+.featured-list-item a:hover > .meta-wrapper,
+.featured-list-item a:focus > .meta-wrapper {
+  color: #006400;
+}
