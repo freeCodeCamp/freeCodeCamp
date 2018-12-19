@@ -23,5 +23,6 @@ Its main attributes are the following:
 - [Vue-cli](https://cli.vuejs.org/) - standard tooling
 - [Vue-Router](https://router.vuejs.org/) - officially-supported vue-router library
 - [Vuex](https://vuex.vuejs.org/) - state management pattern + library
+- [Vuetify](https://vuetifyjs.com/en/) a Material Design Framework for Vue
 - [Comparison with other frameworks](https://vuejs.org/v2/guide/comparison.html)
 
