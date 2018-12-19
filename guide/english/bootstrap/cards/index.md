@@ -8,31 +8,55 @@ title: Cards
 
 *  Cards are bordered boxes with a bit of padding around the content inside them, which can be used to conveniently display a specific set of information.
 
-##### To create a basic Bootstrap 4 card, you need to create a ```<div>``` container with the class ```.card``` and inside  another ```<div>``` container with the class of ```.card-body```
+** To create a basic Bootstrap 4 card, you need to create a `<div>` container with the class `.card` and inside it another `<div>` container with the class of `.card-body` **
 
-###### This is how it will look in an html doc
+
+###### Code example:
 
 ```html
 <div class="card">
-<!-- content of the card goes here -->
   <div class="card-body">Content</div>
+  <!-- content of the card goes here -->
 </div>
 ```
+
 ### Header and Footer
 --------
 
-The structure of the card can be enhanced by the addition of a header and a footer. To add one of these elements, you have to create a ```<div>``` container with the ```.card-header``` or ```.card-footer``` class.
+The structure of the card can be enhanced by the addition of a header and a footer. To add one of these elements, you have to create a `<div>` container with the `.card-header` or `.card-footer` class.
 
-###### This is how it will look in an html doc
+###### Code example:
 
 ```html
 <div class="card">
-<!-- content of the card goes here -->
-  <div class="card-header">Header content</div>
-  <div class="card-body">Body content</div>
-  <div class="card-footer">Footer content</div>
+  <div class="card-header">
+      <!-- Header content -->
+  </div>
+  <div class="card-body">
+      <!-- Body content -->
+  </div>
+  <div class="card-footer">
+      <!-- Footer content -->
+  </div>
 </div>
 ```
+### Body
+--------
+The main container of Card is .card-body.
+
+###### This is what it would look like in your HTML document
+
+```html
+<div class="card">
+  <div class="card-body">
+    This is some text within a card body.
+  </div>
+</div>
+```
+###### Result
+
+This is some text within a card body.
+
 
 ### Cards with Images
 -----------
@@ -78,6 +102,7 @@ The structure of the card can be enhanced by the addition of a header and a foot
 ```
 ### Card is balanced with the image
 
+```html
 <div class="card" style="width: 18rem;">
   <img class="card-img-top" src="..." alt="Card image cap">
   <div class="card-body">
@@ -85,3 +110,11 @@ The structure of the card can be enhanced by the addition of a header and a foot
   </div>
 </div>
 <!--You must set the image height on all cards -->
+```
+
+
+#### More Information
+
+- [Bootstrap cards](https://getbootstrap.com/docs/4.1/components/card/)
+
+
