@@ -37,12 +37,14 @@ You can also put all of your bash commands into a .sh file, and run them from th
 #!/bin/bash
 echo "Hello world!"
 ```
-It's worth noting that first line of the script starts with `#!`. It is a special directive which Unix treats differently. 
+It's worth noting that the first line of the script starts with `#!`. It is a special directive which Unix treats differently. 
 
 #### Why did we use #!/bin/bash at the beginning of the script file? 
-That is because it is a convention to let the interactive shell know what kind of interpreter to run for the program that follows. The first line tells Unix that the file is to be executed by /bin/bash. This is the standard location of the Bourne shell on just about every Unix system. Adding #!/bin/bash as the first line of your script, tells the OS to invoke the specified shell to execute the commands that follow in the script.
-`#!` is often referred to as a "hash-bang", "she-bang", or "sha-bang".
-Though it is only executed if you run your script as an executable. For example, when you type `./scriptname.extension`, it will look at the top line to find out the interpreter, whereas, running the script as `bash scriptname.sh`, first line is ignored. 
+
+That is because it is a convention to let the interactive shell know what kind of interpreter to run for the program that follows. The first line tells Unix that the file is to be executed by /bin/bash. This is the standard location of the Bourne shell on just about every Unix system. Adding #!/bin/bash as the first line of your script tells the OS to invoke the specified shell to execute the commands that follow in the script.
+`#!` is often referred to as a "hash-bang", "she-bang" or "sha-bang".
+Though it is only executed if you run your script as an executable. For example, when you type `./scriptname.extension`, it will look at the top line to find out the interpreter, whereas, running the script as `bash scriptname.sh`, the first line is ignored. 
+
 
 Then you could run the script like so:
 For make file executable you should call this command under sudo chmod +x "filename".
