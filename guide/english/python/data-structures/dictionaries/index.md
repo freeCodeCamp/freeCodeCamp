@@ -9,7 +9,7 @@ The special thing about dictionaries is the way they are implemented. It's simil
 Dictionaries can use almost any datatypes, like strings, integers etc, as the key of dictionaries. However, values that are not hashable, such as, *lists*, *dictionaries* or other mutable types (that are compared by value rather than by object identity) may not be used as keys. 
 
 Numeric types used for keys obey the normal rules for numeric comparison. For example if two numbers compare equal (such as `1` and `1.0`) then they can be used interchangeably to index the same dictionary entry. 
-(Note however, that since computers store floating-point numbers as approximations it is usually unwise to use them as dictionary keys.)  
+(Note, however, that since computers store floating-point numbers as approximations it is usually unwise to use them as dictionary keys.)  
 
 A important requirement of a dictionary is that the keys *must* be *unique*, which mean you can never have a duplicate key in your dictionary.  
 
