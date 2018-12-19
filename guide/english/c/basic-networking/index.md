@@ -22,3 +22,5 @@ Once a socket has been created between two nodes (a.k.a hosts or computing syste
 
 #### More Information
 - [GeekForGeeks: Socket Programming in C](https://www.geeksforgeeks.org/socket-programming-cc)
+- [Beej's guide to Network Programming](https://beej.us/guide/bgnet/)
+
