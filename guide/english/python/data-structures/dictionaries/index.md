@@ -11,7 +11,7 @@ Dictionaries can use almost any datatypes, like strings, integers etc, as the ke
 Numeric types used for keys obey the normal rules for numeric comparison. For example if two numbers compare equal (such as `1` and `1.0`) then they can be used interchangeably to index the same dictionary entry. 
 (Note, however, that since computers store floating-point numbers as approximations it is usually unwise to use them as dictionary keys.)  
 
-A important requirement of a dictionary is that the keys *must* be *unique*, which mean you can never have a duplicate key in your dictionary.  
+An important requirement of a dictionary is that the keys *must* be *unique*, which means - you can never have a duplicate key in your dictionary.  
 
 ## Creating a Empty Dictionary 
 
