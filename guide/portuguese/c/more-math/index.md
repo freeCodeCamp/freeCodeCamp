@@ -94,7 +94,7 @@ Isto irá deslocar `a` para a esquerda por `b` pedaços, e definir que resultado
 Este exemplo vai deslocar `a` para a direita por `b` pedaços, e definir que resultado igual a `c` .
 
 ```C
-c = a >> c; 
+c = a >> b; 
 ```
 
 ## Operadores de Atribuição Composta
