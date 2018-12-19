@@ -118,7 +118,7 @@ This problem does not involve rearranging the input into different combinations 
 
 *   First define an object with all pair possibilities, this allows us to easily find by key or value.
 *   Split `str` into a characters array so we can use each letter to find its pair.
-*   Use the map function to map each character in the array to an array with the character and it's matching pair, creating a 2D array.
+*   Use the map function to map each character in the array to an array with the character and its matching pair, creating a 2D array.
 
 #### Relevant Links
 
