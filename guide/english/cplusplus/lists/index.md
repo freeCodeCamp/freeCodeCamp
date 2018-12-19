@@ -15,6 +15,7 @@ of how Lists are organized compared to Vectors and Arrays.
 Traversal in a list is slow as compared to Vectors and Arrays, but once a position has been found, insertion and deletion are quick.
 
 ## How to declare a List
+
 Possible declarations of a list:
 ```c++
 #include <list>
