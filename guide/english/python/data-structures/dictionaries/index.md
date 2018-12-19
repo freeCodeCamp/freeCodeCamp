@@ -101,7 +101,32 @@ The **`in`** keyword can be used to check whether a key exist in the dict or not
     >>> club_names
     [1910, 1875]
 ```  
-  
+**`has_key`** is a built-in *method* that can be used to check if a *key* exists in the dictionary.
+```python
+    >>> items = {'a': 'apple', 'b': 'banana', 'c': 'cat'}
+    >>> items.has_key('a')
+    True
+    >>> items.has_key('d')
+    False
+```
+
+Yet another way of creating dictionary is using the **`dict()`** method:
+```python
+    >>> players = dict( [('messi','argentina'), ('ronaldo','portugal'), ('kaka','brazil')] ) # sequence of key-value pair is passed  
+    >>> players
+    {'ronaldo': 'portugal', 'kaka': 'brazil', 'messi': 'argentina'}
+    >>> 
+    >>> # If keys are simple strings, it's quite easier to specify pairs using keyword arguments
+    ...
+    >>> dict( totti = 38, zidane = 43 )
+    {'zidane': 43, 'totti': 38}
+``` 
+Dict comprehensions can be used as well to create dictionaries from arbitrary key and value expressions:  
+```python
+    >>> {x: x**2 for x in (2, 4, 6)}
+    {2: 4, 4: 16, 6: 36}
+```
+
 ## Looping in Dictionary  
 To simply loop over the keys in the dictionary, rather than the keys and values:
 ```python
