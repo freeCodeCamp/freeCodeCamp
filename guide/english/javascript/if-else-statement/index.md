@@ -3,15 +3,15 @@ title: If-Else Statement
 ---
 ## Introduction
 
-The `if` statement executes a statement if a specified condition is `true`. If the condition is `false`, another statement can be executed using the `else` statement.
+The `if` statement executes a statement if a specified condition is `true`. If the condition is `false`, then the statement inside `else` block gets executed.
 
 **Note:** The `else` statement is optional.
 
 ```javascript
 if (condition) {
-    /* do something */
+    /* do this if condition is TRUE */
 } else {
-    /* do something else */
+    /* do this if condition is FALSE (or not TRUE) */
 }
 ```
 
