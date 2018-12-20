@@ -5,6 +5,8 @@ title: Chef
 <!-- The article goes here, in GitHub-flavored Markdown. Feel free to add YouTube videos, images, and CodePen/JSBin embeds  -->
 <p>Chef is a powerful automation platform that transforms infrastructure into code. Whether you’re operating in the cloud, on-premises, or in a hybrid environment, Chef automates how infrastructure is configured, deployed, and managed across your network, no matter its size.</p>
 
+Chef enables programmers and system administrators to work together. Instead of developers writing applications and then waiting on Ops staff to figure out how to deploy the software, Chef serves both communities. Chef moves the process from a herky-jerky release cycle to a continuous delivery model by enabling an effective and automated workflow—a central goal of the DevOps movement. 
+
 #### How Chef Works
 <p>Chef stores collections of recipes in a cookbook. One cookbook should relate to a single task, but can have a number of different server configurations involved (for example a web application with a database, will have two recipes, one for each part, stored together in a cookbook).</p>
 
@@ -21,5 +23,6 @@ title: Chef
 - [Chef TutorialsPoint](https://www.tutorialspoint.com/chef/chef_overview.htm)
 - [Official Documentation](https://docs.chef.io/chef_overview.html)
 - [Chef Tutorial](http://gettingstartedwithchef.com/)
+- [Hewllet Packard Enterprise](https://www.hpe.com/us/en/insights/articles/what-is-chef-a-primer-for-devops-newbies-1704.html)
 
     

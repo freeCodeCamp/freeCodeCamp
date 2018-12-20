@@ -68,7 +68,7 @@ let schema = Joi.object().keys({
       title: Joi.string().required()
     })
   ),
-  template: Joi.string(),
+  template: Joi.string().allow(''),
   time: Joi.string().allow(''),
   title: Joi.string().required()
 });
