@@ -149,16 +149,13 @@ func bubbleSort(_ inputArray: [Int]) -> [Int] {
 ### Example in Python
 ```py
 
-def bubblesort( A ):
-  for i in range( len( A ) ):
-    for k in range( len( A ) - 1, i, -1 ):
-      if ( A[k] < A[k - 1] ):
-        swap( A, k, k - 1 )
- 
-def swap( A, x, y ):
-  tmp = A[x]
-  A[x] = A[y]
-  A[y] = tmp
+def bubbleSort(arr): 
+    n = len(arr) 
+    for i in range(n):
+        for j in range(0, n-i-1):
+                if arr[j] > arr[j+1] : 
+                        arr[j], arr[j+1] = arr[j+1], arr[j]
+    print(arr)
 
 ```
 ### Example in C
