@@ -2,25 +2,25 @@
 title: Arithmetic Operation
 localeTitle: Арифметическая операция
 ---
-JavaScript предоставляет пользователю пять арифметических операторов: `+` , `-` , `*` , `/` и `%` . Операторы для сложения, вычитания, умножения, деления и остатка соответственно.
+В JavaScript существует пять арифметических операторов: `+` , `-` , `*` , `/` и `%` . Операторы сложения, вычитания, умножения, деления и остаток от деления соответственно.
 
-## прибавление
+## Сложение
 
 **Синтаксис**
 
 `a + b`
 
-**использование**
+**Использование**
 ```
-2 + 3          // returns 5 
- true + 2       // interprets true as 1 and returns 3 
- false + 5      // interprets false as 0 and returns 5 
- true + "bar"   // concatenates the boolean value and returns "truebar" 
- 5 + "foo"      // concatenates the string and the number and returns "5foo" 
- "foo" + "bar"  // concatenates the strings and returns "foobar" 
+ 2 + 3          // возвращает 5 
+ true + 2       // интерпретирует true как 1 и возвращает 3 
+ false + 5      // интерпретирует false как 0 и возвращает 5 
+ true + "bar"   // конкатенирует (объединяет) значение boolean и возвращает строку "truebar" 
+ 5 + "foo"      // конкатенирует строку и число и возвращает строку "5foo" 
+ "foo" + "bar"  // конкатенирует строки и возвращает строку "foobar" 
 ```
 
-_Подсказка:_ есть удобный [приращение](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Arithmetic_Operators#Increment_() ), который является отличным ярлыком при добавлении чисел на 1.
+_Подсказка:_ оператор [инкремент](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Arithmetic_Operators#Increment_() ), который используется как удобный шорткат, чтобы увеличенить число на 1.
 
 ## Вычитание
 
@@ -28,101 +28,101 @@ _Подсказка:_ есть удобный [приращение](https://dev
 
 `a - b`
 
-**использование**
+**Использование**
 ```
-2 - 3      // returns -1 
- 3 - 2      // returns 1 
- false - 5  // interprets false as 0 and returns -5 
- true + 3   // interprets true as 1 and returns 4 
- 5 + "foo"  // returns NaN (Not a Number) 
+ 2 - 3      // возвращает -1 
+ 3 - 2      // возвращает 1 
+ false - 5  // интерпретирует false как 0 и возвращает -5 
+ true + 3   // интерпретирует true как 1 и возвращает 4 
+ 5 + "foo"  // возвращает NaN (Not a Number) 
 ```
 
-_Подсказка:_ есть удобный [декремент](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Arithmetic_Operators#Decrement_(--) ), который является отличным ярлыком, когда вы вычитаете числа на 1.
+_Подсказка:_ также есть удобный оператор [декремент](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Arithmetic_Operators#Decrement_(--) ), который используется как удобный шорткат, когда нужно уменьшить число на 1.
 
-## умножение
+## Умножение
 
 **Синтаксис**
 
 `a * b`
 
-**использование**
+**Использование**
 ```
-2 * 3                // returns 6 
- 3 * -2               // returns -6 
- false * 5            // interprets false as 0 and returns 0 
- true * 3             // interprets true as 1 and returns 3 
- 5 * "foo"            // returns NaN (Not a Number) 
- Infinity * 0         // returns NaN 
- Infinity * Infinity  // returns Infinity 
+ 2 * 3                // возвращает 6 
+ 3 * -2               // возвращает -6 
+ false * 5            // интерпретирует false как 0 и возвращает 0 
+ true * 3             // интерпретирует true как 1 и возвращает 3 
+ 5 * "foo"            // возвращает NaN (Not a Number) 
+ Infinity * 0         // возвращает NaN 
+ Infinity * Infinity  // возвращает Infinity 
 ```
 
-## разделение
+## Деление
 
 **Синтаксис**
 
 `a / b`
 
-**использование**
+**Использование**
 ```
-3 / 2                // returns 1.5 
- 3.0 / 2/0            // returns 1.5 
- 3 / 0                // returns Infinity 
- 3.0 / 0.0            // returns Infinity 
- -3 / 0               // returns -Infinity 
- false / 5            // interprets false as 0 and returns 0 
- true / 2             // interprets true a 1 and returns 0.5 
- 5 + "foo"            // returns NaN (Not a Number) 
- Infinity / Infinity  // returns NaN 
+ 3 / 2                // возвращает 1.5 
+ 3.0 / 2/0            // возвращает 1.5 
+ 3 / 0                // возвращает Infinity 
+ 3.0 / 0.0            // возвращает Infinity 
+ -3 / 0               // возвращает -Infinity 
+ false / 5            // интерпретирует false как 0 и возвращает 0 
+ true / 2             // интерпретирует true как 1 и возвращает 0.5 
+ 5 + "foo"            // возвращает NaN (Not a Number) 
+ Infinity / Infinity  // возвращает NaN 
 ```
 
-## остаток
+## Остаток от деления
 
 **Синтаксис**
 
 `a % b`
 
-**использование**
+**Использование**
 ```
-3 % 2          // returns 1 
- true % 5       // interprets true as 1 and returns 1 
- false % 4      // interprets false as 0 and returns 0 
- 3 % "bar"      // returns NaN 
+ 3 % 2          // возвращает 1 
+ true % 5       // интерпретирует true как 1 и возвращает 1 
+ false % 4      // интерпретирует false как 0 и возвращает 0 
+ 3 % "bar"      // возвращает NaN 
 ```
 
-## инкремент
+## Инкремент
 
 **Синтаксис**
 
-`a++ or ++a`
+`a++ или ++a`
 
-**использование**
+**Использование**
 ```
-// Postfix 
- x = 3;  // declare a variable 
+// как постфикс 
+ x = 3;  // объявление переменной 
  y = x++;        // y = 4, x = 3 
  
- // Prefix 
+ // как префикс
  var a = 2; 
  b = ++a; // a = 3, b = 3 
 ```
 
-## декремент
+## Декремент
 
 **Синтаксис**
 
-`a-- or --a`
+`a-- или --a`
 
-**использование**
+**Использование**
 ```
-// Postfix 
- x = 3;  // declare a variable 
+// как постфикс 
+ x = 3;  // объявление переменной 
  y = x--;        // y = 3, x = 3 
  
- // Prefix 
+ // как префикс 
  var a = 2; 
  b = --a; // a = 1, b = 1 
 ```
 
-_!Важный!_ Как вы можете видеть, вы **не можете** выполнять какие-либо операции с `Infinity` .
+_!Важно!_ Как вы, наверное, заметили, вы **не можете** выполнять какие-либо операции с `Infinity` .
 
-Источник: удивительный [MDN](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Arithmetic_Operators) .
+Источник: замечательный [MDN](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Arithmetic_Operators) .
