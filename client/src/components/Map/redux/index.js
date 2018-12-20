@@ -2,7 +2,7 @@ import { createAction, handleActions } from 'redux-actions';
 
 import { createTypes } from '../../../../utils/stateManagement';
 
-const ns = 'curriculumMap';
+export const ns = 'curriculumMap';
 
 export const getNS = () => ns;
 
