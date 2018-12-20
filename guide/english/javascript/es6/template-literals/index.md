@@ -19,6 +19,9 @@ ES6 way:
 const sentence = `My name is ${name}. I live in ${city}`;
 Here ${name} and ${city} are going to be interpolated by the variable name and city respectively.
 ```
+
+The main advantage of using template literals is that it increases code readability.
+
 ## MultiLine Strings
 Older style:
 
