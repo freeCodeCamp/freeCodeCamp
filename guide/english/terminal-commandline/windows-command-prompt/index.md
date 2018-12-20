@@ -18,7 +18,11 @@ To go back one directory type and enter `cd..`. Your current working directory s
 ```
 C:\Users\YourUserName>
 ```
-With the `cd` and `cd ..` commands you can move back and forth through directories. This might seem very basic at first but as you learn more commands the command prompt will become a very useful and efficient tool.
+Also, to go back to the root directory type and enter `cd\`. Your current working directory should return to this:
+```
+C:\>
+```
+With the `cd`, `cd ..` and `cd\` commands you can move back and forth through directories. This might seem very basic at first but as you learn more commands the command prompt will become a very useful and efficient tool.
 
 ## Here is a list of common commands:
 | Command | Description  |
@@ -48,8 +52,10 @@ rm /s name_of_directory_you_want_to_delete
 
 ## Useful tips:
 -	The command `Ipconfig` shows your computer's ip address 
+- The command `getmac` shows your computer's physical address
 -	If you type part of a directory's name and hit the `tab` key the command prompt will autocomplete it and if you hit the `tab` key repeatedly it will cycle through directories that start with the same letter 
 -	You can use other shells or tools such as git bash or cmder to add more commands and functionality to your command prompt 
 - Some tasks require you to run the command prompt as an administrator you clicking the windows button and typing `cmd admin` and hit the `enter` key
 - If you know the path to a file or directory can type `cd PATH_TO_YOUR_DIRECTORY` instead of changing directories several times to get to a directory or file 
+- Use `cd ..` to move to the previous parent directory
 - When you hit the up arrow key your previously entered command will appear and if you hit it repeatedly it will cycle through all of your previously entered commands 
