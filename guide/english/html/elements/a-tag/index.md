@@ -7,15 +7,10 @@ The `<a>` tag or _anchor_ element creates a hyperlink to another page or file. I
 
 The text between the opening and closing `<a>` tags becomes the link.
 
-By default, a linked page is displayed in the current browser window unless another target is specified.
-
-By default, links will appear as follows in all browsers:
-
-An unvisited link is underlined and blue
-
-A visited link is underlined and purple
-
-An active link is underlined and red
+By default, a linked page is displayed in the current browser window unless another target is specified. The default link styles are as follows: 
+- An unvisited link is underlined and blue
+- A visited link is underlined and purple
+- An active link is underlined and red
 
 
 #### Example:
