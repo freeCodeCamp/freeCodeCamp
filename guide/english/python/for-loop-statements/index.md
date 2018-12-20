@@ -250,6 +250,30 @@ A interesting fact is that for loop is a bit faster compared to while loop in py
 https://stackoverflow.com/questions/869229/why-is-looping-over-range-in-python-faster-than-using-a-while-loop
 
 
+**Nested Loops**
+
+A nested loop is a loop inside a loop.
+
+The "inner loop" will be executed one time for each iteration of the "outer loop":
+
+```python
+var = ["Hey", "How"]
+name = ["ram", "shyam"]
+
+for x in var:
+  for y in name:
+    print(x, y)
+```
+
+Output:
+```
+>
+Hey ram
+Hey shyam
+How ram
+How shyam
+>
+```
 #### More Information:
 
 - <a href='https://docs.python.org/2.7/tutorial/controlflow.html#for-statements' target='_blank' rel='nofollow'>Python2 for loop documentation</a>
