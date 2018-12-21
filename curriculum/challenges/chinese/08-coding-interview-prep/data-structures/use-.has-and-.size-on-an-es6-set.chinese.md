@@ -18,7 +18,7 @@ localeTitle: 在ES6集上使用.has和.size
 ```yml
 tests:
   - text: '<code>checkSet([4, 5, 6], 3)</code>应该返回[false，3]'
-    testString: 'assert(function(){var test = checkSet([4,5,6], 3); test === [ false, 3 ]}, "<code>checkSet([4, 5, 6], 3)</code> should return [ false, 3 ]");'
+    testString: 'assert((function(){var test = checkSet([4,5,6], 3); test === [ false, 3 ]})(), "<code>checkSet([4, 5, 6], 3)</code> should return [ false, 3 ]");'
 
 ```
 
