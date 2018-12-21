@@ -68,8 +68,7 @@ title: JavaScript Tutorials and Other Resources
     Insiders has the most recent code pushes and may lead to the occasional broken build. New builds at least everyday with features, bug fixes, and other recently closed issues. Insiders installs next to the Stable build, allowing you to use either independently.
 
 
-    
-*   [Webstorm](https://www.jetbrains.com/webstorm)
+*   [WebStorm](https://www.jetbrains.com/webstorm)
 
     A full-feature IDE for Javascript, including code completion and support for live linting, version control, and testing. Made by JetBrains and modelled after their IntelliJ Java IDE.
 
