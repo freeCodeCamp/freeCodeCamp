@@ -1,4 +1,6 @@
-
+---
+title: Java Networking
+---
 # **Java Networking**
 
 Java Networking is a concept of connecting two or more computing devices together so that we can share resources.
