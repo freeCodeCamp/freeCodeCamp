@@ -3,13 +3,13 @@ title: Division
 ---
 ## Division
 
-This is a stub. <a href='https://github.com/freecodecamp/guides/tree/master/src/pages/mathematics/division/index.md' target='_blank' rel='nofollow'>Help our community expand it</a>.
+Division is one of the four basic operations of arithmetic, the others being addition, subtraction, and multiplication. Division is the inverse of multiplication; if `a × b = c`, then `a = c ÷ b`, as long as b is not zero.
 
-<a href='https://github.com/freecodecamp/guides/blob/master/README.md' target='_blank' rel='nofollow'>This quick style guide will help ensure your pull request gets accepted</a>.
 
-<!-- The article goes here, in GitHub-flavored Markdown. Feel free to add YouTube videos, images, and CodePen/JSBin embeds  -->
-Division is represented by the symbol '%'. To devide one number by antother is to find out how many times the second goes into the first. Therefore 7/2 = 3.5 because 2 goes into 7 3 and 1 half times.
+Division is represented by the symbol **/**, **÷**, or a fraction bar. Dividing is the process of calculating the number of times one number is contained within another one. For example, 15 apples are divided into three groups of five apples, meaning that fifteen divided by five gives three, or three is the result of division of fifteen by five. This is denoted as `15 / 5 = 3` or `15 ÷ 5 = 3`.
+
+
+
 #### More Information:
-<!-- Please add any articles you think might be helpful to read before writing the article -->
-
+* <a href='https://en.wikipedia.org/wiki/Division_(mathematics) "Division"' target='_blank' rel='nofollow'>Division</a>
 
