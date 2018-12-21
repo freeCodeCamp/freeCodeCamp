@@ -80,8 +80,7 @@ elephant is 3
 elephant is 5
 ```
 
-In addition to the break statement which opts out of the iteration when the condition is false is the continue statement.
-The `continue` statement skips the condition when the code is true, continues up until the condition is false.
+In contrast to the `break` statement which opts out of the iteration when the condition is false, the `continue` statement skips the condition when the code is true, and continues up until the condition is false.
 
 Using the above example again, let's see the functionality of the `continue` statement
 
