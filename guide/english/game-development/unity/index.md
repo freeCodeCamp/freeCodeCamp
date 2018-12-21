@@ -21,9 +21,11 @@ Additionally, Unity supports the low-level APIs Metal on iOS and macOS and Vulka
 
 For 3D games, Unity allows specification of texture compression and resolution settings for each platform that the game engine supports, and provides support for bump mapping, reflection mapping, parallax mapping, screen space ambient occlusion (SSAO), dynamic shadows using shadow maps, render-to-texture and full-screen post-processing effects.
 
+## Services and Platforms Supported
+
 Unity also offers services to developers, these are: Unity Ads, Unity Analytics, Unity Certification, Unity Cloud Build, Unity Everyplay, Unity IAP, Unity Multiplayer, Unity Performance Reporting and Unity Collaborate. Besides this, Unity has an asset store where the developer community can download and upload both commercial and free third party resources such as textures, models, plugins, editor extensions and even entire game examples.
 
-Unity is notable for its ability to target games for multiple platforms. The currently supported platforms are Android, Android TV, Facebook Gameroom, Fire OS, Gear VR, Google Cardboard, Google Daydream, HTC Vive, iOS, Linux, macOS, Microsoft HoloLens, Nintendo 3DS family, Nintendo Switch, Oculus Rift, PlayStation 4, PlayStation Vita, PlayStation VR, Samsung Smart TV, Tizen, tvOS, WebGL, Wii U, Windows, Windows Phone, Windows Store, and Xbox One.
+Unity is notable for its ability to target games for multiple platforms. The currently supported platforms are Android, Android TV, Facebook Gameroom, Fire OS, Gear VR, Google Cardboard, Google Daydream, HTC Vive, iOS, Linux, macOS, Microsoft HoloLens, Nintendo 3DS family, Nintendo Switch, Oculus Rift, Oculus Go, Oculus Quest, PlayStation 4, PlayStation Vita, PlayStation VR, Samsung Smart TV, Tizen, tvOS, WebGL, Wii U, Windows, Windows Phone, Windows Store, and Xbox One.
 
 Unity is the default software development kit (SDK) for Nintendo's Wii U video game console platform, with a free copy included by Nintendo with each Wii U developer license.
 Unity Technologies calls this bundling of a third-party SDK an "industry first".
@@ -50,15 +52,20 @@ Apart from the above listed sections, more sections can be brought into the Unit
 Unity Editor interface is heavily customisable as each section in window can be resized and docked anywhere in the editor as per our requirements. It is also possible in Unity to create custom windows and editor tools via script.
 
 ##  Noteworthy Games: 
+* Angry Birds II
 * Assassin’s Creed: Identity
-* Temple Run Trilogy
 * Battlestar Galactica Online
+* Beat Saber
+* Cuphead
+* Dragon Quest VIII (iOS and Android versions)
 * Hearthstone: Heroes of Warcraft
 * Inside
-* Cuphead
-* Club Penguin Island
-* Hitman Sniper (Android)
-     
+* Pillars of Eternity I & II
+* Torment: Tides of Numenera
+* Temple Run Trilogy
+* Tesla Effect: A Tex Murphy Adventure
+* Wasteland 2
+
 ## History
 
 Two other programming languages were supported: Boo, which was deprecated with the release of Unity 5 and UnityScript which was deprecated in August 2017 after the release of Unity 2017.1.
@@ -66,8 +73,6 @@ Two other programming languages were supported: Boo, which was deprecated with t
 Unity formerly supported 7 other platforms including its own Unity Web Player.
 
 Unity Web Player was a browser plugin that was supported in Windows and OS X only, which has been deprecated in favor of WebGL.
-
-Unity is the engine used by Rust, Kerbal Space Program, and Cup Head.
 
 #### More Information: 
 
