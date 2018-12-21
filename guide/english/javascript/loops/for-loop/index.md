@@ -79,6 +79,26 @@ elephant is 1
 elephant is 3
 elephant is 5
 ```
+
+In contrast to the `break` statement which opts out of the iteration when the condition is false, the `continue` statement skips the condition when the code is true, and continues up until the condition is false.
+
+Using the above example again, let's see the functionality of the `continue` statement
+
+
+```javascript
+for (var elephant = 1; elephant < 10; elephant+=2) {
+    if (elephant === 7) {
+        continue;
+    }
+    console.info('elephant is ' + elephant);
+}
+
+output:
+elephant is 1
+elephant is 3
+elephant is 5
+elephant is 9
+```
     
 ### Other Resources
 * [MDN - for statements](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/for)
