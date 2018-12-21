@@ -45,6 +45,13 @@ exports.sourceNodes = function sourceChallengesSourceNodes(
               return createChallengeNode(challenge, reporter);
             })
             .then(createNode)
+            .catch(e =>
+              reporter.error(`fcc-replace-challenge
+
+  ${e.message}
+
+  `)
+            )
         : null
   );
 

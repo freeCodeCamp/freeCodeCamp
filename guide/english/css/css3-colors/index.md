@@ -35,12 +35,14 @@ This rule changes the font color of all p elements to green, just like above.
 
 ### Hexadecimal Values
 
-Hexadecimal values are yet another way to define colors in CSS and they work quite similarly to RGB values.<br>
+Hexadecimal values are yet another way to define colors in CSS and they work quite similarly to RGB values. It is supported in all browsers.<br>
 
-A random hex code would like this: `#29432b`, where the first two characters after the hash stand for the amount of red in the mix, the second two stand for the amount of green and the last two stand for the amount of blue.<br> 
+**A hexadecimal color is specified with: #RRGGBB** <br>
 
-The values of `#000000` and `#ffffff` stand for black and white respectively.<br>
-You can find the specific hexadecimal colors you require by using the same tools mentioned for the RGB values.
+RR(Red), GG(Green), BB(Blue) are hexadecimal integers between 00 and FF specify the intensity of the color. <br>
+
+A random hex code would like this: `#29432b`, where the first two characters after the hash stand for the amount of RED in the mix, the second two stand for the amount of Green and the last two stand for the amount of Blue. Unlike RGB color mixture where the values are in base 10, Hexadecimal color codes use base 16, or hexadecimal base, to specify color mixtures.
+
 
 ### Syntax
 
@@ -49,7 +51,26 @@ p {
   color: #00fe00;
 }
 ```
+
 This rule again changes the font color of all p elements to green.
+
+The values of `#000000` and `#ffffff` stand for black and white respectively. 
+
+When a hex color code is composed of entirely of the same characters, the hex color can be abbreviated, like this:
+
+```css
+h1 {
+  color: #FFFFFF;
+  color: #FFF; /* This is the same color as above */
+}
+
+h2 {
+  color: #FF33AA;
+  color: #F3A; /* This is the same color as above */
+}
+```
+
+You can find the specific Hexadecimal colors you require by using the same tools mentioned for the RGB values. <br>
 
 ### HSL
 
@@ -76,10 +97,19 @@ Color names take only 140 values, while RGB and HEX values have 16,777,216 possi
 
 <!-- The article goes here, in GitHub-flavored Markdown. Feel free to add YouTube videos, images, and CodePen/JSBin embeds  -->
 
-#### More Information:
+### More Information:
 <!-- Please add any articles you think might be helpful to read before writing the article -->
 [w3schools](https://www.w3schools.com/colors/default.asp)
 
 [W3 Draft Documentation](https://drafts.csswg.org/css-color-3/#color)
 
 [MDN | CSS colors](https://developer.mozilla.org/en-US/docs/Web/CSS/color)
+
+### Useful Tools
+[0to255](http://www.0to255.com/)
+
+[Flat UI Colors](https://flatuicolors.com/)
+
+[Materials Design Palette](https://www.materialpalette.com/)
+
+[Color Hunt](https://colorhunt.co/)

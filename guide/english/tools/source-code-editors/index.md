@@ -36,8 +36,9 @@ It supports many programming languages, and like the others you can download plu
 Its main features are:
 *   IntelliSense - For syntax highlighting, autocomplete, functions definitions and smart complete.
 *   Debugging - Be able to debug using break points, call stacks and an interactive console.
-*   Build-in Git - Review diffs, stage files, make commits, push and pull, all available in the editor.
+*   Built-in Git support - Review diffs, stage files, make commits, push and pull, all available in the editor.
 *   Extensions - Install extensions to add new languages, themes, debuggers, and connect additional services.
+
 
 **A few extensions that make your life easier and more interesting while using Visual Studio Code are:**
 - [VS Live Share](https://marketplace.visualstudio.com/items?itemName=MS-vsliveshare.vsliveshare) - invite someone into your editor and code together
@@ -50,9 +51,9 @@ Its main features are:
 - [Path Intellisense](https://marketplace.visualstudio.com/items?itemName=christian-kohler.path-intellisense) - autocompletes filenames
 - [TODO highlight](https://marketplace.visualstudio.com/items?itemName=wayou.vscode-todo-highlight) - Highlight TODO, FIXME and other annotations within your code
 - [Code Snippets](https://marketplace.visualstudio.com/search?term=snippets&target=VSCode&category=All%20categories&sortBy=Relevance) - snippets for anything you need
+- [A collection of awesome VS Code extensions](https://github.com/viatsko/awesome-vscode)
 
 ## [Notepad++](https://notepad-plus-plus.org)<img src="https://upload.wikimedia.org/wikipedia/commons/0/0f/Notepad%2B%2B_Logo.png" width="50px">
 
 Notepad++ is a free, open source code editor, that runs in the Microsoft Windows Environment. It was developed in 2003, by Dan Ho. It is written in <a href='www.cplusplus.com' target='_blank' rel='nofollow'>C++</a> (the name comes from that). Notepad++ supports tabbed editing, wich allows working with multiple open files in a single window, and also can be use as a plain text editor.
-
 

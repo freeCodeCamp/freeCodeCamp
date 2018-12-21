@@ -8,7 +8,8 @@ title: Cards
 
 *  Cards are bordered boxes with a bit of padding around the content inside them, which can be used to conveniently display a specific set of information.
 
-** To create a basic Bootstrap 4 card, you need to create a `<div>` container with the class `.card` and inside  another `<div>` container with the class of `.card-body` **
+** To create a basic Bootstrap 4 card, you need to create a `<div>` container with the class `.card` and inside it another `<div>` container with the class of `.card-body` **
+
 
 ###### Code example:
 
@@ -39,6 +40,23 @@ The structure of the card can be enhanced by the addition of a header and a foot
   </div>
 </div>
 ```
+### Body
+--------
+The main container of Card is .card-body.
+
+###### This is what it would look like in your HTML document
+
+```html
+<div class="card">
+  <div class="card-body">
+    This is some text within a card body.
+  </div>
+</div>
+```
+###### Result
+
+This is some text within a card body.
+
 
 ### Cards with Images
 -----------
@@ -93,3 +111,10 @@ The structure of the card can be enhanced by the addition of a header and a foot
 </div>
 <!--You must set the image height on all cards -->
 ```
+
+
+#### More Information
+
+- [Bootstrap cards](https://getbootstrap.com/docs/4.1/components/card/)
+
+

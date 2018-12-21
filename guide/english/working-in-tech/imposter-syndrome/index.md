@@ -22,8 +22,6 @@ These thoughts are fairly common if you struggle with imposter syndrome:
 * "I need more training to feel like I deserve to be here."
 
 
-Imposter Syndrome may prevent you from reaching out when you need help, thus slowing your progression. Please do reach out on the forum or the chatroom!
-
 #### Overcoming Imposter Syndrome
 
 The first step in overcoming imposter syndrome is to learn the difference between a growth mindset and a fixed mindset. People with a growth mindset believe that their skills and talents can be developed through hard work, practice, conversations with others, etc. Alternately, those with a fixed mindset tend to believe their talents are set abilities that they were born with.
@@ -32,6 +30,7 @@ When you change your outlook to a growth mindset, you allow yourself to take on 
 
 [Many talented, successful people deal with Imposter Syndrome](https://www.thecut.com/2017/01/25-famous-women-on-impostor-syndrome-and-self-doubt.html). They even say that - counterintuitively - not only does success not eliminate Imposter Syndrome; many times, success makes it worse. So, it isn't something we conquer once. We conquer it every day, every time we take on a project, task, etc.
 
+Imposter Syndrome may prevent you from reaching out when you need help, thus slowing your progression. Please do reach out on the forum or the chatroom!
 More great resources to help you know more about Imposter Syndrome and some tips to tackle it:
 
 * [American Psychological Association - Feel Like a Fraud?](http://www.apa.org/gradpsych/2013/11/fraud.aspx)

@@ -3,7 +3,9 @@ title: Algorithm Performance
 ---
 
 In mathematics, big-O notation is a symbolism used to describe and compare the _limiting behavior_ of a function.  
+
 A function's limiting behavior is how the function acts as it approaches a specific value (usually trends towards infinity).
+
 In short, big-O notation is used to describe the growth or decline of a function, usually with respect to another function.
 
 In algorithm design, we usually use big-O notation because we can see how good or bad an algorithm's performance will be.  From a denotative perspective, big-O denotes the runtime in the worst possible case scenario.  However, in many instances, people use it as a synonym for average expected runtime.  

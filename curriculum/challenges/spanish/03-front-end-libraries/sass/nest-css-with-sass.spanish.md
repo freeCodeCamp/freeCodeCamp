@@ -1,9 +1,6 @@
 ---
 id: 587d7dbd367417b2b2512bb5
 title: Nest CSS with Sass
-required:
-  - src: 'https://cdnjs.cloudflare.com/ajax/libs/sass.js/0.10.9/sass.sync.min.js'
-    raw: true
 challengeType: 0
 videoUrl: ''
 localeTitle: Nest CSS con Sass
@@ -11,24 +8,24 @@ localeTitle: Nest CSS con Sass
 
 ## Description
 <section id="description">
-Sass permite anidamiento (<code>nesting</code>) de reglas CSS, que es una forma útil de organizar una hoja de estilo. Normalmente, cada elemento se escribe en una línea diferente para darle estilo así: 
+Sass permite anidamiento (<code>nesting</code>) de reglas CSS, que es una forma útil de organizar una hoja de estilo. Normalmente, cada elemento se escribe en una línea diferente para darle estilo así:
 
 ```html
 nav {
   background-color: red;
-} 
+}
 
-nav ul { 
+nav ul {
   list-style: none;
 }
 
 nav ul li {
   display: inline-block;
-} 
+}
 ```
 
-Para un proyecto grande, el archivo CSS tendrá muchas líneas y reglas. Aquí es donde el <code>nesting</code> puede ayudar a organizar su código al colocar reglas de estilo secundarias dentro de los respectivos elementos principales: 
- 
+Para un proyecto grande, el archivo CSS tendrá muchas líneas y reglas. Aquí es donde el <code>nesting</code> puede ayudar a organizar su código al colocar reglas de estilo secundarias dentro de los respectivos elementos principales:
+
 ```html
 nav {
   background-color: red;

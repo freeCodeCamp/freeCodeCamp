@@ -32,9 +32,9 @@ The autoplay attribute will automatically play your audio file in the background
 
 The preload attribute indicates what the browser should do if the player is not set to autoplay.
 
-The loop attribute will play your audio file in a continous loop if mentioned
+The loop attribute will play your audio file in a continuous loop if mentioned.
 
-Since this is html5, some browser do not support it. You can check it at https://caniuse.com/#search=audio
+Since this is html5, some browsers do not support it. You can check it at https://caniuse.com/#search=audio
 
 #### More Information:
 https://caniuse.com/#search=audio

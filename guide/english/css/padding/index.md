@@ -10,7 +10,7 @@ Padding values are set using lengths, percentages, or the `inherit` keyword, and
 ## Syntax
 ```css
 .element {
-    padding: [padding-top] || [padding-right] || [padding-bottom] || [padding-left];
+  padding: [padding-top] || [padding-right] || [padding-bottom] || [padding-left];
 }
 ```
 
@@ -24,10 +24,10 @@ This property may be specified using one, two, three, or four values.
 /* em refers to the current font size of an element */
 /* Apply to all four sides */
 padding: 1em;
-  
+
 /* top and bottom | left and right */
 padding: 5% 10%;
-  
+
 /* top | left and right | bottom */
 padding: 1em 2em 2em;
 
@@ -38,7 +38,7 @@ padding: 5px 1em 0 1em;
 ## Where in box model
 The padding property in CSS defines the innermost portion of the box model, creating space around an element's content, inside of any defined margins and/or borders.
 
-![The CSS Box Model](https://www.w3.org/TR/css3-box/box.png)
+![The CSS Box Model](https://i.imgur.com/S0QPDi4.png)
 
 
 ## Common Pitfalls

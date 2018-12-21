@@ -181,7 +181,7 @@ function sendCertifiedEmail(
   const notifyUser = {
     type: 'email',
     to: email,
-    from: 'team@freeCodeCamp.org',
+    from: 'quincy@freecodecamp.org',
     subject: dedent`
       Congratulations on completing all of the
       freeCodeCamp certifications!

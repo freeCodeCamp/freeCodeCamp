@@ -1,3 +1,4 @@
+/* global PAYPAL_SUPPORTERS */
 import { createAction, handleActions } from 'redux-actions';
 import { uniqBy } from 'lodash';
 
@@ -14,14 +15,11 @@ import failedUpdatesEpic from './failed-updates-epic';
 import updateCompleteEpic from './update-complete-epic';
 
 import { types as settingsTypes } from './settings';
+import { types as challengeReduxTypes } from '../templates/Challenges/redux';
 
-/** ***********************************/
-const challengeReduxTypes = {};
-/** ***********************************/
+export const ns = 'app';
 
-const ns = 'app';
-
-const defaultFetchState = {
+export const defaultFetchState = {
   pending: true,
   complete: false,
   errored: false,
@@ -42,6 +40,7 @@ const initialState = {
   userProfileFetchState: {
     ...defaultFetchState
   },
+  sessionMeta: {},
   showDonationModal: false,
   isOnline: true
 };
@@ -161,6 +160,11 @@ export const userSelector = state => {
   return state[ns].user[username] || {};
 };
 
+export const sessionMetaSelector = state => state[ns].sessionMeta;
+export const activeDonationsSelector = state =>
+  Number(sessionMetaSelector(state).activeDonations) +
+  Number(PAYPAL_SUPPORTERS);
+
 function spreadThePayloadOnUser(state, payload) {
   return {
     ...state,
@@ -184,7 +188,10 @@ export const reducer = handleActions(
       ...state,
       userProfileFetchState: { ...defaultFetchState }
     }),
-    [types.fetchUserComplete]: (state, { payload: { user, username } }) => ({
+    [types.fetchUserComplete]: (
+      state,
+      { payload: { user, username, sessionMeta } }
+    ) => ({
       ...state,
       user: {
         ...state.user,
@@ -196,6 +203,10 @@ export const reducer = handleActions(
         complete: true,
         errored: false,
         error: null
+      },
+      sessionMeta: {
+        ...state.sessionMeta,
+        ...sessionMeta
       }
     }),
     [types.fetchUserError]: (state, { payload }) => ({
@@ -220,16 +231,15 @@ export const reducer = handleActions(
           [username]: { ...previousUserObject, ...user }
         },
         userProfileFetchState: {
+          ...defaultFetchState,
           pending: false,
-          complete: true,
-          errored: false,
-          error: null
+          complete: true
         }
       };
     },
     [types.fetchProfileForUserError]: (state, { payload }) => ({
       ...state,
-      userFetchState: {
+      userProfileFetchState: {
         pending: false,
         complete: false,
         errored: true,
@@ -253,10 +263,9 @@ export const reducer = handleActions(
       ...state,
       showCert: payload,
       showCertFetchState: {
+        ...defaultFetchState,
         pending: false,
-        complete: true,
-        errored: false,
-        error: null
+        complete: true
       }
     }),
     [types.showCertError]: (state, { payload }) => ({
