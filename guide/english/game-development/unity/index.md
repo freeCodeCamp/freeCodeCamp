@@ -39,17 +39,21 @@ In picture above, you will notice five sections:
 4) Section 4. <b>Project</b>: This is your project window. Basically it show whats inside Assets folder on your disk. Everything from Game Objects, Scripts, Textures, Folders, Models, Audio, Video and etc... will be accessible from this window.
 5) Section 5. <b>Inspector</b>: This panel will display different attributes and properties of selected Game Objects. Depending on the selection, the appropriate attributes and components will be listed.
 
-##  Noteworthy Games 
+##  Noteworthy Games: 
+* Angry Birds II
 * Assassin’s Creed: Identity
-* Temple Run Trilogy
 * Battlestar Galactica Online
+* Beat Saber
+* Cuphead
+* Dragon Quest VIII (iOS and Android versions)
 * Hearthstone: Heroes of Warcraft
 * Inside
-* Cuphead
-* Rust
-* Kerbal Space Program
-* Club Penguin Island
-     
+* Pillars of Eternity I & II
+* Torment: Tides of Numenera
+* Temple Run Trilogy
+* Tesla Effect: A Tex Murphy Adventure
+* Wasteland 2
+
 ## History
 
 Two other programming languages were supported: Boo, which was deprecated with the release of Unity 5 and UnityScript which was deprecated in August 2017 after the release of Unity 2017.1.
