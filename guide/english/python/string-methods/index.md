@@ -28,4 +28,4 @@ An empty `string` is created using a pair of quotation marks or apostrophes:
 
 *  `string.strip(to_strip)`  Returns a string with `to_strip` removed from both the beginning and the end of the string. If `to_strip` is not specified, this will strip all whitespace characters.
 
-
+*  `string.format(to_add)`  Returns a formatted string with parameter `to_add` placed in the placeholder position. The placeholder has to be defined by a pair of curly braces {} int the `string`'s value. The parameter, `to_add` can be anything amongst an integer, a floating point numerical, a string or even variables.
