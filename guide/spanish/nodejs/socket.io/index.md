@@ -1,5 +1,6 @@
 ---
 title: Socket.io
+localeTitle: Socket.io
 ---
 ## Socket.io
 
