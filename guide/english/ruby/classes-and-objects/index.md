@@ -105,7 +105,7 @@ NoMethodError (undefined method `make=' for #<Car:0x00007fd3ca13fdd0>)
 Did you mean?  make
 ```
 
-Viewing the previous output from [`irb`](https://en.wikipedia.org/wiki/Interactive_Ruby_Shell), you can see that each one of the instance variables is readable. We can write to `@color`, but we end up causing a `NoMethodError` exception when we attempt to write to `@make`. This is because `@make` was only defined using an `attr_reader`, so `make=` is not defined. This could fixed by adding the make to the `attr_accessor` like we did for color.
+Viewing the previous output from [`irb`](https://en.wikipedia.org/wiki/Interactive_Ruby_Shell), you can see that each one of the instance variables is readable. We can write to `@color`, but we end up causing a `NoMethodError` exception when we attempt to write to `@make`. This is because `@make` was only defined using an `attr_reader`, so `make=` is not defined. This could be fixed by adding the make to the `attr_accessor` like we did for color.
 
 ### Resources
 - [Ruby Programming/Syntax/Classes](https://en.wikibooks.org/wiki/Ruby_Programming/Syntax/Classes)
