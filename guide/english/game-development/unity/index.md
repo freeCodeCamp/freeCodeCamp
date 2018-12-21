@@ -9,7 +9,7 @@ First announced only for OS X, at Apple's Worldwide Developers Conference in 200
 ## Overview
 Unity is an all purpose game engine that supports 2D and 3D graphics, drag and drop functionality and scripting through [C#](https://guide.freecodecamp.org/csharp).
 
-Unity is particularly popular for mobile game development and much of their focus is on mobile platforms. Unity3D's 2D pipeline is a more recent addition to the engine, and is less mature than the 3D pipeline. Despite this Unity is an adaquate platform for developing 2D games even when compared to other dedicated 2D engines, particularly if you plan to release the game across multiple mobile devices.
+Unity is particularly popular for mobile game development and much of their focus is on mobile platforms. Unity3D's 2D pipeline is a more recent addition to the engine, and is less mature than the 3D pipeline. Despite this Unity is an adaquate platform for developing 2D games even when compared to other dedicated 2D engines, particularly if you plan to release the game across multiple mobile devices due to its ease of access of building for different platforms.
 
 Unity is also a good choice for VR development, although VR is a very small market at the moment. The mobile and PSVR markets are the largest in VR, and Unity is already well positioned to port games to many platforms such as PS4 and PC, or many different mobile markets. 
 
@@ -19,9 +19,11 @@ Additionally, Unity supports the low-level APIs Metal on iOS and macOS and Vulka
 
 For 3D games, Unity allows specification of texture compression and resolution settings for each platform that the game engine supports, and provides support for bump mapping, reflection mapping, parallax mapping, screen space ambient occlusion (SSAO), dynamic shadows using shadow maps, render-to-texture and full-screen post-processing effects.
 
+## Services and Platforms Supported
+
 Unity also offers services to developers, these are: Unity Ads, Unity Analytics, Unity Certification, Unity Cloud Build, Unity Everyplay, Unity IAP, Unity Multiplayer, Unity Performance Reporting and Unity Collaborate. Besides this, Unity has an asset store where the developer community can download and upload both commercial and free third party resources such as textures, models, plugins, editor extensions and even entire game examples.
 
-Unity is notable for its ability to target games for multiple platforms. The currently supported platforms are Android, Android TV, Facebook Gameroom, Fire OS, Gear VR, Google Cardboard, Google Daydream, HTC Vive, iOS, Linux, macOS, Microsoft HoloLens, Nintendo 3DS family, Nintendo Switch, Oculus Rift, PlayStation 4, PlayStation Vita, PlayStation VR, Samsung Smart TV, Tizen, tvOS, WebGL, Wii U, Windows, Windows Phone, Windows Store, and Xbox One.
+Unity is notable for its ability to target games for multiple platforms. The currently supported platforms are Android, Android TV, Facebook Gameroom, Fire OS, Gear VR, Google Cardboard, Google Daydream, HTC Vive, iOS, Linux, macOS, Microsoft HoloLens, Nintendo 3DS family, Nintendo Switch, Oculus Rift, Oculus Go, Oculus Quest, PlayStation 4, PlayStation Vita, PlayStation VR, Samsung Smart TV, Tizen, tvOS, WebGL, Wii U, Windows, Windows Phone, Windows Store, and Xbox One.
 
 Unity is the default software development kit (SDK) for Nintendo's Wii U video game console platform, with a free copy included by Nintendo with each Wii U developer license.
 Unity Technologies calls this bundling of a third-party SDK an "industry first".
@@ -30,12 +32,12 @@ Unity Technologies calls this bundling of a third-party SDK an "industry first".
 
 ![Unity Interface](https://github.com/pawelszpiczakowski/PublicStuff/raw/master/unityInterface.png)
 
-In picture above, you will notice five section:
+In picture above, you will notice five sections:
 1) Section 1. <b>Scene View</b>: This is where you will be creating level for your game, scene or 3D project. All of your Game Objects will be placed and manipulated right here.
 2) Section 2. <b>Game View</b>: This is where you will see your results, how your level or scene looks like. You need to have a Camera on the scene to see how it looks like. Sometimes its called Camera View.
 3) Section 3. <b>Hierarchy</b>: This window will display all Game Objects placed directly on the scene. Basically everything that you see in Game View, needs to be listed here. This will include non-visual and visual game objects.
 4) Section 4. <b>Project</b>: This is your project window. Basically it show whats inside Assets folder on your disk. Everything from Game Objects, Scripts, Textures, Folders, Models, Audio, Video and etc... will be accessible from this window.
-5) Section 5. <b>Inspector</b>: This panel will display different attibutes and properties of selected Game Objects. Depending on the selection, the appropriate attributes and components will be listed.
+5) Section 5. <b>Inspector</b>: This panel will display different attributes and properties of selected Game Objects. Depending on the selection, the appropriate attributes and components will be listed.
 
 ##  Noteworthy Games: 
 * Angry Birds II
@@ -59,8 +61,6 @@ Two other programming languages were supported: Boo, which was deprecated with t
 Unity formerly supported 7 other platforms including its own Unity Web Player.
 
 Unity Web Player was a browser plugin that was supported in Windows and OS X only, which has been deprecated in favor of WebGL.
-
-Unity is the engine used by Rust, Kerbal Space Program, and Cup Head.
 
 #### More Information: 
 

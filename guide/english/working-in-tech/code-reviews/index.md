@@ -14,13 +14,18 @@ the feeling that your code is going to be read/ inspected by another programmer 
 
 As to what is reviewed and when, well there is no clear answer.
 Many teams have rules that every piece of code that checks-in in the version control system has to be reviewed by another programmer,
-while other teams have whole days when they dedicate to code reviews across the team.
+while other teams have whole days when they dedicate to code reviews across the team. Teams, within an organization, create internal Coding Standards for the various languages used, as a guidance for developers, and code reviewers. An effective code review is one where functionality, testability, security, and readibility/styling issues are addressed. 
 
 It is important to be humble throughout the code review process. Accept your mistakes, 
 and be professional when pointing out improvements or errors in the code of your fellow
 team members.
 
-## Want to learn more?
+#### More Information
 
-* [GitHub Documentation](https://github.com/features/code-review) : Learn how to write better code and document your changes with version control
 * [How to Do Code Reviews Like a Human (Part One)](https://mtlynch.io/human-code-reviews-1/)
+* [How to Do Code Reviews Like a Human (Part Two)](https://mtlynch.io/human-code-reviews-2/)
+* [Code Review Best Practices](https://medium.com/palantir/code-review-best-practices-19e02780015f)
+* [Smartbear - What is Code Review?](https://smartbear.com/learn/code-review/what-is-code-review/)
+* [How to Conduct Effective Code Reviews](https://blog.digitalocean.com/how-to-conduct-effective-code-reviews/)
+* [Why Code Reviews Matter (and actually save time!](https://www.atlassian.com/agile/software-development/code-reviews)
+* [Code Reviews: The Definitive Guide](https://simpleprogrammer.com/code-reviews-definitive-guide/)
