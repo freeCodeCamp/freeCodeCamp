@@ -13,7 +13,7 @@ Unity is an all purpose game engine that supports 2D and 3D graphics, drag and d
 
 Unity is particularly popular for mobile game development and much of their focus is on mobile platforms. Unity3D's 2D pipeline is a more recent addition to the engine, and is less mature than the 3D pipeline. Despite this Unity is an adaquate platform for developing 2D games even when compared to other dedicated 2D engines, particularly if you plan to release the game across multiple mobile devices due to its ease of access of building for different platforms.
 
-Unity is also a good choice for VR development, although VR is a very small market at the moment. The mobile and PSVR markets are the largest in VR, and Unity is already well positioned to port games to many platforms such as PS4 and PC, or many different mobile markets. 
+Unity is also a good choice for VR development, although VR is a very small market at the moment. The mobile and PSVR markets are the largest in VR, and Unity is already well positioned to port games to many platforms such as PS4 and PC, or many different mobile markets. Unity allows for native integration with many HMDs, and holds support packages for accessing controllers, user position, etc. in the Asset Store.
 
 The engine targets the following graphics APIs: Direct3D on Windows and Xbox One; OpenGL on Linux, macOS, and Windows; OpenGL ES on Android and iOS; WebGL on the web; and proprietary APIs on the video game consoles.
 
@@ -73,6 +73,8 @@ Two other programming languages were supported: Boo, which was deprecated with t
 Unity formerly supported 7 other platforms including its own Unity Web Player.
 
 Unity Web Player was a browser plugin that was supported in Windows and OS X only, which has been deprecated in favor of WebGL.
+
+Unity is the engine used by Rust, Kerbal Space Program, and Cuphead.
 
 #### More Information: 
 
