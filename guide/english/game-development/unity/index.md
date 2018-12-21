@@ -13,7 +13,7 @@ Unity is an all-purpose game engine that supports 2D and 3D graphics, drag and d
 
 Unity is particularly popular for mobile game development and much of their focus is on mobile platforms. Unity3D's 2D pipeline is a more recent addition to the engine, and is less mature than the 3D pipeline. Despite this Unity is an adequate platform for developing 2D games even when compared to other dedicated 2D engines, particularly if you plan to release the game across multiple mobile devices due to its ease of access of building for different platforms.
 
-Unity is also a good choice for VR development, although VR is a very small market at the moment. The mobile and PSVR markets are the largest in VR, and Unity is already well positioned to port games to many platforms such as PS4 and PC, or many different mobile markets. Unity allows for native integration with many HMDs, and holds support packages for accessing controllers, user position, etc. in the Asset Store.
+Unity is also a good choice for VR development, although VR is a very small market at the moment, but growing. The mobile and PSVR markets are the largest in VR, and Unity is already well positioned to port games to many platforms such as PS4 and PC, or many different mobile markets. Unity also allows the development of AR Content and has training sessions with both VR and AR articles.
 
 The engine targets the following graphics APIs: Direct3D on Windows and Xbox One; OpenGL on Linux, macOS, and Windows; OpenGL ES on Android and iOS; WebGL on the web; and proprietary APIs on the video game consoles.
 
@@ -49,10 +49,10 @@ Apart from the above listed sections, more sections can be brought into the Unit
 3. <b>Animation</b>: Here we can create animation sequences for our Game Objects within the Unity engine.
 4. <b>Profiler</b>: This section allows us to profile our game. Here we can see the performance, memory usage, fps and other characteristics of our game and which function, script, object, etc. is causing how much effect on the quality of our game.
 5. <b>Asset Store</b>: If we are logged into our Unity account in the editor, we can directly access the Unity Asset Store and download and import the required assets into our project.
-     
+
 Unity Editor interface is heavily customisable as each section in window can be resized and docked anywhere in the editor as per our requirements. It is also possible in Unity to create custom windows and editor tools via script.
 
-##  Noteworthy Games: 
+##  Noteworthy Games:
 * Angry Birds II
 * Assassin’s Creed: Identity
 * Battlestar Galactica Online
@@ -80,7 +80,7 @@ Unity is the engine used by Rust, Kerbal Space Program, and Cuphead.
 ## Marketing
 On December 16, 2013, Unity Technologies Japan revealed new screenshots for an official mascot character named Unity-chan (ユニティちゃん Yuniti-chan), real name Kohaku Ōtori (大鳥 こはく Ōtori Kohaku) (voiced by Asuka Kakumoto), with exhibit of the character in Comic Market 85 event in the Tokyo Big Sight between December 29 to the 31st, where themed goods would be distributed and her voice actress would be present at the event. The character's associated game data were to be released in spring 2014.[26][27][28] The character was designed by Unity Technologies Japan designer "ntny" as an open-source heroine character.[29] The company allows the use of Unity-chan and related characters in secondary projects under certain licenses.[30] For example, Unity-chan appears as a playable character in Runbow.[31] The popularity of the character also led to her appearance in VOCALOID adaptions, including her own sound library for VOCALOID4 and a special adaption of VOCALOID designed to work with the Unity Engine 5.0 version called Unity with VOCALOID.
 
-#### More Information: 
+#### More Information:
 
 * [Unity's Official Website](https://unity3d.com/)
 * [Wikipedia](https://en.wikipedia.org/wiki/Unity_(game_engine))
