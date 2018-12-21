@@ -1,6 +1,8 @@
 ---
 title: Unity
 ---
+
+# Unity
 ## Game Development with Unity
 
 Unity is a cross-platform game engine developed by Unity Technologies, which is primarily used to develop video games and simulations for computers, consoles and mobile devices.
@@ -32,12 +34,22 @@ Unity Technologies calls this bundling of a third-party SDK an "industry first".
 
 ![Unity Interface](https://github.com/pawelszpiczakowski/PublicStuff/raw/master/unityInterface.png)
 
-In picture above, you will notice five sections:
-1) Section 1. <b>Scene View</b>: This is where you will be creating level for your game, scene or 3D project. All of your Game Objects will be placed and manipulated right here.
-2) Section 2. <b>Game View</b>: This is where you will see your results, how your level or scene looks like. You need to have a Camera on the scene to see how it looks like. Sometimes its called Camera View.
-3) Section 3. <b>Hierarchy</b>: This window will display all Game Objects placed directly on the scene. Basically everything that you see in Game View, needs to be listed here. This will include non-visual and visual game objects.
-4) Section 4. <b>Project</b>: This is your project window. Basically it show whats inside Assets folder on your disk. Everything from Game Objects, Scripts, Textures, Folders, Models, Audio, Video and etc... will be accessible from this window.
-5) Section 5. <b>Inspector</b>: This panel will display different attributes and properties of selected Game Objects. Depending on the selection, the appropriate attributes and components will be listed.
+In picture above, you will notice five section:
+1) Section 1. <b>Scene View</b>: This is where you will be creating level for your game, scene or 3D project. All of your Game Objects will be placed right here. This view is used during development of the game and the developer can see and modify all Game Objects placed here from any angle (even while the game is running in the Unity editor)
+2) Section 2. <b>Game View</b>: This is where you will see your results, how your level or scene looks like. You need to have a Camera on the scene to see how it looks like. Sometimes its called Camera View. This view is aimed at the player and only things/actions that the developer wishes to allow for a player can be seen/done by the player.
+3) Section 3. <b>Hierarchy</b>: This window will display all Game Objects placed directly on the scene. Basically everything that you see in Game View, needs to be listed here. This will include non-visual and visual game objects that are currently included in the given scene.
+4) Section 4. <b>Project</b>: This is your project window. Basically it show whats inside Assets folder on your disk. Everything from Game Objects, Scripts, Textures, Folders, Models, Audio, Video and etc... that have been imported to the given project will be accessible from this window.
+5) Section 5. <b>Inspector</b>: This panel will display different attributes and properties of selected Game Object(s). Depending on the selection, the appropriate attributes and components will be listed.
+
+Apart from the above listed sections, more sections can be brought into the Unity editor whenever required. Some notable ones are listed below:
+
+1. <b>Light</b>: This section allows us to modify the overall light settings of the project/scene.
+2. <b>Animator</b>: This is the section where we can set up animation states for a Game Object and how it transitions from one animation to next.
+3. <b>Animation</b>: Here we can create animation sequences for our Game Objects within the Unity engine.
+4. <b>Profiler</b>: This section allows us to profile our game. Here we can see the performance, memory usage, fps and other characteristics of our game and which function, script, object, etc. is causing how much effect on the quality of our game.
+5. <b>Asset Store</b>: If we are logged into our Unity account in the editor, we can directly access the Unity Asset Store and download and import the required assets into our project.
+     
+Unity Editor interface is heavily customisable as each section in window can be resized and docked anywhere in the editor as per our requirements. It is also possible in Unity to create custom windows and editor tools via script.
 
 ##  Noteworthy Games: 
 * Angry Birds II
@@ -64,6 +76,6 @@ Unity Web Player was a browser plugin that was supported in Windows and OS X onl
 
 #### More Information: 
 
-[Unity's Official Website](https://unity3d.com/)
-[Wikipedia](https://en.wikipedia.org/wiki/Unity_(game_engine))
-[Official Unity Tutorials](https://unity3d.com/learn)
+* [Unity's Official Website](https://unity3d.com/)
+* [Wikipedia](https://en.wikipedia.org/wiki/Unity_(game_engine))
+* [Official Unity Tutorials](https://unity3d.com/learn)
