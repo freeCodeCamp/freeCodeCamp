@@ -16,7 +16,7 @@ handleChange(event) {
 }
   
 ```
-Now your next step will involve creating a input box and trigger it when someone types anything. Luckily we have an event called `onChange()` to serve this purpose. <br>
+Now your next step will involve creating an input box and trigger it when someone types anything. Luckily we have an event called `onChange()` to serve this purpose. <br>
 PS - Here is another way to bind `this` into a function 
 ```
 <input onChange = {this.handleChange.bind(this)}/>
