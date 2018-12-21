@@ -46,12 +46,6 @@ A more complex HTML table may also include `<caption>`, `<col>`, `<colgroup>`, `
 	      <th>Amount</th>
 	    </tr>
 	  </thead>
-	  <tfoot>
-	    <tr>
-	      <td>Apple</td>
-	      <td>10</td>
-	    </tr>
-	  </tfoot>
 	  <tbody>
 	    <tr>
 	      <td>Peach</td>
@@ -62,6 +56,12 @@ A more complex HTML table may also include `<caption>`, `<col>`, `<colgroup>`, `
 	      <td>3</td>
 	    </tr>
 	  </tbody>
+          <tfoot>
+	    <tr>
+	      <td>Apple</td>
+	      <td>10</td>
+	    </tr>
+	  </tfoot>      
 	</table>
 	</body>
    </html>
@@ -74,12 +74,6 @@ Result:
 	      <th>Amount</th>
 	    </tr>
 	  </thead>
-	  <tfoot>
-	    <tr>
-	      <td>Apple</td>
-	      <td>10</td>
-	    </tr>
-	  </tfoot>
 	  <tbody>
 	    <tr>
 	      <td>Peach</td>
@@ -90,9 +84,90 @@ Result:
 	      <td>3</td>
 	    </tr>
 	  </tbody>
+          <tfoot>
+	    <tr>
+	      <td>Apple</td>
+	      <td>10</td>
+	    </tr>
+	  </tfoot>
 	</table>
 
+## Adding/Removing table border
+The table border width can be increased/decreased using the table border attribute.
+
+### Table Border Example
+```html
+<table border = "1">
+  <tr>
+    <th>Fruits</th>
+    <th>Quantity</th> 
+  </tr>
+  <tr>
+    <td>Apple</td>
+    <td>2</td> 
+  </tr>
+</table>
+```
+Result:
+<table border = "1">
+  <tr>
+    <th>Fruits</th>
+    <th>Quantity</th> 
+  </tr>
+  <tr>
+    <td>Apple</td>
+    <td>2</td> 
+  </tr>
+</table>
+
+```html
+<table border = "0">
+  <tr>
+    <th>Fruits</th>
+    <th>Quantity</th> 
+  </tr>
+  <tr>
+    <td>Apple</td>
+    <td>2</td> 
+  </tr>
+</table>
+```
+Result:
+<table border = "0">
+  <tr>
+    <th>Fruits</th>
+    <th>Quantity</th> 
+  </tr>
+  <tr>
+    <td>Apple</td>
+    <td>2</td> 
+  </tr>
+</table>
+
+```html
+<table border = "2">
+  <tr>
+    <th>Fruits</th>
+    <th>Quantity</th> 
+  </tr>
+  <tr>
+    <td>Apple</td>
+    <td>2</td> 
+  </tr>
+</table>
+```
+Result:
+<table border = "2">
+  <tr>
+    <th>Fruits</th>
+    <th>Quantity</th> 
+  </tr>
+  <tr>
+    <td>Apple</td>
+    <td>2</td> 
+  </tr>
+</table>
 
 #### More Information:
-
-<a href='https://developer.mozilla.org/en-US/docs/Web/HTML/Element/table' target='_blank' rel='nofollow'>MDN Article on the HTML <table> tag</a>
+* [MDN - table](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/table)
+* [YouTube - HTML Tables Tutorial](https://www.youtube.com/watch?v=BczLWImAmBk)
