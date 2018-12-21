@@ -54,6 +54,7 @@ mazda3 = Car.new('Mazda', 'Mazda3', 'White')
 
 Yay, we just created a `mazda3` which is an instance of the `Car` object. This is great, but sometimes you may need to change some of these attributes! Most of these attributes in this example would be static. Still, imagine that you decided to get a new paintjob. How would you go about updating the state of this `mazda3`?
 
+
 ### Modifying Instance State
 
 Thankfully, it is rather simple to update the state of an object. First, we would need a `setter` method! Ruby defines **getter** and **setter** settings as the `attr_reader` and `attr_accessor` respectively. For both getter and setter settings on a given attribute, you can also just use `attr_accessor`.

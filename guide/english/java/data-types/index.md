@@ -18,7 +18,7 @@ The details of each of the data types is given below :
 
 ## Integers:
 
-These are of four types: `byte`, `short`, `int`, `long`. It is important to note that these are signed positive and negative values. Signed integers are stored in a computer using [2's complement](http://www.ele.uri.edu/courses/ele447/proj_pages/divid/twos.html). It consist both negative and positive values but in different formats like `(-1 to -128)` or `(0 to +127)`. An unsigned integer can hold a larger positive value, and no negative value like `(0 to 255)`. Unlike C++ there is no unsigned integer in Java.
+These are of four types: `byte`, `short`, `int`, `long`. It is important to note that these are signed positive and negative values. Signed integers are stored in a computer using [2's complement](http://www.ele.uri.edu/courses/ele447/proj_pages/divid/twos.html). It consists of both negative and positive values but in different formats like `(-1 to -128)` or `(0 to +127)`. An unsigned integer can hold a larger positive value, and no negative value like `(0 to 255)`. Unlike C++ there is no unsigned integer in Java.
 
 ### byte:
 
@@ -110,7 +110,7 @@ double data type is a double-precision 64-bit [IEEE 754 floating point](http://s
     Default value: 0.0d.
 
     Example: double d1 = 123.400778;
-
+    
 ## Character:
 
 We use this data type to store characters. This is not the same as the char in C/C++. Java uses a `UNICODE`, internationally accepted character set. Char in Java is 16­bits long while that in C/C++ is 8­bits.
@@ -196,4 +196,20 @@ System.out.println(output);
 Output: 
 ```
 10198442
+```
+
+### Casting
+
+It is also important to note that it is possible to store different data types into one another. However, you would have to let the compiler know that you have acknowledge the possible loss of data by casting the variable.  
+    
+For example: 
+```java
+double d = 1.23
+
+int i = (int)d;  
+System.out.println(i);
+```
+Output: 
+```
+1
 ```
