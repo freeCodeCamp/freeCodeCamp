@@ -1,3 +1,6 @@
+---
+title: What Is Grunt
+---
 ## What Is Grunt And Why Should You Use It?
 According to https://gruntjs.com/, Grunt is a tool that automates repetitive tasks, such as minification, compilation and unit testing, saving time and making your job easier. 
 
