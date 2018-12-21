@@ -3,17 +3,18 @@ title: Algorithm Performance
 ---
 
 In mathematics, big-O notation is a symbolism used to describe and compare the _limiting behavior_ of a function.  
-A function's limiting behavior is how the function acts as it tends towards a particular value and in big-O notation it is usually as it trends towards infinity.  
+
+A function's limiting behavior is how the function acts as it approaches a specific value (usually trends towards infinity).
+
 In short, big-O notation is used to describe the growth or decline of a function, usually with respect to another function.
 
-
-in algorithm design we usualy use big-O notation because we can see how bad or good an algorithm will work in worst mode. but keep that in mind it isn't always the case because the worst case may be super rare and in those cases we calculate average case. for now lest's disscus big-O notation.
+In algorithm design, we usually use big-O notation because we can see how good or bad an algorithm's performance will be.  From a denotative perspective, big-O denotes the runtime in the worst possible case scenario.  However, in many instances, people use it as a synonym for average expected runtime.  
 
 In mathematics, big-O notation is a symbolism used to describe and compare the _limiting behavior_ of a function.  
 
 A function's limiting behavior is how the function acts as it trends towards a particular value and in big-O notation it is usually as it trends towards infinity.  
 
-In short, big-O notation is used to describe the growth or decline of a function, usually with respect to another function.
+In short, big-O notation is used to describe the growth or decline of a function, usually with respect to another function.  In programming, big-O notation compares the growth/decline of the runtime in respects to the size of the input.  
 
 NOTE: x^2 is equivalent to x * x or 'x-squared']
 
@@ -82,7 +83,7 @@ Therefore we can say that the best case time complexity of bubble sort is O(_n_)
 Examining the worst case scenario where the array is in reverse order, the first iteration will make _n_ comparisons while the next will have to make _n_ - 1 comparisons and so on until only 1 comparison must be made.  
 The big-O notation for this case is therefore _n_ * [(_n_ - 1) / 2] which = 0.5*n*^2 - 0.5*n* = O(_n_^2) as the _n_^2 term dominates the function which allows us to ignore the other term in the function.
 
-We can confirm this analysis using [this handy big-O cheat sheet</a> that features the big-O time complexity of many commonly used data structures and algorithms
+We can confirm this analysis using this handy big-O cheat sheet</a> that features the big-O time complexity of many commonly used data structures and algorithms
 
 It is very apparent that while for small use cases this time complexity might be alright, at a large scale bubble sort is simply not a good solution for sorting.  
 This is the power of big-O notation: it allows developers to easily see the potential bottlenecks of their application, and take steps to make these more scalable.

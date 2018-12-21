@@ -13,6 +13,7 @@ If used immediately after any of the quantifiers *, +, ?, or {}, makes the quant
  
 
 __Challenge Solution:__  
+
 ```javascript
 let favWord = "favorite";
 let favRegex = /favou?rite/; // Change this line
