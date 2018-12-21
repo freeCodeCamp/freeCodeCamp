@@ -63,3 +63,6 @@ Most of the built-in classes in Java, as well as classes provided by popular lib
 For example, the `java.util.Set` interface specifies that a `Set`'s `equals()` method will return true if "the specified object is also a set, the two sets have the same size, and every member of the specified set is contained in this set".
 
 However, if a class does not override the default `equals()` implementation, the default implementation will apply, which simply uses the `==` operator to compare the two objects.
+
+#### More Information:
+- [Oracle Java Docs : Equality Operators](https://docs.oracle.com/javase/specs/jls/se7/html/jls-15.html#jls-15.21)
