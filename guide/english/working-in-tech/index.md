@@ -11,6 +11,7 @@ This section will focus on various aspects of working in tech, such as the ways 
 
 The field of computer security is growing at a rapid rate every year. A recent report estimates that by 2021, 3.5 million jobs in computer security will be unfilled. The demand is due to the ever-increasing amount of valuable data being created every day that must be kept safe and secure from cyber attacks.
 
+
 ### Examples of Tech-related jobs
 - Software Developer
 - Computer Systems Analyst
@@ -20,6 +21,7 @@ The field of computer security is growing at a rapid rate every year. A recent r
 - Network Administrator
 - Support Desk Engineer
 - Security Engineer
+- Data Scientist
 - Software Tester
 - Infrastructure Support
 - Help Desk Analyst
@@ -73,3 +75,5 @@ The field of computer security is growing at a rapid rate every year. A recent r
 - [Shop Talk: A Web Design and Development Podcast](https://shoptalkshow.com/)
 - [Command Line Heroes - Red Hat](https://www.redhat.com/en/command-line-heroes)
 - [Learn to Code With Me - Laurence Bradford](https://learntocodewith.me/podcast/)
+- [WorkingTech: Talent, Tech, and Innovation](http://workingtech.co/podcast/)
+
