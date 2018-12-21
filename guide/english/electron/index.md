@@ -22,7 +22,7 @@ Electron applications are similar to any other desktop applications as they are 
 Electron also gives us the ability to have custom application menus that conform to each platform’s user interface guidelines. Contextual menus are available that allow user to control-click or right-click to display custom menu. If we need to trigger a system-wide notification, we can leverage Chromium’s Notification API to do so. Electron will go even further than traditional window desktop applications, and create applications that only live in the menubar or system tray. In short Electron provides a solid framework that will allow you to develop first-class desktop applications.
 
 ### Disadvantages of Electron
-It essentially creates a full instance of Chrome, which can be quite a memory hog.
+It essentially creates a full instance of Chromium, which can be quite a memory hog.
 
 Some apps built using Electron include:
 * [Atom](https://atom.io/) (GitHub's open-source text-editor)
