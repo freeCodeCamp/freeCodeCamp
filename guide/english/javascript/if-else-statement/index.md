@@ -73,7 +73,7 @@ const num = someCondition ? 1 : 2;
 // If x does not equal to 5, then the condition is FALSE. This results in z being set to 19.
 if (x == 5) {
   z = 7;
-  q = 42
+  q = 42;
 } else {
   z = 19;
 }
