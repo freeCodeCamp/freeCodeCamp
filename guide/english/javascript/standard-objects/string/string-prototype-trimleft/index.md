@@ -11,9 +11,7 @@ Examples:
 // output: "This string has two spaces at the beginning and a tab and two spaces at the end.  	"
 ```
 
-`trimLeft()` removes any whitespace character, not just spaces or tabs.
+Note - `trimLeft()` removes any whitespace character, not just spaces or tabs.
 
 #### More Information:
 - [String.prototype.trimLeft() on MDN](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/trimStart)
-
-g
