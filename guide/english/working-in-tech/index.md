@@ -71,3 +71,5 @@ The field of computer security is growing at a rapid rate every year. A recent r
 - [This week in Google](https://twit.tv/shows/this-week-in-google)
 - [Programming Throwdown - Good overview of multiple languages and concepts](https://www.programmingthrowdown.com/)
 - [Shop Talk: A Web Design and Development Podcast](https://shoptalkshow.com/)
+- [Command Line Heroes - Red Hat](https://www.redhat.com/en/command-line-heroes)
+- [Learn to Code With Me - Laurence Bradford](https://learntocodewith.me/podcast/)
