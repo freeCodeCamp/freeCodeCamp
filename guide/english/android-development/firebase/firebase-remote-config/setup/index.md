@@ -1,4 +1,3 @@
-
 ---
 title: Setting up Firebase Remote Config
 ---
