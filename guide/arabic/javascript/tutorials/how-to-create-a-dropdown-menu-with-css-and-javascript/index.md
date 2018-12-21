@@ -28,7 +28,7 @@ localeTitle: كيفية إنشاء قائمة منسدلة باستخدام CSS 
 
 في هذا القسم ، سنناقش تنفيذ شفرة HTML للصفحة التجريبية. للبدء ، دعنا نرى الرمز `<head>`
 
- `
+```html
 <!DOCTYPE html> 
  <html lang="en"> 
  <head> 
@@ -40,13 +40,13 @@ localeTitle: كيفية إنشاء قائمة منسدلة باستخدام CSS 
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/'-awesome/4.7.0/css/font-awesome.min.css"> 
     <link rel="stylesheet" href="styles.css"> 
  </head> 
-` 
+``` 
 
 هذا هو الأساس الأساسي لنموذج HTML الرئيسي ، باستثناء علامات `link` تحمّل صحيفتي أنماط CSS التي سنستخدمها في هذا البرنامج التعليمي: الأنماط `styles.css` ، وملف `styles.css` ، حيث `styles.css` أنماط هذه الصفحة.
 
 ثم ، ما تبقى من ملف HTML ، الجسم:
 
- `
+```html
 <body> 
     <div class='dropdown'> 
         <div class='title pointerCursor'>Select an option <i class="fa fa-angle-right"></i></div> 
@@ -65,7 +65,7 @@ localeTitle: كيفية إنشاء قائمة منسدلة باستخدام CSS 
     </script> 
  </body> 
  </html> 
-` 
+``` 
 
 يمكن تقسيم هذا القسم إلى 3 أجزاء رئيسية:
 
@@ -83,7 +83,9 @@ localeTitle: كيفية إنشاء قائمة منسدلة باستخدام CSS 
 
 يرجى الانتباه إلى تعريفات `.dropdown` . يتم استخدام هذه لتحديد تخطيط مكون الحاوية القائمة المنسدلة بالإضافة إلى عناصرها الداخلية ، مثل `.title` و `.option` الخاص به.
 
- `body{ 
+```html
+ 
+ body{ 
     font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif; 
  } 
  
@@ -130,7 +132,7 @@ localeTitle: كيفية إنشاء قائمة منسدلة باستخدام CSS 
  .rotate-90{ 
     transform: rotate(90deg); 
  } 
-` 
+``` 
 
 #### جافا سكريبت:
 
@@ -146,7 +148,9 @@ localeTitle: كيفية إنشاء قائمة منسدلة باستخدام CSS 
 
 #### 1\. النقر على عنصر القائمة المنسدلة
 
- `function toggleClass(elem,className){ 
+```js
+
+function toggleClass(elem,className){ 
     if (elem.className.indexOf(className) !== -1){ 
         elem.className = elem.className.replace(className,''); 
     } 
@@ -177,13 +181,15 @@ localeTitle: كيفية إنشاء قائمة منسدلة باستخدام CSS 
     toggleClass(menu,'hide'); 
     toggleClass(icon,'rotate-90'); 
  } 
-` 
+``` 
 
 عند النقر فوق عنصر القائمة المنسدلة ، يتم فتحه (إذا كان مغلقًا) أو إغلاق (في حالة فتحه). يحدث ذلك عن طريق ربط `toggleMenuDisplay` الإصغاء على عنصر القائمة المنسدلة. هذه الوظيفة تبديل عرض عنصر `menu` به عن طريق استخدام `toggleDisplay` و `toggleClass` .
 
 #### 2\. اختيار واحد من خيارات القائمة المنسدلة
 
- `function handleOptionSelected(e){ 
+```js
+
+function handleOptionSelected(e){ 
     toggleClass(e.target.parentNode, 'hide'); 
  
     const id = e.target.id; 
@@ -200,22 +206,24 @@ localeTitle: كيفية إنشاء قائمة منسدلة باستخدام CSS 
     //setTimeout is used so transition is properly shown 
     setTimeout(() => toggleClass(icon,'rotate-90',0)); 
  } 
-` 
+``` 
 
 #### 3\. تغيير الخيار المحدد حاليا
 
- `function handleTitleChange(e){ 
+```js
+function handleTitleChange(e){ 
     const result = document.getElementById('result'); 
  
     result.innerHTML = 'The result is: ' + e.target.textContent; 
  } 
-` 
+``` 
 
 يرتبط `handleTitleChange` الدالة `handleTitleChange` بحدث `change` المخصص على عنصر `.title` ، لتغيير محتوى عنصر `#result` كلما تغير عنصر العنوان. يتم إجراء هذا الحدث على القسم السابق.
 
 #### كود الرئيسي
 
- `//get elements 
+```js
+//get elements 
  const dropdownTitle = document.querySelector('.dropdown .title'); 
  const dropdownOptions = document.querySelectorAll('.dropdown .option'); 
  
@@ -223,7 +231,7 @@ localeTitle: كيفية إنشاء قائمة منسدلة باستخدام CSS 
  dropdownTitle.addEventListener('click', toggleMenuDisplay); 
  dropdownOptions.forEach(option => option.addEventListener('click',handleOptionSelected)); 
  document.querySelector('.dropdown .title').addEventListener('change',handleTitleChange); 
-` 
+``` 
 
 في القسم الرئيسي ، هناك بعض الكودات البسيطة للحصول على عنوان القائمة المنسدلة وعناصر الخيارات لربطها بالأحداث التي تمت مناقشتها في القسم الأخير.
 
@@ -234,5 +242,5 @@ localeTitle: كيفية إنشاء قائمة منسدلة باستخدام CSS 
 ## معلومات اكثر
 
 *   [مقدمة ES6](https://guide.freecodecamp.org/javascript/es6)
-*   [وظائف السهم](https://guide.freecodecamp.org/javascript/es6/arrow_functions/)
-*   [واسمحوا Const](https://guide.freecodecamp.org/javascript/es6/let_and_const/)
+*   [وظائف السهم](https://guide.freecodecamp.org/javascript/es6/arrow-functions/)
+*   [واسمحوا Const](https://guide.freecodecamp.org/javascript/es6/let-and-const/)
