@@ -12,7 +12,6 @@ For example, if <code>setA = ['a','b','c']</code> and <code>setB = ['a','b','d',
 
 ## Instructions
 <section id='instructions'>
-
 </section>
 
 ## Tests
@@ -22,8 +21,8 @@ For example, if <code>setA = ['a','b','c']</code> and <code>setB = ['a','b','d',
 tests:
   - text: Your <code>Set</code> class should have a <code>union</code> method.
     testString: assert((function(){var test = new Set(); return (typeof test.union === 'function')})(), 'Your <code>Set</code> class should have a <code>union</code> method.');
-  - text: The proper collection was returned
-    testString: assert((function(){var setA = new Set();  var setB = new Set();  setA.add('a');  setA.add('b');  setA.add('c');  setB.add('c');  setB.add('d');  var unionSetAB = setA.union(setB); var final = unionSetAB.values(); return (final.indexOf('a') !== -1 && final.indexOf('b') !== -1 && final.indexOf('c') !== -1 && final.indexOf('d') !== -1 && final.length === 4)})(), 'The proper collection was returned');
+  - text: The union of <code>["a", "b", "c"]</code> and <code>["c", "d"]</code> should return <code>["a", "b", "c", "d"]</code>.
+    testString: assert((function(){var setA = new Set();  var setB = new Set();  setA.add('a');  setA.add('b');  setA.add('c');  setB.add('c');  setB.add('d');  var unionSetAB = setA.union(setB); var final = unionSetAB.values(); return (final.indexOf('a') !== -1 && final.indexOf('b') !== -1 && final.indexOf('c') !== -1 && final.indexOf('d') !== -1 && final.length === 4)})(), 'The union of <code>["a", "b", "c"]</code> and <code>["c", "d"]</code> should return <code>["a", "b", "c", "d"]</code>.');
 
 ```
 
@@ -84,7 +83,46 @@ function Set() {
 
 
 ```js
-function Set() {var collection = []; this.has = function(e){return(collection.indexOf(e) !== -1);};this.values = function() {return collection;};this.add = function(element) {if (!this.has(element)) {collection.push(element);return true;} else {return false;}};this.remove = function(element) {if(this.has(element)) {var i = collection.indexOf(element);collection.splice(i, 1);return true;}return false;};this.size = function() {return collection.length;};this.union = function(set) {var u = new Set();var c = this.values();var s = set.values();c.forEach(function(element){u.add(element);});s.forEach(function(element){u.add(element);});return u;};}
+function Set() {
+    var collection = [];
+
+    this.has = function(element) {
+        return (collection.indexOf(element) !== -1);
+    };
+
+    this.values = function() {
+        return collection;
+    };
+
+    this.add = function(element) {
+        if(!this.has(element)){
+            collection.push(element);
+            return true;
+        }
+        return false;
+    };
+
+    this.remove = function(element) {
+        if(this.has(element)){
+           var index = collection.indexOf(element);
+            collection.splice(index,1);
+            return true;
+        }
+        return false;
+    };
+
+    this.size = function() {
+        return collection.length;
+    };
+
+    this.union = function(anotherSet){
+        const newSet = new Set();
+        const addToSet = el => newSet.add(el);
+        this.values().forEach(addToSet);
+        anotherSet.values().forEach(addToSet);
+        return newSet;
+    };
+}
 ```
 
 </section>
