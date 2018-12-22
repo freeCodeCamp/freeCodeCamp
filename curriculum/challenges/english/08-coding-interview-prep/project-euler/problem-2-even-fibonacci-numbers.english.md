@@ -25,8 +25,8 @@ tests:
     testString: assert.strictEqual(fiboEvenSum(10), 44, '<code>fiboEvenSum(10)</code> should return 44.');
   - text: <code>fiboEvenSum(23)</code> should return 60696.
     testString: assert.strictEqual(fiboEvenSum(23), 60696, '<code>fiboEvenSum(23)</code> should return 60696.');
-  - text: <code>fiboEvenSum(43)</code> should return 1485607536.
-    testString: assert.strictEqual(fiboEvenSum(43), 1485607536, '<code>fiboEvenSum(43)</code> should return 1485607536.');
+  - text: <code>fiboEvenSum(43)</code> should return 350704366.
+    testString: assert.strictEqual(fiboEvenSum(43), 350704366, '<code>fiboEvenSum(43)</code> should return 350704366.');
   - text: Your function is not returning the correct result using our tests values.
     testString: assert.strictEqual(fiboEvenSum(18), 3382, 'Your function is not returning the correct result using our tests values.');
   - text: Your function should return an <code>even</code> value.
