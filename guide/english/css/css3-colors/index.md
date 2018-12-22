@@ -3,7 +3,7 @@ title: CSS3 Colors
 ---
 ## CSS3 Colors
 
-Colors in CSS are used to colorize elements in our web pages. There are many ways to assign colors to elements. You can use the actual names for the colors, their RGB values or their hexadecimal values. In CSS3 the HSL (hue-saturation-lightness) has been added to the specification.
+Colors in CSS are used to colorize elements in our web-pages. There are many ways to assign colors to elements. You can use the actual names for the colors, their RGB values, or the Hexadecimal values. In CSS3 the hsl (hue-saturation-lightness) has been added to the specification.
 
 ### Color Names
 
@@ -20,7 +20,7 @@ This rule changes the font color for all \<p\> elements to green.<br>
 You can see the full color name list here: https://www.w3schools.com/colors/colors_names.asp
 
 ### RGB values
-RGB stands for red, green and blue and we can also assign colors by typing their RGB values in our rules. An RGB value would look like this: rgb(255,0,0), where each number defines how much of each color will be in the final mix.<br> 
+RGB stands for "Red", "Green", and "Blue". We can also assign colors by typing their RGB values in our rules. An RGB value would look like this: `rgb(255,0,0)`, where each number defines how much of each color will be in the final mix.<br> 
 
 The values range from 0 to 255 and in our example we see that only the first value is 255 while the other two are set to 0. That means that there is only red in our value and the respective element will be colored red. An RGB value of (0, 0, 0) would give black and a value of (255, 255, 255) would give white.<br>
 

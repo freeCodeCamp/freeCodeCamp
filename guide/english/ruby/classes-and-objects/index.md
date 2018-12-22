@@ -6,18 +6,18 @@ title: Classes and Objects
 
 ### Objects in Ruby
 
-Let us quickly go over Ruby objects. In the real world, objects may be anything including a car, computer, or even a human. Each one of these objects has a state and behaviors.
+Let us quickly go over Ruby objects. In the real world, objects may be anything including a car, computer, or even a human. Each one of these objects have different states and behaviors.
 
-Considering a car, then its state could be described as its model, make, and color. The behavior of the car could be turning, honking, or braking.
+For example, a car may have its state described by its make, model, and color and some of its behaviors as turning, honking, or braking.
 
-An object in Ruby has very similar characteristics. Ruby Objects also have a state and behavior. In Ruby Objects, the state is stored in instance variables and the behavior is stored in functions.
+An object in Ruby has very similar characteristics. Ruby Objects also have states and behaviors. In Ruby Objects, the state is stored in instance variables and the behaviors are stored in `methods` (functions within classes).
 
 
 ### Classes in Ruby
 
-A class is basically a program template. This template defines the initial `properties` using `instance variables`. Again, there are also again `behaviors` defined in the form of functions.
+A class is basically an object's template. This template defines the available `properties` that make up the object using `instance variables`. Again, there are also `behaviors` defined in the form of `methods` to help change the object's state.
 
-A new instance of a class is created using the `initialize` method of a class.
+A new instance of a class is created (instantiated) by using the `initialize` method of a class.
 
 Take for example the following sample code of a class:
 
@@ -37,21 +37,23 @@ class Car
     end
     
     def brake
+        puts "brakes squealing noise"
     end
 end
 ```
 
-As you saw, classes are defined using the `class` keyword and the class code block ends with an `end` keywork. The `.initialize` function is the constructor. When we create this object, we define the attributes `@make`, `@model`, and `@color` with values we pass into the constructor.
+As you saw, classes are defined using the `class` keyword and the class code block ends with an `end` keywork. The `initialize` method is the constructor which is a special function to describe initial state. When we create this object, we define the attributes `@make`, `@model`, and `@color` with values we pass into the constructor.
 
 ### Creating an Instance of a Class
 
-Now, to create an instance of this class you only need to call the `.new` function.
+Now, to create an instance of this class you only need to call the `new` function which uses the class's `initalize` method.
 
 ```Ruby
 mazda3 = Car.new('Mazda', 'Mazda3', 'White')
 ```
 
-This is great, but sometimes you may need to change some of these attributes! Most of these attributes in this example would be static. Still, imagine that you decided to get a new paint job, and wanted to change the color of your Car. How would you go about updating the state of this instance of the `Car` object?
+Yay, we just created a `mazda3` which is an instance of the `Car` object. This is great, but sometimes you may need to change some of these attributes! Most of these attributes in this example would be static. Still, imagine that you decided to get a new paintjob. How would you go about updating the state of this `mazda3`?
+
 
 ### Modifying Instance State
 
@@ -78,6 +80,7 @@ class Car
     end
     
     def brake
+        puts "brakes squealing noise"
     end
 end
 ```
@@ -103,7 +106,7 @@ NoMethodError (undefined method `make=' for #<Car:0x00007fd3ca13fdd0>)
 Did you mean?  make
 ```
 
-Viewing the previous output from `irb`, you can see that each one of the instance variables is readable. We can write to `@color`, but we end up causing a `NoMethodError` exception when we attempt to write to `@make`. This is because `@make` was only defined using an `attr_reader`, so `make=` is not defined. 
+Viewing the previous output from [`irb`](https://en.wikipedia.org/wiki/Interactive_Ruby_Shell), you can see that each one of the instance variables is readable. We can write to `@color`, but we end up causing a `NoMethodError` exception when we attempt to write to `@make`. This is because `@make` was only defined using an `attr_reader`, so `make=` is not defined. This could be fixed by adding the make to the `attr_accessor` like we did for color.
 
 ### Resources
 - [Ruby Programming/Syntax/Classes](https://en.wikibooks.org/wiki/Ruby_Programming/Syntax/Classes)
