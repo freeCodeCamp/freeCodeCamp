@@ -1,12 +1,12 @@
 ---
 title: Vim
-localeTitle: 我来了
+localeTitle: Vim
 ---
 # VIM
 
 [![logo](https://upload.wikimedia.org/wikipedia/commons/thumb/9/9f/Vimlogo.svg/75px-Vimlogo.svg.png "Vim标志")](https://vim.sourceforge.io)
 
-Vim（Vi IMproved）是一个高度可配置的文本编辑器，用于创建和更改任何类型的文本非常有效。它包含在大多数UNIX系统的“vi”中，其中还包括Apple的macOS。 Vim是对其前身_vi的_一项重大改进，它是40多年前开发的，并且仍在使用中。
+Vim（Vi IMproved）是一个高度可配置的文本编辑器，用于创建和更改任何类型的文本非常有效。它包含在大多数UNIX系统的“vi”中，其中还包括Apple的macOS。Vim是在1991年，由Bram Moolenaar开发的，目标是复制Vi的功能，所以简称Vi IMitation。但后来因为功能超越了Vi，在1993年12月，2.0版开发时，Vim的简称换成了Vi IMproved。Vim是对其前身_vi的_一项重大改进，它是40多年前开发的，并且仍在使用中。
 
 Vim岩石稳定，拥有许多功能，包括：
 
