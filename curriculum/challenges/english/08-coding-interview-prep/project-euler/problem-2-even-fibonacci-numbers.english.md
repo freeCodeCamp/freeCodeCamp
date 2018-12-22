@@ -66,11 +66,11 @@ const fiboEvenSum = (number) => {
     return 0;
   } else {
       let evenSum = 2, first = 1, second = 2, fibNum; // According to problem description our Fibonacci series starts with 1, 2
-      for (let i = 3; i <= n; i++) {
-        fibSum = first + second;
+      for (let i = 3; i <= number; i++) {
+        fibNum = first + second;
         first = second;
-        second = fibSum;
-        if (fibSum % 2 == 0) evenSum += fibSum;
+        second = fibNum;
+        if (fibNum % 2 == 0) evenSum += fibNum;
       }
       return evenSum;
   }
