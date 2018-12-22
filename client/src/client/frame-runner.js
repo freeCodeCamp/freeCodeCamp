@@ -10,12 +10,13 @@ if (window.frameElement && window.frameElement.id === testId) {
 }
 
 function initTestFrame() {
-  const frameReady = document.__frameReady;
-  const source = document.__source;
-  const __getUserInput = document.__getUserInput || (x => x);
+  const code = (document.__source || '').slice(0);
+  if (!document.__getUserInput) {
+    document.__getUserInput = () => code;
+  }
 
-  // Fake Deep Equal dependency
   /* eslint-disable no-unused-vars */
+  // Fake Deep Equal dependency
   const DeepEqual = (a, b) => JSON.stringify(a) === JSON.stringify(b);
 
   // Hardcode Deep Freeze dependency
@@ -35,34 +36,25 @@ function initTestFrame() {
   };
 
   const assert = chai.assert;
-  const getUserInput = __getUserInput;
+  /* eslint-enable no-unused-vars */
 
   if (document.Enzyme) {
     window.Enzyme = document.Enzyme;
   }
 
   document.__runTest = async function runTests(testString) {
-    /* eslint-disable no-unused-vars */
-    const code = source.slice(0);
-    const editor = {
-      getValue() {
-        return source;
-      }
-    };
-    /* eslint-disable no-unused-vars */
     // uncomment the following line to inspect
     // the frame-runner as it runs tests
     // make sure the dev tools console is open
     // debugger;
     try {
-      /* eslint-disable no-eval */
       // eval test string to actual JavaScript
       // This return can be a function
       // i.e. function() { assert(true, 'happy coding'); }
+      // eslint-disable-next-line no-eval
       const test = eval(testString);
-      /* eslint-enable no-eval */
       if (typeof test === 'function') {
-        await test(getUserInput);
+        await test(document.__getUserInput);
       }
       return { pass: true };
     } catch (err) {
@@ -79,5 +71,5 @@ function initTestFrame() {
   };
 
   // notify that the window methods are ready to run
-  frameReady();
+  document.__frameReady();
 }
