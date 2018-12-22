@@ -3,9 +3,7 @@ title: Security Tools
 ---
 ## Security Tools
 
-This is a stub. <a href='https://github.com/freecodecamp/guides/tree/master/src/pages/security/tools/index.md' target='_blank' rel='nofollow'>Help our community expand it</a>.
-
-<a href='https://github.com/freecodecamp/guides/blob/master/README.md' target='_blank' rel='nofollow'>This quick style guide will help ensure your pull request gets accepted</a>.
+Security tools are pieces of software and hardware which are used to perform penetration testing, reconnaisance, network analysis, data collection, and/or physical entry into a network, computer system, and/or building. They are used by Information Security Analysts to help in the aid of testing system securities.
 
 <!-- The article goes here, in GitHub-flavored Markdown. Feel free to add YouTube videos, images, and CodePen/JSBin embeds  -->
 
