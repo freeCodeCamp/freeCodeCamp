@@ -1,6 +1,6 @@
 ---
 title: Methods
-العنوان: أساليب
+localTitle: الأساليب 'Methods'
 ---
 # أساليب
 
