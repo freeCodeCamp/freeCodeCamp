@@ -21,8 +21,8 @@ By considering the terms in the Fibonacci sequence whose values do not exceed <c
 
 ```yml
 tests:
-  - text: <code>fiboEvenSum(10)</code> should return 188.
-    testString: assert.strictEqual(fiboEvenSum(10), 188, '<code>fiboEvenSum(10)</code> should return 188.');
+  - text: <code>fiboEvenSum(10)</code> should return 44.
+    testString: assert.strictEqual(fiboEvenSum(10), 44, '<code>fiboEvenSum(10)</code> should return 44.');
   - text: <code>fiboEvenSum(23)</code> should return 60696.
     testString: assert.strictEqual(fiboEvenSum(23), 60696, '<code>fiboEvenSum(23)</code> should return 60696.');
   - text: <code>fiboEvenSum(43)</code> should return 1485607536.
@@ -62,18 +62,18 @@ fiboEvenSum(10);
 
 ```js
 const fiboEvenSum = (number) => {
-  let temp, sum = 0, a = 0, b = 1;
-    while (number >= 0) {
-      temp = a;
-      a = b;
-      b += temp;
-      number --;
-      if ((b % 2) === 0) {
-        sum += b;
+  if (number <= 1) {
+    return 0;
+  } else {
+      let evenSum = 2, first = 1, second = 2, fibNum; // According to problem description our Fibonacci series starts with 1, 2
+      for (let i = 3; i <= n; i++) {
+        fibSum = first + second;
+        first = second;
+        second = fibSum;
+        if (fibSum % 2 == 0) evenSum += fibSum;
       }
-    }
-
-  return sum;
+      return evenSum;
+  }
 }
 ```
 
