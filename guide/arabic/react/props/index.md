@@ -1,6 +1,6 @@
 ---
 title: Props
-localeTitle: الدعائم
+localeTitle: الخصائص
 ---
 ### ما هي الخصائص (props)؟
 
