@@ -20,19 +20,19 @@ Write a function to generate an array of lower case ASCII characters, for a give
 ```yml
 tests:
   - text: <code>lascii</code> should be a function.
-    testString: 'assert(typeof lascii=="function","<code>lascii</code> should be a function.");'
+    testString: assert(typeof lascii=='function','<code>lascii</code> should be a function.');
   - text: <code>lascii("a","d")</code> should return an array.
-    testString: 'assert(Array.isArray(lascii("a","d")),"<code>lascii("a","d")</code> should return an array.");'
-  - text: '"<code>lascii("a","d")</code> should return <code>[ "a", "b", "c", "d" ]</code>."'
-    testString: 'assert.deepEqual(lascii("a","d"),results[0],"<code>lascii("a","d")</code> should return <code>[ "a", "b", "c", "d" ]</code>.");'
-  - text: '"<code>lascii("c","i")</code> should return <code>[ "c", "d", "e", "f", "g", "h", "i" ]</code>."'
-    testString: 'assert.deepEqual(lascii("c","i"),results[1],"<code>lascii("c","i")</code> should return <code>[ "c", "d", "e", "f", "g", "h", "i" ]</code>.");'
-  - text: '"<code>lascii("m","q")</code> should return <code>[ "m", "n", "o", "p", "q" ]</code>."'
-    testString: 'assert.deepEqual(lascii("m","q"),results[2],"<code>lascii("m","q")</code> should return <code>[ "m", "n", "o", "p", "q" ]</code>.");'
-  - text: '"<code>lascii("k","n")</code> should return <code>[ "k", "l", "m", "n" ]</code>.")'
-    testString: 'assert.deepEqual(lascii("k","n"),results[3],"<code>lascii("k","n")</code> should return <code>[ "k", "l", "m", "n" ]</code>.");'
-  - text: '"<code>lascii("t","z")</code> should return <code>[ "t", "u", "v", "w", "x", "y", "z" ]</code>."'
-    testString: 'assert.deepEqual(lascii("t","z"),results[4],"<code>lascii("t","z")</code> should return <code>[ "t", "u", "v", "w", "x", "y", "z" ]</code>.");'
+    testString: assert(Array.isArray(lascii('a','d')),'<code>lascii("a","d")</code> should return an array.');
+  - text: "<code>lascii('a','d')</code> should return <code>[ 'a', 'b', 'c', 'd' ]</code>."
+    testString: assert.deepEqual(lascii("a","d"),results[0],"<code>lascii('a','d')</code> should return <code>[ 'a', 'b', 'c', 'd' ]</code>.");
+  - text: <code>lascii('c','i')</code> should return <code>[ 'c', 'd', 'e', 'f', 'g', 'h', 'i' ]</code>.
+    testString: assert.deepEqual(lascii("c","i"),results[1],"<code>lascii('c','i')</code> should return <code>[ 'c', 'd', 'e', 'f', 'g', 'h', 'i' ]</code>.");
+  - text: <code>lascii('m','q')</code> should return <code>[ 'm', 'n', 'o', 'p', 'q' ]</code>.
+    testString: assert.deepEqual(lascii("m","q"),results[2],"<code>lascii('m','q')</code> should return <code>[ 'm', 'n', 'o', 'p', 'q' ]</code>.");
+  - text: <code>lascii('k','n')</code> should return <code>[ 'k', 'l', 'm', 'n' ]</code>.
+    testString: assert.deepEqual(lascii("k","n"),results[3],"<code>lascii('k','n')</code> should return <code>[ 'k', 'l', 'm', 'n' ]</code>.");
+  - text: <code>lascii('t','z')</code> should return <code>[ 't', 'u', 'v', 'w', 'x', 'y', 'z' ]</code>.
+    testString: assert.deepEqual(lascii("t","z"),results[4],"<code>lascii('t','z')</code> should return <code>[ 't', 'u', 'v', 'w', 'x', 'y', 'z' ]</code>.");
 
 ```
 
@@ -56,7 +56,13 @@ function lascii (cFrom, cTo) {
 <div id='js-teardown'>
 
 ```js
-console.info('after the test');
+let results=[
+  [ 'a', 'b', 'c', 'd' ],
+  [ 'c', 'd', 'e', 'f', 'g', 'h', 'i' ],
+  [ 'm', 'n', 'o', 'p', 'q' ],
+  [ 'k', 'l', 'm', 'n' ],
+  [ 't', 'u', 'v', 'w', 'x', 'y', 'z' ]
+]
 ```
 
 </div>

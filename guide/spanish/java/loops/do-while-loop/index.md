@@ -35,7 +35,7 @@ Salida:
     iter_DoWhile Value: 21 
 ```
 
-**Recuerde** : la condición de un bucle `do-while` while se comprueba después de que el cuerpo del código se ejecuta una vez.
+**Recuerde** : la condición de un bucle `do-while` while se comprueba después de que el cuerpo del código se ejecute una vez.
 
 ![:rocket:](//forum.freecodecamp.com/images/emoji/emoji_one/rocket.png?v=2 ":cohete:") [Ejecutar código](https://repl.it/CJYl/0)
 
