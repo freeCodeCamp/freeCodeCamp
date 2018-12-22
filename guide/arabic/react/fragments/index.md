@@ -1,6 +1,6 @@
 ---
 title: Fragments
-localeTitle: فتات
+localeTitle: الشظايا
 ---
 # الشظايا Fragments
 
