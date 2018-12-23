@@ -31,7 +31,7 @@ This doesn't get used often, but it's good to know that it exists. Like int, it 
 The `long` data type stores integers like `int`, but gives a wider range of values at the cost of taking more memory. Long stores at least 32 bits, giving it a range of -2,147,483,648 to 2,147,483,647. Alternatively, use `unsigned long` for a range of 0 to 4,294,967,295 ( -(10^9) <= long int <= 10^9) .
 
 #### Even longer integers: `long long`
-The `long long` data type is overkill for just about every application, but C will let you use it anyway. It's capable of storing at least −9,223,372,036,854,775,807 to 9,223,372,036,854,775,807. Alternatively, get even more overkill with `unsigned long long`, which will give you at least 0 to 18,446,744,073,709,551,615 ( -(10^18) <=long long int <= 10^18) .
+The `long long` data type is overkill for just about every application, but C will let you use it anyway. It's capable of storing at least −9,223,372,036,854,775,808 to 9,223,372,036,854,775,807. Alternatively, get even more overkill with `unsigned long long`, which will give you at least 0 to 18,446,744,073,709,551,615 ( -(10^18) <=long long int <= 10^18).
 
 ## Floating point number data types
 #### Basic Floating point numbers: `float`
