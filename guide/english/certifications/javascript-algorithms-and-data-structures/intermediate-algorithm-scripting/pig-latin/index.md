@@ -162,6 +162,39 @@ You will need to use everything you know about string manipulation to get the la
 *   <a href='http://forum.freecodecamp.com/t/javascript-array-prototype-push/14298' target='_blank' rel='nofollow'>JS Array Prototype Push</a>
 *   <a href='http://forum.freecodecamp.com/t/javascript-array-prototype-join/14292' target='_blank' rel='nofollow'>JS Array Prototype Join</a>
 
+## ![:rotating_light:](https://forum.freecodecamp.com/images/emoji/emoji_one/rotating_light.png?v=3 ":rotating_light:") Advanced Code Solution Alternative:
+
+    function translatePigLatin(str) {
+        const re = /^[^aiueo]+/; //match begining consonants
+        const found = str.match(re);
+        if (!found /*if found is null*/ ){ 
+            return str + "way";
+        }
+        const index = found.index; //the position right after matched string
+        const matchedLength = found[0].length; //the length of matched string
+        return str.slice(index + matchedLength) + //get the part after the first consonant cluster
+            str.slice(index, index + matchedLength) + //get the first consonant cluster
+            "ay";
+    }
+
+    // test here
+    translatePigLatin("consonant");
+
+![:rocket:](https://forum.freecodecamp.com/images/emoji/emoji_one/rocket.png?v=3 ":rocket:") <a href='https://repl.it/repls/OffshoreDentalNewsaggregator' target='_blank' rel='nofollow'>Run Code</a>
+
+### Code Explanation:
+
+*   Match the beginning consonants
+*   If nothing matched, return the `str` + `"way"`
+*   Use the `found` object from `match()` above to get 3 parts of the final string:
+    *   What comes after the beginning consonants
+    *   The beginning consonants
+    *   The last `"ay"`
+
+#### Relevant Links
+
+*   <a href='https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/match' target='_blank' rel='nofollow'>JS String Prototype Match</a>
+
 ### ![:trophy:](https://forum.freecodecamp.com/images/emoji/emoji_one/trophy.png?v=3 ":trophy:") Credits:
 
 If you found this page useful, you may say thanks to the contributors by copying and pasting the following line in the main chat:
