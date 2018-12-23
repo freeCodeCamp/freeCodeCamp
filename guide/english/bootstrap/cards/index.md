@@ -8,8 +8,8 @@ title: Cards
 
 *  Cards are bordered boxes with a bit of padding around the content inside them, which can be used to conveniently display a specific set of information.
 
-*  Using cards, You will be able to create beautiful,responsive elements such as blog posts,gallery items,shop products and much more!
-   Cards are a key feature for a content-rich website and provide an easy solution both for design and responsiveness.
+*  Using cards, you will be able to create beautiful, responsive elements such as blog posts, gallery items, shop products and much more. Cards are a key feature for a content-rich website and provide an easy solution for both design and responsiveness.
+
 ##### To create a basic Bootstrap 4 card, you need to create a ```<div>``` container with the class ```.card``` and inside  another ```<div>``` container with the class of ```.card-body```
 
 ###### This is how it will look in an html doc
