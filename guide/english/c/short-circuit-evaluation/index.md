@@ -1,15 +1,13 @@
 ---
 title: Short-Circuit Evaluation
 ---
-# Short-Circuit Evaluation
 
+# Short-Circuit Evaluation
 The Short-Circuit evaluation consists in checking or executing the second argument only if the first argument is not enough to determine the value of the expression. 
 
-You can do a short-circuit evaluation with && and || operators.
+You can do a short-circuit evaluation with `&&` and `||` operators.
 
-
-## Example with && operator:
-
+### Example with `&&` Operator
 ```c
   canOpenFile(filename) && openFile(filename); // If you can open the file then open it.
 ```
@@ -22,7 +20,7 @@ The example above is equivalent to:
   }
 ```
 
-## Example with || operator:
+### Example with `||` Operator
 
 ```c
   isServerOn || startServer(); // If the server is not on then start it.
@@ -35,9 +33,8 @@ The example above is equivalent to:
   }
  ```
  
- ## Keep it all together with a real example:
- 
- ```c
+### A Real-World Example with `||` Operator
+```c
 #include <stdio.h>
 #include <stdlib.h>
 
@@ -61,5 +58,29 @@ char *getName() {
 	return name;
 }
 ```
+ 
+### Example with Nested `if` Statements
+ 
+ ```c
+ int i, j;
+ scanf ( "%d %d", &i, &j );
+ if ( i > 10 && j > 10 ) {
+    printf("Both numbers are greater than 10! \n");
+ }
+ ```
+ The above example is equivalent to:
+ 
+ ```c
+ int i, j;
+ scanf ( "%d %d", &i, &j );
+ if ( i > 10 ) {
+    if ( j > 10 ) {
+       printf("Both numbers are greater than 10! \n");
+    }
+ }
+ ```
+ Notice when `if ( i > 10 )` fails, the statement is false and the check `if ( j > 10 )` is never run. `if ( i > 10 && j > 10 )` behaves exactly the same way, because if `i > 10` is false then the entire statement is automatically false, and there is no need to run an additional check.
+ 
+
  
 
