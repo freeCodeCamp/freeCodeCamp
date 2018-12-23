@@ -14,6 +14,9 @@ If you want to learn Tableau on your own, it's possible to get a free license fo
 - After you have done that, you can enter your email address and download the application to your local machine.
 - If you want to learn from others, you can also download their published visualizations and take a look at specific elements.
 
+In addition, if you're currently a student, you can also get tableau free.
+   [Tableau for Students](https://www.tableau.com/academic/students)
+
 ### Links:
   * [Tableau Website](https://www.tableau.com)
   * [Tableau Public Gallery](https://public.tableau.com/en-us/s/gallery)
