@@ -2,7 +2,7 @@
 title: Dynamic Memory Management
 ---
 # Dynamic Memory Management
-Sometimes you will need to allocate memory spaces in the heap also known as the dynamic memory. This is particulary usefull when you do not know during compile time how large a data structure (like an array) will be. 
+Sometimes you will need to allocate memory spaces in the heap also known as the dynamic memory. This is particulary useful when you do not know during compile time how large a data structure (like an array) will be. 
 ## An Example
 Here's a simple example where we allocate an array asking the user to choose the dimension
 ```C
@@ -13,7 +13,8 @@ int main(void) {
     int arrayDimension,i;
     int* arrayPointer;
     
-    scanf("Please insert the array dimension:%d",arrayDimension);
+    printf("Please insert the array dimension:");
+    scanf("%d",&arrayDimension);
     arrayPointer = (int*)malloc(sizeof(int)*arrayDimension);
     
     if(arrayPointer == NULL){
@@ -42,7 +43,7 @@ sizeof(int)
 ```
 Let's start from `sizeof`. The `malloc` needs to know how much space allocate for your data. In fact a `int` variable will use less storage space then a `double` one.
 It is generally not safe to assume the size of any datatype. For example, even though most implementations of C and C++ on 32-bit systems define type int to be four octets, this size may change when code is ported to a different system, breaking the code.
-`sizeof` as it's name suggests generates the size of a variable or datatype.
+`sizeof` as its name suggests generates the size of a variable or datatype.
 
 ```C
 arrayPointer = (int*) malloc(sizeof(int) * arrayDimension);
