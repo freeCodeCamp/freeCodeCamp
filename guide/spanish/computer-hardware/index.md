@@ -16,7 +16,7 @@ Una Unidad de Procesamiento Central (CPU) es el circuito electrónico dentro de 
 
 ### Tarjetas de expansión (por ejemplo, GPU)
 
-Una unidad de procesamiento de gráficos (GPU) es un circuito electrónico especializado diseñado para manipular y alterar rápidamente la memoria para acelerar la creación de imágenes en un búfer de cuadros destinado a la salida a un dispositivo de visualización.
+Una unidad de procesamiento de gráficos (GPU) es un circuito electrónico especializado, diseñado para manipular y alterar rápidamente la memoria para acelerar la creación de imágenes en un búfer de cuadros destinado como salida a un dispositivo de visualización.
 
 ![Nvidia Titan XP](https://cdn.arstechnica.net/wp-content/uploads/2017/04/nvidia-titan-x.jpg)
 
@@ -32,7 +32,7 @@ La memoria de acceso aleatorio (RAM) es una forma de almacenamiento de datos de 
 
 ![RAM](https://images10.newegg.com/NeweggImage/ProductImage/20-232-476-S01.jpg)
 
-### Caso
+### Chasis
 
 Se utiliza un estuche para alojar todos los componentes de una computadora.
 
@@ -44,9 +44,9 @@ Una fuente de alimentación es un dispositivo electrónico que suministra energ�
 
 ![Fuente de alimentación](https://upload.wikimedia.org/wikipedia/commons/thumb/b/b6/SFX_PC-PSU_Delta_IMG_9760.JPG/620px-SFX_PC-PSU_Delta_IMG_9760.JPG)
 
-### tarjeta madre
+### Tarjeta madre
 
-La placa base sostiene y permite la comunicación entre muchos de los componentes electrónicos cruciales de un sistema, como la unidad central de procesamiento (CPU) y la memoria, y proporciona conectores para otros periféricos.
+La tarjeta madre sostiene y permite la comunicación entre muchos de los componentes electrónicos cruciales de un sistema, como la unidad central de procesamiento (CPU) y la memoria, y proporciona conectores para otros periféricos.
 
 ![tarjeta madre](https://fthmb.tqn.com/mmTUdCN6UBGIKlkEggGq4fpV-3k=/768x0/filters:no_upscale()/gig-57c732ed3df78c71b60e7aa5.jpg)
 

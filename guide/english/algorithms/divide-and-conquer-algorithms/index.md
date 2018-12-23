@@ -8,8 +8,12 @@ Divide and Conquer |  (Introduction)
 Like Greedy and Dynamic Programming, Divide and Conquer is an algorithmic paradigm. A typical Divide and Conquer algorithm solves a problem using following three steps.
 
 1. Divide: Break the given problem into subproblems of same type.
+This step involves breaking the problem into smaller sub-problems. Sub-problems should represent a part of the original problem. This step generally takes a recursive approach to divide the problem until no sub-problem is further divisible. At this stage, sub-problems become atomic in nature but still represent some part of the actual problem.
+
 2. Conquer: Recursively solve these subproblems.
+   This step receives a lot of smaller sub-problems to be solved. Generally, at this level, the problems are considered 'solved' on        their own.
 3. Combine: Appropriately combine the answers.
+   When the smaller sub-problems are solved, this stage recursively combines them until they formulate a solution of the original          problem. This algorithmic approach works recursively and conquer & merge steps works so close that they appear as one.
 
 Following are some standard algorithms that are Divide and Conquer algorithms.
 
@@ -17,7 +21,7 @@ Following are some standard algorithms that are Divide and Conquer algorithms.
 
 2) Quicksort is a sorting algorithm. The algorithm picks a pivot element, rearranges the array elements in such a way that all elements smaller than the picked pivot element move to left side of pivot, and all greater elements move to right side. Finally, the algorithm recursively sorts the subarrays on left and right of pivot element.
 
-3) Merge Sort is also a sorting algorithm. The algorithm divides the array in two halves, recursively sorts them and finally merges the two sorted halves.
+3) Merge Sort is also a sorting algorithm. The algorithm divides the array in two halves, recursively sorts them and finally merges the two sorted halves. The time complexity of this algorithm is O(nLogn), be it best case, average case or worst case. It's time complexity can be easily understood from the recurrence eqaution :T(n) = 2T(n/2) + n.
 
 4) Closest Pair of Points The problem is to find the closest pair of points in a set of points in x-y plane. The problem can be solved in O(n^2) time by calculating distances of every pair of points and comparing the distances to find the minimum. The Divide and Conquer algorithm solves the problem in O(nLogn) time.
 

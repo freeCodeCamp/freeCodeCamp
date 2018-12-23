@@ -53,7 +53,7 @@ project_root
   - /project_root/index.js 
     - Is the entry point for the app it will contain the entry point for which store, and it will render the the App.jsx file.
 
-Bellow is an example of the code that will be declared on the file
+Below is an example of the code that will be declared in the file:
 
 ```javascript
 import React from 'react';
@@ -111,7 +111,7 @@ class App extends Component{
  */
 const mapStateToProps=state=>{
     return {
-        ArrayValue:state.example.exapleArray,
+        ArrayValue:state.example.exampleArray,
         StringMessage:state.example.exampleString,
         bookApploggedIn:state.example.exampleBool,
         ObjectValue:state.example.exampleObject
