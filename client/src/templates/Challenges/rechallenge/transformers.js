@@ -16,28 +16,36 @@ import presetReact from '@babel/preset-react';
 import protect from 'loop-protect';
 
 import * as vinyl from '../utils/polyvinyl.js';
+import WorkerExecutor from '../utils/worker-executor';
 
 const protectTimeout = 100;
 Babel.registerPlugin('loopProtection', protect(protectTimeout));
 
-const babelOptions = {
+const babelOptionsJSX = {
   plugins: ['loopProtection'],
   presets: [presetEnv, presetReact]
 };
-const babelTransformCode = code => Babel.transform(code, babelOptions).code;
+
+const babelOptionsJS = {
+  presets: [presetEnv]
+};
+
+const babelTransformCode = options => code =>
+  Babel.transform(code, options).code;
 
 // const sourceReg =
 //  /(<!-- fcc-start-source -->)([\s\S]*?)(?=<!-- fcc-end-source -->)/g;
 const NBSPReg = new RegExp(String.fromCharCode(160), 'g');
 
-const isJS = matchesProperty('ext', 'js');
+const testJS = matchesProperty('ext', 'js');
+const testJSX = matchesProperty('ext', 'jsx');
 const testHTML = matchesProperty('ext', 'html');
-const testHTMLJS = overSome(isJS, testHTML);
-export const testJS$JSX = overSome(isJS, matchesProperty('ext', 'jsx'));
+const testHTML$JS$JSX = overSome(testHTML, testJS, testJSX);
+export const testJS$JSX = overSome(testJS, testJSX);
 
 export const replaceNBSP = cond([
   [
-    testHTMLJS,
+    testHTML$JS$JSX,
     partial(vinyl.transformContents, contents =>
       contents.replace(NBSPReg, ' ')
     )
@@ -62,11 +70,20 @@ function tryTransform(wrap = identity) {
 
 export const babelTransformer = cond([
   [
-    testJS$JSX,
+    testJS,
     flow(
       partial(
         vinyl.transformHeadTailAndContents,
-        tryTransform(babelTransformCode)
+        tryTransform(babelTransformCode(babelOptionsJS))
+      )
+    )
+  ],
+  [
+    testJSX,
+    flow(
+      partial(
+        vinyl.transformHeadTailAndContents,
+        tryTransform(babelTransformCode(babelOptionsJSX))
       ),
       partial(vinyl.setExt, 'js')
     )
@@ -74,27 +91,21 @@ export const babelTransformer = cond([
   [stubTrue, identity]
 ]);
 
+const sassWorker = new WorkerExecutor('sass-compile');
+
 const htmlSassTransformCode = file => {
-  let doc = document.implementation.createHTMLDocument();
-  doc.body.innerHTML = file.contents;
-  let styleTags = [].filter.call(
-    doc.querySelectorAll('style'),
-    style => style.type === 'text/sass'
-  );
-  if (styleTags.length === 0 || typeof Sass === 'undefined') {
-    return vinyl.transformContents(() => doc.body.innerHTML, file);
-  }
-  return Promise.all(styleTags.map(style => (
-    new Promise(resolve => {
-      window.Sass.compile(style.innerHTML, function(result) {
+  const div = document.createElement('div');
+  div.innerHTML = file.contents;
+  const styleTags = div.querySelectorAll('style[type="text/sass"]');
+  if (styleTags.length > 0) {
+    return Promise.all(
+      [].map.call(styleTags, async style => {
         style.type = 'text/css';
-        style.innerHTML = result.text;
-        resolve();
-      });
-    })
-  ))).then(() => (
-    vinyl.transformContents(() => doc.body.innerHTML, file)
-  ));
+        style.innerHTML = await sassWorker.execute(style.innerHTML, 2000);
+      })
+    ).then(() => vinyl.transformContents(() => div.innerHTML, file));
+  }
+  return vinyl.transformContents(() => div.innerHTML, file);
 };
 
 export const htmlSassTransformer = cond([
