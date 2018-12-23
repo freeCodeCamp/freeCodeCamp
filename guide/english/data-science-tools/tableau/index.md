@@ -3,8 +3,7 @@
 ---
 
 # Tableau
-
-Tableau is a data visualization software for business intelligence. Tableau is commerically available through the Tableau Software foundation. Capabilites include highly interactive visualizations, mapping capabilites, and dashbaords. A robust community for tableau visualizations exists online, where many individuals publicly publish their dashboards.
+Tableau is a data visualization software for business intelligence. Tableau is commercially available through the Tableau Software Foundation. Capabilities include highly interactive visualizations, mapping capabilites, and dashbaords. A roboust community for Tableau visualizations exists online, where many individauls publicly publish their dashboards. 
 
 # Getting Started with Tableau Public
 If you want to learn Tableau on your own, it's possible to get a free license for the public version of Tableau. Not only can this allow you to import your own datasets into Tableau and create visualizations, but you can also publish these dashboards online and add to your public portfolio. 
@@ -27,4 +26,3 @@ In addition, if you're currently a student, you can also get tableau free.
   * [Tableau Integration with Python](https://community.tableau.com/thread/236479)
   * [Tutorialspoint](https://www.tutorialspoint.com/tableau/)
   * [Tutorial Gateway](https://www.tutorialgateway.org/tableau/)
-
