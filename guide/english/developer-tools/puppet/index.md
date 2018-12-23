@@ -5,9 +5,9 @@ title: Puppet
 
 Puppet is a configuration management tool that allows you to automate the configuration and management of your infrastructure. This helps you save time by automating repetitive tasks and ensuring your systems are kept in a desired state.
 
-Puppet is just designed to manage the configuration of Unix-like and Microsoft Windows systems declaratively. 
+Puppet is designed to manage the configuration of Unix-like and Microsoft Windows systems *declaratively*.
 
-Puppet comes in two varieties, Puppet Enterprise and open source Puppet. The supported platforms include most Linux distributions, various UNIX platforms, and Windows.
+Puppet comes in two varieties: Puppet Enterprise and open source Puppet. The supported platforms include most Linux distributions, various UNIX platforms, and Windows.
 
 Puppet was developed by [Puppet Labs](https://puppet.com/company).
 
