@@ -21,13 +21,18 @@ for (variable in object) {
 const a = { "a": "Athens", "b": "Belgrade", "c": "Cairo" };
 
 // Iterate over the properties.
-let s = ""
+let s = "";
 for (let key in a) {
   s += key + ": " + a[key];
   s += "<br />";
 }
 
 document.write (s);
+
+// Output:
+// a: Athens
+// b: Belgrade
+// c: Cairo
 
 // Initialize the array.
 let arr = new Array("zero", "one", "two");
