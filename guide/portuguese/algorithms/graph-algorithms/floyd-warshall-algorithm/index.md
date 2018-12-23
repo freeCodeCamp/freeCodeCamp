@@ -15,22 +15,22 @@ Pior complexidade do tempo de caso: O (V ^ 3)
 ### Implementação em Python
 
 ```python
-# A large value as infinity 
+# Um valor grande significando infinito
  inf = 1e10 
  
  def floyd_warshall(weights): 
     V = len(weights) 
     distance_matrix = weights 
     for k in range(V): 
-        next_distance_matrix = [list(row) for row in distance_matrix] # make a copy of distance matrix 
+        next_distance_matrix = [list(row) for row in distance_matrix] # Faz uma copia da matriz de distancia
         for i in range(V): 
             for j in range(V): 
-                # Choose if the k vertex can work as a path with shorter distance 
+                # Seleciona se o vertice k pode ser usado para o caminho com menor distancia
                 next_distance_matrix[i][j] = min(distance_matrix[i][j], distance_matrix[i][k] + distance_matrix[k][j]) 
         distance_matrix = next_distance_matrix # update 
     return distance_matrix 
  
- # A graph represented as Adjacency matrix 
+ # Grafo representa uma matriz de adjacencias
  graph = [ 
     [0, inf, inf, -3], 
     [inf, 0, inf, 8], 
