@@ -35,7 +35,7 @@ In the diagram above, to the extreme left is the unit of data that is used in ea
 
 * _**Layer 3 - Network Layer:**_ The network layer is responsible for forwarding packets to other networks. Usually, a network is divided into multiple subnets and the network layer with the help of routers forwards packets between such networks to establish a Wide Area Network (WAN). 
 
-* _**Layer 4 - Transport Layer:**_ The transport layer ensures that messages are delivered error-free, in sequence, and with no losses or duplications. It relieves the higher layer protocols from any concern with the transfer of data between them and their peers.
+* _**Layer 4 - Transport Layer:**_ The transport layer ensures that messages are delivered error-free, in sequence, and with no losses or duplications. It relieves the higher layer protocols from any concern with the transfer of data between them and their peers. On this layer have 2 protocols, TCP (Transmission Control Protocol) and UDP (User Datagram Protocol).
 
 * _**Layer 5 - Session Layer:**_ The session layer allows session establishment between processes running on different stations. 
 
