@@ -4,7 +4,8 @@
 
 ## Introduction
 
-Some of the email workflows, like updating a user's email, requires the back-end api-server to send out emails. While developing, you can use a tool to catch these emails locally, instead of having to use an email provider and send an actual email. MailHog is one such email testing tool for developers that will catch the emails your local freeCodeCamp instance is sending.
+
+Some of the email workflows, like updating a user's email, require the back-end api-server to send out emails. While developing, you can use a tool to catch these emails locally instead of having to use an email provider and send an actual email. MailHog is one such email testing tool for developers that will catch the emails your local freeCodeCamp instance is sending.
 
 ## Installing MailHog
 
@@ -29,7 +30,7 @@ Next, you can go to [using MailHog](#using-mailhog).
 
 ### Installing MailHog on Windows
 
-Download the latest MailHog version from [MailHog's official repository](https://github.com/mailhog/MailHog/releases). Click on the link for your Windows version (32 or 64 bit) and .exe file will be downloaded to your computer.
+Download the latest MailHog version from [MailHog's official repository](https://github.com/mailhog/MailHog/releases). Click on the link for your Windows version (32 or 64 bit) and the .exe file will be downloaded to your computer.
 
 Once it finishes downloading, click on the file. You might get a Windows firewall notification where you will have to allow access to MailHog. Once you do, a standard Windows command line prompt will open with MailHog already running.
 
@@ -79,16 +80,16 @@ Next, you can go to [using MailHog](#using-mailhog).
 
 ## Using MailHog
 
-Once you have installed MailHog and started it running you need to open your MailHog inbox in your browser, open a new tab or window and navigate to [http://localhost:8025](http://localhost:8025).
+Once you have installed MailHog and started it running, you need to open your MailHog inbox in your browser. Open a new tab or window and navigate to [http://localhost:8025](http://localhost:8025).
 You should now see a screen like below:
 
 ![MailHog Screenshot 1](images/mailhog/1.jpg)
 
-When your freeCodeCamp installation sends an email you will see it appear here. Like below:
+When your freeCodeCamp installation sends an email, you will see it appear here. Like below:
 
 ![MailHog Screenshot 2](images/mailhog/2.jpg)
 
-Open the mail and you should see two tabs where you can view the content - plain text and source. Make sure you are on the plain text tab.
+Open the mail.  You should see two tabs where you can view the content - plain text and source. Make sure you are on the plain text tab.
 
 ![MailHog Screenshot 3](images/mailhog/3.jpg)
 
