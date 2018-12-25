@@ -9,6 +9,5 @@ config/env.json
 /public
 .DS_Store
 
-./static/js/frame-runner.js
-./static/js/frame-runner.js.map
+/static/js
 ./static/_redirects
