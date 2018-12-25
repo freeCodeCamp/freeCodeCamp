@@ -92,14 +92,18 @@ typings/
 /coverage
 
 # production
-/build
+dashboard-client/build
 
 # ------------
 # Custom Files
 # ------------
 
 # local-work-logs
-work-logs/*
+sweeper/work-logs/*
 
 # local input files
-input-files/*
+sweeper/input-files/*
+
+dashboard-api/data.json
+dashboard-api/public
+dashboard-api/uploads

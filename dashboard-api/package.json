@@ -3,10 +3,14 @@
   "private": true,
   "main": "server.js",
   "scripts": {
-    "start": "node server.js"
+    "start": "node server.js",
+    "develop": "cross-env PORT=3001 node server.js"
   },
   "dependencies": {
-    "express": "^4.16.3"
+    "cross-env": "^5.2.0",
+    "dotenv": "^6.2.0",
+    "express": "^4.16.3",
+    "multer": "^1.4.1"
   },
   "devDependencies": {},
   "license": "BSD-3-Clause"

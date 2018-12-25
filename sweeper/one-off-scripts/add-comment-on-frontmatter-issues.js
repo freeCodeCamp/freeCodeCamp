@@ -84,10 +84,11 @@ const guideFolderChecks = async (number, prFiles, user) => {
 };
 
 (async () => {
-  const { firstPR, lastPR } = await getUserInput();
-  log.setFirstLast({ firstPR, lastPR });
+  const { totalPRs, firstPR, lastPR } = await getUserInput();
+  // log.setFirstLast({ firstPR, lastPR });
+  console.log(firstPR, lastPR);
   const prPropsToGet = ['number', 'labels', 'user'];
-  const { openPRs } = await getPRs(firstPR, lastPR, prPropsToGet);
+  const { openPRs } = await getPRs(totalPRs, firstPR, lastPR, prPropsToGet);
 
   if (openPRs.length) {
     savePrData(openPRs, firstPR, lastPR);
@@ -103,7 +104,7 @@ const guideFolderChecks = async (number, prFiles, user) => {
       const labelsAdded = await labeler(number, prFiles, currentLabels, guideFolderErrorsComment);
       const labelLogVal = labelsAdded.length ? labelsAdded : 'none added';
 
-      log.add(number, { comment: commentLogVal, labels: labelLogVal });
+      log.add(number, { number, comment: commentLogVal, labels: labelLogVal });
       await rateLimiter(+process.env.RATELIMIT_INTERVAL | 1500);
     }
   }

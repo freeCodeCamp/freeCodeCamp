@@ -14,7 +14,7 @@ const { owner, repo, octokitConfig, octokitAuth } = require('./constants');
 const octokit = require('@octokit/rest')(octokitConfig);
 
 const { getPRs, getUserInput } = require('./get-prs');
-const { guideFolderChecks } = require('./validation');
+ const { guideFolderChecks } = require('./validation');
 const { savePrData, ProcessingLog, rateLimiter } = require('./utils');
 const { labeler } = require('./pr-tasks');
 
@@ -25,13 +25,11 @@ const log = new ProcessingLog('sweeper');
 log.start();
 console.log('Sweeper started...');
 (async () => {
-  const { firstPR, lastPR } = await getUserInput();
-  log.setFirstLast({ firstPR, lastPR });
+  const { totalPRs, firstPR, lastPR } = await getUserInput();
   const prPropsToGet = ['number', 'labels', 'user'];
-  const { openPRs } = await getPRs(firstPR, lastPR, prPropsToGet);
+  const { openPRs } = await getPRs(totalPRs, firstPR, lastPR, prPropsToGet);
 
   if (openPRs.length) {
-    savePrData(openPRs, firstPR, lastPR);
     console.log('Processing PRs...');
     for (let count in openPRs) {
       let { number, labels: currentLabels, user: { login: username } } = openPRs[count];
@@ -43,7 +41,7 @@ console.log('Sweeper started...');
       const labelsAdded = await labeler(number, prFiles, currentLabels, guideFolderErrorsComment);
       const labelLogVal = labelsAdded.length ? labelsAdded : 'none added';
 
-      log.add(number, { comment: commentLogVal, labels: labelLogVal });
+      log.add(number, { number, comment: commentLogVal, labels: labelLogVal });
       await rateLimiter(+process.env.RATELIMIT_INTERVAL | 1500);
     }
   }

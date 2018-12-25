@@ -8,6 +8,7 @@
     "date-fns": "^1.29.0",
     "dedent": "^0.7.0",
     "dotenv": "^6.1.0",
+    "form-data": "^2.3.3",
     "gray-matter": "^4.0.1",
     "lodash": "^4.17.11",
     "path": "^0.12.7",

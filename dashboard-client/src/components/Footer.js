@@ -1,52 +1,32 @@
-import React, { Component } from 'react';
+import React from 'react';
 import styled from 'styled-components';
 
-import { ENDPOINT_INFO } from '../constants';
-
 const Container = styled.div`
-  margin-top: 5px;
-  text-align: center;
+   margin-top: 5px;
+   text-align: center;
 `;
 
 const Info = styled.div`
-  font-size: 14px;
-  padding: 2px;
+   font-size: 14px;
+   padding: 2px;
 `;
 
-class Footer extends Component {
-  state = {
-    numPRs: null,
-    prRange: null,
-    lastUpdate: null
-  }
+const Footer = (props) => {
 
-  componentDidMount() {
-    fetch(ENDPOINT_INFO)
-      .then((response) => response.json())
-      .then(({ ok, numPRs, prRange, lastUpdate }) => {
-        if (ok) {
-          this.setState((prevState) => ({ numPRs, prRange, lastUpdate }));
-        }
-      })
-      .catch(() => {
-        // do nothing
-      });
-  }
+   const localTime = (lastUpdate) => {
+     const newTime = new Date(lastUpdate);
+     return newTime.toLocaleString();
+   }
 
-  localTime(lastUpdate) {
-    const newTime = new Date(lastUpdate);
-    return newTime.toLocaleString();
-  }
+   const { footerInfo: { numPRs, prRange, lastUpdate } } = props;
+   return (
+     lastUpdate &&
+     <Container>
+       <Info>Last Update: {localTime(lastUpdate)}</Info>
+       <Info># of open PRs: {numPRs} ({prRange})</Info>
+     </Container>
+   );
 
-  render() {
-    const { numPRs, prRange, lastUpdate } = this.state;
-    return (
-      <Container>
-        <Info>Last Update: {this.localTime(lastUpdate)}</Info>
-        <Info># of open PRs: {numPRs} ({prRange})</Info>
-      </Container>
-    );
-  }
 };
 
 export default Footer;

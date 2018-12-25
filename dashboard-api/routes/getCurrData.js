@@ -1,8 +1,9 @@
-const data = require('../data.json');
 const router = require('express').Router();
 
+const container = require ('../data');
+
 router.get('/', (request, response) => {
-  response.json(data);
+  response.json(container.data);
 });
 
 module.exports = router;

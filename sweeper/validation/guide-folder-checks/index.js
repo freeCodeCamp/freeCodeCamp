@@ -1,6 +1,6 @@
 const fetch = require('node-fetch');
 
-const { addComment } = require('../../pr-tasks');
+const { addComment } = require('../../pr-tasks/add-comment');
 const { rateLimiter } = require('../../utils');
 const { createErrorMsg } = require('./create-error-msg');
 const { checkPath } = require('./check-path');

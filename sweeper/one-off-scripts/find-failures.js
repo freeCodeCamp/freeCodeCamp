@@ -22,10 +22,9 @@ const log = new ProcessingLog('find-failures-script');
 const errorsToFind = require(path.resolve(__dirname, '../input-files/failuresToFind.json'));
 
 (async () => {
-  const { firstPR, lastPR } = await getUserInput();
-  log.setFirstLast({ firstPR, lastPR });
+  const { totalPRs, firstPR, lastPR } = await getUserInput();
   const prPropsToGet = ['number', 'labels', 'head'];
-  const { openPRs } = await getPRs(firstPR, lastPR, prPropsToGet);
+  const { openPRs } = await getPRs(totalPRs, firstPR, lastPR, prPropsToGet);
 
   if (openPRs.length) {
     savePrData(openPRs, firstPR, lastPR);
@@ -58,7 +57,7 @@ const errorsToFind = require(path.resolve(__dirname, '../input-files/failuresToF
               }
             }
             const errorDesc = error ? error : 'unknown error';
-            log.add(number, { errorDesc, buildLog: travisLogUrl });
+            log.add(number, { number, errorDesc, buildLog: travisLogUrl });
           }
         }
       }

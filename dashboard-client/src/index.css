@@ -21,6 +21,11 @@ a {
   color: #006400;
 }
 
+a:visited {
+  text-decoration: none;
+  color: purple;
+}
+
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
     monospace;

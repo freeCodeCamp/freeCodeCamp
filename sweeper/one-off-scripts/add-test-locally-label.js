@@ -18,10 +18,9 @@ octokit.authenticate(octokitAuth);
 const log = new ProcessingLog('all-locally-tested-labels');
 
 (async () => {
-  const { firstPR, lastPR } = await getUserInput();
-  log.setFirstLast({ firstPR, lastPR });
+  const { totalPRs, firstPR, lastPR } = await getUserInput();
   const prPropsToGet = ['number', 'labels'];
-  const { openPRs } = await getPRs(firstPR, lastPR, prPropsToGet);
+  const { openPRs } = await getPRs(totalPRs, firstPR, lastPR, prPropsToGet);
 
   if (openPRs.length) {
     savePrData(openPRs, firstPR, lastPR);
@@ -45,7 +44,7 @@ const log = new ProcessingLog('all-locally-tested-labels');
         }
       }
       else {
-        log.add(number, { labels: 'none added' });
+        log.add(number, { number, labels: 'none added' });
       }
     }
   }

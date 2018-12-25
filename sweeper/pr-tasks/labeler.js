@@ -1,4 +1,5 @@
 const { validLabels } = require('../validation');
+
 const { addLabels } = require('./add-labels');
 const { rateLimiter } = require('../utils');
 
@@ -13,7 +14,6 @@ const labeler = async (number, prFiles, currentLabels, guideFolderErrorsComment)
     const filenameReplacement = filename.replace(/^curriculum\/challenges\//, 'curriculum\/');
     const regex = /^(docs|curriculum|guide)(?:\/)(arabic|chinese|portuguese|russian|spanish)?\/?/
     const [ _, articleType, language ] = filenameReplacement.match(regex) || []; // need an array to pass to labelsAdder
-
     if (articleType && validLabels[articleType]) {
       labelsToAdd[validLabels[articleType]] = 1
     }

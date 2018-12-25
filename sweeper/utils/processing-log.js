@@ -8,10 +8,11 @@ const { saveToFile } = require('./save-to-file');
 class ProcessingLog {
   constructor(script) {
     this._script = script;
-    this._start = null;
-    this._finish = null;
+    this._startTime = null;
+    this._finishTime = null;
     this._elapsedTime = null;
-    this._prs = {};
+    this._prs = [];
+    this._indicesObj = {};
     this._prCount = null;
     this._logfile = path.resolve(__dirname, `../work-logs/data-for_${this.getRunType()}_${this._script}.json`);
   }
@@ -21,51 +22,59 @@ class ProcessingLog {
   }
 
   export() {
-    let sortedPRs = Object.keys(this._prs)
-     .sort((a, b) => a - b)
-     .map(num => ({ number: num, data: this._prs[num] }));
-
     const log = {
-      start: this._start,
-      finish: this._finish,
+      startTime: this._startTime,
+      finishTime: this._finishTime,
       elapsedTime: this._elapsedTime,
-      prCount: sortedPRs.length,
+      prCount: this._prs.length,
       firstPR: this._firstPR,
       lastPR: this._lastPR,
-      prs: sortedPRs
+      indices: this._indicesObj,
+      prs: this._prs
     };
     saveToFile(this._logfile, JSON.stringify(log))
   }
 
   add(prNum, props) {
-    this._prs[prNum] = props;
+    this._prs.push(props);
+    this._indicesObj[prNum] = this._prs.length -1;
   }
 
-  setFirstLast({ firstPR, lastPR }) {
-    this._firstPR = firstPR;
-    this._lastPR = lastPR;
+  getPrRange() {
+    if (this._prs.length) {
+      const first = this._prs[0].number;
+      const last = this._prs[this._prs.length -1].number;
+      return [first, last];
+    }
+    console.log('Current log file does not contain any PRs');
+    return [null, null];
   }
 
   start() {
-    this._start = new Date();
+    this._startTime = new Date();
+    this.export();
   }
 
   finish() {
-    this._finish = new Date();
-    const minutesElapsed = (this._finish - this._start) / 1000 / 60;
+    this._finishTime = new Date();
+    const minutesElapsed = (this._finishTime - this._startTime) / 1000 / 60;
     this._elapsedTime =  minutesElapsed.toFixed(2) + ' mins';
+    let [ first, last ] = this.getPrRange();
+    this._firstPR = first;
+    this._lastPR = last;
     this.export();
     this.changeFilename();
   }
 
   changeFilename() {
     const now = formatDate(new Date(), 'YYYY-MM-DDTHHmmss');
-    const newFilename = path.resolve(__dirname,`../work-logs/${this.getRunType()}_${this._script}_${this._firstPR}-${this._lastPR}_${now}.json`);
-    fs.rename(this._logfile, newFilename, function(err) {
-      if (err) {
-        throw(err);
-      }
-    });
+    const finalFilename = `${this.getRunType()}_${this._script}_${this._firstPR}-${this._lastPR}_${now}.json`;
+    const newFilename = path.resolve(__dirname,`../work-logs/${finalFilename}`);
+    fs.renameSync(this._logfile, newFilename);
+    if (!fs.existsSync(newFilename)) {
+      throw `File rename unsuccessful.`;
+    }
+    this._logfile = newFilename;
   }
 };
 

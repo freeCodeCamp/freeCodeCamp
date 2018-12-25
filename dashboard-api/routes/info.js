@@ -1,9 +1,14 @@
-const { prs, startTime } = require('../data.json');
 const router = require('express').Router();
+const fs = require('fs');
+const path = require('path');
 
-const firstPR = prs[0].number;
-const lastPR = prs[prs.length - 1].number;
+const container = require ('../data');
+
 router.get('/', (request, response) => {
+  const { prs, startTime } = container.data;
+  const firstPR = prs[0].number;
+  const lastPR = prs[prs.length - 1].number;
+
   response.json({
     ok: true,
     lastUpdate: startTime,

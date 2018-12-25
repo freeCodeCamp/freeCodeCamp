@@ -1,4 +1,3 @@
-const { indices, prs } = require('../data.json');
 const router = require('express').Router();
 
 router.get('/', (request, response) => {

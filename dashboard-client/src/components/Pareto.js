@@ -1,30 +1,18 @@
 import React from 'react';
 import styled from 'styled-components';
 
+import ListItem from './ListItem';
+import FullWidthDiv from './FullWidthDiv';
+import Result from './Result';
 import { ENDPOINT_PARETO } from '../constants';
-
-const Result = styled.div`
-  word-wrap: break-word;
-  margin: 10px 0;
-  &:nth-child(odd) {
-    background: #eee;
-  }
-  padding: 3px;
-`;
 
 const List = styled.div`
   margin: 5px;
   display: flex;
-  flex-wrap: wrap;
-`;
-
-const ListItem = styled.a`
-  flex-basis: 33%;
-  overflow: hidden;
+  flex-direction: column;
 `;
 
 const detailsStyle = { padding: '3px' };
-
 const filenameTitle = { fontWeight: '600' };
 
 class Pareto extends React.Component {
@@ -53,17 +41,19 @@ class Pareto extends React.Component {
     const { data } = this.state;
     const elements = data.map((entry) => {
       const { filename, count, prs } = entry;
-      const prsList = prs.map(({ number, username }) => {
-        const prUrl = `https://github.com/freeCodeCamp/freeCodeCamp/pull/${number}`;
+      const prsList = prs.map(({ number, username, title }) => {
         return (
-          <ListItem href={prUrl} rel="noopener noreferrer" target="_blank">
-            #{number} <span>({username})</span>
-          </ListItem>
+          <ListItem
+            number={number}
+            username={username}
+            prTitle={title}
+          />
         )
       });
+      const fileOnMaster = `https://github.com/freeCodeCamp/freeCodeCamp/blob/master/${filename}`;
       return (
         <Result key={filename}>
-          <span style={filenameTitle}>{filename}</span><br />
+          <span style={filenameTitle}>{filename}</span> <a href={fileOnMaster} rel="noopener noreferrer" target="_blank">(File on Master)</a><br />
           <details style={detailsStyle}>
             <summary># of PRs: {count}</summary>
             <List>{prsList}</List>
@@ -73,9 +63,9 @@ class Pareto extends React.Component {
     });
 
     return (
-      <div>
+      <FullWidthDiv>
         {data.length ? elements : 'Report Loading...'}
-      </div>
+      </FullWidthDiv>
     );
   }
 }

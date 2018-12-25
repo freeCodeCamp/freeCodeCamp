@@ -1,41 +1,47 @@
 import React from 'react';
 import styled from 'styled-components';
 
+import ListItem from './ListItem';
+import FullWidthDiv from './FullWidthDiv';
+import Result from './Result';
+
 const List = styled.div`
   margin: 5px;
   display: flex;
-  flex-wrap: wrap;
+  flex-direction: column;
 `;
 
-const ListItem = styled.div`
-  padding: 0 5px;
-`;
+const filenameTitle = { fontWeight: '600' };
 
 const FilenameResults = ({ searchValue, results }) => {
   const elements = results.map((result) => {
     const { filename, prs: prObjects } = result;
-    const prs = prObjects.map(({ number }, index) => {
-      const prUrl = `https://github.com/freeCodeCamp/freeCodeCamp/pull/${number}`;
-      return <ListItem key={`${filename}-${index}`}>
-        • <a href={prUrl} rel="noopener noreferrer" target="_blank">{number}</a>
-      </ListItem>;
+    const prs = prObjects.map(({ number, username, title }, index) => {
+      return (
+        <ListItem
+          number={number}
+          username={username}
+          prTitle={title}
+        />
+      );
     });
 
+    const fileOnMaster = `https://github.com/freeCodeCamp/freeCodeCamp/blob/master/${filename}`;
     return (
-      <div key={filename}>
-        {filename}
+      <Result key={filename}>
+        <span style={filenameTitle}>{filename}</span> <a href={fileOnMaster} rel="noopener noreferrer" target="_blank">(File on Master)</a>
         <List>
           {prs}
         </List>
-      </div>
+      </Result>
     );
   });
 
   return (
-    <div>
+    <FullWidthDiv>
       {results.length ? <h3>Results for: {searchValue}</h3> : null}
       {elements}
-    </div>
+    </FullWidthDiv>
   );
 };
 
