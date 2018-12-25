@@ -3,7 +3,8 @@ title: Crystal
 ---
 ## Crystal
 
-It is a methodology that is a very adaptable, lightweight approach to software development. It is a family of agile methodologies in which are included Crystal Clear, Crystal Yellow, Crystal Orange and others. All of which have an unique attribute driven by many factors, like the size of the team, how critical the system is, and the priorities of the project. The state of each projects might need a different set of practices, rules, processes according to the project's unique characteristics.
+It is a methodology that is a very adaptable, lightweight approach to software development. It is a family of agile methodologies and includes Crystal Clear, Crystal Yellow, Crystal Orange and others. All of them have unique attributes driven by many factors, like the size of the team, how critical the system is and the priorities of the project. Due to the project's unique characteristics, the state of each project might need a different set of practices, rules, and processes.
+
 They were all developed by Alistair Cockburn in the 1990s. 
 
 According to him, the faces of the crystal are defined as Methodology, techniques and policies
