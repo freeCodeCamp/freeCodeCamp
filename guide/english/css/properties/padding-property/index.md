@@ -3,7 +3,7 @@ title: Padding Property
 ---
 ## Padding Property
 
-CSS `padding` property adds internal space between the content and border of element. You may use `padding-top`, `padding-right`, `padding-bottom` and `padding-left` for specific side of element, but `padding` is shorthand version for all these properties. If: 
+CSS `padding` property adds internal space between the content and border of element. You may use `padding-top`, `padding-right`, `padding-bottom` and `padding-left` for a specific side of an element, but `padding` is shorthand version for all these properties. If: 
 
 * One value is provided it will apply to all sides of element
 * Two values are provided, first value will apply top and bottom sides and second value will apply to left and right sides of element.
