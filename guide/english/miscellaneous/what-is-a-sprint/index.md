@@ -13,7 +13,10 @@ In some organizations these meetings will be overseen by either a Scrum Master o
 
 Sprints, on average, will last as much as 30 days or as little as a 7 days depending upon both the size of the project, the number of tasks to be completed, and the number of resources available to work on the sprint's tasks.
 
-In addition, in some organizations developers will meet daily to discuss project progress, needs, and roadblocks. These meetings are sometimes referred to as SCRUM meeting or Daily Stand-up Meeting. The person or persons are sometimes invited to listen however they are only in attendance as observers.
+In addition, in some organizations developers will meet daily to discuss project progress, needs, and roadblocks. These meetings are sometimes referred to as SCRUM meeting or Daily Stand-up Meeting. The person or persons are sometimes invited to listen however they are only in attendance as observers. During a stand-up, developers typically answer three questions: 
+1. What did you work on yesterday? 
+2. What are you working on today?  
+3. Are you blocked?
 
 ![sprint schedule](https://i.imgur.com/l8EAw1L.png "example of sprint schedule")
 
