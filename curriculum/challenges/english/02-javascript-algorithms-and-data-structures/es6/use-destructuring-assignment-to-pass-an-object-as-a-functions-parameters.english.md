@@ -57,7 +57,7 @@ const stats = {
 function half(stats) {
 // use function argument destructuring
   return (stats.max + stats.min) / 2.0;
-};
+}
 // change code above this line
 
 console.log(stats); // should be object
@@ -85,6 +85,6 @@ const stats = {
 
 function half({max, min}) {
   return (max + min) / 2.0;
-};
+}
 ```
 </section>

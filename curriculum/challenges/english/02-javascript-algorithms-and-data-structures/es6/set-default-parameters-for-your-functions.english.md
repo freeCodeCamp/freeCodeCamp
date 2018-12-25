@@ -41,7 +41,7 @@ tests:
 ```js
 function increment(number, value) {
   return number + value;
-};
+}
 
 console.log(increment(5, 2)); // returns 7
 console.log(increment(5)); // returns 6
@@ -59,6 +59,6 @@ console.log(increment(5)); // returns 6
 ```js
 function increment(number, value = 1) {
   return number + value;
-};
+}
 ```
 </section>
