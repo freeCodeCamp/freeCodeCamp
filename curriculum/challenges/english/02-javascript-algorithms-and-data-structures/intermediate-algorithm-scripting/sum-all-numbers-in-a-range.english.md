@@ -8,13 +8,16 @@ challengeType: 5
 ## Description
 <section id='description'>
 We'll pass you an array of two numbers. Return the sum of those two numbers plus the sum of all the numbers between them.
-The lowest number will not always come first.Remember to use <a href='http://forum.freecodecamp.org/t/how-to-get-help-when-you-are-stuck/19514' target='_blank'>Read-Search-Ask</a> if you get stuck. Try to pair program. Write your own code.
+
+The lowest number will not always come first.
+
+Remember to use <a href='http://forum.freecodecamp.org/t/how-to-get-help-when-you-are-stuck/19514' target='_blank'>Read-Search-Ask</a> if you get stuck. Try to pair program. Write your own code.
  
 ### Example
   
 Input:
   
-`[1,4]`
+`[4, 1]`
 
 Output:
 
