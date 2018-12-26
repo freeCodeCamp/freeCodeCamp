@@ -21,7 +21,7 @@ This will produce an array called `my_array` that can hold 5 integers having ind
 ```C
 int my_array[] = {1, 5, 3, 6, 2};
 ```
-In this example, a array with size 5 is initalised and declared at the same time. We didn't bother specifying a number in the square brackets. This is because the curly brackets have values in them that will be assigned to each position in the array. You could put a number in the brackets anyway.
+In this example, a array with size 5 is initialized and declared at the same time. We didn't bother specifying a number in the square brackets. This is because the curly brackets have values in them that will be assigned to each position in the array.
 
 When initializing an array, you can provide fewer values than array elements. For example, the following statement initializes only the first two elements of `my_array`:
 ```C
