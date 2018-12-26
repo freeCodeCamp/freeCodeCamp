@@ -114,9 +114,9 @@ char hello_world[] = "Hello world!";
 That's much nicer. It doesn't even require you to place the '\0' at the end, either. So what was that?
 
 ### Null Termination
-Strings in C are null terminated, meaning that they end with the null character. This way, the compiler (and your and everyone else's) code will know where the string ends: once the character is null, the string is over.
+Strings in C are null terminated, meaning that they end with the null character. This way, the compiler will know where a string ends: at the null character.
 
-Of course, there is no 'null' button on your keyboard, but you still need to type it out somehow. That's what \0 does. Whenever the C compiler sees \0, it will insert a null character. It's just like how \n prints a newline.
+Of course, there is no 'null' button on your keyboard, but you still need to type it out somehow. That's what \0 does. Whenever the C compiler sees \0, it will insert a null character, just like how \n prints a newline.
 
 ### Printing Strings
 Another thing C makes easier for us is the printing of strings. Rather than forcing you to print out every character in the array, you can just use the %s format specifier, and treat the string like you would any `int` or `double` value. Here's an example of the hello, world program from the very beginning, made slightly more complicated with strings:
