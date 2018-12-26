@@ -41,12 +41,12 @@ Dados "cadastrados"
 ```
 ### Complete table listings for reference 
  
- SQL da mesa student
+ SQL da tabela student
  
 ```sql 
 SELECT a.studentID, a.FullName, sat_score, a.programOfStudy, schoolEmailAdr FROM student AS a;
 ```
-student or mesa ESQUERDA
+student or tabela ESQUERDA
 
 ```text
 + ----------- + ------------------------ + ----------- + --------------------- + ------------------------ + 
@@ -65,13 +65,13 @@ student or mesa ESQUERDA
 9 linhas no set (0,00 seg)
 ```
 
-SQL da mesa student-contact-info
+SQL da tabela student-contact-info
 
 ```sql
 SELECT * FROM `student-contact-info` AS b;
 ```
 
-mesa de contato do estudante ou mesa DIREITA 
+tabela de contato do estudante ou mesa DIREITA 
 
 ```text 
 +-----------+----------------------------------+--------------------+--------------------+ 
