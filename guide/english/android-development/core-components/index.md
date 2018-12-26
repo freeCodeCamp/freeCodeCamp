@@ -16,7 +16,7 @@ An activity facilitates the following key interactions between system and app:
 - Keeping track of what the user currently cares about (what is on screen) to ensure that the system keeps running the process that is hosting the activity.
 - Knowing that previously used processes contain things the user may return to (stopped activities), and thus more highly prioritize keeping those processes around.
 - Helping the app handle having its process killed so the user can return to activities with their previous state restored.
-
+- Providing a way for apps to implement user flows between each other, and for the system to coordinate these flows. (The most classic example here being share.)
 
 #### [Activity Lifecycle](https://developer.android.com/guide/components/activities/activity-lifecycle)
 ![Activity Lifecycle](https://developer.android.com/images/activity_lifecycle.png)
