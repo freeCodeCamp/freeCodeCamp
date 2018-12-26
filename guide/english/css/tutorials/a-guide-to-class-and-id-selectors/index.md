@@ -5,7 +5,7 @@ title: A Guide to Class and Id Selectors
 
 This is an article based on CSS selectors. CSS is used for styling HTML elements and the webpage in general. For CSS to style an element on the page, it needs to select that element first.
 
-Like how you need to select a file on your computer before deleting it. You need to tell your machine exactly which file you want to modify or delete. Similarly, you need to tell CSS which element to target when applying different styles and colors on it.
+This is like selecting a file on your computer before deleting it. You need to tell your machine exactly which file you want to modify or delete. Similarly, you need to tell CSS which element to target when applying different styles and colors on it.
 
 Although CSS can select elements very well, you can instruct it to select very specific elements. By the end of this article, you will walk away with the knowledge to select and style specific elements.
 
@@ -39,7 +39,7 @@ Class and ID act like identity cards for HTML elements. Both help in separating 
 
 Let's say you meet a guy from some club. When you ask that person for their club identity card, they show one with their club's name on it. Now all members from the same club will have the same identity card right?
 
-If there are 3 clubs - A, B and C. Then all members of club A will have the same identity cards. All members of club B will also have the same ones, although they will be different from club A and club C's identity cards. That's how you know who is from which club.
+If there are 3 clubs - A, B and C - then all members of club A will have the same identity cards. All members of club B will also have the same ones, although they will be different from club A and club C's identity cards. That's how you know who is from which club.
 
 That's how `class` works. You can give a bunch of elements a class and they will be in a single club. Just like a new rule in the club has to be followed by all club members, similarly, all new style rules are applied to elements in the same club.
 
