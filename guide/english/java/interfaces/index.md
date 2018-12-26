@@ -3,7 +3,11 @@ title: Interfaces
 ---
 # Interfaces
 
-Interface in Java is a bit like the Class, but with a significant difference : an `interface` can _only_ have method signatures, fields and default methods. Since Java 8, you can also create [default methods](https://docs.oracle.com/javase/tutorial/java/IandI/defaultmethods.html). Classes that  implement an interface are thought to be signing a contract and agreeing to perform the specific behaviors of the interface. If the classes that implement an interface are abstract, not all methods need to be defined in that class. In the next block you can see an example of interface :
+Interface in Java is a bit like the Class, but with a significant difference : an `interface` can _only_ have method signatures, fields and default methods. Since Java 8, you can also create [default methods](https://docs.oracle.com/javase/tutorial/java/IandI/defaultmethods.html). 
+
+Classes that  implement an interface are thought to be signing a contract and agreeing to perform the specific behaviors listed in the interface. If the classes that implement an interface do not implement all the methods of the interface, then such a class needs to be defined as `abstract`.
+
+In the next block you can see an example of interface :
 
 ```java
 public interface Vehicle {
