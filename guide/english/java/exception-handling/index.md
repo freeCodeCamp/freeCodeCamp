@@ -10,6 +10,21 @@ An exception is an unwanted or unexpected event, which occurs during the executi
 Error: An Error indicates serious problem that a reasonable application should not try to catch.
 Exception: Exception indicates conditions that a reasonable application might try to catch.
 
+## Checked versus Unchecked exception
+A checked exception is an exception class that extends `Exception` in its signature. For a checked exception, each method that calls the method that throws a checked exception, will either to handle the exception (with a try-catch clause) or declare `throws` in its method signature. The compiler will complain if the exception is not handled by any method. 
+
+Example of a checked exception signature: 
+```java
+public class TooManyItemsException extends Exception { }
+```
+
+An unchecked exception is an exception class that extends `RuntimeException` is its signature. For an unchecked exception, if a method throws it and even no other methods catch it, then the compiler won't complain. However, while running the program, if the unchecked exception is thrown and not handled, it will crash the program. 
+
+Examples of unchecked exception signature:
+```java
+public class TooManyItemsException extends RuntimeException { }
+```
+
 ## Exception Hierarchy
 
 All exception and errors types are sub classes of class Throwable, which is base class of hierarchy.One branch is headed by Exception. This class is used for exceptional conditions that user programs should catch. NullPointerException is an example of such an exception.Another branch,Error are used by the Java run-time system(JVM) to indicate errors having to do with the run-time environment itself(JRE). StackOverflowError is an example of such an error.
@@ -29,7 +44,7 @@ catch (ExceptionType2 exOb) {
 }
 // optional
 finally {
-// block of code to be executed after try block ends
+// block of code to be executed either if the exception is catch or not. 
 }
 ```
 ## Advantage of Exception Handling
