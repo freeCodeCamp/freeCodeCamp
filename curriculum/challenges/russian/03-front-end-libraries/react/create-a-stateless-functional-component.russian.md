@@ -8,7 +8,9 @@ localeTitle: Создание функционального компонент�
 ---
 
 ## Description
-undefined
+Компоненты - это ядро React. Всё в React является компонентом, и здесь вы научитесь, как их создавать.
+
+Существуют два способа создания React компонентов. Первый способ - это использовать JavaScript функцию. Определяя компонент таким образом, вы создаете *функциональный компонент без учета состояния*. Концепт состояния в приложении будет рассмотрен в дальнейших главах. Сейчас думайте о компоненте без учета состояния, как о компоненте, которая может получать данные и рендерить их, но не управляет или следить за изменениями в данных. 
 
 ## Instructions
 undefined
@@ -18,11 +20,11 @@ undefined
 
 ```yml
 tests:
-  - text: ''
+  - text: '<code>MyComponent</code> должен возвращать JSX.'
     testString: 'assert((function() { const mockedComponent = Enzyme.mount(React.createElement(MyComponent)); return mockedComponent.length === 1; })(), "<code>MyComponent</code> should return JSX.");'
-  - text: ''
+  - text: '<code>MyComponent</code> должен вернуть элемент <code>div</code>.'
     testString: 'assert((function() { const mockedComponent = Enzyme.mount(React.createElement(MyComponent)); return mockedComponent.children().type() === "div" })(), "<code>MyComponent</code> should return a <code>div</code> element.");'
-  - text: ''
+  - text: 'Элемент <code>div</code> должен содержать строку текста.'
     testString: 'assert((function() { const mockedComponent = Enzyme.mount(React.createElement(MyComponent)); return mockedComponent.find("div").text() !== ""; })(), "The <code>div</code> element should contain a string of text.");'
 
 ```
