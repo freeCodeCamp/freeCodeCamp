@@ -56,6 +56,19 @@ Complete list of icons provided by Font Awesome is available [here](http://fonta
 _Note: Do not include the dot in the HTML Class Attribute, referring to the classes with a dot is only used when adjusting the classes in CSS._
 
 
+#### Font Awesome Free CDN for Version 5
+
+Font Awesome Version 5 extends the free icons to 1480. 
+
+*Use this free CDN for version 5 (currently v5.6.3)*
+
+```html
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css" integrity="sha384-UHRtZLI+pbxtHCWp1t77Bi1L4ZtiqrqD80Kn4Z8NTSRyMA2Fd33n5dQ8lWUE00s/" crossorigin="anonymous">
+```
+
+List of v5 free icons is available [here](https://fontawesome.com/icons?d=gallery&m=free)
+
+
 #### More Information:
 [Font Awesome Cheatsheet](http://fontawesome.io/cheatsheet/)
 

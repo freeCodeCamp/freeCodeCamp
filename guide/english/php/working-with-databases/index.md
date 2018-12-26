@@ -4,7 +4,7 @@ title: Working With Databases
 
 ## What options are available for PHP to connect to a database?
 
-PHP can connect to a variety of different databases including MongoDB, MsSQL and MySQL.
+PHP can connect to a variety of different databases including MongoDB, MS SQL and MySQL.
 Both PHP and MySQL are very popular and provide an easy, free and open source websites 
 to be created and are often found together to produce websites of all types. 
 Both PHP and MySQL can scale to support large numbers of users.
