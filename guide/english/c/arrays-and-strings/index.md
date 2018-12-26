@@ -32,7 +32,7 @@ Now that the array has been declared with 5 values, it has 5 memory locations. C
 |----------|---|---|---|---|---|
 | Value    | 1 | 5 | 3 | 6 | 2 |
 
-Notice that even though there are 5 memory locations, the array positions only go up to 4. This is because arrays in C (and most other languages) start at 0, because arrays are implemented using pointers. When you call a position in an array, you're really calling that memory location plus a certain number. To get the beginning of the array, move 0 places in memory, to get the position after that, move one place in memory, and so on.
+Notice that even though there are 5 memory locations, the array positions only go up to 4. This is because arrays in C (and most other languages) start at 0 because arrays are implemented using pointers. When you call a position in an array, you're really calling that memory location plus a certain number. To get the beginning of the array, move 0 places in memory, to get the position after that, move one place in memory, and so on.
 
 Here's an example of setting the array to 9 at position 1:
 ```C
