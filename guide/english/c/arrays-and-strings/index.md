@@ -274,5 +274,6 @@ Desc - United States
 * Arrays are collections of variables.
 * Arrays can only store same data types. An integer array will not be able to store characters in it.
 * Arrays have separate positions that can be declared with brackets, and accessed with square brackets.
+* Array indexing begins with 0 i.e. first element is stored in array[0] and not array[1].
 * Strings are arrays too, but we can treat them a little differently: they can be declared using double quotes, and printed using %s.
 * Strings have their own library, `string.h`, which has some handy functions to use.
