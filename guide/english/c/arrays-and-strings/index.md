@@ -21,9 +21,9 @@ Notice that in this example, we didn't bother specifying a number in the square 
 
 When initializing an array, you can provide fewer values than array elements. For example, the
 following statement initializes only the first two elements of my_array:
-
+```C
 float my_array[5] = {5.0, 2.5};
-
+```
 If you partially initialize an array, the compiler sets the remaining elements to zero.
 
 Now that the array has been declared with 5 values, it has 5 memory locations. Consider this table for a visual example of that:
@@ -142,7 +142,8 @@ strcpy(first, second);
 ```
 Here is an example of how manual implementation of the strcpy function looks like: 
 ```C
-void copy_string(char [] first_string, char [] second_string) 
+
+void copy_string(char first_string [], char second_string []) 
 { 
     int i;
     for(i = 0; second_string[i] != '\0'; i++) 
@@ -166,11 +167,9 @@ Note: both `strcpy` and `strncpy` make sure that the copied string ends in a nul
 strcat(first, second);
 ```
 
-Here is an example of manual implementation of function `strcat`:
+Here is an example of manual implementation of function strcat:
 ```C
-
-```C
-void string_concatenate(char [] s1, char [] s2)
+void string_concatenate(char s1 [], char s2 [])
 {
     int i = strlen(s1), j;
     for(j = 0; s2[j]; j++, i += 1)
@@ -194,14 +193,13 @@ strncat(char s1[], char s2[], int n);
 string_length = strlen(my_string);
 ```
 
-Here is a manual implementation of function strlen:
-
+Here is an manual implementation of fuction strlen:
 ```C
-int string_length(char [] string)
+int string_length(char string [])
 {
     int i;
     
-    for(i = 0; string[i]; i++);
+    for(i = 0; string[i] != '\0'; i++);
     
     return i;
 }
