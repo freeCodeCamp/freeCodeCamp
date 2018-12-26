@@ -26,6 +26,11 @@ float my_array[5] = {5.0, 2.5};
 ```
 If you partially initialize an array, the compiler sets the remaining elements to zero.
 
+You can also initialize all elements of an array of a known size to zero using empty curly braces. For example:
+```C
+float my_array[5] = {};
+```
+
 Now that the array has been declared with 5 values, it has 5 memory locations. Consider this table for a visual example of that:
 
 | Position | 0 | 1 | 2 | 3 | 4 |
