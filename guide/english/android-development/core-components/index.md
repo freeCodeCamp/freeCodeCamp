@@ -14,6 +14,8 @@ An _activity_ is a component that has a user interface and represents a single s
 
 An activity facilitates the following key interactions between system and app:
 - Keeping track of what the user currently cares about (what is on screen) to ensure that the system keeps running the process that is hosting the activity.
+- Knowing that previously used processes contain things the user may return to (stopped activities), and thus more highly prioritize keeping those processes around.
+- Helping the app handle having its process killed so the user can return to activities with their previous state restored.
 
 
 #### [Activity Lifecycle](https://developer.android.com/guide/components/activities/activity-lifecycle)
