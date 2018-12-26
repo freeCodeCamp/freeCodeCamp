@@ -21,7 +21,7 @@ An important concept in C# is that the class definition is used to create instan
 Book book = new Book();
 </code><br>
 
-This creates a new book object that we can use to manipulate data and store it in a database. The variable, book, is actually a reference type of Book (with a capital B). The new keyword is used to create a new instance of the object. We can use methods available in the class definition with that variable, book, such as AddTitle() or AddAuthor() etc.
+This creates a new book object that we can use to manipulate data and store it in a database. The variable, book, is actually a reference type of `Book` (with a capital B). The `new` keyword is used to create a new instance of the object. We can use methods available in the class definition with that variable, book, such as `AddTitle()` or `AddAuthor()` etc.
 
 #### Features of C# include:
 1. Automatic Garbage Collection
