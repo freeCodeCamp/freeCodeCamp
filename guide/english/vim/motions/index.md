@@ -7,9 +7,9 @@ title: Motions
 ### Cursors motions
 
 First in VIM we can use the arrow keys if we like to move around the text file, but it is not the best way to do so,
-and we lost the advantage of combine commands that VIM provides.
+and we lost the advantage of combined commands that VIM provides.
 
-Instead of that the default and best way to move throught the text is using the keys `h`(left), `j`(down), `k`(up) and `l`(right).
+Instead of that, the default and best way to move through the text is using the keys `h`(left), `j`(down), `k`(up) and `l`(right).
 
 ```
      ^ 
@@ -20,21 +20,21 @@ Instead of that the default and best way to move throught the text is using the 
      |
      v
 ```
-The advantage in use this keys instead of the arrow keys, is you can combine motions with other commands, like:
+The advantage in using these keys instead of the arrow keys is you can combine motions with other commands, like:
 
 
   - `d2j` -> delete 2 lines down
   - `y10k` -> copy 10 lines up
-  - `10l` -> move 10 caracters right
+  - `10l` -> move 10 characters right
   - `2h`  -> move 2 characters left
  
 ### Words Motions
 
 A word consists of a sequence of letters, digits and underscores, or a
 sequence of other non-blank characters, separated with white space (spaces,
-tabs, end of line).  An empty line is also considered to be a word.
+tabs, end of line). An empty line is also considered to be a word.
 
-It is possible move throught words with this commnads:
+It is possible move through words with these commands:
 
   - `w` -> move to next word
   - `W` -> move to next **WORD*** 
@@ -46,16 +46,16 @@ It is possible move throught words with this commnads:
   - `gE` -> move to the end of previous **WORD**
   
 *A **WORD** consists of a sequence of non-blank characters, separated with white
-space.  An empty line is also considered to be a **WORD**, ie: `quux(foo,` `bar,` `foo);`
+space. An empty line is also considered to be a **WORD**, ie: `quux(foo,` `bar,` `foo);`
 
-With this motions combined with other commands you can do things like:
+When these motions are combined with other commands you can do things like:
 
 - `dw` -> delete the word
 - `5e` -> move to the end of the 5th word from here
 
 ### Search motions
 
-Another way to move throught the position you like, is using the search motions, the search motions consists in the 
+Another way to move to the position you like is using search motions. The search motions consist of the 
 motion + a character to search
   
   - `fx` -> move to the next `x`
@@ -67,15 +67,15 @@ motion + a character to search
   
 ### Begin and End of lines
   
-  You can also move to begin or end of line with VIM, with this commands:
+  You can also move to beginning or end of line with VIM, with these commands:
   
-   - `0` -> Begin of the line
-   - `^` -> First non-black character of the line
+   - `0` -> Beginning of the line
+   - `^` -> First non-blank character of the line
    - `$` -> End of the line
    
 ### File motions
 
-In VIM you can move throught the file using this commands:
+In VIM you can move through the file using these commands:
 
  - `gg` -> move to the first line of the file
  - `G` -> move to the last line of the file
@@ -88,7 +88,7 @@ In VIM you can move throught the file using this commands:
  - `{` -> move one paragraph up
  - `}` -> move one paragraph down
  - `(` -> move one sentence up
- - `)` -> move one sentece down
+ - `)` -> move one sentence down
  - `#` -> find word under cursor up
  - `*` -> find word under cursor down
  
