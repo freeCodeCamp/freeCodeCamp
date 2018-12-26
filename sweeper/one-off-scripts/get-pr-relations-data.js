@@ -1,6 +1,5 @@
 const path = require('path');
-// require('dotenv').config({ path: '../.env' });
-require('dotenv').config();
+require('dotenv').config({ path: './sweeper/.env' });
 const formatDate = require('date-fns/format');
 const fs = require('fs');
 const _cliProgress = require('cli-progress');

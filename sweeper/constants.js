@@ -1,4 +1,4 @@
-require('dotenv').config();
+require('dotenv').config({ path: './sweeper/.env' });
 
 const owner = process.env.REPOSITORY_OWNER;
 const repo = process.env.REPOSITORY;
