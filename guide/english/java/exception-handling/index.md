@@ -11,18 +11,18 @@ Error: An Error indicates serious problem that a reasonable application should n
 Exception: Exception indicates conditions that a reasonable application might try to catch.
 
 ## Checked versus Unchecked exception
-A checked exception is an exception class that extends Exception in its signature. For a checked exception, each method that calls the method that throws a checked exception will need to either throws the exception in its signature or catch the exception. The compiler will complain if the exception is not catched by any method. 
+A checked exception is an exception class that extends `Exception` in its signature. For a checked exception, each method that calls the method that throws a checked exception, will either to handle the exception (with a try-catch clause) or declare `throws` in its method signature. The compiler will complain if the exception is not handled by any method. 
 
 Example of a checked exception signature: 
-```
+```java
 public class TooManyItemsException extends Exception { }
 ```
 
-A unchecked exception is an exception class that extends Runtime Exception is its signature. For an unchecked exception, if a method throws it and even if no other methods are catching it then the compiler won't complain. However, while running the program and the unchecked exception is thrown and not catched it will crash the program. 
+An unchecked exception is an exception class that extends `RuntimeException` is its signature. For an unchecked exception, if a method throws it and even no other methods catch it, then the compiler won't complain. However, while running the program, if the unchecked exception is thrown and not handled, it will crash the program. 
 
 Examples of unchecked exception signature:
-```
-public class TooManyItemsException extends RuntimeException {}
+```java
+public class TooManyItemsException extends RuntimeException { }
 ```
 
 ## Exception Hierarchy
