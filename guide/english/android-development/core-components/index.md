@@ -156,6 +156,7 @@ public void onDetach() {
 
 ### [Services](https://developer.android.com/guide/components/services)
 A _service_ is a component without a user interface that performs long-running operations in the background.
+The services have seperate lifecycle than the activity or component that initiates it. This unique autonomy of seperate lifecycle allows the service to run in thee background even if the activity that initiated it is stopped.
 There are three kinds of services:
 
 - _Foreground_ services: they are strictly related to the user's interaction (for example music playback), so it's harder for the system to kill them.
@@ -167,9 +168,10 @@ There are three kinds of services:
 
 ### [Broadcast receivers](https://developer.android.com/guide/components/broadcasts)
 A _Broadcast receiver_ is another component without user interface (except an optional status bar notification) that provides a gateway for the system to deliver events from/to the app, even when the latter hasn't been previously launched. For example, the Android system sends broadcasts when various system events occur, such as when the system boots up or the device starts charging.
+These receivers respond to broadcast messages from the system of other application. These messages are known as events or intents.
 
 ### [Content providers](https://developer.android.com/guide/topics/providers/content-providers)
-A _Content provider_ is a component used to manage a set of app data to share with other applications. Each item saved in the content provider is identified by a URI scheme. _content provider_ can help an application manage access to data stored by itself, stored by other apps, and provide a way to share data with other apps. 
+A _Content provider_ is a component used to manage a set of app data to share with other applications. Each item saved in the content provider is identified by a URI scheme. These provide access to central repository of data by applications.This data can be stored by the accessing application or by other applications. _content provider_ can help an application manage access to data stored by itself, stored by other apps, and provide a way to share data with other apps. 
 
 For detailed information about the topic, see the official [Android fundamentals](https://developer.android.com/guide/components/fundamentals) documentation.
 
