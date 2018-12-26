@@ -6,9 +6,10 @@ title: Sprints
 In Scrum, the **Sprint** is a period of working time usually between one and four weeks in which the delivery team works on your project. Sprints are iterative, and continue until the project is completed. Each sprint begins with a Sprint Planning session, and ends with Sprint Review and Retrospective meetings. Using sprints, as opposed to months-long waterfall or linear sequential development methodologies, allows regular feedback loops between project owners and stakeholders on the output from the delivery team.
 
 ## Properties of a Sprint
--Sprints should remain the same pretetermined length of time throughout the length of the project. 
--The team works to break up the User Stories to a size that can be completed within the duration of the Sprint without carrying over to the next. 
--"Sprint" and "Iteration" are often used interchangeably.
+
+- A sprint should not be terminated prematurely if at all possible. If the stories within the sprint become obsolete, the team may decide to close them and pull new stories off of the product backlog.
+- The team works to break up the User Stories to a size that can be completed within the duration of the Sprint without carrying over to the next. 
+- "Sprint" and "Iteration" are often used interchangeably.
 
 #### More Information:
 <!-- Please add any articles you think might be helpful to read before writing the article -->
