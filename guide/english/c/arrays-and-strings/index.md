@@ -132,7 +132,10 @@ int main(void) {
 ```
 ### Playing with Strings
 Printing strings is easy, but other operations are slightly more complex. Thankfully, the `string.h` library has some helpful functions to use for a number of situations.
-#### Copying: `strcpy`
+
+#### Copying Strings
+
+##### `strcpy`
 `strcpy` (from 'string copy') copies a string. For example, this code snippet will copy the contents of the string variable `second` into the string variable `first`:
 ```C
 strcpy(first, second);
@@ -149,6 +152,13 @@ void copy_string(char [] first_string, char [] second_string)
 
 } 
 ```
+
+##### `strncpy`
+`strncpy` copies a specified number of characters from one string to a new string. For example, say we have a string `second` that we only want the first 5 characters of. We could copy it to a string `first` using:
+```C
+strncpy(first, second, 5);
+```
+Note: both `strcpy` and `strncpy` make sure that the copied string ends in a null terminator, but this isn't true for all string copying functions. `strdup` which allocates space for the new string and copies it doesn't add a null terminator!
 
 #### Concatenate: `strcat`
 `strcat` (from 'string concatenate') will concatenate a string, meaning it will take the contents of one string and place it on the end of another string. In this example, the contents of `second` will be concatenated onto `first`:
