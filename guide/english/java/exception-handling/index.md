@@ -16,7 +16,7 @@ All exception and errors types are sub classes of class Throwable, which is base
 
 ## How to use try-catch clause
 
-```
+```java
 try {
 // block of code to monitor for errors
 // the code you think can raise an exception
@@ -32,3 +32,10 @@ finally {
 // block of code to be executed after try block ends
 }
 ```
+## Advantage of Exception Handling
+The core advantage of exception handling is to maintain the normal flow of the application. An exception normally disrupts the normal flow of the application which is why we use exception handling.
+
+Tip: If you are not really sure of what kind of exceptions your application may throw, use the `Exception` parent class to catch any anomaly and use the `stacktrace()` function on the `Exception` object to debug what went wrong.
+
+#### More Information:
+- [Oracle Java Docs : Exception](https://docs.oracle.com/javase/specs/jls/se7/html/jls-11.html)
