@@ -212,6 +212,8 @@ Notice the `!`, which is needed because this function returns 0 if they are the 
 if(strcmp(first, second) == 0){
 ```
 
+We also have `stricmp` and `strcmpi` which compare two strings without case sensitivity. Similar to `strcmp`, `stricmp/strcmpi` will return `0` if the strings are equivalent, a negative value if first string is smaller, and a positive value if first string is greater.
+
 #### Compare 'n' bytes: `strncmp`
 `strncmp` compares two strings for 'n' characters. The integer value it returns is 0 if they are the same, but it will also return negative if the value of the first (by adding up characters) is less than the value of the second, and positive if the first is greater than the second. Take a look at an example of how this might be used:
 ```C
