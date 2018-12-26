@@ -148,12 +148,12 @@ public void onDetach() {
 ```
 
 ### [Services](https://developer.android.com/guide/components/services)
-A _service_ is a component without a user interface, and is used to perform long-running operations in the background.
+A _service_ is a component without a user interface that performs long-running operations in the background.
 There are three kinds of services:
 
-- _Foreground_ services: they are strictly related to user's interaction (for example music playback), so it's harder for the system to kill them.
-- _Background_ services: they are not directly related to user's activities, so they can be killed if more RAM is needed.
-- _Bound_ services: they are  offers a client-server interface that allows components to interact with the service, send requests, receive results, and even do so across processes with interprocess communication (IPC).
+- _Foreground_ services: they are strictly related to the user's interaction (for example music playback), so it's harder for the system to kill them.
+- _Background_ services: they are not directly related to the user's activities, so they can be killed if more RAM is needed.
+- _Bound_ services: offers a client-server interface that allows components to interact with the service, send requests, receive results, and even do so across processes with interprocess communication (IPC).
 
 #### [Services Lifecycle](https://developer.android.com/guide/components/services#Lifecycle)
 ![Services Lifecycle](https://developer.android.com/images/service_lifecycle.png)
