@@ -25,6 +25,6 @@ ReactDOM.render(<TypesOfVehicles />, document.getElementById('node-id'))
 The ReactDOM.render syntax may be a little tricky, you need to use the triangle brackets when passing in a Class Component. Also the two subcomponents are declared behind the scenes, which may be confusing if you are used to all the variables being defined in the code editor and visible in front of you.
 
 ### Hint
- - use `document.getElementById('id')` to get target node whose id has the value 'node-id'
+ - use `document.getElementById('node-id')` to get target node whose id has the value 'node-id'
 ### Relevant Link
  - [Rendering Elements](https://reactjs.org/docs/rendering-elements.html)
