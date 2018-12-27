@@ -90,7 +90,7 @@ int linear_search(int arr[],int n,int num)
 ```python
 def linear_search(array, num):
 	for index, element in enumerate(array):
-		if element == array:
+		if element == num:
 			return index
 	return -1
 ```
