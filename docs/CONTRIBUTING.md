@@ -9,19 +9,35 @@ Todo
 
 ## Local Setup
 
-1. Run npm install
+1. In a terminal window:
 
-2. In the dashboard-api directory cp sample_data.json data.json
+```bash
+npm install
 
-3. cd into dashboard-api and run npm run develop.
+cd dashboard-api 
 
-4. In second session window cd to dashboard-client and run REACT_APP_DEV=true npm start
+cp sample_data.json data.json
 
-5. To update the data.json file
+npm run develop
+```
 
-  5.1. cd into sweeper and review the sample.env to update your .env appropriately.
+2. In second terminal window: 
 
-  5.2. Run NODE_DEV=true node dashboard-api/update.js
+```bash
+cd dashboard-client 
+
+REACT_APP_DEV=true npm start
+```
+
+3. To update the data.json file
+
+  - Within the [`sweeper`](https://github.com/freeCodeCamp/github-tools/tree/master/sweeper) directory, review the [`sample.env`](https://github.com/freeCodeCamp/github-tools/blob/master/sweeper/sample.env) to update your `.env` appropriately.
+
+  - Run the following:
+
+    ```bash
+    NODE_DEV=true node dashboard-api/update.js
+    ```
 
 ## Caveats & Notes
 
