@@ -29,17 +29,19 @@ The field of computer security is growing at a rapid rate every year. A recent r
 
 ### Books
 
-[About Face: The Essentials of Interaction Design](https://amzn.to/2uwtugk)
+[About Face: The Essentials of Interaction Design](https://www.amazon.com/About-Face-Essentials-Interaction-Design-dp-1118766571/dp/1118766571/)
 
-[Thinking in Systems: A Primer](https://amzn.to/2u6FbJF)
+[Thinking in Systems: A Primer](https://www.amazon.com/gp/product/1603580557/)
 
-[Thinking, Fast and Slow](https://amzn.to/2tnnlTN)
+[Thinking, Fast and Slow](https://www.amazon.com/gp/product/0374533555/)
 
 [How to Win Friends & Influence People](https://www.amazon.com/How-Win-Friends-Influence-People/dp/0671027034/)
 
 [Learn You a Haskell for Great Good!](https://amzn.to/2veOjdv)
 
 [Think Like a Programmer](https://www.nostarch.com/thinklikeaprogrammer)
+
+["Lean In: Women, Work, and the Will to Lead" by Sheryl Sandberg](https://www.amazon.com/Lean-Women-Work-Will-Lead/dp/0385349947/)
 
 [The Mythical Man-Month: Essays on Software Engineering](https://www.amazon.com/Mythical-Man-Month-Software-Engineering-Anniversary/dp/0201835959)
 
