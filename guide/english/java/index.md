@@ -40,7 +40,9 @@ $ tar zxvf jdk-8uversion-linux-x64.tar.gz`
 
 `bash  
 $ rpm -ivh jdk-8uversion-linux-x64.rpm`   
-* Users have the choice to install an open source version of Java, OpenJDK or the Oracle JDK. While OpenJDK is in active development and in sync with Oracle JDK, they just differ in <a href='http://openjdk.java.net/faq/' target='_blank' rel='nofollow'>licensing</a> stuff. However few developers complain of the stability of Open JDK. Instructions for **Ubuntu** :
+* Users have the choice to install an open source version of Java, OpenJDK or the Oracle JDK. While OpenJDK is in active development and in sync with Oracle JDK, they just differ in <a href='http://openjdk.java.net/faq/' target='_blank' rel='nofollow'>licensing</a> stuff. However few developers complain of the stability of Open JDK. 
+
+### Instructions for **Ubuntu** :
 
 Open JDK installation :  
 `bash  
@@ -79,7 +81,7 @@ Verify Java has been properly installed in your system by opening Command Prompt
 
 ## JVM
 
-Ok now since we are done with the installations, let's begin to understand first the nitty gritty of the Java ecosystem. Java is an <a href='http://stackoverflow.com/questions/1326071/is-java-a-compiled-or-an-interpreted-programming-language' target='_blank' rel='nofollow'>interpreted and compiled</a> language, that is the code we write gets compiled to bytecode and interpreted to run. We write the code in .java files, Java compiles them into <a href='https://en.wikipedia.org/wiki/Java_bytecode' target='_blank' rel='nofollow'>bytecodes</a> which are run on a Java Virtual Machine or JVM for execution. These bytecodes typically has a .class extension.
+Ok now since we are done with the installations, let's begin to understand first the nitty gritty of the Java ecosystem. Java is an <a href='http://stackoverflow.com/questions/1326071/is-java-a-compiled-or-an-interpreted-programming-language' target='_blank' rel='nofollow'>interpreted and compiled</a> language, that is the code we write gets compiled to bytecode and interpreted to run. We write the code in .java files, Java compiles them into <a href='https://en.wikipedia.org/wiki/Java_bytecode' target='_blank' rel='nofollow'>bytecodes</a> which are run on a Java Virtual Machine or JVM for execution. These bytecodes typically have a .class extension.
 
 Java is a pretty secure language as it doesn't let your program run directly on the machine. Instead, your program runs on a Virtual Machine called JVM. This Virtual Machine exposes several APIs for low level machine interactions you can make, but other than that you cannot play with machine instructions explicitely. This adds a huge bonus of security.
 
@@ -105,7 +107,7 @@ Let's write a sample Hello World application. Open any editor / IDE of choice an
 
     }
 
-**N.B.** Keep in mind in Java file name should be the **exact same name of the public class** in order to compile!
+**N.B.** Keep in mind that in Java the file name should be the **exact same name of the public class** in order to compile!
 
 Now open the terminal / Command Prompt. Change your current directory in the terminal / Command Prompt to the directory where your file is located. And compile the file :
 
@@ -130,3 +132,7 @@ Also, here is a list of free IDEs for Java coding:
 * <a href='https://www.bluej.org/' target='_blank' rel='nofollow'>BlueJ</a>
 * <a href='http://www.jedit.org/' target='_blank' rel='nofollow'>jEdit</a>
 * <a href='http://www.oracle.com/technetwork/developer-tools/jdev/overview/index-094652.html' target='_blank' rel='nofollow'>Oracle JDeveloper</a>
+* <a href='https://www.jgrasp.org/'  target='_blank' rel='nofollow'>jGRASP</a>
+* <a href='https://sourceforge.net/projects/jsource/' target='_blank' rel='nofollow'>jSource</a>
+* <a href='http://www.drjava.org/' target='_blank' target='_nofollow'>DrJava</a>
+* <a href= 'https://www.oracle.com/technetwork/java/javase/downloads/jdk-netbeans-jsp-3413139-esa.html' target='_blank' rel ='nofollow'>JDK8 bundled with Netbeans 8.2</a>

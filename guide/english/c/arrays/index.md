@@ -19,11 +19,12 @@ int main(void) {
     return 0;
 }
 ```
-So, this looks a bit tedious.<br>Up until now every variable created had some special role. But right now, it would be great if we could just store multiple values in one place and get access to the values with their place in the line maybe (first value, second etc.). Another way to look at this is, suppose you want to store a set of names, you need not create different variables for each name, instead you can create an array of names where each name has its unique identity or *index*. Also, we could use loops on them, which are things you will learn about later, but basically they do the same thing over and over again.
+So, this looks a bit tedious. Up until now every variable created had some special role. But right now, it would be great if we could just store multiple values in one place and get access to the values with their place in the line maybe (first value, second etc.). Another way to look at this is, suppose you want to store a set of names, you need not create different variables for each name, instead you can create an array of names where each name has its unique identity or *index*. Also, we could use loops on them, which are things you will learn about later, but basically they do the same thing over and over again.
 eg. reading from the user, or printing out values. 
 
 ## Arrays in C
-Arrays are containers with a given size. They contain variables of the **same type**. You can access a variable stored in the array with its *index*.
+Arrays are containers with a given size. They can store values of the **same type**. This is called base type of the array. You can access a value stored in the array with its *index*.
+
 Let's look at some code:
 ```C
 #include <stdio.h>
@@ -58,10 +59,32 @@ int crr[100] = {3};
 If you do this, then the first element is going to be `3`, but the rest of them is going to be `0`. 
 
 ```C
+int drr[10] = {0};
+```
+If you want to create an array with all the elements as `0`.
+
+```C
 int var = arr[0];
 ```
 Here an int is created called `var`, and it is initialized to the 0th element of arr. **Very importart to note** that in C, indexes start at zero as opposed to 1. This means that to access the first element, the index (between the brackets) is 0, to access the second element, the index is 1 etc. 
 In this example `var` is going to store the value `1`.
+
+One for loop can be used to print the contents of an array.
+```C
+#include <stdio.h>
+int main() {
+    const int size = 6;
+    int arr[size] = {5, 4, 12, 3, 9, 1}
+    for (int i = 0; i < size; i++) {
+        printf("%5d", arr[i]);
+    }
+    return 0;
+}
+```
+
+```C
+    5    4    12    3    9    1
+```
 
 ## Overview
 
@@ -168,3 +191,5 @@ The reason for C not checking the indexing bound is simple: C is an efficient la
 
 - When you try to access the last element of the array. Suppose the length of the array A be 4 and while accessing the last element as
 A[4] will return an error, as the the indexing starts from 0.
+
+But, the disadvantage of array is that the memory required should be allocated before the run time of the program.

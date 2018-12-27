@@ -81,9 +81,20 @@ div {
 
 ## Syntax
 
+### Transition Delay
+
+Setting a transition delay determines when the transition will start.
+
+```css
+transition-delay: 1s;
+```
+
+### Transition Shorthand
+
 ```css
 transition: property name / duration / timing function / delay ;
 ```
+
 #### Example
 ```css
 transition: width 2s linear 2s;
@@ -91,9 +102,5 @@ transition: width 2s linear 2s;
 
 #### More Information:
 <!-- Please add any articles you think might be helpful to read before writing the article -->
-* MDN Documentation: <a href='https://developer.mozilla.org/en-US/docs/Web/CSS/transition' target='_blank' rel='nofollow'>MDN</a>
-* Easings reference: <a href='http://easings.net/en' target='_blank' rel='nofollow'>Easings</a>
-
-
-
-
+* [MDN - transition](https://developer.mozilla.org/en-US/docs/Web/CSS/transition)
+* [Easings reference](http://easings.net/en)

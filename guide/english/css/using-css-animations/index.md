@@ -85,4 +85,5 @@ For the CSS part :
 
 
 #### More Information:
-For more deatils on CSS Animations, please visit [Mozilla Developer Network Docs](https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Animations/Using_CSS_animations)
+- [Mozilla Developer Network Docs](https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Animations/Using_CSS_animations)
+- [CSS Animations - 3d Transforms](https://3dtransforms.desandro.com/)

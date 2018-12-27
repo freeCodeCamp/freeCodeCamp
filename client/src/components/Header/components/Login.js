@@ -1,30 +1,37 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
+import { createSelector } from 'reselect';
 import { Button } from '@freecodecamp/react-bootstrap';
 
-import { hardGoTo } from '../../../redux';
+import { hardGoTo, isSignedInSelector } from '../../../redux';
 import { apiLocation } from '../../../../config/env.json';
 
 import { gtagReportConversion } from '../../../analytics/gtag';
 
 import './login.css';
 
-const mapStateToProps = () => ({});
+const mapStateToProps = createSelector(
+  isSignedInSelector,
+  ({ isSingedIn }) => ({ isSingedIn })
+);
 const mapDispatchToProps = dispatch => ({
   navigate: location => dispatch(hardGoTo(location))
 });
 
-const createOnClick = navigate => e => {
+const createOnClick = (navigate, isSingedIn) => e => {
   e.preventDefault();
   gtagReportConversion();
+  if (isSingedIn) {
+    return navigate('/welcome');
+  }
   return navigate(`${apiLocation}/signin`);
 };
 
 function Login(props) {
-  const { children, navigate, ...restProps } = props;
+  const { children, navigate, isSingedIn, ...restProps } = props;
   return (
-    <a href='/signin' onClick={createOnClick(navigate)}>
+    <a href='/signin' onClick={createOnClick(navigate, isSingedIn)}>
       <Button
         {...restProps}
         bsStyle='default'
@@ -41,6 +48,7 @@ function Login(props) {
 Login.displayName = 'Login';
 Login.propTypes = {
   children: PropTypes.any,
+  isSingedIn: PropTypes.bool,
   navigate: PropTypes.func.isRequired
 };
 

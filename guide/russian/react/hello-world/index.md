@@ -1,5 +1,6 @@
 ---
 title: Hello World
+localeTitle: Hello World
 ---
 ## Hello World!!
 
@@ -65,3 +66,4 @@ npm install -g create-react-app
 Поздравляю! Вы создали свое первое приложение React Hello world. Вы узнаете больше о React в следующих статьях.
 
 Веселого кодинга!
+

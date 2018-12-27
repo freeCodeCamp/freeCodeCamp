@@ -27,7 +27,9 @@ There are many factors that can give you an unconcious bias, such as:
 
 It was also found in various studies that that even the order of questions in a test can lead to unconsious bias. There is a very good video on the topic [here](https://www.youtube.com/watch?v=75g4d5sF3xI").  
   
-Unconscious bias can influence decisions in recruitment, promotion and performance management. It could be discriminatory when the unconscious bias relates to a protected characteristic.  
+Unconscious bias can influence decisions in recruitment, promotion and performance management. It could be discriminatory when the unconscious bias relates to a protected characteristic. Many prominent organisations, such as the Royal Society of England, have taken steps to bring attention to the negative effects of unconcious bias in recruitment and promotion activity.<sup>6</sup>
+
+Tackling unconcious bias has become a cornerstone of the Equality, Diversity and Inclusion (EDI) strategies of scientific organisations and higher education Institutions in the United Kingdom and is a requirment of the Athena Swan Charter.<sup>7</sup>
 
 Unconcious bias can come in many forms - another example of this is availability bias whereby people tend to rely heavily on information that is most readily available regardless of its source.
 
@@ -38,4 +40,6 @@ Unconcious bias can come in many forms - another example of this is availability
 4. ["What is Unconscious Bias" University of California, San Francisco
 Office of Diversity and Outreach. Accessed: October 15, 2017.](https://diversity.ucsf.edu/resources/unconscious-bias)
 5. ["Unconscious Bias" acas.org.uk Accessed: October 15, 2017.](http://www.acas.org.uk/index.aspx?articleid=5433)
-6. ["5 Common Unconscious Biases That Lead To Bad Decisions" FastCompany Accessed: October 18th, 2018](https://www.fastcompany.com/3045035/5-common-unconscious-biases-that-lead-to-bad-decisions)
+6. ["Understanding unconcious bias" Royalsociety.org Accessed: October 19, 2018.](https://royalsociety.org/topics-policy/publications/2015/unconscious-bias/)
+7. ["Unconscious Bias" ecu.ac.uk Accessed: October 2018.](https://www.ecu.ac.uk/)
+8. ["5 Common Unconscious Biases That Lead To Bad Decisions" FastCompany Accessed: October 18th, 2018](https://www.fastcompany.com/3045035/5-common-unconscious-biases-that-lead-to-bad-decisions)
