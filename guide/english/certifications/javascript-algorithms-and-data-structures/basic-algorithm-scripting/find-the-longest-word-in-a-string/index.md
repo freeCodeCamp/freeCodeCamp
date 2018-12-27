@@ -107,7 +107,7 @@ Let's analyze everything inside the `Math.max` parenthesees to understand how we
 
 Then, we will make another array, made from the lengths of each element of the `str.split(" ")` array with `map()`.
 
-`str.split(" ").map(word=>word.length)` returns \[3,5,5,3,6,4,3,4,3\]
+`str.split(" ").map(word => word.length)` returns \[3, 5, 5, 3, 6, 4, 3, 4, 3\]
 
 Finally, we pass the array as argument for the Math.max function with the spread operator `...`
 
