@@ -109,11 +109,26 @@ This is used to show that the button is disabled by fading the button. This can 
 <button type="button" class="btn btn-sm">Small</button>
 
 #### Bootstrap Outlined Buttons:
-It is possible to also have outlined buttons rather than fully colored in ones. This is achieved by placing the mid fix `outline` between the button class you want. A sample usage would be as follows:
+
+It is possible to also have outlined buttons rather than fully colored buttons. This is achieved by placing the mid fix `outline` between the button class you want. A sample usage would be as follows:
 
 `<button type="button" class="btn btn-outline-primary">Primary</button>`
 
-Outlined buttons are a part of Bootstrap since version 4, please be sure that you are using the right version if you are unable to get them to work.
+`<button type="button" class="btn btn-outline-secondary">Secondary</button>`
+
+`<button type="button" class="btn btn-outline-success">Success</button>`
+
+`<button type="button" class="btn btn-outline-danger">Danger</button>`
+
+`<button type="button" class="btn btn-outline-warning">Warning</button>`
+
+`<button type="button" class="btn btn-outline-info">Info</button>`
+
+`<button type="button" class="btn btn-outline-light">Light</button>`
+
+`<button type="button" class="btn btn-outline-dark">Dark</button>`
+
+Outlined buttons are a part of Bootstrap since version 4 - please be sure that you are using the right version if you are unable to get them to work.
 
 #### Inline Buttons
 You can create inline button row by adding `.d-inline-block` class to the element which sets the display of the button to inline block. For example : `<button class="btn btn-primary d-inline-block btn-lg"></button>`
