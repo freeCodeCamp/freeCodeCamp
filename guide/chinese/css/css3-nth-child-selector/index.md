@@ -22,18 +22,22 @@ localeTitle: CSS3 Nth Child Selector
  ##### Odd 
  
  Odd returns all odd elements of a given type. 
+
 ```CSS 
     a：nth-​​child（odd）{ 
       /* CSS在这里 */
     }
+
 ```
 ##### Even 
  
  Even returns all even elements of a given type. 
+
 ```CSS 
     a：nth-​​child（even）{
         /* CSS在这里 */
     }
+
 ```
 #### An+B 
  

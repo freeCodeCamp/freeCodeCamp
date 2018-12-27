@@ -7,7 +7,7 @@ localeTitle: Utilice consultas de medios para crear diseños receptivos
 ---
 
 ## Description
-<section id="description"> CSS Grid puede ser una manera fácil de hacer que su sitio sea más receptivo al usar consultas de medios para reorganizar las áreas de la cuadrícula, cambiar las dimensiones de una cuadrícula y reorganizar la ubicación de los elementos. En la vista previa, cuando el ancho de la ventana gráfica es de 300 px o más, el número de columnas cambia de 1 a 2. El área de publicidad ocupa la columna izquierda por completo. </section>
+<section id="description"> CSS Grid puede ser una manera fácil de hacer que su sitio sea más responsivo al usar 'media queries' para reorganizar las áreas de la cuadrícula, cambiar las dimensiones de una cuadrícula y reorganizar la ubicación de los elementos. En la vista previa, cuando el ancho de la ventana gráfica es de 300 px o más, el número de columnas cambia de 1 a 2. El área de publicidad ocupa la columna izquierda por completo. </section>
 
 ## Instructions
 <section id="instructions"> Cuando el ancho de la ventana <code>400px</code> sea ​​de <code>400px</code> o más, haga que el área del encabezado ocupe la fila superior completamente y el área del pie de página ocupe la fila inferior completamente. </section>
