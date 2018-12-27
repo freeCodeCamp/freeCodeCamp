@@ -7,10 +7,10 @@ localeTitle: Отрегулируйте оттенок цвета
 ---
 
 ## Description
-<section id="description"> Цвета имеют несколько характеристик, включая оттенок, насыщенность и легкость. CSS3 представила <code>hsl()</code> как альтернативный способ выбрать цвет, указав непосредственно эти характеристики. <b>Хюэ</b> - это то, что люди обычно считают «цветным». Если вы изображаете спектр цветов, начиная с красного слева, перемещаясь по зеленому посередине, а синий справа, оттенок - это то, где цвет соответствует этой линии. В <code>hsl()</code> оттенок использует концепцию цветового круга вместо спектра, где угол цвета на круге задается как значение от 0 до 360. <b>Насыщенность</b> - это количество серого цвета. Полностью насыщенный цвет не имеет серого цвета, а минимально насыщенный цвет почти полностью серый. Это дается в процентах, при этом 100% полностью насыщается. <b>Легкость</b> - это количество белого или черного цвета. Процент задается от 0% (черный) до 100% (белый), где 50% - это нормальный цвет. Вот несколько примеров использования <code>hsl()</code> с полностью насыщенными, нормальными цветами легкости: <table class="table table-striped"><thead><tr><th> цвет </th><th> HSL </th></tr></thead><tbody><tr><td> красный </td><td> hsl (0, 100%, 50%) </td></tr><tr><td> желтый </td><td> hsl (60, 100%, 50%) </td></tr><tr><td> зеленый </td><td> hsl (120, 100%, 50%) </td></tr><tr><td> циан </td><td> hsl (180, 100%, 50%) </td></tr><tr><td> синий </td><td> hsl (240, 100%, 50%) </td></tr><tr><td> фуксин </td><td> hsl (300, 100%, 50%) </td></tr></tbody></table></section>
+<section id="description"> Цвета имеют несколько характеристик, включая оттенок, насыщенность и легкость. CSS3 представила <code>hsl()</code> как альтернативный способ выбрать цвет, указав непосредственно эти характеристики. <b>Хюэ</b> - это то, что люди обычно считают «цветным». Если вы изображаете спектр цветов, начиная с красного слева, перемещаясь по зеленому посередине, а синий справа, оттенок - это то, где цвет соответствует этой линии. В <code>hsl()</code> оттенок использует концепцию цветового круга вместо спектра, где угол цвета на круге задается как значение от 0 до 360. <b>Насыщенность</b> - это количество серого цвета. Полностью насыщенный цвет не имеет серого цвета, а минимально насыщенный цвет почти полностью серый. Это задается в процентах, при этом 100% полностью насыщенный. <b>Легкость</b> - это количество белого или черного цвета. Процент задается от 0% (черный) до 100% (белый), где 50% - это нормальный цвет. Вот несколько примеров использования <code>hsl()</code> с полностью насыщенными, нормальными цветами легкости: <table class="table table-striped"><thead><tr><th> цвет </th><th> HSL </th></tr></thead><tbody><tr><td> красный </td><td> hsl (0, 100%, 50%) </td></tr><tr><td> желтый </td><td> hsl (60, 100%, 50%) </td></tr><tr><td> зеленый </td><td> hsl (120, 100%, 50%) </td></tr><tr><td> циан </td><td> hsl (180, 100%, 50%) </td></tr><tr><td> синий </td><td> hsl (240, 100%, 50%) </td></tr><tr><td> фуксин </td><td> hsl (300, 100%, 50%) </td></tr></tbody></table></section>
 
 ## Instructions
-<section id="instructions"> Измените <code>background-color</code> каждого элемента <code>div</code> на основе имен классов ( <code>green</code> , <code>cyan</code> или <code>blue</code> ) с помощью <code>hsl()</code> . Все три должны иметь полную насыщенность и нормальную легкость. </section>
+<section id="instructions"> Измените <code>background-color</code> каждого элемента <code>div</code> на основе имен классов ( <code>green</code>, <code>cyan</code> или <code>blue</code> ) с помощью <code>hsl()</code>. Все три должны иметь полную насыщенность и нормальную легкость. </section>
 
 ## Tests
 <section id='tests'>
@@ -19,15 +19,15 @@ localeTitle: Отрегулируйте оттенок цвета
 tests:
   - text: Ваш код должен использовать <code>hsl()</code> чтобы объявить зеленый цвет.
     testString: 'assert(code.match(/\.green\s*?{\s*?background-color:\s*?hsl/gi), "Your code should use the <code>hsl()</code> property to declare the color green.");'
-  - text: Ваш код должен использовать <code>hsl()</code> для объявления цвета cyan.
+  - text: Ваш код должен использовать <code>hsl()</code> для объявления цвета морской волны.
     testString: 'assert(code.match(/\.cyan\s*?{\s*?background-color:\s*?hsl/gi), "Your code should use the <code>hsl()</code> property to declare the color cyan.");'
   - text: Ваш код должен использовать <code>hsl()</code> для объявления синего цвета.
     testString: 'assert(code.match(/\.blue\s*?{\s*?background-color:\s*?hsl/gi), "Your code should use the <code>hsl()</code> property to declare the color blue.");'
-  - text: ''
+  - text: '<code>div</code> элемент с классом <code>green</code> должен иметь <code>background-color</code> зеленый.'
     testString: 'assert($(".green").css("background-color") == "rgb(0, 255, 0)", "The <code>div</code> element with class <code>green</code> should have a <code>background-color</code> of green.");'
-  - text: ''
+  - text: '<code>div</code> элемент с классом <code>green</code> должен иметь <code>background-color</code> морской волны.'
     testString: 'assert($(".cyan").css("background-color") == "rgb(0, 255, 255)", "The <code>div</code> element with class <code>cyan</code> should have a <code>background-color</code> of cyan.");'
-  - text: ''
+  - text: '<code>div</code> элемент с классом <code>green</code> должен иметь <code>background-color</code> синий.'
     testString: 'assert($(".blue").css("background-color") == "rgb(0, 0, 255)", "The <code>div</code> element with class <code>blue</code> should have a <code>background-color</code> of blue.");'
 
 ```
