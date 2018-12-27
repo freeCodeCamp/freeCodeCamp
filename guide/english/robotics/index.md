@@ -17,27 +17,33 @@ A robot has to make decisions based on the input it receives from the environmen
 
 Once the robot makes its decision, it needs to act accordingly. For this purpose, it uses actuators. An _actuator_ is a device that converts energy into motion. Actuators can be classified according to the type of input energy they require. The two most commmon types of actuators are electrical (which use electrical energy to generate motion) and pneumatic (which use air pressure to generate motion). For example, a motor is an actuator that converts electrical energy into rotatory motion. There are always limitations to the accuracy and degree of control of an actuator, hence [control systems](https://en.wikipedia.org/wiki/Control_system) are used in order to compensate those limitations.
 
+### The Three Laws of Robotics
+##### *-- Handbook of Robotics, 56th Edition, 2058 A.D.*
+
+1. A robot may not injure a human being or, through inaction, allow a human being to come to harm.
+2. A robot must obey the orders given it by human beings except where such orders would conflict with the First Law.
+3. A robot must protect its own existence as long as such protection does not conflict with the First or Second Laws.
 ## Essential things for Robotics.
 
 First, you need to have good amount of patience to ace in Robotics.
 
-1) Be good at any one programming language to have a good grip over code.
-2) Learn RaspberryPi or Arduino for the proper understanding of electronics and logic.
+1) Start by using an easy programming language that can help you understand how robots work. A good place to start is [Lego Mindstorms](https://www.lego.com/en-us/mindstorms) where you can use a basic representation of programming to make your robot do things. If you don't want to buy [Lego Mindstorms](https://www.lego.com/en-us/mindstorms), that's okay! However, it does help understand the basics of robotics, which will help you better understand the advanced machines you'll work with in the future.
+2) Be good at any one programming language to have a good grip over code.
+3) Learn RaspberryPi or Arduino for the proper understanding of electronics and logic.
   Now the difference between RaspberryPi and Arduino is:
   RaspberryPi is a SBC(Single-Board-Computer) whereas  Arduino is only a Microcontroller.
   So the difference between the above stuff is quite important.
-3) Inverse Kinematics is very important for the designing part. 
+4) Inverse Kinematics is very important for the designing part. 
   Here is a good resource to learn [Inverse kinematics](https://www.intechopen.com/books/industrial_robotics_theory_modelling_and_control/robot_kinematics__forward_and_inverse_kinematics).
+  
   
 Putting together, these resources are good enough to kick start your journey with Robotics!
 
-### More Information:
+#### More Information
 
-[Robots (Wikipedia.org)](https://en.wikipedia.org/wiki/Robot)
-
-[Robotics (Wikipedia.org)](https://en.wikipedia.org/wiki/Robotics)
-
-[Sensors (electronicshub.org)](https://www.electronicshub.org/different-types-sensors/)
-
-[Actuator (Wikipedia.org)](https://en.wikipedia.org/wiki/Actuator)
+- [Robots (Wikipedia.org)](https://en.wikipedia.org/wiki/Robot)
+- [Robotics (Wikipedia.org)](https://en.wikipedia.org/wiki/Robotics)
+- [Sensors (electronicshub.org)](https://www.electronicshub.org/different-types-sensors/)
+- [Actuator (Wikipedia.org)](https://en.wikipedia.org/wiki/Actuator)
+- [Lego Mindstorms (lego.com/en-us/mindstorms)](https://www.lego.com/en-us/mindstorms)
 
