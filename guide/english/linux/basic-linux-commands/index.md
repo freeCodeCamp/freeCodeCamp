@@ -30,8 +30,9 @@ When starting out with linux, there are some basic commands everyone should know
 - This command removes files, not directories. `rm file.txt` will remove the file named file.txt as long as it exists and is in the current directory.
 - **Warning, this command is capable of destroying entire systems, use with caution**
 
-8. **touch** - creates file   
-- The `touch` command is used to create a file. It can be anything, from an empty txt file to an empty zip file. 'touch new.txt' will create a new file with name new.
+
+8. **touch** - sets modification and access times of files, creates new files   
+- The touch command sets the modification and access times of files to the current time by default. To set the access time and/or modification time of files to a different date or that of another file, certain flags can be used with the command. If the touch command is used with a filename that does not exist, it creates the file. `touch new.txt` will create a new text file with name `new`.
 
 9. **mv** - move   
 - Use the `mv` command to move files through the command line. We can also use the mv command to rename a file. For example, if we want to rename the file “text” to “new”, we can use 'mv text new'.

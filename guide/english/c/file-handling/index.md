@@ -255,3 +255,5 @@ Super awesome, right! :smile:
 
 ### More Information:
 - <a href='https://en.wikibooks.org/wiki/C_Programming/File_IO' target='_blank' rel='nofollow'>Wikibooks page on file IO</a>
+- <a href='https://www.tutorialspoint.com/cprogramming/c_file_io.htm' target='_blank' rel='nofollow'>Tutorialspoint page on file IO</a>
+- <a href='https://www.geeksforgeeks.org/basics-file-handling-c/' target='_blank' rel='nofollow'>GeeksforGeeks page on file IO</a>

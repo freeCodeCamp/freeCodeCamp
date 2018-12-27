@@ -114,7 +114,7 @@ This will shift `a` to the left by `b` bits, and set that result equal to `c`.
 
 This example will shift `a` to the right by `b` bits, and set that result equal to `c`.
 ```C
-c = a >> c;
+c = a >> b;
 
 ```
 

@@ -99,6 +99,8 @@ plt.show()
 
 Since the data points belong usually to a high-dimensional space, the similarity measure is often defined as a distance between two vectors (Euclidean, Manhathan, Cosine, Mahalanobis...)
 
+Here's a visualization of K-means that allows you to change the number of clusters and centroids to show how k data points converge into clusters around the closest centroid: [Visualizing K-Means](http://stanford.edu/class/ee103/visualizations/kmeans/kmeans.html)
+
 ### Mixture Density
 We can write *mixture density* as:
 ![mixture density](https://latex.codecogs.com/gif.latex?p%28x%29%20%3D%20%5Csum_%7Bi%3D1%7D%5E%7Bk%7Dp%28x%7CG_%7Bi%7D%29p%28G_%7Bi%7D%29)

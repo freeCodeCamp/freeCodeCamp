@@ -4,7 +4,8 @@ title: Font Awesome Icons For Bootstrap
 ## Font Awesome Icons For Bootstrap
 
 Bootstrap (from version 4 onwards) have dropped Glyphicon icons font in their latest release. 
-Font Awesome Icons provide you with over 675 icons and they come in font format.
+
+Font Awesome icons provide you with over 675 icons and they come in font format.
 
 #### How To Use:
 
@@ -41,8 +42,8 @@ Simply create `<i>` or `<span>` tag and apply the CSS Prefix `fa` and the icon's
 
 Icons inherit the `font-size` of their parent container by default, but sizing can be modified by adding `.fa-*` classes, where `*` is one of `xs, sm, md, lg or [1-5]x`.
 
-#### Fontawesome Icon List:
-Complete list of icons provided by fontawesome is available [here](http://fontawesome.io/cheatsheet/)
+#### Font Awesome Icon List:
+Complete list of icons provided by Font Awesome is available [here](http://fontawesome.io/cheatsheet/)
 
 `.fa fa-align-left` This is Font Awesome align left icon.
 
@@ -54,6 +55,20 @@ Complete list of icons provided by fontawesome is available [here](http://fontaw
 
 _Note: Do not include the dot in the HTML Class Attribute, referring to the classes with a dot is only used when adjusting the classes in CSS._
 
-#### More Information
+
+#### Font Awesome Free CDN for Version 5
+
+Font Awesome Version 5 extends the free icons to 1480. 
+
+*Use this free CDN for version 5 (currently v5.6.3)*
+
+```html
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css" integrity="sha384-UHRtZLI+pbxtHCWp1t77Bi1L4ZtiqrqD80Kn4Z8NTSRyMA2Fd33n5dQ8lWUE00s/" crossorigin="anonymous">
+```
+
+List of v5 free icons is available [here](https://fontawesome.com/icons?d=gallery&m=free)
+
+
+#### More Information:
 [Font Awesome Cheatsheet](http://fontawesome.io/cheatsheet/)
 

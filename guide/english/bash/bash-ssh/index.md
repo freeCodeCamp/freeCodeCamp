@@ -4,6 +4,11 @@ title: Bash ssh (Secure SHell)
 
 ## Bash command: ssh
 
+
+SSH (**S**ecure **SH**ell) is a secure method of remotely connecting to a Linux machine. 
+
+The basic syntax of the command is `ssh username@hostname`. 
+
 **Used to connect to a remote computer** It's full form is 'Secure Shell'. It's purpose is to connect to another remote computer using tcp. The address of the remote computer can be provided using an IP address or, if provided, an identifier.
 
 If the remote computer requires user login, the form `ssh username@remote_address` can be used, which will then prompt for the user password on successful connection.
@@ -25,13 +30,16 @@ on the computer with ip address 192.168.0.101, type the following command at a s
 
 After authenticating to the remote server, the contents of the remote directory will be displayed, and you will return to your local shell prompt.
 
-If you wish to use a different username then the one initiating the session (i.e. you're using ssh from root but wish to log in as different user to a remote system), the form `ssh username@remote_address` can be used, which will then prompt for the user password on successful connection.
 
-Basic usage arguments:
-- `-p` - use a different port then configured in ssh_config file (usually 22)
-- `-u` - pass username outside of hostname URI
-- `-i` - use a different location for private key
+* Hostname can be either an IP address or a FQDN. 
+* 'username@' can be excluded if the user currently logged into the shell has the same username as the desired user on the remote system.
+* if the server is configured to listen to any port other than `22`, then you have to use `-p` option to specify the port. For example: `ssh -p 2024 123.456.789.012`.
+
+SSH can rely on password-based authentication or key-based authentication. Password-based authentication is becoming less common as cloud solutions such as Amazon Web Services, Microsoft Azure, and Google Cloud Platform promote the usage of keys. If a system is configured for password-based authentication, once the connection is opened the system will prompt the user for the password. If the system is configured to use keys, the key can be added to the ssh-agent (more below) or specified with the -i switch like so: `ssh -i my_private_key.pem username@hostname`.
+
+There are several advanced usage patterns such as key forwarding with the ssh-agent, which are described in the links below.
 
 ### More Information:
 * [Wikipedia](https://en.wikipedia.org/wiki/Secure_Shell)
-* [SSH](https://www.ssh.com/ssh/command)
+* [Digital Ocean's Guide to SSH Keys](https://www.digitalocean.com/community/tutorials/how-to-set-up-ssh-keys--2)
+* [AWS's Guide to SSH Agent Forwarding](https://aws.amazon.com/blogs/security/securely-connect-to-linux-instances-running-in-a-private-amazon-vpc/)

@@ -130,7 +130,7 @@ npm -v
 
 > If you have a different version, please install the recommended version. We can support installation issues for recommended versions only.
 
-**I am having issues with installing the recommended Prerequisites. What should I do?**
+**I am having issues with installing the recommended prerequisites. What should I do?**
 
 We regularly develop on popular and latest operating systems like macOS 10.12 or later, Ubuntu 16.04 or later and Windows 10. Its recommended to lookup your specific issue on resources like: Google, Stack Overflow or Stack Exchange. Chances are that someone has faced the same issue and there is already an answer to your specific query.
 
@@ -160,7 +160,7 @@ Then you have to install the dependencies required for the application to startu
 npm install
 ```
 
-The keys are not required to be changed, to run the app locally. You can leave the default values from the `sample.env` as it is.
+The keys are not required to be changed, to run the app locally. You can leave the default values from the `sample.env` as is.
 
 `MONGOHQ_URL` is the most important one. Unless you have MongoDB running in a setup different than the defaults, the URL in the `sample.env` should work fine.
 
