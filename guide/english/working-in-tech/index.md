@@ -5,12 +5,16 @@ title: Working in Tech & Information Technology(IT)
 ## Working in Tech and IT
 A wide variety of technology-related fields such as web development, design, data science, infrastructure support, information security, and product management are often lumped into the catch-all term "Tech" or IT. 
 
-This section will focus on various aspects of working in tech, such as the ways in which teams cooperate, how to give talks and what code reviews are. We will discuss the additional career challenges that under-represented minorities and people from non-traditional education backgrounds face. This includes issues such as sexism and ageism that have been particularly prevalent in certain industries and organizations. 
+## Underrepresented People in Tech
+This section will focus on additional career challenges faced by underrepresented minorities and people from non-traditional education backgrounds. Specific topics will include sexism and ageism, which have been particularly prevalent in certain industries and organizations.
 
-### Computer Security
+### Working with recruiters
+Persons of color or females or disadvantaged workers may find it necessary to utilize recruiters in IT. It is important to develop a relationship with recruiters who may be more successful getting you an interview. Recruiters can sell your skills as they often have direct relationships with the hiring managers. This is the equivalent of having a friend recommend you. Also, before beginning your job search, clean up all social media and mute those friends who make inappropriate posts. Your posts should be positive and be sprinkled with samples of your work or projects.
+
+## Computer Security
 The field of computer security is growing at a rapid rate every year.  As more people continue to store information electronically, the need for individuals to protect that information will increase proportionally. If these roles continue to be filled at the current rate, a recent study has estimated that this critical field will have a job shortage of 3.5 million people by 2021. 
 
-### Examples of Tech-Related jobs
+## Examples of Tech-Related jobs
 - Software Developer
 - Data Engineer
 - Computer Systems Analyst
@@ -33,6 +37,8 @@ The field of computer security is growing at a rapid rate every year.  As more p
 - Data Scientist
 - Database Manager
 - Mobile app Developer (Android and IOS)
+
+## Additional Resources
 
 ### Books
 - [About Face: The Essentials of Interaction Design](https://www.amazon.com/About-Face-Essentials-Interaction-Design-dp-1118766571/dp/1118766571/)
