@@ -3,7 +3,7 @@ title: Working in Tech & Information Technology(IT)
 ---
 
 ## Working in Tech and IT
-A wide variety of technology-related fields such as web development, design, data science, infrastructure support, information security, and product management are often lumped into the catch-all term "tech" or IT. 
+A wide variety of technology-related fields such as web development, design, data science, infrastructure support, information security, and product management are often lumped into the catch-all term "Tech" or IT. 
 
 This section will focus on various aspects of working in tech, such as the ways in which teams cooperate, how to give talks and what code reviews are. We will discuss the additional career challenges that under-represented minorities and people from non-traditional education backgrounds face. This includes issues such as sexism and ageism that have been particularly prevalent in certain industries and organizations. 
 
@@ -23,12 +23,12 @@ The field of computer security is growing at a rapid rate every year.  As more p
 - Network Administrator
 - Support Desk Engineer
 - Security Engineer
+- Project Manager
 - Ethical hackers
 - Data Scientist
 - Software Tester
 - Infrastructure Support
 - Help Desk Analyst
-- Project manager
 - Data Analyst
 - Data Scientist
 - Database Manager
