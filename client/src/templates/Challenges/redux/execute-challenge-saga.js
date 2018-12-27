@@ -39,24 +39,26 @@ const testWorker = new WorkerExecutor('test-evaluator');
 const testTimeout = 5000;
 
 function* ExecuteChallengeSaga() {
+  const consoleProxy = yield channel();
   try {
     const { js, bonfire, backend } = challengeTypes;
     const { challengeType } = yield select(challengeMetaSelector);
 
     yield put(initLogs());
     yield put(initConsole('// running tests'));
+    yield fork(logToConsole, consoleProxy);
 
     let testResults;
     switch (challengeType) {
       case js:
       case bonfire:
-        testResults = yield ExecuteJSChallengeSaga();
+        testResults = yield ExecuteJSChallengeSaga(consoleProxy);
         break;
       case backend:
-        testResults = yield ExecuteBackendChallengeSaga();
+        testResults = yield ExecuteBackendChallengeSaga(consoleProxy);
         break;
       default:
-        testResults = yield ExecuteDOMChallengeSaga();
+        testResults = yield ExecuteDOMChallengeSaga(consoleProxy);
     }
 
     yield put(updateTests(testResults));
@@ -64,6 +66,8 @@ function* ExecuteChallengeSaga() {
     yield put(logsToConsole('// console output'));
   } catch (e) {
     yield put(updateConsole(e));
+  } finally {
+    consoleProxy.close();
   }
 }
 
@@ -73,27 +77,25 @@ function* logToConsole(channel) {
   });
 }
 
-function* ExecuteJSChallengeSaga() {
+function* ExecuteJSChallengeSaga(proxyLogger) {
   const files = yield select(challengeFilesSelector);
   const { code, solution } = yield call(buildJSFromFiles, files);
 
-  const consoleProxy = yield channel();
-  yield fork(logToConsole, consoleProxy);
-  const log = args => consoleProxy.put(args);
+  const log = args => proxyLogger.put(args);
   testWorker.on('LOG', log);
 
-  const testResults = yield call(executeTests, (testString, testTimeout) =>
-    testWorker
-      .execute({ script: solution + '\n' + testString, code }, testTimeout)
-      .then(result => {
-        testWorker.killWorker();
-        return result;
-      })
-  );
-
-  testWorker.remove('LOG', log);
-  consoleProxy.close();
-  return testResults;
+  try {
+    return yield call(executeTests, (testString, testTimeout) =>
+      testWorker
+        .execute({ script: solution + '\n' + testString, code }, testTimeout)
+        .then(result => {
+          testWorker.killWorker();
+          return result;
+        })
+    );
+  } finally {
+    testWorker.remove('LOG', log);
+  }
 }
 
 function createTestFrame(state, ctx, proxyLogger) {
@@ -103,17 +105,15 @@ function createTestFrame(state, ctx, proxyLogger) {
   });
 }
 
-function* ExecuteDOMChallengeSaga() {
+function* ExecuteDOMChallengeSaga(proxyLogger) {
   const state = yield select();
   const ctx = yield call(buildHtmlFromFiles, state);
-  const consoleProxy = yield channel();
-  yield fork(logToConsole, consoleProxy);
 
-  yield call(createTestFrame, state, ctx, consoleProxy);
+  yield call(createTestFrame, state, ctx, proxyLogger);
   // wait for a code execution on a "ready" event in jQuery challenges
   yield delay(100);
 
-  const testResults = yield call(executeTests, (testString, testTimeout) =>
+  return yield call(executeTests, (testString, testTimeout) =>
     Promise.race([
       runTestInTestFrame(document, testString),
       new Promise((_, reject) =>
@@ -121,20 +121,16 @@ function* ExecuteDOMChallengeSaga() {
       )
     ])
   );
-
-  consoleProxy.close();
-  return testResults;
 }
 
 // TODO: use a web worker
-function* ExecuteBackendChallengeSaga() {
+function* ExecuteBackendChallengeSaga(proxyLogger) {
   const state = yield select();
   const ctx = yield call(buildBackendChallenge, state);
-  const consoleProxy = yield channel();
 
-  yield call(createTestFrame, state, ctx, consoleProxy);
+  yield call(createTestFrame, state, ctx, proxyLogger);
 
-  const testResults = yield call(executeTests, (testString, testTimeout) =>
+  return yield call(executeTests, (testString, testTimeout) =>
     Promise.race([
       runTestInTestFrame(document, testString),
       new Promise((_, reject) =>
@@ -142,9 +138,6 @@ function* ExecuteBackendChallengeSaga() {
       )
     ])
   );
-
-  consoleProxy.close();
-  return testResults;
 }
 
 function* executeTests(testRunner) {
