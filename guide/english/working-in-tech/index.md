@@ -9,10 +9,9 @@ This section will focus on various aspects of working in tech, such as the ways 
 
 ### Computer Security
 
-The field of computer security is growing at a rapid rate every year. A recent report estimates that by 2021, 3.5 million jobs in computer security will be unfilled. The demand is due to the ever-increasing amount of valuable data being created every day that must be kept safe and secure from cyber attacks.
+The field of computer security is growing at a rapid rate every year. A recent report estimates that by 2021 there will be 3.5 million jobs in computer security unfilled. The demand is due to the ever-increasing amount of valuable data being created every day that must be kept safe and secure from cyber attacks.
 
-
-### Examples of Tech-related jobs
+### Examples of Tech-Related jobs
 - Software Developer
 - Computer Systems Analyst
 - Web Developer
@@ -65,7 +64,7 @@ The field of computer security is growing at a rapid rate every year. A recent r
 * [You fired your top talent. I hope you’re happy.](https://medium.com/@deusexmachina667/you-fired-your-top-talent-i-hope-youre-happy-cf57c41183dd)
 * [How to run a successful development process (even if you’re not technical)](https://medium.freecodecamp.org/how-to-run-a-successful-development-process-even-if-youre-not-technical-185d0558c89a)
 * [What is technical debt? And why does almost every startup have it?](https://medium.freecodecamp.org/what-is-technical-debt-and-why-do-most-startups-have-it-9a54458daabf)
-* [How you can land a 6-figure job In tech with no connections — tips that got me job offers from Google and other tech giants](https://medium.freecodecamp.org/how-you-can-land-a-6-figure-job-in-tech-with-no-connections-6eed0de26ea4)
+* [How you can land a 6-figure job in tech with no connections — tips that got me job offers from Google and other tech giants](https://medium.freecodecamp.org/how-you-can-land-a-6-figure-job-in-tech-with-no-connections-6eed0de26ea4)
 * [The Complete Software Developer's Career Guide](https://simpleprogrammer.com/products/careerguide/)
 
 ### Podcasts
