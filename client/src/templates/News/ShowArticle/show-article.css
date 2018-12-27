@@ -1,0 +1,34 @@
+.show-article figure {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.show-article figcaption > * {
+  font-size: 16px;
+}
+
+.show-article figcaption {
+  padding-top: 5px;
+}
+
+.show-article a {
+  text-decoration: underline;
+}
+
+.feature-image-wrapper {
+  padding-top: 32px;
+}
+.youtube-wrapper {
+  position: relative;
+  padding-bottom: 56.25%; /* 16:9 */
+  padding-top: 25px;
+  height: 0;
+  overflow: hidden;
+}
+.youtube-wrapper iframe {
+  position: absolute;
+  left: 0;
+  width: 100%;
+  height: 95%;
+}
