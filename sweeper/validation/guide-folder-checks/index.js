@@ -22,14 +22,13 @@ const guideFolderChecks = async (number, prFiles, user) => {
   }
 
   if (prErrors.length) {
-    const comment = createErrorMsg(prErrors, user)
+    const comment = createErrorMsg(prErrors, user);
     if (process.env.PRODUCTION_RUN === 'true') {
       const result = await addComment(number, comment);
     }
     await rateLimiter(+process.env.RATELIMIT_INTERVAL | 1500);
     return comment;
-  }
-  else {
+  } else {
     return null;
   }
 };

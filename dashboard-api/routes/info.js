@@ -2,7 +2,7 @@ const router = require('express').Router();
 const fs = require('fs');
 const path = require('path');
 
-const container = require ('../data');
+const container = require('../data');
 
 router.get('/', (request, response) => {
   const { prs, startTime } = container.data;

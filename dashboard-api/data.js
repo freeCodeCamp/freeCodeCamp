@@ -1,5 +1,3 @@
-const fs = require('fs');
-
 let data = require('./data.json');
 
 const Container = {

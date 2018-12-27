@@ -17,14 +17,12 @@ const frontmatterCheck = (fullPath, isTranslation, fileContent) => {
         fullPath
       });
     }
-  }
-  catch(err) {
+  } catch (err) {
     errors.push({
       msg: `Unexpected syntax found in the front matter block. Review Travis CI build Details link for more details.`,
       fullPath
     });
   }
-
 
   return errors;
 };

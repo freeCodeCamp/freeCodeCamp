@@ -1,6 +1,6 @@
 const router = require('express').Router();
 
-const container = require ('../data');
+const container = require('../data');
 
 router.get('/', (reqeust, response) => {
   const { indices, prs } = container.data;
@@ -8,13 +8,15 @@ router.get('/', (reqeust, response) => {
   const reportObj = prs.reduce((obj, pr) => {
     const { number, filenames, username, title } = pr;
 
-    filenames.forEach((filename) => {
+    filenames.forEach(filename => {
       if (obj[filename]) {
         const { count, prs } = obj[filename];
-        obj[filename] = { count: count + 1, prs: prs.concat({ number, username, title } ) };
-      }
-      else {
-        obj[filename] = { count: 1, prs: [ { number, username, title } ] };
+        obj[filename] = {
+          count: count + 1,
+          prs: prs.concat({ number, username, title })
+        };
+      } else {
+        obj[filename] = { count: 1, prs: [{ number, username, title }] };
       }
     });
     return obj;
@@ -29,7 +31,7 @@ router.get('/', (reqeust, response) => {
     }, [])
     .sort((a, b) => b.count - a.count);
 
-  response.json({ ok: true, pareto });  
+  response.json({ ok: true, pareto });
 });
 
 module.exports = router;

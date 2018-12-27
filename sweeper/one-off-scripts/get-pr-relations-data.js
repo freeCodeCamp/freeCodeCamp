@@ -31,38 +31,61 @@ const log = new ProcessingLog('pr-relations');
   log.start();
   const { indices: oldIndices, prs: oldPRs } = await getExistingData();
   if (!oldPRs.length) {
-     console.log('No existing PRs data found, so it will take a while to download PRs/filenames data.');
+    console.log(
+      'No existing PRs data found, so it will take a while to download PRs/filenames data.'
+    );
   }
   const prPropsToGet = ['number', 'user', 'title', 'updated_at', 'files'];
   const { openPRs } = await getPRs(totalPRs, firstPR, lastPR, prPropsToGet);
 
   if (openPRs.length) {
-    const getFilesBar = new _cliProgress.Bar({
-      format: `Update PRs [{bar}] {percentage}% | {value}/{total} | Time Elapsed: {duration_formatted} | ETA: {eta_formatted}`,
-      etaBuffer: 50
-    }, _cliProgress.Presets.shades_classic);
+    const getFilesBar = new _cliProgress.Bar(
+      {
+        format: `Update PRs [{bar}] {percentage}% | {value}/{total} | Time Elapsed: {duration_formatted} | ETA: {eta_formatted}`,
+        etaBuffer: 50
+      },
+      _cliProgress.Presets.shades_classic
+    );
     getFilesBar.start(openPRs.length, 0);
 
     let prsUpdated = '';
     for (let count in openPRs) {
-      let { number, updated_at, title, user: { login: username } } = openPRs[count];
+      let {
+        number,
+        updated_at,
+        title,
+        user: { login: username }
+      } = openPRs[count];
       let oldUpdated_at;
       let oldPrData = oldPRs[oldIndices[number]];
       if (oldPrData) {
         oldUpdated_at = oldPrData.updated_at;
       }
       if (!oldIndices.hasOwnProperty(number) || updated_at > oldUpdated_at) {
-        const { data: prFiles } = await octokit.pullRequests.listFiles({ owner, repo, number });
+        const { data: prFiles } = await octokit.pullRequests.listFiles({
+          owner,
+          repo,
+          number
+        });
         const filenames = prFiles.map(({ filename }) => filename);
         log.add(number, { number, updated_at, title, username, filenames });
-        if (+count > 3000 ) {
+        if (+count > 3000) {
           await rateLimiter(1400);
         }
         prsUpdated += `PR #${number} added or updated\n`;
-      }
-      else {
-        let { username: oldUsername, title: oldTitle, filenames: oldFilenames } = oldPrData;
-        log.add(number, { number, updated_at: oldUpdated_at, username: oldUsername, title: oldTitle, filenames: oldFilenames });
+      } else {
+        let {
+          username: oldUsername,
+          title: oldTitle,
+          filenames: oldFilenames
+        } = oldPrData;
+        log.add(number, {
+          number,
+          updated_at: oldUpdated_at,
+          username: oldUsername,
+          title: oldTitle,
+          filenames: oldFilenames
+        });
       }
 
       if (+count % 10 === 0) {
@@ -72,29 +95,31 @@ const log = new ProcessingLog('pr-relations');
     getFilesBar.update(openPRs.length);
     getFilesBar.stop();
     console.log(prsUpdated);
-  }
-  else {
+  } else {
     throw 'There were no open PRs received from Github';
   }
 })()
-.then(async () => {
-  log.finish();
-  console.log('Finished retrieving Dashboard data');
+  .then(async () => {
+    log.finish();
+    console.log('Finished retrieving Dashboard data');
 
-  const formData = new FormData();
-  formData.append('file', fs.createReadStream(log._logfile));
-  const result = await fetch(`${HOST}/upload?password=${process.env.GLITCH_UPLOAD_SECRET}`, {
-    method: 'POST',
-    body: formData
+    const formData = new FormData();
+    formData.append('file', fs.createReadStream(log._logfile));
+    const result = await fetch(
+      `${HOST}/upload?password=${process.env.GLITCH_UPLOAD_SECRET}`,
+      {
+        method: 'POST',
+        body: formData
+      }
+    )
+      .then(() => {
+        console.log(`Finished uploading data for ${HOST}`);
+      })
+      .catch(err => {
+        console.log(err);
+      });
   })
-  .then(() => {
-    console.log(`Finished uploading data for ${HOST}`);
-  })
-  .catch((err) => {
+  .catch(err => {
+    log.finish();
     console.log(err);
   });
-})
-.catch(err => {
-  log.finish();
-  console.log(err)
-})

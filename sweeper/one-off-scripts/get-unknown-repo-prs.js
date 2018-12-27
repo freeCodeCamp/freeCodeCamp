@@ -20,26 +20,32 @@ log.start();
   const { openPRs } = await getPRs(totalPRs, firstPR, lastPR, prPropsToGet);
   if (openPRs.length) {
     for (let count in openPRs) {
-      let { number, head: { repo: headRepo } } = openPRs[count];
+      let {
+        number,
+        head: { repo: headRepo }
+      } = openPRs[count];
       if (headRepo === null) {
-        const { data: { mergeable, mergeable_state } } = await octokit.pullRequests.get({ owner, repo, number });
+        const {
+          data: { mergeable, mergeable_state }
+        } = await octokit.pullRequests.get({ owner, repo, number });
         if (mergeable_state === 'dirty' || mergeable_state === 'unknown') {
           log.add(number, { number, mergeable_state });
-          console.log(`[${number} (mergeable_state: ${mergeable_state})](https://github.com/freeCodeCamp/freeCodeCamp/pull/${number})`);
+          console.log(
+            `[${number} (mergeable_state: ${mergeable_state})](https://github.com/freeCodeCamp/freeCodeCamp/pull/${number})`
+          );
         }
         await rateLimiter(1000);
       }
     }
-  }
-  else {
+  } else {
     throw 'There were no open PRs received from Github';
   }
 })()
-.then(async () => {
-  log.finish();
-  console.log('Finished finding unknown repo PRs with merge conflicts');
-})
-.catch(err => {
-  log.finish();
-  console.log(err)
-})
+  .then(async () => {
+    log.finish();
+    console.log('Finished finding unknown repo PRs with merge conflicts');
+  })
+  .catch(err => {
+    log.finish();
+    console.log(err);
+  });

@@ -1,13 +1,23 @@
-const fs = require('fs');
 const express = require('express');
 
 const app = express();
-const { catchAll, pareto, pr, search, info, getCurrData, upload } = require('./routes');
+const {
+  catchAll,
+  pareto,
+  pr,
+  search,
+  info,
+  getCurrData,
+  upload
+} = require('./routes');
 
 app.use(express.static('public'));
 app.use((request, response, next) => {
   response.header('Access-Control-Allow-Origin', '*');
-  response.header('Access-Control-Allow-Headers', 'Origin, X-Requested-With, Content-Type, Accept');
+  response.header(
+    'Access-Control-Allow-Headers',
+    'Origin, X-Requested-With, Content-Type, Accept'
+  );
   response.header('Access-Control-Allow-Methods', 'GET');
   next();
 });

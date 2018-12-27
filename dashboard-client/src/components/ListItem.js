@@ -16,7 +16,12 @@ const ListItem = ({ number, username, prTitle: title }) => {
   const prUrl = `https://github.com/freeCodeCamp/freeCodeCamp/pull/${number}`;
   return (
     <Container>
-      <a style={prNumStyle} href={prUrl} rel="noopener noreferrer" target="_blank">
+      <a
+        style={prNumStyle}
+        href={prUrl}
+        rel="noopener noreferrer"
+        target="_blank"
+      >
         #{number}
       </a>
       <span style={usernameStyle}>{username}</span>

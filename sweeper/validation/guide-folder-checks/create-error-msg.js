@@ -1,4 +1,4 @@
-const dedent = require("dedent");
+const dedent = require('dedent');
 
 const createErrorMsg = (errors, user) => {
   let errorMsgHeader = dedent`
@@ -13,16 +13,18 @@ const createErrorMsg = (errors, user) => {
   `;
 
   let errorMsgTable = errors.reduce((msgStr, { msg, fullPath }, idx) => {
-    return (msgStr += "\n" + dedent`
+    return (msgStr +=
+      '\n' +
+      dedent`
       | ${idx + 1} | ${msg} | ${fullPath} |
     `);
-  }, "");
+  }, '');
 
   let errorMsgFooter = dedent`
     P.S: I am just friendly bot. Review our [Guidelines for Contributing](https://github.com/FreeCodeCamp/FreeCodeCamp/blob/master/CONTRIBUTING.md) and reach out to the [Contributors Chat room](https://gitter.im/FreeCodeCamp/Contributors) for more help.
   `;
 
-  return errorMsgHeader + errorMsgTable + "\n\n" + errorMsgFooter;
+  return errorMsgHeader + errorMsgTable + '\n\n' + errorMsgFooter;
 };
 
 module.exports = { createErrorMsg };
