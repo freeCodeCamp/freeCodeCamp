@@ -17,7 +17,7 @@
 
 该目录包含有关贡献于 freeCodeCamp.org 的所有文档
 
-## [如果您已经开始，请先阅读以下内容。]（/ CONTRIBUTING.md）
+## [如果您已经开始，请先阅读以下内容](/CONTRIBUTING.md)
 ---
 
 ##快速参考文章
