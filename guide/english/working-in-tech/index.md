@@ -20,6 +20,7 @@ The field of computer security is growing at a rapid rate every year. A recent r
 - Network Administrator
 - Support Desk Engineer
 - Security Engineer
+- Ethical hackers
 - Data Scientist
 - Software Tester
 - Infrastructure Support
@@ -27,48 +28,31 @@ The field of computer security is growing at a rapid rate every year. A recent r
 - Project manager
 
 ### Books
-
-[About Face: The Essentials of Interaction Design](https://www.amazon.com/About-Face-Essentials-Interaction-Design-dp-1118766571/dp/1118766571/)
-
-[Thinking in Systems: A Primer](https://www.amazon.com/gp/product/1603580557/)
-
-[Thinking, Fast and Slow](https://www.amazon.com/gp/product/0374533555/)
-
-[How to Win Friends & Influence People](https://www.amazon.com/How-Win-Friends-Influence-People/dp/0671027034/)
-
-[Learn You a Haskell for Great Good!](https://amzn.to/2veOjdv)
-
-[Think Like a Programmer](https://www.nostarch.com/thinklikeaprogrammer)
-
-["Lean In: Women, Work, and the Will to Lead" by Sheryl Sandberg](https://www.amazon.com/Lean-Women-Work-Will-Lead/dp/0385349947/)
-
-[The Mythical Man-Month: Essays on Software Engineering](https://www.amazon.com/Mythical-Man-Month-Software-Engineering-Anniversary/dp/0201835959)
-
-[The Pragmatic Programmer: From Journeyman to Master](https://www.amazon.com/Pragmatic-Programmer-Journeyman-Master/dp/020161622X)
-
-[Clean Code: A Handbook of Agile Software Craftsmanship](https://www.amazon.com/Clean-Code-Handbook-Software-Craftsmanship/dp/0132350882/)
-
-[Design Patterns: Elements of Reusable Object-Oriented Software](https://www.amazon.com/Design-Patterns-Elements-Reusable-Object-Oriented-ebook/dp/B000SEIBB8)
-
-[Cracking the Coding Interview: 189 Programming Questions and Solutions](https://www.amazon.com/Cracking-Coding-Interview-Programming-Questions/dp/0984782850/)
-
-[Introduction to Algorithms](https://www.amazon.com/Introduction-Algorithms-3rd-MIT-Press/dp/0262033844)
-
-[Hooked: How to Build Habit-Forming Products](https://www.amazon.com/Hooked-How-Build-Habit-Forming-Products/dp/1591847788/)
-
-[Lean In: Women, Work, and the Will to Lead by Sheryl Sandberg](https://www.amazon.com/Lean-Women-Work-Will-Lead/dp/0385349947/)
+- [About Face: The Essentials of Interaction Design](https://www.amazon.com/About-Face-Essentials-Interaction-Design-dp-1118766571/dp/1118766571/)
+- [Thinking in Systems: A Primer](https://www.amazon.com/gp/product/1603580557/)
+- [Thinking, Fast and Slow](https://www.amazon.com/gp/product/0374533555/)
+- [How to Win Friends & Influence People](https://www.amazon.com/How-Win-Friends-Influence-People/dp/0671027034/)
+- [Learn You a Haskell for Great Good!](https://amzn.to/2veOjdv)
+- [Think Like a Programmer](https://www.nostarch.com/thinklikeaprogrammer)
+- ["Lean In: Women, Work, and the Will to Lead" by Sheryl Sandberg](https://www.amazon.com/Lean-Women-Work-Will-Lead/dp/0385349947/)
+- [The Mythical Man-Month: Essays on Software Engineering](https://www.amazon.com/Mythical-Man-Month-Software-Engineering-Anniversary/dp/0201835959)
+- [The Pragmatic Programmer: From Journeyman to Master](https://www.amazon.com/Pragmatic-Programmer-Journeyman-Master/dp/020161622X)
+- [Clean Code: A Handbook of Agile Software Craftsmanship](https://www.amazon.com/Clean-Code-Handbook-Software-Craftsmanship/dp/0132350882/)
+- [Design Patterns: Elements of Reusable Object-Oriented Software](https://www.amazon.com/Design-Patterns-Elements-Reusable-Object-Oriented-ebook/dp/B000SEIBB8)
+- [Cracking the Coding Interview: 189 Programming Questions and Solutions](https://www.amazon.com/Cracking-Coding-Interview-Programming-Questions/dp/0984782850/)
+- [Introduction to Algorithms](https://www.amazon.com/Introduction-Algorithms-3rd-MIT-Press/dp/0262033844)
+- [Hooked: How to Build Habit-Forming Products](https://www.amazon.com/Hooked-How-Build-Habit-Forming-Products/dp/1591847788/)
+- [Ethical Hacking and Penetration Testing Guide](https://www.amazon.in/Ethical-Hacking-Penetration-Testing-Guide/dp/1482231611)
 
 ### Articles
-
-* [We fired our top talent. Best decision we ever made.](https://medium.freecodecamp.org/we-fired-our-top-talent-best-decision-we-ever-made-4c0a99728fde)
-* [You fired your top talent. I hope you’re happy.](https://medium.com/@deusexmachina667/you-fired-your-top-talent-i-hope-youre-happy-cf57c41183dd)
-* [How to run a successful development process (even if you’re not technical)](https://medium.freecodecamp.org/how-to-run-a-successful-development-process-even-if-youre-not-technical-185d0558c89a)
-* [What is technical debt? And why does almost every startup have it?](https://medium.freecodecamp.org/what-is-technical-debt-and-why-do-most-startups-have-it-9a54458daabf)
-* [How you can land a 6-figure job in tech with no connections — tips that got me job offers from Google and other tech giants](https://medium.freecodecamp.org/how-you-can-land-a-6-figure-job-in-tech-with-no-connections-6eed0de26ea4)
-* [The Complete Software Developer's Career Guide](https://simpleprogrammer.com/products/careerguide/)
+- [We fired our top talent. Best decision we ever made.](https://medium.freecodecamp.org/we-fired-our-top-talent-best-decision-we-ever-made-4c0a99728fde)
+- [You fired your top talent. I hope you’re happy.](https://medium.com/@deusexmachina667/you-fired-your-top-talent-i-hope-youre-happy-cf57c41183dd)
+- [How to run a successful development process (even if you’re not technical)](https://medium.freecodecamp.org/how-to-run-a-successful-development-process-even-if-youre-not-technical-185d0558c89a)
+- [What is technical debt? And why does almost every startup have it?](https://medium.freecodecamp.org/what-is-technical-debt-and-why-do-most-startups-have-it-9a54458daabf)
+- [How you can land a 6-figure job in tech with no connections — tips that got me job offers from Google and other tech giants](https://medium.freecodecamp.org/how-you-can-land-a-6-figure-job-in-tech-with-no-connections-6eed0de26ea4)
+- [The Complete Software Developer's Career Guide](https://simpleprogrammer.com/products/careerguide/)
 
 ### Podcasts
-
 - [10 Books Python Developers should be reading - talkpython.fm](https://talkpython.fm/episodes/show/130/10-books-python-developers-should-be-reading)
 - [CodeNewbie](https://www.codenewbie.org/)
 - [This week in Google](https://twit.tv/shows/this-week-in-google)
