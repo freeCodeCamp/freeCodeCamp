@@ -8,8 +8,7 @@ A wide variety of technology-related fields such as web development, design, dat
 This section will focus on various aspects of working in tech, such as the ways in which teams cooperate, how to give talks and what code reviews are. We will discuss the additional career challenges that under-represented minorities and people from non-traditional education backgrounds face. This includes issues such as sexism and ageism that have been particularly prevalent in certain industries and organizations. 
 
 ### Computer Security
-
-The field of computer security is growing at a rapid rate every year. A recent report estimates that by 2021 there will be 3.5 million jobs in computer security unfilled. The demand is due to the ever-increasing amount of valuable data being created every day that must be kept safe and secure from cyber attacks.
+The field of computer security is growing at a rapid rate every year.  As more people continue to store information electronically, the need for individuals to protect that information will increase proportionally. If these roles continue to be filled at the current rate, a recent study has estimated that this critical field will have a job shortage of 3.5 million people by 2021. 
 
 ### Examples of Tech-Related jobs
 - Software Developer
