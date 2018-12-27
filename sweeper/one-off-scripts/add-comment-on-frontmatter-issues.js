@@ -14,32 +14,23 @@ const octokit = require('@octokit/rest')(octokitConfig);
 const { getPRs, getUserInput } = require('../get-prs');
 const { addLabels, addComment } = require('../pr-tasks');
 const { rateLimiter, savePrData, ProcessingLog } = require('../utils');
-const {
-  frontmatterCheck
-} = require('../validation/guide-folder-checks/frontmatter-check');
-const {
-  createErrorMsg
-} = require('../validation/guide-folder-checks/create-error-msg');
+const { frontmatterCheck } = require('../validation/guide-folder-checks/frontmatter-check');
+const { createErrorMsg } = require('../validation/guide-folder-checks/create-error-msg');
 
 const allowedLangDirNames = [
-  'arabic',
-  'chinese',
-  'english',
-  'portuguese',
-  'russian',
-  'spanish'
+  "arabic",
+  "chinese",
+  "english",
+  "portuguese",
+  "russian",
+  "spanish"
 ];
 
 octokit.authenticate(octokitAuth);
 
 const log = new ProcessingLog('all-frontmatter-checks');
 
-const labeler = async (
-  number,
-  prFiles,
-  currentLabels,
-  guideFolderErrorsComment
-) => {
+const labeler = async (number, prFiles, currentLabels, guideFolderErrorsComment) => {
   const labelsToAdd = {}; // holds potential labels to add based on file path
   if (guideFolderErrorsComment) {
     labelsToAdd['status: needs update'] = 1;
@@ -47,9 +38,7 @@ const labeler = async (
   const existingLabels = currentLabels.map(({ name }) => name);
 
   /* this next section only adds needed labels which are NOT currently on the PR. */
-  const newLabels = Object.keys(labelsToAdd).filter(
-    label => !existingLabels.includes(label)
-  );
+  const newLabels = Object.keys(labelsToAdd).filter(label => !existingLabels.includes(label));
   if (newLabels.length) {
     if (process.env.PRODUCTION_RUN === 'true') {
       addLabels(number, newLabels);
@@ -61,14 +50,9 @@ const labeler = async (
 
 const checkPath = (fullPath, fileContent) => {
   let errorMsgs = [];
-  const remaining = fullPath.split('/');
-  const isTranslation =
-    allowedLangDirNames.includes(remaining[1]) && remaining[1] !== 'english';
-  const frontMatterErrMsgs = frontmatterCheck(
-    fullPath,
-    isTranslation,
-    fileContent
-  );
+  const remaining = fullPath.split("/");
+  const isTranslation = allowedLangDirNames.includes(remaining[1]) && remaining[1] !== 'english';
+  const frontMatterErrMsgs = frontmatterCheck(fullPath, isTranslation, fileContent);
   return errorMsgs.concat(frontMatterErrMsgs);
 };
 
@@ -87,13 +71,14 @@ const guideFolderChecks = async (number, prFiles, user) => {
   }
 
   if (prErrors.length) {
-    const comment = createErrorMsg(prErrors, user);
+    const comment = createErrorMsg(prErrors, user)
     if (process.env.PRODUCTION_RUN === 'true') {
       const result = await addComment(number, comment);
     }
     await rateLimiter(+process.env.RATELIMIT_INTERVAL | 1500);
     return comment;
-  } else {
+  }
+  else {
     return null;
   }
 };
@@ -110,32 +95,13 @@ const guideFolderChecks = async (number, prFiles, user) => {
     log.start();
     console.log('Starting frontmatter checks process...');
     for (let count in openPRs) {
-      let {
-        number,
-        labels: currentLabels,
-        user: { login: username }
-      } = openPRs[count];
-      const { data: prFiles } = await octokit.pullRequests.listFiles({
-        owner,
-        repo,
-        number
-      });
+      let { number, labels: currentLabels, user: { login: username } } = openPRs[count];
+      const { data: prFiles } = await octokit.pullRequests.listFiles({ owner, repo, number });
 
-      const guideFolderErrorsComment = await guideFolderChecks(
-        number,
-        prFiles,
-        username
-      );
-      const commentLogVal = guideFolderErrorsComment
-        ? guideFolderErrorsComment
-        : 'none';
+      const guideFolderErrorsComment = await guideFolderChecks(number, prFiles, username);
+      const commentLogVal = guideFolderErrorsComment ? guideFolderErrorsComment : 'none';
 
-      const labelsAdded = await labeler(
-        number,
-        prFiles,
-        currentLabels,
-        guideFolderErrorsComment
-      );
+      const labelsAdded = await labeler(number, prFiles, currentLabels, guideFolderErrorsComment);
       const labelLogVal = labelsAdded.length ? labelsAdded : 'none added';
 
       log.add(number, { number, comment: commentLogVal, labels: labelLogVal });
@@ -143,11 +109,11 @@ const guideFolderChecks = async (number, prFiles, user) => {
     }
   }
 })()
-  .then(() => {
-    log.finish();
-    console.log('Successfully completed frontmatter checks');
-  })
-  .catch(err => {
-    log.finish();
-    console.log(err);
-  });
+.then(() => {
+  log.finish();
+  console.log('Successfully completed frontmatter checks');
+})
+.catch(err => {
+  log.finish();
+  console.log(err)
+})

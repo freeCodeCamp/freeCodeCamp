@@ -8,11 +8,7 @@ router.get('/:number', (request, response) => {
   const index = indices[refNumber];
 
   if (!index && index !== 0) {
-    response.json({
-      ok: true,
-      message: 'Unable to find that open PR #.',
-      results: []
-    });
+    response.json({ ok: true, message: 'Unable to find that open PR #.', results: [] });
     return;
   }
 
@@ -22,7 +18,7 @@ router.get('/:number', (request, response) => {
 
   prs.forEach(({ number, filenames, username, title }) => {
     if (number != refNumber) {
-      const matchedFilenames = filenames.filter(filename => {
+      const matchedFilenames = filenames.filter((filename) => {
         return refFilenames.includes(filename);
       });
 
@@ -33,11 +29,7 @@ router.get('/:number', (request, response) => {
   });
 
   if (!results.length) {
-    response.json({
-      ok: true,
-      message: `No other open PRs with at least one filename which PR #${refNumber} has.`,
-      results: []
-    });
+    response.json({ ok: true, message: `No other open PRs with at least one filename which PR #${refNumber} has.`, results: [] });
     return;
   }
 

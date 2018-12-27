@@ -16,24 +16,27 @@ const PrResults = ({ searchValue, results }) => {
       const fileOnMaster = `https://github.com/freeCodeCamp/freeCodeCamp/blob/master/${filename}`;
       return (
         <li key={`${number}-${index}`}>
-          {filename}{' '}
-          <a href={fileOnMaster} rel="noopener noreferrer" target="_blank">
-            (File on Master)
-          </a>
+          {filename} <a href={fileOnMaster} rel="noopener noreferrer" target="_blank">(File on Master)</a>
         </li>
       );
     });
 
     return (
       <Result key={`${number}-${idx}`}>
-        <ListItem number={number} username={username} prTitle={title} />
-        <List>{files}</List>
+        <ListItem
+          number={number}
+          username={username}
+          prTitle={title}
+        />
+        <List>
+          {files}
+        </List>
       </Result>
     );
   });
 
   return (
-    <FullWidthDiv style={{ width: '100%' }}>
+    <FullWidthDiv style={{width: '100%'}}>
       {results.length ? <h3>Results for PR# {searchValue}</h3> : null}
       {elements}
     </FullWidthDiv>

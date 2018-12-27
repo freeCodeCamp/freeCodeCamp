@@ -35,26 +35,25 @@ const log = new ProcessingLog('all-locally-tested-labels');
       }
 
       /* this next section only adds needed labels which are NOT currently on the PR. */
-      const newLabels = Object.keys(labelsToAdd).filter(
-        label => !existingLabels.includes(label)
-      );
+      const newLabels = Object.keys(labelsToAdd).filter(label => !existingLabels.includes(label));
       if (newLabels.length) {
         log.add(number, { labels: newLabels });
         if (process.env.PRODUCTION_RUN === 'true') {
           addLabels(number, newLabels, log);
           await rateLimiter(+process.env.RATELIMIT_INTERVAL | 1500);
         }
-      } else {
+      }
+      else {
         log.add(number, { number, labels: 'none added' });
       }
     }
   }
 })()
-  .then(() => {
-    log.finish();
-    console.log('Successfully completed labeling');
-  })
-  .catch(err => {
-    log.finish();
-    console.log(err);
-  });
+.then(() => {
+  log.finish();
+  console.log('Successfully completed labeling');
+})
+.catch(err => {
+  log.finish();
+  console.log(err)
+})

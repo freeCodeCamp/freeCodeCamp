@@ -14,10 +14,7 @@ class ProcessingLog {
     this._prs = [];
     this._indicesObj = {};
     this._prCount = null;
-    this._logfile = path.resolve(
-      __dirname,
-      `../work-logs/data-for_${this.getRunType()}_${this._script}.json`
-    );
+    this._logfile = path.resolve(__dirname, `../work-logs/data-for_${this.getRunType()}_${this._script}.json`);
   }
 
   getRunType() {
@@ -35,18 +32,18 @@ class ProcessingLog {
       indices: this._indicesObj,
       prs: this._prs
     };
-    saveToFile(this._logfile, JSON.stringify(log));
+    saveToFile(this._logfile, JSON.stringify(log))
   }
 
   add(prNum, props) {
     this._prs.push(props);
-    this._indicesObj[prNum] = this._prs.length - 1;
+    this._indicesObj[prNum] = this._prs.length -1;
   }
 
   getPrRange() {
     if (this._prs.length) {
       const first = this._prs[0].number;
-      const last = this._prs[this._prs.length - 1].number;
+      const last = this._prs[this._prs.length -1].number;
       return [first, last];
     }
     console.log('Current log file does not contain any PRs');
@@ -61,8 +58,8 @@ class ProcessingLog {
   finish() {
     this._finishTime = new Date();
     const minutesElapsed = (this._finishTime - this._startTime) / 1000 / 60;
-    this._elapsedTime = minutesElapsed.toFixed(2) + ' mins';
-    let [first, last] = this.getPrRange();
+    this._elapsedTime =  minutesElapsed.toFixed(2) + ' mins';
+    let [ first, last ] = this.getPrRange();
     this._firstPR = first;
     this._lastPR = last;
     this.export();
@@ -71,19 +68,14 @@ class ProcessingLog {
 
   changeFilename() {
     const now = formatDate(new Date(), 'YYYY-MM-DDTHHmmss');
-    const finalFilename = `${this.getRunType()}_${this._script}_${
-      this._firstPR
-    }-${this._lastPR}_${now}.json`;
-    const newFilename = path.resolve(
-      __dirname,
-      `../work-logs/${finalFilename}`
-    );
+    const finalFilename = `${this.getRunType()}_${this._script}_${this._firstPR}-${this._lastPR}_${now}.json`;
+    const newFilename = path.resolve(__dirname,`../work-logs/${finalFilename}`);
     fs.renameSync(this._logfile, newFilename);
     if (!fs.existsSync(newFilename)) {
       throw `File rename unsuccessful.`;
     }
     this._logfile = newFilename;
   }
-}
+};
 
 module.exports = { ProcessingLog };

@@ -14,20 +14,25 @@ const List = styled.div`
 const filenameTitle = { fontWeight: '600' };
 
 const FilenameResults = ({ searchValue, results }) => {
-  const elements = results.map(result => {
+  const elements = results.map((result) => {
     const { filename, prs: prObjects } = result;
     const prs = prObjects.map(({ number, username, title }, index) => {
-      return <ListItem number={number} username={username} prTitle={title} />;
+      return (
+        <ListItem
+          number={number}
+          username={username}
+          prTitle={title}
+        />
+      );
     });
 
     const fileOnMaster = `https://github.com/freeCodeCamp/freeCodeCamp/blob/master/${filename}`;
     return (
       <Result key={filename}>
-        <span style={filenameTitle}>{filename}</span>{' '}
-        <a href={fileOnMaster} rel="noopener noreferrer" target="_blank">
-          (File on Master)
-        </a>
-        <List>{prs}</List>
+        <span style={filenameTitle}>{filename}</span> <a href={fileOnMaster} rel="noopener noreferrer" target="_blank">(File on Master)</a>
+        <List>
+          {prs}
+        </List>
       </Result>
     );
   });

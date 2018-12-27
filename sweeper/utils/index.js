@@ -4,10 +4,4 @@ const { saveToFile } = require('./save-to-file');
 const { openJSONFile } = require('./open-json-file');
 const { ProcessingLog } = require('./processing-log');
 
-module.exports = {
-  rateLimiter,
-  savePrData,
-  saveToFile,
-  openJSONFile,
-  ProcessingLog
-};
+module.exports = { rateLimiter, savePrData, saveToFile, openJSONFile, ProcessingLog };

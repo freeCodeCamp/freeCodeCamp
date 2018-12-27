@@ -22,42 +22,38 @@ class Pareto extends React.Component {
 
   componentDidMount() {
     fetch(ENDPOINT_PARETO)
-      .then(response => response.json())
+      .then((response) => response.json())
       .then(({ ok, pareto }) => {
         if (ok) {
           if (!pareto.length) {
-            pareto.push({
-              filename: 'Nothing to show in Pareto Report',
-              count: 0,
-              prs: []
-            });
+            pareto.push({ filename: 'Nothing to show in Pareto Report', count: 0, prs: [] });
           }
-          this.setState(prevState => ({ data: pareto }));
+          this.setState((prevState) => ({ data: pareto }));
         }
       })
       .catch(() => {
-        const pareto = [
-          { filename: 'Nothing to show in Pareto Report', count: 0, prs: [] }
-        ];
-        this.setState(prevState => ({ data: pareto }));
+        const pareto = [{ filename: 'Nothing to show in Pareto Report', count: 0, prs: [] }];
+        this.setState((prevState) => ({ data: pareto }));
       });
   }
 
   render() {
     const { data } = this.state;
-    const elements = data.map(entry => {
+    const elements = data.map((entry) => {
       const { filename, count, prs } = entry;
       const prsList = prs.map(({ number, username, title }) => {
-        return <ListItem number={number} username={username} prTitle={title} />;
+        return (
+          <ListItem
+            number={number}
+            username={username}
+            prTitle={title}
+          />
+        )
       });
       const fileOnMaster = `https://github.com/freeCodeCamp/freeCodeCamp/blob/master/${filename}`;
       return (
         <Result key={filename}>
-          <span style={filenameTitle}>{filename}</span>{' '}
-          <a href={fileOnMaster} rel="noopener noreferrer" target="_blank">
-            (File on Master)
-          </a>
-          <br />
+          <span style={filenameTitle}>{filename}</span> <a href={fileOnMaster} rel="noopener noreferrer" target="_blank">(File on Master)</a><br />
           <details style={detailsStyle}>
             <summary># of PRs: {count}</summary>
             <List>{prsList}</List>
