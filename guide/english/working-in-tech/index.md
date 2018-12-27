@@ -15,6 +15,7 @@ The field of computer security is growing at a rapid rate every year. A recent r
 - Software Developer
 - Computer Systems Analyst
 - Web Developer
+- Software Engineer
 - IT Manager
 - Computer Systems Administrator
 - Network Administrator
@@ -28,6 +29,7 @@ The field of computer security is growing at a rapid rate every year. A recent r
 - Project manager
 - Data Analyst
 - Data Scientist
+
 
 ### Books
 - [About Face: The Essentials of Interaction Design](https://www.amazon.com/About-Face-Essentials-Interaction-Design-dp-1118766571/dp/1118766571/)
