@@ -118,6 +118,18 @@ Outlined buttons are a part of Bootstrap since version 4, please be sure that yo
 #### Inline Buttons
 You can create inline button row by adding `.d-inline-block` class to the element which sets the display of the button to inline block. For example : `<button class="btn btn-primary d-inline-block btn-lg"></button>`
 
+#### Bootstrap Grouping of Buttons
+It is possible to group more than one button for certain uses like pagination. Grouping buttons can be done by making a parent `div` for all buttons you want to group, using the `.btn-group` class on this `div`:
+
+Example:
+```html
+<div class="btn-group" role="group" aria-label="Basic example">
+  <button type="button" class="btn btn-secondary">Left</button>
+  <button type="button" class="btn btn-secondary">Middle</button>
+  <button type="button" class="btn btn-secondary">Right</button>
+</div>
+```
+
 _Note: Do not include the dot in the HTML Class Attribute, referring to the classes with a dot is only used when adjusting the classes in CSS._
 
 
