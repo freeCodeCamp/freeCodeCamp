@@ -3,7 +3,7 @@ title: Styling Tables
 ---
 ## Styling Tables
 
-Tables can be styled with css properties, such as ```table-layout```,```border-collapse```,```border```,```width```,```height```,```text-align```,```font```,```color```etc.
+Tables can be styled with css properties, such as ```table-layout```,```border```,```border-collapse```,```border-spacing```,```width```,```height```,```text-align```,```font```,```color```,```empty-cells```, ```caption-side```, etc.
 
 ### Example
 ```css
@@ -25,6 +25,6 @@ th, td {
  
  -  [MDN](https://developer.mozilla.org/en-US/docs/Learn/CSS/Styling_boxes/Styling_tables)
  -  [w3schools](https://www.w3schools.com/css/css_table.asp)
-
+ -  [CSS Tricks](https://css-tricks.com/complete-guide-table-element/)
 
 
