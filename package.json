@@ -4,9 +4,14 @@
   "private": true,
   "scripts": {
     "bootstrap": "lerna bootstrap",
-    "postinstall": "npm run bootstrap"
+    "postinstall": "npm run bootstrap",
+    "format": "prettier --write es5 './**/*.{js,json}' && npm run lint",
+    "lint": "eslint ./**/*.js --fix"
   },
   "devDependencies": {
-    "lerna": "^3.5.1"
+    "eslint": "^5.9.0",
+    "eslint-config-freecodecamp": "^1.1.1",
+    "lerna": "^3.5.1",
+    "prettier": "^1.15.2"
   }
 }
