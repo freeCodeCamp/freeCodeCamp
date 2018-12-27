@@ -11,7 +11,7 @@ We'll pass you an array of two numbers. Return the sum of those two numbers plus
 
 Remember to use <a href='http://forum.freecodecamp.org/t/how-to-get-help-when-you-are-stuck/19514' target='_blank'>Read-Search-Ask</a> if you get stuck. Try to pair program. Write your own code.
  
-### Example
+> Example:
   
 Input:
   
