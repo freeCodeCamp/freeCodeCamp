@@ -130,8 +130,7 @@ Example:
 </div>
 ```
 
-_Note: Do not include the dot in the HTML Class Attribute, referring to the classes with a dot is only used when adjusting the classes in CSS._
-
+_Note: Do not include the dot in the HTML Class Attribute. Referring to the classes with a dot is only used when adjusting the classes in CSS._
 
 #### More Information: 
 * <a href='https://getbootstrap.com/docs/4.1/components/buttons/' target='_blank' rel='nofollow'>Bootstrap Buttons documentation</a>
