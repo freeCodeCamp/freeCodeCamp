@@ -3,14 +3,14 @@ id: bad87fed1348bd9aede07836
 title: Give a Background Color to a div Element
 challengeType: 0
 videoUrl: ''
-localeTitle: Дайте цвет фона элементу div
+localeTitle: Задайте цвет фона элементу div
 ---
 
 ## Description
-<section id="description"> Вы можете установить цвет фона элемента с свойством <code>background-color</code> . Например, если вы хотите, чтобы цвет фона элемента был <code>green</code> , вы должны поместить его в свой элемент <code>style</code> : <blockquote> .green-background { <br> фон-цвет: зеленый; <br> } </blockquote></section>
+<section id="description"> Вы можете установить цвет фона элемента при помощи свойства <code>background-color</code> . Например, если вы хотите, чтобы цвет фона элемента был <code>green</code> , вы должны поместить его в элемент <code>style</code> : <blockquote> .green-background { <br> background-color: green; <br> } </blockquote></section>
 
 ## Instructions
-<section id="instructions"> Создайте класс под названием <code>silver-background</code> с <code>background-color</code> серебра. Назначьте этот класс вашему элементу <code>div</code> . </section>
+<section id="instructions"> Создайте класс с именем <code>silver-background</code> с <code>background-color</code> и присвойте ему значение <code>silver</code>. Назначьте этот класс вашему элементу <code>div</code> . </section>
 
 ## Tests
 <section id='tests'>
