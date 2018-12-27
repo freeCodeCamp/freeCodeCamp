@@ -2,24 +2,24 @@
 title: Anaconda
 localeTitle: Anaconda
 ---
-**O Anaconda** é um gerenciador de pacotes, gerenciador de ambientes e distribuição Python com uma coleção de vários pacotes. O Anaconda é independente de plataforma, portanto, você pode usá-lo no Windows, macOS ou Linux. O Anaconda cria, salva, carrega e alterna facilmente entre ambientes em seu computador local. Foi criado para programas em Python, mas pode empacotar e distribuir software para qualquer idioma. O Anaconda como gerenciador de pacotes ajuda você a encontrar e instalar pacotes. Se você precisa de um pacote que requer uma versão diferente do Python, não é necessário mudar para um gerenciador de ambiente diferente, porque o Anaconda também é um gerenciador de ambiente. Com apenas alguns comandos, você pode configurar um ambiente totalmente separado para executar essa versão diferente do Python, enquanto continua a executar sua versão usual do Python em seu ambiente normal.
+**O Anaconda** é um gerenciador de pacotes, ambientes e distribuições/versões Python com uma coleção de vários pacotes. O Anaconda é independente de sistemas operacionais, portanto, você pode usá-lo no Windows, no MacOS ou no Linux sem problemas. O Anaconda cria, salva, carrega e alterna facilmente entre ambientes em seu computador local. Ele foi criado para programas em Python, mas pode empacotar e distribuir software para qualquer linguagem. O Anaconda, como gerenciador de pacotes, ajuda você a encontrar e instalar pacotes para cada projeto. Se você precisa de um pacote que requer uma versão diferente do Python, não é necessário mudar para um gerenciador de ambiente diferente, porque o Anaconda também é um gerenciador de ambiente. Com apenas alguns comandos, você pode configurar um ambiente totalmente separado para executar essa versão diferente do Python, enquanto continua a executar sua versão usual do Python em seu ambiente normal.
 
 ## Visão geral
 
-A maneira mais rápida de começar a usar o conda é percorrer 20 minutos [Começando com o](https://conda.io/docs/user-guide/getting-started.html) guia [conda](https://conda.io/docs/user-guide/getting-started.html) .
+A maneira mais rápida de começar a usar o conda é usando 20 minutos para ler o guia [Começando com o conda](https://conda.io/docs/user-guide/getting-started.html) na documentação oficial.
 
-O comando `conda` é a principal interface para gerenciar instalações de vários pacotes. Pode:
+O comando `conda` executa a principal interface para gerenciar instalações de vários pacotes. Ele pode:
 
-*   Consultar e pesquisar o índice do pacote Anaconda e o atual Instalação de Anaconda.
+*   Consultar e pesquisar o índice do pacote Anaconda e a atual instalação do Anaconda.
     
-*   Crie novos ambientes conda.
+*   Criar novos ambientes conda.
     
 *   Instalar e atualizar pacotes em ambientes conda existentes.
     
 
-DICA: Você pode abreviar muitas opções de comando usadas com freqüência são precedidos por 2 traços ( `--` ) a apenas 1 traço e o primeiro carta da opção. Então `--name` e `-n` são os mesmos e `--envs` e `-e` são os mesmos.
+DICA: Você pode abreviar muitas opções de comando que são usadas com freqüência e são precedidas por 2 traços ( `--` ) usando apenas 1 traço e o primeiro caractere da opção. Então `--name` e `-n` são as mesmas opções de comando, assim como `--envs` e `-e` também são equivalente.
 
-Para uso completo de cada comando, incluindo abreviações, consulte [Referência de comando](https://conda.io/docs/commands.html) .
+Para saber mais sobre o uso completo de cada comando, incluindo suas abreviações, consulte [Referência de comando](https://conda.io/docs/commands.html) .
 
 ### Fontes
 
