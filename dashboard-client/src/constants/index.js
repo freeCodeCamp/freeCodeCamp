@@ -1,10 +1,10 @@
 const API_HOST = !!process.env.REACT_APP_DEV ?
-  'http://localhost:3001' :
-  'https://pr-relations.glitch.me';
-const ENDPOINT_INFO = API_HOST + '/info';
-const ENDPOINT_PARETO = API_HOST + '/pareto';
-const ENDPOINT_PR = API_HOST + '/pr';
-const ENDPOINT_SEARCH = API_HOST + '/search'
+  'http://localhost:3001/' :
+  '/';
+const ENDPOINT_INFO = API_HOST + 'info';
+const ENDPOINT_PARETO = API_HOST + 'pareto';
+const ENDPOINT_PR = API_HOST + 'pr';
+const ENDPOINT_SEARCH = API_HOST + 'search'
 
 export {
   API_HOST,

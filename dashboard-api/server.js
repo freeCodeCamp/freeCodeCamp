@@ -2,7 +2,7 @@ const fs = require('fs');
 const express = require('express');
 
 const app = express();
-const { catchAll, pareto, pr, search, info, getCurrData, upload } = require('./routes');
+const { catchAll, pareto, pr, search, info, updateData } = require('./routes');
 
 app.use(express.static('public'));
 app.use((request, response, next) => {
@@ -16,8 +16,7 @@ app.use('/pr', pr);
 app.use('/search', search);
 app.use('/pareto', pareto);
 app.use('/info', info);
-app.use('/getCurrData', getCurrData);
-app.use('/upload', upload);
+app.use('/update', updateData);
 app.use('*', catchAll);
 
 const listener = app.listen(process.env.PORT, () => {

@@ -96,6 +96,11 @@ const getPRs = async (totalPRs, firstPR, lastPR, prPropsToGet) => {
   getPRsBar.stop();
   console.log(`# of PRs retrieved: ${openPRs.length}`);
   return { firstPR, lastPR, openPRs };
-}
+};
 
-module.exports = { getPRs, getUserInput };
+const getFilenames = async (number) => {
+  const { data: prFiles } = await octokit.pullRequests.listFiles({ owner, repo, number });
+  return prFiles.map(({ filename }) => filename);
+};
+
+module.exports = { getPRs, getUserInput, getFilenames };

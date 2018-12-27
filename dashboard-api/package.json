@@ -7,10 +7,11 @@
     "develop": "cross-env PORT=3001 node server.js"
   },
   "dependencies": {
+    "cli-progress": "^2.1.1",
     "cross-env": "^5.2.0",
     "dotenv": "^6.2.0",
     "express": "^4.16.3",
-    "multer": "^1.4.1"
+    "node-fetch": "^2.3.0"
   },
   "devDependencies": {},
   "license": "BSD-3-Clause"

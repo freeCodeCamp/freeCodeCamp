@@ -55,7 +55,7 @@ class ProcessingLog {
     this.export();
   }
 
-  finish() {
+  finish(logFileName = '') {
     this._finishTime = new Date();
     const minutesElapsed = (this._finishTime - this._startTime) / 1000 / 60;
     this._elapsedTime =  minutesElapsed.toFixed(2) + ' mins';
@@ -63,13 +63,16 @@ class ProcessingLog {
     this._firstPR = first;
     this._lastPR = last;
     this.export();
-    this.changeFilename();
+    this.changeFilename(logFileName);
   }
 
-  changeFilename() {
+  changeFilename(logFileName) {
     const now = formatDate(new Date(), 'YYYY-MM-DDTHHmmss');
-    const finalFilename = `${this.getRunType()}_${this._script}_${this._firstPR}-${this._lastPR}_${now}.json`;
-    const newFilename = path.resolve(__dirname,`../work-logs/${finalFilename}`);
+    let finalFilename = `${this.getRunType()}_${this._script}_${this._firstPR}-${this._lastPR}_${now}.json`;
+    let newFilename = path.resolve(__dirname,`../work-logs/${finalFilename}`);
+    if (logFileName) {
+      newFilename = logFileName;
+    }
     fs.renameSync(this._logfile, newFilename);
     if (!fs.existsSync(newFilename)) {
       throw `File rename unsuccessful.`;
