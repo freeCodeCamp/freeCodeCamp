@@ -111,6 +111,14 @@ tests:
 <section id='solution'>
 
 ```js
-// solution required
+svg.selectAll("text")
+   .data(dataset)
+   .enter()
+   .append("text")
+   // Add your code below this line
+   .text((d) => d[0] + ', ' + d[1])
+   .attr('x', (d, i) => d[0] + 5)
+   .attr('y', (d, i) => h - d[1])
+   // Add your code above this line
 ```
 </section>
