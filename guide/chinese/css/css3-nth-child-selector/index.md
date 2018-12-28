@@ -8,7 +8,11 @@ localeTitle: CSS3 第`nth-child`选择器
 
 ## 句法
 
-```CSS a：nth-​​child（pattern）{ / \* Css到这里\* / }
+
+```CSS 
+   a：nth-​​child（pattern）{
+     /* Css到这里 */
+   }
 ```
 ### 模式
 
@@ -18,28 +22,40 @@ localeTitle: CSS3 第`nth-child`选择器
  
  ##### Odd 
  
+
  `Odd`会返回所属于特定类型的HTML元素当中的奇数元素。
  在下面的示例中，所奇数的`a`元素将会被指定，而选择器中的CSS会被插入被指定的元素中。
-```
 
-CSS a：nth-​​childe（odd）{ / \* CSS在这里\* / }
+```CSS 
+    a：nth-​​child（odd）{ 
+      /* CSS在这里 */
+    }
+
 ```
 ##### Even 
  
+
  `Even`会返回所属于特定类型的HTML元素当中的偶数元素。
  在下面的示例中，所位于偶数的`a`元素将会被指定，而选择器中的CSS会被插入被指定的元素中。
-```
 
-CSS a：nth-​​childe（偶数）{ / \* CSS在这里\* / }
+
+```CSS 
+    a：nth-​​child（even）{
+        /* CSS在这里 */
+    }
+
 ```
 #### An+B 
 
 `An+B`会返回所有属于特定类型的HTML元素中，符合An+B(n与每个正整数)的元素
-  在下面的示例中，每隔三个`a`元素的元素将会被指定，而选择器中的CSS会被插入被指定的元素中。
+在下面的示例中，每隔三个`a`元素的元素将会被指定，而选择器中的CSS会被插入被指定的元素中。
  
-```
 
-CSS a：nth-​​childe（3n）{ / \* CSS在这里\* / } \`\`\`
+```CSS 
+    a:nth-​​child（3n）{
+      /* CSS在这里 */
+      } 
+```
 
 ### 更多信息：
 

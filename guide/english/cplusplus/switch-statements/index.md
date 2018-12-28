@@ -1,5 +1,5 @@
 ---
-title:Switch Statement
+title: Switch Statement
 ---
 
 A switch statement allows a variable to be tested for equality against a list of values. Each value is called a case, and the variable being switched on is checked for each case.
@@ -12,7 +12,7 @@ switch(expression) {
    case constant-expression  :
       statement(s);
       break; //optional
-  
+
    // you can have any number of case statements.
    default : //Optional
       statement(s);
@@ -38,14 +38,19 @@ Example:
 ```C++
 #include <iostream>
 using namespace std;
- 
+
 int main () {
    // local variable declaration:
    char grade = 'D';
-
+   
+   /* You can also have the user enter the value of grade to make your code more dynamic, like so:
+   char grade;
+   cin >> grade; 
+   */
+   
    switch(grade) {
       case 'A' :
-         cout << "Excellent!" << endl; 
+         cout << "Excellent!" << endl;
          break;
       case 'B' :
       case 'C' :
@@ -61,9 +66,9 @@ int main () {
          cout << "Invalid grade" << endl;
    }
    cout << "Your grade is " << grade << endl;
- 
+
    return 0;
-}```
+}
 
 Output:
 You passed

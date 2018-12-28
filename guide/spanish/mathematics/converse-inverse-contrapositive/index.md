@@ -1,5 +1,0 @@
-
-tlocaleTitle: Converse Inverso Contrapositivo
-itle: Converse Inverse Contrapositivo
-
-En Matemáticas Discretas, dada una declaración condicional "si a, entonces b", puede tener 3 declaraciones relacionadas: Cualquier declaración condicional se compone de dos partes: i) Hipótesis ("si"): ii) Conclusión ("entonces"): "Si a, entonces b" se puede representar como: a → b Supongamos un ejemplo: "Si no hay escuela, entonces es el fin de semana". p → q • Para obtener el Converso de la declaración condicional anterior, intercambie hipótesis Esis y la conclusión. q → p Por lo tanto, lo contrario será: "Si es fin de semana, entonces no hay escuela". • Para obtener la sentencia condicional inversa de la anterior, tome la negación de Tanto la hipótesis como la conclusión. ¬p → ¬q Por lo tanto, lo inverso será: "Si hay escuela, entonces es día de la semana". • Para obtener el Contrapositivo de la declaración condicional anterior, intercambiar La hipótesis y la conclusión de la afirmación inversa. ¬q → ¬p Por lo tanto, el contrapositivo será: "Si es día laborable, entonces hay escuela".
