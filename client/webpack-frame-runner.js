@@ -42,6 +42,9 @@ module.exports = (env = {}) => {
           }
         }
       ]
+    },
+    node: {
+      fs: 'empty'
     }
   };
 };
