@@ -3,7 +3,7 @@
         <!-- Do not translate this table -->
         <td> Read these guidelines in </td>
         <td><a href="/CONTRIBUTING.md"> English </a></td>
-        <td><a href="/docs/arabic/CONTRIBUTING.md"> عربى </a></td>
+        <td><a href="/docs/arabic/CONTRIBUTING.md"> عربي </a></td>
         <td><a href="/docs/chinese/CONTRIBUTING.md"> 中文 </a></td>
         <td><a href="/docs/portuguese/CONTRIBUTING.md"> Português </a></td>
         <td><a href="/docs/russian/CONTRIBUTING.md"> русский </a></td>
@@ -15,7 +15,7 @@
 
 Hola 👋!
 
-freeCodeCamp.org es posible gracias a miles de voluntarios amables como tú. Nos emocionados por tus contribuciones y nos complace darte la bienvenida a bordo.
+freeCodeCamp.org es posible gracias a miles de voluntarios amables como usted. Estamos muy agardecidos por sus contribuciones y nos complace darle la bienvenida a bordo.
 
 Cumplimos estrictamente nuestro ["Código de conducta"](https://www.freecodecamp.org/code-of-conduct). Tómate un momento para leerlo. No es muy largo.
 
@@ -48,13 +48,13 @@ Puedes ayudarnos con:
 
 - [🌐 Traducir artículos de guía y desafíos de codificación.](#traducir-artículos-de-guía-y-desafíos-de-codificación)
 
-- [🛠 Ayúdenos a corregir errores en la plataforma de aprendizaje de freeCodeCamp.org.](#ayúdenos-a-corregir-errores-en-la-plataforma-de-aprendizaje-de-freeCodeCamp.org)
+- [🛠 Ayúdanos a corregir errores en la plataforma de aprendizaje de freeCodeCamp.org.](#ayúdenos-a-corregir-errores-en-la-plataforma-de-aprendizaje-de-freeCodeCamp.org)
 
 ### Investiga, escribe y actualiza nuestros artículos de guía
 
 **¿Qué son los artículos de Guía?**
 
-Los artículos de guía te ayudan a comprender rápidamente un concepto de tecnología. Estas son explicaciones breves y sencillas que puedes leer antes de ir a recursos más profundos.
+Los artículos de guía ayudan a comprender rápidamente un concepto de tecnología. Estas son explicaciones breves y sencillas que se pueden leer antes de ir a recursos más profundos.
 
 Puedes encontrar un [artículo de ejemplo sobre elementos HTML aquí](./client/src/pages/html/elements/index.md).
 
@@ -62,7 +62,7 @@ Puedes encontrar un [artículo de ejemplo sobre elementos HTML aquí](./client/s
 
 Agradecemos tu ayuda al escribir estos artículos. No tienes que ser un experto en un tema para escribir sobre él; toda esta Guía es de código abierto, por lo que incluso si cometes un error, otro colaborador lo corregirá.
 
-Para obtener ayuda, busca un `esbozo de artículo` en nuestro [sitio web de la Guía](https://www.freecodecamp.org/guide), escribe el artículo y luego abre una solicitud para reemplazar el esbozo con tu artículo. Una solicitud o [pull request](https://help.github.com/articles/about-pull-requests/) es la forma en que sugerirán los cambios. Permite a otros conocer tus cambios, revisarlos y adóptalos.
+Para obtener ayuda, busca un `esbozo de artículo` en nuestro [sitio web de la Guía](https://www.freecodecamp.org/guide), escribe el artículo y luego abre una solicitud para reemplazar el esbozo con tu artículo. Una solicitud o [pull request](https://help.github.com/articles/about-pull-requests/) es la forma en que sugerirán los cambios. Permite a otros conocer tus cambios, revisarlos y adóptarlos.
 
 Si no puedes encontrar un esbozo sobre el tema que deseas escribir, puedes abrir un PR (pull request) que crea el esbozo e incluye tu borrador del artículo.
 
@@ -84,11 +84,11 @@ Puedes ayudar a expandirlos y hacer que su redacción sea más clara. Puedes act
 
 Puedes ayudarnos a traducir nuestros artículos de Guía y desafíos de codificación para un idioma que hables. Actualmente tenemos versiones traducidas en:
 
-- Chino (中文)
-- Ruso (русский)
-- Árabe (عربى)
-- Español
-- Portugués (Português)
+- [Chino (中文)](https://github.com/freeCodeCamp/freeCodeCamp/tree/master/curriculum/challenges/chinese)
+- [Ruso (русский)](https://github.com/freeCodeCamp/freeCodeCamp/tree/master/curriculum/challenges/russian)
+- [Árabe (عربى)](https://github.com/freeCodeCamp/freeCodeCamp/tree/master/curriculum/challenges/arabic)
+- [Español](https://github.com/freeCodeCamp/freeCodeCamp/tree/master/curriculum/challenges/spanish)
+- [Portugués](https://github.com/freeCodeCamp/freeCodeCamp/tree/master/curriculum/challenges/portuguese)
 
 La mayoría de estas versiones están traducidas automáticamente. Nos encantaría tu ayuda para mejorar la calidad de estas traducciones.
 
@@ -137,7 +137,7 @@ Siéntete libre de pedir ayuda en:
 - [La categoría "Colaboradores" en nuestro foro público](https://www.freecodecamp.org/forum/c/contributors).
 - [La sala de chat de nuestros colaboradores públicos en Gitter](https://gitter.im/FreeCodeCamp/Contributors).
 
-Nos emociona ayudarte a contribuir con cualquiera de los temas en los que le gustaría trabajar. Asegúrate de buscar tu consulta antes de publicar una nueva. Sé educado y paciente. Nuestros voluntarios y moderadores de la comunidad están siempre alrededor para guiarlo a través de sus consultas.
+Nos emociona ayudarte a contribuir con cualquiera de los temas en los que te gustaría trabajar. Asegúrate de buscar tu consulta antes de publicar una nueva. Sé educado y paciente. Nuestros voluntarios y moderadores de la comunidad están siempre alrededor para guiarlo a través de sus consultas.
 
 **Soy nuevo en GitHub y Open Source en general:**
 
