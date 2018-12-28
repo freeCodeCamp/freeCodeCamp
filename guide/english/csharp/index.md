@@ -13,7 +13,7 @@ C# is an object-oriented language that provides support for component-oriented a
 #### Classes and Objects
 Classes allow us to model everyday objects in the world around us in software. You can create custom classes to represent just about anything. Just like a noun is a person, place or thing in language, so too, a classes represents objects.
 
-When you write C# code, typically it is because you need a program that DOES something useful. In the case of a business need, you follow requirements that the business needs. Say your business comes to you asks you for an electronic database of books. They need to be able to store book titles, authors, compute statistics, like the number of checkouts in a given month, or a monthly average. The requirements describe the program that needs to be developed. How do you write a program for the given requirements? Generally, we use classes to create abstractions for the different nouns that we need to work with. A noun such as a book, author, or title. 
+When you write C# code, typically it is because you need a program that DOES something useful. In the case of a business need, you follow requirements that the business needs. Say your business comes to you and asks you for an electronic database of books. They need to be able to store book titles, authors and compute statistics like the number of checkouts in a given month, or a monthly average. The requirements describe the program that needs to be developed. How do you write a program for the given requirements? Generally, we use classes to create abstractions for the different nouns that we need to work with. A noun such as a book, author, or title. 
 
 An important concept in C# is that the class definition is used to create instances of objects. You can think of it like a blueprint for creating instances of objects. The class definition allows the creation of objects that store a reference to that object. For example, say we want to create a new book object. The line of code looks like this: <br>
 
@@ -21,7 +21,7 @@ An important concept in C# is that the class definition is used to create instan
 Book book = new Book();
 </code><br>
 
-This creates a new book object that we can use to manipulate data and store it in a database. The variable, book, is actually a reference type of Book (with a capital B). We can use methods available in the class definition with that variable, book, such as AddTitle() or AddAuthor() etc.
+This creates a new book object that we can use to manipulate data and store it in a database. The variable, book, is actually a reference type of `Book` (with a capital B). The `new` keyword is used to create a new instance of the object. We can use methods available in the class definition with that variable, book, such as `AddTitle()` or `AddAuthor()` etc.
 
 #### Features of C# include:
 1. Automatic Garbage Collection

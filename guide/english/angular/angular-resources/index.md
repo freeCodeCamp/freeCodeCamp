@@ -40,6 +40,7 @@ A collection of helpful Angular resources
 *	<a href='https://ultimateangular.com/' target='_blank' rel='nofollow'>Ultimate Angular - Todd Motto</a>
 * <a href='https://www.udemy.com/the-complete-guide-to-angular-2/' target='_blank' rel='nofollow'>Angular 6 (formerly Angular 2) - The Complete Guide($)  Maximilian Schwarzmüller </a>
 * <a href='https://scrimba.com/g/gyourfirstangularapp' target='_blank' rel='nofollow'>Build your first Angular app (Free 33-part course) - Dan Wahlin </a>
+* <a href='https://angular-2-training-book.rangle.io/' target='_blank' rel='nofollow'>Rangle's Angular 2 Training Book</a> - Online version of Rangle's excellent Angular book
 
 ## Blogs
 

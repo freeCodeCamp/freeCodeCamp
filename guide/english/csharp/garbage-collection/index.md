@@ -17,9 +17,9 @@ Whenever a new object is created, a memory is allocated in the heap and the poin
  #### Generations in C# GC
 In .net programming, heap has three generations called Generation 0, 1, 2. 
 
-Generation 0 get filled first whenever new object gets created.  Garbage collector runs when the Generation 0 get filled. Newly created objects are placed in Generation 0. While performing garbage collection all the unwanted objects are destroyed, memory gets freed and compacted. GC takes care of pointing the pointers of freed memory once GC happens. 
+Generation 0 gets filled first whenever new objects are created.  The garbage collector runs when the Generation 0 gets filled. Newly created objects are placed in Generation 0. While performing garbage collection all the unwanted objects are destroyed, memory gets freed and compacted. GC takes care of pointing the pointers of freed memory once GC happens. 
 
-Generations 1 and 2 has object which has the longer life time. GC on generations 1 and 2 will not happen until the generations 0 has sufficient memory to allocate.
+Generations 1 and 2 have objects with a longer life time. GC on generations 1 and 2 will not happen until the generation 0 has sufficient memory to allocate.
 
 Its not advisable to invoke the GC programmatically. It's good to let it happen on its own. GC is executed whenever the generation 0 gets filled. GC does not impact the performance of the application. 
 
@@ -32,5 +32,6 @@ The downside of garbage collection is that it has a negative impact on performan
 If an object has no references (is no longer reachable) then it is eligible for garbage collection. This ensures there are not much dangling pointers around the memory heap. 
 
 #### More Information:
+
  - [Garbage Collection Fundamentals](https://docs.microsoft.com/en-us/dotnet/standard/garbage-collection/fundamentals)
  - [Memory Management and GC](https://docs.microsoft.com/en-us/dotnet/standard/garbage-collection/memory-management-and-gc)
