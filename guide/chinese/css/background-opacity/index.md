@@ -50,15 +50,16 @@ Opacity 可以是 0 到 1 之间的任何值;
 } 
 ```
 
-或者，您可以这样使用透明的 rgba 值： 
+
+或者，您可以使用透明的rgba值，如下所示：
 
 ```css
-.class-name{
-  background-color: rgba( 0, 0, 0, .5);
+.class-name {
+  background-color: rgba (0,0,0,0.5);
 }
 ```
- 
-上例中将背景设置为不透明度为50％的黑色。 rgba 值的最后一个值是 alpha 值。 alpha 值为 1 就是 100％ ， 0.5 （简写为 .5 ）就是 50％ 。我们使用此方法为元素添加透明度而不影响内部内容。
+上面的示例将背景设置为黑色，不透明度为50％。 rgba值的最后一个值是alpha值。 α值为1等于100％，0.5（简称为.5）则为50％。我们使用此方法为元素添加透明度而不影响内部内容。
+
 
 [用于显示背景不透明度范围的 codepen 示例](https://codepen.io/lvcoulter/full/dVrwmK/)
 
