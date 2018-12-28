@@ -33,7 +33,7 @@ let users = {
 
 function isEveryoneHere(obj) {
   // change code below this line
-  if(users.hasOwnProperty('Alan','Jeff','Sarah','Ryan')) {
+  if(obj.hasOwnProperty('Alan','Jeff','Sarah','Ryan')) {
     return true;
   }
   return false;
@@ -48,7 +48,7 @@ console.log(isEveryoneHere(users));
 ```javascript
 
 function isEveryoneHere(obj) {
-  return (users.hasOwnProperty('Alan','Jeff','Sarah','Ryan')) ? true : false;
+  return (obj.hasOwnProperty('Alan','Jeff','Sarah','Ryan')) ? true : false;
 }
 
 ```
