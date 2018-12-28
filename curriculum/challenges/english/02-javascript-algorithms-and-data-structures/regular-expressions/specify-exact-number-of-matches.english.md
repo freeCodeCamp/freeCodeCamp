@@ -60,6 +60,13 @@ let result = timRegex.test(timStr);
 <section id='solution'>
 
 ```js
-// solution required
+let timStr = "Timmmmber";
+let timRegex = /Tim{4}ber/i; // Change this line
+/* Code breakup
+    Ti --Starts with Ti
+    m{4} -- Matches 4 times M
+    ber -- Ends with ber
+*/
+let result = timRegex.test(timStr);
 ```
 </section>
