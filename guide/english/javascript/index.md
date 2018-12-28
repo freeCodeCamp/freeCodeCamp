@@ -9,7 +9,7 @@ don't need to compile in order to execute but its interpreted at the runtime.
 
 Notably, JavaScript has no relation to Java. [JavaScript: The World's Most Misunderstood Programming Language](http://www.crockford.com/javascript/javascript.html)
 
-The official name of JavaScript is ECMAScript defined under Standard [ECMA-262](https://www.ecma-international.org/publications/standards/Ecma-262.htm)
+The official name of JavaScript is ECMAScript defined under Standard [ECMA-262](https://www.ecma-international.org/publications/standards/Ecma-262.htm) ECMAScript 6th edition (ES6) added "significant new syntax for writing complex applications, including classes and modules" (Wikipedia) including arrow functions and promises.
 
 If you want to learn more about the JavaScript language, and why it's so widely used, read Quincy Larson's article - [Which programming language should I learn first?](https://medium.freecodecamp.org/what-programming-language-should-i-learn-first-%CA%87d%C4%B1%C9%B9%C9%94s%C9%90%CA%8C%C9%90%C9%BE-%C9%B9%C7%9D%CA%8Dsu%C9%90-19a33b0a467d) -
 or watch this [inspiring video from Preethi Kasireddy](https://www.youtube.com/watch?v=VqiEhZYmvKk). Or else you can watch this [commendable video by Matt Hippely about the history of JavaScript and up to date with modern Javascript practices.](https://youtu.be/CseCDFed458)
