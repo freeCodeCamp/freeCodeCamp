@@ -4,8 +4,9 @@ title: JavaScript
 
 Creaed by Brendan Eich in May of 1995, JavaScript is the most widely used scripting language on earth and has the largest library ecosystem of any programming language. It is the core language of the web, and the only programming language that can run in all major web browsers.
 
-By definition, Javascript is a high-level interpreted language. Meaning its higher abstracted from the computer, easy to use, and you
-don't need to compile in order to execute but its interpreted at the runtime.
+By definition, Javascript is a high-level interpreted language. This means the language is abstracted from the computer, easy to use, and doesn't need to be compiled in order to execute - it's interpreted at run-time.
+
+JavaScript is the core language of the web and the only programming language that can run in all major web browsers.
 
 Notably, JavaScript has no relation to Java. [JavaScript: The World's Most Misunderstood Programming Language](http://www.crockford.com/javascript/javascript.html)
 
@@ -35,7 +36,7 @@ WebKit (except for the Chromium project) implements the JavaScriptCore engine.
 ## JavaScript Frameworks
 
 Most frequently used JavaScript [Frameworks](https://skillcrush.com/2018/07/23/what-is-a-javascript-framework/) are React JS, Angular JS, Create JS, jQuery, nodeJS etc. 
-For details follow this [link](https://javascriptreport.com/the-ultimate-guide-to-javascript-frameworks/).
+For details, follow this [link](https://javascriptreport.com/the-ultimate-guide-to-javascript-frameworks/).
 
 #### More Information
 
