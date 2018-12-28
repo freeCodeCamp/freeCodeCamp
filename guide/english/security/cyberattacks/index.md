@@ -2,7 +2,7 @@
 title: Cyberattacks
 ---
 A cyberattack refers to the exploitation or "hacking" of computer systems, infrastructures, computer networks, and/or personal computer devices using malicious code. 
-The aim of a cyberattack more often than not is to steal, modify or destroy information. 
+More often that not, the aim of a cyberattack is to steal, modify or destroy information. 
 
 The motive for launching a cyberattack can range from financial to political and ideological.
 There are also hackers who infiltrate into systems as a form of entertainment.
@@ -29,7 +29,9 @@ no one can be 100% that their data is secure.
 * Cross-Site Scripting (XSS)  
 * Password Attacks  
 * Denial of Service Attacks (DoS)  
-* Man in the Middle (MITM)  
+* Man in the Middle (MITM)
+* False Data Injection
+* Replay Attack
 * Credential Reuse  
 * Rogue Software
 * ARP Poisoning (Network Pentest)
@@ -42,4 +44,5 @@ no one can be 100% that their data is secure.
 * DNS Poisoning
 * E-mail Spoofing
 * KRACK (Key Reinstallation Attack)
+* Buffer Overflow
 

@@ -39,7 +39,7 @@ A target attribute with the value of “_top” opens the linked document in the
 	<a href="https://www.freecodecamp.org" target="_top">freeCodeCamp</a>
 ```
 
-A target attribute with the value of _"framename"_ Opens the linked document in a specified named frame.
+A target attribute with the value of _"framename"_ opens the linked document in a specified named frame.
 
 ```html
 	<a href="https://www.freecodecamp.org" target="framename">freeCodeCamp</a>
