@@ -25,6 +25,7 @@ A collection of helpful Angular resources
 
 *   <a href='https://angular.io/' target='_blank' rel='nofollow'>Angular</a> - The Angular Homepage
 *   <a href='https://angular.io/guide/styleguide' target='_blank' rel='nofollow'>Angular Style Guide</a> - Detailed best practices for Angular Development
+*   <a href='https://material.angular.io/' target='_blank' rel='nofollow'>Angular Material</a> - Excellent UI Framework that was built for Angular
 
 ### Specific-topic Pages
 
@@ -38,8 +39,15 @@ A collection of helpful Angular resources
 *	<a href='https://frontendmasters.com/courses/building-apps-angular' target='_blank' rel='nofollow'>FrontendMasters - Building Awesomer Apps with Angular</a>
 *	<a href='https://ultimateangular.com/' target='_blank' rel='nofollow'>Ultimate Angular - Todd Motto</a>
 * <a href='https://www.udemy.com/the-complete-guide-to-angular-2/' target='_blank' rel='nofollow'>Angular 6 (formerly Angular 2) - The Complete Guide($)  Maximilian Schwarzmüller </a>
+* <a href='https://scrimba.com/g/gyourfirstangularapp' target='_blank' rel='nofollow'>Build your first Angular app (Free 33-part course) - Dan Wahlin </a>
+* <a href='https://angular-2-training-book.rangle.io/' target='_blank' rel='nofollow'>Rangle's Angular 2 Training Book</a> - Online version of Rangle's excellent Angular book
 
 ## Blogs
 
 * <a href='https://alligator.io/angular/' target='_blank' rel='nofollow'>Alligator.io</a>
 * <a href='https://blog.angularindepth.com/tagged/angular' target='_blank' rel='nofollow'>Angular In Depth</a>
+* <a href='https://blog.angular.io/' target='_blank' rel='nofollow'>Angular.io Blog</a>
+* <a href='https://angular-university.io/' target='_blank' rel='nofollow'>Angular University</a>
+* <a href='https://coursetro.com/posts/code/154/Angular-6-Tutorial---Learn-Angular-6-in-this-Crash-Course' target='_blank' rel='nofollow'>Hands on introduction angular 6 concepts</a>
+* <a href='https://blog.thoughtram.io/categories/angular-2/' target='_blank' rel='nofollow'>Thoughtram</a>
+
