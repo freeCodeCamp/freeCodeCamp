@@ -3,7 +3,7 @@
         <!-- Do not translate this table -->
         <td> Read these guidelines in </td>
         <td><a href="/CONTRIBUTING.md"> English </a></td>
-        <td><a href="/docs/arabic/README.md"> عربي </a></td>
+        <td><a href="/docs/arabic/README.md"> عربى </a></td>
         <td><a href="/docs/chinese/README.md"> 中文 </a></td>
         <td><a href="/docs/russian/README.md"> русский </a></td>
         <td><a href="/docs/portuguese/README.md"> Português </a></td>
@@ -15,9 +15,9 @@
 
 # Documentation Quick Reference
 
-Hello 👋!
+Γειά σας 👋!
 
-This directory contains all of the documentation on contributing to freeCodeCamp.org
+Αυτός ο φάκελος περιέχει όλη την τεκμηρίωση σχετικά με τη συμβολή στο freeCodeCamp.org
 
 ## [If you are getting started, start by reading this first.](/CONTRIBUTING.md)
 
@@ -25,19 +25,19 @@ This directory contains all of the documentation on contributing to freeCodeCamp
 
 ## Quick references articles
 
-<a href="/docs/how-to-work-on-guide-articles.md">1. How to work on Guide articles.</a><br>
-<a href="/docs/how-to-work-on-coding-challenges.md">2. How to work on Coding Challenges.</a><br>
-<a href="/docs/how-to-setup-freecodecamp-locally.md">3. How to setup freeCodeCamp locally.</a><br>
-<a href="/docs/how-to-catch-outgoing-emails-locally.md">4. How to catch outgoing emails locally.</a>
+1. How to work on Guide articles.
+2. How to work on Coding Challenges.
+3. How to setup freeCodeCamp locally.
+4. How to catch outgoing emails locally.
 
 ## Style guides
 
-<a href="/docs/how-to-work-on-guide-articles.md">1. Style guide for creating guide articles.</a><br>
-<a href="/docs/how-to-work-on-coding-challenges.md">2. Style guide for creating coding challenges.</a>
+1. Style guide for creating guide articles.
+2. Style guide for creating coding challenges.
 
 ## Quick commands reference when working locally
 
-A quick reference to the commands that you will need when working locally.
+A quick reference to the commands that you will need, when working locally.
 
 | command | description |
 | ------- | ----------- |
@@ -49,3 +49,4 @@ A quick reference to the commands that you will need when working locally.
 | `npm run test:curriculum` | Run the curriculum test suite. |
 | `npm run test:server` | Run the server test suite. |
 | `npm run commit` | An interactive tool to help you build a good commit message. |
+
