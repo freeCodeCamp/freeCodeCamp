@@ -1,5 +1,3 @@
-import { flow } from 'lodash';
-
 import { throwers } from '../rechallenge/throwers';
 import {
   challengeFilesSelector,
@@ -9,7 +7,6 @@ import {
 } from '../redux';
 import { transformers, testJS$JSX } from '../rechallenge/transformers';
 import { cssToHtml, jsToHtml, concatHtml } from '../rechallenge/builders.js';
-import { isPromise } from './polyvinyl';
 
 const frameRunner = [
   {
@@ -30,41 +27,25 @@ function filterJSIfDisabled(state) {
   return file => !(testJS$JSX(file) && !isJSEnabled);
 }
 
-const applyFunction = fn => file => {
-  if (file.error) {
-    return file;
-  }
-  try {
-    let newFile = fn(file);
-    if (typeof newFile !== 'undefined') {
-      if (isPromise(newFile)) {
-        newFile = newFile.catch(() => {
-          // file.error = e.message;
-          return file;
-        });
+const applyFunction = fn =>
+  async function(file) {
+    try {
+      if (file.error) {
+        return file;
       }
-      return newFile;
+      const newFile = await fn.call(this, file);
+      if (typeof newFile !== 'undefined') {
+        return newFile;
+      }
+      return file;
+    } catch {
+      // file.error = e.message;
+      return file;
     }
-    return file;
-  } catch {
-    // file.error = e.message;
-    return file;
-  }
-};
+  }.bind(this);
 
-const applyFunctions = fns => file =>
-  fns.reduce((file, fn) => {
-    if (isPromise(file)) {
-      return file.then(applyFunction(fn));
-    }
-    return applyFunction(fn)(file);
-  }, file);
-const toHtml = [jsToHtml, cssToHtml];
-const pipeLine = flow(
-  applyFunctions(throwers),
-  applyFunctions(transformers),
-  applyFunctions(toHtml)
-);
+const composeFunctions = (...fns) =>
+  fns.map(applyFunction.bind(this)).reduce((f, g) => x => f(x).then(g));
 
 function buildSourceMap(files) {
   return files.reduce((sources, file) => {
@@ -77,6 +58,8 @@ export function buildDOMChallenge(state) {
   const files = challengeFilesSelector(state);
   const { required = [], template } = challengeMetaSelector(state);
   const finalRequires = [...globalRequires, ...required, ...frameRunner];
+  const toHtml = [jsToHtml, cssToHtml];
+  const pipeLine = composeFunctions(...throwers, ...transformers, ...toHtml);
   const finalFiles = Object.keys(files)
     .map(key => files[key])
     .filter(filterJSIfDisabled(state))
@@ -90,10 +73,7 @@ export function buildDOMChallenge(state) {
 
 export function buildJSChallenge(state) {
   const files = challengeFilesSelector(state);
-  const pipeLine = flow(
-    applyFunctions(throwers),
-    applyFunctions(transformers)
-  );
+  const pipeLine = composeFunctions(...throwers, ...transformers);
   const finalFiles = Object.keys(files)
     .map(key => files[key])
     .map(pipeLine);
