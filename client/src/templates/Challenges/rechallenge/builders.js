@@ -58,16 +58,11 @@ export const cssToHtml = cond([
 
 // FileStream::concatHtml(
 //   required: [ ...Object ],
-//   template: String
-// ) => Observable[{ build: String, sources: Dictionary }]
-export function concatHtml(required, template, files) {
+//   template: String,
+//   files: [ polyVinyl ]
+// ) => String
+export function concatHtml(required, template, files = []) {
   const createBody = template ? _template(template) : defaultTemplate;
-  const sourceMap = Promise.all(files).then(files =>
-    files.reduce((sources, file) => {
-      sources[file.name] = file.source || file.contents;
-      return sources;
-    }, {})
-  );
 
   const head = required
     .map(({ link, src }) => {
@@ -84,29 +79,12 @@ A required file can not have both a src and a link: src = ${src}, link = ${link}
       }
       return '';
     })
-    .reduce((head, required) => [...head, required], [])
-    .reduce((head, element, index, thisArray) => {
-      if (index + 1 === thisArray.length) {
-        return `<head>${head.concat(element)}</head>`;
-      }
-      return head.concat(element);
-    }, '');
+    .reduce((head, element) => head.concat(element), '');
 
-  const body = Promise.all(files).then(files =>
-    files
-      .reduce((body, file) => [...body, file.contents + htmlCatch], [])
-      .map(source => createBody({ source }))
+  const source = files.reduce(
+    (source, file) => source.concat(file.contents, htmlCatch),
+    ''
   );
 
-  const frameRunner =
-    '<script src="/js/frame-runner.js" type="text/javascript"></script>';
-
-  return (
-    Promise.all([head, body, frameRunner, sourceMap]).then(
-      ([head, body, frameRunner, sourceMap]) => ({
-        build: head + frameRunner + body,
-        sources: sourceMap
-      })
-    )
-  );
+  return `<head>${head}</head>${createBody({ source })}`;
 }
