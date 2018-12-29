@@ -169,3 +169,6 @@ foreach ($array as $name)
 > Hi, my name is Cecily.
 > "Hello, Cecily!"
 ```
+
+## For More Information:
+http://php.net/manual/en/control-structures.for.php
