@@ -90,7 +90,7 @@ while ($index >= 0)
 ```
 
 # Do...While loop
-Loop through a block of code one and continue loop if condition is true.
+Loop through a block of code once and continue to loop if the condition is true.
 
 ## Syntax
 ```php
