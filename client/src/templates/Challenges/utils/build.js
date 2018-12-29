@@ -11,8 +11,11 @@ import { transformers, testJS$JSX } from '../rechallenge/transformers';
 import { cssToHtml, jsToHtml, concatHtml } from '../rechallenge/builders.js';
 import { isPromise } from './polyvinyl';
 
-const frameRunner =
-  "<script src='/js/frame-runner.js' type='text/javascript'></script>";
+const frameRunner = [
+  {
+    src: '/js/frame-runner.js'
+  }
+];
 
 const globalRequires = [
   {
@@ -63,19 +66,30 @@ const pipeLine = flow(
   applyFunctions(toHtml)
 );
 
-export function buildHtmlFromFiles(state) {
-  const files = challengeFilesSelector(state);
-  const { required = [], template } = challengeMetaSelector(state);
-  const finalRequires = [...globalRequires, ...required];
-  const requiredFiles = Object.keys(files)
-    .map(key => files[key])
-    .filter(filterJSIfDisabled(state))
-    .filter(Boolean);
-  const finalFiles = requiredFiles.map(pipeLine);
-  return concatHtml(finalRequires, template, finalFiles);
+function buildSourceMap(files) {
+  return files.reduce((sources, file) => {
+    sources[file.name] = file.source || file.contents;
+    return sources;
+  }, {});
 }
 
-export function buildJSFromFiles(files) {
+export function buildDOMChallenge(state) {
+  const files = challengeFilesSelector(state);
+  const { required = [], template } = challengeMetaSelector(state);
+  const finalRequires = [...globalRequires, ...required, ...frameRunner];
+  const finalFiles = Object.keys(files)
+    .map(key => files[key])
+    .filter(filterJSIfDisabled(state))
+    .filter(Boolean)
+    .map(pipeLine);
+  return Promise.all(finalFiles).then(files => ({
+    build: concatHtml(finalRequires, template, files),
+    sources: buildSourceMap(files)
+  }));
+}
+
+export function buildJSChallenge(state) {
+  const files = challengeFilesSelector(state);
   const pipeLine = flow(
     applyFunctions(throwers),
     applyFunctions(transformers)
@@ -83,14 +97,8 @@ export function buildJSFromFiles(files) {
   const finalFiles = Object.keys(files)
     .map(key => files[key])
     .map(pipeLine);
-  const sourceMap = Promise.all(finalFiles).then(files =>
-    files.reduce((sources, file) => {
-      sources[file.name] = file.source || file.contents;
-      return sources;
-    }, {})
-  );
-  const body = Promise.all(finalFiles).then(files =>
-    files
+  return Promise.all(finalFiles).then(files => ({
+    build: files
       .reduce(
         (body, file) => [
           ...body,
@@ -98,11 +106,8 @@ export function buildJSFromFiles(files) {
         ],
         []
       )
-      .join('/n')
-  );
-  return Promise.all([body, sourceMap]).then(([body, sources]) => ({
-    solution: body,
-    code: sources && 'index' in sources ? sources['index'] : ''
+      .join('/n'),
+    sources: buildSourceMap(files)
   }));
 }
 
@@ -111,7 +116,7 @@ export function buildBackendChallenge(state) {
     solution: { value: url }
   } = backendFormValuesSelector(state);
   return {
-    build: frameRunner,
+    build: concatHtml(frameRunner, ''),
     sources: { url }
   };
 }

@@ -16,13 +16,12 @@ import {
   initLogs,
   updateLogs,
   logsToConsole,
-  updateTests,
-  challengeFilesSelector
+  updateTests
 } from './';
 
 import {
-  buildJSFromFiles,
-  buildHtmlFromFiles,
+  buildJSChallenge,
+  buildDOMChallenge,
   buildBackendChallenge
 } from '../utils/build';
 
@@ -48,17 +47,19 @@ function* ExecuteChallengeSaga() {
     yield put(initConsole('// running tests'));
     yield fork(logToConsole, consoleProxy);
 
+    const state = yield select();
+
     let testResults;
     switch (challengeType) {
       case js:
       case bonfire:
-        testResults = yield ExecuteJSChallengeSaga(consoleProxy);
+        testResults = yield ExecuteJSChallengeSaga(state, consoleProxy);
         break;
       case backend:
-        testResults = yield ExecuteBackendChallengeSaga(consoleProxy);
+        testResults = yield ExecuteBackendChallengeSaga(state, consoleProxy);
         break;
       default:
-        testResults = yield ExecuteDOMChallengeSaga(consoleProxy);
+        testResults = yield ExecuteDOMChallengeSaga(state, consoleProxy);
     }
 
     yield put(updateTests(testResults));
@@ -77,9 +78,9 @@ function* logToConsole(channel) {
   });
 }
 
-function* ExecuteJSChallengeSaga(proxyLogger) {
-  const files = yield select(challengeFilesSelector);
-  const { code, solution } = yield call(buildJSFromFiles, files);
+function* ExecuteJSChallengeSaga(state, proxyLogger) {
+  const { build, sources } = yield call(buildJSChallenge, state);
+  const code = sources && 'index' in sources ? sources['index'] : '';
 
   const log = args => proxyLogger.put(args);
   testWorker.on('LOG', log);
@@ -87,7 +88,10 @@ function* ExecuteJSChallengeSaga(proxyLogger) {
   try {
     return yield call(executeTests, (testString, testTimeout) =>
       testWorker
-        .execute({ script: solution + '\n' + testString, code }, testTimeout)
+        .execute(
+          { script: build + '\n' + testString, code, sources },
+          testTimeout
+        )
         .then(result => {
           testWorker.killWorker();
           return result;
@@ -105,9 +109,8 @@ function createTestFrame(state, ctx, proxyLogger) {
   });
 }
 
-function* ExecuteDOMChallengeSaga(proxyLogger) {
-  const state = yield select();
-  const ctx = yield call(buildHtmlFromFiles, state);
+function* ExecuteDOMChallengeSaga(state, proxyLogger) {
+  const ctx = yield call(buildDOMChallenge, state);
 
   yield call(createTestFrame, state, ctx, proxyLogger);
   // wait for a code execution on a "ready" event in jQuery challenges
@@ -124,8 +127,7 @@ function* ExecuteDOMChallengeSaga(proxyLogger) {
 }
 
 // TODO: use a web worker
-function* ExecuteBackendChallengeSaga(proxyLogger) {
-  const state = yield select();
+function* ExecuteBackendChallengeSaga(state, proxyLogger) {
   const ctx = yield call(buildBackendChallenge, state);
 
   yield call(createTestFrame, state, ctx, proxyLogger);
@@ -179,7 +181,7 @@ function* updateMainSaga() {
     }
     const state = yield select();
     const frameMain = yield call(createMainFramer, document, state);
-    const ctx = yield call(buildHtmlFromFiles, state);
+    const ctx = yield call(buildDOMChallenge, state);
     yield call(frameMain, ctx);
   } catch (err) {
     console.error(err);

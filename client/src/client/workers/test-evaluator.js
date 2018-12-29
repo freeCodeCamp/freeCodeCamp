@@ -1,5 +1,6 @@
 import chai from 'chai';
 import '@babel/polyfill';
+import __toString from 'lodash/toString';
 
 const oldLog = self.console.log.bind(self.console);
 self.console.log = function proxyConsole(...args) {
@@ -8,17 +9,17 @@ self.console.log = function proxyConsole(...args) {
 };
 
 onmessage = async e => {
-  const { script: __test, code } = e.data;
   /* eslint-disable no-unused-vars */
+  const { code = '' } = e.data;
   const assert = chai.assert;
   // Fake Deep Equal dependency
   const DeepEqual = (a, b) => JSON.stringify(a) === JSON.stringify(b);
   /* eslint-enable no-unused-vars */
   try {
     // eslint-disable-next-line no-eval
-    const testResult = eval(__test);
+    const testResult = eval(e.data.script);
     if (typeof testResult === 'function') {
-      await testResult(() => code);
+      await testResult(fileName => __toString(e.data.sources[fileName]));
     }
     self.postMessage({ pass: true });
   } catch (err) {
