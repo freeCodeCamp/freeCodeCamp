@@ -1,6 +1,6 @@
 ---
 title: Neovim
-localeTitle: 擅自
+localeTitle: Neovim
 ---
 # Neovim
 

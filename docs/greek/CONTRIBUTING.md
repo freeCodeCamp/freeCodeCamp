@@ -3,7 +3,7 @@
         <!-- Do not translate this table -->
         <td> Read these guidelines in </td>
         <td><a href="/CONTRIBUTING.md"> English </a></td>
-        <td><a href="/docs/arabic/CONTRIBUTING.md"> عربي </a></td>
+        <td><a href="/docs/arabic/CONTRIBUTING.md"> عربى </a></td>
         <td><a href="/docs/chinese/CONTRIBUTING.md"> 中文 </a></td>
         <td><a href="/docs/portuguese/CONTRIBUTING.md"> Português </a></td>
         <td><a href="/docs/russian/CONTRIBUTING.md"> русский </a></td>
@@ -12,15 +12,15 @@
     </tr>
 </table>
 
-# Contribution Guidelines
+# Οδηγίες για συνεισφορά
 
-Hello 👋!
+Γειά χαρά 👋!
 
-freeCodeCamp.org is possible, thanks to thousands of kind volunteers like you. We are grateful for your contributions and we are excited to welcome you aboard.
+Το freeCodeCamp.org υπάρχει χάρη σε χιλιάδες εθελοντές σαν και εσένα. Είμαστε ευγνώμονες για τις συνεισφορές σου και είμαστε ενθουσιασμένοι που σας καλωσορίζουμε μαζί μας.
 
-We strictly enforce our ["Code of Conduct"](https://www.freecodecamp.org/code-of-conduct). Take a moment to read it. It's only 196 words long.
+Επιβάλουμε αυστηρά τον ["Κώδικα δεοντολογίας"](https://www.freecodecamp.org/code-of-conduct). Διαβάστε τον εύκολα σε ένα λεπτό. Είναι μόνο 196 λέξεις.
 
-Happy contributing 🎉!
+Καλή συνεισφορά 🎉!
 
 ## Here are some fun ways that you can help
 
@@ -28,9 +28,9 @@ You can choose to contribute to any area that interests you:
 
 1. [Contribute to this open source codebase](#contribute-to-this-open-source-codebase). Help to edit [guide articles](https://guide.freecodecamp.org/), [coding challenges](https://learn.freecodecamp.org/), or fix bugs on the learning platform.
 
-2. Help campers on our [public forum](https://www.freecodecamp.org/forum/). [Answer their coding questions](https://www.freecodecamp.org/forum/?max_posts=1) or [give them feedback on their coding projects](https://www.freecodecamp.org/forum/c/project-feedback?max_posts=1).
+2. Help campers on our [public forum](https://www.freecodecamp.org/forum/). [Answer their coding questions](https://www.freecodecamp.org/forum/?max_posts=1) or [give them feedback on their coding projects](https://www.freecodecamp.org/forum/c/project-feedback?max_posts=1)
 
-3. Help us add subtitles or closed captions to our [YouTube channel videos](https://www.youtube.com/channel/UC8butISFwT-Wl7EV0hUK0BQ/videos).
+3. Help us add subtitles to our [YouTube channel videos](https://www.youtube.com/channel/UC8butISFwT-Wl7EV0hUK0BQ/videos).
 
 ## Contribute to this open source codebase
 
@@ -48,15 +48,15 @@ You can help us to:
 
 ### Research, Write and Update our guide articles
 
-**What are guide articles?**
+**What are Guide articles?**
 
-Guide articles help you get a quick understanding of a technology concept. These are short, plain English explanations that you can read before going on to more in-depth resources.
+Guide articles help you to get a quick understanding of a technology concept. These are short, plain-English explanations that you can read before going on to more in-depth resources.
 
 You can find an [example article about HTML Anchor Elements here](https://github.com/freeCodeCamp/freeCodeCamp/blob/master/guide/english/html/elements/a-tag/index.md).
 
 **What can I write an article about?**
 
-We welcome your help writing these articles. You don't have to be an expert in a topic to write about it. This entire Guide is open source, so even if you make a mistake, another contributor will eventually correct it.
+We welcome your help in writing these articles. You don't have to be an expert in a topic to write about it—this entire Guide is open source, so even if you make a mistake, another contributor will eventually correct it.
 
 To help, find a `stub article` on our [Guide website](https://guide.freecodecamp.org), write the article, then open a pull request to replace the stub with your article. A [pull request](https://help.github.com/articles/about-pull-requests/) is how you'll suggest changes. It lets others know about, review, and eventually adopt your changes.
 
@@ -66,19 +66,19 @@ If you would like to help improve guide articles, here's [how to work on guide a
 
 ### Create, Update and Fix Bugs in our coding challenges
 
-All our coding challenges are curated by the community, bringing in expert knowledge from volunteers like you.
+All our Coding challenges are curated by the community, bringing in expert knowledge from volunteers like you.
 
-You can help expand them and make their wording clearer. You can update the user stories to explain the concept better and even remove redundant ones. You can also improve the challenge tests to make them more accurately test people's code.
+You can help expand them and make their wording more clear. You can update the user stories to explain the concept better and even remove redundant ones. You can also improve the challenge tests to make them more accurately test people's code.
 
 If you're interested in improving these coding challenges, here's [how to work on coding challenges](/docs/how-to-work-on-coding-challenges.md).
 
 ### Translate guide articles and coding challenges
 
-You can help us translate our Guide articles and Coding challenges for a language that you speak. Currently, we have translated versions in:
+You can help us to translate our Guide articles and Coding challenges into a language that you speak. Currently we have translated versions in:
 
 - [Chinese (中文)](https://github.com/freeCodeCamp/freeCodeCamp/tree/master/curriculum/challenges/chinese)
 - [Russian (русский)](https://github.com/freeCodeCamp/freeCodeCamp/tree/master/curriculum/challenges/russian)
-- [Arabic (عربي)](https://github.com/freeCodeCamp/freeCodeCamp/tree/master/curriculum/challenges/arabic)
+- [Arabic (عربى)](https://github.com/freeCodeCamp/freeCodeCamp/tree/master/curriculum/challenges/arabic)
 - [Spanish (Español)](https://github.com/freeCodeCamp/freeCodeCamp/tree/master/curriculum/challenges/spanish)
 - [Portuguese (Português)](https://github.com/freeCodeCamp/freeCodeCamp/tree/master/curriculum/challenges/portuguese)
 
@@ -86,19 +86,19 @@ We would love your help in improving the quality of these translations. Millions
 
 ### Help us fix bugs in freeCodeCamp.org's learning platform
 
-Our learning platform runs on a modern JavaScript stack. It has various components, tools and libraries, including but not limited to, Node.js, MongoDB, LoopBack, OAuth 2.0, React, Gatsby, Webpack, and more.
+Our learning platform runs on a modern JavaScript stack. It has various components, tools and libraries including but not limited to Node.js, MongoDB, LoopBack, OAuth 2.0, React, Gatsby, Webpack, and more.
 
 Broadly,
 
 - We have a Node.js based API server.
 - A set of React based client applications.
-- A script that we use to evaluate our front-end projects.
+- A script that we use to evaluate our Frontend projects.
 
-Contributing to this requires some understanding of APIs, ES6 Syntax, and a lot of curiosity.
+Contributing to this requires some understanding of APIs, ES6 Syntax and a lot of curiosity.
 
-Essentially, we expect basic familiarity with some of the aforementioned technologies, tools, and libraries. With that being said, you are not required to be an expert on them in order to contribute.
+Essentially we expect basic familiarity with some of the aforementioned technologies, tools and libraries. That being said, you are not required to be an expert on them in order to contribute.
 
-Feel free to ask us questions on the related issue threads, and we will be glad to clarify. When in doubt, you can reach Mrugesh Mohapatra [`@raisedadead`](https://github.com/raisedadead) or Stuart Taylor [`@bouncey`](https://github.com/bouncey) from our platform dev team to help you with this.
+Feel free to ask us questions on the related issue threads and we will be glad to answer them. When in doubt, you can reach Mrugesh Mohapatra [`@raisedadead`](https://github.com/raisedadead) or Stuart Taylor [`@bouncey`](https://github.com/bouncey) from our platform dev team to help you with this.
 
 If you want to help us improve our codebase, here's [how to setup freeCodeCamp locally](/docs/how-to-setup-freecodecamp-locally.md).
 
@@ -131,9 +131,9 @@ Read our [How to Contribute to Open Source Guide](https://github.com/freeCodeCam
 
 **What do these different labels that are tagged on issues mean?**
 
-Our community moderators [triage](https://en.wikipedia.org/wiki/Software_bug#Bug_management) issues and pull requests based on their priority, severity, and other factors. You can [find a complete glossary of their meanings here](https://github.com/freecodecamp/freecodecamp/labels).
+Our community moderators [triage](https://en.wikipedia.org/wiki/Software_bug#Bug_management) issues and pull requests based on their priority, severity and other factors. You can [find a complete glossary of their meanings here](https://github.com/freecodecamp/freecodecamp/labels).
 
-You should go through [**`help wanted`**](https://github.com/freeCodeCamp/freeCodeCamp/issues?q=is%3Aopen+is%3Aissue+label%3A%22help+wanted%22) or [**`first timers welcome`**](https://github.com/freeCodeCamp/freeCodeCamp/issues?q=is%3Aopen+is%3Aissue+label%3A%22first+timers+welcome%22) issues for a quick overview of what is available for you to work on. These are up for grabs, and you do not need to seek permission before working on them.
+You should go through **`Help Wanted`** or **`first timers welcome`** issues for a quick overview of what is available for you to work on. These are up for grabs and you do not need to seek permission before working on them.
 
 If these issues lack clarity on what needs to be done, feel free to ask questions in the comments.
 
