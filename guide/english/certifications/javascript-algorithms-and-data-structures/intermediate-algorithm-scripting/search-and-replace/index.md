@@ -104,6 +104,31 @@ You will create a program that takes a sentence, then search for a word in it an
 
 *   <a>JS Regex Resources</a>
 
+## ![:sunflower:](https://forum.freecodecamp.com/images/emoji/emoji_one/sunflower.png?v=3 ":sunflower:") Intermediate Code Solution:
+
+    function myReplace(str, before, after) {
+        return /[^A-Z]/.test(before[0]) ? str.replace(before, after) : str.replace(before, after.replace(after[0], after[0].toUpperCase()));
+    }
+
+    // test here
+    myReplace("A quick brown fox jumped over the lazy dog", "jumped", "leaped");
+
+![:rocket:](https://forum.freecodecamp.com/images/emoji/emoji_one/rocket.png?v=3 ":rocket:") <a href='https://repl.it/repls/WateryPowerlessOffices' target='_blank' rel='nofollow'>Run Code</a>
+
+### Code Explanation:
+
+*   Using a ternary operator and the regular expression `/[^A-Z]/`, we test if **before** does not start with a lowercase.
+*   If **before** does not start with uppercase, replace **before** with **after**.
+*   If **before** starts with uppercase, capitalize the first letter of **after** and replace **before** with the new capitalized **after**
+
+
+#### Relevant Links
+*   <a href='https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Conditional_Operator' target='_blank' rel='nofollow'>conditional (ternary) operator </a>
+*   <a href='http://forum.freecodecamp.com/t/javascript-string-prototype-touppercase/15950' target='_blank' rel='nofollow'>JS String Prototype ToUpperCase</a>
+*   <a href='https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/replace' target='_blank' rel='nofollow'>JS String Prototype replace</a>
+*   <a href='https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/RegExp/test' target='_blank' rel='nofollow'>RegEXP Prototype test</a>
+
+
 ## ![:rotating_light:](https://forum.freecodecamp.com/images/emoji/emoji_one/rotating_light.png?v=3 ":rotating_light:") Advanced Code Solution:
 
 
