@@ -76,10 +76,7 @@ HTML中的表格由<table>标签定义。
    </html> 
 ```
 结果
-Item
-
-
-Amount
+Item Amount
 
 Apple 10
 
