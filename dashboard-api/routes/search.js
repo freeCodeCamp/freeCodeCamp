@@ -1,44 +1,43 @@
 const router = require('express').Router();
+const PR = require('../models/pr.js');
+const { requestPrs } = require('../utils/requestPRs');
 
-const container = require ('../data');
-
-router.get('/', (request, response) => {
-  const { indices, prs } = container.data;
+router.get('/', (request, response, next) => {
   const value  = request.query.value;
 
   if (value) {
     const filesFound = {};
-
-    prs.forEach(({ number, filenames, username, title }) => {
-      filenames.forEach((filename) => {
-        if (filename.toLowerCase().includes(value.toLowerCase())) {
-          const prObj = {
-            number,
-            fileCount: prs[indices[number]].filenames.length,
-            username,
-            title
-          };
-
-          if (filesFound.hasOwnProperty(filename)) {
-            filesFound[filename].push(prObj);
-          }
-          else {
-            filesFound[filename] = [prObj]
-          }
-        }
-      });
-    });
-
-    let results = Object.keys(filesFound)
-      .map((filename) => ({ filename, prs: filesFound[filename] }))
-      .sort((a, b) => a.filename === b.filename ? 0 : a.filename < b.filename ? -1 : 1);
-
-    if (!results.length) {
-      response.json({ ok: true, message: 'No matching results.', results: [] });
-      return;
-    }
-
-    response.json({ ok: true, results });
+    const regex = new RegExp(`/${value.trim().toLowerCase()}/`);
+    PR.find({}, (err, prs) => {
+      if (err) return next(err);
+      if (prs.length === 0) {
+        requestPrs((error, prs) => {
+          if (error) return next(error);
+          PR.aggregate([
+            {$unwind: '$filenames'},
+            {$match:{filenames: {$regex: regex}}},
+            {$group: {_id: null, filenames: {$push:'$filenames'}  }}
+          ], (err, results) => {
+            if (err) return next(err)
+            console.log(results);
+            return response.json({ ok: true, results });
+          })
+        })
+      } else {
+        // not sure if this works yet
+        PR.aggregate([
+          {$unwind: '$filenames'},
+          {$match:{filenames: {$regex: regex}}},
+          {$group: {_id: null, filenames: {$push:'$filenames'}  }}
+        ], (err, results) => {
+          if (err) return next(err)
+          console.log(results);
+          return response.json({ ok: true, results });
+        })
+      }
+    })
+  } else {
+    return response.json({ ok: true, message: 'No matching results.', results: [] });
   }
 });
 

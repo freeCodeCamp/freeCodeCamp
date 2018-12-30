@@ -1,4 +1,4 @@
-let data = require('./data.json');
+let data = require('./sample_data.json');
 
 const Container = {
   data,

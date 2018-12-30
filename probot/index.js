@@ -1,3 +1,4 @@
+#! /usr/bin/env node
 const debug = require('debug')('probot:presolver')
 const Presolver = require('./lib/presolver')
 

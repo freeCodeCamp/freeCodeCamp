@@ -6,7 +6,6 @@ import FilenameResults from './FilenameResults';
 import SearchOption from './SearchOption';
 
 import { ENDPOINT_PR, ENDPOINT_SEARCH } from '../constants';
-
 class Search extends Component {
   state = {
     searchValue: '',
@@ -56,6 +55,7 @@ class Search extends Component {
 
   searchPRs = (value) => {
     const { selectedOption } = this.state;
+
     const fetchUrl = selectedOption === 'pr' ?
       `${ENDPOINT_PR}/${value}` :
       `${ENDPOINT_SEARCH}/?value=${value}`;

@@ -2,16 +2,39 @@
   "name": "@freecodecamp/github-tools",
   "description": "Tools to help maintain freecodecamp.org's Open Source Codebase on GitHub",
   "private": true,
+  "bin": {
+    "presolver": "probot/index.js"
+  },
   "scripts": {
-    "bootstrap": "lerna bootstrap",
+    "bootstrap": "lerna bootstrap && npm run build",
+    "build": "lerna run build",
     "postinstall": "npm run bootstrap",
     "format": "prettier --write es5 './**/*.{js,json}' && npm run lint",
-    "lint": "eslint ./**/*.js --fix"
+    "lint": "eslint ./**/*.js --fix",
+    "start": "lerna run start",
+    "dev": "nodemon"
   },
   "devDependencies": {
     "eslint": "^5.9.0",
     "eslint-config-freecodecamp": "^1.1.1",
     "lerna": "^3.5.1",
-    "prettier": "^1.15.2"
+    "prettier": "^1.15.2",
+    "presolver": "file:probot"
+  },
+  "nodemonConfig": {
+    "exec": "npm start",
+    "watch": [
+      ".env",
+      "."
+    ]
+  },
+  "probot": {
+    "apps": [
+      "presolver"
+    ]
+  },
+  "dependencies": {
+    "ajv": "^6.6.1",
+    "ajv-keywords": "^3.2.0"
   }
 }

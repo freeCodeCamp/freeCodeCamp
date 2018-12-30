@@ -64,7 +64,7 @@ class Presolver {
   async _createLabel (labelObj) {
     const { owner, repo } = this.config
     const github = this.github
-    //console.log(this.github.issues.getLabel({ owner, repo, name: labelObj.name }))
+    // console.log(this.github.issues.getLabel({ owner, repo, name: labelObj.name }))
     return this.github.issues
       .getLabel({ owner, repo, name: labelObj.name })
       .catch(() => {

@@ -1,39 +1,44 @@
 const router = require('express').Router();
+const PR = require('../models/pr.js');
+const { requestPrs } = require('../utils/requestPRs');
 
-const container = require('../data');
-
-router.get('/:number', (request, response) => {
-  const { indices, prs } = container.data;
+router.get('/:number', (request, response, next) => {
   const { number: refNumber } = request.params;
-  const index = indices[refNumber];
+  PR.find({}, (err, prs) => {
+    if (err) {
+      // TODO: better err handler
+      console.log(err)
+    }
+    const results = [];
+    
+    if (prs.length === 0) {
+      requestPrs((error, result) => {
+        if (error) return next(error)
+        PR.findOne({number: parseInt(refNumber,10)}, (err, pr) => {
+          if (err) return next(err)
+          if (!pr) return response.json({ ok: true, message: 'Not a valid PR #.', results: [] });
+          PR.find({filenames: {$in: pr.filenames}}, (err, prs) => {
+            if (err) {
+              return next(err)
+            }
+            return response.json({ ok: true, results: prs });
+          })
+        })
+      })
+    } else {
+      PR.findOne({number: parseInt(refNumber,10)}, (err, pr) => {
+        if (err) return next(err)
+        if (!pr) return response.json({ ok: true, message: 'Not a valid PR #.', results: [] });
 
-  if (!index && index !== 0) {
-    response.json({ ok: true, message: 'Unable to find that open PR #.', results: [] });
-    return;
-  }
-
-  const pr = prs[index];
-  const results = [];
-  const { filenames: refFilenames } = pr;
-
-  prs.forEach(({ number, filenames, username, title }) => {
-    if (number != refNumber) {
-      const matchedFilenames = filenames.filter((filename) => {
-        return refFilenames.includes(filename);
-      });
-
-      if (matchedFilenames.length) {
-        results.push({ number, filenames: matchedFilenames, username, title });
-      }
+        PR.find({filenames: {$in: pr.filenames}}, (err, prs) => {
+          if (err) {
+            return next(err)
+          }
+          return response.json({ ok: true, results: prs });
+        })
+      })
     }
   });
-
-  if (!results.length) {
-    response.json({ ok: true, message: `No other open PRs with at least one filename which PR #${refNumber} has.`, results: [] });
-    return;
-  }
-
-  response.json({ ok: true, results });
 });
 
 module.exports = router;
