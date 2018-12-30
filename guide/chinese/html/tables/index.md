@@ -81,17 +81,12 @@ Item
 
 Amount
 
-Apple
+Apple 10
 
-10
+Peach 15
 
-Peach
+Watermelon 3
 
-15
-
-Watermelon
-
-3
 
 #### 更多信息：
 
