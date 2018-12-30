@@ -14,28 +14,18 @@ Your task is to create an interpreter which emulates such a machine.
 The machine's memory consists of an array of signed integers. Any reasonable word size is fine, but the memory must be
 able to hold negative as well as positive numbers.
 Execution begins with the instruction pointer aimed at the first word, which is address 0. It proceeds as follows:
-<ul>
+<ol>
   <li>Let A, B, and C be the value stored in the three consecutive words in memory starting at the instruction pointer.</li>
-</ul>
-<ul>
   <li>Advance the instruction pointer 3 words to point at the address after the one containing C.</li>
-</ul>
-<ul>
   <li>If A is -1, then a character is read from standard input and its code point stored in the address given by B. C
     is unused.</li>
-</ul>
-<ul>
   <li>If B is -1, then the number contained in the address given by A is interpreted as a code point and the
     corresponding character output. C is again unused.</li>
-</ul>
-<ul>
   <li>Otherwise, both A and B are treated as the addresses of memory locations. The number contained in the address
     given by A is subtracted from the number at the address given by B (and the result stored back in address B). If
     the result is zero or negative, the value C becomes the new instruction pointer.</li>
-</ul>
-<ul>
   <li>If the instruction pointer becomes negative, execution halts.</li>
-</ul>
+</ol>
 Other negative addresses besides -1 may be treated as equivalent to -1, or generate an error, as you see fit.
 Your solution should accept a program to execute on the machine, separately from the input fed to the program itself.
 This program should be in raw subleq "machine code" - whitespace-separated decimal numbers, with no symbolic names or
