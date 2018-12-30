@@ -18,12 +18,12 @@ The `float` property can have one of the following values:
 `inherit` - The element inherits the float value of its parent
 In its simplest use, the `float` property can be used to wrap text around images.
 
-#### Float in Picture: 
+#### Float in Picture:
 ![float image for print layout](https://github.com/jamal-pb95/guides/blob/master/assets/css3-float-print-layout.png "css-tricks-float-img")
 
 ```
 img {
-    float: right;
+  float: right;
 }
 ```
 This example specifies that an image should float to the right in a page:
@@ -31,14 +31,14 @@ This example specifies that an image should float to the right in a page:
 ![Float image for web layout](https://github.com/jamal-pb95/guides/blob/master/assets/css3-float-web-text-wrap.png "float img web")
 ```
 img {
-    float: left;
+  float: left;
 }
 ```
 This example specifies that an image should float to the left in a page:
 
 ```
 img {
-    float: none;
+  float: none;
 }
 ```
 
@@ -64,11 +64,22 @@ When clearing floats, you should match the `clear` to the `float`. If an element
 Source: CSS-TRICS
 ```
 div {
-    clear: left;
+  clear: left;
 }
 ```
 ![clear footer image](https://github.com/jamal-pb95/guides/blob/master/assets/clearedfooter.png "clear footer image")
 Source: CSS-TRICS
+
+### Clearfix
+If you float two child elements within a parent container, the parent requires a clearfix to wrap around both elements. Without a clearfix, the parent is unable to clear its child elements.
+```
+div:after {
+    clear: both;
+    display: table;
+    content: "";
+}
+```
+Source: CSS TRICKS (https://css-tricks.com/snippets/css/clear-fix/)
 
 ### Additional Resources:
 - MDN CSS: [Float](https://developer.mozilla.org/en-US/docs/Web/CSS/float) & [Clear](https://developer.mozilla.org/en-US/docs/Web/CSS/clear)

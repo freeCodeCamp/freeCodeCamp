@@ -3,16 +3,16 @@ id: 587d7daa367417b2b2512b6b
 title: Split a String into an Array Using the split Method
 challengeType: 1
 videoUrl: ''
-localeTitle: Разбить строку на массив Используя метод split
+localeTitle: Разбить строку на массив используя метод split
 ---
 
-## Description
-<section id="description"> Метод <code>split</code> разбивает строку на массив строк. Он принимает аргумент для разделителя, который может быть символом, используемым для разбиения строки или регулярного выражения. Например, если разделитель является пространством, вы получаете массив слов, и если разделитель является пустой строкой, вы получаете массив каждого символа в строке. Вот два примера, которые разделяют одну строку пробелами, а затем цифрами, используя регулярное выражение: <blockquote> var str = &quot;Hello World&quot;; <br> var bySpace = str.split (&quot;&quot;); <br> // Устанавливает bySpace в [&quot;Hello&quot;, &quot;World&quot;] <br><br> var otherString = &quot;How9are7you2today&quot;; <br> var byDigits = otherString.split (/ \ d /); <br> // Устанавливает byDigits в [&quot;How&quot;, &quot;are&quot;, &quot;you&quot;, &quot;today&quot;] </blockquote> Поскольку строки неизменяемы, метод <code>split</code> облегчает работу с ними. </section>
+## Описание
+<section id="description"> Метод <code>split</code> разбивает строку на массив строк. В качестве аргумента она принимает разделитель, который может быть символом или регулярным выражением и используется для разбиения строки. Например, если разделитель является пробелом, вы получаете массив слов, и если разделитель является пустой строкой, вы получаете массив из символов строки. Вот два примера, которые разбивают одну строку пробелами, а затем цифрами, используя регулярное выражение: <blockquote> var str = &quot;Hello World&quot;; <br> var bySpace = str.split (&quot;&quot;); <br> // Устанавливает bySpace в [&quot;Hello&quot;, &quot;World&quot;] <br><br> var otherString = &quot;How9are7you2today&quot;; <br> var byDigits = otherString.split (/ \ d /); <br> // Устанавливает byDigits в [&quot;How&quot;, &quot;are&quot;, &quot;you&quot;, &quot;today&quot;] </blockquote> Поскольку строки неизменяемы, метод <code>split</code> облегчает работу с ними. </section>
 
-## Instructions
+## Указания
 <section id="instructions"> Используйте метод <code>split</code> внутри функции <code>splitify</code> чтобы разбить <code>str</code> на массив слов. Функция должна возвращать массив. Обратите внимание, что слова не всегда разделяются пробелами, и массив не должен содержать знаков препинания. </section>
 
-## Tests
+## Тесты
 <section id='tests'>
 
 ```yml
@@ -30,7 +30,7 @@ tests:
 
 </section>
 
-## Challenge Seed
+## Исходные данные
 <section id='challengeSeed'>
 
 <div id='js-seed'>
@@ -52,7 +52,7 @@ splitify("Hello World,I-am code");
 
 </section>
 
-## Solution
+## Решение
 <section id='solution'>
 
 ```js
