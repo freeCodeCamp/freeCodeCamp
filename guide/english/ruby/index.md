@@ -4,7 +4,13 @@ title: Ruby
 
 ## What is Ruby?
 
-Ruby was created by Yukihiro "Matz" Matsumoto and is an <a href='https://github.com/ruby/ruby' target='_blank' rel='nofollow'>open source</a>, dynamic and interpreted scripting language for quick and easy object-oriented programming. Which means:
+Ruby was created by Yukihiro "Matz" Matsumoto and is an <a href='https://github.com/ruby/ruby' target='_blank' rel='nofollow'>open source</a>, dynamic and interpreted scripting language for quick and easy object-oriented programming.
+
+When someone say ruby is interpreted scripting language, it means ruby program is executed line by line.Which
+means even if there is some failure occure say at line number 11, the first 10 lines will still be executed.
+
+So ruby is dynamic programming language.What does it mean by that? It means operation can be done at runtime.For example, if you declare a variable to store some number. Now at run time you use the same variable to store a string value like your name. Now for any non-dynamic or static programming language this will generate error.But since ruby 
+dynamic, it will make the change to store string value to variable at run time.
 
 It's also known to have one of the <a href="https://www.ruby-lang.org/en/community/">largest and friendliest communities</a> among programming languages. 
 
