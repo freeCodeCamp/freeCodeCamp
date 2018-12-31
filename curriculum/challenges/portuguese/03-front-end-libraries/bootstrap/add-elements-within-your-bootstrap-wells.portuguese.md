@@ -6,19 +6,19 @@ videoUrl: ''
 localeTitle: Adicionar elementos dentro dos seus poços de bootstrap
 ---
 
-## Description
-<section id="description"> Agora temos vários elementos <code>div</code> em cada coluna da nossa linha. Isso é tão profundo quanto precisaremos ir. Agora podemos adicionar nossos elementos de <code>button</code> . Aninhe três elementos de <code>button</code> dentro de cada um dos elementos do seu <code>well</code> <code>div</code> . </section>
+## Descrição
+<section id="description"> Agora temos vários elementos <code>div</code> em cada coluna da nossa linha. Isso é tão profundo quanto precisaremos ir. Agora podemos adicionar nossos elementos de <code>button</code> . Alinhe três elementos de <code>button</code> dentro de cada um dos elementos do seu <code>well</code> <code>div</code> . </section>
 
-## Instructions
+## Instruções
 <section id="instructions">
 </section>
 
-## Tests
+## Testes
 <section id='tests'>
 
 ```yml
 tests:
-  - text: Aninhe três elementos de <code>button</code> dentro de cada um dos seus elementos <code>div</code> com classe <code>well</code> .
+  - text: Alinhe três elementos de <code>button</code> dentro de cada um dos seus elementos <code>div</code> com classe <code>well</code> .
     testString: 'assert($("div.well:eq(0)").children("button").length === 3 && $("div.well:eq(1)").children("button").length === 3, "Nest three <code>button</code> elements within each of your <code>div</code> elements with class <code>well</code>.");'
   - text: Você deve ter um total de 6 elementos de <code>button</code> .
     testString: 'assert($("button") && $("button").length > 5, "You should have a total of 6 <code>button</code> elements.");'
@@ -63,7 +63,7 @@ tests:
 
 </section>
 
-## Solution
+## Solução
 <section id='solution'>
 
 ```js

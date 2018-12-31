@@ -6,14 +6,14 @@ videoUrl: ''
 localeTitle: Remover um elemento usando jQuery
 ---
 
-## Description
-<section id="description"> Agora vamos remover um elemento HTML da sua página usando jQuery. jQuery tem uma função chamada <code>.remove()</code> que remove um elemento HTML inteiramente Remove o elemento <code>target4</code> da página usando a função <code>.remove()</code> . </section>
+## Descrição
+<section id="description"> Agora vamos remover um elemento HTML da sua página usando jQuery. jQuery tem uma função chamada <code>.remove()</code> que remove um elemento HTML inteiramente. Remova o elemento <code>target4</code> da página usando a função <code>.remove()</code>.</section>
 
-## Instructions
+## Instruções
 <section id="instructions">
 </section>
 
-## Tests
+## Testes
 <section id='tests'>
 
 ```yml
@@ -27,7 +27,7 @@ tests:
 
 </section>
 
-## Challenge Seed
+## Desafio
 <section id='challengeSeed'>
 
 <div id='html-seed'>
@@ -41,7 +41,7 @@ tests:
   });
 </script>
 
-<!-- Only change code above this line. -->
+<!-- Apenas altere o código acima dessa linha. -->
 
 <div class="container-fluid">
   <h3 class="text-primary text-center">jQuery Playground</h3>
@@ -73,7 +73,7 @@ tests:
 
 </section>
 
-## Solution
+## Solução
 <section id='solution'>
 
 ```js

@@ -13,7 +13,7 @@ Once the object is frozen, you can no longer add, update, or delete properties f
 
 ## Instructions
 <section id='instructions'>
-In this challenge you are going to use <code>Object.freeze</code> to prevent mathematical constants from changing. You need to freeze the <code>MATH_CONSTANTS</code> object so that no one is able alter the value of <code>PI</code>, add, or delete properties .
+In this challenge you are going to use <code>Object.freeze</code> to prevent mathematical constants from changing. You need to freeze the <code>MATH_CONSTANTS</code> object so that no one is able to alter the value of <code>PI</code>, add, or delete properties.
 </section>
 
 ## Tests
@@ -22,13 +22,13 @@ In this challenge you are going to use <code>Object.freeze</code> to prevent mat
 ```yml
 tests:
   - text: Do not replace <code>const</code> keyword.
-    testString: 'getUserInput => assert(getUserInput("index").match(/const/g), "Do not replace <code>const</code> keyword.");'
+    testString: getUserInput => assert(getUserInput('index').match(/const/g), 'Do not replace <code>const</code> keyword.');
   - text: <code>MATH_CONSTANTS</code> should be a constant variable (by using <code>const</code>).
-    testString: 'getUserInput => assert(getUserInput("index").match(/const\s+MATH_CONSTANTS/g), "<code>MATH_CONSTANTS</code> should be a constant variable (by using <code>const</code>).");'
+    testString: getUserInput => assert(getUserInput('index').match(/const\s+MATH_CONSTANTS/g), '<code>MATH_CONSTANTS</code> should be a constant variable (by using <code>const</code>).');
   - text: Do not change original <code>MATH_CONSTANTS</code>.
-    testString: 'getUserInput => assert(getUserInput("index").match(/const\s+MATH_CONSTANTS\s+=\s+{\s+PI:\s+3.14\s+};/g), "Do not change original <code>MATH_CONSTANTS</code>.");'
+    testString: getUserInput => assert(getUserInput('index').match(/const\s+MATH_CONSTANTS\s+=\s+{\s+PI:\s+3.14\s+};/g), 'Do not change original <code>MATH_CONSTANTS</code>.');
   - text: <code>PI</code> equals <code>3.14</code>.
-    testString: 'assert(PI === 3.14, "<code>PI</code> equals <code>3.14</code>.");'
+    testString: assert(PI === 3.14, '<code>PI</code> equals <code>3.14</code>.');
 
 ```
 
@@ -41,7 +41,7 @@ tests:
 
 ```js
 function freezeObj() {
-  "use strict";
+  'use strict';
   const MATH_CONSTANTS = {
     PI: 3.14
   };
@@ -69,6 +69,22 @@ const PI = freezeObj();
 <section id='solution'>
 
 ```js
-// solution required
+function freezeObj() {
+  'use strict';
+  const MATH_CONSTANTS = {
+    PI: 3.14
+  };
+  // change code below this line
+  Object.freeze(MATH_CONSTANTS);
+
+  // change code above this line
+  try {
+    MATH_CONSTANTS.PI = 99;
+  } catch( ex ) {
+    console.log(ex);
+  }
+  return MATH_CONSTANTS.PI;
+}
+const PI = freezeObj();
 ```
 </section>
