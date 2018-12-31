@@ -176,5 +176,6 @@ table, th, td {
 ```
 
 #### More Information:
-* [MDN - table](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/table)
-* [YouTube - HTML Tables Tutorial](https://www.youtube.com/watch?v=BczLWImAmBk)
+- [MDN - table](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/table)
+- [YouTube - HTML Tables Tutorial](https://www.youtube.com/watch?v=BczLWImAmBk)
+- [W3C HTML Tables](https://www.w3schools.com/html/html_tables.asp)
