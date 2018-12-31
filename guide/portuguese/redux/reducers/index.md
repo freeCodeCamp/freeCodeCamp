@@ -4,7 +4,8 @@ localeTitle: Redutores
 ---
 ### Quais são os redutores no Redux?
 
-Redutores são as funções puras que executam uma ação e um estado anterior e retornam um novo estado. Dada a mesma entrada, o redutor deve sempre retornar a mesma saída. 1
+Redutores são funções javascript puras que recebem como parâmetros uma ação e um estado anterior e efetuam algum tipo de transformação sobre os dados e com isto retornam um novo estado.
+Com base num determinado input, o redutor terá sempre que retornar o mesmo output.<sup>1</sup>
 
 ### Fontes
 

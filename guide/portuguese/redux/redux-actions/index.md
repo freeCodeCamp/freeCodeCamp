@@ -2,15 +2,23 @@
 title: Redux Actions
 localeTitle: Ações do Redux
 ---
-## Ações do Redux
+## Ações em Redux
 
-A ação do Redux é um objeto simples que descreve o tipo de evento que aconteceu em seu aplicativo. Eles podem até conter dados que precisam ser enviados do aplicativo para a loja Redux. A ação pode conter qualquer coisa, mas deve ter um type propriedade que descreve o evento ocorrendo. Uma boa prática é usar constantes ao descrever a ação.
+A ação em Redux é um objeto simples que descreve um qualquer tipo de evento da aplicação.
+Poderão conter dados necessários á loja/store Redux.
+Mas também poderá não conter nada.
 
-Por exemplo
+Mas deverá sempre possuir uma propriedade que descreve qual é o tipo de evento.
+
+De acordo com as boas práticas em Redux, deverá usar-se uma constante para descrever a ação.
+
+Exemplo de uma ação simples, sem dados adicionais.
 
 ```javascript
 const ADD_ITEM = 'ADD_ITEM' 
 ```
+
+Exemplo de uma ação com um parâmetro extra de dados, que poderiam ser necessários á loja Redux.
 
 ```javascript
 { 
@@ -18,11 +26,13 @@ const ADD_ITEM = 'ADD_ITEM'
  text: 'This is the first item' 
  } 
 ```
+Através da invocação da função  `store.dispatch()`, podemos enviar ações para a loja/store.
 
-Podemos enviar essas ações para a loja usando `javascript store.dispatch()` Um aplicativo pode ter diferentes tipos de eventos acontecendo ao mesmo tempo e essas ações ajudam a descrever esses eventos. Sem essas ações, não há como alterar o estado do aplicativo.
+A uma qualquer altura na aplicação, poderão estar a ocorrer vários eventos ao mesmo tempo e de forma que se saiba o que está a acontecer, as ações ajudam a descrever os eventos que estão a ocorrer.
+Mais ainda, sem ações não existe forma de se alterar o estado da aplicação.
 
-Você pode tentar o projeto [redux-actions](https://github.com/redux-utilities/redux-actions) , que reduz muito o clichê, tornando suas ações mais rápidas.
+Uma biblioteca que agiliza a implementação de ações em Redux, é a seguinte [redux-actions](https://github.com/redux-utilities/redux-actions)
 
 #### Mais Informações:
 
-[Documentos oficiais do Redux de ações](https://redux.js.org/basics/actions) página do projeto github do [redux-actions](https://github.com/redux-utilities/redux-actions)
+[Documentação oficial de ações em Redux](https://redux.js.org/basics/actions) 

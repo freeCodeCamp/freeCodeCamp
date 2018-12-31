@@ -4,9 +4,9 @@ localeTitle: Thunk Redux
 ---
 ## Thunk Redux
 
-O Redux Thunk é um middleware que permite retornar funções, ao invés de apenas ações, dentro do Redux 1 . Isso permite ações atrasadas, incluindo o trabalho com promessas.
+O Redux Thunk é um middleware que permite retornar funções, ao invés de ações, dentro do Redux <sup>1</sup> . Isso permite ações atrasadas, incluindo o uso de [promessas](https://developer.mozilla.org/pt-BR/docs/Web/JavaScript/Reference/Global_Objects/Promise).
 
-O motivo pelo qual usamos este middleware é que nem todas as ações que executamos serão sincronizadas e algumas não são síncronas, como o uso de axios para enviar uma solicitação get. Isso levará um pouco de tempo e o simples redux não leva em conta esse comportamento. Então, o Redux-thunk vem para o resgate, permitindo-nos despachar ações de forma assíncrona, para que possamos permitir que essas promessas sejam resolvidas.
+O motivo pelo qual este middleware é usado, consiste no facto que nem todas as ações que executamos serão síncronas, tal como acontece quando é usado [axios](https://github.com/axios/axios) para enviar um pedido HTTP get. Isso irá levar algum tempo e o redux nativamente não tem forma de lidar com este comportamento. Logo, é aí que entra o Redux Thunk, permitindo que as ações possam ser despoletadas de forma assíncrona e possamos lidar com o resultado sob a forma de promessas.
 
 Exemplo 1:
 
@@ -32,15 +32,15 @@ const INCREMENT_COUNTER = 'INCREMENT_COUNTER';
 Exemplo 2:
 
 ```javascript
-const GET_CURRENT_USER = 'GET_CURRENT_USER'; 
+ const GET_CURRENT_USER = 'GET_CURRENT_USER'; 
  const GET_CURRENT_USER_SUCCESS = 'GET_CURRENT_USER_SUCCESS'; 
  const GET_CURRENT_USER_FAILURE = 'GET_CURRENT_USER_FAILURE'; 
  
  const getUser = () => { 
-  return (dispatch) => {     //nameless functions 
-    // Initial action dispatched 
+  return (dispatch) => {     //funções anónimas
+    //Ação inicial despoletada 
     dispatch({ type: GET_CURRENT_USER }); 
-    // Return promise with success and failure actions 
+    //Retorna uma promessa/promise com sucesso ou falha 
     return axios.get('/api/auth/user').then( 
       user => dispatch({ type: GET_CURRENT_USER_SUCCESS, user }), 
       err => dispatch({ type: GET_CURRENT_USER_FAILURE, err }) 
@@ -51,7 +51,7 @@ const GET_CURRENT_USER = 'GET_CURRENT_USER';
 
 ### Instalação e Configuração
 
-O Redux Thunk pode ser instalado usando `npm install redux-thunk --save` ou `yarn add redux-thunk` com a linha de comando. Por ser uma ferramenta do Redux, você também precisará configurar o Redux. Uma vez instalado, é ativado usando `applyMiddleware()` :
+O Redux Thunk pode ser instalado usando `npm install redux-thunk --save` ou `yarn add redux-thunk` na linha de comando. Por ser uma ferramenta do Redux, irá ser necessário configurar o Redux. Uma vez instalado, é ativado através da função `applyMiddleware()`  com o argumento, neste caso thunk, ou seja o import que foi definido:
 
 ```javascript
 import { createStore, applyMiddleware } from 'redux'; 
@@ -71,4 +71,4 @@ import { createStore, applyMiddleware } from 'redux';
 
 ### Fontes
 
-1.  [Exemplo de Contador de Incrementos citado na Documentação do Redux Thunk, 10/02/2018](#https://github.com/reduxjs/redux-thunk)
+1.  [Exemplo de Contador citado na Documentação do Redux Thunk, 10/02/2018](#https://github.com/reduxjs/redux-thunk)

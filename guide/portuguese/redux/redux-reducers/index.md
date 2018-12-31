@@ -4,9 +4,18 @@ localeTitle: Redux Redutores
 ---
 ## Redux Redutores
 
-Reduxores Redux permitem que você faça alterações em seu estado em sua aplicação. Ações no redux apenas informam ao aplicativo o que basicamente aconteceu. Quer tenha sido um evento de clique que ocorreu ou alguma rolagem do mouse, ele apenas informará que isso aconteceu. Agora, como você muda o estado do seu aplicativo que mora dentro da loja, você faz isso usando um redutor.
+Redutores Redux permitem que se façam alterações no estado da aplicação. 
+Ações em Redux apenas informam a aplicação sobre o que aconteceu.
 
-Agora um redutor no redux precisa ser uma função pura. Uma função pura é um tipo de função que não tem efeitos colaterais adicionais. Você passa alguns argumentos e retorna o resultado esperado. Por exemplo:
+Quer tenha sido um evento de clique, ou movimentação do rato, apenas informará que isso aconteceu. 
+
+Agora, como se altera o estado do sua aplicação que vive dentro da loja? Isto através de um redutor.
+
+Um redutor em Redux irá ser sempre uma função pura. 
+
+Uma função pura é um tipo de função que não tem efeitos colaterais adicionais. São fornecidos argumentos e esta retorna o resultado esperado. 
+
+Por exemplo:
 
 ```javascript
 function add(a,b) { 
@@ -16,9 +25,14 @@ function add(a,b) {
  const sum = add(5,4); 
 ```
 
-A função acima é pura, porque não importa o que aconteça, ela retornará 9. Uma função que tem ajax chama dentro dela ou faz algo como acessar um banco de dados não é uma função pura. Mesmo se nós mutarmos significando mudança, um valor variável pode ser considerado não uma função pura.
+A função acima é pura, independentemente do que aconteça, irá retornar 9. 
 
-Agora, para fazer alterações no estado, você usa um redutor. Aqui está um exemplo de código de um redutor:
+Uma função que contém pedidos ajax ou acede a uma base de dados não é função pura. 
+O caso de uma mutação e com isto a alteração de um valor de uma variável não irá ser considerado uma função pura.
+
+Para  alterar o estado, usa-se então um redutor. 
+
+Aqui está um exemplo de código de um redutor:
 
 ```javascript
  function todoReducer(state= [],action) { 
@@ -31,7 +45,10 @@ Agora, para fazer alterações no estado, você usa um redutor. Aqui está um ex
  } 
 ```
 
-O que este todoReducer está fazendo é que ele pega o estado atual e a ação que foi disparada e então retorna um novo estado. Aqui usamos a sintaxe do parâmetro padrão es6 para atribuir um valor padrão ao array state. O objeto de ação para o redutor acima pode ser semelhante ao seguinte:
+O que o `todoReducer` está a fazer, não é nada mais nada menos que, dado o presente estado da aplicação e uma ação despoletada este irá retornar um novo estado.
+Aqui usou-se a sintaxe es6 para parâmetros padrão, isto para atribuir ao array estado, um valor considerado por defeito.
+O objeto ação para o redutor, poderia ser por exemplo ser algo semelhante 
+ao seguinte:
 
 ```javascript
 { 
@@ -39,11 +56,11 @@ O que este todoReducer está fazendo é que ele pega o estado atual e a ação q
  data: {name: 'Learn Redux',completed:false} 
  } 
 ```
+A ação aqui tem uma propriedade do tipo 'ADD_TODO' e um objecto `data`.
+Quando a ação é despoletada, irá ser recebida pelo redutor e em seguida, com base na cláusula `switch` irá retornar um novo array com os novos dados assim como os dados já existentes.
 
-Aqui a ação tem uma propriedade type de 'ADD\_TODO' com um objeto de dados. Agora, quando esta ação é acionada, ela é recebida pelo redutor e, em seguida, com base na instrução switch, ela retornará um novo array com os dados existentes ao lado dos novos dados.
-
-Então, resumir os redutores não são nada além de funções puras que retornam um novo estado para sua aplicação.
+Resumindo os redutores não são nada mais nada menos que funções puras que retornam estados novos da aplicação.
 
 #### Mais Informações:
 
-[Redux-Reducers Official Docs](https://redux.js.org/basics/reducers)
+[Documentação oficial Redux-Reducers](https://redux.js.org/basics/reducers)
