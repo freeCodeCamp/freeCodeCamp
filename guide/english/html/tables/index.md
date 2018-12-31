@@ -168,6 +168,13 @@ Result:
   </tr>
 </table>
 
+The table can also be applied a border with the css as follows
+```html
+table, th, td {
+    border: 1px solid black;
+}
+```
+
 #### More Information:
 * [MDN - table](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/table)
 * [YouTube - HTML Tables Tutorial](https://www.youtube.com/watch?v=BczLWImAmBk)
