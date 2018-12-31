@@ -45,26 +45,26 @@ Using a switch statement over multiple if/else statements can contribute to more
 int main() {
 
     char operator;
-    double firstNumber,secondNumber;
+    double a, b;
 
     printf("Enter an operator (+, -, *, /): ");
     scanf("%c", &operator);
 
     printf("Enter two operands: ");
-    scanf("%lf %lf",&firstNumber, &secondNumber);
+    scanf("%lf %lf",&a, &b);
 
     switch (operator) {
         case '+':
-            printf("%.1lf + %.1lf = %.1lf",firstNumber, secondNumber, firstNumber+secondNumber);
+            printf("%.1lf + %.1lf = %.1lf", a, b, a+b);
             break;
         case '-':
-            printf("%.1lf - %.1lf = %.1lf",firstNumber, secondNumber, firstNumber-secondNumber);
+            printf("%.1lf - %.1lf = %.1lf",a, b, a-b);
             break;
         case '*':
-            printf("%.1lf * %.1lf = %.1lf",firstNumber, secondNumber, firstNumber*secondNumber);
+            printf("%.1lf * %.1lf = %.1lf",a, b, a*b);
             break;
         case '/':
-            printf("%.1lf / %.1lf = %.1lf",firstNumber, secondNumber, firstNumber/firstNumber);
+            printf("%.1lf / %.1lf = %.1lf",a, b, a/b);
             break;
         // Operator is doesn't match any case constant (+, -, *, /)
         default:
