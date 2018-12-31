@@ -22,6 +22,6 @@ For more information, visit the <a href='https://github.com/tensorflow' target='
 ## Lab
 <a href="https://github.com/Microsoft/computerscience/blob/master/Labs/AI%20and%20Machine%20Learning/TensorFlow/TensorFlow.md">TensorFlow</a>
 
-## More Information
+#### More Information
 
-* <a href='https://en.wikipedia.org/wiki/TensorFlow' target='_blank' rel='nofollow'>TensorFlow (Credit: Wikipedia Page)</a>
+* [Wikipedia - TensorFlow](https://en.wikipedia.org/wiki/TensorFlow)
