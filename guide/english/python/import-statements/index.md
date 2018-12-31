@@ -12,29 +12,29 @@ Modules come into the picture when you want to reuse a group of functions in dif
 Example: You can read about the methods/functions of all the standard libraries in the official Python Docs in detail.
 
 ```python
-    import time
-    for i in range(100):
-        time.sleep(1)   # Waits for 1 second and then executes the next command
-        print(str(i) + ' seconds have passed')  # prints the number of seconds passed after the program was started
+import time
+for i in range(100):
+    time.sleep(1)   # Waits for 1 second and then executes the next command
+    print(str(i) + ' seconds have passed')  # prints the number of seconds passed after the program was started
 ```
 
 ![:rocket:](//forum.freecodecamp.com/images/emoji/emoji_one/rocket.png?v=2 ":rocket:") <a href='https://repl.it/CS6C' target='_blank' rel='nofollow'>Run Code</a>
 
 ```python
-    # To calculate the execution time of a part of program
-    import time
-    start = time.time() # Returns the number of seconds that have elapsed since the epoch
-    # code here
-    end = time.time()
-    print('Execution time:' , end-start)
+# To calculate the execution time of a part of program
+import time
+start = time.time() # Returns the number of seconds that have elapsed since the epoch
+# code here
+end = time.time()
+print('Execution time:' , end-start)
 ```
 
 ![:rocket:](//forum.freecodecamp.com/images/emoji/emoji_one/rocket.png?v=2 ":rocket:") <a href='https://repl.it/CS6C/1' target='_blank' rel='nofollow'>Run Code</a>
 
 ```python
-    # Using math Module
-    import math
-    print(math.sqrt(100))   # prints 10
+# Using math Module
+import math
+print(math.sqrt(100))   # prints 10
 ```
 
 ![:rocket:](//forum.freecodecamp.com/images/emoji/emoji_one/rocket.png?v=2 ":rocket:") <a href='https://repl.it/CS6C/2' target='_blank' rel='nofollow'>Run Code</a>
@@ -44,10 +44,10 @@ Example: You can read about the methods/functions of all the standard libraries 
 Sometimes third party modules do not come bundled with Python, but need to be installed using package managers like [pip](https://bootstrap.pypa.io/get-pip.py), [easy install](https://bootstrap.pypa.io/ez_setup.py), and [pipenv](https://github.com/pypa/pipenv).
 
 ```python
-    # To make http requests
-    import requests
-    rq = requests.get(target_url)
-    print(rq.status_code)
+# To make http requests
+import requests
+rq = requests.get(target_url)
+print(rq.status_code)
 ```
 
 Find out more about python-requests module <a href='http://docs.python-requests.org/en/master/' target='_blank' rel='nofollow'>here</a>
@@ -57,8 +57,8 @@ Find out more about python-requests module <a href='http://docs.python-requests.
 Files/Modules in the same project can be imported just by their name. `import` also supports relative references to files/modules as shown below:
 
 ```python
-    # To import a file within a project from "adjacent module"
-    import '../adjacent_module/file_to_import'
+# To import a file within a project from "adjacent module"
+import '../adjacent_module/file_to_import'
 ```
 
 However, as a good practice, it is recommended not to use relative paths in imports.
@@ -68,29 +68,29 @@ However, as a good practice, it is recommended not to use relative paths in impo
 We want to make a program that has various functions regarding prime numbers. So lets start. We will define all the functions in `prime_functions.py`:
 
 ```python
-    # prime_functions.py
-    from math import ceil, sqrt
-    def isPrime(a):
-        if a == 2:
-            return True
-        elif a % 2 == 0:
-            return False
-        else:
-            for i in range(3,ceil(sqrt(a)) + 1,2):
-                if a % i == 0:
-                    return False
-            return True
+# prime_functions.py
+from math import ceil, sqrt
+def isPrime(a):
+    if a == 2:
+        return True
+    elif a % 2 == 0:
+        return False
+    else:
+        for i in range(3,ceil(sqrt(a)) + 1,2):
+            if a % i == 0:
+                return False
+        return True
 
-    def print_n_primes(a):
-        i = 0
-        m = 2
-        while True:
-            if isPrime(m) ==True:
-                print(m)
-                i += 1
-            m += 1
-            if i == a:
-                break
+def print_n_primes(a):
+    i = 0
+    m = 2
+    while True:
+        if isPrime(m) ==True:
+            print(m)
+            i += 1
+        m += 1
+        if i == a:
+            break
 ```
 
 Now we want to use the functions that we just created in `prime_functions.py`, so we create a new file called `playground.py` to use those functions.
@@ -98,9 +98,9 @@ Now we want to use the functions that we just created in `prime_functions.py`, s
 > _Please note that this example is far too simple to need two separate files -- it is just to demonstrate. But when there are large, complex programs, splitting the code into different files is really useful._
 
 ```python
-    # playground.py
-    import prime_functions
-    print(prime_functions.isPrime(29)) # returns True
+# playground.py
+import prime_functions
+print(prime_functions.isPrime(29)) # returns True
 ```
 
 ## Sorting Imports
