@@ -20,7 +20,7 @@ For example, if <code>setA = ['a','b']</code> and <code>setB = ['a','b','c','d']
 
 ```yml
 tests:
-  - text: Your <code>Set</code> class should have a <code>union</code> method.
+  - text: Your <code>Set</code> class should have a <code>subset</code> method.
     testString: assert((function(){var test = new Set(); return (typeof test.subset === 'function')})(), 'Your <code>Set</code> class should have a <code>union</code> method.');
   - text: The first Set() was contained in the second Set
     testString: assert((function(){var setA = new Set(); var setB = new Set(); setA.add('a'); setB.add('b'); setB.add('c'); setB.add('a'); setB.add('d'); var subsetSetAB = setA.subset(setB);return (subsetSetAB === true)})(), 'The first Set() was contained in the second Set');
