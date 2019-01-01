@@ -2,6 +2,7 @@
 id: cf1111c1c11feddfaeb1bdef
 title: Iterate with JavaScript While Loops
 challengeType: 1
+videoUrl: 'https://scrimba.com/c/c8QbnCM'
 ---
 
 ## Description

@@ -2,6 +2,7 @@
 id: cf1111c1c12feddfaeb3bdef
 title: Use Conditional Logic with If Statements
 challengeType: 1
+videoUrl: 'https://scrimba.com/c/cy87mf3'
 ---
 
 ## Description
