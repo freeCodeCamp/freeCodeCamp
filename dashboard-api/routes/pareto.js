@@ -18,7 +18,7 @@ router.get('/', (reqeust, response) => {
   })()
   .then((prs) => {
     const reportObj = prs.reduce((obj, pr) => {
-      const { number, filenames, username, title } = pr;
+      const { _id: number, filenames, username, title } = pr;
       filenames.forEach((filename) => {
         if (obj[filename]) {
           const { count, prs } = obj[filename];

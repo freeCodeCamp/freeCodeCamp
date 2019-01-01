@@ -28,7 +28,7 @@ router.get('/:number', (request, response) => {
     const { filenames: refFilenames } = pr;
 
     prs.forEach(({ _id: number, filenames, username, title }) => {
-      if (number !== refNumber) {
+      if (number !== +refNumber) {
         const matchedFilenames = filenames.filter((filename) => {
           return refFilenames.includes(filename);
         });
