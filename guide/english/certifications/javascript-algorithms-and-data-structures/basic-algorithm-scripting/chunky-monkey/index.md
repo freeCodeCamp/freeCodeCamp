@@ -186,7 +186,7 @@ Finally, we need a method to do the actual splitting and we can use `Array.slice
 ### Code Explanation:
 
 * Array smaller than size is returned nested.
-* For any array larger than size, it's splited in two. First segment is nested and concatnated with second second segment which makes a recursive call.
+* For any array larger than size, it is split in two. First segment is nested and concatenated with second segment which makes a recursive call.
 
 #### Relevant Links
 

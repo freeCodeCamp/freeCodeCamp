@@ -94,7 +94,7 @@ Esto desplazará `a` a la izquierda en `b` bits y establecerá ese resultado igu
 Este ejemplo desplazará `a` a la derecha en `b` bits y establecerá ese resultado igual a `c` .
 
 ```C
-c = a >> c; 
+c = a >> b; 
 ```
 
 ## Operadores de asignación de compuestos
