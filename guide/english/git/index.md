@@ -113,6 +113,10 @@ Once Git is installed and configured on your computer, you need to initialize it
 
 It's important that the Git directory is installed in the project root folder. Git can track files in subfolders, but it won't track files located in a parent folder relative to the Git directory.
 
+### Clone a Git Project <a name="clone-a-git-project"></a>
+You can also clone a project from github by using the command `git clone` followed by the link. An example of a link is `https://github.com/example/example.git` 
+
+
 ### Get Help in Git <a name="get-help-in-git"></a>
 If you forget how any command works in Git, you can access Git help from the command line several ways:
 ```shell
