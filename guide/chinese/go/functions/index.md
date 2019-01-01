@@ -1,8 +1,8 @@
 ---
 title: Go Functions
-localeTitle: 去功能
+localeTitle: Go函数
 ---
-## 去功能
+## Go函数
 
 函数接受任何类型的零个或多个参数，对它们执行某些逻辑并可能返回一个或多个值。 Golang的函数语法是：
 
@@ -12,7 +12,7 @@ func sum(parameter1 int64, parameter2 int64) int64 {
  } 
 ```
 
-这里，函数的名称是`add` 。它采用`int64`类型的参数， `parameter1`和`parameter2` 并返回另一个int64，这两个参数的总和。
+这里，函数的名称是`sum` 。它采用`int64`类型的参数， `parameter1`和`parameter2` 并返回另一个int64，这两个参数的总和。
 
 ### 返回
 
@@ -82,7 +82,7 @@ helloWorld, bestLanguage := getHelloWorldAndBestLanguage()
  // bestLanguage == "Golang" 
 ```
 
-### 裸体回报
+### 命名返回值
 
 您可以命名返回类型，以便不需要将变量传递给return语句：
 
