@@ -1,44 +1,59 @@
 const router = require('express').Router();
-const PR = require('../models/pr.js');
-const { requestPrs } = require('../utils/requestPRs');
+const { PR } = require('../models');
 
-router.get('/', (request, response, next) => {
-  const value  = request.query.value;
+router.get('/', (request, response) => {
+  (async() => {
+    const prs = await PR.find({}).then(data => data);
+    return prs;
+  })()
+  .then((prs) => {
+    const indices = prs.reduce((obj, { _id }, index) => {
+      obj[_id] = index;
+      return obj;
+    }, {});
+    const value = request.query.value;
 
-  if (value) {
-    const filesFound = {};
-    const regex = new RegExp(`/${value.trim().toLowerCase()}/`);
-    PR.find({}, (err, prs) => {
-      if (err) return next(err);
-      if (prs.length === 0) {
-        requestPrs((error, prs) => {
-          if (error) return next(error);
-          PR.aggregate([
-            {$unwind: '$filenames'},
-            {$match:{filenames: {$regex: regex}}},
-            {$group: {_id: null, filenames: {$push:'$filenames'}  }}
-          ], (err, results) => {
-            if (err) return next(err)
-            console.log(results);
-            return response.json({ ok: true, results });
-          })
-        })
-      } else {
-        // not sure if this works yet
-        PR.aggregate([
-          {$unwind: '$filenames'},
-          {$match:{filenames: {$regex: regex}}},
-          {$group: {_id: null, filenames: {$push:'$filenames'}  }}
-        ], (err, results) => {
-          if (err) return next(err)
-          console.log(results);
-          return response.json({ ok: true, results });
-        })
+    if (value) {
+      const filesFound = {};
+      prs.forEach(({ _id: number, filenames, username, title }) => {
+        filenames.forEach((filename) => {
+          if (filename.toLowerCase().includes(value.toLowerCase())) {
+            const prObj = {
+              number,
+              fileCount: prs[indices[number]].filenames.length,
+              username,
+              title
+            };
+
+            if (filesFound.hasOwnProperty(filename)) {
+              filesFound[filename].push(prObj);
+            } else {
+              filesFound[filename] = [prObj];
+            }
+          }
+        });
+      });
+
+      let results = Object.keys(filesFound)
+        .map((filename) => ({ filename, prs: filesFound[filename] }))
+        .sort((a, b) => {
+          if (a.filename === b.filename) {
+            return 0;
+          } else {
+            return a.filename < b.filename ? -1 : 1;
+          }
+        });
+      if (!results.length) {
+        response.json({
+          ok: true,
+          message: 'No matching results.',
+          results: []
+        });
+        return;
       }
-    })
-  } else {
-    return response.json({ ok: true, message: 'No matching results.', results: [] });
-  }
+      response.json({ ok: true, results });
+    }
+  });
 });
 
 module.exports = router;
