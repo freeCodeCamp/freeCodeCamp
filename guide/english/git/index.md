@@ -62,9 +62,40 @@ git config --global user.email "myemail@example.com"
 ```
 
 #### Change Your Text Editor
-Git automatically uses your default text editor, but you can change this. Here's an example to use the Atom editor instead (the `--wait` option tells the shell to wait for the text editor so you can do your work in it before the program moves on):
+Git automatically uses your default text editor (usually Vi or Vim) when you are prompted to edit a message (e.g. when amending a commit). You can change this by setting the `core.editor` in your Git Config.  Below are examples for some popular editors:
+
+##### Edit using Atom
+
 ```shell
 git config --global core.editor "atom --wait"
+```
+The `--wait` option tells the shell to wait for the text editor to close before returning, therefore you can make your changes in the editor before git applies your message.
+
+##### Edit using VS Code
+
+```shell
+git config --global core.editor "code --new-window --wait"
+```
+The `--new-window` option tells VS Code to open the message in a new window that you can safely close when done.
+
+##### Edit using Sublime Text
+
+```shell
+git config --global core.editor "subl -n -w"
+```
+
+##### Edit using Notepad++ (Windows)
+
+```shell
+git config core.editor "'C:\Program Files (x86)\Notepad++\notepad++.exe' -multiInst -notabbar -nosession -noPlugin"
+```
+Omit ` (x86)` from the path if the 64-bit version of notepad++ is installed.
+
+##### Launching your editor
+After setting your `core.editor` you may wish to test to make sure it is configured correctly.  Running the below command will launch the current config in your editor of choice:
+
+```shell
+git config --edit
 ```
 
 #### Add Color to Git Output
