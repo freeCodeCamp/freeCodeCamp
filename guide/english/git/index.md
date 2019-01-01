@@ -33,6 +33,8 @@ The **Git directory** (located in `YOUR-PROJECT-PATH/.git/`) is where Git stores
 
 The **working directory** is where a user makes local changes to a project. The working directory pulls the project's files from the Git directory's object database and places them on the user's local machine.
 
+Note: **Directory** is also known as **Repository** or short form repo. The repo on the user's local machine is called "Local repo" while the repo on git server is called "Remote repo".
+
 The **staging area** is a file (also called the "index", "stage", or "cache") that stores information about what will go into your next commit. A commit is when you tell Git to save these staged changes. Git takes a snapshot of the files as they are and permanently stores that snapshot in the Git directory.
 
 With three sections, there are three main states that a file can be in at any given time: committed, modified, or staged. You *modify* a file any time you make changes to it in your working directory. Next, it's *staged* when you move it to the staging area. Finally, it's *committed* after a commit.
