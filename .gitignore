@@ -104,5 +104,4 @@ sweeper/work-logs/*
 # local input files
 sweeper/input-files/*
 
-dashboard-api/data.json
 dashboard-api/public

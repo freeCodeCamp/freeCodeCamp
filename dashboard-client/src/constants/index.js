@@ -2,9 +2,6 @@
 
 const API_HOST = '/'
 
-/*const API_HOST = !!process.env.REACT_APP_DEV ?
-  'http://localhost:3001/' :
-  '/';*/
 const ENDPOINT_INFO = API_HOST + 'info';
 const ENDPOINT_PARETO = API_HOST + 'pareto';
 const ENDPOINT_PR = API_HOST + 'pr';
