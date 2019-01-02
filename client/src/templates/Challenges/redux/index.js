@@ -72,7 +72,6 @@ export const types = createTypes(
     'executeChallenge',
     'resetChallenge',
     'submitChallenge',
-    'submitComplete',
 
     'moveToTab',
 
@@ -150,7 +149,6 @@ export const checkChallenge = createAction(types.checkChallenge);
 export const executeChallenge = createAction(types.executeChallenge);
 export const resetChallenge = createAction(types.resetChallenge);
 export const submitChallenge = createAction(types.submitChallenge);
-export const submitComplete = createAction(types.submitComplete);
 
 export const moveToTab = createAction(types.moveToTab);
 
