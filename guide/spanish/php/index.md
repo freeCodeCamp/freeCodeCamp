@@ -16,7 +16,7 @@ Originalmente PHP significaba 'Página de inicio personal', ya que Rasmus Lerdor
 
 ## ¿Para qué se usa PHP?
 
-A partir de octubre de 2017, PHP se utiliza en el [82% de los sitios web cuyo lenguaje del lado del servidor es conocido](https://w3techs.com/technologies/overview/programming_language/all) . Es Normalmente utilizado en sitios web para generar contenido de páginas web de forma dinámica. Los casos de uso incluyen:
+A partir de octubre de 2017, PHP se utiliza en el [82% de los sitios web cuyo lenguaje del lado del servidor es conocido](https://w3techs.com/technologies/overview/programming_language/all) . Normalmente se utiliza en sitios web para generar contenido de páginas web de forma dinámica. Los casos de uso incluyen:
 
 *   Sitios web y aplicaciones web (scripts del lado del servidor)
 *   Guión de línea de comandos
