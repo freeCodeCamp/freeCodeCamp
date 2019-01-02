@@ -53,15 +53,15 @@ db.then(async() => {
       await rateLimiter(1400);
     }
   }
-  for (let i = 0; i < oldPRs.length; i++) {
-    const { _id: number } = oldPRs[i];
+  for (let j = 0; j < oldPRs.length; j++) {
+    const { _id: number } = oldPRs[j];
     if (!newIndices.hasOwnProperty(number)) {
       // delete pr because it is no longer on Github
       await PR.deleteOne({ _id: number });
       console.log('deleted PR#' + number);
     }
   }
-})()
+})
 .then(async() => {
   // update info collection
   const prs = await PR.find({});

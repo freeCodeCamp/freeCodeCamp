@@ -2,8 +2,7 @@ const router = require('express').Router();
 const { INFO } = require('../models');
 
 router.get('/', async(request, response) => {
-  const info = await INFO.find({});
-  const { lastUpdate, numPRs, prRange } = info[0];
+  const [ { lastUpdate, numPRs, prRange } ] = await INFO.find({});
   response.json({ ok: true, lastUpdate, numPRs, prRange });
 });
 
