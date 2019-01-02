@@ -113,7 +113,7 @@ int main()
 	return 0;
 }
  ```
-Another type of for loop is the [Range-based for loop](https://en.cppreference.com/w/cpp/language/range-for). With the enhanced for loop, we can call a group of elements in a different way. The following example iterates through the array, a, and prints out each number. 
+Another type of for loop is the [Range-based for loop](https://en.cppreference.com/w/cpp/language/range-for). 
 
  ``` c++
  #include<iostream>
