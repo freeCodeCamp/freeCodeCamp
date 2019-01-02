@@ -93,11 +93,12 @@ IBM Watson Speech-to-Text uses machine learning to accurately predict speech in 
 
 Apple's iOS 12 update introduced [Siri](https://en.wikipedia.org/wiki/Siri) Shortcuts, which supports the use of third-party applications through Apple's digital voice assistant. Siri Shortcuts allows developers to add shortcuts and personalized phrases to Siri through their applications by, for example, letting the user record a voice phrase for a particular action and adding that phrase to Siri.
 
-### More Information
-[Web Speech API](https://developer.mozilla.org/en-US/docs/Web/API/Web_Speech_API)
-[Alexa API](https://developer.amazon.com/docs/alexa-voice-service/api-overview.html)
-[IBM Watson API](https://www.ibm.com/watson/services/speech-to-text/)
-[Sirikit](https://developer.apple.com/documentation/sirikit)
+#### More Information
+
+- [Web Speech API](https://developer.mozilla.org/en-US/docs/Web/API/Web_Speech_API)
+- [Alexa API](https://developer.amazon.com/docs/alexa-voice-service/api-overview.html)
+- [IBM Watson API](https://www.ibm.com/watson/services/speech-to-text/)
+- [Sirikit](https://developer.apple.com/documentation/sirikit)
 
 
 
