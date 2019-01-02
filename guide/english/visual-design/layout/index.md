@@ -18,3 +18,17 @@ Examples of these conventions as it relates to layout are listed below:
 * Ensuring elements are neat and organized (i.e two buttons aligning to be visually acceptable)
 * Simplicity of the layout such that it is easy to follow and flows nicely
 * Use of visual hierarchy to help keep the layout visually flowing (Size, color, positioning, etc)
+
+## Works everytime layout (A.K.A. W.E.T Layout)
+
+The works everytime layout is based on the west's way of reading: Left to Right, Top to Bottom. Normally, you would only use this for a one page layout, so the margins that you would want to set on your document would be .5 inches all around the document, using whatever page layout software you like. The top of the page usually uses an eye-catching image, and below the image should be your headline. These will determine if your audience will read the rest of your article or whatever else you've designed. 
+
+- "Keep your headline and lead together. The lead is the first paragraph of your text. Also, don’t indent the lead under the headline."
+- "Keep your copy (the text) in columns to help manage readability and clutter. You want your columns to be between 2 and 10 inches long. No more, no less. When it comes to width, keep your columns between 6 to 12 words.
+- "Along those lines, keep your paragraphs short and to the point, and use fonts that are easy to read. That means no script!"
+
+Once the body copy has been taken care of, you can then add the tags. Tags are an advertising term that refers to the information usually found at the bottom right hand part of the page.
+
+[TheKatHunts. “Good Design: Works-Every-Time Layout”](https://writingwithmagneto.wordpress.com/2014/03/14/good-design-works-every-time-layout/)
+
+[A video on the works everytime layout](https://whitespacedesignbook.com/portfolio/works-every-time-layout/)
