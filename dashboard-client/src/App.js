@@ -52,8 +52,10 @@ class App extends Component {
      fetch(ENDPOINT_INFO)
      .then((response) => response.json())
      .then(({ ok, numPRs, prRange, lastUpdate }) => {
+       console.log(numPRs, prRange, lastUpdate);
        if (ok) {
-       const footerInfo = { numPRs, prRange, lastUpdate };
+         console.log(numPRs, prRange, lastUpdate);
+         const footerInfo = { numPRs, prRange, lastUpdate };
          this.setState((prevState) => ({ footerInfo }));
        }
      })
@@ -76,13 +78,7 @@ class App extends Component {
      const { handleViewChange, state: { view, footerInfo } } = this;
      return (
        <PageContainer>
-         <Title>
-           <img
-            style={imgStyle}
-            src="https://discourse-user-assets.s3.dualstack.us-east-1.amazonaws.com/original/3X/e/d/ed1c70bda321aaeee9e6c20ab650ce8bc34899fa.svg"
-            alt="Free Code Camp Logo"
-           /> Moderator Tools
-         </Title>
+         <Title><img style={imgStyle} src="https://discourse-user-assets.s3.dualstack.us-east-1.amazonaws.com/original/3X/e/d/ed1c70bda321aaeee9e6c20ab650ce8bc34899fa.svg" alt="Free Code Camp Logo" /> Moderator Tools</Title>
          <Tabs view={view} onViewChange={handleViewChange}/>
          <Container>
            { view === 'search' && <Search /> }
