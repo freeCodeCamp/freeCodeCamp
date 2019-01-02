@@ -16,7 +16,7 @@ import presetReact from '@babel/preset-react';
 import protect from 'loop-protect';
 
 import * as vinyl from '../utils/polyvinyl.js';
-import WorkerExecutor from '../utils/worker-executor';
+import createWorker from '../utils/worker-executor';
 
 const protectTimeout = 100;
 Babel.registerPlugin('loopProtection', protect(protectTimeout));
@@ -91,7 +91,7 @@ export const babelTransformer = cond([
   [stubTrue, identity]
 ]);
 
-const sassWorker = new WorkerExecutor('sass-compile');
+const sassWorker = createWorker('sass-compile');
 async function transformSASS(element) {
   const styleTags = element.querySelectorAll('style[type="text/sass"]');
   await Promise.all(
