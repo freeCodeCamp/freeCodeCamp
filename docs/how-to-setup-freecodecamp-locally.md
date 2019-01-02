@@ -337,7 +337,7 @@ Follow these steps:
     git add .
     ```
 
-    Only the files that were moved to the staging area will added when you make a commit.
+    Only the files that were moved to the staging area will be added when you make a commit.
 
     ```shell
     git status
