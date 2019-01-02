@@ -8,7 +8,7 @@ The switch statement is like a set of `if statements`.
 
 It's a list of possibilities, with an action for each possibility, and an optional default action, in case nothing else evaluates to true. Sometimes we want to compare one input to many booleans and that is when we would prefer to use a switch statement instead of an `if statement`.
 
-We exit from the switch by `break`. If the `break` statement is not reached before the beginning of the next case, the execution will fall through and begin executing the code in the next case.
+We exit from the switch by `break`. If the `break` statement is not reached before the beginning of the next case, the execution will fall through and begin executing the code in the next case, which means if you have no break statement in code, when first case is detected to be true, all the other cases below the one that is detected to be true (including itself) will be executed, which is often undesirable.
 
 ## Syntax of switch...case
 
@@ -45,26 +45,26 @@ Using a switch statement over multiple if/else statements can contribute to more
 int main() {
 
     char operator;
-    double firstNumber,secondNumber;
+    double a, b;
 
     printf("Enter an operator (+, -, *, /): ");
     scanf("%c", &operator);
 
     printf("Enter two operands: ");
-    scanf("%lf %lf",&firstNumber, &secondNumber);
+    scanf("%lf %lf",&a, &b);
 
     switch (operator) {
         case '+':
-            printf("%.1lf + %.1lf = %.1lf",firstNumber, secondNumber, firstNumber+secondNumber);
+            printf("%.1lf + %.1lf = %.1lf", a, b, a+b);
             break;
         case '-':
-            printf("%.1lf - %.1lf = %.1lf",firstNumber, secondNumber, firstNumber-secondNumber);
+            printf("%.1lf - %.1lf = %.1lf",a, b, a-b);
             break;
         case '*':
-            printf("%.1lf * %.1lf = %.1lf",firstNumber, secondNumber, firstNumber*secondNumber);
+            printf("%.1lf * %.1lf = %.1lf",a, b, a*b);
             break;
         case '/':
-            printf("%.1lf / %.1lf = %.1lf",firstNumber, secondNumber, firstNumber/firstNumber);
+            printf("%.1lf / %.1lf = %.1lf",a, b, a/b);
             break;
         // Operator is doesn't match any case constant (+, -, *, /)
         default:

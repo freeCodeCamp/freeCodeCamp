@@ -3,6 +3,8 @@ title: scikit-learn
 ---
 ## Scikit-learn
 
+![scikit-learn logo](http://scikit-learn.org/stable/_static/scikit-learn-logo-small.png)
+
 Scikit-learn is a popular open-source machine learning library for Python, built off of previous packages like numpy and scipy. There is code available to handle everything from importing data and data cleaning to model preparation and testing. 
 
 The library contains algorithms for both supervised and unsupervised learning, which can be easily integrated into your own code. Furthermore, many other helpful tools are offered which support model selection (e.g. Cross Validation or Grid Search) or data preparation (e.g. normalization, creation of categorical features).
