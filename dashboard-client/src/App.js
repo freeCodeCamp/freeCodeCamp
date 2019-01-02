@@ -8,7 +8,6 @@ import Footer from './components/Footer';
 
 import { ENDPOINT_INFO } from './constants';
 
-console.log(ENDPOINT_INFO);
 const PageContainer = styled.div`
    display: flex;
    flex-direction: column;
@@ -77,7 +76,13 @@ class App extends Component {
      const { handleViewChange, state: { view, footerInfo } } = this;
      return (
        <PageContainer>
-         <Title><img style={imgStyle} src="https://discourse-user-assets.s3.dualstack.us-east-1.amazonaws.com/original/3X/e/d/ed1c70bda321aaeee9e6c20ab650ce8bc34899fa.svg" alt="Free Code Camp Logo" /> Moderator Tools</Title>
+         <Title>
+           <img
+            style={imgStyle}
+            src="https://discourse-user-assets.s3.dualstack.us-east-1.amazonaws.com/original/3X/e/d/ed1c70bda321aaeee9e6c20ab650ce8bc34899fa.svg"
+            alt="Free Code Camp Logo"
+           /> Moderator Tools
+         </Title>
          <Tabs view={view} onViewChange={handleViewChange}/>
          <Container>
            { view === 'search' && <Search /> }

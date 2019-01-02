@@ -9,8 +9,7 @@ const db = mongoose.connect(mongoUri, { useNewUrlParser: true });
 const { PR, INFO } = require('../models');
 
 db.then(() => {
-  console.log('MongoDB is connected');
-
+  // remove all existing collections from db
   mongoose.connection.db.listCollections().toArray((err, names) => {
     if (err) {
       throw err;
@@ -23,6 +22,7 @@ db.then(() => {
     }
   });
 
+  // get the most recent production data to use locally
   fetch('https://pr-relations.glitch.me/getData', { method: 'GET' })
   .then((response) => response.json())
   .then(({ startTime, prs }) => {
@@ -35,8 +35,7 @@ db.then(() => {
       return { _id: number, updatedAt, username, title, filenames };
     });
 
-    PR.insertMany(documents)
-    .catch((err) => console.log(err));
+    PR.insertMany(documents).catch((err) => console.log(err));
 
     const firstPR = prs[0].number;
     const lastPR = prs[prs.length - 1].number;
@@ -49,7 +48,6 @@ db.then(() => {
     .then(() => {
       console.log('Sucessfully seeded data');
       mongoose.connection.close();
-      console.log('Closed MongoDB connection');
     })
     .catch((err) => console.log(err));
   })

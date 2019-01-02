@@ -11,30 +11,25 @@ const createPareto = (reportObj) => Object.keys(reportObj)
   }, [])
   .sort((a, b) => b.count - a.count);
 
-router.get('/', (reqeust, response) => {
-  (async() => {
-    const prs = await PR.find({}).then(data => data);
-    return prs;
-  })()
-  .then((prs) => {
-    const reportObj = prs.reduce((obj, pr) => {
-      const { _id: number, filenames, username, title } = pr;
-      filenames.forEach((filename) => {
-        if (obj[filename]) {
-          const { count, prs } = obj[filename];
-          obj[filename] = {
-            count: count + 1,
-            prs: prs.concat({ number, username, title })
-          };
-        } else {
-          obj[filename] = { count: 1, prs: [{ number, username, title }] };
-        }
-      });
-      return obj;
-    }, {});
+router.get('/', async(reqeust, response) => {
+  const prs = await PR.find({}).then(data => data);
+  const reportObj = prs.reduce((obj, pr) => {
+    const { _id: number, filenames, username, title } = pr;
+    filenames.forEach((filename) => {
+      if (obj[filename]) {
+        const { count, prs } = obj[filename];
+        obj[filename] = {
+          count: count + 1,
+          prs: prs.concat({ number, username, title })
+        };
+      } else {
+        obj[filename] = { count: 1, prs: [{ number, username, title }] };
+      }
+    });
+    return obj;
+  }, {});
 
-    response.json({ ok: true, pareto: createPareto(reportObj) });
-  });
+  response.json({ ok: true, pareto: createPareto(reportObj) });
 });
 
 module.exports = router;
