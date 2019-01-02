@@ -58,7 +58,7 @@ db.then(async() => {
   for (let j = 0; j < oldPRs.length; j++) {
     const { _id: number } = oldPRs[j];
     if (!newIndices.hasOwnProperty(number)) {
-      // delete pr because it is no longer on Github
+      // delete pr because it is no longer open
       await PR.deleteOne({ _id: number });
       console.log('deleted PR #' + number);
     }
