@@ -30,9 +30,9 @@ db.then(() => {
       throw 'Unable to retrieve data';
     }
     const documents = prs.map(({
-      number, updatedAt, username, title, filenames
+      number: _id, updated_at: updatedAt, username, title, filenames
     }) => {
-      return { _id: number, updatedAt, username, title, filenames };
+      return { _id, updatedAt, username, title, filenames };
     });
 
     PR.insertMany(documents).catch((err) => console.log(err));

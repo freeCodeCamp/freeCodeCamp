@@ -2,6 +2,9 @@ const config = require('../config/config');
 // config should be imported before importing any other file
 const mongoose = require('mongoose');
 
+// added to prevent deprecation warning when findOneAndUpdate is used
+mongoose.set('useFindAndModify', false);
+
 // connect to mongo db
 const mongoUri = config.mongo.host;
 const db = mongoose.connect(mongoUri, { useNewUrlParser: true });
@@ -32,12 +35,11 @@ db.then(async() => {
     newIndices[number] = i;
     let oldPrData = oldPRs[oldIndices[number]];
     const oldUpdatedAt = oldPrData ? oldPrData.updatedAt : null;
-
     if (!oldIndices.hasOwnProperty(number)) {
       // insert a new pr
       const filenames = await getFilenames(number);
       await PR.create({ _id: number, updatedAt, title, username, filenames });
-      console.log('added PR#' + number);
+      console.log('added PR# ' + number);
 
     } else if (updatedAt > oldUpdatedAt) {
       // update an existing pr
@@ -47,7 +49,7 @@ db.then(async() => {
         { _id: number },
         { updatedAt, title, username, filenames }
       );
-      console.log('updated PR#' + number);
+      console.log('updated PR #' + number);
     }
     if (count > 3000 ) {
       await rateLimiter(1400);
@@ -58,7 +60,7 @@ db.then(async() => {
     if (!newIndices.hasOwnProperty(number)) {
       // delete pr because it is no longer on Github
       await PR.deleteOne({ _id: number });
-      console.log('deleted PR#' + number);
+      console.log('deleted PR #' + number);
     }
   }
 })
