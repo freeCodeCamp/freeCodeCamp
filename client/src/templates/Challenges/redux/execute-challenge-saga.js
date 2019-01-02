@@ -27,14 +27,14 @@ import {
 
 import { challengeTypes } from '../../../../utils/challengeTypes';
 
-import WorkerExecutor from '../utils/worker-executor';
+import createWorker from '../utils/worker-executor';
 import {
   createMainFramer,
   createTestFramer,
   runTestInTestFrame
 } from '../utils/frame.js';
 
-const testWorker = new WorkerExecutor('test-evaluator');
+const testWorker = createWorker('test-evaluator');
 const testTimeout = 5000;
 
 function* ExecuteChallengeSaga() {

@@ -1,6 +1,6 @@
 import { homeLocation } from '../../../../config/env.json';
 
-export default class WorkerExecutor {
+class WorkerExecutor {
   constructor(workerName) {
     this.workerName = workerName;
     this.worker = null;
@@ -70,4 +70,8 @@ export default class WorkerExecutor {
       observers.splice(index, 1);
     }
   }
+}
+
+export default function createWorkerExecutor(workerName) {
+  return new WorkerExecutor(workerName);
 }
