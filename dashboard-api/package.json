@@ -4,7 +4,8 @@
   "main": "server.js",
   "scripts": {
     "start": "node server.js",
-    "develop": "cross-env PORT=3001 node server.js"
+    "develop": "cross-env PORT=3001 node server.js",
+    "seed": "node utils/seed-db.js"
   },
   "dependencies": {
     "bluebird": "^3.5.3",
