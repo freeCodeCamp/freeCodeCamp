@@ -21,7 +21,5 @@ This is often used when dealing with complex numbers in exponential form.
 <!-- The article goes here, in GitHub-flavored Markdown. Feel free to add YouTube videos, images, and CodePen/JSBin embeds  -->
 
 #### More Information:
-Read more about Eulers Formula [here](http://mathworld.wolfram.com/EulerFormula.html)
-<!-- Please add any articles you think might be helpful to read before writing the article -->
-
-
+[Mathworld](http://mathworld.wolfram.com/EulerFormula.html)
+[Wikipedia](https://en.wikipedia.org/wiki/Euler%27s_formula)
