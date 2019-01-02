@@ -12,6 +12,7 @@
     "format": "prettier --write es5 './**/*.{js,json}' && npm run lint",
     "lint": "eslint ./**/*.js --fix",
     "start": "lerna run start",
+    "seed": "cd dashboard-api && npm run seed && cd ..",
     "dev": "nodemon"
   },
   "devDependencies": {
