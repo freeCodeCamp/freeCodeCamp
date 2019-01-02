@@ -27,7 +27,7 @@ Notice that the main difference is that "start to end" **excludes** the end numb
   // some CSS
 }
 
-// 1 2
+// 1 2 3
 ```
 
 * For - to loop:
@@ -36,7 +36,7 @@ Notice that the main difference is that "start to end" **excludes** the end numb
   // some CSS
 }
 
-// 1 2 3
+// 1 2
 ```
 
 3. Guideline from [SASS Guideline](https://sass-guidelin.es/#loops)
@@ -50,7 +50,7 @@ The `@for` loop might be useful when combined with CSS’ `:nth-*` pseudo-classe
   }
 }
 ```
-Always use `$i` as a variable name to stick to the usual convention and unless you have a really good reason to, never use the to keyword: always use through. Many developers do not even know Sass offers this variation; using it might lead to confusion.
+Always use `$i` as a variable name to stick to the usual convention and unless you have a really good reason to, never use the `to` keyword: always use `through`. Many developers do not even know Sass offers this variation; using it might lead to confusion.
 
 Also be sure to respect those guidelines to preserve readability:
 
