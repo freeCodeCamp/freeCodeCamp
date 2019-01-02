@@ -56,3 +56,35 @@ Also be sure to respect those guidelines to preserve readability:
 
 * Always an empty new line before `@for`;
 * Always an empty new line after the closing brace (}) unless the next line is a closing brace (}).
+
+## Solution
+```sass
+  @for $j from 1 to 6 {
+    .text-#{$j} { font-size: 10px * $j; }
+  }
+```
+The solution above will generate the following CSS:
+
+```css
+.text-1 {
+  font-size: 10px;
+}
+
+.text-2 {
+  font-size: 20px;
+}
+
+.text-3 {
+  font-size: 30px;
+}
+
+.text-4 {
+  font-size: 40px;
+}
+
+.text-5 {
+  font-size: 50px;
+}
+
+```
+
