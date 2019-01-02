@@ -14,7 +14,7 @@ Normal text is wrapped in the <code>p</code> element:<br> <code>&#60;p&#62; Here
 Next is the <code>anchor</code> element <code>&#60;a&#62;</code> (which requires a closing tag <code>&#60;/a&#62;</code>):<br>  <code>&#60;a&#62; ... &#60;/a&#62;</code>
 <code>target</code> is an anchor tag attribute that specifies where to open the link and the value <code>"_blank"</code> specifies to open the link in a new tab
 <code>href</code> is an anchor tag attribute that contains the URL address of the link:<br>  <code>&#60;a href="http://freecodecamp.org"> ... &#60;/a&#62;</code>
-The text, <strong>"link to freecodecamp.org"</strong>, within the anchor element called <code>anchor text</code>, will display a link to click:<br>  <code>&#60;a href=" ... "&#62;link to freecodecamp.org&#60;/a&#62;</code>
+The text, <strong>"link to freecodecamp.org"</strong>, within the <code>anchor</code> element called <code>anchor text</code>, will display a link to click:<br>  <code>&#60;a href=" ... "&#62;link to freecodecamp.org&#60;/a&#62;</code>
 The final output of the example will look like this:<br><p>Here's a <a target="_blank" href="http://freecodecamp.org"> link to freecodecamp.org</a> for you to follow.</p>
 </section>
 
@@ -28,22 +28,22 @@ Now nest your existing <code>a</code> element within a new <code>p</code> elemen
 
 ```yml
 tests:
-  - text: 'You need an <code>a</code> element that links to "http://freecatphotoapp.com".'
-    testString: 'assert(($("a[href=\"http://freecatphotoapp.com\"]").length > 0 || $("a[href=\"http://www.freecatphotoapp.com\"]").length > 0), "You need an <code>a</code> element that links to "http://freecatphotoapp.com".");'
+  - text: You need an <code>a</code> element that links to "http://freecatphotoapp.com".
+    testString: assert(($("a[href=\"http://freecatphotoapp.com\"]").length > 0 || $("a[href=\"http://www.freecatphotoapp.com\"]").length > 0), 'You need an <code>a</code> element that links to "http://freecatphotoapp.com".');
   - text: Your <code>a</code> element should have the anchor text of "cat photos"
-    testString: 'assert($("a").text().match(/cat\sphotos/gi), "Your <code>a</code> element should have the anchor text of "cat photos"");'
+    testString: assert($("a").text().match(/cat\sphotos/gi), 'Your <code>a</code> element should have the anchor text of "cat photos"');
   - text: Create a new <code>p</code> element around your <code>a</code> element. There should be at least 3 total <code>p</code> tags in your HTML code.
-    testString: 'assert($("p") && $("p").length > 2, "Create a new <code>p</code> element around your <code>a</code> element. There should be at least 3 total <code>p</code> tags in your HTML code.");'
+    testString: assert($("p") && $("p").length > 2, 'Create a new <code>p</code> element around your <code>a</code> element. There should be at least 3 total <code>p</code> tags in your HTML code.');
   - text: Your <code>a</code> element should be nested within your new <code>p</code> element.
-    testString: 'assert(($("a[href=\"http://freecatphotoapp.com\"]").parent().is("p") || $("a[href=\"http://www.freecatphotoapp.com\"]").parent().is("p")), "Your <code>a</code> element should be nested within your new <code>p</code> element.");'
+    testString: assert(($("a[href=\"http://freecatphotoapp.com\"]").parent().is("p") || $("a[href=\"http://www.freecatphotoapp.com\"]").parent().is("p")), 'Your <code>a</code> element should be nested within your new <code>p</code> element.');
   - text: Your <code>p</code> element should have the text "View more " (with a space after it).
-    testString: 'assert(($("a[href=\"http://freecatphotoapp.com\"]").parent().text().match(/View\smore\s/gi) || $("a[href=\"http://www.freecatphotoapp.com\"]").parent().text().match(/View\smore\s/gi)), "Your <code>p</code> element should have the text "View more " (with a space after it).");'
+    testString: assert(($("a[href=\"http://freecatphotoapp.com\"]").parent().text().match(/View\smore\s/gi) || $("a[href=\"http://www.freecatphotoapp.com\"]").parent().text().match(/View\smore\s/gi)), 'Your <code>p</code> element should have the text "View more " (with a space after it).');
   - text: Your <code>a</code> element should <em>not</em> have the text "View more".
-    testString: 'assert(!$("a").text().match(/View\smore/gi), "Your <code>a</code> element should <em>not</em> have the text "View more".");'
+    testString: assert(!$("a").text().match(/View\smore/gi), 'Your <code>a</code> element should <em>not</em> have the text "View more".');
   - text: Make sure each of your <code>p</code> elements has a closing tag.
-    testString: 'assert(code.match(/<\/p>/g) && code.match(/<p/g) && code.match(/<\/p>/g).length === code.match(/<p/g).length, "Make sure each of your <code>p</code> elements has a closing tag.");'
+    testString: assert(code.match(/<\/p>/g) && code.match(/<p/g) && code.match(/<\/p>/g).length === code.match(/<p/g).length, 'Make sure each of your <code>p</code> elements has a closing tag.');
   - text: Make sure each of your <code>a</code> elements has a closing tag.
-    testString: 'assert(code.match(/<\/a>/g) && code.match(/<a/g) && code.match(/<\/a>/g).length === code.match(/<a/g).length, "Make sure each of your <code>a</code> elements has a closing tag.");'
+    testString: assert(code.match(/<\/a>/g) && code.match(/<a/g) && code.match(/<\/a>/g).length === code.match(/<a/g).length, 'Make sure each of your <code>a</code> elements has a closing tag.');
 
 ```
 

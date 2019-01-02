@@ -12,7 +12,7 @@ Con Ágil, el énfasis está en la "agilidad": poder responder rápidamente a lo
 
 ![Un cómic de Commitstrip.com que muestra a un gerente de producto que le explica a un desarrollador que está cambiando a ágil, pero luego le pide al desarrollador que planifique todo por adelantado.](https://www.commitstrip.com/wp-content/uploads/2017/01/Strip-Budegt-fixe-pour-projet-flexible-english650-final.jpg)
 
-Hay muchos sabores diferentes de Ágil, incluyendo Scrum y Programación Extrema.
+Hay muchos tipos diferentes de Ágil, incluyendo Scrum y Programación Extrema.
 
 ### Más información
 
