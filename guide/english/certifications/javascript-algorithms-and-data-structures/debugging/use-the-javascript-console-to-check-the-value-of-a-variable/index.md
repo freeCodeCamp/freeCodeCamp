@@ -3,7 +3,7 @@ title: Use the JavaScript Console to Check the Value of a Variable
 ---
 ## Use the JavaScript Console to Check the Value of a Variable
 
-In order to open up the Javascript Console of your Browser (chrome,firefox,safari,opera,edge) press: [here](https://github.com/freeCodeCamp/freeCodeCamp/blob/master/guide/english/certifications/javascript-algorithms-and-data-structures/debugging/understanding-the-differences-between-the-freecodecamp-and-browser-console/index.md)
+In order to open up the Javascript Console of your Browser (chrome,firefox,safari,opera,edge) press: [here](https://guide.freecodecamp.org/certifications/javascript-algorithms-and-data-structures/debugging/understanding-the-differences-between-the-freecodecamp-and-browser-console)
 
 ## Hint 1:
 In order to see what is for example the stored value of a variable, we can use the command `console.log()`.
