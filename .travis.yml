@@ -12,8 +12,6 @@ env:
     - NO_UPDATE_NOTIFIER=1
     - NODE_NO_WARNINGS=1
 
-sudo: false
-
 before_install:
   - npm config set loglevel warn
 
