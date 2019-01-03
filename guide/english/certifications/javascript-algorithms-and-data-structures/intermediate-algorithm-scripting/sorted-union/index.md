@@ -41,7 +41,7 @@ You will have to check if the current value is already on the array to be return
       // Creates an empty array to store our final result.
       var finalArray = [];
 
-      // Loop through the arguments object to truly made the program work with two or more arrays
+      // Loop through the arguments object to truly make the program work with two or more arrays
       // instead of 3.
       for (var i = 0; i < arguments.length; i++) {
         var arrayArguments = arguments[i];
