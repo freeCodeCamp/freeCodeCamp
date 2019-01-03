@@ -15,57 +15,73 @@ import { ifNoUser401, ifNoUserRedirectTo } from '../utils/middleware';
 const log = debugFactory('fcc:boot:user');
 const sendNonUserToHome = ifNoUserRedirectTo(homeLocation);
 
-module.exports = function bootUser(app) {
+function bootUser(app) {
   const api = app.loopback.Router();
+
+  const getSessionUser = createReadSessionUser(app);
+  const postReportUserProfile = createPostReportUserProfile(app);
+  const postDeleteAccount = createPostDeleteAccount(app);
 
   api.get('/account', sendNonUserToHome, getAccount);
   api.get('/account/unlink/:social', sendNonUserToHome, getUnlinkSocial);
-  api.get('/user/get-session-user', readSessionUser);
+  api.get('/user/get-session-user', getSessionUser);
 
-  api.post('/account/delete', ifNoUser401, createPostDeleteAccount(app));
+  api.post('/account/delete', ifNoUser401, postDeleteAccount);
   api.post('/account/reset-progress', ifNoUser401, postResetProgress);
-  api.post('/user/report-user/', ifNoUser401, createPostReportUserProfile(app));
+  api.post('/user/report-user/', ifNoUser401, postReportUserProfile);
 
   app.use('/internal', api);
-};
+}
 
-function readSessionUser(req, res, next) {
-  const queryUser = req.user;
+function createReadSessionUser(app) {
+  const { Donation } = app.models;
 
-  const source =
-    queryUser &&
-    Observable.forkJoin(
-      queryUser.getCompletedChallenges$(),
-      queryUser.getPoints$(),
-      (completedChallenges, progressTimestamps) => ({
-        completedChallenges,
-        progress: getProgress(progressTimestamps, queryUser.timezone)
-      })
-    );
-  Observable.if(
-    () => !queryUser,
-    Observable.of({ user: {}, result: '' }),
-    Observable.defer(() => source)
-      .map(({ completedChallenges, progress }) => ({
-        ...queryUser.toJSON(),
-        ...progress,
-        completedChallenges: completedChallenges.map(fixCompletedChallengeItem)
-      }))
-      .map(user => ({
-        user: {
-          [user.username]: {
-            ...pick(user, userPropsForSession),
-            isEmailVerified: !!user.emailVerified,
-            isGithub: !!user.githubProfile,
-            isLinkedIn: !!user.linkedin,
-            isTwitter: !!user.twitter,
-            isWebsite: !!user.website,
-            ...normaliseUserFields(user)
-          }
-        },
-        result: user.username
-      }))
-  ).subscribe(user => res.json(user), next);
+  return function getSessionUser(req, res, next) {
+    const queryUser = req.user;
+
+    const source =
+      queryUser &&
+      Observable.forkJoin(
+        queryUser.getCompletedChallenges$(),
+        queryUser.getPoints$(),
+        Donation.getCurrentActiveDonationCount$(),
+        (completedChallenges, progressTimestamps, activeDonations) => ({
+          activeDonations,
+          completedChallenges,
+          progress: getProgress(progressTimestamps, queryUser.timezone)
+        })
+      );
+    Observable.if(
+      () => !queryUser,
+      Observable.of({ user: {}, result: '' }),
+      Observable.defer(() => source)
+        .map(({ activeDonations, completedChallenges, progress }) => ({
+          user: {
+            ...queryUser.toJSON(),
+            ...progress,
+            completedChallenges: completedChallenges.map(
+              fixCompletedChallengeItem
+            )
+          },
+          sessionMeta: { activeDonations }
+        }))
+        .map(({ user, sessionMeta }) => ({
+          user: {
+            [user.username]: {
+              ...pick(user, userPropsForSession),
+              isEmailVerified: !!user.emailVerified,
+              isGithub: !!user.githubProfile,
+              isLinkedIn: !!user.linkedin,
+              isTwitter: !!user.twitter,
+              isWebsite: !!user.website,
+              ...normaliseUserFields(user)
+            }
+          },
+          sessionMeta,
+          result: user.username
+        }))
+    ).subscribe(user => res.json(user), next);
+  };
 }
 
 function getAccount(req, res) {
@@ -120,12 +136,15 @@ function getUnlinkSocial(req, res, next) {
 
       const updateData = { [social]: null };
 
-      return user.update$(updateData).subscribe(() => {
+      return user.updateAttributes(updateData, err => {
+        if (err) {
+          return next(err);
+        }
         log(`${social} has been unlinked successfully`);
 
         req.flash('info', `You've successfully unlinked your ${social}.`);
-        return res.redirect('/' + username);
-      }, next);
+        return res.redirectWithFlash(`${homeLocation}/${username}`);
+      });
     });
   });
 }
@@ -238,3 +257,4 @@ function createPostReportUserProfile(app) {
     );
   };
 }
+export default bootUser;
