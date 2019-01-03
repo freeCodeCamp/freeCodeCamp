@@ -13,7 +13,7 @@ The character to do this is the <code>asterisk</code> or <code>star</code>: <cod
 
 ## Instructions
 <section id='instructions'>
-Create a regex <code>chewieRegex</code> that uses the <code>*</code> character to match all the upper and lowercase <code>"a"</code> characters in <code>chewieQuote</code>. Your regex does not need flags, and it should not match any of the other quotes.
+Create a regex <code>chewieRegex</code> that uses the <code>*</code> character to match the initial uppercase <code>"A"</code> character and all of the lowercase <code>"a"</code> characters immediately after it in <code>chewieQuote</code>. Your regex does not need flags or character classes, and it should not match any of the other quotes.
 </section>
 
 ## Tests
@@ -23,10 +23,14 @@ Create a regex <code>chewieRegex</code> that uses the <code>*</code> character t
 tests:
   - text: Your regex <code>chewieRegex</code> should use the <code>*</code> character to match zero or more <code>a</code> characters.
     testString: assert(/\*/.test(chewieRegex.source), 'Your regex <code>chewieRegex</code> should use the <code>*</code> character to match zero or more <code>a</code> characters.');
-  - text: Your regex <code>chewieRegex</code> should match 16 characters.
-    testString: assert(result[0].length === 16, 'Your regex <code>chewieRegex</code> should match 16 characters.');
+  - text: Your regex should match <code>"A"</code>.
+    testString: assert(chewieRegex.test('A'), 'Your regex should match <code>"A"</code>.');
+  - text: Your regex should not match <code>"aaaa"</code>.
+    testString: assert(!chewieRegex.test('aaaa'), 'Your regex not should match <code>"aaaa"</code>.');
   - text: Your regex should match <code>"Aaaaaaaaaaaaaaaa"</code>.
     testString: assert(result[0] === 'Aaaaaaaaaaaaaaaa', 'Your regex should match <code>"Aaaaaaaaaaaaaaaa"</code>.');
+  - text: Your regex <code>chewieRegex</code> should match 16 characters.
+    testString: assert(result[0].length === 16, 'Your regex <code>chewieRegex</code> should match 16 characters.');
   - text: Your regex should not match any characters in <code>"He made a fair move. Screaming about it can&#39t help you."</code>
     testString: assert(!"He made a fair move. Screaming about it can\'t help you.".match(chewieRegex), 'Your regex should not match any characters in <code>"He made a fair move. Screaming about it can&#39t help you."</code>');
   - text: Your regex should not match any characters in <code>"Let him have it. It&#39s not wise to upset a Wookiee."</code>
