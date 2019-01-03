@@ -118,4 +118,4 @@ Java有大量[文档记录](https://docs.oracle.com/javase/8/docs/) ，因为它
 *   [jEdit的](http://www.jedit.org/)
 *   [Oracle JDeveloper](http://www.oracle.com/technetwork/developer-tools/jdev/overview/index-094652.html)
 
-请注意： 若想安装 Netbeans IDE, 需要 JDK, 您可以下载 IDE 和 JDK 从[这里](https://www.oracle.com/technetwork/java/javase/downloads/jdk-netbeans-jsp-3413139-esa.html)
+请注意： 若想安装 Netbeans IDE, 需要JDK, 您可以从[这里](https://www.oracle.com/technetwork/java/javase/downloads/jdk-netbeans-jsp-3413139-esa.html)下载IDE和JDK。
