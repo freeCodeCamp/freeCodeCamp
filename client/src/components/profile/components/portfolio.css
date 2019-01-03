@@ -1,0 +1,8 @@
+.portfolio-heading.media-heading {
+  border-bottom: 1px solid rgba(0, 100, 0, 0.6);
+  padding-bottom: 10px;
+}
+.portfolio-screen-shot {
+  width: 150px;
+  min-width: 150px;
+}

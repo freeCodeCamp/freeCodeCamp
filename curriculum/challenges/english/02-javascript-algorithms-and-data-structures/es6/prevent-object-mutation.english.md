@@ -13,7 +13,7 @@ Once the object is frozen, you can no longer add, update, or delete properties f
 
 ## Instructions
 <section id='instructions'>
-In this challenge you are going to use <code>Object.freeze</code> to prevent mathematical constants from changing. You need to freeze the <code>MATH_CONSTANTS</code> object so that no one is able alter the value of <code>PI</code>, add, or delete properties .
+In this challenge you are going to use <code>Object.freeze</code> to prevent mathematical constants from changing. You need to freeze the <code>MATH_CONSTANTS</code> object so that no one is able to alter the value of <code>PI</code>, add, or delete properties.
 </section>
 
 ## Tests

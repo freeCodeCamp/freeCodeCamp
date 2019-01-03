@@ -1,8 +1,8 @@
 ---
 title: JavaScript
-localeTitle: JavaScript的
+localeTitle: JavaScript
 ---
-## JavaScript的
+## JavaScript
 
 JavaScript是地球上使用最广泛的脚本语言。它拥有任何编程语言中最大的图书馆生态系统。
 
