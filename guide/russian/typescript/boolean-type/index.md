@@ -1,10 +1,10 @@
 ---
 title: Boolean Type
-localeTitle: Булевский тип
+localeTitle: Тип Boolean
 ---
-# Булевский тип
+# Тип boolean
 
-`boolean` - это ваше основное значение true / false JavaScript.
+`boolean` - это просто значение true / false в JavaScript.
 
 ```typescript
 let isDone: boolean = false; 

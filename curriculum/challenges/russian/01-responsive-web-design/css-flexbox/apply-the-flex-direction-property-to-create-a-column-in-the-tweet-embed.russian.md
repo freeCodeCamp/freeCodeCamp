@@ -3,21 +3,21 @@ id: 587d78ac367417b2b2512af5
 title: Apply the flex-direction Property to Create a Column in the Tweet Embed
 challengeType: 0
 videoUrl: ''
-localeTitle: Примените свойство flex-direction для создания столбца в вставке Tweet
+localeTitle: Примените свойство flex-direction для создания столбца в вставке твита
 ---
 
 ## Description
-<section id="description"> Твят вставлять <code>header</code> и <code>footer</code> использовали <code>flex-direction</code> свойство ранее со значением строки. Аналогично, элементы внутри элемента <code>.profile-name</code> будут хорошо сгруппированы в виде столбца. </section>
+<section id="description"><code>header</code> и <code>footer</code> вставки твита ранее использовали свойство <code>flex-direction</code> со значением row. Схожим образом, элементы внутри <code>.profile-name</code> будут хорошо сгруппированы в виде столбца. </section>
 
 ## Instructions
-<section id="instructions"> Добавьте CSS свойство <code>flex-direction</code> к заголовку по <code>.profile-name</code> элемента и установите значение столбца. </section>
+<section id="instructions"> Добавьте CSS свойство <code>flex-direction</code> к элементу <code>.profile-name</code> заголовка и установите значение column. </section>
 
 ## Tests
 <section id='tests'>
 
 ```yml
 tests:
-  - text: Элемент <code>.profile-name</code> должен иметь свойство <code>flex-direction</code> заданное в столбце.
+  - text: Элемент <code>.profile-name</code> должен иметь свойство <code>flex-direction</code>со значением установленным в column.
     testString: 'assert($(".profile-name").css("flex-direction") == "column", "The <code>.profile-name</code> element should have a <code>flex-direction</code> property set to column.");'
 
 ```
