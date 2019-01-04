@@ -60,7 +60,7 @@ Refers to tests performed at a structural level, within the codebase. Programmer
 
 Also known as 'Glass Box', 'Clear Box', 'Transparent Box' because the tester can 'see inside' the system under test.
 
-Main categories are
+Main categories are:
 
 * **Unit tests** (individual units of code do what they should)
 * **Integration tests** (units/components interact with each other properly)
@@ -78,7 +78,6 @@ There are three main techniques:
 <a href='https://guide.freecodecamp.org/agile/test-driven-development' target='_blank' rel='nofollow'>Test Driven Development (freeCodeCamp Guide)</a>
 
 <a href='https://guide.freecodecamp.org/software-engineering/unit-tests/' target='_blank' rel='nofollow'>Unit tests (freeCodeCamp Guide)</a>
-=======
 
 [Software Testing Fundamentals](http://softwaretestingfundamentals.com/)
 
