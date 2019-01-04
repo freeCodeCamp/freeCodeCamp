@@ -68,7 +68,7 @@ capitalizeString: str => str.toUpperCase()
 
 ```js
 "use strict";
-import { capitalizeString } from "string_functions";
+import { capitalizeString } from "./string_functions";
 capitalizeString("hello!");
 ```
 </section>
