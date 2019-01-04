@@ -18,29 +18,27 @@ BDD专注于：
 *   怎么称呼测试
 *   如何理解测试失败的原因
 
-BDD的核心是重新思考这些问题自然产生的单元测试和验收测试方法。 例如，BDD建议单元测试名称是以条件动词开头的整个句子（例如英语中的“should”），并且应按业务价值的顺序编写。 验收测试应该使用用户故事的标准敏捷框架编写：“作为一个_角色，_我想要_功能，_以便_获益_ ”。 接受标准应根据方案编写并作为类实现：给定_初始上下文_ ，何时_发生事件_ ，然后_确保一些结果_ 。
+BDD的核心是重新思考这些问题自然产生的单元测试和验收测试方法。 例如，BDD建议单元测试名称是以条件动词开头的整个句子（例如英语中的“should”），并且应按业务价值的顺序编写。 验收测试应该使用用户故事的标准敏捷框架编写：“作为一个*角色*，我想要*功能*，以便*获益* ”。 接受标准应根据方案编写并作为类实现：给定*初始上下文* ，何时*发生事件* ，然后*确保一些结果* 。
 
 例
 ```
-Story: Returns go to stock 
+故事：退货库存 
  
- As a store owner 
- In order to keep track of stock 
- I want to add items back to stock when they're returned. 
+ 身为商店的经营者，
+ 为了及时追踪库存，
+ 我希望商品在被退换后回到库存
  
- Scenario 1: Refunded items should be returned to stock 
- Given that a customer previously bought a black sweater from me 
- And I have three black sweaters in stock. 
- When he returns the black sweater for a refund 
- Then I should have four black sweaters in stock. 
+ 情況 1: 退货商品必须回到库存
+ 假设一位顾客从我这里购买了一件黑色外套，
+ 而库存仍有三件黑色外套；
+ 当他退货退款后，
+ 我的库存中应有四件黑色外套
  
- Scenario 2: Replaced items should be returned to stock 
- Given that a customer previously bought a blue garment from me 
- And I have two blue garments in stock 
- And three black garments in stock. 
- When he returns the blue garment for a replacement in black 
- Then I should have three blue garments in stock 
- And two black garments in stock. 
+ 情況 2: 退换商品必须回到库存
+ 假设顾客从我这里购买了一件蓝色衣物
+ 而我库存有两件蓝色衣物和三件黑色衣物
+ 当他退还蓝色而改买黑色衣物之后
+ 我的库存中应该分别有三件蓝色衣物和两件黑色衣物
 ```
 
 除此之外还有一些好处：

@@ -39,7 +39,9 @@ $conn->close();
 SELECT email FROM users WHERE id = `$input`;
 ```
 
-So with the above the input is not type casted (I.e. casting the input with (int) so only a number is allowed) nor escaped allowing someone to perform an SQL Injection attack - for example the URL `getemailbyuserid.php?id=1'; My Query Here-- -` would allow you to run arbitrary SQL queries with little effort.
+So with the above the input is not type casted (I.e. casting the input with `(int)` so only a number is allowed) nor escaped allowing someone to perform an SQL Injection attack - for example the URL `getemailbyuserid.php?id=1; My Query Here--` would allow you to run arbitrary SQL queries with little effort.
+
+As the SQL code is a string which can be controlled by an attacker, the `id` variable in the example above effectively becomes `1; My Query Here--`. The `$sql` string thus becomes `SELECT email FROM users WHERE id =1; My Query Here--`. You can see that arbitrary queries can be appended to the original query. The double-dash `--` comments out any trailing characters which can cause an issue with the payload, like closing quotes if available.
 
 ### Defending your website from sql injection attacks in PHP
 There are a few approaches to defend your website from SQL Injection Attacks. These approaches are Whitelisting, Type Casting, and Character Escaping
