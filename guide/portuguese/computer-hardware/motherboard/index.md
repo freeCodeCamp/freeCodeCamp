@@ -1,5 +1,6 @@
 ---
 title: Motherboard
+titleLocale: Placa-mãe
 ---
 ## Motherboard
 
