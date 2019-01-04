@@ -24,4 +24,4 @@ Paid editors need either a one-time payment or are subscription-based. But, tria
 * [GIMP](https://www.gimp.org) - Free | Download | Open-Source
 * [Photoshop](https://www.adobe.com/products/photoshop.html) - Free Trial | Paid
 * [Photoshop Express](https://www.photoshop.com/products/photoshopexpress) - Free | Mobile
-* [Paint.NET](https://www.getpaint.net)
+* [Affinity Photo](https://affinity.serif.com/en-us/photo/)
