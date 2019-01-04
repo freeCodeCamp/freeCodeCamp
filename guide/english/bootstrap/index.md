@@ -11,6 +11,9 @@ Bootstrap is a popular front-end framework for web development. It contains pre-
 
 Bootstrap includes a responsive grid system for varying layouts. It is a great starting point for building a mobile friendly website. It also includes optional JavaScript functionality like collapsible content, carousels, and modals.
 
+#### Why Use Bootstrap?
+Bootstrap provides an easy solution both for design and responsiveness. It is packed with beautiful elements that can be further styled with your own custom CSS, as well as a full grid system to keep your website responsive across all screens while using a clean and understandable syntax.
+You can build a professional looking website without any CSS or JavaScript and easily customize the elements if needed
 
 #### Version History
 
@@ -54,7 +57,6 @@ You can download and install the Bootstrap source files with Bower, Composer, Me
 `npm install bootstrap`
 
 `gem 'bootstrap', '~> 4.1.3'`
-
 
 _Note: These are only examples and may change without notice. Please refer to the _<a href='https://getbootstrap.com/' target='_blank' rel='nofollow'>Bootstrap website</a>_ for the most up-to-date links._
 
