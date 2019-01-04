@@ -27,6 +27,6 @@ print(bool((2,3,4))) # Returns True as tuple is a non-zero value
 print(bool([])) # Returns False as list is empty and equal to 0 according to truth value testing 
 ```
 
-![:rocket:](//forum.freecodecamp.com/images/emoji/emoji_one/rocket.png?v=2 "：火箭：") [运行代码](https://repl.it/CVCS/2)
+[运行代码](https://repl.it/CVCS/2)
 
 [官方文件](https://docs.python.org/3/library/functions.html#bool)
