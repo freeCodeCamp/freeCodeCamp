@@ -1,18 +1,17 @@
 {
-  "name": "@freecodecamp/github-tools",
+  "name": "@freecodecamp/contribute",
   "description": "Tools to help maintain freecodecamp.org's Open Source Codebase on GitHub",
-  "private": true,
   "bin": {
     "presolver": "probot/index.js"
   },
   "scripts": {
-    "bootstrap": "lerna bootstrap && npm run build",
+    "bootstrap": "lerna bootstrap",
     "build": "lerna run build",
     "postinstall": "npm run bootstrap",
     "format": "prettier --write es5 './**/*.{js,json}' && npm run lint",
     "lint": "eslint ./**/*.js --fix",
     "start": "lerna run start",
-    "seed": "cd dashboard-api && npm run seed && cd ..",
+    "seed": "cd probot && npm run seed && cd ..",
     "dev": "nodemon"
   },
   "devDependencies": {

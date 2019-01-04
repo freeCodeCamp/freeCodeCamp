@@ -1,9 +1,8 @@
 {
   "packages": [
-    "dashboard-api",
-    "dashboard-client",
     "probot",
-    "sweeper"
+    "probot/client",
+    "lib"
   ],
   "version": "independent"
 }
