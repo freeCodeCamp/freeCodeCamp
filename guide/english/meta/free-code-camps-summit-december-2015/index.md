@@ -55,7 +55,7 @@ Here is a summary for those who don't have time to watch the full 90 minutes:
 
 **-Since SASS is being added, is there a chance to add an HTML preprocesser like Jade?** [@BerkeleyTrue](/users/berkeleytrue) - Maybe, but it doesn't seem like it would add much to the curriculum.
 
-**-How many campers have gotten jobs as a direct result of working with FCC?** [@BerkeleyTrue](/users/berkeleytrue) - It's at least a dozen. [@QuincyLarson](/users/quincylarson) - We can't keep hard numbers because we don't do matchmaking, so we rely on people to tell us when they've gotten jobs, but it's at least a hundred. Alot of people get jobs before they finish our curriculum.
+**-How many campers have gotten jobs as a direct result of working with FCC?** [@BerkeleyTrue](/users/berkeleytrue) - It's at least a dozen. [@QuincyLarson](/users/quincylarson) - We can't keep hard numbers because we don't do matchmaking, so we rely on people to tell us when they've gotten jobs, but it's at least a hundred. A lot of people get jobs before they finish our curriculum.
 
 **-In light of the new curriculum, what happens to people who already have a Full Stack Developer Certification?** [@QuincyLarson](/users/quincylarson) - There's no fair way to deal with the 25 people who have the certification now. He will contact them directly to apologize, but the current Full Stack Developer Certification will be converted to the Back End Developer Certification, after they complete the five new API challenges. Hoping that this is the last time the length of the curriculum changes.
 
