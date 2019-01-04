@@ -110,7 +110,6 @@ export class Block extends Component {
 
   render() {
     const { blockDashedName, completedChallenges, challenges, isExpanded, intro } = this.props;
-    const { blockName } = challenges[0].fields;
     let completedCount = 0;
     const challengesWithCompleted = challenges.map(challenge => {
       const { id } = challenge;
@@ -118,7 +117,7 @@ export class Block extends Component {
         completedId => id === completedId
       );
       if (isCompleted) {
-        completedCount ++;
+        completedCount++;
       }
       return { ...challenge, isCompleted };
     });
@@ -127,9 +126,13 @@ export class Block extends Component {
         <div className='map-title' onClick={this.handleBlockClick}>
           <Caret />
           <h5>{blockNameify(blockDashedName)}</h5>
-          <div className="map-title-completed">
-            <span>{this.renderCheckMark(completedCount===challengesWithCompleted.length)}</span>
-            <span >{`${completedCount}/${challengesWithCompleted.length}`}</span>
+          <div className='map-title-completed'>
+            <span>
+              {this.renderCheckMark(
+                completedCount === challengesWithCompleted.length
+              )}
+            </span>
+            <span>{`${completedCount}/${challengesWithCompleted.length}`}</span>
           </div>
         </div>
         <ul>
