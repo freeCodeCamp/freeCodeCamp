@@ -46,9 +46,16 @@ There are many tools and online resources that can help you to ensure that your 
 - **<a href='https://toolness.github.io/accessible-color-matrix/' target='_blank' rel='nofollow'>Accessible Color Palette Builder</a>**
 
    This website allows you to edit a color palette and will create a table showing all of the possible color combinations, telling you which ones are accessible and which combinations to avoid using.
+   
+   
+- **<a href='https://webaim.org/resources/contrastchecker/' target='_blank' rel='nofollow'>WebAIM Color Contrast Checker</a>**
 
+   This website allows you to enter in color hex values for foreground and background to evaluate the contrast ratio. You can also adjust colors entered to get the necessary contrast ratio.
 
+- **<a href='https://webaim.org/resources/contrastchecker/' target='_blank' rel='nofollow'>Color contrast Checker</a>**
+
+   WebAIM offers complete web accessibility services. Regardless of the type or size of your web site, WebAIM can help ensure that your site is accessible and usable to those with disabilities. 
 ***
 
-#### More Reources
+#### More Resources
 You can find many more tools for accessible web design on <a href='http://www.d.umn.edu/itss/training/online/webdesign/tools.html' target='_blank' rel='nofollow'>this list</a> made by the University of Minnesota Duluth.
