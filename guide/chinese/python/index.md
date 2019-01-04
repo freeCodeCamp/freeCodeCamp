@@ -102,6 +102,7 @@ $ python3.5
  If the implementation is hard to explain, it's a bad idea. 
  If the implementation is easy to explain, it may be a good idea. 
  Namespaces are one honking great idea -- let's do more of those! 
+ 
  优美胜于丑陋，显明胜于隐含。
  简单胜于复杂，复杂胜于繁复。
  扁平胜于嵌套，稀疏胜于密集。
