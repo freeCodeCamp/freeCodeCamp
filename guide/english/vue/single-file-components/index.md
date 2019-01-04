@@ -1,3 +1,7 @@
+---
+title: Single File Components
+---
+
 # Single File Components
 One of the many benefits of using Vue, is the option of making a Single File Component. This component, as the name suggests, is a regular Vue component, living in its own file.
 
