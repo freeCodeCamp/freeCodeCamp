@@ -1,5 +1,6 @@
 ---
 title: Ssh
+localeTitle: Ssh
 ----
 El cliente SSH es un programa de la interfaz de linea de comando para iniciar sesión en una máquina remota y ejecutar comandos en ella. 
 Está destinado a proporcionar seguridad en las comunicaciones cifradas entre dos hosts no confiables sobre una red insegura (Internet).
