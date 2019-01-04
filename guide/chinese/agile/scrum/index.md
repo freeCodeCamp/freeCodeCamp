@@ -44,4 +44,4 @@ Scrum是敏捷伞下的方法之一。它起源于“scrummage”，这是橄榄
 
 *   [为什么](https://www.scrumalliance.org/why-scrum)来自Scrum联盟的Scrum
 *   Scrum.org的[Scrum指南](http://www.scrumguides.org/scrum-guide.html)
-*   [做与敏捷](http://agilitrix.com/2016/04/doing-agile-vs-being-agile/)
+*   [Doing Agile vs. Being Agile](http://agilitrix.com/2016/04/doing-agile-vs-being-agile/)
