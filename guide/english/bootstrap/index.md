@@ -75,6 +75,8 @@ Bootstrap comes with predefined grid classes for your use in markup. See more de
 
 - Version 4.0 added Sass and flexbox support
 
+- Version 4.1 Added new custom range form control.
+
 - Bootstrap does not restrict you to a fixed CSS format but allows you to develop quickly allowing style overwrites using cascading to add/edit the default styles.
 
 #### More Information:
