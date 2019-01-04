@@ -1,3 +1,7 @@
+---
+title: Consensus
+---
+
 ## Consensus
 Most discussions of consensus begin with Byzantine Fault Tolerance (BFT). BFT is derived from the Byzantine Generals' Problem, and understanding how it relates to decentralized systems allows for the implementation of other consensus algorithms used today.
 
