@@ -75,6 +75,8 @@ Bootstrap comes with predefined grid classes for your use in markup. See more de
 
 - Version 4.0 added Sass and flexbox support
 
+- Bootstrap does not restrict you to a fixed CSS format but allows you to develop quickly allowing style overwrites using cascading to add/edit the default styles.
+
 #### More Information:
 
 Bootstrap has thorough documentation with many <a href='https://getbootstrap.com/docs/4.0/examples/' target='_blank' rel='nofollow'>examples</a> and an <a href='https://getbootstrap.com/docs/4.0/getting-started/introduction/' target='_blank' rel='nofollow'>HTML template for getting started</a> (this template only has script included; it does not contain a <a href='https://getbootstrap.com/docs/4.0/layout/grid/' target='_blank' rel='nofollow'>set up</a> of the grid system if that's what you're looking for). 
