@@ -16,7 +16,7 @@ To write on console you can use the function `printf()` contained in the library
   */
  int main(void)
  {
-     printf("hello, world\n");  // lines starting with double forward-slash are called inline comments..
+     printf("Hello, World!\n");  // lines starting with double forward-slash are called inline comments..
      return 0;
  }
  ```
