@@ -64,7 +64,6 @@ tests:
   }
   header h3, header h4 {
     display: flex;
-
     margin: 0;
   }
   #inner p {
