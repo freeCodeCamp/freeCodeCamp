@@ -1,3 +1,7 @@
+---
+title: ES6 Object Initializers
+---
+
 ### ES6 Object Initializers
 
 In ES6 you can use shorthand property syntax to initialize objects, which at first does not appear to be very time-saving but when you are creating many objects in a project can be super useful.
