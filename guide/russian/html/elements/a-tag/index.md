@@ -39,6 +39,13 @@ localeTitle: День
 
 [freeCodeCamp](https://guide.freecodecamp.org/) Эта ссылка создается так же, как предлагает пример кода. Нажмите, чтобы посмотреть, как это работает.
 
+Также тег <a> может содержать атрибут rel="nofollow", который будет запрещать поисковым роботам переходить по ссылке. Часто такой атрибут используется поисковой оптимизации сайтов.
+
+#### Пример:
+
+<a href="https://guide.freecodecamp.org/" rel="nofollow">freeCodeCamp</a>
+  
+
 #### Дополнительная информация:
 
 *   [Элемент HTML <a>: MDN](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/a)
