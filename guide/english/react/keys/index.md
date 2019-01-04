@@ -1,4 +1,9 @@
+---
+title: Keys
+---
+
 # Keys
+
 Keys are the eyes and ears on your application battlefield letting React know which items have changed or were added.
 ```javascript
 const bestCereal = ['cookie crisp','waffle crisp','fruit loops','cinnamon toast crunch','cocoa puffs'];
