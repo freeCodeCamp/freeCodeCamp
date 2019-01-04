@@ -9,17 +9,17 @@ Functions can be named and called repeatedly or can be run anonymously in place 
 Developing full understanding of R functions requires understanding of environments. 
 Environments are simply a way to manage objects. An example of environments in action is that you can use a redundant variable
 name within a function, that won't be affected if the larger runtime already has the same variable. Additionally, if a 
-function calls a variable not defined within the function it will check the higher level environment for that variable.
+function calls a variable which is not defined within the function, it will check the higher level environment for that variable.
 
 ### Syntax
 
 In R, a function definition has the following features:
 
 1. The keyword `function`
-2. a function name
-3. input parameters (optional)
-4. some block of code to execute
-5. a return statement (optional)
+2. A function name
+3. Input parameters (optional)
+4. Some block of code to execute
+5. A return statement (optional)
 
 ```{r}
 # a function with no parameters or returned values
@@ -44,7 +44,7 @@ multiply = function(val1, val2){
 multiply(3, 5)  # prints 15 to the console
 ```
 
-Functions are blocks of code that can be reused simply by calling the function. This enables simple, elegent code reuse without explicitly re-writing sections of code. This makes code both more readable, makes for easier debugging, and limits typing errors. 
+Functions are blocks of code that can be reused simply by calling the function. This enables simple, elegant code reuse without explicitly re-writing sections of code. This makes code both more readable, makes for easier debugging, and limits typing errors. 
 
 Functions in R are created using the `function` keyword, along with a function name and function parameters inside parentheses.
 
@@ -155,7 +155,7 @@ its factorial with the `factorial()`.
 
 - The data that you pass into the function is called the function’s argument.
 
-- You can simulate a roll of the die with R’s  `sample()`function. The `sample()` function takes two arguments:a vector named  x and a number named  size. For example:
+- You can simulate a roll of the die with R’s  `sample()`function. The `sample()` function takes two arguments: a vector named  `x` and a number named  `size`. For example:
 
 ```r
 > sample(x = 1:4, size = 2)
@@ -178,7 +178,6 @@ arguments with args.
 
 ## Resources
 
-<a href='https://cran.r-project.org/manuals.html' target='_blank' rel='nofollow'>Official Docs</a>
-<a href='https://www.statmethods.net/management/functions.html' target='_blank' rel='nofollow'>Quick-R</a>
-<a href='https://cran.r-project.org/doc/manuals/r-release/R-lang.html#Functions' target='_blank' rel='nofollow'>CRAN</a>
-<a href='http://adv-r.had.co.nz/Functions.html' target='_blank' rel='nofollow'>Advanced R: Functions</a>
+ * [Official Docs](https://cran.r-project.org/manuals.html)
+ * [Quick-R](https://www.statmethods.net/management/functions.html)
+ * [Advanced R: Functions](http://adv-r.had.co.nz/Functions.html)

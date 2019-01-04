@@ -3,21 +3,25 @@ id: 587d778b367417b2b2512aa8
 title: Add an Accessible Date Picker
 challengeType: 0
 videoUrl: ''
-localeTitle: Добавить доступную дату выбора
+
+localeTitle: Добавить возможность выбора даты
 ---
 
-## Description
-<section id="description"> Формы часто включают поле <code>input</code> , которое может использоваться для создания нескольких различных элементов управления формой. Атрибут <code>type</code> в этом элементе указывает, какой тип ввода будет создан. Возможно, вы заметили <code>text</code> и <code>submit</code> типы ввода в предыдущих задачах, а в HTML5 появилась опция указать поле <code>date</code> . В зависимости от поддержки браузера в поле <code>input</code> появляется окно выбора даты, когда оно находится в фокусе, что облегчает заполнение формы для всех пользователей. Для более старых браузеров тип будет по умолчанию использоваться для <code>text</code> , поэтому он помогает показывать пользователям ожидаемый формат даты на этикетке или в качестве текста заполнителя на всякий случай. Вот пример: <blockquote> &lt;label for = &quot;input1&quot;&gt; Введите дату: &lt;/ label&gt; <br> &lt;input type = &quot;date&quot; id = &quot;input1&quot; name = &quot;input1&quot;&gt; <br></blockquote></section>
+## Description (Описание)
+<section id="description"> Формы часто включают поле <code>input</code> . Это поле может использоваться для создания различных элементов управления формой. Атрибут <code>type</code> в этом элементе указывает, какой тип информации может быть введен. Возможно, вы уже встречали в предыдущих задачах типы ввода <code>text</code> и <code>submit</code> . В HTML5 появилась возможность указать поле <code>date</code> . В зависимости от поддержки браузера в поле <code>input</code> появляется окно выбора даты, что облегчает заполнение формы для всех пользователей. Для более старых браузеров будет по умолчанию использоваться тип <code>text</code> , он также помогает показывать пользователям ожидаемый формат даты, но в текстовом виде. Например: <blockquote> &lt;label for = &quot;input1&quot;&gt; Введите дату: &lt;/ label&gt; <br> &lt;input type = &quot;date&quot; id = &quot;input1&quot; name = &quot;input1&quot;&gt; <br></blockquote></section>
 
-## Instructions
-<section id="instructions"> Camper Cat создает турнир Mortal Kombat и хочет попросить своих конкурентов посмотреть, какая дата лучше всего работает. Добавить <code>input</code> тег с <code>type</code> атрибута «дата», с <code>id</code> атрибута «pickdate», и <code>name</code> атрибута «дата». </section>
 
-## Tests
+## Instructions (Задание)
+<section id="instructions"> Camper Cat решил организовать турнир по Mortal Kombat и хочет попросить будущих участников определить, какая дата для проведения лучше всего подойдет. Добавьте <code>input</code> тег с <code>type</code> атрибутом «дата», с <code>id</code> атрибутом «pickdate», и <code>name</code> атрибутом «дата». </section>
+
+
+## Tests (Тесты)
+
 <section id='tests'>
 
 ```yml
 tests:
-  - text: Ваш код должен добавить один тег <code>input</code> для поля выбора даты.
+  - text: Вы должны добавить один тег <code>input</code> для поля выбора даты.
     testString: 'assert($("input").length == 2, "Your code should add one <code>input</code> tag for the date selector field.");'
   - text: Тег <code>input</code> должен иметь атрибут <code>type</code> со значением даты.
     testString: 'assert($("input").attr("type") == "date", "Your <code>input</code> tag should have a <code>type</code> attribute with a value of date.");'
@@ -47,11 +51,11 @@ tests:
         <p>Tell us the best date for the competition</p>
         <label for="pickdate">Preferred Date:</label>
 
-        <!-- Add your code below this line -->
+        <!-- Добавьте ваш код под этой линией -->
 
 
 
-        <!-- Add your code above this line -->
+        <!-- Добавьте ваш код над этой линией -->
 
         <input type="submit" name="submit" value="Submit">
       </form>
@@ -68,10 +72,10 @@ tests:
 
 </section>
 
-## Solution
+## Solution (Решение)
 <section id='solution'>
 
 ```js
-// solution required
+// здесь должно быть ваше решение
 ```
 </section>
