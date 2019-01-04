@@ -1,4 +1,5 @@
-title: addeventlistener
+---
+title: addEventListener
 ---
 ##addEventListener
 The addEventListener method assigns a function to a target event for a particular DOM element.  In simpler terms this method 
