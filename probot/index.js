@@ -52,7 +52,7 @@ async function probotPlugin(robot) {
   // connect to mongo db
   const mongoUri = config.mongo.host;
   const promise = mongoose.connect(
-    mongoUri,
+    encodeURI(mongoUri),
     { useNewUrlParser: true }
   );
   promise
