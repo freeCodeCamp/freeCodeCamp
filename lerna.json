@@ -2,7 +2,8 @@
   "packages": [
     "probot",
     "probot/client",
-    "lib"
+    "lib",
+    "one-off-scripts"
   ],
   "version": "independent"
 }

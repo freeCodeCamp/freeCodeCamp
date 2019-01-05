@@ -11,9 +11,9 @@
   ],
   "scripts": {
     "dev": "nodemon",
-    "start": "node server/server.js",
+    "start": "probot run ./index.js",
     "develop": "cross-env PORT=3001 node server/server.js",
-    "seed": "node server/utils/seed-db.js",
+    "seed": "node server/tools/seed-db.js",
     "start-probot": "probot run ./index.js",
     "lint": "standard --fix",
     "test": "jest && standard",
@@ -26,14 +26,11 @@
     "cross-env": "^5.2.0",
     "dotenv": "^6.2.0",
     "express": "^4.16.3",
-    "express-validation": "^1.0.2",
-    "express-winston": "^3.0.1",
     "http-status": "^1.3.1",
     "joi": "^14.3.1",
     "mongoose": "^5.4.1",
     "node-fetch": "^2.3.0",
-    "probot": "^7.2.0",
-    "winston": "^3.1.0"
+    "probot": "^7.2.0"
   },
   "devDependencies": {
     "expect": "^23.6.0",

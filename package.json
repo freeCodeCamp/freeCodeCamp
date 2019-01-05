@@ -15,11 +15,13 @@
     "dev": "nodemon"
   },
   "devDependencies": {
+    "dotenv": "^6.2.0",
     "eslint": "^5.9.0",
     "eslint-config-freecodecamp": "^1.1.1",
+    "joi": "^14.3.1",
     "lerna": "^3.5.1",
-    "prettier": "^1.15.2",
-    "presolver": "file:probot"
+    "presolver": "file:probot",
+    "prettier": "^1.15.2"
   },
   "nodemonConfig": {
     "exec": "npm start",

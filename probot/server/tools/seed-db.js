@@ -1,4 +1,4 @@
-const config = require('../config');
+const config = require('../../../config');
 // config should be imported before importing any other file
 const mongoose = require('mongoose');
 const fetch = require('node-fetch');

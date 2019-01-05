@@ -3,13 +3,22 @@
 1. In a terminal window:
 
 ```bash
-npm install
+cp probot/sample.env probot/.env
+cp probot/client/sample.env probot/client/.env
+```
 
-cd dashboard-api
+2. Update `.env` variables with applicable values
+
+3. In a terminal window:
+
+```bash
+npm install
 
 npm run seed
 
-npm run develop
+npm run build
+
+npm start
 ```
 
 ## Caveats & Notes
@@ -25,7 +34,7 @@ This is usually the case with the use of access tokens for scripts.
 For updating dashboard data we use PM2 like so:
 
 ```
-pm2 start --no-autorestart dashboard-api/utils/update-db.js --cron "*/10 * * * *"
+pm2 start --no-autorestart probot/server/tools/update-db.js --cron "*/10 * * * *"
 ```
 
 This will start the script in the "no restart" mode and re-run it every 10 minutes.

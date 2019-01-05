@@ -4,7 +4,7 @@ This is a one-off script to run on all open PRs to add the
 "scope: curriculum" label on it.
 */
 
-require('dotenv').config();
+const config = require('../config');
 
 const { getPRs, getUserInput } = require('../lib/get-prs');
 const { addLabels } = require('../lib/pr-tasks');
@@ -36,7 +36,7 @@ const log = new ProcessingLog('all-locally-tested-labels');
 
       if (newLabels.length) {
         log.add(number, { number, labels: newLabels });
-        if (process.env.PRODUCTION_RUN === 'true') {
+        if (config.github.productionRun === 'true') {
           addLabels(number, newLabels, log);
           await rateLimiter();
         }

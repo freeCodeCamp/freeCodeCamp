@@ -4,7 +4,8 @@ a comment and "status: needs update" label to any PR with guide articles which
 have frontmatter issues.
 */
 
-require('dotenv').config();
+const config = require('../config');
+
 const fetch = require('node-fetch');
 
 const { owner, repo, octokitConfig, octokitAuth } = require('../lib/constants');
@@ -49,7 +50,7 @@ const labeler = async(
     return !existingLabels.includes(label);
   });
   if (newLabels.length) {
-    if (process.env.PRODUCTION_RUN === 'true') {
+    if (config.github.productionRun === 'true') {
       addLabels(number, newLabels);
       await rateLimiter();
     }
@@ -85,7 +86,7 @@ const guideFolderChecks = async(number, prFiles, user) => {
 
   if (prErrors.length) {
     const comment = createErrorMsg(prErrors, user);
-    if (process.env.PRODUCTION_RUN === 'true') {
+    if (config.github.productionRun === 'true') {
       await addComment(number, comment);
       await rateLimiter();
     }

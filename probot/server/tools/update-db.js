@@ -17,6 +17,8 @@ const lastUpdate = new Date();
 
 db.then(async() => {
   const oldPRs = await PR.find({}).then(data => data);
+  // Need to add logic to stop further processing if there oldPRs does
+  // not contain any data
   const oldIndices = oldPRs.reduce((obj, { _id }, index) => {
     obj[_id] = index;
     return obj;

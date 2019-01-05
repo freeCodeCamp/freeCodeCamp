@@ -1,4 +1,4 @@
-require('dotenv').config();
+const config = require('../config');
 const { closeOpen } = require('../lib/pr-tasks');
 const { openJSONFile, ProcessingLog, rateLimiter } = require('../lib/utils');
 
@@ -28,7 +28,7 @@ const getUserInput = async() => {
   for (let { number, errorDesc } of prs) {
     if (errorDesc !== 'unknown error') {
       log.add(number, { number, closedOpened: true, errorDesc });
-      if (process.env.PRODUCTION_RUN === 'true') {
+      if (config.github.productionRun === 'true') {
          await closeOpen(number);
          await rateLimiter(90000);
       }

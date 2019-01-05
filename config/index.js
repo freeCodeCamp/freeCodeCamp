@@ -1,7 +1,7 @@
 const Joi = require('joi');
 const path = require('path');
 // require and configure dotenv, will load vars in .env in PROCESS.ENV
-const envPath = path.resolve(__dirname, '../../../.env');
+const envPath = path.resolve(__dirname, '../probot/.env');
 require('dotenv').config({ path: envPath });
 
 // define validation for all the env vars
@@ -14,9 +14,22 @@ const envVarsSchema = Joi.object({
     .required()
     .description('Mongo DB host url'),
   MONGO_PORT: Joi.number().default(27017),
+  HOST: Joi.string().required(),
   GITHUB_USERNAME: Joi.string().required(),
   GITHUB_ACCESS_TOKEN: Joi.string().required(),
-  HOST: Joi.string().required()
+  REPOSITORY_OWNER: Joi.string().required(),
+  REPOSITORY: Joi.string().required(),
+  PRODUCTION_RUN: Joi.string()
+    .allow(['true', 'false'])
+    .default('false'),
+  WEBHOOK_PROXY_URL: Joi.string().required(),
+  APP_ID: Joi.number().required(),
+  PRIVATE_KEY: Joi.string().required(),
+  WEBHOOK_SECRET: Joi.string().required(),
+  CLIENT_ID: Joi.string().required(),
+  CLIENT_SECRET: Joi.string().required(),
+  SKIP_PREFLIGHT_CHECK: Joi.boolean()
+    .default(true)
 })
   .unknown()
   .required();
@@ -36,7 +49,20 @@ const config = {
   },
   github: {
     id: envVars.GITHUB_USERNAME,
-    secret: envVars.GITHUB_ACCESS_TOKEN
+    secret: envVars.GITHUB_ACCESS_TOKEN,
+    owner: envVars.REPOSITORY_OWNER,
+    repo: envVars.REPOSITORY,
+    probot: {
+      webhookUrl: envVars.WEBHOOK_PROXY_URL,
+      webhookSecret: envVars.WEBHOOK_SECRET,
+      appID: envVars.APP_ID,
+      privateKey: envVars.PRIVATE_KEY,
+      clientID: envVars.CLIENT_ID,
+      clientSecret: envVars.CLIENT_SECRET
+    }
+  },
+  oneoff: {
+    productionRun: envVars.PRODUCTION_RUN
   }
 };
 
