@@ -97,7 +97,7 @@ int main() {
 
 C also supports multi-dimensional arrays.
 ```C
-datatype name[size1][size2]...[sizeN] 
+datatype name[size1][size2]...[sizeN] ;
 ```
 
 Two-dimensional arrays are common and can be initialized using the following syntax. One can logically think of the first index as rows and the second index as columns. This example has 2 rows and 5 columns.
@@ -144,7 +144,7 @@ int main() {
 
 ## Strings
 
-To store strings/multiple characters, we use `char arrays` in C, because the language has no special type built in. One thing to be aware of, is that a terminating null is automatically added to the end, signaling that it is the end of the string. However, you may also initialze a string with curly braces `{}` as well, but you have to manually add the terminating null. 
+To store strings/multiple characters, we use `char arrays` in C, because the language has no special type built in. One thing to be aware of, is that a terminating null(represented as '\0') is automatically added to the end, signaling that it is the end of the string. However, you may also initialze a string with curly braces `{}` as well, but you have to manually add the terminating null. 
 
 Like so:
 ```C
@@ -169,7 +169,7 @@ char* string = "I do not want to count the chars in this.";
 double first[] = {2,3,7};
 double second[] = first;
 //Or this:
-double a[5], b[5]
+double a[5], b[5];
 a = b;
 ```
 You can **only** deal with the values in an array one by one. You **cannot assign all at once**, when you learn about pointers later, the reasons will be clear. 
