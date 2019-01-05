@@ -42,7 +42,7 @@ And now let's break the syntax down a bit:
 ```C
 int arr[4] = {1, 2, 3, 88};
 ```
-Here you have created an `array` of `ints`(Integers), called `arr`. This array has 4 elements: `1`, `2`, `3`, `88`. Note the syntax!
+Here you have created an `array` of `int`(Integers), called `arr`. This array has 4 elements: `1`, `2`, `3`, `88`. Note the syntax!
 ```C
 datatype name[number of elements] 
 ```
