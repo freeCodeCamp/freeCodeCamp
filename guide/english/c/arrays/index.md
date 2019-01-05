@@ -82,11 +82,12 @@ Two-dimensional arrays are common and can be initialized using the following syn
 ```C
 int arr[2][5] = {0, 1, 2, 3, 4, 5, 6, 7, 8, 9};
 ```
+
 We can also declare the two-dimensional array without giving the number of rows, but number of columns is a must.
 
-example: `A[][5]` - here the number of rows are variable
+example: `int arr[][5]` - here the number of rows are variable
 
-To access the element A[i][j] we can also denote it by *(A+i*n+j),where n is the no_of_columns
+To access the element `arr[i][j]` we can also denote it by `*(arr+i*n+j)`,where `n` is the number of columns
 
 It can be difficult to visualize a 2-dimensional array using the above syntax so developers often use optional, nested brackets to clarify the structure of the array. This is also a valid way to initialize a 2-dimensional array.
 ```C
