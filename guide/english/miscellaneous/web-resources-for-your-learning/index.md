@@ -17,3 +17,4 @@ Useful links to help you with your learning and projects.
 
 *   <a href='http://wave.webaim.org/report#/google.com' target='_blank' rel='nofollow'>Color Contrast Analyser</a>
 *   <a href='http://colorlovers.com' target='_blank' rel='nofollow'>Color Patterns</a>
+*   <a href='https://www.color-hex.com/' target='_blank' rel='nofollow'>Color Hex</a>
