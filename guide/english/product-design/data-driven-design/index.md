@@ -10,10 +10,7 @@ The term ["data-informed design"](https://www.oreilly.com/design/free/data-infor
 
 #### More Information:
 
-[Six Myths About Data-Driven Design](https://uxmag.com/articles/six-myths-about-data-driven-design)
-
-[Netflix's Data-Driven Strategy Strengthens Claim For 'Best Original Content' In 2018](https://www.forbes.com/sites/kristinwestcottgrant/2018/05/28/netflixs-data-driven-strategy-strengthens-lead-for-best-original-content-in-2018/#a1804513a94e)
-
-[When Data Isn't Enough](https://medium.com/@chrism_14039/when-data-isnt-enough-c687ded0fd2b)
-
-Disambiguation: ["Responsibility-driven design (Data driven design) - programming"](https://en.wikipedia.org/wiki/Responsibility-driven_design)
+- [Six Myths About Data-Driven Design](https://uxmag.com/articles/six-myths-about-data-driven-design)
+- [Netflix's Data-Driven Strategy Strengthens Claim For 'Best Original Content' In 2018](https://www.forbes.com/sites/kristinwestcottgrant/2018/05/28/netflixs-data-driven-strategy-strengthens-lead-for-best-original-content-in-2018/#a1804513a94e)
+- [When Data Isn't Enough](https://medium.com/@chrism_14039/when-data-isnt-enough-c687ded0fd2b)
+- Disambiguation: ["Responsibility-driven design (Data driven design) - programming"](https://en.wikipedia.org/wiki/Responsibility-driven_design)
