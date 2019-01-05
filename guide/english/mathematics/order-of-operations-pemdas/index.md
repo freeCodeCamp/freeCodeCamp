@@ -72,3 +72,7 @@ Thus, PEMDAS represents the convention:
 2. Evluate exponents (including roots), from top to bottom (or right to left);
 3. Evaluate any multiplication or division operations, from left to right;
 4. Finally, evaluate any addition and subtraction operations, from left to right.
+
+#### More Information:
+<!-- Please add any articles you think might be helpful to read before writing the article -->
+
