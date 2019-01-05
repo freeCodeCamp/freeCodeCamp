@@ -193,3 +193,42 @@ The reason for C not checking the indexing bound is simple: C is an efficient la
 A[4] will return an error, as the the indexing starts from 0.
 
 But, the disadvantage of array is that the memory required should be allocated before the run time of the program.
+
+## Note
+In case of array any type of datatype can be used except 'void' and 'function'.
+
+### Declaration of Character Array and String
+When we use double quotes to intialize an array, the compiler takes it as a string, and adds a `'\0'` to the end of the array.
+However, if we use single quote to initialize then there is no `'\0'` added to the end and the array behaves normally.
+
+```C
+#include<stdio.h>
+int main()
+{
+    int n;
+    char array[]="window";
+    n=sizeof(array);
+    printf("%d",n);
+}
+```
+#### Output
+```
+-> 7
+```
+The output is `7` but the array has only 6 characters.  This happens because the array is initialized with double quotes so there is an extra `'\0'` at the end which increases the count to 7.
+
+```C
+#include<stdio.h>
+int main()
+{
+    int n;
+    char array[]={'w', 'i', 'n', 'd', 'o', 'w'};
+    n=sizeof(array);
+    printf("%d",n);
+}
+```
+#### Output
+```
+-> 6
+```
+Here the output is 6 because the array is initialized with single quotes so there is no extra `'\0'` at the end.
