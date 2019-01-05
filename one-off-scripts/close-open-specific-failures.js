@@ -24,24 +24,24 @@ const getUserInput = async() => {
   const { prs } = await getUserInput();
   return prs;
 })()
-.then(async(prs) => {
-  for (let { number, errorDesc } of prs) {
-    if (errorDesc !== 'unknown error') {
-      log.add(number, { number, closedOpened: true, errorDesc });
-      if (config.github.productionRun === 'true') {
-         await closeOpen(number);
-         await rateLimiter(90000);
+  .then(async prs => {
+    for (let { number, errorDesc } of prs) {
+      if (errorDesc !== 'unknown error') {
+        log.add(number, { number, closedOpened: true, errorDesc });
+        if (config.github.productionRun === 'true') {
+          await closeOpen(number);
+          await rateLimiter(90000);
+        }
+      } else {
+        log.add(number, { number, closedOpened: false, errorDesc });
       }
-    } else {
-      log.add(number, { number, closedOpened: false, errorDesc });
     }
-  }
-})
-.then(() => {
-  log.finish();
-  console.log('closing/reopening of PRs complete');
-})
-.catch(err => {
-  log.finish();
-  console.log(err);
-});
+  })
+  .then(() => {
+    log.finish();
+    console.log('closing/reopening of PRs complete');
+  })
+  .catch(err => {
+    log.finish();
+    console.log(err);
+  });

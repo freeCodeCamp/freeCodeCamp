@@ -40,15 +40,9 @@
     "merged_at": null,
     "merge_commit_sha": "fc696e1a288b07f66318e775fdd9ea619122d09e",
     "assignee": null,
-    "assignees": [
-
-    ],
-    "requested_reviewers": [
-
-    ],
-    "requested_teams": [
-
-    ],
+    "assignees": [],
+    "requested_reviewers": [],
+    "requested_teams": [],
     "labels": [
       {
         "id": 511502933,

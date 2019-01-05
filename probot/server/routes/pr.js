@@ -1,7 +1,7 @@
 const router = require('express').Router();
 const { PR } = require('../models');
 
-router.get('/:number', async(request, response) => {
+router.get('/:number', async (request, response) => {
   const prs = await PR.find({}).then(data => data);
   const indices = prs.reduce((obj, { _id }, index) => {
     obj[_id] = index;
@@ -25,7 +25,7 @@ router.get('/:number', async(request, response) => {
 
   prs.forEach(({ _id: number, filenames, username, title }) => {
     if (number !== +refNumber) {
-      const matchedFilenames = filenames.filter((filename) => {
+      const matchedFilenames = filenames.filter(filename => {
         return refFilenames.includes(filename);
       });
       if (matchedFilenames.length) {

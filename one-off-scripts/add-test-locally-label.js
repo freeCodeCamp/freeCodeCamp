@@ -46,11 +46,11 @@ const log = new ProcessingLog('all-locally-tested-labels');
     }
   }
 })()
-.then(() => {
-  log.finish();
-  console.log('Successfully completed labeling');
-})
-.catch(err => {
-  log.finish();
-  console.log(err);
-});
+  .then(() => {
+    log.finish();
+    console.log('Successfully completed labeling');
+  })
+  .catch(err => {
+    log.finish();
+    console.log(err);
+  });

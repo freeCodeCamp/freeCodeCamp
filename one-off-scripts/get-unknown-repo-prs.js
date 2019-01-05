@@ -15,7 +15,10 @@ log.start();
   if (openPRs.length) {
     let count = 0;
     for (let i = 0; i < openPRs.length; i++) {
-      let { number, head: { repo: headRepo } } = openPRs[i];
+      let {
+        number,
+        head: { repo: headRepo }
+      } = openPRs[i];
       if (headRepo === null) {
         const {
           data: { mergeable_state: mergeableState }
@@ -26,7 +29,7 @@ log.start();
           log.add(number, { number, mergeableState });
           console.log(`${number} (${mergeableState})`);
         }
-        if (count > 4000 ) {
+        if (count > 4000) {
           await rateLimiter(2350);
         }
       }
@@ -35,11 +38,11 @@ log.start();
     throw 'There were no open PRs received from Github';
   }
 })()
-.then(async() => {
-  log.finish();
-  console.log('Finished finding unknown repo PRs with merge conflicts');
-})
-.catch(err => {
-  log.finish();
-  console.log(err);
-});
+  .then(async() => {
+    log.finish();
+    console.log('Finished finding unknown repo PRs with merge conflicts');
+  })
+  .catch(err => {
+    log.finish();
+    console.log(err);
+  });

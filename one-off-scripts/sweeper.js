@@ -34,37 +34,46 @@ console.log('Sweeper started...');
     console.log('Processing PRs...');
     for (let i = 0; i < openPRs.length; i++) {
       let {
-        number, labels: currentLabels, user: { login: username }
+        number,
+        labels: currentLabels,
+        user: { login: username }
       } = openPRs[i];
-      const {
-        data: prFiles
-      } = await octokit.pullRequests.listFiles({ owner, repo, number });
+      const { data: prFiles } = await octokit.pullRequests.listFiles({
+        owner,
+        repo,
+        number
+      });
       count++;
 
       const guideFolderErrorsComment = await guideFolderChecks(
-        number, prFiles, username
+        number,
+        prFiles,
+        username
       );
       const commentLogVal = guideFolderErrorsComment
         ? guideFolderErrorsComment
         : 'none';
 
       const labelsAdded = await labeler(
-        number, prFiles, currentLabels, guideFolderErrorsComment
+        number,
+        prFiles,
+        currentLabels,
+        guideFolderErrorsComment
       );
       const labelLogVal = labelsAdded.length ? labelsAdded : 'none added';
 
       log.add(number, { number, comment: commentLogVal, labels: labelLogVal });
-      if (count > 4000 ) {
+      if (count > 4000) {
         await rateLimiter(2350);
       }
     }
   }
 })()
-.then(() => {
-  log.finish();
-  console.log('Sweeper complete');
-})
-.catch(err => {
-  log.finish();
-  console.log(err);
-});
+  .then(() => {
+    log.finish();
+    console.log('Sweeper complete');
+  })
+  .catch(err => {
+    log.finish();
+    console.log(err);
+  });

@@ -7,7 +7,10 @@ mongoose.set('useFindAndModify', false);
 
 // connect to mongo db
 const mongoUri = config.mongo.host;
-const db = mongoose.connect(mongoUri, { useNewUrlParser: true });
+const db = mongoose.connect(
+  mongoUri,
+  { useNewUrlParser: true }
+);
 
 const { PR, INFO } = require('../models');
 const { getPRs, getUserInput, getFilenames } = require('../../lib/get-prs');
@@ -15,7 +18,7 @@ const { rateLimiter } = require('../../lib/utils');
 
 const lastUpdate = new Date();
 
-db.then(async() => {
+db.then(async () => {
   const oldPRs = await PR.find({}).then(data => data);
   // Need to add logic to stop further processing if there oldPRs does
   // not contain any data
@@ -31,7 +34,10 @@ db.then(async() => {
   const newIndices = {};
   for (let i = 0; i < openPRs.length; i++) {
     const {
-      number, updated_at: updatedAt, title, user: { login: username }
+      number,
+      updated_at: updatedAt,
+      title,
+      user: { login: username }
     } = openPRs[i];
 
     newIndices[number] = i;
@@ -42,7 +48,6 @@ db.then(async() => {
       const filenames = await getFilenames(number);
       await PR.create({ _id: number, updatedAt, title, username, filenames });
       console.log('added PR# ' + number);
-
     } else if (updatedAt > oldUpdatedAt) {
       // update an existing pr
       const filenames = await getFilenames(number);
@@ -53,7 +58,7 @@ db.then(async() => {
       );
       console.log('updated PR #' + number);
     }
-    if (count > 4000 ) {
+    if (count > 4000) {
       await rateLimiter(2350);
     }
   }
@@ -66,19 +71,19 @@ db.then(async() => {
     }
   }
 })
-.then(async() => {
-  // update info collection
-  const prs = await PR.find({});
-  const firstPR = prs[0]._id;
-  const lastPR = prs[prs.length - 1]._id;
-  const info = {
-    lastUpdate,
-    numPRs: prs.length,
-    prRange: `${firstPR}-${lastPR}`
-  };
-  await INFO.updateOne(info);
-  mongoose.connection.close();
-})
-.catch((err) => {
-  console.log(err);
-});
+  .then(async () => {
+    // update info collection
+    const prs = await PR.find({});
+    const firstPR = prs[0]._id;
+    const lastPR = prs[prs.length - 1]._id;
+    const info = {
+      lastUpdate,
+      numPRs: prs.length,
+      prRange: `${firstPR}-${lastPR}`
+    };
+    await INFO.updateOne(info);
+    mongoose.connection.close();
+  })
+  .catch(err => {
+    console.log(err);
+  });

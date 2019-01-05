@@ -1,21 +1,22 @@
 const router = require('express').Router();
 const { PR } = require('../models');
 
-const createPareto = (reportObj) => Object.keys(reportObj)
-  .reduce((arr, filename) => {
-    const { count, prs } = reportObj[filename];
-    if (count > 1) {
-      arr.push({ filename, count, prs });
-    }
-    return arr;
-  }, [])
-  .sort((a, b) => b.count - a.count);
+const createPareto = reportObj =>
+  Object.keys(reportObj)
+    .reduce((arr, filename) => {
+      const { count, prs } = reportObj[filename];
+      if (count > 1) {
+        arr.push({ filename, count, prs });
+      }
+      return arr;
+    }, [])
+    .sort((a, b) => b.count - a.count);
 
-router.get('/', async(reqeust, response) => {
+router.get('/', async (reqeust, response) => {
   const prs = await PR.find({}).then(data => data);
   const reportObj = prs.reduce((obj, pr) => {
     const { _id: number, filenames, username, title } = pr;
-    filenames.forEach((filename) => {
+    filenames.forEach(filename => {
       if (obj[filename]) {
         const { count, prs } = obj[filename];
         obj[filename] = {

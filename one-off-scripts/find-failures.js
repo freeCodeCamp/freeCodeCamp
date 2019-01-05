@@ -32,7 +32,11 @@ const errorsToFind = [
     log.start();
     console.log('Starting error finding process...');
     for (let count = 0; count < openPRs.length; count++) {
-      let { number, labels, head: { sha: ref } } = openPRs[count];
+      let {
+        number,
+        labels,
+        head: { sha: ref }
+      } = openPRs[count];
       const existingLabels = labels.map(({ name }) => name);
 
       if (
@@ -40,9 +44,11 @@ const errorsToFind = [
         !existingLabels.includes('status: needs update') &&
         !existingLabels.includes('status: discussing')
       ) {
-        const {
-          data: statuses
-        } = await octokit.repos.listStatusesForRef({ owner, repo, ref });
+        const { data: statuses } = await octokit.repos.listStatusesForRef({
+          owner,
+          repo,
+          ref
+        });
         if (statuses.length) {
           // first element contain most recent status
           const { state, target_url: targetUrl } = statuses[0];
@@ -74,11 +80,11 @@ const errorsToFind = [
     }
   }
 })()
-.then(() => {
-  log.finish();
-  console.log('Successfully finished finding all specified errors.');
-})
-.catch(err => {
-  log.finish();
-  console.log(err);
-});
+  .then(() => {
+    log.finish();
+    console.log('Successfully finished finding all specified errors.');
+  })
+  .catch(err => {
+    log.finish();
+    console.log(err);
+  });

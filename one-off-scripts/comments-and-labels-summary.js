@@ -14,7 +14,8 @@ const path = require('path');
 const dedent = require('dedent');
 
 const specificLogFile = path.resolve(
-  __dirname, '../work-logs/test_sweeper_18059-20977_2019-01-03T145413.json'
+  __dirname,
+  '../work-logs/test_sweeper_18059-20977_2019-01-03T145413.json'
 );
 
 (() => {
@@ -22,9 +23,7 @@ const specificLogFile = path.resolve(
   let { prs } = fileObj;
 
   let count = 0;
-  let prsWithComments = prs.reduce((text, {
-    number, comment, labels
-  }) => {
+  let prsWithComments = prs.reduce((text, { number, comment, labels }) => {
     if (comment !== 'none' || labels !== 'none added') {
       text += dedent`
 
