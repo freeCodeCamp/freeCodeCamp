@@ -108,6 +108,8 @@ int*A=(int*)malloc(sizeof(int)*n);
 
 * Some texts refer to one-dimensional arrays as vectors, two-dimensional arrays as matrices, and use the general term arrays when the number of dimensions is unspecified or unimportant.
 
+* Two types of arrays in C are statically allocated and dynamically allocated. The size and number of dimensions of statically allocated arrays are known at compile time. On the other hand, dynamically allocated are allocated on the heap at run time and require a call to ```malloc```.
+
 
 ## Multi-dimensional Arrays in C
 
