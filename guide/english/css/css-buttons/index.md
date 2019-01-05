@@ -92,7 +92,18 @@ button:hover {
 
 ![Hoverable Buttons](https://image.ibb.co/hxQnfm/button_hover.png "Hoverable Buttons")
 
-To determine the speed of the hover effect use the property `transition-duration`.
+To determine the speed of the hover effect, use the property `transition-duration`.
+```
+ button {
+  background-color: #f4511e;
+  transition-duration: 0.4s;
+}
+
+ button:hover {
+  background-color: #0E2C5B;
+  color: #FFF;
+}
+```
 
 ### Disabled Buttons
 
@@ -108,7 +119,7 @@ button {
 
 To animate a button on click use 'button:active':
 
-```
+```css
 .button {
   display: inline-block;
   padding: 15px 25px;
@@ -121,10 +132,11 @@ To animate a button on click use 'button:active':
   background-color: #ff7d1a;
   border: none;
   border-radius: 15px;
+  transition-duration: 0.4s;
 }
 
 .button:hover {
-	background-color: #ff6d00;
+  background-color: #ff6d00;
 }
 
 .button:active {
@@ -133,7 +145,25 @@ To animate a button on click use 'button:active':
 }
 ```
 
+### Button Links
+
+In many cases buttons will have to link to an url. As we can't add an href attribute to the HTML button element without some JavaScript workarounds we need to style our link like a button. This way we have a working <a> element disguised as a button, yet we can still use this class to style buttons. For example:
+        
+```
+.btn {
+  display: inline-block;
+  text-decoration: none;
+  min-height: 40px;
+  padding: 20px 10px;
+  background-color: lightblue;
+}
+
+// Prevent visited links from turning purple
+.btn:visited {
+  color: black;
+}
+```
+
 #### More Information:
 * https://www.w3schools.com/css/css3_buttons.asp
 * https://www.w3schools.com/howto/howto_css_animate_buttons.asp
-
