@@ -87,6 +87,21 @@ int main() {
     5    4    12    3    9    1
 ```
 
+## Array Stored in Memory
+If you creat an array locally, by default the values will stored in a `stack` data structure. If you want to store many more elements, like in millions or billions, a heap may be used. Heaps are expanded up to the total memory in the machine, but a stack only can store limited number of elements.
+
+An array declared globally or statically would have different storage specification from an array declared locally such as
+- A local array will be (usually) created on stack.
+- A global or static array will be (usually)created on bss/data segments.
+- A dynamically created array will be created on heap.
+
+For declaring an array in heap we use the `malloc` function under the `stdlib` header file.
+
+Here is an example of the syntax where `A` is an `int` type array of size `n`:
+```C
+int*A=(int*)malloc(sizeof(int)*n);
+```
+
 ## Overview
 
 * A one-dimensional array is like a list; A two dimensional array is like a table;  The C language places no limits on the number of dimensions in an array, though specific implementations may.
