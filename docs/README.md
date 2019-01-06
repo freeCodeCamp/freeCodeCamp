@@ -4,7 +4,6 @@
 
 ```bash
 cp probot/sample.env probot/.env
-cp probot/client/sample.env probot/client/.env
 ```
 
 2. Update `.env` variables with applicable values
