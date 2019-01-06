@@ -6,7 +6,7 @@ title: Animations
 
 #### Motivation
 
-Modern web components frequently use animations. Cascading Style-sheets (CSS) arms developers with the tools to create impressive animations. Property transitions, uniquely named animations, multi-part keyframes are possible with CSS. The animatable possibilities are endless thanks to CSS.
+Modern web components frequently use animations. Cascading Style Sheets (CSS) arms developers with the tools to create impressive animations. Property transitions, uniquely named animations, multi-part keyframes are possible with CSS. The animatable possibilities are endless thanks to CSS.
 
 In a modern web application, animation focuses the user’s attention. Good animations seek to guide the user’s attention in a satisfying, productive manner. Animations should not prove annoying to the user.
 
