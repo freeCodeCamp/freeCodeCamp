@@ -21,6 +21,13 @@ Early on, NLP employed a rule based approach, i.e. all the rules were hard coded
 Currently, NLP processes are carried on using Artificial Intelligence. They rely mainly on Deep Learning, an AI that determines patterns in the data and uses them to train the model. This method is better than the earlier methods because when learning through the huge data sets, the machine can focus on the most common cases. This is not easy with hand-written rules because it is not obvious as to where the efforts are to be put. Also, these models become more reliable with the increase in data, but in earlier approaches it could only be made accurate by increasing the complexity of the rules, which is a more difficult task. 
 The model learns the rules of the language through the analysis of large corpora of typical real-world examples. This method requires enormous amount of labelled data, which is a big hurdle for NLP.
 
+Processes involved in NLP:
+- MORPHOLOGICAL ANALYSIS: Individual words are analysed into their components, and nonword tokens, such as punctuation are separated from the words.
+- SYNTATIC ANALYSIS: Linear sequence of words are transformed into structures and show how the words relate to each other.
+- SEMANTIC ANALYSIS:A mapping is made between syntatic structures and  objects in task domain
+- DISCOURSE INTEGRATION: Meaning of a sentence may depend on the sentence that precede it and may influence the meaning of the sentence that follow it.
+- PRAGMATIC ANALYSIS: The structure representing what was said is reinterpreted to determine what was actually meant.
+
 ## Use cases
 People have used this concept in a lot of interesting applications. Few of the exciting ones include Google Translate, Siri, or Gmail auto reply suggestions. People are however working on ways to improve these predictions, and state of the art research is being done on how to make machines answer questions more reliably. 
 
