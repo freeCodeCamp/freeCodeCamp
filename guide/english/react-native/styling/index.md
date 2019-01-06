@@ -116,3 +116,4 @@ export default class Login extends Component {
 There are a few popular libraries for styling React Native. Some of them provide features similar to [Bootstrap](../../bootstrap/index.md); including default forms, button styles, and page layout options.
 
 One of the most popular libraries is [styled-components](https://github.com/styled-components/styled-components). There are many others you can find on npm and GitHub to try for yourself.
+
