@@ -25,8 +25,8 @@ Return the doubly linked list object after performing the operations.
 
 ``` yml
 tests:
-  - text: <code>forwardTraverse(doubLinkedList</code> should be a function.
-    testString: assert(typeof doubLinkedList == 'function', '<code>forwardTraverse(doubLinkedList</code> should be a function.');
+  - text: <code>doubLinkedList</code> should be a function.
+    testString: assert(typeof doubLinkedList == 'function', '<code>doubLinkedList</code> should be a function.');
   - text: <code>forwardTraverse(doubLinkedList([["head", 1], ["head", 2], ["head", 3], ["head", 4], ["head", 5]]))</code> should return a array.
     testString: assert(Array.isArray(forwardTraverse(doubLinkedList([["head", 1], ["head", 2], ["head", 3], ["head", 4], ["head", 5]]))), '<code>forwardTraverse(doubLinkedList([["head", 1], ["head", 2], ["head", 3], ["head", 4], ["head", 5]]))</code> should return a array.');
   - text: <code>forwardTraverse(doubLinkedList([["head", 1], ["head", 2], ["head", 3], ["head", 4], ["head", 5]]))</code> should return <code>[5, 4, 3, 2, 1]</code>.
@@ -77,6 +77,31 @@ function doubLinkedList (queries) {
 
 </div>
 </section>
+
+### Before Test
+<div id='js-setup'>
+
+```js
+function forwardTraverse(list) {
+    var vals = [], temp = list.head;
+    while (temp) {
+        vals.push(temp.val);
+        temp = temp.next;
+    }
+    return vals;
+}
+
+function reverseTraverse(list) {
+    var vals = [], temp = list.tail;
+    while (temp) {
+        vals.push(temp.val);
+        temp = temp.prev;
+    }
+    return vals;
+}
+```
+
+</div>
 
 ## Solution
 <section id='solution'>
