@@ -22,6 +22,10 @@ While most of the operations are self-explanatory, the Conditional (Ternary) Ope
 
 `expression that results in boolean output ? return this value if true : return this value if false;`
 
+The Assignment operators (`+=`, `-=`, `*=`, `/=`, `%=`, `<<=`, `>>=`, `&=`, `^=`, `|=`) are just a short form which can be extended. 
+Example: 
+(`a += b`) does the same thing as (`a = a + b`)! 
+
 Example:
 True Condition:
 
@@ -38,10 +42,10 @@ False Condition:
     int y = (x == 10) ? 5 : 9; // y will equal 9 since the expression x == 10 evaluates to false
 ```
 
-The instance of operator is used for type checking. It can be used to test if an object is an instance of a class, a subclass or an interface. General format-
+The `instanceof` operator is used for type checking. It can be used to test if an object is an instance of a class, a subclass or an interface. General format-
 *object **instance** of class/subclass/interface*
 
-Here is a program to illustrate instanecof operator:
+Here is a program to illustrate the `instanceof` operator:
 ```Java
   Person obj1 = new Person();
         Person obj2 = new Boy();

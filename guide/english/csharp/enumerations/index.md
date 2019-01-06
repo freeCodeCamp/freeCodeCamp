@@ -32,7 +32,7 @@ To use an enum, you can declare a variable of its type and assign a value to it:
 
 `Gender myVar = Gender.Male;`
 
-You can also cast an enumeration name value to its underlying integer value and visa versa:
+You can also cast an enumeration name value to its underlying integer value and vice versa:
 
 ```
 Console.WriteLine($"Male: {(int)Gender.Male}");
