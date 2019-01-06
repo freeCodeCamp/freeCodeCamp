@@ -42,7 +42,7 @@ And now let's break the syntax down a bit:
 ```C
 int arr[4] = {1, 2, 3, 88};
 ```
-Here you have created an `array` of `ints`(Integers), called `arr`. This array has 4 elements: `1`, `2`, `3`, `88`. Note the syntax!
+Here you have created an `array` of `int`(Integers), called `arr`. This array has 4 elements: `1`, `2`, `3`, `88`. Note the syntax!
 ```C
 datatype name[number of elements] 
 ```
@@ -66,6 +66,7 @@ If you want to create an array with all the elements as `0`.
 ```C
 int var = arr[0];
 ```
+
 Here an int is created called `var`, and it is initialized to the 0th element of arr. **Very importart to note** that in C, indexes start at zero as opposed to 1. This means that to access the first element, the index (between the brackets) is 0, to access the second element, the index is 1 etc. 
 In this example `var` is going to store the value `1`.
 
@@ -86,24 +87,47 @@ int main() {
     5    4    12    3    9    1
 ```
 
+## Array Stored in Memory
+If you creat an array locally, by default the values will stored in a `stack` data structure. If you want to store many more elements, like in millions or billions, a heap may be used. Heaps are expanded up to the total memory in the machine, but a stack only can store limited number of elements.
+
+An array declared globally or statically would have different storage specification from an array declared locally such as
+- A local array will be (usually) created on stack.
+- A global or static array will be (usually)created on bss/data segments.
+- A dynamically created array will be created on heap.
+
+For declaring an array in heap we use the `malloc` function under the `stdlib` header file.
+
+Here is an example of the syntax where `A` is an `int` type array of size `n`:
+```C
+int*A=(int*)malloc(sizeof(int)*n);
+```
+
 ## Overview
 
 * A one-dimensional array is like a list; A two dimensional array is like a table;  The C language places no limits on the number of dimensions in an array, though specific implementations may.
 
 * Some texts refer to one-dimensional arrays as vectors, two-dimensional arrays as matrices, and use the general term arrays when the number of dimensions is unspecified or unimportant.
 
+* Two types of arrays in C are statically allocated and dynamically allocated. The size and number of dimensions of statically allocated arrays are known at compile time. On the other hand, dynamically allocated are allocated on the heap at run time and require a call to ```malloc```.
+
 
 ## Multi-dimensional Arrays in C
 
 C also supports multi-dimensional arrays.
 ```C
-datatype name[size1][size2]...[sizeN] 
+datatype name[size1][size2]...[sizeN] ;
 ```
 
 Two-dimensional arrays are common and can be initialized using the following syntax. One can logically think of the first index as rows and the second index as columns. This example has 2 rows and 5 columns.
 ```C
 int arr[2][5] = {0, 1, 2, 3, 4, 5, 6, 7, 8, 9};
 ```
+
+We can also declare the two-dimensional array without giving the number of rows, but number of columns is a must.
+
+example: `int arr[][5]` - here the number of rows are variable
+
+To access the element `arr[i][j]` we can also denote it by `*(arr+i*n+j)`,where `n` is the number of columns
 
 It can be difficult to visualize a 2-dimensional array using the above syntax so developers often use optional, nested brackets to clarify the structure of the array. This is also a valid way to initialize a 2-dimensional array.
 ```C
@@ -130,7 +154,7 @@ int main() {
         for (int col = 0; col < cols; col++) {
             printf("%5d", arr[row][col]);
         }
-        puts("");
+        printf("\n");
     }
 
     return 0;
@@ -144,7 +168,7 @@ int main() {
 
 ## Strings
 
-To store strings/multiple characters, we use `char arrays` in C, because the language has no special type built in. One thing to be aware of, is that a terminating null is automatically added to the end, signaling that it is the end of the string. However, you may also initialze a string with curly braces `{}` as well, but you have to manually add the terminating null. 
+To store strings/multiple characters, we use `char arrays` in C, because the language has no special type built in. One thing to be aware of, is that a terminating null(represented as '\0') is automatically added to the end, signaling that it is the end of the string. However, you may also initialze a string with curly braces `{}` as well, but you have to manually add the terminating null. 
 
 Like so:
 ```C
@@ -169,7 +193,7 @@ char* string = "I do not want to count the chars in this.";
 double first[] = {2,3,7};
 double second[] = first;
 //Or this:
-double a[5], b[5]
+double a[5], b[5];
 a = b;
 ```
 You can **only** deal with the values in an array one by one. You **cannot assign all at once**, when you learn about pointers later, the reasons will be clear. 
@@ -193,3 +217,42 @@ The reason for C not checking the indexing bound is simple: C is an efficient la
 A[4] will return an error, as the the indexing starts from 0.
 
 But, the disadvantage of array is that the memory required should be allocated before the run time of the program.
+
+## Note
+In case of array any type of datatype can be used except 'void' and 'function'.
+
+### Declaration of Character Array and String
+When we use double quotes to intialize an array, the compiler takes it as a string, and adds a `'\0'` to the end of the array.
+However, if we use single quote to initialize then there is no `'\0'` added to the end and the array behaves normally.
+
+```C
+#include<stdio.h>
+int main()
+{
+    int n;
+    char array[]="window";
+    n=sizeof(array);
+    printf("%d",n);
+}
+```
+#### Output
+```
+-> 7
+```
+The output is `7` but the array has only 6 characters.  This happens because the array is initialized with double quotes so there is an extra `'\0'` at the end which increases the count to 7.
+
+```C
+#include<stdio.h>
+int main()
+{
+    int n;
+    char array[]={'w', 'i', 'n', 'd', 'o', 'w'};
+    n=sizeof(array);
+    printf("%d",n);
+}
+```
+#### Output
+```
+-> 6
+```
+Here the output is 6 because the array is initialized with single quotes so there is no extra `'\0'` at the end.
