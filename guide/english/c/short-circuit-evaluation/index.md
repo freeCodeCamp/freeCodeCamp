@@ -35,6 +35,28 @@ The example above is equivalent to:
   }
  ```
  
+ ## Example with nested if statements
+ 
+ ```c
+ int i, j;
+ scanf ( "%d %d", &i, &j );
+ if ( i > 10 && j > 10 ) {
+    printf("Both numbers are greater than 10! \n");
+ }
+ ```
+ The above example is equivalent to:
+ 
+ ```c
+ int i, j;
+ scanf ( "%d %d", &i, &j );
+ if ( i > 10 ) {
+    if ( j > 10 ) {
+       printf("Both numbers are greater than 10! \n");
+    }
+ }
+ ```
+ Notice when `if ( i > 10 )` fails, the statement is false and the check `if ( j > 10 )` is never run. `if ( i > 10 && j > 10 )` behaves exactly the same way, because if `i > 10` is false then the entire statement is automatically false, and there is no need to run an additional check.
+ 
  ## Keep it all together in real example
  
  ```c
