@@ -5,8 +5,8 @@ title: Header Tag
 
 The `<header>` tag is a container which is used for navigational links or introductory content.
 It may typically include heading elements, such as `<h1>`, `<h2>`, but may also include other elements such as a search form, logo, author information etc.
-`<h1>` corresponds to the most important heading. As we move to other tags like `<h2>`, `<h3>`, etc the degree of importance decreases.
-Although not required, the `<header>` tag is intended to contain the surrounding sections heading. It may also be used more than once in an HTML document. It is important to note that the `<header>` tag does not introduce a new section, but is simply the head of a section.
+
+`<header>` tag is just a head of a section. It doesn't create new section.It is most common use to create a navigation bar inside the header tag.
 
 Here's an example using the `<header>` tag:
 
