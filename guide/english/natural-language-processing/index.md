@@ -2,6 +2,11 @@
 title: Introduction to NLP
 ---
 
+## What is Natural Language processing
+The application of computational techniques to process and to identify and recognise the speech of human voice.
+
+
+
 ## Outline
 * Motivation
 * How Natural Language Processing works
