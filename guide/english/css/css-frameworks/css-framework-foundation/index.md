@@ -27,7 +27,7 @@ Here is a simple HTML template which includes the latest compiled and minified C
     </html>
 ```
 
-This example makes use of a CDN that loads the default settings. If you'd like to customize the grid layout, change the colors or add and remove components you can do so on the Foundation [download](http://foundation.zurb.com/sites/download/) page.
+This example makes use of a CDN that loads the default settings. (You can always find the latest versions at [cdnjs.com](https://cdnjs.com/libraries/foundation)) If you'd like to customize the grid layout, change the colors or add and remove components you can do so on the Foundation [download](http://foundation.zurb.com/sites/download/) page.
 
 #### Learning Resources
 
