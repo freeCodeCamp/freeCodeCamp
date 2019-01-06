@@ -56,6 +56,8 @@ There are three slightly more interesting options for `justify-content` you migh
 
 `flex-start`, `center` and `flex-end` behave as before - left, center and right have become top, center and bottom. Other options are `baseline`, whereby all children will centralize themselves down a single baseline, and `stretch`, whereby they will stretch to fill the container.
 
+Note that when you apply a display "flex" on the parent container, it will only affect direct children properties. You can nest flexboxes as well. 
+
 
 #### More Information
 
