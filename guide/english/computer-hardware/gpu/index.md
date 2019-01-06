@@ -5,18 +5,18 @@ title: GPU
 
 GPU stands for Graphics Processing Unit. Although they are not nessesary for a computer to function, many computers have a dedicated graphics card for better performence rendering videos or playing video games.
 
-A GPU is like a CPU but has different strengths and weaknesses. CPUs are very good at running a couple of tasks very quickly. GPUs are much better at running many tasks at the same time, but slower. A typical GPU can have more than 10,000 tasks running, but to run so many tasks at the same time they must share memory and other resources. GPUs usually run very repetitive tasks over and over to save the CPU from wasting time. Some CPUs have built-in GPUs, but having a separate GPU is almost always more powerful.
+A GPU is like a CPU but has different strengths and weaknesses. CPUs are very good at running a couple of tasks very quickly. GPUs are much better at running many tasks at the same time but slower. A typical GPU can have more than 10,000 tasks running but to run so many tasks at the same time they must share memory and other resources. GPUs usually run very repetitive tasks over and over to save the CPU from wasting time. Some CPUs have built-in GPUs but having a separate GPU is almost always more powerful.
 
 GPUs can be used for computation as well as video rendering. Common ways to do this include OpenACC, CUDA, OpenCL, and OpenGL. Some applications include GPU implementations to reduce the amount of time the application takes to run.
 
-The GPU was originally used mainly for 3D game rendering to improve your resolution and framerate. But now these capabilities are being harnessed more broadly to improve computational workloads in many areas; for example financial modeling, cutting-edge scientific research and oil and gas exploration. GPU's are also used as a resource for bitcoin mining, since they are able to run repetitive tasks easily without straining the resources of the CPU, which allows you run an Operating System on the computer with a low end CPU while still being able to bitcoin mine using the GPU
+The GPU was originally used mainly for 3D game rendering to improve your resolution and framerate. Now these capabilities are being harnessed more broadly to improve computational workloads in many areas; for example financial modeling, cutting-edge scientific research and oil and gas exploration. GPU's are also used as a resource for bitcoin mining, since they are able to run repetitive tasks easily without straining the resources of the CPU, which allows you run an Operating System on the computer with a low end CPU while still being able to bitcoin mine using the GPU
 
 There are two major brands producing GPUs: NVidia and AMD. They are often referred as the "green team" and "red team" which indicate the major color of their logo. 
 
 
 ## Origin of GPU
 
-Most primitive background of GPU can be mapped to the era of VGA (Virtual Graphics Array) controllers. But these were not actually a whole processing unit, but acted as supporting units for display functions. A VGA controller is a simple memory controller connected to Dynamic RAM and a display generator. The main function of a VGA is to receive image data, arrange it properly, and send it to a video device, which was mainly a computer monitor or a TV screen connected to a gaming console for display.
+Most primitive background of GPU can be mapped to the era of VGA (Virtual Graphics Array) controllers. These were not actually a whole processing unit but acted as supporting units for display functions. A VGA controller is a simple memory controller connected to Dynamic RAM and a display generator. The main function of a VGA is to receive image data, arrange it properly, and send it to a video device, which was mainly a computer monitor or a TV screen connected to a gaming console for display.
 
 The first ever full-fledged processing unit for graphic acceleration was developed and marketed by NVIDIA in 1999, "GeForce 256". Older 3D accelerators had to rely on CPU to execute graphic calculations. With the new "GeForce 256" as a co-processor for CPU, improved frame rate by more than 50% and lowered the total cost, thereby expanding itself in the consumer market.
 
@@ -33,7 +33,7 @@ While the CPU was designed for general purpose computations and instructions, GP
 GPUs were originally modeled on the concept of graphics pipeline. Graphics pipeline is a theoretical model, comprising of levels how the graphics data is to be sent through and executed using GPU and software(like OpenGL, DirectX). The pipeline basically converts 3D spatial coordinates into 2D pixelated data for the device to display. The following is an illustration of "Traditional Fixed-function Graphics Pipeline", commonly accepted pipeline till today.
 
 ### 0th Generation
-"Reality Engine" board by Silicon Graphics Inc.(SGI) marked the onset of GPU hardware and the graphics pipeline. But the technology was still dependent upon CPU for the first half. Also, the speed was limited to one pixel execution per clock cycle. The engine use OpenGL, a widely used 2D/3D application programming.
+"Reality Engine" board by Silicon Graphics Inc.(SGI) marked the onset of GPU hardware and the graphics pipeline. The technology was still dependent upon CPU for the first half. Also, the speed was limited to one pixel execution per clock cycle. The engine used OpenGL, a widely used 2D/3D application programming.
 ### 1st Generation
 The "3dfx Voodoo" (1996) evolved as one of the first true 3D-accelerator for games. It handled texture mapping, rasterization, and z-buffering but the CPU still had to do vertex transformations.
 ### 2nd Generation
@@ -41,7 +41,7 @@ This is the point when the first-ever true GPU, NVIDIA's "GeForce 256" was relea
 ### 3rd Generation
 With this generation of CPUs, programmable pipelining came into existence. Now the previously non-programmable parts could be programmed by programmers. In 2001, NVIDIA released the GeForce3.
 ### 4th Generation
-With the beginning of 21st century, the first "fully programmable graphics cards" had reached the consumers. NVIDIA GeForce FX, ATI Radeon 9700 were among the first. These GPUs could do per-pixel operations along with pixel shaders and programmable vertex. But, separate dedicated hardwares were needed for vertex shader and pixel shader processing.
+At the beginning of 21st century, the first "fully programmable graphics cards" had reached the consumers. NVIDIA GeForce FX, ATI Radeon 9700 were among the first. These GPUs could do per-pixel operations along with pixel shaders and programmable vertex. However, separate dedicated hardwares were needed for vertex shader and pixel shader processing.
 ### 5th Generation
 GPUs were evolving and advancing at it's peak rate and this generation GPUs were the first to utilize PCI-express bus. Multiple rendering buffers, 64-bit support, texture access etc. were introduced, along with increase in GPU memory.
 ### 6th Generation
