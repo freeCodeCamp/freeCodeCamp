@@ -8,7 +8,7 @@ octokit.authenticate(octokitAuth);
 
 const log = new ProcessingLog('unknown-repo-prs-with-merge-conflicts');
 log.start();
-(async() => {
+(async () => {
   const { totalPRs, firstPR, lastPR } = await getUserInput('all');
   const prPropsToGet = ['number', 'user', 'head'];
   const { openPRs } = await getPRs(totalPRs, firstPR, lastPR, prPropsToGet);
@@ -38,7 +38,7 @@ log.start();
     throw 'There were no open PRs received from Github';
   }
 })()
-  .then(async() => {
+  .then(async () => {
     log.finish();
     console.log('Finished finding unknown repo PRs with merge conflicts');
   })

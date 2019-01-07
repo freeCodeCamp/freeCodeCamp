@@ -22,7 +22,7 @@ const errorsToFind = [
   }
 ];
 
-(async() => {
+(async () => {
   const { totalPRs, firstPR, lastPR } = await getUserInput();
   const prPropsToGet = ['number', 'labels', 'head'];
   const { openPRs } = await getPRs(totalPRs, firstPR, lastPR, prPropsToGet);

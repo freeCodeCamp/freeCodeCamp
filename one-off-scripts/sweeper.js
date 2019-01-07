@@ -25,7 +25,7 @@ const log = new ProcessingLog('sweeper');
 
 log.start();
 console.log('Sweeper started...');
-(async() => {
+(async () => {
   const { totalPRs, firstPR, lastPR } = await getUserInput();
   const prPropsToGet = ['number', 'labels', 'user'];
   const { openPRs } = await getPRs(totalPRs, firstPR, lastPR, prPropsToGet);

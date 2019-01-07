@@ -49,11 +49,12 @@ async function probotPlugin(robot) {
   app.use(function(err, req, res) {
     res.status(err.status || 500).send(err.message);
   });
+
   // connect to mongo db
   const mongoUri = config.mongo.host;
+
   const promise = mongoose.connect(
-    encodeURI(mongoUri),
-    { useNewUrlParser: true }
+    mongoUri, { useNewUrlParser: true }
   );
   promise
     .then(() => {

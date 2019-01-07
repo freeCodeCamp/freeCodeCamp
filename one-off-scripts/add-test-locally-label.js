@@ -12,7 +12,7 @@ const { rateLimiter, ProcessingLog } = require('../lib/utils');
 
 const log = new ProcessingLog('all-locally-tested-labels');
 
-(async() => {
+(async () => {
   const { totalPRs, firstPR, lastPR } = await getUserInput();
   const prPropsToGet = ['number', 'labels'];
   const { openPRs } = await getPRs(totalPRs, firstPR, lastPR, prPropsToGet);

@@ -9,6 +9,7 @@ const db = mongoose.connect(
   mongoUri,
   { useNewUrlParser: true }
 );
+
 const { PR, INFO } = require('../models');
 
 db.then(() => {
@@ -19,9 +20,11 @@ db.then(() => {
     }
     if (names) {
       names.forEach(({ name }) => {
-        mongoose.connection.db
-          .dropCollection(name)
-          .catch(err => console.log(err));
+        if (name !== 'system.indexes') {
+          mongoose.connection.db
+            .dropCollection(name)
+            .catch(err => console.log(err));
+        }
       });
     }
   });

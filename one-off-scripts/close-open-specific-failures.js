@@ -5,7 +5,7 @@ const { openJSONFile, ProcessingLog, rateLimiter } = require('../lib/utils');
 const log = new ProcessingLog('prs-closed-reopened');
 
 log.start();
-const getUserInput = async() => {
+const getUserInput = async () => {
   let filename = process.argv[2];
 
   if (!filename) {
@@ -20,7 +20,7 @@ const getUserInput = async() => {
   return { prs };
 };
 
-(async() => {
+(async () => {
   const { prs } = await getUserInput();
   return prs;
 })()
