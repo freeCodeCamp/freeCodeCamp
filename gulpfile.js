@@ -78,7 +78,7 @@ const paths = {
     dest: 'common/app'
   },
 
-  reactFiles: ['./client/**/*.js', './news/**/*.js', 'common/**/*.js'],
+  reactFiles: ['./client/**/*.js', 'common/**/*.js'],
 
   syncWatch: ['public/**/*.*']
 };

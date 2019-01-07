@@ -9,8 +9,7 @@ var __DEV__ = process.env.NODE_ENV !== 'production';
 
 module.exports = {
   entry: {
-    client: './client/index.js',
-    news: './news/client.js'
+    client: './client/index.js'
   },
   devtool: __DEV__ ? 'inline-source-map' : 'source-map',
   mode: __DEV__ ? 'development' : 'production',

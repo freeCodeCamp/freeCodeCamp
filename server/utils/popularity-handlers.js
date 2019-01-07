@@ -79,7 +79,7 @@ export function createPopularityHandler(app) {
   };
 }
 
-export function createRerralHandler(app) {
+export function createReferralHandler(app) {
   const { Popularity } = app.models;
 
   return function referralHandler(query, shortId, byAuthenticatedUser) {
