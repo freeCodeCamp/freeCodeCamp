@@ -8,7 +8,7 @@ title: Vertical Align CSS
 For example, you can use ```vertical-align``` like this to align an image:
 ```
 img {
-    vertical-align: top;
+  vertical-align: top;
 }
 ```
 These are the valid values for ```vertical-align```:

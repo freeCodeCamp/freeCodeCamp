@@ -2,7 +2,7 @@
 title: Loops of all kinds
 ---
 # Loops of all kinds in C
-Loops are what you use when you have code that you want to loop, meaning that after it runs, you might want it to loop around to the beginning and run again. There are a few of these in C.
+Loops are what you use when you have code that you want to execute more than once, meaning that after it runs, you might want it to loop around to the beginning and run again. There are a few of these in C.
 
 
 They can be categorized as:
@@ -97,6 +97,25 @@ If this were a while loop, the code within the brackets would never get run beca
 ## For loops
 For loops are for when we want something to run a set number of times.
 
+## Here is an example to print from A to Z
+```c
+#include <stdio.h>
+int main()
+{
+    char c;
+
+    for(c = 'A'; c <= 'Z'; ++c)
+       printf("%c ", c);
+    
+    return 0;
+}
+```
+**Output**
+```c
+A B C D E F G H I J K L M N O P Q R S T U V W X Y Z
+```
+
+
 ### Syntax
 ```
 for(initialisation; condition; changer)
@@ -132,6 +151,15 @@ Unlike the for loop, there are three things in our parenthesis that are separate
 The next section is a boolean condition that will be checked for true or false, just like our while loop. It's referred to as a 'condition', because it's the condition that will get checked before starting a loop.
 
 The final section is referred to as the 'increment/decrement'. Its job is to perform some operation every loop - usually adding or subtracting from the initial variable - after the code within the brackets has been run through. In this case, it's just adding one to the count. This is the most common way for the increment to be used, because it lets you keep count of how many times you've run through a for loop.
+
+
+An infinite loop is also possible in the for loop. An infinite for loop has absolutely no items in the paranthesis except for the two semi colons.
+
+```C
+for(;;) {
+    printf("This will also get printed forever unless the program is stopped!");
+}
+```
 
 ### Syntax Comparison
 ```C

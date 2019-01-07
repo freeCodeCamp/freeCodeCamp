@@ -6,9 +6,9 @@ title: Switch Case
 
 The switch statement is like a set of `if statements`.
 
-It's a list of possibilities, with an action for each possibility, and an optional default action, in case nothing else evaluates to true.
+It's a list of possibilities, with an action for each possibility, and an optional default action, in case nothing else evaluates to true. Sometimes we want to compare one input to many booleans and that is when we would prefer to use a switch statement instead of an `if statement`.
 
-We exit from the switch by `break`. If the `break` statement is not reached before the beginning of the next case, the execution will fall through and begin executing the code in the next case.
+We exit from the switch by `break`. If the `break` statement is not reached before the beginning of the next case, the execution will fall through and begin executing the code in the next case, which means if you have no break statement in code, when first case is detected to be true, all the other cases below the one that is detected to be true (including itself) will be executed, which is often undesirable.
 
 ## Syntax of switch...case
 
@@ -21,6 +21,11 @@ switch (n)
 
     case constant2:
         // code to be executed if n is equal to constant2;
+        break;
+    
+    case constant3:
+    case constant4:
+        // code to be executed if n is either equal to constant3 or constant4
         break;
         .
         .
@@ -40,26 +45,26 @@ Using a switch statement over multiple if/else statements can contribute to more
 int main() {
 
     char operator;
-    double firstNumber,secondNumber;
+    double a, b;
 
     printf("Enter an operator (+, -, *, /): ");
     scanf("%c", &operator);
 
     printf("Enter two operands: ");
-    scanf("%lf %lf",&firstNumber, &secondNumber);
+    scanf("%lf %lf",&a, &b);
 
     switch (operator) {
         case '+':
-            printf("%.1lf + %.1lf = %.1lf",firstNumber, secondNumber, firstNumber+secondNumber);
+            printf("%.1lf + %.1lf = %.1lf", a, b, a+b);
             break;
         case '-':
-            printf("%.1lf - %.1lf = %.1lf",firstNumber, secondNumber, firstNumber-secondNumber);
+            printf("%.1lf - %.1lf = %.1lf",a, b, a-b);
             break;
         case '*':
-            printf("%.1lf * %.1lf = %.1lf",firstNumber, secondNumber, firstNumber*secondNumber);
+            printf("%.1lf * %.1lf = %.1lf",a, b, a*b);
             break;
         case '/':
-            printf("%.1lf / %.1lf = %.1lf",firstNumber, secondNumber, firstNumber/firstNumber);
+            printf("%.1lf / %.1lf = %.1lf",a, b, a/b);
             break;
         // Operator is doesn't match any case constant (+, -, *, /)
         default:
@@ -77,6 +82,46 @@ int main() {
 -> 12.4
 -> 32.5 - 12.4 = 20.1
 ```
+
+## Example
+
+The below code depicts how to handle switch case when single piece of code runs for multiple values.
+
+```c
+#include <stdio.h>
+
+int main()
+{
+    for (int i=1; i<=4; i++) {
+        switch (i) {
+            case 1:
+              printf("Hello World 1\n");
+              break;
+            
+            case 2:
+            case 3:
+              printf("Hello World 2 or 3\n");
+              break;
+            
+            case 4:
+              printf("Hello World 4\n");
+              break;
+        }
+    }
+
+    return 0;
+}
+```
+
+## Output
+```c
+Hello World 1
+Hello World 2 or 3
+Hello World 2 or 3
+Hello World 4
+```
+
+
 ## Nested Switch Case 
     
   Like nested if, we can use nested switch case in C programming. A switch case statement enclosed inside another switch case statement is called nested switch case. Nested switch is used at high level where we require sub conditions or cases. The inner and outer switch() case constant may be same.
@@ -170,7 +215,8 @@ Enter first choice-t
 Enter second choice-t
 2 Tails
 ```
-    
+
+
 ## Review : Switch vs if else
 * Check the Testing Expression: An if-then-else statement can test expressions based on ranges of values or conditions, whereas a switch statement tests expressions based only on a single integer, enumerated value, or String object.
 * Switch better for Multi way branching: When compiler compiles a switch statement, it will inspect each of the case constants and create a “jump table” that it will use for selecting the path of execution depending on the value of the expression. Therefore, if we need to select among a large group of values, a switch statement will run much faster than the equivalent logic coded using a sequence of if-elses. The compiler can do this because it knows that the case constants are all the same type and simply must be compared for equality with the switch expression, while in case of if expressions, the compiler has no such knowledge.

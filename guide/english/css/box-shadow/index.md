@@ -14,10 +14,10 @@ A box shadow can be described with several properties including:
 ### Syntax:
 
 ```css
-  div {
-    box-shadow: none | [inset? && [ <offset-x> <offset-y> <blur-radius>? <spread-radius>? <color>? ] ]#
-    }
-  ```
+div {
+  box-shadow: none | [inset? && [ <offset-x> <offset-y> <blur-radius>? <spread-radius>? <color>? ] ]#
+}
+```
 * #### inset (default: none)
 If not specified, the shadow is assumed to be a drop shadow (as if the box were raised above the content).
 The presence of the `inset` keyword changes the shadow to one inside the frame.
@@ -27,10 +27,10 @@ These are two `length` values to set the shadow offset. <offset-x> specifies the
 
 * #### blur-radius (default: 0)
 This is a third `length` value. The larger this value, the bigger the blur, so the shadow becomes bigger and lighter. Negative values are not allowed. If not specified, it will be 0 (the shadow's edge is sharp).
-  
+
 * #### spread-radius (default: 0)
 This is a fourth <length> value. Positive values will cause the shadow to expand and grow bigger, negative values will cause the shadow to shrink. If not specified, it will be 0 (the shadow will be the same size as the element).
- 
+
 * #### color
 This value is used to set the color of the shadow, usually defined with hex `#000000`, rgba value `rgba(55,89,88,0.8)` or rgb value `rgb(55,89,88)`.
 
@@ -39,11 +39,11 @@ This value is used to set the color of the shadow, usually defined with hex `#00
 To maximize compatibility, it is recommended that you declare box shadow properties for `moz-appearance` and `webkit`, this extends the normal syntax to:
 
 ```css
-   div{
-      box-shadow: none | [inset? && [ <offset-x> <offset-y> <blur-radius>? <spread-radius>? <color>? ] ]#
-      -moz-box-shadow: none | [inset? && [ <offset-x> <offset-y> <blur-radius>? <spread-radius>? <color>? ] ]#
-      -webkit-box-shadow: none | [inset? && [ <offset-x> <offset-y> <blur-radius>? <spread-radius>? <color>? ] ]#
-   }
+div{
+  box-shadow: none | [inset? && [ <offset-x> <offset-y> <blur-radius>? <spread-radius>? <color>? ] ]#
+  -moz-box-shadow: none | [inset? && [ <offset-x> <offset-y> <blur-radius>? <spread-radius>? <color>? ] ]#
+  -webkit-box-shadow: none | [inset? && [ <offset-x> <offset-y> <blur-radius>? <spread-radius>? <color>? ] ]#
+}
 ```
 
 However, this step can be ignored if it is creating confusion, as moz property and webkit property will only work in specific applications such as Firefox, and are not on a standards track.
@@ -89,10 +89,10 @@ It uses very similar code, but with inset value, which displays shadow inside th
 
 ```css
 div {
-    width: 200px;
-    height: 50px;
-    background-color: #333;
-    box-shadow: inset 10px 10px 5px #ccc, 10px 10px 5px #ccc;
+  width: 200px;
+  height: 50px;
+  background-color: #333;
+  box-shadow: inset 10px 10px 5px #ccc, 10px 10px 5px #ccc;
 }
 ```
 

@@ -2,7 +2,7 @@
 title: Advantages and Disadvantages of JavaScript
 ---
 # Advantages and Disadvantages of JavaScript
-Like all computer languages, JavaScript has certain advantages and disadvantages. Many of the pros and cons are related to JavaScript executing often in a client's browser, but there are other ways to use JavaScript now that allow it to have the same benefits of server-side languages.
+Like all computer languages, JavaScript has certain advantages and disadvantages. Many of the pros and cons are related to JavaScript executing regularly in a client's browser, but there are other ways to use JavaScript now that allow it to have the same benefits of server-side languages.
 
 ## Advantages of JavaScript
 
@@ -19,6 +19,6 @@ Like all computer languages, JavaScript has certain advantages and disadvantages
 
 ## Disadvantages of JavaScript
 
-*   **Client-Side Security**. Because the code executes on the users' computer, in some cases it can be exploited for malicious purposes. This is one reason some people choose to disable Javascript.
+*   **Client-Side Security**. Because the code executes on the user's computer, in some cases it can be exploited for malicious purposes. This is one reason some people choose to disable Javascript.
 *   **Browser Support**. JavaScript is sometimes interpreted differently by different browsers. Whereas server-side scripts will always produce the same output, client-side scripts can be a little unpredictable. Don't be overly concerned by this though - as long as you test your script in all the major browsers you should be safe. Also, there are services out there that will allow you to test your code automatically on check in of an update to make sure all browsers support your code.
 *   **Browser Optionality**. Most browsers come with features to disable JavaScript, and your website or application may not work properly if it is disabled.

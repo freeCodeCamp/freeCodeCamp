@@ -9,6 +9,7 @@ import ga from '../../../analytics';
 import { makeExpandedBlockSelector, toggleBlock } from '../redux';
 import { userSelector } from '../../../redux';
 import Caret from '../../icons/Caret';
+import { blockNameify } from '../../../../utils/blockNameify';
 /* eslint-disable max-len */
 import GreenPass from '../../../templates/Challenges/components/icons/GreenPass';
 import GreenNotCompleted from '../../../templates/Challenges/components/icons/GreenNotCompleted';
@@ -108,20 +109,31 @@ export class Block extends Component {
   }
 
   render() {
-    const { completedChallenges, challenges, isExpanded, intro } = this.props;
-    const { blockName } = challenges[0].fields;
+    const { blockDashedName, completedChallenges, challenges, isExpanded, intro } = this.props;
+    let completedCount = 0;
     const challengesWithCompleted = challenges.map(challenge => {
       const { id } = challenge;
       const isCompleted = completedChallenges.some(
         completedId => id === completedId
       );
+      if (isCompleted) {
+        completedCount++;
+      }
       return { ...challenge, isCompleted };
     });
     return (
       <li className={`block ${isExpanded ? 'open' : ''}`}>
         <div className='map-title' onClick={this.handleBlockClick}>
           <Caret />
-          <h5>{blockName}</h5>
+          <h5>{blockNameify(blockDashedName)}</h5>
+          <div className='map-title-completed'>
+            <span>
+              {this.renderCheckMark(
+                completedCount === challengesWithCompleted.length
+              )}
+            </span>
+            <span>{`${completedCount}/${challengesWithCompleted.length}`}</span>
+          </div>
         </div>
         <ul>
           {isExpanded

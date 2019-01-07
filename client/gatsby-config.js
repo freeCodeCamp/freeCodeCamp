@@ -32,7 +32,8 @@ module.exports = {
           '/certification/*',
           '/unsubscribed/*',
           '/user/*',
-          '/settings/*'
+          '/settings/*',
+          '/n/*'
         ]
       }
     },
@@ -43,6 +44,12 @@ module.exports = {
         source: buildChallenges,
         onSourceChange: replaceChallengeNode,
         curriculumPath: localeChallengesRootDir
+      }
+    },
+    {
+      resolve: 'fcc-source-news',
+      options: {
+        maximumStaticRenderCount: 100
       }
     },
     {

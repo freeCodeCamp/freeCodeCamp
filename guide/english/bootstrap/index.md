@@ -3,10 +3,17 @@ title: Bootstrap
 ---
 ## Bootstrap
 
+![Bootstrap Logo][logo]
+
+[logo]: https://getbootstrap.com/docs/4.1/assets/img/bootstrap-stack.png
+
 Bootstrap is a popular front-end framework for web development. It contains pre-built components and design elements to style HTML content. Modern browsers such as Chrome, Firefox, Opera, Safari, and Internet Explorer support Bootstrap.
 
 Bootstrap includes a responsive grid system for varying layouts. It is a great starting point for building a mobile friendly website. It also includes optional JavaScript functionality like collapsible content, carousels, and modals.
 
+#### Why Use Bootstrap?
+Bootstrap provides an easy solution both for design and responsiveness. It is packed with beautiful elements that can be further styled with your own custom CSS, as well as a full grid system to keep your website responsive across all screens while using a clean and understandable syntax.
+You can build a professional looking website without any CSS or JavaScript and easily customize the elements if needed
 
 #### Version History
 
@@ -51,7 +58,6 @@ You can download and install the Bootstrap source files with Bower, Composer, Me
 
 `gem 'bootstrap', '~> 4.1.3'`
 
-
 _Note: These are only examples and may change without notice. Please refer to the _<a href='https://getbootstrap.com/' target='_blank' rel='nofollow'>Bootstrap website</a>_ for the most up-to-date links._
 
 #### The Bootstrap Grid System
@@ -69,17 +75,23 @@ Bootstrap comes with predefined grid classes for your use in markup. See more de
 
 - Version 4.0 added Sass and flexbox support
 
+- Version 4.1 Added new custom range form control.
+
+- Bootstrap does not restrict you to a fixed CSS format but allows you to develop quickly allowing style overwrites using cascading to add/edit the default styles.
+
 #### More Information:
 
-Bootstrap has thorough documentation with many <a href='https://getbootstrap.com/docs/4.0/examples/' target='_blank' rel='nofollow'>examples</a> and an <a href='https://getbootstrap.com/docs/4.0/getting-started/introduction/' target='_blank' rel='nofollow'>HTML template for getting started</a> (this template only has script included; it does not contain a set up of the grid system if that's what you're looking for). 
+Bootstrap has thorough documentation with many <a href='https://getbootstrap.com/docs/4.0/examples/' target='_blank' rel='nofollow'>examples</a> and an <a href='https://getbootstrap.com/docs/4.0/getting-started/introduction/' target='_blank' rel='nofollow'>HTML template for getting started</a> (this template only has script included; it does not contain a <a href='https://getbootstrap.com/docs/4.0/layout/grid/' target='_blank' rel='nofollow'>set up</a> of the grid system if that's what you're looking for). 
 
 In addition, you can find both <a href='https://bootswatch.com/' target='_blank' rel='nofollow'>free</a> and <a href='https://themes.getbootstrap.com/' target='_blank' rel='nofollow'>paid</a>
 themes that build on the Bootstrap framework to provide a more customized and stylish look.
 
 #### Bootstrap Resources: 
+
 - [Bootstrap's official blog](http://blog.getbootstrap.com/)
 - [Bootstrap site inspiration](http://expo.getbootstrap.com/)
 - [Showcase of sites built using Bootstrap](http://builtwithbootstrap.com/)
 - [HTML linter for projects using Bootstrap](https://github.com/twbs/bootlint)
 - [Design elements and code snippets for Bootstrap](https://bootsnipp.com/)
 - [Code, theme, and add-on resources for Bootstrap](http://expo.getbootstrap.com/resources/)
+- [Video: Install and Use](https://www.youtube.com/watch?v=GU6EWzBGo64)

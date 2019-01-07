@@ -24,6 +24,10 @@ There are many tools and online resources that can help you to ensure that your 
 - **<a href='https://www.accesslint.com' target='_blank' rel='nofollow'>AccessLint</a>**
 
    A GitHub app that checks your pull requests for accessibility issues.
+   
+- **<a href='https://wave.webaim.org/extension/' target='_blank' rel='nofollow'>WAVE</a>**
+
+   This is another Chrome (and Firefox) extension that allows you to find accessibility defects on your web page.
 
 
 ### Color Contrast
@@ -57,5 +61,5 @@ There are many tools and online resources that can help you to ensure that your 
    WebAIM offers complete web accessibility services. Regardless of the type or size of your web site, WebAIM can help ensure that your site is accessible and usable to those with disabilities. 
 ***
 
-#### More Reources
+#### More Resources
 You can find many more tools for accessible web design on <a href='http://www.d.umn.edu/itss/training/online/webdesign/tools.html' target='_blank' rel='nofollow'>this list</a> made by the University of Minnesota Duluth.

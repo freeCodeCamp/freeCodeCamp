@@ -15,7 +15,7 @@ Wireshark is an open source network analyzer application that is available for L
 * The output can be exported to XML, PostScript, CSV, and plaintext
 
 #### Why use Wireshark?
-Wireshark is a powerful tool, you might use it to:
+Wireshark is a powerful tool you can use to:
 + Learn about how different protocols are used in networking
 + Troubleshoot network problems
 + Analyze traffic going through your network

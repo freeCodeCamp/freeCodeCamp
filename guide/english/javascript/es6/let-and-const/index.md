@@ -29,6 +29,19 @@ console.log(c); // 10
 console.log(a); // 50
 ```
 
+### Differences with `var`
+
+Hoisting - `let` variables are not initialized until their definition is evaluated:
+
+```js
+function action() {
+  console.log(a); // undefined
+  console.log(b); // ReferenceError
+  var a = 1;
+  let b = 2;
+}
+```
+
 ## Const
 
 Const is used to assign a constant value to the variable, and the value cannot be changed. It is fixed. 
