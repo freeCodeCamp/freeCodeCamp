@@ -12,6 +12,17 @@ If no entity name exists, either the entity number or hexadecimal reference can 
 
 ![Common HTML5 Symbols](http://ways2web.weebly.com/uploads/5/4/4/8/54485903/8779038_orig.png)
 
+### Ampersand escape
+If you want to show the entity name on a webpage like this:
+```html
+<p>&lt;html&gt;</p>
+```
+Then you need to use an ampersand escape, like below:
+```html
+<p>&amp;lt;html&amp;gt;</p>
+```
+This will display the entity name rather than the entity.
+
 #### More Information:
 
 * [W3 Schools Reference](https://www.w3schools.com/html/html_symbols.asp)

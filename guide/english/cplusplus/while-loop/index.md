@@ -14,6 +14,7 @@ while(condition) {
 A key point of the while loop is that the loop might not ever run.
 When the condition is tested and the result is false, the loop body will be skipped and the first statement after the while loop will be executed.
 
+Another important point about the while loop is to remember to increment/decrement/modify the variable used for checking the given condition at the beginning of each iteration, at the end of your loop, otherwise the loop will enter into an infinite loop.
 
 Example:
 

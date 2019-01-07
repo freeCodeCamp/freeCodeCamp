@@ -2,7 +2,7 @@
 
 Follow these guidelines for getting freeCodeCamp locally on your system. This is highly recommended if you want to be contributing regularly.
 
-Some of the contribution workflows like previewing pages for the guide or the coding challenges, debugging and fixing bugs in codebase requires you to have freeCodeCamp running locally.
+Some of the contribution workflows, like previewing pages for the guide or the coding challenges, debugging and fixing bugs in codebase, requires you to have freeCodeCamp running locally.
 
 ## Fork the repository on GitHub
 
@@ -113,8 +113,8 @@ Start by installing these prerequisite software.
 
 | Prerequisite                                | Version | Notes |
 | ------------------------------------------- | ------- | ----- |
-| [MongoDB Community Server](https://docs.mongodb.com/manual/administration/install-community/) | `3.6`   | [Release Notes](https://docs.mongodb.com/manual/release-notes/), Note: We currently on `3.6`, an [upgrade is planned](https://github.com/freeCodeCamp/freeCodeCamp/issues/18275).
-| [Node.js](http://nodejs.org)                | `8.x`   | [LTS Schedule](https://github.com/nodejs/Release#release-schedule) |
+| [MongoDB Community Server](https://docs.mongodb.com/manual/administration/install-community/) | `3.6`   | [Release Notes](https://docs.mongodb.com/manual/release-notes/), Note: We are currently on `3.6`, an [upgrade is planned](https://github.com/freeCodeCamp/freeCodeCamp/issues/18275).
+| [Node.js](http://nodejs.org)                | `8.x`   | [LTS Schedule](https://github.com/nodejs/Release#release-schedule), Note: We are currently on `8.x`, an upgrade is planned to 10.x |
 | npm (comes bundled with Node)               | `6.x`   | Does not have LTS releases, we use the version bundled with Node LTS |
 
 **Important:**
@@ -130,7 +130,7 @@ npm -v
 
 > If you have a different version, please install the recommended version. We can support installation issues for recommended versions only.
 
-**I am having issues with installing the recommended Prerequisites. What should I do?**
+**I am having issues with installing the recommended prerequisites. What should I do?**
 
 We regularly develop on popular and latest operating systems like macOS 10.12 or later, Ubuntu 16.04 or later and Windows 10. Its recommended to lookup your specific issue on resources like: Google, Stack Overflow or Stack Exchange. Chances are that someone has faced the same issue and there is already an answer to your specific query.
 
@@ -140,14 +140,7 @@ Please avoid creating GitHub issues for pre-requisite issues. They are out of th
 
 ### Installing dependencies
 
-Start by installing the dependencies required for the application to startup.
-
-```shell
-# Install NPM dependencies
-npm install
-```
-
-Then you need to add the private environment variables (API Keys):
+First you need to add the private environment variables (API Keys):
 
 ```shell
 # Create a copy of the "sample.env" and name it as ".env".
@@ -160,7 +153,17 @@ cp sample.env .env
 copy sample.env .env
 ```
 
-The keys are not required to be changed, to run the app locally. You can leave the default values from the `sample.env` as it is.
+Then you have to install the dependencies required for the application to startup.
+
+```shell
+# Install NPM dependencies
+npm install
+```
+
+The keys are not required to be changed, to run the app locally. You can leave the default values from the `sample.env` as is.
+
+
+Next, let's bootstrap the various services, i.e. the api-server, the client UI application, etc. You can [learn more about these services in this guide](#).
 
 `MONGOHQ_URL` is the most important one. Unless you have MongoDB running in a setup different than the defaults, the URL in the `sample.env` should work fine.
 
@@ -192,7 +195,7 @@ Start the MongoDB server in a separate terminal
 
 ### Seeding the database
 
-Next, lets seed the database. In this step, we run the below command that will fill the MongoDB server with some initial data-sets that is required by the other services. This include a few schemas, among other things.
+Next, let's seed the database. In this step, we run the below command that will fill the MongoDB server with some initial data-sets that is required by the other services. This include a few schemas, among other things.
 
 ```shell
 npm run seed
@@ -235,7 +238,7 @@ Follow these steps:
     git status
     ```
 
-    You should get a output like this:
+    You should get an output like this:
 
     ```shell
     On branch master
@@ -250,15 +253,23 @@ Follow these steps:
     git checkout master
     ```
 
-2. Next, you would want to `rebase` from the `upstream`.
+2. Next, you would want to **sync the lastest changes for `master` branch** from the main repository of freeCodeCamp.
 
-    This step **will sync the lastest changes** from the main repository of freeCodeCamp. Its important that you rebase as often as possible, to avoid conflicts later.
+    **Note:** If you have any outstanding pull-request that you made from the `master` branch of your fork previously, you will lose them. You should get it merged by a moderator, prior following this. To avoid this, you should always work on a branch.
+
+    This step **will sync the latest changes** from the main repository of freeCodeCamp. It is important that you rebase as often as possible, to avoid conflicts later.
 
     ```shell
-    git pull --rebase upstream master
+    git fetch upstream
     ```
 
-    You can optionally push this branch back to your origin, to have a clean history on your fork on GitHub.
+    Now, you want to do a hard reset with the copy on the freeCodeCamp master:
+
+    ```shell
+    git reset --hard upstream/master
+    ```
+
+    Push this branch back to your origin, to have a clean history on your fork on GitHub:
 
     ```shell
     git push origin master --force
@@ -290,7 +301,7 @@ Follow these steps:
 
 5. Once you are happy with the changes you should optionally run freeCodeCamp locally to preview the changes.
 
-6. Make sure you fix any errors, and check the formating of your changes. We have style guide for the Guide articles and Coding challenges.
+6. Make sure you fix any errors, and check the formatting of your changes. We have style guide for the Guide articles and Coding challenges.
 
 7. Next, check and confirm the files you are updating
 
@@ -329,7 +340,7 @@ Follow these steps:
     git add .
     ```
 
-    Only the files that were moved to the staging area will added when you make a commit.
+    Only the files that were moved to the staging area will be added when you make a commit.
 
     ```shell
     git status
@@ -377,17 +388,17 @@ Follow these steps:
 
     Keep these short, not more than 50 characters. You can always add additional information in the description of the commit message.
 
-    This does not take any additional time than a unconventional message like 'update file' or 'add index.md'
+    This does not take any additional time than an unconventional message like 'update file' or 'add index.md'
 
     You can learn more about why you should use conventional commits [here](https://www.conventionalcommits.org/en/v1.0.0-beta.2/#why-use-conventional-commits).
 
-9. If you realise that you need to edit a file or, update the commit message after making a commit you can do so after editing the files with:
+9. If you realise that you need to edit a file or update the commit message after making a commit you can do so after editing the files with:
 
     ```shell
     git commit --amend
     ```
 
-    This will open up a default, text editor like `nano` or `vi` where you can edit the commit message title and add/edit description.
+    This will open up a default text editor like `nano` or `vi` where you can edit the commit message title and add/edit description.
 
 10. Next, you can push your changes to your fork.
 
@@ -423,10 +434,6 @@ Follow these steps:
 5. Indicate if you have tested on a local copy of the site or not.
 
     This is very important when you are making changes that are not copy editing markdown files. For example, changes to CSS or JavaScript code, etc.
-
-## Get your PR accepted
-
-
 
 ## Getting Help
 

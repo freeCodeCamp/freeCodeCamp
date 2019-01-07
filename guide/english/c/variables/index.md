@@ -93,7 +93,7 @@ We get `15.300000`. So, say we just want two places after the decimal to give us
 # Names for Variables
 * The only characters you can use in names are alphabetic characters, numeric digits, and
   the underscore (_) character.
-* The first character in a name cannot be a numeric digit.
+* The first character in a name cannot be a numeric digit. It can be a letter from A to Z or a to z or the underscore character.
 * Uppercase characters are considered distinct from lowercase characters.
 * You can’t use a C keyword for a name.
 
