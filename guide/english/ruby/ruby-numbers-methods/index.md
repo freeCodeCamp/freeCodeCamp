@@ -60,6 +60,23 @@ Using `.to_s` on a number (<a href='https://ruby-doc.org/core-2.2.0/Integer.html
     3.4.to_s #=> "3.4"
 ```
 
+## <a href='https://ruby-doc.org/core-2.5.3/Integer.html#method-i-to_f' target='_blank' rel='nofollow'>To Float</a>:
+
+Converts an Integer to a Float.
+
+```Ruby
+    15.to_f #=> 15.0
+```
+
+## <a href='https://ruby-doc.org/core-2.5.3/Integer.html#method-i-abs' target='_blank' rel='nofollow'>Absolute value</a>:
+
+Returns the absolute value of the integer.
+
+```Ruby
+    -12345.abs #=> 12345
+    12345.abs #=> 12345
+```
+
 ## <a href='https://ruby-doc.org/core-2.2.0/Integer.html#method-i-gcd' target='_blank' rel='nofollow'>Greatest Common Denominator</a>:
 
 The `.gcd` method provides the greatest common divisor (always positive) of two numbers. Returns an <a href='https://ruby-doc.org/core-2.2.0/Integer.html' target='_blank' rel='nofollow'>**integer**</a>.
