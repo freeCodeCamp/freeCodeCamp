@@ -17,7 +17,7 @@ a different device width/scale allowing you to show the best possible layout to 
 
 ## Setting Break Points
 
-Breakpoints are broadly set on basis of either of the following.
+Breakpoints are broadly set on basis of either of the following:
 
 - Breakpoints based on device width.
 - Breakpoints based on content.
