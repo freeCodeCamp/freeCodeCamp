@@ -1,4 +1,4 @@
-const config = require('../config');
+const config = require('../../../config');
 // config should be imported before importing any other file
 const mongoose = require('mongoose');
 
@@ -13,8 +13,8 @@ const db = mongoose.connect(
 );
 
 const { PR, INFO } = require('../models');
-const { getPRs, getUserInput, getFilenames } = require('../../lib/get-prs');
-const { rateLimiter } = require('../../lib/utils');
+const { getPRs, getUserInput, getFilenames } = require('../../../lib/get-prs');
+const { rateLimiter } = require('../../../lib/utils');
 
 const lastUpdate = new Date();
 
