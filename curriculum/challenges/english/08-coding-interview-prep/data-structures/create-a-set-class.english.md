@@ -6,11 +6,11 @@ challengeType: 1
 
 ## Description
 <section id='description'>
-In this exercise we are going to create a class named <code>Set</code> to emulate a data structure called a "set". A set is like an array, but it cannot contain duplicate values. The typical use for a set is to simply check for the presence of an item. 
+In this exercise we are going to create a class named <code>Set</code> to emulate an abstract data structure called "set". A set is like an array, but it cannot contain duplicate values. The typical use for a set is to simply check for the presence of an item. 
 
-This can be implemented with an object, for instance:
+We can see how ES6 set object works in the example below-
 
-<blockquote>var set = new Object();<br>set.foo = true;<br>// See if foo exists in our set:<br>console.log(set.foo) // true</blockquote>
+<blockquote>const set1 = new Set([1, 2, 3, 5, 5, 2, 0]);<br>console.log(set1);<br>// output: {1, 2, 3, 5, 0}<br>console.log(set1.has(1));<br>// output: true<br>console.log(set1.has(6));<br>// output: false</blockquote>
 
 First, we will create an add method that adds a value to our set collection as long as the value does not already exist in the set.
 
@@ -24,7 +24,6 @@ And finally, we will create a size method that returns the number of elements in
 Create an <code>add</code> method that adds a unique value to the set collection and returns <code>true</code> if the value was successfully added and <code>false</code> otherwise.
 
 Create a <code>remove</code> method that accepts a value and checks if it exists in the set. If it does, then this method should remove it from the set collection, and return <code>true</code>. Otherwise, it should return <code>false</code>.
-
 Create a <code>size</code> method that returns the size of the set collection.
 </section>
 
