@@ -35,10 +35,9 @@ export function createShortLinkHandler(app) {
           return res.redirect('/news');
         }
         const {
-          slugPart,
-          author: { username }
+          slugPart
         } = article;
-        const slug = `/news/${username}/${slugPart}`;
+        const slug = `/news/${slugPart}`;
         return res.redirect(slug);
       }
     );
