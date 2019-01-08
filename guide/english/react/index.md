@@ -249,6 +249,7 @@ As an alternative to JSX, you can use ES6 and Javascript's compiler like Babel. 
 - [React Homepage](https://reactjs.org/)
 - [Dan Abramov's Twitter](https://twitter.com/dan_abramov)
 - [React Tutorials at Egghead.io](https://egghead.io/browse/frameworks/react)
+- [React Cheatsheet](http://www.developer-cheatsheets.com/react)
 
 ### Sources
 
