@@ -11,5 +11,10 @@ The main attributes of an img tag are src and alt:
 
 Attributes are key value pairs inserted into the tag. The syntax is `<tag key1="value1" key2="value2"> </tag>` or, in case of self-closing tags, `<tag key1="value1" key2="value2" />` - notice that the pairs are separated by a space character, not by a comma.
 
+```html
+<img src="insert URL of the image" alt="Cute dog smiling">
+```
+
+
 ### Resources
  - [HTML attributes](https://guide.freecodecamp.org/html/attributes)

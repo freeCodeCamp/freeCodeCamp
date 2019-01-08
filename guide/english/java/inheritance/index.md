@@ -8,7 +8,30 @@ Java inheritance refers to the ability of a Java Class to `inherit` the properti
 *   The Class that extends or inherits is called a **subclass**
 *   The Class that is being extended or inherited is called a **superclass**
 
+## Why use inheritance in java
+- For Method Overriding (so runtime polymorphism can be achieved).
+- For Code Reusability.
+
+## Terms used in Inheritance
+- Class: A class is a group of objects which have common properties. It is a template or blueprint from which objects are created.
+- Sub Class/Child Class: Subclass is a class which inherits the other class. It is also called a derived class, extended class, or child class.
+- Super Class/Parent Class: Superclass is the class from where a subclass inherits the features. It is also called a base class or a parent class.
+- Reusability: As the name specifies, reusability is a mechanism which facilitates you to reuse the fields and methods of the existing class when you create a new class. You can use the same fields and methods already defined in the previous class.
+
 Thus, inheritance gives Java the cool capability of _re-using_ code, or sharing code between classes!
+
+## Syntax
+```java
+class Subclass-name extends Superclass-name  
+{  
+   //methods and fields  
+}  
+```
+
+The extends keyword indicates that you are making a new class that derives from an existing class. The meaning of "extends" is to increase the functionality.
+
+In the terminology of Java, a class which is inherited is called a parent or superclass, and the new class is called child or subclass.
+
 
 Let's describe it with the classic example of a `Vehicle` class and a `Car` class :
 
@@ -189,3 +212,7 @@ Remember, if the superclass does not have any constructors defined, you don't ha
 If no other constructors are defined, then Java invokes the default super class constructor (_even if not defined explicitly_).
 
 Congrats, now you know all about Inheritance! Read more about advanced ways to inherit things in Abstract Classes and [Interfaces](//forum.freecodecamp.com/t/java-docs-interfaces)!
+
+Here are some useful links to learn more about Inheritance in Java (great for those starting out with Java):
+ - https://www.codejava.net/java-core/the-java-language/12-rules-and-examples-about-inheritance-in-java
+ - https://medium.com/java-for-absolute-dummies/inheritance-in-java-programming-39176e0016f3
