@@ -62,9 +62,7 @@ describe('Presolver', () => {
         /* eslint-enable no-undef */
           .fn()
           .mockImplementation(() => ({ data: [
-            prExisting.pull_request,
-            prOpened.pull_request,
-            prUnrelated.pull_request
+            prExisting.pull_request
           ] }))
       }
     };
@@ -88,7 +86,7 @@ describe('Presolver', () => {
       name: 'pull_request.opened',
       payload: prUnrelated
     });
-    expect(github.issues.addLabels).toHaveBeenCalled();
+    expect(github.issues.addLabels).toHaveBeenCalledTimes(0);
   });
 });
 
