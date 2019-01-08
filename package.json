@@ -10,8 +10,8 @@
     "postinstall": "npm run bootstrap",
     "format": "prettier --write es5 ./**/*.{js,json} && npm run lint",
     "lint": "eslint ./**/*.js --fix",
-    "start": "lerna run start --stream",
-    "seed": "lerna run seed --stream",
+    "start": "cd probot && npm start && cd ../",
+    "seed": "cd probot && npm run seed && cd ../",
     "dev": "nodemon"
   },
   "devDependencies": {
