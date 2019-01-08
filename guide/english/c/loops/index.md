@@ -12,7 +12,7 @@ Loop in which the condition is checked before every iteration. e.g., `for` loop,
 Loops in which the execution takes place once even if the condition is false. e.g., `do-while` loop
 
 ## While loops
-The simplest of the bunch are while loops. While loops will run while the condition within the parenthesis is true. They should be used when you want something to happen until a certain condition takes place.
+It is an Entry Controlled Loop i.e First the Condition is tested and if true then the body of the loop gets executed. The simplest of the bunch are while loops. While loops will run while the condition within the parenthesis is true. They should be used when you want something to happen until a certain condition takes place.
 
 ### Syntax
 ```
@@ -68,6 +68,7 @@ int main(void) {
 When this while loop is evaluated, `my_number` will be checked to see if it isn't 10. It isn't, because it's been initialized at 11, so the code within the while loop will run and `my_number` will be 12. 12 does not equal 10, so the code within the while loop will be run and `my_number` will be 13. This will keep running forever because this condition will never become false- the only way for it to stop is for the program to be forced to stop running. This is an example of an infinite loop, because if left alone, it will run an infinite amount of times.
 
 ## Do-while loops
+They comes under the category of Exit Controlled Loops, i.e Atleast once the loop will run and execute and after that the condition is tested.
 Do-while loops are a less commonly used version of a while loop. While loops start with an evaluation, so if that evaluation is false, the code within the brackets will not be run. With a do-while loop, however, the code within the brackets gets run once, then the evaluation is performed to see if it should be run again.
 
 ### Syntax
@@ -96,7 +97,8 @@ int main(void){
 If this were a while loop, the code within the brackets would never get run because this condition isn't true when the evaluation is performed. However, because this is a do-while loop, the code will be performed once, and then the evaluation is done to see if it should be done again. Do-while loops are useful for when you know you want something to be done once, but you may need it to be run additional times after that.
 
 ## For loops
-For loops are for when we want something to run a set number of times.
+It is also an Entry Controlled Loop i.e First the Condition is tested and if true then the body of the loop gets executed.
+It is one of the most simplest loops Available In C. In For loop, First the value is Initialized then the condition is tested. If true then the loop is executed and after this the value of the loop variable gets updated. This Process repeats untill the conditions becomes false. For loops are for when we want something to run a set number of times.
 
 ## Here is an example to print from A to Z
 ```c
@@ -213,7 +215,7 @@ C supports the following control statements:
 Terminates the <b>loop</b> or <b>switch</b> statement and transfers execution to the statement immediately following the loop or switch.
 
 #### 2. Continue statement
-Causes the loop to skip the remainder of its body and immediately retest its condition prior to reiterating.
+Causes the loop to skip the remainder of its body and immediately retest its condition prior to reiterating. It Does not work on switch statement but in loops only.
 
 #### 3. Goto statement
 Transfers control to the labeled statement.
