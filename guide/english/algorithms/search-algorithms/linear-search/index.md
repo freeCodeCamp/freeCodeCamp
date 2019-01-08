@@ -120,9 +120,9 @@ int linear_search(int arr[],int n,int num)
 ### Example in Python
 ```python
 def linear_search(array, num):
-	for i in range(len(array)):
-		if (array[i]==num):
-			return i
+	for index, element in enumerate(array):
+		if element == num:
+			return index
 	return -1
 ```
 
