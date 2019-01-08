@@ -6,10 +6,10 @@ Loops are what you use when you have code that you want to execute more than onc
 
 
 They can be categorized as:
-
-(a) Entry controlled loops- Loops in which the condition is checked before every iteration. e.g. for loop, while loop
-(b) Exit controlled loop- Loops in which the execution takes place once even if the condition is false. e.g. for do-while loop
-
+##### Entry Controlled Loop:
+Loop in which the condition is checked before every iteration. e.g., `for` loop, `while` loop
+##### Exit Controlled Loop:
+Loops in which the execution takes place once even if the condition is false. e.g., `do-while` loop
 
 ## While loops
 The simplest of the bunch are while loops. While loops will run while the condition within the parenthesis is true. They should be used when you want something to happen until a certain condition takes place.
@@ -37,9 +37,10 @@ int main(void) {
     return 0;
 }
 ```
-While the statement within the while loop is true, the content within the brackets will be run. When the program hits the `while(my_number!=10)`, it checks the statement within the parenthesis. If that statement is false, it won't run the while loop. Instead, it will skip over the code between the two brackets and will pick up where it left off.
 
-If the statement is true, the code within the brackets will be run. Once the code within the brackets has run, the statement within the parenthesis will be checked again. Just like before, if the statement is true, the code will be run, if it's false, the code will be skipped.
+While the statement within the while loop is true, the content within the brackets will run. When the program hits the `while(my_number)`, it checks the statement within the parenthesis. If that statement is false, it won't run the while loop. Instead, it will skip over the code between the two brackets and will pick up where it left off.
+
+If the statement is true, the code within the brackets will run. Once the code within the brackets has run, the statement within the parenthesis will be checked again. Just like before, if the statement is true, the code will run, if it's false, the code will be skipped.
 
 Something that you may run into when playing with this or any other loop is the idea of an infinite loop- a loop that will run an infinite amount of times because there's nothing to stop it. Sometimes this can happen on purpose:
 
