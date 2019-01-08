@@ -14,7 +14,6 @@ const envVarsSchema = Joi.object({
     .required()
     .description('Mongo DB host url'),
   MONGO_PORT: Joi.number().default(27017),
-  HOST: Joi.string().required(),
   GITHUB_USERNAME: Joi.string().required(),
   GITHUB_ACCESS_TOKEN: Joi.string().required(),
   REPOSITORY_OWNER: Joi.string().required(),
@@ -39,8 +38,6 @@ if (error) {
 
 const config = {
   env: envVars.NODE_ENV,
-  port: envVars.PORT,
-  host: envVars.HOST,
   mongo: {
     host: envVars.MONGO_HOST,
     port: envVars.MONGO_PORT

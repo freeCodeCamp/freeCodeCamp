@@ -12,7 +12,6 @@
   "scripts": {
     "dev": "nodemon",
     "start": "probot run ./index.js",
-    "develop": "cross-env PORT=3001 node server/server.js",
     "seed": "node server/tools/seed-db.js",
     "start-probot": "probot run ./index.js",
     "lint": "standard --fix",
