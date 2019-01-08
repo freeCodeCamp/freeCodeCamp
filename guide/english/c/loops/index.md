@@ -86,7 +86,7 @@ int main(void){
     int a = 0;
 
     do {
-        a++
+        a++;
     } while(a == -123);
 
     printf("%i\n", a);
