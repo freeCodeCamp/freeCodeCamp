@@ -2,16 +2,14 @@
 title: Loops of all kinds
 ---
 # Loops of all kinds in C
-Loops are what you use when you have code that you want to loop, meaning that after it runs, you might want it to loop around to the beginning and run again. There are a few of these in C.
+Loops are what you use when you have code that you want to execute more than once, meaning that after it runs, you might want it to loop around to the beginning and run again. There are a few of these in C.
 
 
 They can be categorized as:
-
-## (a) Entry controlled loops-
-            Loops in which the condition is checked before every iteration. e.g. for loop, while loop
-## (b) Exit controlled loop- 
-            Loops in which the execution takes place once even if the condition is false. e.g. for do-while loop
-
+##### Entry Controlled Loop:
+Loop in which the condition is checked before every iteration. e.g., `for` loop, `while` loop
+##### Exit Controlled Loop:
+Loops in which the execution takes place once even if the condition is false. e.g., `do-while` loop
 
 ## While loops
 The simplest of the bunch are while loops. While loops will run while the condition within the parenthesis is true. They should be used when you want something to happen until a certain condition takes place.
@@ -39,6 +37,7 @@ int main(void) {
     return 0;
 }
 ```
+
 While the statement within the while loop is true, the content within the brackets will run. When the program hits the `while(my_number)`, it checks the statement within the parenthesis. If that statement is false, it won't run the while loop. Instead, it will skip over the code between the two brackets and will pick up where it left off.
 
 If the statement is true, the code within the brackets will run. Once the code within the brackets has run, the statement within the parenthesis will be checked again. Just like before, if the statement is true, the code will run, if it's false, the code will be skipped.
@@ -99,6 +98,25 @@ If this were a while loop, the code within the brackets would never get run beca
 ## For loops
 For loops are for when we want something to run a set number of times.
 
+## Here is an example to print from A to Z
+```c
+#include <stdio.h>
+int main()
+{
+    char c;
+
+    for(c = 'A'; c <= 'Z'; ++c)
+       printf("%c ", c);
+    
+    return 0;
+}
+```
+**Output**
+```c
+A B C D E F G H I J K L M N O P Q R S T U V W X Y Z
+```
+
+
 ### Syntax
 ```
 for(initialisation; condition; changer)
@@ -134,6 +152,15 @@ Unlike the for loop, there are three things in our parenthesis that are separate
 The next section is a boolean condition that will be checked for true or false, just like our while loop. It's referred to as a 'condition', because it's the condition that will get checked before starting a loop.
 
 The final section is referred to as the 'increment/decrement'. Its job is to perform some operation every loop - usually adding or subtracting from the initial variable - after the code within the brackets has been run through. In this case, it's just adding one to the count. This is the most common way for the increment to be used, because it lets you keep count of how many times you've run through a for loop.
+
+
+An infinite loop is also possible in the for loop. An infinite for loop has absolutely no items in the paranthesis except for the two semi colons.
+
+```C
+for(;;) {
+    printf("This will also get printed forever unless the program is stopped!");
+}
+```
 
 ### Syntax Comparison
 ```C
@@ -216,7 +243,16 @@ Throughout this page, you've read that the code 'within the brackets' is what ge
 while(true)
     printf("hello, world! \n");
 ```
-In cases like this, C will treat the next line as the only content that needs to be looped. C ignores whitespace, so that indent is just there for clarity. Only that one line will be treated as though it is in the loop, and this is a property that if statements, for loops, and while loops all share. Because the whitespace is ignored, the placement doesn't matter: it could be on the same line, the next line, or 300 lines and two spaces down as long as there's no other lines of code in between. This feature can make your code look a bit cleaner when you only have one line of code to run in a statement.
+In cases like this, C will treat the next line as the only content that needs to be looped. C ignores whitespace, so that indent is just there for clarity. Only that one line will be treated as though it is in the loop, and this is a property that if statements, for loops, and while loops, among other functions, all share. Because the whitespace is ignored, the placement doesn't matter: it could be on the same line, the next line, or 300 lines and two spaces down as long as there's no other lines of code in between. This feature can make your code look a bit cleaner when you only have one line of code to run in a statement. However choosing to do so can lead to a common bug known as optimistic indentation.
+
+### Optimistic Indentation
+Consider the following code.
+```C
+while(true)
+    printf("hello, world! \n");
+    printf("my name is John! \n");
+```
+Imagine you had written a while loop that contained only the first line of the loop, so you decided to omit the brackets. Then later on, you changed your mind and decide you want to add another line. At first the loop looks okay, but the second line is actually not part of the loop! This is because only the line immediately after the loop declaration is considered part of the loop if the brackets are left out. The optimistic indentation made the loop appear correct, when it isn't actually doing what it's supposed to do.
 
 ## Semicolons instead of brackets
 If there are no brackets, the compiler will look only at the next line and have that be the content of the loop. Semicolons tell the compiler that a line is over. With these things combined, we can have C wait until something becomes true. Let's say we have a method called `is_button_pressed` that returns false if a button is not pressed, and true if a button is pressed:
