@@ -53,7 +53,7 @@ const labeler = async(
     return !existingLabels.includes(label);
   });
   if (newLabels.length) {
-    if (config.github.productionRun === 'true') {
+    if (config.oneoff.productionRun) {
       addLabels(number, newLabels);
       await rateLimiter();
     }
@@ -90,7 +90,7 @@ const guideFolderChecks = async(number, prFiles, user) => {
 
   if (prErrors.length) {
     const comment = createErrorMsg(prErrors, user);
-    if (config.github.productionRun === 'true') {
+    if (config.oneoff.productionRun) {
       await addComment(number, comment);
       await rateLimiter();
     }

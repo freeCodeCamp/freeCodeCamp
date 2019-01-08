@@ -28,7 +28,7 @@ const getUserInput = async() => {
     for (let { number, errorDesc } of prs) {
       if (errorDesc !== 'unknown error') {
         log.add(number, { number, closedOpened: true, errorDesc });
-        if (config.github.productionRun === 'true') {
+        if (config.oneoff.productionRun) {
           await closeOpen(number);
           await rateLimiter(90000);
         }

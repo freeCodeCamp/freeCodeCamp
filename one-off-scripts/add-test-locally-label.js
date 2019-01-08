@@ -36,7 +36,7 @@ const log = new ProcessingLog('all-locally-tested-labels');
 
       if (newLabels.length) {
         log.add(number, { number, labels: newLabels });
-        if (config.github.productionRun === 'true') {
+        if (config.oneoff.productionRun) {
           addLabels(number, newLabels, log);
           await rateLimiter();
         }

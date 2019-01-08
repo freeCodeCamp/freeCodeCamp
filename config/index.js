@@ -27,8 +27,7 @@ const envVarsSchema = Joi.object({
   PRIVATE_KEY: Joi.string().required(),
   WEBHOOK_SECRET: Joi.string().required(),
   CLIENT_ID: Joi.string().required(),
-  CLIENT_SECRET: Joi.string().required(),
-  SKIP_PREFLIGHT_CHECK: Joi.boolean().default(true)
+  CLIENT_SECRET: Joi.string().required()
 })
   .unknown()
   .required();
