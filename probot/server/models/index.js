@@ -14,6 +14,11 @@ const info = new mongoose.Schema({
   prRange: String
 });
 
-const PR = mongoose.model('PR', pr, 'openprs');
-const INFO = mongoose.model('INFO', info, 'info');
-module.exports = { PR, INFO };
+const dbCollections = {
+   pr: 'openprs',
+   info: 'info'
+};
+
+const PR = mongoose.model('PR', pr, dbCollections['pr']);
+const INFO = mongoose.model('INFO', info, dbCollections['info']);
+module.exports = { PR, INFO, dbCollections };

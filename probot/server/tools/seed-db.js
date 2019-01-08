@@ -10,7 +10,7 @@ const db = mongoose.connect(
   { useNewUrlParser: true }
 );
 
-const { PR, INFO } = require('../models');
+const { PR, INFO, dbCollections } = require('../models');
 
 db.then(() => {
   // remove all existing collections from db
@@ -19,8 +19,9 @@ db.then(() => {
       throw err;
     }
     if (names) {
+      const collectionNames = Object.values(dbCollections);
       names.forEach(({ name }) => {
-        if (name !== 'system.indexes') {
+        if (collectionNames.includes(name)) {
           mongoose.connection.db
             .dropCollection(name)
             .catch(err => console.log(err));
