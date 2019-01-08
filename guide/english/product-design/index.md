@@ -11,17 +11,15 @@ User Research, Data Analysis, UX and Interaction Design, Graphic and UI Design, 
 <!-- Please add any articles you think might be helpful to read before writing the article -->
 
  ###### Courses:
-<a href='https://classroom.udacity.com/courses/ud509' target='_blank' rel='nofollow'>Product Design Course</a>
+- <a href='https://classroom.udacity.com/courses/ud509' target='_blank' rel='nofollow'>Product Design Course</a>
 [Udacity] (https://classroom.udacity.com/)
 
- <a href='https://www.edx.org/course/product-design-the-delft-design-approach-0' target='_blank' rel='nofollow'>Product Design: The Delft Design Approach</a>
+- <a href='https://www.edx.org/course/product-design-the-delft-design-approach-0' target='_blank' rel='nofollow'>Product Design: The Delft Design Approach</a>
 [edX] (https://www.edx.org/)
 
-<a href='https://www.coursera.org/courses?query=product%20design' target='_blank' rel='nofollow'>Product Design Courses and Specializations</a>
-[Coursera] (https://www.coursera.org/courses?query=product%20design)
+- Product Design Courses and Specializations - [Coursera](https://www.coursera.org/courses?query=product%20design)
  
-<a href='https://www.skillshare.com/browse/product-design' target='_blank' rel='nofollow'>Product Design Classes</a>
-[Skillshare] (https://www.skillshare.com/browse/product-design)
+- Product Design Classes - [Skillshare](https://www.skillshare.com/browse/product-design)
 
  ###### Youtube:
 <a href='https://www.youtube.com/watch?v=XRd6Ddn4ZSY' target='_blank' rel='nofollow'>Netflix Product Designer | Navin Iyengar | Design Like a Scientist</a>
