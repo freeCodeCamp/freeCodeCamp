@@ -1,0 +1,14 @@
+[
+    {
+        "sha": "49131c31d624d9434171ec700b992fe1e3698513",
+        "filename": "guide/english/linux/basic-linux-commands/index.md",
+        "status": "modified",
+        "additions": 1,
+        "deletions": 1,
+        "changes": 2,
+        "blob_url": "https://github.com/freeCodeCamp/freeCodeCamp/blob/ccadaeb4ed4ae17274fb7c32abe2071ea1e3898b/guide/english/linux/basic-linux-commands/index.md",
+        "raw_url": "https://github.com/freeCodeCamp/freeCodeCamp/raw/ccadaeb4ed4ae17274fb7c32abe2071ea1e3898b/guide/english/linux/basic-linux-commands/index.md",
+        "contents_url": "https://api.github.com/repos/freeCodeCamp/freeCodeCamp/contents/guide/english/linux/basic-linux-commands/index.md?ref=ccadaeb4ed4ae17274fb7c32abe2071ea1e3898b",
+        "patch": "@@ -61,7 +61,7 @@ When starting out with linux, there are some basic commands everyone should know\n  25409 s004  Ss     0:00.04 login -pf <user>\n ```\n \n- 15. **df -h** Checks disk space in human readable form\n+ 16. **df -h** Checks disk space in human readable form\n - Shows the size, amount used, amount available and capacity percentage of mounted drives/partitions.\n \n "
+    }
+]
