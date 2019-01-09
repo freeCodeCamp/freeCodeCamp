@@ -3,8 +3,6 @@ import { configure, shallow, mount } from 'enzyme';
 import Adapter16 from 'enzyme-adapter-react-16';
 import { setConfig } from 'react-hot-loader';
 
-import { isJSEnabledSelector } from '../redux';
-
 // we use two different frames to make them all essentially pure functions
 // main iframe is responsible rendering the preview and is where we proxy the
 // console.log
@@ -33,23 +31,24 @@ const createHeader = (id = mainId) => `
   </script>
 `;
 
-export const runTestInTestFrame = async function(document, test) {
+export const runTestInTestFrame = async function(document, test, timeout) {
   const { contentDocument: frame } = document.getElementById(testId);
   // Enable Stateless Functional Component. Otherwise, enzyme-adapter-react-16
   // does not work correctly.
   setConfig({ pureSFC: true });
-  const result = await frame.__runTest(test);
-  setConfig({ pureSFC: false });
-  return result;
+  try {
+    return await Promise.race([
+      new Promise((_, reject) => setTimeout(() => reject('timeout'), timeout)),
+      frame.__runTest(test)
+    ]);
+  } finally {
+    setConfig({ pureSFC: false });
+  }
 };
 
-const createFrame = (document, state, id) => ctx => {
-  const isJSEnabled = isJSEnabledSelector(state);
+const createFrame = (document, id) => ctx => {
   const frame = document.createElement('iframe');
   frame.id = id;
-  if (!isJSEnabled) {
-    frame.sandbox = 'allow-same-origin';
-  }
   return {
     ...ctx,
     element: frame
@@ -77,7 +76,7 @@ const mountFrame = document => ({ element, ...rest }) => {
 const buildProxyConsole = proxyLogger => ctx => {
   const oldLog = ctx.window.console.log.bind(ctx.window.console);
   ctx.window.console.log = function proxyConsole(...args) {
-    proxyLogger.put(args);
+    proxyLogger(args);
     return oldLog(...args);
   };
   return ctx;
@@ -111,16 +110,16 @@ const writeContentToFrame = ctx => {
   return ctx;
 };
 
-export const createMainFramer = (document, state) =>
+export const createMainFramer = document =>
   flow(
-    createFrame(document, state, mainId),
+    createFrame(document, mainId),
     mountFrame(document),
     writeContentToFrame
   );
 
-export const createTestFramer = (document, state, frameReady, proxyConsole) =>
+export const createTestFramer = (document, frameReady, proxyConsole) =>
   flow(
-    createFrame(document, state, testId),
+    createFrame(document, testId),
     mountFrame(document),
     writeTestDepsToDocument(frameReady),
     buildProxyConsole(proxyConsole),

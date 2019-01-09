@@ -34,10 +34,7 @@ import {
   runTestInTestFrame
 } from '../utils/frame.js';
 
-const testWorker = createWorker('test-evaluator');
-const testTimeout = 5000;
-
-function* ExecuteChallengeSaga() {
+export function* executeChallengeSaga() {
   const consoleProxy = yield channel();
   try {
     const { js, bonfire, backend } = challengeTypes;
@@ -46,6 +43,7 @@ function* ExecuteChallengeSaga() {
     yield put(initLogs());
     yield put(initConsole('// running tests'));
     yield fork(logToConsole, consoleProxy);
+    const proxyLogger = args => consoleProxy.put(args);
 
     const state = yield select();
 
@@ -53,13 +51,13 @@ function* ExecuteChallengeSaga() {
     switch (challengeType) {
       case js:
       case bonfire:
-        testResults = yield ExecuteJSChallengeSaga(state, consoleProxy);
+        testResults = yield executeJSChallengeSaga(state, proxyLogger);
         break;
       case backend:
-        testResults = yield ExecuteBackendChallengeSaga(state, consoleProxy);
+        testResults = yield executeBackendChallengeSaga(state, proxyLogger);
         break;
       default:
-        testResults = yield ExecuteDOMChallengeSaga(state, consoleProxy);
+        testResults = yield executeDOMChallengeSaga(state, proxyLogger);
     }
 
     yield put(updateTests(testResults));
@@ -78,72 +76,59 @@ function* logToConsole(channel) {
   });
 }
 
-function* ExecuteJSChallengeSaga(state, proxyLogger) {
+function* executeJSChallengeSaga(state, proxyLogger) {
   const { build, sources } = yield call(buildJSChallenge, state);
   const code = sources && 'index' in sources ? sources['index'] : '';
 
-  const log = args => proxyLogger.put(args);
-  testWorker.on('LOG', log);
+  const testWorker = createWorker('test-evaluator');
+  testWorker.on('LOG', proxyLogger);
 
   try {
-    return yield call(executeTests, (testString, testTimeout) =>
-      testWorker
-        .execute(
+    return yield call(executeTests, async(testString, testTimeout) => {
+      try {
+        return await testWorker.execute(
           { script: build + '\n' + testString, code, sources },
           testTimeout
-        )
-        .then(result => {
-          testWorker.killWorker();
-          return result;
-        })
-    );
+        );
+      } finally {
+        testWorker.killWorker();
+      }
+    });
   } finally {
-    testWorker.remove('LOG', log);
+    testWorker.remove('LOG', proxyLogger);
   }
 }
 
-function createTestFrame(state, ctx, proxyLogger) {
-  return new Promise(resolve => {
-    const frameTest = createTestFramer(document, state, resolve, proxyLogger);
-    frameTest(ctx);
-  });
+function createTestFrame(ctx, proxyLogger) {
+  return new Promise(resolve =>
+    createTestFramer(document, resolve, proxyLogger)(ctx)
+  );
 }
 
-function* ExecuteDOMChallengeSaga(state, proxyLogger) {
+function* executeDOMChallengeSaga(state, proxyLogger) {
   const ctx = yield call(buildDOMChallenge, state);
-
-  yield call(createTestFrame, state, ctx, proxyLogger);
+  yield call(createTestFrame, ctx, proxyLogger);
   // wait for a code execution on a "ready" event in jQuery challenges
   yield delay(100);
 
   return yield call(executeTests, (testString, testTimeout) =>
-    Promise.race([
-      runTestInTestFrame(document, testString),
-      new Promise((_, reject) =>
-        setTimeout(() => reject('timeout'), testTimeout)
-      )
-    ])
+    runTestInTestFrame(document, testString, testTimeout)
   );
 }
 
 // TODO: use a web worker
-function* ExecuteBackendChallengeSaga(state, proxyLogger) {
+function* executeBackendChallengeSaga(state, proxyLogger) {
   const ctx = yield call(buildBackendChallenge, state);
-
-  yield call(createTestFrame, state, ctx, proxyLogger);
+  yield call(createTestFrame, ctx, proxyLogger);
 
   return yield call(executeTests, (testString, testTimeout) =>
-    Promise.race([
-      runTestInTestFrame(document, testString),
-      new Promise((_, reject) =>
-        setTimeout(() => reject('timeout'), testTimeout)
-      )
-    ])
+    runTestInTestFrame(document, testString, testTimeout)
   );
 }
 
 function* executeTests(testRunner) {
   const tests = yield select(challengeTestsSelector);
+  const testTimeout = 5000;
   const testResults = [];
   for (const { text, testString } of tests) {
     const newTest = { text, testString };
@@ -180,8 +165,8 @@ function* updateMainSaga() {
       return;
     }
     const state = yield select();
-    const frameMain = yield call(createMainFramer, document, state);
     const ctx = yield call(buildDOMChallenge, state);
+    const frameMain = yield call(createMainFramer, document);
     yield call(frameMain, ctx);
   } catch (err) {
     console.error(err);
@@ -190,7 +175,7 @@ function* updateMainSaga() {
 
 export function createExecuteChallengeSaga(types) {
   return [
-    takeLatest(types.executeChallenge, ExecuteChallengeSaga),
+    takeLatest(types.executeChallenge, executeChallengeSaga),
     takeLatest(
       [
         types.updateFile,
