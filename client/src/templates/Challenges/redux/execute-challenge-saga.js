@@ -4,7 +4,8 @@ import {
   call,
   takeLatest,
   takeEvery,
-  fork
+  fork,
+  getContext
 } from 'redux-saga/effects';
 import { delay, channel } from 'redux-saga';
 
@@ -99,15 +100,16 @@ function* executeJSChallengeSaga(state, proxyLogger) {
   }
 }
 
-function createTestFrame(ctx, proxyLogger) {
+function createTestFrame(document, ctx, proxyLogger) {
   return new Promise(resolve =>
     createTestFramer(document, resolve, proxyLogger)(ctx)
   );
 }
 
 function* executeDOMChallengeSaga(state, proxyLogger) {
+  const document = yield getContext('document');
   const ctx = yield call(buildDOMChallenge, state);
-  yield call(createTestFrame, ctx, proxyLogger);
+  yield call(createTestFrame, document, ctx, proxyLogger);
   // wait for a code execution on a "ready" event in jQuery challenges
   yield delay(100);
 
@@ -118,8 +120,9 @@ function* executeDOMChallengeSaga(state, proxyLogger) {
 
 // TODO: use a web worker
 function* executeBackendChallengeSaga(state, proxyLogger) {
+  const document = yield getContext('document');
   const ctx = yield call(buildBackendChallenge, state);
-  yield call(createTestFrame, ctx, proxyLogger);
+  yield call(createTestFrame, document, ctx, proxyLogger);
 
   return yield call(executeTests, (testString, testTimeout) =>
     runTestInTestFrame(document, testString, testTimeout)
@@ -166,6 +169,7 @@ function* updateMainSaga() {
     }
     const state = yield select();
     const ctx = yield call(buildDOMChallenge, state);
+    const document = yield getContext('document');
     const frameMain = yield call(createMainFramer, document);
     yield call(frameMain, ctx);
   } catch (err) {
