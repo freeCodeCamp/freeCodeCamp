@@ -6,13 +6,13 @@ Loops are what you use when you have code that you want to execute more than onc
 
 
 They can be categorized as:
-
-(a) Entry controlled loops- Loops in which the condition is checked before every iteration. e.g. for loop, while loop
-(b) Exit controlled loop- Loops in which the execution takes place once even if the condition is false. e.g. for do-while loop
-
+##### Entry Controlled Loop:
+Loop in which the condition is checked before every iteration. e.g., `for` loop, `while` loop
+##### Exit Controlled Loop:
+Loops in which the execution takes place once even if the condition is false. e.g., `do-while` loop
 
 ## While loops
-The simplest of the bunch are while loops. While loops will run while the condition within the parenthesis is true. They should be used when you want something to happen until a certain condition takes place.
+It is an Entry Controlled Loop i.e First the Condition is tested and if true then the body of the loop gets executed. The simplest of the bunch are while loops. While loops will run while the condition within the parenthesis is true. They should be used when you want something to happen until a certain condition takes place.
 
 ### Syntax
 ```
@@ -37,9 +37,10 @@ int main(void) {
     return 0;
 }
 ```
-While the statement within the while loop is true, the content within the brackets will be run. When the program hits the `while(my_number!=10)`, it checks the statement within the parenthesis. If that statement is false, it won't run the while loop. Instead, it will skip over the code between the two brackets and will pick up where it left off.
 
-If the statement is true, the code within the brackets will be run. Once the code within the brackets has run, the statement within the parenthesis will be checked again. Just like before, if the statement is true, the code will be run, if it's false, the code will be skipped.
+While the statement within the while loop is true, the content within the brackets will run. When the program hits the `while(my_number)`, it checks the statement within the parenthesis. If that statement is false, it won't run the while loop. Instead, it will skip over the code between the two brackets and will pick up where it left off.
+
+If the statement is true, the code within the brackets will run. Once the code within the brackets has run, the statement within the parenthesis will be checked again. Just like before, if the statement is true, the code will run, if it's false, the code will be skipped.
 
 Something that you may run into when playing with this or any other loop is the idea of an infinite loop- a loop that will run an infinite amount of times because there's nothing to stop it. Sometimes this can happen on purpose:
 
@@ -67,6 +68,7 @@ int main(void) {
 When this while loop is evaluated, `my_number` will be checked to see if it isn't 10. It isn't, because it's been initialized at 11, so the code within the while loop will run and `my_number` will be 12. 12 does not equal 10, so the code within the while loop will be run and `my_number` will be 13. This will keep running forever because this condition will never become false- the only way for it to stop is for the program to be forced to stop running. This is an example of an infinite loop, because if left alone, it will run an infinite amount of times.
 
 ## Do-while loops
+They comes under the category of Exit Controlled Loops, i.e Atleast once the loop will run and execute and after that the condition is tested.
 Do-while loops are a less commonly used version of a while loop. While loops start with an evaluation, so if that evaluation is false, the code within the brackets will not be run. With a do-while loop, however, the code within the brackets gets run once, then the evaluation is performed to see if it should be run again.
 
 ### Syntax
@@ -84,7 +86,7 @@ int main(void){
     int a = 0;
 
     do {
-        a++
+        a++;
     } while(a == -123);
 
     printf("%i\n", a);
@@ -95,7 +97,8 @@ int main(void){
 If this were a while loop, the code within the brackets would never get run because this condition isn't true when the evaluation is performed. However, because this is a do-while loop, the code will be performed once, and then the evaluation is done to see if it should be done again. Do-while loops are useful for when you know you want something to be done once, but you may need it to be run additional times after that.
 
 ## For loops
-For loops are for when we want something to run a set number of times.
+It is also an Entry Controlled Loop i.e First the Condition is tested and if true then the body of the loop gets executed.
+It is one of the most simplest loops Available In C. In For loop, First the value is Initialized then the condition is tested. If true then the loop is executed and after this the value of the loop variable gets updated. This Process repeats untill the conditions becomes false. For loops are for when we want something to run a set number of times.
 
 ## Here is an example to print from A to Z
 ```c
@@ -212,7 +215,7 @@ C supports the following control statements:
 Terminates the <b>loop</b> or <b>switch</b> statement and transfers execution to the statement immediately following the loop or switch.
 
 #### 2. Continue statement
-Causes the loop to skip the remainder of its body and immediately retest its condition prior to reiterating.
+Causes the loop to skip the remainder of its body and immediately retest its condition prior to reiterating. It Does not work on switch statement but in loops only.
 
 #### 3. Goto statement
 Transfers control to the labeled statement.
@@ -242,7 +245,16 @@ Throughout this page, you've read that the code 'within the brackets' is what ge
 while(true)
     printf("hello, world! \n");
 ```
-In cases like this, C will treat the next line as the only content that needs to be looped. C ignores whitespace, so that indent is just there for clarity. Only that one line will be treated as though it is in the loop, and this is a property that if statements, for loops, and while loops all share. Because the whitespace is ignored, the placement doesn't matter: it could be on the same line, the next line, or 300 lines and two spaces down as long as there's no other lines of code in between. This feature can make your code look a bit cleaner when you only have one line of code to run in a statement.
+In cases like this, C will treat the next line as the only content that needs to be looped. C ignores whitespace, so that indent is just there for clarity. Only that one line will be treated as though it is in the loop, and this is a property that if statements, for loops, and while loops, among other functions, all share. Because the whitespace is ignored, the placement doesn't matter: it could be on the same line, the next line, or 300 lines and two spaces down as long as there's no other lines of code in between. This feature can make your code look a bit cleaner when you only have one line of code to run in a statement. However choosing to do so can lead to a common bug known as optimistic indentation.
+
+### Optimistic Indentation
+Consider the following code.
+```C
+while(true)
+    printf("hello, world! \n");
+    printf("my name is John! \n");
+```
+Imagine you had written a while loop that contained only the first line of the loop, so you decided to omit the brackets. Then later on, you changed your mind and decide you want to add another line. At first the loop looks okay, but the second line is actually not part of the loop! This is because only the line immediately after the loop declaration is considered part of the loop if the brackets are left out. The optimistic indentation made the loop appear correct, when it isn't actually doing what it's supposed to do.
 
 ## Semicolons instead of brackets
 If there are no brackets, the compiler will look only at the next line and have that be the content of the loop. Semicolons tell the compiler that a line is over. With these things combined, we can have C wait until something becomes true. Let's say we have a method called `is_button_pressed` that returns false if a button is not pressed, and true if a button is pressed:
@@ -644,11 +656,9 @@ int main()
     {
         for(j=1; j <= i; ++j)
         {
-            printf("%d ", number);
-            ++number;
-        }
-
-        printf("\n");
+            printf("%d ", number++);
+         }
+       printf("\n");
     }
 
     return 0;

@@ -16,6 +16,10 @@ User Research, Data Analysis, UX and Interaction Design, Graphic and UI Design, 
 
 * [edX - Product Design: The Delft Design Approach](https://www.edx.org/course/product-design-the-delft-design-approach-0) 
 
+* Product Design Courses and Specializations - [Coursera](https://www.coursera.org/courses?query=product%20design)
+ 
+* Product Design Classes - [Skillshare](https://www.skillshare.com/browse/product-design)
+
  ###### Youtube:
 * [Awwwards Youtube Channel - Design Like a Scientist](https://www.youtube.com/watch?v=XRd6Ddn4ZSY)
 

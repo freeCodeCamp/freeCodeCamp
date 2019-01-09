@@ -17,7 +17,7 @@ a different device width/scale allowing you to show the best possible layout to 
 
 ## Setting Break Points
 
-Breakpoints are broadly set on basis of either of the following.
+Breakpoints are broadly set on basis of either of the following:
 
 - Breakpoints based on device width.
 - Breakpoints based on content.
@@ -93,7 +93,7 @@ and (orientation: landscape) {
 
 ### Breakpoints based on Content
 
-This is the most preferred choice while making or writing the breakpoint rules. Because it is easier to adjust your content according a particular layout only when it requires a change.
+This is the most preferred choice while making or writing the breakpoint rules. Because it is easier to adjust your content according to a particular layout only when it requires a change.
 ```
 @media only screen (min-width: 768px){
 ...
@@ -102,7 +102,7 @@ This is the most preferred choice while making or writing the breakpoint rules. 
 > This breakpoint means the CSS will apply when the device width is 768px and above.
 
 
-#### You can also set a range with breakpoints,  so the CSS will only apply within those limits.
+#### You can also set a range with breakpoints, so the CSS will only apply within those limits.
 ```
 @media only screen and (min-width: 768px) and (max-width: 959px){
 
