@@ -5,14 +5,15 @@
     "postinstall": "npm run bootstrap",
     "bootstrap": "lerna bootstrap",
     "clean": "lerna clean",
-    "develop": "npm-run-all -s ensure-env start-develop",
+    "develop": "npm-run-all -s ensure-env && npm-run-all -p start-develop-server start-develop-client",
     "ensure-env": "cross-env DEBUG=fcc:* node ./tools/scripts/ensure-env.js",
     "lint": "echo 'Warning: TODO - Define Linting with fixing.'",
     "lint:api": "eslint api-server --ignore-pattern 'api-server/node_modules/**/*.js'",
     "seed": "npm-run-all -p seed:*",
     "seed:challenges": "cross-env DEBUG=fcc:* node ./tools/scripts/seed/seedChallenges",
     "seed:auth-user": "cross-env DEBUG=fcc:* node ./tools/scripts/seed/seedAuthUser",
-    "start-develop": "node ./tools/scripts/start-develop.js",
+    "start-develop-client": "cd ./client && node ./node_modules/gatsby-cli develop",
+    "start-develop-server": "cd ./api-server && node development-entry.js",
     "pretest": "npm-run-all -s test:lint",
     "test": "npm-run-all -p test:*",
     "test:lint": "echo 'Warning: TODO - Define Linting tests.'",
@@ -38,7 +39,6 @@
     "ora": "^3.0.0",
     "readdirp-walk": "^1.6.0",
     "shortid": "^2.2.14",
-    "slugg": "^1.2.1",
-    "tree-kill": "^1.2.0"
+    "slugg": "^1.2.1"
   }
 }
