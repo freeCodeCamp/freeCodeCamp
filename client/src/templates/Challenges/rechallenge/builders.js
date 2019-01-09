@@ -61,7 +61,7 @@ export const cssToHtml = cond([
 //   template: String,
 //   files: [ polyVinyl ]
 // ) => String
-export function concatHtml(required, template, files = []) {
+export function concatHtml({ required = [], template, files = [] } = {}) {
   const createBody = template ? _template(template) : defaultTemplate;
 
   const head = required
