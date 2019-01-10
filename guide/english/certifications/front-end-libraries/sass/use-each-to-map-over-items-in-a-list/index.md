@@ -36,7 +36,7 @@ Use @each to assign a different background color to each of the divs as explaine
 <div class="red-bg"></div>
 ```
 
-## Solution:
+## Solution: 
 ```
 <style type='text/sass'>
 
