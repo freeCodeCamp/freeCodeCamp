@@ -13,6 +13,12 @@
   overflow-y: auto;
 }
 
+@media screen, (max-width: 767px) {
+  .instructions-panel {
+    height: calc(100vh - 112px);
+  }
+}
+
 .react-monaco-editor-container {
   width: 100%;
   height: 100%;
@@ -23,4 +29,23 @@
 .monaco-menu .action-label {
   color: #a2bd9b;
   letter-spacing: 0.02em;
+}
+
+#challege-page-tabs .nav-tabs {
+  margin-left: 2px;
+  display: flex;
+}
+
+#challege-page-tabs .nav-tabs > li {
+  flex: 1;
+  text-align: center;
+}
+
+#challege-page-tabs .nav-tabs > li > a {
+  padding: 5px 10px;
+}
+
+.challege-edittor-wrapper {
+  height: calc(100vh - 112px);
+  overflow: hidden;
 }

@@ -30,9 +30,9 @@ p::before {
  <span> Do. Or do not. There is no try</span> 
 ```
 
-在上面的示例中，我们在页面上的每个段落元素之前添加了一个灰色边框，并且我们还在每个span元素之前使用类注释添加了注释蓝色。
+在上面的示例中，我们在页面上的每个段落元素之前添加了一个灰色边框，并且我们还在每个span元素之前使用类注释添加了蓝色注释。
 
-> 你可以在这里查看这个演示https://jsfiddle.net/398by400/
+> 你可以在这里查看这个演示:https://jsfiddle.net/398by400/
 
 #### 定义和用法
 
@@ -51,7 +51,7 @@ p::before {
 
 这将显示`Hello world!!`在页面中。
 
-不仅字符串，图像，计数器甚至没有（“”，对于clearfix有用）都可以插入到`content`属性中，而**不是HTML中** 。以创造性的方式使用`::before`和`after`可以制作很多很酷的东西。如果你很好奇，你可以看看下一个链接： [一堆惊人的东西伪元素可以做](https://www.w3schools.com/css/css_pseudo_elements.asp)
+不仅字符串，图像，计数器甚至没有（“”，对于clearfix有用）都可以插入到`content`属性中，而**不是HTML中** 。以创造性的方式使用`::before`和`after`可以制作很多很酷的东西。如果你很好奇，你可以看看下一个链接： [伪元素可以做一堆惊人的东西](https://www.w3schools.com/css/css_pseudo_elements.asp)
 
 #### 单结肠与双结肠
 
