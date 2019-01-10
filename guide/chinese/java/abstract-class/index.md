@@ -35,11 +35,19 @@ public class Motorcycle extends Vehicle
 
 你不可以在你程序中创建Vehicle类的对象，但是你可以继承Vehicle类并且创建自类的对象。
 
+```java 
+抽象类车辆 { //用于声明no的变量。在车辆中的车轮 私人车轮;
+//变量用于定义所用电机的类型 私人电机;
+//一个只声明但不定义开头的抽象方法 
+//功能因为每辆车都使用不同的启动机制 
+  abstract void start（）; 
+}
+
 ``` java
 Vehicle newVehicle = new Vehicle();    // 无效
 Vehicle car = new Car();  // 有效
 Vehicle mBike = new Motorcycle();  // 有效
-
 Car carObj = new Car();  // 有效
 Motorcycle mBikeObj = new Motorcycle();  // 有效
 ```
+

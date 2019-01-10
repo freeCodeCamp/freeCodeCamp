@@ -3,32 +3,31 @@ title: Grid System
 ---
 ## Grid System
 
-In a nutshell Bootstrap grid system helps you create responsive layouts, it comprises of a system of rows and columns that helps you structure your content. 
+In a nutshell, Bootstrap grid system helps you create mobile-first layouts. Mobile first means that the grid layout will automatically be responsive for smaller screens. The HTML then defines the grid layout for larger screens.  It comprises of a system of rows and columns to help you structure your content. 
 
-Rows are horizontal groups of columns, with a maximum of 12 columns per row. Within each row, the content is placed inside the columns and it can span anywhere between 1 to 12 columns.
+Rows are horizontal groups of columns, and each page has a maximum of 12 columns per row. Within each row, the content is placed inside the columns and it can span anywhere between 1 to 12 columns.
 
-Bootstrap has five different types of grid tiers namely Extra small, Small, Medium, Large and Extra large, there is a breakpoint defined for each of these grid tiers.
+Bootstrap has five different types of grid tiers: Extra small, Small, Medium, Large, and Extra large. There is a breakpoint defined for each of these grid tiers.
 
-Bootstrap uses pixels to define the grid tier breakpoints, the different viewport widths that act as breakpoints for the grid tiers are:
-
+Bootstrap uses pixels to define the grid tier breakpoints.
 
 #### How it works
 
 ###### Container
-The container is the outer most element that will *contain* your grid, use `container` for a fixed width container in the middle of the screen (extra margin on larger screens) or `container-fluid` for full width.
+The container is the outer most element that *contains* your grid. Use `container` for a fixed-width container in the middle of the screen (add an extra margin on larger screens) or `container-fluid` for full width.
 
 ```
 <div class="container"></div>
 ```
 
 ###### Row
-Use `row` to group your columns, this will keep everything lined up properly and help you structure your grid.
+Use `row` to group your columns. This will keep everything lined up properly and help you structure your grid.
 ```
 <div class="row"></div>
 ```
 
 ###### Columns
-Column classes indicate the number of columns you’d like to use out of the possible 12 per row. For example `col-sm-6` would mean your column would use up half the width of the `row` on a small screen, and `col-lg-4` would use up a third on a large screen.
+Column classes indicate the number of columns you’d like to use out of the possible 12 per row. For example `col-sm-6` would mean your columns use up half the width of the `row` on a small screen, and `col-lg-4` would use up a third on a large screen.
 
 Here is how you would define a class prefix to use up one column width on the various screen sizes:
 
@@ -45,7 +44,7 @@ Here is how you would define a class prefix to use up one column width on the va
 
 #### Example
 
-A full width grid that has four columns, that each take up a full row on xs screens, half a row on sm and md screens, and a quarter of the width of the row on screens that are large and above.
+A full width grid that has four columns, each taking up a full row on xs screens, half a row on sm and md screens, and a quarter of the width of the row on screens that are large and above:
 
 ```
 <div class="container-fluid">
@@ -60,7 +59,7 @@ A full width grid that has four columns, that each take up a full row on xs scre
 
 *Note that `col-md` and `col-xl` are not defined, where a size is not defined, it will default down to the next smaller size that has been specified.*
 
-Bootstrap provides a ready made 12 column grid system for use in layouts. Consider the following code.
+Bootstrap provides a ready-made 12 column grid system for use in layouts. Consider the following code.
 
 ```html
    <div class="container">
@@ -85,10 +84,6 @@ Screen size values can be assigned as follows:
   - sm - < 992px Tablets
   - md - < 1200px Laptops
   - lg - > 1200px Desktops
- 
- Bootstrap is mobile first and responsive. 
- 
- Mobile first means that the grid layout will automatically be responsive for smaller screens. The HTML then defines the grid layout for larger screens. 
 
 The following code and image shows what is possible using different column widths. 
 
