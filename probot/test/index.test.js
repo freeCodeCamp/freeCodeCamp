@@ -38,7 +38,7 @@ describe('Presolver', () => {
           })
       },
       pullRequests: {
-        /* eslint-disable no-undef */
+        // eslint-disable-next-line no-undef
         getFiles: jest.fn().mockImplementation((issue) => {
           const { number } = issue;
           let data;
@@ -57,9 +57,8 @@ describe('Presolver', () => {
           }
           return { data };
         }),
-        /* eslint-disable no-undef */
+        // eslint-disable-next-line no-undef
         getAll: jest
-        /* eslint-enable no-undef */
           .fn()
           .mockImplementation(() => ({ data: [
             prExisting.pull_request
@@ -67,8 +66,6 @@ describe('Presolver', () => {
       }
     };
     app.auth = () => Promise.resolve(github);
-    // just return a test token
-    // app.app = () => 'test'
   });
 
   test(`adds a label if a PR has changes to files targeted by an 
@@ -92,6 +89,3 @@ describe('Presolver', () => {
 
 // For more information about testing with Jest see:
 // https://facebook.github.io/jest/
-
-// For more information about testing with Nock see:
-// https://github.com/nock/nock
