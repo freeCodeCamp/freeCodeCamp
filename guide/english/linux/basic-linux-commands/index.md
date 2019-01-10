@@ -28,8 +28,8 @@ When starting out with linux, there are some basic commands everyone should know
 
 7. **rm** - remove   
 - This command removes files, not directories. `rm file.txt` will remove the file named file.txt as long as it exists and is in the current directory.
+- To remove directories that have files inside use `rm -r DIRECTORY_NAME`. `r` mean recursive and will delete both directory and files inside.
 - **Warning, this command is capable of destroying entire systems, use with caution**
-
 
 8. **touch** - sets modification and access times of files, creates new files   
 - The touch command sets the modification and access times of files to the current time by default. To set the access time and/or modification time of files to a different date or that of another file, certain flags can be used with the command. If the touch command is used with a filename that does not exist, it creates the file. `touch new.txt` will create a new text file with name `new`.
