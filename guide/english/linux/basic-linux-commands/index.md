@@ -3,11 +3,10 @@ title: Basic Linux Commands
 ---
 ## Basic Linux Commands
 
-When starting out with linux, there are some basic commands everyone should know.
+When starting out with Linux, there are some basic commands everyone should know.
 
-
-1. **cd** - change directory 
-- cd followed by a directory or file path will take you inside that directory(folder).
+ 1. **cd** - change directory 
+- `cd` followed by a directory or file path will take you inside that directory (folder).
 
 2. **ls** - list command
 - Type `ls` and the contents of the current directory will be displayed.
@@ -32,14 +31,14 @@ When starting out with linux, there are some basic commands everyone should know
 - **Warning, this command is capable of destroying entire systems, use with caution**
 
 8. **touch** - sets modification and access times of files, creates new files   
-- The touch command sets the modification and access times of files to the current time by default. To set the access time and/or modification time of files to a different date or that of another file, certain flags can be used with the command. If the touch command is used with a filename that does not exist, it creates the file. `touch new.txt` will create a new text file with name `new`.
+- The touch command sets the modification and access times of files to the current time by default. To set the access time and/or modification time of files to a different date or that of another file, certain flags can be used with the command. If the touch command is used with a filename that does not exist, it creates the file. `touch new.txt` will create a new text file with the name `new`.
 
 9. **mv** - move   
-- Use the `mv` command to move files through the command line. We can also use the mv command to rename a file. For example, if we want to rename the file “text” to “new”, we can use 'mv text new'.
+- Use the `mv` command to move files through the command line. We can also use the mv command to rename a file. For example, if we want to rename the file “text” to “new”, we can use `mv text new`.
 - **Warning, this command is capable of destroying entire systems, use with caution**
 
 10. **right-click** - copy and paste  
-- This one is less of a command and more of a how-to, however, it is very useful for doing almost anything in a terminal on linux. To begin, highlight text like normal and then "right-click" on your mouse to copy a selection. You should see the highlighted portion become un-highlighted, this means you copied the selection. Now "right-click" on where you want to paste the selection and you're done. 
+- This one is less of a command and more of a how-to, however, it is very useful for doing almost anything in a terminal on Linux. To begin, highlight text like normal and then "right-click" on your mouse to copy a selection. You should see the highlighted portion become un-highlighted, this means you copied the selection. Now "right-click" on where you want to paste the selection and you're done. 
 
 11. **less** - view file content  
 - Use `less filename.txt` to view contents of a file and navigate through them. By default, less will go through the file page by page.
@@ -51,7 +50,7 @@ When starting out with linux, there are some basic commands everyone should know
 - Use `clear` to simply clear all output from your terminal.
 
 14. **cp** - copy files and directories
-- Use 'cp' to copy a file or a direcotry with files inside it to another location using command 'cp CURRENT_FILE-LOCATION DESTINATION_FOLDER'. Add '-r' flag to copy a directory that is not empty. 
+- Use 'cp' to copy a file or a direcotry with files inside it to another location using command `cp CURRENT_FILE-LOCATION DESTINATION_FOLDER`. Add '-r' flag to copy a directory that is not empty. 
  
 15. **du** - estimate file space usage
 - Use 'du' to estimate file space usage. du is abbreviation of "disk usage". This command tool reports usage by given directory
@@ -89,7 +88,10 @@ When starting out with linux, there are some basic commands everyone should know
 25. **history**
  - Use `history` to see previously entered commands  
     Example: `history` 
- 
+
+26. **passwd** - changes user passwords
+- Use `passwd -h` to look at the options available for changing passwords.
+
 ### Useful Resources for Practice:
 - [JSLinux](https://bellard.org/jslinux/vm.html?url=https://bellard.org/jslinux/buildroot-x86.cfg): Run the terminal inside your browser. Great for practice.
 - [LearnShell](https://www.learnshell.org/): Interactive Linux shell (terminal) tutorials.
