@@ -2,7 +2,6 @@
 title: Images in HTML
 ---
 
-
 ## Introduction
 
 You can define images by using the `<img>` tag. It does not have a closing tag since it can contain only attributes.
@@ -10,12 +9,9 @@ To insert an image you define the source and an alternative text wich is display
 
 `src` - This attribute provides the url to image present either on your desktop/laptop or to be included from some other website. Remember the link provided should not be broken otherwise the image will not be produced on your webpage.
 
-`alt` - This attribute is used to overcome the problem of broken image or incapability of your browser to not being able to produce image on webpage. This attribute as name suggests provide "alternative" to image which is some text describing the image.
+`alt` - This attribute is used to overcome the problem of broken image or incapability of your browser to not being able to produce image on webpage. This attribute as name suggests provide "alternative" to image which is some text describing the image. It is also used by screen reader applications to read the web page content, which is very helpful for visually impaired users.
 
-The 'alt' - text is also use for screen reader applications used by visualy challenge persons to read the web page content. 
-
-
-## Example
+### Example
 
 ```html
 <img src="URL of the Image" alt="Descriptive Title" />
@@ -26,7 +22,7 @@ The 'alt' - text is also use for screen reader applications used by visualy chal
 <img src="URL of the Image" alt="Descriptive Title" height="100" width="150"/>
 ```
 
-### You can also define border thickness (0 means no border):
+### Define border thickness (0 means no border):
 ```html
 <img src="URL of the Image" alt="Descriptive Title" border="2"/>
 ```
@@ -36,14 +32,18 @@ The 'alt' - text is also use for screen reader applications used by visualy chal
 <img src="URL of the Image" alt="Descriptive Title" align="left"/>
 ```
 
-### You are also able to use styles within a style attribute:
+### Use styles within a style attribute:
 ```html
 <img src="URL of the Image" alt="Descriptive Title" style="width: 100px; height: 150px;"/>
 ```
 
-Here's an example to make a rounded image:
+### Make a rounded image:
 ```html
 <img src="URL of the Image" alt="Descriptive Title" style="border-radius: 50%;"/>
+```
+### Use image as link:
+```html
+<a href="#"><img src="URL of the Image" alt="Descriptive Title"."></a>
 ```
 
 ### More Information
