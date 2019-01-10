@@ -1,5 +1,6 @@
 const expect = require('expect');
 const { Probot } = require('probot');
+const mongoose = require('mongoose');
 const prOpened = require('./payloads/events/pullRequests.opened');
 const prExisting = require('./payloads/events/pullRequests.existing');
 const prUnrelated = require('./payloads/events/pullRequests.unrelated');
@@ -10,6 +11,12 @@ const probotPlugin = require('..');
 
 describe('Presolver', () => {
   let probot, github;
+
+  afterEach((done) => {
+    mongoose.connection.close();
+    console.log('mongoDB shut down');
+    done();
+  });
 
   beforeEach(() => {
     probot = new Probot({});
