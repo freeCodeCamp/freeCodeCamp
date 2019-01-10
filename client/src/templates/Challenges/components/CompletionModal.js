@@ -112,7 +112,7 @@ export class CompletionModal extends Component {
             bsStyle='primary'
             onClick={submitChallenge}
             >
-            Submit and go to next challenge (Ctrl + Enter)
+            Submit and go to next challenge <span className='hidden-xs'>(Ctrl + Enter)</span>
           </Button>
           {showDownloadButton ? (
             <Button

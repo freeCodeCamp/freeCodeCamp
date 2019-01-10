@@ -37,13 +37,16 @@ Processes involved in NLP:
 People have used this concept in a lot of interesting applications. Few of the exciting ones include Google Translate, Siri, or Gmail auto reply suggestions. People are however working on ways to improve these predictions, and state of the art research is being done on how to make machines answer questions more reliably. 
 
 ## Language Modelling
-For those looking to get into this field, I intend to start you off with 2 concepts.
+For those looking to get into this field, I intend to start you off with 3 concepts.
 
-#### Tokenisation
+### Tokenisation
 Here the task sounds simple. Given a corpus (a dataset of sentences), generate individual tokens (meaningful words). We need to tokenise words and sentences. The first approach that comes to mind is to split by period and space. This however doesn't work. Consider Mr. John. Are "Mr" and "John" 2 sentences? Of course not. Now consider hyphen separated words. Would you want to split them as 2 words or as 1 word? These difficult questions make the task of tokenisation not so straightforward. Go ahead and pick a corpus from nltk, and build your own regex for your very own tokeniser!
 
-#### n-gram models
+### n-gram models
 Next task is to build a language model. Here we consider an assumption that the nth word depends only on the previous n-1 words. 2-gram and 3-gram models are most commonly used. To build a 3-gram model, just group 3 tokens together and count their frequency in the corpus. You are now ready to predict the probability of a group of 3 words!
+
+### Word2vec
+Word2vec is a group of related models that  produce word embeddings. These models are shallow, two-layer neural networks. They are trained to reconstruct linguistic contexts of words. Word2vec takes as its input a large corpus of text and produces a vector space. It can take several hundred dimensions, with each unique word in the corpus being assigned a corresponding vector in the space. Word vectors are positioned in the vector space. Words that share common contexts in the corpus are located near to one another in the space.
 
 ## Using Neural networks for Language modelling
 For knowledge representation, the knowledge represented by neural network language models is the approximate probabilistic distribution of word sequences from a certain training data set rather than the knowledge of a language itself or the information conveyed by word sequences in a natural language. Statistical Language Modeling. Statistical Language Modeling, or Language Modeling and LM for short, is the development of probabilistic models that are able to predict the next word in the sequence given the words that precede it

@@ -9,8 +9,10 @@ potential improvements. A code review can be done amongst developers of the proj
 For those who have not experienced the code review process before, it can be intimidating. However, it is an invaluable process to help you grow as a developer. Even if a review is just an explanation of the code to another programmer,
 the feeling that your code is going to be read/inspected by another programmer encourages you to write better code in many ways (e.g. smaller methods, comments, no ["magic numbers"](https://en.wikipedia.org/wiki/Magic_number_(programming))).
 
-As to what is reviewed and when, well, there is no clear answer. Many teams have rules that every piece of code that checks-in in the version control system has to be reviewed by another programmer, while other teams have whole days dedicated to code reviews across the team. Teams, within an organization, create internal Coding Standards for the various languages used, as a guidance for developers, and code reviewers. An effective code review is one where functionality, testability, security, and readibility/styling issues are addressed. 
 
+Code reviews are also a way for the new-comers in any team to learn about the best practices used by their particular team. If it is entirely a new team, it could also be a way to align all the programmers in the team to follow certain coding practices while writing code.
+
+As to what is reviewed and when, well, there is no clear answer. Many teams have rules that every piece of code that checks-in in the version control system has to be reviewed by another programmer, while other teams have whole days dedicated to code reviews across the team. Teams, within an organization, create internal Coding Standards for the various languages used, as a guidance for developers, and code reviewers. An effective code review is one where functionality, testability, security, and readibility/styling issues are addressed. 
 
 It is important to be humble throughout the code review process. Accept your mistakes and be professional when pointing out improvements or errors in the code of your fellow team members.
 

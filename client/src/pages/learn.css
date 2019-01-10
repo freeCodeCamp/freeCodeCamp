@@ -25,6 +25,13 @@
   padding: 5px 10px 5px 10px;
 }
 
+@media screen, (max-width: 767px) {
+  #learn-app-wrapper {
+    right: -2em;
+    padding: 2px 0 0 0;
+  }
+}
+
 .reflex-layout.reflex-container.vertical {
   width: 100%;
   margin: 0 18px;
