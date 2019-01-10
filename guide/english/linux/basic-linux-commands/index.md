@@ -95,6 +95,9 @@ When starting out with Linux, there are some basic commands everyone should know
 27. **whoami** - display current user
 - Use this command to display the username of the current user to the console.
 
+28. **chmod** - change permission
+- Use 'chmod' to make a file executable and to change the permissions granted to it in Linux. For the example , imagine you have a file named `myFile.txt` . But it can't executable because you not have a permission to this file , you can use the command `chmod +x myFile.txt` or `chmod 755 myFile.txt`.
+
 ### Useful Resources for Practice:
 - [JSLinux](https://bellard.org/jslinux/vm.html?url=https://bellard.org/jslinux/buildroot-x86.cfg): Run the terminal inside your browser. Great for practice.
 - [LearnShell](https://www.learnshell.org/): Interactive Linux shell (terminal) tutorials.
