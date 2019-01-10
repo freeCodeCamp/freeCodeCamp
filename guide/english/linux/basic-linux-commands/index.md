@@ -92,6 +92,9 @@ When starting out with Linux, there are some basic commands everyone should know
 26. **passwd** - changes user passwords
 - Use `passwd -h` to look at the options available for changing passwords.
 
+27. **whoami** - display current user
+- Use this command to display the username of the current user to the console.
+
 ### Useful Resources for Practice:
 - [JSLinux](https://bellard.org/jslinux/vm.html?url=https://bellard.org/jslinux/buildroot-x86.cfg): Run the terminal inside your browser. Great for practice.
 - [LearnShell](https://www.learnshell.org/): Interactive Linux shell (terminal) tutorials.
