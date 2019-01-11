@@ -165,6 +165,40 @@ In the case that only one argument was passed, do not worry about how to prompt 
 *   <a href='https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/typeof' target='_blank' rel='nofollow'>typeof</a>
 *   <a href='https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Functions/arguments' target='_blank' rel='nofollow'>arguments object</a>
 
+
+
+## ![:sunflower:](https://forum.freecodecamp.com/images/emoji/emoji_one/sunflower.png?v=3 ":sunflower:") Intermediate Code Solution 2:
+```javascript
+function addTogether() {
+  let arg = [...arguments]; //convert the argument objects to an array
+  if(arg.length>0 && arg.every(x=>Number.isInteger(x))) {
+    if(arg.length>1){ 
+      return arg.reduce((acc,x) => acc+=x);
+    }
+    return function(y) {
+      if(Number.isInteger(y)){return arg[0] + y;}
+    }
+  } 
+  return undefined;
+}
+    // test here
+    console.log(JSON.stringify(addTogether(2,3)));
+```
+![:rocket:](https://forum.freecodecamp.com/images/emoji/emoji_one/rocket.png?v=3 ":rocket:") <a href='https://repl.it/@MoonCWang/addtogether' target='_blank' rel='nofollow'>Run Code</a>
+
+### Code Explanation:
+
+*   Change the argument object to an array to access array specific methods (documented below in first link)
+*   Continue if there are arguments and every argument is an integer 
+*   Curry if there is only one argument
+*   If prior fails, return undefined
+
+#### Relevant Links
+
+*   <a href='https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Functions/arguments' target='_blank' rel='nofollow'>arguments object</a>
+*   <a href='https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array' target='_blank' rel='nofollow'>array and methods</a>
+*   <a href='https://guide.freecodecamp.org/miscellaneous/learn-about-currying/'>currying</a>
+
 ## ![:rotating_light:](https://forum.freecodecamp.com/images/emoji/emoji_one/rotating_light.png?v=3 ":rotating_light:") Advanced Code Solution:
 ```javascript
     //jshint esversion: 6
