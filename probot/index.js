@@ -1,5 +1,5 @@
 const debug = require('debug')('probot:presolver');
-const Presolver = require('../lib/presolver');
+const Presolver = require('./server/presolver');
 const config = require('../config');
 // config should be imported before importing any other file
 const mongoose = require('mongoose');
@@ -16,8 +16,9 @@ async function probotPlugin(robot) {
   ];
 
   robot.on(events, presolve.bind(null, robot));
-
-  const landingPage = robot.route('/');
+  const redirect = robot.route('/');
+  redirect.get('/', (req, res) => res.redirect('/home'));
+  const landingPage = robot.route('/home');
   landingPage.use(require('express').static('public'));
   const app = robot.route('/dashboard');
   const { pareto, pr, search, info } = require('./server/routes');

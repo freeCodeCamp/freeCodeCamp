@@ -15,7 +15,7 @@
     "seed": "node server/tools/seed-db.js",
     "start-probot": "probot run ./index.js",
     "lint": "standard --fix",
-    "test": "jest && standard",
+    "test": "jest --forceExit && standard",
     "test:watch": "jest --watch --notify --notifyMode=change --coverage"
   },
   "dependencies": {

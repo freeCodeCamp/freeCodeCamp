@@ -1,23 +1,26 @@
+const { updateDb } = require('./tools/update-db');
+
 class Presolver {
   constructor(context, { owner, repo, logger = console, ...config }) {
     this.context = context;
     this.github = context.github;
     this.logger = logger;
     this.config = {
-      ...require('./defaults'),
+      ...require('../../lib/defaults'),
       ...(config || {}),
       ...{
         owner,
         repo
       }
     };
-    // console.log(this.config)
     this.pullRequest = {};
     this.conflictingFiles = [];
+		this._updateDb = updateDb;
   }
 
   async presolve(pullRequest) {
     Object.assign(this.pullRequest, pullRequest);
+    await this._updateDb(this.context);
     await this._ensurePresolverLabelExists();
     await this._getState();
     const labelObj = this.config.labelPRConflict;
@@ -28,11 +31,11 @@ class Presolver {
 
   async _getState() {
     // console.log(this.context.issue())
-    const files = await this.github.pullRequests.getFiles(this.context.issue());
+    const files = await this.github.pullRequests.listFiles(this.context.issue());
     // console.log(files)
     const { owner, repo } = this.config;
     const prs =
-      (await this.github.pullRequests.getAll({ owner, repo }).data) || [];
+      (await this.github.pullRequests.list({ owner, repo }).data) || [];
     // console.log(prs)
     await this._getConflictingFiles(prs, files);
   }
@@ -48,7 +51,7 @@ class Presolver {
         owner: owner,
         repo: repo
       };
-      const prFiles = github.pullRequests.getFiles(prIssue);
+      const prFiles = github.pullRequests.listFiles(prIssue);
       prFiles.data.forEach(file => {
         files.data.forEach(f => {
           if (f.filename === file.filename) {
