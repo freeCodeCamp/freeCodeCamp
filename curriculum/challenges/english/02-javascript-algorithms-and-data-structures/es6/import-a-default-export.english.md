@@ -22,8 +22,8 @@ In the following code, please import the default export, <code>subtract</code>, 
 
 ```yml
 tests:
-  - text: Properly import <code>subtract</code> from <code>"math_functions"</code>.
-    testString: 'getUserInput => assert(getUserInput("index").match(/import\s+subtract\s+from\s+\(("\.\/+math_functions"\))|('\.\/+math_functions'\))/g), "Properly import <code>subtract</code> from <code>"math_functions"</code>.");'
+  - text: You need to properly import <code>subtract</code> from <code>"math_functions"</code>.
+    testString: 'getUserInput => assert(getUserInput("index").match(/import\s+subtract\s+from\s+\(("\.\/+math_functions"\))|('\.\/+math_functions'\))/g), "You need to properly import <code>subtract</code> from <code>"math_functions"</code>.");'
 
 ```
 
