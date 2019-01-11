@@ -4,10 +4,10 @@ title: Check if an Object has a Property
 ## Check if an Object has a Property
 
 Method:
-- The simplest way to complete this challenge is to create an `ìf-statement` to check wether or not the object contains all useres, then to return a true or false statement. The first solution does just this. 
-- The second solution works in exactly the same way, only it uses 1 line of code - `Conditional(ternary)-Operator` - within the function.
+- The simplest way to complete this challenge is to create an `ìf-statement` to check whether or not the object contains all users, then to return a true or false statement. The first solution does just this. 
+- The second solution works in exactly the same way, only it uses 1 line of code, because the built-in JS function 'hasOwnProperty()' already returns a true or false statement
 
-[developer.mozilla.org](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Conditional_Operator) provides a more in depth analysis of the ternary operator.
+[developer.mozilla.org](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object/hasOwnProperty) provides a more in depth analysis of the hasOwnProperty function.
 
 ### Solution-1:
 ```javascript
@@ -48,7 +48,7 @@ console.log(isEveryoneHere(users));
 ```javascript
 
 function isEveryoneHere(obj) {
-  return (users.hasOwnProperty('Alan','Jeff','Sarah','Ryan')) ? true : false;
+  return users.hasOwnProperty('Alan','Jeff','Sarah','Ryan');
 }
 
 ```
