@@ -70,9 +70,9 @@
   ],
   "license": "MIT",
   "scripts": {
-    "prebuild": "npm run build:frame-runner && node ../tools/scripts/ensure-env.js",
+    "prebuild": "npm run build:workers && node ../tools/scripts/ensure-env.js",
     "build": "node --max_old_space_size=7168 node_modules/gatsby-cli build",
-    "build:frame-runner": "webpack --env.production --config ./webpack-frame-runner.js",
+    "build:workers": "webpack --env.production --config ./webpack-workers.js --progress",
     "predevelop": "npm run prebuild",
     "develop": "gatsby develop",
     "format:gatsby": "prettier-eslint --write --trailing-comma none --single-quote './gatsby-*.js'",
