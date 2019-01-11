@@ -26,8 +26,7 @@ Proper nouns should use correct capitalization when possible. Below is a list of
 
 - JavaScript (capital letters in "J" and "S" and no abbreviations)
 - Node.js
-
-Front-end development (adjective form with a dash) is when you're working on the front end (noun form with no dash). The same goes with "back end", "full stack", and many other compound terms.
+- Front-end development (adjective form with a dash) is when you're working on the front end (noun form with no dash). The same goes with "back end", "full stack", and many other compound terms.
 
 ## The 2-minute rule
 
