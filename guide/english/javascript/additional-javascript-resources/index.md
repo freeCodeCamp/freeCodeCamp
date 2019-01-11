@@ -114,6 +114,9 @@ title: JavaScript Tutorials and Other Resources
 *   [Exercism](https://exercism.io)
 *   [JavaScript30](https://javascript30.com)
 
+## Interview Preparation
+
+*   <a href="https://medium.freecodecamp.org/5-top-sites-for-javascript-interview-preparation-71b48e9a6c8a">Interview Preparation Resources</a>
 
 ## Blogs
 
