@@ -109,9 +109,10 @@ describe('Presolver', () => {
       name: 'pull_request.delete',
       payload: prDeleted
     });
-    const results = await PRtest.find({}).then(data => data)
+    const result = await PRtest.findOne(
+      { _id: prDeleted.number }).then(doc => doc)
       .catch(err => console.log(err));
-    expect(results.length).toBe(0);
+    expect(result).toBe(null);
 
   });
 });

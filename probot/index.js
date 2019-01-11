@@ -50,21 +50,22 @@ async function probotPlugin(robot) {
   app.use(function(err, req, res) {
     res.status(err.status || 500).send(err.message);
   });
+  if (mongoose.connection.readyState === 0) {
+    // connect to mongo db
+    const mongoUri = config.mongo.host;
 
-  // connect to mongo db
-  const mongoUri = config.mongo.host;
-
-  const promise = mongoose.connect(
-    mongoUri, { useNewUrlParser: true }
-  );
-  promise
-    .then(() => {
-      console.log('MongoDB is connected');
-    })
-    .catch(err => {
-      console.log(err);
-      console.log('MongoDB connection unsuccessful');
-    });
+    const promise = mongoose.connect(
+      mongoUri, { useNewUrlParser: true }
+    );
+    promise
+      .then(() => {
+        console.log('MongoDB is connected');
+      })
+      .catch(err => {
+        console.log(err);
+        console.log('MongoDB connection unsuccessful');
+      });
+  }
 }
 
 async function presolve(app, context) {
