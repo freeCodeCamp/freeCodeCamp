@@ -6,7 +6,7 @@ freeCodeCamp offers 1,200 hours of interactive coding challenges. These are 100%
 
 You can learn theory through free online university courses. freeCodeCamp will focus instead on helping you learn to code and practice by building apps.
 
-With that practical focus in mind, let’s talk about the requirements for our coding challenges. (Note that these requirements do not apply to our algorithm challenges, checkpoint challenges, or projects.)
+With that practical focus in mind, let’s talk about the requirements for our coding challenges. Note that these requirements do not apply to our algorithm challenges, checkpoint challenges, or projects.
 
 **Table of Contents**
 
@@ -31,7 +31,7 @@ Front-end development (adjective form with a dash) is when you're working on the
 
 ## The 2-minute rule
 
-Each challenge should be solvable within 120 seconds  by a native English speaker who has completed the challenges leading up to it. This includes the amount of time it takes to read the directions, understand the seeded code, write their own code, and get all the tests to pass.
+Each challenge should be solvable within 120 seconds by a native English speaker who has completed the challenges leading up to it. This includes the amount of time it takes to read the directions, understand the seeded code, write their own code, and get all the tests to pass.
 
 If it takes longer than two minutes to complete the challenge, you have two options:
 - Simplify the challenge, or
