@@ -15,8 +15,8 @@ const infoTest = new mongoose.Schema({
 });
 
 const dbCollections = {
-   pr: 'test_openprs',
-   info: 'test_info'
+   prtest: 'test_openprs',
+   infotest: 'test_info'
 };
 
 const PRtest = mongoose.model('PRtest', prTest, dbCollections['pr']);

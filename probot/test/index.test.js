@@ -9,27 +9,21 @@ const prExistingFiles = require('./payloads/files/files.existing');
 const prUnrelatedFiles = require('./payloads/files/files.unrelated');
 const probotPlugin = require('..');
 const { PRtest } = require('./utils/testmodels');
-const mongoose = require('mongoose');
-// https://medium.com/
-  // @art.longbottom.jr/concurrent-testing-with-mongoose-and-jest-83a27ceb87ee
-// Load models since we will not be instantiating our express server.
-require('../server/models/index');
+// const mongoose = require('mongoose');
 
 describe('Presolver', () => {
   let probot, github;
 
   afterEach(async (done) => {
-    PRtest.remove({}).catch(err => console.log(err));
-    process.env.TEST_ENV = false;
-    mongoose.connection.close();
+    PRtest.deleteMany({}).catch(err => console.log(err));
+    // mongoose.disconnect();
     done();
   });
 
   beforeEach( async() => {
-    process.env.TEST_ENV = true;
     probot = new Probot({});
     // Load our app into probot
-    let app = probot.load(probotPlugin);
+    let app = await probot.load(probotPlugin);
 
     // This is an easy way to mock out the GitHub API
     // https://probot.github.io/docs/testing/
