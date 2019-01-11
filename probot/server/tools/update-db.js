@@ -24,7 +24,7 @@ const updateDb = async({
     .catch(err => console.log(err));
 
   if (action === 'closed') {
-    await PR.remove({ _id: number })
+    await PR.deleteOne({ _id: number })
       .then(() => console.log('delete PR #' + number))
       .catch(err => {
         // need to log the payload to a file for later manual update
