@@ -16,7 +16,6 @@ describe('Presolver', () => {
 
   afterEach(async (done) => {
     PRtest.deleteMany({}).catch(err => console.log(err));
-    // mongoose.disconnect();
     done();
   });
 
@@ -96,14 +95,14 @@ describe('Presolver', () => {
     expect(github.issues.addLabels).toHaveBeenCalledTimes(0);
   });
 
-  /* test('db should update if the action is opened', async () => {
+  test('db should update if the action is opened', async () => {
     await probot.receive({
       name: 'pull_request.opened',
       payload: prOpened
     });
     const results = await PRtest.find({}).then(data => data);
     expect(results.length).toBeGreaterThan(0);
-  }); */
+  });
 
   test('db should have removed document if action is delete', async () => {
     await probot.receive({
