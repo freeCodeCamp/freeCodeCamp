@@ -104,7 +104,7 @@ Challenge tests can make use of the Node.js and Chai.js assertion libraries. Als
 
 ## Writing instructions
 
-Challenges should be written with short, clear sentences, and use as little jargon as necessary. All jargon should be defined immediately in plain English.
+Sentences should be clear and concise with minimal jargon. If used, jargon should be immediately defined in plain English.
 
 Keep paragraphs short (around 1-4 sentences). People are more likely to read several short paragraphs over a wall of text.
 
