@@ -4,7 +4,7 @@ localeTitle: Variáveis
 ---
 # Variáveis
 
-Variáveis ​​armazenam valores. Eles são a entidade mais básica usada para armazenar dados como texto, números etc. em um programa.
+Variáveis ​​armazenam valores. Elas são a entidade mais básica usada para armazenar dados como texto, números etc. num programa.
 
 Em [Java](https://github.com/FreeCodeCamp/FreeCodeCamp/wiki/Java) , as variáveis ​​são [_fortemente tipadas_](https://en.wikipedia.org/wiki/Strong_and_weak_typing#Definitions_of_.22strong.22_or_.22weak.22) , o que significa que você precisa definir o tipo para cada variável sempre que você a declarar. Caso contrário, o compilador lançará um erro no [tempo de compilação](https://en.wikipedia.org/wiki/Compile_time) . Portanto, cada variável possui um ' [tipo de dados](https://guide.freecodecamp.org/java/data-types) ' associado a um dos seguintes:
 
@@ -17,37 +17,36 @@ Você deve ter notado que o **Tipo de Wrapper** consiste em tipos escritos exata
 Normalmente, você pode _declarar_ (ou seja, criar) variáveis ​​de acordo com a seguinte sintaxe: < _data-type_ > < _variableName_ >;
 
 ```java
-// Primitive Data Type 
+// Tipo de Dados Primitivo 
  int i; 
  
- // Reference Data Type 
+ // Tipo Dados de Referência 
  Float myFloat; 
 ```
 
-Você pode _atribuir_ um valor à variável simultaneamente quando estiver declarando-a (o que é chamado de _inicialização_ ) ou em qualquer lugar no código depois de tê-lo declarado. O símbolo **\=** é usado para o mesmo.
+Você pode _atribuir_ um valor à variável simultaneamente quando a estiver declarando (o que é chamado de _inicialização_ ) ou em qualquer lugar no código depois de a ter declarado. O símbolo **\=** é usado para o mesmo.
 
 ```java
-// Initialise the variable of Primitive Data Type 'int' to store the value 10 
+// Inicializar a variável de Tipo de Dados Primitivo 'int' com o valor 10 
  int i = 10; 
  double amount = 10.0; 
  boolean isOpen = false; 
- char c = 'a'; // Note the single quotes 
+ char c = 'a'; // Note as aspas simples
  
- //Variables can also be declared in one statement, and assigned values later. 
+ //As variáveis tambem podem ser declaradas, e mais tarde designar o seu valor
  int j; 
  j = 10; 
  
- // initiates an Float object with value 1.0 
- // variable myFloat now points to the object 
+ // Inicializar um objeto Float com o valor 1.0 
+ // a variável myFloat aponta agora para o objeto
  Float myFloat = new Float(1.0); 
  
- //Bytes are one of types in Java and can be 
- //represented with this code 
+ //Bytes são um dos tipos em java e podem assim ser representados
  int byteValue = 0B101; 
  byte anotherByte = (byte)0b00100001; 
 ```
 
-Como é evidente no exemplo acima, as variáveis ​​do tipo Primitivo se comportam de maneira ligeiramente diferente das variáveis ​​do tipo Referência (& Wrapper) - enquanto Variáveis ​​primitivas _armazenam_ o valor real, Variáveis ​​de referência _referem-se a_ um 'objeto' contendo o valor real. Você pode descobrir mais nas seções abaixo.
+Como é evidente no exemplo acima, as variáveis ​​do tipo Primitivo comportam-se de maneira ligeiramente diferente das variáveis ​​do tipo Referência (& Wrapper) - enquanto Variáveis ​​primitivas _armazenam_ o valor real, Variáveis ​​de referência _referem-se a_ um 'objeto' contendo o valor real. Você pode descobrir mais nas seções abaixo.
 
 # Outros recursos
 
