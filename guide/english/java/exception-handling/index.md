@@ -80,7 +80,32 @@ catch(InputMismatchException e)
     input.nextLine(); //clear the input line of previous input
 }   
 ```
+
 If an integer is entered, the "try" code block will execute successfully.  If something other than an integer is entered, the "catch" code block will execute.
+
+## Throw vs Throws
+
+Throw keyword is used to throw an exception explicitly. This can be used only inside a method and multiple exceptions cannot be thrown.
+
+```
+public int divide(int a,int b) {
+  if(b==0) {
+  // The throw indicates that a division cannot be performed when divisor = 0.
+    throw new ArithmeticException("Cannot divide a number with 0");
+  } else {
+    return a/b ;
+  }
+}
+```
+Throws keyword on the other hand is used to declare an exception. It is used in the method signature to inform about the possible problems that may occur during the execution of the statements within the method.
+
+```
+public void fileOperation() throws FileNotFoundException
+// The throws indicates that this method may throw an exception in case the file you are trying to operate on is not found.
+{
+  FileInputStream fis = new FileInputStream("abc.txt");
+}
+```
 
 ## How to use throws clause
 
