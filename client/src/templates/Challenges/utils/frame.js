@@ -1,7 +1,4 @@
 import { toString, flow } from 'lodash';
-import { configure, shallow, mount } from 'enzyme';
-import Adapter16 from 'enzyme-adapter-react-16';
-import { setConfig } from 'react-hot-loader';
 
 // we use two different frames to make them all essentially pure functions
 // main iframe is responsible rendering the preview and is where we proxy the
@@ -33,17 +30,10 @@ const createHeader = (id = mainId) => `
 
 export const runTestInTestFrame = async function(document, test, timeout) {
   const { contentDocument: frame } = document.getElementById(testId);
-  // Enable Stateless Functional Component. Otherwise, enzyme-adapter-react-16
-  // does not work correctly.
-  setConfig({ pureSFC: true });
-  try {
-    return await Promise.race([
-      new Promise((_, reject) => setTimeout(() => reject('timeout'), timeout)),
-      frame.__runTest(test)
-    ]);
-  } finally {
-    setConfig({ pureSFC: false });
-  }
+  return await Promise.race([
+    new Promise((_, reject) => setTimeout(() => reject('timeout'), timeout)),
+    frame.__runTest(test)
+  ]);
 };
 
 const createFrame = (document, id) => ctx => {
@@ -83,18 +73,14 @@ const buildProxyConsole = proxyLogger => ctx => {
 };
 
 const writeTestDepsToDocument = frameReady => ctx => {
-  const { sources } = ctx;
-  // add enzyme
-  // TODO: do programatically
-  // TODO: webpack lazyload this
-  configure({ adapter: new Adapter16() });
-  ctx.document.Enzyme = { shallow, mount };
+  const { sources, loadEnzyme } = ctx;
   // default for classic challenges
   // should not be used for modern
   ctx.document.__source = sources && 'index' in sources ? sources['index'] : '';
   // provide the file name and get the original source
   ctx.document.__getUserInput = fileName => toString(sources[fileName]);
   ctx.document.__frameReady = frameReady;
+  ctx.document.__loadEnzyme = loadEnzyme;
   return ctx;
 };
 

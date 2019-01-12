@@ -9,7 +9,10 @@ if (window.frameElement && window.frameElement.id === testId) {
   document.addEventListener('DOMContentLoaded', initTestFrame);
 }
 
-function initTestFrame() {
+// For tests in CI.
+document.__initTestFrame = initTestFrame;
+
+async function initTestFrame() {
   const code = (document.__source || '').slice(0);
   if (!document.__getUserInput) {
     document.__getUserInput = () => code;
@@ -38,8 +41,16 @@ function initTestFrame() {
   const assert = chai.assert;
   /* eslint-enable no-unused-vars */
 
-  if (document.Enzyme) {
-    window.Enzyme = document.Enzyme;
+  let Enzyme;
+  if (document.__loadEnzyme) {
+    let Adapter16;
+    /* eslint-disable no-inline-comments */
+    [{ default: Enzyme }, { default: Adapter16 }] = await Promise.all([
+      import(/* webpackChunkName: "enzyme" */ 'enzyme'),
+      import(/* webpackChunkName: "enzyme-adapter" */ 'enzyme-adapter-react-16')
+    ]);
+    /* eslint-enable no-inline-comments */
+    Enzyme.configure({ adapter: new Adapter16() });
   }
 
   document.__runTest = async function runTests(testString) {
