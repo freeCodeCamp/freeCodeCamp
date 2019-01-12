@@ -35,7 +35,7 @@ There are methods for clustering that only use similarities of instances, withou
 This needs the use of a similarity, or equivalently a distance, measure defined between instances.  Generally Euclidean distance is used, where one has to make sure that all attributes have the same scale.
 
 There are two main types of Hierarchical clustering which are used:
-1. Agglomerative Clustering - This algorithm starts with a bunch of individual clusters and a proximity matrix. Here, the individual clusters are basically individual points, and the matrix is for the distance between each point with each other points. The algorithm tries to find the closest pair of clusters and then combines them into one cluster, and then update the proximity matrix with the new cluster and removes the two combined clusters. This step is repeated until a single cluster is left. The most important part of this algorithm is the proximity matrix and it's updatation.
+1. Agglomerative Clustering - This algorithm starts with a bunch of individual clusters and a proximity matrix. Here, the individual clusters are basically individual points, and the matrix is for the distance between each point with each other points. The algorithm tries to find the closest pair of clusters and then combines them into one cluster, and then update the proximity matrix with the new cluster and removes the two combined clusters. This step is repeated until a single cluster is left. The most important part of this algorithm is the proximity matrix and its updatation.
 2. Divisive Clustering - This algorithm can be called an opposite of Agglomerative in terms of how it approachs clustering. It starts with a single cluster and then starts dividing it into multiple clusters. It has a similarity matrix between each point, similarity here being how close the clusters are with each other. This algorithm tries to divide the cluster into two clusters based on how dissimilar a cluster or a point is from the rest. This is continued until there are multiple individual clusters.
 
 ### Point Assignment
@@ -98,6 +98,8 @@ plt.show()
 ```
 
 Since the data points belong usually to a high-dimensional space, the similarity measure is often defined as a distance between two vectors (Euclidean, Manhathan, Cosine, Mahalanobis...)
+
+Here's a visualization of K-means that allows you to change the number of clusters and centroids to show how k data points converge into clusters around the closest centroid: [Visualizing K-Means](http://stanford.edu/class/ee103/visualizations/kmeans/kmeans.html)
 
 ### Mixture Density
 We can write *mixture density* as:
