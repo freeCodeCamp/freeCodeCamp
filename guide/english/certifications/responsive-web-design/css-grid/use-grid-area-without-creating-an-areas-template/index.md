@@ -3,6 +3,10 @@ title: Use grid-area Without Creating an Areas Template
 ---
 ## Use grid-area Without Creating an Areas Template
 
+### Hint
+
+The `grid-area` takes values in the following format `horizontal line to start at / vertical line to start at / horizontal line to end at / vertical line to end at`.
+
 ### Solution
 
 ```css
