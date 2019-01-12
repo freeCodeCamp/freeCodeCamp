@@ -9,7 +9,7 @@ When we start working with React components, we frequently hear two terms. These
 
 * State is something that a component owns. It belongs to that particular component where it is defined.
 For example, A person's age is a state of that person.
-* State is mutable. But it can be changed by only by the component itself, meaning it is private. As I only can change my age, no one else can.
+* State is mutable. But it can only be changed by the component itself, meaning it is private. As I only can change my age, no one else can.
 * You can change the state by using `this.setState()`
 
 See the below example to get an idea of state:
