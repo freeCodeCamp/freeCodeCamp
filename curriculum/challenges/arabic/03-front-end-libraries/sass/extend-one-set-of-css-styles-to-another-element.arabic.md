@@ -1,9 +1,6 @@
 ---
 id: 587d7fa5367417b2b2512bbd
 title: Extend One Set of CSS Styles to Another Element
-required:
-  - src: 'https://cdnjs.cloudflare.com/ajax/libs/sass.js/0.10.9/sass.sync.min.js'
-    raw: true
 challengeType: 0
 videoUrl: ''
 localeTitle: ''
