@@ -142,7 +142,7 @@ Please don't create GitHub issues for security issues. Instead, please send an e
 
 ### License
 
-Copyright © 2018 freeCodeCamp.org
+Copyright © 2019 freeCodeCamp.org
 
 The content of this repository is bound by the following licenses:
 
