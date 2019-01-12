@@ -13,7 +13,7 @@
   overflow-y: auto;
 }
 
-@media screen, (max-width: 767px) {
+@media screen and (max-width: 767px) {
   .instructions-panel {
     height: calc(100vh - 112px);
   }
