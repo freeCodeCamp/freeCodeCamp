@@ -43,12 +43,10 @@ const updateDb = async(context) => {
         ${err.message}
         `;
      });
-     console.log('deleted ' + number);
   } else {
-    console.log('add/updated ' + number);
-    const files =
-      await context.github.pullRequests.getFiles(context.issue()).data;
-    // const filenames = [...files].filename;
+    const files = await context.github.pullRequests.getFiles(
+      context.issue()
+    ).data;
     const filenames = files.map(file => file.filename);
     await PR.updateOne(
       { _id: number },

@@ -3,7 +3,7 @@ const { Probot } = require('probot');
 const prOpened = require('./payloads/events/pullRequests.opened');
 const prExisting = require('./payloads/events/pullRequests.existing');
 const prUnrelated = require('./payloads/events/pullRequests.unrelated');
-const prDeleted = require('./payloads/events/pullRequests.deleted');
+const prClosed = require('./payloads/events/pullRequests.closed');
 const prOpenedFiles = require('./payloads/files/files.opened');
 const prExistingFiles = require('./payloads/files/files.existing');
 const prUnrelatedFiles = require('./payloads/files/files.unrelated');
@@ -15,15 +15,16 @@ describe('Presolver', () => {
   let probot, github;
 
   afterEach(async (done) => {
-    PRtest.deleteMany({}).catch(err => console.log(err));
+    await PRtest.deleteMany({}).catch(err => console.log(err));
     done();
   });
 
   beforeEach( async() => {
+
     probot = new Probot({});
     // Load our app into probot
     let app = await probot.load(probotPlugin);
-
+    await PRtest.deleteMany({}).catch(err => console.log(err));
     // This is an easy way to mock out the GitHub API
     // https://probot.github.io/docs/testing/
     github = {
@@ -40,7 +41,7 @@ describe('Presolver', () => {
           Promise.resolve({
             data: Buffer.from(
               `
-          issueOpened: Message  
+          issueOpened: Message
           pullRequestOpened: Message
           `
             ).toString('base64')
@@ -104,13 +105,40 @@ describe('Presolver', () => {
     expect(results.length).toBeGreaterThan(0);
   });
 
-  test('db should have removed document if action is delete', async () => {
+  test('db should update if the action is reopened', async () => {
     await probot.receive({
-      name: 'pull_request.delete',
-      payload: prDeleted
+      name: 'pull_request.reopened',
+      payload: prOpened
+    });
+    const results = await PRtest.find({}).then(data => data);
+    expect(results.length).toBeGreaterThan(0);
+  });
+
+  test('db should update if the action is synchronize', async () => {
+    await probot.receive({
+      name: 'pull_request.synchronize',
+      payload: prOpened
+    });
+    const results = await PRtest.find({}).then(data => data);
+    expect(results.length).toBeGreaterThan(0);
+  });
+
+  test('db should update if the action is edited', async () => {
+    await probot.receive({
+      name: 'pull_request.edited',
+      payload: prOpened
+    });
+    const results = await PRtest.find({}).then(data => data);
+    expect(results.length).toBeGreaterThan(0);
+  });
+
+  test('db should have removed document if action is closed', async () => {
+    await probot.receive({
+      name: 'pull_request.closed',
+      payload: prClosed
     });
     const result = await PRtest.findOne(
-      { _id: prDeleted.number }).then(doc => doc)
+      { _id: prClosed.number }).then(doc => doc)
       .catch(err => console.log(err));
     expect(result).toBe(null);
 

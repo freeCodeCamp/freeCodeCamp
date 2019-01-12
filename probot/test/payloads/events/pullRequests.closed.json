@@ -1,5 +1,5 @@
 {
-  "action": "deleted",
+  "action": "closed",
   "number": 33363,
   "pull_request": {
     "url": "https://api.github.com/repos/freeCodeCamp/freeCodeCamp/pulls/33363",
@@ -10,7 +10,7 @@
     "patch_url": "https://github.com/freeCodeCamp/freeCodeCamp/pull/33363.patch",
     "issue_url": "https://api.github.com/repos/freeCodeCamp/freeCodeCamp/issues/33363",
     "number": 33363,
-    "state": "open",
+    "state": "closed",
     "locked": false,
     "title": "Add the text \"16\"",
     "user": {

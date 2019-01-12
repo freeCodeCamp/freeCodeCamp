@@ -16,6 +16,12 @@ async function probotPlugin(robot) {
   ];
 
   robot.on(events, presolve.bind(null, robot));
+
+  // const prOpened = require('./test/payloads/events/pullRequests.opened');
+  // robot.receive({
+  //   name: 'pull_request.opened',
+  //   payload: prOpened
+  // });
   const redirect = robot.route('/');
   redirect.get('/', (req, res) => res.redirect('/home'));
   const landingPage = robot.route('/home');

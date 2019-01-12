@@ -13,9 +13,9 @@
     "dev": "nodemon",
     "start": "probot run esm ./index.js",
     "seed": "node server/tools/seed-db.js",
-    "start-probot": "TEST_ENV=false probot run ./index.js",
+    "start-probot": "cross-env TEST_ENV=false probot run ./index.js",
     "lint": "standard --fix",
-    "test": "TEST_ENV=true jest --forceExit && standard",
+    "test": "cross-env TEST_ENV=true jest --forceExit && standard",
     "test:watch": "jest --watch --notify --notifyMode=change --coverage"
   },
   "dependencies": {
