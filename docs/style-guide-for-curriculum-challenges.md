@@ -6,12 +6,12 @@ freeCodeCamp offers 1,200 hours of interactive coding challenges. These are 100%
 
 You can learn theory through free online university courses. freeCodeCamp will focus instead on helping you learn to code and practice by building apps.
 
-With that practical focus in mind, let’s talk about the requirements for our coding challenges. (Note that these requirements do not apply to our algorithm challenges, checkpoint challenges, or projects.)
+With that practical focus in mind, let’s talk about the requirements for our coding challenges. Note that these requirements do not apply to our algorithm challenges, checkpoint challenges, or projects.
 
 **Table of Contents**
 
 - [Proper nouns](#proper-nouns)
-- [The 2 minute rule](#the-2-minute-rule)
+- [The 2-minute rule](#the-2-minute-rule)
 - [Modularity](#modularity)
 - [Naming challenges](#naming-challenges)
 - [Writing tests](#writing-tests)
@@ -26,18 +26,17 @@ Proper nouns should use correct capitalization when possible. Below is a list of
 
 - JavaScript (capital letters in "J" and "S" and no abbreviations)
 - Node.js
+- Front-end development (adjective form with a dash) is when you're working on the front end (noun form with no dash). The same goes with "back end", "full stack", and many other compound terms.
 
-Front-end development (adjective form with a dash) is when you're working on the front end (noun form with no dash). The same goes with "back end", "full stack", and many other compound terms.
+## The 2-minute rule
 
-## The 2 minute rule
-
-Each challenge should be solvable within 120 seconds  by a native English speaker who has completed the challenges leading up to it. This includes the amount of time it takes to read the directions, understand the seeded code, write their own code, and get all the tests to pass.
+Each challenge should be solvable within 120 seconds by a native English speaker who has completed the challenges leading up to it. This includes the amount of time it takes to read the directions, understand the seeded code, write their own code, and get all the tests to pass.
 
 If it takes longer than two minutes to complete the challenge, you have two options:
-- simplify the challenge, or
-- split the challenge into two challenges.
+- Simplify the challenge, or
+- Split the challenge into two challenges.
 
-The 2 minute rule forces you, the challenge designer, to make your directions concise, your seed code clear, and your tests straight-forward.
+The 2-minute rule forces you, the challenge designer, to make your directions concise, your seed code clear, and your tests straight-forward.
 
 We have JavaScript events that track how long it takes for campers to solve challenges and we can use them to identify challenges that need to be simplified or split.
 
@@ -105,7 +104,7 @@ Challenge tests can make use of the Node.js and Chai.js assertion libraries. Als
 
 ## Writing instructions
 
-Challenges should be written with short, clear sentences, and use as little jargon as necessary. All jargon should be defined immediately in plain English.
+Sentences should be clear and concise with minimal jargon. If used, jargon should be immediately defined in plain English.
 
 Keep paragraphs short (around 1-4 sentences). People are more likely to read several short paragraphs over a wall of text.
 
@@ -142,9 +141,9 @@ Here are specific formatting guidelines for the challenge seed code:
 
 ## Why do we have all these rules?
 
-Our goal is to have a fun, clear interactive learning experience.
+Our goal is to develop a fun and clear interactive learning experience. 
 
-Designing interactive coding challenges is hard. It would be so much easier to write a lengthy explanation, or to create a video tutorial. There's a place for those on Medium and YouTube. But for our core curriculum, we're sticking with what works best for most people - a fully interactive, video game-like experience.
+Designing interactive coding challenges is difficult. It would be much easier to write a lengthy explanation or to create a video tutorial, and there's a place for those on Medium and YouTube. However, for our core curriculum, we're sticking with what works best for most people - a fully interactive, video game-like experience. 
 
 We want campers to achieve a flow state. We want them to build momentum and blast through our curriculum with as few snags as possible. We want them to go into the projects with confidence and a wide exposure to programming concepts.
 

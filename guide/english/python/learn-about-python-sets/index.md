@@ -30,3 +30,12 @@ However, if elements are included within the curly brackets, then it would be ac
 >>> type(example_set_2)
 <class 'set'>
 ````
+
+### Converting List to Set
+
+If you want to convert a list to a set, you can do that by using the `set()` function. This will remove all duplicate values from the list.
+```python
+>>> a = [11,2,2,6,6,4,8,9,9,7]
+>>> a = set(a)
+>>> print(a) # {2, 4, 6, 7, 8, 9, 11}
+```

@@ -30,21 +30,26 @@ The `reduce()` method has been called the Swiss Army knife, or multi-tool, of ar
     - *currentValue* - the current item in the array
     - *index* - the index of the current item 
     - *array* - the original array on which reduce was called
-- The `initialValue` argument is optional. If provided, it will be used as the initial accumulator value in the first call to the callback function (see Example 2 below).
+- The `initialValue` argument is optional. If provided, it will be used as the initial accumulator value in the first call to the callback function (see Example 2 below). If `initialValue` is not provided, the iteration will start at the second element in the array (at index 1), with `accumulator` equal to the first element in the array and `currentValue` equal to the second element. 
 
 ### Example 2
-Transform an array of strings into a single object that shows how many times each string appears in the array. Notice this call to reduce passes an empty object `{}` as the `initialValue` parameter. This will be used as the initial value of the accumulator (the first argument) passed to the callback function. 
+Transform an array of strings into a single object that shows how many times each string appears in the array. 
+
+Notice this call to reduce passes an empty object `{}` as the `initialValue` parameter. This will be used as the initial value of the accumulator (the first argument) passed to the callback function. 
 ```js
 var pets = ['dog', 'chicken', 'cat', 'dog', 'chicken', 'chicken', 'rabbit'];
 
 var petCounts = pets.reduce(function(obj, pet){
     if (!obj[pet]) {
+        // if the pet doesn't yet exist as a property of the accumulator object, 
+        //   add it as a property and set its count to 1
         obj[pet] = 1;
     } else {
+        // pet exists, so increment its count
         obj[pet]++;
     }
-    return obj;
-}, {});
+    return obj; // return the modified object to be used as accumulator in the next iteration
+}, {}); // initialize the accumulator as an empty object
 
 console.log(petCounts); 
 ```

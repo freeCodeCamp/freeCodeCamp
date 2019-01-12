@@ -6,11 +6,11 @@ title: Img Align Attribute
 The align attribute of an image specifies where the image should be aligned according to the surrounding element.
 
 Attribute Values:          
-right - Align image to the right 
-left - Align image to the left    
-top  - Align image to the top    
-bottom - Align image to the bottom  
-middle - Align image to the middle
+- **right** - Align image to the right 
+- **left** - Align image to the left    
+- **top**  - Align image to the top    
+- **bottom** - Align image to the bottom  
+- **middle** - Align image to the middle
 
 For example:
 ```html
