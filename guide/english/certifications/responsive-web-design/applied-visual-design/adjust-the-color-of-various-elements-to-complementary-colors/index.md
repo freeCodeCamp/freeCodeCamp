@@ -3,6 +3,10 @@ title: Adjust the Color of Various Elements to Complementary Colors
 ---
 ## Adjust the Color of Various Elements to Complementary Colors
 
+### Hint
+
+Change the colours of the given elements to the ones given in the problem.
+
 ### Solution
 
 ```css
