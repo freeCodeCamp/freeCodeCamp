@@ -24,6 +24,7 @@ See the below example to get an idea of state:
       super(props);
       this.state = {
         age:0
+      }
       this.incrementAge = this.incrementAge.bind(this)
     }
 
