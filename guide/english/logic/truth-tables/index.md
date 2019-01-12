@@ -3,7 +3,7 @@ title: Truth Tables
 ---
 ## Truth Tables
 
-A truth table is a mathematical tool used in Boolean Algebra. It consists of a column each for the function variables. A final column holds the functional value evaluated for the corresponding values of the variables. For a boolean function of n variables, its truth table expansion will have 2^n rows. This is beacuse each variable has two possible states – true & false.
+A truth table is a mathematical tool used in Boolean Algebra. It consists of a column each for the function variables. A final column holds the functional value evaluated for the corresponding values of the variables. For a boolean function of n variables, its truth table expansion will have 2^n rows. This is because each variable has two possible states – true & false.
 
 ### AND
 Let us explore the truth table for the AND operator:
@@ -64,6 +64,15 @@ NOT operator:
 | F  | T  |
 | T  | F  |
 
+NAND operator:
+
+| x | y | x NAND y |
+|---|---|---|
+| F  | F  | T  |
+| F  | T  | T  |
+| T  | F  | T  |
+| T  | T  | F  |
+
 Implication operator:
 
 | x | y | x IMPLY y  |
@@ -107,9 +116,9 @@ Here is the truth table for the OR operator
 | F  | F  | F  |
 | F  | T  | T  |
 | T  | F  | T  |
-| T  | T  | F  |
+| T  | T  | T  |
 
-Just like above the OR operator operates on two variables, notice that the only time the OR operator evaluates to True is when `x` & `y` negate eachother.
+Just like above the OR operator operates on two variables, notice that the only time the OR operator evaluates to False is when both `x` & `y` are False.
 
 Let's do one more, let's do the table for the Negation, this operates on one value instead of two
 
