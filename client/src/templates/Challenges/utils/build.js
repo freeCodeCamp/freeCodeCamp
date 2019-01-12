@@ -1,9 +1,4 @@
 import { throwers } from '../rechallenge/throwers';
-import {
-  challengeFilesSelector,
-  challengeMetaSelector,
-  backendFormValuesSelector
-} from '../redux';
 import { transformers } from '../rechallenge/transformers';
 import { cssToHtml, jsToHtml, concatHtml } from '../rechallenge/builders.js';
 
@@ -56,9 +51,8 @@ function checkFilesErrors(files) {
   return files;
 }
 
-export function buildDOMChallenge(state) {
-  const files = challengeFilesSelector(state);
-  const { required = [], template } = challengeMetaSelector(state);
+export function buildDOMChallenge(files, meta = {}) {
+  const { required = [], template = '' } = meta;
   const finalRequires = [...globalRequires, ...required, ...frameRunner];
   const toHtml = [jsToHtml, cssToHtml];
   const pipeLine = composeFunctions(...throwers, ...transformers, ...toHtml);
@@ -73,8 +67,7 @@ export function buildDOMChallenge(state) {
     }));
 }
 
-export function buildJSChallenge(state) {
-  const files = challengeFilesSelector(state);
+export function buildJSChallenge(files) {
   const pipeLine = composeFunctions(...throwers, ...transformers);
   const finalFiles = Object.keys(files)
     .map(key => files[key])
@@ -92,10 +85,10 @@ export function buildJSChallenge(state) {
     }));
 }
 
-export function buildBackendChallenge(state) {
+export function buildBackendChallenge(formValues) {
   const {
     solution: { value: url }
-  } = backendFormValuesSelector(state);
+  } = formValues;
   return {
     build: concatHtml({ required: frameRunner }),
     sources: { url }

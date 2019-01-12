@@ -10,6 +10,8 @@ import {
 import { delay, channel } from 'redux-saga';
 
 import {
+  backendFormValuesSelector,
+  challengeFilesSelector,
   challengeMetaSelector,
   challengeTestsSelector,
   initConsole,
@@ -46,19 +48,17 @@ export function* executeChallengeSaga() {
     yield fork(logToConsole, consoleProxy);
     const proxyLogger = args => consoleProxy.put(args);
 
-    const state = yield select();
-
     let testResults;
     switch (challengeType) {
       case js:
       case bonfire:
-        testResults = yield executeJSChallengeSaga(state, proxyLogger);
+        testResults = yield executeJSChallengeSaga(proxyLogger);
         break;
       case backend:
-        testResults = yield executeBackendChallengeSaga(state, proxyLogger);
+        testResults = yield executeBackendChallengeSaga(proxyLogger);
         break;
       default:
-        testResults = yield executeDOMChallengeSaga(state, proxyLogger);
+        testResults = yield executeDOMChallengeSaga(proxyLogger);
     }
 
     yield put(updateTests(testResults));
@@ -77,8 +77,9 @@ function* logToConsole(channel) {
   });
 }
 
-function* executeJSChallengeSaga(state, proxyLogger) {
-  const { build, sources } = yield call(buildJSChallenge, state);
+function* executeJSChallengeSaga(proxyLogger) {
+  const files = yield select(challengeFilesSelector);
+  const { build, sources } = yield call(buildJSChallenge, files);
   const code = sources && 'index' in sources ? sources['index'] : '';
 
   const testWorker = createWorker('test-evaluator');
@@ -106,9 +107,11 @@ function createTestFrame(document, ctx, proxyLogger) {
   );
 }
 
-function* executeDOMChallengeSaga(state, proxyLogger) {
+function* executeDOMChallengeSaga(proxyLogger) {
+  const files = yield select(challengeFilesSelector);
+  const meta = yield select(challengeMetaSelector);
   const document = yield getContext('document');
-  const ctx = yield call(buildDOMChallenge, state);
+  const ctx = yield call(buildDOMChallenge, files, meta);
   yield call(createTestFrame, document, ctx, proxyLogger);
   // wait for a code execution on a "ready" event in jQuery challenges
   yield delay(100);
@@ -119,9 +122,10 @@ function* executeDOMChallengeSaga(state, proxyLogger) {
 }
 
 // TODO: use a web worker
-function* executeBackendChallengeSaga(state, proxyLogger) {
+function* executeBackendChallengeSaga(proxyLogger) {
+  const formValues = yield select(backendFormValuesSelector);
   const document = yield getContext('document');
-  const ctx = yield call(buildBackendChallenge, state);
+  const ctx = yield call(buildBackendChallenge, formValues);
   yield call(createTestFrame, document, ctx, proxyLogger);
 
   return yield call(executeTests, (testString, testTimeout) =>
@@ -163,12 +167,13 @@ function* executeTests(testRunner) {
 function* updateMainSaga() {
   try {
     const { html, modern } = challengeTypes;
-    const { challengeType } = yield select(challengeMetaSelector);
+    const meta = yield select(challengeMetaSelector);
+    const { challengeType } = meta;
     if (challengeType !== html && challengeType !== modern) {
       return;
     }
-    const state = yield select();
-    const ctx = yield call(buildDOMChallenge, state);
+    const files = yield select(challengeFilesSelector);
+    const ctx = yield call(buildDOMChallenge, files, meta);
     const document = yield getContext('document');
     const frameMain = yield call(createMainFramer, document);
     yield call(frameMain, ctx);
