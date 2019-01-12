@@ -5,7 +5,7 @@ title: Components
 ## Components
 
 A classic problem that web developers face when working is HTML duplication, not
-in a simple example such as a list, but sometimes all you want is a "import" to
+in a simple example such as a list, but sometimes all you want is an "import" to
 be able to use the same code in several different places. Well, Vue.js gives you
 this feature with Components.
 
