@@ -11,6 +11,8 @@ module.exports = (env = {}) => {
     },
     devtool: __DEV__ ? 'inline-source-map' : 'source-map',
     output: {
+      publicPath: '/js/',
+      chunkFilename: '[name].js',
       path: path.join(__dirname, './static/js')
     },
     stats: {
@@ -32,7 +34,10 @@ module.exports = (env = {}) => {
                   { modules: false, targets: '> 0.25%, not dead' }
                 ]
               ],
-              plugins: ['@babel/plugin-transform-runtime']
+              plugins: [
+                '@babel/plugin-transform-runtime',
+                '@babel/plugin-syntax-dynamic-import'
+              ]
             }
           }
         }
