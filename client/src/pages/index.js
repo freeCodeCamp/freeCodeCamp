@@ -55,7 +55,7 @@ const IndexPage = () => (
         </Col>
         <Col md={4} sm={12}>
           <Image
-            alt='Help nonprofits with bro bono code projects'
+            alt='Help nonprofits with pro bono code projects'
             className='landing-icon img-center'
             responsive={true}
             src={
