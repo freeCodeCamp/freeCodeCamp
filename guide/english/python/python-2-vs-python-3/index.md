@@ -55,7 +55,16 @@ While Python 2 is well-supported and popular, most common libraries and framewor
 
 Both Python 2 and Python 3 are great. Most Linux and macOS distributions come pre-installed with Python 2 as the default version of Python. Python 3 itself was born out of the insatiable quest for more readable and more beautiful language constructs.
 
-This article uses Python 3 to set up the web-frameworks in your development environment. But before you can begin using these frameworks, you need to ensure you have Python 3 and know how to use it!
+## Installing Modules - Python2 vs. Python3
+To install modules for python 2, you can use the following:
+```sh
+pip2 install [module-name]
+```
+
+To install modules for python 3, you can use the following:
+```sh
+pip3 install [module-name]
+```
 
 #### More Information:
 - <a href='https://wiki.python.org/moin/Python2orPython3' target='_blank' rel='nofollow'>Python 2 or 3 Article</a>
