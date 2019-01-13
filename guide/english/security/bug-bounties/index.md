@@ -32,3 +32,8 @@ The companies that sponsor these programs gain several benefits:
 - Uber
 
 A more comprehensive list can be found at the Bugcrowd's Bug Bounty List - https://www.bugcrowd.com/bug-bounty-list/
+
+#### More Information
+
+* One of the most popular Bug Bounties from Facebook: [Facebook Awards Server-Crushing Hacker With Its Biggest Ever Bounty on Forbes](http://fortune.com/2017/01/19/facebook-hacker-bug-bounty/)
+* Bug Bounties on Wikipedia: [Bug Bounties (Wiki)](https://en.wikipedia.org/wiki/Bug_bounty_program)
