@@ -18,9 +18,11 @@ localeTitle: Добавить кнопку отправки в форму
 
 ```yml
 tests:
-  - text: У вашей формы должна быть кнопка внутри.
+  - text: Ваша форма должна иметь кнопку внутри.
     testString: 'assert($("form").children("button").length > 0, "Your form should have a button inside it.");'
-  - text: 'Кнопка отправки должна иметь <code>type</code> атрибута, установленный на <code>submit</code> .'
+
+  - text: 'Кнопка отправки должна иметь <code>type</code> атрибут, установленный для <code>submit</code> .'
+
     testString: 'assert($("button").attr("type") === "submit", "Your submit button should have the attribute <code>type</code> set to <code>submit</code>.");'
   - text: Кнопка отправки должна содержать только текст «Отправить».
     testString: 'assert($("button").text().match(/^\s*submit\s*$/gi), "Your submit button should only have the text "Submit".");'
