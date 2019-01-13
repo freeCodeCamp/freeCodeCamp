@@ -23,7 +23,8 @@ public class Example {
 
 Pense em uma `Class` como uma planta para criar algo concreto. Uma `Class` informa como o 'o que' e 'como' um `object` da referida Classe parecerá `instantiated` uma vez. Em essência, define `properties` (digamos, cor, capacidade do motor) e `behavior` (parar, acelerar, mudar de marcha, buzinar etc.) para um carro no caso abaixo.
 
-Objetos são _instâncias_ de uma classe. Todos os objetos são instâncias de uma determinada classe. Imagine uma classe sendo um "modelo", do qual cada objeto é copiado. Quando você cria um objeto, ele basicamente cria um novo objeto no blueprint de uma classe. Agora vamos ver isso em um pequeno trecho de código:
+Objetos são _instâncias_ de uma classe. Todos os objetos são instâncias de uma determinada classe. Imagine uma classe sendo um "modelo", do qual cada objeto é copiado. Um jeito de entender objetos é como se fossem realmente um objeto do mundo real, existem canetas de diferentes cores de tinta, marcas, porém todas continuando sendo canetas, desse jeito uma caneta especifica é um objeto da classe caneta.
+Quando você cria um objeto, ele basicamente cria um novo objeto no blueprint de uma classe. Agora vamos ver isso em um pequeno trecho de código:
 
 ```java
 // Car class 

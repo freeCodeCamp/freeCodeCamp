@@ -31,6 +31,7 @@ int i = 10;
 double amount = 10.0;
 boolean isOpen = false;
 char c = 'a'; // Note the single quotes
+String s = "Hello World"; // String is created with double quotes
 
 //Variables can also be declared in one statement, and assigned values later.
 int j;
@@ -48,6 +49,11 @@ byte anotherByte = (byte)0b00100001;
 ```
 
 As evident from the above example, variables of Primitive type behave slightly differently from variables of Reference (& Wrapper) type - while Primitive variables <i>store</i> the actual value, Reference variables <i>refer to</i> an 'object' containing the actual value.
+Java Programming language defines mainly three kind of variables.
+1) Instance variables
+2) Static Variables
+3) Local Variables
+
 You can find out more in the sections linked below.
 
 # Other Resources
