@@ -6,9 +6,12 @@ challengeType: 1
 
 ## Description
 <section id='description'>
-Just like a normal function, you can pass arguments into arrow functions.
+Just like a regular function, you can pass arguments into an arrow function.
 <blockquote>// doubles input value and returns it<br>const doubler = (item) => item * 2;</blockquote>
-You can pass more than one argument into arrow functions as well.
+If an arrow function has a single argument, the parentheses enclosing the argument may be omitted.
+<blockquote>// the same function, without the argument parentheses<br>const doubler = item => item * 2;</blockquote>
+It is possible to pass more than one argument into an arrow function.
+<blockquote>// multiplies the first input value by the second and returns it<br>const multiplier = (item, multi) => item * multi;</blockquote>
 </section>
 
 ## Instructions

@@ -1,0 +1,5 @@
+@media screen, (max-width: 767px) {
+  .help-modal .btn-lg {
+    font-size: 16px;
+  }
+}
