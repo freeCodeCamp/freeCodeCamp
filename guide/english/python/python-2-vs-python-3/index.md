@@ -3,7 +3,7 @@ title: Python 2 vs Python 3
 ---
 We aren't taking a side in the debate. If you are interested in knowing more about it for academic purposes, perhaps <a href='https://wiki.python.org/moin/Python2orPython3' target='_blank' rel='nofollow'>this article comparing Python 2 and Python 3</a> would intrigue you.
 
-But, we cannot also be ignorant of the fact that there are two major flavors of Python out there. Why shoud you care, you ask? Because code written for one version of Python can result in syntax errors in other versions of Python.
+However, we cannot ignore that there are two major flavors of Python out there. Why should you care? Because code written for one version of Python can result in syntax errors in another version of Python.
 
 The following is a valid `print` statement in Python 2, but does not work on Python 3:
 
