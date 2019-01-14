@@ -49,7 +49,7 @@ describe('Presolver', () => {
       },
       pullRequests: {
         // eslint-disable-next-line no-undef
-        getFiles: jest.fn().mockImplementation((issue) => {
+        listFiles: jest.fn().mockImplementation((issue) => {
           const { number } = issue;
           let data;
           switch (number) {
@@ -68,7 +68,7 @@ describe('Presolver', () => {
           return { data };
         }),
         // eslint-disable-next-line no-undef
-        getAll: jest
+        list: jest
           .fn()
           .mockImplementation(() => ({ data: [
             prExisting.pull_request

@@ -44,9 +44,9 @@ const updateDb = async(context) => {
         `;
      });
   } else {
-    const files = await context.github.pullRequests.getFiles(
+    const { data: files } = await context.github.pullRequests.listFiles(
       context.issue()
-    ).data;
+    ).then(data => data);
     const filenames = files.map(file => file.filename);
     await PR.updateOne(
       { _id: number },
