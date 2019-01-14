@@ -15,7 +15,6 @@ import {
   reducer as challenge,
   ns as challengeNameSpace
 } from '../templates/Challenges/redux';
-import { reducer as news, ns as newsNameSpace } from '../templates/News/redux';
 
 export default combineReducers({
   [appNameSpace]: app,
@@ -23,6 +22,5 @@ export default combineReducers({
   [curriculumMapNameSpace]: curriculumMap,
   [flashNameSpace]: flash,
   form: formReducer,
-  [newsNameSpace]: news,
   [settingsNameSpace]: settings
 });

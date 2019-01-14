@@ -3,7 +3,6 @@ import { all } from 'redux-saga/effects';
 import errorSagas from './error-saga';
 import { sagas as appSagas } from './';
 import { sagas as challengeSagas } from '../templates/Challenges/redux';
-import { sagas as newsSagas } from '../templates/News/redux';
 import { sagas as settingsSagas } from './settings';
 
 export default function* rootSaga() {
@@ -11,7 +10,6 @@ export default function* rootSaga() {
     ...errorSagas,
     ...appSagas,
     ...challengeSagas,
-    ...newsSagas,
     ...settingsSagas
   ]);
 }

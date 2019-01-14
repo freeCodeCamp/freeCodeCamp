@@ -22,7 +22,7 @@ function Header({ disableSettings }) {
           </li>
           <li>
             <a
-              href='https://forum.freecodecamp.org'
+              href='https://www.freecodecamp.org/forum'
               rel='noopener noreferrer'
               target='_blank'
               >
