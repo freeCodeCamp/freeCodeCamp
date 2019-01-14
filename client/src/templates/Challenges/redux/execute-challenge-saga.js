@@ -165,6 +165,7 @@ function* executeTests(testRunner) {
 }
 
 function* updateMainSaga() {
+  yield delay(500);
   try {
     const { html, modern } = challengeTypes;
     const meta = yield select(challengeMetaSelector);
