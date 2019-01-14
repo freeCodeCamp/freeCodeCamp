@@ -26,6 +26,20 @@ stack exec my-project-exe
 ```
 
 A word of cautious, try not to use stack install <package> even though it will install package globally, this is not recommended as different versions of packages are compatible with different versions of GHC. Hence using local copy of package using stack build is best way to follow.
+  
+## Structure of a Haskell Function
+A Haskell function declaration has a name and type identifiers
+```haskell
+name :: type
+name = expression
+```
+For example, this function squares an Integer
+```haskell
+square :: Integer -> Integer
+square n = n * n 
+```
+
+The last type value is the return value, in the case above it takes a single integer and returns a single integer.
 
 ## Hello World
 
