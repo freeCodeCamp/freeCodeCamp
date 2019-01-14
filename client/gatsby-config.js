@@ -47,12 +47,6 @@ module.exports = {
       }
     },
     {
-      resolve: 'fcc-source-news',
-      options: {
-        maximumStaticRenderCount: 100
-      }
-    },
-    {
       resolve: 'gatsby-source-filesystem',
       options: {
         name: 'guides',
