@@ -98,8 +98,9 @@ build
 # Custom Files
 # ------------
 
-# work-logs
 work-logs
+# work-logs
+#
 
 # ------------
 # Probot Files
