@@ -23,8 +23,6 @@ Then fix the code so that the RegEx that you have created is checked against <co
 
 ```yml
 tests:
-  - text: You should use <code>()</code> in the regex.
-    testString: assert(code.match(/\(.*\)/g), 'You should use <code>()</code> in the regex.');
   - text: Your regex should return <code>true</code> for the string <code>"Hello"</code>.
     testString: assert(myRegex.text('Hello'), 'Your regex should return <code>true</code> for the string <code>"Hello"</code>.');
   - text: Your regex should return <code>true</code> for the string <code>"Halo"</code>.
@@ -32,7 +30,7 @@ tests:
   - text: Your regex should return <code>false</code> for the string <code>"Hell"</code>.
     testString: assert(!myRegex.text('Hell'), 'Your regex should return <code>true</code> for the string <code>"Hell"</code>.');
   - text: You should use <code>.test()</code> to test the regex.
-    testString: assert(code.match(/myRegex.test\(\s*myString\s*\);?/), 'You should use <code>.test()</code> to test the regex.');
+    testString: assert(code.match(/myRegex.test\(.*\), 'You should use <code>.test()</code> to test the regex.');
   - text: Your result should return <code>true</code>.
     testString: assert(result === true, 'Your result should return <code>true</code>.');
 
