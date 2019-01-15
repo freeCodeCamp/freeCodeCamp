@@ -125,7 +125,7 @@ You will need to figure out where the missing letter is, along with handling the
 ### Code Explanation:
 
 * Loop over the string
-* Check if the difference in char codes between adjacent characters in the string is more than 1 (chack ASCII table)
+* Check if the difference in char codes between adjacent characters in the string is more than 1 (check ASCII table)
 * Return the missing character ( +1 from where the gap was detected)
 
 ## ![:rotating_light:](https://forum.freecodecamp.com/images/emoji/emoji_one/rotating_light.png?v=3 ":rotating_light:") Advanced Code Solution:
