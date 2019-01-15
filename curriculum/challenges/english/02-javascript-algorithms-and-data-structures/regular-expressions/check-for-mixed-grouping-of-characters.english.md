@@ -25,8 +25,12 @@ Then fix the code so that the RegEx that you have created is checked in a string
 tests:
   - text: You should use <code>()</code> in the regex.
     testString: assert(code.match(/\(.*\)/g), 'You should use <code>()</code> in the regex.');
-  - text: Your regex should check for the presence of either of <code>Hello</code> or <code>Halo</code> in the string.
-    testString: assert(code.match(/\/H\(((el\|a)|(a\|el))\)lo\/g/g), 'Your regex should check for the presence of either of <code>Hello</code> or <code>Halo</code> in the string.');
+  - text: Your regex should return <code>true</code> for the string <code>"Hello"</code>.
+    testString: assert(myRegex.text('Hello'), 'Your regex should return <code>true</code> for the string <code>"Hello"</code>.');
+  - text: Your regex should return <code>true</code> for the string <code>"Halo"</code>.
+    testString: assert(myRegex.text('Halo'), 'Your regex should return <code>true</code> for the string <code>"Halo"</code>.');
+  - text: Your regex should return <code>false</code> for the string <code>"Hell"</code>.
+    testString: assert(!myRegex.text('Hell'), 'Your regex should return <code>true</code> for the string <code>"Hell"</code>.');
   - text: You should use <code>.test()</code> to test the regex.
     testString: assert(code.match(/myRegex.test\(\s*myString\s*\);?/), 'You should use <code>.test()</code> to test the regex.');
   - text: Your result should return <code>true</code>.
