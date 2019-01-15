@@ -44,3 +44,6 @@ Link of all current Azure services - https://azure.microsoft.com/en-us/services/
 * <a href='https://azure.microsoft.com/en-us/' target='_blank' rel='nofollow'>Microsoft Azure</a>
 * <a href='https://docs.microsoft.com/en-us/learn/' target='_blank' rel='nofollow'>Microsoft Learn</a>
 
+### Video Tutorials
+- [Microsoft Azure Tutorials for Beginners](https://www.youtube.com/watch?v=0bPJPiX89K0)
+- [Cloud Computing for Beginners](https://www.youtube.com/watch?v=kQnNd-DyrpA)
