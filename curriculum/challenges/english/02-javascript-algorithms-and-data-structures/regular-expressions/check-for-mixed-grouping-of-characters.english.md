@@ -9,7 +9,7 @@ challengeType: 1
 Sometimes we want to check for groups of characters using a Regular Expression, to achieve this task we use the round brackets <code>()</code>.
 If you want to find either <code>"Penguin"</code> or <code>"Pumpkin"</code> in a string, you could use the following Regular Expression: <code>/P(engu|umpk)in/g</code>
 Then you can test the code using the <code>.test()</code> method to find whether the requires character(s)/string(s) are in the test string or not.
-<blockquote>let testStr = "freeCodeCamp";<br>let testRegex = /P(engu|umpk)in/g;<br>testRegex.test(testStr);<br>// Returns true</blockquote>
+<blockquote>let testStr = "Pumpkin";<br>let testRegex = /P(engu|umpk)in/g;<br>testRegex.test(testStr);<br>// Returns true</blockquote>
 </section>
 
 ## Instructions
