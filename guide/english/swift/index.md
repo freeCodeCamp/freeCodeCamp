@@ -60,6 +60,7 @@ project or application, no matter how small!
 
 * [RayWenderlich.com](https://www.raywenderlich.com/) : Has many great tutorials for Swift and iOS development.
 * [Hacking with Swift](https://www.hackingwithswift.com/read) : A complete Swift tutorial, taking you from a beginner to advanced using hands-on projects.
+* [App Development with Swift(Everyone Can Code](https://itunes.apple.com/us/book/app-development-with-swift/id1219117996?mt=11): Assumes no prior programming experience. Takes you from start to finish for everything you need to know about Swift.
 
 ### Sources
 
