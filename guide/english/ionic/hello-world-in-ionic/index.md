@@ -3,7 +3,7 @@ title: Hello World In Ionic
 ---
 
 # Hello World in Ionic !!
-### This is the editorial which will go through you for making a simlple Hello World program in Ionic.
+### This is a tutorial which will go through you for making a simlple Hello World program in Ionic.
 ### Steps
 
 
