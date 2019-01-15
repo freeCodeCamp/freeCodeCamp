@@ -20,15 +20,7 @@ class Presolver {
 
   async presolve(pullRequest) {
     Object.assign(this.pullRequest, pullRequest);
-<<<<<<< HEAD
-<<<<<<< HEAD
     await this._updateDb(this.context);
-=======
-    // await this._updateDb(this.context.payload);
->>>>>>> comment out failing script for now
-=======
-    await this._updateDb(this.context);
->>>>>>> use probot to get filenames
     await this._ensurePresolverLabelExists();
     await this._getState();
     const labelObj = this.config.labelPRConflict;
