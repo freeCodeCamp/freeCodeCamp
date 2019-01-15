@@ -38,7 +38,7 @@ There are many tools and online resources that can help you to ensure that your 
 
 - **<a href='http://colorsafe.co' target='_blank' rel='nofollow'>Color Safe Palette Generator</a>**
 
-   This website can help you to create a color palette that is based on the WCAG guidelines for text and background contrast ratios.
+   This website helps you create a color palette that is based on the WCAG guidelines for text and background contrast ratios.
 
 
 - **<a href='http://www.checkmycolours.com' target='_blank' rel='nofollow'>Check My Colours</a>**
