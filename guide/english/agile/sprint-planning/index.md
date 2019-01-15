@@ -21,7 +21,7 @@ The purpose of Sprint Planning meeting is to achieve the following goals:
 * **Get a Fresh Start** - No matter how the last sprint went either a sucess or not so successful. Sprint planning provies a fresh start a new beginning with a collective commitment from the team.
 
 * **Commit to Shared Goals** - All the work that is commited for the sprint is committed collectively as a team and not as individuals and they jointly agree to achieve the sprint goal.
-e
+
 * **Create Focus and Abundance** - By choosing the right amount of work for the sprint based on past performances and current capacity of team, the team has created focus for themselves and a feels that "we have enough to do" for this time box.
 
 #### More Information:
