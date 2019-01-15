@@ -15,7 +15,7 @@ Then you can test the code using the <code>test()</code> method to find whether 
 ## Instructions
 <section id='instructions'>
 Fix the RegEx so that it checks for either <code>Hello</code> or <code>Halo</code> in a case sensitive manner.
-Then fix the code so that the RegEx that you have created is checked in a string and either <code>true</code> or <code>false</code> is returned depending on whether the RegEx matches.
+Then fix the code so that the RegEx that you have created is checked against <code>myString</code> and either <code>true</code> or <code>false</code> is returned depending on whether the RegEx matches.
 </section>
 
 ## Tests
