@@ -1,12 +1,17 @@
 import _ from 'lodash';
 import { Observable } from 'rx';
 import dedent from 'dedent';
-// import debugFactory from 'debug';
+import passport from 'passport';
 import { isEmail } from 'validator';
 import { check } from 'express-validator/check';
 
 import { homeLocation } from '../../../config/env';
-
+import { createCookieConfig } from '../utils/cookieConfig';
+import { 
+  createPassportCallbackAuthenticator,
+  saveResponseAuthCookies,
+  loginRedirect
+} from '../component-passport';
 import {
   ifUserRedirectTo,
   ifNoUserRedirectTo,
@@ -15,7 +20,6 @@ import {
 import { wrapHandledError } from '../utils/create-handled-error.js';
 
 const isSignUpDisabled = !!process.env.DISABLE_SIGNUP;
-// const debug = debugFactory('fcc:boot:auth');
 if (isSignUpDisabled) {
   console.log('fcc:boot:auth - Sign up is disabled');
 }
@@ -25,11 +29,34 @@ module.exports = function enableAuthentication(app) {
   // loopback.io/doc/en/lb2/Authentication-authorization-and-permissions.html
   app.enableAuth();
   const ifUserRedirect = ifUserRedirectTo();
+  const saveAuthCookies = saveResponseAuthCookies();
+  const loginSuccessRedirect = loginRedirect();
   const ifNoUserRedirectHome = ifNoUserRedirectTo(homeLocation);
   const api = app.loopback.Router();
   const { AuthToken, User } = app.models;
 
-  api.get('/signin', ifUserRedirect, (req, res) => res.redirect('/auth/auth0'));
+  // Use a local mock strategy for signing in if we are in dev mode.
+  // Otherwise we use auth0 login. We use a string for 'true' because values
+  // set in the env file will always be strings and never boolean.
+  if (process.env.LOCAL_MOCK_AUTH === 'true') {
+    api.get(
+      '/signin',
+      passport.authenticate('devlogin'),
+      saveAuthCookies,
+      loginSuccessRedirect
+    );
+  } else {
+    api.get(
+      '/signin',
+      ifUserRedirect,
+      passport.authenticate('auth0-login', {})
+    );
+
+    api.get(
+      '/auth/auth0/callback',
+      createPassportCallbackAuthenticator('auth0-login', { provider: 'auth0' })
+    );
+  }
 
   api.get('/signout', (req, res) => {
     req.logout();
@@ -41,10 +68,7 @@ module.exports = function enableAuthentication(app) {
           redirectTo: homeLocation
         });
       }
-      const config = {
-        signed: !!req.signedCookies,
-        domain: process.env.COOKIE_DOMAIN || 'localhost'
-      };
+      const config = createCookieConfig(req);
       res.clearCookie('jwt_access_token', config);
       res.clearCookie('access_token', config);
       res.clearCookie('userId', config);
@@ -216,5 +240,4 @@ module.exports = function enableAuthentication(app) {
   );
 
   app.use(api);
-  app.use('/internal', api);
 };

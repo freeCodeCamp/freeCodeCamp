@@ -16,3 +16,18 @@
 .learn-page-wrapper p {
   margin-bottom: 0.75rem;
 }
+
+#learn-app-wrapper {
+  overflow-x:hidden;
+}
+
+@media screen, (max-width: 767px) {
+  #learn-app-wrapper {
+    right: -2em;
+    padding: 2px 0 0 0;
+  }
+}
+
+.reflex-layout.reflex-container.vertical {
+  margin: 0 18px;
+}
