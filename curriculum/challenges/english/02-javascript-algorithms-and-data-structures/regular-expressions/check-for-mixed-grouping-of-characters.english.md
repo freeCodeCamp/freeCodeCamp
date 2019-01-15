@@ -14,7 +14,7 @@ Then you can test the code using the <code>.test()</code> method to find whether
 
 ## Instructions
 <section id='instructions'>
-Fix the RegEx such that it checks for either <code>Penguin</code> or <code>Pumpkin</code> in the string such that the RegEx is case sensitive. Make sure that the characters of code you write are as less as possible.
+Fix the RegEx such that it checks for either <code>Hello</code> or <code>Halo</code> in the string such that the RegEx is case sensitive. Make sure that the characters of code you write are as less as possible.
 Then fix the code so that the RegEx that you have created is checked in a string and either <code>true</code> or <code>false</code> is returned depending on whether the RegEx matches.
 </section>
 
@@ -26,7 +26,7 @@ tests:
   - text: You should use <code>()</code> in the regex.
     testString: assert(code.match(/\(.*\)/g), 'You should use <code>()</code> in the regex.');
   - text: Your regex should check for the presence of either of <code>Hello</code> or <code>Halo</code> in the string.
-    testString: assert(code.match(/\/H\(((el\|a)|(a\|el))\)lo\/g/g), 'Your regex should check for the presence of either of <code>JavaScript</code> or <code>Python</code> in the string.');
+    testString: assert(code.match(/\/H\(((el\|a)|(a\|el))\)lo\/g/g), 'Your regex should check for the presence of either of <code>Hello</code> or <code>Halo</code> in the string.');
   - text: You should use <code>.test()</code> to test the regex.
     testString: assert(code.match(/myRegex.test\(\s*myString\s*\);?/), 'You should use <code>.test()</code> to test the regex.');
   - text: Your result should return <code>true</code>.
