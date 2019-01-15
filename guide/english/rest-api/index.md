@@ -105,34 +105,39 @@ resources via hyperlinks.
 
 
 
-  Little more on **2xx**!
+Little more on **2xx**!
 
-  - **201 Resource Created.**
-      POST `/cars`  should return HTTP 201 created with `location` header stating how to access the resource
-      E.g. `location` : `api.com/cars/124` in header
+- **201 Resource Created.**
+  - POST `/cars`  should return HTTP 201 created with `location` header stating how to access the resource
+  - Example: `location` : `api.com/cars/124` in header
 
-  - **202 - Accepted**
+- **202 - Accepted**
+  - Use this if the task is huge to run. Tell the client, it has accepted the request and will/is process/processing
+  - No payload is returned 
 
-      Use this if the task is huge to run. Tell the client, it has accepted the request and will/is process/processing
-      No payload is returned 
+- **204 - No content**
+  - Used when deleted `DELETE cars/124`
+  - Returns no content. But can also return `200 OK` if API intends to send the deleted resource for further processing.
+      
+The useful **3xx**!
+- **304 - Not Modified**
+  - Useful status code to tell you that the browser saw no change in delta from the file it just received and the one it had cached, so it used the cached version instead.
 
-  -   **204 - No content**
+The dangerous **5xx** resources!
+- **500** Internal Server Error
+- **501** Not implemented. Server lacks the ability to fulfil the request
+- **504** Gateway Timeout. Server didn't receive timely response
 
-      Used when deleted `DELETE cars/124`
-      Returns no content. But can also return `200 OK` if API intends to send the deleted resource for further processing.
+Less known **4xx** suggests that you are passing wrong parameter. Can also pass information that is wrong.
 
-  The dangerous **5xx** resources!
-
-  - **500** Internal Server Error
-  - **501** Not implemented. Server lacks the ability to fulfil the request
-  - **504** Gateway Timeout. Server didn't receive timely response
-
-  Less known **4xx** suggests that you are passing wrong parameter. Can also pass information that is wrong. E.g.
-
-  `DELETE /cars/MH09234`
-
-  returns `4xx` or message 
-  `Expecting int car id /car/id got string car/MH09234 `
+Example:
+```output
+DELETE /cars/MH09234
+```
+returns `4xx` or message 
+```output
+Expecting int car id /car/id got string car/MH09234
+```
 
 ### REST API Development Environment and Testing:
 
