@@ -9,7 +9,7 @@ Vagrant is a tool for building and managing virtual machine (VM) environments. V
 
 As a developer, by using a VM, you can have a local environment for testing code, that is the same as the production environment, regardless of the environment you use for coding.
 
-For DevOps, VMs are very usefull for having a highly configurable, disposable machine for testing infrastracture, configurations, scripts, or anything else.
+For DevOps, VMs are very useful for having a highly configurable, disposable machine for testing infrastracture, configurations, scripts, or anything else.
 
 With Vagrant, to use a VM you only need a single file, called a `VagrantFile`, which contains the VM as well as all the configuration needed. This way you can easily create a specific, isolated development environment which is very portable and can be shared and used by all members of a team.
 
