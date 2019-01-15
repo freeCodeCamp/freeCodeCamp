@@ -1,5 +1,5 @@
 ---
-id: 587d7dbb367417b2b2512be6
+id: 5c3dda8b4d8df89bea71600f
 title: Check For Mixed Grouping of Characters
 challengeType: 1
 ---
