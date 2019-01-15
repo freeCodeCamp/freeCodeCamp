@@ -14,7 +14,7 @@ Then you can test the code using the <code>.test()</code> method to find whether
 
 ## Instructions
 <section id='instructions'>
-Fix the RegEx such that it checks for either <code>Penguin</code> or <code>Pumpkin</code> in the string such that the RegEx is case sensitive. Make sure that the RegEx uses as efficient grouping as possible.
+Fix the RegEx such that it checks for either <code>Penguin</code> or <code>Pumpkin</code> in the string such that the RegEx is case sensitive. Make sure that the characters of code you write are as less as possible.
 Then fix the code so that the RegEx that you have created is checked in a string and either <code>true</code> or <code>false</code> is returned depending on whether the RegEx matches.
 </section>
 
