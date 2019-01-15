@@ -47,9 +47,9 @@ The last type value is the return value, in the case above it takes a single int
 main :: IO ()
 main = print "Hello Haskell :)"
 ```
-Save above code in a file named "hello.hs" and save.
+Save the code above in a file named "hello.hs".
 
-To compile the Hello World example, this will convert our haskell code to machine understandable bytecodes.
+You can use ghc to convert our haskell code to machine understandable bytecodes.
 ```shell
 stack ghc hello.hs
 ./hello
