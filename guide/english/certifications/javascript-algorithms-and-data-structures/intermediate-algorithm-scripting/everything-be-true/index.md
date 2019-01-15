@@ -22,7 +22,7 @@ Remember to iterate through the first argument to check each object.
 
 ## ![:speech_balloon:](https://forum.freecodecamp.com/images/emoji/emoji_one/speech_balloon.png?v=3 ":speech_balloon:") Hint: 2
 
-Only if all of them are truth will we return true, so make sure all of them check.
+Only if all of them are truthy will we return true, so make sure all of them check.
 
 > _try to solve the problem now_
 
