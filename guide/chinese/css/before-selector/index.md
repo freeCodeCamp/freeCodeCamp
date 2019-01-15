@@ -54,7 +54,7 @@ p::before {
 不仅字符串，图像，计数器甚至没有（“”，对于clearfix有用）都可以插入到`content`属性中，而**不是HTML中** 。以创造性的方式使用`::before`和`after`可以制作很多很酷的东西。如果你很好奇，你可以看看下一个链接： [一堆惊人的东西伪元素可以做](https://www.w3schools.com/css/css_pseudo_elements.asp)
 
 #### 例子
-你可以使用 `::befor ` 和 `::after` 來製作風格
+你可以使用 `::befor ` 和 `::after` 改变风格
 
 ```
 <div>
