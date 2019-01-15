@@ -53,6 +53,58 @@ p::before {
 
 不仅字符串，图像，计数器甚至没有（“”，对于clearfix有用）都可以插入到`content`属性中，而**不是HTML中** 。以创造性的方式使用`::before`和`after`可以制作很多很酷的东西。如果你很好奇，你可以看看下一个链接： [伪元素可以做一堆惊人的东西](https://www.w3schools.com/css/css_pseudo_elements.asp)
 
+#### 例子
+你可以使用 `::befor ` 和 `::after` 改变风格
+
+```
+<div>
+  <h1>AWESOME</h1>
+</div>
+```
+
+```
+*, *::before, *::after {box-sizing: border-box;}
+
+body {
+  background-color: #bbbbbb;
+}
+
+div {
+  text-align: center;
+  position: relative;
+}
+
+h1{
+  color: #fff;
+  font-size: 30px;
+  padding: 5px 10px;
+  margin: 0;
+}
+
+h1::after {
+  content: '';
+  position: absolute;
+  top: 1.7em;
+ // bottom:5em;
+  left:2em;
+  right: 2em;
+  opacity: 1;
+  transition: transform ease-out 250ms;
+  border-top: 5px #01eddb solid;
+  transform: scale(0, 1);
+}
+
+
+  
+h1:hover::after {
+  transform: scale(.25, 1);
+}
+
+li a:hover {
+  color: rgba(255,255,255, 0.7);
+}
+```
+
 #### 单结肠与双结肠
 
 关于使用伪元素的正确方法有一些讨论：旧式单冒号（ `:before` ），在CSS规范1和2中使用，与CSS3 recomendation，双冒号（ `::before` ），主要是为了_“建立”伪类和伪元素之间的区别“_ 。但出于兼容性原因，仍然接受单冒号。谈到兼容性，IE8仅支持单冒号表示法。
