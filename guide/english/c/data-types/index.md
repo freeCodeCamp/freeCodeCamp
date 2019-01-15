@@ -19,6 +19,9 @@ C allows us to choose between several different options with our data types beca
 
 The actual size, like all other data types in C, depends on the hardware you're working on. By minimum, it is at least 8 bits, so you will have at least 0 to 127. Alternatively, you can use `signed char` to get at least -128 to 127.
 
+Characters are simply integers of size 1 byte. We can even use standard integers to store a character.
+For example, we may write `int c = 'r';` instead of `char c = 'r';` to store the value of 'r' in c.
+
 #### Standard Integers: `int`
 The amount of memory that a single `int` takes depends on the hardware. However, you can expect an `int` to be at least 16 bits in size. This means that it can store values from -32,768 to 32,767, or more depending on hardware( -(10^5) <= int <= 10^5).
 
