@@ -26,7 +26,7 @@ tests:
   - text: You should use <code>()</code> in the regex.
     testString: assert(code.match(/\(.*\)/g), 'You should use <code>()</code> in the regex.');
   - text: Your regex should check for the presence of either of <code>Penguin</code> or <code>Pumpkin</code> in the string.
-    testString: assert(code.match(/\/H\(((el\|a)|(a\|el))\)lo\/g/g), 'Your regex should check for the presence of either of <code>JavaScript</code> or <code>Python</code> in the string.');
+    testString: assert(code.match(/\/P\(engu\|umpk)in\/g/g), 'Your regex should check for the presence of either of <code>JavaScript</code> or <code>Python</code> in the string.');
   - text: You should use <code>.test()</code> to test the regex.
     testString: assert(code.match(/myRegex.test\(\s*myString\s*\);?/), 'You should use <code>.test()</code> to test the regex.');
   - text: Your result should return <code>true</code>.
