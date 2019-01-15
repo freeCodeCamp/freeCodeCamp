@@ -18,9 +18,8 @@ const envVarsSchema = Joi.object({
   GITHUB_ACCESS_TOKEN: Joi.string().required(),
   REPOSITORY_OWNER: Joi.string().required(),
   REPOSITORY: Joi.string().required(),
-  PRODUCTION_RUN: Joi.string()
-    .allow(['true', 'false'])
-    .default('false'),
+  PRODUCTION_RUN: Joi.boolean()
+    .default(false),
   WEBHOOK_PROXY_URL: Joi.string().required(),
   APP_ID: Joi.number().required(),
   WEBHOOK_SECRET: Joi.string().required()
