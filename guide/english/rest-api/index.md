@@ -14,6 +14,15 @@ REST was developed to provide a uniform interface for
  - Self-descriptive messages
  - Using Hypermedia as the Engine of Application State (HATEOS)
 
+REST is not an architecture, but a set of design criteria.
+Resource-Oriented Architecture (ROA) is a RESTful
+architecture that provides a common sense set of rules and a
+step-by-step procedure for designing RESTful Web services
+following these design criteria. Each resource has a name
+(i.e. a URI) and a representation, and it may be linked to other
+resources via hyperlinks.
+
+
 ### Best Practices
 
  - #### Basics
@@ -27,8 +36,16 @@ REST was developed to provide a uniform interface for
 
 *Note while PUT operations either client or server can generate id's*
 
-- #### Nouns are good, Verbs are bad
+- #### Versioning as Part of URL Design
+  - Use the prefix **V#** to indicate the version of your URL like `api/v1/people` or `api/V2/people`.
+  - Never use a dot notion as prefix like `api/v1.2/people` to indiate your version. By doing that it will confuse the developer using the API. When there is frequent updates or depreciation of API versions.
 
+- #### Limiting PUT and POST requests
+  - Due to similarity of PUT to POST operation, which could be easily exploited to create a new record. 
+  - Use POST requests to **create** records, whereas PUT request to be **updating** of existing records.
+  - Create a checker function to check for PUT request that is used to **create** new records. 
+
+- #### Nouns are good, Verbs are bad
   - Use nouns to refer resources like `cars`, `fruits` etc.
   - Use verbs for action declarations `convertMilesToKms`, `getNutritionalValues`
 
@@ -88,39 +105,52 @@ REST was developed to provide a uniform interface for
 
 
 
-  Little more on **2xx**!
+Little more on **2xx**!
 
-  - **201 Resource Created.**
-      POST `/cars`  should return HTTP 201 created with `location` header stating how to access the resource
-      E.g. `location` : `api.com/cars/124` in header
+- **201 Resource Created.**
+  - POST `/cars`  should return HTTP 201 created with `location` header stating how to access the resource
+  - Example: `location` : `api.com/cars/124` in header
 
-  - **202 - Accepted**
+- **202 - Accepted**
+  - Use this if the task is huge to run. Tell the client, it has accepted the request and will/is process/processing
+  - No payload is returned 
 
-      Use this if the task is huge to run. Tell the client, it has accepted the request and will/is process/processing
-      No payload is returned 
+- **204 - No content**
+  - Used when deleted `DELETE cars/124`
+  - Returns no content. But can also return `200 OK` if API intends to send the deleted resource for further processing.
+      
+The useful **3xx**!
+- **304 - Not Modified**
+  - Useful status code to tell you that the browser saw no change in delta from the file it just received and the one it had cached, so it used the cached version instead.
 
-  -   **204 - No content**
+The dangerous **5xx** resources!
+- **500** Internal Server Error
+- **501** Not implemented. Server lacks the ability to fulfil the request
+- **504** Gateway Timeout. Server didn't receive timely response
 
-      Used when deleted `DELETE cars/124`
-      Returns no content. But can also return `200 OK` if API intends to send the deleted resource for further processing.
+Less known **4xx** suggests that you are passing wrong parameter. Can also pass information that is wrong.
 
-  The dangerous **5xx** resources!
+Example:
+```output
+DELETE /cars/MH09234
+```
+returns `4xx` or message 
+```output
+Expecting int car id /car/id got string car/MH09234
+```
 
-  - **500** Internal Server Error
-  - **501** Not implemented. Server lacks the ability to fulfil the request
-  - **504** Gateway Timeout. Server didn't receive timely response
+### REST API Development Environment and Testing:
 
-  Less known **4xx** suggests that you are passing wrong parameter. Can also pass information that is wrong. E.g.
+Postman is widely used and famous for manual and automated REST/RESTful API Tests.
+Link: [Get Postman](https://www.getpostman.com/)
 
-  `DELETE /cars/MH09234`
+A detailed explanation has been given on Quick Code blog on how to use Postman for the best usage:
+[Top Tutorials To Learn POSTMAN For REST API Testing](https://medium.com/quick-code/top-tutorials-to-learn-postman-for-rest-api-testing-3bdf9788e0ba)
 
-  returns `4xx` or message 
-  `Expecting int car id /car/id got string car/MH09234 `
+#### More Information
 
 
-### **Further reading**
-[How to Design Great APIs - Parse Developer Day 2013](https://www.youtube.com/watch?v=qCdpTji8nxo)
-
-[The never-ending REST API design debate by Guillaume Laforge](https://www.youtube.com/watch?v=48azd2VqtP0)
-
-[HTTP status codes](https://httpstatuses.com/)
+* [How to Design Great APIs - Parse Developer Day 2013](https://www.youtube.com/watch?v=qCdpTji8nxo)
+* [The never-ending REST API design debate by Guillaume Laforge](https://www.youtube.com/watch?v=48azd2VqtP0)
+* [HTTP status codes](https://httpstatuses.com/)
+* [Documenting APIs: A guide for technical writers](https://idratherbewriting.com/learnapidoc/)

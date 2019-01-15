@@ -18,4 +18,4 @@ Burnup图表非常相似，但它们显示已完成的工作与总工作量和�
 
 #### 更多信息：
 
-[Burndown图表 - 维基百科](https://en.wikipedia.org/wiki/Burn_down_chart) [烧毁vs烧毁图表 - LinkedIn](https://www.linkedin.com/pulse/burn-up-vs-down-chart-alaa-el-beheri-cisa-rmp-pmp-bcp-itil/)
+[Burndown图表 - 维基百科](https://en.wikipedia.org/wiki/Burn_down_chart) [燃尽vs燃尽图表 - LinkedIn](https://www.linkedin.com/pulse/burn-up-vs-down-chart-alaa-el-beheri-cisa-rmp-pmp-bcp-itil/)
