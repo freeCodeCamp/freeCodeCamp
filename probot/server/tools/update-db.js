@@ -86,7 +86,6 @@ const updateDb = async(context) => {
       console.log(err);
     });
 
-
   return existingPR;
 };
 
