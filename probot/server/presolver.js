@@ -1,4 +1,4 @@
-const { updateDb } = require('./tools/update-db');
+// const { updateDb } = require('./tools/update-db');
 
 class Presolver {
   constructor(context, { owner, repo, logger = console, ...config }) {
@@ -15,12 +15,12 @@ class Presolver {
     };
     this.pullRequest = {};
     this.conflictingFiles = [];
-		this._updateDb = updateDb;
+		// this._updateDb = updateDb;
   }
 
   async presolve(pullRequest) {
     Object.assign(this.pullRequest, pullRequest);
-    await this._updateDb(this.context);
+    // await this._updateDb(this.context);
     await this._ensurePresolverLabelExists();
     await this._getState();
     const labelObj = this.config.labelPRConflict;
