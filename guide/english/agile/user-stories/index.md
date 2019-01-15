@@ -8,7 +8,7 @@ User stories are typically written using the following pattern:
 
 User stories should be written in non-technical terms from the perspective of the user. The story should emphasize the need of the user, and not the how. There should be no solution provided in the user story.
 
-One common mistake that is made when writing user stories is writing from the perspective of the developer or the solution. Be sure to state the goal and the need, and the functional requirements come later.
+One common mistake that is made when writing user stories is writing from the perspective of the developer or the solution. Be sure to state the goal and the stakeholder need, and the functional requirements come later.
 
 #### Sizing a User Story: Epics and Smaller Stories
 An epic is a big, coarse-grained story. It is typically broken into several user stories over time—leveraging the user feedback on early prototypes and product increments. You can think of it as a headline and a placeholder for more detailed stories.
@@ -17,7 +17,7 @@ Starting with epics allows you to sketch the product functionality without commi
 
 It also reduces the time and effort required to integrate new insights. If you have many detailed stories in the product backlog, then it’s often tricky and time-consuming to relate feedback to the appropriate items and it carries the risk of introducing inconsistencies.
 
-When thinking about possible stories, it is also important to consider "mis-user cases" and "unhappy path" stories.  How will exceptions be handled by the system?  What kind of messaging will you provide back to user?  How would a malicious user abuse this application function?  These mal-stories can save rework and become usful test cases in QA.
+When thinking about possible stories, it is also important to consider "mis-user cases" and "unhappy path" stories.  How will exceptions be handled by the system?  What kind of messaging will you provide back to user?  How would a malicious user abuse this application function?  These mal-stories can save rework and become useful test cases in QA.
 
 #### More Information
 - <a href='https://www.mountaingoatsoftware.com/agile/user-stories' target='_blank' rel='nofollow'>Mountain Goat Software Guide to User Stories</a>
