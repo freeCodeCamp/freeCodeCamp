@@ -89,11 +89,16 @@ The software components within the platform include both Natural Language Unders
 
 IBM Watson Speech-to-Text uses machine learning to accurately predict speech in real time. Currently seven different languages are supported, as well as live voice and pre-recorded audio. The API can be used for free, or paid versions are available for larger scale apps. 
 
+### Siri
 
-### More Information
-[Web Speech API](https://developer.mozilla.org/en-US/docs/Web/API/Web_Speech_API)
-[Alexa API](https://developer.amazon.com/docs/alexa-voice-service/api-overview.html)
-[IBM Watson API](https://www.ibm.com/watson/services/speech-to-text/)
+Apple's iOS 12 update introduced [Siri](https://en.wikipedia.org/wiki/Siri) Shortcuts, which supports the use of third-party applications through Apple's digital voice assistant. Siri Shortcuts allows developers to add shortcuts and personalized phrases to Siri through their applications by, for example, letting the user record a voice phrase for a particular action and adding that phrase to Siri.
+
+#### More Information
+
+- [Web Speech API](https://developer.mozilla.org/en-US/docs/Web/API/Web_Speech_API)
+- [Alexa API](https://developer.amazon.com/docs/alexa-voice-service/api-overview.html)
+- [IBM Watson API](https://www.ibm.com/watson/services/speech-to-text/)
+- [Sirikit](https://developer.apple.com/documentation/sirikit)
 
 
 
