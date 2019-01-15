@@ -24,8 +24,10 @@ There are many different flavors of Agile, including Scrum and Extreme Programmi
 ### More information
 
 - [Agile Alliance's Homepage](https://www.agilealliance.org/)
+- [dummies.com - Agile cheat sheet](https://www.dummies.com/careers/project-management/agile-project-management-for-dummies-cheat-sheet/)
+- [altexsoft.com - Project Management best practices](https://www.altexsoft.com/whitepapers/agile-project-management-best-practices-and-methodologies/)
+- [agilemethodology.org](http://agilemethodology.org/)
 - [A Beginners Guide To Understanding The Agile Method](https://linchpinseo.com/the-agile-method/)
-- [Agile methodology: an overview](https://zenkit.com/en/blog/agile-methodology-an-overview/)
-
-![Agile methodology](https://blog.capterra.com/wp-content/uploads/2016/01/agile-methodology.png)
+- [zenkit.com - Agile methodology overview](https://zenkit.com/en/blog/agile-methodology-an-overview/)
+- [Agile methodology - Visual](https://blog.capterra.com/wp-content/uploads/2016/01/agile-methodology.png)
 
