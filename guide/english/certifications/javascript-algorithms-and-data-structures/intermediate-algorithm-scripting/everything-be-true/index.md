@@ -28,7 +28,7 @@ Only if all of them are truth will we return true, so make sure all of them chec
 
 ## ![:speech_balloon:](https://forum.freecodecamp.com/images/emoji/emoji_one/speech_balloon.png?v=3 ":speech_balloon:") Hint: 3
 
-You could use loops or callbacks functions, there are multiple ways to solve this problem.
+You could use loops or callback functions, there are multiple ways to solve this problem.
 
 > _try to solve the problem now_
 
