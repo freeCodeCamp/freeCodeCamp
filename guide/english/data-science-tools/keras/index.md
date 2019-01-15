@@ -24,3 +24,13 @@ Read the documentation at [Keras.io](https://keras.io).
 Keras is compatible with: Python 2.7 +.
 
 With keras you can implement different API and deeplearning tools just by writing few lines which is crazy its like you a magic wond in your hand.
+
+Below are some useful links to get started with Keras.
+
+### Links:
+  * [Keras Website](https://keras.io/)
+  * [Keras installation](https://keras.io/#installation)
+  * [Keras first 30 seconds](https://github.com/keras-team/keras)
+
+### Click on the following link to check out a sample code in python.
+  * [Sample Implementation](https://github.com/simpleParadox/fertility-ann)
