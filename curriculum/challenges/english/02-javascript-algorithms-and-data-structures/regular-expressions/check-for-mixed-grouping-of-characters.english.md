@@ -31,8 +31,6 @@ tests:
     testString: assert(myRegex.test('Eleanor Roosevelt'), 'Your regex <code>myRegex</code> should return <code>true</code> for the string <code>"Eleanor Roosevelt"</code>');
   - text: Your regex <code>myRegex</code> should return <code>false</code> for the string <code>"Franklin Rosevelt"</code>
     testString: assert(!myRegex.test('Franklin Rosevelt'), 'Your regex <code>myRegex</code> should return <code>false</code> for the string <code>"Franklin Rosevelt"</code>');
-  - text: You should use <code>.test()</code> to test the regex.
-    testString: assert(code.match(/myRegex.test\(\s*myString\s*\)/), 'You should use <code>.test()</code> to test the regex.');
   - text: Your result should return <code>true</code>.
     testString: assert(result === true, 'Your result should return <code>true</code>.');
 ```
