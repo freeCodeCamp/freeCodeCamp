@@ -23,12 +23,12 @@ Then fix the code so that the regex that you have created is checked against <co
 
 ```yml
 tests:
-  - text: Your regex should return <code>true</code> for the string <code>"Hello"</code>.
-    testString: assert(myRegex.test('Hello'), 'Your regex should return <code>true</code> for the string <code>"Hello"</code>.');
-  - text: Your regex should return <code>true</code> for the string <code>"Halo"</code>.
-    testString: assert(myRegex.test('Halo'), 'Your regex should return <code>true</code> for the string <code>"Halo"</code>.');
-  - text: Your regex should return <code>false</code> for the string <code>"Hell"</code>.
-    testString: assert(!myRegex.test('Hell'), 'Your regex should return <code>false</code> for the string <code>"Hell"</code>.');
+  - text: Your regex <code>myRegex</code> should return <code>true</code> for the string <code>"Hello"</code>
+    testString: assert(myRegex.test('Hello'), 'Your regex <code>myRegex</code> should return <code>true</code> for the string <code>"Hello"</code>');
+  - text: Your regex <code>myRegex</code> should return <code>true</code> for the string <code>"Halo"</code>
+    testString: assert(myRegex.test('Halo'), 'Your regex <code>myRegex</code> should return <code>true</code> for the string <code>"Halo"</code>');
+  - text: Your regex <code>myRegex</code> should return <code>false</code> for the string <code>"Hell"</code>
+    testString: assert(!myRegex.test('Hell'), 'Your regex <code>myRegex</code> should return <code>false</code> for the string <code>"Hell"</code>');
   - text: You should use <code>.test()</code> to test the regex.
     testString: assert(code.match(/myRegex.test\(\s*myString\s*\)/), 'You should use <code>.test()</code> to test the regex.');
   - text: Your result should return <code>true</code>.
