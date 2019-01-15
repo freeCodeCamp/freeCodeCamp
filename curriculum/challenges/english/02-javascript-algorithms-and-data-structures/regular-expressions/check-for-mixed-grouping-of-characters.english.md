@@ -58,7 +58,7 @@ let result = true; // Change this line
 <section id='solution'>
 
 ```js
-let myString = "This is FreeCodeCamp";
+let myString = "Hello from the other side";
 let myRegex = /H(a|el)lo/g;
 let result = myRegex.test(myString);
 ```
