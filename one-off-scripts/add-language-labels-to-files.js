@@ -1,10 +1,5 @@
 /*
-This script was originally created to iterate over all open PRs to label and
-comment on specific PR errors (i.e. guide related filenmame syntax and
-frontmatter).
-
-Since the first run which covered over 10,000+ PRs, it is curently ran every
-couple of days for just the most recent PRs.
+This script was created to iterate over all open PRs to label.
 
 To run the script for a specific range (i.e. label and comment on guide errors),
 run `node sweeper.js range startingPrNumber endingPrNumber`
