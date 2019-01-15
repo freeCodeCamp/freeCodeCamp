@@ -31,6 +31,7 @@ db.then(() => {
   });
 
   // get the most recent production data to use locally
+  // NOTE: This url will need to be changed to the new url once off Glitch
   fetch('https://pr-relations.glitch.me/getData', { method: 'GET' })
     .then(response => response.json())
     .then(({ startTime, prs }) => {
