@@ -55,6 +55,12 @@ stack ghc hello.hs
 ./hello
 ```
 
+Alternatively, you can use `runhaskell` to skip the compiling step.
+
+```shell
+stack runhaskell hello.hs
+```
+
 ## Documentation
 Hackage provides documentation for Haskell
 
