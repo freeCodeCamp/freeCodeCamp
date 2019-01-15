@@ -28,3 +28,9 @@ This section contains links to learning DevOps through a MOOC experience. Course
 
 ### Lab
 <a href="https://github.com/Microsoft/TechnicalCommunityContent/tree/master/DevOps">DevOps</a>
+
+### Book recommendations
+This section lists books that are useful to gain understanding of the DevOps concepts
+
+* [The Phoenix Project: A Novel about It, DevOps, and Helping Your Business Win](http://a.co/d/awtKmRr)
+* [The DevOps Handbook: How to Create World-Class Agility, Reliability, and Security in Technology Organizations](http://a.co/d/byKkBx3)
