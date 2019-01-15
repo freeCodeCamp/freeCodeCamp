@@ -72,7 +72,7 @@ if (a == 1) {
 printf ("%d\n", ans);
 ```
 
-Here's the above code re-written using nested ternary operator:
+Here's the above code re-written using nested ternary operators:
 
 ```c
 int a = 1, b = 2, ans;
