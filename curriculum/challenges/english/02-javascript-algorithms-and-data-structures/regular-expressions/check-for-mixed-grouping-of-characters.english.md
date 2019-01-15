@@ -7,7 +7,7 @@ challengeType: 1
 ## Description
 <section id='description'>
 Sometimes we want to check for groups of characters using a Regular Expression, to achieve this task we use the round brackets <code>()</code>.
-If you want to find either <code>"Hello"</code> or <code>"Halo"</code> in a string, you could use the following Regular Expression: <code>/H(el|a)lo/</code>
+If you want to find either <code>"Penguin"</code> or <code>"Pumpkin"</code> in a string, you could use the following Regular Expression: <code>/P(engu|umpk)in/g</code>
 Then you can test the code using the <code>.test()</code> method to find whether the requires character(s)/string(s) are in the test string or not.
 <blockquote>let testStr = "freeCodeCamp";<br>let testRegex = /H(el|a)lo/;<br>testRegex.test(testStr);<br>// Returns true</blockquote>
 </section>
@@ -25,8 +25,8 @@ Then fix the code so that the RegEx that you have created is checked in a string
 tests:
   - text: You should use <code>()</code> in the regex.
     testString: assert(code.match(/\(.*\)/g), 'You should use <code>()</code> in the regex.');
-  - text: Your regex should check for the presence of either of <code>Penguin</code> or <code>Pumpkin</code> in the string.
-    testString: assert(code.match(/\/P\(engu\|umpk)in\/g/g), 'Your regex should check for the presence of either of <code>JavaScript</code> or <code>Python</code> in the string.');
+  - text: Your regex should check for the presence of either of <code>Hello</code> or <code>Halo</code> in the string.
+    testString: assert(code.match(/\/H\(((el\|a)|(a\|el))\)lo\/g/g), 'Your regex should check for the presence of either of <code>JavaScript</code> or <code>Python</code> in the string.');
   - text: You should use <code>.test()</code> to test the regex.
     testString: assert(code.match(/myRegex.test\(\s*myString\s*\);?/), 'You should use <code>.test()</code> to test the regex.');
   - text: Your result should return <code>true</code>.
