@@ -3,7 +3,7 @@ title: Useful screenshot shortcuts
 ---
 
 ### DevTools screenshot functionality
-When using Chrome developer tools, it can be useful to capture a screenshot of the entire page. And while there are add-ons to achieve this, google chrome has it's own functionality built in.
+When using Chrome developer tools, it can be useful to capture a screenshot of the entire page. And while there are add-ons to achieve this, google chrome has its own functionality built in.
 
 ## Steps
 1. Open Chrome Devtools

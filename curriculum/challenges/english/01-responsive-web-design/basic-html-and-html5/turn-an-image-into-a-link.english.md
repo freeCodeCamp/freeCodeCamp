@@ -15,7 +15,7 @@ Remember to use <code>#</code> as your <code>a</code> element's <code>href</code
 
 ## Instructions
 <section id='instructions'>
-Place the existing image element within an anchor element.
+Place the existing image element within an <code>anchor</code> element.
 Once you've done this, hover over your image with your cursor. Your cursor's normal pointer should become the link clicking pointer. The photo is now a link.
 </section>
 

@@ -11,25 +11,23 @@ With Agile, the emphasis is on "agility" - being able to quickly respond to feed
 
 ![A comic from Commitstrip.com showing a product manager explaining to a developer that they are switching to agile, but then asking the developer to plan everything up front](https://www.commitstrip.com/wp-content/uploads/2017/01/Strip-Budegt-fixe-pour-projet-flexible-english650-final.jpg)
 
-The agile software development places its emphasis on four core values.
+The agile software development places its emphasis on four core values:
 1. Preference on team and individual interactions over tools and processes.
 2. A working software over exhaustive documentation.
 3. Collaboration with customer is given more importance than contract negotiations.
 4. Response to changes over following a plan.
 
-There are many different flavors of agile, including Scrum and Extreme Programming.
+There are many different flavors of Agile, including Scrum and Extreme Programming.
 
 ![Various methods present in Agile testing or Agile Testing Methodologies](https://www.guru99.com/images/11-2014/agile_Processesv1_2.png)
 
 ### More information
 
-[Agile Alliance's Homepage](https://www.agilealliance.org/)
-
-
-## Quick Refrences and Sources for Reviewing Agile Methologies:
-
-1. https://www.dummies.com/careers/project-management/agile-project-management-for-dummies-cheat-sheet/
-2. https://www.altexsoft.com/whitepapers/agile-project-management-best-practices-and-methodologies/
-3. http://agilemethodology.org/
-
+- [Agile Alliance's Homepage](https://www.agilealliance.org/)
+- [dummies.com - Agile cheat sheet](https://www.dummies.com/careers/project-management/agile-project-management-for-dummies-cheat-sheet/)
+- [altexsoft.com - Project Management best practices](https://www.altexsoft.com/whitepapers/agile-project-management-best-practices-and-methodologies/)
+- [agilemethodology.org](http://agilemethodology.org/)
+- [A Beginners Guide To Understanding The Agile Method](https://linchpinseo.com/the-agile-method/)
+- [zenkit.com - Agile methodology overview](https://zenkit.com/en/blog/agile-methodology-an-overview/)
+- [Agile methodology - Visual](https://blog.capterra.com/wp-content/uploads/2016/01/agile-methodology.png)
 
