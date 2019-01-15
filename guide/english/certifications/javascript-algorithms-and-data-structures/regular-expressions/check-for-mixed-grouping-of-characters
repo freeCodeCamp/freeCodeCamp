@@ -14,7 +14,7 @@ The code footprint should be as small as possible.
 ### Solution
 
 ```javascript
-let myString = "This is FreeCodeCamp";
+let myString = "Hello from the other side";
 let myRegex = /H(a|el)lo/g;
 let result = myRegex.test(myString);
 ```
