@@ -19,6 +19,7 @@ import { isBrowser } from '../../../utils';
 import OfflineWarning from '../OfflineWarning';
 import Flash from '../Flash';
 import Header from '../Header';
+import Footer from '../Footer';
 
 import './global.css';
 import './layout.css';
@@ -149,13 +150,14 @@ class DefaultLayout extends Component {
           ]}
         />
         <Header disableSettings={disableSettings} />
-        <div className={landingPage && 'landing-page'}>
+        <div className={`default-layout ${landingPage ? 'landing-page' : ''}`}>
           <OfflineWarning isOnline={isOnline} isSignedIn={isSignedIn} />
           {hasMessages ? (
             <Flash messages={flashMessages} onClose={removeFlashMessage} />
           ) : null}
           {children}
         </div>
+        <Footer/>
       </Fragment>
     );
   }
