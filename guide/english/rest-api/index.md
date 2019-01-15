@@ -36,8 +36,16 @@ resources via hyperlinks.
 
 *Note while PUT operations either client or server can generate id's*
 
-- #### Nouns are good, Verbs are bad
+- #### Versioning as Part of URL Design
+  - Use the prefix **V#** to indicate the version of your URL like `api/v1/people` or `api/V2/people`.
+  - Never use a dot notion as prefix like `api/v1.2/people` to indiate your version. By doing that it will confuse the developer using the API. When there is frequent updates or depreciation of API versions.
 
+- #### Limiting PUT and POST requests
+  - Due to similarity of PUT to POST operation, which could be easily exploited to create a new record. 
+  - Use POST requests to **create** records, whereas PUT request to be **updating** of existing records.
+  - Create a checker function to check for PUT request that is used to **create** new records. 
+
+- #### Nouns are good, Verbs are bad
   - Use nouns to refer resources like `cars`, `fruits` etc.
   - Use verbs for action declarations `convertMilesToKms`, `getNutritionalValues`
 
@@ -141,4 +149,3 @@ A detailed explanation has been given on Quick Code blog on how to use Postman f
 * [The never-ending REST API design debate by Guillaume Laforge](https://www.youtube.com/watch?v=48azd2VqtP0)
 * [HTTP status codes](https://httpstatuses.com/)
 * [Documenting APIs: A guide for technical writers](https://idratherbewriting.com/learnapidoc/)
-
