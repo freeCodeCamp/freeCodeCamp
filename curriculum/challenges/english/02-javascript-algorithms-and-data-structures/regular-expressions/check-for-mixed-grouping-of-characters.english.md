@@ -14,7 +14,7 @@ Then check whether the desired string groups are in the test string by using the
 
 ## Instructions
 <section id='instructions'>
-Fix the regex so that it checks for either <code>Hello</code> or <code>Halo</code> in a case sensitive manner.
+Fix the regex so that it checks for the names of <code>Franklin Roosevelt</code> or <code>Eleanor Roosevelt</code> in a case sensitive manner and it should make concessions for middle names.
 Then fix the code so that the regex that you have created is checked against <code>myString</code> and either <code>true</code> or <code>false</code> is returned depending on whether the regex matches.
 </section>
 
@@ -23,12 +23,14 @@ Then fix the code so that the regex that you have created is checked against <co
 
 ```yml
 tests:
-  - text: Your regex <code>myRegex</code> should return <code>true</code> for the string <code>"Hello"</code>
-    testString: assert(myRegex.test('Hello'), 'Your regex <code>myRegex</code> should return <code>true</code> for the string <code>"Hello"</code>');
-  - text: Your regex <code>myRegex</code> should return <code>true</code> for the string <code>"Halo"</code>
-    testString: assert(myRegex.test('Halo'), 'Your regex <code>myRegex</code> should return <code>true</code> for the string <code>"Halo"</code>');
-  - text: Your regex <code>myRegex</code> should return <code>false</code> for the string <code>"Hell"</code>
-    testString: assert(!myRegex.test('Hell'), 'Your regex <code>myRegex</code> should return <code>false</code> for the string <code>"Hell"</code>');
+  - text: Your regex <code>myRegex</code> should return <code>true</code> for the string <code>"Franklin Roosevelt"</code>
+    testString: assert(myRegex.test('Franklin Roosevelt'), 'Your regex <code>myRegex</code> should return <code>true</code> for the string <code>"Franklin Roosevelt"</code>');
+  - text: Your regex <code>myRegex</code> should return <code>true</code> for the string <code>"Franklin D. Roosevelt"</code>
+    testString: assert(myRegex.test('Franklin D. Roosevelt'), 'Your regex <code>myRegex</code> should return <code>true</code> for the string <code>"Franklin D. Roosevelt"</code>');
+  - text: Your regex <code>myRegex</code> should return <code>true</code> for the string <code>"Eleanor Roosevelt"</code>
+    testString: assert(myRegex.test('Eleanor Roosevelt'), 'Your regex <code>myRegex</code> should return <code>true</code> for the string <code>"Eleanor Roosevelt"</code>');
+  - text: Your regex <code>myRegex</code> should return <code>false</code> for the string <code>"Franklin Rosevelt"</code>
+    testString: assert(!myRegex.test('Franklin Rosevelt'), 'Your regex <code>myRegex</code> should return <code>false</code> for the string <code>"Franklin Rosevelt"</code>');
   - text: You should use <code>.test()</code> to test the regex.
     testString: assert(code.match(/myRegex.test\(\s*myString\s*\)/), 'You should use <code>.test()</code> to test the regex.');
   - text: Your result should return <code>true</code>.
@@ -43,7 +45,7 @@ tests:
 <div id='js-seed'>
 
 ```js
-let myString = "Hello from the other side";
+let myString = "Eleanor Roosevelt";
 let myRegex = /False/; // Change this line
 let result = false; // Change this line
 // After passing the challenge experiment with myString and see how the grouping works
@@ -59,8 +61,8 @@ let result = false; // Change this line
 <section id='solution'>
 
 ```js
-let myString = "Hello from the other side";
-let myRegex = /H(a|el)lo/g;
+let myString = "Eleanor Roosevelt";
+let myRegex = /(Franklin|Eleanor).*Roosevelt/g;
 let result = myRegex.test(myString);
 ```
 </section>

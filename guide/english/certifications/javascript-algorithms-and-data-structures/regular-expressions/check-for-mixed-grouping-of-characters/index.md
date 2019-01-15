@@ -9,12 +9,16 @@ Use `a|b` to check for either `a` or `b`.
 
 ### Hint 2
 
-Your RegEx should use mixed grouping like `/P(engu|umpk)in/g`.
+Your regex should use mixed grouping like `/P(engu|umpk)in/g`.
+
+### Hint 3
+
+Use `.*` to allow for middle names.
 
 ### Solution
 
 ```javascript
-let myString = "Hello from the other side";
-let myRegex = /H(a|el)lo/g;
+let myString = "Eleanor Roosevelt";
+let myRegex = /(Franklin|Eleanor).*Roosevelt/g;
 let result = myRegex.test(myString);
 ```
