@@ -50,7 +50,7 @@ const bar = "foo";
 <div id='js-setup'>
 
 ```js
-window.exports = function(){};
+self.exports = function(){};
 ```
 
 </div>
