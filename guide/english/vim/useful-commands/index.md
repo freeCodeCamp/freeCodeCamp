@@ -94,6 +94,9 @@ __Undo__: Press `u` or type in `:undo` and press `Enter`.
 
 __Redo__: Press `U` (`Shift` + `u`) or type in `:redo` and press `Enter`.
 
+## Repeat last change
+To repeat the last change made to a file, press `.` in __Normal Mode__.
+
 ## Opening a file in a specific line
 - vi filename +n, where n is the line number
 
@@ -123,7 +126,7 @@ Important: if you want to replace the first occurence of the word, remove the `g
 
 For total beginners, Vim comes with a built in tutorial! You can access it by running `vimtutor` from your terminal and this will launch an interactive tutorial on *how to get started with Vim* (takes around 15 minutes to work through).
 
-If you are not as confident in English, you can lanch `vimtutor` in your language of choice. For example `vimtutor fr` will launch the tutorial in french!
+If you are not as confident in English, you can launch `vimtutor` in your language of choice. For example `vimtutor fr` will launch the tutorial in french!
 
 ## Other Useful Commands
 - `gg=G` fixes the indentation of the entire file
