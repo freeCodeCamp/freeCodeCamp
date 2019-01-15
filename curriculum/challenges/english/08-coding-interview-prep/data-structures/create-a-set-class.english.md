@@ -70,7 +70,18 @@ function Set() {
 
 
 ```js
-function Set() {var collection = []; this.has = function(e){return(collection.indexOf(e) !== -1);};this.values = function() {return collection;};this.add = function(element) {if (!this.has(element)) {collection.push(element);return true;} else {return false;}};}
+function Set() {
+    var collection = [];
+    this.has = function(element) {
+        return (collection.indexOf(element) !== -1);
+    };
+    this.values = function() {
+        return collection;
+    };
+    this.add = function(el) {
+        return this.has(el) ? false : Boolean(collection.push(el));
+    }
+}
 ```
 
 </section>
