@@ -9,7 +9,7 @@ Use `|` to check for either....or.
 
 ### Hint 2
 
-The code footprint should be as small as possible.
+Your RegEx should use mixed grouping like `/P(engu|umpk)in/g`.
 
 ### Solution
 
