@@ -15,7 +15,7 @@ Chef enables programmers and system administrators to work together. Instead of 
 <p>The client will then check in every now and again to make sure that no changes have occurred, and nothing needs to change. If it does, then the client deals with it. Patches and updates can be rolled out over your entire infrastructure by changing the recipe. There is no need to interact with each machine individually.</p>
 
 #### Chef Configuration
-![Image Title](https://regmedia.co.uk/2015/10/07/chef_configuration_management.jpg)
+![Image Title](https://regmedia.co.uk/2015/10/07/chef_configuration_management.jpg "Chef Configuration process chart")
 
 
 #### More Information:
