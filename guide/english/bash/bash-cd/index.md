@@ -6,8 +6,13 @@ title: Bash cd
 
 **Change Directory** to the path specified, for example `cd projects`.
 
-There are a few really helpful arguments to help with this:
+### Usage
 
+```bash
+cd [dir]
+```
+
+There are a few really helpful arguments to help with this:
 - `.` refers to the current directory, such as `./projects`
 - `..` can be used to move up one folder, use `cd ..`, and can be combined to move up multiple levels `../../my_folder`
 - `-` takes you back to the previous directory you were working on. For example, `cd -`
@@ -17,6 +22,13 @@ There are a few really helpful arguments to help with this:
 - `~[number]` will cd to that entry from the output of `dirs` directories can be pushed on poped to the 'dirs' stack using `pushd` and `popd` respectively.
 - Typing only `cd` will move to the home directory works same as `cd ~`
 - Typing 'pwd' will show you which directory you are currently working in.
+
+### Example
+
+Change directory to `projects` folder:
+```bash
+cd projects
+```
 
 ### More Information:
 * [Wikipedia](https://en.wikipedia.org/wiki/Cd_(command))
