@@ -1,92 +1,99 @@
+const config = require('../../../config');
+// config should be imported before importing any other file
 const mongoose = require('mongoose');
-
-const { PRtest, INFOtest } = require('../../test/utils/testmodels');
-const PR = ( process.env.TEST_ENV ? PRtest : require('../models').PR );
-const INFO = ( process.env.TEST_ENV ? INFOtest : require('../models').INFO );
-// const { getFilenames } = require('../../../lib/get-prs');
 
 // added to prevent deprecation warning when findOneAndUpdate is used
 mongoose.set('useFindAndModify', false);
-// const updateDb = async(
-  /* {
-  github,
-  issue,
-  payload: {
-    action,
-    pull_request: {
+
+// connect to mongo db
+const mongoUri = config.mongo.host;
+const db = mongoose.connect(
+  mongoUri,
+  { useNewUrlParser: true }
+);
+
+const { PR, INFO } = require('../models');
+const { getPRs, getUserInput, getFilenames } = require('../../../lib/get-prs');
+const { rateLimiter } = require('../../../lib/utils');
+
+const lastUpdate = new Date();
+
+db.then(async () => {
+  const oldPRs = await PR.find({}).then(data => data);
+  // Need to add logic to stop further processing if there oldPRs does
+  // not contain any data
+  const oldIndices = oldPRs.reduce((obj, { _id }, index) => {
+    obj[_id] = index;
+    return obj;
+  }, {});
+
+  const { totalPRs, firstPR, lastPR } = await getUserInput('all');
+  const prPropsToGet = ['number', 'user', 'title', 'updated_at'];
+  const { openPRs } = await getPRs(totalPRs, firstPR, lastPR, prPropsToGet);
+  let count = 0;
+  const newIndices = {};
+  for (let i = 0; i < openPRs.length; i++) {
+    const {
       number,
       updated_at: updatedAt,
       title,
       user: { login: username }
+    } = openPRs[i];
+
+    newIndices[number] = i;
+    let oldPrData = oldPRs[oldIndices[number]];
+    const oldUpdatedAt = oldPrData ? oldPrData.updatedAt : null;
+    if (!oldIndices.hasOwnProperty(number)) {
+      // insert a new pr
+      const filenames = await getFilenames(number);
+      await PR.create({ _id: number, updatedAt, title, username, filenames });
+      console.log('added PR# ' + number);
+    } else if (updatedAt > oldUpdatedAt) {
+      // update an existing pr
+      const filenames = await getFilenames(number);
+      count++;
+      await PR.findOneAndUpdate(
+        { _id: number },
+        { updatedAt, title, username, filenames }
+      );
+      console.log('updated PR #' + number);
+    }
+    if (count > 4000) {
+      await rateLimiter(2350);
     }
   }
-}*/
-const updateDb = async(context) => {
-  const payload = context.payload;
-  const action = payload.action;
-  const pullRequest = payload.pull_request;
-  const number = pullRequest.number;
-  const updatedAt = pullRequest.updated_at;
-  const title = pullRequest.title;
-  const username = pullRequest.user.login;
-  const lastUpdate = new Date();
-
-  const existingPR = await PR.findOne({ _id: number }).then(doc => doc)
-    .catch(err => console.log(err));
-
-  if (action === 'closed') {
-    await PR.deleteOne({ _id: number })
-      .then(() => console.log('delete PR #' + number))
-      .catch(err => {
-        // need to log the payload to a file for later manual update
-        throw `Failed to remove PR from db
-        ${err.message}
-        `;
-     });
-  } else {
-    const { data: files } = await context.github.pullRequests.listFiles(
-      context.issue()
-    ).then(data => data);
-    const filenames = files.map(file => file.filename);
-    await PR.updateOne(
-      { _id: number },
-      { updatedAt: updatedAt,
-        title: title,
-        username: username,
-        filenames: filenames
-      },
-      { upsert: true })
-      .then(() => console.log('added or updated PR #' + number))
-      .catch(err => {
-        // need to log the payload to a file for later manual update
-        throw `Failed to add PR to db
-        ${err.message}
-        `;
-    });
+  for (let j = 0; j < oldPRs.length; j++) {
+    const { _id: number } = oldPRs[j];
+    if (!newIndices.hasOwnProperty(number)) {
+      // delete pr because it is no longer open
+      await PR.deleteOne({ _id: number });
+      console.log('deleted PR #' + number);
+    }
   }
-
-  // update info collection
-  const [ { firstPR, lastPR }] = await PR.aggregate(
-    [{
-      $group: {
-        _id: null,
-        firstPR: { $min: '$_id' },
-        lastPR: { $max: '$_id' }
-      }
-    }]
-  );
-  const numPRs = await PR.count();
-  const info = {
-    lastUpdate,
-    numPRs,
-    prRange: `${firstPR}-${lastPR}`
-  };
-  await INFO.updateOne(info)
-    .catch(err => {
-      console.log(err);
-    });
-
-  return existingPR;
-};
-
-module.exports = { updateDb };
+})
+  .then(async () => {
+    // update info collection
+    const [ { firstPR, lastPR }] = await PR.aggregate(
+      [{
+        $group: {
+          _id: null,
+          firstPR: { $min: '$_id' },
+          lastPR: { $max: '$_id' }
+        }
+      }]
+    );
+    const numPRs = await PR.count();
+    const info = {
+      lastUpdate,
+      numPRs,
+      prRange: `${firstPR}-${lastPR}`
+    };
+    await INFO.updateOne(info)
+      .catch(err => {
+        console.log(err);
+      });
+    mongoose.connection.close();
+  })
+  .catch(err => {
+    console.log(err);
+  });
