@@ -14,6 +14,15 @@ REST was developed to provide a uniform interface for
  - Self-descriptive messages
  - Using Hypermedia as the Engine of Application State (HATEOS)
 
+REST is not an architecture, but a set of design criteria.
+Resource-Oriented Architecture (ROA) is a RESTful
+architecture that provides a common sense set of rules and a
+step-by-step procedure for designing RESTful Web services
+following these design criteria. Each resource has a name
+(i.e. a URI) and a representation, and it may be linked to other
+resources via hyperlinks.
+
+
 ### Best Practices
 
  - #### Basics
@@ -27,8 +36,16 @@ REST was developed to provide a uniform interface for
 
 *Note while PUT operations either client or server can generate id's*
 
-- #### Nouns are good, Verbs are bad
+- #### Versioning as Part of URL Design
+  - Use the prefix **V#** to indicate the version of your URL like `api/v1/people` or `api/V2/people`.
+  - Never use a dot notion as prefix like `api/v1.2/people` to indiate your version. By doing that it will confuse the developer using the API. When there is frequent updates or depreciation of API versions.
 
+- #### Limiting PUT and POST requests
+  - Due to similarity of PUT to POST operation, which could be easily exploited to create a new record. 
+  - Use POST requests to **create** records, whereas PUT request to be **updating** of existing records.
+  - Create a checker function to check for PUT request that is used to **create** new records. 
+
+- #### Nouns are good, Verbs are bad
   - Use nouns to refer resources like `cars`, `fruits` etc.
   - Use verbs for action declarations `convertMilesToKms`, `getNutritionalValues`
 
@@ -117,10 +134,18 @@ REST was developed to provide a uniform interface for
   returns `4xx` or message 
   `Expecting int car id /car/id got string car/MH09234 `
 
+### REST API Development Environment and Testing:
 
-### **Further reading**
-[How to Design Great APIs - Parse Developer Day 2013](https://www.youtube.com/watch?v=qCdpTji8nxo)
+Postman is widely used and famous for manual and automated REST/RESTful API Tests.
+Link: [Get Postman](https://www.getpostman.com/)
 
-[The never-ending REST API design debate by Guillaume Laforge](https://www.youtube.com/watch?v=48azd2VqtP0)
+A detailed explanation has been given on Quick Code blog on how to use Postman for the best usage:
+[Top Tutorials To Learn POSTMAN For REST API Testing](https://medium.com/quick-code/top-tutorials-to-learn-postman-for-rest-api-testing-3bdf9788e0ba)
 
-[HTTP status codes](https://httpstatuses.com/)
+#### More Information
+
+
+* [How to Design Great APIs - Parse Developer Day 2013](https://www.youtube.com/watch?v=qCdpTji8nxo)
+* [The never-ending REST API design debate by Guillaume Laforge](https://www.youtube.com/watch?v=48azd2VqtP0)
+* [HTTP status codes](https://httpstatuses.com/)
+* [Documenting APIs: A guide for technical writers](https://idratherbewriting.com/learnapidoc/)
