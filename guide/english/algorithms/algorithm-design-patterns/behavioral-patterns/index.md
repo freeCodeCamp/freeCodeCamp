@@ -4,7 +4,7 @@ title: Behavioral Patterns
 
 ## Behavioral patterns
 
-Behavioral design patterns are design patterns that identify common communication problems between objects and realize these patterns. By doing so, these patterns increase flexibility in carrying out this communication, making the software more reliable and easy to maintain.
+Behavioral patterns are design patterns that identify common communication problems between objects and realize these patterns. In so doing, these patterns increase flexibility in carrying out communication, making the software more reliable and easy to mantain.
 
 Examples of this type of design pattern include:
 
