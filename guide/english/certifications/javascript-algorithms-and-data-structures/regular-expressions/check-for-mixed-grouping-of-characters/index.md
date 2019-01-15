@@ -5,7 +5,7 @@ title: Check For Mixed Grouping of Characters
 
 ### Hint 1
 
-Use `|` to check for either....or.
+Use `a|b` to check for either `a` or `b`.
 
 ### Hint 2
 
