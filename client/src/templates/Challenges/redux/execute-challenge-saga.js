@@ -89,7 +89,7 @@ function* executeJSChallengeSaga(proxyLogger) {
     return yield call(executeTests, async(testString, testTimeout) => {
       try {
         return await testWorker.execute(
-          { script: build + '\n' + testString, code, sources },
+          { build, testString, code, sources },
           testTimeout
         );
       } finally {
