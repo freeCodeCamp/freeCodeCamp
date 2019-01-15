@@ -1,4 +1,3 @@
-import { throwers } from '../rechallenge/throwers';
 import { transformers } from '../rechallenge/transformers';
 import { cssToHtml, jsToHtml, concatHtml } from '../rechallenge/builders.js';
 
@@ -27,9 +26,8 @@ const applyFunction = fn =>
         return newFile;
       }
       return file;
-    } catch {
-      // return { error };
-      return file;
+    } catch (error) {
+      return { ...file, error };
     }
   };
 
@@ -55,7 +53,7 @@ export function buildDOMChallenge(files, meta = {}) {
   const { required = [], template = '' } = meta;
   const finalRequires = [...globalRequires, ...required, ...frameRunner];
   const toHtml = [jsToHtml, cssToHtml];
-  const pipeLine = composeFunctions(...throwers, ...transformers, ...toHtml);
+  const pipeLine = composeFunctions(...transformers, ...toHtml);
   const finalFiles = Object.keys(files)
     .map(key => files[key])
     .map(pipeLine);
@@ -68,7 +66,7 @@ export function buildDOMChallenge(files, meta = {}) {
 }
 
 export function buildJSChallenge(files) {
-  const pipeLine = composeFunctions(...throwers, ...transformers);
+  const pipeLine = composeFunctions(...transformers);
   const finalFiles = Object.keys(files)
     .map(key => files[key])
     .map(pipeLine);
