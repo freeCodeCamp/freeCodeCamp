@@ -4,7 +4,7 @@ title: Build a Personal Portfolio Webpage
 isRequired: true
 challengeType: 3
 videoUrl: ''
-localeTitle: 建立个人投资组合网页
+localeTitle: 建立个人作品集网页
 ---
 
 ## Description
