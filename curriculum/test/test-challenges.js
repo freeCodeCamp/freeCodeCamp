@@ -320,13 +320,12 @@ async function evaluateJsTest({ solution, files, test }) {
 
   const { build, sources } = await buildJSChallenge(files);
   const code = sources && 'index' in sources ? sources['index'] : '';
-  const script = build + '\n' + test.testString;
 
   const testWorker = createWorker('test-evaluator');
 
   try {
     const { pass, err } = await testWorker.execute(
-      { script, code, sources },
+      { testString: test.testString, build, code, sources },
       5000
     );
     if (!pass) {
