@@ -10,6 +10,8 @@ User stories should be written in non-technical terms from the perspective of th
 
 One common mistake that is made when writing user stories is writing from the perspective of the developer or the solution. Be sure to state the goal and the stakeholder need, and the functional requirements come later.
 
+User stories are often written on sticky notes and put on walls where they are visible to the entire team. Alternatively, they can also be captured using story mapping or project management tools, such as StoriesOnBoard or JIRA.
+
 #### Sizing a User Story: Epics and Smaller Stories
 An epic is a big, coarse-grained story. It is typically broken into several user stories over time—leveraging the user feedback on early prototypes and product increments. You can think of it as a headline and a placeholder for more detailed stories.
 
