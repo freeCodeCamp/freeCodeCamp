@@ -10,7 +10,7 @@ The harsh reality of it is that most of the open sources out there are not quite
 
 ## Lessons Learned
 
-Even though the above paragraph might seem a little off putting do not fret. Yes, Open Source Projects are nothing to take lightly its  a serious business. Take your time, read the documentation or readme's, do research, and never ever give up or stop learning. No matter if you are a beginner or a seasoned developer, there will always be something new to learn.
+Even though the above paragraph might seem a little off putting, do not fret. Open Source Projects are nothing to take lightly, it's a serious business so take your time, read the documentation and readme's, do research, and never ever give up or stop learning. No matter if you are a beginner or a seasoned developer, there will always be something new to learn.
 
 ## Here are a couple of articles to keep you motivated:
 * [I made my first open source contribution within 200 days (and how you can too)](https://medium.freecodecamp.org/i-made-my-first-open-source-contribution-within-200-days-and-how-you-can-too-4d5bdbd63fad)
