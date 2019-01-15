@@ -30,7 +30,7 @@ tests:
   - text: Your regex should return <code>false</code> for the string <code>"Hell"</code>.
     testString: assert(!myRegex.test('Hell'), 'Your regex should return <code>false</code> for the string <code>"Hell"</code>.');
   - text: You should use <code>.test()</code> to test the regex.
-    testString: assert(code.match(/myRegex.test\(.*\), 'You should use <code>.test()</code> to test the regex.');
+    testString: assert(code.match(/myRegex.test\(\s*myString\s*\)/), 'You should use <code>.test()</code> to test the regex.');
   - text: Your result should return <code>true</code>.
     testString: assert(result === true, 'Your result should return <code>true</code>.');
 ```
