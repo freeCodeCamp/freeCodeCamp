@@ -73,15 +73,25 @@ db.then(async () => {
 })
   .then(async () => {
     // update info collection
-    const prs = await PR.find({});
-    const firstPR = prs[0]._id;
-    const lastPR = prs[prs.length - 1]._id;
+    const [ { firstPR, lastPR }] = await PR.aggregate(
+      [{
+        $group: {
+          _id: null,
+          firstPR: { $min: '$_id' },
+          lastPR: { $max: '$_id' }
+        }
+      }]
+    );
+    const numPRs = await PR.count();
     const info = {
       lastUpdate,
-      numPRs: prs.length,
+      numPRs,
       prRange: `${firstPR}-${lastPR}`
     };
-    await INFO.updateOne(info);
+    await INFO.updateOne(info)
+      .catch(err => {
+        console.log(err);
+      });
     mongoose.connection.close();
   })
   .catch(err => {
