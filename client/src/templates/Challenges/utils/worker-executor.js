@@ -1,7 +1,10 @@
-export default class WorkerExecutor {
+import { homeLocation } from '../../../../config/env.json';
+
+class WorkerExecutor {
   constructor(workerName) {
     this.workerName = workerName;
     this.worker = null;
+    this.observers = {};
 
     this.execute = this.execute.bind(this);
     this.killWorker = this.killWorker.bind(this);
@@ -10,7 +13,7 @@ export default class WorkerExecutor {
 
   getWorker() {
     if (this.worker === null) {
-      this.worker = new Worker(`js/${this.workerName}.js`);
+      this.worker = new Worker(`${homeLocation}/js/${this.workerName}.js`);
     }
 
     return this.worker;
@@ -36,6 +39,13 @@ export default class WorkerExecutor {
 
       // Handle result
       worker.onmessage = e => {
+        if (e.data && e.data.type) {
+          const observers = this.observers[e.data.type] || [];
+          for (const observer of observers) {
+            observer(e.data.data);
+          }
+          return;
+        }
         clearTimeout(timeoutId);
         resolve(e.data);
       };
@@ -46,4 +56,22 @@ export default class WorkerExecutor {
       };
     });
   }
+
+  on(type, callback) {
+    const observers = this.observers[type] || [];
+    observers.push(callback);
+    this.observers[type] = observers;
+  }
+
+  remove(type, callback) {
+    const observers = this.observers[type] || [];
+    const index = observers.indexOf(callback);
+    if (index !== -1) {
+      observers.splice(index, 1);
+    }
+  }
+}
+
+export default function createWorkerExecutor(workerName) {
+  return new WorkerExecutor(workerName);
 }

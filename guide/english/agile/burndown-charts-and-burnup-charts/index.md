@@ -5,7 +5,7 @@ title: Burndown Charts and Burnup Charts
 
 Burndown and burnup charts are used to measure progress of a project-- usually a development sprint under the Agile methodology. Both charts visually represent work versus time. 
 
-Burndown charts show how much work is left to be done versus the amount of time remaining. The Y axis represents work left to be done-- usually relating to a time estimate assigned to each task, e.g. story points-- and the X axis represents time left. Two lines are used; the first-- "Ideal Work Remaining Line"-- represents an ideal burndown, where each day an amount of work proportional to the total amount of time is completed, resulting in a straight line. The second "Actual Work Remaining Line" is used to plot actual progress as taks move through development to a done state. An example of a burndown chart is shown below.
+Burndown charts show how much work is left to be done versus the amount of time remaining. The Y axis represents work left to be done-- usually relating to a time estimate assigned to each task, e.g. story points-- and the X axis represents time left. Two lines are used; the first-- "Ideal Work Remaining Line"-- represents an ideal burndown, where each day an amount of work proportional to the total amount of time is completed, resulting in a straight line. The second "Actual Work Remaining Line" is used to plot actual progress as tasks move through development to a done state. An example of a burndown chart is shown below.
 
 ![alt text](https://upload.wikimedia.org/wikipedia/commons/8/8c/Burn_down_chart.png "Image Source: Wikipedia")
 

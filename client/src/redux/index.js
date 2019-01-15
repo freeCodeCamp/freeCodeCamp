@@ -15,7 +15,6 @@ import failedUpdatesEpic from './failed-updates-epic';
 import updateCompleteEpic from './update-complete-epic';
 
 import { types as settingsTypes } from './settings';
-import { types as challengeReduxTypes } from '../templates/Challenges/redux';
 
 export const ns = 'app';
 
@@ -52,6 +51,7 @@ export const types = createTypes(
     'hardGoTo',
     'openDonationModal',
     'onlineStatusChange',
+    'submitComplete',
     'updateComplete',
     'updateFailed',
     ...createAsyncTypes('fetchUser'),
@@ -86,6 +86,7 @@ export const onlineStatusChange = createAction(types.onlineStatusChange);
 // used for things like /signin and /signout
 export const hardGoTo = createAction(types.hardGoTo);
 
+export const submitComplete = createAction(types.submitComplete);
 export const updateComplete = createAction(types.updateComplete);
 export const updateFailed = createAction(types.updateFailed);
 
@@ -278,7 +279,7 @@ export const reducer = handleActions(
         error: payload
       }
     }),
-    [challengeReduxTypes.submitComplete]: (state, { payload: { id } }) => {
+    [types.submitComplete]: (state, { payload: { id } }) => {
       const { appUsername } = state;
       return {
         ...state,

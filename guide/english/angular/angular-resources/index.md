@@ -32,14 +32,12 @@ A collection of helpful Angular resources
 *   <a href='https://material.angular.io/' target='_blank' rel='nofollow'>Angular Material</a> - Official Library of Angular Components Implementing Material Design
 *   <a href='http://www.sitepoint.com/practical-guide-angularjs-directives/' target='_blank' rel='nofollow'>Directives</a> - Excellent guide going into detail on Angular Directives (Part 1)
 
-
-
 ### Courses
 
 *	<a href='https://egghead.io/browse/frameworks/angular' target='_blank' rel='nofollow'>Egghead.io Angular Courses ($)</a>
 *	<a href='https://frontendmasters.com/courses/building-apps-angular' target='_blank' rel='nofollow'>FrontendMasters - Building Awesomer Apps with Angular</a>
 *	<a href='https://ultimateangular.com/' target='_blank' rel='nofollow'>Ultimate Angular - Todd Motto</a>
-* <a href='https://www.udemy.com/the-complete-guide-to-angular-2/' target='_blank' rel='nofollow'>Angular 6 (formerly Angular 2) - The Complete Guide($)  Maximilian Schwarzmüller </a>
+* <a href='https://www.udemy.com/the-complete-guide-to-angular-2/' target='_blank' rel='nofollow'>Angular 7 (formerly Angular 2) - The Complete Guide($)  Maximilian Schwarzmüller </a>
 * <a href='https://scrimba.com/g/gyourfirstangularapp' target='_blank' rel='nofollow'>Build your first Angular app (Free 33-part course) - Dan Wahlin </a>
 * <a href='https://angular-2-training-book.rangle.io/' target='_blank' rel='nofollow'>Rangle's Angular 2 Training Book</a> - Online version of Rangle's excellent Angular book
 

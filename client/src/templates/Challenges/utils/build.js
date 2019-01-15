@@ -1,19 +1,12 @@
-import { of } from 'rxjs';
-import { flow } from 'lodash';
-
 import { throwers } from '../rechallenge/throwers';
-import {
-  challengeFilesSelector,
-  isJSEnabledSelector,
-  challengeMetaSelector,
-  backendFormValuesSelector
-} from '../redux';
-import { transformers, testJS$JSX } from '../rechallenge/transformers';
+import { transformers } from '../rechallenge/transformers';
 import { cssToHtml, jsToHtml, concatHtml } from '../rechallenge/builders.js';
-import { isPromise } from './polyvinyl';
 
-const frameRunner =
-  "<script src='/js/frame-runner.js' type='text/javascript'></script>";
+const frameRunner = [
+  {
+    src: '/js/frame-runner.js'
+  }
+];
 
 const globalRequires = [
   {
@@ -23,97 +16,81 @@ const globalRequires = [
   }
 ];
 
-function filterJSIfDisabled(state) {
-  const isJSEnabled = isJSEnabledSelector(state);
-  return file => !(testJS$JSX(file) && !isJSEnabled);
-}
-
-const applyFunction = fn => file => {
-  if (file.error) {
-    return file;
-  }
-  try {
-    let newFile = fn(file);
-    if (typeof newFile !== 'undefined') {
-      if (isPromise(newFile)) {
-        newFile = newFile.catch(() => {
-          // file.error = e.message;
-          return file;
-        });
+const applyFunction = fn =>
+  async function(file) {
+    try {
+      if (file.error) {
+        return file;
       }
-      return newFile;
+      const newFile = await fn.call(this, file);
+      if (typeof newFile !== 'undefined') {
+        return newFile;
+      }
+      return file;
+    } catch {
+      // return { error };
+      return file;
     }
-    return file;
-  } catch {
-    // file.error = e.message;
-    return file;
-  }
-};
+  };
 
-const applyFunctions = fns => file =>
-  fns.reduce((file, fn) => {
-    if (isPromise(file)) {
-      return file.then(applyFunction(fn));
-    }
-    return applyFunction(fn)(file);
-  }, file);
-const toHtml = [jsToHtml, cssToHtml];
-const pipeLine = flow(
-  applyFunctions(throwers),
-  applyFunctions(transformers),
-  applyFunctions(toHtml)
-);
+const composeFunctions = (...fns) =>
+  fns.map(applyFunction).reduce((f, g) => x => f(x).then(g));
 
-export function buildFromFiles(state) {
-  const files = challengeFilesSelector(state);
-  const { required = [], template } = challengeMetaSelector(state);
-  const finalRequires = [...globalRequires, ...required];
-  const requiredFiles = Object.keys(files)
-    .map(key => files[key])
-    .filter(filterJSIfDisabled(state))
-    .filter(Boolean);
-  const finalFiles = requiredFiles.map(pipeLine);
-  return concatHtml(finalRequires, template, finalFiles);
+function buildSourceMap(files) {
+  return files.reduce((sources, file) => {
+    sources[file.name] = file.source || file.contents;
+    return sources;
+  }, {});
 }
 
-export function buildJSFromFiles(files) {
-  const pipeLine = flow(
-    applyFunctions(throwers),
-    applyFunctions(transformers)
-  );
+function checkFilesErrors(files) {
+  const errors = files.filter(({ error }) => error).map(({ error }) => error);
+  if (errors.length) {
+    throw errors;
+  }
+  return files;
+}
+
+export function buildDOMChallenge(files, meta = {}) {
+  const { required = [], template = '' } = meta;
+  const finalRequires = [...globalRequires, ...required, ...frameRunner];
+  const toHtml = [jsToHtml, cssToHtml];
+  const pipeLine = composeFunctions(...throwers, ...transformers, ...toHtml);
   const finalFiles = Object.keys(files)
     .map(key => files[key])
     .map(pipeLine);
-  const sourceMap = Promise.all(finalFiles).then(files =>
-    files.reduce((sources, file) => {
-      sources[file.name] = file.source || file.contents;
-      return sources;
-    }, {})
-  );
-  const body = Promise.all(finalFiles).then(files =>
-    files
-      .reduce(
-        (body, file) => [
-          ...body,
-          file.head + '\n' + file.contents + '\n' + file.tail
-        ],
-        []
-      )
-      .join('/n')
-  );
-  return Promise.all([body, sourceMap]).then(([body, sources]) => ({
-    solution: body,
-    code: sources && 'index' in sources ? sources['index'] : ''
-  }));
+  return Promise.all(finalFiles)
+    .then(checkFilesErrors)
+    .then(files => ({
+      build: concatHtml({ required: finalRequires, template, files }),
+      sources: buildSourceMap(files)
+    }));
 }
 
-export function buildBackendChallenge(state) {
+export function buildJSChallenge(files) {
+  const pipeLine = composeFunctions(...throwers, ...transformers);
+  const finalFiles = Object.keys(files)
+    .map(key => files[key])
+    .map(pipeLine);
+  return Promise.all(finalFiles)
+    .then(checkFilesErrors)
+    .then(files => ({
+      build: files
+        .reduce(
+          (body, file) => [...body, file.head, file.contents, file.tail],
+          []
+        )
+        .join('\n'),
+      sources: buildSourceMap(files)
+    }));
+}
+
+export function buildBackendChallenge(formValues) {
   const {
     solution: { value: url }
-  } = backendFormValuesSelector(state);
-  return of({
-    build: frameRunner,
-    sources: { url },
-    checkChallengePayload: { solution: url }
-  });
+  } = formValues;
+  return {
+    build: concatHtml({ required: frameRunner }),
+    sources: { url }
+  };
 }
