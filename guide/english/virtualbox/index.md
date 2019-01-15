@@ -56,7 +56,7 @@ VirtualBox can be downloaded here:
 There are 32 bit and 64 bit versions of the software available for download. Confirm your OS type before downloading.
 
 ### Setup
-- Sometimes you may need to enable virtualization from your bios settings. Learn how to access bios settings [here.](https://www.lifewire.com/how-to-enter-bios-2624481)
+- Sometimes you may need to enable virtualization from your BIOS settings. Learn how to access BIOS settings [here.](https://www.lifewire.com/how-to-enter-bios-2624481)
 - To set up your first Virtual Machine, download the .iso file from your desired Operating System site. 
 - Next you will hit the "New" button in VirtualBox, and name your VM with any name you like. 
 - The application will run you though several more configurations. Most importantly, note how much storage you select for 
