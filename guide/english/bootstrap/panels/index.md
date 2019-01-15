@@ -8,7 +8,18 @@ The Bootstrap framework provides you with a feature called panels. A panel is a 
 #### How To Use:
 To use Bootstrap Panels you add a `<div>` with a class for your type of panel (class `panel panel-default` or something similar, see the panel examples for more information.) and then two nested `<div>` tags, one for the heading (class `panel panel-heading`) and one for the body (class `panel panel-body`). You may find that the Code Example is easier to understand than a written explanation.
 
-**Code Example**
+#### Panel Examples:
+This is a set of examples that shows each type of panel. The CSS Class is displayed above each example.
+
+- default
+```html
+<div class="panel panel-default">
+  <div class="panel panel-heading">Panel Default</div>
+  <div class="panel panel-body"> This is a panel with the default panel style.</div>
+</div>
+```
+
+- primary
 ```html
 <div class="panel panel-primary">
   <div class="panel panel-heading">Panel Primary</div>
@@ -16,47 +27,38 @@ To use Bootstrap Panels you add a `<div>` with a class for your type of panel (c
 </div>
 ```
 
-#### Panel Examples:
-This is a set of examples that shows each type of panel. The CSS Class is displayed above each example.
-
-`panel panel-default`
-<div class="panel panel-default">
-<div class="panel panel-heading">Panel Default</div>
-<div class="panel panel-body"> This is a panel with the default panel style.</div>
-</div>
-
-`panel panel-primary`
-<div class="panel panel-primary">
-<div class="panel panel-heading">Panel Primary</div>
-<div class="panel panel-body"> This is a panel with the primary panel style.</div>
-</div>
-
-`panel panel-success`
+- success
+```html
 <div class="panel panel-success">
-<div class="panel panel-heading">Panel Success</div>
-<div class="panel panel-body"> This is a panel with the success panel style.</div>
+  <div class="panel panel-heading">Panel Success</div>
+  <div class="panel panel-body"> This is a panel with the success panel style.</div>
 </div>
+```
 
-`panel panel-info`
+- info
+```html
 <div class="panel panel-info">
-<div class="panel panel-heading">Panel Info</div>
-<div class="panel panel-body"> This is a panel with the info panel style.</div>
+  <div class="panel panel-heading">Panel Info</div>
+  <div class="panel panel-body"> This is a panel with the info panel style.</div>
 </div>
+```
 
-`panel panel-warning`
+- warning
+```html
 <div class="panel panel-warning">
-<div class="panel panel-heading">Panel Warning</div>
-<div class="panel panel-body"> This is a panel with the warning panel style.</div>
+  <div class="panel panel-heading">Panel Warning</div>
+  <div class="panel panel-body"> This is a panel with the warning panel style.</div>
 </div>
+```  
 
-`panel panel-danger`
+- danger
+```html
 <div class="panel panel-danger">
-<div class="panel panel-heading">Panel Danger</div>
-<div class="panel panel-body"> This is a panel with the danger panel style.</div>
-</div>
-
-For v4.0.0 components like
-Panels, thumbnails, and wells are Dropped entirely for the new card component.
+  <div class="panel panel-heading">Panel Danger</div>
+  <div class="panel panel-body"> This is a panel with the danger panel style.</div>
+</div>  
+```
+- For v4.0.0 components like Panels, thumbnails, and wells are dropped entirely for the new `card` component.
 
 ### More Information
 
