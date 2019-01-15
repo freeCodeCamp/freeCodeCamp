@@ -1,6 +1,6 @@
 ---
 id: 587d7dbb367417b2b2512be6
-title: Check for Groups of Characters
+title: Check For Mixed Grouping of Characters
 challengeType: 1
 ---
 
