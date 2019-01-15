@@ -23,10 +23,7 @@ const envVarsSchema = Joi.object({
     .default('false'),
   WEBHOOK_PROXY_URL: Joi.string().required(),
   APP_ID: Joi.number().required(),
-  PRIVATE_KEY: Joi.string().required(),
-  WEBHOOK_SECRET: Joi.string().required(),
-  CLIENT_ID: Joi.string().required(),
-  CLIENT_SECRET: Joi.string().required()
+  WEBHOOK_SECRET: Joi.string().required()
 })
   .unknown()
   .required();
@@ -50,10 +47,7 @@ const config = {
     probot: {
       webhookUrl: envVars.WEBHOOK_PROXY_URL,
       webhookSecret: envVars.WEBHOOK_SECRET,
-      appID: envVars.APP_ID,
-      privateKey: envVars.PRIVATE_KEY,
-      clientID: envVars.CLIENT_ID,
-      clientSecret: envVars.CLIENT_SECRET
+      appID: envVars.APP_ID
     }
   },
   oneoff: {
