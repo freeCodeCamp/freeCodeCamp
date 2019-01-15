@@ -13,11 +13,7 @@ function createShortLinkHandler(app) {
   const { Article } = app.models;
 
   return function shortLinkHandler(req, res, next) {
-    const { query } = req;
     const { shortId } = req.params;
-
-    log(req.origin);
-    log(query.refsource);
 
     if (!shortId) {
       return res.redirect('/news');
