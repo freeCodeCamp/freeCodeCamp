@@ -28,7 +28,7 @@ Loop through all of the items in the first array. For each item in the first arr
 
 ## ![:speech_balloon:](https://forum.freecodecamp.com/images/emoji/emoji_one/speech_balloon.png?v=3 ":speech_balloon:") Hint: 3
 
-Increment the index after performing the splice. 
+Increment the index after performing the splice.
 
 > _try to solve the problem now_
 
@@ -54,15 +54,15 @@ function frankenSplice(arr1, arr2, n) {
 
 ### Code Explanation:
 
-* Our goal is to take all of the elements from `arr1` and insert them into `arr2` starting with index position `n`. At the same time we must ensurethat neither `arr` or `arr2` have been mutated. 
+* Our goal is to take all of the elements from `arr1` and insert them into `arr2` starting with index position `n`. At the same time we must ensurethat neither `arr` or `arr2` have been mutated.
 
-* Using the `slice()` function we can create an exact replica of `arr2` and assign the result of the operation to a variable, `localArray`. 
+* Using the `slice()` function we can create an exact replica of `arr2` and assign the result of the operation to a variable, `localArray`.
 
 * Now that we have an array that we can mutate on, we can iterate through every item in the first array. For each item in the first array we can use the `splice()` function to insert the item into index `n` of `localArray`.
 
-* We increment the index `n` by one. This will ensure that every item from the `arr1` is inserted into `localArray` in the proper index position. 
+* We increment the index `n` by one. This will ensure that every item from the `arr1` is inserted into `localArray` in the proper index position.
 
-* Finally, we return the `localArray` and end the function. 
+* Finally, we return the `localArray` and end the function.
 
 
 ## 🌻 Intermediate Code Solution:
@@ -87,6 +87,5 @@ function frankenSplice(arr1, arr2, n) {
 *   ![:warning:](https://forum.freecodecamp.com/images/emoji/emoji_one/warning.png?v=3 ":warning:") **DO NOT** add solutions that are similar to any existing solutions. If you think it is **_similar but better_**, then try to merge (or replace) the existing similar solution.
 *   Add an explanation of your solution.
 *   Categorize the solution in one of the following categories — **Basic**, **Intermediate** and **Advanced**. ![:traffic_light:](https://forum.freecodecamp.com/images/emoji/emoji_one/traffic_light.png?v=3 ":traffic_light:")
-*   Please add your username only if you have added any **relevant main contents**. (![:warning:](https://forum.freecodecamp.com/images/emoji/emoji_one/warning.png?v=3 ":warning:") **_DO NOT_** _remove any existing usernames_)
 
 > See ![:point_right:](https://forum.freecodecamp.com/images/emoji/emoji_one/point_right.png?v=3 ":point_right:") <a href='http://forum.freecodecamp.com/t/algorithm-article-template/14272' target='_blank' rel='nofollow'>**`Wiki Challenge Solution Template`**</a> for reference.

@@ -128,14 +128,14 @@ In the case that only one argument was passed, do not worry about how to prompt 
      //When only one argument is provided
      if(args.length == 1){
          a= args[0];
-         //Check the  argument using typeof 
+         //Check the  argument using typeof
         if(typeof a!=='number'){
             return undefined;
           }
         else{
-           //Making use of closures 
+           //Making use of closures
            return function(b){
-           //Checking the second argument 
+           //Checking the second argument
              if(typeof b !=='number'){
                return undefined;
                }
@@ -170,11 +170,11 @@ In the case that only one argument was passed, do not worry about how to prompt 
     //jshint esversion: 6
     function addTogether() {
       var args = Array.from(arguments);
-      return args.some(n => typeof n !== 'number') ? 
-        undefined: 
+      return args.some(n => typeof n !== 'number') ?
+        undefined:
         args.length > 1 ?
           args.reduce((acc, n) => acc += n, 0):
-          (n) => typeof n === "number" ? 
+          (n) => typeof n === "number" ?
             n + args[0]:
             undefined;
     }
@@ -196,13 +196,10 @@ In the case that only one argument was passed, do not worry about how to prompt 
 *   <a href='http://forum.freecodecamp.com/t/javascript-array-prototype-some/14304' target='_blank' rel='nofollow'>Array.prototype.some</a>
 *   <a href='https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/from' target='_blank' rel='nofollow'>Array.from</a>
 
-> **NOTE:** Please add your username only if you have added any **relevant main contents** to the wiki page. (Please don't remove any existing usernames.)
-
 ## ![:clipboard:](https://forum.freecodecamp.com/images/emoji/emoji_one/clipboard.png?v=3 ":clipboard:") NOTES FOR CONTRIBUTIONS:
 
 *   ![:warning:](https://forum.freecodecamp.com/images/emoji/emoji_one/warning.png?v=3 ":warning:") **DO NOT** add solutions that are similar to any existing solutions. If you think it is **_similar but better_**, then try to merge (or replace) the existing similar solution.
 *   Add an explanation of your solution.
 *   Categorize the solution in one of the following categories -- **Basic**, **Intermediate** and **Advanced**. ![:traffic_light:](https://forum.freecodecamp.com/images/emoji/emoji_one/traffic_light.png?v=3 ":traffic_light:")
-*   Please add your username only if you have added any **relevant main contents**. (![:warning:](https://forum.freecodecamp.com/images/emoji/emoji_one/warning.png?v=3 ":warning:") **_DO NOT_** _remove any existing usernames_)
 
 > See ![:point_right:](https://forum.freecodecamp.com/images/emoji/emoji_one/point_right.png?v=3 ":point_right:") <a href='http://forum.freecodecamp.com/t/algorithm-article-template/14272' target='_blank' rel='nofollow'>**`Wiki Challenge Solution Template`**</a> for reference.

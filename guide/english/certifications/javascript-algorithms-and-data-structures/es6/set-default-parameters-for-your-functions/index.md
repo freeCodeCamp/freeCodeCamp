@@ -4,7 +4,7 @@ title: Set Default Parameters for Your Functions
 ## Set Default Parameters for Your Functions
 
 
-:triangular_flag_on_post: Remember to use Read-Search-Ask if you get stuck. Try to pair program  :busts_in_silhouette: and write your own code :pencil: 
+:triangular_flag_on_post: Remember to use Read-Search-Ask if you get stuck. Try to pair program  :busts_in_silhouette: and write your own code :pencil:
 
 
 ### :checkered_flag: Problem Explanation:
@@ -53,9 +53,9 @@ console.log(increment(5)); // returns NaN
 
 ## Code Explanation
 
-* This section is pretty straightforward. Pass this section by setting the **value** parameter equal to 1. When the function comes across test cases where **value** has not been passed anything, then **value** will be assigned one by default. 
+* This section is pretty straightforward. Pass this section by setting the **value** parameter equal to 1. When the function comes across test cases where **value** has not been passed anything, then **value** will be assigned one by default.
 
-Relevant Links: 
+Relevant Links:
 
 [Javascript default parameters](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Functions/Default_parameters)
 
@@ -64,7 +64,3 @@ Relevant Links:
 * :warning: DO NOT add solutions that are similar to any existing solutions. If you think it is similar but better, then try to merge (or replace) the existing similar solution.
 * Add an explanation of your solution.
 * Categorize the solution in one of the following categories — Basic, Intermediate and Advanced.  :traffic_light:
-* Please add your username only if you have added any relevant main contents. (  :warning: DO NOT remove any existing usernames)
-
-See  :point_right: [Wiki Challenge Solution Template](https://forum.freecodecamp.org/t/freecodecamp-algorithm-challenge-template-guide/14272) for reference.
-<!-- The article goes here, in GitHub-flavored Markdown. Feel free to add YouTube videos, images, and CodePen/JSBin embeds  -->

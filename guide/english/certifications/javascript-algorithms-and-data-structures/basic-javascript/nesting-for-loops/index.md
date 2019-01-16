@@ -7,7 +7,7 @@ title: Nesting For Loops
 
 :checkered_flag: <strong>Problem Explanation:</strong>
 
-If you have a multi-dimensional array, you can use the same logic as the prior waypoint to loop through both the array and any sub-arrays. 
+If you have a multi-dimensional array, you can use the same logic as the prior waypoint to loop through both the array and any sub-arrays.
 
 Here is an example:
 
@@ -35,7 +35,7 @@ This outputs each sub-element in <code>arr</code> one at a time. Note that for t
   <li><a href="https://learn.freecodecamp.org/javascript-algorithms-and-data-structures/basic-javascript/iterate-through-an-array-with-a-for-loop">Iterate Through An Array With A For Loop</a></li>
   <li><a href="https://learn.freecodecamp.org/javascript-algorithms-and-data-structures/basic-javascript/accessing-nested-arrays">Accessing Nested Arrays</a></li>
 </ul>
-  
+
 :speech_balloon: Hint: 1
 
 Make sure to check with <code>length</code> and not the overall array.
@@ -93,9 +93,4 @@ multiplyAll([[1,2],[3,4],[5,6,7]]);
 <li>:warning: <strong>DO NOT</strong> add solutions that are similar to any existing solutions. If you think it is similar but better, then try to merge (or replace) the existing similar solution.</li>
   <li>Add an explanation of your solution.</li>
 <li>Categorize the solution in one of the following categories — Basic, Intermediate and Advanced. :traffic_light:</li>
-<li>Please add your username only if you have added any relevant main contents. (:warning: <em><strong>DO NOT</strong></em> remove any existing usernames)</li>
-  </ul>
-  
-See :point_right: <a href="http://forum.freecodecamp.com/t/algorithm-article-template/14272"> Wiki Challenge Solution Template</a> for reference.
-
-
+</ul>

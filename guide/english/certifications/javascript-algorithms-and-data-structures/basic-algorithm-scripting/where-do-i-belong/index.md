@@ -66,7 +66,7 @@ If there is no index for that number then you will have to deal with that case t
     function getIndexToIns(arr, num) {
       // Find my place in this sorted array.
       var times = arr.length; // runs the for loop once for each thing in the array
-      var count = 0; 
+      var count = 0;
       for (var i=0;i<times;i++){
         if(num>arr[i]){count++;} } // counts how many array numbers are smaller than num
         return count; // the above equals num's position in a sorted array
@@ -193,6 +193,5 @@ by [@nivrith](/u/nivrith)
 *   ![:warning:](https://forum.freecodecamp.com/images/emoji/emoji_one/warning.png?v=3 ":warning:") **DO NOT** add solutions that are similar to any existing solutions. If you think it is **_similar but better_**, then try to merge (or replace) the existing similar solution.
 *   Add an explanation of your solution.
 *   Categorize the solution in one of the following categories — **Basic**, **Intermediate** and **Advanced**. ![:traffic_light:](https://forum.freecodecamp.com/images/emoji/emoji_one/traffic_light.png?v=3 ":traffic_light:")
-*   Please add your username only if you have added any **relevant main contents**. (![:warning:](https://forum.freecodecamp.com/images/emoji/emoji_one/warning.png?v=3 ":warning:") **_DO NOT_** _remove any existing usernames_)
 
 > See ![:point_right:](https://forum.freecodecamp.com/images/emoji/emoji_one/point_right.png?v=3 ":point_right:") <a href='http://forum.freecodecamp.com/t/algorithm-article-template/14272' target='_blank' rel='nofollow'>**`Wiki Challenge Solution Template`**</a> for reference.
