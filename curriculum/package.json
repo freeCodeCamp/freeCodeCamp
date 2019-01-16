@@ -19,7 +19,7 @@
     "lint": "eslint ./**/*.js --fix",
     "repack": "babel-node ./repack.js",
     "semantic-release": "semantic-release",
-    "pretest": "cd ../client && npm run build:frame-runner",
+    "pretest": "cd ../client && npm run build:workers",
     "test": "mocha --delay --reporter progress --bail",
     "unpack": "babel-node ./unpack.js"
   },
