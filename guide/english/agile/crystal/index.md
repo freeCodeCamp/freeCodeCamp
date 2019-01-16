@@ -3,7 +3,7 @@ title: Crystal
 ---
 ## Crystal
 
-Crystal is a family of lightweight methodologies for software development. These include Crystal Clear, Crystal Yellow, Crystal Orange, Crystal Red and Crystal Garnet among others. Each of them is targeted at a unique aspect of the type of product that will result from the software being developed, includin factors such as:
+Crystal is a family of lightweight methodologies for software development. These include Crystal Clear, Crystal Yellow, Crystal Orange, Crystal Red and Crystal Garnet among others. Each of them is targeted at a unique aspect of the type of product that will result from the software being developed, including factors such as:
 * the size of the team
 * how critical the system is
 * the priorities of the project
