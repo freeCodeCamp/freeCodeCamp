@@ -3,10 +3,7 @@ title: Intermediate Algorithm Scripting
 ---
 ## Intermediate Algorithm Scripting
 
-This is a stub. <a href='https://github.com/freecodecamp/guides/tree/master/src/pages/mathematics/quadratic-equations/index.md' target='_blank' rel='nofollow'>Help our community expand it</a>.
-
-<a href='https://github.com/freecodecamp/guides/blob/master/README.md' target='_blank' rel='nofollow'>This quick style guide will help ensure your pull request gets accepted</a>.
-
+This section contains intermediate level coding problems that will test your ability to solve complex problems similar to those that you may see in real situations using Javascript. All the best!
 <!-- The article goes here, in GitHub-flavored Markdown. Feel free to add YouTube videos, images, and CodePen/JSBin embeds  -->
 
 #### More Information:
