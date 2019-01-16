@@ -14,6 +14,7 @@
     "format": "prettier --write es5 ./**/*.{js,json} && npm run lint",
     "lint": "eslint ./**/*.js --fix",
     "start": "cd probot && npm start && cd ../",
+    "client-dev": "cd ./probot/client && npm run dev",
     "dev": "nodemon"
   },
   "devDependencies": {
