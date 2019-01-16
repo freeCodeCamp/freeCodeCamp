@@ -39,33 +39,33 @@ localeTitle: 猪拉丁文
 
 ## ![:beginner:](https://forum.freecodecamp.com/images/emoji/emoji_one/beginner.png?v=3 "：初学者：")基本代码解决方案
 ```
-function translatePigLatin(str) { 
-  // Create variables to be used 
-  var pigLatin = ''; 
-  var regex = /[aeiou]/gi; 
- 
-  // Check if the first character is a vowel 
-  if (str[0].match(regex)) { 
-    pigLatin = str + 'way'; 
- 
-  } else if(str.match(regex) === null) { 
-    // Check if the string contains only consonants 
-    pigLatin = str + 'ay'; 
-  } else { 
- 
-    // Find how many consonants before the first vowel. 
-    var vowelIndice = str.indexOf(str.match(regex)[0]); 
- 
-    // Take the string from the first vowel to the last char 
-    // then add the consonants that were previously omitted and add the ending. 
-    pigLatin = str.substr(vowelIndice) + str.substr(0, vowelIndice) + 'ay'; 
-  } 
- 
-  return pigLatin; 
- } 
- 
- // test here 
- translatePigLatin("consonant"); 
+function translatePigLatin(str) {
+  // Create variables to be used
+  var pigLatin = '';
+  var regex = /[aeiou]/gi;
+
+  // Check if the first character is a vowel
+  if (str[0].match(regex)) {
+    pigLatin = str + 'way';
+
+  } else if(str.match(regex) === null) {
+    // Check if the string contains only consonants
+    pigLatin = str + 'ay';
+  } else {
+
+    // Find how many consonants before the first vowel.
+    var vowelIndice = str.indexOf(str.match(regex)[0]);
+
+    // Take the string from the first vowel to the last char
+    // then add the consonants that were previously omitted and add the ending.
+    pigLatin = str.substr(vowelIndice) + str.substr(0, vowelIndice) + 'ay';
+  }
+
+  return pigLatin;
+ }
+
+ // test here
+ translatePigLatin("consonant");
 ```
 
 ![:rocket:](https://forum.freecodecamp.com/images/emoji/emoji_one/rocket.png?v=3 "：火箭：") [运行代码](https://repl.it/CLmt/0)
@@ -90,16 +90,16 @@ function translatePigLatin(str) {
 
 ## ![:sunflower:](https://forum.freecodecamp.com/images/emoji/emoji_one/sunflower.png?v=3 "：向日葵：")中级代码解决方案：
 ```
-function translatePigLatin(str) { 
-  function check(obj) { 
-      return ['a','i','u','e','o'].indexOf(str.charAt(obj)) == -1 ? check(obj + 1) : obj; 
-  } 
- 
-  return str.substr(check(0)).concat((check(0) === 0 ? 'w' : str.substr(0, check(0))) + 'ay'); 
- } 
- 
- // test here 
- translatePigLatin("consonant"); 
+function translatePigLatin(str) {
+  function check(obj) {
+      return ['a','i','u','e','o'].indexOf(str.charAt(obj)) == -1 ? check(obj + 1) : obj;
+  }
+
+  return str.substr(check(0)).concat((check(0) === 0 ? 'w' : str.substr(0, check(0))) + 'ay');
+ }
+
+ // test here
+ translatePigLatin("consonant");
 ```
 
 ![:rocket:](https://forum.freecodecamp.com/images/emoji/emoji_one/rocket.png?v=3 "：火箭：") [运行代码](https://repl.it/CLmw/0)
@@ -119,33 +119,33 @@ function translatePigLatin(str) {
 
 ## ![:rotating_light:](https://forum.freecodecamp.com/images/emoji/emoji_one/rotating_light.png?v=3 "：rotating_light：")高级代码解决方案
 ```
-function translatePigLatin(str) { 
-    var strArr = []; 
-    var tmpChar; 
- 
-    // check if the char is consonant using RegEx 
-    function isConsonant(char) { 
-        return !/[aeiou]/.test(char); 
-    } 
- 
-    // return initial str + "way" if it starts with vowel 
-    // if not - convert str to array 
-    if (!isConsonant(str.charAt(0))) 
-        return str + "way"; 
-    else 
-        strArr = str.split(""); 
- 
-    // push all consonats to the end of the array 
-    while (isConsonant(strArr[0])) { 
-        tmpChar = strArr.shift(); 
-        strArr.push(tmpChar); 
-    } 
- // convert array to string and concatenate "ay" at the end 
- return strArr.join("")+"ay"; 
- } 
- 
- // test here 
- translatePigLatin("consonant"); 
+function translatePigLatin(str) {
+    var strArr = [];
+    var tmpChar;
+
+    // check if the char is consonant using RegEx
+    function isConsonant(char) {
+        return !/[aeiou]/.test(char);
+    }
+
+    // return initial str + "way" if it starts with vowel
+    // if not - convert str to array
+    if (!isConsonant(str.charAt(0)))
+        return str + "way";
+    else
+        strArr = str.split("");
+
+    // push all consonats to the end of the array
+    while (isConsonant(strArr[0])) {
+        tmpChar = strArr.shift();
+        strArr.push(tmpChar);
+    }
+ // convert array to string and concatenate "ay" at the end
+ return strArr.join("")+"ay";
+ }
+
+ // test here
+ translatePigLatin("consonant");
 ```
 
 ![:rocket:](https://forum.freecodecamp.com/images/emoji/emoji_one/rocket.png?v=3 "：火箭：") [运行代码](https://repl.it/CLmv/0)
@@ -168,14 +168,9 @@ function translatePigLatin(str) {
 
 ### ![:trophy:](https://forum.freecodecamp.com/images/emoji/emoji_one/trophy.png?v=3 "：杯：")积分：
 
-如果您发现此页面有用，您可以通过在主聊天中复制并粘贴以下行来感谢贡献者：
-
-**`Thanks @Rafase282 @sabahang @aganita @Hallaathrad for your help with Algorithm: Pig Latin`**
-
 ## ![:clipboard:](https://forum.freecodecamp.com/images/emoji/emoji_one/clipboard.png?v=3 "：剪贴板：")捐款说明：
 
 *   ![:warning:](https://forum.freecodecamp.com/images/emoji/emoji_one/warning.png?v=3 "：警告：") **请勿**添加与任何现有解决方案类似的解决方案。如果您认为它**_相似但更好_** ，那么尝试合并（或替换）现有的类似解决方案。
 *   添加解决方案的说明。
 *   将解决方案分为以下类别之一 - **基本** ， **中级**和**高级** 。 ![:traffic_light:](https://forum.freecodecamp.com/images/emoji/emoji_one/traffic_light.png?v=3 "：红绿灯：")
 *   如果您添加了任何**相关的主要内容，**请仅添加您的用户名。 （ ![:warning:](https://forum.freecodecamp.com/images/emoji/emoji_one/warning.png?v=3 "：警告：") **_不要_** _删除任何现有的用户名_ ）
-

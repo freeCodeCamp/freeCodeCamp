@@ -40,9 +40,9 @@ Entonces necesitamos agregar un `filter()` con la función de valores falsos ...
 
 ## ![:rotating_light:](https://forum.freecodecamp.com/images/emoji/emoji_one/rotating_light.png?v=3 ": rotando luz:") Solución avanzada de código:
 ```
-function bouncer(arr) { 
-  return arr.filter(Boolean); 
- } 
+function bouncer(arr) {
+  return arr.filter(Boolean);
+ }
 ```
 
 ![:rocket:](https://forum.freecodecamp.com/images/emoji/emoji_one/rocket.png?v=3 ":cohete:") [Ejecutar código](https://repl.it/CLjU/32)
@@ -59,14 +59,9 @@ El `Array.prototype.filter` método espera una función que devuelve un `Boolean
 
 ## ![:trophy:](https://forum.freecodecamp.com/images/emoji/emoji_one/trophy.png?v=3 ":trofeo:") Créditos:
 
-Si encontró útil esta página, puede agradecer copiando y pegando esto en el chat principal:
-
-**`Thanks @renelis @abhisekp @Rafase282 for your help with Algorithm: Falsy Bouncer`**
-
 ## ![:clipboard:](https://forum.freecodecamp.com/images/emoji/emoji_one/clipboard.png?v=3 ":portapapeles:") NOTAS PARA LAS CONTRIBUCIONES:
 
 *   ![:warning:](https://forum.freecodecamp.com/images/emoji/emoji_one/warning.png?v=3 ":advertencia:") **NO** agregue soluciones que sean similares a las soluciones existentes. Si cree que es **_similar pero mejor_** , intente fusionar (o reemplazar) la solución similar existente.
 *   Agregue una explicación de su solución.
 *   Categorice la solución en una de las siguientes categorías: **Básica** , **Intermedia** y **Avanzada** . ![:traffic_light:](https://forum.freecodecamp.com/images/emoji/emoji_one/traffic_light.png?v=3 ":semáforo:")
 *   Agregue su nombre de usuario solo si ha agregado algún **contenido principal relevante** . ( ![:warning:](https://forum.freecodecamp.com/images/emoji/emoji_one/warning.png?v=3 ":advertencia:") **_NO_** _elimine ningún nombre de usuario existente_ )
-

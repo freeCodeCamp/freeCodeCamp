@@ -39,34 +39,34 @@ localeTitle: خنزير اللاتينية
 
 ## ![:beginner:](https://forum.freecodecamp.com/images/emoji/emoji_one/beginner.png?v=3 ":مبتدئ:") الحل الأساسي للكود:
 
- `function translatePigLatin(str) { 
-  // Create variables to be used 
-  var pigLatin = ''; 
-  var regex = /[aeiou]/gi; 
- 
-  // Check if the first character is a vowel 
-  if (str[0].match(regex)) { 
-    pigLatin = str + 'way'; 
- 
-  } else if(str.match(regex) === null) { 
-    // Check if the string contains only consonants 
-    pigLatin = str + 'ay'; 
-  } else { 
- 
-    // Find how many consonants before the first vowel. 
-    var vowelIndice = str.indexOf(str.match(regex)[0]); 
- 
-    // Take the string from the first vowel to the last char 
-    // then add the consonants that were previously omitted and add the ending. 
-    pigLatin = str.substr(vowelIndice) + str.substr(0, vowelIndice) + 'ay'; 
-  } 
- 
-  return pigLatin; 
- } 
- 
- // test here 
- translatePigLatin("consonant"); 
-` 
+ `function translatePigLatin(str) {
+  // Create variables to be used
+  var pigLatin = '';
+  var regex = /[aeiou]/gi;
+
+  // Check if the first character is a vowel
+  if (str[0].match(regex)) {
+    pigLatin = str + 'way';
+
+  } else if(str.match(regex) === null) {
+    // Check if the string contains only consonants
+    pigLatin = str + 'ay';
+  } else {
+
+    // Find how many consonants before the first vowel.
+    var vowelIndice = str.indexOf(str.match(regex)[0]);
+
+    // Take the string from the first vowel to the last char
+    // then add the consonants that were previously omitted and add the ending.
+    pigLatin = str.substr(vowelIndice) + str.substr(0, vowelIndice) + 'ay';
+  }
+
+  return pigLatin;
+ }
+
+ // test here
+ translatePigLatin("consonant");
+`
 
 ![:rocket:](https://forum.freecodecamp.com/images/emoji/emoji_one/rocket.png?v=3 ":صاروخ:") [تشغيل الكود](https://repl.it/CLmt/0)
 
@@ -90,17 +90,17 @@ localeTitle: خنزير اللاتينية
 
 ## ![:sunflower:](https://forum.freecodecamp.com/images/emoji/emoji_one/sunflower.png?v=3 ":دوار الشمس:") حل الشفرة المتوسطة:
 
- `function translatePigLatin(str) { 
-  function check(obj) { 
-      return ['a','i','u','e','o'].indexOf(str.charAt(obj)) == -1 ? check(obj + 1) : obj; 
-  } 
- 
-  return str.substr(check(0)).concat((check(0) === 0 ? 'w' : str.substr(0, check(0))) + 'ay'); 
- } 
- 
- // test here 
- translatePigLatin("consonant"); 
-` 
+ `function translatePigLatin(str) {
+  function check(obj) {
+      return ['a','i','u','e','o'].indexOf(str.charAt(obj)) == -1 ? check(obj + 1) : obj;
+  }
+
+  return str.substr(check(0)).concat((check(0) === 0 ? 'w' : str.substr(0, check(0))) + 'ay');
+ }
+
+ // test here
+ translatePigLatin("consonant");
+`
 
 ![:rocket:](https://forum.freecodecamp.com/images/emoji/emoji_one/rocket.png?v=3 ":صاروخ:") [تشغيل الكود](https://repl.it/CLmw/0)
 
@@ -119,34 +119,34 @@ localeTitle: خنزير اللاتينية
 
 ## ![:rotating_light:](https://forum.freecodecamp.com/images/emoji/emoji_one/rotating_light.png?v=3 ": rotating_light:") الحل المتقدم للكود:
 
- `function translatePigLatin(str) { 
-    var strArr = []; 
-    var tmpChar; 
- 
-    // check if the char is consonant using RegEx 
-    function isConsonant(char) { 
-        return !/[aeiou]/.test(char); 
-    } 
- 
-    // return initial str + "way" if it starts with vowel 
-    // if not - convert str to array 
-    if (!isConsonant(str.charAt(0))) 
-        return str + "way"; 
-    else 
-        strArr = str.split(""); 
- 
-    // push all consonats to the end of the array 
-    while (isConsonant(strArr[0])) { 
-        tmpChar = strArr.shift(); 
-        strArr.push(tmpChar); 
-    } 
- // convert array to string and concatenate "ay" at the end 
- return strArr.join("")+"ay"; 
- } 
- 
- // test here 
- translatePigLatin("consonant"); 
-` 
+ `function translatePigLatin(str) {
+    var strArr = [];
+    var tmpChar;
+
+    // check if the char is consonant using RegEx
+    function isConsonant(char) {
+        return !/[aeiou]/.test(char);
+    }
+
+    // return initial str + "way" if it starts with vowel
+    // if not - convert str to array
+    if (!isConsonant(str.charAt(0)))
+        return str + "way";
+    else
+        strArr = str.split("");
+
+    // push all consonats to the end of the array
+    while (isConsonant(strArr[0])) {
+        tmpChar = strArr.shift();
+        strArr.push(tmpChar);
+    }
+ // convert array to string and concatenate "ay" at the end
+ return strArr.join("")+"ay";
+ }
+
+ // test here
+ translatePigLatin("consonant");
+`
 
 ![:rocket:](https://forum.freecodecamp.com/images/emoji/emoji_one/rocket.png?v=3 ":صاروخ:") [تشغيل الكود](https://repl.it/CLmv/0)
 
@@ -168,14 +168,9 @@ localeTitle: خنزير اللاتينية
 
 ### ![:trophy:](https://forum.freecodecamp.com/images/emoji/emoji_one/trophy.png?v=3 ":غنيمة:") ائتمانات:
 
-إذا وجدت هذه الصفحة مفيدة ، يمكنك أن تقول شكرا للمساهمين من خلال نسخ ولصق السطر التالي في الدردشة الرئيسية:
-
-**`Thanks @Rafase282 @sabahang @aganita @Hallaathrad for your help with Algorithm: Pig Latin`**
-
 ## ![:clipboard:](https://forum.freecodecamp.com/images/emoji/emoji_one/clipboard.png?v=3 ": الحافظة:") ملاحظات للمساهمات:
 
 *   ![:warning:](https://forum.freecodecamp.com/images/emoji/emoji_one/warning.png?v=3 ":تحذير:") **لا تقم** بإضافة حلول مشابهة لأي حلول موجودة. إذا كنت تعتقد أنها **_مشابهة ولكن أفضل_** ، فحاول دمج (أو استبدال) الحل المشابه الموجود.
 *   أضف شرحًا لحلك.
 *   تصنيف الحل في واحدة من الفئات التالية - **الأساسي** **والمتوسط** **والمتقدم** . ![:traffic_light:](https://forum.freecodecamp.com/images/emoji/emoji_one/traffic_light.png?v=3 ": traffic_light:")
 *   الرجاء إضافة اسم المستخدم الخاص بك فقط إذا قمت بإضافة أي **محتويات رئيسية ذات صلة** . ( ![:warning:](https://forum.freecodecamp.com/images/emoji/emoji_one/warning.png?v=3 ":تحذير:") **_لا_** _تزيل أي أسماء مستخدمين حالية_ )
-

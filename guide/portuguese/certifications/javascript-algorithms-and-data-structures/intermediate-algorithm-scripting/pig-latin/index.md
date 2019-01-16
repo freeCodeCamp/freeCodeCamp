@@ -39,33 +39,33 @@ Você precisará usar tudo o que sabe sobre a manipulação de strings para obte
 
 ## ![:beginner:](https://forum.freecodecamp.com/images/emoji/emoji_one/beginner.png?v=3 ":principiante:") Solução básica de código:
 ```
-function translatePigLatin(str) { 
-  // Create variables to be used 
-  var pigLatin = ''; 
-  var regex = /[aeiou]/gi; 
- 
-  // Check if the first character is a vowel 
-  if (str[0].match(regex)) { 
-    pigLatin = str + 'way'; 
- 
-  } else if(str.match(regex) === null) { 
-    // Check if the string contains only consonants 
-    pigLatin = str + 'ay'; 
-  } else { 
- 
-    // Find how many consonants before the first vowel. 
-    var vowelIndice = str.indexOf(str.match(regex)[0]); 
- 
-    // Take the string from the first vowel to the last char 
-    // then add the consonants that were previously omitted and add the ending. 
-    pigLatin = str.substr(vowelIndice) + str.substr(0, vowelIndice) + 'ay'; 
-  } 
- 
-  return pigLatin; 
- } 
- 
- // test here 
- translatePigLatin("consonant"); 
+function translatePigLatin(str) {
+  // Create variables to be used
+  var pigLatin = '';
+  var regex = /[aeiou]/gi;
+
+  // Check if the first character is a vowel
+  if (str[0].match(regex)) {
+    pigLatin = str + 'way';
+
+  } else if(str.match(regex) === null) {
+    // Check if the string contains only consonants
+    pigLatin = str + 'ay';
+  } else {
+
+    // Find how many consonants before the first vowel.
+    var vowelIndice = str.indexOf(str.match(regex)[0]);
+
+    // Take the string from the first vowel to the last char
+    // then add the consonants that were previously omitted and add the ending.
+    pigLatin = str.substr(vowelIndice) + str.substr(0, vowelIndice) + 'ay';
+  }
+
+  return pigLatin;
+ }
+
+ // test here
+ translatePigLatin("consonant");
 ```
 
 ![:rocket:](https://forum.freecodecamp.com/images/emoji/emoji_one/rocket.png?v=3 ":foguete:") [Executar código](https://repl.it/CLmt/0)
@@ -90,16 +90,16 @@ function translatePigLatin(str) {
 
 ## ![:sunflower:](https://forum.freecodecamp.com/images/emoji/emoji_one/sunflower.png?v=3 ":girassol:") Solução de Código Intermediário:
 ```
-function translatePigLatin(str) { 
-  function check(obj) { 
-      return ['a','i','u','e','o'].indexOf(str.charAt(obj)) == -1 ? check(obj + 1) : obj; 
-  } 
- 
-  return str.substr(check(0)).concat((check(0) === 0 ? 'w' : str.substr(0, check(0))) + 'ay'); 
- } 
- 
- // test here 
- translatePigLatin("consonant"); 
+function translatePigLatin(str) {
+  function check(obj) {
+      return ['a','i','u','e','o'].indexOf(str.charAt(obj)) == -1 ? check(obj + 1) : obj;
+  }
+
+  return str.substr(check(0)).concat((check(0) === 0 ? 'w' : str.substr(0, check(0))) + 'ay');
+ }
+
+ // test here
+ translatePigLatin("consonant");
 ```
 
 ![:rocket:](https://forum.freecodecamp.com/images/emoji/emoji_one/rocket.png?v=3 ":foguete:") [Executar código](https://repl.it/CLmw/0)
@@ -119,33 +119,33 @@ function translatePigLatin(str) {
 
 ## ![:rotating_light:](https://forum.freecodecamp.com/images/emoji/emoji_one/rotating_light.png?v=3 ": rotating_light:") Solução avançada de código:
 ```
-function translatePigLatin(str) { 
-    var strArr = []; 
-    var tmpChar; 
- 
-    // check if the char is consonant using RegEx 
-    function isConsonant(char) { 
-        return !/[aeiou]/.test(char); 
-    } 
- 
-    // return initial str + "way" if it starts with vowel 
-    // if not - convert str to array 
-    if (!isConsonant(str.charAt(0))) 
-        return str + "way"; 
-    else 
-        strArr = str.split(""); 
- 
-    // push all consonats to the end of the array 
-    while (isConsonant(strArr[0])) { 
-        tmpChar = strArr.shift(); 
-        strArr.push(tmpChar); 
-    } 
- // convert array to string and concatenate "ay" at the end 
- return strArr.join("")+"ay"; 
- } 
- 
- // test here 
- translatePigLatin("consonant"); 
+function translatePigLatin(str) {
+    var strArr = [];
+    var tmpChar;
+
+    // check if the char is consonant using RegEx
+    function isConsonant(char) {
+        return !/[aeiou]/.test(char);
+    }
+
+    // return initial str + "way" if it starts with vowel
+    // if not - convert str to array
+    if (!isConsonant(str.charAt(0)))
+        return str + "way";
+    else
+        strArr = str.split("");
+
+    // push all consonats to the end of the array
+    while (isConsonant(strArr[0])) {
+        tmpChar = strArr.shift();
+        strArr.push(tmpChar);
+    }
+ // convert array to string and concatenate "ay" at the end
+ return strArr.join("")+"ay";
+ }
+
+ // test here
+ translatePigLatin("consonant");
 ```
 
 ![:rocket:](https://forum.freecodecamp.com/images/emoji/emoji_one/rocket.png?v=3 ":foguete:") [Executar código](https://repl.it/CLmv/0)
@@ -168,14 +168,9 @@ function translatePigLatin(str) {
 
 ### ![:trophy:](https://forum.freecodecamp.com/images/emoji/emoji_one/trophy.png?v=3 ":troféu:") Créditos:
 
-Se achou útil esta página, pode agradecer aos colaboradores copiando e colando a seguinte linha no chat principal:
-
-**`Thanks @Rafase282 @sabahang @aganita @Hallaathrad for your help with Algorithm: Pig Latin`**
-
 ## ![:clipboard:](https://forum.freecodecamp.com/images/emoji/emoji_one/clipboard.png?v=3 ":prancheta:") NOTAS PARA CONTRIBUIÇÕES:
 
 *   ![:warning:](https://forum.freecodecamp.com/images/emoji/emoji_one/warning.png?v=3 ":Aviso:") **NÃO** adicione soluções semelhantes às soluções existentes. Se você acha que é **_semelhante, mas melhor_** , tente mesclar (ou substituir) a solução semelhante existente.
 *   Adicione uma explicação da sua solução.
 *   Categorize a solução em uma das seguintes categorias - **Básica** , **Intermediária** e **Avançada** . ![:traffic_light:](https://forum.freecodecamp.com/images/emoji/emoji_one/traffic_light.png?v=3 ":semáforo:")
 *   Por favor, adicione seu nome de usuário somente se você adicionou qualquer **conteúdo principal relevante** . ( ![:warning:](https://forum.freecodecamp.com/images/emoji/emoji_one/warning.png?v=3 ":Aviso:") **_NÃO_** _remova nenhum nome de usuário existente_ )
-
