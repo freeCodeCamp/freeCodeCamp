@@ -52,9 +52,7 @@ class App extends Component {
     fetch(ENDPOINT_INFO)
       .then(response => response.json())
       .then(({ ok, numPRs, prRange, lastUpdate }) => {
-        console.log(numPRs, prRange, lastUpdate);
         if (ok) {
-          console.log(numPRs, prRange, lastUpdate);
           const footerInfo = { numPRs, prRange, lastUpdate };
           this.setState(prevState => ({ footerInfo }));
         }
