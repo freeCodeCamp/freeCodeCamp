@@ -14,7 +14,7 @@ text-shadow : X-offset Y-offset blur-radius color
 **Example :**
 ``` css
 p {
-text-shadow : 2px 2px 8px #FF0000;
+  text-shadow : 2px 2px 8px #FF0000;
 }
 ```
 
