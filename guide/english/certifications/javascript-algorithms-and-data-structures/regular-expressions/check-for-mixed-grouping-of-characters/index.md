@@ -19,6 +19,6 @@ Use `.*` to allow for middle names.
 
 ```javascript
 let myString = "Eleanor Roosevelt";
-let myRegex = /(Franklin|Eleanor).*Roosevelt/g;
+let myRegex = /(Franklin|Eleanor).*Roosevelt/;
 let result = myRegex.test(myString);
 ```

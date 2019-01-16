@@ -23,14 +23,14 @@ Then fix the code so that the regex that you have created is checked against <co
 
 ```yml
 tests:
-  - text: Your regex <code>myRegex</code> should return <code>true</code> for the string <code>"Franklin Roosevelt"</code>
-    testString: assert(myRegex.test('Franklin Roosevelt'), 'Your regex <code>myRegex</code> should return <code>true</code> for the string <code>"Franklin Roosevelt"</code>');
-  - text: Your regex <code>myRegex</code> should return <code>true</code> for the string <code>"Franklin D. Roosevelt"</code>
-    testString: assert(myRegex.test('Franklin D. Roosevelt'), 'Your regex <code>myRegex</code> should return <code>true</code> for the string <code>"Franklin D. Roosevelt"</code>');
-  - text: Your regex <code>myRegex</code> should return <code>true</code> for the string <code>"Eleanor Roosevelt"</code>
-    testString: assert(myRegex.test('Eleanor Roosevelt'), 'Your regex <code>myRegex</code> should return <code>true</code> for the string <code>"Eleanor Roosevelt"</code>');
-  - text: Your regex <code>myRegex</code> should return <code>false</code> for the string <code>"Franklin Rosevelt"</code>
-    testString: assert(!myRegex.test('Franklin Rosevelt'), 'Your regex <code>myRegex</code> should return <code>false</code> for the string <code>"Franklin Rosevelt"</code>');
+  - text: Your regex <code>myRegex</code> should return <code>true</code> for the string <code>Franklin Roosevelt</code>
+    testString: assert(myRegex.test('Franklin Roosevelt'), 'Your regex <code>myRegex</code> should return <code>true</code> for the string <code>Franklin Roosevelt</code>');
+  - text: Your regex <code>myRegex</code> should return <code>true</code> for the string <code>Franklin D. Roosevelt</code>
+    testString: assert(myRegex.test('Franklin D. Roosevelt'), 'Your regex <code>myRegex</code> should return <code>true</code> for the string <code>Franklin D. Roosevelt</code>');
+  - text: Your regex <code>myRegex</code> should return <code>true</code> for the string <code>Eleanor Roosevelt</code>
+    testString: assert(myRegex.test('Eleanor Roosevelt'), 'Your regex <code>myRegex</code> should return <code>true</code> for the string <code>Eleanor Roosevelt</code>');
+  - text: Your regex <code>myRegex</code> should return <code>false</code> for the string <code>Franklin Rosevelt</code>
+    testString: assert(!myRegex.test('Franklin Rosevelt'), 'Your regex <code>myRegex</code> should return <code>false</code> for the string <code>Franklin Rosevelt</code>');
   - text: You should use <code>.test()</code> to test the regex.
     testString: assert(code.match(/myRegex.test\(\s*myString\s*\)/), 'You should use <code>.test()</code> to test the regex.');
   - text: Your result should return <code>true</code>.
@@ -62,7 +62,7 @@ let result = false; // Change this line
 
 ```js
 let myString = "Eleanor Roosevelt";
-let myRegex = /(Franklin|Eleanor).*Roosevelt/g;
+let myRegex = /(Franklin|Eleanor).*Roosevelt/;
 let result = myRegex.test(myString);
 ```
 </section>
