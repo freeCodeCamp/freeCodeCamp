@@ -86,7 +86,6 @@ The `Array.prototype.filter` method expects a function that returns a `Boolean` 
 
 If you found this page useful, you can give thanks by copying and pasting this on the main chat:
 
-**`Thanks @renelis @abhisekp @Rafase282 @merkur0 for your help with Algorithm: Falsy Bouncer`**
 
 ## ![:clipboard:](https://forum.freecodecamp.com/images/emoji/emoji_one/clipboard.png?v=3 ":clipboard:") NOTES FOR CONTRIBUTIONS:
 
