@@ -91,6 +91,16 @@ button:hover {
 
 要确定悬停效果的速度，请使用属性`transition-duration` 。
 
+### 去除按钮的边界
+去除按钮的边界
+```
+button {
+  border: none; 
+  padding: 10px 15px;
+  background: tomato;
+}
+```
+
 ### 禁用按钮
 
 要禁用按钮，请使用cursor属性：

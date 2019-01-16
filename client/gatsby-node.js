@@ -8,10 +8,8 @@ const {
   createChallengePages,
   createBlockIntroPages,
   createSuperBlockIntroPages,
-  createGuideArticlePages,
-  createNewsArticle
+  createGuideArticlePages
 } = require('./utils/gatsby');
-const { createArticleSlug } = require('./utils/news');
 
 const createByIdentityMap = {
   guideMarkdown: createGuideArticlePages,
@@ -37,15 +35,7 @@ exports.onCreateNode = function onCreateNode({ node, actions, getNode }) {
       createNodeField({ node, name: 'slug', value: slug });
     }
   }
-  if (node.internal.type === 'NewsArticleNode') {
-    const {
-      author: { username },
-      slugPart,
-      shortId
-    } = node;
-    const slug = createArticleSlug({ username, shortId, slugPart });
-    createNodeField({ node, name: 'slug', value: slug });
-  }
+
 };
 
 exports.createPages = function createPages({ graphql, actions }) {
@@ -97,19 +87,6 @@ exports.createPages = function createPages({ graphql, actions }) {
               }
             }
           }
-          allNewsArticleNode(
-            sort: { fields: firstPublishedDate, order: DESC }
-          ) {
-            edges {
-              node {
-                id
-                shortId
-                fields {
-                  slug
-                }
-              }
-            }
-          }
         }
       `).then(result => {
         if (result.errors) {
@@ -149,11 +126,6 @@ exports.createPages = function createPages({ graphql, actions }) {
           }
           return null;
         });
-
-        // Create news article pages
-        result.data.allNewsArticleNode.edges.forEach(
-          createNewsArticle(createPage)
-        );
 
         return null;
       })

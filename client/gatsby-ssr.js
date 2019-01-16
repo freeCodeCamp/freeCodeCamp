@@ -50,11 +50,6 @@ export const onRenderBody = ({ setHeadComponents, setPostBodyComponents }) => {
       /* eslint-enable max-len */
       <script
         async={true}
-        key='chai-CDN'
-        src='https://cdnjs.cloudflare.com/ajax/libs/chai/4.1.2/chai.min.js'
-      />,
-      <script
-        async={true}
         key='gtag-script'
         src='https://www.googletagmanager.com/gtag/js?id=AW-795617839'
       />,

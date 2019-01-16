@@ -3,9 +3,9 @@ title: Bucket Sort
 ---
 
 ## What is Bucket Sort ?
-Bucket sort is a comparison sort algorithm that operates on elements by dividing them into different buckets and then sorting these buckets 
+Bucket Sort is a comparison sort algorithm that operates on elements by dividing them into different buckets and then sorting these buckets 
 individually. Each bucket is sorted individually using a separate sorting algorithm or by applying the bucket sort algorithm recursively. 
-Bucket sort is mainly useful when the input is uniformly distributed over a range.
+Bucket Sort is mainly useful when the input is uniformly distributed over a range.
 
 ## Assume one has the following problem in front of them:
 One has been given a large array of floating point integers lying uniformly between the lower and upper bound. This array now needs to be 
@@ -28,17 +28,13 @@ void bucketSort(float[] a,int n)
     for(each floating integer 'x' in n)
 
     {
-
         insert x into bucket[n*x]; 
-
     }
 
     for(each bucket)
 
     {
-
         sort(bucket);
-
     }
 
 }

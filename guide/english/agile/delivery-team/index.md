@@ -7,7 +7,7 @@ A scrum team is made up of the Product Owner (PO), the Scrum Master (SM), and th
 
 The delivery team is everyone but the PO and SM; the developers, testers, system analysts, database analysts, UI / UX analysts, and so on.
 
-For a scrum delivery team to be effective, it should be nimble (or agile!) enough for decisions to be agreed upon quickly while diverse enough so the vast majority of specalities required for software development can be covered by the entire team. Idealy, a team between 3 and 9 people generally works well for a scrum development team.
+For a scrum delivery team to be effective, it should be nimble (or agile!) enough for decisions to be agreed upon quickly while diverse enough so the vast majority of specialties required for software development can be covered by the entire team. Idealy, a team between 3 and 9 people generally works well for a scrum development team.
 
 The team must also foster mutual respect throughout every member of the team. An effective scrum team will be able to share the workload and put the accomplishments of the team ahead of the accomplishments of the individual.
 

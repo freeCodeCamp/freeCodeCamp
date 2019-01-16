@@ -3,11 +3,12 @@ title: Crystal
 ---
 ## Crystal
 
-It is a methodology that is a very adaptable, lightweight approach to software development. It is a family of agile methodologies and includes Crystal Clear, Crystal Yellow, Crystal Orange and others. All of them have unique attributes driven by many factors, like the size of the team, how critical the system is and the priorities of the project. Due to the project's unique characteristics, the state of each project might need a different set of practices, rules, and processes.
+Crystal is a family of lightweight methodologies for software development. These include Crystal Clear, Crystal Yellow, Crystal Orange, Crystal Red, and Crystal Garnet among others. Each of them is targeted at a unique aspect of the type of product that will result from the software being developed, including factors such as:
+* the size of the team
+* how critical the system is
+* the priorities of the project
 
-They were all developed by Alistair Cockburn in the 1990s. 
-
-According to him, the faces of the crystal are defined as Methodology, techniques and policies
+Crystal states that each projects might need a different set of practices, rules, and processes according to the project's unique characteristics. Crystal was developed by Alistair Cockburn in the 1990s for IBM. According to Cockburn, the faces of the crystal defined the methodology, techniques, and policies.
 
 Methodology - elements which are part of the project
 Techniques - areas of skills
@@ -21,12 +22,9 @@ Those methods are focused on:
 5. Talents
 6. Communications
 
-![Different Colors] https://upload.wikimedia.org/wikiversity/en/c/c5/Crystal_Family_example.jpg
-
+![Different Colors](https://upload.wikimedia.org/wikiversity/en/c/c5/Crystal_Family_example.jpg)
 
 It takes different strokes to move the world, and according to Crystal, it takes different colors to move a project. 
 
 #### More Information:
-<!-- Please add any articles you think might be helpful to read before writing the article -->
-
-[Wikiversity Article] https://en.wikiversity.org/wiki/Crystal_Methods
+[Wikiversity Article](https://en.wikiversity.org/wiki/Crystal_Methods)

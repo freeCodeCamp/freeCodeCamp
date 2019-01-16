@@ -10,6 +10,9 @@ Sorts are most commonly in numerical or a form of alphabetical (called lexicogra
 ### Why Sorting Algorithms are Important
 Since sorting can often reduce the complexity of a problem, it is an important algorithm in Computer Science. These algorithms have direct applications in searching algorithms, database algorithms, divide and conquer methods, data structure algorithms, and many more.
 
+### Trade-Offs of Algorithms
+When using different algorithms some questions have to be asked. How big is the collection being sorted? How much memory is at disposal to be used? Does the collection need to grow? The answers to these questions may determine what algorithm is going to work best for the situation. Some algorithms like merge sort may need a lot of space to run, while insertion sort is not always the fastest but it doesn't require many resources to run. It may need to be determined what the requirements of the system are and its limitations before deciding what algorithm to use.
+
 ### Some Common Sorting Algorithms
 Some of the most common sorting algorithms are:
 
