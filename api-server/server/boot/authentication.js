@@ -7,7 +7,11 @@ import { check } from 'express-validator/check';
 
 import { homeLocation } from '../../../config/env';
 import { createCookieConfig } from '../utils/cookieConfig';
-import { createPassportCallbackAuthenticator } from '../component-passport';
+import { 
+  createPassportCallbackAuthenticator,
+  saveResponseAuthCookies,
+  loginRedirect
+} from '../component-passport';
 import {
   ifUserRedirectTo,
   ifNoUserRedirectTo,
@@ -25,15 +29,34 @@ module.exports = function enableAuthentication(app) {
   // loopback.io/doc/en/lb2/Authentication-authorization-and-permissions.html
   app.enableAuth();
   const ifUserRedirect = ifUserRedirectTo();
+  const saveAuthCookies = saveResponseAuthCookies();
+  const loginSuccessRedirect = loginRedirect();
   const ifNoUserRedirectHome = ifNoUserRedirectTo(homeLocation);
   const api = app.loopback.Router();
   const { AuthToken, User } = app.models;
 
-  api.get('/signin', ifUserRedirect, passport.authenticate('auth0-login', {}));
-  api.get(
-    '/auth/auth0/callback',
-    createPassportCallbackAuthenticator('auth0-login', { provider: 'auth0' })
-  );
+  // Use a local mock strategy for signing in if we are in dev mode.
+  // Otherwise we use auth0 login. We use a string for 'true' because values
+  // set in the env file will always be strings and never boolean.
+  if (process.env.LOCAL_MOCK_AUTH === 'true') {
+    api.get(
+      '/signin',
+      passport.authenticate('devlogin'),
+      saveAuthCookies,
+      loginSuccessRedirect
+    );
+  } else {
+    api.get(
+      '/signin',
+      ifUserRedirect,
+      passport.authenticate('auth0-login', {})
+    );
+
+    api.get(
+      '/auth/auth0/callback',
+      createPassportCallbackAuthenticator('auth0-login', { provider: 'auth0' })
+    );
+  }
 
   api.get('/signout', (req, res) => {
     req.logout();
