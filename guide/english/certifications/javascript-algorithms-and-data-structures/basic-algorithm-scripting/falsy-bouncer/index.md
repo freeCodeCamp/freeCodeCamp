@@ -39,6 +39,7 @@ Then we need to add a `filter()` with the falsy values function...
 
 ## ![:beginner:](https://forum.freecodecamp.com/images/emoji/emoji_one/beginner.png?v=3 ":beginner:") Basic Code Solution:
 
+```js
 function bouncer(arr) {
   let newArray = [];
   for (var i = 0; i < arr.length; i++){
