@@ -191,7 +191,7 @@ function populateTestsForLang({ lang, challenges }) {
         });
 
         let { files = [] } = challenge;
-        let evaluateTest;
+        let createTestRunner;
         if (challengeType === challengeTypes.backend) {
           it('Check tests is not implemented.');
           return;
@@ -199,9 +199,9 @@ function populateTestsForLang({ lang, challenges }) {
           challengeType === challengeTypes.js ||
           challengeType === challengeTypes.bonfire
         ) {
-          evaluateTest = evaluateJsTest;
+          createTestRunner = createTestRunnerForJSChallenge;
         } else if (files.length === 1) {
-          evaluateTest = evaluateHtmlTest;
+          createTestRunner = createTestRunnerForDOMChallenge;
         } else {
           it('Check tests.', () => {
             throw new Error('Seed file should be only the one.');
@@ -211,27 +211,31 @@ function populateTestsForLang({ lang, challenges }) {
 
         files = files.map(createPoly);
         it('Test suite must fail on the initial contents', async function() {
-          this.timeout(20000);
+          this.timeout(5000 * tests.length + 1000);
           // suppress errors in the console.
           const oldConsoleError = console.error;
           console.error = () => {};
-          let fails = (await Promise.all(
-            tests.map(async function(test) {
+          let fails = false;
+          let testRunner;
+          try {
+            testRunner = await createTestRunner(
+              { ...challenge, files },
+              '',
+              page
+            );
+          } catch {
+            fails = true;
+          }
+          if (!fails) {
+            for (const test of tests) {
               try {
-                await evaluateTest(
-                  {
-                    ...challenge,
-                    files,
-                    test
-                  },
-                  page
-                );
-                return false;
+                await testRunner(test);
               } catch (e) {
-                return true;
+                fails = true;
+                break;
               }
-            })
-          )).some(v => v);
+            }
+          }
           console.error = oldConsoleError;
           assert(fails, 'Test suit does not fail on the initial contents');
         });
@@ -249,20 +253,16 @@ function populateTestsForLang({ lang, challenges }) {
 
         describe('Check tests against solutions', function() {
           solutions.forEach((solution, index) => {
-            describe(`Solution ${index + 1}`, function() {
-              tests.forEach(test => {
-                it(test.text, async function() {
-                  await evaluateTest(
-                    {
-                      ...challenge,
-                      files,
-                      solution,
-                      test
-                    },
-                    page
-                  );
-                });
-              });
+            it(`Solution ${index + 1}`, async function() {
+              this.timeout(5000 * tests.length + 1000);
+              const testRunner = await createTestRunner(
+                { ...challenge, files },
+                solution,
+                page
+              );
+              for (const test of tests) {
+                await testRunner(test);
+              }
             });
           });
         });
@@ -271,8 +271,9 @@ function populateTestsForLang({ lang, challenges }) {
   });
 }
 
-async function evaluateHtmlTest(
-  { solution, required = [], template, files, test },
+async function createTestRunnerForDOMChallenge(
+  { required = [], template, files },
+  solution,
   context
 ) {
   if (solution) {
@@ -288,32 +289,39 @@ async function evaluateHtmlTest(
 
   await context.reload();
   await context.setContent(build);
-
-  const result = await context.evaluate(
-    async(sources, testString, loadEnzyme) => {
+  await context.evaluate(
+    async(sources, loadEnzyme) => {
       document.__source = sources && 'index' in sources ? sources['index'] : '';
       document.__getUserInput = fileName => sources[fileName];
       document.__frameReady = () => {};
       document.__loadEnzyme = loadEnzyme;
       await document.__initTestFrame();
-
-      const { pass, err } = await document.__runTest(testString);
-      if (pass) {
-        return true;
-      } else {
-        return { ...err };
-      }
     },
     sources,
-    test.testString,
     loadEnzyme
   );
-  if (result !== true) {
-    throw AssertionError(result.message);
-  }
+
+  return async({ text, testString }) => {
+    try {
+      const { pass, err } = await Promise.race([
+        new Promise((_, reject) => setTimeout(() => reject('timeout'), 5000)),
+        await context.evaluate(async testString => {
+          return await document.__runTest(testString);
+        }, testString)
+      ]);
+      if (!pass) {
+        throw AssertionError(`${text}\n${err.message}`);
+      }
+    } catch (err) {
+      throw typeof err === 'string'
+        ? `${text}\n${err}`
+        : (err.message = `${text}
+        ${err.message}`);
+    }
+  };
 }
 
-async function evaluateJsTest({ solution, files, test }) {
+async function createTestRunnerForJSChallenge({ files }, solution) {
   if (solution) {
     files[0].contents = solution;
   }
@@ -322,16 +330,22 @@ async function evaluateJsTest({ solution, files, test }) {
   const code = sources && 'index' in sources ? sources['index'] : '';
 
   const testWorker = createWorker('test-evaluator');
-
-  try {
-    const { pass, err } = await testWorker.execute(
-      { testString: test.testString, build, code, sources },
-      5000
-    );
-    if (!pass) {
-      throw new AssertionError(err.message);
+  return async({ text, testString }) => {
+    try {
+      const { pass, err } = await testWorker.execute(
+        { testString, build, code, sources },
+        5000
+      );
+      if (!pass) {
+        throw new AssertionError(`${text}\n${err.message}`);
+      }
+    } catch (err) {
+      throw typeof err === 'string'
+        ? `${text}\n${err}`
+        : (err.message = `${text}
+        ${err.message}`);
+    } finally {
+      testWorker.killWorker();
     }
-  } finally {
-    testWorker.killWorker();
-  }
+  };
 }
