@@ -72,7 +72,7 @@
   "scripts": {
     "prebuild": "npm run build:workers && node ../tools/scripts/ensure-env.js",
     "build": "node --max_old_space_size=7168 node_modules/gatsby-cli build",
-    "build:workers": "webpack --env.production --config ./webpack-workers.js --progress",
+    "build:workers": "node --max_old_space_size=7168 node_modules/webpack-cli --env.production --config ./webpack-workers.js --progress",
     "predevelop": "npm run prebuild",
     "develop": "gatsby develop",
     "format:gatsby": "prettier-eslint --write --trailing-comma none --single-quote './gatsby-*.js'",
