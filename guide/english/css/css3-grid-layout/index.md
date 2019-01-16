@@ -11,6 +11,6 @@ Though Grid Layout isn't fully supported by all browsers, it's the most advanced
 - [Grid by Example](https://gridbyexample.com/)
 - [Wes Bos - Free CSS Grid Course](https://cssgrid.io/)
 - [YouTube - CSS Grid Playlist](https://www.youtube.com/watch?v=FEnRpy9Xfes&list=PLbSquHt1VCf1x_-1ytlVMT0AMwADlWtc1)
-- Free Code Camp CSS Grid Course <a href="https://www.youtube.com/watch?v=t6CBKf8K_Ac" target="_blank"></a>
+- [Free Code Camp CSS Grid Course](https://www.youtube.com/watch?v=t6CBKf8K_Ac)
 
 More info about browser support can be read at <a href="https://caniuse.com/#feat=css-grid" target="_blank">https://caniuse.com</a>.
