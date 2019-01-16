@@ -4,6 +4,7 @@ import styled from 'styled-components';
 import ListItem from './ListItem';
 import FullWidthDiv from './FullWidthDiv';
 import Result from './Result';
+import FilterOption from './FilterOption';
 import { ENDPOINT_PARETO } from '../constants';
 
 const List = styled.div`
@@ -66,8 +67,40 @@ class Pareto extends React.Component {
       );
     });
 
+    const options = data.reduce((seen, { filename }) => {
+      const filenameReplacement = filename.replace(
+        /^curriculum\/challenges\//,
+        'curriculum/'
+      );
+      const regex = /^(docs|curriculum|guide)(?:\/)(english|arabic|chinese|portuguese|russian|spanish)?\/?/;
+      // need an array to pass to labelsAdder
+      const [_, articleType, language] = filenameReplacement.match(regex) || [];
+      if (articleType && language) {
+        if (!seen.hasOwnProperty(articleType)) {
+          seen[articleType] = {};
+        }
+        seen[articleType][language] = true;
+      }
+      return seen;
+    }, {});
+
+    let fileTypeOptions = Object.keys(options).map((articleType) => articleType);
+    fileTypeOptions = fileTypeOptions.concat('all','other').sort();
+    // const typeOptions = fileTypeOptions.map((type) => (
+    //   <FilterOption
+    //     name="filetype"
+    //     value={type}
+    //     onOptionChange={handleOptionChange}
+    //     selectedOption={selectedOption}
+    //   >
+    //   {captialize(type)}
+    //   </FilterOption>
+    // ));
     return (
       <FullWidthDiv>
+        <div>
+          {/*typeOptions*/}
+        </div>
         {data.length ? elements : 'Report Loading...'}
       </FullWidthDiv>
     );
