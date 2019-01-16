@@ -38,16 +38,16 @@ localeTitle: Повторить строку Повторить строку
 
 ## ![:beginner:](https://forum.freecodecamp.com/images/emoji/emoji_one/beginner.png?v=3 ": Начинающий:") Решение базового кода:
 ```
-function repeatStringNumTimes(str, num) { 
-  var accumulatedStr = ''; 
- 
-  while (num > 0) { 
-    accumulatedStr += str; 
-    num--; 
-  } 
- 
-  return accumulatedStr; 
- } 
+function repeatStringNumTimes(str, num) {
+  var accumulatedStr = '';
+
+  while (num > 0) {
+    accumulatedStr += str;
+    num--;
+  }
+
+  return accumulatedStr;
+ }
 ```
 
 ![:rocket:](https://forum.freecodecamp.com/images/emoji/emoji_one/rocket.png?v=3 ": Ракета:") [Код запуска](https://repl.it/CLjU/19)
@@ -66,14 +66,14 @@ function repeatStringNumTimes(str, num) {
 
 ## ![:sunflower:](https://forum.freecodecamp.com/images/emoji/emoji_one/sunflower.png?v=3 ": Подсолнечное:") Решение промежуточного кода:
 ```
-function repeatStringNumTimes(str, num) { 
-  if(num < 0) 
-    return ""; 
-  if(num === 1) 
-    return str; 
-  else 
-    return str + repeatStringNumTimes(str, num - 1); 
- } 
+function repeatStringNumTimes(str, num) {
+  if(num < 0)
+    return "";
+  if(num === 1)
+    return str;
+  else
+    return str + repeatStringNumTimes(str, num - 1);
+ }
 ```
 
 ![:rocket:](https://forum.freecodecamp.com/images/emoji/emoji_one/rocket.png?v=3 ": Ракета:") [Код запуска](https://repl.it/CLjU/21)
@@ -91,11 +91,11 @@ function repeatStringNumTimes(str, num) {
 
 ## ![:rotating_light:](https://forum.freecodecamp.com/images/emoji/emoji_one/rotating_light.png?v=3 ": Rotating_light:") Расширенное решение для кода:
 ```
-function repeatStringNumTimes(str, num) { 
-  return num > 0 ? str.repeat(num) : ''; 
- } 
- 
- repeatStringNumTimes("abc", 3); 
+function repeatStringNumTimes(str, num) {
+  return num > 0 ? str.repeat(num) : '';
+ }
+
+ repeatStringNumTimes("abc", 3);
 ```
 
 ![:rocket:](https://forum.freecodecamp.com/images/emoji/emoji_one/rocket.png?v=3 ": Ракета:") [Код запуска](https://repl.it/CLjU/85)
@@ -115,5 +115,3 @@ function repeatStringNumTimes(str, num) {
 *   Добавьте объяснение своего решения.
 *   Классифицируйте решение в одной из следующих категорий - **Basic** , **Intermediate** и **Advanced** . ![:traffic_light:](https://forum.freecodecamp.com/images/emoji/emoji_one/traffic_light.png?v=3 ":светофор:")
 *   Пожалуйста, добавьте свое имя пользователя, только если вы добавили **соответствующее основное содержимое** . ( ![:warning:](https://forum.freecodecamp.com/images/emoji/emoji_one/warning.png?v=3 ":предупреждение:") **_НЕ_** _удаляйте существующие имена пользователей_ )
-
-> Увидеть ![:point_right:](https://forum.freecodecamp.com/images/emoji/emoji_one/point_right.png?v=3 ": Point_right:") [**`Wiki Challenge Solution Template`**](https://forum.freecodecamp.com/t/algorithm-article-template/14272) для [**`Wiki Challenge Solution Template`**](https://forum.freecodecamp.com/t/algorithm-article-template/14272) для справки.

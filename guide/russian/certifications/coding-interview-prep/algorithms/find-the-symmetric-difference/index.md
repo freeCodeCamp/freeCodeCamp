@@ -37,12 +37,12 @@ Deem записывает вспомогательную функцию, кот�
 
 **Заметка** В случае _нечетного числа множеств_ симметричная разность будет включать одинаковые элементы, присутствующие во всех заданных наборах. Например;
 ```
-A = {1, 2, 3} 
- B = {2, 3, 4} 
- C = {3, 4, 5} 
- 
- (A &Intersection; B) &Intersection; C = {1, 4} &Intersection {3, 4, 5} 
- A &Intersection; B = {1, 3, 5} 
+A = {1, 2, 3}
+ B = {2, 3, 4}
+ C = {3, 4, 5}
+
+ (A &Intersection; B) &Intersection; C = {1, 4} &Intersection {3, 4, 5}
+ A &Intersection; B = {1, 3, 5}
 ```
 
 > _попытаться решить проблему сейчас_
@@ -56,35 +56,35 @@ A = {1, 2, 3}
 ## ![:beginner:](https://forum.freecodecamp.com/images/emoji/emoji_one/beginner.png?v=3 ": Начинающий:") Решение базового кода:
 
 ```javascript
-    function sym() { 
-      var args = []; 
-      for (var i = 0; i < arguments.length; i++) { 
-        args.push(arguments[i]); 
-      } 
- 
-      function symDiff(arrayOne, arrayTwo) { 
-        var result = []; 
- 
-        arrayOne.forEach(function(item) { 
-          if (arrayTwo.indexOf(item) < 0 && result.indexOf(item) < 0) { 
-            result.push(item); 
-          } 
-        }); 
- 
-        arrayTwo.forEach(function(item) { 
-          if (arrayOne.indexOf(item) < 0 && result.indexOf(item) < 0) { 
-            result.push(item); 
-          } 
-        }); 
- 
-        return result; 
-      } 
- 
-      // Apply reduce method to args array, using the symDiff function 
-      return args.reduce(symDiff); 
-    } 
+    function sym() {
+      var args = [];
+      for (var i = 0; i < arguments.length; i++) {
+        args.push(arguments[i]);
+      }
 
-```](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/reduce) 
+      function symDiff(arrayOne, arrayTwo) {
+        var result = [];
+
+        arrayOne.forEach(function(item) {
+          if (arrayTwo.indexOf(item) < 0 && result.indexOf(item) < 0) {
+            result.push(item);
+          }
+        });
+
+        arrayTwo.forEach(function(item) {
+          if (arrayOne.indexOf(item) < 0 && result.indexOf(item) < 0) {
+            result.push(item);
+          }
+        });
+
+        return result;
+      }
+
+      // Apply reduce method to args array, using the symDiff function
+      return args.reduce(symDiff);
+    }
+
+```](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/reduce)
 
  [![:rocket:](https://forum.freecodecamp.com/images/emoji/emoji_one/rocket.png?v=3 ": Ракета:")](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/reduce) [Код запуска](https://repl.it/C4II/0)
 
@@ -107,38 +107,38 @@ A = {1, 2, 3}
 ## ![:sunflower:](https://forum.freecodecamp.com/images/emoji/emoji_one/sunflower.png?v=3 ": Подсолнечное:") Решение промежуточного кода:
 
 ```javascript
-    function sym() { 
- 
-      // Convert the argument object into a proper array 
-      var args = Array.prototype.slice.call(arguments); 
- 
-      // Return the symmetric difference of 2 arrays 
-      var getDiff = function(arr1, arr2) { 
- 
-        // Returns items in arr1 that don't exist in arr2 
-        function filterFunction(arr1, arr2) { 
-          return arr1.filter(function(item) { 
-            return arr2.indexOf(item) === -1; 
-          }); 
-        } 
- 
-        // Run filter function on each array against the other 
-        return filterFunction(arr1, arr2) 
-          .concat(filterFunction(arr2, arr1)); 
-      }; 
- 
-      // Reduce all arguments getting the difference of them 
-      var summary = args.reduce(getDiff, []); 
- 
-      // Run filter function to get the unique values 
-      var unique = summary.filter(function(elem, index, self) { 
-        return index === self.indexOf(elem); 
-        }); 
-      return unique; 
-    } 
- 
-    // test here 
-    sym([1, 2, 3], [5, 2, 1, 4]); 
+    function sym() {
+
+      // Convert the argument object into a proper array
+      var args = Array.prototype.slice.call(arguments);
+
+      // Return the symmetric difference of 2 arrays
+      var getDiff = function(arr1, arr2) {
+
+        // Returns items in arr1 that don't exist in arr2
+        function filterFunction(arr1, arr2) {
+          return arr1.filter(function(item) {
+            return arr2.indexOf(item) === -1;
+          });
+        }
+
+        // Run filter function on each array against the other
+        return filterFunction(arr1, arr2)
+          .concat(filterFunction(arr2, arr1));
+      };
+
+      // Reduce all arguments getting the difference of them
+      var summary = args.reduce(getDiff, []);
+
+      // Run filter function to get the unique values
+      var unique = summary.filter(function(elem, index, self) {
+        return index === self.indexOf(elem);
+        });
+      return unique;
+    }
+
+    // test here
+    sym([1, 2, 3], [5, 2, 1, 4]);
 ```
 
 ![:rocket:](https://forum.freecodecamp.com/images/emoji/emoji_one/rocket.png?v=3 ": Ракета:") [Код запуска](https://repl.it/CLoc/0)
@@ -161,19 +161,19 @@ A = {1, 2, 3}
 ## ![:rotating_light:](https://forum.freecodecamp.com/images/emoji/emoji_one/rotating_light.png?v=3 ": Rotating_light:") Расширенное решение для кода:
 
 ```javascript
-    function sym() { 
-      let argv = Array.from(arguments).reduce(diffArray); 
-      return argv.filter((element, index, array) => index === array.indexOf(element));//remove duplicates 
-    } 
- 
-    function diffArray(arr1, arr2) { 
-      return arr1 
-        .filter(element => !arr2.includes(element)) 
-        .concat(arr2.filter(element => !arr1.includes(element))); 
-    } 
- 
-    // test here 
-    sym([1, 2, 3], [5, 2, 1, 4]); 
+    function sym() {
+      let argv = Array.from(arguments).reduce(diffArray);
+      return argv.filter((element, index, array) => index === array.indexOf(element));//remove duplicates
+    }
+
+    function diffArray(arr1, arr2) {
+      return arr1
+        .filter(element => !arr2.includes(element))
+        .concat(arr2.filter(element => !arr1.includes(element)));
+    }
+
+    // test here
+    sym([1, 2, 3], [5, 2, 1, 4]);
 ```
 
 ![:rocket:](https://forum.freecodecamp.com/images/emoji/emoji_one/rocket.png?v=3 ": Ракета:") [Код запуска](https://repl.it/@ashenm/Symmetric-Difference)
@@ -181,9 +181,9 @@ A = {1, 2, 3}
 ### Код Объяснение:
 
 *   Основная функция _sym ()_ создает массив из _аргументов_ и уменьшает его элементы, используя вспомогательную функцию _diffArray ()_ для одного массива.
-    
+
 *   Функция _diffArray ()_ возвращает симметричную разность двух массивов путем выделения уникальных элементов в параметризованных массивах; _arr1_ и _arr2_ .
-    
+
 
 #### Связанные ссылки
 
@@ -196,5 +196,3 @@ A = {1, 2, 3}
 *   Добавьте объяснение своего решения.
 *   Классифицируйте решение в одной из следующих категорий - **Basic** , **Intermediate** и **Advanced** . ![:traffic_light:](https://forum.freecodecamp.com/images/emoji/emoji_one/traffic_light.png?v=3 ":светофор:")
 *   Пожалуйста, добавьте свое имя пользователя, только если вы добавили **соответствующее основное содержимое** . ( ![:warning:](https://forum.freecodecamp.com/images/emoji/emoji_one/warning.png?v=3 ":предупреждение:") **_НЕ_** _удаляйте существующие имена пользователей_ )
-
-> Видеть ![:point_right:](https://forum.freecodecamp.com/images/emoji/emoji_one/point_right.png?v=3 ": Point_right:") [**`Wiki Challenge Solution Template`**](http://forum.freecodecamp.com/t/algorithm-article-template/14272) для [**`Wiki Challenge Solution Template`**](http://forum.freecodecamp.com/t/algorithm-article-template/14272) для справки.

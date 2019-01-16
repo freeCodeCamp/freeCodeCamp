@@ -9,14 +9,14 @@ localeTitle: Establecer parámetros predeterminados para sus funciones
 ### : checkered\_flag: Explicación del problema:
 
 ```javascript
-const increment = (function() { 
-  "use strict"; 
-  return function increment(number, value) { 
-    return number + value; 
-  }; 
- })(); 
- console.log(increment(5, 2)); // returns 7 
- console.log(increment(5)); // returns NaN 
+const increment = (function() {
+  "use strict";
+  return function increment(number, value) {
+    return number + value;
+  };
+ })();
+ console.log(increment(5, 2)); // returns 7
+ console.log(increment(5)); // returns NaN
 ```
 
 Estaremos modificando la función de incremento para que el parámetro del **número** se incremente en 1 de forma predeterminada, estableciendo el **valor** en 1 si no se pasa un valor para el **valor** a la función de incremento.
@@ -42,14 +42,14 @@ intenta resolver el problema ahora
 ## : principiante: Solución de código básico:
 
 ```javascript
-const increment = (function() { 
-  "use strict"; 
-  return function increment(number, value = 1) { 
-    return number + value; 
-  }; 
- })(); 
- console.log(increment(5, 2)); // returns 7 
- console.log(increment(5)); // returns NaN 
+const increment = (function() {
+  "use strict";
+  return function increment(number, value = 1) {
+    return number + value;
+  };
+ })();
+ console.log(increment(5, 2)); // returns 7
+ console.log(increment(5)); // returns NaN
 ```
 
 : cohete: [Ejecutar código](https://repl.it/@RyanPisuena/PleasingFumblingThings)
@@ -68,5 +68,3 @@ Enlaces relevantes:
 *   Agregue una explicación de su solución.
 *   Categorice la solución en una de las siguientes categorías: Básica, Intermedia y Avanzada. :semáforo:
 *   Agregue su nombre de usuario solo si ha agregado algún contenido principal relevante. (: advertencia: NO elimine ningún nombre de usuario existente)
-
-Vea: point\_right: [Wiki Challenge Solution Template](https://forum.freecodecamp.org/t/freecodecamp-algorithm-challenge-template-guide/14272) para referencia.

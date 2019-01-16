@@ -38,16 +38,16 @@ Haga que la variable creada almacene el valor actual y agregue la palabra a la m
 
 ## ![:beginner:](https://forum.freecodecamp.com/images/emoji/emoji_one/beginner.png?v=3 ":principiante:") Solución de código básico:
 ```
-function repeatStringNumTimes(str, num) { 
-  var accumulatedStr = ''; 
- 
-  while (num > 0) { 
-    accumulatedStr += str; 
-    num--; 
-  } 
- 
-  return accumulatedStr; 
- } 
+function repeatStringNumTimes(str, num) {
+  var accumulatedStr = '';
+
+  while (num > 0) {
+    accumulatedStr += str;
+    num--;
+  }
+
+  return accumulatedStr;
+ }
 ```
 
 ![:rocket:](https://forum.freecodecamp.com/images/emoji/emoji_one/rocket.png?v=3 ":cohete:") [Ejecutar código](https://repl.it/CLjU/19)
@@ -66,14 +66,14 @@ function repeatStringNumTimes(str, num) {
 
 ## ![:sunflower:](https://forum.freecodecamp.com/images/emoji/emoji_one/sunflower.png?v=3 ":girasol:") Solución de código intermedio:
 ```
-function repeatStringNumTimes(str, num) { 
-  if(num < 0) 
-    return ""; 
-  if(num === 1) 
-    return str; 
-  else 
-    return str + repeatStringNumTimes(str, num - 1); 
- } 
+function repeatStringNumTimes(str, num) {
+  if(num < 0)
+    return "";
+  if(num === 1)
+    return str;
+  else
+    return str + repeatStringNumTimes(str, num - 1);
+ }
 ```
 
 ![:rocket:](https://forum.freecodecamp.com/images/emoji/emoji_one/rocket.png?v=3 ":cohete:") [Ejecutar código](https://repl.it/CLjU/21)
@@ -91,11 +91,11 @@ function repeatStringNumTimes(str, num) {
 
 ## ![:rotating_light:](https://forum.freecodecamp.com/images/emoji/emoji_one/rotating_light.png?v=3 ": rotando luz:") Solución avanzada de código:
 ```
-function repeatStringNumTimes(str, num) { 
-  return num > 0 ? str.repeat(num) : ''; 
- } 
- 
- repeatStringNumTimes("abc", 3); 
+function repeatStringNumTimes(str, num) {
+  return num > 0 ? str.repeat(num) : '';
+ }
+
+ repeatStringNumTimes("abc", 3);
 ```
 
 ![:rocket:](https://forum.freecodecamp.com/images/emoji/emoji_one/rocket.png?v=3 ":cohete:") [Ejecutar código](https://repl.it/CLjU/85)
@@ -115,5 +115,3 @@ function repeatStringNumTimes(str, num) {
 *   Agregue una explicación de su solución.
 *   Categorice la solución en una de las siguientes categorías: **Básica** , **Intermedia** y **Avanzada** . ![:traffic_light:](https://forum.freecodecamp.com/images/emoji/emoji_one/traffic_light.png?v=3 ":semáforo:")
 *   Agregue su nombre de usuario solo si ha agregado algún **contenido principal relevante** . ( ![:warning:](https://forum.freecodecamp.com/images/emoji/emoji_one/warning.png?v=3 ":advertencia:") **_NO_** _elimine ningún nombre de usuario existente_ )
-
-> Ver ![:point_right:](https://forum.freecodecamp.com/images/emoji/emoji_one/point_right.png?v=3 ": point_right:") [**`Wiki Challenge Solution Template`**](https://forum.freecodecamp.com/t/algorithm-article-template/14272) para referencia.

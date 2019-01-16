@@ -38,17 +38,17 @@ localeTitle: كرر سلسلة يكرر سلسلة
 
 ## ![:beginner:](https://forum.freecodecamp.com/images/emoji/emoji_one/beginner.png?v=3 ":مبتدئ:") الحل الأساسي للكود:
 
- `function repeatStringNumTimes(str, num) { 
-  var accumulatedStr = ''; 
- 
-  while (num > 0) { 
-    accumulatedStr += str; 
-    num--; 
-  } 
- 
-  return accumulatedStr; 
- } 
-` 
+ `function repeatStringNumTimes(str, num) {
+  var accumulatedStr = '';
+
+  while (num > 0) {
+    accumulatedStr += str;
+    num--;
+  }
+
+  return accumulatedStr;
+ }
+`
 
 ![:rocket:](https://forum.freecodecamp.com/images/emoji/emoji_one/rocket.png?v=3 ":صاروخ:") [تشغيل الكود](https://repl.it/CLjU/19)
 
@@ -66,15 +66,15 @@ localeTitle: كرر سلسلة يكرر سلسلة
 
 ## ![:sunflower:](https://forum.freecodecamp.com/images/emoji/emoji_one/sunflower.png?v=3 ":دوار الشمس:") حل الشفرة المتوسطة:
 
- `function repeatStringNumTimes(str, num) { 
-  if(num < 0) 
-    return ""; 
-  if(num === 1) 
-    return str; 
-  else 
-    return str + repeatStringNumTimes(str, num - 1); 
- } 
-` 
+ `function repeatStringNumTimes(str, num) {
+  if(num < 0)
+    return "";
+  if(num === 1)
+    return str;
+  else
+    return str + repeatStringNumTimes(str, num - 1);
+ }
+`
 
 ![:rocket:](https://forum.freecodecamp.com/images/emoji/emoji_one/rocket.png?v=3 ":صاروخ:") [تشغيل الكود](https://repl.it/CLjU/21)
 
@@ -91,12 +91,12 @@ localeTitle: كرر سلسلة يكرر سلسلة
 
 ## ![:rotating_light:](https://forum.freecodecamp.com/images/emoji/emoji_one/rotating_light.png?v=3 ": rotating_light:") الحل المتقدم للكود:
 
- `function repeatStringNumTimes(str, num) { 
-  return num > 0 ? str.repeat(num) : ''; 
- } 
- 
- repeatStringNumTimes("abc", 3); 
-` 
+ `function repeatStringNumTimes(str, num) {
+  return num > 0 ? str.repeat(num) : '';
+ }
+
+ repeatStringNumTimes("abc", 3);
+`
 
 ![:rocket:](https://forum.freecodecamp.com/images/emoji/emoji_one/rocket.png?v=3 ":صاروخ:") [تشغيل الكود](https://repl.it/CLjU/85)
 
@@ -115,5 +115,3 @@ localeTitle: كرر سلسلة يكرر سلسلة
 *   أضف شرحًا لحلك.
 *   تصنيف الحل في واحدة من الفئات التالية - **الأساسي** **والمتوسط** **والمتقدم** . ![:traffic_light:](https://forum.freecodecamp.com/images/emoji/emoji_one/traffic_light.png?v=3 ": traffic_light:")
 *   الرجاء إضافة اسم المستخدم الخاص بك فقط إذا قمت بإضافة أي **محتويات رئيسية ذات صلة** . ( ![:warning:](https://forum.freecodecamp.com/images/emoji/emoji_one/warning.png?v=3 ":تحذير:") **_لا_** _تزيل أي أسماء مستخدمين حالية_ )
-
-> نرى ![:point_right:](https://forum.freecodecamp.com/images/emoji/emoji_one/point_right.png?v=3 ": point_right:") [**`Wiki Challenge Solution Template`**](https://forum.freecodecamp.com/t/algorithm-article-template/14272) كمرجع.

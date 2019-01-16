@@ -37,12 +37,12 @@ Deem编写一个辅助函数，在每次调用时返回两个数组的对称差�
 
 **注意** 在_奇数个集合_的情况下，对称差异将包括在所有给定集合中存在的相同元素。例如;
 ```
-A = {1, 2, 3} 
- B = {2, 3, 4} 
- C = {3, 4, 5} 
- 
- (A &Intersection; B) &Intersection; C = {1, 4} &Intersection {3, 4, 5} 
- A &Intersection; B = {1, 3, 5} 
+A = {1, 2, 3}
+ B = {2, 3, 4}
+ C = {3, 4, 5}
+
+ (A &Intersection; B) &Intersection; C = {1, 4} &Intersection {3, 4, 5}
+ A &Intersection; B = {1, 3, 5}
 ```
 
 > _现在尝试解决问题_
@@ -56,35 +56,35 @@ A = {1, 2, 3}
 ## ![:beginner:](https://forum.freecodecamp.com/images/emoji/emoji_one/beginner.png?v=3 "：初学者：")基本代码解决方案
 
 ```javascript
-    function sym() { 
-      var args = []; 
-      for (var i = 0; i < arguments.length; i++) { 
-        args.push(arguments[i]); 
-      } 
- 
-      function symDiff(arrayOne, arrayTwo) { 
-        var result = []; 
- 
-        arrayOne.forEach(function(item) { 
-          if (arrayTwo.indexOf(item) < 0 && result.indexOf(item) < 0) { 
-            result.push(item); 
-          } 
-        }); 
- 
-        arrayTwo.forEach(function(item) { 
-          if (arrayOne.indexOf(item) < 0 && result.indexOf(item) < 0) { 
-            result.push(item); 
-          } 
-        }); 
- 
-        return result; 
-      } 
- 
-      // Apply reduce method to args array, using the symDiff function 
-      return args.reduce(symDiff); 
-    } 
+    function sym() {
+      var args = [];
+      for (var i = 0; i < arguments.length; i++) {
+        args.push(arguments[i]);
+      }
 
-```](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/reduce) 
+      function symDiff(arrayOne, arrayTwo) {
+        var result = [];
+
+        arrayOne.forEach(function(item) {
+          if (arrayTwo.indexOf(item) < 0 && result.indexOf(item) < 0) {
+            result.push(item);
+          }
+        });
+
+        arrayTwo.forEach(function(item) {
+          if (arrayOne.indexOf(item) < 0 && result.indexOf(item) < 0) {
+            result.push(item);
+          }
+        });
+
+        return result;
+      }
+
+      // Apply reduce method to args array, using the symDiff function
+      return args.reduce(symDiff);
+    }
+
+```](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/reduce)
 
  [![:rocket:](https://forum.freecodecamp.com/images/emoji/emoji_one/rocket.png?v=3 "：火箭：")](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/reduce) [运行代码](https://repl.it/C4II/0)
 
@@ -107,38 +107,38 @@ A = {1, 2, 3}
 ## ![:sunflower:](https://forum.freecodecamp.com/images/emoji/emoji_one/sunflower.png?v=3 "：向日葵：")中级代码解决方案：
 
 ```javascript
-    function sym() { 
- 
-      // Convert the argument object into a proper array 
-      var args = Array.prototype.slice.call(arguments); 
- 
-      // Return the symmetric difference of 2 arrays 
-      var getDiff = function(arr1, arr2) { 
- 
-        // Returns items in arr1 that don't exist in arr2 
-        function filterFunction(arr1, arr2) { 
-          return arr1.filter(function(item) { 
-            return arr2.indexOf(item) === -1; 
-          }); 
-        } 
- 
-        // Run filter function on each array against the other 
-        return filterFunction(arr1, arr2) 
-          .concat(filterFunction(arr2, arr1)); 
-      }; 
- 
-      // Reduce all arguments getting the difference of them 
-      var summary = args.reduce(getDiff, []); 
- 
-      // Run filter function to get the unique values 
-      var unique = summary.filter(function(elem, index, self) { 
-        return index === self.indexOf(elem); 
-        }); 
-      return unique; 
-    } 
- 
-    // test here 
-    sym([1, 2, 3], [5, 2, 1, 4]); 
+    function sym() {
+
+      // Convert the argument object into a proper array
+      var args = Array.prototype.slice.call(arguments);
+
+      // Return the symmetric difference of 2 arrays
+      var getDiff = function(arr1, arr2) {
+
+        // Returns items in arr1 that don't exist in arr2
+        function filterFunction(arr1, arr2) {
+          return arr1.filter(function(item) {
+            return arr2.indexOf(item) === -1;
+          });
+        }
+
+        // Run filter function on each array against the other
+        return filterFunction(arr1, arr2)
+          .concat(filterFunction(arr2, arr1));
+      };
+
+      // Reduce all arguments getting the difference of them
+      var summary = args.reduce(getDiff, []);
+
+      // Run filter function to get the unique values
+      var unique = summary.filter(function(elem, index, self) {
+        return index === self.indexOf(elem);
+        });
+      return unique;
+    }
+
+    // test here
+    sym([1, 2, 3], [5, 2, 1, 4]);
 ```
 
 ![:rocket:](https://forum.freecodecamp.com/images/emoji/emoji_one/rocket.png?v=3 "：火箭：") [运行代码](https://repl.it/CLoc/0)
@@ -161,19 +161,19 @@ A = {1, 2, 3}
 ## ![:rotating_light:](https://forum.freecodecamp.com/images/emoji/emoji_one/rotating_light.png?v=3 "：rotating_light：")高级代码解决方案
 
 ```javascript
-    function sym() { 
-      let argv = Array.from(arguments).reduce(diffArray); 
-      return argv.filter((element, index, array) => index === array.indexOf(element));//remove duplicates 
-    } 
- 
-    function diffArray(arr1, arr2) { 
-      return arr1 
-        .filter(element => !arr2.includes(element)) 
-        .concat(arr2.filter(element => !arr1.includes(element))); 
-    } 
- 
-    // test here 
-    sym([1, 2, 3], [5, 2, 1, 4]); 
+    function sym() {
+      let argv = Array.from(arguments).reduce(diffArray);
+      return argv.filter((element, index, array) => index === array.indexOf(element));//remove duplicates
+    }
+
+    function diffArray(arr1, arr2) {
+      return arr1
+        .filter(element => !arr2.includes(element))
+        .concat(arr2.filter(element => !arr1.includes(element)));
+    }
+
+    // test here
+    sym([1, 2, 3], [5, 2, 1, 4]);
 ```
 
 ![:rocket:](https://forum.freecodecamp.com/images/emoji/emoji_one/rocket.png?v=3 "：火箭：") [运行代码](https://repl.it/@ashenm/Symmetric-Difference)
@@ -181,9 +181,9 @@ A = {1, 2, 3}
 ### 代码说明：
 
 *   主函数_sym（）_从_参数_创建一个数组，并使用辅助函数_diffArray（）_将其元素_简化_为单个数组。
-    
+
 *   函数_diffArray（）_通过挑选参数化数组中的唯一元素来返回两个数组的对称差异; _arr1_和_arr2_ 。
-    
+
 
 #### 相关链接
 
@@ -196,5 +196,3 @@ A = {1, 2, 3}
 *   添加解决方案的说明。
 *   将解决方案分为以下类别之一 - **基本** ， **中级**和**高级** 。 ![:traffic_light:](https://forum.freecodecamp.com/images/emoji/emoji_one/traffic_light.png?v=3 "：红绿灯：")
 *   如果您添加了任何**相关的主要内容，**请仅添加您的用户名。 （ ![:warning:](https://forum.freecodecamp.com/images/emoji/emoji_one/warning.png?v=3 "：警告：") **_不要_** _删除任何现有的用户名_ ）
-
-> 看到![:point_right:](https://forum.freecodecamp.com/images/emoji/emoji_one/point_right.png?v=3 "：point_right：") [**`Wiki Challenge Solution Template`**](http://forum.freecodecamp.com/t/algorithm-article-template/14272)供参考。

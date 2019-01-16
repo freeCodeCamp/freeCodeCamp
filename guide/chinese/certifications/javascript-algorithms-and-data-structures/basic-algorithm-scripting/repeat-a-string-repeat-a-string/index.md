@@ -38,16 +38,16 @@ localeTitle: 重复一个字符串重复字符串
 
 ## ![:beginner:](https://forum.freecodecamp.com/images/emoji/emoji_one/beginner.png?v=3 "：初学者：")基本代码解决方案
 ```
-function repeatStringNumTimes(str, num) { 
-  var accumulatedStr = ''; 
- 
-  while (num > 0) { 
-    accumulatedStr += str; 
-    num--; 
-  } 
- 
-  return accumulatedStr; 
- } 
+function repeatStringNumTimes(str, num) {
+  var accumulatedStr = '';
+
+  while (num > 0) {
+    accumulatedStr += str;
+    num--;
+  }
+
+  return accumulatedStr;
+ }
 ```
 
 ![:rocket:](https://forum.freecodecamp.com/images/emoji/emoji_one/rocket.png?v=3 "：火箭：") [运行代码](https://repl.it/CLjU/19)
@@ -66,14 +66,14 @@ function repeatStringNumTimes(str, num) {
 
 ## ![:sunflower:](https://forum.freecodecamp.com/images/emoji/emoji_one/sunflower.png?v=3 "：向日葵：")中级代码解决方案：
 ```
-function repeatStringNumTimes(str, num) { 
-  if(num < 0) 
-    return ""; 
-  if(num === 1) 
-    return str; 
-  else 
-    return str + repeatStringNumTimes(str, num - 1); 
- } 
+function repeatStringNumTimes(str, num) {
+  if(num < 0)
+    return "";
+  if(num === 1)
+    return str;
+  else
+    return str + repeatStringNumTimes(str, num - 1);
+ }
 ```
 
 ![:rocket:](https://forum.freecodecamp.com/images/emoji/emoji_one/rocket.png?v=3 "：火箭：") [运行代码](https://repl.it/CLjU/21)
@@ -91,11 +91,11 @@ function repeatStringNumTimes(str, num) {
 
 ## ![:rotating_light:](https://forum.freecodecamp.com/images/emoji/emoji_one/rotating_light.png?v=3 "：rotating_light：")高级代码解决方案
 ```
-function repeatStringNumTimes(str, num) { 
-  return num > 0 ? str.repeat(num) : ''; 
- } 
- 
- repeatStringNumTimes("abc", 3); 
+function repeatStringNumTimes(str, num) {
+  return num > 0 ? str.repeat(num) : '';
+ }
+
+ repeatStringNumTimes("abc", 3);
 ```
 
 ![:rocket:](https://forum.freecodecamp.com/images/emoji/emoji_one/rocket.png?v=3 "：火箭：") [运行代码](https://repl.it/CLjU/85)
@@ -115,5 +115,3 @@ function repeatStringNumTimes(str, num) {
 *   添加解决方案的说明。
 *   将解决方案分为以下类别之一 - **基本** ， **中级**和**高级** 。 ![:traffic_light:](https://forum.freecodecamp.com/images/emoji/emoji_one/traffic_light.png?v=3 "：红绿灯：")
 *   如果您添加了任何**相关的主要内容，**请仅添加您的用户名。 （ ![:warning:](https://forum.freecodecamp.com/images/emoji/emoji_one/warning.png?v=3 "：警告：") **_不要_** _删除任何现有的用户名_ ）
-
-> 看到![:point_right:](https://forum.freecodecamp.com/images/emoji/emoji_one/point_right.png?v=3 "：point_right：") [**`Wiki Challenge Solution Template`**](https://forum.freecodecamp.com/t/algorithm-article-template/14272)供参考。

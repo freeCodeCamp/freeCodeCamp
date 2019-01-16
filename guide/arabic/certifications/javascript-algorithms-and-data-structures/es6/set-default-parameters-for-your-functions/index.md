@@ -8,15 +8,15 @@ localeTitle: تعيين المعلمات الافتراضية لوظائفك
 
 ### : checkered\_flag: مشكلة التفسير:
 
- `const increment = (function() { 
-  "use strict"; 
-  return function increment(number, value) { 
-    return number + value; 
-  }; 
- })(); 
- console.log(increment(5, 2)); // returns 7 
- console.log(increment(5)); // returns NaN 
-` 
+ `const increment = (function() {
+  "use strict";
+  return function increment(number, value) {
+    return number + value;
+  };
+ })();
+ console.log(increment(5, 2)); // returns 7
+ console.log(increment(5)); // returns NaN
+`
 
 سنقوم بتعديل دالة الزيادة بحيث يتم زيادة معلمة **الرقم** بمقدار 1 بشكل افتراضي ، عن طريق تعيين **القيمة** إلى 1 إذا لم يتم تمرير **قيمة للقيمة** إلى دالة الزيادة.
 
@@ -40,15 +40,15 @@ localeTitle: تعيين المعلمات الافتراضية لوظائفك
 
 ## : مبتدئ: حل الرمز الأساسي:
 
- `const increment = (function() { 
-  "use strict"; 
-  return function increment(number, value = 1) { 
-    return number + value; 
-  }; 
- })(); 
- console.log(increment(5, 2)); // returns 7 
- console.log(increment(5)); // returns NaN 
-` 
+ `const increment = (function() {
+  "use strict";
+  return function increment(number, value = 1) {
+    return number + value;
+  };
+ })();
+ console.log(increment(5, 2)); // returns 7
+ console.log(increment(5)); // returns NaN
+`
 
 : صاروخ: [تشغيل التعليمات البرمجية](https://repl.it/@RyanPisuena/PleasingFumblingThings)
 
@@ -66,5 +66,3 @@ localeTitle: تعيين المعلمات الافتراضية لوظائفك
 *   أضف شرحًا لحلك.
 *   تصنيف الحل في واحدة من الفئات التالية - الأساسي والمتوسط ​​والمتقدم. : traffic\_light:
 *   الرجاء إضافة اسم المستخدم الخاص بك فقط إذا قمت بإضافة أي محتويات رئيسية ذات صلة. (: تحذير: لا تقم بإزالة أي أسماء مستخدمين موجودة)
-
-انظر: point\_right: [Wiki Challenge Solution Template](https://forum.freecodecamp.org/t/freecodecamp-algorithm-challenge-template-guide/14272) كمرجع.

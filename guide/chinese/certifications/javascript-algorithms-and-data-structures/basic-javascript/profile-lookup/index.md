@@ -58,16 +58,16 @@ localeTitle: 个人资料查询
 
 ## ![:beginner:](https://forum.freecodecamp.com/images/emoji/emoji_one/beginner.png?v=3 "：初学者：")基本代码解决方案
 ```
-for (var x = 0; x < contacts.length; x++){ 
-    if (contacts[x].firstName === name) { 
-        if (contacts[x].hasOwnProperty(prop)) { 
-            return contacts[x][prop]; 
-        } else { 
-            return "No such property"; 
-        } 
-    } 
- } 
- return "No such contact"; 
+for (var x = 0; x < contacts.length; x++){
+    if (contacts[x].firstName === name) {
+        if (contacts[x].hasOwnProperty(prop)) {
+            return contacts[x][prop];
+        } else {
+            return "No such property";
+        }
+    }
+ }
+ return "No such contact";
 ```
 
 ### 代码说明：
@@ -92,5 +92,3 @@ for (var x = 0; x < contacts.length; x++){
 *   添加解决方案的说明。
 *   将解决方案分为以下类别之一 - **基本** ， **中级**和**高级** 。 ![:traffic_light:](https://forum.freecodecamp.com/images/emoji/emoji_one/traffic_light.png?v=3 "：红绿灯：")
 *   如果您添加了任何**相关的主要内容，**请仅添加您的用户名。 （ ![:warning:](https://forum.freecodecamp.com/images/emoji/emoji_one/warning.png?v=3 "：警告：") **_不要_** _删除任何现有的用户名_ ）
-
-> 看到![:point_right:](https://forum.freecodecamp.com/images/emoji/emoji_one/point_right.png?v=3 "：point_right：") **`Wiki Challenge Solution Template`**供参考。

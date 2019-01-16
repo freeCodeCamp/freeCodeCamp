@@ -25,7 +25,7 @@ localeTitle: Короткая обезьяна
 В приведенных выше ссылках предлагается использовать `Array.push()` , поэтому давайте начнем с создания первого массива для хранения меньших массивов, которые мы скоро получим так:
 
 ```javascript
-    var newArray = []; 
+    var newArray = [];
 ```
 
 > _попытаться решить проблему сейчас_
@@ -51,25 +51,25 @@ localeTitle: Короткая обезьяна
 ## ![:beginner:](https://forum.freecodecamp.com/images/emoji/emoji_one/beginner.png?v=3 ": Начинающий:") Решение базового кода:
 
 ```javascript
-    function chunkArrayInGroups(arr, size) { 
- 
-      var temp = []; 
-      var result = []; 
- 
-      for (var a = 0; a < arr.length; a++) { 
-        if (a % size !== size - 1) 
-          temp.push(arr[a]); 
-        else { 
-          temp.push(arr[a]); 
-          result.push(temp); 
-          temp = []; 
-        } 
-      } 
- 
-      if (temp.length !== 0) 
-        result.push(temp); 
-      return result; 
-    } 
+    function chunkArrayInGroups(arr, size) {
+
+      var temp = [];
+      var result = [];
+
+      for (var a = 0; a < arr.length; a++) {
+        if (a % size !== size - 1)
+          temp.push(arr[a]);
+        else {
+          temp.push(arr[a]);
+          result.push(temp);
+          temp = [];
+        }
+      }
+
+      if (temp.length !== 0)
+        result.push(temp);
+      return result;
+    }
 ```
 
 ![:rocket:](https://forum.freecodecamp.com/images/emoji/emoji_one/rocket.png?v=3 ": Ракета:") [Код запуска](https://repl.it/CLjU/24)
@@ -91,14 +91,14 @@ localeTitle: Короткая обезьяна
 ## ![:sunflower:](https://forum.freecodecamp.com/images/emoji/emoji_one/sunflower.png?v=3 ": Подсолнечное:") Решение промежуточного кода:
 
 ```javascript
-    function chunkArrayInGroups(arr, size) { 
-      // Break it up. 
-      var arr2 = []; 
-      for (var i = 0; i < arr.length; i+=size) { 
-        arr2.push(arr.slice(i , i+size)); 
-      } 
-      return arr2; 
-    } 
+    function chunkArrayInGroups(arr, size) {
+      // Break it up.
+      var arr2 = [];
+      for (var i = 0; i < arr.length; i+=size) {
+        arr2.push(arr.slice(i , i+size));
+      }
+      return arr2;
+    }
 ```
 
 ![:rocket:](https://forum.freecodecamp.com/images/emoji/emoji_one/rocket.png?v=3 ": Ракета:") [Код запуска](https://repl.it/Cj9x/3)
@@ -120,18 +120,18 @@ localeTitle: Короткая обезьяна
 ## ![:rotating_light:](https://forum.freecodecamp.com/images/emoji/emoji_one/rotating_light.png?v=3 ": Rotating_light:") Расширенное решение для кода:
 
 ```javascript
-    function chunkArrayInGroups(arr, size) { 
-      // Break it up. 
-      var newArr = []; 
-      var i = 0; 
- 
-      while (i < arr.length) { 
-        newArr.push(arr.slice(i, i+size)); 
-        i += size; 
-      } 
-      return newArr; 
-    } 
-    chunkArrayInGroups(["a", "b", "c", "d"], 2); 
+    function chunkArrayInGroups(arr, size) {
+      // Break it up.
+      var newArr = [];
+      var i = 0;
+
+      while (i < arr.length) {
+        newArr.push(arr.slice(i, i+size));
+        i += size;
+      }
+      return newArr;
+    }
+    chunkArrayInGroups(["a", "b", "c", "d"], 2);
 ```
 
 ![:rocket:](https://forum.freecodecamp.com/images/emoji/emoji_one/rocket.png?v=3 ": Ракета:") [Код запуска](https://repl.it/CLjU/26)
@@ -139,17 +139,17 @@ localeTitle: Короткая обезьяна
 ### Код Объяснение:
 
 *   Во-первых, мы создаем две переменные. `newArr` - пустой массив, на который мы будем нажимать. Мы также имеем переменную `i` равную нулю, для использования в нашем цикле while.
-    
+
 *   Наш цикл while цикл до тех пор, пока `i` будет равен или больше длины массива в нашем тесте.
-    
+
 *   Внутри нашего цикла, мы выдвигаем к `newArr` массив с помощью `arr.slice(i, i+size)` . Впервые это петли, это будет выглядеть примерно так:
-    
+
     newArr.push (arr.slice (1, 1 + 2))
-    
+
 *   После нажатия на `newArr` мы добавляем переменную `size` в `i` .
-    
+
 *   Наконец, мы возвращаем значение `newArr` .
-    
+
 
 #### Связанные ссылки
 
@@ -160,13 +160,13 @@ localeTitle: Короткая обезьяна
 ## ![:rotating_light:](https://forum.freecodecamp.com/images/emoji/emoji_one/rotating_light.png?v=3 ": Rotating_light:") Расширенное решение кода 2:
 
 ```javascript
-    function chunkArrayInGroups(arr, size) { 
-      var newArr = []; 
-      while (arr.length) { 
-        newArr.push(arr.splice(0,size)); 
-      } 
-      return newArr; 
-    } 
+    function chunkArrayInGroups(arr, size) {
+      var newArr = [];
+      while (arr.length) {
+        newArr.push(arr.splice(0,size));
+      }
+      return newArr;
+    }
 ```
 
 ![:rocket:](https://forum.freecodecamp.com/images/emoji/emoji_one/rocket.png?v=3 ": Ракета:") [Код запуска](https://repl.it/CLjU/579)
@@ -188,14 +188,14 @@ localeTitle: Короткая обезьяна
 ## ![:rotating_light:](https://forum.freecodecamp.com/images/emoji/emoji_one/rotating_light.png?v=3 ": Rotating_light:") Расширенное решение для кода 3:
 
 ```javascript
-    function chunkArrayInGroups(arr, size) { 
-      if (arr.length <= size){ 
-        return [arr]; 
-      } 
-      else { 
-        return [arr.slice(0,size)].concat(chunkArrayInGroups(arr.slice(size),size)); 
-      } 
-    } 
+    function chunkArrayInGroups(arr, size) {
+      if (arr.length <= size){
+        return [arr];
+      }
+      else {
+        return [arr.slice(0,size)].concat(chunkArrayInGroups(arr.slice(size),size));
+      }
+    }
 ```
 
 ![:rocket:](https://forum.freecodecamp.com/images/emoji/emoji_one/rocket.png?v=3 ": Ракета:") [Код запуска](https://repl.it/CLjU/579)
@@ -216,5 +216,3 @@ localeTitle: Короткая обезьяна
 *   Добавьте объяснение своего решения.
 *   Классифицируйте решение в одной из следующих категорий - **Basic** , **Intermediate** и **Advanced** . ![:traffic_light:](https://forum.freecodecamp.com/images/emoji/emoji_one/traffic_light.png?v=3 ":светофор:")
 *   Пожалуйста, добавьте свое имя пользователя, только если вы добавили **соответствующее основное содержимое** . ( ![:warning:](https://forum.freecodecamp.com/images/emoji/emoji_one/warning.png?v=3 ":предупреждение:") **_НЕ_** _удаляйте существующие имена пользователей_ )
-
-> Увидеть ![:point_right:](https://forum.freecodecamp.com/images/emoji/emoji_one/point_right.png?v=3 ": Point_right:") [**`Wiki Challenge Solution Template`**](http://forum.freecodecamp.com/t/algorithm-article-template/14272) для [**`Wiki Challenge Solution Template`**](http://forum.freecodecamp.com/t/algorithm-article-template/14272) для справки.

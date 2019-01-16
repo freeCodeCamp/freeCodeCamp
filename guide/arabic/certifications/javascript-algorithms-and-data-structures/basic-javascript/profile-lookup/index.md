@@ -58,17 +58,17 @@ localeTitle: بحث الملف الشخصي
 
 ## ![:beginner:](https://forum.freecodecamp.com/images/emoji/emoji_one/beginner.png?v=3 ":مبتدئ:") الحل الأساسي للكود:
 
- `for (var x = 0; x < contacts.length; x++){ 
-    if (contacts[x].firstName === name) { 
-        if (contacts[x].hasOwnProperty(prop)) { 
-            return contacts[x][prop]; 
-        } else { 
-            return "No such property"; 
-        } 
-    } 
- } 
- return "No such contact"; 
-` 
+ `for (var x = 0; x < contacts.length; x++){
+    if (contacts[x].firstName === name) {
+        if (contacts[x].hasOwnProperty(prop)) {
+            return contacts[x][prop];
+        } else {
+            return "No such property";
+        }
+    }
+ }
+ return "No such contact";
+`
 
 ### شرح الشفرة:
 
@@ -92,5 +92,3 @@ localeTitle: بحث الملف الشخصي
 *   أضف شرحًا لحلك.
 *   تصنيف الحل في واحدة من الفئات التالية - **الأساسي** **والمتوسط** **والمتقدم** . ![:traffic_light:](https://forum.freecodecamp.com/images/emoji/emoji_one/traffic_light.png?v=3 ": traffic_light:")
 *   الرجاء إضافة اسم المستخدم الخاص بك فقط إذا قمت بإضافة أي **محتويات رئيسية ذات صلة** . ( ![:warning:](https://forum.freecodecamp.com/images/emoji/emoji_one/warning.png?v=3 ":تحذير:") **_لا_** _تزيل أي أسماء مستخدمين حالية_ )
-
-> نرى ![:point_right:](https://forum.freecodecamp.com/images/emoji/emoji_one/point_right.png?v=3 ": point_right:") **`Wiki Challenge Solution Template`** كمرجع.

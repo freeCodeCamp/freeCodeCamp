@@ -42,9 +42,9 @@ A menudo, el código no funcionará de la manera que esperas debido a nombres de
 Si está teniendo problemas con la escritura de los `setter` métodos, a continuación es una plantilla para un `set` método:
 
 ```js
-this.setFullName = function(input) { 
-  // Insert your code here 
- } 
+this.setFullName = function(input) {
+  // Insert your code here
+ }
 ```
 
 > _intenta resolver el problema ahora_
@@ -58,36 +58,36 @@ this.setFullName = function(input) {
 ## ![:beginner:](https://forum.freecodecamp.com/images/emoji/emoji_one/beginner.png?v=3 ":principiante:") Solución de código básico:
 
 ```js
-var Person = function(firstAndLast) { 
-  var fullName = firstAndLast; 
- 
-  this.getFirstName = function() { 
-    return fullName.split(" ")[0]; 
-  }; 
- 
-  this.getLastName = function() { 
-    return fullName.split(" ")[1]; 
-  }; 
- 
-  this.getFullName = function() { 
-    return fullName; 
-  }; 
- 
-  this.setFirstName = function(name) { 
-    fullName = name + " " + fullName.split(" ")[1]; 
-  }; 
- 
-  this.setLastName = function(name) { 
-    fullName = fullName.split(" ")[0] + " " + name; 
-  }; 
- 
-  this.setFullName = function(name) { 
-    fullName = name; 
-  }; 
- }; 
- 
- var bob = new Person('Bob Ross'); 
- bob.getFullName(); 
+var Person = function(firstAndLast) {
+  var fullName = firstAndLast;
+
+  this.getFirstName = function() {
+    return fullName.split(" ")[0];
+  };
+
+  this.getLastName = function() {
+    return fullName.split(" ")[1];
+  };
+
+  this.getFullName = function() {
+    return fullName;
+  };
+
+  this.setFirstName = function(name) {
+    fullName = name + " " + fullName.split(" ")[1];
+  };
+
+  this.setLastName = function(name) {
+    fullName = fullName.split(" ")[0] + " " + name;
+  };
+
+  this.setFullName = function(name) {
+    fullName = name;
+  };
+ };
+
+ var bob = new Person('Bob Ross');
+ bob.getFullName();
 ```
 
 ![:rocket:](https://forum.freecodecamp.com/images/emoji/emoji_one/rocket.png?v=3 ":cohete:") [Ejecutar código](https://repl.it/CLov/0)
@@ -110,5 +110,3 @@ var Person = function(firstAndLast) {
 *   Agregue una explicación de su solución.
 *   Categorice la solución en una de las siguientes categorías: **Básica** , **Intermedia** y **Avanzada** . ![:traffic_light:](https://forum.freecodecamp.com/images/emoji/emoji_one/traffic_light.png?v=3 ":semáforo:")
 *   Agregue su nombre de usuario solo si ha agregado algún **contenido principal relevante** . ( ![:warning:](https://forum.freecodecamp.com/images/emoji/emoji_one/warning.png?v=3 ":advertencia:") **_NO_** _elimine ningún nombre de usuario existente_ )
-
-> Ver ![:point_right:](https://forum.freecodecamp.com/images/emoji/emoji_one/point_right.png?v=3 ": point_right:") [**`Wiki Challenge Solution Template`**](https://forum.freecodecamp.com/t/algorithm-article-template/14272) para referencia.

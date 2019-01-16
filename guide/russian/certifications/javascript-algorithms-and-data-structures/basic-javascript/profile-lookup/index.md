@@ -58,16 +58,16 @@ localeTitle: Поиск профиля
 
 ## ![:beginner:](https://forum.freecodecamp.com/images/emoji/emoji_one/beginner.png?v=3 ": Начинающий:") Решение базового кода:
 ```
-for (var x = 0; x < contacts.length; x++){ 
-    if (contacts[x].firstName === name) { 
-        if (contacts[x].hasOwnProperty(prop)) { 
-            return contacts[x][prop]; 
-        } else { 
-            return "No such property"; 
-        } 
-    } 
- } 
- return "No such contact"; 
+for (var x = 0; x < contacts.length; x++){
+    if (contacts[x].firstName === name) {
+        if (contacts[x].hasOwnProperty(prop)) {
+            return contacts[x][prop];
+        } else {
+            return "No such property";
+        }
+    }
+ }
+ return "No such contact";
 ```
 
 ### Код Объяснение:
@@ -92,5 +92,3 @@ for (var x = 0; x < contacts.length; x++){
 *   Добавьте объяснение своего решения.
 *   Классифицируйте решение в одной из следующих категорий - **Basic** , **Intermediate** и **Advanced** . ![:traffic_light:](https://forum.freecodecamp.com/images/emoji/emoji_one/traffic_light.png?v=3 ":светофор:")
 *   Пожалуйста, добавьте свое имя пользователя, только если вы добавили **соответствующее основное содержимое** . ( ![:warning:](https://forum.freecodecamp.com/images/emoji/emoji_one/warning.png?v=3 ":предупреждение:") **_НЕ_** _удаляйте существующие имена пользователей_ )
-
-> Видеть ![:point_right:](https://forum.freecodecamp.com/images/emoji/emoji_one/point_right.png?v=3 ": Point_right:") **`Wiki Challenge Solution Template`** для **`Wiki Challenge Solution Template`** для справки.
