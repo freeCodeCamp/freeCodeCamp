@@ -229,5 +229,5 @@ This application's full code and demo can be found [here](https://codepen.io/GCr
 
 ## More Information
 * [ES6 introduction](https://guide.freecodecamp.org/javascript/es6)
-* [Arrow functions](https://guide.freecodecamp.org/javascript/es6/arrow_functions/)
-* [Let and Const](https://guide.freecodecamp.org/javascript/es6/let_and_const/)
+* [Arrow functions](https://guide.freecodecamp.org/javascript/es6/arrow-functions/)
+* [Let and Const](https://guide.freecodecamp.org/javascript/es6/let-and-const/)
