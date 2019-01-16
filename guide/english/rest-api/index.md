@@ -143,10 +143,10 @@ The dangerous **5xx** resources!
 - **501** Not Implemented. Server lacks the ability to fulfil the request
 - **504** Gateway Timeout. Server didn't receive timely response
 
-
+### Supported file types in REST APIs  
+REST APIs not only support `xml`, but also support `html`, `json` and `csv`, among other formats. [Wikipedia](https://en.wikipedia.org/wiki/Representational_state_transfer)   
 
 ### REST API Development Environment and Testing:
-
 Postman is widely used and famous for manual and automated REST/RESTful API Tests.
 Link: [Get Postman](https://www.getpostman.com/)
 
