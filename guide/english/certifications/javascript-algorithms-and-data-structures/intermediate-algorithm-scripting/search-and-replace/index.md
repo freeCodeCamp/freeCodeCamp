@@ -102,7 +102,7 @@ You will create a program that takes a sentence, then search for a word in it an
 
 #### Relevant Links
 
-*   <a>JS Regex Resources</a>
+*   <a href='https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Regular_Expressions' target='_blank' rel='nofollow'>JS Regex Resources</a>
 
 ## ![:rotating_light:](https://forum.freecodecamp.com/images/emoji/emoji_one/rotating_light.png?v=3 ":rotating_light:") Advanced Code Solution:
 
