@@ -148,10 +148,19 @@ REST APIs not only support `xml`, but also support `html`, `json` and `csv`, amo
 
 ### REST API Development Environment and Testing:
 Postman is widely used and famous for manual and automated REST/RESTful API Tests.
+
 Link: [Get Postman](https://www.getpostman.com/)
 
 A detailed explanation has been given on Quick Code blog on how to use Postman for the best usage:
+
 [Top Tutorials To Learn POSTMAN For REST API Testing](https://medium.com/quick-code/top-tutorials-to-learn-postman-for-rest-api-testing-3bdf9788e0ba)
+
+### API Specification
+Having a clear and precise API specification is very important.
+
+The most popular standard for the API specification is [OpenAPI Specification.](https://github.com/OAI/OpenAPI-Specification)
+
+[Swagger Tool](https://swagger.io/) is commonly used for describing the APIs.
 
 #### More Information
 * [How to Design Great APIs - Parse Developer Day 2013](https://www.youtube.com/watch?v=qCdpTji8nxo)
