@@ -30,5 +30,8 @@ Change directory to `projects` folder:
 cd projects
 ```
 
+### Related Commands
+The `cd` command is the daily workhorse for navigating through your path, but closely related are the `pushd`, `popd`, and `dirs` commands, which maintain a *stack* of your directory movements and allow you to more quickly navigate through this stack.   
+
 ### More Information:
 * [Wikipedia](https://en.wikipedia.org/wiki/Cd_(command))
