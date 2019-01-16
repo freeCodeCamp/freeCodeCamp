@@ -20,8 +20,6 @@ const lastUpdate = new Date();
 
 db.then(async () => {
   const oldPRs = await PR.find({}).then(data => data);
-  // Need to add logic to stop further processing if there oldPRs does
-  // not contain any data
   const oldIndices = oldPRs.reduce((obj, { _id }, index) => {
     obj[_id] = index;
     return obj;
@@ -58,8 +56,8 @@ db.then(async () => {
       );
       console.log('updated PR #' + number);
     }
-    if (count > 4000) {
-      await rateLimiter(2350);
+    if (count > 4500) {
+      await rateLimiter(4500);
     }
   }
   for (let j = 0; j < oldPRs.length; j++) {
@@ -82,7 +80,7 @@ db.then(async () => {
         }
       }]
     );
-    const numPRs = await PR.count();
+    const numPRs = await PR.countDocuments();
     const info = {
       lastUpdate,
       numPRs,
@@ -95,5 +93,6 @@ db.then(async () => {
     mongoose.connection.close();
   })
   .catch(err => {
-    console.log(err);
+    mongoose.connection.close();
+    throw err;
   });

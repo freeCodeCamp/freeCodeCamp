@@ -6,18 +6,16 @@
 cp probot/sample.env probot/.env
 ```
 
-2. Update `.env` variables with applicable values
+2. Update `probot/.env` variables with applicable values
 
 3. In a terminal window:
 
 ```bash
 npm install
 
-npm run seed
-
 npm run build
 
-npm start
+npm run dev
 ```
 
 ## Caveats & Notes
@@ -27,6 +25,18 @@ npm start
 If an admin removes a label from a Pull request, the script can not add that label back. This is usually because the script is acting on behalf of a non-admin user with write access.
 
 This is usually the case with the use of access tokens for scripts.
+
+### Seeding local MongoDB
+
+You can seed your local database via the Github API running the script below.
+Keep in mind, the first time you run it, if there are over 4500 PRs in the
+repo, it will take over an hour, due to the rate limiting feature the script
+uses to avoid hitting Github's request limits for the API.  When the repo has
+less than 4500 PRs, the seeding will take only about 25-35 minutes.
+
+```
+node probot/server/tools/update-db.js
+```
 
 ### Setting up Cron jobs for Sweeper Scripts
 

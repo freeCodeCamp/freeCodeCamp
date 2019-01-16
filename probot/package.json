@@ -12,7 +12,6 @@
   "scripts": {
     "dev": "nodemon",
     "start": "probot run esm ./index.js",
-    "seed": "node server/tools/seed-db.js",
     "start-probot": "cross-env TEST_ENV=false probot run ./index.js",
     "lint": "standard --fix",
     "test": "cross-env TEST_ENV=true jest --forceExit && standard",
