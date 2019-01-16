@@ -1,4 +1,5 @@
 const path = require('path');
+const CopyWebpackPlugin = require('copy-webpack-plugin');
 
 module.exports = (env = {}) => {
   const __DEV__ = env.production !== true;
@@ -43,8 +44,10 @@ module.exports = (env = {}) => {
         }
       ]
     },
-    node: {
-      fs: 'empty'
-    }
+    plugins: [
+      new CopyWebpackPlugin([
+        { from: 'node_modules/sass.js/dist/sass.sync.js' }
+      ])
+    ]
   };
 };
