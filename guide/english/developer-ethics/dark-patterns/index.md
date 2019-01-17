@@ -11,6 +11,8 @@ Examples include:
 
 * [**Disguised Ads**](https://darkpatterns.org/types-of-dark-pattern/disguised-ads) – Advertisements disguised as other kinds of content or navigation, in order to get users to click on them.
 
+* [**Confirmshaming**](https://darkpatterns.org/types-of-dark-pattern/disguised-ads) – Confirmshaming is the act of guilting the user into opting in to something. The option to decline is worded in such a way as to shame the user into compliance.
+
 * [**Forced Continuity**](https://darkpatterns.org/types-of-dark-pattern/forced-continuity) – Silently charging a user's credit card without warning at the end of a free trial.
 
 * [**Friend Spam**](https://darkpatterns.org/types-of-dark-pattern/friend-spam) – A website or app asks for a user's email or social media permissions under the pretense it will be used for a desirable outcome (e.g. finding friends), but then spams all the user's contacts in a message that claims to be from that user.
