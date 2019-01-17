@@ -16,8 +16,9 @@ Href is short for "Hypertext Reference" and is an HTML attribute.  The href attr
 ```
 #### Another use
 `<a href="#top">Go to top</a>`
+
 #### Description
-`It will take you to that position in the page where id="top" is given.`
+It will take you to that position in the page where `id="top"` is given.
 
 
 #### More Information:
