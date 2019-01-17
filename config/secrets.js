@@ -27,6 +27,9 @@ const {
   TWITTER_TOKEN,
   TWITTER_TOKEN_SECRET,
 
+  ROLLBAR_APP_ID,
+  ROLLBAR_CLIENT_ID,
+
   STRIPE_PUBLIC,
   STRIPE_SECRET
 } = process.env;
@@ -81,6 +84,11 @@ module.exports = {
     profileFields: ['public-profile-url'],
     scope: ['r_basicprofile', 'r_emailaddress'],
     passReqToCallback: true
+  },
+
+  rollbar: {
+    appId: ROLLBAR_APP_ID,
+    clientId: ROLLBAR_CLIENT_ID
   },
 
   stripe: {

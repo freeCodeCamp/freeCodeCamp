@@ -1,7 +1,7 @@
-const guideBase = 'https://guide.freecodecamp.org/certifications';
+const guideBase = '/guide/certifications';
 
 export function createGuideUrl(slug = '') {
-  return guideBase + slug;
+  return guideBase + slug.replace(/^\/learn\//, '/');
 }
 
 export function isGoodXHRStatus(status) {
