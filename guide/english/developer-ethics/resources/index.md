@@ -2,7 +2,7 @@
 title: Resources
 ---
 
-Where do you go if you have an ethical question as a developer? This page is a listing of resources you could used to help in a challenging situation.
+Where do you go if you have an ethical question as a developer? This page is a listing of resources you could use to help in a challenging situation.
 
 1. Developer member associations
 
@@ -24,7 +24,7 @@ Ethics is highly influenced by office culture, so lead by example. Be that perso
 
 4. Don't give up
 
-It can be easy to become disheartened when a new ethical breach happens but don't. Creating an ethical future for developers will take all of us. 
+Don't become disheartened when a new ethical breach happens. Creating an ethical future for developers will take all of us. 
 
 5. Know your "why"
 
