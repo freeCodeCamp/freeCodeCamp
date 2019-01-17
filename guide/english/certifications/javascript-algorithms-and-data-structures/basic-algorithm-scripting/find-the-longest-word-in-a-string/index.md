@@ -92,7 +92,7 @@ In case you're wondering about that `0` after the callback function, it is used 
 **Using `.map()`**
 ```javascript
 function findLongestWordLength(str) {
-    return Math.max(...str.split(" ").map(word=>word.length));
+    return Math.max(...str.split(" ").map(word => word.length));
 }
 ```
 ![:rocket:](https://forum.freecodecamp.com/images/emoji/emoji_one/rocket.png?v=3 ":rocket:") <a href='https://repl.it/CLjU/6' target='_blank' rel='nofollow'>Run Code</a>
