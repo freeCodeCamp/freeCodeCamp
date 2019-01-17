@@ -1,8 +1,9 @@
-import Sass from 'sass.js';
+// eslint-disable-next-line no-undef
+importScripts('/js/sass.sync.js');
 
-onmessage = e => {
+self.onmessage = e => {
   const data = e.data;
-  Sass.compile(data, result => {
+  self.Sass.compile(data, result => {
     if (result.status === 0) {
       self.postMessage(result.text);
     } else {
