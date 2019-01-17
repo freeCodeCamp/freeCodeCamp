@@ -16,4 +16,6 @@ One should also consider the positive and negative ground when tracking and kern
 #### More Information:
 <!-- Please add any articles you think might be helpful to read before writing the article -->
 
+- ["Thinking With Type" by Ellen Lupton](http://thinkingwithtype.com/text/)
+
 

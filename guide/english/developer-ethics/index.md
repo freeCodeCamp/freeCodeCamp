@@ -29,8 +29,6 @@ Common themes appearing throughout these examples include a commitment to honest
 
 To date, since most software developers do not belong to – and are not governed by – any official order, guild, association, or society, no single, codified ethical standard has been widely adopted.
 
---
-
 #### More Information:
 * [Computer and Information Ethics](https://plato.stanford.edu/archives/win2014/entries/ethics-computer/) entry in the Stanford Encyclopedia of Philosophy.
 

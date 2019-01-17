@@ -36,7 +36,7 @@ Output:
     iter_DoWhile Value: 21
 ```
 
-**Remember**: The condition of a `do-while` loop is checked after the code body is executed once.
+**Remember**: Unlike the `while` loop, the condition of a `do-while` loop is checked after the code body is executed once. 
 
 ![:rocket:](//forum.freecodecamp.com/images/emoji/emoji_one/rocket.png?v=2 ":rocket:") <a href='https://repl.it/CJYl/0' target='_blank' rel='nofollow'>Run Code</a>
 
