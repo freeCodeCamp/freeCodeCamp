@@ -3,13 +3,10 @@ title: Polygons
 ---
 ## Polygons
 
-This is a stub. <a href='https://github.com/freecodecamp/guides/tree/master/src/pages/mathematics/polygons/index.md' target='_blank' rel='nofollow'>Help our community expand it</a>.
+![img](https://i.stack.imgur.com/ALoC9.png)
 
-<a href='https://github.com/freecodecamp/guides/blob/master/README.md' target='_blank' rel='nofollow'>This quick style guide will help ensure your pull request gets accepted</a>.
-
-<!-- The article goes here, in GitHub-flavored Markdown. Feel free to add YouTube videos, images, and CodePen/JSBin embeds  -->
+A polygon is a 2-dimensional shape formed with straight lines. Examples include triangles, squares, pentagons, and hexagons.
 
 #### More Information:
-<!-- Please add any articles you think might be helpful to read before writing the article -->
 
-
+<a href="https://www.mathsisfun.com/geometry/polygons.html" target="_blank">MathIsFun.com</a>

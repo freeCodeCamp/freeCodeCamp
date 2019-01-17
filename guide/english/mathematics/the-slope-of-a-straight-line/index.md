@@ -9,7 +9,7 @@ title: The Slope of a Straight Line
 - A line with negative value of slope(m < 0) indicates that the given line is going down from right to left.<br /> 
 
 ### Calculating the slope of a line when two co-ordinates of the points on the line are given
-In this case, Suppose a line l has two points with co-ordinates (x<sub>1</sub>,y<sub>1</sub>) and (x<sub>2</sub>,y<sub>2</sub>) then the slope of a line is calculated as:
+In this case, suppose a line l has two points with co-ordinates (x<sub>1</sub>,y<sub>1</sub>) and (x<sub>2</sub>,y<sub>2</sub>) then the slope of a line is calculated as:
 
 <img src="https://latex.codecogs.com/gif.latex?m&space;=&space;\frac{y_{2}&space;-&space;y_{1}}{x_{2}&space;-&space;x_{1}}" title="m = \frac{y_{2} - y_{1}}{x_{2} - x_{1}}" />
 
