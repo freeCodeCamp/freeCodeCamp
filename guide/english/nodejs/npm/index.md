@@ -14,7 +14,7 @@ To install `npm` we have to download Nodejs binaries in your local envrionment. 
 
 ```shell
 npm -v
-5.6.0
+6.4.1
 ```
 
 Node Package Manager (NPM) provides two main functionalities −
@@ -94,7 +94,7 @@ To do so, we mention the package version we want to install.
 $ npm install underscore@1.8.2 -S
 ```
 
-To remove a global dependency, use `-g` flag.
+To install a global dependency, use `-g` flag.
 
 ### Uninstalling Local Packages
 
@@ -127,7 +127,7 @@ The Current column shows us the version that is installed locally. The Latest co
 
 ## Managing Dependencies with package.json
 
-If not using a specific flag and installing a module like `npm install express` will install the module in `node_modules` folder locally but the `package.json` that keep records of every dependency we are using in a project will not be updated with our addition. Thus, the package will be development specific, will not be installed in runtimme environment. Make sure, you always use a proper flag and keep `package.json` file updated.
+If not using a specific flag and installing a module like `npm install express` will install the module in `node_modules` folder locally but the `package.json` that keep records of every dependency we are using in a project will not be updated with our addition. Thus, the package will be development specific, will not be installed in runtime environment. Make sure, you always use a proper flag and keep `package.json` file updated.
 
 When you install packages locally, you need a package.json file. To generate one you can do that by using `npm init` command. It will prompt up with some questions that by pressing enter you can keep the default values.
 
@@ -288,13 +288,13 @@ $ npm cache clean
 
 ## Yarn - an alternative to npm
 
-Yarn is also a JavaScript package manager developed and maintained by Facebook. Both share high level similarities when it come to using them. It is supposedly to be faster in installing dependencies than npm. To install it:
+Yarn is also a JavaScript package manager developed and maintained by Facebook. Both share high level similarities when it come to using them. It may run faster than npm, but other key features (such as having a lockfile) are now present in npm as of version 5. To install it:
 
 ```shell
 npm install -g yarn
 ```
 
-Yarn doesn't intend to replace npm, more like improving on it. It uses the same package.json file, and saves dependencies to the `node_modules/`folder. To initialise a projcet, you will use:
+Yarn doesn't intend to replace npm, more like improving on it. It uses the same package.json file, and saves dependencies to the `node_modules/`folder. To initialise a project, you will use:
 
 ```shell
 yarn init
@@ -336,10 +336,10 @@ After every install, upgrade or removal, yarn updates a yarn.lock file which kee
 
 A first release of a npm package is always 1.0.0
 
-Bug fixes, or minor changes increment the third digit, hense 1.0.0 would become 1.0.1
+Bug fixes, or minor changes increment the third digit, hence 1.0.0 would become 1.0.1
 
 New features that dont break previous versions of a package increment the second digit, hense 1.0.0 would become 1.1.0
 
 All changes that break the previous releases of a package increment the first digit, hense 1.0.0 would become 2.0.0
 
-It is important to remember this when updateing packages to keep your project stable!
+It is important to remember this when updating packages to keep your project stable!

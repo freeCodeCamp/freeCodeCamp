@@ -13,3 +13,8 @@ CNNs are biologically inspired models on how mammals visually perceive things. W
  - Stanford CS231n [Lecture 9 CNN Architectures](https://www.youtube.com/watch?v=DAOcjicFr1Y&t=2384s)
  - Udacity Deep learning : [Convolutional netwoks](https://www.youtube.com/watch?v=jajksuQW4mc)
  - Andrew Ng's DeepLearning.ai: [Convulational Neural Networks](https://www.coursera.org/learn/convolutional-neural-networks/)
+
+
+### E-Texts : 
+ - Intro to Machine Learning (http://ciml.info/)
+ - Understanding Neural Networks (http://www.cs.huji.ac.il/~shais/UnderstandingMachineLearning/understanding-machine-learning-theory-algorithms.pdf) 
