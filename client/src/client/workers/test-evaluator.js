@@ -8,7 +8,7 @@ self.console.log = function proxyConsole(...args) {
   return oldLog(...args);
 };
 
-onmessage = async e => {
+self.onmessage = async e => {
   /* eslint-disable no-unused-vars */
   const { code = '' } = e.data;
   const assert = chai.assert;
@@ -16,8 +16,22 @@ onmessage = async e => {
   const DeepEqual = (a, b) => JSON.stringify(a) === JSON.stringify(b);
   /* eslint-enable no-unused-vars */
   try {
-    // eslint-disable-next-line no-eval
-    const testResult = eval(e.data.script);
+    let testResult;
+    let __userCodeWasExecuted = false;
+    /* eslint-disable no-eval */
+    try {
+      testResult = eval(`
+        ${e.data.build}
+        __userCodeWasExecuted = true;
+        ${e.data.testString}
+      `);
+    } catch (err) {
+      if (__userCodeWasExecuted) {
+        throw err;
+      }
+      testResult = eval(e.data.testString);
+    }
+    /* eslint-enable no-eval */
     if (typeof testResult === 'function') {
       await testResult(fileName => __toString(e.data.sources[fileName]));
     }

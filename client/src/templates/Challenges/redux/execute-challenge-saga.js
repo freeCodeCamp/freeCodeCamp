@@ -89,7 +89,7 @@ function* executeJSChallengeSaga(proxyLogger) {
     return yield call(executeTests, async(testString, testTimeout) => {
       try {
         return await testWorker.execute(
-          { script: build + '\n' + testString, code, sources },
+          { build, testString, code, sources },
           testTimeout
         );
       } finally {
@@ -112,6 +112,7 @@ function* executeDOMChallengeSaga(proxyLogger) {
   const meta = yield select(challengeMetaSelector);
   const document = yield getContext('document');
   const ctx = yield call(buildDOMChallenge, files, meta);
+  ctx.loadEnzyme = Object.keys(files).some(key => files[key].ext === 'jsx');
   yield call(createTestFrame, document, ctx, proxyLogger);
   // wait for a code execution on a "ready" event in jQuery challenges
   yield delay(100);

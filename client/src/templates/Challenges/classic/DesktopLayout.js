@@ -1,20 +1,20 @@
-import React, { Component, Fragment } from 'react';
+import React, { Component } from 'react';
 import { ReflexContainer, ReflexSplitter, ReflexElement } from 'react-reflex';
 import PropTypes from 'prop-types';
 
 const propTypes = {
-  resizeProps: PropTypes.shape({
-    onStopResize: PropTypes.func,
-    onResize: PropTypes.func
-  }),
-  instructions: PropTypes.element,
   challengeFile: PropTypes.shape({
     key: PropTypes.string
   }),
   editor: PropTypes.element,
-  testOutput: PropTypes.element,
   hasPreview: PropTypes.bool,
-  preview: PropTypes.element
+  instructions: PropTypes.element,
+  preview: PropTypes.element,
+  resizeProps: PropTypes.shape({
+    onStopResize: PropTypes.func,
+    onResize: PropTypes.func
+  }),
+  testOutput: PropTypes.element
 };
 
 class DesktopLayout extends Component {
@@ -43,7 +43,7 @@ class DesktopLayout extends Component {
                 renderOnResize={true}
                 renderOnResizeRate={20}
                 {...resizeProps}
-              >
+                >
                 {editor}
               </ReflexElement>
               <ReflexSplitter propagate={true} {...resizeProps} />
@@ -53,19 +53,17 @@ class DesktopLayout extends Component {
                 renderOnResize={true}
                 renderOnResizeRate={20}
                 {...resizeProps}
-              >
+                >
                 {testOutput}
               </ReflexElement>
             </ReflexContainer>
           )}
         </ReflexElement>
+        {hasPreview && <ReflexSplitter propagate={true} {...resizeProps} />}
         {hasPreview && (
-          <Fragment>
-            <ReflexSplitter propagate={true} {...resizeProps} />
-            <ReflexElement flex={0.7} {...resizeProps}>
-              {preview}
-            </ReflexElement>
-          </Fragment>
+          <ReflexElement flex={0.7} {...resizeProps}>
+            {preview}
+          </ReflexElement>
         )}
       </ReflexContainer>
     );

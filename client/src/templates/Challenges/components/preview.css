@@ -1,4 +1,5 @@
-.challenge-preview, .challenge-preview-frame {
+.challenge-preview,
+.challenge-preview-frame {
   height: calc(100vh - 38px);
   width: 100%;
   padding: 0;
@@ -6,8 +7,9 @@
   border: none;
 }
 
-@media screen, (max-width: 767px) {
-  .challenge-preview, .challenge-preview-frame {
+@media screen and (max-width: 767px) {
+  .challenge-preview,
+  .challenge-preview-frame {
     height: calc(100vh - 112px);
   }
 }

@@ -2,9 +2,8 @@
 title: Rest API Design
 ---
 
-
 ### History
-REST stands for **Re**presentational **S**tate **T**ransfer protocol. Roy Fielding defined REST in his Phd dissertation in year 2000.
+REST stands for **Re**presentational **S**tate **T**ransfer protocol. Roy Fielding defined REST in his [Phd dissertation](https://www.ics.uci.edu/~fielding/pubs/dissertation/fielding_dissertation.pdf) in the year 2000.
  
 ### What is it?
 REST was developed to provide a uniform interface for
@@ -144,15 +143,24 @@ The dangerous **5xx** resources!
 - **501** Not Implemented. Server lacks the ability to fulfil the request
 - **504** Gateway Timeout. Server didn't receive timely response
 
-
+### Supported file types in REST APIs  
+REST APIs not only support `xml`, but also support `html`, `json` and `csv`, among other formats. [Wikipedia](https://en.wikipedia.org/wiki/Representational_state_transfer)   
 
 ### REST API Development Environment and Testing:
-
 Postman is widely used and famous for manual and automated REST/RESTful API Tests.
+
 Link: [Get Postman](https://www.getpostman.com/)
 
 A detailed explanation has been given on Quick Code blog on how to use Postman for the best usage:
+
 [Top Tutorials To Learn POSTMAN For REST API Testing](https://medium.com/quick-code/top-tutorials-to-learn-postman-for-rest-api-testing-3bdf9788e0ba)
+
+### API Specification
+Having a clear and precise API specification is very important.
+
+The most popular standard for the API specification is [OpenAPI Specification.](https://github.com/OAI/OpenAPI-Specification)
+
+[Swagger Tool](https://swagger.io/) is commonly used for describing the APIs.
 
 #### More Information
 * [How to Design Great APIs - Parse Developer Day 2013](https://www.youtube.com/watch?v=qCdpTji8nxo)

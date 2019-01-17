@@ -1,10 +1,9 @@
-import { homeLocation } from '../../../../config/env.json';
-
 class WorkerExecutor {
-  constructor(workerName) {
+  constructor(workerName, location) {
     this.workerName = workerName;
     this.worker = null;
     this.observers = {};
+    this.location = location;
 
     this.execute = this.execute.bind(this);
     this.killWorker = this.killWorker.bind(this);
@@ -13,7 +12,7 @@ class WorkerExecutor {
 
   getWorker() {
     if (this.worker === null) {
-      this.worker = new Worker(`${homeLocation}/js/${this.workerName}.js`);
+      this.worker = new Worker(`${this.location}${this.workerName}.js`);
     }
 
     return this.worker;
@@ -72,6 +71,6 @@ class WorkerExecutor {
   }
 }
 
-export default function createWorkerExecutor(workerName) {
-  return new WorkerExecutor(workerName);
+export default function createWorkerExecutor(workerName, location = '/js/') {
+  return new WorkerExecutor(workerName, location);
 }
