@@ -26,6 +26,7 @@ Sketch is designed to build digital products rather than editing photos and prin
 - [Zeplin - Generates and exports design assets and style guides](https://zeplin.io/)
 - [Sketch IconFont - Helps you easily insert and manage icons from icon fonts](https://github.com/keremciu/sketch-iconfont)
 - [Mirr.io - Preview prototypes in any browser in any device from Sketch](https://mirr.io/)
+- [Craft - A suite of plugins by Invision that let you design with real data in mind.](https://www.invisionapp.com/craft)
 
 #### More Information:
 
