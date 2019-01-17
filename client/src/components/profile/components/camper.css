@@ -1,0 +1,8 @@
+.avatar-container .avatar {
+  height: 180px;
+}
+
+.avatar-container {
+  display: flex;
+  justify-content: center;
+}

@@ -3,11 +3,11 @@ title: Separate Build Image
 ---
 ## Overview
 
-Making lightweight docker images is key to having a fast development/deployment pipeline. For compiled code, building the binary inside a docker container has the benefit of being a repeatable and standardised build process. However, this can create a very large images which can become an issue down the line.
+Making lightweight Docker images is key to having a fast development/deployment pipeline. For compiled code, building the binary inside a Docker container has the benefit of being a repeatable and standardised build process. However, this can create a very large images which can become an issue down the line.
 
 ## Our code
 
-In this example, we will use a simple webserver writen in [Go](https://golang.org/). The following code is just a simple hello world webserver listening on port `8080`.
+In this example, we will use a simple webserver written in [Go](https://golang.org/). The following code is just a simple hello world webserver listening on port `8080`.
 
 ```go
 package main
@@ -75,8 +75,8 @@ EXPOSE 8080
 CMD [ "myserver" ]
 ```
 
-Building from this dockerfile results in a final image size of only 6.55MB! That's over **100 times smaller** than our first attempt, making it 100 times faster to pull the image down from a registry!
+Building from this Dockerfile results in a final image size of only 6.55MB! That's over **100 times smaller** than our first attempt, making it 100 times faster to pull the image down from a registry!
 
 ### Bonus benefit
 
-Not only do we now have a tiny docker image for our application, we also only have to worry about the security of our application as there is no other software running inside the container.
+Not only do we now have a tiny Docker image for our application, we also only have to worry about the security of our application as there is no other software running inside the container.

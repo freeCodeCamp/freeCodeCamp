@@ -6,6 +6,16 @@ title: Your first React App
 
 As specified in the previous artice (Installation), run the `Create React App` tool. After everything has finished, `cd` into the folder of your application and run `npm start`.
 This will start a development server and you are all set to start developing your app!
+
+- For node version 5.2+
+```bash
+npx create-react-app my-app
+
+cd my-first-app
+npm start
+```
+
+- For node versions below 5
 ```bash
 npm install -g create-react-app
 create-react-app my-first-app
@@ -19,7 +29,7 @@ npm start
 Start up your editor or IDE of choice and edit the `App.js` file in the `src` folder. When created with the `react-create-app` tool, there will already be some code in this file.
 
 The code will consist of these parts:
-#### imports
+#### Imports
 ```JavaScript
 import React, { Component } from 'react';
 import logo from './logo.svg';
@@ -31,7 +41,7 @@ This is used by [webpack](https://webpack.js.org/) to import all required module
 2) `logo`, which allows us to use `logo.svg` in this file.
 3) `./App.css`, which imports the stylesheet for this file.
 
-#### classes/components
+#### Classes/Components
 ```JavaScript
 class App extends Component {
   render() {
@@ -55,7 +65,7 @@ There is already 1 component created, the `App` component. If you used the `crea
 
 We will look at components more detailed in next chapters.
 
-#### exports
+#### Exports
 When creating a class in react, you should export them after declaration, which allows you to use the component in another file by using the `import` keyword. You can use `default` after the `export` keyword to tell React that this is the main class of this file.
 
 ```JavaScript

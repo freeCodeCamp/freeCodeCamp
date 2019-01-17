@@ -1,4 +1,4 @@
-import React, { PureComponent } from 'react';
+import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux';
@@ -6,6 +6,8 @@ import { Button, Modal } from '@freecodecamp/react-bootstrap';
 
 import ga from '../../../analytics';
 import { createQuestion, closeModal, isHelpModalOpenSelector } from '../redux';
+
+import './help-modal.css';
 
 const mapStateToProps = state => ({ isOpen: isHelpModalOpenSelector(state) });
 const mapDispatchToProps = dispatch =>
@@ -24,14 +26,14 @@ const RSA =
   'https://forum.freecodecamp.org/t/the-read-search-ask-methodology-for-' +
   'getting-unstuck/137307';
 
-export class HelpModal extends PureComponent {
+export class HelpModal extends Component {
   render() {
     const { isOpen, closeHelpModal, createQuestion } = this.props;
     if (isOpen) {
       ga.modalview('/help-modal');
     }
     return (
-      <Modal onHide={closeHelpModal} show={isOpen}>
+      <Modal dialogClassName='help-modal' onHide={closeHelpModal} show={isOpen}>
         <Modal.Header
           className='help-modal-header fcc-modal'
           closeButton={true}
