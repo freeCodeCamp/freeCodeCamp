@@ -2,7 +2,7 @@
 title: Image Galleries
 ---
 ## Image Galleries
-You can use CSS to create you own image galleries.
+You can use CSS to create your own image galleries.
 
 ## Image Gallery Example
 ```
