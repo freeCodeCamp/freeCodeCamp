@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
+import { Grid, Col, Row } from '@freecodecamp/react-bootstrap';
 import { createSelector } from 'reselect';
 import { reduxForm } from 'redux-form';
 import { graphql } from 'gatsby';
@@ -80,6 +81,12 @@ const options = {
 };
 
 export class BackEnd extends Component {
+  constructor(props) {
+    super(props);
+    this.state = {};
+    this.updateDimensions = this.updateDimensions.bind(this);
+  }
+
   componentDidMount() {
     const {
       initTests,
@@ -94,6 +101,15 @@ export class BackEnd extends Component {
     } = this.props;
     initTests(tests);
     updateChallengeMeta({ ...challengeMeta, challengeType });
+    window.addEventListener('resize', this.updateDimensions);
+  }
+
+  updateDimensions() {
+    this.setState({ width: window.innerWidth, height: window.innerHeight });
+  }
+
+  componentWillUnmount() {
+    window.removeEventListener('resize', this.updateDimensions);
   }
 
   componentDidUpdate(prevProps) {
@@ -143,43 +159,50 @@ export class BackEnd extends Component {
     const blockNameTitle = `${blockName} - ${title}`;
     return (
       <LearnLayout>
-        <Spacer />
-        <div>
-          <ChallengeTitle>{blockNameTitle}</ChallengeTitle>
-          <ChallengeDescription
-            description={description}
-            instructions={instructions}
-          />
-        </div>
-        <div>
-          <Form
-            buttonText={buttonCopy + '(Ctrl + Enter)'}
-            formFields={formFields}
-            id={backendNS}
-            options={options}
-            submit={executeChallenge}
-          />
-          <ProjectToolPanel guideUrl={createGuideUrl(slug)} />
-        </div>
-        <div>
-          <br />
-          <Output
-            defaultOutput={`/**
+        <Grid>
+          <Row>
+            <Col xs={12}>
+              <Spacer />
+              <div>
+                <ChallengeTitle>{blockNameTitle}</ChallengeTitle>
+                <ChallengeDescription
+                  description={description}
+                  instructions={instructions}
+                />
+              </div>
+              <div>
+                <Form
+                  buttonText={buttonCopy + '(Ctrl + Enter)'}
+                  formFields={formFields}
+                  id={backendNS}
+                  options={options}
+                  submit={executeChallenge}
+                />
+                <ProjectToolPanel guideUrl={createGuideUrl(slug)} />
+              </div>
+              <div>
+                <br />
+                <Output
+                  defaultOutput={`/**
   *
   * Test output will go here
   *
   *
   */`}
-            height={150}
-            output={output}
-          />
-        </div>
-        <div>
-          <TestSuite tests={tests} />
-        </div>
-        <Spacer />
-        <CompletionModal />
-        <HelpModal />
+                  dimensions={this.state}
+                  height={150}
+                  output={output}
+                />
+              </div>
+              <div>
+                <TestSuite tests={tests} />
+              </div>
+              <Spacer />
+            </Col>
+            <CompletionModal />
+            <HelpModal />
+          </Row>
+        </Grid>
       </LearnLayout>
     );
   }

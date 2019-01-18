@@ -10,33 +10,25 @@ Most of the time users interact through a Graphical User Interface to interact w
 ### Opening the Terminal and Navigating Directories
 Your terminal exists in the Applications directory. Open your Terminal app. You should see a prompt in the terminal window. it shoudl have the computer's name (ABC's Macbook), followed by the User name (ABC), and then a '$.' If you are in the root directory, the last character will be a '#.'
 
-To see what directory you are working in, just type the command 
+To see what directory you are working in, use ```pwd``` which stands for "print working directory"
+Directory is another word for folder. 
 
-```pwd```
+If you want to list the directory's contents, use  ```ls```
 
-pwd stands for "Print Working Directory." Directory is another word for folder. 
-
-If you want to list the contents of your directory use the command: 
-
-```ls```
-
-To switch to a new directory you use the command: 
-
-```cd```
-
-which stands for change directory. 
+To change directories, use ```cd <directory_path>``` which stands for change directory and replace the angle brackets with the appropriate path name. 
+If you are currently in `Documents` and want to move into the directory/folder `hello_world` which is inside `Documents` use `cd hello_world`
 
 Here is a list of common commands:
 
 Command | Usage
 ------------ | -------------
-pwd | Print Working Directory (Where Am I? )
-ls | List contents of current directory
-mkdir | Create a new directory
-touch | Create a new file
-cp| Copy a file 
-rm | Remove a file 
-rm -rf | Remove a directory 
+`pwd` | Print Working Directory (Where Am I? )
+`ls` | List contents of current directory
+`mkdir <directoryname>` | Create a new directory
+`touch <filename>` | Create a new file
+`cp <filetobecopied> <nameforcopiedfile>` | Copy a file 
+`rm <filename>` | Remove a file 
+`rm -rf <directoryname>` | Forcibly remove a directory 
 
 ### Usage Examples
 
@@ -74,7 +66,12 @@ Use the following syntax to delete a file
 #### Terminate the process which uses the port you want to use
 ``` kill <PID> ```
 
-# iTerm2
+
+#### Previewing file
+If you would like to preview a file, type the command `cat <name of document>` and you would be able to preview a text document through the terminal.
+
+
+## iTerm2
 
 iTerm2 is an alternative to the legacy terminal in Mac OS. iTerm2 brings some new features such as:
 
@@ -87,3 +84,17 @@ iTerm2 is an alternative to the legacy terminal in Mac OS. iTerm2 brings some ne
 * and many [more](https://www.iterm2.com/features.html)
 
 Just download iTerm2 from the official [website](https://www.iterm2.com/downloads.html). Additional documentation can be found [here](https://www.iterm2.com/documentation.html).
+
+#### iTerm2 Improvements and Customizations
+
+This [guide](https://medium.com/the-code-review/make-your-terminal-more-colourful-and-productive-with-iterm2-and-zsh-11b91607b98c) shows you how you can improve terminal productivity, and have a bit more customization options.
+
+## Hyper
+
+Another alternative is Hyper, an Electron-based terminal
+
+- Built in HTML/CSS/JS
+- Fully extensible
+- [Download](https://hyper.is/#installation)
+- [Documentation](https://hyper.is/)
+- [Awesome Hyper](https://github.com/bnb/awesome-hyper)

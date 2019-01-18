@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { StaticQuery, graphql } from 'gatsby';
-import { Col, Row } from '@freecodecamp/react-bootstrap';
+import { Grid, Col, Row } from '@freecodecamp/react-bootstrap';
 
 import { NavigationContext } from '../../contexts/GuideNavigationContext';
 import DefaultLayout from './Default';
@@ -61,30 +61,32 @@ const Layout = ({ children }) => (
           }) => (
             <DefaultLayout>
               <Spacer size={2} />
-              <Row>
-                <Col
-                  md={4}
-                  smHidden={!displaySideNav}
-                  xsHidden={!displaySideNav}
-                  >
-                  <SideNav
-                    expandedState={expandedState}
-                    pages={pages}
-                    toggleDisplaySideNav={toggleDisplaySideNav}
-                    toggleExpandedState={toggleExpandedState}
-                  />
-                </Col>
-                <Col
-                  className='content'
-                  md={8}
-                  smHidden={displaySideNav}
-                  xsHidden={displaySideNav}
-                  >
-                  <main className='main' id='main' tabIndex='-1'>
-                    {children}
-                  </main>
-                </Col>
-              </Row>
+              <Grid>
+                <Row>
+                  <Col
+                    md={4}
+                    smHidden={!displaySideNav}
+                    xsHidden={!displaySideNav}
+                    >
+                    <SideNav
+                      expandedState={expandedState}
+                      pages={pages}
+                      toggleDisplaySideNav={toggleDisplaySideNav}
+                      toggleExpandedState={toggleExpandedState}
+                    />
+                  </Col>
+                  <Col
+                    className='content'
+                    md={8}
+                    smHidden={displaySideNav}
+                    xsHidden={displaySideNav}
+                    >
+                    <main className='main' id='main' tabIndex='-1'>
+                      {children}
+                    </main>
+                  </Col>
+                </Row>
+              </Grid>
             </DefaultLayout>
           )}
         </NavigationContext>
