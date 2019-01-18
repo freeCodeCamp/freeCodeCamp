@@ -33,7 +33,7 @@ food or LEFT table data
 | 5       | Jaffa Cakes  | Pcs       | 18         |
 | 7       | Salt n Shake | Pcs       |            |
 +---------+--------------+-----------+------------+
-
+```
 
 
 company or RIGHT table data
