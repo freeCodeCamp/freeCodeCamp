@@ -17,16 +17,6 @@ You can learn more about the syntax differences at [`TypeScript`](./) > [`JavaSc
 
 ![Key Features](https://i.imgur.com/pZij95O.jpg)
 
-In essence, TypeScript is trying to help JavaScript reach new heights and become very scalable. 
-Here are the highlights of its key features:
-
-- Free and open-source programming language developed and maintained by Microsoft
-- Strict syntactical super-set of JavaScript that compiles to plain JavaScript
-- Eases development of large scale applications written in JavaScript
-- Extends JavaScript by adding static types, classes, modules, interfaces and generics
-
-**🎉 FUN FACT** TypeScript turned 5 years old on October 1st, 2017.
-
 ### Version
 
 Latest stable version available is [TypeScript 3.1](https://www.typescriptlang.org/docs/handbook/release-notes/typescript-3-1.html).
