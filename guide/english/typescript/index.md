@@ -50,7 +50,7 @@ The Playground has built-in auto completion and the ability to directly see the 
 
 To learn more about installation, see the [Installation Appendix](./src/articles/typescript/appendix-installation/index.md).
 
-In case you need just a type checker and don't want to compile your programm, read about <a href='https://facebook.github.io/flux/' target='_blank' rel='nofollow'>Flux</a>.
+In case you need just a type checker and don't want to compile your program, read about <a href='https://facebook.github.io/flux/' target='_blank' rel='nofollow'>Flux</a>.
 
 - <a href='http://www.typescriptlang.org/samples/index.html' target='_blank' rel='nofollow'>Quick Start</a>
 - <a href='http://www.typescriptlang.org/docs/home.html' target='_blank' rel='nofollow'>Documentation</a>
