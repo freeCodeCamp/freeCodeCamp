@@ -16,7 +16,7 @@ In this example, the function sayHello takes in a string name and prints out the
 
 ## Function Parameters
 
-Functions do not require any input parameters or return types. However this require the parentheses after naming the functions.
+Functions do not require any input parameters or return types. However parentheses are required after the function name.
  ```Swift
   func helloSteve() {
       print("Hello, Steve.")
