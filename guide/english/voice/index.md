@@ -15,11 +15,11 @@ The [Web Speech API](https://developer.mozilla.org/en-US/docs/Web/API/Web_Speech
 
 #### How the Web Speech API works
 
-The WebSpeech API uses the device's native microphone system. When an utterance is recognized from a pre-defined grammar (see below), it is returned as a result (or list of results) as a text string, and callback functions can be provided to perform further actions. 
+The Web Speech API uses the device's native microphone system. When an utterance is recognized from a pre-defined grammar (see below), it is returned as a result (or list of results) as a text string, and callback functions can be provided to perform further actions. 
 
-#### How to use the SpeechRecognition API
+#### How to use the Speech Recognition API
 
-Here is a simple example of using the SpeechRecognition API. Note that the API is initated with the `new SpeechRecognition()` constructor, and starts when `recognition.start();` is called. It creates a transcript from what is received and then that is appended to the `<p class="transcript">` element. [Click here for a working demo of this code](https://codepen.io/ashwoodall/pen/MPeyRm).
+Here is a simple example of using the Speech Recognition API. Note that the API is initated with the `new SpeechRecognition()` constructor, and starts when `recognition.start();` is called. It creates a transcript from what is received and then that is appended to the `<p class="transcript">` element. [Click here for a working demo of this code](https://codepen.io/ashwoodall/pen/MPeyRm).
 
 This is the HTML that the transcript is appended to:
 
@@ -87,7 +87,7 @@ The software components within the platform include both Natural Language Unders
 
 ### IBM Watson Speech-to-Text API
 
-IBM Watson Speech-to-Text uses machine learning to accurately predict speech in real time. Currently seven different languages are supported, as well as live voice and pre-recorded audio. The API can be used for free, or paid versions are available for larger scale apps. 
+The IBM Watson Speech-to-Text API uses machine learning to accurately predict speech in real time. Currently seven different languages are supported, as well as live voice and pre-recorded audio. The API can be used for free, or paid versions are available for larger scale apps. 
 
 ### Siri
 
