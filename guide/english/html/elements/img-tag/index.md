@@ -14,7 +14,7 @@ A simple HTML Image element can be included in an HTML document like this:
 
 The `title` attribute is optional and will provide additional information about the image. Most browsers display this information in a tooltip when the user hovers over it.
 
-Note that the path to the image file can be either relative or absolute. Also, remember that the `img` element is self-closing, meaning that it does not close with the `<img />` tag and instead closes with just a single `>`.
+Note that the path to the image file can be either relative or absolute. Also, remember that the `img` element is self-closing, meaning that it does not close with the `</img>` tag and instead closes with just a single `>`.
 
 Example:
 
