@@ -3,11 +3,15 @@ title: Base Tag
 ---
 ## Base Tag
 
-This is a stub. <a href='https://github.com/freecodecamp/guides/tree/master/src/pages/html/elements/base-tag/index.md' target='_blank' rel='nofollow'>Help our community expand it</a>.
+`<base>` tag must be inside the `<head>` element and contains a URL which serves as the base URL for all relative URLs in the page. There can be a maximum of one `<base>` tag in a page.
 
-<a href='https://github.com/freecodecamp/guides/blob/master/README.md' target='_blank' rel='nofollow'>This quick style guide will help ensure your pull request gets accepted</a>.
-
-<!-- The article goes here, in GitHub-flavored Markdown. Feel free to add YouTube videos, images, and CodePen/JSBin embeds  -->
+Example usage:
+```html
+<head>
+  <base href="https://www.example.com/path/" target="_blank">
+</head>
+```
 
 #### More Information:
-<!-- Please add any articles you think might be helpful to read before writing the article -->
+
+- <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/base">&lt;base&gt;: The Document Base URL element</a>

@@ -24,7 +24,7 @@ The patterns accepted by `nth-child` can come in the form of keywords or an equa
 Odd returns all odd elements of a given type.
 
 ```css 
-  a:nth-childe(odd) {
+  a:nth-child(odd) {
     /* CSS goes here */
   }
 ```
@@ -34,7 +34,7 @@ Odd returns all odd elements of a given type.
 Even returns all even elements of a given type.
 
 ```css 
-  a:nth-childe(even) {
+  a:nth-child(even) {
     /* CSS goes here */
   }
 ```
@@ -45,7 +45,7 @@ Returns all elements matching the equation An+B for every positive integer value
 
 For example, the following will match every 3rd anchor element:
 ```css 
-  a:nth-childe(3n) {
+  a:nth-child(3n) {
     /* CSS goes here */
   }
 ```
