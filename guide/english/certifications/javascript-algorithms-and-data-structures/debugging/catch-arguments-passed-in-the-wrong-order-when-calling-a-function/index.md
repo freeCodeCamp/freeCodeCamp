@@ -11,7 +11,7 @@ function raiseToPower(b, e) {
 
 - The above function is used to raise the base number `b` to the power of the exponent `e`. 
 - The function must be called specifically with variables in the correct order. Otherwise the function will mix up both variables and return an undesired answer.
-- Make sure tha variable `power` is implementing the `raiseToPower` function correctly.
+- Make sure the variable `power` is implementing the `raiseToPower` function correctly.
 
 ## Solution:
 ```javascript
