@@ -38,6 +38,11 @@ Doctype syntax for frameset HTML 4.01:
 <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Frameset//EN" "http://www.w3.org/TR/html4/frameset.dtd">
 ```
 
+Doctype syntax for HTML 3.0:
+```html
+<!DOCTYPE HTML public "-//W3O//DTD W3 HTML 3.0//EN">
+```
+
 ## History
 
 During the formative years of HTML, web standards were not agreed upon yet. Browser vendors would build new features in whatever way they wanted. There was little concern for competing browsers. The result was that web developers had to choose a browser to develop their sites for. This meant that sites would not render well in unsupported browsers. This situation could not continue.
