@@ -11,20 +11,11 @@ So as you are most likely aware, JavaScript is expanding its footprint everyday 
 
 However, as more large-scale projects start to use JavaScript, the process of making the code easier to write and more maintainable becomes more and more difficult. One reason for this is that, unlike some other programming languages, JavaScript is not a strongly-typed language. This means there can be confusion, especially in large code bases, about when different types (numbers, strings, booleans, arrays, etc) should be used and sometimes the problems only surface in production.
 
-This is a problem Microsoft recognized early on and they came up with the solution of TypeScript and released the first version approximately on October 1st, 2012.
+This is a problem Microsoft recognized early on and they came up with the solution of TypeScript and released the first version on October 1st, 2012.
 
 You can learn more about the syntax differences at [`TypeScript`](./) > [`JavaScript vs TypeScript`](./javascript-vs-typescript).
 
 ![Key Features](https://i.imgur.com/pZij95O.jpg)
-
-In essence, TypeScript is trying to help JavaScript reach new heights and become very scalable and can be highlighting by the following features:
-
-- free and open-source programming language developed and maintained by Microsoft
-- strict syntactical super-set of JavaScript that compiles to plain JavaScript
-- eases development of large scale applications written in JavaScript
-- extends JavaScript by adding static types, classes, modules, interfaces and generics
-
-**🎉 FUN FACT** TypeScript turned 5 years old on October 1st, 2017.
 
 ### Version
 
@@ -44,7 +35,7 @@ To learn more about using a linter with TypeScript, check out [`TypeScript`](./)
 
 If you want to try out TypeScript without installing it, visit the <a href='http://www.typescriptlang.org/play/index.html' target='_blank' rel='nofollow'>TypeScript Playground</a>.
 
-The Playground has built-in auto completion and the ability to directly see the emitted JavaScript.
+The Playground has a built-in auto completion and the ability to directly see the emitted JavaScript.
 
 ### Other Resources
 
