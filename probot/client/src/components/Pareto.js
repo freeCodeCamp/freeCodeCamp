@@ -68,7 +68,7 @@ class Pareto extends React.Component {
   }
 
   handleFileTypeOptionChange = changeEvent => {
-    let { all, selectedLanguage } = this.state;
+    let { all, selectedLanguage, options } = this.state;
     const selectedFileType = changeEvent.target.value;
     
     let data = [ ...all ].filter(({ filename }) => {
@@ -80,6 +80,9 @@ class Pareto extends React.Component {
       } else {
         if (selectedLanguage === 'all') {
           condition = articleType === selectedFileType;
+        } else if (!options[selectedFileType][selectedLanguage]) {
+          condition = articleType === selectedFileType
+          selectedLanguage = 'all';    
         } else {
           condition = articleType === selectedFileType && language === selectedLanguage
         }
@@ -172,11 +175,20 @@ class Pareto extends React.Component {
     return (
       <FullWidthDiv>
         { fileTypeOptions.length > 0 &&
-          <div>{typeOptions}</div>
+          <>
+          <strong>Filter Options</strong>
+          <fieldset>
+            <legend>File Type:</legend>
+            <div>{typeOptions}</div>
+          </fieldset>
+          </>
         }
         {
         languageOptions &&
+        <fieldset>
+          <legend>Language:</legend>
           <div>{languageOptions}</div>
+        </fieldset>
         }
         {data.length ? elements : 'Report Loading...'}
       </FullWidthDiv>
