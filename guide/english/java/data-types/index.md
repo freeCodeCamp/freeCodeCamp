@@ -76,12 +76,12 @@ Long data type is a 64-bit signed two's complement integer.
 
     Example: long a = 100000L, long b = -600000L; 
 
-    By default all integer type variable is "int". So long num=600851475143  will give an error.
+    By default all integer type values are "int". So long num=600851475143  will give an error.
     But it can be specified as long by appending the suffix L (or l)
 
 ## Floating­ Point​:
 
-These are also called real numbers and are used for expressions involving fractional precision. These are of two types: `float`, `double`. Float is actually avoided in case of precise data such as currency or research data.
+These are also called real numbers and are used for expressions involving fractional precision. These are of two types: `float`, `double`. Floating point is actually avoided in case of precise data such as currency or research data.
 
 ### float:
 
@@ -110,7 +110,7 @@ double data type is a double-precision 64-bit [IEEE 754 floating point](http://s
     Default value: 0.0d.
 
     Example: double d1 = 123.400778;
-
+    
 ## Character:
 
 We use this data type to store characters. This is not the same as the char in C/C++. Java uses a `UNICODE`, internationally accepted character set. Char in Java is 16­bits long while that in C/C++ is 8­bits.
@@ -196,4 +196,20 @@ System.out.println(output);
 Output: 
 ```
 10198442
+```
+
+### Casting
+
+It is also important to note that it is possible to store different data types into one another. However, you would have to let the compiler know that you have acknowledge the possible loss of data by casting the variable.  
+    
+For example: 
+```java
+double d = 1.23
+
+int i = (int)d;  
+System.out.println(i);
+```
+Output: 
+```
+1
 ```

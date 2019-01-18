@@ -3,13 +3,25 @@ title: Firefox Developer Tools
 ---
 ## Firefox Developer Tools
 
-This is a stub. <a href='https://github.com/freecodecamp/guides/tree/master/src/pages/developer-tools/developer-tools-in-browsers/firefox-developer-tools/index.md' target='_blank' rel='nofollow'>Help our community expand it</a>.
+Firefox Developer tools aid web developers with writing, analyzing, and debugging HTML, CSS and Javascript code. 
 
-<a href='https://github.com/freecodecamp/guides/blob/master/README.md' target='_blank' rel='nofollow'>This quick style guide will help ensure your pull request gets accepted</a>.
+Core Features:
 
-<!-- The article goes here, in GitHub-flavored Markdown. Feel free to add YouTube videos, images, and CodePen/JSBin embeds  -->
+* Inspector: View and edit page content and layout.
+* Console: See javascript console.log() messages and errors
+* Debugger: View and modify JavaScript running on a page
+* Network: See network requests made when pages are loaded
+* Performance: Analyze computer resources used by the site
+* Responsive Desing Mode: Shows how your website will behave on different device 
+
+#### Accessing Developer Tools
+
+In the menu bar at the top of the screen select Tools > Web Developer > Web Console.  
+
+You can also bring up Developer Tools by right-clicking on any element on a web page and selecting  "Inspect Element" from the options. 
+
+The tools will appear on the bottom; however, if you like you can dock them on the left or right the screen, or you can have them appear as a separate window altogether.
 
 #### More Information:
-<!-- Please add any articles you think might be helpful to read before writing the article -->
-
+* [Firefox Developer Tools](https://developer.mozilla.org/en-US/docs/Tools)
 
