@@ -4,7 +4,7 @@ title: Styling
 
 ## React Native - Styling
 
-React Native provides an API for creating stylesheets and styling your components: [StyleSheet](https://facebook.github.io/react-native/docs/stylesheet).
+React Native provides an API for creating stylesheets and styling your components: [Documentation on Stylesheets](https://facebook.github.io/react-native/docs/stylesheet).
 
 ```jsx
 import React, { Component } from 'react';
@@ -35,11 +35,11 @@ While regular CSS stylesheets aren't valid, React Native's superset of CSS is ve
 
 Not all CSS properties exist in StyleSheet. Since there is no true concept of hovering on mobile devices, CSS hover properties don't exist in React Native. Instead, React Native provides [Touchable components](https://facebook.github.io/react-native/docs/handling-touches#touchables) that respond to touch events.
 
-Styles are also not inherited as they are in traditional CSS. In most cases, you must declare the style of each component.
+Styles are also not inherited, as they are in traditional CSS. In most cases, you must declare the style of each component.
 
 ### Flexbox Layouts
 
-React Native uses an implementation of [flexbox](https://facebook.github.io/react-native/docs/flexbox) similar to the web standard. By default, items in the view will be set to `display: flex`.
+React Native uses an implementation of [flexbox](https://facebook.github.io/react-native/docs/flexbox), similar to the web standard. By default, items in the view will be set to `display: flex`.
 
 > If you do not want to use flexbox, you can also arrange React Native components via `relative` or `absolute` positioning.
 
@@ -113,4 +113,7 @@ export default class Login extends Component {
 
 ### Libraries for Styling
 
-There are a few popular libraries for styling React Native. Some of them provide features similar to [Bootstrap](../../bootstrap), including default forms, button styles, and page layout options. One of the most popular libraries is [styled-components](https://github.com/styled-components/styled-components). There are many others you can find on npm and GitHub to try for yourself.
+There are a few popular libraries for styling React Native. Some of them provide features similar to [Bootstrap](../../bootstrap/index.md); including default forms, button styles, and page layout options.
+
+One of the most popular libraries is [styled-components](https://github.com/styled-components/styled-components). There are many others you can find on npm and GitHub to try for yourself.
+
