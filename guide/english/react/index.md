@@ -48,7 +48,7 @@ ReactDOM.render(
 ```
 
 2. React is Declarative for the most part in which we are concerned more with What to do rather than How to do a specific task. Declarative programming is a programming paradigm that expresses the logic of a computation without describing its control flow.
-Declarative programming comes with certain advantages such as reduced side effects(occurs when we modify any state or mutating something or making an API request), minimizing mutability(mostly abstracted), enhanced readability, fewer bugs.
+Declarative programming comes with certain advantages such as reduced side effects(occurs when we modify any state or mutating something or making an API request), minimizing mutability(mostly abstracted), enhanced readability and fewer bugs.
 
 3. Unidirectional dataflow. UI in React is actually the function of the state that means as the state updates it updates the UI as well. So our UI progresses as the state changes.
 
@@ -63,7 +63,7 @@ Some reasons to use React are:
 
 ### Virtual DOM
 
-React's magic comes from it's an interpretation of the DOM and it's a strategy for creating UIs.
+React's magic comes from it's an interpretation of the DOM and it's strategy for creating UIs.
 
 React uses the virtual DOM to render an HTML tree virtually first, and then, every time a state changes and we get a new HTML tree that needs to be taken to the browser’s DOM, instead of writing the whole new tree React will only write the difference between the new tree and the previous tree (since React has both trees in memory). This process is known as Tree Reconciliation.
 
@@ -113,7 +113,7 @@ This will result in the following code:
 
 We can fill in the title of “Time to React!”.
 
-This content will not appear on your webpage. Anything in the head section of the HTML file will be metadata that our browser will use to interpret our code in the body section. This title is going to be what appears on the tab for our page, not actually on the page.
+This content will not appear on your webpage. Anything in the head section of the HTML file will be metadata that browser will use to interpret the code in the body section. This title is going to be what appears on the tab for our page, not actually on the page.
 
 ### 2 - Get Script Tags to Harness the Power of React and Babel Libraries
 
