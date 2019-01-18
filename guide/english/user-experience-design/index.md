@@ -26,7 +26,7 @@ This section, and its guides, will cover a wide variety of user experience desig
 [Usabilla](http://blog.usabilla.com)
 
 #### Textbook for User Experience Design
- The Design of Everyday Things: Revised and Expanded Edition -> (Amazon)[https://www.amazon.com/Design-Everyday-Things-Revised-Expanded/dp/0465050654/]
+ [The Design of Everyday Things: Revised and Expanded Edition -> [Amazon](https://www.amazon.com/Design-Everyday-Things-Revised-Expanded/dp/0465050654/)
  
  [Don't Make Me Think, Revisited: A Common Sense Approach to Web Usability (3rd Edition) -> (Amazon)](https://www.amazon.com/Dont-Make-Think-Revisited-Usability/dp/0321965515/)
  
