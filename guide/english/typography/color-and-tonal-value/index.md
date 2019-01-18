@@ -18,6 +18,6 @@ Tint is the addition of white to a color. Tint can be used to highlight an area 
 
 Tone is the addition of grey to a color. The tonal color creates a more muted and less saturated color.
 
-Shade is the addition of black to a color. Shade can be used to darken and area to create the illusion of depth on an object.
+Shade is the addition of black to a color. Shade can be used to darken an area to create the illusion of depth on an object.
 
-By altering a colors tonal value, you can create the illusion of depth in images as well as alter the saturation level to better apply color for a desired emotion or mood.
+By altering a color's tonal value, you can create the illusion of depth in images as well as alter the saturation level to better apply color for a desired emotion or mood.
