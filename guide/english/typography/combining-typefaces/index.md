@@ -14,6 +14,7 @@ Which fonts look good together and which ones don't? If you've ever struggled wi
 * Pair a tall and short font to create visual interest
 * Pair fonts with different weights to create a strong contrast
 * Pair a regular and italic font to create emphasis
+* Pair a serif and sans-serif typeface with similar x-heights
 
 There are no hard and fast rules for choosing typefaces, but you can often avoid having to choose new typefaces by styling an existing typeface to create a visual hierarchy. When in doubt, keep it simple.
 
@@ -39,3 +40,4 @@ Many type foundries create typefaces with extensive extra features like multiple
 
 * Shaun Pagin, [The Art Of Mixing Typefaces Google Fonts Edition](http://www.fastprint.co.uk/blog/the-art-of-mixing-typefaces.html).
 
+* Jermiah Shoaf, [Type Pairing Lookbooks](https://www.typewolf.com/lookbooks)
