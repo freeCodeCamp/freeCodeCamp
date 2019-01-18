@@ -3,13 +3,16 @@ title: Prime Number Generator
 ---
 ## Prime Number Generator
 
-This is a stub. <a href='https://github.com/freecodecamp/guides/tree/master/src/pages/tools/prime-number-generator/index.md' target='_blank' rel='nofollow'>Help our community expand it</a>.
+A prime number generator is used to generate prime numbers. Prime number generating algorithms are used extensively in computer science for various applications, examples: [Hashing](https://en.wikipedia.org/wiki/Hash_table), [Public-key Cryptography](https://en.wikipedia.org/wiki/Public-key_cryptography), etc.
 
-<a href='https://github.com/freecodecamp/guides/blob/master/README.md' target='_blank' rel='nofollow'>This quick style guide will help ensure your pull request gets accepted</a>.
+Here are few online prime numbers generators:
+* [Wolfram Alpha](https://www.wolframalpha.com/examples/mathematics/number-theory/prime-numbers/)
+* [Browserling's prime number generator](https://www.browserling.com/tools/prime-numbers)
 
-<!-- The article goes here, in GitHub-flavored Markdown. Feel free to add YouTube videos, images, and CodePen/JSBin embeds  -->
+There are various algorithms to generate prime numbers. Here's a link to one of the most efficient algorithms to generate prime numbers less than a number "n"
+* [Sieve of Eratosthenes algo to generate prime numbers](https://www.geeksforgeeks.org/sieve-of-eratosthenes/)
 
 #### More Information:
-<!-- Please add any articles you think might be helpful to read before writing the article -->
-
+- [Prime Number Chart](https://guide.freecodecamp.org/tools/prime-number-chart)
+- [Wikibooks: Prime Number Generating Algorithms](https://en.wikibooks.org/wiki/Some_Basic_and_Inefficient_Prime_Number_Generating_Algorithms)
 

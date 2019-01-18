@@ -36,7 +36,7 @@ Having access to an API generally means having access to a large amount of organ
 
 Source: [Open Weather API](https://openweathermap.org/current)
 
-In the example above, a developer made a request for the current weather at a specific latitude and longitude, and the server responded with a *JSON object* about wind, rain, and clouds for that location. Services that you use every day are made with tons of request and response cycles like this.
+In the example above, a developer made a request for the current weather at a specific latitude and longitude, and the server responded with a *JSON object* about the wind, rain, and clouds for that location. Services that you use every day are made with many request and response cycles such as this.
 
 <strong>Here are Top 10 APIs for beginners </strong>
 
@@ -52,6 +52,19 @@ In the example above, a developer made a request for the current weather at a sp
   <li>Yelp: http://www.yelp.com/developers/getting_started</li>
   <li>Facebook: https://developers.facebook.com/docs/facebook-login/login-flow-for-web</li>
 </ol>
+
+## API Tokens
+
+Generally, before using an API from service, you will be required to register your app or open an account with the service. You will then be given a unique key / token / secret / code which acts as a form of authentication. The service will know who is requesting the information. For example, it is not uncommon for services to offer free API calls to indie developers, but require payments if the number of API calls you make in a period of time exceeds their threshold. Tokens can also be revoked if the service determines that the APIs have been abused, so it is important to check the terms and conditions. These tokens should be kept secret.
+
+For example, this is the API call for Dropbox to [list folders](https://www.dropbox.com/developers/documentation/http/documentation#sharing-list_folders).
+```
+curl -X POST https://api.dropboxapi.com/2/sharing/list_folders \
+    --header "Authorization: Bearer <access_token>" \
+    --header "Content-Type: application/json" \
+    --data "{\"limit\": 100,\"actions\": []}"
+```
+Without an access token obtained from Dropbox, the API call will not work.
 
 #### More Information:
 * [API for non-programmers](https://schoolofdata.org/2013/11/18/web-apis-for-non-programmers/)

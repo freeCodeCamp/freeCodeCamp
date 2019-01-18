@@ -82,7 +82,7 @@ In the above program,
 and the inner (nested) functions are add() and subtract().
  - The nested function add() and subtract() in a way are being used outside of the enclosing function operate(). This is possible because the outer function returns one of these functions.
 
-We've used the inner function outside the enclosing function operate() as operation(2, 3). The program internally calls add(2, 3)which outputs 5 in the console.
+We've used the inner function outside the enclosing function operate() as operation(2, 3). The program internally calls add(2, 3) which outputs 5 in the console.
 
 [Source](https://www.programiz.com/swift-programming/nested-functions) 
 
