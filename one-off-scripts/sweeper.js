@@ -10,16 +10,10 @@ To run the script for a specific range (i.e. label and comment on guide errors),
 run `node sweeper.js range startingPrNumber endingPrNumber`
 */
 
-const { owner, repo, octokitConfig, octokitAuth } = require('../lib/constants');
-
-const octokit = require('@octokit/rest')(octokitConfig);
-
-const { getPRs, getUserInput } = require('../lib/get-prs');
+const { getPRs, getUserInput, getFiles } = require('../lib/get-prs');
 const { guideFolderChecks } = require('../lib/validation');
 const { ProcessingLog, rateLimiter } = require('../lib/utils');
 const { labeler } = require('../lib/pr-tasks');
-
-octokit.authenticate(octokitAuth);
 
 const log = new ProcessingLog('sweeper');
 
@@ -38,11 +32,7 @@ console.log('Sweeper started...');
         labels: currentLabels,
         user: { login: username }
       } = openPRs[i];
-      const { data: prFiles } = await octokit.pullRequests.listFiles({
-        owner,
-        repo,
-        number
-      });
+      const prFiles = await getFiles(number);
       count++;
 
       const guideFolderErrorsComment = await guideFolderChecks(

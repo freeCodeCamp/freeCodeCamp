@@ -14,6 +14,7 @@ const createPareto = reportObj =>
 
 router.get('/', async (reqeust, response) => {
   const prs = await PR.find({}).then(data => data);
+  prs.sort((a, b) => a._id - b._id);
   const reportObj = prs.reduce((obj, pr) => {
     const { _id: number, filenames, username, title } = pr;
     filenames.forEach(filename => {

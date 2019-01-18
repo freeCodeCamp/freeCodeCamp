@@ -8,11 +8,7 @@ const config = require('../config');
 
 const fetch = require('node-fetch');
 
-const { owner, repo, octokitConfig, octokitAuth } = require('../lib/constants');
-
-const octokit = require('@octokit/rest')(octokitConfig);
-
-const { getPRs, getUserInput } = require('../lib/get-prs');
+const { getPRs, getUserInput, getFiles } = require('../lib/get-prs');
 const { addLabels, addComment } = require('../lib/pr-tasks');
 const { rateLimiter, ProcessingLog } = require('../lib/utils');
 const {
@@ -31,11 +27,9 @@ const allowedLangDirNames = [
   'spanish'
 ];
 
-octokit.authenticate(octokitAuth);
-
 const log = new ProcessingLog('all-frontmatter-checks');
 
-const labeler = async (
+const labeler = async(
   number,
   prFiles,
   currentLabels,
@@ -74,11 +68,11 @@ const checkPath = (fullPath, fileContent) => {
   return errorMsgs.concat(frontMatterErrMsgs);
 };
 
-const guideFolderChecks = async (number, prFiles, user) => {
+const guideFolderChecks = async(number, prFiles, user) => {
   let prErrors = [];
   for (let { filename: fullPath, raw_url: fileUrl } of prFiles) {
     let newErrors;
-    if (/^guide\//.test(fullPath)) {
+    if ((/^guide\//).test(fullPath)) {
       const response = await fetch(fileUrl);
       const fileContent = await response.text();
       newErrors = checkPath(fullPath, fileContent);
@@ -100,7 +94,7 @@ const guideFolderChecks = async (number, prFiles, user) => {
   }
 };
 
-(async () => {
+(async() => {
   const { totalPRs, firstPR, lastPR } = await getUserInput();
   const prPropsToGet = ['number', 'labels', 'user'];
   const { openPRs } = await getPRs(totalPRs, firstPR, lastPR, prPropsToGet);
@@ -115,11 +109,8 @@ const guideFolderChecks = async (number, prFiles, user) => {
         labels: currentLabels,
         user: { login: username }
       } = openPRs[count];
-      const { data: prFiles } = await octokit.pullRequests.listFiles({
-        owner,
-        repo,
-        number
-      });
+      
+      const prFiles = await getFiles(number);
       if (count > 4000) {
         await rateLimiter(2350);
       }

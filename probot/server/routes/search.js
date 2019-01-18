@@ -3,6 +3,7 @@ const { PR } = require('../models');
 
 router.get('/', async (request, response) => {
   const prs = await PR.find({}).then(data => data);
+  prs.sort((a, b) => a._id - b._id);
   const indices = prs.reduce((obj, { _id }, index) => {
     obj[_id] = index;
     return obj;
