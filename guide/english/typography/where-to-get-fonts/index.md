@@ -57,11 +57,11 @@ You're done! You successfully have new fonts for your site.
 * [1001 Free Fonts](http://www.1001freefonts.com)
 * [Adobe Typekit](https://fonts.adobe.com/fonts)
 
-#### Paid Font Reources:
+#### Paid Font Resources:
 
-* [Fonts by Hoefler & Co.] (https://www.typography.com/)
-* [MyFonts] (https://www.myfonts.com/)
-* [Adobe Typekit] (https://fonts.adobe.com/)
+* [Fonts by Hoefler & Co.](https://www.typography.com/)
+* [MyFonts](https://www.myfonts.com/)
+* [Adobe Typekit](https://fonts.adobe.com/)
 
 #### More Information:
 <!-- Please add any articles you think might be helpful to read before writing the article -->
