@@ -1,6 +1,6 @@
 import React from 'react';
-
-const FilterOption = ({ group, children, value, selectedOption, onOptionChange }) => (
+const FilterOption = ({ group, children, value, selectedOption, onOptionChange }) => {
+  return (
   <label>
     <input
       name={group}
@@ -11,6 +11,6 @@ const FilterOption = ({ group, children, value, selectedOption, onOptionChange }
     />
     {children}
   </label>
-);
-
+  );
+}
 export default FilterOption;

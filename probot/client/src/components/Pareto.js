@@ -68,52 +68,41 @@ class Pareto extends React.Component {
   }
 
   handleFileTypeOptionChange = changeEvent => {
-    const { all } = this.state;
+    let { all, selectedLanguage } = this.state;
     const selectedFileType = changeEvent.target.value;
-    let filteredData = [];
-    if (selectedFileType === 'all') {
-      filteredData = all;
-    }
-    else if (selectedFileType !== 'other') {
-      filteredData = all.filter(({ filename }) => {
-        const { articleType } = this.getFilenameOptions(filename);
-        return articleType === selectedFileType;
-      });
-    }
-    else {
-      // Other selected
-      filteredData = all.filter(({ filename }) => {
-        const { articleType } = this.getFilenameOptions(filename);
-        return !articleType;
-      });
-    }
-    this.setState(prevState => ({ data: filteredData, selectedFileType }));
+    
+    let data = [ ...all ].filter(({ filename }) => {
+      const { articleType, language } = this.getFilenameOptions(filename);
+      let condition;
+      if (selectedFileType === 'all') {
+        condition = true;
+        selectedLanguage = 'all';
+      } else {
+        if (selectedLanguage === 'all') {
+          condition = articleType === selectedFileType;
+        } else {
+          condition = articleType === selectedFileType && language === selectedLanguage
+        }
+      }
+      return condition;
+    });
+    this.setState(prevState => ({ data, selectedFileType, selectedLanguage }));
   }
-
+  
   handleLanguageOptionChange = changeEvent => {
     const { all, selectedFileType } = this.state;
     const selectedLanguage = changeEvent.target.value;
-    let filteredData = [];
-    if (selectedLanguage === 'all') {
-      filteredData = all.filter(({ filename }) => {
-        const { articleType } = this.getFilenameOptions(filename);
-        return articleType === selectedFileType;
-      });
-    }
-    else if (selectedLanguage !== 'other') {
-      filteredData = all.filter(({ filename }) => {
-        const { articleType, language } = this.getFilenameOptions(filename);
-        return articleType === selectedFileType && language === selectedLanguage;
-      });
-    }
-    else {
-      // Other selected
-      filteredData = all.filter(({ filename }) => {
-        const { articleType, language } = this.getFilenameOptions(filename);
-        return articleType && !language;
-      });  
-    }
-    this.setState(prevState => ({ data: filteredData, selectedLanguage }));
+    let data = [ ...all ].filter(({ filename }) => {
+      const { articleType, language } = this.getFilenameOptions(filename);
+      let condition;
+      if (selectedLanguage === 'all') {
+        condition = articleType === selectedFileType
+      } else {
+        condition = language === selectedLanguage && articleType === selectedFileType
+      }
+      return condition;
+    });
+    this.setState(prevState => ({ data, selectedLanguage }));
   }
 
   getFilenameOptions = filename => {
@@ -152,31 +141,29 @@ class Pareto extends React.Component {
     });
     
     let fileTypeOptions = Object.keys(options).map(articleType => articleType);
-    fileTypeOptions = ['all', ...fileTypeOptions.sort(), 'other'];
-
-    const typeOptions = fileTypeOptions.map((type) => (
+    const typeOptions = [ 'all', ...fileTypeOptions].map((type) => (
       <FilterOption
         key={type}
         name="filetype"
         value={type}
         onOptionChange={this.handleFileTypeOptionChange}
-        selectedFileType={selectedFileType}
+        selectedOption={selectedFileType}
       >
       {type.charAt().toUpperCase() + type.slice(1)}
       </FilterOption>
     ));
     
     let languageOptions = null;
-    if (selectedFileType !== 'all' && selectedFileType !=='other') {
+    if (selectedFileType !== 'all') {
       let languages = Object.keys(options[selectedFileType]);    
-      languages = ['all', ...languages.sort(), 'other'];
+      languages = ['all', ...languages.sort()];
       languageOptions = languages.map(language => (
         <FilterOption
           key={language}
           name="language"
           value={language}
           onOptionChange={this.handleLanguageOptionChange}
-          selectedLanguage={selectedLanguage}
+          selectedOption={selectedLanguage}
         >
         {language.charAt().toUpperCase() + language.slice(1)}
         </FilterOption>
@@ -184,14 +171,12 @@ class Pareto extends React.Component {
     }
     return (
       <FullWidthDiv>
-        <div>
-          {typeOptions}
-        </div>
+        { fileTypeOptions.length > 0 &&
+          <div>{typeOptions}</div>
+        }
         {
         languageOptions &&
-        <div>
-          {languageOptions}
-        </div>
+          <div>{languageOptions}</div>
         }
         {data.length ? elements : 'Report Loading...'}
       </FullWidthDiv>
