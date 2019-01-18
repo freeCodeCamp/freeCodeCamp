@@ -10,7 +10,8 @@
     "probot-app"
   ],
   "scripts": {
-    "dev": "nodemon",
+    "dev": "develop",
+    "develop": "nodemon",
     "start": "probot run esm ./index.js",
     "start-probot": "cross-env TEST_ENV=false probot run ./index.js",
     "lint": "standard --fix",

@@ -8,14 +8,15 @@
     "bootstrap": "lerna bootstrap",
     "build": "lerna run build",
     "postinstall": "npm run bootstrap",
-    "test": "npm-run-all test:*",
+    "test": "run-p test:*",
     "test:probot": "cd ./probot && npm run test",
     "test:client": "cd ./probot/client && npm run test",
     "format": "prettier --write es5 ./**/*.{js,json} && npm run lint",
     "lint": "eslint ./**/*.js --fix",
     "start": "cd probot && npm start && cd ../",
-    "client-dev": "cd ./probot/client && npm run dev",
-    "dev": "nodemon"
+    "develop": "run-p develop:*",
+    "develop:client": "cd ./probot/client && npm run develop",
+    "develop:server": "cd ./probot/ && npm run develop"
   },
   "devDependencies": {
     "dotenv": "^6.2.0",

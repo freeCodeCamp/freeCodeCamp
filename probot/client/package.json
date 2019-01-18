@@ -9,7 +9,8 @@
     "styled-components": "^4.1.1"
   },
   "scripts": {
-    "dev": "cross-env REACT_APP_HOST=local SKIP_PREFLIGHT_CHECK=true react-scripts start",
+    "dev": "develop",
+    "develop": "cross-env REACT_APP_HOST=local SKIP_PREFLIGHT_CHECK=true react-scripts start",
     "build": "cross-env SKIP_PREFLIGHT_CHECK=true react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject"
