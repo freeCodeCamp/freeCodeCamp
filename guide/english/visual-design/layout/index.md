@@ -32,3 +32,9 @@ Once the body copy has been taken care of, you can then add the tags. Tags are a
 [TheKatHunts. “Good Design: Works-Every-Time Layout”](https://writingwithmagneto.wordpress.com/2014/03/14/good-design-works-every-time-layout/)
 
 [A video on the works everytime layout](https://whitespacedesignbook.com/portfolio/works-every-time-layout/)
+
+## Resources
+* Layout Essentials: 100 Design Principles for Using Grids
+[Amazon](https://www.amazon.com/Layout-Essentials-Design-Principles-Using/dp/1592537073)
+* Layout Workbook: A Real World Guide to Building Pages in Graphic Design
+[Amazon](https://www.amazon.com/Layout-Workbook-Real-World-Building-Graphic/dp/1592533523)
