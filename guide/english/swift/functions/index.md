@@ -52,7 +52,6 @@ In the above program, the nested function addGreetingAndPrint() is being called 
 The statement outputMessageByGreeting("Jack") calls the outer function. And the statement addGreetingAndPrint() inside the outer function calls the method which outputs Hello! Jack in the console.
 
 Example 2: Nested function with parameters and return values
-Nested functions can contain functions with parameters and return values.
 
 ```Swift
 func operate(with symbol:String) -> (Int, Int) -> Int {
