@@ -3,11 +3,11 @@ id: bad87fee1348bd9aec908857
 title: Use Comments to Clarify Code
 challengeType: 0
 videoUrl: ''
-localeTitle: Utilizar comentarios para aclarar el código
+localeTitle: Utilizar comentarios para clarificar el código
 ---
 
 ## Description
-<section id="description"> Cuando comencemos a usar jQuery, modificaremos los elementos HTML sin necesidad de cambiarlos realmente en HTML. Asegurémonos de que todos sepan que no deberían modificar directamente ninguno de estos códigos. Recuerde que puede comenzar un comentario con <code>&lt;!--</code> y terminar un comentario con <code>--&gt;</code> Agregue un comentario en la parte superior de su código HTML que diga <code>Only change code above this line.</code> </section>
+<section id="description"> Cuando comencemos a usar jQuery, modificaremos los elementos HTML sin necesidad de cambiarlos realmente en HTML. Asegurémonos de que todos sepan que no deberían modificar directamente ninguno de estos códigos. Recuerda que se puede comenzar un comentario con <code>&lt;!--</code> y terminar el mismo con <code>--&gt;</code> Agrega un comentario en la parte superior de su código HTML que diga <code>Only change code above this line.</code> </section>
 
 ## Instructions
 <section id="instructions">

@@ -22,7 +22,10 @@ Social Engineering is the art of gaining access to a secured system or resource 
 * Phishing: Sending an email which looks like it is from a trusted source to bait the user into clicking a link (to install malware) or replying with private information. 
 See "More Information" for a link to test your phishing knowledge and see if you can tell the differece between a real e-mail and a phishing e-mail.
 
+* Lastly, the 419 scam, also known as Advanced-Fee Scam, is a real life example of social engineering. In Nigeria and other third world countries, people would manipulate people by connecting with people using emotional connections in order to scam money. Usually strategies would include: third world poor country status in need of donations or informing people they won scam money and asking for account numbers. These emails would be very convincing and many have fallen victims to these scams. 
+
 * Infiltrating: impersonating someone legitimate in order to gain physical access to a building/office etc., e.g. the coffee machine repair person
+
 
 #### Prevention and Security
 

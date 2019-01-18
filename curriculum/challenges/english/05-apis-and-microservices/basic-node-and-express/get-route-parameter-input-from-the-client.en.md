@@ -20,10 +20,11 @@ Build an echo server, mounted at the route <code>GET /:word/echo</code>. Respond
 <section id='tests'>
 
 ```yml
-- text: 'Test 1 : Your echo server should repeat words correctly'
-  testString: 'getUserInput => $.get(getUserInput(''url'') + ''/eChOtEsT/echo'').then(data => { assert.equal(data.echo, ''eChOtEsT'', ''Test 1: the echo server is not working as expected'') }, xhr => { throw new Error(xhr.responseText); })'
-- text: 'Test 2 : Your echo server should repeat words correctly'
-  testString: 'getUserInput => $.get(getUserInput(''url'') + ''/ech0-t3st/echo'').then(data => { assert.equal(data.echo, ''ech0-t3st'', ''Test 2: the echo server is not working as expected'') }, xhr => { throw new Error(xhr.responseText); })'
+tests:
+  - text: 'Test 1 : Your echo server should repeat words correctly'
+    testString: 'getUserInput => $.get(getUserInput(''url'') + ''/eChOtEsT/echo'').then(data => { assert.equal(data.echo, ''eChOtEsT'', ''Test 1: the echo server is not working as expected'') }, xhr => { throw new Error(xhr.responseText); })'
+  - text: 'Test 2 : Your echo server should repeat words correctly'
+    testString: 'getUserInput => $.get(getUserInput(''url'') + ''/ech0-t3st/echo'').then(data => { assert.equal(data.echo, ''ech0-t3st'', ''Test 2: the echo server is not working as expected'') }, xhr => { throw new Error(xhr.responseText); })'
 
 ```
 
