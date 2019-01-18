@@ -91,6 +91,58 @@ Result:
 	    </tr>
 	  </tfoot>
 	</table>
+        
+        
+### Using Row Span and Col Span Attribute
+With **Row Span** allows a single table cell to span the height of more than one cell or row.
+
+Example: 
+
+```html
+<table>
+  <tr>
+    <th>Firstname</th>
+    <th>Lastname</th> 
+    <th>Age</th>
+  </tr>
+  <tr>
+    <td>Jill</td>
+    <td>Smith</td> 
+    <td rowspan="2">50</td>
+  </tr>
+  <tr>
+    <td>Eve</td>
+    <td>Jackson</td> 
+  </tr>
+</table>
+```
+
+With **Col Span** allows a single table cell to span the width of more than one cell or column.
+
+Example: 
+
+```html
+<table>
+  <tr>
+    <th>Firstname</th>
+    <th>Lastname</th> 
+    <th>Age</th>
+  </tr>
+  <tr>
+    <td>Jill</td>
+    <td>Smith</td> 
+    <td>50</td>
+  </tr>
+  <tr>
+    <td>Eve</td>
+    <td>Jackson</td> 
+    <td>50</td>
+  </tr>
+  <tr>
+    <td colspan="3">Total: 2 Response</td>    
+  </tr>
+</table>
+```
 
 ## Adding/Removing table border
 The table border width can be increased/decreased using the table border attribute.
