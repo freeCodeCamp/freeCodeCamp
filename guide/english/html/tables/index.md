@@ -32,6 +32,12 @@ A more complex HTML table may also include `<caption>`, `<col>`, `<colgroup>`, `
   </tr>
 </table>
 ```
+Result:
+
+Firstname	Lastname	Age
+Jill	Smith	50
+Eve	Jackson	94
+
 <a href='https://www.w3schools.com/html/tryit.asp?filename=tryhtml_table'> DEMO </a>
 
 ### Table Example with more semantic information
