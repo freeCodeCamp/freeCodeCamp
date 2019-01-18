@@ -19,7 +19,7 @@ First, let us see what your workflow might look like before having multiple keys
 
 You have one private key stored in `~/.ssh/id_rsa` with a corresponding public key `~/.ssh/id_rsa.pub`.
 
-Let us imagine that you want to push/pull code changes to/from a remote git server; say GitHub, whynot. To do so, you first have to add your public key to GitHub. I will not go over that step, it should be easy enough to find out how to do that. I have also assumed that your name is Steve and you are working on a top-secret project which uses Raspberry Pies to sniff network traffic.
+Let us imagine that you want to push/pull code changes to/from a remote git server; say GitHub, why not. To do so, you first have to add your public key to GitHub. I will not go over that step, it should be easy enough to find out how to do that. I have also assumed that your name is Steve and you are working on a top-secret project which uses Raspberry Pies to sniff network traffic.
 
 To start your work, you have to clone a git repository using SSH:
 ```bash
@@ -95,7 +95,7 @@ Note: if, after successful cloning, you try `git pull`, you will be prompted for
 
 It is important that `Host github.com` from `config` and `github.com` from URI `git@github.com:steve/raspberry-spy.git` match. You can also change `config` to be `Host mygithub` and clone using URI `git@mygithub:steve/raspberry-spy.git`.
 
-This opens the floodgates. As you are reding this, your mind is racing and thinking about how all your troubles with SSH keys are over. Here are some useful configuration examples:
+This opens the floodgates. As you are reading this, your mind is racing and thinking about how all your troubles with SSH keys are over. Here are some useful configuration examples:
 
 ```bash
 Host bitbucket-corporate
@@ -138,7 +138,7 @@ This is possible with git 2.10 or later. You can also use this command to avoid 
 git config core.sshCommand 'ssh -i ~/.ssh/id_rsa_corp'
 ```
 
-### Password managemet
+### Password management
 
 Last piece of the puzzle is managing passwords. We want to avoid having to enter password every time when SSH connection is initiating. To do so, we can utilize keychain management software that comes with MacOS and various Linux distributions.
 
@@ -150,7 +150,7 @@ ssh-add -K ~/.ssh/id_rsa_whatever
 Now you can see your SSH key in the keychain. On MacOS it looks something like this:
 ![Keychain Access](https://raw.githubusercontent.com/fvoska/guides/master/static/images/pages/ssh/managing-multiple-ssh-keys/keychain-access.png "Keychain Access")
 
-If you remove the keys from `ssh-agent` via `ssh-add -D` (this will happen when you restart your computer, as mentioned before) and try SSH-ing, you will be prompted for password again. Why? We just added the the key to the keychain. If you check Keychain Access again, you will notice that the key you added using `ssh-add -K` is still in the keychain. Weird, huh?
+If you remove the keys from `ssh-agent` via `ssh-add -D` (this will happen when you restart your computer, as mentioned before) and try SSH-ing, you will be prompted for password again. Why? We just added the key to the keychain. If you check Keychain Access again, you will notice that the key you added using `ssh-add -K` is still in the keychain. Weird, huh?
 
 It turns out there is one more hoop to jump through. Open your SSH `config` file and add the following:
 
