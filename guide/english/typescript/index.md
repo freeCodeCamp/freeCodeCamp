@@ -9,7 +9,7 @@ title: TypeScript
 
 So as you are most likely aware, JavaScript is expanding its footprint everyday and it is both overwhelming and amazing what you can do with the language nowadays.
 
-However, as more large-scale projects start to use JavaScript, the process of making the code easier to write and more maintainable becomes more and more difficult.
+However, as more large-scale projects start to use JavaScript, the process of making the code easier to write and more maintainable becomes more and more difficult. One reason for this is that, unlike some other programming languages, JavaScript is not a strongly-typed language. This means there can be confusion, especially in large code bases, about when different types (numbers, strings, booleans, arrays, etc) should be used and sometimes the problems only surface in production.
 
 This is a problem Microsoft recognized early on and they came up with the solution of TypeScript and released the first version approximately on October 1st, 2012.
 
@@ -50,7 +50,7 @@ The Playground has built-in auto completion and the ability to directly see the 
 
 To learn more about installation, see the [Installation Appendix](./src/articles/typescript/appendix-installation/index.md).
 
-In case you need just a type checker and don't want to compile your programm, read about <a href='https://facebook.github.io/flux/' target='_blank' rel='nofollow'>Flux</a>.
+In case you need just a type checker and don't want to compile your program, read about <a href='https://facebook.github.io/flux/' target='_blank' rel='nofollow'>Flux</a>.
 
 - <a href='http://www.typescriptlang.org/samples/index.html' target='_blank' rel='nofollow'>Quick Start</a>
 - <a href='http://www.typescriptlang.org/docs/home.html' target='_blank' rel='nofollow'>Documentation</a>

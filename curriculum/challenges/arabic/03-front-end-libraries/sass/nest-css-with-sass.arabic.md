@@ -1,9 +1,6 @@
 ---
 id: 587d7dbd367417b2b2512bb5
 title: Nest CSS with Sass
-required:
-  - src: 'https://cdnjs.cloudflare.com/ajax/libs/sass.js/0.10.9/sass.sync.min.js'
-    raw: true
 challengeType: 0
 videoUrl: ''
 localeTitle: عش المغلق مع ساس

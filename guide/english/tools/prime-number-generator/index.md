@@ -1,29 +1,17 @@
 ---
 title: Prime Number Generator
 ---
+
 ## Prime Number Generator
+A prime number generator is used to generate prime numbers. Prime number generating algorithms are used extensively in computer science for various applications, examples: [Hashing](https://en.wikipedia.org/wiki/Hash_table), [Public-key Cryptography](https://en.wikipedia.org/wiki/Public-key_cryptography), etc.
 
-A prime number generator is a tool to create a list of prime numbers. Some prime number generators have the multiples of the prime numbers displayed.
+**Here are few online prime numbers generators**
+* [Wolfram Alpha](https://www.wolframalpha.com/examples/mathematics/number-theory/prime-numbers/)
+* [Browserling's prime number generator](https://www.browserling.com/tools/prime-numbers)
 
-### Online Websites
+**Link to one of the most efficient algorithms to generate prime numbers less than a number "n"**
+* [Sieve of Eratosthenes algo to generate prime numbers](https://www.geeksforgeeks.org/sieve-of-eratosthenes/)
 
-Prime number generator websites offer a simple way to quickly create a list of prime numbers within a range.
-
-### PC and Mobile Applications
-
-Another practical way to have a prime number generator is to install it on your computer or phone. It gives you the possibility to generate prime numbers, without accessing the Internet. In addition, they also often provide factors and prime factors of a number.
-
-### More Information:
-
-You can check some examples of prime number generator tools below.
-
-* [Browserling prime number generator](https://www.browserling.com/tools/prime-numbers)
-
-* [Primesieve Windows application](https://primesieve.org/)
-
-* [Primus Android application](https://play.google.com/store/apps/details?id=com.lumberjackapps.primus&hl=en_US)
-
-* [Prime Numbers Multiplication Table on Codepen](https://codepen.io/orinayo/full/dgKmgV/)
-
-
-
+#### More Information:
+* [Prime Number Chart](https://guide.freecodecamp.org/tools/prime-number-chart)
+* [Wikibooks: Prime Number Generating Algorithms](https://en.wikibooks.org/wiki/Some_Basic_and_Inefficient_Prime_Number_Generating_Algorithms)

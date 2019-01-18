@@ -13,7 +13,7 @@ The javascript `for` statement consists of three expressions and a statement:
 
 ## Description
 
-*   initialization - Run before the first execution on the loop. This expression is commonly used to create counters. Variables created here are scoped to the loop. Once the loop has finished it's execution they are destroyed.
+*   initialization - Run before the first execution on the loop. This expression is commonly used to create counters. Variables created here are scoped to the loop. Once the loop has finished its execution they are destroyed.
 *   condition - Expression that is checked prior to the execution of every iteration. If omitted, this expression evaluates to true. If it evaluates to true, the loop's statement is executed. If it evaluates to false, the loop stops. 
 *   final-expression - Expression that is run after every iteration. Usually used to increment a counter. But it can be used to decrement a counter too.
 *   statement - Code to be repeated in the loop
@@ -78,6 +78,26 @@ output:
 elephant is 1
 elephant is 3
 elephant is 5
+```
+
+In contrast to the `break` statement which opts out of the iteration when the condition is false, the `continue` statement skips the condition when the code is true, and continues up until the condition is false.
+
+Using the above example again, let's see the functionality of the `continue` statement
+
+
+```javascript
+for (var elephant = 1; elephant < 10; elephant+=2) {
+    if (elephant === 7) {
+        continue;
+    }
+    console.info('elephant is ' + elephant);
+}
+
+output:
+elephant is 1
+elephant is 3
+elephant is 5
+elephant is 9
 ```
     
 ### Other Resources

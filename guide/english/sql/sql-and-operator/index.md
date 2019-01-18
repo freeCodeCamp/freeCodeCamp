@@ -29,7 +29,7 @@ and sat_score > 800;
 ![image-1](https://github.com/SteveChevalier/guide-images/blob/master/and_operator03.JPG?raw=true)
 
 
-This is a more complex example from the campaign contributions table. This example has a GROUP BY clause with HAVING clause using an AND to restrict the returned records to candates from 2016 with contributions between $3 Million and $18 Million in total.
+This is a more complex example from the campaign contributions table. This example has a GROUP BY clause with HAVING clause using an AND to restrict the returned records to candidates from 2016 with contributions between $3 Million and $18 Million in total.
 ```sql
 select Candidate, Office_Sought, Election_Year, FORMAT(sum(Total_$),2) from combined_party_data
 where Office_Sought = 'PRESIDENT / VICE PRESIDENT'

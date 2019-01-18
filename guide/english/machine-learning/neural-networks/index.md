@@ -4,16 +4,14 @@ title: Neural Networks
 ## Neural Networks
 ![Feed-forward neural network](http://ufldl.stanford.edu/tutorial/images/SingleNeuron.png)
 
-An artificial neural network is a computing system. They are like biological neural networks that constitute animal brains. 
+An artificial neural network is a computing system based on biological neural networks that constitute animal brains. The most basic element of a neural network is a neuron. Its input is a vector, say `x`, and its output is a real valued variable, say `y`. The neuron acts as a mapping between the vector `x` and a real number `y`.
 To train a neural network, we need an input vector and a corresponding output vector.
 The training works by minimizing an error term. This error can be the squared difference between the predicted output and the original output.
 
-The basic principle which underlies the remarkable success of neural networks is 'The Universal Approximation Theorem'. It has been mathematically proven thet the neural networks are universal approximation machines which are capable of approximating any mathematical function between the given input and output.
+The basic principle which underlies the remarkable success of neural networks is 'The Universal Approximation Theorem'. It has been mathematically proven that the neural networks are universal approximation machines which are capable of approximating any mathematical function between the given input and output.
 
 Neural networks initially became popular in the 1980s, but limitations in computational power prohibited their widespread acceptance until the past decade.
 Innovations in CPU size and power allow for neural network implementation at scale, though other machine learning paradigms still outrank neural networks in terms of efficiency.
-
-The most basic element of a neural network is a neuron. It's input is a vector, say `x`, and its output is a real valued variable, say `y`. Thus, we can conclude that the neuron acts as a mapping between the vector `x` and a real number `y`.
 
 Neural networks perform regression iteratively across multiple layers, resulting in a more nuanced prediction model.
 A single node in a neural network computes the exact same function as [logistic regression](../logistic-regression/index.md).
@@ -50,7 +48,7 @@ There's an awesome tool to help you grasp the idea of neural networks without an
 
 The most common Neural Networks used today fall into the [deep learning](https://github.com/freeCodeCamp/guides/blob/master/src/pages/machine-learning/deep-learning/index.md) category. Deep learning is the process of chaining multiple layers of neurons to allow a network to create increasingly abstract mappings between input and output vectors. Deep neural networks will most commonly use [back propogation](https://github.com/freeCodeCamp/guides/blob/master/src/pages/machine-learning/backpropagation/index.md) in order to converge upon the most accurate mapping.
 
-The second most common form of neural networks is nueroevolution. In this system multiple neural networks are randomly generated as initial guesses. Then multiple generations of combining the accurate most networks and random permutations are used to converge upon a more accurate mapping. 
+The second most common form of neural networks is neuroevolution. In this system multiple neural networks are randomly generated as initial guesses. Then multiple generations of combining the accurate most networks and random permutations are used to converge upon a more accurate mapping. 
 
 ### Types of Neural Networks
 - Recurrent Neural Network (RNN)
@@ -64,3 +62,4 @@ The second most common form of neural networks is nueroevolution. In this system
 - [3Blue1Brown, Youtube Channel with Neural Network content](https://youtu.be/aircAruvnKk)
 - [Siraj Raval, Youtube CHannel with Neural Network content](https://youtu.be/h3l4qz76JhQ)
 - [Neuroevolution - Wikipedia](https://en.wikipedia.org/wiki/Neuroevolution)
+- [Machine Learning - Coursera](https://www.coursera.org/learn/machine-learning?action=enroll#)

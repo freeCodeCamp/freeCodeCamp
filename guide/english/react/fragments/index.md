@@ -4,9 +4,13 @@ title: Fragments
 
 # Fragments
 
-Fragments are way to render multiple elements without using a wrapper element. When attempting to render elements without an enclosing tag in JSX, you will see the error message `Adjacent JSX elements must be wrapped in an enclosing tag`.  This is because when JSX transpiles, it's creating elements with their corresponding tag names, and doesn't know what tag name to use if multiple elements are found.  In the past, a frequent solution to this was to use a wrapper div to solve this problem. However, version 16 of React brought the addition of `Fragment`, which makes this no longer necessary.
+Fragments are a way to return multiple elements from the render method without using an additional wrapping DOM element.
 
-`Fragment` acts a wrapper without adding unnecessary divs to the DOM.  You can use it directly from the React import, or deconstruct it:
+When attempting to render multiple sibling elements without an enclosing tag in JSX, you will see the error message of `Adjacent JSX elements must be wrapped in an enclosing tag`.
+
+In the past, a frequent solution was to use either a wrapping div or span element, which was not elegant as it would increase the size of DOM tree and this is because of the way JSX works as multiple elements should be wrapped in a div. However, version 16.0 of React introduced the addition of `Fragment`, which makes this no longer necessary.
+
+`Fragment` acts a wrapper without adding unnecessary divs or spans elements to the DOM.  You can use it directly from the React import:
 
 ```jsx
 import React from 'react';
@@ -26,6 +30,9 @@ export default MyComponent;
 ```
 
 
+`Fragments` only accept the key attribute.
+
+Or you can additionally deconstruct it for use:
 ```jsx
 // Deconstructed
 import React, { Component, Fragment } from 'react';
@@ -44,7 +51,8 @@ class MyComponent extends Component {
 export default MyComponent;
 ```
 
-React version 16.2 simplified this process further, allowing for empty JSX tags to interpretted as Fragments:
+
+React version 16.2 simplified this process further, allowing for empty JSX tags `<></>` to be interpreted as Fragments:
 
 ```jsx
 return (
@@ -54,6 +62,8 @@ return (
   </>
 );
 ```
+
+Empty JSX tags cannot be used with attributes, including key.
 
 #### More Information:
 * [React.Fragment (Official Documentation)](https://reactjs.org/docs/react-api.html#reactfragment)

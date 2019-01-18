@@ -1,10 +1,10 @@
 ---
 title: Jump Search
-localeTitle: Перейти к поиску
+localeTitle: Прыжковый поиск
 ---
 ## Перейти к поиску
 
-Поиск по скачкам обнаруживает элемент в отсортированном массиве, перескакивая k itens и затем проверяя, нужен ли элемент между предыдущий прыжок и текущий прыжок.
+Прыжковый поиск обнаруживает элемент в отсортированном массиве, перескакивая k ячеек и затем проверяя, находится ли элемент между предыдущим значением и новым.
 
 # Сложность Худший случай
 
@@ -20,10 +20,36 @@ O (√N)
 
 # Код
 
+Реализация алгоритма на псевдокоде:
+```
+Algorithm JumpSearch
+  Input: An ordered list L, its length n and a search key s.
+  Output: The position of s in L, or nothing if s is not in L.
+
+  a ← 0
+  b ← ⌊√n⌋
+
+  while Lmin(b,n)-1 < s do
+    a ← b
+    b ← b + ⌊√n⌋
+    if a ≥ n then
+      return nothing
+
+  while La < s do
+    a ← a + 1
+    if a = min(b,n)
+      return nothing
+
+  if La = s then
+    return a
+  else
+    return nothing
+```
+
 Чтобы просмотреть примеры реализации кода этого метода, перейдите по этой ссылке ниже:
 
-[Поиск по прыжкам - OpenGenus / космос](https://github.com/OpenGenus/cosmos/tree/master/code/search/jump_search)
+[Блочный поиск - OpenGenus / космос](https://github.com/OpenGenus/cosmos/tree/master/code/search/jump_search)
 
-# кредиты
+# Источник
 
-[Изображение массива логики](http://theoryofprogramming.com/2016/11/10/jump-search-algorithm/)
+[Алгоритм](http://theoryofprogramming.com/2016/11/10/jump-search-algorithm/)
