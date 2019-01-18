@@ -3,7 +3,7 @@ title: Managing multiple SSH keys
 ---
 # Managing multiple SSH keys
 
-It is safe to say that most developers in the Web sphere have at some point encountered SSH. SSH is one of the most used protocols for safe data exchange. You use SSH for connecting to remote servers, which also includes managing your code using git and syncing with remote repositories.
+It is safe to say that most developers in the Web sphere have at some point encountered SSH. SSH is one of the most used protocols for safe data exchange. You can use SSH for connecting to remote servers, issuing commands and managing files. For developers, often this includes managing your code using git and syncing with remote repositories.
 
 Even though it is considered a good practice to have one private-public key pair per device, sometimes you need to use multiple keys and/or you have unorthodox key names. You might be using one SSH key-pair for working on your company's internal projects but you might be using a different key for accessing some corporate client's servers. You might even be using a different key for accessing your own private server.
 
