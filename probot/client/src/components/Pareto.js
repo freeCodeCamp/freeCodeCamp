@@ -18,7 +18,11 @@ const filenameTitle = { fontWeight: '600' };
 
 class Pareto extends React.Component {
   state = {
-    data: []
+    data: [],
+    all: [],
+    selectedFileType: 'all',
+    selectedLanguage: 'all',
+    options: {}
   };
 
   componentDidMount() {
@@ -33,7 +37,12 @@ class Pareto extends React.Component {
               prs: []
             });
           }
-          this.setState(prevState => ({ data: pareto }));
+          
+          this.setState(prevState => ({
+            data: pareto,
+            all: [...pareto],
+            options: this.createOptions(pareto)
+          }));
         }
       })
       .catch(() => {
@@ -44,12 +53,87 @@ class Pareto extends React.Component {
       });
   }
 
+  createOptions = (data) => {
+    const options = data.reduce((seen, { filename }) => {
+      const { articleType, language } = this.getFilenameOptions(filename);
+      if (articleType && language) {
+        if (!seen.hasOwnProperty(articleType)) {
+          seen[articleType] = {};
+        }
+        seen[articleType][language] = true;
+      }
+      return seen;
+    }, {});
+    return options;
+  }
+
+  handleFileTypeOptionChange = changeEvent => {
+    const { all } = this.state;
+    const selectedFileType = changeEvent.target.value;
+    let filteredData = [];
+    if (selectedFileType === 'all') {
+      filteredData = all;
+    }
+    else if (selectedFileType !== 'other') {
+      filteredData = all.filter(({ filename }) => {
+        const { articleType } = this.getFilenameOptions(filename);
+        return articleType === selectedFileType;
+      });
+    }
+    else {
+      // Other selected
+      filteredData = all.filter(({ filename }) => {
+        const { articleType } = this.getFilenameOptions(filename);
+        return !articleType;
+      });
+    }
+    this.setState(prevState => ({ data: filteredData, selectedFileType }));
+  }
+
+  handleLanguageOptionChange = changeEvent => {
+    const { all, selectedFileType } = this.state;
+    const selectedLanguage = changeEvent.target.value;
+    let filteredData = [];
+    if (selectedLanguage === 'all') {
+      filteredData = all.filter(({ filename }) => {
+        const { articleType } = this.getFilenameOptions(filename);
+        return articleType === selectedFileType;
+      });
+    }
+    else if (selectedLanguage !== 'other') {
+      filteredData = all.filter(({ filename }) => {
+        const { articleType, language } = this.getFilenameOptions(filename);
+        return articleType === selectedFileType && language === selectedLanguage;
+      });
+    }
+    else {
+      // Other selected
+      filteredData = all.filter(({ filename }) => {
+        const { articleType, language } = this.getFilenameOptions(filename);
+        return articleType && !language;
+      });  
+    }
+    this.setState(prevState => ({ data: filteredData, selectedLanguage }));
+  }
+
+  getFilenameOptions = filename => {
+    const filenameReplacement = filename.replace(
+      /^curriculum\/challenges\//, 'curriculum/'
+    );
+    const regex = /^(docs|curriculum|guide)(?:\/)(english|arabic|chinese|portuguese|russian|spanish)?\/?/;
+    // need an array to pass to labelsAdder
+    // eslint-disable-next-line
+    const [_, articleType, language] = filenameReplacement.match(regex) || [];
+    return { articleType, language };
+  }
+  
   render() {
-    const { data } = this.state;
+    const { data, options, selectedFileType, selectedLanguage } = this.state;
+
     const elements = data.map(entry => {
       const { filename, count, prs } = entry;
       const prsList = prs.map(({ number, username, title }) => {
-        return <ListItem number={number} username={username} prTitle={title} />;
+        return <ListItem key={number} number={number} username={username} prTitle={title} />;
       });
       const fileOnMaster = `https://github.com/freeCodeCamp/freeCodeCamp/blob/master/${filename}`;
       return (
@@ -66,41 +150,49 @@ class Pareto extends React.Component {
         </Result>
       );
     });
+    
+    let fileTypeOptions = Object.keys(options).map(articleType => articleType);
+    fileTypeOptions = ['all', ...fileTypeOptions.sort(), 'other'];
 
-    const options = data.reduce((seen, { filename }) => {
-      const filenameReplacement = filename.replace(
-        /^curriculum\/challenges\//,
-        'curriculum/'
-      );
-      const regex = /^(docs|curriculum|guide)(?:\/)(english|arabic|chinese|portuguese|russian|spanish)?\/?/;
-      // need an array to pass to labelsAdder
-      const [_, articleType, language] = filenameReplacement.match(regex) || [];
-      if (articleType && language) {
-        if (!seen.hasOwnProperty(articleType)) {
-          seen[articleType] = {};
-        }
-        seen[articleType][language] = true;
-      }
-      return seen;
-    }, {});
-
-    let fileTypeOptions = Object.keys(options).map((articleType) => articleType);
-    fileTypeOptions = fileTypeOptions.concat('all','other').sort();
-    // const typeOptions = fileTypeOptions.map((type) => (
-    //   <FilterOption
-    //     name="filetype"
-    //     value={type}
-    //     onOptionChange={handleOptionChange}
-    //     selectedOption={selectedOption}
-    //   >
-    //   {captialize(type)}
-    //   </FilterOption>
-    // ));
+    const typeOptions = fileTypeOptions.map((type) => (
+      <FilterOption
+        key={type}
+        name="filetype"
+        value={type}
+        onOptionChange={this.handleFileTypeOptionChange}
+        selectedFileType={selectedFileType}
+      >
+      {type.charAt().toUpperCase() + type.slice(1)}
+      </FilterOption>
+    ));
+    
+    let languageOptions = null;
+    if (selectedFileType !== 'all' && selectedFileType !=='other') {
+      let languages = Object.keys(options[selectedFileType]);    
+      languages = ['all', ...languages.sort(), 'other'];
+      languageOptions = languages.map(language => (
+        <FilterOption
+          key={language}
+          name="language"
+          value={language}
+          onOptionChange={this.handleLanguageOptionChange}
+          selectedLanguage={selectedLanguage}
+        >
+        {language.charAt().toUpperCase() + language.slice(1)}
+        </FilterOption>
+      ));    
+    }
     return (
       <FullWidthDiv>
         <div>
-          {/*typeOptions*/}
+          {typeOptions}
         </div>
+        {
+        languageOptions &&
+        <div>
+          {languageOptions}
+        </div>
+        }
         {data.length ? elements : 'Report Loading...'}
       </FullWidthDiv>
     );
