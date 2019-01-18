@@ -76,12 +76,12 @@ Long data type is a 64-bit signed two's complement integer.
 
     Example: long a = 100000L, long b = -600000L; 
 
-    By default all integer type variable is "int". So long num=600851475143  will give an error.
+    By default all integer type values are "int". So long num=600851475143  will give an error.
     But it can be specified as long by appending the suffix L (or l)
 
 ## Floating­ Point​:
 
-These are also called real numbers and are used for expressions involving fractional precision. These are of two types: `float`, `double`. Float is actually avoided in case of precise data such as currency or research data.
+These are also called real numbers and are used for expressions involving fractional precision. These are of two types: `float`, `double`. Floating point is actually avoided in case of precise data such as currency or research data.
 
 ### float:
 
