@@ -8,7 +8,7 @@ title: Where to Get Fonts
 Online font services like Google Fonts or Font Squirrel provide an easy way to use different fonts on your site without the need to worry about whether or not the person viewing your site will have the font available on their system. 
 
 ### Downloaded Fonts
-Sites like Font Squirrel allow you to download the font files you've chosen. Once it's done, you have to upload them on the server hosting your website. To use them, you then need to declare them in your CSS stylesheet which means telling your CSS to ask the user's browser to display it. Declare a font is usually made using `@font-face` on top of your CSS stylesheet.
+Sites like Font Squirrel allow you to download the font files you've chosen. Once it's done, you have to upload them on the server hosting your website. To use them, you then need to declare them in your CSS stylesheet which means telling your CSS to ask the user's browser to display it. Declaring a font is usually made using `@font-face` on top of your CSS stylesheet.
 ```css
 @font-face {
   font-family: "My Super Awesome Open Sans Font"; /* name that you will use later to apply the font */
@@ -28,7 +28,7 @@ Note that you can also specify the format of the font according to browser compa
 ```
 
 ### Google Fonts
-With Google Fonts, you don't need to upload the font files on your site, you just have to put a certain link on the `head` of your site.
+With Google Fonts, you don't need to upload the font files on your site. You just have to put a certain link on the `head` of your site.
 
 To use Google Fonts, browse the [site](https://fonts.google.com/) to find the font that works best for your project. Once you've chosen, click the plus (+) sign next to the font. A bar will appear at the bottom of the screen. Click on it. You will then be given several lines of code. Copy and paste the line of HTML into the head of your HTML file above the existing <link> element. Then take the CSS and use it where necessary in your stylesheet. 
 
