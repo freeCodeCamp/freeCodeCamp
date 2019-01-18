@@ -2,9 +2,7 @@ exports.dasherize = function dasherize(name) {
   return ('' + name)
     .toLowerCase()
     .replace(/\s/g, '-')
-    .replace(/[^a-z0-9\-.]/gi, '')
-    .replace(/\./g, '-')
-    .replace(/:/g, '');
+    .replace(/[^a-z0-9\-.]/gi, '');
 };
 
 exports.nameify = function nameify(str) {
