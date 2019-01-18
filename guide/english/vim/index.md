@@ -20,11 +20,13 @@ One of the main differences that both Vim, and its predecessor *vi*, have over o
 
 The modal part of Vim is what makes it really powerful. For an interactive tutorial, please visit [OpenVim](http://www.openvim.com/). Here you can try for yourself several of its more powerful features.
 
+If you have vim installed on your system, you can also run the `vimtutor` command to start a tutorial.
+
 ## More information
 
-For more information head to <a href='https://vim.sourceforge.io' target='_blank' rel='nofollow'>Vim's homepage</a>
-
+* [Vim's homepage](https://vim.sourceforge.io)
 * [Vim.org](https://www.vim.org/) is an online resource with downloadable binaries for most operating systems. 
 * [Open Vim](http://www.openvim.com/) is an online, interactive Vim tutorial you can do right in your browser. 
 * [Vim Adventures](https://vim-adventures.com) is an online game based on VIM's keyboard shortcuts. It's the "Zelda meets text editing" game.
+* [Vim Awesome](https://vimawesome.com/) provides descriptions and links to VIM plugins.
 * [Super necessary Vim shortcuts](https://www.maketecheasier.com/vim-keyboard-shortcuts-cheatsheet/)
