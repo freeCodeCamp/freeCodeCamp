@@ -61,14 +61,14 @@
 }
 
 .breadcrumb > .active {
-  color: #555
+  color: #555;
 }
 
 /* Layout */
 
 .content {
-  overflow-y: auto;
-  height: 92vh;
+  /* 100vh - (navbar height) - (spacer height) */
+  min-height: calc(100vh - 38px - 60px);
 }
 
 .content img {
@@ -93,7 +93,6 @@
   width: 60%;
 }
 
-
 @media (max-width: 400px) {
   .fcc_searchBar .ais-Hits {
     width: 80%;
@@ -113,9 +112,8 @@
 }
 
 .main {
-    outline: 0;
+  outline: 0;
 }
-
 
 .navContainer {
   display: flex;
@@ -172,15 +170,15 @@
 .navbar-toggle {
   border: 1px solid #fff;
   margin-left: 10px;
-  margin-right: 0px;
+  margin-right: 0;
 }
 
-.navbar-toggle .icon-bar{
+.navbar-toggle .icon-bar {
   background-color: #fff;
 }
 
 @media (max-width: 992px) {
-  .navbar-toggle  {
+  .navbar-toggle {
     display: block;
   }
 }
@@ -242,28 +240,19 @@
 
 .navPanelUl {
   list-style: none;
-  margin-bottom: 0px;
+  margin-bottom: 0;
 }
 
 .panelStyle {
   border: none !important;
-  border-radius: 0px;
+  border-radius: 0;
   box-shadow: none;
   color: #006400;
   padding: 0;
 }
 
 .sideNav {
-  overflow-y: scroll;
-  max-height: 90vh;
   position: relative;
-}
-
-@media (max-width: 992px) {
-  .sideNav {
-    overflow-y: auto;
-    max-height: none;
-  }
 }
 
 .stubbed {
@@ -283,7 +272,7 @@
 .title {
   background-color: white;
   border: none;
-  border-radius: 0px;
+  border-radius: 0;
   cursor: pointer;
 }
 
@@ -293,27 +282,24 @@
   height: calc(var(--h) - 55px);
 }
 
-@media (max-width: 992px){
-
+@media (max-width: 992px) {
   .content {
-    overflow-y: hidden;
-    height: 100%;
+    min-height: auto;
   }
-
 }
 
 .skip-link {
-    background-color: white;
-    left: 0;
-    padding: 5px 10px;
-    top: 0;
-    z-index: 9;
+  background-color: white;
+  left: 0;
+  padding: 5px 10px;
+  top: 0;
+  z-index: 9;
 }
 
 .skip-link:focus {
-    position: absolute;
+  position: absolute;
 }
 
 .article {
-    outline: 0;
+  outline: 0;
 }
