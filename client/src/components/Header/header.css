@@ -168,6 +168,7 @@ li.user-state-link > a:focus {
     transform: translate(0, -300px);
     flex-direction: column;
     width: 100%;
+    height: min-content;
     min-height: 180px;
     margin: 0;
     opacity: 0;
