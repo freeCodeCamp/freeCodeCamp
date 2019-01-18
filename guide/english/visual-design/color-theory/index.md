@@ -13,7 +13,7 @@ Limits to choices are also shaped by artificial constraints supplied by a projec
 
 A color wheel is the main tool used by designers to specify or locate color. Color wheels can include the entire color spectrum or they can be organized by a defined category of colors. 
 
-The four main category of colors, which you might already be familiar with, are Primary Colors, Secondary Colors, Tertiary Colors, Complementary Colors.
+The four main categories of colors, which you might already be familiar with, are Primary Colors, Secondary Colors, Tertiary Colors, and Complementary Colors.
 
 Using color theory can help meet the requirements of projects while maximizing legibility of text and accessibility of content to viewers with different viewing traits or needs.
 
@@ -27,7 +27,7 @@ Color pickers may include a color spectrum or they may be organized by defined c
 
 In art and illustration, colors are traditionally separated into three categories: Primary Colors, Secondary Colors, and Tertiary Colors.
 Primary colors are colors that cannot be mixed or formed by any combination of other colors.
-Secondary colors are the ones formed by mixing two of the primary colors.
+Secondary colors are the ones formed by mixing two primary colors.
 Tertiary colors are the ones formed by mixing all three primary colors.
 
 In traditional painting, the colors are red, yellow and blue (RYB).
@@ -38,7 +38,7 @@ Computer visual displays commonly use a different set of three primary colors to
 Every color displayed is made of varying the brightness of the primary colors.
 
 Computer printers commonly use four primary colors to represent color.
-A black is sometimes used as a contrast medium to increase the range of contrast.
+Black is sometimes used as a contrast medium to increase the range of contrast.
 The combination of Primary colors Cyan, Magenta, Yellow, and Key (CMYK) is common. "Key" represents black.
 Key is a traditional term for the most significant impression of a combination of imprints.
 
