@@ -3,11 +3,9 @@ title: Column Width and Leading
 ---
 ## Column Width and Leading
 
-This is a stub. <a href='https://github.com/freecodecamp/guides/tree/master/src/pages/typography/column-width-and-leading/index.md' target='_blank' rel='nofollow'>Help our community expand it</a>.
+**Column Width** is the width of a block of text. Optimum column width can increase readability of text. It can be measured in inches, points, pixels etc.
 
-<a href='https://github.com/freecodecamp/guides/blob/master/README.md' target='_blank' rel='nofollow'>This quick style guide will help ensure your pull request gets accepted</a>.
-
-<!-- The article goes here, in GitHub-flavored Markdown. Feel free to add YouTube videos, images, and CodePen/JSBin embeds  -->
+**Leading** refers to vertical space between lines of text. It is measured from the baseline of text and expressed in points. It, generally, works to make the leading 20 percent greater than the font size.
 
 #### More Information:
 <!-- Please add any articles you think might be helpful to read before writing the article -->
