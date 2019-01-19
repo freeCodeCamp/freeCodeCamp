@@ -7,7 +7,6 @@ header {
 
 #top-nav {
   background: #006400;
-  margin-bottom: 0.45rem;
   height: 38px;
   margin-bottom: 0px;
   border-radius: 0;
@@ -42,7 +41,8 @@ header {
   justify-content: space-around;
 }
 
-#top-right-nav a, #top-right-nav img {
+#top-right-nav a,
+#top-right-nav img {
   max-height: 40px;
 }
 
@@ -62,15 +62,43 @@ header {
   justify-content: center;
   align-items: center;
   height: 100%;
-  margin: 0 3px;
+  margin: 0 5px;
 }
 
-#top-right-nav li > a, #top-right-nav li > span {
-  color:#fff;
+#top-right-nav li,
+#top-right-nav li > a {
+  color: #fff;
   font-size: 17px;
 }
 
-#top-right-nav li > a:hover, #top-right-nav li > a:focus {
+#top-right-nav li:hover,
+#top-right-nav li:hover a,
+#top-right-nav li > a:hover,
+#top-right-nav li:focus,
+#top-right-nav li:focus a,
+#top-right-nav li > a:focus {
+  background-color: #fff;
+  color: #006400;
+}
+
+li.user-state-link,
+li.user-state-link:hover,
+li.user-state-link:focus,
+li.user-state-link > a,
+li.user-state-link > a:hover,
+li.user-state-link > a:focus {
+  background-color: #006400 !important;
+}
+
+#top-right-nav {
+  margin-left: 20px;
+}
+#top-right-nav li:last-child {
+  margin-right: 30px;
+}
+
+#top-right-nav li > a:hover,
+#top-right-nav li > a:focus {
   text-decoration: none;
 }
 
