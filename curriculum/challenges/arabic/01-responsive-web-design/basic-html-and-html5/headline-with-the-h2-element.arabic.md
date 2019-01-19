@@ -18,16 +18,17 @@ localeTitle: إنشاء عنوان بإستخدام العنصر h2
 
 ```yml
 tests:
-  - text: قم بإنشاء عنصر <code>h2</code> .
+  - text: 'قم بإنشاء العنصر <code>h2</code>.'
     testString: 'assert(($("h2").length > 0), "انشئ عنصر <code>h2</code>.");'
-  - text: ''
-    testString: 'assert(code.match(/<\/h2>/g) && code.match(/<\/h2>/g).length === code.match(/<h2>/g).length, "تأكد من إغلاق قوس العنصر <code>h2</code>.");'
-  - text: ''
-    testString: 'assert.isTrue((/cat(\s)?photo(\s)?app/gi).test($("h2").text()), "العنصر <code>h2</code> يجب أن يحتوي على النص "CatPhotoApp".");'
-  - text: يجب أن يحتوي عنصر <code>h1</code> على النص &quot;Hello World&quot;.
-    testString: 'assert.isTrue((/hello(\s)+world/gi).test($("h1").text()), "العنصر <code>h1</code> يجب أن يحتوي على النص "Hello World".");'
+  - text: 'تأكد من إغلاق قوس العنصر <code>h2</code>.'
+    testString: 'assert(code.match(/<\/h2>/g) && code.match(/<\/h2>/g).length === code.match(/<h2>/g).length, "Make sure your <code>h2</code> element has a closing tag.");'
+  - text: 'العنصر <code>h2</code> يجب أن يحتوي على النص التالي: "CatPhotoApp".'
+    testString: 'assert.isTrue((/cat(\s)?photo(\s)?app/gi).test($("h2").text()), "Your <code>h2</code> element should have the text "CatPhotoApp".");'
+  - text: العنصر <code>h1</code> يجب أن يحتوي على النص التالي: "Hello World".
+    testString: 'assert.isTrue((/hello(\s)+world/gi).test($("h1").text()), "Your <code>h1</code> element should have the text "Hello World".");'
 
 ```
+
 
 </section>
 
