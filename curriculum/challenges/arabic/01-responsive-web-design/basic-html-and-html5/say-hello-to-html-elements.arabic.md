@@ -17,8 +17,8 @@ localeTitle: 'قل مرحبا لعناصر HTML'
 
 ```yml
 tests:
-  - text: ''
-    testString: 'assert.isTrue((/hello(\s)+world/gi).test($("h1").text()), "العنصر <code>h1</code> يجب ان يحتوي على النص  "Hello World".");'
+  - text: 'العنصر <code>h1</code> يجب ان يحتوي على النص  "Hello World".'
+    testString: 'assert.isTrue((/hello(\s)+world/gi).test($("h1").text()), "Your <code>h1</code> element should have the text "Hello World".");'
 
 ```
 
