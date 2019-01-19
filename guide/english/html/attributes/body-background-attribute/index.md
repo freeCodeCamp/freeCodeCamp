@@ -33,5 +33,6 @@ There are several CSS properties used for setting the background of an element. 
 
 ## Check it Out:
 * [CSS background proprety](https://github.com/freeCodeCamp/guides/blob/master/src/pages/css/background/index.md)
+* [MDN](https://developer.mozilla.org/en-US/docs/Web/CSS/background)
   
 
