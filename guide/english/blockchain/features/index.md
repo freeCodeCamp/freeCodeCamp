@@ -3,7 +3,7 @@ title: Features of BlockTech
 ---
 ## Features of Blockchain Technology
 
-Blockchain is almost always used in lieu of Bitcoin and cryptocurrency. However, there are many other places this technology can be used. We are barely scratching the surface of it. With all the hype around it, we know, the Blockchain Technology (BlockTech) is going to be huge. But what makes it unique?
+Blockchain is usually thought of as Bitcoin and cryptocurrency. However, there are many other applications of this technology. We are barely scratching the surface of it. With all the hype around it, it's clear blockchain technology will play an important role in the future of applications and data. But what makes it unique?
 
 In this article, we are going to explore the key characteristic features of blockchain.
 
@@ -30,7 +30,7 @@ When applied in a decentralized system like blockchain, each user has a copy of 
 
 #### _* Secure Ecosystem (Cryptographic Hash)_
 
-BlockTech uses the concepts like proof of work and hash encryption to ensure security and immutability. Proof of work involves several people around the world using computational algorithm to try and find the appropriate hash value that satisfies a predefined condition regarding the hash value.
+BlockTech uses the concepts like proof of work and hash encryption to ensure security and immutability. Proof of work involves many people around the world using computational algorithm to try and find the appropriate hash value that satisfies a predefined condition regarding the hash value.
 
 ![Hashing](https://raw.githubusercontent.com/Vagisha16/Hw3/master/Hash.png)
 
