@@ -24,7 +24,7 @@ Find q and give your answer rounded to 10 decimal places.
 ```yml
 tests:
   - text: <code>euler286()</code> should return 52.6494571953.
-    testString: 'assert.strictEqual(euler286(), 52.6494571953, "<code>euler286()</code> should return 52.6494571953.");'
+    testString: assert.strictEqual(euler286(), 52.6494571953, '<code>euler286()</code> should return 52.6494571953.');
 
 ```
 

@@ -5,13 +5,13 @@ title: Features of BlockTech
 
 Blockchain is almost always used in lieu of Bitcoin and cryptocurrency. However, there are many other places this technology can be used. We are barely scratching the surface of it. With all the hype around it, we know, the Blockchain Technology (BlockTech) is going to be huge. But what makes it unique?
 
-In this article, we are going to explore the key characteristic features of BlockTech.
+In this article, we are going to explore the key characteristic features of blockchain.
 
 #### _* Decentralized System_
 
-> Blockchain is a Decentralized Technology, by design.
+> Blockchain is a decentralized dechnology, by design.
 
-When something is controlled by a central authority, where the power to make decisions lie in the hands of the apex of the management, such system is called a centralized system. Banks, for example, are a centralized system, where it's the responsibility of the Governor to make decisions.
+When something is controlled by a central authority, where the power to make decisions lies in the hands of the apex of the management, such system is called a centralized system. Banks, for example, are a centralized system, where it's the responsibility of the Governor to make decisions.
 
 On the contrary, when the power is vested in the hands of the people or the users, such system is said to be a decentralized system.
 The peer to peer network, Torrent, for example is a decentralised system, where the user has complete control.
@@ -26,7 +26,7 @@ When something is stored on a distributed edger, multiple copies of it are made 
 
 ![Distributed Ledger](https://qph.fs.quoracdn.net/main-qimg-2e24c4949a63eefa9bbab1773e185cdd)
 
-When applied in a decentralized system like Blockchain, each user has a copy of the ledger and participates in the transaction verification. This gives Blockchain the property of Immutability and ensures security. Since, the data is distributed, there is no centralized version of the data for the hackers to corrupt. The data and the records are public and easily verifiable. This also eliminates single point of Failure.
+When applied in a decentralized system like blockchain, each user has a copy of the ledger and participates in the transaction verification. This ensures security. Since the data is distributed, there is no centralized version of the data for the hackers to corrupt. The data and the records are public and easily verifiable. This also eliminates any single point of failure.
 
 #### _* Secure Ecosystem (Cryptographic Hash)_
 
@@ -51,7 +51,7 @@ Blockchains, ideally, are just very sophisticated linked lists where each block 
 
 #### _* Consensus Based_
 
-Consensus Based is an approach to decision making. It is a creative and dynamic way of reaching agreement between all members of a group. A transaction on Blockchain can be executed only if all the parties on the network unanimously approve it. It is however, subjected to alterations to suit various circumstances.
+Consensus is an approach to decision making. It is a creative and dynamic way of reaching agreement between all members of a group. A transaction on blockchain can be executed only if all the parties on the network unanimously approve it.
 
 
 ### Sources
@@ -61,3 +61,11 @@ Consensus Based is an approach to decision making. It is a creative and dynamic 
 3. [Consensus Mechanism](https://www.seedsforchange.org.uk/consensus)
 4. [Major Features of Blockchain](https://cryptocurry.com/news/top-4-major-features-blockchain/)
 5. [Application and Features of Blockchain](https://arxiv.org/pdf/1806.03693.pdf)
+6. [Key Characteristics of the Blockchain](https://www2.deloitte.com/content/dam/Deloitte/in/Documents/industries/in-convergence-blockchain-key-characteristics-noexp.pdf)
+
+
+### More Resources
+
+1. [Blockchain - Wikipedia](https://en.wikipedia.org/wiki/Blockchain)
+2. [What is blockchain technology? - Blockgeeks](https://blockgeeks.com/guides/what-is-blockchain-technology/)
+3. [In Blockchain We Trust - MIT Technology Review](https://www.technologyreview.com/s/610781/in-blockchain-we-trust/)

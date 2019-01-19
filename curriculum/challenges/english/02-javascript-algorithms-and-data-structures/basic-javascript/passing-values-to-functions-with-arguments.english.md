@@ -25,13 +25,13 @@ We have passed two arguments, <code>"Hello"</code> and <code>"World"</code>. Ins
 ```yml
 tests:
   - text: <code>functionWithArgs</code> should be a function
-    testString: 'assert(typeof functionWithArgs === "function", "<code>functionWithArgs</code> should be a function");'
-  - text: '<code>functionWithArgs(1,2)</code> should output <code>3</code>'
-    testString: 'if(typeof functionWithArgs === "function") { capture(); functionWithArgs(1,2); uncapture(); } assert(logOutput == 3, "<code>functionWithArgs(1,2)</code> should output <code>3</code>");'
-  - text: '<code>functionWithArgs(7,9)</code> should output <code>16</code>'
-    testString: 'if(typeof functionWithArgs === "function") { capture(); functionWithArgs(7,9); uncapture(); } assert(logOutput == 16, "<code>functionWithArgs(7,9)</code> should output <code>16</code>");'
+    testString: assert(typeof functionWithArgs === 'function', '<code>functionWithArgs</code> should be a function');
+  - text: <code>functionWithArgs(1,2)</code> should output <code>3</code>
+    testString: if(typeof functionWithArgs === "function") { capture(); functionWithArgs(1,2); uncapture(); } assert(logOutput == 3, '<code>functionWithArgs(1,2)</code> should output <code>3</code>');
+  - text: <code>functionWithArgs(7,9)</code> should output <code>16</code>
+    testString: if(typeof functionWithArgs === "function") { capture(); functionWithArgs(7,9); uncapture(); } assert(logOutput == 16, '<code>functionWithArgs(7,9)</code> should output <code>16</code>');
   - text: Call <code>functionWithArgs</code> with two numbers after you define it.
-    testString: 'assert(/^\s*functionWithArgs\s*\(\s*\d+\s*,\s*\d+\s*\)\s*;/m.test(code), "Call <code>functionWithArgs</code> with two numbers after you define it.");'
+    testString: assert(/^\s*functionWithArgs\s*\(\s*\d+\s*,\s*\d+\s*\)\s*;/m.test(code), 'Call <code>functionWithArgs</code> with two numbers after you define it.');
 
 ```
 
@@ -88,7 +88,13 @@ capture();
 <div id='js-teardown'>
 
 ```js
-console.info('after the test');
+uncapture();
+
+if (typeof functionWithArgs !== "function") { 
+  (function() { return "functionWithArgs is not defined"; })();
+} else {
+  (function() { return logOutput || "console.log never called"; })();
+}
 ```
 
 </div>

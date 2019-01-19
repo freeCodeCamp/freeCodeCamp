@@ -4,7 +4,7 @@ title: Amazon Web Services
 ## Amazon Web Services
 
 Amazon Web Services, or AWS for short, is a subsidiary of Amazon.com that provides on-demand cloud computing platforms to individuals, companies and governments on a
-paid subscription basis with a free-tier option available for 12 months. It along with Microsoft's Azure and Google's Cloud Platform are considered the three major
+paid subscription basis with a free-tier option available for 12 months. AWS, along with Microsoft's Azure and Google's Cloud Platform, are considered the three major
 public cloud vendors.
 
 The technology allows subscribers to have at their disposal a full-fledged virtual cluster of computers, available all the time, through the internet. AWS's version of
@@ -27,7 +27,7 @@ Popular AWS services include:
 * Databases including both SQL and NoSQL
 * S3 (Simple Storage Service)
 * SQS (Simple Queue Service)
-* Games development via the Amazon Lumberyard game development engine and subsequent hosting platform.
+* Games development via the Amazon Lumberyard game development engine and subsequent hosting platform
 * DynamoDB (Amazon Dynamo Data Base)
 * CloudWatch (Metrics and Alarms)
 * CodeDeploy (Deployments)  
@@ -35,24 +35,33 @@ Popular AWS services include:
 * Application Monitoring tools
 * Mobile development tools and platforms
 * Amazon Alexa development area
+* CloudFormation (Infrastructure as Code)
 
 #### AWS Certifications 
-AWS offers many different certifications for it's practitioners. There are different tiers to AWS certs as well as role-based certifications. 
-The tiers are:
-* Foundational
-* Associate
-* Professional
-For every role there are those three tiers.
 
-These roles include:
-* Architect
-* Developer
-* Operations
+AWS offers many different certifications for its practitioners. AWS offers a prerequisite AWS Cloud Practitioner Essentials certification relevant to anyone no matter their role. There are different tiers to AWS certs as well as role-based certifications. 
 
-AWS also offers a prerequisite AWS Cloud Practitioner Essentials certification* relevant to anyone no matter their role.
-Outside of the standard roles there are specialty certifications for Advanced networking, Big Data, and Security.
+The roles are:
+* Any role:
+   * [Foundational: AWS Certified Cloud Practitioner](https://aws.amazon.com/certification/certified-cloud-practitioner/)
+* Architect:
+   * [Foundational: AWS Certified Cloud Practitioner (optional)](https://aws.amazon.com/certification/certified-cloud-practitioner/)
+   * [Associate: AWS Certified Solutions Architect - Associate](https://aws.amazon.com/certification/certified-solutions-architect-associate/)
+   * [Professional: AWS Certified Solutions Architect - Professional](https://aws.amazon.com/certification/certified-solutions-architect-professional/)
+* Developer:
+   * [Foundational: AWS Certified Cloud Practitioner (optional)](https://aws.amazon.com/certification/certified-cloud-practitioner/)
+   * [Associate: AWS Certified Developer - Associate](https://aws.amazon.com/certification/certified-developer-associate/)
+   * [Professional: AWS Certified DevOps Engineer - Professional](https://aws.amazon.com/certification/certified-devops-engineer-professional/)
+* Operational:
+   * [Foundational: AWS Certified Cloud Practitioner (optional)](https://aws.amazon.com/certification/certified-cloud-practitioner/)
+   * [Associate: AWS Certified SysOps Administrator - Associate](https://aws.amazon.com/certification/certified-sysops-admin-associate/)
+   * [Professional: AWS Certified DevOps Engineer - Professional](https://aws.amazon.com/certification/certified-devops-engineer-professional/)
+* Specialty (unrelated to eachother):
+   * [AWS Certified Big Data - Specialty](https://aws.amazon.com/certification/certified-big-data-specialty)
+   * [AWS Certified Advanced Networking - Specialty](https://aws.amazon.com/certification/certified-advanced-networking-specialty)
+   * [AWS Certified Security - Specialty](https://aws.amazon.com/certification/certified-security-specialty/)
 
 #### More Information:
-<!-- Please add any articles you think might be helpful to read before writing the article -->
 * [AWS](https://aws.amazon.com/)
-* [certifications](https://aws.amazon.com/certification/)
+* [Certifications](https://aws.amazon.com/certification/)
+* [Certification Preparation](https://aws.amazon.com/certification/certification-prep/)
