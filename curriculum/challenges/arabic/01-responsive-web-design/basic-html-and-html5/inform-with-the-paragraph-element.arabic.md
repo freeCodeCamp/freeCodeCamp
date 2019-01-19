@@ -7,7 +7,7 @@ localeTitle: 'الإعلام بإستخدام عنصر الفقرات'
 ---
 
 ## الوصف
-<section id="description"> يعد العنصر <code>p</code> هو العنصر المفضل لنصوص الفقرات في مواقع الويب. <code>p</code>هي اختصار لكلمة في &quot;paragraph&quot; (**وتعني فقرة**). يمكنك إنشاء عنصر الفقرة كالتالي: <code>&lt;p&gt;I&#39;m ap tag!&lt;/p&gt;</code> </section>
+<section id="description"> يعد العنصر <code>p</code> هو العنصر المفضل لنصوص الفقرات في مواقع الويب. <code>p</code>هي اختصار لكلمة في &quot;paragraph&quot; (**وتعني فقرة**). يمكنك إنشاء عنصر الفقرة كالتالي: <code>&lt;p&gt;I&#39;m a p tag!&lt;/p&gt;</code> </section>
 
 ## التعليمات
 <section id="instructions"> قم بإنشاء عنصر <code>p</code> أسفل العنصر <code>h2</code> ، واكتب به هذا النص: &quot;Hello Paragraph&quot;. </section>
