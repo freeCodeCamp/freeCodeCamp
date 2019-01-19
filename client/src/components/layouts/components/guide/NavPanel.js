@@ -23,8 +23,8 @@ function NoArticles() {
         Could you&nbsp;
         <a
           href={
-            'https://github.com/freeCodeCamp/guides/blob/master/README.md' +
-            '#freecodecamp-guide'
+            'https://github.com/freeCodeCamp/freeCodeCamp/blob/master/docs/' +
+            'how-to-work-on-guide-articles.md#how-to-work-on-guide-articles'
           }
           rel='noopener noreferrer'
           target='_blank'

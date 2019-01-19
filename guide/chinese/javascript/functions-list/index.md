@@ -8,7 +8,7 @@ JavaScript（JS）是一种具有一流功能的轻量级解释编程语言。�
 
 JavaScript在Web的客户端运行，可用于设计/编程网页在事件发生时的行为方式。 JavaScript是一种易于学习且功能强大的脚本语言，广泛用于控制网页行为。
 
-查看[MDN的JavaScript文档](https://developer.mozilla.org/en-US/docs/Web/JavaScript) ，它们是学习的重要资产。
+查看[MDN的JavaScript文档](https://developer.mozilla.org/en-US/docs/Web/JavaScript) ，是学习的重要资产。
 
 我们的维基上也有一些很棒的文章：
 
@@ -58,4 +58,4 @@ JavaScript在Web的客户端运行，可用于设计/编程网页在事件发生
 *   [对于In Loop](http://forum.freecodecamp.com/t/javascript-for-in-loop/14665)
 *   [对于循环](http://forum.freecodecamp.com/t/javascript-for-of-loop/14671)
 
-查看我们关于JavaScript的其他文章： [https](https://www.freecodecamp.com/wiki) ： [//www.freecodecamp.com/wiki](https://www.freecodecamp.com/wiki) 。
+查看我们关于JavaScript的其他文章： [https//www.freecodecamp.com/wiki](https://www.freecodecamp.com/wiki) 。

@@ -34,6 +34,7 @@ const propTypes = {
   initConsole: PropTypes.func.isRequired,
   instructions: PropTypes.string,
   section: PropTypes.string,
+  showToolPanel: PropTypes.bool,
   tests: PropTypes.arrayOf(PropTypes.object),
   title: PropTypes.string,
   videoUrl: PropTypes.string
@@ -89,6 +90,7 @@ export class SidePanel extends Component {
       guideUrl,
       tests,
       section,
+      showToolPanel,
       videoUrl
     } = this.props;
     return (
@@ -99,7 +101,9 @@ export class SidePanel extends Component {
           <ChallengeTitle>{title}</ChallengeTitle>
           <ChallengeDescription description={description} instructions={instructions} section={section} />
         </div>
-        <ToolPanel guideUrl={guideUrl} videoUrl={videoUrl} />
+        { showToolPanel && (
+          <ToolPanel guideUrl={guideUrl} videoUrl={videoUrl} />
+        )}
         <TestSuite tests={tests} />
       </div>
     );
