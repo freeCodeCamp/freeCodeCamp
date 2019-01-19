@@ -19,7 +19,7 @@ localeTitle: 'الإعلام بإستخدام عنصر الفقرات'
 tests:
   - text: انشئ العنصر <code>p</code>.
     testString: 'assert(($("p").length > 0), "Create an <code>h2</code> element.");'
-  - text: يجب أن يحتوي العنصر <code>p</code> على النص التالي: &quot;Hello Paragraph&quot;.
+  - text: يجب أن يحتوي العنصر <code>p</code> على النص التالي &quot;Hello Paragraph&quot;.
     testString: 'assert.isTrue((/hello(\s)+paragraph/gi).test($("p").text()), "Your <code>p</code> element should have the text "Hello Paragraph".");'
   - text: تأكد من أن العنصر <code>p</code> لديه وسم إغلاق.
     testString: 'assert(code.match(/<\/p>/g) && code.match(/<\/p>/g).length === code.match(/<p/g).length, "Make sure your <code>p</code> element has a closing tag.");'
