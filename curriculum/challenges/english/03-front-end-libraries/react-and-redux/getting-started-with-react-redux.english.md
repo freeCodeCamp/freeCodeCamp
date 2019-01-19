@@ -25,9 +25,9 @@ tests:
   - text: The <code>DisplayMessages</code> component should render an empty <code>div</code> element.
     testString: assert((function() { const mockedComponent = Enzyme.mount(React.createElement(DisplayMessages)); return mockedComponent.find('div').text() === '' })(), 'The <code>DisplayMessages</code> component should render an empty <code>div</code> element.');
   - text: The <code>DisplayMessages</code> constructor should be called properly with <code>super</code>, passing in <code>props</code>.
-    testString: getUserInput => assert((function() { const noWhiteSpace = getUserInput('index').replace(/\s/g,'); return noWhiteSpace.includes('constructor(props)') && noWhiteSpace.includes('super(props'); })(), 'The <code>DisplayMessages</code> constructor should be called properly with <code>super</code>, passing in <code>props</code>.');
+    testString: getUserInput => assert((function() { const noWhiteSpace = getUserInput('index').replace(/\s/g,''); return noWhiteSpace.includes('constructor(props)') && noWhiteSpace.includes('super(props'); })(), 'The <code>DisplayMessages</code> constructor should be called properly with <code>super</code>, passing in <code>props</code>.');
   - text: 'The <code>DisplayMessages</code> component should have an initial state equal to <code>{input: "", messages: []}</code>.'
-    testString: 'assert((function() { const mockedComponent = Enzyme.mount(React.createElement(DisplayMessages)); const initialState = mockedComponent.state(); return typeof initialState === ''object'' && initialState.input === '''' && Array.isArray(initialState.messages) && initialState.messages.length === 0; })(), ''The <code>DisplayMessages</code> component should have an initial state equal to <code>{input: "", messages: []}</code>.'');'
+    testString: "assert((function() { const mockedComponent = Enzyme.mount(React.createElement(DisplayMessages)); const initialState = mockedComponent.state(); return typeof initialState === 'object' && initialState.input === '' && Array.isArray(initialState.messages) && initialState.messages.length === 0; })(), 'The <code>DisplayMessages</code> component should have an initial state equal to <code>{input: \"\", messages: []}</code>.');"
 
 ```
 
