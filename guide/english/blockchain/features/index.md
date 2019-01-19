@@ -20,9 +20,9 @@ The peer to peer network, Torrent, for example is a decentralised system, where 
 
 #### _* Distributed Ledger_
 
-> Blockchains use Distributed Ledger Technology (DLT) to store and access the data around.
+> Blockchains use Distributed Ledger Technology (DLT) to store and access data.
 
-When something is stored on a distributed edger, multiple copies of it are made across the network at the same time. Unlike traditional databases, distributed ledgers do not have a central database or administration functionality.
+When something is stored on a distributed ledger, multiple copies of it are made across the network at the same time. Unlike traditional databases, distributed ledgers do not have a central database or administration functionality.
 
 ![Distributed Ledger](https://qph.fs.quoracdn.net/main-qimg-2e24c4949a63eefa9bbab1773e185cdd)
 
