@@ -3,9 +3,8 @@ title: Semantic HTML Elements
 ---
 
 ## Semantic HTML Elements
-The `<em>` element marks text as being emphasized above the text around it. Typically, the browser renders this in *italics*, but you can add other styles using CSS.
 
-Semantic HTML elements provide meaning to browsers, developers, and users of a site. In contrast to elements like `<div>` or `<span>`, semantic elements like `<header>` and `<footer>` more clearly explain the purpose of each section of a website.
+Semantic HTML elements provide meaning to browsers, developers, and users of a site. In contrast to elements like `<div>` or `<span>`, semantic elements like `<header>` and `<footer>` more clearly explain the purpose of each section of a website and make the website structure easier to understand.
 
 ### Why Use Semantic Elements?
 
@@ -14,7 +13,7 @@ Developers use semantic elements to enhance the following:
 * accessibility: help assistive technologies read and interpret your webpage
 * searchability: help computers make sense of your content
 * internationalization: only 13% of the world are English native speakers
-* interoperability: help other programmers understand the structure of your webpage <sup>1</sup>
+* interoperability: help other programmers understand the structure of your webpage and separate content from display <sup>1</sup>
 
 ### Useful Semantic Elements
 
@@ -53,3 +52,5 @@ Developers use semantic elements to enhance the following:
 For more information: https://codepen.io/mi-lee/post/an-overview-of-html5-semantics
 
 Refer to the [MDN Web Docs article](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/em).
+
+You might also want to check out this old school [article in Scientific American](https://www-sop.inria.fr/acacia/cours/essi2006/Scientific%20American_%20Feature%20Article_%20The%20Semantic%20Web_%20May%202001.pdf) co-authored by Tim Berners-Lee himself! 

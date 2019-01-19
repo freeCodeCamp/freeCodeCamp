@@ -1,4 +1,4 @@
-import React, { PureComponent, createContext } from 'react';
+import React, { Component, createContext } from 'react';
 import PropTypes from 'prop-types';
 
 const noop = () => {};
@@ -19,7 +19,7 @@ const propTypes = {
   children: PropTypes.any
 };
 
-class NavigationContextProvider extends PureComponent {
+class NavigationContextProvider extends Component {
   constructor(...props) {
     super(...props);
 
