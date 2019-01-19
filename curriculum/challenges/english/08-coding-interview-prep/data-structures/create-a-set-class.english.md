@@ -91,7 +91,8 @@ class Set {
 <section id='solution'>
 
 
-```jsclass Set {
+```js
+class Set {
   constructor() {
     this.collection = [];
   }
