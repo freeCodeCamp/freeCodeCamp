@@ -11,10 +11,10 @@ One common mistake you might make is to determine layout based on what you think
 
 Standard Conventions is a term used to describe a process or application of a technique that has industry-wide approval and general cultural acceptance amongst users.
 Examples of these conventions as it relates to layout are listed below:
-*	Placement of heading text above the paragraph it’s meaning to describe.
-*	Placement of a navigation bar at the top of the page.
-*	Use of whitespace to separate different sections and types of content.
-*	Lack of whitespace to bring together sections and types of content.
+*	Placement of heading text above the paragraph it’s meaning to describe
+*	Placement of a navigation bar at the top of the page
+*	Use of whitespace to separate different sections and types of content
+*	Lack of whitespace to bring together sections and types of content
 * Ensuring elements are neat and organized (i.e two buttons aligning to be visually acceptable)
 * Simplicity of the layout such that it is easy to follow and flows nicely
 * Use of visual hierarchy to help keep the layout visually flowing (Size, color, positioning, etc)
@@ -32,3 +32,9 @@ Once the body copy has been taken care of, you can then add the tags. Tags are a
 [TheKatHunts. “Good Design: Works-Every-Time Layout”](https://writingwithmagneto.wordpress.com/2014/03/14/good-design-works-every-time-layout/)
 
 [A video on the works everytime layout](https://whitespacedesignbook.com/portfolio/works-every-time-layout/)
+
+## Resources
+* Layout Essentials: 100 Design Principles for Using Grids
+[Amazon](https://www.amazon.com/Layout-Essentials-Design-Principles-Using/dp/1592537073)
+* Layout Workbook: A Real World Guide to Building Pages in Graphic Design
+[Amazon](https://www.amazon.com/Layout-Workbook-Real-World-Building-Graphic/dp/1592533523)

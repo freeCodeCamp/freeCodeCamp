@@ -52,7 +52,7 @@ Depending on the configuration, you may enter a file browser by typing and enter
 ## Pasting blocks of code
 
 Very often you will find yourself looking for solutions to problems, and finding someone has written a block of code that does exactly what you want.
-If you try to copy and paste the code directly into Vim you might find that the code is weirdly formatted or hasnt't been pasted correctly.
+If you try to copy and paste the code directly into Vim you might find that the code is weirdly formatted or hasn't been pasted correctly.
 This is due to the fact that Vim reads each character that you paste one after the other, meaning any key-combinations that activates a Vim shortcut will be executed and Vim will try (and fail) to automatically indent the pasted code.
 
 To overcome this you can use Vim's **Paste mode** which you can activate by entering normal mode (press `escape` or `crtl + c`) and type `:set paste`, then press ENTER.
@@ -101,7 +101,7 @@ To repeat the last change made to a file, press `.` in __Normal Mode__.
 - vi filename +n, where n is the line number
 
 ## Opening a file searching for word/term
-- vi filename +/word, where word is what you are looking for. The cursor will be positioned on the first occurence of the word.
+- vi filename +/word, where word is what you are looking for. The cursor will be positioned on the first occurrence of the word.
 
 ## Searching a file in Vim
 
@@ -120,7 +120,7 @@ Vim has very tight integration with the `make` build automation tool. If your pr
 3. Type `%s,word_to_be_replaced,new_word,g`;
 4. Press `ENTER`.
 
-Important: if you want to replace the first occurence of the word, remove the `g` at the end.
+Important: if you want to replace the first occurrence of the word, remove the `g` at the end.
 
 ## I Want to Learn Vim!
 

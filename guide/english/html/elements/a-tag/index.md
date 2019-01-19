@@ -18,6 +18,13 @@ By default, a linked page is displayed in the current browser window unless anot
 ```html
   <a href= "https://guide.freecodecamp.org/">freeCodeCamp</a>
 ```
+You can also create a link to another section on the same page.
+#### Example:
+
+```html
+  <h1 id="top"></h1>
+  <a href= "#top">Go to top</a>
+```
 
 An image can also be turned into a link by enclosing the `<img>` tag in an `<a>` tag.
 

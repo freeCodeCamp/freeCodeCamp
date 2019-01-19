@@ -6,7 +6,7 @@ As someone new to software development, contributing to open source projects can
 Learning software development has been an unexpected journey that I have had the pleasure of taking. Having the support from
 my family members and friends has made the journey less of a challenge even, so it has not been an easy road. I've hit many road blocks in my path but I keep challenging myself every day. I’ve read many articles suggesting that as a junior software developer  it is important to contribute to open sources. I've searched the innerwebs for an open source project that I felt I could tackle easily.
 
-The harsh reality of it is that most of the open sources out there are not quite as easy as I thought it would be. GitHub in general has been a challenge to learn and I feel like I learn something new each day but looking at several "beginner friendly" open source projects  I've come to the stark realization that it is going to take much more time than I had thought to be able to contribute code in an open source projects. 
+The harsh reality of it is that most of the open sources out there are not quite as easy as I thought it would be. GitHub in general has been a challenge to learn and I feel like I learn something new each day but looking at several "beginner friendly" open source projects  I've come to the stark realization that it is going to take much more time than I had thought to be able to contribute code in open source projects. 
 
 ## Lessons Learned
 
