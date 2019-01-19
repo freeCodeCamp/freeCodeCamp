@@ -45,15 +45,16 @@ subtract(7,4);
 <div id='js-setup'>
 
 ```js
-window.require = function(str) {
-if (str === 'math_functions') {
-return function(a, b) {
-return a - b;
-}}};
+self.require = function(str) {
+  if (str === 'math_functions') {
+    return function(a, b) {
+      return a - b;
+    }
+  }
+};
 ```
 
 </div>
-
 
 </section>
 
@@ -61,6 +62,8 @@ return a - b;
 <section id='solution'>
 
 ```js
-// solution required
+import subtract from "math_functions";
+subtract(7,4);
 ```
+
 </section>

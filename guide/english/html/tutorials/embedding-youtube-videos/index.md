@@ -17,17 +17,8 @@ What we will need?
 
 ```html
 <iframe width="420" height="315"
-src="https://www.youtube.com/watch?v=v8kFT4I31es">
+src="https://www.youtube.com/embed/v8kFT4I31es">
 </iframe>
 ```
 
-Inserted values are recommended, but feel free to change them in a way that you would like.
-
-#### Autoplay
-What should we do if we would like to make this player starting automatically playing? Just add to your link value `?autoplay=1`. But be careful, because it can be annoying for a lot of people visiting your webpage.
-
-```html
-<iframe width="420" height="315"
-src="https://www.youtube.com/watch?v=v8kFT4I31es?autoplay=1">
-</iframe>
-```
+Inserted values are recommended, and feel free to change them however you like.
