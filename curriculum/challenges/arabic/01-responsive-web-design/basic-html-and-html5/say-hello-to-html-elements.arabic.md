@@ -3,22 +3,22 @@ id: bd7123c8c441eddfaeb5bdef
 title: Say Hello to HTML Elements
 challengeType: 0
 videoUrl: ''
-localeTitle: ''
+localeTitle: 'قل مرحبا لعناصر HTML'
 ---
 
-## Description
-<section id="description"> مرحبًا بك في تحديات ترميز HTML لـ freeCodeCamp. ستوجهك هذه الخطوات من خلال تطوير الويب خطوة بخطوة. أولاً ، ستبدأ ببناء صفحة ويب بسيطة باستخدام HTML. يمكنك تحرير <code>code</code> في <code>code editor</code> الخاص بك ، والذي تم تضمينه في صفحة الويب هذه. هل ترى الرمز في محرر التعليمات البرمجية الذي يقول <code>&lt;h1&gt;Hello&lt;/h1&gt;</code> ؟ هذا هو <code>element</code> HTML. تحتوي معظم عناصر HTML على <code>opening tag</code> <code>closing tag</code> . تبدو علامات الفتح بالشكل التالي: <code>&lt;h1&gt;</code> تبدو علامات الإغلاق كما يلي: <code>&lt;/h1&gt;</code> الفرق الوحيد بين علامات الفتح والإغلاق هو شرطة مائلة للأمام بعد قوس الفتح لعلامة إغلاق. لكل تحد اختبارات يمكنك تشغيلها في أي وقت بالنقر فوق الزر &quot;تشغيل الاختبارات&quot;. عندما تجتاز جميع الاختبارات ، ستتم مطالبتك بإرسال الحل والانتقال إلى التحدي التالي في الترميز. </section>
+## الوصف
+<section id="description"> مرحبًا بك في تحديات الـ HTML  البرمجية الخاصة بـ freeCodeCamp . من خلال هذه التحديات ستتعلم تطوير الويب خطوة بخطوة. أولاً ، ستبدأ ببناء صفحة ويب بسيطة باستخدام HTML. يمكنك تحرير <code>الكود</code> في <code>محرر الأكواد</code> الخاص بك ، والذي تم تضمينه في صفحة الويب هذه. هل ترى الكود <code>&lt;h1&gt;Hello&lt;/h1&gt;</code> الموجودة في محرر الأكواد ؟ هذا هو <code>العنصر</code>  في لغة الـ HTML. تحتوي معظم عناصر لغة الـ HTML على <code>وسم الفتح</code> و <code>وسم الإغلاق</code>. تبدو علامات الفتح بالشكل التالي: <code>&lt;h1&gt;</code> ، اما علامات الإغلاق فهي كما يلي: <code>&lt;/h1&gt;</code>. الفرق الوحيد بين علامتي الفتح والإغلاق هو علامة الشَرطة المائلة للأمام بعد قوس الفتح، لوسم الإغلاق. لكل تحدٍ اختبارات يمكنك تنفيذها في أي وقت بالنقر على زر &quot;تشغيل الاختبارات&quot;. عندما تجتاز جميع الاختبارات ، سيطلب منك إرسال الحل والانتقال للتحدي البرمجي التالي. </section>
 
-## Instructions
-<section id="instructions"> لتمرير الاختبار على هذا التحدي ، قم بتغيير نص عنصر <code>h1</code> ليقول &quot;Hello World&quot;. </section>
+## التعليمات
+<section id="instructions"> لاجتياز في هذا التحدي، قم بتغيير نص العنصر <code>h1</code> لإخراج الجملة &quot;Hello World&quot;. </section>
 
-## Tests
+## الاختبارات
 <section id='tests'>
 
 ```yml
 tests:
   - text: ''
-    testString: 'assert.isTrue((/hello(\s)+world/gi).test($("h1").text()), "Your <code>h1</code> element should have the text "Hello World".");'
+    testString: 'assert.isTrue((/hello(\s)+world/gi).test($("h1").text()), "العنصر <code>h1</code> يجب ان يحتوي على النص  "Hello World".");'
 
 ```
 
