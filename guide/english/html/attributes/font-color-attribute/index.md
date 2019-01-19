@@ -22,7 +22,7 @@ In this example we can see how to set green colour to the text enclosed in a `<f
 ```html
 <html>
   <body>
-   <font color="green">Font color example using color name attribute</font>
+   <font color="green">Font color example using color name</font>
  </body>
 </html>
 ```
@@ -30,7 +30,7 @@ In this example we can see how to set green colour to the text enclosed in a `<f
 ```html
 <html>
   <body>
-   <font color="#00FF00">Font color example using hex code attribute</font>
+   <font color="#00FF00">Font color example using hex code</font>
   </body>
 </html>
 ```
@@ -38,7 +38,7 @@ In this example we can see how to set green colour to the text enclosed in a `<f
 ```html
 <html>
   <body>
-    <font color="rgb(0,255,0)">Font color example using RBG attribute</font>
+    <font color="rgb(0,255,0)">Font color example using RBG</font>
   </body>
 </html>
 ```
