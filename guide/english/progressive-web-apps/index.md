@@ -46,7 +46,8 @@ This implies that depending on the browser, the experience can change.
 
 ### Demo
 
-<iframe width="560" height="315" src="https://www.youtube.com/embed/esfi7ZLibmk" frameborder="0" gesture="media" allow="encrypted-media" allowfullscreen></iframe>
+[![Demo on Progressive Web App](http://img.youtube.com/vi/esfi7ZLibmk/0.jpg)](https://www.youtube.com/watch?v=esfi7ZLibmk "Demo on Progressive Web App")
+
 
 ### References
 
@@ -56,5 +57,3 @@ This implies that depending on the browser, the experience can change.
 4. [Hume, Dean. Alan. "Progressive Web Apps: Live book"](https://livebook.manning.com/#!/book/progressive-web-apps/about-this-book/)
 5. [Hofmann, Simon. "The Road to PWA - Part 1"](https://blog.simon-hofmann.org/pwa/js/2018/05/07/road-to-pwa01.html)
 6. [PWA Rocks! - List of Progressive Web Apps](https://pwa.rocks/) 
-
-
