@@ -75,12 +75,12 @@ You can name the return types so that you don't need to pass variable to the ret
 ```go
 func duplicate(s string) (first, second string) {
   first = s
-  last = s
+  second = s
 	return
 }
 
 func main() {
-  fmt.Println(split("Hello world!")) // ("Hello world!", "Hello world!")
+	fmt.Println(duplicate("Hello world!")) // ("Hello world!", "Hello world!")
 }
 ```
 
