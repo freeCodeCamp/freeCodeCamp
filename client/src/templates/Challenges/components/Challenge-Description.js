@@ -1,6 +1,5 @@
 import React, { Fragment } from 'react';
 import PropTypes from 'prop-types';
-import { Col, Row } from '@freecodecamp/react-bootstrap';
 
 import './challenge-description.css';
 
@@ -12,20 +11,18 @@ const propTypes = {
 
 function ChallengeDescription({ description, instructions, section }) {
   return (
-    <Row>
-      <Col className={`challenge-instructions ${section}`} xs={12}>
-        <div dangerouslySetInnerHTML={{ __html: description }} />
-        {instructions ? (
-          <Fragment>
-            <hr />
-            <div dangerouslySetInnerHTML={{ __html: instructions }} />
-            <hr />
-          </Fragment>
-        ) : (
+    <div className={`challenge-instructions ${section}`}>
+      <div dangerouslySetInnerHTML={{ __html: description }} />
+      {instructions ? (
+        <Fragment>
           <hr />
-        )}
-      </Col>
-    </Row>
+          <div dangerouslySetInnerHTML={{ __html: instructions }} />
+          <hr />
+        </Fragment>
+      ) : (
+        <hr />
+      )}
+    </div>
   );
 }
 

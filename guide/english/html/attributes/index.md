@@ -36,8 +36,8 @@ Here are examples that do the same thing:
 
 ## Other Resources
 
-[HTML links](#)
-[Href Attribute](#)
-[Lang Attribute](#)
-[HTML Input Element](#)
-[Required Attribute](#)
+- [HTML links](https://guide.freecodecamp.org/html/attributes/links/)
+- [Href Attribute](https://guide.freecodecamp.org/html/attributes/href-attribute/)
+- [Lang Attribute](https://guide.freecodecamp.org/html/attributes/lang/)
+- [HTML Input Element](https://guide.freecodecamp.org/html/attributes/input/)
+- [Required Attribute](https://guide.freecodecamp.org/html/attributes/required/)
