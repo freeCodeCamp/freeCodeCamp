@@ -1,3 +1,9 @@
+@media screen, (max-width: 767px) {
+  .intro-layout-container {
+    padding: 0 10px;
+  }
+}
+
 .intro-layout {
   margin-top: 1.45rem;
 }
