@@ -1,0 +1,14 @@
+footer{
+  position: absolute;
+  background-color: #E0E0E0;
+  color:#555555;
+  background-size: cover;
+  font-size: .9em;
+  width:100%;
+  margin-top: 5px;
+  padding-top: 40px;
+}
+
+footer b {
+  padding-bottom: 5px;
+}

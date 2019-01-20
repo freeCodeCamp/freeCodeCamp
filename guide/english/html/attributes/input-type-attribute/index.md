@@ -54,9 +54,9 @@ Only one option can be selected by the user. The group of radio buttons needs to
 A user can select zero or more options from the group of checkboxes. You can use `checked` property here too for one or more options.
 ```html
     <form>
-      <label><input type="checkbox" name="lang" value="english">english</label>
-      <label><input type="checkbox" name="lang" value="spanish">spanish</label>
-      <label><input type="checkbox" name="lang" value="french">french</label>
+      <label><input type="checkbox" name="lang" value="english">English</label>
+      <label><input type="checkbox" name="lang" value="spanish">Spanish</label>
+      <label><input type="checkbox" name="lang" value="french">French</label>
     </form>
 ```
 ### button
@@ -67,7 +67,8 @@ The input is displayed as a button, the text which should be displayed in the bu
     </form>
 ```
 ### submit
-Displays the submit button. The text which should be displayed in the button is in the value attribute. After clicking on the button, the HTML do the validation and if it passes, the form is submitted.
+Displays the submit button. The text which should be displayed in the button is in value attribute. After clicking on the button, the HTML does the validation and if it passes, the form is submitted.
+
 ```html
     <form>
       <input type="submit" value="SUBMIT">

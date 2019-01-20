@@ -13,7 +13,7 @@ The character to do this is the <code>asterisk</code> or <code>star</code>: <cod
 
 ## Instructions
 <section id='instructions'>
-Create a regex <code>chewieRegex</code> that uses the <code>*</code> character to match all the upper and lower<code>"a"</code> characters in <code>chewieQuote</code>. Your regex does not need flags, and it should not match any of the other quotes.
+Create a regex <code>chewieRegex</code> that uses the <code>*</code> character to match all the upper and lowercase <code>"a"</code> characters in <code>chewieQuote</code>. Your regex does not need flags, and it should not match any of the other quotes.
 </section>
 
 ## Tests
