@@ -6,6 +6,10 @@ const Container = styled.div`
   justify-content: space-between;
   flex-direction: row;
   overflow: hidden;
+  @media (max-width: 600px) {
+    margin-top: 1em;
+    flex-direction: column;
+  }
 `;
 
 const prNumStyle = { flex: 1 };

@@ -27,6 +27,10 @@ const Tab = styled.div`
   &:first-child {
     border-left: 2px solid ${({ theme }) => theme.primary};
   }
+  @media (max-width: 600px) {
+    width: auto;
+    min-width: 100px;
+  }
 `;
 
 const Tabs = ({ view, onViewChange }) => {

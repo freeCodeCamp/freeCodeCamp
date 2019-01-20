@@ -1,7 +1,15 @@
 import React from 'react';
+import styled from 'styled-components';
+
+const Container = styled.label`
+  @media (max-width: 600px) {
+    display: block;
+  }
+`;
+
 const FilterOption = ({ group, children, value, selectedOption, onOptionChange }) => {
   return (
-  <label>
+  <Container>
     <input
       name={group}
       type="radio"
@@ -10,7 +18,7 @@ const FilterOption = ({ group, children, value, selectedOption, onOptionChange }
       onChange={onOptionChange}
     />
     {children}
-  </label>
+  </Container>
   );
 }
 export default FilterOption;

@@ -35,6 +35,9 @@ const Title = styled.h1`
   color: white;
   width: 100%;
   padding: 3px;
+  @media (max-width: 600px) {
+    flex-direction: column;
+  }
 `;
 
 const imgStyle = {
