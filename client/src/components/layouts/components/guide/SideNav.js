@@ -10,7 +10,9 @@ const propTypes = {
   pages: PropTypes.arrayOf(PropTypes.object),
   parents: PropTypes.arrayOf(PropTypes.object),
   toggleDisplaySideNav: PropTypes.func.isRequired,
-  toggleExpandedState: PropTypes.func.isRequired
+  toggleExpandedState: PropTypes.func.isRequired,
+  sidebarScroll: PropTypes.number,
+  saveSidebarScroll: PropTypes.func.isRequired
 };
 
 function parentFilter(node) {
@@ -24,6 +26,12 @@ class SideNav extends Component {
     this.renderChildren = this.renderChildren.bind(this);
     this.renderPanels = this.renderPanels.bind(this);
     this.renderParent = this.renderParent.bind(this);
+  }
+
+  componentDidMount() {
+    const el = document.getElementById('side-nav');
+    if (el === undefined) { return; }
+    el.scrollTop = this.props.sidebarScroll
   }
 
   renderPanels(parents, pages) {
@@ -53,6 +61,7 @@ class SideNav extends Component {
         path={parent.path}
         title={title}
         toggleDisplaySideNav={this.props.toggleDisplaySideNav}
+        saveSidebarScroll={this.props.saveSidebarScroll}
         >
         {isExpanded ? children : null}
       </NavPanel>
@@ -71,6 +80,7 @@ class SideNav extends Component {
           path={child.path}
           title={child.title}
           toggleDisplaySideNav={this.props.toggleDisplaySideNav}
+          saveSidebarScroll={this.props.saveSidebarScroll}
         />
       );
     });

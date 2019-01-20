@@ -11,7 +11,8 @@ const propTypes = {
   isExpanded: PropTypes.bool,
   path: PropTypes.string,
   title: PropTypes.string,
-  toggleDisplaySideNav: PropTypes.func.isRequired
+  toggleDisplaySideNav: PropTypes.func.isRequired,
+  saveSidebarScroll: PropTypes.func.isRequired
 };
 
 function NoArticles() {
@@ -46,9 +47,10 @@ class NavPanel extends Component {
   }
 
   handleHeaderClick() {
-    const { path, handleClick } = this.props;
+    const { path, handleClick, saveSidebarScroll } = this.props;
     handleClick(path);
-    navigate(path);
+    saveSidebarScroll();
+    navigate(path)
   }
 
   renderHeader() {

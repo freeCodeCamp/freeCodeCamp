@@ -57,7 +57,9 @@ const Layout = ({ children }) => (
             toggleDisplaySideNav,
             displaySideNav,
             expandedState,
-            toggleExpandedState
+            sidebarScroll,
+            toggleExpandedState,
+            saveSidebarScroll
           }) => (
             <DefaultLayout>
               <Spacer size={2} />
@@ -72,6 +74,8 @@ const Layout = ({ children }) => (
                     pages={pages}
                     toggleDisplaySideNav={toggleDisplaySideNav}
                     toggleExpandedState={toggleExpandedState}
+                    saveSidebarScroll={saveSidebarScroll}
+                    sidebarScroll={sidebarScroll}
                   />
                 </Col>
                 <Col

@@ -7,14 +7,22 @@ const propTypes = {
   path: PropTypes.string,
   router: PropTypes.object,
   title: PropTypes.string,
-  toggleDisplaySideNav: PropTypes.func.isRequired
+  toggleDisplaySideNav: PropTypes.func.isRequired,
+  saveSidebarScroll: PropTypes.func.isRequired
 };
+
+function handleClick() {
+  const { toggleDisplaySideNav, saveSidebarScroll } = this.props
+  toggleDisplaySideNav()
+  saveSidebarScroll()
+}
 
 function NavItem(props) {
   const { isStubbed, path, title } = props;
+
   return (
     <li>
-      <Link data-navitem='true' onClick={props.toggleDisplaySideNav} to={path}>
+      <Link data-navitem='true' onClick={handleClick} to={path}>
         <span className={'navItemTitle' + (isStubbed ? ' stubbed' : '')}>
           {title}
         </span>

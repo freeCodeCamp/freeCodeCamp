@@ -2,17 +2,21 @@ import React, { Component, createContext } from 'react';
 import PropTypes from 'prop-types';
 
 const noop = () => {};
+const warnNoMethod = () => {
+  console.warn('no method from provider');
+}
 
-const initialState = { displaySideNav: false, expandedState: {} };
+const initialState = { 
+  displaySideNav: false, 
+  expandedState: {},
+  sidebarScroll: 0
+};
 
 const { Provider, Consumer } = createContext({
   ...initialState,
-  toggleDisplaySideNav: () => {
-    console.warn('no method from provider');
-  },
-  toggleExpandedState: () => {
-    console.warn('no method from provider');
-  }
+  toggleDisplaySideNav: warnNoMethod,
+  toggleExpandedState: warnNoMethod,
+  sidebarScroll: warnNoMethod
 });
 
 const propTypes = {
@@ -27,6 +31,7 @@ class NavigationContextProvider extends Component {
 
     this.toggleSideNav = this.toggleSideNav.bind(this);
     this.toggleExpandedState = this.toggleExpandedState.bind(this);
+    this.saveSidebarScroll = this.saveSidebarScroll.bind(this)
   }
 
   componentDidMount() {
@@ -70,16 +75,27 @@ class NavigationContextProvider extends Component {
     }));
   }
 
+  saveSidebarScroll() {
+    const el = document.getElementById('side-nav')
+    if (!el) { return noop; }
+    return this.setState(state => ({
+      ...state,
+      sidebarScroll: el.scrollTop
+    }))
+  }
+
   render() {
     const { children } = this.props;
-    const { displaySideNav, expandedState } = this.state;
+    const { displaySideNav, expandedState, sidebarScroll } = this.state;
     return (
       <Provider
         value={{
           displaySideNav,
           expandedState,
+          sidebarScroll,
           toggleDisplaySideNav: noop,
-          toggleExpandedState: this.toggleExpandedState
+          toggleExpandedState: this.toggleExpandedState,
+          saveSidebarScroll: this.saveSidebarScroll
         }}
         >
         {children}
