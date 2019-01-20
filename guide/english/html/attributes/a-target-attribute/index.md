@@ -6,6 +6,12 @@ title: A Target Attribute
 The `<a target>` attribute specifies where to open the linked document in an `a` (anchor) tag.
 <br>
  
+#### Syntax
+
+```html
+        <a target="_blank|_self|_parent|_top|framname">
+```
+   
 #### Examples:
 
 
