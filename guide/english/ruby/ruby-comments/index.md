@@ -45,3 +45,5 @@ When executed, the program above produces the following:
 ```
 Hello World!
 ```
+
+In general, it's best to use multi-line comments when explaining what your method does or for your program as a whole. Stick to single-line comments when clarifying a line or two of code, but when you find yourself expanding a file just to finish your single-line comment, consider using a multi-line comment instead. 
