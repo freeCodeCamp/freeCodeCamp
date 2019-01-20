@@ -25,9 +25,9 @@ Change the <code>0</code> so the difference is <code>12</code>.
 ```yml
 tests:
   - text: Make the variable <code>difference</code> equal 12.
-    testString: 'assert(difference === 12, "Make the variable <code>difference</code> equal 12.");'
+    testString: assert(difference === 12, 'Make the variable <code>difference</code> equal 12.');
   - text: Only subtract one number from 45.
-    testString: 'assert(/var\s*difference\s*=\s*45\s*-\s*[0-9]*;(?!\s*[a-zA-Z0-9]+)/.test(code),"Only subtract one number from 45.");'
+    testString: assert(/var\s*difference\s*=\s*45\s*-\s*[0-9]*;(?!\s*[a-zA-Z0-9]+)/.test(code),'Only subtract one number from 45.');
 
 ```
 
@@ -51,7 +51,7 @@ var difference = 45 - 0;
 <div id='js-teardown'>
 
 ```js
-console.info('after the test');
+(function(z){return 'difference = '+z;})(difference);
 ```
 
 </div>

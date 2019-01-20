@@ -20,7 +20,7 @@ Find the number of integers 1 < n < 107, for which n and n + 1 have the same num
 ```yml
 tests:
   - text: <code>euler179()</code> should return 986262.
-    testString: 'assert.strictEqual(euler179(), 986262, "<code>euler179()</code> should return 986262.");'
+    testString: assert.strictEqual(euler179(), 986262, '<code>euler179()</code> should return 986262.');
 
 ```
 

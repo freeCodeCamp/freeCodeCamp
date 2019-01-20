@@ -25,7 +25,7 @@ How many pandigital step numbers less than 1040 are there?
 ```yml
 tests:
   - text: <code>euler178()</code> should return 126461847755.
-    testString: 'assert.strictEqual(euler178(), 126461847755, "<code>euler178()</code> should return 126461847755.");'
+    testString: assert.strictEqual(euler178(), 126461847755, '<code>euler178()</code> should return 126461847755.');
 
 ```
 

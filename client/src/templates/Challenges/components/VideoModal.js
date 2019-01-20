@@ -1,4 +1,4 @@
-import React, { PureComponent } from 'react';
+import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux';
@@ -19,7 +19,7 @@ const propTypes = {
   videoUrl: PropTypes.string
 };
 
-export class VideoModal extends PureComponent {
+export class VideoModal extends Component {
   render() {
     const { isOpen, closeVideoModal, videoUrl } = this.props;
     if (isOpen) {
