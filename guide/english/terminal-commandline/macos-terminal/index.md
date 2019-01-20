@@ -38,13 +38,13 @@ Command | Usage
 ------------ | -------------
 `pwd` | Print Working Directory (Where Am I? )
 `ls` | List contents of current directory
-`mkdir <directoryname>` | Create a new directory
+`mkdir <directory_name>` | Create a new directory
 `rmdir` | Remove directory
-`touch <filename>` | Create a new file
-`cp <filetobecopied> <nameforcopiedfile>` | Copy a file 
+`touch <file_name>` | Create a new file
+`cp <file_to_be_copied> <name_for_copied_file>` | Copy a file 
 `mv` | Rename a file/directory
 `rm <filename>` | Remove a file 
-`rm -rf <directoryname>` | Forcibly remove a directory 
+`rm -rf <directory_name>` | Forcibly remove a directory 
 
 ### Usage Examples
 
@@ -52,11 +52,15 @@ Some of the aforementioned commands aren't clear without examples. Below are a f
 
 #### Making a Directory
 
-```mkdir folder_name```
+```
+mkdir folder_name
+```
 
 #### Making a File 
 
-``` touch file_name.js```
+```
+touch file_name.js
+```
 
 You can make a file with any extension you choose. As long as it is in a format accepted by the folder or machine.
 
@@ -68,19 +72,27 @@ Use the following syntax to copy a file from the terminal:
 
 For example, if we have a file, _'test.txt'_ that is stored in our _/Desktop_ directory and we want to copy it to the _/Documents_ folder, our command would look like this: 
 
-    cp ~/Desktop/test.txt ~/Documents
+```
+cp ~/Desktop/test.txt ~/Documents
+```
 
 #### Deleting a File 
 
 Use the following syntax to delete a file. 
 
-**rm _#PATH_TO_FILE_**
+```
+rm <path_to_file>
+```
 
 #### Detect which process is using the port you want to use
-``` lsof -i :<PORT> ```
+```
+lsof -i :<port>
+```
 
 #### Terminate the process which uses the port you want to use
-``` kill <PID> ```
+```
+kill <pid>
+```
 
 
 #### Previewing file
