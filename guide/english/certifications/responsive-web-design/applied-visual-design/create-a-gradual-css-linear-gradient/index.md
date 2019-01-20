@@ -1,8 +1,8 @@
- ---
- title: Create a Gradual CSS Linear Gradient
- ---
+---
+title: Create a Gradual CSS Linear Gradient
+---
  ## Create a Gradual CSS Linear Gradient
- 
+
 To create a linear gradient you must define at least two color stops. Color stops are the colors you want to render smooth transitions among. You can also set a starting point and a direction (or an angle) along with the gradient effect.
 
 The syntax is always:

@@ -1,7 +1,6 @@
-
 ---
 title: Simplify Square Roots
-localeTitle: undefined
+localeTitle: تبسيط جذور مربع
 ---
 ## تبسيط جذور مربع
 

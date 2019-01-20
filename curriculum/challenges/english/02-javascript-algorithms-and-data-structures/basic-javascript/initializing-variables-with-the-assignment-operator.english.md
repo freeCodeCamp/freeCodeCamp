@@ -22,7 +22,7 @@ Define a variable <code>a</code> with <code>var</code> and initialize it to a va
 ```yml
 tests:
   - text: Initialize <code>a</code> to a value of <code>9</code>
-    testString: 'assert(/var\s+a\s*=\s*9\s*/.test(code), "Initialize <code>a</code> to a value of <code>9</code>");'
+    testString: assert(/var\s+a\s*=\s*9\s*/.test(code), 'Initialize <code>a</code> to a value of <code>9</code>');
 
 ```
 
@@ -48,7 +48,7 @@ var ourVar = 19;
 <div id='js-teardown'>
 
 ```js
-console.info('after the test');
+if(typeof a !== 'undefined') {(function(a){return "a = " + a;})(a);} else { (function() {return 'a is undefined';})(); }
 ```
 
 </div>

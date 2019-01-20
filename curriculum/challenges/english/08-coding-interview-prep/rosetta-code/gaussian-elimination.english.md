@@ -20,19 +20,19 @@ Write a function to solve \(A.x = b\) using Gaussian elimination then backwards 
 ```yml
 tests:
   - text: <code>gaussianElimination</code> should be a function.
-    testString: 'assert(typeof gaussianElimination=="function","<code>gaussianElimination</code> should be a function.");'
-  - text: <code>gaussianElimination("+JSON.stringify(tests[0][0])+","+JSON.stringify(tests[0][1])+")</code> should return an array.
-    testString: 'assert(Array.isArray(gaussianElimination(tests[0][0],tests[0][1])),"<code>gaussianElimination("+JSON.stringify(tests[0][0])+","+JSON.stringify(tests[0][1])+")</code> should return an array.");'
-  - text: <code>gaussianElimination("+JSON.stringify(tests[0][0])+","+JSON.stringify(tests[0][1])+")</code> should return <code>"+JSON.stringify(results[0])+"</code>.
-    testString: 'assert.deepEqual(gaussianElimination(tests[0][0],tests[0][1]),results[0],"<code>gaussianElimination("+JSON.stringify(tests[0][0])+","+JSON.stringify(tests[0][1])+")</code> should return <code>"+JSON.stringify(results[0])+"</code>.");'
-  - text: <code>gaussianElimination("+JSON.stringify(tests[1][0])+","+JSON.stringify(tests[1][1])+")</code> should return <code>"+JSON.stringify(results[1])+"</code>.
-    testString: 'assert.deepEqual(gaussianElimination(tests[1][0],tests[1][1]),results[1],"<code>gaussianElimination("+JSON.stringify(tests[1][0])+","+JSON.stringify(tests[1][1])+")</code> should return <code>"+JSON.stringify(results[1])+"</code>.");'
-  - text: <code>gaussianElimination("+JSON.stringify(tests[2][0])+","+JSON.stringify(tests[2][1])+")</code> should return <code>"+JSON.stringify(results[2])+"</code>.
-    testString: 'assert.deepEqual(gaussianElimination(tests[2][0],tests[2][1]),results[2],"<code>gaussianElimination("+JSON.stringify(tests[2][0])+","+JSON.stringify(tests[2][1])+")</code> should return <code>"+JSON.stringify(results[2])+"</code>.");'
-  - text: <code>gaussianElimination("+JSON.stringify(tests[3][0])+","+JSON.stringify(tests[3][1])+")</code> should return <code>"+JSON.stringify(results[3])+"</code>.
-    testString: 'assert.deepEqual(gaussianElimination(tests[3][0],tests[3][1]),results[3],"<code>gaussianElimination("+JSON.stringify(tests[3][0])+","+JSON.stringify(tests[3][1])+")</code> should return <code>"+JSON.stringify(results[3])+"</code>.");'
-  - text: <code>gaussianElimination("+JSON.stringify(tests[4][0])+","+JSON.stringify(tests[4][1])+")</code> should return <code>"+JSON.stringify(results[4])+"</code>.
-    testString: 'assert.deepEqual(gaussianElimination(tests[4][0],tests[4][1]),results[4],"<code>gaussianElimination("+JSON.stringify(tests[4][0])+","+JSON.stringify(tests[4][1])+")</code> should return <code>"+JSON.stringify(results[4])+"</code>.");'
+    testString: assert(typeof gaussianElimination=='function','<code>gaussianElimination</code> should be a function.');
+  - text: <code>gaussianElimination([[1,1],[1,-1]], [5,1])</code> should return an array.
+    testString: assert(Array.isArray(gaussianElimination([[1,1],[1,-1]], [5,1])),'<code>gaussianElimination([[1,1],[1,-1]], [5,1])</code> should return an array.');
+  - text: <code>gaussianElimination([[1,1],[1,-1]], [5,1])</code> should return <code>[ 3, 2 ]</code>.
+    testString: assert.deepEqual(gaussianElimination([[1,1],[1,-1]], [5,1]), [ 3, 2 ],'<code>gaussianElimination([[1,1],[1,-1]], [5,1])</code> should return <code>[ 3, 2 ]</code>.');
+  - text: <code>gaussianElimination([[2,3],[2,1]] , [8,4])</code> should return <code>[ 1, 2 ]</code>.
+    testString: assert.deepEqual(gaussianElimination([[2,3],[2,1]] , [8,4]), [ 1, 2 ],'<code>gaussianElimination([[2,3],[2,1]] , [8,4])</code> should return <code>[ 1, 2 ]</code>.');
+  - text: <code>gaussianElimination([[1,3],[5,-2]], [14,19])</code> should return <code>[ 5, 3 ]</code>.
+    testString: assert.deepEqual(gaussianElimination([[1,3],[5,-2]], [14,19]), [ 5, 3 ],'<code>gaussianElimination([[1,3],[5,-2]], [14,19])</code> should return <code>[ 5, 3 ]</code>.');
+  - text: <code>gaussianElimination([[1,1],[5,-1]] , [10,14])</code> should return <code>[ 4, 6 ]</code>.
+    testString: assert.deepEqual(gaussianElimination([[1,1],[5,-1]] , [10,14]), [ 4, 6 ],'<code>gaussianElimination([[1,1],[5,-1]] , [10,14])</code> should return <code>[ 4, 6 ]</code>.');
+  - text: <code>gaussianElimination([[1,2,3],[4,5,6],[7,8,8]] , [6,15,23])</code> should return <code>[ 1, 1, 1 ]</code>.
+    testString: assert.deepEqual(gaussianElimination([[1,2,3],[4,5,6],[7,8,8]] , [6,15,23]), [ 1, 1, 1 ],'<code>gaussianElimination([[1,2,3],[4,5,6],[7,8,8]] , [6,15,23])</code> should return <code>[ 1, 1, 1 ]</code>.');
 
 ```
 
@@ -47,16 +47,6 @@ tests:
 function gaussianElimination (A,b) {
   // Good luck!
 }
-```
-
-</div>
-
-
-### After Test
-<div id='js-teardown'>
-
-```js
-console.info('after the test');
 ```
 
 </div>

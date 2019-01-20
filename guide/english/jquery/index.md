@@ -14,7 +14,7 @@ jQuery adds a global variable with all of the libraries methods attached. The na
 
 ## Example
 
-When a user clicks on a button, all <p> elements will be hidden:
+When a user clicks on a button, all \<p> elements will be hidden:
 
 ```javascript
 $(document).ready(function(){

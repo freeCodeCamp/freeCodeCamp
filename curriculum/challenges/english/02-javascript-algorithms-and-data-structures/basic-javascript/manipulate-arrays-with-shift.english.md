@@ -20,10 +20,10 @@ Use the <code>.shift()</code> function to remove the first item from <code>myArr
 
 ```yml
 tests:
-  - text: '<code>myArray</code> should now equal <code>[["dog", 3]]</code>.'
-    testString: 'assert((function(d){if(d[0][0] == "dog" && d[0][1] === 3 && d[1] == undefined){return true;}else{return false;}})(myArray), "<code>myArray</code> should now equal <code>[["dog", 3]]</code>.");'
-  - text: '<code>removedFromMyArray</code> should contain <code>["John", 23]</code>.'
-    testString: 'assert((function(d){if(d[0] == "John" && d[1] === 23 && typeof removedFromMyArray === "object"){return true;}else{return false;}})(removedFromMyArray), "<code>removedFromMyArray</code> should contain <code>["John", 23]</code>.");'
+  - text: <code>myArray</code> should now equal <code>[["dog", 3]]</code>.
+    testString: assert((function(d){if(d[0][0] == 'dog' && d[0][1] === 3 && d[1] == undefined){return true;}else{return false;}})(myArray), '<code>myArray</code> should now equal <code>[["dog", 3]]</code>.');
+  - text: <code>removedFromMyArray</code> should contain <code>["John", 23]</code>.
+    testString: assert((function(d){if(d[0] == 'John' && d[1] === 23 && typeof removedFromMyArray === 'object'){return true;}else{return false;}})(removedFromMyArray), '<code>removedFromMyArray</code> should contain <code>["John", 23]</code>.');
 
 ```
 
@@ -56,7 +56,7 @@ var removedFromMyArray;
 <div id='js-teardown'>
 
 ```js
-console.info('after the test');
+(function(y, z){return 'myArray = ' + JSON.stringify(y) + ' & removedFromMyArray = ' + JSON.stringify(z);})(myArray, removedFromMyArray);
 ```
 
 </div>

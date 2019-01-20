@@ -1,5 +1,5 @@
 ---
-title:While-loop
+title: While-loop
 localeTitle: undefined
 ---
 تقوم عبارة loop while بتنفيذ العبارة المستهدفة بشكل متكرر طالما أن الشرط المعطى صحيح.
@@ -10,22 +10,22 @@ localeTitle: undefined
 
 مثال:
 
- `#include <iostream> 
- using namespace std; 
- 
- int main () { 
-   // Local variable declaration: 
-   int a = 10; 
- 
-   // while loop execution 
-   while( a < 20 ) { 
-      cout << "value of a: " << a << endl; 
-      a++; 
-   } 
- 
-   return 0; 
- } 
-` 
+ `#include <iostream>
+ using namespace std;
+
+ int main () {
+   // Local variable declaration:
+   int a = 10;
+
+   // while loop execution
+   while( a < 20 ) {
+      cout << "value of a: " << a << endl;
+      a++;
+   }
+
+   return 0;
+ }
+`
 
 انتاج:
 
