@@ -32,7 +32,7 @@ let z = foo(10);
 z(10)// TypeError z is not a function
 // Because of Automatic Semicolon Insertion, our inner function does not exist.
 ```
-Javasctipt will implement semi-colons where they are expected. 
+Javascript will implement semi-colons where they are expected. 
 
 ### Other resources
 

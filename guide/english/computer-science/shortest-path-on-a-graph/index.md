@@ -52,11 +52,11 @@ Our graph needs to be setup so that we can record the required values. On any ed
 
 **Step 1:**
 
-Look at all nodes directly adjascent to the starting node. The values carried by the edges connecting the start and these adjascent nodes are the shortest distances to each respective node. Record these distances on the node - overwriting infinity - and also cross off the nodes, meaning that their shortest path has been found.
+Look at all nodes directly adjacent to the starting node. The values carried by the edges connecting the start and these adjacent nodes are the shortest distances to each respective node. Record these distances on the node - overwriting infinity - and also cross off the nodes, meaning that their shortest path has been found.
 
 **Step 2:**
 
-Select one of the nodes which has had its shortest path calculated, we'll call this our pivot. Look at the nodes adjascent to it (we'll call these our destination nodes) and the distances separating them. For every destination node: if the value in the pivot plus the edge value connecting it totals less than the destination node's value, then update its value, as a new shorter path has been found. If all routes to this destination node have been explored, it can be crossed off.
+Select one of the nodes which has had its shortest path calculated, we'll call this our pivot. Look at the nodes adjacent to it (we'll call these our destination nodes) and the distances separating them. For every destination node: if the value in the pivot plus the edge value connecting it totals less than the destination node's value, then update its value, as a new shorter path has been found. If all routes to this destination node have been explored, it can be crossed off.
 
 **Step 3:**
 
