@@ -7,11 +7,11 @@ The `git checkout` command switches between branches or restores working tree fi
 
 ### Checkout a specific commit
 
-to checkout a specific commit, run the command:
+To checkout a specific commit, run the command:
 ```shell
 git checkout specific-commit-id
 ```
-we can get the specific commit id's by running: 
+We can get the specific commit id's by running: 
 ```shell
 git log
 ```
