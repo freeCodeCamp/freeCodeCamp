@@ -29,18 +29,12 @@ class Header extends Component {
     return (
       <header className={this.state.isMenuOpened ? 'opened' : null}>
         <nav id='top-nav'>
-
           <Media query='(min-width: 735px)'>
             <Fragment>
               <Link className='home-link' to='/'>
                 <NavLogo />
               </Link>
-              {disableSettings
-                ? null
-                : <div className="header-search">
-                  <FCCSearch />
-                </div>
-              }
+              {disableSettings ? null : <FCCSearch />}
             </Fragment>
           </Media>
 
@@ -49,20 +43,12 @@ class Header extends Component {
               <Link to='/learn'>Curriculum</Link>
             </li>
             <li>
-              <a
-              href='/forum'
-              rel='noopener noreferrer'
-              target='_blank'
-              >
+              <a href='/forum' rel='noopener noreferrer' target='_blank'>
                 Forum
               </a>
             </li>
             <li>
-              <a
-              href='/news'
-              rel='noopener noreferrer'
-              target='_blank'
-              >
+              <a href='/news' rel='noopener noreferrer' target='_blank'>
                 News
               </a>
             </li>
@@ -73,22 +59,16 @@ class Header extends Component {
         </nav>
 
         <Media query='(max-width: 734px)'>
-          <div className="mobile-menu">
+          <div className='mobile-menu'>
             <Link className='home-link' to='/'>
               <NavLogo />
             </Link>
-            {disableSettings
-              ? null
-              : <div className="header-search">
-                  <FCCSearch />
-                </div>
-            }
-            <span className="menu-button" onClick={this.toggleClass}>
+            {disableSettings ? null : <FCCSearch />}
+            <span className='menu-button' onClick={this.toggleClass}>
               Menu
             </span>
           </div>
         </Media>
-
       </header>
     );
   }
