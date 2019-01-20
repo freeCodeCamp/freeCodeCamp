@@ -16,7 +16,7 @@ There are six freeCodeCamp certificates:
 
 Each certificate curriculum should take approximately 300 hours to complete and includes 5 required projects, while other challenges are optional.
 
-### The Full Stack Development Certificate
+### The Full Stack Development Program Certificate
 
 Upon completion of all six certificates, the freeCodeCamp [Full Stack Development Program Certificate](https://guide.freecodecamp.org/meta/free-code-camp-full-stack-development-certification/) will be issued. This final distinction signifies completion of approximately 1,800 hours of coding and completion of 30 projects that expose participants to a wide range of web development tools.
 
