@@ -26,3 +26,12 @@ return arr.indexOf(elem) >= 0 ? true : false;
 }
 console.log(quickCheck(['squash', 'onions', 'shallots'], 'mushrooms'));
 ```
+- `Solution-3` demonstrates how the problem can be solved by directly returning result of the comparison.
+
+## Solution-3:
+```javascript
+function quickCheck(arr, elem) {
+  return arr.indexOf(elem) != -1;
+}
+console.log(quickCheck(['squash', 'onions', 'shallots'], 'mushrooms'));
+```
