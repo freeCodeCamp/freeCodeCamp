@@ -7,13 +7,13 @@ header {
 
 #top-nav {
   background: #006400;
-  height: 40px;
-  margin-bottom: 0px;
+  height: 38px;
+  margin-bottom: 0;
   border-radius: 0;
   border: none;
   display: flex;
   justify-content: space-between;
-  padding: 0 30px 0 15px;
+  padding: 0 15px;
 }
 
 #top-nav .home-link {
@@ -24,12 +24,11 @@ header {
 #top-nav img {
   max-height: 25px;
   min-width: 35px;
-  margin: 0 5px 0 10px;
+  margin: 0 5px;
 }
 
 #top-right-nav {
   display: flex;
-  width: 270px;
   margin: 0;
   list-style: none;
   justify-content: space-around;
@@ -90,13 +89,6 @@ li.user-state-link > a:focus {
   background-color: #006400 !important;
 }
 
-#top-right-nav {
-  margin-left: 20px;
-}
-#top-right-nav li:last-child {
-  margin-right: 30px;
-}
-
 #top-right-nav li > a:hover,
 #top-right-nav li > a:focus {
   text-decoration: none;
@@ -112,14 +104,54 @@ li.user-state-link > a:focus {
 
 /* Search bar */
 .fcc_searchBar {
-  flex-grow: 0.8;
+  flex-grow: 1;
   padding: 2px 10px 0;
 }
-.ais-SearchBox-form {
+
+.fcc_searchBar .ais-SearchBox-form {
   margin-bottom: 0;
 }
-.ais-Hits {
-  background-color: #fff;
+
+.fcc_searchBar .ais-Hits {
+  background-color: white;
+  width: 60%;
+}
+
+@media (max-width: 735px) {
+  .fcc_searchBar .ais-Hits {
+    width: 80%;
+    left: 10%;
+  }
+}
+
+/* Navbar logo */
+
+.logo-glyph {
+  height: 30px;
+  width: auto;
+}
+
+.logo {
+  display: none;
+}
+
+.logoContainer {
+  margin-right: 10px;
+}
+
+@media (min-width: 735px) {
+  .logo-glyph {
+    display: none;
+  }
+
+  .logo {
+    display: block;
+  }
+
+  .logoContainer {
+    margin-right: 50px;
+    width: 25%;
+  }
 }
 
 .mobile-menu {
@@ -129,8 +161,8 @@ li.user-state-link > a:focus {
   width: 100%;
   background-color: #006400;
   color: #fff;
-  margin-top: -40px;
-  height: 40px;
+  margin-top: -38px;
+  height: 38px;
   z-index: 300;
 }
 
@@ -143,23 +175,13 @@ li.user-state-link > a:focus {
   justify-self: flex-end;
 }
 
-.header-search {
-  position: relative;
-  top: 2px;
-  flex-grow: 1;
-}
-
-.mobile-menu .header-search {
-  top: -1px;
-}
-
 @media (max-width: 734px) {
   #top-nav {
     padding: 0;
   }
 
   .opened #top-right-nav {
-    transform: translate(0, 40px);
+    transform: translate(0, 38px);
     padding-bottom: 10px;
     opacity: 1;
   }
