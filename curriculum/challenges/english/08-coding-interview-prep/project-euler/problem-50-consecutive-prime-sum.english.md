@@ -24,9 +24,9 @@ Which prime, below one-million, can be written as the sum of the most consecutiv
 ```yml
 tests:
   - text: <code>consecutivePrimeSum(1000)</code> should return 953.
-    testString: 'assert.strictEqual(consecutivePrimeSum(1000), 953, "<code>consecutivePrimeSum(1000)</code> should return 953.");'
+    testString: assert.strictEqual(consecutivePrimeSum(1000), 953, '<code>consecutivePrimeSum(1000)</code> should return 953.');
   - text: <code>consecutivePrimeSum(1000000)</code> should return 997651.
-    testString: 'assert.strictEqual(consecutivePrimeSum(1000000), 997651, "<code>consecutivePrimeSum(1000000)</code> should return 997651.");'
+    testString: assert.strictEqual(consecutivePrimeSum(1000000), 997651, '<code>consecutivePrimeSum(1000000)</code> should return 997651.');
 
 ```
 

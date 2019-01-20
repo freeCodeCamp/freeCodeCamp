@@ -12,11 +12,11 @@ let result = reRegex.test(testString);
 ```
 `result` will match only `test test` because `\1` in this example stands for the same text as most recently matched by the 1st capturing group `(test)`.
 
-If we were to lierally translate the regex, it would look something like this:
+If we were to literally translate the regex, it would look something like this:
 
 ```js
-let re = /(test)\s\1;
-let literalRe = /test\stest;
+let re = /(test)\s\1/;
+let literalRe = /test\stest/;
 ```
 Both `rea` and `literalRe` would match the same thing.
 

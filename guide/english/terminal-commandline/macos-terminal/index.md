@@ -12,33 +12,39 @@ Your terminal exists in the Applications directory. Open your Terminal app. You 
 
 To see what directory you are working in, just type the command: 
 
-```pwd```
+```
+pwd
+```
 
-```pwd``` stands for "Print Working Directory". Directory is another word for folder. 
+`pwd` stands for "Print Working Directory". Directory is another word for folder. 
 
 If you want to list the contents of your directory, use the command: 
 
-```ls```
+```
+ls
+```
 
 To switch to a new directory you, use the command: 
 
-```cd```
+```
+cd <directory_name>
+```
 
-```cd``` stands for "Change Directory". ```cd``` is then followed by the directory's name you wish to switch into.  
+`cd` stands for "Change Directory". ```cd``` is then followed by the directory's name you wish to switch into.
 
 Here is a list of common commands:
 
 Command | Usage
 ------------ | -------------
-pwd | Print Working Directory (Shows the path that you are in.)
-ls | List contents of current directory
-mkdir | Create a new directory
-rmdir | Remove directory
-touch | Create a new file
-cp| Copy a file 
-mv | Rename a file/directory
-rm | Remove a file 
-rm -rf | Remove a directory 
+`pwd` | Print Working Directory (Where Am I? )
+`ls` | List contents of current directory
+`mkdir <directoryname>` | Create a new directory
+`rmdir` | Remove directory
+`touch <filename>` | Create a new file
+`cp <filetobecopied> <nameforcopiedfile>` | Copy a file 
+`mv` | Rename a file/directory
+`rm <filename>` | Remove a file 
+`rm -rf <directoryname>` | Forcibly remove a directory 
 
 ### Usage Examples
 
@@ -76,7 +82,12 @@ Use the following syntax to delete a file.
 #### Terminate the process which uses the port you want to use
 ``` kill <PID> ```
 
-# iTerm2
+
+#### Previewing file
+If you would like to preview a file, type the command `cat <name of document>` and you would be able to preview a text document through the terminal.
+
+
+## iTerm2
 
 iTerm2 is an alternative to the legacy terminal in Mac OS. iTerm2 brings some new features such as:
 
@@ -89,3 +100,17 @@ iTerm2 is an alternative to the legacy terminal in Mac OS. iTerm2 brings some ne
 * and many [more](https://www.iterm2.com/features.html)
 
 Just download iTerm2 from the official [website](https://www.iterm2.com/downloads.html). Additional documentation can be found [here](https://www.iterm2.com/documentation.html).
+
+#### iTerm2 Improvements and Customizations
+
+This [guide](https://medium.com/the-code-review/make-your-terminal-more-colourful-and-productive-with-iterm2-and-zsh-11b91607b98c) shows you how you can improve terminal productivity, and have a bit more customization options.
+
+## Hyper
+
+Another alternative is Hyper, an Electron-based terminal
+
+- Built in HTML/CSS/JS
+- Fully extensible
+- [Download](https://hyper.is/#installation)
+- [Documentation](https://hyper.is/)
+- [Awesome Hyper](https://github.com/bnb/awesome-hyper)

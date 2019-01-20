@@ -24,7 +24,7 @@ How many fractions lie between 1/3 and 1/2 in the sorted set of reduced proper f
 ```yml
 tests:
   - text: <code>euler73()</code> should return 7295372.
-    testString: 'assert.strictEqual(euler73(), 7295372, "<code>euler73()</code> should return 7295372.");'
+    testString: assert.strictEqual(euler73(), 7295372, '<code>euler73()</code> should return 7295372.');
 
 ```
 

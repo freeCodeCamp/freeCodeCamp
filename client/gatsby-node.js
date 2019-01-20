@@ -1,6 +1,6 @@
 require('dotenv').config();
 
-const { createFilePath } = require('@freecodecamp/gatsby-source-filesystem');
+const { createFilePath } = require('gatsby-source-filesystem');
 
 const { dasherize } = require('./utils');
 const { blockNameify } = require('./utils/blockNameify');
@@ -35,9 +35,10 @@ exports.onCreateNode = function onCreateNode({ node, actions, getNode }) {
       createNodeField({ node, name: 'slug', value: slug });
     }
   }
+
 };
 
-exports.createPages = ({ graphql, actions }) => {
+exports.createPages = function createPages({ graphql, actions }) {
   const { createPage } = actions;
 
   return new Promise((resolve, reject) => {
@@ -73,6 +74,7 @@ exports.createPages = ({ graphql, actions }) => {
               node {
                 fields {
                   slug
+                  nodeIdentity
                 }
                 frontmatter {
                   block
@@ -82,9 +84,6 @@ exports.createPages = ({ graphql, actions }) => {
                 htmlAst
                 id
                 excerpt
-                internal {
-                  identity
-                }
               }
             }
           }
@@ -92,7 +91,7 @@ exports.createPages = ({ graphql, actions }) => {
       `).then(result => {
         if (result.errors) {
           console.log(result.errors);
-          reject(result.errors);
+          return reject(result.errors);
         }
 
         // Create challenge pages.
@@ -103,34 +102,32 @@ exports.createPages = ({ graphql, actions }) => {
         // Create intro pages
         result.data.allMarkdownRemark.edges.forEach(edge => {
           const {
-            node: {
-              internal: { identity },
-              frontmatter,
-              fields
-            }
+            node: { frontmatter, fields }
           } = edge;
+
           if (!fields) {
             return null;
           }
-          const { slug } = fields;
+          const { slug, nodeIdentity } = fields;
           if (slug.includes('LICENCE')) {
             return null;
           }
           try {
-            const pageBuilder = createByIdentityMap[identity](createPage);
+            const pageBuilder = createByIdentityMap[nodeIdentity](createPage);
             return pageBuilder(edge);
           } catch (e) {
             console.log(`
-            ident: ${identity} does not belong to a function
+            ident: ${nodeIdentity} does not belong to a function
 
             ${frontmatter ? JSON.stringify(edge.node) : 'no frontmatter'}
 
 
             `);
           }
+          return null;
         });
 
-        return;
+        return null;
       })
     );
   });
@@ -165,7 +162,10 @@ exports.onCreateWebpackConfig = ({ stage, rules, plugins, actions }) => {
         HOME_PATH: JSON.stringify(
           process.env.HOME_PATH || 'http://localhost:3000'
         ),
-        STRIPE_PUBLIC_KEY: JSON.stringify(process.env.STRIPE_PUBLIC_KEY || '')
+        STRIPE_PUBLIC_KEY: JSON.stringify(process.env.STRIPE_PUBLIC_KEY || ''),
+        ROLLBAR_CLIENT_ID: JSON.stringify(process.env.ROLLBAR_CLIENT_ID || ''),
+        ENVIRONMENT: JSON.stringify(process.env.NODE_ENV || 'development'),
+        PAYPAL_SUPPORTERS: JSON.stringify(process.env.PAYPAL_SUPPORTERS || 404)
       }),
       new RmServiceWorkerPlugin()
     ]
