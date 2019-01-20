@@ -19,11 +19,11 @@ Area of a circle is defined as the space enclosed by the circumference of the ci
 
 #### Terminology
 
-Circumference (C) - The enclosing boundary of the circle is called circumference of the circle.
+Circumference (C) - The enclosing boundary of the circle.
 
-Radius (r) - The length of a line from any point on the boundary/cirumference of the circle to the centre of the circle is known as the radius of the circle.
+Radius (r) - The length of a line from any point on the boundary/cirumference of the circle to the center of the circle.
 
-Diameter (d) - The length of the line that passes across the circle through the centre of the circle, is called the diameter.
+Diameter (d) - The length of the line that passes across the circle through the center of the circle.
 
 Pi (<span class="texhtml">π</span>) - A mathematical constant which is approximated as 3.14
 
