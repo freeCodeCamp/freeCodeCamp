@@ -6,10 +6,7 @@ challengeType: 5
 
 ## Description
 <section id='description'>
-A given rectangle is made from <i>m</i> × <i>n</i> squares. If <i>m</i> and <i>n</i> are not both odd, then it is
-possible to cut a path through the rectangle along the square edges such that the rectangle splits into two connected
-pieces with the same shape (after rotating one of the pieces by 180°). All such paths for 2 × 2 and 4 × 3 rectangles
-are shown below.
+A given rectangle is made from <i>m</i> × <i>n</i> squares. If <i>m</i> and <i>n</i> are not both odd, then it is possible to cut a path through the rectangle along the square edges such that the rectangle splits into two connected pieces with the same shape (after rotating one of the pieces by 180°). All such paths for 2 × 2 and 4 × 3 rectangles are shown below.
 <a href="http://rosettacode.org/wiki/file:rect-cut.svg">file:rect-cut.svg</a>
 Write a function that calculates the number of different ways to cut an <i>m</i> × <i>n</i> rectangle.
 </section>

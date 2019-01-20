@@ -6,8 +6,7 @@ challengeType: 5
 
 ## Description
 <section id='description'>
-Write a function that takes an array of numbers as parameter and returns the <a href="https://en.wikipedia.org/wiki/Standard Deviation">standard
-  deviation</a> of the series.
+Write a function that takes an array of numbers as parameter and returns the <a href="https://en.wikipedia.org/wiki/Standard Deviation">standard deviation</a> of the series.
 </section>
 
 ## Instructions

@@ -6,8 +6,7 @@ challengeType: 5
 
 ## Description
 <section id='description'>
-Create a function, to compute the <b><a href="https://en.wikipedia.org/wiki/Dot product">dot product</a></b>, also
-known as the <b>scalar product</b> of two vectors.
+Create a function, to compute the <b><a href="https://en.wikipedia.org/wiki/Dot product">dot product</a></b>, also known as the <b>scalar product</b> of two vectors.
 </section>
 
 ## Instructions
