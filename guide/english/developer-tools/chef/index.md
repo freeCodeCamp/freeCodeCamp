@@ -5,7 +5,7 @@ title: Chef
 Chef is an automation tool that transforms infrastructure into code. In other words, it is a tool that is used to automate the creation and configuration of your infrastructure. It is also used to maintain your infrastructure once it is created.
 
 ### Why use Chef
-There are several things to consider before a fully completed and tested application goes to production. Some of the main things are,
+There are several things to consider before a fully completed and tested application goes to production. Some of the main things are:
 
 * Infrastructure creation (cloud or on-premisis)
 * Configuration
@@ -13,7 +13,7 @@ There are several things to consider before a fully completed and tested applica
 
 You can manually create your infrastructure, configure it and maintain it. It is a very tedious process and the chances of making a mistake is high. Anything manual requires a lot of attention to details, training other in your team and constantly keeping an eye on it to make sure everything is working as expected. If your application evolves quickly then every time it goes to production you have to do all these work manually.
 
-Chef is a tool that helps in automating this process. You write code (chef uses *Ruby*) for your infrastructure and source control it. Chef will read this code to create and configure your infrastructure automatically. The advantages of using Chef are,
+Chef is a tool that helps in automating this process. You write code (chef uses *Ruby*) for your infrastructure and source control it. Chef will read this code to create and configure your infrastructure automatically. The advantages of using Chef are:
 
 * Infrastructure creation and configuration is automated
 * Monitoring and maintaining is automated
@@ -24,7 +24,7 @@ Chef is a tool that helps in automating this process. You write code (chef uses 
 ### Big picture and Components
 ![Chef big picture](https://docs.chef.io/_images/chef_overview.svg "Chef overview")
 
-The main components are, 
+The main components are: 
 
 * Cookbook and Recipes
 * Node
@@ -33,7 +33,7 @@ The main components are,
 * Chef Client
 
 #### Cookbook and Recipes
-A Cookbook is the fundamental unit of configuration. It defines a scenario and contains everything that is required to support that scenario. Cookbook contains the following things,
+A Cookbook is the fundamental unit of configuration. It defines a scenario and contains everything that is required to support that scenario. Cookbook contains the following things:
 
 * Recipes
 * Attribute values
@@ -53,7 +53,7 @@ Workstation (the blue region in big picture) is a computer running the Chef Deve
 The chef server acts as a hub for configuration data. It stores all the configuration data such as cookbooks, recipes, templates and file distributions that are needed for Infrastructure creation and configuration.
 
 #### Chef Client
-A Chef Client is an agent that runs locally on every node that is managed by Chef. It communicates with the Chef Server to get configuration data that is needed to configure the node. The Chef client is responsible for running all the required steps to bring a node into the expected state. The different steps include,
+A Chef Client is an agent that runs locally on every node that is managed by Chef. It communicates with the Chef Server to get configuration data that is needed to configure the node. The Chef client is responsible for running all the required steps to bring a node into the expected state. The different steps include:
 
 * Registering and authenticating the node with the Chef server
 * Synchronizing Cookbooks
