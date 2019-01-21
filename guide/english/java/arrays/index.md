@@ -164,7 +164,7 @@ In a similar manner, one can declare an array of as many dimensions as desired, 
 Tip: Arrays like this can be quite confusing, especially to beginners, so if you are planning to use this, be prepared to make a visual representation either in your head or on pen and paper.
 
 ### Jagged Arrays
-Jagged arrays are multi-dimensional arrays that have a set number of rows but a varying number of columns. Jagged arrays are used to conserve memory use of the array. Here is an example:
+Jagged arrays are multi-dimensional arrays that have a set number of rows but a varying number of columns. Jagged arrays are used to conserve memory use of the array. They can be thought of as arrays which holds arrays. Here is an example:
 
 ```java
 int[][] array = new int[5][]; //initialize a 2D array with 5 rows
