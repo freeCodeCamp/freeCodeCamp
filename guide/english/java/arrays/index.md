@@ -4,9 +4,9 @@ title: Arrays
 
 # Array
 
-An Array is a collection of values (or objects) of similar data types (primitive and reference, both form of data types are allowed) held in sequential memory addresses.
+An Array is a collection of values (or objects) of similar datatypes (both primitive and reference datatypes are allowed) held in sequential memory addresses.
 All the variables in the array must be of the same type, declared at instantiation.
-Arrays always start with the index of 0 and are instantiated to a set number of indexes. 
+Arrays always start with an index of 0 and are instantiated to a set number of indexes. 
 
 **Syntax:**
 
@@ -43,6 +43,8 @@ Here we have declared and initialized the array in one step. We could have also 
 
 ```java
 double[] List = new double[10];
+String[] words = new String[20];
+int[] numbers = new int[100];
 ```
  We are creating a array variable named `List` of type double and allocating it 10 memory locations. This double datatype array is initialized to `0.0` by default.
 
@@ -61,6 +63,11 @@ The code above is equivalent to:
 double[] list = new double[4];
 *IMPORTANT NOTE: Please note the difference between the types of brackets
 that are used to represent arrays in two different ways.
+
+String[] rainbow = {"red", "orange", "yellow", "green", "blue", "purple"};
+
+The code above is equivalent to:
+String[] rainbow = new String[6];
 ```
 
 ## Declaring array literal
@@ -92,6 +99,8 @@ Output:
 ## Modifying Arrays:
 ```java
 arrayName[index] = value; 
+
+rainbow[0] = "red";
 ```
 
 Note: You cannot change the size or type of an array after initializing it.
@@ -99,6 +108,13 @@ Note: You can however reset the array like so
 
 ```java
 arrayName = new dataType[] {value1, value2, value3};
+```
+
+However, there is a way to increase the size of an array, with the cost one one more variable, as below:
+
+```java
+arrayName = new dataType[] {value1, value2, value3, value4, value5} // five values
+newArray = arrays.copyOf(arrayName, 10) // creates a new array that has all of the previous array's elements, including 5 new spaces for more values
 ```
 
 ## Size of Arrays:
@@ -164,7 +180,7 @@ In a similar manner, one can declare an array of as many dimensions as desired, 
 Tip: Arrays like this can be quite confusing, especially to beginners, so if you are planning to use this, be prepared to make a visual representation either in your head or on pen and paper.
 
 ### Jagged Arrays
-Jagged arrays are multi-dimensional arrays that have a set number of rows but a varying number of columns. Jagged arrays are used to conserve memory use of the array. Here is an example:
+Jagged arrays are multi-dimensional arrays that have a set number of rows but a varying number of columns. Jagged arrays are used to conserve memory use of the array. They can be thought of as arrays which holds arrays. Here is an example:
 
 ```java
 int[][] array = new int[5][]; //initialize a 2D array with 5 rows

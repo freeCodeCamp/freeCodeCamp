@@ -2,6 +2,11 @@
 title: Algorithm Performance
 ---
 
+## Algorithm Performance
+To understand the performance of algorithms, first we need to know the big-O notation.
+
+### The Big-O Notation
+####
 In mathematics, big-O notation is a symbolism used to describe and compare the _limiting behavior_ of a function.  
 
 A function's limiting behavior is how the function acts as it approaches a specific value (usually trends towards infinity).
@@ -16,7 +21,7 @@ A function's limiting behavior is how the function acts as it trends towards a p
 
 In short, big-O notation is used to describe the growth or decline of a function, usually with respect to another function.  In programming, big-O notation compares the growth/decline of the runtime in respects to the size of the input.  
 
-NOTE: x^2 is equivalent to x * x or 'x-squared']
+NOTE: x^2 is equivalent to x * x or 'x-squared'
 
 For example we say that x = O(x^2) for all x > 1 or in other words, x^2 is an upper bound on x and therefore it grows faster.  
 The symbol of a claim like x = O(x^2) for all x > _n_ can be substituted with x <= x^2 for all x > _n_ where _n_ is the minimum number that satisfies the claim, in this case 1.  
@@ -24,7 +29,7 @@ The symbol of a claim like x = O(x^2) for all x > _n_ can be substituted with x 
 Effectively, we say that a function f(x) that is O(g(x)) grows slower than g(x) does.
 
 
-Comparitively, in computer science and software development we can use big-O notation in order to describe the efficiency of algorithms via its time and space complexity.
+Comparatively, in computer science and software development we can use big-O notation in order to describe the efficiency of algorithms via its time and space complexity.
 
 **Space Complexity** of an algorithm refers to its memory footprint with respect to the input size.
 
@@ -43,12 +48,24 @@ The following 3 notations are mostly used to represent time complexity of algori
 
 1. **Θ Notation**: The theta notation bounds a functions from above and below, so it defines exact behavior. we can say that we have theta notation when worst case and best case are the same.
     >Θ(g(n)) = {f(n): there exist positive constants c1, c2 and n0 such that 0 <= c1*g(n) <= f(n) <= c2*g(n) for all n >= n0}
+    
+<img src = "https://cdncontribute.geeksforgeeks.org/wp-content/uploads/AlgoAnalysis-1.png" />
 
 2. **Big O Notation**: The Big O notation defines an upper bound of an algorithm. For example Insertion Sort takes linear time in best case and quadratic time in worst case. We can safely say that the time complexity of Insertion sort is *O*(*n^2*).
     >O(g(n)) = { f(n): there exist positive constants c and  n0 such that 0 <= f(n) <= cg(n) for all n >= n0}
 
+<img src = "https://cdncontribute.geeksforgeeks.org/wp-content/uploads/AlgoAnalysis-2.png"/>
+
 3. **Ω Notation**: Ω notation provides an lower bound to algorithm. it shows fastest possible answer for that algorithm.
     >Ω (g(n)) = {f(n): there exist positive constants c and n0 such that 0 <= cg(n) <= f(n) for all n >= n0}.
+    
+<img src = "https://cdncontribute.geeksforgeeks.org/wp-content/uploads/AlgoAnalysis-3.png"/>
+
+4. **Little o Notation**: The little o notation defines a strict upper bound of an algorithm. This means that f(n) is less than c * g(n) for all c, but cannot be equal.
+
+5. **ω Notation**: ω (Little Ω) notation provides a strict lower bound to algorithm. This means that f(n) is greater than c * g(n) for all c, but cannot be equal.
+
+*images are from geeksforgeeks
 
 ## Examples
 
