@@ -110,6 +110,13 @@ Note: You can however reset the array like so
 arrayName = new dataType[] {value1, value2, value3};
 ```
 
+However, there is a way to increase the size of an array, with the cost one one more variable, as below:
+
+```java
+arrayName = new dataType[] {value1, value2, value3, value4, value5} // five values
+newArray = arrays.copyOf(arrayName, 10) // creates a new array that has all of the previous array's elements, including 5 new spaces for more values
+```
+
 ## Size of Arrays:
 It's possible to find the number of elements in an array using the `length` attribute. It should be noted here that `length` is an **attribute** of every array, i.e., a variable storing the length of the array. It must not be confused for a **method** of Array since the name is same as the `length()` method corresponding to String classes.
 ```java
