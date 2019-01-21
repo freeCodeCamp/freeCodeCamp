@@ -10,5 +10,5 @@ The idea is to rapidly build a minimum set of features that is enough to deploy 
 - It provides a feedback loop to guide future development.
 
 Learn more about MVP:
-<a href='https://youtu.be/MHJn_SubN4E' target='_blank' rel='nofollow'>what is a mvp?</a>
+<a href='https://youtu.be/MHJn_SubN4E' target='_blank' rel='nofollow'>What is a Minimum Viable Product (MVP)</a>
 

@@ -3,10 +3,10 @@ title: Format Specifiers
 ---
 # Format Specifiers
 
-Format specifiers defines the type of data to be printed on standard output. Whether to print formatted output or to take formatted input we need format specifiers. Format specifiers are also called as format string.Format specifier is used during input and output. It is a way to tell the compiler what type of data is in a variable during taking input using scanf() or printing using printf(). Some examples are %c, %d, %f, etc.
+Format specifiers define the type of data that is to be printed on standard output. We need format specifiers in order to take the formatted input or print the formatted output. Format specifiers are also called as format string. Format specifier is used during input and output. It is a way to tell the compiler what type of data is in a variable during taking input using scanf() or printing using printf(). Some examples are %c, %d, %f, etc.
 
 Character format specifier : %c
-
+```c
 #include <stdio.h>
 int main()
 { 
@@ -14,12 +14,13 @@ int main()
     printf("%c\n", ch); 
     return 0; 
 }
+```
 
 Output:
 A
 
 Integer format specifier : %d, %i
-
+```c
 #include <stdio.h> 
 int main() 
 { 
@@ -28,13 +29,13 @@ int main()
     printf("%i\n", x); 
     return 0; 
 } 
-
+```
 Output:
 45
 45
 
 Double format specifier : %f, %e or %E
-
+```c
 #include <stdio.h> 
 int main() 
 { 
@@ -43,13 +44,13 @@ int main()
     printf("%e\n", a); 
     return 0; 
 } 
-
+```
 Output:
 12.670000
 1.267000e+01
 
 Unsigned Octal number for integer : %o
-
+```c
 #include <stdio.h> 
 int main() 
 { 
@@ -57,12 +58,14 @@ int main()
     printf("%o\n", a); 
     return 0; 
 } 
+```
 
 Output:
 103
 
 Unsigned Hexadecimal for integer : %x, %X
 
+```c
 #include <stdio.h> 
 int main() 
 { 
@@ -70,12 +73,14 @@ int main()
     printf("%x\n", a); 
     return 0; 
 } 
+```
 
 Output:
 f
 
 String printing : %s
 
+```c
 #include <stdio.h> 
 int main() 
 { 
@@ -83,6 +88,7 @@ int main()
     printf("%s\n", a); 
     return 0; 
 } 
+```
 
 Output:
 nitesh
@@ -93,6 +99,7 @@ scanf(char *format, arg1, arg2, …)
 
 decimal integer : %d
 
+```c
 #include <stdio.h> 
 int main() 
 { 
@@ -101,12 +108,14 @@ int main()
     printf("%d\n", a); 
     return 0; 
 } 
+```
 
 output:
 45
 
 Integer may be octal or in hexadecimal : %i
 
+```c
 #include <stdio.h> 
 int main() 
 { 
@@ -117,13 +126,14 @@ int main()
     printf("%d\n", a); 
     return 0; 
 } 
-
+```
 output:
 15
 15
 
 Floating data type : %f, %e(double), %lf(long double)
 
+```
 #include <stdio.h> 
 int main() 
 { 
@@ -132,12 +142,14 @@ int main()
     printf("%f\n", a); 
     return 0; 
 }
+```
 
 Output:
 0.000000
 
 String input : %s
 
+```c
 #include <stdio.h> 
 int main() 
 { 
@@ -146,12 +158,13 @@ int main()
     printf("%s\n", str); 
     return 0; 
 } 
+```
 
 Output:
 nitesh
 
 Character input : %c
-
+```c
 #include <stdio.h> 
 int main() 
 { 
@@ -160,6 +173,7 @@ int main()
     printf("%c\n", ch); 
     return 0; 
 }
+```
 
 output:
 A
