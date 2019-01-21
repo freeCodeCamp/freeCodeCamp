@@ -2,6 +2,11 @@
 title: Algorithm Performance
 ---
 
+## Algorithm Performance
+To understand the performance of algorithms, first we need to know the big-O notation.
+
+### The Big-O Notation
+####
 In mathematics, big-O notation is a symbolism used to describe and compare the _limiting behavior_ of a function.  
 
 A function's limiting behavior is how the function acts as it approaches a specific value (usually trends towards infinity).
