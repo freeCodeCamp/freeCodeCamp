@@ -4,7 +4,7 @@ title: Accessing Object Properties with Variables
 challengeType: 1
 guideUrl: 'https://russian.freecodecamp.org/guide/certificates/accessing-objects-properties-with-variables'
 videoUrl: ''
-localeTitle: Доступ к объектам с переменными
+localeTitle: Доступ к свойствам объектов с переменными
 ---
 
 ## Description

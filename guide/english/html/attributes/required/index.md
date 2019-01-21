@@ -4,11 +4,11 @@ title: Required
 ## Required
 
 
-The HTML required attribute is used in an input element to make the input field in a form required to submit the form.
-If the user does not fill in the input field the form will not submit and it will give a message asking the user to fill out the field. 
-The `required` attribute is applicable to `<input>`, `<select>`, `<textarea>`. 
+The HTML `required` attribute is used in an input element to make the input field in a form required to submit the form. This means that the user must fill in the field. <br /> 
+If the user does not fill in the input field, the form will not submit and it will give a message asking the user to fill out the field. <br /> <br />
+The `required` attribute is applicable to `<input>`, `<select>`, and `<textarea>`. 
 
-For example: 
+`<input>` example: 
 ```html
 <!DOCTYPE html>
 <html>
@@ -24,7 +24,7 @@ For example:
 </html>
 ```
 
-Select Example:
+`<select>` Example:
 ```html
 <form action="/action.php">
 <select required>
@@ -36,15 +36,13 @@ Select Example:
 </select>
 </form>
 ```
-Text Area Example:
+`<textarea>` Example:
 ```html
 <form action="/action.php">
   <textarea name="comment" required></textarea>
   <input type="submit">
 </form>
 ```
-
-Simply add `required` to an input element 
 
 #### More Information:
 <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/input" target="_blank">MDN article on the input element</a>
