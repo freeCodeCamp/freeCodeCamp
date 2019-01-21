@@ -622,6 +622,6 @@ pre tt:after {
     font-size: 100%;
   }
 }
-main {
-  margin-top: 38px;
+.default-layout {
+  margin-top: 34px;
 }

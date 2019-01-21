@@ -4,37 +4,32 @@
  * a db migration to fix all completedChallenges
  *
  */
-
+import { Observable } from 'rx';
 import _ from 'lodash';
 import debug from 'debug';
 import accepts from 'accepts';
 import dedent from 'dedent';
 
-import { ifNoUserSend } from '../utils/middleware';
-import { getChallengeById, cachedMap } from '../utils/map';
-import { dasherize } from '../utils';
+import { homeLocation } from '../../../config/env.json';
 
+import { ifNoUserSend } from '../utils/middleware';
+import { dasherize } from '../utils';
 import pathMigrations from '../resources/pathMigration.json';
 import { fixCompletedChallengeItem } from '../../common/utils';
 
 const log = debug('fcc:boot:challenges');
 
-const learnURL = 'https://learn.freecodecamp.org';
+const learnURL = `${homeLocation}/learn`;
 
 const jsProjects = [
-'aaa48de84e1ecc7c742e1124',
-'a7f4d8f2483413a6ce226cac',
-'56533eb9ac21ba0edf2244e2',
-'aff0395860f5d3034dc0bfc9',
-'aa2e6f85cab2ab736c9a9b24'
+  'aaa48de84e1ecc7c742e1124',
+  'a7f4d8f2483413a6ce226cac',
+  '56533eb9ac21ba0edf2244e2',
+  'aff0395860f5d3034dc0bfc9',
+  'aa2e6f85cab2ab736c9a9b24'
 ];
 
-function buildUserUpdate(
-  user,
-  challengeId,
-  _completedChallenge,
-  timezone
-) {
+function buildUserUpdate(user, challengeId, _completedChallenge, timezone) {
   const { files } = _completedChallenge;
   let completedChallenge = {};
 
@@ -43,17 +38,9 @@ function buildUserUpdate(
       ..._completedChallenge,
       files: Object.keys(files)
         .map(key => files[key])
-        .map(file => _.pick(
-          file,
-          [
-            'contents',
-            'key',
-            'index',
-            'name',
-            'path',
-            'ext'
-          ]
-        ))
+        .map(file =>
+          _.pick(file, ['contents', 'key', 'index', 'name', 'path', 'ext'])
+        )
     };
   } else {
     completedChallenge = _.omit(_completedChallenge, ['files']);
@@ -100,9 +87,6 @@ function buildUserUpdate(
       timezone: userTimezone
     };
   }
-
-  log('user update data', updateData);
-
   return {
     alreadyCompleted,
     updateData,
@@ -110,11 +94,54 @@ function buildUserUpdate(
   };
 }
 
-export default function(app) {
+function buildChallengeUrl(challenge) {
+  const { superBlock, block, dashedName } = challenge;
+  return `/learn/${dasherize(superBlock)}/${dasherize(block)}/${dashedName}`;
+}
+
+function getFirstChallenge(Challenge) {
+  return new Promise(resolve => {
+    Challenge.find(
+      { where: { challengeOrder: 0, superOrder: 1, order: 0 } },
+      (err, challenge) => {
+        if (err) {
+          console.log(err);
+          return resolve('/learn');
+        }
+        return resolve(buildChallengeUrl(challenge));
+      }
+    );
+  });
+}
+
+async function createChallengeUrlResolver(app) {
+  const { Challenge } = app.models;
+  const cache = new Map();
+  const firstChallenge = await getFirstChallenge(Challenge);
+
+  return function resolveChallengeUrl(id) {
+    return new Promise(resolve => {
+      if (cache.has(id)) {
+        return resolve(cache.get(id));
+      }
+      return Challenge.findById(id, (err, challenge) => {
+        if (err) {
+          console.log(err);
+          return firstChallenge;
+        }
+        const challengeUrl = buildChallengeUrl(challenge);
+        cache.set(id, challengeUrl);
+        return resolve(challengeUrl);
+      });
+    });
+  };
+}
+
+export default async function bootChallenge(app, done) {
   const send200toNonUser = ifNoUserSend(true);
   const api = app.loopback.Router();
   const router = app.loopback.Router();
-  const map = cachedMap(app.models);
+  const challengeUrlResolver = await createChallengeUrlResolver(app);
 
   api.post(
     '/modern-challenge-completed',
@@ -124,17 +151,9 @@ export default function(app) {
 
   // deprecate endpoint
   // remove once new endpoint is live
-  api.post(
-    '/completed-challenge',
-    send200toNonUser,
-    completedChallenge
-  );
+  api.post('/completed-challenge', send200toNonUser, completedChallenge);
 
-  api.post(
-    '/challenge-completed',
-    send200toNonUser,
-    completedChallenge
-  );
+  api.post('/challenge-completed', send200toNonUser, completedChallenge);
 
   // deprecate endpoint
   // remove once new endpoint is live
@@ -144,11 +163,7 @@ export default function(app) {
     projectCompleted
   );
 
-  api.post(
-    '/project-completed',
-    send200toNonUser,
-    projectCompleted
-  );
+  api.post('/project-completed', send200toNonUser, projectCompleted);
 
   api.post(
     '/backend-challenge-completed',
@@ -156,10 +171,7 @@ export default function(app) {
     backendChallengeCompleted
   );
 
-  router.get(
-    '/challenges/current-challenge',
-    redirectToCurrentChallenge
-  );
+  router.get('/challenges/current-challenge', redirectToCurrentChallenge);
 
   router.get('/challenges', redirectToLearn);
 
@@ -187,38 +199,37 @@ export default function(app) {
     }
 
     const user = req.user;
-    return user.getCompletedChallenges$()
+    return user
+      .getCompletedChallenges$()
       .flatMap(() => {
         const completedDate = Date.now();
-        const {
-          id,
-          files
-        } = req.body;
+        const { id, files } = req.body;
 
-        const {
-          alreadyCompleted,
-          updateData
-        } = buildUserUpdate(
-          user,
+        const { alreadyCompleted, updateData } = buildUserUpdate(user, id, {
           id,
-          { id, files, completedDate }
-        );
+          files,
+          completedDate
+        });
 
         const points = alreadyCompleted ? user.points : user.points + 1;
-
-        return user.update$(updateData)
-          .doOnNext(() => user.manualReload())
-          .doOnNext(({ count }) => log('%s documents updated', count))
-          .map(() => {
-            if (type === 'json') {
-              return res.json({
-                points,
-                alreadyCompleted,
-                completedDate
-              });
+        const updatePromise = new Promise((resolve, reject) =>
+          user.updateAttributes(updateData, err => {
+            if (err) {
+              return reject(err);
             }
-            return res.sendStatus(200);
-          });
+            return resolve();
+          })
+        );
+        return Observable.fromPromise(updatePromise).map(() => {
+          if (type === 'json') {
+            return res.json({
+              points,
+              alreadyCompleted,
+              completedDate
+            });
+          }
+          return res.sendStatus(200);
+        });
       })
       .subscribe(() => {}, next);
   }
@@ -227,6 +238,8 @@ export default function(app) {
     req.checkBody('id', 'id must be an ObjectId').isMongoId();
     const type = accepts(req).type('html', 'json', 'text');
     const errors = req.validationErrors(true);
+
+    const { user } = req;
 
     if (errors) {
       if (type === 'json') {
@@ -237,36 +250,39 @@ export default function(app) {
       return res.sendStatus(403);
     }
 
-    return req.user.getCompletedChallenges$()
+    return user
+      .getCompletedChallenges$()
       .flatMap(() => {
         const completedDate = Date.now();
         const { id, solution, timezone, files } = req.body;
 
-        const {
-          alreadyCompleted,
-          updateData
-        } = buildUserUpdate(
-          req.user,
+        const { alreadyCompleted, updateData } = buildUserUpdate(
+          user,
           id,
           { id, solution, completedDate, files },
           timezone
         );
 
-        const user = req.user;
         const points = alreadyCompleted ? user.points : user.points + 1;
 
-        return user.update$(updateData)
-          .doOnNext(({ count }) => log('%s documents updated', count))
-          .map(() => {
-            if (type === 'json') {
-              return res.json({
-                points,
-                alreadyCompleted,
-                completedDate
-              });
+        const updatePromise = new Promise((resolve, reject) =>
+          user.updateAttributes(updateData, err => {
+            if (err) {
+              return reject(err);
             }
-            return res.sendStatus(200);
-          });
+            return resolve();
+          })
+        );
+        return Observable.fromPromise(updatePromise).map(() => {
+          if (type === 'json') {
+            return res.json({
+              points,
+              alreadyCompleted,
+              completedDate
+            });
+          }
+          return res.sendStatus(200);
+        });
       })
       .subscribe(() => {}, next);
   }
@@ -289,48 +305,54 @@ export default function(app) {
 
     const { user, body = {} } = req;
 
-    const completedChallenge = _.pick(
-      body,
-      [ 'id', 'solution', 'githubLink', 'challengeType', 'files' ]
-    );
+    const completedChallenge = _.pick(body, [
+      'id',
+      'solution',
+      'githubLink',
+      'challengeType',
+      'files'
+    ]);
     completedChallenge.completedDate = Date.now();
 
     if (
       !completedChallenge.solution ||
       // only basejumps require github links
-      (
-        completedChallenge.challengeType === 4 &&
-        !completedChallenge.githubLink
-      )
+      (completedChallenge.challengeType === 4 && !completedChallenge.githubLink)
     ) {
       req.flash(
         'danger',
-        'You haven\'t supplied the necessary URLs for us to inspect your work.'
+        "You haven't supplied the necessary URLs for us to inspect your work."
       );
       return res.sendStatus(403);
     }
 
-
-    return user.getCompletedChallenges$()
+    return user
+      .getCompletedChallenges$()
       .flatMap(() => {
-        const {
-          alreadyCompleted,
-          updateData
-        } = buildUserUpdate(user, completedChallenge.id, completedChallenge);
+        const { alreadyCompleted, updateData } = buildUserUpdate(
+          user,
+          completedChallenge.id,
+          completedChallenge
+        );
 
-        return user.update$(updateData)
-          .doOnNext(() => user.manualReload())
-          .doOnNext(({ count }) => log('%s documents updated', count))
-          .doOnNext(() => {
-            if (type === 'json') {
-              return res.send({
-                alreadyCompleted,
-                points: alreadyCompleted ? user.points : user.points + 1,
-                completedDate: completedChallenge.completedDate
-              });
+        const updatePromise = new Promise((resolve, reject) =>
+          user.updateAttributes(updateData, err => {
+            if (err) {
+              return reject(err);
             }
-            return res.status(200).send(true);
-          });
+            return resolve();
+          })
+        );
+        return Observable.fromPromise(updatePromise).doOnNext(() => {
+          if (type === 'json') {
+            return res.send({
+              alreadyCompleted,
+              points: alreadyCompleted ? user.points : user.points + 1,
+              completedDate: completedChallenge.completedDate
+            });
+          }
+          return res.status(200).send(true);
+        });
       })
       .subscribe(() => {}, next);
   }
@@ -352,57 +374,59 @@ export default function(app) {
 
     const { user, body = {} } = req;
 
-    const completedChallenge = _.pick(
-      body,
-      [ 'id', 'solution' ]
-    );
+    const completedChallenge = _.pick(body, ['id', 'solution']);
     completedChallenge.completedDate = Date.now();
 
-
-    return user.getCompletedChallenges$()
+    return user
+      .getCompletedChallenges$()
       .flatMap(() => {
-        const {
-          alreadyCompleted,
-          updateData
-        } = buildUserUpdate(user, completedChallenge.id, completedChallenge);
+        const { alreadyCompleted, updateData } = buildUserUpdate(
+          user,
+          completedChallenge.id,
+          completedChallenge
+        );
 
-        return user.update$(updateData)
-          .doOnNext(({ count }) => log('%s documents updated', count))
-          .doOnNext(() => {
-            if (type === 'json') {
-              return res.send({
-                alreadyCompleted,
-                points: alreadyCompleted ? user.points : user.points + 1,
-                completedDate: completedChallenge.completedDate
-              });
+        const updatePromise = new Promise((resolve, reject) =>
+          user.updateAttributes(updateData, err => {
+            if (err) {
+              return reject(err);
             }
-            return res.status(200).send(true);
-          });
+            return resolve();
+          })
+        );
+        return Observable.fromPromise(updatePromise).doOnNext(() => {
+          if (type === 'json') {
+            return res.send({
+              alreadyCompleted,
+              points: alreadyCompleted ? user.points : user.points + 1,
+              completedDate: completedChallenge.completedDate
+            });
+          }
+          return res.status(200).send(true);
+        });
       })
       .subscribe(() => {}, next);
   }
 
-  function redirectToCurrentChallenge(req, res, next) {
+  async function redirectToCurrentChallenge(req, res, next) {
     const { user } = req;
+    if (!user) {
+      return res.redirect(learnURL);
+    }
     const challengeId = user && user.currentChallengeId;
-    return getChallengeById(map, challengeId)
-      .map(challenge => {
-        const { block, dashedName, superBlock } = challenge;
-        if (!dashedName || !block) {
-          // this should normally not be hit if database is properly seeded
-          throw new Error(dedent`
-            Attempted to find '${dashedName}'
-            from '${ challengeId || 'no challenge id found'}'
-            but came up empty.
-            db may not be properly seeded.
-          `);
-        }
-        return `${learnURL}/${dasherize(superBlock)}/${block}/${dashedName}`;
-      })
-      .subscribe(
-        redirect => res.redirect(redirect || learnURL),
-        next
-      );
+    log(req.user.username);
+    log(challengeId);
+    const challengeUrl = await challengeUrlResolver(challengeId).catch(next);
+    log(challengeUrl);
+    if (challengeUrl === '/learn') {
+      // this should normally not be hit if database is properly seeded
+      throw new Error(dedent`
+        Attempted to find the url for ${challengeId}'
+        but came up empty.
+        db may not be properly seeded.
+      `);
+    }
+    return res.redirect(`${homeLocation}${challengeUrl}`);
   }
 
   function redirectToLearn(req, res) {
@@ -413,4 +437,5 @@ export default function(app) {
     }
     return res.status(302).redirect(learnURL);
   }
+  done();
 }
