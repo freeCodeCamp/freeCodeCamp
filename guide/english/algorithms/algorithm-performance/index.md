@@ -16,7 +16,7 @@ A function's limiting behavior is how the function acts as it trends towards a p
 
 In short, big-O notation is used to describe the growth or decline of a function, usually with respect to another function.  In programming, big-O notation compares the growth/decline of the runtime in respects to the size of the input.  
 
-NOTE: x^2 is equivalent to x * x or 'x-squared']
+NOTE: x^2 is equivalent to x * x or 'x-squared'
 
 For example we say that x = O(x^2) for all x > 1 or in other words, x^2 is an upper bound on x and therefore it grows faster.  
 The symbol of a claim like x = O(x^2) for all x > _n_ can be substituted with x <= x^2 for all x > _n_ where _n_ is the minimum number that satisfies the claim, in this case 1.  
