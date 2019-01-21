@@ -43,6 +43,8 @@ Here we have declared and initialized the array in one step. We could have also 
 
 ```java
 double[] List = new double[10];
+String[] words = new String[20];
+int[] numbers = new int[100];
 ```
  We are creating a array variable named `List` of type double and allocating it 10 memory locations. This double datatype array is initialized to `0.0` by default.
 
@@ -61,6 +63,11 @@ The code above is equivalent to:
 double[] list = new double[4];
 *IMPORTANT NOTE: Please note the difference between the types of brackets
 that are used to represent arrays in two different ways.
+
+String[] rainbow = {"red", "orange", "yellow", "green", "blue", "purple"};
+
+The code above is equivalent to:
+String[] rainbow = new String[6];
 ```
 
 ## Declaring array literal
@@ -92,6 +99,8 @@ Output:
 ## Modifying Arrays:
 ```java
 arrayName[index] = value; 
+
+rainbow[0] = "red";
 ```
 
 Note: You cannot change the size or type of an array after initializing it.
