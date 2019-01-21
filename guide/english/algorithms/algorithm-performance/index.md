@@ -49,6 +49,10 @@ The following 3 notations are mostly used to represent time complexity of algori
 
 3. **Ω Notation**: Ω notation provides an lower bound to algorithm. it shows fastest possible answer for that algorithm.
     >Ω (g(n)) = {f(n): there exist positive constants c and n0 such that 0 <= cg(n) <= f(n) for all n >= n0}.
+    
+4. **Little o Notation**: The little o notation defines a strict upper bound of an algorithm. This means that f(n) is less than c * g(n) for all c, but cannot be equal.
+
+5. **ω Notation**: ω (Little Ω) notation provides a strict lower bound to algorithm. This means that f(n) is greater than c * g(n) for all c, but cannot be equal.
 
 ## Examples
 
