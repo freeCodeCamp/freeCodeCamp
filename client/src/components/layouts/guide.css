@@ -66,9 +66,11 @@
 
 /* Layout */
 
-.content {
+.content,
+.sideNav {
   /* 100vh - (navbar height) - (spacer height) */
-  min-height: calc(100vh - 38px - 60px);
+  height: calc(100vh - 38px - 60px);
+  overflow-y: auto;
 }
 
 .content img {
@@ -179,7 +181,7 @@
 
 @media (max-width: 992px) {
   .content {
-    min-height: auto;
+    height: auto;
   }
 }
 

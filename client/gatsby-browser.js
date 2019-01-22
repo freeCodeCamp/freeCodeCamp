@@ -6,6 +6,7 @@ import { createStore } from './src/redux/createStore';
 import AppMountNotifier from './src/components/AppMountNotifier';
 import GuideNavContextProvider from './src/contexts/GuideNavigationContext';
 import DefaultLayout from './src/components/layouts/Default';
+import GuideLayout from './src/components/layouts/GuideLayout';
 
 const store = createStore();
 
@@ -31,6 +32,13 @@ export const wrapPageElement = ({ element, props }) => {
     return (
       <DefaultLayout disableSettings={true} landingPage={true}>
         {element}
+      </DefaultLayout>
+    );
+  }
+  if ((/^\/guide(\/.*)*/).test(pathname)) {
+    return (
+      <DefaultLayout>
+        <GuideLayout>{element}</GuideLayout>
       </DefaultLayout>
     );
   }
