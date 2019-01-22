@@ -1,10 +1,9 @@
-import React, { Component } from 'react';
+import React, { Component, Fragment } from 'react';
 import PropTypes from 'prop-types';
 import { graphql } from 'gatsby';
 import Helmet from 'react-helmet';
 
 import Breadcrumbs from './components/Breadcrumbs';
-import Layout from '../../components/layouts/GuideLayout';
 
 const propTypes = {
   data: PropTypes.object,
@@ -40,13 +39,10 @@ class GuideArticle extends Component {
       pageContext: { meta }
     } = this.props;
     return (
-      <Layout>
+      <Fragment>
         <Helmet>
           <title>{`${title} | freeCodeCamp Guide`}</title>
-          <link
-            href={`https://www.freecodecamp.org${slug}`}
-            rel='canonical'
-          />
+          <link href={`https://www.freecodecamp.org${slug}`} rel='canonical' />
           <meta
             content={`https://www.freecodecamp.org${slug}`}
             property='og:url'
@@ -72,7 +68,7 @@ class GuideArticle extends Component {
           }}
           tabIndex='-1'
         />
-      </Layout>
+      </Fragment>
     );
   }
 }
