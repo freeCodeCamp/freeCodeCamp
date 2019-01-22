@@ -152,7 +152,7 @@ class ShowCertification extends Component {
             <div className='row signatures'>
               <Image
                 alt="Quincy Larson's Signature"
-                src='https://i.imgur.com/OJFVJKg.png'
+                src='https://cdn.freecodecamp.org/platform/english/images/quincy-larson-signature.svg'
               />
               <p>
                 <strong>Quincy Larson</strong>
