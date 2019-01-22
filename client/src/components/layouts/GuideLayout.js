@@ -1,10 +1,9 @@
-import React from 'react';
+import React, { Fragment } from 'react';
 import PropTypes from 'prop-types';
 import { StaticQuery, graphql } from 'gatsby';
 import { Grid, Col, Row } from '@freecodecamp/react-bootstrap';
 
 import { NavigationContext } from '../../contexts/GuideNavigationContext';
-import DefaultLayout from './Default';
 import SideNav from './components/guide/SideNav';
 import Spacer from '../helpers/Spacer';
 
@@ -59,7 +58,7 @@ const Layout = ({ children }) => (
             expandedState,
             toggleExpandedState
           }) => (
-            <DefaultLayout>
+            <Fragment>
               <Spacer size={2} />
               <Grid>
                 <Row>
@@ -87,7 +86,7 @@ const Layout = ({ children }) => (
                   </Col>
                 </Row>
               </Grid>
-            </DefaultLayout>
+            </Fragment>
           )}
         </NavigationContext>
       );
