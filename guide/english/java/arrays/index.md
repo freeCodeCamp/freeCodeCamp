@@ -149,7 +149,7 @@ Output:
 
 
 ### Multi-dimensional Arrays
-Two-dimensional arrays (2D arrays) can be thought of as a table with rows and columns. Though this representation is only a way to visualize the array for better problem-solving. The values are actually stored in sequential memory addresses only.
+Two-dimensional arrays (2D arrays) can be thought of as a table with rows and columns. Though this representation is only a way to visualize the array for better problem-solving. The values are actually stored in sequential memory addresses only. Additionally, their coordinate system is different from cartesian coordinates in that array values are referenced row then column.
 ```java
 int M = 5;
 int N = 5;
