@@ -31,21 +31,21 @@
   letter-spacing: 0.02em;
 }
 
-#challege-page-tabs .nav-tabs {
+#challenge-page-tabs .nav-tabs {
   margin-left: 2px;
   display: flex;
 }
 
-#challege-page-tabs .nav-tabs > li {
+#challenge-page-tabs .nav-tabs > li {
   flex: 1;
   text-align: center;
 }
 
-#challege-page-tabs .nav-tabs > li > a {
+#challenge-page-tabs .nav-tabs > li > a {
   padding: 5px 10px;
 }
 
-.challege-edittor-wrapper {
+.challenge-editor-wrapper {
   height: calc(100vh - 112px);
   overflow: hidden;
 }
