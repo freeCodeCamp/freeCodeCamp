@@ -30,12 +30,16 @@ class Header extends Component {
       <header className={this.state.isMenuOpened ? 'opened' : null}>
         <nav id='top-nav'>
           <Media query='(min-width: 735px)'>
-            <Fragment>
-              <Link className='home-link' to='/'>
-                <NavLogo />
-              </Link>
-              {disableSettings ? null : <FCCSearch />}
-            </Fragment>
+            {matches =>
+              matches && (
+                <Fragment>
+                  <Link className='home-link' to='/'>
+                    <NavLogo />
+                  </Link>
+                  {disableSettings ? null : <FCCSearch />}
+                </Fragment>
+              )
+            }
           </Media>
 
           <ul id='top-right-nav'>
@@ -58,16 +62,20 @@ class Header extends Component {
           </ul>
         </nav>
 
-        <Media query='(max-width: 734px)'>
-          <div className='mobile-menu'>
-            <Link className='home-link' to='/'>
-              <NavLogo />
-            </Link>
-            {disableSettings ? null : <FCCSearch />}
-            <span className='menu-button' onClick={this.toggleClass}>
-              Menu
-            </span>
-          </div>
+        <Media defaultMatches={false} query='(max-width: 734px)'>
+          {matches =>
+            matches && (
+              <div className='mobile-menu'>
+                <Link className='home-link' to='/'>
+                  <NavLogo />
+                </Link>
+                {disableSettings ? null : <FCCSearch />}
+                <span className='menu-button' onClick={this.toggleClass}>
+                  Menu
+                </span>
+              </div>
+            )
+          }
         </Media>
       </header>
     );

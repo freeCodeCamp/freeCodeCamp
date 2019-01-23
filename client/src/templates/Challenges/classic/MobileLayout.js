@@ -5,10 +5,7 @@ import { connect } from 'react-redux';
 
 import ToolPanel from '../components/Tool-Panel';
 import { createStructuredSelector } from 'reselect';
-import {
-  currentTabSelector,
-  moveToTab,
-} from '../redux';
+import { currentTabSelector, moveToTab } from '../redux';
 import { bindActionCreators } from 'redux';
 
 const mapStateToProps = createStructuredSelector({
@@ -18,23 +15,22 @@ const mapStateToProps = createStructuredSelector({
 const mapDispatchToProps = dispatch =>
   bindActionCreators(
     {
-      moveToTab,
+      moveToTab
     },
     dispatch
   );
 
 const propTypes = {
-  moveToTab: PropTypes.func,
   currentTab: PropTypes.number,
-  instructions: PropTypes.element,
   editor: PropTypes.element,
-  testOutput: PropTypes.element,
-  hasPreview: PropTypes.bool,
-  preview: PropTypes.element,
   guideUrl: PropTypes.string,
+  hasPreview: PropTypes.bool,
+  instructions: PropTypes.element,
+  moveToTab: PropTypes.func,
+  preview: PropTypes.element,
+  testOutput: PropTypes.element,
   videoUrl: PropTypes.string
 };
-
 
 class MobileLayout extends Component {
   render() {
@@ -60,21 +56,17 @@ class MobileLayout extends Component {
         <Tabs
           activeKey={currentTab}
           defaultActiveKey={1}
-          id='challege-page-tabs'
-          onSelect={(key) => moveToTab(key)}
-        >
+          id='challenge-page-tabs'
+          onSelect={moveToTab}
+          >
           <TabPane eventKey={1} title='Instructions'>
-            { instructions }
+            {instructions}
           </TabPane>
           <TabPane eventKey={2} title='Code' {...editorTabPaneProps}>
-            <div className='challege-edittor-wrapper'>
-              {editor}
-            </div>
+            <div className='challenge-editor-wrapper'>{editor}</div>
           </TabPane>
           <TabPane eventKey={3} title='Tests' {...editorTabPaneProps}>
-            <div className='challege-edittor-wrapper'>
-              {testOutput}
-            </div>
+            <div className='challenge-editor-wrapper'>{testOutput}</div>
           </TabPane>
           {hasPreview && (
             <TabPane eventKey={4} title='Preview'>
@@ -82,11 +74,7 @@ class MobileLayout extends Component {
             </TabPane>
           )}
         </Tabs>
-        <ToolPanel
-          guideUrl={guideUrl}
-          isMobile={true}
-          videoUrl={videoUrl}
-        />
+        <ToolPanel guideUrl={guideUrl} isMobile={true} videoUrl={videoUrl} />
       </Fragment>
     );
   }
@@ -95,4 +83,7 @@ class MobileLayout extends Component {
 MobileLayout.displayName = 'MobileLayout';
 MobileLayout.propTypes = propTypes;
 
-export default connect(mapStateToProps, mapDispatchToProps)(MobileLayout);
+export default connect(
+  mapStateToProps,
+  mapDispatchToProps
+)(MobileLayout);

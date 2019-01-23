@@ -72,7 +72,7 @@ const propTypes = {
   output: PropTypes.string,
   pageContext: PropTypes.shape({
     challengeMeta: PropTypes.shape({
-      nextchallengePath: PropTypes.string
+      nextChallengePath: PropTypes.string
     })
   }),
   tests: PropTypes.arrayOf(
@@ -178,7 +178,9 @@ class ShowClassic extends Component {
   }
 
   getGuideUrl() {
-    const {fields: { slug }} = this.getChallenge();
+    const {
+      fields: { slug }
+    } = this.getChallenge();
     return createGuideUrl(slug);
   }
 
@@ -201,7 +203,7 @@ class ShowClassic extends Component {
     const {
       fields: { blockName },
       description,
-      instructions,
+      instructions
     } = this.getChallenge();
 
     return (
@@ -221,8 +223,8 @@ class ShowClassic extends Component {
   renderEditor() {
     const { files } = this.props;
     const challengeFile = first(Object.keys(files).map(key => files[key]));
-    return challengeFile && (
-      <Editor {...challengeFile} fileKey={challengeFile.key} />
+    return (
+      challengeFile && <Editor {...challengeFile} fileKey={challengeFile.key} />
     );
   }
 
@@ -230,7 +232,7 @@ class ShowClassic extends Component {
     const { output } = this.props;
     return (
       <Output
-            defaultOutput={`
+        defaultOutput={`
 /**
 * Your test output will go here.
 */
@@ -242,10 +244,7 @@ class ShowClassic extends Component {
 
   renderPreview() {
     return (
-      <Preview
-        className='full-height'
-        disableIframe={this.state.resizing}
-      />
+      <Preview className='full-height' disableIframe={this.state.resizing} />
     );
   }
 
@@ -255,31 +254,33 @@ class ShowClassic extends Component {
         <Helmet
           title={`Learn ${this.getBlockNameTitle()} | freeCodeCamp.org`}
         />
-        <Media query={{ maxWidth: MAX_MOBILE_WIDTH }}>
+        <Media defaultMatches={false} query={{ maxWidth: MAX_MOBILE_WIDTH }}>
           {matches =>
-            matches
-              ? (
-                <MobileLayout
-                  instructions={this.renderInstructionsPanel({ showToolPanel: false })}
-                  editor={this.renderEditor()}
-                  testOutput={this.renderTestOutput()}
-                  hasPreview={this.hasPreview()}
-                  preview={this.renderPreview()}
-                  guideUrl={this.getGuideUrl()}
-                  videoUrl={this.getVideoUrl()}
-                />
-              )
-              : (
-                <DesktopLayout
-                  instructions={this.renderInstructionsPanel({ showToolPanel: true })}
-                  editor={this.renderEditor()}
-                  testOutput={this.renderTestOutput()}
-                  hasPreview={this.hasPreview()}
-                  preview={this.renderPreview()}
-                  resizeProps={this.resizeProps}
-                  challengeFile={this.getChallengeFile()}
-                />
-              )
+            matches ? (
+              <MobileLayout
+                editor={this.renderEditor()}
+                guideUrl={this.getGuideUrl()}
+                hasPreview={this.hasPreview()}
+                instructions={this.renderInstructionsPanel({
+                  showToolPanel: false
+                })}
+                preview={this.renderPreview()}
+                testOutput={this.renderTestOutput()}
+                videoUrl={this.getVideoUrl()}
+              />
+            ) : (
+              <DesktopLayout
+                challengeFile={this.getChallengeFile()}
+                editor={this.renderEditor()}
+                hasPreview={this.hasPreview()}
+                instructions={this.renderInstructionsPanel({
+                  showToolPanel: true
+                })}
+                preview={this.renderPreview()}
+                resizeProps={this.resizeProps}
+                testOutput={this.renderTestOutput()}
+              />
+            )
           }
         </Media>
         <CompletionModal />
