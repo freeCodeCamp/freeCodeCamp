@@ -13,7 +13,7 @@ Designers should pay attention to the following potential issues:
 
 1) The user understands the task, but can't complete it in time
 2) The user expresses surprise or delight
-3) The user expresse frustration or confusion
+3) The user expresses frustration or confusion
 4) The user indicates something that doesn't make sense to them
 5) The user suggests a change to the design
 

@@ -7,7 +7,7 @@ localeTitle: 背景大小
 background-size属性指定背景图像的大小。您可以设置长度或百分比，第一个值是宽度，第二个值是高度。您还可以使用以下5个关键字值之一：
 
 ```css
-.auto {background-size: auto;} 
+ .auto {background-size: auto;} 
  .cover {background-size: cover;} 
  .contain {background-size: contain;} 
  .initial {background-size: initial;} 
@@ -20,7 +20,7 @@ background-size属性指定背景图像的大小。您可以设置长度或百�
 要在多个背景图像上设置此属性，请用逗号分隔值：
 
 ```css
-.multiple { 
+ .multiple { 
     background-image: url(1.png), url(2.png); 
     background-size: 3px 3px, cover; 
  } 
@@ -28,7 +28,7 @@ background-size属性指定背景图像的大小。您可以设置长度或百�
 
 #### 更多信息：
 
-文档： [MDN](https://developer.mozilla.org/en-US/docs/Web/CSS/background-size)
+文档： [MDN](https://developer.mozilla.org/zh-CN/docs/Web/CSS/background-size)
 
 CSS-Tricks： [背景大小](https://css-tricks.com/almanac/properties/b/background-size/)
 
