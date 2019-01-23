@@ -84,36 +84,6 @@
   height: 20px;
 }
 
-/* 404 */
-
-.flexWrapper {
-  align-items: center;
-  display: flex;
-  flex-direction: column;
-  height: 50vh;
-  justify-content: center;
-}
-
-.verticalAlign {
-  align-items: center;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  vertical-align: middle;
-}
-
-.button {
-  color: #006400;
-  background: #fff;
-  border-color: #006400;
-}
-
-.button:hover {
-  color: #fff;
-  background: #006400;
-  border-color: #fff;
-}
-
 /* SideNav */
 
 .caretStyle {
@@ -197,6 +167,6 @@
   position: absolute;
 }
 
-.article {
+.content {
   outline: 0;
 }
