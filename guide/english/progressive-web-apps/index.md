@@ -45,11 +45,18 @@ A great analogy from [Aaron Gustafson](http://alistapart.com/article/understandi
 This implies that depending on the browser, the experience can change.
 
 Service Workers are progressive enhancement friendly, meaning that if a user's browser does not support Service 
-Workers, they will still be able to utilize the site, they just will not benefit from the additional functionality that PWAs offer. this can be acheived by wrapping the Service Worker code in a simple conditional statement that checks for Service Worker support within the browser.
+Workers, they will still be able to utilize the site, they just will not benefit from the additional functionality that PWAs offer. This can be acheived by wrapping the Service Worker code in a simple conditional statement that checks for Service Worker support within the browser.
+
+[Example](https://developer.mozilla.org/en-US/docs/Web/API/Navigator/serviceWorker)
+```
+if ('serviceWorker' in navigator) {
+  // Supported!
+}
+```
 
 ### Demo
 
-<iframe width="560" height="315" src="https://www.youtube.com/embed/esfi7ZLibmk" frameborder="0" gesture="media" allow="encrypted-media" allowfullscreen></iframe>
+[YouTube Video](https://www.youtube.com/embed/esfi7ZLibmk)
 
 ### References
 
