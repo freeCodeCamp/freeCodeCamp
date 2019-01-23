@@ -18,5 +18,6 @@ The standard agenda for each person is:
 Team members are to listen carefully to each other's contributions and attempt to identify areas where they can assist each other's progress. The standup meeting will also surface more lengthy topics of discussion that need to take place between different members of the team. These lengthier discussions that arise should then be halted and taken outside of the standup, involving only the relevant participants, and not the entire team. 
 
 ### More Information:
-[Wikipedia - Stand-up meeting](https://en.wikipedia.org/wiki/Stand-up_meeting)
-[YouTube - Example of stand-up meeting](https://www.youtube.com/watch?v=_3VIC8u1UV8)
+- [Wikipedia - Stand-up meeting](https://en.wikipedia.org/wiki/Stand-up_meeting)
+- [YouTube - Example of stand-up meeting](https://www.youtube.com/watch?v=_3VIC8u1UV8)
+- [blossom.co - 3 Tips for a Successful Stand-Up Meeting](https://www.blossom.co/blog/3-tips-for-quick-effective-stand-up-meetings)
