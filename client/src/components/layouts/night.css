@@ -8,7 +8,8 @@
   color: #006400;
 }
 
-.night .btn-invert:hover, .night .btn-invert:focus {
+.night .btn-invert:hover,
+.night .btn-invert:focus {
   background-color: #006400;
   color: #ddd;
 }
@@ -17,15 +18,34 @@
   color: #ddd;
 }
 
-.night input, .night textarea {
+.night input,
+.night textarea {
   background-color: #ddd;
   color: #333;
 }
 
-.night #top-right-nav li > a, .night #top-right-nav li > span {
+.night #top-right-nav li > a,
+.night #top-right-nav li > span {
   color: #ddd;
 }
 
 .night .btn.btn-primary {
   color: #ddd;
+}
+
+.night .challenge-preview {
+  background: #fff;
+}
+.night .test-result:nth-child(2n + 1) {
+  color: #fff;
+  background: #2a2a2a;
+}
+.night .challenge-instructions blockquote,
+.night blockquote,
+.night pre {
+  background: #222;
+}
+.night code {
+  background-color: #242424;
+  color: #02a902;
 }
