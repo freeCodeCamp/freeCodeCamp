@@ -5,8 +5,8 @@ title: Arrays
 # Array
 
 An Array is a collection of values (or objects) of similar datatypes (both primitive and reference datatypes are allowed) held in sequential memory addresses.
-All the variables in the array must be of the same type, declared at instantiation.
-Arrays always start with an index of 0 and are instantiated to a set number of indexes. 
+All the variables in the array must be of the same type, declared at instantiation. Failure to remain consistent with the type will lead to compilation errors.
+Arrays always start with an index of 0 and are instantiated to a set number of indexes. To clarify, an array that is instantiated will be created to hold a certain number of variables. The number of variables that can be held in an array is not mutable.
 
 **Syntax:**
 
@@ -36,7 +36,13 @@ Note: The style `double list[]` is not preferred as it comes from the C/C++ lang
 ## Creating Arrays:
 
 ```java
-dataType[] arrayName = new dataType[arraySize];
+dataType[] arrayName = new dataType[arraySize]; //Preferable
+```
+
+OR
+
+```java
+datatype arrayName[] = new dataType[arraySize]; //Not preferable
 ```
 Here we have declared and initialized the array in one step. We could have also written it in two parts with one step being the declaration of array followed by the initialization of array. By default, all memory locations allocated to the array is initialized to its default values, depending upon the datatype.
 
