@@ -13,6 +13,7 @@ header {
   border: none;
   display: flex;
   justify-content: space-between;
+  align-items: center;
   padding: 0 15px;
 }
 
@@ -31,13 +32,15 @@ header {
   display: flex;
   margin: 0;
   list-style: none;
-  justify-content: space-around;
+  justify-content: space-between;
+  align-items: center;
+  width: 290px;
   background-color: #006400;
 }
 
 #top-right-nav a,
 #top-right-nav img {
-  max-height: 40px;
+  max-height: 38px;
 }
 
 #top-right-nav a.btn-cta {
@@ -51,12 +54,7 @@ header {
 }
 
 #top-right-nav li {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  height: 100%;
-  margin: 0 5px;
+  margin: 0;
 }
 
 #top-right-nav li,
@@ -75,11 +73,6 @@ header {
   color: #006400;
 }
 
-li.user-state-link {
-  position: relative;
-  bottom: 0;
-}
-
 li.user-state-link,
 li.user-state-link:hover,
 li.user-state-link:focus,
@@ -95,7 +88,7 @@ li.user-state-link > a:focus {
 }
 
 .user-state-spinner {
-  height: 40px;
+  height: 38px;
 }
 
 .user-state-spinner > div {
@@ -105,7 +98,7 @@ li.user-state-link > a:focus {
 /* Search bar */
 .fcc_searchBar {
   flex-grow: 1;
-  padding: 2px 10px 0;
+  padding: 0 10px;
 }
 
 .fcc_searchBar .ais-SearchBox-form {
@@ -154,25 +147,8 @@ li.user-state-link > a:focus {
   }
 }
 
-.mobile-menu {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  width: 100%;
-  background-color: #006400;
-  color: #fff;
-  margin-top: -38px;
-  height: 38px;
-  z-index: 300;
-}
-
-.mobile-menu .menu-button {
-  margin: 0 20px 0 12px;
-  padding: 2px 14px;
-  border: 1px solid #fff;
-  border-radius: 3px;
-  cursor: pointer;
-  justify-self: flex-end;
+#top-nav .menu-button {
+  display: none;
 }
 
 @media (max-width: 734px) {
@@ -180,37 +156,41 @@ li.user-state-link > a:focus {
     padding: 0;
   }
 
+  #top-nav .menu-button {
+    display: block;
+    margin: 0 20px 0 12px;
+    padding: 2px 14px;
+    border: 1px solid #fff;
+    border-radius: 3px;
+    cursor: pointer;
+    color: #fff;
+  }
+
   .opened #top-right-nav {
-    transform: translate(0, 38px);
-    padding-bottom: 10px;
-    opacity: 1;
+    top: 38px;
   }
 
   #top-right-nav {
-    transform: translate(0, -300px);
+    position: absolute;
+    top: -300px;
     flex-direction: column;
-    width: 100%;
+    width: 100vw;
     height: min-content;
-    min-height: 180px;
-    margin: 0;
-    opacity: 0;
+    min-height: 160px;
+    padding: 10px 0;
   }
 
-  #top-right-nav li:last-child {
-    margin-right: 0;
-  }
-
-  .mobile-menu img {
+  #top-nav img {
     margin: 0 0 0 10px;
   }
 }
 
 @media (max-width: 420px) {
-  .mobile-menu img {
+  #top-nav img {
     margin: 0 0 0 5px;
   }
 
-  .mobile-menu .menu-button {
+  #top-nav .menu-button {
     margin: 0 10px 0 4px;
   }
 }
