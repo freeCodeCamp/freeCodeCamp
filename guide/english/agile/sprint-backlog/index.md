@@ -10,5 +10,5 @@ It is critical that the team itself selects the items and size of the Sprint Bac
 The sprint backlog is managed and ordered by the product owner with input from the development team.
 
 #### More Information:
-[Scrum Guide: Sprint Backlog](http://www.scrumguides.org/scrum-guide.html#artifacts-sprintbacklog)
-[What is a Product Backlog?](https://www.scrum.org/resources/what-is-a-product-backlog)
+- [Scrum Guide: Sprint Backlog](http://www.scrumguides.org/scrum-guide.html#artifacts-sprintbacklog)
+- [What is a Product Backlog?](https://www.scrum.org/resources/what-is-a-product-backlog)
