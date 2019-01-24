@@ -44,6 +44,9 @@ export class SidePanel extends Component {
   constructor(props) {
     super(props);
     this.bindTopDiv = this.bindTopDiv.bind(this);
+  }
+
+  componentDidMount() {
     MathJax.Hub.Config({
       tex2jax: {
         inlineMath: [['$', '$'], ['\\(', '\\)']],
@@ -51,9 +54,6 @@ export class SidePanel extends Component {
         processClass: 'rosetta-code'
       }
     });
-  }
-
-  componentDidMount() {
     MathJax.Hub.Queue([
       'Typeset',
       MathJax.Hub,
