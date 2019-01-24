@@ -6,7 +6,7 @@ title: Ruby
 
 Ruby was created by Yukihiro "Matz" Matsumoto and is an <a href='https://github.com/ruby/ruby' target='_blank' rel='nofollow'>open source</a>, dynamic and interpreted scripting language for quick and easy object-oriented programming. Which means:
 
-It's also known to have one of the <a href="https://www.ruby-lang.org/en/community/">largest and friendly community</a> among programming languages. 
+It's also known to have one of the <a href="https://www.ruby-lang.org/en/community/">largest and friendliest communities</a> among programming languages. 
 
 *   Ability to make operating system calls directly
 *   Immediate feedback during development
@@ -16,7 +16,7 @@ It's also known to have one of the <a href="https://www.ruby-lang.org/en/communi
 *   Has "mixin" functionality by module
 *   Iterators and closures
 
-If you are unfamiliar with some of the concepts above, read on, and don't worry. Ruby focus on simplicity and productivity with an elegant syntax that is natural to read and easy to write, like:
+If you are unfamiliar with some of the concepts above, read on and don't worry. Ruby focuses on simplicity and productivity with an elegant syntax that is natural to read and easy to write, like:
 ```ruby
 # Quick example of Ruby with Object Oriented Programming
 class Greeter
@@ -37,11 +37,11 @@ g.salute
 ```
 ## Version
 
-The current stable version is [2.5.1](https://www.ruby-lang.org/en/news/2018/03/28/ruby-2-5-1-released/).
+The current stable version is [2.5.3](https://www.ruby-lang.org/en/news/2018/10/18/ruby-2-5-3-released/).
 
 ## Installation
 
-Mac OS X and many Linux distributions come pre-installed with Ruby. To check if ruby is pre-installed in your system, just run `ruby -v` on your shell. There are several ways to install Ruby:
+Mac OS X and many Linux distributions come pre-installed with Ruby. To check if Ruby is pre-installed in your system, just run `ruby -v` on your shell. There are several ways to install Ruby:
 
 *   When you are on a UNIX-like operating system, using your system’s package manager is the easiest way of getting started. However, the packaged Ruby version usually is not the newest one.
 *   Installers can be used to install a specific or multiple Ruby versions. There is also an installer for Windows.
@@ -52,7 +52,7 @@ To know about how to install Ruby through package managers, installers and sourc
 
 ## IRB
 
-IRB stands for Interactive Ruby Shell. The abbreviation irb comes from the fact that the filename extension for Ruby is ".rb", although interactive Ruby files do not have an extension of ".irb". The program is launched from a command line and allows the execution of Ruby commands with an immediate response, experimenting in real-time. It features command history, line editing capabilities, and job control, and is able to communicate directly as a shell script over the Internet and interact with a live server. It was developed by Keiju Ishitsuka.
+IRB stands for Interactive Ruby Shell. The abbreviation irb comes from the fact that the filename extension for Ruby is ".rb", although interactive Ruby files do not have an extension of ".irb". The program is launched from a command line and allows the execution of Ruby commands with an immediate response, experimenting in real-time. It features command history, line editing capabilities, and job control, and is able to communicate directly as a shell script over the Internet and interact with a live server. Interactive Ruby Shell is a great way to explore the Ruby language and quickly test scripts. It was developed by Keiju Ishitsuka.
 
 ```shell
     irb
@@ -79,7 +79,7 @@ From command-line:
 ## Documentation
 
 Ruby is well <a href='https://www.ruby-lang.org/en/documentation/' target='_blank' rel='nofollow'>documented</a>. These docs include tutorials, guides, references and meta information for language.  
-Another important resouce for documentation is <a href='http://ruby-doc.org/core-2.3.0/' target='_blank' rel='nofollow'>Ruby Doc</a>. You should visit this <a href='https://github.com/airbnb/ruby' target='_blank' rel='nofollow'>link</a> to know more about Ruby style guide, written by developers of AirBnB.
+Another important resource for documentation is <a href='http://ruby-doc.org/core-2.3.0/' target='_blank' rel='nofollow'>Ruby Doc</a>. You should visit this <a href='https://github.com/airbnb/ruby' target='_blank' rel='nofollow'>link</a> to know more about Ruby style guide, written by developers of AirBnB.
 
 A recommended read for beginners in Ruby is <a href='https://poignant.guide/' target='_blank' rel='nofollow'>Why's (Poignant) Guide to Ruby</a>
 This book is unusual among programming books. With quite a lot of strange humor and narrative side tracks which are sometimes completely unrelated to the topic, this one manages to keep the readers entertained while they learn Ruby basics. 
@@ -109,14 +109,16 @@ Prints each object to $stdout. Objects that aren’t strings will be converted b
 ```
 ## Frameworks(gems)
 
-Ruby has several frameworks(gems) for quickly scaffolding applications. The most popular by far is <a href='http://rubyonrails.org/' target='_blank' rel='nofollow'>Rails</a> which was initially released in 2004\. Other frameworks(gems) for Ruby include <a href='http://www.sinatrarb.com/' target='_blank' rel='nofollow'>Sinatra</a>, <a href='http://lotusrb.org/' target='_blank' rel='nofollow'>Lotus</a>, and <a href='http://voltframework.com/' target='_blank' rel='nofollow'>Volt</a>. Each of these options has their pros and cons for development and cater to a variety needs.
+Ruby has several frameworks (gems) for quickly scaffolding applications. The most popular by far is <a href='http://rubyonrails.org/' target='_blank' rel='nofollow'>Rails</a> which was initially released in 2004\. Other frameworks (gems) for Ruby include <a href='http://www.sinatrarb.com/' target='_blank' rel='nofollow'>Sinatra</a>, <a href='http://lotusrb.org/' target='_blank' rel='nofollow'>Lotus</a>, and <a href='http://voltframework.com/' target='_blank' rel='nofollow'>Volt</a>. Each of these options has their pros and cons for development and cater to a variety needs.
 
 
 ## Ruby Framework for mobile development
+
 To write cross-platform native apps in Ruby, RUBY MOTION is used to develop cross-platform native apps for iOS, Android and OS X using the Ruby programming langauge.
 More resources here: http://www.rubymotion.com/
 
-## What after learning Ruby?
-Every programming language plays an imporatnt role . You can contribute to a lot of open source projects or you can apply for some big companies after having a good grasp on Ruby. As many big internet sites such as Basecamp, Airbnb, Bleacher Report, Fab.com, Scribd, Groupon, Gumroad, Hulu, Kickstarter, Pitchfork, Sendgrid, Soundcloud, Square, Yammer, Crunchbase, Slideshare, Funny or Die, Zendesk, Github, Shopify are build on Ruby so, there are plenty of option for you out there.
-Moreover, a lot of startups are hiring people who have skill in RUby on Rails as not many programmers try to learn Ruby. So,you might have a clear cut to work in a start-up company.
-So, Ruby is beginner friendly and is quite hard skill set to find you have a good number of openings to work as a developer.
+
+## What to do after learning Ruby?
+Every programming language plays an important role. You can contribute to a lot of open source projects or you can apply for some big companies after having a good grasp on Ruby. As many big internet sites such as Basecamp, Airbnb, Bleacher Report, Fab.com, Scribd, Groupon, Gumroad, Hulu, Kickstarter, Pitchfork, Sendgrid, Soundcloud, Square, Yammer, Crunchbase, Slideshare, Funny or Die, Zendesk, Github, Shopify are built on Ruby so there are plenty of options out there.
+
+Moreover, a lot of startups are hiring people who have skills with Ruby on Rails as not many programmers try to learn Ruby. 

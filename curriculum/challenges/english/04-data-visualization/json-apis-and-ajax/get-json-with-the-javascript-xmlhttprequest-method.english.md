@@ -30,17 +30,17 @@ Update the code to create and send a "GET" request to the freeCodeCamp Cat Photo
 ```yml
 tests:
   - text: Your code should create a new <code>XMLHttpRequest</code>.
-    testString: 'assert(code.match(/new\s+?XMLHttpRequest\(\s*?\)/g), "Your code should create a new <code>XMLHttpRequest</code>.");'
+    testString: assert(code.match(/new\s+?XMLHttpRequest\(\s*?\)/g), 'Your code should create a new <code>XMLHttpRequest</code>.');
   - text: Your code should use the <code>open</code> method to initialize a "GET" request to the freeCodeCamp Cat Photo API.
-    testString: 'assert(code.match(/\.open\(\s*?("|")GET\1\s*?,\s*?("|")\/json\/cats\.json\2\s*?,\s*?true\s*?\)/g), "Your code should use the <code>open</code> method to initialize a "GET" request to the freeCodeCamp Cat Photo API.");'
+    testString: assert(code.match(/\.open\(\s*?('|")GET\1\s*?,\s*?('|")\/json\/cats\.json\2\s*?,\s*?true\s*?\)/g), 'Your code should use the <code>open</code> method to initialize a "GET" request to the freeCodeCamp Cat Photo API.');
   - text: Your code should use the <code>send</code> method to send the request.
-    testString: 'assert(code.match(/\.send\(\s*\)/g), "Your code should use the <code>send</code> method to send the request.");'
+    testString: assert(code.match(/\.send\(\s*\)/g), 'Your code should use the <code>send</code> method to send the request.');
   - text: Your code should have an <code>onload</code> event handler set to a function.
-    testString: 'assert(code.match(/\.onload\s*=\s*function\(\s*?\)\s*?{/g), "Your code should have an <code>onload</code> event handler set to a function.");'
+    testString: assert(code.match(/\.onload\s*=\s*function\(\s*?\)\s*?{/g), 'Your code should have an <code>onload</code> event handler set to a function.');
   - text: Your code should use the <code>JSON.parse</code> method to parse the <code>responseText</code>.
-    testString: 'assert(code.match(/JSON\.parse\(.*\.responseText\)/g), "Your code should use the <code>JSON.parse</code> method to parse the <code>responseText</code>.");'
+    testString: assert(code.match(/JSON\.parse\(.*\.responseText\)/g), 'Your code should use the <code>JSON.parse</code> method to parse the <code>responseText</code>.');
   - text: Your code should get the element with class <code>message</code> and change its inner HTML to the string of JSON data.
-    testString: 'assert(code.match(/document\.getElementsByClassName\(\s*?("|")message\1\s*?\)\[0\]\.innerHTML\s*?=\s*?JSON\.stringify\(.+?\)/g), "Your code should get the element with class <code>message</code> and change its inner HTML to the string of JSON data.");'
+    testString: assert(code.match(/document\.getElementsByClassName\(\s*?('|")message\1\s*?\)\[0\]\.innerHTML\s*?=\s*?JSON\.stringify\(.+?\)/g), 'Your code should get the element with class <code>message</code> and change its inner HTML to the string of JSON data.');
 
 ```
 

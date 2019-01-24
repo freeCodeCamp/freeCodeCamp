@@ -21,13 +21,16 @@ The main disadvantage of open-source software is that often it is not very strai
 Open source software allows developers to view the source code of any software which is under creative license. Open source projects makes it easier for developers to contribute on different projects without even making changes in the actual file on the server by just downloading the file on our local machine.
 
 There are different websites where people can find the open source projects, such as:
-1. https://github.com
-2. https://opensource.google.com/
+- [GitHub](https://github.com/explore)
+- [Google Open Source](https://opensource.google.com/)
+- [Mozilla Projects](https://developer.mozilla.org/en-US/docs/Mozilla/Mozilla_on_GitHub)
+- [CodeTriage](https://www.codetriage.com/)
 
 One of the biggest Open Source projects is Linux.
 
 #### More Information:
 
-[Open Source Initiative](https://opensource.org/)
-[Wikipedia Open Source Model](https://en.wikipedia.org/wiki/Open-source_model)
-[Wikipedia Open Source Software](https://en.wikipedia.org/wiki/Open-source_software)
+- [Open Source Initiative](https://opensource.org/), 
+- [Wikipedia Open Source Model](https://en.wikipedia.org/wiki/Open-source_model), 
+- [Wikipedia Open Source Software](https://en.wikipedia.org/wiki/Open-source_software), 
+- [The Mozilla Foundation](https://www.mozilla.org/en-CA/foundation/)

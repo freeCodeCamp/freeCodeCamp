@@ -25,12 +25,12 @@ Use destructuring assignment to swap the values of <code>a</code> and <code>b</c
 
 ```yml
 tests:
-  - text: 'Value of <code>a</code> should be 6, after swapping.'
-    testString: 'assert(a === 6, "Value of <code>a</code> should be 6, after swapping.");'
-  - text: 'Value of <code>b</code> should be 8, after swapping.'
-    testString: 'assert(b === 8, "Value of <code>b</code> should be 8, after swapping.");'
+  - text: Value of <code>a</code> should be 6, after swapping.
+    testString: assert(a === 6, 'Value of <code>a</code> should be 6, after swapping.');
+  - text: Value of <code>b</code> should be 8, after swapping.
+    testString: assert(b === 8, 'Value of <code>b</code> should be 8, after swapping.');
   - text: Use array destructuring to swap a and b.
-    testString: '// assert(/\[\s*(\w)\s*,\s*(\w)\s*\]\s*=\s*\[\s*\2\s*,\s*\1\s*\]/g.test(code), "Use array destructuring to swap a and b.");'
+    testString: // assert(/\[\s*(\w)\s*,\s*(\w)\s*\]\s*=\s*\[\s*\2\s*,\s*\1\s*\]/g.test(code), 'Use array destructuring to swap a and b.');
 
 ```
 
@@ -42,13 +42,11 @@ tests:
 <div id='js-seed'>
 
 ```js
+"use strict";
 let a = 8, b = 6;
-(() => {
-  "use strict";
-  // change code below this line
+// change code below this line
 
-  // change code above this line
-})();
+// change code above this line
 console.log(a); // should be 6
 console.log(b); // should be 8
 ```
@@ -63,6 +61,12 @@ console.log(b); // should be 8
 <section id='solution'>
 
 ```js
-// solution required
+"use strict";
+let a = 8, b = 6;
+// change code below this line
+[a, b] = [b, a];
+// change code above this line
+console.log(a); // should be 6
+console.log(b); // should be 8
 ```
 </section>

@@ -1,0 +1,13 @@
+footer {
+  position: absolute;
+  background-color: #e0e0e0;
+  color: #555555;
+  background-size: cover;
+  font-size: 0.9em;
+  width: 100%;
+  padding-top: 40px;
+}
+
+footer b {
+  padding-bottom: 5px;
+}
