@@ -1,30 +1,28 @@
 ---
-title: Dunning Kruger Effect
+title: Dunning-Kruger Effect
 ---
 
-## Dunning Kruger (DK) Effect
+# Dunning-Kruger (DK) Effect
 
-### Wikipedia's Definition
-In the field of psychology, the **Dunning–Kruger** effect is a cognitive bias wherein people of low ability suffer from illusory superiority, mistakenly assessing their cognitive ability as greater than it is. The cognitive bias of illusory superiority derives from the metacognitive inability of low-ability persons to recognize their own ineptitude.
+## Wikipedia's Definition
+In the field of psychology, the **Dunning-Kruger** effect is a cognitive bias wherein people of low ability suffer from illusory superiority, mistakenly assessing their cognitive ability as greater than it is. The cognitive bias of illusory superiority derives from the metacognitive inability of low-ability persons to recognize their own ineptitude.
 
-### Why does it matter in Software Development?
+## Why Does it Matter in Software Development?
+It is important for software developers to be aware of the DK effect. It can be observed among developers of all ages, and is more prominent among beginners and intermediate-level developers. After the initial struggle, they might get over-confident about a language or their designs. This leads them to underestimate the complexity of system requirements or, worse, hampers them in coming up with better software designs. For more experienced developers, they seem to have gained wisdom over the years. They are more humble and better at judging the system's complexity. (This might not be true for all senior developers, though.)
 
-The DK effect is important to understand for software developers. It can be observed among developers of all ages. This is more prominent among beginners and intermediate level developers. After the initial struggle, they might get overconfident about a language or their designs. This leads them to underestimate the complexity of system requirements or, worse, hampers them coming up with better software designs. For more experienced developers, they seem to have gained wisdom over the years. They are more humble and better at judging the system complexity. (This might not be true to all senior developers though.)
+## Beware!
+The DK effect is the exact opposite of [Imposter Syndrome](https://en.wikipedia.org/wiki/Impostor_syndrome). You need to strike the perfect balance between both of these for your professional growth. 
 
-### Beware!
-DK Effect is exactly opposite of [Imposter Syndrome](https://en.wikipedia.org/wiki/Impostor_syndrome). You need to strike the perfect balance between both of these for your professional growth. 
-
-### How to check if I suffer from DK effect?
+## How to Check if I Suffer from DK Effect?
 *You can't!* 
 
 Sorry, but there isn't a straight answer to this question. You can ask yourself the following questions:
+ - Am I able to give accurate estimates?
+ - Am I open to learning new concepts?
+ - Am I open to implementing or trying new design paradigms?
+ - Am I humble? 
+ - Am I able to take criticism and objectively evaluate feedback?
+ - Am I a good listener?
 
- -  Are you able to give accurate estimates?
- -  Are you open to learning new concepts?
- -  Are you open to implement or try new design paradigms?
- -  Are you humble? 
- -  Are you able to take criticism and objectively evaluate feedback?
- -  Are you a good listener?
-
- Further Reading:
+ ## Additional Resources
  - [Wikipedia](https://en.wikipedia.org/wiki/Dunning%E2%80%93Kruger_effect)
