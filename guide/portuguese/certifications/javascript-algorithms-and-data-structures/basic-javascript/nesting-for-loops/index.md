@@ -86,6 +86,3 @@ function multiplyAll(arr) {
 *   : aviso: **NÃO** adicione soluções semelhantes às soluções existentes. Se você acha que é semelhante, mas melhor, tente mesclar (ou substituir) a solução semelhante existente.
 *   Adicione uma explicação da sua solução.
 *   Categorize a solução em uma das seguintes categorias - Básica, Intermediária e Avançada. :semáforo:
-*   Por favor, adicione seu nome de usuário somente se você adicionou qualquer conteúdo principal relevante. (: aviso: _**NÃO**_ remova nenhum nome de usuário existente)
-
-Veja: point\_right: [Modelo de Solução de Desafio do Wiki](http://forum.freecodecamp.com/t/algorithm-article-template/14272) para referência.
