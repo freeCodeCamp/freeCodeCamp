@@ -16,35 +16,35 @@
 
 freeCodeCamp.org的存在是因为像你这样的数千名志愿者。我们很感谢与欢迎您的贡献。
 
-我们严格执行[“行为准则”]（https://www.freecodecamp.org/code-of-conduct）。请您花一点时间阅读它。它只有196个字。
+我们严格执行[“行为准则”](https://www.freecodecamp.org/code-of-conduct)。请您花一点时间阅读它。它只有196个字。
 
 祝您贡献愉快🎉！
 
-##您可以由以下的方法来提供帮助
+## 您可以由以下的方法来提供帮助
 
 您可以选择为您感兴趣的任何领域做出贡献：
 
-1. [贡献予开源代码库。]（＃contribution-to-this-open-source-codebase）。帮助编辑[指南文章]（https://guide.freecodecamp.org/），[编码挑战]（https://learn.freecodecamp.org/），或修复学习平台上的错误。
+1. [贡献予开源代码库](#contribution-to-this-open-source-codebase)。帮助编辑[指南文章](https://guide.freecodecamp.org/)，[编码挑战](https://learn.freecodecamp.org/)，或修复学习平台上的错误。
 
-2.在我们的[公共论坛]（https://www.freecodecamp.org/forum/）上帮助营员。 [回答他们的编码问题]（https://www.freecodecamp.org/forum/?max_posts=1）或[为他们的编码项目给予反馈]（https://www.freecodecamp.org/forum/c/project反馈系统开发与？max_posts = 1）
+2. 在我们的[公共论坛](https://www.freecodecamp.org/forum/)上帮助营员。 [回答他们的编码问题](https://www.freecodecamp.org/forum/?max_posts=1)或[为他们的编码项目给予反馈](https://www.freecodecamp.org/forum/c/project-feedback?max_posts=1)。
 
-3.帮助我们为[YouTube频道视频](https://www.youtube.com/channel/UC8butISFwT-Wl7EV0hUK0BQ/videos)添加字幕。
+3. 帮助我们为[YouTube频道视频](https://www.youtube.com/channel/UC8butISFwT-Wl7EV0hUK0BQ/videos)添加字幕。
 
-##贡献予开源代码库
+## 贡献予开源代码库
 
-我们的开源代码库有数千个[编码挑战]（https://learn.freecodecamp.org）和[指南文章]（https://guide.freecodecamp.org）。
+我们的开源代码库有数千个[编码挑战](https://learn.freecodecamp.org)和[指南文章](https://guide.freecodecamp.org)。
 
 您可以帮助我们：
 
- -  [📝研究，编写和更新我们的指南文章](＃research-write-and-update-our-guide-articles)
+ -  [📝研究，编写和更新我们的指南文章](#research-write-and-update-our-guide-articles)
 
- -  [💻创建，更新编码挑战和修复其中的错误]（＃create-update-and-fix-bugs-in-our-coding-challenges）
+ -  [💻创建，更新编码挑战和修复其中的错误](#create-update-and-fix-bugs-in-our-coding-challenges)
 
- -  [🌐翻译指南文章和编码挑战](＃translate-guide-articles-and-coding-challenges)
+ -  [🌐翻译指南文章和编码挑战](#translate-guide-articles-and-coding-challenges)
 
- -  [🛠帮助我们修复freeCodeCamp.org学习平台中的错误](＃help-us-fix-bugs-in-freecodecamporgs-learning-platform)
+ -  [🛠帮助我们修复freeCodeCamp.org学习平台中的错误](#help-us-fix-bugs-in-freecodecamporgs-learning-platform)
 
-###研究，编写和更新我们的指南文章
+### 研究，编写和更新我们的指南文章
 
 **什么是指南文章？**
 
@@ -56,13 +56,13 @@ freeCodeCamp.org的存在是因为像你这样的数千名志愿者。我们很�
 
 我们欢迎您撰写这些文章的帮助。作为作者你不必是一个主题的专家 - 整个指南是开源的，所以即使你犯了错误，另一个贡献者最终会纠正它。
 
-您可以在我们的[指南网站]（https://www.freecodecamp.org/guide）上找到一个“存根文章”，写下您的文章，然后建立pull request以替换存根文章。 [pull request]（https://help.github.com/articles/about-pull-requests/）是您建议更改的方式。它让其他人了解您的更改，审核并采用它们。
+您可以在我们的[指南网站](https://www.freecodecamp.org/guide)上找到一个“存根文章”，写下您的文章，然后建立pull request以替换存根文章。 [pull request](https://help.github.com/articles/about-pull-requests/)是您建议更改的方式。它让其他人了解您的更改，审核并采用它们。
 
 如果您找不到关于您想要撰写的主题的存根，则可以打开创建存根的PR并包含您的草稿文章。
 
-如果您想帮助改进指南文章，请参阅[如何编辑指南文章]（/docs/how-to-work-on-guide-articles.md）。
+如果您想帮助改进指南文章，请参阅[如何编辑指南文章](/docs/how-to-work-on-guide-articles.md)。
 
-###创建，更新编码挑战和修复其中的错误
+### 创建，更新编码挑战和修复其中的错误
 
 我们所有的编码挑战都由社区策划，以从您这样的志愿者那里获取专业知识。
 
@@ -70,7 +70,7 @@ freeCodeCamp.org的存在是因为像你这样的数千名志愿者。我们很�
 
 如果您对改进这些编码挑战感兴趣，请参阅[如何处理编码挑战](/docs/how-to-work-on-coding-challenges.md)。
 
-###翻译指南文章和编码挑战
+### 翻译指南文章和编码挑战
 
 您可以帮助我们将指南文章和编码挑战翻译成您所说的语言。目前我们已翻译版本：
 
@@ -83,7 +83,7 @@ freeCodeCamp.org的存在是因为像你这样的数千名志愿者。我们很�
 
 我们非常欢迎您的贡献以帮助提高翻译质量。数百万人已经在使用freeCodeCamp.org的英语版本，我们也希望还有数百万人使用这些翻译版本。
 
-###帮助我们修复freeCodeCamp.org学习平台中的错误
+### 帮助我们修复freeCodeCamp.org学习平台中的错误
 
 我们的学习平台运行在现代JavaScript堆栈上。它有各种组件，工具和库，包括但不限于Node.js，MongoDB，LoopBack，OAuth 2.0，React，Gatsby，Webpack等。
 
@@ -122,8 +122,8 @@ freeCodeCamp.org的存在是因为像你这样的数千名志愿者。我们很�
 
 您可以透过以下的管道：
 
- -  [公共论坛里的“贡献者”类别]（https://www.freecodecamp.org/forum/c/contributors）
- -  [我们的公共贡献者于Gitter中的聊天室]（https://gitter.im/FreeCodeCamp/Contributors）
+ -  [公共论坛里的“贡献者”类别](https://www.freecodecamp.org/forum/c/contributors)
+ -  [我们的公共贡献者于Gitter中的聊天室](https://gitter.im/FreeCodeCamp/Contributors)
 
 我们很高兴能帮助您为您想要处理的任何课题做出贡献。确保在发布新查询之前搜索您的查询。请务必要有礼貌和耐心。我们的社区志愿者和主持人随时为您提供指导。
 
@@ -142,4 +142,3 @@ freeCodeCamp.org的存在是因为像你这样的数千名志愿者。我们很�
 **我发现了一个错误的拼写，我应该在提出PR之前报告问题吗？**
 
 对于拼写错误和其他措辞更改，您可以直接打开请求，而无需先创建问题。问题更多的是讨论与代码相关，或者课程结构方面的重大问题。
-
