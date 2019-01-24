@@ -67,6 +67,3 @@ Enlaces relevantes:
 *   : advertencia: NO agregue soluciones que sean similares a las soluciones existentes. Si cree que es similar pero mejor, intente fusionar (o reemplazar) la solución similar existente.
 *   Agregue una explicación de su solución.
 *   Categorice la solución en una de las siguientes categorías: Básica, Intermedia y Avanzada. :semáforo:
-*   Agregue su nombre de usuario solo si ha agregado algún contenido principal relevante. (: advertencia: NO elimine ningún nombre de usuario existente)
-
-Vea: point\_right: [Wiki Challenge Solution Template](https://forum.freecodecamp.org/t/freecodecamp-algorithm-challenge-template-guide/14272) para referencia.
