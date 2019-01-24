@@ -76,8 +76,8 @@ end
 Greedy Algorithms can help you find solutions to a lot of seemingly tough problems. The only problem with them is that you might come up with the correct solution but you might not be able to verify if its the correct one. All the greedy problems share a common property that a local optima can eventually lead to a global minima without reconsidering the set of choices already considered.
 
 Greedy Algorithms help us solve a lot of different kinds of problems. Stay tuned for upcoming tutorials on each one of these.
-1. Shortest Path Problem.
-2. Minimum Spanning Tree Problem in a Graph.
+1. Shortest Path Problem. (<a href="https://www.youtube.com/watch?v=gdmfOwyQlcI">Youtube Tutorial</a>)
+2. Minimum Spanning Tree Problem in a Graph. (<a href="https://www.youtube.com/watch?v=4ZlRH0eK-qQ">Youtube Tutorial</a>)
 3. Huffman Encoding Problem.
 4. K Centers Problem
 
