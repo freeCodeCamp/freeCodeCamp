@@ -12,10 +12,8 @@ const pathsOfNoReturn = [
 ];
 
 const pathsWhiteList = [
-  'news',
   'challenges',
   'map',
-  'news',
   'commit'
 ];
 

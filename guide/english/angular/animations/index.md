@@ -6,7 +6,7 @@ title: Animations
 
 #### Motivation
 
-Modern web components frequently use animations. Cascading Style-sheets (CSS) arms developers with the tools to create impressive animations. Property transitions, uniquely named animations, multi-part keyframes are possible with CSS. The animatable possibilities are endless thanks to CSS.
+Modern web components frequently use animations. Cascading Style Sheets (CSS) arms developers with the tools to create impressive animations. Property transitions, uniquely named animations, multi-part keyframes are possible with CSS. The animatable possibilities are endless thanks to CSS.
 
 In a modern web application, animation focuses the user’s attention. Good animations seek to guide the user’s attention in a satisfying, productive manner. Animations should not prove annoying to the user.
 
@@ -20,9 +20,9 @@ Angular animations is the framework's streamlined version of what CSS natively p
 
 #### Setting up Animations
 
-Before animating, the `BrowserAnimationsModule` must include into the root module’s imports array. It is available from `@angular/platform-browser/animations`. This NgModule ensures animations work for the given platform. This article assumes the standard web browser for each example.
+Before animating, the `BrowserAnimationsModule` must be included into the root module’s imports array. It is available from `@angular/platform-browser/animations`. This NgModule ensures animations work for the given platform. This article assumes the standard web browser for each example.
 
-Angular animations declare within the `@Component` metadata. `@Component` decorates a class to distinguish it as a component to Angular. Its metadata contains component configurations including the `animations: []` field. Each array element from this field represents an animation trigger (`AnimationTriggerMetadata`).
+Angular animations declare within the `@Component` metadata. `@Component` decorates a class to distinguish it as a component to Angular. Its metadata contains component configurations including the `animations: []` field. Each array element from this field represents an animation trigger (`AnimationTriggerMetadata`)
 
 Animations are exclusive to their host component via the decorator's metadata. Animations can only be used in the host component’s template. Animations do not inherit to the component's children. There is an easy work-around for this.
 
