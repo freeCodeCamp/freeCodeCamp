@@ -105,7 +105,6 @@ freeCodeCamp.org的存在是因为像你这样的数千名志愿者。我们很�
 
 ## 常见的疑问
 
-
 **如何报告不在记录里的问题？**
 
 如果您认为自己发现了错误，请先阅读[“请帮忙！我发现了一个错误”](https://forum.freecodecamp.org/t/how-to-report-a-bug/19543)文章并按照其说明进行操作
