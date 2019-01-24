@@ -26,17 +26,17 @@ Change the <code>background-color</code> of each <code>div</code> element based 
 ```yml
 tests:
   - text: Your code should use the <code>hsl()</code> property to declare the color green.
-    testString: 'assert(code.match(/\.green\s*?{\s*?background-color:\s*?hsl/gi), "Your code should use the <code>hsl()</code> property to declare the color green.");'
+    testString: assert(code.match(/\.green\s*?{\s*?background-color:\s*?hsl/gi), 'Your code should use the <code>hsl()</code> property to declare the color green.');
   - text: Your code should use the <code>hsl()</code> property to declare the color cyan.
-    testString: 'assert(code.match(/\.cyan\s*?{\s*?background-color:\s*?hsl/gi), "Your code should use the <code>hsl()</code> property to declare the color cyan.");'
+    testString: assert(code.match(/\.cyan\s*?{\s*?background-color:\s*?hsl/gi), 'Your code should use the <code>hsl()</code> property to declare the color cyan.');
   - text: Your code should use the <code>hsl()</code> property to declare the color blue.
-    testString: 'assert(code.match(/\.blue\s*?{\s*?background-color:\s*?hsl/gi), "Your code should use the <code>hsl()</code> property to declare the color blue.");'
+    testString: assert(code.match(/\.blue\s*?{\s*?background-color:\s*?hsl/gi), 'Your code should use the <code>hsl()</code> property to declare the color blue.');
   - text: The <code>div</code> element with class <code>green</code> should have a <code>background-color</code> of green.
-    testString: 'assert($(".green").css("background-color") == "rgb(0, 255, 0)", "The <code>div</code> element with class <code>green</code> should have a <code>background-color</code> of green.");'
+    testString: assert($('.green').css('background-color') == 'rgb(0, 255, 0)', 'The <code>div</code> element with class <code>green</code> should have a <code>background-color</code> of green.');
   - text: The <code>div</code> element with class <code>cyan</code> should have a <code>background-color</code> of cyan.
-    testString: 'assert($(".cyan").css("background-color") == "rgb(0, 255, 255)", "The <code>div</code> element with class <code>cyan</code> should have a <code>background-color</code> of cyan.");'
+    testString: assert($('.cyan').css('background-color') == 'rgb(0, 255, 255)', 'The <code>div</code> element with class <code>cyan</code> should have a <code>background-color</code> of cyan.');
   - text: The <code>div</code> element with class <code>blue</code> should have a <code>background-color</code> of blue.
-    testString: 'assert($(".blue").css("background-color") == "rgb(0, 0, 255)", "The <code>div</code> element with class <code>blue</code> should have a <code>background-color</code> of blue.");'
+    testString: assert($('.blue').css('background-color') == 'rgb(0, 0, 255)', 'The <code>div</code> element with class <code>blue</code> should have a <code>background-color</code> of blue.');
 
 ```
 
