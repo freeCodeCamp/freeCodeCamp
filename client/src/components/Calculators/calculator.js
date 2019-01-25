@@ -64,7 +64,7 @@ export function initCalculator(bootcamps, city, lastYearsIncome) {
       bottom: 60,
       left: 155
     },
-    width = 800 - margin.left - margin.right,
+    width = 650 - margin.left - margin.right,
     height = 1200 - margin.top - margin.bottom;
   var xScale = d3.scale.linear()
     .domain([0, xStackMax])

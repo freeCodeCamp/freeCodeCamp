@@ -89,7 +89,7 @@ export default class CodingBootcampCostCalculator extends React.Component {
     return (
       <div className='CodingBootcampCostCalculator'>
         <div className='row'>
-          <div className='col-xs-12 col-sm-10 col-md-8 col-lg-6 col-sm-offset-1 col-md-offset-2 col-lg-offset-3'>
+          <div className='col-xs-12 col-sm-10 col-md-8 col-lg-6'>
             <div id='city-selector'>
               <h3 className='text-center text-primary'>Where do you <span>live</span>?</h3>
               <select className='form-control' defaultValue='' onChange={this.handleCitySelector}>
@@ -138,47 +138,44 @@ export default class CodingBootcampCostCalculator extends React.Component {
             </div>
             <div className='spacer' />
             <div id='explanation'>
-              <div className='col-xs-12 col-sm-10 col-sm-offset-1'>
-                <h3>Notes:</h3>
-                <ol>
-                  <li className='large-li'>
-                    We assumed an APR of 6% and a term of 3 years. If you happen
-                    to have around $15,000 in cash set aside for a coding
-                    bootcamp, please ignore this cost.
-                  </li>
-                  <li className='large-li'>
-                    We assume a cost of living of $500 for cities like San
-                    Francisco and New York City, and $400 per week for
-                    everywhere else.
-                  </li>
-                  <li className='large-li'>
-                    The most substantial cost for most people is lost wages. A
-                    40-hour-per-week job at the US Federal minimum wage would
-                    pay at least $15,000 per year. You can read more about
-                    economic cost
-                    <a href='https://en.wikipedia.org/wiki/Economic_cost' rel='noopener noreferrer' target='_blank'>
-                      here
-                    </a>.
-                  </li>
-                </ol>
-                <div className='spacer' />
-                <div className='row'>
-                  <div className='col-xs-12 col-sm-6'>
-                    <img alt='' className='img-responsive testimonial-image img-center' src='https://www.evernote.com/l/AHRIBndcq-5GwZVnSy1_D7lskpH4OcJcUKUB/image.png' />
-                  </div>
-                  <div className='col-xs-12 col-sm-6'>
-                    <h3>Built by Suzanne Atkinson</h3>
-                    <p className='large-p'>
-                      Suzanne is an emergency medicine physician, triathlon
-                      coach and web developer from Pittsburgh. You should
-                      &thinsp;
-                      <a href='https://twitter.com/intent/user?screen_name=SteelCityCoach' rel='noopener noreferrer' target='_blank'>
-                        follow her on Twitter
-                      </a>.
-                    </p>
-                  </div>
+              <h3>Notes:</h3>
+              <ol>
+                <li className='large-li'>
+                  We assumed an APR of 6% and a term of 3 years. If you happen
+                  to have around $15,000 in cash set aside for a coding
+                  bootcamp, please ignore this cost.
+                </li>
+                <li className='large-li'>
+                  We assume a cost of living of $500 for cities like San
+                  Francisco and New York City, and $400 per week for
+                  everywhere else.
+                </li>
+                <li className='large-li'>
+                  The most substantial cost for most people is lost wages. A
+                  40-hour-per-week job at the US Federal minimum wage would
+                  pay at least $15,000 per year. You can read more about
+                  economic cost
+                  <a href='https://en.wikipedia.org/wiki/Economic_cost' rel='noopener noreferrer' target='_blank'>
+                    here
+                  </a>.
+                </li>
+              </ol>
+              <div className='spacer' />
+              <div className='row'>
+                <div className='col-xs-12 col-sm-6'>
+                  <img alt='' className='img-responsive testimonial-image img-center' src='https://www.evernote.com/l/AHRIBndcq-5GwZVnSy1_D7lskpH4OcJcUKUB/image.png' />
                 </div>
-                <div className='spacer' />
+                <div className='col-xs-12 col-sm-6'>
+                  <h3>Built by Suzanne Atkinson</h3>
+                  <p className='large-p'>
+                    Suzanne is an emergency medicine physician, triathlon
+                    coach and web developer from Pittsburgh. You should
+                    &thinsp;
+                    <a href='https://twitter.com/intent/user?screen_name=SteelCityCoach' rel='noopener noreferrer' target='_blank'>
+                      follow her on Twitter
+                    </a>.
+                  </p>
+                </div>
               </div>
             </div>
           </div>
