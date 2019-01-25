@@ -18,9 +18,9 @@ Open source software is typically of **lower cost**, **higher security** and **b
 The main disadvantage of open-source software is that often it is not very straightforward to use. Open source operating systems like Linux cannot be learned in a day. They require continuous effort and training from your side before you are able to master them. You may need to hire a trained person to make things easier, and this may incur additional costs.
 
 ### Open source for developers
-Open source software allows developers to view the source code of any software which is under creative license. Open source projects makes it easier for developers to contribute on different projects without even making changes in the actual file on the server by just downloading the file on our local machine.
+Open source software allows developers to view the source code of any software which is under creative license. Open source projects make it easier for developers to contribute to different projects without even making changes in the actual file on the server by just downloading the file on our local machine.
 
-There are different websites where people can find the open source projects, such as:
+There are different websites where people can find open source projects, such as:
 - [GitHub](https://github.com/explore)
 - [Google Open Source](https://opensource.google.com/)
 - [Mozilla Projects](https://developer.mozilla.org/en-US/docs/Mozilla/Mozilla_on_GitHub)
