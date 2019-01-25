@@ -22,7 +22,7 @@ Example of a list:
 Lists can contain mixed types of data (number, string and boolean in this example).
 
 There are many built in functions in R. The user can also make a 'user defined' function, as you see below.
-The following creates the function circleArea that calculates the area of a circle (A = π r2).
+The following creates the function circleArea that calculates the area of a circle (A = π r<sup>2</sup>).
 
 ```
 >circleArea <- function(r){
