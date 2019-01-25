@@ -57,6 +57,6 @@ var quotient = 0.0 / 2.0; // Fix this line
 <section id='solution'>
 
 ```js
-var quotient = 4.4 / 2.2;
+var quotient = 4.4 / 2.0;
 ```
 </section>
