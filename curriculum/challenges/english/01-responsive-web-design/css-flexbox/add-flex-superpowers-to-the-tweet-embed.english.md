@@ -146,8 +146,6 @@ tests:
 ## Solution
 <section id='solution'>
 
-<div id='html-seed'>
-
 ```html
 <style>
   body {
@@ -240,5 +238,4 @@ tests:
 </footer>
 ```
 
-</div>
 </section>
