@@ -34,7 +34,7 @@ function fiboEvenSum(n) {
 // We use memoization technique to save ith fibonacci number to the fib array 
 function fiboEvenSum(n){
   const fib = [1, 1, 2]; 
-  let sumEven = fib[1];
+  let sumEven = fib[2];
   function fibonacci(n){
     if (n <= 1) return fib[n]; // base condition
     else if (fib[n]) return fib[n]; // if the number exists in the array we cache it and return
@@ -48,6 +48,6 @@ function fiboEvenSum(n){
   return sumEven;
 }
 ```
-- [Run Code](https://repl.it/@ezioda004/Project-Euler-Problem-2-Even-Fibonacci-Numbers)
+- [Run Code](https://repl.it/@scissorsneedfoo/Project-Euler-Problem-2-Even-Fibonacci-Numbers)
 ### References:
 - [Wikipedia](https://en.wikipedia.org/wiki/Fibonacci_number)
