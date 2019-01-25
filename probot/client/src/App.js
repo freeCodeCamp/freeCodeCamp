@@ -9,10 +9,14 @@ import Footer from './components/Footer';
 import { ENDPOINT_INFO } from './constants';
 
 const PageContainer = styled.div`
+  margin-top: 70px;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  @media (max-width: 991px) {
+    margin-top: 135px; 
+  }
 `;
 
 const Container = styled.div`
@@ -27,23 +31,27 @@ const Container = styled.div`
   box-shadow: 0 0 4px 0 #777;
 `;
 
-const Title = styled.h1`
-  display: flex;
-  justify-content: center;
+const AppNavBar = styled.nav`
+  margin: 0;
+  padding: 0;
+  color: white;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  display:flex;
+  justify-content: space-between;
   align-items: center;
   background: ${({ theme }) => theme.primary};
-  color: white;
-  width: 100%;
-  padding: 3px;
-  @media (max-width: 600px) {
-    flex-direction: column;
+  @media (max-width: 991px) {
+    flex-direction: column;  
   }
 `;
 
-const imgStyle = {
-  paddingRight: '20px',
-  paddingTop: '6px'
-};
+const imgStyle = { paddingLeft: '30px' };
+
+const titleStyle = { margin: '0', padding: '0' };
+
 
 class App extends Component {
   state = {
@@ -81,15 +89,27 @@ class App extends Component {
       state: { view, footerInfo }
     } = this;
     return (
-      <PageContainer>
-        <Title>
+      <>
+      <AppNavBar>
+        <a href="https://freecodecamp.org" target="_blank" rel="noopener noreferrer">
           <img
             style={imgStyle}
             src="https://discourse-user-assets.s3.dualstack.us-east-1.amazonaws.com/original/3X/e/d/ed1c70bda321aaeee9e6c20ab650ce8bc34899fa.svg"
             alt="Free Code Camp Logo"
-          />{' '}
-          Moderator Tools
-        </Title>
+          />
+        </a>
+        <h1 style={titleStyle}>Contributor Tools</h1>
+        <ul className="app-menu">
+          <li>
+            <a href="/">Home</a>
+           </li>
+           <li>
+             <a href="https://github.com/freeCodeCamp/freeCodeCamp" target="_blank" rel="noopener noreferrer">GitHub</a>
+           </li>
+        </ul>
+      </AppNavBar> 
+      <PageContainer>
+        
         <Tabs view={view} onViewChange={handleViewChange} />
         <Container>
           {view === 'search' && <Search />}
@@ -97,6 +117,7 @@ class App extends Component {
         </Container>
         {footerInfo && <Footer footerInfo={footerInfo} />}
       </PageContainer>
+      </>
     );
   }
 }

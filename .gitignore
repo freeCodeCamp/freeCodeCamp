@@ -107,3 +107,4 @@ work-logs
 # ------------
 
 *.pem
+*.vscode

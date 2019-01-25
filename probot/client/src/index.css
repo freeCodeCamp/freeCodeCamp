@@ -1,19 +1,52 @@
+@font-face {
+  font-family: "Lato";
+  src: url(./fonts/Lato-Regular.ttf) format("truetype");
+}
+
+@font-face {
+  font-family: "Lato Light";
+  src: url(./fonts/Lato-Light.ttf) format("truetype");
+}
+
+@font-face {
+  font-family: "Lato Bold";
+  src: url(./fonts/Lato-Bold.ttf) format("truetype");
+}
+
 * {
   box-sizing: border-box;
 }
 
 body {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  min-height: 100vh;
   margin: 0;
   padding: 0;
-  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
-    "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
-    sans-serif;
+  font-family: Lato, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+}
+
+
+.app-menu {
+  margin: 0;
+  padding: 13px 15px;
+  margin-right: 15px;
+
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  list-style: none;
+}
+
+.app-menu li a {
+  padding: 13px 15px;
+  color: white;
+  font-size: 20px;
+  font-weight: 700;
+}
+
+.app-menu li a:hover {
+  color: #006400;
+  background: #eee;
 }
 
 a {

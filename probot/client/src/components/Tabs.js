@@ -5,7 +5,7 @@ const Container = styled.div`
   display: flex;
   justify-content: center;
   height: 40px;
-  margin: 10px;
+  margin: 20px;
 `;
 
 const Tab = styled.div`

@@ -13,6 +13,10 @@ const List = styled.div`
   flex-direction: column;
 `;
 
+const Options = styled.div`
+  display: flex;
+`;
+
 const detailsStyle = { padding: '3px' };
 const filenameTitle = { fontWeight: '600' };
 
@@ -174,22 +178,26 @@ class Pareto extends React.Component {
     }
     return (
       <FullWidthDiv>
-        { fileTypeOptions.length > 0 &&
-          <>
+        {fileTypeOptions.length > 0 &&
           <strong>Filter Options</strong>
-          <fieldset>
-            <legend>File Type:</legend>
-            <div>{typeOptions}</div>
-          </fieldset>
-          </>
         }
-        {
-        languageOptions &&
-        <fieldset>
-          <legend>Language:</legend>
-          <div>{languageOptions}</div>
-        </fieldset>
-        }
+        <Options>
+          {fileTypeOptions.length > 0 &&
+            <>
+              <fieldset>
+                <legend>File Type:</legend>
+                <div>{typeOptions}</div>
+              </fieldset>
+            </>
+          }
+          {
+            languageOptions &&
+            <fieldset>
+              <legend>Language:</legend>
+              <div>{languageOptions}</div>
+            </fieldset>
+          }
+        </Options>
         {data.length ? elements : 'Report Loading...'}
       </FullWidthDiv>
     );
