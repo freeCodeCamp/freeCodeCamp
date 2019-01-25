@@ -113,8 +113,8 @@ Also, we can do this:
 
 **Aliasing and Cloning in lists:**
 
-_Aliasing_ is when two or more names refer to the same object. Consider the following:
-```shell
+`Aliasing` is when two or more names refer to the same object. Consider the following:
+```python
 >>> marvel = ['Iron Man', 'Wolverine', 'Captain America']
 >>> mcu = marvel
 >>> print(mcu)
@@ -129,8 +129,8 @@ _Aliasing_ is when two or more names refer to the same object. Consider the foll
 ```
 Since both `marvel` and `mcu` point to the same list object(evident from the assignment `mcu = marvel`), changing one of them automatically changes the other. We say that `marvel` and `mcu` are _aliases_.
 
-_Cloning_ of a list creates a fresh new copy, keeping the original as it is. Let's look at an example:
-```shell
+`Cloning` of a list creates a fresh new copy, keeping the original as it is. Let's look at an example:
+```python
 >>> avatar = ['air', 'water', 'earth', 'fire']
 >>> shinobi = avatar[:]
 >>> shinobi[0] = 'wind'
