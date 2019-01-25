@@ -44,6 +44,7 @@ db.then(async () => {
     if (!oldIndices.hasOwnProperty(number)) {
       // insert a new pr
       const filenames = await getFilenames(number);
+      count++;
       await PR.create({ _id: number, updatedAt, title, username, filenames });
       console.log('added PR# ' + number);
     } else if (updatedAt > oldUpdatedAt) {
@@ -86,7 +87,7 @@ db.then(async () => {
       numPRs,
       prRange: `${firstPR}-${lastPR}`
     };
-    await INFO.updateOne(info)
+    await INFO.updateOne({}, info, { upsert: true })
       .catch(err => {
         console.log(err);
       });

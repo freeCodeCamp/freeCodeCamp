@@ -15,10 +15,14 @@ npm install
 
 npm run build
 
-npm run dev
+npm run develop
 ```
 
 ## Caveats & Notes
+
+### Local Ports when developing locally
+
+Using the above `npm run develop` will start both the api server and the Create React App (Dashboard) in development mode.  The api server runs on port 3001 and the React app runs on port 3000.  
 
 ### The one-off scripts will error out on actions performed by repository admins, for example:
 
