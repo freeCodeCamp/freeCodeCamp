@@ -75,9 +75,7 @@ tests:
 ## Solution
 <section id='solution'>
 
-```js
-// solution required
-```
+```html
 <main>
   <p>Click here to view more <a href="#">cat photos</a>.</p>
 
@@ -101,5 +99,6 @@ tests:
 	<button type="submit">Submit</button>
   </form>
 </main>
+```
 
 </section>
