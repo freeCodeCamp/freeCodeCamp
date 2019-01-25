@@ -1,7 +1,7 @@
 ---
 title: Difference between Python 'is' and '==' operators
 ---
-`is` is a check for object identity - ie, checking if two or more variables are referring to the same object. You can't overload `is`.
+`is` is a check for object identity - ie, checking if two or more variables are referring to the same object. You can't overload `is`. That object identity is established and assigned with `=`.
 
 `==` evaluates to true if object referred to by the variables are equal. You can overload `==` via the `__eq__` operator.
 

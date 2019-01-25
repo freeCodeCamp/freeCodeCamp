@@ -67,9 +67,6 @@ tests:
 ```
 
 </div>
-
-
-
 </section>
 
 ## Solution
@@ -77,6 +74,7 @@ tests:
 
 ```html
 <main>
+  <h2>CatPhotoApp</h2>
   <p>Click here to view more <a href="#">cat photos</a>.</p>
 
   <a href="#"><img src="https://bit.ly/fcc-relaxing-cat" alt="A cute orange cat lying on its back."></a>
@@ -94,9 +92,8 @@ tests:
     <li>other cats</li>
   </ol>
   <form action="/submit-cat-photo">
-    <input type="text" placeholder="cat photo URL"></br>
-	</br>
-	<button type="submit">Submit</button>
+    <input type="text" placeholder="cat photo URL">
+    <button type="submit">Submit</button>
   </form>
 </main>
 ```
