@@ -2,9 +2,12 @@ import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import { graphql } from 'gatsby';
 import Helmet from 'react-helmet';
+import rehypeReact from 'rehype-react';
 
 import Breadcrumbs from './components/Breadcrumbs';
 import Layout from '../../components/layouts/GuideLayout';
+import CodingBootcampCostCalculator from
+  '../../components/Calculators/CodingBootcampCostCalculator';
 
 const propTypes = {
   data: PropTypes.object,
@@ -13,6 +16,12 @@ const propTypes = {
     meta: PropTypes.objectOf(PropTypes.string)
   })
 };
+const renderAst = new rehypeReact({
+  createElement: React.createElement,
+  components: {
+    'coding-bootcamp-cost-calculator': CodingBootcampCostCalculator
+  }
+}).Compiler;
 
 class GuideArticle extends Component {
   constructor(props) {
@@ -32,7 +41,7 @@ class GuideArticle extends Component {
       location: { pathname },
       data: {
         markdownRemark: {
-          html,
+          htmlAst,
           fields: { slug },
           frontmatter: { title }
         }
@@ -65,13 +74,14 @@ class GuideArticle extends Component {
         <Breadcrumbs path={pathname} />
         <article
           className='article'
-          dangerouslySetInnerHTML={{ __html: html }}
           id='article'
           ref={article => {
             this.article = article;
           }}
           tabIndex='-1'
-        />
+          >
+          {renderAst(htmlAst)}
+        </article>
       </Layout>
     );
   }
@@ -85,7 +95,7 @@ export default GuideArticle;
 export const pageQuery = graphql`
   query ArticleById($id: String!) {
     markdownRemark(id: { eq: $id }) {
-      html
+      htmlAst
       fields {
         slug
       }

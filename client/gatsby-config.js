@@ -89,6 +89,10 @@ module.exports = {
               // bash highlighter.
               aliases: {}
             }
+          },
+          {
+            resolve: 'gatsby-remark-component',
+            options: { components: ['coding-bootcamp-cost-calculator'] }
           }
         ]
       }
