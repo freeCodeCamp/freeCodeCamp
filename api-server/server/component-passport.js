@@ -131,6 +131,50 @@ export function setupPassport(app) {
   });
 }
 
+export const saveResponseAuthCookies = () => {
+
+  return (req, res, next) => {
+
+    const user = req.user;
+
+    if (!user) {
+      return res.redirect('/signin');
+    }
+
+    const { accessToken } = user;
+
+    const cookieConfig = {
+      ...createCookieConfig(req),
+      maxAge: 77760000000
+    };
+    const jwtAccess = jwt.sign({ accessToken }, jwtSecret);
+    res.cookie('jwt_access_token', jwtAccess, cookieConfig);
+    res.cookie('access_token', accessToken.id, cookieConfig);
+    res.cookie('userId', accessToken.userId, cookieConfig);
+
+    return next();
+  };
+};
+
+export const loginRedirect = () => {
+
+  return (req, res) => {
+    const successRedirect = req => {
+      if (!!req && req.session && req.session.returnTo) {
+        delete req.session.returnTo;
+        return `${homeLocation}/welcome`;
+      }
+      return `${homeLocation}/welcome`;
+    };
+
+    let redirect = url.parse(successRedirect(req), true);
+    delete redirect.search;
+
+    redirect = url.format(redirect);
+    return res.redirect(redirect);
+  };
+};
+
 export const createPassportCallbackAuthenticator = (strategy, config) => (
   req,
   res,

@@ -21,7 +21,7 @@ const int y = 10; 			// y is set to 10.
 const_cast<int &>(y) = 20;	// undefined behaviour.
 ```
 ### dynamic_cast
-Dynamic cast is used to cast an object within it's class hierarchy (to parent, from parent and to siblings). Dynamic cast can only be called on polymorphic classes. Thus, the original class in this case `MyClass` must have a virtual member, which is present in the form of the virtual destructor.
+Dynamic cast is used to cast an object within its class hierarchy (to parent, from parent and to siblings). Dynamic cast can only be called on polymorphic classes. Thus, the original class in this case `MyClass` must have a virtual member, which is present in the form of the virtual destructor.
 
 If dynamic cast fails, it will return a `nullptr`. Dynamic cast may be useful in determination of object types at runtime. However, it should be noted that dynamic cast is not free and in some cases other techniques may prove to be more efficient at determination of class type at runtime.
 

@@ -23,8 +23,8 @@ function NoArticles() {
         Could you&nbsp;
         <a
           href={
-            'https://github.com/freeCodeCamp/guides/blob/master/README.md' +
-            '#freecodecamp-guide'
+            'https://github.com/freeCodeCamp/freeCodeCamp/blob/master/docs/' +
+            'how-to-work-on-guide-articles.md#how-to-work-on-guide-articles'
           }
           rel='noopener noreferrer'
           target='_blank'
@@ -42,17 +42,23 @@ class NavPanel extends Component {
 
     this.renderHeader = this.renderHeader.bind(this);
     this.handleHeaderClick = this.handleHeaderClick.bind(this);
+    this.handleTitleClick = this.handleTitleClick.bind(this);
     this.renderBody = this.renderBody.bind(this);
   }
 
   handleHeaderClick() {
     const { path, handleClick } = this.props;
     handleClick(path);
+  }
+
+  handleTitleClick() {
+    const { path, toggleDisplaySideNav } = this.props;
+    toggleDisplaySideNav();
     navigate(path);
   }
 
   renderHeader() {
-    const { isExpanded, title, toggleDisplaySideNav } = this.props;
+    const { isExpanded, title } = this.props;
     return (
       <div className='title' onClick={this.handleHeaderClick}>
         <span
@@ -60,7 +66,7 @@ class NavPanel extends Component {
             'caret ' + (isExpanded ? 'caretStyle expanded' : 'caretStyle')
           }
         />
-        <span onClick={toggleDisplaySideNav}>{title}</span>
+        <span onClick={this.handleTitleClick}>{title}</span>
       </div>
     );
   }

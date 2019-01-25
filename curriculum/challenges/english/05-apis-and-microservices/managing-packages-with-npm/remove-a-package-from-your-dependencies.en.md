@@ -23,8 +23,9 @@ Make sure you have the right amount of commas after removing it.
 <section id='tests'>
 
 ```yml
-- text: '"dependencies" should not include "moment"'
-  testString: 'getUserInput => $.get(getUserInput(''url'') + ''/_api/package.json'').then(data => { var packJson = JSON.parse(data); assert.notProperty(packJson.dependencies, ''moment'', ''"dependencies" still includes "moment"''); }, xhr => { throw new Error(xhr.responseText); })'
+tests:
+  - text: '"dependencies" should not include "moment"'
+    testString: 'getUserInput => $.get(getUserInput(''url'') + ''/_api/package.json'').then(data => { var packJson = JSON.parse(data); assert.notProperty(packJson.dependencies, ''moment'', ''"dependencies" still includes "moment"''); }, xhr => { throw new Error(xhr.responseText); })'
 
 ```
 
