@@ -27,7 +27,7 @@ Give your answer as a hexadecimal number.
 ```yml
 tests:
   - text: <code>euler162()</code> should return 3D58725572C62302.
-    testString: assert.strictEqual(euler162(), 3D58725572C62302, '<code>euler162()</code> should return 3D58725572C62302.');
+    testString: assert.strictEqual(euler162(), '3D58725572C62302', '<code>euler162()</code> should return 3D58725572C62302.');
 
 ```
 
