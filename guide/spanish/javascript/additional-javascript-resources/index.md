@@ -47,7 +47,7 @@ Encuentra bibliotecas de javascript en [http://jster.net](http://jster.net)
 
 ## Tutoriales
 
-*   [Codecademia](https://www.codecademy.com)
+*   [Codecademy](https://www.codecademy.com)
 *   [RithmSchool](https://www.rithmschool.com)
 
 ## Ceremonias
@@ -60,21 +60,25 @@ Encuentra bibliotecas de javascript en [http://jster.net](http://jster.net)
 
 ## Editores
 
-*   [Código de Visual Studio](https://code.visualstudio.com/)
+*   [Visual Studio Code](https://code.visualstudio.com/)
     
-    El código de Visual Studio incluye soporte integrado para la finalización del código de IntelliSense, la comprensión y navegación de código semántico enriquecido y la refactorización de código. Viene con un depurador incorporado y soporte para git y tiene una gran cantidad de extensiones.
+    Visual Studio Code (código de Visual Studio en español) incluye soporte integrado para la finalización del código de IntelliSense, la comprensión y navegación de código semántico enriquecido y la refactorización de código. Viene con un depurador incorporado y soporte para git y tiene una gran cantidad de extensiones.
     
-*   [Tormenta de web](https://www.jetbrains.com/webstorm/)
+*   [Webstorm](https://www.jetbrains.com/webstorm/)
     
     Un IDE con todas las funciones para Javascript, que incluye la finalización de código y el soporte para la creación de líneas en vivo, el control de versiones y las pruebas. Hecho por Jet Brains y modelado a partir de su IDE IntelliJ Java.
     
-*   [Soportes](http://brackets.io)
+*   [Brackets](http://brackets.io)
+
+    Editor de texto de código abierto.
     
-*   [Átomo](http://atom.io)
+*   [Atom](http://atom.io)
     
     Editor de texto de código abierto hecho por GitHub.
     
-*   [Texto sublime](https://www.sublimetext.com/)
+*   [Sublime Text](https://www.sublimetext.com/)
+
+    Editor de texto multiplataforma (Linux, Windows y Mac OS).
     
 
 ## Blogs

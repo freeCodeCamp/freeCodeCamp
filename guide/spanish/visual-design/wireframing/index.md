@@ -10,16 +10,10 @@ Wireframing es una forma de diseñar una aplicación a nivel estructural. Una es
 
 Encuentre recursos adicionales en Wireframing [aquí](http://www.experienceux.co.uk/faqs/what-is-wireframing/)
 
-[
-
 ## Herramientas de alambre
 
-* * *
-
-](http://www.experienceux.co.uk/faqs/what-is-wireframing/)
-
-[](http://www.experienceux.co.uk/faqs/what-is-wireframing/)*   [](http://www.experienceux.co.uk/faqs/what-is-wireframing/)[Maravilla](https://marvelapp.com/home)
-*   [InVision](https://www.invisionapp.com/)
-*   [Proto App](https://proto.io/)
-*   [Lucidchart](https://www.lucidchart.com/pages/examples/wireframe_software/)
-*   [Lápiz](http://pencil.evolus.vn/Default.html/)
+* [Maravilla](https://marvelapp.com/home)
+* [InVision](https://www.invisionapp.com/)
+* [Proto App](https://proto.io/)
+* [Lucidchart](https://www.lucidchart.com/pages/examples/wireframe_software/)
+* [Lápiz](http://pencil.evolus.vn/Default.html/)
