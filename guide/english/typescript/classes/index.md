@@ -7,10 +7,10 @@ title: Classes
 Object Oriented Programming is an important programming principle, especially where a lot of code is written. By structuring the code in classes and objects, it makes the code easier to understand.
 Class is one of the paradigm of `OOP`.
 
-TypeScript is having `class` keyword to create a class, like below syntax - 
+TypeScript uses the `class` keyword to create a class, like so - 
 
 ```typescript
-class <class_name>{
+class <class_name> {
       // Fields 
       
       // Constructors
@@ -29,7 +29,7 @@ class Pet {
    }  
 
    function show():void { 
-      console.log("Pet name is  :   "+this.name); 
+      console.log("Pet name is : " + this.name); 
    } 
 }
 ```
@@ -38,5 +38,5 @@ To access the attributes of class `Pet`, It needs to create an instance of the c
 ```typescript
 let pet = new Pet('Bruno');
 
-pet.show(); // output goes here
+pet.show(); // Pet name is: Bruno
 ```
