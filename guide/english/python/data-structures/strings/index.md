@@ -21,17 +21,17 @@ Python allows `str` objects, or _strings_, to be expressed in a few different wa
         TypeError: 'str' object does not support item assignment
         
   
-If we have a string S, we can access its length with the command `len(S)`.  
-```shell
+If we have a string `S`, we can access its length with the command `len(S)`.  
+```python
 >>> S = 'Hero'
 >>> len(S)
 4
 ```
   
 #### Accessing elements, Indexing and Slicing:
-Strings are zero-indexed. We can associate each element in a string with a number, the `1st` element indexed at `0`. So, a string of `N` characters would have N indices, from `0` to `N-1`.  
+Strings are zero-indexed. We can associate each element in a string with a number, the `1st` element indexed at `0`. So, a string of `N` characters would have `N` indices, from `0` to `N-1`.  
 Indices help us to access elements of the string.  
-```shell
+```python
 >>> S = 'ABCDEFGH'
 >>> S[0]
 'A'
@@ -46,9 +46,9 @@ IndexError: string index out of range
 >>> S[7]
 'H'
 ```  
-As we see above, we type `S[0]` to access the 1st element of the string, i.e., `'A'`. Also note that since the indices start at `0`, the last element in the string `ABCDEFGH` has the index `7` and not `8`, even though the string itself has length `8`. Hence, we see that *IndexError* message when we try to access `S[8]`.  
+As we see above, we type `S[0]` to access the 1st element of the string, i.e., `'A'`. Also note that since the indices start at `0`, the last element in the string `ABCDEFGH` has the index `7` and not `8`, even though the string itself has length `8`. Hence, we see that `IndexError` message when we try to access `S[8]`.  
 Another cool thing we can do with strings is slicing. Instead of accessing individual elements, we can access chunks of the string with slices. The syntax is `S[start:stop:step]` where `start` (default value `0`) refers to the index at which we want to begin slicing, `stop` (default value `len(S)`) is the index where we want to end slicing, and `step` (default value `1`) is the jump after each element. Let's look at this in action.  
-```shell
+```python
 >>> S = 'ABCDEFGH'
 >>> S[0:5:1]
 'ABCDE'
@@ -65,7 +65,7 @@ See how making the `step` equal to `-1` just reverses the string. Cool, huh?
 Feel free to experiment with different combinations to get comfortable with slicing. It's going to be very useful.  
   
 #### Concatenation and Repetition:  
-```shell
+```python
 >>> 2 + 3
 5
 >>> 'My' + ' ' + 'Hero' + ' ' + 'Academia'
@@ -76,8 +76,8 @@ Feel free to experiment with different combinations to get comfortable with slic
 >>> 'Yo!' * 3
 'Yo!Yo!Yo!'
 ```  
-The `+` and `*` operators are said to be *overloaded* because they behave differently for different types of objects.  
-Using the `+` operator on strings leads to *concatenation*, while the `*` operator results in *repetition*.  
+The `+` and `*` operators are said to be `overloaded` because they behave differently for different types of objects.  
+Using the `+` operator on strings leads to `concatenation`, while the `*` operator results in `repetition`.  
   
 ## Reference:
 
