@@ -17,7 +17,7 @@ Common exponents have special names:
 - An exponent of 3 means the number is cubed.  So 2<sup>3</sup> is referred to as 2 cubed, evaluating to 8.
 
 ### Negative Exponents
-Negative exponents are computed similarly, except that the value is placed as a denominator beneath a numerator of 1.
+Negative exponents are computed similarly, except the value is placed as a denominator beneath a numerator of 1.
 
 For example, 2<sup>-2</sup> = <sup>1</sup>/<sub>(2 * 2)</sub> = <sup>1</sup>/<sub>4</sub>
 
