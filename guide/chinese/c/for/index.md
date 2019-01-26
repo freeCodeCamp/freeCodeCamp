@@ -1,15 +1,15 @@
 ---
 title: For Loop
-localeTitle: 对于循环
+localeTitle: For循环
 ---
-# 对于循环
+# For循环
 
 `for`循环执行代码块，直到指定的条件为false。当迭代次数可变时使用`while`循环，否则使用`for`循环。 `for`循环的常见用途是数组迭代。
 
 ## For循环的语法
 
 ```c
-for ( init; condition; increment ) { 
+for(init; condition; increment){ 
    statement(s); 
  } 
 ```
@@ -39,8 +39,8 @@ for ( init; condition; increment ) {
 
 ```shell
 > Item on index 0 is 1 
- > Item on index 1 is 2 
- > Item on index 2 is 3 
- > Item on index 3 is 4 
+> Item on index 1 is 2 
+> Item on index 2 is 3 
+> Item on index 3 is 4 
 
 ```
