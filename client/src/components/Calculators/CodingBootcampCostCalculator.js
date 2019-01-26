@@ -1,10 +1,6 @@
 import React from 'react';
-// import rd3 from 'react-d3-library';
 import CostCalculator from './CostCalculator';
-// import { updateCalculator } from './calculator';
 import './codingbootcampcostcalculator.css';
-
-// const RD3Component = rd3.Component;
 
 class CodingBootcampCostCalculator extends React.Component {
   constructor(props) {

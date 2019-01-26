@@ -42,7 +42,6 @@
     "query-string": "^6.1.0",
     "react": "^16.4.2",
     "react-calendar-heatmap": "^1.7.0",
-    "react-d3-library": "^1.1.8",
     "react-dom": "^16.4.2",
     "react-freecodecamp-search": "^2.0.2",
     "react-ga": "^2.5.3",
