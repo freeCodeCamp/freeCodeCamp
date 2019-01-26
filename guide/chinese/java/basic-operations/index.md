@@ -14,31 +14,35 @@ Java支持对变量进行以下操作：
 *   **赋值** ： `=` ， `+=` ， `-=` ， `*=` ， `/=` ， `%=` ， `<<=` ， `>>=` ， `&=` ， `^=` ， `|=`
 *   **其他** ： `Conditional/Ternary(?:)` ， `instanceof`
 
-虽然大多数操作都是不言自明的，但条件（三元）算子的工作原理如下：
+虽然大多数操作都是不言自明的，但条件（三元）运算符的工作原理如下：
 
-`expression that results in boolean output ? return this value if true : return this value if false;`
+`结果为布尔值得表达式 ? 如果为True返回这个结果 : 如果为False返回这个结果;`
 
 例： 真实条件：
 
 ```java
     int x = 10; 
-    int y = (x == 10) ? 5 : 9; // y will equal 5 since the expression x == 10 evaluates to true 
+    int y = (x == 10) ? 5 : 9; // y等于5因为表达式‘x == 10’是true
 ```
 
 错误条件：
 
 ```java
     int x = 25; 
-    int y = (x == 10) ? 5 : 9; // y will equal 9 since the expression x == 10 evaluates to false 
+    int y = (x == 10) ? 5 : 9; // y等于9因为表达式‘x == 10’是false
 ```
 
-运算符的实例用于类型检查。它可用于测试对象是否是类，子类或接口的实例。一般格式 - _类/子类/接口的对象**实例**_
+运算符的实例用于类型检查。它可用于测试对象是否是类，子类或接口的实例。一般格式 - _对象**instanceof**类/子类/接口_
 
-这是一个程序来说明instanecof运算符： \`\`\`的Java Person obj1 = new Person（）; 人obj2 =新男孩（）;
-```
-    // As obj is of type person, it is not an 
-    // instance of Boy or interface 
-    System.out.println("obj1 instanceof Person: " +  (obj1 instanceof Person)); /*it returns true since obj1 is an instance of person */ 
-```
+这是一个程序来说明instanecof运算符： 
 
-\`\`\`
+```Java
+  Person obj1 = new Person();
+        Person obj2 = new Boy();
+ 
+        // 因为obj1是Person类，it is not an
+        // 它不是Boy的实例也不是接口的实例
+        System.out.println("obj1 instanceof Person: " +  (obj1 instanceof Person)); /*返回true因为obj1是Person的实例 */
+                           
+       
+ ```

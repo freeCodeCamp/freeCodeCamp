@@ -4,9 +4,8 @@ title: Creating GUI's in Python3
 
 # Creating GUI's in Python 3 
 
-This is a stub. <a href='https://github.com/freecodecamp/guides/tree/master/src/pages/java/collections/index.md' target='_blank' rel='nofollow'>Help our community expand it</a>.
+[Tkinter](https://docs.python.org/3/library/tk.html) is a great way to create GUI's in Python.
 
-<a href='https://github.com/freecodecamp/guides/blob/master/README.md' target='_blank' rel='nofollow'>This quick style guide will help ensure your pull request gets accepted</a>.
+[WxPython](https://wxpython.org/) can be used to create 'GUIs' in Python it has great functionality and works well on both Linux and Windows.
 
-<!-- The article goes here, in GitHub-flavored Markdown. Feel free to add YouTube videos, images, and CodePen/JSBin embeds  -->
-[Tkinter](https://docs.python.org/3/library/tk.html) is a great way to create GUI's in python
+[PyQt](https://riverbankcomputing.com/software/pyqt/intro) can also be used to create 'GUIs' in Python.
