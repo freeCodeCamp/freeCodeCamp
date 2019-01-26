@@ -1,3 +1,6 @@
+.CodingBootcampCostCalculator .d3-chart {	
+  position: relative;
+}
 .CodingBootcampCostCalculator div.tooltip {	
   position: absolute;
   text-align: center;

@@ -1,15 +1,12 @@
 import d3 from 'd3';
-import $ from 'jquery';
 
-export var node = document.createElement('div');
-
-export function initCalculator(bootcamps, city, lastYearsIncome) {
-  $('.CodingBootcampCostCalculator').data('state', 'stacked');
+export function updateCalculator(d3Node, bootcamps, city, lastYearsIncome) {
+  d3Node.className = 'd3-chart';
   var categoryNames = ['Lost Wages', 'Financing Cost', 'Housing Cost', 'Tuition / Est. Wage Garnishing'];
   // Tooltips
-  var tip = d3.select('.CodingBootcampCostCalculator').select('div.tooltip');
+  var tip = d3.select(d3Node).select('div.tooltip');
   if (tip.empty()) {
-    tip = d3.select('.CodingBootcampCostCalculator').append('div')
+    tip = d3.select(d3Node).append('div')
     .attr('class', 'tooltip')
     .style('opacity', 0);
   }
@@ -56,8 +53,8 @@ export function initCalculator(bootcamps, city, lastYearsIncome) {
     return a.total - b.total;
   });
   var xStackMax = d3.max(bootcamps, function(d) {
-      return d.total;
-    });
+    return d.total;
+  });
   var margin = {
       top: 30,
       right: 60,
@@ -77,10 +74,10 @@ export function initCalculator(bootcamps, city, lastYearsIncome) {
   var color = d3.scale.ordinal()
     .range(['#215f1e', '#5f5c1e', '#1e215f', '#5c1e5f'])
     .domain(categoryNames);
-  var svg = d3.select(node).select('svg').select('g');
+  var svg = d3.select(d3Node).select('svg').select('g');
   var selection, rect;
   if (svg.empty()) {
-    svg = d3.select(node).append('svg')
+    svg = d3.select(d3Node).append('svg')
       .attr('width', width + margin.left + margin.right)
       .attr('height', height + margin.top + margin.bottom)
       .append('g')
@@ -137,31 +134,36 @@ export function initCalculator(bootcamps, city, lastYearsIncome) {
     })
     .style('stroke', 'white')
     .on('mouseover', function(d) {
-      var component = d3.select('.CodingBootcampCostCalculator');
+      var component = d3.select('.d3-chart');
+      var componentPos = component[0][0].getBoundingClientRect();
       var box = this.getBoundingClientRect();
-      var tooltip = tip[0][0].getBoundingClientRect();
+      var tooltip = component.select('.tooltip');
 
-      var body = document.body;
-      var docEl = document.documentElement;
-  
-      var scrollTop = window.pageYOffset || docEl.scrollTop || body.scrollTop;
-      var scrollLeft = window.pageXOffset || docEl.scrollLeft || body.scrollLeft;
-  
-      var top = box.top + scrollTop;
-      var left = box.left + scrollLeft;
+      var top = box.top - componentPos.top - tooltip[0][0].offsetHeight - 10;
+      var left = (box.left + (box.width / 2)) - componentPos.left - (tooltip[0][0].offsetWidth / 2);
       component
         .select('.tooltip').transition()
         .duration(200)
         .style('opacity', 0.9);
       component
         .select('.tooltip').html('<div>' + d.label + '<br />$' + d.value + '</div>')
-        .style('left', (left - (component[0][0].offsetParent.offsetLeft - (box.width / 2) + (tooltip.width / 2))) + 'px')
-        .style('top', (top - (component[0][0].offsetTop + (tooltip.height - 10))) + 'px');
+        .style('left', (left + 'px'))
+        .style('top', (top + 'px'));
     })
     .on('mouseout', function(d) {
       d3.select('.CodingBootcampCostCalculator').select('.tooltip').transition()
         .duration(500)
         .style('opacity', 0);
+    });
+  rect.transition()
+    .delay(function(d, i) {
+      return i * 10;
+    })
+    .attr('x', function(d) {
+      return xScale(d.x0);
+    })
+    .attr('width', function(d) {
+      return xScale((d.x1) - (d.x0));
     });
 
   // Axes
@@ -181,9 +183,7 @@ export function initCalculator(bootcamps, city, lastYearsIncome) {
       .style('text-anchor', 'end')
       .attr('dx', '-.8em')
       .attr('dy', '.15em')
-      .attr('transform', function(d) {
-        return 'rotate(-45)';
-      });
+      .attr('transform', 'rotate(-45)');
   } else {
     svgXAxis
       .call(xAxis)
@@ -191,26 +191,10 @@ export function initCalculator(bootcamps, city, lastYearsIncome) {
       .style('text-anchor', 'end')
       .attr('dx', '-.8em')
       .attr('dy', '.15em')
-      .attr('transform', function(d) {
-        return 'rotate(-45)';
-      });
+      .attr('transform', 'rotate(-45)');
     svgYAxis
       .call(yAxis);
   }
 
-  svg.on('mount', function() {
-    d3.selectAll('rect.series-part')
-      .transition()
-      .delay(function(d, i) {
-        return i * 10;
-      })
-      .attr('x', function(d) {
-        return xScale(d.x0);
-      })
-      .attr('width', function(d) {
-        return xScale(Math.abs((d.x1) - (d.x0)));
-      });
-  });
-
-  return node;
+  return d3Node;
 }

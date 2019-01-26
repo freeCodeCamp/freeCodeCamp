@@ -1,15 +1,16 @@
 import React from 'react';
-import rd3 from 'react-d3-library';
-import { initCalculator, node } from './calculator';
+// import rd3 from 'react-d3-library';
+import CostCalculator from './CostCalculator';
+// import { updateCalculator } from './calculator';
 import './codingbootcampcostcalculator.css';
 
-const RD3Component = rd3.Component;
+// const RD3Component = rd3.Component;
 
-export default class CodingBootcampCostCalculator extends React.Component {
+class CodingBootcampCostCalculator extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      d3: node,
+      d3: <div />,
       cities: [],
       incomes: [],
       city: null,
@@ -19,10 +20,9 @@ export default class CodingBootcampCostCalculator extends React.Component {
     };
     this.handleCitySelector = this.handleCitySelector.bind(this);
     this.handleIncomeSelector = this.handleIncomeSelector.bind(this);
-    this.handleSubmit = this.handleSubmit.bind(this);
   }
 
-  componentWillMount() {
+  componentDidMount() {
     fetch('/json/bootcamps.json')
       .then(function(response) {
         return response.json();
@@ -71,15 +71,8 @@ export default class CodingBootcampCostCalculator extends React.Component {
   handleIncomeSelector(event) {
     let el = event.target;
     this.setState({
-      lastYearsIncome: event.target.value,
+      lastYearsIncome: parseInt(event.target.value, 10),
       lastYearsIncomeLabel: el.options[el.selectedIndex].text
-    });
-  }
-
-  handleSubmit() {
-    let { bootcamps, city, lastYearsIncome } = this.state;
-    this.setState({
-      d3: initCalculator(bootcamps, city, lastYearsIncome)
     });
   }
 
@@ -119,10 +112,6 @@ export default class CodingBootcampCostCalculator extends React.Component {
             </div>
             <div className='spacer' />
             <div className='text-center'>
-              <button className='btn btn-primary btn-md' disabled={!this.state.city || !this.state.lastYearsIncome} id='transform' onClick={this.handleSubmit}>
-                Calculate
-              </button>
-              <div className='spacer' />
               <a href='/json/bootcamps.json'>
                 View Data Source JSON
               </a>
@@ -132,25 +121,27 @@ export default class CodingBootcampCostCalculator extends React.Component {
               Coming from <span>{cityLabel}</span>, and making <span>{lastYearsIncome}</span>, your true costs will be:
             </h3>
             <div id='chart'>
-              <div className='d3-centered'>
-                <RD3Component data={this.state.d3} />
-              </div>
+              <CostCalculator
+                bootcamps={this.state.bootcamps}
+                city={this.state.city}
+                lastYearsIncome={this.state.lastYearsIncome}
+              />
             </div>
             <div className='spacer' />
             <div id='explanation'>
               <h3>Notes:</h3>
               <ol>
-                <li className='large-li'>
+                <li>
                   We assumed an APR of 6% and a term of 3 years. If you happen
                   to have around $15,000 in cash set aside for a coding
                   bootcamp, please ignore this cost.
                 </li>
-                <li className='large-li'>
+                <li>
                   We assume a cost of living of $500 for cities like San
                   Francisco and New York City, and $400 per week for
                   everywhere else.
                 </li>
-                <li className='large-li'>
+                <li>
                   The most substantial cost for most people is lost wages. A
                   40-hour-per-week job at the US Federal minimum wage would
                   pay at least $15,000 per year. You can read more about
@@ -167,7 +158,7 @@ export default class CodingBootcampCostCalculator extends React.Component {
                 </div>
                 <div className='col-xs-12 col-sm-6'>
                   <h3>Built by Suzanne Atkinson</h3>
-                  <p className='large-p'>
+                  <p>
                     Suzanne is an emergency medicine physician, triathlon
                     coach and web developer from Pittsburgh. You should
                     &thinsp;
@@ -184,3 +175,5 @@ export default class CodingBootcampCostCalculator extends React.Component {
     );
   }
 }
+
+export default CodingBootcampCostCalculator;
