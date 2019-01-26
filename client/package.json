@@ -18,6 +18,7 @@
     "axios": "^0.18.0",
     "browser-cookies": "^1.2.0",
     "chai": "^4.2.0",
+    "d3-3": "0.0.0",
     "date-fns": "^1.29.0",
     "enzyme": "^3.6.0",
     "enzyme-adapter-react-16": "^1.5.0",

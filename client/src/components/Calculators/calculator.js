@@ -1,4 +1,4 @@
-import d3 from 'd3';
+import d3 from 'd3-3';
 
 export function updateCalculator(d3Node, bootcamps, city, lastYearsIncome) {
   d3Node.className = 'd3-chart';
