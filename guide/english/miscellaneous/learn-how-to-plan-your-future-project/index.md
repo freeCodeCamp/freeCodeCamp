@@ -21,7 +21,7 @@ Together, we'll plan out a simple "To-do" single-page web app. We'll also plan f
 
 ## 2) Write user stories
 
-Here are some example user stories. These will guide how we think about our app's features and functionality. Note that they all follow a similar structure: as a <a href='https://lh5.googleusercontent.com/2v6iIMbCrLSKVfqttEToum7OA3YGQCBKWUHcSCB1KEbEcijXxQtKJKY6fhLXeecJiO27P4icOuPlkVc9_uNXolzlzNXOo_TPh09GZsAqRH-JISqPrpx0PZdtbHOr0RIuQUbTbaw' target='_blank' rel='nofollow'>person] I can [do something].
+Here are some example user stories. These will guide how we think about our app's features and functionality. Note that they all follow a similar structure: as a [person] I can [do something].
 
 *   as a logged-in user I can see the list of my to-do's.
 *   as a logged-in user I can add a new to-do.
@@ -29,11 +29,11 @@ Here are some example user stories. These will guide how we think about our app'
 *   as a logged-in user I can complete a to-do (only my to-do's - not other users').
 *   as an anonymous user, I can register for a new account, recover my password, or log in to the app with an existing account.
 
-## 3) Create our use case model
+## 3) Create our user case model
 
-Our use case model will help us visualize our user stories so we can better understand how to implement them.
+Our user case model will help us visualize our user stories so we can better understand how to implement them.
 
-![Anonymous user case diagram</a>
+<a href='https://lh5.googleusercontent.com/2v6iIMbCrLSKVfqttEToum7OA3YGQCBKWUHcSCB1KEbEcijXxQtKJKY6fhLXeecJiO27P4icOuPlkVc9_uNXolzlzNXOo_TPh09GZsAqRH-JISqPrpx0PZdtbHOr0RIuQUbTbaw' target='_blank' rel='nofollow'>![Anonymous user case diagram]</a>
 
 ![Authenticated user case diagram](https://lh6.googleusercontent.com/3V6dVvAcyjqFkaOukimucYOX0CfwBBYNN9SvjmnVy40Pdhs4Wtrr34i3E-9pbV7tFsp4jHm77IFQvFupjq6OWyxqEgCzcQ995Ayh52Msczu6TfwKeNhL9PYHyxSgmPYA1TR6l6Q)
 
