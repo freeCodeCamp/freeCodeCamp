@@ -58,5 +58,9 @@ let result = chewieQuote.match(chewieRegex);
 
 ```js
 // solution required
-```
+```js
+let chewieQuote = "Aaaaaaaaaaaaaaaarrrgh!";
+let chewieRegex = /A[a]*/; // Change this line
+let result = chewieQuote.match(chewieRegex);
+console.log(result); // Aaaaaaaaaaaaaaaa
 </section>
