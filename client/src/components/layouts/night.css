@@ -24,11 +24,6 @@
   color: #333;
 }
 
-.night #top-right-nav li > a,
-.night #top-right-nav li > span {
-  color: #ddd;
-}
-
 .night .btn.btn-primary {
   color: #ddd;
 }
@@ -40,6 +35,7 @@
   color: #fff;
   background: #2a2a2a;
 }
+.night .footer,
 .night .challenge-instructions blockquote,
 .night blockquote,
 .night pre {

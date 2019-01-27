@@ -34,7 +34,6 @@ header {
   list-style: none;
   justify-content: space-between;
   align-items: center;
-  width: 290px;
   background-color: #006400;
 }
 
@@ -43,14 +42,8 @@ header {
   max-height: 38px;
 }
 
-#top-right-nav a.btn-cta {
-  background-color: #ffac33;
-  background-image: linear-gradient(#ffcc4d, #ffac33);
-  border-color: #f1a02a;
-  color: #292f33 !important;
-  text-shadow: 0 1px 0 rgba(255, 255, 255, 0.5);
-  max-height: 38px;
-  padding: 4px 12px;
+#top-right-nav > li > a {
+  padding: 8px 15px;
 }
 
 #top-right-nav li {
@@ -60,7 +53,7 @@ header {
 #top-right-nav li,
 #top-right-nav li > a {
   color: #fff;
-  font-size: 17px;
+  font-size: 18px;
 }
 
 #top-right-nav li:hover,
@@ -89,6 +82,7 @@ li.user-state-link > a:focus {
 
 .user-state-spinner {
   height: 38px;
+  padding: 0 12px;
 }
 
 .user-state-spinner > div {
@@ -101,12 +95,16 @@ li.user-state-link > a:focus {
   padding: 0 10px;
 }
 
+.fcc_searchBar .ais-SearchBox-input,
+.fcc_searchBar .ais-Hits {
+  background-color: #fff;
+}
+
 .fcc_searchBar .ais-SearchBox-form {
   margin-bottom: 0;
 }
 
 .fcc_searchBar .ais-Hits {
-  background-color: white;
   width: 60%;
 }
 
