@@ -15,18 +15,29 @@ of how Lists are organized compared to Vectors and Arrays.
 Traversal in a list is slow as compared to Vectors and Arrays, but once a position has been found, insertion and deletion are quick.
 
 ## How to declare a List
-If you want to declare a List of Numbers you write:
 
-'''std::list<int> Numbers;''' 
+Possible declarations of a list:
+```c++
+#include <list>
+
+int main()
+{
+  std::list<int> list1 = {1, 2, 3, 4};
+  std::list<int> list2 (list1);
+  std::list<int> list3 = list2;
+  std::list<int> list4 {list3};
+  std::list<int>* list5 = new std::list<int>(list4);
+}
+```
 
 ## Functions used with List
-size() : Returns the number of elements in the list
-begin() : Returns an iterator pointing to the first element of the list
-end() : Returns an iterator pointing to the theoretical last element which follows the last element
-push_front(data) – Adds a new element with value 'data' at the beginning of the list
-push_back(data) – Adds a new element with value 'data' at the end of the list
-pop_front() – Removes the first element of the list
-pop_back() – Removes the last element of the list
+* size() : Returns the number of elements in the list
+* begin() : Returns an iterator pointing to the first element of the list
+* end() : Returns an iterator pointing to the theoretical last element which follows the last element
+* push_front(data) – Adds a new element with value 'data' at the beginning of the list
+* push_back(data) – Adds a new element with value 'data' at the end of the list
+* pop_front() – Removes the first element of the list
+* pop_back() – Removes the last element of the list
 
 ## How to use these Functions
 

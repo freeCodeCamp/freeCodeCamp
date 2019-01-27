@@ -12,7 +12,7 @@ To get started, just print the classic "Hello World" in the console. We recommen
 
 ## Instructions
 <section id='instructions'>
-
+Modify the <code>myApp.js</code> file to log "Hello World" to the console. 
 </section>
 
 ## Tests

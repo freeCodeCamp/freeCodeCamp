@@ -4,7 +4,7 @@ import { createTypes, createAsyncTypes } from '../../utils/createTypes';
 import { createSettingsSagas } from './settings-sagas';
 import { createUpdateMyEmailSaga } from './update-email-saga';
 
-const ns = 'settings';
+export const ns = 'settings';
 
 const defaultFetchState = {
   pending: false,

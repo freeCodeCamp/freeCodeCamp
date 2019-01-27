@@ -23,6 +23,7 @@ const mapDispatchToProps = dispatch =>
 const propTypes = {
   executeChallenge: PropTypes.func.isRequired,
   guideUrl: PropTypes.string,
+  isMobile: PropTypes.bool,
   openHelpModal: PropTypes.func.isRequired,
   openResetModal: PropTypes.func.isRequired,
   openVideoModal: PropTypes.func.isRequired,
@@ -31,6 +32,7 @@ const propTypes = {
 
 function ToolPanel({
   executeChallenge,
+  isMobile,
   openHelpModal,
   openVideoModal,
   openResetModal,
@@ -39,9 +41,11 @@ function ToolPanel({
 }) {
   return (
     <Fragment>
-      <div className='tool-panel-group'>
+      <div className={`tool-panel-group ${
+          isMobile ? 'tool-panel-group-mobile' : ''
+        }`}>
         <Button block={true} bsStyle='primary' onClick={executeChallenge}>
-          Run the Tests
+          {isMobile ? 'Run' : 'Run the Tests'}
         </Button>
         <Button
           block={true}
@@ -49,7 +53,7 @@ function ToolPanel({
           className='btn-primary-invert'
           onClick={openResetModal}
           >
-          Reset All Code
+          {isMobile ? 'Reset' : 'Reset All Code'}
         </Button>
         {guideUrl ? (
           <Button
@@ -59,7 +63,7 @@ function ToolPanel({
             href={guideUrl}
             target='_blank'
             >
-            Get a hint
+            {isMobile ? 'Hint' : 'Get a hint'}
           </Button>
         ) : null}
         {videoUrl ? (
@@ -69,7 +73,7 @@ function ToolPanel({
             className='btn-primary-invert'
             onClick={openVideoModal}
             >
-            Watch a video
+            {isMobile ? 'Video' : 'Watch a video'}
           </Button>
         ) : null}
         <Button
@@ -78,7 +82,7 @@ function ToolPanel({
           className='btn-primary-invert'
           onClick={openHelpModal}
           >
-          Ask for help
+          {isMobile ? 'Help' : 'Ask for help'}
         </Button>
       </div>
     </Fragment>
