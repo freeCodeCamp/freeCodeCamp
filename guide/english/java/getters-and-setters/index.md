@@ -14,12 +14,12 @@ public class Vehicle {
   
   // Getter
   public String getColor() {
-  return color;
+    return color;
   }
   
   // Setter
   public void setColor(String c) {
-  this.color = c;
+    this.color = c;
   }
 }
 ```
@@ -37,7 +37,7 @@ public static void main(String[] args) {
 // Outputs "Red"
 ```
 ****************
-Getters and setters allow control over the values.  You may validate the given value in the setter before actually setting the value.
+Getters and setters allow control over the values. You may validate the given value in the setter before actually setting the value.
 
 
 ## Why getter and setter?
@@ -67,4 +67,71 @@ public int getNumber() {
     return this.number;
 }
 ```
+
+## When not to use getters and setters?
+
+Getters and Setters are great, and have huge benifts, but they should not be used everywhere there is a class variable.
+
+Let us define a class Point.
+```java
+class Point{
+  private int x, y;
+  
+  public Point(int x, int y){
+    setX(x);
+    setY(y);
+  }
+  
+  public void setX(int x){
+    this.x = x;
+  }
+  public void setY(int x){
+    this.y = y;
+  }
+
+  public int getX(){
+    return x;
+  }
+  public int getY(){
+    return y;
+  }
+}
+```
+Now let us say that we want to move a point in the x+ direction by one unit. We need the following code:
+```java
+//Let the Point object be p.
+p.setX(p.getX() + 1);
+```
+The above code, while correct, is difficult to understand at first glance. Also, if we want to update the Point class to use float or double, we need to update all four of it's setters and getters. So, some classes have some of their members as public in the interest of readablility and ease of use.
+
+If the class Point was implemented as:
+```java
+class Point{
+  public int x, y;
+  
+  public Point(int x, int y){
+    this.x = x;
+    this.y = y;
+  }
+}
+```
+
+Then, we can very easily move it in the x+ direction by one unit with
+```java
+//Let the Point object be p.
+p.x++;
+```
+
+The above code is much more readable, and easier to use. Also, if we want to update the Point class to use float or double, it is a simple matter of changing the data types of x and y, and there are no functions to be updated.
+```java
+class Point{
+  public double x, y;
+  
+  public Point(double x, double y){
+    this.x = x;
+    this.y = y;
+  }
+}
+```
+
 Getters and setters are so widely used that some some Integrated Development Environments (IDEs) allow these methods to be generated automatically. They also prevent the possible need of making fields public, which can cause unforeseen issues when the caller alters these fields. 
