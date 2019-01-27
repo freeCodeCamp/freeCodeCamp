@@ -1,3 +1,7 @@
+---
+title: Error Handling
+---
+
 # Error Handling
 
 You represent errors using any type that adopts the  `Error`  protocol.
