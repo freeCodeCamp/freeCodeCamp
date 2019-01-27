@@ -4,9 +4,10 @@ title: Get Started
 ## Get Started
 
 There are several ways to get started with Bulma.
-* <b>npm</b> install the bulma package.
-* cdnjs <b>CDN</b> to link to the bulma stylesheet.
-* use the <b>Github Repository</b> to get the latest development version.
+
+* Installing the Bulma package with <b>npm</b>
+* Using a <b>CDN</b> to link to the Bulma stylesheet.
+* Use the <b>Github Repository</b> to get the latest development version.
 
 1) Using npm
 ```terminal
@@ -20,7 +21,7 @@ https://github.com/jgthms/bulma/tree/master/css
 
 ### Code requirements
 
-For bulma to work correctly, you need to make your webpage responsive.
+For Bulma to work correctly, you need to make your webpage responsive.
 1) Use HTML5 doctype
 ```html
 <!DOCTYPE html>

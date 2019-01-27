@@ -2,11 +2,14 @@
 title: For Loop
 ---
 
-A For Loop is a repetitive statement that is used to check for some condition and then based upon the condition a block of code is executed repeatedly until the specified condition is satisfied.
+A for-loop is a repetitive statement that is used to check for some condition and then, based upon the condition a block of code, is executed repeatedly until the specified condition is satisfied.
 
-The for loop is distinguished from other looping statements through an explicit loop counter or loop variable which allows the body of the loop to know the exact sequencing of each iteration.
+The for-loop is distinguished from other looping statements through an explicit loop counter or loop variable which allows the body of the loop to know the exact sequencing of each iteration.
 
-Hence a for loop is a repetition control structure that allows you to efficiently write a loop that needs to execute a specific number of times.
+Hence a for-loop is a repetition control structure that allows you to efficiently write a loop that needs to execute a specific number of times.
+
+For loop is an entry controlled loop unlike do-while loop.
+
 
 ## Syntax
 
@@ -37,19 +40,24 @@ Though you can't ignore the condition, because empty condition is defaulted as f
 
 ### init
 This step allows you to declare and initialize any loop control variables. This step is performed first and only once.  
-Note that the variables declared in init can only be used inside the brackets of the for loop.
+Note that the variables declared in init can only be used inside the brackets of the For Loop.
 
 ### condition
-Next the condition is evaluated. If it holds true, the body of the loop is executed. If it holds false, the body of the loop does not execute and flow of control jumps to the next iteration(repetition of a process).
+Next, the condition is evaluated. If it holds true, the body of the loop is executed. If it holds false, the body of the loop does not execute and flow of control jumps to the next iteration(repetition of a process).
+
+
+### increment
+The increment statement is used to alter the loop variable by using simple increment operations and executes after the completion of the body of the loop.
 
 ### update
-The update statement is used to alter the loop variable by using simple operations like addition,subtraction,multiplication or division.
-The update statement executes after the execution of the body of the loop.
+The update statement is used to alter the loop variable by using simple operations like addition, subtraction, multiplication or division and executes after the execution of the body of the loop.
+
+You will often see an increment operation as the update statement (e.g. i++, count++). This is often seen as one of the distinguishing features and possible name sources for the C++ language.
 
 ## IMPLEMENTATION:
 ```C++
 #include <iostream>
-using namespace std; // Here we use the scope resolution operator to define the scope of the standar functions as std::
+using namespace std; // Here we use the scope resolution operator to define the scope of the standard functions as std::
  
 int main () {
    // for loop execution
@@ -58,8 +66,10 @@ int main () {
    }
 
    return 0;
-}```
+}
+```
 
+```
 Output:
 value of a: 10
 value of a: 11
@@ -71,10 +81,12 @@ value of a: 16
 value of a: 17
 value of a: 18
 value of a: 19
+```
 
-##Single lined loop
-The body of the for loop need not be enclosed in braces if the loop iterates over only one satatement.
-##Example
+## Single lined loop
+The body of the for loop need not be enclosed in braces if the loop iterates over only one statement.
+
+#### Example
 ```c++
    #include<iostream.h>
    using namespace std;
@@ -86,10 +98,10 @@ The body of the for loop need not be enclosed in braces if the loop iterates ove
    
 
    return 0;
-}```
-
+}
+```
 This would generate the same output as the previous program.
-i.e 
+```
 Output:
 value of a: 10
 value of a: 11
@@ -105,10 +117,11 @@ value of a: 19
 ```
 
 ## Explanation
-Here's the initialization condition is first set to a=10. The loop first checks for this condition. It then checks for the condition expression i.e a<20 which holds true as 10<20(for the first case). Now the body of the loop is executed and we get the output "Value of a: 10". Then the update expression is executed which adds the number 1 to 'a' and the value of 'a' gets updated to 11 and the same steps are followed (as above) until the value of v reaches less than 20 i.e 19.
+
+Here, the initialization condition is first set to a=10. The loop first checks for this condition. It then checks for the condition expression i.e. a<20 which holds true as 10<20(for the first case). Now the body of the loop is executed and we get the output "Value of a: 10". Then the update expression is executed which adds the number 1 to 'a' and the value of 'a' gets updated to 11 and the same steps are followed (as above) until the value of v reaches less than 20 i.e 19.
 
 # Range-based for-loop
-C++ also has what we call range-based for loops which iterates through all the elements of a container(e.g. array).
+C++ also has what we call "range-based" for loops which iterates through all the elements of a container (e.g. array).
 
 ## Syntax
 
