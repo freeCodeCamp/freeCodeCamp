@@ -19,7 +19,7 @@ Two of the most common technologies used are:
 There are many other blockchain projects offering (or promising) smart contract capabilities  - e.g., EOS, NEO or ICON. They may compete with Ethereum for market adoption (still very low globally) in the future.
 
 ### Smart Contracts in Ethereum
-Smart contracts in Ethereum are written using Solidity, its a high-level, contract-oriented programmng language, and targets Ethereum Virtual Machine, one can use Remix online IDE to try writting and deploying smart contracts
+Smart contracts in Ethereum are written using Solidity.  Solidity is a contract-oriented, high-level language for implementing Smart Contracts, and targets the Ethereum Virtual Machine. One can use Remix online IDE to try writing and deploying Smart Contracts.
 
 ### Smart Contracts in Hyperledger
 Smart contracts in Hyperledger is called chaincode, and is written in Golang programming language.
