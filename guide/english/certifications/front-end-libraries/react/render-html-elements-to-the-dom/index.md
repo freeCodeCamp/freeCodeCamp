@@ -9,7 +9,7 @@ ReactDOM.render(<item to be rendered>, <where to be rendered>);
 ````
 Use the Document method `getElementByID()` to target a specfic node in the DOM
 ````javascript
-Document.getElementByID(<target node>)
+document.getElementByID(<target node>)
 ````
 Use the Document method `getElementByID()`  as an argument within the ReactDOM method `render()` to solve this challenge.
 
