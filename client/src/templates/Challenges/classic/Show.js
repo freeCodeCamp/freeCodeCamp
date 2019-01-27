@@ -39,8 +39,6 @@ import {
 import './classic.css';
 import '../components/test-frame.css';
 
-import decodeHTMLEntities from '../../../../utils/decodeHTMLEntities';
-
 const mapStateToProps = createStructuredSelector({
   files: challengeFilesSelector,
   tests: challengeTestsSelector,
@@ -237,7 +235,7 @@ class ShowClassic extends Component {
 * Your test output will go here.
 */
 `}
-        output={decodeHTMLEntities(output)}
+        output={output}
       />
     );
   }
