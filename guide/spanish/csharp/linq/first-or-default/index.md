@@ -1,7 +1,8 @@
 ---
 title: First Or Default
 localeTitle: Primero o predeterminado
----# FirstOrDefault
+---
+# FirstOrDefault
 
 Devuelve el primer elemento que satisface una condición dada opcional. Si no se encuentra ningún elemento, se devuelve el `default()` del objeto.
 
@@ -23,8 +24,10 @@ var fruits = new List<Fruit>() {
     new Fruit() { Id = 6, Name = "Mango",      Color = "Yellow", Quantity: 2   } 
  }; 
  
+ // Obtiene la primer fruta, si el enumerable esta vacio, regresa null
  var firstFruit = fruits.FirstOrDefault(); // Orange 
  
+ // Obtiene la primer fruta de color verde, si no encuentra ninguna fruta, regresa null
  var firstYellowFruit = fruits.FirstOrDefault(f => f.Color == "Green"); // null 
 
 ```
