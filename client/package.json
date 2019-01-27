@@ -19,6 +19,7 @@
     "browser-cookies": "^1.2.0",
     "chai": "^4.2.0",
     "date-fns": "^1.29.0",
+    "entities": "^1.1.2",
     "enzyme": "^3.6.0",
     "enzyme-adapter-react-16": "^1.5.0",
     "fetchr": "^0.5.37",
