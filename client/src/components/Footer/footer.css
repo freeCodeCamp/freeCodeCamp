@@ -18,3 +18,11 @@
   margin-left: 5px;
   color: #6d6d6d;
 }
+
+.night .footer {
+  background: #222;
+}
+
+.night .footer a {
+  color: #006400;
+}
