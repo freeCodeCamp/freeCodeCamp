@@ -32,7 +32,7 @@ As interfaces do not implement any logic by themselves, they are a great tool fo
 
 Interface Example:
 ```csharp
-public Interface IUserFavoriteFood
+public interface IUserFavoriteFood
 {
   void AddFood();
   Task<User> EatFavoriteFood(int id);
