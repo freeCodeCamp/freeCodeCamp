@@ -7,8 +7,8 @@ An interface declares a contract or a behavior that implementing classes require
 It may declare only properties, methods and events with NO access modifiers.
 
 All the declared members must be implemented in the inherited class, otherwise you will have a compile-time error.
-The convention is to start the name of the interface with the letter I, such as ```IMyInterface``` or ```IUserOptions```.
-You define an interface by using the ```interface``` keyword.
+The convention is to start the name of the interface with the letter I, such as `IMyInterface` or `IUserOptions`.
+You define an interface by using the `interface` keyword.
 
 All members of an interface are:
 implicitly abstract,
