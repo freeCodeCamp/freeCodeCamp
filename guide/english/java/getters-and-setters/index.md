@@ -3,9 +3,9 @@ title: Getters & Setters
 ---
 
 # Getters & Setters
-Getters and Setters are used to effectively protect your data, particularly when creating classes. For each instance variable, a getter method returns its value while a setter method sets or updates its value. Getters and setters are also known as accessors and mutators, respectively.
+Getters and Setters are used to implement the principle of encapsulation and so the instance variable can be accessed only by its getter and setter methods. For each instance variable, a getter method returns its value while a setter method sets or updates its value. Getters and setters are also known as accessors and mutators, respectively.
 
-By convention, getters start with get, followed by the variable name, with the first letter of the variable name capitalized. Setters start with set, followed by the variable name, with the first letter of the variable name capitalized. This form of naming is known as camel case.
+By convention, getters start with `get`, followed by the variable name, with the first letter of the variable name capitalized. Setters start with `set`, followed by the variable name, with the first letter of the variable name capitalized.
 
 ***Example:***
 ```java
@@ -42,7 +42,8 @@ Getters and setters allow control over the values. You may validate the given va
 
 ## Why getter and setter?
 
-By using getter and setter, the programmer can control how their important variables are accessed and updated, such as changing value of a variable within a specified range. Consider the following code of a setter method:
+By using getter and setter, the programmer can control how their variables are accessed and updated, such as changing the value of a variable within a specified range. Consider the following code of a setter method:
+
 ```java
 public void setNumber(int num) {
     if (num < 10 || num > 100) {
@@ -51,18 +52,22 @@ public void setNumber(int num) {
     this.number = num;
 }
 ```
-This ensures the value of number is always set between 10 and 100.  If the programmer allows the variable number to be updated directly, the caller can set any arbitrary value to it:
+
+This ensures the value of `number` is always set between 10 and 100.  If the programmer allows the variable `number` to be updated directly, the caller can set any arbitrary value to it:
+
 ```java
 obj.number = 3;
 ```
 
-This violates the constraint for values ranging from 10 to 100 for that variable. Since we don't expect that to happen, hiding the variable number as private and using a setter prevents it.
-On the other hand, a getter method is the only way for the outside world to read the variable’s value:
+This violates the constraint for values ranging from 10 to 100 for that variable. Hiding the variable as private and only modifying it through the setter, prevents it from violating the constraint.
+
+Since the variable is now private, a getter method is the only way for the outside world to read the variable’s value:
 ```java
 public int getNumber() {
     return this.number;
 }
 ```
+
 ## When not to use getters and setters?
 
 Getters and Setters are great, and have huge benifts, but they should not be used everywhere there is a class variable.
@@ -128,3 +133,5 @@ class Point{
   }
 }
 ```
+
+Getters and setters are so widely used that some some Integrated Development Environments (IDEs) allow these methods to be generated automatically. They also prevent the possible need of making fields public, which can cause unforeseen issues when the caller alters these fields. 
