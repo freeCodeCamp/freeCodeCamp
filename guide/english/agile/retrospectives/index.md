@@ -17,11 +17,11 @@ The standard agenda for the retrospective is:
 
 And from this discussion, the team creates a list of behaviors that they work on, collectively, over time. 
 
-When commiting to action items, make sure you focus on 1 - 3. It is better to get a couple done, than commiting to more and not doing them. If it is difficult to come up with actions, try running experiments: Write down what you will do and what you want to achieve with that. In the following retro check if what you did achieved what you had planned. If it did not - you can learn out of the experiment and try out something else. 
+When commiting to action items, make sure you focus on 1 - 3. It is better to get a couple done, than commiting to more and not doing them. If it is difficult to come up with actions, try running experiments: Write down what you will do and what you want to achieve with that. In fact, if the team is using a tool like JIRA to manage it's work, a zero point "story" or an item can be added in the following sprint to ensure the team executes on the improvement area(s). In the following retro check if what you did achieved what you had planned. If it did not - you can learn out of the experiment and try out something else. 
 
-A good approach to find out which topics should be discussed is *"Discuss and mention"*. It consists on a board with as many columns as people in the team (you can use something like Trello or just a regular whiteboard) and two more for the things to "discuss" and those to be "mentioned". Everybody has 10 minutes to fill their column with things from the last sprint they want to highlight (these are represented with cards or Post-it's). Afterwards, each team member explains each of their own items. Finally, each team member chooses which topics they think should be mentioned or discussed, by moving the card/post-it to the respectively column. The team then decides which topics should be discussed and talk about them for about 10 minutes.
+A good approach to find out which topics should be discussed is *"Discuss and mention"*. It consists on a board with as many columns as people in the team (you can use something like Trello or just a regular whiteboard) and two more for the things to "discuss" and those to be "mentioned". Everybody has 10 minutes to fill their column with things from the last sprint they want to highlight (these are represented with cards or Post-its). Afterwards, each team member explains each of their own items. Finally, each team member chooses which topics they think should be mentioned or discussed, by moving the card/post-it to the respectively column. The team then decides which topics should be discussed and talk about them for about 10 minutes.
 
-Invite the scrum team only to the Retrospective. (Delivery Team, Product Owner, Scrum Master). Discourage managers, stakeholders, business partners, etc. They are a distraction and can hinder the sense of openness the team needs.
+Invite the scrum team only to the Retrospective. (Delivery Team, Product Owner, Scrum Master). Discourage managers, stakeholders, business partners, etc. They are a distraction and can hinder the sense of openness the team needs. Also, they might get a "wrong" view of the team, and its practices, while the team discusses its improvement areas.
 
 When conducting a retrospective make sure that in the first 5 - 10 minutes everyone says at least a couple of words. When team members speak up in the beginning of the meeting, it is more likely that they contribute during the whole meeting.
 
@@ -33,6 +33,8 @@ During the retrospective it is important that the team stays productive. A simpl
   - http://www.leancoffeetable.com/
 
 Action items should be notated on a board to make tracking progress visual and more distinguishable. Every new retrospective should start with reviewing the status of the action items decided upon during the *previous* restrospective.
+
+Keep the retrospectives fun. Try to have a guest "facilitator" to help once in a while. You can also use different ways of conducting a retro like using the sailboat model, where the team talks about "anchors" that are slowing the team down, "winds" that are propelling the team forward etc. Use the fun retro site to uncover more such practices!
 
 #### More Information:
 <!-- Please add any articles you think might be helpful to read before writing the article -->
