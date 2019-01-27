@@ -146,7 +146,7 @@ The example above demonstrates how the base App component is setup and how it wi
 Also how to dispatch a defined action from the component which will be passed down to the store and make the changes on the application reducer.
 
 `mapStateToProps` takes a second argument, `ownProps`, which are the props of the component. This can be useful for mapping props from the store based on the component's exisiting props. For example
-```
+```javascript
 const mapStateToProps = (state, ownProps) => {
     if (ownProps.userId) {
         return { friends: state.friends[ownProps.userId }
