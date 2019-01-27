@@ -29,7 +29,7 @@ class DesktopLayout extends Component {
       preview
     } = this.props;
     return (
-      <ReflexContainer orientation='vertical'>
+      <ReflexContainer className='desktop-layout' orientation='vertical'>
         <ReflexElement flex={1} {...resizeProps}>
           {instructions}
         </ReflexElement>

@@ -63,10 +63,10 @@ class MobileLayout extends Component {
             {instructions}
           </TabPane>
           <TabPane eventKey={2} title='Code' {...editorTabPaneProps}>
-            <div className='challenge-editor-wrapper'>{editor}</div>
+            {editor}
           </TabPane>
           <TabPane eventKey={3} title='Tests' {...editorTabPaneProps}>
-            <div className='challenge-editor-wrapper'>{testOutput}</div>
+            {testOutput}
           </TabPane>
           {hasPreview && (
             <TabPane eventKey={4} title='Preview'>
