@@ -1,3 +1,7 @@
+---
+title: Generics
+---
+
 # Generics
 
 Write a name inside angle brackets to make a generic function or type.
