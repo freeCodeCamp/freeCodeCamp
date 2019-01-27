@@ -7,7 +7,7 @@ This attribute is used to set a color to the text enclosed in a ```<font>``` tag
 
 ### Syntax:
  ```html
- <font color= "color">
+<font color= "color">
  ```
  
 ### Important:
@@ -17,11 +17,12 @@ This attribute is not supported in HTML5. Instead, this [freeCodeCamp article](h
 A color can also be specified using a 'hex code' or an 'rgb code', instead of using a name.
  
 ### Example:
+In this example we can see how to set green colour to the text enclosed in a `<font>`tag. There are three options:
 1. Color name attribute
 ```html
 <html>
   <body>
-   <font color="green">Font color example using color attribute</font>
+   <font color="green">Font color example using color name</font>
  </body>
 </html>
 ```
@@ -29,7 +30,7 @@ A color can also be specified using a 'hex code' or an 'rgb code', instead of us
 ```html
 <html>
   <body>
-   <font color="#00FF00">Font color example using color attribute</font>
+   <font color="#00FF00">Font color example using hex code</font>
   </body>
 </html>
 ```
@@ -37,7 +38,7 @@ A color can also be specified using a 'hex code' or an 'rgb code', instead of us
 ```html
 <html>
   <body>
-    <font color="rgb(0,255,0)">Font color example using color attribute</font>
+    <font color="rgb(0,255,0)">Font color example using RBG</font>
   </body>
 </html>
 ```

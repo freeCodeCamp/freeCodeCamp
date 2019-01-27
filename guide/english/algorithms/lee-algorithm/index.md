@@ -30,7 +30,7 @@ int dc[] = {0, 1, 0, -1};
 
 queue<int> X, Y; // the queues used to get the positions in the matrix
 
-X.push(start_x); //initialize the queues with the start position
+X.push(start_x); // initialize the queues with the start position
 Y.push(start_y);
 
 void lee()
@@ -50,17 +50,11 @@ void lee()
           Y.push(yy);
           mat[xx][yy] = -1; // you usually mark that you have been to this position in the matrix
       }
-      
     }
     
     X.pop(); // eliminate the first position, as you have no more use for it
-    Y.pop();
-    
+    Y.pop();    
   }
-
-
 }
 
 ```
-
-

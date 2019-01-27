@@ -4,7 +4,7 @@ title: Web Safe Fonts
 
 ## Web Safe Fonts
 
-Web safe fonts are fonts that are included with most operating systems, the implication of such high availability is that a designer can expect typography involving web safe fonts to appear exactly as intended to most users. Below are non-exhaustive lists of some fonts that are considered web safe at the time of writing, categorized by CSS generic font families.
+Web safe fonts are fonts that are included and pre-installed in most operating systems, the implication of such high availability is that a designer can expect typography involving web safe fonts to appear exactly as intended to most users.  Web safe fonts help ensure a consistent experience for the diverse audience of users that visit a site. Below are non-exhaustive lists of some fonts that are considered web safe at the time of writing, categorized by CSS generic font families.
 
 Web safe serif fonts:
 
@@ -17,6 +17,7 @@ Web safe sans-serif fonts:
 * Tahoma
 * Trebuchet MS
 * Verdana
+* Helvetica
 
 Web safe monospaced fonts:
 
