@@ -1,8 +1,6 @@
-
-|title|
-|----|
-|Basics of Bitcoin & Cyptocurrency|
-
+---
+title: Basics of Bitcoin & Cyptocurrency
+---
 
 #### Bitcoin is a collection of concepts and technologies that form the basis of a digital money ecosystem, including: 
 - A decentralized peer to peer network (enabled by the _Bitcoin protocol_)
