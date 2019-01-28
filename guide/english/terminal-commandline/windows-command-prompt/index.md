@@ -18,7 +18,11 @@ To go back one directory type and enter `cd..`. Your current working directory s
 ```
 C:\Users\YourUserName>
 ```
-With the `cd` and `cd ..` commands you can move back and forth through directories. This might seem very basic at first but as you learn more commands the command prompt will become a very useful and efficient tool.
+Also, to go back to the root directory type and enter `cd\`. Your current working directory should return to this:
+```
+C:\>
+```
+With the `cd`, `cd ..` and `cd\` commands you can move back and forth through directories. This might seem very basic at first but as you learn more commands the command prompt will become a very useful and efficient tool.
 
 ## Here is a list of common commands:
 | Command | Description  |
