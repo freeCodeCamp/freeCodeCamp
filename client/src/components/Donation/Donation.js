@@ -104,7 +104,10 @@ class DonationModal extends Component {
             <Modal.Body>
               <DonateForm
                 email={email}
+                /**
+                 * Todo: Ask Stuart what this was about?
                 maybeButton={this.renderMaybe}
+                */
                 renderCompletion={this.renderCompletion}
               />
             </Modal.Body>

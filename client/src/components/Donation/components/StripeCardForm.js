@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React, { PureComponent } from 'react';
 import PropTypes from 'prop-types';
 import {
   CardNumberElement,
@@ -17,7 +17,7 @@ const style = {
   }
 };
 
-class StripCardForm extends Component {
+class StripCardForm extends PureComponent {
   constructor(...props) {
     super(...props);
 
@@ -74,15 +74,15 @@ class StripCardForm extends Component {
     return (
       <div className='donation-elements'>
         <FormGroup>
-          <ControlLabel>Card Number:</ControlLabel>
+          <ControlLabel>Your Card Number:</ControlLabel>
           <CardNumberElement onChange={this.handleInputChange} style={style} />
         </FormGroup>
         <FormGroup>
-          <ControlLabel>Card Expiry:</ControlLabel>
+          <ControlLabel>Your Card Expiration Month:</ControlLabel>
           <CardExpiryElement onChange={this.handleInputChange} style={style} />
         </FormGroup>
         <FormGroup>
-          <ControlLabel>Card CVC (3-digit security number):</ControlLabel>
+          <ControlLabel>Your Card CVC (3-digit security number):</ControlLabel>
           <CardCVCElement onChange={this.handleInputChange} style={style} />
         </FormGroup>
       </div>
