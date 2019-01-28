@@ -41,23 +41,23 @@ You could ask yourself questions such as the following:
 *   Does your application still work even if JavaScript does not load in time?
 *   If your website is very resource-heavy, will someone on a slow internet connection be able to read your content?
 
-This is where accessibility comes into play. Accessibility entails making your content as friendly, as easy to "access", as possible  for the largest amount of people. This includes people who are older, are deaf, have low-vision, are blind, are dyslexic, are colorblind, have epilepsy, have mental fatigue, have physical limitations, cannot afford new devices or high-speed Internet connections, etc.
+This is where accessibility comes into play. Accessibility entails making your content as friendly and easy to "access" as possible for the largest amount of people. This includes people who are older, are deaf, have low-vision, are blind, are dyslexic, are colorblind, have epilepsy, have mental fatigue, have physical limitations, cannot afford new devices or high-speed Internet connections, etc.
 
 ## Why worry about accessibility?
 
 You may think that accessibility doesn’t apply to you or to your  users, so why bother implementing it? What would a blind person do with a photo editing tool?
 
-The truth is, you're right to a certain degree. If you have done meticulous user research and have excluded any chance of a certain group of people visiting your website, the priority for catering to that group diminishes quite a bit.
+The truth is, you're right to a certain degree. If you have done meticulous user research and have excluded any chance of a certain group of people visiting your website, the priority for catering to that group diminishes.
 
 However, doing this research is actually key in defending the need for accessibility. Did you know there are [blind gamers](http://audiogames.net)? Or even [blind photographers](http://peteeckert.com/)? What about [deaf musicians](http://mentalfloss.com/article/25750/roll-over-beethoven-6-modern-deaf-musicians)?
 
 There is also legislation that actually forces you to make certain websites and web apps accessible. A prime example is the US-based <a href='http://jimthatcher.com/webcourse1.htm' target='_blank' rel='nofollow'>Section 508</a>. Right now, this law mainly refers to government organizations and public sector websites. However, laws can change.
 
-The picture gets even more complicated when we look at legislation that actually forces you to make certain websites and web apps accessible. A prime example is the US-based <a href='http://jimthatcher.com/webcourse1.htm' target='_blank' rel='nofollow'>Section 508</a>. Right now, this law mainly refers to government organizations, public sector websites, etc. However, laws change.
+The picture gets even more complicated when we look at legislation that actually forces you to make certain websites and web apps accessible. A prime example is the US-based <a href='http://jimthatcher.com/webcourse1.htm' target='_blank' rel='nofollow'>Section 508</a>. Right now, this law mainly refers to government organizations, public sector websites, etc. However, laws can change.
 
 Last year, airline websites were included in this list which meant that in Europe, airline website devs scrambled to make their content accessible. Not doing so can get your company a fine of literally tens of thousands of dollars for each day the problem isn't fixed.
 
-There are variations on this legislation all over the world, some more severe and all-encompassing than others. Not knowing about that fact doesn't make the lawsuit go away.
+There are variations on this legislation all over the world, some more severe and all-encompassing than others. Sadly, Not knowing about that fact doesn't make the lawsuit go away.
 
 ## Ok, so accessibility is a big deal. Now how do we implement it?
 That question, sadly, is harder to answer than it may seem.
