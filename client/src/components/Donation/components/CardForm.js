@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React, { PureComponent } from 'react';
 import PropTypes from 'prop-types';
 import { Button } from '@freecodecamp/react-bootstrap';
 
@@ -9,7 +9,7 @@ const propTypes = {
   handleSubmit: PropTypes.func.isRequired
 };
 
-class CardForm extends Component {
+class CardForm extends PureComponent {
   constructor(...props) {
     super(...props);
 
@@ -44,9 +44,10 @@ class CardForm extends Component {
           bsSize='lg'
           bsStyle='primary'
           disabled={!isFormValid}
+          id='confirm-donation-btn'
           type='submit'
           >
-          {`Confirm Monthly Donation of $${amount}`}
+          {`Confirm your donation of $${amount} / month`}
         </Button>
       </form>
     );

@@ -1,14 +1,13 @@
-import React, { Component, Fragment } from 'react';
+import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import isEmail from 'validator/lib/isEmail';
 
 import CardForm from './CardForm';
 import { injectStripe } from 'react-stripe-elements';
-import postUpdate$ from '../../../templates/Challenges/utils/postUpdate$';
+import { postJSON$ } from '../../../templates/Challenges/utils/ajax-stream.js';
 
 const propTypes = {
   email: PropTypes.string,
-  maybeButton: PropTypes.func.isRequired,
   renderCompletion: PropTypes.func.isRequired,
   stripe: PropTypes.shape({
     createToken: PropTypes.func.isRequired
@@ -26,31 +25,17 @@ const initialSate = {
 class DonateForm extends Component {
   constructor(...args) {
     super(...args);
-    const [props] = args;
 
     this.state = {
       ...initialSate,
-      email: props.email
+      email: null
     };
 
-    this.buttonAmounts = [500, 1000, 3500, 5000, 25000];
-
-    this.handleAmountClick = this.handleAmountClick.bind(this);
+    this.getUserEmail = this.getUserEmail.bind(this);
     this.handleEmailChange = this.handleEmailChange.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
-    this.isActive = this.isActive.bind(this);
-    this.renderAmountButtons = this.renderAmountButtons.bind(this);
     this.postDonation = this.postDonation.bind(this);
     this.resetDonation = this.resetDonation.bind(this);
-  }
-
-  handleAmountClick(e) {
-    e.preventDefault();
-    const donationAmount = parseInt(e.target.id, 10);
-    return this.setState(state => ({
-      ...state,
-      donationAmount
-    }));
   }
 
   handleEmailChange(e) {
@@ -62,14 +47,15 @@ class DonateForm extends Component {
   }
 
   handleSubmit() {
-    const { email } = this.state;
+    const email = this.getUserEmail();
     if (!email || !isEmail(email)) {
       return this.setState(state => ({
         ...state,
         donationState: {
           ...state.donationState,
           error:
-            'We need a valid email address to send your donation tax receipt to'
+            'We need a valid email address to which we can send your' +
+            ' donation tax receipt.'
         }
       }));
     }
@@ -89,8 +75,10 @@ class DonateForm extends Component {
     });
   }
 
-  isActive(amount) {
-    return this.state.donationAmount === amount;
+  getUserEmail() {
+    const { email: stateEmail } = this.state;
+    const { email: propsEmail } = this.props;
+    return stateEmail || propsEmail || '';
   }
 
   postDonation(token) {
@@ -102,7 +90,8 @@ class DonateForm extends Component {
         processing: true
       }
     }));
-    return postUpdate$('/donate/charge-stripe', {
+    const chargeStripePath = '/unauthenticated/donate/charge-stripe';
+    return postJSON$(chargeStripePath, {
       token,
       amount
     }).subscribe(
@@ -129,52 +118,40 @@ class DonateForm extends Component {
     );
   }
 
-  renderAmountButtons() {
-    return this.buttonAmounts.map(amount => (
-      <li key={'amount-' + amount}>
-        <button
-          className={`amount-value ${this.isActive(amount) ? 'active' : ''}`}
-          id={amount}
-          onClick={this.handleAmountClick}
-          tabIndex='-1'
-          >{`$${amount / 100}`}</button>
-      </li>
-    ));
-  }
-
   renderDonateForm() {
     return (
-      <Fragment>
-        <p>
-          freeCodeCamp is completely free. But it costs our nonprofit a lot of
-          money to run it. Help us pay for servers. Set up a tax-deductible
-          monthly donation you can afford.
-        </p>
-        <div id='donate-amount-panel'>
-          <ul>{this.renderAmountButtons()}</ul>
+      <div>
+        <div className='text-left'>
+          <p>
+            freeCodeCamp.org is a tiny nonprofit that's helping millions of
+            people learn to code for free.
+          </p>
+          <p>
+            Join <strong>4,180</strong> supporters.
+          </p>
+          <p>
+            Your $5 / month donation will help keep tech education free and
+            open.
+          </p>
+          <hr />
         </div>
         {this.renderEmailInput()}
-        <CardForm
-          amount={this.state.donationAmount / 100}
-          handleSubmit={this.handleSubmit}
-        />
-        {this.props.maybeButton()}
-      </Fragment>
+        <CardForm amount={5} handleSubmit={this.handleSubmit} />
+      </div>
     );
   }
 
   renderEmailInput() {
-    const { email } = this.state;
     return (
       <div className='donation-email-container'>
         <label>
-          Email where we should send your donation tax receipt:
+          Your Email (we'll send you a tax-deductible donation receipt):
           <input
             onChange={this.handleEmailChange}
-            placeholder='email@example.com'
+            placeholder='me@example.com'
             required={true}
-            type='email'
-            value={email}
+            type='text'
+            value={this.getUserEmail()}
           />
         </label>
       </div>
