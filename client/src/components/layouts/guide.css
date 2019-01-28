@@ -170,3 +170,7 @@
 .content {
   outline: 0;
 }
+
+.expanded + span {
+  color: #006400;
+}

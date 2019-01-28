@@ -68,8 +68,8 @@ class Layout extends React.Component {
                 toggleExpandedState
               }) => (
                 <Fragment>
-                  <Spacer size={2} />
-                  <Grid>
+                  <Spacer size={1} />
+                  <Grid fluid={true}>
                     <Row>
                       <Col
                         md={4}
@@ -109,6 +109,7 @@ class Layout extends React.Component {
     );
   }
 }
+
 
 Layout.displayName = 'Layout';
 Layout.propTypes = propTypes;
