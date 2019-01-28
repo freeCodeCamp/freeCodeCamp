@@ -25,15 +25,21 @@ The easiest way to install Angular is through [Angular CLI](https://cli.angular.
 npm install -g @angular/cli
 ```
 
-#### Create a workspace and initial application
+#### Create a Workspace and Initial Application
+You develop apps in the context of an Angular workspace. A workspace contains the files for one or more projects. A project is the set of files that comprise an app, a library, or end-to-end (e2e) tests.
 ```shell
 ng new my-app
 ```
 
-#### Serve the application in browser
+#### Serve the Application
+Angular includes a server so that you can easily build and serve your app locally.
+  1. Navigate to the workspace folder (`my-app`)
+  2. Launch the server by using the CLI command `ng serve` with the `--open` option
 ```shell
 cd my-app
 ng serve --open
 ```
+
+Hooray, you created your first angular app!!!
 
 For more information, refer to the official docs for [Angular](https://angular.io/docs) or [Angular CLI](https://cli.angular.io/).
