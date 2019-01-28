@@ -53,7 +53,7 @@ However, doing this research is actually key in defending the need for accessibi
 
 There is also legislation that actually forces you to make certain websites and web apps accessible. A prime example is the US-based <a href='http://jimthatcher.com/webcourse1.htm' target='_blank' rel='nofollow'>Section 508</a>. Right now, this law mainly refers to government organizations and public sector websites. However, laws can change.
 
-The picture gets even more complicated when we look at legislation that actually forces you to make certain websites and web apps accessible. A prime example is the US-based <a href='http://jimthatcher.com/webcourse1.htm' target='_blank' rel='nofollow'>Section 508</a>. Right now, this law mainly refers to government organizations, public sector websites, etc. However, laws can change.
+The picture gets even more complicated when we look at legislation that actually forces you to make certain websites and web apps accessible. These laws require you to support users with unique requirements and even older versions of browsers and devices. A prime example is the US-based <a href='http://jimthatcher.com/webcourse1.htm' target='_blank' rel='nofollow'>Section 508</a>. Right now, this law mainly refers to government organizations, public sector websites, etc. However, laws can change.
 
 Last year, airline websites were included in this list which meant that in Europe, airline website devs scrambled to make their content accessible. Not doing so can get your company a fine of literally tens of thousands of dollars for each day the problem isn't fixed.
 
