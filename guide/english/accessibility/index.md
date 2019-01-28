@@ -18,6 +18,8 @@ The use of images and graphics on websites can decrease accessibility for those 
 
 Just like alt text has the ability to help people that are visually impaired, providing written documents or transcripts of the audio can help people that have hearing disabilities. Videos should always be captioned. Providing a written document or a transcript of what is being spoken makes this content accessible to people who are Deaf or hard of hearing, with speech-processing disabilities, those using devices without sound capability, and people on slow or data-limited devices that make loading videos cumbersome or impossible.
 
+A high level test of a websites accessibilty can be conducted through several online tools.  One is a popular Chrome Browswer extension known as <a href="http://wave.webaim.org/">WAVE</a>.  This will provide you with areas to focus on to present a usable experience for all visitors to the site.
+
 Copyright &copy; 2005 <a href="http://www.w3.org" shape="rect">World Wide Web Consortium</a>, (<a href="http://www.csail.mit.edu/" shape="rect">MIT</a>, <a href="http://www.ercim.org" shape="rect">ERCIM</a>, <a href="http://www.keio.ac.jp" shape="rect">Keio</a>,<a href="http://ev.buaa.edu.cn" shape="rect">Beihang</a>). http://www.w3.org/Consortium/Legal/2015/doc-license
 
 ### More Information:
