@@ -14,7 +14,7 @@ It may become an extremely important idea to make a habit out of commenting your
 Presentation on code documentation:
 <br/><a href="http://www.youtube.com/watch?feature=player_embedded&v=pubm3spwkog
 " target="_blank"><img src="http://img.youtube.com/vi/pubm3spwkog/0.jpg" 
-alt="IMAGE ALT TEXT HERE" width="240" height="180" border="10" /></a>
+alt="Documentation for Better Code" width="240" height="180" border="10" /></a>
 
 <!-- The article goes here, in GitHub-flavored Markdown. Feel free to add YouTube videos, images, and CodePen/JSBin embeds  -->
 
