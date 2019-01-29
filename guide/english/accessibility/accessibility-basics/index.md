@@ -76,7 +76,7 @@ The HTML specification is a document that describes how the language should be u
 
     <span class="clickable-with-JavaScript">English</span>
 ```
-Guess what? All three of these elements break several criteria of WCAG and therefore are not accessible at all.
+Guess what? All three of these elements break several criteria of WCAG and therefore are not accessible at all. These approaches are often referred to as "anti-patterns" [learn more here](https://medium.com/ft-product-technology/an-outbreak-of-accessibility-anti-patterns-e73577242ee8) when addressing accessibility. "An anti-pattern is “a common response to a recurring problem that is usually ineffective and risks being highly counterproductive” [Wikipedia](https://en.wikipedia.org/wiki/Anti-pattern).
 
 The first element breaks the ‘name, role, value’-criterium, which states that all elements on a web page should expose their name, role (e.g. button) and value (e.g. the contents of an edit field) to assistive technologies. This div actually doesn’t provide any of the three, rendering it invisible to screen-readers.
 
