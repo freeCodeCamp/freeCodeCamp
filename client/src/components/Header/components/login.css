@@ -1,13 +1,3 @@
-.btn-cta {
-  background-color: #ffac33;
-  background-image: linear-gradient(#ffcc4d, #ffac33);
-  border-color: #f1a02a;
-  color: #292f33 !important;
-  text-shadow: 0 1px 0 rgba(255, 255, 255, 0.5);
-  max-height: 38px;
-  padding: 4px 12px;
-}
-
 .signup-btn.btn {
   background-color: #ffac33;
   background-image: linear-gradient(#ffcc4d, #ffac33);
@@ -15,7 +5,7 @@
   border-color: #f1a02a;
   color: #292f33 !important;
   text-shadow: 0 1px 0 rgba(255, 255, 255, 0.5);
-  height: auto;
+  padding: 4px 12px;
 }
 .signup-btn:hover,
 .signup-btn:focus {

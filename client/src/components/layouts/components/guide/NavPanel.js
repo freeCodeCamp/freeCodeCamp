@@ -9,6 +9,7 @@ const propTypes = {
   handleClick: PropTypes.func.isRequired,
   hasChildren: PropTypes.bool,
   isExpanded: PropTypes.bool,
+  onNavigate: PropTypes.func.isRequired,
   path: PropTypes.string,
   title: PropTypes.string,
   toggleDisplaySideNav: PropTypes.func.isRequired
@@ -52,9 +53,10 @@ class NavPanel extends Component {
   }
 
   handleTitleClick() {
-    const { path, toggleDisplaySideNav } = this.props;
+    const { path, toggleDisplaySideNav, onNavigate } = this.props;
     toggleDisplaySideNav();
     navigate(path);
+    onNavigate();
   }
 
   renderHeader() {
@@ -94,8 +96,6 @@ class NavPanel extends Component {
     return (
       <Panel
         bsClass='panelStyle panel'
-        collapsible={true}
-        expanded={isExpanded}
         id={`${dashedName}-panel`}
         role='listitem'
         >

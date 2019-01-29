@@ -10,7 +10,7 @@
   text-shadow: none;
 }
 
-@media screen, (max-width: 767px) {
+@media screen and (max-width: 767px) {
   .reset-modal .btn-lg {
     font-size: 16px;
   }

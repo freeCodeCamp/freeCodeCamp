@@ -1,17 +1,10 @@
 .challenge-preview,
 .challenge-preview-frame {
-  height: calc(100vh - 38px);
+  height: 100%;
   width: 100%;
   padding: 0;
   margin: 0;
   border: none;
-}
-
-@media screen and (max-width: 767px) {
-  .challenge-preview,
-  .challenge-preview-frame {
-    height: calc(100vh - 112px);
-  }
 }
 
 .enable-iframe {
