@@ -64,6 +64,7 @@ The idea of overfitting in machine learning is making the machine model the data
 - <a href='https://medium.com/meta-design-ideas/math-stats-and-nlp-for-machine-learning-as-fast-as-possible-915ef47ced5f' target='_blank' rel='nofollow'>Math, Stats and NLP for Machine Learning</a>
 - <a href='https://www.datacamp.com/courses/supervised-learning-with-scikit-learn' target='_blank' rel='nofollow'>Supervised Learning on Data camp</a>
 - <a href='https://machinelearningmastery.com/' target='_blank' rel='nofollow'>Machine Learning Mastery</a>
+- If you want to research machine learning without any environment settings, try out [Google Colaboratory](https://colab.research.google.com) - a Jupyter Notebook environment that requires no setup to use
 
 ## Lab
 
