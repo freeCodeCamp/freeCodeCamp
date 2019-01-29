@@ -1,13 +1,17 @@
 ---
 title: Node.js
 ---
+
+<img src="https://nodejs.org/static/images/logos/nodejs-new-pantone-black.png" height="123" width="201">
+
+
 ## Node.js
 
 Node.js is a JavaScript runtime built on Chrome's V8 JavaScript engine. Node.js uses an event-driven, non-blocking I/O model that makes it lightweight and efficient. Node.js' package ecosystem, npm, is the largest ecosystem of open source libraries in the world.
 
 #### Let's break it down.
-- Javascript runtime built on Chrome's V8 JavaScript engine.  
-Every browser has a JavaSript engine built in it to process JavaScript files contained in websites. Google Chrome uses V8 engine which is built using C++. Node.js also uses this super-fast engine to interpret JavaScript files.
+- Javascript runtime built on Google Chrome's V8 JavaScript engine.  
+Every browser has a JavaSript engine built in it to process JavaScript files contained in websites. Chrome uses V8, which is built using C++. Node.js also uses this super-fast engine to interpret JavaScript files.
 - Node.js uses an event-driven model.  
 This means that Node.js waits for certain events to take place. It then acts on those events. Events can be anything from a click to a HTTP request. We can also declare our own custom events and make node.js listen for those events.
 - Node.js uses a non-blocking I/O model.  
@@ -55,3 +59,4 @@ When the timer completes it's execution taking 5 seconds, it calls the function 
 - [Official NodeJS site](https://nodejs.org)
 - [Node Version Manager](https://github.com/creationix/nvm/blob/master/README.md)
 - [n: Interactive NodeJS Version Manager](https://github.com/tj/n)
+- [The definitive Node.js handbook](https://medium.freecodecamp.org/the-definitive-node-js-handbook-6912378afc6e)
