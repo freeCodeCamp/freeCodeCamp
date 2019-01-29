@@ -4,23 +4,30 @@ import Link from 'gatsby-link';
 
 const propTypes = {
   isStubbed: PropTypes.bool,
+  onNavigate: PropTypes.func.isRequired,
   path: PropTypes.string,
   router: PropTypes.object,
   title: PropTypes.string,
   toggleDisplaySideNav: PropTypes.func.isRequired
 };
 
-function NavItem(props) {
-  const { isStubbed, path, title } = props;
-  return (
-    <li>
-      <Link data-navitem='true' onClick={props.toggleDisplaySideNav} to={path}>
-        <span className={'navItemTitle' + (isStubbed ? ' stubbed' : '')}>
-          {title}
-        </span>
-      </Link>
-    </li>
-  );
+class NavItem extends React.Component {
+  handleClick = () => {
+    this.props.toggleDisplaySideNav();
+    this.props.onNavigate();
+  };
+  render() {
+    const { isStubbed, path, title } = this.props;
+    return (
+      <li>
+        <Link data-navitem='true' onClick={this.handleClick} to={path}>
+          <span className={'navItemTitle' + (isStubbed ? ' stubbed' : '')}>
+            {title}
+          </span>
+        </Link>
+      </li>
+    );
+  }
 }
 
 NavItem.displayName = 'NavItem';

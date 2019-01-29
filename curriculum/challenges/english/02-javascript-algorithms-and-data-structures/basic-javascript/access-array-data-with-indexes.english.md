@@ -9,6 +9,7 @@ guideUrl: 'https://www.freecodecamp.org/guide/certificates/access-array-data-wit
 <section id='description'>
 We can access the data inside arrays using <code>indexes</code>.
 Array indexes are written in the same bracket notation that strings use, except that instead of specifying a character, they are specifying an entry in the array. Like strings, arrays use <dfn>zero-based</dfn> indexing, so the first element in an array is element <code>0</code>.
+<br />
 <strong>Example</strong>
 <blockquote>var array = [50,60,70];<br>array[0]; // equals 50<br>var data = array[1];  // equals 60</blockquote>
 <strong>Note</strong><br>There shouldn't be any spaces between the array name and the square brackets, like <code>array [0]</code>. Although JavaScript is able to process this correctly, this may confuse other programmers reading your code.
