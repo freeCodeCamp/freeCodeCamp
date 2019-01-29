@@ -159,7 +159,7 @@ Hello World 4
 
 ## Example
     
-   C program to check for head/tail using nested switch case statement 
+C program to check for head/tail using nested switch case statement 
 ```c
 #include<stdio.h>
 int main()
@@ -216,6 +216,52 @@ Enter second choice-t
 2 Tails
 ```
 
+## Switch-Case Fall-through
+
+As was previously mentioned, switch statement's use of case allows for fall though.  This fall-through possibility can add to the readability of your code and allows for simplified logic. 
+
+#### Fall-through Example
+
+```c
+# include <stdio.h>
+
+int main() {
+
+    char* valueString;
+    
+    printf("Animals of Alaska\n");
+    valueString = "Kodiak";
+    
+    printf("A %s is a type of ", valueString);    
+    
+    switch (valueString) {
+        case "Black Bear":
+        case "Kodiak":
+        case "Brown Bear":
+            printf("bear!\n");
+            break;
+        case "Salmon":
+        case "King Salmon":
+        case "Halbut":
+            printf("fish!\n");
+            break;
+        case "Qalupalik":
+        case "Tornit":
+        case "Tizheruk":
+            printf("mythical Alaskan creature! Watch out!\n");
+        // valueString doesn't match our list of animals
+        default:
+            printf("Error! This animal is not known!\n");
+    }
+}
+```
+
+#### Output
+```c
+-> Animals of Alaska
+-> A Kodiak is a type of bear!
+->
+```
 
 ## Review : Switch vs if else
 * Check the Testing Expression: An if-then-else statement can test expressions based on ranges of values or conditions, whereas a switch statement tests expressions based only on a single integer, enumerated value, or String object.
