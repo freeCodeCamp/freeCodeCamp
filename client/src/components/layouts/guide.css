@@ -69,7 +69,7 @@
 .content,
 .sideNav {
   /* 100vh - (navbar height) - (spacer height) */
-  height: calc(100vh - 38px - 30px);
+  height: calc(100vh - var(--header-height) - 30px);
   overflow-y: auto;
 }
 
@@ -98,11 +98,6 @@
 
 .caretStyle.expanded {
   transform: rotate(0deg);
-}
-
-.navItemTitle {
-  color: #006400;
-  cursor: pointer;
 }
 
 .navPanelUl {
@@ -144,30 +139,13 @@
   color: #006400;
 }
 
-.bodyContainer {
-  --h: 100vh;
-  margin-top: 55px;
-  height: calc(var(--h) - 55px);
-}
-
 @media (max-width: 992px) {
   .content {
     height: auto;
   }
 }
 
-.skip-link {
-  background-color: white;
-  left: 0;
-  padding: 5px 10px;
-  top: 0;
-  z-index: 9;
-}
-
-.skip-link:focus {
-  position: absolute;
-}
-
-.content {
+.content,
+.article {
   outline: 0;
 }
