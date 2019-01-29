@@ -68,7 +68,7 @@ int main() {
         case '/':
             printf("%.1lf / %.1lf = %.1lf",a, b, a/b);
             break;
-        // Operator is doesn't match any case constant (+, -, *, /)
+        // If the Operator doesn't match with any case constant (+, -, *, /)
         default:
             printf("Error! operator is not correct");
     }
