@@ -7,11 +7,11 @@ Arthur Samuel, a pioneer in artificial intelligence, defined Machine Learning in
 
 A more formal definition of Machine Learning is provided by Prof Tom Mitchell of CMU:
 
-> "A computer program is said to learn from experience E with respect to some class of tasks T and performance measure P if its performance at tasks in T, as measured by P, improves with experience E."
+> "A computer program is said to learn from experience `E` with respect to some class of tasks `T` and performance measure `P` if its performance at tasks in `T`, as measured by `P`, improves with experience `E`."
 
 Consider the example of a Machine Learning algorithm that plays chess. In this example, `E` refers to the experience of playing chess, `T` is the task of playing chess, and `P` denotes the probability that the program will win the next game of chess.
 
-Machine learning is exactly like how a human being learns. For example, if a human wants to learn how to play poker, it will first learn the rules. Then it will try to get experience by playing the game. This experience is nothing but a huge data set for a machine by using which it can make intelligent decisions regarding the proposed problem.
+Machine learning is similar to how a human being learns. For example if a human wants to learn how to play poker, they will firstly learn the rules. Then they will try to get experience by playing the game. This experience is nothing but a huge data set for a machine, which then it uses to make intelligent decisions regarding the proposed problem.
 
 In general, machine learning problems can be classified into supervised learning and unsupervised learning. In supervised learning, you have the input and the labeled output, and you suspect that a relationship exists between the input and the labeled output. When you know neither what the labeled output is nor if a relationship exists, unsupervised learning will help you find structure in your data if there is one.
 
@@ -25,7 +25,7 @@ We've covered two main categories of machine learning, but there are four broad 
 ### Supervised learning
 Supervised learning is the machine learning task of inferring a function from supervised training data. The training
 data consist of a set of training examples. In supervised learning, each example is a pair consisting of an input object
-(typically a vector) and a desired output value (also called the supervisory signal). Further, the supervised learning can be taken as 2 paradigm, classification and regression.
+(typically a vector) and a desired output value (also called the supervisory signal). Further, the supervised learning can be taken as 2 paradigms, classification and regression.
 
 ### Overfitting and Underfitting
 The idea of overfitting in machine learning is making the machine model the data too well. This essentially making the machine to recognize a situation with only a specific characteristics that the data shows, or in other words picking up too much noise in the data. This can be problematic in terms of the lack of flexibility in adapting different situations. On the other hand, underfitting generalizes too much. It doesn't recognizes patterns as well and would not be able to differentiate much about different situations.
@@ -47,16 +47,11 @@ The idea of overfitting in machine learning is making the machine model the data
 5. <a href='https://www.edx.org/course/the-analytics-edge' target='_blank' rel='nofollow'>The Analytics Edge - Taught by: MIT</a>
 6. <a href="https://developers.google.com/machine-learning/crash-course/">Google's crash course and certification</a>
 
-
-#### Video Resources:
-
+#### Video Resources
 1. <a href="https://www.youtube.com/channel/UCWN3xxRkmTPmbKwht9FuE5A" target="_blank">Siraj Raval's Youtube channel</a>
 2. <a href="https://www.youtube.com/channel/UCfzlCWGWYyIQ0aLC5w48gBQ" target="_blank">Sentdex's Youtube channel</a>
 
-
-
-#### More Information:
-
+#### More Information
 - <a href='https://en.wikipedia.org/wiki/Machine_learning' target='_blank' rel='nofollow'>Machine Learning on Wikipedia</a>
 - <a href='https://www.youtube.com/watch?v=83uAOzhzs-U' target='_blank' rel='nofollow'>Machine Learning Demystified:Youtube</a>
 - If you want a brief introduction of machine learning, and you prefer videos, try this <a href='https://youtu.be/cKxRvEZd3Mw' target='_blank' rel='nofollow'>machine learning introduction video</a>
@@ -67,5 +62,4 @@ The idea of overfitting in machine learning is making the machine model the data
 - If you want to research machine learning without any environment settings, try out [Google Colaboratory](https://colab.research.google.com) - a Jupyter Notebook environment that requires no setup to use
 
 ## Lab
-
 <a href="https://github.com/Microsoft/computerscience/blob/master/Labs/AI%20and%20Machine%20Learning/Azure%20Machine%20Learning/Azure%20Machine%20Learning%20(Node).md">Building Smart Apps with Azure Machine Learning Studio</a>
