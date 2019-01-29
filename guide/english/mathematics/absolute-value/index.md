@@ -3,7 +3,7 @@ title: Absolute Value
 ---
 ## Absolute Value
 
-Absolute value is the non-negative value of a number.
+Absolute value is the non-negative value of a number, whether that number is positive or negative.
 You can think of a number's absolute value as its distance from zero.
 It can be defined as,
 
@@ -11,7 +11,16 @@ It can be defined as,
 
 <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/6/6b/Absolute_value.svg/2000px-Absolute_value.svg.png" width="300">  
 
+The absolute value of a quantity x is denoted by |x| (the quantity is enclosed between two vertical bars).
 Here you can see that in the graph of y = |x|, if -2 is input in to the function, 2 is the result. This is because -2 has a distance of 2 from zero. The absolute value of a number can never be negative. 
+
+For complex numbers, this is also referred to as the *modulus*. 
+
+```
+Pythagorean Theorem: If z=a+bi, where a=Re{z} and b=Im{z}, then |z|=sqrt(a^2+b^2)
+```
+
+![i](https://1.bp.blogspot.com/-a9-goSuDZpY/VdtnQqPMRXI/AAAAAAAABbA/3U519TdTKgU/s400/modulo%2Bnumero%2Bcomplejo.png)
 
 ### Examples
 
@@ -39,6 +48,6 @@ Here you can see that in the graph of y = |x|, if -2 is input in to the function
 |-125| = 125
 
 #### More Information:
-<a href='http://www.purplemath.com/modules/absolute.htm "Absolute Value"' target='_blank' rel='nofollow'>Absolute Value</a>
+[Purplemath](https://www.purplemath.com/modules/absolute.htm)
 
 
