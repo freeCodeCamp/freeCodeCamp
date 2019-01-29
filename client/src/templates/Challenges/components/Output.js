@@ -1,6 +1,7 @@
-import React, { Fragment, PureComponent } from 'react';
+import React, { Fragment, Component } from 'react';
 import PropTypes from 'prop-types';
 import MonacoEditor from 'react-monaco-editor';
+import { decodeHTML } from 'entities';
 
 const propTypes = {
   defaultOutput: PropTypes.string,
@@ -24,7 +25,7 @@ const options = {
   }
 };
 
-class Output extends PureComponent {
+class Output extends Component {
   constructor() {
     super();
 
@@ -51,7 +52,7 @@ class Output extends PureComponent {
           editorDidMount={::this.editorDidMount}
           height={height}
           options={options}
-          value={output ? output : defaultOutput}
+          value={decodeHTML(output ? output : defaultOutput)}
         />
       </Fragment>
     );

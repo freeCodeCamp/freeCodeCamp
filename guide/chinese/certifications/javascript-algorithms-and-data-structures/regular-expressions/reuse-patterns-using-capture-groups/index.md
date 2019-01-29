@@ -19,8 +19,8 @@ let testString = "test test test ";
 如果我们要正面翻译正则表达式，它看起来像这样：
 
 ```js
-let re = /(test)\s\1; 
- let literalRe = /test\stest; 
+let re = /(test)\s\1/; 
+ let literalRe = /test\stest/; 
 ```
 
 `rea`和`literalRe`都会匹配相同的东西。
