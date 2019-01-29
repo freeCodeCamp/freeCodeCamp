@@ -358,7 +358,7 @@ Let x be any arbitary node of a tree.
 
 x.size = x.left.size + x.right.size + 1
 
-While augumenting the tree, we should keep in mind, that we should be able to maintain the augumented information as well as do other operations like insertion, deletion, updation in O(lg n) time.
+While augumenting the tree, we should keep in mind, that we should be able to maintain the augumented information as well as do other operations like insertion, deletion, updation in `O(log n)` time.
 
 Since, we know that the value of x.left.size will give us the number of nodes which preceed x in the inorder traversal of the tree. Thus, x.left.size + 1 is the rank of x within the subtree rooted at x.
 
