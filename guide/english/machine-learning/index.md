@@ -31,11 +31,13 @@ data consist of a set of training examples. In supervised learning, each example
 The idea of overfitting in machine learning is making the machine model the data too well. This essentially making the machine to recognize a situation with only a specific characteristics that the data shows, or in other words picking up too much noise in the data. This can be problematic in terms of the lack of flexibility in adapting different situations. On the other hand, underfitting generalizes too much. It doesn't recognizes patterns as well and would not be able to differentiate much about different situations.
 
 #### Basic flowchart/steps for supervised learning
-1. Collect training set.
-2. Divide training set into input object (features) and output object (classes or value)
-3. Decide what you will be applying, regression or classifier
-4. Decide which algorithm will you be applying, SVM, deep net, etc
-5. Run the algorithm on training set and use the model for predictions
+1. Collect your dataset and divide it into a training and test dataset.
+2. Divide training set into input object (features) and output object (classes or value). Check to see whether your target variable/output object is categorical (a variable that has a limited number of values related to names/labels) or numerical (a variable that has numbers as values).
+3. Decide what the type of algorithm you will be applying, which is dependent on whether your target variable is categorical, in which case you will use a classifier, or numerical, in which case you will use a regression algorithm. 
+4. Next, within the classifier/regression algorithm categories, you will need to pick the algorithms (which is called a model in machine learning) that you would like to apply. You can also pick multiple models to evaluate which one is the best option for your dataset. Examples of models include linear/logistic regression, Support Vector Machines, Neural Networks, Decision Trees, etc. 
+5. Run the algorithm(s) on your training set and evaluate their performance. The performance metrics also depend on whether you are using a classifier/regression algorithm; for example, metrics like Accuracy, Recall, and Precision are performance metrics for a classifier algorithm and metrics like Mean Squared Error and Root Mean Squared Error are performance metrics for a regression algorithm. This step also contains an important sub-step:
+    -> Typically, machine learning practitioners and data scientists tune the model's hyperparameters (for example, the learning rate or the number of leaves in a decision tree) when evaluating the models' performance.  
+6. After you've evaluated your models on the training dataset and picked the model or models with the best performance, you can use the model for predictions on the test dataset. 
 
 #### Courses:
 1. <a href='https://www.udacity.com/course/intro-to-machine-learning--ud120?autoenroll=true' target='_blank' rel='nofollow'>Intro to Machine Learning</a>
@@ -55,12 +57,13 @@ The idea of overfitting in machine learning is making the machine model the data
 
 #### More Information:
 
-1. <a href='https://en.wikipedia.org/wiki/Machine_learning' target='_blank' rel='nofollow'>Machine Learning on Wikipedia</a>
-2. <a href='https://www.youtube.com/watch?v=83uAOzhzs-U' target='_blank' rel='nofollow'>Machine Learning Demystified:Youtube</a>
-3. If you want a brief introduction of machine learning, and you prefer videos, try this <a href='https://youtu.be/cKxRvEZd3Mw' target='_blank' rel='nofollow'>machine learning introduction video</a>
-4. If you want to know how to proceed with learning machine learning, take a look at this <a href='https://youtu.be/nKW8Ndu7Mjw' target='_blank' rel='nofollow'> video</a>
-5. <a href='https://medium.com/meta-design-ideas/math-stats-and-nlp-for-machine-learning-as-fast-as-possible-915ef47ced5f' target='_blank' rel='nofollow'>Math, Stats and NLP for Machine Learning</a>
-6. <a href='https://www.datacamp.com/courses/supervised-learning-with-scikit-learn' target='_blank' rel='nofollow'>Supervised Learning on Data camp</a>
+- <a href='https://en.wikipedia.org/wiki/Machine_learning' target='_blank' rel='nofollow'>Machine Learning on Wikipedia</a>
+- <a href='https://www.youtube.com/watch?v=83uAOzhzs-U' target='_blank' rel='nofollow'>Machine Learning Demystified:Youtube</a>
+- If you want a brief introduction of machine learning, and you prefer videos, try this <a href='https://youtu.be/cKxRvEZd3Mw' target='_blank' rel='nofollow'>machine learning introduction video</a>
+- If you want to know how to proceed with learning machine learning, take a look at this <a href='https://youtu.be/nKW8Ndu7Mjw' target='_blank' rel='nofollow'> video</a>
+- <a href='https://medium.com/meta-design-ideas/math-stats-and-nlp-for-machine-learning-as-fast-as-possible-915ef47ced5f' target='_blank' rel='nofollow'>Math, Stats and NLP for Machine Learning</a>
+- <a href='https://www.datacamp.com/courses/supervised-learning-with-scikit-learn' target='_blank' rel='nofollow'>Supervised Learning on Data camp</a>
+- <a href='https://machinelearningmastery.com/' target='_blank' rel='nofollow'>Machine Learning Mastery</a>
 
 ## Lab
 
