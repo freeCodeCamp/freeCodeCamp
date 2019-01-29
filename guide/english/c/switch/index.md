@@ -12,6 +12,8 @@ We exit from the switch by `break`. If the `break` statement is not reached befo
 
 Each case must be a digit or a character i.e.. a constant but not a variable.
 
+Note:- `break` and `continue` are applicable only with for, while and switch code blocks.
+
 ## Syntax of switch...case
 
 ```c
