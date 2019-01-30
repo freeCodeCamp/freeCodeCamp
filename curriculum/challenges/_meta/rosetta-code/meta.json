@@ -101,6 +101,18 @@
       "Cramer's rule"
     ],
     [
+      "5a23c84252665b21eecc7e03",
+      "Cumulative standard deviation"
+    ],
+    [
+      "5a23c84252665b21eecc7e05",
+      "CUSIP"
+    ],
+    [
+      "5a23c84252665b21eecc7e06",
+      "Cut a rectangle"
+    ],
+    [
       "59669d08d75b60482359409f",
       "Date format"
     ],
@@ -131,6 +143,10 @@
     [
       "59f4eafba0343628bb682785",
       "Discordian date"
+    ],
+    [
+      "5a23c84252665b21eecc7e1e",
+      "Dot product"
     ],
     [
       "599c333915e0ea32d04d4bec",
