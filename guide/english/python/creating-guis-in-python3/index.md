@@ -12,7 +12,7 @@ It is the standard builds of Python include an object-oriented interface to the 
 
 **2. wxPython**
 
-It is a open source, portable GUI class library written in C++ that provides a native look and feel on a number of platforms, with Windows, Mac OS X, GTK, X11, all listed as current stable targets. Language bindings are available for a number of languages including Python, Perl, Ruby, etc.
+It is an open source, portable GUI class library written in C++ that provides a native look and feel on a number of platforms, with Windows, Mac OS X, GTK, X11, all listed as current stable targets. Language bindings are available for a number of languages including Python, Perl, Ruby, etc.
  
 **3. Qt**
 
