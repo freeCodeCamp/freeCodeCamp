@@ -4,7 +4,7 @@ title: For Loop
 ### Syntax
 
 ```javascript
-for ([initialization]); [condition]; [final-expression]) {
+for ([initialization]; [condition]; [final-expression]) {
    // statement
 }
 ```
