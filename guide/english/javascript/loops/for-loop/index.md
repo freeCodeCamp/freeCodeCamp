@@ -27,8 +27,10 @@ any of these three expressions or the statement can be omitted. For loops are co
 When indexing over an array many times it is easy to exceed the bounds of the array (ex. try to reference the 4th element of a 3 element array).
 
 ```javascript
-    // This will cause an error.
     // The bounds of the array will be exceeded.
+    // Here the value of arr.length is 3
+    // Since variable 'i' is initialised to 0, it will iterate the array 'arr' 4 (i.e. from i = 0 to i = 3) times.
+    // Hence 4th iteration will output undefined since there are only three elements in the array.
     var arr = [ 1, 2, 3 ];
     for (var i = 0; i <= arr.length; i++) {
        console.log(arr[i]);
