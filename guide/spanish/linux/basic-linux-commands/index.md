@@ -48,4 +48,4 @@ Al comenzar con Linux, hay algunos comandos básicos que todos deben conocer.
 
 1.  **less** - ver el contenido del archivo
 
-*   Use `less filename.txt` para ver el contenido de un archivo y navegar a través de ellos. Por defecto, menos irá a través del archivo página a página.
+*   Usa `less filename.txt` para ver el contenido de un archivo y navegar a través de ellos. Por defecto, `less` irá a través del archivo página a página.

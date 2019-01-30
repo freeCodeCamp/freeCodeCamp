@@ -3,14 +3,14 @@ title: Div Align Attribute
 ---
 ## Div Align Attribute
 
-The `<div align="">` attribute is used for aligning the text in a div tag to The Left, Right, center or justify.
+The `<div align="">` attribute is used for aligning the text in a div tag to the left, right, center or justify.
 
 For instance:
 
 ```html
 <html>
 <head>
-<title> Div Align Attribbute </title>
+<title> Div Align Attribute </title>
 </head>
 <body>
 <div align="left">
@@ -29,9 +29,9 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor i
 </html>
 ```
 ## Important!
-This attribute is no longer supported in html5. css is the way to go.
+This attribute is no longer supported in html5. CSS is the way to go.
 
-The Div Align attribute can be used to horizontally align the contents within a div. In the below example, the text will be centered within the div.
+The `<div align="">` attribute can be used to horizontally align the contents within a div. In the below example, the text will be centered within the div.
 
 ```html
 <div align="center">
