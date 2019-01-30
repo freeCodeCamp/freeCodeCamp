@@ -6,7 +6,6 @@ class CodingBootcampCostCalculator extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      d3: <div />,
       cities: [],
       incomes: [],
       city: null,
@@ -16,6 +15,10 @@ class CodingBootcampCostCalculator extends React.Component {
     };
     this.handleCitySelector = this.handleCitySelector.bind(this);
     this.handleIncomeSelector = this.handleIncomeSelector.bind(this);
+  }
+
+  componentDidUpdate() {
+    console.log(this.state.lastYearsIncome);
   }
 
   componentDidMount() {

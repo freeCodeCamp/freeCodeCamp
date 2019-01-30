@@ -23,7 +23,7 @@ class CostCalculator extends React.Component {
 
   updateChart() {
     const { bootcamps, city, lastYearsIncome } = this.props;
-    if (city && lastYearsIncome) {
+    if (city !== null && lastYearsIncome !== null) {
       const node = this.rootRef.current;
       updateCalculator(node, bootcamps, city, lastYearsIncome);
     }

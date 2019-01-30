@@ -7,7 +7,7 @@ import rehypeReact from 'rehype-react';
 import Breadcrumbs from './components/Breadcrumbs';
 import Layout from '../../components/layouts/GuideLayout';
 import CodingBootcampCostCalculator from
-  '../../components/Calculators/CodingBootcampCostCalculator';
+  '../../templates/Guide/components/calculators/CodingBootcampCodeCalculator/CodingBootcampCostCalculator';
 
 const propTypes = {
   data: PropTypes.object,
