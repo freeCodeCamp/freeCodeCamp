@@ -2,10 +2,10 @@
 title: JavaScript Tutorials and Other Resources
 localeTitle: Учебники по JavaScript и другие ресурсы
 ---
+*   [Современный учебник по JavaScript](http://learn.javascript.ru/)
 *   [JavaScript для кошек](http://jsforcats.com/)
-*   [Современный учебник по JavaScript](https://javascript.info/)
-*   [Преимущественное руководство профессора Фрисби по функциональному программированию](https://github.com/DrBoolean/mostly-adequate-guide)
-*   [Красноречивый Javascript](http://www.eloquentjavascript.net) ( [_аннотированный_](https://watchandcode.com/courses/eloquent-javascript-the-annotated-version) )
+*   [Доступное руководство профессора Фрисби по функциональному программированию](https://github.com/DrBoolean/mostly-adequate-guide)
+*   [Красноречивый Javascript](http://www.eloquentjavascript.net) ( [_c аннотациями_](https://watchandcode.com/courses/eloquent-javascript-the-annotated-version) )
 *   [Говорящий Javascript](http://speakingjs.com/es5/)
 *   [Изучение ES6](http://exploringjs.com/es6/)
 *   [Udemy - Javascript Понимание странных частей ( _первые 3,5 часа_ )](https://www.youtube.com/watch?v=Bv_5Zv5c-Ts)
@@ -15,18 +15,18 @@ localeTitle: Учебники по JavaScript и другие ресурсы
 *   [Современный JS Cheatsheet](https://mbeaudru.github.io/modern-js-cheatsheet/)
 *   [50 лучших веб-сайтов для изучения JavaScript](http://www.codeconquest.com/blog/top-50-websites-to-learn-javascript/)
 *   [Учебник по Codementor JavaScript](https://www.codementor.io/community/topic/javascript)
-*   [Вам не нужно jQuery](http://youmightnotneedjquery.com/)
+*   [Вам не нужен jQuery](http://youmightnotneedjquery.com/)
 
 ## Рекомендации
 
 *   [DevDocs](http://devdocs.io)
 *   [Скриншот OverAPI JavaScript](http://overapi.com/javascript)
 *   [ECMA-262](http://www.ecma-international.org/publications/standards/Ecma-262.htm)
-*   [Сеть разработчиков Mozilla (MDN)](https://developer.mozilla.org/en-US/docs/Web/JavaScript)
+*   [Сообщество разработчиков Mozilla (MDN)](https://developer.mozilla.org/en-US/docs/Web/JavaScript)
 
-Найти библиотеки javascript на [странице http://jster.net](http://jster.net)
+Найти библиотеки Javascript на [странице http://jster.net](http://jster.net)
 
-## Быстрый JavaScript
+## Онлайн-редакторы кода
 
 *   [REPL](https://repl.it/languages/Javascript) ( [_узел_](https://repl.it/languages/iojs/) )
 *   [JSBin](http://jsbin.com)
@@ -37,11 +37,11 @@ localeTitle: Учебники по JavaScript и другие ресурсы
 *   [Объектная игровая площадка ( _визуализация объектов_ )](http://www.objectplayground.com/)
 *   [Plunker](http://plnkr.co)
 
-## проблемы
+## Решение алгоритмов
 
 *   [Code Wars](http://codewars.com)
-*   [Рейтинг Хакер](https://hackerrank.com)
-*   [Кодирование игры](http://codingame.com)
+*   [HackerRank](https://hackerrank.com)
+*   [CodinGame](http://codingame.com)
 *   [CodeFights](https://codefights.com/home)
 *   [ES6 Katas](http://es6katas.org)
 
@@ -50,7 +50,7 @@ localeTitle: Учебники по JavaScript и другие ресурсы
 *   [Codecademy](https://www.codecademy.com)
 *   [RithmSchool](https://www.rithmschool.com)
 
-## упражнения
+## Уроки и упражнения
 
 *   [Codility](https://codility.com/programmers/lessons/)
 *   [Coderbyte](http://coderbyte.com)
@@ -58,32 +58,32 @@ localeTitle: Учебники по JavaScript и другие ресурсы
 *   [JavaScript30](https://javascript30.com/)
 *   [Javascript.com (Pluralsight)](https://www.javascript.com/)
 
-## редакторы
+## Редакторы кода
 
 *   [Код Visual Studio](https://code.visualstudio.com/)
     
-    Код Visual Studio включает встроенную поддержку для завершения кода IntelliSense, понимание и навигацию по богатому семантическому коду и рефакторинг кода. Он поставляется со встроенным отладчиком и поддержкой git и имеет множество расширений.
+    Код Visual Studio включает встроенную поддержку для автодополнения кода IntelliSense, понимание богатого семантического кода и навигацию, а также рефакторинг кода. Он поставляется со встроенным отладчиком, поддержкой git и имеет множество расширений.
     
 *   [WebStorm](https://www.jetbrains.com/webstorm/)
     
-    Полнофункциональная среда IDE для Javascript, включая завершение кода и поддержку живой переливы, контроля версий и тестирования. Сделано Jet Brains и смоделировано после их IntelliJ Java IDE.
+    Полнофункциональная среда IDE для Javascript, включая автодополнение кода, поддержку живого линтинга, контроля версий и тестирования. Сделано в Jet Brains нас основе их IntelliJ Java IDE.
     
-*   [Скобки](http://brackets.io)
+*   [Brackets](http://brackets.io)
     
-*   [Атом](http://atom.io)
+*   [Atom](http://atom.io)
     
     Текстовый редактор с открытым исходным кодом, созданный GitHub.
     
-*   [Возвышенный текст](https://www.sublimetext.com/)
+*   [Sublime Text 3](https://www.sublimetext.com/)
     
 
 ## Блоги
 
-*   [Перфекция убивает](http://perfectionkills.com)
+*   [Совершенство убивает](http://perfectionkills.com)
 *   [2ality](http://www.2ality.com/)
 *   [Коллекция JS на Medium](https://medium.com/the-javascript-collection)
 *   [Дэвид Уолш](https://davidwalsh.name/)
-*   [superheroJS](http://superherojs.com/)
+*   [SuperheroJS](http://superherojs.com/)
 
 ## Подкасты
 
@@ -93,8 +93,9 @@ localeTitle: Учебники по JavaScript и другие ресурсы
 
 *   [Дерек Банас учит JS в одном видео](https://www.youtube.com/watch?v=fju9ii8YsGs)
 *   [Объектно-ориентированный JavaScript Derek Banas](https://www.youtube.com/watch?v=O8wwnhdkPE4)
+*   [Основы JavaScript для Абсолютных Новичков 2018](https://www.youtube.com/watch?v=YMvzfQSI6pQ)
 
-## книги
+## Книги
 
 *   [Секреты JavaScript-ниндзя](https://www.manning.com/books/secrets-of-the-javascript-ninja)
     
@@ -104,13 +105,13 @@ localeTitle: Учебники по JavaScript и другие ресурсы
     
 *   [Изучение шаблонов проектирования JavaScript](http://addyosmani.com/resources/essentialjsdesignpatterns/book/)
     
-*   [Руководство по стилю JavaScript для Airbnb](https://github.com/airbnb/javascript)
+*   [Руководство по стилю JavaScript от Airbnb](https://github.com/airbnb/javascript)
     
 *   [JSDoc](http://usejsdoc.org/)
     
 *   [Javascript Allonge Six](https://leanpub.com/javascriptallongesix/read)
     
-*   [Вы не знаете JS](https://github.com/getify/You-Dont-Know-JS)
+*   [Вы не знаете JS (You Dont Know JS)](https://github.com/getify/You-Dont-Know-JS)
     
     6 книг по JavaScript Кайла Симпсона. От новичка до продвинутого.
     
@@ -126,4 +127,5 @@ localeTitle: Учебники по JavaScript и другие ресурсы
     
 *   [Функциональный свет JS](https://github.com/getify/Functional-Light-JS)
     
-    Эта книга предназначена для того, чтобы быть полезным компаньоном для тех, кто хочет (повторно) обнаружить множество аспектов JavaScript. С самого начала программирования до интерфейсного и внутреннего веб-разработки многие темы охватываются простым и доступным способом. Никаких предварительных знаний не требуется!
+    Эта книга предназначена для того, чтобы быть полезным компаньоном для тех, кто хочет открыть для себя или освежить в памяти множество аспектов JavaScript. С самого начала программирования до интерфейсной и внутренней веб-разработки, многие темы охватываются простым и доступным способом. Никаких предварительных знаний не требуется!
+

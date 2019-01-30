@@ -12,19 +12,16 @@ jQuery makes web development easier to use by providing a number of 'helper' fun
 
 jQuery adds a global variable with all of the libraries methods attached. The naming convention is to have this global variable as <code>$</code>. by typing in <code>$.</code> you have all the jQuery methods at your disposal.
 
-##Get to Start
+## Get Started
 
-Before yo study the JQuery you shuold have basic knowledges on these topics
-    1. HTML
-    2. CSS
-    3. JavaScript
-These are the most famous companies who use Jquery as there frameworks
-    Google
-    Microsoft
-    Netflix
-## Example
+Before studying JQuery, you should have basic knowledge of these topics:
+  1. HTML
+  2. CSS
+  3. JavaScript
 
+## Example Usage
 
+When a user clicks on a button, all `<p>` elements will be hidden:
 
 ```javascript
 $(document).ready(function(){
@@ -33,7 +30,6 @@ $(document).ready(function(){
     });
 });
 ```
-  $("button").click(function() This is defining the function to when user click the button, contents under p element will hide. This is the simple machanism of Jquery
-  
+
 #### More Information
 * [jQuery Home Page](https://jquery.com/)

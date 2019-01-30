@@ -3,11 +3,28 @@ title: Git hosting
 ---
 ## Git hosting
 
-This is a stub. <a href='https://github.com/freecodecamp/guides/tree/master/src/pages/git/git-hosting/index.md' target='_blank' rel='nofollow'>Help our community expand it</a>.
-
-<a href='https://github.com/freecodecamp/guides/blob/master/README.md' target='_blank' rel='nofollow'>This quick style guide will help ensure your pull request gets accepted</a>.
-
 <!-- The article goes here, in GitHub-flavored Markdown. Feel free to add YouTube videos, images, and CodePen/JSBin embeds  -->
+
+PHP supports ten primitive types.
+
+Four scalar types:
+* boolean
+* integer
+* float (floating-point number, aka double)
+* string
+
+Four compound types:
+* array
+* object
+* callable
+* iterable
+
+And finally two special types:
+* resource
+* NULL
+
 
 #### More Information:
 <!-- Please add any articles you think might be helpful to read before writing the article -->
+
+[PHP Manual](http://php.net/manual/en/language.types.intro.php)
