@@ -2,6 +2,7 @@ import dedent from 'dedent';
 import { validationResult } from 'express-validator/check';
 
 import { createValidatorErrorFormatter } from './create-handled-error.js';
+import { homeLocation } from '../../../config/env.json';
 
 export function ifNoUserRedirectTo(url, message, type = 'errors') {
   return function(req, res, next) {
@@ -50,7 +51,7 @@ export function ifNotVerifiedRedirectToUpdateEmail(req, res, next) {
   return next();
 }
 
-export function ifUserRedirectTo(path = '/', status) {
+export function ifUserRedirectTo(path = `${homeLocation}/welcome`, status) {
   status = status === 302 ? 302 : 301;
   return (req, res, next) => {
     if (req.user) {
@@ -62,8 +63,9 @@ export function ifUserRedirectTo(path = '/', status) {
 
 // for use with express-validator error formatter
 export const createValidatorErrorHandler = (...args) => (req, res, next) => {
-  const validation = validationResult(req)
-    .formatWith(createValidatorErrorFormatter(...args));
+  const validation = validationResult(req).formatWith(
+    createValidatorErrorFormatter(...args)
+  );
 
   if (!validation.isEmpty()) {
     const errors = validation.array();

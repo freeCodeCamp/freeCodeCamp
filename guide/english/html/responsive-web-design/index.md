@@ -5,6 +5,8 @@ title: Responsive Web Design
 
 Responsive web design is the concept of designing web pages that adapt to different screen sizes. It commonly involves the use of different layouts, font sizes, and placement of navigation menus.
 
+A mobile first approach should be used when building a responsive website or web app which means styling for the smallest screen first, usually 320px, and then using media queries to style layout for larger screens. 
+
 In order to create a responsive web page, CSS is commonly used to style your HTML elements. Some common methods in CSS used to create responsive web designs are:
 
 1. Writing [media queries](https://guide.freecodecamp.org/css/media-queries)
@@ -40,7 +42,7 @@ CSS frameworks like [Bootstrap](https://www.getbootstrap.com/), [Material Design
 In this example, `col-md-9` and `col-sm-6` set the width of the `<div>` tag based on whether the screen is small or medium.
 
 ```html
-<div class="col-12 col-md-6"></div>
+<div class="col-12 col-md-9 col-sm-6"></div>
 ```
 
 The Bootstrap framework divides a row into twelve columns. In the above example, the `<div>` will spread across either nine or six of them. The grid system, pictured below, is fundamental to how Bootstrap eases responsive design.

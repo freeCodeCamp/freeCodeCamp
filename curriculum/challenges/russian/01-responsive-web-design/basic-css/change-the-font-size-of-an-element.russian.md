@@ -7,10 +7,10 @@ localeTitle: Изменение размера шрифта элемента
 ---
 
 ## Description
-<section id="description"> Размер шрифта контролируется свойством CSS <code>font-size</code> , например: <blockquote> h1 { <br> размер шрифта: 30 пикселей; <br> } </blockquote></section>
+<section id="description"> Размер шрифта контролируется свойством CSS <code>font-size</code> , например: <blockquote> h1 { <br> font-size: 30 px; <br> } </blockquote></section>
 
 ## Instructions
-<section id="instructions"> Внутри же <code>&lt;style&gt;</code> тег , который содержит ваш <code>red-text</code> класса, создать запись для <code>p</code> элементов и установить <code>font-size</code> 16 пикселей ( <code>16px</code> ). </section>
+<section id="instructions"> Внутри тега <code>&lt;style&gt;</code>, который уже содержит класс <code>red-text</code>, создайте правило для <code>p</code> элементов и установите <code>font-size</code> 16 пикселей ( <code>16px</code> ). </section>
 
 ## Tests
 <section id='tests'>
