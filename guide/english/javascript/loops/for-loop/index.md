@@ -37,10 +37,10 @@ When indexing over an array many times it is easy to exceed the bounds of the ar
     }
 
     output:
-    1              // 1st iteration
-    2              // 2nd iteration
-    3              // 3rd iteration
-    undefined      // 4th iteration
+    1
+    2
+    3
+    undefined
 ```
 
 There are two ways to fix this code. Set the condition to either `i < arr.length` or `i <= arr.length - 1`
