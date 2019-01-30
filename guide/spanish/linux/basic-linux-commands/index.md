@@ -36,16 +36,16 @@ Al comenzar con Linux, hay algunos comandos básicos que todos deben conocer.
 
 1.  **touch** - crea un archivo
 
-*   El comando touch se utiliza para crear un archivo. Puede ser cualquier cosa, desde un archivo txt vacío a un archivo zip vacío. 'touch new.txt' creará un nuevo archivo con el nombre nuevo.
+*   El comando `touch` se utiliza para crear un archivo. Puede ser cualquier cosa, desde un archivo txt vacío a un archivo zip vacío. 'touch new.txt' creará un nuevo archivo con el nombre nuevo.
 
 1.  **mv** - mover
 
-*   Utilice el comando mv para mover archivos a través de la línea de comandos. También podemos usar el comando mv para renombrar un archivo. Por ejemplo, si queremos cambiar el nombre del archivo "texto" a "nuevo", podemos usar 'mv texto nuevo'.
+*   Utilice el comando `mv` para mover archivos a través de la línea de comandos. También podemos usar el comando `mv` para renombrar un archivo. Por ejemplo, si queremos cambiar el nombre del archivo "texto" a "nuevo", podemos usar 'mv texto nuevo'.
 
-1.  **clic derecho** - copiar y pegar
+1.  **click-derecho** - copiar y pegar
 
-*   Este es un comando menos y más práctico, sin embargo, es muy útil para hacer casi cualquier cosa en un terminal en Linux. Para comenzar, resalte el texto como normal y luego haga clic con el botón derecho en su mouse para copiar una selección. Debería ver que la parte resaltada no está resaltada, esto significa que copió la selección. Ahora haga clic derecho en el lugar donde desea pegar la selección y listo.
+*   Este no es comando, se refiere al click derecho del mouse. Es muy útil para hacer casi cualquier cosa en un terminal en Linux. Para comenzar, resalta el texto y luego haz click con el botón derecho en su mouse para copiar una selección. Deberías ver que la parte resaltada no está resaltada, esto significa que copió la selección. Ahora haz click derecho en el lugar donde desees pegar la selección y listo.
 
 1.  **less** - ver el contenido del archivo
 
-*   Usa `less filename.txt` para ver el contenido de un archivo y navegar a través de ellos. Por defecto, less irá a través del archivo página a página.
+*   Usa `less filename.txt` para ver el contenido de un archivo y navegar a través de ellos. Por defecto, `less` irá a través del archivo página a página.
