@@ -36,4 +36,3 @@ The older PyGtk bindings for the Gtk+ 2 toolkit have been implemented by James H
  * [Qt]( https://www.qt.io/qt-for-python)
  * [Gtk+](http://www.pygtk.org)
 
- 
