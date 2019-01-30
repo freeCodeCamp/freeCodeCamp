@@ -3,4 +3,4 @@ title: A Record
 ---
 
 # A Record
-Maps an FQDN to an IP Address
+Maps a fully qualified domain name (FQDN) to an IP Address
