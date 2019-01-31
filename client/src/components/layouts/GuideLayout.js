@@ -68,7 +68,7 @@ class Layout extends React.Component {
                 toggleExpandedState
               }) => (
                 <Fragment>
-                  <Spacer size={2} />
+                  <Spacer size={1} />
                   <Grid>
                     <Row>
                       <Col
@@ -109,6 +109,7 @@ class Layout extends React.Component {
     );
   }
 }
+
 
 Layout.displayName = 'Layout';
 Layout.propTypes = propTypes;
