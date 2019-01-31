@@ -75,7 +75,7 @@ Since the numbers might not be always in order, using `max()` and `min()` will h
       // Using Arithmetic Progression summing formula
       const sum = (startNum + endNum) * numCount / 2;
       return sum;
-    }
+    };
 
 ![:rocket:](https://forum.freecodecamp.com/images/emoji/emoji_one/rocket.png?v=3 ":rocket:") <a href='https://repl.it/CLm7/0' target='_blank' rel='nofollow'>Run Code</a>
 
