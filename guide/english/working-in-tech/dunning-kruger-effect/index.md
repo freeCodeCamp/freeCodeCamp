@@ -11,7 +11,7 @@ In the field of psychology, the **Dunning-Kruger** effect is a cognitive bias wh
 It is important for software developers to be aware of the DK effect. It can be observed among developers of all ages, and is more prominent among beginners and intermediate-level developers. After the initial struggle, they might get over-confident about a language or their designs. This leads them to underestimate the complexity of system requirements or, worse, hampers them in coming up with better software designs. For more experienced developers, they seem to have gained wisdom over the years. They are more humble and better at judging the system's complexity. (This might not be true for all senior developers, though.)
 
 ## Beware!
-The DK effect is the exact opposite of [Imposter Syndrome](https://en.wikipedia.org/wiki/Impostor_syndrome). You need to strike the perfect balance between both of these for your professional growth. 
+The DK effect is the exact opposite of [Impostor Syndrome](https://en.wikipedia.org/wiki/Impostor_syndrome). You need to strike the perfect balance between both of these for your professional growth. 
 
 ## How to Check if I Suffer from DK Effect?
 *You can't!* 
