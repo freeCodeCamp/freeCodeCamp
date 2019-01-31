@@ -65,9 +65,16 @@ Since the numbers might not be always in order, using `max()` and `min()` will h
 
     function sumAll(arr) {
       // Buckle up everything to one!
+      let startNum = arr[0];
+      let endNum = arr[1];
+      
+      // Get the count of numbers between the two numbers by subtracting them and add 1 to the absolute value.
+      // ex. There are |1-4| + 1 = 4, (1, 2, 3, 4), 4 numbers between 1 and 4.
+      let numCount = Math.abs(startNum - endNum) + 1
+      
       // Using Arithmetic Progression summing formula
-
-      return (Math.abs(arr[0] - arr[1]) + 1) * (arr[0] + arr[1]) / 2;
+      let sum = (startNum + endNum) * numCount / 2;
+      return sum;
     }
 
 ![:rocket:](https://forum.freecodecamp.com/images/emoji/emoji_one/rocket.png?v=3 ":rocket:") <a href='https://repl.it/CLm7/0' target='_blank' rel='nofollow'>Run Code</a>
