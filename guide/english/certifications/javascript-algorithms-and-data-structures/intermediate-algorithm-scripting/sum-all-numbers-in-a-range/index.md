@@ -63,17 +63,17 @@ Since the numbers might not be always in order, using `max()` and `min()` will h
 
 ## ![:sunflower:](https://forum.freecodecamp.com/images/emoji/emoji_one/sunflower.png?v=3 ":sunflower:") Intermediate Code Solution:
 
-    function sumAll(arr) {
+    const sumAll = (arr) => {
       // Buckle up everything to one!
-      let startNum = arr[0];
-      let endNum = arr[1];
+      const startNum = arr[0];
+      const endNum = arr[1];
       
       // Get the count of numbers between the two numbers by subtracting them and add 1 to the absolute value.
       // ex. There are |1-4| + 1 = 4, (1, 2, 3, 4), 4 numbers between 1 and 4.
-      let numCount = Math.abs(startNum - endNum) + 1
+      const numCount = Math.abs(startNum - endNum) + 1
       
       // Using Arithmetic Progression summing formula
-      let sum = (startNum + endNum) * numCount / 2;
+      const sum = (startNum + endNum) * numCount / 2;
       return sum;
     }
 
