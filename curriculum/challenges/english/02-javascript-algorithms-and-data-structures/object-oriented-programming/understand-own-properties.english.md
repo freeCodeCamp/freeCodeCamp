@@ -27,7 +27,7 @@ tests:
   - text: <code>ownProps</code> should include the values <code>"numLegs"</code> and <code>"name"</code>.
     testString: assert(ownProps.indexOf('name') !== -1 && ownProps.indexOf('numLegs') !== -1, '<code>ownProps</code> should include the values <code>"numLegs"</code> and <code>"name"</code>.');
   - text: Solve this challenge without using the built in method <code>Object.keys()</code>.
-    testString: assert(!/\Object.keys/.test(code), 'Solve this challenge without using the built in method <code>Object.keys()</code>.');
+    testString: assert(!/Object(\.(keys)|\[('|"|\`).+\2\3\])/.test(code), 'Solve this challenge without using the built in method <code>Object.keys()</code>.');
 
 ```
 
