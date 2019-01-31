@@ -69,7 +69,7 @@ class Layout extends React.Component {
               }) => (
                 <Fragment>
                   <Spacer size={1} />
-                  <Grid fluid={true}>
+                  <Grid>
                     <Row>
                       <Col
                         md={4}
