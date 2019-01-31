@@ -1,40 +1,5 @@
-/* globals */
-
-.colourDarkGrey {
-  color: #444;
-}
-
-.colourGreen {
-  color: #006400;
-}
-
-.pointer {
-  cursor: pointer;
-}
-
-:global body {
-  font-family: 'Lato', sans-serif, 'FontAwesome';
+.guide-container {
   font-size: 16px;
-}
-
-:global h1,
-:global h2,
-:global h3,
-:global h4,
-:global h5,
-:global h6 {
-  /* Bootstrap sets weight to 500, we don't have that */
-  font-weight: 700;
-}
-
-:global h2:first-child {
-  margin-top: 0;
-}
-
-:global td,
-:global th {
-  border-bottom: 1px solid rgba(0, 0, 0, 0.12);
-  padding: 10px;
 }
 
 /* Breadcrumbs */
@@ -42,6 +7,7 @@
 .breadcrumb {
   display: inline-block;
   padding: 5px 10px;
+  margin: 0;
   margin-bottom: 5px;
   opacity: 0.8;
   transition: opacity 0.1s ease-out;
@@ -53,6 +19,10 @@
 
 .breadcrumb > li a {
   color: #006400;
+}
+
+.breadcrumb > li {
+  margin: 0;
 }
 
 .breadcrumb > li + li:before {
@@ -105,11 +75,18 @@
   margin-bottom: 0;
 }
 
+.navPanelUl > li {
+  margin-bottom: 0;
+}
+
+.navItemTitle {
+  margin-left: 19px;
+}
+
 .panelStyle {
   border: none !important;
   border-radius: 0;
   box-shadow: none;
-  color: #006400;
   padding: 0;
 }
 
@@ -136,7 +113,11 @@
   border: none;
   border-radius: 0;
   cursor: pointer;
-  color: #006400;
+}
+
+.night .panelStyle,
+.night .title {
+  background-color: #333;
 }
 
 @media (max-width: 992px) {
