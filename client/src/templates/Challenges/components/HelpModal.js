@@ -7,6 +7,8 @@ import { Button, Modal } from '@freecodecamp/react-bootstrap';
 import ga from '../../../analytics';
 import { createQuestion, closeModal, isHelpModalOpenSelector } from '../redux';
 
+import './help-modal.css';
+
 const mapStateToProps = state => ({ isOpen: isHelpModalOpenSelector(state) });
 const mapDispatchToProps = dispatch =>
   bindActionCreators(
@@ -31,7 +33,7 @@ export class HelpModal extends Component {
       ga.modalview('/help-modal');
     }
     return (
-      <Modal onHide={closeHelpModal} show={isOpen}>
+      <Modal dialogClassName='help-modal' onHide={closeHelpModal} show={isOpen}>
         <Modal.Header
           className='help-modal-header fcc-modal'
           closeButton={true}

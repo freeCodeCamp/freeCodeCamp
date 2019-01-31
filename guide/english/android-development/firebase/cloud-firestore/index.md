@@ -2,7 +2,7 @@
 title: Setting up Cloud Firestore
 ---
 
-# Setting up Cloud Firestore
+# About Cloud Firestore
 
 Cloud Firestore is a scalable and flexible NoSQL database for mobile, web, and server development. Like real-time database it offers listeners to keep the data in sync for mobile and web clients and also offers offline capability.
 

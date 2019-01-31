@@ -15,7 +15,7 @@
 
 Hola 👋!
 
-freeCodeCamp.org es posible gracias a miles de voluntarios amables como tú. Nos emocionamos por tus contribuciones y nos complace darte la bienvenida a bordo.
+freeCodeCamp.org es posible gracias a miles de voluntarios amables como usted. Estamos muy agardecidos por sus contribuciones y nos complace darle la bienvenida a bordo.
 
 Cumplimos estrictamente nuestro ["Código de conducta"](https://www.freecodecamp.org/code-of-conduct). Tómate un momento para leerlo. No es muy largo.
 
@@ -54,7 +54,7 @@ Puedes ayudarnos con:
 
 **¿Qué son los artículos de Guía?**
 
-Los artículos de guía te ayudan a comprender rápidamente un concepto de tecnología. Estas son explicaciones breves y sencillas que puedes leer antes de ir a recursos más profundos.
+Los artículos de guía ayudan a comprender rápidamente un concepto de tecnología. Estas son explicaciones breves y sencillas que se pueden leer antes de ir a recursos más profundos.
 
 Puedes encontrar un [artículo de ejemplo sobre elementos HTML aquí](./client/src/pages/html/elements/index.md).
 
@@ -137,7 +137,7 @@ Siéntete libre de pedir ayuda en:
 - [La categoría "Colaboradores" en nuestro foro público](https://www.freecodecamp.org/forum/c/contributors).
 - [La sala de chat de nuestros colaboradores públicos en Gitter](https://gitter.im/FreeCodeCamp/Contributors).
 
-Nos emociona ayudarte a contribuir con cualquiera de los temas en los que le gustaría trabajar. Asegúrate de buscar tu consulta antes de publicar una nueva. Sé educado y paciente. Nuestros voluntarios y moderadores de la comunidad están siempre alrededor para guiarlo a través de sus consultas.
+Nos emociona ayudarte a contribuir con cualquiera de los temas en los que te gustaría trabajar. Asegúrate de buscar tu consulta antes de publicar una nueva. Sé educado y paciente. Nuestros voluntarios y moderadores de la comunidad están siempre alrededor para guiarlo a través de sus consultas.
 
 **Soy nuevo en GitHub y Open Source en general:**
 

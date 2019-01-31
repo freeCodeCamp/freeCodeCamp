@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { Fragment } from 'react';
 import { Grid, Row, Col, Image } from '@freecodecamp/react-bootstrap';
 import FontAwesomeIcon from '@fortawesome/react-fontawesome';
 import {
@@ -13,7 +13,6 @@ import { faDatabase } from '@fortawesome/free-solid-svg-icons';
 import Helmet from 'react-helmet';
 
 import { Spacer } from '../components/helpers';
-import Layout from '../components/layouts/Default';
 import Login from '../components/Header/components/Login';
 
 import './index.css';
@@ -27,7 +26,7 @@ const BigCallToAction = () => (
 );
 
 const IndexPage = () => (
-  <Layout disableSettings={true} landingPage={true}>
+  <Fragment>
     <Helmet>
       <title>Learn to code | freeCodeCamp.org</title>
     </Helmet>
@@ -55,7 +54,7 @@ const IndexPage = () => (
         </Col>
         <Col md={4} sm={12}>
           <Image
-            alt='Help nonprofits with bro bono code projects'
+            alt='Help nonprofits with pro bono code projects'
             className='landing-icon img-center'
             responsive={true}
             src={
@@ -246,7 +245,7 @@ const IndexPage = () => (
       <Spacer />
       <Spacer />
     </Grid>
-  </Layout>
+  </Fragment>
 );
 
 export default IndexPage;

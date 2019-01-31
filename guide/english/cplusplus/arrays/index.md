@@ -51,6 +51,10 @@ numbers[2] = 55; // Sets the third position (index 2) to the new value 55
 //numbers[] is now: {1, 2, 55, 4, 5}
 ```
 
+### What is the difference between arrays and pointers?
+An array is a collection of variables of similar data type that are stored in contiguous memory locations whereas the pointer is a variable that stores the memory address of another variable i.e. a pointer is a variable that points to the location of another variable.
+
+
 How to insert and print array elements:
 ```C++
 int vnum[5] = {1, 2, 3, 4, 5}

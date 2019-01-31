@@ -19,6 +19,8 @@ Most used options:
 
 * `-a`, all files and folders, including ones that are hidden and start with a `.`
 * `-l`, List in long format
+* `-lh`, Shows sizes in human readable format
+* `-lS`, Displays file size in order, will display big in size first
 * `-G`, enable colorized output.
 * `-s`, List File Size.
 * `-t`, Sorts the output by modification time

@@ -32,7 +32,8 @@ module.exports = {
           '/certification/*',
           '/unsubscribed/*',
           '/user/*',
-          '/settings/*'
+          '/settings/*',
+          '/n/*'
         ]
       }
     },

@@ -18,7 +18,7 @@ Blockchain Technology that is owned by a private party or an organization. It is
 
 The person in-charge is responsible for giving selective access and permissions such as read/write.
 
-Example : Bankchain, Hyperledger
+Example : Bankchain, Hyperledger, Multichain, Ethereum(Private network)
 
 #### 2. Public Blockchain
 
@@ -27,7 +27,6 @@ In this architecture, no one is in charge. Anyone and everyone can participate i
 Public Blockchain is open and transparent and therefore it is open for review by anyone willing to do so, at any given time. This architecture requires a consensus algorithm like Proof-of-Work or Proof-of-Stake.
 
 Example : Bitcoin, Ethereum, Litecoin
-
 
 #### 3. Consortium/Federated Blockchain
 
@@ -41,7 +40,7 @@ Example : [Energy Web Foundation](http://energyweb.org/)
 
 
 
-There is another category for classification, that is based on the persmission granted to the blockchain network. They are classified as -
+There is another category for classification, that is based on the permission granted to the blockchain network. They are classified as -
 
 1. Public Permissioned Blockchain
 2. Private Permissioned Blockchain

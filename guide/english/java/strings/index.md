@@ -3,7 +3,7 @@ title: Strings
 ---
 # Strings
 
-Strings are sequences of characters. In Java, a `String` is an `Object`. Strings should not be confused with `char` as characters are literally a single value rather than a sequence of characters. You can still use a single value within a String; however, it is preferred to use `char` when you are checking for a single character.
+Strings are sequences of characters. In Java, a `String` is not a `Primitive` but rather, it's called an `Object`. Strings should not be confused with `char` as characters are literally a single value rather than a sequence of characters. You can still use a single value within a String; however, it is preferred to use `char` when you are checking for a single character.
 
 ```java
 String course = "FreeCodeCamp";
@@ -18,7 +18,7 @@ true
 You can create a String Object in the following ways:
 
 1. `String str = "I am a String"; //as a String literal`
-1. `String str = "I am a " + "String"; //as a constant expression`
+1. `String str = "I" + " am" + " a" + " String"; //as a constant expression (note that spaces are in the quotes)`
 1. `String str = new String("I am a String"); //as a String Object using the constructor`
 
 You might be thinking: What's the difference between the three?
@@ -82,8 +82,10 @@ s3: example
 ```
 
 #### Comparing Strings 
+
 If you want to compare the value of two String variables, you can't use `==`. This is due to the fact that this will compare the references of the variables
 and not the values that are linked to them. To compare the stored values of the Strings you use the `.equals()` method.
+
 
 ```java
 boolean equals(Object obj)
