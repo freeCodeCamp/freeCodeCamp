@@ -1,13 +1,22 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import isEmail from 'validator/lib/isEmail';
-
-import CardForm from './CardForm';
+import {
+  Button,
+  ControlLabel,
+  Form,
+  FormControl,
+  FormGroup
+} from '@freecodecamp/react-bootstrap';
 import { injectStripe } from 'react-stripe-elements';
+
+import Spacer from '../../../components/helpers/Spacer';
+import StripeCardForm from './StripeCardForm';
 import { postJSON$ } from '../../../templates/Challenges/utils/ajax-stream.js';
 
 const propTypes = {
   email: PropTypes.string,
+  maybeButton: PropTypes.func.isRequired,
   renderCompletion: PropTypes.func.isRequired,
   stripe: PropTypes.shape({
     createToken: PropTypes.func.isRequired
@@ -28,14 +37,31 @@ class DonateForm extends Component {
 
     this.state = {
       ...initialSate,
-      email: null
+      email: null,
+      isFormValid: false
     };
 
     this.getUserEmail = this.getUserEmail.bind(this);
+    this.getValidationState = this.getValidationState.bind(this);
     this.handleEmailChange = this.handleEmailChange.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
     this.postDonation = this.postDonation.bind(this);
     this.resetDonation = this.resetDonation.bind(this);
+    this.submit = this.submit.bind(this);
+  }
+
+
+  getUserEmail() {
+    const { email: stateEmail } = this.state;
+    const { email: propsEmail } = this.props;
+    return stateEmail || propsEmail || '';
+  }
+
+  getValidationState(isFormValid) {
+    this.setState(state => ({
+      ...state,
+      isFormValid
+    }));
   }
 
   handleEmailChange(e) {
@@ -75,12 +101,6 @@ class DonateForm extends Component {
     });
   }
 
-  getUserEmail() {
-    const { email: stateEmail } = this.state;
-    const { email: propsEmail } = this.props;
-    return stateEmail || propsEmail || '';
-  }
-
   postDonation(token) {
     const { donationAmount: amount } = this.state;
     this.setState(state => ({
@@ -118,48 +138,48 @@ class DonateForm extends Component {
     );
   }
 
-  renderDonateForm() {
-    return (
-      <div>
-        <div className='text-left'>
-          <p>
-            freeCodeCamp.org is a tiny nonprofit that's helping millions of
-            people learn to code for free.
-          </p>
-          <p>
-            Join <strong>4,180</strong> supporters.
-          </p>
-          <p>
-            Your $5 / month donation will help keep tech education free and
-            open.
-          </p>
-          <hr />
-        </div>
-        {this.renderEmailInput()}
-        <CardForm amount={5} handleSubmit={this.handleSubmit} />
-      </div>
-    );
-  }
-
-  renderEmailInput() {
-    return (
-      <div className='donation-email-container'>
-        <label>
-          Your Email (we'll send you a tax-deductible donation receipt):
-          <input
-            onChange={this.handleEmailChange}
-            placeholder='me@example.com'
-            required={true}
-            type='text'
-            value={this.getUserEmail()}
-          />
-        </label>
-      </div>
-    );
+  submit(e) {
+    e.preventDefault();
+    this.handleSubmit();
   }
 
   resetDonation() {
     return this.setState(() => initialSate);
+  }
+
+  renderDonateForm() {
+    const { isFormValid } = this.state;
+    return (
+      <div>
+        <Form className='donation-form' onSubmit={this.submit}>
+          <FormGroup className='donation-email-container'>
+            <ControlLabel>
+              Email (we'll send you a tax-deductible donation receipt):
+            </ControlLabel>
+            <FormControl
+                onChange={this.handleEmailChange}
+                placeholder='me@example.com'
+                required={true}
+                type='text'
+                value={this.getUserEmail()}
+            />
+          </FormGroup>
+          <StripeCardForm getValidationState={this.getValidationState} />
+          <Button
+            block={true}
+            bsSize='lg'
+            bsStyle='primary'
+            disabled={!isFormValid}
+            id='confirm-donation-btn'
+            type='submit'
+            >
+            Confirm your donation of $5 / month
+          </Button>
+          <Spacer />
+        </Form>
+        {this.props.maybeButton()}
+      </div>
+    );
   }
 
   render() {

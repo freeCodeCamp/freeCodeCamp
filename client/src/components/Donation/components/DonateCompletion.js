@@ -11,7 +11,7 @@ const propTypes = {
   success: PropTypes.bool
 };
 
-function DonateCompletion({ processing, reset, success, error = null }) {
+function DonateCompletion({ close, processing, reset, success, error = null }) {
   /* eslint-disable no-nested-ternary */
   const style = processing ? 'info' : success ? 'success' : 'danger';
   const heading = processing
@@ -43,6 +43,7 @@ function DonateCompletion({ processing, reset, success, error = null }) {
             <span />
           </Fragment>
         )}
+        {!processing && <Button onClick={close}>Close</Button>}
       </p>
     </Alert>
   );
