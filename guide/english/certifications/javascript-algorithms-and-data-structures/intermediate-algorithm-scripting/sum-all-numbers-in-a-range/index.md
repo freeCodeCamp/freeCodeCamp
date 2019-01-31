@@ -79,8 +79,6 @@ Since the numbers might not be always in order, using `max()` and `min()` will h
 *   We can get the count of numbers in range by "Math.abs(arr[0] - arr[1]) + 1".
 *   Applying the formula by plugging in the numbers.
 
-The line `var sortedArr = arr.sort((a,b) => a-b);` is probably what will have you more confused. This would be the same as creating a function that returns `a-b` for the `sort()` which is the standard way to sort numbers from smallest to largest. Instead using arrow or fat arrow function, we are able to do all that in one single line thus allowing us to write less.
-
 #### Relevant Links
 
 *   <a href='http://forum.freecodecamp.com/t/javascript-array-prototype-sort/14306' target='_blank' rel='nofollow'>Array.sort()</a>
