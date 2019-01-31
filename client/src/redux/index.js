@@ -255,6 +255,10 @@ export const reducer = handleActions(
       ...state,
       showDonationModal: true
     }),
+    [types.closeDonationModal]: state => ({
+      ...state,
+      showDonationModal: false
+    }),
     [types.showCert]: state => ({
       ...state,
       showCert: {},

@@ -11,6 +11,7 @@ const {
   FORUM_LOCATION: forum,
   NEWS_LOCATION: news,
   LOCALE: locale,
+  STRIPE_PUBLIC: stripePublicKey,
 } = process.env;
 
 const locations = {
@@ -20,4 +21,4 @@ const locations = {
   newsLocation: news
 };
 
-module.exports = Object.assign(locations, { locale });
+module.exports = Object.assign(locations, { locale, stripePublicKey });

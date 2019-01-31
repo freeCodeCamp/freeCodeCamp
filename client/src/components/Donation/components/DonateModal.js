@@ -3,20 +3,24 @@ import PropTypes from 'prop-types';
 import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux';
 import { createSelector } from 'reselect';
-import { Modal } from '@freecodecamp/react-bootstrap';
+import { Modal, Button } from '@freecodecamp/react-bootstrap';
 import { StripeProvider, Elements } from 'react-stripe-elements';
 
-import ga from '../../analytics';
-import DonateForm from './components/DonateForm';
-import DonateCompletion from './components/DonateCompletion';
+import { stripePublicKey } from '../../../../config/env.json';
+
+import ga from '../../../analytics';
+import DonateForm from './DonateForm';
+import DonateCompletion from './DonateCompletion';
 import {
   userSelector,
   closeDonationModal,
   isDonationModalOpenSelector
-} from '../../redux';
+} from '../../../redux';
 
-import './donation.css';
-import poweredByStripe from '../../images/powered_by_stripe.svg';
+import PoweredByStripe from './poweredByStripe';
+import DonateText from './DonateText';
+
+import '../Donation.css';
 
 const mapStateToProps = createSelector(
   userSelector,
@@ -38,9 +42,7 @@ const propTypes = {
   show: PropTypes.bool
 };
 
-const stripeKey = 'pk_live_E6Z6xPM8pEsJziHW905zpAvF';
-
-class DonationModal extends Component {
+class DonateModal extends Component {
   constructor(...props) {
     super(...props);
     this.state = {
@@ -54,7 +56,7 @@ class DonationModal extends Component {
       /* eslint-disable react/no-did-mount-set-state */
       this.setState(state => ({
         ...state,
-        stripe: window.Stripe(stripeKey)
+        stripe: window.Stripe(stripePublicKey)
       }));
     } else {
       document.querySelector('#stripe-js').addEventListener('load', () => {
@@ -62,7 +64,7 @@ class DonationModal extends Component {
         console.info('stripe has loaded');
         this.setState(state => ({
           ...state,
-          stripe: window.Stripe(stripeKey)
+          stripe: window.Stripe(stripePublicKey)
         }));
       });
     }
@@ -77,12 +79,13 @@ class DonationModal extends Component {
   renderMaybe() {
     const { closeDonationModal } = this.props;
     const handleClick = e => {
+      console.log(e.target);
       e.preventDefault();
       return closeDonationModal();
     };
     return (
       <div className='maybe-later-container'>
-        <button onClick={handleClick}>Maybe later</button>
+        <Button bsStyle='link' onClick={handleClick}>Maybe later</Button>
       </div>
     );
   }
@@ -93,36 +96,34 @@ class DonationModal extends Component {
       ga.modalview('/donation-modal');
     }
     return (
-      <StripeProvider stripe={this.state.stripe}>
-        <Elements>
-          <Modal bsSize='lg' className='donation-modal' show={show}>
-            <Modal.Header className='fcc-modal'>
-              <Modal.Title className='text-center'>
-                Support Our NonProfit
-              </Modal.Title>
-            </Modal.Header>
-            <Modal.Body>
-              <DonateForm
-                email={email}
-                /**
-                 * Todo: Ask Stuart what this was about?
-                maybeButton={this.renderMaybe}
-                */
-                renderCompletion={this.renderCompletion}
-              />
-            </Modal.Body>
-            <Modal.Footer>
-              <img alt='powered by stripe' src={poweredByStripe} />
-            </Modal.Footer>
-          </Modal>
-        </Elements>
-      </StripeProvider>
+        <StripeProvider stripe={this.state.stripe}>
+          <Elements>
+            <Modal bsSize='lg' className='donation-modal' show={show}>
+              <Modal.Header className='fcc-modal'>
+                <Modal.Title className='text-center'>
+                  Support Our NonProfit
+                </Modal.Title>
+              </Modal.Header>
+              <Modal.Body>
+                <DonateText/>
+                <DonateForm
+                  email={email}
+                  maybeButton={this.renderMaybe}
+                  renderCompletion={this.renderCompletion}
+                />
+              </Modal.Body>
+              <Modal.Footer>
+              <PoweredByStripe />
+              </Modal.Footer>
+            </Modal>
+          </Elements>
+        </StripeProvider>
     );
   }
 }
 
-DonationModal.displayName = 'DonationModal';
-DonationModal.propTypes = propTypes;
+DonateModal.displayName = 'DonateModal';
+DonateModal.propTypes = propTypes;
 
 export default connect(
   mapStateToProps,
@@ -131,4 +132,4 @@ export default connect(
   {
     pure: false
   }
-)(DonationModal);
+)(DonateModal);
