@@ -1,4 +1,4 @@
-import React, { PureComponent } from 'react';
+import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import noop from 'lodash/noop';
 import { connect } from 'react-redux';
@@ -59,7 +59,7 @@ const propTypes = {
   title: PropTypes.string
 };
 
-export class CompletionModal extends PureComponent {
+export class CompletionModal extends Component {
   render() {
     const {
       close,
@@ -112,7 +112,7 @@ export class CompletionModal extends PureComponent {
             bsStyle='primary'
             onClick={submitChallenge}
             >
-            Submit and go to next challenge (Ctrl + Enter)
+            Submit and go to next challenge <span className='hidden-xs'>(Ctrl + Enter)</span>
           </Button>
           {showDownloadButton ? (
             <Button

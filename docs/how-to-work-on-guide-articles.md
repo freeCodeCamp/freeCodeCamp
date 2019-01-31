@@ -5,7 +5,7 @@ With your help, we can create a comprehensive reference tool that will help mill
 You can:
 
 - [Help us by Creating and Editing Guide Articles](#steps-for-creating-and-editing-guide-articles).
-- [Help us reviewing pull requests for Guide Articles]()
+- [Help us by reviewing pull requests for Guide Articles]()
 
 ## Steps for Creating and Editing Guide Articles
 
@@ -18,7 +18,7 @@ You can:
 
 Or just [create an issue](https://github.com/freeCodeCamp/freeCodeCamp/issues) - any little bit of help counts! 😊
 
-### [Follow these recommended guidelines in from our Style guide for a compelling guide article](/docs/style-guide-for-guide-articles.md)
+### [Follow these recommended guidelines from our Style guide for a compelling guide article](/docs/style-guide-for-guide-articles.md)
 
 ### Creating a Pull request (PR) to propose changes
 
@@ -58,7 +58,7 @@ Watch the video demonstration or follow the steps below it:
 
     This does not take any additional time than a unconventional message like 'update file' or 'add index.md'
 
-    You can learn more at about [why you should use these here](https://www.conventionalcommits.org/en/v1.0.0-beta.2/#why-use-conventional-commits).
+    You can learn more about [why you should use these here](https://www.conventionalcommits.org/en/v1.0.0-beta.2/#why-use-conventional-commits).
 
 4. Then select the radio button option for **"Create a new branch for this commit and start a pull request"** and click <kbd>Propose file changes</kbd>.
 
@@ -68,7 +68,7 @@ Congratulations 🎉! You have just created a pull request.
 
 #### Working on your local machine (_recommended_ for previewing changes)
 
-You are not required to work on your local machine, unless you would like to preview your edits, or work with UI fixes and enhancements. This is also recommended if you run into git issues like merge conflicts, rebasing, etc.
+You are not required to work on your local machine, unless you would like to preview your edits or work with UI fixes and enhancements. This is also recommended if you run into git issues like merge conflicts, rebasing, etc.
 
 ##### Read these guidelines on [How to setup freeCodeCamp locally](/docs/how-to-setup-freecodecamp-locally.md)
 
@@ -124,7 +124,7 @@ You will need to fix the issue before we can merge your PR:
     - Every folder in `src/pages` needs an `index.md` file in it (and the name has to be `index.md`).
     - Two likely scenarios are
       - you named the new article file something other than `index.md`, or
-      - you created both a new folder, then a sub-folder, you wrote the new article in the sub-folder but forget to put a stub `index.md` file in the new folder
+      - you created both a new folder and a sub-folder, then you wrote the new article in the sub-folder but forgot to put a stub `index.md` file in the new folder
 2. Your PR creates a new folder and the folder name isn't formatted correctly.
     - Your folder name should be all lowercase and formatted in kebab-case (i.e. my-new-folder).
 3. The article doesn't have a `title` field at the top.
