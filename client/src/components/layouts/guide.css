@@ -141,6 +141,7 @@
   border: none;
   border-radius: 0;
   cursor: pointer;
+  color: #006400;
 }
 
 .bodyContainer {
@@ -169,8 +170,4 @@
 
 .content {
   outline: 0;
-}
-
-.title span:nth-of-type(2) {
-  color: #006400;
 }
