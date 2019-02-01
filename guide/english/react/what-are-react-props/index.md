@@ -121,4 +121,4 @@ MyComponent.defaultProps = {
 
 For more information about PropTypes and other docs on React.
 
-Go to the [Official Site](https://reactjs.org/) and read the docs, or the [Github Repo](https://github.com/facebook/react/)
+Go to the [Official Site](https://reactjs.org/) and read the docs, or the [GitHub Repo](https://github.com/facebook/react/)

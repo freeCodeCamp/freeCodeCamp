@@ -14,5 +14,5 @@ This is a stub. <a href='https://github.com/freecodecamp/guides/tree/master/src/
 - [Godot Official Website](https://godotengine.org/)
 - [Godot Docs](http://docs.godotengine.org/en/3.0/)
 - [Wikipedia](https://en.wikipedia.org/wiki/Godot_(game_engine))
-- [Github](https://github.com/godotengine)
+- [GitHub](https://github.com/godotengine)
 

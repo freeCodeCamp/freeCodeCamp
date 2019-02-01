@@ -22,7 +22,7 @@ Gatsby accepts the data behind the site in various formats, such as:
 Gatsby's build is powered by GraphQL and rendered through HTML, CSS, and React.
 
 #### Deploy 
-Gatsby deploys the site on a static web host such as Amazon S3, Netlify, Github Pages, Surge.sh and many more.
+Gatsby deploys the site on a static web host such as Amazon S3, Netlify, GitHub Pages, Surge.sh and many more.
 
 ### Installation and using the Gatsby CLI
 * Node: `npm install --global gatsby-cli`

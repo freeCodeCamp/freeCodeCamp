@@ -8,7 +8,7 @@ Unreal Engine is a cross-platform game engine developed by Epic Games. The Unrea
 
 Uscript is the engine's native scripting language, used for creating game code and gameplay events before the release of Unreal Engine 4, and was designed for high level programming.  The script was written and programmed by Tim Sweeney, also the creator of another scripting language, ZZT-oop.
 
-Since 2015 the Unreal Engine has been free to use, with Epic charging a 5% royalty on sales of titles produced using the engine. Epic make the majority of their codebase freely available via their Github, although source for closed platforms such as the Playstation 4 and Xbox One is only available for registered platform developers.
+Since 2015 the Unreal Engine has been free to use, with Epic charging a 5% royalty on sales of titles produced using the engine. Epic make the majority of their codebase freely available via their GitHub, although source for closed platforms such as the Playstation 4 and Xbox One is only available for registered platform developers.
 
 ### Unreal Versions
 Unreal has gone through 4 major revisions. Although some code is common between releases, each major version is a separate engine and projects cannot be moved between them. Within each major engine release, there are multiple minor versions.
