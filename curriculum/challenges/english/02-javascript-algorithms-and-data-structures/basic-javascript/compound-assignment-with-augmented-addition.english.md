@@ -51,7 +51,7 @@ var c = 12;
 // Only modify code below this line
 
 a = a + 12;
-b = 9 + b;
+b = b + 9;
 c = c + 7;
 
 ```
