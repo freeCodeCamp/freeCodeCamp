@@ -69,7 +69,7 @@
 .content,
 .sideNav {
   /* 100vh - (navbar height) - (spacer height) */
-  height: calc(100vh - 38px - 60px);
+  height: calc(100vh - 38px - 30px);
   overflow-y: auto;
 }
 
@@ -141,6 +141,7 @@
   border: none;
   border-radius: 0;
   cursor: pointer;
+  color: #006400;
 }
 
 .bodyContainer {
