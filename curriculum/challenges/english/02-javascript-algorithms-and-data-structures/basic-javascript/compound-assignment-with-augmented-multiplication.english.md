@@ -50,7 +50,7 @@ var c = 4.6;
 // Only modify code below this line
 
 a = a * 5;
-b = 3 * b;
+b = b * 3;
 c = c * 10;
 
 
