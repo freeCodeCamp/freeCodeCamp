@@ -15,7 +15,7 @@ The visible part of your HTML lies within the `<body>` tag which will be inside 
 Below you can see the structure of a basic HTML file:
 
 
-### Basic Page Structure:
+## Basic Page Structure
 ```html
 <!DOCTYPE html>
 <html>
@@ -28,26 +28,31 @@ Below you can see the structure of a basic HTML file:
 </html>
 ```
 
-
 ### Sample HTML Program
 
 ```html
+<!DOCTYPE html>
 <html>
-<head>
-<title>Page Title</title>
-</head>
-<body>
+  <head>
+    <title>Page Title</title>
+  </head>
+  <body>
 
-<h1>This is a Heading</h1>
-<p>This is a paragraph.</p>
+    <h1>This is a Heading</h1>
+    <p>This is a paragraph.</p>
 
-</body>
+  </body>
 </html>
 ```
 
-## HTML Headings
+### Explanation
+- `<!DOCTYPE html>` - This is called a declaration, which lets the filereader know which version of HTML running. In this case, it will automatically run HTML5.
+- `<html>` - lets the filereader know where the HTML code starts. It is closed with `</html>` located at or near the end of a document.
+- `<head></head>` - where you put metadata like `title`, `author`, `keywords`, and `meta` that help the browser and search engines. None of the elements written here will be visible once the code gets read
+- `<body></body>` - where the display elements are added to the page, such as `<h1></h1>` or `<p></p>` elements.
 
-HTML headings are with the <h1> to <h6> tags.
+## HTML Heading Elements
+HTML heading elements are declared with the `<h1>` to `<h6>` tags.
 
 Example:
 ```html
@@ -59,15 +64,6 @@ Example:
 <h6>  Heading 6 </h6>
 ```
 
-## Explanation
-The `<!DOCTYPE html>` is to tell the browser you want the page to be rendered using HTML5.
-
-The `<head></head>` is were you want to put things that help the browser and search engines such as `<title></title>` and `<meta>`.
-
-The `<body></body>` is were the tags that will display on the page are such as `<h1></h1>` or `<p></p>`.
-
-
-#### More Information
-<!-- Please add any articles you think might be helpful to read before writing the article -->
- - [MDN](https://developer.mozilla.org/en-US/docs/Web/HTML)
- - [W3schools](https://www.w3schools.com/html/)
+## Additional Resources
+- [MDN](https://developer.mozilla.org/en-US/docs/Web/HTML)
+- [W3schools](https://www.w3schools.com/html/)
