@@ -100,7 +100,7 @@ One of the most important thing for Python language is legibility, and alphabeti
 
 ## Variations of Import statements
 
-A good practise is to import only those modules or submodules that are being directly used in our program. Also we can rename the modules imported for a better use in our program. (Actual name of the module isn't changed, just by which name it is being referenced in our program is changed.)
+A good practice is to import only those modules or submodules that are being directly used in our program. Also we can rename the modules imported for a better use in our program. (Actual name of the module isn't changed, just by which name it is being referenced in our program is changed.)
 
 1. **import my_module** - This imports the entire module as `my_module`. To use submodules, functions or classes of this module, we use the dot (associative) operator. For example - `a = my_module.my_sub_module.my_module_function()`
 
