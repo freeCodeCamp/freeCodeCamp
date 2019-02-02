@@ -23,3 +23,5 @@ self.onmessage = e => {
     }
   });
 };
+
+self.postMessage({ type: 'contentLoaded' });
