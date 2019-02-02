@@ -85,10 +85,6 @@ class Editor extends PureComponent {
     this._editor = null;
   }
 
-  componentWillUnmount() {
-    document.removeEventListener('keyup', this.focusEditor);
-  }
-
   editorWillMount = monaco => {
     defineMonacoThemes(monaco);
   };
@@ -96,7 +92,6 @@ class Editor extends PureComponent {
   editorDidMount = (editor, monaco) => {
     this._editor = editor;
     this._editor.focus();
-    document.addEventListener('keyup', this.focusEditor);
     this._editor.addAction({
       id: 'execute-challenge',
       label: 'Run tests',
@@ -106,16 +101,6 @@ class Editor extends PureComponent {
       ],
       run: this.props.executeChallenge
     });
-  };
-
-  focusEditor = e => {
-    if (document.activeElement.className === 'input') {
-      return;
-    }
-    // e key to focus editor
-    if (e.keyCode === 69) {
-      this._editor.focus();
-    }
   };
 
   onChange = editorValue => {
