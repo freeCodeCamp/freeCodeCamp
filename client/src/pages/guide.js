@@ -1,11 +1,9 @@
-import React from 'react';
+import React, { Fragment } from 'react';
 import Helmet from 'react-helmet';
-
-import Layout from '../components/layouts/GuideLayout';
 
 function Index() {
   return (
-    <Layout>
+    <Fragment>
       <Helmet>
         <title>Guide | freeCodeCamp.org</title>
         <meta
@@ -57,7 +55,7 @@ function Index() {
       </p>
       <hr />
       <p>Happy coding!</p>
-    </Layout>
+    </Fragment>
   );
 }
 

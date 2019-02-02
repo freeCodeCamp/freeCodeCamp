@@ -1,32 +1,40 @@
 ---
 title: React - Components
-localeTitle: Реакция - Компоненты
----
-## Реакция - Компоненты
 
-Компоненты могут повторно использоваться в реакции.js. Вы можете ввести значение в реквизиты, как указано ниже:
+localeTitle: React - Компоненты
+---
+## React - Компоненты
+
+
+
+Компоненты могут повторно использоваться в react.js. Вы можете ввести значение в props, как указано ниже:
+
+
 
 ```jsx
-function Welcome(props) { 
-  return <h1>Hello, {props.name}</h1>; 
- } 
- 
- const element = <Welcome name="Faisal Arkan" />; 
- ReactDOM.render( 
-  element, 
-  document.getElementById('root') 
- ); 
+function Welcome(props) {
+  return <h1>Hello, {props.name}</h1>;
+}
+
+const element = <Welcome name="Faisal Arkan" />;
+ReactDOM.render(
+  element,
+  document.getElementById('root')
+);
 ```
 
-`name="Faisal Arkan"` даст значение в `{props.name}` из `function Welcome(props)` и возвращающего компонента, который дал значение по `name="Faisal Arkan"` , после чего реакция отобразит элемент в html.
+
+В данном случае, значение свойства name - `name="Faisal Arkan"` будет сохранено в `{props.name}` из `function Welcome(props)` и возвратит компонент `<h1>Hello, Faisal Arkan</h1>`, который сохраняется в константу `elements`. Далее компонент отрисовывается с помощью вызова функции `ReactDOM.render(element, document.getElementById('root'));`. В данном случае `document.getElementById('root')`, элемент в котором вы хотите разместить и визуализировать созданный компонент.
 
 ### Другие способы объявления компонентов
 
-Существует много способов объявления компонентов при использовании React.js, но есть два вида компонентов, компоненты **_без_** учета **_состояния и_** компоненты с **_состоянием_** .
+Существует множество способов объявления компонентов при использовании библиотеки React.js, но выделяют два вида компонентов, компоненты **_без_состояния_** (stateless) и  компоненты с **_состоянием_** (statefull) .
 
-### Stateful
+### Компоненты с состоянием
 
-#### Компоненты типа класса
+
+#### Компоненты с использованием классов
+
 
 ```jsx
 class Cat extends React.Component { 
@@ -50,28 +58,31 @@ class Cat extends React.Component {
  } 
 ```
 
-### Безстоящие компоненты
 
-#### Функциональные компоненты (функция стрелок от ES6)
+### Stateless
+
+#### Функциональные компоненты (Arrow Function из стандарта ES6)
+
 
 ```jsx
-const Cat = props => { 
-  return ( 
-    <div> 
-      <h1>{props.name}</h1> 
-      <p>{props.color}</p> 
-    </div>; 
-  ); 
- }; 
+const Cat = props => {
+  return (  
+    <div>
+      <h1>{props.name}</h1>
+      <p>{props.color}</p>
+    </div>;
+  );
+};
+
 ```
 
-#### Неявные возвращаемые компоненты
+#### Неявно возвращаемые компоненты
 
 ```jsx
 const Cat = props => 
-  <div> 
-    <h1>{props.name}</h1> 
-    <p>{props.color}</p> 
-  </div>; 
 
-```
+  <div>
+    <h1>{props.name}</h1>
+    <p>{props.color}</p>
+  </div>;
+

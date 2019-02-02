@@ -115,3 +115,4 @@ man git-branch
 - The `git commit` command: <a href='https://guide.freecodecamp.org/git/git-commit/' target='_blank' rel='nofollow'>fCC Guide</a>
 - The `git stash` command: <a href='https://guide.freecodecamp.org/git/git-stash/' target='_blank' rel='nofollow'>fCC Guide</a>
 - Git documentation: <a href='https://git-scm.com/docs/git-branch' target='_blank' rel='nofollow'>branch</a>
+- An in-depth game and visual aide: <a href='https://learngitbranching.js.org/' target='_blank' rel='nofollow'>LearnGitBranching.js</a>
