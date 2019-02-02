@@ -11,7 +11,7 @@ When JavaScript variables are declared, they have an initial value of <code>unde
 
 ## Instructions
 <section id='instructions'>
-Initialize the three variables <code>a</code>, <code>b</code>, and <code>c</code> with <code>5</code>, <code>10</code>, and <code>"I am a"</code> respectively so that they will not be <code>undefined</code>.
+Initialize the three variables <code>a</code>, <code>b</code>, and <code>c</code> with <code>6</code>, <code>15</code>, and <code>"I am a String!"</code> respectively so that they will not be <code>undefined</code>.
 </section>
 
 ## Tests
