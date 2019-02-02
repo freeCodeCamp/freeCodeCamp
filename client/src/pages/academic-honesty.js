@@ -1,16 +1,15 @@
-import React from 'react';
+import React, { Fragment } from 'react';
 import { Grid } from '@freecodecamp/react-bootstrap';
 import Helmet from 'react-helmet';
 
 import honesty from '../resources/honesty-policy';
 
-import Layout from '../components/layouts/Default';
 import Spacer from '../components/helpers/Spacer';
 import FullWidthRow from '../components/helpers/FullWidthRow';
 
 function AcademicHonesty() {
   return (
-    <Layout>
+    <Fragment>
       <Helmet>
         <title>Academic Honesty Policy | freeCodeCamp.org</title>
       </Helmet>
@@ -22,7 +21,7 @@ function AcademicHonesty() {
           {honesty}
         </FullWidthRow>
       </Grid>
-    </Layout>
+    </Fragment>
   );
 }
 
