@@ -142,30 +142,34 @@ Here are specific formatting guidelines for the challenge seed code:
 
 ## Formatting Solution
 
-The challenge solution must be in proper markdown tags.
+The challenge solution must be in proper markdown tags. The code must be wrapped in `section` tags with an id of `solution`.
 
+```
 <section id='solution'>
+
 three backticks + html or js
-
  [ SOLUTION CODE]
-
 three backticks
+
 </section>
+```
 
 Example:
 
 <section id='solution'>
-```html
+  
+```
 <style>
-  #inner p {
+  #container p {
     font-family: Arial, sans-serif;
   }
 </style>
-<div id="inner">
-  <p>I meet so many people who are in search of that one trick that will help them work smart. Even if you work smart, you still have to work hard.</p>
-  
+
+<div id="container">
+  <p>Hello World!</p>
 </div>
 ```
+
 </section>
 
 ## Why do we have all these rules?
