@@ -18,6 +18,7 @@ With that practical focus in mind, let’s talk about the requirements for our c
 - [Writing instructions](#writing-instructions)
 - [Formatting challenge text](#formatting-challenge-text)
 - [Formatting seed code](#formatting-seed-code)
+- [Formatting solution](#formatting-solution)
 - [Why do we have all these rules?](#why-do-we-have-all-these-rules)
 
 ## Proper nouns
@@ -138,6 +139,34 @@ Here are specific formatting guidelines for the challenge seed code:
 - Comments made should have a space between the comment characters and the comment themselves
 
     `// Fix this line`
+
+## Formatting Solution
+
+The challenge solution must be in proper markdown tags.
+
+<section id='solution'>
+three backticks + html or js
+
+ [ SOLUTION CODE]
+
+three backticks
+</section>
+
+Example:
+
+<section id='solution'>
+```html
+<style>
+  #inner p {
+    font-family: Arial, sans-serif;
+  }
+</style>
+<div id="inner">
+  <p>I meet so many people who are in search of that one trick that will help them work smart. Even if you work smart, you still have to work hard.</p>
+  
+</div>
+```
+</section>
 
 ## Why do we have all these rules?
 
