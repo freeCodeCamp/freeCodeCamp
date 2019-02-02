@@ -14,7 +14,7 @@ Static cast is used for implicit conversions between primitives and type-overloa
 ### const_cast
 Const cast can be used to cast away const-ness. This is useful when there is a desire to mutate a constant value. This should be used sparingly, instead, one should consider making parameters/functions non-const in cases where a const-cast is used.
 
-Const cast can also result in undefined behaviour. The only application of const cast should ever be to remove const-ness from a value that was passed to a function and marked const. If the value is truly const, that is, it is marked const at compile time and assigned a value, const cast and mutation of the variable will result in undefined behaviour.
+Const cast can also result in undefined behaviour. The only application of const cast should be to remove const-ness from a value that was passed to a function and marked const. If the value is truly const, that is, it is marked const at compile time and assigned a value, const cast and mutation of the variable will result in undefined behaviour.
 
 ```
 const int y = 10; 			// y is set to 10.
