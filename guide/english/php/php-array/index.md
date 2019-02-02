@@ -12,7 +12,7 @@ Associative array − An array with strings as the index. This stores element va
 
 Multidimensional array − An array containing one or more arrays and values are accessed using multiple indices.
 
-NOTE − Built-in array functions are given in the function reference PHP Array Functions section.
+NOTE: Built-in array functions are given in the function reference PHP Array Functions section.
 
 ### Indexed Arrays
 These arrays can store numbers, strings and any object but their index will be represented by numbers. By default array index starts from zero.
@@ -20,7 +20,7 @@ These arrays can store numbers, strings and any object but their index will be r
 #### Example
 Following is the example showing how to create and access indexed arrays.
 
-Here we have used array() function to create an array. This function is explained in function reference.
+Here we have used the array() function to create an array. This function is explained in function reference.
 
 ```
 <html>
@@ -70,7 +70,7 @@ The associative arrays are very similar to Indexed arrays in term of functionali
 
 To store the salaries of employees in an array, a numerically indexed array would not be the best choice. Instead, we can use the employee's names as the keys in our associative array, and the value will be their respective salaries.
 
-NOTE − Don't keep an associative array inside double quotes while printing otherwise it will not return any value.
+NOTE: Don't keep an associative array inside double quotes while printing otherwise it will not return any value.
 
 #### Example
 
@@ -115,7 +115,7 @@ Salary of Zara is low
 In a multi-dimensional array, each element in the main array can also be an array. And each element in the sub-array can be an array, and so on. Values in the multi-dimensional array are accessed using multiple indices.
 
 #### Example
-In this example, we will create a two dimensional array to store marks of three students in three subjects −
+In this example, we will create a two-dimensional array to store marks of three students in three subjects −
 
 This example is an associative array, you can create an indexed array in a similiar fashion.
 
