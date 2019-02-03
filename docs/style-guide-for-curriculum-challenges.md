@@ -156,9 +156,10 @@ three backticks
 
 Example:
 
+````
 <section id='solution'>
   
-```
+```html
 <style>
   #container p {
     font-family: Arial, sans-serif;
@@ -171,6 +172,7 @@ Example:
 ```
 
 </section>
+````
 
 ## Why do we have all these rules?
 
