@@ -1,3 +1,7 @@
+:root {
+  --header-height: 38px;
+}
+
 header {
   top: 0;
   position: fixed;
@@ -7,7 +11,7 @@ header {
 
 #top-nav {
   background: #006400;
-  height: 38px;
+  height: var(--header-height);
   margin-bottom: 0;
   border-radius: 0;
   border: none;
@@ -39,7 +43,7 @@ header {
 
 #top-right-nav a,
 #top-right-nav img {
-  max-height: 38px;
+  max-height: var(--header-height);
 }
 
 #top-right-nav > li > a {
@@ -81,7 +85,7 @@ li.user-state-link > a:focus {
 }
 
 .user-state-spinner {
-  height: 38px;
+  height: var(--header-height);
   padding: 0 12px;
 }
 
@@ -165,7 +169,7 @@ li.user-state-link > a:focus {
   }
 
   .opened #top-right-nav {
-    top: 38px;
+    top: var(--header-height);
   }
 
   #top-right-nav {

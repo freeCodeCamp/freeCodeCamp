@@ -69,7 +69,7 @@ class Layout extends React.Component {
               }) => (
                 <Fragment>
                   <Spacer size={1} />
-                  <Grid>
+                  <Grid className='guide-container'>
                     <Row>
                       <Col
                         md={4}
@@ -109,7 +109,6 @@ class Layout extends React.Component {
     );
   }
 }
-
 
 Layout.displayName = 'Layout';
 Layout.propTypes = propTypes;
