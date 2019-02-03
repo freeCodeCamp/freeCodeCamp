@@ -34,6 +34,10 @@ Below you can see the structure of a basic HTML file:
 <!DOCTYPE html>
 <html>
   <head>
+    <meta charset="UTF-8">
+    <meta name="description" content="describe content">
+    <meta name="keywords" content="HTML">
+    <meta name="author" content="Name">
     <title>Page Title</title>
   </head>
   <body>
