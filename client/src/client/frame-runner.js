@@ -3,18 +3,12 @@ import jQuery from 'jquery';
 
 window.$ = jQuery;
 
-const testId = 'fcc-test-frame';
-if (window.frameElement && window.frameElement.id === testId) {
-  document.addEventListener('DOMContentLoaded', initTestFrame);
-}
-
-// For tests in CI.
 document.__initTestFrame = initTestFrame;
 
-async function initTestFrame() {
-  const code = (document.__source || '').slice(0);
-  if (!document.__getUserInput) {
-    document.__getUserInput = () => code;
+async function initTestFrame(e = {}) {
+  const code = (e.code || '').slice(0);
+  if (!e.getUserInput) {
+    e.getUserInput = () => code;
   }
 
   /* eslint-disable no-unused-vars */
@@ -43,7 +37,7 @@ async function initTestFrame() {
   /* eslint-enable no-unused-vars */
 
   let Enzyme;
-  if (document.__loadEnzyme) {
+  if (e.loadEnzyme) {
     let Adapter16;
     /* eslint-disable no-inline-comments */
     [{ default: Enzyme }, { default: Adapter16 }] = await Promise.all([
@@ -66,7 +60,7 @@ async function initTestFrame() {
       // eslint-disable-next-line no-eval
       const test = eval(testString);
       if (typeof test === 'function') {
-        await test(document.__getUserInput);
+        await test(e.getUserInput);
       }
       return { pass: true };
     } catch (err) {
@@ -81,7 +75,4 @@ async function initTestFrame() {
       };
     }
   };
-
-  // notify that the window methods are ready to run
-  document.__frameReady();
 }
