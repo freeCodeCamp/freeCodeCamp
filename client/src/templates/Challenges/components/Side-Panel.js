@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
-import ReactDom from 'react-dom';
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
 
@@ -41,11 +40,6 @@ const propTypes = {
 };
 
 export class SidePanel extends Component {
-  constructor(props) {
-    super(props);
-    this.bindTopDiv = this.bindTopDiv.bind(this);
-  }
-
   componentDidMount() {
     MathJax.Hub.Config({
       tex2jax: {
@@ -62,26 +56,6 @@ export class SidePanel extends Component {
     this.props.initConsole('');
   }
 
-  componentDidUpdate(prevProps) {
-    MathJax.Hub.Queue([
-      'Typeset',
-      MathJax.Hub,
-      document.querySelector('.rosetta-code')
-    ]);
-    const { title, initConsole } = this.props;
-    if (title !== prevProps.title) {
-      initConsole('');
-      const node = ReactDom.findDOMNode(this.descriptionTop);
-      setTimeout(() => {
-        node.scrollIntoView({ behavior: 'smooth' });
-      }, 0);
-    }
-  }
-
-  bindTopDiv(node) {
-    this.descriptionTop = node;
-  }
-
   render() {
     const {
       title,
@@ -95,15 +69,16 @@ export class SidePanel extends Component {
     } = this.props;
     return (
       <div className='instructions-panel' role='complementary'>
-        <div ref={this.bindTopDiv} />
         <Spacer />
         <div>
           <ChallengeTitle>{title}</ChallengeTitle>
-          <ChallengeDescription description={description} instructions={instructions} section={section} />
+          <ChallengeDescription
+            description={description}
+            instructions={instructions}
+            section={section}
+          />
         </div>
-        { showToolPanel && (
-          <ToolPanel guideUrl={guideUrl} videoUrl={videoUrl} />
-        )}
+        {showToolPanel && <ToolPanel guideUrl={guideUrl} videoUrl={videoUrl} />}
         <TestSuite tests={tests} />
       </div>
     );
@@ -113,4 +88,7 @@ export class SidePanel extends Component {
 SidePanel.displayName = 'SidePanel';
 SidePanel.propTypes = propTypes;
 
-export default connect(mapStateToProps, mapDispatchToProps)(SidePanel);
+export default connect(
+  mapStateToProps,
+  mapDispatchToProps
+)(SidePanel);

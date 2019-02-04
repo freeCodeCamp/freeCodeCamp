@@ -40,7 +40,7 @@ export class HelpModal extends Component {
           >
           <Modal.Title className='text-center'>Ask for help?</Modal.Title>
         </Modal.Header>
-        <Modal.Body className='text-center'>
+        <Modal.Body className='help-modal-body text-center'>
           <h3>
             If you've already tried the&nbsp;
             <a
