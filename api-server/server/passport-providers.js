@@ -1,5 +1,5 @@
 import { auth0 } from '../../config/secrets';
-import { homeLocation } from '../../config/env.json';
+import { homeLocation } from '../../config/env';
 
 const { clientID, clientSecret, domain } = auth0;
 
