@@ -62,7 +62,7 @@ There are variations on this legislation all over the world, some more severe an
 ## Ok, so accessibility is a big deal. Now how do we implement it?
 That question, sadly, is harder to answer than it may seem.
 
-As stated above, accessibility is important for a large group of different people, each with their own needs. Making your website work for everyone is a large, on-going task.
+As stated above, accessibility is important for a large group of different people, each with their own needs. Making your website work for everyone is a large, ongoing task.
 
 The Web Content Accessibility Guidelines or <a href='https://www.wuhcag.com/web-content-accessibility-guidelines/' target='_blank' rel='nofollow'>WCAG</a> were composed to help developers create accessible content. This document contains a number of criteria you can use to check your website. There are also advanced techniques like [WAI-ARIA] that are important for JavaScript-based apps.
 

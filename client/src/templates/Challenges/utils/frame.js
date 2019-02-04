@@ -72,15 +72,24 @@ const buildProxyConsole = proxyLogger => ctx => {
   return ctx;
 };
 
-const writeTestDepsToDocument = frameReady => ctx => {
-  const { sources, loadEnzyme } = ctx;
-  // default for classic challenges
-  // should not be used for modern
-  ctx.document.__source = sources && 'index' in sources ? sources['index'] : '';
-  // provide the file name and get the original source
-  ctx.document.__getUserInput = fileName => toString(sources[fileName]);
-  ctx.document.__frameReady = frameReady;
-  ctx.document.__loadEnzyme = loadEnzyme;
+const initTestFrame = frameReady => ctx => {
+  const contentLoaded = new Promise(resolve => {
+    if (ctx.document.readyState === 'loading') {
+      ctx.document.addEventListener('DOMContentLoaded', resolve);
+    } else {
+      resolve();
+    }
+  });
+  contentLoaded.then(async() => {
+    const { sources, loadEnzyme } = ctx;
+    // default for classic challenges
+    // should not be used for modern
+    const code = sources && 'index' in sources ? sources['index'] : '';
+    // provide the file name and get the original source
+    const getUserInput = fileName => toString(sources[fileName]);
+    await ctx.document.__initTestFrame({ code, getUserInput, loadEnzyme });
+    frameReady();
+  });
   return ctx;
 };
 
@@ -107,7 +116,7 @@ export const createTestFramer = (document, frameReady, proxyConsole) =>
   flow(
     createFrame(document, testId),
     mountFrame(document),
-    writeTestDepsToDocument(frameReady),
+    writeContentToFrame,
     buildProxyConsole(proxyConsole),
-    writeContentToFrame
+    initTestFrame(frameReady)
   );
