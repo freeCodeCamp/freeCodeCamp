@@ -291,11 +291,9 @@ async function createTestRunnerForDOMChallenge(
   await context.setContent(build);
   await context.evaluate(
     async(sources, loadEnzyme) => {
-      document.__source = sources && 'index' in sources ? sources['index'] : '';
-      document.__getUserInput = fileName => sources[fileName];
-      document.__frameReady = () => {};
-      document.__loadEnzyme = loadEnzyme;
-      await document.__initTestFrame();
+      const code = sources && 'index' in sources ? sources['index'] : '';
+      const getUserInput = fileName => sources[fileName];
+      await document.__initTestFrame({ code, getUserInput, loadEnzyme });
     },
     sources,
     loadEnzyme

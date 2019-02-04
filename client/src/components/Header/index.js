@@ -1,4 +1,4 @@
-import React, { Component, Fragment } from 'react';
+import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import { Link } from 'gatsby';
 import Media from 'react-media';
@@ -15,29 +15,47 @@ class Header extends Component {
     this.state = {
       isMenuOpened: false
     };
-    this.toggleClass = this.toggleClass.bind(this);
+    this.menuButtonRef = React.createRef();
   }
 
-  toggleClass() {
+  componentDidMount() {
+    document.addEventListener('click', this.handleClickOutside);
+  }
+
+  componentWillUnmount() {
+    document.removeEventListener('click', this.handleClickOutside);
+  }
+
+  toggleClass = () => {
     this.setState({
       isMenuOpened: !this.state.isMenuOpened
     });
-  }
+  };
+
+  handleClickOutside = event => {
+    if (
+      this.state.isMenuOpened &&
+      !this.menuButtonRef.current.contains(event.target)
+    ) {
+      this.toggleClass();
+    }
+  };
+
+  handleMediaChange = matches => {
+    if (!matches && this.state.isMenuOpened) {
+      this.toggleClass();
+    }
+  };
 
   render() {
     const { disableSettings } = this.props;
     return (
       <header className={this.state.isMenuOpened ? 'opened' : null}>
         <nav id='top-nav'>
-          <Media query='(min-width: 735px)'>
-            <Fragment>
-              <Link className='home-link' to='/'>
-                <NavLogo />
-              </Link>
-              {disableSettings ? null : <FCCSearch />}
-            </Fragment>
-          </Media>
-
+          <Link className='home-link' to='/'>
+            <NavLogo />
+          </Link>
+          {disableSettings ? null : <FCCSearch />}
           <ul id='top-right-nav'>
             <li>
               <Link to='/learn'>Curriculum</Link>
@@ -56,19 +74,15 @@ class Header extends Component {
               <UserState disableSettings={disableSettings} />
             </li>
           </ul>
+          <span
+            className='menu-button'
+            onClick={this.toggleClass}
+            ref={this.menuButtonRef}
+            >
+            Menu
+          </span>
+          <Media onChange={this.handleMediaChange} query='(max-width: 734px)' />
         </nav>
-
-        <Media query='(max-width: 734px)'>
-          <div className='mobile-menu'>
-            <Link className='home-link' to='/'>
-              <NavLogo />
-            </Link>
-            {disableSettings ? null : <FCCSearch />}
-            <span className='menu-button' onClick={this.toggleClass}>
-              Menu
-            </span>
-          </div>
-        </Media>
       </header>
     );
   }

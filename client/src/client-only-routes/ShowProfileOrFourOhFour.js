@@ -5,7 +5,6 @@ import { connect } from 'react-redux';
 import { isEmpty } from 'lodash';
 
 import Loader from '../components/helpers/Loader';
-import Layout from '../components/layouts/Default';
 import {
   userByNameSelector,
   userProfileFetchStateSelector,
@@ -61,11 +60,9 @@ class ShowFourOhFour extends Component {
       // We don't know if /:maybeUser is a user or not, we will show the loader
       // until we get a response from the API
       return (
-        <Layout>
-          <div className='loader-wrapper'>
-            <Loader />
-          </div>
-        </Layout>
+        <div className='loader-wrapper'>
+          <Loader />
+        </div>
       );
     }
     if (isEmpty(requestedUser)) {

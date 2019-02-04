@@ -10,9 +10,17 @@ class WorkerExecutor {
     this.getWorker = this.getWorker.bind(this);
   }
 
-  getWorker() {
+  async getWorker() {
     if (this.worker === null) {
-      this.worker = new Worker(`${this.location}${this.workerName}.js`);
+      this.worker = await new Promise((resolve, reject) => {
+        const worker = new Worker(`${this.location}${this.workerName}.js`);
+        worker.onmessage = e => {
+          if (e.data && e.data.type && e.data.type === 'contentLoaded') {
+            resolve(worker);
+          }
+        };
+        worker.onerror = e => reject(e.message);
+      });
     }
 
     return this.worker;
@@ -25,8 +33,8 @@ class WorkerExecutor {
     }
   }
 
-  execute(data, timeout = 1000) {
-    const worker = this.getWorker();
+  async execute(data, timeout = 1000) {
+    const worker = await this.getWorker();
     return new Promise((resolve, reject) => {
       // Handle timeout
       const timeoutId = setTimeout(() => {
