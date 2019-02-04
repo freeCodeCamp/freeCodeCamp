@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React, { Component, Fragment } from 'react';
 import PropTypes from 'prop-types';
 import { Link } from 'gatsby';
 import { bindActionCreators } from 'redux';
@@ -18,7 +18,6 @@ import Helmet from 'react-helmet';
 import isEmail from 'validator/lib/isEmail';
 import { isString } from 'lodash';
 
-import Layout from '../components/layouts/Default';
 import { Spacer } from '../components/helpers';
 import './update-email.css';
 import { userSelector } from '../redux';
@@ -79,7 +78,7 @@ class UpdateEmail extends Component {
   render() {
     const { isNewEmail } = this.props;
     return (
-      <Layout>
+      <Fragment>
         <Helmet>
           <title>Update your email address | freeCodeCamp.org</title>
         </Helmet>
@@ -127,7 +126,7 @@ class UpdateEmail extends Component {
             </Col>
           </Row>
         </Grid>
-      </Layout>
+      </Fragment>
     );
   }
 }
