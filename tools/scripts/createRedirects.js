@@ -1,18 +1,16 @@
 const apiPlaceholderRE = /#\{\{API\}\}/g;
 const homePlaceholderRE = /#\{\{HOME\}\}/g;
 const forumPlacehilderRE = /#\{\{FORUM\}\}/g;
-const forumProxyPlaceholderRE = /#\{\{FORUM_PROXY\}\}/g;
 
 exports.createRedirects = function createRedirects(locations) {
-  const { api, home, forum, forumProxy } = locations;
+  const { api, home, forum } = locations;
 
-  if (!(api && home && forum && forumProxy)) {
+  if (!(api && home && forum )) {
     throw new Error(`One or more locations are missing, all are required.
 
     api: ${api}
     home: ${home}
     forum: ${forum}
-    forumProxy: ${forumProxy}
 
     `);
   }
@@ -20,8 +18,7 @@ exports.createRedirects = function createRedirects(locations) {
   return template
     .replace(apiPlaceholderRE, api)
     .replace(homePlaceholderRE, home)
-    .replace(forumPlacehilderRE, forum)
-    .replace(forumProxyPlaceholderRE, forumProxy);
+    .replace(forumPlacehilderRE, forum);
 };
 
 /* eslint-disable max-len */
@@ -49,18 +46,18 @@ const template = `#api redirect
 /ue/*                                         #{{API}}/ue/:splat
 
 # misc redirects
-/agile                                        / 200
+/agile                                        / 301
 /chat                                         https://gitter.im/FreeCodeCamp/FreeCodeCamp 301
 /twitch                                       https://twitch.tv/freecodecamp 301
-/nonprofits-form                              / 200
-/pmi-acp-agile-project-managers               / 200
-/pmi-acp-agile-project-managers-form          / 200
-/stories                                      / 200
-/all-stories                                  / 200
-/field-guide/*                                #{{FORUM}} 301
+/nonprofits-form                              / 301
+/pmi-acp-agile-project-managers               / 301
+/pmi-acp-agile-project-managers-form          / 301
+/stories                                      / 301
+/all-stories                                  / 301
+/field-guide/*                                /forum 301
 /learn-to-code                                /learn 200
 /map                                          /learn 200
-/forum/*                                      #{{FORUM_PROXY}} 200
+/forum/*                                      #{{FORUM}}/:splat
 /privacy                                      #{{HOME}}/forum/t/free-code-camp-privacy-policy/19545 301
 /nonprofit-project-instructions               #{{HOME}}/forum/t/how-free-code-camps-nonprofits-projects-work/19547 301
 /how-nonprofit-projects-work                  https://medium.freecodecamp.org/open-source-for-good-1a0ea9f32d5a 301
