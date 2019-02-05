@@ -35,7 +35,25 @@ Motherboards come in different sizes, known as form factors. The most common mot
 
 Additionally there can be even smaller boards like the raspberry pi, which are 65mm by 35mm and have all processing units integrated to the board. There are many others that are even more specific in function, such as an Aurdino board. These are typically limited in I/O, have no expansion slots aside from whatever expansion is offered via USB ports, and some display ports like HDMI or similar variants. These are used for small emulator projects, running small servers, or as an alternative to slim client devices in an office. 
 
+## Different types of motherboards:
+- AT Motherboards
+The oldest of the main boards, these motherboards were used in earlier 286/386 or 486 computers. The AT means the board consists of advanced technology(AT) power connectors. There are two power connectors of 6 pin each mounted on the AT motherboards. The AT motherboards were available in the early 80’s.
+
+![AT Motherboards](http://www.it4nextgen.com/wp-content/uploads/2016/08/motherboard-486.jpg)
+
+- ATX Motherboards
+The ATX motherboards started in 90’s and are still available. The ATX connector on the motherboard consists of a single connector. These boards are used for P2/P3 or P/4 processors.
+
+* Motherboard for P1/P2 processors:
+
+![Motherboard for P1/P2 processors](http://www.it4nextgen.com/wp-content/uploads/2016/08/motherboard-pentium2.jpg)
+
+* Pentium 4 motherboard
+
+![Pentium 4 motherboard](http://www.it4nextgen.com/wp-content/uploads/2016/08/main-board-p4.jpg)
+
 #### More Information:
 <!-- Please add any articles you think might be helpful to read before writing the article -->
 * <a href='https://www.computerhope.com/jargon/m/mothboar.htm' target='_blank' rel='nofollow'>Motherboard</a>
 * <a href='https://en.wikipedia.org/wiki/Chipset' target='_blank' rel='nofollow'>Chipset (wikipedia)</a>
+* <a href='http://www.it4nextgen.com/motherboard-components/'>Motherboard (IT4nextgen)</a>
