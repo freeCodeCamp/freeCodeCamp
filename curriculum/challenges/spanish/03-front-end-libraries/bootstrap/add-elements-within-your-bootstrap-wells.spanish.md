@@ -3,7 +3,7 @@ id: bad87fee1348bd9aec908849
 title: Add Elements within Your Bootstrap Wells
 challengeType: 0
 videoUrl: ''
-localeTitle: Agrega elementos dentro de tus pozos de Bootstrap
+localeTitle: Agrega elementos dentro de tus cajas de Bootstrap
 ---
 
 ## Description
