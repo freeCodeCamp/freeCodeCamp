@@ -1,0 +1,72 @@
+.instructionArea {
+	position: absolute;
+	width: 350px;
+	height: 400px;
+	top: 340px;
+	right: 5%;
+	border: solid 2px #000;
+	border-radius: 5%;
+	z-index: -300;
+	padding: 10px;
+	background: -moz-linear-gradient(45deg, rgba(0, 128, 128, 1) 0%, rgba(255, 255, 255, 1) 25%, rgba(5, 193, 255, 1) 50%, rgba(255, 255, 255, 1) 75%, rgba(0, 87, 87, 1) 100%);
+	/* ff3.6+ */
+	background: -webkit-gradient(linear, left bottom, right top, color-stop(0%, rgba(0, 128, 128, 1)), color-stop(25%, rgba(255, 255, 255, 1)), color-stop(50%, rgba(5, 193, 255, 1)), color-stop(75%, rgba(255, 255, 255, 1)), color-stop(100%, rgba(0, 87, 87, 1)));
+	/* safari4+,chrome */
+	background: -webkit-linear-gradient(45deg, rgba(0, 128, 128, 1) 0%, rgba(255, 255, 255, 1) 25%, rgba(5, 193, 255, 1) 50%, rgba(255, 255, 255, 1) 75%, rgba(0, 87, 87, 1) 100%);
+	/* safari5.1+,chrome10+ */
+	background: -o-linear-gradient(45deg, rgba(0, 128, 128, 1) 0%, rgba(255, 255, 255, 1) 25%, rgba(5, 193, 255, 1) 50%, rgba(255, 255, 255, 1) 75%, rgba(0, 87, 87, 1) 100%);
+	/* opera 11.10+ */
+	background: -ms-linear-gradient(45deg, rgba(0, 128, 128, 1) 0%, rgba(255, 255, 255, 1) 25%, rgba(5, 193, 255, 1) 50%, rgba(255, 255, 255, 1) 75%, rgba(0, 87, 87, 1) 100%);
+	/* ie10+ */
+	background: linear-gradient(45deg, rgba(0, 128, 128, 1) 0%, rgba(255, 255, 255, 1) 25%, rgba(5, 193, 255, 1) 50%, rgba(255, 255, 255, 1) 75%, rgba(0, 87, 87, 1) 100%);
+	/* w3c */
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#005757', endColorstr='#008080', GradientType=1);
+	/* ie6-9 */
+}
+
+
+.chart {
+	position: absolute;
+	width: 95%;
+	height: 60px;
+	border: solid 2px black;
+	display: inline-flex;
+	flex-direction: column;
+	margin-top: 10%;
+	bottom: 5%;
+
+
+}
+
+.col {
+	display: flex;
+	flex-direction: row;
+	border: solid 1px black;
+	flex: 1 1 100%;
+	justify-content: center;
+	width: 100%;
+
+
+}
+
+.col > div {
+	border: solid 1px black;
+	text-align: center;
+	flex: 1 1 100%;
+
+}
+
+.col > div:nth-child(-n + 5) {
+	background: green;
+}
+
+.col > div:nth-child(n + 6) {
+	background: yellow;
+}
+
+
+/*media*/
+
+@media screen and (max-width: 770px) { 
+    .instructionArea { display: none; }
+}

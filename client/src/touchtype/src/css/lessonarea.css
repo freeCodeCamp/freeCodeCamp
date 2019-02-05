@@ -1,0 +1,106 @@
+
+.lessonArea {
+	position: absolute;
+	width: 90%;
+	height: 65%;
+	left: 5%;
+	top: 28%;
+	z-index: 9998;
+	overflow-y: scroll;
+	visibility: hidden;
+}
+
+
+
+/*or lessonset 1 etc */
+.lessonArea div {
+	display: -webkit-box;
+	display: -ms-flexbox;
+	display: flex;
+	-webkit-box-align:start;
+	-ms-flex-align:start;
+	 align-items:flex-start;
+	-webkit-box-pack: center;
+	-ms-flex-pack: center;
+	 justify-content: center;
+	font-weight: bold;
+	font-family:  'Exo 2', sans-serif;
+	width: 100%;
+	height: 100vh;
+	-ms-flex-wrap: wrap;
+	 flex-wrap: wrap;
+     animation: fazeIn 5s;
+}
+
+.lessonArea div:nth-child(1) {
+	background-image: url(../images/hands.jpg);
+	background-size: cover;
+	background-repeat: no-repeat;
+	height: 100vh;
+	-moz-background-attachment: fixed;
+	background-attachment: fixed;
+	overflow: hidden;
+	
+}
+.lessonArea div:nth-child(2) {
+	background-image: url(../images/keys.jpg);
+	background-size: cover;
+	background-repeat: no-repeat;
+	-moz-background-attachment: fixed;
+	background-attachment: fixed;
+}
+.lessonArea div:nth-child(3) {
+	background-image: url(../images/laptop.jpg);
+	background-size: cover;
+	-moz-background-attachment: fixed;
+	background-attachment: fixed;
+}
+
+.lessonArea div:nth-child(4) {
+	background: aquamarine;
+	background-image: url(../images/typingFast.jpg);
+	background-size: cover;
+	-moz-background-attachment: fixed;
+	background-attachment: fixed;
+}
+
+
+.lessonTitle {
+	font-size: 100%;
+	text-decoration: underline;
+	color: blue;
+	font-weight: bold;
+	cursor: pointer;
+}
+h4 {
+	font-size: 100%;
+}
+#lessonDiv {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	flex-direction: column;
+	margin: 40px;
+	width: 250px;
+	height: 100px;
+	background: aliceblue;
+	border-radius: 16px;
+	opacity: 0.8;
+	box-shadow: 3px 3px black;
+	font-weight: bold;
+	white-space: pre;
+	flex: 1 0 25%;
+	background: rgb(2,0,36);
+    background: linear-gradient(90deg, rgba(2,0,36,1) 1%, rgba(0,212,255,0.2805497198879552) 11%, rgba(244,238,238,1) 29%);
+		
+}
+
+/* media queries */
+@media screen and (max-width: 510px) { 
+    
+    .lessonArea { visibility: hidden; z-index: -9999;}
+}
+@media screen and (max-height: 680px) { 
+    
+    .lessonArea { visibility: hidden; z-index: -9999;}
+}

@@ -1,0 +1,79 @@
+.timerContainer {
+
+    position: absolute;
+    width: 350px;
+    height: 400px;
+    top: 340px;
+    left: 5%;
+    border: solid 2px #000;
+    border-radius: 5%;
+    margin-right: 5%;
+    z-index: -300;
+    background: -moz-linear-gradient(45deg, rgba(0, 128, 128, 1) 0%, rgba(255, 255, 255, 1) 25%, rgba(5, 193, 255, 1) 50%, rgba(255, 255, 255, 1) 75%, rgba(0, 87, 87, 1) 100%);
+    /* ff3.6+ */
+    background: -webkit-gradient(linear, left bottom, right top, color-stop(0%, rgba(0, 128, 128, 1)), color-stop(25%, rgba(255, 255, 255, 1)), color-stop(50%, rgba(5, 193, 255, 1)), color-stop(75%, rgba(255, 255, 255, 1)), color-stop(100%, rgba(0, 87, 87, 1)));
+    /* safari4+,chrome */
+    background: -webkit-linear-gradient(45deg, rgba(0, 128, 128, 1) 0%, rgba(255, 255, 255, 1) 25%, rgba(5, 193, 255, 1) 50%, rgba(255, 255, 255, 1) 75%, rgba(0, 87, 87, 1) 100%);
+    /* safari5.1+,chrome10+ */
+    background: -o-linear-gradient(45deg, rgba(0, 128, 128, 1) 0%, rgba(255, 255, 255, 1) 25%, rgba(5, 193, 255, 1) 50%, rgba(255, 255, 255, 1) 75%, rgba(0, 87, 87, 1) 100%);
+    /* opera 11.10+ */
+    background: -ms-linear-gradient(45deg, rgba(0, 128, 128, 1) 0%, rgba(255, 255, 255, 1) 25%, rgba(5, 193, 255, 1) 50%, rgba(255, 255, 255, 1) 75%, rgba(0, 87, 87, 1) 100%);
+    /* ie10+ */
+    background: linear-gradient(45deg, rgba(0, 128, 128, 1) 0%, rgba(255, 255, 255, 1) 25%, rgba(5, 193, 255, 1) 50%, rgba(255, 255, 255, 1) 75%, rgba(0, 87, 87, 1) 100%);
+    /* w3c */
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#005757', endColorstr='#008080', GradientType=1);
+    /* ie6-9 */
+
+}
+
+
+
+label {
+    color: black;
+}
+
+.clockDisplay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    margin: 5%;
+    width: 90%;
+    height: 23%;
+    font-size: 30px;
+    text-align: center;
+}
+
+.wpm {
+    position: absolute;
+    top: 25%;
+    width: 80%;
+    height: 10%;
+    font-size: 30px;
+    margin: 5%;
+}
+
+.charLength {
+    position: absolute;
+    top: 45%;
+    font-size: 30px;
+    margin: 5%;
+}
+
+.mistakes {
+    position: absolute;
+    top: 65%;
+    font-size: 30px;
+    margin: 5%;
+
+}
+
+label {
+    font-size: 30px;
+}
+
+
+@media screen and (max-width: 770px) {
+    .timerContainer {
+        display: none;
+    }
+}

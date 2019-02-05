@@ -1,0 +1,47 @@
+
+.finishPanel {
+    position: absolute;
+    background: white;
+    width: 450px;
+    height: 300px;
+    left: calc(50% - 225px);
+    top: 40%;
+    z-index: 9997;
+    font-family: 'Luckiest Guy', cursive;
+    text-align: center;
+    background: -moz-linear-gradient(45deg, rgba(255, 0, 0, 1) 0%, rgba(255, 255, 0, 1) 25%, rgba(5, 193, 255, 1) 50%, rgba(255, 255, 0, 1) 75%, rgba(255, 0, 0, 1) 100%);
+    /* ff3.6+ */
+    background: -webkit-gradient(linear, left bottom, right top, color-stop(0%, rgba(255, 0, 0, 1)), color-stop(25%, rgba(255, 255, 0, 1)), color-stop(50%, rgba(5, 193, 255, 1)), color-stop(75%, rgba(255, 255, 0, 1)), color-stop(100%, rgba(255, 0, 0, 1)));
+    /* safari4+,chrome */
+    background: -webkit-linear-gradient(45deg, rgba(255, 0, 0, 1) 0%, rgba(255, 255, 0, 1) 25%, rgba(5, 193, 255, 1) 50%, rgba(255, 255, 0, 1) 75%, rgba(255, 0, 0, 1) 100%);
+    /* safari5.1+,chrome10+ */
+    background: -o-linear-gradient(45deg, rgba(255, 0, 0, 1) 0%, rgba(255, 255, 0, 1) 25%, rgba(5, 193, 255, 1) 50%, rgba(255, 255, 0, 1) 75%, rgba(255, 0, 0, 1) 100%);
+    /* opera 11.10+ */
+    background: -ms-linear-gradient(45deg, rgba(255, 0, 0, 1) 0%, rgba(255, 255, 0, 1) 25%, rgba(5, 193, 255, 1) 50%, rgba(255, 255, 0, 1) 75%, rgba(255, 0, 0, 1) 100%);
+    /* ie10+ */
+    background: linear-gradient(45deg, rgba(255, 0, 0, 1) 0%, rgba(255, 255, 0, 1) 25%, rgba(5, 193, 255, 1) 50%, rgba(255, 255, 0, 1) 75%, rgba(255, 0, 0, 1) 100%);
+    /* w3c */
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#ff0000', endColorstr='#ff0000', GradientType=1);
+    /* ie6-9 */
+}
+.finishPanel > h2{
+    font-size: 400%;
+    font-family: 'Luckiest Guy', cursive;
+    margin-top: 2%;
+}
+.finishPanel > h3 {
+     font-size: 300%;
+     font-family: 'Luckiest Guy', cursive;
+}
+.circle {
+    position: absolute;
+    top: 54%;
+    width: 150px;
+    height: 150px;
+    margin-left: calc(50% - 75px);
+    background-image: url('../images/Green-Tick2.png');
+    background-repeat: no-repeat;
+    background-size: contain;
+
+
+}
