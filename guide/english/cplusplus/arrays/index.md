@@ -33,12 +33,14 @@ int numbers [] = {1, 2, 3, 4, 5};
 //Note that here the number of values defines the size of the array.
 
 // In the examples above, the size was fixed beforehand
-
-Two-Dimensional Arrays
-
-The simplest form of the multidimensional array is the two-dimensional array. A two-dimensional array is, in essence, a list of one-dimensional arrays. To declare a two-dimensional integer array of size x,y, you would write something as follows −
-type arrayName [ x ][ y ];
 ```
+
+## Two-Dimensional Arrays
+
+The simplest form of the multidimensional array is the two-dimensional array. A two-dimensional array is, in essence, a list of one-dimensional arrays. To declare a two-dimensional integer array of size `x*y`, you would write something as follows −
+`type arrayName [ x ][ y ]`;
+
+```C++
 int a[3][4] = {  
    {0, 1, 2, 3} ,   /*  initializers for row indexed by 0 */
    {4, 5, 6, 7} ,   /*  initializers for row indexed by 1 */
