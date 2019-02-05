@@ -9,13 +9,15 @@ const {
   HOME_LOCATION: home,
   API_LOCATION: api,
   FORUM_LOCATION: forum,
+  NEWS_LOCATION: news,
   LOCALE: locale,
 } = process.env;
 
 const locations = {
   homeLocation: home,
   apiLocation: api,
-  forumLocation: forum
+  forumLocation: forum,
+  newsLocation: news
 };
 
 module.exports = Object.assign(locations, { locale });
