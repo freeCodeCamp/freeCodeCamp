@@ -8,9 +8,9 @@ title: Accessibility Basics
 >
 > --Professor Severus Snape, Harry Potter Series
 
-Accessibility's role in development is understanding the user's perspective and needs.
+The role of accessibility in development is understanding the user's perspective and needs.
 
-As more and more new technologies are being created, the toolbox of a developer becomes ever-changing and complicated.
+As an increasing number of new technologies are being created, the toolbox of a developer becomes ever-changing and complicated.
 
 One tool in that toolbox should be accessibility. It should be one of the very first steps of creating any form of web content, yet is not considered enough. This could be due to a simple case of not knowing it even exists or an extreme case like not caring about it at all.
 
