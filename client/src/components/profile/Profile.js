@@ -4,7 +4,6 @@ import { Alert, Button, Grid, Row, Col } from '@freecodecamp/react-bootstrap';
 import Helmet from 'react-helmet';
 import { Link } from 'gatsby';
 
-import Layout from '../layouts/Default';
 import CurrentChallengeLink from '../helpers/CurrentChallengeLink';
 import FullWidthRow from '../helpers/FullWidthRow';
 import Spacer from '../helpers/Spacer';
@@ -44,7 +43,7 @@ function TakeMeToTheChallenges() {
 
 function renderIsLocked(username) {
   return (
-    <Layout>
+    <Fragment>
       <Helmet>
         <title>{username} | freeCodeCamp.org</title>
       </Helmet>
@@ -67,7 +66,7 @@ function renderIsLocked(username) {
           <TakeMeToTheChallenges />
         </FullWidthRow>
       </Grid>
-    </Layout>
+    </Fragment>
   );
 }
 
@@ -131,7 +130,7 @@ function Profile({ user, isSessionUser }) {
     return renderIsLocked(username);
   }
   return (
-    <Layout>
+    <Fragment>
       <Helmet>
         <title>{username} | freeCodeCamp.org</title>
       </Helmet>
@@ -166,7 +165,7 @@ function Profile({ user, isSessionUser }) {
           />
         ) : null}
       </Grid>
-    </Layout>
+    </Fragment>
   );
 }
 

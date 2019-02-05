@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { Fragment } from 'react';
 import PropTypes from 'prop-types';
 import { navigate } from 'gatsby';
 import { bindActionCreators } from 'redux';
@@ -9,7 +9,6 @@ import Helmet from 'react-helmet';
 
 import { Loader, Spacer } from '../components/helpers';
 import CurrentChallengeLink from '../components/helpers/CurrentChallengeLink';
-import Layout from '../components/layouts/Default';
 import Supporters from '../components/Supporters';
 import {
   userSelector,
@@ -70,11 +69,9 @@ function Welcome({
 }) {
   if (pending && !complete) {
     return (
-      <Layout>
-        <div className='loader-wrapper'>
-          <Loader />
-        </div>
-      </Layout>
+      <div className='loader-wrapper'>
+        <Loader />
+      </div>
     );
   }
 
@@ -90,7 +87,7 @@ function Welcome({
 
   const { quote, author } = randomQuote();
   return (
-    <Layout>
+    <Fragment>
       <Helmet>
         <title>Welcome {name ? name : 'Camper'} | freeCodeCamp.org</title>
       </Helmet>
@@ -147,17 +144,17 @@ function Welcome({
           <Spacer />
           <Row>
             <Col sm={8} smOffset={2} xs={12}>
-            <CurrentChallengeLink>
-              <Button block={true} bsStyle='primary' className='btn-cta-big'>
-                Go to my next challenge
-              </Button>
-            </CurrentChallengeLink>
+              <CurrentChallengeLink>
+                <Button block={true} bsStyle='primary' className='btn-cta-big'>
+                  Go to my next challenge
+                </Button>
+              </CurrentChallengeLink>
             </Col>
           </Row>
           <Spacer size={4} />
         </Grid>
       </main>
-    </Layout>
+    </Fragment>
   );
 }
 

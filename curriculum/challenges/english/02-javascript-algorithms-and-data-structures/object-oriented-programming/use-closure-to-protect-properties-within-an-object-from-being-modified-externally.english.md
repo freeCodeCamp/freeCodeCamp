@@ -16,7 +16,7 @@ Here <code>getHachedEggCount</code> is a privileged method, because it has acces
 
 ## Instructions
 <section id='instructions'>
-Change how <code>weight</code> is declared in the <code>Bird</code> function so it is a private variable. Then, create a method <code>getWeight</code> that returns the value of <code>weight</code>.
+Change how <code>weight</code> is declared in the <code>Bird</code> function so it is a private variable. Then, create a method <code>getWeight</code> that returns the value of <code>weight</code> 15.
 </section>
 
 ## Tests

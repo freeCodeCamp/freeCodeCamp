@@ -9,7 +9,7 @@ challengeType: 1
 <code>Number</code> is a data type in JavaScript which represents numeric data.
 Now let's try to add two numbers using JavaScript.
 JavaScript uses the <code>+</code> symbol as an addition operator when placed between two numbers.
-<strong>Example</strong>
+<strong>Example:</strong>
 <blockquote>myVar = 5 + 10; // assigned 15</blockquote>
 </section>
 
