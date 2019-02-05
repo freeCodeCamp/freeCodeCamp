@@ -2,7 +2,7 @@
 title: Sass
 ---
 
-Sass is a preprocessor scripting language that compiles CSS. It essentially brings the power of a standard programming language to your stylesheets. Sass files end with the `.scss` file extension. 
+Sass (Syntactically awesome style sheets) is a preprocessor scripting language initially designed by Hampton Catlin that compiles CSS. It essentially brings the power of a standard programming language to your stylesheets. Sass files end with the `.scss` file extension. 
 
 With Sass, you can make your CSS considerably more efficient. Some of its key features include:
 - **nesting** which allows you to order child elements inside of their parents on your stylesheet
