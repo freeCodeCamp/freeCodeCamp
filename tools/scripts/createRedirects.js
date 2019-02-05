@@ -1,15 +1,15 @@
 const apiPlaceholderRE = /#\{\{API\}\}/g;
-const homePlaceholderRE = /#\{\{HOME\}\}/g;
+const newsPlaceholderRE = /#\{\{NEWS\}\}/g;
 const forumPlacehilderRE = /#\{\{FORUM\}\}/g;
 
 exports.createRedirects = function createRedirects(locations) {
-  const { api, home, forum } = locations;
+  const { api, news, forum } = locations;
 
-  if (!(api && home && forum )) {
+  if (!(api && news && forum)) {
     throw new Error(`One or more locations are missing, all are required.
 
     api: ${api}
-    home: ${home}
+    news: ${news}
     forum: ${forum}
 
     `);
@@ -17,7 +17,7 @@ exports.createRedirects = function createRedirects(locations) {
 
   return template
     .replace(apiPlaceholderRE, api)
-    .replace(homePlaceholderRE, home)
+    .replace(newsPlaceholderRE, news)
     .replace(forumPlacehilderRE, forum);
 };
 
@@ -57,9 +57,11 @@ const template = `#api redirect
 /field-guide/*                                /forum 301
 /learn-to-code                                /learn 200
 /map                                          /learn 200
+/news                                         #{{NEWS}}
+/news/*                                       #{{NEWS}}/:splat
 /forum/*                                      #{{FORUM}}/:splat
-/privacy                                      #{{HOME}}/forum/t/free-code-camp-privacy-policy/19545 301
-/nonprofit-project-instructions               #{{HOME}}/forum/t/how-free-code-camps-nonprofits-projects-work/19547 301
+/privacy                                      #{{FORUM}}/t/free-code-camp-privacy-policy/19545 301
+/nonprofit-project-instructions               #{{FORUM}}/t/how-free-code-camps-nonprofits-projects-work/19547 301
 /how-nonprofit-projects-work                  https://medium.freecodecamp.org/open-source-for-good-1a0ea9f32d5a 301
 
 `;
