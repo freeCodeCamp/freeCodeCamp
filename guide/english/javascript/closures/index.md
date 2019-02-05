@@ -172,6 +172,55 @@ myModule.method2(); // I am method 2, I am a private variable
 
 Closures are useful for capturing new instances of private variables contained in the 'remembered' environment, and those variables can only be accessed through the returned function or methods.
 
+<b>Asynchronous server side calls inside loops</b>
+
+Closures are very useful for making asynchronous server calls inside for/while loops in ECMA 5 script standard. We will see this using an example below.
+
+Suppose we have a `data.txt` file inside a directory which contains a number; we need to fetch the number inside for loop and print the power value of that number from 0 to 10.
+
+```
+var fs = require('fs');
+
+var power = function (b, p) {
+  if (p === 0) return 1;
+  var out = 1;
+  while (p > 0) {
+    out *= b;
+    p--;
+  }
+  return out;
+}
+
+for(var i = 0; i <= 10; ++i) {
+  var pw = i;
+  var fileName = './data.txt';
+  fs.readFile(fileName, 'utf8', function(err, data) {
+    if(data) {
+      var number = parseInt(data);
+      console.log(power(number, pw));
+    }
+  });
+}
+```
+While running the above function, it'll print the 10th power for all the iterations. The reason behind this scenario is, the for loop is iterating over the values and calls the readFile function asynchronouly; when the callback function gets the data, the value of the variable <b>pw</b> already becomes <b>10</b> and that is why the all the loop iteration uses the power as last values.
+
+To mitigate this we can use closure function. We can keep the codes inside the loop in a closure function and then the variable <b>pw</b> will be inside the scope of closure function and it will be fixed for an iteration. While running a callback function for iteration fifth, it won't be overridden by the values of other iteration as the `var pw` will be scoped inside the closure function. This concept is called Immediately Invoked Function Expressions in Javascript
+
+```
+for(var i = 0; i <= 10; ++i) {
+  (function () {
+    var pw = i;
+    var fileName = './data.txt';
+    fs.readFile(fileName, 'utf8', function(err, data) {
+      if(data) {
+        var number = parseInt(data);
+        console.log(power(number, pw));
+      }
+    });
+  })();
+}
+```
+
 ### More Information:
 
 <a href='https://developer.mozilla.org/en-US/docs/Web/JavaScript/Closures' target='_blank' rel='nofollow'>MDN</a>

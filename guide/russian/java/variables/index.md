@@ -4,9 +4,11 @@ localeTitle: Переменные
 ---
 # Переменные
 
+
 Переменные хранят в себе значения. Они являются самой основной сущностью, используемой для хранения данных, таких как текст, цифры и т.д. в программе.
 
 В [Java](https://github.com/FreeCodeCamp/FreeCodeCamp/wiki/Java) переменные [_строго типизированы_](https://en.wikipedia.org/wiki/Strong_and_weak_typing#Definitions_of_.22strong.22_or_.22weak.22) , что означает, что вы должны определять тип для каждой переменной всякий раз, когда вы ее объявляете. В противном случае компилятор будет выдывать ошибку во [время компиляции](https://en.wikipedia.org/wiki/Compile_time) . Поэтому каждая переменная имеет связанный « [тип данных](https://guide.freecodecamp.org/java/data-types) » одного из следующих:
+
 
 *   Примитивный тип: `int` , `short` , `char` , `long` , `boolean` , `byte` , `float` , `double`
 *   Тип обертки: `Integer` , `Short` , `Char` , `Long` , `Boolean` , `Byte` , `Float` , `Double`

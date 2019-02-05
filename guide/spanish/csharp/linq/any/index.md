@@ -25,10 +25,10 @@ var fruits = new List<Fruit>() {
     new Fruit() { Id = 6, Name = "Mango",      Color = "Yellow", Quantity: 2   } 
  }; 
  
- // Check if any Fruits have a quantity greater than 20 
+ // Consulta si alguna fruta tiene cantidad mayor a 20
  var anyFruitGreaterThanTwenty = fruits.Any(f => f.Quantity > 20); // true 
  
- // Any Fruit with color Green 
+ // Consulta si alguna fruta es de color verde
  var anyGreen = fruits.Any(f => f.Color == "Green"); // false 
  
  var hasFruits = fruits.Any(); // true 

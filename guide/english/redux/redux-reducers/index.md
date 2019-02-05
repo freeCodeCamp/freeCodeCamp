@@ -88,7 +88,8 @@ const actions = [
 ]
 ```
 
-you can generate new state based on those list of actions. How would we do that? By using a reducer function, like so:
+
+You can generate new state based on those list of actions. How would we do that? By using a reducer function, which takes in the current state and the action that was triggered and then returns a new state. Here we used the ES6 default parameter syntax to assign a default value to the state array, like so:
 
 ```javascript
 

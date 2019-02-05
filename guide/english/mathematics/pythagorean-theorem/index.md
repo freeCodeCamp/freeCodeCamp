@@ -40,4 +40,6 @@ And then, we will square root both sides to get the value of b:
 b = &radic;(c<sup>2</sup> - a<sup>2</sup>)
 
 #### More Information:
-<!-- Please add any articles you think might be helpful to read before writing the article -->
+
+- <a href = "https://www.khanacademy.org/math/basic-geo/basic-geometry-pythagorean-theorem">Khan Academy Pythagorean Theorem</a>
+- <a href = "https://en.wikipedia.org/wiki/Pythagorean_theorem">Wikipedia Pythagorean Theorem</a>

@@ -58,13 +58,15 @@ You can see that `ng generate`expedites Angular’s [boilerplate code](https://e
 
 #### ng build
 
-Angular is a front end tool. The CLI performs its operations on behalf of the front end. `ng serve` takes care of the back end server setup. This keeps development entirely focused on the front end. That said, connecting your own back end to the Angular application must also be possible.
+The `ng serve` command runs the project using `lite-server` webserver installed with other dependencies during the the creation of project with `ng new`. If you want to serve your Angular web application with your own webserver like Apache or Nginx, then you will have to build all the source Typescript files with `ng build`.
 
-`ng build` fulfills this need. Before trying it out inside of the file system. Navigate to `[name-of-app] -> angular.json`. Look for this single line of code: `"outputPath": "dist/my-app"`.
+`ng build` produces a development build with all source maps, JavaScript files, CSS and HTML files and puts it in the `[name-of-app] -> dist` directory. This directory contains the `index.html` file which is the entry point to the Angular application. The content of this folder can be directly put into the web root of any web server to deploy. You don't need `ng serve` anymore.
 
-This one line of configuration determines where `ng build` dumps its results. The results being the entire Angular application compiled into one folder `dist/my-app`. Inside of that folder, there exists `index.html`. The whole Angular application can run with `index.html`. No `ng serve` is necessary from here. With this file, you can easily wire up your back end.
+The path where all the built files are kept is defined with the path string given in `outputPath` key in `[name-of-app] -> angular.json`. By default it is `"outputPath": "dist"`.
 
-Give it a go: `ng build`. Again, this must execute within the Angular file system. Based of the key value of `“outputPath:”` in `angular.json`. A file will generate wherein the original application is fully compiled. If you kept `“outputPath:”` the same, the compiled application will be in: `[name-of-app] -> dist -> [name-of-app]`.
+Note that a simple build with `ng build` is not optimized for production run. That means that the JavaScript and CSS is not minified, it may still contain some dead code and it has a huge size due to JIT compilation.
+
+For a production ready build, use `ng build --prod`. The `--prod` option enables minification and uglification. It also compiles with Ahead-of-Time compilation strategy which is very fast for use in production. All the libraries used are concatenated into a few files. This build can be run in production servers.
 
 #### ng update
 

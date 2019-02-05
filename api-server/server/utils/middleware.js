@@ -2,7 +2,7 @@ import dedent from 'dedent';
 import { validationResult } from 'express-validator/check';
 
 import { createValidatorErrorFormatter } from './create-handled-error.js';
-import { homeLocation } from '../../../config/env.json';
+import { homeLocation } from '../../../config/env';
 
 export function ifNoUserRedirectTo(url, message, type = 'errors') {
   return function(req, res, next) {

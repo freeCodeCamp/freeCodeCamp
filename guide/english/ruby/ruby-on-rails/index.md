@@ -3,7 +3,8 @@ title: Ruby on Rails
 ---
 
 # Ruby on Rails
-[Ruby on Rails](http://rubyonrails.org/) is a server-side framework (gem) built on the Ruby language to make websites. Rails makes web development faster, easier and more fun. It includes everything you need to build fantastic applications and has a big community. Rails was created by David Heinemeier Hansson and is currently on its 5th version. Rails emphasizes the use of other well-known software engineering patterns and paradigms, including [convention over configuration (CoC)](https://en.wikipedia.org/wiki/Convention_over_configuration), [don't repeat yourself (DRY)](https://en.wikipedia.org/wiki/Don%27t_repeat_yourself), and the active record pattern. Rails is a [model–view–controller (MVC)](https://en.wikipedia.org/wiki/Model%E2%80%93view%E2%80%93controller) framework, providing default structures for a database, a web service, and web pages. Lately, Rails has integrated an API module to make the creation of web-services faster and easier.
+
+[Ruby on Rails](http://rubyonrails.org/) is a server-side framework (gem) built on the Ruby language to make progressive web applications and APIs. Rails makes web development faster, easier and more fun. It includes everything you need to build fantastic applications and has a big community. Rails was created by David Heinemeir Hansson and is currently on it's 5th version. Rails emphasizes the use of other well-known software engineering patterns and paradigms, including [convention over configuration (CoC)](https://en.wikipedia.org/wiki/Convention_over_configuration), [don't repeat yourself (DRY)](https://en.wikipedia.org/wiki/Don%27t_repeat_yourself), and the active record pattern. Rails is a [model–view–controller (MVC)](https://en.wikipedia.org/wiki/Model%E2%80%93view%E2%80%93controller) framework, providing default structures for a database, a web service, and web pages. Lately, Rails has integrated an API module to make the creation of web-services faster and easier.
 
 ## Installing Rails
 Rails is downloaded in the same way as any other Ruby gem: with the `gem install` command. Before we download it, we'll need to <a href='https://www.ruby-lang.org' target='_blank' rel='nofollow'>download Ruby</a>. Afterwards we're only 3 words away from starting with Ruby on Rails:
@@ -12,7 +13,7 @@ Rails is downloaded in the same way as any other Ruby gem: with the `gem install
 $ gem install rails
 ```
 ## Setting Up database
-Rails ships with sqlite3 as the default database, which is a simple file on disk. You need to install MySQL or PostgreSQL if you want to use something more robust.
+Rails ships with sqlite3 as the default database, which is a simple file on disk. You need to install MySQL or PostgreSQL if you want to use something more robust. Ruby on Rails can also be configured to use NoSQL databases like Couchbase and MongoDB but that may have some additional manual steps.
 
 ## Creating a Rails application
 
@@ -103,3 +104,5 @@ Controller (Action controller) interacts with the views and model to direct the 
 ## Ruby on Rails is open source 
 Not only is it free to use, you can also help make it better. More than 4,500 people have already contributed code to [Rails](https://github.com/rails/rails). It’s easier than you think to become one of them.
 
+## Famous websites use or used Ruby on Rails
+Twitter was originally written in Ruby on Rails but moved away to a Java-based framework when needing to scale more. Twitch also heavily used Ruby and Ruby on Rails in the early stages but moved certain parts to Go-lang for anything that needed to be high-performant. Many websites that become famous and popular move parts or all of their back-end systems to frameworks based on compiled languages such Java, C++/C, and Go-lang from dynamic languages Ruby, Python, and Javascript (node). This is not always the case. Certain website are able to make dynamic language frameworks scale to as large as they need. Some good example are Github, Gitlab(open-source), Shopify, and Hulu.
