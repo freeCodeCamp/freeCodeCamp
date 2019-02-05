@@ -58,7 +58,7 @@ let result = chewieQuote.match(chewieRegex);
 
 ```js
   let chewieQuote = "Aaaaaaaaaaaaaaaarrrgh!";
-  let chewieRegex = /A[a]*/;
+  let chewieRegex = /Aa*/;
   let result = chewieQuote.match(chewieRegex);
 ```
 </section>
