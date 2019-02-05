@@ -1,10 +1,9 @@
-import React from 'react';
+import React, { Fragment } from 'react';
 import PropTypes from 'prop-types';
 import { Grid, Panel, Button } from '@freecodecamp/react-bootstrap';
 import Helmet from 'react-helmet';
 
 import env from '../../config/env.json';
-import Layout from '../components/layouts/Default';
 import FullWidthRow from '../components/helpers/FullWidthRow';
 import { Spacer } from '../components/helpers';
 
@@ -12,7 +11,7 @@ const { apiLocation } = env;
 
 function ShowUnsubscribed({ unsubscribeId }) {
   return (
-    <Layout>
+    <Fragment>
       <Helmet>
         <title>You have been unsubscribed | freeCodeCamp.org</title>
       </Helmet>
@@ -41,7 +40,7 @@ function ShowUnsubscribed({ unsubscribeId }) {
           ) : null}
         </main>
       </Grid>
-    </Layout>
+    </Fragment>
   );
 }
 
