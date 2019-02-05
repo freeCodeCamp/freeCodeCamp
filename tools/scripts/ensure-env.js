@@ -13,7 +13,12 @@ const log = debug('fcc:tools:ensure-env');
 
 const { NODE_ENV } = process.env;
 
-const { homeLocation: home, apiLocation: api, forumLocation: forum, locale } = env;
+const {
+  apiLocation: api,
+  forumLocation: forum,
+  locale,
+  newsLocation: news
+} = env;
 
 const apiPath = path.resolve(__dirname, '../../api-server');
 const clientPath = path.resolve(__dirname, '../../client');
@@ -21,7 +26,7 @@ const clientStaticPath = path.resolve(clientPath, 'static');
 const globalConfigPath = path.resolve(__dirname, '../../config');
 
 if (NODE_ENV === 'production') {
-  const redirects = createRedirects({ api, home, forum });
+  const redirects = createRedirects({ api, news, forum });
   fs.writeFile(`${clientStaticPath}/_redirects`, redirects, function(err) {
     if (err) {
       log('Error');
