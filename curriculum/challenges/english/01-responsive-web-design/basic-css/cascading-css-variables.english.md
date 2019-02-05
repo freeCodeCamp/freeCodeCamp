@@ -22,8 +22,8 @@ Define a variable named <code>--penguin-belly</code> in the <code>:root</code> s
 
 ```yml
 tests:
-  - text: declare the <code>--penguin-belly</code> variable in the <code>:root</code> and assign it to <code>pink</code>.
-    testString: assert(code.match(/:root\s*?{[\s\S]*--penguin-belly\s*?:\s*?pink\s*?;[\s\S]*}/gi), 'declare the <code>--penguin-belly</code> variable in the <code>:root</code> and assign it to <code>pink</code>.');
+  - text: Declare the <code>--penguin-belly</code> variable in the <code>:root</code> and assign it to <code>pink</code>.
+    testString: assert(code.match(/:root\s*?{[\s\S]*--penguin-belly\s*?:\s*?pink\s*?;[\s\S]*}/gi), 'Declare the <code>--penguin-belly</code> variable in the <code>:root</code> and assign it to <code>pink</code>.');
 
 ```
 
