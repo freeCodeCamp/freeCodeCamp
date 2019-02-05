@@ -19,23 +19,6 @@ The @each directive loops over a list and for each iteration the variable is ass
 ```
 ---
 
-## Problem: 
-Use @each to assign a different background color to each of the divs as explained in the challenge.
-```
-<style type='text/sass'>
-
-  div {
-    height: 200px;
-    width: 200px;
-  }
-  
-</style>
-
-<div class="blue-bg"></div>
-<div class="black-bg"></div>
-<div class="red-bg"></div>
-```
-
 ## Solution: 
 ```
 <style type='text/sass'>
