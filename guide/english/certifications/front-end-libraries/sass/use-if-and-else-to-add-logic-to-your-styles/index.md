@@ -14,23 +14,6 @@ Conditionals such as if, else, and else if work just like in JavaScript. Conditi
 ---
 Conditionals can be used to change properties of an element based on a condition.
 
-## Problem:
-```
-<style type='text/sass'>
-  
-  
-  
-  #box {
-    width: 150px;
-    height: 150px;
-    background-color: red;
-    @include border-stroke(medium);
-  }  
-</style>
-
-<div id="box"></div>
-```
-
 ## Solution:
 
 ```
