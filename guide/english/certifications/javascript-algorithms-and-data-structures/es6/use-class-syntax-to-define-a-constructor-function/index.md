@@ -15,11 +15,11 @@ Create the class called `Vegetable`. It will contain the necessary details about
 
 Put a constructor with a parameter called `name`, and set it to `this.name`.
 
-## Spoiler Alert - Solution Ahead!
+## Spoiler Alert!
 
-## Solution:
+**Solution ahead!**
 
-Spoiler Warning: here is a basic solution to this challenge in case you're stuck.
+here is a basic solution to this challenge in case you're stuck.
 
 ```javascript
 function makeClass() {
