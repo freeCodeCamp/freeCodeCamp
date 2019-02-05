@@ -1,4 +1,3 @@
-/* global STRIPE_PUBLIC_KEY */
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import { bindActionCreators } from 'redux';
@@ -39,7 +38,7 @@ const propTypes = {
   show: PropTypes.bool
 };
 
-const stripeKey = STRIPE_PUBLIC_KEY;
+const stripeKey = 'pk_live_E6Z6xPM8pEsJziHW905zpAvF';
 
 class DonationModal extends Component {
   constructor(...props) {
