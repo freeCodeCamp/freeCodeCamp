@@ -45,3 +45,4 @@ Without further ado, here are a few questions that you could encounter:
 3.  What side projects have you been working on?
 4.  Are there any languages or frameworks that you would like to learn in the future? How would you go about teaching yourself? Why did you pick those languages/frameworks?
 5.  What are the most important skills and qualities that a junior front end developer should have?
+6. Have you ever worked with a team to complete a project? If so, what role did you play on the project? What did you enjoy about working on a team? What issues did you encounter?
