@@ -25,13 +25,13 @@ To understand how computers work, you don't need to know every single part of th
 - A second chip controls the input and output (I/O) functions. It is not connected directly to the CPU but to the Northbridge. This I/O controller is referred to as the Southbridge. The Northbridge and Southbridge combined are referred to as the chipset.
 - Several connectors, which provide the physical interface between input and output devices and the motherboard. The Southbridge handles these connections.
 - Slots for one or more hard drives to store files. The most common types of connections are Integrated Drive Electronics (IDE) and Serial Advanced Technology Attachment (SATA).
-- A read-only memory (ROM) chip, which contains the firmware, or startup instructions for the computer system. This is also called the BIOS.
+- A read-only memory (ROM) chip, which contains the firmware, or startup instructions for the computer system. This was previously a system known as BIOS but has been replaced on more modern machines by UEFI
 - A slot for a video or graphics card. There are a number of different types of slots, including the Accelerated Graphics Port (AGP) and Peripheral Component Interconnect Express (PCIe).
 Additional slots to connect hardware in the form of Peripheral Component Interconnect (PCI) slots.
 
 ## Types of Motherboards
 
-Motherboards come in different sizes, known as form factors. The most common motherboard form factor is ATX. The different types of ATX are known as micro-ATX (sometimes shown as µATX, mini-ATX, FlexATX, EATX, WATX, nano-ATX, pico-ATX, and mobileATX).
+Motherboards come in different sizes, known as form factors. The most common motherboard form factor is ATX. Some of the different types of ATX are micro-ATX (sometimes shown as µATX), mini-ATX, FlexATX, EATX, WATX, nano-ATX, pico-ATX, and mobileATX. There are also a number of other variations.
 
 Additionally there can be even smaller boards like the raspberry pi, which are 65mm by 35mm and have all processing units integrated to the board. There are many others that are even more specific in function, such as an Aurdino board. These are typically limited in I/O, have no expansion slots aside from whatever expansion is offered via USB ports, and some display ports like HDMI or similar variants. These are used for small emulator projects, running small servers, or as an alternative to slim client devices in an office. 
 
