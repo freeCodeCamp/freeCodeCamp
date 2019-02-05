@@ -46,7 +46,7 @@ tests:
 ```html
 <body>
   <script>
-    const positionData = [[1, 7, -4],[6, 3, 8],[2, 8, 3]]
+    const positionData = [[1, 7, -4],[6, 3, 8],[2, 9, 3]]
     // Add your code below this line
 
     const output = undefined; // Change this line

@@ -14,7 +14,7 @@ The rest operator eliminates the need to check the <code>args</code> array and a
 
 ## Instructions
 <section id='instructions'>
-Modify the function <code>sum</code> so that it uses the rest operator and it works in the same way with any number of parameters.
+Modify the function <code>sum</code> using the rest parameter in such a way that the function <code>sum</code> is able to take any number of arguments and return their sum.
 </section>
 
 ## Tests
