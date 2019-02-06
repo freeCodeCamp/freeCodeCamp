@@ -12,7 +12,6 @@ import { userSelector } from '../redux';
 
 import Spacer from '../components/helpers/Spacer';
 import DonateForm from '../components/Donation/components/DonateForm';
-import DonateCompletion from '../components/Donation/components/DonateCompletion';
 import DonateText from '../components/Donation/components/DonateText';
 import PoweredByStripe from '../components/Donation/components/poweredByStripe';
 
@@ -66,10 +65,6 @@ class IndexPage extends Component {
     }));
   }
 
-  renderCompletion(props) {
-    return <DonateCompletion close={() => {}} {...props} />;
-  }
-
   render() {
     const { email = '' } = this.props;
     return (
@@ -90,7 +85,6 @@ class IndexPage extends Component {
                 <DonateForm
                   email={email}
                   maybeButton={() => null}
-                  renderCompletion={this.renderCompletion}
                 />
               </Elements>
             </StripeProvider>

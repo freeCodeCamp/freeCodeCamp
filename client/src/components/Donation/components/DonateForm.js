@@ -12,12 +12,12 @@ import { injectStripe } from 'react-stripe-elements';
 
 import Spacer from '../../../components/helpers/Spacer';
 import StripeCardForm from './StripeCardForm';
+import DonateCompletion from './DonateCompletion';
 import { postJSON$ } from '../../../templates/Challenges/utils/ajax-stream.js';
 
 const propTypes = {
   email: PropTypes.string,
   maybeButton: PropTypes.func.isRequired,
-  renderCompletion: PropTypes.func.isRequired,
   stripe: PropTypes.shape({
     createToken: PropTypes.func.isRequired
   })
@@ -147,6 +147,12 @@ class DonateForm extends Component {
     return this.setState(() => initialSate);
   }
 
+  renderCompletion(props) {
+    return (
+      <DonateCompletion {...props}/>
+    );
+  }
+
   renderDonateForm() {
     const { isFormValid } = this.state;
     return (
@@ -186,9 +192,8 @@ class DonateForm extends Component {
     const {
       donationState: { processing, success, error }
     } = this.state;
-    const { renderCompletion } = this.props;
     if (processing || success || error) {
-      return renderCompletion({
+      return this.renderCompletion({
         processing,
         success,
         error,
