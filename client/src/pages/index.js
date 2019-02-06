@@ -240,10 +240,6 @@ const IndexPage = () => (
       <BigCallToAction />
       <Spacer />
       <Spacer />
-      <hr />
-      <Spacer />
-      <Spacer />
-      <Spacer />
     </Grid>
   </Fragment>
 );
