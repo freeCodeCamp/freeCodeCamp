@@ -3,8 +3,90 @@ title: Manage State Locally First
 ---
 ## Manage State Locally First
 
-This is a stub. <a href='https://github.com/freecodecamp/guides/tree/master/src/pages/certifications/front-end-libraries/react-and-redux/manage-state-locally-first/index.md' target='_blank' rel='nofollow'>Help our community expand it</a>.
+## Hint 1:
 
-<a href='https://github.com/freecodecamp/guides/blob/master/README.md' target='_blank' rel='nofollow'>This quick style guide will help ensure your pull request gets accepted</a>.
+Remember that functions need to be bound in the constructor
 
-<!-- The article goes here, in GitHub-flavored Markdown. Feel free to add YouTube videos, images, and CodePen/JSBin embeds  -->
+```JSX
+this.handleChange = this.handleChange.bind(this);
+this.submitMessage = this.submitMessage.bind(this);
+```
+
+## Hint 2:
+
+handleChange() should take in an event, and use setState to update the component's state
+
+```JSX
+  handleChange(e) {
+    this.setState({ input: e.target.value })
+  }
+```
+
+## Hint 3:
+
+submitMessage should add the input to the messages array, and reset the input value
+
+```JSX
+submitMessage(){
+    this.setState(
+      ({messages}) => ({messages: messages.concat(this.state.input)}));
+      this.setState({input: ''});
+  }
+```
+
+## Hint 4: 
+
+The input, button and ul elements should make use of the component's methods and values
+
+```JSX
+<input onChange={this.handleChange} value={this.state.input} />
+<button onClick={this.submitMessage}>Add message</button>
+<ul>
+    {this.state.messages.map(message =>
+        (<li>{message}</li>)
+    )}
+</ul>
+```
+
+## Solution:
+```JSX
+class DisplayMessages extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      input: '',
+      messages: []
+    }
+    this.handleChange = this.handleChange.bind(this);
+    this.submitMessage = this.submitMessage.bind(this);
+  }
+  // add handleChange() and submitMessage() methods here
+
+  handleChange(e){
+    this.setState({input: e.target.value})
+  }
+
+  submitMessage(){
+    this.setState(
+      ({messages}) => ({messages: messages.concat(this.state.input)}));
+      this.setState({input: ''});
+  }
+
+  render() {
+    return (
+      <div>
+        <h2>Type in a new Message:</h2>
+        { /* render an input, button, and ul here */ }
+        <input onChange={this.handleChange} value={this.state.input} />
+        <button onClick={this.submitMessage}>Add message</button>
+        <ul>
+        {this.state.messages.map(message =>
+          (<li>{message}</li>)
+        )}
+        </ul>
+        { /* change code above this line */ }
+      </div>
+    );
+  }
+};
+```
