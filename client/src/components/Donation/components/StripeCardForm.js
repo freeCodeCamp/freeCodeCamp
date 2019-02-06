@@ -77,25 +77,31 @@ class StripeCardForm extends Component {
     return (
       <div className='donation-elements'>
         <FormGroup>
-          <ControlLabel>Card Number:</ControlLabel>
+          <ControlLabel>
+            Your Card Number:
+          </ControlLabel>
           <CardNumberElement
-            className='form-control donate-input-element donate-card-element'
+            className='form-control donate-input-element'
             onChange={this.handleInputChange}
             style={style}
           />
         </FormGroup>
         <FormGroup>
-          <ControlLabel>Expiry:</ControlLabel>
+          <ControlLabel>
+            Your Card Expiration Month:
+          </ControlLabel>
           <CardExpiryElement
-            className='form-control donate-input-element donate-expiry-element'
+            className='form-control donate-input-element'
             onChange={this.handleInputChange}
             style={style}
           />
         </FormGroup>
         <FormGroup>
-          <ControlLabel>CVC:</ControlLabel>
+          <ControlLabel>
+            Your Card CVC (3-digit security number):
+          </ControlLabel>
           <CardCVCElement
-            className='form-control donate-input-element donate-cvc-element'
+            className='form-control donate-input-element'
             onChange={this.handleInputChange}
             style={style}
           />

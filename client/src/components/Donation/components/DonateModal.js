@@ -10,7 +10,6 @@ import { stripePublicKey } from '../../../../config/env.json';
 
 import ga from '../../../analytics';
 import DonateForm from './DonateForm';
-import DonateCompletion from './DonateCompletion';
 import {
   userSelector,
   closeDonationModal,
@@ -48,7 +47,6 @@ class DonateModal extends Component {
     this.state = {
       stripe: null
     };
-    this.renderCompletion = this.renderCompletion.bind(this);
     this.renderMaybe = this.renderMaybe.bind(this);
   }
   componentDidMount() {
@@ -68,12 +66,6 @@ class DonateModal extends Component {
         }));
       });
     }
-  }
-
-  renderCompletion(props) {
-    return (
-      <DonateCompletion close={this.props.closeDonationModal} {...props} />
-    );
   }
 
   renderMaybe() {
@@ -109,7 +101,6 @@ class DonateModal extends Component {
                 <DonateForm
                   email={email}
                   maybeButton={this.renderMaybe}
-                  renderCompletion={this.renderCompletion}
                 />
               </Modal.Body>
               <Modal.Footer>

@@ -22,7 +22,7 @@
 
 .donation-elements {
   display: flex;
-  flex-direction: row;
+  flex-direction: column;
   justify-content: space-between;
 }
 
@@ -68,21 +68,6 @@
 
 .donate-input-element {
   padding-top: 8px;
-}
-
-.donate-card-element {
-  min-width: 280px;
-  flex: 1 1 auto;
-}
-
-.donate-expiry-element {
-  min-width: 120px;
-  flex: 0 0 auto;
-}
-
-.donate-cvc-element {
-  min-width: 80px;
-  flex: 0 0 auto;
 }
 
 .StripeElement--focus {

@@ -4,14 +4,13 @@ import { Alert, Button } from '@freecodecamp/react-bootstrap';
 import Spinner from 'react-spinkit';
 
 const propTypes = {
-  close: PropTypes.func.isRequired,
   error: PropTypes.string,
   processing: PropTypes.bool,
   reset: PropTypes.func.isRequired,
   success: PropTypes.bool
 };
 
-function DonateCompletion({ close, processing, reset, success, error = null }) {
+function DonateCompletion({ processing, reset, success, error = null }) {
   /* eslint-disable no-nested-ternary */
   const style = processing ? 'info' : success ? 'success' : 'danger';
   const heading = processing
@@ -43,7 +42,6 @@ function DonateCompletion({ close, processing, reset, success, error = null }) {
             <span />
           </Fragment>
         )}
-        {!processing && <Button onClick={close}>Close</Button>}
       </p>
     </Alert>
   );
