@@ -5,7 +5,7 @@ title: Ports
 A port is an endpoint of communication for an operating system, in the internet protocol suite. Service names and port numbers are used to distinguish between different services that run over transport protocols such as TCP, UDP, DCCP, and SCTP.
 When a computer receives a message from an another source the ports will help in determining which process is expecting that message.
 
-A port is always related to an ip adress of a host and the protocol type of the communication, and thus completes the destination or origination network address of a communication session. There is 65536 available ports in operating system. A port is identified for each address and protocol by a 16-bit number, commonly known as the port number. For example, an address may be "protocol: TCP, IP address: 1.2.3.4, port number: 80", which may be written 1.2.3.4:80 when the protocol is known from context.
+A port is always related to an ip adress of a host and the protocol type of the communication, and thus completes the destination or origination network address of a communication session. There are 65536 available ports in the operating system. A port is identified for each address and protocol by a 16-bit number, commonly known as the port number. For example, an address may be "protocol: TCP, IP address: 1.2.3.4, port number: 80", which may be written 1.2.3.4:80 when the protocol is known from context.
 Some port numbers are used by convention to identify specific services, such as:
 
 * 20 - FTP
