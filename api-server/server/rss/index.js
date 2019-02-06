@@ -33,35 +33,35 @@ class NewsFeed {
     const currentFeed = this.state.combinedFeed.slice(0);
     log('grabbing feeds');
     return Promise.all([
-    getMediumFeed(),
-    getLybsynFeed()
-  ]).then(
-    ([mediumFeed, lybsynFeed]) => this.setState(
-      state => ({
-        ...state,
-        mediumFeed,
-        lybsynFeed
+      getMediumFeed(),
+      getLybsynFeed()
+    ]).then(
+      ([mediumFeed, lybsynFeed]) => this.setState(
+        state => ({
+          ...state,
+          mediumFeed,
+          lybsynFeed
+        })
+      ))
+      .then(() => {
+        log('crossing the streams');
+        const { mediumFeed, lybsynFeed} = this.state;
+        const combinedFeed = [ ...mediumFeed, ...lybsynFeed ].sort((a, b) => {
+          return compareDesc(a.isoDate, b.isoDate);
+        });
+        this.setState(state => ({
+          ...state,
+          combinedFeed,
+          readyState: true
+        }));
       })
-    ))
-    .then(() => {
-      log('crossing the streams');
-      const { mediumFeed, lybsynFeed} = this.state;
-      const combinedFeed = [ ...mediumFeed, ...lybsynFeed ].sort((a, b) => {
-        return compareDesc(a.isoDate, b.isoDate);
+      .catch(err => {
+        console.log(err);
+        this.setState(state => ({
+          ...state,
+          combinedFeed: currentFeed
+        }));
       });
-      this.setState(state => ({
-        ...state,
-        combinedFeed,
-        readyState: true
-      }));
-    })
-    .catch(err => {
-      console.log(err);
-      this.setState(state => ({
-        ...state,
-        combinedFeed: currentFeed
-      }));
-    });
   }
 
 

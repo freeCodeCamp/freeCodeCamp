@@ -11,7 +11,7 @@ function getExtract(str) {
 
 
 function addResponsiveClass(str) {
-  return str.replace(/\<img/g, '<img class="img-responsive"');
+  return str.replace(/<img/g, '<img class="img-responsive"');
 }
 
 export function getMediumFeed() {

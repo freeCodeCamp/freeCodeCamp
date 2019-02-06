@@ -13,12 +13,12 @@ export default function getChallengesForBlock(app) {
   return {
     name: 'challenge',
     read: function readChallengesForBlock(
-        req,
-        resource,
-        { dashedName, blockName} = {},
-        config,
-        cb
-      ) {
+      req,
+      resource,
+      { dashedName, blockName} = {},
+      config,
+      cb
+    ) {
       const getChallengeBlock$ = challengeMap
         .flatMap(({
           result: { superBlocks },

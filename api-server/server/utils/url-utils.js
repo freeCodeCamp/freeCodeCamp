@@ -25,7 +25,7 @@ export function getHost() {
 
 export function getServerFullURL() {
   if (!isDev) {
-   return getProtocol()
+    return getProtocol()
         + '://'
         + getHost();
   }

@@ -3,7 +3,7 @@ import helmet from 'helmet';
 import { homeLocation } from '../../../config/env';
 
 let trusted = [
-  "'self'",
+  '\'self\'',
   'https://search.freecodecamp.org',
   homeLocation,
   'https://' + process.env.AUTH0_DOMAIN
@@ -31,8 +31,8 @@ export default function csp() {
         'https://*.algolia.net'
       ]),
       scriptSrc: [
-        "'unsafe-eval'",
-        "'unsafe-inline'",
+        '\'unsafe-eval\'',
+        '\'unsafe-inline\'',
         '*.google-analytics.com',
         '*.gstatic.com',
         'https://*.cloudflare.com',
@@ -48,7 +48,7 @@ export default function csp() {
         '*.ytimg.com'
       ].concat(trusted),
       styleSrc: [
-        "'unsafe-inline'",
+        '\'unsafe-inline\'',
         '*.gstatic.com',
         '*.googleapis.com',
         '*.bootstrapcdn.com',

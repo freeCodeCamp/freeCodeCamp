@@ -21,9 +21,9 @@ export default function donateBoot(app, done) {
           name:
             'Monthly Donation to freeCodeCamp.org - ' +
             `Thank you ($${current / 100})`
-          },
-          currency: 'usd',
-          id: `monthly-donation-${current}`
+        },
+        currency: 'usd',
+        id: `monthly-donation-${current}`
       }
     }), {}
   );
@@ -59,8 +59,8 @@ export default function donateBoot(app, done) {
         throw err;
       }
       console.log(`${plan.id} created`);
-        return;
-      });
+      return;
+    });
   }
 
   function createStripeDonation(req, res) {
@@ -104,34 +104,34 @@ export default function donateBoot(app, done) {
             email,
             card: id
           });
-    })
-    .then(customer => {
-      donation.customerId = customer.id;
-      return stripe.subscriptions.create({
-        customer: customer.id,
-        items: [
-          {
-            plan: `monthly-donation-${amount}`
-          }
-        ]
-      });
-    })
-    .then(subscription => {
-      donation.subscriptionId = subscription.id;
-      return res.send(subscription);
-    })
-    .then(() => {
-      donatingUser.createDonation(donation).toPromise()
-        .catch(err => {
-          throw new Error(err);
+      })
+      .then(customer => {
+        donation.customerId = customer.id;
+        return stripe.subscriptions.create({
+          customer: customer.id,
+          items: [
+            {
+              plan: `monthly-donation-${amount}`
+            }
+          ]
         });
-    })
-    .catch(err => {
-      if (err.type === 'StripeCardError') {
-        return res.status(402).send({ error: err.message });
-      }
-      return res.status(500).send({ error: 'Donation Failed' });
-    });
+      })
+      .then(subscription => {
+        donation.subscriptionId = subscription.id;
+        return res.send(subscription);
+      })
+      .then(() => {
+        donatingUser.createDonation(donation).toPromise()
+          .catch(err => {
+            throw new Error(err);
+          });
+      })
+      .catch(err => {
+        if (err.type === 'StripeCardError') {
+          return res.status(402).send({ error: err.message });
+        }
+        return res.status(500).send({ error: 'Donation Failed' });
+      });
   }
 
   const pubKey = keys.stripe.public;
