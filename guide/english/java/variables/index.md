@@ -31,6 +31,7 @@ int i = 10;
 double amount = 10.0;
 boolean isOpen = false;
 char c = 'a'; // Note the single quotes
+String s = "Hello World"; // String is created with double quotes
 
 //Variables can also be declared in one statement, and assigned values later.
 int j;

@@ -49,7 +49,7 @@ Linux relies extensively on file permissions. They determine a lot about how you
 permissions, but for now we only need to know this: you can't run your script until you give yourself execute permissions. To 
 do that, type:
 
-`chmod +x my script.sh`
+`chmod +x myscript.sh`
 
 **Second, run it.** We execute the script from the command line just like any other command like `ls` or `date`. The script 
 name is the command, and you need to precede it with a './' when you call it:

@@ -44,31 +44,33 @@ function IntroductionPage({ data: { markdownRemark, allChallengeNode } }) {
       <Helmet>
         <title>{block} | freeCodeCamp</title>
       </Helmet>
-      <FullWidthRow>
-        <div
-          className='intro-layout'
-          dangerouslySetInnerHTML={{ __html: html }}
-        />
-      </FullWidthRow>
-      <FullWidthRow>
-        <Link className='btn btn-lg btn-primary btn-block' to={firstLessonPath}>
-          Go to the first lesson
-        </Link>
-        <ButtonSpacer />
-        <Link to='/learn'>
-          <Button block={true} bsSize='lg' className='btn-primary-invert'>
-            View the curriculum
-          </Button>
-        </Link>
-        <ButtonSpacer />
-        <hr />
-      </FullWidthRow>
-      <FullWidthRow>
-        <h2 className='intro-toc-title'>Upcoming Lessons</h2>
-        <ListGroup className='intro-toc'>
-          {allChallengeNode ? renderMenuItems(allChallengeNode) : null}
-        </ListGroup>
-      </FullWidthRow>
+      <div className='intro-layout-container'>
+        <FullWidthRow>
+          <div
+            className='intro-layout'
+            dangerouslySetInnerHTML={{ __html: html }}
+          />
+        </FullWidthRow>
+        <FullWidthRow>
+          <Link className='btn btn-lg btn-primary btn-block' to={firstLessonPath}>
+            Go to the first lesson
+          </Link>
+          <ButtonSpacer />
+          <Link to='/learn'>
+            <Button block={true} bsSize='lg' className='btn-primary-invert'>
+              View the curriculum
+            </Button>
+          </Link>
+          <ButtonSpacer />
+          <hr />
+        </FullWidthRow>
+        <FullWidthRow>
+          <h2 className='intro-toc-title'>Upcoming Lessons</h2>
+          <ListGroup className='intro-toc'>
+            {allChallengeNode ? renderMenuItems(allChallengeNode) : null}
+          </ListGroup>
+        </FullWidthRow>
+      </div>
     </LearnLayout>
   );
 }
