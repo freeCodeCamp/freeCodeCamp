@@ -29,8 +29,9 @@ submitMessage should add the input to the messages array, and reset the input va
 ```JSX
 submitMessage(){
     this.setState(
-      ({messages}) => ({messages: messages.concat(this.state.input)}));
-      this.setState({input: ''});
+      ({messages}) => ({messages: messages.concat(this.state.input)})
+    );
+    this.setState({input: ''});
   }
 ```
 
@@ -68,8 +69,9 @@ class DisplayMessages extends React.Component {
 
   submitMessage(){
     this.setState(
-      ({messages}) => ({messages: messages.concat(this.state.input)}));
-      this.setState({input: ''});
+      ({messages}) => ({messages: messages.concat(this.state.input)})
+    );
+    this.setState({input: ''});
   }
 
   render() {
