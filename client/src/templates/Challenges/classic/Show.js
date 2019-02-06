@@ -166,6 +166,11 @@ class ShowClassic extends Component {
     }
   }
 
+  componentWillUnmount() {
+    const { createFiles } = this.props;
+    createFiles({});
+  }
+
   getChallenge = () => this.props.data.challengeNode;
 
   getBlockNameTitle() {
