@@ -8,8 +8,8 @@ import Helmet from 'react-helmet';
 import { randomCompliment } from '../utils/get-words';
 import { ChallengeNode } from '../../../redux/propTypes';
 import {
+  challengeMounted,
   updateChallengeMeta,
-  createFiles,
   updateSuccessMessage,
   openModal,
   updateProjectFormValues
@@ -32,7 +32,7 @@ const mapDispatchToProps = dispatch =>
   bindActionCreators(
     {
       updateChallengeMeta,
-      createFiles,
+      challengeMounted,
       updateProjectFormValues,
       updateSuccessMessage,
       openCompletionModal: () => openModal('completion')
@@ -41,7 +41,7 @@ const mapDispatchToProps = dispatch =>
   );
 
 const propTypes = {
-  createFiles: PropTypes.func.isRequired,
+  challengeMounted: PropTypes.func.isRequired,
   data: PropTypes.shape({
     challengeNode: ChallengeNode
   }),
@@ -57,34 +57,42 @@ const propTypes = {
 export class Project extends Component {
   componentDidMount() {
     const {
-      createFiles,
-      data: { challengeNode: { title, challengeType } },
+      challengeMounted,
+      data: {
+        challengeNode: { title, challengeType }
+      },
       pageContext: { challengeMeta },
       updateChallengeMeta,
       updateSuccessMessage
     } = this.props;
-    createFiles({});
     updateSuccessMessage(randomCompliment());
-    return updateChallengeMeta({ ...challengeMeta, title, challengeType });
+    updateChallengeMeta({ ...challengeMeta, title, challengeType });
+    challengeMounted(challengeMeta.id);
   }
 
   componentDidUpdate(prevProps) {
-    const { data: { challengeNode: { title: prevTitle } } } = prevProps;
     const {
-      createFiles,
-      data: { challengeNode: { title: currentTitle, challengeType } },
+      data: {
+        challengeNode: { title: prevTitle }
+      }
+    } = prevProps;
+    const {
+      challengeMounted,
+      data: {
+        challengeNode: { title: currentTitle, challengeType }
+      },
       pageContext: { challengeMeta },
       updateChallengeMeta,
       updateSuccessMessage
     } = this.props;
     updateSuccessMessage(randomCompliment());
     if (prevTitle !== currentTitle) {
-      createFiles({});
       updateChallengeMeta({
         ...challengeMeta,
         title: currentTitle,
         challengeType
       });
+      challengeMounted(challengeMeta.id);
     }
   }
 
@@ -133,7 +141,10 @@ export class Project extends Component {
 Project.displayName = 'Project';
 Project.propTypes = propTypes;
 
-export default connect(mapStateToProps, mapDispatchToProps)(Project);
+export default connect(
+  mapStateToProps,
+  mapDispatchToProps
+)(Project);
 
 export const query = graphql`
   query ProjectChallenge($slug: String!) {
