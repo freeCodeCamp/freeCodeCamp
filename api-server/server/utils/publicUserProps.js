@@ -69,7 +69,7 @@ export function getProgress(progressTimestamps, timezone = 'EST') {
     .reduce((data, timestamp) => {
       data[Math.floor(timestamp / 1000)] = 1;
       return data;
-  }, {});
+    }, {});
   const uniqueHours = prepUniqueDaysByHours(progressTimestamps, timezone);
   const streak = {
     longest: calcLongestStreak(uniqueHours, timezone),

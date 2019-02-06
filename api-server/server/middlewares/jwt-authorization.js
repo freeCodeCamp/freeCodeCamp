@@ -69,15 +69,15 @@ export default () => function authorizeByJWT(req, res, next) {
     if (!req.user) {
       const User = loopback.getModelByType('User');
       return User.findById(userId)
-      .then(user => {
-        if (user) {
-          user.points = user.progressTimestamps.length;
-          req.user = user;
-        }
-        return;
-      })
-      .then(next)
-      .catch(next);
+        .then(user => {
+          if (user) {
+            user.points = user.progressTimestamps.length;
+            req.user = user;
+          }
+          return;
+        })
+        .then(next)
+        .catch(next);
     } else {
       return next();
     }

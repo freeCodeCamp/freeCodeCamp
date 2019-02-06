@@ -229,7 +229,7 @@ function createPostReportUserProfile(app) {
         to: 'team@freecodecamp.org',
         cc: user.email,
         from: 'team@freecodecamp.org',
-        subject: 'Abuse Report : Reporting ' + username + "'s profile.",
+        subject: `Abuse Report : Reporting ${username}'s profile.`,
         text: dedent(`
         Hello Team,\n
         This is to report the profile of ${username}.\n

@@ -115,10 +115,10 @@ export default function(UserIdent) {
           return identity
             ? Observable.of(identity.user())
             : User.findOne$({ where: { email } }).flatMap(user => {
-                return user
-                  ? Observable.of(user)
-                  : User.create$({ email }).toPromise();
-              });
+              return user
+                ? Observable.of(user)
+                : User.create$({ email }).toPromise();
+            });
         })
         .flatMap(user => {
           const createToken = observeQuery(AccessToken, 'create', {

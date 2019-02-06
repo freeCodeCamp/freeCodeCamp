@@ -7,5 +7,5 @@ export function dayCount([head, tail], timezone = 'UTC') {
       moment(tail).tz(timezone).startOf('day'),
       'days',
       true)
-    );
+  );
 }
