@@ -5,7 +5,7 @@ title: Getting Started with React Redux
 
 ## Hint 1:
 
-For this solution you need recall how to add a constructor to your component and include the state: 
+For this solution you need to recall how to add a constructor to your component and include the state: 
 
  ```JSX
 constructor(props){
