@@ -21,7 +21,6 @@ import MobileLayout from './MobileLayout';
 import DesktopLayout from './DesktopLayout';
 import ToolPanel from '../components/Tool-Panel';
 
-import { randomCompliment } from '../utils/get-words';
 import { createGuideUrl } from '../utils';
 import { challengeTypes } from '../../../../utils/challengeTypes';
 import { ChallengeNode } from '../../../redux/propTypes';
@@ -33,7 +32,6 @@ import {
   initTests,
   updateChallengeMeta,
   challengeMounted,
-  updateSuccessMessage,
   consoleOutputSelector
 } from '../redux';
 
@@ -52,8 +50,7 @@ const mapDispatchToProps = dispatch =>
       createFiles,
       initTests,
       updateChallengeMeta,
-      challengeMounted,
-      updateSuccessMessage
+      challengeMounted
     },
     dispatch
   );
@@ -80,8 +77,7 @@ const propTypes = {
       testString: PropTypes.string
     })
   ),
-  updateChallengeMeta: PropTypes.func.isRequired,
-  updateSuccessMessage: PropTypes.func.isRequired
+  updateChallengeMeta: PropTypes.func.isRequired
 };
 
 const MAX_MOBILE_WIDTH = 767;
@@ -113,7 +109,6 @@ class ShowClassic extends Component {
       createFiles,
       initTests,
       updateChallengeMeta,
-      updateSuccessMessage,
       data: {
         challengeNode: {
           files,
@@ -127,7 +122,6 @@ class ShowClassic extends Component {
     createFiles(files);
     initTests(tests);
     updateChallengeMeta({ ...challengeMeta, title, challengeType });
-    updateSuccessMessage(randomCompliment());
     challengeMounted(challengeMeta.id);
   }
 
@@ -142,7 +136,6 @@ class ShowClassic extends Component {
       createFiles,
       initTests,
       updateChallengeMeta,
-      updateSuccessMessage,
       data: {
         challengeNode: {
           files,
@@ -154,7 +147,6 @@ class ShowClassic extends Component {
       pageContext: { challengeMeta }
     } = this.props;
     if (prevTitle !== currentTitle) {
-      updateSuccessMessage(randomCompliment());
       createFiles(files);
       initTests(tests);
       updateChallengeMeta({

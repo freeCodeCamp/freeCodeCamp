@@ -5,12 +5,10 @@ import { bindActionCreators } from 'redux';
 import { graphql } from 'gatsby';
 import Helmet from 'react-helmet';
 
-import { randomCompliment } from '../utils/get-words';
 import { ChallengeNode } from '../../../redux/propTypes';
 import {
   challengeMounted,
   updateChallengeMeta,
-  updateSuccessMessage,
   openModal,
   updateProjectFormValues
 } from '../redux';
@@ -34,7 +32,6 @@ const mapDispatchToProps = dispatch =>
       updateChallengeMeta,
       challengeMounted,
       updateProjectFormValues,
-      updateSuccessMessage,
       openCompletionModal: () => openModal('completion')
     },
     dispatch
@@ -50,8 +47,7 @@ const propTypes = {
     challengeMeta: PropTypes.object
   }),
   updateChallengeMeta: PropTypes.func.isRequired,
-  updateProjectFormValues: PropTypes.func.isRequired,
-  updateSuccessMessage: PropTypes.func.isRequired
+  updateProjectFormValues: PropTypes.func.isRequired
 };
 
 export class Project extends Component {
@@ -62,10 +58,8 @@ export class Project extends Component {
         challengeNode: { title, challengeType }
       },
       pageContext: { challengeMeta },
-      updateChallengeMeta,
-      updateSuccessMessage
+      updateChallengeMeta
     } = this.props;
-    updateSuccessMessage(randomCompliment());
     updateChallengeMeta({ ...challengeMeta, title, challengeType });
     challengeMounted(challengeMeta.id);
   }
@@ -82,10 +76,8 @@ export class Project extends Component {
         challengeNode: { title: currentTitle, challengeType }
       },
       pageContext: { challengeMeta },
-      updateChallengeMeta,
-      updateSuccessMessage
+      updateChallengeMeta
     } = this.props;
-    updateSuccessMessage(randomCompliment());
     if (prevTitle !== currentTitle) {
       updateChallengeMeta({
         ...challengeMeta,
