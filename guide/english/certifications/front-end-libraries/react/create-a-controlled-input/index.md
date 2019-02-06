@@ -32,4 +32,4 @@ It can be a bit hard to digest but to make things further clear try removing the
 <input value = {this.state.input}/>
 ```
 Now run the tests again. Are you able to type anything? <br>
-The answer to the above question will be "NO". Your input box is getting value from the state variable `input` and since there is no change in the state of `input` (an empty string initially), nothing will happen. A change will only occur when you trigger the function `handleChange()` and this function will only be triggered when you have an event handler like `onChange()`. If there is no `handleChange()` method, the string inside the input box will remain as it is i.e, an empty string.
+The answer to the above question will be "NO". Your input box is getting value from the state variable `input`. Since there is no change in the state of `input` (an empty string initially), nothing will happen. A change will only occur when you trigger the function `handleChange()`.  This function will only be triggered when you have an event handler like `onChange()`. If there is no `handleChange()` method, the string inside the input box will remain as it is i.e, an empty string.
