@@ -3,8 +3,40 @@ title: Connect Redux to the Messages App
 ---
 ## Connect Redux to the Messages App
 
-This is a stub. <a href='https://github.com/freecodecamp/guides/tree/master/src/pages/certifications/front-end-libraries/react-and-redux/connect-redux-to-the-messages-app/index.md' target='_blank' rel='nofollow'>Help our community expand it</a>.
+## Hint 1:
 
-<a href='https://github.com/freecodecamp/guides/blob/master/README.md' target='_blank' rel='nofollow'>This quick style guide will help ensure your pull request gets accepted</a>.
+Create the Container component the same way as you did in the previous challenge
+```javascript
+const Container = connect(mapStateToProps, mapDispatchToProps)(Presentational);
+```
 
-<!-- The article goes here, in GitHub-flavored Markdown. Feel free to add YouTube videos, images, and CodePen/JSBin embeds  -->
+## Hint 2:
+
+AppWrapper should render a Provider component with a Container as a child
+```javascript
+return (
+      <Provider store={store}>
+        <Container />
+      </Provider>
+    );
+```
+
+## Solution:
+```javascript
+// define the Container component here:
+const Container = connect(mapStateToProps, mapDispatchToProps)(Presentational);
+
+class AppWrapper extends React.Component {
+  constructor(props) {
+    super(props);
+  }
+  render() {
+    // complete the return statement:
+    return (
+      <Provider store={store}>
+        <Container />
+      </Provider>
+    );
+  }
+};
+```
