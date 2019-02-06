@@ -3,8 +3,14 @@ title: Moving Forward From Here
 ---
 ## Moving Forward From Here
 
-This is a stub. <a href='https://github.com/freecodecamp/guides/tree/master/src/pages/certifications/front-end-libraries/react-and-redux/moving-forward-from-here/index.md' target='_blank' rel='nofollow'>Help our community expand it</a>.
+Congratulations on finishing this section! This challenge does not expect you to do anything with the commented out code, it is simply there to provide an example of how a React/Redux file might look.
 
-<a href='https://github.com/freecodecamp/guides/blob/master/README.md' target='_blank' rel='nofollow'>This quick style guide will help ensure your pull request gets accepted</a>.
+## Hint 1
 
-<!-- The article goes here, in GitHub-flavored Markdown. Feel free to add YouTube videos, images, and CodePen/JSBin embeds  -->
+In order to pass this challenge, pay close attention to the instructions, which ask you to **log** the Log the message 'Now I know React and Redux!' to the console.
+
+## Solution
+
+```javascript
+console.log('Now I know React and Redux!');
+```
