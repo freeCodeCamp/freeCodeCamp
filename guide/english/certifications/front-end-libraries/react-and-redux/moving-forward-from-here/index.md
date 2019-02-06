@@ -7,7 +7,7 @@ Congratulations on finishing this section! This challenge does not expect you to
 
 ## Hint 1
 
-In order to pass this challenge, pay close attention to the instructions, which ask you to **log** the Log the message 'Now I know React and Redux!' to the console.
+In order to pass this challenge, pay close attention to the instructions, which ask you to **log** the message 'Now I know React and Redux!' to the console.
 
 ## Solution
 
