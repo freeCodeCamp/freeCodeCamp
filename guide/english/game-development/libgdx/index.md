@@ -2,6 +2,8 @@
 title: libGDX
 ---
 
+![logo](http://libgdx.badlogicgames.com/img/logo.png)
+
 ## Game Development with libGDX
 
 libGDX is a free and open-source game-development application framework written in the Java programming language with some C and C++ components for performance dependent code.
@@ -11,6 +13,6 @@ LibGDX supports both 2d and 3d game development, and is written in Java. In addi
 
 #### Resources:
 
-https://github.com/libgdx/libgdx/wiki
-https://libgdx.badlogicgames.com/
+https://github.com/libgdx/libgdx/wiki  
+https://libgdx.badlogicgames.com/  
 https://www.reddit.com/r/libgdx/
