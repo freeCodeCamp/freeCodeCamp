@@ -10,7 +10,7 @@ import debug from 'debug';
 import accepts from 'accepts';
 import dedent from 'dedent';
 
-import { homeLocation } from '../../../config/env.json';
+import { homeLocation } from '../../../config/env';
 
 import { ifNoUserSend } from '../utils/middleware';
 import { dasherize } from '../utils';
@@ -321,7 +321,7 @@ export default async function bootChallenge(app, done) {
     ) {
       req.flash(
         'danger',
-        "You haven't supplied the necessary URLs for us to inspect your work."
+        'You haven\'t supplied the necessary URLs for us to inspect your work.'
       );
       return res.sendStatus(403);
     }

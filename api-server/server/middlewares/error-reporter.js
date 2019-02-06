@@ -27,7 +27,9 @@ ${JSON.stringify(error, null, 2)}
 };
 
 export function reportError(err) {
-  return reporter.error(err.message, err);
+  return process.env.NODE_ENV === 'production'
+    ? reporter.error(err.message, err)
+    : console.error(err);
 }
 
 export default function errrorReporter() {

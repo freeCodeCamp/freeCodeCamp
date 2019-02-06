@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React, { Component, Fragment } from 'react';
 import PropTypes from 'prop-types';
 import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux';
@@ -85,10 +85,6 @@ class Editor extends Component {
     this._editor = null;
   }
 
-  componentWillUnmount() {
-    document.removeEventListener('keyup', this.focusEditor);
-  }
-
   editorWillMount = monaco => {
     defineMonacoThemes(monaco);
   };
@@ -96,7 +92,6 @@ class Editor extends Component {
   editorDidMount = (editor, monaco) => {
     this._editor = editor;
     this._editor.focus();
-    document.addEventListener('keyup', this.focusEditor);
     this._editor.addAction({
       id: 'execute-challenge',
       label: 'Run tests',
@@ -106,13 +101,6 @@ class Editor extends Component {
       ],
       run: this.props.executeChallenge
     });
-  };
-
-  focusEditor = e => {
-    // e key to focus editor
-    if (e.keyCode === 69) {
-      this._editor.focus();
-    }
   };
 
   onChange = editorValue => {
@@ -130,7 +118,7 @@ class Editor extends Component {
     const { contents, ext, theme, fileKey } = this.props;
     const editorTheme = theme === 'night' ? 'vs-dark-custom' : 'vs-custom';
     return (
-      <div className='classic-editor editor'>
+      <Fragment>
         <base href='/' />
         <MonacoEditor
           editorDidMount={this.editorDidMount}
@@ -142,7 +130,7 @@ class Editor extends Component {
           theme={editorTheme}
           value={contents}
         />
-      </div>
+      </Fragment>
     );
   }
 }

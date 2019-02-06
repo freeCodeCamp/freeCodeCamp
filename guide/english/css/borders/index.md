@@ -21,7 +21,7 @@ The properties that can be set are (in order):
 
 It does not matter if one of the values above is missing. For example, the following is valid CSS:
 
-```css 
+```css
   border: solid red;
 ```
 
@@ -33,15 +33,14 @@ The `border-style` property can be set to a wide range of different border types
 - `dashed` - Sets a dashed border.
 - `solid` - Sets a solid border.
 - `double` - Sets a double border.
-- `groove` - Sets a 3D grooved border. 
-- `ridge` - Sets a 3D ridged border. 
-- `inset` - Sets a 3D inset border. 
+- `groove` - Sets a 3D grooved border.
+- `ridge` - Sets a 3D ridged border.
+- `inset` - Sets a 3D inset border.
 - `outset` - Sets a 3D outset border.
 - `none` - Sets no border.
 - `hidden` - Sets a hidden border.
 
 Each side of the border doesn't need to match.
-
 Each side can be styled separately:
 ```css
   border-top-style: solid;
@@ -57,9 +56,7 @@ Or they can all be styled at once:
 The border property allows you to select each side of the element in one declaration in the following order: top, bottom, left, right.
 
 ### Border Width
-
-To alter the thickness of a border, use the `border-width` attribute. You may use key terms or exact values to define the border width.  
-Note: You must define a `border-style` for the border to appear. The `width` can be set as a specific size (in px, pt, cm, em, etc) or by using one of the three pre-defined values: `thin`, `medium`, or `thick`.
+To alter the thickness of your border, use the `border-width` property. You may use key terms or exact values to define the border width. _Note: You must define a border-style for the border to show up._ The width can be set as a specific size (in px, pt, em, rem etc) or by using one of the three pre-defined values: `thin`, `medium`, or `thick`.
 
 Example:
 ```css
@@ -80,9 +77,7 @@ p {
 ```
 
 ### Border Color
-
-Now for the creative aspect of CSS Borders!  With the use of the `border-color` property, you will be able to create customized borders to fit the flow and layout
-of your website. Border colors can be any color defined by RGB, HSL, hexadecimal, or key terms.
+Now for the creative aspect of CSS Borders! With the use of the `border-color` property, you will be able to create customized borders to fit the flow and layout of your website. Border colors can be any color defined by RGB, hexadecimal, or key terms. Below is an example of each of these types.
 
 Example:
 ```css
@@ -105,20 +100,20 @@ p {
 ```
 
 ### Border-Radius
-
 The `border-radius` property allows the corners of a border to be rounded. `border-radius` takes a length as its value which determines the degree of curvature for each corner of the element. The length can be in px or %.
 ```css 
   border-radius: 25px;
 ```
-Each corner of `border-radius` can be adjusted individually in the following order: top, bottom, left, right.
+
+Each corner of `border-radius` can be adjusted separately by specifying two, three, or four values. If two values are set, the first value applies to the top-left and bottom-right corners, while the second value applies to the top-right and bottom-left corners. If four values are set, the top-left, rop-right, bottom-right, and bottom-left corners will be specified in that order. If three values are set, the second value applies to the top-right and bottom-left corner. 
 ```css 
   border-radius: 15% 10px 30% 5px;
 ```
+
 If only two values are provided, the first value will be applied to the top-left and bottom-right corners and the second value will be applied to the top-right and bottom-left corners.
 ```css
   border-radius: 10px 5px;
 ```
-
 
 More complex border-radius values are available. This is done using a slash (/) between horizontal and vertical values.
 ```css
@@ -144,8 +139,8 @@ While it is nice that CSS allows a web developer to be very specific in creating
 Example:
 ```css
 <style type="text/css">
-p { border: 20px outset blue; } 
-h4 { border: 5px solid; } 
+p { border: 20px outset blue; }
+h4 { border: 5px solid; }
 h5 { border: dotted; }
 </style>
 ```
@@ -154,5 +149,3 @@ h5 { border: dotted; }
 
 - [MDN Documentation](https://developer.mozilla.org/en-US/docs/Web/CSS/border)
 - [CSS3 Border Radius](https://guide.freecodecamp.org/css/css3-borders-rounded-corners)
-
-Browser Support: IE6+

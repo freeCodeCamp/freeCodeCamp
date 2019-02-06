@@ -44,7 +44,7 @@ There is no sorting discussion which can finish without quick sort.
 [Quick Sort](http://me.dt.in.th/page/Quicksort/)
 
 #### Merge Sort
-It is the sorting algorithm which relies on the concept how to sorted arrays are merged to give one sorted arrays. Read more about it here-
+It is the sorting algorithm which relies on the concept how two sorted arrays are merged to give one sorted array. Read more about it here-
 [Merge Sort](https://www.geeksforgeeks.org/merge-sort/)
 
 
@@ -69,7 +69,7 @@ This video introduces algorithms and briefly discusses some high profile uses of
 
 [15 Sorting Algorithms in 6 Minutes | Timo Bingmann](https://www.youtube.com/watch?v=kPRA0W1kECg)
 
-This video visually demonstrates some popular sorting algorithms that are commonly taught in programming and Computer Science courses.
+This video demonstrates some popular sorting algorithms that are commonly taught in programming and Computer Science courses.
 
 [How algorithms shape our world | Kevin Slavin](https://www.youtube.com/watch?v=TDaFwnOiKVE)
 

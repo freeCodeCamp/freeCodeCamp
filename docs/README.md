@@ -9,6 +9,7 @@
         <td><a href="/docs/portuguese/README.md"> Português </a></td>
         <td><a href="/docs/spanish/README.md"> Español </a></td>
         <td><a href="/docs/german/README.md"> Deutsch </a></td>
+        <td><a href="/docs/greek/README.md"> Ελληνικά </a></td>
     </tr>
 </table>
 
@@ -36,7 +37,7 @@ This directory contains all of the documentation on contributing to freeCodeCamp
 
 ## Quick commands reference when working locally
 
-A quick reference to the commands that you will need, when working locally.
+A quick reference to the commands that you will need when working locally.
 
 | command | description |
 | ------- | ----------- |

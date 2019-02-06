@@ -15,7 +15,16 @@ However, with complex numbers this is [no longer](https://math.stackexchange.com
 
 With this in mind, looking at our examples above again we see that 3 + 4i has magnitude sqrt(9 + 16) = sqrt(25) = 5, while i has size 1 and 2 has size 2. In particular, our notion of size is compatible with that of the size of a real number.
 
+Geometrically, complex numbers can be plotted on the two-dimensional complex plane in the form (a,b). 
+![i](https://upload.wikimedia.org/wikipedia/commons/thumb/a/af/Complex_number_illustration.svg/220px-Complex_number_illustration.svg.png)
+
+#### Examples
+1. What is the real part of 2i+1?
+A. Real part : 1
+
+
 ### Similarities to Real Numbers
+
 
 Any complex numbers z = a + bi and w = c + di can be added
 ```

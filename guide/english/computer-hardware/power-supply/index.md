@@ -32,7 +32,8 @@ As with the non-modular supply, you will get:
 
 The PSU will then have several expansion slots on the back to add additional PCIE power cables and SATA cables for multi GPU or hard drive builds. 
 
-A PSU is usually not user serviceable. For your safety, it is wise to never open a power supply unit.
+
+A PSU is usually not user-serviceable. For your safety, it is wise to never open a power supply unit.
 
 Note: Please do not "cheap out" when buying a power supply, it is one of the most crucial elements when building a PC and can damage your other components if not treated as such. 
 
@@ -50,4 +51,7 @@ Because the power supply unit is the first component between the electric outlet
 Additionally, the internal parts of a PSU are usually not user serviceable. For your safety, it is wise to never open a power supply unit without proper equipment and/or certifications.
 
 #### More Information:
-- Power Supply: [Wikipedia](https://en.wikipedia.org/wiki/Power_supply_unit_(computer))
+
+<!-- Please add any articles you think might be helpful to read before writing the article -->
+* [HowStuffWorks - How a power supply works](https://computer.howstuffworks.com/power-supply.htm)
+* Power Supply: [Wikipedia](https://en.wikipedia.org/wiki/Power_supply_unit_(computer))

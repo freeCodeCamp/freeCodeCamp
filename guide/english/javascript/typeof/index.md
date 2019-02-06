@@ -25,6 +25,8 @@ x = 'string';
 console.log(typeof x) // string
 x = { key: 'value' };
 console.log(typeof x) // object
+x = true;
+console.log(type of x) // boolean
 ```
 
 This can be useful for checking the type of a variable in a function and continuing as appropriate.

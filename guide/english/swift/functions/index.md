@@ -16,7 +16,7 @@ In this example, the function sayHello takes in a string name and prints out the
 
 ## Function Parameters
 
-Functions do not require any input parameters or return types. However this require the parentheses after naming the functions.
+Functions do not require any input parameters or return types. However parentheses are required after the function name.
  ```Swift
   func helloSteve() {
       print("Hello, Steve.")
@@ -52,7 +52,6 @@ In the above program, the nested function addGreetingAndPrint() is being called 
 The statement outputMessageByGreeting("Jack") calls the outer function. And the statement addGreetingAndPrint() inside the outer function calls the method which outputs Hello! Jack in the console.
 
 Example 2: Nested function with parameters and return values
-Nested functions can contain functions with parameters and return values.
 
 ```Swift
 func operate(with symbol:String) -> (Int, Int) -> Int {
@@ -80,7 +79,7 @@ In the above program,
 
 - The outer function is operate(), with return value of type Function (Int,Int) -> Int.
 and the inner (nested) functions are add() and subtract().
- - The nested function add() and subtract() in a way are being used outside of the enclosing function operate(). This is possible because the outer function returns one of these functions.
+ - The nested functions add() and subtract() in a way are being used outside of the enclosing function operate(). This is possible because the outer function returns one of these functions.
 
 We've used the inner function outside the enclosing function operate() as operation(2, 3). The program internally calls add(2, 3) which outputs 5 in the console.
 

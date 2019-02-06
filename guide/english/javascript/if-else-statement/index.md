@@ -3,18 +3,21 @@ title: If-Else Statement
 ---
 ## Introduction
 
-The `if` statement executes a statement if a specified condition is `true`. If the condition is `false`, another statement can be executed using the `else` statement.
+The `if` statement executes a statement if a specified condition is `true`. If the condition is `false`, then the statement inside `else` block gets executed.
 
 **Note:** The `else` statement is optional.
 
 ```javascript
 if (condition) {
-    /* do something */
+    /* do this if condition is TRUE */
 } else {
-    /* do something else */
+    /* do this if condition is FALSE (or not TRUE) */
 }
 ```
 
+The conditions can be as simple as just checking booleans, but you can also check the value of variables using operators. One of the most commonly used operators is the equality operator, "==". It checks if two values are equal to each other. Note that there are two equal signs and not just one. This is because of the fact that one equal sign would set the first value to equal the second, not compare them.
+
+Some other common operators are the greater/smaller than operator (> and < respectively) and the not equal to operator (!=).
 
 Multiple `if...else` statements can be chained to create an `else if` clause. This specifies a new condition to test and can be repeated to test multiple conditions, checking until a true statement is presented to execute.
 
@@ -64,12 +67,13 @@ const num = someCondition ? 1 : 2;
 ## Examples
 
 **Using** `if...else`:
+
 ```javascript
-// If x = 5, then z = 7 and q = 42.
-// If x is not 5, then z = 19.
+// If x is equal to 5, then the condition is TRUE. This results in z being set to 7 and q being set to 42.
+// If x does not equal to 5, then the condition is FALSE. This results in z being set to 19.
 if (x == 5) {
   z = 7;
-  q = 42
+  q = 42;
 } else {
   z = 19;
 }
