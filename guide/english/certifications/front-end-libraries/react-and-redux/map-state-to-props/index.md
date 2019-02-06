@@ -3,8 +3,24 @@ title: Map State to Props
 ---
 ## Map State to Props
 
-This is a stub. <a href='https://github.com/freecodecamp/guides/tree/master/src/pages/certifications/front-end-libraries/react-and-redux/map-state-to-props/index.md' target='_blank' rel='nofollow'>Help our community expand it</a>.
+## Hint 1:
 
-<a href='https://github.com/freecodecamp/guides/blob/master/README.md' target='_blank' rel='nofollow'>This quick style guide will help ensure your pull request gets accepted</a>.
+Create a function named mapStateToProps that takes in state
+```javascript
+function mapStateToProps(state){
 
-<!-- The article goes here, in GitHub-flavored Markdown. Feel free to add YouTube videos, images, and CodePen/JSBin embeds  -->
+}
+```
+
+## Hint 2: 
+The function should return an object with messages as a property, and set it to state
+```javascript
+return {messages: state};
+```
+
+## Solution
+```javascript
+function mapStateToProps(state){
+  return {messages: state};
+}
+```
