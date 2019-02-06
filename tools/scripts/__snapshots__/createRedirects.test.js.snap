@@ -3,16 +3,16 @@
 exports[`createRedirects matches the snapshot 1`] = `
 "#api redirect
 
-/internal/*                                   https://api.example.com/internal/:splat
+/internal/*                                   https://api.example.com/internal/:splat 200
 
 # auth redirects
-/signin                                       https://api.example.com/signin 301
-/signup                                       https://api.example.com/signin 301
-/email-signin                                 https://api.example.com/signin 301
-/login                                        https://api.example.com/signin 301
-/deprecated-signin                            https://api.example.com/signin 301
-/logout                                       https://api.example.com/signout 301
-/passwordless-change                          https://api.example.com/confirm-email 301
+/signin                                       https://api.example.com/signin 200
+/signup                                       https://api.example.com/signin 200
+/email-signin                                 https://api.example.com/signin 200
+/login                                        https://api.example.com/signin 200
+/deprecated-signin                            https://api.example.com/signin 200
+/logout                                       https://api.example.com/signout 200
+/passwordless-change                          https://api.example.com/confirm-email 200
 
 # certification redirects
 /:username/front-end-certification            /certification/:username/legacy-front-end 301
@@ -21,9 +21,9 @@ exports[`createRedirects matches the snapshot 1`] = `
 /:username/full-stack-certification           /certification/:username/full-stack 301
 
 # unsunscribe redirects
-/u/*                                          https://api.example.com/u/:splat
-/unsunscribe/*                                https://api.example.com/unsunscribe/:splat
-/ue/*                                         https://api.example.com/ue/:splat
+/u/*                                          https://api.example.com/u/:splat 200
+/unsunscribe/*                                https://api.example.com/unsunscribe/:splat 200
+/ue/*                                         https://api.example.com/ue/:splat 200
 
 # misc redirects
 /agile                                        / 301
@@ -37,9 +37,9 @@ exports[`createRedirects matches the snapshot 1`] = `
 /field-guide/*                                /forum 301
 /learn-to-code                                /learn 200
 /map                                          /learn 200
-/news                                         https://news.example.com
-/news/*                                       https://news.example.com/:splat
-/forum/*                                      https://forum.example.com/:splat
+/news                                         https://news.example.com 200
+/news/*                                       https://news.example.com/:splat 200
+/forum/*                                      https://forum.example.com/:splat 200
 /privacy                                      https://forum.example.com/t/free-code-camp-privacy-policy/19545 301
 /nonprofit-project-instructions               https://forum.example.com/t/how-free-code-camps-nonprofits-projects-work/19547 301
 /how-nonprofit-projects-work                  https://medium.freecodecamp.org/open-source-for-good-1a0ea9f32d5a 301
