@@ -1,37 +1,79 @@
 # Docker Compose file for FreeCodeCamp
 #
+# if using Docker Toolbox, replace `localhost` to output form `docker-machine ip`
+#
 # Bootstrap with:
-#   docker-compose run --rm freecodecamp npm install
-#   docker-compose run --rm freecodecamp npm run only-once
+#   docker-compose run --rm freecodecamp bash
+#     npm install --unsafe-perm
+#     npm run seed
+#     exit
+#
+#  if during install you see errors like `ETXTBSY: text file is busy, rename`
+#  then before install downgrade npm with command:
+#    npm install -g npm@5.7.1
 #
 # Run with:
 #   docker-compose up
 #
-version: "3"
+version: '3'
 services:
-    freecodecamp:
-        image: node:8.10
-        depends_on:
-            - db
-            - mailhog
-        environment:
-            - MAILHOG_HOST=mailhog
-            - MONGOHQ_URL=mongodb://db:27017/freecodecamp
-        volumes:
-            - ./api-server:/app
-        working_dir: /app
-        command:
-            - npm
-            - run
-            - develop
-        ports:
-            - "3000:3000"
-    db:
-        image: mongo:3.6
-        ports:
-            - "27017:27017"
-    mailhog:
-        image: mailhog/mailhog
-        ports:
-            - "1025:1025"
-            - "8025:8025"
+  freecodecamp:
+    image: node:lts
+    depends_on:
+      - db
+      - mailhog
+    environment:
+      - MAILHOG_HOST=mailhog
+      - MONGOHQ_URL=mongodb://db:27017/freecodecamp
+    volumes:
+      - .:/app
+    working_dir: /app
+  client:
+    image: node:lts
+    environment:
+      - API_PROXY=http://api-server:3000
+      - GATSBY_WEBPACK_PUBLICPATH=http://localhost:8000/
+      - HOME_LOCATION=http://localhost:8000
+      - API_LOCATION=http://localhost:3000
+    volumes:
+      - .:/app
+    working_dir: /app/client
+    command:
+      - npm
+      - run
+      - develop
+      - --
+      - -H
+      - '0.0.0.0'
+    ports:
+      - '8000:8000'
+      - '9228:9228'
+  api-server:
+    image: node:lts
+    depends_on:
+      - db
+      - mailhog
+    environment:
+      - MAILHOG_HOST=mailhog
+      - MONGOHQ_URL=mongodb://db:27017/freecodecamp
+      - COOKIE_DOMAIN=localhost
+      - HOME_LOCATION=http://localhost:8000
+      - API_LOCATION=http://localhost:3000
+    volumes:
+      - .:/app
+    working_dir: /app/api-server
+    command:
+      - node
+      - development-entry.js
+    ports:
+      - '3000:3000'
+      - '9229:9229'
+  db:
+    image: mongo:3.6
+    ports:
+      - '27017:27017'
+  mailhog:
+    image: mailhog/mailhog
+    ports:
+      - '1025:1025'
+      - '8025:8025'
