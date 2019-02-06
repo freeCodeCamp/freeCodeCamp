@@ -414,119 +414,119 @@ class Row1 extends Component {
 			
 			<div className="row1">
 			<div className="mainKey" id="Backquote" val="ˋ" secval="~">
-			~<br/>
+			~<hr />
 			{"`"}
 			</div>
 			<div className="mainKey" id="Digit1" val="1" secval="!">
-			!<br/>
+			!<hr/>
 			1
 			</div>
 			<div className="mainKey" id="Digit2" val="2" secval='@'>
-			@<br/>
+			@<hr/>
 			2
 			</div>
 			<div className="mainKey" id="Digit3" val="3" secval="#">
-			#<br/>
+			#<hr/>
 			3
 			</div>
 			<div className="mainKey" id="Digit4" val="4" secval="$">
-			$<br/>
+			$<hr/>
 			4
 			</div>
 			<div className="mainKey" id="Digit5" val="5" secval="%">
-			%<br/>
+			%<hr/>
 			5
 			</div>
 			<div className="mainKey" id="Digit6" val="6" secval="^">
-			^<br/>
+			^<hr/>
 			6
 			</div>
 			<div className="mainKey" id="Digit7" val="7" secval="&">
-			&<br/>
+			&<hr/>
 			7
 			</div>
 			<div className="mainKey" id="Digit8" val="8" secval="*">
-			*<br/>
+			*<hr/>
 			8
 			</div>
 			<div className="mainKey" id="Digit9" val="9" secval="(">
-			(<br/>
+			(<hr/>
 			9
 			</div>
 			<div className="mainKey" id="Digit0" val="0" secval=")">
-			)<br/>
+			)<hr/>
 			0
 			</div>
 			<div className="mainKey" id="Minus" val="-" secval="_">
-			_<br/>
+			_<hr/>
 			-
 			</div>
 			<div className="mainKey" id="Equal" val="=" secval="+">
-			+<br/>
+			+<hr/>
 			=
 			</div>
 			<div className="doubleKey" id="Backspace" val="null" secval="null">
-			&larr;	<br/>
-				<br/>
+			&larr;	<hr/>
+				<hr/>
 			</div>
 			</div>
 			:
 			<div className="row1">
 			<div className="mainKey" id="Backquote" val="ˋ" secval="¬">
-			¬<br/>
+			¬<hr/>
 			{"`"}
 			</div>
 			<div className="mainKey" id="Digit1" val="1" secval="!">
-			!<br/>
+			!<hr/>
 			1
 			</div>
 			<div className="mainKey" id="Digit2" val="2" secval='"'>
-			"<br/>
+			"<hr/>
 			2
 			</div>
 			<div className="mainKey" id="Digit3" val="3" secval="£">
-			£<br/>
+			£<hr/>
 			3
 			</div>
 			<div className="mainKey" id="Digit4" val="4" secval="$">
-			$<br/>
+			$<hr/>
 			4
 			</div>
 			<div className="mainKey" id="Digit5" val="5" secval="%">
-			%<br/>
+			%<hr/>
 			5
 			</div>
 			<div className="mainKey" id="Digit6" val="6" secval="^">
-			^<br/>
+			^<hr/>
 			6
 			</div>
 			<div className="mainKey" id="Digit7" val="7" secval="&">
-			&<br/>
+			&<hr/>
 			7
 			</div>
 			<div className="mainKey" id="Digit8" val="8" secval="*">
-			*<br/>
+			*<historyr/>
 			8
 			</div>
 			<div className="mainKey" id="Digit9" val="9" secval="(">
-			(<br/>
+			(<hr/>
 			9
 			</div>
 			<div className="mainKey" id="Digit0" val="0" secval=")">
-			)<br/>
+			)<hr/>
 			0
 			</div>
 			<div className="mainKey" id="Minus" val="-" secval="_">
-			_<br/>
+			_<hr/>
 			-
 			</div>
 			<div className="mainKey" id="Equal" val="=" secval="+">
-			+<br/>
+			+<hr/>
 			=
 			</div>
 			<div className="doubleKey" id="Backspace" val="null" secval="null">
-			&larr;	<br/>
-				<br/>
+			&larr;	<hr/>
+				<hr/>
 			</div>
 			</div>
 		)

@@ -22,6 +22,8 @@
 	/* w3c */
 	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#005757', endColorstr='#008080', GradientType=1);
 	/* ie6-9 */
+    font-size: 80%;
+    font-weight: bold;
 }
 
 
