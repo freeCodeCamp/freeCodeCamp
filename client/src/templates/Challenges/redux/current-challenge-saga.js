@@ -9,6 +9,9 @@ import {
 
 import { post } from '../../../utils/ajax';
 
+import { randomCompliment } from '../utils/get-words';
+import { updateSuccessMessage } from './';
+
 function* currentChallengeSaga({ payload }) {
   const isSignedIn = yield select(isSignedInSelector);
   const currentChallengeId = yield select(currentChallengeIdSelector);
@@ -28,8 +31,13 @@ function* currentChallengeSaga({ payload }) {
   }
 }
 
+function* updateSuccessMessageSaga() {
+  yield put(updateSuccessMessage(randomCompliment()));
+}
+
 export function createCurrentChallengeSaga(types) {
   return [
-    takeEvery(types.challengeMounted, currentChallengeSaga)
+    takeEvery(types.challengeMounted, currentChallengeSaga),
+    takeEvery(types.challengeMounted, updateSuccessMessageSaga)
   ];
 }
