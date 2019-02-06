@@ -27,11 +27,11 @@ handleChange() should take in an event, and use setState to update the component
 submitMessage should add the input to the messages array, and reset the input value
 
 ```JSX
-submitMessage(){
-    this.setState(
-      ({messages}) => ({messages: messages.concat(this.state.input)})
-    );
-    this.setState({input: ''});
+submitMessage() {
+    this.setState({
+      input: '',
+      messages: this.state.messages.concat(this.state.input)
+    });
   }
 ```
 
@@ -67,11 +67,11 @@ class DisplayMessages extends React.Component {
     this.setState({input: e.target.value})
   }
 
-  submitMessage(){
-    this.setState(
-      ({messages}) => ({messages: messages.concat(this.state.input)})
-    );
-    this.setState({input: ''});
+  submitMessage() {
+    this.setState({
+      input: '',
+      messages: this.state.messages.concat(this.state.input)
+    });
   }
 
   render() {
