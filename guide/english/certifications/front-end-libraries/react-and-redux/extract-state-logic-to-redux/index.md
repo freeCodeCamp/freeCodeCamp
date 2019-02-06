@@ -26,6 +26,22 @@ function messageReducer (previousState, action) {
 }
 ```
 
+## Hint 3:
+
+Recall that a store has a state, a getter, and can dispatch actions
+
+```javascript
+let store = {
+  state: [],
+  getState: () => store.state,
+  dispatch: (action) => {
+    if (action.type === ADD) {
+      store.state = messageReducer(store.state, action);
+    }
+  }
+};
+```
+
 ## Solution: 
 
 ```javascript
