@@ -24,16 +24,16 @@ exports.createRedirects = function createRedirects(locations) {
 /* eslint-disable max-len */
 const template = `#api redirect
 
-/internal/*                                   #{{API}}/internal/:splat
+/internal/*                                   #{{API}}/internal/:splat 200
 
 # auth redirects
-/signin                                       #{{API}}/signin 301
-/signup                                       #{{API}}/signin 301
-/email-signin                                 #{{API}}/signin 301
-/login                                        #{{API}}/signin 301
-/deprecated-signin                            #{{API}}/signin 301
-/logout                                       #{{API}}/signout 301
-/passwordless-change                          #{{API}}/confirm-email 301
+/signin                                       #{{API}}/signin 200
+/signup                                       #{{API}}/signin 200
+/email-signin                                 #{{API}}/signin 200
+/login                                        #{{API}}/signin 200
+/deprecated-signin                            #{{API}}/signin 200
+/logout                                       #{{API}}/signout 200
+/passwordless-change                          #{{API}}/confirm-email 200
 
 # certification redirects
 /:username/front-end-certification            /certification/:username/legacy-front-end 301
@@ -42,9 +42,9 @@ const template = `#api redirect
 /:username/full-stack-certification           /certification/:username/full-stack 301
 
 # unsunscribe redirects
-/u/*                                          #{{API}}/u/:splat
-/unsunscribe/*                                #{{API}}/unsunscribe/:splat
-/ue/*                                         #{{API}}/ue/:splat
+/u/*                                          #{{API}}/u/:splat 200
+/unsunscribe/*                                #{{API}}/unsunscribe/:splat 200
+/ue/*                                         #{{API}}/ue/:splat 200
 
 # misc redirects
 /agile                                        / 301
@@ -58,9 +58,9 @@ const template = `#api redirect
 /field-guide/*                                /forum 301
 /learn-to-code                                /learn 200
 /map                                          /learn 200
-/news                                         #{{NEWS}}
-/news/*                                       #{{NEWS}}/:splat
-/forum/*                                      #{{FORUM}}/:splat
+/news                                         #{{NEWS}} 200
+/news/*                                       #{{NEWS}}/:splat 200
+/forum/*                                      #{{FORUM}}/:splat 200
 /privacy                                      #{{FORUM}}/t/free-code-camp-privacy-policy/19545 301
 /nonprofit-project-instructions               #{{FORUM}}/t/how-free-code-camps-nonprofits-projects-work/19547 301
 /how-nonprofit-projects-work                  https://medium.freecodecamp.org/open-source-for-good-1a0ea9f32d5a 301
