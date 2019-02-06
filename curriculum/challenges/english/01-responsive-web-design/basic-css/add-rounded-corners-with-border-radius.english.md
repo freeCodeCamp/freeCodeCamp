@@ -94,10 +94,6 @@ tests:
     <button type="submit">Submit</button>
   </form>
 </main>
-<script>
-  let borderColor = $('.smaller-image').css('border-color');
-  console.log("border-color: ", borderColor);
-</script>
 ```
 
 </div>
