@@ -27,12 +27,13 @@ const template = `#api redirect
 /internal/*                                   #{{API}}/internal/:splat
 
 # auth redirects
-/signup                                       /signin 301
-/email-signin                                 /signin 301
-/login                                        /signin 301
-/deprecated-signin                            /signin 301
-/logout                                       /signout 301
-/passwordless-change                          /confirm-email 301
+/signin                                       #{{API}}/signin 301
+/signup                                       #{{API}}/signin 301
+/email-signin                                 #{{API}}/signin 301
+/login                                        #{{API}}/signin 301
+/deprecated-signin                            #{{API}}/signin 301
+/logout                                       #{{API}}/signout 301
+/passwordless-change                          #{{API}}/confirm-email 301
 
 # certification redirects
 /:username/front-end-certification            /certification/:username/legacy-front-end 301

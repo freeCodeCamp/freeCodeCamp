@@ -6,12 +6,13 @@ exports[`createRedirects matches the snapshot 1`] = `
 /internal/*                                   https://api.example.com/internal/:splat
 
 # auth redirects
-/signup                                       /signin 301
-/email-signin                                 /signin 301
-/login                                        /signin 301
-/deprecated-signin                            /signin 301
-/logout                                       /signout 301
-/passwordless-change                          /confirm-email 301
+/signin                                       https://api.example.com/signin 301
+/signup                                       https://api.example.com/signin 301
+/email-signin                                 https://api.example.com/signin 301
+/login                                        https://api.example.com/signin 301
+/deprecated-signin                            https://api.example.com/signin 301
+/logout                                       https://api.example.com/signout 301
+/passwordless-change                          https://api.example.com/confirm-email 301
 
 # certification redirects
 /:username/front-end-certification            /certification/:username/legacy-front-end 301
