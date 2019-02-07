@@ -6,14 +6,14 @@ videoUrl: ''
 localeTitle: Agrega elementos dentro de tus cajas de Bootstrap
 ---
 
-## Description
+## Descripción
 <section id="description"> Ahora somos varios elementos <code>div</code> en cada columna de nuestra fila. Esto es tan profundo como tendremos que ir. Ahora podemos añadir nuestros elementos de <code>button</code> . Nido de tres <code>button</code> elementos dentro de cada uno de sus <code>well</code> <code>div</code> elementos. </section>
 
-## Instructions
+## Instrucciones
 <section id="instructions">
 </section>
 
-## Tests
+## Pruebas
 <section id='tests'>
 
 ```yml
@@ -63,10 +63,10 @@ tests:
 
 </section>
 
-## Solution
+## Solución
 <section id='solution'>
 
 ```js
-// solution required
+// Solución requerida
 ```
 </section>
