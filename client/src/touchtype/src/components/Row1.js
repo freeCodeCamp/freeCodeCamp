@@ -414,11 +414,11 @@ class Row1 extends Component {
 			
 			<div className="row1">
 			<div className="mainKey" id="Backquote" val="ˋ" secval="~">
-			~<hr />
+			~<br />
 			{"`"}
 			</div>
 			<div className="mainKey" id="Digit1" val="1" secval="!">
-			!<hr/>
+			!<br/>
 			1
 			</div>
 			<div className="mainKey" id="Digit2" val="2" secval='@'>
@@ -426,7 +426,7 @@ class Row1 extends Component {
 			2
 			</div>
 			<div className="mainKey" id="Digit3" val="3" secval="#">
-			#<hr/>
+			#<br/>
 			3
 			</div>
 			<div className="mainKey" id="Digit4" val="4" secval="$">
@@ -434,31 +434,31 @@ class Row1 extends Component {
 			4
 			</div>
 			<div className="mainKey" id="Digit5" val="5" secval="%">
-			%<hr/>
+			%<br/>
 			5
 			</div>
 			<div className="mainKey" id="Digit6" val="6" secval="^">
-			^<hr/>
+			^<br/>
 			6
 			</div>
 			<div className="mainKey" id="Digit7" val="7" secval="&">
-			&<hr/>
+			&<br/>
 			7
 			</div>
 			<div className="mainKey" id="Digit8" val="8" secval="*">
-			*<hr/>
+			*<br/>
 			8
 			</div>
 			<div className="mainKey" id="Digit9" val="9" secval="(">
-			(<hr/>
+			(<br/>
 			9
 			</div>
 			<div className="mainKey" id="Digit0" val="0" secval=")">
-			)<hr/>
+			)<br/>
 			0
 			</div>
 			<div className="mainKey" id="Minus" val="-" secval="_">
-			_<hr/>
+			_<br/>
 			-
 			</div>
 			<div className="mainKey" id="Equal" val="=" secval="+">
@@ -466,22 +466,22 @@ class Row1 extends Component {
 			=
 			</div>
 			<div className="doubleKey" id="Backspace" val="null" secval="null">
-			&larr;	<hr/>
-				<hr/>
+			&larr;	<br/>
+				<br/>
 			</div>
 			</div>
 			:
 			<div className="row1">
 			<div className="mainKey" id="Backquote" val="ˋ" secval="¬">
-			¬<hr/>
+			¬<br/>
 			{"`"}
 			</div>
 			<div className="mainKey" id="Digit1" val="1" secval="!">
-			!<hr/>
+			!<br/>
 			1
 			</div>
 			<div className="mainKey" id="Digit2" val="2" secval='"'>
-			"<hr/>
+			"<br/>
 			2
 			</div>
 			<div className="mainKey" id="Digit3" val="3" secval="£">
@@ -489,19 +489,19 @@ class Row1 extends Component {
 			3
 			</div>
 			<div className="mainKey" id="Digit4" val="4" secval="$">
-			$<hr/>
+			$<br/>
 			4
 			</div>
 			<div className="mainKey" id="Digit5" val="5" secval="%">
-			%<hr/>
+			%<br/>
 			5
 			</div>
 			<div className="mainKey" id="Digit6" val="6" secval="^">
-			^<hr/>
+			^<br/>
 			6
 			</div>
 			<div className="mainKey" id="Digit7" val="7" secval="&">
-			&<hr/>
+			&<br/>
 			7
 			</div>
 			<div className="mainKey" id="Digit8" val="8" secval="*">
@@ -509,7 +509,7 @@ class Row1 extends Component {
 			8
 			</div>
 			<div className="mainKey" id="Digit9" val="9" secval="(">
-			(<hr/>
+			(<br/>
 			9
 			</div>
 			<div className="mainKey" id="Digit0" val="0" secval=")">
@@ -517,16 +517,16 @@ class Row1 extends Component {
 			0
 			</div>
 			<div className="mainKey" id="Minus" val="-" secval="_">
-			_<hr/>
+			_<br/>
 			-
 			</div>
 			<div className="mainKey" id="Equal" val="=" secval="+">
-			+<hr/>
+			+<br/>
 			=
 			</div>
 			<div className="doubleKey" id="Backspace" val="null" secval="null">
-			&larr;	<hr/>
-				<hr/>
+			&larr;	<br/>
+				<br/>
 			</div>
 			</div>
 		)

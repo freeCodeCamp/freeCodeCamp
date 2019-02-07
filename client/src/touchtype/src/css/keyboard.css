@@ -753,7 +753,7 @@
 }
 
 .innerTextBox {
-	height: 60%;
+	height: 63%;
 	width: 100%;
 	font-size: 4rem;
 	font-family: 'Roboto Mono', monospace;
@@ -765,7 +765,7 @@
 	overflow: hidden;
 	position: absolute;
 	left: 40%;
-	top: 30%;
+	top: 25%;
 	background-color: transparent;
 	border: none;
 	white-space: pre;
@@ -785,7 +785,7 @@
 
 
 .innerTextBoxUsed {
-	height: 60%;
+	height: 63%;
 	width: 100%;
 	font-size: 4rem;
 	font-family: 'Roboto Mono', monospace;
@@ -797,7 +797,7 @@
 	overflow: hidden;
 	position: absolute;
 	left: -62%;
-	top: 30%;
+	top: 25%;
 	background-color: transparent;
 	border: none;
 	direction: rtl;

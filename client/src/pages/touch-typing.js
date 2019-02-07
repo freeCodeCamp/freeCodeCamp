@@ -1,10 +1,9 @@
 import React from 'react';
-import Layout from '../components/layouts/TypingLayout';
-const srcCss = require('../touchtype/src/index.css');
+
 
 export default class Typing extends React.Component {
   render() {
-	  
+	  const srcCss = require('../touchtype/src/index.css');
 	  setTimeout(()=> {
           const input = document.getElementsByTagName('input');
           input[0].style.opacity = 0;
