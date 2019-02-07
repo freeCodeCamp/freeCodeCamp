@@ -28,10 +28,12 @@ Change how <code>weight</code> is declared in the <code>Bird</code> function so 
 
 ```yml
 tests:
-  - text: The <code>weight</code> property should be a private variable.
-    testString: assert(!code.match(/this\.weight/g), 'The <code>weight</code> property should be a private variable.');
+  - text: The <code>weight</code> property should be a private variable and should be assigned the value of <code>15</code>.
+    testString: assert(code.match(/(var|let|const)\s+(weight)\s*\=\s*(15)\;/g), 'The <code>weight</code> property should be a private variable and should be assigned the value of <code>15</code>.');
   - text: Your code should create a method in <code>Bird</code> called <code>getWeight</code> that returns the value of the private variable <code>weight</code>.
-    testString: assert((new Bird()).getWeight() !== undefined, 'Your code should create a method in <code>Bird</code> called <code>getWeight</code> that returns the value of the private variable <code>weight</code>.');
+    testString: assert((new Bird()).getWeight() === 15, 'Your code should create a method in <code>Bird</code> called <code>getWeight</code> that returns the value of the private variable <code>weight</code>.');
+  - text: Your <code>getWeight</code> function should return the private variable <code>weight</code>.
+    testString: assert(code.match(/(return)\s+(weight)\;/g) || code.match(/\(\s*\)\s*\=\>\s*(weight)\;/g), 'Your <code>getWeight</code> function should return the private variable <code>weight</code>.');
 
 ```
 
