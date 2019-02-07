@@ -1,14 +1,10 @@
 /* eslint-disable max-len */
 import React, { Component, Fragment } from 'react';
-import PropTypes from 'prop-types';
 import Helmet from 'react-helmet';
-import { connect } from 'react-redux';
 import { StripeProvider, Elements } from 'react-stripe-elements';
-import { createSelector } from 'reselect';
 import { Row, Col } from '@freecodecamp/react-bootstrap';
 
 import { stripePublicKey } from '../../config/env.json';
-import { userSelector } from '../redux';
 
 import Spacer from '../components/helpers/Spacer';
 import DonateForm from '../components/Donation/components/DonateForm';
@@ -16,15 +12,6 @@ import DonateText from '../components/Donation/components/DonateText';
 import PoweredByStripe from '../components/Donation/components/poweredByStripe';
 
 import './index.css';
-
-const propTypes = {
-  email: PropTypes.string,
-  show: PropTypes.bool
-};
-
-const mapStateToProps = createSelector(userSelector, ({ email = '' }) => ({
-  email
-}));
 
 class IndexPage extends Component {
   constructor(...props) {
@@ -66,7 +53,6 @@ class IndexPage extends Component {
   }
 
   render() {
-    const { email = '' } = this.props;
     return (
       <Fragment>
         <Helmet title='Support the freeCodeCamp.org nonprofit' />
@@ -76,16 +62,13 @@ class IndexPage extends Component {
             <h2 className='text-center'>
               Become a Supporter
             </h2>
-            <DonateText/>
+            <DonateText />
           </Col>
           <Col sm={6} smOffset={3} xs={12}>
             <hr />
             <StripeProvider stripe={this.state.stripe}>
               <Elements>
-                <DonateForm
-                  email={email}
-                  maybeButton={() => null}
-                />
+                <DonateForm />
               </Elements>
             </StripeProvider>
             <div className='text-center'>
@@ -102,6 +85,5 @@ class IndexPage extends Component {
 }
 
 IndexPage.displayName = 'IndexPage';
-IndexPage.propTypes = propTypes;
 
-export default connect(mapStateToProps)(IndexPage);
+export default IndexPage;

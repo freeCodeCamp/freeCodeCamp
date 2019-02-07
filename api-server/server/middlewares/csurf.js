@@ -11,7 +11,7 @@ export default function() {
   return function csrf(req, res, next) {
 
     const path = req.path.split('/')[1];
-    if (/(^api$|^external$|^internal$|^p$)/.test(path)) {
+    if (/(^api$|^unauthenticated$|^internal$|^p$)/.test(path)) {
       return next();
     }
     return protection(req, res, next);

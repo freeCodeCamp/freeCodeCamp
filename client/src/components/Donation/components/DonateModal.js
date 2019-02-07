@@ -11,7 +11,6 @@ import { stripePublicKey } from '../../../../config/env.json';
 import ga from '../../../analytics';
 import DonateForm from './DonateForm';
 import {
-  userSelector,
   closeDonationModal,
   isDonationModalOpenSelector
 } from '../../../redux';
@@ -22,9 +21,8 @@ import DonateText from './DonateText';
 import '../Donation.css';
 
 const mapStateToProps = createSelector(
-  userSelector,
   isDonationModalOpenSelector,
-  ({ email }, show) => ({ email, show })
+  show => ({ show })
 );
 
 const mapDispatchToProps = dispatch =>
@@ -37,7 +35,6 @@ const mapDispatchToProps = dispatch =>
 
 const propTypes = {
   closeDonationModal: PropTypes.func.isRequired,
-  email: PropTypes.string,
   show: PropTypes.bool
 };
 
@@ -76,14 +73,14 @@ class DonateModal extends Component {
       return closeDonationModal();
     };
     return (
-      <div className='maybe-later-container'>
-        <Button bsStyle='link' onClick={handleClick}>Maybe later</Button>
+      <div className='modal-close-btn-container'>
+        <Button bsStyle='link' onClick={handleClick}>Close</Button>
       </div>
     );
   }
 
   render() {
-    const { email, show } = this.props;
+    const { show } = this.props;
     if (show) {
       ga.modalview('/donation-modal');
     }
@@ -97,11 +94,9 @@ class DonateModal extends Component {
                 </Modal.Title>
               </Modal.Header>
               <Modal.Body>
-                <DonateText/>
-                <DonateForm
-                  email={email}
-                  maybeButton={this.renderMaybe}
-                />
+                <DonateText />
+                <DonateForm />
+                {this.renderMaybe()}
               </Modal.Body>
               <Modal.Footer>
               <PoweredByStripe />

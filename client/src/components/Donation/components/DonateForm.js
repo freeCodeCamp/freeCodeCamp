@@ -1,5 +1,7 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
+import { connect } from 'react-redux';
+import { createSelector } from 'reselect';
 import isEmail from 'validator/lib/isEmail';
 import {
   Button,
@@ -10,14 +12,15 @@ import {
 } from '@freecodecamp/react-bootstrap';
 import { injectStripe } from 'react-stripe-elements';
 
+import { apiLocation } from '../../../../config/env.json';
 import Spacer from '../../../components/helpers/Spacer';
 import StripeCardForm from './StripeCardForm';
 import DonateCompletion from './DonateCompletion';
 import { postJSON$ } from '../../../templates/Challenges/utils/ajax-stream.js';
+import { userSelector, isSignedInSelector } from '../../../redux';
 
 const propTypes = {
   email: PropTypes.string,
-  maybeButton: PropTypes.func.isRequired,
   stripe: PropTypes.shape({
     createToken: PropTypes.func.isRequired
   })
@@ -30,6 +33,12 @@ const initialSate = {
     error: ''
   }
 };
+
+const mapStateToProps = createSelector(
+  userSelector,
+  isSignedInSelector,
+  ({ email }, isSignedIn) => ({ email, isSignedIn })
+);
 
 class DonateForm extends Component {
   constructor(...args) {
@@ -49,7 +58,6 @@ class DonateForm extends Component {
     this.resetDonation = this.resetDonation.bind(this);
     this.submit = this.submit.bind(this);
   }
-
 
   getUserEmail() {
     const { email: stateEmail } = this.state;
@@ -103,6 +111,7 @@ class DonateForm extends Component {
 
   postDonation(token) {
     const { donationAmount: amount } = this.state;
+    const { isSignedIn } = this.props;
     this.setState(state => ({
       ...state,
       donationState: {
@@ -110,7 +119,10 @@ class DonateForm extends Component {
         processing: true
       }
     }));
-    const chargeStripePath = '/unauthenticated/donate/charge-stripe';
+
+    const chargeStripePath = isSignedIn ?
+      '/internal/donate/charge-stripe' :
+      `${apiLocation}/unauthenticated/donate/charge-stripe`;
     return postJSON$(chargeStripePath, {
       token,
       amount
@@ -148,9 +160,7 @@ class DonateForm extends Component {
   }
 
   renderCompletion(props) {
-    return (
-      <DonateCompletion {...props}/>
-    );
+    return <DonateCompletion {...props} />;
   }
 
   renderDonateForm() {
@@ -163,11 +173,11 @@ class DonateForm extends Component {
               Email (we'll send you a tax-deductible donation receipt):
             </ControlLabel>
             <FormControl
-                onChange={this.handleEmailChange}
-                placeholder='me@example.com'
-                required={true}
-                type='text'
-                value={this.getUserEmail()}
+              onChange={this.handleEmailChange}
+              placeholder='me@example.com'
+              required={true}
+              type='text'
+              value={this.getUserEmail()}
             />
           </FormGroup>
           <StripeCardForm getValidationState={this.getValidationState} />
@@ -183,7 +193,6 @@ class DonateForm extends Component {
           </Button>
           <Spacer />
         </Form>
-        {this.props.maybeButton()}
       </div>
     );
   }
@@ -207,4 +216,4 @@ class DonateForm extends Component {
 DonateForm.displayName = 'DonateForm';
 DonateForm.propTypes = propTypes;
 
-export default injectStripe(DonateForm);
+export default injectStripe(connect(mapStateToProps)(DonateForm));
