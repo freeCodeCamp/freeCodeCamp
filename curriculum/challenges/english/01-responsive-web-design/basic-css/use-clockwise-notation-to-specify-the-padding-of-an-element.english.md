@@ -31,7 +31,7 @@ tests:
   - text: Your <code>blue-box</code> class should give the left of elements <code>40px</code> of <code>padding</code>.
     testString: assert($(".blue-box").css("padding-left") === "40px", 'Your <code>blue-box</code> class should give the left of elements <code>40px</code> of <code>padding</code>.');
   - text: You should use the clockwise notation to set the padding of <code>blue-box</code> class.
-    testString: assert(!/padding-top|padding-right|padding-bottom|padding-left/.test(code), 'You should use the clockwise notation to set the padding of <code>blue-box</code> class.');
+    testString: assert(!/padding-top|padding-right|padding-bottom|padding-left/.test(code.replace(/(\/\*[^*]*\*\/)|(\/\/[^\n]*)/g, '')), 'You should use the clockwise notation to set the padding of <code>blue-box</code> class.');
 
 ```
 
