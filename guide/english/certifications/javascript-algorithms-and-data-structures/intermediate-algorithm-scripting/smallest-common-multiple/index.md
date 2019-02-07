@@ -153,45 +153,25 @@ Note: If the array only has two elements, then the `for` loop never gets used an
 
 ## ![:rotating_light:](https://forum.freecodecamp.com/images/emoji/emoji_one/rotating_light.png?v=3 ":rotating_light:") Advanced Code Solution:
 
-    function smallestCommons(arr) {
+    function smallestCommons(arr) {  
+        // Euclidean algorithm for the greatest common divisor.
+        // ref: https://en.wikipedia.org/wiki/Euclidean_algorithm
+        const gcd = (a, b) => b === 0 ? a : gcd(b, a % b);
 
-      // range
-      let min = Math.min.apply(null, arr);
-      let max = Math.max.apply(null, arr);
+        // Least Common Multiple for two numbers based on GCD
+        const lcm = (a, b) => (a * b) / gcd(a, b);
 
-      let smallestCommon = lcm(min, min + 1);
+        // range
+        let [min, max] = arr.sort((a, b)=> a - b);
+        let currentLCM = min;
 
-      while(min < max) {
-        min++;
-        smallestCommon = lcm(smallestCommon, min);
-      }
+        while (min < max) {
+            currentLCM = lcm(currentLCM, ++min);
+        }
 
-      return smallestCommon;
-    }
-
-    /**
-     * Calculates Greatest Common Divisor
-     * of two nubers using Euclidean algorithm
-     * https://en.wikipedia.org/wiki/Euclidean_algorithm
-     */
-    function gcd(a, b) {
-      while (b > 0) {
-        let tmp = a;
-        a = b;
-        b = tmp % b;
-      }
-      return a;
-    }
-
-    /**
-     * Calculates Least Common Multiple
-     * for two numbers utilising GCD
-     */
-    function lcm(a, b) {
-      return (a * b / gcd(a, b));
-    }
-
-
+        return currentLCM;
+    };
+    
     // test here
     smallestCommons([1,5]);
     
@@ -199,13 +179,13 @@ Note: If the array only has two elements, then the `for` loop never gets used an
 
 ### Code Explanation:
 
-*   Extract minimum and maximum from provided **arr**.
+*   Extract minimum and maximum from provided **arr** by sorting and grabbing the first and last values.
 *   Initialise **smallestCommon** with the LCM of first two numbers.
 *   Loop through range computing LCM of current LCM and next number in range **lcm(a, b, c) = lcm(lcm(a, b), c)**.
 
 #### Relevant Links
 
-*   <a href='https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Function/apply' target='_blank' rel='nofollow'>JS Function.prototype.apply()</a>
+*   <a href='https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Arithmetic_Operators#Increment' target='_blank' rel='nofollow'>Prefix increment operator ++</a>
 
 
 ## ![:clipboard:](https://forum.freecodecamp.com/images/emoji/emoji_one/clipboard.png?v=3 ":clipboard:") NOTES FOR CONTRIBUTIONS:

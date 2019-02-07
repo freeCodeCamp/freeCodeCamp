@@ -30,9 +30,9 @@ The <code>positionData</code> variable holds a 3-dimensional (3D) array. Use a D
 ```yml
 tests:
   - text: The text in the <code>h2</code> should be 8.
-    testString: 'assert(output == 8 && $("h2").text() == "8", "The text in the <code>h2</code> should be 8.");'
+    testString: assert(output == 8 && $('h2').text() == '8', 'The text in the <code>h2</code> should be 8.');
   - text: Your code should use the <code>max()</code> method.
-    testString: 'assert(code.match(/\.max/g), "Your code should use the <code>max()</code> method.")'
+    testString: assert(code.match(/\.max/g), 'Your code should use the <code>max()</code> method.')
 
 ```
 
@@ -46,7 +46,7 @@ tests:
 ```html
 <body>
   <script>
-    const positionData = [[1, 7, -4],[6, 3, 8],[2, 8, 3]]
+    const positionData = [[1, 7, -4],[6, 3, 8],[2, 9, 3]]
     // Add your code below this line
 
     const output = undefined; // Change this line

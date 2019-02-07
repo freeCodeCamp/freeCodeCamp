@@ -94,3 +94,11 @@ The location of the backtick key can be different on differnt keyboards, and if 
 
 ### Alt Code
 Finally, the backtick key has an alt code, which should work on any keybord. If you can't find a backtick key on your keyboard, you can hold the Alt key, and press 9, then 6 (Alt + 9, 6). This will insert a backtick.
+
+### Markdown Converter Tools
+
+[Browserling](https://www.browserling.com/tools/html-to-markdown)
+World's simplest HTML to Markdown transformer. Just paste your HTML in the form below, press Convert to Markdown button, and you get Markdown. Press button, get Markdown. No ads, nonsense or garbage.
+
+[Turndown](https://domchristie.github.io/turndown/)
+An HTML to Markdown converter written in JavaScript.

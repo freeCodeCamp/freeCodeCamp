@@ -25,11 +25,11 @@ Let's remove the <code>btn-default</code> class from all of our <code>button</co
 ```yml
 tests:
   - text: Remove the <code>btn-default</code> class from all of your <code>button</code> elements.
-    testString: 'assert($(".btn-default").length === 0, "Remove the <code>btn-default</code> class from all of your <code>button</code> elements.");'
+    testString: assert($(".btn-default").length === 0, 'Remove the <code>btn-default</code> class from all of your <code>button</code> elements.');
   - text: Only use jQuery to remove this class from the element.
-    testString: 'assert(code.match(/btn btn-default/g), "Only use jQuery to remove this class from the element.");'
+    testString: assert(code.match(/btn btn-default/g), 'Only use jQuery to remove this class from the element.');
   - text: Only remove the <code>btn-default</code> class.
-    testString: 'assert(code.match(/\.[\v\s]*removeClass[\s\v]*\([\s\v]*("|")\s*btn-default\s*("|")[\s\v]*\)/gm), "Only remove the <code>btn-default</code> class.");'
+    testString: assert(code.match(/\.[\v\s]*removeClass[\s\v]*\([\s\v]*('|")\s*btn-default\s*('|")[\s\v]*\)/gm), 'Only remove the <code>btn-default</code> class.');
 
 ```
 
