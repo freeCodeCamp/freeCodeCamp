@@ -2,10 +2,98 @@
 import React, { Component, Fragment } from 'react';
 import Helmet from 'react-helmet';
 import { Grid, Col, Row } from '@freecodecamp/react-bootstrap';
-
 import Spacer from '../components/helpers/Spacer';
 
+const payPalPayments = [
+  { eventLabel: 'paypal',
+    eventValue: 5,
+    defaultValueHash: 'KTAXU8B4MYAT8',
+    defaultValue: 'Donate $5 each month'
+  },
+  { eventLabel: 'paypal',
+    eventValue: 10,
+    defaultValueHash: 'BYEBQEHS5LHNC',
+    defaultValue: 'Donate $10 each month'
+  },
+  { eventLabel: 'paypal',
+    eventValue: 35,
+    defaultValueHash: '57ZPMKJ8G893Y',
+    defaultValue: 'Donate $35 each month'
+  },
+  { eventLabel: 'paypal',
+    eventValue: 50,
+    defaultValueHash: '2ZVYTHK6Q7AFW',
+    defaultValue: 'Donate $50 each month'
+  },
+  { eventLabel: 'paypal',
+    eventValue: 100,
+    defaultValueHash: 'C7PUT3LMJHKK2',
+    defaultValue: 'Donate $100 each month'
+  },
+  { eventLabel: 'paypal',
+    eventValue: 250,
+    defaultValueHash: '69JGTY4DHSTEN',
+    defaultValue: 'Donate $250 each month'
+  },
+  { eventLabel: 'paypal one time donation',
+    eventValue: 0,
+    defaultValueHash: 'B256JC6ZCWD3J',
+    defaultValue: 'Make a one-time donation'
+  }
+];
+
 class IndexPage extends Component {
+    constructor(props, context) {
+    super(props, context);
+    this.state = {
+      category: '',
+      action: '',
+      label: ''
+    };
+  }
+
+  formbuilder(eventLabel, eventValue, defaultValueHash, defaultValue) {
+    return (
+      <form
+        action='//www.paypal.com/cgi-bin/webscr'
+        method='post'
+        onSubmit={`ga('send',  { hitType: 'event', eventCategory: 'donation', eventAction: 'click', eventLabel: ${eventLabel} 'paypal', eventValue: ${eventValue} } );`}
+        target='_blank'
+        >
+        <input defaultValue='_s-xclick' name='cmd' type='hidden' />{' '}
+        <input
+          defaultValue={defaultValueHash}
+          name='hosted_button_id'
+          type='hidden'
+        />{' '}
+        <input
+          className='btn btn-cta signup-btn btn-block'
+          defaultValue={defaultValue}
+          name='submit'
+          type='submit'
+        />
+      </form>
+    );
+  }
+
+  formfilter = (array, frequency) => {
+    let returnVal;
+    if (frequency === 'monthly') {
+      returnVal = array
+        .filter(item => item.eventValue > 0)
+        .map((item) => {
+          return this.formbuilder(item.eventLabel, item.eventValue, item.defaultValueHash, item.defaultValue);
+      });
+    } else {
+      returnVal = array
+        .filter(item => item.eventValue === 0)
+        .map((item) => {
+          return this.formbuilder(item.eventLabel, item.eventValue, item.defaultValueHash, item.defaultValue);
+      });
+    }
+    return returnVal;
+  }
+
   render() {
   return (
     <Fragment>
@@ -32,125 +120,7 @@ class IndexPage extends Component {
               the links below and following the instructions on PayPal. You can
               easily stop your donations at any time in the future.
             </p>
-            <form
-              action='//www.paypal.com/cgi-bin/webscr'
-              method='post'
-              onSubmit="ga('send',  { hitType: 'event', eventCategory: 'donation', eventAction: 'click', eventLabel: 'paypal', eventValue: 5 } );"
-              target='_blank'
-              >
-              <input defaultValue='_s-xclick' name='cmd' type='hidden' />{' '}
-              <input
-                defaultValue='KTAXU8B4MYAT8'
-                name='hosted_button_id'
-                type='hidden'
-              />{' '}
-              <input
-                className='btn btn-cta signup-btn btn-block'
-                defaultValue='Donate $5 each month'
-                name='submit'
-                type='submit'
-              />
-            </form>
-            <div className='spacer' />
-            <form
-              action='//www.paypal.com/cgi-bin/webscr'
-              method='post'
-              onSubmit="ga('send',  { hitType: 'event', eventCategory: 'donation', eventAction: 'click', eventLabel: 'paypal', eventValue: 10} );"
-              target='_blank'
-              >
-              <input defaultValue='_s-xclick' name='cmd' type='hidden' />{' '}
-              <input
-                defaultValue='BYEBQEHS5LHNC'
-                name='hosted_button_id'
-                type='hidden'
-              />{' '}
-              <input
-                className='btn btn-cta signup-btn btn-block'
-                defaultValue='Donate $10 each month'
-                name='submit'
-                type='submit'
-              />
-            </form>
-            <div className='spacer' />
-            <form
-              action='//www.paypal.com/cgi-bin/webscr'
-              method='post'
-              onSubmit="ga('send',  { hitType: 'event', eventCategory: 'donation', eventAction: 'click', eventLabel: 'paypal', eventValue: 35} );"
-              target='_blank'
-              >
-              <input defaultValue='_s-xclick' name='cmd' type='hidden' />{' '}
-              <input
-                defaultValue='57ZPMKJ8G893Y'
-                name='hosted_button_id'
-                type='hidden'
-              />{' '}
-              <input
-                className='btn btn-cta signup-btn btn-block'
-                defaultValue='Donate $35 each month'
-                name='submit'
-                type='submit'
-              />
-            </form>
-            <div className='spacer' />
-            <form
-              action='//www.paypal.com/cgi-bin/webscr'
-              method='post'
-              onSubmit="ga('send', { hitType: 'event', eventCategory: 'donation', eventAction: 'click', eventLabel: 'paypal', eventValue: 50} );"
-              target='_blank'
-              >
-              <input defaultValue='_s-xclick' name='cmd' type='hidden' />{' '}
-              <input
-                defaultValue='2ZVYTHK6Q7AFW'
-                name='hosted_button_id'
-                type='hidden'
-              />{' '}
-              <input
-                className='btn btn-cta signup-btn btn-block'
-                defaultValue='Donate $50 each month'
-                name='submit'
-                type='submit'
-              />
-            </form>
-            <div className='spacer' />
-            <form
-              action='//www.paypal.com/cgi-bin/webscr'
-              method='post'
-              onSubmit="ga('send', { hitType: 'event', eventCategory: 'donation', eventAction: 'click', eventLabel: 'paypal', eventValue: 100} );"
-              target='_blank'
-              >
-              <input defaultValue='_s-xclick' name='cmd' type='hidden' />{' '}
-              <input
-                defaultValue='C7PUT3LMJHKK2'
-                name='hosted_button_id'
-                type='hidden'
-              />{' '}
-              <input
-                className='btn btn-cta signup-btn btn-block'
-                defaultValue='Donate $100 each month'
-                name='submit'
-                type='submit'
-              />
-            </form>
-            <div className='spacer' />
-            <form
-              action='//www.paypal.com/cgi-bin/webscr'
-              method='post'
-              onSubmit="ga('send', { hitType: 'event', eventCategory: 'donation', eventAction: 'click', eventLabel: 'paypal', eventValue: 250} );"
-              target='_blank'
-              >
-              <input defaultValue='_s-xclick' name='cmd' type='hidden' />{' '}
-              <input
-                defaultValue='69JGTY4DHSTEN'
-                name='hosted_button_id'
-                type='hidden'
-              />{' '}
-              <input
-                className='btn btn-cta signup-btn btn-block'
-                defaultValue='Donate $250 each month'
-                name='submit'
-                type='submit'
-              />
-            </form>
+            {this.formfilter(payPalPayments, 'monthly')}
             <hr />
             <h3>Make a one-time donation using PayPal</h3>
             <p>
@@ -158,25 +128,7 @@ class IndexPage extends Component {
               amount of money by clicking one of the links below and following the
               instructions on PayPal:
             </p>
-            <form
-              action='//www.paypal.com/cgi-bin/webscr'
-              method='post'
-              onSubmit="ga('send', { hitType: 'event', eventCategory: 'donation', eventAction: 'click', eventLabel: 'paypal one time donation', eventValue: 0} );"
-              target='_blank'
-              >
-              <input defaultValue='_s-xclick' name='cmd' type='hidden' />{' '}
-              <input
-                defaultValue='B256JC6ZCWD3J'
-                name='hosted_button_id'
-                type='hidden'
-              />{' '}
-              <input
-                className='btn btn-cta signup-btn btn-block'
-                defaultValue='Make a one-time donation'
-                name='submit'
-                type='submit'
-              />
-            </form>
+            {this.formfilter(payPalPayments)}
             <hr />
             <h3>Get your employer to match your donation</h3>
             <p>
