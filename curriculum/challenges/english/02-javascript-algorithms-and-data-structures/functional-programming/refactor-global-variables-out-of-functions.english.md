@@ -65,9 +65,10 @@ function add (bookName) {
 
 // Add your code below this line
 function remove (bookName) {
-  if (bookList.indexOf(bookName) >= 0) {
+  var book_index = bookList.indexOf(bookName);
+  if (book_index >= 0) {
 
-    bookList.splice(0, 1, bookName);
+    bookList.splice(book_index, 1);
     return bookList;
 
     // Add your code above this line
