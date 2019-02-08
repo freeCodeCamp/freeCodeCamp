@@ -1,5 +1,5 @@
 ---
-  title : Features of BlockTech
+title: Features of BlockTech
 localeTitle: ميزات BlockTech
 ---
 ## ملامح تقنية Blockchain

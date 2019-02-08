@@ -16,7 +16,7 @@ Here <code>getHachedEggCount</code> is a privileged method, because it has acces
 
 ## Instructions
 <section id='instructions'>
-Change how <code>weight</code> is declared in the <code>Bird</code> function so it is a private variable. Then, create a method <code>getWeight</code> that returns the value of <code>weight</code>.
+Change how <code>weight</code> is declared in the <code>Bird</code> function so it is a private variable. Then, create a method <code>getWeight</code> that returns the value of <code>weight</code> 15.
 </section>
 
 ## Tests
@@ -25,9 +25,9 @@ Change how <code>weight</code> is declared in the <code>Bird</code> function so 
 ```yml
 tests:
   - text: The <code>weight</code> property should be a private variable.
-    testString: 'assert(!code.match(/this\.weight/g), "The <code>weight</code> property should be a private variable.");'
+    testString: assert(!code.match(/this\.weight/g), 'The <code>weight</code> property should be a private variable.');
   - text: Your code should create a method in <code>Bird</code> called <code>getWeight</code> that returns the <code>weight</code>.
-    testString: 'assert((new Bird()).getWeight() === 15, "Your code should create a method in <code>Bird</code> called <code>getWeight</code> that returns the <code>weight</code>.");'
+    testString: assert((new Bird()).getWeight() === 15, 'Your code should create a method in <code>Bird</code> called <code>getWeight</code> that returns the <code>weight</code>.');
 
 ```
 

@@ -1,5 +1,8 @@
-##localeTitle: undefined
- HTTP
+---
+title: HTTP
+localeTitle: HTTP
+---
+## HTTP
 
 Node.js имеет набор встроенных модулей, которые вы можете использовать без дальнейшей установки. Аналогично, **HTTP-модуль** содержит набор функций, необходимых для передачи данных по протоколу гипертекстовой передачи (HTTP).
 
@@ -8,7 +11,7 @@ Node.js имеет набор встроенных модулей, которы�
 Чтобы включить модуль, используйте функцию `require()` с именем модуля.
 
 ```javascript
-const http = require('http'); 
+const http = require('http');
 ```
 
 ## Node.js как веб-сервер
@@ -16,16 +19,16 @@ const http = require('http');
 Метод `createServer()` используется для создания HTTP-сервера. Первый аргумент метода `res.writeHead()` - это код состояния, `200` означает, что все в порядке, второй аргумент - это объект, содержащий заголовки ответов.
 
 ```javascript
-const http = require('http'); 
- 
- //create a server object: 
- http.createServer((req, res) => { 
-  res.writeHead(200, {'Content-Type': 'text/plain'}); 
-  res.write('Hello World!'); //write a response to the client 
-  res.end(); //end the response 
- }).listen(8000); //the server object listens on port 8000 
- 
- console.log("Server is listening on port no : 8000"); 
+const http = require('http');
+
+ //create a server object:
+ http.createServer((req, res) => {
+  res.writeHead(200, {'Content-Type': 'text/plain'});
+  res.write('Hello World!'); //write a response to the client
+  res.end(); //end the response
+ }).listen(8000); //the server object listens on port 8000
+
+ console.log("Server is listening on port no : 8000");
 ```
 
 ### Шаги для выполнения:
