@@ -7,6 +7,8 @@ import { Button, Modal } from '@freecodecamp/react-bootstrap';
 import ga from '../../../analytics';
 import { createQuestion, closeModal, isHelpModalOpenSelector } from '../redux';
 
+import './help-modal.css';
+
 const mapStateToProps = state => ({ isOpen: isHelpModalOpenSelector(state) });
 const mapDispatchToProps = dispatch =>
   bindActionCreators(
@@ -31,14 +33,14 @@ export class HelpModal extends Component {
       ga.modalview('/help-modal');
     }
     return (
-      <Modal onHide={closeHelpModal} show={isOpen}>
+      <Modal dialogClassName='help-modal' onHide={closeHelpModal} show={isOpen}>
         <Modal.Header
           className='help-modal-header fcc-modal'
           closeButton={true}
           >
           <Modal.Title className='text-center'>Ask for help?</Modal.Title>
         </Modal.Header>
-        <Modal.Body className='text-center'>
+        <Modal.Body className='help-modal-body text-center'>
           <h3>
             If you've already tried the&nbsp;
             <a

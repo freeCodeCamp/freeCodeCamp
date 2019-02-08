@@ -1,13 +1,26 @@
 import React, { Component } from 'react';
+import { bindActionCreators } from 'redux';
+import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
+
+import { previewMounted } from '../redux';
 
 import './preview.css';
 
 const mainId = 'fcc-main-frame';
 
+const mapDispatchToProps = dispatch =>
+  bindActionCreators(
+    {
+      previewMounted
+    },
+    dispatch
+  );
+
 const propTypes = {
   className: PropTypes.string,
-  disableIframe: PropTypes.bool
+  disableIframe: PropTypes.bool,
+  previewMounted: PropTypes.func.isRequired
 };
 
 class Preview extends Component {
@@ -17,6 +30,10 @@ class Preview extends Component {
     this.state = {
       iframeStatus: props.disableIframe
     };
+  }
+
+  componentDidMount() {
+    this.props.previewMounted();
   }
 
   componentDidUpdate(prevProps) {
@@ -39,4 +56,7 @@ class Preview extends Component {
 Preview.displayName = 'Preview';
 Preview.propTypes = propTypes;
 
-export default Preview;
+export default connect(
+  null,
+  mapDispatchToProps
+)(Preview);

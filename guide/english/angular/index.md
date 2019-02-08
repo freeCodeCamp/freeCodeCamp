@@ -14,18 +14,32 @@ Google released the initial version of AngularJS on October 20, 2010. Stable rel
 
 After some modifications, Angular 4.0 was released in December 2016. Angular 4 is backward compatible with Angular 2.0, and some new features are the HttpClient library and new router life cycle events. Angular 5 released on November 1, 2017, a major feature of which is support for progressive web apps. Angular 6 was released in May 2018, and Angular 7 in October, 2018. The latest stable version is [7.0.0](https://angular.io/guide/releases).
 
-**Install**:
+## Installation
 
 The easiest way to install Angular is through [Angular CLI](https://cli.angular.io/). This tool allows the creation of new projects and generating components, services, modules, and so on, to a standard the Angular team consider to be best practices.
 
+### Angular 2.x and Up
+
+#### Install Angular CLI
 ```shell
 npm install -g @angular/cli
-
-ng new example-app
-
-cd example-app
-
-ng serve
 ```
+
+#### Create a Workspace and Initial Application
+You develop apps in the context of an Angular workspace. A workspace contains the files for one or more projects. A project is the set of files that comprise an app, a library, or end-to-end (e2e) tests.
+```shell
+ng new my-app
+```
+
+#### Serve the Application
+Angular includes a server so that you can easily build and serve your app locally.
+  1. Navigate to the workspace folder (`my-app`)
+  2. Launch the server by using the CLI command `ng serve` with the `--open` option
+```shell
+cd my-app
+ng serve --open
+```
+
+Hooray, you created your first angular app!!!
 
 For more information, refer to the official docs for [Angular](https://angular.io/docs) or [Angular CLI](https://cli.angular.io/).

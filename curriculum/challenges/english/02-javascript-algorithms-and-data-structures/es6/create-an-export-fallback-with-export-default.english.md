@@ -46,11 +46,10 @@ function subtract(x,y) {return x - y;}
 <div id='js-setup'>
 
 ```js
-window.exports = function(){};
+self.exports = function(){};
 ```
 
 </div>
-
 
 </section>
 
@@ -58,6 +57,7 @@ window.exports = function(){};
 <section id='solution'>
 
 ```js
-// solution required
+export default function subtract(x,y) {return x - y;}
 ```
+
 </section>
