@@ -1,7 +1,9 @@
 /* eslint-disable max-len */
 import React, { Component, Fragment } from 'react';
 import Helmet from 'react-helmet';
+import ReactGA from 'react-ga';
 import { Grid, Col, Row } from '@freecodecamp/react-bootstrap';
+
 import Spacer from '../components/helpers/Spacer';
 
 const payPalPayments = [
@@ -45,53 +47,48 @@ const payPalPayments = [
 class IndexPage extends Component {
     constructor(props, context) {
     super(props, context);
-    this.state = {
-      category: '',
-      action: '',
-      label: ''
-    };
   }
 
   formbuilder(eventLabel, eventValue, defaultValueHash, defaultValue) {
     return (
-      <form
-        action='//www.paypal.com/cgi-bin/webscr'
-        method='post'
-        onSubmit={`ga('send',  { hitType: 'event', eventCategory: 'donation', eventAction: 'click', eventLabel: ${eventLabel} 'paypal', eventValue: ${eventValue} } );`}
-        target='_blank'
-        >
-        <input defaultValue='_s-xclick' name='cmd' type='hidden' />{' '}
-        <input
-          defaultValue={defaultValueHash}
-          name='hosted_button_id'
-          type='hidden'
-        />{' '}
-        <input
-          className='btn btn-cta signup-btn btn-block'
-          defaultValue={defaultValue}
-          name='submit'
-          type='submit'
-        />
-      </form>
+      <div onClick={()=> ReactGA.event({category: 'Donation', action: 'paypal', label: eventValue.toString()})}>
+        <form
+          action='//www.paypal.com/cgi-bin/webscr'
+          method='post'
+          onSubmit={`ga('send',  { hitType: 'event', eventCategory: 'donation', eventAction: 'click', eventLabel: ${eventLabel} 'paypal', eventValue: ${eventValue} } );`}
+          target='_blank'
+          >
+          <input defaultValue='_s-xclick' name='cmd' type='hidden' />{' '}
+          <input
+            defaultValue={defaultValueHash}
+            name='hosted_button_id'
+            type='hidden'
+          />{' '}
+          <input
+            className='btn btn-cta signup-btn btn-block'
+            defaultValue={defaultValue}
+            name='submit'
+            type='submit'
+          />
+        </form>
+      </div>
     );
   }
 
   formfilter = (array, frequency) => {
-    let returnVal;
     if (frequency === 'monthly') {
-      returnVal = array
+      return array
         .filter(item => item.eventValue > 0)
         .map((item) => {
           return this.formbuilder(item.eventLabel, item.eventValue, item.defaultValueHash, item.defaultValue);
       });
     } else {
-      returnVal = array
+      return array
         .filter(item => item.eventValue === 0)
         .map((item) => {
           return this.formbuilder(item.eventLabel, item.eventValue, item.defaultValueHash, item.defaultValue);
       });
     }
-    return returnVal;
   }
 
   render() {
