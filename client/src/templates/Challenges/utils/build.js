@@ -1,5 +1,8 @@
 import { transformers } from '../rechallenge/transformers';
 import { cssToHtml, jsToHtml, concatHtml } from '../rechallenge/builders.js';
+import { challengeTypes } from '../../../../utils/challengeTypes';
+import createWorker from './worker-executor';
+import { createTestFramer, runTestInTestFrame } from './frame';
 
 const frameRunner = [
   {
@@ -49,9 +52,62 @@ function checkFilesErrors(files) {
   return files;
 }
 
-export function buildDOMChallenge(files, meta = {}) {
-  const { required = [], template = '' } = meta;
+const buildFunctions = {
+  [challengeTypes.js]: buildJSChallenge,
+  [challengeTypes.bonfire]: buildJSChallenge,
+  [challengeTypes.html]: buildDOMChallenge,
+  [challengeTypes.modern]: buildDOMChallenge,
+  [challengeTypes.backend]: buildBackendChallenge
+};
+
+export async function buildChallenge(challengeData) {
+  const { challengeType } = challengeData;
+  let build = buildFunctions[challengeType];
+  if (build) {
+    return build(challengeData);
+  }
+  return null;
+}
+
+const testRunners = {
+  [challengeTypes.js]: getJSTestRunner,
+  [challengeTypes.html]: getDOMTestRunner,
+  [challengeTypes.backend]: getDOMTestRunner
+};
+export function getTestRunner(buildData, proxyLogger, document) {
+  return testRunners[buildData.challengeType](buildData, proxyLogger, document);
+}
+
+function getJSTestRunner({ build, sources }, proxyLogger) {
+  const code = sources && 'index' in sources ? sources['index'] : '';
+
+  const testWorker = createWorker('test-evaluator');
+
+  return async(testString, testTimeout) => {
+    try {
+      testWorker.on('LOG', proxyLogger);
+      return await testWorker.execute(
+        { build, testString, code, sources },
+        testTimeout
+      );
+    } finally {
+      testWorker.killWorker();
+      testWorker.remove('LOG', proxyLogger);
+    }
+  };
+}
+
+async function getDOMTestRunner(buildData, proxyLogger, document) {
+  await new Promise(resolve =>
+    createTestFramer(document, resolve, proxyLogger)(buildData)
+  );
+  return (testString, testTimeout) =>
+    runTestInTestFrame(document, testString, testTimeout);
+}
+
+export function buildDOMChallenge({ files, required = [], template = '' }) {
   const finalRequires = [...globalRequires, ...required, ...frameRunner];
+  const loadEnzyme = Object.keys(files).some(key => files[key].ext === 'jsx');
   const toHtml = [jsToHtml, cssToHtml];
   const pipeLine = composeFunctions(...transformers, ...toHtml);
   const finalFiles = Object.keys(files)
@@ -60,12 +116,14 @@ export function buildDOMChallenge(files, meta = {}) {
   return Promise.all(finalFiles)
     .then(checkFilesErrors)
     .then(files => ({
+      challengeType: challengeTypes.html,
       build: concatHtml({ required: finalRequires, template, files }),
-      sources: buildSourceMap(files)
+      sources: buildSourceMap(files),
+      loadEnzyme
     }));
 }
 
-export function buildJSChallenge(files) {
+export function buildJSChallenge({ files }) {
   const pipeLine = composeFunctions(...transformers);
   const finalFiles = Object.keys(files)
     .map(key => files[key])
@@ -73,6 +131,7 @@ export function buildJSChallenge(files) {
   return Promise.all(finalFiles)
     .then(checkFilesErrors)
     .then(files => ({
+      challengeType: challengeTypes.js,
       build: files
         .reduce(
           (body, file) => [...body, file.head, file.contents, file.tail],
@@ -83,11 +142,9 @@ export function buildJSChallenge(files) {
     }));
 }
 
-export function buildBackendChallenge(formValues) {
-  const {
-    solution: { value: url }
-  } = formValues;
+export function buildBackendChallenge({ url }) {
   return {
+    challengeType: challengeTypes.backend,
     build: concatHtml({ required: frameRunner }),
     sources: { url }
   };
