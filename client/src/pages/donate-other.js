@@ -1,6 +1,7 @@
 /* eslint-disable max-len */
 import React, { Component, Fragment } from 'react';
 import Helmet from 'react-helmet';
+import { Grid, Col, Row } from '@freecodecamp/react-bootstrap';
 
 import Spacer from '../components/helpers/Spacer';
 
@@ -10,9 +11,9 @@ class IndexPage extends Component {
     <Fragment>
       <Helmet title='Other ways to donate | freeCodeCamp.org' />
       <Spacer />
-      <div className='container'>
-        <div className='row'>
-          <div className='col-xs-12 col-sm-10 col-sm-offset-1 col-md-6 col-md-offset-3'>
+      <Grid className='container'>
+        <Row>
+          <Col md={6} mdOffset={3} sm={10} smOffset={1} xs={12}>
             <h2 className='text-center'>
               Other ways you can support the freeCodeCamp.org nonprofit
             </h2>
@@ -251,9 +252,9 @@ class IndexPage extends Component {
               <a href='/donate'>Or donate using a Credit or Debit Card.</a>
             </div>
             <Spacer />
-          </div>
-        </div>
-      </div>
+          </Col>
+        </Row>
+      </Grid>
     </Fragment>
   );
   }
