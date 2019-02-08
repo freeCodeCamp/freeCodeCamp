@@ -21,6 +21,7 @@ import OfflineWarning from '../OfflineWarning';
 import Flash from '../Flash';
 import Header from '../Header';
 import Footer from '../Footer';
+import Spacer from '../helpers/Spacer';
 
 import './global.css';
 import './layout.css';
@@ -164,6 +165,8 @@ class DefaultLayout extends Component {
           ) : null}
           {children}
         </div>
+        <hr/>
+        <Spacer size={3}/>
         <Footer />
       </Fragment>
     );
