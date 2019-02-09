@@ -1,4 +1,4 @@
-﻿---
+---
 title: Functions in R
 ---
 
