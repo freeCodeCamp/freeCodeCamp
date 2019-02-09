@@ -134,7 +134,7 @@ freeCodeCamp.org的存在是因为像你这样的数千名志愿者。我们很�
 
 我们的社区版主根据优先级、严重程度和其他因素将问题和PR[分类](https://en.wikipedia.org/wiki/Software_bug#Bug_management)。您可以[在这里找到一个完整的含义词汇表](https://github.com/freecodecamp/freecodecamp/labels)。
 
-您应该通过[**`求助(help wanted)`**](https://github.com/freeCodeCamp/freeCodeCamp/issues?q=is%3Aopen+is%3Aissue+label%3A%22help+wanted%22)或[**`欢迎新手(first timers welcome)`**](https://github.com/freeCodeCamp/freeCodeCamp/issues?q=is%3Aopen+is%3Aissue+label%3A%22first+timers+welcome%22)问题快速查找您可贡献的项目。这些都是可以自行进行，并不需要批准。
+您应该通过[**`求助(help wanted)`**](https://github.com/freeCodeCamp/freeCodeCamp/issues?q=is%3Aopen+is%3Aissue+label%3A%22help+wanted%22)或[**`欢迎新手(first timers welcome)`**](https://github.com/freeCodeCamp/freeCodeCamp/issues?q=is%3Aopen+is%3Aissue+label%3A%22first+timers+welcome%22)问题快速查找您可贡献的项目。这些都可以自行进行，并不需要批准。
 
 如果这些问题缺乏明确的需求，欢迎在评论中提问。
 
