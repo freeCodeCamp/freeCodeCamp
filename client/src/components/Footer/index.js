@@ -1,8 +1,6 @@
 import React from 'react';
 import { Link as GatsbyLink } from 'gatsby';
 import { Grid, Row, Col } from '@freecodecamp/react-bootstrap';
-import FontAwesomeIcon from '@fortawesome/react-fontawesome';
-import { faExternalLinkAlt } from '@fortawesome/free-solid-svg-icons';
 
 import './footer.css';
 
@@ -24,11 +22,6 @@ const Link = ({ children, to, external, ...other }) => {
   return (
     <a href={to} {...other} rel='noopener noreferrer' target='_blank'>
       {children}
-      <FontAwesomeIcon
-        className='external-link-icon'
-        icon={faExternalLinkAlt}
-        size='xs'
-      />
     </a>
   );
 };
