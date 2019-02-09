@@ -24,17 +24,17 @@ Camper Cat is hard at work creating a stacked bar chart showing the amount of ti
 ```yml
 tests:
   - text: Your code should have one <code>figure</code> tag.
-    testString: 'assert($("figure").length == 1, "Your code should have one <code>figure</code> tag.");'
+    testString: assert($('figure').length == 1, 'Your code should have one <code>figure</code> tag.');
   - text: Your code should have one <code>figcaption</code> tag.
-    testString: 'assert($("figcaption").length == 1, "Your code should have one <code>figcaption</code> tag.");'
+    testString: assert($('figcaption').length == 1, 'Your code should have one <code>figcaption</code> tag.');
   - text: Your code should not have any <code>div</code> tags.
-    testString: 'assert($("div").length == 0, "Your code should not have any <code>div</code> tags.");'
+    testString: assert($('div').length == 0, 'Your code should not have any <code>div</code> tags.');
   - text: Your code should not have any <code>p</code> tags.
-    testString: 'assert($("p").length == 0, "Your code should not have any <code>p</code> tags.");'
+    testString: assert($('p').length == 0, 'Your code should not have any <code>p</code> tags.');
   - text: The <code>figcaption</code> should be a child of the <code>figure</code> tag.
-    testString: 'assert($("figure").children("figcaption").length == 1, "The <code>figcaption</code> should be a child of the <code>figure</code> tag.");'
+    testString: assert($('figure').children('figcaption').length == 1, 'The <code>figcaption</code> should be a child of the <code>figure</code> tag.');
   - text: Make sure your <code>figure</code> element has a closing tag.
-    testString: 'assert(code.match(/<\/figure>/g) && code.match(/<\/figure>/g).length === code.match(/<figure>/g).length, "Make sure your <code>figure</code> element has a closing tag.");'
+    testString: assert(code.match(/<\/figure>/g) && code.match(/<\/figure>/g).length === code.match(/<figure>/g).length, 'Make sure your <code>figure</code> element has a closing tag.');
 
 ```
 

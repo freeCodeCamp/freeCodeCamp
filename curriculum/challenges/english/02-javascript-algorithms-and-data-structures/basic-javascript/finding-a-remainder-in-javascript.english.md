@@ -25,11 +25,11 @@ Set <code>remainder</code> equal to the remainder of <code>11</code> divided by 
 ```yml
 tests:
   - text: The variable <code>remainder</code> should be initialized
-    testString: 'assert(/var\s+?remainder/.test(code), "The variable <code>remainder</code> should be initialized");'
+    testString: assert(/var\s+?remainder/.test(code), 'The variable <code>remainder</code> should be initialized');
   - text: The value of <code>remainder</code> should be <code>2</code>
-    testString: 'assert(remainder === 2, "The value of <code>remainder</code> should be <code>2</code>");'
+    testString: assert(remainder === 2, 'The value of <code>remainder</code> should be <code>2</code>');
   - text: You should use the <code>%</code> operator
-    testString: 'assert(/\s+?remainder\s*?=\s*?.*%.*;/.test(code), "You should use the <code>%</code> operator");'
+    testString: assert(/\s+?remainder\s*?=\s*?.*%.*;/.test(code), 'You should use the <code>%</code> operator');
 
 ```
 
@@ -54,7 +54,7 @@ var remainder;
 <div id='js-teardown'>
 
 ```js
-console.info('after the test');
+(function(y){return 'remainder = '+y;})(remainder);
 ```
 
 </div>
