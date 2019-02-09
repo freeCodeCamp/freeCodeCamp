@@ -21,21 +21,21 @@ Of the two <code>forEach()</code> versions below, both perform the exact same lo
 <strong>ES5</strong><br>
 FBpost.forEach(function(post) {<br>
     console.log(post) // log each post here<br>
-    })<br>
+    });<br>
 <strong>ES6</strong><br>
 FBpost.forEach((post) => {<br>
     console.log(post) // log each post here<br>
-    })<br>
+    });<br>
 
 </blockquote>
-<code>filter()</code> is very similar. Below it will iterate over the <code>FBPosts</code> array, perform the logic to filter out the items that do not meet the requirements, and return a new array <code>results</code>. All the higher-order JavaScript functions operate in a similar way.
+<code>filter()</code> is very similar. Below it will iterate over the <code>FBPosts</code> array, perform the logic to filter out the items that do not meet the requirements, and return a new array, <code>results</code>.
 
-<blockquote>let results = arr1.filter((post) => {
+<blockquote>
+let results = arr1.filter((post) => {
 	return post.thumbnail !== null && post.likes > 100 && post.shares > 500
-})<br>
-console.log(results)<br>
-// => [ {thumbnail: "someIcon", likes: 432, shares: 600}, {thumbnail: "Another icon", likes: 300, shares: 501}]
-    </blockquote>
+});<br><br>
+console.log(results); // [{thumbnail: "someIcon", likes: 432, shares: 600}, {thumbnail: "Another icon", likes: 300, shares: 501}]
+</blockquote>
 
 Find more info about [arrow-functions](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Functions/Arrow_functions).<br>
 And about higher-order functions like [forEach](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/forEach), [map](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/map), and [filter](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/filter).
@@ -56,7 +56,7 @@ Use arrow function syntax to compute the square of <em>only</em> the positive in
 tests:
   - text: <code>squareList</code> should be a <code>function</code>.
     testString: assert.typeOf(squareList, 'function'), '<code>squareList</code> should be a <code>function</code>';
-  - text: <code>squareList</code> should be a constant variable (by using         <code>const</code>).
+  - text: <code>squareList</code> should be a constant variable (by using  <code>const</code>).
     testString: getUserInput => assert(getUserInput('index').match(/const\s+squaredIntegers/g), '<code>squaredIntegers</code> should be a constant variable (by using <code>const</code>).');
   - text: <code>function</code> keyword was not used.
     testString: getUserInput => assert(!getUserInput('index').match(/function/g), '<code>function</code> keyword was not used.');
@@ -64,7 +64,7 @@ tests:
     testString: getUserInput => assert(!getUserInput('index').match(/(for)|(while)/g), 'loop should not be used');
   - text: <code>map</code>, <code>filter</code>, or <code>reduce</code> should be used
     testString: getUserInput => assert(getUserInput('index').match(/map|filter|reduce/g), '<code>map</code>, <code>filter</code>, or <code>reduce</code> should be used');
-  - text: <code>Function should return an <code>array</code> called <code>squaredIntegers</code>
+  - text: The function should return an <code>array</code> called <code>squaredIntegers</code>
     testString: assert(Array.isArray(squaredIntegers), '<code>squaredIntegers</code> should be an <code>array</code>');
   - text: <code>squaredIntegers</code> should be <code>[16, 1764, 36]</code>
     testString: assert.deepStrictEqual(squaredIntegers, [16, 1764, 36], '<code>squaredIntegers</code> should be <code>[16, 1764, 36]</code>');
@@ -83,16 +83,17 @@ const realNumberArray = [4, 5.6, -9.8, 3.14, 42, 6, 8.34, -2];
 const squareList = (arr) => {
   "use strict";
   const positiveIntegers = arr.filter((num) => {
-      // add code here
-  })
+     // add code here
+  });
   const squaredIntegers = positiveIntegers.map((num) => {
-    // add code here
-  })
-   // add return value here
+       // add code here
+});
+
+  // add code here
+  return squaredIntegers;
 };
 // test your code
 const squaredIntegers = squareList(realNumberArray);
-console.log(squaredIntegers);
 
 ```
 
@@ -109,18 +110,17 @@ console.log(squaredIntegers);
 const squareList = (arr) => {
   "use strict";
   const positiveIntegers = arr.filter((num) => {
-    return num >= 0 && Number.isInteger(num)
+    return num >= 0 && Number.isInteger(num);
       // add code here
-  })
+  });
   const squaredIntegers = positiveIntegers.map((num) => {
     // add code here
-    return num ** 2
-  })
+    return num ** 2;
+  });
   // add code here
-  return squaredIntegers
+  return squaredIntegers;
 };
 // test your code
 const squaredIntegers = squareList(realNumberArray);
-console.log(squaredIntegers);
 ```
 </section>
