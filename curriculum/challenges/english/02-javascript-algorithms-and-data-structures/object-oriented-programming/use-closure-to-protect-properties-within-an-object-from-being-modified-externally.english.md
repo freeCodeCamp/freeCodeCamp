@@ -34,7 +34,7 @@ tests:
   - text: Your code should create a method in <code>Bird</code> called <code>getWeight</code> that returns the value of the private variable <code>weight</code>.
     testString: assert((new Bird()).getWeight() === 15, 'Your code should create a method in <code>Bird</code> called <code>getWeight</code> that returns the value of the private variable <code>weight</code>.');
   - text: Your <code>getWeight</code> function should return the private variable <code>weight</code>.
-    testString: assert(code.match(/(return\s+)|(\(\s*\)\s*\=\>\s*)weight\;?/g), 'Your <code>getWeight</code> function should return the private variable <code>weight</code>.');
+    testString: assert(code.match(/((return\s+)|(\(\s*\)\s*\=\>\s*))weight\;?/g), 'Your <code>getWeight</code> function should return the private variable <code>weight</code>.');
 
 ```
 
