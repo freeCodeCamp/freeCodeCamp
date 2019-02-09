@@ -93,10 +93,6 @@
       "Match All Non-Numbers"
     ],
     [
-      "587d7db8367417b2b2512ba2",
-      "Restrict Possible Usernames"
-    ],
-    [
       "587d7db8367417b2b2512ba3",
       "Match Whitespace"
     ],
@@ -115,6 +111,10 @@
     [
       "587d7db9367417b2b2512ba7",
       "Specify Exact Number of Matches"
+    ],
+    [
+      "587d7db8367417b2b2512ba2",
+      "Restrict Possible Usernames"
     ],
     [
       "587d7dba367417b2b2512ba8",
