@@ -16,7 +16,7 @@ Here's an example:
 
 ## Instructions
 <section id='instructions'>
-Camper Cat wants information about the ninja level of his users when they sign up for his email list. He's added a set of radio buttons, and learned from our last lesson to use label tags with <code>for</code> attributes for each choice. Go Camper Cat! However, his code still needs some help. Change the <code>div</code> tag surrounding the radio buttons to a <code>fieldset</code> tag, and change the <code>p</code> tag inside it to a <code>legend</code>.
+Camper Cat wants information about the ninja level of his users when they sign up for his email list. He's added a set of radio buttons and learned from our last lesson to use label tags with <code>for</code> attributes for each choice. Go Camper Cat! However, his code still needs some help. Change the <code>div</code> tag surrounding the radio buttons to a <code>fieldset</code> tag, and change the <code>p</code> tag inside it to a <code>legend</code>.
 </section>
 
 ## Tests
@@ -25,15 +25,15 @@ Camper Cat wants information about the ninja level of his users when they sign u
 ```yml
 tests:
   - text: Your code should have a <code>fieldset</code> tag around the radio button set.
-    testString: 'assert($("fieldset").length == 1, "Your code should have a <code>fieldset</code> tag around the radio button set.");'
+    testString: assert($('fieldset').length == 1, 'Your code should have a <code>fieldset</code> tag around the radio button set.');
   - text: Make sure your <code>fieldset</code> element has a closing tag.
-    testString: 'assert(code.match(/<\/fieldset>/g) && code.match(/<\/fieldset>/g).length === code.match(/<fieldset>/g).length, "Make sure your <code>fieldset</code> element has a closing tag.");'
+    testString: assert(code.match(/<\/fieldset>/g) && code.match(/<\/fieldset>/g).length === code.match(/<fieldset>/g).length, 'Make sure your <code>fieldset</code> element has a closing tag.');
   - text: Your code should have a <code>legend</code> tag around the text asking what level ninja a user is.
-    testString: 'assert($("legend").length == 1, "Your code should have a <code>legend</code> tag around the text asking what level ninja a user is.");'
+    testString: assert($('legend').length == 1, 'Your code should have a <code>legend</code> tag around the text asking what level ninja a user is.');
   - text: Your code should not have any <code>div</code> tags.
-    testString: 'assert($("div").length == 0, "Your code should not have any <code>div</code> tags.");'
+    testString: assert($('div').length == 0, 'Your code should not have any <code>div</code> tags.');
   - text: Your code should no longer have a <code>p</code> tag around the text asking what level ninja a user is.
-    testString: 'assert($("p").length == 4, "Your code should no longer have a <code>p</code> tag around the text asking what level ninja a user is.");'
+    testString: assert($('p').length == 4, 'Your code should no longer have a <code>p</code> tag around the text asking what level ninja a user is.');
 
 ```
 

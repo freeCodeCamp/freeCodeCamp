@@ -34,11 +34,11 @@ Finally don't forget to give your image an <code>alt</code> text.
 ```yml
 tests:
   - text: Your page should have an image element.
-    testString: 'assert($("img").length > 0, "Your page should have an image element.");'
+    testString: assert($("img").length > 0, 'Your page should have an image element.');
   - text: Your image should have a <code>src</code> attribute that points to the kitten image.
-    testString: 'assert(new RegExp("\/\/bit.ly\/fcc-relaxing-cat|\/\/s3.amazonaws.com\/freecodecamp\/relaxing-cat.jpg", "gi").test($("img").attr("src")), "Your image should have a <code>src</code> attribute that points to the kitten image.");'
+    testString: assert(new RegExp("\/\/bit.ly\/fcc-relaxing-cat|\/\/s3.amazonaws.com\/freecodecamp\/relaxing-cat.jpg", "gi").test($("img").attr("src")), 'Your image should have a <code>src</code> attribute that points to the kitten image.');
   - text: Your image element <strong>must</strong> have an <code>alt</code> attribute.
-    testString: 'assert(code.match(/alt\s*?=\s*?(\"|\").*(\"|\")/), "Your image element <strong>must</strong> have an <code>alt</code> attribute.");'
+    testString: assert(code.match(/alt\s*?=\s*?(\"|\').*(\"|\')/), 'Your image element <strong>must</strong> have an <code>alt</code> attribute.');
 
 ```
 
@@ -68,7 +68,13 @@ tests:
 ## Solution
 <section id='solution'>
 
-```js
-// solution required
+```html
+<h2>CatPhotoApp</h2>
+<main>
+  <a href="#"><img src="https://bit.ly/fcc-relaxing-cat" alt="A cute orange cat lying on its back."></a>
+  <p>Kitty ipsum dolor sit amet, shed everywhere shed everywhere stretching attack your ankles chase the red dot, hairball run catnip eat the grass sniff.</p>
+  <p>Purr jump eat the grass rip the couch scratched sunbathe, shed everywhere rip the couch sleep in the sink fluffy fur catnip scratched.</p>
+</main>
 ```
+
 </section>

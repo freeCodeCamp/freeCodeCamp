@@ -24,17 +24,17 @@ Edit the markup so there's a <code>head</code> and a <code>body</code>. The <cod
 ```yml
 tests:
   - text: There should be only one <code>head</code> element on the page.
-    testString: 'assert($("head").length == 1, "There should be only one <code>head</code> element on the page.");'
+    testString: assert($('head').length == 1, 'There should be only one <code>head</code> element on the page.');
   - text: There should be only one <code>body</code> element on the page.
-    testString: 'assert($("body").length == 1, "There should be only one <code>body</code> element on the page.");'
+    testString: assert($('body').length == 1, 'There should be only one <code>body</code> element on the page.');
   - text: The <code>head</code> element should be a child of the <code>html</code> element.
-    testString: 'assert($("html").children("head").length == 1, "The <code>head</code> element should be a child of the <code>html</code> element.");'
+    testString: assert($('html').children('head').length == 1, 'The <code>head</code> element should be a child of the <code>html</code> element.');
   - text: The <code>body</code> element should be a child of the <code>html</code> element.
-    testString: 'assert($("html").children("body").length == 1, "The <code>body</code> element should be a child of the <code>html</code> element.");'
+    testString: assert($('html').children('body').length == 1, 'The <code>body</code> element should be a child of the <code>html</code> element.');
   - text: The <code>head</code> element should wrap around the <code>title</code> element.
-    testString: 'assert(code.match(/<head>\s*?<title>\s*?.*?\s*?<\/title>\s*?<\/head>/gi), "The <code>head</code> element should wrap around the <code>title</code> element.");'
+    testString: assert(code.match(/<head>\s*?<title>\s*?.*?\s*?<\/title>\s*?<\/head>/gi), 'The <code>head</code> element should wrap around the <code>title</code> element.');
   - text: The <code>body</code> element should wrap around both the <code>h1</code> and <code>p</code> elements.
-    testString: 'assert($("body").children("h1").length == 1 && $("body").children("p").length == 1, "The <code>body</code> element should wrap around both the <code>h1</code> and <code>p</code> elements.");'
+    testString: assert($('body').children('h1').length == 1 && $('body').children('p').length == 1, 'The <code>body</code> element should wrap around both the <code>h1</code> and <code>p</code> elements.');
 
 ```
 

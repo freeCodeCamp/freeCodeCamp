@@ -1,7 +1,6 @@
-
 ---
 title: Simplify Square Roots
-localeTitle: undefined
+localeTitle: Simplificar las raíces cuadradas
 ---
 ## Simplificar las raíces cuadradas
 
