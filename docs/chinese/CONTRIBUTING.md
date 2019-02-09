@@ -25,9 +25,9 @@ freeCodeCamp.org的存在是因为像你这样的数千名志愿者。我们很�
 
 您可以选择为您感兴趣的任何领域做出贡献：
 
-1. [贡献到开源代码库。](＃contribution-to-this-open-source-codebase)。帮助编辑[指南文章](https://guide.freecodecamp.org/)，[编码挑战](https://learn.freecodecamp.org/)，或修复学习平台上的错误。
+1. [贡献到开源代码库](＃contribution-to-this-open-source-codebase)。帮助编辑[指南文章](https://guide.freecodecamp.org/)，[编码挑战](https://learn.freecodecamp.org/)，或修复学习平台上的错误。
 
-2. 帮助我们[公共论坛](https://www.freecodecamp.org/forum/)上的营员。 [回答他们的编码问题](https://www.freecodecamp.org/forum/?max_posts=1)或[为他们的编码项目给予反馈](https://www.freecodecamp.org/forum/c/project反馈系统开发与？max_posts = 1)
+2. 帮助我们[公共论坛](https://www.freecodecamp.org/forum/)上的营员。 [回答他们的编码问题](https://www.freecodecamp.org/forum/?max_posts=1)或[为他们的编码项目给予反馈](https://www.freecodecamp.org/forum/c/project-feedback?max_posts=1)
 
 3. 帮助我们为[YouTube频道视频](https://www.youtube.com/channel/UC8butISFwT-Wl7EV0hUK0BQ/videos)添加字幕。
 
@@ -57,7 +57,7 @@ freeCodeCamp.org的存在是因为像你这样的数千名志愿者。我们很�
 
 我们欢迎您撰写这些文章的帮助。作为作者你不必是一个主题的专家 - 整个指南是开源的，所以即使你犯了错误，另一个贡献者最终会纠正它。
 
-您可以在我们的[指南网站](https://www.freecodecamp.org/guide)上找到一个“存根文章”，写下您的文章，然后建立推送请求（PR, pull request）以替换存根文章。 [pull request](https://help.github.com/articles/about-pull-requests/)是我们建议的更改方式。它让其他人了解您的更改，以审核并采用它们。
+您可以在我们的[指南网站](https://www.freecodecamp.org/guide)上找到一个`存根文章`，写下文章，然后建立推送请求（PR, pull request）以用您的文章替换存根文章。 [Pull request](https://help.github.com/articles/about-pull-requests/)是我们建议的更改方式。它让其他人了解您的更改，以审核并采用它们。
 
 如果您找不到关于您想要撰写的主题的存根，则可以打开创建存根的PR并包含您的草稿文章。
 
