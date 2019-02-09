@@ -65,7 +65,7 @@ function Footer() {
             <Link to='https://donate.freecodecamp.org'>Donate</Link>
             <Link to='https://shop.freecodecamp.org'>Shop</Link>
             <Link to='https://sponsors.freecodecamp.org'>Sponsors</Link>
-            <Link to='mailto:team@freecodecamp.org'>Contact email</Link>
+            <Link to='mailto:team@freecodecamp.org'>Email Us</Link>
           </Col>
           <Col sm={2} xs={6}>
             <ColHeader>Our Community</ColHeader>
