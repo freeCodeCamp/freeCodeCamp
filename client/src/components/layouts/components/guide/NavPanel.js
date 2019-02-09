@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import { Panel } from '@freecodecamp/react-bootstrap';
-import { navigate } from 'gatsby';
+import { Link } from 'gatsby';
 
 const propTypes = {
   children: PropTypes.any,
@@ -9,6 +9,7 @@ const propTypes = {
   handleClick: PropTypes.func.isRequired,
   hasChildren: PropTypes.bool,
   isExpanded: PropTypes.bool,
+  onNavigate: PropTypes.func.isRequired,
   path: PropTypes.string,
   title: PropTypes.string,
   toggleDisplaySideNav: PropTypes.func.isRequired
@@ -23,8 +24,8 @@ function NoArticles() {
         Could you&nbsp;
         <a
           href={
-            'https://github.com/freeCodeCamp/guides/blob/master/README.md' +
-            '#freecodecamp-guide'
+            'https://github.com/freeCodeCamp/freeCodeCamp/blob/master/docs/' +
+            'how-to-work-on-guide-articles.md#how-to-work-on-guide-articles'
           }
           rel='noopener noreferrer'
           target='_blank'
@@ -42,17 +43,23 @@ class NavPanel extends Component {
 
     this.renderHeader = this.renderHeader.bind(this);
     this.handleHeaderClick = this.handleHeaderClick.bind(this);
+    this.handleTitleClick = this.handleTitleClick.bind(this);
     this.renderBody = this.renderBody.bind(this);
   }
 
   handleHeaderClick() {
     const { path, handleClick } = this.props;
     handleClick(path);
-    navigate(path);
+  }
+
+  handleTitleClick() {
+    const { toggleDisplaySideNav, onNavigate } = this.props;
+    toggleDisplaySideNav();
+    onNavigate();
   }
 
   renderHeader() {
-    const { isExpanded, title, toggleDisplaySideNav } = this.props;
+    const { isExpanded, path, title } = this.props;
     return (
       <div className='title' onClick={this.handleHeaderClick}>
         <span
@@ -60,7 +67,7 @@ class NavPanel extends Component {
             'caret ' + (isExpanded ? 'caretStyle expanded' : 'caretStyle')
           }
         />
-        <span onClick={toggleDisplaySideNav}>{title}</span>
+        <Link onClick={this.handleTitleClick} to={path}>{title}</Link>
       </div>
     );
   }
@@ -88,8 +95,6 @@ class NavPanel extends Component {
     return (
       <Panel
         bsClass='panelStyle panel'
-        collapsible={true}
-        expanded={isExpanded}
         id={`${dashedName}-panel`}
         role='listitem'
         >

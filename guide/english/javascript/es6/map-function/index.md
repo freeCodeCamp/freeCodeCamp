@@ -12,6 +12,11 @@ The original syntax of the map function is:
                   // Do some stuff with currentValue (index and array are optionals)
                 })
 ```
+* `new_arr` - the new array that is returned
+* `ar`r - the array to run the map function on
+* `currentValue` - the current value being processed
+* `index` - the current index of the value being processed
+* `array` - the original array
 
 ### Example (ES6):
 
