@@ -3,6 +3,7 @@
 [![Pull Requests Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg?style=flat)](http://makeapullrequest.com)
 [![first-timers-only Friendly](https://img.shields.io/badge/first--timers--only-friendly-blue.svg)](http://www.firsttimersonly.com/)
 [![Known Vulnerabilities](https://snyk.io/test/github/freecodecamp/freecodecamp/badge.svg)](https://snyk.io/test/github/freecodecamp/freecodecamp)
+[![HitCount](http://hits.dwyl.io/freeCodeCamp/https://github.com/freeCodeCamp/freeCodeCamp.svg)](http://hits.dwyl.io/freeCodeCamp/https://github.com/freeCodeCamp/freeCodeCamp)
 
 
 ## Welcome to freeCodeCamp.org's open source codebase and curriculum!
@@ -134,3 +135,4 @@ The content of this repository bound by the following licenses:
 
 - The computer software is licensed under the [BSD-3-Clause](LICENSE.md) License.
 - The [curricular content](https://www.npmjs.com/package/@freecodecamp/curriculum) in the [`/curriculum`](/curriculum) folder and its subdirectories are licensed under the [CC-BY-SA-4.0](/curriculum/LICENSE.md) License.
+
