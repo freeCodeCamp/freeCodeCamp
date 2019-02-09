@@ -8,9 +8,9 @@ Fragments are a way to return multiple elements from the render method without u
 
 When attempting to render multiple sibling elements without an enclosing tag in JSX, you will see the error message of `Adjacent JSX elements must be wrapped in an enclosing tag`.
 
-In the past, a frequent solution was to use either a wrapping div or span element, which was not elegant as it would increase the size of DOM tree and this is because of the way JSX works as multiple elements should be wrapped in a div. However, version 16.0 of React introduced the addition of `Fragment`, which makes this no longer necessary.
+In the past, a frequent solution was to use either a wrapping `div` or `span` element, which was not elegant as it would increase the size of DOM tree and this is because of the way JSX works as multiple elements should be wrapped in a div. However, version 16.0 of React introduced the addition of `Fragment`, which makes this no longer necessary.
 
-`Fragment` acts a wrapper without adding unnecessary divs or spans elements to the DOM.  You can use it directly from the React import:
+`Fragment` acts as a wrapper without adding unnecessary `div` or `span` elements to the DOM.  You can use it directly from the React import:
 
 ```jsx
 import React from 'react';
@@ -63,7 +63,7 @@ return (
 );
 ```
 
-Empty JSX tags cannot be used with attributes, including key.
+Empty JSX tags cannot be used with any attributes (including key).
 
 #### More Information:
 * [React.Fragment (Official Documentation)](https://reactjs.org/docs/react-api.html#reactfragment)

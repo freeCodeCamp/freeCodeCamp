@@ -51,7 +51,7 @@ C provides a number of build-in function to perform basic file operation
 
 **ftell()**   **-**   **gives current position in the file**
 
-**rewind()**   **-**   **set the position to the begining point**
+**rewind()**   **-**   **set the position to the beginning point**
 
 ### Opening a file
 
@@ -122,7 +122,7 @@ There are two other streams (i.e. files) that are available to you with effort, 
 
 ### Rudimentary File IO, or How I Learnt to Lay Pipes
 Enough theory, let's get down to business by writing some code!
-The easist way to write to a file is to redirect the output stream using the output redirect tool, `>`.
+The easiest way to write to a file is to redirect the output stream using the output redirect tool, `>`.
 If you want to append, you can use `>>`. _N.b. these redirection operators are in_ `bash` _and similar shells._
 
 ```bash
@@ -219,7 +219,7 @@ int main() {
 
     // Greetings time!
     char name[20];
-    // Basically keep on reading untill there's nothing left.
+    // Basically keep on reading until there's nothing left.
     while (fscanf(names, "%s\n", name) > 0) {
         fprintf(greet, "Hello, %s!\n", name);
     }

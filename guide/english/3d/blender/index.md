@@ -12,6 +12,8 @@ The Blender software is cross-platform that runs on Windows, Linux, and macOS. B
 
 Blender is now especially useful as the 3D printer technology has become more of a household item for many.  Blender allows the user to develop their idea and export it as an .obj that slicers can convert to .stl files or it can export in .stl format as well.  If one develops their project in a CAD app that only exports as .obj, Blender can import the file and convert it to an .stl - a very popular filetype.
 
+Another advantage of Blender is that it can create games without using additional programs. Blender already has its own Game Engine and uses Python as a programming language that can be easier than using C++, C, etc.
+
 Blender is free and open source software, released under the  **_GNU General Public License (GPL)_**.
 
 ### Some Useful Blender Keyboard Shortcuts:
