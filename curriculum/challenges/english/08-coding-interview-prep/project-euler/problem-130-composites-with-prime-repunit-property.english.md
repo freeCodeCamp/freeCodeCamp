@@ -24,7 +24,7 @@ Find the sum of the first twenty-five composite values of n for whichGCD(n, 10) 
 ```yml
 tests:
   - text: <code>euler130()</code> should return 149253.
-    testString: 'assert.strictEqual(euler130(), 149253, "<code>euler130()</code> should return 149253.");'
+    testString: assert.strictEqual(euler130(), 149253, '<code>euler130()</code> should return 149253.');
 
 ```
 

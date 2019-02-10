@@ -7,6 +7,7 @@ import NavItem from './NavItem';
 
 const propTypes = {
   expandedState: PropTypes.object,
+  onNavigate: PropTypes.func.isRequired,
   pages: PropTypes.arrayOf(PropTypes.object),
   parents: PropTypes.arrayOf(PropTypes.object),
   toggleDisplaySideNav: PropTypes.func.isRequired,
@@ -42,7 +43,9 @@ class SideNav extends Component {
     const [category] = pages.filter(page => page.path === path);
     const { title, hasChildren, dashedName } = category;
 
-    const children = this.renderChildren(childrenForParent, pages);
+    const children = isExpanded
+      ? this.renderChildren(childrenForParent, pages)
+      : null;
     return (
       <NavPanel
         dashedName={dashedName}
@@ -50,11 +53,12 @@ class SideNav extends Component {
         hasChildren={hasChildren}
         isExpanded={isExpanded}
         key={parent.path}
+        onNavigate={this.props.onNavigate}
         path={parent.path}
         title={title}
         toggleDisplaySideNav={this.props.toggleDisplaySideNav}
         >
-        {isExpanded ? children : null}
+        {children}
       </NavPanel>
     );
   }
@@ -68,6 +72,7 @@ class SideNav extends Component {
         <NavItem
           isStubbed={child.isStubbed}
           key={child.path}
+          onNavigate={this.props.onNavigate}
           path={child.path}
           title={child.title}
           toggleDisplaySideNav={this.props.toggleDisplaySideNav}
