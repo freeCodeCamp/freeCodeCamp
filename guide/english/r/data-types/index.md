@@ -14,6 +14,12 @@ title: Data Types in R
 	[1] "numeric"
 	> class(x+y)
 	[1] "numeric"
+        > w <- 5L # It will store 5 as an integer. 
+        > class(w)
+        [1] integer
+        > w <- as.integer(5) # It will store 5 as an integer. 
+        > class(w)
+        [1] integer
 ```
 
 2. Logical value
