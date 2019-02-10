@@ -12,15 +12,16 @@ To get started, just print the classic "Hello World" in the console. We recommen
 
 ## Instructions
 <section id='instructions'>
-
+Modify the <code>myApp.js</code> file to log "Hello World" to the console. 
 </section>
 
 ## Tests
 <section id='tests'>
 
 ```yml
-- text: <code>"Hello World"</code> should be in the console
-  testString: 'getUserInput => $.get(getUserInput(''url'') + ''/_api/hello-console'').then(data => { assert.isTrue(data.passed, ''"Hello World" is not in the server console''); }, xhr => { throw new Error(xhr.responseText); })'
+tests:
+  - text: <code>"Hello World"</code> should be in the console
+    testString: 'getUserInput => $.get(getUserInput(''url'') + ''/_api/hello-console'').then(data => { assert.isTrue(data.passed, ''"Hello World" is not in the server console''); }, xhr => { throw new Error(xhr.responseText); })'
 
 ```
 
