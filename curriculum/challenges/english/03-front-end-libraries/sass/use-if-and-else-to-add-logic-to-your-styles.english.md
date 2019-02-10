@@ -15,7 +15,8 @@ And just like in JavaScript, <code>@else if</code> and <code>@else</code> test f
 ## Instructions
 <section id='instructions'>
 Create a <code>mixin</code> called <code>border-stroke</code> that takes a parameter <code>$val</code>. The <code>mixin</code> should check for the following conditions using <code>@if</code>, <code>@else if</code>, and <code>@else</code>:
-<blockquote>light - 1px solid black<br>medium - 3px solid black<br>heavy - 6px solid black<br>none - no border</blockquote>
+<blockquote>light - 1px solid black<br>medium - 3px solid black<br>heavy - 6px solid black</blockquote>
+If <code>$val</code> is not <code>light</code>, <code>medium</code>, or <code>heavy</code>, the border should be set to <code>none</code>.
 </section>
 
 ## Tests
