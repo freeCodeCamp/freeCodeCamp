@@ -67,7 +67,7 @@ For example, consider the following matrix, which we will call B:
 
 <pre><em>det(B) = (-41) - 100 - 90 = -231</em></pre>
 
-### Method 2
+### Method 2 - Sarrus's Rule
 This method it similar to 2 by 2 determinants, and based on opertations with diagonals
 Again, consider the following matrix, which we will call A:
 
