@@ -59,7 +59,7 @@ int main()
 {
     int a=50,b=100,c;
     c=a+b;
-    printf("a=%d b=%d c=%d",a,b,c);
+    printf("a=%d b=%d c=%d \n",a,b,c);
     change(&a,&b,&c);
     printf("a=%d b=%d c=%d",a,b,c);
 }
