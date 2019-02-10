@@ -26,6 +26,8 @@ In this architecture, no one is in charge. Anyone and everyone can participate i
 
 Public Blockchain is open and transparent and therefore it is open for review by anyone willing to do so, at any given time. This architecture requires a consensus algorithm like Proof-of-Work or Proof-of-Stake.
 
+But a natural question that comes to our mind is that when no one is in charge here then how the decisions are taken on these types of the blockchain. So the answer is that decision making happens by various decentralized consensus mechanisms such as proof of work (POW) and proof of stake(POS) etc.
+
 Example : Bitcoin, Ethereum, Litecoin
 
 #### 3. Consortium/Federated Blockchain
