@@ -70,6 +70,6 @@ let result = reRegex.test(repeatNum);
 <section id='solution'>
 
 ```js
-// solution required
+let reRegex = /^(\d+)\s\1\s\1$/;
 ```
 </section>
