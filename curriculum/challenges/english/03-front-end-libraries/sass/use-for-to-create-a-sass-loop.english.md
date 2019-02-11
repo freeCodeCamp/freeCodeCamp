@@ -1,9 +1,6 @@
 ---
 id: 587d7dbe367417b2b2512bb9
 title: Use @for to Create a Sass Loop
-required:
-  - src: 'https://cdnjs.cloudflare.com/ajax/libs/sass.js/0.10.9/sass.sync.min.js'
-    raw: true
 challengeType: 0
 ---
 
@@ -74,7 +71,35 @@ tests:
 ## Solution
 <section id='solution'>
 
-```js
-// solution required
+```html
+<style type='text/sass'>
+
+@for $i from 1 through 5 {
+  .text-#{$i} { font-size: 10px * $i; }
+}
+
+</style>
+
+<p class="text-1">Hello</p>
+<p class="text-2">Hello</p>
+<p class="text-3">Hello</p>
+<p class="text-4">Hello</p>
+<p class="text-5">Hello</p>
+```
+
+```html
+<style type='text/sass'>
+
+@for $i from 1 to 6 {
+  .text-#{$i} { font-size: 10px * $i; }
+}
+
+</style>
+
+<p class="text-1">Hello</p>
+<p class="text-2">Hello</p>
+<p class="text-3">Hello</p>
+<p class="text-4">Hello</p>
+<p class="text-5">Hello</p>
 ```
 </section>

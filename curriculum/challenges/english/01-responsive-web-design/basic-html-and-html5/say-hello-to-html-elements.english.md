@@ -54,7 +54,7 @@ tests:
 ## Solution
 <section id='solution'>
 
-```js
-// solution required
+```html
+<h1>Hello World</h1>
 ```
 </section>
