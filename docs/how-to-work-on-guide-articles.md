@@ -5,7 +5,7 @@ With your help, we can create a comprehensive reference tool that will help mill
 You can:
 
 - [Help us by Creating and Editing Guide Articles](#steps-for-creating-and-editing-guide-articles).
-- [Help us by reviewing pull requests for Guide Articles]()
+- [Help us reviewing pull requests for Guide Articles](#steps-for-reviewing-pull-requests-for-guide-articles)
 
 ## Steps for Creating and Editing Guide Articles
 
