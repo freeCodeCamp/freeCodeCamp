@@ -20,5 +20,8 @@ Godot can be used on any desktop OS, and creates games that can be deployed a la
 Godot has been used to make a wide range of games such as [Mr Bean - Around the World](https://www.goodcatchgames.com/game/mr-bean-around-the-world/) and [Last Carnival](https://okamgames.com/games-2/last-carnival/). More examples can be found at the [showcase](https://godotengine.org/showcase/)
 
 #### More Information:
-[Godot Homepage](https://godotengine.org)
-[Godot Documentation](http://docs.godotengine.org/en/3.0/)
+
+- [Godot Official Website](https://godotengine.org/)
+- [Godot Docs](http://docs.godotengine.org/en/3.0/)
+- [Wikipedia](https://en.wikipedia.org/wiki/Godot_(game_engine))
+- [Github](https://github.com/godotengine)
