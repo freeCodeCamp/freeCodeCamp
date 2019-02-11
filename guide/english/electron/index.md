@@ -1,6 +1,7 @@
 ---
 title: Electron
 ---
+
 ## Electron - Build Cross Platform Desktop Apps with JavaScript, HTML, and CSS
 
 Electron lets you build cross-platform desktop apps using web technology. You
@@ -31,6 +32,14 @@ Some apps built using Electron include:
 * [Slack](https://slack.com/) (A messaging app for teams)
 * [Discord](https://discordapp.com) (A popular messaging app for gamers)
 * [Github Desktop](https://desktop.github.com/) (Official Github Desktop Client)
+* [Whatsapp Deskstop](https://web.whatsapp.com/desktop/windows/release/x64/WhatsAppSetup.exe)(Whatsapp Client For Windows)
+* [Twitch.tv](https://www.twitch.tv/)(A live Streaming Video Platform)
+* [Wire](https://wire.com/)(An encrypted instant messaging client)
+* [Light Table](http://lighttable.com/)(An IDE for Software Engineering Developement)
+* [Yammer](http://www.yammer.com/)(A Freemium entreprise social networking service used for private conversations within organisations)
+* [Axosoft OnTime](http://gitkraken.com/)(A project management and bug tracking system)
+* [Visual Studio Code](https://code.visualstudio.com/)(A source code Editor)
+* [Spotify](https://www.spotify.com/)(An online Music Streaming service)
 
 ### Boilerplates
 - [Electron and React](https://github.com/electron-react-boilerplate/electron-react-boilerplate)
@@ -42,4 +51,4 @@ Some apps built using Electron include:
 - [Electron and React](https://medium.freecodecamp.org/building-an-electron-application-with-create-react-app-97945861647c)
 - [Electron and Vue](https://medium.com/@kswanie21/electron-vue-js-f6c40abeb625)
 - [Electron and Angular](https://scotch.io/tutorials/creating-desktop-applications-with-angularjs-and-github-electron)
-
+- [Electron](https://en.wikipedia.org/wiki/Electron_(software_framework))
