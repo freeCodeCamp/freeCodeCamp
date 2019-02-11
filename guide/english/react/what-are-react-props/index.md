@@ -3,7 +3,7 @@ title: React TypeChecking with PropTypes
 ---
 ## React PropTypes
 
-These serve as a method of typechecking. As an application grows it tends to gather a fair amount of bugs, typechecking with PropTypes can prevent those.
+These serve as a method of typechecking. As an application grows, it tends to gather a fair amount of bugs. Typechecking with PropTypes can prevent those.
 
 ## How to get PropTypes
 
