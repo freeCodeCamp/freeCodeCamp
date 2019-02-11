@@ -7,7 +7,7 @@ Godot is a cross-platform, open-source game engine for both 2D and 3D games. It 
 
 Juan Linietsky and Ariel Manzur began developing Godot in 2007, and Version 3.0 was released on 29 January 2018.
 
-## Features
+### Features
 
 Godot supports programming in C#, C++ and GDScript; GDScript is a high-level scripting language similar to Python. There is also community support for several other languages.
 
@@ -15,7 +15,7 @@ Godot features 3D graphics using OpenGL ES 3.0 and a separate 2D graphics engine
 
 Godot can be used on any desktop OS, and creates games that can be deployed a large number of platforms. 
 
-## Games made with Godot
+### Games made with Godot
 
 Godot has been used to make a wide range of games such as [Mr Bean - Around the World](https://www.goodcatchgames.com/game/mr-bean-around-the-world/) and [Last Carnival](https://okamgames.com/games-2/last-carnival/). More examples can be found at the [showcase](https://godotengine.org/showcase/)
 
