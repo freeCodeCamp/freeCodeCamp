@@ -38,6 +38,14 @@ A group of people come together to form a consortium or federation. Which in tur
 
 Example : [Energy Web Foundation](http://energyweb.org/)
 
+#### 4. Hybrid Blockchain
+
+A public blockchain which hosts a private network with restricted participation. The private network generates blocks of hashed data stored on the public blockchain, but without sacrificing data privacy. It provides flexible control over what data is kept private and what is shared on the public ledger.
+
+Hybrid blockchains offer the benefits of decentralization and scalability, without requiring consensus from every single node on the network.
+
+Example : XinFin
+
 
 
 
