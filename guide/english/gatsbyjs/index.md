@@ -19,8 +19,7 @@ The Gatsby environment provides several "starters" to help configure static site
 
 ### Querying data
 
-You are accessing all data by writing GraphQL queries.GraphQL allows you to pull only the data you need into your components, unlike when fetching data from REST API.
-Detailed walktrough is available at https://www.gatsbyjs.org/tutorial/part-four/?no-cache=1#how-gatsbys-data-layer-uses-graphql-to-pull-data-into-components.
+You are accessing all data by writing GraphQL queries. GraphQL allows you to pull only the data you need into your components, unlike when fetching data from REST API. A detailed walktrough is available at https://www.gatsbyjs.org/tutorial/part-four/?no-cache=1#how-gatsbys-data-layer-uses-graphql-to-pull-data-into-components.
 
 #### More Information:
 For tutorials and more information check out the Gatsby.js official site: [Gatsby.js official site](https://www.gatsbyjs.org/tutorial/)
