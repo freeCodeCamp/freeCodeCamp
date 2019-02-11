@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React, { Component, Fragment } from 'react';
 import PropTypes from 'prop-types';
 import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux';
@@ -13,7 +13,6 @@ import {
 } from '@freecodecamp/react-bootstrap';
 import Helmet from 'react-helmet';
 
-import Layout from '../components/layouts/Default';
 import { ButtonSpacer, Spacer } from '../components/helpers';
 import { acceptTerms, userSelector } from '../redux';
 import { createSelector } from 'reselect';
@@ -71,7 +70,7 @@ class AcceptPrivacyTerms extends Component {
     }
     const { privacyPolicy, termsOfService, quincyEmail } = this.state;
     return (
-      <Layout>
+      <Fragment>
         <Helmet>
           <title>Privacy Policy and Terms of Service | freeCodeCamp.org</title>
         </Helmet>
@@ -165,7 +164,7 @@ class AcceptPrivacyTerms extends Component {
             </Col>
           </Row>
         </Grid>
-      </Layout>
+      </Fragment>
     );
   }
 }
