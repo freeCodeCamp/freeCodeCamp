@@ -28,7 +28,7 @@ Gatsby deploys the site on a static web host such as Amazon S3, Netlify, Github 
 * Node: `npm install --global gatsby-cli`
 * Get started with the official Gatsby starter: `gatsby new gatsby-site https://github.com/gatsbyjs/gatsby-starter-default`
 * After that change to the newly created directory `cd gatsby-site`
-* `gatsby develop` starts a hot-reloading development server. The site will reload when changes in `src/pages` will be saved.
+* `gatsby develop` starts a hot-reloading development server at `localhost:8000`. The site will reload when changes in `src/pages` will be saved.
 * To generate the static HTML pages use `gatsby build`
 * `gatsby serve` will start a local server that will present your built site.
 
