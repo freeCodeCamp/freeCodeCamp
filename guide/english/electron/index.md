@@ -15,7 +15,7 @@ can run on Electron. But the power of Electron is that you can use both solution
 
 Additionally, Electron comes with support for auto-updating, crash reporting, and native menus.
 
-Core features can be explored using the [Electron API demos](https://github.com/electron/electron-api-demos)
+Core features can be explored using the [Electron API demos](https://github.com/electron/electron-api-demos).
 
 ### Advantages of Electron
 Electron applications are similar to any other desktop applications as they are installed locally on users hard drive. They can be launched directly from the OSX Dock or Windows taskbar, and there is no need to launch a browser and navigate to some url to run your application. When you need to open or save a file, the dialogs are native in appearance and interaction. Electron application can support full drag-and-drop interaction with a local file system, or even associate itself with a file type, so when a user double-clicks the associated file, our app will open.
