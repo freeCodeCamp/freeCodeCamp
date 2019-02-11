@@ -446,8 +446,9 @@ There might be an error in the console of your browser or in Bash / Terminal / C
 If the app launches but you are encountering errors with the UI itself, for example if fonts are not being loaded or if the code editor is not displaying properly, you may try the following troubleshooting steps at least once:
 
 ```shell
-# Remove all installed node modules
-rm -rf node_modules ./**/node_modules
+# We use a mono repo and have multiple components (server, client, tools, plugins, etc.)
+# Use this command to clean up all dependencies in all of the components
+npm run clean
 
 # Reinstall npm packages
 npm install
@@ -458,6 +459,6 @@ npm run bootstrap
 # Seed the database
 npm run seed
 
-# Re-start the application
+# Restart the application
 npm run develop
 ```

@@ -50,10 +50,15 @@ Node.js takes less time because of its non-blocking I/O model. The first call to
 
 When the timer completes it's execution taking 5 seconds, it calls the function and prints ```done``` on the console. Since, both the timers are started together, they complete together and therefore take same amount of time.
 
+#### NPM
+NPM is the default package manager for JavaScript runtime environment NodeJS.
+For more visit : [NPM official site](https://www.npmjs.com/)
+
 #### Why use NodeJS:
 1. Great for beginners. JavaScript is a beginner friendly language.
 2. Great supportive community and massive amount of modules (Express, Grunt, etc).
 3. Wide range of hosting options.
+4. Existing Front-End developers get to transfer existing JavaScript knowledge for an easier transition into Server-Side development
 
 #### More information:
 - [Official NodeJS site](https://nodejs.org)

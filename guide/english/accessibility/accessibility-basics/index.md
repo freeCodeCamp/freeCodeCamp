@@ -8,14 +8,13 @@ title: Accessibility Basics
 >
 > --Professor Severus Snape, Harry Potter Series
 
-Accessibility's role in development is understanding the user's perspective and needs.
+The role of accessibility in development is understanding the user's perspective and needs.
 
-As more and more new technologies are being created, the toolbox of a developer becomes ever-changing and complicated.
+As an increasing number of new technologies are being created, the toolbox of a developer becomes ever-changing and complicated.
 
 One tool in that toolbox should be accessibility. It should be one of the very first steps of creating any form of web content, yet is not considered enough. This could be due to a simple case of not knowing it even exists or an extreme case like not caring about it at all.
 
 If you are reading this article, you may be in one of the following categories:
-
 *   You are a novice web developer and would like to know more about accessibility.
 *   You are a seasoned web developer and have lost your way. (More on that later.)
 *   You feel that there is a legal obligation from your employer, and you need to learn more about it.
@@ -28,7 +27,7 @@ The word "accessibility" in itself can be a bit misleading at times, especially 
 
 In one sense, if your site is public on the Internet, that website is accessible to everyone with a web browser.
 
-But is all the content on your website actually readable, usable, and understandable for everyone? Are there no thresholds that bar certain  people from "accessing" all the information you are exposing?
+But, is all the content on your website actually readable, usable, and understandable by everyone? Are there no thresholds that bar certain people from 'accessing' all the information you are exposing?
 
 You could ask yourself questions such as the following:
 
@@ -62,7 +61,7 @@ There are variations on this legislation all over the world, some more severe an
 ## Ok, so accessibility is a big deal. Now how do we implement it?
 That question, sadly, is harder to answer than it may seem.
 
-As stated above, accessibility is important for a large group of different people, each with their own needs. Making your website work for everyone is a large, on-going task.
+As stated above, accessibility is important for a large group of different people, each with their own needs. Making your website work for everyone is a large, ongoing task.
 
 The Web Content Accessibility Guidelines or <a href='https://www.wuhcag.com/web-content-accessibility-guidelines/' target='_blank' rel='nofollow'>WCAG</a> were composed to help developers create accessible content. This document contains a number of criteria you can use to check your website. There are also advanced techniques like [WAI-ARIA] that are important for JavaScript-based apps.
 

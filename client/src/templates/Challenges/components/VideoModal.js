@@ -32,13 +32,13 @@ export class VideoModal extends Component {
         show={isOpen}
         >
         <Modal.Header
-          className='help-modal-header fcc-modal'
+          className='video-modal-header fcc-modal'
           closeButton={true}
           >
           <Modal.Title className='text-center'>Watch A Video</Modal.Title>
         </Modal.Header>
-        <Modal.Body>
-          <iframe frameBorder='0' src={videoUrl} title='Watch a video'/>
+        <Modal.Body className='video-modal-body'>
+          <iframe frameBorder='0' src={videoUrl} title='Watch a video' />
           <p>
             Tip: If the mini-browser is covering the code, click and drag to
             move it. Also, feel free to stop and edit the code in the video at

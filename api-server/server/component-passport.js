@@ -6,7 +6,7 @@ import url from 'url';
 import jwt from 'jsonwebtoken';
 import dedent from 'dedent';
 
-import { homeLocation } from '../../config/env.json';
+import { homeLocation } from '../../config/env';
 import { jwtSecret } from '../../config/secrets';
 import passportProviders from './passport-providers';
 import { createCookieConfig } from './utils/cookieConfig';
