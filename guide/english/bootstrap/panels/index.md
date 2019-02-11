@@ -79,4 +79,5 @@ This is a set of examples that shows each type of panel. The CSS Class is displa
 ### More Information
 
 - [Bootstrap dropdown documentation](https://getbootstrap.com/docs/4.0/components/dropdowns/)
+- [Panels have been replaced with the "card" class in Bootstrap 4](https://getbootstrap.com/docs/4.0/components/card/)
 - [Bootstrap v4.0.0 Migration Panels](https://getbootstrap.com/docs/4.1/migration/#panels/)
