@@ -13,7 +13,6 @@ $ gem install rails
 ```
 ## Setting Up database
 Rails ships with sqlite3 as the default database, which is a simple file on disk. You need to install MySQL or PostgreSQL if you want to use something more robust. 
-Disclaimer : If you wish to deploy your website to Heroku, you will have to use PostgreSQL as sqlite3 is not supported.
 
 ## Creating a Rails application
 
