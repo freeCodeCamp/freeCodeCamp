@@ -52,6 +52,6 @@ let result = hello; // Change this line
 <section id='solution'>
 
 ```js
-// solution required
+let wsRegex = /^(\s+)(.+[^\s])(\s+)$/;
 ```
 </section>
