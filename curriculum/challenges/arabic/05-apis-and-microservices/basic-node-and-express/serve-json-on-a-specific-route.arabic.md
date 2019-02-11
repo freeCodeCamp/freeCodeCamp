@@ -22,7 +22,7 @@ challengeType: 2
 
 ```yml
 tests:
-  - text: "يجب أن تخدم نقطة النهاية <code>/json</code> كائن json <code>{"message": "Hello json"}</code> "
+  - text: "يجب أن تخدم نقطة النهاية <code>/json</code> كائن json <code>{'message': 'Hello json'}</code> "
     testString: 'getUserInput => $.get(getUserInput(''url'') + ''/json'').then(data => { assert.equal(data.message, ''Hello json'', ''The \''/json\'' endpoint does not serve the right data''); }, xhr => { throw new Error(xhr.responseText); })'
 
 ```
