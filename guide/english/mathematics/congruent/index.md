@@ -18,6 +18,7 @@ Interestingly, dilating a shape by a certain scale figure will not produce congr
 <!-- The article goes here, in GitHub-flavored Markdown. Feel free to add YouTube videos, images, and CodePen/JSBin embeds  -->
 
 #### More Information:
-[Here's a guide](https://www.mathsisfun.com/geometry/congruent.html) to information about producing congruent shapes
+- [Here's a guide](https://www.mathsisfun.com/geometry/congruent.html) to information about producing congruent shapes
+- [Congruent Shapes](https://sciencing.com/congruent-shapes-8503883.html)
 
 

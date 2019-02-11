@@ -1,10 +1,9 @@
 ---
 title: Constructors
 ---
+Constructors are functions or methods in a program that creates an object of a class and can also initialize attributes for the object. The object is an instance of the class and can perform the methods/functions defined within the class.
 
-If an object copies from a class, the what's the point? I should be able to store data in it right?
-
-That's when we use either **getter** (e.g., getName()) / **setter** (e.g., setName()) methods, or in this case constructors, to initialize a class. Basically, every Java Class has a constructor which is the method called first when any object of the class is initialized. Think of it as a bit of starter code.
+This includes **getter** (e.g., getName()) / **setter** (e.g., setName()) methods. Basically, every Java Class has a constructor which is the method called first when any object of the class is initialized. Think of it as the creation of a new attribute, not unlike the declaration of a new data type.
 
 When you write a class without any constructor, the Java compiler creates a default constructor :
 
@@ -177,4 +176,5 @@ class Complex {
 [run the full code](https://repl.it/MwnJ)
 
 
-//## Constructor Chaining
+#### More Information:
+- [Oracle Java Docs :Constructor Declarations](https://docs.oracle.com/javase/specs/jls/se7/html/jls-8.html#jls-8.8)
