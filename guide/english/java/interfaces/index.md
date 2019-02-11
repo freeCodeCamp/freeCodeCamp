@@ -3,7 +3,11 @@ title: Interfaces
 ---
 # Interfaces
 
-Interface in Java is a bit like the Class, but with a significant difference : an `interface` can _only_ have method signatures, fields and default methods. Since Java 8, you can also create [default methods](https://docs.oracle.com/javase/tutorial/java/IandI/defaultmethods.html). In the next block you can see an example of interface :
+Interface in Java is a bit like the Class, but with a significant difference : an `interface` can _only_ have method signatures, fields and default methods. Since Java 8, you can also create [default methods](https://docs.oracle.com/javase/tutorial/java/IandI/defaultmethods.html). 
+
+Classes that  implement an interface are thought to be signing a contract and agreeing to perform the specific behaviors listed in the interface. If the classes that implement an interface do not implement all the methods of the interface, then such a class needs to be defined as `abstract`.
+
+In the next block you can see an example of interface :
 
 ```java
 public interface Vehicle {
@@ -46,7 +50,7 @@ Vehicle tesla = new Car();
 tesla.start(); // starting engine ...
 ```
 
-An Interface **can not** contain a constructor methods,therefore,you **can not** create an instance of an Interface itself. You must create an instance of some class implementing an Interface to reference it. Think of interfaces as a blank contract form, or a template.
+An Interface **can not** contain a constructor methods,therefore,you **can not** create an instance of an Interface itself. You must create an instance of some class implementing an Interface to reference it. Think of interfaces as a blank contract form, or a template. 
 
 What can you do with this feature? Polymorphism! You can use only interfaces to refer to object instances!
 
@@ -262,3 +266,6 @@ public class SmartPhone implements MusicPlayer {
 Whoops, did I forget `next()` ? See, since it was a `default` method, I didn't had to provide an implementation at all. (Won't work for JDK < 8)
 
 So, now you have a good grasp of Interfaces! Go learn about Abstract Classes to know how Java gives you yet another way to define contracts.
+
+#### More Information
+- [Oracle Java Docs - Interfaces](https://docs.oracle.com/javase/specs/jls/se7/html/jls-9.html)

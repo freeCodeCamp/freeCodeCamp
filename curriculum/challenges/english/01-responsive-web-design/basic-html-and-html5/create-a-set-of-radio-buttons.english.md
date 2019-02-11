@@ -7,7 +7,7 @@ videoUrl: 'https://scrimba.com/p/pVMPUv/cNWKvuR'
 
 ## Description
 <section id='description'>
-You can use <code>radio buttons</code> for questions where you want the user to only give you one answer out of multiple options.
+You can use <code>radio button</code>s for questions where you want the user to only give you one answer out of multiple options.
 Radio buttons are a type of <code>input</code>.
 Each of your radio buttons can be nested within its own <code>label</code> element. By wrapping an <code>input</code> element inside of a <code>label</code> element it will automatically associate the radio button input with the label element surrounding it.
 All related radio buttons should have the same <code>name</code> attribute to create a radio button group. By creating a radio group, selecting any single radio button will automatically deselect the other buttons within the same group ensuring only one answer is provided by the user.
@@ -19,7 +19,7 @@ It is considered best practice to set a <code>for</code> attribute on the <code>
 
 ## Instructions
 <section id='instructions'>
-Add a pair of radio buttons to your form, each nested in its own label element. One should have the option of <code>indoor</code> and the other should have the option of <code>outdoor</code>. Both should share the <code>name</code> attribute of <code>indoor-outdoor</code> to create a radio group.
+Add a pair of radio buttons to your form, each nested in its own <code>label</code> element. One should have the option of <code>indoor</code> and the other should have the option of <code>outdoor</code>. Both should share the <code>name</code> attribute of <code>indoor-outdoor</code> to create a radio group.
 </section>
 
 ## Tests
