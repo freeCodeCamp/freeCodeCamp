@@ -2,69 +2,56 @@
 title: Types of Blockchain
 ---
 
-![Blockchain](https://github.com/Vagisha16/Hw3/blob/master/blockchain-what-and-why-19-638.jpg?raw=true)
+# Types of Blockchain
 
-## Types of Blockchain
+<img src="https://upload.wikimedia.org/wikipedia/commons/a/ab/Blockchain_landscape.svg" alt="drawing" width="600"/>
 
-As of now, there are mainly three types of Blockchains that have emerged. These are broad classifications based on the way the tech is used and handled.
+## Main Types of Blockchain
+There are a few main types of blockchain that have emerged:
+- Private blockchain
+- Public blockchain
+- Hybrid blockchain
+- Consortium/Federated blockchain
 
-1. Private Blockchain
-2. Public Blockchain
-3. Consortium/Federated Blockchain (Hybrid)
+These are broad classifications based on the way the tech is used and handled.
 
-#### 1. Private Blockchain
+### Private Blockchain
+Blockchain Technology that is owned by a private party or an organization. It is a decentralized architecture, but some powers to make decisions are vested in the hands of the person in-charge. This architecture is typically more scalable because there is no need for a consensus algorithm for nodes on the network to agree on the state of the blockchain. 
 
-Blockchain Technology that is owned by a private party or an organization. It is a decentralized architecture but some powers to make decisions are vested in the hands of the person in-charge. This architecture is typically more scalable because there is no need for a consensus algorithm for nodes on the network to agree on the state of the blockchain. 
+The person in-charge is responsible for giving selective access and permissions such as read and write.
 
-The person in-charge is responsible for giving selective access and permissions such as read/write.
+Examples: Bankchain, Hyperledger, Multichain, Ethereum (Private network)
 
-Example : Bankchain, Hyperledger, Multichain, Ethereum(Private network)
-
-#### 2. Public Blockchain
-
+### Public Blockchain
 In this architecture, no one is in charge. Anyone and everyone can participate in reading, writing, and auditing the blockchain.
 
-Public Blockchain is open and transparent and therefore it is open for review by anyone willing to do so, at any given time. This architecture requires a consensus algorithm like Proof-of-Work or Proof-of-Stake.
+Public Blockchain is open and transparent and therefore it is open for review by anyone willing to do so, at any given time. This architecture requires a consensus algorithm like Proof-of-Work or Proof-of-Stake to make important decisions.
 
-But a natural question that comes to our mind is that when no one is in charge here then how the decisions are taken on these types of the blockchain. So the answer is that decision making happens by various decentralized consensus mechanisms such as proof of work (POW) and proof of stake(POS) etc.
+Examples: Bitcoin, Ethereum, Litecoin
 
-Example : Bitcoin, Ethereum, Litecoin
-
-#### 3. Consortium/Federated Blockchain
-
-In this type of blockchain the problem of the private blockchain is solved. The issue of sole autonomy by vesting the power in the hands of an individual is tackeled by making more than one person in charge.
-
-A group of people come together to form a consortium or federation, which in turn works together for the common good.
-
-Example : [Energy Web Foundation](http://energyweb.org/)
-
-#### 4. Hybrid Blockchain
-
+### Hybrid Blockchain
 A public blockchain which hosts a private network with restricted participation. The private network generates blocks of hashed data stored on the public blockchain, but without sacrificing data privacy. It provides flexible control over what data is kept private and what is shared on the public ledger.
 
-Hybrid blockchains offer the benefits of decentralization and scalability, without requiring consensus from every single node on the network.
+Hybrid blockchain offer the benefits of decentralization and scalability, without requiring consensus from every single node on the network.
 
-Example : XinFin
+Example: XinFin
 
+### Consortium/Federated Blockchain
+Consortium/Federated blockchain helps solve the issue of the private blockchain. The issue of sole autonomy by vesting the power in the hands of an individual is handled by putting in-charge more than a single person.
 
+A group of people come together to form a consortium or federation. Which in turn works together for the common good.
 
+Example: [Energy Web Foundation](http://energyweb.org/)
 
+## Hyperledger
+There is another category for classification, that is based on the permission granted to the blockchain network. They are classified as:
+- Public Permissioned Blockchain
+- Private Permissioned Blockchain
+- Permissionless Blockchain
 
-There is another category for classification, that is based on the permission granted to the blockchain network. They are classified as -
+[Hyperledger](https://www.hyperledger.org/) is a multi-project open source collaborative effort hosted by The Linux Foundation. It is used to make permissioned blockchain.
 
-1. Public Permissioned Blockchain
-2. Private Permissioned Blockchain
-3. Permissionless Blockchain
-
-` Basically we use hyperledger to make permissioned blockchain. Hyperledger is a multi-project open source collaborative effort hosted by The Linux Foundation. `
-
-#### More information:
-
-[A Beginner's Guide to Blockchain](https://blockgeeks.com/guides/what-is-blockchain-technology/)
-
-[Different Types of Blockchain](https://coinsutra.com/different-types-blockchains/)
-
-[Types of Blockchain](https://data-flair.training/blogs/types-of-blockchain/)
-
-<sub>This article is not an original work and is inspired and taken from [here](https://coinsutra.com/different-types-blockchains/) and [here](https://data-flair.training/blogs/types-of-blockchain/)</sub>
-
+## Additional Resources
+- [A Beginner's Guide to Blockchain](https://blockgeeks.com/guides/what-is-blockchain-technology/)
+- [Different Types of Blockchain](https://coinsutra.com/different-types-blockchains/)
+- [Types of Blockchain](https://data-flair.training/blogs/types-of-blockchain/)
