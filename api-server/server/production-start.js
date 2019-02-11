@@ -1,5 +1,5 @@
 // this ensures node understands the future
-require('babel-register');
+require('@babel/register');
 const _ = require('lodash');
 const createDebugger = require('debug');
 
