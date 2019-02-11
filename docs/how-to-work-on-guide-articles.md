@@ -87,9 +87,9 @@ Here are a few guidelines the reviewers follow when reviewing PRs:
 - **content** is for pull requests that modify the content of articles on the guide (they add a new article or update an existing article)
 - **duplicate** is for pull requests that have the same content as another open PR
 - **changes requested** is for pull requests that need a change before getting merged
-- **stale** is for pull requests with _"changes requested"_ label that doesn't get activity after about 2 weeks and will subsequently be closed.
-  - A _stale_ pull request should be closed.
-  - Here is [an example](https://github.com/freeCodeCamp/freeCodeCamp/pull/235).
+- **stale** is for pull requests with _"changes requested"_ label that doesn't get activity after about 2 weeks and will subsequently be closed
+  - A _stale_ pull request should be closed
+  - Here is [an example](https://github.com/freeCodeCamp/freeCodeCamp/pull/235)
 
 #### Conflicting/Duplicate Content
 
