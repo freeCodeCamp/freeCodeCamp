@@ -4,27 +4,27 @@ title: Add Different Padding to Each Side of an Element
 challengeType: 0
 guideUrl: 'https://russian.freecodecamp.org/guide/certificates/add-different-padding-to-each-side-of-an-element'
 videoUrl: ''
-localeTitle: Добавление различной прокладки к каждой стороне элемента
+localeTitle: Добавьте разные внутренние отступы к каждой стороне элемента
 ---
 
 ## Description
-<section id="description"> Иногда вам нужно настроить элемент таким образом, чтобы на каждой его стороне было различное количество <code>padding</code> . CSS позволяет вам управлять <code>padding</code> всех четырех отдельных сторон элемента с помощью свойств <code>padding-top</code> , <code>padding-right</code> , <code>padding-bottom</code> и <code>padding-left</code> . </section>
+<section id="description"> Иногда вам нужно настроить элемент таким образом, чтобы на каждой его стороне было различное количество внутренних отступов - <code>padding</code> . CSS позволяет вам управлять <code>padding</code> всех четырех отдельных сторон элемента с помощью свойств <code>padding-top</code> , <code>padding-right</code> , <code>padding-bottom</code> и <code>padding-left</code> . </section>
 
 ## Instructions
-<section id="instructions"> Дайте синей коробке <code>padding</code> <code>40px</code> на ее верхней и левой стороне, но только <code>20px</code> на ее нижней и правой стороне. </section>
+<section id="instructions"> Задайте синему квадрату <code>padding</code> <code>40px</code> на его верхней и левой стороне, но только <code>20px</code> на его нижней и правой стороне. </section>
 
 ## Tests
 <section id='tests'>
 
 ```yml
 tests:
-  - text: Ваш <code>blue-box</code> класс должен дать верхнюю часть элементов <code>40px</code> из <code>padding</code> .
+  - text: Ваш класс <code>blue-box</code> должен содержать <code>padding</code> сверху <code>40px</code>.
     testString: 'assert($(".blue-box").css("padding-top") === "40px", "Your <code>blue-box</code> class should give the top of the elements <code>40px</code> of <code>padding</code>.");'
-  - text: Ваш класс с <code>blue-box</code> должен давать право на элементы <code>20px</code> <code>padding</code> .
+  - text: Ваш класс <code>blue-box</code> должен содержать <code>padding</code> справа <code>20px</code>.
     testString: 'assert($(".blue-box").css("padding-right") === "20px", "Your <code>blue-box</code> class should give the right of the elements <code>20px</code> of <code>padding</code>.");'
-  - text: Ваш класс <code>blue-box</code> должен дать основание элементов <code>20px</code> <code>padding</code> .
+  - text: Ваш класс <code>blue-box</code> должен содержать <code>padding</code> снизу <code>20px</code>.
     testString: 'assert($(".blue-box").css("padding-bottom") === "20px", "Your <code>blue-box</code> class should give the bottom of the elements <code>20px</code> of <code>padding</code>.");'
-  - text: Ваш <code>blue-box</code> класс должен дать слева от элементов <code>40px</code> из <code>padding</code> .
+  - text: Ваш класс <code>blue-box</code> должен содержать <code>padding</code> слева <code>40px</code>.
     testString: 'assert($(".blue-box").css("padding-left") === "40px", "Your <code>blue-box</code> class should give the left of the elements <code>40px</code> of <code>padding</code>.");'
 
 ```

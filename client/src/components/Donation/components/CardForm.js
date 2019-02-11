@@ -1,4 +1,4 @@
-import React, { PureComponent } from 'react';
+import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import { Button } from '@freecodecamp/react-bootstrap';
 
@@ -9,7 +9,7 @@ const propTypes = {
   handleSubmit: PropTypes.func.isRequired
 };
 
-class CardForm extends PureComponent {
+class CardForm extends Component {
   constructor(...props) {
     super(...props);
 

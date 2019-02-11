@@ -3,7 +3,7 @@ title: SVG
 ---
 ## SVG
 
-SVG or Scalable Vector Graphics is a web standard for defining vector-based graphics in web pages. Based on XML the SVG standard provides markup to describe paths, shapes, and text within a viewport. The markup can be embedded directly into HTML for display or saved to a `.svg` file and inserted like any other image. You can write SVG by hand, but more complicated graphics can be designed in vector graphics editors such as Illustrator or InkScape and exported to SVG files or code.
+SVG or Scalable Vector Graphics is a web standard for defining vector-based graphics in web pages. Based on XML, the SVG standard provides markup to describe paths, shapes, and text within a viewport. The markup can be embedded directly into HTML for display or saved to a `.svg` file and inserted like any other image. You can write SVG by hand, but more complicated graphics can be designed in vector graphics editors such as Illustrator or InkScape and exported to SVG files or code.
 
 ## SVG Basics
 Developers start an SVG graphic with the `<svg>` tag and XML namespace like so:
@@ -19,13 +19,12 @@ This sample won't display anything, it merely established a viewport. You can ad
 With a viewport in place you can add basic graphics, text, and path elements.
 
 ```svg
-<svg
-     version="1.1"
+<svg version="1.1"
      width="100%"
      viewbox="0 0 600 300"
-     xmlns="http://www.w3.org/2000/svg">
+     xmlns="http://www.w3.org/2000/svg" >
   <rect x="10" y="10" width="100" height="100" fill="#f7b2c1" />
-  <circle cx="240" cy="60" r="50" fill="#c1b2f7" stroke="#b2c1f7" stroke-width="15"/>
+  <circle cx="240" cy="60" r="50" fill="#c1b2f7" stroke="#b2c1f7" stroke-width="15" />
   <text x="450" y="70" font-size="20" text-anchor="middle">SVG Text is browser readable!</text>
   <g stroke="#b2c1f7"> <!-- g is for group -->
     <path stroke-width="2" d="M10 170 l590 0" />
@@ -51,16 +50,16 @@ The `<path />` element defines a vector path in the viewport. The path is define
 
 The following commands can be used to create your path:
 
-M = move to
-L = line to
-H = horizontal line to
-V = vertical line to
-Z = close path
-C = (cubic bezier) curve to
-S = smooth curve to
-Q = quadratic bezier curve to
-T = smooth quadratic bezier curve to
-A = arc
+M = move to   
+L = line to   
+H = horizontal line to  
+V = vertical line to  
+Z = close path  
+C = (cubic bezier) curve to  
+S = smooth curve to  
+Q = quadratic bezier curve to  
+T = smooth quadratic bezier curve to  
+A = arc  
 
 ### The canvas element
 
@@ -68,17 +67,19 @@ Canvas graphics can be drawn onto a <canvas> element. You can give such an eleme
 The <canvas> tag is intended to support different styles of drawing. To get access to an actual drawing interface, we first need to create a context, which is an object whose methods provide the drawing interface. There are currently two widely supported drawing styles: "2d" for two-dimensional graphics and "webgl" for three-dimensional graphics through the OpenGL interface.
 
 A context is created through the getContext method on the <canvas> element.
+```html
+<!-- before canvas -->
+<canvas width ="120" height ="60"></canvas>
+
+<!-- after canvas -->
+<script>
+var canvas = document.querySelector("canvas");
+var context = canvas.getContext("2d");
+context.fillStyle = "red";
+context.fillRect (10, 10, 100, 50) ;
+</script>
 ```
-<p > Before canvas . </p >
-< canvas width ="120" height ="60" > </ canvas >
-<p > After canvas . </p >
-< script >
-var canvas = document . querySelector (" canvas ") ;
-var context = canvas . getContext ("2 d ") ;
-context . fillStyle = " red ";
-context . fillRect (10 , 10 , 100 , 50) ;
-</ script >
-```
+
 ![](http://www.crwflags.com/fotw/images/s/sly@stt.gif)
 
 After creating the context object, the example draws a red rectangle 100
@@ -89,39 +90,36 @@ pixels wide and 50 pixels high, with its top-left corner at coordinates
 
 The results variable contains an array of objects that represent the
 survey responses.
-```
-var results = [
-{ name : " Satisfied " , count : 1043 , color : " lightblue "} ,
-{ name : " Neutral " , count : 563 , color : " lightgreen "} ,
-{ name : " Unsatisfied " , count : 510 , color : " pink "} ,
-{ name : " No comment " , count : 175 , color : " silver "}
-];
+```javascript
+var results = [{ name: "Satisfied", count: 1043, color: "lightblue"},
+               { name: "Neutral", count: 563, color: "lightgreen"},
+               { name: "Unsatisfied", count: 510, color: "pink"},
+               { name: "No comment", count: 175, color: "silver"}];
 ```
 To draw a pie chart, we draw a number of pie slices, each made up of an arc and a pair of lines to the center of that arc. We can compute the angle taken up by each arc by dividing a full circle (2 π ) by the total number of responses and then multiplying that number (the angle per response) by the number of people who picked a given choice.
-```
-< canvas width ="200" height ="200" > </ canvas >
-< script >
-var cx = document . querySelector (" canvas ") . getContext ("2 d ") ;
-var total = results . reduce ( function ( sum , choice ) {
-return sum + choice . count ;
-} , 0) ;
-
+```html
+<canvas width="200" height="200"> </canvas>
+<script>
+var cx = document.querySelector("canvas").getContext("2d");
+var total = results.reduce(function(sum, choice){ 
+                              return sum + choice.count;
+                           }, 0);
 // Start at the top
 
-var currentAngle = -0.5 * Math . PI ;
-results . forEach ( function ( result ) {
-var sliceAngle = ( result . count / total ) * 2 * Math . PI ;
-cx . beginPath () ;
-// center =100 ,100 , radius =100
-// from current angle , clockwise by slice ' s angle
-cx . arc (100 , 100 , 100 ,
-currentAngle , currentAngle + sliceAngle );
-currentAngle += sliceAngle ;
-cx . lineTo (100 , 100) ;
-cx . fillStyle = result . color ;
-cx . fill () ;
-}) ;
-</ script >
+var currentAngle = -0.5 * Math.PI ;
+results.forEach(function(result){
+                    var sliceAngle = (result.count / total) * 2 * Math.PI ;
+                    cx.beginPath();
+                    // center = 100, 100
+                    // radius =100
+                    // from current angle, clockwise by slice's angle
+                    cx.arc(100, 100, 100, currentAngle, currentAngle + sliceAngle);
+                    currentAngle += sliceAngle;
+                    cx.lineTo(100, 100);
+                    cx.fillStyle = result.color;
+                    cx.fill();
+               });
+</script>
 ```
 This draws the following chart:
 ![](https://pbs.twimg.com/media/CTDvkA8UwAAdJg5.png)
@@ -140,7 +138,7 @@ There are a few tools available to create SVG in the form of a drawing program.
 - <a href='https://www.inkscape.org/' target='_blank' rel='nofollow'>Inkscape</a> - It is an open source tool for state-of-the-art vector drawing with an easy to use graphical interface.
 - <a href='https://www.adobe.com/products/illustrator/' target='_blank' rel='nofollow'>Adobe Illustrator</a> - Adobe Illustrator is a commercial tool for Vector Imagery.
 
-For more tools, refer to <a href='https://https://www.w3.org/Graphics/SVG/WG/wiki/Implementations' target='_blank' rel='nofollow'>W3C list of tools that supports SVG</a>
+For more tools, refer to <a href='https://www.w3.org/Graphics/SVG/WG/wiki/Implementations' target='_blank' rel='nofollow'>W3C list of tools that supports SVG</a>
 
 ## Why you should use SVGs
 
