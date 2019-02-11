@@ -1,6 +1,6 @@
 # How to work on Guide articles
 
-With your help, we can create a comprehensive reference tool that will help millions of people who are learning to code for years to come! 💛
+With your help, we can create a comprehensive reference tool that will help millions of people who are learning to code for years to come. 💛
 
 You can:
 
