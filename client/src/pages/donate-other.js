@@ -1,12 +1,13 @@
 /* eslint-disable max-len */
 import React, { Component, Fragment } from 'react';
 import Helmet from 'react-helmet';
-import ReactGA from 'react-ga';
+import ReactGA from '../analytics/index.js';
+import { Link } from 'gatsby';
 import { Grid, Col, Row } from '@freecodecamp/react-bootstrap';
 
 import Spacer from '../components/helpers/Spacer';
 
-const payPalPayments = [
+const paypalMonthlyDonations = [
   { eventLabel: 'paypal',
     eventValue: 5,
     defaultValueHash: 'KTAXU8B4MYAT8',
@@ -36,59 +37,40 @@ const payPalPayments = [
     eventValue: 250,
     defaultValueHash: '69JGTY4DHSTEN',
     defaultValue: 'Donate $250 each month'
-  },
-  { eventLabel: 'paypal one time donation',
-    eventValue: 0,
-    defaultValueHash: 'B256JC6ZCWD3J',
-    defaultValue: 'Make a one-time donation'
   }
 ];
 
+const paypalOneTimeDonation = {
+  eventLabel: 'paypal one time donation',
+  eventValue: 0,
+  defaultValueHash: 'B256JC6ZCWD3J',
+  defaultValue: 'Make a one-time donation'
+};
+
 class IndexPage extends Component {
-    constructor(props, context) {
-    super(props, context);
-  }
 
-  formbuilder(eventLabel, eventValue, defaultValueHash, defaultValue) {
+  renderForm(item) {
     return (
-      <div onClick={()=> ReactGA.event({category: 'Donation', action: 'paypal', label: eventValue.toString()})}>
-        <form
-          action='//www.paypal.com/cgi-bin/webscr'
-          method='post'
-          onSubmit={`ga('send',  { hitType: 'event', eventCategory: 'donation', eventAction: 'click', eventLabel: ${eventLabel} 'paypal', eventValue: ${eventValue} } );`}
-          target='_blank'
-          >
-          <input defaultValue='_s-xclick' name='cmd' type='hidden' />{' '}
-          <input
-            defaultValue={defaultValueHash}
-            name='hosted_button_id'
-            type='hidden'
-          />{' '}
-          <input
-            className='btn btn-cta signup-btn btn-block'
-            defaultValue={defaultValue}
-            name='submit'
-            type='submit'
-          />
-        </form>
-      </div>
+      <form
+        action='//www.paypal.com/cgi-bin/webscr'
+        method='post'
+        onSubmit={ReactGA.event({category: 'donation', action: 'click', label: item.eventLabel, value: item.eventValue})}
+        target='_blank'
+        >
+        <input defaultValue='_s-xclick' name='cmd' type='hidden' />{' '}
+        <input
+          defaultValue={item.defaultValueHash}
+          name='hosted_button_id'
+          type='hidden'
+        />{' '}
+        <input
+          className='btn btn-cta signup-btn btn-block'
+          defaultValue={item.defaultValue}
+          name='submit'
+          type='submit'
+        />
+      </form>
     );
-  }
-
-  formfilter = (array, frequency) => {
-    if (frequency === 'monthly') {
-      return array
-        .filter(item => item.eventValue > 0)
-        .map((item) => {
-          return this.formbuilder(item.eventLabel, item.eventValue, item.defaultValueHash, item.defaultValue);
-      });
-    } else {
-      return array
-        .filter(item => item.eventValue === 0)
-        .map((item) => {
-          return this.formbuilder(item.eventLabel, item.eventValue, item.defaultValueHash, item.defaultValue);
-      });
-    }
   }
 
   render() {
@@ -117,7 +99,9 @@ class IndexPage extends Component {
               the links below and following the instructions on PayPal. You can
               easily stop your donations at any time in the future.
             </p>
-            {this.formfilter(payPalPayments, 'monthly')}
+            {paypalMonthlyDonations.map((item) => {
+              return this.renderForm(item);
+            })}
             <hr />
             <h3>Make a one-time donation using PayPal</h3>
             <p>
@@ -125,7 +109,7 @@ class IndexPage extends Component {
               amount of money by clicking one of the links below and following the
               instructions on PayPal:
             </p>
-            {this.formfilter(payPalPayments)}
+            {this.renderForm(paypalOneTimeDonation)}
             <hr />
             <h3>Get your employer to match your donation</h3>
             <p>
@@ -198,7 +182,7 @@ class IndexPage extends Component {
             </h3>
             <Spacer />
             <div className='text-center'>
-              <a href='/donate'>Or donate using a Credit or Debit Card.</a>
+              <Link to='/donate'>Or donate using a Credit or Debit Card.</Link>
             </div>
             <Spacer />
           </Col>
