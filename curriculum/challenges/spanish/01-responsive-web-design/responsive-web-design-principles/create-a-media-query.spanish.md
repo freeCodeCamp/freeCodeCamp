@@ -18,9 +18,9 @@ localeTitle: Crear una consulta de medios
 ```yml
 tests:
   - text: Su elemento <code>p</code> debe tener el <code>font-size</code> de <code>font-size</code> de 10 px cuando la <code>height</code> del dispositivo sea menor o igual a 800 px.
-    testString: 'assert($("p").css("font-size") == "10px", "Your <code>p</code> element should have the <code>font-size</code> of 10px when the device <code>height</code> is less than or equal to 800px.");'
+    testString: 'assert($("p").css("font-size") == "10px", "Su elemento <code>p</code> debe tener el <code>font-size</code> de <code>font-size</code> de 10 px cuando la <code>height</code> del dispositivo sea menor o igual a 800 px.");'
   - text: Declare una consulta <code>@media</code> para dispositivos con una <code>height</code> menor o igual a 800px.
-    testString: 'assert(code.match(/@media\s*?\(\s*?max-height\s*?:\s*?800px\s*?\)/g), "Declare a <code>@media</code> query for devices with a <code>height</code> less than or equal to 800px.");'
+    testString: 'assert(code.match(/@media\s*?\(\s*?max-height\s*?:\s*?800px\s*?\)/g), "Declare una consulta <code>@media</code> para dispositivos con una <code>height</code> menor o igual a 800px.");'
 
 ```
 

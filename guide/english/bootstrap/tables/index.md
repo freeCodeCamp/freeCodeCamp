@@ -16,6 +16,33 @@ In order to achieve the basic styling example add the base class `.table` to any
 ![Basic Table](https://github.com/TroyB12/Pictures/blob/master/Basic%20Table.PNG)
 
 ---
+
+#### Table Head
+
+You can define separate header section in your table structure.
+This is example
+```html
+<table class="table">
+    <thead class=theat-dark>
+    <tr>
+      <th scope="col">#</th>
+      <th scope="col">First</th>
+      <th scope="col">Last</th>
+      <th scope="col">Handle</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr>
+      <th scope="row">1</th>
+      <td>Bob</td>
+      <td>Robo</td>
+      <td>@bro</td>
+    </tr>
+  </tbody>
+</table>
+```
+
+
 #### Table Striped
 
 In order to achieve the striped row effect (zebra-striping) in tables use `.table-striped` in addition to `.table` on any `<table>` element.  Striped tables are styled via the `:nth-child` CSS selector, which is not available in Internet Explorer 8.
