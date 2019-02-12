@@ -1,5 +1,5 @@
 ---
-title: Writing a Markdown File for Github Using Atom
+title: Writing a Markdown File for GitHub Using Atom
 localeTitle: 使用Atom为Github写一个Markdown文件
 ---
 Markdown是一种在Web上设置文本样式的方法，GitHub用户使用markdown为其存储库提供文档。
