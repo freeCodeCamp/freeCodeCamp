@@ -44,6 +44,20 @@ abc1def
 
 Even without explicitly converting `Int` value 1 to `String` object first, the resulting output is still a `String`.
 
+Kotlin also supports String templates (expression that starts with dollar sign $) which are preferred to string concatenation.
+
+```kotlin
+var a = 1
+// simple name in template:
+val s1 = "a is $a"
+```
+
+```kotlin
+a = 2
+// arbitrary expression in template:
+val s2 = "${s1.replace("is", "was")}, but now is $a"
+```
+
 #### String with Multiple Lines
 
 Programmers can declare `String` variables with multiple lines by using triple quotes instead of double quotes

@@ -38,8 +38,22 @@ function hello() {
 }
 hello();
 ```
+The third way is the `/** */` comment, a format popularly known as JSDoc, can be used to clearly describe functions, classes, methods, and variables in your codebase in a detailed way. For example: 
 
-You can also prevent execution of Javascript code just commenting the code lines like this:
+```javascript
+/**
+ * Adds two numbers together
+ * 
+ * @param {number} num1 - first parameter
+ * @param {number} num2 - second parameter
+ * @returns {number}
+ */
+function addTwoNumbers(num1, num2) {
+  return num1 + num2;
+}
+console.log(addTwoNumbers(10,20)) // will print 30 in the console.
+
+In some cases you may want to prevent code from running for debugging purposes. For example:
 ```javascript
 function hello() {
   /*console.log("Hello world!");*/
@@ -51,11 +65,15 @@ hello();
 <h3>Many IDEs come with a keyboard shortcut to comment out lines. </h3>
 <ol>
   <li>Highlight text to be commented</li>
-  <li>Mac: Push Command(Apple Key) & "/"</li>
-  <li>Windows: Push Control & "/"</li>
+  <li> Use hotkeys to comment out highlighted block
+  <ul>
+    <li>Mac: Push <kbd>Command</kbd> + <kbd>/</kbd></li>
+    <li>Windows: Push <kbd>Control</kbd> + <kbd>/</kbd></li>
+    <li>Most Linux Distros: Push <kbd>Shift</kbd> + <kbd>Alt</kbd> + <kbd>A</kbd></li>
+  </ul>
+  </li>
   <li>You can also uncomment code by doing the same steps</li>
 </ol>
-A shortcut to comment out a section of javascript in many code editors is to highlight the lines of code you want to comment out, then press `Cmd/Ctrl + /`.
 
 Comments are also very helpful for code testing as you can prevent a certain code-line/block from running
 
