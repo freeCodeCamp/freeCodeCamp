@@ -68,8 +68,8 @@ class Layout extends React.Component {
                 toggleExpandedState
               }) => (
                 <Fragment>
-                  <Spacer size={2} />
-                  <Grid>
+                  <Spacer size={1} />
+                  <Grid className='guide-container'>
                     <Row>
                       <Col
                         md={4}

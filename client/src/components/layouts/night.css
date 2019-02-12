@@ -46,3 +46,7 @@
   background-color: #242424;
   color: #02a902;
 }
+
+.night .list-group-item {
+  background-color: unset;
+}

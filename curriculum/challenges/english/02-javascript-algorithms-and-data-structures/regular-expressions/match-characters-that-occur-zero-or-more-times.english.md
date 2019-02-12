@@ -57,6 +57,8 @@ let result = chewieQuote.match(chewieRegex);
 <section id='solution'>
 
 ```js
-// solution required
+  let chewieQuote = "Aaaaaaaaaaaaaaaarrrgh!";
+  let chewieRegex = /Aa*/;
+  let result = chewieQuote.match(chewieRegex);
 ```
 </section>
