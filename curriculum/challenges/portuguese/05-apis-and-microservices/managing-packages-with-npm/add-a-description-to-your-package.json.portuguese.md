@@ -26,7 +26,7 @@ Lembre-se de usar aspas duplas para nomes de campos (") e vírgulas (,) para sep
 
 ```yml
 tests:
-  - text: package.json deve ter uma chave de "descrição" válida
+  - text: 'package.json deve ter uma chave de "descrição" válida'
     testString: 'getUserInput => $.get(getUserInput(''url'') + ''/_api/package.json'').then(data => { var packJson = JSON.parse(data); assert(packJson.description, ''"description" is missing''); }, xhr => { throw new Error(xhr.responseText); })'
 
 ```

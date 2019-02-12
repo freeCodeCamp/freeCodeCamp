@@ -33,9 +33,9 @@ Na seção dependencies do seu pacote.json, altere a versão do momento para coi
 
 ```yml
 tests:
-  - text: 'dependências' devem incluir 'momento' '
+  - text: "dependências devem incluir 'momento' "
     testString: 'getUserInput => $.get(getUserInput(''url'') + ''/_api/package.json'').then(data => { var packJson = JSON.parse(data); assert.property(packJson.dependencies, ''moment'', ''"dependencies" does not include "moment"''); }, xhr => { throw new Error(xhr.responseText); })'
-  - text: A versão "momento" deve ser "2.10.2" '
+  - text: 'A versão "momento" deve ser "2.10.2" '
     testString: 'getUserInput => $.get(getUserInput(''url'') + ''/_api/package.json'').then(data => { var packJson = JSON.parse(data); assert.match(packJson.dependencies.moment, /^[\^\~]?2\.10\.2/, ''Wrong version of "moment". It should be 2.10.2''); }, xhr => { throw new Error(xhr.responseText); })'
 
 ```

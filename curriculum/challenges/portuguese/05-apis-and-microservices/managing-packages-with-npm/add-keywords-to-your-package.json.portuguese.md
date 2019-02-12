@@ -26,9 +26,9 @@ Uma das palavras-chave deve ser freecodecamp.
 
 ```yml
 tests:
-  - text: package.json deve ter uma chave "keywords" válida
+  - text: 'package.json deve ter uma chave "keywords" válida'
     testString: 'getUserInput => $.get(getUserInput(''url'') + ''/_api/package.json'').then(data => { var packJson = JSON.parse(data); assert(packJson.keywords, ''"keywords" is missing''); }, xhr => { throw new Error(xhr.responseText); })'
-  - text: 'palavras-chave' campo deve ser uma matriz '
+  - text: 'palavras-chave campo deve ser uma matriz '
     testString: 'getUserInput => $.get(getUserInput(''url'') + ''/_api/package.json'').then(data => { var packJson = JSON.parse(data); assert.isArray(packJson.keywords, ''"keywords" is not an array''); }, xhr => { throw new Error(xhr.responseText); })'
   - text: '"palavras-chave" devem incluir "freecodecamp"'
     testString: 'getUserInput => $.get(getUserInput(''url'') + ''/_api/package.json'').then(data => { var packJson = JSON.parse(data);     assert.include(packJson.keywords, ''freecodecamp'', ''"keywords" does not include "freecodecamp"''); },  xhr => { throw new Error(xhr.responseText); })'

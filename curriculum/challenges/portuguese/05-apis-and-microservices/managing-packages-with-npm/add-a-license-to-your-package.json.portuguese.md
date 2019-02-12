@@ -26,7 +26,7 @@ Preencha o campo de licença no package.json do seu projeto Glitch conforme acha
 
 ```yml
 tests:
-  - text: package.json deve ter uma chave de "licença" válida
+  - text: 'package.json deve ter uma chave de "licença" válida'
     testString: 'getUserInput => $.get(getUserInput(''url'') + ''/_api/package.json'').then(data => { var packJson = JSON.parse(data); assert(packJson.license, ''"license" is missing''); }, xhr => { throw new Error(xhr.responseText); })'
 
 ```

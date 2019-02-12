@@ -26,9 +26,9 @@ Observe que os números da versão não devem ser alterados.
 
 ```yml
 tests:
-  - text: 'dependências' devem incluir 'momento' '
+  - text: "'dependências' devem incluir 'momento' "
     testString: 'getUserInput => $.get(getUserInput(''url'') + ''/_api/package.json'').then(data => { var packJson = JSON.parse(data); assert.property(packJson.dependencies, ''moment'', ''"dependencies" does not include "moment"''); }, xhr => { throw new Error(xhr.responseText); })'
-  - text: A versão "momento" deve corresponder a "^ 2.x.x" '
+  - text: 'A versão "momento" deve corresponder a "^ 2.x.x" '
     testString: 'getUserInput => $.get(getUserInput(''url'') + ''/_api/package.json'').then(data => { var packJson = JSON.parse(data); assert.match(packJson.dependencies.moment, /^\^2\./, ''Wrong version of "moment". It should be ^2.10.2''); }, xhr => { throw new Error(xhr.responseText); })'
 
 ```

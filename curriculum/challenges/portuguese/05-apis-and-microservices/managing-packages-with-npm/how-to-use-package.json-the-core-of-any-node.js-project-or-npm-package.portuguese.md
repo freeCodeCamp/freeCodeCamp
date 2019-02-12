@@ -29,7 +29,7 @@ Todos os campos devem ser separados por uma vírgula (,)
 
 ```yml
 tests:
-  - text: package.json deve ter uma chave "author" válida
+  - text: 'package.json deve ter uma chave "author" válida'
     testString: 'getUserInput => $.get(getUserInput(''url'') + ''/_api/package.json'').then(data => { var packJson = JSON.parse(data); assert(packJson.author, ''"author" is missing''); }, xhr => { throw new Error(xhr.responseText); })'
 
 ```

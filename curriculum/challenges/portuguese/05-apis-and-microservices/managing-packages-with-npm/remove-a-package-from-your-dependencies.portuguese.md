@@ -25,7 +25,7 @@ Verifique se você tem a quantidade certa de vírgulas depois de removê-lo.
 
 ```yml
 tests:
-  - text: 'dependências' não devem incluir 'momento' '
+  - text: "'dependências' não devem incluir 'momento' "
     testString: 'getUserInput => $.get(getUserInput(''url'') + ''/_api/package.json'').then(data => { var packJson = JSON.parse(data); assert.notProperty(packJson.dependencies, ''moment'', ''"dependencies" still includes "moment"''); }, xhr => { throw new Error(xhr.responseText); })'
 
 ```
