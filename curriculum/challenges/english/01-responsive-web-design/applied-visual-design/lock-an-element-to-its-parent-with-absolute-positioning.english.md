@@ -51,7 +51,7 @@ tests:
 <body>
   <h1>Welcome!</h1>
   <section>
-    <form id="searchbar">
+    <form id="searchbar" action="javascript:void(0);">
       <label for="search">Search:</label>
       <input type="search" id="search" name="search">
       <input type="submit" name="submit" value="Go!">
