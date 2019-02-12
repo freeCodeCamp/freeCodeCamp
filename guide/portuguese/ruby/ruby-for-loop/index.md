@@ -4,7 +4,7 @@ localeTitle: Ruby For Loops
 ---
 ## Ruby For Loops
 
-Os loops forçados Ruby são usados ​​para fazer loop ou iterar sobre vários elementos e executar um bloco de código para cada elemento. For loops são freqüentemente usados ​​em matrizes. Veja a seção sobre [Ruby Arrays](https://github.com/freeCodeCamp/guides/blob/master/src/pages/ruby/ruby-arrays/index.md) .
+Os loops forçados Ruby são usados para fazer loop ou iterar sobre vários elementos e executar um bloco de código para cada elemento. For loops são freqüentemente usados em matrizes. Veja a seção sobre [Ruby Arrays](https://github.com/freeCodeCamp/guides/blob/master/src/pages/ruby/ruby-arrays/index.md) .
 
 For loops são meramente um exemplo de loop ou iteração sobre elementos. Abaixo está um exemplo de um loop for:
 ```
@@ -26,6 +26,7 @@ Para ir além, podemos escrever o loop acima da seguinte maneira:
 ```
 element.each do { |element| puts element } 
 
-Dessa maneira, temos cada elemento do Array com o "apelido" passado entre os pipes: |element|. Esse nome pode ser qualquer nome. Em seguida podemos realizar as operações neste elemento em particular, como no exemplo, imprimindo o elemento no console.
+
+Desta forma, você tem cada elemento Array com o apelido passado entre os pipes: element. Este nome pode ser qualquer nome. Em seguida, você pode executar as operações nesse elemento específico, como no exemplo, imprimindo o elemento no console.
 
 ```
