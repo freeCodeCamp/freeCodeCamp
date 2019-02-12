@@ -4,7 +4,8 @@ title: Gatsby.js
 
 ## Gatsby.js
 
-Gatsby is a static site generator for [React](https://guide.freecodecamp.org/react), powered by [GraphQL](https://graphql.org/). 
+[Gatsby](https://www.gatsbyjs.org) is a static site generator for [React](https://guide.freecodecamp.org/react), powered by [GraphQL](https://graphql.org/). 
+Gatsby loads only the critical HTML, CSS, data, and JavaScript so your site loads as fast as possible. Once loaded, Gatsby prefetches resources for other pages so clicking around the site feels incredibly fast.
 
 The Gatsby environment provides several "starters" to help configure static sites quickly. Starters can be found here: [Starter Library](https://www.gatsbyjs.org/starters/).
 
