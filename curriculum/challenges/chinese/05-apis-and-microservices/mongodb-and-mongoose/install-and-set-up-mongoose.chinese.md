@@ -19,11 +19,11 @@ challengeType: 2
 
 ```yml
 tests:
-  - text: '“mongodb”依赖应该在package.json'
+  - text: '"mongodb"依赖应该在package.json'
     testString: 'getUserInput => $.get(getUserInput(''url'') + ''/_api/file/package.json'').then(data => { var packJson = JSON.parse(data);     assert.property(packJson.dependencies, ''mongodb''); }, xhr => { throw new Error(xhr.responseText); })'
-  - text: '“mongoose”依赖应该在package.json'中
+  - text: '"mongoose"依赖应该在package.json'
     testString: 'getUserInput => $.get(getUserInput(''url'') + ''/_api/file/package.json'').then(data => { var packJson = JSON.parse(data);     assert.property(packJson.dependencies, ''mongoose''); }, xhr => { throw new Error(xhr.responseText); })'
-  - text: '“mongoose”应该连接到数据库'
+  - text: '"mongoose"应该连接到数据库'
     testString: 'getUserInput => $.get(getUserInput(''url'') + ''/_api/is-mongoose-ok'').then(data => {assert.isTrue(data.isMongooseOk, ''mongoose is not connected'')}, xhr => { throw new Error(xhr.responseText); })'
 
 ```
