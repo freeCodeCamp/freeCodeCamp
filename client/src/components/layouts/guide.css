@@ -39,7 +39,7 @@
 .content,
 .sideNav {
   /* 100vh - (navbar height) - (spacer height) */
-  height: calc(100vh - var(--header-height) - 30px);
+  height: 100%;
   overflow-y: auto;
 }
 
