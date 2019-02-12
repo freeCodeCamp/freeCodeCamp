@@ -19,7 +19,7 @@ Alguns aplicativos criados usando o Electron incluem:
 *   [Skype](https://www.skype.com/) (aplicativo popular de bate-papo por vídeo da Microsoft)
 *   [Slack](https://slack.com/) (um aplicativo de mensagens para equipes)
 *   [Discórdia](https://discordapp.com) (um aplicativo de mensagens popular para gamers)
-*   [Área de trabalho do Github](https://desktop.github.com/) (cliente de desktop oficial do Github)
+*   [Área de trabalho do GitHub](https://desktop.github.com/) (cliente de desktop oficial do GitHub)
 
 ### Referências adicionais de informação
 

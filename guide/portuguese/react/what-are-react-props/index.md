@@ -1,7 +1,8 @@
 ---
 title: React TypeChecking with PropTypes
 localeTitle: Tipo de ReaçãoChecendo com PropTypes
----## Reagir PropTypes
+---
+## Reagir PropTypes
 
 Estes servem como um método de typechecking à medida que um aplicativo tende a crescer, com isso uma base muito grande de bugs tende a ser corrigida com o uso desse recurso.
 
@@ -121,5 +122,5 @@ import React,{Component} from 'react';
 ```
 
 Para obter mais informações sobre PropTypes e outros documentos no React.
-
+GitHub
 Vá para o [site oficial](https://reactjs.org/) e leia os documentos ou o [Github Repo](https://github.com/facebook/react/)
