@@ -22,7 +22,7 @@ isRequired: true
 tests:
   - text: 我可以传递一个URL作为参数，我将在JSON响应中收到一个缩短的URL。
     testString: ''
-  - text: '如果我传递的网址无效，并且不遵循有效的http://www.example.com格式，则JSON响应将包含错误。
+  - text: '如果我传递的网址无效，并且不遵循有效的http://www.example.com格式，则JSON响应将包含错误。'
     testString: ''
   - text: “当我访问缩短的网址时，它会将我重定向到我原来的链接。”
     testString: ''
