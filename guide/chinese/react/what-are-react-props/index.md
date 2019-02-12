@@ -122,5 +122,5 @@ import React,{Component} from 'react';
 ```
 
 有关React上PropTypes和其他文档的更多信息。
-GitHub
-访问[官方网站](https://reactjs.org/)并阅读文档或[Github Repo](https://github.com/facebook/react/)
+
+访问[官方网站](https://reactjs.org/)并阅读文档或[GitHub Repo](https://github.com/facebook/react/)
