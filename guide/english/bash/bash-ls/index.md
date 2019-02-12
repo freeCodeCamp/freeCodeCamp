@@ -32,7 +32,7 @@ Most used options:
 List files in `freeCodeCamp/guide/`
 
 ```bash
-ls                                                                ⚬ master
+ls
 CODE_OF_CONDUCT.md bin                package.json       utils
 CONTRIBUTING.md    gatsby-browser.js  plugins            yarn.lock
 LICENSE.md         gatsby-config.js   src
