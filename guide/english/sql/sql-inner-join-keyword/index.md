@@ -5,7 +5,7 @@ title: SQL Inner Join Keyword
 ## SQL Inner Join Keyword
 
 ### Example of use
-For this guide we'll discuss the SQL (INNER) Joins 
+For this guide we'll discuss the SQL (INNER) Joins.
 
 ### Join (same as Inner Join)
 The student table will be in the FROM clause so it will be a starting or LEFT table.
