@@ -19,7 +19,7 @@ Electron基于Chromium（谷歌浏览器的开源版本）。Electron是在2013�
 *   [Skype](https://www.skype.com/) （微软流行的视频聊天应用程序）
 *   [Slack](https://slack.com/) （团队的消息传递应用程序）
 *   [Discord](https://discordapp.com) （适合游戏玩家的流行消息应用）
-*   [Github Desktop](https://desktop.github.com/) （官方Github桌面客户端）
+*   [GitHub Desktop](https://desktop.github.com/) （官方Github桌面客户端）
 
 您可以从[Electron的网页](https://electronjs.org/apps)查询更多使用Electron构建的应用。
 
