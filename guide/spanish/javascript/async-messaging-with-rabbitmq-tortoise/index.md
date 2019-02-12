@@ -12,7 +12,7 @@ Ahora, un editor generalmente publica mensajes con una _clave de enrutamiento_ a
 
 ## Empezando
 
-Vamos a preparar un ejemplo muy simple en el que un script de editor publica un mensaje para Rabbit, que contiene una URL, y un script de consumidor escucha a Rabbit, toma la URL publicada, la llama y muestra los resultados. Puedes encontrar la muestra terminada en [Github](https://github.com/rudimk/freecodecamp-guides-rabbitmq-tortoise) .
+Vamos a preparar un ejemplo muy simple en el que un script de editor publica un mensaje para Rabbit, que contiene una URL, y un script de consumidor escucha a Rabbit, toma la URL publicada, la llama y muestra los resultados. Puedes encontrar la muestra terminada en [GitHub](https://github.com/rudimk/freecodecamp-guides-rabbitmq-tortoise) .
 
 Primero, inicialicemos un proyecto npm:
 

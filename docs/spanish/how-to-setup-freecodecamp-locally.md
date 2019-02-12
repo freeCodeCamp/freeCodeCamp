@@ -32,7 +32,7 @@ Esto es esencial, porque de esta manera puedes trabajar en tu propia copia de fr
 2. Haga click en el botón "Fork" en la parte superior derecha de la interfaz ([mas detalles aquí](https://help.github.com/articles/fork-a-repo/))
 3. Despues serás llevado a tu copia de freeCodeCamp en `https://github.com/YOUR_USER_NAME/freeCodeCamp`
 
-![GIF - How to fork freeCodeCamp on Github](/docs/images/github/how-to-fork-freeCodeCamp.gif)
+![GIF - How to fork freeCodeCamp on GitHub](/docs/images/github/how-to-fork-freeCodeCamp.gif)
 
 ## Preparando el entorno de desarrollo
 
@@ -148,7 +148,7 @@ Nosotros regularmente desarrollamos en populares y últimos sistemas operativos 
 
 Si estás en un sistema operativo difernte, y/o sigues teniendo problemas,  intenta comunicarte con [contributors community on our public forum](https://www.freeCodeCamp.org/c/contributors) o la [Contributor's Chat room](https://gitter.im/freeCodeCamp/Contributors). Podemos ser capaces de solucionar algunos problemas comunes.
 
-No podemos apoyarte en Github, porque los problemas de instalación de sofware estan mas allá del alcance de este proyecto.
+No podemos apoyarte en GitHub, porque los problemas de instalación de sofware estan mas allá del alcance de este proyecto.
 
 ### Instalando dependencias
 

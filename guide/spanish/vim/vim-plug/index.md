@@ -32,5 +32,5 @@ Puede agregar más complementos a su instalación de Vim.
 
 #### Más información:
 
-*   [Repositorio Github](https://github.com/junegunn/vim-plug) - Vim-Plug
+*   [Repositorio GitHub](https://github.com/junegunn/vim-plug) - Vim-Plug
 *   [VimAwesome](https://vimawesome.com/) - Explorar complementos Vim

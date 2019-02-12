@@ -28,5 +28,5 @@ Spark se ha convertido en una herramienta estándar en la caja de herramientas d
 
 #### Más información
 
-*   [Spark Github página](https://github.com/apache/spark)
+*   [Spark GitHub página](https://github.com/apache/spark)
 *   [Wikipedia](https://en.wikipedia.org/wiki/Apache_Spark)

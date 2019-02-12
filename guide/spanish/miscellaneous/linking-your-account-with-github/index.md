@@ -1,6 +1,6 @@
 ---
-title: Linking Your Account with Github
-localeTitle: Vinculando su cuenta con Github
+title: Linking Your Account with GitHub
+localeTitle: Vinculando su cuenta con GitHub
 ---
 En agosto de 2015, impulsamos algunos cambios que causaron problemas a muchos de nuestros campistas.
 

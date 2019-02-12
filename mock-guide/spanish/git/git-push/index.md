@@ -51,7 +51,7 @@ en el cual:
 
 ### Empujar a una rama específica con el parámetro de fuerza
 
-Si desea ignorar los cambios locales realizados en el repositorio Git en Github (lo que la mayoría de los desarrolladores hacen para una solución para el servidor de desarrollo), puede usar el comando --force para presionar ignorando esos cambios.
+Si desea ignorar los cambios locales realizados en el repositorio Git en GitHub (lo que la mayoría de los desarrolladores hacen para una solución para el servidor de desarrollo), puede usar el comando --force para presionar ignorando esos cambios.
 
 ```bash
 git push --force <REMOTE-NAME> <BRANCH-NAME> 

@@ -10,4 +10,4 @@ Siento que estés atascado. ¡Afortunadamente, hay muchos campistas que están e
     *   Si el problema parece estar en el sitio mismo, publique una captura de pantalla del problema o descríbalo bien.
 2.  Recuerda que la gente allí es acampada como tú, ¡así que sé cortés!
     
-3.  Si su problema ha desconcertado a todos en Gitter, intente [Buscar su problema en Github](http://forum.freecodecamp.com/t/searching-for-existing-issues-in-github/18390) para cualquier persona que haya publicado sobre un problema similar.
+3.  Si su problema ha desconcertado a todos en Gitter, intente [Buscar su problema en GitHub](http://forum.freecodecamp.com/t/searching-for-existing-issues-in-github/18390) para cualquier persona que haya publicado sobre un problema similar.
