@@ -4,7 +4,7 @@ localeTitle: Rubi
 ---
 ## O que é Ruby?
 
-Ruby foi criado por Yukihiro "Matz" Matsumoto e é uma linguagem de script [open source](https://github.com/ruby/ruby) , dinâmica e interpretada para programação rápida e fácil orientada a objetos. Que significa:
+Ruby foi criado por Yukihiro "Matz" Matsumoto em 1995 e é uma linguagem de script [open source](https://github.com/ruby/ruby) , dinâmica e interpretada para programação rápida e fácil orientada a objetos. Que significa:
 
 Também é conhecido por ter uma das [maiores e amigáveis ​​comunidades](https://www.ruby-lang.org/en/community/) entre linguagens de programação.
 
