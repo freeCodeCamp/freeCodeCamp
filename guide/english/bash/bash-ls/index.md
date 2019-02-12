@@ -18,6 +18,7 @@ You can list the items in any directory without even entering the directory. Con
 Most used options:
 
 * `-a`, all files and folders, including ones that are hidden and start with a `.`
+*  -d , list directories themselves and not contents of directories
 * `-l`, List in long format
 * `-lh`, Shows sizes in human readable format
 * `-lS`, Displays file size in order, will display big in size first
