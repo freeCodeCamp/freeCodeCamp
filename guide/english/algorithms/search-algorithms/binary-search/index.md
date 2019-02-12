@@ -18,6 +18,7 @@ Because we know that names in the phonebook are sorted alphabetically, we could 
 4. Repeat until you find the name or there are no more pages left in the phonebook
 
 Time complexity: As we dispose off one part of the search case during every step of binary search, and perform the search operation on the other half, this results in a worst case time complexity of *O*(*log<sub>2</sub>N*).
+The best case occurs when the element to be found is in the middle of the list. The best case time complexity is *O*(*1*).
 
 Space complexity: Binary search takes constant or *O*(*1*) space meaning that we don't do any input size related  variable defining.
 
@@ -26,19 +27,19 @@ for small sets linear search is better but in larger ones it is way more efficie
 In detail, how many times can you divide N by 2 until you have 1? This is essentially saying, do a binary search (half the elements) until you found it. In a formula this would be this:
 
 ```
-1 = N / 2x
+1 = N / 2^x
 ```
 
-Multiply by 2x:
+Multiply by 2<sup>x</sup>:
 
 ```
-2x = N
+2^x = N
 ```
 
 Now do the log2:
 
 ```
-log2(2x)    = log2 N
+log2(2^x)   = log2 N
 x * log2(2) = log2 N
 x * 1       = log2 N
 ```

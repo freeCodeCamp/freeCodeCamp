@@ -4,7 +4,7 @@ title: Installing Rust
 
 # Installing Rust
 
-Using `rustup` is preferred for Rust installation. `rustup` installs and manages Rust for your system. 
+Using `rustup` is preferred for Rust installation. `rustup` installs and manages Rust for your system.
 
 ## Installing Rust in Windows
 
@@ -19,6 +19,13 @@ curl https://sh.rustup.rs -sSf | sh
 ```
 
 This will fetch the `rustup` installer and in turn fetch everything you need.
+
+### Mac OS X (Homebrew)
+
+Mac OS X users can also use [Homebrew](https://brew.sh/) to install rust:
+```sh
+brew install rust
+```
 
 # Verifying installation
 

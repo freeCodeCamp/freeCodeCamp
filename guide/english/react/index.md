@@ -54,16 +54,16 @@ Declarative programming comes with advantages, such as reduced side effects (occ
 
 Some reasons to use React are:
 
-1. Fast. Apps made in React can handle complex updates and still feel quick and responsive.
-2. Modular. Instead of writing large, dense files of code, you can write many smaller, reusable files. React's modularity can be a beautiful solution to JavaScript's [maintainability problems](https://en.wikipedia.org/wiki/Spaghetti_code).
-3. Scalable. Large programs that display a lot of changing data are where React performs best.
-4. Flexible. You can use React for interesting projects that have nothing to do with making a web app. People are still figuring out React's potential. [There's room to explore](https://medium.mybridge.co/22-amazing-open-source-react-projects-cb8230ec719f).
+1. It's Fast. Apps made in React can handle complex updates and still feel quick and responsive.
+2. It's Modular. Instead of writing large, dense files of code, you can write many smaller, reusable files. React's modularity can be a beautiful solution to JavaScript's [maintainability problems](https://en.wikipedia.org/wiki/Spaghetti_code).
+3. It's Scalable. Large programs that display a lot of changing data are where React performs best.
+4. It's Flexible. You can use React for interesting projects that have nothing to do with making a web app. People are still figuring out React's potential. [There's room to explore](https://medium.mybridge.co/22-amazing-open-source-react-projects-cb8230ec719f).
 
 ### Virtual DOM
 
-React's magic comes from it's interpretation of the DOM and it's strategy for creating UIs.
+React's magic comes from its interpretation of the DOM and its strategy for creating UIs.
 
-React uses the virtual DOM to render an HTML tree virtually first, and then, every time a state changes and we get a new HTML tree that needs to be taken to the browser’s DOM, instead of writing the whole new tree React will only write the difference between the new tree and the previous tree (since React has both trees in memory). This process is known as Tree Reconciliation.
+React uses the virtual DOM to render an HTML tree virtually first. Then, every time a state changes and we get a new HTML tree that needs to be taken to the browser’s DOM, instead of writing the whole new tree React will only write the difference between the new tree and the previous tree (since React has both trees in memory). This process is known as Tree Reconciliation.
 
 ### Reconciliation
 
@@ -86,7 +86,7 @@ In this article we are going to look at how we can get started with React using 
 
 ### 1 — Set Up Boiler Plate Code with Emmet
 
-Let’s get started with step 1. We’ll begin with a file in our browser called “index.html”. We’ll begin with the boiler plate code HTML code. For a quick start I recommend using Emmet with whatever text editor you have and on the first line typing in `html:5` then pressing the shift key to get the code below. Or you can go ahead and copy and paste the code from below.
+Let’s get started with step 1. We’ll begin with a file in our browser called “index.html”. We’ll begin with the boiler plate HTML code. For a quick start I recommend using Emmet with whatever text editor you have, and on the first line typing in `html:5` then pressing the shift key to get the code below. Or you can go ahead and copy and paste the code from below.
 
 ```javascript
 html:5
@@ -109,7 +109,7 @@ This will result in the following code:
 </html>
 ```
 
-We can fill in the title of “Time to React!”.
+We can fill in the title as “Time to React!”.
 
 This content will not appear in your webpage. Anything in the head section of the HTML file will be metadata that our browser will user to interpret our code in the body section. This title is going to be what appears on the tab for our page, not actually on the page.
 
@@ -135,6 +135,7 @@ We are going to use `<script>` tags to bring in the React library, the React DOM
 You are free to use more updated versions of these libraries as they come out. They should not create any breaking changes for the content we are covering.
 
 What are we doing here?
+
 The: HTML `<script>` element is used to embed or reference an executable script. The “src” attribute points to the external script files for the React library, ReactDOM library and Babel library.
 This is like if you have an electric razor. It is literally no good to you no matter how fancy the electric razor unless you can plug it into the wall and gain access to electricity. Our React code we will write will be no good to us if our browser can’t plug into these libraries to understand and interpret what we are going.
 This is how our application is going to gain the power of React, it is going to be how we insert React into the DOM. The reason that we have React and ReactDOM as two different libraries is because there are use cases such as React Native where rendering to the DOM isn’t needed for mobile development so the library was split for people to make the decision for what they need depending on the project they are working on. Because we will need our React to make it to the DOM we’ll use both scripts.
@@ -179,6 +180,7 @@ We’ll need this ability to use Babel right away as we work with JSX. First, we
 ```
 
 The first argument is the “what” of React. The second argument is the “where” of the location you want it to be placed in the DOM.
+
 Let’s start by calling our ReactDOM.render() method.
 Our first argument is going to be our JSX.
 
@@ -194,13 +196,13 @@ Our first argument is going to be our JSX.
 </body>
 ```
 
-The [official react docs state](https://reactjs.org/docs/introducing-jsx.html): “This funny tag syntax is neither a string nor HTML. It is called JSX, and it is a syntax extension to JavaScript. We recommend using it with React to describe what the UI should look like. JSX may remind you of a template language, but it comes with the full power of JavaScript. JSX produces React “elements”.”
+The [official React docs state](https://reactjs.org/docs/introducing-jsx.html): “This funny tag syntax is neither a string nor HTML. It is called JSX, and it is a syntax extension to JavaScript. We recommend using it with React to describe what the UI should look like. JSX may remind you of a template language, but it comes with the full power of JavaScript. JSX produces React “elements”.”
 
 Often times, JSX freaks out people who have been developers for a while because it looks like HTML. Developers have traditionally been taught early on about separation of concerns. HTML has its place, CSS has its place and JavaScript has its place. JSX seems to blur the lines. You are using what looks like HTML but as React says, has the full power of JavaScript.
 
 This can alarm some people, so many React tutorials start without JSX, which can complicate getting started. We won’t do that. Because this course is directed towards those who are very early in their careers, you may not be as alarmed by the syntax.
 
-And JSX is just really intuitive. You can probably quite easily read this code and see that this is going to be the largest header tag displaying the text “Hello World”. No mystery and pretty straightforward.
+And JSX is just really intuitive. You can probably quite easily read this code and see that this is going to be the largest header tag displaying the text “Hello World”: no mystery and pretty straightforward.
 Now, let’s look at what our second argument would be.
 
 ```javascript
@@ -217,11 +219,11 @@ Now, let’s look at what our second argument would be.
 
 This is where we want our React content rendered to the DOM. You’ve probably done this quite a few times in the past. We’ll just type in `document.getElementById()`. And we’ll pass into the argument of the id of app. And that is it. We will now target the  `<div>`  with the id of app to insert our react content.
 
-We want to make sure our content is saved. Go ahead and open this up in the browser and you should see “Hello World”. As you can probably guess, using React is not the quickest or best way to create a Hello World app. We aren’t quite seeing the benefits of it yet. But now, we know that everything is working.
+We want to make sure our content is saved. Go ahead and open this up in your browser, and you should see “Hello World”. As you can probably guess, using React is not the quickest or best way to create a Hello World app. We aren’t quite seeing the benefits of it yet. But now, we know that everything is working.
 
 Go ahead and open up the console and look at the “Elements” tab. You can do that on a mac with command + shift + j or on a On Windows and Linux: Ctrl + Shift + J
 
-If you click on the head tag we can see our script libraries we included. Then we can go down to body of our document. Let’s click on our div with the id of “app”. And when we do we see our `<h1>` tag with the content “Hello World”.
+If you click on the head tag your can see the script libraries we included. Then we can go down to body of our document. Let’s click on our div with the id of `app`, and see our `<h1>` tag with the content “Hello World”.
 
 [View Entire Code Here](https://github.com/robgmerrill/hello-react/blob/master/section-one/index.html)
 
@@ -229,6 +231,10 @@ or
 
 <a href="http://www.youtube.com/watch?feature=player_embedded&v=100pKUE3OPI" target="_blank"><img src="http://img.youtube.com/vi/YOUTUBE_VIDEO_ID_HERE/0.jpg" 
 alt="Watch Video Here" width="240" height="180" border="10" /></a>
+
+### Quick React App Setup
+Setting up a react app can be time consuming. A great tool for starting a new react project is create-react-app. 
+Get more information about it [here](https://github.com/facebook/create-react-app#readme)
 
 ### Recap
 
