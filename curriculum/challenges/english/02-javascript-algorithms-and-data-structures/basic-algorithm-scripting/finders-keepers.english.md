@@ -56,16 +56,7 @@ findElement([1, 2, 3, 4], num => num % 2 === 0);
 
 ```js
 function findElement(arr, func) {
-  let num;
-
-  arr.some(e => {
-    if (func(e)) {
-      num = e;
-      return true;
-    }
-  });
-
-  return num;
+  return arr.filter(func)[0];
 }
 
 findElement([1, 2, 3, 4], num => num % 2 === 0);
