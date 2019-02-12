@@ -37,9 +37,6 @@ let results = arr1.filter((post) => {
 console.log(results); // [{thumbnail: "someIcon", likes: 432, shares: 600}, {thumbnail: "Another icon", likes: 300, shares: 501}]
 </blockquote>
 
-Find more info about [arrow-functions](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Functions/Arrow_functions).<br>
-And about higher-order functions like [forEach](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/forEach), [map](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/map), and [filter](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/filter).
-
 </section>
 
 
@@ -107,6 +104,7 @@ const squaredIntegers = squareList(realNumberArray);
 <section id='solution'>
 
 ```js
+const realNumberArray = [4, 5.6, -9.8, 3.14, 42, 6, 8.34, -2];
 const squareList = (arr) => {
   "use strict";
   const positiveIntegers = arr.filter((num) => {
