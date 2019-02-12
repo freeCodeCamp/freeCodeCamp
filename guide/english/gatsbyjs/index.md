@@ -24,7 +24,7 @@ Gatsby's build is powered by GraphQL and rendered through HTML, CSS, and React.
 Since Gatsby is built on React you straight away get all the things we love about React, like composability, one-way binding, resuability, great environment and allows you to query your data however you want!
 
 #### Deploy 
-Gatsby deploys the site on a static web host such as Amazon S3, Netlify, Github Pages, Surge.sh and many more.
+Gatsby deploys the site on a static web host such as Amazon S3, Netlify, GitHub Pages, Surge.sh and many more.
 
 ### Installation and using the Gatsby CLI
 * Node: `npm install --global gatsby-cli`

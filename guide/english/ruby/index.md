@@ -124,6 +124,6 @@ More resources here: http://www.rubymotion.com/
 
 
 ## What to do after learning Ruby?
-Every programming language plays an important role. You can contribute to a lot of open source projects or you can apply for some big companies after having a good grasp on Ruby. As many big internet sites such as Basecamp, Airbnb, Bleacher Report, Fab.com, Scribd, Groupon, Gumroad, Hulu, Kickstarter, Pitchfork, Sendgrid, Soundcloud, Square, Yammer, Crunchbase, Slideshare, Funny or Die, Zendesk, Github, Shopify are built on Ruby so there are plenty of options out there.
+Every programming language plays an important role. You can contribute to a lot of open source projects or you can apply for some big companies after having a good grasp on Ruby. As many big internet sites such as Basecamp, Airbnb, Bleacher Report, Fab.com, Scribd, Groupon, Gumroad, Hulu, Kickstarter, Pitchfork, Sendgrid, Soundcloud, Square, Yammer, Crunchbase, Slideshare, Funny or Die, Zendesk, GitHub, Shopify are built on Ruby so there are plenty of options out there.
 
 Moreover, a lot of startups are hiring people who have skills with Ruby on Rails as not many programmers try to learn Ruby. 

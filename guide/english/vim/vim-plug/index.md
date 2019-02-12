@@ -29,5 +29,5 @@ Some useful plugins to get you started are :
 You may add more plugins to your Vim installation.
 
 #### More Information:
-- <a href='https://github.com/junegunn/vim-plug' target='_blank' rel='nofollow'>Github Repository</a> - Vim-Plug
+- <a href='https://github.com/junegunn/vim-plug' target='_blank' rel='nofollow'>GitHub Repository</a> - Vim-Plug
 - <a href='https://vimawesome.com/' target='_blank' rel='nofollow'>VimAwesome</a> - Explore Vim plugins</a> 
