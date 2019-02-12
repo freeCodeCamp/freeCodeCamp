@@ -40,6 +40,19 @@ README.md          gatsby-node.js     static
 assets             gatsby-ssr.js      translations
 ```
 
+### Example:
+
+List files with details in `home/user/docs`
+
+```bash
+ls -la
+total 4
+-rwxrwx---    1 root root      5514 Feb  4  2018 log1.txt
+-rwxrwx---    1 root root      1024 Feb  5  2018 colors.txt
+-rwxrwx---    1 root root       112 Feb  8  2018 output.txt
+-rwxrwx---    1 root root       514 Feb  9  2018 notes.txt
+```
+
 #### More Information:
 
 * [Wikipedia](https://en.wikipedia.org/wiki/Ls)
