@@ -1,8 +1,8 @@
 ---
 title: JavaScript
-localeTitle: JavaScript的
+localeTitle: JavaScript
 ---
-## JavaScript的
+## JavaScript
 
 JavaScript是地球上使用最广泛的脚本语言。它拥有任何编程语言中最大的图书馆生态系统。
 
@@ -32,4 +32,6 @@ WebKit（Chromium项目除外）实现了JavaScriptCore引擎。
 
 ## JavaScript框架
 
-最常用的JavaScript框架是React JS，Angular JS，Create JS，jQuery，nodeJS等。 有关详细信息请点击此[链接](https://javascriptreport.com/the-ultimate-guide-to-javascript-frameworks/)
+
+最常用的JavaScript框架是React JS，Angular JS，Vue.js, Create JS，jQuery，nodeJS等。 有关详细信息请点击此[链接](https://javascriptreport.com/the-ultimate-guide-to-javascript-frameworks/)
+
