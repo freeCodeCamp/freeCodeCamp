@@ -12,6 +12,8 @@ import {
   challengeMetaSelector
 } from './';
 
+import { types as appTypes } from '../../../redux';
+
 import { setContent, isPoly } from '../utils/polyvinyl';
 
 const legacyPrefixes = [
@@ -60,7 +62,7 @@ function isFilesAllPoly(files) {
 
 function clearCodeEpic(action$, state$) {
   return action$.pipe(
-    ofType(types.submitComplete, types.resetChallenge),
+    ofType(appTypes.submitComplete, types.resetChallenge),
     tap(() => {
       const { id } = challengeMetaSelector(state$.value);
       store.remove(id);
@@ -98,7 +100,20 @@ function loadCodeEpic(action$, state$) {
 
       const codeFound = getCode(id);
       if (codeFound && isFilesAllPoly(codeFound)) {
-        finalFiles = codeFound;
+        finalFiles = {
+          ...fileKeys.map(key => files[key]).reduce(
+            (files, file) => ({
+              ...files,
+              [file.key]: {
+                ...file,
+                contents: codeFound[file.key]
+                  ? codeFound[file.key].contents
+                  : file.contents
+              }
+            }),
+            {}
+          )
+        };
       } else {
         const legacyCode = getLegacyCode(legacyKey);
         if (legacyCode && !invalidForLegacy) {

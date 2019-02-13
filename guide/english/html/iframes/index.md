@@ -56,4 +56,5 @@ Documents embedded in an `<iframe>` can run JavaScript within their own context 
 Any script interaction between the parent webpage and the content of the embedded `<iframe>` is subject to the same-origin policy. This means that if you load the content of the `<iframe>` from a different domain, the browser will block any attempt to access that content with JavaScript.
 
 ### More Information:
-See the [MDN Web Docs](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/iframe).
+[MDN Iframe](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/iframe)
+[W3Schools Iframe](https://www.w3schools.com/tags/tag_iframe.asp)

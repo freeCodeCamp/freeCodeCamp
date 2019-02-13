@@ -5,7 +5,7 @@ title: Data Types in R
  Scalar refers to an atomic quantity that can hold only one value at a time. Scalars are the most basic data types. Some common types of scalars :
 
 1. Number
-
+```r
 	> x <- 5
 	> y <- 5.5
 	> class(x)
@@ -14,9 +14,10 @@ title: Data Types in R
 	[1] "numeric"
 	> class(x+y)
 	[1] "numeric"
+```
 
 2. Logical value
-
+```r
 	> m <- x > y      # Used to check, Is x larger than y?
 	> n <- x < y      # Used to check, Is x smaller than y?
 	> m
@@ -27,9 +28,10 @@ title: Data Types in R
 	[1] "logical"
 	> class(NA)       # NA is another logical value: 'Not Available'/Missing Values
 	[1] "logical"
+```
 
  3. Character(string)
-
+```r
 	> a <- "1"; b <- "2.5" 
 	> a;b
 	[1] "1"
@@ -42,10 +44,10 @@ title: Data Types in R
 	[1] "numeric"
 	> class(as.character(x))
 	[1] "character"
-
+```
 
 ## Vector
- It is a sequence of data elements of the same basic type. For example:
+ Vectors are sequences of data elements of the same basic type. For example:
 
 	> o <- c(1,2,5.3,6,-2,4)                             	 # Numeric vector
 	> p <- c("one","two","three","four","five","six")    	 # Character vector
@@ -57,7 +59,7 @@ title: Data Types in R
 
 	
 ## Matrix
- It is a two-dimensional rectangular data set. The components in a matrix also must be of the same basic type like vector. For example:
+ A matrix is a two-dimensional rectangular data set. The components in a matrix must be of the same basic type. For example:
 
 	> m = matrix( c('a','a','b','c','b','a'), nrow = 2, ncol = 3, byrow = TRUE)
 	> m
@@ -67,7 +69,7 @@ title: Data Types in R
 
 
 ## Data Frame
- It is more general than a matrix, in that different columns can have different basic data types. For example:
+ A data frame is more general than a matrix, in that different columns can have different basic data types. For example:
 
 	> d <- c(1,2,3,4)
 	> e <- c("red", "white", "red", NA)
@@ -84,7 +86,7 @@ title: Data Types in R
 
 
 ## Lists
- It is an R-object which can contain many different types of elements inside it like vectors, functions and even another list inside it. For example:
+ Lists are R-objects which can contain many different types of elements inside them like vectors, functions and even another list. For example:
 
 	> list1 <- list(c(2,5,3),21.3,sin)
 	> list1
@@ -97,5 +99,5 @@ title: Data Types in R
 
 
 ## Reference:
-<a href='https://cran.r-project.org/manuals.html' target='_blank' rel='nofollow'>Official Docs</a>
-<a href='https://www.r-bloggers.com/classes-and-objects-in-r/' target='_blank' rel='nofollow'>Data Types in R by r-bloggers</a>
+ * [Official Docs](https://cran.r-project.org/manuals.html)
+ * [Data Types in R by r-bloggers](https://www.r-bloggers.com/classes-and-objects-in-r/)

@@ -3,14 +3,14 @@ id: 5a858944d96184f06fd60d61
 title: Create Your First CSS Grid
 challengeType: 0
 videoUrl: ''
-localeTitle: Создайте свою первую сетку CSS
+localeTitle: Создайте свой первый CSS Grid
 ---
 
 ## Description
-<section id="description"> Поверните любой элемент HTML в контейнер сетки, установив его свойство <code>display</code> в <code>grid</code> . Это дает вам возможность использовать все другие свойства, связанные с сеткой CSS. <strong>Заметка</strong> <br> В CSS Grid родительский элемент называется <dfn>контейнером,</dfn> а его дочерние элементы называются <dfn>элементами</dfn> . </section>
+<section id="description"> Чтобы превратить любой HTML элемент в грид контейнер установите свойство <code>display</code> в <code>grid</code> . Это даёт вам возможность использовать другие свойства, связанные с CSS Grid. <strong>Примечание</strong> <br> В CSS Grid родительский элемент называется <dfn>контейнером,</dfn> а его дочерние элементы называются <dfn>элементами</dfn> . </section>
 
 ## Instructions
-<section id="instructions"> Измените отображение div с классом <code>container</code> на <code>grid</code> . </section>
+<section id="instructions"> Измените свойство display у элемента div с классом <code>container</code> на <code>grid</code> . </section>
 
 ## Tests
 <section id='tests'>
