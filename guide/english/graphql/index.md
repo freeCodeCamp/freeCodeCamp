@@ -31,5 +31,5 @@ npm install graphql --save
 
 ## Additional Resources
 - For tutorials and more information check out the GraphQL official site: [Getting Started With GraphQL.js](https://graphql.org/graphql-js/)
-- [GraphQL Site and Docs](https://graphql.org/)
+- [GraphQL Site and Documentation](https://graphql.org/)
 - [How to GraphQL Tutorial](https://www.howtographql.com/)
