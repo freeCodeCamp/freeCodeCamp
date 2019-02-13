@@ -34,6 +34,17 @@ margin: 1em 2em 2em;
 margin: 5px 1em 0 1em;
 ```
 
+Alternatively, you can style the margins by themselves:
+```css
+margin-top: 1em;
+
+margin-right: 1em;
+
+margin-bottom: 1em;
+
+margin-left: 1em;
+```
+
 ## Where in box model
 The margin property in CSS defines the outermost portion of the box model, creating space around an element's content, outside of any defined paddings and/or borders.
 
