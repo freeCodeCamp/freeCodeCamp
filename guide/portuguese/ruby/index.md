@@ -4,7 +4,7 @@ localeTitle: Rubi
 ---
 ## O que é Ruby?
 
-Ruby foi criado por Yukihiro "Matz" Matsumoto e é uma linguagem de script [open source](https://github.com/ruby/ruby), dinâmica e interpretada para programação rápida e fácil orientada a objetos. Que significa:
+Ruby foi criado em 1995 por Yukihiro "Matz" Matsumoto e é uma linguagem de script [open source](https://github.com/ruby/ruby) , dinâmica e interpretada para programação rápida e fácil orientada a objetos. Que significa:
 
 Também é conhecido por ter uma das [maiores e amigáveis comunidades](https://www.ruby-lang.org/en/community/) entre linguagens de programação.
 
@@ -16,7 +16,7 @@ Também é conhecido por ter uma das [maiores e amigáveis comunidades](https://
 *   Tem a funcionalidade "mixin" por módulo
 *   Iteradores e fechamentos
 
-Se você não estiver familiarizado com alguns dos conceitos acima, continue lendo e não se preocupe. Ruby se concentra na simplicidade e produtividade com uma sintaxe elegante que é natural de ler e fácil de escrever, como:
+Se você não estiver familiarizado com alguns dos conceitos acima, continue lendo e não se preocupe. Ruby se concentra na simplicidade e produtividade, com uma sintaxe elegante que é natural de ler e fácil de escrever, como:
 
 ```ruby
 # Quick example of Ruby with Object Oriented Programming 
@@ -86,7 +86,7 @@ Da linha de comando:
 Ruby está bem [documentado](https://www.ruby-lang.org/en/documentation/). Esses documentos incluem tutoriais, guias, referências e informações meta para o idioma.  
 Outro recurso importante para documentação é o [Ruby Doc](http://ruby-doc.org/core-2.3.0/). Você deve visitar este [link](https://github.com/airbnb/ruby) para saber mais sobre o guia de estilo Ruby, escrito por desenvolvedores do AirBnB.
 
-Uma leitura recomendada para iniciantes em Ruby é [o guia do Why's (Poignant) para Ruby](https://poignant.guide/). Este livro é incomum entre os livros de programação. Com um monte de humor estranho e faixas laterais narrativas que às vezes são completamente alheios ao tema, este consegue manter os leitores entretidos enquanto aprendem o básico de Ruby.
+Uma leitura recomendada para iniciantes em Ruby é [o guia do Why's (Poignant) para Ruby](https://poignant.guide/). Este livro é incomum entre os livros de programação. Com um monte de humor estranho e faixas laterais narrativas que às vezes são completamente alheios ao tema, este consegue manter os leitores entretidos enquanto aprendem o básico de Ruby. É importante notar que o Poignant Guide foi publicado há alguns anos, e pode estar defasado.
 
 ## Depuração
 
