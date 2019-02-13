@@ -3,7 +3,7 @@ title: Documentation
 ---
 ## Documentation
 
-One of the best advanced of Elixir in comparison to other programming languages is its documentation system. Elixir's documentation is created by your code comments and made into a pretty HTML Website for you to browse with ease and understand how the application works. Once you understand how to properly comment your code in Elixir, you'll be able to explain how your application works to other programmers with ease. In the examples below we show the usage of Elixir's documentation functions in a fictional webserver module.
+One of the best advantages of Elixir in comparison to other programming languages is its documentation system. Elixir's documentation is created by your code comments and made into a pretty HTML Website for you to browse with ease and understand how the application works. Once you understand how to properly comment your code in Elixir, you'll be able to explain how your application works to other programmers with ease. In the examples below we show the usage of Elixir's documentation functions in a fictional webserver module.
 
 ### Inline Documentation
 Inline documentation uses a `#` in front of text describing something about the code.

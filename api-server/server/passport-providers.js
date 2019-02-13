@@ -1,5 +1,5 @@
 import { auth0 } from '../../config/secrets';
-import { homeLocation } from '../../config/env.json';
+import { homeLocation } from '../../config/env';
 
 const { clientID, clientSecret, domain } = auth0;
 
@@ -7,6 +7,11 @@ const successRedirect = `${homeLocation}/welcome`;
 const failureRedirect = '/signin';
 
 export default {
+  devlogin: {
+    authScheme: 'mock',
+    provider: 'dev',
+    module: 'passport-mock-strategy'
+  },
   local: {
     provider: 'local',
     module: 'passport-local',

@@ -6,7 +6,7 @@ localeTitle: Elétron
 
 O Electron permite que você crie aplicativos de desktop multiplataforma usando a tecnologia da web. Você pode construir aplicativos de desktop para Windows, Mac e os mais comuns do Linux.
 
-O Electron é construído no Chromium (a versão de código aberto do Google Chrome). Você Use tecnologias da Web como HTML, JavaScript e CSS para criar aplicativos eletrônicos. que significa que você pode usar a maioria das tecnologias da Web que você quiser para criar seu aplicativo de desktop nativo. Por exemplo, você pode usar o [React](https://medium.freecodecamp.org/building-an-electron-application-with-create-react-app-97945861647c) ou o [Angular](https://scotch.io/tutorials/creating-desktop-applications-with-angularjs-and-github-electron) para criar seu primeiro aplicativo de desktop.
+O Electron é construído no Chromium (a versão de código aberto do Google Chrome). Use tecnologias da Web como HTML, JavaScript e CSS para criar aplicativos eletrônicos. Você pode usar a maioria das tecnologias Web para criar seu aplicativo de desktop nativo. Por exemplo, você pode usar o [React](https://medium.freecodecamp.org/building-an-electron-application-with-create-react-app-97945861647c) ou o [Angular](https://scotch.io/tutorials/creating-desktop-applications-with-angularjs-and-github-electron) para criar seu primeiro aplicativo de desktop.
 
 Além disso, o Electron vem com suporte para atualização automática, relatórios de falhas, e menus nativos.
 
