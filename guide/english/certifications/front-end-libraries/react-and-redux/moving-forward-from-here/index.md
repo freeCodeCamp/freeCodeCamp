@@ -3,8 +3,29 @@ title: Moving Forward From Here
 ---
 ## Moving Forward From Here
 
-This is a stub. <a href='https://github.com/freecodecamp/guides/tree/master/src/pages/certifications/front-end-libraries/react-and-redux/moving-forward-from-here/index.md' target='_blank' rel='nofollow'>Help our community expand it</a>.
+### Solution
 
-<a href='https://github.com/freecodecamp/guides/blob/master/README.md' target='_blank' rel='nofollow'>This quick style guide will help ensure your pull request gets accepted</a>.
+````javascript
+// import React from 'react'
+// import ReactDOM from 'react-dom'
+// import { Provider, connect } from 'react-redux'
+// import { createStore, combineReducers, applyMiddleware } from 'redux'
+// import thunk from 'redux-thunk'
 
-<!-- The article goes here, in GitHub-flavored Markdown. Feel free to add YouTube videos, images, and CodePen/JSBin embeds  -->
+// import rootReducer from './redux/reducers'
+// import App from './components/App'
+
+// const store = createStore(
+//   rootReducer,
+//   applyMiddleware(thunk)
+// );
+
+// ReactDOM.render(
+//   <Provider store={store}>
+//     <App/>
+//   </Provider>,
+//   document.getElementById('root')
+// );
+
+console.log('Now I know React and Redux!');
+````
