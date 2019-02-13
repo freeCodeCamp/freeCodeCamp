@@ -3,7 +3,7 @@ title: Block and Inline Elements
 ---
 ## Block and Inline Elements
 
-Let us understand them using examples below:
+Let us understand them using the examples below:
 
 #### Code Sample with Output : 
 ![Block Output](https://user-images.githubusercontent.com/16048167/31070017-6f2cf0a2-a77c-11e7-9de6-110b9d0b488d.PNG)
