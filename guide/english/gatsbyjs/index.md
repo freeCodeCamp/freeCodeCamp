@@ -4,7 +4,8 @@ title: Gatsby.js
 
 ## Gatsby.js
 
-Gatsby is a static site generator for [React](https://guide.freecodecamp.org/react), powered by [GraphQL](https://graphql.org/). 
+[Gatsby](https://www.gatsbyjs.org) is a static site generator for [React](https://guide.freecodecamp.org/react), powered by [GraphQL](https://graphql.org/). 
+Gatsby loads only the critical HTML, CSS, data, and JavaScript so your site loads as fast as possible. Once loaded, Gatsby prefetches resources for other pages so clicking around the site feels incredibly fast.
 
 The Gatsby environment provides several "starters" to help configure static sites quickly. Starters can be found here: [Starter Library](https://www.gatsbyjs.org/starters/).
 
@@ -14,16 +15,16 @@ Gatsby builds sites with the data provided by developer, regardless of the sourc
 #### Data sources
 Gatsby accepts the data behind the site in various formats, such as:
 
-1- CMSs: Wordpress, Contenful, Drupal, etc.
-2- Markdown: Documentation, posts, etc.
-3- Data: APIs, Databasses, JSON, CSV, etc.
+1. CMSs: Wordpress, Contenful, Drupal, etc.
+2. Markdown: Documentation, posts, etc.
+3. Data: APIs, Databasses, JSON, CSV, etc.
 
 #### Build 
 Gatsby's build is powered by GraphQL and rendered through HTML, CSS, and React.
 Since Gatsby is built on React you straight away get all the things we love about React, like composability, one-way binding, resuability, great environment and allows you to query your data however you want!
 
 #### Deploy 
-Gatsby deploys the site on a static web host such as Amazon S3, Netlify, Github Pages, Surge.sh and many more.
+Gatsby deploys the site on a static web host such as Amazon S3, Netlify, GitHub Pages, Surge.sh and many more.
 
 ### Installation and using the Gatsby CLI
 * Node: `npm install --global gatsby-cli`
