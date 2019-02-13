@@ -26,3 +26,6 @@ Punctuation gives type emotion, and gives indications on when to stop, slow down
 - Script-Cursive
 
 #### More Information:
+[About Typeface Families (Fonts.com)](https://www.fonts.com/content/learning/fontology/level-1/type-families/about-typeface-families")
+
+[Typeface (Wikipedia)](https://en.wikipedia.org/wiki/Typeface)

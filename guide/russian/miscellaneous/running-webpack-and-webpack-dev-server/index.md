@@ -119,6 +119,6 @@ This is one cool app!
 
 [Веб-сайт](https://webpack.js.org/)
 
-[Webpack Github](https://github.com/webpack/webpack)
+[Webpack GitHub](https://github.com/webpack/webpack)
 
-[webpack-dev-сервер Github](https://github.com/webpack/webpack-dev-server)
+[webpack-dev-сервер GitHub](https://github.com/webpack/webpack-dev-server)
