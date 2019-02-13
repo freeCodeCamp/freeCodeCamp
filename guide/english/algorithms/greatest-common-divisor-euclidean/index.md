@@ -64,7 +64,9 @@ function gcd(a, b) {
     return gcd(b, (a % b));
 }
 ```
+
 C++ Code to Perform GCD-
+```csharp
 int gcd(int a,int b) {
   int R;
   while ((a % b) > 0)  {
@@ -74,14 +76,7 @@ int gcd(int a,int b) {
   }
   return b;
 }
-
-C++ Code to Perform GCD using Recursion-
-int gcd(int a,int b) {
-  if (b == 0)
-    return a;
-  else
-    return gcd(b, (a % b));
-}
+```
 
 You can also use the Euclidean Algorithm to find GCD of more than two numbers.
 Since, GCD is associative, the following operation is valid- `GCD(a,b,c) == GCD(GCD(a,b), c)`
