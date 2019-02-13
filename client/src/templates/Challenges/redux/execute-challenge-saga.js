@@ -22,11 +22,12 @@ import {
   disableBuildOnError
 } from './';
 
-import { buildChallenge, getTestRunner } from '../utils/build';
-
-import { challengeTypes } from '../../../../utils/challengeTypes';
-
-import { createMainFramer } from '../utils/frame.js';
+import {
+  buildChallenge,
+  getTestRunner,
+  challengeHasPreview,
+  updatePreview
+} from '../utils/build';
 
 export function* executeChallengeSaga() {
   const isBuildEnabled = yield select(isBuildEnabledSelector);
@@ -41,7 +42,8 @@ export function* executeChallengeSaga() {
     yield fork(logToConsole, consoleProxy);
     const proxyLogger = args => consoleProxy.put(args);
 
-    const buildData = yield buildChallengeData();
+    const challengeData = yield select(challengeDataSelector);
+    const buildData = yield buildChallengeData(challengeData);
     const document = yield getContext('document');
     const testRunner = yield call(
       getTestRunner,
@@ -67,13 +69,13 @@ function* logToConsole(channel) {
   });
 }
 
-function* buildChallengeData() {
-  const challengeData = yield select(challengeDataSelector);
+function* buildChallengeData(challengeData) {
   try {
     return yield call(buildChallenge, challengeData);
   } catch (e) {
     yield put(disableBuildOnError(e));
-    throw ['Build failed'];
+    // eslint-disable-next-line no-throw-literal
+    throw 'Build failed';
   }
 }
 
@@ -110,24 +112,23 @@ function* executeTests(testRunner) {
   return testResults;
 }
 
-function* updateMainSaga() {
+function* previewChallengeSaga() {
+  yield delay(700);
+
   const isBuildEnabled = yield select(isBuildEnabledSelector);
   if (!isBuildEnabled) {
     return;
   }
+  const challengeData = yield select(challengeDataSelector);
+  if (!challengeHasPreview(challengeData)) {
+    return;
+  }
 
-  yield delay(700);
   try {
     yield put(initConsole(''));
-    const { html, modern } = challengeTypes;
-    const { challengeType } = yield select(challengeDataSelector);
-    if (challengeType !== html && challengeType !== modern) {
-      return;
-    }
-    const ctx = yield buildChallengeData();
+    const ctx = yield buildChallengeData(challengeData);
     const document = yield getContext('document');
-    const frameMain = yield call(createMainFramer, document);
-    yield call(frameMain, ctx);
+    yield call(updatePreview, ctx, document);
   } catch (err) {
     console.error(err);
   }
@@ -143,7 +144,7 @@ export function createExecuteChallengeSaga(types) {
         types.challengeMounted,
         types.resetChallenge
       ],
-      updateMainSaga
+      previewChallengeSaga
     )
   ];
 }

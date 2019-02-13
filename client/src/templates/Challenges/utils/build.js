@@ -2,7 +2,11 @@ import { transformers } from '../rechallenge/transformers';
 import { cssToHtml, jsToHtml, concatHtml } from '../rechallenge/builders.js';
 import { challengeTypes } from '../../../../utils/challengeTypes';
 import createWorker from './worker-executor';
-import { createTestFramer, runTestInTestFrame } from './frame';
+import {
+  createTestFramer,
+  runTestInTestFrame,
+  createMainFramer
+} from './frame';
 
 const frameRunner = [
   {
@@ -66,7 +70,7 @@ export async function buildChallenge(challengeData) {
   if (build) {
     return build(challengeData);
   }
-  return null;
+  throw new Error(`Cannot build challenge of type ${challengeType}`);
 }
 
 const testRunners = {
@@ -75,7 +79,12 @@ const testRunners = {
   [challengeTypes.backend]: getDOMTestRunner
 };
 export function getTestRunner(buildData, proxyLogger, document) {
-  return testRunners[buildData.challengeType](buildData, proxyLogger, document);
+  const { challengeType } = buildData;
+  const testRunner = testRunners[challengeType];
+  if (testRunner) {
+    return testRunner(buildData, proxyLogger, document);
+  }
+  throw new Error(`Cannot get test runner for challenge type ${challengeType}`);
 }
 
 function getJSTestRunner({ build, sources }, proxyLogger) {
@@ -148,4 +157,20 @@ export function buildBackendChallenge({ url }) {
     build: concatHtml({ required: frameRunner }),
     sources: { url }
   };
+}
+
+export function updatePreview(buildData, document) {
+  const { challengeType } = buildData;
+  if (challengeType === challengeTypes.html) {
+    createMainFramer(document)(buildData);
+  } else {
+    throw new Error(`Cannot show preview for challenge type ${challengeType}`);
+  }
+}
+
+export function challengeHasPreview({ challengeType }) {
+  return (
+    challengeType === challengeTypes.html ||
+    challengeType === challengeTypes.modern
+  );
 }
