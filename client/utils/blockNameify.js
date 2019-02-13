@@ -10,7 +10,9 @@ const preFormattedBlockNames = {
   jquery: 'jQuery',
   'json-apis-and-ajax': 'JSON APIs and Ajax',
   'mongodb-and-mongoose': 'MongoDB and Mongoose',
-  'the-dom': 'The DOM'
+  'the-dom': 'The DOM',
+  'apis-and-microservices': 'APIs and Microservices',
+  'apis-and-microservices-projects': 'APIs and Microservices Projects'
 };
 
 const noFormatting = ['and', 'for', 'of', 'the', 'up', 'with'];
