@@ -34,7 +34,7 @@ margin: 1em 2em 2em;
 margin: 5px 1em 0 1em;
 ```
 
-Alternatively, you can style the sides by themselves
+Alternatively, you can style the margins by themselves:
 ```css
 margin-top: 1em;
 
