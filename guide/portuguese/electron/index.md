@@ -25,6 +25,6 @@ Alguns aplicativos criados usando o Electron incluem:
 
 *   [Site oficial](https://electronjs.org/)
 *   [Vídeo - O que é o Electron](https://www.youtube.com/watch?v=8YP_nOCO-4Q&feature=youtu.be)
-*   \[Electron e Vue\]: https://medium.com/@kswanie21/electron-vue-js-f6c40abeb625
-*   \[Electron e React\]: https://medium.freecodecamp.org/building-an-electron-application-with-create-react-app-97945861647c
-*   \[Electron e Angular\]: https://scotch.io/tutorials/creating-desktop-applications-with-angularjs-and-github-electron
+*   [Electron e Vue](https://medium.com/@kswanie21/electron-vue-js-f6c40abeb625)
+*   [Electron e React](https://medium.freecodecamp.org/building-an-electron-application-with-create-react-app-97945861647c)
+*   [Electron e Angular](https://scotch.io/tutorials/creating-desktop-applications-with-angularjs-and-github-electron)
