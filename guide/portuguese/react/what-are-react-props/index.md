@@ -17,11 +17,11 @@ Para usá-lo, é necessário que ele seja adicionado ao projeto como uma depend�
 npm install --save prop-types 
 ```
 
-Depois disso, toda uma gama de validadores que podem ser usados ​​para garantir que os dados que o desenvolvedor receberá realmente sejam válidos. Quando um valor inválido é fornecido, haverá um aviso aparecendo no console do JavaScript.
+Depois disso, toda uma gama de validadores de tipo podem ser usados para garantir que os dados que o desenvolvedor receberá realmente sejam válidos. Quando um valor inválido é fornecido, haverá um aviso aparecendo no console do JavaScript.
 
 Observe que, por motivos de desempenho, os propTypes definidos são verificados apenas no modo de desenvolvimento.
 
-Também, ao contrário do estado do componente, que pode ser manipulado conforme necessário, esses suportes são somente leitura.
+Também, ao contrário do estado do componente, que pode ser manipulado conforme necessário, essas propriedades (props) são somente leitura.
 
 Seu valor não pode ser alterado pelo componente.
 
