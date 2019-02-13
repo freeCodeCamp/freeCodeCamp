@@ -1,16 +1,17 @@
 ---
-title: React TypeChecking with PropTypes
-localeTitle: Verificação de Tipo em React com PropTypes
+title: Typechecking With PropTypes
+localeTitle: Checagem de tipo com PropTypes
 ---
+
 ## React PropTypes
 
-Estes servem como um método de typechecking (verificação de tipo) à medida que um aplicativo tende a crescer, com isso uma base muito grande de bugs tende a ser corrigida com o uso desse recurso.
+PropTypes servem como um método de typechecking à medida que um aplicativo tende a crescer, com isso uma base muito grande de bugs tende a ser corrigida com o uso desse recurso.
 
-## Como obter PropTypes
+## Como instalar PropTypes
 
 Começando com o React versão 15.5, esse recurso foi movido para um pacote separado chamado prop-types.
 
-Para usá-lo, é necessário que ele seja adicionado ao projeto como uma dependência, emitindo o seguinte comando em um console.
+Para usá-lo, é necessário que ele seja adicionado ao projeto como uma dependência, digitando o seguinte comando em um console.
 
 ```sh
 npm install --save prop-types 
@@ -99,7 +100,7 @@ import PropTypes from 'prop-types';
 
 Como parte deste recurso, também é possível definir valores padrão para qualquer componente definido durante o desenvolvimento.
 
-Eles garantem que o propore tenha um valor, mesmo que não especificado pelo componente pai.
+Eles garantem que a propriedade tenha um valor, mesmo que não especificado pelo componente pai.
 
 O código abaixo ilustra como usar essa funcionalidade.
 
@@ -121,6 +122,6 @@ import React,{Component} from 'react';
  }; 
 ```
 
-Para obter mais informações sobre PropTypes e outros documentos no React.
+Para obter mais informações sobre PropTypes e outros recursos do React.
 
-Vá para o [site oficial](https://reactjs.org/) e leia os documentos ou o [Github Repo](https://github.com/facebook/react/)
+Vá para o [site oficial](https://reactjs.org/) ou o [Github Repo](https://github.com/facebook/react/)
