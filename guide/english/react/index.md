@@ -182,7 +182,7 @@ You’ll need this ability to use Babel right away as you work with JSX. First, 
 The first argument is the “what” of React. The second argument is the “where” of the location you want it to be placed in the DOM.
 
 Let’s start by calling our ReactDOM.render() method.
-Your first argument is going to be your JSX.
+Your first argument is going to be your JSX code.
 
 ```javascript
 <body>
