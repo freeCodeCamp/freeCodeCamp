@@ -21,7 +21,7 @@ Here's an example:
 ## Instructions
 <section id='instructions'>
 Define a new constant <code>JSX</code> that renders a <code>div</code> which contains the following elements in order:
-An <code>h1</code>, a <code>p</code>, and an unordered list that contains three <code>li</code> items. You can include any text you want within each element.
+An <code>h1</code>, a <code>p</code>, and an unordered list that contains three <code>li</code> items. You can include any text you want within the <code>h1</code>, <code>p</code> and <code>li</code> elements.
 <strong>Note:</strong>&nbsp;When rendering multiple elements like this, you can wrap them all in parentheses, but it's not strictly required. Also notice this challenge uses a <code>div</code> tag to wrap all the child elements within a single parent element. If you remove the <code>div</code>, the JSX will no longer transpile. Keep this in mind, since it will also apply when you return JSX elements in React components.
 </section>
 
@@ -32,14 +32,14 @@ An <code>h1</code>, a <code>p</code>, and an unordered list that contains three 
 tests:
   - text: The constant <code>JSX</code> should return a <code>div</code> element.
     testString: assert(JSX.type === 'div', 'The constant <code>JSX</code> should return a <code>div</code> element.');
+  - text: The <code>div</code> should contain an <code>h1</code> tag as the first element.
+    testString: assert(JSX.props.children[0].type === 'h1', 'The <code>div</code> should contain an <code>h1</code> tag as the first element.');
   - text: The <code>div</code> should contain a <code>p</code> tag as the second element.
     testString: assert(JSX.props.children[1].type === 'p', 'The <code>div</code> should contain a <code>p</code> tag as the second element.');
   - text: The <code>div</code> should contain a <code>ul</code> tag as the third element.
     testString: assert(JSX.props.children[2].type === 'ul', 'The <code>div</code> should contain a <code>ul</code> tag as the third element.');
-  - text: The <code>div</code> should contain an <code>h1</code> tag as the first element.
-    testString: assert(JSX.props.children[0].type === 'h1', 'The <code>div</code> should contain an <code>h1</code> tag as the first element.');
   - text: The <code>ul</code> should contain three <code>li</code> elements.
-    testString: assert(JSX.props.children[2].props.children.length === 3, 'The <code>ul</code> should contain three <code>li</code> elements.');
+    testString: assert(JSX.props.children[2].props.children.filter( (ele, idx, arr) => arr.every(ele => ele.type === 'li')).length === 3, 'The <code>ul</code> should contain three <code>li</code> elements.');
 
 ```
 
