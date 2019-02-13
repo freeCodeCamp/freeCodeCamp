@@ -1,26 +1,26 @@
 ---
 title: React TypeChecking with PropTypes
-localeTitle: Validação de Tipo em React com PropTypes
+localeTitle: Verificação de Tipo em React com PropTypes
 ---
 ## React PropTypes
 
-Estes servem como um método de validação de tipo (type checking) à medida que um aplicativo tende a crescer, com isso uma base muito grande de bugs tende a ser corrigida com o uso desse recurso.
+Estes servem como um método de typechecking (verificação de tipo) à medida que um aplicativo tende a crescer, com isso uma base muito grande de bugs tende a ser corrigida com o uso desse recurso.
 
 ## Como obter PropTypes
 
 Começando com o React versão 15.5, esse recurso foi movido para um pacote separado chamado prop-types.
 
-Para usá-lo, é necessário que ele seja adicionado ao projeto como uma dependência, emitindo o seguinte comando em um terminal:
+Para usá-lo, é necessário que ele seja adicionado ao projeto como uma dependência, emitindo o seguinte comando em um console.
 
 ```sh
 npm install --save prop-types 
 ```
 
-Depois disso, toda uma gama de validadores de tipo podem ser usados para garantir que os dados que o desenvolvedor receberá realmente sejam válidos. Quando um valor inválido é fornecido, haverá um aviso aparecendo no console do JavaScript.
+Depois disso, toda uma gama de validadores que podem ser usados ​​para garantir que os dados que o desenvolvedor receberá realmente sejam válidos. Quando um valor inválido é fornecido, haverá um aviso aparecendo no console do JavaScript.
 
 Observe que, por motivos de desempenho, os propTypes definidos são verificados apenas no modo de desenvolvimento.
 
-Também, ao contrário do estado do componente, que pode ser manipulado conforme necessário, essas propriedades (props) são somente leitura.
+Também, ao contrário do estado do componente, que pode ser manipulado conforme necessário, esses suportes são somente leitura.
 
 Seu valor não pode ser alterado pelo componente.
 
