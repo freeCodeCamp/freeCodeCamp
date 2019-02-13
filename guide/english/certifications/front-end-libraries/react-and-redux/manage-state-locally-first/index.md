@@ -3,8 +3,51 @@ title: Manage State Locally First
 ---
 ## Manage State Locally First
 
-This is a stub. <a href='https://github.com/freecodecamp/guides/tree/master/src/pages/certifications/front-end-libraries/react-and-redux/manage-state-locally-first/index.md' target='_blank' rel='nofollow'>Help our community expand it</a>.
+### Solution
 
-<a href='https://github.com/freecodecamp/guides/blob/master/README.md' target='_blank' rel='nofollow'>This quick style guide will help ensure your pull request gets accepted</a>.
+````javascript
+class DisplayMessages extends React.Component {
+  constructor(props) {
+    super(props);
 
-<!-- The article goes here, in GitHub-flavored Markdown. Feel free to add YouTube videos, images, and CodePen/JSBin embeds  -->
+    this.state = {
+      input: '',
+      messages: []
+    };
+
+    this.handleChange = this.handleChange.bind(this);
+    this.submitMessage = this.submitMessage.bind(this);
+  }
+
+  handleChange(event) {
+    this.setState({
+      input: event.target.value
+    });
+  }
+
+  submitMessage(event) {
+    event.preventDefault();
+    this.setState({
+      input: '',
+      messages: [...this.state.messages, this.state.input]
+    });
+  }
+
+  render() {
+    return (
+      <div>
+        <h2>Type in a new Message:</h2>
+        <input value={this.state.input} onChange={this.handleChange} />
+        <button type='submit' onClick={this.submitMessage}>
+          Add message
+        </button>
+        <ul>
+          {this.state.messages.map((message, idx) => {
+            return <li key={idx}>{message}</li>;
+          })}
+        </ul>
+      </div>
+    );
+  }
+}
+````
