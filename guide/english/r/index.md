@@ -37,3 +37,4 @@ Now install it on your computer. For help in installation refer to reference sec
  ## Reference
  * [Installing R on Windows](http://youtu.be/Ohnk9hcxf9M)
  * [Installing R on Mac](https://youtu.be/uxuuWXU-7UQ)
+ * [Installing R on Unix-alikes](https://cran.r-project.org/doc/manuals/r-release/R-admin.html#Installing-R-under-Unix_002dalikes)
