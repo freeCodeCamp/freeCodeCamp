@@ -72,3 +72,41 @@ Calculate the GCD of the first two numbers, then find GCD of the result and the 
 Example- `GCD(203,91,77) == GCD(GCD(203,91),77) == GCD(7, 77) == 7`
 
 You can find GCD of `n` numbers in the same way.
+
+### Extended Euclidean algorithm
+This is an extension of Euclidean algorithm. It also calculates the coefficients x, y such that 
+
+ax+by = gcd(a,b)
+
+x and y are also known as coefficients of Bézout's identity.
+
+c code for Extended Euclidean algorithm
+
+```c
+struct Triplet{
+	int gcd;
+	int x;
+	int y;
+};
+Triplet gcdExtendedEuclid(int a,int b){
+	//Base Case
+	if(b==0){
+		Triplet myAns;
+		myAns.gcd = a;
+		myAns.x = 1;
+		myAns.y = 0;
+		return myAns;
+
+	}
+	Triplet smallAns = gcdExtendedEuclid(b,a%b);
+	//Extended euclid says
+
+	Triplet myAns;
+	myAns.gcd = smallAns.gcd;
+	myAns.x  = smallAns.y;
+	myAns.y = (smallAns.x - ((a/b)*(smallAns.y)));
+	return myAns;	
+}
+```
+
+
