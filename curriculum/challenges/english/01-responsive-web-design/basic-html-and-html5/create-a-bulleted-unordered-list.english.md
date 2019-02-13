@@ -29,7 +29,7 @@ tests:
   - text: You should have three <code>li</code> elements within your <code>ul</code> element.
     testString: assert($("ul li").length > 2, 'You should have three <code>li</code> elements within your <code>ul</code> element.');
   - text: Your <code>li</code> elements should not be empty.
-    testString: $('ul li').each((i, val) => assert(!!val.textContent.replace(/\s/g, '').length, 'Your <code>li</code> elements should not be empty.');
+    testString: $('ul li').each((i, val) => assert(!!val.textContent.replace(/\s/g, '').length, 'Your <code>li</code> elements should not be empty.'));
   - text: Make sure your <code>ul</code> element has a closing tag.
     testString: assert(code.match(/<\/ul>/gi) && code.match(/<ul/gi) && code.match(/<\/ul>/gi).length === code.match(/<ul/gi).length, 'Make sure your <code>ul</code> element has a closing tag.');
   - text: Make sure your <code>li</code> elements have closing tags.
