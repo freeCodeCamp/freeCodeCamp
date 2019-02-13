@@ -27,13 +27,13 @@ What is the sum of the numbers on the diagonals in a n by n spiral formed in the
 ```yml
 tests:
   - text: <code>spiralDiagonals(101)</code> should return 692101.
-    testString: 'assert(spiralDiagonals(101) == 692101, "<code>spiralDiagonals(101)</code> should return 692101.");'
+    testString: assert(spiralDiagonals(101) == 692101, '<code>spiralDiagonals(101)</code> should return 692101.');
   - text: <code>spiralDiagonals(303)</code> should return 18591725.
-    testString: 'assert(spiralDiagonals(303) == 18591725, "<code>spiralDiagonals(303)</code> should return 18591725.");'
+    testString: assert(spiralDiagonals(303) == 18591725, '<code>spiralDiagonals(303)</code> should return 18591725.');
   - text: <code>spiralDiagonals(505)</code> should return 85986601.
-    testString: 'assert(spiralDiagonals(505) == 85986601, "<code>spiralDiagonals(505)</code> should return 85986601.");'
+    testString: assert(spiralDiagonals(505) == 85986601, '<code>spiralDiagonals(505)</code> should return 85986601.');
   - text: <code>spiralDiagonals(1001)</code> should return 669171001.
-    testString: 'assert(spiralDiagonals(1001) == 669171001, "<code>spiralDiagonals(1001)</code> should return 669171001.");'
+    testString: assert(spiralDiagonals(1001) == 669171001, '<code>spiralDiagonals(1001)</code> should return 669171001.');
 
 ```
 

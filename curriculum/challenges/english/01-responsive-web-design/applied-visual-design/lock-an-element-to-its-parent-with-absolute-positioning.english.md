@@ -21,12 +21,12 @@ Lock the <code>#searchbar</code> element to the top-right of its <code>section</
 
 ```yml
 tests:
-  - text: 'The <code>#searchbar</code> element should have a <code>position</code> set to <code>absolute</code>.'
-    testString: 'assert($("#searchbar").css("position") == "absolute", "The <code>#searchbar</code> element should have a <code>position</code> set to <code>absolute</code>.");'
-  - text: 'Your code should use the <code>top</code> CSS offset of 50 pixels on the <code>#searchbar</code> element.'
-    testString: 'assert($("#searchbar").css("top") == "50px", "Your code should use the <code>top</code> CSS offset of 50 pixels on the <code>#searchbar</code> element.");'
-  - text: 'Your code should use the <code>right</code> CSS offset of 50 pixels on the <code>#searchbar</code> element.'
-    testString: 'assert($("#searchbar").css("right") == "50px", "Your code should use the <code>right</code> CSS offset of 50 pixels on the <code>#searchbar</code> element.");'
+  - text: The <code>#searchbar</code> element should have a <code>position</code> set to <code>absolute</code>.
+    testString: assert($('#searchbar').css('position') == 'absolute', 'The <code>#searchbar</code> element should have a <code>position</code> set to <code>absolute</code>.');
+  - text: Your code should use the <code>top</code> CSS offset of 50 pixels on the <code>#searchbar</code> element.
+    testString: assert($('#searchbar').css('top') == '50px', 'Your code should use the <code>top</code> CSS offset of 50 pixels on the <code>#searchbar</code> element.');
+  - text: Your code should use the <code>right</code> CSS offset of 50 pixels on the <code>#searchbar</code> element.
+    testString: assert($('#searchbar').css('right') == '50px', 'Your code should use the <code>right</code> CSS offset of 50 pixels on the <code>#searchbar</code> element.');
 
 ```
 

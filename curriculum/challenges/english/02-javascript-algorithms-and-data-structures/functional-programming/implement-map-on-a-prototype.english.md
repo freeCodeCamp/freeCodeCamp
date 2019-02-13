@@ -22,10 +22,10 @@ Write your own <code>Array.prototype.myMap()</code>, which should behave exactly
 
 ```yml
 tests:
-  - text: '<code>new_s</code> should equal <code>[46, 130, 196, 10]</code>.'
-    testString: 'assert(JSON.stringify(new_s) === JSON.stringify([46, 130, 196, 10]), "<code>new_s</code> should equal <code>[46, 130, 196, 10]</code>.");'
+  - text: <code>new_s</code> should equal <code>[46, 130, 196, 10]</code>.
+    testString: assert(JSON.stringify(new_s) === JSON.stringify([46, 130, 196, 10]), '<code>new_s</code> should equal <code>[46, 130, 196, 10]</code>.');
   - text: Your code should not use the <code>map</code> method.
-    testString: 'assert(!code.match(/\.map/g), "Your code should not use the <code>map</code> method.");'
+    testString: assert(!code.match(/\.map/g), 'Your code should not use the <code>map</code> method.');
 
 ```
 

@@ -21,7 +21,7 @@ Align the item with the class <code>item3</code> vertically at the <code>end</co
 ```yml
 tests:
   - text: <code>item3</code> class should have a <code>align-self</code> property that has the value of <code>end</code>.
-    testString: 'assert(code.match(/.item3\s*?{[\s\S]*align-self\s*?:\s*?end\s*?;[\s\S]*}/gi), "<code>item3</code> class should have a <code>align-self</code> property that has the value of <code>end</code>.");'
+    testString: assert(code.match(/.item3\s*?{[\s\S]*align-self\s*?:\s*?end\s*?;[\s\S]*}/gi), '<code>item3</code> class should have a <code>align-self</code> property that has the value of <code>end</code>.');
 
 ```
 

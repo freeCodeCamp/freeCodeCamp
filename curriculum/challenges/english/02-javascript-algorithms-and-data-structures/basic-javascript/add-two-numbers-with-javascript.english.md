@@ -8,8 +8,8 @@ challengeType: 1
 <section id='description'>
 <code>Number</code> is a data type in JavaScript which represents numeric data.
 Now let's try to add two numbers using JavaScript.
-JavaScript uses the <code>+</code> symbol as addition operation when placed between two numbers.
-<strong>Example</strong>
+JavaScript uses the <code>+</code> symbol as an addition operation when placed between two numbers.
+<strong>Example:</strong>
 <blockquote>myVar = 5 + 10; // assigned 15</blockquote>
 </section>
 
@@ -24,9 +24,9 @@ Change the <code>0</code> so that sum will equal <code>20</code>.
 ```yml
 tests:
   - text: <code>sum</code> should equal <code>20</code>
-    testString: 'assert(sum === 20, "<code>sum</code> should equal <code>20</code>");'
+    testString: assert(sum === 20, '<code>sum</code> should equal <code>20</code>');
   - text: Use the <code>+</code> operator
-    testString: 'assert(/\+/.test(code), "Use the <code>+</code> operator");'
+    testString: assert(/\+/.test(code), 'Use the <code>+</code> operator');
 
 ```
 
@@ -49,7 +49,7 @@ var sum = 10 + 0;
 <div id='js-teardown'>
 
 ```js
-console.info('after the test');
+(function(z){return 'sum = '+z;})(sum);
 ```
 
 </div>
