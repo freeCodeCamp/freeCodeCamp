@@ -73,7 +73,7 @@ Example- `GCD(203,91,77) == GCD(GCD(203,91),77) == GCD(7, 77) == 7`
 
 You can find GCD of `n` numbers in the same way.
 
-## Extended Euclidean algorithm
+### Extended Euclidean algorithm
 This is an extension of Euclidean algorithm. It also calculates the coefficients x, y such that 
 
 ax+by = gcd(a,b)
