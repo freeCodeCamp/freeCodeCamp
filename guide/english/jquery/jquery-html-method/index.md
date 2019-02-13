@@ -3,7 +3,7 @@ title: HTML Method
 ---
 
 # HTML Method
-The Jquery `.html()` method gets the content of a HTML element or sets the content of an HTML element. 
+The jQuery `.html()` method gets the content of a HTML element or sets the content of an HTML element. 
 
 ## Getting
 To return the content of a HTML element, use this syntax:
