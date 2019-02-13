@@ -46,7 +46,7 @@ Vertical margins on different elements that touch each other (thus have no conte
 It is effectively supported in all browsers (since IE6+, Firefox 2+, Chrome 1+, etc).
 
 ### More Information
-- <a href='https://www.w3.org/TR/css3-box/#the-margin' target='_blank' rel='nofollow'>W3C Working Draft</a>
+- <a href='https://www.w3.org/TR/css-box-3/#margins' target='_blank' rel='nofollow'>W3C Working Draft</a>
 - <a href='https://www.w3.org/TR/CSS2/box.html#propdef-margin' target='_blank' rel='nofollow'>W3C CSS Level 2</a>
 - <a href='https://www.w3.org/TR/CSS1/#margin' target='_blank' rel='nofollow'>W3C CSS Level 1</a>
 - <a href='https://developer.mozilla.org/en-US/docs/Web/CSS/margin' target='_blank' rel='nofollow'>MDN Web Docs</a>
