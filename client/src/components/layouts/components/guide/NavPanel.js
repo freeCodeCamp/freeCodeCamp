@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import { Panel } from '@freecodecamp/react-bootstrap';
-import { navigate } from 'gatsby';
+import { Link } from 'gatsby';
 
 const propTypes = {
   children: PropTypes.any,
@@ -9,6 +9,7 @@ const propTypes = {
   handleClick: PropTypes.func.isRequired,
   hasChildren: PropTypes.bool,
   isExpanded: PropTypes.bool,
+  onNavigate: PropTypes.func.isRequired,
   path: PropTypes.string,
   title: PropTypes.string,
   toggleDisplaySideNav: PropTypes.func.isRequired
@@ -52,13 +53,13 @@ class NavPanel extends Component {
   }
 
   handleTitleClick() {
-    const { path, toggleDisplaySideNav } = this.props;
+    const { toggleDisplaySideNav, onNavigate } = this.props;
     toggleDisplaySideNav();
-    navigate(path);
+    onNavigate();
   }
 
   renderHeader() {
-    const { isExpanded, title } = this.props;
+    const { isExpanded, path, title } = this.props;
     return (
       <div className='title' onClick={this.handleHeaderClick}>
         <span
@@ -66,7 +67,7 @@ class NavPanel extends Component {
             'caret ' + (isExpanded ? 'caretStyle expanded' : 'caretStyle')
           }
         />
-        <span onClick={this.handleTitleClick}>{title}</span>
+        <Link onClick={this.handleTitleClick} to={path}>{title}</Link>
       </div>
     );
   }
@@ -94,8 +95,6 @@ class NavPanel extends Component {
     return (
       <Panel
         bsClass='panelStyle panel'
-        collapsible={true}
-        expanded={isExpanded}
         id={`${dashedName}-panel`}
         role='listitem'
         >

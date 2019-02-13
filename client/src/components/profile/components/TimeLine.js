@@ -123,6 +123,7 @@ class Timeline extends Component {
               <tr>
                 <th>Challenge</th>
                 <th className='text-center'>Completed</th>
+                <th />
               </tr>
             </thead>
             <tbody>

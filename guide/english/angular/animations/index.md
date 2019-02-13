@@ -16,7 +16,7 @@ Animations continue to grow more and more relevant in Angular’s case. Google d
 
 The Angular community develops a core widget library called [Material2](https://github.com/angular/material2). This project adds a variety of widget modules to Angular. Most of them feature animations. To understand how they work, this article recommends studying CSS animations before reading on.
 
-Angular animations is the framework's streamlined version of what CSS natively provides. CSS is the core technology for Angular animations occurring within the web browser. CSS is beyond the scope of this article though. Its time to tackle Angular animations head-on.
+Angular animations are the framework's streamlined version of what CSS natively provides. CSS is the core technology for Angular animations occurring within the web browser. CSS is beyond the scope of this article though. It's time to tackle Angular animations head-on.
 
 #### Setting up Animations
 
@@ -24,13 +24,13 @@ Before animating, the `BrowserAnimationsModule` must be included into the root m
 
 Angular animations declare within the `@Component` metadata. `@Component` decorates a class to distinguish it as a component to Angular. Its metadata contains component configurations including the `animations: []` field. Each array element from this field represents an animation trigger (`AnimationTriggerMetadata`)
 
-Animations are exclusive to their host component via the decorator's metadata. Animations can only be used in the host component’s template. Animations do not inherit to the component's children. There is an easy work-around for this.
+Animations are exclusive to their host component via the decorator's metadata. Animations can only be used in the host component’s template. Animations do not inherit to the component's children. There is an easy workaround for this.
 
 You could always create a separate file that exports an array. Any component class can import that array from the top of its host file. The imported array token then goes into the animations metadata of the component. Repeat this process for any other components requiring the same array in their animations metadata.
 
 Content projection lets you apply animations to component A's content DOM (Document Object Model). Component B wrapping this content DOM can project the contents into its own template. Once it does, the animations of component A do not negate. Component B incorporates A's animations through content projection.
 
-OK. You know how to setup animations and where to declare them. Implementation is the next step.
+OK. You know how to set up animations and where to declare them. Implementation is the next step.
 
 #### Animation Methods
 
@@ -62,15 +62,15 @@ While there are certainly [more methods](https://angular.io/api/animations) to p
 
 The `trigger(...)` method encapsulates a single element of animation inside the animations array.
 
-The method’s first argument `selector: string` matches the `[@selector]` member attribute. It acts like an attribute directive in the component template. It essentially connects the animation element to the template through an attribute selector.
+The method’s first argument `selector: string` matches the `[@selector]` member attribute. It acts as an attribute directive in the component template. It essentially connects the animation element to the template through an attribute selector.
 
-The second argument is an array containing a list of applicable animation methods. The `trigger(...)` keeps it altogether in a single array.
+The second argument is an array containing a list of applicable animation methods. The `trigger(...)` keeps it all together in a single array.
 
 ##### state(data: string, AnimationStyleMetadata, options?: object)
 
 The `state(...)` method defines the final state of the animation. It applies a list of CSS properties to the target element after an animation concludes. This is so the animated element’s CSS matches the animation’s resolution.
 
-The first argument matches the value of the data bound to the animation binding. That is, the value bound to `[@selector]` in the template matches against first argument of a `state(...)`. The data's value determines the final state. The changing of the value determines the means of animation (see `transition(...)`).
+The first argument matches the value of the data bound to the animation binding. That is, the value bound to `[@selector]` in the template matches against the first argument of a `state(...)`. The data's value determines the final state. The changing of the value determines the means of animation (see `transition(...)`).
 
 The second argument hosts the CSS styles that apply to an element post-animation. Styles get passed in by invoking `style(...)` and passing into its argument the desired styles as an object.
 
@@ -100,7 +100,7 @@ The first argument consists of a unique form of micro-syntax. It denotes a chang
 
 The second argument of `transition(...)` comprises `AnimationMetadata` (returned by `animate(...)`). The argument accepts either an array of `AnimationMetadata` or a single instance.
 
-The first argument's value matches against the value of the data bound in the template (`[selector]="value"`) . If a perfect match occurs, the argument evaluates successfully. The second argument then initiates an animation in response to the success of the first.
+The first argument's value matches against the value of the data bound in the template (`[selector]="value"`). If a perfect match occurs, the argument evaluates successfully. The second argument then initiates an animation in response to the success of the first.
 
 A list of options optionally occupies the third argument. The default `transition(...)` options should remain unchanged unless reasoned otherwise.
 
@@ -149,13 +149,13 @@ The first occurrence concerns the two `state(...)` methods. The new value of `is
 
 Now for the second occurrence. The data change that invoked the animation binding compares across the two `transition(...)` methods. One of them matches the change in data to their first argument. The first button click caused `isGreen` to go from ‘true’ to ‘false’ (‘true => false’). That means the first `transition(...)` method activates its second argument.
 
-The `animate(...)` function corresponding the successfully evaluated `transition(...)` method initiates. This method sets the duration of the animated color fade along with the fade's pacing. The animation executes and the button fades to red.
+The `animate(...)` function corresponding to the successfully evaluated `transition(...)` method initiates. This method sets the duration of the animated color fade along with the fade's pacing. The animation executes and the button fades to red.
 
 This process can happen any number of times following a button click. The `backgroundColor` of the button will cycle between green and red in a linear fade.
 
 #### Animation State
 
-The `transition(...)` micro-syntax is worth addressing in detail. Angular determines animations and their timing by evaluating this syntax. There exists the following state transitions. They model a changes in data bound to an animation binding.
+The `transition(...)` micro-syntax is worth addressing in detail. Angular determines animations and their timing by evaluating this syntax. There exist the following state transitions. They model a changes in data bound to an animation binding.
 
 * `‘someValue’ => ‘anotherValue’`
 
@@ -179,7 +179,7 @@ There also exists `void` and `*` states. `void` indicates that the component is 
 
 #### Keyframes
 
-This article touched on the basics for animating Angular applications. Advanced animation techniques exist alongside these basics. Grouping together keyframes is one such technique. Its inspired from the `@keyframes` CSS rule. If you have worked with CSS `@keyframes`, you already understand how keyframes in Angular work. It becomes just a matter of syntax
+This article touched on the basics for animating Angular applications. Advanced animation techniques exist alongside these basics. Grouping together keyframes is one such technique. Its inspired by the `@keyframes` CSS rule. If you have worked with CSS `@keyframes`, you already understand how keyframes in Angular work. It becomes just a matter of syntax
 
 The `keyframes(...)` method imports from `@angular/animations`. It passes into the second argument of `animate(...)` instead of the typical `AnimationStyleMetadata`. The `keyframes(...)` method accepts one argument as an array of `AnimationStyleMetadata`. This can also be referred to as an array of `style(...)` methods.
 
@@ -244,7 +244,7 @@ Clicking the button causes the button to arc across the screen. The arc moves as
 
 `left` and `top` are animatable properties after setting `position: relative;` for the element. The `transform` property can perform similar movement-based animations. `transform` is an expansive yet fully animatable property.
 
-Any number of keyframes can existing between offset 0 and 1. Intricate animation sequences take the form of keyframes. They are one of many advanced techniques in Angular animations.
+Any number of keyframes can exist between offset 0 and 1. Intricate animation sequences take the form of keyframes. They are one of many advanced techniques in Angular animations.
 
 ### Animations With Host Binding
 
@@ -265,13 +265,13 @@ export class ExampleComponent {
 }
 ```
 
-The idea behind animating the host component is pretty much the same as animating a element from the template with the only difference being your lack of access to the element you are animating. You still have to pass the name of the animation (`@animateArc`) when declaring the `HostBinding` and you still have to return the current state of the animation (`this.arc`). The name of the function doesn't actual matter, so `arcAnimation` could have been changed to anything, as long as it doesn't clash with existing property names on the component, and it would work perfectly fine.
+The idea behind animating the host component is pretty much the same as animating an element from the template with the only difference being your lack of access to the element you are animating. You still have to pass the name of the animation (`@animateArc`) when declaring the `HostBinding` and you still have to return the current state of the animation (`this.arc`). The name of the function doesn't actually matter, so `arcAnimation` could have been changed to anything, as long as it doesn't clash with existing property names on the component, and it would work perfectly fine.
 
 #### Conclusion
 
 This covers the basics of animating with Angular. Angular makes setting up animations very easy using the Angular CLI. Getting started with your first animation only requires a single component class. Remember, animations scope to the component’s template. Export your transitions array from a separate file if you plan to use it across multiple components.
 
-Every animation utility/method exports from `@angular/animations`. They all work together to provide a robust system of animation inspired from CSS. There are more methods beyond what this article could cover.
+Every animation utility/method exports from `@angular/animations`. They all work together to provide a robust system of animation inspired by CSS. There are more methods beyond what this article could cover.
 
 Now that you know the basics, feel free to explore the links below for more on Angular animations.
 

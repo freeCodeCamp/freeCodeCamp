@@ -621,5 +621,5 @@ pre tt:after {
   }
 }
 .default-layout {
-  margin-top: 38px;
+  margin-top: var(--header-height);
 }

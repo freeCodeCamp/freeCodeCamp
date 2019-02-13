@@ -7,10 +7,10 @@ localeTitle: Dar un color de fondo a un elemento div
 ---
 
 ## Descripción
-<section id="description"> Puede establecer el color de fondo de un elemento con la propiedad de <code>background-color</code> . Por ejemplo, si quisiera que el color de fondo de un elemento fuera <code>green</code> , lo pondría dentro de su elemento de <code>style</code> : <blockquote> .green-background { <br> color de fondo: verde; <br> } </blockquote></section>
+<section id="description"> Puede establecer el color de fondo de un elemento con la propiedad de <code>background-color</code> . Por ejemplo, si quisiera que el color de fondo de un elemento fuera <code>green</code> , lo pondría dentro de su elemento de <code>style</code> : <blockquote> .green-background { <br> background-color: green; <br> } </blockquote></section>
 
 ## Instrucciones
-<section id="instructions"> Crea una clase llamada <code>silver-background</code> con el <code>background-color</code> de <code>background-color</code> de plata. Asigna esta clase a tu elemento <code>div</code> . </section>
+<section id="instructions"> Crea una clase llamada <code>silver-background</code> con el <code>background-color</code> plateado. Asigna esta clase a tu elemento <code>div</code> . </section>
 
 ## Pruebas
 <section id='tests'>

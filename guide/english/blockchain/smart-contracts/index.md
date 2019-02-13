@@ -8,6 +8,8 @@ As a piece of code that sits on the blockchain, a Smart Contract can automate ta
 
 Transactions in a blockchain are a very basic form of Smart Contract - One party sends resources to another once an authorization for the transfer has been given. The Bitcoin blockchain supports slightly more complex contracts involving transactions between several parties, but not "fully smart" contracts. That can be achieved in the Ethereum blockchain, given that its transactions can support any kind of logic. They have the expressive power of a Turing-Complete machine - meaning they can carry out any task that a computer can do.
 
+Deployed contracts can be viewed on platforms such as [Etherscan](www.etherscan.io).
+
 ## Applications of Smart Contacts
 Smart Contracts allows the transfer of goods and services without the need for a independent third party. Logic and rules are built into the smart contract that define the permissions and processes associated with a particular agreement and enforce the obligations attached to it. This provides an opportunity to remove middlemen that are traditionally required to interact with physical property or financial service instruments.
 
