@@ -4,7 +4,7 @@ title: Arrow Functions
 
 ## Arrow functions
 
-ES6 has introduced a new syntax that allows to declare functions.
+ES6 has introduced a new syntax for function declarations.
 
 ```javascript
 // Old Syntax
@@ -60,3 +60,4 @@ axios.get(url).then(response => {
 });
 
 ```
+For more information on arrow functions visit [MDN](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Functions/Arrow_functions).
