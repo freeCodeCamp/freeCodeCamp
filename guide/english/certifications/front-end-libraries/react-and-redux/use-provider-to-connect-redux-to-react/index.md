@@ -31,18 +31,22 @@ const store = Redux.createStore(messageReducer);
 class DisplayMessages extends React.Component {
   constructor(props) {
     super(props);
+    
     this.state = {
       input: '',
       messages: []
     };
+    
     this.handleChange = this.handleChange.bind(this);
     this.submitMessage = this.submitMessage.bind(this);
   }
+  
   handleChange(event) {
     this.setState({
       input: event.target.value
     });
   }
+  
   submitMessage(event) {
     event.preventDefault();
     this.setState({
@@ -50,6 +54,7 @@ class DisplayMessages extends React.Component {
       messages: [...this.state.messages, this.state.input]
     });
   }
+  
   render() {
     return (
       <div>
