@@ -3,7 +3,6 @@ title: HTML Method
 localeTitle: Метод HTML
 ---
 # Метод HTML
-jQuery
 Метод JQuery `.html()` получает содержимое элемента HTML или задает содержимое элемента HTML.
 
 ## Получение
