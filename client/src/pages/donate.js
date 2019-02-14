@@ -3,6 +3,7 @@ import React, { Component, Fragment } from 'react';
 import Helmet from 'react-helmet';
 import { StripeProvider, Elements } from 'react-stripe-elements';
 import { Row, Col } from '@freecodecamp/react-bootstrap';
+import { Link } from 'gatsby';
 
 import { stripePublicKey } from '../../config/env.json';
 
@@ -13,7 +14,7 @@ import PoweredByStripe from '../components/Donation/components/poweredByStripe';
 
 import './index.css';
 
-class IndexPage extends Component {
+class DonatePage extends Component {
   constructor(...props) {
     super(...props);
     this.state = {
@@ -72,7 +73,7 @@ class IndexPage extends Component {
               </Elements>
             </StripeProvider>
             <div className='text-center'>
-              <a href='/donate-other'>Other ways to donate.</a>
+              <Link to='/donate-other'>Other ways to donate.</Link>
               <Spacer />
               <PoweredByStripe />
             </div>
@@ -84,6 +85,6 @@ class IndexPage extends Component {
   }
 }
 
-IndexPage.displayName = 'IndexPage';
+DonatePage.displayName = 'DonatePage';
 
-export default IndexPage;
+export default DonatePage;
