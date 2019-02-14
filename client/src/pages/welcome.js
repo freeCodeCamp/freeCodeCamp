@@ -1,6 +1,5 @@
 import React, { Fragment } from 'react';
 import PropTypes from 'prop-types';
-import { navigate } from 'gatsby';
 import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux';
 import { createSelector } from 'reselect';
@@ -17,6 +16,8 @@ import {
   activeDonationsSelector
 } from '../redux';
 import { randomQuote } from '../utils/get-words';
+import createRedirect from '../components/createRedirect';
+import RedirectHome from '../components/RedirectHome';
 
 import './welcome.css';
 
@@ -52,6 +53,7 @@ const mapStateToProps = createSelector(
   })
 );
 const mapDispatchToProps = dispatch => bindActionCreators({}, dispatch);
+const RedirectAcceptPrivacyTerm = createRedirect('/accept-privacy-terms');
 
 function Welcome({
   fetchState: { pending, complete },
@@ -76,13 +78,11 @@ function Welcome({
   }
 
   if (!isSignedIn) {
-    navigate('/');
-    return null;
+    return <RedirectHome />;
   }
 
   if (isSignedIn && !acceptedPrivacyTerms) {
-    navigate('/accept-privacy-terms');
-    return null;
+    return <RedirectAcceptPrivacyTerm />;
   }
 
   const { quote, author } = randomQuote();
