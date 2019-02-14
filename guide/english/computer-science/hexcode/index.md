@@ -51,7 +51,7 @@ As seen in the table example above, with one hex digit we can represent numbers 
 ## Uses of Hexadecimal in Low Level Programming
 Hexadecimal first found its use in Computer Science as a convenience feature.
 
-Data in our computers has a lowest common storage unit, the Byte.
+Data in our computers has a lowest common storage unit, the byte.
 Each byte contains 8 bits, and is able to store a number between 0 and 255 inclusive.
 
 Hexadecimal has the advantage of being terse and having well defined boundaries.
