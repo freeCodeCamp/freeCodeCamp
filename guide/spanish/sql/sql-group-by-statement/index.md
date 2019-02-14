@@ -20,7 +20,7 @@ SELECT Candidate, Election_year, sum(Total_$), count(*)
  WHERE Election_year = 2016 
  GROUP BY Candidate, Election_year -- indica al DBMS que agregue por estas dos columnas, en este caso suma Total_$ y cuenta el número de filas en las que coinciden Candidate y Election_year
  HAVING sum(Total_$) > 20000000  -- limita las filas que se muestran a aquellas que superan los 20M (una vez sumados los datos según la claúsula GROUP BY) 
- ORDER BY sum(Total_$) DESC; -- ordena las filas resultantes, mostrando primero las de importe mayor 
+ ORDER BY sum(Total_$) DESC; -- ordena las filas resultantes, con la suma más grande primero
 ```
 
 ```text
