@@ -39,11 +39,11 @@ Converting to decimal, it would be `11*16^3 + 14*16^2 + 14*16 + 15*1` which give
 Here are some other examples of equivalent hex and decimal values:
 
 ```
-0x1        ==        1
-0xF        ==        15
-0xFF       ==        255
-0xFFF      ==        4095
-0x1000     ==        4096
+0x1        ==        1       ==   1*16^0
+0xF        ==        15      ==   15*16^0
+0xFF       ==        255     ==   15*16^1 + 15*16^0
+0xFFF      ==        4095    ==   15*16^2 + 15*16^1 + 15*16^0
+0x1000     ==        4096    ==   1*16^3 + 0*16^2 + 0*16^1 + 0*16^0
 ```
 
 As seen in the table example above, with one hex digit we can represent numbers up to and including 15. Add another column and we can represent numbers up to 255, 4095 with another column, and so on.
