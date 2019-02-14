@@ -3,7 +3,6 @@ import PropTypes from 'prop-types';
 import { TabPane, Tabs } from '@freecodecamp/react-bootstrap';
 import { connect } from 'react-redux';
 
-import ToolPanel from '../components/Tool-Panel';
 import { createStructuredSelector } from 'reselect';
 import { currentTabSelector, moveToTab } from '../redux';
 import { bindActionCreators } from 'redux';
@@ -23,13 +22,12 @@ const mapDispatchToProps = dispatch =>
 const propTypes = {
   currentTab: PropTypes.number,
   editor: PropTypes.element,
-  guideUrl: PropTypes.string,
   hasPreview: PropTypes.bool,
   instructions: PropTypes.element,
   moveToTab: PropTypes.func,
   preview: PropTypes.element,
   testOutput: PropTypes.element,
-  videoUrl: PropTypes.string
+  toolPanel: PropTypes.element
 };
 
 class MobileLayout extends Component {
@@ -42,8 +40,7 @@ class MobileLayout extends Component {
       testOutput,
       hasPreview,
       preview,
-      guideUrl,
-      videoUrl
+      toolPanel
     } = this.props;
 
     const editorTabPaneProps = {
@@ -74,7 +71,7 @@ class MobileLayout extends Component {
             </TabPane>
           )}
         </Tabs>
-        <ToolPanel guideUrl={guideUrl} isMobile={true} videoUrl={videoUrl} />
+        {toolPanel}
       </Fragment>
     );
   }

@@ -3,7 +3,7 @@
 }
 
 .desktop-layout {
-  height: calc(100vh - var(--header-height));
+  height: calc(100vh - var(--header-height) - 42px);
 }
 
 .monaco-menu .action-label {
@@ -33,4 +33,14 @@
 #challenge-page-tabs .tab-pane {
   height: 100%;
   overflow: hidden;
+}
+
+.classic-tool-panel.tool-panel-group {
+  display: flex;
+  flex-direction: row-reverse;
+  padding: 0 2px;
+}
+
+.classic-tool-panel.tool-panel-group .btn-block + .btn-block {
+  margin: 0 2px 0 0;
 }
