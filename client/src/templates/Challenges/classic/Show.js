@@ -19,6 +19,7 @@ import VideoModal from '../components/VideoModal';
 import ResetModal from '../components/ResetModal';
 import MobileLayout from './MobileLayout';
 import DesktopLayout from './DesktopLayout';
+import ToolPanel from '../components/Tool-Panel';
 
 import { randomCompliment } from '../utils/get-words';
 import { createGuideUrl } from '../utils';
@@ -246,6 +247,17 @@ class ShowClassic extends Component {
     );
   }
 
+  renderToolPanel(isMobile) {
+    return (
+      <ToolPanel
+        className='classic-tool-panel'
+        guideUrl={this.getGuideUrl()}
+        isMobile={isMobile}
+        videoUrl={this.getVideoUrl()}
+      />
+    );
+  }
+
   render() {
     return (
       <LearnLayout>
@@ -257,14 +269,13 @@ class ShowClassic extends Component {
             matches ? (
               <MobileLayout
                 editor={this.renderEditor()}
-                guideUrl={this.getGuideUrl()}
                 hasPreview={this.hasPreview()}
                 instructions={this.renderInstructionsPanel({
                   showToolPanel: false
                 })}
                 preview={this.renderPreview()}
                 testOutput={this.renderTestOutput()}
-                videoUrl={this.getVideoUrl()}
+                toolPanel={this.renderToolPanel(true)}
               />
             ) : (
               <DesktopLayout
@@ -272,11 +283,12 @@ class ShowClassic extends Component {
                 editor={this.renderEditor()}
                 hasPreview={this.hasPreview()}
                 instructions={this.renderInstructionsPanel({
-                  showToolPanel: true
+                  showToolPanel: false
                 })}
                 preview={this.renderPreview()}
                 resizeProps={this.resizeProps}
                 testOutput={this.renderTestOutput()}
+                toolPanel={this.renderToolPanel(false)}
               />
             )
           }
