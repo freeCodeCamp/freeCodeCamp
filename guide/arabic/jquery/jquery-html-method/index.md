@@ -2,9 +2,10 @@
 title: HTML Method
 localeTitle: طريقة HTML
 ---
+
 # طريقة HTML
-jQuery
-تحصل طريقة Jquery `.html()` على محتوى عنصر HTML أو تقوم بتعيين محتوى عنصر HTML.
+
+تحصل طريقة jQuery `.html()` على محتوى عنصر HTML أو تقوم بتعيين محتوى عنصر HTML.
 
 ## الحصول على
 

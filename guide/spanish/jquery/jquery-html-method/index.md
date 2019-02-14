@@ -2,9 +2,10 @@
 title: HTML Method
 localeTitle: Método HTML
 ---
+
 # Método HTML
-jQuery
-El método `.html()` Jquery obtiene el contenido de un elemento HTML o establece el contenido de un elemento HTML.
+
+El método `.html()` jQuery obtiene el contenido de un elemento HTML o establece el contenido de un elemento HTML.
 
 ## Consiguiendo
 
