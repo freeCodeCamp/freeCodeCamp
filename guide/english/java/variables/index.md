@@ -77,6 +77,6 @@ You can find out more in the sections linked below.
 
  -> You cannot use a java keyword (reserved word) for a variable name.
  
-# Other Resources
+## Other Resources
 * <a href='https://guide.freecodecamp.org/java/data-types' target='_blank' rel='nofollow'>Data Types</a>
 * <a href='https://guide.freecodecamp.org/java/classes-and-objects' target='_blank' rel='nofollow'>Classes and Objects</a>
