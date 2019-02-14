@@ -27,5 +27,3 @@ deploy:
 branches:
   except:
     - /^v\d+\.\d+\.\d+$/
-
-sudo: false
