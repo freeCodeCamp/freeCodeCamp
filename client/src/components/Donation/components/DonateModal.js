@@ -68,7 +68,6 @@ class DonateModal extends Component {
   renderMaybe() {
     const { closeDonationModal } = this.props;
     const handleClick = e => {
-      console.log(e.target);
       e.preventDefault();
       return closeDonationModal();
     };
