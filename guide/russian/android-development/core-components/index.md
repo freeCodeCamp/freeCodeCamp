@@ -1,4 +1,3 @@
-
 ---
 title: Android core components
 localeTitle: Основные компоненты Android
