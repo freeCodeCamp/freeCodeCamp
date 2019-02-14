@@ -25,7 +25,7 @@ P||Q returns True if at least one of P or Q (or both P and Q) is True. Only retu
 | F | F | F |
 
 ## Negation a.k.a. "NOT" (!)
-Returns the opposite value. Ex. if P is true, then !P is false, and if P is false, then !P is true. This is the only logical operator that works on only one input, which makes it a unary operator.
+Returns the opposite value. Ex. if P is true, then !P is False, and if P is False, then !P is true. This is the only logical operator that works on only one input, which makes it a unary operator.
 
 | P | Q | NOT(P) | NOT(Q) |
 |---|---|---|---|
@@ -53,7 +53,7 @@ Only returns False when P is True and Q is False. Otherwise the implication is T
 
 Note: Implications are often used for direct mathematical proofs. P represents the hypothesis, while Q is the conclusion.
 
-The only time the conditional is false is when a true value leads to a false value. 
+The only time the conditional is False is when a True value leads to a False value. 
 
 | P | Q | IF(P,Q) |
 |---|---|---|
