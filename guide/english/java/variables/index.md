@@ -4,6 +4,7 @@ title: Variables
 # Variables
 
 Variables store values. They are the most basic entity used to store data such as text, numbers, etc. in a program. 
+These are case sensitive ,i.e, small letter nd capital letter must be same as when declared.
 
 In <a href='https://github.com/FreeCodeCamp/FreeCodeCamp/wiki/Java' target='_blank' rel='nofollow'>Java</a>, variables are <a href='https://en.wikipedia.org/wiki/Strong_and_weak_typing#Definitions_of_.22strong.22_or_.22weak.22' target='_blank' rel='nofollow'>_strongly typed_</a>, which means you have to define the type for each variable whenever you declare it. Otherwise, the compiler will throw an error at <a href='https://en.wikipedia.org/wiki/Compile_time' target='_blank' rel='nofollow'>compile time</a>. Therefore, each variable has an associated '<a href='https://guide.freecodecamp.org/java/data-types' target='_blank' rel='nofollow'>data-type</a>' of one of the following:
 
@@ -50,6 +51,7 @@ byte anotherByte = (byte)0b00100001;
 ## Variable Data Types
 
 As evident from the above example, variables of Primitive type behave slightly differently from variables of Reference (& Wrapper) type - while Primitive variables <i>store</i> the actual value, Reference variables <i>refer to</i> an 'object' containing the actual value.
+
 Java Programming language defines mainly three kind of variables.
 
 1. Local Variable:
@@ -62,6 +64,19 @@ It cannot be created as a local variable. Once created , it can be used among al
 3. Instance Variable:
 It is declared inside a class but not in a specific method body.
 
+You can find out more in the sections linked below.
+## Rules for naming Variable
+
+ -> All variable names must begin with a letter of the alphabet, an underscore, or ( _ ), or a dollar sign ($).  The convention is to always use a letter of the alphabet.  The dollar sign and the underscore are discouraged.
+
+ -> After the first initial letter, variable names may also contain letters and the digits 0 to 9.  No spaces or special characters are allowed. 
+
+ -> The name can be of any length, but don't get carried away.  Remember that you will have to type this name.
+
+ -> Uppercase characters are distinct from lowercase characters.  Using ALL uppercase letters are primarily used to identify constant variables.  Remember that variable names are case-sensitive.
+
+ -> You cannot use a java keyword (reserved word) for a variable name.
+ 
 ## Other Resources
 * <a href='https://guide.freecodecamp.org/java/data-types' target='_blank' rel='nofollow'>Data Types</a>
 * <a href='https://guide.freecodecamp.org/java/classes-and-objects' target='_blank' rel='nofollow'>Classes and Objects</a>
