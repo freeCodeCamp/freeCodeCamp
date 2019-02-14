@@ -54,33 +54,28 @@ header {
   margin: 0;
 }
 
-#top-right-nav li,
-#top-right-nav li > a {
+#top-right-nav a {
   color: #fff;
   font-size: 18px;
 }
 
-#top-right-nav li:hover,
-#top-right-nav li:hover a,
-#top-right-nav li > a:hover,
-#top-right-nav li:focus,
-#top-right-nav li:focus a,
-#top-right-nav li > a:focus {
+#top-right-nav a:hover,
+#top-right-nav a:focus {
   background-color: #fff;
   color: #006400;
 }
 
-li.user-state-link,
-li.user-state-link:hover,
-li.user-state-link:focus,
-li.user-state-link > a,
-li.user-state-link > a:hover,
-li.user-state-link > a:focus {
-  background-color: #006400 !important;
+#top-right-nav li.user-state-link,
+#top-right-nav li.user-state-link:hover,
+#top-right-nav li.user-state-link:focus,
+#top-right-nav li.user-state-link > a,
+#top-right-nav li.user-state-link > a:hover,
+#top-right-nav li.user-state-link > a:focus {
+  background-color: #006400;
 }
 
-#top-right-nav li > a:hover,
-#top-right-nav li > a:focus {
+#top-right-nav a:hover,
+#top-right-nav a:focus {
   text-decoration: none;
 }
 
