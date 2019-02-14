@@ -20,8 +20,9 @@ Let's add an environment variable as a configuration option. Store the variable 
 <section id='tests'>
 
 ```yml
-- text: The response of the endpoint <code>/json</code> should change according to the environment variable <code>MESSAGE_STYLE</code>
-  testString: 'getUserInput => $.get(getUserInput(''url'') + ''/_api/use-env-vars'').then(data => { assert.isTrue(data.passed, ''The response of "/json" does not change according to MESSAGE_STYLE''); }, xhr => { throw new Error(xhr.responseText); })'
+tests:
+  - text: The response of the endpoint <code>/json</code> should change according to the environment variable <code>MESSAGE_STYLE</code>
+    testString: 'getUserInput => $.get(getUserInput(''url'') + ''/_api/use-env-vars'').then(data => { assert.isTrue(data.passed, ''The response of "/json" does not change according to MESSAGE_STYLE''); }, xhr => { throw new Error(xhr.responseText); })'
 
 ```
 
