@@ -40,9 +40,9 @@ for(int i = 0; i < n-1; i++)
 }
 ```
 
-### Implementation in Javascript
+### Implementation in JavaScript
 
-``` Javascript
+``` JavaScript
 function selection_sort(A) {
     var len = A.length;
     for (var i = 0; i < len - 1; i = i + 1) {

@@ -4,7 +4,7 @@ title: Destructuring Assignment
 
 ## Destructuring Assignment
 
-Destructuring Assignment syntax is a Javascript expression that makes it possible to unpack values or properties from arrays or objects.
+Destructuring Assignment syntax is a JavaScript expression that makes it possible to unpack values or properties from arrays or objects.
 
 Lets say that you have an array that contains a first name and last name as its two values, but you want to reassign those values to something more descriptive. You can use Destructuring to accomplish this.
 

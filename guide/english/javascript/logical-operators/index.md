@@ -86,6 +86,6 @@ Note that where `&&` returns the first value, `||` returns the second value and 
 
 #### More information:
 
-* [Javascript Truth Table](https://guide.freecodecamp.org/javascript/truth-table)
+* [JavaScript Truth Table](https://guide.freecodecamp.org/javascript/truth-table)
 
 * [MDN](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Operators/Logical_Operators)

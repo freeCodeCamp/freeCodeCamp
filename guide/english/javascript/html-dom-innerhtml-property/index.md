@@ -37,11 +37,11 @@ The HTML now will be like
 
 ***SECURITY CONSIDERATIONS***
 
-The value that's set to `innerHTML` should come from trusted sources, since Javascript will put anything inside that element and it will be run as plain HTML.
+The value that's set to `innerHTML` should come from trusted sources, since JavaScript will put anything inside that element and it will be run as plain HTML.
 
 Example:
 
-Setting a "`<script>alert();</script>`" value will cause the Javascript "alert()" function to be fired:
+Setting a "`<script>alert();</script>`" value will cause the JavaScript "alert()" function to be fired:
 
 ```javascript
 
