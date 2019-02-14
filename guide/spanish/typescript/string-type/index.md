@@ -19,7 +19,7 @@ let greeting: string = `Hello, ${firstName} ${lastName}, thank you for attending
 
 ## Métodos incorporados
 
-En el tipo de Typescript puedes usar algunas funciones incorporadas. Cada tipo tiene métodos comunes y únicos. A continuación puede leer sobre los métodos más utilizados de los tipos de cadena.
+En el tipo de TypeScript puedes usar algunas funciones incorporadas. Cada tipo tiene métodos comunes y únicos. A continuación puede leer sobre los métodos más utilizados de los tipos de cadena.
 
 ### dividir ('separador', límite)
 

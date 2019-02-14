@@ -22,7 +22,7 @@ let names: Array<string> = ['Javier', 'Emma', 'John', 'Sophia', 'Emma'];
 
 ## Métodos incorporados
 
-En el tipo Array de Typescript puedes usar algunas funciones integradas. Cada tipo tiene métodos comunes y únicos. A continuación puede leer los métodos más utilizados de los tipos de matriz. En el ejemplo, usaremos la declaración de matriz de arriba.
+En el tipo Array de TypeScript puedes usar algunas funciones integradas. Cada tipo tiene métodos comunes y únicos. A continuación puede leer los métodos más utilizados de los tipos de matriz. En el ejemplo, usaremos la declaración de matriz de arriba.
 
 ### popular()
 
