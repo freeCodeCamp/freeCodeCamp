@@ -41,7 +41,7 @@ j = 10;
 // variable myFloat now points to the object
 Float myFloat = new Float(1.0);
 
-//Bytes are one of types in Java and can be
+//Bytes are one of the data types in Java and can be
 //represented with this code
 int byteValue = 0B101;
 byte anotherByte = (byte)0b00100001;
