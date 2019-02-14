@@ -5,7 +5,7 @@ localeTitle: HTML方法
 
 # HTML方法
 
-Jquery `.html()`方法获取HTML元素的内容或设置HTML元素的内容。
+jQuery `.html()`方法获取HTML元素的内容或设置HTML元素的内容。
 
 ## 入门
 
