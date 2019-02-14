@@ -114,6 +114,29 @@ You will need to use everything you know about string manipulation to get the la
 *   <a href='http://forum.freecodecamp.com/t/javascript-string-prototype-charat/15932' target='_blank' rel='nofollow'>JS String Prototype CharAt</a>
 *   <a href='http://forum.freecodecamp.com/t/javascript-string-prototype-concat/15935' target='_blank' rel='nofollow'>JS String Prototype Concat</a>
 
+## ![:sunflower:](https://forum.freecodecamp.com/images/emoji/emoji_one/sunflower.png?v=3 ":sunflower:") Intermediate Code Solution Alternative:
+
+    function translatePigLatin(str) {
+        let str1=str.replace(/(^[aeiou])(.*)/,'$1$2way'); //check for vowels at the beginning and add 'way'
+        str1=str1.replace(/(^[^aeiou]+)(.*)/,'$2$1ay'); //check for consonants, move to the end and add 'ay'
+        return str1;
+    }
+    translatePigLatin("consonant");
+
+![:rocket:](https://forum.freecodecamp.com/images/emoji/emoji_one/rocket.png?v=3 ":rocket:") <a href='https://repl.it/CLmw/0' target='_blank' rel='nofollow'>Run Code</a>
+
+### Code Explanation:
+
+*   This is a compact solution using only regular expressions.
+*   The `replace()` function returns a new string where the matched values are replaced.
+*   If a vowel is matched at the beginning of the string (`^[aeiou]`), followed by anything else (`.*`), **way** is added to the end of the string.
+*   If a group of consonants is matched at the beginning of the string (`^[^aeiou]`), followed by anything else (`.*`), the first match is moved to the end of the string and **ay** is added.
+
+### Relevant Links
+
+*   <a href='https://learn.freecodecamp.org/javascript-algorithms-and-data-structures/regular-expressions/' target='_blank' rel='nofollow'>Regular Expressions</a>
+*   <a href='https://www.w3schools.com/jsref/jsref_replace.asp' target='_blank' rel='nofollow'>JS replace() method</a>
+
 ## ![:rotating_light:](https://forum.freecodecamp.com/images/emoji/emoji_one/rotating_light.png?v=3 ":rotating_light:") Advanced Code Solution:
 
     function translatePigLatin(str) {
@@ -166,7 +189,7 @@ You will need to use everything you know about string manipulation to get the la
 
 If you found this page useful, you may say thanks to the contributors by copying and pasting the following line in the main chat:
 
-**`Thanks @Rafase282 @sabahang @aganita @Hallaathrad for your help with Algorithm: Pig Latin`**
+**`Thanks @Rafase282 @sabahang @aganita @Hallaathrad @ajokic1 for your help with Algorithm: Pig Latin`**
 
 ## ![:clipboard:](https://forum.freecodecamp.com/images/emoji/emoji_one/clipboard.png?v=3 ":clipboard:") NOTES FOR CONTRIBUTIONS:
 
