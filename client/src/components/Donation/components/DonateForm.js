@@ -56,7 +56,6 @@ class DonateForm extends Component {
     this.handleSubmit = this.handleSubmit.bind(this);
     this.postDonation = this.postDonation.bind(this);
     this.resetDonation = this.resetDonation.bind(this);
-    this.submit = this.submit.bind(this);
   }
 
   getUserEmail() {
@@ -80,7 +79,8 @@ class DonateForm extends Component {
     }));
   }
 
-  handleSubmit() {
+  handleSubmit(e) {
+    e.preventDefault();
     const email = this.getUserEmail();
     if (!email || !isEmail(email)) {
       return this.setState(state => ({
@@ -150,11 +150,6 @@ class DonateForm extends Component {
     );
   }
 
-  submit(e) {
-    e.preventDefault();
-    this.handleSubmit();
-  }
-
   resetDonation() {
     return this.setState({...initialState});
   }
@@ -167,7 +162,7 @@ class DonateForm extends Component {
     const { isFormValid } = this.state;
     return (
       <div>
-        <Form className='donation-form' onSubmit={this.submit}>
+        <Form className='donation-form' onSubmit={this.handleSubmit}>
           <FormGroup className='donation-email-container'>
             <ControlLabel>
               Email (we'll send you a tax-deductible donation receipt):
