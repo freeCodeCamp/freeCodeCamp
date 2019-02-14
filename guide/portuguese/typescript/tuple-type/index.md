@@ -29,7 +29,7 @@ arr[3] = 'World!'
 
 ## Propriedades
 
-No tipo do Typescript, você pode ter algumas propriedades de construção. Comprimento do Forexample ou alguns outros tipos exclusivos de cada.
+No tipo do TypeScript, você pode ter algumas propriedades de construção. Comprimento do Forexample ou alguns outros tipos exclusivos de cada.
 
 ### comprimento
 
