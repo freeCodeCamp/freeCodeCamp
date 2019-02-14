@@ -1,5 +1,5 @@
 ---
-title : Interface 
+title: Interface
 localeTitle: Interface
 ---
 * * *
@@ -29,11 +29,11 @@ O uso de interfaces nos permite alterar nossa implementação em nosso projeto s
 Exemplo de interface:
 
 ```csharp
-public Interface IUserFavoriteFood 
- { 
-  void AddFood(); 
-  Task<User> EatFavoriteFood(int id); 
- } 
+public Interface IUserFavoriteFood
+ {
+  void AddFood();
+  Task<User> EatFavoriteFood(int id);
+ }
 ```
 
 * * *
@@ -41,19 +41,19 @@ public Interface IUserFavoriteFood
 Herança e implementação de interfaces:
 
 ```csharp
-public class UserHungry : IUserFavoriteFood 
- { 
-  public AddFood() 
-  { 
-    // Implementation: 
-    // A method to add food. 
-  } 
- 
-  public Task<User> EatFavoriteFood(int id) 
-  { 
-    // Implementation: 
-    // A method to Eat food by id. 
-  } 
- } 
+public class UserHungry : IUserFavoriteFood
+ {
+  public AddFood()
+  {
+    // Implementation:
+    // A method to add food.
+  }
+
+  public Task<User> EatFavoriteFood(int id)
+  {
+    // Implementation:
+    // A method to Eat food by id.
+  }
+ }
 
 ```

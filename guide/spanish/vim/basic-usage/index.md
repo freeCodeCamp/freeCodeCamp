@@ -4,6 +4,8 @@ localeTitle: Uso básico
 ---
 ## Uso básico de VIM
 
+* Ademas de este documentacion, puede ingresar 'vimtutor' en el terminal para abrir un tutorial comprehensivo del uso de VIM. 
+
 ### Abrir documento
 
 *   Ejecute vim o vi y abra el nombre de archivo dado.
@@ -11,6 +13,13 @@ localeTitle: Uso básico
 ### Modo de inserción
 
 *   Una vez que abra la página, ingrese I y verá el texto "Modo de inserción" en la parte inferior de la pantalla. Desde aquí puede realizar los cambios que desee en el texto de su archivo.
+*   Otra opcion para agregar texto es ingresar 'a' para entrar en el modo de insercion.
+*   Ingrese 'o' para añadir una linea nueva debajo del cursor y entrar en el modo de insercion.
+*   Ingrese 'O' para añadir una linea nueva arriba del cursor y entrar en el modo de insercion. 
+
+### Regresar a modo 'normal'
+
+*   Para escapar del modo de insercion o modo visual, use CTRL-C o <esc>. 
 
 ### Guardar el archivo
 

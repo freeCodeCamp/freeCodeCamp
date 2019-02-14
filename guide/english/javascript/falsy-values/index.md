@@ -4,7 +4,7 @@ title: Falsy Values
 
 ## Description
 
-A falsy value is something which evaluates to FALSE, for instance when checking a variable. There are only six falsy values in JavaScript: `undefined`, `null`, `NaN`, `0`, `""` or `''` (empty string), and `false` of course.
+A falsy value is something which evaluates to FALSE, for instance when checking a variable. There are only six falsy values in JavaScript: `undefined`, `null`, `NaN`, `0`, `""` or `''` (empty string), and the Boolean `false` of course. All other values are [truthy](https://github.com/freeCodeCamp/freeCodeCamp/edit/master/guide/english/javascript/truthy-values/index.md).
 
 ## Checking for falsy values on variables
 
@@ -16,20 +16,25 @@ if (!variable) {
 }
 ```
 
+You can also get the boolean value of a variable by using the bang operator (`!`) twice:
+```javascript
+!!variable // When the variable is falsy, a double bang (!!) will evaluate to the Boolean false.
+```
+
 ## General Examples
 
 ```javascript
-var string = ""; // <-- falsy
+const string = ""; // <-- falsy
 
-var filledString = "some string in here"; // <-- truthy
+const filledString = "some string in here"; // <-- truthy
 
-var zero = 0; // <-- falsy
+const zero = 0; // <-- falsy
 
-var numberGreaterThanZero; // <-- falsy
+const numberGreaterThanZero; // <-- falsy
 
-var emptyArray = []; // <-- truthy, we'll explore more about this next
+const emptyArray = []; // <-- truthy, we'll explore more about this next
 
-var emptyObject = {}; // <-- truthy
+const emptyObject = {}; // <-- truthy
 ```
 
 ## Fun With Arrays
@@ -46,7 +51,7 @@ if (![]) // <-- falsy, will also NOT run code in if-block
 
 ## Caveat
 
-Be aware of the data type when evaluating a value in a Boolean context. If the data type of the value is meant to be a _number_, the truthy/falsy evalution can result in an unexpected outcome:
+Be aware of the data type when evaluating a value in a Boolean context. If the data type of the value is meant to be a _number_, the truthy/falsy evaluation can result in an unexpected outcome:
 ```javascript
 const match = { teamA: 0, teamB: 1 }
 if (match.teamA)

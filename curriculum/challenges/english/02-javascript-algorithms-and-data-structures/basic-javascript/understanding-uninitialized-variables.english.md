@@ -20,13 +20,13 @@ Initialize the three variables <code>a</code>, <code>b</code>, and <code>c</code
 ```yml
 tests:
   - text: <code>a</code> should be defined and evaluated to have the value of <code>6</code>
-    testString: 'assert(typeof a === "number" && a === 6, "<code>a</code> should be defined and evaluated to have the value of <code>6</code>");'
+    testString: assert(typeof a === 'number' && a === 6, '<code>a</code> should be defined and evaluated to have the value of <code>6</code>');
   - text: <code>b</code> should be defined and evaluated to have the value of <code>15</code>
-    testString: 'assert(typeof b === "number" && b === 15, "<code>b</code> should be defined and evaluated to have the value of <code>15</code>");'
+    testString: assert(typeof b === 'number' && b === 15, '<code>b</code> should be defined and evaluated to have the value of <code>15</code>');
   - text: <code>c</code> should not contain <code>undefined</code> and should have a value of "I am a String!"
-    testString: 'assert(!/undefined/.test(c) && c === "I am a String!", "<code>c</code> should not contain <code>undefined</code> and should have a value of "I am a String!"");'
+    testString: assert(!/undefined/.test(c) && c === "I am a String!", '<code>c</code> should not contain <code>undefined</code> and should have a value of "I am a String!"');
   - text: Do not change code below the line
-    testString: 'assert(/a = a \+ 1;/.test(code) && /b = b \+ 5;/.test(code) && /c = c \+ " String!";/.test(code), "Do not change code below the line");'
+    testString: assert(/a = a \+ 1;/.test(code) && /b = b \+ 5;/.test(code) && /c = c \+ " String!";/.test(code), 'Do not change code below the line');
 
 ```
 
@@ -58,7 +58,7 @@ c = c + " String!";
 <div id='js-teardown'>
 
 ```js
-console.info('after the test');
+(function(a,b,c){ return "a = " + a + ", b = " + b + ", c = '" + c + "'"; })(a,b,c);
 ```
 
 </div>

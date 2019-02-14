@@ -25,7 +25,7 @@ Find the sum of all strong repunits below 1012.
 ```yml
 tests:
   - text: <code>euler346()</code> should return 336108797689259260.
-    testString: 'assert.strictEqual(euler346(), 336108797689259260, "<code>euler346()</code> should return 336108797689259260.");'
+    testString: assert.strictEqual(euler346(), 336108797689259260, '<code>euler346()</code> should return 336108797689259260.');
 
 ```
 

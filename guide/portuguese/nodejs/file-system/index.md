@@ -1,5 +1,8 @@
-##localeTitle: undefined
- Sistema de arquivo
+---
+title: File System
+localeTitle: Sistema de arquivo
+---
+## Sistema de arquivo
 
 O módulo do sistema de arquivos Node.js permite que você trabalhe com o sistema de arquivos em seu computador.
 
@@ -8,7 +11,7 @@ O Node.js tem um conjunto de módulos integrados que você pode usar sem qualque
 Para incluir um módulo, use a função `require()` com o nome do módulo.
 
 ```javascript
-const fs = require('fs'); 
+const fs = require('fs');
 ```
 
 Uso comum para o módulo do sistema de arquivos:
@@ -26,15 +29,15 @@ O método `fs.readFile()` é usado para ler arquivos no seu computador. São nec
 Node.js código para ler o arquivo do seu computador e retornar o conteúdo para o console.
 
 ```javascript
-const fs = require('fs'); 
- fs.readFile('input.txt', 'utf-8', (err, data) => { 
-  if(err){ 
-  console.log(err); 
-  } 
-  else{ 
-  console.log("Content present in input.txt file : " + data.toString()); 
-  } 
- }); 
+const fs = require('fs');
+ fs.readFile('input.txt', 'utf-8', (err, data) => {
+  if(err){
+  console.log(err);
+  }
+  else{
+  console.log("Content present in input.txt file : " + data.toString());
+  }
+ });
 ```
 
 O código acima lê um arquivo _input.txt_ do seu computador e retorna o conteúdo para o console.
@@ -55,15 +58,15 @@ O método `fs.writeFile()` aceita três argumentos - nome do arquivo, conteúdo 
 Código Node.js para gravar conteúdo em arquivo.
 
 ```javascript
-const fs = require('fs'); 
- fs.writeFile('output.txt', "New content added", (err, data) => { 
-    if(err){ 
-        console.log(err); 
-    } 
-    else{ 
-        console.log("The file is saved"); 
-    } 
- }); 
+const fs = require('fs');
+ fs.writeFile('output.txt', "New content added", (err, data) => {
+    if(err){
+        console.log(err);
+    }
+    else{
+        console.log("The file is saved");
+    }
+ });
 ```
 
 O código acima cria um arquivo _output.txt_ e adiciona conteúdo _Novo conteúdo adicionado_ a ele.
