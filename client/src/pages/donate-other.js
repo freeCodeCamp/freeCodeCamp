@@ -54,7 +54,7 @@ class DonateOtherPage extends Component {
       <form
         action='https://www.paypal.com/cgi-bin/webscr'
         method='post'
-        onSubmit={ReactGA.event({category: 'donation', action: 'click', label: item.eventLabel, value: item.eventValue})}
+        onSubmit={() => ReactGA.event({category: 'donation', action: 'click', label: item.eventLabel, value: item.eventValue})}
         target='_blank'
         >
         <input defaultValue='_s-xclick' name='cmd' type='hidden' />{' '}
