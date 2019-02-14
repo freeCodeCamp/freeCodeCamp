@@ -24,9 +24,10 @@ Some useful plugins to get you started are :
 - <a href='https://github.com/sheerun/vim-polyglot' target='_blank' rel='nofollow'>vim-polygot</a> - A solid language pack for Vim. 
 - <a href='https://github.com/jiangmiao/auto-pairs' target='_blank' rel='nofollow'>Auto Pairs</a> - Insert or delete brackets, parens, quotes in pair.
 - <a href='https://github.com/tpope/vim-fugitive' target='_blank' rel='nofollow'>fugitive.vim</a> - A git wrapper for Vim.
+- <a href='https://github.com/Townk/vim-autoclose' target='_blank' rel='nofollow'>vim-autoclose</a> - vim automatically completes parentheses
 
 You may add more plugins to your Vim installation.
 
 #### More Information:
-- <a href='https://github.com/junegunn/vim-plug' target='_blank' rel='nofollow'>Github Repository</a> - Vim-Plug
+- <a href='https://github.com/junegunn/vim-plug' target='_blank' rel='nofollow'>GitHub Repository</a> - Vim-Plug
 - <a href='https://vimawesome.com/' target='_blank' rel='nofollow'>VimAwesome</a> - Explore Vim plugins</a> 

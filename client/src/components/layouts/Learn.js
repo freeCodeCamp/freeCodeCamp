@@ -1,7 +1,6 @@
 import React, { Fragment } from 'react';
 import PropTypes from 'prop-types';
 
-import DefaultLayout from './Default';
 import DonationModal from '../Donation';
 
 import 'prismjs/themes/prism.css';
@@ -11,9 +10,7 @@ import './learn.css';
 function LearnLayout({ children }) {
   return (
     <Fragment>
-      <DefaultLayout>
-        <main id='learn-app-wrapper'>{children}</main>
-      </DefaultLayout>
+      <main id='learn-app-wrapper'>{children}</main>
       <DonationModal />
     </Fragment>
   );
