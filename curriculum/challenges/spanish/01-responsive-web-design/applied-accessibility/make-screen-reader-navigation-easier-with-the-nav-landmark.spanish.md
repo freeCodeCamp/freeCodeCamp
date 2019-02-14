@@ -38,11 +38,10 @@ tests:
 ```html
 <body>
   <header>
-    <h1>Training with Camper Cat</h1>
-
+        <h1>Entrenamiento con Camper Cat</h1>
     <div>
       <ul>
-        <li><a href="#stealth">Stealth &amp; Agility</a></li>
+          <li><a href="#stealth">Stealth &amp; Agility</a></li>
         <li><a href="#combat">Combat</a></li>
         <li><a href="#weapons">Weapons</a></li>
       </ul>
