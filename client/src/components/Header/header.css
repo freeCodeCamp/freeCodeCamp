@@ -220,4 +220,10 @@ header {
   #top-nav .menu-button {
     margin: 0 10px 0 4px;
   }
+
+  .ais-Hits {
+    background-color: #fff;
+    left: 0.5em;
+    top: 2.4em;
+  }
 }
