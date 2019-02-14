@@ -47,7 +47,7 @@ const paypalOneTimeDonation = {
   defaultValue: 'Make a one-time donation'
 };
 
-class IndexPage extends Component {
+class DonateOtherPage extends Component {
 
   renderForm(item) {
     return (
@@ -193,6 +193,6 @@ class IndexPage extends Component {
   }
 }
 
-IndexPage.displayName = 'IndexPage';
+DonateOtherPage.displayName = 'DonateOtherPage';
 
-export default IndexPage;
+export default DonateOtherPage;
