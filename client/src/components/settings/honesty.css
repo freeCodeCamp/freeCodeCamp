@@ -5,7 +5,6 @@
 
 .honesty-panel {
   padding-top: 15px;
-
 }
 
 .honesty-panel .agreed {
@@ -22,4 +21,13 @@
 .honesty-panel .agreed p {
   margin-top: 0;
   margin-bottom: 0;
+}
+
+.night .honesty-panel {
+  color: #333333;
+  background-color: #cccccc;
+}
+
+.night .honesty-panel a {
+  color: darkgreen;
 }

@@ -1,4 +1,4 @@
-import React, { PureComponent } from 'react';
+import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 
 import {
@@ -35,7 +35,7 @@ const options = {
   required: ['solution', 'githubLink']
 };
 
-export class ProjectForm extends PureComponent {
+export class ProjectForm extends Component {
   constructor(props) {
     super(props);
     this.state = {
