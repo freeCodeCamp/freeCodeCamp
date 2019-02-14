@@ -25,7 +25,7 @@ const propTypes = {
     createToken: PropTypes.func.isRequired
   })
 };
-const initialSate = {
+const initialState = {
   donationAmount: 500,
   donationState: {
     processing: false,
@@ -45,7 +45,7 @@ class DonateForm extends Component {
     super(...args);
 
     this.state = {
-      ...initialSate,
+      ...initialState,
       email: null,
       isFormValid: false
     };
@@ -156,7 +156,7 @@ class DonateForm extends Component {
   }
 
   resetDonation() {
-    return this.setState(() => initialSate);
+    return this.setState({...initialState});
   }
 
   renderCompletion(props) {
