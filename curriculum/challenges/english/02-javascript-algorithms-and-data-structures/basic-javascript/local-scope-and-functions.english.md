@@ -26,7 +26,8 @@ tests:
   - text: No global <code>myVar</code> variable
     testString: assert(typeof myVar === 'undefined', 'No global <code>myVar</code> variable');
   - text: Add a local <code>myVar</code> variable
-    testString: assert(/var\s+myVar/.test(code), 'Add a local <code>myVar</code> variable');
+    testString: assert(/function\s+myLocalScope\s*\(\s*\)\s*\{\s[\s\S]+\s*var\s*myVar\s*(\s*|=[\s\S]+)\s*;[\s\S]+}/.test(code), 'Add a local <code>myVar</code> variable');
+
 
 ```
 
