@@ -1,85 +1,83 @@
 ---
 title: Logical Operators
 ---
-## Logical Operators
 
-**AND (&&)** </br>
-A&&B returns True if both A and B are True. If either A or B (or both) are False, then A&&B is False.
+# Logical Operators
 
-| A | B |AND(A,B)|
+## Conjunction a.k.a. "AND" (&&)
+P&&Q returns True if both P and Q are True. If either P or Q (or both) are False, then P&&Q is False.
+
+| P | Q | AND(P,Q) |
 |---|---|---|
-|  f| t | f |
-|  f| f | f |
-|  t| t | t |
-|  t| f | f |
+| T | T | T |
+| T | F | F |
+| F | T | F |
+| F | F | F |
 
+## Disjunction a.k.a. "OR" (||)
+P||Q returns True if at least one of P or Q (or both P and Q) is True. Only returns False if P and Q are both False.
 
-**OR (||)** </br>
-A||B returns True if A or B (or both A and B) is True. Only returns False if both A and B is False.
-
-| A | B |OR(A,B)|
+| P | Q | OR(P,Q) |
 |---|---|---|
-|  f| t | t |
-|  f| f | f |
-|  t| t | t |
-|  t| f | t |
+| T | T | T |
+| T | F | T |
+| F | T | T |
+| F | F | F |
 
-**NOT (!)** </br>
-Returns the opposite value. Ex. if A is true, then !A is false, and if A is false, then !A is true. This is the only logical operator that works on only one input, which makes it a unary operator.
+## Negation a.k.a. "NOT" (!)
+Returns the opposite value. Ex. if P is true, then !P is false, and if P is false, then !P is true. This is the only logical operator that works on only one input, which makes it a unary operator.
 
-| A | B |NOT(A)| NOT(B)
+| P | Q | NOT(P) | NOT(Q) |
 |---|---|---|---|
-|  f| t | t |f|
-|  f| f | t |t|
-|  t| t | f |f|
-|  t| f | f |t|
+| T | T | F | F |
+| T | F | F | T |
+| F | T | T | F |
+| F | F | T | T |
 
-**XOR ("exclusive or")** </br>
-Is known as **exclusive or**. Similar to OR, but returns False if both A and B are true. That is, XOR returns true if one and only one of A or B is True.
+## XOR ("eXclusive or")
+Is known as **exclusive or**. Similar to OR, but returns False if both P and Q are true. That is, XOR returns true if one and only one of P or Q is True.
 
-Note: Xor is unique among the logical operators because by combining several together you can form all of the other logical operators using only Xor.
+Note: XOR is unique among the logical operators because, by combining several together, you can form all of the other logical operators using only XOR.
 
-| A | B |XOR(A,B)|
+| P | Q | XOR(P,Q) |
 |---|---|---|
-|  f| t | t |
-|  f| f | f |
-|  t| t | f |
-|  t| f | t |
+| T | T | F |
+| T | F | T |
+| F | T | T |
+| F | F | F |
 
-**Implication (A -> B)** </br>
-Read as "if A, then B" or "A implies B". 
-Only returns False when A is True and B is False. Otherwise the implication is True. </br>
-<img src="http://sites.millersville.edu/bikenaga/math-proof/truth-tables/truth-tables13.png">
+## Implication (P -> Q)
+Read as "if P, then Q" or "P implies Q".
 
-Note: Implications are often used for direct mathematical proofs. A represents the hypothesis, while B is the conclusion.
+Only returns False when P is True and Q is False. Otherwise the implication is True.
+
+Note: Implications are often used for direct mathematical proofs. P represents the hypothesis, while Q is the conclusion.
 
 The only time the conditional is false is when a true value leads to a false value. 
 
-| A | B |IF(A,B)|
+| P | Q | IF(P,Q) |
 |---|---|---|
-|  f| t | t |
-|  f| f | t |
-|  t| t | t |
-|  t| f | f |
+| T | T | T |
+| T | F | F |
+| F | T | T |
+| F | F | T |
 
 
-**Logical Equivalence (iff: if and only if)** </br>
-"P if and only if Q" is the same as "P implies Q AND Q implies P". In other words, the truth tables for P and Q are identical for all truth values. 
-This is known as the biconditional. It is the equivalent of A -> B **AND** B->A. It means that both conditionals must be satisfied in order for the biconditional to be true.
+## Logical Equivalence (iff: if and only if)
+"P if and only if Q" is the same as "P implies Q AND Q implies P". In other words, the truth tables for P and Q are identical for all truth values.
+This is known as the biconditional. It is the equivalent of P -> Q **AND** Q -> P. It means that both conditionals must be satisfied in order for the biconditional to be true.
 
-You can easily see that the out output of the IFF operator in the truth table is the same as the ANDing of columns 3 and 4.
+You can easily see that the output of the IFF operator in the truth table is the same as the ANDing of columns 3 and 4.
 
-| A | B |IF(A,B)| IF(B,A)| IFF(A,B)|
+| P | Q | IF(P,Q) | IF(Q,P) | IFF(P,Q) |
 |---|---|---|---|---|
-|  f| t | t |f|f|
-|  f| f | t |t|t|
-|  t| t | t |t|t|
-|  t| f | f |t|f|
+| T | T | T | T | T |
+| T | F | F | T | F |
+| F | T | T | F | F |
+| F | F | T | T | T |
 
 
-#### More Information:
-<!-- Please add any articles you think might be helpful to read before writing the article -->
-
- +* [Logical Operators in Javascript](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Logical_Operators)
- +* [Logical Operators in PHP](http://php.net/manual/en/language.operators.logical.php)
- +* [Logical Operators in C++](http://en.cppreference.com/w/cpp/language/operator_logical)
+## Additional Resources
+- [Logical Operators in Javascript](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Logical_Operators)
+- [Logical Operators in PHP](http://php.net/manual/en/language.operators.logical.php)
+- [Logical Operators in C++](http://en.cppreference.com/w/cpp/language/operator_logical)
