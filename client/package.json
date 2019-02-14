@@ -27,6 +27,7 @@
     "gatsby-cli": "^2.4.8",
     "gatsby-link": "^2.0.8",
     "gatsby-plugin-create-client-paths": "^2.0.3",
+    "gatsby-plugin-google-fonts": "^0.0.4",
     "gatsby-plugin-manifest": "^2.0.13",
     "gatsby-plugin-react-helmet": "^3.0.5",
     "gatsby-plugin-sitemap": "^2.0.4",
