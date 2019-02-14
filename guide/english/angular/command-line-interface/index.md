@@ -28,6 +28,8 @@ Recognize that `ng` is the basic building block of the CLI. All your commands wi
 
 * ng update
 
+* ng add (Angular 6)
+
 The key terms for each of these are quite telling. Together, they comprise what you will need to hit the ground running with Angular. Of course, there are many more. All commands are outlined in the [CLI's GitHub Documentation<sup>1</sup>](https://github.com/angular/angular-cli/wiki#additional-commands). You will likely find that the commands listed above will cover the necessary bases.
 
 #### ng new
@@ -75,6 +77,12 @@ In angular cli ng update do automatic updation on all the angular and npm packag
 Here is the syntax and options can be used with `ng update`.
 
 `ng update [package]`
+
+#### ng add
+
+ng add will use npm to download new dependencies and invoke an installation script.
+
+`ng add <package>`
 
 **Options**
 - dry-run

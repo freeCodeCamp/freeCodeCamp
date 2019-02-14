@@ -17,6 +17,7 @@ But, how would you write the code for finding the index of the second smallest v
 
 * An easy way is to notice that the smallest value has already been swapped into index 0, so the problem reduces to finding the smallest element in the array starting at index 1.
 
+Selection sort always takes the same number of key comparisons — N(N − 1)/2.
 
 ### Implementation in C/C++
 
@@ -43,7 +44,7 @@ for(int i = 0; i < n-1; i++)
 
 ``` Javascript
 function selection_sort(A) {
-    var len = array_length(A);
+    var len = A.length;
     for (var i = 0; i < len - 1; i = i + 1) {
         var j_min = i;
         for (var j = i + 1; j < len; j = j + 1) {
