@@ -3,7 +3,7 @@ title: React
 ---
 # React
 
-React is a JavaScript library for building user interfaces. It was voted the most loved in the "Frameworks, Libraries, and Other Technologies" category of Stack Overflow's 2017 Developer Survey.<sup>1</sup>
+React is a JavaScript library for building user interfaces. It is maintained by [Facebook](https://github.com/facebook/react) and a vast community of individual developers and companies. It was voted the most loved in the "Frameworks, Libraries, and Other Technologies" category of Stack Overflow's 2017 Developer Survey.<sup>1</sup>
 
 React is used for building user interfaces - what the user sees on their screen and how they interact with your web app. This interface is split up into components. Instead of having one huge page, you break it up into smaller pieces known as components. This approach is called modularity.
 
