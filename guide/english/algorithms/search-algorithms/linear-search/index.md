@@ -133,7 +133,27 @@ int linearSearch(int[] arr, int element)
 }
 
 ```
-        
+
+### Example in PHP
+
+```php
+function linear_search($arr=[],$num=0)
+{
+     $n = count($arr);   
+     for( $i=0; $i<$n; $i++){
+           if($arr[$i] == $num)
+                return $i;
+      }
+      // Item not found in the array
+      return -1; 
+}
+
+$arr = array(1,3,2,8,5,7,4,0);
+print("Linear search result for 2: ");
+echo linear_search($arr,2);
+
+```
+
 ## Global Linear Search
 
 What if you are searching the multiple occurrences of an element? For example you want to see how many 5’s are in an array.
