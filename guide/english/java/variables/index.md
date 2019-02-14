@@ -47,15 +47,21 @@ int byteValue = 0B101;
 byte anotherByte = (byte)0b00100001;
 
 ```
+## Variable Data Types
 
 As evident from the above example, variables of Primitive type behave slightly differently from variables of Reference (& Wrapper) type - while Primitive variables <i>store</i> the actual value, Reference variables <i>refer to</i> an 'object' containing the actual value.
 Java Programming language defines mainly three kind of variables.
-1) Instance variables
-2) Static Variables
-3) Local Variables
 
-You can find out more in the sections linked below.
+1. Local Variable:
+It is declared inside the method and can only be used within the method itself.
 
-# Other Resources
+2. Static variable:
+Any variable which has the keyword static is called a static variable .
+It cannot be created as a local variable. Once created , it can be used among all the instances of the class.
+
+3. Instance Variable:
+It is declared inside a class but not in a specific method body.
+
+## Other Resources
 * <a href='https://guide.freecodecamp.org/java/data-types' target='_blank' rel='nofollow'>Data Types</a>
 * <a href='https://guide.freecodecamp.org/java/classes-and-objects' target='_blank' rel='nofollow'>Classes and Objects</a>
