@@ -93,3 +93,5 @@ Developers can utilize a screen reader to understand how a webpage can be made a
 
 #### More Resources
 You can find many more tools for accessible web design on <a href='http://www.d.umn.edu/itss/training/online/webdesign/tools.html' target='_blank' rel='nofollow'>this list</a> made by the University of Minnesota Duluth.
+
+For information on creating and verfying accessibility for PDF documents, see the [Adobe XI Pro Guide](https://helpx.adobe.com/acrobat/using/create-verify-pdf-accessibility.html)
