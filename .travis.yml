@@ -28,5 +28,5 @@ jobs:
 
     - stage: Artifacts builds
       if: branch = master && type != pull_request
-      script: bash trigger-build.sh
- 
+      script: bash tools/ci-scripts/trigger-build.sh
+
