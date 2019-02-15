@@ -10,6 +10,9 @@ Sorts are most commonly in numerical or a form of alphabetical (called lexicogra
 ### Why Sorting Algorithms are Important
 Since sorting can often reduce the complexity of a problem, it is an important algorithm in Computer Science. These algorithms have direct applications in searching algorithms, database algorithms, divide and conquer methods, data structure algorithms, and many more.
 
+### Trade-Offs of Algorithms
+When using different algorithms some questions have to be asked. How big is the collection being sorted? How much memory is at disposal to be used? Does the collection need to grow? The answers to these questions may determine what algorithm is going to work best for the situation. Some algorithms like merge sort may need a lot of space to run, while insertion sort is not always the fastest but it doesn't require many resources to run. It may need to be determined what the requirements of the system are and its limitations before deciding what algorithm to use.
+
 ### Some Common Sorting Algorithms
 Some of the most common sorting algorithms are:
 
@@ -46,10 +49,13 @@ Sorting algorithms are said to be `in place` if they require a constant `O(1)` e
 
 * `Insertion sort` and `Quick-sort` are `in place` sort as we move the elements about the pivot and do not actually use a separate array which is NOT the case in merge sort where the size of the input must be allocated beforehand to store the output during the sort.
 
-* `Merge Sort` is an example of `out place` sort as it require extra memory space for it's operations.
+* `Merge Sort` is an example of `out place` sort as it require extra memory space for its operations.
 
 ### Best possible time complexity for any comparison based sorting
 Any comparison based sorting algorithm must make at least nLog2n comparisons to sort the input array, and Heapsort and merge sort are asymptotically optimal comparison sorts.This can be easily proved by drawing the desicion tree diagram.
 
 ### Algorithmic Paradigm
 Merge Sort and Quick Sort are based on Divide and Conquer Algorithm
+
+### Useful Links
+[Youtube link to Sorting Algorithms playlist](https://www.youtube.com/playlist?list=PL2_aWCzGMAwKedT2KfDMB9YA5DgASZb3U)
