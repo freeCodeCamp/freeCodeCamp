@@ -67,7 +67,22 @@ There are many tools and online resources that can help you to ensure that your 
 - **<a href='https://webaim.org/resources/contrastchecker/' target='_blank' rel='nofollow'>Color contrast Checker</a>**
 
    WebAIM offers complete web accessibility services. Regardless of the type or size of your web site, WebAIM can help ensure that your site is accessible and usable to those with disabilities. 
-***
+
+### Screen Reader
+A screen reader is a software application with assistive technology that attempts to convey what people with normal eyesight see on a display to their users via non-visual means, like text-to-speech. 
+Developers can utilize a screen reader to understand how a webpage can be made accessible to such people and develop the page accordingly. Some of the most well known and widely used screen readers are:
+
+- **[NVDA](https://www.nvaccess.org/)**
+
+   NVDA(Non Visual Desktop Access) Screen reader is a Free & Open-source downloadable Screen Reader software for Windows OS.
+   
+- **[JAWS](https://www.freedomscientific.com/Products/Blindness/)**
+
+   JAWS(Job Access With Speech) is a computer screen reader program which is available as licensed software for Windows.
+
+- **[ChromeVox](https://www.chromevox.com/)**
+
+   ChromeVox is a Chrome Browser extension which can be used to render Webpages as text-to-speech.
 
 #### More Resources
 You can find many more tools for accessible web design on <a href='http://www.d.umn.edu/itss/training/online/webdesign/tools.html' target='_blank' rel='nofollow'>this list</a> made by the University of Minnesota Duluth.
