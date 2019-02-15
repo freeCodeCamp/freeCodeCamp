@@ -54,7 +54,7 @@ function ToolPanel({
         <Button
           block={true}
           bsStyle='primary'
-          className='btn-primary-invert'
+          className='btn-invert'
           onClick={openResetModal}
           >
           {isMobile ? 'Reset' : 'Reset All Code'}
@@ -63,7 +63,7 @@ function ToolPanel({
           <Button
             block={true}
             bsStyle='primary'
-            className='btn-primary-invert'
+            className='btn-invert'
             href={guideUrl}
             target='_blank'
             >
@@ -74,7 +74,7 @@ function ToolPanel({
           <Button
             block={true}
             bsStyle='primary'
-            className='btn-primary-invert'
+            className='btn-invert'
             onClick={openVideoModal}
             >
             {isMobile ? 'Video' : 'Watch a video'}
@@ -83,7 +83,7 @@ function ToolPanel({
         <Button
           block={true}
           bsStyle='primary'
-          className='btn-primary-invert'
+          className='btn-invert'
           onClick={openHelpModal}
           >
           {isMobile ? 'Help' : 'Ask for help'}
