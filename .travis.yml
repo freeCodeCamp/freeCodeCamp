@@ -23,9 +23,10 @@ before_script:
 
 jobs:
   include:
-    - stage: Test the things
+    - stage: Unit and Integration tests
       script: npm test
 
-    - stage: Trigger build
+    - stage: Artifacts builds
       if: branch = master && type != pull_request
       script: bash trigger-build.sh
+ 

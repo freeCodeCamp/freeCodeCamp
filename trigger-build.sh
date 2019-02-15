@@ -10,7 +10,7 @@ then
   cd ../
   git add freecodecamp
   git -c user.name="$DOCKER_PUSH_USER" -c user.email='travis' \
-    commit -m 'Travis CI - bump submodule'
+    commit -m 'chore(ci): Travis CI - bump submodule'
   git push https://"$DOCKER_PUSH_USER":"$DOCKER_PUSH_API_TOKEN"@github.com/"$DOCKER_PUSH_REPO".git master
 fi
 popd
