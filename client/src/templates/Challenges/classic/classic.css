@@ -26,7 +26,7 @@
 }
 
 #challenge-page-tabs .tab-content {
-  height: calc(100vh - var(--header-height) - 69px);
+  height: calc(100vh - var(--header-height) - 79px);
   overflow-y: auto;
 }
 
@@ -39,8 +39,13 @@
   display: flex;
   flex-direction: row-reverse;
   padding: 0 2px;
+  margin: 0 15px;
 }
 
 .classic-tool-panel.tool-panel-group .btn-block + .btn-block {
   margin: 0 5px 0 0;
+}
+
+.classic-tool-panel.tool-panel-group-mobile {
+  margin: 5px;
 }

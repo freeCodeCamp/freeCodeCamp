@@ -4,7 +4,6 @@ import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux';
 import { Button } from '@freecodecamp/react-bootstrap';
 
-import Spacer from '../../../components/helpers/Spacer';
 import { openModal, executeChallenge } from '../redux';
 
 import './tool-panel.css';
@@ -44,7 +43,6 @@ function ToolPanel({
 }) {
   return (
     <Fragment>
-      <hr />
       <div
         className={`tool-panel-group ${
           isMobile ? 'tool-panel-group-mobile' : ''
@@ -91,7 +89,6 @@ function ToolPanel({
           {isMobile ? 'Help' : 'Ask for help'}
         </Button>
       </div>
-      <Spacer />
     </Fragment>
   );
 }

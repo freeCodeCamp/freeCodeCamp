@@ -2,6 +2,8 @@ import React, { Component, Fragment } from 'react';
 import { ReflexContainer, ReflexSplitter, ReflexElement } from 'react-reflex';
 import PropTypes from 'prop-types';
 
+import Spacer from '../../../components/helpers/Spacer';
+
 const propTypes = {
   challengeFile: PropTypes.shape({
     key: PropTypes.string
@@ -69,7 +71,9 @@ class DesktopLayout extends Component {
             </ReflexElement>
           )}
         </ReflexContainer>
+        <hr />
         {toolPanel}
+        <Spacer />
       </Fragment>
     );
   }
