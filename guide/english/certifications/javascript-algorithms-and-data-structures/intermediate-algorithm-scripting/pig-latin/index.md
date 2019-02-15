@@ -88,6 +88,8 @@ You will need to use everything you know about string manipulation to get the la
 
 ## ![:sunflower:](https://forum.freecodecamp.com/images/emoji/emoji_one/sunflower.png?v=3 ":sunflower:") Intermediate Code Solution:
 
+## First
+
     function translatePigLatin(str) {
       function check(obj) {
           return ['a','i','u','e','o'].indexOf(str.charAt(obj)) == -1 ? check(obj + 1) : obj;
@@ -114,7 +116,7 @@ You will need to use everything you know about string manipulation to get the la
 *   <a href='http://forum.freecodecamp.com/t/javascript-string-prototype-charat/15932' target='_blank' rel='nofollow'>JS String Prototype CharAt</a>
 *   <a href='http://forum.freecodecamp.com/t/javascript-string-prototype-concat/15935' target='_blank' rel='nofollow'>JS String Prototype Concat</a>
 
-## ![:sunflower:](https://forum.freecodecamp.com/images/emoji/emoji_one/sunflower.png?v=3 ":sunflower:") Intermediate Code Solution Alternative:
+## Second
 
     function translatePigLatin(str) {
         let str1=str.replace(/(^[aeiou])(.*)/,'$1$2way'); //check for vowels at the beginning and add 'way'
