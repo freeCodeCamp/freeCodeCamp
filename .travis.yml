@@ -5,7 +5,7 @@ node_js:
 
 cache:
   directories:
-  - "$HOME/.npm"
+    - '$HOME/.npm'
 
 env:
   global:
@@ -24,13 +24,10 @@ before_script:
 jobs:
   include:
     - stage: Unit and Integration tests
-      script:
-        - npm run ensure-env
-        - npm test
+      script: test
 
     - stage: Artifacts builds
       if: branch = master && type != pull_request
       script: bash tools/ci-scripts/trigger-build.sh
       install: skip
       before_script: skip
-
