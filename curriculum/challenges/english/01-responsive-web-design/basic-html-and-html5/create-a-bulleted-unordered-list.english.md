@@ -32,7 +32,8 @@ tests:
     testString: assert(code.match(/<\/ul>/gi) && code.match(/<ul/gi) && code.match(/<\/ul>/gi).length === code.match(/<ul/gi).length, 'Make sure your <code>ul</code> element has a closing tag.');
   - text: Make sure your <code>li</code> elements have closing tags.
     testString: assert(code.match(/<\/li>/gi) && code.match(/<li[\s>]/gi) && code.match(/<\/li>/gi).length === code.match(/<li[\s>]/gi).length, 'Make sure your <code>li</code> elements have closing tags.');
-
+  - text: Make sure your <code>li</code> elements doesn’t contain empty string or only whitespace.
+    testString: assert($("ul li").filter(function(index){return $(this).text().trim().length === 0;}).length === 0, 'Make sure your <code>li</code> elements doesn\’t contain empty string or only whitespace.');
 ```
 
 </section>
