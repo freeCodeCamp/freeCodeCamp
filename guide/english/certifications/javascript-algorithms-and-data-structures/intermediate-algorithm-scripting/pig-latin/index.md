@@ -134,7 +134,7 @@ You will need to use everything you know about string manipulation to get the la
 *   If a vowel is matched at the beginning of the string (`^[aeiou]`), followed by anything else (`.*`), **way** is added to the end of the string.
 *   If a group of consonants is matched at the beginning of the string (`^[^aeiou]`), followed by anything else (`.*`), the first match is moved to the end of the string and **ay** is added.
 
-### Relevant Links
+#### Relevant Links
 
 *   <a href='https://learn.freecodecamp.org/javascript-algorithms-and-data-structures/regular-expressions/' target='_blank' rel='nofollow'>Regular Expressions</a>
 *   <a href='https://www.w3schools.com/jsref/jsref_replace.asp' target='_blank' rel='nofollow'>JS replace() method</a>
