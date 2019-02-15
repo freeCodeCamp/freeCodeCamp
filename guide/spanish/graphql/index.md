@@ -1,5 +1,6 @@
 ---
 title: GraphQL
+localeTitle: GraphQL
 ---
 
 # GraphQL
