@@ -2,6 +2,7 @@
   max-height: 100%;
   height: 70px;
   font-size: 40px;
+  white-space: normal;
 }
 
 .big-heading {
@@ -27,4 +28,8 @@ h6 {
 .btn-invert {
   background-color: #fff;
   color: #006400;
+}
+
+a:hover, a:focus {
+   text-decoration: none;
 }

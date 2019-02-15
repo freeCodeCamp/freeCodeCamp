@@ -2,6 +2,7 @@
 id: 56bbb991ad1ed5201cd392cf
 title: Write Reusable JavaScript with Functions
 challengeType: 1
+videoUrl: 'https://scrimba.com/c/cL6dqfy'
 ---
 
 ## Description
