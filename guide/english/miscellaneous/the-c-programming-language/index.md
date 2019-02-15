@@ -59,30 +59,32 @@ Alternatively, you could also download <a href='https://www.visualstudio.com/en-
 
 ## Your First C# Program
 
-    //this is the single line comment
+```C#
+//this is the single line comment
 
-    /** This is multiline comment,
-    compiler ignores any code inside comment blocks.
-    **/
+/** This is multiline comment,
+compiler ignores any code inside comment blocks.
+**/
 
-    //This is the namespace, part of the standard .NET Framework Class Library
-    using System;
-    // namespace defines the scope of related objects into packages
-    namespace Learning.CSharp
-    {  
-      // name of the class, should be same as of .cs file
-      public class Program
-      {
-        //entry point method for console applications
-       public static void Main()
-        {
-          //print lines on console
-          Console.WriteLine("Hello, World!");
-          //Reads the next line of characters from the standard input stream.Most common use is to pause program execution before clearing the console.
-          Console.ReadLine();
-        }
-      }
+//This is the namespace, part of the standard .NET Framework Class Library
+using System;
+// namespace defines the scope of related objects into packages
+namespace Learning.CSharp
+{  
+  // name of the class, should be same as of .cs file
+  public class Program
+  {
+    //entry point method for console applications
+   public static void Main()
+    {
+      //print lines on console
+      Console.WriteLine("Hello, World!");
+      //Reads the next line of characters from the standard input stream.Most common use is to pause program execution before clearing the console.
+      Console.ReadLine();
     }
+  }
+}
+```
 
 Every C# console application must have a <a href='https://msdn.microsoft.com/en-gb/library/acy3edy3.aspx' target='_blank' rel='nofollow'>Main method</a> which is the entry point of the program.
 
@@ -101,11 +103,13 @@ C# is a strongly typed language. Every variable has a type. Every expression or 
 
 <a href='https://dotnetfiddle.net/JCkTxb' target='_blank' rel='nofollow'>Edit in .NET Fiddle</a>
 
-    int a = 10;
-    int b = 20;
-    a=b;
-    Console.WriteLine(a); //prints 20
-    Console.WriteLine(b); //prints 20
+```C#
+int a = 10;
+int b = 20;
+a=b;
+Console.WriteLine(a); //prints 20
+Console.WriteLine(b); //prints 20
+```
 
 Note that in other dynamic languages this could be different, but in C# this is always a value copy. When value type is created, a single space most likely in <a href='http://gribblelab.org/CBootcamp/7_Memory_Stack_vs_Heap.html#orgheadline2' target='_blank' rel='nofollow'>stack</a> is created, which is a "LIFO" (last in, first out) data structure. The stack has size limits and memory operations are efficient. Few examples of built-in data types are `int, float, double, decimal, char and string`.
 
@@ -134,28 +138,31 @@ More information <a href='http://www.c-sharpcorner.com/UploadFile/rmcochran/csha
 
 *   <a href='https://msdn.microsoft.com/en-us/library/5011f09h.aspx' target='_blank' rel='nofollow'>If else</a> statement : <a href='https://dotnetfiddle.net/IFVB33' target='_blank' rel='nofollow'>Edit in .NET Fiddle</a>
 
-                int myScore = 700;
-                if (myScore == 700)
-                {
-                    Console.WriteLine("I get printed on the console");
-                }
-                else if (myScore > 10)
-                {
-                    Console.WriteLine("I don't");
-                }
-                else
-                {
-                    Console.WriteLine("I also don't");
-                }
+    ```C#
+    int myScore = 700;
+    if (myScore == 700)
+    {
+        Console.WriteLine("I get printed on the console");
+    }
+    else if (myScore > 10)
+    {
+        Console.WriteLine("I don't");
+    }
+    else
+    {
+        Console.WriteLine("I also don't");
+    }
 
-                /** Ternary operators
-                 A simple if/else can also be written as follows
-                 <condition> ? <true> : <false> **/
-                int myNumber = 10;
-                string isTrue = myNumber == 10 ? "Yes" : "No";
+    /** Ternary operators
+     A simple if/else can also be written as follows
+     <condition> ? <true> : <false> **/
+    int myNumber = 10;
+    string isTrue = myNumber == 10 ? "Yes" : "No";
+    ```
 
 *   <a href='https://msdn.microsoft.com/en-GB/library/06tc147t.aspx' target='_blank' rel='nofollow'>Switch</a> statement : <a href='https://dotnetfiddle.net/lPZftO' target='_blank' rel='nofollow'>Edit in .NET Fiddle</a>
 
+    ```C#
     using System;
 
     public class Program
@@ -189,9 +196,11 @@ More information <a href='http://www.c-sharpcorner.com/UploadFile/rmcochran/csha
             }
         }
     }
+    ```
 
 *   <a href='https://msdn.microsoft.com/en-us/library/ch45axte.aspx' target='_blank' rel='nofollow'>For</a> & <a href='https://msdn.microsoft.com/en-gb/library/ttw7t8t6.aspx' target='_blank' rel='nofollow'>Foreach</a> : <a href='https://dotnetfiddle.net/edxtvq' target='_blank' rel='nofollow'>Edit in .NET Fiddle</a>
 
+    ```C#
     for (int i = 0; i < 10; i++)
     {
       Console.WriteLine(i); //prints  0-9
@@ -210,28 +219,31 @@ More information <a href='http://www.c-sharpcorner.com/UploadFile/rmcochran/csha
     }
 
     Console.WriteLine(Environment.NewLine);
-    //for (; ; )
+    for (; ; )
     {
     // All of the expressions are optional. This statement
     //creates an infinite loop.*
-    //        
     }
+    ```
 
 *   <a href='https://msdn.microsoft.com/en-us/library/2aeyhxcd.aspx' target='_blank' rel='nofollow'>While</a> & <a href='https://msdn.microsoft.com/en-us/library/370s1zax.aspx' target='_blank' rel='nofollow'>do-while</a> : <a href='https://dotnetfiddle.net/O5hOF1' target='_blank' rel='nofollow'>Edit in .NET Fiddle</a>
 
+    ```C#
     // Continue the while-loop until index is equal to 10.
-        int i = 0;
-        while (i < 10)
-        {
-            Console.Write("While statement ");
-            Console.WriteLine(i);// Write the index to the screen.
-            i++;// Increment the variable.
-        }
+    int i = 0;
+    while (i < 10)
+    {
+        Console.Write("While statement ");
+        Console.WriteLine(i);// Write the index to the screen.
+        i++;// Increment the variable.
+    }
 
-      int number = 0;
-        // do work first, until condition is satisfied i.e Terminates when number equals 4.
-        do
-        {
-            Console.WriteLine(number);//prints the value from 0-4
-            number++; // Add one to number.
-        } while (number <= 4);
+    int number = 0;
+    // do work first, until condition is satisfied i.e Terminates when number equals 4.
+    do
+    {
+        Console.WriteLine(number);//prints the value from 0-4
+        number++; // Add one to number.
+    } while (number <= 4);
+    ```
+        

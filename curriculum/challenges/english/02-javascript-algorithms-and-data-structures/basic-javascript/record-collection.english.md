@@ -2,6 +2,7 @@
 id: 56533eb9ac21ba0edf2244cf
 title: Record Collection
 challengeType: 1
+videoUrl: 'https://scrimba.com/c/c4mpysg'
 ---
 
 ## Description
