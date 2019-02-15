@@ -12,11 +12,11 @@ import {
   Checkbox
 } from '@freecodecamp/react-bootstrap';
 import Helmet from 'react-helmet';
+import { createSelector } from 'reselect';
 
 import { ButtonSpacer, Spacer } from '../components/helpers';
 import { acceptTerms, userSelector } from '../redux';
-import { createSelector } from 'reselect';
-import { navigate } from 'gatsby';
+import createRedirect from '../components/createRedirect';
 
 const propTypes = {
   acceptTerms: PropTypes.func.isRequired,
@@ -32,6 +32,7 @@ const mapStateToProps = createSelector(
 );
 const mapDispatchToProps = dispatch =>
   bindActionCreators({ acceptTerms }, dispatch);
+const RedirectWelcome = createRedirect('/welcome');
 
 class AcceptPrivacyTerms extends Component {
   constructor(props) {
@@ -65,8 +66,7 @@ class AcceptPrivacyTerms extends Component {
   render() {
     const { acceptedPrivacyTerms } = this.props;
     if (acceptedPrivacyTerms) {
-      navigate('/welcome');
-      return null;
+      return <RedirectWelcome />;
     }
     const { privacyPolicy, termsOfService, quincyEmail } = this.state;
     return (
