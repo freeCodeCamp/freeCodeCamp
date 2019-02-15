@@ -19,7 +19,7 @@ The companies that sponsor these programs gain several benefits:
 ### Notable companies and organizations that offer bug bounties
 - Cisco
 - Facebook
-- Github
+- GitHub
 - Google
 - Instagram
 - Mastercard
