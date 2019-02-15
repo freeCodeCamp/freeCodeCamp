@@ -8,12 +8,23 @@ import { wrapHandledError } from '../utils/create-handled-error';
 
 // We need to tunnel through a proxy path set up within
 // the gatsby app, at this time, that path is /internal
-export const apiProxyRE = /^\/internal\/|^\/external\//;
-export const newsShortLinksRE = /^\/internal\/n\/|^\/internal\/p\?/;
+const apiProxyRE = /^\/internal\/|^\/external\//;
+const newsShortLinksRE = /^\/internal\/n\/|^\/internal\/p\?/;
+const loopbackAPIPathRE = /^\/internal\/api\//;
+
+const _whiteListREs = [
+  newsShortLinksRE,
+  loopbackAPIPathRE
+];
+
+export function isWhiteListedPath(path, whiteListREs= _whiteListREs) {
+  return whiteListREs.some(re => re.test(path))
+}
 
 
 export default () => function authorizeByJWT(req, res, next) {
-  if (apiProxyRE.test(req.path) && !newsShortLinksRE.test(req.path)) {
+  const { path } = req;
+  if (apiProxyRE.test(path) && !isWhiteListedPath(path)) {
     const cookie = req.signedCookies && req.signedCookies['jwt_access_token'] ||
       req.cookie && req.cookie['jwt_access_token'];
 
