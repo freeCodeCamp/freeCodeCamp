@@ -47,10 +47,7 @@ There are many tools and online resources that can help you to ensure that your 
 
    This website allows you to edit a color palette and will create a table showing all of the possible color combinations, telling you which ones are accessible and which combinations to avoid using.
 
-
-***
-
 #### More Reources
 You can find many more tools for accessible web design on <a href='http://www.d.umn.edu/itss/training/online/webdesign/tools.html' target='_blank' rel='nofollow'>this list</a> made by the University of Minnesota Duluth.
 
-For information on creating and verfying accessibility for PDF documents, see the<a href='https://helpx.adobe.com/acrobat/using/create-verify-pdf-accessibility.html' target='_blank' rel='nofollow'>Adobe XI Pro Guide</a>
+For information on creating and verfying accessibility for PDF documents, see the [Adobe XI Pro Guide](https://helpx.adobe.com/acrobat/using/create-verify-pdf-accessibility.html)
