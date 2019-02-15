@@ -24,7 +24,9 @@ before_script:
 jobs:
   include:
     - stage: Unit and Integration tests
-      script: npm test
+      script:
+        - npm run ensure-env
+        - npm test
 
     - stage: Artifacts builds
       if: branch = master && type != pull_request
