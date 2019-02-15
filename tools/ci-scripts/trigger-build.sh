@@ -6,7 +6,8 @@ then
   git clone https://github.com/"$DOCKER_PUSH_REPO".git docker-push-repo
 
   cd docker-push-repo/freecodecamp
-  git pull --rebase origin master
+  git submodule update --init --remote --recursive
+  git submodule status
   cd ../
   git add freecodecamp
   git -c user.name="$DOCKER_PUSH_USER" -c user.email='travis' \
