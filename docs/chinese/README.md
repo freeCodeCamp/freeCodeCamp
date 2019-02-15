@@ -1,7 +1,7 @@
 <table>
     <tr>
-        <td> Read these guidelines in </td>
-        <td><a href="/CONTRIBUTING.md"> English </a></td>
+        <td>  此指南可阅读的语言版本 </td>
+        <td><a href="/docs/README.md"> English </a></td>
         <td><a href="/docs/chinese/README.md"> 中文 </a></td>
         <td><a href="/docs/russian/README.md"> русский </a></td>
         <td><a href="/docs/arabic/README.md"> عربي </a></td>
