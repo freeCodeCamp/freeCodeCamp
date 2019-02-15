@@ -5,7 +5,7 @@ if [ -n "$DOCKER_PUSH_API_TOKEN" ]
 then
   git clone https://github.com/"$DOCKER_PUSH_REPO".git docker-push-repo
 
-   cd docker-push-repo
+  cd docker-push-repo
   git submodule update --init --remote --recursive
   git submodule status
   cd ../
