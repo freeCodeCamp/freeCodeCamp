@@ -58,11 +58,14 @@ There are many tools and online resources that can help you to ensure that your 
 - **<a href='https://toolness.github.io/accessible-color-matrix/' target='_blank' rel='nofollow'>Accessible Color Palette Builder</a>**
 
    This website allows you to edit a color palette and will create a table showing all of the possible color combinations, telling you which ones are accessible and which combinations to avoid using.
-   
-   
+      
 - **<a href='https://webaim.org/resources/contrastchecker/' target='_blank' rel='nofollow'>WebAIM Color Contrast Checker</a>**
 
    This website allows you to enter in color hex values for foreground and background to evaluate the contrast ratio. You can also adjust colors entered to get the necessary contrast ratio.
+
+- **[Randoma11y Color Generator](https://randoma11y.com/)**
+  
+  This is an ongoing app project that randomly generates AA accessible web color palettes and allows end users to up vote or down vote color combinations. This site is good for Web Designers/Web Developers when starting a project that does not have predetermined colors.
 
 - **<a href='https://webaim.org/resources/contrastchecker/' target='_blank' rel='nofollow'>Color contrast Checker</a>**
 
