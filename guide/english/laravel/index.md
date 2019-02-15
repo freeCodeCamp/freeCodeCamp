@@ -5,7 +5,7 @@ title: Laravel
 # Laravel
 [Laravel](https://laravel.com/) is a free and open-source PHP web framework available on [GitHub](https://github.com/laravel/laravel) and licensed under the terms of MIT License. It was created by Taylor Otwell and designed with the objective of enabling rapid development of web applications following the model–view–controller (MVC) architectural pattern. It has gained a lot of traction over the years and is now the most starred PHP framework on GitHub. 
 
-Some of the main features found in Laravel are different ways for accessing relational databases, utilities that aid in application deployment and maintenance, and a modular packaging system with a dedicated dependency manager. Laravel also simplifies a lot of common tasks found in web development and provides out of the box solutions for things like authentication, routing, and queues, allowing you to focus on your application.
+Some of the main features found in Laravel are different ways for accessing relational databases, utilities that aid in application deployment and maintenance, and a modular packaging system with a dedicated dependency manager. Laravel also simplifies a lot of common tasks found in web development and provides out of the box solutions for things like authentication, routing, and queues, allowing you to focus on your application. If you are a Mac user, you can install Valet as a development environment which is build for Laravel.
 
 Because Laravel is open-source, the community around it is very strong and the documentation is top-notch and example driven. Take a look at the [official documentation](https://laravel.com/docs/5.7/) to get a glimpse of how easy it is to use!
 
