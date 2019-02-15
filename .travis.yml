@@ -21,5 +21,12 @@ before_script:
   - git config --global user.email team+camperbot@freeCodeCamp.org
   - git config --global user.name "CamperBot"
 
-script:
-  - npm run test
+jobs:
+  include:
+    - stage: Unit and Integration tests
+      script: npm test
+
+    - stage: Artifacts builds
+      if: branch = master && type != pull_request
+      script: bash trigger-build.sh
+ 
