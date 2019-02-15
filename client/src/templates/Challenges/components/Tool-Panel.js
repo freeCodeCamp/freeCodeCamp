@@ -2,11 +2,12 @@ import React, { Fragment } from 'react';
 import PropTypes from 'prop-types';
 import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux';
-
 import { Button } from '@freecodecamp/react-bootstrap';
 
-import './tool-panel.css';
+import Spacer from '../../../components/helpers/Spacer';
 import { openModal, executeChallenge } from '../redux';
+
+import './tool-panel.css';
 
 const mapStateToProps = () => ({});
 const mapDispatchToProps = dispatch =>
@@ -43,6 +44,7 @@ function ToolPanel({
 }) {
   return (
     <Fragment>
+      <hr />
       <div
         className={`tool-panel-group ${
           isMobile ? 'tool-panel-group-mobile' : ''
@@ -89,6 +91,7 @@ function ToolPanel({
           {isMobile ? 'Help' : 'Ask for help'}
         </Button>
       </div>
+      <Spacer />
     </Fragment>
   );
 }
