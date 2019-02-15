@@ -97,6 +97,11 @@ We get `15.300000`. So, say we just want two places after the decimal to give us
 * Uppercase characters are considered distinct from lowercase characters.
 * You can’t use a C keyword for a name.
 
+### Tips 
+* It is good to assigning meaningful names to variables, this kind of habit will be very helpful when you work in a company or organization where you have to work with group members. By making names meaningful, you can help others understand your code easily.
+
+* For situations where you have more than one word to denote a variable, you can use camelCase syntax to name the variable.
+
 # Before you go on...
 ## A review
 * Variables need to be created before they are used.
