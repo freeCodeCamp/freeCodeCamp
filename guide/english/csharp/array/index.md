@@ -218,6 +218,7 @@ Console.WriteLine(array.Rank); // 4
 
 * Can be easily accessed in a random manner
 * Can be easily manipulated
+* The performance will be much better because boxing and unboxing will not happen
 
 ## Disadvantages
 
