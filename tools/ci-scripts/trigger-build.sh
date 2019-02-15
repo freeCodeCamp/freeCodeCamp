@@ -7,7 +7,6 @@ then
   cd docker-push-repo
   git submodule update --init --remote --recursive
   git submodule status
-  cd ../
   git add freecodecamp
   git -c user.name="$DOCKER_PUSH_USER" -c user.email='travis' \
     commit -m 'chore(ci): Travis CI - bump submodule'
