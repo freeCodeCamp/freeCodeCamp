@@ -121,7 +121,7 @@ class DonateForm extends Component {
     }));
 
     const chargeStripePath = isSignedIn ?
-      `${apiLocation}/internal/donate/charge-stripe` :
+      `/internal/donate/charge-stripe` :
       `${apiLocation}/unauthenticated/donate/charge-stripe`;
     return postJSON$(chargeStripePath, {
       token,
