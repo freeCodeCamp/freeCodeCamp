@@ -12,7 +12,7 @@
     "lint:api": "eslint api-server --ignore-pattern 'api-server/node_modules/**/*.js' --ignore-pattern 'api-server/public/js/**/*.js' --ignore-pattern 'api-server/lib/**/*.js'",
     "lint:client": "eslint client --ignore-pattern 'client/node_modules/**/*.js' --ignore-pattern 'client/plugins/**/node_modules/**/*.js' --ignore-pattern 'client/.cache/**/*.js' --ignore-pattern 'client/public/**/*.js' --ignore-pattern 'client/static/js/*.js' --ignore-pattern 'client/static/js/*.js.map'",
     "lint:config": "eslint config",
-    "lint:curriculum": "echo 'Warning: TODO - Define Linting with fixing.'",
+    "lint:curriculum": "eslint curriculum --ignore-pattern 'curriculum/node_modules/**/*.js'",
     "lint:tools": "echo 'Warning: TODO - Define Linting with fixing.'",
     "seed": "npm-run-all -p seed:*",
     "seed:auth-user": "cross-env DEBUG=fcc:* node ./tools/scripts/seed/seedAuthUser",
