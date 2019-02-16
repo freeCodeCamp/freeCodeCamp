@@ -17,6 +17,8 @@ before_install:
 
 install: npm ci
 
+after_install: node tools/scripts/ensure-path-migration-map.js
+
 before_script:
   - git config --global user.email team+camperbot@freeCodeCamp.org
   - git config --global user.name "CamperBot"
