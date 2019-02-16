@@ -17,7 +17,3 @@
 #learn-app-wrapper .reflex-container.horizontal > .reflex-splitter {
   height: 5px;
 }
-
-#learn-app-wrapper .reflex-container {
-  height: calc(100vh - var(--header-height) - 42px);
-}
