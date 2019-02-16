@@ -2,12 +2,8 @@ const fs = require('fs-extra');
 const path = require('path');
 const YAML = require('js-yaml');
 const readDirP = require('readdirp-walk');
-const {
-  parseMarkdown
-} = require('@freecodecamp/challenge-md-parser');
-const {
-  Translate
-} = require('@google-cloud/translate');
+const { parseMarkdown } = require('@freecodecamp/challenge-md-parser');
+const { Translate } = require('@google-cloud/translate');
 
 const lang = 'pt';
 const langFull = 'portuguese';
@@ -16,66 +12,61 @@ const outputDir = path.resolve(__dirname, `./challenges/${langFull}`);
 fs.ensureDirSync(outputDir);
 
 readDirP({
-    root: path.resolve(__dirname, `./challenges/english`)
-  })
-  .on('data', translateChallenge);
+  root: path.resolve(__dirname, './challenges/english')
+}).on('data', translateChallenge);
 
 async function translateChallenge(file) {
-  const {
-    name,
-    depth,
-    path: filePath,
-    fullPath,
-    stat
-  } = file;
-  if (stat.isDirectory() || name === '.DS_Store') return null;
+  const { name, path: filePath, fullPath, stat } = file;
+  if (stat.isDirectory() || name === '.DS_Store') {
+    return null;
+  }
 
   const blockName = getBlockNameFromPath(filePath);
-  const {
-    fileName: superBlock
-  } = superBlockInfoFromPath(filePath);
-  const outputFile = `${outputDir}/${superBlock}/${blockName}/${name.replace('english', langFull)}`;
-  if (fs.existsSync(outputFile)) return null;
+  const { fileName: superBlock } = superBlockInfoFromPath(filePath);
+  const outputFile = `${outputDir}/${superBlock}/${blockName}/${name.replace(
+    'english',
+    langFull
+  )}`;
+  if (fs.existsSync(outputFile)) {
+    return null;
+  }
 
   const challenge = await parseMarkdown(fullPath);
-  const {
-    title,
-    description,
-    instructions,
-    tests
-  } = challenge;
+  const { title, description, instructions, tests } = challenge;
   challenge['videoUrl'] = '';
-  if (challenge['guideUrl']) challenge['guideUrl'] = challenge['guideUrl'].replace('www', langFull);
+  if (challenge['guideUrl']) {
+    challenge['guideUrl'] = challenge['guideUrl'].replace('www', langFull);
+  }
   const translatePromises = [
     translateText(title),
     translateText(description),
     translateText(instructions),
-    ...tests.map(test => new Promise(async (resolve, reject) => {
-        const {
-          testString,
-          text
-        } = test;
-        const translatedText = await translateText(text);
-        return resolve({
-          text: translatedText ? translatedText.join(' ').trim() : '',
-          testString
-        });
-      }
-
-    ))
+    ...tests.map(
+      test =>
+        new Promise(async(resolve, reject) => {
+          const { testString, text } = test;
+          const translatedText = await translateText(text).catch(reject);
+          return resolve({
+            text: translatedText ? translatedText.join(' ').trim() : '',
+            testString
+          });
+        })
+    )
   ];
-  return Promise.all(translatePromises).then(([title, description, instructions, ...tests]) => {
-
-    const {
-      description: oldDescription = [],
-      instructions: oldInstructions = [],
-      files = {},
-      tests: oldTests = [],
-      solutions = [],
-      ...challengeMeta
-    } = challenge;
-    const md = `---
-${YAML.dump(Object.assign(challengeMeta, {localeTitle: title ? title.join(' ').trim() : ''}), { lineWidth: 10000 })}---
+  return Promise.all(translatePromises).then(
+    ([title, description, instructions, ...tests]) => {
+      const {
+        files = {},
+        solutions = [],
+        ...challengeMeta
+      } = challenge;
+      const md = `---
+${YAML.dump(
+        Object.assign(challengeMeta, {
+          localeTitle: title ? title.join(' ').trim() : ''
+        }),
+        { lineWidth: 10000 }
+      )}---
 
 ## Description
 ${description}
@@ -101,42 +92,35 @@ ${generateChallengeSeed(files)}
 <section id='solution'>
 
 ${
-      solutions.length === 0
-        ? `\`\`\`js
+        solutions.length === 0
+          ? `\`\`\`js
 // solution required
 \`\`\``
-        : solutions
-            .map(
-              solution => `
+          : solutions
+              .map(
+                solution => `
 \`\`\`js
 ${solution}
 \`\`\`
 `
-            )
-            .join('\n')
-    }
+              )
+              .join('\n')
+      }
 </section>
 `;
 
-  console.log(outputFile);
-  fs.ensureFileSync(outputFile);
-  fs.writeFile(outputFile, md);
-
-
-  });
+      console.log(outputFile);
+      fs.ensureFileSync(outputFile);
+      fs.writeFile(outputFile, md);
+    }
+  );
 }
-
 
 function generateChallengeSeed(files) {
   return Object.keys(files)
     .map(key => files[key])
     .map(file => {
-      const {
-        ext,
-        contents = [],
-        head = [],
-        tail = []
-      } = file;
+      const { ext, contents = [], head = [], tail = [] } = file;
       return `
 <div id='${ext}-seed'>
 
@@ -175,22 +159,25 @@ console.info('after the test');
     });
 }
 
-const createTranslateText = target => (text) => {
-  if (!text) return '';
+const createTranslateText = target => text => {
+  if (!text) {
+    return '';
+  }
   const translate = new Translate();
 
   return translate
     .translate(text, target)
     .then(results => {
       let translations = results[0];
-      translations = Array.isArray(translations) ?
-        translations : [translations];
+      translations = Array.isArray(translations)
+        ? translations
+        : [translations];
       return translations;
     })
     .catch(err => {
       console.log(err);
     });
-}
+};
 
 const translateText = createTranslateText(lang);
 
@@ -198,7 +185,6 @@ function superBlockInfoFromPath(filePath) {
   const [maybeSuper] = filePath.split('/');
   return superBlockInfo(maybeSuper);
 }
-
 
 function superBlockInfo(fileName) {
   const [maybeOrder, ...superBlock] = fileName.split('-');
@@ -221,63 +207,3 @@ function getBlockNameFromPath(filePath) {
   const [, block] = filePath.split('/');
   return block;
 }
-
-
-// const curriculum = {
-//   'responsive-web-design': {} 
-// }
-// getChallenges().forEach(block => {
-//   const {
-//     name,
-//     order,
-//     challenges,
-//     time = '',
-//     superBlock,
-//     superOrder,
-//     template = '',
-//     required = [],
-//     ...restBlock
-//   } = block;
-//   const blockDashedName = dasherize(name);
-//   const blockMeta = {
-//     name,
-//     dashedName: blockDashedName,
-//     order,
-//     time,
-//     template,
-//     required,
-//     superBlock,
-//     superOrder,
-//     challengeOrder: challenges.map(({ id, title }) => [id, title]),
-//     ...restBlock
-//   };
-//   const superOrderPrefix = `0${superOrder}`;
-//   const outputDir = path.resolve(
-//     __dirname,
-//     `./challenges/english/${superOrderPrefix}-${superBlock}/${blockDashedName}`
-//   );
-//   fs.ensureDirSync(outputDir);
-
-//   challenges.forEach(challenge => {
-//     const {
-//       description: oldDescription = [],
-//       files = {},
-//       tests = [],
-//       solutions = [],
-//       ...restChallenge
-//     } = challenge;
-//     const challengeMeta = omit(restChallenge, blackListedFieldNames);
-//     const challengeFileName = `${dasherize(challenge.title)}.english.md`;
-//     let description = '';
-//     let instructions = '';
-
-//     const hrIndex = findLastIndex(oldDescription, el =>
-//       (/^<hr\s?\/?>$/).test(el)
-//     );
-
-//     if (hrIndex && hrIndex !== -1) {
-//       description = oldDescription.slice(0, hrIndex).join('\n');
-//       instructions = oldDescription.slice(hrIndex + 1).join('\n');
-//     } else {
-//       description = oldDescription.join('\n');
-//     }

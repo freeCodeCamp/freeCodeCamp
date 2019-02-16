@@ -19,8 +19,7 @@
     "lint": "eslint ./**/*.js --fix",
     "semantic-release": "semantic-release",
     "pretest": "cd ../client && npm run build:workers",
-    "test": "mocha --delay --reporter progress --bail",
-
+    "test": "mocha --delay --reporter progress --bail"
   },
   "dependencies": {
     "invariant": "^2.2.4"
