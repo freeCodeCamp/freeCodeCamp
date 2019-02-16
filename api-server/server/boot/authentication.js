@@ -7,7 +7,7 @@ import { check } from 'express-validator/check';
 
 import { homeLocation } from '../../../config/env';
 import { createCookieConfig } from '../utils/cookieConfig';
-import { 
+import {
   createPassportCallbackAuthenticator,
   saveResponseAuthCookies,
   loginRedirect

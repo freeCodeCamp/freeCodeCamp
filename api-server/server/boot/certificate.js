@@ -350,7 +350,9 @@ function createShowCert(app) {
           messages: [
             {
               type: 'info',
-              message: `We could not find a user with the username "${username}"`
+              message: `We could not find a user with the username "${
+                username
+              }"`
             }
           ]
         });

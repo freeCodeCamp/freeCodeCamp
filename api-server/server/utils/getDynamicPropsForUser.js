@@ -22,7 +22,7 @@ export default function populateUser(db, user) {
     db.collection('user')
       .aggregate([
         { $match: { _id: user.id } },
-        { $project: { points: { $size: '$progressTimestamps' } } },
+        { $project: { points: { $size: '$progressTimestamps' } } }
       ])
       .get(function(err, [{ points = 1 } = {}]) {
         if (err) {
