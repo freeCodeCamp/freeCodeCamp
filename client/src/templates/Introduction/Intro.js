@@ -52,7 +52,10 @@ function IntroductionPage({ data: { markdownRemark, allChallengeNode } }) {
           />
         </FullWidthRow>
         <FullWidthRow>
-          <Link className='btn btn-lg btn-primary btn-block' to={firstLessonPath}>
+          <Link
+            className='btn btn-lg btn-primary btn-block'
+            to={firstLessonPath}
+            >
             Go to the first lesson
           </Link>
           <ButtonSpacer />

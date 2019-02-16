@@ -43,13 +43,21 @@ describe('fcc-create-nav-data', () => {
       expect(result.dashedName).equal('file-writing');
     });
 
-    it('node.path should equal the file path from pagesDir, prefixed with `/guide`', () => {
-      expect(result.path).to.equal('/guide/php/functions/files/file-writing');
-    });
+    it(
+      'node.path should equal the file path from pagesDir, ' +
+        'prefixed with `/guide`',
+      () => {
+        expect(result.path).to.equal('/guide/php/functions/files/file-writing');
+      }
+    );
 
-    it('node.parentPath should equal the path of the parent page, prefixed with `/guide`', () => {
-      expect(result.parentPath).to.equal('/guide/php/functions/files');
-    });
+    it(
+      'node.parentPath should equal the path of the parent page, ' +
+        'prefixed with `/guide`',
+      () => {
+        expect(result.parentPath).to.equal('/guide/php/functions/files');
+      }
+    );
 
     it('node.title should equal srcNode.frontmatter.title', () => {
       expect(result.title).to.equal(mockNode.frontmatter.title);

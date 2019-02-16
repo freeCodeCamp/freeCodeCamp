@@ -1,14 +1,22 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import { Link as GatsbyLink } from 'gatsby';
 import { Grid, Row, Col } from '@freecodecamp/react-bootstrap';
 
 import './footer.css';
+
+const propTypes = {
+  children: PropTypes.any,
+  external: PropTypes.bool,
+  to: PropTypes.string.isRequired
+};
 
 const ColHeader = ({ children, ...other }) => (
   <div className='col-header' {...other}>
     {children}
   </div>
 );
+ColHeader.propTypes = propTypes;
 
 const Link = ({ children, to, external, ...other }) => {
   if (!external && (/^\/(?!\/)/).test(to)) {
@@ -25,6 +33,7 @@ const Link = ({ children, to, external, ...other }) => {
     </a>
   );
 };
+Link.propTypes = propTypes;
 
 function Footer() {
   return (
