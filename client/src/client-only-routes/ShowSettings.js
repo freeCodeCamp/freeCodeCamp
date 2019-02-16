@@ -258,7 +258,6 @@ function ShowSettings(props) {
             verifyCert={verifyCert}
           />
           <Spacer />
-          {/* <DangerZone /> */}
         </main>
       </Grid>
     </Fragment>

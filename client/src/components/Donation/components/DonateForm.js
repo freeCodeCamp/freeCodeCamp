@@ -21,6 +21,7 @@ import { userSelector, isSignedInSelector } from '../../../redux';
 
 const propTypes = {
   email: PropTypes.string,
+  isSignedIn: PropTypes.bool,
   stripe: PropTypes.shape({
     createToken: PropTypes.func.isRequired
   })
@@ -120,9 +121,9 @@ class DonateForm extends Component {
       }
     }));
 
-    const chargeStripePath = isSignedIn ?
-      `/internal/donate/charge-stripe` :
-      `${apiLocation}/unauthenticated/donate/charge-stripe`;
+    const chargeStripePath = isSignedIn
+      ? `${apiLocation}/internal/donate/charge-stripe`
+      : `${apiLocation}/unauthenticated/donate/charge-stripe`;
     return postJSON$(chargeStripePath, {
       token,
       amount
@@ -151,7 +152,7 @@ class DonateForm extends Component {
   }
 
   resetDonation() {
-    return this.setState({...initialState});
+    return this.setState({ ...initialState });
   }
 
   renderCompletion(props) {

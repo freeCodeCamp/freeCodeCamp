@@ -109,7 +109,13 @@ export class Block extends Component {
   }
 
   render() {
-    const { blockDashedName, completedChallenges, challenges, isExpanded, intro } = this.props;
+    const {
+      blockDashedName,
+      completedChallenges,
+      challenges,
+      isExpanded,
+      intro
+    } = this.props;
     let completedCount = 0;
     const challengesWithCompleted = challenges.map(challenge => {
       const { id } = challenge;
