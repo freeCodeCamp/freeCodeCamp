@@ -1,5 +1,9 @@
 import Stripe from 'stripe';
+import debug from 'debug';
+
 import keys from '../../../config/secrets';
+
+const log = debug('fcc:boot:donate');
 
 export default function donateBoot(app, done) {
 
@@ -70,7 +74,19 @@ export default function donateBoot(app, done) {
 
     const fccUser = user ?
             Promise.resolve(user) :
-            User.create$({ email }).toPromise();
+            new Promise((resolve, reject) =>
+              User.findOrCreate(
+                { where: { email }},
+                { email },
+                (err, instance, isNew) => {
+                  log('is new user instance: ', isNew);
+                  if (err) {
+                    return reject(err);
+                  }
+                  return resolve(instance);
+                }
+              )
+            );
 
     let donatingUser = {};
     let donation = {
@@ -133,7 +149,8 @@ export default function donateBoot(app, done) {
     api.post('/charge-stripe', createStripeDonation);
     donateRouter.use('/donate', api);
     app.use(donateRouter);
-    app.use('/external', donateRouter);
+    app.use('/internal', donateRouter);
+    app.use('/unauthenticated', donateRouter);
     connectToStripe().then(done);
   }
 }

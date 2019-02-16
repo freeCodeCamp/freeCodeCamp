@@ -2,6 +2,7 @@
 id: 5690307fddb111c6084545d7
 title: Logical Order in If Else Statements
 challengeType: 1
+videoUrl: 'https://scrimba.com/c/cwNvMUV'
 ---
 
 ## Description
@@ -28,11 +29,11 @@ Change the order of logic in the function so that it will return the correct sta
 ```yml
 tests:
   - text: <code>orderMyLogic(4)</code> should return "Less than 5"
-    testString: 'assert(orderMyLogic(4) === "Less than 5", "<code>orderMyLogic(4)</code> should return "Less than 5"");'
+    testString: assert(orderMyLogic(4) === "Less than 5", '<code>orderMyLogic(4)</code> should return "Less than 5"');
   - text: <code>orderMyLogic(6)</code> should return "Less than 10"
-    testString: 'assert(orderMyLogic(6) === "Less than 10", "<code>orderMyLogic(6)</code> should return "Less than 10"");'
+    testString: assert(orderMyLogic(6) === "Less than 10", '<code>orderMyLogic(6)</code> should return "Less than 10"');
   - text: <code>orderMyLogic(11)</code> should return "Greater than or equal to 10"
-    testString: 'assert(orderMyLogic(11) === "Greater than or equal to 10", "<code>orderMyLogic(11)</code> should return "Greater than or equal to 10"");'
+    testString: assert(orderMyLogic(11) === "Greater than or equal to 10", '<code>orderMyLogic(11)</code> should return "Greater than or equal to 10"');
 
 ```
 

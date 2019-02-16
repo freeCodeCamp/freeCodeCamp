@@ -15,7 +15,7 @@ Fulfill the below <a href='https://en.wikipedia.org/wiki/User_story' target='_bl
 <strong>Hint:</strong> To get the top 100 campers for the last 30 days: <a href='https://fcctop100.herokuapp.com/api/fccusers/top/recent' target='_blank'>https://fcctop100.herokuapp.com/api/fccusers/top/recent</a>.
 <strong>Hint:</strong> To get the top 100 campers of all time: <a href='https://fcctop100.herokuapp.com/api/fccusers/top/alltime' target='_blank'>https://fcctop100.herokuapp.com/api/fccusers/top/alltime</a>.
 Remember to use <a href='http://forum.freecodecamp.org/t/how-to-get-help-when-you-are-stuck/19514' target='_blank'>Read-Search-Ask</a> if you get stuck.
-When you are finished, click the "I've completed this challenge" button and include a link to your CodePen. 
+When you are finished, click the "I've completed this challenge" button and include a link to your CodePen.
 You can get feedback on your project by sharing it with your friends on Facebook.
 </section>
 

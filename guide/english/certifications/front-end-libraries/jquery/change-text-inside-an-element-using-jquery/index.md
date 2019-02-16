@@ -40,7 +40,7 @@ title: Change Text Inside an Element Using jQuery
 
 ### More information
 
-[JQuery API  Documentation](http://api.jquery.com/html/)
+[jQuery API  Documentation](http://api.jquery.com/html/)
 
 [freeCoceCamp Guide](https://guide.freecodecamp.org/jquery/jquery-html-method)
 
