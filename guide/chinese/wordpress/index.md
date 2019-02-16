@@ -31,5 +31,5 @@ WordPress的优点包括：
 *   [WordPress: 官方网站](https://wordpress.org/)
 *   [WordPress Codex：在线手册](https://codex.wordpress.org/)
 *   [WordPress代码参考](https://developer.wordpress.org/reference/)
-*   [WordPress Github Repository](https://github.com/WordPress/WordPress)
+*   [WordPress GitHub Repository](https://github.com/WordPress/WordPress)
 

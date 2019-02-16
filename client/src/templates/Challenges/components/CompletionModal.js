@@ -147,7 +147,7 @@ export class CompletionModal extends Component {
               block={true}
               bsSize='lg'
               bsStyle='primary'
-              className='btn-primary-invert'
+              className='btn-invert'
               download={`${dashedName}.json`}
               href={this.state.downloadURL}
               >

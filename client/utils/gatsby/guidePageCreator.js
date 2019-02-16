@@ -13,7 +13,7 @@ exports.createGuideArticlePages = createPage => ({
   node: {
     htmlAst,
     excerpt,
-    fields: { slug },
+    fields: { slug, component },
     id
   }
 }) => {
@@ -32,7 +32,13 @@ exports.createGuideArticlePages = createPage => ({
 
   return createPage({
     path: `/guide${slug}`,
-    component: guideArticle,
+    component: !component
+      ? guideArticle
+      : path.resolve(
+          __dirname,
+          '../../src/templates/Guide/components/',
+          component
+        ),
     context: {
       id,
       meta

@@ -251,6 +251,10 @@ export const reducer = handleActions(
       ...state,
       isOnline
     }),
+    [types.closeDonationModal]: state => ({
+      ...state,
+      showDonationModal: false
+    }),
     [types.openDonationModal]: state => ({
       ...state,
       showDonationModal: true

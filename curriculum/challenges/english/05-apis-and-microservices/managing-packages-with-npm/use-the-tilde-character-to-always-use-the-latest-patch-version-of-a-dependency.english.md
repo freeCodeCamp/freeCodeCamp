@@ -12,7 +12,7 @@ Example
 <code>"some-package-name": "~1.3.8" allows updates to any 1.3.x version.</code>
 Instructions
 Use the tilde-character (~) to prefix the version of moment in your dependencies and allow npm to update it to any new PATCH release.
-Note that the version numbers themselves not should be changed.
+Note that the version numbers themselves should not be changed.
 </section>
 
 ## Instructions

@@ -43,6 +43,11 @@ In case of the logical AND, if the first operand returns false, the second opera
 
 In case of the logical OR, if the first value returns true, the second value is never evaluated and the first operand is returned.
 
+```js
+false && (anything) // short-circuit evaluated to false.
+true || (anything) // short-circuit evaluated to true.
+```
+
 #### Logical NOT (!)
 
 The NOT operator does not do any comparison like the AND and OR operators.Moreover it is operated only on 1 operand.

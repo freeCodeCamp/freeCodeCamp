@@ -10,10 +10,10 @@ import completionEpic from './completion-epic';
 import codeLockEpic from './code-lock-epic';
 import createQuestionEpic from './create-question-epic';
 import codeStorageEpic from './code-storage-epic';
-import currentChallengeEpic from './current-challenge-epic';
 
 import { createIdToNameMapSaga } from './id-to-name-map-saga';
 import { createExecuteChallengeSaga } from './execute-challenge-saga';
+import { createCurrentChallengeSaga } from './current-challenge-saga';
 import { challengeTypes } from '../../../../utils/challengeTypes';
 
 export const ns = 'challenge';
@@ -88,13 +88,13 @@ export const epics = [
   codeLockEpic,
   completionEpic,
   createQuestionEpic,
-  codeStorageEpic,
-  currentChallengeEpic
+  codeStorageEpic
 ];
 
 export const sagas = [
   ...createIdToNameMapSaga(types),
-  ...createExecuteChallengeSaga(types)
+  ...createExecuteChallengeSaga(types),
+  ...createCurrentChallengeSaga(types)
 ];
 
 export const createFiles = createAction(types.createFiles, challengeFiles =>
@@ -345,7 +345,7 @@ export const reducer = handleActions(
       ...state,
       currentTab: payload
     }),
-    [types.executeChallenge]: (state, { payload }) => ({
+    [types.executeChallenge]: state => ({
       ...state,
       currentTab: 3
     })

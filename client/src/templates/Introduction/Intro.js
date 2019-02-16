@@ -57,7 +57,7 @@ function IntroductionPage({ data: { markdownRemark, allChallengeNode } }) {
           </Link>
           <ButtonSpacer />
           <Link to='/learn'>
-            <Button block={true} bsSize='lg' className='btn-primary-invert'>
+            <Button block={true} bsSize='lg' className='btn-invert'>
               View the curriculum
             </Button>
           </Link>

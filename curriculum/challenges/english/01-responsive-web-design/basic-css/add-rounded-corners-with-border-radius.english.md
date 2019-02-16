@@ -25,7 +25,7 @@ tests:
   - text: Your image element should have the class "thick-green-border".
     testString: assert($("img").hasClass("thick-green-border"), 'Your image element should have the class "thick-green-border".');
   - text: Your image should have a border radius of <code>10px</code>
-    testString: assert($("img").css("border-radius") === '10px', 'Your image should have a border radius of <code>10px</code>');
+    testString: assert($("img").css("border-top-left-radius") === '10px' && $("img").css("border-top-right-radius") === '10px' && $("img").css("border-bottom-left-radius") === '10px' && $("img").css("border-bottom-right-radius") === '10px', 'Your image should have a border radius of <code>10px</code>');
 
 ```
 
