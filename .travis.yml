@@ -17,8 +17,6 @@ before_install:
 
 install: npm ci
 
-after_install: node tools/scripts/ensure-path-migration-map.js
-
 before_script:
   - git config --global user.email team+camperbot@freeCodeCamp.org
   - git config --global user.name "CamperBot"
@@ -26,7 +24,9 @@ before_script:
 jobs:
   include:
     - stage: Lint javaScript
-      script: npm run lint
+      script:
+        - npm run ensure-env
+        - npm run lint
 
     - stage: Unit and Integration tests
       script: npm test
