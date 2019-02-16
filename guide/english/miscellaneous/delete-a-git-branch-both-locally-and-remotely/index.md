@@ -16,7 +16,7 @@ Typically once the work is completed on a feature and it is recommended to delet
 
 ## The Delete workflow:
 
-Lets say you have a repo called as `AwesomeRepo`, and its hosted on Github, at a location such as `https://github.com/my_username/AwesomeRepo`.
+Lets say you have a repo called as `AwesomeRepo`, and its hosted on GitHub, at a location such as `https://github.com/my_username/AwesomeRepo`.
 
 Also lets assume it has the branches like:  
 `master`  

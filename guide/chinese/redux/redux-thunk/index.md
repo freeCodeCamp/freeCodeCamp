@@ -66,7 +66,7 @@ import { createStore, applyMiddleware } from 'redux';
 
 ### 参考
 
-*   [Redux Thunk Github Repo](https://github.com/reduxjs/redux-thunk)
+*   [Redux Thunk GitHub Repo](https://github.com/reduxjs/redux-thunk)
 *   [Redux中间件](https://redux.js.org/advanced/middleware)
 
 ### 来源

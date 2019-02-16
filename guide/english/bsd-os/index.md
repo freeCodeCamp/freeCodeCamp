@@ -13,10 +13,10 @@ FreeBSD is the most popular member.
 BSD is configured for internet hosting, web hosting, and hosting many servers on one system.
 It is the first OS to have added an internet protocol.
 BSD OSes have a very strongly enforced time-sharing system, which makes them most useful where resources are shared between processes.
-As a comparision, the Linux OS is known to be preferred for single-task processes such as supercomputers and desktops.
-The effective BSD multi-tasking forced-interrupt part of timesharing gets in the way of dedicated single processes.
+As a comparison, the Linux OS is known to be preferred for single-task processes such as supercomputers and desktops.
+Effectively, the BSD multi-tasking forced-interrupt part of timesharing gets in the way of dedicated single processes.
 
-BSD includes a 'Jails' system which is somewhat analogous to Linux Containers --except with additional security and flexibility in implementation.
+BSD includes a 'Jails' system which is somewhat analogous to Linux Containers -- except with additional security and flexibility in implementation.
 
 ### More Information:
 
