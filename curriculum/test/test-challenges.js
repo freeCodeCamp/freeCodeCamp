@@ -280,9 +280,8 @@ async function createTestRunnerForDOMChallenge(
     files[0].contents = solution;
   }
 
-  const loadEnzyme = files[0].ext === 'jsx';
-
-  const { build, sources } = await buildDOMChallenge(files, {
+  const { build, sources, loadEnzyme } = await buildDOMChallenge({
+    files,
     required,
     template
   });
@@ -324,7 +323,7 @@ async function createTestRunnerForJSChallenge({ files }, solution) {
     files[0].contents = solution;
   }
 
-  const { build, sources } = await buildJSChallenge(files);
+  const { build, sources } = await buildJSChallenge({ files });
   const code = sources && 'index' in sources ? sources['index'] : '';
 
   const testWorker = createWorker('test-evaluator');
