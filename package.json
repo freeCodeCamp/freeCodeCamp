@@ -13,7 +13,7 @@
     "lint:client": "eslint client --ignore-pattern 'client/node_modules/**/*.js' --ignore-pattern 'client/plugins/**/node_modules/**/*.js' --ignore-pattern 'client/.cache/**/*.js' --ignore-pattern 'client/public/**/*.js' --ignore-pattern 'client/static/js/*.js' --ignore-pattern 'client/static/js/*.js.map'",
     "lint:config": "eslint config",
     "lint:curriculum": "eslint curriculum --ignore-pattern 'curriculum/node_modules/**/*.js'",
-    "lint:tools": "echo 'Warning: TODO - Define Linting with fixing.'",
+    "lint:tools": "eslint tools --ignore-pattern 'tools/**/node_modules/**/*.js'",
     "seed": "npm-run-all -p seed:*",
     "seed:auth-user": "cross-env DEBUG=fcc:* node ./tools/scripts/seed/seedAuthUser",
     "seed:challenges": "cross-env DEBUG=fcc:* node ./tools/scripts/seed/seedChallenges",
