@@ -29,12 +29,15 @@
     "test:tools": "jest ./tools"
   },
   "devDependencies": {
+    "@freecodecamp/eslint-config": "^2.0.0",
     "babel-eslint": "^10.0.1",
     "cross-env": "^5.2.0",
     "debug": "^4.0.1",
     "dotenv": "^6.0.0",
     "eslint": "^5.12.1",
     "eslint-plugin-babel": "^5.3.0",
+    "eslint-plugin-import": "^2.16.0",
+    "eslint-plugin-prefer-object-spread": "^1.2.1",
     "eslint-plugin-react": "^7.12.4",
     "faker": "^4.1.0",
     "gray-matter": "^4.0.1",
