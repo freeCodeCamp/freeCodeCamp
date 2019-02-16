@@ -21,8 +21,10 @@ const mapDispatchToProps = dispatch =>
   );
 
 const propTypes = {
+  className: PropTypes.string,
   executeChallenge: PropTypes.func.isRequired,
   guideUrl: PropTypes.string,
+  isMobile: PropTypes.bool,
   openHelpModal: PropTypes.func.isRequired,
   openResetModal: PropTypes.func.isRequired,
   openVideoModal: PropTypes.func.isRequired,
@@ -30,7 +32,9 @@ const propTypes = {
 };
 
 function ToolPanel({
+  className,
   executeChallenge,
+  isMobile,
   openHelpModal,
   openVideoModal,
   openResetModal,
@@ -39,46 +43,50 @@ function ToolPanel({
 }) {
   return (
     <Fragment>
-      <div className='tool-panel-group'>
+      <div
+        className={`tool-panel-group ${
+          isMobile ? 'tool-panel-group-mobile' : ''
+        } ${className}`}
+        >
         <Button block={true} bsStyle='primary' onClick={executeChallenge}>
-          Run the Tests
+          {isMobile ? 'Run' : 'Run the Tests'}
         </Button>
         <Button
           block={true}
           bsStyle='primary'
-          className='btn-primary-invert'
+          className='btn-invert'
           onClick={openResetModal}
           >
-          Reset All Code
+          {isMobile ? 'Reset' : 'Reset All Code'}
         </Button>
         {guideUrl ? (
           <Button
             block={true}
             bsStyle='primary'
-            className='btn-primary-invert'
+            className='btn-invert'
             href={guideUrl}
             target='_blank'
             >
-            Get a hint
+            {isMobile ? 'Hint' : 'Get a hint'}
           </Button>
         ) : null}
         {videoUrl ? (
           <Button
             block={true}
             bsStyle='primary'
-            className='btn-primary-invert'
+            className='btn-invert'
             onClick={openVideoModal}
             >
-            Watch a video
+            {isMobile ? 'Video' : 'Watch a video'}
           </Button>
         ) : null}
         <Button
           block={true}
           bsStyle='primary'
-          className='btn-primary-invert'
+          className='btn-invert'
           onClick={openHelpModal}
           >
-          Ask for help
+          {isMobile ? 'Help' : 'Ask for help'}
         </Button>
       </div>
     </Fragment>
@@ -88,7 +96,10 @@ function ToolPanel({
 ToolPanel.displayName = 'ToolPanel';
 ToolPanel.propTypes = propTypes;
 
-export default connect(mapStateToProps, mapDispatchToProps)(ToolPanel);
+export default connect(
+  mapStateToProps,
+  mapDispatchToProps
+)(ToolPanel);
 
 /*
 <Button

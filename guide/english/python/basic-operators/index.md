@@ -311,6 +311,7 @@ y = x
 z = y
 print z is 1 # prints True
 print z is x # prints True
+print y is x # prints True
 
 str1 = "FreeCodeCamp"
 str2 = "FreeCodeCamp"

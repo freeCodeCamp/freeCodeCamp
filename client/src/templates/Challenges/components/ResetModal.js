@@ -56,7 +56,7 @@ function ResetModal({ reset, close, isOpen }) {
           </p>
         </div>
       </Modal.Body>
-      <Modal.Footer>
+      <Modal.Footer className='reset-modal-footer'>
         <Button
           block={true}
           bsSize='large'

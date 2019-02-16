@@ -5,14 +5,12 @@ node_js:
 
 cache:
   directories:
-  - "$HOME/.npm"
+    - '$HOME/.npm'
 
 env:
   global:
     - NO_UPDATE_NOTIFIER=1
     - NODE_NO_WARNINGS=1
-
-sudo: false
 
 before_install:
   - npm config set loglevel warn
@@ -23,5 +21,13 @@ before_script:
   - git config --global user.email team+camperbot@freeCodeCamp.org
   - git config --global user.name "CamperBot"
 
-script:
-  - npm run test
+jobs:
+  include:
+    - stage: Unit and Integration tests
+      script: npm test
+
+    - stage: Artifacts builds
+      if: branch = master && type != pull_request
+      script: bash tools/ci-scripts/trigger-build.sh
+      install: skip
+      before_script: skip

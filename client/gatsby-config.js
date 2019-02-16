@@ -1,6 +1,10 @@
 const path = require('path');
 
-const { buildChallenges } = require('./utils/buildChallenges');
+const {
+  buildChallenges,
+  replaceChallengeNode,
+  localeChallengesRootDir
+} = require('./utils/buildChallenges');
 
 const { NODE_ENV: env, LOCALE: locale = 'english' } = process.env;
 
@@ -28,7 +32,8 @@ module.exports = {
           '/certification/*',
           '/unsubscribed/*',
           '/user/*',
-          '/settings/*'
+          '/settings/*',
+          '/n/*'
         ]
       }
     },
@@ -36,7 +41,9 @@ module.exports = {
       resolve: 'fcc-source-challenges',
       options: {
         name: 'challenges',
-        source: buildChallenges
+        source: buildChallenges,
+        onSourceChange: replaceChallengeNode,
+        curriculumPath: localeChallengesRootDir
       }
     },
     {
@@ -138,6 +145,12 @@ module.exports = {
         /* eslint-enable camelcase */
         display: 'minimal-ui',
         icon: 'src/images/square_puck.png'
+      }
+    },
+    {
+      resolve: 'gatsby-plugin-google-fonts',
+      options: {
+        fonts: ['Lato:400,400i,500']
       }
     },
     'gatsby-plugin-sitemap'
