@@ -22,7 +22,7 @@ Example of a list:
 Lists can contain mixed types of data (number, string and boolean in this example).
 
 There are many built in functions in R. The user can also make a 'user defined' function, as you see below.
-The following creates the function circleArea that calculates the area of a circle (A = π r2).
+The following creates the function circleArea that calculates the area of a circle (A = π r^2).
 
 ```
 >circleArea <- function(r){
@@ -36,7 +36,7 @@ The following creates the function circleArea that calculates the area of a circ
 1. To create an R object, choose a name and then use the less-than symbol, `<`,
 followed by a minus sign,  `-`, to save data into it. This combination looks like an
 arrow, `<-`. R will make an object, give it your name, and store in it whatever
-follows the arrow. You can also use the '=' sign, but this is a less common method to assign a value to an object and generally frowned upon.
+follows the arrow. You can also use the '=' sign, but this is a less common method to assign a value to an object and generally frowned upon. There is one function named `assign` in R, which can also be used as an assignment operator. 
 
 2. When the user calls the object in the console it provides the output on the next line. For example:
 
@@ -44,11 +44,21 @@ follows the arrow. You can also use the '=' sign, but this is a less common meth
 > die <- 1:6
 > die
 [1] 1 2 3 4 5 6
+
+# Change in the direction of arrow
+> 1:6 -> die
+> die
+[1] 1 2 3 4 5 6
+
+
+# Use of assign operator 
+> assign("die", 1:6)
+> die
+[1] 1 2 3 4 5 6
 ```
 
 3. You can name an object in R almost anything you want, but there are a few rules. First,
-a name cannot start with a number. 
-Second, a name cannot use some special symbols, like  `^,  !,  $,  @,  +,  -,  /, or  *`:
+a name cannot start with a number. Second, a name cannot use some special symbols, like  `^,  !,  $,  @,  +,  -,  /, or  *`:
 
 4. R also understands capitalization (or is case-sensitive), so name and Name will refer to different objects.
 
