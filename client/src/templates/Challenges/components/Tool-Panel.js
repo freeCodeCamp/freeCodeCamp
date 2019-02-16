@@ -21,6 +21,7 @@ const mapDispatchToProps = dispatch =>
   );
 
 const propTypes = {
+  className: PropTypes.string,
   executeChallenge: PropTypes.func.isRequired,
   guideUrl: PropTypes.string,
   isMobile: PropTypes.bool,
@@ -31,6 +32,7 @@ const propTypes = {
 };
 
 function ToolPanel({
+  className,
   executeChallenge,
   isMobile,
   openHelpModal,
@@ -41,16 +43,18 @@ function ToolPanel({
 }) {
   return (
     <Fragment>
-      <div className={`tool-panel-group ${
+      <div
+        className={`tool-panel-group ${
           isMobile ? 'tool-panel-group-mobile' : ''
-        }`}>
+        } ${className}`}
+        >
         <Button block={true} bsStyle='primary' onClick={executeChallenge}>
           {isMobile ? 'Run' : 'Run the Tests'}
         </Button>
         <Button
           block={true}
           bsStyle='primary'
-          className='btn-primary-invert'
+          className='btn-invert'
           onClick={openResetModal}
           >
           {isMobile ? 'Reset' : 'Reset All Code'}
@@ -59,7 +63,7 @@ function ToolPanel({
           <Button
             block={true}
             bsStyle='primary'
-            className='btn-primary-invert'
+            className='btn-invert'
             href={guideUrl}
             target='_blank'
             >
@@ -70,7 +74,7 @@ function ToolPanel({
           <Button
             block={true}
             bsStyle='primary'
-            className='btn-primary-invert'
+            className='btn-invert'
             onClick={openVideoModal}
             >
             {isMobile ? 'Video' : 'Watch a video'}
@@ -79,7 +83,7 @@ function ToolPanel({
         <Button
           block={true}
           bsStyle='primary'
-          className='btn-primary-invert'
+          className='btn-invert'
           onClick={openHelpModal}
           >
           {isMobile ? 'Help' : 'Ask for help'}
@@ -92,7 +96,10 @@ function ToolPanel({
 ToolPanel.displayName = 'ToolPanel';
 ToolPanel.propTypes = propTypes;
 
-export default connect(mapStateToProps, mapDispatchToProps)(ToolPanel);
+export default connect(
+  mapStateToProps,
+  mapDispatchToProps
+)(ToolPanel);
 
 /*
 <Button

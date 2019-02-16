@@ -32,7 +32,7 @@ export class ToolPanel extends Component {
           <Button
             block={true}
             bsStyle='primary'
-            className='btn-primary-invert'
+            className='btn-invert'
             href={guideUrl}
             target='_blank'
             >
@@ -42,7 +42,7 @@ export class ToolPanel extends Component {
         <Button
           block={true}
           bsStyle='primary'
-          className='btn-primary-invert'
+          className='btn-invert'
           onClick={openHelpModal}
           >
           Ask for help
