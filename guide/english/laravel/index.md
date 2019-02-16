@@ -13,7 +13,6 @@ Laravel also has its own online learning platform, [Laracasts](https://laracasts
 
 ### Featured Packages
 Ready-to-use bundles provided by Laravel through Composer and Packagist include the following:
-
 - **Cashier** - introduced in Laravel 4.2, provides an interface for managing subscription billing services provided by Stripe, such as handling coupons and generating invoices.
 - **SSH** - introduced in Laravel 4.1, allows programmatic execution of CLI commands on remote servers using the Secure Shell (SSH) as an encrypted network protocol.
 - **Scheduler** - introduced in Laravel 5.0, is an addition to the Artisan command-line utility that allows programmatic scheduling of periodically executed tasks. Internally, Scheduler relies on the cron daemon to run a single Artisan job that, in turn, executes the configured tasks.
@@ -62,6 +61,10 @@ However, if you are not using Homestead, you will need to make sure your server 
 - Ctype PHP Extension
 - JSON PHP Extension
 
-## Get Laravel
+## Getting Started
+
+### Get Laravel
 The latest release of Laravel is 5.7 and includes optional email verification in the authentication scaffolding. Laravel can be installed using [Composer](https://getcomposer.org/).
 
+## Additional Resources
+- [Laravel Basic Task List Tutorial](https://laravel.com/docs/5.1/quickstart)
