@@ -56,7 +56,7 @@ class DonatePage extends Component {
   render() {
     return (
       <Fragment>
-        <Helmet title='Support the freeCodeCamp.org nonprofit' />
+        <Helmet title='Support our nonprofit | freeCodeCamp.org' />
         <Spacer />
         <Row>
           <Col sm={8} smOffset={2} xs={12}>
