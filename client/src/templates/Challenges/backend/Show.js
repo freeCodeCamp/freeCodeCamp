@@ -161,42 +161,35 @@ export class BackEnd extends Component {
       <LearnLayout>
         <Grid>
           <Row>
-            <Col xs={12}>
+            <Col md={8} mdOffset={2} sm={10} smOffset={1} xs={12} >
               <Spacer />
-              <div>
-                <ChallengeTitle>{blockNameTitle}</ChallengeTitle>
-                <ChallengeDescription
-                  description={description}
-                  instructions={instructions}
-                />
-              </div>
-              <div>
-                <Form
-                  buttonText={buttonCopy + '(Ctrl + Enter)'}
-                  formFields={formFields}
-                  id={backendNS}
-                  options={options}
-                  submit={executeChallenge}
-                />
-                <ProjectToolPanel guideUrl={createGuideUrl(slug)} />
-              </div>
-              <div>
-                <br />
-                <Output
-                  defaultOutput={`/**
-  *
-  * Test output will go here
-  *
-  *
-  */`}
-                  dimensions={this.state}
-                  height={150}
-                  output={output}
-                />
-              </div>
-              <div>
-                <TestSuite tests={tests} />
-              </div>
+              <ChallengeTitle>{blockNameTitle}</ChallengeTitle>
+              <ChallengeDescription
+                description={description}
+                instructions={instructions}
+              />
+              <Form
+                buttonText={buttonCopy + '(Ctrl + Enter)'}
+                formFields={formFields}
+                id={backendNS}
+                options={options}
+                submit={executeChallenge}
+              />
+              <ProjectToolPanel guideUrl={createGuideUrl(slug)} />
+              <br />
+              <Output
+                defaultOutput={`/**
+*
+* Test output will go here
+*
+*
+*/`}
+                dimensions={this.state}
+                height={150}
+                output={output}
+              />
+              <TestSuite tests={tests} />
+
               <Spacer />
             </Col>
             <CompletionModal />

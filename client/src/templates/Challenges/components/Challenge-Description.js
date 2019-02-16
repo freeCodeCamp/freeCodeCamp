@@ -9,19 +9,22 @@ const propTypes = {
   section: PropTypes.string
 };
 
+function emptyInstruction(instructions) {
+  return (/^<section\s+id\s*=\s*("|')instructions\1\s*>\s*<\/section>$/)
+  .test(instructions);
+}
+
 function ChallengeDescription({ description, instructions, section }) {
   return (
     <div className={`challenge-instructions ${section}`}>
       <div dangerouslySetInnerHTML={{ __html: description }} />
-      {instructions ? (
+      {!emptyInstruction(instructions) && (
         <Fragment>
           <hr />
           <div dangerouslySetInnerHTML={{ __html: instructions }} />
-          <hr />
         </Fragment>
-      ) : (
-        <hr />
       )}
+      <hr />
     </div>
   );
 }
