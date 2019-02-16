@@ -1,3 +1,4 @@
+/* global describe xdescribe it expect */
 import { isWhiteListedPath } from './jwt-authorization';
 
 describe('jwt-authorization', () => {
@@ -25,5 +26,5 @@ describe('jwt-authorization', () => {
     });
   });
 
-  xdescribe('authorizeByJWT')
+  xdescribe('authorizeByJWT');
 });
