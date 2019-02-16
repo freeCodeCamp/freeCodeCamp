@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React, { Component, Fragment } from 'react';
 import PropTypes from 'prop-types';
 import { bindActionCreators } from 'redux';
 import { Link, navigate } from 'gatsby';
@@ -20,7 +20,6 @@ import {
   userSelector,
   reportUser
 } from '../redux';
-import Layout from '../components/layouts/Default';
 import { Spacer, Loader, FullWidthRow } from '../components/helpers';
 
 const propTypes = {
@@ -91,52 +90,48 @@ class ShowUser extends Component {
     const { pending, complete, errored } = userFetchState;
     if (pending && !complete) {
       return (
-        <Layout>
-          <div className='loader-wrapper'>
-            <Loader />
-          </div>
-        </Layout>
+        <div className='loader-wrapper'>
+          <Loader />
+        </div>
       );
     }
 
     if ((complete || errored) && !isSignedIn) {
       this.setNavigationTimer();
       return (
-        <Layout>
-          <main>
-            <FullWidthRow>
-              <Spacer />
-              <Spacer />
-              <Panel bsStyle='info'>
-                <Panel.Heading>
-                  <Panel.Title componentClass='h3'>
-                    You need to be signed in to report a user
-                  </Panel.Title>
-                </Panel.Heading>
-                <Panel.Body className='text-center'>
-                  <Spacer />
-                  <p>
-                    You will be redirected to sign in to freeCodeCamp.org
-                    automatically in 5 seconds
-                  </p>
-                  <p>
-                    <Link to='/signin'>
-                      Or you can here if you do not want to wait
-                    </Link>
-                  </p>
-                  <Spacer />
-                </Panel.Body>
-              </Panel>
-            </FullWidthRow>
-          </main>
-        </Layout>
+        <main>
+          <FullWidthRow>
+            <Spacer />
+            <Spacer />
+            <Panel bsStyle='info'>
+              <Panel.Heading>
+                <Panel.Title componentClass='h3'>
+                  You need to be signed in to report a user
+                </Panel.Title>
+              </Panel.Heading>
+              <Panel.Body className='text-center'>
+                <Spacer />
+                <p>
+                  You will be redirected to sign in to freeCodeCamp.org
+                  automatically in 5 seconds
+                </p>
+                <p>
+                  <Link to='/signin'>
+                    Or you can here if you do not want to wait
+                  </Link>
+                </p>
+                <Spacer />
+              </Panel.Body>
+            </Panel>
+          </FullWidthRow>
+        </main>
       );
     }
 
     const { textarea } = this.state;
 
     return (
-      <Layout>
+      <Fragment>
         <Helmet>
           <title>Report a users profile | freeCodeCamp.org</title>
         </Helmet>
@@ -170,7 +165,7 @@ class ShowUser extends Component {
             </form>
           </Col>
         </FullWidthRow>
-      </Layout>
+      </Fragment>
     );
   }
 }

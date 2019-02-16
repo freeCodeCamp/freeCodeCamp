@@ -4,7 +4,7 @@ title: Add a Text Alternative to Images for Visually Impaired Accessibility
 challengeType: 0
 videoUrl: ''
 guideUrl: 'https://arabic.freecodecamp.org/guide/certificates/add-alt-text-to-an-image-for-accessibility'
-localeTitle: إضافة بديل نص إلى الصور لإعاقة الوصول بصريًا
+localeTitle: إضافة نص بديل للصور لذوي ضعاف البصر
 ---
 
 ## Description
