@@ -64,7 +64,7 @@ However, if you are not using Homestead, you will need to make sure your server 
 ## Getting Started
 
 ### Get Laravel
-The latest release of Laravel is 5.7 and includes optional email verification in the authentication scaffolding. Laravel can be installed using [Composer](https://getcomposer.org/).
+The [latest release](https://laravel-news.com/laravel-5-7-is-now-released) of Laravel is 5.7 and includes optional email verification in the authentication scaffolding. Laravel can be installed using [Composer](https://getcomposer.org/).
 
 ## Additional Resources
 - [Laravel Basic Task List Tutorial](https://laravel.com/docs/5.1/quickstart)
