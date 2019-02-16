@@ -3,8 +3,16 @@ title: Understand BCrypt Hashes
 ---
 ## Understand BCrypt Hashes
 
-This is a stub. <a href='https://github.com/freecodecamp/guides/tree/master/src/pages/certifications/information-security-and-quality-assurance/information-security-with-helmetjs/understand-bcrypt-hashes/index.md' target='_blank' rel='nofollow'>Help our community expand it</a>.
+**Starting with this lesson there is a new boilerplate project to clone on glitch.** So be sure to start by cloning that first!
 
-<a href='https://github.com/freecodecamp/guides/blob/master/README.md' target='_blank' rel='nofollow'>This quick style guide will help ensure your pull request gets accepted</a>.
+### Hint
 
-<!-- The article goes here, in GitHub-flavored Markdown. Feel free to add YouTube videos, images, and CodePen/JSBin embeds  -->
+- Add `bcrypt` to your project as a dependency.
+- After you add it, you need to require it in the server file.
+
+### Solution
+
+- In the `package.json` file, click the `add package` button, search for `bcrypt`, and click it to add it to your project.
+- Then, go in the `server.js` file, and require it by adding `const bcrypt = require('bcrypt');` near the top of the file by the rest of the dependencies.
+
+**Note:** Be sure to submit the link to the **live demo** of your project.

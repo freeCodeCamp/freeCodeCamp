@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { Fragment } from 'react';
 import PropTypes from 'prop-types';
 import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux';
@@ -16,7 +16,6 @@ import {
 import { submitNewAbout, updateUserFlag, verifyCert } from '../redux/settings';
 import { createFlashMessage } from '../components/Flash/redux';
 
-import Layout from '../components/layouts/Default';
 import Spacer from '../components/helpers/Spacer';
 import Loader from '../components/helpers/Loader';
 import FullWidthRow from '../components/helpers/FullWidthRow';
@@ -167,11 +166,9 @@ function ShowSettings(props) {
 
   if (showLoading) {
     return (
-      <Layout>
-        <div className='loader-wrapper'>
-          <Loader />
-        </div>
-      </Layout>
+      <div className='loader-wrapper'>
+        <Loader />
+      </div>
     );
   }
 
@@ -180,7 +177,7 @@ function ShowSettings(props) {
   }
 
   return (
-    <Layout>
+    <Fragment>
       <Helmet>
         <title>Settings | freeCodeCamp.org</title>
       </Helmet>
@@ -264,7 +261,7 @@ function ShowSettings(props) {
           {/* <DangerZone /> */}
         </main>
       </Grid>
-    </Layout>
+    </Fragment>
   );
 }
 
