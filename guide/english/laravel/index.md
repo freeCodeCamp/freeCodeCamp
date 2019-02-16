@@ -61,3 +61,7 @@ However, if you are not using Homestead, you will need to make sure your server 
 - XML PHP Extension
 - Ctype PHP Extension
 - JSON PHP Extension
+
+## Get Laravel
+The latest release of Laravel is 5.7 and includes optional email verification in the authentication scaffolding. Laravel can be installed using [Composer](https://getcomposer.org/).
+
