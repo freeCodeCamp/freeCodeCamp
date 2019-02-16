@@ -23,6 +23,9 @@ before_script:
 
 jobs:
   include:
+    - stage: Lint javaScript
+      script: npm run lint
+
     - stage: Unit and Integration tests
       script: npm test
 
