@@ -134,7 +134,7 @@ header {
 }
 
 /* hits */
-.ais-Hits-item .ais-Highlight-highlighted {
+.fcc_searchBar .ais-Highlight-highlighted {
   background-color: transparent;
   font-style: normal;
   font-weight: bold;
