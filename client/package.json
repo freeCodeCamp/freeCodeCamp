@@ -22,7 +22,6 @@
     "entities": "^1.1.2",
     "enzyme": "^3.6.0",
     "enzyme-adapter-react-16": "^1.5.0",
-    "fetchr": "^0.5.37",
     "gatsby": "^2.1.2",
     "gatsby-cli": "^2.4.10",
     "gatsby-link": "^2.0.8",
