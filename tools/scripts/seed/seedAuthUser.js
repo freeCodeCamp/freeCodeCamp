@@ -5,7 +5,7 @@ const ObjectId = require('mongodb').ObjectID;
 const debug = require('debug');
 
 const log = debug('fcc:tools:seedLocalAuthUser');
-const { MONGOHQ_URL, LOCALE: lang } = process.env;
+const { MONGOHQ_URL } = process.env;
 
 function handleError(err, client) {
   if (err) {
