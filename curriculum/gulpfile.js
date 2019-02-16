@@ -16,7 +16,7 @@ function generateCurriculum(done) {
       fs.writeFile(
         `./build/curriculum-${locale}.json`,
         JSON.stringify(curriculum)
-      )
+      );
     })
     .then(done);
 }
