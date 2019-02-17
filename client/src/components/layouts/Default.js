@@ -69,9 +69,9 @@ const propTypes = {
   isOnline: PropTypes.bool.isRequired,
   isSignedIn: PropTypes.bool,
   landingPage: PropTypes.bool,
-  nonLearnPage: PropTypes.bool,
   onlineStatusChange: PropTypes.func.isRequired,
-  removeFlashMessage: PropTypes.func.isRequired
+  removeFlashMessage: PropTypes.func.isRequired,
+  showFooter: PropTypes.bool
 };
 
 const mapStateToProps = createSelector(
@@ -139,7 +139,7 @@ class DefaultLayout extends Component {
       flashMessages = [],
       removeFlashMessage,
       landingPage,
-      nonLearnPage,
+      showFooter = true,
       isOnline,
       isSignedIn
     } = this.props;
@@ -166,7 +166,7 @@ class DefaultLayout extends Component {
           ) : null}
           {children}
         </div>
-        {nonLearnPage ? (<Footer />) : null}
+        {showFooter && (<Footer />)}
       </Fragment>
     );
   }
