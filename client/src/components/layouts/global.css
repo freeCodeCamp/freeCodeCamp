@@ -33,3 +33,14 @@ h6 {
 a:hover, a:focus {
    text-decoration: none;
 }
+
+.fcc-modal {
+  background-color: #006400;
+  color: #fff;
+}
+
+.fcc-modal .close {
+  color: #fff;
+  font-size: 28px;
+  text-shadow: none;
+}

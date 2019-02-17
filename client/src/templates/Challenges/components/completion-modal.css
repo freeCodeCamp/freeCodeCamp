@@ -10,15 +10,13 @@
   width: 30vh;
 }
 
-.fcc-modal {
-  background-color: #006400;
-  color: #fff;
+.night .challenge-list-header {
+  background-color: #333;
+  border-bottom-color: #222;
 }
 
-.fcc-modal .close {
-  color: #fff;
-  font-size: 28px;
-  text-shadow: none;
+.night .challenge-success-modal .modal-content {
+  background-color: #333;
 }
 
 @media screen and (max-width: 767px) {
