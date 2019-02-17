@@ -89,6 +89,10 @@ function saveCodeEpic(action$, state$) {
 function loadCodeEpic(action$, state$) {
   return action$.pipe(
     ofType(types.challengeMounted),
+    filter(() => {
+      const files = challengeFilesSelector(state$.value);
+      return Object.keys(files).length > 0;
+    }),
     switchMap(({ payload: id }) => {
       let finalFiles;
       const state = state$.value;

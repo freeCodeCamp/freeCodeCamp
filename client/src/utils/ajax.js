@@ -1,8 +1,6 @@
 import axios from 'axios';
 
-import { apiLocation } from '../../config/env.json';
-
-const base = `${apiLocation}/internal`;
+const base = `/internal`;
 
 function get(path) {
   return axios.get(`${base}${path}`);
