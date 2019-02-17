@@ -21,6 +21,6 @@ JSONP لتقف على "JSON مع الحشو". لنفترض أنك تريد تق�
 ### معلومات اكثر:
 
 *   [Wikipidea / JSONP](https://en.wikipedia.org/wiki/JSONP)
-*   [JSONP و JQuery](https://learn.jquery.com/ajax/working-with-jsonp)
-*   [أكثر JSONP مع JQuery](http://api.jquery.com/jquery.getjson/#jsonp)
+*   [JSONP و jQuery](https://learn.jquery.com/ajax/working-with-jsonp)
+*   [أكثر JSONP مع jQuery](http://api.jquery.com/jquery.getjson/#jsonp)
 *   [Ajax و JSONP](http://stackoverflow.com/questions/5943630/basic-example-of-using-ajax-with-jsonp)

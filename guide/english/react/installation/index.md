@@ -11,9 +11,8 @@ For a quick and easy method of adding React to your website you could just embed
 <script crossorigin src="https://unpkg.com/react-dom@16/umd/react-dom.production.min.js"></script>
 ```
 
-How ever with the above approach you may feel limited in how far you can take React. This is where the use of toolchain is the preferred approach.
+However, with the above approach, you may feel limited in how far you can take React. This is where the use of toolchain is the preferred approach, with the more practical and productive [Create React App](https://github.com/facebookincubator/create-react-app):
 
-For user learning React, it is generally recommended to use the beginner friendly [Create React App](https://github.com/facebookincubator/create-react-app)
 ```bash
 npx create-react-app my-app
 cd my-app
@@ -22,11 +21,30 @@ npm start
 
 This will set up your development environment so that you can use the latest JavaScript features, provide a great developer experience, and optimize your application for production.
 
-`npm start` will start up a development server which allows live reloading.
+Another option is using the package `npx` which doesn't require you to install the package `create-react-app` before using it. So you can use it without installing it which is helpful for the future not to have too many packages installed on your machine
+```
+npm install -g npx
+npx create-react-app my-app
+```
 
-After you finish your project and are ready to deploy your application to production, you can just use `npm run build` to create an optimized build of your app in the `build` folder.
+This will set up your development environment so that you can use the latest JavaScript features, provide a nice developer experience, and optimize your app for production:
+
+- `npm start` will start up a development server which allows live reloading.
+
+- After you finish your project and are ready to deploy your application to production, you can just use `npm run build` to create an optimized build of your app in the `build` folder.
+
 
 You can find more toolchains which support server-rendered website or static content-oriented website at [Create a New React App](https://reactjs.org/docs/create-a-new-react-app.html).
 
+
+#### Sources
+[1. The React tutorial on installing](https://reactjs.org/docs/installation.html)
+
+[2. Link to the React minimal JavaScript library on cdnjs.org](https://cdnjs.com/libraries/react)
+
+[3. npm start command](https://docs.npmjs.com/cli/start)
+
+
 #### More Information
 - [Getting Started - React Official Site](https://reactjs.org/docs/getting-started.html)
+- [Create React App repository](https://github.com/facebookincubator/create-react-app#create-react-app-)
