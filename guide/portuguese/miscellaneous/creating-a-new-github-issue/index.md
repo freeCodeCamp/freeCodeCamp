@@ -1,12 +1,12 @@
 ---
-title: Creating a New Github Issue
-localeTitle: Criando um novo problema no Github
+title: Creating a New GitHub Issue
+localeTitle: Criando um novo problema no GitHub
 ---
-Antes de enviar um problema, tente [pesquisar seu problema no Github](https://forum.freecodecamp.com/t/searching-for-existing-issues-in-github/18390)
+Antes de enviar um problema, tente [pesquisar seu problema no GitHub](https://forum.freecodecamp.com/t/searching-for-existing-issues-in-github/18390)
 
 Elaborar um bom problema tornará muito mais fácil para a equipe de desenvolvimento replicar e resolver seu problema. Siga estas etapas para fazer isso da maneira certa:
 
-1.  Vá para a página de [problemas](https://github.com/FreeCodeCamp/FreeCodeCamp/issues) do [Github](https://github.com/FreeCodeCamp/FreeCodeCamp/issues) do FreeCodeCamp e clique em `New Issue` .
+1.  Vá para a página de [problemas](https://github.com/FreeCodeCamp/FreeCodeCamp/issues) do [GitHub](https://github.com/FreeCodeCamp/FreeCodeCamp/issues) do FreeCodeCamp e clique em `New Issue` .
     
 2.  **Tem um título útil**
     
