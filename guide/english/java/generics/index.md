@@ -141,7 +141,7 @@ At execution time, a List<String> and a List<Date> are exactly the same the extr
 
 Type variables need to be typed twice: once while declaring the data type, and once while calling the constructor. This can get quite unsightly, and a better way was introduced in Java SE 7 - the diamond operator (<>). The diamond operator replaces the repetiton in type variables while calling the constructor by replacing them with <>, and the compiler infers the type from the type of the variable the object is being assigned to.
 
-Something like 
+For example
 ```java
 ArrayList<Integer> a = new ArrayList<Integer>();
 HashMap<Integer, String> hm = new HashMap<Integer, String>(); 
