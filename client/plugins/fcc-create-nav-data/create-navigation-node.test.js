@@ -12,7 +12,7 @@ describe('fcc-create-nav-data', () => {
           " <a href='https://github.com/freeCodeCamp/guides/tree/master/src/" +
           "pages/php/functions/files/writing/index.md' target='_blank' " +
           "rel='nofollow'>Help our community expand it</a>.\n\n<a href=" +
-          "'https://github.com/freeCodeCamp/guides/blob/master/README.md' " +
+          "'https://github.com/freeCodeCamp/freeCodeCamp/blob/master/docs/style-guide-for-guide-articles.md' " +
           "target='_blank' rel='nofollow'>This quick style guide will help " +
           'ensure your pull request gets accepted</a>.\n\n<!-- The article ' +
           'goes here, in GitHub-flavored Markdown. Feel free to add YouTube ' +
