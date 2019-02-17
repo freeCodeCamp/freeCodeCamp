@@ -27,5 +27,5 @@ end
 للذهاب خطوة أخرى ، يمكننا كتابة الحلقة أعلاه بالطريقة التالية:
 
 ```
-array.each do { |element| puts element }
+array.each do |element| puts element end
 ```
