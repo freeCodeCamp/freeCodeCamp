@@ -15,6 +15,8 @@ Here's an example to scale the paragraph elements to 2.1 times their original si
 ## Instructions
 <section id='instructions'>
 Add a CSS rule for the <code>hover</code> state of the <code>div</code> and use the <code>transform</code> property to scale the <code>div</code> element to 1.1 times its original size when a user hovers over it.
+  
+  **NOTE:** Applying a transform to a <code>div</div> element will also affect any child elements contained in the div.
 </section>
 
 ## Tests
