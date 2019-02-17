@@ -24,6 +24,6 @@ Esto lograría exactamente los mismos resultados que el bucle anterior, sin emba
 
 Para ir un paso más allá, podemos escribir el bucle anterior de la siguiente manera:
 ```
-array.each do { |element| puts element }
+array.each do |element| puts element end
 
 ```
