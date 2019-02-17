@@ -30,28 +30,20 @@ export const wrapPageElement = ({ element, props }) => {
   } = props;
   if (pathname === '/') {
     return (
-      <DefaultLayout
-        disableSettings={true}
-        landingPage={true}
-        nonLearnPage={true}
-        >
+      <DefaultLayout disableSettings={true} landingPage={true}>
         {element}
       </DefaultLayout>
     );
   }
   if ((/^\/guide(\/.*)*/).test(pathname)) {
     return (
-      <DefaultLayout nonLearnPage={true}>
+      <DefaultLayout>
         <GuideLayout>{element}</GuideLayout>
       </DefaultLayout>
     );
   }
-  if (false === (/^\/learn(\/.*)*/).test(pathname)) {
-    return (
-      <DefaultLayout nonLearnPage={true}>
-        {element}
-      </DefaultLayout>
-    );
+  if ((/^\/learn(\/.*)*/).test(pathname)) {
+    return <DefaultLayout showFooter={false}>{element}</DefaultLayout>;
   }
   return <DefaultLayout>{element}</DefaultLayout>;
 };
