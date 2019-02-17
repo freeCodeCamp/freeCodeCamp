@@ -64,7 +64,7 @@ tests:
   </main>
 
 
-  <div>2018 Camper Cat</div>
+  <div>© 2018 Camper Cat</div>
 
 
 </body>
