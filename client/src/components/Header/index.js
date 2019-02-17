@@ -58,7 +58,7 @@ class Header extends Component {
           {disableSettings ? null : <FCCSearch />}
           <ul id='top-right-nav'>
             <li>
-              <Link to='/learn'>Curriculum</Link>
+              <Link to='/learn'>Learn</Link>
             </li>
             <li>
               <a href='/forum' rel='noopener noreferrer' target='_blank'>
