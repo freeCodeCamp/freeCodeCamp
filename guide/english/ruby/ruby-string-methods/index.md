@@ -2,11 +2,11 @@
 title: Ruby String Methods
 ---
 ## Ruby String Methods
-Ruby has many built in methods to work with strings. Strings in Ruby by default are mutable and can be changed in place or a new string can be returned from a method.
+Ruby has many built-in methods to work with strings. Strings in Ruby by default are mutable and can be changed in place or a new string can be returned from a method.
 
 ### Length:
 
-*   The `.length` property returns the number of characters in a string including white-space.
+*   The `.length` method returns the number of characters in a string including white-space.
     ```ruby
     "Hello".length #=> 5
     "Hello World!".length #=> 12
@@ -24,7 +24,7 @@ Ruby has many built in methods to work with strings. Strings in Ruby by default 
     
 ### Count:
 
-*   The `.count` method counts how many times a specific character(s) is found in a string.
+*   The `.count` method counts how many times a specific character(s) is found in a string. 
 *   This method is case-sensitive.
     ```ruby
     "HELLO".count('L') #=> 2
