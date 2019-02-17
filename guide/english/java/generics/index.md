@@ -142,7 +142,7 @@ public class GenericsErasure
 
 When you compile some code against a generic type or method, the compiler works out what you really mean (i.e. what the type argument for T is) 
 and verifies at compile time that you're doing the right thing, but the emitted code again just talks in terms of java.lang.Object - the compiler generates extra casts where necessary. 
-At execution time, a List<String> and a List<Date> are exactly the same the extra type information has been erased by the compiler.
+At execution time, a List&lt;String&gt; and a List&lt;Date&gt; are exactly the same the extra type information has been erased by the compiler.
 
 ## The Diamond Operator (<>)
 
