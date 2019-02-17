@@ -8,7 +8,7 @@ By definition, JavaScript is an high-level iterpreted language. This means it is
 
 JavaScript is the core language of the web and the only programming language that can run in all major web browsers.
 
-Notably, JavaScript has no relation to Java. [JavaScript: The World's Most Misunderstood Programming Language](http://www.crockford.com/javascript/javascript.html)
+Notably, JavaScript has no relation to Java. [JavaScript: The World's Most Misunderstood Programming Language](http://www.crockford.com/javascript/javascript.html) by Douglas Crockford explains more about what Javascript is and how it is not related to Java.
 
 The official name of JavaScript is ECMAScript defined under Standard [ECMA-262](https://www.ecma-international.org/publications/standards/Ecma-262.htm) ECMAScript 6th edition (ES6) added "significant new syntax for writing complex applications, including classes and modules" (Wikipedia) including arrow functions and promises.
 
