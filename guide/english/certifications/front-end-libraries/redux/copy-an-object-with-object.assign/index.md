@@ -12,7 +12,14 @@ Use the method ```Object.assign({}, obj1, obj2)``` in return. Pass ```state``` a
 The obj2 should be the updated ```{key: value}``` pair of your state.
 
 ### Solution
-```javascript
+```
+const defaultState = {
+  user: 'CamperBot',
+  status: 'offline',
+  friends: '732,982',
+  community: 'freeCodeCamp'
+};
+
 const immutableReducer = (state = defaultState, action) => {
   switch(action.type) {
     case 'ONLINE':
@@ -22,5 +29,13 @@ const immutableReducer = (state = defaultState, action) => {
       return state;
   }
 };
+
+const wakeUp = () => {
+  return {
+    type: 'ONLINE'
+  }
+};
+
+const store = Redux.createStore(immutableReducer);
 ```
 <!-- The article goes here, in GitHub-flavored Markdown. Feel free to add YouTube videos, images, and CodePen/JSBin embeds  -->
