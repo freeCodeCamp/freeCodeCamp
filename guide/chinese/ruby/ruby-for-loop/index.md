@@ -24,6 +24,6 @@ array.each do |element|
 
 为了更进一步，我们可以通过以下方式编写上述循环：
 ```
-array.each do { |element| puts element }
+array.each do |element| puts element end
 
 ```
