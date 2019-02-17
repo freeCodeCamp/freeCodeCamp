@@ -47,7 +47,7 @@ The element to collapse must contain the class `.collapse`.
 </div>
 
 ```
-In the example above we use a button and an anchor tag to control a div element. The button and anchor which are the controlling elements need two things, an attribute to specify that the controlling element is for collapsing and another attribute to specify which element it controls (hides or reveals). 
+In the example above, we use a button and an anchor tag to control a div element. The button and anchor which are the controlling elements need two things, an attribute to specify that the controlling element is for collapsing and another attribute to specify which element it controls (hides or reveals). 
 
 They both have a *data-toggle* attribute with the value *collapse* which specify that they are to be used for collapsing an element. The anchor tag uses a *href* attribute to specify the element it controls, while the button uses a *data-target* attribute to specify the element it controls. 
 
