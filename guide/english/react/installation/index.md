@@ -3,7 +3,7 @@ title: Installation
 ---
 
 ## Installing React
-There are several different methods to get started with using React. It will depend on the web application size, complexity, and environment to determine the exact approach that is best for you.
+There are several different methods to get started with using React<sup>1</sup>. It will depend on the web application size, complexity, and environment to determine the exact approach that is best for you.
 
 For a quick and easy method of adding React to your website you could just embed the React library in your website using a `<script>` tag.
 ```html
@@ -21,13 +21,12 @@ npm start
 
 This will set up your development environment so that you can use the latest JavaScript features, provide a great developer experience, and optimize your application for production.
 
-Another option is using the package `npx` which doesn't require you to install the package `create-react-app` before using it. So you can use it without installing it which is helpful for the future not to have too many packages installed on your machine
-```
+Another option is using the package `npx` which doesn't require you to install the package `create-react-app` before using it. So you can use it without installing it which is helpful for the future not to have too many packages installed on your machine.
+
+```bash
 npm install -g npx
 npx create-react-app my-app
 ```
-
-This will set up your development environment so that you can use the latest JavaScript features, provide a nice developer experience, and optimize your app for production:
 
 - `npm start` will start up a development server which allows live reloading.
 
@@ -40,11 +39,7 @@ You can find more toolchains which support server-rendered website or static con
 #### Sources
 [1. The React tutorial on installing](https://reactjs.org/docs/installation.html)
 
-[2. Link to the React minimal JavaScript library on cdnjs.org](https://cdnjs.com/libraries/react)
-
-[3. npm start command](https://docs.npmjs.com/cli/start)
-
-
 #### More Information
 - [Getting Started - React Official Site](https://reactjs.org/docs/getting-started.html)
 - [Create React App repository](https://github.com/facebookincubator/create-react-app#create-react-app-)
+- [npm start command](https://docs.npmjs.com/cli/start)
