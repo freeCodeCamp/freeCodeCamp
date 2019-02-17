@@ -24,7 +24,7 @@ Ruby has many built-in methods to work with strings. Strings in Ruby by default 
     
 ### Count:
 
-*   The `.count` method counts how many times a specific character(s) is found in a string. This method needs an argument as well.
+*   The `.count` method counts how many times a specific character(s) is found in a string. 
 *   This method is case-sensitive.
     ```ruby
     "HELLO".count('L') #=> 2
