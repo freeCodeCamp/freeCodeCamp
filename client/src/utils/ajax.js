@@ -1,6 +1,6 @@
 import axios from 'axios';
 
-const base = '/internal';
+const base = `/internal`;
 
 function get(path) {
   return axios.get(`${base}${path}`);
@@ -24,6 +24,14 @@ export function getSessionUser() {
   return get('/user/get-session-user');
 }
 
+export function getIdToNameMap() {
+  return get('/api/challenges/get-id-to-name');
+}
+
+export function getUserProfile(username) {
+  return get(`/api/users/get-public-profile?username=${username}`);
+}
+
 export function getShowCert(username, cert) {
   return get(`/certificate/showCert/${username}/${cert}`);
 }
@@ -32,7 +40,12 @@ export function getUsernameExists(username) {
   return get(`/api/users/exists?username=${username}`);
 }
 
+export function getArticleById(shortId) {
+  return get(`/n/${shortId}`);
+}
+
 /** POST **/
+
 
 export function postReportUser(body) {
   return post('/user/report-user', body);

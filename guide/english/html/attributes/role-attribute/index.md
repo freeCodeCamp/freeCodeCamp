@@ -3,7 +3,7 @@ title: Role Attribute
 ---
 ## Role Attribute
 
-The `role` attribute, describes the role of an element to programs that can make use of it, such as screen readers or magnifiers.
+The `role` attribute describes the role of an element to programs that can make use of it, such as screen readers or magnifiers.
 
 Usage Example: 
 ```html
@@ -17,4 +17,4 @@ There are four categories of roles:
 - Document Structure Roles
 - Landmark Roles
 
-For full list of existing roles, refer to [aria roles documentation](https://www.w3.org/TR/wai-aria/roles).
+For the full list of existing roles, refer to [aria roles documentation](https://www.w3.org/TR/wai-aria/roles).
