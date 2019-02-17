@@ -52,7 +52,7 @@ public class Example {
 }
 ```
 
-The syntax to create your own Generic class would be as follows.
+**The syntax to create your own Generic class would be as follows.**
 
 ```java
 import java.util.ArrayList;
@@ -80,6 +80,14 @@ you want. For example, if you wanted to make sure the type can be read as a form
 Note that the letter `T` is a placeholder, you could make that anything you like, as long as you use the same one 
 throughout the class.
 
+**The syntax to create your own Generic methods would be as follows.**
+```java
+public class GenericMethod {
+	public static <T> void printObject(T t){
+		System.out.println(t.toString());
+	}
+}
+```
 
 ## Type Erasure in Java Generics
 
@@ -135,7 +143,6 @@ public class GenericsErasure
 When you compile some code against a generic type or method, the compiler works out what you really mean (i.e. what the type argument for T is) 
 and verifies at compile time that you're doing the right thing, but the emitted code again just talks in terms of java.lang.Object - the compiler generates extra casts where necessary. 
 At execution time, a List<String> and a List<Date> are exactly the same the extra type information has been erased by the compiler.
-  
 
 ## The Diamond Operator (<>)
 
