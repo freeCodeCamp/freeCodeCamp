@@ -24,6 +24,6 @@ Isso alcançaria exatamente os mesmos resultados que o loop for mencionado anter
 
 Para ir além, podemos escrever o loop acima da seguinte maneira:
 ```
-array.each do { |element| puts element }
+array.each do |element| puts element end
 
 ```
