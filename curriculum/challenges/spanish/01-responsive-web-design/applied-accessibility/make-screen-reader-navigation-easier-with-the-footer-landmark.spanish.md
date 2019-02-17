@@ -39,7 +39,7 @@ tests:
     <h1>Entrenamiento</h1>
     <nav>
       <ul>
-        <li><a href="#stealth">Sigilio & Agilidad</a></li>
+        <li><a href="#stealth">Sigilo & Agilidad</a></li>
         <li><a href="#combat">Combate</a></li>
         <li><a href="#weapons">Armas</a></li>
       </ul>
@@ -47,7 +47,7 @@ tests:
   </header>
   <main>
     <section id="stealth">
-      <h2>Entrenamiento de Agilidad y Sigilio</h2>
+      <h2>Entrenamiento de Agilidad y Sigilo</h2>
       <article><h3>Escale el follaje rápidamente usando un enfoque de árbol de expansión mínimo</h3></article>
       <article><h3>Ningún entrenamiento está completo sin parkour.</h3></article>
     </section>
