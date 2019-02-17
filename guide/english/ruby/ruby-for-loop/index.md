@@ -27,5 +27,5 @@ This would achieve exactly the same results as the aforementioned for loop, it i
 To go one step further, we can write the above loop in the following way:
 
 ```
-array.each do { |element| puts element }
+array.each do |element| puts element end
 ```
