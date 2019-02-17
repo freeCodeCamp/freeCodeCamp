@@ -9,7 +9,6 @@ import Spacer from '../helpers/Spacer';
 
 import 'prismjs/themes/prism.css';
 import './guide.css';
-import Footer from '../Footer';
 
 const propTypes = {
   children: PropTypes.any,
