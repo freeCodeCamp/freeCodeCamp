@@ -32,6 +32,15 @@ console.log(firstName, lastName); // John Smith
 
 The examples above show the benefit of using the ES6 Destructuring Assignment.
 
+You can skip some values by putting comma
+
+```javascript
+const address = ['Rue Cler', 'Paris', 'France'];
+const [street, , country] = address;
+or
+const [street] = address;
+```
+
 You can also use Destructuring on objects using a similar syntax
 
 ```js
