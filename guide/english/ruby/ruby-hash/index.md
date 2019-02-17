@@ -34,7 +34,7 @@ You can check how many elements a hash has with the `length` method:
 my_hash.length # 2
 ```
 
-You can iterate through a hash in the following way.
+You can iterate through a hash using the `.each` method:
 
 ```ruby
 my_hash = {:key1 => 100, :key2 => 200, :key3 => 300}
