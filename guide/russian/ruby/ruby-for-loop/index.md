@@ -24,6 +24,6 @@ array.each do |element|
 
 Чтобы сделать еще один шаг, мы можем написать вышеприведенный цикл следующим образом:
 ```
-array.each do { |element| puts element }
+array.each do |element| puts element end
 
 ```
