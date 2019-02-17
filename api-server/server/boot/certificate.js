@@ -289,12 +289,12 @@ function createVerifyCert(certTypeIds, app) {
           // sends notification email is user has all 6 certs
           // if not it noop
           sendCertifiedEmail(user, Email.send$),
-          ({ count }, pledgeOrMessage) => ({ count, pledgeOrMessage })
-        ).map(({ count, pledgeOrMessage }) => {
+          (_, pledgeOrMessage) => ({ pledgeOrMessage })
+        ).map(({ pledgeOrMessage }) => {
           if (typeof pledgeOrMessage === 'string') {
             log(pledgeOrMessage);
           }
-          log(`${count} documents updated`);
+          log('Certificates updated');
           return successMessage(user.username, certName);
         });
       })
