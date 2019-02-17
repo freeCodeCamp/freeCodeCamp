@@ -4,9 +4,9 @@ title: Ruby For Loops
 
 ## Ruby For Loops
 
-Ruby for loops are used to loop or iterate over a number of elements and execute of block of code for each element. For loops are often used on arrays. See section on <a href='https://github.com/freeCodeCamp/guides/blob/master/src/pages/ruby/ruby-arrays/index.md' target='_blank' rel='nofollow'>Ruby Arrays</a>.
+Ruby `for` loops are used to loop or iterate over a number of elements and execute a block of code for each element. For loops are often used on arrays. See section on <a href='https://github.com/freeCodeCamp/guides/blob/master/src/pages/ruby/ruby-arrays/index.md' target='_blank' rel='nofollow'>Ruby Arrays</a>.
 
-For loops are merely one example of looping or iterating over elements. Below is an example of a for loop:
+The `for` loop is merely one example of looping or iterating over elements. Below is an example of a for loop:
 
 ```
 for element in array do
