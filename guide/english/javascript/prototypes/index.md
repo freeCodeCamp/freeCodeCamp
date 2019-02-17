@@ -75,7 +75,7 @@ Object.setPrototypeOf(apple, pear)
 Object.setPrototypeOf(pear, carrot)
 Object.setPrototypeOf(carrot, apple) // ERROR!
 ```
-This wil cause the javascript engine to throw an `Cyclic` error.
+This wil cause the javascript engine to throw a `TypeError: Cyclic __proto__ value` error.
 
 The reasoning behind this is that the engine does not know which object is more "senior" when passing through the chain.
 
