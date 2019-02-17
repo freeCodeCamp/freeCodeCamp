@@ -3,6 +3,7 @@ id: 56533eb9ac21ba0edf2244cd
 title: Accessing Nested Arrays
 challengeType: 1
 guideUrl: 'https://www.freecodecamp.org/guide/certificates/access-array-data-with-indexes'
+videoUrl: 'https://scrimba.com/c/cLeGDtZ'
 ---
 
 ## Description

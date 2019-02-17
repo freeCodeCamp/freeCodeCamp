@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React, { Component, Fragment } from 'react';
 import PropTypes from 'prop-types';
 import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux';
@@ -12,12 +12,11 @@ import {
   Checkbox
 } from '@freecodecamp/react-bootstrap';
 import Helmet from 'react-helmet';
+import { createSelector } from 'reselect';
 
-import Layout from '../components/layouts/Default';
 import { ButtonSpacer, Spacer } from '../components/helpers';
 import { acceptTerms, userSelector } from '../redux';
-import { createSelector } from 'reselect';
-import { navigate } from 'gatsby';
+import createRedirect from '../components/createRedirect';
 
 const propTypes = {
   acceptTerms: PropTypes.func.isRequired,
@@ -33,6 +32,7 @@ const mapStateToProps = createSelector(
 );
 const mapDispatchToProps = dispatch =>
   bindActionCreators({ acceptTerms }, dispatch);
+const RedirectWelcome = createRedirect('/welcome');
 
 class AcceptPrivacyTerms extends Component {
   constructor(props) {
@@ -66,12 +66,11 @@ class AcceptPrivacyTerms extends Component {
   render() {
     const { acceptedPrivacyTerms } = this.props;
     if (acceptedPrivacyTerms) {
-      navigate('/welcome');
-      return null;
+      return <RedirectWelcome />;
     }
     const { privacyPolicy, termsOfService, quincyEmail } = this.state;
     return (
-      <Layout>
+      <Fragment>
         <Helmet>
           <title>Privacy Policy and Terms of Service | freeCodeCamp.org</title>
         </Helmet>
@@ -165,7 +164,7 @@ class AcceptPrivacyTerms extends Component {
             </Col>
           </Row>
         </Grid>
-      </Layout>
+      </Fragment>
     );
   }
 }
