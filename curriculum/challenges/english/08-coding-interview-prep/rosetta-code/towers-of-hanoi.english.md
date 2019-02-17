@@ -30,15 +30,15 @@ disc from stack B to A.
 ```yml
 tests:
   - text: <code>towerOfHanoi</code> is a function.
-    testString: 'assert(typeof towerOfHanoi === "function", "<code>towerOfHanoi</code> is a function.");'
-  - text: '<code>towerOfHanoi(3, ...)</code> should return 7 moves.'
-    testString: 'assert(res3.length === 7, "<code>towerOfHanoi(3, ...)</code> should return 7 moves.");'
-  - text: '<code>towerOfHanoi(3, "A", "B", "C")</code> should return [["A","B"],["A","C"],["B","C"],["A","B"],["C","A"],["C","B"],["A","B"]].")'
-    testString: 'assert.deepEqual(towerOfHanoi(3, "A", "B", "C"), res3Moves, "<code>towerOfHanoi(3, "A", "B", "C")</code> should return [["A","B"],["A","C"],["B","C"],["A","B"],["C","A"],["C","B"],["A","B"]].");'
-  - text: '<code>towerOfHanoi(5, "X", "Y", "Z")</code> 10th move should be Y -> X.'
-    testString: 'assert.deepEqual(res5[9], ["Y", "X"], "<code>towerOfHanoi(5, "X", "Y", "Z")</code> 10th move should be Y -> X.");'
-  - text: '<code>towerOfHanoi(7, "A", "B", "C")</code> first ten moves are [["A","B"],["A","C"],["B","C"],["A","B"],["C","A"],["C","B"],["A","B"],["A","C"],["B","C"],["B","A"]].")'
-    testString: 'assert.deepEqual(towerOfHanoi(7, "A", "B", "C").slice(0, 10), res7First10Moves, "<code>towerOfHanoi(7, "A", "B", "C")</code> first ten moves are [["A","B"],["A","C"],["B","C"],["A","B"],["C","A"],["C","B"],["A","B"],["A","C"],["B","C"],["B","A"]].");'
+    testString: assert(typeof towerOfHanoi === 'function', '<code>towerOfHanoi</code> is a function.');
+  - text: <code>towerOfHanoi(3, ...)</code> should return 7 moves.
+    testString: assert(res3.length === 7, '<code>towerOfHanoi(3, ...)</code> should return 7 moves.');
+  - text: <code>towerOfHanoi(3, 'A', 'B', 'C')</code> should return [['A','B'],['A','C'],['B','C'],['A','B'],['C','A'],['C','B'],['A','B']].")
+    testString: assert.deepEqual(towerOfHanoi(3, 'A', 'B', 'C'), res3Moves, "<code>towerOfHanoi(3, 'A', 'B', 'C')</code> should return [['A','B'],['A','C'],['B','C'],['A','B'],['C','A'],['C','B'],['A','B']].");
+  - text: <code>towerOfHanoi(5, "X", "Y", "Z")</code> 10th move should be Y -> X.
+    testString: assert.deepEqual(res5[9], ['Y', 'X'], '<code>towerOfHanoi(5, "X", "Y", "Z")</code> 10th move should be Y -> X.');
+  - text: <code>towerOfHanoi(7, 'A', 'B', 'C')</code> first ten moves are [['A','B'],['A','C'],['B','C'],['A','B'],['C','A'],['C','B'],['A','B'],['A','C'],['B','C'],['B','A']].")
+    testString: assert.deepEqual(towerOfHanoi(7, 'A', 'B', 'C').slice(0, 10), res7First10Moves, "<code>towerOfHanoi(7, 'A', 'B', 'C')</code> first ten moves are [['A','B'],['A','C'],['B','C'],['A','B'],['C','A'],['C','B'],['A','B'],['A','C'],['B','C'],['B','A']].");
 
 ```
 
@@ -63,7 +63,10 @@ function towerOfHanoi (n, a, b, c) {
 <div id='js-teardown'>
 
 ```js
-console.info('after the test');
+const res3 = towerOfHanoi(3, 'A', 'B', 'C');
+const res3Moves = [['A', 'B'], ['A', 'C'], ['B', 'C'], ['A', 'B'], ['C', 'A'], ['C', 'B'], ['A', 'B']];
+const res5 = towerOfHanoi(5, 'X', 'Y', 'Z');
+const res7First10Moves = [['A', 'B'], ['A', 'C'], ['B', 'C'], ['A', 'B'], ['C', 'A'], ['C', 'B'], ['A', 'B'], ['A', 'C'], ['B', 'C'], ['B', 'A']];
 ```
 
 </div>

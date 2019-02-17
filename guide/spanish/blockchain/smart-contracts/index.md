@@ -1,5 +1,6 @@
+---
 title: Smart Contracts
-localeTitle: undefined
+localeTitle: Smaft Contracts
 ---
 ## Contratos inteligentes
 

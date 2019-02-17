@@ -2,6 +2,7 @@
 id: 56533eb9ac21ba0edf2244a8
 title: Storing Values with the Assignment Operator
 challengeType: 1
+videoUrl: 'https://scrimba.com/c/cEanysE'
 ---
 
 ## Description
@@ -26,13 +27,13 @@ Assign the contents of <code>a</code> to variable <code>b</code>.
 ```yml
 tests:
   - text: Do not change code above the line
-    testString: 'assert(/var a;/.test(code) && /var b = 2;/.test(code), "Do not change code above the line");'
+    testString: assert(/var a;/.test(code) && /var b = 2;/.test(code), 'Do not change code above the line');
   - text: <code>a</code> should have a value of 7
-    testString: 'assert(typeof a === "number" && a === 7, "<code>a</code> should have a value of 7");'
+    testString: assert(typeof a === 'number' && a === 7, '<code>a</code> should have a value of 7');
   - text: <code>b</code> should have a value of 7
-    testString: 'assert(typeof b === "number" && b === 7, "<code>b</code> should have a value of 7");'
+    testString: assert(typeof b === 'number' && b === 7, '<code>b</code> should have a value of 7');
   - text: <code>a</code> should be assigned to <code>b</code> with <code>=</code>
-    testString: 'assert(/b\s*=\s*a\s*;/g.test(code), "<code>a</code> should be assigned to <code>b</code> with <code>=</code>");'
+    testString: assert(/b\s*=\s*a\s*;/g.test(code), '<code>a</code> should be assigned to <code>b</code> with <code>=</code>');
 
 ```
 
@@ -72,7 +73,7 @@ if (typeof b != 'undefined') {
 <div id='js-teardown'>
 
 ```js
-console.info('after the test');
+(function(a,b){return "a = " + a + ", b = " + b;})(a,b);
 ```
 
 </div>

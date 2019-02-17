@@ -5,9 +5,9 @@ title: Interaction Design
 
 ## What is Interaction Design? 
 
-Interaction Design, often abbreviated as IxD is concerned with the practice of designing interactive digital products such as websites, apps, softwares systems, and/or services. However, Interaction Design also comes handy when designing non-digital products. Interaction Design mainly focuses on behavior. 
+Interaction Design, often abbreviated as IxD is concerned with the practice of designing interactive digital products such as websites, apps, software systems, and/or services. However, Interaction Design also comes in handy when designing non-digital products. Interaction Design mainly focuses on behavior. 
 
-Below are five distinct charecteristics of Interaction Design as defined by the eminent industrial designer and IDEO founder – Bill Moggridge (Shared from Interaction Design Foundation – IDF):
+Below are five distinct characteristics of Interaction Design as defined by the eminent industrial designer and IDEO founder – Bill Moggridge (Shared from Interaction Design Foundation – IDF):
 
 ## 1.	Design involves changing situations by shaping and deploying artifacts
 Design is about transformation and the means available for the designer to bring the change in a particular situation is ultimately the designed artifact.

@@ -6,6 +6,7 @@ title: Background Size
 The background-size property specifies the size of the background images. You can set a length or a percentage, with the first value being the width and the second one being the height. You can also use one of the 5 keyword values:
 
 ```css
+/* Background size property values that can be used */
 .auto {background-size: auto;}
 .cover {background-size: cover;}
 .contain {background-size: contain;}
@@ -19,11 +20,12 @@ The background-size property specifies the size of the background images. You ca
 Note: If using pixel or percentage for length and you only specify one value, 
 the second one will be set to auto by default.
 
-To set this property on multiple background images separate values by comma:
+To set this property on multiple background images, separate the values by a comma:
 ```css
 .multiple {
-    background-image: url(1.png), url(2.png);
-    background-size: 3px 3px, cover;
+  background-image: url(1.png), url(2.png);
+  background-size: 3px 3px, cover;
+  /* first image is 3x3 px, second image covers the whole area */
 }
 ```
 

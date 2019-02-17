@@ -13,7 +13,7 @@ You may have already noticed this, but all HTML elements are essentially little 
 Three important properties control the space that surrounds each HTML element: <code>padding</code>, <code>margin</code>, and <code>border</code>.
 An element's <code>padding</code> controls the amount of space between the element's content and its <code>border</code>.
 Here, we can see that the blue box and the red box are nested within the yellow box. Note that the red box has more <code>padding</code> than the blue box.
-When you increase the blue box's <code>padding</code>, it will increase the distance(<code>padding</code>) between the text and the border around it.
+When you increase the blue box's <code>padding</code>, it will increase the distance (<code>padding</code>) between the text and the border around it.
 </section>
 
 ## Instructions
@@ -27,7 +27,7 @@ Change the <code>padding</code> of your blue box to match that of your red box.
 ```yml
 tests:
   - text: Your <code>blue-box</code> class should give elements <code>20px</code> of <code>padding</code>.
-    testString: 'assert($(".blue-box").css("padding-top") === "20px", "Your <code>blue-box</code> class should give elements <code>20px</code> of <code>padding</code>.");'
+    testString: assert($(".blue-box").css("padding-top") === "20px", 'Your <code>blue-box</code> class should give elements <code>20px</code> of <code>padding</code>.');
 
 ```
 

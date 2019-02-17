@@ -31,15 +31,15 @@ An <code>h1</code>, a <code>p</code>, and an unordered list that contains three 
 ```yml
 tests:
   - text: The constant <code>JSX</code> should return a <code>div</code> element.
-    testString: 'assert(JSX.type === "div", "The constant <code>JSX</code> should return a <code>div</code> element.");'
+    testString: assert(JSX.type === 'div', 'The constant <code>JSX</code> should return a <code>div</code> element.');
   - text: The <code>div</code> should contain a <code>p</code> tag as the second element.
-    testString: 'assert(JSX.props.children[1].type === "p", "The <code>div</code> should contain a <code>p</code> tag as the second element.");'
+    testString: assert(JSX.props.children[1].type === 'p', 'The <code>div</code> should contain a <code>p</code> tag as the second element.');
   - text: The <code>div</code> should contain a <code>ul</code> tag as the third element.
-    testString: 'assert(JSX.props.children[2].type === "ul", "The <code>div</code> should contain a <code>ul</code> tag as the third element.");'
+    testString: assert(JSX.props.children[2].type === 'ul', 'The <code>div</code> should contain a <code>ul</code> tag as the third element.');
   - text: The <code>div</code> should contain an <code>h1</code> tag as the first element.
-    testString: 'assert(JSX.props.children[0].type === "h1", "The <code>div</code> should contain an <code>h1</code> tag as the first element.");'
+    testString: assert(JSX.props.children[0].type === 'h1', 'The <code>div</code> should contain an <code>h1</code> tag as the first element.');
   - text: The <code>ul</code> should contain three <code>li</code> elements.
-    testString: 'assert(JSX.props.children[2].props.children.length === 3, "The <code>ul</code> should contain three <code>li</code> elements.");'
+    testString: assert(JSX.props.children[2].props.children.length === 3, 'The <code>ul</code> should contain three <code>li</code> elements.');
 
 ```
 
@@ -62,7 +62,7 @@ tests:
 <div id='jsx-teardown'>
 
 ```js
-console.info('after the test');
+ReactDOM.render(JSX, document.getElementById('root'))
 ```
 
 </div>

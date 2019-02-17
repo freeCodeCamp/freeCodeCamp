@@ -1,5 +1,5 @@
 ---
-title: Searching for Existing Issues in Github
+title: Searching for Existing Issues in GitHub
 localeTitle: 在Github中搜索现有问题
 ---
 如果在获得Gitter帮助后仍然看到问题，您将需要尝试查看是否有其他人发布了类似问题。
