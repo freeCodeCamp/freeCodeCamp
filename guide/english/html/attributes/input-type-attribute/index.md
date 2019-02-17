@@ -82,6 +82,14 @@ Displays the reset button. The text which should be displayed in the button is i
       <input type="reset" value="CANCEL">
     </form>
 ```
+### color
+Allows color input through a color picker. The color which should be displayed by default in the box is in the `value` attribute, and should be specified in hexadecimal format.
+```html
+<form>
+    <input type="color" name="myfavcolor" value="#ba1e1e">
+</form>
+```
+Note: `type="color"` is not supported in Internet Explorer 11.
 
-There are more types of elements. For more information visit [MSDN]("https://developer.mozilla.org/en-US/docs/Web/HTML/Element/input") or [w3schools]("https://www.w3schools.com/Html/html_form_input_types.asp").
 
+There are more types of elements. For more information visit [MSDN](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/input) or [W3schools](https://www.w3schools.com/Html/html_form_input_types.asp).
