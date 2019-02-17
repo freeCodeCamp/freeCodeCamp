@@ -189,5 +189,14 @@ _Note that the first letter is only capitalized if it is at the beginning of the
     a = "abcde"
     a.clear    #=> ""
     ```
+    
+ ### Include?:
+ 
+ *  Returns true if the string contains the given string or character as an argument.
+    ```ruby
+    "abcde".include?("bc")  #=> true
+    "abcde".include?("pqr") #=> false
+    ```
+    
 
 
