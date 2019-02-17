@@ -4,7 +4,7 @@ title: Required
 ## Required
 
 
-The HTML `required` attribute specifies that an input field must be filled out before a form can be submitted. This means that the user must fill in the field. <br /> 
+The HTML `required` attribute specifies that filling out an input field is mandatory before a form can be submitted. <br />
 If the user does not fill in the input field, the form will not submit and it will give a message asking the user to fill out the field. <br /> <br />
 The `required` attribute is applicable to `<input>`, `<select>`, and `<textarea>`. 
 
