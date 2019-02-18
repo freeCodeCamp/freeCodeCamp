@@ -8,12 +8,7 @@
     "develop:client": "cd ./client && npm run develop",
     "develop:server": "cd ./api-server && node development-entry.js",
     "ensure-env": "cross-env DEBUG=fcc:* node ./tools/scripts/ensure-env.js",
-    "lint": "npm-run-all -p lint:*",
-    "lint:api": "eslint api-server --ignore-pattern 'api-server/node_modules/**/*.js' --ignore-pattern 'api-server/public/js/**/*.js' --ignore-pattern 'api-server/lib/**/*.js'",
-    "lint:client": "eslint client --ignore-pattern 'client/node_modules/**/*.js' --ignore-pattern 'client/plugins/**/node_modules/**/*.js' --ignore-pattern 'client/.cache/**/*.js' --ignore-pattern 'client/public/**/*.js' --ignore-pattern 'client/static/js/*.js' --ignore-pattern 'client/static/js/*.js.map'",
-    "lint:config": "eslint config",
-    "lint:curriculum": "eslint curriculum --ignore-pattern 'curriculum/node_modules/**/*.js'",
-    "lint:tools": "eslint tools --ignore-pattern 'tools/**/node_modules/**/*.js'",
+    "lint": "eslint .",
     "seed": "npm-run-all -p seed:*",
     "seed:auth-user": "cross-env DEBUG=fcc:* node ./tools/scripts/seed/seedAuthUser",
     "seed:challenges": "cross-env DEBUG=fcc:* node ./tools/scripts/seed/seedChallenges",
@@ -27,7 +22,7 @@
     "test:tools": "jest ./tools"
   },
   "devDependencies": {
-    "@freecodecamp/eslint-config": "^2.0.0",
+    "@freecodecamp/eslint-config": "^2.0.2",
     "babel-eslint": "^10.0.1",
     "cross-env": "^5.2.0",
     "debug": "^4.0.1",

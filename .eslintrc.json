@@ -1,6 +1,6 @@
 {
-  "extends": ["plugin:react/recommended", "@freecodecamp/eslint-config"],
-  "rules": { "no-shadow": 0, "react/no-unescaped-entities": 0 },
+  "root": true,
+  "extends": "@freecodecamp/eslint-config",
   "settings": {
     "react": {
       "version": "16.4.2"
