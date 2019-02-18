@@ -11,10 +11,20 @@ Add the classes `animated` and `hinge` to your `body` element.
   - [.addClass()](https://api.jquery.com/addClass/e)
 
 ### Solution:
-```javascript
+```html
 <script>
-  $("body").addClass("animated hinge");
+  $(document).ready(function() {
+    $("#target1").css("color", "red");
+    $("#target1").prop("disabled", true);
+    $("#target4").remove();
+    $("#target2").appendTo("#right-well");
+    $("#target5").clone().appendTo("#left-well");
+    $("#target1").parent().css("background-color", "red");
+    $("#right-well").children().css("color", "orange");
+    $("#left-well").children().css("color", "green");
+    $(".target:nth-child(2)").addClass("animated bounce");
+    $(".target:even").addClass("animated shake");
+    $("body").addClass("animated hinge");
   });
 </script>
 ```
-
