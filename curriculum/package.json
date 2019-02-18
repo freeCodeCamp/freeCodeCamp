@@ -55,8 +55,6 @@
     "live-server": "^1.2.1",
     "lodash": "^4.17.11",
     "mocha": "5.2.0",
-    "prettier": "^1.13.5",
-    "prettier-package-json": "^1.6.0",
     "puppeteer": "1.11.0",
     "readdirp-walk": "^1.6.0",
     "rx": "^4.1.0",
@@ -73,16 +71,6 @@
   ],
   "publishConfig": {
     "access": "public"
-  },
-  "lint-staged": {
-    "*.{js,json,css}": [
-      "prettier --write",
-      "git add"
-    ],
-    "package.json": [
-      "prettier-package-json --write",
-      "git add"
-    ]
   },
   "release": {
     "branch": "master",
