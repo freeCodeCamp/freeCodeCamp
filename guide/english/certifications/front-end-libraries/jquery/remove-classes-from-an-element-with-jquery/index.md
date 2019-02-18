@@ -3,8 +3,14 @@ title: Remove Classes from an Element with jQuery
 ---
 ## Remove Classes from an Element with jQuery
 
-This is a stub. <a href='https://github.com/freecodecamp/guides/tree/master/src/pages/certifications/front-end-libraries/jquery/remove-classes-from-an-element-with-jquery/index.md' target='_blank' rel='nofollow'>Help our community expand it</a>.
-
-<a href='https://github.com/freecodecamp/guides/blob/master/README.md' target='_blank' rel='nofollow'>This quick style guide will help ensure your pull request gets accepted</a>.
-
-<!-- The article goes here, in GitHub-flavored Markdown. Feel free to add YouTube videos, images, and CodePen/JSBin embeds  -->
+## Solution
+```javascript
+<script>
+  $(document).ready(function() {
+    $("button").addClass("animated bounce");
+    $(".well").addClass("animated shake");
+    $("#target3").addClass("animated fadeOut");
+    $("button").removeClass("btn-default");  //Target elements with the "button" tag and remove the class btn-default.
+  });
+</script>
+```
