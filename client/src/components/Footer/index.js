@@ -72,7 +72,7 @@ function Footer() {
             </Link>
             <Link to='https://gitter.im/FreeCodeCamp/home'>Gitter</Link>
             <Link to='https://github.com/freeCodeCamp/'>GitHub</Link>
-            <Link to='https://support.freecodecamp.org'>Support</Link>
+            <Link to='/support'>Support</Link>
             <Link to='https://code-of-conduct.freecodecamp.org'>
               Code of Conduct
             </Link>
