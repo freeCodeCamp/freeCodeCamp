@@ -20,7 +20,7 @@ import {
 
 import { Link, Spacer } from '../components/helpers';
 
-import './about.css';
+import './common-pages.css';
 
 const AboutPage = () => {
   return (
@@ -354,7 +354,7 @@ const AboutPage = () => {
                     <FontAwesomeIcon icon={faLock} />
                   </td>
                   <td>
-                    <Link to='https://privacy-policy.freecodecamp.org'>
+                    <Link to='/privacy-policy'>
                       Our privacy policy
                     </Link>
                   </td>
