@@ -4,6 +4,7 @@ title: Add Borders Around Your Elements
 challengeType: 0
 guideUrl: 'https://russian.freecodecamp.org/guide/certificates/add-borders-around-your-elements'
 videoUrl: ''
+
 localeTitle: Добавьте рамки вокруг ваших элементов
 ---
 
@@ -22,9 +23,9 @@ tests:
     testString: 'assert($("img").hasClass("smaller-image"), "Your <code>img</code> element should have the class <code>smaller-image</code>.");'
   - text: Ваш элемент <code>img</code> должен обладать классом <code>thick-green-border</code> .
     testString: 'assert($("img").hasClass("thick-green-border"), "Your <code>img</code> element should have the class <code>thick-green-border</code>.");'
-  - text: Дайте вашему изображению ширину границы 10 <code>10px</code> .
+  - text: Задайте вашему изображению ширину границы <code>10px</code> .
     testString: 'assert($("img").hasClass("thick-green-border") && parseInt($("img").css("border-top-width"), 10) >= 8 && parseInt($("img").css("border-top-width"), 10) <= 12, "Give your image a border width of <code>10px</code>.");'
-  - text: Дайте вашему изображению стиль границы <code>solid</code> .
+  - text: Задайте вашему изображению стиль границы <code>solid</code> .
     testString: 'assert($("img").css("border-right-style") === "solid", "Give your image a border style of <code>solid</code>.");'
   - text: Граница вокруг вашего элемента <code>img</code> должна быть зеленой.
     testString: 'assert($("img").css("border-left-color") === "rgb(0, 128, 0)", "The border around your <code>img</code> element should be green.");'
