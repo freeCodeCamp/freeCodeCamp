@@ -86,8 +86,6 @@
     "babel-plugin-transform-imports": "^1.5.0",
     "chokidar": "^2.0.4",
     "copy-webpack-plugin": "^4.6.0",
-    "eslint": "^5.13.0",
-    "eslint-config-freecodecamp": "^1.1.1",
     "jest": "^23.6.0",
     "prettier": "^1.14.2",
     "prettier-eslint-cli": "^4.7.1",
