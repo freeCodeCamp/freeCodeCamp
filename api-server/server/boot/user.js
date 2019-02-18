@@ -219,8 +219,7 @@ function createPostReportUserProfile(app) {
     if (!username || !report || report === '') {
       return res.json({
         type: 'danger',
-        message:
-          'Oops, something is not right please re-check your submission.'
+        message: 'Oops, something is not right please re-check your submission.'
       });
     }
     return Email.send$(

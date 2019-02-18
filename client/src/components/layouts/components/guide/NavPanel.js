@@ -67,7 +67,9 @@ class NavPanel extends Component {
             'caret ' + (isExpanded ? 'caretStyle expanded' : 'caretStyle')
           }
         />
-        <Link onClick={this.handleTitleClick} to={path}>{title}</Link>
+        <Link onClick={this.handleTitleClick} to={path}>
+          {title}
+        </Link>
       </div>
     );
   }

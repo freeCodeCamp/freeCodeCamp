@@ -1,5 +1,7 @@
 import passport from 'passport';
+// eslint-disable-next-line
 import {
+  // prettier ignore
   PassportConfigurator
 } from '@freecodecamp/loopback-component-passport';
 import url from 'url';
@@ -132,9 +134,7 @@ export function setupPassport(app) {
 }
 
 export const saveResponseAuthCookies = () => {
-
   return (req, res, next) => {
-
     const user = req.user;
 
     if (!user) {
@@ -157,7 +157,6 @@ export const saveResponseAuthCookies = () => {
 };
 
 export const loginRedirect = () => {
-
   return (req, res) => {
     const successRedirect = req => {
       if (!!req && req.session && req.session.returnTo) {

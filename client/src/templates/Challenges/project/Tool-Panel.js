@@ -55,35 +55,8 @@ export class ToolPanel extends Component {
 ToolPanel.displayName = 'ProjectToolPanel';
 ToolPanel.propTypes = propTypes;
 
-export default connect(mapStateToProps, mapDispatchToProps)(ToolPanel);
+export default connect(
+  mapStateToProps,
+  mapDispatchToProps
+)(ToolPanel);
 
-/**
- *
- * <Fragment>
-        <ProjectForm isFrontEnd={isFrontEnd} openModal={openCompletionModal} />
-        <ButtonSpacer />
-        {guideUrl && (
-          <Fragment>
-            <Button
-              block={true}
-              bsStyle='primary'
-              className='btn-primary-ghost btn-big'
-              href={guideUrl}
-              target='_blank'
-              >
-              Get a hint
-            </Button>
-            <ButtonSpacer />
-          </Fragment>
-        )}
-        <Button
-          block={true}
-          bsStyle='primary'
-          className='btn-primary-ghost btn-big'
-          onClick={openHelpModal}
-          >
-          Ask for help on the forum
-        </Button>
-        <ButtonSpacer />
-      </Fragment>
- */

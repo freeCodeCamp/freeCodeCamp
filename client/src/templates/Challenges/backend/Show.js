@@ -170,7 +170,7 @@ export class BackEnd extends Component {
       <LearnLayout>
         <Grid>
           <Row>
-            <Col md={8} mdOffset={2} sm={10} smOffset={1} xs={12} >
+            <Col md={8} mdOffset={2} sm={10} smOffset={1} xs={12}>
               <Spacer />
               <ChallengeTitle>{blockNameTitle}</ChallengeTitle>
               <ChallengeDescription

@@ -73,4 +73,7 @@ function ResetModal({ reset, close, isOpen }) {
 ResetModal.displayName = 'ResetModal';
 ResetModal.propTypes = propTypes;
 
-export default connect(mapStateToProps, mapDispatchToProps)(ResetModal);
+export default connect(
+  mapStateToProps,
+  mapDispatchToProps
+)(ResetModal);

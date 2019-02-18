@@ -11,7 +11,6 @@ const fiveMinutes = 1000 * 60 * 5;
 
 class NewsFeed {
   constructor() {
-
     this.state = {
       readyState: false,
       mediumFeed: [],
@@ -27,26 +26,23 @@ class NewsFeed {
     const newState = stateUpdater(this.state);
     this.state = _.merge({}, this.state, newState);
     return;
-  }
+  };
 
   refreshFeeds = () => {
     const currentFeed = this.state.combinedFeed.slice(0);
     log('grabbing feeds');
-    return Promise.all([
-      getMediumFeed(),
-      getLybsynFeed()
-    ]).then(
-      ([mediumFeed, lybsynFeed]) => this.setState(
-        state => ({
+    return Promise.all([getMediumFeed(), getLybsynFeed()])
+      .then(([mediumFeed, lybsynFeed]) =>
+        this.setState(state => ({
           ...state,
           mediumFeed,
           lybsynFeed
-        })
-      ))
+        }))
+      )
       .then(() => {
         log('crossing the streams');
-        const { mediumFeed, lybsynFeed} = this.state;
-        const combinedFeed = [ ...mediumFeed, ...lybsynFeed ].sort((a, b) => {
+        const { mediumFeed, lybsynFeed } = this.state;
+        const combinedFeed = [...mediumFeed, ...lybsynFeed].sort((a, b) => {
           return compareDesc(a.isoDate, b.isoDate);
         });
         this.setState(state => ({
@@ -62,25 +58,24 @@ class NewsFeed {
           combinedFeed: currentFeed
         }));
       });
-  }
+  };
 
-
-    getFeed = () => new Promise((resolve) => {
+  getFeed = () =>
+    new Promise(resolve => {
       let notReadyCount = 0;
 
       function waitForReady() {
         log('notReadyCount', notReadyCount);
         notReadyCount++;
-        return this.state.readyState || notReadyCount === 5 ?
-          resolve(this.state.combinedFeed) :
-          setTimeout(waitForReady, 100);
+        return this.state.readyState || notReadyCount === 5
+          ? resolve(this.state.combinedFeed)
+          : setTimeout(waitForReady, 100);
       }
       log('are we ready?', this.state.readyState);
-      return this.state.readyState ?
-        resolve(this.state.combinedFeed) :
-        setTimeout(waitForReady, 100);
-    })
-
+      return this.state.readyState
+        ? resolve(this.state.combinedFeed)
+        : setTimeout(waitForReady, 100);
+    });
 }
 
 export default NewsFeed;

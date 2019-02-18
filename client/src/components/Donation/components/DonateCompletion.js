@@ -33,15 +33,9 @@ function DonateCompletion({ processing, reset, success, error = null }) {
           />
         )}
         {success && (
-          <p>
-            Thank you for supporting the freeCodeCamp.org community.
-          </p>
+          <p>Thank you for supporting the freeCodeCamp.org community.</p>
         )}
-        {error && (
-          <p>
-            {error}
-          </p>
-        )}
+        {error && <p>{error}</p>}
       </div>
       <p className='donation-completion-buttons'>
         {error && (

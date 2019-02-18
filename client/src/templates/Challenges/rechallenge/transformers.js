@@ -46,9 +46,7 @@ export const testJS$JSX = overSome(testJS, testJSX);
 export const replaceNBSP = cond([
   [
     testHTML$JS$JSX,
-    partial(vinyl.transformContents, contents =>
-      contents.replace(NBSPReg, ' ')
-    )
+    partial(vinyl.transformContents, contents => contents.replace(NBSPReg, ' '))
   ],
   [stubTrue, identity]
 ]);

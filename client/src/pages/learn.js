@@ -85,9 +85,7 @@ export const query = graphql`
         slug
       }
     }
-    allChallengeNode(
-      sort: { fields: [superOrder, order, challengeOrder] }
-    ) {
+    allChallengeNode(sort: { fields: [superOrder, order, challengeOrder] }) {
       edges {
         node {
           fields {

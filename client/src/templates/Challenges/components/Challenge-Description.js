@@ -10,8 +10,9 @@ const propTypes = {
 };
 
 function emptyInstruction(instructions) {
-  return (/^<section\s+id\s*=\s*("|')instructions\1\s*>\s*<\/section>$/)
-  .test(instructions);
+  return (/^<section\s+id\s*=\s*("|')instructions\1\s*>\s*<\/section>$/).test(
+    instructions
+  );
 }
 
 function ChallengeDescription({ description, instructions, section }) {
