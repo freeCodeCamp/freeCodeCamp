@@ -15,8 +15,6 @@
   "main": "lib.js",
   "scripts": {
     "develop": "gulp",
-    "format": "prettier --write es5 './**/*.{js,json}' && npm run lint",
-    "lint": "eslint ./**/*.js --fix",
     "semantic-release": "semantic-release",
     "pretest": "cd ../client && npm run build:workers",
     "test": "mocha --delay --reporter progress --bail"
