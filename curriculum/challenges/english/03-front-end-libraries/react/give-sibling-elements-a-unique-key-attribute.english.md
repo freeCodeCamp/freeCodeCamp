@@ -7,7 +7,7 @@ isRequired: false
 
 ## Description
 <section id='description'>
-The last challenge showed how the <code>map</code> method is used to dynamically render a number of elements based on user input. However, there was an important piece missing from that example. When you create an array of elements, each one needs a <code>key</code> attribute set to a unique value. React uses these keys to keep track of which items are added, changed, or removed. This helps make the re-rendering process more efficient when the list is modified in any way.<br><br><strong>Note:</strong> <br>Keys only need to be unique between sibling elements, they don't need to be globally unique in your application.
+The last challenge showed how the <code>map</code> method is used to dynamically render a number of elements based on user input. However, there was an important piece missing from that example. When you create an array of elements, each one needs a <code>key</code> attribute set to a unique value. React uses these keys to keep track of which items are added, changed, or removed. This helps make the re-rendering process more efficient when the list is modified in any way.<br><br><strong>Note:</strong> Keys only need to be unique between sibling elements, they don't need to be globally unique in your application.
 </section>
 
 ## Instructions
