@@ -12,19 +12,19 @@ Simply put Generics lets you explicitly say that, for example an ArrayList objec
 import java.util.ArrayList;
 
 public class Example {
-  private ArrayList classNames;
+    private ArrayList classNames;
   
-  public Example() {
-    classNames = new ArrayList();
-  }
+    public Example() {
+        classNames = new ArrayList();
+    }
   
-  public void addName(String name) {
-    classNames.add(name);
-  }
+    public void addName(String name) {
+        classNames.add(name);
+    }
   
-  public String getNameAtIndex(int index) {
-    return (String) classNames.get(index);
-  }
+    public String getNameAtIndex(int index) {
+        return (String) classNames.get(index);
+    }
 }
 ```
 
@@ -36,19 +36,19 @@ The syntax for Generics is very simple. Below is an example of instantiating an 
 import java.util.ArrayList;
 
 public class Example {
-  private ArrayList<String> classNames;
+    private ArrayList<String> classNames;
   
-  public Example() {
-    classNames = new ArrayList<String>();
-  }
+    public Example() {
+        classNames = new ArrayList<String>();
+    }
   
-  public void addName(String name) {
-    classNames.add(name);
-  }
+    public void addName(String name) {
+        classNames.add(name);
+    }
   
-  public String getNameAtIndex(int index) {
-    return classNames.get(index);
-  }
+    public String getNameAtIndex(int index) {
+        return classNames.get(index);
+    }
 }
 ```
 
@@ -58,19 +58,19 @@ public class Example {
 import java.util.ArrayList;
 
 public class Example <T> {
-  private ArrayList<T> classNames;
+    private ArrayList<T> classNames;
 
-  public Example() {
-    classNames = new ArrayList<T>();
-  }
+    public Example() {
+        classNames = new ArrayList<T>();
+    }
   
-  public void addName(T name) {
-    classNames.add(name);
-  }
+    public void addName(T name) {
+        classNames.add(name);
+    }
   
-  public T getNameAtIndex(int index) {
-    return classNames.get(index);
-  }
+    public T getNameAtIndex(int index) {
+        return classNames.get(index);
+    }
 }
 ```
 
@@ -83,9 +83,9 @@ throughout the class.
 **The syntax to create your own Generic methods would be as follows.**
 ```java
 public class GenericMethod {
-	public static <T> void printObject(T t){
-		System.out.println(t.toString());
-	}
+    public static <T> void printObject(T t) {
+        System.out.println(t.toString());
+    }
 }
 ```
 
@@ -121,15 +121,10 @@ Notice that the decompiled code contains no trace of the type information presen
 import java.io.PrintStream;
 import java.util.*;
 
-public class GenericsErasure
-{
+public class GenericsErasure {
+    public GenericsErasure() {}
 
-    public GenericsErasure()
-    {
-    }
-
-    public static void main(String args[])
-    {
+    public static void main(String args[]) {
         List list = new ArrayList();
         list.add("Hello");
         String s;
@@ -142,7 +137,7 @@ public class GenericsErasure
 
 When you compile some code against a generic type or method, the compiler works out what you really mean (i.e. what the type argument for T is) 
 and verifies at compile time that you're doing the right thing, but the emitted code again just talks in terms of java.lang.Object - the compiler generates extra casts where necessary. 
-At execution time, a List&lt;String&gt; and a List&lt;Date&gt; are exactly the same the extra type information has been erased by the compiler.
+At execution time, a `List<String>` and a `List<Date>` are exactly the same the extra type information has been erased by the compiler.
 
 ## The Diamond Operator (<>)
 
