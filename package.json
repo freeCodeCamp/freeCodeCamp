@@ -9,11 +9,13 @@
     "develop:server": "cd ./api-server && node development-entry.js",
     "ensure-env": "cross-env DEBUG=fcc:* node ./tools/scripts/ensure-env.js",
     "format": "npm run lint -- --fix",
+    "hooks:install": "node node_modules/husky/husky.js install",
+    "hooks:uninstall": "node node_modules/husky/husky.js uninstall",
     "lint": "eslint .",
+    "postinstall": "npm run bootstrap",
     "seed": "npm-run-all -p seed:*",
     "seed:auth-user": "cross-env DEBUG=fcc:* node ./tools/scripts/seed/seedAuthUser",
     "seed:challenges": "cross-env DEBUG=fcc:* node ./tools/scripts/seed/seedChallenges",
-    "postinstall": "npm run bootstrap",
     "test": "npm-run-all -p test:*",
     "test:client": "cd ./client && npm test && cd ../",
     "test:curriculum": "cd ./curriculum && npm test && cd ../",
@@ -37,8 +39,10 @@
     "eslint-plugin-react": "^7.12.4",
     "faker": "^4.1.0",
     "gray-matter": "^4.0.1",
+    "husky": "^1.3.1",
     "jest": "^23.6.0",
     "lerna": "^3.11.1",
+    "lint-staged": "^8.1.4",
     "lodash": "^4.17.11",
     "npm-run-all": "^4.1.5",
     "ora": "^3.0.0",
@@ -46,5 +50,16 @@
     "readdirp-walk": "^1.6.0",
     "shortid": "^2.2.14",
     "slugg": "^1.2.1"
+  },
+  "lint-staged": {
+    "*.js": [
+      "eslint --fix",
+      "git add"
+    ]
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged"
+    }
   }
 }
