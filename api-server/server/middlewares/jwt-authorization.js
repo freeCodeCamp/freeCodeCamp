@@ -6,11 +6,28 @@ import { homeLocation } from '../../../config/env';
 
 import { wrapHandledError } from '../utils/create-handled-error';
 
+// We need to tunnel through a proxy path set up within
+// the gatsby app, at this time, that path is /internal
+const apiProxyRE = /^\/internal\/|^\/external\//;
+const newsShortLinksRE = /^\/internal\/n\/|^\/internal\/p\?/;
+const loopbackAPIPathRE = /^\/internal\/api\//;
+
+const _whiteListREs = [
+  newsShortLinksRE,
+  loopbackAPIPathRE
+];
+
+export function isWhiteListedPath(path, whiteListREs= _whiteListREs) {
+  return whiteListREs.some(re => re.test(path))
+}
+
+
 export default () => function authorizeByJWT(req, res, next) {
-  const path = req.path.split('/')[1];
-  if (/^external$|^internal$/.test(path)) {
+  const { path } = req;
+  if (apiProxyRE.test(path) && !isWhiteListedPath(path)) {
     const cookie = req.signedCookies && req.signedCookies['jwt_access_token'] ||
       req.cookie && req.cookie['jwt_access_token'];
+
     if (!cookie) {
       throw wrapHandledError(
         new Error('Access token is required for this request'),

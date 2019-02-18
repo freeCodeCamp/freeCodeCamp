@@ -6,7 +6,7 @@ localeTitle: VirtualBox
 
 ![](https://upload.wikimedia.org/wikipedia/commons/d/d5/Virtualbox_logo.png)
 
-VirtualBox es un programa de máquina virtual de código abierto de Oracle. Permite a los usuarios instalar virtualmente muchos sistemas operativos en unidades virtuales, incluyendo Windows, BSD, Linux, Solaris, etc.
+VirtualBox es un programa de máquina virtual de código abierto de Oracle. Permite a los usuarios instalar virtualmente muchos sistemas operativos en unidades virtuales, incluyendo Windows, BSD, Linux, Solaris, etc. VirtualBox fue hecho por Innotek GmbH, pero fue comprado por Sun Microsystems en 2008, y despues fue comprado por Oracle en 2010.
 
 # Instalación
 

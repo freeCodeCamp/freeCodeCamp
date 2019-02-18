@@ -4,14 +4,15 @@ title: Add Borders Around Your Elements
 challengeType: 0
 guideUrl: 'https://russian.freecodecamp.org/guide/certificates/add-borders-around-your-elements'
 videoUrl: ''
-localeTitle: Добавьте границы вокруг ваших элементов
+
+localeTitle: Добавьте рамки вокруг ваших элементов
 ---
 
 ## Description
-<section id="description"> В CSS границы имеют такие свойства, как <code>style</code> , <code>color</code> и <code>width</code> Например, если бы мы хотели создать красную границу шириной 5 пикселей вокруг элемента HTML, мы могли бы использовать этот класс: <blockquote> &lt;style&gt; <br> .thin-red-border { <br> border-color: red; <br> border-width: 5px; <br> border-style: solid; <br> } <br> &lt;/ style&gt; </blockquote></section>
+<section id="description"> Рамки в CSS имеют такие свойства, как <code>style</code> , <code>color</code> и <code>width</code> Например, если бы мы хотели создать сплошную красную рамку с шириной 5 пикселей вокруг элемента HTML, мы могли бы использовать этот класс: <blockquote> &lt;Стиль&gt; <br> .thin-red-border { <br> border-color: red; <br> border-width: 5px; <br> border-style: solid; <br> } <br> &lt;/ Стиль&gt; </blockquote></section>
 
 ## Instructions
-<section id="instructions"> Создайте класс c названием <code>thick-green-border</code> . Этот класс должен добавлять сплошную зелёную рамку шириной 10 пикселей вокруг элемента HTML. Примените этот класс к вашей фотографии кота. Помните, что вы можете применять сразу несколько классов к элементу с помощью его атрибута <code>class</code>, разделяя имена классов пробелами. Например: <code>&lt;img class=&quot;class1 class2&quot;&gt;</code> </section>
+<section id="instructions"> Создайте класс под названием « <code>thick-green-border</code> . Этот класс должен добавить сплошную зелёную рамку шириной 10px вокруг элемента HTML. Примените этот класс к фотографии вашего кота. Помните, что вы можете применять несколько классов к элементу с помощью его атрибута <code>class</code>, вставляя пробелы между классами. Например: <code>&lt;img class=&quot;class1 class2&quot;&gt;</code> </section>
 
 ## Tests
 <section id='tests'>
