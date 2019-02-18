@@ -68,7 +68,7 @@ class DonateOtherPage extends Component {
           })
         }
         target='_blank'
-        >
+      >
         <input defaultValue='_s-xclick' name='cmd' type='hidden' />{' '}
         <input
           defaultValue={item.defaultValueHash}

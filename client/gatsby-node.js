@@ -148,8 +148,8 @@ exports.onCreateWebpackConfig = ({ stage, rules, plugins, actions }) => {
           /* eslint-disable max-len */
           exclude: modulePath => {
             return (
-              (/node_modules/).test(modulePath) &&
-              !(/(ansi-styles|chalk|strict-uri-encode|react-freecodecamp-search)/).test(
+              /node_modules/.test(modulePath) &&
+              !/(ansi-styles|chalk|strict-uri-encode|react-freecodecamp-search)/.test(
                 modulePath
               )
             );

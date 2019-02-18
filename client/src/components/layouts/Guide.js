@@ -75,7 +75,7 @@ class GuideLayout extends React.Component {
                         md={4}
                         smHidden={!displaySideNav}
                         xsHidden={!displaySideNav}
-                        >
+                      >
                         <SideNav
                           expandedState={expandedState}
                           onNavigate={this.handleNavigation}
@@ -88,13 +88,13 @@ class GuideLayout extends React.Component {
                         md={8}
                         smHidden={displaySideNav}
                         xsHidden={displaySideNav}
-                        >
+                      >
                         <main
                           className='content'
                           id='main'
                           ref={this.getContentRef}
                           tabIndex='-1'
-                          >
+                        >
                           {this.props.children}
                         </main>
                       </Col>

@@ -123,7 +123,7 @@ function renderCertShow(username, cert) {
               bsSize='lg'
               bsStyle='primary'
               className='btn-invert'
-              >
+            >
               View {cert.title}
             </Button>
           </Link>

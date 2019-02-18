@@ -92,7 +92,7 @@ function getJSTestRunner({ build, sources }, proxyLogger) {
 
   const testWorker = createWorker('test-evaluator');
 
-  return async(testString, testTimeout) => {
+  return async (testString, testTimeout) => {
     try {
       testWorker.on('LOG', proxyLogger);
       return await testWorker.execute(

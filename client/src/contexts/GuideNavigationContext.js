@@ -81,7 +81,7 @@ class NavigationContextProvider extends Component {
           toggleDisplaySideNav: noop,
           toggleExpandedState: this.toggleExpandedState
         }}
-        >
+      >
         {children}
       </Provider>
     );

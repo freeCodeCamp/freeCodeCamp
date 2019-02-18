@@ -155,7 +155,7 @@ class DefaultLayout extends Component {
             },
             { name: 'keywords', content: metaKeywords.join(', ') }
           ]}
-          >
+        >
           <style>{fontawesome.dom.css()}</style>
         </Helmet>
         <Header disableSettings={disableSettings} />

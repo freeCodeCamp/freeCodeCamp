@@ -17,7 +17,7 @@ const getFirstChallenge = _.once(_getFirstChallenge);
  * interface ChallengeMap {
  *   result: {
  *     superBlocks: [ ...superBlockDashedName: String ]
-*    },
+ *    },
  *   entities: {
  *     superBlock: {
  *       [ ...superBlockDashedName ]: SuperBlock
@@ -49,10 +49,12 @@ export function _cachedMap({ Block, Challenge }) {
   });
   const blockMap = Observable.combineLatest(
     blocks.map(blocks =>
-      blocks.map(block => block.toJSON()).reduce((hash, block) => {
-        hash[block.dashedName] = block;
-        return hash;
-      }, {})
+      blocks
+        .map(block => block.toJSON())
+        .reduce((hash, block) => {
+          hash[block.dashedName] = block;
+          return hash;
+        }, {})
     ),
     challenges
   ).map(([blocksMap, challenges]) => {

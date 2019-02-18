@@ -53,7 +53,7 @@ const IndexPage = ({
           href='https://donate.freecodecamp.org'
           rel='noopener noreferrer'
           target='_blank'
-          >
+        >
           donate
         </a>{' '}
         to our nonprofit.

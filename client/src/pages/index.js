@@ -232,7 +232,7 @@ const IndexPage = () => (
           href='https://donate.freecodecamp.org/'
           rel='noopener noreferrer'
           target='_blank'
-          >
+        >
           make a tax-deductible donation here
         </a>
       </p>
