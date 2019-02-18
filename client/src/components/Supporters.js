@@ -70,12 +70,7 @@ function Supporters({ isDonating, activeDonations }) {
       </FullWidthRow>
       {isDonating ? null : (
         <FullWidthRow>
-          <Button
-            bsSize='lg'
-            bsStyle='primary'
-            href='/donate'
-            target='_blank'
-          >
+          <Button bsSize='lg' bsStyle='primary' href='/donate' target='_blank'>
             Click here to become a Supporter
           </Button>
         </FullWidthRow>

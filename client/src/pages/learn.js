@@ -49,11 +49,7 @@ const IndexPage = ({
       <p>
         And yes - all of this is 100% free, thanks to the thousands of campers
         who{' '}
-        <a
-          href='/donate'
-          rel='noopener noreferrer'
-          target='_blank'
-        >
+        <a href='/donate' rel='noopener noreferrer' target='_blank'>
           donate
         </a>{' '}
         to our nonprofit.
