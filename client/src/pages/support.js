@@ -5,7 +5,7 @@ import { Grid, Col, Row } from '@freecodecamp/react-bootstrap';
 
 import { Link, Spacer } from '../components/helpers';
 
-import './about.css';
+import './common-pages.css';
 
 const SupportPage = () => {
   return (
@@ -47,7 +47,7 @@ const SupportPage = () => {
               cancel your donations right from your settings page. In the
               meantime, if you need to update or cancel your monthly donation,
               forward an invoice you received in your email to{' '}
-              <Link to='mailto:team@freecodecamp.org'>team@freecodecamp.org</Link>{' '}
+              <a href='mailto:team@freecodecamp.org'>team@freecodecamp.org</a>{' '}
               and tell us what you'd like us to do, and we'll take care of it
               for you in our database.
             </p>

@@ -54,7 +54,7 @@ function Footer() {
             <Link to='/donate'>Donate</Link>
             <Link to='https://shop.freecodecamp.org'>Shop</Link>
             <Link to='/sponsors'>Sponsors</Link>
-            <Link to='mailto:team@freecodecamp.org'>Email Us</Link>
+            <a href='mailto:team@freecodecamp.org'>Email Us</a>
           </Col>
           <Col sm={2} xs={6}>
             <ColHeader>Our Community</ColHeader>
@@ -76,7 +76,7 @@ function Footer() {
             <Link to='/code-of-conduct'>
               Code of Conduct
             </Link>
-            <Link to='https://privacy.freecodecamp.org'>Privacy Policy</Link>
+            <Link to='/privacy-policy'>Privacy Policy</Link>
             <Link to='https://terms-of-service.freecodecamp.org'>
               Terms of Service
             </Link>
