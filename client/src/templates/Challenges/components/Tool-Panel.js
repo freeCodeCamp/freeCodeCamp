@@ -41,9 +41,11 @@ function ToolPanel({
 }) {
   return (
     <Fragment>
-      <div className={`tool-panel-group ${
+      <div
+        className={`tool-panel-group ${
           isMobile ? 'tool-panel-group-mobile' : ''
-        }`}>
+        }`}
+        >
         <Button block={true} bsStyle='primary' onClick={executeChallenge}>
           {isMobile ? 'Run' : 'Run the Tests'}
         </Button>
@@ -92,7 +94,10 @@ function ToolPanel({
 ToolPanel.displayName = 'ToolPanel';
 ToolPanel.propTypes = propTypes;
 
-export default connect(mapStateToProps, mapDispatchToProps)(ToolPanel);
+export default connect(
+  mapStateToProps,
+  mapDispatchToProps
+)(ToolPanel);
 
 /*
 <Button

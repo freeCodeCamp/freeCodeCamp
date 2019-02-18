@@ -166,7 +166,7 @@ class DefaultLayout extends Component {
           ) : null}
           {children}
         </div>
-        {showFooter && (<Footer />)}
+        {showFooter && <Footer />}
       </Fragment>
     );
   }

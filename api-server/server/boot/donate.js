@@ -6,7 +6,6 @@ import keys from '../../../config/secrets';
 const log = debug('fcc:boot:donate');
 
 export default function donateBoot(app, done) {
-
   let stripe = false;
   const { User } = app.models;
   const api = app.loopback.Router();
@@ -25,7 +24,8 @@ export default function donateBoot(app, done) {
         currency: 'usd',
         id: `monthly-donation-${current}`
       }
-    }), {}
+    }),
+    {}
   );
 
   function connectToStripe() {
@@ -70,23 +70,26 @@ export default function donateBoot(app, done) {
       return res.status(400).send({ error: 'Amount Required' });
     }
 
-    const { amount, token: {email, id} } = body;
+    const {
+      amount,
+      token: { email, id }
+    } = body;
 
-    const fccUser = user ?
-            Promise.resolve(user) :
-            new Promise((resolve, reject) =>
-              User.findOrCreate(
-                { where: { email }},
-                { email },
-                (err, instance, isNew) => {
-                  log('is new user instance: ', isNew);
-                  if (err) {
-                    return reject(err);
-                  }
-                  return resolve(instance);
-                }
-              )
-            );
+    const fccUser = user
+      ? Promise.resolve(user)
+      : new Promise((resolve, reject) =>
+          User.findOrCreate(
+            { where: { email } },
+            { email },
+            (err, instance, isNew) => {
+              log('is new user instance: ', isNew);
+              if (err) {
+                return reject(err);
+              }
+              return resolve(instance);
+            }
+          )
+        );
 
     let donatingUser = {};
     let donation = {
@@ -96,14 +99,13 @@ export default function donateBoot(app, done) {
       startDate: new Date(Date.now()).toISOString()
     };
 
-    return fccUser.then(
-      user => {
+    return fccUser
+      .then(user => {
         donatingUser = user;
-        return stripe.customers
-          .create({
-            email,
-            card: id
-          });
+        return stripe.customers.create({
+          email,
+          card: id
+        });
       })
       .then(customer => {
         donation.customerId = customer.id;
@@ -121,7 +123,9 @@ export default function donateBoot(app, done) {
         return res.send(subscription);
       })
       .then(() => {
-        donatingUser.createDonation(donation).toPromise()
+        donatingUser
+          .createDonation(donation)
+          .toPromise()
           .catch(err => {
             throw new Error(err);
           });

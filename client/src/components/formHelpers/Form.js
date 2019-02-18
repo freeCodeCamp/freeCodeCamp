@@ -33,7 +33,9 @@ export function DynamicForm({
   errors,
   fields,
   handleSubmit,
-  fields: { _meta: { allPristine } },
+  fields: {
+    _meta: { allPristine }
+  },
 
   // HOC
   buttonText,

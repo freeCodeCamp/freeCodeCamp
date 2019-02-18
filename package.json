@@ -8,6 +8,7 @@
     "develop:client": "cd ./client && npm run develop",
     "develop:server": "cd ./api-server && node development-entry.js",
     "ensure-env": "cross-env DEBUG=fcc:* node ./tools/scripts/ensure-env.js",
+    "format": "prettier-eslint --trailing-comma none --semi --eslint-ignore --ignore curriculum/challenges --ignore guide --ignore mock-guide --write './**/*.js'",
     "lint": "eslint .",
     "seed": "npm-run-all -p seed:*",
     "seed:auth-user": "cross-env DEBUG=fcc:* node ./tools/scripts/seed/seedAuthUser",
@@ -39,6 +40,7 @@
     "lodash": "^4.17.11",
     "npm-run-all": "^4.1.5",
     "ora": "^3.0.0",
+    "prettier-eslint-cli": "^4.7.1",
     "readdirp-walk": "^1.6.0",
     "shortid": "^2.2.14",
     "slugg": "^1.2.1"

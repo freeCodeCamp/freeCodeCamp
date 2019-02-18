@@ -60,9 +60,7 @@ class DonatePage extends Component {
         <Spacer />
         <Row>
           <Col sm={8} smOffset={2} xs={12}>
-            <h2 className='text-center'>
-              Become a Supporter
-            </h2>
+            <h2 className='text-center'>Become a Supporter</h2>
             <DonateText />
           </Col>
           <Col sm={6} smOffset={3} xs={12}>

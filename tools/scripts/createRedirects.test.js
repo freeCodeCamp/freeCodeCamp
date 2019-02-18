@@ -36,9 +36,7 @@ describe('createRedirects', () => {
     const { api, forum } = testLocations;
     expect(redirects.includes(`${api}/internal/:splat`)).toBe(true);
     expect(
-      redirects.includes(
-        `${forum}/t/free-code-camp-privacy-policy/19545 301`
-      )
+      redirects.includes(`${forum}/t/free-code-camp-privacy-policy/19545 301`)
     ).toBe(true);
     expect(redirects.includes(`${forum}`)).toBe(true);
   });

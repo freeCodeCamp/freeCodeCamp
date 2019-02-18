@@ -55,11 +55,7 @@ async function translateChallenge(file) {
   ];
   return Promise.all(translatePromises).then(
     ([title, description, instructions, ...tests]) => {
-      const {
-        files = {},
-        solutions = [],
-        ...challengeMeta
-      } = challenge;
+      const { files = {}, solutions = [], ...challengeMeta } = challenge;
       const md = `---
 ${YAML.dump(
         Object.assign(challengeMeta, {

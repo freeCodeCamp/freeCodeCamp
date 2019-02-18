@@ -88,7 +88,7 @@ module.exports = function(app) {
         .then(() => {
           req.flash(
             'success',
-            'We\'ve successfully updated your email preferences.'
+            "We've successfully updated your email preferences."
           );
           return res.redirectWithFlash(
             `${homeLocation}/unsubscribed/${unsubscribeId}`
@@ -144,7 +144,7 @@ module.exports = function(app) {
         .then(() => {
           req.flash(
             'success',
-            'We\'ve successfully updated your email preferences. Thank you ' +
+            "We've successfully updated your email preferences. Thank you " +
               'for resubscribing.'
           );
           return res.redirectWithFlash(homeLocation);
@@ -175,7 +175,7 @@ module.exports = function(app) {
         }
         pulls = pulls
           ? Object.keys(JSON.parse(pulls)).length
-          : 'Can\'t connect to github';
+          : "Can't connect to github";
 
         return request(
           [
@@ -193,7 +193,7 @@ module.exports = function(app) {
             issues =
               pulls === parseInt(pulls, 10) && issues
                 ? Object.keys(JSON.parse(issues)).length - pulls
-                : 'Can\'t connect to GitHub';
+                : "Can't connect to GitHub";
             return res.send({
               issues: issues,
               pulls: pulls

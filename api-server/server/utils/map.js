@@ -32,64 +32,59 @@ const getFirstChallenge = _.once(_getFirstChallenge);
  */
 export function _cachedMap({ Block, Challenge }) {
   const challenges = Challenge.find$({
-    order: [ 'order ASC', 'suborder ASC' ],
+    order: ['order ASC', 'suborder ASC'],
     where: { isPrivate: false }
   });
-  const challengeMap = challenges
-    .map(
-      challenges => challenges
-        .map(challenge => challenge.toJSON())
-        .reduce((hash, challenge) => {
-          hash[challenge.dashedName] = challenge;
-          return hash;
-        }, {})
-    );
+  const challengeMap = challenges.map(challenges =>
+    challenges
+      .map(challenge => challenge.toJSON())
+      .reduce((hash, challenge) => {
+        hash[challenge.dashedName] = challenge;
+        return hash;
+      }, {})
+  );
   const blocks = Block.find$({
-    order: [ 'superOrder ASC', 'order ASC' ],
+    order: ['superOrder ASC', 'order ASC'],
     where: { isPrivate: false }
   });
   const blockMap = Observable.combineLatest(
-    blocks.map(
-      blocks => blocks
-        .map(block => block.toJSON())
-        .reduce((hash, block) => {
-          hash[block.dashedName] = block;
-          return hash;
-        }, {})
+    blocks.map(blocks =>
+      blocks.map(block => block.toJSON()).reduce((hash, block) => {
+        hash[block.dashedName] = block;
+        return hash;
+      }, {})
     ),
     challenges
-  )
-    .map(([ blocksMap, challenges ]) => {
-      return challenges.reduce((blocksMap, challenge) => {
-        if (blocksMap[challenge.block].challenges) {
-          blocksMap[challenge.block].challenges.push(challenge.dashedName);
-        } else {
-          blocksMap[challenge.block] = {
-            ...blocksMap[challenge.block],
-            challenges: [ challenge.dashedName ]
-          };
-        }
-        return blocksMap;
-      }, blocksMap);
-    });
-  const superBlockMap = blocks.map(blocks => blocks.reduce((map, block) => {
-    if (
-      map[block.superBlock] &&
-      map[block.superBlock].blocks
-    ) {
-      map[block.superBlock].blocks.push(block.dashedName);
-    } else {
-      map[block.superBlock] = {
-        title: _.startCase(block.superBlock),
-        order: block.superOrder,
-        name: nameify(_.startCase(block.superBlock)),
-        dashedName: block.superBlock,
-        blocks: [block.dashedName],
-        message: block.superBlockMessage
-      };
-    }
-    return map;
-  }, {}));
+  ).map(([blocksMap, challenges]) => {
+    return challenges.reduce((blocksMap, challenge) => {
+      if (blocksMap[challenge.block].challenges) {
+        blocksMap[challenge.block].challenges.push(challenge.dashedName);
+      } else {
+        blocksMap[challenge.block] = {
+          ...blocksMap[challenge.block],
+          challenges: [challenge.dashedName]
+        };
+      }
+      return blocksMap;
+    }, blocksMap);
+  });
+  const superBlockMap = blocks.map(blocks =>
+    blocks.reduce((map, block) => {
+      if (map[block.superBlock] && map[block.superBlock].blocks) {
+        map[block.superBlock].blocks.push(block.dashedName);
+      } else {
+        map[block.superBlock] = {
+          title: _.startCase(block.superBlock),
+          order: block.superOrder,
+          name: nameify(_.startCase(block.superBlock)),
+          dashedName: block.superBlock,
+          blocks: [block.dashedName],
+          message: block.superBlockMessage
+        };
+      }
+      return map;
+    }, {})
+  );
   const superBlocks = superBlockMap.map(superBlockMap => {
     return Object.keys(superBlockMap)
       .map(key => superBlockMap[key])
@@ -126,30 +121,25 @@ export function getChallengeById(map, id) {
   return Observable.if(
     () => !id,
     map.map(getFirstChallenge),
-    map.map(addNameIdMap)
-      .map(map => {
-        const {
-          entities: { challenge: challengeMap, challengeIdToName }
-        } = map;
-        let finalChallenge;
-        const dashedName = challengeIdToName[id];
-        finalChallenge = challengeMap[dashedName];
-        if (!finalChallenge) {
-          finalChallenge = getFirstChallenge(map);
-        }
-        return finalChallenge;
-      })
+    map.map(addNameIdMap).map(map => {
+      const {
+        entities: { challenge: challengeMap, challengeIdToName }
+      } = map;
+      let finalChallenge;
+      const dashedName = challengeIdToName[id];
+      finalChallenge = challengeMap[dashedName];
+      if (!finalChallenge) {
+        finalChallenge = getFirstChallenge(map);
+      }
+      return finalChallenge;
+    })
   );
 }
 
 export function getChallengeInfo(map) {
-  return map.map(addNameIdMap)
-    .map(({
-      entities: {
-        challenge: challengeMap,
-        challengeIdToName
-      }
-    }) => ({
+  return map
+    .map(addNameIdMap)
+    .map(({ entities: { challenge: challengeMap, challengeIdToName } }) => ({
       challengeMap,
       challengeIdToName
     }));
@@ -168,42 +158,37 @@ function loadComingSoonOrBetaChallenge({
 
 // this is a hard search
 // falls back to soft search
-export function getChallenge(
-  challengeDashedName,
-  blockDashedName,
-  map) {
-  return map
-    .flatMap(({ entities, result: { superBlocks } }) => {
-      const superBlock = entities.superBlock;
-      const block = entities.block[blockDashedName];
-      const challenge = entities.challenge[challengeDashedName];
-      return Observable.if(
-        () => (
-          !blockDashedName ||
-          !block ||
-          !challenge ||
-          !loadComingSoonOrBetaChallenge(challenge)
-        ),
-        getChallengeByDashedName(challengeDashedName, map),
-        Observable.just({ block, challenge })
-      )
-        .map(({ challenge, block }) => ({
-          redirect: challenge.block !== blockDashedName ?
-            `/challenges/${block.dashedName}/${challenge.dashedName}` :
-            false,
-          entities: {
-            superBlock,
-            challenge: {
-              [challenge.dashedName]: challenge
-            }
-          },
-          result: {
-            block: block.dashedName,
-            challenge: challenge.dashedName,
-            superBlocks
-          }
-        }));
-    });
+export function getChallenge(challengeDashedName, blockDashedName, map) {
+  return map.flatMap(({ entities, result: { superBlocks } }) => {
+    const superBlock = entities.superBlock;
+    const block = entities.block[blockDashedName];
+    const challenge = entities.challenge[challengeDashedName];
+    return Observable.if(
+      () =>
+        !blockDashedName ||
+        !block ||
+        !challenge ||
+        !loadComingSoonOrBetaChallenge(challenge),
+      getChallengeByDashedName(challengeDashedName, map),
+      Observable.just({ block, challenge })
+    ).map(({ challenge, block }) => ({
+      redirect:
+        challenge.block !== blockDashedName
+          ? `/challenges/${block.dashedName}/${challenge.dashedName}`
+          : false,
+      entities: {
+        superBlock,
+        challenge: {
+          [challenge.dashedName]: challenge
+        }
+      },
+      result: {
+        block: block.dashedName,
+        challenge: challenge.dashedName,
+        superBlocks
+      }
+    }));
+  });
 }
 
 export function getBlockForChallenge(map, challenge) {
@@ -211,19 +196,21 @@ export function getBlockForChallenge(map, challenge) {
 }
 
 export function getChallengeByDashedName(dashedName, map) {
-  const challengeName = unDasherize(dashedName)
-    .replace(challengesRegex, '');
+  const challengeName = unDasherize(dashedName).replace(challengesRegex, '');
   const testChallengeName = new RegExp(challengeName, 'i');
 
   return map
     .map(({ entities }) => entities.challenge)
     .flatMap(challengeMap => {
-      return Observable.from(Object.keys(challengeMap))
-        .map(key => challengeMap[key]);
+      return Observable.from(Object.keys(challengeMap)).map(
+        key => challengeMap[key]
+      );
     })
     .filter(challenge => {
-      return loadComingSoonOrBetaChallenge(challenge) &&
-        testChallengeName.test(challenge.name);
+      return (
+        loadComingSoonOrBetaChallenge(challenge) &&
+        testChallengeName.test(challenge.name)
+      );
     })
     .last({ defaultValue: null })
     .flatMap(challengeOrNull => {
@@ -234,8 +221,9 @@ export function getChallengeByDashedName(dashedName, map) {
       );
     })
     .flatMap(challenge => {
-      return getBlockForChallenge(map, challenge)
-        .map(block => ({ challenge, block }));
+      return getBlockForChallenge(map, challenge).map(block => ({
+        challenge,
+        block
+      }));
     });
 }
-
