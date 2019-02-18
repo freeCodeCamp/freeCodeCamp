@@ -37,6 +37,14 @@ npx create-react-app my-app
 You can find more toolchains which support server-rendered website or static content-oriented website at [Create a New React App](https://reactjs.org/docs/create-a-new-react-app.html).
 
 
+### Boilerplate Projects
+There are many well maintained and powerful React boilerplate starter projects in the open source ecosystem. If Create-React-App doesn't quite fit your needs but you don't want to learn all the intricacies of webpack before starting a React project, these can be a big help. 
+
+*Some popular boilerplates:*
+- [React Boilerplate](https://www.reactboilerplate.com/): Includes support for i18n, styled components, dynamic reducers and testing. The powerhouse of the boilerplate world.
+- [React-Starter-Kit](https://github.com/kriasoft/react-starter-kit): Graphql, Node, express and more. 
+- [React Redux Universal Hot Example](https://github.com/erikras/react-redux-universal-hot-example): Redux-form and mocha are some of the highlights of this one. 
+
 #### Sources
 [1. The React tutorial on installing](https://reactjs.org/docs/installation.html)
 
