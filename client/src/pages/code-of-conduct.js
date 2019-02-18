@@ -10,15 +10,9 @@ const CodeOfConductPage = () => {
     <Fragment>
       <Helmet title='Code of Conduct | freeCodeCamp.org' />
       <Spacer />
-      <Grid className='container'>
+      <Grid>
         <Row>
-          <Col
-            md={6}
-            mdOffset={3}
-            sm={10}
-            smOffset={1}
-            xs={12}
-            >
+          <Col md={6} mdOffset={3} sm={10} smOffset={1} xs={12}>
             <h2 className='text-center'>Code of Conduct</h2>
             <hr />
             <p>
@@ -30,11 +24,11 @@ const CodeOfConductPage = () => {
               conduct.
             </p>
             <p>In short: Be nice. No harassment, trolling, or spamming.</p>
-            <ul style={{ 'margin-top': '0', 'margin-bottom': '10px' }} >
+            <ul style={{ 'margin-top': '0', 'margin-bottom': '10px' }}>
               <li>
-                <strong>Harassment</strong> includes sexual language and imagery,
-                deliberate intimidation, stalking, name-calling, unwelcome
-                attention, libel, and any malicious hacking or social
+                <strong>Harassment</strong> includes sexual language and
+                imagery, deliberate intimidation, stalking, name-calling,
+                unwelcome attention, libel, and any malicious hacking or social
                 engineering. freeCodeCamp should be a harassment-free experience
                 for everyone, regardless of gender, gender identity and
                 expression, age, sexual orientation, disability, physical
@@ -42,8 +36,8 @@ const CodeOfConductPage = () => {
                 lack thereof).
               </li>
               <li>
-                <strong>Trolling</strong> includes posting inflammatory comments to
-                provoke an emotional response or disrupt discussions.
+                <strong>Trolling</strong> includes posting inflammatory comments
+                to provoke an emotional response or disrupt discussions.
               </li>
               <li>
                 <strong>Spamming</strong> includes posting off-topic messages to
@@ -59,17 +53,14 @@ const CodeOfConductPage = () => {
               <Link to='https://gitter.im/freecodecamp/admin'>
                 admin chat room
               </Link>{' '}
-              - preferably with a screen shot of the offense. The
-              moderator team will take any action we deem appropriate, up to and
-              including banning the offender from freeCodeCamp.
+              - preferably with a screen shot of the offense. The moderator team
+              will take any action we deem appropriate, up to and including
+              banning the offender from freeCodeCamp.
             </p>
             <p>
               Also, no bots are allowed in the freeCodeCamp community without
               prior written permission from{' '}
-              <Link to='https://gitter.im/quincylarson'>
-                Quincy Larson
-              </Link>
-              .
+              <Link to='https://gitter.im/quincylarson'>Quincy Larson</Link>.
             </p>
           </Col>
         </Row>

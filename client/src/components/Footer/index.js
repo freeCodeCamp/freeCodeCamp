@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import { Grid, Row, Col } from '@freecodecamp/react-bootstrap';
 
 import Link from '../helpers/Link';
@@ -15,12 +16,6 @@ const ColHeader = ({ children, ...other }) => (
   </div>
 );
 ColHeader.propTypes = propTypes;
-
-const linkPropTypes = {
-  children: PropTypes.any,
-  external: PropTypes.bool,
-  to: PropTypes.string.isRequired
-};
 
 function Footer() {
   return (
@@ -73,13 +68,9 @@ function Footer() {
             <Link to='https://gitter.im/FreeCodeCamp/home'>Gitter</Link>
             <Link to='https://github.com/freeCodeCamp/'>GitHub</Link>
             <Link to='/support'>Support</Link>
-            <Link to='/code-of-conduct'>
-              Code of Conduct
-            </Link>
+            <Link to='/code-of-conduct'>Code of Conduct</Link>
             <Link to='/privacy-policy'>Privacy Policy</Link>
-            <Link to='/terms-of-service'>
-              Terms of Service
-            </Link>
+            <Link to='/terms-of-service'>Terms of Service</Link>
           </Col>
           <Col lg={3} sm={2} xs={12}>
             <ColHeader>Our Learning Resources</ColHeader>

@@ -27,7 +27,7 @@ const AboutPage = () => {
     <Fragment>
       <Helmet title='About the freeCodeCamp community | freeCodeCamp.org' />
       <Spacer />
-      <Grid className='container'>
+      <Grid>
         <Row>
           <Col
             className='questions'
@@ -36,7 +36,7 @@ const AboutPage = () => {
             sm={10}
             smOffset={1}
             xs={12}
-            >
+          >
             <h2 className='text-center'>Frequently Asked Questions</h2>
             <hr />
             <h4>What is freeCodeCamp?</h4>
@@ -47,24 +47,19 @@ const AboutPage = () => {
             </p>
             <h4>How can you help me learn to code?</h4>
             <p>
-              You'll learn to code by completing coding challenges and
-              building projects. You'll also earn verified certifications
-              along the way. We also encourage you to join a study group in
-              your city so you can code in-person with other people.
+              You'll learn to code by completing coding challenges and building
+              projects. You'll also earn verified certifications along the way.
+              We also encourage you to join a study group in your city so you
+              can code in-person with other people.
             </p>
             <h4>Is freeCodeCamp really free?</h4>
             <p>Yes. Every aspect of freeCodeCamp is 100% free.</p>
-            <h4>
-              Can freeCodeCamp help me get a job as a software developer?
-            </h4>
+            <h4>Can freeCodeCamp help me get a job as a software developer?</h4>
             <p>
               Yes. Every year, thousands of people who join the freeCodeCamp
               community get their first software developer job. If you're
               curious, you can{' '}
-              <Link
-                external={true}
-                to='https://www.linkedin.com/school/4831032/alumni/'
-                >
+              <Link to='https://www.linkedin.com/school/4831032/alumni/'>
                 browse our alumni network on LinkedIn here
               </Link>
               .
@@ -73,31 +68,19 @@ const AboutPage = () => {
             <p>
               If you add up all the people who use our learning platform, read
               our{' '}
-              <Link
-                external={true}
-                to='https://medium.freecodecamp.org'
-                >
+              <Link to='https://medium.freecodecamp.org'>
                 Medium publication
               </Link>
               , watch our{' '}
-              <Link
-                external={true}
-                to='https://youtube.com/freecodecamp'
-                >
-                YouTube channel
-              </Link>
+              <Link to='https://youtube.com/freecodecamp'>YouTube channel</Link>
               , and post on <Link to='/forum'>our forum</Link>, each month we
               help millions of people learn about coding and technology.
             </p>
             <h4>Is freeCodeCamp a nonprofit?</h4>
             <p>
               Yes, we are a 501(c)(3){' '}
-              <Link to='/donate'>donor-supported public charity</Link>. You
-              can{' '}
-              <Link
-                external={true}
-                to='https://s3.amazonaws.com/freecodecamp/Free+Code+Camp+Inc+IRS+Determination+Letter.pdf'
-                >
+              <Link to='/donate'>donor-supported public charity</Link>. You can{' '}
+              <Link to='https://s3.amazonaws.com/freecodecamp/Free+Code+Camp+Inc+IRS+Determination+Letter.pdf'>
                 download our IRS Determination Letter here
               </Link>
               .
@@ -129,10 +112,10 @@ const AboutPage = () => {
             </p>
             <h4>Is freeCodeCamp a replacement for a 4-year degree?</h4>
             <p>
-              No. Please don’t drop out of college just to pursue
-              freeCodeCamp. You can pursue both concurrently. Even though you
-              don’t need a 4-year degree to work as a software developer, it
-              still helps a lot.
+              No. Please don’t drop out of college just to pursue freeCodeCamp.
+              You can pursue both concurrently. Even though you don’t need a
+              4-year degree to work as a software developer, it still helps a
+              lot.
             </p>
             <h4>Should I complete all of the coding challenges in order?</h4>
             <p>
@@ -142,81 +125,60 @@ const AboutPage = () => {
             <h4>Do I have to use CodePen for the front end projects?</h4>
             <p>
               As long as your code is publicly viewable somewhere on the
-              internet, and you have a live demo, you can use whatever tools
-              you want.
+              internet, and you have a live demo, you can use whatever tools you
+              want.
             </p>
             <h4>How did freeCodeCamp get started?</h4>
             <p>
-              <Link
-                external={true}
-                to='https://www.twitter.com/ossia'
-                >
-                Quincy
-              </Link>{' '}
-              started the freeCodeCamp community in 2014. He is now just one
-              of thousands of active contributors.
+              <Link to='https://www.twitter.com/ossia'>Quincy</Link> started the
+              freeCodeCamp community in 2014. He is now just one of thousands of
+              active contributors.
             </p>
             <h4>
               I'm a teacher. Is freeCodeCamp an appropriate resource for my
               className?
             </h4>
             <p>
-              Yes. Many high school, college, and adult ed programs
-              incorporate freeCodeCamp into their coursework. We're open
-              source, so no license or special permission from us is
-              necessary. We're even building special tools for teachers.
+              Yes. Many high school, college, and adult ed programs incorporate
+              freeCodeCamp into their coursework. We're open source, so no
+              license or special permission from us is necessary. We're even
+              building special tools for teachers.
             </p>
             <h4>
               Can I live-stream myself working on freeCodeCamp challenges and
               projects? Can I blog about how I solved them?
             </h4>
             <p>
-              Yes. We welcome this. Also, don't be shy about "spoiling"
-              projects or challenges. The solutions to all of these challenges
-              are already all over the internet.
+              Yes. We welcome this. Also, don't be shy about "spoiling" projects
+              or challenges. The solutions to all of these challenges are
+              already all over the internet.
             </p>
             <h4>
-              Can I create apps or tools based around the freeCodeCamp
-              community and platform?
+              Can I create apps or tools based around the freeCodeCamp community
+              and platform?
             </h4>
             <p>
               Yes. freeCodeCamp is open source (BSD-3 license), and most
               non-sensitive freeCodeCamp data is publicly available. But you
               must make it clear that you don't represent freeCodeCamp itself,
-              and that your project is not officially endorsed by
-              freeCodeCamp.
+              and that your project is not officially endorsed by freeCodeCamp.
             </p>
             <h4>Does freeCodeCamp have a mobile app?</h4>
             <p>
               You can learn on the go by listening to the{' '}
-              <Link
-                external={true}
-                to='https://podcast.freecodecamp.org'
-                >
+              <Link to='https://podcast.freecodecamp.org'>
                 freeCodeCamp Podcast
               </Link>{' '}
               or watching{' '}
-              <Link
-                external={true}
-                to='https://youtube.com/freecodecamp'
-                >
+              <Link to='https://youtube.com/freecodecamp'>
                 freeCodeCamp's YouTube channel
               </Link>
-              . And if you want a mobile app designed specifically for
-              learning to code, we recommend Grasshopper. It's free and
-              designed by a freeCodeCamp contributor and her team. You can
-              download it on{' '}
-              <Link
-                external={true}
-                to='https://itunes.apple.com/us/app/id1354133284'
-                >
-                iOS
-              </Link>{' '}
+              . And if you want a mobile app designed specifically for learning
+              to code, we recommend Grasshopper. It's free and designed by a
+              freeCodeCamp contributor and her team. You can download it on{' '}
+              <Link to='https://itunes.apple.com/us/app/id1354133284'>iOS</Link>{' '}
               or{' '}
-              <Link
-                external={true}
-                to='https://play.google.com/store/apps/details?id=com.area120.grasshopper&hl=en'
-                >
+              <Link to='https://play.google.com/store/apps/details?id=com.area120.grasshopper&hl=en'>
                 Android
               </Link>
               .
@@ -224,12 +186,9 @@ const AboutPage = () => {
             <h4>Can I get a job at freeCodeCamp?</h4>
             <p>
               We're a small donor-supported nonprofit. We've hired several
-              prominent contributors from within the freeCodeCamp community,
-              but you're much more likely to get a job at{' '}
-              <Link
-                external={true}
-                to='https://www.linkedin.com/school/free-code-camp/alumni/'
-                >
+              prominent contributors from within the freeCodeCamp community, but
+              you're much more likely to get a job at{' '}
+              <Link to='https://www.linkedin.com/school/free-code-camp/alumni/'>
                 one of the hundreds of companies
               </Link>{' '}
               where freeCodeCamp alumni work.
@@ -266,7 +225,7 @@ const AboutPage = () => {
             sm={10}
             smOffset={1}
             xs={12}
-            >
+          >
             <h2 className='text-center'>Helpful Links</h2>
             <hr />
             <Table>
@@ -276,10 +235,7 @@ const AboutPage = () => {
                     <FontAwesomeIcon icon={faYoutube} />
                   </td>
                   <td>
-                    <Link
-                      external={true}
-                      to='https://youtube.com/freecodecamp'
-                      >
+                    <Link to='https://youtube.com/freecodecamp'>
                       Our YouTube channel
                     </Link>
                   </td>
@@ -289,10 +245,7 @@ const AboutPage = () => {
                     <FontAwesomeIcon icon={faGithub} />
                   </td>
                   <td>
-                    <Link
-                      external={true}
-                      to='https://github.com/freecodecamp/'
-                      >
+                    <Link to='https://github.com/freecodecamp/'>
                       Our GitHub organization
                     </Link>
                   </td>
@@ -302,10 +255,7 @@ const AboutPage = () => {
                     <FontAwesomeIcon icon={faLinkedin} />
                   </td>
                   <td>
-                    <Link
-                      external={true}
-                      to='https://www.linkedin.com/edu/school?id=166029'
-                      >
+                    <Link to='https://www.linkedin.com/edu/school?id=166029'>
                       Our LinkedIn university page
                     </Link>
                   </td>
@@ -315,10 +265,7 @@ const AboutPage = () => {
                     <FontAwesomeIcon icon={faMedium} />
                   </td>
                   <td>
-                    <Link
-                      external={true}
-                      to='https://medium.freecodecamp.org'
-                      >
+                    <Link to='https://medium.freecodecamp.org'>
                       Our Medium publication
                     </Link>
                   </td>
@@ -328,10 +275,7 @@ const AboutPage = () => {
                     <FontAwesomeIcon icon={faTwitter} />
                   </td>
                   <td>
-                    <Link
-                      external={true}
-                      to='https://twitter.com/freecodecamp'
-                      >
+                    <Link to='https://twitter.com/freecodecamp'>
                       Our Twitter feed
                     </Link>
                   </td>
@@ -341,10 +285,7 @@ const AboutPage = () => {
                     <FontAwesomeIcon icon={faFacebook} />
                   </td>
                   <td>
-                    <Link
-                      external={true}
-                      to='https://facebook.com/freecodecamp'
-                      >
+                    <Link to='https://facebook.com/freecodecamp'>
                       Our Facebook page
                     </Link>
                   </td>
@@ -354,9 +295,7 @@ const AboutPage = () => {
                     <FontAwesomeIcon icon={faLock} />
                   </td>
                   <td>
-                    <Link to='/privacy-policy'>
-                      Our privacy policy
-                    </Link>
+                    <Link to='/privacy-policy'>Our privacy policy</Link>
                   </td>
                 </tr>
                 <tr>
@@ -364,9 +303,7 @@ const AboutPage = () => {
                     <FontAwesomeIcon icon={faBalanceScale} />
                   </td>
                   <td>
-                    <Link to='/code-of-conduct'>
-                      Our code of conduct
-                    </Link>
+                    <Link to='/code-of-conduct'>Our code of conduct</Link>
                   </td>
                 </tr>
                 <tr>
@@ -384,9 +321,7 @@ const AboutPage = () => {
                     <FontAwesomeIcon icon={faBook} />
                   </td>
                   <td>
-                    <Link to='/terms-of-service'>
-                      Our terms of service
-                    </Link>
+                    <Link to='/terms-of-service'>Our terms of service</Link>
                   </td>
                 </tr>
               </tbody>

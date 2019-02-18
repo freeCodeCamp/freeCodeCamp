@@ -12,7 +12,7 @@ const SupportPage = () => {
     <Fragment>
       <Helmet title='Support | freeCodeCamp.org' />
       <Spacer />
-      <Grid className='container'>
+      <Grid>
         <Row>
           <Col
             className='questions'
@@ -21,7 +21,7 @@ const SupportPage = () => {
             sm={10}
             smOffset={1}
             xs={12}
-            >
+          >
             <h2 className='text-center'>Common Technical Support Questions</h2>
             <hr />
             <h4 id='faq_progress'>
@@ -30,13 +30,10 @@ const SupportPage = () => {
             </h4>
             <p>
               You have created a duplicate account.{' '}
-              <Link to='/settings'>
-                Sign out of your account
-              </Link>{' '}
-              and try signing in using a different service (Google, GitHub,
-              Facebook) that you may have used to in the past. Or try signing in
-              using an email address you may have used on freeCodeCamp in the
-              past.
+              <Link to='/settings'>Sign out of your account</Link> and try
+              signing in using a different service (Google, GitHub, Facebook)
+              that you may have used to in the past. Or try signing in using an
+              email address you may have used on freeCodeCamp in the past.
             </p>
             <h4 id='faq_donation'>
               I set up a monthly donation, but I need to update or cancel the
@@ -68,17 +65,14 @@ const SupportPage = () => {
               freeCodeCamp. Thanks for your patience.
             </p>
             <h4>
-              When I go to{' '}
-              <Link to='/learn'>
-                Learning Curriculum
-              </Link>{' '}
-              the challenges are completely blank.
+              When I go to <Link to='/learn'>Learning Curriculum</Link> the
+              challenges are completely blank.
             </h4>
             <p>
               Do a hard refresh of the website by pressing control+shift+r in
               Windows or command+shift+r on Mac/Linux. If that doesn't work, you
               may need to clear your cookies. Here is{' '}
-              <Link to='/forum/t/205075'>
+              <Link external={true} to='/forum/t/205075'>
                 how to clear specific cookies
               </Link>
               .
@@ -89,7 +83,7 @@ const SupportPage = () => {
             </h4>
             <p>
               This is caused by an infinite loop in your code editor.{' '}
-              <Link to='/forum/t/19550'>
+              <Link external={true} to='/forum/t/19550'>
                 Here's how to fix this
               </Link>
               .

@@ -10,11 +10,9 @@ import './sponsors.css';
 const SponsorsPage = () => {
   return (
     <Fragment>
-      <Helmet
-        title='Sponsors who help freeCodeCamp through financial and in-kind sponsorship | freeCodeCamp.org'
-      />
+      <Helmet title='Sponsors who help freeCodeCamp through financial and in-kind sponsorship | freeCodeCamp.org' />
       <Spacer />
-      <Grid className='container'>
+      <Grid>
         <Row className='text-center'>
           <Col md={8} mdOffset={2} sm={10} smOffset={1} xs={12}>
             <h2>Financial Sponsors</h2>
@@ -23,20 +21,14 @@ const SponsorsPage = () => {
             </h3>
             <hr />
             <Row className='sponsor-logos'>
-              <Link
-                external={true}
-                to='https://www.class-central.com'
-                >
+              <Link to='https://www.class-central.com'>
                 <img
                   alt="Class Central's logo"
                   className='img-responsive sponsor-logo'
                   src='https://s3.amazonaws.com/freecodecamp/class-central-logo.jpg'
                 />
               </Link>
-              <Link
-                external={true}
-                to='https://www.tsugicloud.org'
-                >
+              <Link to='https://www.tsugicloud.org'>
                 <img
                   alt="TsugiCloud's logo"
                   className='img-responsive sponsor-logo'
@@ -48,30 +40,21 @@ const SponsorsPage = () => {
             <h3>These companies donate their services to freeCodeCamp.org</h3>
             <hr />
             <Row className='sponsor-logos'>
-              <Link
-                external={true}
-                to='https://netlify.com'
-                >
+              <Link to='https://netlify.com'>
                 <img
                   alt="Netlify's logo"
                   className='img-responsive sponsor-logo'
                   src='https://s3.amazonaws.com/freecodecamp/netlify-logo.jpg'
                 />
               </Link>
-              <Link
-                external={true}
-                to='https://www.mlab.com/'
-                >
+              <Link to='https://www.mlab.com/'>
                 <img
                   alt="mLab's logo"
                   className='img-responsive sponsor-logo'
                   src='https://s3.amazonaws.com/freecodecamp/mLab-logo.png'
                 />
               </Link>
-              <Link
-                external={true}
-                to='https://auth0.com'
-                >
+              <Link to='https://auth0.com'>
                 <img
                   alt="Auth0's logo"
                   className='img-responsive sponsor-logo'
@@ -80,30 +63,21 @@ const SponsorsPage = () => {
               </Link>
             </Row>
             <Row className='sponsor-logos'>
-              <Link
-                external={true}
-                to='https://www.discourse.org/'
-                >
+              <Link to='https://www.discourse.org/'>
                 <img
                   alt="Discourse's logo"
                   className='img-responsive sponsor-logo'
                   src='https://s3.amazonaws.com/freecodecamp/discourse-logo.png'
                 />
               </Link>
-              <Link
-                external={true}
-                to='https://algolia.com'
-                >
+              <Link to='https://algolia.com'>
                 <img
                   alt="Algolia's logo"
                   className='img-responsive sponsor-logo'
                   src='https://s3.amazonaws.com/freecodecamp/algolia-logo.jpg'
                 />
               </Link>
-              <Link
-                external={true}
-                to='https://cloudflare.com'
-                >
+              <Link to='https://cloudflare.com'>
                 <img
                   alt="Cloudflare's logo"
                   className='img-responsive sponsor-logo'
