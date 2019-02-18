@@ -22,7 +22,7 @@ Change the display of the div with the <code>container</code> class to <code>gri
 ```yml
 tests:
   - text: <code>container</code> class should have a <code>display</code> property with a value of <code>grid</code>.
-    testString: 'assert(code.match(/.container\s*?{[\s\S]*display\s*?:\s*?grid\s*?;[\s\S]*}/gi), "<code>container</code> class should have a <code>display</code> property with a value of <code>grid</code>.");'
+    testString: assert(code.match(/.container\s*?{[\s\S]*display\s*?:\s*?grid\s*?;[\s\S]*}/gi), '<code>container</code> class should have a <code>display</code> property with a value of <code>grid</code>.');
 
 ```
 

@@ -1,5 +1,0 @@
-
-tlocaleTitle: Contrapositivo inverso inverso
-itle: Contrapositivo inverso inverso
-
-Em Matemática Discreta, dada uma declaração condicional "se a, depois b", nós pode ter 3 declarações relacionadas: Qualquer declaração condicional é composta de duas partes: i) Hipótese ("se"): ii) Conclusão ("então"): "Se a, então b" pode ser representado como: a → b Suponha um exemplo: "Se não há escola, então é o fim de semana." p → q • Para obter o inverso da declaração condicional acima, as hipóteses de intercâmbio esis e a conclusão. q → p Assim, o inverso será: "Se é fim de semana, então não há escola." • Para obter o inverso da declaração condicional acima, tome a negação de ambas as hipóteses e a conclusão. →p → ¬q Assim, o inverso será: "Se há escola, então é dia da semana." • Para obter o Contrapositivo da declaração condicional acima, o intercâmbio a hipótese e a conclusão da afirmação inversa. →q → ¬p Assim, o contrapositivo será: "Se é dia da semana, então há escola."

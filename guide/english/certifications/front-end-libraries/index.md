@@ -7,7 +7,7 @@ A Front End library is a file or a piece of pre-written code that is helpful to 
 
 These code libraries help their users to minimize their time in writing long lines of code, and increase their productivity. For example- Front end libraries like [Bootstrap](https://getbootstrap.com/) provide a framework for users to build upon and reduces the time consumed, while allowing flexibility to the user.
 
-Libraries can be opinionated or non-opionated, i.e. leaving some choices to the user and not leaving any choice for the user respectively.
+Libraries can be opinionated or non-opinionated, i.e. leaving some choices to the user and not leaving any choice for the user respectively.
 
 Since these are front-end libraries, they work with HTML, CSS and JavaScript and modify the layout, style and behavious of the page in a browser respectively.
 

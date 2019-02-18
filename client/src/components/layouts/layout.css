@@ -1,6 +1,7 @@
 html {
   font-family: 'Lato', sans-serif;
   -ms-text-size-adjust: 100%;
+  -moz-text-size-adjust: 100%;
   -webkit-text-size-adjust: 100%;
 }
 body {
@@ -39,7 +40,6 @@ template {
 }
 a {
   background-color: transparent;
-  -webkit-text-decoration-skip: objects;
 }
 a:active,
 a:hover {
@@ -122,12 +122,6 @@ button,
 select {
   text-transform: none;
 }
-[type='reset'],
-[type='submit'],
-button,
-html [type='button'] {
-  -webkit-appearance: button;
-}
 [type='button']::-moz-focus-inner,
 [type='reset']::-moz-focus-inner,
 [type='submit']::-moz-focus-inner,
@@ -203,7 +197,6 @@ body {
   word-wrap: break-word;
   font-kerning: normal;
   -moz-font-feature-settings: 'kern', 'liga', 'clig', 'calt';
-  -ms-font-feature-settings: 'kern', 'liga', 'clig', 'calt';
   -webkit-font-feature-settings: 'kern', 'liga', 'clig', 'calt';
   font-feature-settings: 'kern', 'liga', 'clig', 'calt';
 }
@@ -575,7 +568,6 @@ th {
   border-bottom: 1px solid hsla(0, 0%, 0%, 0.12);
   font-feature-settings: 'tnum';
   -moz-font-feature-settings: 'tnum';
-  -ms-font-feature-settings: 'tnum';
   -webkit-font-feature-settings: 'tnum';
   padding-left: 0.96667rem;
   padding-right: 0.96667rem;
@@ -622,6 +614,6 @@ pre tt:after {
     font-size: 100%;
   }
 }
-main {
-  margin-top: 38px;
+.default-layout {
+  margin-top: var(--header-height);
 }

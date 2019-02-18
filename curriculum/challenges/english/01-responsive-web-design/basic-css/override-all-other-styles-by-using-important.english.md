@@ -26,17 +26,17 @@ An example of how to do this is:
 ```yml
 tests:
   - text: Your <code>h1</code> element should have the class <code>pink-text</code>.
-    testString: 'assert($("h1").hasClass("pink-text"), "Your <code>h1</code> element should have the class <code>pink-text</code>.");'
+    testString: assert($("h1").hasClass("pink-text"), 'Your <code>h1</code> element should have the class <code>pink-text</code>.');
   - text: Your <code>h1</code> element should have the class <code>blue-text</code>.
-    testString: 'assert($("h1").hasClass("blue-text"), "Your <code>h1</code> element should have the class <code>blue-text</code>.");'
+    testString: assert($("h1").hasClass("blue-text"), 'Your <code>h1</code> element should have the class <code>blue-text</code>.');
   - text: Your <code>h1</code> element should have the id of <code>orange-text</code>.
-    testString: 'assert($("h1").attr("id") === "orange-text", "Your <code>h1</code> element should have the id of <code>orange-text</code>.");'
-  - text: 'Your <code>h1</code> element should have the inline style of <code>color&#58; white</code>.'
-    testString: 'assert(code.match(/<h1.*style/gi) && code.match(/<h1.*style.*color\s*?:/gi), "Your <code>h1</code> element should have the inline style of <code>color&#58; white</code>.");'
+    testString: assert($("h1").attr("id") === "orange-text", 'Your <code>h1</code> element should have the id of <code>orange-text</code>.');
+  - text: Your <code>h1</code> element should have the inline style of <code>color&#58; white</code>.
+    testString: assert(code.match(/<h1.*style/gi) && code.match(/<h1.*style.*color\s*?:/gi), 'Your <code>h1</code> element should have the inline style of <code>color&#58; white</code>.');
   - text: Your <code>pink-text</code> class declaration should have the <code>!important</code> keyword to override all other declarations.
-    testString: 'assert(code.match(/\.pink-text\s*?\{[\s\S]*?color:.*pink.*!important\s*;?[^\.]*\}/g), "Your <code>pink-text</code> class declaration should have the <code>!important</code> keyword to override all other declarations.");'
+    testString: assert(code.match(/\.pink-text\s*?\{[\s\S]*?color:.*pink.*!important\s*;?[^\.]*\}/g), 'Your <code>pink-text</code> class declaration should have the <code>!important</code> keyword to override all other declarations.');
   - text: Your <code>h1</code> element should be pink.
-    testString: 'assert($("h1").css("color") === "rgb(255, 192, 203)", "Your <code>h1</code> element should be pink.");'
+    testString: assert($("h1").css("color") === "rgb(255, 192, 203)", 'Your <code>h1</code> element should be pink.');
 
 ```
 

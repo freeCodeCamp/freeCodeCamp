@@ -1,9 +1,6 @@
 ---
 id: 587d7dbf367417b2b2512bbc
 title: Split Your Styles into Smaller Chunks with Partials
-required:
-  - src: 'https://cdnjs.cloudflare.com/ajax/libs/sass.js/0.10.9/sass.sync.min.js'
-    raw: true
 challengeType: 0
 ---
 
@@ -26,8 +23,8 @@ Write an <code>@import</code> statement to import a <code>partial</code> named <
 
 ```yml
 tests:
-  - text: 'Your code should use the <code>@import</code> directive, and should not include the underscore in the file name.'
-    testString: 'assert(code.match(/@import\s+?("|")variables\1/gi), "Your code should use the <code>@import</code> directive, and should not include the underscore in the file name.");'
+  - text: Your code should use the <code>@import</code> directive, and should not include the underscore in the file name.
+    testString: assert(code.match(/@import\s+?('|")variables\1/gi), 'Your code should use the <code>@import</code> directive, and should not include the underscore in the file name.');
 
 ```
 

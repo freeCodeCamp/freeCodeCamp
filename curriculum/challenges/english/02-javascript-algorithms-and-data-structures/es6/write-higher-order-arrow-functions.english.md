@@ -26,17 +26,17 @@ Use arrow function syntax to compute the square of only the positive integers (d
 ```yml
 tests:
   - text: <code>squaredIntegers</code> should be a constant variable (by using <code>const</code>).
-    testString: 'getUserInput => assert(getUserInput("index").match(/const\s+squaredIntegers/g), "<code>squaredIntegers</code> should be a constant variable (by using <code>const</code>).");'
+    testString: getUserInput => assert(getUserInput('index').match(/const\s+squaredIntegers/g), '<code>squaredIntegers</code> should be a constant variable (by using <code>const</code>).');
   - text: <code>squaredIntegers</code> should be an <code>array</code>
-    testString: 'assert(Array.isArray(squaredIntegers), "<code>squaredIntegers</code> should be an <code>array</code>");'
-  - text: '<code>squaredIntegers</code> should be <code>[16, 1764, 36]</code>'
-    testString: 'assert.deepStrictEqual(squaredIntegers, [16, 1764, 36], "<code>squaredIntegers</code> should be <code>[16, 1764, 36]</code>");'
+    testString: assert(Array.isArray(squaredIntegers), '<code>squaredIntegers</code> should be an <code>array</code>');
+  - text: <code>squaredIntegers</code> should be <code>[16, 1764, 36]</code>
+    testString: assert.deepStrictEqual(squaredIntegers, [16, 1764, 36], '<code>squaredIntegers</code> should be <code>[16, 1764, 36]</code>');
   - text: <code>function</code> keyword was not used.
-    testString: 'getUserInput => assert(!getUserInput("index").match(/function/g), "<code>function</code> keyword was not used.");'
+    testString: getUserInput => assert(!getUserInput('index').match(/function/g), '<code>function</code> keyword was not used.');
   - text: loop should not be used
-    testString: 'getUserInput => assert(!getUserInput("index").match(/(for)|(while)/g), "loop should not be used");'
-  - text: '<code>map</code>, <code>filter</code>, or <code>reduce</code> should be used'
-    testString: 'getUserInput => assert(getUserInput("index").match(/map|filter|reduce/g), "<code>map</code>, <code>filter</code>, or <code>reduce</code> should be used");'
+    testString: getUserInput => assert(!getUserInput('index').match(/(for)|(while)/g), 'loop should not be used');
+  - text: <code>map</code>, <code>filter</code>, or <code>reduce</code> should be used
+    testString: getUserInput => assert(getUserInput('index').match(/map|filter|reduce/g), '<code>map</code>, <code>filter</code>, or <code>reduce</code> should be used');
 
 ```
 
@@ -71,6 +71,16 @@ console.log(squaredIntegers);
 <section id='solution'>
 
 ```js
-// solution required
+const realNumberArray = [4, 5.6, -9.8, 3.14, 42, 6, 8.34, -2];
+const squareList = (arr) => {
+  "use strict";
+  // change code below this line
+  const squaredIntegers = arr.filter(num => Number.isInteger(num) && num > 0).map((x) => x * x);
+  // change code above this line
+  return squaredIntegers;
+};
+// test your code
+const squaredIntegers = squareList(realNumberArray);
+console.log(squaredIntegers);
 ```
 </section>

@@ -10,7 +10,10 @@ function createPlugin() {
         const solutions = selectAll('code', node).map(
           element => element.children[0].value
         );
-        file.data.solutions = solutions;
+        file.data = {
+          ...file.data,
+          solutions
+        };
       }
     }
     visit(tree, 'element', visitor);

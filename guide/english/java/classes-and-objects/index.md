@@ -7,8 +7,8 @@ Classes are groups of variables and operations on them. A class can have variabl
 
 A class may contain any of the following variable types.
 
-* Class Variables: These are the variables that are declared inside the class definition, outside any method, with the static keyword. A class variable is shared across all the instances of a class. Class variables are also known as the static variables, they are initialised only once at the time of the compilation of the class hence only single copy of this is available for all the instances.
-* Instance variables: The difference with the class variables is that instance variables are initialized inside the class constructor and they are not shared across all the objects. At the time of the instantiation a new copy of the instance variable is created.
+* Class Variables: These are the variables that are declared inside the class definition, outside any method, with the static keyword. A class variable is shared across all the instances of a class. Class variables are also known as the static variables, they are initialized only once at the time of the compilation of the class hence only single copy of this is available for all the instances.
+* Instance variables: The difference with the class variables is that instance variables are initialized inside the class constructor and they are not shared across all the objects. At the time of the instantiation, a new copy of the instance variable is created.
 
 ```java
 public class Example {
@@ -80,5 +80,8 @@ System.out.println("Full Car Model X= " + modelX.getManufacturerName() + " : " +
 ![:rocket:](https://forum.freecodecamp.com/images/emoji/emoji_one/rocket.png?v=2 ":rocket:") <a href='https://repl.it/CJZP/0' target='_blank' rel='nofollow'>Run Code</a>
 
 So, `Car` is a class, which has the fields or properties `name` and `manufacturerName`. `modelS` is an object of `Car` class. So `modelS` also has the same properties and methods.
-
 It is pretty much standard to ensure the object's 'information', in this case the `name` an `manufacturerName` variables, to be private and only be accessed via these getters and setters. This prevents an issue with debugging code that involves an object's member variables. If the member variables were made public, and for whatever reason the program crashes, you could get a rather complex stack trace that may be difficult to point out the error. Keeping the variables private, and only accessible via getters and setters, will simplify this error message down.
+
+### More Information:
+- [Oracle Java Docs :Classes](https://docs.oracle.com/javase/tutorial/java/javaOO/classes.html)
+- [Oracle Java Docs :Objects](https://docs.oracle.com/javase/tutorial/java/javaOO/objects.html)
