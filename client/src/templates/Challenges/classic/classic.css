@@ -30,13 +30,3 @@
   height: 100%;
   overflow: hidden;
 }
-
-.classic-tool-panel.tool-panel-group {
-  display: flex;
-  flex-direction: row-reverse;
-  padding: 0 2px;
-}
-
-.classic-tool-panel.tool-panel-group .btn-block + .btn-block {
-  margin: 0 2px 0 0;
-}

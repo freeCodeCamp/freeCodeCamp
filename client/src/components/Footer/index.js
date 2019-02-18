@@ -87,10 +87,10 @@ function Footer() {
           </Col>
           <Col lg={3} sm={2} xs={12}>
             <ColHeader>Our Learning Resources</ColHeader>
-            <Link target='_blank' to='/learn'>
-              Curriculum
+            <Link to='/learn'>
+              Learn
             </Link>
-            <Link target='_blank' to='/guide'>
+            <Link to='/guide'>
               Guide
             </Link>
             <Link to='https://www.youtube.com/freecodecamp'>Youtube</Link>

@@ -8,7 +8,7 @@ import { createStore } from './src/redux/createStore';
 
 import GuideNavContextProvider from './src/contexts/GuideNavigationContext';
 import DefaultLayout from './src/components/layouts/Default';
-import GuideLayout from './src/components/layouts/GuideLayout';
+import GuideLayout from './src/components/layouts/Guide';
 
 const store = createStore();
 
@@ -41,6 +41,9 @@ export const wrapPageElement = ({ element, props }) => {
         <GuideLayout>{element}</GuideLayout>
       </DefaultLayout>
     );
+  }
+  if ((/^\/learn(\/.*)*/).test(pathname)) {
+    return <DefaultLayout showFooter={false}>{element}</DefaultLayout>;
   }
   return <DefaultLayout>{element}</DefaultLayout>;
 };

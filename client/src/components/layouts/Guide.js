@@ -29,7 +29,7 @@ const propTypes = {
   location: PropTypes.object
 };
 
-class Layout extends React.Component {
+class GuideLayout extends React.Component {
   getContentRef = ref => (this.contentRef = ref);
 
   handleNavigation = () => {
@@ -41,7 +41,7 @@ class Layout extends React.Component {
     return (
       <StaticQuery
         query={graphql`
-          query LayoutQuery {
+          query GuideLayoutQuery {
             allNavigationNode {
               edges {
                 node {
@@ -110,7 +110,7 @@ class Layout extends React.Component {
   }
 }
 
-Layout.displayName = 'Layout';
-Layout.propTypes = propTypes;
+GuideLayout.displayName = 'GuideLayout';
+GuideLayout.propTypes = propTypes;
 
-export default Layout;
+export default GuideLayout;
