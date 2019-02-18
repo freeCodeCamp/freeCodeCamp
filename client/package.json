@@ -87,8 +87,6 @@
     "chokidar": "^2.0.4",
     "copy-webpack-plugin": "^4.6.0",
     "jest": "^23.6.0",
-    "prettier": "^1.14.2",
-    "prettier-eslint-cli": "^4.7.1",
     "react-test-renderer": "^16.5.2",
     "sinon": "^6.3.5",
     "webpack-cli": "^3.1.1"
