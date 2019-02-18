@@ -59,7 +59,7 @@ tests:
     <section id="weapons">
       <h2>Entrenamiento de Armas</h2>
       <article><h3>Espadas: la mejor herramienta para dividir y conquistar literalmente</h3></article>
-      <article><h3>¿Amplitud o profundidad primero en entrenamiento de armas múltiples?</h3></article>
+      <article><h3>¿Amplitud o profundidad en entrenamiento de armas múltiples?</h3></article>
     </section>
   </main>
 
