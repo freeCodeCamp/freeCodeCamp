@@ -49,3 +49,4 @@ After pressing Enter, the cursor will be placed on the next line. You can start 
 
 #### More Information:
 * Wikipedia: https://en.wikipedia.org/wiki/Cat_(Unix)
+* Man Page: https://ss64.com/bash/cat.html
