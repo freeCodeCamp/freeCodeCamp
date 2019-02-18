@@ -57,3 +57,13 @@ A `string` can also be used as the argument. No second argument is allowed if a 
 >>> complex("1.1+3.5j")
 (1.1+3.5j)
 ```
+We can obtain the absolute value of a complex number using the abs() method in python.
+```py
+>>> a=2+3j
+>>> abs(a)
+3.605551275463989
+>>> b=-1+1j
+>>> abs(b)
+1.4142135623730951
+```
+
