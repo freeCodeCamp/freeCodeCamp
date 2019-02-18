@@ -39,7 +39,7 @@ class DesktopLayout extends Component {
           <ReflexSplitter propagate={true} {...resizeProps} />
           <ReflexElement flex={1} {...resizeProps}>
             {challengeFile && (
-              <ReflexContainer className='desktop-layout' key={challengeFile.key} orientation='horizontal'>
+              <ReflexContainer key={challengeFile.key} orientation='horizontal'>
                 <ReflexElement
                   flex={1}
                   propagateDimensions={true}

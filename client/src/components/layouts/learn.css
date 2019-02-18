@@ -1,3 +1,7 @@
+#learn-app-wrapper .desktop-layout {
+  height: calc(100vh - var(--header-height) - 42px);
+}
+
 #learn-app-wrapper .reflex-container.vertical .reflex-splitter:hover {
   border-left: 2px solid #006400;
   border-right: 2px solid #006400;
