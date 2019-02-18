@@ -59,7 +59,7 @@ function Footer() {
             <p>
               Donations to freeCodeCamp go toward our education initiatives, and
               help pay for servers, services, and staff. You can&nbsp;
-              <Link className='inline' to='https://donate.freecodecamp.org'>
+              <Link className='inline' external='true' to='/donate'>
                 make a tax-deductible donation here
               </Link>
               .
@@ -67,8 +67,8 @@ function Footer() {
           </Col>
           <Col sm={2} xs={6}>
             <ColHeader>Our Nonprofit</ColHeader>
-            <Link to='https://about.freecodecamp.org'>About</Link>
-            <Link to='https://donate.freecodecamp.org'>Donate</Link>
+            <Link to='/about'>About</Link>
+            <Link to='/donate'>Donate</Link>
             <Link to='https://shop.freecodecamp.org'>Shop</Link>
             <Link to='https://sponsors.freecodecamp.org'>Sponsors</Link>
             <Link to='mailto:team@freecodecamp.org'>Email Us</Link>
