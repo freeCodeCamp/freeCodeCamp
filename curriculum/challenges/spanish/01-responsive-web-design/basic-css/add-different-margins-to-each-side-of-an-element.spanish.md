@@ -6,13 +6,13 @@ videoUrl: ''
 localeTitle: Añadir diferentes márgenes a cada lado de un elemento
 ---
 
-## Description
+## Descripción
 <section id="description"> A veces querrá personalizar un elemento para que tenga un <code>margin</code> diferente en cada uno de sus lados. CSS le permite controlar el <code>margin</code> de los cuatro lados individuales de un elemento con las propiedades <code>margin-top</code> , <code>margin-right</code> , <code>margin-bottom</code> y <code>margin-left</code> . </section>
 
-## Instructions
+## Instrucciones
 <section id="instructions"> Dé a la caja azul un <code>margin</code> de <code>40px</code> en su lado superior e izquierdo, pero solo <code>20px</code> en su lado inferior y derecho. </section>
 
-## Tests
+## Pruebas
 <section id='tests'>
 
 ```yml
@@ -83,7 +83,7 @@ tests:
 
 </section>
 
-## Solution
+## Solución
 <section id='solution'>
 
 ```js
