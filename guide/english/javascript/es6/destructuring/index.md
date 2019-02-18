@@ -32,6 +32,23 @@ console.log(firstName, lastName); // John Smith
 
 The examples above show the benefit of using the ES6 Destructuring Assignment.
 
+A variable can be assigned a default, in the case that the value unpacked from the array is undefined.
+
+```javascript
+const address = ['Rue Cler', 'Paris'];
+[street, city, country = 'France'] = address;
+console.log(country); // 'France'
+```
+
+**Array Destructuring with rest**
+
+When destructuring an array, you can unpack and assign the remaining part of it to a variable using the rest pattern:
+```js
+const [a, ...b] = [1, 2, 3];
+console.log(a); // 1
+console.log(b); // [2, 3]
+```
+
 You can skip some values by putting comma
 
 ```javascript
