@@ -65,8 +65,8 @@ It's easy to add key-value pairs to an existing dictionary:
     >>> club_names
     [1910, 1875]
 ```
-**`get`** is a built-in *method* that can be used to get values from a dictionary by providing the key. The get method is very useful if you need to check existance of values for a particular key. we can also use to return default values in case a key-value pair is missing in the dictionary. 
-Usage:
+**`get`** is a built-in *method* that can be used to get values from a dictionary by providing the key. This method is very useful if you need to check existance of values for a particular key. You can also use it to return default values in case a key-value pair is missing in the dictionary. 
+
 ```python
     >>> players = {'ronaldo': 'portugal', 'kaka': 'brazil', 'messi': 'argentina'}
     >>> players.get('ronaldo')
