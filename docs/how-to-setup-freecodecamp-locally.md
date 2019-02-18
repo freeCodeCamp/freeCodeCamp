@@ -130,6 +130,10 @@ npm -v
 
 > If you have a different version, please install the recommended version. We can support installation issues for recommended versions only.
 
+**Note to Windows users:**
+
+Make sure the command line tool (Cmd, PowerShell or Git Bash for Windows, etc.) you use has the correct user privileges. If possible, you should launch the tool with Administrator's privilege. On windows, you should be able to launch a tool by right clicking it and selecting `Launch as an Administrator`.
+
 **I am having issues with installing the recommended prerequisites. What should I do?**
 
 We regularly develop on popular and latest operating systems like macOS 10.12 or later, Ubuntu 16.04 or later and Windows 10. Its recommended to lookup your specific issue on resources like: Google, Stack Overflow or Stack Exchange. Chances are that someone has faced the same issue and there is already an answer to your specific query.

@@ -178,7 +178,7 @@ export class BackEnd extends Component {
                 instructions={instructions}
               />
               <Form
-                buttonText={buttonCopy + '(Ctrl + Enter)'}
+                buttonText={`${buttonCopy} (Ctrl + Enter)`}
                 formFields={formFields}
                 id={backendNS}
                 options={options}
