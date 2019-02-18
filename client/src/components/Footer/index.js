@@ -77,7 +77,7 @@ function Footer() {
               Code of Conduct
             </Link>
             <Link to='/privacy-policy'>Privacy Policy</Link>
-            <Link to='https://terms-of-service.freecodecamp.org'>
+            <Link to='/terms-of-service'>
               Terms of Service
             </Link>
           </Col>

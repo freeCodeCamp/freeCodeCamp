@@ -364,7 +364,7 @@ const AboutPage = () => {
                     <FontAwesomeIcon icon={faBalanceScale} />
                   </td>
                   <td>
-                    <Link to='https://code-of-conduct.freecodecamp.org'>
+                    <Link to='/code-of-conduct'>
                       Our code of conduct
                     </Link>
                   </td>
@@ -374,7 +374,7 @@ const AboutPage = () => {
                     <FontAwesomeIcon icon={faUniversity} />
                   </td>
                   <td>
-                    <Link to='https://www.freecodecamp.org/academic-honesty'>
+                    <Link to='/academic-honesty'>
                       Our academic honesty policy
                     </Link>
                   </td>
@@ -384,7 +384,7 @@ const AboutPage = () => {
                     <FontAwesomeIcon icon={faBook} />
                   </td>
                   <td>
-                    <Link to='https://terms-of-service.freecodecamp.org'>
+                    <Link to='/terms-of-service'>
                       Our terms of service
                     </Link>
                   </td>
