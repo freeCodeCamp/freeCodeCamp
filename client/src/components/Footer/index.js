@@ -1,7 +1,7 @@
 import React from 'react';
-import PropTypes from 'prop-types';
-import { Link as GatsbyLink } from 'gatsby';
 import { Grid, Row, Col } from '@freecodecamp/react-bootstrap';
+
+import Link from '../helpers/Link';
 
 import './footer.css';
 
@@ -21,23 +21,6 @@ const linkPropTypes = {
   external: PropTypes.bool,
   to: PropTypes.string.isRequired
 };
-
-const Link = ({ children, to, external, ...other }) => {
-  if (!external && /^\/[^/]?/.test(to)) {
-    return (
-      <GatsbyLink to={to} {...other}>
-        {children}
-      </GatsbyLink>
-    );
-  }
-
-  return (
-    <a href={to} {...other} rel='noopener noreferrer' target='_blank'>
-      {children}
-    </a>
-  );
-};
-Link.propTypes = linkPropTypes;
 
 function Footer() {
   return (
@@ -70,7 +53,7 @@ function Footer() {
             <Link to='/about'>About</Link>
             <Link to='/donate'>Donate</Link>
             <Link to='https://shop.freecodecamp.org'>Shop</Link>
-            <Link to='https://sponsors.freecodecamp.org'>Sponsors</Link>
+            <Link to='/sponsors'>Sponsors</Link>
             <Link to='mailto:team@freecodecamp.org'>Email Us</Link>
           </Col>
           <Col sm={2} xs={6}>

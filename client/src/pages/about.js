@@ -1,7 +1,6 @@
 /* eslint-disable max-len */
 import React, { Fragment } from 'react';
 import Helmet from 'react-helmet';
-import { Link } from 'gatsby';
 import { Grid, Col, Row, Table } from '@freecodecamp/react-bootstrap';
 import FontAwesomeIcon from '@fortawesome/react-fontawesome';
 import {
@@ -12,7 +11,6 @@ import {
   faMedium,
   faFacebook
 } from '@fortawesome/free-brands-svg-icons';
-
 import {
   faLock,
   faBalanceScale,
@@ -20,7 +18,7 @@ import {
   faBook
 } from '@fortawesome/free-solid-svg-icons';
 
-import Spacer from '../components/helpers/Spacer';
+import { Link, Spacer } from '../components/helpers';
 
 import './about.css';
 
@@ -63,34 +61,31 @@ const AboutPage = () => {
               Yes. Every year, thousands of people who join the freeCodeCamp
               community get their first software developer job. If you're
               curious, you can{' '}
-              <a
-                href='https://www.linkedin.com/school/4831032/alumni/'
-                rel='noopener noreferrer'
-                target='_blank'
+              <Link
+                external={true}
+                to='https://www.linkedin.com/school/4831032/alumni/'
                 >
                 browse our alumni network on LinkedIn here
-              </a>
+              </Link>
               .
             </p>
             <h4>How big is the freeCodeCamp community?</h4>
             <p>
               If you add up all the people who use our learning platform, read
               our{' '}
-              <a
-                href='https://medium.freecodecamp.org'
-                rel='noopener noreferrer'
-                target='_blank'
+              <Link
+                external={true}
+                to='https://medium.freecodecamp.org'
                 >
                 Medium publication
-              </a>
+              </Link>
               , watch our{' '}
-              <a
-                href='https://youtube.com/freecodecamp'
-                rel='noopener noreferrer'
-                target='_blank'
+              <Link
+                external={true}
+                to='https://youtube.com/freecodecamp'
                 >
                 YouTube channel
-              </a>
+              </Link>
               , and post on <Link to='/forum'>our forum</Link>, each month we
               help millions of people learn about coding and technology.
             </p>
@@ -99,13 +94,12 @@ const AboutPage = () => {
               Yes, we are a 501(c)(3){' '}
               <Link to='/donate'>donor-supported public charity</Link>. You
               can{' '}
-              <a
-                href='https://s3.amazonaws.com/freecodecamp/Free+Code+Camp+Inc+IRS+Determination+Letter.pdf'
-                rel='noopener noreferrer'
-                target='_blank'
+              <Link
+                external={true}
+                to='https://s3.amazonaws.com/freecodecamp/Free+Code+Camp+Inc+IRS+Determination+Letter.pdf'
                 >
                 download our IRS Determination Letter here
-              </a>
+              </Link>
               .
             </p>
             <h4>
@@ -114,9 +108,9 @@ const AboutPage = () => {
             </h4>
             <p>
               Yes. Our cryptographically signed wallet details are{' '}
-              <a href='https://twitter.com/freeCodeCamp/status/939512108449959936'>
+              <Link to='https://twitter.com/freeCodeCamp/status/939512108449959936'>
                 here
-              </a>
+              </Link>
               .
             </p>
             <h4>
@@ -153,13 +147,12 @@ const AboutPage = () => {
             </p>
             <h4>How did freeCodeCamp get started?</h4>
             <p>
-              <a
-                href='https://www.twitter.com/ossia'
-                rel='noopener noreferrer'
-                target='_blank'
+              <Link
+                external={true}
+                to='https://www.twitter.com/ossia'
                 >
                 Quincy
-              </a>{' '}
+              </Link>{' '}
               started the freeCodeCamp community in 2014. He is now just one
               of thousands of active contributors.
             </p>
@@ -196,40 +189,36 @@ const AboutPage = () => {
             <h4>Does freeCodeCamp have a mobile app?</h4>
             <p>
               You can learn on the go by listening to the{' '}
-              <a
-                href='https://podcast.freecodecamp.org'
-                rel='noopener noreferrer'
-                target='_blank'
+              <Link
+                external={true}
+                to='https://podcast.freecodecamp.org'
                 >
                 freeCodeCamp Podcast
-              </a>{' '}
+              </Link>{' '}
               or watching{' '}
-              <a
-                href='https://youtube.com/freecodecamp'
-                rel='noopener noreferrer'
-                target='_blank'
+              <Link
+                external={true}
+                to='https://youtube.com/freecodecamp'
                 >
                 freeCodeCamp's YouTube channel
-              </a>
+              </Link>
               . And if you want a mobile app designed specifically for
               learning to code, we recommend Grasshopper. It's free and
               designed by a freeCodeCamp contributor and her team. You can
               download it on{' '}
-              <a
-                href='https://itunes.apple.com/us/app/id1354133284'
-                rel='noopener noreferrer'
-                target='_blank'
+              <Link
+                external={true}
+                to='https://itunes.apple.com/us/app/id1354133284'
                 >
                 iOS
-              </a>{' '}
+              </Link>{' '}
               or{' '}
-              <a
-                href='https://play.google.com/store/apps/details?id=com.area120.grasshopper&hl=en'
-                rel='noopener noreferrer'
-                target='_blank'
+              <Link
+                external={true}
+                to='https://play.google.com/store/apps/details?id=com.area120.grasshopper&hl=en'
                 >
                 Android
-              </a>
+              </Link>
               .
             </p>
             <h4>Can I get a job at freeCodeCamp?</h4>
@@ -237,13 +226,12 @@ const AboutPage = () => {
               We're a small donor-supported nonprofit. We've hired several
               prominent contributors from within the freeCodeCamp community,
               but you're much more likely to get a job at{' '}
-              <a
-                href='https://www.linkedin.com/school/free-code-camp/alumni/'
-                rel='noopener noreferrer'
-                target='_blank'
+              <Link
+                external={true}
+                to='https://www.linkedin.com/school/free-code-camp/alumni/'
                 >
                 one of the hundreds of companies
-              </a>{' '}
+              </Link>{' '}
               where freeCodeCamp alumni work.
             </p>
             <h4>Can my company advertise on freeCodeCamp?</h4>
@@ -288,13 +276,12 @@ const AboutPage = () => {
                     <FontAwesomeIcon icon={faYoutube} />
                   </td>
                   <td>
-                    <a
-                      href='https://youtube.com/freecodecamp'
-                      rel='noopener noreferrer'
-                      target='_blank'
+                    <Link
+                      external={true}
+                      to='https://youtube.com/freecodecamp'
                       >
                       Our YouTube channel
-                    </a>
+                    </Link>
                   </td>
                 </tr>
                 <tr>
@@ -302,13 +289,12 @@ const AboutPage = () => {
                     <FontAwesomeIcon icon={faGithub} />
                   </td>
                   <td>
-                    <a
-                      href='https://github.com/freecodecamp/'
-                      rel='noopener noreferrer'
-                      target='_blank'
+                    <Link
+                      external={true}
+                      to='https://github.com/freecodecamp/'
                       >
                       Our GitHub organization
-                    </a>
+                    </Link>
                   </td>
                 </tr>
                 <tr>
@@ -316,13 +302,12 @@ const AboutPage = () => {
                     <FontAwesomeIcon icon={faLinkedin} />
                   </td>
                   <td>
-                    <a
-                      href='https://www.linkedin.com/edu/school?id=166029'
-                      rel='noopener noreferrer'
-                      target='_blank'
+                    <Link
+                      external={true}
+                      to='https://www.linkedin.com/edu/school?id=166029'
                       >
                       Our LinkedIn university page
-                    </a>
+                    </Link>
                   </td>
                 </tr>
                 <tr>
@@ -330,13 +315,12 @@ const AboutPage = () => {
                     <FontAwesomeIcon icon={faMedium} />
                   </td>
                   <td>
-                    <a
-                      href='https://medium.freecodecamp.org'
-                      rel='noopener noreferrer'
-                      target='_blank'
+                    <Link
+                      external={true}
+                      to='https://medium.freecodecamp.org'
                       >
                       Our Medium publication
-                    </a>
+                    </Link>
                   </td>
                 </tr>
                 <tr>
@@ -344,13 +328,12 @@ const AboutPage = () => {
                     <FontAwesomeIcon icon={faTwitter} />
                   </td>
                   <td>
-                    <a
-                      href='https://twitter.com/freecodecamp'
-                      rel='noopener noreferrer'
-                      target='_blank'
+                    <Link
+                      external={true}
+                      to='https://twitter.com/freecodecamp'
                       >
                       Our Twitter feed
-                    </a>
+                    </Link>
                   </td>
                 </tr>
                 <tr>
@@ -358,13 +341,12 @@ const AboutPage = () => {
                     <FontAwesomeIcon icon={faFacebook} />
                   </td>
                   <td>
-                    <a
-                      href='https://facebook.com/freecodecamp'
-                      rel='noopener noreferrer'
-                      target='_blank'
+                    <Link
+                      external={true}
+                      to='https://facebook.com/freecodecamp'
                       >
                       Our Facebook page
-                    </a>
+                    </Link>
                   </td>
                 </tr>
                 <tr>
@@ -372,9 +354,9 @@ const AboutPage = () => {
                     <FontAwesomeIcon icon={faLock} />
                   </td>
                   <td>
-                    <a href='https://privacy-policy.freecodecamp.org'>
+                    <Link to='https://privacy-policy.freecodecamp.org'>
                       Our privacy policy
-                    </a>
+                    </Link>
                   </td>
                 </tr>
                 <tr>
@@ -382,9 +364,9 @@ const AboutPage = () => {
                     <FontAwesomeIcon icon={faBalanceScale} />
                   </td>
                   <td>
-                    <a href='https://code-of-conduct.freecodecamp.org'>
+                    <Link to='https://code-of-conduct.freecodecamp.org'>
                       Our code of conduct
-                    </a>
+                    </Link>
                   </td>
                 </tr>
                 <tr>
@@ -392,9 +374,9 @@ const AboutPage = () => {
                     <FontAwesomeIcon icon={faUniversity} />
                   </td>
                   <td>
-                    <a href='https://www.freecodecamp.org/academic-honesty'>
+                    <Link to='https://www.freecodecamp.org/academic-honesty'>
                       Our academic honesty policy
-                    </a>
+                    </Link>
                   </td>
                 </tr>
                 <tr>
@@ -402,9 +384,9 @@ const AboutPage = () => {
                     <FontAwesomeIcon icon={faBook} />
                   </td>
                   <td>
-                    <a href='https://terms-of-service.freecodecamp.org'>
+                    <Link to='https://terms-of-service.freecodecamp.org'>
                       Our terms of service
-                    </a>
+                    </Link>
                   </td>
                 </tr>
               </tbody>
