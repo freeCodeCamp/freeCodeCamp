@@ -14,12 +14,13 @@ For a quick and easy method of adding React to your website you could just embed
 However, with the above approach, you may feel limited in how far you can take React. This is where the use of toolchain is the preferred approach, with the more practical and productive [Create React App](https://github.com/facebookincubator/create-react-app):
 
 ```bash
-npx create-react-app my-app
+npm install -g create-react-app
+create-react-app my-app
 cd my-app
 npm start
 ```
 
-This will set up your development environment so that you can use the latest JavaScript features, provide a great developer experience, and optimize your application for production.
+This will set up your development environment so that you can use the latest JavaScript features, provide a great developer experience, and optimize your application for production. It sets up Webpack as a bundler, and Jest for testing.
 
 Another option is using the package `npx` which doesn't require you to install the package `create-react-app` before using it. So you can use it without installing it which is helpful for the future not to have too many packages installed on your machine.
 
