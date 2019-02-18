@@ -73,7 +73,7 @@ function Supporters({ isDonating, activeDonations }) {
           <Button
             bsSize='lg'
             bsStyle='primary'
-            href='https://donate.freecodecamp.org'
+            href='/donate'
             target='_blank'
           >
             Click here to become a Supporter

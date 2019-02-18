@@ -50,7 +50,7 @@ const IndexPage = ({
         And yes - all of this is 100% free, thanks to the thousands of campers
         who{' '}
         <a
-          href='https://donate.freecodecamp.org'
+          href='/donate'
           rel='noopener noreferrer'
           target='_blank'
         >

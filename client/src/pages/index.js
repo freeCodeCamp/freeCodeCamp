@@ -229,7 +229,7 @@ const IndexPage = () => (
         pay for servers, services, and staff. You can{' '}
         <a
           className='large-p underlined-link'
-          href='https://donate.freecodecamp.org/'
+          href='/donate'
           rel='noopener noreferrer'
           target='_blank'
         >
