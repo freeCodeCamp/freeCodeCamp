@@ -35,7 +35,7 @@ function Index() {
           href='https://freecodecamp.org'
           rel='noopener noreferrer'
           target='_blank'
-          >
+        >
           freeCodeCamp.org
         </a>
         {'. It has a curriculum that starts from zero and helps you learn' +
@@ -48,7 +48,7 @@ function Index() {
           href='https://github.com/freeCodeCamp/freeCodeCamp'
           rel='noopener noreferrer'
           target='_blank'
-          >
+        >
           open source
         </a>
         {'. Your help in making it better is greatly appreciated!'}

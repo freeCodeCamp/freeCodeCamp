@@ -120,11 +120,11 @@ export class CompletionModal extends Component {
         onHide={close}
         onKeyDown={isOpen ? handleKeypress : noop}
         show={isOpen}
-        >
+      >
         <Modal.Header
           className='challenge-list-header fcc-modal'
           closeButton={true}
-          >
+        >
           <Modal.Title className='text-center'>{message}</Modal.Title>
         </Modal.Header>
         <Modal.Body className='completion-modal-body'>
@@ -138,7 +138,7 @@ export class CompletionModal extends Component {
             bsSize='large'
             bsStyle='primary'
             onClick={submitChallenge}
-            >
+          >
             Submit and go to next challenge{' '}
             <span className='hidden-xs'>(Ctrl + Enter)</span>
           </Button>
@@ -150,7 +150,7 @@ export class CompletionModal extends Component {
               className='btn-invert'
               download={`${dashedName}.json`}
               href={this.state.downloadURL}
-              >
+            >
               Download my solution
             </Button>
           ) : null}

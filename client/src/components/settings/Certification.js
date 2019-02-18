@@ -142,7 +142,7 @@ class CertificationSettings extends Component {
           bsStyle='primary'
           className='btn-invert'
           onClick={onClickHandler}
-          >
+        >
           Show Code
         </Button>
       );
@@ -156,13 +156,13 @@ class CertificationSettings extends Component {
             className='btn-invert'
             id={`dropdown-for-${projectId}`}
             title='Show Solutions'
-            >
+          >
             <MenuItem
               bsStyle='primary'
               href={solution}
               rel='noopener noreferrer'
               target='_blank'
-              >
+            >
               Front End
             </MenuItem>
             <MenuItem
@@ -170,7 +170,7 @@ class CertificationSettings extends Component {
               href={githubLink}
               rel='noopener noreferrer'
               target='_blank'
-              >
+            >
               Back End
             </MenuItem>
           </DropdownButton>
@@ -186,7 +186,7 @@ class CertificationSettings extends Component {
           href={solution}
           rel='noopener noreferrer'
           target='_blank'
-          >
+        >
           Show Solution
         </Button>
       );
@@ -197,7 +197,7 @@ class CertificationSettings extends Component {
         bsStyle='primary'
         className='btn-invert'
         onClick={onClickHandler}
-        >
+      >
         Show Code
       </Button>
     );
@@ -258,7 +258,7 @@ class CertificationSettings extends Component {
               bsStyle='primary'
               href={certLocation}
               onClick={createClickHandler(superBlock)}
-              >
+            >
               {isCert ? 'Show Certification' : 'Claim Certification'}
             </Button>
           </td>
@@ -280,7 +280,7 @@ class CertificationSettings extends Component {
             bsSize='large'
             onHide={this.handleSolutionModalHide}
             show={isOpen}
-            >
+          >
             <Modal.Header className='this-one?' closeButton={true}>
               <Modal.Title id='solution-viewer-modal-title'>
                 Solution for {projectTitle}

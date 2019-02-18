@@ -43,7 +43,7 @@ async function translateChallenge(file) {
     translateText(instructions),
     ...tests.map(
       test =>
-        new Promise(async(resolve, reject) => {
+        new Promise(async (resolve, reject) => {
           const { testString, text } = test;
           const translatedText = await translateText(text).catch(reject);
           return resolve({
@@ -58,11 +58,11 @@ async function translateChallenge(file) {
       const { files = {}, solutions = [], ...challengeMeta } = challenge;
       const md = `---
 ${YAML.dump(
-        Object.assign(challengeMeta, {
-          localeTitle: title ? title.join(' ').trim() : ''
-        }),
-        { lineWidth: 10000 }
-      )}---
+  Object.assign(challengeMeta, {
+    localeTitle: title ? title.join(' ').trim() : ''
+  }),
+  { lineWidth: 10000 }
+)}---
 
 ## Description
 ${description}
@@ -88,20 +88,20 @@ ${generateChallengeSeed(files)}
 <section id='solution'>
 
 ${
-        solutions.length === 0
-          ? `\`\`\`js
+  solutions.length === 0
+    ? `\`\`\`js
 // solution required
 \`\`\``
-          : solutions
-              .map(
-                solution => `
+    : solutions
+        .map(
+          solution => `
 \`\`\`js
 ${solution}
 \`\`\`
 `
-              )
-              .join('\n')
-      }
+        )
+        .join('\n')
+}
 </section>
 `;
 
@@ -126,8 +126,8 @@ ${contents}
 
 </div>
 ${
-        head.length
-          ? `
+  head.length
+    ? `
 ### Before Test
 <div id='${ext}-setup'>
 
@@ -136,11 +136,11 @@ ${head}
 \`\`\`
 
 </div>`
-          : ''
-      }
+    : ''
+}
 ${
-        tail.length
-          ? `
+  tail.length
+    ? `
 ### After Test
 <div id='${ext}-teardown'>
 
@@ -149,8 +149,8 @@ console.info('after the test');
 \`\`\`
 
 </div>`
-          : ''
-      }
+    : ''
+}
 `;
     });
 }

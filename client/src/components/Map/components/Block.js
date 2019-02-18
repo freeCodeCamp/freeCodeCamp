@@ -93,14 +93,14 @@ export class Block extends Component {
         <li
           className={'map-challenge-title' + completedClass}
           key={'map-challenge' + challenge.fields.slug}
-          >
+        >
           <span className='badge map-badge'>
             {i !== 0 && this.renderCheckMark(challenge.isCompleted)}
           </span>
           <Link
             onClick={this.handleChallengeClick(challenge.fields.slug)}
             to={challenge.fields.slug}
-            >
+          >
             {challenge.title || challenge.frontmatter.title}
           </Link>
         </li>

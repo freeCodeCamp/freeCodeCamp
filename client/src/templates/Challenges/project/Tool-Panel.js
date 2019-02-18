@@ -35,7 +35,7 @@ export class ToolPanel extends Component {
             className='btn-invert'
             href={guideUrl}
             target='_blank'
-            >
+          >
             Get a hint
           </Button>
         )}
@@ -44,7 +44,7 @@ export class ToolPanel extends Component {
           bsStyle='primary'
           className='btn-invert'
           onClick={openHelpModal}
-          >
+        >
           Ask for help
         </Button>
       </div>
@@ -59,4 +59,3 @@ export default connect(
   mapStateToProps,
   mapDispatchToProps
 )(ToolPanel);
-

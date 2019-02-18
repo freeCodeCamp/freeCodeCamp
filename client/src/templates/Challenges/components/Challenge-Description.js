@@ -10,7 +10,7 @@ const propTypes = {
 };
 
 function emptyInstruction(instructions) {
-  return (/^<section\s+id\s*=\s*("|')instructions\1\s*>\s*<\/section>$/).test(
+  return /^<section\s+id\s*=\s*("|')instructions\1\s*>\s*<\/section>$/.test(
     instructions
   );
 }

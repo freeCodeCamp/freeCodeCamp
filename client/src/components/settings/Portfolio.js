@@ -177,7 +177,7 @@ class PortfolioSettings extends Component {
     if (isImage && !maybeUrl) {
       return { state: null, message: '' };
     }
-    if (isImage && !(/\.(png|jpg|jpeg|gif)$/).test(maybeUrl)) {
+    if (isImage && !/\.(png|jpg|jpeg|gif)$/.test(maybeUrl)) {
       return {
         state: 'error',
         message: 'URL must link directly to an image file'
@@ -214,7 +214,7 @@ class PortfolioSettings extends Component {
               validationState={
                 pristine || (!pristine && !title) ? null : titleState
               }
-              >
+            >
               <ControlLabel>Title</ControlLabel>
               <FormControl
                 onChange={this.createOnChangeHandler(id, 'title')}
@@ -229,7 +229,7 @@ class PortfolioSettings extends Component {
               validationState={
                 pristine || (!pristine && !url) ? null : urlState
               }
-              >
+            >
               <ControlLabel>URL</ControlLabel>
               <FormControl
                 onChange={this.createOnChangeHandler(id, 'url')}
@@ -242,7 +242,7 @@ class PortfolioSettings extends Component {
             <FormGroup
               controlId={`${id}-image`}
               validationState={pristine ? null : imageState}
-              >
+            >
               <ControlLabel>Image</ControlLabel>
               <FormControl
                 onChange={this.createOnChangeHandler(id, 'image')}
@@ -254,7 +254,7 @@ class PortfolioSettings extends Component {
             <FormGroup
               controlId={`${id}-description`}
               validationState={pristine ? null : descriptionState}
-              >
+            >
               <ControlLabel>Description</ControlLabel>
               <FormControl
                 componentClass='textarea'
@@ -277,7 +277,7 @@ class PortfolioSettings extends Component {
                   /* eslint-enable camelcase */
                 })
               }
-              >
+            >
               Save this portfolio item
             </BlockSaveButton>
             <ButtonSpacer />
@@ -288,7 +288,7 @@ class PortfolioSettings extends Component {
               className='btn-delete-portfolio'
               onClick={() => this.handleRemoveItem(id)}
               type='button'
-              >
+            >
               Remove this portfolio item
             </Button>
           </form>
@@ -325,7 +325,7 @@ class PortfolioSettings extends Component {
             bsStyle='primary'
             onClick={this.handleAdd}
             type='button'
-            >
+          >
             Add a new portfolio Item
           </Button>
         </FullWidthRow>

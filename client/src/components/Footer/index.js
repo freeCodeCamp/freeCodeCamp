@@ -19,7 +19,7 @@ const ColHeader = ({ children, ...other }) => (
 ColHeader.propTypes = propTypes;
 
 const Link = ({ children, to, external, ...other }) => {
-  if (!external && (/^\/(?!\/)/).test(to)) {
+  if (!external && /^\/(?!\/)/.test(to)) {
     return (
       <GatsbyLink to={to} {...other}>
         {children}

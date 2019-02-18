@@ -289,7 +289,7 @@ async function createTestRunnerForDOMChallenge(
   await context.reload();
   await context.setContent(build);
   await context.evaluate(
-    async(sources, loadEnzyme) => {
+    async (sources, loadEnzyme) => {
       const code = sources && 'index' in sources ? sources['index'] : '';
       const getUserInput = fileName => sources[fileName];
       await document.__initTestFrame({ code, getUserInput, loadEnzyme });
@@ -298,7 +298,7 @@ async function createTestRunnerForDOMChallenge(
     loadEnzyme
   );
 
-  return async({ text, testString }) => {
+  return async ({ text, testString }) => {
     try {
       const { pass, err } = await Promise.race([
         new Promise((_, reject) => setTimeout(() => reject('timeout'), 5000)),
@@ -327,7 +327,7 @@ async function createTestRunnerForJSChallenge({ files }, solution) {
   const code = sources && 'index' in sources ? sources['index'] : '';
 
   const testWorker = createWorker('test-evaluator');
-  return async({ text, testString }) => {
+  return async ({ text, testString }) => {
     try {
       const { pass, err } = await testWorker.execute(
         { testString, build, code, sources },
