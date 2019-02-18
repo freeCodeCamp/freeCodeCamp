@@ -11,10 +11,9 @@ Add the classes `animated` and `hinge` to your `body` element.
   - [.addClass()](https://api.jquery.com/addClass/e)
 
 ### Solution:
-```javascript
+```html
 <script>
   $("body").addClass("animated hinge");
   });
 </script>
 ```
-
