@@ -11,9 +11,9 @@
     </tr>
 </table>
 
-# Documentation Quick Reference
+# Documentación de Referencia
 
-¡Hola 👋 !
+¡Hola 👋!
 
 Este directorio contiene toda la documentación sobre cómo contribuir a freeCodeCamp.org
 
@@ -24,15 +24,15 @@ Este directorio contiene toda la documentación sobre cómo contribuir a freeCod
 
 ## Artículos de referencia rápida
 
-1. Cómo trabajar en las Guías
-2. Cómo trabajar en los Desafíos de programación.
-3. Cómo instalar freeCodeCamp en local.
-4. Cómo capturar los email salientes en local.
+<a href="/docs/spanish/how-to-work-on-guide-articles.md">1. Cómo trabajar en las Guías</a><br>
+<a href="/docs/spanish/how-to-work-on-coding-challenges.md">2. Cómo trabajar en los Desafíos de programación.</a><br>
+<a href="/docs/spanish/how-to-setup-freecodecamp-locally.md">3. Cómo instalar freeCodeCamp en local.</a><br>
+<a href="/docs/spanish/how-to-catch-outgoing-emails-locally.md">4. Cómo capturar los email salientes en local.</a>
 
 ## Guías de estilo
 
-1. Guía de estilo sobre cómo crear Guías.
-2. Guía de estilo sobre cómo crear Desafíos de programación.
+<a href="/docs/spanish/how-to-work-on-guide-articles.md">1. Guía de estilo sobre cómo crear Guías.</a><br>
+<a href="/docs/spanish/how-to-work-on-coding-challenges.md">2. Guía de estilo sobre cómo crear Desafíos de programación.</a>
 
 ## Referencia rápida de comandos para trabajar en local
 
