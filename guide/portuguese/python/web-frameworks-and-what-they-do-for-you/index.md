@@ -44,7 +44,7 @@ Começou como um simples invólucro em torno de Werkzeug e Jinja e se tornou um 
 
 O Flask oferece sugestões, mas não impõe nenhuma dependência ou layout do projeto. Cabe ao desenvolvedor escolher as ferramentas e bibliotecas que deseja usar. Existem muitas extensões fornecidas pela comunidade que facilitam a adição de novas funcionalidades.
 
-O frasco foi feito em 2004 por um grupo internacional de pitonistas chamado "Pocoo", como uma piada do primeiro de abril, que mais tarde foi transformada em uma coisa "real". Segundo a Wikpedia, foi o framework web Python mais usado no Github. É um micro-framework livre e de código aberto escrito em Python ( [veja no GitHub](https://github.com/freeCodeCamp/guide/tree/master/src/pages/javascript) ). Como os estados da Wikipedia,
+O frasco foi feito em 2004 por um grupo internacional de pitonistas chamado "Pocoo", como uma piada do primeiro de abril, que mais tarde foi transformada em uma coisa "real". Segundo a Wikpedia, foi o framework web Python mais usado no GitHub. É um micro-framework livre e de código aberto escrito em Python ( [veja no GitHub](https://github.com/freeCodeCamp/guide/tree/master/src/pages/javascript) ). Como os estados da Wikipedia,
 
 O frasco é classificado como um microframework porque não requer ferramentas ou bibliotecas específicas. Ele não possui uma camada de abstração de banco de dados, validação de formulário ou qualquer outro componente em que as bibliotecas de terceiros pré-existentes forneçam funções comuns.
 
