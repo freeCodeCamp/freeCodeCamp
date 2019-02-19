@@ -6,9 +6,7 @@ import { Grid, Row, Col } from '@freecodecamp/react-bootstrap';
 import './footer.css';
 
 const propTypes = {
-  children: PropTypes.any,
-  external: PropTypes.bool,
-  to: PropTypes.string.isRequired
+  children: PropTypes.any
 };
 
 const ColHeader = ({ children, ...other }) => (
@@ -18,8 +16,14 @@ const ColHeader = ({ children, ...other }) => (
 );
 ColHeader.propTypes = propTypes;
 
+const linkPropTypes = {
+  children: PropTypes.any,
+  external: PropTypes.bool,
+  to: PropTypes.string.isRequired
+};
+
 const Link = ({ children, to, external, ...other }) => {
-  if (!external && /^\/(?!\/)/.test(to)) {
+  if (!external && /^\/[^/]?/.test(to)) {
     return (
       <GatsbyLink to={to} {...other}>
         {children}
@@ -33,7 +37,7 @@ const Link = ({ children, to, external, ...other }) => {
     </a>
   );
 };
-Link.propTypes = propTypes;
+Link.propTypes = linkPropTypes;
 
 function Footer() {
   return (
@@ -55,7 +59,7 @@ function Footer() {
             <p>
               Donations to freeCodeCamp go toward our education initiatives, and
               help pay for servers, services, and staff. You can&nbsp;
-              <Link className='inline' href='https://donate.freecodecamp.org'>
+              <Link className='inline' to='https://donate.freecodecamp.org'>
                 make a tax-deductible donation here
               </Link>
               .
