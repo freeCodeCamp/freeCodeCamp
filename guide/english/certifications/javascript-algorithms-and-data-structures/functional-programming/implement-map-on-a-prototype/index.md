@@ -54,7 +54,7 @@ var new_s = s.myMap(function(item){
 ```
 
 ### Useful Links
-[this. in MDN](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/this)<br/>
+[this. in JavaScript MDN](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/this)<br/>
 [this. in Javascript W3Schools](https://www.w3schools.com/js/js_this.asp)   
 [for loop in MDN](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/for)   
 [Array.prototype in MDN](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/prototype)   
