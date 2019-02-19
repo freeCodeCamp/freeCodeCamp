@@ -28,7 +28,7 @@ var new_s = s.myMap(function(item){
 });
 ```
 
-### Solution 2 - Solve this challenge using a "for" loop and the "this"
+### Solution 2 - Solve this challenge using a "for" loop and "this"
 
 The use of a "for" loop allows us to apply the callback function to every item in the Global array and then push the modified items to the empty new array that is returned in the end.
 
