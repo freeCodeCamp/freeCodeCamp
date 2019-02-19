@@ -140,5 +140,6 @@ If one of the elements is not correct due to its URL or its syntax, the whole li
 
 ### Other Resources
 * [Background CSS Property Reference: MDN](https://developer.mozilla.org/en-US/docs/Web/CSS/background)
+* [CSS Backgrounds](https://www.w3schools.com/css/css_background.asp)
 * [List of Named Colors](https://htmlcolorcodes.com/color-names/)
 * [Color Picker Tool](https://www.color-hex.com/)
