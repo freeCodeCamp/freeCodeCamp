@@ -3,8 +3,10 @@
 # if using Docker Toolbox, replace `localhost` to output form `docker-machine ip`
 #
 # Bootstrap with:
+# open bash in a container:
 #   docker-compose run --rm freecodecamp bash
-#     npm install --unsafe-perm
+# and then from bash prompt:
+#     npm install
 #     npm run seed
 #     exit
 #
@@ -19,6 +21,7 @@ version: '3'
 services:
   freecodecamp:
     image: node:lts
+    user: node
     depends_on:
       - db
       - mailhog
@@ -30,6 +33,7 @@ services:
     working_dir: /app
   client:
     image: node:lts
+    user: node
     environment:
       - API_PROXY=http://api-server:3000
       - GATSBY_WEBPACK_PUBLICPATH=http://localhost:8000/
@@ -47,9 +51,10 @@ services:
       - '0.0.0.0'
     ports:
       - '8000:8000'
-      - '9228:9228'
+      - '9229:9228'
   api-server:
     image: node:lts
+    user: node
     depends_on:
       - db
       - mailhog
