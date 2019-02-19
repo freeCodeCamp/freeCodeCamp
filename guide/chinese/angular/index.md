@@ -12,7 +12,7 @@ Angular（版本2.x及更高版本）是一个基于Typescript的开源框架，
 
 谷歌于2010年10月20日发布了AngularJS的初始版本。 AngularJS的稳定版本于2017年12月18日发布，版本为1.6.8。 Angular 2.0发布于2014年9月22日在ng-Europe会议上发布。 Angular 2.0的一个特性是动态加载。
 
-经过一些修改后，Angular 4.0于2016年12月发布。 Angular 4向后兼容Angular 2.0。 HttpClient库是Angular 4.0的一个特性。 Angular 5发布于2017年11月1日。支持Progressive Web应用程序是Angular 4.0的改进之一。 Angular 6发布于2018年5月。最新的稳定版本是[6.1.9](https://blog.angular.io/angular-v6-1-now-available-typescript-2-9-scroll-positioning-and-more-9f1c03007bb6)
+经过一些修改后，Angular 4.0于2016年12月发布。 Angular 4向后兼容Angular 2.0。 HttpClient库是Angular 4.0的一个特性。 Angular 5发布于2017年11月1日。支持Progressive Web应用程序是Angular 5.0的改进之一。 Angular 6发布于2018年5月。最新的稳定版本是[6.1.9](https://blog.angular.io/angular-v6-1-now-available-typescript-2-9-scroll-positioning-and-more-9f1c03007bb6) Angular 7发布于2018年10月。新的稳定版本是7.0.1。
 
 **安装** ：
 
