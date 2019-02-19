@@ -15,6 +15,22 @@ The official name of JavaScript is ECMAScript defined under Standard [ECMA-262](
 If you want to learn more about the JavaScript language, and why it's so widely used, read Quincy Larson's article - [Which programming language should I learn first?](https://medium.freecodecamp.org/what-programming-language-should-i-learn-first-%CA%87d%C4%B1%C9%B9%C9%94s%C9%90%CA%8C%C9%90%C9%BE-%C9%B9%C7%9D%CA%8Dsu%C9%90-19a33b0a467d) -
 or watch this [inspiring video from Preethi Kasireddy](https://www.youtube.com/watch?v=VqiEhZYmvKk). Or else you can watch this [commendable video by Matt Hippely about the history of JavaScript and up to date with modern JavaScript practices.](https://youtu.be/CseCDFed458)
 
+## A Short History of JavaScript
+<h3>1996:</h3> 
+<p>It changed from LIVESCRIPT to JAVASCRIPT to attract developers.<br>
+    *JavaScript has nothing to do with Java.</p>
+<h3>1997:</h3> 
+<p>JAVASCRIPT was sold to ECMA and become,<br> 
+    the first version of JAVASCRIPT Language Standerd.</p>
+<h3>2009:</h3> 
+    <p>ES5 (ECMASCRIPT 5) was released with lots of new features.</p>
+<h3>2015:</h3>
+<p>It changed to annual realease cycle,<br> 
+   It means JAVASCRIPT releases new Updates every year.<br>
+   (With small feature Updates.)</p>
+<h3>2016/ 2017/18/19:</h3>
+   <p>Releases of versions - ES2016/ ES2017/ ES2018/....</p>
+
 ## Standalone JavaScript engines
 A standalone engine is a program which executes code without having to use any other sources for execution. In this case, it executes JavaScript. Most browsers have their own way of dealing with JavaScript.
 
