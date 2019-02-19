@@ -2,7 +2,6 @@
 id: 56533eb9ac21ba0edf2244c3
 title: Assignment with a Returned Value
 challengeType: 1
-guideUrl: 'https://www.freecodecamp.org/guide/certificates/assignment-with-a-returned-value'
 videoUrl: 'https://scrimba.com/c/ce2pEtB'
 ---
 

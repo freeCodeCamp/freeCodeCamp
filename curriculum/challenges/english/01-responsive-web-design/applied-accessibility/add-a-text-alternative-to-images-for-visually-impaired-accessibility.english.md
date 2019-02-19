@@ -3,7 +3,6 @@ id: 587d774c367417b2b2512a9c
 title: Add a Text Alternative to Images for Visually Impaired Accessibility
 challengeType: 0
 videoUrl: 'https://scrimba.com/c/cPp7VfD'
-guideUrl: 'https://www.freecodecamp.org/guide/certificates/responsive-web-design/applied-accessibility/add-a-text-alternative-to-images-for-visually-impaired-accessibility'
 ---
 
 ## Description
