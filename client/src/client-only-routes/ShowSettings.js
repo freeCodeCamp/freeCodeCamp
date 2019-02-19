@@ -191,7 +191,7 @@ function ShowSettings(props) {
               bsStyle='primary'
               className='btn-invert'
               href={`/${username}`}
-              >
+            >
               Show me my public portfolio
             </Button>
             <Button
@@ -201,7 +201,7 @@ function ShowSettings(props) {
               className='btn-invert'
               href={'/signout'}
               onClick={createHandleSignoutClick(hardGoTo)}
-              >
+            >
               Sign me out of freeCodeCamp
             </Button>
           </FullWidthRow>

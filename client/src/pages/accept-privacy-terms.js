@@ -101,13 +101,13 @@ class AcceptPrivacyTerms extends Component {
                     id='terms-of-service'
                     inline={true}
                     onChange={this.createHandleChange('termsOfService')}
-                    >
+                  >
                     I accept the{' '}
                     <a
                       href='https://www.freecodecamp/terms'
                       rel='noopener noreferrer'
                       target='_blank'
-                      >
+                    >
                       terms of service
                     </a>{' '}
                     (required)
@@ -123,13 +123,13 @@ class AcceptPrivacyTerms extends Component {
                     id='privacy-policy'
                     inline={true}
                     onChange={this.createHandleChange('privacyPolicy')}
-                    >
+                  >
                     I accept the{' '}
                     <a
                       href='https://www.freecodecamp/privacy'
                       rel='noopener noreferrer'
                       target='_blank'
-                      >
+                    >
                       privacy policy
                     </a>{' '}
                     (required)
@@ -145,7 +145,7 @@ class AcceptPrivacyTerms extends Component {
                     id='quincy-email'
                     inline={true}
                     onChange={this.createHandleChange('quincyEmail')}
-                    >
+                  >
                     I want weekly emails from Quincy, freeCodeCamp.org's
                     founder.
                   </Checkbox>
@@ -157,7 +157,7 @@ class AcceptPrivacyTerms extends Component {
                   className='big-cta-btn'
                   disabled={!privacyPolicy || !termsOfService}
                   type='submit'
-                  >
+                >
                   Continue to freeCodeCamp
                 </Button>
               </form>

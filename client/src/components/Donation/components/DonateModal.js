@@ -20,9 +20,12 @@ import DonateText from './DonateText';
 
 import '../Donation.css';
 
-const mapStateToProps = createSelector(isDonationModalOpenSelector, show => ({
-  show
-}));
+const mapStateToProps = createSelector(
+  isDonationModalOpenSelector,
+  show => ({
+    show
+  })
+);
 
 const mapDispatchToProps = dispatch =>
   bindActionCreators(

@@ -29,7 +29,7 @@ function NoArticles() {
           }
           rel='noopener noreferrer'
           target='_blank'
-          >
+        >
           write one?
         </a>
       </span>
@@ -92,7 +92,7 @@ class NavPanel extends Component {
         bsClass='panelStyle panel'
         id={`${dashedName}-panel`}
         role='listitem'
-        >
+      >
         <Panel.Heading>{this.renderHeader()}</Panel.Heading>
         {isExpanded ? <Panel.Body>{this.renderBody()}</Panel.Body> : null}
       </Panel>

@@ -184,7 +184,7 @@ class DonateForm extends Component {
             disabled={!isFormValid}
             id='confirm-donation-btn'
             type='submit'
-            >
+          >
             Confirm your donation of $5 / month
           </Button>
           <Spacer />

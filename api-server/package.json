@@ -97,7 +97,6 @@
     "nodemon": "^1.18.9",
     "passport-mock-strategy": "^1.1.1",
     "pm2": "^3.2.8",
-    "prettier": "^1.14.2",
     "sinon": "^7.1.1",
     "tap-difflet": "^0.7.0",
     "tap-spec": "^5.0.0",
