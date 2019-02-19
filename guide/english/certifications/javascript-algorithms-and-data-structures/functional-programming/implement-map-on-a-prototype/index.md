@@ -4,9 +4,9 @@ title: Implement map on a Prototype
 
 ## Implement map on a Prototype
 
-### Solution 1 - Solve this challenge using "this" and the forEach method
+### Solution 1 - Solve this challenge using `this` and the forEach method
 
-The "this" keyword gives us access to the object we are calling myMap on.
+The `this` keyword gives us access to the object we are calling myMap on.
 
 From there we can use the forEach method to add elements to already declared empty array as we modify each element with the given callback method.
 
@@ -28,7 +28,7 @@ var new_s = s.myMap(function(item){
 });
 ```
 
-### Solution 2 - Solve this challenge using a "for" loop and "this"
+### Solution 2 - Solve this challenge using a "for" loop and `this`
 
 The use of a "for" loop allows us to apply the callback function to every item in the Global array and then push the modified items to the empty new array that is returned in the end.
 
