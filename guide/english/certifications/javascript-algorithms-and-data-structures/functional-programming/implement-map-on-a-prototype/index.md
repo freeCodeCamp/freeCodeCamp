@@ -4,7 +4,7 @@ title: Implement map on a Prototype
 
 ## Implement map on a Prototype
 
-### Solution 1 - Solve this challenge using the "this" and the forEach method
+### Solution 1 - Solve this challenge using "this" and the forEach method
 
 The "this" keyword gives us access to the object we are calling myMap on.
 
