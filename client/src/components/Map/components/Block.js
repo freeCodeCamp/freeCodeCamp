@@ -131,7 +131,7 @@ export class Block extends Component {
       <li className={`block ${isExpanded ? 'open' : ''}`}>
         <div className='map-title' onClick={this.handleBlockClick}>
           <Caret />
-          <h5>{blockNameify(blockDashedName)}</h5>
+          <h4>{blockNameify(blockDashedName)}</h4>
           <div className='map-title-completed'>
             <span>
               {this.renderCheckMark(
