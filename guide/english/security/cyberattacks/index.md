@@ -19,7 +19,7 @@ In 2017, a Ukrainian government website was infected with malware that erases vi
 
 One of the biggest cyberattacks to date is the Yahoo hack, this affected all 3 billion user accounts. The hack was dangerous, as it exposed users names,
 email addresses, telephone numbers, DOB, encrypted passwords and unencrypted security questions. This attack proves that no matter how big a company is,
-no one can be 100% that their data is secure.
+no one can be 100% that their data is secure. There are also hardware hacks, i.e. holes in hardware that people with malicious intent can abuse. Some recent examples of this are the widely known Meltdown and Spectre incidents which accidentally allowed websites access to memory that they shouldn't have access to. 
 
 ## Common Types of Cyberattacks
 * Malware  
