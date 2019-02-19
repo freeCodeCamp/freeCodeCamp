@@ -312,7 +312,7 @@ class PortfolioSettings extends Component {
         <FullWidthRow>
           <div className='portfolio-settings-intro'>
             <p className='p-intro'>
-              Share your non-FreeCodeCamp projects, articles or accepted pull
+              Share your non-freeCodeCamp projects, articles or accepted pull
               requests.
             </p>
           </div>
