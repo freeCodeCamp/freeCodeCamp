@@ -4,7 +4,7 @@ title: DataFrame Operations and Methods
 
 ## DataFrame basic functionalities:
 
-In the previous `DataFrame` section we had a breif look at the different ways to create a DataFrame and different manipulation operations associated with it. In this section we will go little further and perform some more operations with DataFrame.
+In the previous `DataFrame` section we had a brief look at the different ways to create a DataFrame and different manipulation operations associated with it. In this section we will go little further and perform some more operations with DataFrame.
 
 DataFrame is a very powerful object, comes with so many pre built methods to help computation easier and we will check some of those method and get familier with them.
 
