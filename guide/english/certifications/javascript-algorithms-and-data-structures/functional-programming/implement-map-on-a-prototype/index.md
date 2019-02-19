@@ -4,9 +4,9 @@ title: Implement map on a Prototype
 
 ## Implement map on a Prototype
 
-### Solution 1 - Solve this challenge using the keyword THIS and the forEach method
+### Solution 1 - Solve this challenge using the "this" and the forEach method
 
-The THIS keyword gives us access to the object we are calling myMap on.
+The "this" keyword gives us access to the object we are calling myMap on.
 
 From there we can use the forEach method to add elements to already declared empty array as we modify each element with the given callback method.
 
@@ -28,7 +28,7 @@ var new_s = s.myMap(function(item){
 });
 ```
 
-### Solution 2 - Solve this challenge using a "for" loop and the THIS keyword
+### Solution 2 - Solve this challenge using a "for" loop and the "this"
 
 The use of a "for" loop allows us to apply the callback function to every item in the Global array and then push the modified items to the empty new array that is returned in the end.
 
@@ -54,9 +54,9 @@ var new_s = s.myMap(function(item){
 ```
 
 ### Useful Links
-[This in MDN](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/this)<br/>
-[This in Javascript W3Schools](https://www.w3schools.com/js/js_this.asp)   
-[For loop in MDN](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/for)   
-[Array Prototype in MDN](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/prototype)   
+[this. in MDN](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/this)<br/>
+[this. in Javascript W3Schools](https://www.w3schools.com/js/js_this.asp)   
+[for loop in MDN](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/for)   
+[Array.prototype in MDN](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/prototype)   
 
 ---
