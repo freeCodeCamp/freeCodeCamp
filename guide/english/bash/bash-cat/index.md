@@ -17,7 +17,7 @@ cat [options] [file_names]
 
 Most used options:
 
-* `-b`, numer non-blank output lines
+* `-b`, number non-blank output lines
 * `-n`, number all output lines
 * `-s`, squeeze multiple adjacent blank lines
 * `-v`, display nonprinting characters, except for tabs and the end of line character
@@ -34,8 +34,10 @@ Concatenate the content of the two files and display the result in terminal:
 cat file1.txt file2.txt
 ```
 
-
-**Tip**: Using `cat` on a directory will cause error, so make sure it's a readable file.
+Concatenate the content of two files and store it in a new file:
+```bash
+cat file1.txt file2.txt > new_file.txt
+```
 
 Creating a new text file:
 ```bash
@@ -43,6 +45,8 @@ cat > yourfile.txt
 ```
 After pressing Enter, the cursor will be placed on the next line. You can start entering your desired text directly into your file. Press Ctrl+D or Ctrl+C to exit the file.
 
+**Tip**: Using `cat` on a directory will cause error, so make sure it's a readable file.
 
 #### More Information:
 * Wikipedia: https://en.wikipedia.org/wiki/Cat_(Unix)
+* Man Page: https://ss64.com/bash/cat.html

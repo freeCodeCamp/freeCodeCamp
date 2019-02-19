@@ -1,4 +1,4 @@
-import React, { Component, Fragment } from 'react';
+import React, { Component } from 'react';
 import { ReflexContainer, ReflexSplitter, ReflexElement } from 'react-reflex';
 import PropTypes from 'prop-types';
 
@@ -14,8 +14,7 @@ const propTypes = {
     onStopResize: PropTypes.func,
     onResize: PropTypes.func
   }),
-  testOutput: PropTypes.element,
-  toolPanel: PropTypes.element
+  testOutput: PropTypes.element
 };
 
 class DesktopLayout extends Component {
@@ -27,50 +26,46 @@ class DesktopLayout extends Component {
       editor,
       testOutput,
       hasPreview,
-      preview,
-      toolPanel
+      preview
     } = this.props;
     return (
-      <Fragment>
-        <ReflexContainer className='desktop-layout' orientation='vertical'>
-          <ReflexElement flex={1} {...resizeProps}>
-            {instructions}
-          </ReflexElement>
-          <ReflexSplitter propagate={true} {...resizeProps} />
-          <ReflexElement flex={1} {...resizeProps}>
-            {challengeFile && (
-              <ReflexContainer key={challengeFile.key} orientation='horizontal'>
-                <ReflexElement
-                  flex={1}
-                  propagateDimensions={true}
-                  renderOnResize={true}
-                  renderOnResizeRate={20}
-                  {...resizeProps}
-                  >
-                  {editor}
-                </ReflexElement>
-                <ReflexSplitter propagate={true} {...resizeProps} />
-                <ReflexElement
-                  flex={0.25}
-                  propagateDimensions={true}
-                  renderOnResize={true}
-                  renderOnResizeRate={20}
-                  {...resizeProps}
-                  >
-                  {testOutput}
-                </ReflexElement>
-              </ReflexContainer>
-            )}
-          </ReflexElement>
-          {hasPreview && <ReflexSplitter propagate={true} {...resizeProps} />}
-          {hasPreview && (
-            <ReflexElement flex={0.7} {...resizeProps}>
-              {preview}
-            </ReflexElement>
+      <ReflexContainer className='desktop-layout' orientation='vertical'>
+        <ReflexElement flex={1} {...resizeProps}>
+          {instructions}
+        </ReflexElement>
+        <ReflexSplitter propagate={true} {...resizeProps} />
+        <ReflexElement flex={1} {...resizeProps}>
+          {challengeFile && (
+            <ReflexContainer key={challengeFile.key} orientation='horizontal'>
+              <ReflexElement
+                flex={1}
+                propagateDimensions={true}
+                renderOnResize={true}
+                renderOnResizeRate={20}
+                {...resizeProps}
+                >
+                {editor}
+              </ReflexElement>
+              <ReflexSplitter propagate={true} {...resizeProps} />
+              <ReflexElement
+                flex={0.25}
+                propagateDimensions={true}
+                renderOnResize={true}
+                renderOnResizeRate={20}
+                {...resizeProps}
+                >
+                {testOutput}
+              </ReflexElement>
+            </ReflexContainer>
           )}
-        </ReflexContainer>
-        {toolPanel}
-      </Fragment>
+        </ReflexElement>
+        {hasPreview && <ReflexSplitter propagate={true} {...resizeProps} />}
+        {hasPreview && (
+          <ReflexElement flex={0.7} {...resizeProps}>
+            {preview}
+          </ReflexElement>
+        )}
+      </ReflexContainer>
     );
   }
 }
