@@ -51,9 +51,14 @@ tests:
 </section>
 
 ## Solution
-<section id='solution'>
 
-```js
-// solution required
+<section id='solution'>
+  
+```html
+<h1>Hello World</h1>
+<h2>CatPhotoApp</h2>
 ```
-</section>
+
+</section>  
+
+
