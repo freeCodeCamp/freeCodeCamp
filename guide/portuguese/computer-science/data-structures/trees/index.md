@@ -62,9 +62,13 @@ Se uma árvore estiver vazia, ela é representada por um ponteiro nulo.
 
 ### Código de um nó de árvore
 
-\`\` \`c\_cpp nó de estrutura { dados int; // elemento de dados struct node \* esquerda; // Ponteiro para o nó esquerdo struct node \* direito; // Ponteiro para o nó direito };
-
-\`\` \`
+``` C
+c_cpp nó de estrutura { 
+  dados int; // elemento de dados struct node 
+  esquerda; // Ponteiro para o nó esquerdo struct node 
+  direito; // Ponteiro para o nó direito 
+};
+```
 
 #### Mais Informações:
 

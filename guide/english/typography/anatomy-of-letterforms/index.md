@@ -61,7 +61,7 @@ A typeface refers to a group of characters, such as letters, numbers, and punctu
 ## Font
 Fonts refer to the means by which typefaces are displayed or presented. Helvetica in movable type is a font, as is a TrueType font file.
 
-![The Anatomy of Typography](https://designschool.canva.com/wp-content/uploads/sites/2/2015/07/typography-terms-infographic-tb-1324x0.png)
+![The Anatomy of Typography](https://www.canva.com/learn/wp-content/uploads/2015/07/typography-terms-infographic-tb-800x0.png)
 
 ## Type Families
 The different options available within a font make up a type family. Many fonts are at a minimum available in roman, bold and italic. Other families are much larger, such as Helvetica Neue, which is available in options such Condensed Bold, Condensed Black, UltraLight, UltraLight Italic, Light, Light Italic, Regular, etc.
