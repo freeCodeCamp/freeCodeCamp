@@ -16,7 +16,7 @@ Here are three colors created using the split-complement scheme:
 
 ## Instructions
 <section id='instructions'>
-Change the <code>background-color</code> property of the <code>orange</code>, <code>cyan</code>, and <code>raspberry</code> classes to their respective colors. Make sure to use the hex codes and not the color names. While <code>orange</code> is a color name recognized by most browsers, the shade is not exactly the same as the tertiary orange color (#FF7F00).
+Change the <code>background-color</code> property of the <code>orange</code>, <code>cyan</code>, and <code>raspberry</code> classes to their respective colors. Make sure to use the hex codes and not the color names.
 </section>
 
 ## Tests
