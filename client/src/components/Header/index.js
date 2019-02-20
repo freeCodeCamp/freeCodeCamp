@@ -68,7 +68,7 @@ class Header extends Component {
     const { disableSettings, showMobileSidenav } = this.props;
     if (this.state.isMenuOpened && showMobileSidenav) {
       return (
-        <header>
+        <header className={this.state.isMenuOpened ? 'opened' : null}>
           <nav id='top-nav'>
             <Link className='home-link' to='/'>
               <NavLogo />

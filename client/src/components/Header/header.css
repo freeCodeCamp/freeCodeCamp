@@ -197,6 +197,11 @@ header {
     top: var(--header-height);
   }
 
+  .opened #top-nav .menu-button {
+    background: white;
+    color: #006400;
+  }
+
   #top-right-nav {
     position: absolute;
     top: -300px;
