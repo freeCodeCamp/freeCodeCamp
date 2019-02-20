@@ -1,5 +1,8 @@
-# localeTitle: undefined
-React Router para principiantes
+---
+title: React Router
+localeTitle: React Router
+---
+# React Router para principiantes
 
 # Instalación
 
@@ -22,7 +25,7 @@ Para nuestro proyecto, asumiremos que el sitio web estará respaldado por un ser
 # Declaración de importación
 
 ```javascript
-import { BrowserRouter as Router, Switch, Route, Link } from 'react-router-dom'; 
+import { BrowserRouter as Router, Switch, Route, Link } from 'react-router-dom';
 ```
 
 ## IndexRuta y Enlaces
@@ -36,11 +39,11 @@ De la documentación:
 La forma principal de permitir que los usuarios naveguen alrededor de su aplicación.  renderizará una etiqueta de anclaje totalmente accesible con el href adecuado. Para hacer esto, primero vamos a crear un componente Nav. Nuestro componente Nav contendrá componentes `<Link>` , y se verá así:
 
 ```javascript
-const Nav = () => ( 
-  <div> 
-    <Link to='/'>Home</Link>&nbsp; 
-    <Link to='/address'>Address</Link> 
-  </div> 
- ) 
+const Nav = () => (
+  <div>
+    <Link to='/'>Home</Link>&nbsp;
+    <Link to='/address'>Address</Link>
+  </div>
+ )
 
 ```

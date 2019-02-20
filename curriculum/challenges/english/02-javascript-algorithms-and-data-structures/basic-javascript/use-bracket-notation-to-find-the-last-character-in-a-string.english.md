@@ -2,6 +2,7 @@
 id: bd7123c9c451eddfaeb5bdef
 title: Use Bracket Notation to Find the Last Character in a String
 challengeType: 1
+videoUrl: 'https://scrimba.com/c/cBZQGcv'
 ---
 
 ## Description
@@ -22,9 +23,9 @@ Use <dfn>bracket notation</dfn> to find the last character in the <code>lastName
 ```yml
 tests:
   - text: <code>lastLetterOfLastName</code> should be "e".
-    testString: 'assert(lastLetterOfLastName === "e", "<code>lastLetterOfLastName</code> should be "e".");'
+    testString: assert(lastLetterOfLastName === "e", '<code>lastLetterOfLastName</code> should be "e".');
   - text: You have to use <code>.length</code> to get the last letter.
-    testString: 'assert(code.match(/\.length/g).length === 2, "You have to use <code>.length</code> to get the last letter.");'
+    testString: assert(code.match(/\.length/g).length === 2, 'You have to use <code>.length</code> to get the last letter.');
 
 ```
 
@@ -56,7 +57,7 @@ var lastLetterOfLastName = lastName;
 <div id='js-teardown'>
 
 ```js
-console.info('after the test');
+(function(v){return v;})(lastLetterOfLastName);
 ```
 
 </div>

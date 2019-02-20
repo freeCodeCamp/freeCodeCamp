@@ -26,7 +26,7 @@ Find E(1018).
 ```yml
 tests:
   - text: <code>euler442()</code> should return 1295552661530920200.
-    testString: 'assert.strictEqual(euler442(), 1295552661530920200, "<code>euler442()</code> should return 1295552661530920200.");'
+    testString: assert.strictEqual(euler442(), 1295552661530920200, '<code>euler442()</code> should return 1295552661530920200.');
 
 ```
 

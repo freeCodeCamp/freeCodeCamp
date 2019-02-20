@@ -89,12 +89,6 @@ The privilege to create view is CREATE VIEW
 ```   
 
 
-### Create the role role_tables_and_views.
-``` sql
-    CREATE ROLE role_tables_and_views
-``` 
-
-
 ### Grant to the role of the previous question the privileges to connect to the database and the privileges to create tables and views.
 The privilege to connect to the database is CREATE SESSION
 The privilege to create table is CREATE TABLE
@@ -130,6 +124,7 @@ The privilege to create view is CREATE VIEW
 Here CASCADE option is necessary to remove all the objects of the user in the database.
 ``` sql    
    DROP USER rita CASCADE
+``` 
 
 ### User rita has been transferred and no longer needs the privilege that was granted to her through the role role_tables_and_views. Write a command to remove her from her previous given priviliges except that she still could connect to the database.
 ``` sql    
