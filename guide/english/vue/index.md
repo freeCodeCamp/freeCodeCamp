@@ -1,7 +1,7 @@
 ---
 title: Vue
 ---
-## Introduction
+# Introduction
 
 Vue.js (commonly referred to as **Vue**,  pronounced /vjuː/) is an open-source progressive JavaScript framework for building user interfaces.
 
@@ -16,10 +16,15 @@ Its main attributes are the following:
 * It's versatile: you can use it as a simple library or a fully featured framework
 * It's performant: it's extremely performant out of the box with very little to almost no optimization required.
 
-### More Information
+#### More Information
 
 - [Vue.js Homepage](https://vuejs.org/)
 - [GitHub Repo](https://github.com/vuejs/vue/)
+- [News — Vue.js](https://news.vuejs.org/)
+- [Vue.js Showcase - Made With Vue.js](https://madewithvuejs.com/)
 - [Vue-cli](https://cli.vuejs.org/) - standard tooling
 - [Vue-Router](https://router.vuejs.org/) - officially-supported vue-router library
 - [Vuex](https://vuex.vuejs.org/) - state management pattern + library
+- [Vuetify](https://vuetifyjs.com/en/) a Material Design Framework for Vue
+- [Comparison with other frameworks](https://vuejs.org/v2/guide/comparison.html)
+

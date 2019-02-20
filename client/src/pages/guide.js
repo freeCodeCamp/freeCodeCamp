@@ -1,11 +1,9 @@
-import React from 'react';
+import React, { Fragment } from 'react';
 import Helmet from 'react-helmet';
-
-import Layout from '../components/layouts/GuideLayout';
 
 function Index() {
   return (
-    <Layout>
+    <Fragment>
       <Helmet>
         <title>Guide | freeCodeCamp.org</title>
         <meta
@@ -37,7 +35,7 @@ function Index() {
           href='https://freecodecamp.org'
           rel='noopener noreferrer'
           target='_blank'
-          >
+        >
           freeCodeCamp.org
         </a>
         {'. It has a curriculum that starts from zero and helps you learn' +
@@ -50,14 +48,14 @@ function Index() {
           href='https://github.com/freeCodeCamp/freeCodeCamp'
           rel='noopener noreferrer'
           target='_blank'
-          >
+        >
           open source
         </a>
         {'. Your help in making it better is greatly appreciated!'}
       </p>
       <hr />
       <p>Happy coding!</p>
-    </Layout>
+    </Fragment>
   );
 }
 
