@@ -1,6 +1,7 @@
 import loopback from 'loopback';
 import jwt from 'jsonwebtoken';
 import { isBefore } from 'date-fns';
+import { isEmpty } from 'lodash';
 
 import { homeLocation } from '../../../config/env';
 
@@ -18,8 +19,11 @@ export function isWhiteListedPath(path, whiteListREs = _whiteListREs) {
   return whiteListREs.some(re => re.test(path));
 }
 
-export default () =>
-  function authorizeByJWT(req, res, next) {
+export default ({
+  _jwtSecret = process.env.JWT_SECRET,
+  getUserById = _getUserById
+} = {}) =>
+  function requestAuthorisation(req, res, next) {
     const { path } = req;
     if (apiProxyRE.test(path) && !isWhiteListedPath(path)) {
       const cookie =
@@ -39,7 +43,7 @@ export default () =>
       }
       let token;
       try {
-        token = jwt.verify(cookie, process.env.JWT_SECRET);
+        token = jwt.verify(cookie, _jwtSecret);
       } catch (err) {
         throw wrapHandledError(new Error(err.message), {
           type: 'info',
@@ -60,9 +64,9 @@ export default () =>
           status: 403
         });
       }
-      if (!req.user) {
-        const User = loopback.getModelByType('User');
-        return User.findById(userId)
+
+      if (isEmpty(req.user)) {
+        return getUserById(userId)
           .then(user => {
             if (user) {
               user.points = user.progressTimestamps.length;
@@ -73,8 +77,20 @@ export default () =>
           .then(next)
           .catch(next);
       } else {
-        return next();
+        return Promise.resolve(next());
       }
     }
-    return next();
+    return Promise.resolve(next());
   };
+
+export function _getUserById(id) {
+  const User = loopback.getModelByType('User');
+  return new Promise((resolve, reject) =>
+    User.findById(id, (err, instance) => {
+      if (err) {
+        return reject(err);
+      }
+      return resolve(instance);
+    })
+  );
+}
