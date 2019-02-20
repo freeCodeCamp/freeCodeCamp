@@ -12,8 +12,8 @@ The basic syntax is:
 ```python
 counter = 0
 while counter < 10:
-   # Execute the block of code here as
-   # long as counter is less than 10
+   # Execute the block of code here as long as counter is less than 10
+   # To prevent an infinite loop, counter is incremented by 1 on each iteration
    counter += 1
 ```
 
