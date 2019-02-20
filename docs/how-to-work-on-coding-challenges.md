@@ -14,12 +14,16 @@ You can also clone the project and edit locally on your computer. For help with 
 
 Here is a template of what the challenge markdown files look like.
 
+**Note:** In the below sections, examples of `{ext}` are:
+* `html` - HTML/CSS
+* `js` - JavaScript
+* `jsx` - JSX
+
 ````md
 ---
 id: Unique identifier (alphanumerical, MongoDB_id)
 title: Challenge Title
 challengeType: 0
-guideUrl: 'url of guide article'
 videoUrl: 'url of video explanation'
 ---
 
@@ -32,29 +36,35 @@ A Description of the challenge and what is required to pass
 <section id='instructions'>
 Instructions about what exactly needs to be done.
 </section>
+
 ## Tests
 <section id='tests'>
 
 ``` yml
 - text: Should return "foo".
-  testString: 'A stringified function using Chai asserts'
+  testString: 'A stringified function possibly using Chai asserts'
 ```
 
 </section>
 
-<div id='js-seed'>
+## Challenge Seed
+<section id='challengeSeed'>
 
-```js
-Code displayed in the editor by default.
+<div id='{ext}-seed'>
+
+```{ext}
+Code displayed in the editor by default.  
+
+This is a required section for the challenge.
 ```
 
 </div>
 
 ### Before Test
-<div id='js-setup'>
+<div id='{ext}-setup'>
 
 ```js
-Test setup code.
+Optional Test setup code.
 ```
 
 </div>
@@ -62,10 +72,10 @@ Test setup code.
 </section>
 
 ### After Test
-<div id='js-teardown'>
+<div id='{ext}-teardown'>
 
-```js
-Test tear down code.
+```{ext}
+Optional Test tear down code.
 ```
 
 </div>
@@ -75,7 +85,7 @@ Test tear down code.
 ## Solution
 <section id='solution'>
 
-```js
+```{ext}
 Challenge solution code.
 ```
 
