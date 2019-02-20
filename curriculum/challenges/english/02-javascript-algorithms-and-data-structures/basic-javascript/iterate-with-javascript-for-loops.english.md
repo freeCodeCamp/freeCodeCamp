@@ -2,6 +2,7 @@
 id: cf1111c1c11feddfaeb5bdef
 title: Iterate with JavaScript For Loops
 challengeType: 1
+videoUrl: 'https://scrimba.com/c/c9yNVCe'
 ---
 
 ## Description

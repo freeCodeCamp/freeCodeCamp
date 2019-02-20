@@ -4,9 +4,10 @@
         <td><a href="/CONTRIBUTING.md"> English </a></td>
         <td><a href="/docs/chinese/README.md"> 中文 </a></td>
         <td><a href="/docs/russian/README.md"> русский </a></td>
-        <td><a href="/docs/arabic/README.md"> عربى </a></td>
+        <td><a href="/docs/arabic/README.md"> عربي </a></td>
         <td><a href="/docs/spanish/README.md"> Español </a></td>
         <td><a href="/docs/portuguese/README.md"> Português </a></td>
+        <td><a href="/docs/german/README.md"> Deutsch </a></td>
     </tr>
 </table>
 
@@ -16,7 +17,7 @@ Olá 👋!
 
 Este directório contem toda a documentação sobre como contribuir para o freeCodeCamp.org
 
-## [Se estás agora a começar, lê isto primeiro.](/CONTRIBUTING.md)
+## [Se estás agora a começar, lê isto primeiro.](/docs/portuguese/CONTRIBUTING.md)
 
 ---
 

@@ -13,7 +13,10 @@ const propTypes = {
 };
 
 function SuperBlockIntroductionPage({ data: { markdownRemark } }) {
-  const { html, frontmatter: { superBlock } } = markdownRemark;
+  const {
+    html,
+    frontmatter: { superBlock }
+  } = markdownRemark;
   return (
     <Fragment>
       <Helmet>
