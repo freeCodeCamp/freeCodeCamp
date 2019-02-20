@@ -3,10 +3,10 @@ title: File Writing
 ---
 ## File Writing
 
-PHP had prepared a few functions to help user save information outside of PHP to be used later.
+PHP has prepared a few functions to help user save information outside of PHP to be used later.
 
 ## fopen("fileName.txt","w")
-Like most of the file handling functions, before conduct any file operation we must prepare the file for the operation first.
+Like most of the file handling functions, before conducting any file operation we must prepare the file for the operation first.
 ```PHP
 <?php
 
@@ -14,7 +14,7 @@ Like most of the file handling functions, before conduct any file operation we m
   
 ?>
 ```
-$fileHandler is the file handling variable, the function to write should pass this variable as parameter.
+$fileHandler is the file handling variable, the function to write should pass this variables as parameter.
 
 ## fwrite()
 This is the function to add content to your file. This function should contain two variable, the first one should be the file handling variable and the second should be the content you wish to add to the file.
