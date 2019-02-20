@@ -14,7 +14,7 @@ Ao escrever HTML, você pode adicionar classes a um elemento. Basta adicionar o 
  <p>is a popular catchphrase that <span class="super-man">Super Man</span> often said.</p> 
 ```
 
-Você pode, então, estilizar esses elementos com CSS. As classes são referenciadas com o período (.) Antes delas no CSS, mas você não deve colocar pontos no seu HTML.
+Você pode, então, estilizar esses elementos com CSS. As classes são referenciadas com o período (.) antes delas no CSS, mas você não deve colocar pontos no seu HTML.
 
 ```css
 .super-man { 
@@ -23,7 +23,7 @@ Você pode, então, estilizar esses elementos com CSS. As classes são referenci
  } 
 ```
 
-Este código dão um fundo azul e uma cor de texto vermelho para todos os elementos que têm o `super-man` de classe. [Veja este exemplo no CodePen](https://codepen.io/Tlandis/pen/RLvomV) .
+Este código dá um fundo azul e uma cor de texto vermelho para todos os elementos que têm o `super-man` de classe. [Veja este exemplo no CodePen](https://codepen.io/Tlandis/pen/RLvomV) .
 
 Você também pode declarar mais de uma classe para seu elemento, como:
 
@@ -34,7 +34,7 @@ Você também pode declarar mais de uma classe para seu elemento, como:
  </div> 
 ```
 
-Então no seu arquivo css:
+Então no seu arquivo CSS:
 
 ```css
 .ironMan{ 
@@ -57,7 +57,7 @@ Você também pode combinar classes na mesma linha:
  } 
 ```
 
-Você pode ver o resultado do código acima [aqui](https://codepen.io/Tlandis/pen/RLvomV) . Aprenda como combinar classes css usando seletores [aqui](https://www.w3schools.com/css/css_combinators.asp) .
+Você pode ver o resultado do código acima [aqui](https://codepen.io/Tlandis/pen/RLvomV) . Aprenda como combinar classes CSS usando seletores [aqui](https://www.w3schools.com/css/css_combinators.asp) .
 
 #### Mais Informações:
 

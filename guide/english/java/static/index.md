@@ -62,7 +62,7 @@ public class MyClass {
 }
 // Outputs "2"
 ```
-The output is 2 because it gets incremented by static method `increament()`. Similar to static variables, static methods can also be accessed using instance variables.
+The output is 2 because it gets incremented by static method `increment()`. Similar to static variables, static methods can also be accessed using instance variables.
 
 ## Static Blocks
 
@@ -115,3 +115,7 @@ public class Main {
 }
 ```
 One of the use case of static nested classes in [Builder Pattern](https://en.wikipedia.org/wiki/Builder_pattern#Java) popularly used in java.
+
+#### More Information:
+- [Oracle Java Docs :Static Fields](https://docs.oracle.com/javase/specs/jls/se7/html/jls-8.html#jls-8.3.1.1)
+- [Oracle Java Docs :Static Methods](https://docs.oracle.com/javase/specs/jls/se7/html/jls-8.html#jls-8.4.3.2)
