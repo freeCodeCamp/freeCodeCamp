@@ -181,7 +181,7 @@ function sendCertifiedEmail(
   const notifyUser = {
     type: 'email',
     to: email,
-    from: 'team@freeCodeCamp.org',
+    from: 'quincy@freecodecamp.org',
     subject: dedent`
       Congratulations on completing all of the
       freeCodeCamp certifications!
@@ -272,21 +272,29 @@ function createVerifyCert(certTypeIds, app) {
         // set here so sendCertifiedEmail works properly
         // not used otherwise
         user[certType] = true;
+        const updatePromise = new Promise((resolve, reject) =>
+          user.updateAttributes(updateData, err => {
+            if (err) {
+              return reject(err);
+            }
+            return resolve();
+          })
+        );
         return Observable.combineLatest(
           // update user data
-          user.update$(updateData),
+          Observable.fromPromise(updatePromise),
           // If user has committed to nonprofit,
           // this will complete their pledge
           completeCommitment$(user),
           // sends notification email is user has all 6 certs
           // if not it noop
           sendCertifiedEmail(user, Email.send$),
-          ({ count }, pledgeOrMessage) => ({ count, pledgeOrMessage })
-        ).map(({ count, pledgeOrMessage }) => {
+          (_, pledgeOrMessage) => ({ pledgeOrMessage })
+        ).map(({ pledgeOrMessage }) => {
           if (typeof pledgeOrMessage === 'string') {
             log(pledgeOrMessage);
           }
-          log(`${count} documents updated`);
+          log('Certificates updated');
           return successMessage(user.username, certName);
         });
       })
@@ -342,7 +350,8 @@ function createShowCert(app) {
           messages: [
             {
               type: 'info',
-              message: `We could not find a user with the username "${username}"`
+              message:
+                'We could not find a user with the username "' + username + '"'
             }
           ]
         });

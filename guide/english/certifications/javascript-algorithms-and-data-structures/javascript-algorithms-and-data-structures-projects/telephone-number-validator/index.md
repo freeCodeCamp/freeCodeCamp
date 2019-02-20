@@ -31,6 +31,33 @@ Start by trying to get it to validate each format from the example, each one sho
 
 > _try to solve the problem now_
 
+## ![:speech_balloon:](https://forum.freecodecamp.com/images/emoji/emoji_one/speech_balloon.png?v=3 ":speech_balloon:") Hint: 4
+ Think through what you are trying to solve in a step by step fashion. Below are the different Booleans you could set up. Once you have these set up, you can create small regex tests for each variable.
+ This will lead to a much longer solution than those contained in the spoilers. However it will be easier to decipher and generate.
+```js
+  // Set up your Booleans here
+  let hasTenDigits = false;
+  let hasElevenDigits = false;
+  let startsWithOne = false;
+  let hasPermittedCharsOnly = false;
+  let hasCorrectParentheses = false;
+  
+  // Write regular expressions here so that the Booleans contain the correct values
+  // INSERT CODE WITH REGEX HERE
+  
+  // Use the Booleans to return true or false, without needing to string together one complex regular expression
+  if (!hasTenDigits && !hasElevenDigits) {
+    return false;
+  } else if (!hasPermittedCharsOnly || !hasCorrectParentheses) {
+    return false;
+  } else if (hasElevenDigits && !startsWithOne) {
+    return false;
+  } else {
+    return true;
+  }
+```
+ > _try to solve the problem now_
+
 ## Spoiler Alert!
 
 ![warning sign](//discourse-user-assets.s3.amazonaws.com/original/2X/2/2d6c412a50797771301e7ceabd554cef4edcd74d.gif)

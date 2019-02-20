@@ -4,6 +4,7 @@ import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
 import { createSelector } from 'reselect';
 import Helmet from 'react-helmet';
+import fontawesome from '@fortawesome/fontawesome';
 
 import ga from '../../analytics';
 import {
@@ -19,10 +20,15 @@ import { isBrowser } from '../../../utils';
 import OfflineWarning from '../OfflineWarning';
 import Flash from '../Flash';
 import Header from '../Header';
+import Footer from '../Footer';
 
 import './global.css';
 import './layout.css';
 import './night.css';
+
+fontawesome.config = {
+  autoAddCss: false
+};
 
 const metaKeywords = [
   'javascript',
@@ -64,7 +70,8 @@ const propTypes = {
   isSignedIn: PropTypes.bool,
   landingPage: PropTypes.bool,
   onlineStatusChange: PropTypes.func.isRequired,
-  removeFlashMessage: PropTypes.func.isRequired
+  removeFlashMessage: PropTypes.func.isRequired,
+  showFooter: PropTypes.bool
 };
 
 const mapStateToProps = createSelector(
@@ -132,6 +139,7 @@ class DefaultLayout extends Component {
       flashMessages = [],
       removeFlashMessage,
       landingPage,
+      showFooter = true,
       isOnline,
       isSignedIn
     } = this.props;
@@ -147,15 +155,18 @@ class DefaultLayout extends Component {
             },
             { name: 'keywords', content: metaKeywords.join(', ') }
           ]}
-        />
+        >
+          <style>{fontawesome.dom.css()}</style>
+        </Helmet>
         <Header disableSettings={disableSettings} />
-        <div className={landingPage && 'landing-page'}>
+        <div className={`default-layout ${landingPage ? 'landing-page' : ''}`}>
           <OfflineWarning isOnline={isOnline} isSignedIn={isSignedIn} />
           {hasMessages ? (
             <Flash messages={flashMessages} onClose={removeFlashMessage} />
           ) : null}
           {children}
         </div>
+        {showFooter && <Footer />}
       </Fragment>
     );
   }
