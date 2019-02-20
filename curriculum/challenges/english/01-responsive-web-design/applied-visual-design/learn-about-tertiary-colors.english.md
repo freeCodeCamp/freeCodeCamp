@@ -30,6 +30,8 @@ tests:
     testString: assert($('.cyan').css('background-color') == 'rgb(0, 255, 255)', 'The <code>div</code> element with class <code>cyan</code> should have a <code>background-color</code> of cyan.');
   - text: The <code>div</code> element with class <code>raspberry</code> should have a <code>background-color</code> of raspberry.
     testString: assert($('.raspberry').css('background-color') == 'rgb(255, 0, 127)', 'The <code>div</code> element with class <code>raspberry</code> should have a <code>background-color</code> of raspberry.');
+  - text: All <code>background-color</code> values for the color classes should be hex codes and not color names.
+    testString: assert(!/background-color:\s(orange|cyan|raspberry)/.test(code), 'All <code>background-color</code> values for the color classes should be hex codes and not color names.');
 
 ```
 
