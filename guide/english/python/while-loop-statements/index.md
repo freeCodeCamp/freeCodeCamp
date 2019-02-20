@@ -50,10 +50,33 @@ Line-by-Line Explanation of the above code:
 
 ## Infinite Loops:
 
-As previously noted, a 'while' loop will run until the conditional logic is false. Because of this, it is important to set a "false" condition within the executable code. If no false is included, the while loop will run infinitely. Be cautious when setting logic parameters to prevent the infinite loop unless that is the desired output. 
+As previously noted, a 'while' loop will run until the conditional logic is false. Because of this, it is important to  set a "false" condition within the executable code. If no false is included, the while loop will run infinitely. Use caution when setting logic parameters to prevent the infinite loop unless that is the desired output. 
 
-Because `while` loops are conditioned controlled loops, they are great for programs that need to be run for an indefinite number of times. This allows for input to be taken time and time again until the condition is met. A good practical example would be for a game in which the player has the option to try again. Until the player responds with the response that meets the `while` loop condition, the player can continue to play the game, simulating the loop as many times as they please.
+A simple example of this would be as follows:  
 
+Let's say we wish to print out the first N natural numbers on the screen.  
+```python
+N = int(input('Enter a number: '))
+i = 1
+while i <= N:
+   print(i)
+```
+If we try running this code, we'll encounter an infinite loop. That's because we skipped an important task in our code. Can you guess what? We forgot to update the value of `i` after each iteration, which means that `i` never exceeds the value of `N`.  
+
+**Note**: If you find yourself in an infinite loop and can't figure out how to end the nightmare, don't worry. Just hit `ctrl+c` on your keyboard.  
+
+Now let's fix our program with a simple line.
+```python
+N = int(input('Enter a number: '))
+i = 1
+while i <= N:
+   print(i)
+   i += 1            # This is the same as typing i = i + 1
+```
+And it's done. In the first iteration, `i = 1` and it's printed on the screen. Then, `i` is incremented by 1 and in the second iteration, `i = 2` which is again printed on screen. This continues until `i = N + 1` (depending on what `N` is) and we finally exit the loop.
+
+
+**Note**: Because `while` loops are conditioned controlled loops, they are great for programs that need to be run for an indefinite number of times. This allows for input to be taken time and time again until the condition is met. A good practical example would be for a game in which the player has the option to try again. Until the player responds with the response that meets the `while` loop condition, the player can continue to play the game, simulating the loop as many times as they please.
 
 #### More Information:
 
