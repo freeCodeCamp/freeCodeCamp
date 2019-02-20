@@ -81,7 +81,7 @@ function renderSettingsButton() {
               bsSize='lg'
               bsStyle='primary'
               className='btn-invert'
-              >
+            >
               Update my settings
             </Button>
           </Link>

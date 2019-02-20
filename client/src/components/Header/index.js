@@ -78,7 +78,7 @@ class Header extends Component {
             className='menu-button'
             onClick={this.toggleClass}
             ref={this.menuButtonRef}
-            >
+          >
             Menu
           </span>
           <Media onChange={this.handleMediaChange} query='(max-width: 734px)' />

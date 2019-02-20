@@ -1,6 +1,6 @@
 import axios from 'axios';
 
-const base = `/internal`;
+const base = '/internal';
 
 function get(path) {
   return axios.get(`${base}${path}`);
@@ -45,7 +45,6 @@ export function getArticleById(shortId) {
 }
 
 /** POST **/
-
 
 export function postReportUser(body) {
   return post('/user/report-user', body);

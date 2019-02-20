@@ -23,6 +23,11 @@ before_script:
 
 jobs:
   include:
+    - stage: Lint javaScript
+      script:
+        - npm run ensure-env
+        - npm run lint
+
     - stage: Unit and Integration tests
       script: npm test
 

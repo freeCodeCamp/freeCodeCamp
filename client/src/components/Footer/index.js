@@ -1,17 +1,29 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import { Link as GatsbyLink } from 'gatsby';
 import { Grid, Row, Col } from '@freecodecamp/react-bootstrap';
 
 import './footer.css';
+
+const propTypes = {
+  children: PropTypes.any
+};
 
 const ColHeader = ({ children, ...other }) => (
   <div className='col-header' {...other}>
     {children}
   </div>
 );
+ColHeader.propTypes = propTypes;
+
+const linkPropTypes = {
+  children: PropTypes.any,
+  external: PropTypes.bool,
+  to: PropTypes.string.isRequired
+};
 
 const Link = ({ children, to, external, ...other }) => {
-  if (!external && (/^\/(?!\/)/).test(to)) {
+  if (!external && /^\/[^/]?/.test(to)) {
     return (
       <GatsbyLink to={to} {...other}>
         {children}
@@ -25,6 +37,7 @@ const Link = ({ children, to, external, ...other }) => {
     </a>
   );
 };
+Link.propTypes = linkPropTypes;
 
 function Footer() {
   return (
@@ -46,7 +59,7 @@ function Footer() {
             <p>
               Donations to freeCodeCamp go toward our education initiatives, and
               help pay for servers, services, and staff. You can&nbsp;
-              <Link className='inline' href='https://donate.freecodecamp.org'>
+              <Link className='inline' to='https://donate.freecodecamp.org'>
                 make a tax-deductible donation here
               </Link>
               .
@@ -87,12 +100,8 @@ function Footer() {
           </Col>
           <Col lg={3} sm={2} xs={12}>
             <ColHeader>Our Learning Resources</ColHeader>
-            <Link to='/learn'>
-              Learn
-            </Link>
-            <Link to='/guide'>
-              Guide
-            </Link>
+            <Link to='/learn'>Learn</Link>
+            <Link to='/guide'>Guide</Link>
             <Link to='https://www.youtube.com/freecodecamp'>Youtube</Link>
             <Link to='https://podcast.freecodecamp.org'>Podcast</Link>
             <Link to='https://twitter.com/freecodecamp'>Twitter</Link>

@@ -30,7 +30,7 @@ function SoftwareResourcesForNonProfits() {
                 href='http://givecamp.org/'
                 rel='noopener noreferrer'
                 target='_blank'
-                >
+              >
                 Give Camp
               </a>
             </li>
@@ -39,7 +39,7 @@ function SoftwareResourcesForNonProfits() {
                 href='http://www.volunteermatch.com'
                 rel='noopener noreferrer'
                 target='_blank'
-                >
+              >
                 Volunteer Match.com
               </a>
             </li>
@@ -48,7 +48,7 @@ function SoftwareResourcesForNonProfits() {
                 href='http://www.catchafire.org'
                 rel='noopener noreferrer'
                 target='_blank'
-                >
+              >
                 Catchafire
               </a>
             </li>
@@ -57,7 +57,7 @@ function SoftwareResourcesForNonProfits() {
                 href='http://anyonecanhaveawebsite.com'
                 rel='noopener noreferrer'
                 target='_blank'
-                >
+              >
                 Anyone Can Have A Website
               </a>
             </li>
@@ -69,7 +69,7 @@ function SoftwareResourcesForNonProfits() {
                 href='https://www.youtube.com/watch?v=4AXDKWuY9QM'
                 rel='noopener noreferrer'
                 target='_blank'
-                >
+              >
                 How to build and deploy a website without writing any code for
                 free
               </a>
@@ -79,7 +79,7 @@ function SoftwareResourcesForNonProfits() {
                 href='http://www.wix.com/'
                 rel='noopener noreferrer'
                 target='_blank'
-                >
+              >
                 Wix
               </a>
             </li>
@@ -88,7 +88,7 @@ function SoftwareResourcesForNonProfits() {
                 href='https://www.squarespace.com/'
                 rel='noopener noreferrer'
                 target='_blank'
-                >
+              >
                 Square Space
               </a>
             </li>
@@ -97,7 +97,7 @@ function SoftwareResourcesForNonProfits() {
                 href='https://wordpress.com/'
                 rel='noopener noreferrer'
                 target='_blank'
-                >
+              >
                 WordPress
               </a>
             </li>
@@ -106,7 +106,7 @@ function SoftwareResourcesForNonProfits() {
                 href='https://xprs.imcreator.com'
                 rel='noopener noreferrer'
                 target='_blank'
-                >
+              >
                 Imcreator.com
               </a>
             </li>
@@ -118,7 +118,7 @@ function SoftwareResourcesForNonProfits() {
                 href='http://causesignal.com'
                 rel='noopener noreferrer'
                 target='_blank'
-                >
+              >
                 Cause Signal
               </a>
             </li>
@@ -127,7 +127,7 @@ function SoftwareResourcesForNonProfits() {
                 href='https://www.thedatabank.com/'
                 rel='noopener noreferrer'
                 target='_blank'
-                >
+              >
                 The Data Bank
               </a>
             </li>
@@ -136,7 +136,7 @@ function SoftwareResourcesForNonProfits() {
                 href='http://www.donorsnap.com/'
                 rel='noopener noreferrer'
                 target='_blank'
-                >
+              >
                 Donor Snap
               </a>
             </li>
@@ -145,7 +145,7 @@ function SoftwareResourcesForNonProfits() {
                 href='http://www.donorperfect.com/'
                 rel='noopener noreferrer'
                 target='_blank'
-                >
+              >
                 Donor Perfect
               </a>
             </li>
@@ -157,7 +157,7 @@ function SoftwareResourcesForNonProfits() {
                 }
                 rel='noopener noreferrer'
                 target='_blank'
-                >
+              >
                 E Tapestry
               </a>
             </li>
@@ -166,7 +166,7 @@ function SoftwareResourcesForNonProfits() {
                 href='http://www.z2systems.com'
                 rel='noopener noreferrer'
                 target='_blank'
-                >
+              >
                 Z2 Systems
               </a>
             </li>
@@ -175,7 +175,7 @@ function SoftwareResourcesForNonProfits() {
                 href='http://www.regpacks.com/volunteer-management'
                 rel='noopener noreferrer'
                 target='_blank'
-                >
+              >
                 Reg Packs
               </a>
             </li>
@@ -184,7 +184,7 @@ function SoftwareResourcesForNonProfits() {
                 href='http://sumac.com'
                 rel='noopener noreferrer'
                 target='_blank'
-                >
+              >
                 Sumac
               </a>
             </li>
@@ -193,7 +193,7 @@ function SoftwareResourcesForNonProfits() {
                 href='http://www.volgistics.com'
                 rel='noopener noreferrer'
                 target='_blank'
-                >
+              >
                 Volgistics
               </a>
             </li>
@@ -205,7 +205,7 @@ function SoftwareResourcesForNonProfits() {
                 href='https://www.ordoro.com'
                 rel='noopener noreferrer'
                 target='_blank'
-                >
+              >
                 Ordoro
               </a>
             </li>
@@ -214,7 +214,7 @@ function SoftwareResourcesForNonProfits() {
                 href='http://www.unleashedsoftware.com'
                 rel='noopener noreferrer'
                 target='_blank'
-                >
+              >
                 Unleashed Software
               </a>
             </li>
@@ -223,7 +223,7 @@ function SoftwareResourcesForNonProfits() {
                 href='https://www.ezofficeinventory.com/industries/non-profits'
                 rel='noopener noreferrer'
                 target='_blank'
-                >
+              >
                 EZ Office Inventory
               </a>
             </li>
@@ -235,7 +235,7 @@ function SoftwareResourcesForNonProfits() {
                 href='http://www.dokeos.com'
                 rel='noopener noreferrer'
                 target='_blank'
-                >
+              >
                 Dokeos
               </a>
             </li>
@@ -244,7 +244,7 @@ function SoftwareResourcesForNonProfits() {
                 href='http://www.efrontlearning.net/'
                 rel='noopener noreferrer'
                 target='_blank'
-                >
+              >
                 E Front Learning
               </a>
             </li>
@@ -253,7 +253,7 @@ function SoftwareResourcesForNonProfits() {
                 href='https://moodle.org/'
                 rel='noopener noreferrer'
                 target='_blank'
-                >
+              >
                 Moodle
               </a>
             </li>
@@ -262,7 +262,7 @@ function SoftwareResourcesForNonProfits() {
                 href='https://sakaiproject.org/'
                 rel='noopener noreferrer'
                 target='_blank'
-                >
+              >
                 Sakai Project
               </a>
             </li>
@@ -274,7 +274,7 @@ function SoftwareResourcesForNonProfits() {
                 href='https://civicrm.org/'
                 rel='noopener noreferrer'
                 target='_blank'
-                >
+              >
                 CiviCRM
               </a>
             </li>
@@ -283,7 +283,7 @@ function SoftwareResourcesForNonProfits() {
                 href='http://tcmgr.com/'
                 rel='noopener noreferrer'
                 target='_blank'
-                >
+              >
                 Total Community Manager
               </a>
             </li>
@@ -295,7 +295,7 @@ function SoftwareResourcesForNonProfits() {
                 href='http://www.google.com/forms'
                 rel='noopener noreferrer'
                 target='_blank'
-                >
+              >
                 Google Forms
               </a>
             </li>
@@ -304,7 +304,7 @@ function SoftwareResourcesForNonProfits() {
                 href='http://www.typeform.com'
                 rel='noopener noreferrer'
                 target='_blank'
-                >
+              >
                 Typeform
               </a>
             </li>

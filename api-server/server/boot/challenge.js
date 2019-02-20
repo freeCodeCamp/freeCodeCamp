@@ -321,7 +321,7 @@ export default async function bootChallenge(app, done) {
     ) {
       req.flash(
         'danger',
-        'You haven\'t supplied the necessary URLs for us to inspect your work.'
+        "You haven't supplied the necessary URLs for us to inspect your work."
       );
       return res.sendStatus(403);
     }

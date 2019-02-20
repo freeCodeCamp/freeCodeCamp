@@ -8,15 +8,15 @@
     "develop:client": "cd ./client && npm run develop",
     "develop:server": "cd ./api-server && node development-entry.js",
     "ensure-env": "cross-env DEBUG=fcc:* node ./tools/scripts/ensure-env.js",
-    "lint": "echo 'Warning: TODO - Define Linting with fixing.'",
-    "lint:api": "eslint api-server --ignore-pattern 'api-server/node_modules/**/*.js'",
+    "format": "npm run lint -- --fix",
+    "hooks:install": "node node_modules/husky/husky.js install",
+    "hooks:uninstall": "node node_modules/husky/husky.js uninstall",
+    "lint": "eslint .",
+    "postinstall": "npm run bootstrap",
     "seed": "npm-run-all -p seed:*",
     "seed:auth-user": "cross-env DEBUG=fcc:* node ./tools/scripts/seed/seedAuthUser",
     "seed:challenges": "cross-env DEBUG=fcc:* node ./tools/scripts/seed/seedChallenges",
-    "postinstall": "npm run bootstrap",
-    "pretest": "npm-run-all -s test:lint",
     "test": "npm-run-all -p test:*",
-    "test:challenge-formatting": "node ./tools/scripts/ci/ensure-challenge-formatting.js",
     "test:client": "cd ./client && npm test && cd ../",
     "test:curriculum": "cd ./curriculum && npm test && cd ../",
     "test:guide-formatting": "node ./tools/scripts/ci/ensure-guide-formatting.js",
@@ -25,20 +25,41 @@
     "test:tools": "jest ./tools"
   },
   "devDependencies": {
+    "@freecodecamp/eslint-config": "^2.0.2",
+    "babel-eslint": "^10.0.1",
     "cross-env": "^5.2.0",
     "debug": "^4.0.1",
     "dotenv": "^6.0.0",
     "eslint": "^5.12.1",
+    "eslint-config-prettier": "^4.0.0",
+    "eslint-plugin-babel": "^5.3.0",
+    "eslint-plugin-import": "^2.16.0",
+    "eslint-plugin-prefer-object-spread": "^1.2.1",
+    "eslint-plugin-prettier": "^3.0.1",
     "eslint-plugin-react": "^7.12.4",
     "faker": "^4.1.0",
     "gray-matter": "^4.0.1",
+    "husky": "^1.3.1",
     "jest": "^23.6.0",
     "lerna": "^3.11.1",
+    "lint-staged": "^8.1.4",
     "lodash": "^4.17.11",
     "npm-run-all": "^4.1.5",
     "ora": "^3.0.0",
+    "prettier": "^1.16.4",
     "readdirp-walk": "^1.6.0",
     "shortid": "^2.2.14",
     "slugg": "^1.2.1"
+  },
+  "lint-staged": {
+    "*.js": [
+      "eslint --fix",
+      "git add"
+    ]
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged"
+    }
   }
 }

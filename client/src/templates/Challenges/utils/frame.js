@@ -98,7 +98,7 @@ const initTestFrame = frameReady => ctx => {
       resolve();
     }
   });
-  contentLoaded.then(async() => {
+  contentLoaded.then(async () => {
     const { sources, loadEnzyme } = ctx;
     // default for classic challenges
     // should not be used for modern

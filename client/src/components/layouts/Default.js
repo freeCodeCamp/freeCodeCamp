@@ -155,7 +155,7 @@ class DefaultLayout extends Component {
             },
             { name: 'keywords', content: metaKeywords.join(', ') }
           ]}
-          >
+        >
           <style>{fontawesome.dom.css()}</style>
         </Helmet>
         <Header disableSettings={disableSettings} />
@@ -166,7 +166,7 @@ class DefaultLayout extends Component {
           ) : null}
           {children}
         </div>
-        {showFooter && (<Footer />)}
+        {showFooter && <Footer />}
       </Fragment>
     );
   }

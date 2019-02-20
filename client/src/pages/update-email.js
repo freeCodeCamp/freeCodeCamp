@@ -92,12 +92,12 @@ class UpdateEmail extends Component {
                   <FormGroup
                     controlId='emailInput'
                     validationState={this.getEmailValidationState()}
-                    >
+                  >
                     <Col
                       className='email-label'
                       componentClass={ControlLabel}
                       sm={2}
-                      >
+                    >
                       Email
                     </Col>
                     <Col sm={10}>
@@ -115,7 +115,7 @@ class UpdateEmail extends Component {
                     bsStyle='primary'
                     disabled={this.getEmailValidationState() !== 'success'}
                     type='submit'
-                    >
+                  >
                     {isNewEmail ? 'Update my Email' : 'Verify Email'}
                   </Button>
                 </Form>
