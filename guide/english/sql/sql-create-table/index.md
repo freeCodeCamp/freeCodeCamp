@@ -119,7 +119,7 @@ You’ll see completion status, review and click FINISH
 
 ## Other Material
 
-There lots more detail to cover this topic so install MySQL and have fun!
+There is a lot more detail to cover on this topic so install MySQL and have fun!
 
 ### Where to get MySQL
 
