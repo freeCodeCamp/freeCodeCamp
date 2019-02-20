@@ -53,7 +53,8 @@ for (i=0; i < numbers.length; i++) {
 }
 ```
 
-###C++ Implementation
+### C++ Implementation
+```cpp
 #include <iostream>
 
 void countSort(int upperBound, int lowerBound, std::vector<int> numbersToSort) //lower and upper bounds of numbers in vector
@@ -68,5 +69,5 @@ void countSort(int upperBound, int lowerBound, std::vector<int> numbersToSort) /
   }
   
   std::cout << counts << std::endl;
-}
-    
+} 
+```
