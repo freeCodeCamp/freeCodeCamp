@@ -12,6 +12,8 @@ Given the hint after the stub, "/name?first=<firstname>&last=<lastname>," we can
    var firstName = req.query.first;
    var lastName = req.query.last;
    // Send the json object
+   var string = firstName+' '+lastName;
+   res.json({"name": string});
  });
 ```
 
