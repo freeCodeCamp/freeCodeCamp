@@ -2,11 +2,14 @@
 title: Handling Form Input
 ---
 ## Handling Form Input
-GET VS POST
+1. GET request will send the form input in the query string.
+2. POST request will send the form input in the request body.
 
-One can get form inputs with global variables $_POST and $_GET.
+- One can get form inputs with global variables $_POST and $_GET.
+
+If a user is sending username via form input, we can handle the request depending on the request type GET or POST.  
 ```
-$_POST['username'] or $_GET['username'] or $_REQUEST['username']
+$_POST['username'] or $_GET['username'] 
 
 ```
 
