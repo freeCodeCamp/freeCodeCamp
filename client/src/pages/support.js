@@ -95,7 +95,7 @@ const SupportPage = () => {
               privacy and security reasons, they don't have access to your
               account in the freeCodeCamp database. Also note that you will need
               to create a forum account if you don't already have one.{' '}
-              <Link to='/forum/new-topic?category=support'>
+              <Link external={true} to='/forum/new-topic?category=support'>
                 Click here to ask your support question
               </Link>
               .

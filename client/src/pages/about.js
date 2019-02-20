@@ -73,8 +73,12 @@ const AboutPage = () => {
               </Link>
               , watch our{' '}
               <Link to='https://youtube.com/freecodecamp'>YouTube channel</Link>
-              , and post on <Link to='/forum'>our forum</Link>, each month we
-              help millions of people learn about coding and technology.
+              , and post on{' '}
+              <Link external={true} to='/forum'>
+                our forum
+              </Link>
+              , each month we help millions of people learn about coding and
+              technology.
             </p>
             <h4>Is freeCodeCamp a nonprofit?</h4>
             <p>
