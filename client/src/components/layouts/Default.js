@@ -71,7 +71,8 @@ const propTypes = {
   landingPage: PropTypes.bool,
   onlineStatusChange: PropTypes.func.isRequired,
   removeFlashMessage: PropTypes.func.isRequired,
-  showFooter: PropTypes.bool
+  showFooter: PropTypes.bool,
+  showMobileSidenav: PropTypes.bool
 };
 
 const mapStateToProps = createSelector(
@@ -140,6 +141,7 @@ class DefaultLayout extends Component {
       removeFlashMessage,
       landingPage,
       showFooter = true,
+      showMobileSidenav = false,
       isOnline,
       isSignedIn
     } = this.props;
@@ -158,7 +160,10 @@ class DefaultLayout extends Component {
         >
           <style>{fontawesome.dom.css()}</style>
         </Helmet>
-        <Header disableSettings={disableSettings} />
+        <Header
+          disableSettings={disableSettings}
+          showMobileSidenav={showMobileSidenav}
+        />
         <div className={`default-layout ${landingPage ? 'landing-page' : ''}`}>
           <OfflineWarning isOnline={isOnline} isSignedIn={isSignedIn} />
           {hasMessages ? (

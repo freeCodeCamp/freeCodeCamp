@@ -27,6 +27,30 @@ class SideNav extends Component {
     this.renderParent = this.renderParent.bind(this);
   }
 
+  componentDidMount() {
+    if (typeof window !== 'undefined') {
+      const pathMap = window.location.pathname
+        .slice(1)
+        .split('/')
+        .slice(0, -1)
+        .reduce((map, current, i, pathArray) => {
+          const path =
+            i !== 0 ? map[pathArray[i - 1]] + `/${current}` : `/${current}`;
+          return {
+            ...map,
+            [current]: path
+          };
+        }, {});
+
+      return Object.keys(pathMap)
+        .map(key => pathMap[key])
+        .forEach(path => {
+          this.props.toggleExpandedState(path);
+        });
+    }
+    return null;
+  }
+
   renderPanels(parents, pages) {
     if (!parents) {
       return 'No Parents Here';

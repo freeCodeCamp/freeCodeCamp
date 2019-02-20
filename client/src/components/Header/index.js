@@ -1,5 +1,7 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
+import { connect } from 'react-redux';
+import { bindActionCreators } from 'redux';
 import Media from 'react-media';
 import FCCSearch from 'react-freecodecamp-search';
 
@@ -8,6 +10,17 @@ import UserState from './components/UserState';
 import { Link } from '../helpers';
 
 import './header.css';
+
+import { toggleDisplaySideNav } from '../layouts/redux';
+
+const mapDispatchToProps = dispatch =>
+  bindActionCreators({ toggleDisplaySideNav }, dispatch);
+
+const propTypes = {
+  disableSettings: PropTypes.bool,
+  showMobileSidenav: PropTypes.bool,
+  toggleDisplaySideNav: PropTypes.func
+};
 
 class Header extends Component {
   constructor(props) {
@@ -27,6 +40,9 @@ class Header extends Component {
   }
 
   toggleClass = () => {
+    if (this.props.showMobileSidenav) {
+      this.props.toggleDisplaySideNav();
+    }
     this.setState({
       isMenuOpened: !this.state.isMenuOpened
     });
@@ -35,7 +51,8 @@ class Header extends Component {
   handleClickOutside = event => {
     if (
       this.state.isMenuOpened &&
-      !this.menuButtonRef.current.contains(event.target)
+      !this.menuButtonRef.current.contains(event.target) &&
+      !this.props.showMobileSidenav
     ) {
       this.toggleClass();
     }
@@ -48,7 +65,27 @@ class Header extends Component {
   };
 
   render() {
-    const { disableSettings } = this.props;
+    const { disableSettings, showMobileSidenav } = this.props;
+    if (this.state.isMenuOpened && showMobileSidenav) {
+      return (
+        <header>
+          <nav id='top-nav'>
+            <Link className='home-link' to='/'>
+              <NavLogo />
+            </Link>
+            {disableSettings ? null : <FCCSearch />}
+
+            <span
+              className='menu-button'
+              onClick={this.toggleClass}
+              ref={this.menuButtonRef}
+            >
+              Menu
+            </span>
+          </nav>
+        </header>
+      );
+    }
     return (
       <header className={this.state.isMenuOpened ? 'opened' : null}>
         <nav id='top-nav'>
@@ -88,7 +125,9 @@ class Header extends Component {
   }
 }
 
-Header.propTypes = {
-  disableSettings: PropTypes.bool
-};
-export default Header;
+Header.propTypes = propTypes;
+
+export default connect(
+  null,
+  mapDispatchToProps
+)(Header);
