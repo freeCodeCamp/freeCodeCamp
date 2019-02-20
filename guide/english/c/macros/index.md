@@ -110,6 +110,12 @@ void foo() {
 }
 ```
 
+#### Differences between Macros and Functions
+1. The main difference is that macros are preprocessed which means all macros will be processed before the program compiles but functions are not, functions are compiled.
+2. You cannot do recursion in macro but in function you can. 
+3. Speed of execution is faster in macros than in functions. 
+4. There is no type checking in macros but it is done in functions.
+
 #### More Information:
 - [GCC Online Documentation: Macros](https://gcc.gnu.org/onlinedocs/cpp/Macros.html)
 - [GCC Online Documentation: Object-like macros](https://gcc.gnu.org/onlinedocs/cpp/Object-like-Macros.html#Object-like-Macros)
