@@ -23,11 +23,11 @@ The `#define` keyword is used to define new macros. It's followed by a name and 
 
 If you use the macro this way:
 ```C
-printf("Value of PI: %d", PI);
+printf("Value of PI: %f", PI);
 ```
 Is the same as writing this:
 ```C
-printf("Value of PI: %d", 3.14);
+printf("Value of PI: %f", 3.14);
 ```
 #### Undefining Macros
 After defining macros you can also undefine them at any point.
