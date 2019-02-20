@@ -15,7 +15,7 @@ module.exports = function mountLoopBackExplorer(app) {
     app.once('started', function() {
       log(
         'Run `npm install loopback-component-explorer` to enable ' +
-        'the LoopBack explorer'
+          'the LoopBack explorer'
       );
     });
     return;
