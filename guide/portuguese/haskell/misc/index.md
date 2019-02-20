@@ -2,7 +2,7 @@
 title: miscellaneous
 localeTitle: Diversos
 ---
-Quando já estiver um pouco onfortável com o modo como Haskell trabalha, você pode recorrer ao:
+Quando já estiver um pouco confortável com o modo como Haskell trabalha, você pode recorrer ao:
 
 ## hoogle
 
