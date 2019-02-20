@@ -4,7 +4,7 @@ title: Box Shadow
 
 ## Box Shadow
 
-The `box-shadow` property attaches one or more shadows around the frame of an element (can be inside). It's an option that gives you the power to easily design wonderful shadow effects. It works just like the `text-shadow` property in that they are both used to create a drop shadow, which will create a darker version of the element just behind it and slightly offset. Box shadows are a great way to elevate the visuals of your web page.
+The `box-shadow` property attaches one or more shadows to an element. It's an option that gives you the power to easily design wonderful shadow effects. It works just like the `text-shadow` property in that they are both used to create a drop shadow, which will create a darker version of the element just behind it and slightly offset. Box shadows are a great way to elevate the visuals of your web page.
 
 A box shadow can be described with several properties including:
 * X and Y offset from the element
