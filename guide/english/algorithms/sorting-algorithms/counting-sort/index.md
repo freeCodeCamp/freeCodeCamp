@@ -29,6 +29,15 @@ the output sequence.
   next data 1 at an index 1 smaller than this index.
   
 ```
+
+### Properties
+- Space complexity: O(K)
+- Best case performance: O(n+K)
+- Average case performance: O(n+K)
+- Worst case performance: O(n+K)
+- Stable: Yes
+(K is the number of distinct elements in the array)
+
 ### Implementation in JavaScript
 ```js
 let numbers = [1, 4, 1, 2, 7, 5, 2];
