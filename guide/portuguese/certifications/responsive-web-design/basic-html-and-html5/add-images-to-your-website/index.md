@@ -6,11 +6,7 @@ localeTitle: Adicionar imagens ao seu site
 
 Atributos são pares de valores-chave inseridos na tag. A sintaxe é `<tag key1="value1" key2="value2"> </tag>` ou, no caso de tags de fechamento automático, `<tag key1="value1" key2="value2" />` - observe que os pares são separados por um caractere de espaço, não por uma vírgula.
 
-### Recursos
-
-*   [Atributos HTML](https://guide.freecodecamp.org/html/attributes)
-
-Pode adicionar novas imagens ao seu website usando o elemento `img` e especificar o URL the imagem usando o atributo `src`.
+Podemos adicionar novas imagens ao um website usando o elemento `img` e especificar o URL the imagem usando o atributo `src`.
 
 Um exemplo funcionaria assim:
 
@@ -37,3 +33,7 @@ Agora definir o atributo src a apontar para este url:
 https://bit.ly/fcc-relaxing-cat
 
 Finalmente não se esqueça de adicionar á imagem um texto de atributo alt.
+
+### Recursos
+
+*   [Atributos HTML](https://guide.freecodecamp.org/html/attributes)
