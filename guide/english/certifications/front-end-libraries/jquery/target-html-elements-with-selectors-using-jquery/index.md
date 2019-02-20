@@ -1,7 +1,7 @@
 ---
 title: Target HTML Elements with Selectors Using jQuery
 ---
-- JQuery selectors allow you to select and manipulate HTML elements.
+- jQuery selectors allow you to select and manipulate HTML elements.
 - These selectors start with the dollar sign and parentheses: $()
 - You can "find" (or select) HTML elements based on their name, id, classes, types, attributes, values of attributes and much more.
 

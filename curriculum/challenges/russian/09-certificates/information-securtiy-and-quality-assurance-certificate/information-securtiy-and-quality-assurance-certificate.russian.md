@@ -4,7 +4,7 @@ title: 'Information, Securtiy and Quality Assurance Certificate'
 challengeType: 7
 isPrivate: true
 videoUrl: ''
-localeTitle: 'Информация, Securtiy и сертификат обеспечения качества'
+localeTitle: 'Сертификат по направлению Информационная безопасность и Обеспечение качества'
 ---
 
 ## Description

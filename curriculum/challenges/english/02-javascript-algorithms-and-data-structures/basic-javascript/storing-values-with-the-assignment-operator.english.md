@@ -2,6 +2,7 @@
 id: 56533eb9ac21ba0edf2244a8
 title: Storing Values with the Assignment Operator
 challengeType: 1
+videoUrl: 'https://scrimba.com/c/cEanysE'
 ---
 
 ## Description
