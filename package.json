@@ -49,6 +49,8 @@
     "prettier": "^1.16.4",
     "readdirp-walk": "^1.6.0",
     "shortid": "^2.2.14",
+    "sinon": "^7.2.4",
+    "sinon-express-mock": "^2.1.0",
     "slugg": "^1.2.1"
   },
   "lint-staged": {
