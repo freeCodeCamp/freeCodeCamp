@@ -2,7 +2,6 @@
 id: bad87fee1348bd9aedd08830
 title: Add a Submit Button to a Form
 challengeType: 0
-guideUrl: 'https://spanish.freecodecamp.org/guide/certificates/add-a-submit-button-to-a-form'
 videoUrl: ''
 localeTitle: Agregar un botón de envío a un formulario
 ---
