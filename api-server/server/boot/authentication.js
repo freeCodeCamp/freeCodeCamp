@@ -6,7 +6,6 @@ import { isEmail } from 'validator';
 import { check } from 'express-validator/check';
 
 import { homeLocation } from '../../../config/env';
-import { createCookieConfig } from '../utils/cookieConfig';
 import {
   createPassportCallbackAuthenticator,
   saveResponseAuthCookies,
@@ -18,6 +17,7 @@ import {
   createValidatorErrorHandler
 } from '../utils/middleware';
 import { wrapHandledError } from '../utils/create-handled-error.js';
+import { removeCookies } from '../utils/getSetAccessToken';
 
 const isSignUpDisabled = !!process.env.DISABLE_SIGNUP;
 if (isSignUpDisabled) {
@@ -68,11 +68,7 @@ module.exports = function enableAuthentication(app) {
           redirectTo: homeLocation
         });
       }
-      const config = createCookieConfig(req);
-      res.clearCookie('jwt_access_token', config);
-      res.clearCookie('access_token', config);
-      res.clearCookie('userId', config);
-      res.clearCookie('_csrf', config);
+      removeCookies(req, res);
       res.redirect(homeLocation);
     });
   });
