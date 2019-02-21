@@ -5,6 +5,28 @@ title: Install and Set Up Mongoose
 
 You might want to check both the [MongoDB](https://www.npmjs.com/package/mongodb) and the [Mongoose](https://www.npmjs.com/package/mongoose) NPM Repositories to get up and running.
 
+## Hint
+```javascript
+
+
+//require mongo and mongoose
+const VARIABLE = require('PACKAGE');
+
+//connect to database using mongoose
+```
+
+## Solution
+```javascript
+//.env file
+MONGO_URI=<URI>
+
+//app.js file
+const mongoose=require('mongoose');
+var MongoClient = require('mongodb').MongoClient;
+
+//saving the URI key in .env file, naming it MONGO_URI
+mongoose.connect(process.env.MONGO_URI);
+```
 
 
 This is a stub. <a href='https://github.com/freecodecamp/guides/tree/master/src/pages/certifications/apis-and-microservices/mongodb-and-mongoose/install-and-set-up-mongoose/index.md' target='_blank' rel='nofollow'>Help our community expand it</a>.
