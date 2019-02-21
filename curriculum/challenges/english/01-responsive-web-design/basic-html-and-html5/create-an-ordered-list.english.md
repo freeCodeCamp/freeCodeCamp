@@ -43,9 +43,9 @@ tests:
   - text: Make sure your <code>li</code> element has a closing tag.
     testString: assert(code.match(/<\/li>/g) && code.match(/<li>/g) && code.match(/<\/li>/g).length === code.match(/<li>/g).length, 'Make sure your <code>li</code> element has a closing tag.');
   - text: The <code>li</code> elements in your unordered list should not be empty.
-    testString: $('ul li').each((i, val) => assert(!!val.textContent.replace(/\s/g, '').length, 'Your <code>li</code> elements in your unordered list should not be empty.'));
+    testString: $('ul li').each((i, val) => assert(val.textContent.replace(/\s/g, ''), 'Your <code>li</code> elements in your unordered list should not be empty.'));
   - text: The <code>li</code> elements in your ordered list should not be empty.
-    testString: $('ol li').each((i, val) => assert(!!val.textContent.replace(/\s/g, '').length, 'Your <code>li</code> elements in your unordered list should not be empty.'));
+    testString: $('ol li').each((i, val) => assert(!!val.textContent.replace(/\s/g, ''), 'Your <code>li</code> elements in your ordered list should not be empty.'));
 
 ```
 
