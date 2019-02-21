@@ -1,7 +1,7 @@
 /* eslint-disable max-len */
 import React from 'react';
 import PropTypes from 'prop-types';
-import { Link, graphql } from 'gatsby';
+import { graphql } from 'gatsby';
 import Helmet from 'react-helmet';
 import { connect } from 'react-redux';
 
@@ -12,7 +12,7 @@ import {
 } from '../redux/propTypes';
 
 import LearnLayout from '../components/layouts/Learn';
-import Spacer from '../components/helpers/Spacer';
+import { Link, Spacer } from '../components/helpers';
 import Map from '../components/Map';
 
 import './learn.css';
@@ -49,9 +49,9 @@ const IndexPage = ({
       <p>
         And yes - all of this is 100% free, thanks to the thousands of campers
         who{' '}
-        <a href='/donate' rel='noopener noreferrer' target='_blank'>
+        <Link external={true} to='/donate'>
           donate
-        </a>{' '}
+        </Link>{' '}
         to our nonprofit.
       </p>
       <p>

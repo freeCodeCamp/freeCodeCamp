@@ -3,7 +3,7 @@ import { Grid } from '@freecodecamp/react-bootstrap';
 import Helmet from 'react-helmet';
 
 import FullWidthRow from '../components/helpers/FullWidthRow';
-import { Spacer } from '../components/helpers';
+import { Spacer, Link } from '../components/helpers';
 
 function SoftwareResourcesForNonProfits() {
   return (
@@ -26,287 +26,129 @@ function SoftwareResourcesForNonProfits() {
           <h3>Skills-based Volunteer Organizations:</h3>
           <ul>
             <li>
-              <a
-                href='http://givecamp.org/'
-                rel='noopener noreferrer'
-                target='_blank'
-              >
-                Give Camp
-              </a>
+              <Link to='http://givecamp.org/'>Give Camp</Link>
             </li>
             <li>
-              <a
-                href='http://www.volunteermatch.com'
-                rel='noopener noreferrer'
-                target='_blank'
-              >
+              <Link to='http://www.volunteermatch.com'>
                 Volunteer Match.com
-              </a>
+              </Link>
             </li>
             <li>
-              <a
-                href='http://www.catchafire.org'
-                rel='noopener noreferrer'
-                target='_blank'
-              >
-                Catchafire
-              </a>
+              <Link to='http://www.catchafire.org'>Catchafire</Link>
             </li>
             <li>
-              <a
-                href='http://anyonecanhaveawebsite.com'
-                rel='noopener noreferrer'
-                target='_blank'
-              >
+              <Link to='http://anyonecanhaveawebsite.com'>
                 Anyone Can Have A Website
-              </a>
+              </Link>
             </li>
           </ul>
           <h3>Building a website:</h3>
           <ul>
             <li>
-              <a
-                href='https://www.youtube.com/watch?v=4AXDKWuY9QM'
-                rel='noopener noreferrer'
-                target='_blank'
-              >
+              <Link to='https://www.youtube.com/watch?v=4AXDKWuY9QM'>
                 How to build and deploy a website without writing any code for
                 free
-              </a>
+              </Link>
             </li>
             <li>
-              <a
-                href='http://www.wix.com/'
-                rel='noopener noreferrer'
-                target='_blank'
-              >
-                Wix
-              </a>
+              <Link to='http://www.wix.com/'>Wix</Link>
             </li>
             <li>
-              <a
-                href='https://www.squarespace.com/'
-                rel='noopener noreferrer'
-                target='_blank'
-              >
-                Square Space
-              </a>
+              <Link to='https://www.squarespace.com/'>Square Space</Link>
             </li>
             <li>
-              <a
-                href='https://wordpress.com/'
-                rel='noopener noreferrer'
-                target='_blank'
-              >
-                WordPress
-              </a>
+              <Link to='https://wordpress.com/'>WordPress</Link>
             </li>
             <li>
-              <a
-                href='https://xprs.imcreator.com'
-                rel='noopener noreferrer'
-                target='_blank'
-              >
-                Imcreator.com
-              </a>
+              <Link to='https://xprs.imcreator.com'>Imcreator.com</Link>
             </li>
           </ul>
           <h3>Donor and Volunteer Management Systems:</h3>
           <ul>
             <li>
-              <a
-                href='http://causesignal.com'
-                rel='noopener noreferrer'
-                target='_blank'
-              >
-                Cause Signal
-              </a>
+              <Link to='http://causesignal.com'>Cause Signal</Link>
             </li>
             <li>
-              <a
-                href='https://www.thedatabank.com/'
-                rel='noopener noreferrer'
-                target='_blank'
-              >
-                The Data Bank
-              </a>
+              <Link to='https://www.thedatabank.com/'>The Data Bank</Link>
             </li>
             <li>
-              <a
-                href='http://www.donorsnap.com/'
-                rel='noopener noreferrer'
-                target='_blank'
-              >
-                Donor Snap
-              </a>
+              <Link to='http://www.donorsnap.com/'>Donor Snap</Link>
             </li>
             <li>
-              <a
-                href='http://www.donorperfect.com/'
-                rel='noopener noreferrer'
-                target='_blank'
-              >
-                Donor Perfect
-              </a>
+              <Link to='http://www.donorperfect.com/'>Donor Perfect</Link>
             </li>
             <li>
-              <a
-                href={
+              <Link
+                to={
                   'https://www.blackbaud.com/fundraising-crm/etapestry-donor' +
                   '-management'
                 }
-                rel='noopener noreferrer'
-                target='_blank'
               >
                 E Tapestry
-              </a>
+              </Link>
             </li>
             <li>
-              <a
-                href='http://www.z2systems.com'
-                rel='noopener noreferrer'
-                target='_blank'
-              >
-                Z2 Systems
-              </a>
+              <Link to='http://www.z2systems.com'>Z2 Systems</Link>
             </li>
             <li>
-              <a
-                href='http://www.regpacks.com/volunteer-management'
-                rel='noopener noreferrer'
-                target='_blank'
-              >
+              <Link to='http://www.regpacks.com/volunteer-management'>
                 Reg Packs
-              </a>
+              </Link>
             </li>
             <li>
-              <a
-                href='http://sumac.com'
-                rel='noopener noreferrer'
-                target='_blank'
-              >
-                Sumac
-              </a>
+              <Link to='http://sumac.com'>Sumac</Link>
             </li>
             <li>
-              <a
-                href='http://www.volgistics.com'
-                rel='noopener noreferrer'
-                target='_blank'
-              >
-                Volgistics
-              </a>
+              <Link to='http://www.volgistics.com'>Volgistics</Link>
             </li>
           </ul>
           <h3>Inventory Management Systems:</h3>
           <ul>
             <li>
-              <a
-                href='https://www.ordoro.com'
-                rel='noopener noreferrer'
-                target='_blank'
-              >
-                Ordoro
-              </a>
+              <Link to='https://www.ordoro.com'>Ordoro</Link>
             </li>
             <li>
-              <a
-                href='http://www.unleashedsoftware.com'
-                rel='noopener noreferrer'
-                target='_blank'
-              >
+              <Link to='http://www.unleashedsoftware.com'>
                 Unleashed Software
-              </a>
+              </Link>
             </li>
             <li>
-              <a
-                href='https://www.ezofficeinventory.com/industries/non-profits'
-                rel='noopener noreferrer'
-                target='_blank'
-              >
+              <Link to='https://www.ezofficeinventory.com/industries/non-profits'>
                 EZ Office Inventory
-              </a>
+              </Link>
             </li>
           </ul>
           <h3>E-Learning platforms:</h3>
           <ul>
             <li>
-              <a
-                href='http://www.dokeos.com'
-                rel='noopener noreferrer'
-                target='_blank'
-              >
-                Dokeos
-              </a>
+              <Link to='http://www.dokeos.com'>Dokeos</Link>
             </li>
             <li>
-              <a
-                href='http://www.efrontlearning.net/'
-                rel='noopener noreferrer'
-                target='_blank'
-              >
-                E Front Learning
-              </a>
+              <Link to='http://www.efrontlearning.net/'>E Front Learning</Link>
             </li>
             <li>
-              <a
-                href='https://moodle.org/'
-                rel='noopener noreferrer'
-                target='_blank'
-              >
-                Moodle
-              </a>
+              <Link to='https://moodle.org/'>Moodle</Link>
             </li>
             <li>
-              <a
-                href='https://sakaiproject.org/'
-                rel='noopener noreferrer'
-                target='_blank'
-              >
-                Sakai Project
-              </a>
+              <Link to='https://sakaiproject.org/'>Sakai Project</Link>
             </li>
           </ul>
           <h3>Community Management:</h3>
           <ul>
             <li>
-              <a
-                href='https://civicrm.org/'
-                rel='noopener noreferrer'
-                target='_blank'
-              >
-                CiviCRM
-              </a>
+              <Link to='https://civicrm.org/'>CiviCRM</Link>
             </li>
             <li>
-              <a
-                href='http://tcmgr.com/'
-                rel='noopener noreferrer'
-                target='_blank'
-              >
-                Total Community Manager
-              </a>
+              <Link to='http://tcmgr.com/'>Total Community Manager</Link>
             </li>
           </ul>
           <h3>Electronic Forms:</h3>
           <ul>
             <li>
-              <a
-                href='http://www.google.com/forms'
-                rel='noopener noreferrer'
-                target='_blank'
-              >
-                Google Forms
-              </a>
+              <Link to='http://www.google.com/forms'>Google Forms</Link>
             </li>
             <li>
-              <a
-                href='http://www.typeform.com'
-                rel='noopener noreferrer'
-                target='_blank'
-              >
-                Typeform
-              </a>
+              <Link to='http://www.typeform.com'>Typeform</Link>
             </li>
           </ul>
         </FullWidthRow>
