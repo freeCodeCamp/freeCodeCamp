@@ -23,7 +23,7 @@ Let's try getting a <code>do...while</code> loop to work by pushing values to an
 
 ## Instructions
 <section id='instructions'>
-Change the <code>while</code> loop in the code to a <code>do...while</code> loop so that the loop will push the number 10 to <code>myArray</code>, and <code>i</code> will be equal to <code>11</code> when your code finishes running.
+Change the <code>while</code> loop in the code to a <code>do...while</code> loop so that the loop will only push the number 10 to <code>myArray</code>, and <code>i</code> will be equal to <code>11</code> when your code finishes running.
 </section>
 
 ## Tests
