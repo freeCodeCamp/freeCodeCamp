@@ -9,6 +9,7 @@ challengeType: 5
 <section id='description'>
 Convert the characters <code>&</code>, <code><</code>, <code>></code>, <code>"</code> (double quote), and <code>'</code> (apostrophe), in a string to their corresponding HTML entities.
 Remember to use <a href='http://forum.freecodecamp.org/t/how-to-get-help-when-you-are-stuck/19514' target='_blank'>Read-Search-Ask</a> if you get stuck. Try to pair program. Write your own code.
+<strong>Note</strong><br> If you copy-paste the HTML entities from a web page you may inadvertently copy hidden characters in the process. Type the entities in manually to avoid this issue.
 </section>
 
 ## Instructions
