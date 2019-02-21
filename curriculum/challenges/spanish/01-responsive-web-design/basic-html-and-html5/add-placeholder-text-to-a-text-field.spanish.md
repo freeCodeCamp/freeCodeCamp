@@ -2,7 +2,6 @@
 id: bad87fee1348bd9aedf08830
 title: Add Placeholder Text to a Text Field
 challengeType: 0
-guideUrl: 'https://spanish.freecodecamp.org/guide/certificates/add-placeholder-text-to-a-text-field'
 videoUrl: ''
 localeTitle: Añadir texto de marcador de posición a un campo de texto
 ---
