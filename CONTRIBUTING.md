@@ -14,17 +14,17 @@
 
 # Contribution Guidelines
 
-សួស្តី👋!
+Hello 👋!
 
-freeCodeCamp.org is possible, អគុណចំពោះការស្មគ្រ័ចិត្តរបស់លោកអ្នក។ យើងខ្ញំ្​ពិតជាអគុណសំរាប់ការធ្វើ​ contributions របស់អ្នក ហើយពួកយើងពិតជារំភើបក្នុងការស្វាគមន៍លោកអ្នក។
+freeCodeCamp.org is possible, thanks to thousands of kind volunteers like you. We are grateful for your contributions and we are excited to welcome you aboard.
 
-យើងមានការតឹងរឹងចំពោះ ["Code of Conduct"](https://www.freecodecamp.org/code-of-conduct). ហេតុដូចនេះយើងសូមពេលលោកអ្នកដើម្បីអានវាបន្តិច។​ វាត្រឹមតែ១៩៦ពាក្យប៉ុណ្ណោះ។ 
+We strictly enforce our ["Code of Conduct"](https://www.freecodecamp.org/code-of-conduct). Take a moment to read it. It's only 196 words long.
 
-រីករាយក្នុងការ contributing 🎉!
+Happy contributing 🎉!
 
-## នេះគឺជាវិធីមួយចំនួនដែលលោកអ្នកអាចជួយពួកយើងបាន
+## Here are some fun ways that you can help
 
-អ្នកអាចជ្រើសយកកត្តាណាមួយខាងក្រោមដើម្បី​ contribute តាមការចូលចិត្តរបស់អ្នក:
+You can choose to contribute to any area that interests you:
 
 1. [Contribute to this open source codebase](#contribute-to-this-open-source-codebase). Help to edit [guide articles](https://guide.freecodecamp.org/), [coding challenges](https://learn.freecodecamp.org/), or fix bugs on the learning platform.
 
