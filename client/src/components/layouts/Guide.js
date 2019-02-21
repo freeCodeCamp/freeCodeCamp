@@ -3,7 +3,6 @@ import PropTypes from 'prop-types';
 import { StaticQuery, graphql } from 'gatsby';
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
-// import { createSelector } from 'reselect';
 import { Grid, Col, Row } from '@freecodecamp/react-bootstrap';
 
 import SideNav from './components/guide/SideNav';
@@ -11,8 +10,6 @@ import Spacer from '../helpers/Spacer';
 
 import 'prismjs/themes/prism.css';
 import './guide.css';
-
-// import { expandedState, displaySideNav } from '../../redux';
 
 import { toggleExpandedState, toggleDisplaySideNav } from './redux';
 
@@ -32,6 +29,7 @@ const propTypes = {
       )
     })
   }),
+  displayMenu: PropTypes.bool,
   displaySideNav: PropTypes.bool,
   expandedState: PropTypes.object,
   location: PropTypes.object,
@@ -42,6 +40,7 @@ const propTypes = {
 const mapStateToProps = state => {
   return {
     expandedState: state.guideNav.expandedState,
+    displayMenu: state.guideNav.displayMenu,
     displaySideNav: state.guideNav.displaySideNav
   };
 };
@@ -56,6 +55,12 @@ class GuideLayout extends React.Component {
     this.contentRef.scrollTop = 0;
     this.contentRef.focus();
   };
+
+  componentWillUnmount() {
+    if (this.props.displayMenu) {
+      this.props.toggleDisplaySideNav();
+    }
+  }
 
   render() {
     let {
