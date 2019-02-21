@@ -176,6 +176,7 @@ header {
 
 #top-nav .menu-button {
   display: none;
+  color: white;
 }
 
 @media (max-width: 734px) {
@@ -230,5 +231,43 @@ header {
     background-color: #fff;
     left: 0.5em;
     top: 2.4em;
+  }
+}
+
+@media (min-width: 735px) and (max-width: 991px) {
+  .onGuide #top-nav {
+    padding: 0;
+  }
+
+  .onGuide #top-nav .menu-button {
+    display: block;
+    margin: 0 20px 0 12px;
+    padding: 2px 14px;
+    border: 1px solid #fff;
+    border-radius: 3px;
+    cursor: pointer;
+  }
+
+  .onGuide #top-right-nav {
+    top: var(--header-height);
+  }
+
+  .opened #top-nav .menu-button {
+    background: white;
+    color: #006400;
+  }
+
+  .onGuide #top-right-nav {
+    position: absolute;
+    top: -300px;
+    flex-direction: column;
+    width: 100vw;
+    height: min-content;
+    min-height: 160px;
+    padding: 10px 0;
+  }
+
+  .onGuide #top-nav img {
+    margin: 0 0 0 10px;
   }
 }

@@ -41,7 +41,7 @@ export const wrapPageElement = ({ element, props }) => {
   }
   if (/^\/guide(\/.*)*/.test(pathname)) {
     return (
-      <DefaultLayout showMobileSidenav={true}>
+      <DefaultLayout onGuide={true}>
         <GuideLayout>{element}</GuideLayout>
       </DefaultLayout>
     );
