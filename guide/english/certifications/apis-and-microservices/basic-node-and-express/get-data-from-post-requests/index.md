@@ -10,7 +10,7 @@ Just like using req.query we can do req.body to get our data. This challenge is 
 
 In order to get data from a post request a general format is:
 
-##Hint
+## Hint
 ```javascript
 app.post(PATH, function(req, res) {
   // Handle the data in the request
