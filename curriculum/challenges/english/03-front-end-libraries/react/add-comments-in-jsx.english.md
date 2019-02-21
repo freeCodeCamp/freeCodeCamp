@@ -27,9 +27,10 @@ tests:
     testString: assert(JSX.props.children[0].type === 'h1', 'The <code>div</code> should contain an <code>h1</code> tag as the first element.');
   - text: The <code>div</code> should contain a <code>p</code> tag as the second element.
     testString: assert(JSX.props.children[1].type === 'p', 'The <code>div</code> should contain a <code>p</code> tag as the second element.');
+  - text: The existing <code>h1</code> and <code>p</code> elements should not be modified.
+    testString: assert(JSX.props.children[0].props.children === 'This is a block of JSX' && JSX.props.children[1].props.children === 'Here\'s a subtitle', 'The existing <code>h1</code> and <code>p</code> elements should not be modified.');     
   - text: The <code>JSX</code> should include a comment.
-    testString: getUserInput => assert(getUserInput('index').includes('/*') && getUserInput('index').includes('*/'), 'The <code>JSX</code> should include a comment.');
-
+    testString: assert(/<div>[\s\S]*{\s*\/\*\s*\S[\s\S]*\*\/\s*}[\s\S]*<\/div>/.test(code), 'The <code>JSX</code> should include a comment.');
 ```
 
 </section>
