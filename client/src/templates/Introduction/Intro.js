@@ -44,7 +44,7 @@ function IntroductionPage({ data: { markdownRemark, allChallengeNode } }) {
   return (
     <LearnLayout>
       <Helmet>
-        <title>{block} | freeCodeCamp</title>
+        <title>{block} | freeCodeCamp.org</title>
       </Helmet>
       <div className='intro-layout-container'>
         <FullWidthRow>

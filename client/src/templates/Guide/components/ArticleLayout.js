@@ -29,7 +29,7 @@ const ArticleLayout = props => {
   return (
     <Fragment>
       <Helmet>
-        <title>{`${title} | freeCodeCamp Guide`}</title>
+        <title>{`${title} | freeCodeCamp.org`}</title>
         <link href={`https://www.freecodecamp.org${slug}`} rel='canonical' />
         <meta
           content={`https://www.freecodecamp.org${slug}`}

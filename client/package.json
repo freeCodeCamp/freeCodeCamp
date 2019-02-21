@@ -88,7 +88,6 @@
     "copy-webpack-plugin": "^4.6.0",
     "jest": "^23.6.0",
     "react-test-renderer": "^16.5.2",
-    "sinon": "^6.3.5",
     "webpack-cli": "^3.1.1"
   },
   "repository": {

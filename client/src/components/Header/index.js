@@ -1,11 +1,11 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
-import { Link } from 'gatsby';
 import Media from 'react-media';
 import FCCSearch from 'react-freecodecamp-search';
 
 import NavLogo from './components/NavLogo';
 import UserState from './components/UserState';
+import { Link } from '../helpers';
 
 import './header.css';
 
@@ -61,14 +61,14 @@ class Header extends Component {
               <Link to='/learn'>Learn</Link>
             </li>
             <li>
-              <a href='/forum' rel='noopener noreferrer' target='_blank'>
+              <Link external={true} to='/forum'>
                 Forum
-              </a>
+              </Link>
             </li>
             <li>
-              <a href='/news' rel='noopener noreferrer' target='_blank'>
+              <Link external={true} to='/news'>
                 News
-              </a>
+              </Link>
             </li>
             <li className='user-state-link'>
               <UserState disableSettings={disableSettings} />
