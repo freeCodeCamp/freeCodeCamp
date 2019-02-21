@@ -42,6 +42,7 @@ class Header extends Component {
 
   componentWillUnmount() {
     document.removeEventListener('click', this.handleClickOutside);
+    console.log('header unmount');
   }
 
   toggleDisplayMenu = () => {
@@ -84,8 +85,12 @@ class Header extends Component {
       document.documentElement.clientWidth,
       window.innerWidth || 0
     );
-    console.log(viewportWidth);
-    const { disableSettings, onGuide, displayMenu } = this.props;
+    const {
+      disableSettings,
+      onGuide,
+      displayMenu,
+      toggleDisplayMenu
+    } = this.props;
     return (
       <header className={this.renderClassNames(displayMenu, onGuide)}>
         <nav id='top-nav'>
@@ -95,20 +100,20 @@ class Header extends Component {
           {disableSettings ? null : <FCCSearch />}
           {onGuide && displayMenu && viewportWidth < 991 ? null : (
             <ul id='top-right-nav'>
-              <li>
+              <li onClick={toggleDisplayMenu}>
                 <Link to='/learn'>Learn</Link>
               </li>
-              <li>
+              <li onClick={toggleDisplayMenu}>
                 <Link external={true} to='/forum'>
                   Forum
                 </Link>
               </li>
-              <li>
+              <li onClick={toggleDisplayMenu}>
                 <Link external={true} to='/news'>
                   News
                 </Link>
               </li>
-              <li className='user-state-link'>
+              <li className='user-state-link' onClick={toggleDisplayMenu}>
                 <UserState disableSettings={disableSettings} />
               </li>
             </ul>
