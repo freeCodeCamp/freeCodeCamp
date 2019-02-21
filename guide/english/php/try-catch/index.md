@@ -26,7 +26,7 @@ try {
 
 ## Example
 
-Below is an example of how you could use a tru catch block in a real world situation:
+Below is an example of how you could use a try catch block in a real world situation:
 
 ```
 <?php
