@@ -1,11 +1,9 @@
-/* eslint-disable max-len */
 import React, { Component, Fragment } from 'react';
 import Helmet from 'react-helmet';
-import { Link } from 'gatsby';
 import { Grid, Col, Row } from '@freecodecamp/react-bootstrap';
 
 import ReactGA from '../analytics/index.js';
-import Spacer from '../components/helpers/Spacer';
+import { Link, Spacer } from '../components/helpers';
 
 const paypalMonthlyDonations = [
   {

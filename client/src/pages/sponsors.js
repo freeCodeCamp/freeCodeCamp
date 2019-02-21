@@ -1,4 +1,3 @@
-/* eslint-disable max-len */
 import React, { Fragment } from 'react';
 import Helmet from 'react-helmet';
 import { Grid, Col, Row } from '@freecodecamp/react-bootstrap';
@@ -10,7 +9,12 @@ import './sponsors.css';
 const SponsorsPage = () => {
   return (
     <Fragment>
-      <Helmet title='Sponsors who help freeCodeCamp through financial and in-kind sponsorship | freeCodeCamp.org' />
+      <Helmet
+        title={
+          'Sponsors who help freeCodeCamp through financial and in-kind ' +
+          'sponsorship | freeCodeCamp.org'
+        }
+      />
       <Spacer />
       <Grid>
         <Row className='text-center'>

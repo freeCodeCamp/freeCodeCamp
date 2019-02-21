@@ -1,4 +1,3 @@
-/* eslint-disable max-len */
 import React, { Component, Fragment } from 'react';
 import Helmet from 'react-helmet';
 import { StripeProvider, Elements } from 'react-stripe-elements';

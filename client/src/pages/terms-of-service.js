@@ -1,4 +1,3 @@
-/* eslint-disable max-len */
 import React, { Fragment } from 'react';
 import Helmet from 'react-helmet';
 import { Grid, Col, Row } from '@freecodecamp/react-bootstrap';
