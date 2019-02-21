@@ -11,7 +11,10 @@ import { Link } from '../helpers';
 
 import './header.css';
 
-import { toggleDisplaySideNav, toggleDisplayMenu } from '../layouts/redux';
+import {
+  toggleDisplaySideNav,
+  toggleDisplayMenu
+} from '../layouts/components/guide/redux';
 
 const mapStateToProps = state => {
   return {
@@ -45,7 +48,7 @@ class Header extends Component {
     console.log('header unmount');
   }
 
-  toggleDisplayMenu = () => {
+  toggleDisplayMenuLogic = () => {
     if (this.props.onGuide) {
       this.props.toggleDisplaySideNav();
     } else {
@@ -59,13 +62,13 @@ class Header extends Component {
       !this.menuButtonRef.current.contains(event.target) &&
       !this.props.onGuide
     ) {
-      toggleDisplayMenu();
+      this.toggleDisplayMenuLogic();
     }
   };
 
   handleMediaChange = matches => {
     if (!matches && this.props.displayMenu) {
-      toggleDisplayMenu();
+      this.toggleDisplayMenuLogic();
     }
   };
 
@@ -120,7 +123,7 @@ class Header extends Component {
           )}
           <span
             className='menu-button'
-            onClick={this.toggleDisplayMenu}
+            onClick={this.toggleDisplayMenuLogic}
             ref={this.menuButtonRef}
           >
             Menu

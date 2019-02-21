@@ -69,10 +69,10 @@ const propTypes = {
   isOnline: PropTypes.bool.isRequired,
   isSignedIn: PropTypes.bool,
   landingPage: PropTypes.bool,
+  onGuide: PropTypes.bool,
   onlineStatusChange: PropTypes.func.isRequired,
   removeFlashMessage: PropTypes.func.isRequired,
-  showFooter: PropTypes.bool,
-  onGuide: PropTypes.bool
+  showFooter: PropTypes.bool
 };
 
 const mapStateToProps = createSelector(
@@ -160,10 +160,7 @@ class DefaultLayout extends Component {
         >
           <style>{fontawesome.dom.css()}</style>
         </Helmet>
-        <Header
-          disableSettings={disableSettings}
-          onGuide={onGuide}
-        />
+        <Header disableSettings={disableSettings} onGuide={onGuide} />
         <div className={`default-layout ${landingPage ? 'landing-page' : ''}`}>
           <OfflineWarning isOnline={isOnline} isSignedIn={isSignedIn} />
           {hasMessages ? (
