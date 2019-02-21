@@ -24,4 +24,5 @@ Assembly language is primarily used in the following situations:
 
 #### More Information:
 <!-- Please add any articles you think might be helpful to read before writing the article -->
-
+- [Play around with a MIPS (a popular assembly language) emulator here!](https://rivoire.cs.sonoma.edu/cs351/wemips/)
+- [A great learning resource for assembly language](https://www.tutorialspoint.com/assembly_programming/)
