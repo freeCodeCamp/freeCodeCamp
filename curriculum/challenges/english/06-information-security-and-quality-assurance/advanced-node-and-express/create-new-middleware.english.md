@@ -20,6 +20,18 @@ Now add <em>ensureAuthenticated</em> as a middleware to the request for the prof
   .get(ensureAuthenticated, (req,res) => {
        res.render(process.cwd() + '/views/pug/profile');
   });</pre>
+
+Now change the title of the main page to "Home page" so our tests can recognize your redirect to '/'.
+<pre>app.route('/')
+  .get((req, res) => {
+    res.render(process.cwd() + '/views/pug/index.pug',
+               {
+                title:"Home page", 
+                message:"Please login",
+                showLogin: true,
+               });
+  });</pre>
+  
 Submit your page when you think you've got it right.
 </section>
 
