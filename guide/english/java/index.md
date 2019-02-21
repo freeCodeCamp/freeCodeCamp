@@ -142,3 +142,6 @@ Also, here is a list of free IDEs for Java coding:
 * <a href='https://sourceforge.net/projects/jsource/' target='_blank' rel='nofollow'>jSource</a>
 * <a href='http://www.drjava.org/' target='_blank' target='_nofollow'>DrJava</a>
 * <a href= 'https://www.oracle.com/technetwork/java/javase/downloads/jdk-netbeans-jsp-3413139-esa.html' target='_blank' rel ='nofollow'>JDK8 bundled with Netbeans 8.2</a>
+
+### Video Tutorial
+* [Derek Banas: Java Programming](https://www.youtube.com/watch?v=WPvGqX-TXP0)
