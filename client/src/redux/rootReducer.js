@@ -9,7 +9,7 @@ import {
 import {
   reducer as guideNav,
   ns as guideNavNameSpace
-} from '../components/layouts/redux';
+} from '../components/layouts/components/guide/redux';
 import { reducer as settings, ns as settingsNameSpace } from './settings';
 import {
   reducer as curriculumMap,

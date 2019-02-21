@@ -11,7 +11,10 @@ import Spacer from '../helpers/Spacer';
 import 'prismjs/themes/prism.css';
 import './guide.css';
 
-import { toggleExpandedState, toggleDisplaySideNav } from './redux';
+import {
+  toggleExpandedState,
+  toggleDisplaySideNav
+} from './components/guide/redux';
 
 const propTypes = {
   children: PropTypes.any,
