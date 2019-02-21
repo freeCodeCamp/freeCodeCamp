@@ -16,7 +16,7 @@ The value of the <code>for</code> attribute must be the same as the value of the
 
 ## Instructions
 <section id='instructions'>
-Camper Cat expects a lot of interest in his thoughtful blog posts, and wants to include an email sign up form. Add a <code>for</code> attribute on the email <code>label</code> that matches the <code>id</code> on its <code>input</code> field.
+Camper Cat expects a lot of interest in his thoughtful blog posts and wants to include an email sign up form. Add a <code>for</code> attribute on the email <code>label</code> that matches the <code>id</code> on its <code>input</code> field.
 </section>
 
 ## Tests

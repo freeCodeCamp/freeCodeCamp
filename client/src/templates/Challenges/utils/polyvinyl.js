@@ -71,7 +71,7 @@ export function createPoly({ name, ext, contents, history, ...rest } = {}) {
 
   return {
     ...rest,
-    history: Array.isArray(history) ? history : [name + ext],
+    history: Array.isArray(history) ? history : [name + '.' + ext],
     name,
     ext,
     path: name + '.' + ext,
