@@ -59,15 +59,18 @@ df[c(1, 3), ]
 ## 3 3 1 c
 ```
 
-To get content of a list use `[[` operator like:
+To get contents of a list use `[[` or `$` operator like:
 
 ```r
-a <- list(a = 1, b = 2)
-a[[1]]
-## [1] 1
+sample_list <- list(char = "List-in-R", num = c(1:9), bool = TRUE)
+sample_list[[1]]
+## [1] "List-in-R"
 
-a[["a"]]
-## [1] 1
+sample_list[["num"]]
+## [1] 1 2 3 4 5 6 7 8 9
+
+sample_list$bool 
+## [1] TRUE
 ```
 
 ## Resources
@@ -76,3 +79,4 @@ a[["a"]]
  * [R Documentation](https://www.rdocumentation.org/packages/base/versions/3.5.1/topics/subset)
  * [R Bloggers](https://www.r-bloggers.com/5-ways-to-subset-a-data-frame-in-r/)
  * [Advanced R](http://adv-r.had.co.nz/Subsetting.html)
+ * [Spoken Tutorials](https://spoken-tutorial.org/watch/R/Indexing%2Band%2BSlicing%2BData%2BFrames/English/)
