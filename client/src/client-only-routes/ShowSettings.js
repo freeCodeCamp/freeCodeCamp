@@ -26,6 +26,7 @@ import Internet from '../components/settings/Internet';
 import Portfolio from '../components/settings/Portfolio';
 import Honesty from '../components/settings/Honesty';
 import Certification from '../components/settings/Certification';
+import DangerZone from '../components/settings/DangerZone';
 import RedirectHome from '../components/RedirectHome';
 
 const propTypes = {
@@ -254,6 +255,7 @@ function ShowSettings(props) {
             verifyCert={verifyCert}
           />
           <Spacer />
+          <DangerZone />
         </main>
       </Grid>
     </Fragment>

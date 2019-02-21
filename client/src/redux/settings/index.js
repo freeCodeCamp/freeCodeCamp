@@ -28,7 +28,9 @@ export const types = createTypes(
     ...createAsyncTypes('updateMyEmail'),
     ...createAsyncTypes('updateUserFlag'),
     ...createAsyncTypes('submitProfileUI'),
-    ...createAsyncTypes('verifyCert')
+    ...createAsyncTypes('verifyCert'),
+    ...createAsyncTypes('resetProgress'),
+    ...createAsyncTypes('deleteAccount')
   ],
   ns
 );
@@ -87,6 +89,14 @@ export const verifyCertComplete = createAction(
   checkForSuccessPayload
 );
 export const verifyCertError = createAction(types.verifyCertError);
+
+export const resetProgress = createAction(types.resetProgress);
+export const resetProgressComplete = createAction(types.resetProgressComplete);
+export const resetProgressError = createAction(types.resetProgressError);
+
+export const deleteAccount = createAction(types.deleteAccount);
+export const deleteAccountComplete = createAction(types.deleteAccountComplete);
+export const deleteAccountError = createAction(types.deleteAccountError);
 
 export const usernameValidationSelector = state => state[ns].usernameValidation;
 
