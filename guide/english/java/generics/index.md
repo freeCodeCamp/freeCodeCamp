@@ -6,7 +6,7 @@ title: Generics
 
 Java Generics is a way to conviently use collections and classes for specific data types with out having to cast data back into the original data type. This prevents a lot of headache in the form of compile time and run time bugs. 
 
-Simply put Generics lets you explicitly say that, for example an ArrayList object holds Integers so that when you call the get method you do not need to convert between Object and Integer. Below is an example of how you would have used an ArrayList prior to Generics.
+Simply put, Generics lets you explicitly say that, for example, an `ArrayList` object holds `Integers` so that when you call the `get()` method, you do not need to convert between `Object` and `Integer`. Below is an example of how you would have used an `ArrayList` prior to Generics.
 
 ```java
 import java.util.ArrayList;
@@ -28,7 +28,7 @@ public class Example {
 }
 ```
 
-The main problem with the above is if somehow an Object not of type String got added to the ArrayList then the `getNameAtIndex(int index)` method would result in a runtime error. To solve this we use Generics.
+The main problem with the above is if somehow an `Object` not of type `String` got added to the `ArrayList` then the `getNameAtIndex(int index)` method would result in a runtime error. To solve this we use Generics.
 
 The syntax for Generics is very simple. Below is an example of instantiating an ArrayList.
 
@@ -91,10 +91,9 @@ public class GenericMethod {
 
 ## Type Erasure in Java Generics
 
-One of the downsides to introducing generics in Java 1.5 was how to ensure backward compatibility (ie) to make sure existing programs continue to work 
-and all existing libraries must be able to use generic types.
+One of the downsides to introducing generics in Java 1.5 was ensuring backward compatibility, to make sure existing programs continue to work and all existing libraries would still be able to use generic types.
 
-Erasure, literally means that the type information which is present in the source code is erased from the compiled bytecode.
+Erasure literally means that the type information which is present in the source code is erased from the compiled bytecode.
 
 ```java
 import java.util.ArrayList;
@@ -115,7 +114,6 @@ public class GenericsErasure {
 ```
 
 If you compile this code and then decompile it with a Java decompiler, you will get something like this.
-Notice that the decompiled code contains no trace of the type information present in the original source code.
 
 ```java
 import java.io.PrintStream;
@@ -134,14 +132,15 @@ public class GenericsErasure {
     }
 } 
 ```
+Notice that the decompiled code contains no trace of the type information present in the original source code.
 
-When you compile some code against a generic type or method, the compiler works out what you really mean (i.e. what the type argument for T is) 
-and verifies at compile time that you're doing the right thing, but the emitted code again just talks in terms of java.lang.Object - the compiler generates extra casts where necessary. 
-At execution time, a `List<String>` and a `List<Date>` are exactly the same the extra type information has been erased by the compiler.
+When you compile some code against a generic type or method, the compiler works out what you really mean (i.e. what the type argument for `T` is) 
+and verifies at compile time that you're doing the right thing, but the emitted code again just talks in terms of `java.lang.Object` - the compiler generates extra casts where necessary. 
+At execution time, a `List<String>` and a `List<Date>` are exactly the same - the extra type information has been erased by the compiler.
 
 ## The Diamond Operator (<>)
 
-Type variables need to be typed twice: once while declaring the data type, and once while calling the constructor. This can get quite unsightly, and a better way was introduced in Java SE 7 - the diamond operator (<>). The diamond operator replaces the repetiton in type variables while calling the constructor by replacing them with <>, and the compiler infers the type from the type of the variable the object is being assigned to.
+Type variables need to be typed twice: once while declaring the data type, and once while calling the constructor. This can get quite unsightly, and a better way was introduced in Java SE 7 - the diamond operator (<>). The diamond operator replaces the repetiton in type variables while calling the constructor by replacing them with `<>`, and the compiler infers the type from the type of the variable the object is being assigned to.
 
 For example
 ```java
