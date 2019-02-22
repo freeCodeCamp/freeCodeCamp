@@ -13,7 +13,7 @@ class ChildClass(ParentClass):
     pass
     
 ````
-In the very basic example, the ChildClass class will inherit from the ParentClass and use code defined under that class.  
+In the very basic example, the `ChildClass` class will inherit from `ParentClass` and use code defined under that class.  
 
 Python is also able to support multiple inheritance, so child classes can inherit from multiple classes. 
 
