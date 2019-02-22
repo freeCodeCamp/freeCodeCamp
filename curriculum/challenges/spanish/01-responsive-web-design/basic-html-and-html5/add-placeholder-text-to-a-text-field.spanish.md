@@ -10,7 +10,7 @@ localeTitle: Añadir texto de marcador de posición a un campo de texto
 <section id="description"> El texto de marcador de posición es lo que se muestra en su elemento de <code>input</code> antes de que su usuario haya ingresado algo. Puede crear texto de marcador de posición de la siguiente forma: <code>&lt;input type=&quot;text&quot; placeholder=&quot;this is placeholder text&quot;&gt;</code> </section>
 
 ## Instructions
-<section id="instructions"> Establezca el valor de <code>placeholder</code> de <code>placeholder</code> de su <code>input</code> texto en &quot;URL de foto de gato&quot;. </section>
+<section id="instructions"> Establezca el valor de <code>placeholder</code> de su <code>input</code> texto en &quot;URL de foto de gato&quot;. </section>
 
 ## Tests
 <section id='tests'>
