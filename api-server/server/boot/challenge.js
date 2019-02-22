@@ -114,20 +114,25 @@ function getFirstChallenge(Challenge) {
   });
 }
 
-async function createChallengeUrlResolver(app) {
+export async function createChallengeUrlResolver(
+  app,
+  { _getFirstChallenge = getFirstChallenge } = {}
+) {
   const { Challenge } = app.models;
   const cache = new Map();
-  const firstChallenge = await getFirstChallenge(Challenge);
+  const firstChallenge = await _getFirstChallenge(Challenge);
 
   return function resolveChallengeUrl(id) {
     return new Promise(resolve => {
+      if (!id) {
+        return resolve(firstChallenge);
+      }
       if (cache.has(id)) {
         return resolve(cache.get(id));
       }
       return Challenge.findById(id, (err, challenge) => {
         if (err) {
-          console.log(err);
-          return firstChallenge;
+          return resolve(firstChallenge);
         }
         const challengeUrl = buildChallengeUrl(challenge);
         cache.set(id, challengeUrl);
