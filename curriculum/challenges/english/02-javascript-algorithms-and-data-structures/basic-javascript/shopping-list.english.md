@@ -63,7 +63,7 @@ var hasNumber = true;
     isArray = true;
     if(myList.length > 0) {
       for (var elem of myList) {
-        if(!elem || typeof elem[0] !== 'string') {
+        if(!elem || !elem[0] || typeof elem[0] !== 'string') {
           hasString = false;
         }
         if(!elem || typeof elem[1] !== 'number') {
