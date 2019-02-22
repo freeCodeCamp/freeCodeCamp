@@ -32,7 +32,7 @@ tests:
   - text: Your <code>blue-box</code> class should give the left of elements <code>40px</code> of <code>margin</code>.
     testString: assert($(".blue-box").css("margin-left") === "40px");
   - text: You should use the clockwise notation to set the margin of <code>blue-box</code> class.
-    testString: const removeCssComments = str => str.replace(/<style>|<\/style>/g, '').replace(/\/\\*[\s\S]+?\*\//g, '');assert(/\.blue-box\s*{[\s\S]*margin:\s*\d+px\s+\d+px\s+\d+px\s+\d+px(;[\s\S]*}|\s*)/.test(removeCssComments(code)));
+    testString: const removeCssComments = str => str.replace(/\/\*[\s\S]+?\*\//g, '');assert(/\.blue-box\s*{[\s\S]*margin:\s*\d+px\s+\d+px\s+\d+px\s+\d+px(;[\s\S]*}|\s*)/.test(removeCssComments($('style').text())));
 
 ```
 
