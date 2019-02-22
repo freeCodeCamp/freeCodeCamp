@@ -94,18 +94,17 @@ function buildUserUpdate(user, challengeId, _completedChallenge, timezone) {
   };
 }
 
-function buildChallengeUrl(challenge) {
+export function buildChallengeUrl(challenge) {
   const { superBlock, block, dashedName } = challenge;
   return `/learn/${dasherize(superBlock)}/${dasherize(block)}/${dashedName}`;
 }
 
-function getFirstChallenge(Challenge) {
+export function getFirstChallenge(Challenge) {
   return new Promise(resolve => {
     Challenge.find(
       { where: { challengeOrder: 0, superOrder: 1, order: 0 } },
       (err, challenge) => {
         if (err) {
-          console.log(err);
           return resolve('/learn');
         }
         return resolve(buildChallengeUrl(challenge));
