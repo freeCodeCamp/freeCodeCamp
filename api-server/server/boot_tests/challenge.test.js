@@ -180,6 +180,7 @@ describe('boot/challenge', () => {
       });
     });
 
+    // eslint-disable-next-line max-len
     it('returns the first challenge url if the provided id does not relate to a challenge', async () => {
       const challengeUrlResolver = await createChallengeUrlResolver(mockApp, {
         _getFirstChallenge: mockGetFirstChallenge
@@ -349,6 +350,7 @@ describe('boot/challenge', () => {
       done();
     });
 
+    // eslint-disable-next-line max-len
     it('redirects to the url provided by the challengeUrlResolver', async done => {
       const challengeUrlResolver = await createChallengeUrlResolver(mockApp, {
         _getFirstChallenge: mockGetFirstChallenge
@@ -369,6 +371,7 @@ describe('boot/challenge', () => {
       done();
     });
 
+    // eslint-disable-next-line max-len
     it('redirects to the first challenge for users without a currentChallengeId', async done => {
       const challengeUrlResolver = await createChallengeUrlResolver(mockApp, {
         _getFirstChallenge: mockGetFirstChallenge
