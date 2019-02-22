@@ -5,8 +5,11 @@ import { Provider } from 'react-redux';
 import { createStore } from './src/redux/createStore';
 import AppMountNotifier from './src/components/AppMountNotifier';
 import GuideNavContextProvider from './src/contexts/GuideNavigationContext';
-import DefaultLayout from './src/components/layouts/Default';
-import GuideLayout from './src/components/layouts/Guide';
+import {
+  CertificationLayout,
+  DefaultLayout,
+  GuideLayout
+} from './src/components/layouts';
 
 const store = createStore();
 
@@ -34,6 +37,9 @@ export const wrapPageElement = ({ element, props }) => {
         {element}
       </DefaultLayout>
     );
+  }
+  if (/^\/certification(\/.*)*/.test(pathname)) {
+    return <CertificationLayout>{element}</CertificationLayout>;
   }
   if (/^\/guide(\/.*)*/.test(pathname)) {
     return (
