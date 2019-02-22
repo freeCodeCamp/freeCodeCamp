@@ -51,7 +51,7 @@ services:
       - '0.0.0.0'
     ports:
       - '8000:8000'
-      - '9229:9228'
+      - '9228:9228'
   api-server:
     image: node:lts
     user: node
