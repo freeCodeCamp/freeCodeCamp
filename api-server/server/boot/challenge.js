@@ -16,7 +16,7 @@ import { homeLocation } from '../../../config/env';
 
 import { ifNoUserSend } from '../utils/middleware';
 import { dasherize } from '../utils';
-import pathMigrations from '../resources/pathMigration.json';
+import _pathMigrations from '../resources/pathMigration.json';
 import { fixCompletedChallengeItem } from '../../common/utils';
 
 const log = debug('fcc:boot:challenges');
@@ -25,6 +25,7 @@ export default async function bootChallenge(app, done) {
   const send200toNonUser = ifNoUserSend(true);
   const api = app.loopback.Router();
   const router = app.loopback.Router();
+  const redirectToLearn = createRedirectToLearn(_pathMigrations);
   const challengeUrlResolver = await createChallengeUrlResolver(app);
   const redirectToCurrentChallenge = createRedirectToCurrentChallenge(
     challengeUrlResolver
@@ -352,11 +353,17 @@ export function createRedirectToCurrentChallenge(
   };
 }
 
-function redirectToLearn(req, res) {
-  const maybeChallenge = last(req.path.split('/'));
-  if (maybeChallenge in pathMigrations) {
-    const redirectPath = pathMigrations[maybeChallenge];
-    return res.status(302).redirect(`${learnURL}${redirectPath}`);
-  }
-  return res.status(302).redirect(learnURL);
+export function createRedirectToLearn(
+  pathMigrations,
+  base = homeLocation,
+  learn = learnURL
+) {
+  return function redirectToLearn(req, res) {
+    const maybeChallenge = last(req.path.split('/'));
+    if (maybeChallenge in pathMigrations) {
+      const redirectPath = pathMigrations[maybeChallenge];
+      return res.status(302).redirect(`${base}${redirectPath}`);
+    }
+    return res.status(302).redirect(learn);
+  };
 }

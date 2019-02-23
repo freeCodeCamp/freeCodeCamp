@@ -9,7 +9,8 @@ import {
   createChallengeUrlResolver,
   createRedirectToCurrentChallenge,
   getFirstChallenge,
-  isValidChallengeCompletion
+  isValidChallengeCompletion,
+  createRedirectToLearn
 } from '../boot/challenge';
 
 import {
@@ -22,7 +23,8 @@ import {
   mockGetFirstChallenge,
   firstChallengeQuery,
   mockCompletedChallenge,
-  mockCompletedChallenges
+  mockCompletedChallenges,
+  mockPathMigrationMap
 } from './fixtures';
 
 describe('boot/challenge', () => {
@@ -372,5 +374,32 @@ describe('boot/challenge', () => {
     });
   });
 
-  xdescribe('redirectToLearn');
+  describe('redirectToLearn', () => {
+    const mockHome = 'https://example.com';
+    const mockLearn = 'https://example.com/learn';
+    const redirectToLearn = createRedirectToLearn(
+      mockPathMigrationMap,
+      mockHome,
+      mockLearn
+    );
+
+    it('redirects to learn by default', () => {
+      const req = mockReq({ path: '/challenges' });
+      const res = mockRes();
+
+      redirectToLearn(req, res);
+
+      expect(res.redirect.calledWith(mockLearn)).toBe(true);
+    });
+
+    it('maps to the correct redirect if the path matches a challenge', () => {
+      const req = mockReq({ path: '/challenges/challenge-two' });
+      const res = mockRes();
+      const expectedRedirect =
+        'https://example.com/learn/superblock/block/challenge-two';
+      redirectToLearn(req, res);
+
+      expect(res.redirect.calledWith(expectedRedirect)).toBe(true);
+    });
+  });
 });
