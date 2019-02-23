@@ -1,0 +1,15 @@
+.img-responsive {
+  display: block;
+  max-width: 100%;
+  height: auto;
+}
+
+.sponsor-logos {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+.sponsor-logo {
+  max-height: 80px;
+}
