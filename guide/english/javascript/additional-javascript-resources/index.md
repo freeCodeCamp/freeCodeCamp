@@ -131,6 +131,7 @@ title: JavaScript Tutorials and Other Resources
 *   [SuperheroJS](http://superherojs.com)
 *   [The 50 Best Websites to Learn JavaScript](http://www.codeconquest.com/blog/top-50-websites-to-learn-javascript/)
 *   [Perfection Kills](http://perfectionkills.com) - Not been updated since 2015
+*   [Top mentioned Javascript books of Reddit, Hacker News and Stack Overflow](https://medium.com/@jadeydi/best-javascript-books-should-be-read-which-are-recommended-by-hundreds-people-eeb87353f10d)
 
 
 ## Podcasts
