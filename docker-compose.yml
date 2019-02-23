@@ -1,21 +1,22 @@
 # Docker Compose file for FreeCodeCamp
 #
-# if using Docker Toolbox, replace `localhost` to output form `docker-machine ip`
+# If using Docker Toolbox, replace `localhost` to output form `docker-machine ip`
+#
+# If you have previously run freeCodeCamp outside of docker, run
+#  npm run clean
+# and select 'yes' to remove all node_module folders
+#
+# before trying to bootstrap the project
 #
 # Bootstrap with:
-# open bash in a container:
-#   docker-compose run --rm freecodecamp bash
-# and then from bash prompt:
-#     npm install
-#     npm run seed
-#     exit
+#  npm run docker:install
+#  npm run docker:seed
 #
 #  if during install you see errors like `ETXTBSY: text file is busy, rename`
-#  then before install downgrade npm with command:
-#    npm install -g npm@5.7.1
+#  then use npm run docker:install2
 #
 # Run with:
-#   docker-compose up
+#   npm run docker:develop
 #
 version: '3'
 services:
@@ -42,13 +43,7 @@ services:
     volumes:
       - .:/app
     working_dir: /app/client
-    command:
-      - npm
-      - run
-      - develop
-      - --
-      - -H
-      - '0.0.0.0'
+    command: npm run develop -- -H '0.0.0.0'
     ports:
       - '8000:8000'
       - '9228:9228'
@@ -67,9 +62,7 @@ services:
     volumes:
       - .:/app
     working_dir: /app/api-server
-    command:
-      - node
-      - development-entry.js
+    command: node development-entry.js
     ports:
       - '3000:3000'
       - '9229:9229'
@@ -77,8 +70,13 @@ services:
     image: mongo:3.6
     ports:
       - '27017:27017'
+    volumes:
+      - dbdata:/data/db
   mailhog:
     image: mailhog/mailhog
     ports:
       - '1025:1025'
       - '8025:8025'
+
+volumes:
+  dbdata:
