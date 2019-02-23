@@ -125,6 +125,7 @@ title: JavaScript Tutorials and Other Resources
 ## Blogs
 
 *   [JavaScript on Medium](https://medium.com/topic/javascript)
+*   [The Cost Of JavaScript In 2018](https://medium.com/@addyosmani/the-cost-of-javascript-in-2018-7d8950fbb5d4)
 *   [Codementor JavaScript Tutorials and Insights](https://www.codementor.io/community/topic/javascript)
 *   [2ality](https://www.2ality.com)
 *   [David Walsh](https://davidwalsh.name)
