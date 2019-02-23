@@ -91,6 +91,7 @@ const squareList = (arr) => {
 };
 // test your code
 const squaredIntegers = squareList(realNumberArray);
+console.log(squaredIntegers);
 
 ```
 

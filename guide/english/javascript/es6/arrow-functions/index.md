@@ -4,8 +4,7 @@ title: Arrow Functions
 
 ## Arrow functions
 
-ES6 has introduced a new syntax for function declarations.
-
+ES6 has introduced a new syntax for defining a function.
 ```javascript
 // Old Syntax
 function oldOne() {
