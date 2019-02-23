@@ -44,6 +44,10 @@ title: JavaScript Tutorials and Other Resources
 *   [Javascript.com by Pluralsight](https://www.javascript.com/learn)
 *   [SoloLearn JavaScript Tutorial](https://www.sololearn.com/Course/JavaScript/)
 *   [GeeksforGeeks](https://www.geeksforgeeks.org/javascript-tutorial/)
+*   [Udacity Intro to JavaScript](https://eu.udacity.com/course/intro-to-javascript--ud803)
+*   [Tutorial to React](https://reactjs.org/tutorial/tutorial.html)
+*   [Introduction to Babel](https://flaviocopes.com/babel/)
+*   [Khan Academy - Intro to JS](https://www.khanacademy.org/computing/computer-programming/programming)
 
 ## Video Tutorials
 
