@@ -7,7 +7,8 @@ import {
   buildChallengeUrl,
   createChallengeUrlResolver,
   createRedirectToCurrentChallenge,
-  getFirstChallenge
+  getFirstChallenge,
+  isValidChallengeCompletion
 } from '../boot/challenge';
 
 const firstChallengeUrl = '/learn/the/first/challenge';
@@ -44,6 +45,7 @@ const mockApp = {
 };
 const mockGetFirstChallenge = () => firstChallengeUrl;
 const firstChallengeQuery = {
+  // first challenge of the first block of the first superBlock
   where: { challengeOrder: 0, superOrder: 1, order: 0 }
 };
 
@@ -100,8 +102,6 @@ describe('boot/challenge', () => {
     });
   });
 
-  xdescribe('completedChallenge');
-
   describe('getFirstChallenge', () => {
     const createMockChallengeModel = success =>
       success
@@ -129,9 +129,92 @@ describe('boot/challenge', () => {
     });
   });
 
-  xdescribe('modernChallengeCompleted');
+  describe('isValidChallengeCompletion', () => {
+    const validObjectId = '5c716d1801013c3ce3aa23e6';
 
-  xdescribe('projectcompleted');
+    it('declares a 403 for an invalid id in the body', () => {
+      expect.assertions(3);
+      const req = mockReq({
+        body: { id: 'not-a-real-id' }
+      });
+      const res = mockRes();
+      const next = sinon.spy();
+
+      isValidChallengeCompletion(req, res, next);
+
+      expect(res.sendStatus.called).toBe(true);
+      expect(res.sendStatus.getCall(0).args[0]).toBe(403);
+      expect(next.called).toBe(false);
+    });
+
+    it('declares a 403 for an invalid challengeType in the body', () => {
+      expect.assertions(3);
+      const req = mockReq({
+        body: { id: validObjectId, challengeType: 'ponyfoo' }
+      });
+      const res = mockRes();
+      const next = sinon.spy();
+
+      isValidChallengeCompletion(req, res, next);
+
+      expect(res.sendStatus.called).toBe(true);
+      expect(res.sendStatus.getCall(0).args[0]).toBe(403);
+      expect(next.called).toBe(false);
+    });
+
+    it('declares a 403 for an invalid solution in the body', () => {
+      expect.assertions(3);
+      const req = mockReq({
+        body: {
+          id: validObjectId,
+          challengeType: '1',
+          solution: 'https://not-a-url'
+        }
+      });
+      const res = mockRes();
+      const next = sinon.spy();
+
+      isValidChallengeCompletion(req, res, next);
+
+      expect(res.sendStatus.called).toBe(true);
+      expect(res.sendStatus.getCall(0).args[0]).toBe(403);
+      expect(next.called).toBe(false);
+    });
+
+    it('calls next if the body is valid', () => {
+      const req = mockReq({
+        body: {
+          id: validObjectId,
+          challengeType: '1',
+          solution: 'https://www.freecodecamp.org'
+        }
+      });
+      const res = mockRes();
+      const next = sinon.spy();
+
+      isValidChallengeCompletion(req, res, next);
+
+      expect(next.called).toBe(true);
+    });
+
+    it('calls next if only the id is provided', () => {
+      const req = mockReq({
+        body: {
+          id: validObjectId
+        }
+      });
+      const res = mockRes();
+      const next = sinon.spy();
+
+      isValidChallengeCompletion(req, res, next);
+
+      expect(next.called).toBe(true);
+    });
+  });
+
+  xdescribe('modernChallengeCompleted', () => {});
+
+  xdescribe('projectCompleted');
 
   describe('redirectToCurrentChallenge', () => {
     const mockHomeLocation = 'https://www.example.com';

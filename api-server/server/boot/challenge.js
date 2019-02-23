@@ -7,8 +7,10 @@
 import { Observable } from 'rx';
 import { isEmpty, pick, omit, find, uniqBy, last } from 'lodash';
 import debug from 'debug';
-import accepts from 'accepts';
 import dedent from 'dedent';
+import { ObjectID } from 'mongodb';
+import isNumeric from 'validator/lib/isNumeric';
+import isURL from 'validator/lib/isURL';
 
 import { homeLocation } from '../../../config/env';
 
@@ -31,28 +33,21 @@ export default async function bootChallenge(app, done) {
   api.post(
     '/modern-challenge-completed',
     send200toNonUser,
+    isValidChallengeCompletion,
     modernChallengeCompleted
   );
 
-  // deprecate endpoint
-  // remove once new endpoint is live
-  api.post('/completed-challenge', send200toNonUser, completedChallenge);
-
-  api.post('/challenge-completed', send200toNonUser, completedChallenge);
-
-  // deprecate endpoint
-  // remove once new endpoint is live
   api.post(
-    '/completed-zipline-or-basejump',
+    '/project-completed',
     send200toNonUser,
+    isValidChallengeCompletion,
     projectCompleted
   );
-
-  api.post('/project-completed', send200toNonUser, projectCompleted);
 
   api.post(
     '/backend-challenge-completed',
     send200toNonUser,
+    isValidChallengeCompletion,
     backendChallengeCompleted
   );
 
@@ -65,7 +60,6 @@ export default async function bootChallenge(app, done) {
   router.get('/map', redirectToLearn);
 
   app.use(api);
-  app.use('/external', api);
   app.use('/internal', api);
   app.use(router);
   done();
@@ -191,20 +185,27 @@ export async function createChallengeUrlResolver(
   };
 }
 
-function modernChallengeCompleted(req, res, next) {
-  const type = accepts(req).type('html', 'json', 'text');
-  req.checkBody('id', 'id must be an ObjectId').isMongoId();
+export function isValidChallengeCompletion(req, res, next) {
+  const {
+    body: { id, challengeType, solution }
+  } = req;
 
-  const errors = req.validationErrors(true);
-  if (errors) {
-    if (type === 'json') {
-      return res.status(403).send({ errors });
-    }
-
-    log('errors', errors);
+  if (!ObjectID.isValid(id)) {
+    log('isObjectId', id, ObjectID.isValid(id));
     return res.sendStatus(403);
   }
+  if ('challengeType' in req.body && !isNumeric(challengeType)) {
+    log('challengeType', challengeType, isNumeric(challengeType));
+    return res.sendStatus(403);
+  }
+  if ('solution' in req.body && !isURL(solution)) {
+    log('isObjectId', id, ObjectID.isValid(id));
+    return res.sendStatus(403);
+  }
+  return next();
+}
 
+export function modernChallengeCompleted(req, res, next) {
   const user = req.user;
   return user
     .getCompletedChallenges$()
@@ -228,88 +229,17 @@ function modernChallengeCompleted(req, res, next) {
         })
       );
       return Observable.fromPromise(updatePromise).map(() => {
-        if (type === 'json') {
-          return res.json({
-            points,
-            alreadyCompleted,
-            completedDate
-          });
-        }
-        return res.sendStatus(200);
-      });
-    })
-    .subscribe(() => {}, next);
-}
-
-function completedChallenge(req, res, next) {
-  req.checkBody('id', 'id must be an ObjectId').isMongoId();
-  const type = accepts(req).type('html', 'json', 'text');
-  const errors = req.validationErrors(true);
-
-  const { user } = req;
-
-  if (errors) {
-    if (type === 'json') {
-      return res.status(403).send({ errors });
-    }
-
-    log('errors', errors);
-    return res.sendStatus(403);
-  }
-
-  return user
-    .getCompletedChallenges$()
-    .flatMap(() => {
-      const completedDate = Date.now();
-      const { id, solution, timezone, files } = req.body;
-
-      const { alreadyCompleted, updateData } = buildUserUpdate(
-        user,
-        id,
-        { id, solution, completedDate, files },
-        timezone
-      );
-
-      const points = alreadyCompleted ? user.points : user.points + 1;
-
-      const updatePromise = new Promise((resolve, reject) =>
-        user.updateAttributes(updateData, err => {
-          if (err) {
-            return reject(err);
-          }
-          return resolve();
-        })
-      );
-      return Observable.fromPromise(updatePromise).map(() => {
-        if (type === 'json') {
-          return res.json({
-            points,
-            alreadyCompleted,
-            completedDate
-          });
-        }
-        return res.sendStatus(200);
+        return res.json({
+          points,
+          alreadyCompleted,
+          completedDate
+        });
       });
     })
     .subscribe(() => {}, next);
 }
 
 function projectCompleted(req, res, next) {
-  const type = accepts(req).type('html', 'json', 'text');
-  req.checkBody('id', 'id must be an ObjectId').isMongoId();
-  req.checkBody('challengeType', 'must be a number').isNumber();
-  req.checkBody('solution', 'solution must be a URL').isURL();
-
-  const errors = req.validationErrors(true);
-
-  if (errors) {
-    if (type === 'json') {
-      return res.status(403).send({ errors });
-    }
-    log('errors', errors);
-    return res.sendStatus(403);
-  }
-
   const { user, body = {} } = req;
 
   const completedChallenge = pick(body, [
@@ -351,34 +281,17 @@ function projectCompleted(req, res, next) {
         })
       );
       return Observable.fromPromise(updatePromise).doOnNext(() => {
-        if (type === 'json') {
-          return res.send({
-            alreadyCompleted,
-            points: alreadyCompleted ? user.points : user.points + 1,
-            completedDate: completedChallenge.completedDate
-          });
-        }
-        return res.status(200).send(true);
+        return res.send({
+          alreadyCompleted,
+          points: alreadyCompleted ? user.points : user.points + 1,
+          completedDate: completedChallenge.completedDate
+        });
       });
     })
     .subscribe(() => {}, next);
 }
 
 function backendChallengeCompleted(req, res, next) {
-  const type = accepts(req).type('html', 'json', 'text');
-  req.checkBody('id', 'id must be an ObjectId').isMongoId();
-  req.checkBody('solution', 'solution must be a URL').isURL();
-
-  const errors = req.validationErrors(true);
-
-  if (errors) {
-    if (type === 'json') {
-      return res.status(403).send({ errors });
-    }
-    log('errors', errors);
-    return res.sendStatus(403);
-  }
-
   const { user, body = {} } = req;
 
   const completedChallenge = pick(body, ['id', 'solution']);
@@ -402,14 +315,11 @@ function backendChallengeCompleted(req, res, next) {
         })
       );
       return Observable.fromPromise(updatePromise).doOnNext(() => {
-        if (type === 'json') {
-          return res.send({
-            alreadyCompleted,
-            points: alreadyCompleted ? user.points : user.points + 1,
-            completedDate: completedChallenge.completedDate
-          });
-        }
-        return res.status(200).send(true);
+        return res.send({
+          alreadyCompleted,
+          points: alreadyCompleted ? user.points : user.points + 1,
+          completedDate: completedChallenge.completedDate
+        });
       });
     })
     .subscribe(() => {}, next);
