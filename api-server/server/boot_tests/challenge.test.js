@@ -1,9 +1,10 @@
 /* global describe xdescribe it expect */
-import { isEqual } from 'lodash';
+import { isEqual, first, find } from 'lodash';
 import sinon from 'sinon';
 import { mockReq, mockRes } from 'sinon-express-mock';
 
 import {
+  buildUserUpdate,
   buildChallengeUrl,
   createChallengeUrlResolver,
   createRedirectToCurrentChallenge,
@@ -11,48 +12,144 @@ import {
   isValidChallengeCompletion
 } from '../boot/challenge';
 
-const firstChallengeUrl = '/learn/the/first/challenge';
-const requestedChallengeUrl = '/learn/my/actual/challenge';
-const mockChallenge = {
-  id: '123abc',
-  block: 'actual',
-  superBlock: 'my',
-  dashedName: 'challenge'
-};
-const mockFirstChallenge = {
-  id: '456def',
-  block: 'first',
-  superBlock: 'the',
-  dashedName: 'challenge'
-};
-const mockUser = {
-  username: 'camperbot',
-  currentChallengeId: '123abc'
-};
-const mockApp = {
-  models: {
-    Challenge: {
-      find() {
-        return firstChallengeUrl;
-      },
-      findById(id, cb) {
-        return id === mockChallenge.id
-          ? cb(null, mockChallenge)
-          : cb(new Error('challenge not found'));
-      }
-    }
-  }
-};
-const mockGetFirstChallenge = () => firstChallengeUrl;
-const firstChallengeQuery = {
-  // first challenge of the first block of the first superBlock
-  where: { challengeOrder: 0, superOrder: 1, order: 0 }
-};
+import {
+  firstChallengeUrl,
+  requestedChallengeUrl,
+  mockChallenge,
+  mockFirstChallenge,
+  mockUser,
+  mockApp,
+  mockGetFirstChallenge,
+  firstChallengeQuery,
+  mockCompletedChallenge,
+  mockCompletedChallenges
+} from './fixtures';
 
 describe('boot/challenge', () => {
   xdescribe('backendChallengeCompleted');
 
-  xdescribe('buildUserUpdate');
+  describe('buildUserUpdate', () => {
+    it('returns an Object with a nested "completedChallenges" property', () => {
+      const result = buildUserUpdate(
+        mockUser,
+        '123abc',
+        mockCompletedChallenge,
+        'UTC'
+      );
+      expect(result).toHaveProperty('updateData.$set.completedChallenges');
+    });
+
+    it('preserves file contents if the completed challenge is a JS Project', () => {
+      const jsChallengeId = 'aa2e6f85cab2ab736c9a9b24';
+      const completedChallenge = {
+        ...mockCompletedChallenge,
+        completedDate: Date.now(),
+        id: jsChallengeId
+      };
+      const result = buildUserUpdate(
+        mockUser,
+        jsChallengeId,
+        completedChallenge,
+        'UTC'
+      );
+      const firstCompletedChallenge = first(
+        result.updateData.$set.completedChallenges
+      );
+
+      expect(firstCompletedChallenge).toEqual(completedChallenge);
+    });
+
+    it('preserves the original completed date of a challenge', () => {
+      const completedChallengeId = 'aaa48de84e1ecc7c742e1124';
+      const completedChallenge = {
+        ...mockCompletedChallenge,
+        completedDate: Date.now(),
+        id: completedChallengeId
+      };
+      const originalCompletion = find(
+        mockCompletedChallenges,
+        x => x.id === completedChallengeId
+      ).completedDate;
+      const result = buildUserUpdate(
+        mockUser,
+        completedChallengeId,
+        completedChallenge,
+        'UTC'
+      );
+
+      const firstCompletedChallenge = first(
+        result.updateData.$set.completedChallenges
+      );
+
+      expect(firstCompletedChallenge.completedDate).toEqual(originalCompletion);
+    });
+
+    it('does not attempt to update progressTimestamps for a previously completed challenge', () => {
+      const completedChallengeId = 'aaa48de84e1ecc7c742e1124';
+      const completedChallenge = {
+        ...mockCompletedChallenge,
+        completedDate: Date.now(),
+        id: completedChallengeId
+      };
+      const { updateData } = buildUserUpdate(
+        mockUser,
+        completedChallengeId,
+        completedChallenge,
+        'UTC'
+      );
+
+      const hasProgressTimestamps =
+        '$push' in updateData && 'progressTimestamps' in updateData.$push;
+      expect(hasProgressTimestamps).toBe(false);
+    });
+
+    it('provides a progressTimestamps update for new challenge completion', () => {
+      expect.assertions(2);
+      const { updateData } = buildUserUpdate(
+        mockUser,
+        '123abc',
+        mockCompletedChallenge,
+        'UTC'
+      );
+      expect(updateData).toHaveProperty('$push');
+      expect(updateData.$push).toHaveProperty('progressTimestamps');
+    });
+
+    it('removes repeat completions from the completedChallenges array', () => {
+      const completedChallengeId = 'aaa48de84e1ecc7c742e1124';
+      const completedChallenge = {
+        ...mockCompletedChallenge,
+        completedDate: Date.now(),
+        id: completedChallengeId
+      };
+      const {
+        updateData: {
+          $set: { completedChallenges }
+        }
+      } = buildUserUpdate(
+        mockUser,
+        completedChallengeId,
+        completedChallenge,
+        'UTC'
+      );
+
+      expect(completedChallenges.length).toEqual(
+        mockCompletedChallenges.length
+      );
+    });
+
+    it('adds newly completed challenges to the completedChallenges array', () => {
+      const {
+        updateData: {
+          $set: { completedChallenges }
+        }
+      } = buildUserUpdate(mockUser, '123abc', mockCompletedChallenge, 'UTC');
+
+      expect(completedChallenges.length).toEqual(
+        mockCompletedChallenges.length + 1
+      );
+    });
+  });
 
   describe('buildChallengeUrl', () => {
     it('resolves the correct Url for the provided challenge', () => {
@@ -122,6 +219,7 @@ describe('boot/challenge', () => {
 
       expect(result).toEqual(firstChallengeUrl);
     });
+
     it('returns the learn base if no challenges found', async () => {
       const result = await getFirstChallenge(createMockChallengeModel(false));
 
@@ -212,7 +310,7 @@ describe('boot/challenge', () => {
     });
   });
 
-  xdescribe('modernChallengeCompleted', () => {});
+  xdescribe('modernChallengeCompleted');
 
   xdescribe('projectCompleted');
 

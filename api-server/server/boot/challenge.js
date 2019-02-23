@@ -74,10 +74,14 @@ const jsProjects = [
   'aa2e6f85cab2ab736c9a9b24'
 ];
 
-function buildUserUpdate(user, challengeId, _completedChallenge, timezone) {
+export function buildUserUpdate(
+  user,
+  challengeId,
+  _completedChallenge,
+  timezone
+) {
   const { files } = _completedChallenge;
   let completedChallenge = {};
-
   if (jsProjects.includes(challengeId)) {
     completedChallenge = {
       ..._completedChallenge,
