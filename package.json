@@ -3,7 +3,7 @@
   "version": "0.0.1",
   "scripts": {
     "bootstrap": "lerna bootstrap",
-    "clean": "lerna clean",
+    "clean": "lerna clean && shx rm -rf node_modules",
     "develop": "npm-run-all ensure-env -p develop:*",
     "develop:client": "cd ./client && npm run develop",
     "develop:server": "cd ./api-server && node development-entry.js",
@@ -55,6 +55,7 @@
     "prettier": "^1.16.4",
     "readdirp-walk": "^1.7.0",
     "shortid": "^2.2.14",
+    "shx": "^0.3.2",
     "sinon": "^7.2.4",
     "sinon-express-mock": "^2.1.0",
     "slugg": "^1.2.1"
