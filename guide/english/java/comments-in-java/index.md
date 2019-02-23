@@ -43,7 +43,9 @@ public class MyFirstJava {
 #### 3. Documentation Comments
 
 
-Documentation comments are used by the Javadoc tool to create documentation for the code. Documentation comments are used by developers to document code, such as explaining what a class or method does. These comments are parsed by a Javadoc tool, which will compile a preformatted set of HTML files containing all the information available in the comments. The output typically is HTML files created for your code which are more readable and can be shared as well.
+Documentation comments are used by the Javadoc tool to create documentation for the code. Documentation comments are used by developers to document code, such as explaining what a class or method does. These comments are parsed by a Javadoc tool, which will compile a preformatted set of HTML files containing all the information available in the comments. The output typically is HTML files created for your code which are more readable and can be shared as well. 
+
+It's always a good practice to write the javadoc before actually writing the function or method block of code. It helps in focusing on the purpose of method/class and creating modular code.
 
 ```java
 /**
