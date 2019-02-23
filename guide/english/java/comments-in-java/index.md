@@ -3,14 +3,11 @@ title: Comments in Java
 ---
 ## Comments in Java
 
-Comments in Java are like real life sticky notes used to display some helpful information, which other programmers or developers can read and understand.
+Comments in Java are like real life sticky notes used to display some helpful information, which other programmers or developers can read and understand. Because they are intended for humans, Java comments are not executed by the compiler or interpreter.
 
+It is a good practice to add meaningful comments to your code, especially when working with a team or at a company. This helps future developers or teammates to know what is going on more easily when they look at your code. Comments make your code more neat and organized.
 
-It is a good practice to add comments to your code, especially when working with a team. This helps future developers and teammates to more easily understand at your code. Comments make your code more neat and organized.
-
-
-Java comments are not executed by the compiler or interpreter.
-
+Note above the phrase **meaningful** comments. As a general rule, good code should be readable without execessive comments. Another programmer should be able to review your code and understand *what* has happened, but good comments can help explain *why*. Comments should also be updated as code changes over time. In short, all comments in Java should be meaningful, relevant, and current.
 
 ### Types of Java Comments
 
@@ -63,10 +60,11 @@ public class RandomNumbers{
     }  
 }  
 ```
-
 The difference between the documentation comment and the multi & single line comments is that the former is oriented about making your comments visible to anyone viewing the documentation, while the multi and single line comments are the ones that are supposed to mainly keep you on track.
 
 #### More Information:
 * [Java Resources](http://guide.freecodecamp.org/java/resources/)
 
 * [Compiled Javadoc Example](https://docs.oracle.com/javase/8/docs/api/)
+
+* [Putting comments in code: the good, the bad, and the ugly.](https://medium.freecodecamp.org/code-comments-the-good-the-bad-and-the-ugly-be9cc65fbf83)
