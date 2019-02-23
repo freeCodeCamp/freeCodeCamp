@@ -18,14 +18,12 @@ before_install:
 install: npm ci
 
 before_script:
-  - git config --global user.email team+camperbot@freeCodeCamp.org
-  - git config --global user.name "CamperBot"
+  - npm run ensure-env
 
 jobs:
   include:
     - stage: Lint javaScript
       script:
-        - npm run ensure-env
         - npm run lint
 
     - stage: Unit and Integration tests
