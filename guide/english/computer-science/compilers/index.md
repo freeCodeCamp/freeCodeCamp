@@ -4,7 +4,7 @@ title: Compilers
 ## Compilers
 
 ### Programming
-At its heart, a barebones computer (aka a stored program computer) is nothing but a machine which knows how to read steps written in a fixed instruction set and execute the same. The set of instructions a computer understands is very specific to it. This is also known as machine language (**opcodes**). Machine Language is often referred to as Binary Code.
+At its heart, a barebones computer (A.K.A. a stored program computer) is nothing but a machine which knows how to read steps written in a fixed instruction set and execute the same. The set of instructions a computer understands is very specific to it. This is also known as machine language (**opcodes**). Machine Language is often referred to as Binary Code.
 
 Humans interact with computers using **Programs**. A program is simply a sequence of opcodes provided to the computer along with data that is necessary for executing the opcodes. 
 
