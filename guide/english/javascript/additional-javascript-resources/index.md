@@ -137,6 +137,8 @@ title: JavaScript Tutorials and Other Resources
 ## Podcasts
 
 *   [JavaScript Jabber](https://devchat.tv/js-jabber)
+*   [Syntax FM](https://syntax.fm/)
+*   [Fulstack Radio](http://www.fullstackradio.com//)
 
 
 ## Free JavaScript Books
