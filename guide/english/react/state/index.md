@@ -4,23 +4,20 @@ title: State
 
 # State
 
-State is the place where the data comes from. 
+State in React is an object with observable properties that determines how a component behaves and renders.  
 
-We should always try to make our state as simple as possible and minimize the number of stateful components. If we have, for example, ten components that need data from the state, we should create one container component that will keep the state for all of them.
-
-State is basically like a global object that is available everywhere in a component.
+State is a feature that is only available to classes, and should be considered private data.  State is only available within a component, and can be passed to child components using [`props`](../props)
 
 Example of a Stateful Class Component:
 
-```javascript
+```js
 import React from 'react';
 
 class App extends React.Component {
   constructor(props) {
     super(props);
       
-    // We declare the state as shown below
-    
+    // We declare state below
     this.state = {                           
       x: "This is x from state",    
       y: "This is y from state"
@@ -38,67 +35,94 @@ class App extends React.Component {
 export default App;
 ```
 
-Another Example:
+Another example using class properties and ES6 destructring:
+
+#### Note: This example uses class fields which is a stage 3 proposal and is not a standard feature yet.
 
 ```javascript
 import React from 'react';
-
 class App extends React.Component {
-  constructor(props) {
-    super(props);
-    
-    // We declare the state as shown below
-    this.state = {                           
-      x: "This is x from state",    
-      y: "This is y from state"
-    }
+  state = {
+    fruits: ['apple', 'banana', 'strawberry', 'watermelon']
   }
 
   render() {
-    let x1 = this.state.x;
-    let y1 = this.state.y;
 
+    // Destructure `fruits` property from this.state
+    const { fruits } = this.state
     return (
-      <div>
-        <h1>{x1}</h1>
-        <h2>{y1}</h2>
-      </div>
+      <ul>
+        {
+          fruits.map(fruit => (
+            <li key={fruit}>
+            {fruit}
+            </li> 
+          ))
+        }
+      </ul>
     );
   }
 }
+
 export default App;
 ```
 
 ## Updating State
-You can change the data stored in the state of your application using the `setState` method on your component.
+You should never try to modify your `state` object directly.  Instead, use the `setState` method to update state on your component.
 
 ```js
 this.setState({value: 1});
 ```
 
-Keep in mind that `setState` may be asynchronous so you should be careful when using the current state to set a new state. A good example of this would be if you want to increment a value in your state. 
+Keep in mind that `setState` may be asynchronous, so you should be careful when using the current state to set a new state. A good example of this would be if you want to increment a value in your state:
 
 #### The Wrong Way
 ```js
 this.setState({value: this.state.value + 1});
 ```
 
-This can lead to unexpected behavior in your app if the code above is called multiple times in the same update cycle. To avoid this you can pass an updater callback function to `setState` instead of an object. 
+This may lead to unexpected behavior if the code above is called multiple times in the same update cycle. To avoid this, you can pass an `updater` callback function to `setState` instead of an object.  The updater callback has two parameters - `state` and `props`, both of which are guaranteed to be up-to-date.
 
-#### The Right Way
+#### The Correct Way
 ```js
 this.setState(prevState => ({value: prevState.value + 1}));
 ```
 
-#### The Cleaner Way
+#### Using ES6 Destructuring
+When only a limited number of properties in the state object are required, object destructing can improve readability.
 ```
 this.setState(({ value }) => ({ value: value + 1 }));
 ```
 
-When only a limited number of fields in the state object is required, object destructing can be used for cleaner code.
+When only a limited number of fields in the state object are required, object destructing can be used for cleaner code.
+
+#### The "Functional Way"
+
+The functional way declares state changes separately from the component classes. Hence,
+```javascript
+//  outside your component class
+function increment(state,props){
+  return { score: state.value +1 }
+}
+...
+//  inside your component class
+this.setState(increment)
+```
+
+Importing state via changes via functions helps keep each module as short as possible and can be used for cleaner code.
+
+#### setState's callback function
+The `setState` method for class based React components also takes a second argument: a callback function that is called once state is successfully updated. This can be useful for performing tasks that rely on the most recent state value (but aren't in the render method). 
+```
+this.setState({ friends: 0}, () => this.findNewFriends());
+...
+
+findNewFriends = (friends = this.state.friends) => friends < 1 ? this.props.dispatch(getFriendSuggestions()) : this.props.dispatch(getCurrentChatRecords());
+```
 
 #### More Information
 
 - [React - State and Lifecycle](https://reactjs.org/docs/state-and-lifecycle.html)
 - [React - Lifting State Up](https://reactjs.org/docs/lifting-state-up.html)
 - [React Native - State Up](https://facebook.github.io/react-native/docs/state.html)
+- [Functional setState is the future of React](https://medium.freecodecamp.org/functional-setstate-is-the-future-of-react-374f30401b6b)
