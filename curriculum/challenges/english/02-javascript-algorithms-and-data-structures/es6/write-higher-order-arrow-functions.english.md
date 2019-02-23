@@ -86,7 +86,6 @@ const squareList = (arr) => {
        // add code here
   });
 
-  // add code here
   return squaredIntegers;
 };
 // test your code
