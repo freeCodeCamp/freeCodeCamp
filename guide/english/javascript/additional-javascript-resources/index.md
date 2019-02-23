@@ -87,9 +87,12 @@ title: JavaScript Tutorials and Other Resources
     
 *   [Brackets](http://brackets.io)
 
+    Lightweight text editor featuring inline editors, live previews, and allows you to quick edit and live highlight with your LESS and SCSS files.
+
 *   [Sublime Text](https://www.sublimetext.com)
     Sublime Text is a cross-platform editor featuring a Python API. Free to download and evaluate, but requires a license for continued use.
 
+    A cross-platform editor with a Python API. It features many shortcuts, key bindings and visual customization.
   
 ## Online Editors
 
