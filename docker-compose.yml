@@ -1,11 +1,11 @@
 # Docker Compose file for FreeCodeCamp
 #
-# If using Docker Toolbox, replace `localhost` to output form `docker-machine ip`
+# If using Docker Toolbox, set `DOCKER_HOST_LOCATION` env var to output from
+# `docker-machine ip`
 #
 # If you have previously run freeCodeCamp outside of docker, run
 #  npm run clean
 # and select 'yes' to remove all node_module folders
-#
 # before trying to bootstrap the project
 #
 # Bootstrap with:
@@ -37,9 +37,9 @@ services:
     user: node
     environment:
       - API_PROXY=http://api-server:3000
-      - GATSBY_WEBPACK_PUBLICPATH=http://localhost:8000/
-      - HOME_LOCATION=http://localhost:8000
-      - API_LOCATION=http://localhost:3000
+      - GATSBY_WEBPACK_PUBLICPATH=http://$DOCKER_HOST_LOCATION:8000/
+      - HOME_LOCATION=http://$DOCKER_HOST_LOCATION:8000
+      - API_LOCATION=http://$DOCKER_HOST_LOCATION:3000
     volumes:
       - .:/app
     working_dir: /app/client
@@ -56,9 +56,9 @@ services:
     environment:
       - MAILHOG_HOST=mailhog
       - MONGOHQ_URL=mongodb://db:27017/freecodecamp
-      - COOKIE_DOMAIN=localhost
-      - HOME_LOCATION=http://localhost:8000
-      - API_LOCATION=http://localhost:3000
+      - COOKIE_DOMAIN=$DOCKER_HOST_LOCATION
+      - HOME_LOCATION=http://$DOCKER_HOST_LOCATION:8000
+      - API_LOCATION=http://$DOCKER_HOST_LOCATION:3000
     volumes:
       - .:/app
     working_dir: /app/api-server
