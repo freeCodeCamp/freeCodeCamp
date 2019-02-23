@@ -32,7 +32,7 @@ tests:
   - text: Your code should use <code>position.coords.longitude</code> to display the user&#39;s longitudinal location.
     testString: assert(code.match(/position\.coords\.longitude/g), 'Your code should use <code>position.coords.longitude</code> to display the user&#39;s longitudinal location.');
   - text: You should display the user&#39;s position within the <code>data</code> div element.
-    testString: assert(code.match(/document\.getElementById\(\s*?('|")data\1\s*?\)\.innerHTML/g), 'You should display the user&#39;s position within the <code>data</code> div element.');
+    testString: assert(code.match(/document\s*\.getElementById\(\s*?('|")data\1\s*?\)\s*\.innerHTML/g), 'You should display the user&#39;s position within the <code>data</code> div element.');
 
 ```
 
