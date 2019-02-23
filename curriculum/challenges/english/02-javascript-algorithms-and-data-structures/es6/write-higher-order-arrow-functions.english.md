@@ -84,7 +84,7 @@ const squareList = (arr) => {
   });
   const squaredIntegers = positiveIntegers.map((num) => {
        // add code here
-});
+  });
 
   // add code here
   return squaredIntegers;
