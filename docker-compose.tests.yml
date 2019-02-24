@@ -1,0 +1,25 @@
+# Docker Compose file for FreeCodeCamp
+#
+# Before run tests, bootstrap project with commands from a docker-compose.yml
+#
+# Note, first run takes a long time.
+#
+# Run with:
+#   npm run docker:test -- -c "npm run test"
+# or
+#   npm run docker:test -- -c "npm run test:curriculum"
+#   npm run docker:test -- -c "npm run test:client"
+#   npm run docker:test -- -c "npm run test:server"
+#
+# If need to test one challenge:
+#   npm run docker:test -- -c "cd curriculum && npm run test -f 'Title of Challenge'"
+#
+version: '3'
+services:
+  tests:
+    build:
+      context: .
+      dockerfile: Dockerfile.tests
+    volumes:
+      - .:/app
+    working_dir: /app
