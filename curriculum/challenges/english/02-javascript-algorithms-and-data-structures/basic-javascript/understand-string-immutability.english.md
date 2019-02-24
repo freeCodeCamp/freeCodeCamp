@@ -2,6 +2,7 @@
 id: 56533eb9ac21ba0edf2244ba
 title: Understand String Immutability
 challengeType: 1
+videoUrl: 'https://scrimba.com/c/cWPVaUR'
 ---
 
 ## Description
@@ -24,9 +25,9 @@ Correct the assignment to <code>myStr</code> so it contains the string value of 
 ```yml
 tests:
   - text: <code>myStr</code> should have a value of <code>Hello World</code>
-    testString: 'assert(myStr === "Hello World", "<code>myStr</code> should have a value of <code>Hello World</code>");'
+    testString: assert(myStr === "Hello World", '<code>myStr</code> should have a value of <code>Hello World</code>');
   - text: Do not change the code above the line
-    testString: 'assert(/myStr = "Jello World"/.test(code), "Do not change the code above the line");'
+    testString: assert(/myStr = "Jello World"/.test(code), 'Do not change the code above the line');
 
 ```
 
@@ -55,7 +56,7 @@ myStr[0] = "H"; // Fix Me
 <div id='js-teardown'>
 
 ```js
-console.info('after the test');
+(function(v){return "myStr = " + v;})(myStr);
 ```
 
 </div>

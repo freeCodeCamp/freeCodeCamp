@@ -1,5 +1,5 @@
 ---
-title: Add Free Code Camp in Linkedin
+title: Add Free Code Camp in LinkedIn
 localeTitle: أضف Free Code Camp في لينكدين
 ---
 ينضم LinkedIn إلى Free Code Camp كجامعة.

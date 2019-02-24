@@ -18,7 +18,11 @@ To gather information a hacker can use various tools and techniques which are li
 2. Nmap
 3. Sam Spade
 4. Traceroute 
-5. NeoTrace and many more.
+5. NeoTrace
+6. Maltego
+7. Recon-ng
+8. Dmitry
+9. Sparta
 
 #### More Information:
 <!-- Please add any articles you think might be helpful to read before writing the article -->
