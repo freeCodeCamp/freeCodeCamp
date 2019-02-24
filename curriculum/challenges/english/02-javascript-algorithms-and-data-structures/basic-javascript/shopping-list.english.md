@@ -64,14 +64,14 @@ var hasNumber = false;
     if(myList.length > 0) {
       hasString = true;
       hasNumber = true;
-      myList.forEach(function(elem) {
-        if(typeof elem[0] !== 'string') {
+      for (var elem of myList) {
+        if(!elem || !elem[0] || typeof elem[0] !== 'string') {
           hasString = false;
         }
-        if(typeof elem[1] !== 'number') {
+        if(!elem || typeof elem[1] !== 'number') {
           hasNumber = false;
         }
-      });
+      }
     }
     count = myList.length;
     return JSON.stringify(myList);
