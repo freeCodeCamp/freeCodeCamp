@@ -38,7 +38,7 @@ To use Bootstrap icons you simply create a `<span>` tag and apply the applicable
 
 ### Bootstrap Glyphicon Class List
 
-This is an example of the CSS classes that Bootstrap provides for glyphicons. More of them are avalible <a href='https://getbootstrap.com/docs/3.3/components/#glyphicons' target='_blank' rel='nofollow'>here</a>
+This is an example of the CSS classes that bootstrap provides for glyphicons. More of them are available <a href='https://getbootstrap.com/docs/3.3/components/#glyphicons' target='_blank' rel='nofollow'>here</a>
 
 `.glyphicon glyphicon-plus` This is Bootstrap's plus/add icon.
 
@@ -47,6 +47,12 @@ This is an example of the CSS classes that Bootstrap provides for glyphicons. Mo
 `.glyphicon glyphicon-trash` This is Bootstrap's trash/delete icon.
 
 <span class="glyphicon glyphicon-trash" aria-hidden="true"></span>
+
+`.glyphicon glyphicon-envelope` This is bootstrap's envelope icon.
+<span class="glyphicon glyphicon-envelope" aria-hidden="true"></span>
+
+`.glyphicon glyphicon-print` This is bootstrap's print icon.
+<span class="glyphicon glyphicon-print" aria-hidden="true"></span>
 
 _Note: Do not include the dot in the HTML Class Attribute, referring to the classes with a dot is only used when adjusting the classes in CSS._
 
