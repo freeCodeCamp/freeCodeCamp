@@ -8,10 +8,11 @@ QuickSelect is a selection algorithm to find the K-th smallest element in an uns
 
 ### Algorithm
 
-After finding pivot (Pivot is a position that partitions the list into two parts. Every element on the left is less than pivot and every element on the right is more than pivot) the algorithm recurs only for the part that contains the k-th smallest element.
-If the index of the partitioned element (pivot) is more than k, then the algorithm recurs for the left part. If index (pivot) is same as k,then we have found the k-th smallest element and it is returned. If index is less than k, then the algorithm recurs for the right part.
+After finding the pivot (a position that partitions the list into two parts: every element on the left is less than the pivot and every element on the right is more than the pivot) the algorithm recurs only for the part that contains the k-th smallest element.
+If the index of the partitioned element (pivot) is more than k, then the algorithm recurs for the left part. If the index (pivot) is same as k, then we have found the k-th smallest element and it is returned. If index is less than k, then the algorithm recurs for the right part.
 
 #### Selection Psudocode
+
 ```
 Input : List, left is first position of list, right is last position of list and k is k-th smallest element.
 Output : A new list is partitioned.
@@ -35,8 +36,8 @@ quickSelect(list, left, right, k)
 
 ### Partition
 
-Partition is to find the pivot as mentioned above. (Every element on the left is less than pivot and every element on the right is more than pivot)
-There are two algorithm for find pivot of partition.
+Partition is to find the pivot as mentioned above. (Every element on the left is less than the pivot and every element on the right is more than pivot)
+There are two algorithm for finding the pivot of partition.
   - Lomuto Partition
   - Hoare Partition
   
@@ -60,7 +61,7 @@ algorithm Lomuto(A, lo, hi) is
 ```
 #### Hoare Partition
 
-Hoare uses two indices that start at the ends of the array being partitioned, then move toward each other, until they detect an inversion: a pair of elements, one greater than or equal to the pivot, one lesser or equal, that are in the wrong order relative to each other. The inverted elements are then swapped. When the indices meet, the algorithm stops and returns the final index. There are many variants of this algorithm.
+Hoare uses two indices that start at the ends of the array being partitioned, then move toward each other until they detect an inversion: a pair of elements, one greater than or equal to the pivot, one less than or equal to the pivot, that are in the wrong order relative to each other. The inverted elements are then swapped. When the indices meet, the algorithm stops and returns the final index. There are many variants of this algorithm.
 
 ```
 algorithm Hoare(A, lo, hi) is
@@ -84,4 +85,4 @@ algorithm Hoare(A, lo, hi) is
 
 ## Time complexity
 
-Like quicksort, the quickselect has good average performance, but is sensitive to the pivot that is chosen. If good pivots are chosen, meaning ones that consistently decrease the search set by a given fraction, then the search set decreases in size exponentially and by induction (or summing the geometric series) one sees that performance is linear, as each step is linear and the overall time is a constant times this (depending on how quickly the search set reduces). However, if bad pivots are consistently chosen, such as decreasing by only a single element each time, then worst-case performance is quadratic: O(n^2). This occurs for example in searching for the maximum element of a set, using the first element as the pivot, and having sorted data. There are ways of improving the time complexity. One of them is to use a random pivot. It doesn't guarantee a O(nlogn) in the worst case, but in the average case it is O(nlogn). There is also another method to guarantee O(nlogn) performance. Dividing the array in groups of five, and futher dividing the median of these groups into groups of five, and so on, unless the size of the groups of the median becomes small enough so that median is calculated in O(1) time. Select the residual median element and make it the pivot. It does guarantee a O(nlogn) and the proof of this is given in CLRS. 
+Like quicksort, quickselect has good average performance, but is sensitive to the pivot that is chosen. If good pivots are chosen, meaning ones that consistently decrease the search set by a given fraction, then the search set decreases in size exponentially and by induction (or summing the geometric series), one sees that performance is linear, as each step is linear and the overall time is a constant times this (depending on how quickly the search set reduces). However, if bad pivots are consistently chosen, such as decreasing by only a single element each time, then the worst-case performance is quadratic: O(n^2). This occurs, for example, in searching for the maximum element of a set, using the first element as the pivot, and having sorted data. There are ways of improving the time complexity. One of them is to use a random pivot. It doesn't guarantee a O(nlogn) in the worst case, but in the average case it is O(nlogn). There is also another method to guarantee O(nlogn) performance. Dividing the array in groups of five, and futher dividing the median of these groups into groups of five, and so on, unless the size of the groups of the median becomes small enough so that median is calculated in O(1) time. Select the residual median element and make it the pivot. It does guarantee a O(nlogn) and the proof of this is given in CLRS. 
