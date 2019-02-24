@@ -9,7 +9,7 @@ _Use the `conditional operator` in the `checkEqual` function to check if two num
 #### Hint 1
 Remember that the "traditional" `if...else` syntax can be re-written using the conditional operator (`condition ? statement if true : statement if false;`)
 > _try to solve the problem now_
-> 
+>
 
 
 ## Spoiler alert!
@@ -20,10 +20,9 @@ Remember that the "traditional" `if...else` syntax can be re-written using the c
 
 ```javascript
 function checkEqual(a, b) {
-  return a === b ? true : false;
+  return a === b ? "Equal" : "Not Equal";
 }
 ```
-·  Run code at [repl.it](https://repl.it/@AdrianSkar/Basic-JS-Ternary-operator).
 
 ### Code explanation
 - The function checks if the `condition` before the interrogation sign (`?`) is true, and if so, executes the `true` statement. Otherwise, it returns `false`.
@@ -32,7 +31,3 @@ function checkEqual(a, b) {
 ### Resources
 
 - ["Conditional (ternary) operator" - *MDN JavaScript reference*](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Conditional_Operator)
-
-
-
-
