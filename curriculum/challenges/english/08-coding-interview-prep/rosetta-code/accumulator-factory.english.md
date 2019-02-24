@@ -6,11 +6,11 @@ challengeType: 5
 
 ## Description
 <section id='description'>
-<p>Create a function that takes a single (numeric) argument and returns another function that is an accumulator. The returned accumulator function in turn also takes a single numeric argument, and returns the sum of all the numeric values passed in so far to that accumulator (including the initial value passed when the accumulator was created).</p>
-<p>Rules:</p>
-<p>Do not use global variables.</p>
-<p>Hint:</p>
-<p>Closures save outer state.</p>
+Create a function that takes a single (numeric) argument and returns another function that is an accumulator. The returned accumulator function in turn also takes a single numeric argument, and returns the sum of all the numeric values passed in so far to that accumulator (including the initial value passed when the accumulator was created).
+<b>Rules:</b>
+Do not use global variables.
+<b>Hint:</b>
+Closures save outer state.
 </section>
 
 ## Instructions
@@ -42,7 +42,7 @@ tests:
 <div id='js-seed'>
 
 ```js
-function accumulator (sum) {
+function accumulator(sum) {
   // Good luck!
 }
 ```

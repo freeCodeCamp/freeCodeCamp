@@ -6,15 +6,15 @@ challengeType: 5
 
 ## Description
 <section id='description'>
-<p>This task is a variation of the <a href="https://en.wikipedia.org/wiki/The Nine Billion Names of God#Plot_summary" title="wp: The Nine Billion Names of God#Plot_summary">short story by Arthur C. Clarke</a>.</p>
-<p>(Solvers should be aware of the consequences of completing this task.)</p>
-<p>In detail, to specify what is meant by a  “name”:</p>
-<p>The integer 1 has 1 name “1”.</p>
-<p>The integer 2 has 2 names “1+1”, and “2”.</p>
-<p>The integer 3 has 3 names “1+1+1”, “2+1”,  and “3”.</p>
-<p>The integer 4 has 5 names “1+1+1+1”, “2+1+1”, “2+2”, “3+1”, “4”.</p>
-<p>The integer 5 has 7 names “1+1+1+1+1”, “2+1+1+1”, “2+2+1”, “3+1+1”, “3+2”, “4+1”, “5”.</p>
-<p>This can be visualized in the following form:</p>
+This task is a variation of the <a href="https://en.wikipedia.org/wiki/The Nine Billion Names of God#Plot_summary" title="wp: The Nine Billion Names of God#Plot_summary">short story by Arthur C. Clarke</a>.
+(Solvers should be aware of the consequences of completing this task.)
+In detail, to specify what is meant by a  “name”:
+The integer 1 has 1 name “1”.
+The integer 2 has 2 names “1+1”, and “2”.
+The integer 3 has 3 names “1+1+1”, “2+1”,  and “3”.
+The integer 4 has 5 names “1+1+1+1”, “2+1+1”, “2+2”, “3+1”, “4”.
+The integer 5 has 7 names “1+1+1+1+1”, “2+1+1+1”, “2+2+1”, “3+1+1”, “3+2”, “4+1”, “5”.
+This can be visualized in the following form:
 <pre>
           1
         1   1
@@ -23,10 +23,9 @@ challengeType: 5
   1   2   2   1   1
 1   3   3   2   1   1
 </pre>
-<p>Where row  $n$  corresponds to integer  $n$,  and each column  $C$  in row  $m$  from left to right corresponds to the number of names beginning with $C$.</p>
-<p>Optionally note that the sum of the  $n$-th  row  $P(n)$  is the   <a href="http://mathworld.wolfram.com/PartitionFunctionP.html" title="link: http://mathworld.wolfram.com/PartitionFunctionP.html">integer partition function</a>.</p>
-Task
-<p>Implement a function that returns the sum of the  $n$-th  row.</p>
+Where row  $n$  corresponds to integer  $n$,  and each column  $C$  in row  $m$  from left to right corresponds to the number of names beginning with $C$.
+Optionally note that the sum of the  $n$-th  row  $P(n)$  is the   <a href="http://mathworld.wolfram.com/PartitionFunctionP.html" title="link: http://mathworld.wolfram.com/PartitionFunctionP.html">integer partition function</a>.
+Implement a function that returns the sum of the  $n$-th  row.
 </section>
 
 ## Instructions
@@ -64,7 +63,7 @@ tests:
 <div id='js-seed'>
 
 ```js
-function numberOfNames (num) {
+function numberOfNames(num) {
   // Good luck!
   return true;
 }

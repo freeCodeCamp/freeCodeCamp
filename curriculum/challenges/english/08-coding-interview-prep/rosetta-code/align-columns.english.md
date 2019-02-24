@@ -6,8 +6,8 @@ challengeType: 5
 
 ## Description
 <section id='description'>
-<p>Given a text file of many lines, where fields within a line are delineated by a single <code>$</code> character, write a program that aligns each column of fields by ensuring that words in each column are separated by at least one space. Further, allow for each word in a column to be either left justified, right justified, or center justified within its column.</p>
-<p>Use the following text to test your programs:</p>
+Given a text file of many lines, where fields within a line are delineated by a single <code>$</code> character, write a program that aligns each column of fields by ensuring that words in each column are separated by at least one space. Further, allow for each word in a column to be either left justified, right justified, or center justified within its column.
+Use the following text to test your programs:
 <pre>
 Given$a$text$file$of$many$lines
 where$fields$within$a$line$
@@ -20,13 +20,15 @@ Further,$allow$for$each$word$in$a$column$to$be$either$left$
 justified,$right$justified
 or$center$justified$within$its$column.
 </pre>
-<p>Note that:</p>
-The example input texts lines may, or may not, have trailing dollar characters.
-All columns should share the same alignment.
-Consecutive space characters produced adjacent to the end of lines are insignificant for the purposes of the task.
-Output text will be viewed in a mono-spaced font on a plain text editor or basic terminal.
-The minimum space between columns should be computed from the text and not hard-coded.
-It is not a requirement to add separating characters between or around columns.
+Note that:
+<ol>
+<li>The example input texts lines may, or may not, have trailing dollar characters.</li>
+<li>All columns should share the same alignment.</li>
+<li>Consecutive space characters produced adjacent to the end of lines are insignificant for the purposes of the task.</li>
+<li>Output text will be viewed in a mono-spaced font on a plain text editor or basic terminal.</li>
+<li>The minimum space between columns should be computed from the text and not hard-coded.</li>
+<li>It is not a requirement to add separating characters between or around columns.</li>
+</ol>
 </section>
 
 ## Instructions
@@ -71,7 +73,7 @@ const testArr = [
   'or$center$justified$within$its$column.'
 ];
 
-function formatText (input, justification) {
+function formatText(input, justification) {
   // Good luck!
 }
 ```
