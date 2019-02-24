@@ -42,3 +42,4 @@ localeTitle: 角度资源
 
 *   [Alligator.io](https://alligator.io/angular/)
 *   [角度深度](https://blog.angularindepth.com/tagged/angular)
+*   [2019 iT 邦幫忙鐵人賽](https://ithelp.ithome.com.tw/users/20090728/ironman/1600)

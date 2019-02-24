@@ -3,9 +3,9 @@ title: For Loop Statements
 ---
 ## For Loop Statements
 
-Python utilizes a for loop to iterate over a list of elements. Unlike C or Java, which use the for loop to change a value in steps and access something such as an array using that value.
+Python utilizes a for loop to iterate over a list of elements. This is different to C or Java, which use the for loop to change a value in steps and access something such as an array using that value.
 
-For loops iterate over collection based data structures like lists, tuples, and dictionaries.
+For loops iterate over collection based data structures like [lists](https://github.com/freeCodeCamp/freeCodeCamp/tree/master/guide/english/python/lists), tuples, and dictionaries.
 
 The basic syntax is:
 
@@ -28,7 +28,6 @@ Output:
 a: 1 b: 2
 a: 3 b: 4
 ```
-
 
 On the other hand, you can loop over anything that is iterable. You can call a function or use a list literal.
 
@@ -53,7 +52,7 @@ Give me a 'o'!
 Give me a 'n'!
 ```
 
-Some ways in which For loops are used: 
+Some ways in which For loops are used:
 
 **Iterate over the range() function**
 
@@ -61,8 +60,7 @@ Some ways in which For loops are used:
 for i in range(10):
     print(i)
 ```
-Rather than being a function, range is actually an immutable sequence type.
-The output will contain results from lower bound i.e 0 to the upper bound i.e 10 but excluding 10.By default the lower bound or the starting index is set to zero.
+Rather than being a function, range is actually an immutable sequence type. The output will contain results from lower bound i.e 0 to the upper bound i.e 10 but excluding 10. By default, the lower bound or the starting index is set to zero.
 
 Output:
 
@@ -80,7 +78,7 @@ Output:
 9
 >
 ```
-Additionally, one can specify the lower bound of the sequence and even the step of the sequence by adding a second and a third parameter. 
+Additionally, one can specify the lower bound of the sequence and even the step of the sequence by adding a second and a third parameter.
 
 ```python
 for i in range(4,10,2): #From 4 to 9 using a step of two
@@ -121,6 +119,26 @@ thank you
 [2, 3]
 >
 ```
+**Iterate over characters in a string**
+```python
+for char in "How fun!":
+  print("Current char: "+char)
+```
+Output:
+
+```
+>
+Current char: H
+Current char: o
+Current char: w
+Current char:  
+Current char: f
+Current char: u
+Current char: n
+Current char: !
+>
+```
+
 
 **Iterate over keys in a dictionary (aka hashmap)**
 
@@ -144,13 +162,13 @@ orange #ffa500
 ```
 **Iterate over two lists of same size in a single loop with the zip() function**
 
-```python 
+```python
 A = ["a", "b", "c"]
 B = ["a", "d", "e"]
 
 for a, b in zip(A, B):
   print a, b, a == b
-  
+
 ```
 
 Output:
@@ -197,7 +215,7 @@ for index, item in enumerate(shopping_basket):
   print("Item", index, "is a", item)
 ```
 **for/else statements**
-Pyhton permits you to use else with for loops, the else case is executed when none of the conditions with in the loop body was satisfied. To use the else we have to make use of `break` statement so that we can break out of the loop on a satsfied condition.If we do not break out then the else part will be executed.
+Python permits you to use else with for loops. The else case is executed when none of the conditions within the loop were satisfied. To use the else we have to make use of `break` statement so that we can break out of the loop on a satisfied condition. If we do not break out then the else part will be executed.
 
 ```python
 week_days = ['Monday','Tuesday','Wednesday','Thursday','Friday']
@@ -216,7 +234,7 @@ In the above case the output will be `today is not a week day` since the break w
 We could also iterate inline using python, for example if we need to uppercase all the words in a list from a list we could simply do the following:
 
 ```python
-A = ["this", "is", "awesome", "shinning", "star"]
+A = ["this", "is", "awesome", "shining", "star"]
 
 UPPERCASE = [word.upper() for word in A]
 print (UPPERCASE)
@@ -225,14 +243,39 @@ print (UPPERCASE)
 Output:
 ```
 >
-['THIS', 'IS', 'AWESOME', 'SHINNING', 'STAR']
+['THIS', 'IS', 'AWESOME', 'SHINING', 'STAR']
 >
 ```
+A interesting fact is that for loop is a bit faster compared to while loop in python. Because in for loop range/xrange is used which is implemented in C(in python's library) whereas in while loop we make use of some incremental statement specifically at the end of sentence like (i+=1) which is interpreted. Thus for loop is faster than while loop. Reference:
+https://stackoverflow.com/questions/869229/why-is-looping-over-range-in-python-faster-than-using-a-while-loop
 
+
+**Nested Loops**
+
+A nested loop is a loop inside a loop.
+
+The "inner loop" will be executed one time for each iteration of the "outer loop":
+
+```python
+var = ["Hey", "How"]
+name = ["ram", "shyam"]
+
+for x in var:
+  for y in name:
+    print(x, y)
+```
+
+Output:
+```
+>
+Hey ram
+Hey shyam
+How ram
+How shyam
+>
+```
 #### More Information:
 
 - <a href='https://docs.python.org/2.7/tutorial/controlflow.html#for-statements' target='_blank' rel='nofollow'>Python2 for loop documentation</a>
 
 - <a href='https://docs.python.org/3/tutorial/controlflow.html#for-statements' target='_blank' rel='nofollow'>Python3 for loop documentation</a>
-
-

@@ -42,6 +42,17 @@ list(izip([1, 2, 3], ['a', 'b', 'c']))
 # Output
 # [(1, 'a'),(2, 'b'),(3, 'c')]
 ```
+### compress()
+
+It make an iterator that filters elements from data returning only those that have a corresponding element in selectors that evaluates to True. Stops when either the data or selectors iterables has been exhausted.
+
+```py
+import itertools
+itertools.compress('ABCDEF', [1,0,1,0,1,1]) 
+
+# Output
+# A C E F
+```
 
 ### Combinatoric iterators
 
@@ -69,5 +80,7 @@ list(product(*B))
 # [(1, 3, 7), (1, 3, 8), (1, 4, 7), (1, 4, 8), (1, 5, 7), (1, 5, 8), (2, 3, 7), (2, 3, 8), (2, 4, 7), (2, 4, 8), (2, 5, 7), (2, 5, 8), (3, 3, 7), (3, 3, 8), (3, 4, 7), (3, 4, 8), (3, 5, 7), (3, 5, 8)]
 ```
 
-Source: https://docs.python.org/3/library/itertools.html
-https://www.hackerrank.com/challenges/itertools-product/problem
+#### More Information
+- [Python Itertools Docs](https://docs.python.org/3/library/itertools.html)
+- [Hackerrank](https://www.hackerrank.com/challenges/itertools-product/problem)
+
