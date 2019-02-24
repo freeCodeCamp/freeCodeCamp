@@ -12,7 +12,7 @@
     "docker:install": "npm run docker:bash -- -c \"npm install\"",
     "docker:install2": "docker-compose run --rm -u root freecodecamp bash -c \"npm install -g npm@5.7.1 && su node -c 'npm install'\"",
     "docker:seed": "npm run docker:bash -- -c \"npm run seed\"",
-    "docker:test": "npm run docker:bash -- -c \"npm run test\"",
+    "docker:test": "docker-compose -f docker-compose.tests.yml run --rm tests bash",
     "ensure-env": "cross-env DEBUG=fcc:* node ./tools/scripts/ensure-env.js",
     "format": "npm run lint -- --fix",
     "hooks:install": "node node_modules/husky/husky.js install",
