@@ -247,7 +247,7 @@ int main(){
  vector<int> v{ 10, 5, 82, 69, 64, 70, 3, 42, 28, 0 };
  sort(v.rbegin(), v.rend());
  
- cout << "Vector Contents Sorted In Ascending Order:\n";
+ cout << "Vector Contents Sorted In Descending Order:\n";
  for(int e : v){
  cout << e << " ";
  }
