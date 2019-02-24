@@ -1,5 +1,5 @@
 // this ensures node understands the future
-require('babel-register');
+require('@babel/register');
 const _ = require('lodash');
 const createDebugger = require('debug');
 
@@ -10,7 +10,6 @@ const startTime = Date.now();
 log.enabled = true;
 // this is where server starts booting up
 const app = require('./server');
-
 
 let timeoutHandler;
 let killTime = 15;
