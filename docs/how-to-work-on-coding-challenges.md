@@ -12,12 +12,16 @@ You can also clone the project and edit locally on your computer. For help with 
 
 ### Challenge Template
 
-Here is a template of what the challenge markdown files look like.
+Below is a template of what the challenge markdown files look like.
 
-**Note:** In the below sections, examples of `{ext}` are:
-* `html` - HTML/CSS
-* `js` - JavaScript
-* `jsx` - JSX
+**Notes:**
+
+1. In the below sections, examples of `{ext}` are:
+    * `html` - HTML/CSS
+    * `js` - JavaScript
+    * `jsx` - JSX
+
+2. For the `Tests` section below, `text` and `testString` should be valid YAML strings. `testString` can be a stringified function or expression possibly using Chai asserts.
 
 ````md
 ---
@@ -41,8 +45,8 @@ Instructions about what exactly needs to be done.
 <section id='tests'>
 
 ``` yml
-- text: Should return "foo".
-  testString: 'A stringified function possibly using Chai asserts'
+- text: blah blah blah
+  testString: blah blah blah
 ```
 
 </section>
@@ -63,7 +67,7 @@ This is a required section for the challenge.
 ### Before Test
 <div id='{ext}-setup'>
 
-```js
+```{ext}
 Optional Test setup code.
 ```
 
@@ -86,7 +90,7 @@ Optional Test tear down code.
 <section id='solution'>
 
 ```{ext}
-Challenge solution code.
+// solution required
 ```
 
 </section>
