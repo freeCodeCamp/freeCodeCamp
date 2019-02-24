@@ -46,16 +46,17 @@ tests:
 <div id='js-setup'>
 
 ```js
-window.require = function(str) {
-if (str === 'capitalize_strings') {
-return {
-capitalize: str => str.toUpperCase(),
-lowercase: str => str.toLowerCase()
-}}};
+self.require = function(str) {
+  if (str === 'capitalize_strings') {
+    return {
+      capitalize: str => str.toUpperCase(),
+      lowercase: str => str.toLowerCase()
+    }
+  }
+};
 ```
 
 </div>
-
 
 </section>
 
@@ -63,6 +64,7 @@ lowercase: str => str.toLowerCase()
 <section id='solution'>
 
 ```js
-// solution required
+import * as capitalize_strings from "capitalize_strings";
 ```
+
 </section>
