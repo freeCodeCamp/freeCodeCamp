@@ -45,8 +45,9 @@ Instructions about what exactly needs to be done.
 <section id='tests'>
 
 ``` yml
-- text: blah blah blah
-  testString: blah blah blah
+tests:
+  - text: text: Should return "foo"
+    testString: 'A stringified function possibly using Chai asserts'
 ```
 
 </section>
