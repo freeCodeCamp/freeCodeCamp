@@ -6,11 +6,13 @@ title: Git
 
 Git is an open source distributed version control system created in 2005 by Linus Torvalds and others from the Linux development community. Git can work with many types of projects, but it's most commonly used for software source code.
 
-Version control is a system that keeps track of changes to a file or group of files over time. When you have a history of these changes, it lets you find specific versions later, compare changes between versions, recover files you may have deleted, or revert files to previous versions.
+Version control is a system that keeps track of changes to a file or group of files over time. When you have a history of these changes, it lets you find specific versions later, compare changes between versions, recover files you may have deleted, revert files to previous versions, and to experiment with different code solutions to the same problem.
+
+The last point deserves emphasis. Although many people focus on git's ability to revert to previous versions, one of its most powerful features is that branching (creating a new version) is not only very easy and fast, it also uses very little hard disk space. New developers often don't take advantage of the ability to quickly create experiments to help them work with several candidate solutions and as a starting point for discussing each branch / solution with other developers. While junior devs might try to accomplish the same thing by commenting out code in the same version, an experienced dev will just take the few seconds required to create a new branch.
 
 A *distributed* version control system means that different users maintain their own repositories of a project, instead of working from one central repository. Users automatically have full file tracking abilities and the project's complete version history without needing access to a central server or network.
 
-When Git is initialized in a project directory, it begins tracking file changes and stores them as "change sets" or "patches." Users working together on a project submit their change sets which are then included (or rejected) in the project.
+When Git is initialized in a project directory, it begins tracking file changes and stores them as "changesets" or "patches." Users working together on a project submit their changesets which are then included (or rejected) in the project.
 
 **Table of Contents**
 - [Understand the Three Sections of a Git Project](#understand-the-three-sections-of-a-git-project)
@@ -22,7 +24,7 @@ When Git is initialized in a project directory, it begins tracking file changes 
 - [More Information](#more-information)
 
 ### Understand the Three Sections of a Git Project <a name="understand-the-three-sections-of-a-git-project"></a>
-A Git project will have the following three main sections:
+A Git project has the following three main sections:
 1. Git directory
 2. Working directory (or working tree)
 3. Staging area
@@ -30,6 +32,8 @@ A Git project will have the following three main sections:
 The **Git directory** (located in `YOUR-PROJECT-PATH/.git/`) is where Git stores everything it needs to accurately track the project. This includes metadata and an object database which includes compressed versions of the project files.
 
 The **working directory** is where a user makes local changes to a project. The working directory pulls the project's files from the Git directory's object database and places them on the user's local machine.
+
+Note: **Directory** is also known as **Repository** or short form repo. The repo on the user's local machine is called "Local repo" while the repo on git server is called "Remote repo".
 
 The **staging area** is a file (also called the "index", "stage", or "cache") that stores information about what will go into your next commit. A commit is when you tell Git to save these staged changes. Git takes a snapshot of the files as they are and permanently stores that snapshot in the Git directory.
 
@@ -60,9 +64,40 @@ git config --global user.email "myemail@example.com"
 ```
 
 #### Change Your Text Editor
-Git automatically uses your default text editor, but you can change this. Here's an example to use the Atom editor instead (the `--wait` option tells the shell to wait for the text editor so you can do your work in it before the program moves on):
+Git automatically uses your default text editor (usually Vi or Vim) when you are prompted to edit a message (e.g. when amending a commit). You can change this by setting the `core.editor` in your Git Config.  Below are examples for some popular editors:
+
+##### Edit using Atom
+
 ```shell
 git config --global core.editor "atom --wait"
+```
+The `--wait` option tells the shell to wait for the text editor to close before returning, therefore you can make your changes in the editor before git applies your message.
+
+##### Edit using VS Code
+
+```shell
+git config --global core.editor "code --new-window --wait"
+```
+The `--new-window` option tells VS Code to open the message in a new window that you can safely close when done.
+
+##### Edit using Sublime Text
+
+```shell
+git config --global core.editor "subl -n -w"
+```
+
+##### Edit using Notepad++ (Windows)
+
+```shell
+git config core.editor "'C:\Program Files (x86)\Notepad++\notepad++.exe' -multiInst -notabbar -nosession -noPlugin"
+```
+Omit ` (x86)` from the path if the 64-bit version of notepad++ is installed.
+
+##### Launching your editor
+After setting your `core.editor` you may wish to test to make sure it is configured correctly.  Running the below command will launch the current config in your editor of choice:
+
+```shell
+git config --edit
 ```
 
 #### Add Color to Git Output
@@ -77,6 +112,10 @@ To see all your configuration settings, use the command `git config --list`.
 Once Git is installed and configured on your computer, you need to initialize it in your project to start using its version control powers. In the command line, use the `cd` command to navigate to the top-level (or root) folder for your project. Next, run the command `git init`. This installs a Git directory folder with all the files and objects Git needs to track your project.
 
 It's important that the Git directory is installed in the project root folder. Git can track files in subfolders, but it won't track files located in a parent folder relative to the Git directory.
+
+### Clone a Git Project <a name="clone-a-git-project"></a>
+You can also clone a project from github by using the command `git clone` followed by the link. An example of a link is `https://github.com/example/example.git` 
+
 
 ### Get Help in Git <a name="get-help-in-git"></a>
 If you forget how any command works in Git, you can access Git help from the command line several ways:
@@ -93,6 +132,9 @@ This displays the manual page for the command in your shell window. To navigate,
 ### Sources <a name="sources"></a>
 This article uses information from the <a href='https://github.com/progit/progit2' target='_blank' rel='nofollow'>Pro Git</a> book, written by Scott Chacon and Ben Straub and published by Apress. The book is displayed in full in the <a href='https://git-scm.com/book/en/v2' target='_blank' rel='nofollow'>Git documentation</a>.
 
-### More Information: <a name="more-information"></a>
+#### More Information
 - For downloads, documentation, and a browser-based tutorial: <a href='https://git-scm.com/' target='_blank' rel='nofollow'>Git official website</a>
-- Most useful commands when you're in bad GIT situation: <a href='http://ohshitgit.com/' target='_blank' rel='nofollow'>Oh shit, git!</a>
+- [Most useful commands when you're in bad GIT situation](http://ohshitgit.com/)
+- [Resources to learn Git](https://try.github.io/) 
+- For coders who prefer the Sublime Text editor, git commits can be easily made using [Sublime Merge](https://www.sublimemerge.com/)
+- For many people Git can seem like a black magic, but once you develop an understanding of the fundamental internal model, things start to make a lot more sense.  Check out these videos by GitHub evangelists [Matt McCullough](https://youtu.be/ig5E8CcdM9g "Advanced Git: Graphs, Hashes, and Compression, Oh My!") and [Tim Berglund](https://youtu.be/MYP56QJpDr4 "Git From the Bits Up") for a peek into the world of *Git Internals*. 
