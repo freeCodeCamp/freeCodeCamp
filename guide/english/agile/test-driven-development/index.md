@@ -14,7 +14,7 @@ Test Driven Development is essentially comprised of 4 steps:
  - Run the test case again confirming test passes (Green)
  - Refactor the code as per typical standards (Refactor)
  
-These steps follow the principle of Red-Green-Refactor. The Red-Green steps ensure that you write the simplest code possible to solve the problem while the last step makes sure that the code that you write is up to typical coding standards.
+These steps follow the principle of *Red-Green-Refactor*. For the *Red-Green* steps, make sure that you write the simplest code possible to solve the problem and when *Refactoring*, ensure that it follows *Clean Code* principles.
 
 Each new feature of your system should follow the steps above.
 
