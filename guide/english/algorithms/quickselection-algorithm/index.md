@@ -4,12 +4,12 @@ title: QuickSelect
 
 ## QuickSelect
 
-QuickSelect is selecti algorithm to find K-th smallest element in unsorted list.
+QuickSelect is a selection algorithm to find the K-th smallest element in an unsorted list.
 
-### Algorithms
+### Algorithm
 
-After findding pivot (pivot is a position that partition the list into two parts. Every element on the left is less than pivot and every element on the right is more than pivot) it recurs only for the part that contains the k-th smallest element.
-If index of partitioned element (pivot) is more than k, then we recurtion for left part. If index (pivot) is same as k, we have found the k-th smallest element and we return. If index is less than k, then we recursion for right part.
+After finding pivot (Pivot is a position that partitions the list into two parts. Every element on the left is less than pivot and every element on the right is more than pivot) the algorithm recurs only for the part that contains the k-th smallest element.
+If the index of the partitioned element (pivot) is more than k, then the algorithm recurs for the left part. If index (pivot) is same as k,then we have found the k-th smallest element and it is returned. If index is less than k, then the algorithm recurs for the right part.
 
 #### Selection Psudocode
 ```
@@ -84,4 +84,4 @@ algorithm Hoare(A, lo, hi) is
 
 ## Time complexity
 
-Like quicksort, the quickselect has good average performance, but is sensitive to the pivot that is chosen. If good pivots are chosen, meaning ones that consistently decrease the search set by a given fraction, then the search set decreases in size exponentially and by induction (or summing the geometric series) one sees that performance is linear, as each step is linear and the overall time is a constant times this (depending on how quickly the search set reduces). However, if bad pivots are consistently chosen, such as decreasing by only a single element each time, then worst-case performance is quadratic: O(n^2). This occurs for example in searching for the maximum element of a set, using the first element as the pivot, and having sorted data.
+Like quicksort, the quickselect has good average performance, but is sensitive to the pivot that is chosen. If good pivots are chosen, meaning ones that consistently decrease the search set by a given fraction, then the search set decreases in size exponentially and by induction (or summing the geometric series) one sees that performance is linear, as each step is linear and the overall time is a constant times this (depending on how quickly the search set reduces). However, if bad pivots are consistently chosen, such as decreasing by only a single element each time, then worst-case performance is quadratic: O(n^2). This occurs for example in searching for the maximum element of a set, using the first element as the pivot, and having sorted data. There are ways of improving the time complexity. One of them is to use a random pivot. It doesn't guarantee a O(nlogn) in the worst case, but in the average case it is O(nlogn). There is also another method to guarantee O(nlogn) performance. Dividing the array in groups of five, and futher dividing the median of these groups into groups of five, and so on, unless the size of the groups of the median becomes small enough so that median is calculated in O(1) time. Select the residual median element and make it the pivot. It does guarantee a O(nlogn) and the proof of this is given in CLRS. 

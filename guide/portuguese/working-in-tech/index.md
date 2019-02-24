@@ -4,13 +4,13 @@ localeTitle: Trabalhando em Tecnologia
 ---
 ## Trabalhando em Tecnologia
 
-Uma ampla variedade de campos relacionados à tecnologia, como desenvolvimento da Web, design, ciência de dados e gerenciamento de produtos, é geralmente incluída no termo "técnico".
+Uma ampla variedade de campos relacionados à tecnologia, como o desenvolvimento Web, design, Ciência de Dados e gerenciamento de produtos, é geralmente incluída no termo "tecnologia".
 
 Esta seção irá se concentrar em vários aspectos do trabalho em tecnologia. Discutiremos os desafios adicionais de carreira que as minorias sub-representadas e as pessoas de origens de educação não tradicionais enfrentam. Isso inclui questões como o sexismo e o preconceito que foram particularmente prevalentes em certos setores e organizações.
 
 ### Segurança informática
 
-O campo da segurança de computadores está crescendo a um ritmo acelerado a cada ano. Em um relatório feito recentemente, estima-se que até 2021 seus 3,5 milhões de empregos não serão preenchidos. A demanda deve-se ao aumento dos ataques cibernéticos e à quantidade de dados que estão sendo criados todos os dias, os dados são tão valiosos hoje em dia e precisam ser mantidos seguros e protegidos.
+O ramo da segurança de computadores está a crescer a um ritmo acelerado a cada ano que passa. Num relatório feito recentemente, estima-se que até 2021, os 3,5 milhões de empregos, na área, não serão preenchidos. A demanda deve-se ao aumento dos ataques cibernéticos e à quantidade de dados que estão sendo criados todos os dias, dados esses que são tão valiosos hoje em dia e precisam de ser mantidos seguros e protegidos.
 
 ### Exemplos de trabalhos relacionados à tecnologia
 
