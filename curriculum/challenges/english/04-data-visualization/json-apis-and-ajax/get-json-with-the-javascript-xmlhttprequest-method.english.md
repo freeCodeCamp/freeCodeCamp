@@ -36,7 +36,7 @@ tests:
   - text: Your code should use the <code>send</code> method to send the request.
     testString: assert(code.match(/\.send\(\s*\)/g), 'Your code should use the <code>send</code> method to send the request.');
   - text: Your code should have an <code>onload</code> event handler set to a function.
-    testString: assert(code.match(/\.onload\s*=\s*function\s*?\(\s*?\)\s*?{/g), 'Your code should have an <code>onload</code> event handler set to a function.');
+    testString: assert(code.match(/\.onload\s*=\s*(function|\(\s*?\))\s*?(\(\s*?\)|\=\>)\s*?{/g), 'Your code should have an <code>onload</code> event handler set to a function.');
   - text: Your code should use the <code>JSON.parse</code> method to parse the <code>responseText</code>.
     testString: assert(code.match(/JSON\s*\.parse\(.*\.responseText\)/g), 'Your code should use the <code>JSON.parse</code> method to parse the <code>responseText</code>.');
   - text: Your code should get the element with class <code>message</code> and change its inner HTML to the string of JSON data.
@@ -89,7 +89,7 @@ tests:
   }
 </style>
 <h1>Cat Photo Finder</h1>
-<p class="message box">
+<p class="message">
   The message will go here
 </p>
 <p>
@@ -110,5 +110,53 @@ tests:
 
 ```js
 // solution required
+<script>
+  document.addEventListener('DOMContentLoaded',function(){
+    document.getElementById('getMessage').onclick=function(){
+      const req = new XMLHttpRequest();
+      req.open('GET', '/json/cats.json', true);
+      req.send();
+      req.onload = () => {
+        const json = JSON.parse(req.responseText);
+        document.getElementsByClassName('message')[0].innerHTML = JSON.stringify(json);
+      };
+    };
+  });
+</script>
+<style>
+  body {
+    text-align: center;
+    font-family: "Helvetica", sans-serif;
+  }
+  h1 {
+    font-size: 2em;
+    font-weight: bold;
+  }
+  .box {
+    border-radius: 5px;
+    background-color: #eee;
+    padding: 20px 5px;
+  }
+  button {
+    color: white;
+    background-color: #4791d0;
+    border-radius: 5px;
+    border: 1px solid #4791d0;
+    padding: 5px 10px 8px 10px;
+  }
+  button:hover {
+    background-color: #0F5897;
+    border: 1px solid #0F5897;
+  }
+</style>
+<h1>Cat Photo Finder</h1>
+<p class="message">
+  The message will go here
+</p>
+<p>
+  <button id="getMessage">
+    Get Message
+  </button>
+</p>
 ```
 </section>
