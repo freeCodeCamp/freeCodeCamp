@@ -199,7 +199,7 @@ export function isValidChallengeCompletion(req, res, next) {
     log('isObjectId', id, ObjectID.isValid(id));
     return res.sendStatus(403);
   }
-  if ('challengeType' in req.body && !isNumeric(challengeType)) {
+  if ('challengeType' in req.body && !isNumeric(String(challengeType))) {
     log('challengeType', challengeType, isNumeric(challengeType));
     return res.sendStatus(403);
   }

@@ -310,6 +310,21 @@ describe('boot/challenge', () => {
 
       expect(next.called).toBe(true);
     });
+
+    it('can handle an "int" challengeType', () => {
+      const req = mockReq({
+        body: {
+          id: validObjectId,
+          challengeType: 1
+        }
+      });
+      const res = mockRes();
+      const next = sinon.spy();
+
+      isValidChallengeCompletion(req, res, next);
+
+      expect(next.called).toBe(true);
+    });
   });
 
   xdescribe('modernChallengeCompleted');
