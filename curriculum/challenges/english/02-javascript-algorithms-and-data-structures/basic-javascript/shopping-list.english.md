@@ -56,12 +56,14 @@ var myList = [];
 ```js
 var count = 0;
 var isArray = false;
-var hasString = true;
-var hasNumber = true;
+var hasString = false;
+var hasNumber = false;
 (function(list){
   if(Array.isArray(myList)) {
     isArray = true;
     if(myList.length > 0) {
+      hasString = true;
+      hasNumber = true;
       for (var elem of myList) {
         if(!elem || !elem[0] || typeof elem[0] !== 'string') {
           hasString = false;
