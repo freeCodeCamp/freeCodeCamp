@@ -153,6 +153,10 @@ You can even embed relevant YouTube videos and interactive [REPL.it](https://rep
 
 Don't use emojis or emoticons in the Guide. freeCodeCamp has a global community, and the cultural meaning of an emoji or emoticon may be different around the world. Also, emojis can render differently on different systems.
 
+## Solutions
+
+In the solution which you propose for the guide, the full code should be given i.e. the seed code with the changes which have been made to achieve the desired result.
+
 ## Attributions
 
 To minimize the potential for plagiarism and maintain integrity in this guide, it is important to give credit where necessary.
