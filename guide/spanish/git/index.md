@@ -4,7 +4,7 @@ localeTitle: ir
 ---
 ## Git
 
-Git es un sistema de control de versiones distribuido de código abierto creado en 2005 por Linus Torvalds y otros de la comunidad de desarrollo de Linux. Git puede trabajar con muchos tipos de proyectos, pero se usa más comúnmente para el código fuente del software.
+Git es un sistema distribuido de código abierto para manejo de versiones creado en el año 2005 por Linus Trovalds y otros en la comunidad de desarrollo de Linux. Git puede ser usado en una gran variedad de proyectos, pero es usado más comúnmente para manejo de código fuente de software.
 
 El control de versiones es un sistema que realiza un seguimiento de los cambios en un archivo o grupo de archivos a lo largo del tiempo. Cuando tiene un historial de estos cambios, le permite encontrar versiones específicas más adelante, comparar cambios entre versiones, recuperar archivos que haya eliminado o revertir archivos a versiones anteriores.
 

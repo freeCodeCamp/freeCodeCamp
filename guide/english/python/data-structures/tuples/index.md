@@ -94,7 +94,7 @@ A `tuple` can also be created with the `tuple` constructor:
 ```
 **Accessing elements of a `tuple`:**
 
-Elements of `tuples` are accessed and index the same way that `lists` are.
+Elements of `tuples` are accessed and indexed the same way that `lists` are.
 ```shell
     >>> my_tuple = 1, 2, 9, 16, 25
     >>> print(my_tuple)
@@ -149,7 +149,7 @@ This is called, appropriately enough, sequence unpacking and works for any seque
 ```
 **Immutable:**
 
-`tuples` are immutable containers, guaranteeing **which** objects they contain will not change. It does **not** guarantee that the objects they contains will not change:
+`tuples` are immutable containers, guaranteeing **which** objects they contain will not change. It does **not** guarantee that the objects they contain will not change:
 ```shell
     >>> a_list = []
     >>> a_tuple = (a_list,)    # A tuple (immutable) with a list (mutable) element.
@@ -162,7 +162,7 @@ This is called, appropriately enough, sequence unpacking and works for any seque
 ```
 **Uses:**
 
-Functions can only return a single value, however, a heterogenuous `tuple` can be used to return multiple values from a function. One example is the built-in `enumerate` function that returns an iterable of heterogenuous `tuples`:
+Functions can only return a single value, however, a heterogeneous `tuple` can be used to return multiple values from a function. One example is the built-in `enumerate` function that returns an iterable of heterogeneous `tuples`:
 ```shell
     >>> greeting = ["Hello", "campers!"]
     >>> enumerator = enumerate(greeting)
