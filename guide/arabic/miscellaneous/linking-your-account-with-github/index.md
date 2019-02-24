@@ -1,5 +1,5 @@
 ---
-title: Linking Your Account with Github
+title: Linking Your Account with GitHub
 localeTitle: ربط حسابك مع جيثب
 ---
 في آب 2015 ، قمنا بدفع بعض التغييرات التي تسببت في مشاكل للعديد من المعسكر.
