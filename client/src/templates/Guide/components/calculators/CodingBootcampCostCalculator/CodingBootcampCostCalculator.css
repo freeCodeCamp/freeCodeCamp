@@ -1,7 +1,8 @@
-.CodingBootcampCostCalculator .d3-chart {	
+.article .d3-chart {	
   position: relative;
 }
-.CodingBootcampCostCalculator div.tooltip {	
+
+.article div.tooltip {	
   position: absolute;
   text-align: center;
   width: 80px;
@@ -14,11 +15,13 @@
   color: #fff;
   display: table;
 }
-.CodingBootcampCostCalculator div.tooltip > div {
+
+.article div.tooltip > div {
   display: table-cell;
   vertical-align: middle;
 }
-.CodingBootcampCostCalculator div.tooltip:after {
+
+.article div.tooltip:after {
   box-sizing: border-box;
   font-size: 10px;
   width: 100%;
@@ -30,9 +33,20 @@
   bottom: -9px;
   left: 0;
 }
-.CodingBootcampCostCalculator h3 span {
+
+.article h3 span {
   color: darkred;
 }
-.CodingBootcampCostCalculator .section {
+
+.article > h3 {
+  margin: 0 0;
+}
+
+.article h3 {
+  margin: 20px 0;
+  color: #006400;
+}
+
+.article .text-center {
   margin: 20px 0;
 }

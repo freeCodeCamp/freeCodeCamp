@@ -1,4 +1,5 @@
 import React from 'react';
+import ReactDOM from 'react-dom';
 import PropTypes from 'prop-types';
 import { graphql } from 'gatsby';
 
@@ -12,21 +13,17 @@ const propTypes = {
 };
 
 class CostCalculator extends React.Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      cities: [],
-      incomes: [],
-      city: null,
-      cityLabel: null,
-      lastYearsIncome: null,
-      bootcamps: null
-    };
-    this.handleCitySelector = this.handleCitySelector.bind(this);
-    this.handleIncomeSelector = this.handleIncomeSelector.bind(this);
-  }
+  state = {
+    cities: [],
+    incomes: [],
+    city: null,
+    cityLabel: '_______',
+    lastYearsIncome: null,
+    lastYearsIncomeLabel: '_______',
+    bootcamps: null
+  };
 
-  componentDidMount() {
+  initComponent() {
     fetch('/json/bootcamps.json')
       .then((response) => {
         return response.json();
@@ -62,6 +59,28 @@ class CostCalculator extends React.Component {
       .catch((error) => {
         console.error(error);
       });
+
+    const selectCityDiv = document.getElementById('select-city');
+    const selectIncomeDiv = document.getElementById('select-income');
+    const cityLabelSpan = document.getElementById('city-label');
+    const lastYearsIncomeLabelSpan =
+      document.getElementById('last-years-income-label');
+    const chartComponentDiv = document.getElementById('chart-component');
+    this.setState({
+      init: true,
+      selectCityDiv,
+      selectIncomeDiv,
+      cityLabelSpan,
+      lastYearsIncomeLabelSpan,
+      chartComponentDiv
+    });
+
+    this.handleCitySelector = this.handleCitySelector.bind(this);
+    this.handleIncomeSelector = this.handleIncomeSelector.bind(this);
+  }
+
+  componentDidMount() {
+    this.initComponent();
   }
 
   handleCitySelector(event) {
@@ -80,90 +99,77 @@ class CostCalculator extends React.Component {
     });
   }
 
+  renderSelectCity() {
+    return (
+      <select
+        className='form-control'
+        defaultValue=''
+        onChange={this.handleCitySelector}
+        >
+        <option disabled='true' value=''>Select City</option>
+        {this.state.cities.map((city, idx) => {
+          let cityLabel = typeof city !== 'undefined' ?
+            city.replace(/-/g, ' ').replace(/\b\w/g, l => l.toUpperCase()) : '';
+          return (
+            <option key={idx} value={city}>{cityLabel}</option>
+          );
+        })}
+      </select>
+    );
+  }
+
+  renderSelectIncome() {
+    return (
+      <select
+        className='form-control'
+        defaultValue=''
+        onChange={this.handleIncomeSelector}
+        >
+        <option disabled='true' value=''>Select Income</option>
+        {this.state.incomes.map((income, idx) => {
+          let incomeLabel = typeof income !== 'undefined' ?
+            income.replace(/\B(?=(\d{3})+(?!\d))/g, ',') : '0';
+          return (
+            <option key={idx} value={income}>${incomeLabel}</option>
+          );
+        })}
+      </select>
+    );
+  }
+
+  renderChartComponent() {
+    return (
+      <CostCalculatorChart
+        bootcamps={this.state.bootcamps}
+        city={this.state.city}
+        lastYearsIncome={this.state.lastYearsIncome}
+      />
+    );
+  }
+
   render() {
-    let cityLabel = this.state.cityLabel ? this.state.cityLabel : '_______';
-    let lastYearsIncome = this.state.lastYearsIncomeLabel ? this.state.lastYearsIncomeLabel : '_______';
+    if (!this.state.init) {
+      return null;
+    }
     return (
       <div className='CodingBootcampCostCalculator'>
-        <div className='section' id='city-selector'>
-          <h3 className='text-primary'>Where do you <span>live</span>?</h3>
-          <select className='form-control' defaultValue='' onChange={this.handleCitySelector}>
-            <option disabled='true' value=''>Select City</option>
-            {this.state.cities.map((city, idx) => {
-              let cityLabel = typeof city !== 'undefined' ? city.replace(/-/g, ' ').replace(/\b\w/g, l => l.toUpperCase()) : '';
-              return (
-                <option key={idx} value={city}>{cityLabel}</option>
-              );
-            })}
-          </select>
-        </div>
-        <div className='section' id='income'>
-          <h3 className='text-primary'>
-            How much <span>money</span> did you make last year (in USD)?
-          </h3>
-          <select className='form-control' defaultValue='' onChange={this.handleIncomeSelector}>
-            <option disabled='true' value=''>Select Income</option>
-            {this.state.incomes.map((income, idx) => {
-              let incomeLabel = typeof income !== 'undefined' ? income.replace(/\B(?=(\d{3})+(?!\d))/g, ',') : '0';
-              return (
-                <option key={idx} value={income}>${incomeLabel}</option>
-              );
-            })}
-          </select>
-        </div>
-        <div className='section text-center'>
-          <a href='/json/bootcamps.json'>
-            View Data Source JSON
-          </a>
-        </div>
-        <h3 className='text-primary' id='chosen'>
-          Coming from <span>{cityLabel}</span>, and making <span>{lastYearsIncome}</span>, your true costs will be:
-        </h3>
-        <div className='section' id='chart'>
-          <CostCalculatorChart
-            bootcamps={this.state.bootcamps}
-            city={this.state.city}
-            lastYearsIncome={this.state.lastYearsIncome}
-          />
-        </div>
-        <div className='section' id='explanation'>
-          <h3>Notes:</h3>
-          <ol>
-            <li>
-              We assumed an APR of 6% and a term of 3 years. If you happen
-              to have around $15,000 in cash set aside for a coding
-              bootcamp, please ignore this cost.
-            </li>
-            <li>
-              We assume a cost of living of $500 for cities like San
-              Francisco and New York City, and $400 per week for
-              everywhere else.
-            </li>
-            <li>
-              The most substantial cost for most people is lost wages. A
-              40-hour-per-week job at the US Federal minimum wage would
-              pay at least $15,000 per year. You can read more about
-              economic cost
-              <a href='https://en.wikipedia.org/wiki/Economic_cost' rel='noopener noreferrer' target='_blank'>
-                here
-              </a>.
-            </li>
-          </ol>
-            <div className='col-sm-4 col-md-4'>
-              <img alt='' className='img-responsive testimonial-image img-center' src='https://www.evernote.com/l/AHRIBndcq-5GwZVnSy1_D7lskpH4OcJcUKUB/image.png' />
-            </div>
-            <div className='col-sm-8 col-md-8'>
-              <h3>Built by Suzanne Atkinson</h3>
-              <p>
-                Suzanne is an emergency medicine physician, triathlon
-                coach and web developer from Pittsburgh. You should
-                &thinsp;
-                <a href='https://twitter.com/intent/user?screen_name=SteelCityCoach' rel='noopener noreferrer' target='_blank'>
-                  follow her on Twitter
-                </a>.
-              </p>
-            </div>
-        </div>
+        {ReactDOM.createPortal(
+          this.renderSelectCity(),
+          this.state.selectCityDiv
+        )}
+        {ReactDOM.createPortal(
+          this.renderSelectIncome(),
+          this.state.selectIncomeDiv
+        )}
+        {ReactDOM.createPortal(this.state.cityLabel, this.state.cityLabelSpan)}
+        {ReactDOM.createPortal(
+          this.state.lastYearsIncomeLabel,
+          this.state.lastYearsIncomeLabelSpan
+        )}
+        {ReactDOM.createPortal(
+          this.renderChartComponent(),
+          this.state.chartComponentDiv
+        )}
       </div>
     );
   }
