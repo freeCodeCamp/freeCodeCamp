@@ -6,22 +6,22 @@ challengeType: 5
 
 ## Description
 <section id='description'>
-<p>Implement a function that takes a string of four digits as its argument, with each digit from 1 ──► 9 (inclusive) with repetitions allowed, and returns an arithmetic expression that evaluates to the number 24. If no such solution exists, return "no solution exists."</p>
-<p>Rules:</p>
- Only the following operators/functions are allowed: multiplication, division, addition, subtraction
- Division should use floating point or rational arithmetic, etc, to preserve remainders.
- Forming multiple digit numbers from the supplied digits is disallowed. (So an answer of 12+12 when given 1, 2, 2, and 1 is wrong).
- The order of the digits when given does not have to be preserved.
-<p>Example inputs:</p>
-<code>solve24("4878");</code>
-<code>solve24("1234");</code>
-<code>solve24("6789");</code>
-<code>solve24("1127");</code>
-<p>Example outputs (strings):</p>
-<code>(7-8/8)*4</code>
-<code>3*1*4*2</code>
-<code>(6*8)/(9-7)</code>
-<code>(1+7)*(2+1)</code>
+<p>Implement a function that takes a string of four digits as its argument, with each digit from 1 to 9 (inclusive) with repetitions allowed, and returns an arithmetic expression that evaluates to the number 24. If no such solution exists, return "no solution exists."</p>
+  
+  ### Rules:
+  <ul>
+    <li> Only the following operators/functions are allowed: multiplication, division, addition, subtraction. </li>
+    <li> Division should use floating point or rational arithmetic, etc, to preserve remainders. </li>
+    <li> Forming multiple digit numbers from the supplied digits is disallowed. (So an answer of 12+12 when given 1, 2, 2, and 1 is wrong). </li>
+    <li> The order of the digits when given does not have to be preserved. </li>
+  </ul>
+
+| Example input | Example output |
+| --- | --- |
+| <code>solve24("4878");</code> | <code>(7-8/8)*4</code> |
+| <code>solve24("1234");</code> | <code>3*1*4*2</code> |
+| <code>solve24("6789");</code> | <code>(6*8)/(9-7)</code> |
+| <code>solve24("1127");</code> | <code>(1+7)*(2+1)</code> |
 </section>
 
 ## Instructions
@@ -55,7 +55,7 @@ tests:
 <div id='js-seed'>
 
 ```js
-function solve24 (numStr) {
+function solve24 (numStr){
   // Good luck!
   return true;
 }
@@ -99,7 +99,7 @@ function include(ansArr, res) {
 ```js
 // noprotect
 
-function solve24 (numStr) {
+function solve24 (numStr){
   const digitsArr = numStr.split('');
   const answers = [];
 
