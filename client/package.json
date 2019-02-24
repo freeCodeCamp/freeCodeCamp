@@ -22,7 +22,6 @@
     "entities": "^1.1.2",
     "enzyme": "^3.6.0",
     "enzyme-adapter-react-16": "^1.5.0",
-    "fetchr": "^0.5.37",
     "gatsby": "^2.1.2",
     "gatsby-cli": "^2.4.10",
     "gatsby-link": "^2.0.8",
@@ -87,13 +86,8 @@
     "babel-plugin-transform-imports": "^1.5.0",
     "chokidar": "^2.0.4",
     "copy-webpack-plugin": "^4.6.0",
-    "eslint": "^5.13.0",
-    "eslint-config-freecodecamp": "^1.1.1",
     "jest": "^23.6.0",
-    "prettier": "^1.14.2",
-    "prettier-eslint-cli": "^4.7.1",
     "react-test-renderer": "^16.5.2",
-    "sinon": "^6.3.5",
     "webpack-cli": "^3.1.1"
   },
   "repository": {

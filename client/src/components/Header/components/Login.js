@@ -12,9 +12,12 @@ import { gtagReportConversion } from '../../../analytics/gtag';
 
 import './login.css';
 
-const mapStateToProps = createSelector(isSignedInSelector, isSignedIn => ({
-  isSignedIn
-}));
+const mapStateToProps = createSelector(
+  isSignedInSelector,
+  isSignedIn => ({
+    isSignedIn
+  })
+);
 const mapDispatchToProps = dispatch => ({
   navigate: location => dispatch(hardGoTo(location))
 });
@@ -38,7 +41,7 @@ function Login(props) {
         className={
           (restProps.block ? 'btn-cta-big' : '') + ' signup-btn btn-cta'
         }
-        >
+      >
         {children || 'Sign In'}
       </Button>
     </a>

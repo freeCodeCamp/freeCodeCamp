@@ -226,6 +226,16 @@ Meaning, if you visit <http://localhost:3000/explorer> you should see the APIs t
 
 Congratulations 🎉! You now have a copy of freeCodeCamp's entire learning platform running on your local machine.
 
+## How to Sign in when working locally
+
+Your local setup automatically populates a local user in the database. Clicking the sign in button will automatically authenticate you into the local application.
+
+However, accessing the user portfolio page is a little tricky. In development, Gatsby takes over serving the client side pages and hence you will get a 404 page for the user portfolio when working locally. 
+
+Simply clicking the `Preview Custom 404 Page` button will forward you to the correct page.
+
+![Image - How to sign in when working locally](https://user-images.githubusercontent.com/1884376/52650951-48922e80-2f11-11e9-9eee-360a25ad28ad.gif)
+
 ## Quick commands reference when working locally
 
 [Here is a quick reference](/docs/README.md) to a list of commands that you may need locally from time to time:

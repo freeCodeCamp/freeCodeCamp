@@ -1,15 +1,15 @@
 import passport from 'passport';
+// eslint-disable-next-line
 import {
+  // prettier ignore
   PassportConfigurator
 } from '@freecodecamp/loopback-component-passport';
 import url from 'url';
-import jwt from 'jsonwebtoken';
 import dedent from 'dedent';
 
 import { homeLocation } from '../../config/env';
-import { jwtSecret } from '../../config/secrets';
 import passportProviders from './passport-providers';
-import { createCookieConfig } from './utils/cookieConfig';
+import { setAccessTokenToResponse } from './utils/getSetAccessToken';
 
 const passportOptions = {
   emailOptional: true,
@@ -132,9 +132,7 @@ export function setupPassport(app) {
 }
 
 export const saveResponseAuthCookies = () => {
-
   return (req, res, next) => {
-
     const user = req.user;
 
     if (!user) {
@@ -143,21 +141,12 @@ export const saveResponseAuthCookies = () => {
 
     const { accessToken } = user;
 
-    const cookieConfig = {
-      ...createCookieConfig(req),
-      maxAge: 77760000000
-    };
-    const jwtAccess = jwt.sign({ accessToken }, jwtSecret);
-    res.cookie('jwt_access_token', jwtAccess, cookieConfig);
-    res.cookie('access_token', accessToken.id, cookieConfig);
-    res.cookie('userId', accessToken.userId, cookieConfig);
-
+    setAccessTokenToResponse({ accessToken }, req, res);
     return next();
   };
 };
 
 export const loginRedirect = () => {
-
   return (req, res) => {
     const successRedirect = req => {
       if (!!req && req.session && req.session.returnTo) {
@@ -222,14 +211,7 @@ we recommend using your email address: ${user.email} to sign in instead.
             `
           );
         }
-        const cookieConfig = {
-          ...createCookieConfig(req),
-          maxAge: accessToken.ttl
-        };
-        const jwtAccess = jwt.sign({ accessToken }, jwtSecret);
-        res.cookie('jwt_access_token', jwtAccess, cookieConfig);
-        res.cookie('access_token', accessToken.id, cookieConfig);
-        res.cookie('userId', accessToken.userId, cookieConfig);
+        setAccessTokenToResponse({ accessToken }, req, res);
         req.login(user);
       }
 
