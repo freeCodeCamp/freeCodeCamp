@@ -1,14 +1,12 @@
 ---
 title: Ionic
 ---
-## Ionic framework
-
+# Ionic framework
 Ionic is an HTML5 mobile app development framework targeted at building hybrid mobile apps.
 
 Hybrid apps have many benefits over pure native apps, specifically in terms of platform support, speed of development, and access to 3rd party code.
 
-### Building Hybrid Apps With Ionic
-
+## Building Hybrid Apps With Ionic
 Those familiar with web development will find the structure of an Ionic app straightforward. At its core, it’s just a web page running in an native app shell! That means we can use any kind of HTML, CSS, and Javascript we want. 
 
 The bulk of an Ionic app will be written in HTML, Javascript, and CSS. Ionic also uses AngularJS for a lot of the core functionality of the framework.
@@ -49,7 +47,6 @@ Once that’s done, Let’s start off by generating a new project based on the �
   cd MyFirstApp 
   ionic serve
 ```
-### Further documentation:
-[Ionic Platform Documentation](https://ionicframework.com/docs/)
-[Ionic Framework Tutorial](https://ccoenraets.github.io/ionic-tutorial/install-ionic.html)
-
+## Additional Resources
+- [Ionic Platform Documentation](https://ionicframework.com/docs/)
+- [Ionic Framework Tutorial](https://ccoenraets.github.io/ionic-tutorial/install-ionic.html)
