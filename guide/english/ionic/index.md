@@ -1,6 +1,10 @@
 ---
 title: Ionic
 ---
+
+<img src="https://upload.wikimedia.org/wikipedia/commons/thumb/2/24/Ionic-logo-landscape.svg/512px-Ionic-logo-landscape.svg.png">
+
+
 ## Ionic framework
 
 Ionic is an HTML5 mobile app development framework targeted at building hybrid mobile apps.
