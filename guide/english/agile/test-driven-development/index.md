@@ -5,13 +5,16 @@ title: Test Driven Development
 
 Test Driven Development (TDD) is an Agile Software Development approach. It is based on the concept that you write a unit test first, and then write the code that will allow this test to pass. This means we are working iteratively to specify and build correct behaviour and also to create clean code with good structure.
 
-The process is composed of 4 steps:
- - Write a test case
- - See the test fail (Red)
- - Make the test pass, committing whatever crimes in the process (Green)
- - Refactor the code to be up to standard (Refactor)
+With TDD, the unit test is written first with a test that fails, you then write the code that will execute and allow the unit test to pass. Overall TDD saves time spent performing unit tests and other similar tests since test creation is developed before the code has even been written.
 
-These steps follow the principle of Red-Green-Refactor. The 'Red-Green' step makes sure that you write the simplest code possible to solve the problem, while the 'Refactor' step makes sure that the code that you write is up to standard.
+Test Driven Development is essentially comprised of 4 steps:
+
+ - Write a test case that fails (Red)
+ - Write the code to satisfy the test case
+ - Run the test case again confirming test passes (Green)
+ - Refactor the code as per typical standards (Refactor)
+ 
+These steps follow the principle of Red-Green-Refactor. The Red-Green steps ensure that you write the simplest code possible to solve the problem while the last step makes sure that the code that you write is up to typical coding standards.
 
 Each new feature of your system should follow the steps above.
 
