@@ -12,7 +12,7 @@ localeTitle: Usa las variables CSS para cambiar varios elementos a la vez
 ## Instructions
 <section id="instructions"> En la clase <code>penguin</code> , cambie el valor <code>black</code> a <code>gray</code> , el valor <code>gray</code> a <code>white</code> y el <code>yellow</code> a <code>orange</code> . </section>
 
-## Tests
+## Pruebas
 <section id='tests'>
 
 ```yml
@@ -243,7 +243,7 @@ tests:
 
 </section>
 
-## Solution
+## Solución
 <section id='solution'>
 
 ```js

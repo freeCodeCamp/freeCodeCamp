@@ -2,6 +2,7 @@
 id: 5a2efd662fb457916e1fe604
 title: Iterate with JavaScript Do...While Loops
 challengeType: 1
+videoUrl: 'https://scrimba.com/c/cDqWGcp'
 ---
 
 ## Description
@@ -22,7 +23,7 @@ Let's try getting a <code>do...while</code> loop to work by pushing values to an
 
 ## Instructions
 <section id='instructions'>
-Change the <code>while</code> loop in the code to a <code>do...while</code> loop so that the loop will push the number 10 to <code>myArray</code>, and <code>i</code> will be equal to <code>11</code> when your code finishes running.
+Change the <code>while</code> loop in the code to a <code>do...while</code> loop so that the loop will only push the number 10 to <code>myArray</code>, and <code>i</code> will be equal to <code>11</code> when your code finishes running.
 </section>
 
 ## Tests
@@ -31,11 +32,11 @@ Change the <code>while</code> loop in the code to a <code>do...while</code> loop
 ```yml
 tests:
   - text: You should be using a <code>do...while</code> loop for this.
-    testString: 'assert(code.match(/do/g), "You should be using a <code>do...while</code> loop for this.");'
-  - text: '<code>myArray</code> should equal <code>[10]</code>.'
-    testString: 'assert.deepEqual(myArray, [10], "<code>myArray</code> should equal <code>[10]</code>.");'
+    testString: assert(code.match(/do/g), 'You should be using a <code>do...while</code> loop for this.');
+  - text: <code>myArray</code> should equal <code>[10]</code>.
+    testString: assert.deepEqual(myArray, [10], '<code>myArray</code> should equal <code>[10]</code>.');
   - text: <code>i</code> should equal <code>11</code>
-    testString: 'assert.deepEqual(i, 11, "<code>i</code> should equal <code>11</code>");'
+    testString: assert.deepEqual(i, 11, '<code>i</code> should equal <code>11</code>');
 
 ```
 
@@ -67,7 +68,7 @@ while (i < 5) {
 <div id='js-teardown'>
 
 ```js
-console.info('after the test');
+if(typeof myArray !== "undefined"){(function(){return myArray;})();}
 ```
 
 </div>

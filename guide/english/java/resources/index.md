@@ -17,6 +17,7 @@ Java is trademarked and licensed by Oracle. Most of the following are un-officia
 * [Java Programming notes by NTU](http://www3.ntu.edu.sg/home/ehchua/programming/index.html#Java)
 * [HackerRank's 30 days of Code Challenge with video tutorials in Java<](https://www.hackerrank.com/domains/tutorials/30-days-of-code)
 * [Princeton's Introduction to Programming in Java](http://introcs.cs.princeton.edu/java/home/)
+* [The University of Helsinki's MOOC on Programming in Java (Part 1)](https://moocfi.github.io/courses/2013/programming-part-1/)
 * [Introduction to Programming Using Java](http://math.hws.edu/javanotes/)
 * [Java Practices](http://javapractices.com/home/HomeAction.do)
 * [Java Design Patterns](https://github.com/iluwatar/java-design-patterns/)
@@ -24,9 +25,11 @@ Java is trademarked and licensed by Oracle. Most of the following are un-officia
 * [Spring Official Guides](https://spring.io/guides)
 * [TutorialsPoint - Java](http://www.tutorialspoint.com/java/)
 * [Java for Small Teams](https://www.gitbook.com/book/ncrcoe/java-for-small-teams/details)
+* [Cave of Programming's Java Course](https://courses.caveofprogramming.com/p/java-for-complete-beginners)
 
 ## Challenges
 
+* [/r/dailyprogrammer](https://www.reddit.com/r/dailyprogrammer)
 * [Java Koans](https://github.com/matyb/java-koans)
 * [Coding Bat Java Challenges](http://codingbat.com/java)
 * [Excercism Java Challenges](http://exercism.io/languages/java)
@@ -43,6 +46,8 @@ Java is trademarked and licensed by Oracle. Most of the following are un-officia
 * [Awesome Java](https://github.com/akullpp/awesome-java)
 * [/r/Java](https://www.reddit.com/r/Java)
 * [/r/LearnJava](https://www.reddit.com/r/learnjava)
+* [/r/javahelp](https://www.reddit.com/r/javahelp)
+* [/r/javaexamples](https://www.reddit.com/r/javaexamples)
 * [Java Ranch](http://www.javaranch.com/)
 * [Java Code Geeks](https://www.javacodegeeks.com/)
 * [Java 8 API Search](http://javasearch.org)

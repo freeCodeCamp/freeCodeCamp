@@ -30,13 +30,13 @@ Use Font Awesome to add a <code>thumbs-up</code> icon to your like button by giv
 ```yml
 tests:
   - text: Add an <code>i</code> element with the classes <code>fa</code> and <code>fa-thumbs-up</code>.
-    testString: 'assert($("i").is(".fa.fa-thumbs-up") || $("span").is(".fa.fa-thumbs-up"), "Add an <code>i</code> element with the classes <code>fa</code> and <code>fa-thumbs-up</code>.");'
+    testString: assert($("i").is(".fa.fa-thumbs-up") || $("span").is(".fa.fa-thumbs-up"), 'Add an <code>i</code> element with the classes <code>fa</code> and <code>fa-thumbs-up</code>.');
   - text: Your <code>fa-thumbs-up</code> icon should be located within the Like button.
-    testString: 'assert(($("i.fa-thumbs-up").parent().text().match(/Like/gi) && $(".btn-primary > i").is(".fa.fa-thumbs-up")) || ($("span.fa-thumbs-up").parent().text().match(/Like/gi) && $(".btn-primary > span").is(".fa.fa-thumbs-up")), "Your <code>fa-thumbs-up</code> icon should be located within the Like button.");'
+    testString: assert(($("i.fa-thumbs-up").parent().text().match(/Like/gi) && $(".btn-primary > i").is(".fa.fa-thumbs-up")) || ($("span.fa-thumbs-up").parent().text().match(/Like/gi) && $(".btn-primary > span").is(".fa.fa-thumbs-up")), 'Your <code>fa-thumbs-up</code> icon should be located within the Like button.');
   - text: Nest your <code>i</code> element within your <code>button</code> element.
-    testString: 'assert($("button").children("i").length > 0 || $("button").children("span").length > 0, "Nest your <code>i</code> element within your <code>button</code> element.");'
+    testString: assert($("button").children("i").length > 0 || $("button").children("span").length > 0, 'Nest your <code>i</code> element within your <code>button</code> element.');
   - text: Make sure your icon element has a closing tag.
-    testString: 'assert(code.match(/<\/i>|<\/span>/g), "Make sure your icon element has a closing tag.");'
+    testString: assert(code.match(/<\/i>|<\/span>/g), 'Make sure your icon element has a closing tag.');
 
 ```
 

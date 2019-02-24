@@ -39,6 +39,15 @@ Um array multidimensional é um array que contém outros arrays.
  $freecodecamp = array(array("free"=>"0","code"=>"1","camp"=>"2"),array("free"=>"0","code"=>"1","camp"=>"2"),array("free"=>"0","code"=>"1","camp"=>"2")); 
 ```
 
+### Exemplo de como exibir um array
+
+```PHP
+<?php 
+ $freecodecamp['palavras'] = array('code','free','camp');
+ 
+echo "Exemplo de como exibir o valor do array " . $freecodecamp['palavras'][1] . $freecodecamp['palavras'][0] . $freecodecamp['palavras'][2];
+```
+
 #### Mais Informações:
 
 *   [manual de arrays do php.net](https://secure.php.net/manual/en/language.types.array.php)
