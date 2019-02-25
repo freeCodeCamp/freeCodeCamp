@@ -196,7 +196,7 @@ int main(){
 }
 ```
 In C++11, you can also sort with lambda function, which can be useful.
-```cpp11
+```cpp
 #include <bits/stdc++.h>
 using namespace std;
 
