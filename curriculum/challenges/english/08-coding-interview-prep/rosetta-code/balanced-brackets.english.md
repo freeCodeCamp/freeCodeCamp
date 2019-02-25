@@ -6,15 +6,17 @@ challengeType: 5
 
 ## Description
 <section id='description'>
-<p>Determine whether a generated string of brackets is balanced; that is, whether it consists entirely of pairs of opening/closing brackets (in that order), none of which mis-nest.</p>
+Determine whether a generated string of brackets is balanced; that is, whether it consists entirely of pairs of opening/closing brackets (in that order), none of which mis-nest.
 Examples:
-<p class='rosetta__paragraph'>(empty) true</p>
-<p class='rosetta__paragraph'><code>[]</code> true</p>
-<p class='rosetta__paragraph'><code>][</code> false</p>
-<p class='rosetta__paragraph'><code>[][]</code> true</p>
-<p class='rosetta__paragraph'><code>][][</code> false</p>
-<p class='rosetta__paragraph'><code>[]][[]</code> false</p>
-<p class='rosetta__paragraph'><code>[[[[]]]]</code> true</p>
+<pre>
+(empty) true
+<code>[]</code> true
+<code>][</code> false
+<code>[][]</code> true
+<code>][][</code> false
+<code>[]][[]</code> false
+<code>[[[[]]]]</code> true
+</pre>
 </section>
 
 ## Instructions

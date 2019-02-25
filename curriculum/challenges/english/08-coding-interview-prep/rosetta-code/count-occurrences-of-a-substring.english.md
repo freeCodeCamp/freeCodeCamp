@@ -6,12 +6,15 @@ challengeType: 5
 
 ## Description
 <section id='description'>
-Task:
-<p>Create a function,  or show a built-in function,  to count the number of non-overlapping occurrences of a substring inside a string.</p><p>The function should take two arguments:</p>
-the first argument being the string to search,  and
-the second a substring to be searched for.
-<p>It should return an integer count.</p>
-<p>The matching should yield the highest number of non-overlapping matches.</p><p>In general, this essentially means matching from left-to-right or right-to-left.</p>
+Create a function, or show a built-in function, to count the number of non-overlapping occurrences of a substring inside a string.
+The function should take two arguments:
+<ul>
+  <li>the first argument being the string to search, and</li>
+  <li>the second a substring to be searched for.</li>
+</ul>
+It should return an integer count.
+The matching should yield the highest number of non-overlapping matches.
+In general, this essentially means matching from left-to-right or right-to-left.
 </section>
 
 ## Instructions

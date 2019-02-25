@@ -6,10 +6,9 @@ challengeType: 5
 
 ## Description
 <section id='description'>
-Task:
-<p>Given non-negative integers  <big> m </big>  and  <big> n</big>,  generate all size  <big> m </big>  <a href="http://mathworld.wolfram.com/Combination.html" title="link: http://mathworld.wolfram.com/Combination.html">combinations</a>  of the integers from  <big> 0</big>  (zero)  to  <big> n-1 </big>  in sorted order  (each combination is sorted and the entire table is sorted).</p>
-Example:
-<p><big>3</big>  comb  <big> 5 </big>is:</p>
+Given non-negative integers <big><b>m</b></big> and <big><b>n</b></big>, generate all size <big><b>m</b></big><a href="http://mathworld.wolfram.com/Combination.html" title="link: http://mathworld.wolfram.com/Combination.html"> combinations</a> of the integers from <big><b>0</b></big> (zero) to <big><b>n-1</b></big> in sorted order (each combination is sorted and the entire table is sorted).
+<b>Example:</b>
+<big><b>3</b></big> comb <big><b>5</b></big> is:
 <pre>
 0 1 2
 0 1 3
