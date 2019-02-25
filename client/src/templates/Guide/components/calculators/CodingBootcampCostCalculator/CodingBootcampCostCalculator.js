@@ -25,17 +25,20 @@ class CostCalculator extends React.Component {
 
   initComponent() {
     fetch('/json/bootcamps.json')
-      .then((response) => {
+      .then(response => {
         return response.json();
       })
-      .then((responseJson) => {
+      .then(responseJson => {
         this.setState({
           bootcamps: responseJson,
-          cities: responseJson.reduce((previous, current) => {
-            return previous.concat(current.cities);
-          }, []).filter((city, idx, me) => {
-            return me.indexOf(city) === idx;
-          }).sort(),
+          cities: responseJson
+            .reduce((previous, current) => {
+              return previous.concat(current.cities);
+            }, [])
+            .filter((city, idx, me) => {
+              return me.indexOf(city) === idx;
+            })
+            .sort(),
           incomes: [
             '0',
             '10000',
@@ -56,15 +59,16 @@ class CostCalculator extends React.Component {
           ]
         });
       })
-      .catch((error) => {
+      .catch(error => {
         console.error(error);
       });
 
     const selectCityDiv = document.getElementById('select-city');
     const selectIncomeDiv = document.getElementById('select-income');
     const cityLabelSpan = document.getElementById('city-label');
-    const lastYearsIncomeLabelSpan =
-      document.getElementById('last-years-income-label');
+    const lastYearsIncomeLabelSpan = document.getElementById(
+      'last-years-income-label'
+    );
     const chartComponentDiv = document.getElementById('chart-component');
     this.setState({
       init: true,
@@ -105,13 +109,19 @@ class CostCalculator extends React.Component {
         className='form-control'
         defaultValue=''
         onChange={this.handleCitySelector}
-        >
-        <option disabled='true' value=''>Select City</option>
+      >
+        <option disabled='true' value=''>
+          Select City
+        </option>
         {this.state.cities.map((city, idx) => {
-          let cityLabel = typeof city !== 'undefined' ?
-            city.replace(/-/g, ' ').replace(/\b\w/g, l => l.toUpperCase()) : '';
+          let cityLabel =
+            typeof city !== 'undefined'
+              ? city.replace(/-/g, ' ').replace(/\b\w/g, l => l.toUpperCase())
+              : '';
           return (
-            <option key={idx} value={city}>{cityLabel}</option>
+            <option key={idx} value={city}>
+              {cityLabel}
+            </option>
           );
         })}
       </select>
@@ -124,13 +134,19 @@ class CostCalculator extends React.Component {
         className='form-control'
         defaultValue=''
         onChange={this.handleIncomeSelector}
-        >
-        <option disabled='true' value=''>Select Income</option>
+      >
+        <option disabled='true' value=''>
+          Select Income
+        </option>
         {this.state.incomes.map((income, idx) => {
-          let incomeLabel = typeof income !== 'undefined' ?
-            income.replace(/\B(?=(\d{3})+(?!\d))/g, ',') : '0';
+          let incomeLabel =
+            typeof income !== 'undefined'
+              ? income.replace(/\B(?=(\d{3})+(?!\d))/g, ',')
+              : '0';
           return (
-            <option key={idx} value={income}>${incomeLabel}</option>
+            <option key={idx} value={income}>
+              ${incomeLabel}
+            </option>
           );
         })}
       </select>
