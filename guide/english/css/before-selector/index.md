@@ -32,7 +32,7 @@ span.comment::before {
 
 In the example above we are prepending a grey border before every paragraph element on a page and we are also prepending the word "Comment: " in blue before every `span` element with the class name `comment`.
 
-> You can check out this demo here https://jsfiddle.net/398by400/
+> You can check out this demo here https://jsfiddle.net/kxrdswtm/
 
 ## Definition and Usage
 `::before` is one of the CSS pseudo-elements selectors, which are used to style specified parts of an element. In this case, we can insert content before some HTML element from CSS. Although we will see the content in the page, it is not part of the Document Object Model (DOM), which means that we cannot manipulate it from JavaScript.
