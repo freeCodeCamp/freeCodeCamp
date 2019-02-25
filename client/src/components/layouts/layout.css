@@ -596,6 +596,7 @@ tt:before,
 tt:after {
   letter-spacing: -0.2em;
   content: ' ';
+  white-space: pre;
 }
 pre code:before,
 pre code:after,
