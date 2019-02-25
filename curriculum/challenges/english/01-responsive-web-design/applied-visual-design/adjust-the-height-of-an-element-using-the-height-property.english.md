@@ -22,7 +22,7 @@ Add a <code>height</code> property to the <code>h4</code> tag and set it to 25px
 ```yml
 tests:
   - text: Your code should change the <code>h4</code> <code>height</code> property to a value of 25 pixels.
-    testString: assert($('h4').css('height') == '25px', 'Your code should change the <code>h4</code> <code>height</code> property to a value of 25 pixels.');
+    testString: assert(/h4{\S*height:25px(;\S*}|})/.test($('style').text().replace(/\s/g ,'')));
 
 ```
 
