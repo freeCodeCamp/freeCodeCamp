@@ -41,6 +41,7 @@ describe('boot/challenge', () => {
       expect(result).toHaveProperty('updateData.$set.completedChallenges');
     });
 
+    // eslint-disable-next-line max-len
     it('preserves file contents if the completed challenge is a JS Project', () => {
       const jsChallengeId = 'aa2e6f85cab2ab736c9a9b24';
       const completedChallenge = {
@@ -86,6 +87,7 @@ describe('boot/challenge', () => {
       expect(firstCompletedChallenge.completedDate).toEqual(originalCompletion);
     });
 
+    // eslint-disable-next-line max-len
     it('does not attempt to update progressTimestamps for a previously completed challenge', () => {
       const completedChallengeId = 'aaa48de84e1ecc7c742e1124';
       const completedChallenge = {
@@ -105,6 +107,7 @@ describe('boot/challenge', () => {
       expect(hasProgressTimestamps).toBe(false);
     });
 
+    // eslint-disable-next-line max-len
     it('provides a progressTimestamps update for new challenge completion', () => {
       expect.assertions(2);
       const { updateData } = buildUserUpdate(
@@ -140,6 +143,7 @@ describe('boot/challenge', () => {
       );
     });
 
+    // eslint-disable-next-line max-len
     it('adds newly completed challenges to the completedChallenges array', () => {
       const {
         updateData: {
