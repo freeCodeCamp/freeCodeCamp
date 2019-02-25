@@ -6,8 +6,8 @@ challengeType: 5
 
 ## Description
 <section id='description'>
-A &nbsp; ''zig-zag'' &nbsp; array is a square arrangement of the first &nbsp; $N^2$ &nbsp; integers, &nbsp; where the numbers increase sequentially as you zig-zag along the array's &nbsp; <a href="https://en.wiktionary.org/wiki/antidiagonal">anti-diagonals</a>.
-For example, given &nbsp; '''5''', &nbsp; produce this array:
+A ''zig-zag'' array is a square arrangement of the first $N^2$ integers, where the numbers increase sequentially as you zig-zag along the array's <a href="https://en.wiktionary.org/wiki/antidiagonal">anti-diagonals</a>.
+For example, given '5', produce this array:
 <pre>
  0  1  5  6 14
  2  4  7 13 15
