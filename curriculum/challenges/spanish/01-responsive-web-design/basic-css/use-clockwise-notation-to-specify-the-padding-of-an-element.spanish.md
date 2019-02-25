@@ -6,13 +6,13 @@ videoUrl: ''
 localeTitle: Use la notación de las agujas del reloj para especificar el relleno de un elemento
 ---
 
-## Description
+## Descripción
 <section id="description"> En lugar de especificar las propiedades <code>padding-top</code> , <code>padding-right</code> , <code>padding-bottom</code> y <code>padding-left</code> individualmente, puede especificarlas todas en una línea, como esta: <code>padding: 10px 20px 10px 20px;</code> Estos cuatro valores funcionan como un reloj: arriba, derecha, abajo, izquierda, y producirán exactamente el mismo resultado que utilizando las instrucciones de relleno específicas para cada lado. </section>
 
-## Instructions
+## Instrucciones
 <section id="instructions"> Use la notación de las agujas del reloj para darle a la clase &quot;.blue-box&quot; un <code>padding</code> de <code>40px</code> en su lado superior e izquierdo, pero solo <code>20px</code> en su lado inferior y derecho. </section>
 
-## Tests
+## Pruebas
 <section id='tests'>
 
 ```yml
@@ -82,7 +82,7 @@ tests:
 
 </section>
 
-## Solution
+## Solución
 <section id='solution'>
 
 ```js

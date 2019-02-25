@@ -20,7 +20,7 @@ Once encountering `async` methods, the work will be queued in a thread-pool for 
 
 **Note that it is convention in C# for an asynchronous method such as `DoSomethingAsync()` to contain `Async` at the end of its name.**
 
-To learn more about using the promise model to handle asynchrony, check out this wikipedia page: [Achieving Asynchrony through Promises](https://en.wikipedia.org/wiki/Futures_and_promises)
+To learn more about using the promise model to handle asynchrony, check out this Wikipedia page: [Achieving Asynchrony through Promises](https://en.wikipedia.org/wiki/Futures_and_promises)
 
 ## Examples
 
@@ -51,20 +51,25 @@ public async Task<int> CalcDamage(Player player)
   //   Boss based on the damage types, Boss stats (from static data),
   //   player stats, etc.
   // ...
+  await Task.Delay(1000); // extemely time consuming calculation
+  return 3;               // that calculates a very accurate damage thats not hardcoded at all
 }
 
-public static async Task<int> CalcTotalDamage(IEnumerable<Player> group)
+public async Task<int> CalcTotalDamage(IEnumerable<Player> players)
 {
-  var totalDamage = 0;
-  foreach (Player player in group)
+  var tasks = new List<Task<int>>();
+  foreach (Player player in players)
   {
     // each of the async methods are queued in the thread-pool and move on.
-    totalDamage += CalcDamage(player);
+    var t = CalcDamage(player);
+    // storing reference to the task
+    tasks.Add(t);
   }
 
   // total damage done must be calculated from all players in the group
   //   before we return the result.
-  return await Task.WhenAll(totalDamage);
+  var completeTask = await Task.WhenAll(tasks);
+  return completeTask.Sum();
 }
 ```
 

@@ -5,7 +5,7 @@ title: Truncate a String
 
 ### ![:checkered_flag:](https://forum.freecodecamp.com/images/emoji/emoji_one/checkered_flag.png?v=3 ":checkered_flag:") Problem Explanation:
 
-We need to reduce the length of the string or **truncate** it if it is longer than the given maximum lengths specified and add `...` to the end. If it is not that long then we keep it as is.
+We need to reduce the length of the string or **truncate** it if it is longer than the given maximum length specified and add `...` to the end. If it is not that long then we keep it as is.
 
 #### Relevant Links
 
@@ -23,12 +23,6 @@ You will need to use the slice() method and specify where to start and where to 
 
 > _try to solve the problem now_
 
-## ![:speech_balloon:](https://forum.freecodecamp.com/images/emoji/emoji_one/speech_balloon.png?v=3 ":speech_balloon:") Hint: 3
-
-Do not forget that when we truncate the word, we also must count the length added by `...`
-
-> _try to solve the problem now_
-
 ## Spoiler Alert!
 
 ![warning sign](//discourse-user-assets.s3.amazonaws.com/original/2X/2/2d6c412a50797771301e7ceabd554cef4edcd74d.gif)
@@ -39,49 +33,32 @@ Do not forget that when we truncate the word, we also must count the length adde
 
     function truncateString(str, num) {
       // Clear out that junk in your trunk
-      if (str.length > num && num > 3) {
-        return str.slice(0, (num - 3)) + '...';
-      } else if (str.length > num && num <= 3) {
-        return str.slice(0, num) + '...';
+      if(str.length > num) {
+        return str.slice(0,num)+"...";
       } else {
         return str;
       }
-
     }
 
 ![:rocket:](https://forum.freecodecamp.com/images/emoji/emoji_one/rocket.png?v=3 ":rocket:") <a href='https://repl.it/CLjU/55' target='_blank' rel='nofollow'>Run Code</a>
 
 ### Code Explanation:
 
-*   First we start off with a simple `if` statement to determine one of three outcomes...
-*   If our string length is greater than the `num` we want to truncate at, and our truncate point is at least three characters or more into the string, we return a slice of our string starting at character 0, and ending at `num - 3`. We then append our `'...'` to the end of the string.
-*   However, if our string length is greater than the `num` but `num` is within the first three characters, we don't have to count our dots as characters. Therefore, we return the same string as above, with one difference: The endpoint of our slice is now just `num`.
-*   Finally, if none of the above situations are true, it means our string length is less than our truncation `num`. Therefore, we can just return the string.
+*   We start off with a simple `if` statement to determine one of two outcomes...
+*   If our string length is greater than the `num` we want to truncate it, we return a slice of our string starting at character 0, and ending at `num`. We then append our `'...'` to the end of the string.
+*   However, if above situation is not true, it means our string length is less than our truncation `num`. Therefore, we can just return the string.
 
 ## ![:rotating_light:](https://forum.freecodecamp.com/images/emoji/emoji_one/rotating_light.png?v=3 ":rotating_light:") Advanced Code Solution:
 
     function truncateString(str, num) {
-      if (str.length <= num) {
-        return str;
-      } else {
-        return str.slice(0, num > 3 ? num - 3 : num) + '...';
-      }
+      return (str.length > num)?(str.slice(0,num)+"..."):str;
     }
 
 ![:rocket:](https://forum.freecodecamp.com/images/emoji/emoji_one/rocket.png?v=3 ":rocket:") <a href='https://repl.it/CLjU/54' target='_blank' rel='nofollow'>Run Code</a>
 
 ### Code Explanation:
 
-*   First we need an if-statement to test if the length of the full string passed in as the first argument already fits within the size limit passed in as the second argument. If so we can just return the string that was passed in.
-
-    if (str.length <= num)
-      return str;
-
-*   If our `if` statement above fails, we move to the `else`, where we are going to return a "slice" of the string. The slice method extracts a section of a string and returns a new string. Here we pass 0 as the starting point for our slice. To determine the endpoint, we use a ternary operator: `num > 3 ? num - 3 : num`. In our ternary, if `num` is larger than 3, we must factor in the three dots to our total length, and thus we end our slice at `num-3`. If num is less than or equal to 3, our slice gets an end variable of just `num`. Finally, the `'...'` is appended to the end of our new string and is returned.
-
-    } else {
-        return str.slice(0, num > 3 ? num - 3 : num) + '...';
-      }
+*   This solution is very similar to basic solution. To determine the new string, we use a ternary operator. In our ternary operation, if `str.length` is larger than `num`, we return a new string which is slice of our string starting at character 0, and ending at `num` and the `'...'` is appended to the end of our new string. If `str.length` is less than or equal to `num`, we return the string without any truncation.
 
 *   **NOTE** In order to understand the above code, you need to understand how a Ternary Operator works. The Ternary Operator is frequently used as a shortcut for the `if` statement and follows this format: `condition ? expr1 : expr2`. If the `condition` evaluates to true, the operator returns the value of `expr1`. Otherwise, it returns the value of `expr2`.
 
