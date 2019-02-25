@@ -1,14 +1,7 @@
 .btn-cta-big {
   max-height: 100%;
-  height: auto;
   font-size: 40px;
   white-space: normal;
-}
-
-@media (min-width: 768px) {
-  .btn-cta-big {
-    height: 70px;
-  }
 }
 
 .big-heading {
