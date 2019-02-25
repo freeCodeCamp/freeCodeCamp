@@ -153,9 +153,9 @@ You can even embed relevant YouTube videos and interactive [REPL.it](https://rep
 
 Don't use emojis or emoticons in the Guide. freeCodeCamp has a global community, and the cultural meaning of an emoji or emoticon may be different around the world. Also, emojis can render differently on different systems.
 
-## Solutions
+## Curriculum Challenge Solutions
 
-In the solution which you propose for the guide, the full code should be given i.e. the seed code with the changes which have been made to achieve the desired result.
+When proposing a solution for curriculum challenge related article, the full code should be given.  This includes all the original seed code plus any changes needed to pass the all the challenge's tests.
 
 ## Attributions
 
