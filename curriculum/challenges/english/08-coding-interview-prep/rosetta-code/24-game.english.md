@@ -56,7 +56,7 @@ tests:
 <div id='js-seed'>
 
 ```js
-function solve24(numStr) {
+function solve24 (numStr) {
   // Good luck!
   return true;
 }
