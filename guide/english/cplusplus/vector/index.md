@@ -196,12 +196,11 @@ int main(){
 }
 ```
 In C++11, you can also sort with lambda function, which can be useful.
-```cpp11
-#include<bits/stdc++.h>
+```cpp
+#include <bits/stdc++.h>
 using namespace std;
 
-int main()
-{
+int main(){
     vector<int > v {3, 1, 2};
     sort(v.begin(), v.end(), [] (int i, int j) -> bool {
         return i < j;
@@ -212,7 +211,7 @@ int main()
       cout << e << " ";
     }
     
-    return 0;    
+    return 0;
 }
 ```
 ### Sorting Vector In Descending Order
