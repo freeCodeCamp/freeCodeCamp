@@ -3,20 +3,17 @@
 # If using Docker Toolbox, set `DOCKER_HOST_LOCATION` env var to output from
 # `docker-machine ip`
 #
-# If you have previously run freeCodeCamp outside of docker, run
-#  npm run clean
-# and select 'yes' to remove all node_module folders
-# before trying to bootstrap the project
-#
 # Bootstrap with:
+#  npm run docker:init
 #  npm run docker:install
 #  npm run docker:seed
 #
-#  if during install you see errors like `ETXTBSY: text file is busy, rename`
-#  then use npm run docker:install2
-#
 # Run with:
-#   npm run docker:develop
+#  npm run docker:develop
+#
+# If plan to make a contribution to the project then install root node_modules
+# with:
+#  npm install --ignore-scripts
 #
 version: '3'
 services:
@@ -31,6 +28,13 @@ services:
       - MONGOHQ_URL=mongodb://db:27017/freecodecamp
     volumes:
       - .:/app
+      - node_modules:/app/node_modules
+      - client_node_modules:/app/client/node_modules
+      - server_node_modules:/app/api-server/node_modules
+      - curriculum_node_modules:/app/curriculum/node_modules
+      - challenge_md_parser_node_modules:/app/tools/challenge-md-parser/node_modules
+      - seed_node_modules:/app/tools/scripts/seed/node_modules
+      - client_plugin_nav_data_node_modules:/app/client/plugins/fcc-create-nav-data/node_modules
     working_dir: /app
   client:
     image: node:lts
@@ -42,6 +46,13 @@ services:
       - API_LOCATION=http://$DOCKER_HOST_LOCATION:3000
     volumes:
       - .:/app
+      - node_modules:/app/node_modules
+      - client_node_modules:/app/client/node_modules
+      - server_node_modules:/app/api-server/node_modules
+      - curriculum_node_modules:/app/curriculum/node_modules
+      - challenge_md_parser_node_modules:/app/tools/challenge-md-parser/node_modules
+      - seed_node_modules:/app/tools/scripts/seed/node_modules
+      - client_plugin_nav_data_node_modules:/app/client/plugins/fcc-create-nav-data/node_modules
     working_dir: /app/client
     command: npm run develop -- -H '0.0.0.0'
     ports:
@@ -61,6 +72,13 @@ services:
       - API_LOCATION=http://$DOCKER_HOST_LOCATION:3000
     volumes:
       - .:/app
+      - node_modules:/app/node_modules
+      - client_node_modules:/app/client/node_modules
+      - server_node_modules:/app/api-server/node_modules
+      - curriculum_node_modules:/app/curriculum/node_modules
+      - challenge_md_parser_node_modules:/app/tools/challenge-md-parser/node_modules
+      - seed_node_modules:/app/tools/scripts/seed/node_modules
+      - client_plugin_nav_data_node_modules:/app/client/plugins/fcc-create-nav-data/node_modules
     working_dir: /app/api-server
     command: node development-entry.js
     ports:
@@ -80,3 +98,10 @@ services:
 
 volumes:
   dbdata:
+  node_modules:
+  client_node_modules:
+  server_node_modules:
+  curriculum_node_modules:
+  challenge_md_parser_node_modules:
+  seed_node_modules:
+  client_plugin_nav_data_node_modules:
