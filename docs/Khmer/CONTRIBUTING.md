@@ -17,21 +17,21 @@
 
 សួស្តី 👋!
 
-freeCodeCamp.org is possible, អរគុណចំពោះការស្ម័គ្រចិត្តរបស់លោកអ្នក។ យើងខ្ញំុមានសេចក្តីរីករាយក្នុងការស្វាគមន៏លោកអ្នកក្នុងការធ្វើ contributions របស់លោកអ្នក។
+freeCodeCamp.org is possible, អរគុណចំពោះការស្ម័គ្រចិត្តរបស់លោកអ្នក។ យើងខ្ញំុមានសេចក្តីរីករាយយ៉ាងខ្លាំងក្នុងការស្វាគមន៏លោកអ្នកក្នុងការធ្វើ contributions។
 
 សូមធ្វើការ​អាន ["Code of Conduct"](https://www.freecodecamp.org/code-of-conduct) ជាដាច់ខាត​។ ពាក្យក្នុងអត្ថបទ​មាន ១៩៦ពាក្យតែប៉ុណ្ណោះ។
 
 រីករាយក្នុងការ contributing 🎉!
 
-## Here are some fun ways that you can help
+## នេះជាវិធីមួយចំនួនដែលអ្នកអាចជួយយើង
 
-You can choose to contribute to any area that interests you:
+អ្នកអាចជ្រើសយកវិធីខាងក្រោមណាមួយតាមចំណង់ចំណូលចិត្តសម្រាប់ធ្វើការ contribute​ :
 
 1. [Contribute to this open source codebase](#contribute-to-this-open-source-codebase). Help to edit [guide articles](https://guide.freecodecamp.org/), [coding challenges](https://learn.freecodecamp.org/), or fix bugs on the learning platform.
 
-2. Help campers on our [public forum](https://www.freecodecamp.org/forum/). [Answer their coding questions](https://www.freecodecamp.org/forum/?max_posts=1) or [give them feedback on their coding projects](https://www.freecodecamp.org/forum/c/project-feedback?max_posts=1).
+2. Help campers on our [public forum](https://www.freecodecamp.org/forum/). [ឆ្លើយតបសំនួរដែលទាក់ទងទៅនឹងការកូដ](https://www.freecodecamp.org/forum/?max_posts=1) or [ផ្ដល់យោបល់ទៅលើ coding projects របស់គេ](https://www.freecodecamp.org/forum/c/project-feedback?max_posts=1).
 
-3. Help us add subtitles or closed captions to our [YouTube channel videos](https://www.youtube.com/channel/UC8butISFwT-Wl7EV0hUK0BQ/videos).
+3. ជួយពួកយើងដាក់ subtitles or closed captions to our [YouTube channel videos](https://www.youtube.com/channel/UC8butISFwT-Wl7EV0hUK0BQ/videos).
 
 ## Contribute to this open source codebase
 
@@ -39,31 +39,31 @@ We have a huge open source codebase consisting of thousands of [coding challenge
 
 You can help us to:
 
-- [📝 Research, Write and Update our guide articles](#research-write-and-update-our-guide-articles)
+- [📝 ស្រាវជ្រាវ, សរសេរ និង Update guide articles របស់យើង](#research-write-and-update-our-guide-articles)
 
-- [💻 Create, Update and Fix Bugs in our coding challenges](#create-update-and-fix-bugs-in-our-coding-challenges)
+- [💻 បង្កើត, Update and Fix Bugs សំរាប់ coding challenges របស់យើង](#create-update-and-fix-bugs-in-our-coding-challenges)
 
-- [🌐 Translate guide articles and coding challenges](#translate-guide-articles-and-coding-challenges)
+- [🌐 បកប្រែ​ guide articles និង coding challenges](#translate-guide-articles-and-coding-challenges)
 
-- [🛠 Fix bugs in freeCodeCamp.org's learning platform](#help-us-fix-bugs-in-freecodecamporgs-learning-platform)
+- [🛠 Fix bugs នៅក្នុង freeCodeCamp.org's learning platform](#help-us-fix-bugs-in-freecodecamporgs-learning-platform)
 
-### Research, Write and Update our guide articles
+### ស្រាវជ្រាវ,  សរសេរ និង​ Update​ guide articles របស់យើង
 
-**What are guide articles?**
+**តើអ្វីជា guide articles?**
 
-Guide articles help you get a quick understanding of a technology concept. These are short, plain English explanations that you can read before going on to more in-depth resources.
+Guide articles ជួយអោយអ្នកយល់អំពីបរិបថនៃបច្ចេកវិទ្យា។ Guide articles ជាអត្ថបទខ្លីសរសេរជាភាសាអង់គ្លេស ដែល​អ្នកគួរគប្បីអានមុននឺងសិក្សាអោយកាន់តែសីុជម្រៅ។
 
-You can find an [example article about HTML Anchor Elements here](https://github.com/freeCodeCamp/freeCodeCamp/blob/master/guide/english/html/elements/a-tag/index.md).
+អ្នកអាចរក [ឧទាហរណ៍អត្ថបទ HTML Anchor Elements នៅទីនេះ](https://github.com/freeCodeCamp/freeCodeCamp/blob/master/guide/english/html/elements/a-tag/index.md).
 
-**What can I write an article about?**
+**តើអ្នកអាចសរសេរអត្ថបទអំពីអ្វី?**
 
-We welcome your help writing these articles. You don't have to be an expert in a topic to write about it. This entire Guide is open source, so even if you make a mistake, another contributor will eventually correct it.
+យើងស្វាគមន៏អ្នកក្នុងការសរសេរអត្ថបទ។ អ្នកមិនចាំបាច់ទាមទារអោយមានសមត្ថភាពខ្ពស់ក្នុងប្រធានបទដែលអ្នកសរសេរនោះទេ។ អត្ថបទណែនាំទាំងមូលមានទម្រង់ជា open source, ហេតុដូចនេះប្រសិនបើអ្នកមានកំហុសលើចំនុចណាមួយ, contributor​ ផ្សេងទៀតនីងកែតម្រូវវា។
 
-To help, find a `stub article` on our [Guide website](https://guide.freecodecamp.org), write the article, then open a pull request to replace the stub with your article. A [pull request](https://help.github.com/articles/about-pull-requests/) is how you'll suggest changes. It lets others know about, review, and eventually adopt your changes.
+ជាជំនួយ, ស្វែងរក `stub article` នៅក្នុង [Guide website](https://guide.freecodecamp.org), សរសេរជាអត្ថបទ, បន្ទាប់មកធ្វើការបើក pull request ដើម្បីជំនួស stub នៅក្នុងអត្ថបទ។ [pull request](https://help.github.com/articles/about-pull-requests/) គឺជាការសូមសំណូមពរធ្វើការផ្លាស់ប្តូរ។ វាអាចឪ្យអ្នកដទៃដឹងអំពីវា, ពិនិត្យ, ហើយទទួលយកការផ្លាស់ប្តូររបស់អ្នក។
 
-If you can't find a stub about the topic you'd like to write about, you can open a PR that creates the stub and includes your draft article.
+ប្រសិនបើអ្នកមិនអាចរក stub ដែលទាក់ទងនឹងទៅនឹងអត្ថបទដែលអ្នកសរសេរ, អ្នកអាចធ្វើការ​ Pull Request ដែលបង្កើត stub រួមជាមួយអត្ថបទព្រាង។
 
-If you would like to help improve guide articles, here's [how to work on guide articles](/docs/how-to-work-on-guide-articles.md).
+ប្រសិនបើអ្នកចង់កែលម្អអត្ថបទណែនាំ, here's [how to work on guide articles](/docs/how-to-work-on-guide-articles.md).
 
 ### Create, Update and Fix Bugs in our coding challenges
 
