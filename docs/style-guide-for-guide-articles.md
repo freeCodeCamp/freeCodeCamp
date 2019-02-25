@@ -155,7 +155,7 @@ Don't use emojis or emoticons in the Guide. freeCodeCamp has a global community,
 
 ## Curriculum Challenge Solutions
 
-When proposing a solution for curriculum challenge related article, the full code should be given.  This includes all the original seed code plus any changes needed to pass the all the challenge's tests.
+When proposing a solution for a curriculum challenge related article, the full code should be given. This includes all the original seed code plus any changes needed to pass the all the challenge's tests.
 
 ## Attributions
 
