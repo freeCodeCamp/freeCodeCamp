@@ -66,7 +66,7 @@ Output:
 
 ### Mnesia
 
-mnesia is a distributed database management system written in Erlang and highly compatible with Erlang processes.
+Mnesia is a distributed database management system written in Erlang and highly compatible with Erlang processes.
 The following are some of the most important and attractive capabilities provided by Mnesia:
 
 * A relational/object hybrid data model.

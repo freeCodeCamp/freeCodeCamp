@@ -9,6 +9,7 @@ Unfortunately this is impossible to do with CSS and HTML without forcing column 
 
 There are several properties that let you customize multi-column layout:
 * column-count
+* column-fill
 * column-gap
 * column-rule-style
 * column-rule-width
@@ -16,6 +17,7 @@ There are several properties that let you customize multi-column layout:
 * column-rule
 * column-span
 * column-width
+* columns
 
 <!-- The article goes here, in GitHub-flavored Markdown. Feel free to add YouTube videos, images, and CodePen/JSBin embeds  -->
 
