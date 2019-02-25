@@ -6,10 +6,7 @@ challengeType: 5
 
 ## Description
 <section id='description'>
-A &nbsp; ''zig-zag'' &nbsp; array is a square arrangement of the first &nbsp;
-$N^2$ &nbsp; integers, &nbsp; where the
-numbers increase sequentially as you zig-zag along the array's &nbsp;
-<a href="https://en.wiktionary.org/wiki/antidiagonal">anti-diagonals</a>.
+A &nbsp; ''zig-zag'' &nbsp; array is a square arrangement of the first &nbsp; $N^2$ &nbsp; integers, &nbsp; where the numbers increase sequentially as you zig-zag along the array's &nbsp; <a href="https://en.wiktionary.org/wiki/antidiagonal">anti-diagonals</a>.
 For example, given &nbsp; '''5''', &nbsp; produce this array:
 <pre>
  0  1  5  6 14
@@ -18,8 +15,8 @@ For example, given &nbsp; '''5''', &nbsp; produce this array:
  9 11 17 20 22
 10 18 19 23 24
 </pre>
-Write a function that takes the size of the zig-zag matrix, and returns the
-corresponding matrix as two-dimensional array.
+
+Write a function that takes the size of the zig-zag matrix, and returns the corresponding matrix as two-dimensional array.
 </section>
 
 ## Instructions
@@ -55,7 +52,7 @@ tests:
 <div id='js-seed'>
 
 ```js
-function ZigZagMatrix(n) {
+function ZigZagMatrix(n){
   // Good luck!
   return [[], []];
 }
@@ -88,7 +85,7 @@ const zm5 = [
 
 
 ```js
-function ZigZagMatrix(n) {
+function ZigZagMatrix(n){
   const mtx = [];
   for (let i = 0; i < n; i++) {
     mtx[i] = [];
