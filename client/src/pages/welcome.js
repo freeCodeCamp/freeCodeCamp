@@ -143,7 +143,7 @@ function Welcome({
           </Row>
           <Spacer />
           <Row>
-            <Col sm={8} smOffset={2} xs={12}>
+            <Col sm={6} smOffset={3} xs={12}>
               <CurrentChallengeLink>
                 <Button block={true} bsStyle='primary' className='btn-cta-big'>
                   Go to my next challenge
