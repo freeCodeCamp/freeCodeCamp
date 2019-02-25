@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
-import { Button, Alert, Panel } from '@freecodecamp/react-bootstrap';
+import { Button, Panel } from '@freecodecamp/react-bootstrap';
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
 
@@ -18,10 +18,13 @@ const propTypes = {
 
 const mapStateToProps = () => ({});
 const mapDispatchToProps = dispatch =>
-  bindActionCreators({
-    deleteAccount,
-    resetProgress
-  }, dispatch);
+  bindActionCreators(
+    {
+      deleteAccount,
+      resetProgress
+    },
+    dispatch
+  );
 
 class DangerZone extends Component {
   constructor(props) {
@@ -37,33 +40,33 @@ class DangerZone extends Component {
       ...state,
       reset: !state.reset
     }));
-  }
+  };
 
   toggleDeleteModal = () => {
     return this.setState(state => ({
       ...state,
       delete: !state.delete
     }));
-  }
+  };
 
   render() {
     const { deleteAccount, resetProgress } = this.props;
     return (
-      <div className='danger-zone'>
+      <div className='danger-zone text-center'>
         <FullWidthRow>
-          <Panel>
+          <Panel bsStyle='danger'>
+            <Panel.Heading>Danger Zone</Panel.Heading>
             <Spacer />
-            <Alert bsStyle='danger' className='alert-danger-zone'>
-              Please be careful! Changes in this section are permanent.
-            </Alert>
+            <p>Please be careful. Changes in this section are permanent.</p>
             <FullWidthRow>
               <Button
                 block={true}
                 bsSize='lg'
                 bsStyle='danger'
                 className='btn-danger'
+                onClick={() => this.toggleResetModal()}
                 type='button'
-                onClick={() => this.toggleResetModal()}>
+              >
                 Reset all of my progress
               </Button>
               <ButtonSpacer />
@@ -72,20 +75,25 @@ class DangerZone extends Component {
                 bsSize='lg'
                 bsStyle='danger'
                 className='btn-danger'
+                onClick={() => this.toggleDeleteModal()}
                 type='button'
-                onClick={() => this.toggleDeleteModal()}>
+              >
                 Delete my account
               </Button>
+              <Spacer />
             </FullWidthRow>
           </Panel>
+
           <ResetModal
-            reset={resetProgress}
             onHide={() => this.toggleResetModal()}
-            show={this.state.reset} />
+            reset={resetProgress}
+            show={this.state.reset}
+          />
           <DeleteModal
             delete={deleteAccount}
             onHide={() => this.toggleDeleteModal()}
-            show={this.state.delete} />
+            show={this.state.delete}
+          />
         </FullWidthRow>
       </div>
     );
