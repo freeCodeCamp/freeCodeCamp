@@ -84,7 +84,7 @@ console.log(typeof x)  // object
 console.log(typeof null)  // object
 ```
 
-Last example is a well-known JavaScript 'mistake' and fix was proposed in ECMAScript: 
+The last example above is a well-known JavaScript 'mistake' and a fix was proposed in ECMAScript, which would have resulted in: 
 ```javascript
 typeof null === 'null' // true
 ```
