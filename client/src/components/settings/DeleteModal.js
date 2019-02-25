@@ -2,7 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 
 import { ButtonSpacer } from '../helpers';
-import { Button, Modal } from '@freecodecamp/react-bootstrap'
+import { Button, Modal } from '@freecodecamp/react-bootstrap';
 
 import './danger-zone.css';
 
@@ -20,20 +20,22 @@ function DeleteModal(props) {
       autoFocus={true}
       backdrop={true}
       bsSize='lg'
+      className='text-center'
       keyboard={true}
       onHide={onHide}
-      show={show}>
+      show={show}
+    >
       <Modal.Header closeButton={true}>
         <Modal.Title id='modal-title'>Delete My Account</Modal.Title>
       </Modal.Header>
       <Modal.Body>
         <p>
-          This will really delete all your data, including all your progress
-          and account information.
+          This will really delete all your data, including all your progress and
+          account information.
         </p>
         <p>
-          We won't be able to recover any of it for you later,
-          even if you change your mind.
+          We won't be able to recover any of it for you later, even if you
+          change your mind.
         </p>
         <p>
           If there's something we could do better, send us an email instead and
@@ -48,8 +50,9 @@ function DeleteModal(props) {
           bsSize='lg'
           bsStyle='primary'
           className='btn-invert'
+          onClick={props.onHide}
           type='button'
-          onClick={props.onHide}>
+        >
           Nevermind, I don't want to delete my account
         </Button>
         <ButtonSpacer />
@@ -58,8 +61,9 @@ function DeleteModal(props) {
           bsSize='lg'
           bsStyle='danger'
           className='btn-danger'
+          onClick={props.delete}
           type='button'
-          onClick={props.delete}>
+        >
           I am 100% certain. Delete everything related to this account
         </Button>
       </Modal.Body>

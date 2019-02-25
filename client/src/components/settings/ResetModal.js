@@ -2,13 +2,11 @@ import React from 'react';
 import PropTypes from 'prop-types';
 
 import { ButtonSpacer } from '../helpers';
-import { Button, Modal } from '@freecodecamp/react-bootstrap'
-
-import './DangerZone'
+import { Button, Modal } from '@freecodecamp/react-bootstrap';
 
 const propTypes = {
-  reset: PropTypes.func.isRequired,
   onHide: PropTypes.func.isRequired,
+  reset: PropTypes.func.isRequired,
   show: PropTypes.bool
 };
 
@@ -20,9 +18,11 @@ function ResetModal(props) {
       autoFocus={true}
       backdrop={true}
       bsSize='lg'
+      className='text-center'
       keyboard={true}
       onHide={onHide}
-      show={show}>
+      show={show}
+    >
       <Modal.Header closeButton={true}>
         <Modal.Title id='modal-title'>Reset My Progress</Modal.Title>
       </Modal.Header>
@@ -42,8 +42,9 @@ function ResetModal(props) {
           bsSize='lg'
           bsStyle='primary'
           className='btn-invert'
+          onClick={props.onHide}
           type='button'
-          onClick={props.onHide}>
+        >
           Nevermind, I don't want to delete all of my progress
         </Button>
         <ButtonSpacer />
@@ -52,8 +53,9 @@ function ResetModal(props) {
           bsSize='lg'
           bsStyle='danger'
           className='btn-danger'
+          onClick={props.reset}
           type='button'
-          onClick={props.reset}>
+        >
           Reset everything. I want to start from the beginning
         </Button>
       </Modal.Body>
