@@ -6,22 +6,27 @@ challengeType: 5
 
 ## Description
 <section id='description'>
-<p>There are four types of common coins in <a href="https://en.wikipedia.org/wiki/United_States" title="link: https://en.wikipedia.org/wiki/United_States">US</a> currency:</p>
-quarters (25 cents)
-dimes (10 cents)
-nickels (5 cents),  and
-pennies (1 cent)
+There are four types of common coins in <a href="https://en.wikipedia.org/wiki/United_States" title="link: https://en.wikipedia.org/wiki/United_States">US</a> currency:
+<ul>
+  <li>quarters (25 cents)</li>
+  <li>dimes (10 cents)</li>
+  <li>nickels (5 cents), and</li>
+  <li>pennies (1 cent)</li>
+</ul>
 <p>There are six ways to make change for 15 cents:</p>
-A dime and a nickel
-A dime and 5 pennies
-3 nickels
-2 nickels and 5 pennies
-A nickel and 10 pennies
-15 pennies
-Task:
-<p>Implement a function to determine how many ways there are to make change for a dollar using these common coins? (1 dollar = 100 cents).</p>
-Reference:
- <a href="http://mitpress.mit.edu/sicp/full-text/book/book-Z-H-11.html#%_sec_Temp_52" title="link: http://mitpress.mit.edu/sicp/full-text/book/book-Z-H-11.html#%_sec_Temp_52">an algorithm from MIT Press</a>.
+<ul>
+  <li>A dime and a nickel</li>
+  <li>A dime and 5 pennies</li>
+  <li>3 nickels</li>
+  <li>2 nickels and 5 pennies</li>
+  <li>A nickel and 10 pennies</li>
+  <li>15 pennies</li>
+</ul>
+Implement a function to determine how many ways there are to make change for a dollar using these common coins? (1 dollar = 100 cents)
+<b>Reference:</b>
+<ul>
+  <li><a href="http://mitpress.mit.edu/sicp/full-text/book/book-Z-H-11.html#%_sec_Temp_52" title="link: http://mitpress.mit.edu/sicp/full-text/book/book-Z-H-11.html#%_sec_Temp_52">an algorithm from MIT Press</a>.</li>
+</ul>
 </section>
 
 ## Instructions

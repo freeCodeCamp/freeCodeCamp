@@ -6,18 +6,22 @@ challengeType: 5
 
 ## Description
 <section id='description'>
-<p>Comma quibbling is a task originally set by Eric Lippert in his <a href="http://blogs.msdn.com/b/ericlippert/archive/2009/04/15/comma-quibbling.aspx" title="link: http://blogs.msdn.com/b/ericlippert/archive/2009/04/15/comma-quibbling.aspx">blog</a>.</p>
-Task:<p>Write a function to generate a string output which is the concatenation of input words from a list/sequence where:</p>
-An input of no words produces the output string of just the two brace characters "{}".
-An input of just one word, e.g. ["ABC"], produces the output string of the word inside the two braces, e.g. "{ABC}".
-An input of two words, e.g. ["ABC", "DEF"], produces the output string of the two words inside the two braces with the words separated by the string " and ", e.g. "{ABC and DEF}".
-An input of three or more words, e.g. ["ABC", "DEF", "G", "H"], produces the output string of all but the last word separated by ", " with the last word separated by " and " and all within braces; e.g. "{ABC, DEF, G and H}".
-<p>Test your function with the following series of inputs showing your output here on this page:</p>
-[]                       # (No input words).
-["ABC"]
-["ABC", "DEF"]
-["ABC", "DEF", "G", "H"]
-<p>Note: Assume words are non-empty strings of uppercase characters for this task.</p>
+Comma quibbling is a task originally set by Eric Lippert in his <a href="http://blogs.msdn.com/b/ericlippert/archive/2009/04/15/comma-quibbling.aspx" title="link: http://blogs.msdn.com/b/ericlippert/archive/2009/04/15/comma-quibbling.aspx">blog</a>.
+Write a function to generate a string output which is the concatenation of input words from a list/sequence where:
+<ol>
+  <li>An input of no words produces the output string of just the two brace characters "{}".</li>
+  <li>An input of just one word, e.g. ["ABC"], produces the output string of the word inside the two braces, e.g. "{ABC}".</li>
+  <li>An input of two words, e.g. ["ABC", "DEF"], produces the output string of the two words inside the two braces with the words separated by the string " and ", e.g. "{ABC and DEF}".</li>
+  <li>An input of three or more words, e.g. ["ABC", "DEF", "G", "H"], produces the output string of all but the last word separated by ", " with the last word separated by " and " and all within braces; e.g. "{ABC, DEF, G and H}".</li>
+</ol>
+Test your function with the following series of inputs showing your output here on this page:
+<ul>
+  <li>[] # (No input words).</li>
+  <li>["ABC"]</li>
+  <li>["ABC", "DEF"]</li>
+  <li>["ABC", "DEF", "G", "H"]</li>
+</ul>
+Note: Assume words are non-empty strings of uppercase characters for this task.
 </section>
 
 ## Instructions

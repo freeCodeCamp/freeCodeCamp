@@ -6,8 +6,11 @@ challengeType: 5
 
 ## Description
 <section id='description'>
-<p>Given a  <a href="https://en.wikipedia.org/wiki/List_(abstract_data_type)" title="wp: List_(abstract_data_type)">list</a>  of arbitrarily many strings, implement a function for each of the following conditions:</p> test if they are all lexically equal
- test if every string is lexically less than the one after it  (i.e. whether the list is in strict ascending order)
+Given a <a href="https://en.wikipedia.org/wiki/List_(abstract_data_type)" title="wp: List_(abstract_data_type)">list</a> of arbitrarily many strings, implement a function for each of the following conditions:
+<ul>
+  <li>test if they are all lexically equal</li>
+  <li>test if every string is lexically less than the one after it  (i.e. whether the list is in strict ascending order)</li>
+</ul>
 </section>
 
 ## Instructions
