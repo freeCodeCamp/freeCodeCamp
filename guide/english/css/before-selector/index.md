@@ -3,7 +3,6 @@ title: Before Selector
 ---
 
 # Before Selector
-
 The CSS `::before` selector can be used to insert some content, usually cosmetic, *before* the content of an element or elements. It is used by attaching `::before` to the element it is to be used on. It is an inline element by default.
 
 ## Examples
