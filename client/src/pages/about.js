@@ -21,6 +21,7 @@ import { Link, Spacer } from '../components/helpers';
 
 import './common-pages.css';
 
+/* eslint-disable max-len */
 const AboutPage = () => {
   return (
     <Fragment>
@@ -335,6 +336,7 @@ const AboutPage = () => {
     </Fragment>
   );
 };
+/* eslint-enable max-len */
 
 AboutPage.displayName = 'AboutPage';
 

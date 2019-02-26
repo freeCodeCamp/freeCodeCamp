@@ -83,6 +83,7 @@ class DonateOtherPage extends Component {
     );
   }
 
+  /* eslint-disable max-len */
   render() {
     return (
       <Fragment>
@@ -222,6 +223,7 @@ class DonateOtherPage extends Component {
       </Fragment>
     );
   }
+  /* eslint-enable max-len */
 }
 
 DonateOtherPage.displayName = 'DonateOtherPage';

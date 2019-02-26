@@ -47,8 +47,10 @@ li.open > .map-title svg:first-child {
   margin-bottom: 0.25rem;
 }
 
-.night .map-challenge-title a {
-  color: #f8f8f8;
+.night .map-challenge-title a,
+.night .map-title h4,
+.night .map-title-completed {
+  color: #67d269;
 }
 
 .map-challenge-title-completed {

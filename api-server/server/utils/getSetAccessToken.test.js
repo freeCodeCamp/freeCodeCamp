@@ -161,6 +161,7 @@ describe('getSetAccessToken', () => {
   });
 
   describe('removeCookies', () => {
+    // eslint-disable-next-line max-len
     it('removes four cookies set in the lifetime of an authenticated session', () => {
       // expect.assertions(4);
       const req = mockReq();
