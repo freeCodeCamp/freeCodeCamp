@@ -46,7 +46,7 @@ Instructions about what exactly needs to be done.
 
 ``` yml
 tests:
-  - text: text: Should return "foo"
+  - text: Should return "foo"
     testString: 'A stringified function possibly using Chai asserts'
 ```
 
