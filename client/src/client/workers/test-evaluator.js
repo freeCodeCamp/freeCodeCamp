@@ -6,16 +6,14 @@ const oldLog = self.console.log.bind(self.console);
 self.console.log = function proxyConsole(...args) {
   self.postMessage({
     type: 'LOG',
-    data: args.map(log => JSON.stringify(log)).join(' ')
+    data: args.map(arg => JSON.stringify(arg)).join(' ')
   });
   return oldLog(...args);
 };
 
 self.onmessage = async e => {
   /* eslint-disable no-unused-vars */
-  const {
-    code = ''
-  } = e.data;
+  const { code = '' } = e.data;
   const assert = chai.assert;
   // Fake Deep Equal dependency
   const DeepEqual = (a, b) => JSON.stringify(a) === JSON.stringify(b);
