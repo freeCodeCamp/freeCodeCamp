@@ -63,48 +63,48 @@ Guide articles ជួយអោយអ្នកយល់អំពីបរិប�
 
 ប្រសិនបើអ្នកមិនអាចរក stub ដែលទាក់ទងនឹងទៅនឹងអត្ថបទដែលអ្នកសរសេរ, អ្នកអាចធ្វើការ​ Pull Request ដែលបង្កើត stub រួមជាមួយអត្ថបទព្រាង។
 
-ប្រសិនបើអ្នកចង់កែលម្អអត្ថបទណែនាំ, here's [how to work on guide articles](/docs/how-to-work-on-guide-articles.md).
+ប្រសិនបើអ្នកចង់កែលម្អអត្ថបទណែនាំ, នេះគឺ [របៀបធ្វើការនៅលើអត្ថបទណែនាំ](/docs/how-to-work-on-guide-articles.md).
 
-### Create, Update and Fix Bugs in our coding challenges
+###  បង្កើត, Update and Fix Bugs សំរាប់ coding challenges របស់យើង
 
-All our coding challenges are curated by the community, bringing in expert knowledge from volunteers like you.
+Coding challenges​ ទាំងអស់ត្រូវបានរៀបចំដោយសហគមន៍ដោយនាំមកនូវចំណេះដឹងជំនាញពីអ្នកស្ម័គ្រចិត្តដូចអ្នក។
 
-You can help expand them and make their wording clearer. You can update the user stories to explain the concept better and even remove redundant ones. You can also improve the challenge tests to make them more accurately test people's code.
+អ្នកអាចជួយពង្រីកអត្ថន័យកាន់តែច្បាស់។ អ្នកអាច user stories ដើម្បីពន្យល់ពី concept ឪ្យកាន់តែល្អ និង​លុបចោលនូវអ្វីដែលពំុចាំបាច់។ អ្នកក៏អាចកែលម្អល់ើតេស្តប្រកួតប្រជែង ដើម្បីYou can also improve the challenge tests to make them more accurately test people's code.
 
-If you're interested in improving these coding challenges, here's [how to work on coding challenges](/docs/how-to-work-on-coding-challenges.md).
+ប្រសិនបើអ្នកចង់កែលម្អ coding challenges, នេះគឺ [របៀបធ្វើការទៅលើ coding challenges](/docs/how-to-work-on-coding-challenges.md).
 
-### Translate guide articles and coding challenges
+### បកប្រែអត្ថបទណែនាំនិង coding challenges
 
-You can help us translate our Guide articles and Coding challenges for a language that you speak. Currently, we have translated versions in:
+អ្នកអាចជួយយើងបកប្រែអត្ថបទណែនាំ​ និង Coding challenges សម្រាប់ភាសាដែលអ្នកនិយាយ។ បច្ចុប្បន្នយើងបានបកប្រែជាភាសា:
 
-- [Chinese (中文)](https://github.com/freeCodeCamp/freeCodeCamp/tree/master/curriculum/challenges/chinese)
-- [Russian (русский)](https://github.com/freeCodeCamp/freeCodeCamp/tree/master/curriculum/challenges/russian)
-- [Arabic (عربي)](https://github.com/freeCodeCamp/freeCodeCamp/tree/master/curriculum/challenges/arabic)
-- [Spanish (Español)](https://github.com/freeCodeCamp/freeCodeCamp/tree/master/curriculum/challenges/spanish)
-- [Portuguese (Português)](https://github.com/freeCodeCamp/freeCodeCamp/tree/master/curriculum/challenges/portuguese)
+- [ចិន (中文)](https://github.com/freeCodeCamp/freeCodeCamp/tree/master/curriculum/challenges/chinese)
+- [រុស្ស៊ី (русский)](https://github.com/freeCodeCamp/freeCodeCamp/tree/master/curriculum/challenges/russian)
+- [អារ៉ាប៊ីក (عربي)](https://github.com/freeCodeCamp/freeCodeCamp/tree/master/curriculum/challenges/arabic)
+- [អេស្ប៉ាញ (Español)](https://github.com/freeCodeCamp/freeCodeCamp/tree/master/curriculum/challenges/spanish)
+- [ព័រទុយហ្គាល់ (Português)](https://github.com/freeCodeCamp/freeCodeCamp/tree/master/curriculum/challenges/portuguese)
 
-We would love your help in improving the quality of these translations. Millions of people use the English language version of freeCodeCamp.org, and we expect millions more to use these translated versions as well.
+យើងនឹងគាំទ្រជំនួយរបស់អ្នកក្នុងការបង្កើនគុណភាពនៃការបកប្រែទាំងនេះ។ មនុស្សរាប់លាននាក់បានប្រើប្រាស់ freeCodeCamp.org ជាភាសាអង់គ្លេស, ហើយពួកយើងរំពឹងថាមានមនុស្សរាប់លានអ្នកបន្ថែមទៀត នឹងប្រើប្រាស់ freeCodeCamp.org តាមភាសាដែលបានបកប្រែ។
 
-### Help us fix bugs in freeCodeCamp.org's learning platform
+### ជួយយើង fix bugs នៅក្នុង freeCodeCamp.org's learning platform
 
-Our learning platform runs on a modern JavaScript stack. It has various components, tools and libraries, including but not limited to, Node.js, MongoDB, LoopBack, OAuth 2.0, React, Gatsby, Webpack, and more.
+Learning platform របស់យើងដំណើរការដោយ modern JavaScript stack. វាមានសមាសធាតុជាច្រើន, ឧបករណ៍ និង libraries, រួមបញ្ចូលប៉ុន្តែមិនកំណត់ចំពោះ, Node.js, MongoDB, LoopBack, OAuth 2.0, React, Gatsby, Webpack, និងផ្សេងទៀត។
 
 Broadly,
 
-- We have a Node.js based API server.
+- យើងមាន Node.js based API server.
 - A set of React based client applications.
-- A script that we use to evaluate our front-end projects.
+- Script ដែលប្រើសម្រាប់ front-end projects.
 
-Contributing to this requires some understanding of APIs, ES6 Syntax, and a lot of curiosity.
+Contributing ទៅលើចំណុចខាងលើនេះទាមទារឪ្យអ្នកយល់ដឹងខ្លះៗអំពី APIs, ES6 Syntax, និងចង់ចេះដឹងឪ្យបានច្រើន។
 
-Essentially, we expect basic familiarity with some of the aforementioned technologies, tools, and libraries. With that being said, you are not required to be an expert on them in order to contribute.
+ជាចំណុចសំខាន់​, យើងរំពឹងថានឹងមាន​ការយល់ដឹងអំពីចំណុចមូលដ្ឋានដែល​ទាក់ទងទៅនឹងបច្ចេកវិទ្យាដែលបានបញ្ជាក់, ឧបករណ៏, និង libraries។ លើសពីនេះទៅទៀត, អ្នកមិនតម្រូវឪ្យទាល់តែជាអ្នកជំនាញ ក៏អាចធ្វើការ contribute បាន។
 
-Feel free to ask us questions on the related issue threads, and we will be glad to clarify. When in doubt, you can reach Mrugesh Mohapatra [`@raisedadead`](https://github.com/raisedadead) or Stuart Taylor [`@bouncey`](https://github.com/bouncey) from our platform dev team to help you with this.
+អ្នកអាចសួរសំណួរដែលទាក់ទងទៅនឹង issue threads, ហើយពួកយើងរីករាយនិងធ្វើការឆ្លើយតប។ ពេលអ្នកមានចម្ងល់ អ្នកអាចធ្វើការសាកសួរទៅកាន់ Mrugesh Mohapatra [`@raisedadead`](https://github.com/raisedadead) រឺ Stuart Taylor [`@bouncey`](https://github.com/bouncey) ដែលមកពី platform dev team ក្នុងការជួយដោះស្រាយចម្ងល់របស់អ្នក។
 
-If you want to help us improve our codebase, here's [how to setup freeCodeCamp locally](/docs/how-to-setup-freecodecamp-locally.md).
+ប្រសិនបើអ្នកចង់ជួយកែលម្អ codebase របស់យើង, នេះគឺ [how to setup freeCodeCamp locally](/docs/how-to-setup-freecodecamp-locally.md).
 
-## Frequently Asked Questions
-
+## សំណួរដែលចោទសួរជាញឹកញាប់
+ដោយសារសំនួរខាងក្រោមជាសំណួរដែលសំខាន់ៗ ហេតុដូចនេះយើងខ្ងំុសូមមិនធ្វើការបកប្រែទៅជាភាសាខ្មែរ។
 **How can I report a bug that is not on board?**
 
 If you think you've found a bug, first read the ["Help I've Found a Bug"](https://forum.freecodecamp.org/t/how-to-report-a-bug/19543) article and follow its instructions.
