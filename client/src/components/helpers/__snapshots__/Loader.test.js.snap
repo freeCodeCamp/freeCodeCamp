@@ -1,0 +1,27 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<Loader /> matches the fullScreen render snapshot 1`] = `
+<div
+  class="full-screen-wrapper"
+>
+  <div
+    class="sk-fade-in sk-spinner ball-clip-rotate-multiple"
+  >
+    <div />
+    <div />
+  </div>
+</div>
+`;
+
+exports[`<Loader /> matches to the default render snapshot 1`] = `
+<div
+  class=""
+>
+  <div
+    class="sk-fade-in sk-spinner ball-clip-rotate-multiple"
+  >
+    <div />
+    <div />
+  </div>
+</div>
+`;

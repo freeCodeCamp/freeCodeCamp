@@ -89,11 +89,7 @@ class ShowUser extends Component {
     const { username, isSignedIn, userFetchState, email } = this.props;
     const { pending, complete, errored } = userFetchState;
     if (pending && !complete) {
-      return (
-        <div className='loader-wrapper'>
-          <Loader />
-        </div>
-      );
+      return <Loader fullScreen={true} />;
     }
 
     if ((complete || errored) && !isSignedIn) {
