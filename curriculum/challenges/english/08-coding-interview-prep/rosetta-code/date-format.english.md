@@ -43,7 +43,7 @@ tests:
 <div id='js-seed'>
 
 ```js
-function getDateFormats () {
+function getDateFormats() {
   // Good luck!
   return true;
 }
@@ -78,7 +78,7 @@ const equalsMessage = `message: <code>getDataFormats()</code> should return <cod
 
 
 ```js
-function getDateFormats () {
+function getDateFormats() {
   const date = new Date();
   const weekdays = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'];
   const months = ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'];

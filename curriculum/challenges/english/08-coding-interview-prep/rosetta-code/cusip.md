@@ -49,7 +49,7 @@ tests:
 <div id='js-seed'>
 
 ```js
-function isCusip (s) {
+function isCusip(s) {
   // Good luck!
 }
 ```
@@ -61,7 +61,7 @@ function isCusip (s) {
 <section id='solution'>
 
 ```js
-function isCusip (s) {
+function isCusip(s) {
   if (s.length != 9) return false;
   var sum = 0;
   var ASCII = x => x.charCodeAt(0);

@@ -70,7 +70,7 @@ if (testFn) {
 
 
 ```js
-function accumulator (sum) {
+function accumulator(sum) {
   return function (n) {
     return sum += n;
   };

@@ -41,7 +41,7 @@ tests:
 <div id='js-seed'>
 
 ```js
-function babbage (babbageNum, endDigits) {
+function babbage(babbageNum, endDigits) {
   // Good luck!
   return true;
 }
@@ -68,7 +68,7 @@ const answer = 25264;
 
 
 ```js
-function babbage (babbageAns, endDigits) {
+function babbage(babbageAns, endDigits) {
   const babbageNum = Math.pow(babbageAns, 2);
   const babbageStartDigits = parseInt(babbageNum.toString().replace('269696', ''));
   let answer = 99736;

@@ -36,7 +36,7 @@ tests:
 <div id='js-seed'>
 
 ```js
-function mode (arr) {
+function mode(arr) {
   // Good luck!
   return true;
 }

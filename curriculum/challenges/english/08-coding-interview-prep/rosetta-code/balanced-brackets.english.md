@@ -78,7 +78,7 @@ tests:
 <div id='js-seed'>
 
 ```js
-function isBalanced (str) {
+function isBalanced(str) {
   // Good luck!
   return true;
 }
@@ -122,7 +122,7 @@ const testCases = [
 
 
 ```js
-function isBalanced (str) {
+function isBalanced(str) {
   if (str === '') return true;
   let a = str;
   let b;

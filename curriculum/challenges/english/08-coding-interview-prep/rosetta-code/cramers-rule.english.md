@@ -59,7 +59,7 @@ tests:
 <div id='js-seed'>
 
 ```js
-function cramersRule (matrix, freeTerms) {
+function cramersRule(matrix, freeTerms) {
   // Good luck!
   return true;
 }

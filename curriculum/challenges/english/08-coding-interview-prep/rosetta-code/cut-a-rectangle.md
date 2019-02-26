@@ -48,7 +48,7 @@ tests:
 <div id='js-seed'>
 
 ```js
-function cutRectangle (w, h) {
+function cutRectangle(w, h) {
   // Good luck!
 }
 ```
@@ -60,7 +60,7 @@ function cutRectangle (w, h) {
 <section id='solution'>
 
 ```js
-function cutRectangle (w, h) {
+function cutRectangle(w, h) {
   if (w % 2 == 1 && h % 2 == 1)
     return;
 

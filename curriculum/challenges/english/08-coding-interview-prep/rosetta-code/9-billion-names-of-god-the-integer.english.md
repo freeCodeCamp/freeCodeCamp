@@ -80,7 +80,7 @@ function numberOfNames(num) {
 
 
 ```js
-function numberOfNames (num) {
+function numberOfNames(num) {
   const cache = [
     [1]
   ];

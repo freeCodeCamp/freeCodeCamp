@@ -37,7 +37,7 @@ tests:
 <div id='js-seed'>
 
 ```js
-function rms (arr) {
+function rms(arr) {
   // Good luck!
 }
 ```
@@ -62,7 +62,7 @@ const answer1 = 6.2048368229954285;
 
 
 ```js
-function rms (arr) {
+function rms(arr) {
   const sumOfSquares = arr.reduce((s, x) => s + x * x, 0);
   return Math.sqrt(sumOfSquares / arr.length);
 }

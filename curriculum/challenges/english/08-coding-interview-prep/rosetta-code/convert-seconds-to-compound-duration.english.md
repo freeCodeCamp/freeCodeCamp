@@ -113,7 +113,7 @@ tests:
 <div id='js-seed'>
 
 ```js
-function convertSeconds (sec) {
+function convertSeconds(sec) {
   // Good luck!
   return true;
 }
@@ -139,7 +139,7 @@ const results = ['2 hr, 59 sec', '1 d', '9 wk, 6 d, 10 hr, 40 min'];
 
 
 ```js
-function convertSeconds (sec) {
+function convertSeconds(sec) {
   const localNames = ['wk', 'd', 'hr', 'min', 'sec'];
   // compoundDuration :: [String] -> Int -> String
   const compoundDuration = (labels, intSeconds) =>
