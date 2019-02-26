@@ -57,7 +57,7 @@ function createSuperBlockTitle(str) {
 }
 
 export class SuperBlock extends Component {
-  renderBlock(blocksForSuperBlock, noCurrentChallenge) {
+  renderBlock(blocksForSuperBlock) {
     const { introNodes } = this.props;
     const blockDashedNames = uniq(
       blocksForSuperBlock.map(({ block }) => block)
@@ -79,7 +79,6 @@ export class SuperBlock extends Component {
                   .join('-') === blockDashedName
             )}
             key={blockDashedName}
-            noCurrentChallenge={noCurrentChallenge}
           />
         ))}
       </ul>
@@ -97,31 +96,27 @@ export class SuperBlock extends Component {
     const blocksForSuperBlock = nodes.filter(
       node => node.superBlock === superBlock
     );
-    const noCurrentChallenge = !nodes.some(
-      challenge => challenge.id === currentChallengeId
-    );
     // If, somehow, the user does not have a current challenge, this opens the
     // first superBlock.
-    const hasCurrentChallenge = noCurrentChallenge
+    const hasCurrentChallenge = !currentChallengeId
       ? superBlock === 'Responsive Web Design'
       : blocksForSuperBlock.some(
           challenge => challenge.id === currentChallengeId
         );
-    const isOpen =
-      typeof isExpanded === 'undefined' ? hasCurrentChallenge : isExpanded;
+    // isExpanded is toggled, starting as false, by the user unless this
+    // block hasCurrentChallenge when it starts as true.
+    const isOpen = hasCurrentChallenge ? !isExpanded : isExpanded;
     return (
       <li className={`superblock ${isOpen ? 'open' : ''}`}>
         <button
           aria-expanded={isOpen}
           className='map-title'
-          onClick={() => toggleSuperBlock(superBlock, !isOpen)}
+          onClick={() => toggleSuperBlock(superBlock)}
         >
           <Caret />
           <h4>{createSuperBlockTitle(superBlock)}</h4>
         </button>
-        {isOpen
-          ? this.renderBlock(blocksForSuperBlock, noCurrentChallenge)
-          : null}
+        {isOpen ? this.renderBlock(blocksForSuperBlock) : null}
       </li>
     );
   }

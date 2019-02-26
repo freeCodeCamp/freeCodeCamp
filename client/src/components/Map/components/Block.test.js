@@ -62,7 +62,6 @@ test('<Block />  should handle toggle clicks correctly', () => {
     completedChallenges: mockCompleted,
     intro: mockIntroNodes[0],
     isExpanded: false,
-    noCurrentChallenge: false,
     toggleBlock: toggleSpy,
     toggleMapModal: toggleMapSpy
   };
@@ -82,8 +81,7 @@ test('<Block />  should handle toggle clicks correctly', () => {
   enzymeWrapper.find('.map-title').simulate('click');
 
   expect(toggleSpy.called).toBe(true);
-  // initially the Block is not expanded, so it should be toggled open.
-  expect(toggleSpy.calledWithExactly('block-a', true)).toBe(true);
+  expect(toggleSpy.calledWithExactly('block-a')).toBe(true);
 
   enzymeWrapper.setProps({ ...props, isExpanded: true });
 

@@ -7,7 +7,10 @@ import { Link } from 'gatsby';
 
 import ga from '../../../analytics';
 import { makeExpandedBlockSelector, toggleBlock } from '../redux';
-import { userSelector } from '../../../redux';
+import {
+  completedChallengesSelector,
+  currentChallengeIdSelector
+} from '../../../redux';
 import Caret from '../../icons/Caret';
 import { blockNameify } from '../../../../utils/blockNameify';
 /* eslint-disable max-len */
@@ -19,8 +22,9 @@ const mapStateToProps = (state, ownProps) => {
 
   return createSelector(
     expandedSelector,
-    userSelector,
-    (isExpanded, { currentChallengeId, completedChallenges = [] }) => ({
+    completedChallengesSelector,
+    currentChallengeIdSelector,
+    (isExpanded, completedChallenges, currentChallengeId) => ({
       isExpanded,
       currentChallengeId,
       completedChallenges: completedChallenges.map(({ id }) => id)
@@ -44,7 +48,6 @@ const propTypes = {
     })
   }),
   isExpanded: PropTypes.bool,
-  noCurrentChallenge: PropTypes.bool,
   toggleBlock: PropTypes.func.isRequired
 };
 
@@ -59,15 +62,13 @@ export class Block extends Component {
     this.renderChallenges = this.renderChallenges.bind(this);
   }
 
-  handleBlockClick(isOpen) {
-    return () => {
-      const { blockDashedName, toggleBlock } = this.props;
-      ga.event({
-        category: 'Map Block Click',
-        action: blockDashedName
-      });
-      return toggleBlock(blockDashedName, !isOpen);
-    };
+  handleBlockClick() {
+    const { blockDashedName, toggleBlock } = this.props;
+    ga.event({
+      category: 'Map Block Click',
+      action: blockDashedName
+    });
+    return toggleBlock(blockDashedName);
   }
 
   handleChallengeClick(slug) {
@@ -120,8 +121,7 @@ export class Block extends Component {
       completedChallenges,
       challenges,
       isExpanded,
-      intro,
-      noCurrentChallenge
+      intro
     } = this.props;
     let completedCount = 0;
     const challengesWithCompleted = challenges.map(challenge => {
@@ -136,17 +136,18 @@ export class Block extends Component {
     });
     // If, somehow, the user does not have a current challenge, this opens the
     // first block.
-    const hasCurrentChallenge = noCurrentChallenge
+    const hasCurrentChallenge = !currentChallengeId
       ? blockDashedName === 'basic-html-and-html5'
       : challenges.some(challenge => challenge.id === currentChallengeId);
-    const isOpen =
-      typeof isExpanded === 'undefined' ? hasCurrentChallenge : isExpanded;
+    // isExpanded is toggled, starting as false, by the user unless this
+    // block hasCurrentChallenge when it starts as true.
+    const isOpen = hasCurrentChallenge ? !isExpanded : isExpanded;
     return (
       <li className={`block ${isOpen ? 'open' : ''}`}>
         <button
           aria-expanded={isOpen}
           className='map-title'
-          onClick={this.handleBlockClick(isOpen)}
+          onClick={this.handleBlockClick}
         >
           <Caret />
           <h4>{blockNameify(blockDashedName)}</h4>
