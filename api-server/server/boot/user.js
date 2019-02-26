@@ -152,13 +152,9 @@ function getUnlinkSocial(req, res, next) {
 
 function postResetProgress(req, res, next) {
   const { user } = req;
-  user.updateAttributes(
+  return user.updateAttributes(
     {
-      progressTimestamps: [
-        {
-          timestamp: Date.now()
-        }
-      ],
+      progressTimestamps: [Date.now()],
       currentChallengeId: '',
       isRespWebDesignCert: false,
       is2018DataVisCert: false,
@@ -177,10 +173,7 @@ function postResetProgress(req, res, next) {
       if (err) {
         return next(err);
       }
-      return res.status(200).json({
-        messageType: 'success',
-        message: 'You have successfully reset your progress'
-      });
+      return res.sendStatus(200);
     }
   );
 }

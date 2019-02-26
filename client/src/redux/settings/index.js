@@ -93,7 +93,6 @@ export const verifyCertComplete = createAction(
 export const verifyCertError = createAction(types.verifyCertError);
 
 export const resetProgress = createAction(types.resetProgress);
-export const resetProgressComplete = createAction(types.resetProgressComplete);
 export const resetProgressError = createAction(types.resetProgressError);
 
 export const deleteAccount = createAction(types.deleteAccount);
